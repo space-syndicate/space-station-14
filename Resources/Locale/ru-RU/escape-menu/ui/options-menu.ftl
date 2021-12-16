@@ -66,29 +66,29 @@ ui-options-header-hotbar = Hotbar
 ui-options-header-map-editor = Редактор карт
 ui-options-header-dev = Разработка
 
-ui-options-function-move-up = Move Up
-ui-options-function-move-left = Move Left
-ui-options-function-move-down = Move Down
-ui-options-function-move-right = Move Right
-ui-options-function-walk = Walk
+ui-options-function-move-up = Двигаться вверх
+ui-options-function-move-left = Двигаться налево
+ui-options-function-move-down = Двигаться вниз
+ui-options-function-move-right = Двигаться направо
+ui-options-function-walk = Идти
 
-ui-options-function-use = Use
+ui-options-function-use = Использовать
 ui-options-function-wide-attack = Wide attack
 ui-options-function-activate-item-in-hand = Activate item in hand
 ui-options-function-alt-activate-item-in-hand = Alternative activate item in hand
 ui-options-function-activate-item-in-world = Activate item in world
 ui-options-function-alt-activate-item-in-world = Alternative activate item in world
-ui-options-function-drop = Drop item
-ui-options-function-examine-entity = Examine
-ui-options-function-swap-hands = Swap hands
+ui-options-function-drop = Бросить
+ui-options-function-examine-entity = Осмотреть
+ui-options-function-swap-hands = Сменить руки
 
 ui-options-function-smart-equip-backpack = Smart-equip to backpack
 ui-options-function-smart-equip-belt = Smart-equip to belt
-ui-options-function-throw-item-in-hand = Throw item
-ui-options-function-try-pull-object = Pull object
+ui-options-function-throw-item-in-hand = Кинуть
+ui-options-function-try-pull-object = Тащить
 ui-options-function-move-pulled-object = Move pulled object
-ui-options-function-release-pulled-object = Release pulled object
-ui-options-function-point = Point at location
+ui-options-function-release-pulled-object = Отпустить перетаскиваемый объект
+ui-options-function-point = Указать на
 
 ui-options-function-focus-chat-input-window = Focus chat
 ui-options-function-focus-local-chat-window = Focus chat (IC)
@@ -99,10 +99,10 @@ ui-options-function-focus-dead-chat-window = Focus chat (Dead)
 ui-options-function-focus-console-chat-window = Focus chat (Console)
 ui-options-function-cycle-chat-channel-forward = Cycle channel (Forward)
 ui-options-function-cycle-chat-channel-backward = Cycle channel (Backward)
-ui-options-function-open-character-menu = Open character menu
-ui-options-function-open-context-menu = Open context menu
-ui-options-function-open-crafting-menu = Open crafting menu
-ui-options-function-open-inventory-menu = Open inventory
+ui-options-function-open-character-menu = Открыть меню персонажа
+ui-options-function-open-context-menu = Открыть контекстное меню
+ui-options-function-open-crafting-menu = Открыть меню крафта
+ui-options-function-open-inventory-menu = Открыть инвентарь
 ui-options-function-open-info = Open server info
 ui-options-function-open-abilities-menu = Open action menu
 ui-options-function-open-entity-spawn-window = Open entity spawn menu
@@ -110,7 +110,7 @@ ui-options-function-open-sandbox-window = Open sandbox menu
 ui-options-function-open-tile-spawn-window = Open tile spawn menu
 ui-options-function-open-admin-menu = Open admin menu
 
-ui-options-function-take-screenshot = Take screenshot
+ui-options-function-take-screenshot = Сделать снимок экрана
 ui-options-function-take-screenshot-no-ui = Take screenshot (without UI)
 
 ui-options-function-editor-place-object = Place object
