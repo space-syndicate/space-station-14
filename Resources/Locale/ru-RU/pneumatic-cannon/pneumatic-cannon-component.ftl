@@ -1,41 +1,41 @@
-﻿### Loc for the pneumatic cannon.
+﻿### Замок для пневматической пушки.
 
-pneumatic-cannon-component-verb-gas-tank-name = Eject gas tank
-pneumatic-cannon-component-verb-eject-items-name = Eject all items
+pneumatic-cannon-component-verb-gas-tank-name = Выбросить газовый баллон
+pneumatic-cannon-component-verb-eject-items-name = Выбросить все предметы.
 
-## Shown when inserting items into it
+## Показывается при вставке предметов в пушку
 
-pneumatic-cannon-component-insert-item-success = You insert { THE($item) } into { THE($cannon) }.
-pneumatic-cannon-component-insert-item-failure = You can't seem to fit { THE($item) } in { THE($cannon) }.
+pneumatic-cannon-component-insert-item-success = Вы вставили { THE($item) } в { THE($cannon) }.
+pneumatic-cannon-component-insert-item-failure = Вы не можете вставить { THE($item) } в { THE($cannon) }.
 
-## Shown when trying to fire, but no gas
+## Показывается при попытке выстрела, но нет газа
 
-pneumatic-cannon-component-fire-no-gas = { CAPITALIZE(THE($cannon)) } clicks, but no gas comes out.
+pneumatic-cannon-component-fire-no-gas = { CAPITALIZE(THE($cannon)) } щелкает, но газ не выходит.
 
-## Shown when changing the fire mode or power.
+## Показывается при изменении режима огня или мощности.
 
 pneumatic-cannon-component-change-fire-mode = { $mode ->
-    [All] You loosen the valves to fire everything at once.
-    *[Single] You tighten the valves to fire one item at a time.
+    [All] Вы ослабляете клапаны, чтобы стрелять всем сразу.
+    * [Single] Вы затягиваете клапаны, чтобы стрелять по одному предмету за раз.
 }
 
-pneumatic-cannon-component-change-power = { $power ->
-    [High] You set the limiter to maximum power. It feels a little too powerful...
-    [Medium] You set the limiter to medium power.
-    *[Low] You set the limiter to low power.
+pneumatic-cannon-component-change-power = { $power -> ...
+    [Высокая] Вы устанавливаете ограничитель на максимальную мощность. Это кажется слишком мощным...
+    [Средний] Вы устанавливаете ограничитель на среднюю мощность.
+    * [Низкая] Вы устанавливаете ограничитель на низкую мощность.
 }
 
-## Shown when inserting/removing the gas tank.
+## Показывается при установке/извлечении бензобака.
 
-pneumatic-cannon-component-gas-tank-insert = You fit { THE($tank) } onto { THE($cannon) }.
-pneumatic-cannon-component-gas-tank-remove = You take { THE($tank) } off of { THE($cannon) }.
-pneumatic-cannon-component-gas-tank-none = There is no gas tank on { THE($cannon) }!
+pneumatic-cannon-component-gas-tank-insert = Вы устанавливаете { THE($tank) } на { THE($cannon) }.
+pneumatic-cannon-component-gas-tank-remove = Вы снимаете { THE($tank) } с { THE($cannon) }.
+pneumatic-cannon-component-gas-tank-none = На { THE($cannon) } нет бензобака!
 
-## Shown when ejecting every item from the cannon using a verb.
+## Показывается при выбрасывании всех предметов из пушки с помощью глагола.
 
-pneumatic-cannon-component-ejected-all = You eject everything from { THE($cannon) }.
+pneumatic-cannon-component-ejected-all = Вы выбросили все из { THE($cannon) }.
 
-## Shown when being stunned by having the power too high.
+## Показывается при оглушении из-за слишком высокой мощности.
 
-pneumatic-cannon-component-power-stun = The pure force of { THE($cannon) } knocks you over!
+pneumatic-cannon-component-power-stun = Чистая сила { THE($cannon)} сбивает вас с ног!
 
