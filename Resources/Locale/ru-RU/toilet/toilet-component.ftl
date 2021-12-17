@@ -1,7 +1,7 @@
 ## ToiletComponent
 
-toilet-component-on-examine-found-hidden-item = There is [color=darkgreen]something[/color] inside cistern!
-toilet-component-suicide-head-message-others = {$victim} sticks their head into {$owner} and flushes it!
-toilet-component-suicide-head-message = You stick your head into {$owner} and flush it!
-toilet-component-suicide-message-others = {$victim} bashes themselves with {$owner}!
-toilet-component-suicide-message = You bash yourself with {$owner}!
+toilet-component-on-examine-found-hidden-item = В бачке [color=darkgreen]что-то[/color] есть!
+toilet-component-suicide-head-message-others = {$victim} сует свою голову в {$owner} и спускает воду!
+toilet-component-suicide-head-message = Вы суете голову в {$owner} и смываете воду!
+toilet-component-suicide-message-others = {$victim} бьёт себя по {$owner}!
+toilet-component-suicide-message = Вы бьёте себя по {$owner}!

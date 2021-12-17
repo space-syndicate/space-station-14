@@ -1,12 +1,12 @@
-welder-component-welder-not-lit-message = The welder is turned off!
-welder-component-cannot-weld-message = The welder does not have enough fuel for that!
-welder-component-no-fuel-message = The welder has no fuel left!
-welder-component-no-fuel-in-tank = {$owner} is empty
-welder-component-on-examine-welder-lit-message = [color=orange]Lit[/color]
-welder-component-on-examine-welder-not-lit-message = Not lit
-welder-component-on-examine-detailed-message = Fuel: [color={$colorName}]{$fuelLeft}/{$fuelCapacity}[/color].
-welder-component-suicide-lit-others-message = {$victim} welds their every orifice closed! It looks like they are trying to commit suicide!
-welder-component-suicide-lit-message = You weld your every orifice closed!
-welder-component-suicide-unlit-others-message = {$victim} bashes themselves with the unlit welding torch!
-welder-component-suicide-unlit-message = You bash yourself with the unlit welding torch!
-welder-component-after-interact-refueled-message = Welder refueled
+welder-component-welder-not-lit-message = Сварочный аппарат выключен!
+welder-component-cannot-weld-message = Сварочному аппарату не хватает топлива для этого действия!
+welder-component-no-fuel-message = Топливо закончилось!
+welder-component-no-fuel-in-tank = {$owner} пуст
+welder-component-on-examine-welder-lit-message = [color=orange]Горит[/color]
+welder-component-on-examine-welder-not-lit-message = Не горит
+welder-component-on-examine-detailed-message = Топливо: [color={$colorName}]{$fuelLeft}/{$fuelCapacity}[/color].
+welder-component-suicide-lit-others-message = {$victim} пытается спаять себя изнутри! Похоже, на попытку суицида!
+welder-component-suicide-lit-message = Вы запаиваете себя изнутри!
+welder-component-suicide-unlit-others-message = {$victim} бьёт себя выключенным сварочным аппаратом!
+welder-component-suicide-unlit-message = Вы бьёте себя выключенной сварочным аппаратом!
+welder-component-after-interact-refueled-message = Сварочный аппарат заправлен топливом
