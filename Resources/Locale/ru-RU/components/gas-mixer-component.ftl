@@ -1,13 +1,13 @@
-comp-gas-mixer-ui-mixer-status = Status:
-comp-gas-mixer-ui-status-enabled = On
-comp-gas-mixer-ui-status-disabled = Off
+comp-gas-mixer-ui-mixer-status = Статус:
+comp-gas-mixer-ui-status-enabled = Включен
+comp-gas-mixer-ui-status-disabled = Выключен
 
-comp-gas-mixer-ui-mixer-output-pressure = Output Pressure (kPa):
+comp-gas-mixer-ui-mixer-output-pressure = Выходное давление (кПа):
 
-comp-gas-mixer-ui-mixer-node-primary = Primary Port:
-comp-gas-mixer-ui-mixer-node-side = Side Port:
+comp-gas-mixer-ui-mixer-node-primary = Основной порт:
+comp-gas-mixer-ui-mixer-node-side = Боковой порт:
 
-comp-gas-mixer-ui-mixer-set = Set
-comp-gas-mixer-ui-mixer-max = Max
+comp-gas-mixer-ui-mixer-set = Задать
+comp-gas-mixer-ui-mixer-max = Максимум
 
-comp-gas-mixer-ui-needs-anchor = Anchor it first!
+comp-gas-mixer-ui-needs-anchor = Сначала закрепите его!
