@@ -1,15 +1,15 @@
 ## ServerMagazineBarrelComponent
 
-server-magazine-barrel-component-cycle-bolt-open = Bolt open
-server-magazine-barrel-component-use-entity-bolt-closed = Bolt closed
-server-magazine-barrel-component-remove-magazine-bolt-closed = Bolt needs to be open
-server-magazine-barrel-component-interact-using-wrong-magazine-type = Wrong magazine type
-server-magazine-barrel-component-interact-using-wrong-caliber = Wrong caliber
-server-magazine-barrel-component-interact-using-bolt-closed = Need to open bolt first
-server-magazine-barrel-component-interact-using-success = Magazine inserted
-server-magazine-barrel-component-interact-using-already-holding-magazine = Already holding a magazine
-server-magazine-barrel-component-interact-using-ammo-bolt-closed = Cannot insert ammo while bolt is closed
-server-magazine-barrel-component-interact-using-ammo-success = Ammo inserted
-server-magazine-barrel-component-interact-using-ammo-full = Chamber full
-server-magazine-barrel-component-on-examine = It uses [color=white]{$caliber}[/color] ammo.
-server-magazine-barrel-component-on-examine-magazine-type = It accepts [color=white]{$magazineType}[/color] magazines.
+server-magazine-barrel-component-cycle-bolt-open = Болт открыт
+server-magazine-barrel-component-use-entity-bolt-closed = Болт закрыт
+server-magazine-barrel-component-remove-magazine-bolt-closed = Болт должен быть открыт
+server-magazine-barrel-component-interact-using-wrong-magazine-type = Неправильный тип магазина
+server-magazine-barrel-component-interact-using-wrong-caliber = Неправильный калибр
+server-magazine-barrel-component-interact-using-bolt-closed = Необходимо сначала открыть затвор
+server-magazine-barrel-component-interact-using-success = Магазин вставлен
+server-magazine-barrel-component-interact-using-already-holding-magazine = Уже держит журнал в руках
+server-magazine-barrel-component-interact-using-ammo-bolt-closed = Невозможно вставить патроны при закрытом затворе
+server-magazine-barrel-component-interact-using-ammo-success = Патроны вставлены
+server-magazine-barrel-component-interact-using-ammo-full = Камера заполнена
+server-magazine-barrel-component-on-examine = Используются патроны [color=white]{$caliber}[/color].
+server-magazine-barrel-component-on-examine-magazine-type = Он принимает [color=white]{$magazineType}[/color] магазины.
