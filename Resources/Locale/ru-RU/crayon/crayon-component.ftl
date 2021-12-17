@@ -1,9 +1,9 @@
 
-## Entity
+## Сущность
 
-crayon-drawing-label = Drawing: [color={$color}]{$state}[/color] ({$charges}/{$capacity})
-crayon-interact-not-enough-left-text = Not enough left.
-crayon-interact-invalid-location = Can't reach there!
+crayon-drawing-label = Рисование: [color={$color}]{$state}[/color] ({$charges}/{$capacity})
+crayon-interact-not-enough-left-text = Осталось мало.
+crayon-interact-invalid-location = Не могу добраться туда!
 
 ## UI
-crayon-window-title = Crayon
+crayon-window-title = Мелки
