@@ -1,4 +1,4 @@
-id-card-console-window-privileged-id = Идентификатор привилегий:
+id-card-console-window-privileged-id = ID привилегий:
 id-card-console-window-target-id = Идентификатор цели:
 id-card-console-window-full-name-label = Полное имя:
 id-card-console-window-save-button = Сохранить
