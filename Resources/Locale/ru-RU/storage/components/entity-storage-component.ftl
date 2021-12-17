@@ -1,7 +1,7 @@
-entity-storage-component-welded-shut-message = It's welded completely shut!
-entity-storage-component-locked-message = It's Locked!
-entity-storage-component-already-contains-user-message = It's too Cramped!
+entity-storage-component-welded-shut-message = Он полностью заварен!
+entity-storage-component-locked-message = Заперто!
+entity-storage-component-already-contains-user-message = Слишком тесно!
 
 ## OpenToggleVerb
 
-open-toggle-verb-welded-shut-message = {$verb} (welded shut)
+open-toggle-verb-welded-shut-message = {$verb} (заварить)
