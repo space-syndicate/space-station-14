@@ -1,8 +1,8 @@
-﻿### Locale for wielding items; i.e. two-handing them
+﻿### Локаль для владения предметами, т.е. двуручного владения ими
 
-wieldable-component-successful-wield = You wield { THE($item) }.
-wieldable-component-failed-wield = You unwield { THE($item) }.
-wieldable-component-no-hands = You don't have enough hands!
-wieldable-component-not-enough-free-hands = You need { $number } free hands to wield { THE($item) }.
-wieldable-component-not-in-hands = { CAPITALIZE(THE($item)) } isn't in your hands!
+wieldable-component-successful-wield = Вы владеете { THE($item) }.
+wieldable-component-failed-wield = Вы снимаете { THE($item) }.
+wieldable-component-no-hands = У вас недостаточно рук!
+wieldable-component-not-enough-free-hands = Вам нужно { $number } свободных рук, чтобы использовать { THE($item) }.
+wieldable-component-not-in-hands = { CAPITALIZE(THE($item)) } не в ваших руках!
 
