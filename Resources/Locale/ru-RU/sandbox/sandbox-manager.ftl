@@ -11,4 +11,4 @@ sandbox-window-toggle-subfloor-button = Переключить подпол
 sandbox-window-toggle-suicide-button = Самоубийство
 sandbox-window-show-spawns-button = Показывать спавны
 sandbox-window-show-bb-button = Показать BB
-sandbox-window-link-machines-button = Связать машины
+sandbox-window-link-machines-button = Связать механизмы
