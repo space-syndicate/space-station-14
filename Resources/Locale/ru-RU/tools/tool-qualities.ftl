@@ -1,20 +1,20 @@
-tool-quality-anchoring-name = Anchoring
-tool-quality-anchoring-tool-name = Wrench
+tool-quality-anchoring-name = Откручивает
+tool-quality-anchoring-tool-name = Гаечный ключ
 
-tool-quality-prying-name = Prying
-tool-quality-prying-tool-name = Crowbar
+tool-quality-prying-name = Назойливый
+tool-quality-prying-tool-name = Лом
 
-tool-quality-screwing-name = Screwing
+tool-quality-screwing-name = Завинчивание
 tool-quality-screwing-tool-name = Screwdriver
 
-tool-quality-cutting-name = Cutting
-tool-quality-cutting-tool-name = Wirecutter
+tool-quality-cutting-name = Режет
+tool-quality-cutting-tool-name = Кусачки
 
-tool-quality-welding-name = Welding
-tool-quality-welding-tool-name = Welder
+tool-quality-welding-name = Сваривает
+tool-quality-welding-tool-name = Сварочный аппарат
 
-tool-quality-pulsing-name = Pulsing
-tool-quality-pulsing-tool-name = Multitool
+tool-quality-pulsing-name = Делает импульс
+tool-quality-pulsing-tool-name = Мультитул
 
-tool-quality-slicing-name = Slicing
-tool-quality-slicing-tool-name = Knife
+tool-quality-slicing-name = Нарезает
+tool-quality-slicing-tool-name = Нож
