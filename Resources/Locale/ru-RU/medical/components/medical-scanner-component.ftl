@@ -1,19 +1,19 @@
-## Entity
+## Сущность
 
-medical-scanner-component-msg-no-soul = ERROR: Body is completely devoid of soul
-medical-scanner-component-msg-soul-broken = ERROR: Soul present, but defunct / departed
+medical-scanner-component-msg-no-soul = ОШИБКА: Тело полностью лишено души
+medical-scanner-component-msg-soul-broken = ОШИБКА: Душа присутствует, но не существует/отпала
 
 ## EnterVerb
 
-medical-scanner-verb-enter = Enter
-medical-scanner-verb-noun-occupant = occupant
+medical-scanner-verb-enter = Входить
+medical-scanner-verb-noun-occupant = Тело
 
 ## UI
 
-medical-scanner-window-save-button-text = Scan and Save DNA
-medical-scanner-window-no-patient-data-text = No patient data.
-medical-scanner-window-entity-health-text = {$entityName}'s health:
-medical-scanner-window-entity-damage-total-text = Total Damage: {$amount}
+medical-scanner-window-save-button-text = Сканировать и сохранить ДНК
+medical-scanner-window-no-patient-data-text = Нет данных пациента.
+medical-scanner-window-entity-health-text = Здоровье {$entityName}:
+medical-scanner-window-entity-damage-total-text = Общий урон: {$amount}
 medical-scanner-window-damage-group-text = {$damageGroup}: {$amount}
 medical-scanner-window-damage-type-text = {$damageType}: {$amount}
-medical-scanner-window-damage-type-duplicate-text = {$damageType}: {$amount} (duplicate)
+medical-scanner-window-damage-type-duplicate-text = {$damageType}: {$amount} (дубликат)
