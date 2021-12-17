@@ -13,4 +13,4 @@ comp-kitchen-spike-suicide-self = Ты падаешь на мясной шип!
 comp-kitchen-spike-remove-meat = Вы удаляете немного мяса из { THE($victim) }.
 comp-kitchen-spike-remove-meat-last = Вы снимаете последний кусок мяса с { THE($victim) }!
 
-comp-kitchen-spike-meat-name = { $victim } мясо
+comp-kitchen-spike-meat-name = Мясо { $victim }
