@@ -1,3 +1,3 @@
-comp-paper-label-has-label = There is a label attached, it reads:
-comp-paper-label-has-label-blank = There is a label attached, but it's blank.
-comp-paper-label-has-label-cant-read = There is a label attached, but you can't read it from this distance.
+comp-paper-label-has-label = Прикреплена этикетка с надписью:
+comp-paper-label-has-label-blank = Есть этикетка, но на ней ничего не написано.
+comp-paper-label-has-label-cant-read = Есть этикетка, но с такого расстояния ее не прочитать.
