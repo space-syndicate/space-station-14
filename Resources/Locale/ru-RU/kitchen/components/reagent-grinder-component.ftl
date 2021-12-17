@@ -1,16 +1,16 @@
 ## UI
 
-reagent-grinder-bound-user-interface-instant-button = INSTANT
-reagent-grinder-bound-user-interface-cook-time-label = COOK TIME
+reagent-grinder-bound-user-interface-instant-button = Мгновенно
+reagent-grinder-bound-user-interface-cook-time-label = Время приготовления
  
-grinder-menu-title = All-In-One Grinder 3000
-grinder-menu-grind-button = Grind
-grinder-menu-juice-button = Juice
+grinder-menu-title = Универсальный блендер 3000
+grinder-menu-grind-button = Молоть
+grinder-menu-juice-button = Сок
 grinder-menu-chamber-content-box-label = Chamber
-grinder-menu-chamber-content-box-button = Eject Contents
-grinder-menu-beaker-content-box-label = Beaker
-grinder-menu-beaker-content-box-button = Eject Beaker
-grinder-menu-beaker-content-box-is-empty = Empty
+grinder-menu-chamber-content-box-button = Извлечь содержимое
+grinder-menu-beaker-content-box-label = Сосуд
+grinder-menu-beaker-content-box-button = Извлечь сосуд
+grinder-menu-beaker-content-box-is-empty = Пусто
 
 ## Entity
-reagent-grinder-component-interact-using-no-hands = You have no hands.
+reagent-grinder-component-interact-using-no-hands = У вас нет рук.
