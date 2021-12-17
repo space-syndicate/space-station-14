@@ -1,5 +1,5 @@
 ## RoundEndSystem 
 
-round-end-system-shuttle-called-announcement = An emergency shuttle has been sent. ETA: {$minutes} minutes.
-round-end-system-shuttle-recalled-announcement = The emergency shuttle has been recalled.
-round-end-system-round-restart-eta-announcement = Restarting the round in {$seconds} seconds...
+round-end-system-shuttle-called-announcement = Отправлен аварийный шаттл. Время прибытия: {$minutes} минут.
+round-end-system-shuttle-recalled-announcement = Аварийный шаттл был отозван.
+round-end-system-round-restart-eta-announcement = Перезапуск раунда через {$seconds} секунд...
