@@ -2,7 +2,7 @@
 # В основном помощь + сообщения об ошибках.
 
 invoke-verb-command-description = Вызывает глагол с заданным именем на сущность, с сущностью игрока
-invoke-verb-command-help = invokeverb <playerUid | "self"> <targetUid> <verbName | "interaction" | "activation" | "alternative">.
+invoke-verb-command-help = invokeverb <playerUid | "self"> <targetUid> <verbName | "interaction" | "activation" | "alternative">
 
 invoke-verb-command-invalid-args = invokeverb принимает 2 аргумента.
 
