@@ -1,3 +1,3 @@
-node-container-component-on-examine-details-hvpower = It has a connector for [color=orange]HV cables[/color].
-node-container-component-on-examine-details-mvpower = It has a connector for [color=yellow]MV cables[/color].
-node-container-component-on-examine-details-apc = It has a connector for [color=green]APC cables[/color].
+node-container-component-on-examine-details-hvpower = Имеет разъем для [color=orange]кабелей высокого напряжения[/color].
+node-container-component-on-examine-details-mvpower = Имеет разъем для [color=yellow]MV-кабелей[/color].
+node-container-component-on-examine-details-apc = Имеет разъем для [color=green]кабелей APC[/color].
