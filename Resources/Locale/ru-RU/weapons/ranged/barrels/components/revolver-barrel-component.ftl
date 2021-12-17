@@ -1,7 +1,7 @@
 ## RevolverBarrelComponent
 
 revolver-barrel-component-try-inser-bullet-wrong-caliber = Неправильный калибр
-revolver-barrel-component-try-inser-bullet-ammo-full = Патроны полные
+revolver-barrel-component-try-inser-bullet-ammo-full = Барабан заполнен
 
 ## SpinRevolverVerb
 
