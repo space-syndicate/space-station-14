@@ -1,23 +1,23 @@
 ### UI
 
-# Shown when a stack is examined in details range
+# Показывается, когда стек исследуется в диапазоне деталей
 comp-stack-examine-detail-count = {$count ->
-    [one] There is [color={$markupCountColor}]{$count}[/color] thing
-    *[other] There are [color={$markupCountColor}]{$count}[/color] things
-} in the stack.
+    [one] Есть [color={$markupCountColor}]{$count}[/color] вещь.
+    * [other] There are [color={$markupCountColor}]{$count}[/color] things
+} в стеке.
 
-# Stack status control
+# Контроль состояния стека
 comp-stack-status = Count: [color=white]{$count}[/color]
 
-### Interaction Messages
+### Взаимодействие Сообщения
 
-# Shown when attempting to add to a stack that is full
-comp-stack-already-full = Stack is already full.
+# Показывается при попытке добавить в переполненный стек
+comp-stack-already-full = Стек уже заполнен.
 
-# Shown when a stack becomes full
-comp-stack-becomes-full = Stack is now full.
+# Показывается, когда стек становится полным
+comp-stack-becomes-full = Стек стал полным.
 
-# Text related to splitting a stack
-comp-stack-split = You split the stack.
-comp-stack-split-halve = Halve
-comp-stack-split-too-small = Stack is too small to split.
+# Текст, связанный с разделением стека
+comp-stack-split = Вы разделили стек.
+comp-stack-split-halve = Разделить пополам
+comp-stack-split-too-small = Стек слишком мал для разделения.
