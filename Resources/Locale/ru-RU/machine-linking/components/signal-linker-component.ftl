@@ -1,10 +1,10 @@
-signal-linker-component-saved-port = Successfully saved port '{$port}' of {$machine}!
-signal-linker-component-linked-port = Successfully linked saved port to port '{$port}' of {$machine}!
-signal-linker-component-unlinked-port = Successfully unlinked saved port from port '{$port}' of {$machine}!
+signal-linker-component-saved-port = Успешно сохранен порт '{$port}' из {$machine}!
+signal-linker-component-linked-port = Успешное соединение сохраненного порта с портом '{$port}' машины {$machine}!
+signal-linker-component-unlinked-port = Успешно отсоединен сохраненный порт от порта '{$port}' {$machine}!
 
-signal-linker-component-max-connections-receiver = Maximum connections reached on the receiver!
-signal-linker-component-max-connections-transmitter = Maximum connections reached on the transmitter!
+signal-linker-component-max-connections-receiver = Максимальное количество соединений, достигнутое на приемнике!
+signal-linker-component-max-connections-transmitter = Максимальное количество соединений, достигнутое на передатчике!
 
-signal-linker-component-type-mismatch = The port's type does not match the type of the saved port!
+signal-linker-component-type-mismatch = Тип порта не соответствует типу сохраненного порта!
 
-signal-linker-component-out-of-range = Connection is out of range!
+signal-linker-component-out-of-range = Соединение находится вне диапазона!
