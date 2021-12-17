@@ -1,8 +1,8 @@
-faction-command-no-target-faction-error = Need to supply a target faction
-faction-command-unknown-faction-argument-error = Unknown faction argument
+faction-command-no-target-faction-error = Необходимо снабжать целевую фракцию
+faction-command-unknown-faction-argument-error = Спор о неизвестной фракции
 
-faction-command-description = Update / list factional relationships for NPCs.
-faction-command-help-text = faction <source> <friendly/hostile> target
-                            faction <source> list: hostile factions
-faction-command-invalid-faction-error = Invalid faction
-faction-command-invalid-target-faction-error = Invalid target faction
+faction-command-description = Обновление / список фракционных отношений для NPC.
+faction-command-help-text = фракция <source> <friendly/hostile> цель
+                            фракция <source> список: враждебные фракции
+faction-command-invalid-faction-error = Неверная фракция
+faction-command-invalid-target-faction-error = Неверная целевая фракция
