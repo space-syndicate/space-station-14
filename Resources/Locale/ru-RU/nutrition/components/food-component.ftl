@@ -1,25 +1,25 @@
 
-### Interaction Messages
+### Взаимодействие Сообщений.
 
-# When trying to eat food without the required utensil... but you gotta hold it
-food-you-need-to-hold-utensil = You need to be holding a {$utensil} to eat that!
+# При попытке съесть еду без необходимой посуды... но вы должны держать ее в руках
+food-you-need-to-hold-utensil = Чтобы съесть это, нужно держать {$utensil}!
 
-food-nom = Nom
-food-swallow = You swallow the {$food}.
+food-nom = Ням
+food-swallow = Вы проглатываете {$пищу}.
 
-food-system-remove-mask = You need to take off the {$entity} first.
+food-system-remove-mask = Сначала нужно снять {$entity}.
 
-## System
+## Система
 
-food-system-you-cannot-eat-any-more = You can't eat any more!
-food-system-you-cannot-eat-any-more-other = They can't eat any more!
-food-system-try-use-food-is-empty = {$entity} is empty!
-food-system-wrong-utensil = you can't eat {$food} with a {$utensil}.
+food-system-you-cannot-eat-any-more = Вы не можете больше есть!
+food-system-you-cannot-eat-any-more-other = Они не могут больше есть!
+food-system-try-use-food-is-empty = {$entity} пуст!
+food-system-wrong-utensil = Вы не можете есть {$food} с {$utensil}.
 
-food-system-verb-eat = Eat
+food-system-verb-eat = Съесть.
 
-## Force feeding
+## Принудительное кормление
 
-food-system-force-feed = {$user} is trying feed you something!
-food-system-force-feed-success = {$user} forced you to eat something!
-food-system-force-feed-success-user = You successfully feed {$target}
+food-system-force-feed = {$user} пытается накормить вас чем-то!
+food-system-force-feed-success = {$user} заставил вас что-то съесть!
+food-system-force-feed-success-user = Вы успешно накормили {$target}
