@@ -39,8 +39,8 @@ ui-options-hud-theme = Тема HUD:
 ui-options-hud-theme-default = По умолчанию
 ui-options-hud-theme-modernized = Модернизированный
 ui-options-hud-theme-classic = Классический
-ui-options-vp-stretch = Stretch viewport to fit game window
-ui-options-vp-scale = Fixed viewport scale: x{ $scale }
+ui-options-vp-stretch = Растягивание области просмотра для соответствия игровому окну
+ui-options-vp-scale = Исправить масштаб области просмотра: x{ $scale }
 ui-options-vp-integer-scaling = Предпочитать целочисленное масштабирование (может вызвать черные полосы/обрезку)
 ui-options-vp-integer-scaling-tooltip = Если эта опция включена, область просмотра будет масштабироваться с помощью целочисленного значения
                                         при определенных разрешениях. Хотя это приводит к получению четких текстур, это также часто
@@ -62,7 +62,7 @@ ui-options-header-interaction-basic = Базовые взаимодействи�
 ui-options-header-interaction-adv = Продвинутые взаимодействия
 ui-options-header-ui = Интерфейс
 ui-options-header-misc = Разное
-ui-options-header-hotbar = Hotbar
+ui-options-header-hotbar = Хотбар
 ui-options-header-map-editor = Редактор карт
 ui-options-header-dev = Разработка
 
