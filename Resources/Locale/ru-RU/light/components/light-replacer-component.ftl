@@ -1,14 +1,14 @@
 
-### Interaction Messages
+### Сообщения о взаимодействии
 
-# Shown when player tries to replace light, but there is no lighs left
-comp-light-replacer-missing-light = No lights left in {$light-replacer}.
+# Показывается, когда игрок пытается заменить свет, но света не осталось
+comp-light-replacer-missing-light = В {$light-replacer} не осталось лампочек.
 
-# Shown when player inserts light bulb inside light replacer
-comp-light-replacer-insert-light = You insert {$bulb} into {$light-replacer}.
+# Показывается, когда игрок вставляет лампочку в устройство для замены света
+comp-light-replacer-insert-light = Вы вставили {$bulb} в {$light-replacer}.
 
-# Shown when player tries to insert in light replacer brolen light bulb
-comp-light-replacer-insert-broken-light = You can't insert broken lights!
+# Показывается, когда игрок пытается вставить в заменитель света броленовую лампочку
+comp-light-replacer-insert-broken-light = Вы не можете вставить сломанные лампочки!
 
-# Shown when player refill light from light box
-comp-light-replacer-refill-from-storage = You refill {$light-replacer}.
+# Показывается, когда игрок пополняет запас света из ящика с лампочками
+comp-light-replacer-refill-from-storage = Вы пополняете {$light-replacer}.
