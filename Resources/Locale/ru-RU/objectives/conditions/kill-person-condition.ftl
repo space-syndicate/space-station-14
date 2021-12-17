@@ -1,2 +1,2 @@
-objective-condition-kill-person-title = Убить {$targetName}
-objective-condition-kill-person-description = Сделай это как угодно, только не дай {$targetName} пережить смену.
+objective-condition-kill-person-title = Kill {$targetName}
+objective-condition-kill-person-description = Do it however you like, just make sure they don't last the shift.
