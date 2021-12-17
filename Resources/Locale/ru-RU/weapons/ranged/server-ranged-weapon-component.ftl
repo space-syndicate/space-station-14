@@ -1,3 +1,3 @@
 ## ServerRangedWeaponComponent
 
-server-ranged-weapon-component-try-fire-clumsy = The gun blows up in your face!
+server-ranged-weapon-component-try-fire-clumsy = Оружие взорвется у вас перед носом!
