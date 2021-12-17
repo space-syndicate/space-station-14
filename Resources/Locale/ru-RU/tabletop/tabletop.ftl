@@ -1,10 +1,10 @@
 ﻿## TabletopGameComponent
-tabletop-verb-play-game = Play Game
-tabletop-default-board-name = Board Game
+tabletop-verb-play-game = Играть в игру
+tabletop-default-board-name = Настольная игра
 
-## Chess
-tabletop-chess-board-name = Chess
-tabletop-chess-flip = Flip
+## Шахматы
+tabletop-chess-board-name = Шахматы
+tabletop-chess-flip = Перевернуть
 
-## Parchís
-tabletop-parchis-board-name = Parchís
+## Парчи
+tabletop-parchis-board-name = Парчи
