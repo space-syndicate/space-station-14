@@ -1,12 +1,12 @@
 ﻿### EmitterComponent
 
-# Shows when attempting to turn the emitter on or off without proper access
-comp-emitter-access-locked = The {$target} is access locked!
+# Показывается при попытке включить или выключить эмиттер без соответствующего доступа
+comp-emitter-access-locked = Доступ к {$target} закрыт!
 
-# Shows when turning the emitter on/off
-comp-emitter-turned-on = The {$target} turns on.
+# Показывает при включении/выключении эмиттера
+comp-emitter-turned-on = {$target} включается.
 
-comp-emitter-turned-off = The {$target} turns off.
+comp-emitter-turned-off = {$target} выключается.
 
-# Shows if the user attempts to activate the emitter while it's un-anchored.
-comp-emitter-not-anchored = The {$target} isn't anchored to the ground!
+# Показывает, если пользователь пытается активировать эмиттер, когда он не закреплен.
+comp-emitter-not-anchored = {$target} не привязан к земле!
