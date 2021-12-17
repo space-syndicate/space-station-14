@@ -1,12 +1,12 @@
 ## Entity
 
-seed-component-no-seeds-message = It doesn't seem to contain any seeds.
-seed-component-description = It has a picture of [color=yellow]{$seedName}[/color] on the front.
-seed-component-has-variety-tag = It's tagged as variety [color=lightgray]no. {$seedUid}[/color].
-seed-component-plant-yield-text = Plant Yield:    [color=lightblue]{$seedYield}[/color]
-seed-component-plant-potency-text = Plant Potency: [color=lightblue]{$seedPotency}[/color]
+seed-component-no-seeds-message = Кажется, что в нем нет семян.
+seed-component-description = На лицевой стороне есть изображение [color=yellow]{$seedName}[/color].
+seed-component-has-variety-tag = Он помечен как сорт [color=lightgray]нет. {$seedUid}[/color].
+seed-component-plant-yield-text = Урожайность растений:    [color=lightblue]{$seedYield}[/color]
+seed-component-plant-potency-text = Потенция растений: [color=lightblue]{$seedPotency}[/color]
 
-botany-seed-packet-name = packet of {$seedName} {$seedNoun}
-botany-harvest-fail-message = You fail to harvest anything useful.
-botany-harvest-success-message = You harvest from the {$name}
-botany-mysterious-description-addon = On second thought, something about this one looks strange.
+botany-seed-packet-name = пакет {$seedName} {$seedNoun}
+botany-harvest-fail-message = Вам не удается собрать ничего полезного.
+botany-harvest-success-message = Вы собираете урожай с {$name}
+botany-mysterious-description-addon = Если подумать, что-то в этом выглядит странно.
