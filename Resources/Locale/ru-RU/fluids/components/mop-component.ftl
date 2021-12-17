@@ -1,1 +1,1 @@
-mop-component-mop-is-dry-message = Швабра должна быть влажной!
+mop-component-mop-is-dry-message = Швабра должна быть мокрой!
