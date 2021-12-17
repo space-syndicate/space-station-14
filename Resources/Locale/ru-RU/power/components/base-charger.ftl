@@ -1,1 +1,1 @@
-base-charger-on-interact-using-fail = Unable to insert capacitor
+base-charger-on-interact-using-fail = Невозможно вставить конденсатор
