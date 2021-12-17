@@ -1,2 +1,2 @@
-stunned-component-disarm-success = You push {$target} down!
-stunned-component-disarm-success-others = {$source} pushes {$target} down!
+stunned-component-disarm-success = Вы толкаете {$target} вниз!
+stunned-component-disarm-success-others = {$source} толкает {$target} вниз!
