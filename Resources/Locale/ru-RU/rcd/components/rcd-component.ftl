@@ -1,21 +1,21 @@
 
 ### UI
 
-# Shown when an RCD is examined in details range
-rcd-component-examine-detail-count = It's currently on {$mode} mode, and holds {$ammoCount ->
-    *[zero] no charges.
-    [one] one charge.
-    [other] {$ammoCount} charges.
+# Показывается, когда RCD исследуется в диапазоне деталей
+rcd-component-examine-detail-count = В настоящее время он находится в режиме {$mode} и содержит {$ammoCount ->
+    *[ноль] нет зарядов.
+    [один] один заряд.
+    [другой] {$ammoCount} зарядов.
 }
 
-### Interaction Messages
+### Взаимодействие Сообщений.
 
-# Shown when changing RCD Mode
-rcd-component-change-mode = The RCD is now set to {$mode} mode.
+# Показывается при изменении режима работы УЗО
+rcd-component-change-mode = УЗО теперь установлено в режим {$mode}.
 
-rcd-component-no-ammo-message = The RCD is out of ammo!
-rcd-component-tile-obstructed-message = That tile is obstructed!
-rcd-component-deconstruct-target-not-on-whitelist-message = You can't deconstruct that!
-rcd-component-cannot-build-floor-tile-not-empty-message = You can only build a floor on space!
-rcd-component-cannot-build-wall-tile-not-empty-message = You cannot build a wall on space!
-rcd-component-cannot-build-airlock-tile-not-empty-message = Cannot build an airlock on space!
+rcd-component-no-ammo-message = В УЗО закончились патроны!
+rcd-component-tile-obstructed-message = Эта плитка заблокирована!
+rcd-component-deconstruct-target-not-on-whitelist-message = Вы не можете деконструировать эту цель!
+rcd-component-cannot-build-floor-tile-not-empty-message = Вы можете построить пол только на свободном месте!
+rcd-component-cannot-build-wall-tile-not-empty-message = Вы не можете построить стену на пространстве!
+rcd-component-cannot-build-airlock-tile-not-empty-message = Невозможно построить шлюз в космосе!
