@@ -1,4 +1,4 @@
-# Action menu stuff (left panel, with hotbars etc)
+# Функции меню действий (левая панель, с хотбарами и т.д.)
 
-ui-actionmenu-function-lock-action-slots = (Un)lock dragging and clearing action slots
-ui-actionmenu-function-open-abilities-menu = Open action menu
+ui-actionmenu-function-lock-action-slots = (Раз)блокировать перетаскивание и очистку слотов действий
+ui-actionmenu-function-open-abilities-menu = Открыть меню действий
