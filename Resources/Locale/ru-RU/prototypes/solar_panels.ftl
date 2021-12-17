@@ -1,14 +1,14 @@
-### Power entity prototype data.
+### Данные прототипа энергетической сущности.
 
-### Solars
-ent-solar-tracker = solar tracker
-    .desc = A solar tracker. Can be wired to a solar array and computer to track solar positions.
-ent-solar-assembly = solar assembly
-    .desc = A solar assembly. Anchor to a wire to start building a solar panel.
-ent-solar-panel = solar panel
-    .desc = Generates power from sunlight. Usually used to power replacements for sunlight. Fragile.
+### Соляры
+ent-solar-tracker = Солнечный трекер
+    .desc = Солнечный трекер. Может быть подключен к солнечной батарее и компьютеру для отслеживания положения солнца.
+ent-solar-assembly = Солнечная сборка
+    .desc = Солнечная сборка. Прикрепляется к проводу, чтобы начать сборку солнечной панели.
+ent-solar-panel = солнечная панель
+    .desc = Генерирует энергию из солнечного света. Обычно используется для питания заменителей солнечного света. Хрупкая.
 
-ent-solar-tracker-electronics = solar tracker electronics
-    .desc = An electronics board for making a solar tracker.
-ent-solar-assembly-part = solar assembly parts
-    .desc = Used in the construction of solar assemblies for solar panels and trackers.
+ent-solar-tracker-electronics = Электроника солнечного трекера
+    .desc = Плата электроники для создания солнечного трекера.
+ent-solar-assembly-part = детали для сборки солнечных батарей
+    .desc = Используются при изготовлении солнечных сборок для солнечных панелей и трекеров.
