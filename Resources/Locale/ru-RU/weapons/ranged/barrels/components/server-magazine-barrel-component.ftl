@@ -1,8 +1,8 @@
 ## ServerMagazineBarrelComponent
 
-server-magazine-barrel-component-cycle-bolt-open = Болт открыт
-server-magazine-barrel-component-use-entity-bolt-closed = Болт закрыт
-server-magazine-barrel-component-remove-magazine-bolt-closed = Болт должен быть открыт
+server-magazine-barrel-component-cycle-bolt-open = Затвор открыт
+server-magazine-barrel-component-use-entity-bolt-closed = Затвор закрыт
+server-magazine-barrel-component-remove-magazine-bolt-closed = Затвор должен быть открыт
 server-magazine-barrel-component-interact-using-wrong-magazine-type = Неправильный тип магазина
 server-magazine-barrel-component-interact-using-wrong-caliber = Неправильный калибр
 server-magazine-barrel-component-interact-using-bolt-closed = Необходимо сначала открыть затвор
