@@ -16,4 +16,4 @@ flash-component-examine-detail-count = У вспышки есть [color={$marku
 flash-component-user-blinds-you = {$user} ослепляет вас вспышкой!
 
 # Shown when a flash runs out of uses
-flash-component-becomes-empty = Вспышка перегорела!
+flash-component-becomes-empty = Вспышка сгорает!
