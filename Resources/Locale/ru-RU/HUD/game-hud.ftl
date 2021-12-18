@@ -1,4 +1,4 @@
-game-hud-open-escape-menu-button-tooltip = Открыть меню эвакуации.
+game-hud-open-escape-menu-button-tooltip = Пауза.
 game-hud-open-character-menu-button-tooltip = Открыть меню персонажа.
 game-hud-open-inventory-menu-button-tooltip = Открыть инвентарь.
 game-hud-open-crafting-menu-button-tooltip = Открыть меню крафта.
