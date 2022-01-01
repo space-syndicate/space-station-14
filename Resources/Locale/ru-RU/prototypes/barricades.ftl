@@ -1,5 +1,5 @@
 ### Barricades entity prototype data.
 
-ent-barricade = Деревянная баррикада
+ent-barricade = деревянная баррикада
     .desc = Дешёвое заграждение, выглядит так себе.
 
