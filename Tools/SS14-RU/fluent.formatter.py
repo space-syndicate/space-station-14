@@ -1,3 +1,5 @@
+#!/usr/bin/env python3
+
 # Форматтер, приводящий fluent-файлы (.ftl) в соответствие стайлгайду
 # path - путь к папке, содержащий форматируемые файлы. Для форматирования всего проекта, необходимо заменить значение на root_dir_path
 import os
@@ -28,7 +30,7 @@ class FluentFile:
     def serialize_data(self, parsed_file_data: ast.Resource):
         return fluent_serializer.serialize(parsed_file_data)
 
-    def save_data(self, file_data):
+    def save_data(self, file_data: typing.AnyStr):
         file = open(self.full_path, 'w')
         file.write(file_data)
         file.close()
@@ -57,7 +59,7 @@ class FluentFormatter:
 ######################################### Var defifitions ##############################################################
 
 # путь корневой директории
-root_dir_path = Path(os.path.abspath(os.curdir)).parent.resolve()
+root_dir_path = Path(os.path.abspath(os.curdir)).parent.parent.resolve()
 # путь директории русскоязычных переводов
 ru_translations_dir_path = os.path.join(root_dir_path, 'Resources', 'Locale', 'ru-RU')
 # путь директории англоязычных переводов
