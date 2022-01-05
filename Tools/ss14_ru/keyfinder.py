@@ -192,9 +192,9 @@ print('Проверка актуальности файлов ...')
 created_files = files_finder.execute()
 if len(created_files):
     print('Форматирование созданных файлов ...')
-    formatter = FluentFormatter.format(created_files)
+    FluentFormatter.format(created_files)
 print('Проверка актуальности ключей ...')
 changed_files = key_finder.execute()
 if len(changed_files):
     print('Форматирование изменённых файлов ...')
-    formatter = FluentFormatter.format(changed_files)
+    FluentFormatter.format(changed_files)
