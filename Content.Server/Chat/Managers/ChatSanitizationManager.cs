@@ -35,6 +35,7 @@ public class ChatSanitizationManager : IChatSanitizationManager
         { ":D", "chatsan-smiles-widely" },
         { "D:", "chatsan-frowns-deeply" },
         { ":O", "chatsan-surprised" },
+        { ":О", "chatsan-surprised" },
         { ":3", "chatsan-smiles" }, //nope
         { ":S", "chatsan-uncertain" },
         { ":>", "chatsan-grins" },
