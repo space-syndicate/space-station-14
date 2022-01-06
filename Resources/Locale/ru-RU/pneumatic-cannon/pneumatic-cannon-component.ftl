@@ -16,14 +16,14 @@ pneumatic-cannon-component-fire-no-gas = { CAPITALIZE($cannon) } щелкает,
 
 pneumatic-cannon-component-change-fire-mode =
     { $mode ->
-        [All] You loosen the valves to fire everything at once.
-       *[Single] You tighten the valves to fire one item at a time.
+        [All] Вы приоткрываете клапаны, чтобы выстрелить всем сразу.
+       *[Single] Вы прикрываете клапаны, чтобы стрелять по одному предмету.
     }
 pneumatic-cannon-component-change-power =
     { $power ->
-        [High] You set the limiter to maximum power. It feels a little too powerful...
-        [Medium] You set the limiter to medium power.
-       *[Low] You set the limiter to low power.
+        [High] Вы установили высокую мощность. Это кажется слишком сильным...
+        [Medium] Вы установили среднюю мощность.
+       *[Low] Вы установили низкую мощность.
     }
 
 ## Shown when inserting/removing the gas tank.
