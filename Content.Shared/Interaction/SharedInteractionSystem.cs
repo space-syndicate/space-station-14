@@ -46,7 +46,7 @@ namespace Content.Shared.Interaction
         [Dependency] private readonly SharedAdminLogSystem _adminLogSystem = default!;
         [Dependency] private readonly RotateToFaceSystem _rotateToFaceSystem = default!;
 
-        public const float InteractionRange = 2;
+        public const float InteractionRange = 1.2f;
         public const float InteractionRangeSquared = InteractionRange * InteractionRange;
 
         public delegate bool Ignored(EntityUid entity);
