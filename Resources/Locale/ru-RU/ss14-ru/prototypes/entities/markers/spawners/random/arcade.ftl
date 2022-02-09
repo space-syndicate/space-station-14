@@ -1,2 +1,2 @@
-ent-RandomArcade = random arcade spawner
+ent-RandomArcade = { "" }
     .desc = { ent-MarkerBase.desc }

@@ -1,7 +1,7 @@
 ent-BaseDice = { ent-BaseItem }
     .desc = { ent-BaseItem.desc }
 ent-d100Dice = d100
-    .desc = A die with one hundred sides! Probably not fairly weighted...
+    .desc = A die with ten sides. Works better for d100 rolls than a golf ball.
 ent-d20Dice = d20
     .desc = A die with twenty sides. The preferred die to throw at the GM.
 ent-d12Dice = d12

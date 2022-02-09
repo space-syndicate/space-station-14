@@ -1,2 +1,2 @@
-ent-PlaqueAtmos = atmos plaque
+ent-PlaqueAtmos = { "" }
     .desc = { ent-BaseSign.desc }

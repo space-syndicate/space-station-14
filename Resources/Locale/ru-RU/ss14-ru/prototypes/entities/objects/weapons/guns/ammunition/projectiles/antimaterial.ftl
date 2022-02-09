@@ -1,2 +1,2 @@
-ent-BulletAntiMaterial = bullet (.60 anti-material)
+ent-BulletAntiMaterial = { "" }
     .desc = { ent-BulletBaseHV.desc }

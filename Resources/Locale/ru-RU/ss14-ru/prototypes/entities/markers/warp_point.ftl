@@ -1,2 +1,2 @@
-ent-WarpPoint = warp point
+ent-WarpPoint = { "" }
     .desc = { ent-MarkerBase.desc }

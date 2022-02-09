@@ -1,6 +1,6 @@
-ent-SalvageMaterialCrateSpawner = Salvage Material Crate Spawner
+ent-SalvageMaterialCrateSpawner = { "" }
     .desc = { ent-MarkerBase.desc }
-ent-SalvageCanisterSpawner = Salvage Canister Spawner
+ent-SalvageCanisterSpawner = { "" }
     .desc = { ent-MarkerBase.desc }
-ent-SalvageMobSpawner = Salvage Mob Spawner
+ent-SalvageMobSpawner = { "" }
     .desc = { ent-MarkerBase.desc }

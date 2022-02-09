@@ -1,4 +1,4 @@
-ent-AITimedSpawner = AI Timed Spawner
+ent-AITimedSpawner = { "" }
     .desc = { ent-MarkerBase.desc }
-ent-XenoAITimedSpawner = Xeno AI Timed Spawner
+ent-XenoAITimedSpawner = { "" }
     .desc = { ent-MarkerBase.desc }

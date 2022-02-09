@@ -22,5 +22,5 @@ ent-ClothingHeadHatHoodCulthood = cult hood
     .desc = There's no cult without cult hoods.
 ent-ClothingHeadHatHoodNunHood = nun hood
     .desc = Maximum piety in this star system.
-ent-ClothingHeadHatHoodRad = rad
+ent-ClothingHeadHatHoodRad = radiation hood
     .desc = A hood of the hazmat suit, designed for protection from high radioactivity.

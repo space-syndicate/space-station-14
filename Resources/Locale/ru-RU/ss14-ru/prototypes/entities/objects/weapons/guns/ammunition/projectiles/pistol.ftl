@@ -1,10 +1,10 @@
-ent-BulletPistol = bullet (.35 auto)
+ent-BulletPistol = { "" }
     .desc = { ent-BulletBase.desc }
-ent-BulletPistolFlash = bullet (.35 auto flash)
+ent-BulletPistolFlash = { "" }
     .desc = { ent-BulletBaseFlash.desc }
-ent-BulletPistolHV = bullet (.35 auto high-velocity)
+ent-BulletPistolHV = { "" }
     .desc = { ent-BulletBaseHV.desc }
-ent-BulletPistolPractice = bullet (.35 auto practice)
+ent-BulletPistolPractice = { "" }
     .desc = { ent-BulletBasePractice.desc }
-ent-BulletPistolRubber = bullet (.35 auto rubber)
+ent-BulletPistolRubber = { "" }
     .desc = { ent-BulletBaseRubber.desc }

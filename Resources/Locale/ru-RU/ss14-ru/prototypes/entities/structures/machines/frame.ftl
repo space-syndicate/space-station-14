@@ -3,5 +3,5 @@ ent-UnfinishedMachineFrame = machine frame
     .suffix = Unfinished
 ent-MachineFrame = machine frame
     .suffix = Ready
-ent-MachineFrameDestroyed = destroyed machine frame
+ent-MachineFrameDestroyed = { "" }
     .desc = { ent-BaseStructureDynamic.desc }

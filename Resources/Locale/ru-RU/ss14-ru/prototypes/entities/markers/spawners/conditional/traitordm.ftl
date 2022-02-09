@@ -1,2 +1,2 @@
-ent-TraitorDMRedemptionMachineSpawner = PDA Redemption Machine Spawner
+ent-TraitorDMRedemptionMachineSpawner = { "" }
     .desc = { ent-MarkerBase.desc }

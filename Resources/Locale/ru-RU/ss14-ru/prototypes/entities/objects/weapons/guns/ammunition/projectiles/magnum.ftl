@@ -1,10 +1,10 @@
-ent-BulletMagnum = bullet (.40 magnum)
+ent-BulletMagnum = { "" }
     .desc = { ent-BulletBase.desc }
-ent-BulletMagnumFlash = bullet (.40 magnum flash)
+ent-BulletMagnumFlash = { "" }
     .desc = { ent-BulletBaseFlash.desc }
-ent-BulletMagnumHV = bullet (.40 magnum high-velocity)
+ent-BulletMagnumHV = { "" }
     .desc = { ent-BulletBaseHV.desc }
-ent-BulletMagnumPractice = bullet (.40 magnum practice)
+ent-BulletMagnumPractice = { "" }
     .desc = { ent-BulletBasePractice.desc }
-ent-BulletMagnumRubber = bullet (.40 magnum rubber)
+ent-BulletMagnumRubber = { "" }
     .desc = { ent-BulletBaseRubber.desc }

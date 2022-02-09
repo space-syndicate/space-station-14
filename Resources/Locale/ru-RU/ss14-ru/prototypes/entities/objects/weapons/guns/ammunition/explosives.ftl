@@ -1,10 +1,10 @@
 ent-RocketAmmo = PG-7VL grenade
     .desc = A 1.5 warhead designed for the RPG-7 launcher. Has tubular shape.
-ent-GrenadeBaton = baton grenade
+ent-GrenadeBaton = { "" }
     .desc = { ent-BaseItem.desc }
-ent-GrenadeBlast = blast grenade
+ent-GrenadeBlast = { "" }
     .desc = { ent-BaseItem.desc }
-ent-GrenadeFlash = flash grenade
+ent-GrenadeFlash = { "" }
     .desc = { ent-BaseItem.desc }
-ent-GrenadeFrag = frag grenade
+ent-GrenadeFrag = { "" }
     .desc = { ent-BaseItem.desc }

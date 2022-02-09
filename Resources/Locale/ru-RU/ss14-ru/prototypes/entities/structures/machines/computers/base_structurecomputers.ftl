@@ -1,2 +1,2 @@
-ent-ComputerBase = computer
+ent-ComputerBase = { "" }
     .desc = { ent-ComputerFrame.desc }

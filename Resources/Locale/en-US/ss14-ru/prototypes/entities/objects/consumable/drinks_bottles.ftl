@@ -1,5 +1,5 @@
-ent-DrinkBottleBaseFull = { ent-BaseItem }
-    .desc = { ent-BaseItem.desc }
+ent-DrinkBottleBaseFull = { ent-DrinkBase }
+    .desc = { ent-DrinkBase.desc }
 ent-DrinkAbsintheBottleFull = Jailbreaker Verte
     .desc = One sip of this and you just know you're gonna have a good time.
 ent-DrinkBlueCuracaoBottleFull = Miss Blue Curacao

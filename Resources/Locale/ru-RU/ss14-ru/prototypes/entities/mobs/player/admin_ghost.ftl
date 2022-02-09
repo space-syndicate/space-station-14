@@ -1,2 +1,2 @@
-ent-AdminObserver = admin observer
+ent-AdminObserver = { "" }
     .desc = { ent-MobObserver.desc }

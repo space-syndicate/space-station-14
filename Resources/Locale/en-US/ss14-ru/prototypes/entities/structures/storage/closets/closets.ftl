@@ -1,7 +1,7 @@
 ent-ClosetTool = tool closet
     .desc = It's a storage unit for tools.
 ent-ClosetRadiationSuit = radiation suit closet
-    .desc = It's a storage unit for rad-protective suits.
+    .desc = More comfortable than radiation poisioning.
 ent-ClosetEmergency = emergency closet
     .desc = It's a storage unit for emergency breath masks and O2 tanks.
 ent-ClosetFire = fire-safety closet

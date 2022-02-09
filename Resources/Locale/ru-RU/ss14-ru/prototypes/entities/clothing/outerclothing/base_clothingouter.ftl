@@ -1,4 +1,4 @@
 ent-ClothingOuterBase = { ent-Clothing }
     .desc = { ent-Clothing.desc }
-ent-ClothingOuterHardsuitBase = base hardsuit
+ent-ClothingOuterHardsuitBase = { "" }
     .desc = { ent-ClothingOuterBase.desc }

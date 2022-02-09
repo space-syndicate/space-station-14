@@ -1,4 +1,4 @@
-ent-DrinkBaseCup = base cup
+ent-DrinkBaseCup = { "" }
     .desc = { ent-BaseItem.desc }
 ent-DrinkGoldenCup = golden cup
     .desc = A golden cup.

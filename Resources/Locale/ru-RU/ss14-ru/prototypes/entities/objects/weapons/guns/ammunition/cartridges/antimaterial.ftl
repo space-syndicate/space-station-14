@@ -1,2 +1,2 @@
-ent-CartridgeAntiMaterial = cartridge (.60 anti-material)
+ent-CartridgeAntiMaterial = { "" }
     .desc = { ent-BaseItem.desc }

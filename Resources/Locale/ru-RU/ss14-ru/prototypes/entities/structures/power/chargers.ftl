@@ -1,4 +1,4 @@
-ent-WeaponCapacitorRecharger = recharger
+ent-WeaponCapacitorRecharger = { "" }
     .desc = { ent-PowerCellRecharger.desc }
-ent-WallWeaponCapacitorRecharger = wall recharger
+ent-WallWeaponCapacitorRecharger = { "" }
     .desc = { ent-PowerCellRecharger.desc }

@@ -1,8 +1,8 @@
-ent-MagazineShotgunBase = ammo drum (.50 shells)
+ent-MagazineShotgunBase = { "" }
     .desc = { ent-BaseItem.desc }
-ent-MagazineShotgun = ammo drum (.50 pellet)
+ent-MagazineShotgun = { "" }
     .desc = { ent-MagazineShotgunBase.desc }
-ent-MagazineShotgunBeanbag = ammo drum (.50 beanbags)
+ent-MagazineShotgunBeanbag = { "" }
     .desc = { ent-MagazineShotgunBase.desc }
-ent-MagazineShotgunSlug = ammo drum (.50 slug)
+ent-MagazineShotgunSlug = { "" }
     .desc = { ent-MagazineShotgunBase.desc }

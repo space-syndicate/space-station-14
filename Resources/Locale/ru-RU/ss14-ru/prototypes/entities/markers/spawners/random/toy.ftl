@@ -1,4 +1,4 @@
-ent-ToySpawner = Toy Spawner
+ent-ToySpawner = { "" }
     .desc = { ent-MarkerBase.desc }
-ent-FigureSpawner = Figure Spawner
+ent-FigureSpawner = { "" }
     .desc = { ent-MarkerBase.desc }

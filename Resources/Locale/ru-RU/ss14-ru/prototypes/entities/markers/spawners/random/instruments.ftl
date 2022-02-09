@@ -1,2 +1,2 @@
-ent-RandomInstruments = random instruments spawner
+ent-RandomInstruments = { "" }
     .desc = { ent-MarkerBase.desc }

@@ -1,4 +1,4 @@
-ent-BaseLamp = lantern
+ent-BaseLamp = { "" }
     .desc = { ent-BaseItem.desc }
 ent-Lamp = lamp
     .desc = A light emitting device.

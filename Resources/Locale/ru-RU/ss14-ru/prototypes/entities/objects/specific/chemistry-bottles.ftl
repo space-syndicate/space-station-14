@@ -1,12 +1,12 @@
 ent-BaseChemistryEmptyBottle = bottle
     .desc = A small bottle.
-ent-ChemistryEmptyBottle01 = bottle
+ent-ChemistryEmptyBottle01 = { "" }
     .desc = { ent-BaseChemistryEmptyBottle.desc }
-ent-ChemistryEmptyBottle02 = bottle
+ent-ChemistryEmptyBottle02 = { "" }
     .desc = { ent-BaseChemistryEmptyBottle.desc }
-ent-ChemistryEmptyBottle03 = bottle
+ent-ChemistryEmptyBottle03 = { "" }
     .desc = { ent-BaseChemistryEmptyBottle.desc }
-ent-ChemistryEmptyBottle04 = bottle
+ent-ChemistryEmptyBottle04 = { "" }
     .desc = { ent-BaseChemistryEmptyBottle.desc }
-ent-EpinephrineChemistryBottle = epinephrine bottle
+ent-EpinephrineChemistryBottle = { "" }
     .desc = { ent-BaseChemistryEmptyBottle.desc }

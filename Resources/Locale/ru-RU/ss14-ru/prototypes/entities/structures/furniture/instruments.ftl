@@ -1,4 +1,4 @@
-ent-BasePlaceableInstrument = baseinstrument
+ent-BasePlaceableInstrument = { "" }
     .desc = { ent-BaseStructureDynamic.desc }
 ent-PianoInstrument = piano
     .desc = Play Needles Piano Now.

@@ -1,4 +1,4 @@
-ent-SolarPanel = solar panel
+ent-SolarPanel = { "" }
     .desc = { ent-SolarPanelBasePhysSprite.desc }
 ent-SolarPanelBroken = solar panel
     .suffix = Broken

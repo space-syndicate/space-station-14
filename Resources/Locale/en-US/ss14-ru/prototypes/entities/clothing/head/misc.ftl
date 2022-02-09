@@ -16,3 +16,5 @@ ent-ClothingHeadHatSkub = skub hat
     .desc = Best paired with the Skub Suit.
 ent-ClothingHeadHatShrineMaidenWig = shrine maiden's wig
     .desc = The tag reads "All proceeds go to the Hakurei Shrine."
+ent-ClothingHeadHatCone = warning cone
+    .desc = This cone is trying to warn you of something!

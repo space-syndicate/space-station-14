@@ -4,3 +4,5 @@ ent-Brutepack = bruise pack
     .desc = A therapeutic gel pack and bandages designed to treat blunt-force trauma.
 ent-Gauze = roll of gauze
     .desc = Some sterile gauze to wrap around bloody stumps.
+ent-AloeCream = aloe cream
+    .desc = A topical cream for burns.

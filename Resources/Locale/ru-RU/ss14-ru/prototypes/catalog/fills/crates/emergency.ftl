@@ -1,10 +1,10 @@
-ent-CrateEmergencyExplosive = bomb suit crate
+ent-CrateEmergencyExplosive = { "" }
     .desc = { ent-CrateSecgear.desc }
-ent-CrateEmergencyFire = firefighting crate
+ent-CrateEmergencyFire = { "" }
     .desc = { ent-CrateGenericSteel.desc }
-ent-CrateEmergencyInternals = internals crate
+ent-CrateEmergencyInternals = { "" }
     .desc = { ent-CrateInternals.desc }
-ent-CrateEmergencyRadiation = radiation protection crate
+ent-CrateEmergencyRadiation = { "" }
     .desc = { ent-CrateRadiation.desc }
-ent-CrateEmergencyInflatablewall = inflatable wall crate
+ent-CrateEmergencyInflatablewall = { "" }
     .desc = { ent-CratePlastic.desc }

@@ -1,2 +1,2 @@
-ent-RandomSpawner = Trash Spawner
+ent-RandomSpawner = { "" }
     .desc = { ent-MarkerBase.desc }

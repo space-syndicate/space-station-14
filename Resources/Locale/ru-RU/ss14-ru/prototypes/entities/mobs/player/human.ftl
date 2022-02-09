@@ -1,4 +1,4 @@
 ent-MobHuman = Urist McHands
     .desc = A miserable pile of secrets.
-ent-MobHumanCentcomOfficial = centcom official
+ent-MobHumanCentcomOfficial = { "" }
     .desc = { ent-MobHuman.desc }
