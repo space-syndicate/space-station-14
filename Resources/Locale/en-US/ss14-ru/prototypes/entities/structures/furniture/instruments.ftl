@@ -1,12 +1,8 @@
 ent-BasePlaceableInstrument = baseinstrument
     .desc = { ent-BaseStructureDynamic.desc }
-ent-BasePlaceableInstrumentRotatable = baseinstrumentrotatable
-    .desc = { ent-BasePlaceableInstrument.desc }
 ent-PianoInstrument = piano
     .desc = Play Needles Piano Now.
 ent-MinimoogInstrument = minimoog
     .desc = This is a minimoog, like a space piano, but more spacey!
 ent-ChurchOrganInstrument = church organ
     .desc = This thing really blows!
-ent-DawInstrument = digital audio workstation
-    .desc = Cutting edge music technology, straight from the 90s.

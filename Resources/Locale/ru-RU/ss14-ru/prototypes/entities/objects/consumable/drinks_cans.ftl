@@ -26,5 +26,5 @@ ent-DrinkDrGibbCan = банка Доктор Гибб
     .desc = Восхитительная смесь из 42 различных вкусов.
 ent-DrinkEnergyDrinkCan = red bool energy drink
     .desc = A can of Red Bool, with enough caffeine to kill a horse.
-ent-DrinkCanPack = { "" }
+ent-DrinkCanPack = 6pack
     .desc = { ent-BaseItem.desc }

@@ -6,5 +6,3 @@ ent-ButchCleaver = butcher's cleaver
     .desc = A huge blade used for chopping and chopping up meat. This includes clowns and clown-by-products.
 ent-CombatKnife = combat knife
     .desc = A deadly knife intended for melee confrontations.
-ent-SurvivalKnife = survival knife
-    .desc = Weapon of first and last resort for combatting space carp.

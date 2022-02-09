@@ -10,5 +10,3 @@ ent-ClothingMaskMime = mime mask
     .desc = The traditional mime's mask. It has an eerie facial posture.
 ent-ClothingMaskSterile = sterile mask
     .desc = A sterile mask designed to help prevent the spread of diseases.
-ent-ClothingMaskMuzzle = muzzle
-    .desc = To stop that awful noise.

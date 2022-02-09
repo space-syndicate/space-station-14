@@ -38,7 +38,5 @@ ent-CrateHydroSecure = secure hydroponics crate
     .desc = { ent-CrateBaseSecure.desc }
 ent-CrateWeaponSecure = secure weapon crate
     .desc = { ent-CrateBaseSecure.desc }
-ent-CrateCommandSecure = command crate
-    .desc = { ent-CrateBaseSecure.desc }
 ent-CrateLivestock = livestock crate
     .desc = { ent-CrateGeneric.desc }

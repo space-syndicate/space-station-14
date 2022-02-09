@@ -1,6 +1,6 @@
-ent-RandomPosterAny = { "" }
+ent-RandomPosterAny = random poster spawner
     .desc = { ent-MarkerBase.desc }
-ent-RandomPosterContraband = { "" }
+ent-RandomPosterContraband = random contraband poster spawner
     .desc = { ent-MarkerBase.desc }
-ent-RandomPosterLegit = { "" }
+ent-RandomPosterLegit = random legit poster spawner
     .desc = { ent-MarkerBase.desc }

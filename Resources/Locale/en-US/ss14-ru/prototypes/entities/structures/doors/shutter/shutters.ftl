@@ -15,5 +15,3 @@ ent-ShuttersWindow = window shutters
 ent-ShuttersWindowOpen = { ent-ShuttersWindow }
     .suffix = Open
     .desc = { ent-ShuttersWindow.desc }
-ent-ShuttersFrame = shutter frame
-    .desc = A frame for constructing a shutter.

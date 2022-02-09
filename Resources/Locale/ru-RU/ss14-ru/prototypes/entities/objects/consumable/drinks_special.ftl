@@ -1,6 +1,6 @@
-ent-DrinkShaker = { "" }
+ent-DrinkShaker = shaker
     .desc = { ent-BaseItem.desc }
-ent-DrinkShotGlass = { "" }
+ent-DrinkShotGlass = shot glass
     .desc = { ent-DrinkGlassBase.desc }
 ent-DrinkCarafe = pitcher
     .desc = A handled glass pitcher.

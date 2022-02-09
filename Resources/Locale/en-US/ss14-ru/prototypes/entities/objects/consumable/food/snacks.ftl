@@ -1,5 +1,5 @@
-ent-FoodSnackBase = { ent-FoodBase }
-    .desc = { ent-FoodBase.desc }
+ent-FoodSnackBase = { ent-BaseItem }
+    .desc = { ent-BaseItem.desc }
 ent-FoodSnackBoritos = boritos
     .desc = Crunchy, salty tortilla chips. You could probably make nachos with these.
 ent-FoodSnackCheesie = cheesie honkers

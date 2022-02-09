@@ -14,5 +14,3 @@ ent-ShotgunPump = Kammerer
     .desc = When an old Remington design meets modern materials, this is the result. A favourite weapon of militia forces throughout many worlds.
 ent-ShotgunSawn = sawn-off shotgun
     .desc = Omar's coming!
-ent-FlareGun = flare gun
-    .desc = A compact, single-shot pistol that fires shotgun shells.

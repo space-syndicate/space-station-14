@@ -32,5 +32,3 @@ ent-SuperSynthesizerInstrument = super synthesizer
     .desc = Blasting the ghetto with Touhou MIDIs since 2020.
 ent-XylophoneInstrument = xylophone
     .desc = Rainbow colored glockenspiel.
-ent-PhoneInstrument = red phone
-    .desc = Should anything ever go wrong...

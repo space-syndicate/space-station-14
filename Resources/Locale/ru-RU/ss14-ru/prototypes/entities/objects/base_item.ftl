@@ -1,2 +1,2 @@
-ent-BaseItem = { "" }
+ent-BaseItem = item
     .desc = { "" }

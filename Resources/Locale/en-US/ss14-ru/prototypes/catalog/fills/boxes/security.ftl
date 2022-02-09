@@ -6,7 +6,3 @@ ent-BoxSechud = sechud box
     .desc = A box of security glasses.
 ent-BoxZiptie = ziptie box
     .desc = A box full of zipties.
-ent-BoxBeanbag = box of beanbag shots
-    .desc = A box full of beanbag shots, designed for riot shotguns.
-ent-BoxLethalshot = box of lethal shots
-    .desc = A box full of lethal shots, designed for riot shotguns.
