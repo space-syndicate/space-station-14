@@ -161,6 +161,12 @@ namespace Content.Shared.CCVar
         public static readonly CVarDef<string> DiscordAHelpWebhook =
             CVarDef.Create("discord.ahelp_webhook", string.Empty, CVar.SERVERONLY);
 
+        public static readonly CVarDef<string> DiscordRoundWebhook =
+            CVarDef.Create("discord.new_round_webhook", string.Empty, CVar.SERVERONLY);
+
+        public static readonly CVarDef<string> DiscordRoundRoleId =
+            CVarDef.Create("discord.new_round_roleid", string.Empty, CVar.SERVERONLY);
+
         /*
          * Suspicion
          */
