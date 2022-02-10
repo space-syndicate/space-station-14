@@ -15,14 +15,26 @@ namespace Content.Server.GameTicking
             var sendsWebhook = DiscordWebhook != string.Empty;
             if (sendsWebhook)
             {
-                var payload = new WebhookPayload()
+                WebhookPayload payload;
+
+                if (DiscordRoleId != string.Empty)
                 {
-                    Content = $"<@&{DiscordRoleId}> {Loc.GetString("discord-round-new")}",
-                    AllowedMentions = new Dictionary<string, string[]>
+                    payload = new WebhookPayload()
                     {
-                        { "roles", new []{ DiscordRoleId } }
-                    },
-                };
+                        Content = $"<@&{DiscordRoleId}> {Loc.GetString("discord-round-new")}",
+                        AllowedMentions = new Dictionary<string, string[]>
+                        {
+                            { "roles", new []{ DiscordRoleId } }
+                        },
+                    };
+                }
+                else
+                {
+                    payload = new WebhookPayload()
+                    {
+                        Content = Loc.GetString("discord-round-new"),
+                    };
+                }
 
                 var request = await _httpClient.PostAsync(DiscordWebhook,
                     new StringContent(JsonSerializer.Serialize(payload), Encoding.UTF8, "application/json"));
