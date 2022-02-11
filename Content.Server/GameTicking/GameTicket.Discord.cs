@@ -15,7 +15,10 @@ namespace Content.Server.GameTicking
             var sendsWebhook = DiscordWebhook != string.Empty;
             if (sendsWebhook)
             {
-                WebhookPayload payload;
+                var payload = new WebhookPayload()
+                {
+                    Content = Loc.GetString("discord-round-new"),
+                };
 
                 if (DiscordRoleId != string.Empty)
                 {
@@ -26,13 +29,6 @@ namespace Content.Server.GameTicking
                         {
                             { "roles", new []{ DiscordRoleId } }
                         },
-                    };
-                }
-                else
-                {
-                    payload = new WebhookPayload()
-                    {
-                        Content = Loc.GetString("discord-round-new"),
                     };
                 }
 
