@@ -6,3 +6,4 @@ ent-Sink = sink
     .desc = { ent-SinkEmpty.desc }
 ent-SinkWide = wide sink
     .desc = { ent-Sink.desc }
+    .suffix = { "" }

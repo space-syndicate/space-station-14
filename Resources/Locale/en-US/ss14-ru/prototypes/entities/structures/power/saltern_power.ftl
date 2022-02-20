@@ -1,8 +1,12 @@
 ent-SalternGenerator = { ent-BaseGenerator }
     .desc = { ent-BaseGenerator.desc }
+    .suffix = { "" }
 ent-SalternSMES = { ent-BaseSMES }
     .desc = { ent-BaseSMES.desc }
+    .suffix = { "" }
 ent-SalternSubstation = { ent-BaseSubstation }
     .desc = { ent-BaseSubstation.desc }
+    .suffix = { "" }
 ent-SalternAPC = { ent-BaseAPC }
     .desc = { ent-BaseAPC.desc }
+    .suffix = { "" }

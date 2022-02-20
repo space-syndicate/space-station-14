@@ -1,5 +1,6 @@
 ent-BaseLightStructure = { ent-BaseStructure }
     .desc = { ent-BaseStructure.desc }
+    .suffix = { "" }
 ent-LightPostSmall = post light
     .desc = An unpowered light.
     .suffix = Unpowered
