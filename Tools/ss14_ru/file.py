@@ -33,13 +33,10 @@ class File:
         return os.path.relpath(self.get_parent_dir(), base_path)
 
     def get_parent_dir(self):
-        splitted_path = self.full_path.split('/')[0:-1]
-        return '/'.join(splitted_path)
+        return os.path.dirname(self.full_path)
 
     def get_name(self):
-        relative_path_without_extension = self.get_relative_path_without_extension(self.full_path).split('/')
-
-        return relative_path_without_extension[len(relative_path_without_extension) - 1]
+        return os.path.basename(self.full_path).split('.')[0]
 
 
 class FluentFile(File):
