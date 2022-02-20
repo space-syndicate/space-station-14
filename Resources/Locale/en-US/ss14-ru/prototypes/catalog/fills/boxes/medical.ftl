@@ -6,3 +6,5 @@ ent-BoxSterile = sterile box
     .desc = This box contains sterile medical masks.
 ent-BoxLatex = latex box
     .desc = Contains sterile latex gloves.
+ent-BoxBodyBag = body bag box
+    .desc = Contains body bags.

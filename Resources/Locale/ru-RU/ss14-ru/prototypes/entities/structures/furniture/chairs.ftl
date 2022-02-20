@@ -16,3 +16,7 @@ ent-ChairWood = деревянный стул
     .desc = { ent-SeatBase.desc }
 ent-ChairPilotSeat = кресло пилота
     .desc = Кресло пилота престижного корабля.
+ent-ChairRitual = ritual chair
+    .desc = Looks uncomfortable.
+ent-ChairCursed = cursed chair
+    .desc = It's staring back.

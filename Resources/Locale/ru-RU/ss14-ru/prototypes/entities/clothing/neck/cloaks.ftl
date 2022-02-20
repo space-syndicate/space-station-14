@@ -14,3 +14,5 @@ ent-ClothingNeckCloakHop = head of personnel's cloak
     .desc = A blue cloak with red shoudlers and gold buttons, proving you are the gatekeeper to any airlock on the station.
 ent-ClothingNeckCloakHerald = Herald's cloak
     .desc = An evil-looking red cloak with spikes on its shoulders.
+ent-ClothingNeckCloakNanotrasen = nanotrasen cloak
+    .desc = A stately blue cloak to represent NanoTrasen.

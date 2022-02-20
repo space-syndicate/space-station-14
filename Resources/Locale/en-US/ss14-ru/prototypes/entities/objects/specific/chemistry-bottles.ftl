@@ -10,3 +10,5 @@ ent-ChemistryEmptyBottle04 = bottle
     .desc = { ent-BaseChemistryEmptyBottle.desc }
 ent-EpinephrineChemistryBottle = epinephrine bottle
     .desc = { ent-BaseChemistryEmptyBottle.desc }
+ent-RobustHarvestChemistryBottle = robust harvest bottle
+    .desc = This will increase the potency of your plants.

@@ -8,3 +8,5 @@ ent-CigPackBlue = пачка сигарет AcmeCo
     .desc = Для тех, кто зачем-то хочет побить рекорд по наибольшему количеству раковых опухолей.
 ent-CigPackBlack = пачка сигарет Nomads
     .desc = "Nomads's extra strong" для тех случаев, когда ваша жизнь становится слишком тяжёлой.
+ent-CigPackSyndicate = Syndicate Smokes packet
+    .desc = Elite cigarettes for elite agents. Infused with medicine for when you need to do more than calm your nerves.

@@ -1,5 +1,5 @@
 ent-CartridgeLRifleBase = cartridge (.30 rifle)
-    .desc = { ent-BaseItem.desc }
+    .desc = { ent-BaseCartridge.desc }
 ent-CartridgeLRifle = cartridge (.30 rifle)
     .desc = { ent-CartridgeLRifleBase.desc }
 ent-CartridgeLRifleFlash = cartridge (.30 rifle flash)

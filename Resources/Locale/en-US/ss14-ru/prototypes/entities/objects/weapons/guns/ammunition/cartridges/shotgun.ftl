@@ -1,8 +1,10 @@
 ent-ShellShotgunBase = shell (.50)
-    .desc = { ent-BaseItem.desc }
+    .desc = { ent-BaseCartridge.desc }
 ent-ShellShotgunBeanbag = shell (.50 beanbag)
     .desc = { ent-ShellShotgunBase.desc }
 ent-ShellShotgunSlug = shell (.50 slug)
+    .desc = { ent-ShellShotgunBase.desc }
+ent-ShellShotgunFlare = shell (.50 flare)
     .desc = { ent-ShellShotgunBase.desc }
 ent-ShellShotgun = shell (.50)
     .desc = { ent-ShellShotgunBase.desc }

@@ -24,3 +24,5 @@ ent-ClothingHandsGlovesCombat = combat gloves
     .desc = These tactical gloves are fireproof and shock resistant.
 ent-ClothingHandsGlovesAerostatic = aerostatic gloves
     .desc = Breathable red gloves for expert handling of a pen and notebook.
+ent-ClothingHandsGlovesFingerless = fingerless gloves
+    .desc = Plain black gloves without fingertips for the hard working.

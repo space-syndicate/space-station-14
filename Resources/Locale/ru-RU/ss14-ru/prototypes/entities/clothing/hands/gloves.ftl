@@ -24,3 +24,5 @@ ent-ClothingHandsGlovesCombat = боевые перчатки
     .desc = Эти тактические перчатки огнеупорны и ударопрочны.
 ent-ClothingHandsGlovesAerostatic = аэростатические перчатки
     .desc = Дышащие красные перчатки для профессиональной работы с ручкой и блокнотом.
+ent-ClothingHandsGlovesFingerless = fingerless gloves
+    .desc = Plain black gloves without fingertips for the hard working.

@@ -1,5 +1,5 @@
-ent-FoodBowlBase = { ent-BaseItem }
-    .desc = { ent-BaseItem.desc }
+ent-FoodBowlBase = { ent-FoodBase }
+    .desc = { ent-FoodBase.desc }
 ent-FoodSoupPea = pea soup
     .desc = A humble split pea soup.
 ent-FoodSaladAesir = aesir salad
@@ -30,6 +30,8 @@ ent-FoodOatmeal = oatmeal
     .desc = A nice bowl of oatmeal.
 ent-FoodJellyDuff = space liberty duff
     .desc = Jello gelatin, from Alfred Hubbard's cookbook.
+ent-FoodJellyAmanita = amanita jelly
+    .desc = It's evil, don't touch it!
 ent-FoodSoupMeatball = meatball soup
     .desc = You've got balls kid, BALLS!
 ent-FoodSoupSlime = slime soup

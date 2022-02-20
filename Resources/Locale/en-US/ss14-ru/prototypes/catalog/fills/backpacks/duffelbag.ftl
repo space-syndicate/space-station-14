@@ -18,3 +18,5 @@ ent-ClothingBackpackDuffelSyndicateCostumeCentcom = Centcom official costume duf
     .desc = Contains a full CentCom Official uniform set, headset and clipboard included. The headset comes without an encryption key.
 ent-ClothingBackpackDuffelSyndicateCostumeClown = clown costume duffel bag
     .desc = Contains a complete Clown outfit.
+ent-ClothingBackpackDuffelSyndicatePyjamaBundle = syndicate pyjama duffel bag
+    .desc = Contains 3 syndicate pyjamas.

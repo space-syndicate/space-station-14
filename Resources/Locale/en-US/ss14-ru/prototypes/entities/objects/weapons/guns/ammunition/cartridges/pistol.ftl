@@ -1,5 +1,5 @@
 ent-CartridgePistolBase = cartridge (.35 auto)
-    .desc = { ent-BaseItem.desc }
+    .desc = { ent-BaseCartridge.desc }
 ent-CartridgePistol = cartridge (.35 auto)
     .desc = { ent-CartridgePistolBase.desc }
 ent-CartridgePistolFlash = cartridge (.35 auto flash)

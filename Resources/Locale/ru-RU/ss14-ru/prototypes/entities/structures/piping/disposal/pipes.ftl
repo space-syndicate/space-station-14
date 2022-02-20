@@ -1,3 +1,5 @@
+ent-DisposalPipeBroken = broken disposal pipe
+    .desc = A BBP (big broken pipe)
 ent-DisposalPipe = disposal pipe segment
     .desc = A huge pipe segment used for constructing disposal systems
 ent-DisposalTagger = disposal pipe tagger

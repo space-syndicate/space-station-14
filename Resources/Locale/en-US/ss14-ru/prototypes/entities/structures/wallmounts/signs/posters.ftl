@@ -27,11 +27,9 @@ ent-PosterContrabandRIPBadger = RIP Badger
 ent-PosterContrabandAmbrosiaVulgaris = Ambrosia Vulgaris
     .desc = This poster is lookin' pretty trippy man.
 ent-PosterContrabandDonutCorp = Donut Corp.
-
-  .desc = This poster is an unauthorized advertisement for Donut Corp.
+    .desc = This poster is an unauthorized advertisement for Donut Corp.
 ent-PosterContrabandEAT = EAT.
-
-  .desc = This poster promotes rank gluttony.
+    .desc = This poster promotes rank gluttony.
 ent-PosterContrabandTools = Tools
     .desc = This poster looks like an advertisement for tools, but is in fact a subliminal jab at the tools at CentCom.
 ent-PosterContrabandPower = Power

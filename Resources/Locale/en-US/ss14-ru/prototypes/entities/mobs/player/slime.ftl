@@ -1,2 +1,2 @@
-ent-SlimePerson = { ent-BaseSlimePerson }
-    .desc = { ent-BaseSlimePerson.desc }
+ent-MobSlimePerson = { ent-MobSlimePersonBase }
+    .desc = { ent-MobSlimePersonBase.desc }

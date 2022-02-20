@@ -6,3 +6,7 @@ ent-LightTube = люминесцентная световая трубка
     .desc = Это световая трубка.
 ent-LedLightTube = светодиодная световая трубка
     .desc = { ent-BaseLightbulb.desc }
+ent-ExteriorLightTube = exterior light tube
+    .desc = A high power high energy bulb for the depths of space. May contain mercury.
+ent-SodiumLightTube = sodium light tube
+    .desc = A high power high energy bulb for the depths of space. Salty.

@@ -8,3 +8,5 @@ ent-RevolverMateba = Mateba
     .desc = The iconic sidearm of the dreaded death squads.
 ent-RevolverPredator = Predator
     .desc = A robust revolver favoured by Syndicate agents.
+ent-RevolverPirate = pirate revolver
+    .desc = An odd, muzzle-loading revolver, favoured by pirate crews.

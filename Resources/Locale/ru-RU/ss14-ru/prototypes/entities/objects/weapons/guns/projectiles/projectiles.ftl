@@ -1,5 +1,7 @@
 ent-BulletBase = bulletbase
     .desc = If you can see this you're probably dead!
+ent-TriggerBulletBase = { ent-BulletBase }
+    .desc = { ent-BulletBase.desc }
 ent-BulletBaseFlash = base bullet flash
     .desc = { ent-BulletBase.desc }
 ent-BulletBaseHV = base bullet high-velocity

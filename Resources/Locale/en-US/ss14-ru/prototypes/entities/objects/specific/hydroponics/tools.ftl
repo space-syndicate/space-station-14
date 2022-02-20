@@ -8,3 +8,5 @@ ent-HydroponicsToolHatchet = hatchet
     .desc = A very sharp axe blade upon a short fibremetal handle. It has a long history of chopping things, but now it is used for chopping wood.
 ent-HydroponicsToolSpade = spade
     .desc = A small tool for digging and moving dirt.
+ent-PlantBag = plant bag
+    .desc = A bag for botanists to easily move their huge harvests.

@@ -1,5 +1,5 @@
 ent-CartridgeMagnumBase = cartridge (.40 magnum)
-    .desc = { ent-BaseItem.desc }
+    .desc = { ent-BaseCartridge.desc }
 ent-CartridgeMagnum = cartridge (.40 magnum)
     .desc = { ent-CartridgeMagnumBase.desc }
 ent-CartridgeMagnumFlash = cartridge (.40 magnum flash)

@@ -4,3 +4,5 @@ ent-SpawnMobCat = Cat Spawner
     .desc = { ent-MarkerBase.desc }
 ent-SpawnMobCorgi = Corgi Spawner
     .desc = { ent-MarkerBase.desc }
+ent-SpawnMobDrone = Drone Spawner
+    .desc = { ent-MarkerBase.desc }

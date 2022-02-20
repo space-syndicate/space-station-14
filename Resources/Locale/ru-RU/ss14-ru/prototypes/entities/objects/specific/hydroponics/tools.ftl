@@ -8,3 +8,5 @@ ent-HydroponicsToolHatchet = топорик
     .desc = Очень острое лезвие топора на короткой фиберметаллической рукоятке. У него долгая историю измельчения предметов, но сейчас используется для колки дров.
 ent-HydroponicsToolSpade = лопатка
     .desc = Небольшой инструмент для копания и перемещения грунта.
+ent-PlantBag = plant bag
+    .desc = A bag for botanists to easily move their huge harvests.

@@ -18,3 +18,5 @@ ent-ClothingOuterArmorRiot = riot suit
     .desc = An armored vest with heavy padding to protect against melee attacks, perfect for fighting delinquents around the station.
 ent-ClothingOuterArmorScaf = scaf suit
     .desc = A green and brown tactical suit for combat situations.
+ent-ClothingOuterArmorCaptainCarapace = captain's carapace
+    .desc = An armored chestpiece that provides protection whilst still offering maximum mobility and flexibility. Issued only to the station's finest.

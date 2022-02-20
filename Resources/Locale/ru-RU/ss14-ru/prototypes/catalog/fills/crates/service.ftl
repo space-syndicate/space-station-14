@@ -8,3 +8,5 @@ ent-CrateServiceCustomSmokable = DIY smokeables crate
     .desc = Want to get a little creative with what you use to destroy your lungs? Then this crate is for you! Has everything you need to roll your own Cigarettes.
 ent-CrateServiceBureaucracy = bureaucracy crate
     .desc = Several stacks of paper and a few pens, what more can you ask for.
+ent-CrateServicePersonnel = personnel crate
+    .desc = Contains a box of blank ID cards and PDAs.
