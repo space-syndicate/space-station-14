@@ -110,3 +110,14 @@
       sprite: Clothing/Shoes/Misc/kim.rsi
     - type: Clothing
       sprite: Clothing/Shoes/Misc/kim.rsi
+
+- type: entity
+  parent: ClothingShoesBase
+  id: ClothingShoesCentcomBlack
+  name: centcom black shoes
+  description: Menacing walk.
+  components:
+    - type: Sprite
+      sprite: Clothing/Shoes/Specific/centcom_officer_black.rsi
+    - type: Clothing
+      sprite: Clothing/Shoes/Specific/centcom_officer_black.rsi
