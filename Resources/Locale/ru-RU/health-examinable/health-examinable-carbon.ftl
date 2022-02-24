@@ -4,7 +4,7 @@ health-examinable-carbon-Blunt-50 = [color=crimson]{ CAPITALIZE($target) } им�
 health-examinable-carbon-Blunt-75 = [color=crimson]{ CAPITALIZE($target) } имеет сильные ушибы по всему телу![/color]
 health-examinable-carbon-Slash-10 = [color=red]{ CAPITALIZE($target) } имеет несколько лёгких порезов.[/color]
 health-examinable-carbon-Slash-25 = [color=red]{ CAPITALIZE($target) } имеет серьёзные порезы на теле.[/color]
-health-examinable-carbon-Slash-50 = [color=crimson]{ CAPITALIZE($target) } имеет множествво сильных порезов![/color]
+health-examinable-carbon-Slash-50 = [color=crimson]{ CAPITALIZE($target) } имеет множество сильных порезов![/color]
 health-examinable-carbon-Slash-75 = [color=crimson]Тело { CAPITALIZE($target) } сильно изрезано![/color]
 health-examinable-carbon-Piercing-50 = [color=crimson]{ CAPITALIZE($target) } имеет глубокие раны на теле![/color]
 health-examinable-carbon-Heat-25 = [color=orange]{ CAPITALIZE($target) } имеет лёгкие ожоги на теле.[/color]
