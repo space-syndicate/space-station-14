@@ -1,7 +1,7 @@
 ## Phrases used for where central command got this information.
 
 random-sentience-event-data-1 = сканирование сенсорами дальнего действия
-random-sentience-event-data-2 = наши сложные вероятно-статистические модели
+random-sentience-event-data-2 = наши сложные статистические модели вероятности
 random-sentience-event-data-3 = наше всемогущество
 random-sentience-event-data-4 = коммуникационный трафик с вашей станции
 random-sentience-event-data-5 = обнаруженные нами энергетические всплески
