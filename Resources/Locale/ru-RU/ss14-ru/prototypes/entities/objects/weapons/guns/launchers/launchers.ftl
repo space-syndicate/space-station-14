@@ -1,7 +1,7 @@
 ent-LauncherBase = Launcher Base
     .desc = A rooty tooty point and shooty.
     .suffix = { "" }
-ent-LauncherChinaLake = чайна лэйк
+ent-LauncherChinaLake = China Lake
     .desc = БЛУП
     .suffix = { "" }
 ent-LauncherRocket = РПГ-7
