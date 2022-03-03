@@ -25,7 +25,6 @@ ent-TritiumCanister = канистра трития
 ent-WaterVaporCanister = канистра водяного пара
     .desc = { ent-GasCanister.desc }
     .suffix = { "" }
-
 ent-GasCanisterBrokenBase = разбитая канистра для газа
     .desc = Разбитая канистра для газа. Не совсем бесполезна, так как может быть разобрана для получения высококачественных материалов.
     .suffix = { "" }
