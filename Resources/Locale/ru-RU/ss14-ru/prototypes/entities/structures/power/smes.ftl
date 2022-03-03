@@ -1,3 +1,3 @@
-ent-BaseSMES = SMES
-    .desc = A high-capacity superconducting magnetic energy storage (SMES) unit.
+ent-BaseSMES = СМЭХ
+    .desc = Сверхпроводящее Магнитное ЭнергоХранилище (СМЭХ) большой емкости.
     .suffix = { "" }
