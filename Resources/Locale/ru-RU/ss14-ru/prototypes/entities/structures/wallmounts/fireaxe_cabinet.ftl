@@ -8,5 +8,5 @@ ent-FireAxeCabinetFilled = { ent-FireAxeCabinet }
     .suffix = Наполненный
     .desc = { ent-FireAxeCabinet.desc }
 ent-FireAxeCabinetFilledOpen = { ent-FireAxeCabinetFilled }
-    .suffix = Открытый наполненный
+    .suffix = Открытый, Наполненный
     .desc = { ent-FireAxeCabinetFilled.desc }
