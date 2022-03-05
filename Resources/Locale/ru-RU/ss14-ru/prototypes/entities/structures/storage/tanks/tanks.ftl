@@ -1,8 +1,8 @@
 ent-WeldingFuelTank = топливный резервуар
     .desc = Топливный резервуар. Используется для хранения большого количества топлива.
     .suffix = Пустой
-ent-WeldingFuelTankFull = fuel tank
-    .desc = A storage tank containing welding fuel.
+ent-WeldingFuelTankFull = топливный резервуар
+    .desc = Резервуар для хранения сварочного топлива.
     .suffix = Заполненный
 ent-WaterTank = водяной резервуар
     .desc = Резервуар для воды. Используется для хранения большого количества воды.
