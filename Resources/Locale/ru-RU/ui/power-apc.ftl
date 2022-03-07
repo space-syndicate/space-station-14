@@ -6,6 +6,6 @@ apc-menu-charge-label = Заряд:{ " " }
 
 # For the power state label
 
-apc-menu-power-state-good = Хороший
-apc-menu-power-state-low = Низкий
+apc-menu-power-state-good = Хорошее
+apc-menu-power-state-low = Слабое
 apc-menu-power-state-none = Отсутствует
