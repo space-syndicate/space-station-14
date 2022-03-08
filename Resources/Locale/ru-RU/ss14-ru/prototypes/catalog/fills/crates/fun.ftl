@@ -1,12 +1,12 @@
-ent-CrateFunPlushie = ящик плюшевых игрушек
+ent-CrateFunPlushie = plushie crate
     .desc = { ent-CrateGenericSteel.desc }
     .suffix = { "" }
-ent-CrateFunInstruments = коллекция музыкальных инструментов
-    .desc = Развеселите и расшевелите станцию с помощью этой прекрасной коллекцией! Содержит тринадцать различных инструментов.
+ent-CrateFunInstruments = big band instrument collection
+    .desc = Get your sad station movin' and groovin' with this fine collection! Contains thirteen different instruments.
     .suffix = { "" }
-ent-CrateFunArtSupplies = художественные принадлежности
+ent-CrateFunArtSupplies = art supplies
     .desc = { ent-CrateGenericSteel.desc }
     .suffix = { "" }
-ent-CrateFunBoardGames = ящик настольных игр
+ent-CrateFunBoardGames = board game crate
     .desc = { ent-CrateGenericSteel.desc }
     .suffix = { "" }

@@ -13,6 +13,6 @@ ent-CrateEngineeringCableMV = ящик кабелей среднего напр�
 ent-CrateEngineeringCableHV = ящик высоковольтных кабелей
     .desc = { ent-CrateElectrical.desc }
     .suffix = { "" }
-ent-CrateEngineeringCableBulk = ящик различных кабелей
+ent-CrateEngineeringCableBulk = ящик кабелей
     .desc = { ent-CrateElectrical.desc }
     .suffix = { "" }
