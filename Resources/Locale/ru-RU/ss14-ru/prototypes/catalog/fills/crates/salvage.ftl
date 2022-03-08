@@ -1,6 +1,6 @@
-ent-CrateSalvageEquipment = salvage equipment crate
-    .desc = For the daring.
-    .suffix = Filled
+ent-CrateSalvageEquipment = ящик снаряжения для утилизации
+    .desc = Для смелых.
+    .suffix = Заполненный
 ent-CrateSalvageAssortedGoodies = { ent-CrateGenericSteel }
-    .suffix = Filled, Salvage Random
+    .suffix = Заполненный, Случайный утиль
     .desc = { ent-CrateGenericSteel.desc }

@@ -1,9 +1,9 @@
-ent-CrateHydroponicsSeedsExotic = exotic seeds crate
-    .desc = Any entrepreneuring botanist's dream. Contains many different exotic seeds. Requires Hydroponics access to open.
+ent-CrateHydroponicsSeedsExotic = ящик экзотических семян
+    .desc = Мечта любого опытного ботаника. Содержит много различных экзотических семян. Чтобы открыть необходим доступ к отделу Гидропоники.
     .suffix = { "" }
-ent-CrateHydroponicsTools = hydroponics equipment crate
-    .desc = Supplies for growing a great garden! Contains some spray bottles of plant chemicals, a hatchet, a mini-hoe, scythe, as well as a pair of leather gloves and a botanist's apron.
+ent-CrateHydroponicsTools = ящик с оборудованием для гидропоники
+    .desc = Всё что надо чтобы вырастить отличный сад! Содержит несколько спреев с химикатами для растений, топорик, мини-мотыгу, косу, а также пару кожаных перчаток и ботанический фартук.
     .suffix = { "" }
-ent-CrateHydroponicsSeeds = seeds crate
-    .desc = Big things have small beginnings. Contains ten different seeds.
+ent-CrateHydroponicsSeeds = ящик семян
+    .desc = Большие дела начинаются с малого. Содержит десять различных семян.
     .suffix = { "" }
