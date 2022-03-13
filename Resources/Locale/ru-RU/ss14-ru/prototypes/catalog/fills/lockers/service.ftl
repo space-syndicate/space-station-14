@@ -14,5 +14,5 @@ ent-LockerBotanistFilled = { ent-LockerBotanist }
     .suffix = Заполненный
     .desc = { ent-LockerBotanist.desc }
 ent-LockerBotanistLoot = { ent-LockerBotanist }
-    .suffix = Loot (увидите напишите в чат переводы)
+    .suffix = Loot (увидите - напишите в чат переводы)
     .desc = { ent-LockerBotanist.desc }
