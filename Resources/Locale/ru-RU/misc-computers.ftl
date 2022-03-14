@@ -1,1 +1,1 @@
-radar-window-title = Терминал детектора массы
+radar-window-title = Терминал детектора масс
