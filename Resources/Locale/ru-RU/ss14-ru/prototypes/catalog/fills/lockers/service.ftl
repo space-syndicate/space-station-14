@@ -14,5 +14,5 @@ ent-LockerBotanistFilled = { ent-LockerBotanist }
     .suffix = Заполненный
     .desc = { ent-LockerBotanist.desc }
 ent-LockerBotanistLoot = { ent-LockerBotanist }
-    .suffix = Добытый
+    .suffix = Лут
     .desc = { ent-LockerBotanist.desc }
