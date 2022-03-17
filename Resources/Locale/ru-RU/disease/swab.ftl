@@ -1,5 +1,5 @@
-swab-already-used = Вы уже использовали этот зонд.
-swab-swabbed = Вы зондируете рот { $target }.
+swab-already-used = Вы уже использовали эту ватную палочку.
+swab-swabbed = Вы берёте мазок изо рта { $target }.
 swab-mask-blocked = { CAPITALIZE($target) } должен снять с лица { $mask }.
-swab-used = Он выглядит так, будто им уже пользовались.
-swab-unused = Он чист и готов к использованию.
+swab-used = Она выглядит использованной.
+swab-unused = Она чиста и готова к использованию.
