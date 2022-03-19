@@ -1,9 +1,9 @@
 ent-InflatableWallStack = надувная баррикада
     .desc = Сложенная мембрана, которая быстро расширяется в большую кубическую форму при активации.
-    .suffix = Полная
+    .suffix = Полный
 ent-InflatableDoorStack = надувная дверь
     .desc = Сложенная мембрана, которая быстро расширяется в большую кубическую форму при активации.
-    .suffix = Полная
+    .suffix = Полный
 ent-InflatableWallStack1 = { ent-InflatableWallStack }
     .suffix = 1
     .desc = { ent-InflatableWallStack.desc }
