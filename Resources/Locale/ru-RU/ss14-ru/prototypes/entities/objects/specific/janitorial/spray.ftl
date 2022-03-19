@@ -1,7 +1,7 @@
-ent-SprayBottle = бутылка-спрей
-    .desc = Бутылка-спрей с отвинчивающимся верхом.
+ent-SprayBottle = распылитель
+    .desc = Распылитель с отвинчивающимся верхом.
     .suffix = Пустая
-ent-SprayBottleWater = бутылка-спрей
+ent-SprayBottleWater = распылитель
     .suffix = Полная
     .desc = { ent-SprayBottle.desc }
 ent-SprayBottleSpaceCleaner = очиститель пространства
