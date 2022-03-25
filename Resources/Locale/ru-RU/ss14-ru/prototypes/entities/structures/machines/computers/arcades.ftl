@@ -4,6 +4,6 @@ ent-ArcadeBase = аркада
 ent-SpaceVillainArcade = { ent-ArcadeBase }
     .desc = { ent-ArcadeBase.desc }
     .suffix = { "" }
-ent-BlockGameArcade = НТ тетрис
+ent-BlockGameArcade = НТ блоки
     .desc = Игровой автомат со странно знакомой игрой.
     .suffix = { "" }
