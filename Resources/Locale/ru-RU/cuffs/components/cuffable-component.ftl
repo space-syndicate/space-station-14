@@ -4,19 +4,19 @@ cuffable-component-start-removing-cuffs-message = Вы начинаете сни
 cuffable-component-remove-cuffs-success-message = Вы успешно снимаете наручники.
 cuffable-component-remove-cuffs-by-other-success-message = { $otherName } снимает с вас наручники.
 cuffable-component-remove-cuffs-to-other-partial-success-message = 
-    Вы успешно снимаете наручники. { $cuffedHandCount ->
+    Вы успешно снимаете наручники. { $cuffedHandCount } { $cuffedHandCount ->
         [one] рука осталась
-        [few] рук остались
+        [few] руки остались
        *[other] рук остались
     } у { $otherName } в наручниках.
 cuffable-component-remove-cuffs-by-other-partial-success-message =
-    { $otherName } успешно снимает с вас наручники. { $cuffedHandCount ->
+    { $otherName } успешно снимает с вас наручники. { $cuffedHandCount } { $cuffedHandCount ->
         [one] ваша рука осталась
         [few] ваши руки остаются
        *[other] ваши руки остаются
      } в наручниках.
 cuffable-component-remove-cuffs-partial-success-message =
-    Вы успешно снимаете наручники. { $cuffedHandCount ->
+    Вы успешно снимаете наручники. { $cuffedHandCount } { $cuffedHandCount ->
         [one] ваша рука осталась
         [few] ваши руки остаются
        *[other] ваши руки остаются
