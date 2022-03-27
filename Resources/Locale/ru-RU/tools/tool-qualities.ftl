@@ -1,8 +1,8 @@
 tool-quality-anchoring-name = Закрепление
 tool-quality-anchoring-tool-name = Гаечный ключ
-tool-quality-prying-name = Выдирание
+tool-quality-prying-name = Монтирование
 tool-quality-prying-tool-name = Лом
-tool-quality-screwing-name = Завинчивание\развинчивание
+tool-quality-screwing-name = Свинчивание
 tool-quality-screwing-tool-name = Отвертка
 tool-quality-cutting-name = Резка
 tool-quality-cutting-tool-name = Кусачки
