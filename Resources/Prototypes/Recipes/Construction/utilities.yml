@@ -90,7 +90,24 @@
   objectType: Structure
   placementMode: SnapgridCenter
   canBuildInImpassable: true
-
+  
+  # BUTTON
+  - type: construction
+  name: signal button
+  id: SignalButtonRecipe
+  graph: SignalButton
+  startNode: start
+  targetNode: SignalButton
+  category: Structures
+  description: "A switch for toggling lights that are connected to the same apc."
+  icon:
+    sprite: Structures/Wallmounts/switch.rsi
+    state: on
+  objectType: Utilities
+  placementMode: SnapgridCenter
+  canRotate: true
+  canBuildInImpassable: true
+  
 # DISPOSALS
 - type: construction
   name: disposal unit
