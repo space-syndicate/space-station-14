@@ -6,13 +6,13 @@
   dollPrototype: MobHumanDummy
   skinColoration: HumanToned
 
-#- type: species
-#  id: Dwarf
-#  name: Dwarf
-#  roundStart: true
-#  prototype: MobDwarf
-#  dollPrototype: MobDwarfDummy
-#  skinColoration: HumanToned
+- type: species
+  id: Dwarf
+  name: Dwarf
+  roundStart: false
+  prototype: MobDwarf
+  dollPrototype: MobDwarfDummy
+  skinColoration: HumanToned
 
 - type: species
   id: Reptilian
