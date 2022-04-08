@@ -3,13 +3,13 @@
 
 ### Solars
 
-ent-solar-tracker = solar tracker
-    .desc = A solar tracker. Can be wired to a solar array and computer to track solar positions.
-ent-solar-assembly = solar assembly
-    .desc = A solar assembly. Anchor to a wire to start building a solar panel.
-ent-solar-panel = solar panel
-    .desc = Generates power from sunlight. Usually used to power replacements for sunlight. Fragile.
-ent-solar-tracker-electronics = solar tracker electronics
-    .desc = An electronics board for making a solar tracker.
-ent-solar-assembly-part = solar assembly parts
-    .desc = Used in the construction of solar assemblies for solar panels and trackers.
+ent-solar-tracker = солнечный трекер
+    .desc = Солнечный трекер. Может быть подключен к солнечной панели и компьютеру для отслеживания положения солнечных панелей.
+ent-solar-assembly = солнечный каркас
+    .desc = Солнечный каркас. Установите на провод, чтобы начать сборку солнечной батареи.
+ent-solar-panel = солнечная панель
+    .desc = Вырабатывает энергию из солнечного света. Обычно используется для питания заменителей солнечного света. Хрупкая.
+ent-solar-tracker-electronics = микросхема солнечного трекера
+    .desc = Микросхема для создания солнечного трекера.
+ent-solar-assembly-part = деталь солнечного каркаса
+    .desc = Используется для создания солнечной сборки, из которой можно собрать солнечную панель или трекер.

@@ -1,3 +1,3 @@
-ent-TimerTrigger = timer trigger
-    .desc = A configurable timer.
+ent-TimerTrigger = детонатор-таймер
+    .desc = Настраиваемый таймер.
     .suffix = { "" }
