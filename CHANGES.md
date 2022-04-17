@@ -4,7 +4,7 @@ Main changes of this downstream:
   * Accents
   * Some sprites (direction signs)
 - Merging downstream changelog file with upstream changelog
-- Display round id at end round screen
+- ~~Display round id at end round screen~~
 - Gender division files of last names for name generator
 - More emotes for chat sanitization or cyrillic versions
 - System of Discord round status notification
