@@ -1,4 +1,4 @@
-ent-MobXeno = Ксенос
+ent-MobXeno = ксеноморф
     .desc = Обычно они приходят ночью. Обычно.
     .suffix = { "" }
 ent-MobPurpleSnake = пурпурная змея
