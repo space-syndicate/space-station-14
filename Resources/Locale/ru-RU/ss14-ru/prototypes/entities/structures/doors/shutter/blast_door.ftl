@@ -1,4 +1,4 @@
-ent-BlastDoor = гермозавтор
+ent-BlastDoor = гермозатвор
     .desc = Имеется надпись "ОПАСНОСТЬ ВЗРЫВА".
     .suffix = { "" }
 ent-BlastDoorOpen = { ent-BlastDoor }
