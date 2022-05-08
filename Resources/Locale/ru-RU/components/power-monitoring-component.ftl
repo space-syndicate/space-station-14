@@ -1,4 +1,4 @@
-power-monitoring-window-title = Терминал контроля питания
+power-monitoring-window-title = Компьютер контроля питания
 power-monitoring-window-tab-sources = Источники
 power-monitoring-window-tab-loads = Нагрузка
 power-monitoring-window-total-sources = Всего источников:
