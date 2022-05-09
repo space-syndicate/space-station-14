@@ -27,7 +27,7 @@ accent-words-mumble-3 = Мммф мпвф!
 accent-words-silicon-1 = Бип.
 accent-words-silicon-2 = Буп.
 accent-words-silicon-3 = Жжжж.
-accent-words-silicon-4 = Биб-бур.
+accent-words-silicon-4 = Биб-буп.
 
 # Xeno
 accent-words-xeno-1 = Хиссс.
