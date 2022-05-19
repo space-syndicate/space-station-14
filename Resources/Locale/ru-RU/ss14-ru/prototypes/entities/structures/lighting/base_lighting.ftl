@@ -25,7 +25,6 @@ ent-PoweredlightSodium = { ent-Poweredlight }
 ent-AlwaysPoweredLightSodium = { ent-AlwaysPoweredWallLight }
     .suffix = Всегда запитанный, Оранжевый, Натриевый
     .desc = { ent-AlwaysPoweredWallLight.desc }
-    
 ent-SmallLight = маленький светильник
     .desc = Всегда работающий светильник.
     .suffix = Всегда запитанный
