@@ -1,4 +1,4 @@
-alert-level-announcement = Внимание! Уровень опасности по станции теперь { $name }! { $announcement }
+alert-level-announcement = Внимание! Уровень угрозы станции теперь { $name }! { $announcement }
 alert-level-green = Зелёный
 alert-level-green-announcement = Можно безопасно возвращаться на свои рабочие места.
 alert-level-blue = Синий
