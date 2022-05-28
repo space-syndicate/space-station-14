@@ -1,7 +1,7 @@
 ent-SpawnMobMouse = Mouse Spawner
     .desc = { ent-MarkerBase.desc }
     .suffix = { "" }
-ent-SpawnMobCorgi = Corgi Spawner
+ent-SpawnMobCorgi = Ian Spawner
     .desc = { ent-MarkerBase.desc }
     .suffix = { "" }
 ent-SpawnMobPossumMorty = Possum Morty Spawner
@@ -41,5 +41,8 @@ ent-SpawnMobSlothPaperwork = Sloth Paperwork Spawner
     .desc = { ent-MarkerBase.desc }
     .suffix = { "" }
 ent-SpawnMobWalter = Walter Spawner
+    .desc = { ent-MarkerBase.desc }
+    .suffix = { "" }
+ent-SpawnMobBear = Space Bear Spawner
     .desc = { ent-MarkerBase.desc }
     .suffix = { "" }

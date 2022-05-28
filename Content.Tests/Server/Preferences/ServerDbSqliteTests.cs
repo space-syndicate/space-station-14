@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using Content.Server.Database;
 using Content.Shared.CharacterAppearance;
 using Content.Shared.GameTicking;
+using Content.Shared.Markings;
 using Content.Shared.Preferences;
 using Microsoft.Data.Sqlite;
 using Microsoft.EntityFrameworkCore;
@@ -34,14 +35,20 @@ namespace Content.Tests.Server.Preferences
   - Aaliyah
 
 - type: dataset
-  id: names_last
+  id: names_last_male
   values:
-  - Ackerley";
+  - Ackerley
+
+- type: dataset
+  id: names_last_female
+  values:
+  - Ackerla";
 
         private static HumanoidCharacterProfile CharlieCharlieson()
         {
             return new(
                 "Charlie Charlieson",
+                "The biggest boy around.",
                 "Human",
                 21,
                 Sex.Male,
@@ -52,7 +59,8 @@ namespace Content.Tests.Server.Preferences
                     "Shaved",
                     Color.Aquamarine,
                     Color.Azure,
-                    Color.Beige
+                    Color.Beige,
+                    new MarkingsSet()
                 ),
                 ClothingPreference.Jumpskirt,
                 BackpackPreference.Backpack,

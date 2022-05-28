@@ -4,7 +4,7 @@ ui-options-title = Игровые настройки
 ui-options-tab-graphics = Графика
 ui-options-tab-controls = Управление
 ui-options-tab-audio = Аудио
-ui-options-tab-network = Network
+ui-options-tab-network = Сеть
 ui-options-apply = Применить
 ui-options-reset-all = Сбросить всё
 
@@ -15,6 +15,8 @@ ui-options-midi-volume = MIDI (Инструменты) громкость:
 ui-options-ambience-volume = Громкость окружения:
 ui-options-ambience-max-sounds = Кол-во одновременных звуков окружения:
 ui-options-lobby-music = Музыка в лобби
+ui-options-station-ambience = Эмбиент станции
+ui-options-space-ambience = Эмбиент космоса
 ui-options-volume-label = Громкость
 ui-options-volume-percent = { TOSTRING($volume, "P0") }
 
@@ -49,6 +51,7 @@ ui-options-vp-integer-scaling-tooltip =
     means that black bars appear at the top/bottom of the screen or that part
     of the viewport is not visible.
 ui-options-vp-low-res = Low-resolution viewport
+ui-options-parallax-low-quality = Low-quality Parallax (background)
 ui-options-fps-counter = Показать счетчик FPS
 
 ## Controls menu
