@@ -1,0 +1,14 @@
+- type: entity
+  parent: ClothingMaskBase
+  id: CorvaxMaskErt
+  name: дыхательная маска ОБР
+  description: Дыхательная маска ОБР.
+  components:
+  - type: Sprite
+    sprite: Corvax/Clothing/Mask/ert_gas.rsi
+  - type: Clothing
+    sprite: Corvax/Clothing/Mask/ert_gas.rsi
+  - type: BreathMask
+  - type: IngestionBlocker
+  - type: DiseaseProtection
+    protection: 0.05

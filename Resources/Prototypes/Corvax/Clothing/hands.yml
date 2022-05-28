@@ -1,0 +1,33 @@
+- type: entity
+  parent: ClothingHandsBase
+  id: CorvaxHandsErtDef
+  name: перчатки ОБР
+  description: Перчатки оперативника ОБР
+  components:
+  - type: Sprite
+    sprite: Corvax/Clothing/Hands/ert_default.rsi
+  - type: Clothing
+    sprite: Corvax/Clothing/Hands/ert_default.rsi
+
+- type: entity
+  parent: ClothingHandsBase
+  id: CorvaxHandsErtEng
+  name: перчатки инженера ОБР
+  description: Перчатки инженера ОБР
+  components:
+  - type: Sprite
+    sprite: Corvax/Clothing/Hands/ert_eng.rsi
+  - type: Clothing
+    sprite: Corvax/Clothing/Hands/ert_eng.rsi
+  - type: Insulated
+
+- type: entity
+  parent: ClothingHandsBase
+  id: CorvaxHandsErtMed
+  name: перчатки медика ОБР
+  description: Перчатки медика ОБР
+  components:
+  - type: Sprite
+    sprite: Corvax/Clothing/Hands/ert_med.rsi
+  - type: Clothing
+    sprite: Corvax/Clothing/Hands/ert_med.rsi

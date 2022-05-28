@@ -1,0 +1,21 @@
+- type: entity
+  parent: ClothingShoesBase
+  id: CorvaxShoesErtDef
+  name: ботинки ОБР
+  description: Ботинки ОБР.
+  components:
+  - type: Sprite
+    sprite: Clothing/Shoes/ert_default.rsi
+  - type: Clothing
+    sprite: Clothing/Shoes/ert_default.rsi
+
+- type: entity
+  parent: ClothingShoesBase
+  id: CorvaxShoesErtEng
+  name: ботинки инженера ОБР
+  description: Ботинки инженера ОБР.
+  components:
+  - type: Sprite
+    sprite: Clothing/Shoes/ert_eng.rsi
+  - type: Clothing
+    sprite: Clothing/Shoes/ert_eng.rsi

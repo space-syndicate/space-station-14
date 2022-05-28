@@ -1,0 +1,10 @@
+- type: entity
+  parent: ClothingNeckBase
+  id: CorvaxNeckErtCap
+  name: плащ командира ОБР
+  description: Плащ командира ОБР.
+  components:
+  - type: Sprite
+    sprite: Corvax/Clothing/Neck/ert_cap.rsi
+  - type: Clothing
+    sprite: Corvax/Clothing/Neck/ert_cap.rsi
