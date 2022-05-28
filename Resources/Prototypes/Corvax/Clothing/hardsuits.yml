@@ -5,9 +5,9 @@
   description: Скафандр командного состава службы ОБР.
   components:
   - type: Sprite
-    sprite: Corvax/Hardsuit/ert_cap.rsi
+    sprite: Corvax/Clothing/OuterClothing/Hardsuit/ert_cap.rsi
   - type: Clothing
-    sprite: Corvax/Hardsuit/ert_cap.rsi
+    sprite: Corvax/Clothing/OuterClothing/Hardsuit/ert_cap.rsi
   - type: PressureProtection
     highPressureMultiplier: 0.02
     lowPressureMultiplier: 10000
@@ -36,9 +36,9 @@
   description: Скафандр инженера службы ОБР.
   components:
   - type: Sprite
-    sprite: Corvax/Hardsuit/ert_eng.rsi
+    sprite: Corvax/Clothing/OuterClothing/Hardsuit/ert_eng.rsi
   - type: Clothing
-    sprite: Corvax/Hardsuit/ert_eng.rsi
+    sprite: Corvax/Clothing/OuterClothing/Hardsuit/ert_eng.rsi
   - type: PressureProtection
     highPressureMultiplier: 0.02
     lowPressureMultiplier: 10000
@@ -67,9 +67,9 @@
   description: Скафандр солдата службы ОБР.
   components:
   - type: Sprite
-    sprite: Corvax/Hardsuit/ert_sold.rsi
+    sprite: Corvax/Clothing/OuterClothing/Hardsuit/ert_sold.rsi
   - type: Clothing
-    sprite: Corvax/Hardsuit/ert_sold.rsi
+    sprite: Corvax/Clothing/OuterClothing/Hardsuit/ert_sold.rsi
   - type: PressureProtection
     highPressureMultiplier: 0.02
     lowPressureMultiplier: 10000
@@ -98,9 +98,9 @@
   description: Скафандр медика службы ОБР.
   components:
   - type: Sprite
-    sprite: Corvax/Hardsuit/ert_med.rsi
+    sprite: Corvax/Clothing/OuterClothing/Hardsuit/ert_med.rsi
   - type: Clothing
-    sprite: Corvax/Hardsuit/ert_med.rsi
+    sprite: Corvax/Clothing/OuterClothing/Hardsuit/ert_med.rsi
   - type: PressureProtection
     highPressureMultiplier: 0.02
     lowPressureMultiplier: 10000

@@ -5,9 +5,9 @@
   description: Ботинки ОБР.
   components:
   - type: Sprite
-    sprite: Clothing/Shoes/ert_default.rsi
+    sprite: Corvax/Clothing/Shoes/ert_default.rsi
   - type: Clothing
-    sprite: Clothing/Shoes/ert_default.rsi
+    sprite: Corvax/Clothing/Shoes/ert_default.rsi
 
 - type: entity
   parent: ClothingShoesBase
@@ -16,6 +16,6 @@
   description: Ботинки инженера ОБР.
   components:
   - type: Sprite
-    sprite: Clothing/Shoes/ert_eng.rsi
+    sprite: Corvax/Clothing/Shoes/ert_eng.rsi
   - type: Clothing
-    sprite: Clothing/Shoes/ert_eng.rsi
+    sprite: Corvax/Clothing/Shoes/ert_eng.rsi
