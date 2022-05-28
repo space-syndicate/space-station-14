@@ -118,6 +118,35 @@
       amount: -5
     - !type:PlantAdjustHealth
       amount: 5
+      
+- type: reagent
+  id: coldLiquid
+  name: reagent-name-coldLiquid
+  group: Medicine
+  desc: reagent-desc-coldLiquid
+  physicalDesc: reagent-physical-desc-colder
+  color: "#1E90FF"
+  metabolisms:
+    Medicine:
+      effects:
+      - !type:HealthChange
+        damage:
+          types:
+            Cold: -1.5
+      - !type:AdjustTemperature
+        conditions:
+        - !type:Temperature
+          max: 165.36
+        amount: 100000 # thermal energy, not temperature!
+      - !type:AdjustTemperature
+        conditions:
+        - !type:Temperature
+          min: 140.0
+        amount: -10000
+      - !type:PopupMessage
+        type: Local
+        messages: [ "coldLiquid-effect-temperature-adjusting" ]
+        probability: 0.2
 
 - type: reagent
   id: Dermaline
