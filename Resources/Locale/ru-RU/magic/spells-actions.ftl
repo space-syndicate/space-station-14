@@ -9,5 +9,5 @@ action-speech-spell-knock = AULIE OXIN FIERA
 action-name-spell-blink = Прыжок
 action-description-spell-blink = Телепортирует в выбранное место.
 action-name-spell-summon-magicarp = Призвать мэджикарпа
-action-description-spell-summon-magicarp = Это заклинание призывает трех мэджикарпов вам на помощь! Может напасть на хозяина, а могут и нет.
+action-description-spell-summon-magicarp = Это заклинание призывает трех мэджикарпов вам на помощь! Могут напасть на хозяина, а могут и нет.
 action-speech-spell-summon-magicarp = AIE KHUSE EU
