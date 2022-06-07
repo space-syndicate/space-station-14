@@ -13,7 +13,7 @@ gun-ballistic-cycled-empty = Циклирован (пуст)
 # BatteryAmmoProvider
 gun-battery-examine = Заряда хватит на [color={ $color }]{ $count } выстрелов.
 # MagazineAmmoProvider
-gun-magazine-examine = В нём осталось [color={ $color }]{ $count }[/color] выстрелов.
+gun-magazine-examine = Осталось [color={ $color }]{ $count }[/color] выстрелов.
 # RevolverAmmoProvider
 gun-revolver-empty = Револьвер полностью разряжен
 gun-revolver-full = Револьвер полностью заряжен
