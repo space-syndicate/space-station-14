@@ -6,4 +6,4 @@ pirates-final-score-2 = безделушек, на общую сумму в { $f
 pirates-list-start = Каперами были:
 pirates-most-valuable = Самыми ценными украденными предметами были:
 pirates-stolen-item-entry = { $entity } ({ $credits } кредитов)
-pirates-stole-nothing = - Каперы не украли вообще ничего. Показывайте пальцем и насмехайтесь.
+pirates-stole-nothing = - Каперы не украли вообще ничего. Тычьте пальцем и насмехайтесь.
