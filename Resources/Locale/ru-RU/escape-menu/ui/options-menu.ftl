@@ -43,7 +43,7 @@ ui-options-hud-theme = Тема HUD:
 ui-options-hud-theme-default = По умолчанию
 ui-options-hud-theme-modernized = Модернизированный
 ui-options-hud-theme-classic = Классический
-ui-options-vp-stretch = Растяжение отображаемой области для соответствия окну игры
+ui-options-vp-stretch = Растянуть изображение для соответствия окну игры
 ui-options-vp-scale = Fixed viewport scale: x{ $scale }
 ui-options-vp-integer-scaling = Prefer integer scaling (might cause black bars/clipping)
 ui-options-vp-integer-scaling-tooltip =
@@ -51,7 +51,7 @@ ui-options-vp-integer-scaling-tooltip =
     at specific resolutions. While this results in crisp textures, it also often
     means that black bars appear at the top/bottom of the screen or that part
     of the viewport is not visible.
-ui-options-vp-low-res = Отображаемая область низкого разрешения
+ui-options-vp-low-res = Изображение низкого разрешения
 ui-options-parallax-low-quality = Низкокачественный параллакс (фон)
 ui-options-fps-counter = Показать счетчик FPS
 
