@@ -1,1 +1,1 @@
-charger-examine = Заряжается [color={ $color }]{ $chargeRate }Вт[/color] за секунду.
+charger-examine = Заряжает [color={ $color }]{ $chargeRate }Вт[/color] в секунду.
