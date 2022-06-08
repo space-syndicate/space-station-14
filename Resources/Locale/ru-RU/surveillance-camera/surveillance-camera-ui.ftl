@@ -1,7 +1,7 @@
 surveillance-camera-monitor-ui-window = Монитор камер
-surveillance-camera-monitor-ui-refresh-cameras = Обновить камеры
-surveillance-camera-monitor-ui-refresh-subnets = Обновить подсети
-surveillance-camera-monitor-ui-disconnect = Отключить
+surveillance-camera-monitor-ui-refresh-cameras = Обновить список камер
+surveillance-camera-monitor-ui-refresh-subnets = Обновить список подсетей
+surveillance-camera-monitor-ui-disconnect = Отключиться
 surveillance-camera-monitor-ui-status = { $status } { $address }
 surveillance-camera-monitor-ui-status-connecting = Подключение:
 surveillance-camera-monitor-ui-status-connected = Подключено:
