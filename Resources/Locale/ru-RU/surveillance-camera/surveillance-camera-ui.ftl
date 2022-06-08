@@ -7,5 +7,5 @@ surveillance-camera-monitor-ui-status-connecting = Подключение:
 surveillance-camera-monitor-ui-status-connected = Подключено:
 surveillance-camera-monitor-ui-status-disconnected = Отключено
 surveillance-camera-monitor-ui-no-subnets = Нет подсетей
-surveillance-camera-setup = Установить
+surveillance-camera-setup = Настроить
 surveillance-camera-setup-ui-set = Установить
