@@ -61,6 +61,7 @@
   - type: Appearance
     visuals:
     - type: AirlockVisualizer
+      openUnlitVisible: true
     - type: WiresVisualizer
   - type: ApcPowerReceiver
     powerLoad: 20
