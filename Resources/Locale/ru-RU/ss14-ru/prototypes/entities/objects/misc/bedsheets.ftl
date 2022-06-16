@@ -1,4 +1,4 @@
-ent-BedsheetBase = базированная простыня
+ent-BedsheetBase = базовая простыня
     .desc = Удивительно мягкая льняная простыня.
     .suffix = { "" }
 ent-BedsheetBlack = чёрная простыня
