@@ -159,6 +159,7 @@ namespace Content.Client.Doors
 
             var door = _entMan.GetComponent<DoorComponent>(component.Owner);
             var unlitVisible = true;
+            var baseVisible = true;
             var boltedVisible = false;
             var emergencyLightsVisible = false;
 
@@ -231,18 +232,32 @@ namespace Content.Client.Doors
                 emergencyLightsVisible = true;
             }
 
+            if ((state == DoorState.Open || state == DoorState.Closed) && (emergencyLightsVisible || boltedVisible))
+            {
+                baseVisible = false;
+            }
+
+            if (emergencyLightsVisible && boltedVisible)
+            {
+                emergencyLightsVisible = false;
+            }
+
+            if (
+                state == DoorState.Open ||
+                state == DoorState.Opening ||
+                state == DoorState.Closing
+            )
+            {
+                emergencyLightsVisible = false;
+            }
+
             if (!_simpleVisuals)
             {
-                sprite.LayerSetVisible(DoorVisualLayers.BaseUnlit, unlitVisible && state != DoorState.Closed && state != DoorState.Welded);
+                sprite.LayerSetVisible(DoorVisualLayers.BaseUnlit, unlitVisible && baseVisible);
                 sprite.LayerSetVisible(DoorVisualLayers.BaseBolted, unlitVisible && boltedVisible);
                 if (_emergencyAccessLayer)
                 {
-                    sprite.LayerSetVisible(DoorVisualLayers.BaseEmergencyAccess,
-                            emergencyLightsVisible
-                            && state != DoorState.Open
-                            && state != DoorState.Opening
-                            && state != DoorState.Closing
-                            && unlitVisible);
+                    sprite.LayerSetVisible(DoorVisualLayers.BaseEmergencyAccess, unlitVisible && emergencyLightsVisible);
                 }
             }
         }
