@@ -59,18 +59,12 @@
           0.1,
           0.1,
           0.1,
-          0.1,
           0.1
         ]
       ]
     },
     {
-      "name": "open",
-      "delays": [
-        [
-          1
-        ]
-      ]
+      "name": "open"
     },
     {
       "name": "opening",
@@ -191,8 +185,8 @@
       "name": "emergency_unlit",
       "delays": [
         [
-          0.4,
-          0.4
+          1.2,
+          1.2
         ]
       ]
     },

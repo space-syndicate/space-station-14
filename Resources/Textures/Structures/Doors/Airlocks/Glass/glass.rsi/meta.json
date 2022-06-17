@@ -11,12 +11,6 @@
       "name": "assembly"
     },
     {
-      "name": "assembly-fill"
-    },
-    {
-      "name": "assembly-glass"
-    },
-    {
       "name": "bolted_unlit"
     },
     {
@@ -29,13 +23,7 @@
       "name": "closed_unlit"
     },
     {
-      "name": "closed-fill"
-    },
-    {
-      "name": "closed-glass"
-    },
-    {
-      "name": "panel_closed"
+      "name": "open_unlit"
     },
     {
       "name": "closing",
@@ -64,48 +52,11 @@
       ]
     },
     {
-      "name": "closing-fill",
-      "delays": [
-        [
-          0.1,
-          0.1,
-          0.07,
-          0.07,
-          0.07,
-          0.2
-        ]
-      ]
-    },
-    {
-      "name": "closing-glass",
-      "delays": [
-        [
-          0.1,
-          0.1,
-          0.07,
-          0.07,
-          0.07,
-          0.2
-        ]
-      ]
-    },
-    {
-      "name": "closing-panel",
-      "delays": [
-        [
-          0.1,
-          0.1,
-          0.07,
-          0.07,
-          0.07,
-          0.2
-        ]
-      ]
-    },
-    {
       "name": "deny_unlit",
       "delays": [
         [
+          0.1,
+          0.1,
           0.1,
           0.1,
           0.1
@@ -114,12 +65,6 @@
     },
     {
       "name": "open"
-    },
-    {
-      "name": "open_unlit"
-    },
-    {
-      "name": "panel_open"
     },
     {
       "name": "opening",
@@ -148,7 +93,7 @@
       ]
     },
     {
-      "name": "opening-fill",
+      "name": "panel_closing",
       "delays": [
         [
           0.1,
@@ -161,7 +106,10 @@
       ]
     },
     {
-      "name": "opening-glass",
+      "name": "panel_closed"
+    },
+    {
+      "name": "panel_opening",
       "delays": [
         [
           0.1,
@@ -173,18 +121,9 @@
         ]
       ]
     },
+
     {
-      "name": "opening-panel",
-      "delays": [
-        [
-          0.1,
-          0.1,
-          0.07,
-          0.07,
-          0.07,
-          0.2
-        ]
-      ]
+      "name": "panel_open"
     },
     {
       "name": "sparks",
@@ -246,8 +185,8 @@
       "name": "emergency_unlit",
       "delays": [
         [
-          1,
-          1
+          1.2,
+          1.2
         ]
       ]
     },
