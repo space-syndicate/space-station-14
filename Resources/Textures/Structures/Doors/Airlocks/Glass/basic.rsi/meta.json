@@ -14,10 +14,16 @@
       "name": "bolted_unlit"
     },
     {
+      "name": "bolted_open_unlit"
+    },
+    {
       "name": "closed"
     },
     {
       "name": "closed_unlit"
+    },
+    {
+      "name": "open_unlit"
     },
     {
       "name": "closing",
@@ -106,12 +112,7 @@
       ]
     },
     {
-      "name": "panel_open",
-      "delays": [
-        [
-          1
-        ]
-      ]
+      "name": "panel_closed"
     },
     {
       "name": "panel_opening",
@@ -125,6 +126,10 @@
           0.2
         ]
       ]
+    },
+
+    {
+      "name": "panel_open"
     },
     {
       "name": "sparks",
@@ -148,7 +153,8 @@
           0.1,
           0.1,
           0.1,
-          0.1
+          0.1,
+          1.7
         ]
       ]
     },
@@ -161,8 +167,7 @@
           0.1,
           0.1,
           0.1,
-          0.1,
-          1.7
+          0.1
         ]
       ]
     },
@@ -190,6 +195,9 @@
           0.4
         ]
       ]
+    },
+    {
+      "name": "emergency_open_unlit"
     }
   ]
 }
