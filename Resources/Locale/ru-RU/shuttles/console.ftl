@@ -15,4 +15,4 @@ shuttle-console-iff-label = "{ $name } ({ $distance }м)
 shuttle-console-strafing = Режим стрейфа
 shuttle-console-iff-toggle = Показать "свой-чужой"
 shuttle-console-dock-toggle = Показать стыковку
-shuttle-console-undock = Расстыковать
+shuttle-console-undock = Отстыковать
