@@ -22,6 +22,7 @@ cargo-console-menu-cargo-order-row-cancel-button = Отменить
 cargo-console-paper-print-name = Заказ #{ $orderNumber }
 cargo-console-paper-print-text =
     Заказ #{ $orderNumber }
+    Заказ: { $productName }
     Запросил: { $requester }
     Причина: { $reason }
     Одобрил: { $approver }
