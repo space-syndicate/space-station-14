@@ -11,6 +11,17 @@ public sealed class MobsterAccentSystem : EntitySystem
 
     private static readonly Dictionary<string, string> DirectReplacements = new()
     {
+        { "let me", "lemme" },
+        { "should", "oughta" },
+        { "the", "da" },
+        { "kill", "whack" },
+        { "murder", "whack" },
+        { "dead", "sleepin' with da fishies"},
+        { "hey", "ey'o" },
+        { "rules", "roolz" },
+        { "you", "yous" },
+        { "have to", "gotta" },
+        { "here", "'ere" },
         { "утащил", "сдёрнул" },
         { "принеси", "надыбай" },
         { "принесите", "надыбайте" },
@@ -34,9 +45,9 @@ public sealed class MobsterAccentSystem : EntitySystem
         { "хэй", "йоу" },
         { "хей", "йоу" },        
         { "здесь", "здеся" },
-        { "тут", "тута" }
-        { "привет", "аве" }
-        { "плохо", "ацтой" }
+        { "тут", "тута" },
+        { "привет", "аве" },
+        { "плохо", "ацтой" },
         { "хорошо", "агонь" }
     };
 
