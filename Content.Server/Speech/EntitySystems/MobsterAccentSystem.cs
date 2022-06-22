@@ -35,6 +35,9 @@ public sealed class MobsterAccentSystem : EntitySystem
         { "хей", "йоу" },        
         { "здесь", "здеся" },
         { "тут", "тута" }
+        { "привет", "аве" }
+        { "плохо", "ацтой" }
+        { "хорошо", "агонь" }
     };
 
     public override void Initialize()
