@@ -14,14 +14,47 @@ public sealed class MobsterAccentSystem : EntitySystem
         { "let me", "lemme" },
         { "should", "oughta" },
         { "the", "da" },
+        { "them", "dem" },
+        { "attack", "whack" },
         { "kill", "whack" },
         { "murder", "whack" },
         { "dead", "sleepin' with da fishies"},
         { "hey", "ey'o" },
+        { "hi", "ey'o"},
+        { "hello", "ey'o"},
         { "rules", "roolz" },
         { "you", "yous" },
         { "have to", "gotta" },
-        { "here", "'ere" }
+        { "going to", "boutta" },
+        { "about to", "boutta" },
+        { "here", "'ere" },
+        { "утащил", "сдёрнул" },
+        { "принеси", "надыбай" },
+        { "принесите", "надыбайте" },
+        { "сб", "мусора" },
+        { "враг", "шелупонь" },
+        { "враги", "шелупонь" },
+        { "тревога", "шухер" },
+        { "заметили", "спалили" },
+        { "оружие", "валына" },
+        { "убийство", "мокруха" },
+        { "убить", "замочить" },
+        { "убей", "вальни" },
+        { "убейте", "завалите" },
+        { "еда", "жратва"},
+        { "еды", "жратвы"},
+        { "убили", "замаслили" },
+        { "ранен", "словил маслину"},
+        { "мертв", "спит с рыбами"},
+        { "мёртв", "спит с рыбами"},
+        { "мертва", "спит с рыбами"},
+        { "хэй", "йоу" },
+        { "хей", "йоу" },
+        { "здесь", "здеся" },
+        { "тут", "тута" },
+        { "привет", "аве" },
+        { "плохо", "ацтой" },
+        { "хорошо", "агонь" }
     };
 
     public override void Initialize()
@@ -45,7 +78,8 @@ public sealed class MobsterAccentSystem : EntitySystem
         }
 
         // thinking -> thinkin'
-        msg = Regex.Replace(msg, @"ing(?!\w)", "in'", RegexOptions.IgnoreCase);
+        // king -> king
+        msg = Regex.Replace(msg, @"(?<=\w\w)ing(?!\w)", "in'", RegexOptions.IgnoreCase);
 
         // or -> uh and ar -> ah in the middle of words (fuhget, tahget)
         msg = Regex.Replace(msg, @"(?<=\w)or(?=\w)", "uh", RegexOptions.IgnoreCase);
