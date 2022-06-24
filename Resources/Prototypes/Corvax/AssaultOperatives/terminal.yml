@@ -1,0 +1,17 @@
+﻿- type: entity
+  parent: ComputerBase
+  id: ComputerGoldeneye
+  name: goldeneye terminal
+  description: TODO
+  components:
+    - type: Appearance
+      visuals:
+        - type: ComputerVisualizer
+          key: goldeneye_key
+          screen: goldeneye
+    - type: Computer
+      board: CommsComputerCircuitboard
+    - type: PointLight
+      radius: 1.5
+      energy: 1.6
+      color: "#b5a13c"
