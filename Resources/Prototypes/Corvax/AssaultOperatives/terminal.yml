@@ -19,7 +19,7 @@
       slots:
         firstKeySlot:
           ejectSound: /Audio/Machines/id_swipe.ogg
-          insertSound: /Audio/Machines/Nuke/confirm_beep.ogg
+          insertSound: /Audio/Machines/Nuke/general_beep.ogg
           ejectOnBreak: true
           swap: false
           whitelist:
@@ -27,7 +27,7 @@
               - IcarusKey
         secondKeySlot:
           ejectSound: /Audio/Machines/id_swipe.ogg
-          insertSound: /Audio/Machines/Nuke/confirm_beep.ogg
+          insertSound: /Audio/Machines/Nuke/general_beep.ogg
           ejectOnBreak: true
           swap: false
           whitelist:
@@ -35,7 +35,7 @@
               - IcarusKey
         thirdKeySlot:
           ejectSound: /Audio/Machines/id_swipe.ogg
-          insertSound: /Audio/Machines/Nuke/confirm_beep.ogg
+          insertSound: /Audio/Machines/Nuke/general_beep.ogg
           ejectOnBreak: true
           swap: false
           whitelist:
