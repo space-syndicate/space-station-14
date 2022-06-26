@@ -1,9 +1,12 @@
 ﻿using System.Linq;
 using Content.Server.Chat.Systems;
+using Content.Server.Station.Components;
+using Content.Server.Station.Systems;
 using Content.Shared.Containers.ItemSlots;
 using Content.Shared.Icarus;
 using Content.Shared.Verbs;
 using Robust.Shared.Audio;
+using Robust.Shared.Map;
 using Robust.Shared.Player;
 
 namespace Content.Server.Icarus;
@@ -13,7 +16,10 @@ namespace Content.Server.Icarus;
 /// </summary>
 public sealed class IcarusTerminalSystem : EntitySystem
 {
+    private const string IcarusBeamPrototypeId = "ImmovableRodSlow";
+
     [Dependency] private readonly ChatSystem _chatSystem = default!;
+    [Dependency] private readonly StationSystem _stationSystem = default!;
 
     public override void Initialize()
     {
@@ -43,10 +49,16 @@ public sealed class IcarusTerminalSystem : EntitySystem
 
     public void Fire(EntityUid uid)
     {
+        var stationUid = _stationSystem.GetOwningStation(uid);
+        if (stationUid == null)
+            return;
+
         _chatSystem.DispatchStationAnnouncement(uid, Loc.GetString("goldeneye-icarus-announcement"), Loc.GetString("goldeneye-announce-sender"), false, Color.Red);
         SoundSystem.Play("/Audio/Corvax/AssaultOperatives/icarus_alarm.ogg", Filter.Broadcast());
 
-        // TODO: Fire Icarus beam
+        var gridUids = Comp<StationDataComponent>(stationUid.Value).Grids;
+        var coords = Comp<TransformComponent>(gridUids.First()).Coordinates; // TODO: More smart main station grid determine OR replace with radar system
+        EntityManager.SpawnEntity(IcarusBeamPrototypeId, coords);
     }
 
     public bool IsUnlocked(EntityUid uid)
