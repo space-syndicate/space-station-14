@@ -15,12 +15,30 @@
       radius: 1.5
       energy: 1.6
       color: "#b5a13c"
+    - type: ItemSlots
+      slots:
+        firstKeySlot:
+          ejectSound: /Audio/Machines/id_swipe.ogg
+          insertSound: /Audio/Machines/Nuke/confirm_beep.ogg
+          ejectOnBreak: true
+          swap: false
+          whitelist:
+            components:
+              - IcarusKey
+        secondKeySlot:
+          ejectSound: /Audio/Machines/id_swipe.ogg
+          insertSound: /Audio/Machines/Nuke/confirm_beep.ogg
+          ejectOnBreak: true
+          swap: false
+          whitelist:
+            components:
+              - IcarusKey
+        thirdKeySlot:
+          ejectSound: /Audio/Machines/id_swipe.ogg
+          insertSound: /Audio/Machines/Nuke/confirm_beep.ogg
+          ejectOnBreak: true
+          swap: false
+          whitelist:
+            components:
+              - IcarusKey
     - type: IcarusTerminal
-      firstKeySlot:
-        ejectSound: /Audio/Machines/id_swipe.ogg
-        insertSound: /Audio/Machines/Nuke/confirm_beep.ogg
-        ejectOnBreak: true
-        swap: false
-        whitelist:
-          components:
-            - IcarusKey

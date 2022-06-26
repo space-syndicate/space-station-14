@@ -8,8 +8,10 @@ namespace Content.Shared.Icarus;
 [RegisterComponent]
 public sealed class IcarusTerminalComponent : Component
 {
-    public static string FirstKey = "IcarusTerminal-firstKey";
+    protected override void Initialize()
+    {
+        base.Initialize();
 
-    [DataField("firstKeySlot")]
-    public ItemSlot FirstKeySlot = new();
+        Owner.EnsureComponentWarn<ItemSlotsComponent>();
+    }
 }
