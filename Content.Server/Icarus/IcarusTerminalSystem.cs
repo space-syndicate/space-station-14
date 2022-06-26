@@ -1,28 +1,5 @@
-﻿namespace Content.Server.Icarus;
+﻿using Content.Shared.Icarus;
 
-/// <summary>
-/// Handle Icarus activation terminal
-/// </summary>
-public sealed class IcarusTerminalSystem : EntitySystem
-{
-    /// <inheritdoc/>
-    public override void Initialize()
-    {
+namespace Content.Server.Icarus;
 
-    }
-
-    public void OnKeyInsert()
-    {
-
-    }
-
-    public void Fire()
-    {
-        // TODO: Fire Icarus beam
-    }
-
-    public bool IsUnlocked(IcarusTerminalComponent comp)
-    {
-        return comp.ActivatedKeys == comp.TotalKeys;
-    }
-}
+public sealed class IcarusTerminalSystem : SharedIcarusTerminalSystem {}

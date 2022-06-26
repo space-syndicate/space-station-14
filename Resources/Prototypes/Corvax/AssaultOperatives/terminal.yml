@@ -1,8 +1,8 @@
 ﻿- type: entity
   parent: ComputerBase
-  id: ComputerGoldeneye
-  name: goldeneye terminal
-  description: TODO
+  id: ComputerIcarus
+  name: icarus terminal
+  description: An ominous terminal with some ports and keypads, the screen is scrolling with illegible nonsense. It has a strange marking on the side, a red ring with a gold circle within.
   components:
     - type: Appearance
       visuals:
@@ -10,8 +10,17 @@
           key: goldeneye_key
           screen: goldeneye
     - type: Computer
-      board: CommsComputerCircuitboard
+      board: CommsComputerCircuitboard # TODO: Create uniq item
     - type: PointLight
       radius: 1.5
       energy: 1.6
       color: "#b5a13c"
+    - type: IcarusTerminal
+      firstKeySlot:
+        ejectSound: /Audio/Machines/id_swipe.ogg
+        insertSound: /Audio/Machines/Nuke/confirm_beep.ogg
+        ejectOnBreak: true
+        swap: false
+        whitelist:
+          components:
+            - IcarusKey
