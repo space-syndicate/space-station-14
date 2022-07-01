@@ -1,13 +1,11 @@
 - type: job
   id: Passenger
-  name: "passenger"
+  name: job-name-passenger
   startingGear: PassengerGear
   departments:
   - Civilian
   icon: "Passenger"
-  supervisors: "absolutely everyone"
-  access:
-  - Maintenance
+  supervisors: job-supervisors-everyone
 
 - type: startingGear
   id: PassengerGear
@@ -16,7 +14,7 @@
     back: ClothingBackpackFilled
     shoes: ClothingShoesColorBlack
     id: PassengerPDA
-    ears: ClothingHeadsetService
+    ears: ClothingHeadsetGrey
   innerclothingskirt: ClothingUniformJumpskirtColorGrey
   satchel: ClothingBackpackSatchelFilled
   duffelbag: ClothingBackpackDuffelFilled

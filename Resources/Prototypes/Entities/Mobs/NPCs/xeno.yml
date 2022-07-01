@@ -7,10 +7,18 @@
   components:
   - type: CombatMode
     canDisarm: true
+  - type: PlayerInputMover
+  - type: PlayerMobMover
   - type: UtilityAI
     behaviorSets:
     - Idle
     - UnarmedAttackHostiles
+  - type: Tool
+    speed: 0.3
+    qualities:
+      - Prying
+    useSound:
+      path: /Audio/Items/crowbar.ogg
   - type: Reactive
     groups:
       Flammable: [Touch]
@@ -32,7 +40,7 @@
     - shape:
         !type:PhysShapeCircle
         radius: 0.25
-      mass: 120
+      mass: 200
       mask:
       - MobMask
       layer:
@@ -93,8 +101,10 @@
     tags:
       - CannotSuicide
       - DoorBumpOpener
-      - FootstepSound 
+      - FootstepSound
   - type: NoSlip
+  - type: Perishable #Ummmm the acid kills a lot of the bacteria or something
+    molsPerSecondPerUnitMass: 0.0005
 
 - type: entity
   name: Praetorian
@@ -114,13 +124,13 @@
       300: !type:DeadMobState {}
   - type: SlowOnDamage
     speedModifierThresholds:
-      250: 0.4
+      250: 0.7
   - type: Fixtures
     fixtures:
     - shape:
         !type:PhysShapeCircle
         radius: 0.45
-      mass: 120
+      mass: 250
       mask:
       - MobMask
       layer:
@@ -147,13 +157,13 @@
     baseSprintSpeed : 5.5
   - type: SlowOnDamage
     speedModifierThresholds:
-      150: 0.4
+      150: 0.7
   - type: Fixtures
     fixtures:
     - shape:
         !type:PhysShapeCircle
         radius: 0.45
-      mass: 120
+      mass: 200
       mask:
       - MobMask
       layer:
@@ -185,13 +195,13 @@
     cooldownTime: 2
   - type: SlowOnDamage
     speedModifierThresholds:
-      1000: 0.4
+      1000: 0.7
   - type: Fixtures
     fixtures:
     - shape:
         !type:PhysShapeCircle
         radius: 0.45
-      mass: 120
+      mass: 10000
       mask:
       - MobMask
       layer:
@@ -223,13 +233,13 @@
     cooldownTime: 1.5
   - type: SlowOnDamage
     speedModifierThresholds:
-      450: 0.4
+      450: 0.7
   - type: Fixtures
     fixtures:
     - shape:
         !type:PhysShapeCircle
         radius: 0.45
-      mass: 120
+      mass: 600
       mask:
       - MobMask
       layer:
@@ -261,13 +271,13 @@
     cooldownTime: 0.5
   - type: SlowOnDamage
     speedModifierThresholds:
-      200: 0.4
+      200: 0.7
   - type: Fixtures
     fixtures:
     - shape:
         !type:PhysShapeCircle
         radius: 0.45
-      mass: 120
+      mass: 150
       mask:
       - MobMask
       layer:
@@ -307,7 +317,7 @@
     - shape:
         !type:PhysShapeCircle
         radius: 0.45
-      mass: 120
+      mass: 150
       mask:
       - MobMask
       layer:
@@ -338,6 +348,8 @@
     attributes:
       proper: true
       gender: male
+  - type: PlayerInputMover
+  - type: PlayerMobMover
   - type: UtilityAI
     behaviorSets:
     - Idle
@@ -365,6 +377,16 @@
     solution: melee
   - type: SolutionTransfer
     maxTransferAmount: 3
+  - type: Fixtures
+    fixtures:
+    - shape:
+        !type:PhysShapeCircle
+        radius: 0.35
+      mass: 10
+      mask:
+      - MobMask
+      layer:
+      - MobLayer
 
 - type: entity
   name: space adder
