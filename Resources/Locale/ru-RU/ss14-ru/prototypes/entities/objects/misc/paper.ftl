@@ -88,3 +88,5 @@ ent-RubberStampSyndicate = печать Синдиката
 ent-RubberStampCE = печать старшего инженера
     .desc = { ent-RubberStampMime.desc }
     .suffix = { "" }
+ent-StationGoalPaper = сообщение ЦК о текущей цели станции
+    .suffix = { "" }
