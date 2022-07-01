@@ -32,8 +32,6 @@ namespace Content.Server.StationGoal.Systems
 
             var random = IoCManager.Resolve<IRobustRandom>();
             var goal = random.Pick(availableGoals.ToList());
-            // var goalIndex = _random.Next(availableGoals.Count() - 1);
-            // var goal = availableGoals.ElementAt(goalIndex);
             _stationGoalPaperSystem.SpawnStationGoalPaper(goal);
         }
 
