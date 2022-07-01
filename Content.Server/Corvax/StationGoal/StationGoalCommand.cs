@@ -1,10 +1,9 @@
 using Content.Server.Administration;
-using Content.Server.StationGoal.Systems;
 using Content.Shared.Administration;
 using Robust.Shared.Console;
 using JetBrains.Annotations;
 
-namespace Content.Server.StationGoal
+namespace Content.Server.Corvax.StationGoal
 {
     /// <summary>
     ///     Admin command to set station goal by id.

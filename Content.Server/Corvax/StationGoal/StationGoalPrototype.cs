@@ -1,6 +1,6 @@
 using Robust.Shared.Prototypes;
 
-namespace Content.Server.StationGoal
+namespace Content.Server.Corvax.StationGoal
 {
     [Serializable, Prototype("stationGoal")]
     public sealed class StationGoalPrototype : IPrototype

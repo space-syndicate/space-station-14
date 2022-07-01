@@ -1,7 +1,7 @@
 using Content.Server.Communications;
 using Content.Server.Paper;
 
-namespace Content.Server.StationGoal
+namespace Content.Server.Corvax.StationGoal
 {
     /// <summary>
     ///     System to spawn paper with station goal.

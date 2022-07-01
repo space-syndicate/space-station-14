@@ -2,8 +2,9 @@ using Robust.Shared.Prototypes;
 using Robust.Shared.Random;
 using Content.Shared.GameTicking;
 using System.Linq;
+using Content.Shared.Random.Helpers;
 
-namespace Content.Server.StationGoal.Systems
+namespace Content.Server.Corvax.StationGoal
 {
     /// <summary>
     ///     Station goal is set at round start.

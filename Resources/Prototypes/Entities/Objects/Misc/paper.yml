@@ -448,10 +448,4 @@
   - type: Sprite
     sprite: Objects/Misc/bureaucracy.rsi
     state: stamp-ce
-- type: entity
-  parent: Paper
-  id: StationGoalPaper
-  name: Station goal centcomm message
-  desc:
-  components:
-    - type: StationGoalPaper
+

@@ -1,0 +1,7 @@
+- type: entity
+  parent: Paper
+  id: StationGoalPaper
+  name: Station goal centcomm message
+  desc:
+  components:
+    - type: StationGoalPaper
