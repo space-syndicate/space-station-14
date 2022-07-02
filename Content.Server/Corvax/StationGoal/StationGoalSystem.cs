@@ -10,7 +10,7 @@ namespace Content.Server.Corvax.StationGoal
     ///     Station goal is set at round start.
     ///     Admin can change the station goal via <see cref="StationGoalCommand"></see>
     /// </summary>
-    public class StationGoalSystem : EntitySystem
+    public sealed class StationGoalSystem : EntitySystem
     {
         [Dependency] private readonly StationGoalPaperSystem _stationGoalPaperSystem = default!;
         [Dependency] private readonly IPrototypeManager _prototypeManager = default!;
