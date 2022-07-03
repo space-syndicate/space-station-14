@@ -8,7 +8,7 @@
   - type: MovementIgnoreGravity
   - type: Sprite
     sprite: Corvax/AssaultOperatives/sunray.rsi
-    state: sunray_splash
+    state: sunray
     drawdepth: Effects
     noRot: false
     scale: 5, 5
