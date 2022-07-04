@@ -9,7 +9,7 @@
     sprite: Corvax/AssaultOperatives/sunray.rsi
     state: sunray_splash
     drawdepth: Effects
-    noRot: false
+    noRot: true
     scale: 5, 5
   - type: IcarusBeam
   - type: Physics
