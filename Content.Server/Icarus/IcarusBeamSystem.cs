@@ -1,4 +1,9 @@
-﻿namespace Content.Server.Icarus;
+﻿using Content.Server.Body.Components;
+using Robust.Shared.Audio;
+using Robust.Shared.Physics.Dynamics;
+using Robust.Shared.Player;
+
+namespace Content.Server.Icarus;
 
 /// <summary>
 /// This handles...
@@ -9,6 +14,7 @@ public sealed class IcarusBeamSystem : EntitySystem
     public override void Initialize()
     {
         SubscribeLocalEvent<IcarusBeamComponent, ComponentInit>(OnComponentInit);
+        SubscribeLocalEvent<IcarusBeamComponent, StartCollideEvent>(OnCollide);
     }
 
     private void OnComponentInit(EntityUid uid, IcarusBeamComponent component, ComponentInit args)
@@ -25,5 +31,18 @@ public sealed class IcarusBeamSystem : EntitySystem
             phys.ApplyLinearImpulse(vel);
             xform.LocalRotation = (vel - xform.WorldPosition).ToWorldAngle() + MathHelper.PiOver2;
         }
+
+        SoundSystem.Play(component.Sound.GetSound(), Filter.Pvs(uid), uid, AudioParams.Default.WithLoop(true));
+    }
+
+    private void OnCollide(EntityUid uid, IcarusBeamComponent component, StartCollideEvent args)
+    {
+        var ent = args.OtherFixture.Body.Owner;
+
+        // Gib everyone
+        if (TryComp<BodyComponent>(ent, out var body))
+            body.Gib();
+
+        QueueDel(ent);
     }
 }

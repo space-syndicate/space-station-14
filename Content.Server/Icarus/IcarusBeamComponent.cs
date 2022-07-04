@@ -9,7 +9,7 @@ namespace Content.Server.Icarus;
 public sealed class IcarusBeamComponent : Component
 {
     [DataField("loopSound")]
-    public SoundSpecifier Sound = new SoundPathSpecifier("/Audio/Corvax/AssaultOperatives/loop.ogg");
+    public SoundSpecifier Sound = new SoundPathSpecifier("/Audio/Corvax/AssaultOperatives/sunbeam_loop.ogg");
 
     [DataField("speed")]
     public float Speed = 1f;
