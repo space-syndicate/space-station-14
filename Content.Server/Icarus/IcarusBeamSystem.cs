@@ -5,9 +5,6 @@ using Robust.Shared.Player;
 
 namespace Content.Server.Icarus;
 
-/// <summary>
-/// This handles...
-/// </summary>
 public sealed class IcarusBeamSystem : EntitySystem
 {
     /// <inheritdoc/>

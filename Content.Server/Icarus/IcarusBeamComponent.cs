@@ -2,9 +2,6 @@
 
 namespace Content.Server.Icarus;
 
-/// <summary>
-/// This is used for...
-/// </summary>
 [RegisterComponent]
 public sealed class IcarusBeamComponent : Component
 {
