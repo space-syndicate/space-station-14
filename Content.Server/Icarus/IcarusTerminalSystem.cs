@@ -16,7 +16,7 @@ namespace Content.Server.Icarus;
 /// </summary>
 public sealed class IcarusTerminalSystem : EntitySystem
 {
-    private const string IcarusBeamPrototypeId = "ImmovableRodSlow";
+    private const string IcarusBeamPrototypeId = "IcarusBeam";
 
     [Dependency] private readonly ChatSystem _chatSystem = default!;
     [Dependency] private readonly StationSystem _stationSystem = default!;
