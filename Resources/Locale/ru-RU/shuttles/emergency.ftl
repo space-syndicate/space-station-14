@@ -3,7 +3,7 @@
 
 ## Delay shuttle round end
 
-emergency-shuttle-command-round-desc = Останавливает таймер, оканчивающий раунд, когда аварийный шаттл покидает гиперпространство.
+emergency-shuttle-command-round-desc = Останавливает таймер окончания раунда, когда аварийный шаттл покидает гиперпространство.
 emergency-shuttle-command-round-yes = Раунд продлён.
 emergency-shuttle-command-round-no = Невозможно продлить окончание раунда.
 
