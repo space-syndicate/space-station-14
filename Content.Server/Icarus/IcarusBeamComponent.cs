@@ -24,7 +24,7 @@ public sealed class IcarusBeamComponent : Component
     ///     With this set to true, beam will automatically set the tiles under them to space.
     /// </summary>
     [DataField("destroyTiles")]
-    public bool DestroyTiles = false;
+    public bool DestroyTiles = true;
 
     [DataField("destroyRadius")]
     public float DestroyRadius = 2f;

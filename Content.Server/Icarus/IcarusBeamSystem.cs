@@ -14,7 +14,8 @@ public sealed class IcarusBeamSystem : EntitySystem
     {
         base.Update(frameTime);
 
-        foreach (var (beam, trans) in EntityManager.EntityQuery<IcarusBeamComponent, TransformComponent>(true))
+        var query = EntityQuery<IcarusBeamComponent, TransformComponent>(true);
+        foreach (var (beam, trans) in query)
         {
             AccumulateLifetime(beam, frameTime);
             DestroyEntities(beam, trans);
@@ -28,6 +29,7 @@ public sealed class IcarusBeamSystem : EntitySystem
 
     public override void Initialize()
     {
+        base.Initialize();
         SubscribeLocalEvent<IcarusBeamComponent, ComponentInit>(OnComponentInit);
     }
 
