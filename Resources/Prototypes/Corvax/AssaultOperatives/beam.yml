@@ -7,10 +7,15 @@
   - type: MovementIgnoreGravity
   - type: Sprite
     sprite: Corvax/AssaultOperatives/sunray.rsi
-    state: sunray_splash
     drawdepth: Effects
     noRot: true
     scale: 5, 5
+    layers:
+      - state: sunray_splash
+      - state: sunray
+        offset: 0, 1
+      - state: sunray_muzzle
+        offset: 0, 2
   - type: IcarusBeam
   - type: Physics
     bodyType: Dynamic
