@@ -47,8 +47,6 @@ public sealed class IcarusBeamSystem : EntitySystem
             phys.ApplyLinearImpulse(vel);
             xform.LocalRotation = (vel - xform.WorldPosition).ToWorldAngle() + MathHelper.PiOver2;
         }
-
-        SoundSystem.Play(component.Sound.GetSound(), Filter.Pvs(uid), uid, AudioParams.Default.WithLoop(true));
     }
 
     private void AccumulateLifetime(IcarusBeamComponent beam, float frameTime)

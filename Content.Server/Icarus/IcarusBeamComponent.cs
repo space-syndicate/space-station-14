@@ -5,9 +5,6 @@ namespace Content.Server.Icarus;
 [RegisterComponent]
 public sealed class IcarusBeamComponent : Component
 {
-    [DataField("loopSound")]
-    public SoundSpecifier Sound = new SoundPathSpecifier("/Audio/Corvax/AssaultOperatives/sunbeam_loop.ogg");
-
     /// <summary>
     ///     Beam moving speed.
     /// </summary>

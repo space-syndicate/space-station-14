@@ -17,6 +17,10 @@
       - state: sunray_muzzle
         offset: 0, 2
   - type: IcarusBeam
+  - type: AmbientSound
+    range: 14
+    sound:
+      path: /Audio/Corvax/AssaultOperatives/sunbeam_loop.ogg
   - type: Physics
     bodyType: Dynamic
     linearDamping: 0
