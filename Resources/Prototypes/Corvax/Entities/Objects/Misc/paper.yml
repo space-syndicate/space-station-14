@@ -2,6 +2,10 @@
   parent: Paper
   id: StationGoalPaper
   name: Station goal centcomm message
-  desc:
   components:
-    - type: StationGoalPaper
+    - type: Paper
+    - type: Sprite
+      layers:
+        - state: paper_words
+        - state: paper_stamp-cent
+
