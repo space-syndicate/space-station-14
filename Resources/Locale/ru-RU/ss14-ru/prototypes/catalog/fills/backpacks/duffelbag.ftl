@@ -1,7 +1,7 @@
 ent-ClothingBackpackDuffelSurgeryFilled = хирургический вещмешок
     .desc = Большой вещевой мешок для хранения дополнительного медицинского снаряжения - похоже, этот мешок предназначен для хранения хирургических инструментов.
     .suffix = { "" }
-ent-ClothingBackpackDuffelCBURN = вещмешок отряда РХБЗ
+ent-ClothingBackpackDuffelCBURN = вещмешок отряда РХБЗЗ
     .desc = Вещмешок, содержащий различное оборудование для сдерживания биологической угрозы.
     .suffix = { "" }
 ent-ClothingBackpackDuffelSyndicateFilledMedical = хирургический вещмешок синдиката
