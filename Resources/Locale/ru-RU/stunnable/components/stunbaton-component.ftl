@@ -1,6 +1,6 @@
 ### Stunbaton component
 
-comp-stunbaton-stun = Stunned
+comp-stunbaton-stun = Оглушён
 
 ## Used when examining the stunbaton
 
