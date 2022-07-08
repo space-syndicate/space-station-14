@@ -1,4 +1,6 @@
-﻿using Content.Server.Ghost.Components;
+﻿using Content.Server.Atmos.Components;
+using Content.Server.Atmos.EntitySystems;
+using Content.Server.Ghost.Components;
 using Robust.Shared.Audio;
 using Robust.Shared.Map;
 using Robust.Shared.Player;
@@ -9,6 +11,7 @@ public sealed class IcarusBeamSystem : EntitySystem
 {
     [Dependency] private readonly IMapManager _map = default!;
     [Dependency] private readonly EntityLookupSystem _lookup = default!;
+    [Dependency] private readonly FlammableSystem _flammable = default!;
 
     public override void Update(float frameTime)
     {
@@ -19,6 +22,7 @@ public sealed class IcarusBeamSystem : EntitySystem
         {
             AccumulateLifetime(beam, frameTime);
             DestroyEntities(beam, trans);
+            FireEntities(beam, trans);
 
             if (!beam.DestroyTiles)
                 continue;
@@ -98,6 +102,25 @@ public sealed class IcarusBeamSystem : EntitySystem
                 continue;
 
             QueueDel(entity);
+        }
+    }
+
+    /// <summary>
+    /// Handle igniting entities in beam radius.
+    /// </summary>
+    private void FireEntities(IcarusBeamComponent component, TransformComponent trans)
+    {
+        var radius = component.ArsonRadius * 2;
+        foreach (var entity in _lookup.GetEntitiesInRange(trans.MapID, trans.WorldPosition, radius))
+        {
+            if (!CanDestroy(component, entity))
+                continue;
+
+            if (!TryComp<FlammableComponent>(entity, out var flammable))
+                continue;
+
+            flammable.FireStacks += 1;
+            _flammable.Ignite(entity);
         }
     }
 

@@ -1,6 +1,4 @@
-﻿using Content.Shared.Sound;
-
-namespace Content.Server.Icarus;
+﻿namespace Content.Server.Icarus;
 
 [RegisterComponent]
 public sealed class IcarusBeamComponent : Component
@@ -25,6 +23,9 @@ public sealed class IcarusBeamComponent : Component
 
     [DataField("destroyRadius")]
     public float DestroyRadius = 2f;
+
+    [DataField("destroyRadius")]
+    public float ArsonRadius = 4f;
 
     [DataField("accumulator")]
     public float Accumulator = 0f;
