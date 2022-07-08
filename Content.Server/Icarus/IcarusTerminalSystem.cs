@@ -1,12 +1,15 @@
 ﻿using System.Linq;
 using Content.Server.Chat.Systems;
+using Content.Server.GameTicking;
 using Content.Server.Station.Components;
 using Content.Server.Station.Systems;
 using Content.Shared.Containers.ItemSlots;
 using Content.Shared.Icarus;
 using Content.Shared.Verbs;
 using Robust.Shared.Audio;
+using Robust.Shared.Map;
 using Robust.Shared.Player;
+using Robust.Shared.Random;
 
 namespace Content.Server.Icarus;
 
@@ -18,7 +21,11 @@ public sealed class IcarusTerminalSystem : EntitySystem
     private const string IcarusBeamPrototypeId = "IcarusBeam";
 
     [Dependency] private readonly ChatSystem _chatSystem = default!;
+    [Dependency] private readonly IMapManager _mapManager = default!;
+    [Dependency] private readonly IRobustRandom _robustRandom = default!;
+    [Dependency] private readonly GameTicker _gameTicker = default!;
     [Dependency] private readonly StationSystem _stationSystem = default!;
+    [Dependency] private readonly IcarusBeamSystem _icarusSystem = default!;
 
     public override void Update(float frameTime)
     {
@@ -153,13 +160,33 @@ public sealed class IcarusTerminalSystem : EntitySystem
         component.Status = IcarusTerminalStatus.COOLDOWN;
         component.CooldownTime = component.Cooldown;
 
-        var stationUid = _stationSystem.GetOwningStation(component.Owner);
-        if (stationUid == null)
-            return;
-
         SoundSystem.Play(component.FireSound.GetSound(), Filter.Broadcast());
-        var gridUids = Comp<StationDataComponent>(stationUid.Value).Grids;
-        var coords = Comp<TransformComponent>(gridUids.First()).Coordinates; // TODO: More smart main station grid determine OR replace with radar system
-        Spawn(IcarusBeamPrototypeId, coords);
+        TryGetBeamSpawnLocation(component, out var coords, out var offset);
+        Logger.DebugS("icarus", $"Try spawn beam on coords: {coords.ToString()}");
+        var entUid = Spawn(IcarusBeamPrototypeId, coords);
+        _icarusSystem.LaunchInDirection(entUid, -offset.Normalized);
+    }
+
+    private void TryGetBeamSpawnLocation(IcarusTerminalComponent component, out MapCoordinates coords,
+        out Vector2 offset)
+    {
+        coords = MapCoordinates.Nullspace;
+        offset = Vector2.Zero;
+
+        var areas = _stationSystem.Stations.SelectMany(x =>
+            Comp<StationDataComponent>(x).Grids.Select(x => _mapManager.GetGridComp(x).Grid.WorldAABB)).ToArray();
+        var playableArea = areas[0];
+        for (var i = 1; i < areas.Length; i++)
+        {
+            playableArea.Union(areas[i]);
+        }
+
+        var center = playableArea.Center;
+        var minimumDistance = (playableArea.TopRight - center).Length + 10f;
+        var maximumDistance = minimumDistance + 20f;
+        var angle = new Angle(_robustRandom.NextFloat() * MathF.Tau);
+
+        offset = angle.RotateVec(new Vector2((maximumDistance - minimumDistance) * _robustRandom.NextFloat() + minimumDistance, 0));
+        coords = new MapCoordinates(center + offset, _gameTicker.DefaultMap);
     }
 }
