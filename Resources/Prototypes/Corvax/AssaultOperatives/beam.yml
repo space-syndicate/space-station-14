@@ -35,7 +35,7 @@
         radius: 2
       mass: 1
       hard: false
+      mask:
+        - AllMask
       layer:
-      - Impassable
-      - Opaque
-
+        - AllMask
