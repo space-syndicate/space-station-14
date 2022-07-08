@@ -24,8 +24,8 @@ public sealed class IcarusBeamComponent : Component
     [DataField("destroyRadius")]
     public float DestroyRadius = 2f;
 
-    [DataField("destroyRadius")]
-    public float ArsonRadius = 4f;
+    [DataField("flameRadius")]
+    public float FlameRadius = 4f;
 
     [DataField("accumulator")]
     public float Accumulator = 0f;
