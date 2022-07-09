@@ -182,11 +182,10 @@ public sealed class IcarusTerminalSystem : EntitySystem
         }
 
         var center = playableArea.Center;
-        var minimumDistance = (playableArea.TopRight - center).Length + 10f;
-        var maximumDistance = minimumDistance + 20f;
+        var distance = (playableArea.TopRight - center).Length;
         var angle = new Angle(_robustRandom.NextFloat() * MathF.Tau);
 
-        offset = angle.RotateVec(new Vector2((maximumDistance - minimumDistance) * _robustRandom.NextFloat() + minimumDistance, 0));
+        offset = angle.RotateVec(new Vector2(distance, 0));
         coords = new MapCoordinates(center + offset, _gameTicker.DefaultMap);
     }
 }
