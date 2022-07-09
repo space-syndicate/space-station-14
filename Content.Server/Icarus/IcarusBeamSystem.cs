@@ -123,7 +123,8 @@ public sealed class IcarusBeamSystem : EntitySystem
                 continue;
 
             flammable.FireStacks += 1;
-            _flammable.Ignite(entity);
+            if (!flammable.OnFire)
+                _flammable.Ignite(entity);
         }
     }
 
