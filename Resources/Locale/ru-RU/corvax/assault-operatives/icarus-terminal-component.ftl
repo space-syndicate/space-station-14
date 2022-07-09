@@ -14,5 +14,5 @@ goldeneye-icarus-announcement = /// ВЗЛОМ ЗАЩИЩЕННОЙ СЕТИ "И
     }.
 
 # UI
-icarus-ui-window-title = Icarus Terminal
-icarus-ui-fire = Fire
+icarus-ui-window-title = Терминал Icarus
+icarus-ui-fire = Огонь

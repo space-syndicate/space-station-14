@@ -10,5 +10,5 @@ goldeneye-icarus-announcement = /// ICARUS DEFENCE NETWORK BREACHED ///
     ETA to fire: { $seconds } seconds.
 
 # UI
-icarus-ui-window-title = Терминал Icarus
-icarus-ui-fire = Огонь
+icarus-ui-window-title = Icarus Terminal
+icarus-ui-fire = Fire
