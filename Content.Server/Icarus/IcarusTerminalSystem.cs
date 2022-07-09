@@ -76,7 +76,7 @@ public sealed class IcarusTerminalSystem : EntitySystem
     {
         AlternativeVerb verb = new();
         verb.Act = () => Fire(component);
-        verb.Text = Loc.GetString("goldeneye-ui-fire");
+        verb.Text = Loc.GetString("icarus-ui-fire");
         verb.Disabled = !CanFire(uid, component);
         verb.Priority = -1;
         args.Verbs.Add(verb);
@@ -96,8 +96,8 @@ public sealed class IcarusTerminalSystem : EntitySystem
         component.Status = IcarusTerminalStatus.FIRE_PREPARING;
 
         _chatSystem.DispatchStationAnnouncement(component.Owner,
-            Loc.GetString("goldeneye-icarus-announcement", ("seconds", component.Timer)),
-            Loc.GetString("goldeneye-announce-sender"),
+            Loc.GetString("icarus-fire-announcement", ("seconds", component.Timer)),
+            Loc.GetString("icarus-announce-sender"),
             false,
             Color.Red);
         SoundSystem.Play(component.AlertSound.GetSound(), Filter.Broadcast());
@@ -150,7 +150,7 @@ public sealed class IcarusTerminalSystem : EntitySystem
 
         if (!component.AuthorizationNotified)
         {
-            _chatSystem.DispatchStationAnnouncement(component.Owner, Loc.GetString("goldeneye-authorized-announcement"),
+            _chatSystem.DispatchStationAnnouncement(component.Owner, Loc.GetString("icarus-authorized-announcement"),
                 playDefaultSound: false); // TODO: Just pass custom sound path after PR accepting
             SoundSystem.Play("/Audio/Misc/notice1.ogg",
                 Filter.Broadcast());

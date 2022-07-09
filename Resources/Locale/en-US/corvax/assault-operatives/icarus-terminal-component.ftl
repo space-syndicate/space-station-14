@@ -1,7 +1,7 @@
 ﻿# Announce
-goldeneye-announce-sender = Icarus Defence Network
-goldeneye-authorized-announcement = UNAUTHORISED KEYCARD UPLOAD DETECTED. ALL KEYCARDS UPLOADED!
-goldeneye-icarus-announcement = /// ICARUS DEFENCE NETWORK BREACHED ///
+icarus-announce-sender = Icarus Defence Network
+icarus-authorized-announcement = UNAUTHORISED KEYCARD UPLOAD DETECTED. ALL KEYCARDS UPLOADED!
+icarus-fire-announcement = /// ICARUS DEFENCE NETWORK BREACHED ///
     Unauthorised Icarus Defence Network access detected.
     ICARUS online.
     Targeting system override detected...
