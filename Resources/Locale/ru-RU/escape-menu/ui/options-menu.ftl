@@ -146,4 +146,4 @@ ui-options-function-loadout6 = 6 страница хотбара
 ui-options-function-loadout7 = 7 страница хотбара
 ui-options-function-loadout8 = 8 страница хотбара
 ui-options-function-loadout9 = 9 страница хотбара
-ui-options-net-interp-ratio = Сглаживание сети
+ui-options-net-interp-ratio = Сетевое сглаживание
