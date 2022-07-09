@@ -11,4 +11,6 @@ icarus-fire-announcement = /// ICARUS DEFENCE NETWORK BREACHED ///
 
 # UI
 icarus-ui-window-title = Icarus Terminal
-icarus-ui-fire = Fire
+icarus-ui-fire-button = Fire
+icarus-ui-timer-label = Time until the shot:
+icarus-ui-cooldown-label = Cooldown:

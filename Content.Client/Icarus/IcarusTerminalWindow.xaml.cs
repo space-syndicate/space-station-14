@@ -19,13 +19,17 @@ public sealed partial class IcarusTerminalWindow : DefaultWindow
 
     public void UpdateState(IcarusTerminalUiState state)
     {
+        FireButton.Disabled = state.Status != IcarusTerminalStatus.FIRE_READY;
+        TimerBox.Visible = state.Status == IcarusTerminalStatus.FIRE_PREPARING;
+        CooldownBox.Visible = state.Status == IcarusTerminalStatus.COOLDOWN;
+
         switch (state.Status)
         {
-            case IcarusTerminalStatus.FIRE_READY:
-                FireButton.Disabled = false;
+            case IcarusTerminalStatus.FIRE_PREPARING:
+                TimerValue.Text = state.RemainingTime.ToString();
                 break;
-            default:
-                FireButton.Disabled = true;
+            case IcarusTerminalStatus.COOLDOWN:
+                CooldownValue.Text = state.CooldownTime.ToString();
                 break;
         }
     }

@@ -15,4 +15,6 @@ icarus-fire-announcement = /// ВЗЛОМ ЗАЩИЩЕННОЙ СЕТИ "ИКА�
 
 # UI
 icarus-ui-window-title = Терминал Icarus
-icarus-ui-fire = Огонь
+icarus-ui-fire-button = Огонь
+icarus-ui-timer-label = Время до выстрела:
+icarus-ui-cooldown-label = Перезарядка:
