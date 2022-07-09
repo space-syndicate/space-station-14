@@ -5,7 +5,6 @@ using Content.Server.Station.Components;
 using Content.Server.Station.Systems;
 using Content.Shared.Containers.ItemSlots;
 using Content.Shared.Icarus;
-using Content.Shared.Verbs;
 using Robust.Server.GameObjects;
 using Robust.Shared.Audio;
 using Robust.Shared.Map;
@@ -53,7 +52,6 @@ public sealed class IcarusTerminalSystem : EntitySystem
         base.Initialize();
         SubscribeLocalEvent<IcarusTerminalComponent, ComponentInit>(OnInit);
         SubscribeLocalEvent<IcarusTerminalComponent, ItemSlotChangedEvent>(OnItemSlotChanged);
-        SubscribeLocalEvent<IcarusTerminalComponent, GetVerbsEvent<AlternativeVerb>>(AddFireVerb);
 
         // UI events
         SubscribeLocalEvent<IcarusTerminalComponent, IcarusTerminalFireMessage>(OnFireButtonPressed);
@@ -70,16 +68,6 @@ public sealed class IcarusTerminalSystem : EntitySystem
     {
         UpdateStatus(component);
         UpdateUserInterface(component);
-    }
-
-    private void AddFireVerb(EntityUid uid, IcarusTerminalComponent component, GetVerbsEvent<AlternativeVerb> args)
-    {
-        AlternativeVerb verb = new();
-        verb.Act = () => Fire(component);
-        verb.Text = Loc.GetString("icarus-ui-fire");
-        verb.Disabled = !CanFire(uid, component);
-        verb.Priority = -1;
-        args.Verbs.Add(verb);
     }
 
     private void OnFireButtonPressed(EntityUid uid, IcarusTerminalComponent component, IcarusTerminalFireMessage args)
