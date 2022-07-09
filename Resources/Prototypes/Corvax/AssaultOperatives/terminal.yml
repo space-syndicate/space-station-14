@@ -42,3 +42,9 @@
             components:
               - IcarusKey
     - type: IcarusTerminal
+    - type: UserInterface
+      interfaces:
+        - key: enum.IcarusTerminalUiKey.Key
+          type: IcarusTerminalBoundUserInterface
+    - type: ActivatableUI
+      key: enum.IcarusTerminalUiKey.Key

@@ -6,6 +6,7 @@ using Content.Server.Station.Systems;
 using Content.Shared.Containers.ItemSlots;
 using Content.Shared.Icarus;
 using Content.Shared.Verbs;
+using Robust.Server.GameObjects;
 using Robust.Shared.Audio;
 using Robust.Shared.Map;
 using Robust.Shared.Player;
@@ -26,6 +27,7 @@ public sealed class IcarusTerminalSystem : EntitySystem
     [Dependency] private readonly GameTicker _gameTicker = default!;
     [Dependency] private readonly StationSystem _stationSystem = default!;
     [Dependency] private readonly IcarusBeamSystem _icarusSystem = default!;
+    [Dependency] private readonly UserInterfaceSystem _userInterfaceSystem = default!;
 
     public override void Update(float frameTime)
     {
@@ -52,17 +54,22 @@ public sealed class IcarusTerminalSystem : EntitySystem
         SubscribeLocalEvent<IcarusTerminalComponent, ComponentInit>(OnInit);
         SubscribeLocalEvent<IcarusTerminalComponent, ItemSlotChangedEvent>(OnItemSlotChanged);
         SubscribeLocalEvent<IcarusTerminalComponent, GetVerbsEvent<AlternativeVerb>>(AddFireVerb);
+
+        // UI events
+        SubscribeLocalEvent<IcarusTerminalComponent, IcarusTerminalFireMessage>(OnFireButtonPressed);
     }
 
     private void OnInit(EntityUid uid, IcarusTerminalComponent component, ComponentInit args)
     {
         component.RemainingTime = component.Timer;
         UpdateStatus(component);
+        UpdateUserInterface(component);
     }
 
     private void OnItemSlotChanged(EntityUid uid, IcarusTerminalComponent component, ref ItemSlotChangedEvent args)
     {
         UpdateStatus(component);
+        UpdateUserInterface(component);
     }
 
     private void AddFireVerb(EntityUid uid, IcarusTerminalComponent component, GetVerbsEvent<AlternativeVerb> args)
@@ -75,6 +82,11 @@ public sealed class IcarusTerminalSystem : EntitySystem
         args.Verbs.Add(verb);
     }
 
+    private void OnFireButtonPressed(EntityUid uid, IcarusTerminalComponent component, IcarusTerminalFireMessage args)
+    {
+        Fire(component);
+    }
+
     private void Fire(IcarusTerminalComponent component)
     {
         if (component.Status == IcarusTerminalStatus.FIRE_PREPARING)
@@ -83,8 +95,11 @@ public sealed class IcarusTerminalSystem : EntitySystem
         component.RemainingTime = component.Timer;
         component.Status = IcarusTerminalStatus.FIRE_PREPARING;
 
-        _chatSystem.DispatchStationAnnouncement(component.Owner, Loc.GetString("goldeneye-icarus-announcement"),
-            Loc.GetString("goldeneye-announce-sender"), false, Color.Red);
+        _chatSystem.DispatchStationAnnouncement(component.Owner,
+            Loc.GetString("goldeneye-icarus-announcement", ("seconds", component.Timer)),
+            Loc.GetString("goldeneye-announce-sender"),
+            false,
+            Color.Red);
         SoundSystem.Play(component.AlertSound.GetSound(), Filter.Broadcast());
     }
 
@@ -105,6 +120,15 @@ public sealed class IcarusTerminalSystem : EntitySystem
                 break;
             }
         }
+    }
+
+    private void UpdateUserInterface(IcarusTerminalComponent component)
+    {
+        _userInterfaceSystem.TrySetUiState(component.Owner, IcarusTerminalUiKey.Key, new IcarusTerminalUiState(
+            component.Status,
+            (int) component.RemainingTime,
+            (int) component.CooldownTime)
+        );
     }
 
     private bool IsAccessGranted(EntityUid uid)
@@ -143,6 +167,8 @@ public sealed class IcarusTerminalSystem : EntitySystem
             component.Status = IcarusTerminalStatus.AWAIT_DISKS;
             UpdateStatus(component);
         }
+
+        UpdateUserInterface(component);
     }
 
     private void TickTimer(IcarusTerminalComponent component, float frameTime)
@@ -153,6 +179,8 @@ public sealed class IcarusTerminalSystem : EntitySystem
             component.RemainingTime = 0;
             ActivateBeam(component);
         }
+
+        UpdateUserInterface(component);
     }
 
     private void ActivateBeam(IcarusTerminalComponent component)

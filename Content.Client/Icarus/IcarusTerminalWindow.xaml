@@ -1,0 +1,14 @@
+﻿<DefaultWindow xmlns="https://spacestation14.io"
+               Title="{Loc 'icarus-ui-window-title'}"
+               MinSize="250 100"
+               SetSize="250 100">
+    <BoxContainer Orientation="Vertical">
+        <BoxContainer Orientation="Horizontal">
+            <Button Name="FireButton"
+                    Access="Public"
+                    Text="{Loc 'icarus-ui-fire'}"
+                    StyleClasses="OpenBoth"
+                    Disabled="True" />
+        </BoxContainer>
+    </BoxContainer>
+</DefaultWindow>

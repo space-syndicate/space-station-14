@@ -1,10 +1,18 @@
-﻿goldeneye-announce-sender = Icarus Defence Network
-goldeneye-authorized-announcement = UNAUTHORISED KEYCARD UPLOAD DETECTED. ALL KEYCARDS UPLOADED!
-goldeneye-icarus-announcement = /// GOLDENEYE DEFENCE NETWORK BREACHED ///
-              	Unauthorised GoldenEye Defence Network access detected.
-              	ICARUS online.
-              	Targeting system override detected...
-              	New target: /NTSS14/
-              	ICARUS firing protocols activated.
-              	ETA to fire: 20 seconds.
-goldeneye-ui-fire = Fire
+﻿# Announce
+goldeneye-announce-sender = Оборонная сеть "Икарус"
+goldeneye-authorized-announcement = ОБНАРУЖЕНА НЕСАНКЦИОНИРОВАННАЯ ЗАГРУЗКА КЛЮЧ-КАРТ. ВСЕ КЛЮЧИ ЗАГРУЖЕНЫ!
+goldeneye-icarus-announcement = /// ВЗЛОМ ЗАЩИЩЕННОЙ СЕТИ "ИКАРУС" ///
+    Обнаружен несанкционированный доступ к оборонной сеть "Икарус"
+    ИКАРУС онлайн.
+    Обнаружено переопределение системы нацеливания...
+    Новая цель: /NTSS14/
+    Активированы протоколы стрельбы ИКАРУС.
+    РАСЧЕТНОЕ ВРЕМЯ выстера: { $seconds } { $seconds ->
+       [one] секунду
+       [few] секунды
+      *[other] секунд
+    }.
+
+# UI
+icarus-ui-window-title = Icarus Terminal
+icarus-ui-fire = Fire
