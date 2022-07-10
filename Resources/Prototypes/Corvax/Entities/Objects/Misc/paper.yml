@@ -1,11 +1,9 @@
 - type: entity
   parent: Paper
   id: StationGoalPaper
-  name: Station goal centcomm message
+  name: station goal centcomm message
   components:
     - type: Paper
-    - type: Sprite
-      layers:
-        - state: paper_words
-        - state: paper_stamp-cent
-
+      stampState: paper_stamp-cent
+      stampedBy:
+        - CentCom
