@@ -165,43 +165,55 @@ public sealed class IcarusTerminalSystem : EntitySystem
         if (component.RemainingTime <= 0)
         {
             component.RemainingTime = 0;
-            ActivateBeam(component);
+            ActivateBeamOnStation(component);
         }
 
         UpdateUserInterface(component);
     }
 
-    private void ActivateBeam(IcarusTerminalComponent component)
+    private void ActivateBeamOnStation(IcarusTerminalComponent component)
     {
         component.Status = IcarusTerminalStatus.COOLDOWN;
         component.CooldownTime = component.Cooldown;
 
         SoundSystem.Play(component.FireSound.GetSound(), Filter.Broadcast());
-        TryGetBeamSpawnLocation(component, out var coords, out var offset);
+        FireBeam(GetStationArea());
+    }
+
+    public MapCoordinates FireBeam(Box2 area)
+    {
+        TryGetBeamSpawnLocation(area, out var coords, out var offset);
         Logger.DebugS("icarus", $"Try spawn beam on coords: {coords.ToString()}");
         var entUid = Spawn(IcarusBeamPrototypeId, coords);
         _icarusSystem.LaunchInDirection(entUid, -offset.Normalized);
+        return coords;
     }
 
-    private void TryGetBeamSpawnLocation(IcarusTerminalComponent component, out MapCoordinates coords,
+    private void TryGetBeamSpawnLocation(Box2 area, out MapCoordinates coords,
         out Vector2 offset)
     {
         coords = MapCoordinates.Nullspace;
         offset = Vector2.Zero;
 
-        var areas = _stationSystem.Stations.SelectMany(x =>
-            Comp<StationDataComponent>(x).Grids.Select(x => _mapManager.GetGridComp(x).Grid.WorldAABB)).ToArray();
-        var playableArea = areas[0];
-        for (var i = 1; i < areas.Length; i++)
-        {
-            playableArea.Union(areas[i]);
-        }
-
-        var center = playableArea.Center;
-        var distance = (playableArea.TopRight - center).Length;
+        var center = area.Center;
+        var distance = (area.TopRight - center).Length;
         var angle = new Angle(_robustRandom.NextFloat() * MathF.Tau);
 
         offset = angle.RotateVec(new Vector2(distance, 0));
         coords = new MapCoordinates(center + offset, _gameTicker.DefaultMap);
+    }
+
+    private Box2 GetStationArea()
+    {
+        var areas = _stationSystem.Stations.SelectMany(x =>
+            Comp<StationDataComponent>(x).Grids.Select(x => _mapManager.GetGridComp(x).Grid.WorldAABB)).ToArray();
+        var stationArea = areas[0];
+
+        for (var i = 1; i < areas.Length; i++)
+        {
+            stationArea.Union(areas[i]);
+        }
+
+        return stationArea;
     }
 }
