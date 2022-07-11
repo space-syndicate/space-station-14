@@ -5,7 +5,7 @@ emergency-shuttle-command-round-yes = Раунд продлён.
 emergency-shuttle-command-round-no = Невозможно продлить окончание раунда.
 
 ## Dock emergency shuttle
-emergency-shuttle-command-dock-desc = Вызывает спасательный шаттл и пристыковывает его к станции... если возможно.
+emergency-shuttle-command-dock-desc = Вызывает спасательный шаттл и пристыковывает его к станции... если это возможно.
 
 ## Launch emergency shuttle
 emergency-shuttle-command-launch-desc = Досрочно запускает аварийный шаттл, если это возможно.
@@ -20,15 +20,15 @@ emergency-shuttle-nearby = Аварийный шаттл не может най�
 # Emergency shuttle console popup / announcement
 emergency-shuttle-console-auth-left =
     { $remaining } { $remaining ->
-        [one] авторизация необходима
-        [few] авторизации необходимо
-       *[other] авторизации необходимо
+        [one] авторизация осталась
+        [few] авторизации остались
+       *[other] авторизации остались
     } для досрочного запуска шаттла.
 emergency-shuttle-console-auth-revoked =
-    Разрешение на досрочный запуск шаттла отозвано, { $remaining } { $remaining ->
+    Авторизации на досрочный запуск шаттла отозваны, { $remaining } { $remaining ->
         [one] авторизация необходима
-        [few] авторизации необходимо
-       *[other] авторизации необходимо
+        [few] авторизации необходимы
+       *[other] авторизации необходимы
     }.
 emergency-shuttle-console-denied = Доступ запрещён
 
@@ -37,7 +37,7 @@ emergency-shuttle-ui-engines = ДВИГАТЕЛИ:
 emergency-shuttle-ui-idle = Простой
 emergency-shuttle-ui-repeal-all = Повторить всё
 emergency-shuttle-ui-early-authorize = Разрешение на досрочный запуск
-emergency-shuttle-ui-authorize = АВТОРИЗОВАТЬ
+emergency-shuttle-ui-authorize = АВТОРИЗОВАТЬСЯ
 emergency-shuttle-ui-repeal = ПОВТОРИТЬ
 emergency-shuttle-ui-authorizations = Авторизации
 emergency-shuttle-ui-remaining = Осталось: { $remaining }
