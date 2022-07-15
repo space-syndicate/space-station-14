@@ -1,11 +1,11 @@
-forensic-scanner-interface-title = Дактилоскопический сканер
+forensic-scanner-interface-title = Криминальный сканер
 forensic-scanner-interface-fingerprints = Отпечатки
 forensic-scanner-interface-fibers = Волокна
 forensic-scanner-interface-no-data = Нет данных для сканирования
 forensic-scanner-interface-print = Распечатать
-forensic-scanner-report-title = Заключение дактилоскопической экспертизы
+forensic-scanner-report-title = Заключение криминальной экспертизы: {$entity}
 forensic-pad-unused = Она ещё не использовалась
-forensic-pad-sample = На ней имеется образец: { $sample }
+forensic-pad-sample = Она содержит образец: { $sample }
 forensic-pad-gloves = { CAPITALIZE($target) } носит перчатки.
 forensic-pad-start-scan-target = { CAPITALIZE($user) } пытается снять отпечатки ваших пальцев.
 forensic-pad-start-scan-user = Вы начинаете снимать отпечатки пальцев { CAPITALIZE($target) }.
