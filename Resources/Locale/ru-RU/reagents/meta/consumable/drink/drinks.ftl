@@ -49,4 +49,4 @@ reagent-desc-hot-ramen = Горячая лапша.
 reagent-name-pilk = пилк
 reagent-desc-pilk = Тошнотворная смесь молока и колы.
 reagent-name-kvass = квас
-reagent-desc-kvass = Прохладный бодрящий напиток с привкусом социализма.
+reagent-desc-kvass = Прохладный освежающий напиток с привкусом социализма.
