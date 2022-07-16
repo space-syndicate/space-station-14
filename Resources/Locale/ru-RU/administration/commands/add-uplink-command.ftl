@@ -2,5 +2,5 @@ add-uplink-command-description = Создает аплинк в выбранно
 add-uplink-command-help = Применение: adduplink [username] [item-id]
 add-uplink-command-completion-1 = Username (по-умолчанию это вы сами)
 add-uplink-command-completion-2 = Uplink uid (по-умолчанию это КПК)
-add-uplink-command-error-1 = Выбранный игрок не управляет никакой сущностью
+add-uplink-command-error-1 = Выбранный игрок не имеет подконтрольную сущность
 add-uplink-command-error-2 = Не удалось добавить аплинк игроку
