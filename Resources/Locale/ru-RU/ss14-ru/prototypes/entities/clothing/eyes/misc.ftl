@@ -1,4 +1,4 @@
-ent-ClothingEyesEyepatch = пиратская повязка
+ent-ClothingEyesEyepatch = глазная повязка
     .desc = Яррр.
     .suffix = { "" }
 ent-ClothingEyesBlindfold = повязка на глаза
