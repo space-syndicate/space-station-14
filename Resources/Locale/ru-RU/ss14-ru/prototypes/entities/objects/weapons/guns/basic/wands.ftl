@@ -1,0 +1,12 @@
+ent-WeaponWandPolymorphCarp = жезл полиморфа карпа
+    .desc = На случай, когда вам срочно нужно филе карпа, а клоун выглядит уж очень аппетитно.
+    .suffix = { "" }
+ent-WeaponWandFireball = жезл огненного шара
+    .desc = Огромные огненные шары!
+    .suffix = { "" }
+ent-WeaponWandDeath = волшебная палочка мгновенной смерти
+    .desc = Над созданием этого чуда трудились только лучшие умы отдела РНД Space Wizards.
+    .suffix = { "" }
+ent-WeaponWandPolymorphDoor = жезл входа
+    .desc = На случай, когда нужен маршрут для побега.
+    .suffix = { "" }

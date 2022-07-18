@@ -1,9 +1,9 @@
-ent-PartSilicon = silicon body part
+ent-PartSilicon = часть тела синтетика
     .desc = { ent-BaseItem.desc }
     .suffix = { "" }
-ent-LeftHandDrone = left drone hand
+ent-LeftArmBorg = левая рука борга
     .desc = { ent-PartSilicon.desc }
     .suffix = { "" }
-ent-RightHandDrone = right drone hand
+ent-RightArmBorg = правая рука борга
     .desc = { ent-PartSilicon.desc }
     .suffix = { "" }

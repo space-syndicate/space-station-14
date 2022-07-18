@@ -5,7 +5,7 @@ chem-master-component-cannot-put-entity-message = Вы не можете пом�
 
 ## Bound UI
 
-chem-master-bound-user-interface-title = ChemMaster 4000
+chem-master-bound-user-interface-title = ХимМастер 4000
 
 ## UI
 

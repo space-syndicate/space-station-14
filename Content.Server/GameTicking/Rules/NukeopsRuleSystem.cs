@@ -1,4 +1,4 @@
-﻿using System.Linq;
+using System.Linq;
 using Content.Server.CharacterAppearance.Components;
 using Content.Server.Chat.Managers;
 using Content.Server.GameTicking.Rules.Configurations;
@@ -6,6 +6,8 @@ using Content.Server.Nuke;
 using Content.Server.Players;
 using Content.Server.Roles;
 using Content.Server.RoundEnd;
+using Content.Server.Shuttles.Components;
+using Content.Server.Shuttles.Systems;
 using Content.Server.Spawners.Components;
 using Content.Server.Station.Components;
 using Content.Server.Station.Systems;
@@ -56,7 +58,7 @@ public sealed class NukeopsRuleSystem : GameRuleSystem
 
     private void OnNukeExploded(NukeExplodedEvent ev)
     {
-    	if (!Enabled)
+    	if (!RuleAdded)
             return;
 
         _opsWon = true;
@@ -65,7 +67,7 @@ public sealed class NukeopsRuleSystem : GameRuleSystem
 
     private void OnRoundEndText(RoundEndTextAppendEvent ev)
     {
-        if (!Enabled)
+        if (!RuleAdded)
             return;
 
         ev.AddLine(_opsWon ? Loc.GetString("nukeops-ops-won") : Loc.GetString("nukeops-crew-won"));
@@ -78,7 +80,7 @@ public sealed class NukeopsRuleSystem : GameRuleSystem
 
     private void OnMobStateChanged(MobStateChangedEvent ev)
     {
-        if (!Enabled)
+        if (!RuleAdded)
             return;
 
         if (!_aliveNukeops.TryFirstOrNull(x => x.Key.OwnedEntity == ev.Entity, out var op)) return;
@@ -93,7 +95,7 @@ public sealed class NukeopsRuleSystem : GameRuleSystem
 
     private void OnPlayersSpawning(RulePlayerSpawningEvent ev)
     {
-        if (!Enabled)
+        if (!RuleAdded)
             return;
 
         _aliveNukeops.Clear();
@@ -185,32 +187,30 @@ public sealed class NukeopsRuleSystem : GameRuleSystem
         }
 
         // TODO: Make this a prototype
-        var map = "/Maps/infiltrator.yml";
+        // so true PAUL!
+        var path = "/Maps/nukieplanet.yml";
+        var shuttlePath = "/Maps/infiltrator.yml";
+        var mapId = _mapManager.CreateMap();
 
-        var aabbs = _stationSystem.Stations.SelectMany(x =>
-            Comp<StationDataComponent>(x).Grids.Select(x => _mapManager.GetGridComp(x).Grid.WorldAABB)).ToArray();
-        var aabb = aabbs[0];
-        for (int i = 1; i < aabbs.Length; i++)
-        {
-            aabb.Union(aabbs[i]);
-        }
+        var (_, outpost) = _mapLoader.LoadBlueprint(mapId, "/Maps/nukieplanet.yml");
 
-        var (_, gridId) = _mapLoader.LoadBlueprint(GameTicker.DefaultMap, map, new MapLoadOptions
+        if (outpost == null)
         {
-            Offset = aabb.Center + MathF.Max(aabb.Height / 2f, aabb.Width / 2f) * 2.5f
-        });
-
-        if (!gridId.HasValue)
-        {
-            Logger.ErrorS("NUKEOPS", $"Gridid was null when loading \"{map}\", aborting.");
-            foreach (var session in operatives)
-            {
-                ev.PlayerPool.Add(session);
-            }
+            Logger.ErrorS("nukies", $"Error loading map {path} for nukies!");
             return;
         }
 
-        var gridUid = _mapManager.GetGridEuid(gridId.Value);
+        // Listen I just don't want it to overlap.
+        var (_, shuttleId) = _mapLoader.LoadBlueprint(mapId, shuttlePath, new MapLoadOptions()
+        {
+            Offset = Vector2.One * 1000f,
+        });
+
+        if (TryComp<ShuttleComponent>(shuttleId, out var shuttle))
+        {
+            IoCManager.Resolve<IEntitySystemManager>().GetEntitySystem<ShuttleSystem>().TryFTLDock(shuttle, outpost.Value);
+        }
+
         // TODO: Loot table or something
         var commanderGear = _prototypeManager.Index<StartingGearPrototype>("SyndicateCommanderGearFull");
         var starterGear = _prototypeManager.Index<StartingGearPrototype>("SyndicateOperativeGearFull");
@@ -223,14 +223,18 @@ public sealed class NukeopsRuleSystem : GameRuleSystem
         // Forgive me for hardcoding prototypes
         foreach (var (_, meta, xform) in EntityManager.EntityQuery<SpawnPointComponent, MetaDataComponent, TransformComponent>(true))
         {
-            if (meta.EntityPrototype?.ID != "SpawnPointNukies" || xform.ParentUid != gridUid) continue;
+            if (meta.EntityPrototype?.ID != "SpawnPointNukies") continue;
 
-            spawns.Add(xform.Coordinates);
+            if (xform.ParentUid == outpost)
+            {
+                spawns.Add(xform.Coordinates);
+                break;
+            }
         }
 
         if (spawns.Count == 0)
         {
-            spawns.Add(EntityManager.GetComponent<TransformComponent>(gridUid).Coordinates);
+            spawns.Add(EntityManager.GetComponent<TransformComponent>(outpost.Value).Coordinates);
             Logger.WarningS("nukies", $"Fell back to default spawn for nukies!");
         }
 
@@ -279,7 +283,7 @@ public sealed class NukeopsRuleSystem : GameRuleSystem
 
     private void OnStartAttempt(RoundStartAttemptEvent ev)
     {
-        if (!Enabled)
+        if (!RuleAdded)
             return;
 
         var minPlayers = _cfg.GetCVar(CCVars.NukeopsMinPlayers);
@@ -298,11 +302,10 @@ public sealed class NukeopsRuleSystem : GameRuleSystem
         }
     }
 
-
-    public override void Started(GameRuleConfiguration _)
+    public override void Started()
     {
         _opsWon = false;
     }
 
-    public override void Ended(GameRuleConfiguration _) { }
+    public override void Ended() { }
 }

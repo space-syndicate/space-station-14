@@ -25,8 +25,16 @@
   - type: Appearance
 
 - type: entity
-  name: retro laser gun
+  id: BaseWeaponBatterySmall
   parent: BaseWeaponBattery
+  abstract: true
+  components:
+  - type: Item
+    size: 10
+
+- type: entity
+  name: retro laser gun
+  parent: BaseWeaponBatterySmall
   id: WeaponLaserGun
   description: A weapon using light amplified by the stimulated emission of radiation.
   components:
@@ -51,7 +59,7 @@
 
 - type: entity
   name: makeshift laser gun
-  parent: BaseWeaponBattery
+  parent: BaseWeaponBatterySmall
   id: WeaponMakeshiftLaser
   description: Better pray it won't burn your hands off.
   components:
@@ -101,7 +109,7 @@
 
 - type: entity
   name: pulse pistol
-  parent: BaseWeaponBattery
+  parent: BaseWeaponBatterySmall
   id: WeaponPulsePistol
   description: A state of the art energy pistol favoured as a sidearm by the NT-ERT operatives.
   components:
@@ -143,7 +151,6 @@
       map: ["enum.GunVisualLayers.MagUnshaded"]
       shader: unshaded
   - type: Item
-    size: 10
     sprite: Objects/Weapons/Guns/Battery/pulse_carbine.rsi
   - type: Gun
     selectedMode: SemiAuto
@@ -240,10 +247,48 @@
   - type: Appearance
 
 - type: entity
+  name: disabler
+  parent: BaseWeaponBattery
+  id: WeaponDisabler
+  description: A self-defense weapon that exhausts organic targets, weakening them until they collapse.
+  components:
+    - type: Tag
+      tags:
+        - Taser
+    - type: Sprite
+      sprite: Objects/Weapons/Guns/Battery/disabler.rsi
+      layers:
+        - state: base
+          map: ["enum.GunVisualLayers.Base"]
+        - state: mag-unshaded-0
+          map: ["enum.GunVisualLayers.MagUnshaded"]
+          shader: unshaded
+    - type: Clothing
+      sprite: Objects/Weapons/Guns/Battery/disabler.rsi
+      size: 10
+      quickEquip: false
+      Slots:
+        - Belt
+    - type: Gun
+      fireRate: 2
+      soundGunshot:
+        path: /Audio/Weapons/Guns/Gunshots/taser2.ogg
+    - type: ProjectileBatteryAmmoProvider
+      proto: BulletDisabler
+      fireCost: 100
+    - type: MagazineVisuals
+      magState: mag
+      steps: 5
+      zeroVisible: true
+    - type: Appearance
+
+- type: entity
   name: taser
   parent: BaseWeaponBattery
   id: WeaponTaser
   description: A low-capacity, energy-based stun gun used by security teams to subdue targets at range.
+  # Use Disabler
+  suffix: Obsolete
   components:
   - type: Tag
     tags:
@@ -267,11 +312,8 @@
     soundGunshot:
       path: /Audio/Weapons/Guns/Gunshots/taser.ogg
   - type: ProjectileBatteryAmmoProvider
-    proto: BulletTaser
-    fireCost: 50
-  - type: Battery
-    maxCharge: 100
-    startingCharge: 100
+    proto: BulletDisabler
+    fireCost: 100
   - type: MagazineVisuals
     magState: mag
     steps: 5
@@ -280,7 +322,7 @@
 
 - type: entity
   name: antique laser gun
-  parent: BaseWeaponBattery
+  parent: BaseWeaponBatterySmall
   id: WeaponAntiqueLaser
   description: This is an antique laser gun. All craftsmanship is of the highest quality. It is decorated with assistant leather and chrome. The object menaces with spikes of energy.
   components:
@@ -300,6 +342,9 @@
   - type: HitscanBatteryAmmoProvider
     proto: RedMediumLaser
     fireCost: 100
+  - type: BatterySelfRecharger
+    autoRecharge: true
+    autoRechargeRate: 40
   - type: MagazineVisuals
     magState: mag
     steps: 5

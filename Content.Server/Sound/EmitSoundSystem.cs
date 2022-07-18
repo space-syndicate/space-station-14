@@ -26,6 +26,25 @@ namespace Content.Server.Sound
         [Dependency] private readonly ITileDefinitionManager _tileDefMan = default!;
 
         /// <inheritdoc />
+
+        public override void Update(float frameTime)
+        {
+            base.Update(frameTime);
+            foreach (var soundSpammer in EntityQuery<SpamEmitSoundComponent>())
+            {
+                soundSpammer.Accumulator += frameTime;
+                if (soundSpammer.Accumulator < soundSpammer.RollInterval)
+                {
+                    continue;
+                }
+                soundSpammer.Accumulator -= soundSpammer.RollInterval;
+
+                if (_random.Prob(soundSpammer.PlayChance))
+                {
+                    TryEmitSound(soundSpammer);
+                }
+            }
+        }
         public override void Initialize()
         {
             base.Initialize();
@@ -46,7 +65,7 @@ namespace Content.Server.Sound
         private void HandleEmitSoundOnLand(EntityUid eUI, BaseEmitSoundComponent component, LandEvent arg)
         {
             if (!TryComp<TransformComponent>(eUI, out var xform) ||
-                !_mapManager.TryGetGrid(xform.GridEntityId, out var grid)) return;
+                !_mapManager.TryGetGrid(xform.GridUid, out var grid)) return;
 
             var tile = grid.GetTileRef(xform.Coordinates);
 
