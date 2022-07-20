@@ -8,6 +8,8 @@ namespace Content.Server.Corvax.StationGoal
     /// </summary>
     public sealed class StationGoalPaperSystem : EntitySystem
     {
+        [Dependency] private readonly PaperSystem _paperSystem = default!;
+
         public void SpawnStationGoalPaper(StationGoalPrototype goal)
         {
             var consoles = EntityManager.EntityQuery<CommunicationsConsoleComponent>();
@@ -18,9 +20,9 @@ namespace Content.Server.Corvax.StationGoal
 
                 var consolePos = transform.MapPosition;
                 var paperId = EntityManager.SpawnEntity("StationGoalPaper", consolePos);
-                var paper = EntityManager.GetComponent<PaperComponent>(paperId);
+                var paper = Comp<PaperComponent>(paperId);
 
-                paper.Content = Loc.GetString(goal.Text);
+                _paperSystem.SetContent(paper.Owner, Loc.GetString(goal.Text));
             }
         }
     }
