@@ -31,6 +31,7 @@ cargo-console-insufficient-funds = Недостаточно средств (тр
 cargo-console-paper-print-name = Заказ #{ $orderNumber }
 cargo-console-paper-print-text =
     Заказ #{ $orderNumber }
+    Товар: { $itemName }
     Запросил: { $requester }
     Причина: { $reason }
     Одобрил: { $approver }
@@ -38,5 +39,5 @@ cargo-console-paper-print-text =
 cargo-shuttle-console-menu-title = Консоль грузового шаттла
 cargo-shuttle-console-station-unknown = Неизвестно
 cargo-shuttle-console-shuttle-not-found = Не найден
-cargo-shuttle-console-proximity = Слишком близко к окружающим объектам
+cargo-no-shuttle = Грузовой шаттл не найден!
 cargo-shuttle-console-organics = На шаттле обнаружены органические формы жизни

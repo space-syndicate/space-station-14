@@ -46,3 +46,6 @@ ent-ClothingBeltMilitaryWebbingMed = армейская РПС медика
 ent-ClothingBeltSuspenders = подтяжки
     .desc = Для поддержания штанов.
     .suffix = { "" }
+ent-ClothingBeltWand = пояс для палочек
+    .desc = Пояс, предназначенный для хранения различных жезлов силы. Поясная сумка, полная экзотической магии.
+    .suffix = { "" }

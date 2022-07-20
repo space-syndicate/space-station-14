@@ -39,3 +39,13 @@ accent-words-generic-aggressive-1 = Грр!
 accent-words-generic-aggressive-2 = Рррр!
 accent-words-generic-aggressive-3 = Грр...
 accent-words-generic-aggressive-4 = Гррав!!
+# Duck
+accent-words-duck-1 = Ква!
+accent-words-duck-2 = Ква.
+accent-words-duck-3 = Ква?
+accent-words-duck-4 = Ква ква!
+# Chicken
+accent-words-chicken-1 = Кудах!
+accent-words-chicken-2 = Кудах.
+accent-words-chicken-3 = Кудах?
+accent-words-chicken-4 = Кудах тах-тах!

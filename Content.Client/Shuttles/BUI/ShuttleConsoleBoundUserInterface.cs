@@ -22,8 +22,17 @@ public sealed class ShuttleConsoleBoundUserInterface : BoundUserInterface
         _window.UndockPressed += OnUndockPressed;
         _window.StartAutodockPressed += OnAutodockPressed;
         _window.StopAutodockPressed += OnStopAutodockPressed;
+        _window.DestinationPressed += OnDestinationPressed;
         _window.OpenCentered();
         _window.OnClose += OnClose;
+    }
+
+    private void OnDestinationPressed(EntityUid obj)
+    {
+        SendMessage(new ShuttleConsoleDestinationMessage()
+        {
+            Destination = obj,
+        });
     }
 
     private void OnClose()
@@ -43,17 +52,17 @@ public sealed class ShuttleConsoleBoundUserInterface : BoundUserInterface
 
     private void OnStopAutodockPressed(EntityUid obj)
     {
-        SendMessage(new StopAutodockRequestMessage() {Entity = obj});
+        SendMessage(new StopAutodockRequestMessage() {DockEntity = obj});
     }
 
     private void OnAutodockPressed(EntityUid obj)
     {
-        SendMessage(new AutodockRequestMessage() {Entity = obj});
+        SendMessage(new AutodockRequestMessage() {DockEntity = obj});
     }
 
     private void OnUndockPressed(EntityUid obj)
     {
-        SendMessage(new UndockRequestMessage() {Entity = obj});
+        SendMessage(new UndockRequestMessage() {DockEntity = obj});
     }
 
     private void OnShuttleModePressed(ShuttleMode obj)

@@ -7,6 +7,7 @@ using Content.Shared.Alert;
 using Content.Shared.Buckle.Components;
 using Content.Shared.Interaction;
 using Content.Shared.MobState.Components;
+using Content.Shared.MobState.EntitySystems;
 using Content.Shared.Popups;
 using Content.Shared.Pulling.Components;
 using Content.Shared.Standing;
@@ -16,6 +17,7 @@ using Robust.Shared.Audio;
 using Robust.Shared.Containers;
 using Robust.Shared.Player;
 using Robust.Shared.Timing;
+using Content.Shared.IdentityManagement;
 
 namespace Content.Server.Buckle.Components
 {
@@ -168,7 +170,7 @@ namespace Content.Server.Buckle.Components
             {
                 var message = Loc.GetString(Owner == user
                     ? "buckle-component-already-buckled-message"
-                    : "buckle-component-other-already-buckled-message", ("owner", Owner));
+                    : "buckle-component-other-already-buckled-message", ("owner", Identity.Entity(Owner, _entMan)));
                 popupSystem.PopupEntity(message, user, Filter.Entities(user));
 
                 return false;
@@ -181,7 +183,7 @@ namespace Content.Server.Buckle.Components
                 {
                     var message = Loc.GetString(Owner == user
                         ? "buckle-component-cannot-buckle-message"
-                        : "buckle-component-other-cannot-buckle-message", ("owner", Owner));
+                        : "buckle-component-other-cannot-buckle-message", ("owner", Identity.Entity(Owner, _entMan)));
                     popupSystem.PopupEntity(message, user, Filter.Entities(user));
 
                     return false;
@@ -194,7 +196,7 @@ namespace Content.Server.Buckle.Components
             {
                 var message = Loc.GetString(Owner == user
                     ? "buckle-component-cannot-fit-message"
-                    : "buckle-component-other-cannot-fit-message", ("owner", Owner));
+                    : "buckle-component-other-cannot-fit-message", ("owner", Identity.Entity(Owner, _entMan)));
                 popupSystem.PopupEntity(message, user, Filter.Entities(user));
 
                 return false;
@@ -217,7 +219,7 @@ namespace Content.Server.Buckle.Components
             {
                 var message = Loc.GetString(Owner == user
                     ? "buckle-component-cannot-buckle-message"
-                    : "buckle-component-other-cannot-buckle-message", ("owner", Owner));
+                    : "buckle-component-other-cannot-buckle-message", ("owner", Identity.Entity(Owner, _entMan)));
                 popupSystem.PopupEntity(message, user, Filter.Entities(user));
                 return false;
             }
@@ -323,7 +325,8 @@ namespace Content.Server.Buckle.Components
                 EntitySystem.Get<StandingStateSystem>().Stand(Owner);
             }
 
-            mobState?.CurrentState?.EnterState(Owner, _entMan);
+            IoCManager.Resolve<IEntitySystemManager>().GetEntitySystem<SharedMobStateSystem>()
+                .EnterState(mobState, mobState?.CurrentState);
 
             UpdateBuckleStatus();
 
