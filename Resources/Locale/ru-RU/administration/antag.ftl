@@ -1,4 +1,4 @@
-verb-categories-antag = Антаг ctrl
+verb-categories-antag = Антаг меню
 admin-verb-make-traitor = Сделать цель предателем.
 admin-verb-make-zombie = Немедленно превратить цель в зомби.
 admin-verb-make-nuclear-operative = Сделать цель одиноким Ядерным Оперативником.
