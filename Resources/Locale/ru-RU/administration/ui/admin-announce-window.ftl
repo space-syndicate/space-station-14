@@ -5,7 +5,3 @@ admin-announce-announcer-default = Центральное командовани
 admin-announce-button = Сделать объявление
 admin-announce-type-station = Станция
 admin-announce-type-server = Сервер
-announcer-placeholder = Объявление
-announcement-placeholder = Текст объявления
-announce-type-station = Станция
-announce-type-server = Сервер
