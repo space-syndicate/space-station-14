@@ -1,5 +1,5 @@
-ent-BaseMobDwarf = Urist McHands The Dwarf
-    .desc = A miserable pile of secrets.
+ent-BaseMobDwarf = Урист МакХэндс Дварф
+    .desc = Жалкая кучка секретов.
     .suffix = { "" }
 ent-MobDwarfBase = Урист МакХэндс Дварф
     .desc = Жалкая кучка секретов.
