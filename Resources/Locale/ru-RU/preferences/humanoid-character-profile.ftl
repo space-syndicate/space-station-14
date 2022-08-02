@@ -6,4 +6,8 @@ humanoid-character-profile-summary =
         [male] Ему
         [female] Ей
        *[other] Этому
-    } { $age } лет.
+    } { $age } { $age ->
+	    [one] год
+	    [few] года
+       *[other] лет
+    }.
