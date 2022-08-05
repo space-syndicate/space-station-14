@@ -18,9 +18,12 @@ health-analyzer-window-damage-type-Cold = Обморожение
 health-analyzer-window-damage-group-Airloss = Нехватка воздуха
 health-analyzer-window-damage-type-Asphyxiation = Удушение
 health-analyzer-window-damage-type-Bloodloss = Кровопотеря
+
 health-analyzer-window-damage-group-Toxin = Токсины
 health-analyzer-window-damage-type-Poison = Яды
 health-analyzer-window-damage-type-Radiation = Радиация
+
 health-analyzer-window-damage-group-Genetic = Генетические
 health-analyzer-window-damage-type-Cellular = Клеточные
+
 health-analyzer-window-damage-group-Caustic = Разъедающие
