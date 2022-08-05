@@ -3,10 +3,10 @@
 # Shown when a stack is examined in details range
 comp-stack-examine-detail-count =
     { $count ->
-        [one] Здесь [color={ $markupCountColor }]{ $count }[/color] предмет
-        [few] Здесь [color={ $markupCountColor }]{ $count }[/color] предмета
-       *[other] Здесь [color={ $markupCountColor }]{ $count }[/color] предметов
-    } в стопке.
+        [one] В стопке [color={ $markupCountColor }]{ $count }[/color] предмет
+        [few] В стопке [color={ $markupCountColor }]{ $count }[/color] предмета
+       *[other] В стопке [color={ $markupCountColor }]{ $count }[/color] предметов
+    }.
 # Stack status control
 comp-stack-status = Количество: [color=white]{ $count }[/color]
 
