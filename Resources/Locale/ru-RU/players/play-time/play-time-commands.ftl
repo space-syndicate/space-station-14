@@ -32,7 +32,7 @@ cmd-playtime_getrole-role = Роль: { $role }, игровое время: { $t
 cmd-playtime_getrole-overall = Общее игровое время { $time }
 cmd-playtime_getrole-succeed = Игровое время { $username } составляет: { TOSTRING($time, "0") }
 cmd-playtime_getrole-arg-user = <user name>
-cmd-playtime_getrole-arg-role = <role|'Общее'>
+cmd-playtime_getrole-arg-role = <role|'Overall'>
 cmd-playtime_getrole-error-args = Ожидается ровно один или два аргумента
 # - playtime_save
 cmd-playtime_save-desc = Сохранение игрового времени игрока в БД
@@ -46,7 +46,7 @@ cmd-playtime_save-error-args = Ожидается ровно один аргум
 cmd-playtime_flush-desc = Записывает активные трекеры в хранение отслеживании игрового времени.
 cmd-playtime_flush-help =
     Использование: { $command } [user name]
-    This causes a flush to the internal storage only, it does not flush to DB immediately.
-    If a user is provided, only that user is flushed.
+    Это вызывает запись только во внутреннее хранилище, при это не записывая немедленно в БД.
+    Если пользователь передан, то только этот пользователь будет обработан.
 cmd-playtime_flush-error-args = Ожидается ноль или один аргумент
 cmd-playtime_flush-arg-user = [user name]
