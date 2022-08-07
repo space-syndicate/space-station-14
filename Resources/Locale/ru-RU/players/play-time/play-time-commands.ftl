@@ -43,7 +43,7 @@ cmd-playtime_save-error-args = Ожидается ровно один аргум
 
 ## 'playtime_flush' command'
 
-cmd-playtime_flush-desc = Очистить активные трекеры для хранения в отслеживании игрового времени.
+cmd-playtime_flush-desc = Записывает активные трекеры в хранение отслеживании игрового времени.
 cmd-playtime_flush-help =
     Использование: { $command } [user name]
     This causes a flush to the internal storage only, it does not flush to DB immediately.
