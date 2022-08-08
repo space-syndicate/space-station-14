@@ -8,7 +8,7 @@
       mapNameTemplate: '{0} Falcon {1}'
       nameGenerator:
         !type:NanotrasenNameGenerator
-        prefixCreator: 'TauCeti'
+        prefixCreator: 'TC'
       overflowJobs:
         - Passenger
       availableJobs:
