@@ -27582,7 +27582,7 @@ entities:
     parent: 4
     type: Transform
 - uid: 2195
-  type: SpawnPointAssistant
+  type: TableWood
   components:
   - pos: 0.5,-1.5
     parent: 4
@@ -29055,16 +29055,15 @@ entities:
     parent: 4
     type: Transform
 - uid: 2376
-  type: ComfyChair
+  type: SpawnPointAssistant
   components:
-  - pos: 0.5,0.5
+  - pos: 0.5,2.5
     parent: 4
     type: Transform
 - uid: 2377
-  type: ComfyChair
+  type: SpawnPointAssistant
   components:
-  - rot: 3.141592653589793 rad
-    pos: 0.5,-1.5
+  - pos: 0.5,-0.5
     parent: 4
     type: Transform
 - uid: 2378
@@ -29089,10 +29088,9 @@ entities:
     parent: 4
     type: Transform
 - uid: 2381
-  type: TableWood
+  type: SpawnPointAssistant
   components:
-  - rot: 1.5707963267948966 rad
-    pos: 0.5,-0.5
+  - pos: 0.5,-2.5
     parent: 4
     type: Transform
 - uid: 2382
@@ -70650,13 +70648,11 @@ entities:
   - canCollide: False
     type: Physics
 - uid: 7879
-  type: Fork
+  type: ComfyChair
   components:
-  - pos: 0.7025573,-0.39457917
+  - pos: 0.5,2.5
     parent: 4
     type: Transform
-  - canCollide: False
-    type: Physics
 - uid: 7880
   type: PoweredSmallLight
   components:
@@ -72228,13 +72224,11 @@ entities:
       ItemCabinet: !type:ContainerSlot {}
     type: ContainerContainer
 - uid: 8006
-  type: Spoon
+  type: ComfyChair
   components:
-  - pos: 0.35880733,-0.45707917
+  - pos: 0.5,-0.5
     parent: 4
     type: Transform
-  - canCollide: False
-    type: Physics
 - uid: 8007
   type: ExtinguisherCabinetFilled
   components:
@@ -73767,6 +73761,83 @@ entities:
   type: CableApcExtension
   components:
   - pos: 27.5,17.5
+    parent: 4
+    type: Transform
+- uid: 8199
+  type: VendingMachineCigs
+  components:
+  - name: cigarette machine
+    type: MetaData
+  - pos: -1.5,-1.5
+    parent: 4
+    type: Transform
+- uid: 8200
+  type: SpaceVillainArcade
+  components:
+  - pos: -1.5,-3.5
+    parent: 4
+    type: Transform
+  - containers:
+      board: !type:Container
+        ents: []
+    type: ContainerContainer
+- uid: 8201
+  type: ComfyChair
+  components:
+  - rot: 3.141592653589793 rad
+    pos: -1.5,-4.5
+    parent: 4
+    type: Transform
+- uid: 8202
+  type: TableWood
+  components:
+  - pos: 0.5,1.5
+    parent: 4
+    type: Transform
+- uid: 8203
+  type: ComfyChair
+  components:
+  - rot: 3.141592653589793 rad
+    pos: 0.5,-2.5
+    parent: 4
+    type: Transform
+- uid: 8204
+  type: Fork
+  components:
+  - pos: 0.68885136,-1.3455446
+    parent: 4
+    type: Transform
+  - canCollide: False
+    type: Physics
+- uid: 8205
+  type: Spoon
+  components:
+  - pos: 0.31385136,-1.4080446
+    parent: 4
+    type: Transform
+  - canCollide: False
+    type: Physics
+- uid: 8206
+  type: Spoon
+  components:
+  - pos: 0.34510136,1.5919554
+    parent: 4
+    type: Transform
+  - canCollide: False
+    type: Physics
+- uid: 8207
+  type: Fork
+  components:
+  - pos: 0.70447636,1.6075804
+    parent: 4
+    type: Transform
+  - canCollide: False
+    type: Physics
+- uid: 8208
+  type: ComfyChair
+  components:
+  - rot: 3.141592653589793 rad
+    pos: 0.5,0.5
     parent: 4
     type: Transform
 ...
