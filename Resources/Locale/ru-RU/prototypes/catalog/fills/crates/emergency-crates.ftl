@@ -5,6 +5,6 @@ ent-CrateEmergencyFire = ящик пожарного снаряжения
 ent-CrateEmergencyInternals = ящик аварийного снаряжения
     .desc = Управляйте своей жизнью и контролируйте своё дыхание с помощью трёх дыхательных масок, трёх аварийных кислородных баллонов и трёх больших баллонов с воздухом.
 ent-CrateEmergencyRadiation = ящик противорадиационного снаряжения
-    .desc = Survive the Nuclear Apocalypse and Supermatter Engine alike with two sets of Radiation suits. Each set contains a helmet, suit, and Geiger counter. We'll even throw in a bottle of vodka and some glasses too, considering the life-expectancy of people who order this.
+    .desc = Переживите ядерный апокалипсис и двигатель суперматерии благодаря двум комплектам противорадиационных костюмов. Каждый комплект включает в себя шлем, костюм и счетчик Гейгера. Мы даже подарим бутылку водки и несколько стаканов, учитывая продолжительность жизни тех, кто это заказывает.
 ent-CrateEmergencyInflatablewall = ящик надувных стен
     .desc = Три стопки надувных стен для случаев, когда металлические стены станции больше не удерживают атмосферу.
