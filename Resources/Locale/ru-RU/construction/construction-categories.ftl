@@ -1,5 +1,5 @@
 construction-category-furniture = Мебель
-construction-category-storage = Хранение
+construction-category-storage = Хранилища
 construction-category-tools = Инструменты
 construction-category-materials = Материалы
 construction-category-structures = Структуры
