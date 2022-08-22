@@ -2,6 +2,7 @@
   id: Mime
   name: job-name-mime
   playTimeTracker: JobMime
+  requirements:
     - !type:OverallPlaytimeRequirement
       time: 36000
   startingGear: MimeGear
