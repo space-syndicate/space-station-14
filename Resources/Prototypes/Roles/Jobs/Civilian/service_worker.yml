@@ -1,7 +1,7 @@
 ﻿- type: job
   id: ServiceWorker
   name: job-name-serviceworker
-  playTimeTracker: JobServiceWorker
+  requirements:
     - !type:OverallPlaytimeRequirement
       time: 1800
   startingGear: ServiceWorkerGear
