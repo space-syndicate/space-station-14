@@ -6,11 +6,10 @@
     - !type:DepartmentTimeRequirement
       department: Engineering
       time: 1800
-      inverted: true # stop playing intern if you're good at engineering!
   startingGear: TechnicalAssistantGear
   icon: "TechnicalAssistant"
   supervisors: job-supervisors-engineering
-  canBeAntag: false
+  canBeAntag: true
   access:
   - Maintenance
   - Engineering
