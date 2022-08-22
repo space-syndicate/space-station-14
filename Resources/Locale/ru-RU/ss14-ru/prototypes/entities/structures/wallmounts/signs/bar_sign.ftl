@@ -1,5 +1,8 @@
-ent-BarSign = вывеска бара
+ent-BaseBarSign = вывеска бара
     .desc = { ent-BaseStructure.desc }
+    .suffix = { "" }
+ent-BarSign = вывеска бара
+    .desc = { ent-BaseBarSign.desc }
     .suffix = { "" }
 ent-LargeBarSign = большая вывеска бара
     .desc = { "" }

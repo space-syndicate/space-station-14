@@ -6,6 +6,8 @@ on:
 
 jobs:
   remove_label:
+    permissions:
+      pull-requests: write
     if: github.event.review.state == 'approved'
     runs-on: ubuntu-latest
     steps:

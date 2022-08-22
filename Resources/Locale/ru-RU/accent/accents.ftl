@@ -16,9 +16,9 @@ accent-words-mouse-2 = Пиип!
 accent-words-mouse-3 = Чууу!
 accent-words-mouse-4 = Ииии!
 # Mumble
-accent-words-mumble-1 = Ммпмф!
-accent-words-mumble-2 = Мммф мррффф!
-accent-words-mumble-3 = Мммф мпвф!
+accent-words-mumble-1 = Ммпмв!
+accent-words-mumble-2 = Мммв мррввв!
+accent-words-mumble-3 = Мммв мпвф!
 # Silicon
 accent-words-silicon-1 = Бип.
 accent-words-silicon-2 = Буп.
@@ -34,6 +34,9 @@ accent-words-zombie-1 = Грруааа...
 accent-words-zombie-2 = Ммуааа...
 accent-words-zombie-3 = Маазгиии...
 accent-words-zombie-4 = Гррррр...
+accent-words-zombie-5 = Ууаагххххх...
+accent-words-zombie-6 = Граааааоооууллл...
+accent-words-zombie-7 = Мазгии... Ммааазгиии..
 # Generic Aggressive
 accent-words-generic-aggressive-1 = Грр!
 accent-words-generic-aggressive-2 = Рррр!

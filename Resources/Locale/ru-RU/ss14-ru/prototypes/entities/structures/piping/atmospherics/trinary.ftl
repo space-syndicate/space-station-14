@@ -13,3 +13,6 @@ ent-GasMixer = газовый смеситель
 ent-GasMixerFlipped = газовый смеситель
     .suffix = Перевёрнутый
     .desc = { ent-GasMixer.desc }
+ent-PressureControlledValve = пневматический клапан
+    .desc = Клапан, регулируемый давлением.
+    .suffix = { "" }

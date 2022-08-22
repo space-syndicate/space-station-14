@@ -33,6 +33,12 @@ petting-failure-dragon = Вы поднимаете руку, но { $target } и
 
 ## Knocking on windows
 
+petting-success-honkbot = Вы гладите { $target } по его скользкой металлической голове.
+petting-success-cleanbot = Вы гладите { $target } по его влажной металлической голове.
+petting-success-medibot = Вы гладите { $target } по его стерильной металлической голове.
+petting-failure-honkbot = Вы тянетесь погладить { $target }, но { $target } хонкает и уворачивается!
+petting-failure-cleanbot = Вы тянетесь погладить { $target }, но { $target } занят уборкой!
+petting-failure-medibot = Вы тянетесь погладить { $target }, но { $target } едва не пронзает вашу руку шприцом!
 # Shown when knocking on a window
 comp-window-knock = *тук-тук*
 hugging-success-generic = Вы обнимаете { $target }.

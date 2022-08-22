@@ -1,8 +1,15 @@
 whitelist-not-whitelisted = Вас нет в вайтлисте.
+whitelist-not-whitelisted-rp = Вас нет в вайтлисте. Чтобы попасть в вайтлист, посетите наш Discord (ссылку можно найти по адресу https://discord.station14.ru).
 command-whitelistadd-description = Добавить игрока с указанным юзернеймом в вайтлист.
 command-whitelistadd-help = whitelistadd <username>
+command-whitelistadd-existing = { $username } уже в вайтлисте!
+command-whitelistadd-added = { $username } добавлен в вайтлист
+command-whitelistadd-not-found = Пользователь '{ $username }' не найден
 command-whitelistremove-description = Удалить игрока с указанным юзернеймом из вайтлиста.
 command-whitelistremove-help = whitelistremove <username>
+command-whitelistremove-existing = { $username } не в вайтлисте!
+command-whitelistremove-removed = Пользователь { $username } удалён из вайтлиста
+command-whitelistremove-not-found = Пользователь '{ $username }' не найден
 command-kicknonwhitelisted-description = Кикнуть с сервера всех пользователь не из вайтлиста.
 command-kicknonwhitelisted-help = kicknonwhitelisted
 soft-player-cap-full = Сервер заполнен!

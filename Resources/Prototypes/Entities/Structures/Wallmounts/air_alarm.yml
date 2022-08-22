@@ -28,6 +28,7 @@
       WaterVapor: danger
       Miasma: danger
       NitrousOxide: danger
+      Frezon: danger
   - type: AtmosAlarmable
     alarmedBy: ["AirAlarm"]
   - type: AtmosDevice
@@ -55,7 +56,7 @@
         Danger: alarm2
       setOnDepowered:
         airAlarmBase: alarmp
-    - type: WiresVisualizer
+  - type: WiresVisuals
   - type: Sprite
     sprite: Structures/Wallmounts/air_monitors.rsi
     layers:

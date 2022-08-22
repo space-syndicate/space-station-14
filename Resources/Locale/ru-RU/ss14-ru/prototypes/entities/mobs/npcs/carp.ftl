@@ -1,5 +1,8 @@
-ent-MobCarp = космический карп
+ent-BaseMobCarp = космический карп
     .desc = Это космический карп.
+    .suffix = { "" }
+ent-MobCarp = { ent-BaseMobCarp }
+    .desc = { ent-BaseMobCarp.desc }
     .suffix = { "" }
 ent-MobCarpMagic = мэджикарп
     .desc = Похож на какую-то рыбу. Может быть волшебным.
@@ -12,4 +15,4 @@ ent-MobCarpSalvage = { ent-MobCarp }
     .desc = { ent-MobCarp.desc }
 ent-MobCarpDragon = космический карп
     .suffix = ВыводокДракона
-    .desc = { ent-MobCarp.desc }
+    .desc = { ent-BaseMobCarp.desc }
