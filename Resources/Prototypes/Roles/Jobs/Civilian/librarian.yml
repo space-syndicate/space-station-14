@@ -2,6 +2,8 @@
   id: Librarian
   name: job-name-librarian
   playTimeTracker: JobLibrarian
+    - !type:OverallPlaytimeRequirement
+      time: 18000
   startingGear: LibrarianGear
   icon: "Librarian"
   supervisors: job-supervisors-hop
