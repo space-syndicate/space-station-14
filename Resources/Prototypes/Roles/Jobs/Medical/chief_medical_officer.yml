@@ -7,13 +7,13 @@
   requirements:
     - !type:DepartmentTimeRequirement
       department: Medical
-      time: 18000
+      time: 144000
   weight: 10
   startingGear: CMOGear
   icon: "ChiefMedicalOfficer"
   requireAdminNotify: true
   supervisors: job-supervisors-captain
-  canBeAntag: false
+  canBeAntag: true
   access:
   - Medical
   - Command
