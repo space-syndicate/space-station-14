@@ -13,7 +13,7 @@
   icon: "ChiefMedicalOfficer"
   requireAdminNotify: true
   supervisors: job-supervisors-captain
-  canBeAntag: true
+  canBeAntag: false
   access:
   - Medical
   - Command
