@@ -1,9 +1,9 @@
 - type: job
   id: Musician
   name: job-name-musician
-  playTimeTracker: JobMusician
+  requirements:
     - !type:OverallPlaytimeRequirement
-      time: 18000
+      time: 1800
   startingGear: MusicianGear
   icon: "Musician"
   supervisors: job-supervisors-hire
