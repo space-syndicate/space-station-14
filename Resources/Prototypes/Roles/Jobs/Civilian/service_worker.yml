@@ -1,8 +1,10 @@
 - type: job
   id: ServiceWorker
   name: job-name-serviceworker
+  playTimeTracker: JobServiceWorker
   requirements:
-    - !type:OverallPlaytimeRequirement
+    - !type:RoleTimeRequirement
+      role: JobPassenger
       time: 1800
   startingGear: ServiceWorkerGear
   icon: "ServiceWorker"

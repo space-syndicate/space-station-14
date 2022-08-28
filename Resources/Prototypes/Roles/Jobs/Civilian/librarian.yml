@@ -1,9 +1,11 @@
 - type: job
   id: Librarian
   name: job-name-librarian
+  playTimeTracker: JobLibrarian
   requirements:
-    - !type:OverallPlaytimeRequirement
-      time: 1800
+    - !type:DepartmentTimeRequirement
+      department: Civilian
+      time: 3600
   startingGear: LibrarianGear
   icon: "Librarian"
   supervisors: job-supervisors-hop
@@ -21,4 +23,3 @@
     ears: ClothingHeadsetService
     pocket1: d10Dice
   innerclothingskirt: ClothingUniformJumpskirtColorLightBrown
-

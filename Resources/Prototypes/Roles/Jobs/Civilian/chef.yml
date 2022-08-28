@@ -3,7 +3,8 @@
   name: job-name-chef
   playTimeTracker: JobChef
   requirements:
-    - !type:OverallPlaytimeRequirement
+    - !type:DepartmentTimeRequirement
+      department: Civilian
       time: 3600
   startingGear: ChefGear
   icon: "Chef"

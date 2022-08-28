@@ -3,7 +3,8 @@
   name: job-name-clown
   playTimeTracker: JobClown
   requirements:
-    - !type:OverallPlaytimeRequirement
+    - !type:DepartmentTimeRequirement
+      department: Civilian
       time: 36000
   startingGear: ClownGear
   icon: "Clown"
