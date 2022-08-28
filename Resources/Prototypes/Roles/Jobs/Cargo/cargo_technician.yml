@@ -3,7 +3,8 @@
   name: job-name-cargotech
   playTimeTracker: JobCargoTechnician
   requirements:
-    - !type:OverallPlaytimeRequirement
+    - !type:RoleTimeRequirement
+      role: JobPassenger
       time: 1800
   startingGear: CargoTechGear
   icon: "CargoTechnician"
