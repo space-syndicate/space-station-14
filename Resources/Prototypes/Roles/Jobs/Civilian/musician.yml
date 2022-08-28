@@ -2,6 +2,10 @@
   id: Musician
   name: job-name-musician
   playTimeTracker: JobMusician
+  requirements:
+    - !type:DepartmentTimeRequirement
+      department: Civilian
+      time: 3600
   startingGear: MusicianGear
   icon: "Musician"
   supervisors: job-supervisors-hire
