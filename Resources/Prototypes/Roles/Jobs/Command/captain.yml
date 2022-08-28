@@ -5,9 +5,9 @@
   requirements:
     - !type:DepartmentTimeRequirement
       department: Command
-      time: 720000
+      time: 216000
     - !type:OverallPlaytimeRequirement
-      time: 108000
+      time: 720000
   weight: 20
   startingGear: CaptainGear
   icon: "Captain"
