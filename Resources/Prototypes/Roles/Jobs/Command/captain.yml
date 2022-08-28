@@ -4,14 +4,8 @@
   playTimeTracker: JobCaptain
   requirements:
     - !type:DepartmentTimeRequirement
-      department: Engineering
-      time: 18000
-    - !type:DepartmentTimeRequirement
-      department: Medical
-      time: 18000
-    - !type:DepartmentTimeRequirement
-      department: Security
-      time: 18000
+      department: Command
+      time: 720000
     - !type:OverallPlaytimeRequirement
       time: 108000
   weight: 20
