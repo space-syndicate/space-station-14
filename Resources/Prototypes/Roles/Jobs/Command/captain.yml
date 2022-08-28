@@ -7,7 +7,6 @@
       department: Command
       time: 216000
     - !type:OverallPlaytimeRequirement
-    - type: playTimeTracker
       time: 720000
   weight: 20
   startingGear: CaptainGear
