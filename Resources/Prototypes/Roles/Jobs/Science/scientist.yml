@@ -3,7 +3,8 @@
   name: job-name-scientist
   playTimeTracker: JobScientist
   requirements:
-    - !type:OverallPlaytimeRequirement
+    - !type:RoleTimeRequirement
+      role: JobPassenger
       time: 3600
   startingGear: ScientistGear
   icon: "Scientist"
