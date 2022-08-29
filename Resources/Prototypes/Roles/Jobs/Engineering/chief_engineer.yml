@@ -3,6 +3,9 @@
   name: job-name-ce
   playTimeTracker: JobChiefEngineer
   requirements:
+    - !type:RoleTimeRequirement
+      role: JobAtmosphericTechnician
+      time: 18000
     - !type:DepartmentTimeRequirement
       department: Engineering
       time: 144000
