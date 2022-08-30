@@ -6,7 +6,7 @@
   requirements:
     - !type:RoleTimeRequirement
       role: JobSalvageSpecialist
-      time: 1800
+      time: 72000
     - !type:DepartmentTimeRequirement
       department: Cargo
       time: 108000
