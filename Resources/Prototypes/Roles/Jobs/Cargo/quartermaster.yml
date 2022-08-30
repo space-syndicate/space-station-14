@@ -3,6 +3,10 @@
   name: job-name-qm
   playTimeTracker: JobQuartermaster
   requirements:
+  requirements:
+    - !type:RoleTimeRequirement
+      role: JobSalvageSpecialist
+      time: 1800
     - !type:DepartmentTimeRequirement
       department: Cargo
       time: 108000
