@@ -5,7 +5,7 @@
   requirements:
     - !type:RoleTimeRequirement
       role: JobAtmosphericTechnician
-      time: 18000
+      time: 72000
     - !type:DepartmentTimeRequirement
       department: Engineering
       time: 144000
