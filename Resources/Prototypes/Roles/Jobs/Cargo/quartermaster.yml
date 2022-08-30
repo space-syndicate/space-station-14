@@ -3,7 +3,6 @@
   name: job-name-qm
   playTimeTracker: JobQuartermaster
   requirements:
-  requirements:
     - !type:RoleTimeRequirement
       role: JobSalvageSpecialist
       time: 72000
