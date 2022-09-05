@@ -34,7 +34,7 @@ namespace Content.Client.Lathe.UI
 
         public LatheMenu(LatheBoundUserInterface owner)
         {
-            SetSize = MinSize = (300, 450);
+            SetSize = MinSize = (570, 450);
             IoCManager.InjectDependencies(this);
 
             Owner = owner;
