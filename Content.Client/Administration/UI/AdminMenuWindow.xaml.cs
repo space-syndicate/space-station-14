@@ -15,7 +15,7 @@ namespace Content.Client.Administration.UI
 
         public AdminMenuWindow()
         {
-            MinSize = SetSize = (650, 250);
+            MinSize = SetSize = (600, 250);
             Title = Loc.GetString("admin-menu-title");
             RobustXamlLoader.Load(this);
             IoCManager.InjectDependencies(this);
