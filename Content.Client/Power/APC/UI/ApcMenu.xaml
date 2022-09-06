@@ -1,7 +1,9 @@
 ﻿<DefaultWindow xmlns="https://spacestation14.io"
             Name="APCMenu"
             Title="{Loc 'apc-menu-title'}"
-            Resizable="False">
+            Resizable="False"
+            SetSize="300 200"
+            MinSize="300 200">
     <BoxContainer Orientation="Vertical"
                   SeparationOverride="4">
         <BoxContainer Orientation="Horizontal">
