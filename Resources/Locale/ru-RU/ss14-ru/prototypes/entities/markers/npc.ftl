@@ -1,3 +1,3 @@
-ent-PathfindPoint = маршрутная точка
+ent-PathfindPoint = pathfind точка
     .desc = { ent-MarkerBase.desc }
     .suffix = { "" }
