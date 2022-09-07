@@ -3,7 +3,7 @@
 network-configurator-device-saved = Успешно сохранено сетевое устройство { $device } с адресом { $address }!
 network-configurator-device-failed = Не удалось сохранить сетевое устройство { $device }! Адрес не присвоен!
 network-configurator-too-many-devices = На этом устройстве сохранено слишком много устройств!
-network-configurator-update-ok = Память устройств обновлено.
+network-configurator-update-ok = Память устройства обновлена.
 network-configurator-device-already-saved = Сетевое устройство: { $device } уже сохранено.
 network-configurator-device-access-denied = Нет доступа!
 # Verbs
