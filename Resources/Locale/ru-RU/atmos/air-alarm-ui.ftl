@@ -10,7 +10,7 @@ air-alarm-ui-window-alarm-state-label = Статус
 
 air-alarm-ui-window-address-label = Адрес
 air-alarm-ui-window-device-count-label = Всего устройств
-air-alarm-ui-window-resync-devices-label = Ресинх
+air-alarm-ui-window-resync-devices-label = Ресинхр
 
 air-alarm-ui-window-mode-label = Режим
 
