@@ -536,3 +536,15 @@
     - state: default
   - type: PresetIdCard
     job: Detective
+
+- type: entity
+  parent: IDCardStandard
+  id: AIAIDCard
+  name: Agent of Internal Affairs ID card
+  components:
+    - type: Sprite
+      layers:
+        - state: centcom
+        - state: idlawyer
+    - type: PresetIdCard
+      job: Agent of Internal Affairs

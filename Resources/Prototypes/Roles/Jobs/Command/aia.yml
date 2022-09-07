@@ -1,0 +1,36 @@
+- type: job
+  id: AgentofInternalAffairs
+  name: job-name-agent of internal affairs
+  playTimeTracker: JobAIA
+  requirements:
+    - !type:RoleTimeRequirement
+      role: JobCaptain
+      time: 126000
+    - !type:DepartmentTimeRequirement
+      department: Command
+      time: 252000
+    - !type:DepartmentTimeRequirement
+      department: Security
+      time: 252000
+  startingGear: AIAGear
+  icon: "Lawyer"
+  requireAdminNotify: true
+  joinNotifyCrew: true
+  supervisors: job-supervisors-centcom
+  canBeAntag: false
+  access:
+  - Service
+  - Brig
+  - Maintenance
+  - Command
+
+- type: startingGear
+  id: AIAGear
+  equipment:
+    jumpsuit: ClothingUniformJumpsuitLawyerBlack  # TODO change jumpsuit to randomiser of the 4 variants
+    back: ClothingBackpackBriefcaseFilled
+    shoes: ClothingShoesColorBlack
+    id: AIAPDA
+    eyes: ClothingEyesGlassesSunglasses
+    ears: ClothingHeadsetAltCommand
+    # TODO add copy of space law

@@ -446,3 +446,15 @@
   - type: Sprite
     sprite: Objects/Misc/bureaucracy.rsi
     state: stamp-ce
+
+- type: entity
+  name: Internal Affairs Agent's rubber stamp
+  parent: RubberStampMime
+  id: RubberStampAvd
+  components:
+  - type: Stamp
+    stampedName: stamp-component-stamped-name-centcom
+    stampState: "paper_stamp-aia"
+  - type: Sprite
+    sprite: Objects/Misc/bureaucracy.rsi
+    state: stamp-aia
