@@ -22,7 +22,7 @@ shell-wrong-arguments-number-need-specific =
         [one] аргумент
         [few] аргумента
         [other] аргументов
-    .
+    }.
 shell-argument-must-be-number = Аргумент должен быть числом.
 shell-argument-must-be-boolean = Аргумент должен быть boolean.
 shell-wrong-arguments-number = Неправильное количество аргументов.
