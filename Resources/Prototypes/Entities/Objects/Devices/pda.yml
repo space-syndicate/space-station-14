@@ -707,10 +707,10 @@
   description: For lawyers to poach dubious clients.
   components:
   - type: PDA
-    id: LawyerIDCard
+    id: AIAIDCard
   - type: Appearance
     visuals:
       - type: PDAVisualizer
-        state: pda-lawyer
+        state: pda-aia
   - type: Icon
-    state: pda-lawyer
+    state: pda-aia
