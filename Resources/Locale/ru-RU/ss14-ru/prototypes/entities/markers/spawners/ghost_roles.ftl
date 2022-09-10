@@ -7,3 +7,6 @@ ent-SpawnPointGhostRemilia = точка спавна роли призрака
 ent-SpawnPointGhostCerberus = точка спавна роли призрака
     .suffix = Цербер
     .desc = { ent-MarkerBase.desc }
+ent-SpawnPointGhostNukeOperative = точка спавна роли призрака
+    .suffix = ЯдерныйОперативник
+    .desc = { ent-MarkerBase.desc }

@@ -2,6 +2,8 @@
 
 network-configurator-device-saved = Успешно сохранено сетевое устройство { $device } с адресом { $address }!
 network-configurator-device-failed = Не удалось сохранить сетевое устройство { $device }! Адрес не присвоен!
+network-configurator-too-many-devices = На этом устройстве сохранено слишком много устройств!
+network-configurator-update-ok = Память устройства обновлена.
 network-configurator-device-already-saved = Сетевое устройство: { $device } уже сохранено.
 network-configurator-device-access-denied = Нет доступа!
 # Verbs
@@ -15,6 +17,8 @@ network-configurator-ui-count-label =
         [few] устройства
        *[other] устройств
     }.
+network-configurator-clear-network-link-overlays = Очистить оверлей сетевых соединений
+network-configurator-clear-network-link-overlays-desc = Очищает оверлей сетевых соединений.
 # tooltips
 network-configurator-tooltip-set = Создание списка целевых устройств
 network-configurator-tooltip-add = Добавление в список целевых устройств
