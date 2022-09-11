@@ -175,7 +175,7 @@ ui-options-net-predict-tick-bias-tooltip =
 ui-options-net-pvs-entry = Лимит PVS сущностей
 ui-options-net-pvs-entry-tooltip =
     Ограничение частоты отправки новых сущностей сервером на клиент. 
-    Снижение этого параметра может помочь уменьшить статтеры,
+    Снижение этого параметра может помочь уменьшить "захлебывания",
     вызываемые спавном сущностей, но может привести к их резкому появлению.
 ui-options-net-pvs-leave = Частота удаления PVS
 ui-options-net-pvs-leave-tooltip =
