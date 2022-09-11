@@ -1,6 +1,6 @@
 # Damage examines
 damage-examinable-verb-text = Повреждения
-damage-examinable-verb-message = Изучите показатели урона.
+damage-examinable-verb-message = Изучить показатели урона.
 damage-hitscan = хитскан
 damage-projectile = снаряд
 damage-melee = ближний бой
