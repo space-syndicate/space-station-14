@@ -114,7 +114,7 @@ flavor-complex-boritos = как гейминг
 flavor-complex-nachos = как начос
 flavor-complex-donk = как дешёвая пицца
 flavor-complex-copypasta = как повторяющаяся шутка
-flavor-complex-memory-leek = как fork-бомба
+flavor-complex-memory-leek = как форк-бомба
 flavor-complex-gunpowder = как порох
 flavor-complex-validhunting = как валидхантинг
 
