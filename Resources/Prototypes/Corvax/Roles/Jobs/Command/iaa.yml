@@ -12,6 +12,7 @@
   startingGear: IAAGear
   icon: "IAA"
   supervisors: job-supervisors-centcom
+  canBeAntag: false
   access:
     - Service
     - Brig
