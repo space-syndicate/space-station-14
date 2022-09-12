@@ -3,8 +3,8 @@
   name: job-name-security
   playTimeTracker: JobSecurityOfficer
   requirements:
-    - !type:DepartmentTimeRequirement
-      department: Security
+    - !type:RoleTimeRequirement
+      role: JobSecurityCadet
       time: 36000
   startingGear: SecurityOfficerGear
   icon: "SecurityOfficer"
