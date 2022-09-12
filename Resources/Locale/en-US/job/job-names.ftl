@@ -40,7 +40,7 @@ job-name-ertmedic = ERT medic
 job-name-ertjanitor = ERT janitor
 job-name-iaa = internal affairs agent
 
-    # Role timers - Make these alphabetical or I cut you
+# Role timers - Make these alphabetical or I cut you
 JobAtmosphericTechnician = atmospheric technician
 JobSalvageSpecialist = salvage specialist
 JobWarden = warden
