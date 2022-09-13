@@ -146,9 +146,9 @@ cmd-loadmap-nullspace = Невозможно загрузить в карту 0.
 cmd-loadmap-exists = Карта {$mapId} уже существует.
 cmd-loadmap-success = Карта {$mapId} была загружена из {$path}.
 cmd-loadmap-error = При загрузке карты из {$path} произошла ошибка.
-cmd-hint-loadmap-x-position = [x-координаты]
-cmd-hint-loadmap-y-position = [y-координаты]
-cmd-hint-loadmap-rotation = [поворот]
+cmd-hint-loadmap-x-position = [x-position]
+cmd-hint-loadmap-y-position = [y-position]
+cmd-hint-loadmap-rotation = [rotation]
 cmd-hint-loadmap-uids = [float]
 
 cmd-hint-savebp-id = <Grid EntityID>
