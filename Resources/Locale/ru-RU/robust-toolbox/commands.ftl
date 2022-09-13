@@ -141,7 +141,7 @@ cmd-hint-savemap-path = <Path>
 cmd-hint-savemap-force = [bool]
 
 cmd-loadmap-desc = Загружает карту с диска в игру.
-cmd-loadmap-help = loadmap <MapID> <Path> [x] [y] [поворот] [consistentUids]
+cmd-loadmap-help = loadmap <MapID> <Path> [x] [y] [rotation] [consistentUids]
 cmd-loadmap-nullspace = Невозможно загрузить в карту 0.
 cmd-loadmap-exists = Карта {$mapId} уже существует.
 cmd-loadmap-success = Карта {$mapId} была загружена из {$path}.
