@@ -1,0 +1,12 @@
+- type: entity
+  id: BriefcaseIAAFilled
+  name: brown briefcase
+  parent: BriefcaseBrown
+  suffix: Filled
+  components:
+    - type: StorageFill
+      contents:
+        - id: Paper
+          amount: 3
+        - id: CyberPen
+        - id: RubberStampIAA
