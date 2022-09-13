@@ -1,7 +1,7 @@
 - type: entity
   parent: ClothingHeadset
   id: ClothingHeadsetIAA
-  name: internal affairs agent headset
+  name: iaa headset
   description: A headset for internal affairs agent to hear the captain's last words.
   components:
     - type: Headset
