@@ -19,7 +19,6 @@ namespace Content.Client.VendingMachines.UI
         public VendingMachineMenu()
         {
             SetSize = (450, 150);
-            Resizable = true;
             RobustXamlLoader.Load(this);
             IoCManager.InjectDependencies(this);
 
