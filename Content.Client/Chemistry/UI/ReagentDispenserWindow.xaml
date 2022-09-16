@@ -3,7 +3,7 @@
             Title="{Loc 'reagent-dispenser-bound-user-interface-title'}"
             SetSize="720 450"
             MinSize="720 450"
-            Resizable="True">
+            >
     <BoxContainer Orientation="Vertical">
         <BoxContainer Orientation="Horizontal">
             <Label Text="{Loc 'reagent-dispenser-window-amount-to-dispense-label'}"/>
