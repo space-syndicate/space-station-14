@@ -1,7 +1,7 @@
 ﻿<DefaultWindow xmlns="https://spacestation14.io"
             Title="{Loc 'comp-pda-ui-menu-title'}"
-            MinSize="576 256"
-            SetSize="576 256">
+            MinSize="600 256"
+            SetSize="600 256">
     <TabContainer Name="MasterTabContainer">
         <BoxContainer Orientation="Vertical"
                       VerticalExpand="True"
