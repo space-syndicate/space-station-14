@@ -1,7 +1,7 @@
 ﻿using System.Net.Http;
 using System.Net.Http.Json;
 using System.Threading.Tasks;
-using Robust.Shared;
+using Content.Shared.CCVar;
 using Robust.Shared.Configuration;
 using Robust.Shared.Network;
 
@@ -21,7 +21,7 @@ public sealed class DonationManager : IDonationManager, IPostInjectInit
     public void PostInject()
     {
         _sawmill = Logger.GetSawmill("donations");
-        _cfg.OnValueChanged(CVars.DonationApiUrl, s => _apiUrl = s, true);
+        _cfg.OnValueChanged(CCVars.DonationApiUrl, s => _apiUrl = s, true);
     }
 
     public async Task<string?> GetDonatorOOCColor(NetUserId userId)
