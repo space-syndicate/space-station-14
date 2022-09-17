@@ -1,6 +1,7 @@
 using System.Linq;
 using Content.Server.Administration.Logs;
 using Content.Server.Administration.Managers;
+using Content.Server.Corvax.Donations;
 using Content.Server.MoMMI;
 using Content.Server.Preferences.Managers;
 using Content.Server.Station.Systems;
@@ -37,6 +38,7 @@ namespace Content.Server.Chat.Managers
         [Dependency] private readonly IServerPreferencesManager _preferencesManager = default!;
         [Dependency] private readonly IConfigurationManager _configurationManager = default!;
         [Dependency] private readonly IEntityManager _entityManager = default!;
+        [Dependency] private readonly IDonationManager _donationManager = default!;
 
         private StationSystem _stationSystem = default!;
 
@@ -152,7 +154,7 @@ namespace Content.Server.Chat.Managers
 
         #region Private API
 
-        private void SendOOC(IPlayerSession player, string message)
+        private async void SendOOC(IPlayerSession player, string message)
         {
             if (_adminManager.IsAdmin(player))
             {
@@ -177,6 +179,12 @@ namespace Content.Server.Chat.Managers
                      PatronOocColors.TryGetValue(patron, out var patronColor))
             {
                 messageWrap = Loc.GetString("chat-manager-send-ooc-patron-wrap-message", ("patronColor", patronColor),("playerName", player.Name));
+            }
+
+            var donatorColor = await _donationManager.GetDonatorOOCColor(player.UserId);
+            if (donatorColor != null)
+            {
+                messageWrap = Loc.GetString("chat-manager-send-ooc-patron-wrap-message", ("patronColor", donatorColor),("playerName", player.Name));
             }
 
             //TODO: player.Name color, this will need to change the structure of the MsgChatMessage
