@@ -1,6 +1,9 @@
 ent-ClothingHeadsetAlt = гарнитура
     .desc = Модифицированный модульный интерком, надеваемый на голову. Принимает ключи шифрования.
     .suffix = { "" }
+ent-ClothingHeadsetAltCentCom = гарнитура Центком
+    .desc = { ent-ClothingHeadsetAlt.desc }
+    .suffix = { "" }
 ent-ClothingHeadsetAltCommand = командная гарнитура
     .desc = { ent-ClothingHeadsetAlt.desc }
     .suffix = { "" }

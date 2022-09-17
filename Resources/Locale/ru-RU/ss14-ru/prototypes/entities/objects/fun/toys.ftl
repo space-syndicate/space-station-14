@@ -139,3 +139,6 @@ ent-PonderingOrb = шар размышлений
 ent-ToySword = игрушечный меч
     .desc = Новый пластиковый меч от Sandy-Cat! Имеет реалистичный звук и насыщенный цвет! Почти как настоящий!
     .suffix = { "" }
+ent-ToyAmongPequeno = маленький амонг
+    .desc = сас!
+    .suffix = { "" }
