@@ -5,9 +5,9 @@ using Content.Shared.CCVar;
 using Robust.Shared.Configuration;
 using Robust.Shared.Network;
 
-namespace Content.Server.Corvax.Donations;
+namespace Content.Server.Corvax.Sponsors;
 
-public sealed class DonationManager : IDonationManager, IPostInjectInit
+public sealed class SponsorsManager : ISponsorsManager, IPostInjectInit
 {
     [Dependency] private readonly IConfigurationManager _cfg = default!;
 
@@ -20,16 +20,16 @@ public sealed class DonationManager : IDonationManager, IPostInjectInit
 
     public void PostInject()
     {
-        _sawmill = Logger.GetSawmill("donations");
-        _cfg.OnValueChanged(CCVars.DonationApiUrl, s => _apiUrl = s, true);
+        _sawmill = Logger.GetSawmill("sponsors");
+        // _cfg.OnValueChanged(CCVars.SponsorsApiUrl, s => _apiUrl = s, true);
     }
 
-    public async Task<string?> GetDonatorOOCColor(NetUserId userId)
+    public async Task<string?> GetSponsorOOCColor(NetUserId userId)
     {
         if (_cachedOOCColors.TryGetValue(userId, out var cachedColor))
             return cachedColor;
 
-        var info = await GetDonatorInfo(userId);
+        var info = await GetSponsorInfo(userId);
         var color = info?.OOCColor;
         if (color == null)
             return null;
@@ -38,25 +38,26 @@ public sealed class DonationManager : IDonationManager, IPostInjectInit
         return color;
     }
 
-    private async Task<DonatorInfoResponse?> GetDonatorInfo(NetUserId userId)
+    private async Task<SponsorInfoResponse?> GetSponsorInfo(NetUserId userId)
     {
         if (string.IsNullOrEmpty(_apiUrl))
             return null;
 
-        var url = $"{_apiUrl}/donators/${userId.ToString()}";
+        _apiUrl = _cfg.GetCVar(CCVars.SponsorsApiUrl);
+        var url = $"{_apiUrl}/sponsors/${userId.ToString()}";
         var response = await _httpClient.GetAsync(url);
         if (!response.IsSuccessStatusCode)
         {
             var errorText = await response.Content.ReadAsStringAsync();
             _sawmill.Error(
-                "Failed to get player donator OOC color from API: [{StatusCode}] {Response}",
+                "Failed to get player sponsor OOC color from API: [{StatusCode}] {Response}",
                 response.StatusCode,
                 errorText);
             return null;
         }
 
-        return await response.Content.ReadFromJsonAsync<DonatorInfoResponse>();
+        return await response.Content.ReadFromJsonAsync<SponsorInfoResponse>();
     }
     
-    private sealed record DonatorInfoResponse(string UserId, string OOCColor);
+    private sealed record SponsorInfoResponse(string UserId, string OOCColor);
 }

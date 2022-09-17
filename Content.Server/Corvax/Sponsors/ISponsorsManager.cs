@@ -1,12 +1,12 @@
 ﻿using System.Threading.Tasks;
 using Robust.Shared.Network;
 
-namespace Content.Server.Corvax.Donations;
+namespace Content.Server.Corvax.Sponsors;
 
-public interface IDonationManager
+public interface ISponsorsManager
 {
     /**
      * Get OOC color of player by their user id from API or if it has already been received before, then from the cache.
      */
-    Task<string?> GetDonatorOOCColor(NetUserId userId);
+    Task<string?> GetSponsorOOCColor(NetUserId userId);
 }

@@ -1256,13 +1256,13 @@ namespace Content.Shared.CCVar
             PlayTimeSaveInterval = CVarDef.Create("playtime.save_interval", 900f, CVar.SERVERONLY);
         
         /**
-         * DONATIONS
+         * SPONSORS
          */
 
         /// <summary>
-        /// URL of the donations server API.
+        /// URL of the sponsors server API.
         /// </summary>
-        public static readonly CVarDef<string> DonationApiUrl =
-            CVarDef.Create("donation.api_url", "", CVar.SERVERONLY);
+        public static readonly CVarDef<string> SponsorsApiUrl =
+            CVarDef.Create("sponsor.api_url", "", CVar.SERVERONLY);
     }
 }
