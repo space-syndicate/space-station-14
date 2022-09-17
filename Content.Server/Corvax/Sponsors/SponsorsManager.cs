@@ -21,7 +21,7 @@ public sealed class SponsorsManager : ISponsorsManager, IPostInjectInit
     public void PostInject()
     {
         _sawmill = Logger.GetSawmill("sponsors");
-        // _cfg.OnValueChanged(CCVars.SponsorsApiUrl, s => _apiUrl = s, true);
+        _cfg.OnValueChanged(CCVars.SponsorsApiUrl, s => _apiUrl = s, true);
     }
 
     public async Task<string?> GetSponsorOOCColor(NetUserId userId)
@@ -43,7 +43,6 @@ public sealed class SponsorsManager : ISponsorsManager, IPostInjectInit
         if (string.IsNullOrEmpty(_apiUrl))
             return null;
 
-        _apiUrl = _cfg.GetCVar(CCVars.SponsorsApiUrl);
         var url = $"{_apiUrl}/sponsors/${userId.ToString()}";
         var response = await _httpClient.GetAsync(url);
         if (!response.IsSuccessStatusCode)
