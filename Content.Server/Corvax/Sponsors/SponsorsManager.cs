@@ -37,6 +37,10 @@ public sealed class SponsorsManager : ISponsorsManager
     private async Task OnConnecting(NetConnectingArgs e)
     {
         var info = await GetSponsorInfo(e.UserId);
+        var isSponsor = info?.Tier != null;
+        if (!isSponsor)
+            return;
+
         var hexColor = info?.OOCColor != null ? $"#{info?.OOCColor}" : null;
         _cachedOOCColors[e.UserId] = hexColor;
     }
@@ -67,6 +71,9 @@ public sealed class SponsorsManager : ISponsorsManager
 
     private struct SponsorInfoResponse
     {
+        [JsonPropertyName("sponsor_tier")]
+        public int? Tier { get; set; }
+
         [JsonPropertyName("ooc_color")]
         public string? OOCColor { get; set; }
     }
