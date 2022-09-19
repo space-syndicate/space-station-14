@@ -1,4 +1,4 @@
-﻿using System.Threading.Tasks;
+﻿using System.Diagnostics.CodeAnalysis;
 using Robust.Shared.Network;
 
 namespace Content.Server.Corvax.Sponsors;
@@ -6,7 +6,7 @@ namespace Content.Server.Corvax.Sponsors;
 public interface ISponsorsManager
 {
     /**
-     * Get OOC color of player by their user id from API or if it has already been received before, then from the cache.
+     * Gets the cached color of the players OOC if he is a sponsor
      */
-    Task<string?> GetSponsorOOCColor(NetUserId userId);
+    bool TryGetCustomOOCColor(NetUserId userId, [MaybeNullWhen(false)] out string color);
 }

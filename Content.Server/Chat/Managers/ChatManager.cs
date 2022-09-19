@@ -181,8 +181,7 @@ namespace Content.Server.Chat.Managers
                 messageWrap = Loc.GetString("chat-manager-send-ooc-patron-wrap-message", ("patronColor", patronColor),("playerName", player.Name));
             }
 
-            var sponsorColor = await _sponsorsManager.GetSponsorOOCColor(player.UserId);
-            if (sponsorColor != null)
+            if (_sponsorsManager.TryGetCustomOOCColor(player.UserId, out var sponsorColor))
             {
                 messageWrap = Loc.GetString("chat-manager-send-ooc-patron-wrap-message", ("patronColor", sponsorColor),("playerName", player.Name));
             }
