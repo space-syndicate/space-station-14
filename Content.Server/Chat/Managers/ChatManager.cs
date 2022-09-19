@@ -154,7 +154,7 @@ namespace Content.Server.Chat.Managers
 
         #region Private API
 
-        private async void SendOOC(IPlayerSession player, string message)
+        private void SendOOC(IPlayerSession player, string message)
         {
             if (_adminManager.IsAdmin(player))
             {
