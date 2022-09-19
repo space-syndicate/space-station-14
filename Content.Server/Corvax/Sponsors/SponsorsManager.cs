@@ -10,7 +10,7 @@ using Robust.Shared.Network;
 
 namespace Content.Server.Corvax.Sponsors;
 
-public sealed class SponsorsManager : ISponsorsManager, IPostInjectInit
+public sealed class SponsorsManager : ISponsorsManager
 {
     [Dependency] private readonly IServerNetManager _netMgr = default!;
     [Dependency] private readonly IConfigurationManager _cfg = default!;
@@ -22,7 +22,7 @@ public sealed class SponsorsManager : ISponsorsManager, IPostInjectInit
 
     private readonly Dictionary<NetUserId, string?> _cachedOOCColors = new();
 
-    public void PostInject()
+    public void Initialize()
     {
         _sawmill = Logger.GetSawmill("sponsors");
         _cfg.OnValueChanged(CCVars.SponsorsApiUrl, s => _apiUrl = s, true);

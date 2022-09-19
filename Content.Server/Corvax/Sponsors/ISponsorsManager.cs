@@ -5,6 +5,8 @@ namespace Content.Server.Corvax.Sponsors;
 
 public interface ISponsorsManager
 {
+    void Initialize();
+
     /**
      * Gets the cached color of the players OOC if he is a sponsor
      */
