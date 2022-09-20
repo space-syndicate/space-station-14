@@ -607,3 +607,25 @@
       sprite: Clothing/Uniforms/Jumpskirt/lawyergood.rsi
     - type: Clothing
       sprite: Clothing/Uniforms/Jumpskirt/lawyergood.rsi
+
+- type: entity
+  parent: ClothingUniformBase
+  id: ClothingUniformJumpskirtCentcomOfficial
+  name: CentCom officer's suitskirt
+  description: It's a suitskirt worn by CentCom's highest-tier Commanders.
+  components:
+    - type: Sprite
+      sprite: Clothing/Uniforms/Jumpskirt/centcom_official.rsi
+    - type: Clothing
+      sprite: Clothing/Uniforms/Jumpskirt/centcom_official.rsi
+
+- type: entity
+  parent: ClothingUniformBase
+  id: ClothingUniformJumpskirtCentcomOfficer
+  name: CentCom turtleneck skirt
+  description: A skirt version of the CentCom turtleneck, rarer and more sought after than the original.
+  components:
+    - type: Sprite
+      sprite: Clothing/Uniforms/Jumpskirt/centcom_officer.rsi
+    - type: Clothing
+      sprite: Clothing/Uniforms/Jumpskirt/centcom_officer.rsi
