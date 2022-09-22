@@ -28,5 +28,5 @@ chem-master-window-pill-type-label = Тип таблеток:
 chem-master-window-pills-number-label = Кол-во:
 chem-master-window-dose-label = Дозировка (ед.):
 chem-master-window-create-button = Создать
-chem-master-window-bottles-label = Бутылочки:
+chem-master-window-bottles-label = Пузырьки:
 chem-master-window-unknown-reagent-text = Неизвестный реагент
