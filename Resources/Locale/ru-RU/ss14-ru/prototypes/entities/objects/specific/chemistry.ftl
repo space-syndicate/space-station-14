@@ -25,6 +25,6 @@ ent-Syringe = { ent-BaseSyringe }
 ent-Pill = таблетка
     .desc = Это не свеча.
     .suffix = { "" }
-ent-PillCanister = баночка для таблеток
+ent-PillCanister = таблетница
     .desc = Вмещает до 12 таблеток.
     .suffix = { "" }
