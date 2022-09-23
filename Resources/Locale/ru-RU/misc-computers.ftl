@@ -1,2 +1,2 @@
-radar-console-window-title = Терминал детектора масс
+radar-console-window-title = Компьютер детектора масс
 shuttle-console-window-title = Консоль шаттла
