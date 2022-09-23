@@ -1,4 +1,4 @@
-solar-control-window-title = Консоль управления солнечными панелями
+solar-control-window-title = Компьютер управления солнечными панелями
 solar-control-window-output-power = Выходное напряжение:
 solar-control-window-watts = Вт
 solar-control-window-sun-angle = Угол солнца:
