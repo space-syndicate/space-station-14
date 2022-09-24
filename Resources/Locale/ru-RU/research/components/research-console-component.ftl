@@ -1,6 +1,6 @@
 ## UI
 
-research-console-menu-title = Компьютер R&D
+research-console-menu-title = Консоль R&D
 research-console-menu-unlocked-technologies-label = Изученные технологии
 research-console-menu-unlockable-technologies-label = Доступные технологии
 research-console-menu-future-technologies-label = Будущие технологии
