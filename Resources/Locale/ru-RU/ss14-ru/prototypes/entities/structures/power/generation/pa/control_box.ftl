@@ -1,6 +1,6 @@
-ent-ParticleAcceleratorControlBox = компьютер управления УЧ
+ent-ParticleAcceleratorControlBox = консоль управления УЧ
     .desc = Позволяет контролировать плотность частиц.
     .suffix = { "" }
-ent-ParticleAcceleratorControlBoxUnfinished = компьютер управления УЧ
+ent-ParticleAcceleratorControlBoxUnfinished = консоль управления УЧ
     .desc = Позволяет контролировать плотность частиц. Выглядит незаконченным.
     .suffix = Незаконченный
