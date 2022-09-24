@@ -1,6 +1,6 @@
 ## UI
 
-cloning-console-window-title = Компьютер клонирования
+cloning-console-window-title = Консоль клонирования
 cloning-console-window-clone-button-text = Клонировать
 cloning-console-window-scanner-id = ID: [color=white]{ $scannerOccupantName }[/color]
 cloning-console-window-pod-id = ID: [color=white]{ $podOccupantName }[/color]
