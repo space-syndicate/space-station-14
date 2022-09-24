@@ -4,4 +4,3 @@ ent-BaseWeaponLightMachineGun = BaseWeaponLightMachineGun
 ent-WeaponLightMachineGunL6 = L6 SAW
     .desc = Весьма традиционный легкий пулемет с удобной лакированной деревянной пистолетной рукоятью.
     .suffix = Пулемёт
-    
