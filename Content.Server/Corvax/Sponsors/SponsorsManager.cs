@@ -76,5 +76,8 @@ public sealed class SponsorsManager : ISponsorsManager
 
         [JsonPropertyName("ooc_color")]
         public string? OOCColor { get; }
+
+        [JsonPropertyName("allow_priority_join")]
+        public bool HavePriorityJoin { get; }
     }
 }

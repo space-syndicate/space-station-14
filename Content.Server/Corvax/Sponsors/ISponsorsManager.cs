@@ -17,4 +17,5 @@ public interface ISponsor
 {
     int? Tier { get; }
     string? OOCColor { get; }
+    bool HavePriorityJoin { get; }
 }
