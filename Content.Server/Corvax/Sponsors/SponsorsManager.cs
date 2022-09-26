@@ -41,8 +41,7 @@ public sealed class SponsorsManager : ISponsorsManager
         if (!isSponsor)
             return;
 
-        var hexColor = info?.OOCColor != null ? $"#{info?.OOCColor}" : null;
-        _cachedOOCColors[e.UserId] = hexColor;
+        _cachedOOCColors[e.UserId] = info?.OOCColor;
     }
 
     private async Task<SponsorInfoResponse?> GetSponsorInfo(NetUserId userId)
