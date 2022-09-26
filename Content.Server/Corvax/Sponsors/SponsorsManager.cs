@@ -20,7 +20,7 @@ public sealed class SponsorsManager : ISponsorsManager
     private ISawmill _sawmill = default!;
     private string _apiUrl = string.Empty;
 
-    private readonly Dictionary<NetUserId, string?> _cachedOOCColors = new();
+    private readonly Dictionary<NetUserId, SponsorInfo> _cache = new();
 
     public void Initialize()
     {
@@ -29,22 +29,23 @@ public sealed class SponsorsManager : ISponsorsManager
         _netMgr.Connecting += OnConnecting;
     }
 
-    public bool TryGetCustomOOCColor(NetUserId userId, [MaybeNullWhen(false)] out string color)
+    public ISponsor? GetSponsorInfo(NetUserId userId)
     {
-        return _cachedOOCColors.TryGetValue(userId, out color);
+        if (!_cache.TryGetValue(userId, out var sponsor))
+            return null;
+        return sponsor;
     }
 
     private async Task OnConnecting(NetConnectingArgs e)
     {
-        var info = await GetSponsorInfo(e.UserId);
-        var isSponsor = info?.Tier != null;
-        if (!isSponsor)
+        var info = await LoadSponsorInfo(e.UserId);
+        if (info?.Tier == null)
             return;
 
-        _cachedOOCColors[e.UserId] = info?.OOCColor;
+        _cache[e.UserId] = info.Value;
     }
 
-    private async Task<SponsorInfoResponse?> GetSponsorInfo(NetUserId userId)
+    private async Task<SponsorInfo?> LoadSponsorInfo(NetUserId userId)
     {
         if (string.IsNullOrEmpty(_apiUrl))
             return null;
@@ -64,16 +65,16 @@ public sealed class SponsorsManager : ISponsorsManager
             return null;
         }
 
-        return await response.Content.ReadFromJsonAsync<SponsorInfoResponse>();
+        return await response.Content.ReadFromJsonAsync<SponsorInfo>();
     }
     
 
-    private struct SponsorInfoResponse
+    private struct SponsorInfo : ISponsor
     {
         [JsonPropertyName("sponsor_tier")]
-        public int? Tier { get; set; }
+        public int? Tier { get; }
 
         [JsonPropertyName("ooc_color")]
-        public string? OOCColor { get; set; }
+        public string? OOCColor { get; }
     }
 }
