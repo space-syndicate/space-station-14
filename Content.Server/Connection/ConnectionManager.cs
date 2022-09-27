@@ -120,7 +120,7 @@ namespace Content.Server.Connection
             var wasInGame = EntitySystem.TryGet<GameTicker>(out var ticker) &&
                             ticker.PlayerGameStatuses.TryGetValue(userId, out var status) &&
                             status == PlayerGameStatus.JoinedGame;
-            if ((_plyMgr.PlayerCount >= _cfg.GetCVar(CCVars.SoftMaxPlayers) && adminData is null && havePriorityJoin) && !wasInGame)
+            if ((_plyMgr.PlayerCount >= _cfg.GetCVar(CCVars.SoftMaxPlayers) && adminData is null && !havePriorityJoin) && !wasInGame)
             {
                 return (ConnectionDenyReason.Full, Loc.GetString("soft-player-cap-full"), null);
             }
