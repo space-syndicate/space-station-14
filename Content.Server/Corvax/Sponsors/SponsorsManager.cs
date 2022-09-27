@@ -71,13 +71,13 @@ public sealed class SponsorsManager : ISponsorsManager
 
     private struct SponsorInfo : ISponsor
     {
-        [JsonPropertyName("sponsor_tier")]
-        public int? Tier { get; }
+        [JsonPropertyName("tier")]
+        public int? Tier { get; set; }
 
-        [JsonPropertyName("ooc_color")]
-        public string? OOCColor { get; }
+        [JsonPropertyName("oocColor")]
+        public string? OOCColor { get; set; }
 
-        [JsonPropertyName("allow_priority_join")]
-        public bool HavePriorityJoin { get; }
+        [JsonPropertyName("priorityJoin")]
+        public bool HavePriorityJoin { get; set; }
     }
 }
