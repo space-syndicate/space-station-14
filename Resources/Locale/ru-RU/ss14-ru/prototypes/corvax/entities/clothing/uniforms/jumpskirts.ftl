@@ -1,4 +1,4 @@
-ent-ClothingUniformJumpskirtCentcomOfficial = юбка-комбинезон офицера Центком
+ent-ClothingUniformJumpskirtCentcomOfficial = костюм c юбкой офицера Центком
     .desc = Это юбка-комбинезон, которую носят офицеры Центком высшего звена.
     .suffix = { "" }
 ent-ClothingUniformJumpskirtCentcomOfficer = водолазка c юбкой Центком
