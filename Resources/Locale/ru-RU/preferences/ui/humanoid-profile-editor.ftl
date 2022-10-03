@@ -36,5 +36,5 @@ humanoid-profile-editor-job-priority-medium-button = Средний
 humanoid-profile-editor-job-priority-low-button = Низкий
 humanoid-profile-editor-job-priority-never-button = Никогда
 humanoid-profile-editor-naming-rules-warning = Внимание: Оскорбительные или странные имена и описания могут повлечь за собой беседу с администрацией. Прочитайте \[Правила\].
-humanoid-profile-editor-markings-tab = Отметины
+humanoid-profile-editor-markings-tab = Черты внешности
 humanoid-profile-editor-flavortext-tab = Описание
