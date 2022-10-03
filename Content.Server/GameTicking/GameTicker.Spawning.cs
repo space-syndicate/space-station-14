@@ -202,19 +202,8 @@ namespace Content.Server.GameTicking
             var charSlotId = _prefsManager.GetPreferences(player.UserId).SelectedCharacterIndex;
             if (0 == charSlotId)
             {
-                Color? color = null;
-
-                // Get hair color
-                // if (TryComp<HumanoidComponent>(mob, out var humanoid) &&
-                //     humanoid.CurrentMarkings.TryGetCategory(MarkingCategories.Hair, out var hairMarkings) &&
-                //     hairMarkings.Count > 0 &&
-                //     hairMarkings[0].MarkingColors.Count > 0)
-                // {
-                //     color = hairMarkings[0].MarkingColors[0];
-                // }
-
-                _humanoid.AddMarking(mob, "CatTail", color, forced: true);
-                _humanoid.AddMarking(mob, "CatEars", color, forced: true);
+                _humanoid.AddMarking(mob, "CatTail", forced: true);
+                _humanoid.AddMarking(mob, "CatEars", forced: true);
             }
             // Corvax-Sponsors-End
 
