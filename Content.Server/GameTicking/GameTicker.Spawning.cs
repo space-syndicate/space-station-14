@@ -200,7 +200,7 @@ namespace Content.Server.GameTicking
             // Corvax-Sponsors-Start: Add sponsor reward to player character
             var sponsorData = _sponsorsManager.GetSponsorInfo(player.UserId);
             var charSlotId = _prefsManager.GetPreferences(player.UserId).SelectedCharacterIndex;
-            if (sponsorData?.CatCharSlotId == charSlotId)
+            if (sponsorData?.NekoCharSlotId == charSlotId)
             {
                 _humanoid.AddMarking(mob, "CatTail", forced: true);
                 _humanoid.AddMarking(mob, "CatEars", forced: true);

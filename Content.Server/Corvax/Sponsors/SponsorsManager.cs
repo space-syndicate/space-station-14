@@ -88,7 +88,7 @@ public sealed class SponsorsManager
         [JsonPropertyName("priorityJoin")]
         public bool HavePriorityJoin { get; set; }
 
-        [JsonPropertyName("catCharSlotId")]
-        public int? CatCharSlotId { get; set; }
+        [JsonPropertyName("nekoCharSlotId")]
+        public int? NekoCharSlotId { get; set; }
     }
 }
