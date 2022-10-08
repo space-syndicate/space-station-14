@@ -146,3 +146,9 @@
   description: barsign-prototype-description-sign-off
   renameArea: false
   hidden: true
+  
+  - type: barSign
+  id: alcoholic
+  name: barsign-prototype-name-alcoholic
+  icon: "alcoholic"
+  description: barsign-prototype-description-alcoholic
