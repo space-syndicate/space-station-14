@@ -1,6 +1,6 @@
-ent-MountainRock = mountain rock
-    .desc = A craggy mountain wall.
+ent-MountainRock = горный камень
+    .desc = Мощная горная стена.
     .suffix = { "" }
-ent-MountainRockMining = mountain rock
-    .desc = A craggy mountain wall.
+ent-MountainRockMining = горный камень
+    .desc = Мощная горная стена.
     .suffix = { "" }
