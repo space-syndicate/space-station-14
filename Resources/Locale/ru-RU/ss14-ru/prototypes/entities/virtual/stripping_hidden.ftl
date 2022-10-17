@@ -1,3 +1,3 @@
-ent-StrippingHiddenEntity = Hidden Entity
-    .desc = There is something in this pocket.
+ent-StrippingHiddenEntity = спрятанный предмет
+    .desc = В этом кармане что-то есть.
     .suffix = { "" }
