@@ -1,5 +1,5 @@
 # Noninfectious
-disease-proto-ultragigacancer = гигарак
+disease-proto-ultragigacancer = ультрагигарак
 disease-proto-spectral-tiredness = спектральное утомление
 disease-proto-lung-cancer = рак лёгких IIIA стадии
 # Infectious
