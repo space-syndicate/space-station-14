@@ -97,6 +97,6 @@ ent-MobRaccoonMorticia = Мортиша
 ent-MobFox = лиса
     .desc = Они - лисы.
     .suffix = { "" }
-ent-MobFoxRenault = Рено
+ent-MobFoxRenault = Алиса
     .desc = Верная лиса капитана.
     .suffix = { "" }
