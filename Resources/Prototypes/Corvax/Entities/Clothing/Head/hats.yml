@@ -8,3 +8,14 @@
       sprite: Corvax/Clothing/Head/Hats/centcom_officer_black.rsi
     - type: Clothing
       sprite: Corvax/Clothing/Head/Hats/centcom_officer_black.rsi
+
+- type: entity
+  parent: ClothingHeadBase
+  id: ClothingHeadCapCentcomNavalCap
+  name: naval cap
+  description: A cap worn by those in the Nanotrasen Navy.
+  components:
+    - type: Sprite
+      sprite: Corvax/Clothing/Head/Hats/naval_command.rsi
+    - type: Clothing
+      sprite: Corvax/Clothing/Head/Hats/naval_command.rsi
