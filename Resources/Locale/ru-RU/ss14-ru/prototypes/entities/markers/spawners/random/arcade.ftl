@@ -1,3 +1,3 @@
-ent-RandomArcade = Спавнер случайная аркада
+ent-RandomArcade = спавнер случайная аркада
     .desc = { ent-MarkerBase.desc }
     .suffix = { "" }
