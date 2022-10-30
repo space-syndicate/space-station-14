@@ -1,3 +1,3 @@
-ent-RandomSpawner = Trash Spawner
+ent-RandomSpawner = Спавнер мусор
     .desc = { ent-MarkerBase.desc }
     .suffix = { "" }
