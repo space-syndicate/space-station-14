@@ -55,6 +55,17 @@
     
 - type: entity
   parent: ClothingNeckBase
+  id: ClothingNeckMantleHOSShoulder
+  name: head of security's shoulder mantle
+  description: Shootouts with nukies are just another tuesday for this HoS. This mantle is a symbol of commitment to the station.
+  components:
+  - type: Sprite
+    sprite: Clothing/Neck/mantles/hosmantle_shoulder.rsi
+  - type: Clothing
+    sprite: Clothing/Neck/mantles/hosmantle_shoulder.rsi
+    
+- type: entity
+  parent: ClothingNeckBase
   id: ClothingNeckMantleRD
   name: research director's mantle
   description: For when long days in the office consist of explosives, poisonous gas, murder robots, and a fresh pizza from cargo; this mantle will keep you comfy.
