@@ -1,3 +1,3 @@
-ent-RandomFoodBakedSingle = Спавн случайная выпечка
+ent-RandomFoodBakedSingle = Спавнер случайная выпечка
     .suffix = Одна порция
     .desc = { ent-MarkerBase.desc }
