@@ -1,7 +1,7 @@
 ent-SpawnPointJobBase = { ent-MarkerBase }
-    .suffix = Спавн ролей
+    .suffix = Спавнер роли
     .desc = { ent-MarkerBase.desc }
-ent-SpawnPointObserver = Спавн наблюдатель
+ent-SpawnPointObserver = Спавнер наблюдатели
     .desc = { ent-SpawnPointJobBase.desc }
     .suffix = { "" }
 ent-SpawnPointLatejoin = Спавн позднее присоединение
