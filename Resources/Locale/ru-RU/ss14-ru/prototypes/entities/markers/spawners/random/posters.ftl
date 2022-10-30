@@ -1,7 +1,7 @@
 ent-RandomPosterAny = Спавнер случайный плакат
     .desc = { ent-MarkerBase.desc }
     .suffix = { "" }
-ent-RandomPosterContraband =  Спавнер случайный контрабанда плакат
+ent-RandomPosterContraband = Спавнер случайный контрабанда плакат
     .desc = { ent-MarkerBase.desc }
     .suffix = { "" }
 ent-RandomPosterLegit = Спавнер случайный легальный плакат
