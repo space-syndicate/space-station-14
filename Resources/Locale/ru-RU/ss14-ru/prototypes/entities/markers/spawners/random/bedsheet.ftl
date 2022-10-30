@@ -1,3 +1,3 @@
-ent-BedsheetSpawner = Спавнер случайное одеяло
+ent-BedsheetSpawner = спавнер случайное одеяло
     .desc = { ent-MarkerBase.desc }
     .suffix = { "" }
