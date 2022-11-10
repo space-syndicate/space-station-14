@@ -1,6 +1,4 @@
-ent-CrateSyndicateSurplusBundle = { ent-CrateGenericSteel }
-    .desc = { ent-CrateGenericSteel.desc }
-    .suffix = { "" }
-ent-CrateSyndicateSuperSurplusBundle = { ent-CrateGenericSteel }
-    .desc = { ent-CrateGenericSteel.desc }
-    .suffix = { "" }
+ent-CrateSyndicateSurplusBundle = ящик припасов синдиката
+    .desc = Содержит случайное снаряжение Синдиката, общей стоимостью в 50 телекристаллов. Оно может быть как бесполезным хламом, так и реально крутым.
+ent-CrateSyndicateSuperSurplusBundle = ящик суперприпасов синдиката
+    .desc = Содержит случайное снаряжение Синдиката, общей стоимостью в 125 телекристаллов.
