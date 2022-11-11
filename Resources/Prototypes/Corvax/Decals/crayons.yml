@@ -1,0 +1,27 @@
+- type: decal
+  id: rus_b
+  tags: ["crayon"]
+  sprite:
+    sprite: Corvax/Effects/crayondecals.rsi
+    state: rus_b
+
+- type: decal
+  id: rus_l
+  tags: ["crayon"]
+  sprite:
+    sprite: Corvax/Effects/crayondecals.rsi
+    state: rus_l
+
+- type: decal
+  id: rus_o
+  tags: ["crayon"]
+  sprite:
+    sprite: Corvax/Effects/crayondecals.rsi
+    state: rus_o
+
+- type: decal
+  id: rus_h
+  tags: ["crayon"]
+  sprite:
+    sprite: Corvax/Effects/crayondecals.rsi
+    state: rus_h
