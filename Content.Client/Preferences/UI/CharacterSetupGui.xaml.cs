@@ -112,11 +112,18 @@ namespace Content.Client.Preferences.UI
                 Loc.GetString("character-setup-gui-create-new-character-button-tooltip",
                 ("maxCharacters", _preferencesManager.Settings!.MaxCharacterSlots));
 
+            var isDisplayedMaxSlots = false;
             foreach (var (slot, character) in _preferencesManager.Preferences!.Characters)
             {
                 if (character is null)
                 {
                     continue;
+                }
+
+                isDisplayedMaxSlots = numberOfFullSlots >= _preferencesManager.Settings.MaxCharacterSlots; // Corvax-Sponsors: Additional slots possible
+                if (isDisplayedMaxSlots)
+                {
+                    break;
                 }
 
                 numberOfFullSlots++;
@@ -139,8 +146,7 @@ namespace Content.Client.Preferences.UI
                 };
             }
 
-            _createNewCharacterButton.Disabled =
-                numberOfFullSlots >= _preferencesManager.Settings.MaxCharacterSlots;
+            _createNewCharacterButton.Disabled = isDisplayedMaxSlots;
             Characters.AddChild(_createNewCharacterButton);
         }
 

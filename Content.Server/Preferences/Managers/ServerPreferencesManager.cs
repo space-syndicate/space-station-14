@@ -33,8 +33,6 @@ namespace Content.Server.Preferences.Managers
         private readonly Dictionary<NetUserId, PlayerPrefData> _cachedPlayerPrefs =
             new();
 
-        private int MaxCharacterSlots => _cfg.GetCVar(CCVars.GameMaxCharacterSlots);
-
         public void Init()
         {
             _netManager.RegisterNetMessage<MsgPreferencesAndSettings>();
@@ -54,7 +52,7 @@ namespace Content.Server.Preferences.Managers
                 return;
             }
 
-            if (index < 0 || index >= MaxCharacterSlots)
+            if (index < 0 || index >= GetMaxUserCharacterSlots(userId))
             {
                 return;
             }
@@ -94,7 +92,7 @@ namespace Content.Server.Preferences.Managers
                 return;
             }
 
-            if (slot < 0 || slot >= MaxCharacterSlots)
+            if (slot < 0 || slot >= GetMaxUserCharacterSlots(userId))
             {
                 return;
             }
@@ -133,7 +131,7 @@ namespace Content.Server.Preferences.Managers
                 return;
             }
 
-            if (slot < 0 || slot >= MaxCharacterSlots)
+            if (slot < 0 || slot >= GetMaxUserCharacterSlots(userId))
             {
                 return;
             }
@@ -217,7 +215,7 @@ namespace Content.Server.Preferences.Managers
                     msg.Preferences = prefs;
                     msg.Settings = new GameSettings
                     {
-                        MaxCharacterSlots = MaxCharacterSlots
+                        MaxCharacterSlots = GetMaxUserCharacterSlots(session.UserId),
                     };
                     _netManager.ServerSendMessage(msg, session.ConnectedClient);
                 }
@@ -229,6 +227,15 @@ namespace Content.Server.Preferences.Managers
             _cachedPlayerPrefs.Remove(session.UserId);
         }
 
+        // Corvax-Sponsors-Start: Calculate total available users slots with sponsors
+        private int GetMaxUserCharacterSlots(NetUserId userId)
+        {
+            var maxSlots = _cfg.GetCVar(CCVars.GameMaxCharacterSlots);
+            var additionalSlots = _sponsors.GetSponsorInfo(userId)?.AdditionalSlots ?? 0;
+            return maxSlots + additionalSlots;
+        }
+        // Corvax-Sponsors-End
+        
         public bool HavePreferencesLoaded(IPlayerSession session)
         {
             return _cachedPlayerPrefs.ContainsKey(session.UserId);
