@@ -2,6 +2,7 @@ using System.Diagnostics.CodeAnalysis;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
+using Content.Server.Corvax.Sponsors;
 using Content.Server.Database;
 using Content.Server.Humanoid;
 using Content.Shared.CCVar;
@@ -26,6 +27,7 @@ namespace Content.Server.Preferences.Managers
         [Dependency] private readonly IConfigurationManager _cfg = default!;
         [Dependency] private readonly IServerDbManager _db = default!;
         [Dependency] private readonly IPrototypeManager _protos = default!;
+        [Dependency] private readonly ServerSponsorsManager _sponsors = default!;
 
         // Cache player prefs on the server so we don't need as much async hell related to them.
         private readonly Dictionary<NetUserId, PlayerPrefData> _cachedPlayerPrefs =
@@ -193,6 +195,15 @@ namespace Content.Server.Preferences.Managers
                 async Task LoadPrefs()
                 {
                     var prefs = await GetOrCreatePreferencesAsync(session.UserId);
+                    
+                    // Corvax-Sponsors-Start: Remove sponsor markings from expired sponsors
+                    var isSponsor = _sponsors.IsSponsor(session.UserId);
+                    foreach (var (_, profile) in prefs.Characters)
+                    {
+                        _sponsors.FilterSponsorMarkings(isSponsor, profile);
+                    }
+                    // Corvax-Sponsors-End
+                    
                     prefsData.Prefs = prefs;
                     prefsData.PrefsLoaded = true;
 

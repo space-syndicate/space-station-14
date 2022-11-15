@@ -43,7 +43,7 @@ namespace Content.Client.IoC
             IoCManager.Register<GhostKickManager>();
             IoCManager.Register<ExtendedDisconnectInformationManager>();
             IoCManager.Register<PlayTimeTrackingManager>();
-            IoCManager.Register<SponsorsManager>(); // Corvax-Sponsors
+            IoCManager.Register<ClientSponsorsManager>(); // Corvax-Sponsors
         }
     }
 }

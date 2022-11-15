@@ -10,7 +10,7 @@ using Robust.Shared.Utility;
 
 namespace Content.Server.Corvax.Sponsors;
 
-public sealed class SponsorsManager
+public sealed class ServerSponsorsManager : SponsorsManager
 {
     [Dependency] private readonly IServerNetManager _netMgr = default!;
     [Dependency] private readonly IConfigurationManager _cfg = default!;
@@ -32,6 +32,11 @@ public sealed class SponsorsManager
         _netMgr.Connecting += OnConnecting;
         _netMgr.Connected += OnConnected;
         _netMgr.Disconnect += OnDisconnect;
+    }
+
+    public bool IsSponsor(NetUserId userId)
+    {
+        return GetSponsorInfo(userId)?.Tier != null;
     }
 
     public SponsorInfo? GetSponsorInfo(NetUserId userId)

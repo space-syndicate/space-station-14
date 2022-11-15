@@ -3,7 +3,7 @@ using Robust.Shared.Network;
 
 namespace Content.Client.Corvax.Sponsors;
 
-public sealed class SponsorsManager
+public sealed class ClientSponsorsManager : SponsorsManager
 {
     [Dependency] private readonly IClientNetManager _netMgr = default!;
 
