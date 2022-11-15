@@ -17,4 +17,7 @@ public sealed class SponsorInfo
 
     [JsonPropertyName("allowedNeko")]
     public bool AllowedNeko { get; set; }
+    
+    [JsonPropertyName("extraSlots")]
+    public int ExtraSlots { get; set; }
 }

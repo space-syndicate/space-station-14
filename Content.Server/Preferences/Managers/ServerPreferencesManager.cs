@@ -231,8 +231,8 @@ namespace Content.Server.Preferences.Managers
         private int GetMaxUserCharacterSlots(NetUserId userId)
         {
             var maxSlots = _cfg.GetCVar(CCVars.GameMaxCharacterSlots);
-            var additionalSlots = _sponsors.GetSponsorInfo(userId)?.AdditionalSlots ?? 0;
-            return maxSlots + additionalSlots;
+            var extraSlots = _sponsors.GetSponsorInfo(userId)?.ExtraSlots ?? 0;
+            return maxSlots + extraSlots;
         }
         // Corvax-Sponsors-End
         
