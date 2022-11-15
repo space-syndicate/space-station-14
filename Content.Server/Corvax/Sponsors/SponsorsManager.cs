@@ -34,11 +34,6 @@ public sealed class ServerSponsorsManager : SponsorsManager
         _netMgr.Disconnect += OnDisconnect;
     }
 
-    public bool IsSponsor(NetUserId userId)
-    {
-        return GetSponsorInfo(userId)?.Tier != null;
-    }
-
     public SponsorInfo? GetSponsorInfo(NetUserId userId)
     {
         if (!_cachedSponsors.TryGetValue(userId, out var sponsor))
@@ -50,7 +45,10 @@ public sealed class ServerSponsorsManager : SponsorsManager
     {
         var info = await LoadSponsorInfo(e.UserId);
         if (info?.Tier == null)
+        {
+            _cachedSponsors.Remove(e.UserId); // Remove from cache if sponsor expired
             return;
+        }
 
         DebugTools.Assert(!_cachedSponsors.ContainsKey(e.UserId), "Cached data was found on client connect");
 
@@ -59,13 +57,23 @@ public sealed class ServerSponsorsManager : SponsorsManager
     
     private void OnConnected(object? sender, NetChannelArgs e)
     {
-        if (!_cachedSponsors.ContainsKey(e.Channel.UserId))
-            return;
-        
-        var msg = new MsgSponsoringInfo
+        MsgSponsoringInfo msg;
+        if (_cachedSponsors.TryGetValue(e.Channel.UserId, out var info))
         {
-            Info = _cachedSponsors[e.Channel.UserId],
-        };
+            msg = new()
+            {
+                IsSponsor = true,
+                AllowedNeko = info.AllowedNeko,
+            };
+        }
+        else
+        {
+            msg = new()
+            {
+                IsSponsor = false,
+                AllowedNeko = false,
+            };
+        }
         _netMgr.ServerSendMessage(msg, e.Channel);
     }
     

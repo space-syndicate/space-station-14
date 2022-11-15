@@ -11,22 +11,21 @@ namespace Content.Shared.Corvax.Sponsors;
 public sealed class MsgSponsoringInfo : NetMessage
 {
     public override MsgGroups MsgGroup => MsgGroups.Command;
-    
-    public SponsorInfo Info = default!;
+
+    public bool IsSponsor;
+    public bool AllowedNeko;
     
     public override void ReadFromBuffer(NetIncomingMessage buffer, IRobustSerializer serializer)
     {
-        var length = buffer.ReadVariableInt32();
-        using var stream = buffer.ReadAlignedMemory(length);
-        serializer.DeserializeDirect(stream, out Info);
+        IsSponsor = buffer.ReadBoolean();
+        AllowedNeko = buffer.ReadBoolean();
+        buffer.ReadPadBits();
     }
 
     public override void WriteToBuffer(NetOutgoingMessage buffer, IRobustSerializer serializer)
     {
-        using var stream = new MemoryStream();
-        serializer.SerializeDirect(stream, Info);
-        buffer.WriteVariableInt32((int) stream.Length);
-        stream.TryGetBuffer(out var segment);
-        buffer.Write(segment);
+        buffer.Write(IsSponsor);
+        buffer.Write(AllowedNeko);
+        buffer.WritePadBits();
     }
 }

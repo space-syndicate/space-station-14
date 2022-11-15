@@ -7,9 +7,8 @@ public sealed class ClientSponsorsManager : SponsorsManager
 {
     [Dependency] private readonly IClientNetManager _netMgr = default!;
 
-    public bool IsSponsor => Info != null;
-
-    public SponsorInfo? Info { get; private set; }
+    public bool IsSponsor = default!;
+    public bool AllowedNeko = default!;
 
     public void Initialize()
     {
@@ -18,6 +17,7 @@ public sealed class ClientSponsorsManager : SponsorsManager
 
     private void HandleSponsoringInfo(MsgSponsoringInfo message)
     {
-        Info = message.Info;
+        IsSponsor = message.IsSponsor;
+        AllowedNeko = message.AllowedNeko;
     }
 }

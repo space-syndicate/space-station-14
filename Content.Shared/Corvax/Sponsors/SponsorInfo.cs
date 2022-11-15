@@ -15,6 +15,6 @@ public sealed class SponsorInfo
     [JsonPropertyName("priorityJoin")]
     public bool HavePriorityJoin { get; set; }
 
-    [JsonPropertyName("nekoCharName")]
-    public string? NekoCharName { get; set; }
+    [JsonPropertyName("allowedNeko")]
+    public bool AllowedNeko { get; set; }
 }
