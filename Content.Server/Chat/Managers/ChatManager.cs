@@ -177,11 +177,13 @@ namespace Content.Server.Chat.Managers
                 wrappedMessage = Loc.GetString("chat-manager-send-ooc-patron-wrap-message", ("patronColor", patronColor),("playerName", player.Name), ("message", FormattedMessage.EscapeText(message)));
             }
 
+            // Corvax-Sponsors-Start
             var sponsorData = _sponsorsManager.GetSponsorInfo(player.UserId);
             if (sponsorData?.OOCColor != null)
             {
                 wrappedMessage = Loc.GetString("chat-manager-send-ooc-patron-wrap-message", ("patronColor", sponsorData.OOCColor),("playerName", player.Name), ("message", FormattedMessage.EscapeText(message)));
             }
+            // Corvax-Sponsors-End
 
             //TODO: player.Name color, this will need to change the structure of the MsgChatMessage
             ChatMessageToAll(ChatChannel.OOC, message, wrappedMessage, colorOverride);

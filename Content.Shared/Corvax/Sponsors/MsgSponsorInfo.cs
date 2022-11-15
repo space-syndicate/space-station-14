@@ -6,7 +6,7 @@ using Robust.Shared.Serialization;
 namespace Content.Shared.Corvax.Sponsors;
 
 /// <summary>
-/// Serve sends sponsoring info to client only if user is sponsor
+/// Server sends sponsoring info to client on connect only if user is sponsor
 /// </summary>
 public sealed class MsgSponsoringInfo : NetMessage
 {
