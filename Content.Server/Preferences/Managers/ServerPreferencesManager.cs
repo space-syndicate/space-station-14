@@ -103,6 +103,11 @@ namespace Content.Server.Preferences.Managers
 
             profile.EnsureValid();
 
+            // Corvax-Sponsors-Start: Ensure removing sponsor markings if client somehow bypassed client filtering
+            var isSponsor = _sponsors.IsSponsor(message.MsgChannel.UserId);
+            _sponsors.FilterSponsorMarkings(isSponsor, profile);
+            // Corvax-Sponsors-End
+
             var profiles = new Dictionary<int, ICharacterProfile>(curPrefs.Characters)
             {
                 [slot] = profile
