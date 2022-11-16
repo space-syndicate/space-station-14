@@ -9,3 +9,15 @@
     sprite: Corvax/Structures/Wallmounts/barsign.rsi
   - type: BarSign
     current: AlcoholicSign
+
+- type: entity
+  parent: BaseBarSign
+  id: BarSignKingstonMyles
+  name: Kingston Myles Bar
+  description: They say that it is because of this man that the efficiency of the station has decreased three times.
+  components:
+  - type: Sprite
+    drawdepth: Objects
+    sprite: Corvax/Structures/Wallmounts/barsign.rsi
+  - type: BarSign
+    current: KingstonMyles
