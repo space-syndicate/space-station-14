@@ -1,4 +1,4 @@
 default-program-name = Программа
 notekeeper-program-name = Заметки
 net-probe-program-name = NetProbe
-net-probe-scan = Сканированный { $device }!
+net-probe-scan = Просканирован { $device }!
