@@ -1,3 +1,3 @@
-ent-RPED = RPED
-    .desc = A Rapid Part Exchange Device, perfect for quickly upgrading machines.
+ent-RPED = АБЗАК
+    .desc = Аппарат быстрой замены компонентов, идеально подходит для быстрого улучшения устройств.
     .suffix = { "" }
