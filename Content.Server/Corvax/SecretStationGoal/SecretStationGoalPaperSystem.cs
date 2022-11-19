@@ -30,7 +30,6 @@ namespace Content.Server.Corvax.SecretStationGoal
         {
             if (!TryComp<PaperComponent>(uid, out var paper))
             {
-                Log.Error("Secret Goal Component added to Entity without Paper Component");
                 return;
             }
 
