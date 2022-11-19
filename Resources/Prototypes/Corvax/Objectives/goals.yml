@@ -21,3 +21,23 @@
 - type: stationGoal
   id: StationGoalZoo
   text: station-goal-zoo
+
+- type: secretStationGoal
+  id: SecretGoalDeliverGas
+  text: secret-goal-deliver-gas
+
+- type: secretStationGoal
+  id: SecretGoalLeaveEmployee
+  text: secret-goal-leave-employee
+
+- type: secretStationGoal
+  id: SecretGoalSaveEmployee
+  text: secret-goal-save-employee
+
+- type: secretStationGoal
+  id: SecretGoalChangeSwp
+  text: secret-goal-change-swp
+
+- type: secretStationGoal
+  id: SecretGoalCaptureZombie
+  text: secret-goal-capture-zombie

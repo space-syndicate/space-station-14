@@ -8,3 +8,51 @@
       stampState: paper_stamp-cent
       stampedBy:
         - CentComm
+
+- type: entity
+  parent: Paper
+  id: SecretGoalPaper
+  name: secret goal paper
+  description: 'You should never talk about this!'
+  components:
+    - type: Paper
+      stampState: paper_stamp-cent
+      stampedBy:
+        - CentComm
+    - type: SecretStationGoalPaper
+
+- type: entity
+  parent: BaseItem
+  id: SecretGoalSealedEnvelope
+  name: secret goal sealed envelope
+  description: 'Envelope with top-secret mission.'
+  components:
+    - type: Sprite
+      sprite: Corvax/Objects/Misc/envelope.rsi
+      state: envelope_sealed
+    - type: SpawnItemsOnUse
+      items:
+        - id: SecretGoalOpenEnvelope
+      sound:
+        path: /Audio/Effects/unwrap.ogg
+
+- type: entity
+  parent: BoxFolderBase
+  id: SecretGoalOpenEnvelope
+  name: secret goal open envelope
+  description: 'An envelope containing secret goal'
+  components:
+    - type: Sprite
+      sprite: Corvax/Objects/Misc/envelope.rsi
+      layers:
+        - state: envelope_empty
+    - type: ItemMapper
+      mapLayers:
+        envelope_overlay_paper:
+          whitelist:
+            tags:
+              - Document
+    - type: StorageFill
+      contents:
+        - id: SecretGoalPaper
+          prob: 1
