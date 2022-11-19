@@ -22,20 +22,6 @@ namespace Content.Server.Corvax.StationGoal
             SubscribeLocalEvent<RoundStartedEvent>(OnRoundStarted);
         }
 
-        private void OnRoundStarted(RoundStartedEvent ev)
-        {
-            CreateRandomStationGoal();
-        }
-
-        public void CreateRandomStationGoal()
-        {
-            var availableGoals = _prototypeManager.EnumeratePrototypes<StationGoalPrototype>();
-
-            var random = IoCManager.Resolve<IRobustRandom>();
-            var goal = random.Pick(availableGoals.ToList());
-            _stationGoalPaperSystem.SpawnStationGoalPaper(goal);
-        }
-
         public bool CreateStationGoalById(string stationGoalId)
         {
             if (!_prototypeManager.TryIndex(stationGoalId, out StationGoalPrototype? prototype))
@@ -43,6 +29,19 @@ namespace Content.Server.Corvax.StationGoal
 
             _stationGoalPaperSystem.SpawnStationGoalPaper(_prototypeManager.Index<StationGoalPrototype>(stationGoalId));
             return true;
+        }
+
+        private void OnRoundStarted(RoundStartedEvent ev)
+        {
+            CreateRandomStationGoal();
+        }
+
+        private void CreateRandomStationGoal()
+        {
+            var availableGoals = _prototypeManager.EnumeratePrototypes<StationGoalPrototype>();
+
+            var goal = _random.Pick(availableGoals.ToList());
+            _stationGoalPaperSystem.SpawnStationGoalPaper(goal);
         }
     }
 }
