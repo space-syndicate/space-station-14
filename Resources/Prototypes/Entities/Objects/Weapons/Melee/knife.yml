@@ -10,6 +10,18 @@
   - type: Utensil
     types:
       - Knife
+  - type: SolutionContainerManager
+    solutions:
+      melee:
+        maxVol: 3
+  - type: MeleeChemicalInjector
+    solution: melee
+  - type: RefillableSolution
+    solution: melee
+  - type: InjectableSolution
+    solution: melee
+  - type: SolutionTransfer
+    maxTransferAmount: 3
   - type: ItemCooldown
   - type: MeleeWeapon
     damage:
