@@ -39,7 +39,9 @@ namespace Content.Server.Corvax.SecretStationGoal
         private SecretStationGoalPrototype PickSecretGoal()
         {
             var secretGoals = _prototypeManager.EnumeratePrototypes<SecretStationGoalPrototype>().ToList();
-            return secretGoals.Any() ? _random.Pick(secretGoals) : new SecretStationGoalPrototype();
+            return secretGoals.Any()
+                ? _random.Pick(secretGoals)
+                : throw new Exception("No secret station goal prototype found");
         }
     }
 }
