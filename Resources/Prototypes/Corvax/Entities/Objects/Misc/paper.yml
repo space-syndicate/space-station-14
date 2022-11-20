@@ -24,7 +24,7 @@
 - type: entity
   parent: BaseItem
   id: SecretGoalSealedEnvelope
-  name: secret goal sealed envelope
+  name: sealed envelope
   description: 'Envelope with top-secret mission.'
   components:
     - type: Sprite
@@ -39,8 +39,8 @@
 - type: entity
   parent: BoxFolderBase
   id: SecretGoalOpenEnvelope
-  name: secret goal open envelope
-  description: 'An envelope containing secret goal'
+  name: open envelope
+  description: 'An envelope containing secret goal.'
   components:
     - type: Sprite
       sprite: Corvax/Objects/Misc/envelope.rsi
@@ -55,4 +55,3 @@
     - type: StorageFill
       contents:
         - id: SecretGoalPaper
-          prob: 1

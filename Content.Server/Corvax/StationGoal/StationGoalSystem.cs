@@ -22,6 +22,11 @@ namespace Content.Server.Corvax.StationGoal
             SubscribeLocalEvent<RoundStartedEvent>(OnRoundStarted);
         }
 
+        private void OnRoundStarted(RoundStartedEvent ev)
+        {
+            CreateRandomStationGoal();
+        }
+
         public bool CreateStationGoalById(string stationGoalId)
         {
             if (!_prototypeManager.TryIndex(stationGoalId, out StationGoalPrototype? prototype))
@@ -31,12 +36,7 @@ namespace Content.Server.Corvax.StationGoal
             return true;
         }
 
-        private void OnRoundStarted(RoundStartedEvent ev)
-        {
-            CreateRandomStationGoal();
-        }
-
-        private void CreateRandomStationGoal()
+        public void CreateRandomStationGoal()
         {
             var availableGoals = _prototypeManager.EnumeratePrototypes<StationGoalPrototype>();
 

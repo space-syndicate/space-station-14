@@ -2,7 +2,6 @@ using Robust.Shared.Prototypes;
 using Robust.Shared.Random;
 using System.Linq;
 using Content.Server.Paper;
-using Serilog;
 
 namespace Content.Server.Corvax.SecretStationGoal
 {
@@ -18,10 +17,10 @@ namespace Content.Server.Corvax.SecretStationGoal
         public override void Initialize()
         {
             base.Initialize();
-            SubscribeLocalEvent<SecretStationGoalPaperComponent, ComponentInit>(OnComponentStartup);
+            SubscribeLocalEvent<SecretStationGoalPaperComponent, ComponentInit>(OnComponentInit);
         }
 
-        private void OnComponentStartup(EntityUid uid, SecretStationGoalPaperComponent component, ComponentInit args)
+        private void OnComponentInit(EntityUid uid, SecretStationGoalPaperComponent component, ComponentInit args)
         {
             AddSecretGoal(uid);
         }
@@ -33,14 +32,14 @@ namespace Content.Server.Corvax.SecretStationGoal
                 return;
             }
 
-            var secretGoal = GenerateSecretGoal();
+            var secretGoal = PickSecretGoal();
             _paperSystem.SetContent(uid, Loc.GetString(secretGoal.Text), paper);
         }
 
-        private SecretStationGoalPrototype GenerateSecretGoal()
+        private SecretStationGoalPrototype PickSecretGoal()
         {
-            var secretGoals = _prototypeManager.EnumeratePrototypes<SecretStationGoalPrototype>();
-            return _random.Pick(secretGoals.ToList());
+            var secretGoals = _prototypeManager.EnumeratePrototypes<SecretStationGoalPrototype>().ToList();
+            return secretGoals.Any() ? _random.Pick(secretGoals) : new SecretStationGoalPrototype();
         }
     }
 }
