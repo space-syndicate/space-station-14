@@ -1,16 +1,16 @@
 ## Implanter Attempt Messages
 
-implanter-component-implanting-target = { $user } is trying to implant you with something!
-implanter-draw-failed-permanent = The { $implant } in { $target } is fused with them and cannot be removed!
-implanter-draw-failed = You tried to remove an implant but found nothing.
+implanter-component-implanting-target = { $user } пытается что-то в вас имплантировать!
+implanter-draw-failed-permanent = { $implant } вросся в { $target } и не может быть удалён!
+implanter-draw-failed = Вы попытались удалить имплантат, но ничего не нашли.
 
 ## UI
 
-implanter-draw-text = Draw
-implanter-inject-text = Inject
-implanter-empty-text = None
+implanter-draw-text = Удаление
+implanter-inject-text = Установка
+implanter-empty-text = Пусто
 implanter-implant-text = { $implantName }{ $lineBreak }{ $implantDescription }
-implanter-label = [color=white]Implant: { $currentEntities }{ $lineBreak }Mode: { $modeString }[/color]
+implanter-label = [color=white]Имплант: { $currentEntities }{ $lineBreak }Режим: { $modeString }[/color]
 
 ## Implanter Actions
 
