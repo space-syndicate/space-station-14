@@ -1,13 +1,13 @@
 ent-BaseSubdermalImplant = имплант
     .desc = Микрочип, который вживляют под кожу.
     .suffix = { "" }
-ent-SadTromboneImplant = имплант Печальный тромбон
-    .desc = Проигрывает печальную мелодию при смерти владельца.
+ent-SadTromboneImplant = имплант Грустный тромбон
+    .desc = Проигрывает грустную мелодию при смерти владельца.
     .suffix = { "" }
 ent-LightImplant = имплант Свет
     .desc = Заставляет вашу кожу излучать слабый свет.
     .suffix = { "" }
-ent-TrackingImplant = следящий имплант
+ent-TrackingImplant = имплант Трекер
     .desc = Отслеживает владельца через сеть датчиков.
     .suffix = { "" }
 ent-StorageImplant = имплант Хранилище
