@@ -1,8 +1,8 @@
 ## Implanter Attempt Messages
 
 implanter-component-implanting-target = { $user } пытается что-то в вас имплантировать!
-implanter-draw-failed-permanent = { $implant } вросся в { $target } и не может быть извлечён!
-implanter-draw-failed = Вы попытались удалить имплантат, но ничего не нашли.
+implanter-draw-failed-permanent = { $implant } вросся в { $target } и не может быть удалён!
+implanter-draw-failed = Вы пытаетесь удалить имплант, но ничего не находите.
 
 ## UI
 
@@ -16,7 +16,7 @@ implanter-label = [color=white]Имплант: { $currentEntities }{ $lineBreak 
 
 open-storage-implant-action-name = открыть имплант Хранилище
 open-storage-implant-action-description = Открывает доступ к хранилищу, спрятанному под вашей кожей.
-activate-micro-bomb-action-name = активировать микробомбу
+activate-micro-bomb-action-name = активировать имплант Микробомба
 activate-micro-bomb-action-description = Активирует вживлённую микробомбу, полностью уничтожая вас и ваше снаряжение.
 use-freedom-implant-action-name = активировать имплант Свобода
 use-freedom-implant-action-description = Освобождает вас от наручников и других ограничителей.
