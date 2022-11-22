@@ -1,4 +1,4 @@
-<p align="center"> <img alt="Space Station 14" width="880" height="300" src="https://cdn.discordapp.com/attachments/1039864273779830795/1044448787415969902/Group_12.png" /></p>
+<p align="center"> <img alt="Space Station 14" src="https://cdn.discordapp.com/attachments/1039864273779830795/1044448787415969902/Group_12.png" /></p>
 
 Space Station 14 это ремейк SS13, который работает на собственном движке [Robust Toolbox](https://github.com/space-wizards/RobustToolbox), написанном на C#.
 
