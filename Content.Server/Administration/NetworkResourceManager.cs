@@ -5,7 +5,6 @@ using Content.Shared.CCVar;
 using Robust.Server.Player;
 using Robust.Shared.Configuration;
 using Robust.Shared.Network;
-using Robust.Shared.Utility;
 
 namespace Content.Server.Administration;
 
@@ -56,32 +55,18 @@ public sealed class NetworkResourceManager : SharedNetworkResourceManager
         if (SizeLimit > 0f && msg.Data.Length * BytesToMegabytes > SizeLimit)
             return;
 
-        UploadFile(msg);
+        ContentRoot.AddOrUpdateFile(msg.RelativePath, msg.Data);
+
+        // Now we broadcast the message!
+        foreach (var channel in _serverNetManager.Channels)
+        {
+            channel.SendMessage(msg);
+        }
 
         if (!StoreUploaded)
             return;
 
         await _serverDb.AddUploadedResourceLogAsync(session.UserId, DateTime.Now, msg.RelativePath.ToString(), msg.Data);
-    }
-
-    public async void UploadFile(NetworkResourceUploadMessage msg)
-    {
-        UploadFile(msg.RelativePath, msg.Data);
-    }
-
-    public async void UploadFile(ResourcePath relativePath, byte[] data)
-    {
-        ContentRoot.AddOrUpdateFile(relativePath, data);
-
-        var msg = new NetworkResourceUploadMessage
-        {
-            RelativePath = relativePath,
-            Data = data,
-        };
-        foreach (var channel in _serverNetManager.Channels)
-        {
-            channel.SendMessage(msg);
-        }
     }
 
     private void ServerNetManagerOnConnected(object? sender, NetChannelArgs e)

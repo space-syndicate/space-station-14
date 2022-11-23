@@ -33,8 +33,22 @@ public sealed class TTSSystem : EntitySystem
         var sound = await _ttsManager.ConvertTextToSpeech(protoVoice.Speaker, args.Message);
         _audioSystem.Play(
             $"/Uploaded/{sound.Path}",
-            Filter.Broadcast(),
+            Filter.Pvs(uid),
             uid,
             AudioParams.Default.WithAttenuation(Attenuation.LinearDistance));
+    }
+    
+    private void UploadFile(EntityUid uid)
+    {
+        var filter = Filter.Pvs(uid);
+        var msg = new NetworkResourceUploadMessage
+        {
+            RelativePath = relativePath,
+            Data = data,
+        };
+        foreach (var player in filter.Recipients)
+        {
+            player.ConnectedClient.SendMessage(msg);
+        }
     }
 }

@@ -3,10 +3,10 @@ using System.Net.Http;
 using System.Net.Http.Json;
 using System.Text.Json.Serialization;
 using System.Threading.Tasks;
-using Content.Server.Administration;
 using Content.Shared.CCVar;
 using Robust.Shared.Audio;
 using Robust.Shared.Configuration;
+using Robust.Shared.Player;
 using Robust.Shared.Utility;
 
 namespace Content.Server.Corvax.TTS;
@@ -15,7 +15,6 @@ namespace Content.Server.Corvax.TTS;
 public sealed class TTSManager
 {
     [Dependency] private readonly IConfigurationManager _cfg = default!;
-    [Dependency] private readonly NetworkResourceManager _resourceManager = default!;
     
     private readonly HttpClient _httpClient = new();
 
