@@ -57,7 +57,7 @@ public sealed class TTSManager
         var json = await response.Content.ReadFromJsonAsync<GenerateVoiceResponse>();
         var resourcePath = new ResourcePath($"tts-{json.Hash}.ogg").ToRelativePath();
         var oggData = Convert.FromBase64String(json.Results.First().Audio);
-        _resourceManager.UploadFile(resourcePath, oggData);
+        _resourceManager.UploadFile(resourcePath, oggData); // TODO: Should send only by PVS and delete after play
         
         _sawmill.Debug($"Saved new TTS sound by path: {resourcePath.ToRelativePath()}");
         return new SoundPathSpecifier(resourcePath);
