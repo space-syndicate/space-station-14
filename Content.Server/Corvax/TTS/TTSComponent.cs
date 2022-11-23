@@ -10,7 +10,7 @@ namespace Content.Server.Corvax.TTS;
 public sealed class TTSComponent : Component
 {
     /// <summary>
-    /// Prototype of used voice for voiceover.
+    /// Prototype of used voice for TTS.
     /// </summary>
     [ViewVariables(VVAccess.ReadWrite)]
     [DataField("voice", customTypeSerializer:typeof(PrototypeIdSerializer<TTSVoicePrototype>))]

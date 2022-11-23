@@ -1361,8 +1361,8 @@ namespace Content.Shared.CCVar
         /// <summary>
         /// URL of the TTS server API.
         /// </summary>
-        public static readonly CVarDef<string> TTSEnabled =
-            CVarDef.Create("tts.enabled", "", CVar.SERVERONLY);
+        public static readonly CVarDef<bool> TTSEnabled =
+            CVarDef.Create("tts.enabled", false, CVar.SERVERONLY);
 
         /// <summary>
         /// URL of the TTS server API.
