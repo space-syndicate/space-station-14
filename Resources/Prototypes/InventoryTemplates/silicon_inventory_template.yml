@@ -1,0 +1,10 @@
+- type: inventoryTemplate
+  id: pai
+  slots:
+  - name: ears
+    slotTexture: ears
+    slotFlags: EARS
+    stripTime: 9999
+    uiWindowPos: 2,0
+    strippingWindowPos: 2,0
+    displayName: Modules

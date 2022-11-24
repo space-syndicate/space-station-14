@@ -85,6 +85,8 @@
     interfaces:
     - key: enum.StrippingUiKey.Key
       type: StrippableBoundUserInterface
+  - type: Loadout  
+    prototypes: [CommChip]
   #- type: GhostTakeoverAvailable
   #  makeSentient: true
   #  name: Maintenance Drone

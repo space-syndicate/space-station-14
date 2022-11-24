@@ -6,6 +6,10 @@
   name: personal ai device
   description: Your electronic pal who's fun to be with!
   components:
+  - type: NameIdentifier
+    group: pai
+  - type: Loadout  
+    prototypes: [CommChip]
   - type: Instrument
     allowPercussion: false
     handheld: false
@@ -37,8 +41,11 @@
   - type: ActiveRadio
     channels:
     - Common
+    - Silicon
   - type: DoAfter
   - type: Actions
+  - type: Inventory
+    templateId: pai
   - type: TypingIndicator
     proto: robot
   - type: Speech

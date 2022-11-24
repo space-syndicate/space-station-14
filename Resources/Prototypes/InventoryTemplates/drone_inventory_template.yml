@@ -9,3 +9,10 @@
     strippingWindowPos: 0,0
     displayName: Head
     offset: 0, -0.45
+  - name: ears
+    slotTexture: ears
+    slotFlags: EARS
+    stripTime: 9999
+    uiWindowPos: 2,0
+    strippingWindowPos: 2,0
+    displayName: Modules

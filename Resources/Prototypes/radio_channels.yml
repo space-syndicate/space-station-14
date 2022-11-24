@@ -6,7 +6,14 @@
   color: "#32cd32"
 
 - type: radioChannel
-  id: CentCom
+  id: Silicon
+  name: chat-radio-silicon
+  keycode: 'р'
+  frequency: 1348
+  color: "#00677e"
+
+- type: radioChannel
+  id: SintetChannel
   name: chat-radio-centcom
   keycode: 'ц'
   frequency: 1337

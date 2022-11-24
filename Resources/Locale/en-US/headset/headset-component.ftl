@@ -10,6 +10,7 @@ examine-headset-chat-prefix = Use {$prefix} for the currently tuned frequency.
 
 chat-radio-common = Common
 chat-radio-centcom = CentCom
+chat-radio-silicon = Silicon
 chat-radio-command = Command
 chat-radio-engineering = Engineering
 chat-radio-medical = Medical

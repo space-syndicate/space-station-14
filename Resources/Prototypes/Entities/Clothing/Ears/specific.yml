@@ -19,3 +19,25 @@
       interfaces:
         - key: enum.ChameleonUiKey.Key
           type: ChameleonBoundUserInterface
+          
+- type: entity
+  parent: ClothingHeadset
+  id: ClothingHeadsetSilicon
+  name: Communication chip
+  description: A special chip that allows you to communicate among your own kind.
+  components:
+  - type: Headset
+    channels:
+    - Silicon
+  - type: ActiveRadio
+    channels:
+    - Command
+    - Common
+  - type: Sprite
+    sprite: Objects/Misc/stock_parts.rsi
+    state: hdd1
+  - type: Clothing
+    sprite: 
+  - type: Tag
+    tags:
+      - DroneUsable
