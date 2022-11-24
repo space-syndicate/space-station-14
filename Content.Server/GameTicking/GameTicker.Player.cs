@@ -1,3 +1,4 @@
+using Content.Server.Corvax.ConnectionQueue;
 using Content.Server.Players;
 using Content.Shared.GameTicking;
 using Content.Shared.GameWindow;
@@ -14,11 +15,20 @@ namespace Content.Server.GameTicking
     public sealed partial class GameTicker
     {
         [Dependency] private readonly IPlayerManager _playerManager = default!;
+        [Dependency] private readonly ConnectionQueueManager _queueManager = default!; // Corvax-Queue
 
         private void InitializePlayer()
         {
             _playerManager.PlayerStatusChanged += PlayerStatusChanged;
+            _queueManager.PlayerDequeue += OnPlayerDequeue; // Corvax-Queue
         }
+
+        // Corvax-Queue-Start
+        private void OnPlayerDequeue(object? sender, PlayerDequeueEventArgs e)
+        {
+            Timer.Spawn(0, e.Session.JoinGame);
+        }
+        // Corvax-Queue-End
 
         private void PlayerStatusChanged(object? sender, SessionStatusEventArgs args)
         {
@@ -36,7 +46,7 @@ namespace Content.Server.GameTicking
 
                     // Make the player actually join the game.
                     // timer time must be > tick length
-                    Timer.Spawn(0, args.Session.JoinGame);
+                    // Timer.Spawn(0, args.Session.JoinGame); // Corvax-Queue: Moved to custom `OnPlayerDequeue` event
 
                     _chatManager.SendAdminAnnouncement(Loc.GetString("player-join-message", ("name", args.Session.Name)));
 
@@ -88,7 +98,8 @@ namespace Content.Server.GameTicking
                 {
                     _chatManager.SendAdminAnnouncement(Loc.GetString("player-leave-message", ("name", args.Session.Name)));
 
-                    _userDb.ClientDisconnected(session);
+                    if (args.OldStatus == SessionStatus.InGame) // Corvax-Queue
+                        _userDb.ClientDisconnected(session);
                     break;
                 }
             }
