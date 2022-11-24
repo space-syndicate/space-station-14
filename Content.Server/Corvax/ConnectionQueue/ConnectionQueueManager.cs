@@ -3,7 +3,7 @@ using Content.Shared.CCVar;
 using Robust.Server.Player;
 using Robust.Shared.Configuration;
 using Robust.Shared.Enums;
-using Robust.Shared.Utility;
+using Robust.Shared.Timing;
 
 namespace Content.Server.Corvax.ConnectionQueue;
 
@@ -21,15 +21,13 @@ public sealed class ConnectionQueueManager
     private readonly List<IPlayerSession> _queue = new(); // Real Queue class can't delete disconnected users
 
     private bool _isEnabled = false;
-    
-    public event EventHandler<PlayerDequeueEventArgs>? PlayerDequeue;
 
     public int PlayerInQueueCount => _queue.Count;
     public int ActualPlayersCount => _playerManager.PlayerCount - PlayerInQueueCount; // Now it's only real value with actual players count that in game
     
     public void Initialize()
     {
-        _cfg.OnValueChanged(CCVars.QueueEnabled, v => _isEnabled = v, true);
+        _cfg.OnValueChanged(CCVars.QueueEnabled, v => _isEnabled = v, true); // TODO: It probably need to kick all in queue if changes from true to false during game
         _playerManager.PlayerStatusChanged += OnPlayerStatusChanged;
     }
 
@@ -63,7 +61,7 @@ public sealed class ConnectionQueueManager
         {
             var session = _queue.First();
             _queue.Remove(session);
-            PlayerDequeue?.Invoke(this, new PlayerDequeueEventArgs(session));
+            Timer.Spawn(0, session.JoinGame);
         }
     }
 }

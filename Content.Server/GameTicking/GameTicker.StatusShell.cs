@@ -1,4 +1,5 @@
 using System.Text.Json.Nodes;
+using Content.Server.Corvax.ConnectionQueue;
 using Content.Shared.CCVar;
 using Robust.Server.ServerStatus;
 using Robust.Shared.Configuration;
@@ -22,6 +23,7 @@ namespace Content.Server.GameTicking
         ///     For access to CVars in status responses.
         /// </summary>
         [Dependency] private readonly IConfigurationManager _cfg = default!;
+        [Dependency] private readonly ConnectionQueueManager _queueManager = default!; // Corvax-Queue
 
         private void InitializeStatusShell()
         {
