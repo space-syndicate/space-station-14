@@ -1,8 +1,10 @@
 ﻿using System.Linq;
 using Content.Shared.CCVar;
+using Content.Shared.Corvax.ConnectionQueue;
 using Robust.Server.Player;
 using Robust.Shared.Configuration;
 using Robust.Shared.Enums;
+using Robust.Shared.Network;
 using Robust.Shared.Timing;
 
 namespace Content.Server.Corvax.ConnectionQueue;
@@ -14,6 +16,7 @@ public sealed class ConnectionQueueManager
 {
     [Dependency] private readonly IPlayerManager _playerManager = default!;
     [Dependency] private readonly IConfigurationManager _cfg = default!;
+    [Dependency] private readonly IServerNetManager _netManager = default!;
 
     /// <summary>
     ///     Queue of active player sessions
@@ -27,6 +30,8 @@ public sealed class ConnectionQueueManager
     
     public void Initialize()
     {
+        _netManager.RegisterNetMessage<MsgQueueUpdate>();
+        
         _cfg.OnValueChanged(CCVars.QueueEnabled, v => _isEnabled = v, true); // TODO: It probably need to kick all in queue if changes from true to false during game
         _playerManager.PlayerStatusChanged += OnPlayerStatusChanged;
     }
@@ -62,6 +67,20 @@ public sealed class ConnectionQueueManager
             var session = _queue.First();
             _queue.Remove(session);
             Timer.Spawn(0, session.JoinGame);
+        }
+
+        SendUpdateMessages();
+    }
+
+    private void SendUpdateMessages()
+    {
+        for (var i = 0; i < _queue.Count; i++)
+        {
+            _queue[i].ConnectedClient.SendMessage(new MsgQueueUpdate
+            {
+                Total = _queue.Count,
+                Position = i + 1,
+            });
         }
     }
 }
