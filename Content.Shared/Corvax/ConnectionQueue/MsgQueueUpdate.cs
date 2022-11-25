@@ -4,6 +4,10 @@ using Robust.Shared.Serialization;
 
 namespace Content.Shared.Corvax.ConnectionQueue;
 
+/// <summary>
+///     Sent from server to client with queue state for player
+///     Also initiates queue state on client
+/// </summary>
 public sealed class MsgQueueUpdate : NetMessage
 {
     public override MsgGroups MsgGroup => MsgGroups.Command;
