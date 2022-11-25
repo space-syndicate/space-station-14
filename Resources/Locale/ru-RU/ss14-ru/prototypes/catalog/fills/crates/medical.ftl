@@ -1,10 +1,15 @@
 ent-CrateMedicalDefib = ящик с дефибриллятором
     .desc = { ent-CrateMedical.desc }
+    .suffix = { "" }
 ent-CrateMedicalSupplies = ящик медицинских припасов
     .desc = Стандартные медикаменты.
+    .suffix = { "" }
 ent-CrateChemistrySupplies = ящик химического оборудования
     .desc = Стандартное химическое оборудование.
+    .suffix = { "" }
 ent-CrateMedicalSurgery = ящик хирургических инструментов
     .desc = Хирургические инструменты.
+    .suffix = { "" }
 ent-CrateMedicalScrubs = ящик медицинских роб
     .desc = Врачебная одежда.
+    .suffix = { "" }
