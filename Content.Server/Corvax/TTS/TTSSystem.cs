@@ -1,4 +1,6 @@
 ﻿using Content.Server.Chat.Systems;
+using Content.Server.Corvax.RawAudio;
+using Content.Shared.Administration;
 using Content.Shared.CCVar;
 using Robust.Shared.Audio;
 using Robust.Shared.Configuration;
@@ -13,7 +15,7 @@ public sealed class TTSSystem : EntitySystem
     [Dependency] private readonly IConfigurationManager _cfg = default!;
     [Dependency] private readonly IPrototypeManager _prototypeManager = default!;
     [Dependency] private readonly TTSManager _ttsManager = default!;
-    [Dependency] private readonly SharedAudioSystem _audioSystem = default!;
+    [Dependency] private readonly RawAudioManager _rawAudio = default!;
 
     private bool _isEnabled = false;
     
@@ -30,25 +32,7 @@ public sealed class TTSSystem : EntitySystem
             return;
         }
         
-        var sound = await _ttsManager.ConvertTextToSpeech(protoVoice.Speaker, args.Message);
-        _audioSystem.Play(
-            $"/Uploaded/{sound.Path}",
-            Filter.Pvs(uid),
-            uid,
-            AudioParams.Default.WithAttenuation(Attenuation.LinearDistance));
-    }
-    
-    private void UploadFile(EntityUid uid)
-    {
-        var filter = Filter.Pvs(uid);
-        var msg = new NetworkResourceUploadMessage
-        {
-            RelativePath = relativePath,
-            Data = data,
-        };
-        foreach (var player in filter.Recipients)
-        {
-            player.ConnectedClient.SendMessage(msg);
-        }
+        var soundData = await _ttsManager.ConvertTextToSpeech(protoVoice.Speaker, args.Message);
+        _rawAudio.Play(soundData, Filter.Pvs(uid), uid, AudioParams.Default.WithAttenuation(Attenuation.LinearDistance));
     }
 }
