@@ -2,7 +2,7 @@
 using Robust.Shared.Network;
 using Robust.Shared.Serialization;
 
-namespace Content.Shared.Corvax.ConnectionQueue;
+namespace Content.Shared.Corvax.JoinQueue;
 
 /// <summary>
 ///     Sent from server to client with queue state for player

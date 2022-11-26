@@ -1,10 +1,10 @@
-﻿using Content.Shared.Corvax.ConnectionQueue;
+﻿using Content.Shared.Corvax.JoinQueue;
 using Robust.Client.State;
 using Robust.Shared.Network;
 
-namespace Content.Client.Corvax.ConnectionQueue;
+namespace Content.Client.Corvax.JoinQueue;
 
-public sealed class ConnectionQueueManager
+public sealed class JoinQueueManager
 {
     [Dependency] private readonly IClientNetManager _netManager = default!;
     [Dependency] private readonly IStateManager _stateManager = default!;

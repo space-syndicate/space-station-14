@@ -1,11 +1,11 @@
-﻿using Content.Shared.Corvax.ConnectionQueue;
+﻿using Content.Shared.Corvax.JoinQueue;
 using Robust.Client.Console;
 using Robust.Client.GameObjects;
 using Robust.Client.State;
 using Robust.Client.UserInterface;
 using Robust.Shared.Player;
 
-namespace Content.Client.Corvax.ConnectionQueue;
+namespace Content.Client.Corvax.JoinQueue;
 
 public sealed class QueueState : State
 {

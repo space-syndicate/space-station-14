@@ -1,19 +1,19 @@
 ﻿using System.Linq;
 using Content.Server.Connection;
 using Content.Shared.CCVar;
-using Content.Shared.Corvax.ConnectionQueue;
+using Content.Shared.Corvax.JoinQueue;
 using Robust.Server.Player;
 using Robust.Shared.Configuration;
 using Robust.Shared.Enums;
 using Robust.Shared.Network;
 using Robust.Shared.Timing;
 
-namespace Content.Server.Corvax.ConnectionQueue;
+namespace Content.Server.Corvax.JoinQueue;
 
 /// <summary>
 ///     Manages new player connections when the server is full and queues them up, granting access when a slot becomes free
 /// </summary>
-public sealed class ConnectionQueueManager
+public sealed class JoinQueueManager
 {
     [Dependency] private readonly IPlayerManager _playerManager = default!;
     [Dependency] private readonly IConnectionManager _connectionManager = default!;
