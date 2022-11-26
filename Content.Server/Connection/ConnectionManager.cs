@@ -115,9 +115,11 @@ namespace Content.Server.Connection
                 }
             }
 
+            // Corvax-Queue-Start
             var isPrivileged = await HavePrivilegedJoin(e.UserId);
             var isQueueEnabled = _cfg.GetCVar(CCVars.QueueEnabled);
             if (_plyMgr.PlayerCount >= _cfg.GetCVar(CCVars.SoftMaxPlayers) && !isPrivileged && !isQueueEnabled)
+            // Corvax-Queue-End
             {
                 return (ConnectionDenyReason.Full, Loc.GetString("soft-player-cap-full"), null);
             }

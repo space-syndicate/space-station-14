@@ -1345,7 +1345,7 @@ namespace Content.Shared.CCVar
             PlayTimeSaveInterval = CVarDef.Create("playtime.save_interval", 900f, CVar.SERVERONLY);
         
         /**
-         * SPONSORS
+         * Corvax | Sponsors
          */
 
         /// <summary>
@@ -1356,7 +1356,7 @@ namespace Content.Shared.CCVar
         
 
         /*
-         * Queue
+         * Corvax | Queue
          */
 
         /// <summary>
