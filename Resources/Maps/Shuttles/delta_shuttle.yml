@@ -93,11 +93,6 @@ tilemap:
   86: FloorWoodTile
   87: Lattice
   88: Plating
-grids:
-- uid: 0
-  settings:
-    chunksize: 16
-    tilesize: 1  
 entities:
 - uid: 0
   components:
@@ -106,6 +101,11 @@ entities:
   - pos: 19.051508,-4.6438427
     parent: null
     type: Transform
+  grids:
+- uid: 0
+  settings:
+    chunksize: 16
+    tilesize: 1  
   - chunks:
       -1,-1:
         ind: -1,-1
