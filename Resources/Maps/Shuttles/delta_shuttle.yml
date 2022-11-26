@@ -88,11 +88,16 @@ tilemap:
   81: FloorWhiteOffset
   82: FloorWhitePavement
   83: FloorWhitePavementVertical
-  84: FloorWhitePlastic
+  84: FloorWhitePlastic16
   85: FloorWood
   86: FloorWoodTile
   87: Lattice
   88: Plating
+grids:
+- uid: 0
+  settings:
+    chunksize: 16
+    tilesize: 1  
 entities:
 - uid: 0
   components:
@@ -646,42 +651,130 @@ entities:
           color: '#52B4E9FF'
           id: MiniTileWhiteInnerNe
           coordinates: 9,10
-        233:
+        228:
           color: '#FFFFFFFF'
           id: Bot
           coordinates: 7,18
-        234:
+        229:
           color: '#FFFFFFFF'
           id: Bot
           coordinates: 7,17
-        235:
+        230:
           color: '#FFFFFFFF'
           id: Bot
           coordinates: 7,16
-        236:
+        231:
           color: '#FFFFFFFF'
           id: Delivery
           coordinates: 3,18
-        237:
+        232:
           color: '#FFFFFFFF'
           id: Delivery
           coordinates: 4,18
-        238:
+        233:
           color: '#FFFFFFFF'
           id: Bot
           coordinates: 0,16
-        239:
+        234:
           color: '#FFFFFFFF'
           id: Bot
           coordinates: 1,16
-        240:
+        235:
           color: '#FFFFFFFF'
           id: Bot
           coordinates: 2,16
-        241:
+        236:
           color: '#FFFFFFFF'
           id: Bot
           coordinates: 3,16
+        241:
+          color: '#FFFFFFFF'
+          id: LoadingArea
+          coordinates: 2,18
+        242:
+          color: '#FFFFFFFF'
+          id: LoadingArea
+          coordinates: 5,18
+        244:
+          color: '#9FED58FF'
+          id: MiniTileWhiteLineW
+          coordinates: 4,7
+        245:
+          color: '#9FED58FF'
+          id: MiniTileWhiteLineW
+          coordinates: 4,6
+        246:
+          color: '#9FED58FF'
+          id: MiniTileWhiteLineW
+          coordinates: 4,5
+        247:
+          color: '#9FED58FF'
+          id: MiniTileWhiteLineW
+          coordinates: 4,4
+        248:
+          color: '#9FED58FF'
+          id: MiniTileWhiteLineW
+          coordinates: 4,3
+        249:
+          color: '#9FED58FF'
+          id: MiniTileWhiteLineW
+          coordinates: 4,2
+        250:
+          color: '#9FED58FF'
+          id: MiniTileWhiteLineW
+          coordinates: 4,2
+        251:
+          color: '#9FED58FF'
+          id: MiniTileWhiteLineW
+          coordinates: 4,1
+        252:
+          color: '#9FED58FF'
+          id: MiniTileWhiteLineW
+          coordinates: 4,0
+        254:
+          color: '#9FED58FF'
+          id: MiniTileWhiteLineE
+          coordinates: 6,0
+        255:
+          color: '#9FED58FF'
+          id: MiniTileWhiteLineE
+          coordinates: 6,1
+        256:
+          color: '#9FED58FF'
+          id: MiniTileWhiteLineE
+          coordinates: 6,2
+        257:
+          color: '#9FED58FF'
+          id: MiniTileWhiteLineE
+          coordinates: 6,3
+        258:
+          color: '#9FED58FF'
+          id: MiniTileWhiteLineE
+          coordinates: 6,4
+        259:
+          color: '#9FED58FF'
+          id: MiniTileWhiteLineE
+          coordinates: 6,5
+        260:
+          color: '#9FED58FF'
+          id: MiniTileWhiteLineE
+          coordinates: 6,6
+        261:
+          color: '#9FED58FF'
+          id: MiniTileWhiteLineE
+          coordinates: 6,7
+        262:
+          color: '#9FED58FF'
+          id: MiniTileWhiteLineN
+          coordinates: 5,8
+        263:
+          color: '#9FED58FF'
+          id: MiniTileWhiteCornerNe
+          coordinates: 6,8
+        266:
+          color: '#9FED58FF'
+          id: MiniTileWhiteCornerNw
+          coordinates: 4,8
       -1,0:
         10:
           color: '#9FED58FF'
@@ -1059,170 +1152,175 @@ entities:
           color: '#DE3A3AFF'
           id: MiniTileWhiteLineS
           coordinates: -10,11
-        189:
+        188:
           color: '#9FED58FF'
           id: MiniTileWhiteCornerNw
           coordinates: -8,8
-        190:
+        189:
           color: '#9FED58FF'
           id: MiniTileWhiteLineN
           coordinates: -7,8
-        191:
+        190:
           color: '#9FED58FF'
           id: MiniTileWhiteCornerNe
           coordinates: -6,8
-        192:
+        191:
           color: '#9FED58FF'
           id: MiniTileWhiteLineE
           coordinates: -6,7
-        193:
+        192:
           color: '#9FED58FF'
           id: MiniTileWhiteLineE
           coordinates: -6,6
-        194:
+        193:
           color: '#9FED58FF'
           id: MiniTileWhiteLineE
           coordinates: -6,5
-        195:
+        194:
           color: '#9FED58FF'
           id: MiniTileWhiteLineE
           coordinates: -6,4
-        196:
+        195:
           color: '#9FED58FF'
           id: MiniTileWhiteLineE
           coordinates: -6,3
-        197:
+        196:
           color: '#9FED58FF'
           id: MiniTileWhiteLineE
           coordinates: -6,2
-        198:
+        197:
           color: '#9FED58FF'
           id: MiniTileWhiteLineE
           coordinates: -6,1
-        199:
+        198:
           color: '#9FED58FF'
           id: MiniTileWhiteLineE
           coordinates: -6,0
-        201:
+        200:
           color: '#9FED58FF'
           id: MiniTileWhiteLineW
           coordinates: -8,0
-        202:
+        201:
           color: '#9FED58FF'
           id: MiniTileWhiteLineW
           coordinates: -8,1
-        203:
+        202:
           color: '#9FED58FF'
           id: MiniTileWhiteLineW
           coordinates: -8,2
-        204:
+        203:
           color: '#9FED58FF'
           id: MiniTileWhiteLineW
           coordinates: -8,3
-        205:
+        204:
           color: '#9FED58FF'
           id: MiniTileWhiteLineW
           coordinates: -8,4
-        206:
+        205:
           color: '#9FED58FF'
           id: MiniTileWhiteLineW
           coordinates: -8,5
-        207:
+        206:
           color: '#9FED58FF'
           id: MiniTileWhiteLineW
           coordinates: -8,6
-        208:
+        207:
           color: '#9FED58FF'
           id: MiniTileWhiteLineW
           coordinates: -8,7
-        211:
+        210:
           color: '#D4D4D4FF'
           id: MiniTileWhiteCornerSe
           coordinates: -10,0
-        212:
+        211:
           color: '#D4D4D4FF'
           id: MiniTileWhiteCornerNe
           coordinates: -10,9
-        214:
+        212:
           color: '#D4D4D4FF'
           id: MiniTileWhiteCornerSw
           coordinates: -12,0
-        215:
+        213:
           color: '#D4D4D4FF'
           id: MiniTileWhiteLineS
           coordinates: -11,0
-        216:
+        214:
           color: '#D4D4D4FF'
           id: MiniTileWhiteLineW
           coordinates: -12,1
-        246:
-          color: '#D4D4D4FF'
-          id: MiniTileWhiteLineW
-          coordinates: -12,7
-        218:
+        215:
           color: '#D4D4D4FF'
           id: MiniTileWhiteLineW
           coordinates: -12,3
-        219:
+        216:
           color: '#D4D4D4FF'
           id: MiniTileWhiteLineW
           coordinates: -12,4
-        220:
+        217:
           color: '#D4D4D4FF'
           id: MiniTileWhiteLineW
           coordinates: -12,5
-        221:
+        218:
           color: '#D4D4D4FF'
           id: MiniTileWhiteLineW
           coordinates: -12,6
-        248:
-          color: '#D4D4D4FF'
-          id: MiniTileWhiteCornerNw
-          coordinates: -12,9
-        224:
+        219:
           color: '#D4D4D4FF'
           id: MiniTileWhiteLineE
           coordinates: -10,8
-        225:
+        220:
           color: '#D4D4D4FF'
           id: MiniTileWhiteLineE
           coordinates: -10,7
-        226:
+        221:
           color: '#D4D4D4FF'
           id: MiniTileWhiteLineE
           coordinates: -10,6
-        227:
+        222:
           color: '#D4D4D4FF'
           id: MiniTileWhiteLineE
           coordinates: -10,5
-        228:
+        223:
           color: '#D4D4D4FF'
           id: MiniTileWhiteLineE
           coordinates: -10,4
-        229:
+        224:
           color: '#D4D4D4FF'
           id: MiniTileWhiteLineE
           coordinates: -10,3
-        230:
+        225:
           color: '#D4D4D4FF'
           id: MiniTileWhiteLineE
           coordinates: -10,2
-        231:
+        226:
           color: '#D4D4D4FF'
           id: MiniTileWhiteLineE
           coordinates: -10,1
-        232:
+        227:
           color: '#D4D4D4FF'
           id: MiniTileWhiteLineN
           coordinates: -11,9
-        247:
-          color: '#D4D4D4FF'
-          id: MiniTileWhiteLineW
-          coordinates: -12,8
-        245:
+        237:
           color: '#D4D4D4FF'
           id: MiniTileWhiteLineW
           coordinates: -12,2
+        238:
+          color: '#D4D4D4FF'
+          id: MiniTileWhiteLineW
+          coordinates: -12,7
+        239:
+          color: '#D4D4D4FF'
+          id: MiniTileWhiteLineW
+          coordinates: -12,8
+        240:
+          color: '#D4D4D4FF'
+          id: MiniTileWhiteCornerNw
+          coordinates: -12,9
+        243:
+          angle: 3.141592653589793 rad
+          color: '#FFFFFFFF'
+          id: LoadingArea
+          coordinates: -1,16
       -1,-1:
         23:
           color: '#9FED58FF'
@@ -1293,15 +1391,15 @@ entities:
           color: '#52B4E9FF'
           id: StandClearGreyscale
           coordinates: -1,-1
-        200:
+        199:
           color: '#9FED58FF'
           id: MiniTileWhiteLineS
           coordinates: -7,-1
-        209:
+        208:
           color: '#9FED58FF'
           id: MiniTileWhiteCornerSw
           coordinates: -8,-1
-        210:
+        209:
           color: '#9FED58FF'
           id: MiniTileWhiteCornerSe
           coordinates: -6,-1
@@ -1366,6 +1464,18 @@ entities:
           color: '#334E6DFF'
           id: MiniTileWhiteInnerSe
           coordinates: 3,-5
+        253:
+          color: '#9FED58FF'
+          id: MiniTileWhiteLineS
+          coordinates: 5,-1
+        264:
+          color: '#9FED58FF'
+          id: MiniTileWhiteCornerSe
+          coordinates: 6,-1
+        265:
+          color: '#9FED58FF'
+          id: MiniTileWhiteCornerSw
+          coordinates: 4,-1
     type: DecalGrid
   - tiles:
       -1,-1: 0
@@ -1834,230 +1944,230 @@ entities:
       5,23: 114
       6,16: 110
       6,17: 110
-      6,18: 112
+      6,18: 120
       6,20: 114
       6,21: 114
       6,22: 114
       6,23: 114
       7,16: 115
-      7,17: 120
-      7,18: 120
+      7,17: 121
+      7,18: 121
       8,20: 6
       9,16: 6
       9,17: 6
       9,18: 6
-      -13,-1: 121
-      -12,-1: 121
-      -11,-1: 121
-      -10,-1: 121
-      -9,-2: 121
-      -9,-1: 121
-      -8,-2: 121
-      -7,-6: 121
-      -7,-5: 121
-      -7,-4: 121
-      -7,-3: 121
-      -7,-2: 121
-      -6,-7: 121
-      -6,-6: 121
-      -6,-2: 121
-      -5,-7: 121
-      -5,-2: 121
-      -5,-1: 121
-      -4,-7: 121
-      -4,-2: 121
-      -3,-7: 121
-      -3,-2: 121
-      -2,-7: 121
-      -2,-2: 121
-      -1,-7: 121
-      0,-7: 121
-      0,-2: 121
-      1,-7: 121
-      1,-2: 121
-      2,-7: 121
-      2,-2: 121
-      3,-7: 121
-      3,-2: 121
-      3,-1: 121
-      4,-7: 121
-      4,-6: 121
-      4,-2: 121
-      5,-6: 121
-      5,-5: 121
-      5,-4: 121
-      5,-3: 121
-      5,-2: 121
-      6,-2: 121
-      7,-2: 121
-      7,-1: 121
-      8,-1: 121
-      9,-1: 121
-      10,-1: 121
-      11,-1: 121
-      0,15: 121
-      1,15: 121
-      2,15: 121
-      3,0: 121
-      3,1: 121
-      3,2: 121
-      3,3: 121
-      3,4: 121
-      3,5: 121
-      3,8: 121
-      3,9: 121
-      3,10: 121
-      3,11: 121
-      3,12: 121
-      3,13: 121
-      3,14: 121
-      3,15: 121
-      4,9: 121
-      4,15: 121
-      5,9: 121
-      5,15: 121
-      6,9: 121
-      6,15: 121
-      7,0: 121
-      7,1: 121
-      7,2: 121
-      7,3: 121
-      7,4: 121
-      7,5: 121
-      7,8: 121
-      7,9: 121
-      7,11: 121
-      7,12: 121
-      7,13: 121
-      7,14: 121
-      7,15: 121
-      8,3: 121
-      8,11: 121
-      8,15: 121
-      9,15: 121
-      10,11: 121
-      10,15: 121
-      11,0: 121
-      11,1: 121
-      11,2: 121
-      11,3: 121
-      11,4: 121
-      11,5: 121
-      11,6: 121
-      11,7: 121
-      11,8: 121
-      11,9: 121
-      11,10: 121
-      11,11: 121
-      11,12: 121
-      11,13: 121
-      11,14: 121
-      11,15: 121
-      -13,0: 121
-      -13,2: 121
-      -13,4: 121
-      -13,5: 121
-      -13,6: 121
-      -13,7: 121
-      -13,8: 121
-      -13,10: 121
-      -13,12: 121
-      -13,13: 121
-      -13,14: 121
-      -13,15: 121
-      -12,10: 121
-      -12,15: 121
-      -11,10: 121
-      -11,15: 121
-      -10,10: 121
-      -10,15: 121
-      -9,0: 121
-      -9,1: 121
-      -9,2: 121
-      -9,3: 121
-      -9,4: 121
-      -9,5: 121
-      -9,8: 121
-      -9,9: 121
-      -9,10: 121
-      -9,12: 121
-      -9,13: 121
-      -9,14: 121
-      -9,15: 121
-      -8,9: 121
-      -8,15: 121
-      -6,9: 121
-      -6,15: 121
-      -5,0: 121
-      -5,1: 121
-      -5,2: 121
-      -5,3: 121
-      -5,4: 121
-      -5,5: 121
-      -5,8: 121
-      -5,9: 121
-      -5,10: 121
-      -5,11: 121
-      -5,12: 121
-      -5,13: 121
-      -5,14: 121
-      -5,15: 121
-      -4,15: 121
-      -3,15: 121
-      -2,15: 121
-      -10,16: 121
-      -10,17: 121
-      -10,18: 121
-      -10,19: 121
-      -9,19: 121
-      -9,20: 121
-      -9,21: 121
-      -9,22: 121
-      -9,23: 121
-      -9,24: 121
-      -8,19: 121
-      -8,24: 121
-      -7,24: 121
-      -6,19: 121
-      -6,24: 121
-      -5,24: 121
-      -4,19: 121
-      -4,24: 121
-      -3,19: 121
-      -3,24: 121
-      -2,16: 121
-      -2,17: 121
-      -2,18: 121
-      -2,19: 121
-      -2,24: 121
-      -1,19: 121
-      -1,24: 121
-      0,19: 121
-      0,20: 121
-      0,21: 121
-      0,22: 121
-      0,23: 121
-      0,24: 121
-      1,19: 121
-      1,24: 121
-      2,24: 121
-      3,19: 121
-      3,24: 121
-      4,19: 121
-      4,24: 121
-      5,24: 121
-      6,19: 121
-      6,24: 121
-      7,19: 121
-      7,20: 121
-      7,21: 121
-      7,22: 121
-      7,23: 121
-      7,24: 121
-      8,16: 121
-      8,17: 121
-      8,18: 121
-      8,19: 121
+      -13,-1: 122
+      -12,-1: 122
+      -11,-1: 122
+      -10,-1: 122
+      -9,-2: 122
+      -9,-1: 122
+      -8,-2: 122
+      -7,-6: 122
+      -7,-5: 122
+      -7,-4: 122
+      -7,-3: 122
+      -7,-2: 122
+      -6,-7: 122
+      -6,-6: 122
+      -6,-2: 122
+      -5,-7: 122
+      -5,-2: 122
+      -5,-1: 122
+      -4,-7: 122
+      -4,-2: 122
+      -3,-7: 122
+      -3,-2: 122
+      -2,-7: 122
+      -2,-2: 122
+      -1,-7: 122
+      0,-7: 122
+      0,-2: 122
+      1,-7: 122
+      1,-2: 122
+      2,-7: 122
+      2,-2: 122
+      3,-7: 122
+      3,-2: 122
+      3,-1: 122
+      4,-7: 122
+      4,-6: 122
+      4,-2: 122
+      5,-6: 122
+      5,-5: 122
+      5,-4: 122
+      5,-3: 122
+      5,-2: 122
+      6,-2: 122
+      7,-2: 122
+      7,-1: 122
+      8,-1: 122
+      9,-1: 122
+      10,-1: 122
+      11,-1: 122
+      0,15: 122
+      1,15: 122
+      2,15: 122
+      3,0: 122
+      3,1: 122
+      3,2: 122
+      3,3: 122
+      3,4: 122
+      3,5: 122
+      3,8: 122
+      3,9: 122
+      3,10: 122
+      3,11: 122
+      3,12: 122
+      3,13: 122
+      3,14: 122
+      3,15: 122
+      4,9: 122
+      4,15: 122
+      5,9: 122
+      5,15: 122
+      6,9: 122
+      6,15: 122
+      7,0: 122
+      7,1: 122
+      7,2: 122
+      7,3: 122
+      7,4: 122
+      7,5: 122
+      7,8: 122
+      7,9: 122
+      7,11: 122
+      7,12: 122
+      7,13: 122
+      7,14: 122
+      7,15: 122
+      8,3: 122
+      8,11: 122
+      8,15: 122
+      9,15: 122
+      10,11: 122
+      10,15: 122
+      11,0: 122
+      11,1: 122
+      11,2: 122
+      11,3: 122
+      11,4: 122
+      11,5: 122
+      11,6: 122
+      11,7: 122
+      11,8: 122
+      11,9: 122
+      11,10: 122
+      11,11: 122
+      11,12: 122
+      11,13: 122
+      11,14: 122
+      11,15: 122
+      -13,0: 122
+      -13,2: 122
+      -13,4: 122
+      -13,5: 122
+      -13,6: 122
+      -13,7: 122
+      -13,8: 122
+      -13,10: 122
+      -13,12: 122
+      -13,13: 122
+      -13,14: 122
+      -13,15: 122
+      -12,10: 122
+      -12,15: 122
+      -11,10: 122
+      -11,15: 122
+      -10,10: 122
+      -10,15: 122
+      -9,0: 122
+      -9,1: 122
+      -9,2: 122
+      -9,3: 122
+      -9,4: 122
+      -9,5: 122
+      -9,8: 122
+      -9,9: 122
+      -9,10: 122
+      -9,12: 122
+      -9,13: 122
+      -9,14: 122
+      -9,15: 122
+      -8,9: 122
+      -8,15: 122
+      -6,9: 122
+      -6,15: 122
+      -5,0: 122
+      -5,1: 122
+      -5,2: 122
+      -5,3: 122
+      -5,4: 122
+      -5,5: 122
+      -5,8: 122
+      -5,9: 122
+      -5,10: 122
+      -5,11: 122
+      -5,12: 122
+      -5,13: 122
+      -5,14: 122
+      -5,15: 122
+      -4,15: 122
+      -3,15: 122
+      -2,15: 122
+      -10,16: 122
+      -10,17: 122
+      -10,18: 122
+      -10,19: 122
+      -9,19: 122
+      -9,20: 122
+      -9,21: 122
+      -9,22: 122
+      -9,23: 122
+      -9,24: 122
+      -8,19: 122
+      -8,24: 122
+      -7,24: 122
+      -6,19: 122
+      -6,24: 122
+      -5,24: 122
+      -4,19: 122
+      -4,24: 122
+      -3,19: 122
+      -3,24: 122
+      -2,16: 122
+      -2,17: 122
+      -2,18: 122
+      -2,19: 122
+      -2,24: 122
+      -1,19: 122
+      -1,24: 122
+      0,19: 122
+      0,20: 122
+      0,21: 122
+      0,22: 122
+      0,23: 122
+      0,24: 122
+      1,19: 122
+      1,24: 122
+      2,24: 122
+      3,19: 122
+      3,24: 122
+      4,19: 122
+      4,24: 122
+      5,24: 122
+      6,19: 122
+      6,24: 122
+      7,19: 122
+      7,20: 122
+      7,21: 122
+      7,22: 122
+      7,23: 122
+      7,24: 122
+      8,16: 122
+      8,17: 122
+      8,18: 122
+      8,19: 122
     uniqueMixes:
     - volume: 2500
       temperature: 293.15
@@ -2287,8 +2397,8 @@ entities:
     - volume: 2500
       temperature: 293.15
       moles:
-      - 21.382729
-      - 73.224236
+      - 20.784012
+      - 71.17396
       - 0
       - 0
       - 0
@@ -2482,8 +2592,8 @@ entities:
     - volume: 2500
       temperature: 293.15
       moles:
-      - 22.027292
-      - 75.43152
+      - 21.410528
+      - 73.319435
       - 0
       - 0
       - 0
@@ -2497,8 +2607,8 @@ entities:
     - volume: 2500
       temperature: 293.15
       moles:
-      - 22.027294
-      - 75.43152
+      - 21.41053
+      - 73.319435
       - 0
       - 0
       - 0
@@ -2557,8 +2667,8 @@ entities:
     - volume: 2500
       temperature: 293.15
       moles:
-      - 24.573786
-      - 73.125725
+      - 23.88572
+      - 71.0782
       - 0
       - 0
       - 0
@@ -2647,8 +2757,8 @@ entities:
     - volume: 2500
       temperature: 293.15
       moles:
-      - 24.933416
-      - 74.1959
+      - 24.235281
+      - 72.118416
       - 0
       - 0
       - 0
@@ -2662,8 +2772,8 @@ entities:
     - volume: 2500
       temperature: 293.15
       moles:
-      - 14.954546
-      - 44.501163
+      - 11.257342
+      - 33.499172
       - 0
       - 0
       - 0
@@ -2722,8 +2832,8 @@ entities:
     - volume: 2500
       temperature: 293.15
       moles:
-      - 24.573784
-      - 73.125725
+      - 23.885717
+      - 71.0782
       - 0
       - 0
       - 0
@@ -2842,8 +2952,8 @@ entities:
     - volume: 2500
       temperature: 293.15
       moles:
-      - 25.32042
-      - 75.34753
+      - 23.922327
+      - 71.18713
       - 0
       - 0
       - 0
@@ -2887,8 +2997,8 @@ entities:
     - volume: 2500
       temperature: 293.15
       moles:
-      - 25.367083
-      - 75.48638
+      - 23.966415
+      - 71.31833
       - 0
       - 0
       - 0
@@ -2992,8 +3102,8 @@ entities:
     - volume: 2500
       temperature: 293.15
       moles:
-      - 21.726349
-      - 75.582726
+      - 21.118011
+      - 73.46641
       - 0
       - 0
       - 0
@@ -3052,8 +3162,8 @@ entities:
     - volume: 2500
       temperature: 293.15
       moles:
-      - 21.020565
-      - 73.127396
+      - 20.43199
+      - 71.07983
       - 0
       - 0
       - 0
@@ -3217,8 +3327,8 @@ entities:
     - volume: 2500
       temperature: 293.15
       moles:
-      - 20.962536
-      - 72.92553
+      - 20.375586
+      - 70.88361
       - 0
       - 0
       - 0
@@ -3232,8 +3342,8 @@ entities:
     - volume: 2500
       temperature: 293.15
       moles:
-      - 20.962534
-      - 72.92553
+      - 20.375584
+      - 70.88361
       - 0
       - 0
       - 0
@@ -3247,8 +3357,8 @@ entities:
     - volume: 2500
       temperature: 293.14777
       moles:
-      - 22.027294
-      - 75.43151
+      - 21.41053
+      - 73.31943
       - 0
       - 0
       - 0
@@ -3292,8 +3402,8 @@ entities:
     - volume: 2500
       temperature: 293.14987
       moles:
-      - 22.027292
-      - 75.43152
+      - 21.410528
+      - 73.319435
       - 0
       - 0
       - 0
@@ -3307,8 +3417,8 @@ entities:
     - volume: 2500
       temperature: 293.15
       moles:
-      - 22.027296
-      - 75.43152
+      - 21.410532
+      - 73.319435
       - 0
       - 0
       - 0
@@ -3337,8 +3447,8 @@ entities:
     - volume: 2500
       temperature: 293.1478
       moles:
-      - 22.027294
-      - 75.43152
+      - 21.41053
+      - 73.319435
       - 0
       - 0
       - 0
@@ -3502,8 +3612,8 @@ entities:
     - volume: 2500
       temperature: 293.15
       moles:
-      - 21.639442
-      - 75.28038
+      - 21.033539
+      - 73.17253
       - 0
       - 0
       - 0
@@ -3622,8 +3732,8 @@ entities:
     - volume: 2500
       temperature: 293.15
       moles:
-      - 21.639444
-      - 75.28039
+      - 21.03354
+      - 73.17254
       - 0
       - 0
       - 0
@@ -3637,8 +3747,8 @@ entities:
     - volume: 2500
       temperature: 293.15
       moles:
-      - 21.639442
-      - 75.28039
+      - 21.033539
+      - 73.17254
       - 0
       - 0
       - 0
@@ -3862,8 +3972,23 @@ entities:
     - volume: 2500
       temperature: 293.15
       moles:
-      - 22.545973
-      - 73.16591
+      - 23.863632
+      - 77.44195
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+    - volume: 2500
+      temperature: 293.15
+      moles:
+      - 21.301075
+      - 69.12598
       - 0
       - 0
       - 0
@@ -4795,26 +4920,16 @@ entities:
   type: ComputerAlert
   components:
   - rot: 3.141592653589793 rad
-    pos: -2.5,-5.5
+    pos: -1.5,-5.5
     parent: 0
     type: Transform
-  - containers:
-    - board
-    type: Construction
-  - containers:
-      board: !type:Container
-        ents:
-        - 111
-    type: ContainerContainer
 - uid: 111
-  type: AlertsComputerCircuitboard
+  type: ComputerCrewMonitoring
   components:
-  - flags: InContainer
-    type: MetaData
-  - parent: 110
+  - rot: 3.141592653589793 rad
+    pos: 0.5,-5.5
+    parent: 0
     type: Transform
-  - canCollide: False
-    type: Physics
 - uid: 112
   type: ComputerRadar
   components:
@@ -4840,39 +4955,26 @@ entities:
   - canCollide: False
     type: Physics
 - uid: 114
-  type: ComputerStationRecords
+  type: PosterContrabandPunchShit
   components:
-  - rot: 3.141592653589793 rad
-    pos: -1.5,-5.5
-    parent: 0
-    type: Transform
-  - containers:
-    - board
-    type: Construction
-  - containers:
-      board: !type:Container
-        ents:
-        - 115
-    type: ContainerContainer
-- uid: 115
-  type: CriminalRecordsComputerCircuitboard
-  components:
-  - flags: InContainer
+  - name: бей гавно!
     type: MetaData
-  - parent: 114
-    type: Transform
-  - canCollide: False
-    type: Physics
-- uid: 116
-  type: ComputerIFF
-  components:
-  - rot: 3.141592653589793 rad
-    pos: 0.5,-5.5
+  - pos: -4.5,11.5
     parent: 0
     type: Transform
-  - containers:
-    - board
-    type: Construction
+- uid: 115
+  type: computerBodyScanner
+  components:
+  - rot: -1.5707963267948966 rad
+    pos: 6.5,12.5
+    parent: 0
+    type: Transform
+- uid: 116
+  type: LockerEngineerFilled
+  components:
+  - pos: 7.5,18.5
+    parent: 0
+    type: Transform
 - uid: 117
   type: ChairPilotSeat
   components:
@@ -5010,16 +5112,15 @@ entities:
     parent: 0
     type: Transform
 - uid: 135
-  type: RandomPosterLegit
+  type: LockerEngineerFilled
   components:
-  - rot: 3.141592653589793 rad
-    pos: -4.5,11.5
+  - pos: 7.5,17.5
     parent: 0
     type: Transform
 - uid: 136
-  type: RandomPosterLegit
+  type: GeneratorUranium
   components:
-  - pos: -4.5,11.5
+  - pos: 1.5,20.5
     parent: 0
     type: Transform
 - uid: 137
@@ -5075,15 +5176,15 @@ entities:
     parent: 0
     type: Transform
 - uid: 145
-  type: LockerEngineerFilled
+  type: BoxBodyBag
   components:
-  - pos: 7.5,17.5
+  - pos: 4.360119,11.682879
     parent: 0
     type: Transform
 - uid: 146
-  type: LockerEngineerFilled
+  type: PottedPlantRandom
   components:
-  - pos: 7.5,18.5
+  - pos: -3.5,-2.5
     parent: 0
     type: Transform
 - uid: 147
@@ -5331,25 +5432,17 @@ entities:
     parent: 0
     type: Transform
 - uid: 179
-  type: LampGold
+  type: chem_master
   components:
-  - rot: 1.5707963267948966 rad
-    pos: -4.4862843,-4.4893417
+  - pos: 8.5,1.5
     parent: 0
     type: Transform
-  - containers:
-      cell_slot: !type:ContainerSlot
-        ent: 180
-    type: ContainerContainer
 - uid: 180
-  type: PowerCellSmall
+  type: chem_master
   components:
-  - flags: InContainer
-    type: MetaData
-  - parent: 179
+  - pos: 10.5,1.5
+    parent: 0
     type: Transform
-  - canCollide: False
-    type: Physics
 - uid: 181
   type: TableReinforced
   components:
@@ -5510,67 +5603,41 @@ entities:
     parent: 0
     type: Transform
 - uid: 202
-  type: BoxBodyBag
+  type: chem_dispenser
   components:
-  - pos: 4.411186,11.621276
+  - pos: 10.5,0.5
     parent: 0
     type: Transform
-  - containers:
-      storagebase: !type:Container
-        ents:
-        - 203
-        - 204
-        - 205
-        - 206
-        - 207
-    type: ContainerContainer
-  - canCollide: False
-    type: Physics
 - uid: 203
-  type: BodyBag_Folded
+  type: LockerChemistryFilled
   components:
-  - flags: InContainer
-    type: MetaData
-  - parent: 202
+  - pos: 10.5,2.5
+    parent: 0
     type: Transform
-  - canCollide: False
-    type: Physics
 - uid: 204
-  type: BodyBag_Folded
+  type: chem_dispenser
   components:
-  - flags: InContainer
-    type: MetaData
-  - parent: 202
+  - pos: 8.5,0.5
+    parent: 0
     type: Transform
-  - canCollide: False
-    type: Physics
 - uid: 205
-  type: BodyBag_Folded
+  type: BoxPillCanister
   components:
-  - flags: InContainer
-    type: MetaData
-  - parent: 202
+  - pos: 9.295948,0.4940791
+    parent: 0
     type: Transform
-  - canCollide: False
-    type: Physics
 - uid: 206
-  type: BodyBag_Folded
+  type: BoxPillCanister
   components:
-  - flags: InContainer
-    type: MetaData
-  - parent: 202
+  - pos: 9.749073,0.4940791
+    parent: 0
     type: Transform
-  - canCollide: False
-    type: Physics
 - uid: 207
-  type: BodyBag_Folded
+  type: BoxSyringe
   components:
-  - flags: InContainer
-    type: MetaData
-  - parent: 202
+  - pos: 8.764698,2.462829
+    parent: 0
     type: Transform
-  - canCollide: False
-    type: Physics
 - uid: 208
   type: DrinkMugRed
   components:
@@ -6081,6 +6148,268 @@ entities:
     pos: -1.5,21.5
     parent: 0
     type: Transform
+- uid: 275
+  type: BoxBeaker
+  components:
+  - pos: 8.764698,2.728454
+    parent: 0
+    type: Transform
+- uid: 276
+  type: BoxSyringe
+  components:
+  - pos: 8.311573,2.447204
+    parent: 0
+    type: Transform
+- uid: 277
+  type: BoxBeaker
+  components:
+  - pos: 8.327198,2.759704
+    parent: 0
+    type: Transform
+- uid: 278
+  type: BoxBottle
+  components:
+  - pos: 9.749073,0.7597041
+    parent: 0
+    type: Transform
+- uid: 279
+  type: BoxBottle
+  components:
+  - pos: 9.295948,0.7597041
+    parent: 0
+    type: Transform
+- uid: 280
+  type: GeneratorUranium
+  components:
+  - pos: 1.5,21.5
+    parent: 0
+    type: Transform
+- uid: 281
+  type: MedkitRadiationFilled
+  components:
+  - pos: 10.342823,6.6478767
+    parent: 0
+    type: Transform
+- uid: 282
+  type: MedkitFilled
+  components:
+  - pos: 10.749073,6.8822517
+    parent: 0
+    type: Transform
+- uid: 283
+  type: MedkitFilled
+  components:
+  - pos: 10.702198,6.5072517
+    parent: 0
+    type: Transform
+- uid: 284
+  type: MedkitToxinFilled
+  components:
+  - pos: 10.374073,6.9760017
+    parent: 0
+    type: Transform
+- uid: 285
+  type: BoxBodyBag
+  components:
+  - pos: 4.703869,11.745379
+    parent: 0
+    type: Transform
+- uid: 286
+  type: ComputerStationRecords
+  components:
+  - rot: 3.141592653589793 rad
+    pos: -2.5,-5.5
+    parent: 0
+    type: Transform
+- uid: 287
+  type: ExtinguisherCabinetFilled
+  components:
+  - pos: -4.5,4.5
+    parent: 0
+    type: Transform
+- uid: 288
+  type: ExtinguisherCabinetFilled
+  components:
+  - pos: 3.5,4.5
+    parent: 0
+    type: Transform
+- uid: 289
+  type: APCBasic
+  components:
+  - pos: -5.5,19.5
+    parent: 0
+    type: Transform
+- uid: 290
+  type: APCBasic
+  components:
+  - rot: -1.5707963267948966 rad
+    pos: -8.5,9.5
+    parent: 0
+    type: Transform
+- uid: 291
+  type: APCBasic
+  components:
+  - pos: 4.5,19.5
+    parent: 0
+    type: Transform
+- uid: 292
+  type: APCBasic
+  components:
+  - pos: 4.5,9.5
+    parent: 0
+    type: Transform
+- uid: 293
+  type: APCBasic
+  components:
+  - pos: 7.5,11.5
+    parent: 0
+    type: Transform
+- uid: 294
+  type: APCBasic
+  components:
+  - pos: 2.5,-1.5
+    parent: 0
+    type: Transform
+- uid: 295
+  type: SubstationBasic
+  components:
+  - pos: 1.5,23.5
+    parent: 0
+    type: Transform
+- uid: 296
+  type: GeneratorUranium
+  components:
+  - pos: 1.5,22.5
+    parent: 0
+    type: Transform
+- uid: 297
+  type: BiomassReclaimer
+  components:
+  - pos: 6.5,11.5
+    parent: 0
+    type: Transform
+- uid: 298
+  type: PortableScrubber
+  components:
+  - pos: 5.5,16.5
+    parent: 0
+    type: Transform
+- uid: 299
+  type: VendingMachineTankDispenserEVA
+  components:
+  - flags: SessionSpecific
+    type: MetaData
+  - pos: 4.5,18.5
+    parent: 0
+    type: Transform
+- uid: 300
+  type: PortableScrubber
+  components:
+  - pos: 4.5,16.5
+    parent: 0
+    type: Transform
+- uid: 301
+  type: PortableScrubber
+  components:
+  - pos: 6.5,16.5
+    parent: 0
+    type: Transform
+- uid: 302
+  type: ClosetL3VirologyFilled
+  components:
+  - pos: 10.5,10.5
+    parent: 0
+    type: Transform
+- uid: 303
+  type: BoxMRE
+  components:
+  - pos: -7.433894,22.654865
+    parent: 0
+    type: Transform
+- uid: 304
+  type: ClothingOuterSuitEmergency
+  components:
+  - pos: -4.2062626,16.745285
+    parent: 0
+    type: Transform
+- uid: 305
+  type: ClothingOuterSuitEmergency
+  components:
+  - pos: -3.7531376,16.745285
+    parent: 0
+    type: Transform
+- uid: 306
+  type: BoxHandcuff
+  components:
+  - pos: -8.628138,17.72966
+    parent: 0
+    type: Transform
+- uid: 307
+  type: BoxHandcuff
+  components:
+  - pos: -8.315638,17.69841
+    parent: 0
+    type: Transform
+- uid: 308
+  type: PottedPlantRandom
+  components:
+  - pos: 2.5,-2.5
+    parent: 0
+    type: Transform
+- uid: 309
+  type: ExtinguisherCabinetFilled
+  components:
+  - pos: 3.5,-1.5
+    parent: 0
+    type: Transform
+- uid: 310
+  type: BoxMRE
+  components:
+  - pos: -7.5031376,21.66901
+    parent: 0
+    type: Transform
+- uid: 311
+  type: ClothingOuterSuitEmergency
+  components:
+  - pos: -3.4718876,16.745285
+    parent: 0
+    type: Transform
+- uid: 312
+  type: BoxMRE
+  components:
+  - pos: -0.4250126,22.60651
+    parent: 0
+    type: Transform
+- uid: 313
+  type: BoxMRE
+  components:
+  - pos: -0.4250126,21.778385
+    parent: 0
+    type: Transform
+- uid: 314
+  type: CloningPod
+  components:
+  - pos: 4.5,14.5
+    parent: 0
+    type: Transform
+- uid: 315
+  type: ComputerCloningConsole
+  components:
+  - pos: 5.5,14.5
+    parent: 0
+    type: Transform
+- uid: 316
+  type: LampGold
+  components:
+  - pos: -4.494972,-4.4381437
+    parent: 0
+    type: Transform
+- uid: 317
+  type: MedicalScanner
+  components:
+  - pos: 6.5,14.5
+    parent: 0
+    type: Transform
 - uid: 319
   type: TableReinforced
   components:
@@ -6130,31 +6459,6 @@ entities:
   - pos: 0.5,-1.5
     parent: 0
     type: Transform
-- uid: 327
-  type: ComputerCloningConsole
-  components:
-  - pos: 5.5,14.5
-    parent: 0
-    type: Transform
-  - address: 5d1f56c3
-    type: DeviceNetwork
-  - containers:
-    - board
-    type: Construction
-  - containers:
-      board: !type:Container
-        ents:
-        - 328
-    type: ContainerContainer
-- uid: 328
-  type: CloningConsoleComputerCircuitboard
-  components:
-  - flags: InContainer
-    type: MetaData
-  - parent: 327
-    type: Transform
-  - canCollide: False
-    type: Physics
 - uid: 329
   type: ShuttleWindow
   components:
@@ -6263,91 +6567,6 @@ entities:
   - pos: 5.5,-3.5
     parent: 0
     type: Transform
-- uid: 363
-  type: CloningPod
-  components:
-  - pos: 4.5,14.5
-    parent: 0
-    type: Transform
-  - address: 29f3f0ca
-    type: DeviceNetwork
-  - containers:
-      machine_board: !type:Container
-        ents:
-        - 364
-      machine_parts: !type:Container
-        ents:
-        - 365
-        - 366
-        - 367
-        - 368
-        - 369
-        - 370
-      clonepod-bodyContainer: !type:ContainerSlot {}
-    type: ContainerContainer
-- uid: 364
-  type: CloningPodMachineCircuitboard
-  components:
-  - flags: InContainer
-    type: MetaData
-  - parent: 363
-    type: Transform
-  - canCollide: False
-    type: Physics
-- uid: 365
-  type: ScanningModuleStockPart
-  components:
-  - flags: InContainer
-    type: MetaData
-  - parent: 363
-    type: Transform
-  - canCollide: False
-    type: Physics
-- uid: 366
-  type: ScanningModuleStockPart
-  components:
-  - flags: InContainer
-    type: MetaData
-  - parent: 363
-    type: Transform
-  - canCollide: False
-    type: Physics
-- uid: 367
-  type: MicroManipulatorStockPart
-  components:
-  - flags: InContainer
-    type: MetaData
-  - parent: 363
-    type: Transform
-  - canCollide: False
-    type: Physics
-- uid: 368
-  type: MicroManipulatorStockPart
-  components:
-  - flags: InContainer
-    type: MetaData
-  - parent: 363
-    type: Transform
-  - canCollide: False
-    type: Physics
-- uid: 369
-  type: SheetGlass1
-  components:
-  - flags: InContainer
-    type: MetaData
-  - parent: 363
-    type: Transform
-  - canCollide: False
-    type: Physics
-- uid: 370
-  type: CableApcStack1
-  components:
-  - flags: InContainer
-    type: MetaData
-  - parent: 363
-    type: Transform
-  - canCollide: False
-    type: Physics
 - uid: 371
   type: Grille
   components:
@@ -6559,25 +6778,6 @@ entities:
   - pos: 5.5,-3.5
     parent: 0
     type: Transform
-- uid: 408
-  type: ExtinguisherCabinetFilled
-  components:
-  - pos: 3.5,-1.5
-    parent: 0
-    type: Transform
-  - containers:
-      ItemCabinet: !type:ContainerSlot
-        ent: 409
-    type: ContainerContainer
-- uid: 409
-  type: FireExtinguisher
-  components:
-  - flags: InContainer
-    type: MetaData
-  - parent: 408
-    type: Transform
-  - canCollide: False
-    type: Physics
 - uid: 410
   type: WallShuttle
   components:
@@ -6916,107 +7116,6 @@ entities:
   - pos: 7.5,15.5
     parent: 0
     type: Transform
-- uid: 467
-  type: MedicalScanner
-  components:
-  - pos: 6.5,14.5
-    parent: 0
-    type: Transform
-  - address: 5c73d543
-    type: DeviceNetwork
-  - containers:
-      scanner-bodyContainer: !type:ContainerSlot {}
-      machine_board: !type:Container
-        ents:
-        - 468
-      machine_parts: !type:Container
-        ents:
-        - 469
-        - 470
-        - 471
-        - 472
-        - 473
-    type: ContainerContainer
-- uid: 468
-  type: MedicalScannerMachineCircuitboard
-  components:
-  - flags: InContainer
-    type: MetaData
-  - parent: 467
-    type: Transform
-  - canCollide: False
-    type: Physics
-- uid: 469
-  type: ScanningModuleStockPart
-  components:
-  - flags: InContainer
-    type: MetaData
-  - parent: 467
-    type: Transform
-  - canCollide: False
-    type: Physics
-- uid: 470
-  type: ScanningModuleStockPart
-  components:
-  - flags: InContainer
-    type: MetaData
-  - parent: 467
-    type: Transform
-  - canCollide: False
-    type: Physics
-- uid: 471
-  type: CapacitorStockPart
-  components:
-  - flags: InContainer
-    type: MetaData
-  - parent: 467
-    type: Transform
-  - canCollide: False
-    type: Physics
-- uid: 472
-  type: SheetGlass1
-  components:
-  - flags: InContainer
-    type: MetaData
-  - parent: 467
-    type: Transform
-  - count: 5
-    type: Stack
-  - canCollide: False
-    type: Physics
-- uid: 473
-  type: CableApcStack1
-  components:
-  - flags: InContainer
-    type: MetaData
-  - parent: 467
-    type: Transform
-  - canCollide: False
-    type: Physics
-- uid: 474
-  type: computerBodyScanner
-  components:
-  - rot: -1.5707963267948966 rad
-    pos: 6.5,12.5
-    parent: 0
-    type: Transform
-  - containers:
-    - board
-    type: Construction
-  - containers:
-      board: !type:Container
-        ents:
-        - 475
-    type: ContainerContainer
-- uid: 475
-  type: BodyScannerComputerCircuitboard
-  components:
-  - flags: InContainer
-    type: MetaData
-  - parent: 474
-    type: Transform
-  - canCollide: False
-    type: Physics
 - uid: 476
   type: TableReinforced
   components:
@@ -7891,79 +7990,6 @@ entities:
   - pos: -7.5,19.5
     parent: 0
     type: Transform
-- uid: 606
-  type: chem_dispenser
-  components:
-  - pos: 8.5,0.5
-    parent: 0
-    type: Transform
-  - containers:
-      machine_board: !type:Container
-        ents:
-        - 607
-      machine_parts: !type:Container
-        ents:
-        - 608
-        - 609
-        - 610
-        - 611
-        - 612
-      beakerSlot: !type:ContainerSlot {}
-    type: ContainerContainer
-- uid: 607
-  type: ChemDispenserMachineCircuitboard
-  components:
-  - flags: InContainer
-    type: MetaData
-  - parent: 606
-    type: Transform
-  - canCollide: False
-    type: Physics
-- uid: 608
-  type: CapacitorStockPart
-  components:
-  - flags: InContainer
-    type: MetaData
-  - parent: 606
-    type: Transform
-  - canCollide: False
-    type: Physics
-- uid: 609
-  type: MicroManipulatorStockPart
-  components:
-  - flags: InContainer
-    type: MetaData
-  - parent: 606
-    type: Transform
-  - canCollide: False
-    type: Physics
-- uid: 610
-  type: MatterBinStockPart
-  components:
-  - flags: InContainer
-    type: MetaData
-  - parent: 606
-    type: Transform
-  - canCollide: False
-    type: Physics
-- uid: 611
-  type: MatterBinStockPart
-  components:
-  - flags: InContainer
-    type: MetaData
-  - parent: 606
-    type: Transform
-  - canCollide: False
-    type: Physics
-- uid: 612
-  type: SheetGlass1
-  components:
-  - flags: InContainer
-    type: MetaData
-  - parent: 606
-    type: Transform
-  - canCollide: False
-    type: Physics
 - uid: 613
   type: SignVirology
   components:
@@ -8006,79 +8032,6 @@ entities:
   - flags: InContainer
     type: MetaData
   - parent: 617
-    type: Transform
-  - canCollide: False
-    type: Physics
-- uid: 619
-  type: chem_dispenser
-  components:
-  - pos: 10.5,0.5
-    parent: 0
-    type: Transform
-  - containers:
-      machine_board: !type:Container
-        ents:
-        - 620
-      machine_parts: !type:Container
-        ents:
-        - 621
-        - 622
-        - 623
-        - 624
-        - 625
-      beakerSlot: !type:ContainerSlot {}
-    type: ContainerContainer
-- uid: 620
-  type: ChemDispenserMachineCircuitboard
-  components:
-  - flags: InContainer
-    type: MetaData
-  - parent: 619
-    type: Transform
-  - canCollide: False
-    type: Physics
-- uid: 621
-  type: CapacitorStockPart
-  components:
-  - flags: InContainer
-    type: MetaData
-  - parent: 619
-    type: Transform
-  - canCollide: False
-    type: Physics
-- uid: 622
-  type: MicroManipulatorStockPart
-  components:
-  - flags: InContainer
-    type: MetaData
-  - parent: 619
-    type: Transform
-  - canCollide: False
-    type: Physics
-- uid: 623
-  type: MatterBinStockPart
-  components:
-  - flags: InContainer
-    type: MetaData
-  - parent: 619
-    type: Transform
-  - canCollide: False
-    type: Physics
-- uid: 624
-  type: MatterBinStockPart
-  components:
-  - flags: InContainer
-    type: MetaData
-  - parent: 619
-    type: Transform
-  - canCollide: False
-    type: Physics
-- uid: 625
-  type: SheetGlass1
-  components:
-  - flags: InContainer
-    type: MetaData
-  - parent: 619
     type: Transform
   - canCollide: False
     type: Physics
@@ -8148,36 +8101,6 @@ entities:
   - pos: 8.5,15.5
     parent: 0
     type: Transform
-- uid: 637
-  type: ClosetL3VirologyFilled
-  components:
-  - pos: 10.5,10.5
-    parent: 0
-    type: Transform
-  - containers:
-      entity_storage: !type:Container
-        ents:
-        - 638
-        - 639
-    type: ContainerContainer
-- uid: 638
-  type: ClothingOuterBioVirology
-  components:
-  - flags: InContainer
-    type: MetaData
-  - parent: 637
-    type: Transform
-  - canCollide: False
-    type: Physics
-- uid: 639
-  type: ClothingHeadHatHoodBioVirology
-  components:
-  - flags: InContainer
-    type: MetaData
-  - parent: 637
-    type: Transform
-  - canCollide: False
-    type: Physics
 - uid: 640
   type: WallShuttle
   components:
@@ -8221,134 +8144,6 @@ entities:
   - pos: 3.5,24.5
     parent: 0
     type: Transform
-- uid: 647
-  type: chem_master
-  components:
-  - pos: 8.5,1.5
-    parent: 0
-    type: Transform
-  - containers:
-      beakerSlot: !type:ContainerSlot {}
-      outputSlot: !type:ContainerSlot {}
-      machine_board: !type:Container
-        ents:
-        - 648
-      machine_parts: !type:Container
-        ents:
-        - 649
-        - 650
-        - 651
-        - 652
-    type: ContainerContainer
-- uid: 648
-  type: ChemMasterMachineCircuitboard
-  components:
-  - flags: InContainer
-    type: MetaData
-  - parent: 647
-    type: Transform
-  - canCollide: False
-    type: Physics
-- uid: 649
-  type: MicroManipulatorStockPart
-  components:
-  - flags: InContainer
-    type: MetaData
-  - parent: 647
-    type: Transform
-  - canCollide: False
-    type: Physics
-- uid: 650
-  type: SheetGlass1
-  components:
-  - flags: InContainer
-    type: MetaData
-  - parent: 647
-    type: Transform
-  - canCollide: False
-    type: Physics
-- uid: 651
-  type: Beaker
-  components:
-  - flags: InContainer
-    type: MetaData
-  - parent: 647
-    type: Transform
-  - canCollide: False
-    type: Physics
-- uid: 652
-  type: Beaker
-  components:
-  - flags: InContainer
-    type: MetaData
-  - parent: 647
-    type: Transform
-  - canCollide: False
-    type: Physics
-- uid: 653
-  type: chem_master
-  components:
-  - pos: 10.5,1.5
-    parent: 0
-    type: Transform
-  - containers:
-      beakerSlot: !type:ContainerSlot {}
-      outputSlot: !type:ContainerSlot {}
-      machine_board: !type:Container
-        ents:
-        - 654
-      machine_parts: !type:Container
-        ents:
-        - 655
-        - 656
-        - 657
-        - 658
-    type: ContainerContainer
-- uid: 654
-  type: ChemMasterMachineCircuitboard
-  components:
-  - flags: InContainer
-    type: MetaData
-  - parent: 653
-    type: Transform
-  - canCollide: False
-    type: Physics
-- uid: 655
-  type: MicroManipulatorStockPart
-  components:
-  - flags: InContainer
-    type: MetaData
-  - parent: 653
-    type: Transform
-  - canCollide: False
-    type: Physics
-- uid: 656
-  type: SheetGlass1
-  components:
-  - flags: InContainer
-    type: MetaData
-  - parent: 653
-    type: Transform
-  - canCollide: False
-    type: Physics
-- uid: 657
-  type: Beaker
-  components:
-  - flags: InContainer
-    type: MetaData
-  - parent: 653
-    type: Transform
-  - canCollide: False
-    type: Physics
-- uid: 658
-  type: Beaker
-  components:
-  - flags: InContainer
-    type: MetaData
-  - parent: 653
-    type: Transform
-  - canCollide: False
-    type: Physics
 - uid: 659
   type: Grille
   components:
@@ -9289,150 +9084,6 @@ entities:
     - 682
     - 684
     type: DeviceList
-- uid: 731
-  type: BoxPillCanister
-  components:
-  - pos: 9.719654,0.50711346
-    parent: 0
-    type: Transform
-  - containers:
-      storagebase: !type:Container
-        ents:
-        - 732
-        - 733
-        - 734
-        - 735
-        - 736
-        - 737
-    type: ContainerContainer
-  - canCollide: False
-    type: Physics
-- uid: 732
-  type: PillCanister
-  components:
-  - flags: InContainer
-    type: MetaData
-  - parent: 731
-    type: Transform
-  - canCollide: False
-    type: Physics
-- uid: 733
-  type: PillCanister
-  components:
-  - flags: InContainer
-    type: MetaData
-  - parent: 731
-    type: Transform
-  - canCollide: False
-    type: Physics
-- uid: 734
-  type: PillCanister
-  components:
-  - flags: InContainer
-    type: MetaData
-  - parent: 731
-    type: Transform
-  - canCollide: False
-    type: Physics
-- uid: 735
-  type: PillCanister
-  components:
-  - flags: InContainer
-    type: MetaData
-  - parent: 731
-    type: Transform
-  - canCollide: False
-    type: Physics
-- uid: 736
-  type: PillCanister
-  components:
-  - flags: InContainer
-    type: MetaData
-  - parent: 731
-    type: Transform
-  - canCollide: False
-    type: Physics
-- uid: 737
-  type: PillCanister
-  components:
-  - flags: InContainer
-    type: MetaData
-  - parent: 731
-    type: Transform
-  - canCollide: False
-    type: Physics
-- uid: 738
-  type: BoxPillCanister
-  components:
-  - pos: 9.329029,0.52273846
-    parent: 0
-    type: Transform
-  - containers:
-      storagebase: !type:Container
-        ents:
-        - 739
-        - 740
-        - 741
-        - 742
-        - 743
-        - 744
-    type: ContainerContainer
-  - canCollide: False
-    type: Physics
-- uid: 739
-  type: PillCanister
-  components:
-  - flags: InContainer
-    type: MetaData
-  - parent: 738
-    type: Transform
-  - canCollide: False
-    type: Physics
-- uid: 740
-  type: PillCanister
-  components:
-  - flags: InContainer
-    type: MetaData
-  - parent: 738
-    type: Transform
-  - canCollide: False
-    type: Physics
-- uid: 741
-  type: PillCanister
-  components:
-  - flags: InContainer
-    type: MetaData
-  - parent: 738
-    type: Transform
-  - canCollide: False
-    type: Physics
-- uid: 742
-  type: PillCanister
-  components:
-  - flags: InContainer
-    type: MetaData
-  - parent: 738
-    type: Transform
-  - canCollide: False
-    type: Physics
-- uid: 743
-  type: PillCanister
-  components:
-  - flags: InContainer
-    type: MetaData
-  - parent: 738
-    type: Transform
-  - canCollide: False
-    type: Physics
-- uid: 744
-  type: PillCanister
-  components:
-  - flags: InContainer
-    type: MetaData
-  - parent: 738
-    type: Transform
-  - canCollide: False
-    type: Physics
 - uid: 745
   type: FireAlarm
   components:
@@ -9509,616 +9160,6 @@ entities:
   - pos: 9.5,0.5
     parent: 0
     type: Transform
-- uid: 751
-  type: LockerChemistryFilled
-  components:
-  - pos: 10.5,2.5
-    parent: 0
-    type: Transform
-  - containers:
-      entity_storage: !type:Container
-        ents:
-        - 752
-        - 759
-        - 764
-        - 771
-        - 778
-    type: ContainerContainer
-- uid: 752
-  type: BoxSyringe
-  components:
-  - flags: InContainer
-    type: MetaData
-  - parent: 751
-    type: Transform
-  - containers:
-      storagebase: !type:Container
-        ents:
-        - 753
-        - 754
-        - 755
-        - 756
-        - 757
-        - 758
-    type: ContainerContainer
-  - canCollide: False
-    type: Physics
-- uid: 753
-  type: Syringe
-  components:
-  - flags: InContainer
-    type: MetaData
-  - parent: 752
-    type: Transform
-  - canCollide: False
-    type: Physics
-- uid: 754
-  type: Syringe
-  components:
-  - flags: InContainer
-    type: MetaData
-  - parent: 752
-    type: Transform
-  - canCollide: False
-    type: Physics
-- uid: 755
-  type: Syringe
-  components:
-  - flags: InContainer
-    type: MetaData
-  - parent: 752
-    type: Transform
-  - canCollide: False
-    type: Physics
-- uid: 756
-  type: Syringe
-  components:
-  - flags: InContainer
-    type: MetaData
-  - parent: 752
-    type: Transform
-  - canCollide: False
-    type: Physics
-- uid: 757
-  type: Syringe
-  components:
-  - flags: InContainer
-    type: MetaData
-  - parent: 752
-    type: Transform
-  - canCollide: False
-    type: Physics
-- uid: 758
-  type: Syringe
-  components:
-  - flags: InContainer
-    type: MetaData
-  - parent: 752
-    type: Transform
-  - canCollide: False
-    type: Physics
-- uid: 759
-  type: BoxBeaker
-  components:
-  - flags: InContainer
-    type: MetaData
-  - parent: 751
-    type: Transform
-  - containers:
-      storagebase: !type:Container
-        ents:
-        - 760
-        - 761
-        - 762
-        - 763
-    type: ContainerContainer
-  - canCollide: False
-    type: Physics
-- uid: 760
-  type: Beaker
-  components:
-  - flags: InContainer
-    type: MetaData
-  - parent: 759
-    type: Transform
-  - canCollide: False
-    type: Physics
-- uid: 761
-  type: Beaker
-  components:
-  - flags: InContainer
-    type: MetaData
-  - parent: 759
-    type: Transform
-  - canCollide: False
-    type: Physics
-- uid: 762
-  type: LargeBeaker
-  components:
-  - flags: InContainer
-    type: MetaData
-  - parent: 759
-    type: Transform
-  - canCollide: False
-    type: Physics
-- uid: 763
-  type: LargeBeaker
-  components:
-  - flags: InContainer
-    type: MetaData
-  - parent: 759
-    type: Transform
-  - canCollide: False
-    type: Physics
-- uid: 764
-  type: BoxPillCanister
-  components:
-  - flags: InContainer
-    type: MetaData
-  - parent: 751
-    type: Transform
-  - containers:
-      storagebase: !type:Container
-        ents:
-        - 765
-        - 766
-        - 767
-        - 768
-        - 769
-        - 770
-    type: ContainerContainer
-  - canCollide: False
-    type: Physics
-- uid: 765
-  type: PillCanister
-  components:
-  - flags: InContainer
-    type: MetaData
-  - parent: 764
-    type: Transform
-  - canCollide: False
-    type: Physics
-- uid: 766
-  type: PillCanister
-  components:
-  - flags: InContainer
-    type: MetaData
-  - parent: 764
-    type: Transform
-  - canCollide: False
-    type: Physics
-- uid: 767
-  type: PillCanister
-  components:
-  - flags: InContainer
-    type: MetaData
-  - parent: 764
-    type: Transform
-  - canCollide: False
-    type: Physics
-- uid: 768
-  type: PillCanister
-  components:
-  - flags: InContainer
-    type: MetaData
-  - parent: 764
-    type: Transform
-  - canCollide: False
-    type: Physics
-- uid: 769
-  type: PillCanister
-  components:
-  - flags: InContainer
-    type: MetaData
-  - parent: 764
-    type: Transform
-  - canCollide: False
-    type: Physics
-- uid: 770
-  type: PillCanister
-  components:
-  - flags: InContainer
-    type: MetaData
-  - parent: 764
-    type: Transform
-  - canCollide: False
-    type: Physics
-- uid: 771
-  type: BoxBottle
-  components:
-  - flags: InContainer
-    type: MetaData
-  - parent: 751
-    type: Transform
-  - containers:
-      storagebase: !type:Container
-        ents:
-        - 772
-        - 773
-        - 774
-        - 775
-        - 776
-        - 777
-    type: ContainerContainer
-  - canCollide: False
-    type: Physics
-- uid: 772
-  type: ChemistryEmptyBottle01
-  components:
-  - flags: InContainer
-    type: MetaData
-  - parent: 771
-    type: Transform
-  - canCollide: False
-    type: Physics
-- uid: 773
-  type: ChemistryEmptyBottle01
-  components:
-  - flags: InContainer
-    type: MetaData
-  - parent: 771
-    type: Transform
-  - canCollide: False
-    type: Physics
-- uid: 774
-  type: ChemistryEmptyBottle01
-  components:
-  - flags: InContainer
-    type: MetaData
-  - parent: 771
-    type: Transform
-  - canCollide: False
-    type: Physics
-- uid: 775
-  type: ChemistryEmptyBottle01
-  components:
-  - flags: InContainer
-    type: MetaData
-  - parent: 771
-    type: Transform
-  - canCollide: False
-    type: Physics
-- uid: 776
-  type: ChemistryEmptyBottle01
-  components:
-  - flags: InContainer
-    type: MetaData
-  - parent: 771
-    type: Transform
-  - canCollide: False
-    type: Physics
-- uid: 777
-  type: ChemistryEmptyBottle01
-  components:
-  - flags: InContainer
-    type: MetaData
-  - parent: 771
-    type: Transform
-  - canCollide: False
-    type: Physics
-- uid: 778
-  type: BoxBottle
-  components:
-  - flags: InContainer
-    type: MetaData
-  - parent: 751
-    type: Transform
-  - containers:
-      storagebase: !type:Container
-        ents:
-        - 779
-        - 780
-        - 781
-        - 782
-        - 783
-        - 784
-    type: ContainerContainer
-  - canCollide: False
-    type: Physics
-- uid: 779
-  type: ChemistryEmptyBottle01
-  components:
-  - flags: InContainer
-    type: MetaData
-  - parent: 778
-    type: Transform
-  - canCollide: False
-    type: Physics
-- uid: 780
-  type: ChemistryEmptyBottle01
-  components:
-  - flags: InContainer
-    type: MetaData
-  - parent: 778
-    type: Transform
-  - canCollide: False
-    type: Physics
-- uid: 781
-  type: ChemistryEmptyBottle01
-  components:
-  - flags: InContainer
-    type: MetaData
-  - parent: 778
-    type: Transform
-  - canCollide: False
-    type: Physics
-- uid: 782
-  type: ChemistryEmptyBottle01
-  components:
-  - flags: InContainer
-    type: MetaData
-  - parent: 778
-    type: Transform
-  - canCollide: False
-    type: Physics
-- uid: 783
-  type: ChemistryEmptyBottle01
-  components:
-  - flags: InContainer
-    type: MetaData
-  - parent: 778
-    type: Transform
-  - canCollide: False
-    type: Physics
-- uid: 784
-  type: ChemistryEmptyBottle01
-  components:
-  - flags: InContainer
-    type: MetaData
-  - parent: 778
-    type: Transform
-  - canCollide: False
-    type: Physics
-- uid: 785
-  type: BoxBeaker
-  components:
-  - rot: 1.8340804672334343E-05 rad
-    pos: 8.264858,2.7258637
-    parent: 0
-    type: Transform
-  - containers:
-      storagebase: !type:Container
-        ents:
-        - 786
-        - 787
-        - 788
-        - 789
-    type: ContainerContainer
-  - canCollide: False
-    type: Physics
-- uid: 786
-  type: Beaker
-  components:
-  - flags: InContainer
-    type: MetaData
-  - parent: 785
-    type: Transform
-  - canCollide: False
-    type: Physics
-- uid: 787
-  type: Beaker
-  components:
-  - flags: InContainer
-    type: MetaData
-  - parent: 785
-    type: Transform
-  - canCollide: False
-    type: Physics
-- uid: 788
-  type: LargeBeaker
-  components:
-  - flags: InContainer
-    type: MetaData
-  - parent: 785
-    type: Transform
-  - canCollide: False
-    type: Physics
-- uid: 789
-  type: LargeBeaker
-  components:
-  - flags: InContainer
-    type: MetaData
-  - parent: 785
-    type: Transform
-  - canCollide: False
-    type: Physics
-- uid: 790
-  type: BoxBeaker
-  components:
-  - pos: 8.702009,2.6946137
-    parent: 0
-    type: Transform
-  - containers:
-      storagebase: !type:Container
-        ents:
-        - 791
-        - 792
-        - 793
-        - 794
-    type: ContainerContainer
-  - canCollide: False
-    type: Physics
-- uid: 791
-  type: Beaker
-  components:
-  - flags: InContainer
-    type: MetaData
-  - parent: 790
-    type: Transform
-  - canCollide: False
-    type: Physics
-- uid: 792
-  type: Beaker
-  components:
-  - flags: InContainer
-    type: MetaData
-  - parent: 790
-    type: Transform
-  - canCollide: False
-    type: Physics
-- uid: 793
-  type: LargeBeaker
-  components:
-  - flags: InContainer
-    type: MetaData
-  - parent: 790
-    type: Transform
-  - canCollide: False
-    type: Physics
-- uid: 794
-  type: LargeBeaker
-  components:
-  - flags: InContainer
-    type: MetaData
-  - parent: 790
-    type: Transform
-  - canCollide: False
-    type: Physics
-- uid: 795
-  type: BoxSyringe
-  components:
-  - rot: 0.0008631090167909861 rad
-    pos: 8.260399,2.4758637
-    parent: 0
-    type: Transform
-  - containers:
-      storagebase: !type:Container
-        ents:
-        - 796
-        - 797
-        - 798
-        - 799
-        - 800
-        - 801
-    type: ContainerContainer
-  - canCollide: False
-    type: Physics
-- uid: 796
-  type: Syringe
-  components:
-  - flags: InContainer
-    type: MetaData
-  - parent: 795
-    type: Transform
-  - canCollide: False
-    type: Physics
-- uid: 797
-  type: Syringe
-  components:
-  - flags: InContainer
-    type: MetaData
-  - parent: 795
-    type: Transform
-  - canCollide: False
-    type: Physics
-- uid: 798
-  type: Syringe
-  components:
-  - flags: InContainer
-    type: MetaData
-  - parent: 795
-    type: Transform
-  - canCollide: False
-    type: Physics
-- uid: 799
-  type: Syringe
-  components:
-  - flags: InContainer
-    type: MetaData
-  - parent: 795
-    type: Transform
-  - canCollide: False
-    type: Physics
-- uid: 800
-  type: Syringe
-  components:
-  - flags: InContainer
-    type: MetaData
-  - parent: 795
-    type: Transform
-  - canCollide: False
-    type: Physics
-- uid: 801
-  type: Syringe
-  components:
-  - flags: InContainer
-    type: MetaData
-  - parent: 795
-    type: Transform
-  - canCollide: False
-    type: Physics
-- uid: 802
-  type: BoxSyringe
-  components:
-  - pos: 8.719654,2.4758637
-    parent: 0
-    type: Transform
-  - containers:
-      storagebase: !type:Container
-        ents:
-        - 803
-        - 804
-        - 805
-        - 806
-        - 807
-        - 808
-    type: ContainerContainer
-  - canCollide: False
-    type: Physics
-- uid: 803
-  type: Syringe
-  components:
-  - flags: InContainer
-    type: MetaData
-  - parent: 802
-    type: Transform
-  - canCollide: False
-    type: Physics
-- uid: 804
-  type: Syringe
-  components:
-  - flags: InContainer
-    type: MetaData
-  - parent: 802
-    type: Transform
-  - canCollide: False
-    type: Physics
-- uid: 805
-  type: Syringe
-  components:
-  - flags: InContainer
-    type: MetaData
-  - parent: 802
-    type: Transform
-  - canCollide: False
-    type: Physics
-- uid: 806
-  type: Syringe
-  components:
-  - flags: InContainer
-    type: MetaData
-  - parent: 802
-    type: Transform
-  - canCollide: False
-    type: Physics
-- uid: 807
-  type: Syringe
-  components:
-  - flags: InContainer
-    type: MetaData
-  - parent: 802
-    type: Transform
-  - canCollide: False
-    type: Physics
-- uid: 808
-  type: Syringe
-  components:
-  - flags: InContainer
-    type: MetaData
-  - parent: 802
-    type: Transform
-  - canCollide: False
-    type: Physics
 - uid: 809
   type: FireAlarm
   components:
@@ -10187,78 +9228,6 @@ entities:
     - 721
     - 723
     type: DeviceList
-- uid: 813
-  type: BoxBottle
-  components:
-  - pos: 9.678402,0.7916846
-    parent: 0
-    type: Transform
-  - containers:
-      storagebase: !type:Container
-        ents:
-        - 814
-        - 815
-        - 816
-        - 817
-        - 818
-        - 819
-    type: ContainerContainer
-  - canCollide: False
-    type: Physics
-- uid: 814
-  type: ChemistryEmptyBottle01
-  components:
-  - flags: InContainer
-    type: MetaData
-  - parent: 813
-    type: Transform
-  - canCollide: False
-    type: Physics
-- uid: 815
-  type: ChemistryEmptyBottle01
-  components:
-  - flags: InContainer
-    type: MetaData
-  - parent: 813
-    type: Transform
-  - canCollide: False
-    type: Physics
-- uid: 816
-  type: ChemistryEmptyBottle01
-  components:
-  - flags: InContainer
-    type: MetaData
-  - parent: 813
-    type: Transform
-  - canCollide: False
-    type: Physics
-- uid: 817
-  type: ChemistryEmptyBottle01
-  components:
-  - flags: InContainer
-    type: MetaData
-  - parent: 813
-    type: Transform
-  - canCollide: False
-    type: Physics
-- uid: 818
-  type: ChemistryEmptyBottle01
-  components:
-  - flags: InContainer
-    type: MetaData
-  - parent: 813
-    type: Transform
-  - canCollide: False
-    type: Physics
-- uid: 819
-  type: ChemistryEmptyBottle01
-  components:
-  - flags: InContainer
-    type: MetaData
-  - parent: 813
-    type: Transform
-  - canCollide: False
-    type: Physics
 - uid: 820
   type: FirelockGlass
   components:
@@ -10279,78 +9248,6 @@ entities:
   - flags: InContainer
     type: MetaData
   - parent: 820
-    type: Transform
-  - canCollide: False
-    type: Physics
-- uid: 822
-  type: BoxBottle
-  components:
-  - pos: 9.2962265,0.7727387
-    parent: 0
-    type: Transform
-  - containers:
-      storagebase: !type:Container
-        ents:
-        - 823
-        - 824
-        - 825
-        - 826
-        - 827
-        - 828
-    type: ContainerContainer
-  - canCollide: False
-    type: Physics
-- uid: 823
-  type: ChemistryEmptyBottle01
-  components:
-  - flags: InContainer
-    type: MetaData
-  - parent: 822
-    type: Transform
-  - canCollide: False
-    type: Physics
-- uid: 824
-  type: ChemistryEmptyBottle01
-  components:
-  - flags: InContainer
-    type: MetaData
-  - parent: 822
-    type: Transform
-  - canCollide: False
-    type: Physics
-- uid: 825
-  type: ChemistryEmptyBottle01
-  components:
-  - flags: InContainer
-    type: MetaData
-  - parent: 822
-    type: Transform
-  - canCollide: False
-    type: Physics
-- uid: 826
-  type: ChemistryEmptyBottle01
-  components:
-  - flags: InContainer
-    type: MetaData
-  - parent: 822
-    type: Transform
-  - canCollide: False
-    type: Physics
-- uid: 827
-  type: ChemistryEmptyBottle01
-  components:
-  - flags: InContainer
-    type: MetaData
-  - parent: 822
-    type: Transform
-  - canCollide: False
-    type: Physics
-- uid: 828
-  type: ChemistryEmptyBottle01
-  components:
-  - flags: InContainer
-    type: MetaData
-  - parent: 822
     type: Transform
   - canCollide: False
     type: Physics
@@ -10796,62 +9693,6 @@ entities:
   - pos: 10.5,4.5
     parent: 0
     type: Transform
-- uid: 878
-  type: GeneratorUranium
-  components:
-  - pos: 1.5,20.5
-    parent: 0
-    type: Transform
-  - supplyRampPosition: 12697.512
-    type: PowerSupplier
-  - containers:
-      machine_board: !type:Container
-        ents:
-        - 879
-      machine_parts: !type:Container
-        ents:
-        - 880
-        - 881
-        - 882
-    type: ContainerContainer
-- uid: 879
-  type: GeneratorUraniumMachineCircuitboard
-  components:
-  - flags: InContainer
-    type: MetaData
-  - parent: 878
-    type: Transform
-  - canCollide: False
-    type: Physics
-- uid: 880
-  type: CapacitorStockPart
-  components:
-  - flags: InContainer
-    type: MetaData
-  - parent: 878
-    type: Transform
-  - canCollide: False
-    type: Physics
-- uid: 881
-  type: CapacitorStockPart
-  components:
-  - flags: InContainer
-    type: MetaData
-  - parent: 878
-    type: Transform
-  - canCollide: False
-    type: Physics
-- uid: 882
-  type: CableHVStack1
-  components:
-  - flags: InContainer
-    type: MetaData
-  - parent: 878
-    type: Transform
-  - count: 10
-    type: Stack
-  - canCollide: False
-    type: Physics
 - uid: 883
   type: MedicalBed
   components:
@@ -10892,286 +9733,6 @@ entities:
     type: Transform
   - canCollide: False
     type: Physics
-- uid: 889
-  type: MedkitFilled
-  components:
-  - rot: -0.0003882514138240367 rad
-    pos: 10.734983,7.0378485
-    parent: 0
-    type: Transform
-  - containers:
-      storagebase: !type:Container
-        ents:
-        - 890
-        - 891
-        - 892
-        - 893
-        - 894
-        - 895
-    type: ContainerContainer
-  - canCollide: False
-    type: Physics
-- uid: 890
-  type: HandheldHealthAnalyzer
-  components:
-  - flags: InContainer
-    type: MetaData
-  - parent: 889
-    type: Transform
-  - canCollide: False
-    type: Physics
-- uid: 891
-  type: Brutepack
-  components:
-  - flags: InContainer
-    type: MetaData
-  - parent: 889
-    type: Transform
-  - canCollide: False
-    type: Physics
-- uid: 892
-  type: Brutepack
-  components:
-  - flags: InContainer
-    type: MetaData
-  - parent: 889
-    type: Transform
-  - canCollide: False
-    type: Physics
-- uid: 893
-  type: Gauze
-  components:
-  - flags: InContainer
-    type: MetaData
-  - parent: 889
-    type: Transform
-  - canCollide: False
-    type: Physics
-- uid: 894
-  type: Ointment
-  components:
-  - flags: InContainer
-    type: MetaData
-  - parent: 889
-    type: Transform
-  - canCollide: False
-    type: Physics
-- uid: 895
-  type: Ointment
-  components:
-  - flags: InContainer
-    type: MetaData
-  - parent: 889
-    type: Transform
-  - canCollide: False
-    type: Physics
-- uid: 896
-  type: MedkitFilled
-  components:
-  - rot: 0.0001663107832428068 rad
-    pos: 10.735811,6.5847225
-    parent: 0
-    type: Transform
-  - containers:
-      storagebase: !type:Container
-        ents:
-        - 897
-        - 898
-        - 899
-        - 900
-        - 901
-        - 902
-    type: ContainerContainer
-  - canCollide: False
-    type: Physics
-- uid: 897
-  type: HandheldHealthAnalyzer
-  components:
-  - flags: InContainer
-    type: MetaData
-  - parent: 896
-    type: Transform
-  - canCollide: False
-    type: Physics
-- uid: 898
-  type: Brutepack
-  components:
-  - flags: InContainer
-    type: MetaData
-  - parent: 896
-    type: Transform
-  - canCollide: False
-    type: Physics
-- uid: 899
-  type: Brutepack
-  components:
-  - flags: InContainer
-    type: MetaData
-  - parent: 896
-    type: Transform
-  - canCollide: False
-    type: Physics
-- uid: 900
-  type: Gauze
-  components:
-  - flags: InContainer
-    type: MetaData
-  - parent: 896
-    type: Transform
-  - canCollide: False
-    type: Physics
-- uid: 901
-  type: Ointment
-  components:
-  - flags: InContainer
-    type: MetaData
-  - parent: 896
-    type: Transform
-  - canCollide: False
-    type: Physics
-- uid: 902
-  type: Ointment
-  components:
-  - flags: InContainer
-    type: MetaData
-  - parent: 896
-    type: Transform
-  - canCollide: False
-    type: Physics
-- uid: 903
-  type: MedkitToxinFilled
-  components:
-  - pos: 10.353136,6.61597
-    parent: 0
-    type: Transform
-  - containers:
-      storagebase: !type:Container
-        ents:
-        - 904
-        - 905
-        - 906
-        - 907
-        - 908
-    type: ContainerContainer
-  - canCollide: False
-    type: Physics
-- uid: 904
-  type: SyringeSpaceacillin
-  components:
-  - flags: InContainer
-    type: MetaData
-  - parent: 903
-    type: Transform
-  - canCollide: False
-    type: Physics
-- uid: 905
-  type: SyringeIpecac
-  components:
-  - flags: InContainer
-    type: MetaData
-  - parent: 903
-    type: Transform
-  - canCollide: False
-    type: Physics
-- uid: 906
-  type: PillDylovene
-  components:
-  - flags: InContainer
-    type: MetaData
-  - parent: 903
-    type: Transform
-  - canCollide: False
-    type: Physics
-- uid: 907
-  type: PillDylovene
-  components:
-  - flags: InContainer
-    type: MetaData
-  - parent: 903
-    type: Transform
-  - canCollide: False
-    type: Physics
-- uid: 908
-  type: PillDylovene
-  components:
-  - flags: InContainer
-    type: MetaData
-  - parent: 903
-    type: Transform
-  - canCollide: False
-    type: Physics
-- uid: 909
-  type: MedkitRadiationFilled
-  components:
-  - pos: 10.306261,7.006595
-    parent: 0
-    type: Transform
-  - containers:
-      storagebase: !type:Container
-        ents:
-        - 910
-        - 911
-        - 912
-        - 913
-        - 914
-        - 915
-    type: ContainerContainer
-  - canCollide: False
-    type: Physics
-- uid: 910
-  type: Ointment
-  components:
-  - flags: InContainer
-    type: MetaData
-  - parent: 909
-    type: Transform
-  - canCollide: False
-    type: Physics
-- uid: 911
-  type: Ointment
-  components:
-  - flags: InContainer
-    type: MetaData
-  - parent: 909
-    type: Transform
-  - canCollide: False
-    type: Physics
-- uid: 912
-  type: PillHyronalin
-  components:
-  - flags: InContainer
-    type: MetaData
-  - parent: 909
-    type: Transform
-  - canCollide: False
-    type: Physics
-- uid: 913
-  type: PillHyronalin
-  components:
-  - flags: InContainer
-    type: MetaData
-  - parent: 909
-    type: Transform
-  - canCollide: False
-    type: Physics
-- uid: 914
-  type: PillHyronalin
-  components:
-  - flags: InContainer
-    type: MetaData
-  - parent: 909
-    type: Transform
-  - canCollide: False
-    type: Physics
-- uid: 915
-  type: EmergencyMedipen
-  components:
-  - flags: InContainer
-    type: MetaData
-  - parent: 909
-    type: Transform
-  - canCollide: False
-    type: Physics
 - uid: 916
   type: BedsheetMedical
   components:
@@ -11204,68 +9765,6 @@ entities:
     type: Transform
   - canCollide: False
     type: Physics
-- uid: 920
-  type: BoxBodyBag
-  components:
-  - pos: 4.629936,11.636901
-    parent: 0
-    type: Transform
-  - containers:
-      storagebase: !type:Container
-        ents:
-        - 921
-        - 922
-        - 923
-        - 924
-        - 925
-    type: ContainerContainer
-  - canCollide: False
-    type: Physics
-- uid: 921
-  type: BodyBag_Folded
-  components:
-  - flags: InContainer
-    type: MetaData
-  - parent: 920
-    type: Transform
-  - canCollide: False
-    type: Physics
-- uid: 922
-  type: BodyBag_Folded
-  components:
-  - flags: InContainer
-    type: MetaData
-  - parent: 920
-    type: Transform
-  - canCollide: False
-    type: Physics
-- uid: 923
-  type: BodyBag_Folded
-  components:
-  - flags: InContainer
-    type: MetaData
-  - parent: 920
-    type: Transform
-  - canCollide: False
-    type: Physics
-- uid: 924
-  type: BodyBag_Folded
-  components:
-  - flags: InContainer
-    type: MetaData
-  - parent: 920
-    type: Transform
-  - canCollide: False
-    type: Physics
-- uid: 925
-  type: BodyBag_Folded
-  components:
-  - flags: InContainer
-    type: MetaData
-  - parent: 920
-    type: Transform
-  - canCollide: False
-    type: Physics
 - uid: 926
   type: EmergencyRollerBedSpawnFolded
   components:
@@ -11288,108 +9787,6 @@ entities:
   - pos: -4.5,16.5
     parent: 0
     type: Transform
-- uid: 929
-  type: BiomassReclaimer
-  components:
-  - pos: 6.5,11.5
-    parent: 0
-    type: Transform
-  - containers:
-      machine_board: !type:Container
-        ents:
-        - 930
-      machine_parts: !type:Container
-        ents:
-        - 931
-        - 932
-        - 933
-        - 934
-        - 935
-        - 936
-        - 937
-        - 938
-    type: ContainerContainer
-- uid: 930
-  type: BiomassReclaimerMachineCircuitboard
-  components:
-  - flags: InContainer
-    type: MetaData
-  - parent: 929
-    type: Transform
-  - canCollide: False
-    type: Physics
-- uid: 931
-  type: MicroLaserStockPart
-  components:
-  - flags: InContainer
-    type: MetaData
-  - parent: 929
-    type: Transform
-  - canCollide: False
-    type: Physics
-- uid: 932
-  type: MicroManipulatorStockPart
-  components:
-  - flags: InContainer
-    type: MetaData
-  - parent: 929
-    type: Transform
-  - canCollide: False
-    type: Physics
-- uid: 933
-  type: LeftArmBorg
-  components:
-  - flags: InContainer
-    type: MetaData
-  - parent: 929
-    type: Transform
-  - canCollide: False
-    type: Physics
-- uid: 934
-  type: LeftArmBorg
-  components:
-  - flags: InContainer
-    type: MetaData
-  - parent: 929
-    type: Transform
-  - canCollide: False
-    type: Physics
-- uid: 935
-  type: LeftArmBorg
-  components:
-  - flags: InContainer
-    type: MetaData
-  - parent: 929
-    type: Transform
-  - canCollide: False
-    type: Physics
-- uid: 936
-  type: KitchenKnife
-  components:
-  - flags: InContainer
-    type: MetaData
-  - parent: 929
-    type: Transform
-  - canCollide: False
-    type: Physics
-- uid: 937
-  type: KitchenKnife
-  components:
-  - flags: InContainer
-    type: MetaData
-  - parent: 929
-    type: Transform
-  - canCollide: False
-    type: Physics
-- uid: 938
-  type: KitchenKnife
-  components:
-  - flags: InContainer
-    type: MetaData
-  - parent: 929
-    type: Transform
-  - canCollide: False
-    type: Physics
 - uid: 939
   type: GasPipeStraight
   components:
@@ -11434,44 +9831,6 @@ entities:
   - pos: 4.5,10.5
     parent: 0
     type: Transform
-- uid: 948
-  type: ExtinguisherCabinetFilled
-  components:
-  - pos: -4.5,4.5
-    parent: 0
-    type: Transform
-  - containers:
-      ItemCabinet: !type:ContainerSlot
-        ent: 949
-    type: ContainerContainer
-- uid: 949
-  type: FireExtinguisher
-  components:
-  - flags: InContainer
-    type: MetaData
-  - parent: 948
-    type: Transform
-  - canCollide: False
-    type: Physics
-- uid: 952
-  type: ExtinguisherCabinetFilled
-  components:
-  - pos: 3.5,4.5
-    parent: 0
-    type: Transform
-  - containers:
-      ItemCabinet: !type:ContainerSlot
-        ent: 953
-    type: ContainerContainer
-- uid: 953
-  type: FireExtinguisher
-  components:
-  - flags: InContainer
-    type: MetaData
-  - parent: 952
-    type: Transform
-  - canCollide: False
-    type: Physics
 - uid: 960
   type: AirlockMedicalGlassLocked
   components:
@@ -11725,50 +10084,6 @@ entities:
   - startingCharge: 29999.902
     type: Battery
   - type: ActiveEmergencyLight
-- uid: 989
-  type: APCBasic
-  components:
-  - rot: -1.5707963267948966 rad
-    pos: -8.5,9.5
-    parent: 0
-    type: Transform
-  - loadingNetworkDemand: 7270
-    currentReceiving: 7269.968
-    currentSupply: 7270
-    supplyRampPosition: 0.032226562
-    type: PowerNetworkBattery
-- uid: 990
-  type: APCBasic
-  components:
-  - pos: -5.5,19.5
-    parent: 0
-    type: Transform
-  - loadingNetworkDemand: 10244
-    currentReceiving: 10243.955
-    currentSupply: 10244
-    supplyRampPosition: 0.044921875
-    type: PowerNetworkBattery
-- uid: 991
-  type: APCBasic
-  components:
-  - pos: 4.5,19.5
-    parent: 0
-    type: Transform
-  - loadingNetworkDemand: 3414
-    currentReceiving: 3414.0266
-    currentSupply: 3414
-    type: PowerNetworkBattery
-- uid: 992
-  type: APCBasic
-  components:
-  - pos: 7.5,11.5
-    parent: 0
-    type: Transform
-  - loadingNetworkDemand: 11061
-    currentReceiving: 11060.987
-    currentSupply: 11061
-    supplyRampPosition: 0.0126953125
-    type: PowerNetworkBattery
 - uid: 993
   type: AirlockMaintEngiLocked
   components:
@@ -11789,226 +10104,12 @@ entities:
     type: Transform
   - canCollide: False
     type: Physics
-- uid: 995
-  type: APCBasic
-  components:
-  - pos: 4.5,9.5
-    parent: 0
-    type: Transform
-  - loadingNetworkDemand: 3520
-    currentReceiving: 3519.9644
-    currentSupply: 3520
-    supplyRampPosition: 0.03564453
-    type: PowerNetworkBattery
-- uid: 996
-  type: APCBasic
-  components:
-  - pos: 2.5,-1.5
-    parent: 0
-    type: Transform
-  - loadingNetworkDemand: 2585
-    currentReceiving: 2585.0415
-    currentSupply: 2585
-    type: PowerNetworkBattery
 - uid: 997
   type: SignEngineering
   components:
   - pos: -1.5,15.5
     parent: 0
     type: Transform
-- uid: 998
-  type: SubstationBasic
-  components:
-  - pos: 1.5,23.5
-    parent: 0
-    type: Transform
-  - loadingNetworkDemand: 38093.945
-    currentReceiving: 38092.535
-    currentSupply: 38093.945
-    supplyRampPosition: 1.4101562
-    type: PowerNetworkBattery
-  - containers:
-      machine_board: !type:Container
-        ents:
-        - 999
-      machine_parts: !type:Container
-        ents:
-        - 1000
-        - 1001
-        - 1002
-        - 1003
-        - 1004
-    type: ContainerContainer
-- uid: 999
-  type: SubstationMachineCircuitboard
-  components:
-  - flags: InContainer
-    type: MetaData
-  - parent: 998
-    type: Transform
-  - canCollide: False
-    type: Physics
-- uid: 1000
-  type: CapacitorStockPart
-  components:
-  - flags: InContainer
-    type: MetaData
-  - parent: 998
-    type: Transform
-  - canCollide: False
-    type: Physics
-- uid: 1001
-  type: CapacitorStockPart
-  components:
-  - flags: InContainer
-    type: MetaData
-  - parent: 998
-    type: Transform
-  - canCollide: False
-    type: Physics
-- uid: 1002
-  type: CapacitorStockPart
-  components:
-  - flags: InContainer
-    type: MetaData
-  - parent: 998
-    type: Transform
-  - canCollide: False
-    type: Physics
-- uid: 1003
-  type: CableMVStack1
-  components:
-  - flags: InContainer
-    type: MetaData
-  - parent: 998
-    type: Transform
-  - count: 5
-    type: Stack
-  - canCollide: False
-    type: Physics
-- uid: 1004
-  type: CableHVStack1
-  components:
-  - flags: InContainer
-    type: MetaData
-  - parent: 998
-    type: Transform
-  - count: 5
-    type: Stack
-  - canCollide: False
-    type: Physics
-- uid: 1005
-  type: GeneratorUranium
-  components:
-  - pos: 1.5,21.5
-    parent: 0
-    type: Transform
-  - supplyRampPosition: 12697.512
-    type: PowerSupplier
-  - containers:
-      machine_board: !type:Container
-        ents:
-        - 1006
-      machine_parts: !type:Container
-        ents:
-        - 1007
-        - 1008
-        - 1009
-    type: ContainerContainer
-- uid: 1006
-  type: GeneratorUraniumMachineCircuitboard
-  components:
-  - flags: InContainer
-    type: MetaData
-  - parent: 1005
-    type: Transform
-  - canCollide: False
-    type: Physics
-- uid: 1007
-  type: CapacitorStockPart
-  components:
-  - flags: InContainer
-    type: MetaData
-  - parent: 1005
-    type: Transform
-  - canCollide: False
-    type: Physics
-- uid: 1008
-  type: CapacitorStockPart
-  components:
-  - flags: InContainer
-    type: MetaData
-  - parent: 1005
-    type: Transform
-  - canCollide: False
-    type: Physics
-- uid: 1009
-  type: CableHVStack1
-  components:
-  - flags: InContainer
-    type: MetaData
-  - parent: 1005
-    type: Transform
-  - count: 10
-    type: Stack
-  - canCollide: False
-    type: Physics
-- uid: 1010
-  type: GeneratorUranium
-  components:
-  - pos: 1.5,22.5
-    parent: 0
-    type: Transform
-  - supplyRampPosition: 12697.512
-    type: PowerSupplier
-  - containers:
-      machine_board: !type:Container
-        ents:
-        - 1011
-      machine_parts: !type:Container
-        ents:
-        - 1012
-        - 1013
-        - 1014
-    type: ContainerContainer
-- uid: 1011
-  type: GeneratorUraniumMachineCircuitboard
-  components:
-  - flags: InContainer
-    type: MetaData
-  - parent: 1010
-    type: Transform
-  - canCollide: False
-    type: Physics
-- uid: 1012
-  type: CapacitorStockPart
-  components:
-  - flags: InContainer
-    type: MetaData
-  - parent: 1010
-    type: Transform
-  - canCollide: False
-    type: Physics
-- uid: 1013
-  type: CapacitorStockPart
-  components:
-  - flags: InContainer
-    type: MetaData
-  - parent: 1010
-    type: Transform
-  - canCollide: False
-    type: Physics
-- uid: 1014
-  type: CableHVStack1
-  components:
-  - flags: InContainer
-    type: MetaData
-  - parent: 1010
-    type: Transform
-  - count: 10
-    type: Stack
-  - canCollide: False
-    type: Physics
 - uid: 1015
   type: DisposalTrunk
   components:
@@ -12941,14 +11042,6 @@ entities:
     type: Transform
   - color: '#FF0000FF'
     type: AtmosPipeColor
-- uid: 1117
-  type: VendingMachineTankDispenserEVA
-  components:
-  - flags: SessionSpecific
-    type: MetaData
-  - pos: 4.5,18.5
-    parent: 0
-    type: Transform
 - uid: 1118
   type: GasPipeStraight
   components:
@@ -14428,110 +12521,6 @@ entities:
     type: Transform
   - color: '#0000FFFF'
     type: AtmosPipeColor
-- uid: 1312
-  type: BoxMRE
-  components:
-  - pos: -0.45267105,22.653866
-    parent: 0
-    type: Transform
-  - containers:
-      storagebase: !type:Container
-        ents:
-        - 1313
-        - 1314
-        - 1315
-        - 1316
-    type: ContainerContainer
-  - canCollide: False
-    type: Physics
-- uid: 1313
-  type: DrinkMREFlask
-  components:
-  - flags: InContainer
-    type: MetaData
-  - parent: 1312
-    type: Transform
-  - canCollide: False
-    type: Physics
-- uid: 1314
-  type: FoodSnackNutribrick
-  components:
-  - flags: InContainer
-    type: MetaData
-  - parent: 1312
-    type: Transform
-  - canCollide: False
-    type: Physics
-- uid: 1315
-  type: FoodSnackMREBrownie
-  components:
-  - flags: InContainer
-    type: MetaData
-  - parent: 1312
-    type: Transform
-  - canCollide: False
-    type: Physics
-- uid: 1316
-  type: FoodCondimentPacketKetchup
-  components:
-  - flags: InContainer
-    type: MetaData
-  - parent: 1312
-    type: Transform
-  - canCollide: False
-    type: Physics
-- uid: 1317
-  type: BoxMRE
-  components:
-  - pos: -0.45267105,21.70074
-    parent: 0
-    type: Transform
-  - containers:
-      storagebase: !type:Container
-        ents:
-        - 1318
-        - 1319
-        - 1320
-        - 1321
-    type: ContainerContainer
-  - canCollide: False
-    type: Physics
-- uid: 1318
-  type: DrinkMREFlask
-  components:
-  - flags: InContainer
-    type: MetaData
-  - parent: 1317
-    type: Transform
-  - canCollide: False
-    type: Physics
-- uid: 1319
-  type: FoodSnackNutribrick
-  components:
-  - flags: InContainer
-    type: MetaData
-  - parent: 1317
-    type: Transform
-  - canCollide: False
-    type: Physics
-- uid: 1320
-  type: FoodSnackMREBrownie
-  components:
-  - flags: InContainer
-    type: MetaData
-  - parent: 1317
-    type: Transform
-  - canCollide: False
-    type: Physics
-- uid: 1321
-  type: FoodCondimentPacketKetchup
-  components:
-  - flags: InContainer
-    type: MetaData
-  - parent: 1317
-    type: Transform
-  - canCollide: False
-    type: Physics
 - uid: 1322
   type: GasPipeStraight
   components:
@@ -14541,110 +12530,6 @@ entities:
     type: Transform
   - color: '#0000FFFF'
     type: AtmosPipeColor
-- uid: 1323
-  type: BoxMRE
-  components:
-  - pos: -7.546421,22.70074
-    parent: 0
-    type: Transform
-  - containers:
-      storagebase: !type:Container
-        ents:
-        - 1324
-        - 1325
-        - 1326
-        - 1327
-    type: ContainerContainer
-  - canCollide: False
-    type: Physics
-- uid: 1324
-  type: DrinkMREFlask
-  components:
-  - flags: InContainer
-    type: MetaData
-  - parent: 1323
-    type: Transform
-  - canCollide: False
-    type: Physics
-- uid: 1325
-  type: FoodSnackNutribrick
-  components:
-  - flags: InContainer
-    type: MetaData
-  - parent: 1323
-    type: Transform
-  - canCollide: False
-    type: Physics
-- uid: 1326
-  type: FoodSnackMREBrownie
-  components:
-  - flags: InContainer
-    type: MetaData
-  - parent: 1323
-    type: Transform
-  - canCollide: False
-    type: Physics
-- uid: 1327
-  type: FoodCondimentPacketKetchup
-  components:
-  - flags: InContainer
-    type: MetaData
-  - parent: 1323
-    type: Transform
-  - canCollide: False
-    type: Physics
-- uid: 1328
-  type: BoxMRE
-  components:
-  - pos: -7.499546,21.57574
-    parent: 0
-    type: Transform
-  - containers:
-      storagebase: !type:Container
-        ents:
-        - 1329
-        - 1330
-        - 1331
-        - 1332
-    type: ContainerContainer
-  - canCollide: False
-    type: Physics
-- uid: 1329
-  type: DrinkMREFlask
-  components:
-  - flags: InContainer
-    type: MetaData
-  - parent: 1328
-    type: Transform
-  - canCollide: False
-    type: Physics
-- uid: 1330
-  type: FoodSnackNutribrick
-  components:
-  - flags: InContainer
-    type: MetaData
-  - parent: 1328
-    type: Transform
-  - canCollide: False
-    type: Physics
-- uid: 1331
-  type: FoodSnackMREBrownie
-  components:
-  - flags: InContainer
-    type: MetaData
-  - parent: 1328
-    type: Transform
-  - canCollide: False
-    type: Physics
-- uid: 1332
-  type: FoodCondimentPacketKetchup
-  components:
-  - flags: InContainer
-    type: MetaData
-  - parent: 1328
-    type: Transform
-  - canCollide: False
-    type: Physics
 - uid: 1333
   type: GasPipeBend
   components:
@@ -15230,81 +13115,6 @@ entities:
     type: Transform
   - canCollide: False
     type: Physics
-- uid: 1404
-  type: ClothingOuterSuitEmergency
-  components:
-  - pos: -3.5015717,16.70594
-    parent: 0
-    type: Transform
-  - clothingUid: 1405
-    type: ToggleableClothing
-  - containers:
-      toggleable-clothing: !type:ContainerSlot
-        ent: 1405
-    type: ContainerContainer
-  - canCollide: False
-    type: Physics
-- uid: 1405
-  type: ClothingHeadHelmetEVA
-  components:
-  - flags: InContainer
-    type: MetaData
-  - parent: 1404
-    type: Transform
-  - canCollide: False
-    type: Physics
-  - AttachedUid: 1404
-    type: AttachedClothing
-- uid: 1406
-  type: ClothingOuterSuitEmergency
-  components:
-  - pos: -4.0484467,16.721565
-    parent: 0
-    type: Transform
-  - clothingUid: 1407
-    type: ToggleableClothing
-  - containers:
-      toggleable-clothing: !type:ContainerSlot
-        ent: 1407
-    type: ContainerContainer
-  - canCollide: False
-    type: Physics
-- uid: 1407
-  type: ClothingHeadHelmetEVA
-  components:
-  - flags: InContainer
-    type: MetaData
-  - parent: 1406
-    type: Transform
-  - canCollide: False
-    type: Physics
-  - AttachedUid: 1406
-    type: AttachedClothing
-- uid: 1408
-  type: ClothingOuterSuitEmergency
-  components:
-  - pos: -3.7984467,16.73719
-    parent: 0
-    type: Transform
-  - clothingUid: 1409
-    type: ToggleableClothing
-  - containers:
-      toggleable-clothing: !type:ContainerSlot
-        ent: 1409
-    type: ContainerContainer
-  - canCollide: False
-    type: Physics
-- uid: 1409
-  type: ClothingHeadHelmetEVA
-  components:
-  - flags: InContainer
-    type: MetaData
-  - parent: 1408
-    type: Transform
-  - canCollide: False
-    type: Physics
-  - AttachedUid: 1408
-    type: AttachedClothing
 - uid: 1410
   type: ClothingMaskBreath
   components:
@@ -15326,150 +13136,6 @@ entities:
   components:
   - pos: -4.6836824,16.406382
     parent: 0
-    type: Transform
-  - canCollide: False
-    type: Physics
-- uid: 1413
-  type: BoxHandcuff
-  components:
-  - pos: -8.652432,17.703257
-    parent: 0
-    type: Transform
-  - containers:
-      storagebase: !type:Container
-        ents:
-        - 1414
-        - 1415
-        - 1416
-        - 1417
-        - 1418
-        - 1419
-    type: ContainerContainer
-  - canCollide: False
-    type: Physics
-- uid: 1414
-  type: Handcuffs
-  components:
-  - flags: InContainer
-    type: MetaData
-  - parent: 1413
-    type: Transform
-  - canCollide: False
-    type: Physics
-- uid: 1415
-  type: Handcuffs
-  components:
-  - flags: InContainer
-    type: MetaData
-  - parent: 1413
-    type: Transform
-  - canCollide: False
-    type: Physics
-- uid: 1416
-  type: Handcuffs
-  components:
-  - flags: InContainer
-    type: MetaData
-  - parent: 1413
-    type: Transform
-  - canCollide: False
-    type: Physics
-- uid: 1417
-  type: Handcuffs
-  components:
-  - flags: InContainer
-    type: MetaData
-  - parent: 1413
-    type: Transform
-  - canCollide: False
-    type: Physics
-- uid: 1418
-  type: Handcuffs
-  components:
-  - flags: InContainer
-    type: MetaData
-  - parent: 1413
-    type: Transform
-  - canCollide: False
-    type: Physics
-- uid: 1419
-  type: Handcuffs
-  components:
-  - flags: InContainer
-    type: MetaData
-  - parent: 1413
-    type: Transform
-  - canCollide: False
-    type: Physics
-- uid: 1420
-  type: BoxHandcuff
-  components:
-  - pos: -8.308682,17.672007
-    parent: 0
-    type: Transform
-  - containers:
-      storagebase: !type:Container
-        ents:
-        - 1421
-        - 1422
-        - 1423
-        - 1424
-        - 1425
-        - 1426
-    type: ContainerContainer
-  - canCollide: False
-    type: Physics
-- uid: 1421
-  type: Handcuffs
-  components:
-  - flags: InContainer
-    type: MetaData
-  - parent: 1420
-    type: Transform
-  - canCollide: False
-    type: Physics
-- uid: 1422
-  type: Handcuffs
-  components:
-  - flags: InContainer
-    type: MetaData
-  - parent: 1420
-    type: Transform
-  - canCollide: False
-    type: Physics
-- uid: 1423
-  type: Handcuffs
-  components:
-  - flags: InContainer
-    type: MetaData
-  - parent: 1420
-    type: Transform
-  - canCollide: False
-    type: Physics
-- uid: 1424
-  type: Handcuffs
-  components:
-  - flags: InContainer
-    type: MetaData
-  - parent: 1420
-    type: Transform
-  - canCollide: False
-    type: Physics
-- uid: 1425
-  type: Handcuffs
-  components:
-  - flags: InContainer
-    type: MetaData
-  - parent: 1420
-    type: Transform
-  - canCollide: False
-    type: Physics
-- uid: 1426
-  type: Handcuffs
-  components:
-  - flags: InContainer
-    type: MetaData
-  - parent: 1420
     type: Transform
   - canCollide: False
     type: Physics
@@ -18225,18 +15891,6 @@ entities:
   components:
   - rot: -1.5707963267948966 rad
     pos: -12.5,9.5
-    parent: 0
-    type: Transform
-- uid: 1931
-  type: PottedPlant23
-  components:
-  - pos: -3.5,-2.5
-    parent: 0
-    type: Transform
-- uid: 1932
-  type: PottedPlant6
-  components:
-  - pos: 2.5,-2.5
     parent: 0
     type: Transform
 ...
