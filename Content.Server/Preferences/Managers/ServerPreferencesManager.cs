@@ -103,9 +103,8 @@ namespace Content.Server.Preferences.Managers
 
             // Corvax-Sponsors-Start: Ensure removing sponsor markings if client somehow bypassed client filtering
             // WARN! It's not removing markings from DB!
-            _sponsors.TryGetInfo(message.MsgChannel.UserId, out var sponsor);
-            var restrictedMarkings = _sponsors.GetRestrictedMarkingIds(sponsor);
-            profile.EnsureValid(restrictedMarkings);
+            var allowedMarkings = _sponsors.TryGetInfo(message.MsgChannel.UserId, out var sponsor) ? sponsor.AllowedMarkings : new string[]{};
+            profile.EnsureValid(allowedMarkings);
             // Corvax-Sponsors-End
             var profiles = new Dictionary<int, ICharacterProfile>(curPrefs.Characters)
             {
@@ -203,9 +202,8 @@ namespace Content.Server.Preferences.Managers
                     // Corvax-Sponsors-Start: Remove sponsor markings from expired sponsors
                     foreach (var (_, profile) in prefs.Characters)
                     {
-                        _sponsors.TryGetInfo(session.UserId, out var sponsor);
-                        var restrictedMarkings = _sponsors.GetRestrictedMarkingIds(sponsor);
-                        profile.EnsureValid(restrictedMarkings);
+                        var allowedMarkings = _sponsors.TryGetInfo(session.UserId, out var sponsor) ? sponsor.AllowedMarkings : new string[]{};
+                        profile.EnsureValid(allowedMarkings);
                     }
                     // Corvax-Sponsors-End
                     

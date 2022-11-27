@@ -11,7 +11,7 @@ using Robust.Shared.Utility;
 
 namespace Content.Server.Corvax.Sponsors;
 
-public sealed class SponsorsManager : SharedSponsorsManager
+public sealed class SponsorsManager
 {
     [Dependency] private readonly IServerNetManager _netMgr = default!;
     [Dependency] private readonly IConfigurationManager _cfg = default!;

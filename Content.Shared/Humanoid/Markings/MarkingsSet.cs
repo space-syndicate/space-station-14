@@ -166,7 +166,7 @@ public sealed class MarkingSet
         }
     }
 
-    public void FilterRestricted(string[] restrictedMarkings, MarkingManager? markingManager = null)
+    public void FilterSponsor(string[] sponsorMarkings, MarkingManager? markingManager = null)
     {
         IoCManager.Resolve(ref markingManager);
 
@@ -175,7 +175,7 @@ public sealed class MarkingSet
         {
             foreach (var marking in list)
             {
-                var restrictedToHave = restrictedMarkings.Contains(marking.MarkingId);
+                var restrictedToHave = sponsorMarkings.Contains(marking.MarkingId);
                 if (restrictedToHave)
                 {
                     toRemove.Add((category, marking.MarkingId));
