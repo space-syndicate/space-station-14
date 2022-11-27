@@ -37,3 +37,6 @@ ent-ClothingHeadHatFancyCrown = причудливая корона
 ent-ClothingHeadHatCatEars = кошачьи ушки
     .desc = НЯ!
     .suffix = { "" }
+ent-ClothingHeadHatSquid = сквидди
+    .desc = Напугайте своих друзей этой маской древнего ужаса.
+    .suffix = { "" }
