@@ -166,6 +166,12 @@ public sealed class MarkingSet
         }
     }
 
+    // Corvax-Sponsors-Start
+    /// <summary>
+    ///     Filters sponsor markings unavailable for not sponsors check that from their prototype and allowed param
+    /// </summary>
+    /// <param name="sponsorMarkings">Sponsor markings that allowed to have.</param>
+    /// <param name="markingManager">Prototype manager.</param>
     public void FilterSponsor(string[] sponsorMarkings, MarkingManager? markingManager = null)
     {
         IoCManager.Resolve(ref markingManager);
@@ -188,6 +194,7 @@ public sealed class MarkingSet
             Remove(marking.category, marking.id);
         }
     }
+    // Corvax-Sponsors-End
 
     /// <summary>
     ///     Ensures that all markings in this set are valid.
