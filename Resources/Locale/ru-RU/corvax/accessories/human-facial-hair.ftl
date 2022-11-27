@@ -1,2 +1,2 @@
-marking-HumanFacialHairHandlebar = Moustache (Handlebar)
-marking-HumanFacialHairHandlebarAlt = Moustache (Handlebar Alt)
+marking-HumanFacialHairHandlebar = Усы (Велосипедный руль)
+marking-HumanFacialHairHandlebarAlt = Усы (Велосипедный руль альт.)
