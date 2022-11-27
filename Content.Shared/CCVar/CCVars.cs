@@ -642,11 +642,10 @@ namespace Content.Shared.CCVar
             CVarDef.Create("explosion.incremental_tile", false, CVar.SERVERONLY);
 
         /// <summary>
-        ///     Client-side explosion visuals: for how many seconds should an explosion stay on-screen once it has
-        ///     finished expanding?
+        ///     This determines for how many seconds an explosion should stay visible once it has finished expanding.
         /// </summary>
         public static readonly CVarDef<float> ExplosionPersistence =
-            CVarDef.Create("explosion.persistence", 0.3f, CVar.REPLICATED);
+            CVarDef.Create("explosion.persistence", 0.3f, CVar.SERVERONLY);
 
         /// <summary>
         ///     If an explosion covers a larger area than this number, the damaging/processing will always start during
@@ -1345,7 +1344,7 @@ namespace Content.Shared.CCVar
             PlayTimeSaveInterval = CVarDef.Create("playtime.save_interval", 900f, CVar.SERVERONLY);
         
         /**
-         * Corvax | Sponsors
+         * SPONSORS
          */
 
         /// <summary>
@@ -1353,16 +1352,5 @@ namespace Content.Shared.CCVar
         /// </summary>
         public static readonly CVarDef<string> SponsorsApiUrl =
             CVarDef.Create("sponsor.api_url", "", CVar.SERVERONLY);
-        
-
-        /*
-         * Corvax | Queue
-         */
-
-        /// <summary>
-        ///     Controls if the connections queue is enabled. If enabled stop kicking new players after `SoftMaxPlayers` cap and instead add them to queue.
-        /// </summary>
-        public static readonly CVarDef<bool>
-            QueueEnabled = CVarDef.Create("queue.enabled", false, CVar.SERVERONLY);
     }
 }
