@@ -166,6 +166,29 @@ public sealed class MarkingSet
         }
     }
 
+    public void FilterRestricted(string[] restrictedMarkings, MarkingManager? markingManager = null)
+    {
+        IoCManager.Resolve(ref markingManager);
+
+        var toRemove = new List<(MarkingCategories category, string id)>();
+        foreach (var (category, list) in _markings)
+        {
+            foreach (var marking in list)
+            {
+                var restrictedToHave = restrictedMarkings.Contains(marking.MarkingId);
+                if (restrictedToHave)
+                {
+                    toRemove.Add((category, marking.MarkingId));
+                }
+            }
+        }
+
+        foreach (var marking in toRemove)
+        {
+            Remove(marking.category, marking.id);
+        }
+    }
+
     /// <summary>
     ///     Ensures that all markings in this set are valid.
     /// </summary>

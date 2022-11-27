@@ -17,7 +17,7 @@ namespace Content.Client.Preferences
     public sealed class ClientPreferencesManager : IClientPreferencesManager
     {
         [Dependency] private readonly IClientNetManager _netManager = default!;
-        [Dependency] private readonly ClientSponsorsManager _sponsorsManager = default!; // Corvax-Sponsors
+        [Dependency] private readonly SponsorsManager _sponsorsManager = default!;
 
         public event Action? OnServerDataLoaded;
 
@@ -49,8 +49,9 @@ namespace Content.Client.Preferences
 
         public void UpdateCharacter(ICharacterProfile profile, int slot)
         {
-            profile.EnsureValid();
-            _sponsorsManager.FilterSponsorMarkings(_sponsorsManager.AllowedMarkings, profile); // Corvax-Sponsors
+            _sponsorsManager.TryGetInfo(out var sponsor);
+            var restrictedMarkings = _sponsorsManager.GetRestrictedMarkingIds(sponsor);
+            profile.EnsureValid(restrictedMarkings);
             var characters = new Dictionary<int, ICharacterProfile>(Preferences.Characters) {[slot] = profile};
             Preferences = new PlayerPreferences(characters, Preferences.SelectedCharacterIndex, Preferences.AdminOOCColor);
             var msg = new MsgUpdateCharacter

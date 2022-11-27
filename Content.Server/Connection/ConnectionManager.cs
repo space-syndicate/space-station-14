@@ -29,7 +29,7 @@ namespace Content.Server.Connection
         [Dependency] private readonly IServerNetManager _netMgr = default!;
         [Dependency] private readonly IServerDbManager _db = default!;
         [Dependency] private readonly IConfigurationManager _cfg = default!;
-        [Dependency] private readonly ServerSponsorsManager _sponsorsManager = default!; // Corvax-Sponsors
+        [Dependency] private readonly SponsorsManager _sponsorsManager = default!; // Corvax-Sponsors
 
         public void Initialize()
         {
@@ -163,7 +163,7 @@ namespace Content.Server.Connection
         public async Task<bool> HavePrivilegedJoin(NetUserId userId)
         {
             var adminData = await _dbManager.GetAdminDataForAsync(userId);
-            var havePriorityJoin = _sponsorsManager.TryGetSponsorInfo(userId, out var sponsorData) &&
+            var havePriorityJoin = _sponsorsManager.TryGetInfo(userId, out var sponsorData) &&
                                    sponsorData.HavePriorityJoin; // Corvax-Sponsors
 
             var wasInGame = EntitySystem.TryGet<GameTicker>(out var ticker) &&

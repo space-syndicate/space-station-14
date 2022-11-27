@@ -1,4 +1,5 @@
 ﻿using System.Linq;
+using Content.Shared.Corvax.Sponsors;
 using Content.Shared.Humanoid.Markings;
 using Content.Shared.Humanoid.Prototypes;
 using Robust.Shared.Prototypes;
@@ -189,7 +190,7 @@ namespace Content.Shared.Humanoid
             return new(color.RByte, color.GByte, color.BByte);
         }
 
-        public static HumanoidCharacterAppearance EnsureValid(HumanoidCharacterAppearance appearance, string species)
+        public static HumanoidCharacterAppearance EnsureValid(HumanoidCharacterAppearance appearance, string species, string[] restrictedMarkings)
         {
             var hairStyleId = appearance.HairStyleId;
             var facialHairStyleId = appearance.FacialHairStyleId;
@@ -201,12 +202,14 @@ namespace Content.Shared.Humanoid
             var proto = IoCManager.Resolve<IPrototypeManager>();
             var markingManager = IoCManager.Resolve<MarkingManager>();
 
-            if (!markingManager.MarkingsByCategory(MarkingCategories.Hair).ContainsKey(hairStyleId))
+            if (!markingManager.MarkingsByCategory(MarkingCategories.Hair).ContainsKey(hairStyleId) ||
+                restrictedMarkings.Contains(hairStyleId))
             {
                 hairStyleId = HairStyles.DefaultHairStyle;
             }
 
-            if (!markingManager.MarkingsByCategory(MarkingCategories.FacialHair).ContainsKey(facialHairStyleId))
+            if (!markingManager.MarkingsByCategory(MarkingCategories.FacialHair).ContainsKey(facialHairStyleId) ||
+                restrictedMarkings.Contains(facialHairStyleId))
             {
                 facialHairStyleId = HairStyles.DefaultFacialHairStyle;
             }
@@ -218,6 +221,7 @@ namespace Content.Shared.Humanoid
                 markingSet = new MarkingSet(appearance.Markings, speciesProto.MarkingPoints, markingManager, proto);
                 markingSet.EnsureValid(markingManager);
                 markingSet.FilterSpecies(species, markingManager);
+                markingSet.FilterRestricted(restrictedMarkings, markingManager);
 
                 switch (speciesProto.SkinColoration)
                 {

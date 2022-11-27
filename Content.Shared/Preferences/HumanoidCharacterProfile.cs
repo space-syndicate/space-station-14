@@ -351,7 +351,7 @@ namespace Content.Shared.Preferences
             return Appearance.MemberwiseEquals(other.Appearance);
         }
 
-        public void EnsureValid()
+        public void EnsureValid(string[] restrictedMarkings)
         {
             var prototypeManager = IoCManager.Resolve<IPrototypeManager>();
 
@@ -430,7 +430,7 @@ namespace Content.Shared.Preferences
                 flavortext = FormattedMessage.RemoveMarkup(FlavorText);
             }
 
-            var appearance = HumanoidCharacterAppearance.EnsureValid(Appearance, Species);
+            var appearance = HumanoidCharacterAppearance.EnsureValid(Appearance, Species, restrictedMarkings);
 
             var prefsUnavailableMode = PreferenceUnavailable switch
             {

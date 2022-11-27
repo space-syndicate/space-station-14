@@ -11,7 +11,7 @@ using Robust.Shared.Utility;
 
 namespace Content.Server.Corvax.Sponsors;
 
-public sealed class ServerSponsorsManager : SponsorsManager
+public sealed class SponsorsManager : SharedSponsorsManager
 {
     [Dependency] private readonly IServerNetManager _netMgr = default!;
     [Dependency] private readonly IConfigurationManager _cfg = default!;
@@ -28,14 +28,14 @@ public sealed class ServerSponsorsManager : SponsorsManager
         _sawmill = Logger.GetSawmill("sponsors");
         _cfg.OnValueChanged(CCVars.SponsorsApiUrl, s => _apiUrl = s, true);
         
-        _netMgr.RegisterNetMessage<MsgSponsoringInfo>();
+        _netMgr.RegisterNetMessage<MsgSponsorInfo>();
         
         _netMgr.Connecting += OnConnecting;
         _netMgr.Connected += OnConnected;
         _netMgr.Disconnect += OnDisconnect;
     }
 
-    public bool TryGetSponsorInfo(NetUserId userId, [NotNullWhen(true)] out SponsorInfo? sponsor)
+    public bool TryGetInfo(NetUserId userId, [NotNullWhen(true)] out SponsorInfo? sponsor)
     {
         return _cachedSponsors.TryGetValue(userId, out sponsor);
     }
@@ -56,15 +56,8 @@ public sealed class ServerSponsorsManager : SponsorsManager
     
     private void OnConnected(object? sender, NetChannelArgs e)
     {
-        MsgSponsoringInfo msg = new();
-        if (_cachedSponsors.TryGetValue(e.Channel.UserId, out var info))
-        {
-            msg = new()
-            {
-                IsSponsor = true,
-                AllowedMarkings = info.AllowedMarkings,
-            };
-        }
+        var info = _cachedSponsors.TryGetValue(e.Channel.UserId, out var sponsor) ? sponsor : null;
+        var msg = new MsgSponsorInfo() { Info =  info };
         _netMgr.ServerSendMessage(msg, e.Channel);
     }
     
