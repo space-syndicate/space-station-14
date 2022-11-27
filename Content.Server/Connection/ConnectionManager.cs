@@ -163,9 +163,9 @@ namespace Content.Server.Connection
         public async Task<bool> HavePrivilegedJoin(NetUserId userId)
         {
             var adminData = await _dbManager.GetAdminDataForAsync(userId);
-            var sponsorData = _sponsorsManager.GetSponsorInfo(userId); // Corvax-Sponsors
-            
-            var havePriorityJoin = sponsorData?.HavePriorityJoin == true; // Corvax-Sponsors
+            var havePriorityJoin = _sponsorsManager.TryGetSponsorInfo(userId, out var sponsorData) &&
+                                   sponsorData.HavePriorityJoin; // Corvax-Sponsors
+
             var wasInGame = EntitySystem.TryGet<GameTicker>(out var ticker) &&
                             ticker.PlayerGameStatuses.TryGetValue(userId, out var status) &&
                             status == PlayerGameStatus.JoinedGame;

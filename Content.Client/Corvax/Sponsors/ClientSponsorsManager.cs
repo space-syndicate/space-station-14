@@ -7,8 +7,8 @@ public sealed class ClientSponsorsManager : SponsorsManager
 {
     [Dependency] private readonly IClientNetManager _netMgr = default!;
 
-    public bool IsSponsor = default!;
-    public bool AllowedNeko = default!;
+    public bool IsSponsor = false;
+    public string[] AllowedMarkings = Array.Empty<string>();
 
     public void Initialize()
     {
@@ -18,6 +18,6 @@ public sealed class ClientSponsorsManager : SponsorsManager
     private void HandleSponsoringInfo(MsgSponsoringInfo message)
     {
         IsSponsor = message.IsSponsor;
-        AllowedNeko = message.AllowedNeko;
+        AllowedMarkings = message.AllowedMarkings;
     }
 }

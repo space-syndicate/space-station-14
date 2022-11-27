@@ -105,8 +105,8 @@ namespace Content.Server.Preferences.Managers
 
             // Corvax-Sponsors-Start: Ensure removing sponsor markings if client somehow bypassed client filtering
             // WARN! It's not removing markings from DB!
-            var allowedNeko = _sponsors.GetSponsorInfo(message.MsgChannel.UserId)?.AllowedNeko ?? false;
-            _sponsors.FilterSponsorMarkings(allowedNeko, profile);
+            if (_sponsors.TryGetSponsorInfo(message.MsgChannel.UserId, out var sponsor))
+                _sponsors.FilterSponsorMarkings(sponsor.AllowedMarkings, profile);
             // Corvax-Sponsors-End
 
             var profiles = new Dictionary<int, ICharacterProfile>(curPrefs.Characters)
@@ -203,10 +203,12 @@ namespace Content.Server.Preferences.Managers
                     var prefs = await GetOrCreatePreferencesAsync(session.UserId);
                     
                     // Corvax-Sponsors-Start: Remove sponsor markings from expired sponsors
-                    var allowedNeko = _sponsors.GetSponsorInfo(session.UserId)?.AllowedNeko ?? false;
-                    foreach (var (_, profile) in prefs.Characters)
+                    if (_sponsors.TryGetSponsorInfo(session.UserId, out var sponsorData))
                     {
-                        _sponsors.FilterSponsorMarkings(allowedNeko, profile);
+                        foreach (var (_, profile) in prefs.Characters)
+                        {
+                            _sponsors.FilterSponsorMarkings(sponsorData.AllowedMarkings, profile);
+                        }
                     }
                     // Corvax-Sponsors-End
                     

@@ -188,7 +188,7 @@ public sealed partial class MarkingPicker : Control
 
             var item = CMarkingsUnused.AddItem($"{GetMarkingName(marking)}", marking.Sprites[0].Frame0());
             item.Metadata = marking;
-            item.Disabled = marking.SponsorOnly && !_sponsorsManager.AllowedNeko; // Corvax-Sponsors
+            item.Disabled = marking.SponsorOnly && !_sponsorsManager.AllowedMarkings.Contains(marking.ID); // Corvax-Sponsors
         }
 
         CMarkingPoints.Visible = _currentMarkings.PointsLeft(_selectedMarkingCategory) != -1;

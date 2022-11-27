@@ -1,4 +1,5 @@
-﻿using System.Net;
+﻿using System.Diagnostics.CodeAnalysis;
+using System.Net;
 using System.Net.Http;
 using System.Net.Http.Json;
 using System.Threading.Tasks;
@@ -34,11 +35,9 @@ public sealed class ServerSponsorsManager : SponsorsManager
         _netMgr.Disconnect += OnDisconnect;
     }
 
-    public SponsorInfo? GetSponsorInfo(NetUserId userId)
+    public bool TryGetSponsorInfo(NetUserId userId, [NotNullWhen(true)] out SponsorInfo? sponsor)
     {
-        if (!_cachedSponsors.TryGetValue(userId, out var sponsor))
-            return null;
-        return sponsor;
+        return _cachedSponsors.TryGetValue(userId, out sponsor);
     }
 
     private async Task OnConnecting(NetConnectingArgs e)
@@ -57,21 +56,13 @@ public sealed class ServerSponsorsManager : SponsorsManager
     
     private void OnConnected(object? sender, NetChannelArgs e)
     {
-        MsgSponsoringInfo msg;
+        MsgSponsoringInfo msg = new();
         if (_cachedSponsors.TryGetValue(e.Channel.UserId, out var info))
         {
             msg = new()
             {
                 IsSponsor = true,
-                AllowedNeko = info.AllowedNeko,
-            };
-        }
-        else
-        {
-            msg = new()
-            {
-                IsSponsor = false,
-                AllowedNeko = false,
+                AllowedMarkings = info.AllowedMarkings,
             };
         }
         _netMgr.ServerSendMessage(msg, e.Channel);

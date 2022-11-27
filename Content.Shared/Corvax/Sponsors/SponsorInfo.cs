@@ -13,8 +13,8 @@ public sealed class SponsorInfo
     public string? OOCColor { get; set; }
 
     [JsonPropertyName("priorityJoin")]
-    public bool HavePriorityJoin { get; set; }
+    public bool HavePriorityJoin { get; set; } = false;
 
-    [JsonPropertyName("allowedNeko")]
-    public bool AllowedNeko { get; set; }
+    [JsonPropertyName("allowedMarkings")]
+    public string[] AllowedMarkings { get; set; } = Array.Empty<string>();
 }
