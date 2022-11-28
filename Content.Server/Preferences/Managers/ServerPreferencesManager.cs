@@ -32,6 +32,8 @@ namespace Content.Server.Preferences.Managers
         // Cache player prefs on the server so we don't need as much async hell related to them.
         private readonly Dictionary<NetUserId, PlayerPrefData> _cachedPlayerPrefs =
             new();
+        
+        // private int MaxCharacterSlots => _cfg.GetCVar(CCVars.GameMaxCharacterSlots); // Corvax-Sponsors
 
         public void Init()
         {
