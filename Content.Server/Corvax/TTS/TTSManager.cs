@@ -1,6 +1,8 @@
-﻿using System.Linq;
+﻿using System.IO;
+using System.Linq;
 using System.Net.Http;
 using System.Net.Http.Json;
+using System.Text;
 using System.Text.Json.Serialization;
 using System.Threading.Tasks;
 using Content.Shared.CCVar;
@@ -16,13 +18,14 @@ public sealed class TTSManager
     private readonly HttpClient _httpClient = new();
 
     private ISawmill _sawmill = default!;
+    private Dictionary<string, byte[]> _cache = new();
 
     public void Initialize()
     {
         _sawmill = Logger.GetSawmill("tts");
     }
 
-    public async Task<byte[]> ConvertTextToSpeech(string speeker, string text)
+    public async Task<byte[]> ConvertTextToSpeech(string speaker, string text)
     {
         var url = _cfg.GetCVar(CCVars.TTSApiUrl);
         if (string.IsNullOrWhiteSpace(url))
@@ -35,14 +38,19 @@ public sealed class TTSManager
         {
             throw new Exception("TTS Api token not specified");
         }
-        
-        // TODO: Use cache by text
+
+        var cacheKey = GenerateCacheKey(speaker, text);
+        if (_cache.TryGetValue(cacheKey, out var data))
+        {
+            _sawmill.Debug($"Use cached sound for '{text}' speech by '{speaker}' speaker");
+            return data;
+        }
 
         var body = new GenerateVoiceRequest
         {
             ApiToken = token,
             Text = text,
-            Speaker = speeker,
+            Speaker = speaker,
         };
         var response = await _httpClient.PostAsJsonAsync(url, body);
         if (!response.IsSuccessStatusCode)
@@ -51,7 +59,26 @@ public sealed class TTSManager
         }
 
         var json = await response.Content.ReadFromJsonAsync<GenerateVoiceResponse>();
-        return Convert.FromBase64String(json.Results.First().Audio);
+        var soundData = Convert.FromBase64String(json.Results.First().Audio);
+        _cache.Add(cacheKey, soundData);
+        
+        _sawmill.Debug($"Generated new sound for '{text}' speech by '{speaker}' speaker ({soundData.Length} bytes)");
+
+        return soundData;
+    }
+
+    public void ResetCache()
+    {
+        _cache.Clear();
+    }
+
+    private string GenerateCacheKey(string speaker, string text)
+    {
+        var key = $"{speaker}/{text}";
+        byte[] keyData = Encoding.UTF8.GetBytes(key);
+        var sha256 = System.Security.Cryptography.SHA256.Create();
+        var bytes = sha256.ComputeHash(keyData);
+        return Convert.ToHexString(bytes);
     }
 
     private struct GenerateVoiceRequest
