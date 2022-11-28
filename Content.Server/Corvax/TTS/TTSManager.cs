@@ -18,7 +18,7 @@ public sealed class TTSManager
     private readonly HttpClient _httpClient = new();
 
     private ISawmill _sawmill = default!;
-    private Dictionary<string, byte[]> _cache = new();
+    private readonly Dictionary<string, byte[]> _cache = new();
 
     public void Initialize()
     {
