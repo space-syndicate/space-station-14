@@ -58,7 +58,7 @@ namespace Content.Server.IoC
             IoCManager.Register<IAdminLogManager, AdminLogManager>();
             IoCManager.Register<PlayTimeTrackingManager>();
             IoCManager.Register<UserDbDataManager>();
-            IoCManager.Register<ServerSponsorsManager>(); // Corvax-Sponsors
+            IoCManager.Register<SponsorsManager>(); // Corvax-Sponsors
             IoCManager.Register<RawAudioManager>(); // Corvax-TTS
             IoCManager.Register<TTSManager>(); // Corvax-TTS
         }
