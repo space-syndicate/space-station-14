@@ -127,7 +127,6 @@ namespace Content.Client.Preferences.UI
                     break;
                 }
                 // Corvax-Sponsors-End
-
                 numberOfFullSlots++;
                 var characterPickerButton = new CharacterPickerButton(_entityManager,
                     _preferencesManager,
