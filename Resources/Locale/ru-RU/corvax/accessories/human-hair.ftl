@@ -16,7 +16,6 @@ marking-HumanHairCotton = Cotton
 marking-HumanHairCurly = Curly
 marking-HumanHairDave = Dave
 marking-HumanHairDiagonalBangs = Diagonal Bangs
-marking-HumanHairEmolong = Emo Long
 marking-HumanHairEmoshort = Emo Short
 marking-HumanHairFingerwave = Fingerwave
 marking-HumanHairFluffyShort = Fluffy Short
