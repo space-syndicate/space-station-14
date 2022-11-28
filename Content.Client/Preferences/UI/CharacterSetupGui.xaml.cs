@@ -122,10 +122,7 @@ namespace Content.Client.Preferences.UI
 
                 // Corvax-Sponsors-Start
                 isDisplayedMaxSlots = numberOfFullSlots >= _preferencesManager.Settings.MaxCharacterSlots;
-                if (isDisplayedMaxSlots)
-                {
-                    break;
-                }
+                if (isDisplayedMaxSlots) break;
                 // Corvax-Sponsors-End
                 numberOfFullSlots++;
                 var characterPickerButton = new CharacterPickerButton(_entityManager,
