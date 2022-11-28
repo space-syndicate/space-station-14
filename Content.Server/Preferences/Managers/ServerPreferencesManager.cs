@@ -52,7 +52,7 @@ namespace Content.Server.Preferences.Managers
                 return;
             }
 
-            if (index < 0 || index >= GetMaxUserCharacterSlots(userId))
+            if (index < 0 || index >= GetMaxUserCharacterSlots(userId)) // Corvax-Sponsors
             {
                 return;
             }
@@ -92,7 +92,7 @@ namespace Content.Server.Preferences.Managers
                 return;
             }
 
-            if (slot < 0 || slot >= GetMaxUserCharacterSlots(userId))
+            if (slot < 0 || slot >= GetMaxUserCharacterSlots(userId)) // Corvax-Sponsors
             {
                 return;
             }
@@ -128,7 +128,7 @@ namespace Content.Server.Preferences.Managers
                 return;
             }
 
-            if (slot < 0 || slot >= GetMaxUserCharacterSlots(userId))
+            if (slot < 0 || slot >= GetMaxUserCharacterSlots(userId)) // Corvax-Sponsors
             {
                 return;
             }
@@ -212,7 +212,7 @@ namespace Content.Server.Preferences.Managers
                     msg.Preferences = prefs;
                     msg.Settings = new GameSettings
                     {
-                        MaxCharacterSlots = GetMaxUserCharacterSlots(session.UserId),
+                        MaxCharacterSlots = GetMaxUserCharacterSlots(session.UserId),  // Corvax-Sponsors
                     };
                     _netManager.ServerSendMessage(msg, session.ConnectedClient);
                 }
