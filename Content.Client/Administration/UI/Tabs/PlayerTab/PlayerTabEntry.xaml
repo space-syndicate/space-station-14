@@ -24,5 +24,10 @@
                SizeFlagsStretchRatio="2"
                HorizontalExpand="True"
                ClipText="True"/>
+        <customControls:VSeparator/>
+        <Label Name="SponsorLabel"
+               SizeFlagsStretchRatio="2"
+               HorizontalExpand="True"
+               ClipText="True"/>
     </BoxContainer>
 </ContainerButton>

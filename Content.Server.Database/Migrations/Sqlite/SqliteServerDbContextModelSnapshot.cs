@@ -852,6 +852,44 @@ namespace Content.Server.Database.Migrations.Sqlite
                     b.ToTable("server_unban", (string)null);
                 });
 
+            modelBuilder.Entity("Content.Server.Database.Sponsor", b =>
+                {
+                    b.Property<Guid>("UserId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("TEXT")
+                        .HasColumnName("user_id");
+
+                    b.Property<string>("AllowedMarkings")
+                        .IsRequired()
+                        .HasColumnType("TEXT")
+                        .HasColumnName("allowed_markings");
+
+                    b.Property<int>("ExtraSlots")
+                        .HasColumnType("INTEGER")
+                        .HasColumnName("extra_slots");
+
+                    b.Property<bool>("HavePriorityJoin")
+                        .HasColumnType("INTEGER")
+                        .HasColumnName("have_priority_join");
+
+                    b.Property<string>("OOCColor")
+                        .IsRequired()
+                        .HasColumnType("TEXT")
+                        .HasColumnName("ooccolor");
+
+                    b.Property<int>("Tier")
+                        .HasColumnType("INTEGER")
+                        .HasColumnName("tier");
+
+                    b.HasKey("UserId")
+                        .HasName("PK_sponsors");
+
+                    b.HasIndex("UserId")
+                        .IsUnique();
+
+                    b.ToTable("sponsors", (string)null);
+                });
+
             modelBuilder.Entity("Content.Server.Database.Trait", b =>
                 {
                     b.Property<int>("Id")
@@ -871,8 +909,8 @@ namespace Content.Server.Database.Migrations.Sqlite
                     b.HasKey("Id")
                         .HasName("PK_trait");
 
-                    b.HasIndex("ProfileId")
-                        .HasDatabaseName("IX_trait_profile_id");
+                    b.HasIndex("ProfileId", "TraitName")
+                        .IsUnique();
 
                     b.ToTable("trait", (string)null);
                 });

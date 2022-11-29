@@ -19,6 +19,7 @@ public sealed partial class PlayerTabHeader : ContainerButton
         CharacterLabel.OnKeyBindDown += CharacterClicked;
         JobLabel.OnKeyBindDown += JobClicked;
         AntagonistLabel.OnKeyBindDown += AntagonistClicked;
+        SponsorLabel.OnKeyBindDown += SponsorClicked;
     }
 
     public Label GetHeader(Header header)
@@ -29,6 +30,7 @@ public sealed partial class PlayerTabHeader : ContainerButton
             Header.Character => CharacterLabel,
             Header.Job => JobLabel,
             Header.Antagonist => AntagonistLabel,
+            Header.Sponsor => SponsorLabel,
             _ => throw new ArgumentOutOfRangeException(nameof(header), header, null)
         };
     }
@@ -39,6 +41,7 @@ public sealed partial class PlayerTabHeader : ContainerButton
         CharacterLabel.Text = Loc.GetString("player-tab-character");
         JobLabel.Text = Loc.GetString("player-tab-job");
         AntagonistLabel.Text = Loc.GetString("player-tab-antagonist");
+        SponsorLabel.Text = Loc.GetString("player-tab-sponsor");
     }
 
     private void HeaderClicked(GUIBoundKeyEventArgs args, Header header)
@@ -72,6 +75,11 @@ public sealed partial class PlayerTabHeader : ContainerButton
         HeaderClicked(args, Header.Antagonist);
     }
 
+    private void SponsorClicked(GUIBoundKeyEventArgs args)
+    {
+        HeaderClicked(args, Header.Antagonist);
+    }
+
     protected override void Dispose(bool disposing)
     {
         base.Dispose(disposing);
@@ -82,6 +90,7 @@ public sealed partial class PlayerTabHeader : ContainerButton
             CharacterLabel.OnKeyBindDown += CharacterClicked;
             JobLabel.OnKeyBindDown += JobClicked;
             AntagonistLabel.OnKeyBindDown += AntagonistClicked;
+            SponsorLabel.OnKeyBindDown += SponsorClicked;
         }
     }
 
@@ -90,6 +99,7 @@ public sealed partial class PlayerTabHeader : ContainerButton
         Username,
         Character,
         Job,
-        Antagonist
+        Antagonist,
+        Sponsor
     }
 }

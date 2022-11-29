@@ -1,6 +1,7 @@
 using System.Globalization;
 using System.Linq;
 using Content.Server.Administration.Managers;
+using Content.Server.Corvax.Sponsors;
 using Content.Server.GameTicking.Events;
 using Content.Server.IdentityManagement;
 using Content.Server.Players;
@@ -20,6 +21,7 @@ namespace Content.Server.Administration.Systems
     {
         [Dependency] private readonly IPlayerManager _playerManager = default!;
         [Dependency] private readonly IAdminManager _adminManager = default!;
+        [Dependency] private readonly SponsorsManager _sponsorManager = default!;
 
         private readonly Dictionary<NetUserId, PlayerInfo> _playerList = new();
 
@@ -169,7 +171,9 @@ namespace Content.Server.Administration.Systems
 
             var connected = session != null && session.Status is SessionStatus.Connected or SessionStatus.InGame;
 
-            return new PlayerInfo(name, entityName, identityName, startingRole, antag, session?.AttachedEntity, data.UserId,
+            var sponsor = _sponsorManager.TryGetInfo(data.UserId, out var sponsorInfo) && sponsorInfo.HavePriorityJoin;
+
+            return new PlayerInfo(name, entityName, identityName, startingRole, antag, sponsor, session?.AttachedEntity, data.UserId,
                 connected, _roundActivePlayers.Contains(data.UserId));
         }
     }

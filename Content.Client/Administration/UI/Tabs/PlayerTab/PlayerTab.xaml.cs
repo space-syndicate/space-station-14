@@ -104,6 +104,7 @@ namespace Content.Client.Administration.UI.Tabs.PlayerTab
                     player.IdentityName,
                     player.StartingJob,
                     player.Antag ? "YES" : "NO",
+                    player.Sponsor ? "YES" : "NO",
                     new StyleBoxFlat(useAltColor ? _altColor : _defaultColor),
                     player.Connected);
                 entry.PlayerUid = player.EntityUid;

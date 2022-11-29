@@ -8,29 +8,26 @@
         <Label Name="UsernameLabel"
                SizeFlagsStretchRatio="3"
                HorizontalExpand="True"
-               ClipText="True"
-               Text="{Loc player-tab-username}"
-               MouseFilter="Pass"/>
+               ClipText="True"/>
         <cc:VSeparator/>
         <Label Name="CharacterLabel"
                SizeFlagsStretchRatio="3"
                HorizontalExpand="True"
-               ClipText="True"
-               Text="{Loc player-tab-character}"
-               MouseFilter="Pass"/>
+               ClipText="True"/>
         <cc:VSeparator/>
         <Label Name="JobLabel"
                SizeFlagsStretchRatio="3"
                HorizontalExpand="True"
-               ClipText="True"
-               Text="{Loc player-tab-job}"
-               MouseFilter="Pass"/>
+               ClipText="True"/>
         <cc:VSeparator/>
         <Label Name="AntagonistLabel"
                SizeFlagsStretchRatio="2"
                HorizontalExpand="True"
-               ClipText="True"
-               Text="{Loc player-tab-antagonist}"
-               MouseFilter="Pass"/>
+               ClipText="True"/>
+        <cc:VSeparator/>
+        <Label Name="SponsorLabel"
+               SizeFlagsStretchRatio="2"
+               HorizontalExpand="True"
+               ClipText="True"/>
     </BoxContainer>
 </ContainerButton>

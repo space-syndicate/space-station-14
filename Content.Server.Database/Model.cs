@@ -36,10 +36,15 @@ namespace Content.Server.Database
         public DbSet<PlayTime> PlayTime { get; set; } = default!;
         public DbSet<UploadedResourceLog> UploadedResourceLog { get; set; } = default!;
         public DbSet<AdminNote> AdminNotes { get; set; } = null!;
+        public DbSet<Sponsor> Sponsors { get; set; } = null!;
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.Entity<Preference>()
+                .HasIndex(p => p.UserId)
+                .IsUnique();
+
+            modelBuilder.Entity<Sponsor>()
                 .HasIndex(p => p.UserId)
                 .IsUnique();
 
@@ -578,5 +583,16 @@ namespace Content.Server.Database
         public DateTime? DeletedAt { get; set; }
 
         public bool ShownToPlayer { get; set; }
+    }
+
+    [Table("sponsors")]
+    public class Sponsor
+    {
+        [Required, Key] public Guid UserId { get; set; }
+        public int Tier { get; set; }
+        public string OOCColor { get; set; } = "#00FF00";
+        public bool HavePriorityJoin { get; set; }
+        public string AllowedMarkings { get; set; } = null!;
+        public int ExtraSlots { get; set; }
     }
 }

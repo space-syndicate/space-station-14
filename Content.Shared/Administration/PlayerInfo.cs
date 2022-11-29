@@ -10,6 +10,7 @@ namespace Content.Shared.Administration
         string IdentityName,
         string StartingJob,
         bool Antag,
+        bool Sponsor,
         EntityUid? EntityUid,
         NetUserId SessionId,
         bool Connected,
