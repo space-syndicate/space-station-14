@@ -99,7 +99,7 @@ namespace Content.Server.Entry
                 IoCManager.Resolve<NetworkResourceManager>().Initialize();
                 IoCManager.Resolve<GhostKickManager>().Initialize();
                 IoCManager.Resolve<SponsorsManager>().Initialize(); // Corvax-Sponsors
-                IoCManager.Resolve<JoinQueueManager>().Initialize(); // Corvax-Sponsors
+                IoCManager.Resolve<JoinQueueManager>().Initialize(); // Corvax-Queue
 
                 _voteManager.Initialize();
                 _updateManager.Initialize();
