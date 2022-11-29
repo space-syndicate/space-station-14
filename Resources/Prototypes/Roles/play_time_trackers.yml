@@ -77,6 +77,12 @@
   id: JobMedicalDoctor
 
 - type: playTimeTracker
+  id: JobParamedic
+
+- type: playTimeTracker
+  id: JobVirusolog
+
+- type: playTimeTracker
   id: JobMedicalIntern
 
 - type: playTimeTracker

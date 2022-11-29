@@ -1,0 +1,32 @@
+﻿- type: job
+  id: Paramedic
+  name: job-name-paramedic
+  playTimeTracker: JobParamedic
+  requirements:
+    - !type:DepartmentTimeRequirement
+      department: Medical
+      time: 3600
+  startingGear: ParamedicGear
+  icon: "MedicalDoctor"
+  supervisors: job-supervisors-cmo
+  canBeAntag: false
+  access:
+    - Medical
+    - Chemistry
+    - Maintenance
+
+- type: startingGear
+  id: ParamedicGear
+  equipment:
+    jumpsuit: ClothingUniformJumpsuitParamedic
+    back: ClothingBackpackMedicalFilled
+    shoes: ClothingShoesColorWhite
+    id: PramedicPDA
+    ears: ClothingHeadsetMedical
+    belt: ClothingBeltMedical
+    pocket1: HandheldCrewMonitor
+    gloves: ClothingHandsGlovesNitrile
+    # the purple glasses?
+  innerclothingskirt: ClothingUniformJumpskirtColorWhite
+  satchel: ClothingBackpackSatchelMedicalFilled
+  duffelbag: ClothingBackpackDuffelMedicalFilled
