@@ -31,6 +31,9 @@ public sealed class JoinQueueManager
     private static readonly Counter QueueBypassCount = Metrics.CreateCounter(
         "ss14_queue_bypass_count",
         "Amount of players who bypassed queue by privileges.");
+    
+    private static readonly Histogram QueueTimings = Metrics.CreateHistogram(
+        "ss14_queue_timings", "Timings of players in queue");
 
     [Dependency] private readonly IPlayerManager _playerManager = default!;
     [Dependency] private readonly IConnectionManager _connectionManager = default!;
@@ -91,23 +94,28 @@ public sealed class JoinQueueManager
             }
 
             _queue.Add(e.Session);
-            ProcessQueue(false);
+            ProcessQueue(false, e.Session.ConnectedTime);
         }
 
         if (e.NewStatus == SessionStatus.Disconnected)
         {
             var wasInQueue = _queue.Remove(e.Session);
-            ProcessQueue(true);
+            ProcessQueue(true, e.Session.ConnectedTime);
 
             if (wasInQueue)
+            {
                 QueueUnwaitedCount.Inc();
+                QueueTimings.WithLabels("Unwaited").Observe((DateTime.Now - e.Session.ConnectedTime).TotalSeconds);
+            }
         }
     }
 
     /// <summary>
     ///     If possible, takes the first player in the queue and sends him into the game
     /// </summary>
-    private void ProcessQueue(bool isDisconnect)
+    /// <param name="isDisconnect">Is method called on disconnect event</param>
+    /// <param name="connectedTime">Session connected time for histogram metrics</param>
+    private void ProcessQueue(bool isDisconnect, DateTime connectedTime)
     {
         var players = ActualPlayersCount;
         if (isDisconnect)
@@ -123,6 +131,7 @@ public sealed class JoinQueueManager
             SendToGame(session);
 
             QueueWaitedCount.Inc();
+            QueueTimings.WithLabels("Waited").Observe((DateTime.Now - connectedTime).TotalSeconds);
         }
 
         SendUpdateMessages();
@@ -147,6 +156,7 @@ public sealed class JoinQueueManager
     /// <summary>
     ///     Letting player's session into game, change player state
     /// </summary>
+    /// <param name="s">Player session that will be sent to game</param>
     private void SendToGame(IPlayerSession s)
     {
         Timer.Spawn(0, s.JoinGame);
