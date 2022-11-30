@@ -31,15 +31,6 @@ public sealed class JoinQueueManager
     private static readonly Counter QueueBypassCount = Metrics.CreateCounter(
         "ss14_queue_bypass_count",
         "Amount of players who bypassed queue by privileges.");
-    
-    private static readonly Histogram QueueTimings = Metrics.CreateHistogram(
-        "ss14_queue_timings",
-        "Timings of players in queue",
-        new HistogramConfiguration()
-        {
-            LabelNames = new[] {"type"},
-            Buckets = Histogram.ExponentialBuckets(1, 2, 14),
-        });
 
     [Dependency] private readonly IPlayerManager _playerManager = default!;
     [Dependency] private readonly IConnectionManager _connectionManager = default!;
@@ -112,7 +103,6 @@ public sealed class JoinQueueManager
             if (wasInQueue)
             {
                 QueueUnwaitedCount.Inc();
-                QueueTimings.WithLabels("Unwaited").Observe((DateTime.UtcNow - e.Session.ConnectedTime).TotalSeconds);
             }
         }
     }
@@ -138,7 +128,6 @@ public sealed class JoinQueueManager
             SendToGame(session);
 
             QueueWaitedCount.Inc();
-            QueueTimings.WithLabels("Waited").Observe((DateTime.UtcNow - connectedTime).TotalSeconds);
         }
 
         SendUpdateMessages();
