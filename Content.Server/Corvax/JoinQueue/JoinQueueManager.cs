@@ -82,7 +82,8 @@ public sealed class JoinQueueManager
             }
                 
             var isPrivileged = await _connectionManager.HavePrivilegedJoin(e.Session.UserId);
-            var haveFreeSlot = _playerManager.PlayerCount < _cfg.GetCVar(CCVars.SoftMaxPlayers);
+            var currentOnline = _playerManager.PlayerCount - 1; // Do not count current session in general online, because we are still deciding her fate
+            var haveFreeSlot = currentOnline < _cfg.GetCVar(CCVars.SoftMaxPlayers);
             if (isPrivileged || haveFreeSlot)
             {
                 SendToGame(e.Session);
