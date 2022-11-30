@@ -17,19 +17,19 @@ namespace Content.Server.Corvax.JoinQueue;
 public sealed class JoinQueueManager
 {
     private static readonly Gauge QueueCount = Metrics.CreateGauge(
-        "ss14_queue_count",
+        "join_queue_count",
         "Amount of players in queue.");
 
     private static readonly Counter QueueWaitedCount = Metrics.CreateCounter(
-        "ss14_queue_waited_count",
+        "join_queue_waited_count",
         "Amount of players who waited queue and entered game.");
 
     private static readonly Counter QueueUnwaitedCount = Metrics.CreateCounter(
-        "ss14_queue_unwaited_count",
+        "join_queue_unwaited_count",
         "Amount of players who did not wait queue and disconnected.");
 
     private static readonly Counter QueueBypassCount = Metrics.CreateCounter(
-        "ss14_queue_bypass_count",
+        "join_queue_bypass_count",
         "Amount of players who bypassed queue by privileges.");
 
     [Dependency] private readonly IPlayerManager _playerManager = default!;
