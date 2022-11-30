@@ -17,7 +17,7 @@ public sealed class JoinPlayTimeManager
     
     public void Initialize()
     {
-        _cfg.OnValueChanged(CCVars.JoinRequiredHours, (v) => _minHours = v, true);
+        _cfg.OnValueChanged(CCVars.JoinPlaytimeHours, (v) => _minHours = v, true);
 
         _net.Connecting += OnConnecting;
     }
@@ -28,7 +28,7 @@ public sealed class JoinPlayTimeManager
         var overallTime = playTimes.Find(p => p.Tracker == PlayTimeTrackingShared.TrackerOverall);
         if (overallTime != null && overallTime.TimeSpent.TotalHours < _minHours)
         {
-            arg.Deny($"Required minimal overall play time - {_minHours} hours");
+            arg.Deny(Loc.GetString("join-playtime-deny-reason", ("hours", _minHours)));
         }
     }
 }

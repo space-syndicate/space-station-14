@@ -1364,13 +1364,13 @@ namespace Content.Shared.CCVar
             QueueEnabled = CVarDef.Create("queue.enabled", false, CVar.SERVERONLY);
 
         /*
-         * Corvax | Join Play Time
+         * Corvax | JoinPlaytime
          */
 
         /// <summary>
         ///     Minimum required overall play hours to join server
         /// </summary>
-        public static readonly CVarDef<int> JoinRequiredHours =
-            CVarDef.Create("game.panic_bunker.min_overall_hours", 0, CVar.SERVERONLY);
+        public static readonly CVarDef<int> JoinPlaytimeHours =
+            CVarDef.Create("joinplaytime.min_hours", 0, CVar.SERVERONLY);
     }
 }
