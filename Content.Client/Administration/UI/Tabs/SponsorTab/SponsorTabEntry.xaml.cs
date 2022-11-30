@@ -20,6 +20,7 @@ public sealed partial class SponsorTabEntry : ContainerButton
         PriorityLabel.Text = sponsorInfo?.HavePriorityJoin == true ? "YES" : "NO";
         ExtraSlotsLabel.Text = sponsorInfo?.ExtraSlots.ToString();
         MarkingsLabel.Text = sponsorInfo?.AllowedMarkings != null ? string.Join(',', sponsorInfo.AllowedMarkings) : "";
+        ExpireDateLabel.Text = sponsorInfo?.ExpireDate != null ? sponsorInfo?.ExpireDate.ToString("dd.MM.yyyy HH:mm") : "";
 
         BackgroundColorPanel.PanelOverride = styleBox;
     }

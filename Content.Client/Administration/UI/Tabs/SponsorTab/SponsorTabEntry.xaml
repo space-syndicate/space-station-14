@@ -40,6 +40,13 @@
                Text="{Loc sponsor-tab-extra}"
                MouseFilter="Pass"/>
         <cc:VSeparator/>
+        <Label Name="ExpireDateLabel"
+               SizeFlagsStretchRatio="2"
+               HorizontalExpand="True"
+               ClipText="True"
+               Text="{Loc sponsor-tab-expire}"
+               MouseFilter="Pass"/>
+        <cc:VSeparator/>
         <Label Name="MarkingsLabel"
                SizeFlagsStretchRatio="2"
                HorizontalExpand="True"

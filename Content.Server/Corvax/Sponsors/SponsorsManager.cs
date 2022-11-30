@@ -48,22 +48,26 @@ public sealed class SponsorsManager
     private async Task OnConnecting(NetConnectingArgs e)
     {
         var info = await LoadSponsorInfo(e.UserId);
-        var sponsors = await _dbManager.GetSponsorList();
-
-        if (sponsors != null)
+        if (_SponsorsList.Count == 0)
         {
-            foreach (var x in sponsors)
+            var sponsors = await _dbManager.GetSponsorList();
+
+            if (sponsors != null)
             {
-                var userName = await _dbManager.GetPlayerRecordByUserId(new NetUserId(x.UserId));
-                _SponsorsList.Add(new SponsorInfo()
+                foreach (var x in sponsors)
                 {
-                    Tier = x.Tier,
-                    AllowedMarkings = x.AllowedMarkings.Split(";",StringSplitOptions.RemoveEmptyEntries),
-                    CharacterName = userName != null ? userName.LastSeenUserName : string.Empty,
-                    ExtraSlots = x.ExtraSlots,
-                    HavePriorityJoin = x.HavePriorityJoin,
-                    OOCColor = x.OOCColor
-                });
+                    var userName = await _dbManager.GetPlayerRecordByUserId(new NetUserId(x.UserId));
+                    _SponsorsList.Add(new SponsorInfo()
+                    {
+                        Tier = x.Tier,
+                        AllowedMarkings = x.AllowedMarkings.Split(";", StringSplitOptions.RemoveEmptyEntries),
+                        CharacterName = userName != null ? userName.LastSeenUserName : string.Empty,
+                        ExtraSlots = x.ExtraSlots,
+                        HavePriorityJoin = x.HavePriorityJoin,
+                        OOCColor = x.OOCColor,
+                        ExpireDate = x.ExpireDate
+                    });
+                }
             }
         }
 

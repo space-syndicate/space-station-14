@@ -96,6 +96,11 @@ public sealed class EscapeUIController : UIController, IOnStateEntered<GameplayS
             _uri.OpenUri(UILinks.Wiki);
         };
 
+        _escapeWindow.PatrionButton.OnPressed += _ =>
+        {
+            _uri.OpenUri(UILinks.Patreon);
+        };
+
         CommandBinds.Builder
             .Bind(EngineKeyFunctions.EscapeMenu,
                 InputCmdHandler.FromDelegate(_ => ToggleWindow()))

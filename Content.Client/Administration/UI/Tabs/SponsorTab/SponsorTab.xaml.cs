@@ -30,7 +30,7 @@ namespace Content.Client.Administration.UI.Tabs.SponsorTab
             RobustXamlLoader.Load(this);
             IoCManager.InjectDependencies(this);
 
-            if (_sponsorsManager != null && _sponsorsManager.TryGetSponsorList(out var sponsorArray))
+            if (_sponsorsManager != null && _sponsors.Count == 0 && _sponsorsManager.TryGetSponsorList(out var sponsorArray))
             {
                 if (sponsorArray != null)
                 {

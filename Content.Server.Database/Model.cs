@@ -594,5 +594,6 @@ namespace Content.Server.Database
         public bool HavePriorityJoin { get; set; }
         public string AllowedMarkings { get; set; } = null!;
         public int ExtraSlots { get; set; }
+        public DateTime ExpireDate {get;set;}
     }
 }

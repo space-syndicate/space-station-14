@@ -115,7 +115,7 @@ namespace Content.Server.Connection
             }
 
             var havePriorityJoin = _sponsorsManager.TryGetInfo(userId, out var sponsorData) &&
-                                   sponsorData.HavePriorityJoin; // Corvax-Sponsors
+                                   sponsorData.HavePriorityJoin && sponsorData.ExpireDate > DateTime.Now; // Corvax-Sponsors
             var wasInGame = EntitySystem.TryGet<GameTicker>(out var ticker) &&
                             ticker.PlayerGameStatuses.TryGetValue(userId, out var status) &&
                             status == PlayerGameStatus.JoinedGame;

@@ -2,6 +2,7 @@
 using System.Text;
 using System.Text.Json;
 using System.Text.Json.Serialization;
+using System.Threading.Tasks;
 using Content.Server.Maps;
 using Content.Shared.CCVar;
 using Content.Shared.GameTicking;
@@ -19,10 +20,10 @@ public sealed class RoundNotificationsSystem : EntitySystem
 
     private ISawmill _sawmill = default!;
     private readonly HttpClient _httpClient = new();
-    
+
     private string _discordWebhook = String.Empty;
     private string _discordRoleId = String.Empty;
-    
+
     /// <inheritdoc/>
     public override void Initialize()
     {
@@ -61,7 +62,7 @@ public sealed class RoundNotificationsSystem : EntitySystem
         SendDiscordMessage(payload);
     }
 
-    private void OnRoundStarted(RoundStartedEvent e)
+    private async void OnRoundStarted(RoundStartedEvent e)
     {
         if (String.IsNullOrEmpty(_discordWebhook))
             return;
@@ -75,7 +76,7 @@ public sealed class RoundNotificationsSystem : EntitySystem
 
         SendDiscordMessage(payload);
     }
-    
+
     private void OnRoundEnd(RoundEndMessageEvent e)
     {
         if (String.IsNullOrEmpty(_discordWebhook))

@@ -29,6 +29,9 @@ public sealed class SponsorInfo
 
     [JsonPropertyName("allowedMarkings")]
     public string[] AllowedMarkings { get; set; } = Array.Empty<string>();
+
+    [JsonPropertyName("expireDate")]
+    public DateTime ExpireDate {get; set;}
 }
 
 public sealed class MsgSponsorListInfo : NetMessage
