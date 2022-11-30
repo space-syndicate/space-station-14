@@ -2,6 +2,7 @@
 using Content.Server.Connection;
 using Content.Shared.CCVar;
 using Content.Shared.Corvax.JoinQueue;
+using Prometheus;
 using Robust.Server.Player;
 using Robust.Shared.Configuration;
 using Robust.Shared.Enums;
@@ -15,6 +16,22 @@ namespace Content.Server.Corvax.JoinQueue;
 /// </summary>
 public sealed class JoinQueueManager
 {
+    private static readonly Gauge QueueCount = Metrics.CreateGauge(
+        "ss14_queue_count",
+        "Amount of players in queue.");
+
+    private static readonly Counter QueueWaitedCount = Metrics.CreateCounter(
+        "ss14_queue_waited_count",
+        "Amount of players who waited queue and entered game.");
+
+    private static readonly Counter QueueUnwaitedCount = Metrics.CreateCounter(
+        "ss14_queue_unwaited_count",
+        "Amount of players who did not wait queue and disconnected.");
+
+    private static readonly Counter QueueBypassCount = Metrics.CreateCounter(
+        "ss14_queue_bypass_count",
+        "Amount of players who bypassed queue by privileges.");
+
     [Dependency] private readonly IPlayerManager _playerManager = default!;
     [Dependency] private readonly IConnectionManager _connectionManager = default!;
     [Dependency] private readonly IConfigurationManager _cfg = default!;
@@ -53,34 +70,37 @@ public sealed class JoinQueueManager
 
     private async void OnPlayerStatusChanged(object? sender, SessionStatusEventArgs e)
     {
-        switch (e.NewStatus)
+        if (e.NewStatus == SessionStatus.Connected)
         {
-            case SessionStatus.Connected:
+            if (!_isEnabled)
             {
-                if (!_isEnabled)
-                {
-                    SendToGame(e.Session);
-                    return;
-                }
-                
-                var isPrivileged = await _connectionManager.HavePrivilegedJoin(e.Session.UserId);
-                var haveFreeSlot = _playerManager.PlayerCount < _cfg.GetCVar(CCVars.SoftMaxPlayers);
-                if (isPrivileged || haveFreeSlot)
-                {
-                    SendToGame(e.Session);
-                    return;
-                }
-                
-                _queue.Add(e.Session);
-                ProcessQueue(false);
-                break;
+                SendToGame(e.Session);
+                return;
             }
-            case SessionStatus.Disconnected:
+                
+            var isPrivileged = await _connectionManager.HavePrivilegedJoin(e.Session.UserId);
+            var haveFreeSlot = _playerManager.PlayerCount < _cfg.GetCVar(CCVars.SoftMaxPlayers);
+            if (isPrivileged || haveFreeSlot)
             {
-                _queue.Remove(e.Session);
-                ProcessQueue(true);
-                break;
+                SendToGame(e.Session);
+                
+                if (isPrivileged && !haveFreeSlot)
+                    QueueBypassCount.Inc();
+
+                return;
             }
+
+            _queue.Add(e.Session);
+            ProcessQueue(false);
+        }
+
+        if (e.NewStatus == SessionStatus.Disconnected)
+        {
+            var wasInQueue = _queue.Remove(e.Session);
+            ProcessQueue(true);
+
+            if (wasInQueue)
+                QueueUnwaitedCount.Inc();
         }
     }
 
@@ -95,14 +115,18 @@ public sealed class JoinQueueManager
         
         var haveFreeSlot = players < _cfg.GetCVar(CCVars.SoftMaxPlayers);
         var queueContains = _queue.Count > 0;
-        if ((!_isEnabled || haveFreeSlot) && queueContains)
+        if (haveFreeSlot && queueContains)
         {
             var session = _queue.First();
             _queue.Remove(session);
+
             SendToGame(session);
+
+            QueueWaitedCount.Inc();
         }
 
         SendUpdateMessages();
+        QueueCount.Set(_queue.Count);
     }
 
     /// <summary>
