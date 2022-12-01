@@ -12,6 +12,8 @@ public sealed class RawAudioManager
     [Dependency] private readonly IClientNetManager _net = default!;
     [Dependency] private readonly IClydeAudio _clyde = default!;
     
+    private readonly List<IClydeAudioSource> _playingClydeStreams = new();
+    
     public void Initialize()
     {
         _net.RegisterNetMessage<MsgPlayRawAudio>(OnPlayRawAudio);
@@ -23,6 +25,7 @@ public sealed class RawAudioManager
         {
             source.SetGlobal();
             source.StartPlaying();
+            _playingClydeStreams.Add(source);
         }
     }
 
