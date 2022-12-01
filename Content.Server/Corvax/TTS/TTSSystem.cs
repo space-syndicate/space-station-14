@@ -1,8 +1,11 @@
 ﻿using Content.Server.Chat.Systems;
+using Content.Server.Corvax.RawAudio;
+using Content.Shared.Administration;
 using Content.Shared.CCVar;
-using Content.Shared.Corvax.TTS;
 using Content.Shared.GameTicking;
+using Robust.Shared.Audio;
 using Robust.Shared.Configuration;
+using Robust.Shared.Player;
 using Robust.Shared.Prototypes;
 
 namespace Content.Server.Corvax.TTS;
@@ -13,6 +16,7 @@ public sealed class TTSSystem : EntitySystem
     [Dependency] private readonly IConfigurationManager _cfg = default!;
     [Dependency] private readonly IPrototypeManager _prototypeManager = default!;
     [Dependency] private readonly TTSManager _ttsManager = default!;
+    [Dependency] private readonly RawAudioManager _rawAudio = default!;
 
     private bool _isEnabled = false;
     
@@ -32,7 +36,7 @@ public sealed class TTSSystem : EntitySystem
         }
         
         var soundData = await _ttsManager.ConvertTextToSpeech(protoVoice.Speaker, args.Message);
-        RaiseNetworkEvent(new PlayTTSMessage(soundData), uid);
+        _rawAudio.Play(soundData, Filter.Pvs(uid), uid, AudioParams.Default.WithAttenuation(Attenuation.LinearDistance));
     }
     
     private void OnRoundRestartCleanup(RoundRestartCleanupEvent ev)

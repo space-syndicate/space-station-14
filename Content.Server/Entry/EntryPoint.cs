@@ -5,6 +5,7 @@ using Content.Server.Administration.Managers;
 using Content.Server.Afk;
 using Content.Server.Chat.Managers;
 using Content.Server.Connection;
+using Content.Server.Corvax.RawAudio;
 using Content.Server.Corvax.Sponsors;
 using Content.Server.Corvax.TTS;
 using Content.Server.Database;
@@ -99,6 +100,7 @@ namespace Content.Server.Entry
                 IoCManager.Resolve<NetworkResourceManager>().Initialize();
                 IoCManager.Resolve<GhostKickManager>().Initialize();
                 IoCManager.Resolve<SponsorsManager>().Initialize(); // Corvax-Sponsors
+                IoCManager.Resolve<RawAudioManager>().Initialize(); // Corvax-TTS
                 IoCManager.Resolve<TTSManager>().Initialize(); // Corvax-TTS
 
                 _voteManager.Initialize();
