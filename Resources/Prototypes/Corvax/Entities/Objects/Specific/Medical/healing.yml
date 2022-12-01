@@ -1,0 +1,26 @@
+- type: entity
+  name: Звёздочка
+  description: 'Бальзам "Золотая звезда" - универсальное лечебное средство от ожогов и грубых травм... Блин, не открывается.'
+  parent: BaseItem
+  id: GoldenStarBalm
+  components:
+  - type: Sprite
+    sprite: Corvax/Objects/Specific/Medical/medical.rsi
+    state: goldenstarbalm
+  - type: Healing
+    damageContainer: Biological
+    damage:
+      groups:
+        Brute: -15 # 5 for each type in the group
+        Burn: -15 # 5 for each type in the group
+    healingBeginSound:
+      path: "/Audio/Items/Medical/brutepack_begin.ogg"
+    healingEndSound:
+      path: "/Audio/Items/Medical/brutepack_end.ogg"
+  - type: StaticPrice
+    price: 20
+  - type: Stack
+    stackType: GoldenStarBalm
+    count: 1
+  - type: StackPrice
+    price: 20
