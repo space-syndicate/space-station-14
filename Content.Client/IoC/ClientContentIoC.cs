@@ -2,7 +2,6 @@
 using Content.Client.Changelog;
 using Content.Client.Chat.Managers;
 using Content.Client.Clickable;
-using Content.Client.Corvax.RawAudio;
 using Content.Client.Corvax.Sponsors;
 using Content.Client.Options;
 using Content.Client.Eui;
@@ -45,7 +44,6 @@ namespace Content.Client.IoC
             IoCManager.Register<ExtendedDisconnectInformationManager>();
             IoCManager.Register<PlayTimeTrackingManager>();
             IoCManager.Register<SponsorsManager>(); // Corvax-Sponsors
-            IoCManager.Register<RawAudioManager>(); // Corvax-TTS
         }
     }
 }
