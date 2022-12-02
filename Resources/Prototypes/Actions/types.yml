@@ -10,7 +10,11 @@
 - type: instantAction
   id: OwOVoice
   name: owovoice-action-name
+  checkCanInteract: false
   icon: Interface/Actions/owo-button.png
+  iconOn: Interface/Actions/owo-button-on.png
+  userPopup: action-popup-owovoice
+  popupToggleSuffix: -enabled
   serverEvent: !type:OwOAccentActionEvent
 
 - type: instantAction

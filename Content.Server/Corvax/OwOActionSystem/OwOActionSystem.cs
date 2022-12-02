@@ -3,6 +3,7 @@ using Content.Server.Speech.Components;
 using Content.Shared.Actions;
 using Content.Shared.Actions.ActionTypes;
 using Content.Shared.MobState.Components;
+using Content.Shared.Verbs;
 using Robust.Shared.Prototypes;
 
 namespace Content.Server.Corvax.OwOAction;
@@ -18,8 +19,14 @@ public sealed class OwOActionSystem : EntitySystem
     {
         base.Initialize();
         SubscribeLocalEvent<MobStateComponent, OwOAccentActionEvent>(OnOwOAction);
+        SubscribeLocalEvent<OwOActionComponent, OwOAccentActionEvent>(OnChange);
         SubscribeLocalEvent<OwOActionComponent, ComponentStartup>(OnStartup);
         SubscribeLocalEvent<OwOActionComponent, ComponentShutdown>(OnShutdown);
+    }
+
+    private void OnChange(EntityUid uid, OwOActionComponent component, OwOAccentActionEvent args)
+    {
+        component.IsON = !component.IsON;
     }
 
     private void OnShutdown(EntityUid uid, OwOActionComponent component, ComponentShutdown args)
@@ -41,7 +48,17 @@ public sealed class OwOActionSystem : EntitySystem
 
     private void OnOwOAction(EntityUid uid, MobStateComponent component, OwOAccentActionEvent ev)
     {
-        if(!EntityManager.HasComponent<OwOAccentComponent>(uid))
+
+        if (ev.Handled)
+            return;
+
+        var enabled = EntityManager.HasComponent<OwOAccentComponent>(uid);
+
+        if (enabled)
+            EntityManager.RemoveComponent<OwOAccentComponent>(uid);
+        else
             EntityManager.AddComponent<OwOAccentComponent>(uid);
+
+        ev.Handled = true;
     }
 }
