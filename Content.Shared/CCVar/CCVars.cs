@@ -48,7 +48,7 @@ namespace Content.Shared.CCVar
         /// How large of a range to sample for ambience.
         /// </summary>
         public static readonly CVarDef<float> AmbientRange =
-            CVarDef.Create("ambience.range", 5f, CVar.REPLICATED | CVar.SERVER);
+            CVarDef.Create("ambience.range", 8f, CVar.REPLICATED | CVar.SERVER);
 
         /// <summary>
         /// Maximum simultaneous ambient sounds.
@@ -253,10 +253,22 @@ namespace Content.Shared.CCVar
             CVarDef.Create("game.panic_bunker.enabled", false, CVar.SERVERONLY);
 
         /// <summary>
+        /// Show reason of disconnect for user or not.
+        /// </summary>
+        public static readonly CVarDef<bool> PanicBunkerShowReason =
+            CVarDef.Create("game.panic_bunker.show_reason", false, CVar.SERVERONLY);
+
+        /// <summary>
         /// Minimum age of the account (from server's PoV, so from first-seen date) in minutes.
         /// </summary>
         public static readonly CVarDef<int> PanicBunkerMinAccountAge =
             CVarDef.Create("game.panic_bunker.min_account_age", 1440, CVar.SERVERONLY);
+
+        /// <summary>
+        /// Minimal overall played time.
+        /// </summary>
+        public static readonly CVarDef<int> PanicBunkerMinOverallHours =
+            CVarDef.Create("game.panic_bunker.min_overall_hours", 10, CVar.SERVERONLY);
 
         /// <summary>
         /// Make people bonk when trying to climb certain objects like tables.
@@ -1161,6 +1173,12 @@ namespace Content.Shared.CCVar
         public static readonly CVarDef<float> AfkTime =
             CVarDef.Create("afk.time", 60f, CVar.SERVERONLY);
 
+        /// <summary>
+        /// How long seconds a client can go after being detected as AFK before being kicked.
+        /// </summary>
+        public static readonly CVarDef<float> AfkKickTime =
+            CVarDef.Create("afk.kick_time", 600f, CVar.SERVERONLY);
+
         /*
          * IC
          */
@@ -1342,9 +1360,9 @@ namespace Content.Shared.CCVar
         /// </summary>
         public static readonly CVarDef<float>
             PlayTimeSaveInterval = CVarDef.Create("playtime.save_interval", 900f, CVar.SERVERONLY);
-        
+
         /**
-         * SPONSORS
+         * Corvax | Sponsors
          */
 
         /// <summary>
@@ -1352,9 +1370,29 @@ namespace Content.Shared.CCVar
         /// </summary>
         public static readonly CVarDef<string> SponsorsApiUrl =
             CVarDef.Create("sponsor.api_url", "", CVar.SERVERONLY);
+
+        /*
+         * Corvax | Queue
+         */
+
+        /// <summary>
+        ///     Controls if the connections queue is enabled. If enabled stop kicking new players after `SoftMaxPlayers` cap and instead add them to queue.
+        /// </summary>
+        public static readonly CVarDef<bool>
+            QueueEnabled = CVarDef.Create("queue.enabled", false, CVar.SERVERONLY);
+
+        /*
+         * Corvax | JoinPlaytime
+         */
+
+        /// <summary>
+        ///     Minimum required overall play hours to join server
+        /// </summary>
+        public static readonly CVarDef<int> JoinPlaytimeHours =
+            CVarDef.Create("joinplaytime.min_hours", 0, CVar.SERVERONLY);
         
         /**
-         * TTS (Text-To-Speech)
+         * Corvax | TTS (Text-To-Speech)
          */
 
         /// <summary>
