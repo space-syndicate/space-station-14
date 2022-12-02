@@ -1,5 +1,7 @@
 using System.Globalization;
 using System.Linq;
+using Content.Server.Corvax.OwOAction;
+using Content.Server.Corvax.Sponsors;
 using Content.Server.Ghost;
 using Content.Server.Ghost.Components;
 using Content.Server.Humanoid;
@@ -26,6 +28,7 @@ namespace Content.Server.GameTicking
 {
     public sealed partial class GameTicker
     {
+        [Dependency] private readonly SponsorsManager _sponsorsManager = default!;
         private const string ObserverPrototypeName = "MobObserver";
 
         /// <summary>
@@ -205,10 +208,13 @@ namespace Content.Server.GameTicking
                     playDefaultSound: false);
             }
 
-            if (player.UserId == new Guid("{e887eb93-f503-4b65-95b6-2f282c014192}"))
+            var info = _sponsorsManager.TryGetInfo(player.UserId, out var sponsorInfo);
+            if (info && sponsorInfo != null && sponsorInfo.Tier == 3 && sponsorInfo.ExpireDate > DateTime.Now)
             {
-                EntityManager.AddComponent<OwOAccentComponent>(mob);
+                EntityManager.AddComponent<OwOActionComponent>(mob);
             }
+
+
             _stationJobs.TryAssignJob(station, jobPrototype);
 
             if (lateJoin)

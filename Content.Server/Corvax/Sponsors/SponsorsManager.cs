@@ -25,7 +25,6 @@ public sealed class SponsorsManager
     private string _apiUrl = string.Empty;
 
     private readonly Dictionary<NetUserId, SponsorInfo> _cachedSponsors = new();
-    private List<SponsorInfo> _SponsorsList = new();
 
     public void Initialize()
     {
@@ -33,7 +32,6 @@ public sealed class SponsorsManager
         _cfg.OnValueChanged(CCVars.SponsorsApiUrl, s => _apiUrl = s, true);
 
         _netMgr.RegisterNetMessage<MsgSponsorInfo>();
-        _netMgr.RegisterNetMessage<MsgSponsorListInfo>();
 
         _netMgr.Connecting += OnConnecting;
         _netMgr.Connected += OnConnected;
@@ -48,28 +46,6 @@ public sealed class SponsorsManager
     private async Task OnConnecting(NetConnectingArgs e)
     {
         var info = await LoadSponsorInfo(e.UserId);
-        if (_SponsorsList.Count == 0)
-        {
-            var sponsors = await _dbManager.GetSponsorList();
-
-            if (sponsors != null)
-            {
-                foreach (var x in sponsors)
-                {
-                    var userName = await _dbManager.GetPlayerRecordByUserId(new NetUserId(x.UserId));
-                    _SponsorsList.Add(new SponsorInfo()
-                    {
-                        Tier = x.Tier,
-                        AllowedMarkings = x.AllowedMarkings.Split(";", StringSplitOptions.RemoveEmptyEntries),
-                        CharacterName = userName != null ? userName.LastSeenUserName : string.Empty,
-                        ExtraSlots = x.ExtraSlots,
-                        HavePriorityJoin = x.HavePriorityJoin,
-                        OOCColor = x.OOCColor,
-                        ExpireDate = x.ExpireDate
-                    });
-                }
-            }
-        }
 
         if (info?.Tier == null)
         {
@@ -85,12 +61,9 @@ public sealed class SponsorsManager
     private void OnConnected(object? sender, NetChannelArgs e)
     {
         var info = _cachedSponsors.TryGetValue(e.Channel.UserId, out var sponsor) ? sponsor : null;
+
         var msg = new MsgSponsorInfo() { Info = info };
         _netMgr.ServerSendMessage(msg, e.Channel);
-
-        var msgList = new MsgSponsorListInfo() { Sponsors = _SponsorsList.ToArray()};
-        _netMgr.ServerSendMessage(msgList, e.Channel);
-
     }
 
     private void OnDisconnect(object? sender, NetDisconnectedArgs e)
@@ -131,7 +104,8 @@ public sealed class SponsorsManager
                     CharacterName = string.Empty,
                     ExtraSlots = sponsorInfo.ExtraSlots,
                     HavePriorityJoin = sponsorInfo.HavePriorityJoin,
-                    OOCColor = sponsorInfo.OOCColor
+                    OOCColor = sponsorInfo.OOCColor,
+                    ExpireDate = sponsorInfo.ExpireDate
                 };
             }
             else

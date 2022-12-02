@@ -8,6 +8,12 @@
   checkCanInteract: false
 
 - type: instantAction
+  id: OwOVoice
+  name: owovoice-action-name
+  icon: Interface/Actions/owo-button.png
+  serverEvent: !type:OwOAccentActionEvent
+
+- type: instantAction
   id: TurnUndead
   name: turn-undead-action-name
   description: turn-undead-action-description
