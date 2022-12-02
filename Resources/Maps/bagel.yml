@@ -187039,4 +187039,16 @@ entities:
   - pos: -24.522373,-30.44123
     parent: 60
     type: Transform
+- uid: 23719
+  type: SpawnPointVirusolog
+  components:
+  - pos: 49.5,-9.5
+    parent: 60
+    type: Transform
+- uid: 23719
+  type: SpawnPointParamedic
+  components:
+  - pos: 49.5,-9.5
+    parent: 60
+    type: Transform
 ...

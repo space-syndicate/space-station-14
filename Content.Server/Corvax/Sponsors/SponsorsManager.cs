@@ -105,7 +105,8 @@ public sealed class SponsorsManager
                     ExtraSlots = sponsorInfo.ExtraSlots,
                     HavePriorityJoin = sponsorInfo.HavePriorityJoin,
                     OOCColor = sponsorInfo.OOCColor,
-                    ExpireDate = sponsorInfo.ExpireDate
+                    ExpireDate = sponsorInfo.ExpireDate,
+                    AllowJob = sponsorInfo.AllowJob
                 };
             }
             else

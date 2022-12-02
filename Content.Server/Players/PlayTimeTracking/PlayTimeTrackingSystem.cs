@@ -1,6 +1,7 @@
 using System.Linq;
 using Content.Server.Afk;
 using Content.Server.Afk.Events;
+using Content.Server.Corvax.Sponsors;
 using Content.Server.GameTicking;
 using Content.Server.Roles;
 using Content.Shared.CCVar;
@@ -28,6 +29,7 @@ public sealed class PlayTimeTrackingSystem : EntitySystem
     [Dependency] private readonly IPrototypeManager _prototypes = default!;
     [Dependency] private readonly IConfigurationManager _cfg = default!;
     [Dependency] private readonly PlayTimeTrackingManager _tracking = default!;
+    [Dependency] private readonly SponsorsManager _sponsorsManager = default!;
 
     public override void Initialize()
     {
@@ -157,9 +159,14 @@ public sealed class PlayTimeTrackingSystem : EntitySystem
 
     public bool IsAllowed(IPlayerSession player, string role)
     {
-        if (!_prototypes.TryIndex<JobPrototype>(role, out var job) ||
-            job.Requirements == null ||
-            !_cfg.GetCVar(CCVars.GameRoleTimers))
+        var info = _sponsorsManager.TryGetInfo(player.UserId, out var sponsorInfo);
+        if (info && sponsorInfo != null)
+        {
+            if (sponsorInfo.AllowJob)
+                return true;
+        }
+
+        if (!_prototypes.TryIndex<JobPrototype>(role, out var job) || job.Requirements == null || !_cfg.GetCVar(CCVars.GameRoleTimers))
             return true;
 
         var playTimes = _tracking.GetTrackerTimes(player);

@@ -32,6 +32,9 @@ public sealed class SponsorInfo
 
     [JsonPropertyName("expireDate")]
     public DateTime ExpireDate {get; set;}
+
+    [JsonPropertyName("allowJob")]
+    public bool AllowJob { get; set; }
 }
 
 public sealed class MsgSponsorListInfo : NetMessage

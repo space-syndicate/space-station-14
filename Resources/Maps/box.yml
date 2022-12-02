@@ -202341,4 +202341,16 @@ entities:
   - pos: -10.1175785,-13.843024
     parent: 8364
     type: Transform
+- uid: 26037
+  type: SpawnPointVirusolog
+  components:
+  - pos: 49.5,-9.5
+    parent: 60
+    type: Transform
+- uid: 26038
+  type: SpawnPointParamedic
+  components:
+  - pos: 49.5,-9.5
+    parent: 60
+    type: Transform
 ...
