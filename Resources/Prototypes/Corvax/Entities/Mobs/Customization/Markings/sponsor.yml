@@ -1,8 +1,8 @@
 - type: marking
-  id: SponsorPurpleHalo
+  id: SponsorPurplePulsing
   bodyPart: HeadTop
   markingCategory: HeadTop
-  # sponsorOnly: true # Corvax-Sponsors
+  sponsorOnly: true # Corvax-Sponsors
   sprites:
     - sprite: Corvax/Mobs/Customization/sponsor.rsi
       state: purplepulsing

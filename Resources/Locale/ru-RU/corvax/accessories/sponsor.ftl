@@ -1,0 +1,1 @@
+marking-SponsorPurplePulsing = Пульсация (Фиолетовый)
