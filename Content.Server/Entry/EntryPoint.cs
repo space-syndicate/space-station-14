@@ -5,7 +5,6 @@ using Content.Server.Administration.Managers;
 using Content.Server.Afk;
 using Content.Server.Chat.Managers;
 using Content.Server.Connection;
-using Content.Server.Corvax.JoinPlayTime;
 using Content.Server.Corvax.JoinQueue;
 using Content.Server.Corvax.OwOAction;
 using Content.Server.Corvax.Sponsors;
@@ -20,6 +19,7 @@ using Content.Server.Maps;
 using Content.Server.NodeContainer.NodeGroups;
 using Content.Server.Players.PlayTimeTracking;
 using Content.Server.Preferences.Managers;
+using Content.Server.ServerInfo;
 using Content.Server.ServerUpdates;
 using Content.Server.Voting.Managers;
 using Content.Shared.Administration;
@@ -102,7 +102,7 @@ namespace Content.Server.Entry
                 IoCManager.Resolve<GhostKickManager>().Initialize();
                 IoCManager.Resolve<SponsorsManager>().Initialize(); // Corvax-Sponsors
                 IoCManager.Resolve<JoinQueueManager>().Initialize(); // Corvax-Queue
-                IoCManager.Resolve<JoinPlayTimeManager>().Initialize(); // Corvax-JoinPlaytime
+                IoCManager.Resolve<ServerInfoManager>().Initialize();
 
                 _voteManager.Initialize();
                 _updateManager.Initialize();
