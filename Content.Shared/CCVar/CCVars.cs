@@ -1369,7 +1369,7 @@ namespace Content.Shared.CCVar
         /// Link to Discord server to show in the launcher.
         /// </summary>
         public static readonly CVarDef<string> InfoLinksDiscord =
-            CVarDef.Create("infolinks.discord", "", CVar.SERVER | CVar.REPLICATED);
+            CVarDef.Create("infolinks.discord", "https://discord.com/invite/9juTGYQfUv", CVar.SERVER | CVar.REPLICATED);
 
         /// <summary>
         /// Link to website to show in the launcher.
@@ -1387,19 +1387,19 @@ namespace Content.Shared.CCVar
         /// Link to website to show in the launcher.
         /// </summary>
         public static readonly CVarDef<string> InfoLinksWebsite =
-            CVarDef.Create("infolinks.website", "", CVar.SERVER | CVar.REPLICATED);
+            CVarDef.Create("infolinks.website", "https://boosty.to/adventuretime", CVar.SERVER | CVar.REPLICATED);
 
         /// <summary>
         /// Link to wiki to show in the launcher.
         /// </summary>
         public static readonly CVarDef<string> InfoLinksWiki =
-            CVarDef.Create("infolinks.wiki", "", CVar.SERVER | CVar.REPLICATED);
+            CVarDef.Create("infolinks.wiki", "https://station14.ru/", CVar.SERVER | CVar.REPLICATED);
 
         /// <summary>
         /// Link to Patreon. Not shown in the launcher currently.
         /// </summary>
         public static readonly CVarDef<string> InfoLinksPatreon =
-            CVarDef.Create("infolinks.patreon", "", CVar.SERVER | CVar.REPLICATED);
+            CVarDef.Create("infolinks.patreon", "https://boosty.to/adventuretime", CVar.SERVER | CVar.REPLICATED);
 
         /// <summary>
         /// Link to the bug report form.

@@ -103,7 +103,12 @@ public sealed class EscapeUIController : UIController, IOnStateEntered<GameplayS
 
         _escapeWindow.PatrionButton.OnPressed += _ =>
         {
-            _uri.OpenUri(CCVars.InfoLinksWiki);
+            _uri.OpenUri(_cfg.GetCVar(CCVars.InfoLinksPatreon));
+        };
+
+        _escapeWindow.DiscordButton.OnPressed += _ =>
+        {
+            _uri.OpenUri(_cfg.GetCVar(CCVars.InfoLinksDiscord));
         };
 
         CommandBinds.Builder
