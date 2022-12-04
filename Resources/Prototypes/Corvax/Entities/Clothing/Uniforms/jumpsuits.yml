@@ -41,3 +41,59 @@
       sprite: Corvax/Clothing/Uniforms/Jumpsuit/centcom_admiral.rsi
     - type: Clothing
       sprite: Corvax/Clothing/Uniforms/Jumpsuit/centcom_admiral.rsi
+
+- type: entity
+  parent: ClothingUniformBase
+  id: ClothingUniformJumpsuitERTJanitor
+  name: ERT janitor uniform
+  description: Super puper uniforma.
+  components:
+    - type: Sprite
+      sprite: Corvax/Clothing/Uniforms/Jumpsuit/janitorERT.rsi
+    - type: Clothing
+      sprite: Corvax/Clothing/Uniforms/Jumpsuit/janitorERT.rsi
+
+- type: entity
+  parent: ClothingUniformBase
+  id: ClothingUniformJumpsuitERTLeader
+  name: ERT leader uniform
+  description: Super puper uniforma.
+  components:
+    - type: Sprite
+      sprite: Corvax/Clothing/Uniforms/Jumpsuit/leaderERT.rsi
+    - type: Clothing
+      sprite: Corvax/Clothing/Uniforms/Jumpsuit/leaderERT.rsi
+
+- type: entity
+  parent: ClothingUniformBase
+  id: ClothingUniformJumpsuitERTEngineer
+  name: ERT engineer uniform
+  description: Super puper uniforma.
+  components:
+    - type: Sprite
+      sprite: Corvax/Clothing/Uniforms/Jumpsuit/engineerERT.rsi
+    - type: Clothing
+      sprite: Corvax/Clothing/Uniforms/Jumpsuit/engineerERT.rsi
+
+- type: entity
+  parent: ClothingUniformBase
+  id: ClothingUniformJumpsuitERTMedic
+  name: ERT medic uniform
+  description: Super puper uniforma.
+  components:
+    - type: Sprite
+      sprite: Corvax/Clothing/Uniforms/Jumpsuit/medicERT.rsi
+    - type: Clothing
+      sprite: Corvax/Clothing/Uniforms/Jumpsuit/medicERT.rsi
+
+- type: entity
+  parent: ClothingUniformBase
+  id: ClothingUniformJumpsuitERTSesurity
+  name: ERT sesurity uniform
+  description: Super puper uniforma.
+  components:
+    - type: Sprite
+      sprite: Corvax/Clothing/Uniforms/Jumpsuit/sesurityERT.rsi
+    - type: Clothing
+      sprite: Corvax/Clothing/Uniforms/Jumpsuit/sesurityERT.rsi
+      
