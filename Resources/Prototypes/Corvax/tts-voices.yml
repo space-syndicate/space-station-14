@@ -1,0 +1,484 @@
+﻿- type: ttsVoice
+  id: Aidar
+  name: tts-voice-name-aidar
+  speaker: aidar
+
+- type: ttsVoice
+  id: Baya
+  name: tts-voice-name-baya
+  speaker: baya
+
+- type: ttsVoice
+  id: Kseniya
+  name: tts-voice-name-kseniya
+  speaker: kseniya
+
+- type: ttsVoice
+  id: Xenia
+  name: tts-voice-name-xenia
+  speaker: xenia
+
+- type: ttsVoice
+  id: Eugene
+  name: tts-voice-name-eugene
+  speaker: eugene
+
+- type: ttsVoice
+  id: Random
+  name: tts-voice-name-random
+  speaker: random
+
+- type: ttsVoice
+  id: Arthas
+  name: tts-voice-name-arthas
+  speaker: arthas
+
+- type: ttsVoice
+  id: Thrall
+  name: tts-voice-name-thrall
+  speaker: thrall
+
+- type: ttsVoice
+  id: Kael
+  name: tts-voice-name-kael
+  speaker: kael
+
+- type: ttsVoice
+  id: Maiev
+  name: tts-voice-name-maiev
+  speaker: maiev
+
+- type: ttsVoice
+  id: Rexxar
+  name: tts-voice-name-rexxar
+  speaker: rexxar
+
+- type: ttsVoice
+  id: Tyrande
+  name: tts-voice-name-tyrande
+  speaker: tyrande
+
+- type: ttsVoice
+  id: Furion
+  name: tts-voice-name-furion
+  speaker: furion
+
+- type: ttsVoice
+  id: Illidan
+  name: tts-voice-name-illidan
+  speaker: illidan
+
+- type: ttsVoice
+  id: Kelthuzad
+  name: tts-voice-name-kelthuzad
+  speaker: kelthuzad
+
+- type: ttsVoice
+  id: Jaina
+  name: tts-voice-name-jaina
+  speaker: jaina
+
+- type: ttsVoice
+  id: Ladyvashj
+  name: tts-voice-name-ladyvashj
+  speaker: ladyvashj
+
+- type: ttsVoice
+  id: Narrator
+  name: tts-voice-name-narrator
+  speaker: narrator
+
+- type: ttsVoice
+  id: Cairne
+  name: tts-voice-name-cairne
+  speaker: cairne
+
+- type: ttsVoice
+  id: Garithos
+  name: tts-voice-name-garithos
+  speaker: garithos
+
+- type: ttsVoice
+  id: Anubarak
+  name: tts-voice-name-anubarak
+  speaker: anubarak
+
+- type: ttsVoice
+  id: Uther
+  name: tts-voice-name-uther
+  speaker: uther
+
+- type: ttsVoice
+  id: Grunt
+  name: tts-voice-name-grunt
+  speaker: grunt
+
+- type: ttsVoice
+  id: Medivh
+  name: tts-voice-name-medivh
+  speaker: medivh
+
+- type: ttsVoice
+  id: Villagerm
+  name: tts-voice-name-villagerm
+  speaker: villagerm
+
+- type: ttsVoice
+  id: Naisha
+  name: tts-voice-name-naisha
+  speaker: naisha
+
+- type: ttsVoice
+  id: IllidanF
+  name: tts-voice-name-illidanf
+  speaker: illidan_f
+
+- type: ttsVoice
+  id: Peon
+  name: tts-voice-name-peon
+  speaker: peon
+
+- type: ttsVoice
+  id: Chen
+  name: tts-voice-name-chen
+  speaker: chen
+
+- type: ttsVoice
+  id: DreadBm
+  name: tts-voice-name-dreadbm
+  speaker: dread_bm
+
+- type: ttsVoice
+  id: Sylvanas
+  name: tts-voice-name-sylvanas
+  speaker: sylvanas
+
+- type: ttsVoice
+  id: Priest
+  name: tts-voice-name-priest
+  speaker: priest
+
+- type: ttsVoice
+  id: Acolyte
+  name: tts-voice-name-acolyte
+  speaker: acolyte
+
+- type: ttsVoice
+  id: Muradin
+  name: tts-voice-name-muradin
+  speaker: muradin
+
+- type: ttsVoice
+  id: DreadT
+  name: tts-voice-name-dreadt
+  speaker: dread_t
+
+- type: ttsVoice
+  id: Mannoroth
+  name: tts-voice-name-mannoroth
+  speaker: mannoroth
+
+- type: ttsVoice
+  id: Sorceress
+  name: tts-voice-name-sorceress
+  speaker: sorceress
+
+- type: ttsVoice
+  id: Peasant
+  name: tts-voice-name-peasant
+  speaker: peasant
+
+- type: ttsVoice
+  id: Alyx
+  name: tts-voice-name-alyx
+  speaker: alyx
+
+- type: ttsVoice
+  id: Glados
+  name: tts-voice-name-glados
+  speaker: glados
+
+- type: ttsVoice
+  id: Announcer
+  name: tts-voice-name-announcer
+  speaker: announcer
+
+- type: ttsVoice
+  id: Wheatley
+  name: tts-voice-name-wheatley
+  speaker: wheatley
+
+- type: ttsVoice
+  id: Barney
+  name: tts-voice-name-barney
+  speaker: barney
+
+- type: ttsVoice
+  id: Raynor
+  name: tts-voice-name-raynor
+  speaker: raynor
+
+- type: ttsVoice
+  id: Kerrigan
+  name: tts-voice-name-kerrigan
+  speaker: kerrigan
+
+- type: ttsVoice
+  id: Tusk
+  name: tts-voice-name-tusk
+  speaker: tusk
+
+- type: ttsVoice
+  id: Earth
+  name: tts-voice-name-earth
+  speaker: earth
+
+- type: ttsVoice
+  id: Wraith
+  name: tts-voice-name-wraith
+  speaker: wraith
+
+- type: ttsVoice
+  id: Meepo
+  name: tts-voice-name-meepo
+  speaker: meepo
+
+- type: ttsVoice
+  id: Lina
+  name: tts-voice-name-lina
+  speaker: lina
+
+- type: ttsVoice
+  id: Bristle
+  name: tts-voice-name-bristle
+  speaker: bristle
+
+- type: ttsVoice
+  id: Gyro
+  name: tts-voice-name-gyro
+  speaker: gyro
+
+- type: ttsVoice
+  id: Treant
+  name: tts-voice-name-treant
+  speaker: treant
+
+- type: ttsVoice
+  id: Lancer
+  name: tts-voice-name-lancer
+  speaker: lancer
+
+- type: ttsVoice
+  id: Clockwerk
+  name: tts-voice-name-clockwerk
+  speaker: clockwerk
+
+- type: ttsVoice
+  id: Batrider
+  name: tts-voice-name-batrider
+  speaker: batrider
+
+- type: ttsVoice
+  id: Kotl
+  name: tts-voice-name-kotl
+  speaker: kotl
+
+- type: ttsVoice
+  id: Kunkka
+  name: tts-voice-name-kunkka
+  speaker: kunkka
+
+- type: ttsVoice
+  id: Pudge
+  name: tts-voice-name-pudge
+  speaker: pudge
+
+- type: ttsVoice
+  id: Juggernaut
+  name: tts-voice-name-juggernaut
+  speaker: juggernaut
+
+- type: ttsVoice
+  id: Vort E2
+  name: tts-voice-name-vorte2
+  speaker: vort_e2
+
+- type: ttsVoice
+  id: Luna
+  name: tts-voice-name-luna
+  speaker: luna
+
+- type: ttsVoice
+  id: Omni
+  name: tts-voice-name-omni
+  speaker: omni
+
+- type: ttsVoice
+  id: Sniper
+  name: tts-voice-name-sniper
+  speaker: sniper
+
+- type: ttsVoice
+  id: Skywrath
+  name: tts-voice-name-skywrath
+  speaker: skywrath
+
+- type: ttsVoice
+  id: Bounty
+  name: tts-voice-name-bounty
+  speaker: bounty
+
+- type: ttsVoice
+  id: Huskar
+  name: tts-voice-name-huskar
+  speaker: huskar
+
+- type: ttsVoice
+  id: Windranger
+  name: tts-voice-name-windranger
+  speaker: windranger
+
+- type: ttsVoice
+  id: Bloodseeker
+  name: tts-voice-name-bloodseeker
+  speaker: bloodseeker
+
+- type: ttsVoice
+  id: Templar
+  name: tts-voice-name-templar
+  speaker: templar
+
+- type: ttsVoice
+  id: Ranger
+  name: tts-voice-name-ranger
+  speaker: ranger
+
+- type: ttsVoice
+  id: Shaker
+  name: tts-voice-name-shaker
+  speaker: shaker
+
+- type: ttsVoice
+  id: Mortred
+  name: tts-voice-name-mortred
+  speaker: mortred
+
+- type: ttsVoice
+  id: Queen
+  name: tts-voice-name-queen
+  speaker: queen
+
+- type: ttsVoice
+  id: Storm
+  name: tts-voice-name-storm
+  speaker: storm
+
+- type: ttsVoice
+  id: Tide
+  name: tts-voice-name-tide
+  speaker: tide
+
+- type: ttsVoice
+  id: Evelynn
+  name: tts-voice-name-evelynn
+  speaker: evelynn
+
+- type: ttsVoice
+  id: Riki
+  name: tts-voice-name-riki
+  speaker: riki
+
+- type: ttsVoice
+  id: Antimage
+  name: tts-voice-name-antimage
+  speaker: antimage
+
+- type: ttsVoice
+  id: Witchdoctor
+  name: tts-voice-name-witchdoctor
+  speaker: witchdoctor
+
+- type: ttsVoice
+  id: Doom
+  name: tts-voice-name-doom
+  speaker: doom
+
+- type: ttsVoice
+  id: Yuumi
+  name: tts-voice-name-yuumi
+  speaker: yuumi
+
+- type: ttsVoice
+  id: Bandit
+  name: tts-voice-name-bandit
+  speaker: bandit
+
+- type: ttsVoice
+  id: Pantheon
+  name: tts-voice-name-pantheon
+  speaker: pantheon
+
+- type: ttsVoice
+  id: Tychus
+  name: tts-voice-name-tychus
+  speaker: tychus
+
+- type: ttsVoice
+  id: Breen
+  name: tts-voice-name-breen
+  speaker: breen
+
+- type: ttsVoice
+  id: Kleiner
+  name: tts-voice-name-kleiner
+  speaker: kleiner
+
+- type: ttsVoice
+  id: Father
+  name: tts-voice-name-father
+  speaker: father
+
+- type: ttsVoice
+  id: Tosh
+  name: tts-voice-name-tosh
+  speaker: tosh
+
+- type: ttsVoice
+  id: Stetmann
+  name: tts-voice-name-stetmann
+  speaker: stetmann
+
+- type: ttsVoice
+  id: Hanson
+  name: tts-voice-name-hanson
+  speaker: hanson
+
+- type: ttsVoice
+  id: Swann
+  name: tts-voice-name-swann
+  speaker: swann
+
+- type: ttsVoice
+  id: Hill
+  name: tts-voice-name-hill
+  speaker: hill
+
+- type: ttsVoice
+  id: GmanE2
+  name: tts-voice-name-gmane2
+  speaker: gman_e2
+
+- type: ttsVoice
+  id: Valerian
+  name: tts-voice-name-valerian
+  speaker: valerian
+
+- type: ttsVoice
+  id: Gman
+  name: tts-voice-name-gman
+  speaker: gman
+
+- type: ttsVoice
+  id: Vort
+  name: tts-voice-name-vort
+  speaker: vort

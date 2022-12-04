@@ -8,6 +8,7 @@ using Content.Server.Connection;
 using Content.Server.Corvax.JoinQueue;
 using Content.Server.Corvax.OwOAction;
 using Content.Server.Corvax.Sponsors;
+using Content.Server.Corvax.TTS;
 using Content.Server.Database;
 using Content.Server.EUI;
 using Content.Server.GameTicking;
@@ -102,6 +103,7 @@ namespace Content.Server.Entry
                 IoCManager.Resolve<GhostKickManager>().Initialize();
                 IoCManager.Resolve<SponsorsManager>().Initialize(); // Corvax-Sponsors
                 IoCManager.Resolve<JoinQueueManager>().Initialize(); // Corvax-Queue
+                IoCManager.Resolve<TTSManager>().Initialize(); // Corvax-TTS
                 IoCManager.Resolve<ServerInfoManager>().Initialize();
 
                 _voteManager.Initialize();
