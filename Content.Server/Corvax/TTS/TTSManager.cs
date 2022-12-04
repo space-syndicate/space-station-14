@@ -1,9 +1,9 @@
-﻿using System.IO;
-using System.Linq;
+﻿using System.Linq;
 using System.Net.Http;
 using System.Net.Http.Json;
 using System.Text;
 using System.Text.Json.Serialization;
+using System.Threading;
 using System.Threading.Tasks;
 using Content.Shared.CCVar;
 using Robust.Shared.Configuration;
@@ -25,6 +25,13 @@ public sealed class TTSManager
         _sawmill = Logger.GetSawmill("tts");
     }
 
+    /// <summary>
+    /// Generates audio with passed text by API
+    /// </summary>
+    /// <param name="speaker">Identifier of speaker</param>
+    /// <param name="text">SSML formatted text</param>
+    /// <returns>OGG audio bytes</returns>
+    /// <exception cref="Exception">Throws if url or token CCVar not set or http request failed</exception>
     public async Task<byte[]> ConvertTextToSpeech(string speaker, string text)
     {
         var url = _cfg.GetCVar(CCVars.TTSApiUrl);
@@ -52,19 +59,30 @@ public sealed class TTSManager
             Text = text,
             Speaker = speaker,
         };
-        var response = await _httpClient.PostAsJsonAsync(url, body);
-        if (!response.IsSuccessStatusCode)
+
+        try
         {
-            throw new Exception($"TTS request returned bad status code: {response.StatusCode}");
+            var cts = new CancellationTokenSource(TimeSpan.FromSeconds(2));
+            var response = await _httpClient.PostAsJsonAsync(url, body, cts.Token);
+            if (!response.IsSuccessStatusCode)
+            {
+                throw new Exception($"TTS request returned bad status code: {response.StatusCode}");
+            }
+
+            var json = await response.Content.ReadFromJsonAsync<GenerateVoiceResponse>();
+            var soundData = Convert.FromBase64String(json.Results.First().Audio);
+            _cache.Add(cacheKey, soundData);
+
+            _sawmill.Debug(
+                $"Generated new sound for '{text}' speech by '{speaker}' speaker ({soundData.Length} bytes)");
+
+            return soundData;
         }
-
-        var json = await response.Content.ReadFromJsonAsync<GenerateVoiceResponse>();
-        var soundData = Convert.FromBase64String(json.Results.First().Audio);
-        _cache.Add(cacheKey, soundData);
-        
-        _sawmill.Debug($"Generated new sound for '{text}' speech by '{speaker}' speaker ({soundData.Length} bytes)");
-
-        return soundData;
+        catch (TaskCanceledException)
+        {
+            _sawmill.Error($"Timeout of request generation new sound for '{text}' speech by '{speaker}' speaker");
+            throw new Exception("TTS request timeout");
+        }
     }
 
     public void ResetCache()
@@ -95,6 +113,18 @@ public sealed class TTSManager
 
         [JsonPropertyName("speaker")]
         public string Speaker { get; set; } = "";
+
+        [JsonPropertyName("ssml")]
+        public bool SSML { get; private set; } = true;
+
+        [JsonPropertyName("word_ts")]
+        public bool WordTS { get; private set; } = false;
+
+        [JsonPropertyName("put_Accent")]
+        public bool PutAccent { get; private set; } = true;
+
+        [JsonPropertyName("put_yo")]
+        public bool PutYo { get; private set; } = false;
 
         [JsonPropertyName("sample_rate")]
         public int SampleRate { get; private set; } = 24000;
