@@ -21,8 +21,8 @@ public sealed class TTSSystem : EntitySystem
     [Dependency] private readonly SharedPhysicsSystem _broadPhase = default!;
     
     private ISawmill _sawmill = default!;
-    private readonly HashSet<(EntityUid, IClydeAudioSource)> _currentStreams = new();
-    
+    private readonly HashSet<AudioStream> _currentStreams = new();
+
     public override void Initialize()
     {
         _sawmill = Logger.GetSawmill("tts");
@@ -32,18 +32,18 @@ public sealed class TTSSystem : EntitySystem
     // Little bit of duplication logic from AudioSystem
     public override void FrameUpdate(float frameTime)
     {
-        var streamToRemove = new HashSet<(EntityUid, IClydeAudioSource)>();
+        var streamToRemove = new HashSet<AudioStream>();
 
         var ourPos = _eye.CurrentEye.Position.Position;
-        foreach (var (uid, stream) in _currentStreams)
+        foreach (var stream in _currentStreams)
         {
-            if (!stream.IsPlaying ||
-                !_entity.TryGetComponent<MetaDataComponent>(uid, out var meta) ||
-                Deleted(uid, meta) ||
-                !_entity.TryGetComponent<TransformComponent>(uid, out var xform))
+            if (!stream.Source.IsPlaying ||
+                !_entity.TryGetComponent<MetaDataComponent>(stream.Uid, out var meta) ||
+                Deleted(stream.Uid, meta) ||
+                !_entity.TryGetComponent<TransformComponent>(stream.Uid, out var xform))
             {
-                stream.Dispose();
-                streamToRemove.Add((uid, stream));
+                stream.Source.Dispose();
+                streamToRemove.Add(stream);
                 continue;
             }
 
@@ -51,10 +51,10 @@ public sealed class TTSSystem : EntitySystem
             var mapPos = xform.MapPosition;
             if (mapPos.MapId != MapId.Nullspace)
             {
-                if (!stream.SetPosition(mapPos.Position))
+                if (!stream.Source.SetPosition(mapPos.Position))
                 {
                     _sawmill.Warning("Can't set position for audio stream, stop stream.");
-                    stream.StopPlaying();
+                    stream.Source.StopPlaying();
                 }
             }
 
@@ -67,9 +67,9 @@ public sealed class TTSSystem : EntitySystem
                 {
                     occlusion = _broadPhase.IntersectRayPenetration(mapPos.MapId,
                         new CollisionRay(mapPos.Position, sourceRelative.Normalized, collisionMask),
-                        sourceRelative.Length, uid);
+                        sourceRelative.Length, stream.Uid);
                 }
-                stream.SetOcclusion(occlusion);
+                stream.Source.SetOcclusion(occlusion);
             }
         }
 
@@ -81,18 +81,20 @@ public sealed class TTSSystem : EntitySystem
 
     private void OnPlayTTS(PlayTTSEvent ev)
     {
-       PlayEntity(ev.Uid, ev.Data);
-    }
-
-    private void PlayEntity(EntityUid uid, byte[] data)
-    {
-        if (!TryCreateAudioSource(data, out var source) ||
-            !_entity.TryGetComponent<TransformComponent>(uid, out var xform) ||
-            !source.SetPosition(xform.WorldPosition))
+        if (!TryCreateAudioSource(ev.Data, out var source))
             return;
 
-        source.StartPlaying();
-        _currentStreams.Add((uid, source));
+        PlayEntity(new AudioStream(ev.Uid, source));
+    }
+
+    private void PlayEntity(AudioStream stream)
+    {
+        if (!_entity.TryGetComponent<TransformComponent>(stream.Uid, out var xform) ||
+            !stream.Source.SetPosition(xform.WorldPosition))
+            return;
+
+        stream.Source.StartPlaying();
+        _currentStreams.Add(stream);
     }
     
     private bool TryCreateAudioSource(byte[] data, [NotNullWhen(true)] out IClydeAudioSource? source)
@@ -101,5 +103,18 @@ public sealed class TTSSystem : EntitySystem
         var audioStream = _clyde.LoadAudioOggVorbis(dataStream);
         source = _clyde.CreateAudioSource(audioStream);
         return source != null;
+    }
+
+    // ReSharper disable once InconsistentNaming
+    private sealed class AudioStream
+    {
+        public EntityUid Uid { get; }
+        public IClydeAudioSource Source { get; }
+
+        public AudioStream(EntityUid uid, IClydeAudioSource source)
+        {
+            Uid = uid;
+            Source = source;
+        }
     }
 }
