@@ -5,7 +5,6 @@ using Content.Server.Administration.Notes;
 using Content.Server.Afk;
 using Content.Server.Chat.Managers;
 using Content.Server.Connection;
-using Content.Server.Corvax.JoinPlayTime;
 using Content.Server.Corvax.JoinQueue;
 using Content.Server.Corvax.Sponsors;
 using Content.Server.Corvax.TTS;
@@ -20,6 +19,7 @@ using Content.Server.Objectives;
 using Content.Server.Objectives.Interfaces;
 using Content.Server.Players.PlayTimeTracking;
 using Content.Server.Preferences.Managers;
+using Content.Server.ServerInfo;
 using Content.Server.ServerUpdates;
 using Content.Server.Voting.Managers;
 using Content.Shared.Administration;
@@ -61,8 +61,8 @@ namespace Content.Server.IoC
             IoCManager.Register<UserDbDataManager>();
             IoCManager.Register<SponsorsManager>(); // Corvax-Sponsors
             IoCManager.Register<JoinQueueManager>(); // Corvax-Queue
-            IoCManager.Register<JoinPlayTimeManager>(); // Corvax-JoinPlaytime
             IoCManager.Register<TTSManager>(); // Corvax-TTS
+            IoCManager.Register<ServerInfoManager>();
         }
     }
 }
