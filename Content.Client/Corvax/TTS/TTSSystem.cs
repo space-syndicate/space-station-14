@@ -22,6 +22,7 @@ public sealed class TTSSystem : EntitySystem
     
     private ISawmill _sawmill = default!;
     private readonly HashSet<AudioStream> _currentStreams = new();
+    private readonly Dictionary<EntityUid, Queue<AudioStream>> _entityQueues = new();
 
     public override void Initialize()
     {
@@ -84,7 +85,34 @@ public sealed class TTSSystem : EntitySystem
         if (!TryCreateAudioSource(ev.Data, out var source))
             return;
 
-        PlayEntity(new AudioStream(ev.Uid, source));
+        var stream = new AudioStream(ev.Uid, source);
+        AddEntityStreamToQueue(stream);
+    }
+
+    private void AddEntityStreamToQueue(AudioStream stream)
+    {
+        
+        if (_entityQueues.TryGetValue(stream.Uid, out var queue))
+        {
+            queue.Enqueue(stream);
+        }
+        else
+        {
+            _entityQueues.Add(stream.Uid, new Queue<AudioStream>(new[] { stream }));
+        }
+    }
+
+    private AudioStream TakeEntityStreamFromQueue(EntityUid uid)
+    {
+        if (_entityQueues.TryGetValue(uid, out var queue))
+        {
+            var stream = queue.Dequeue();
+            if (queue.Count == 0)
+                _entityQueues.Remove(uid);
+            return stream;
+        }
+
+        throw new Exception("Stream queue was empty for that entity");
     }
 
     private void PlayEntity(AudioStream stream)
