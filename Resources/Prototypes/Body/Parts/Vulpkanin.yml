@@ -1,0 +1,186 @@
+﻿# TODO: Add descriptions (many)
+# TODO BODY: Part damage
+- type: entity
+  id: PartVulpkanin
+  parent: BaseItem
+  name: "Vulpkanin body part"
+  abstract: true
+  components:
+    - type: Damageable
+      damageContainer: Biological
+    - type: BodyPart
+    - type: ContainerContainer
+      containers:
+        bodypart: !type:Container
+          ents: []
+    - type: StaticPrice
+      price: 100
+
+- type: entity
+  id: TorsoVulpkanin
+  name: "Vulpkanin torso"
+  parent: PartVulpkanin
+  components:
+    - type: Sprite
+      netsync: false
+      sprite: Mobs/Species/Vulpkanin/parts.rsi
+      state: "torso_m"
+    - type: Icon
+      sprite: Mobs/Species/Vulpkanin/parts.rsi
+      state: "torso_m"
+    - type: BodyPart
+      partType: Torso
+
+- type: entity
+  id: HeadVulpkanin
+  name: "Vulpkanin head"
+  parent: PartVulpkanin
+  components:
+    - type: Sprite
+      netsync: false
+      sprite: Mobs/Species/Vulpkanin/parts.rsi
+      state: "head_m"
+    - type: Icon
+      sprite: Mobs/Species/Vulpkanin/parts.rsi
+      state: "head_m"
+    - type: BodyPart
+      partType: Head
+      vital: true
+    - type: Input
+      context: "ghost"
+    - type: MovementSpeedModifier
+      baseWalkSpeed: 0
+      baseSprintSpeed: 0
+    - type: InputMover
+    - type: GhostOnMove
+    - type: Tag
+      tags:
+        - Head
+
+- type: entity
+  id: LeftArmVulpkanin
+  name: "left Vulpkanin arm"
+  parent: PartVulpkanin
+  components:
+    - type: Sprite
+      netsync: false
+      sprite: Mobs/Species/Vulpkanin/parts.rsi
+      state: "l_arm"
+    - type: Icon
+      sprite: Mobs/Species/Vulpkanin/parts.rsi
+      state: "l_arm"
+    - type: BodyPart
+      partType: Arm
+      symmetry: Left
+
+- type: entity
+  id: RightArmVulpkanin
+  name: "right Vulpkanin arm"
+  parent: PartVulpkanin
+  components:
+    - type: Sprite
+      netsync: false
+      sprite: Mobs/Species/Vulpkanin/parts.rsi
+      state: "r_arm"
+    - type: Icon
+      sprite: Mobs/Species/Vulpkanin/parts.rsi
+      state: "r_arm"
+    - type: BodyPart
+      partType: Arm
+      symmetry: Right
+
+- type: entity
+  id: LeftHandVulpkanin
+  name: "left Vulpkanin hand"
+  parent: PartVulpkanin
+  components:
+    - type: Sprite
+      netsync: false
+      sprite: Mobs/Species/Vulpkanin/parts.rsi
+      state: "l_hand"
+    - type: Icon
+      sprite: Mobs/Species/Vulpkanin/parts.rsi
+      state: "l_hand"
+    - type: BodyPart
+      partType: Hand
+      symmetry: Left
+
+- type: entity
+  id: RightHandVulpkanin
+  name: "right Vulpkanin hand"
+  parent: PartVulpkanin
+  components:
+    - type: Sprite
+      netsync: false
+      sprite: Mobs/Species/Vulpkanin/parts.rsi
+      state: "r_hand"
+    - type: Icon
+      sprite: Mobs/Species/Vulpkanin/parts.rsi
+      state: "r_hand"
+    - type: BodyPart
+      partType: Hand
+      symmetry: Right
+
+- type: entity
+  id: LeftLegVulpkanin
+  name: "left Vulpkanin leg"
+  parent: PartVulpkanin
+  components:
+    - type: Sprite
+      netsync: false
+      sprite: Mobs/Species/Vulpkanin/parts.rsi
+      state: "l_leg"
+    - type: Icon
+      sprite: Mobs/Species/Vulpkanin/parts.rsi
+      state: "l_leg"
+    - type: BodyPart
+      partType: Leg
+      symmetry: Left
+
+- type: entity
+  id: RightLegVulpkanin
+  name: "right Vulpkanin leg"
+  parent: PartVulpkanin
+  components:
+    - type: Sprite
+      netsync: false
+      sprite: Mobs/Species/Vulpkanin/parts.rsi
+      state: "r_leg"
+    - type: Icon
+      sprite: Mobs/Species/Vulpkanin/parts.rsi
+      state: "r_leg"
+    - type: BodyPart
+      partType: Leg
+      symmetry: Right
+
+- type: entity
+  id: LeftFootVulpkanin
+  name: "left Vulpkanin foot"
+  parent: PartVulpkanin
+  components:
+    - type: Sprite
+      netsync: false
+      sprite: Mobs/Species/Vulpkanin/parts.rsi
+      state: "l_foot"
+    - type: Icon
+      sprite: Mobs/Species/Vulpkanin/parts.rsi
+      state: "l_foot"
+    - type: BodyPart
+      partType: Foot
+      symmetry: Left
+
+- type: entity
+  id: RightFootVulpkanin
+  name: "right Vulpkanin foot"
+  parent: PartVulpkanin
+  components:
+    - type: Sprite
+      netsync: false
+      sprite: Mobs/Species/Vulpkanin/parts.rsi
+      state: "r_foot"
+    - type: Icon
+      sprite: Mobs/Species/Vulpkanin/parts.rsi
+      state: "r_foot"
+    - type: BodyPart
+      partType: Foot
+      symmetry: Right

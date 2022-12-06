@@ -1,0 +1,102 @@
+﻿- type: entity
+  parent: BaseMobOrganic
+  id: BaseMobVulpkanin
+  abstract: true
+  components:
+    - type: Hunger
+    - type: Thirst
+    - type: Icon
+      sprite: Mobs/Species/Vulpkanin/parts.rsi
+      state: vulpkanin_m
+    - type: Sprite
+      layers:
+        - map: [ "enum.HumanoidVisualLayers.Chest" ]
+          sprite: Mobs/Species/Vulpkanin/parts.rsi
+          state: torso_m
+        - map: [ "enum.HumanoidVisualLayers.Head" ]
+          sprite: Mobs/Species/Vulpkanin/parts.rsi
+          state: head_m
+        - map: [ "enum.HumanoidVisualLayers.Eyes" ]
+          color: "#008800"
+          sprite: Mobs/Customization/eyes.rsi
+          state: vulpkanin_eyes_s
+        - map: [ "enum.HumanoidVisualLayers.RArm" ]
+          sprite: Mobs/Species/Vulpkanin/parts.rsi
+          state: r_arm
+        - map: [ "enum.HumanoidVisualLayers.LArm" ]
+          sprite: Mobs/Species/Vulpkanin/parts.rsi
+          state: l_arm
+        - map: [ "enum.HumanoidVisualLayers.RLeg" ]
+          sprite: Mobs/Species/Vulpkanin/parts.rsi
+          state: r_leg
+        - map: [ "enum.HumanoidVisualLayers.LLeg" ]
+          sprite: Mobs/Species/Vulpkanin/parts.rsi
+          state: l_leg
+        - map: [ "enum.HumanoidVisualLayers.LHand" ]
+          sprite: Mobs/Species/Vulpkanin/parts.rsi
+          state: l_hand
+        - map: [ "enum.HumanoidVisualLayers.RHand" ]
+          sprite: Mobs/Species/Vulpkanin/parts.rsi
+          state: r_hand
+        - map: [ "enum.HumanoidVisualLayers.LFoot" ]
+          sprite: Mobs/Species/Vulpkanin/parts.rsi
+          state: l_foot
+        - map: [ "enum.HumanoidVisualLayers.RFoot" ]
+          sprite: Mobs/Species/Vulpkanin/parts.rsi
+          state: r_foot
+        - map: [ "enum.HumanoidVisualLayers.Handcuffs" ]
+          color: "#ffffff"
+          sprite: Objects/Misc/handcuffs.rsi
+          state: body-overlay-2
+          visible: false
+        - map: [ "id" ]
+        - map: [ "gloves" ]
+        - map: [ "shoes" ]
+        - map: [ "ears" ]
+        - map: [ "outerClothing" ]
+        - map: [ "eyes" ]
+        - map: [ "belt" ]
+        - map: [ "neck" ]
+        - map: [ "back" ]
+        - map: [ "enum.HumanoidVisualLayers.FacialHair" ]
+          state: shaved
+          sprite: Mobs/Customization/human_facial_hair.rsi
+        - map: [ "enum.HumanoidVisualLayers.Hair" ]
+          state: bald
+          sprite: Mobs/Customization/human_hair.rsi
+        - map: [ "mask" ]
+        - map: [ "head" ]
+        - map: [ "pocket1" ]
+        - map: [ "pocket2" ]
+    - type: Body
+      prototype: Vulpkanin
+    # Vulpkanin nitrogen stuff is handled in their metabolism
+    - type: Respirator
+      damage:
+        types:
+          Asphyxiation: 2
+      damageRecovery:
+        types:
+          Asphyxiation: -1.0
+    - type: Humanoid
+      species: Vulpkanin
+      # canColorHair: false
+      # canColorFacialHair: false
+    - type: Inventory
+      speciesId: Vulpkanin
+    - type: Butcherable
+      butcheringType: Spike
+      spawned:
+        - id: FoodMeatChicken
+          amount: 5
+
+- type: entity
+  id: MobVulpkaninDummy
+  parent: MobHumanDummy
+  noSpawn: true
+  components:
+    - type: Humanoid
+      species: Vulpkanin
+    - type: Body
+      prototype: Vulpkanin
+

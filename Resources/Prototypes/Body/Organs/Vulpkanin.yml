@@ -1,0 +1,7 @@
+﻿- type: entity
+  id: OrganVulpkaninLungs
+  parent: OrganHumanLungs
+  suffix: "vulpkanin"
+  components:
+    - type: Metabolizer
+      metabolizerTypes: [ Vulpkanin ]
