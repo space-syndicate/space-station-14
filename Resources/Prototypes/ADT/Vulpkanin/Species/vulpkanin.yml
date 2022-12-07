@@ -1,6 +1,6 @@
 ﻿- type: species
   id: Vulpkanin
-  name: Vulpkanin
+  name: species-name-vulpkanin
   roundStart: true # sad...
   prototype: MobVulpkanin
   sprites: MobVulpkaninSprites
@@ -28,7 +28,7 @@
 
 - type: markingPoints
   id: MobVulpkaninMarkingLimits
-  onlyWhitelisted: true
+  onlyWhitelisted: false
   points:
     Hair:
       points: 1
@@ -44,6 +44,9 @@
       required: false
     Arms:
       points: 2
+      required: false
+    Tail:
+      points: 1
       required: false
 
 - type: humanoidBaseSprite

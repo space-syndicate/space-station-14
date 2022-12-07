@@ -1,6 +1,6 @@
 ﻿- type: entity
   save: false
-  name: Vulpkanin
+  name: "Вульпканин"
   parent: BaseMobVulpkanin
   id: MobVulpkanin
   components:
@@ -35,4 +35,3 @@
       damageRecovery:
         types:
           Asphyxiation: -1.0
-

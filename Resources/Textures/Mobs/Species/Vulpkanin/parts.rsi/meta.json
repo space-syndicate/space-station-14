@@ -11,6 +11,10 @@
       "name": "head_m",
       "directions": 4
     },
+      {
+          "name": "head_f",
+          "directions": 4
+      },
     {
       "name": "l_arm",
       "directions": 4
@@ -51,6 +55,10 @@
       "name": "torso_m",
       "directions": 4
     },
+      {
+          "name": "torso_f",
+          "directions": 4
+      },
     {
        "name": "tail_m",
        "directions": 4

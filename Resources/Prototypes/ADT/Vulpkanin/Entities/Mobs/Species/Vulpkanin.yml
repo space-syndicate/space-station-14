@@ -1,8 +1,12 @@
 ﻿- type: entity
+  save: false
+  name: "Вульпака"
   parent: BaseMobOrganic
   id: BaseMobVulpkanin
   abstract: true
   components:
+    - type: Humanoid
+      species: Vulpkanin
     - type: Hunger
     - type: Thirst
     - type: Icon
@@ -10,6 +14,9 @@
       state: vulpkanin_m
     - type: Sprite
       layers:
+        - map: [ "enum.HumanoidVisualLayers.Tail" ]
+          sprite: Mobs/Species/Vulpkanin/parts.rsi
+          state: tail_m
         - map: [ "enum.HumanoidVisualLayers.Chest" ]
           sprite: Mobs/Species/Vulpkanin/parts.rsi
           state: torso_m
@@ -70,25 +77,33 @@
         - map: [ "pocket2" ]
     - type: Body
       prototype: Vulpkanin
-    # Vulpkanin nitrogen stuff is handled in their metabolism
-    - type: Respirator
+    - type: Damageable
+      damageContainer: Biological
+      damageModifierSet: Scale
+    - type: MeleeWeapon
+      hidden: true
+      soundHit:
+        path: /Audio/Weapons/pierce.ogg
+      angle: 30
+      animation: WeaponArcPunch
       damage:
         types:
-          Asphyxiation: 2
-      damageRecovery:
+          Piercing: 5
+    - type: Temperature
+      heatDamageThreshold: 400
+      coldDamageThreshold: 200
+      currentTemperature: 310.15
+      specificHeat: 46
+      coldDamage:
         types:
-          Asphyxiation: -1.0
-    - type: Humanoid
-      species: Vulpkanin
-      # canColorHair: false
-      # canColorFacialHair: false
-    - type: Inventory
-      speciesId: Vulpkanin
-    - type: Butcherable
-      butcheringType: Spike
-      spawned:
-        - id: FoodMeatChicken
-          amount: 5
+          Cold : 0.1 #per second, scales with temperature & other constants
+      heatDamage:
+        types:
+          Heat : 0.2 #per second, scales with temperature & other constants
+    - type: MovementSpeedModifier
+      baseWalkSpeed : 3.0
+      baseSprintSpeed : 4.9
+    - type: Perishable
 
 - type: entity
   id: MobVulpkaninDummy
