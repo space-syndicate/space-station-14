@@ -24,6 +24,7 @@
     RLeg: MobVulpkaninRLeg
     LFoot: MobVulpkaninLFoot
     RFoot: MobVulpkaninRFoot
+    Tail: MobVulpkaninTail
 
 - type: markingPoints
   id: MobVulpkaninMarkingLimits
@@ -50,6 +51,12 @@
   baseSprite:
     sprite: Mobs/Customization/eyes.rsi
     state: vulpkanin_eyes_s
+
+- type: humanoidBaseSprite
+  id: MobVulpkaninTail
+  baseSprite:
+    sprite: Mobs/Species/Vulpkanin/parts.rsi
+    state: tail_m
 
 - type: humanoidBaseSprite
   id: MobVulpkaninHead

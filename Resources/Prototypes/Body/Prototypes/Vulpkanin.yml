@@ -17,6 +17,7 @@
         - right arm
         - left leg
         - right leg
+        - tail
       organs:
         heart: OrganHumanHeart
         lungs: OrganVulpkaninLungs
@@ -47,3 +48,5 @@
       part: RightFootVulpkanin
     left foot:
       part: LeftFootVulpkanin
+    tail:
+      part: TailVulpkanin
