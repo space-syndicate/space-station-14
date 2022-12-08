@@ -1,17 +1,17 @@
 ﻿- type: body
-  id: Vulpkanin
+  id: Tajaran
   name: "Вульпканин"
   root: torso
   slots:
     head:
-      part: HeadVulpkanin
+      part: HeadTajaran
       connections:
         - torso
       organs:
         brain: OrganHumanBrain
         eyes: OrganHumanEyes
     torso:
-      part: TorsoVulpkanin
+      part: TorsoTajaran
       connections:
         - left arm
         - right arm
@@ -21,32 +21,32 @@
       organs:
         heart: OrganHumanHeart
         lungs: OrganHumanLungs
-        stomach: OrganVulpkaninStomach
+        stomach: OrganTajaranStomach
         liver: OrganHumanLiver
         kidneys: OrganHumanKidneys
     right arm:
-      part: RightArmVulpkanin
+      part: RightArmTajaran
       connections:
         - right hand
     left arm:
-      part: LeftArmVulpkanin
+      part: LeftArmTajaran
       connections:
         - left hand
     right hand:
-      part: RightHandVulpkanin
+      part: RightHandTajaran
     left hand:
-      part: LeftHandVulpkanin
+      part: LeftHandTajaran
     right leg:
-      part: RightLegVulpkanin
+      part: RightLegTajaran
       connections:
         - right foot
     left leg:
-      part: LeftLegVulpkanin
+      part: LeftLegTajaran
       connections:
         - left foot
     right foot:
-      part: RightFootVulpkanin
+      part: RightFootTajaran
     left foot:
-      part: LeftFootVulpkanin
+      part: LeftFootTajaran
     tail:
-      part: TailVulpkanin
+      part: TailTajaran

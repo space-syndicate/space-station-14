@@ -1,8 +1,8 @@
 ﻿- type: entity
   save: false
   name: "Вульпканин"
-  parent: BaseMobVulpkanin
-  id: MobVulpkanin
+  parent: BaseMobTajaran
+  id: MobTajaran
   components:
     - type: CombatMode
       disarm: null

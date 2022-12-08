@@ -1,3 +1,3 @@
-﻿species-name-vulpkanin = Vulpkanin
-species-vulpkanin-body-parts = "Vulpkanin body part"
-species-vulpkanin-torso = "Vulpkanin torso"
+﻿species-name-tajaran = Tajaran
+species-tajaran-body-parts = "Tajaran body part"
+species-tajaran-torso = "Tajaran torso"

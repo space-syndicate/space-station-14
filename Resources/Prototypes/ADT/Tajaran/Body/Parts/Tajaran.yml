@@ -1,9 +1,9 @@
 ﻿# TODO: Add descriptions (many)
 # TODO BODY: Part damage
 - type: entity
-  id: PartVulpkanin
+  id: PartTajaran
   parent: BaseItem
-  name: "Вульпканин части тела"
+  name: "Таяр части тела"
   abstract: true
   components:
     - type: Damageable
@@ -15,31 +15,31 @@
           ents: []
 
 - type: entity
-  id: TorsoVulpkanin
-  name: "тело вульпканина"
-  parent: PartVulpkanin
+  id: TorsoTajaran
+  name: "тело таяра"
+  parent: PartTajaran
   components:
     - type: Sprite
       netsync: false
-      sprite: Mobs/Species/Vulpkanin/parts.rsi
+      sprite: Mobs/Species/Tajaran/parts.rsi
       state: "torso_m"
     - type: Icon
-      sprite: Mobs/Species/Vulpkanin/parts.rsi
+      sprite: Mobs/Species/Tajaran/parts.rsi
       state: "torso_m"
     - type: BodyPart
       partType: Torso
 
 - type: entity
-  id: HeadVulpkanin
-  name: "голова вульпканина"
-  parent: PartVulpkanin
+  id: HeadTajaran
+  name: "голова таяра"
+  parent: PartTajaran
   components:
     - type: Sprite
       netsync: false
-      sprite: Mobs/Species/Vulpkanin/parts.rsi
+      sprite: Mobs/Species/Tajaran/parts.rsi
       state: "head_m"
     - type: Icon
-      sprite: Mobs/Species/Vulpkanin/parts.rsi
+      sprite: Mobs/Species/Tajaran/parts.rsi
       state: "head_m"
     - type: BodyPart
       partType: Head
@@ -56,143 +56,143 @@
         - Head
 
 - type: entity
-  id: LeftArmVulpkanin
-  name: "левая рука вульпканина"
-  parent: PartVulpkanin
+  id: LeftArmTajaran
+  name: "левая рука таяра"
+  parent: PartTajaran
   components:
     - type: Sprite
       netsync: false
-      sprite: Mobs/Species/Vulpkanin/parts.rsi
+      sprite: Mobs/Species/Tajaran/parts.rsi
       state: "l_arm"
     - type: Icon
-      sprite: Mobs/Species/Vulpkanin/parts.rsi
+      sprite: Mobs/Species/Tajaran/parts.rsi
       state: "l_arm"
     - type: BodyPart
       partType: Arm
       symmetry: Left
 
 - type: entity
-  id: RightArmVulpkanin
-  name: "правая рука вульпканина"
-  parent: PartVulpkanin
+  id: RightArmTajaran
+  name: "правая рука таяра"
+  parent: PartTajaran
   components:
     - type: Sprite
       netsync: false
-      sprite: Mobs/Species/Vulpkanin/parts.rsi
+      sprite: Mobs/Species/Tajaran/parts.rsi
       state: "r_arm"
     - type: Icon
-      sprite: Mobs/Species/Vulpkanin/parts.rsi
+      sprite: Mobs/Species/Tajaran/parts.rsi
       state: "r_arm"
     - type: BodyPart
       partType: Arm
       symmetry: Right
 
 - type: entity
-  id: LeftHandVulpkanin
-  name: "левая кисть вульпканина"
-  parent: PartVulpkanin
+  id: LeftHandTajaran
+  name: "левая кисть таяра"
+  parent: PartTajaran
   components:
     - type: Sprite
       netsync: false
-      sprite: Mobs/Species/Vulpkanin/parts.rsi
+      sprite: Mobs/Species/Tajaran/parts.rsi
       state: "l_hand"
     - type: Icon
-      sprite: Mobs/Species/Vulpkanin/parts.rsi
+      sprite: Mobs/Species/Tajaran/parts.rsi
       state: "l_hand"
     - type: BodyPart
       partType: Hand
       symmetry: Left
 
 - type: entity
-  id: RightHandVulpkanin
-  name: "правая кисть вульпканина"
-  parent: PartVulpkanin
+  id: RightHandTajaran
+  name: "правая кисть таяра"
+  parent: PartTajaran
   components:
     - type: Sprite
       netsync: false
-      sprite: Mobs/Species/Vulpkanin/parts.rsi
+      sprite: Mobs/Species/Tajaran/parts.rsi
       state: "r_hand"
     - type: Icon
-      sprite: Mobs/Species/Vulpkanin/parts.rsi
+      sprite: Mobs/Species/Tajaran/parts.rsi
       state: "r_hand"
     - type: BodyPart
       partType: Hand
       symmetry: Right
 
 - type: entity
-  id: TailVulpkanin
-  name: "хвост вульпканина"
-  parent: PartVulpkanin
+  id: TailTajaran
+  name: "хвост таяра"
+  parent: PartTajaran
   components:
     - type: Sprite
       netsync: false
-      sprite: Mobs/Species/Vulpkanin/parts.rsi
+      sprite: Mobs/Species/Tajaran/parts.rsi
       state: "tail_m"
     - type: Icon
-      sprite: Mobs/Species/Vulpkanin/parts.rsi
+      sprite: Mobs/Species/Tajaran/parts.rsi
       state: "tail_m"
     - type: BodyPart
       partType: Tail
 
 - type: entity
-  id: LeftLegVulpkanin
-  name: "левая нога вульпканина"
-  parent: PartVulpkanin
+  id: LeftLegTajaran
+  name: "левая нога таяра"
+  parent: PartTajaran
   components:
     - type: Sprite
       netsync: false
-      sprite: Mobs/Species/Vulpkanin/parts.rsi
+      sprite: Mobs/Species/Tajaran/parts.rsi
       state: "l_leg"
     - type: Icon
-      sprite: Mobs/Species/Vulpkanin/parts.rsi
+      sprite: Mobs/Species/Tajaran/parts.rsi
       state: "l_leg"
     - type: BodyPart
       partType: Leg
       symmetry: Left
 
 - type: entity
-  id: RightLegVulpkanin
-  name: "правая нога вульпканина"
-  parent: PartVulpkanin
+  id: RightLegTajaran
+  name: "правая нога таяра"
+  parent: PartTajaran
   components:
     - type: Sprite
       netsync: false
-      sprite: Mobs/Species/Vulpkanin/parts.rsi
+      sprite: Mobs/Species/Tajaran/parts.rsi
       state: "r_leg"
     - type: Icon
-      sprite: Mobs/Species/Vulpkanin/parts.rsi
+      sprite: Mobs/Species/Tajaran/parts.rsi
       state: "r_leg"
     - type: BodyPart
       partType: Leg
       symmetry: Right
 
 - type: entity
-  id: LeftFootVulpkanin
-  name: "левая ступня вульпканина"
-  parent: PartVulpkanin
+  id: LeftFootTajaran
+  name: "левая ступня таяра"
+  parent: PartTajaran
   components:
     - type: Sprite
       netsync: false
-      sprite: Mobs/Species/Vulpkanin/parts.rsi
+      sprite: Mobs/Species/Tajaran/parts.rsi
       state: "l_foot"
     - type: Icon
-      sprite: Mobs/Species/Vulpkanin/parts.rsi
+      sprite: Mobs/Species/Tajaran/parts.rsi
       state: "l_foot"
     - type: BodyPart
       partType: Foot
       symmetry: Left
 
 - type: entity
-  id: RightFootVulpkanin
-  name: "правая ступня вульпканина"
-  parent: PartVulpkanin
+  id: RightFootTajaran
+  name: "правая ступня таяра"
+  parent: PartTajaran
   components:
     - type: Sprite
       netsync: false
-      sprite: Mobs/Species/Vulpkanin/parts.rsi
+      sprite: Mobs/Species/Tajaran/parts.rsi
       state: "r_foot"
     - type: Icon
-      sprite: Mobs/Species/Vulpkanin/parts.rsi
+      sprite: Mobs/Species/Tajaran/parts.rsi
       state: "r_foot"
     - type: BodyPart
       partType: Foot
