@@ -3,9 +3,12 @@
   name: job-name-paramedic
   playTimeTracker: JobParamedic
   requirements:
+    - !type:RoleTimeRequirement
+      role: JobChemist
+      time: 18000
     - !type:DepartmentTimeRequirement
       department: Medical
-      time: 3600
+      time: 54000
   startingGear: ParamedicGear
   icon: "MedicalDoctor"
   supervisors: job-supervisors-cmo
@@ -25,6 +28,7 @@
     ears: ClothingHeadsetMedical
     belt: ClothingBeltMedical
     pocket1: HandheldCrewMonitor
+    pocket2: JawsOfLife
     gloves: ClothingHandsGlovesNitrile
     # the purple glasses?
   innerclothingskirt: ClothingUniformJumpskirtColorWhite
