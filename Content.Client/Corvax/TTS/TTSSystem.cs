@@ -1,5 +1,6 @@
 ﻿using System.Diagnostics.CodeAnalysis;
 using System.IO;
+using System.Linq;
 using Content.Shared.Corvax.TTS;
 using Content.Shared.Physics;
 using Robust.Client.Graphics;
@@ -74,9 +75,10 @@ public sealed class TTSSystem : EntitySystem
             }
         }
 
-        foreach (var item in streamToRemove)
+        foreach (var audioStream in streamToRemove)
         {
-            _currentStreams.Remove(item);
+            _currentStreams.Remove(audioStream);
+            ProcessEntityQueue(audioStream.Uid);
         }
     }
 
@@ -88,10 +90,17 @@ public sealed class TTSSystem : EntitySystem
         var stream = new AudioStream(ev.Uid, source);
         AddEntityStreamToQueue(stream);
     }
+    
+    private bool TryCreateAudioSource(byte[] data, [NotNullWhen(true)] out IClydeAudioSource? source)
+    {
+        var dataStream = new MemoryStream(data) { Position = 0 };
+        var audioStream = _clyde.LoadAudioOggVorbis(dataStream);
+        source = _clyde.CreateAudioSource(audioStream);
+        return source != null;
+    }
 
     private void AddEntityStreamToQueue(AudioStream stream)
     {
-        
         if (_entityQueues.TryGetValue(stream.Uid, out var queue))
         {
             queue.Enqueue(stream);
@@ -99,20 +108,36 @@ public sealed class TTSSystem : EntitySystem
         else
         {
             _entityQueues.Add(stream.Uid, new Queue<AudioStream>(new[] { stream }));
+            
+            if (!IsEntityCurrentlyPlayStream(stream.Uid))
+                ProcessEntityQueue(stream.Uid);
         }
     }
 
-    private AudioStream TakeEntityStreamFromQueue(EntityUid uid)
+    private bool IsEntityCurrentlyPlayStream(EntityUid uid)
+    {
+        return _currentStreams.Any(s => s.Uid == uid);
+    }
+
+    private void ProcessEntityQueue(EntityUid uid)
+    {
+        if (!TryTakeEntityStreamFromQueue(uid, out var stream))
+            return;
+        PlayEntity(stream);
+    }
+
+    private bool TryTakeEntityStreamFromQueue(EntityUid uid, [NotNullWhen(true)] out AudioStream? stream)
     {
         if (_entityQueues.TryGetValue(uid, out var queue))
         {
-            var stream = queue.Dequeue();
+            stream = queue.Dequeue();
             if (queue.Count == 0)
                 _entityQueues.Remove(uid);
-            return stream;
+            return true;
         }
 
-        throw new Exception("Stream queue was empty for that entity");
+        stream = null;
+        return false;
     }
 
     private void PlayEntity(AudioStream stream)
@@ -123,14 +148,6 @@ public sealed class TTSSystem : EntitySystem
 
         stream.Source.StartPlaying();
         _currentStreams.Add(stream);
-    }
-    
-    private bool TryCreateAudioSource(byte[] data, [NotNullWhen(true)] out IClydeAudioSource? source)
-    {
-        var dataStream = new MemoryStream(data) { Position = 0 };
-        var audioStream = _clyde.LoadAudioOggVorbis(dataStream);
-        source = _clyde.CreateAudioSource(audioStream);
-        return source != null;
     }
 
     // ReSharper disable once InconsistentNaming
