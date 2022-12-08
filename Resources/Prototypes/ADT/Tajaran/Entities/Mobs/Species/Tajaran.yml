@@ -1,6 +1,6 @@
 ﻿- type: entity
   save: false
-  name: "Вульпака"
+  name: "Таяр"
   parent: BaseMobOrganic
   id: BaseMobTajaran
   abstract: true
@@ -11,70 +11,7 @@
     - type: Thirst
     - type: Icon
       sprite: Mobs/Species/Tajaran/parts.rsi
-      state: Tajaran_m
-    - type: Sprite
-      layers:
-        - map: [ "enum.HumanoidVisualLayers.Tail" ]
-          sprite: Mobs/Species/Tajaran/parts.rsi
-          state: tail_m
-        - map: [ "enum.HumanoidVisualLayers.Chest" ]
-          sprite: Mobs/Species/Tajaran/parts.rsi
-          state: torso_m
-        - map: [ "enum.HumanoidVisualLayers.Head" ]
-          sprite: Mobs/Species/Tajaran/parts.rsi
-          state: head_m
-        - map: [ "enum.HumanoidVisualLayers.Eyes" ]
-          color: "#008800"
-          sprite: Mobs/Customization/eyes.rsi
-          state: Tajaran_eyes_s
-        - map: [ "enum.HumanoidVisualLayers.RArm" ]
-          sprite: Mobs/Species/Tajaran/parts.rsi
-          state: r_arm
-        - map: [ "enum.HumanoidVisualLayers.LArm" ]
-          sprite: Mobs/Species/Tajaran/parts.rsi
-          state: l_arm
-        - map: [ "enum.HumanoidVisualLayers.RLeg" ]
-          sprite: Mobs/Species/Tajaran/parts.rsi
-          state: r_leg
-        - map: [ "enum.HumanoidVisualLayers.LLeg" ]
-          sprite: Mobs/Species/Tajaran/parts.rsi
-          state: l_leg
-        - map: [ "enum.HumanoidVisualLayers.LHand" ]
-          sprite: Mobs/Species/Tajaran/parts.rsi
-          state: l_hand
-        - map: [ "enum.HumanoidVisualLayers.RHand" ]
-          sprite: Mobs/Species/Tajaran/parts.rsi
-          state: r_hand
-        - map: [ "enum.HumanoidVisualLayers.LFoot" ]
-          sprite: Mobs/Species/Tajaran/parts.rsi
-          state: l_foot
-        - map: [ "enum.HumanoidVisualLayers.RFoot" ]
-          sprite: Mobs/Species/Tajaran/parts.rsi
-          state: r_foot
-        - map: [ "enum.HumanoidVisualLayers.Handcuffs" ]
-          color: "#ffffff"
-          sprite: Objects/Misc/handcuffs.rsi
-          state: body-overlay-2
-          visible: false
-        - map: [ "id" ]
-        - map: [ "gloves" ]
-        - map: [ "shoes" ]
-        - map: [ "ears" ]
-        - map: [ "outerClothing" ]
-        - map: [ "eyes" ]
-        - map: [ "belt" ]
-        - map: [ "neck" ]
-        - map: [ "back" ]
-        - map: [ "enum.HumanoidVisualLayers.FacialHair" ]
-          state: shaved
-          sprite: Mobs/Customization/human_facial_hair.rsi
-        - map: [ "enum.HumanoidVisualLayers.Hair" ]
-          state: bald
-          sprite: Mobs/Customization/human_hair.rsi
-        - map: [ "mask" ]
-        - map: [ "head" ]
-        - map: [ "pocket1" ]
-        - map: [ "pocket2" ]
+      state: tajaran_m
     - type: Body
       prototype: Tajaran
     - type: Damageable
@@ -96,10 +33,10 @@
       specificHeat: 46
       coldDamage:
         types:
-          Cold : 0.1 #per second, scales with temperature & other constants
+          Cold : 0.2 #per second, scales with temperature & other constants
       heatDamage:
         types:
-          Heat : 0.2 #per second, scales with temperature & other constants
+          Heat : 0.1 #per second, scales with temperature & other constants
     - type: MovementSpeedModifier
       baseWalkSpeed : 3.0
       baseSprintSpeed : 4.9

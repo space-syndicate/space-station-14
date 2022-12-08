@@ -1,6 +1,6 @@
 ﻿- type: body
   id: Tajaran
-  name: "Вульпканин"
+  name: "Таяр"
   root: torso
   slots:
     head:
@@ -12,18 +12,18 @@
         eyes: OrganHumanEyes
     torso:
       part: TorsoTajaran
-      connections:
-        - left arm
-        - right arm
-        - left leg
-        - right leg
-        - tail
       organs:
         heart: OrganHumanHeart
         lungs: OrganHumanLungs
         stomach: OrganTajaranStomach
         liver: OrganHumanLiver
         kidneys: OrganHumanKidneys
+      connections:
+        - left arm
+        - right arm
+        - left leg
+        - right leg
+        - tail
     right arm:
       part: RightArmTajaran
       connections:
