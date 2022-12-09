@@ -49,7 +49,6 @@ public sealed class TTSSystem : EntitySystem
                 continue;
             }
 
-            // TODO: Stop stream when entity exit PVS or just set to volume to zero?
             var mapPos = xform.MapPosition;
             if (mapPos.MapId != MapId.Nullspace)
             {
@@ -121,9 +120,8 @@ public sealed class TTSSystem : EntitySystem
 
     private void ProcessEntityQueue(EntityUid uid)
     {
-        if (!TryTakeEntityStreamFromQueue(uid, out var stream))
-            return;
-        PlayEntity(stream);
+        if (TryTakeEntityStreamFromQueue(uid, out var stream))
+            PlayEntity(stream);
     }
 
     private bool TryTakeEntityStreamFromQueue(EntityUid uid, [NotNullWhen(true)] out AudioStream? stream)
