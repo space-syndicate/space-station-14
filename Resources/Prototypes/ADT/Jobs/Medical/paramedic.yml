@@ -22,13 +22,12 @@
   id: ParamedicGear
   equipment:
     jumpsuit: ClothingUniformJumpsuitParamedic
-    back: ClothingBackpackMedicalFilled
+    back: ClothingBackpackParamedicalMedicalFilled
     shoes: ClothingShoesColorWhite
     id: PramedicPDA
     ears: ClothingHeadsetMedical
     belt: ClothingBeltMedical
     pocket1: HandheldCrewMonitor
-    pocket2: JawsOfLife
     gloves: ClothingHandsGlovesNitrile
     # the purple glasses?
   innerclothingskirt: ClothingUniformJumpskirtColorWhite
