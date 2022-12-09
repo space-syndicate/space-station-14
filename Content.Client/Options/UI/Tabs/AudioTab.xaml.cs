@@ -151,6 +151,7 @@ namespace Content.Client.Options.UI.Tabs
             MidiVolumeSlider.Value = DBToLV100(_cfg.GetCVar(CVars.MidiVolume));
             AmbienceVolumeSlider.Value = DBToLV100(_cfg.GetCVar(CCVars.AmbienceVolume));
             LobbyVolumeSlider.Value = DBToLV100(_cfg.GetCVar(CCVars.LobbyMusicVolume));
+            TtsVolumeSlider.Value = DBToLV100(_cfg.GetCVar(CCVars.TtsVolume)); // Corvax-TTS
             AmbienceSoundsSlider.Value = _cfg.GetCVar(CCVars.MaxAmbientSources);
             LobbyMusicCheckBox.Pressed = _cfg.GetCVar(CCVars.LobbyMusicEnabled);
             RestartSoundsCheckBox.Pressed = _cfg.GetCVar(CCVars.RestartSoundsEnabled);
