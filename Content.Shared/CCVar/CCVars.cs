@@ -1448,5 +1448,11 @@ namespace Content.Shared.CCVar
         /// </summary>
         public static readonly CVarDef<string> TTSApiToken =
             CVarDef.Create("tts.api_token", "", CVar.SERVERONLY);
+
+        /// <summary>
+        /// Lobby / round end music volume.
+        /// </summary>
+        public static readonly CVarDef<float> TtsVolume =
+            CVarDef.Create("tts.volume", 0f, CVar.CLIENTONLY | CVar.ARCHIVE);
     }
 }

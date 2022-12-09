@@ -2,7 +2,6 @@
 using Content.Shared.CCVar;
 using Content.Shared.Corvax.TTS;
 using Content.Shared.GameTicking;
-using Robust.Shared.Audio;
 using Robust.Shared.Configuration;
 using Robust.Shared.Player;
 using Robust.Shared.Prototypes;

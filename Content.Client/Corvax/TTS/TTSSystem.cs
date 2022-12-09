@@ -1,9 +1,11 @@
 ﻿using System.Diagnostics.CodeAnalysis;
 using System.IO;
 using System.Linq;
+using Content.Shared.CCVar;
 using Content.Shared.Corvax.TTS;
 using Content.Shared.Physics;
 using Robust.Client.Graphics;
+using Robust.Shared.Configuration;
 using Robust.Shared.Map;
 using Robust.Shared.Physics;
 using Robust.Shared.Physics.Systems;
@@ -19,16 +21,27 @@ public sealed class TTSSystem : EntitySystem
     [Dependency] private readonly IClydeAudio _clyde = default!;
     [Dependency] private readonly IEntityManager _entity = default!;
     [Dependency] private readonly IEyeManager _eye = default!;
+    [Dependency] private readonly IConfigurationManager _cfg = default!;
     [Dependency] private readonly SharedPhysicsSystem _broadPhase = default!;
     
     private ISawmill _sawmill = default!;
+    private float _volume = 0.0f;
+    
     private readonly HashSet<AudioStream> _currentStreams = new();
     private readonly Dictionary<EntityUid, Queue<AudioStream>> _entityQueues = new();
 
     public override void Initialize()
     {
         _sawmill = Logger.GetSawmill("tts");
+        _cfg.OnValueChanged(CCVars.TtsVolume, OnTtsVolumeChanged, true);
         SubscribeNetworkEvent<PlayTTSEvent>(OnPlayTTS);
+    }
+
+    public override void Shutdown()
+    {
+        base.Shutdown();
+        _cfg.UnsubValueChanged(CCVars.TtsVolume, OnTtsVolumeChanged);
+        EndStreams();
     }
 
     // Little bit of duplication logic from AudioSystem
@@ -80,6 +93,11 @@ public sealed class TTSSystem : EntitySystem
             ProcessEntityQueue(audioStream.Uid);
         }
     }
+    
+    private void OnTtsVolumeChanged(float volume)
+    {
+        _volume = volume;
+    }
 
     private void OnPlayTTS(PlayTTSEvent ev)
     {
@@ -95,6 +113,7 @@ public sealed class TTSSystem : EntitySystem
         var dataStream = new MemoryStream(data) { Position = 0 };
         var audioStream = _clyde.LoadAudioOggVorbis(dataStream);
         source = _clyde.CreateAudioSource(audioStream);
+        source?.SetVolume(_volume);
         return source != null;
     }
 
@@ -146,6 +165,18 @@ public sealed class TTSSystem : EntitySystem
 
         stream.Source.StartPlaying();
         _currentStreams.Add(stream);
+    }
+
+    private void EndStreams()
+    {
+        foreach (var stream in _currentStreams)
+        {
+            stream.Source.StopPlaying();
+            stream.Source.Dispose();
+        }
+
+        _currentStreams.Clear();
+        _entityQueues.Clear();
     }
 
     // ReSharper disable once InconsistentNaming

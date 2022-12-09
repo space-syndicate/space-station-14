@@ -35,6 +35,7 @@ namespace Content.Client.Options.UI.Tabs
             AmbienceVolumeSlider.OnValueChanged += OnAmbienceVolumeSliderChanged;
             AmbienceSoundsSlider.OnValueChanged += OnAmbienceSoundsSliderChanged;
             LobbyVolumeSlider.OnValueChanged += OnLobbyVolumeSliderChanged;
+            TtsVolumeSlider.OnValueChanged += OnTtsVolumeSliderChanged; // Corvax-TTS
             LobbyMusicCheckBox.OnToggled += OnLobbyMusicCheckToggled;
             RestartSoundsCheckBox.OnToggled += OnRestartSoundsCheckToggled;
             EventMusicCheckBox.OnToggled += OnEventMusicCheckToggled;
@@ -56,6 +57,7 @@ namespace Content.Client.Options.UI.Tabs
             MidiVolumeSlider.OnValueChanged -= OnMidiVolumeSliderChanged;
             AmbienceVolumeSlider.OnValueChanged -= OnAmbienceVolumeSliderChanged;
             LobbyVolumeSlider.OnValueChanged -= OnLobbyVolumeSliderChanged;
+            TtsVolumeSlider.OnValueChanged -= OnTtsVolumeSliderChanged; // Corvax-TTS
             base.Dispose(disposing);
         }
 
@@ -84,6 +86,13 @@ namespace Content.Client.Options.UI.Tabs
         {
             UpdateChanges();
         }
+
+        // Corvax-TTS-Start
+        private void OnTtsVolumeSliderChanged(Range obj)
+        {
+            UpdateChanges();
+        }
+        // Corvax-TTS-End
 
         private void OnLobbyMusicCheckToggled(BaseButton.ButtonEventArgs args)
         {
@@ -119,6 +128,7 @@ namespace Content.Client.Options.UI.Tabs
             _cfg.SetCVar(CVars.MidiVolume, LV100ToDB(MidiVolumeSlider.Value));
             _cfg.SetCVar(CCVars.AmbienceVolume, LV100ToDB(AmbienceVolumeSlider.Value));
             _cfg.SetCVar(CCVars.LobbyMusicVolume, LV100ToDB(LobbyVolumeSlider.Value));
+            _cfg.SetCVar(CCVars.TtsVolume, LV100ToDB(TtsVolumeSlider.Value)); // Corvax-TTS
             _cfg.SetCVar(CCVars.MaxAmbientSources, (int)AmbienceSoundsSlider.Value);
             _cfg.SetCVar(CCVars.LobbyMusicEnabled, LobbyMusicCheckBox.Pressed);
             _cfg.SetCVar(CCVars.RestartSoundsEnabled, RestartSoundsCheckBox.Pressed);
@@ -174,6 +184,8 @@ namespace Content.Client.Options.UI.Tabs
                 Math.Abs(AmbienceVolumeSlider.Value - DBToLV100(_cfg.GetCVar(CCVars.AmbienceVolume))) < 0.01f;
             var isLobbyVolumeSame =
                 Math.Abs(LobbyVolumeSlider.Value - DBToLV100(_cfg.GetCVar(CCVars.LobbyMusicVolume))) < 0.01f;
+            var isTtsVolumeSame =
+                Math.Abs(TtsVolumeSlider.Value - DBToLV100(_cfg.GetCVar(CCVars.TtsVolume))) < 0.01f; // Corvax-TTS
             var isAmbientSoundsSame = (int)AmbienceSoundsSlider.Value == _cfg.GetCVar(CCVars.MaxAmbientSources);
             var isLobbySame = LobbyMusicCheckBox.Pressed == _cfg.GetCVar(CCVars.LobbyMusicEnabled);
             var isRestartSoundsSame = RestartSoundsCheckBox.Pressed == _cfg.GetCVar(CCVars.RestartSoundsEnabled);
@@ -183,6 +195,7 @@ namespace Content.Client.Options.UI.Tabs
             var isSpaceAmbienceSame = SpaceAmbienceCheckBox.Pressed == _cfg.GetCVar(CCVars.SpaceAmbienceEnabled);
             var isEverythingSame = isMasterVolumeSame && isMidiVolumeSame && isAmbientVolumeSame && isAmbientSoundsSame && isLobbySame && isRestartSoundsSame && isEventSame
                                    && isAdminSoundsSame && isStationAmbienceSame && isSpaceAmbienceSame && isLobbyVolumeSame;
+            isEverythingSame = isEverythingSame && isTtsVolumeSame; // Corvax-TTS
             ApplyButton.Disabled = isEverythingSame;
             ResetButton.Disabled = isEverythingSame;
             MasterVolumeLabel.Text =
@@ -193,6 +206,8 @@ namespace Content.Client.Options.UI.Tabs
                 Loc.GetString("ui-options-volume-percent", ("volume", AmbienceVolumeSlider.Value / 100));
             LobbyVolumeLabel.Text =
                 Loc.GetString("ui-options-volume-percent", ("volume", LobbyVolumeSlider.Value / 100));
+            TtsVolumeLabel.Text =
+                Loc.GetString("ui-options-volume-percent", ("volume", TtsVolumeSlider.Value / 100)); // Corvax-TTS
             AmbienceSoundsLabel.Text = ((int)AmbienceSoundsSlider.Value).ToString();
         }
     }
