@@ -455,8 +455,34 @@
   - type: ToggleableClothing
     clothingPrototype: ClothingHeadHelmetHardsuitSpatio
 
+#- type: entity
+#  parent: ClothingOuterEVASuitBase
+#  id: ClothingOuterHardsuitVoidParamed
+#  name: Paramedic Void Suit
+#  description: A void suit made for paramedics.
+#  components:
+#  - type: Sprite
+#    sprite: Clothing/OuterClothing/Hardsuits/paramed.rsi
+#  - type: Clothing
+#    sprite: Clothing/OuterClothing/Hardsuits/paramed.rsi
+#  - type: PressureProtection
+#    highPressureMultiplier: 0.5
+#    lowPressureMultiplier: 1000
+#  - type: ClothingSpeedModifier
+#    walkModifier: 0.9
+#    sprintModifier: 0.9
+#  - type: DiseaseProtection
+#    protection: 0.15
+#  - type: TemperatureProtection
+#    coefficient: 0.1
+#  - type: Armor
+#    modifiers:
+#      coefficients:
+#        Slash: 0.95
+#        Heat: 0.90
+#        Radiation: 0.75
 - type: entity
-  parent: ClothingOuterEVASuitBase
+  parent: ClothingOuterHardsuitBase
   id: ClothingOuterHardsuitVoidParamed
   name: Paramedic Void Suit
   description: A void suit made for paramedics.
@@ -481,6 +507,8 @@
         Slash: 0.95
         Heat: 0.90
         Radiation: 0.75
+  - type: ToggleableClothing
+    clothingPrototype: ClothingHeadHelmetVoidParamed
 
 - type: entity
   parent: ClothingOuterHardsuitBase
