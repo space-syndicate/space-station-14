@@ -21,10 +21,10 @@
   components:
     - type: Sprite
       netsync: false
-      sprite: Mobs/Species/Tajaran/parts.rsi
+      sprite: Mobs/Species/CatSkin/parts.rsi
       state: "torso_m"
     - type: Icon
-      sprite: Mobs/Species/Tajaran/parts.rsi
+      sprite: Mobs/Species/CatSkin/parts.rsi
       state: "torso_m"
     - type: BodyPart
       partType: Torso
@@ -36,10 +36,10 @@
   components:
     - type: Sprite
       netsync: false
-      sprite: Mobs/Species/Tajaran/parts.rsi
+      sprite: Mobs/Species/CatSkin/parts.rsi
       state: "head_m"
     - type: Icon
-      sprite: Mobs/Species/Tajaran/parts.rsi
+      sprite: Mobs/Species/CatSkin/parts.rsi
       state: "head_m"
     - type: BodyPart
       partType: Head
@@ -62,10 +62,10 @@
   components:
     - type: Sprite
       netsync: false
-      sprite: Mobs/Species/Tajaran/parts.rsi
+      sprite: Mobs/Species/CatSkin/parts.rsi
       state: "l_arm"
     - type: Icon
-      sprite: Mobs/Species/Tajaran/parts.rsi
+      sprite: Mobs/Species/CatSkin/parts.rsi
       state: "l_arm"
     - type: BodyPart
       partType: Arm
@@ -78,10 +78,10 @@
   components:
     - type: Sprite
       netsync: false
-      sprite: Mobs/Species/Tajaran/parts.rsi
+      sprite: Mobs/Species/CatSkin/parts.rsi
       state: "r_arm"
     - type: Icon
-      sprite: Mobs/Species/Tajaran/parts.rsi
+      sprite: Mobs/Species/CatSkin/parts.rsi
       state: "r_arm"
     - type: BodyPart
       partType: Arm
@@ -94,10 +94,10 @@
   components:
     - type: Sprite
       netsync: false
-      sprite: Mobs/Species/Tajaran/parts.rsi
+      sprite: Mobs/Species/CatSkin/parts.rsi
       state: "l_hand"
     - type: Icon
-      sprite: Mobs/Species/Tajaran/parts.rsi
+      sprite: Mobs/Species/CatSkin/parts.rsi
       state: "l_hand"
     - type: BodyPart
       partType: Hand
@@ -110,10 +110,10 @@
   components:
     - type: Sprite
       netsync: false
-      sprite: Mobs/Species/Tajaran/parts.rsi
+      sprite: Mobs/Species/CatSkin/parts.rsi
       state: "r_hand"
     - type: Icon
-      sprite: Mobs/Species/Tajaran/parts.rsi
+      sprite: Mobs/Species/CatSkin/parts.rsi
       state: "r_hand"
     - type: BodyPart
       partType: Hand
@@ -126,10 +126,10 @@
   components:
     - type: Sprite
       netsync: false
-      sprite: Mobs/Species/Tajaran/parts.rsi
+      sprite: Mobs/Species/CatSkin/parts.rsi
       state: "tail_m"
     - type: Icon
-      sprite: Mobs/Species/Tajaran/parts.rsi
+      sprite: Mobs/Species/CatSkin/parts.rsi
       state: "tail_m"
     - type: BodyPart
       partType: Tail
@@ -141,10 +141,10 @@
   components:
     - type: Sprite
       netsync: false
-      sprite: Mobs/Species/Tajaran/parts.rsi
+      sprite: Mobs/Species/CatSkin/parts.rsi
       state: "l_leg"
     - type: Icon
-      sprite: Mobs/Species/Tajaran/parts.rsi
+      sprite: Mobs/Species/CatSkin/parts.rsi
       state: "l_leg"
     - type: BodyPart
       partType: Leg
@@ -157,10 +157,10 @@
   components:
     - type: Sprite
       netsync: false
-      sprite: Mobs/Species/Tajaran/parts.rsi
+      sprite: Mobs/Species/CatSkin/parts.rsi
       state: "r_leg"
     - type: Icon
-      sprite: Mobs/Species/Tajaran/parts.rsi
+      sprite: Mobs/Species/CatSkin/parts.rsi
       state: "r_leg"
     - type: BodyPart
       partType: Leg
@@ -173,10 +173,10 @@
   components:
     - type: Sprite
       netsync: false
-      sprite: Mobs/Species/Tajaran/parts.rsi
+      sprite: Mobs/Species/CatSkin/parts.rsi
       state: "l_foot"
     - type: Icon
-      sprite: Mobs/Species/Tajaran/parts.rsi
+      sprite: Mobs/Species/CatSkin/parts.rsi
       state: "l_foot"
     - type: BodyPart
       partType: Foot
@@ -189,10 +189,10 @@
   components:
     - type: Sprite
       netsync: false
-      sprite: Mobs/Species/Tajaran/parts.rsi
+      sprite: Mobs/Species/CatSkin/parts.rsi
       state: "r_foot"
     - type: Icon
-      sprite: Mobs/Species/Tajaran/parts.rsi
+      sprite: Mobs/Species/CatSkin/parts.rsi
       state: "r_foot"
     - type: BodyPart
       partType: Foot
