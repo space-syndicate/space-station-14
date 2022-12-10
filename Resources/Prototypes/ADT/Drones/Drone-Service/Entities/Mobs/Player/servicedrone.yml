@@ -57,8 +57,8 @@
     drawdepth: SmallMobs
     netsync: false
     layers:
-    - state: servicedronealt
-      sprite: Mobs/Silicon/service_dronealt.rsi
+    - state: service_drone_alt
+      sprite: Mobs/Silicon/service_drone.rsi
   - type: MovementIgnoreGravity
   - type: Fixtures
     fixtures:
@@ -76,8 +76,8 @@
         key: enum.DroneVisuals.Status
         layer: 0
         states:
-          enum.DroneStatus.Off: shell
-          enum.DroneStatus.On: servicedronealt
+          enum.DroneStatus.Off: service_drone_shell
+          enum.DroneStatus.On: service_drone_alt
   - type: ReplacementAccent
     accent: silicon
   - type: Repairable

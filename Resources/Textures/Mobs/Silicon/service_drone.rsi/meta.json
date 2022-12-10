@@ -8,7 +8,7 @@
     "copyright": "сделано Insolgone'ом",
     "states": [
         {
-            "name": "servicedronealt",
+            "name": "service_drone_alt",
             "directions": 4,
             "delays": [
                 [
@@ -38,12 +38,7 @@
             ]
         },
         {
-            "name": "shell",
-            "delays": [
-                [
-                    1
-                ]
-            ]
-        }     
+            "name": "service_drone_shell"
+        }
     ]
 }
