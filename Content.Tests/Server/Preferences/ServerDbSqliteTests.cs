@@ -41,7 +41,7 @@ namespace Content.Tests.Server.Preferences
 - type: dataset
   id: names_last_female
   values:
-  - Ackerla"; // Corvax-Localization: Split lastname by gender
+  - Ackerla";  // Corvax-LastnameGender
 
         private static HumanoidCharacterProfile CharlieCharlieson()
         {

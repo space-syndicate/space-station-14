@@ -28,6 +28,7 @@ public sealed class MobsterAccentSystem : EntitySystem
         { "going to", "boutta" },
         { "about to", "boutta" },
         { "here", "'ere" },
+        // Corvax-Localization-Start
         { "утащил", "сдёрнул" },
         { "принеси", "надыбай" },
         { "принесите", "надыбайте" },
@@ -54,7 +55,8 @@ public sealed class MobsterAccentSystem : EntitySystem
         { "тут", "тута" },
         { "привет", "аве" },
         { "плохо", "ацтой" },
-        { "хорошо", "агонь" }
+        { "хорошо", "агонь" },
+        // Corvax-Localization-End
     };
 
     public override void Initialize()
