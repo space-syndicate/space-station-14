@@ -11,23 +11,6 @@ public sealed class MobsterAccentSystem : EntitySystem
 
     private static readonly Dictionary<string, string> DirectReplacements = new()
     {
-        { "let me", "lemme" },
-        { "should", "oughta" },
-        { "the", "da" },
-        { "them", "dem" },
-        { "attack", "whack" },
-        { "kill", "whack" },
-        { "murder", "whack" },
-        { "dead", "sleepin' with da fishies"},
-        { "hey", "ey'o" },
-        { "hi", "ey'o"},
-        { "hello", "ey'o"},
-        { "rules", "roolz" },
-        { "you", "yous" },
-        { "have to", "gotta" },
-        { "going to", "boutta" },
-        { "about to", "boutta" },
-        { "here", "'ere" },
         // Corvax-Localization-Start
         { "утащил", "сдёрнул" },
         { "принеси", "надыбай" },
@@ -57,6 +40,23 @@ public sealed class MobsterAccentSystem : EntitySystem
         { "плохо", "ацтой" },
         { "хорошо", "агонь" },
         // Corvax-Localization-End
+        { "let me", "lemme" },
+        { "should", "oughta" },
+        { "the", "da" },
+        { "them", "dem" },
+        { "attack", "whack" },
+        { "kill", "whack" },
+        { "murder", "whack" },
+        { "dead", "sleepin' with da fishies"},
+        { "hey", "ey'o" },
+        { "hi", "ey'o"},
+        { "hello", "ey'o"},
+        { "rules", "roolz" },
+        { "you", "yous" },
+        { "have to", "gotta" },
+        { "going to", "boutta" },
+        { "about to", "boutta" },
+        { "here", "'ere" }
     };
 
     public override void Initialize()
