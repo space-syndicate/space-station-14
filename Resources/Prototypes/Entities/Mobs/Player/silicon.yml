@@ -3,6 +3,9 @@
   abstract: true
   id: PlayerSiliconBase #for player controlled silicons
   components:
+  - type: Mind
+  - type: InputMover
+  - type: MobMover
   - type: Reactive
     groups:
       Acidic: [Touch]
@@ -173,6 +176,22 @@
   id: Onestar
   parent: PlayerSiliconBase
   components:
+  - type: Strap
+    buckleOffset: "0.10, 0.36"
+    maxBuckleDistance: 1
+  - type: InteractionOutline
+  - type: ItemSlots
+    slots:
+      key_slot: #this slot name is important
+        name: Keys
+        whitelist:
+          requireAll: true
+          tags:
+          - VehicleKey
+        insertSound:
+          path: /Audio/Effects/Vehicle/vehiclestartup.ogg
+          params:
+            volume: -3
   - type: InnateTool
     tools:
       - id: WeaponMinigun
@@ -223,3 +242,4 @@
       Dead:
         Base: onestar_boss_wrecked
   - type: CombatMode
+
