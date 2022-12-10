@@ -6,6 +6,7 @@
   stations:
     Boxstation:
       mapNameTemplate: '{0} Box Station {1}'
+      emergencyShuttlePath: /Maps/Shuttles/corvax_emergency.yml # Corvax-EmergencyShuttle
       nameGenerator:
         !type:NanotrasenNameGenerator
         prefixCreator: 'TG'
