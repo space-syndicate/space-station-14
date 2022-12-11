@@ -3,4 +3,4 @@ action-description-mech-cycle = Переключает выбранное сна
 action-name-mech-control-panel = Панель управления
 action-description-mech-control-panel = Открывает панель управления мехи
 action-name-mech-eject = Покинуть
-action-description-mech-eject = Высаживает пилота из мехи
+action-description-mech-eject = Высаживает пилота из меха
