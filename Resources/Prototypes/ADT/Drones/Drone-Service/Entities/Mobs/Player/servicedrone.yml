@@ -6,10 +6,12 @@
   #- type: Drone
   - type: InnateTool
     tools:
-      - id: ClothingBackpackSatchelDrone
       - id: trayScanner
       - id: Omnitool
-      - id: WelderExperimental
+      - id: WelderExperimental 
+  - type: Access
+    tags:
+    - Engineering    
   - type: NameIdentifier
     group: Drone
   - type: Inventory
@@ -67,9 +69,9 @@
         radius: 0.35
       density: 50
       mask:
-      - SmallMobMask
+      - MobMask
       layer:
-      - SmallMobLayer
+      - MobLayer
   - type: Appearance
     visuals:
       - type: GenericEnumVisualizer
@@ -101,6 +103,7 @@
     tags:
       - ShoesRequiredStepTriggerImmune
       - CannotSuicide
+      - DoorBumpOpener
   - type: GhostTakeoverAvailable
     makeSentient: true
     name: Service Drone ALT
