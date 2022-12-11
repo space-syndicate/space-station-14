@@ -22,6 +22,6 @@ ent-RipleyRLeg = правая нога Рипли
 ent-RipleyRArm = правая рука Рипли
     .desc = Правая рука меха Рипли
     .suffix = { "" }
-ent-RipleyChassis = шасси Рипли
+ent-RipleyChassis = корпус Рипли
     .desc = Незавершенная конструкция меха Рипли.
     .suffix = { "" }
