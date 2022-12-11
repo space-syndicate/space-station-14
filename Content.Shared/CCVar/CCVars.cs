@@ -308,18 +308,6 @@ namespace Content.Shared.CCVar
         public static readonly CVarDef<string> DiscordAHelpAvatar =
             CVarDef.Create("discord.ahelp_avatar", string.Empty, CVar.SERVERONLY);
 
-        /// <summary>
-        /// URL of the Discord webhook which will send round staus notficaitons.
-        /// </summary>
-        public static readonly CVarDef<string> DiscordRoundWebhook =
-            CVarDef.Create("discord.round_webhook", string.Empty, CVar.SERVERONLY);
-
-        /// <summary>
-        /// Discord ID of role which will be pinged on new round start message.
-        /// </summary>
-        public static readonly CVarDef<string> DiscordRoundRoleId =
-            CVarDef.Create("discord.round_roleid", string.Empty, CVar.SERVERONLY);
-
         /*
          * Suspicion
          */
@@ -1173,12 +1161,6 @@ namespace Content.Shared.CCVar
         public static readonly CVarDef<float> AfkTime =
             CVarDef.Create("afk.time", 60f, CVar.SERVERONLY);
 
-        /// <summary>
-        /// How long seconds a client can go after being detected as AFK before being kicked.
-        /// </summary>
-        public static readonly CVarDef<float> AfkKickTime =
-            CVarDef.Create("afk.kick_time", 600f, CVar.SERVERONLY);
-
         /*
          * IC
          */
@@ -1406,6 +1388,22 @@ namespace Content.Shared.CCVar
         /// </summary>
         public static readonly CVarDef<string> InfoLinksBugReport =
             CVarDef.Create("infolinks.bug_report", "", CVar.SERVER | CVar.REPLICATED);
+
+        /**
+         * Corvax | RoundNotifications
+         */
+
+        /// <summary>
+        /// URL of the Discord webhook which will send round status notifications.
+        /// </summary>
+        public static readonly CVarDef<string> DiscordRoundWebhook =
+            CVarDef.Create("discord.round_webhook", string.Empty, CVar.SERVERONLY);
+
+        /// <summary>
+        /// Discord ID of role which will be pinged on new round start message.
+        /// </summary>
+        public static readonly CVarDef<string> DiscordRoundRoleId =
+            CVarDef.Create("discord.round_roleid", string.Empty, CVar.SERVERONLY);
 
         /**
          * Corvax | Sponsors
