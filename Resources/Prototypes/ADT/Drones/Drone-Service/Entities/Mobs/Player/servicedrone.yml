@@ -6,10 +6,12 @@
   #- type: Drone
   - type: InnateTool
     tools:
-      - id: ClothingBackpackSatchelDrone
       - id: trayScanner
       - id: Omnitool
-      - id: WelderExperimental
+      - id: WelderExperimental 
+  - type: Access
+    tags:
+    - Engineering    
   - type: NameIdentifier
     group: Drone
   - type: Inventory
@@ -67,9 +69,9 @@
         radius: 0.35
       density: 50
       mask:
-      - SmallMobMask
+      - MobMask
       layer:
-      - SmallMobLayer
+      - MobLayer
   - type: Appearance
     visuals:
       - type: GenericEnumVisualizer
@@ -91,16 +93,20 @@
       icon: { sprite: Objects/Tools/flashlight.rsi, state: flashlight }
       iconOn: Objects/Tools/flashlight.rsi/flashlight-on.png
       event: !type:ToggleActionEvent
+  #- type: PointLight
+  #  enabled: false
+  #  radius: 3.5
+  #  softness: 1
+  #  mask: /Textures/Effects/LightMasks/cone.png
+  #  autoRot: true
   - type: PointLight
     enabled: false
-    radius: 3.5
-    softness: 1
-    mask: /Textures/Effects/LightMasks/cone.png
-    autoRot: true
+    color: cyan
   - type: Tag
     tags:
       - ShoesRequiredStepTriggerImmune
       - CannotSuicide
+      - DoorBumpOpener
   - type: GhostTakeoverAvailable
     makeSentient: true
     name: Service Drone ALT
