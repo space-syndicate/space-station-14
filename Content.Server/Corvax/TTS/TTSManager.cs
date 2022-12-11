@@ -20,7 +20,7 @@ public sealed class TTSManager
         new HistogramConfiguration()
         {
             LabelNames = new[] {"type"},
-            Buckets = Histogram.ExponentialBuckets(1, 2, 14),
+            Buckets = Histogram.ExponentialBuckets(.1, 1.5, 10),
         });
     
     private static readonly Counter WantedCount = Metrics.CreateCounter(
