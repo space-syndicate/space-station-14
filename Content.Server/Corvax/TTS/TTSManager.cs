@@ -6,6 +6,7 @@ using System.Text.Json.Serialization;
 using System.Threading;
 using System.Threading.Tasks;
 using Content.Shared.CCVar;
+using Prometheus;
 using Robust.Shared.Configuration;
 
 namespace Content.Server.Corvax.TTS;
@@ -13,6 +14,27 @@ namespace Content.Server.Corvax.TTS;
 // ReSharper disable once InconsistentNaming
 public sealed class TTSManager
 {
+    private static readonly Histogram RequestTimings = Metrics.CreateHistogram(
+        "tts_req_timings",
+        "Timings of TTS API requests",
+        new HistogramConfiguration()
+        {
+            LabelNames = new[] {"type"},
+            Buckets = Histogram.ExponentialBuckets(1, 2, 14),
+        });
+    
+    private static readonly Counter WantedCount = Metrics.CreateCounter(
+        "tts_wanted_count",
+        "Amount of wanted TTS audio.");
+
+    private static readonly Counter ReusedCount = Metrics.CreateCounter(
+        "tts_reused_count",
+        "Amount of reused TTS audio from cache.");
+    
+    private static readonly Gauge CachedCount = Metrics.CreateGauge(
+        "tts_cached_count",
+        "Amount of cached TTS audio.");
+    
     [Dependency] private readonly IConfigurationManager _cfg = default!;
     
     private readonly HttpClient _httpClient = new();
@@ -46,9 +68,11 @@ public sealed class TTSManager
             throw new Exception("TTS Api token not specified");
         }
 
+        WantedCount.Inc();
         var cacheKey = GenerateCacheKey(speaker, text);
         if (_cache.TryGetValue(cacheKey, out var data))
         {
+            ReusedCount.Inc();
             _sawmill.Debug($"Use cached sound for '{text}' speech by '{speaker}' speaker");
             return data;
         }
@@ -60,6 +84,7 @@ public sealed class TTSManager
             Speaker = speaker,
         };
 
+        var reqTime = DateTime.UtcNow;
         try
         {
             var cts = new CancellationTokenSource(TimeSpan.FromSeconds(2));
@@ -72,22 +97,31 @@ public sealed class TTSManager
             var json = await response.Content.ReadFromJsonAsync<GenerateVoiceResponse>();
             var soundData = Convert.FromBase64String(json.Results.First().Audio);
             _cache.Add(cacheKey, soundData);
+            CachedCount.Inc();
 
-            _sawmill.Debug(
-                $"Generated new sound for '{text}' speech by '{speaker}' speaker ({soundData.Length} bytes)");
+            _sawmill.Debug($"Generated new sound for '{text}' speech by '{speaker}' speaker ({soundData.Length} bytes)");
+            RequestTimings.WithLabels("Success").Observe((DateTime.UtcNow - reqTime).TotalSeconds);
 
             return soundData;
         }
         catch (TaskCanceledException)
         {
+            RequestTimings.WithLabels("Timeout").Observe((DateTime.UtcNow - reqTime).TotalSeconds);
             _sawmill.Error($"Timeout of request generation new sound for '{text}' speech by '{speaker}' speaker");
             throw new Exception("TTS request timeout");
+        }
+        catch (Exception e)
+        {
+            RequestTimings.WithLabels("Error").Observe((DateTime.UtcNow - reqTime).TotalSeconds);
+            _sawmill.Error($"Failed of request generation new sound for '{text}' speech by '{speaker}' speaker\n{e}");
+            throw new Exception("TTS request failed");
         }
     }
 
     public void ResetCache()
     {
         _cache.Clear();
+        CachedCount.Set(0);
     }
 
     private string GenerateCacheKey(string speaker, string text)
