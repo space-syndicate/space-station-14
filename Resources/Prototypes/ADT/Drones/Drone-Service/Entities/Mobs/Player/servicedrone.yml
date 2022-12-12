@@ -8,11 +8,22 @@
     tools:
       - id: trayScanner
       - id: Omnitool
-      - id: WelderExperimental 
+      - id: WelderExperimental
+  - type: IntrinsicRadioTransmitter
+    channels:
+    - Common
+    - Engineering
+  - type: ActiveRadio
+    channels:
+    - Common
+    - Engineering
+  - type: IntrinsicRadioReceiver
   - type: Access
     tags:
     - Engineering
     - Atmospherics
+    - Maintenance
+    - External
   - type: NameIdentifier
     group: Drone
   - type: Inventory
@@ -88,8 +99,8 @@
         states:
           enum.DroneStatus.Off: dead_drone_alt
           enum.DroneStatus.On: service_drone_alt          
-  - type: ReplacementAccent
-    accent: silicon
+  #- type: ReplacementAccent
+  #  accent: silicon
   - type: Repairable
     fuelcost: 15
     doAfterDelay: 8
@@ -114,3 +125,4 @@
     name: Service Drone ALT
     description: You are an experimental mecha created by who-knows-what, all you know is that you have weapons and you detect fleshy moving targets nearby...
     rules: Вы инженерный дрон. Вы не можете быть антагонистом!
+
