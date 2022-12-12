@@ -11,7 +11,8 @@
       - id: WelderExperimental 
   - type: Access
     tags:
-    - Engineering    
+    - Engineering
+    - Atmospherics
   - type: NameIdentifier
     group: Drone
   - type: Inventory
@@ -73,10 +74,6 @@
       - MobMask
       layer:
       - MobLayer
-  - type: Headset
-    channels:
-    - Common
-    - Engineering
   - type: DamageStateVisuals
     states:
       Alive:
@@ -104,12 +101,6 @@
       icon: { sprite: Objects/Tools/flashlight.rsi, state: flashlight }
       iconOn: Objects/Tools/flashlight.rsi/flashlight-on.png
       event: !type:ToggleActionEvent
-  #- type: PointLight
-  #  enabled: false
-  #  radius: 3.5
-  #  softness: 1
-  #  mask: /Textures/Effects/LightMasks/cone.png
-  #  autoRot: true
   - type: PointLight
     enabled: false
     color: cyan
