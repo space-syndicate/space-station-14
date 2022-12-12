@@ -56,10 +56,11 @@
       types:
         Heat : 1 #per second, scales with temperature & other constants
   - type: Sprite
-    drawdepth: SmallMobs
+    drawdepth: Mobs
     netsync: false
     layers:
-    - state: service_drone_alt
+    - map: ["enum.DamageStateVisualLayers.Base"]
+      state: service_drone_alt
       sprite: Mobs/Silicon/service_drone.rsi
   - type: MovementIgnoreGravity
   - type: Fixtures
@@ -72,14 +73,24 @@
       - MobMask
       layer:
       - MobLayer
-  - type: Appearance
+  - type: Headset
+    channels:
+    - Common
+    - Engineering
+  - type: DamageStateVisuals
+    states:
+      Alive:
+        Base: service_drone_alt
+      Dead:
+        Base: dead_drone_alt
+  - type: Appearance  
     visuals:
       - type: GenericEnumVisualizer
         key: enum.DroneVisuals.Status
         layer: 0
         states:
-          enum.DroneStatus.Off: service_drone_shell
-          enum.DroneStatus.On: service_drone_alt
+          enum.DroneStatus.Off: dead_drone_alt
+          enum.DroneStatus.On: service_drone_alt          
   - type: ReplacementAccent
     accent: silicon
   - type: Repairable
