@@ -1,7 +1,7 @@
 ﻿- type: species
-  id: Tajaran
-  name: "Таяр"
-  roundStart: true # sad...
+  id: TajaranSpecies
+  name: species-name-tajaran
+  roundStart: true #can player role
   prototype: MobTajaran
   sprites: MobTajaranSprites
   markingLimits: MobTajaranMarkingLimits
@@ -30,17 +30,8 @@
   id: MobTajaranMarkingLimits
   onlyWhitelisted: true
   points:
-    Chest:
-      points: 1
-      required: false
-    Legs:
-      points: 2
-      required: false
-    Arms:
-      points: 2
-      required: false
-    Tail:
-      points: 1
+    Hair:
+      points: 0
       required: false
 
 - type: humanoidBaseSprite

@@ -1,19 +1,20 @@
 ﻿- type: entity
   save: false
-  name: "Таяр"
+  name: Tajaran McHands
   parent: BaseMobOrganic
   id: BaseMobTajaran
   abstract: true
   components:
     - type: Humanoid
-      species: Tajaran
+      species: TajaranSpecies
+    - type: Body
+      prototype: TajaranBody
+      requiredLegs: 2
     - type: Hunger
     - type: Thirst
     - type: Icon
       sprite: Mobs/Species/CatSkin/parts.rsi
       state: tajaran_m
-    - type: Body
-      prototype: Tajaran
     - type: Damageable
       damageContainer: Biological
       damageModifierSet: Scale
@@ -43,12 +44,13 @@
     - type: Perishable
 
 - type: entity
-  id: MobTajaranDummy
+  save: false
+  name: Tajaran McHands
   parent: MobHumanDummy
+  id: MobTajaranDummy
   noSpawn: true
+  description: A dummy tajaran meant to be used in character setup.
   components:
     - type: Humanoid
       species: Tajaran
-    - type: Body
-      prototype: Tajaran
 

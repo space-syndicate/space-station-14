@@ -1,6 +1,6 @@
 ﻿- type: body
-  id: Tajaran
-  name: "Таяр"
+  id: TajaranBody
+  name: "tajaran"
   root: torso
   slots:
     head:
@@ -13,10 +13,10 @@
     torso:
       part: TorsoTajaran
       organs:
-        heart: OrganHumanHeart
+        heart: OrganAnimalHeart
         lungs: OrganHumanLungs
         stomach: OrganTajaranStomach
-        liver: OrganHumanLiver
+        liver: OrganAnimalLiver
         kidneys: OrganHumanKidneys
       connections:
         - left arm
@@ -50,3 +50,4 @@
       part: LeftFootTajaran
     tail:
       part: TailTajaran
+
