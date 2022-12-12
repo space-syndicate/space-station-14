@@ -10,3 +10,6 @@ ent-WeaponRifleM90GrenadeLauncher = М-90gl
 ent-WeaponRifleLecter = Лектер
     .desc = Первоклассная армейская штурмовая винтовка. Использует патроны калибра .20 винтовочный.
     .suffix = Автомат
+ent-WeaponRifleASVal = АС-Вал
+    .desc = Бесшумная винтовка спецназа СССП. Использует патроны калибра .30 винтовочный.
+    .suffix = Автомат

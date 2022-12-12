@@ -30,6 +30,17 @@
     Telecrystal: 8
   categories:
   - UplinkWeapons
+  
+# Superior silenced firepower at a very high cost.
+- type: listing
+  id: UplinkRifleASVal
+  name: ASVal
+  description: Silenced and deadly automatic rifle used by CCCP Spetsnaz units.
+  productEntity: WeaponRifleASVal
+  cost:
+    Telecrystal: 18
+  categories:
+  - UplinkWeapons
 
 # Poor accuracy, slow to fire, cheap option
 - type: listing
