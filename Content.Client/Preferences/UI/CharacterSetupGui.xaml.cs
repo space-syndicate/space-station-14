@@ -3,6 +3,7 @@ using Content.Client.Humanoid;
 using Content.Client.Info;
 using Content.Client.Lobby.UI;
 using Content.Client.Resources;
+using Content.Client.Stylesheets;
 using Content.Shared.Humanoid;
 using Content.Shared.Humanoid.Prototypes;
 using Content.Shared.Preferences;
@@ -112,6 +113,7 @@ namespace Content.Client.Preferences.UI
                 Loc.GetString("character-setup-gui-create-new-character-button-tooltip",
                 ("maxCharacters", _preferencesManager.Settings!.MaxCharacterSlots));
 
+            var isDisplayedMaxSlots = false; // Corvax-Sponsors: Additional slots possible
             foreach (var (slot, character) in _preferencesManager.Preferences!.Characters)
             {
                 if (character is null)
@@ -119,6 +121,10 @@ namespace Content.Client.Preferences.UI
                     continue;
                 }
 
+                // Corvax-Sponsors-Start
+                isDisplayedMaxSlots = numberOfFullSlots >= _preferencesManager.Settings.MaxCharacterSlots;
+                if (isDisplayedMaxSlots) break;
+                // Corvax-Sponsors-End
                 numberOfFullSlots++;
                 var characterPickerButton = new CharacterPickerButton(_entityManager,
                     _preferencesManager,
@@ -130,7 +136,7 @@ namespace Content.Client.Preferences.UI
                 var characterIndexCopy = slot;
                 characterPickerButton.OnPressed += args =>
                 {
-                    _humanoidProfileEditor.Profile = (HumanoidCharacterProfile) character;
+                    _humanoidProfileEditor.Profile = (HumanoidCharacterProfile)character;
                     _humanoidProfileEditor.CharacterSlot = characterIndexCopy;
                     _humanoidProfileEditor.UpdateControls();
                     _preferencesManager.SelectCharacter(character);
@@ -139,8 +145,7 @@ namespace Content.Client.Preferences.UI
                 };
             }
 
-            _createNewCharacterButton.Disabled =
-                numberOfFullSlots >= _preferencesManager.Settings.MaxCharacterSlots;
+            _createNewCharacterButton.Disabled = isDisplayedMaxSlots; // Corvax-Sponsors
             Characters.AddChild(_createNewCharacterButton);
         }
 
@@ -170,7 +175,7 @@ namespace Content.Client.Preferences.UI
                     _previewDummy = entityManager.SpawnEntity(prototypeManager.Index<SpeciesPrototype>(SharedHumanoidSystem.DefaultSpecies).DollPrototype, MapCoordinates.Nullspace);
                 }
 
-                EntitySystem.Get<HumanoidSystem>().LoadProfile(_previewDummy, (HumanoidCharacterProfile) profile);
+                EntitySystem.Get<HumanoidSystem>().LoadProfile(_previewDummy, (HumanoidCharacterProfile)profile);
 
                 if (humanoid != null)
                 {
@@ -209,10 +214,24 @@ namespace Content.Client.Preferences.UI
                     Text = Loc.GetString("character-setup-gui-character-picker-button-delete-button"),
                     Visible = !isSelectedCharacter,
                 };
-                deleteButton.OnPressed += _ =>
+                var confirmDeleteButton = new Button
+                {
+                    Text = Loc.GetString("character-setup-gui-character-picker-button-confirm-delete-button"),
+                    Visible = false,
+                };
+                confirmDeleteButton.ModulateSelfOverride = StyleNano.ButtonColorCautionDefault;
+                confirmDeleteButton.OnPressed += _ =>
                 {
                     Parent?.RemoveChild(this);
+                    Parent?.RemoveChild(confirmDeleteButton);
                     preferencesManager.DeleteCharacter(profile);
+                };
+                deleteButton.OnPressed += _ =>
+                {
+
+                    deleteButton.Visible = false;
+                    confirmDeleteButton.Visible = true;
+
                 };
 
                 var internalHBox = new BoxContainer
@@ -224,7 +243,8 @@ namespace Content.Client.Preferences.UI
                     {
                         view,
                         descriptionLabel,
-                        deleteButton
+                        deleteButton,
+                        confirmDeleteButton
                     }
                 };
 

@@ -1,6 +1,7 @@
 using Content.Client.Administration.Managers;
 using Content.Client.Changelog;
 using Content.Client.Chat.Managers;
+using Content.Client.Corvax.JoinQueue;
 using Content.Client.Corvax.Sponsors;
 using Content.Client.Options;
 using Content.Client.Eui;
@@ -73,7 +74,8 @@ namespace Content.Client.Entry
         [Dependency] private readonly ExtendedDisconnectInformationManager _extendedDisconnectInformation = default!;
         [Dependency] private readonly PlayTimeTrackingManager _playTimeTracking = default!;
         [Dependency] private readonly ContentLocalizationManager _contentLoc = default!;
-        [Dependency] private readonly ClientSponsorsManager _sponsorsManager = default!; // Corvax-Sponsors
+        [Dependency] private readonly SponsorsManager _sponsorsManager = default!; // Corvax-Sponsors
+        [Dependency] private readonly JoinQueueManager _queueManager = default!; // Corvax-Queue
 
         public const int NetBufferSizeOverride = 2;
 
@@ -133,7 +135,7 @@ namespace Content.Client.Entry
             _prototypeManager.RegisterIgnore("wireLayout");
             _prototypeManager.RegisterIgnore("alertLevels");
             _prototypeManager.RegisterIgnore("nukeopsRole");
-            _prototypeManager.RegisterIgnore("stationGoal");
+            _prototypeManager.RegisterIgnore("stationGoal"); // Corvax-StationGoal
             _prototypeManager.RegisterIgnore("flavor");
 
             _componentFactory.GenerateNetIds();
@@ -175,6 +177,7 @@ namespace Content.Client.Entry
             _networkResources.Initialize();
             _userInterfaceManager.SetDefaultTheme("SS14DefaultTheme");
             _sponsorsManager.Initialize(); // Corvax-Sponsors
+            _queueManager.Initialize(); // Corvax-Queue
 
             _baseClient.RunLevelChanged += (_, args) =>
             {

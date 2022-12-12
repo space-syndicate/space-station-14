@@ -6,6 +6,7 @@
   stations:
     Pillar:
       mapNameTemplate: '{0} NSSPillar {1}'
+      emergencyShuttlePath: /Maps/Shuttles/emergency_courser.yml
       nameGenerator:
         !type:NanotrasenNameGenerator
         prefixCreator: '14'
@@ -22,7 +23,7 @@
         Musician: [ 1, 2 ]
         ServiceWorker: [ 2, 2 ]
         Captain: [ 1, 1 ]
-        IAA: [ 1, 1 ]
+        IAA: [ 1, 1 ] # Corvax-IAA
         HeadOfPersonnel: [ 1, 1 ]
         ChiefEngineer: [ 1, 1 ]
         StationEngineer: [ 6, 10 ]
@@ -40,7 +41,7 @@
         SecurityCadet: [ 2, 2 ]
         Chaplain: [ 1, 1 ]
         Librarian: [ 1, 1 ]
-        Lawyer: [ 0, 0 ]
+        Lawyer: [ 0, 0 ] # Corvax-IAA
         Quartermaster: [ 1, 1 ]
         CargoTechnician: [ 4, 6 ]
         SalvageSpecialist: [ 4, 6 ]
