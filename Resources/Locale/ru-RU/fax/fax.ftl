@@ -14,4 +14,4 @@ fax-machine-ui-from = Отправитель:
 fax-machine-ui-paper = Бумага:
 fax-machine-ui-paper-inserted = Бумага в лотке
 fax-machine-ui-paper-not-inserted = Нет бумаги
-fax-machine-chat-notify = Получен новый факс с факса "{ $fax }"
+fax-machine-chat-notify = Получено новое сообщение с "{ $fax }" факса
