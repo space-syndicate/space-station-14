@@ -36,6 +36,13 @@
     - type: Wires
       BoardName: "Mk2 Particle Accelerator"
       LayoutId: ParticleAccelerator
+    - type: Electrified
+      enabled: true
+      onBump: false
+      onHandInteract: false
+      onInteractUsing: false
+      requirePower: true
+      usesApcPower: true
 
 # Unfinished
 

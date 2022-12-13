@@ -38,6 +38,14 @@
         output:
           !type:CableTerminalPortNode
           nodeGroupID: HVPower
+    - type: Electrified
+      enabled: true
+      onBump: false
+      onHandInteract: false
+      onInteractUsing: false
+      requirePower: true
+      highVoltageNode: input
+      mediumVoltageNode: output
     - type: BatteryCharger
       voltage: High
       node: output

@@ -26,6 +26,14 @@
           behaviors:
             - !type:DoActsBehavior
               acts: ["Destruction"]
+    - type: Electrified
+      enabled: true
+      onBump: false
+      onHandInteract: false
+      onInteractUsing: false
+      requirePower: true
+      highVoltageNode: powerHV
+      mediumVoltageNode: powerMV
     - type: SubFloorHide
       blockAmbience: false
       blockInteractions: false
