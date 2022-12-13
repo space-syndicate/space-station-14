@@ -475,6 +475,7 @@ public sealed class NukeopsRuleSystem : GameRuleSystem
             var profile = ev.Profiles[player.UserId];
             if (profile.AntagPreferences.Contains(_nukeopsRuleConfig.OperativeRoleProto))
             {
+
                 prefList.Add(player);
             }
             if (profile.AntagPreferences.Contains(_nukeopsRuleConfig.CommanderRolePrototype))
