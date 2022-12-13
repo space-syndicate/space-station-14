@@ -4,3 +4,6 @@ ent-BookBase = книга
 ent-BookRandom = { ent-BookBase }
     .suffix = случайный
     .desc = { ent-BookBase.desc }
+ent-BookLarge = толстая книга
+    .suffix = случайный
+    .desc = Хорошая, тяжёлая книга.

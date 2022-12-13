@@ -20,6 +20,15 @@
       type: PaperBoundUserInterface
 
 - type: entity
+  parent: BookRandom
+  name: large book
+  id: BookLarge
+  description: 'A thick book.'
+  components:
+  - type: Paper
+    contentSize: 3000
+
+- type: entity
   parent: BookBase
   id: BookRandom
   suffix: random
