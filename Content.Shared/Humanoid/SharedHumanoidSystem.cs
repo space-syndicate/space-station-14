@@ -19,6 +19,7 @@ public abstract class SharedHumanoidSystem : EntitySystem
     [Dependency] private readonly SharedAppearanceSystem _appearance = default!;
 
     public const string DefaultSpecies = "Human";
+    public const string DefaultVoice = "Eeugene"; // Corvax-TTS
 
     public void SetAppearance(EntityUid uid,
         string species,

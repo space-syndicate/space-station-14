@@ -1,4 +1,5 @@
 using System.Linq;
+using Content.Client.Corvax.Sponsors;
 using Content.Client.Humanoid;
 using Content.Client.Lobby.UI;
 using Content.Client.Message;
@@ -6,6 +7,7 @@ using Content.Client.Players.PlayTimeTracking;
 using Content.Client.Stylesheets;
 using Content.Client.UserInterface.Controls;
 using Content.Shared.CCVar;
+using Content.Shared.Corvax.TTS;
 using Content.Shared.GameTicking;
 using Content.Shared.Humanoid;
 using Content.Shared.Humanoid.Markings;
@@ -53,6 +55,7 @@ namespace Content.Client.Preferences.UI
         private readonly IEntityManager _entMan;
         private readonly IConfigurationManager _configurationManager;
         private readonly MarkingManager _markingManager;
+        private readonly SponsorsManager _sponsorsManager; // Corvax-TTS
 
         private LineEdit _ageEdit => CAgeEdit;
         private LineEdit _nameEdit => CNameEdit;
@@ -63,6 +66,7 @@ namespace Content.Client.Preferences.UI
         private Button _saveButton => CSaveButton;
         private OptionButton _sexButton => CSexButton;
         private OptionButton _genderButton => CPronounsButton;
+        private OptionButton _voiceButton => CVoiceButton; // Corvax-TTS
         private Slider _skinColor => CSkin;
         private OptionButton _clothingButton => CClothingButton;
         private OptionButton _backpackButton => CBackpackButton;
@@ -78,6 +82,7 @@ namespace Content.Client.Preferences.UI
         private OptionButton _preferenceUnavailableButton => CPreferenceUnavailableButton;
         private readonly Dictionary<string, BoxContainer> _jobCategories;
         // Mildly hacky, as I don't trust prototype order to stay consistent and don't want the UI to break should a new one get added mid-edit. --moony
+        private readonly List<TTSVoicePrototype> _voiceList; // Corvax-TTS
         private readonly List<SpeciesPrototype> _speciesList;
         private readonly List<AntagPreferenceSelector> _antagPreferences;
         private readonly List<TraitPreferenceSelector> _traitPreferences;
@@ -115,6 +120,7 @@ namespace Content.Client.Preferences.UI
             _preferencesManager = preferencesManager;
             _configurationManager = configurationManager;
             _markingManager = IoCManager.Resolve<MarkingManager>();
+            _sponsorsManager = IoCManager.Resolve<SponsorsManager>();
 
             #region Left
 
@@ -170,6 +176,34 @@ namespace Content.Client.Preferences.UI
             };
 
             #endregion Gender
+
+            // Corvax-TTS-Start
+            #region Voice
+
+            _voiceList = prototypeManager.EnumeratePrototypes<TTSVoicePrototype>().Where(o => o.RoundStart).ToList();
+            for (var i = 0; i < _voiceList.Count; i++)
+            {
+                var voice = _voiceList[i];
+                var name = Loc.GetString(voice.Name);
+                _voiceButton.AddItem(name, i);
+
+                if (voice.SponsorOnly &&
+                    _sponsorsManager.TryGetInfo(out var sponsor) &&
+                    sponsor.AllowedMarkings.Contains(voice.ID))
+                {
+                    _voiceButton.SetItemDisabled(i, true);
+                }
+            }
+            
+            _voiceButton.OnItemSelected += args =>
+            {
+                _voiceButton.SelectId(args.Id);
+                SetVoice(_voiceList[args.Id].ID);
+                // TODO: Play demo text
+            };
+
+            #endregion
+            // Corvax-TTS-End
 
             #region Species
 
@@ -780,6 +814,14 @@ namespace Content.Client.Preferences.UI
             Profile = Profile?.WithGender(newGender);
             IsDirty = true;
         }
+
+        // Corvax-TTS-Start
+        private void SetVoice(string newVoice)
+        {
+            Profile = Profile?.WithVoice(newVoice);
+            IsDirty = true;
+        }
+        // Corvax-TTS-End
 
         private void SetSpecies(string newSpecies)
         {

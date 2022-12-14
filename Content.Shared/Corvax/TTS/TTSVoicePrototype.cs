@@ -1,6 +1,6 @@
 ﻿using Robust.Shared.Prototypes;
 
-namespace Content.Server.Corvax.TTS;
+namespace Content.Shared.Corvax.TTS;
 
 /// <summary>
 /// Prototype represent available TTS voices
@@ -24,4 +24,13 @@ public sealed class TTSVoicePrototype : IPrototype
     [ViewVariables(VVAccess.ReadWrite)]
     [DataField("speaker")]
     public string Speaker { get; } = string.Empty;
+    
+    /// <summary>
+    /// Whether the species is available "at round start" (In the character editor)
+    /// </summary>
+    [DataField("roundStart")]
+    public bool RoundStart { get; } = true;
+    
+    [DataField("sponsorOnly")]
+    public bool SponsorOnly { get; } = false;
 }

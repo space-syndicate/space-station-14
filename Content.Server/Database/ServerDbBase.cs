@@ -195,6 +195,7 @@ namespace Content.Server.Database
                 profile.CharacterName,
                 profile.FlavorText,
                 profile.Species,
+                profile.Voice, // Corvax-TTS
                 profile.Age,
                 sex,
                 gender,
@@ -232,6 +233,7 @@ namespace Content.Server.Database
                 CharacterName = humanoid.Name,
                 FlavorText = humanoid.FlavorText,
                 Species = humanoid.Species,
+                Voice = humanoid.Voice, // Corvax-TTS
                 Age = humanoid.Age,
                 Sex = humanoid.Sex.ToString(),
                 Gender = humanoid.Gender.ToString(),

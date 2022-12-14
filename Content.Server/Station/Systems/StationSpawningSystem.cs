@@ -1,4 +1,5 @@
 ﻿using Content.Server.Access.Systems;
+using Content.Server.Corvax.TTS;
 using Content.Server.DetailExaminable;
 using Content.Server.Hands.Components;
 using Content.Server.Hands.Systems;
@@ -125,6 +126,7 @@ public sealed class StationSpawningSystem : EntitySystem
             {
                 EntityManager.AddComponent<DetailExaminableComponent>(entity).Content = profile.FlavorText;
             }
+            EntityManager.AddComponent<TTSComponent>(entity).VoicePrototypeId = profile.Voice; // Corvax-TTS
         }
 
         DoJobSpecials(job, entity);
