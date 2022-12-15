@@ -5,7 +5,7 @@
   requirements:
     - !type:DepartmentTimeRequirement
       department: Command
-      time: 54000
+      time: 72000
   startingGear: BlueShieldOfficerGear
   icon: "blueshield"
   supervisors: job-supervisors-captain
