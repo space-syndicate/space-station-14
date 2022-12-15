@@ -10,12 +10,12 @@
     sprite: Objects/Specific/Mech/mecha.rsi
     layers:
     - map: [ "enum.MechVisualLayers.Base" ]
-      state: ripley
+      state: ripley-alt
   - type: MobMover
   - type: Mech
-    baseState: ripley
-    openState: ripley-open
-    brokenState: ripley-broken
+    baseState: ripley-alt
+    openState: ripley-open-alt
+    brokenState: ripley-broken-alt
   - type: DoAfter
   - type: Repairable
     fuelCost: 25
@@ -82,9 +82,9 @@
     footstepSoundCollection:
       path: /Audio/Mecha/sound_mecha_powerloader_step.ogg
   - type: Mech
-    baseState: ripley
-    openState: ripley-open
-    brokenState: ripley-broken
+    baseState: ripley-alt
+    openState: ripley-open-alt
+    brokenState: ripley-broken-alt
     mechToPilotDamageMultiplier: 0.5
 
 - type: entity
@@ -93,8 +93,8 @@
   suffix: Battery
   components:
   - type: Mech
-    baseState: ripley
-    openState: ripley-open
-    brokenState: ripley-broken
+    baseState: ripley-alt
+    openState: ripley-open-alt
+    brokenState: ripley-broken-alt
     startingBattery: PowerCellHigh
     mechToPilotDamageMultiplier: 0.5
