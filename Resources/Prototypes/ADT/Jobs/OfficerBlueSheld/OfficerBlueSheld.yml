@@ -4,8 +4,8 @@
   playTimeTracker: JobBlueShieldOfficer
   requirements:
     - !type:DepartmentTimeRequirement
-      department: Security
-      time: 180000
+      department: Command
+      time: 54000
   startingGear: BlueShieldOfficerGear
   icon: "blueshield"
   supervisors: job-supervisors-captain
