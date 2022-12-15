@@ -6,6 +6,7 @@
   - type: StorageFill
     contents:
       - id: BoxSurvival
+      - id: SpaceCash100
 
 - type: entity
   noSpawn: true
@@ -16,6 +17,7 @@
     contents:
       - id: BoxHug
       - id: RubberStampClown
+      - id: SpaceCash10
 
 - type: entity
   noSpawn: true
@@ -26,6 +28,7 @@
     contents:
       - id: BoxSurvivalSecurity
       - id: Flash
+      - id: SpaceCash100
 
 - type: entity
   noSpawn: true
@@ -35,6 +38,7 @@
   - type: StorageFill
     contents:
       - id: BoxSurvivalMedical
+      - id: SpaceCash100
 
 - type: entity
   noSpawn: true
@@ -44,6 +48,7 @@
   - type: StorageFill
     contents:
       - id: BoxSurvival
+      - id: SpaceCash1000
       #- name: StationCharter
       #- name: TelescopicBaton
 
@@ -55,6 +60,7 @@
   - type: StorageFill
     contents:
       - id: BoxSurvivalEngineering
+      - id: SpaceCash100
 
 - type: entity
   noSpawn: true
@@ -64,6 +70,7 @@
   - type: StorageFill
     contents:
       - id: BoxSurvival
+      - id: SpaceCash100
 
 - type: entity
   noSpawn: true
@@ -73,6 +80,7 @@
     - type: StorageFill
       contents:
         - id: BoxSurvival
+        - id: SpaceCash100
 
 - type: entity
   noSpawn: true
@@ -83,6 +91,7 @@
     contents:
       - id: BoxSurvival
       - id: RubberStampMime
+      - id: SpaceCash10
 
 - type: entity
   noSpawn: true
@@ -92,6 +101,7 @@
   - type: StorageFill
     contents:
       - id: BoxSurvival
+      - id: SpaceCash100
 
 - type: entity
   noSpawn: true
@@ -103,6 +113,7 @@
       - id: BoxSurvival
       - id: Bible
       - id: RubberStampChaplain
+      - id: SpaceCash10
 
 - type: entity
   noSpawn: true
@@ -114,6 +125,7 @@
         - id: BoxSurvival
         - id: AcousticGuitarInstrument
         - id: SaxophoneInstrument
+        - id: SpaceCash100
 
 - type: entity
   noSpawn: true
@@ -127,6 +139,7 @@
       - id: CigPackBlack
       - id: BoxForensicPad
       - id: HandLabeler
+      - id: SpaceCash100
 
 - type: entity
   noSpawn: true
@@ -136,3 +149,4 @@
     - type: StorageFill
       contents:
         - id: BoxSurvival
+        - id: SpaceCash100
