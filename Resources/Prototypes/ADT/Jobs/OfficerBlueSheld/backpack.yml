@@ -1,0 +1,28 @@
+﻿- type: entity
+  noSpawn: true
+  parent: ClothingBackpackERTSecurity
+  id: ClothingBackpackBlueShieldOfficerFilled
+  components:
+    - type: StorageFill
+      contents:
+        - id: MedkitBruteFilled
+        - id: Zipties
+        - id: Zipties
+        - id: Zipties
+        - id: WeaponTaser
+        - id: Stunbaton
+        - id: HandheldCrewMonitor
+        - id: MagazineMagnumSubMachineGunHighVelocity
+        - id: MagazineMagnumSubMachineGunHighVelocity
+        - id: MagazineMagnumSubMachineGunHighVelocity
+        - id: MagazineMagnumSubMachineGunHighVelocity
+        - id: MagazineMagnumSubMachineGunRubber
+        - id: MagazineMagnumSubMachineGunRubber
+        - id: MagazineMagnumSubMachineGunRubber
+        - id: MagazineMagnumSubMachineGunRubber
+        - id: WeaponSubMachineGunVectorRubber
+        - id: WeaponPulsePistol
+        - id: GrenadeFlashBang
+        - id: GrenadeFlashBang
+        - id: GrenadeFlashBang
+
