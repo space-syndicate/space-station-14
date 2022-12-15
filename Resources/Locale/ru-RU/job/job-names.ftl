@@ -68,6 +68,7 @@ JobMedicalDoctor = врач
 JobMedicalIntern = интерн
 job-name-paramedic = парамедик
 job-name-virusolog = вирусолог
+job-name-blueshieldofficer = офицер "синего щита"
 JobMime = мим
 JobMusician = музыкант
 JobPassenger = пассажир

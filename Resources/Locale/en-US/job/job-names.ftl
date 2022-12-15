@@ -11,6 +11,7 @@ job-name-doctor = medical doctor
 job-name-cmo = chief medical officer
 job-name-paramedic = paramedic
 job-name-virusolog = virusolog
+job-name-blueshieldofficer = blue sheld officer
 job-name-chemist = chemist
 job-name-assistant = technical assistant
 job-name-engineer = station engineer
