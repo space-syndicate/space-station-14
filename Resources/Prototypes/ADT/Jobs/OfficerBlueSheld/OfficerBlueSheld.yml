@@ -1,0 +1,39 @@
+- type: job
+  id: BlueShieldOfficer
+  name: job-name-blueshieldofficer
+  playTimeTracker: JobBlueShieldOfficer
+  requirements:
+    - !type:DepartmentTimeRequirement
+      department: Command
+      time: 54000
+  startingGear: BlueShieldOfficerGear
+  icon: "blueshield"
+  supervisors: job-supervisors-captain
+  canBeAntag: false
+  access:
+    - Command
+    - Brig
+    - Security
+    - Armory
+    - Maintenance
+    - Service
+    - External
+    - Research
+    - Medical
+    - Engineering
+    - Cargo
+
+- type: startingGear
+  id: BlueShieldOfficerGear
+  equipment:
+    head: ClothingHeadHatBeretWarden
+    eyes: ClothingEyesGlassesSecurity
+    ears: ClothingHeadsetAltCommand
+    jumpsuit: ClothingUniformJumpsuitNanotrasen
+    back: ClothingBackpackBlueShieldOfficerFilled
+    shoes: ClothingShoesBootsCombatFilled
+    outerClothing: ClothingOuterVestWeb
+    belt: ClothingBeltMilitaryWebbingMedFilled
+    gloves: ClothingHandsGlovesCombat
+    id: BlueShieldOfficerPDA
+
