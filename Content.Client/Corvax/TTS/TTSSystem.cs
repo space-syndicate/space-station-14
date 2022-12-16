@@ -107,6 +107,11 @@ public sealed class TTSSystem : EntitySystem
         var stream = new AudioStream(ev.Uid, source);
         AddEntityStreamToQueue(stream);
     }
+
+    public void PlayCustomText(string text)
+    {
+        RaiseNetworkEvent(new RequestTTSEvent(text));
+    }
     
     private bool TryCreateAudioSource(byte[] data, [NotNullWhen(true)] out IClydeAudioSource? source)
     {

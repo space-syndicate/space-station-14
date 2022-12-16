@@ -24,6 +24,12 @@ public sealed class TTSSystem : EntitySystem
         
         SubscribeLocalEvent<TTSComponent, EntitySpokeEvent>(OnEntitySpoke);
         SubscribeLocalEvent<RoundRestartCleanupEvent>(OnRoundRestartCleanup);
+        SubscribeNetworkEvent<RequestTTSEvent>(OnRequestTTS);
+    }
+
+    private void OnRequestTTS(RequestTTSEvent ev)
+    {
+        throw new NotImplementedException();
     }
 
     private async void OnEntitySpoke(EntityUid uid, TTSComponent component, EntitySpokeEvent args)

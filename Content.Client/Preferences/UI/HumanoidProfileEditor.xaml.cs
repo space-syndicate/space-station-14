@@ -55,7 +55,7 @@ namespace Content.Client.Preferences.UI
         private readonly IEntityManager _entMan;
         private readonly IConfigurationManager _configurationManager;
         private readonly MarkingManager _markingManager;
-        private readonly SponsorsManager _sponsorsManager; // Corvax-TTS
+        private readonly SponsorsManager _sponsorsManager; // Corvax-Sponsor
 
         private LineEdit _ageEdit => CAgeEdit;
         private LineEdit _nameEdit => CNameEdit;
