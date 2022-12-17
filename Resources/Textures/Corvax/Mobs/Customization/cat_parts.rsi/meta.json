@@ -1,0 +1,35 @@
+{
+  "version": 1,
+  "license": "CC-BY-SA-3.0",
+  "copyright": "Taken from Nyanotrasen at commit https://github.com/Nyanotrasen/Nyanotrasen/commit/3d493907ce374916d8bd0806ad72c8d9f2d70a19",
+  "size": {
+    "x": 32,
+    "y": 32
+  },
+  "states": [
+    {
+      "name": "ears_curled_inner",
+      "directions": 4
+    },
+    {
+      "name": "ears_curled_outer",
+      "directions": 4
+    },
+    {
+      "name": "ears_stubby_inner",
+      "directions": 4
+    },
+    {
+      "name": "ears_stubby_outer",
+      "directions": 4
+    },
+    {
+      "name": "ears_torn_inner",
+      "directions": 4
+    },
+    {
+      "name": "ears_torn_outer",
+      "directions": 4
+    }
+  ]
+}
