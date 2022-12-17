@@ -1,35 +1,31 @@
 - type: entity
-  name: "Сервисный дрон"
-  id: servicedronealt
+  name: "Медицинский дрон"
+  id: medicaldronealt
   parent: PlayerSiliconBase
   components:
-  #- type: Drone
   - type: InnateTool
     tools:
+      - id: HandheldCrewMonitor
+      - id: HandheldHealthAnalyzer
       - id: Omnitool
+      - id: Hypospray     
   - type: IntrinsicRadioTransmitter
     channels:
     - Common
-    - Service
+    - Medical
   - type: ActiveRadio
     channels:
     - Common
-    - Service
+    - Medical
   - type: IntrinsicRadioReceiver
   - type: Access
     tags:
-    - HeadOfPersonnel
-    - Bar
-    - Kitchen
-    - Hydroponics
-    - Service
-    - Janitor
-    - Theatre
-    - Chapel
+    - Medical
+    - Chemistry
+    - Maintenance
+    - External
   - type: NameIdentifier
     group: Drone
-  - type: Inventory
-    templateId: dronealt
   - type: Strippable
   - type: UserInterface
     interfaces:
@@ -74,8 +70,8 @@
     netsync: false
     layers:
     - map: ["enum.DamageStateVisualLayers.Base"]
-      state: service_drone_alt
-      sprite: Mobs/Silicon/service_drone.rsi
+      state: medical_drone_alt
+      sprite: Mobs/Silicon/medical_drone.rsi
   - type: MovementIgnoreGravity
   - type: Fixtures
     fixtures:
@@ -90,7 +86,7 @@
   - type: DamageStateVisuals
     states:
       Alive:
-        Base: service_drone_alt
+        Base: medical_drone_alt
       Dead:
         Base: dead_drone_alt
   - type: Appearance  
@@ -100,9 +96,7 @@
         layer: 0
         states:
           enum.DroneStatus.Off: dead_drone_alt
-          enum.DroneStatus.On: service_drone_alt          
-  #- type: ReplacementAccent
-  #  accent: silicon
+          enum.DroneStatus.On: medical_drone_alt 
   - type: Repairable
     fuelcost: 15
     doAfterDelay: 8
@@ -116,7 +110,7 @@
       event: !type:ToggleActionEvent
   - type: PointLight
     enabled: false
-    color: Yellow
+    color: cyan
   - type: Tag
     tags:
       - ShoesRequiredStepTriggerImmune
@@ -124,7 +118,7 @@
       - DoorBumpOpener
   - type: GhostTakeoverAvailable
     makeSentient: true
-    name: Service Drone ALT
+    name: Medical Drone ALT
     description: You are an experimental mecha created by who-knows-what, all you know is that you have weapons and you detect fleshy moving targets nearby...
-    rules: Вы сервисный дрон, помогайте ГП. Вы не можете быть антагонистом!
+    rules: Вы медицинский дрон, помогайте СМО. Вы не можете быть антагонистом!
 
