@@ -1,0 +1,87 @@
+- type: entity
+  name: розовая свечка
+  parent: BaseItem
+  id: candle_pink
+  description: "а хер его знает что с этим не так"
+  components:
+  - type: Sprite
+    sprite: ERP/candle.rsi
+    netsync: false
+    layers:
+    - state: candle_pink_off
+      map: ["enum.WelderLayers.Base"]
+    - state: candle_pink_lit
+      visible: false
+      map: ["enum.WelderLayers.Flame"]
+  - type: Item
+    size: 1
+    sprite: ERP/candle.rsi
+    heldPrefix: off
+  - type: ItemCooldown
+  - type: ItemStatus
+  - type: PointLight
+    enabled: false
+    radius: 1.1
+    color: orange
+  - type: Appearance
+  - type: SolutionContainerManager
+    solutions:
+      Welder:
+        reagents:
+        - ReagentId: WeldingFuel
+          Quantity: 10
+        maxVol: 10
+  - type: MeleeWeapon
+    damage:
+      types:
+        Blunt: 0
+  - type: Welder
+    fuelConsumption: 0.001
+    litMeleeDamageBonus:
+      types:
+        Heat: 0
+    tankSafe: true
+
+- type: entity
+  name: бирюзовая свечка
+  parent: BaseItem
+  id: candle_teal
+  description: "а хер его знает что с этим не так"
+  components:
+  - type: Sprite
+    sprite: ERP/candle.rsi
+    netsync: false
+    layers:
+    - state: candle_teal_off
+      map: ["enum.WelderLayers.Base"]
+    - state: candle_teal_lit
+      visible: false
+      map: ["enum.WelderLayers.Flame"]
+  - type: Item
+    size: 1
+    sprite: Objects/Tools/lighters.rsi
+    heldPrefix: off
+  - type: ItemCooldown
+  - type: ItemStatus
+  - type: PointLight
+    enabled: false
+    radius: 1.1
+    color: orange
+  - type: Appearance
+  - type: SolutionContainerManager
+    solutions:
+      Welder:
+        reagents:
+        - ReagentId: WeldingFuel
+          Quantity: 10
+        maxVol: 10
+  - type: MeleeWeapon
+    damage:
+      types:
+        Blunt: 0
+  - type: Welder
+    fuelConsumption: 0.001
+    litMeleeDamageBonus:
+      types:
+        Heat: 0
+    tankSafe: true
