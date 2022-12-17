@@ -1,0 +1,47 @@
+{
+  "version": 1,
+  "license": "CC-BY-SA-3.0",
+  "copyright": "Taken from discord: Evgen99#0582",
+  "size": {
+    "x": 32,
+    "y": 32
+  },
+  "states": [
+    {
+      "name": "candle_pink_off"
+    },
+    {
+      "name": "candle_pink_lit",
+      "delays": [
+        [
+          0.1,
+          0.1,
+          0.1,
+          0.1,
+		  0.1,
+          0.1,
+		  0.1,
+		  0.1
+        ]
+      ]
+    },
+	{
+      "name": "candle_teal_off"
+    },
+    {
+      "name": "candle_teal_lit",
+      "delays": [
+        [
+          0.1,
+          0.1,
+          0.1,
+          0.1,
+		  0.1,
+          0.1,
+		  0.1,
+		  0.1
+        ]
+      ]
+    }
+  ]
+}

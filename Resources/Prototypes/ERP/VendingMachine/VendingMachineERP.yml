@@ -1,0 +1,33 @@
+﻿- type: entity
+  parent: VendingMachine
+  id: VendingMachineERP
+  name: Solar's Best Hot Drinks
+  description: Served boiling so it stays hot all shift!
+  components:
+  - type: VendingMachine
+    pack: ERPMachineInventory
+    offState: case
+    brokenState: case
+    normalState: case
+    denyState: deny-unshaded
+    screenState: screen
+  - type: Speech
+  - type: Sprite
+    sprite: ERP/VendingMachineERP.rsi
+    layers:
+    - state: "off"
+      map: ["enum.VendingMachineVisualLayers.Base"]
+    - state: "off"
+      map: ["enum.VendingMachineVisualLayers.BaseUnshaded"]
+      shader: unshaded
+    - state: "screen"
+      map: ["enum.VendingMachineVisualLayers.Screen"]
+      shader: unshaded
+    - state: panel
+      map: ["enum.WiresVisualLayers.MaintenancePanel"]
+
+- type: vendingMachineInventory
+  id: ERPMachineInventory
+  startingInventory:
+    candle_pink: 2
+    candle_teal: 2

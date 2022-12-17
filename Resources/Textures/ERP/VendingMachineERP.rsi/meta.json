@@ -1,0 +1,52 @@
+{
+  "version": 1,
+  "license": "CC-BY-SA-3.0",
+  "copyright": "Taken from discord: Evgen99#0582",
+  "size": {
+    "x": 32,
+    "y": 32
+  },
+  "states": [
+    {
+      "name": "case"
+    },
+	{
+      "name": "off"
+    },
+	{
+      "name": "panel"
+    },
+    {
+      "name": "deny-unshaded",
+      "delays": [
+        [
+          0.1,
+          0.1,
+          0.1,
+          0.1,
+		  0.1,
+          0.1,
+		  0.1,
+		  0.1,
+          0.1
+        ]
+      ]
+    },
+    {
+      "name": "screen",
+      "delays": [
+        [
+          0.2,
+          0.2,
+          0.2,
+          0.2,
+		  0.2,
+          0.2,
+		  0.2,
+		  1.4,
+          1.4
+        ]
+      ]
+    }
+  ]
+}
