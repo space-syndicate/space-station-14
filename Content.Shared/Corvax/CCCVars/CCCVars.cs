@@ -10,7 +10,7 @@ namespace Content.Shared.Corvax.CCCVars;
 public sealed class CCCVars
 {
     /**
-     * Corvax | RoundNotifications
+     * RoundNotifications
      */
 
     /// <summary>
@@ -26,7 +26,7 @@ public sealed class CCCVars
         CVarDef.Create("discord.round_roleid", string.Empty, CVar.SERVERONLY);
 
     /**
-     * Corvax | Sponsors
+     * Sponsors
      */
 
     /// <summary>
@@ -36,7 +36,7 @@ public sealed class CCCVars
         CVarDef.Create("sponsor.api_url", "", CVar.SERVERONLY);
 
     /*
-     * Corvax | Queue
+     * Queue
      */
 
     /// <summary>
