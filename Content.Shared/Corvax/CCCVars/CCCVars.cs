@@ -3,7 +3,7 @@
 namespace Content.Shared.Corvax.CCCVars;
 
 /// <summary>
-/// Corvax modules console variables
+///     Corvax modules console variables
 /// </summary>
 [CVarDefs]
 // ReSharper disable once InconsistentNaming
@@ -14,13 +14,13 @@ public sealed class CCCVars
      */
 
     /// <summary>
-    /// URL of the Discord webhook which will send round status notifications.
+    ///     URL of the Discord webhook which will send round status notifications.
     /// </summary>
     public static readonly CVarDef<string> DiscordRoundWebhook =
         CVarDef.Create("discord.round_webhook", string.Empty, CVar.SERVERONLY);
 
     /// <summary>
-    /// Discord ID of role which will be pinged on new round start message.
+    ///     Discord ID of role which will be pinged on new round start message.
     /// </summary>
     public static readonly CVarDef<string> DiscordRoundRoleId =
         CVarDef.Create("discord.round_roleid", string.Empty, CVar.SERVERONLY);
@@ -30,7 +30,7 @@ public sealed class CCCVars
      */
 
     /// <summary>
-    /// URL of the sponsors server API.
+    ///     URL of the sponsors server API.
     /// </summary>
     public static readonly CVarDef<string> SponsorsApiUrl =
         CVarDef.Create("sponsor.api_url", "", CVar.SERVERONLY);
