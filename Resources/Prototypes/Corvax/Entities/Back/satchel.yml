@@ -1,0 +1,10 @@
+- type: entity
+  parent: ClothingBackpackSatchel
+  id: ClothingBackpackMilitarySatchelCorvax
+  name: army satchel
+  description: A tactical satchel for army related needs.
+  components:
+  - type: Sprite
+    sprite: 
+  - type: Storage
+    capacity: 131
