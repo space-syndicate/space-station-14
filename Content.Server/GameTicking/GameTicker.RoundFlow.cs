@@ -372,6 +372,7 @@ namespace Content.Server.GameTicking
             RaiseNetworkEvent(new RoundEndMessageEvent(gamemodeTitle, roundEndText, roundDuration, RoundId,
                 listOfPlayerInfoFinal.Length, listOfPlayerInfoFinal, LobbySong,
                 new SoundCollectionSpecifier("RoundEnd").GetSound()));
+            RaiseLocalEvent(new RoundEndedEvent(RoundId, roundDuration)); // Corvax-RoundNotifications
         }
 
         public void RestartRound()

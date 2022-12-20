@@ -29,7 +29,7 @@ public sealed class RoundNotificationsSystem : EntitySystem
     {
         SubscribeLocalEvent<RoundRestartCleanupEvent>(OnRoundRestart);
         SubscribeLocalEvent<RoundStartedEvent>(OnRoundStarted);
-        SubscribeLocalEvent<RoundEndMessageEvent>(OnRoundEnd);
+        SubscribeLocalEvent<RoundEndedEvent>(OnRoundEnded);
 
         _config.OnValueChanged(CCCVars.DiscordRoundWebhook, value => _discordWebhook = value, true);
         _config.OnValueChanged(CCCVars.DiscordRoundRoleId, value => _discordRoleId = value, true);
@@ -77,7 +77,7 @@ public sealed class RoundNotificationsSystem : EntitySystem
         SendDiscordMessage(payload);
     }
     
-    private void OnRoundEnd(RoundEndMessageEvent e)
+    private void OnRoundEnded(RoundEndedEvent e)
     {
         if (String.IsNullOrEmpty(_discordWebhook))
             return;
