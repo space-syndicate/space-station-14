@@ -5,7 +5,7 @@ using System.Net.Http;
 using System.Net.Http.Json;
 using System.Threading.Tasks;
 using Content.Server.Database;
-using Content.Shared.CCVar;
+using Content.Shared.Corvax.CCCVars;
 using Content.Shared.Corvax.Sponsors;
 using Robust.Shared.Configuration;
 using Robust.Shared.Network;
@@ -29,7 +29,7 @@ public sealed class SponsorsManager
     public void Initialize()
     {
         _sawmill = Logger.GetSawmill("sponsors");
-        _cfg.OnValueChanged(CCVars.SponsorsApiUrl, s => _apiUrl = s, true);
+        _cfg.OnValueChanged(CCCVars.SponsorsApiUrl, s => _apiUrl = s, true);
 
         _netMgr.RegisterNetMessage<MsgSponsorInfo>();
 

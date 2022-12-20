@@ -1389,7 +1389,6 @@ namespace Content.Shared.CCVar
         /// </summary>
         public static readonly CVarDef<string> InfoLinksBugReport =
             CVarDef.Create("infolinks.bug_report", "", CVar.SERVER | CVar.REPLICATED);
-
         /*
          * CONFIG
          */
@@ -1422,63 +1421,5 @@ namespace Content.Shared.CCVar
         /// </summary>
         public static readonly CVarDef<bool> ConfigPresetDebug =
             CVarDef.Create("config.preset_debug", true, CVar.SERVERONLY);
-
-        /**
-         * Corvax | RoundNotifications
-         */
-
-        /// <summary>
-        /// URL of the Discord webhook which will send round status notifications.
-        /// </summary>
-        public static readonly CVarDef<string> DiscordRoundWebhook =
-            CVarDef.Create("discord.round_webhook", string.Empty, CVar.SERVERONLY);
-
-        /// <summary>
-        /// Discord ID of role which will be pinged on new round start message.
-        /// </summary>
-        public static readonly CVarDef<string> DiscordRoundRoleId =
-            CVarDef.Create("discord.round_roleid", string.Empty, CVar.SERVERONLY);
-
-        /**
-         * Corvax | Sponsors
-         */
-
-        /// <summary>
-        /// URL of the sponsors server API.
-        /// </summary>
-        public static readonly CVarDef<string> SponsorsApiUrl =
-            CVarDef.Create("sponsor.api_url", "", CVar.SERVERONLY);
-
-        /*
-         * Corvax | Queue
-         */
-
-        /// <summary>
-        ///     Controls if the connections queue is enabled. If enabled stop kicking new players after `SoftMaxPlayers` cap and instead add them to queue.
-        /// </summary>
-        public static readonly CVarDef<bool>
-            QueueEnabled = CVarDef.Create("queue.enabled", false, CVar.SERVERONLY);
-
-        /**
-         * Corvax | TTS (Text-To-Speech)
-         */
-
-        /// <summary>
-        /// URL of the TTS server API.
-        /// </summary>
-        public static readonly CVarDef<bool> TTSEnabled =
-            CVarDef.Create("tts.enabled", false, CVar.SERVERONLY);
-
-        /// <summary>
-        /// URL of the TTS server API.
-        /// </summary>
-        public static readonly CVarDef<string> TTSApiUrl =
-            CVarDef.Create("tts.api_url", "", CVar.SERVERONLY);
-
-        /// <summary>
-        /// Auth token of the TTS server API.
-        /// </summary>
-        public static readonly CVarDef<string> TTSApiToken =
-            CVarDef.Create("tts.api_token", "", CVar.SERVERONLY);
     }
 }
