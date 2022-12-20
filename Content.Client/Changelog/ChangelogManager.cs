@@ -70,7 +70,7 @@ namespace Content.Client.Changelog
 
             NewChangelogEntriesChanged?.Invoke();
         }
-        
+
         public async Task<List<ChangelogEntry>> LoadChangelog()
         {
             var paths = _resource.ContentFindFiles("/Changelog/")
