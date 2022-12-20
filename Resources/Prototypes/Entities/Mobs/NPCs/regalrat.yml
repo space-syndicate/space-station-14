@@ -178,8 +178,8 @@
   components:
   - type: CombatMode
   - type: MovementSpeedModifier
-    baseWalkSpeed : 3.5
-    baseSprintSpeed : 3.5
+    baseWalkSpeed : 2.5     #Value was 3.5 (Nerf since 20.12.2022)
+    baseSprintSpeed : 2.5   #Value was 3.5 (Nerf since 20.12.2022)
   - type: InputMover
   - type: MobMover
   - type: HTN
@@ -222,8 +222,8 @@
     animation: WeaponArcClaw
     damage:
       types:
-        Slash: 5
-        Piercing: 3
+        Slash: 3    #Value was 5 (Nerf since 20.12.2022)
+        Piercing: 2 #Value was 3 (Nerf since 20.12.2022)
   - type: Body
     prototype: Rat
     requiredLegs: 1 # TODO: More than 1 leg
