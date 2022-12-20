@@ -23,6 +23,7 @@ public sealed class RoundNotificationsSystem : EntitySystem
     
     private string _discordWebhook = String.Empty;
     private string _discordRoleId = String.Empty;
+    private bool _discordRoundStartOnly = false;
     
     /// <inheritdoc/>
     public override void Initialize()
@@ -33,6 +34,7 @@ public sealed class RoundNotificationsSystem : EntitySystem
 
         _config.OnValueChanged(CCCVars.DiscordRoundWebhook, value => _discordWebhook = value, true);
         _config.OnValueChanged(CCCVars.DiscordRoundRoleId, value => _discordRoleId = value, true);
+        _config.OnValueChanged(CCCVars.DiscordRoundStartOnly, value => _discordRoundStartOnly = value, true);
 
         _sawmill = IoCManager.Resolve<ILogManager>().GetSawmill("notifications");
     }
@@ -79,7 +81,7 @@ public sealed class RoundNotificationsSystem : EntitySystem
     
     private void OnRoundEnded(RoundEndedEvent e)
     {
-        if (String.IsNullOrEmpty(_discordWebhook))
+        if (String.IsNullOrEmpty(_discordWebhook) || _discordRoundStartOnly)
             return;
 
         var text = Loc.GetString("discord-round-end",
