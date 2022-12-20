@@ -167,6 +167,8 @@
       - CableStack
       - CableMVStack
       - CableHVStack
+      - PowerDrill
+      - MiningDrill
       - ConveyorBeltAssembly
       - AppraisalTool
       - RCDAmmo
@@ -205,6 +207,7 @@
       - APCElectronics
       - AirAlarmElectronics
       - FireAlarmElectronics
+      - IntercomElectronics
       - MailingUnitElectronics
       - Bucket
       - MopItem
@@ -222,6 +225,7 @@
       - PowerCellSmall
       - PowerCellMedium
       - PowerCellHigh  
+      - SynthesizerInstrument
       - RPED
       - HolofanProjector
 
@@ -255,6 +259,7 @@
       - AirAlarmElectronics
       - FireAlarmElectronics
       - MailingUnitElectronics
+      - IntercomElectronics
       - SMESMachineCircuitboard
       - SubstationMachineCircuitboard
       - ThermomachineFreezerMachineCircuitBoard
@@ -289,12 +294,16 @@
       - CloningConsoleComputerCircuitboard
       - StasisBedMachineCircuitboard
       - OreProcessorMachineCircuitboard
+      - RipleyCentralElectronics
+      - RipleyPeripheralsElectronics
       - GeneratorPlasmaMachineCircuitboard
       - GeneratorUraniumMachineCircuitboard
       - WallmountGeneratorElectronics
       - WallmountGeneratorAPUElectronics
       - WallmountSubstationElectronics
       - EmitterCircuitboard
+      - ThrusterMachineCircuitboard
+      - GyroscopeMachineCircuitboard
       - GasRecyclerMachineCircuitboard
       - SeedExtractorMachineCircuitboard
       - AnalysisComputerCircuitboard
@@ -333,6 +342,12 @@
     - ProximitySensor
     - LeftArmBorg
     - RightArmBorg
+    - RipleyHarness
+    - RipleyLArm
+    - RipleyRArm
+    - RipleyLLeg
+    - RipleyRLeg
+    - MechEquipmentGrabber
   - type: MaterialStorage
     whitelist:
       tags:
@@ -532,7 +547,7 @@
       - ClothingNeckMantleCMO
       - ClothingNeckMantleHOP
       - ClothingNeckMantleHOS
-      - ClothingNeckMantleHOSShoulder
+      - ClothingNeckMantleHOSShoulder # Corvax-Resprite: Old mantle
       - ClothingNeckMantleRD
       - ClothingOuterWinterMusician
       - ClothingOuterWinterClown

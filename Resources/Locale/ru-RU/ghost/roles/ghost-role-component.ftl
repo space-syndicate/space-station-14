@@ -8,3 +8,7 @@ ghost-role-information-mouse-description = Голодная и озорная м
 ghost-role-information-giant-spider-name = Гигантский паук
 ghost-role-information-giant-spider-description = Устройте хаос обитателям станции!
 ghost-role-information-cognizine-description = Приобрело сознание с помощью магии когнизина.
+ghost-role-information-hamster-name = Хомяк
+ghost-role-information-hamster-description = Маленький ворчливый пушистик.
+ghost-role-information-hamlet-name = Хомяк Гамлет
+ghost-role-information-hamlet-description = Живёт на капитанском мостике, немного вспыльчив и всегда голоден.

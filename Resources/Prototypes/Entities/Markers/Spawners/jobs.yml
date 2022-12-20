@@ -20,7 +20,8 @@
     sprite: Markers/jobs.rsi
     layers:
       - state: green
-      - texture: Mobs/Ghosts/ghost_human.rsi/icon.png
+      - sprite: Mobs/Ghosts/ghost_human.rsi
+        state: icon
     state: observer
   - type: SpawnPoint
     spawn_type: Observer
@@ -210,7 +211,7 @@
   name: lawyer
   components:
   - type: SpawnPoint
-    job_id: IAA # Lawyers was replaced with IAA
+    job_id: IAA # Corvax-IAA: Lawyer replaced with IAA
   - type: Sprite
     layers:
       - state: green
