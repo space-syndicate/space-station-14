@@ -1,0 +1,12 @@
+- type: entity
+  parent: ClothingOuterHardsuitCBURN
+  id: ClothingOuterHardsuitCBURNLeaderCorvax
+  name: CBURN commander exosuit
+  description: A lightweight yet strong exosuit used for special cleanup operations.
+  components:
+  - type: Sprite
+    sprite: Corvax/Clothing/OuterClothing/Hardsuits/cburncommander.rsi
+  - type: Clothing
+    sprite: Corvax/Clothing/OuterClothing/Hardsuits/cburncommander.rsi
+  - type: ToggleableClothing
+    clothingPrototype: ClothingHeadHelmetCBURNLeaderCorvax
