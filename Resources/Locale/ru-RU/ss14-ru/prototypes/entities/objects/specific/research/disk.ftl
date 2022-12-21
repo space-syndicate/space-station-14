@@ -10,3 +10,6 @@ ent-ResearchDisk10000 = диск исследовательских очков (
 ent-ResearchDiskDebug = диск исследовательских очков
     .desc = Диск для сервера РНД, содержащий столько очков, сколько вам надо.
     .suffix = DEBUG, DO NOT MAP
+ent-TechnologyDisk = technology disk
+    .desc = A disk for the R&D server containing research technology.
+    .suffix = { "" }
