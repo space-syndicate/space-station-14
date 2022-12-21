@@ -1,1 +1,1 @@
-﻿species-name-moth = Moth
+﻿species-name-moth = Nian

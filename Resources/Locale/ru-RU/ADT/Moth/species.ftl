@@ -1,1 +1,1 @@
-﻿species-name-moth = Моль
+﻿species-name-moth = Ниан
