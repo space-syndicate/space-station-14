@@ -31,7 +31,13 @@
   onlyWhitelisted: true
   points:
     Hair:
-      points: 0
+      points: 1
+      required: false
+    Chest:
+      points: 1
+      required: false
+    Tail:
+      points: 1
       required: false
 
 - type: humanoidBaseSprite
