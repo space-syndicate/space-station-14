@@ -1,4 +1,4 @@
-﻿- type: entity
+- type: entity
   save: false
   name: Vulpkanin McHands
   parent: BaseMobOrganic
@@ -10,6 +10,7 @@
     - type: Body
       prototype: VulpkaninBody
       requiredLegs: 2
+    - type: RoarAccent
     - type: Hunger
     - type: Thirst
     - type: Icon
