@@ -1,1 +1,1 @@
-node-scan-popup = ID ноды: { $id }
+node-scan-popup = ID узла: { $id }
