@@ -17,9 +17,15 @@ public sealed partial class QueueGui : Control
     public QueueGui()
     {
         RobustXamlLoader.Load(this);
+        IoCManager.InjectDependencies(this);
         LayoutContainer.SetAnchorPreset(this, LayoutContainer.LayoutPreset.Wide);
         
         QuitButton.OnPressed += (_) => QuitPressed?.Invoke();
+        
+        // Disable "priority join" button on Steam builds
+        // since it violates Valve's rules about alternative storefronts.
+        PriorityJoinButton.Visible = !_cfg.GetCVar(CCVars.BrandingSteam);
+
         PriorityJoinButton.OnPressed += (_) =>
         {
             var linkPatreon = _cfg.GetCVar(CCVars.InfoLinksPatreon);

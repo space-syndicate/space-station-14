@@ -167,8 +167,11 @@
       - CableStack
       - CableMVStack
       - CableHVStack
+      - PowerDrill
+      - MiningDrill
       - ConveyorBeltAssembly
       - AppraisalTool
+      - RCD
       - RCDAmmo
       - HydroponicsToolScythe
       - HydroponicsToolHatchet
@@ -205,6 +208,7 @@
       - APCElectronics
       - AirAlarmElectronics
       - FireAlarmElectronics
+      - IntercomElectronics
       - MailingUnitElectronics
       - Bucket
       - MopItem
@@ -224,6 +228,7 @@
       - PowerCellHigh  
       - SynthesizerInstrument
       - RPED
+      - NodeScanner
       - HolofanProjector
 
 - type: entity
@@ -256,6 +261,7 @@
       - AirAlarmElectronics
       - FireAlarmElectronics
       - MailingUnitElectronics
+      - IntercomElectronics
       - SMESMachineCircuitboard
       - SubstationMachineCircuitboard
       - ThermomachineFreezerMachineCircuitBoard
@@ -286,6 +292,7 @@
       - ShuttleConsoleCircuitboard
       - RadarConsoleCircuitboard
       - CircuitImprinterMachineCircuitboard
+      - TechDiskComputerCircuitboard
       - DawInstrumentMachineCircuitboard
       - CloningConsoleComputerCircuitboard
       - StasisBedMachineCircuitboard
@@ -298,6 +305,8 @@
       - WallmountGeneratorAPUElectronics
       - WallmountSubstationElectronics
       - EmitterCircuitboard
+      - ThrusterMachineCircuitboard
+      - GyroscopeMachineCircuitboard
       - GasRecyclerMachineCircuitboard
       - SeedExtractorMachineCircuitboard
       - AnalysisComputerCircuitboard

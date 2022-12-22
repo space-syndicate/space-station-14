@@ -237,7 +237,8 @@ public abstract class SharedMechSystem : EntitySystem
             : Loc.GetString("mech-equipment-select-none-popup");
 
         if (_timing.IsFirstTimePredicted)
-            _popup.PopupEntity(popupString, uid, Filter.Pvs(uid));
+            _popup.PopupEntity(popupString, uid);
+
         Dirty(component);
     }
 
@@ -292,15 +293,14 @@ public abstract class SharedMechSystem : EntitySystem
             if (attemptev.Cancelled)
                 return;
         }
-
-        equipmentComponent.EquipmentOwner = null;
-        component.EquipmentContainer.Remove(toRemove, EntityManager);
         var ev = new MechEquipmentRemovedEvent(uid);
         RaiseLocalEvent(toRemove, ref ev);
 
         if (component.CurrentSelectedEquipment == toRemove)
             CycleEquipment(uid, component);
 
+        equipmentComponent.EquipmentOwner = null;
+        component.EquipmentContainer.Remove(toRemove, EntityManager);
         UpdateUserInterface(uid, component);
     }
 
