@@ -2,6 +2,7 @@
 using System.IO;
 using System.Linq;
 using Content.Shared.CCVar;
+using Content.Shared.Corvax.CCCVars;
 using Content.Shared.Corvax.TTS;
 using Content.Shared.Physics;
 using Robust.Client.Graphics;
@@ -33,14 +34,14 @@ public sealed class TTSSystem : EntitySystem
     public override void Initialize()
     {
         _sawmill = Logger.GetSawmill("tts");
-        _cfg.OnValueChanged(CCVars.TtsVolume, OnTtsVolumeChanged, true);
+        _cfg.OnValueChanged(CCCVars.TtsVolume, OnTtsVolumeChanged, true);
         SubscribeNetworkEvent<PlayTTSEvent>(OnPlayTTS);
     }
 
     public override void Shutdown()
     {
         base.Shutdown();
-        _cfg.UnsubValueChanged(CCVars.TtsVolume, OnTtsVolumeChanged);
+        _cfg.UnsubValueChanged(CCCVars.TtsVolume, OnTtsVolumeChanged);
         EndStreams();
     }
 

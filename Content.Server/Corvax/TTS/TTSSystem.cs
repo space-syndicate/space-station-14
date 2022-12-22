@@ -1,5 +1,5 @@
 ﻿using Content.Server.Chat.Systems;
-using Content.Shared.CCVar;
+using Content.Shared.Corvax.CCCVars;
 using Content.Shared.Corvax.TTS;
 using Content.Shared.GameTicking;
 using Robust.Shared.Configuration;
@@ -20,7 +20,7 @@ public sealed class TTSSystem : EntitySystem
     
     public override void Initialize()
     {
-        _cfg.OnValueChanged(CCVars.TTSEnabled, v => _isEnabled = v, true);
+        _cfg.OnValueChanged(CCCVars.TTSEnabled, v => _isEnabled = v, true);
         
         SubscribeLocalEvent<TTSComponent, EntitySpokeEvent>(OnEntitySpoke);
         SubscribeLocalEvent<RoundRestartCleanupEvent>(OnRoundRestartCleanup);

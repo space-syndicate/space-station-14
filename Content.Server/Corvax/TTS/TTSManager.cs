@@ -5,7 +5,7 @@ using System.Text;
 using System.Text.Json.Serialization;
 using System.Threading;
 using System.Threading.Tasks;
-using Content.Shared.CCVar;
+using Content.Shared.Corvax.CCCVars;
 using Prometheus;
 using Robust.Shared.Configuration;
 
@@ -56,13 +56,13 @@ public sealed class TTSManager
     /// <exception cref="Exception">Throws if url or token CCVar not set or http request failed</exception>
     public async Task<byte[]> ConvertTextToSpeech(string speaker, string text)
     {
-        var url = _cfg.GetCVar(CCVars.TTSApiUrl);
+        var url = _cfg.GetCVar(CCCVars.TTSApiUrl);
         if (string.IsNullOrWhiteSpace(url))
         {
             throw new Exception("TTS Api url not specified");
         }
         
-        var token = _cfg.GetCVar(CCVars.TTSApiToken);
+        var token = _cfg.GetCVar(CCCVars.TTSApiToken);
         if (string.IsNullOrWhiteSpace(token))
         {
             throw new Exception("TTS Api token not specified");
