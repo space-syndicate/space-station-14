@@ -2,6 +2,7 @@
   id: SponsorPulsingPurple
   bodyPart: HeadTop
   markingCategory: HeadTop
+  sponsorOnly: false # Corvax-Sponsors
   sprites:
     - sprite: Corvax/Mobs/Customization/sponsor.rsi
       state: purplepulsing
