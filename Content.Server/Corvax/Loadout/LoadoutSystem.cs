@@ -1,4 +1,5 @@
-﻿using Content.Server.Corvax.Sponsors;
+﻿using System.Linq;
+using Content.Server.Corvax.Sponsors;
 using Content.Server.GameTicking;
 using Content.Server.Hands.Systems;
 using Content.Shared.Inventory;
@@ -27,16 +28,22 @@ public sealed class LoadoutSystem : EntitySystem
             {
                 if (_prototypeManager.TryIndex<LoadoutItemPrototype>(loadoutId, out var loadout))
                 {
-                    var isWhitelisted = loadout.WhitelistJobs.Count > 0 &&
-                                               loadout.WhitelistJobs.Contains(ev.JobId ?? String.Empty);
-                    var isBlacklisted = ev.JobId != null && loadout.BlacklistJobs.Contains(ev.JobId);
+                    var isSponsorOnly = loadout.SponsorOnly &&
+                                        !sponsor.AllowedLoadout.Contains(loadoutId);
+                    var isWhitelisted = ev.JobId != null &&
+                                        loadout.WhitelistJobs != null &&
+                                        !loadout.WhitelistJobs.Contains(ev.JobId);
+                    var isBlacklisted = ev.JobId != null &&
+                                        loadout.BlacklistJobs != null &&
+                                        loadout.BlacklistJobs.Contains(ev.JobId);
+                    var isSpeciesRestricted = loadout.SpeciesRestrictions != null &&
+                                              loadout.SpeciesRestrictions.Contains(ev.Profile.Species);
 
-                    if (!isWhitelisted || isBlacklisted)
+                    if (isSponsorOnly || isWhitelisted || isBlacklisted || isSpeciesRestricted)
                         continue;
 
                     var entity = Spawn(loadout.EntityId, Transform(ev.Mob).Coordinates);
-
-                    if (loadout.SlotId != String.Empty)
+                    if (loadout.SlotId != null)
                     {
                         if (_inventorySystem.TryGetSlotEntity(ev.Mob, loadout.SlotId, out var slotEntity))
                             Del(slotEntity.Value); // Removing starting gear is okay, right...?

@@ -14,11 +14,19 @@ public sealed class LoadoutItemPrototype : IPrototype
     public string EntityId { get; } = String.Empty;
     
     [DataField("slot")]
-    public string SlotId { get; } = String.Empty;
+    public string? SlotId { get; }
+    
+    // Corvax-Sponsors-Start
+    [DataField("sponsorOnly")]
+    public bool SponsorOnly = false;
+    // Corvax-Sponsors-End
     
     [DataField("whitelistJobs", customTypeSerializer: typeof(PrototypeIdListSerializer<JobPrototype>))]
-    public List<string> WhitelistJobs { get; } = new();
+    public List<string>? WhitelistJobs { get; }
     
     [DataField("blacklistJobs", customTypeSerializer: typeof(PrototypeIdListSerializer<JobPrototype>))]
-    public List<string> BlacklistJobs { get; } = new();
+    public List<string>? BlacklistJobs { get; }
+
+    [DataField("speciesRestriction")]
+    public List<string>? SpeciesRestrictions { get; }
 }
