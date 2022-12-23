@@ -25,6 +25,9 @@ public sealed class SponsorInfo
 
     [JsonPropertyName("allowedMarkings")]
     public string[] AllowedMarkings { get; set; } = Array.Empty<string>();
+
+    [JsonPropertyName("allowedLoadout")]
+    public string[] AllowedLoadout { get; set; } = Array.Empty<string>();
 }
 
 
