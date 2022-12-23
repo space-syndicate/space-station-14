@@ -3,6 +3,7 @@ using Content.Server.Corvax.Sponsors;
 using Content.Server.GameTicking;
 using Content.Server.Hands.Systems;
 using Content.Server.Storage.EntitySystems;
+using Content.Shared.Clothing.Components;
 using Content.Shared.Inventory;
 using Robust.Shared.Prototypes;
 
@@ -48,20 +49,43 @@ public sealed class LoadoutSystem : EntitySystem
                         continue;
 
                     var entity = Spawn(loadout.EntityId, Transform(ev.Mob).Coordinates);
-                    if (loadout.SlotId == null) // Take in hand if slot not specified
+                    
+                    // Take in hand if not clothes
+                    if (!TryComp<ClothingComponent>(entity, out var clothing))
                     {
                         _handsSystem.TryPickup(ev.Mob, entity);
                         continue;
                     }
                     
-                    // Get occupied entity -> Insert to backpack -> Equip loadout gear
-                    if (_inventorySystem.TryGetSlotEntity(ev.Mob, loadout.SlotId, out var slotEntity) &&
+                    // Automatically search empty slot for clothes to equip
+                    string? firstSlotName = null;
+                    foreach (var slot in _inventorySystem.GetSlots(ev.Mob))
+                    {
+                        if (!clothing.Slots.HasFlag(slot.SlotFlags))
+                            continue;
+
+                        if (firstSlotName == null)
+                            firstSlotName = slot.Name;
+                        
+                        if (_inventorySystem.TryGetSlotEntity(ev.Mob, slot.Name, out var _))
+                            continue;
+
+                        if (_inventorySystem.TryEquip(ev.Mob, entity, slot.Name, true))
+                            return;
+                    }
+                    
+                    if (firstSlotName == null) // Weird
+                        return;
+
+                    // Force equip to first valid clothes slot
+                    // Get occupied entity -> Insert to backpack -> Equip loadout entity
+                    if (_inventorySystem.TryGetSlotEntity(ev.Mob, firstSlotName, out var slotEntity) &&
                         _inventorySystem.TryGetSlotEntity(ev.Mob, BackpackSlotId, out var backEntity) &&
                         _storageSystem.CanInsert(backEntity.Value, slotEntity.Value, out _))
                     {
                         _storageSystem.Insert(backEntity.Value, slotEntity.Value);
                     }
-                    _inventorySystem.TryEquip(ev.Mob, entity, loadout.SlotId, true);
+                    _inventorySystem.TryEquip(ev.Mob, entity, firstSlotName, true);
                 }
             }
         }

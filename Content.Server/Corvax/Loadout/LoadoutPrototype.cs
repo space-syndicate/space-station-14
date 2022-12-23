@@ -11,10 +11,7 @@ public sealed class LoadoutItemPrototype : IPrototype
     [IdDataFieldAttribute] public string ID { get; } = default!;
 
     [DataField("entity", required: true, customTypeSerializer: typeof(PrototypeIdSerializer<EntityPrototype>))]
-    public string EntityId { get; } = String.Empty;
-    
-    [DataField("slot")]
-    public string? SlotId { get; }
+    public string EntityId { get; } = default!;
     
     // Corvax-Sponsors-Start
     [DataField("sponsorOnly")]
