@@ -28,13 +28,13 @@ public sealed class LoadoutSystem : EntitySystem
     {
         if (_sponsorsManager.TryGetInfo(ev.Player.UserId, out var sponsor))
         {
-            foreach (var loadoutId in sponsor.AllowedLoadout)
+            foreach (var loadoutId in sponsor.AllowedMarkings)
             {
                 // NOTE: Now is easy to not extract method because event give all info we need
                 if (_prototypeManager.TryIndex<LoadoutItemPrototype>(loadoutId, out var loadout))
                 {
                     var isSponsorOnly = loadout.SponsorOnly &&
-                                        !sponsor.AllowedLoadout.Contains(loadoutId);
+                                        !sponsor.AllowedMarkings.Contains(loadoutId);
                     var isWhitelisted = ev.JobId != null &&
                                         loadout.WhitelistJobs != null &&
                                         !loadout.WhitelistJobs.Contains(ev.JobId);
