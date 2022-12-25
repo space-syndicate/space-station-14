@@ -5,6 +5,7 @@ using System.Net.Http.Json;
 using System.Threading.Tasks;
 using Content.Shared.Corvax.CCCVars;
 using Content.Shared.Corvax.Sponsors;
+using Newtonsoft.Json;
 using Robust.Shared.Configuration;
 using Robust.Shared.Network;
 using Robust.Shared.Utility;
@@ -80,12 +81,22 @@ public sealed class SponsorsManager
         {
             var errorText = await response.Content.ReadAsStringAsync();
             _sawmill.Error(
-                "Failed to get player sponsor OOC color from API: [{StatusCode}] {Response}",
+                "Failed to get player sponsor info from API: [{StatusCode}] {Response}",
                 response.StatusCode,
                 errorText);
             return null;
         }
 
-        return await response.Content.ReadFromJsonAsync<SponsorInfo>();
+        try
+        {
+            return await response.Content.ReadFromJsonAsync<SponsorInfo>();
+        }
+        catch (JsonReaderException e)
+        {
+            _sawmill.Error(
+                "Failed to parse player sponsor info JSON from API: {Message}",
+                e.Message);
+            return null;
+        }
     }
 }
