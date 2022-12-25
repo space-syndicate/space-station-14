@@ -22,7 +22,7 @@ public sealed class TTSVoicePrototype : IPrototype
     }
 
     [ViewVariables(VVAccess.ReadWrite)]
-    [DataField("speaker")]
+    [DataField("speaker", required: true)]
     public string Speaker { get; } = string.Empty;
     
     /// <summary>

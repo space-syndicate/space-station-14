@@ -9,7 +9,7 @@ using Robust.Shared.Prototypes;
 namespace Content.Server.Corvax.TTS;
 
 // ReSharper disable once InconsistentNaming
-public sealed class TTSSystem : EntitySystem
+public sealed partial class TTSSystem : EntitySystem
 {
     [Dependency] private readonly IConfigurationManager _cfg = default!;
     [Dependency] private readonly IPrototypeManager _prototypeManager = default!;
@@ -39,7 +39,8 @@ public sealed class TTSSystem : EntitySystem
             !_prototypeManager.TryIndex<TTSVoicePrototype>(component.VoicePrototypeId, out var protoVoice))
             return;
 
-        var textSsml = ToSsmlText(args.Message, SpeechRate.Fast);
+        var textSanitized = Sanitize(args.Message);
+        var textSsml = ToSsmlText(textSanitized, SpeechRate.Fast);
         var soundData = await _ttsManager.ConvertTextToSpeech(protoVoice.Speaker, textSsml);
         RaiseNetworkEvent(new PlayTTSEvent(uid, soundData), Filter.Pvs(uid));
     }
@@ -48,28 +49,4 @@ public sealed class TTSSystem : EntitySystem
     {
         _ttsManager.ResetCache();
     }
-
-    private string ToSsmlText(string text, SpeechRate rate = SpeechRate.Medium)
-    {
-        return $"<speak><prosody rate=\"{SpeechRateMap[rate]}\">{text}</prosody></speak>";
-    }
-
-    private enum SpeechRate : byte
-    {
-        VerySlow,
-        Slow,
-        Medium,
-        Fast,
-        VeryFast,
-    }
-
-    private static readonly IReadOnlyDictionary<SpeechRate, string> SpeechRateMap =
-        new Dictionary<SpeechRate, string>()
-        {
-            {SpeechRate.VerySlow, "x-slow"},
-            {SpeechRate.Slow, "slow"},
-            {SpeechRate.Medium, "medium"},
-            {SpeechRate.Fast, "fast"},
-            {SpeechRate.VeryFast, "x-fast"},
-        };
 }
