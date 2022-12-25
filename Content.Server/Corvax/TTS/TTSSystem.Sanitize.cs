@@ -128,7 +128,7 @@ public sealed partial class TTSSystem
             {"t", "т"},
             {"u", "у"},
             {"f", "ф"},
-            {"kh", "х"},
+            {"h", "х"},
             {"c", "ц"},
             {"ch", "ч"},
             {"sh", "ш"},
