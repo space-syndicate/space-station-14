@@ -385,6 +385,3 @@ ent-DrinkHellRamen = чашка адского рамэна
 ent-DrinkKvassGlass = кружка кваса
     .desc = Прохладный освежающий напиток с привкусом социализма.
     .suffix = { "" }
-ent-DrinkMandarinJuice = мандариновый сок
-    .desc = Сок из тех маленьких оранжевых фруктов
-    .suffix = { "" }

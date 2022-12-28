@@ -1,0 +1,16 @@
+- type: entity
+  parent: DrinkGlassBase
+  id: DrinkMandarinJuice
+  name: mandarin juice
+  description: Juice from that small round orange thing.
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      drink:
+        maxVol: 50
+        reagents:
+        - ReagentId: JuiceMandarin
+          Quantity: 50
+  - type: Drink
+  - type: Sprite
+    sprite: Corvax/Objects/Consumable/Drinks/mandarinjuice.rsi

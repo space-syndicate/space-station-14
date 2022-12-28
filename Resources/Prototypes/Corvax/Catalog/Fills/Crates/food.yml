@@ -1,0 +1,8 @@
+- type: entity
+  id: CrateFoodMandarines
+  parent: CratePlastic
+  components:
+  - type: StorageFill
+    contents:
+    - id: FoodMandarin
+      amount: 15

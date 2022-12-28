@@ -1,0 +1,25 @@
+- type: entity
+  name: mandarin
+  parent: FoodProduceBase
+  id: FoodMandarin
+  description: What a nice orange circle
+  components:
+  - type: FlavorProfile
+    flavors:
+      - mandarin
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 14
+        reagents:
+        - ReagentId: Nutriment
+          Quantity: 10
+        - ReagentId: Vitamin
+          Quantity: 4
+  - type: Extractable
+    juiceSolution:
+      reagents:
+      - ReagentId: JuiceMandarin
+        Quantity: 10
+  - type: Sprite
+    sprite: Corvax/Objects/Consumable/Food/mandarin.rsi
