@@ -1,11 +1,12 @@
 - type: job
   id: SalvageSpecialist
   name: job-name-salvagespec
+  description: job-description-salvagespec
   playTimeTracker: JobSalvageSpecialist
   requirements:
     - !type:DepartmentTimeRequirement
       department: Cargo
-      time: 10800
+      time: 10800 # Corvax-RoleTime
   icon: "ShaftMiner"
   startingGear: SalvageSpecialistGear
   supervisors: job-supervisors-hop-qm

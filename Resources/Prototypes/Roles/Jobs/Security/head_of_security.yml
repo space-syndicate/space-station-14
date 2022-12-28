@@ -1,14 +1,17 @@
 - type: job
   id: HeadOfSecurity
   name: job-name-hos
+  description: job-description-hos
   playTimeTracker: JobHeadOfSecurity
   requirements:
     - !type:RoleTimeRequirement
       role: JobWarden
-      time: 36000
+      time: 36000 # Corvax-RoleTime
     - !type:DepartmentTimeRequirement
       department: Security
-      time: 54000
+      time: 54000 # Corvax-RoleTime
+#    - !type:OverallPlaytimeRequirement
+#      time: 108000
   weight: 10
   startingGear: HoSGear
   icon: "HeadOfSecurity"

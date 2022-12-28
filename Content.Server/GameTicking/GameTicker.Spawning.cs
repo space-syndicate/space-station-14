@@ -2,8 +2,6 @@ using System.Globalization;
 using System.Linq;
 using Content.Server.Ghost;
 using Content.Server.Ghost.Components;
-using Content.Server.Humanoid;
-using Content.Shared.IdentityManagement;
 using Content.Server.Players;
 using Content.Server.Spawners.Components;
 using Content.Server.Speech.Components;
@@ -11,7 +9,6 @@ using Content.Server.Station.Components;
 using Content.Shared.Database;
 using Content.Shared.GameTicking;
 using Content.Shared.Ghost;
-using Content.Shared.Humanoid.Markings;
 using Content.Shared.Preferences;
 using Content.Shared.Roles;
 using JetBrains.Annotations;
@@ -199,7 +196,7 @@ namespace Content.Server.GameTicking
                     Loc.GetString(
                         "latejoin-arrival-announcement",
                     ("character", MetaData(mob).EntityName),
-                    ("gender", character.Gender),
+                    ("gender", character.Gender), // Corvax-LastnameGender
                     ("job", CultureInfo.CurrentCulture.TextInfo.ToTitleCase(job.Name))
                     ), Loc.GetString("latejoin-arrival-sender"),
                     playDefaultSound: false);
@@ -209,6 +206,7 @@ namespace Content.Server.GameTicking
             {
                 EntityManager.AddComponent<OwOAccentComponent>(mob);
             }
+
             _stationJobs.TryAssignJob(station, jobPrototype);
 
             if (lateJoin)
@@ -315,13 +313,13 @@ namespace Content.Server.GameTicking
             {
                 foreach (var grid in _mapManager.GetAllGrids())
                 {
-                    if (!metaQuery.TryGetComponent(grid.GridEntityId, out var meta) ||
+                    if (!metaQuery.TryGetComponent(grid.Owner, out var meta) ||
                         meta.EntityPaused)
                     {
                         continue;
                     }
 
-                    _possiblePositions.Add(new EntityCoordinates(grid.GridEntityId, Vector2.Zero));
+                    _possiblePositions.Add(new EntityCoordinates(grid.Owner, Vector2.Zero));
                 }
             }
 
@@ -335,9 +333,9 @@ namespace Content.Server.GameTicking
 
                 if (_mapManager.TryFindGridAt(toMap, out var foundGrid))
                 {
-                    var gridXform = Transform(foundGrid.GridEntityId);
+                    var gridXform = Transform(foundGrid.Owner);
 
-                    return new EntityCoordinates(foundGrid.GridEntityId,
+                    return new EntityCoordinates(foundGrid.Owner,
                         gridXform.InvWorldMatrix.Transform(toMap.Position));
                 }
 
