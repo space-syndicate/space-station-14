@@ -1,11 +1,12 @@
 - type: job
   id: AtmosphericTechnician
   name: job-name-atmostech
+  description: job-description-atmostech
   playTimeTracker: JobAtmosphericTechnician
   requirements:
     - !type:DepartmentTimeRequirement
       department: Engineering
-      time: 36000
+      time: 36000 # Corvax-RoleTime
   startingGear: AtmosphericTechnicianGear
   icon: "AtmosphericTechnician"
   supervisors: job-supervisors-ce
