@@ -24,3 +24,5 @@ reagent-name-juice-tomato = томатный сок
 reagent-desc-juice-tomato = Томаты превращенные в сок. Какая трата хороших помидоров, а?
 reagent-name-juice-watermelon = арбузный сок
 reagent-desc-juice-watermelon = Вкусный сок арбуза.
+reagent-name-juice-mandarin = мандариновый сок 
+reagent-desc-juice-mandarin = Сок из маленьких круглых оранжевых фруктов.

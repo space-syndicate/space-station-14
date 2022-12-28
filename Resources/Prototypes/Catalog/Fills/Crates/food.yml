@@ -50,3 +50,12 @@
       amount: 3
     - id: KitchenKnife
       amount: 1
+
+- type: entity
+  id: CrateFoodMandarines
+  parent: CratePlastic
+  components:
+  - type: StorageFill
+    contents:
+    - id: FoodMandarin
+      amount: 15
