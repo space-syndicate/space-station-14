@@ -11,4 +11,4 @@ ent-CrateFoodKvassTank = Kvass tank crate
     .desc = A tank with refreshing kvass, which helps so much in the heat.
 
 ent-CrateFoodMandarines = Box of mandarines
-    .desc = Give your crew a small part of new year. Just like in USSR.
+    .desc = Give your crew a small part of new year.
