@@ -26262,7 +26262,7 @@ entities:
   - pos: -27.5,-4.5
     parent: 0
     type: Transform
-  - SecondsUntilStateChange: -13470.536
+  - SecondsUntilStateChange: -13673.808
     state: Closing
     type: Door
 - uid: 40
@@ -26271,7 +26271,7 @@ entities:
   - pos: -27.5,-5.5
     parent: 0
     type: Transform
-  - SecondsUntilStateChange: -13471.27
+  - SecondsUntilStateChange: -13674.541
     state: Closing
     type: Door
 - uid: 41
@@ -55985,7 +55985,7 @@ entities:
   - pos: -27.5,-6.5
     parent: 0
     type: Transform
-  - SecondsUntilStateChange: -13471.936
+  - SecondsUntilStateChange: -13675.207
     state: Closing
     type: Door
 - uid: 4292
@@ -55994,7 +55994,7 @@ entities:
   - pos: -27.5,-7.5
     parent: 0
     type: Transform
-  - SecondsUntilStateChange: -13474.336
+  - SecondsUntilStateChange: -13677.607
     state: Closing
     type: Door
 - uid: 4293
@@ -59178,7 +59178,7 @@ entities:
   - pos: -63.5,-21.5
     parent: 0
     type: Transform
-  - SecondsUntilStateChange: -120885.56
+  - SecondsUntilStateChange: -121088.836
     state: Opening
     type: Door
   - inputs:
@@ -59797,7 +59797,7 @@ entities:
   - pos: -63.5,-18.5
     parent: 0
     type: Transform
-  - SecondsUntilStateChange: -120885.56
+  - SecondsUntilStateChange: -121088.836
     state: Opening
     type: Door
   - inputs:
@@ -59813,7 +59813,7 @@ entities:
   - pos: -59.5,-18.5
     parent: 0
     type: Transform
-  - SecondsUntilStateChange: -120873.99
+  - SecondsUntilStateChange: -121077.266
     state: Opening
     type: Door
   - inputs:
@@ -59837,7 +59837,7 @@ entities:
   - pos: -59.5,-21.5
     parent: 0
     type: Transform
-  - SecondsUntilStateChange: -120873.99
+  - SecondsUntilStateChange: -121077.266
     state: Opening
     type: Door
   - inputs:
@@ -79053,7 +79053,7 @@ entities:
     pos: 41.5,8.5
     parent: 0
     type: Transform
-  - SecondsUntilStateChange: -108792.71
+  - SecondsUntilStateChange: -108995.984
     state: Opening
     type: Door
   - inputs:
@@ -79070,7 +79070,7 @@ entities:
     pos: 41.5,6.5
     parent: 0
     type: Transform
-  - SecondsUntilStateChange: -108792.71
+  - SecondsUntilStateChange: -108995.984
     state: Opening
     type: Door
   - inputs:
@@ -79087,7 +79087,7 @@ entities:
     pos: 41.5,9.5
     parent: 0
     type: Transform
-  - SecondsUntilStateChange: -108792.71
+  - SecondsUntilStateChange: -108995.984
     state: Opening
     type: Door
   - inputs:
@@ -81167,7 +81167,7 @@ entities:
   - pos: -101.5,29.5
     parent: 0
     type: Transform
-  - SecondsUntilStateChange: -107618.75
+  - SecondsUntilStateChange: -107822.02
     state: Opening
     type: Door
   - inputs:
@@ -81303,7 +81303,7 @@ entities:
   - pos: -99.5,29.5
     parent: 0
     type: Transform
-  - SecondsUntilStateChange: -107617.35
+  - SecondsUntilStateChange: -107820.625
     state: Opening
     type: Door
   - inputs:
@@ -99437,7 +99437,7 @@ entities:
   - pos: -36.5,33.5
     parent: 0
     type: Transform
-  - SecondsUntilStateChange: -11772.304
+  - SecondsUntilStateChange: -11975.575
     state: Opening
     type: Door
 - uid: 10298
@@ -99751,7 +99751,7 @@ entities:
   - pos: -21.5,31.5
     parent: 0
     type: Transform
-  - SecondsUntilStateChange: -12417.103
+  - SecondsUntilStateChange: -12620.374
     state: Opening
     type: Door
 - uid: 10349
@@ -132562,30 +132562,30 @@ entities:
   - containers:
       entity_storage: !type:Container
         ents:
-        - 15353
-        - 15352
-        - 15351
-        - 15350
-        - 15349
-        - 15348
-        - 15339
-        - 15338
-        - 15337
-        - 15336
-        - 15335
-        - 15334
-        - 15333
-        - 15332
-        - 15331
-        - 15330
-        - 15329
-        - 15328
-        - 15326
-        - 15325
-        - 15324
-        - 15323
-        - 15322
         - 15320
+        - 15322
+        - 15323
+        - 15324
+        - 15325
+        - 15326
+        - 15328
+        - 15329
+        - 15330
+        - 15331
+        - 15332
+        - 15333
+        - 15334
+        - 15335
+        - 15336
+        - 15337
+        - 15338
+        - 15339
+        - 15348
+        - 15349
+        - 15350
+        - 15351
+        - 15352
+        - 15353
     type: ContainerContainer
 - uid: 15320
   type: ClothingBeltSheathFilled
@@ -132594,23 +132594,10 @@ entities:
     type: MetaData
   - parent: 15319
     type: Transform
-  - containers:
-      storagebase: !type:Container
-        ents:
-        - 15321
-    type: ContainerContainer
   - canCollide: False
     type: Physics
+  - type: ActiveUserInterface
   - type: InsideEntityStorage
-- uid: 15321
-  type: CaptainSabre
-  components:
-  - flags: InContainer
-    type: MetaData
-  - parent: 15320
-    type: Transform
-  - canCollide: False
-    type: Physics
 - uid: 15322
   type: PinpointerNuclear
   components:
@@ -145407,7 +145394,7 @@ entities:
   - pos: -27.5,-8.5
     parent: 0
     type: Transform
-  - SecondsUntilStateChange: -13472.969
+  - SecondsUntilStateChange: -13676.24
     state: Closing
     type: Door
 - uid: 17240
