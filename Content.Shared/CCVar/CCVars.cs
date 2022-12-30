@@ -1424,7 +1424,7 @@ namespace Content.Shared.CCVar
         /// Even when true, these are only loaded if the game is compiled with <c>DEBUG</c> set.
         /// </summary>
         public static readonly CVarDef<bool> ConfigPresetDebug =
-            CVarDef.Create("config.preset_debug", true, CVar.SERVERONLY);
+            CVarDef.Create("config.preset_debug", false, CVar.SERVERONLY);
 
         /**
          * Corvax | TTS (Text-To-Speech)
