@@ -1,29 +1,4 @@
 Entries:
-- author: ShadowCommander
-  changes:
-  - {message: Added verb context menu to player lists in admin menus., type: Add}
-  id: 2306
-  time: '2022-09-15T00:03:14.0000000+00:00'
-- author: illiux
-  changes:
-  - {message: The ChemMaster 4000 now outputs directly into a pill canister or bottle,
-    type: Tweak}
-  id: 2307
-  time: '2022-09-15T00:10:13.0000000+00:00'
-- author: metalgearsloth
-  changes:
-  - {message: Sell prices have been significantly increased across the board so cargo
-      should receive more income., type: Tweak}
-  - {message: Cargo passive income generation reduced from 10 per second to 2., type: Tweak}
-  - {message: Cargo shuttle cooldown reduced from 3 minutes to 30 seconds to facilitate
-      their increased pace., type: Tweak}
-  id: 2308
-  time: '2022-09-15T01:53:18.0000000+00:00'
-- author: illiux
-  changes:
-  - {message: The ChemMaster 4000 applies labels correctly, type: Fix}
-  id: 2309
-  time: '2022-09-15T06:27:22.0000000+00:00'
 - author: illiux
   changes:
   - {message: Added bottle boxes to chemistry lockers, type: Add}
@@ -2945,3 +2920,28 @@ Entries:
       specific chemicals, such as cryoxadone.', type: Add}
   id: 2805
   time: '2022-12-25T11:35:51.0000000+00:00'
+- author: EmoGarbage404
+  changes:
+  - {message: You can no longer spam print technology disks., type: Fix}
+  - {message: Changed some of the internal logic regarding research server syncing.,
+    type: Tweak}
+  id: 2806
+  time: '2022-12-25T21:22:24.0000000+00:00'
+- author: Whisper
+  changes:
+  - {message: 'Scalpels can now be used to butcher in emergencies, 50% slower than
+      standard tools.', type: Add}
+  id: 2807
+  time: '2022-12-26T22:09:00.0000000+00:00'
+- author: Whisper
+  changes:
+  - {message: 'Pill canisters will now fit in coat storage, at the cost of having
+      less space for pills. (12 -> 9)', type: Tweak}
+  id: 2808
+  time: '2022-12-29T03:57:28.0000000+00:00'
+- author: Ungle McBumblefuck
+  changes:
+  - {message: 'Spaceacillin use now seems to impair brain function. A worthy risk?
+      maybe not...', type: Tweak}
+  id: 2809
+  time: '2022-12-29T04:44:53.0000000+00:00'
