@@ -23,5 +23,6 @@ ent-ClothingHeadsetAltCargo = cargo over-ear headset
     .desc = { ent-ClothingHeadsetAlt.desc }
     .suffix = { "" }
 ent-ClothingHeadsetAltSyndicate = syndicate over-ear headset
-    .desc = An updated, modular syndicate intercom that fits over the head and takes encryption keys. Protects ears from flashbangs.
+    .desc = { ent-ClothingHeadsetAlt.desc }
     .suffix = { "" }
+

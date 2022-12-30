@@ -34,14 +34,14 @@
       layers:
         - state: closed
           map: ["enum.DoorVisualLayers.Base"]
-#        - state: closed_unlit # Corvax-Resprite-Airlocks
-#          shader: unshaded
-#          map: ["enum.DoorVisualLayers.BaseUnlit"]
+        - state: closed_unlit # Corvax-Resprite-Airlocks
+          shader: unshaded
+          map: ["enum.DoorVisualLayers.BaseUnlit"]
         - state: welded
           map: ["enum.WeldableLayers.BaseWelded"]
-#        - state: bolted_unlit  # Corvax-Resprite-Airlocks
-#          shader: unshaded
-#          map: ["enum.DoorVisualLayers.BaseBolted"]
+        - state: bolted_unlit  # Corvax-Resprite-Airlocks
+          shader: unshaded
+          map: ["enum.DoorVisualLayers.BaseBolted"]
         - state: panel_open
           map: ["enum.WiresVisualLayers.MaintenancePanel"]
     - type: Fixtures

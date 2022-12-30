@@ -75,7 +75,7 @@ uplink-reinforcement-teleporter-desc =  Teleport in an agent of extremely questi
 uplink-stealth-box-name = Stealth Box
 uplink-stealth-box-desc = A box outfitted with stealth technology, sneak around with this and don't move too fast now!
 
-uplink-headset-name = Syndicate Over-ear Headset
+uplink-headset-name = Syndicate Headset
 uplink-headset-desc = A headset that allows you to listen in on departmental channels, or contact other traitors.
 
 uplink-hypopen-name = Hypopen

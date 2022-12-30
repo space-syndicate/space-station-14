@@ -251,3 +251,17 @@
     - Common
   - type: Sprite
     sprite: Clothing/Ears/Headsets/base.rsi
+
+- type: entity
+  parent: ClothingHeadset
+  id: ClothingHeadsetSyndicate
+  name: headset
+  description: An updated, modular intercom that fits over the head. Takes encryption keys.
+  components:
+  - type: Headset
+    channels:
+    - Syndicate
+  - type: Sprite
+    sprite: Clothing/Ears/Headsets/syndicate.rsi
+  - type: Clothing
+    sprite: Clothing/Ears/Headsets/syndicate.rsi

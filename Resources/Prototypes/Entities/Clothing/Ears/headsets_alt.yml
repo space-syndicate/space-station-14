@@ -133,12 +133,13 @@
   parent: ClothingHeadsetAlt
   id: ClothingHeadsetAltSyndicate
   name: syndicate over-ear headset
-  description: An updated, modular syndicate intercom that fits over the head and takes encryption keys. Protects ears from flashbangs.
   components:
   - type: Headset
     channels:
     - Syndicate
   - type: Sprite
-    sprite: Clothing/Ears/Headsets/syndicate.rsi
+    sprite: Clothing/Ears/Headsets/syndicate_alt.rsi
   - type: Clothing
-    sprite: Clothing/Ears/Headsets/syndicate.rsi
+    sprite: Clothing/Ears/Headsets/syndicate_alt.rsi
+
+

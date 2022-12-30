@@ -23,5 +23,6 @@ ent-ClothingHeadsetAltCargo = полноразмерная грузовая га
     .desc = { ent-ClothingHeadsetAlt.desc }
     .suffix = { "" }
 ent-ClothingHeadsetAltSyndicate = полноразмерная гарнитура синдиката
-    .desc = Модифицированный модульный интерком синдиката, надеваемый на голову, и содержащий ключ шифрования. Защищает уши от светошумовых зарядов.
+    .desc = { ent-ClothingHeadsetAlt.desc }
     .suffix = { "" }
+
