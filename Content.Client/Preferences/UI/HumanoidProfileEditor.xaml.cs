@@ -1,5 +1,4 @@
 using System.Linq;
-using Content.Client.Corvax.Sponsors;
 using Content.Client.Humanoid;
 using Content.Client.Lobby.UI;
 using Content.Client.Message;
@@ -7,7 +6,6 @@ using Content.Client.Players.PlayTimeTracking;
 using Content.Client.Stylesheets;
 using Content.Client.UserInterface.Controls;
 using Content.Shared.CCVar;
-using Content.Shared.Corvax.TTS;
 using Content.Shared.GameTicking;
 using Content.Shared.Humanoid;
 using Content.Shared.Humanoid.Markings;
@@ -55,7 +53,6 @@ namespace Content.Client.Preferences.UI
         private readonly IEntityManager _entMan;
         private readonly IConfigurationManager _configurationManager;
         private readonly MarkingManager _markingManager;
-        private readonly SponsorsManager _sponsorsManager; // Corvax-Sponsor
 
         private LineEdit _ageEdit => CAgeEdit;
         private LineEdit _nameEdit => CNameEdit;
@@ -67,6 +64,7 @@ namespace Content.Client.Preferences.UI
         private OptionButton _sexButton => CSexButton;
         private OptionButton _genderButton => CPronounsButton;
         private OptionButton _voiceButton => CVoiceButton; // Corvax-TTS
+        private Button _voicePlayButton => CVoicePlayButton; // Corvax-TTS
         private Slider _skinColor => CSkin;
         private OptionButton _clothingButton => CClothingButton;
         private OptionButton _backpackButton => CBackpackButton;
@@ -82,7 +80,6 @@ namespace Content.Client.Preferences.UI
         private OptionButton _preferenceUnavailableButton => CPreferenceUnavailableButton;
         private readonly Dictionary<string, BoxContainer> _jobCategories;
         // Mildly hacky, as I don't trust prototype order to stay consistent and don't want the UI to break should a new one get added mid-edit. --moony
-        private readonly List<TTSVoicePrototype> _voiceList; // Corvax-TTS
         private readonly List<SpeciesPrototype> _speciesList;
         private readonly List<AntagPreferenceSelector> _antagPreferences;
         private readonly List<TraitPreferenceSelector> _traitPreferences;
@@ -120,7 +117,6 @@ namespace Content.Client.Preferences.UI
             _preferencesManager = preferencesManager;
             _configurationManager = configurationManager;
             _markingManager = IoCManager.Resolve<MarkingManager>();
-            _sponsorsManager = IoCManager.Resolve<SponsorsManager>(); // Corvax-Sponsor
 
             #region Left
 
@@ -180,13 +176,7 @@ namespace Content.Client.Preferences.UI
             // Corvax-TTS-Start
             #region Voice
 
-            _voiceList = _prototypeManager.EnumeratePrototypes<TTSVoicePrototype>().Where(o => o.RoundStart).ToList();
-
-            _voiceButton.OnItemSelected += args =>
-            {
-                _voiceButton.SelectId(args.Id);
-                SetVoice(_voiceList[args.Id].ID);
-            };
+            InitializeVoice();
 
             #endregion
             // Corvax-TTS-End
@@ -912,44 +902,6 @@ namespace Content.Client.Preferences.UI
             else
                 _sexButton.SelectId((int) sexes[0]);
         }
-        
-        // Corvax-TTS-Start: Voices by gender
-        private void UpdateTTSVoicesControls()
-        {
-            if (Profile is null)
-                return;
-
-            _voiceButton.Clear();
-
-            var firstVoiceChoiceId = 1;
-            for (var i = 0; i < _voiceList.Count; i++)
-            {
-                var voice = _voiceList[i];
-                if (voice.Sex != Sex.Unsexed && voice.Sex != Profile.Sex)
-                    continue;
-                
-                var name = Loc.GetString(voice.Name);
-                _voiceButton.AddItem(name, i);
-
-                if (firstVoiceChoiceId == 1)
-                    firstVoiceChoiceId = i;
-
-                if (voice.SponsorOnly &&
-                    _sponsorsManager.TryGetInfo(out var sponsor) &&
-                    !sponsor.AllowedMarkings.Contains(voice.ID))
-                {
-                    _voiceButton.SetItemDisabled(i, true);
-                }
-            }
-
-            var voiceChoiceId = _voiceList.FindIndex(x => x.ID == Profile.Voice);
-            if (!_voiceButton.TrySelectId(voiceChoiceId) &&
-                _voiceButton.TrySelectId(firstVoiceChoiceId))
-            {
-                SetVoice(_voiceList[firstVoiceChoiceId].ID);
-            }
-        }
-        // Corvax-TTS-End
 
         private void UpdateSkinColor()
         {
