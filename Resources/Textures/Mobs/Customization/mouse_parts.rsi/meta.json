@@ -1,0 +1,34 @@
+{
+  "version": 1,
+  "license": "CC-BY-SA-3.0",
+  "copyright": created Loren
+  "size": {
+    "x": 32,
+    "y": 32
+  },
+  "states": [
+    {
+      "name": "ears_mouse_inner",
+      "directions": 4
+    },
+    {
+      "name": "ears_mouse_outer",
+      "directions": 4
+    },
+    {
+      "name": "tail_mouse",
+      "directions": 4
+    },
+    {
+      "name": "tail_mouse_wag",
+      "directions": 4,
+      "delays": [
+        [
+          0.1,
+          0.1,
+          0.1
+        ]
+      ]
+    }
+  ]
+}

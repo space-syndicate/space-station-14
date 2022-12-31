@@ -1,0 +1,19 @@
+- type: marking
+  id: MouseEars
+  bodyPart: HeadTop
+  markingCategory: HeadTop
+  speciesRestriction: [Human] 
+  sprites:
+  - sprite: Sirena/Resources/Textures/Mobs/Customization/mouse_parts.rsi
+    state: ears_mouse_outer
+  - sprite: Sirena/Resources/Textures/Mobs/Customization/mouse_parts.rsi
+    state: ears_mouse_inner
+
+- type: marking
+  id: MouseTail
+  bodyPart: Tail
+  markingCategory: Tail
+  speciesRestriction: [Human]
+  sprites:
+  - sprite: Sirena/Resources/Textures/Mobs/Customization/mouse_parts.rsi
+    state: tail_mouse_wag 
