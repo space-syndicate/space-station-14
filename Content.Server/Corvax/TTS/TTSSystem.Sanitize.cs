@@ -33,9 +33,9 @@ public sealed partial class TTSSystem
 
     private string ReplaceWord2Num(Match word)
     {
-        if (!long.TryParse(word.Value, out var number))
+        if (!float.TryParse(word.Value, out var number))
             return word.Value;
-        return NumberConverter.NumberToText(number, true);
+        return NumberConverter.NumberToText(number);
     }
     
     private static readonly IReadOnlyDictionary<string, string> WordReplacement =
@@ -176,7 +176,18 @@ public static class NumberConverter
 		"шестьдесят", "семьдесят", "восемьдесят", "девяносто"
 	};
 
-	public static string NumberToText(long value, bool male)
+    public static string NumberToText(float value)
+    {
+        var whole = (long)value;
+        var fac = (long)value % 1;
+
+        if (fac == 0)
+            return NumberToText(whole);
+        
+        return $"{NumberToText(whole)} целых {NumberToText(fac)}";
+    }
+
+	public static string NumberToText(long value, bool male = true)
     {
         if (value >= (long)Math.Pow(10, 15))
             return String.Empty;
