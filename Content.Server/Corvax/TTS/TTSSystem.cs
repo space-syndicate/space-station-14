@@ -15,7 +15,7 @@ public sealed partial class TTSSystem : EntitySystem
     [Dependency] private readonly IPrototypeManager _prototypeManager = default!;
     [Dependency] private readonly TTSManager _ttsManager = default!;
 
-    private const int MAX_CHARACTERS = 500;
+    private const int MaxMessageChars = 100; // same as SingleBubbleCharLimit
     private bool _isEnabled = false;
     
     public override void Initialize()
@@ -35,7 +35,7 @@ public sealed partial class TTSSystem : EntitySystem
     private async void OnEntitySpoke(EntityUid uid, TTSComponent component, EntitySpokeEvent args)
     {
         if (!_isEnabled ||
-            args.Message.Length > MAX_CHARACTERS ||
+            args.Message.Length > MaxMessageChars ||
             !_prototypeManager.TryIndex<TTSVoicePrototype>(component.VoicePrototypeId, out var protoVoice))
             return;
 
