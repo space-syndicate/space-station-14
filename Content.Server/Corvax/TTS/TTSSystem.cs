@@ -22,6 +22,7 @@ public sealed partial class TTSSystem : EntitySystem
     {
         _cfg.OnValueChanged(CCCVars.TTSEnabled, v => _isEnabled = v, true);
         
+        SubscribeLocalEvent<TransformSpeechEvent>(OnTransformSpeech);
         SubscribeLocalEvent<TTSComponent, EntitySpokeEvent>(OnEntitySpoke);
         SubscribeLocalEvent<RoundRestartCleanupEvent>(OnRoundRestartCleanup);
         SubscribeNetworkEvent<RequestTTSEvent>(OnRequestTTS);
@@ -35,11 +36,11 @@ public sealed partial class TTSSystem : EntitySystem
     private async void OnEntitySpoke(EntityUid uid, TTSComponent component, EntitySpokeEvent args)
     {
         if (!_isEnabled ||
-            args.Message.Length > MaxMessageChars ||
+            args.OriginalMessage.Length > MaxMessageChars ||
             !_prototypeManager.TryIndex<TTSVoicePrototype>(component.VoicePrototypeId, out var protoVoice))
             return;
 
-        var textSanitized = Sanitize(args.Message);
+        var textSanitized = Sanitize(args.OriginalMessage);
         var textSsml = ToSsmlText(textSanitized, SpeechRate.Fast);
         var soundData = await _ttsManager.ConvertTextToSpeech(protoVoice.Speaker, textSsml);
         RaiseNetworkEvent(new PlayTTSEvent(uid, soundData), Filter.Pvs(uid));

@@ -1,11 +1,18 @@
 ﻿using System.Text;
 using System.Text.RegularExpressions;
+using Content.Server.Chat.Systems;
 
 namespace Content.Server.Corvax.TTS;
 
 // ReSharper disable once InconsistentNaming
 public sealed partial class TTSSystem
 {
+    private void OnTransformSpeech(TransformSpeechEvent args)
+    {
+        if (!_isEnabled) return;
+        args.Message = args.Message.Replace("+", "");
+    }
+    
     private string Sanitize(string text)
     {
         text = text.Trim();
