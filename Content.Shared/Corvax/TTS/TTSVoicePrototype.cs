@@ -1,4 +1,5 @@
-﻿using Robust.Shared.Prototypes;
+﻿using Content.Shared.Humanoid;
+using Robust.Shared.Prototypes;
 
 namespace Content.Shared.Corvax.TTS;
 
@@ -14,6 +15,9 @@ public sealed class TTSVoicePrototype : IPrototype
     
     [DataField("name")]
     public string Name { get; } = string.Empty;
+
+    [DataField("sex", required: true)]
+    public Sex Sex { get; } = default!;
 
     [ViewVariables(VVAccess.ReadWrite)]
     [DataField("speaker", required: true)]

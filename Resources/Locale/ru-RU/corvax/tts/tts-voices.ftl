@@ -142,6 +142,7 @@ tts-voice-name-archimonde = Archimonde
 tts-voice-name-breaker = Breaker
 tts-voice-name-captain = Captain
 tts-voice-name-dryad = Dryad
+tts-voice-name-elfeng = Elf Eng
 tts-voice-name-footman = Footman
 tts-voice-name-grom = Grom
 tts-voice-name-hh = Hh

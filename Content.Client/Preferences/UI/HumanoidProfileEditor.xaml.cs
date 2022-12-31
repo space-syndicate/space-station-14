@@ -180,26 +180,12 @@ namespace Content.Client.Preferences.UI
             // Corvax-TTS-Start
             #region Voice
 
-            _voiceList = prototypeManager.EnumeratePrototypes<TTSVoicePrototype>().Where(o => o.RoundStart).ToList();
-            for (var i = 0; i < _voiceList.Count; i++)
-            {
-                var voice = _voiceList[i];
-                var name = Loc.GetString(voice.Name);
-                _voiceButton.AddItem(name, i);
+            _voiceList = _prototypeManager.EnumeratePrototypes<TTSVoicePrototype>().Where(o => o.RoundStart).ToList();
 
-                if (voice.SponsorOnly &&
-                    _sponsorsManager.TryGetInfo(out var sponsor) &&
-                    sponsor.AllowedMarkings.Contains(voice.ID))
-                {
-                    _voiceButton.SetItemDisabled(i, true);
-                }
-            }
-            
             _voiceButton.OnItemSelected += args =>
             {
                 _voiceButton.SelectId(args.Id);
                 SetVoice(_voiceList[args.Id].ID);
-                // TODO: Play demo text
             };
 
             #endregion
@@ -806,6 +792,7 @@ namespace Content.Client.Preferences.UI
                     break;
             }
             UpdateGenderControls();
+            UpdateTTSVoicesControls(); // Corvax-TTS
             IsDirty = true;
         }
 
@@ -925,6 +912,44 @@ namespace Content.Client.Preferences.UI
             else
                 _sexButton.SelectId((int) sexes[0]);
         }
+        
+        // Corvax-TTS-Start: Voices by gender
+        private void UpdateTTSVoicesControls()
+        {
+            if (Profile is null)
+                return;
+
+            _voiceButton.Clear();
+
+            var firstVoiceChoiceId = 1;
+            for (var i = 0; i < _voiceList.Count; i++)
+            {
+                var voice = _voiceList[i];
+                if (voice.Sex != Sex.Unsexed && voice.Sex != Profile.Sex)
+                    continue;
+                
+                var name = Loc.GetString(voice.Name);
+                _voiceButton.AddItem(name, i);
+
+                if (firstVoiceChoiceId == 1)
+                    firstVoiceChoiceId = i;
+
+                if (voice.SponsorOnly &&
+                    _sponsorsManager.TryGetInfo(out var sponsor) &&
+                    !sponsor.AllowedMarkings.Contains(voice.ID))
+                {
+                    _voiceButton.SetItemDisabled(i, true);
+                }
+            }
+
+            var voiceChoiceId = _voiceList.FindIndex(x => x.ID == Profile.Voice);
+            if (!_voiceButton.TrySelectId(voiceChoiceId) &&
+                _voiceButton.TrySelectId(firstVoiceChoiceId))
+            {
+                SetVoice(_voiceList[firstVoiceChoiceId].ID);
+            }
+        }
+        // Corvax-TTS-End
 
         private void UpdateSkinColor()
         {
@@ -1098,6 +1123,7 @@ namespace Content.Client.Preferences.UI
             UpdateTraitPreferences();
             UpdateMarkings();
             RebuildSpriteView();
+            UpdateTTSVoicesControls(); // Corvax-TTS
 
             _preferenceUnavailableButton.SelectId((int) Profile.PreferenceUnavailable);
         }
