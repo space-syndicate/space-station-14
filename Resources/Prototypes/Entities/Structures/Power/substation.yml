@@ -28,6 +28,14 @@
     energy: 1.6
     color: "#3db83b"
     castShadows: false
+  - type: Electrified
+    enabled: true
+    onBump: false
+    onHandInteract: false
+    onInteractUsing: false
+    requirePower: true
+    highVoltageNode: input
+    mediumVoltageNode: output
   - type: NodeContainer
     examinable: true
     nodes:

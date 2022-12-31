@@ -40,6 +40,13 @@
       output:
         !type:CableDeviceNode
         nodeGroupID: HVPower
+  - type: Electrified
+    enabled: true
+    onBump: false
+    onHandInteract: false
+    onInteractUsing: false
+    requirePower: true
+    highVoltageNode: output
   - type: PowerSupplier
     supplyRate: 3000
     supplyRampRate: 500

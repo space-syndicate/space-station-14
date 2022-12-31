@@ -11,6 +11,13 @@
     - type: Construction
       graph: ParticleAcceleratorEndCap
       node: completed
+    - type: Electrified
+      enabled: true
+      onBump: false
+      onHandInteract: false
+      onInteractUsing: false
+      requirePower: true
+      usesApcPower: true
 
 # Unfinished
 

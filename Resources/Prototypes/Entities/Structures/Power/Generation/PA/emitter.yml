@@ -22,6 +22,13 @@
     - type: Construction
       graph: ParticleAcceleratorEmitterLeft
       node: completed
+    - type: Electrified
+      enabled: true
+      onBump: false
+      onHandInteract: false
+      onInteractUsing: false
+      requirePower: true
+      usesApcPower: true
 
 - type: entity
   parent: ParticleAcceleratorBase
@@ -47,6 +54,13 @@
     - type: Construction
       graph: ParticleAcceleratorEmitterCenter
       node: completed
+    - type: Electrified
+      enabled: true
+      onBump: false
+      onHandInteract: false
+      onInteractUsing: false
+      requirePower: true
+      usesApcPower: true
 
 - type: entity
   parent: ParticleAcceleratorBase
@@ -72,6 +86,13 @@
     - type: Construction
       graph: ParticleAcceleratorEmitterRight
       node: completed
+    - type: Electrified
+      enabled: true
+      onBump: false
+      onHandInteract: false
+      onInteractUsing: false
+      requirePower: true
+      usesApcPower: true
 
 # Unfinished
 

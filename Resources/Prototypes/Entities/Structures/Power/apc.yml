@@ -32,6 +32,14 @@
   - type: Appearance
     visuals:
     - type: ApcVisualizer
+  - type: Electrified
+    enabled: true
+    onBump: false
+    onHandInteract: false
+    onInteractUsing: false
+    requirePower: true
+    mediumVoltageNode: input
+    lowVoltageNode: output
   - type: Battery
     maxCharge: 50000
     startingCharge: 0

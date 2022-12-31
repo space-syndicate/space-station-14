@@ -39,6 +39,13 @@
             max: 1
       - !type:DoActsBehavior
         acts: ["Destruction"]
+  - type: Electrified
+    enabled: true
+    onBump: false
+    onHandInteract: false
+    onInteractUsing: false
+    requirePower: true
+    highVoltageNode: input
   - type: Transform
     anchored: true
     noRot: true
