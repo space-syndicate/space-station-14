@@ -33,9 +33,8 @@ public sealed partial class TTSSystem
 
     private string ReplaceWord2Num(Match word)
     {
-        if (!int.TryParse(word.Value, out _))
+        if (!long.TryParse(word.Value, out var number))
             return word.Value;
-        decimal number = Convert.ToInt64(word.Value);
         return NumberConverter.NumberToText(number, true);
     }
     
@@ -150,12 +149,12 @@ public sealed partial class TTSSystem
 public static class NumberConverter
 {
     private static readonly string[] Frac20Male =
-        {
-            "", "один", "два", "три", "четыре", "пять", "шесть",
-            "семь", "восемь", "девять", "десять", "одиннадцать",
-            "двенадцать", "тринадцать", "четырнадцать", "пятнадцать",
-            "шестнадцать", "семнадцать", "восемнадцать", "девятнадцать"
-        };
+    {
+        "", "один", "два", "три", "четыре", "пять", "шесть",
+        "семь", "восемь", "девять", "десять", "одиннадцать",
+        "двенадцать", "тринадцать", "четырнадцать", "пятнадцать",
+        "шестнадцать", "семнадцать", "восемнадцать", "девятнадцать"
+    };
 
     private static readonly string[] Frac20Female =
     {
@@ -177,9 +176,9 @@ public static class NumberConverter
 		"шестьдесят", "семьдесят", "восемьдесят", "девяносто"
 	};
 
-	public static string NumberToText(decimal value, bool male)
+	public static string NumberToText(long value, bool male)
     {
-        if (value >= (decimal)Math.Pow(10, 28))
+        if (value >= (long)Math.Pow(10, 15))
             return String.Empty;
 
         if (value == 0)
@@ -193,12 +192,10 @@ public static class NumberConverter
 			value = -value;
 		}
 
-        AppendPeriod(value, 1000000000000000000, str, "квинтиллион", "квинтиллиона", "квинтиллионов", true);
-        AppendPeriod(value, 1000000000000000, str, "квадриллион", "квадриллиона", "квадриллионов", true);
-        AppendPeriod(value, 1000000000000, str, "триллион", "триллиона", "триллионов", true);
-        AppendPeriod(value, 1000000000, str, "миллиард", "миллиарда", "миллиардов", true);
-        AppendPeriod(value, 1000000, str, "миллион", "миллиона", "миллионов", true);
-		AppendPeriod(value, 1000, str, "тысяча", "тысячи", "тысяч", false);
+        value = AppendPeriod(value, 1000000000000, str, "триллион", "триллиона", "триллионов", true);
+        value = AppendPeriod(value, 1000000000, str, "миллиард", "миллиарда", "миллиардов", true);
+        value = AppendPeriod(value, 1000000, str, "миллион", "миллиона", "миллионов", true);
+        value = AppendPeriod(value, 1000, str, "тысяча", "тысячи", "тысяч", false);
 
 		var hundreds = (int)(value / 100);
 		if (hundreds != 0)
@@ -227,9 +224,9 @@ public static class NumberConverter
 		stringBuilder.Append(str);
 	}
 
-	private static decimal AppendPeriod(
-        decimal value,
-        decimal power,
+	private static long AppendPeriod(
+        long value,
+        long power,
 		StringBuilder str,
 		string declension1,
 		string declension2,
@@ -246,7 +243,7 @@ public static class NumberConverter
 	}
 
 	private static string NumberToText(
-        decimal value,
+        long value,
         bool male,
 		string valueDeclensionFor1,
 		string valueDeclensionFor2,
