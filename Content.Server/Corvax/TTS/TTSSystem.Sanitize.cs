@@ -33,7 +33,7 @@ public sealed partial class TTSSystem
 
     private string ReplaceWord2Num(Match word)
     {
-        if (!float.TryParse(word.Value, out var number))
+        if (!long.TryParse(word.Value, out var number))
             return word.Value;
         return NumberConverter.NumberToText(number);
     }
@@ -175,17 +175,6 @@ public static class NumberConverter
 		"", "десять", "двадцать", "тридцать", "сорок", "пятьдесят",
 		"шестьдесят", "семьдесят", "восемьдесят", "девяносто"
 	};
-
-    public static string NumberToText(float value)
-    {
-        var whole = (long)value;
-        var fac = (long)value % 1;
-
-        if (fac == 0)
-            return NumberToText(whole);
-        
-        return $"{NumberToText(whole)} целых {NumberToText(fac)}";
-    }
 
 	public static string NumberToText(long value, bool male = true)
     {
