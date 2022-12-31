@@ -154,7 +154,7 @@ public sealed class TTSManager
         [JsonPropertyName("word_ts")]
         public bool WordTS { get; private set; } = false;
 
-        [JsonPropertyName("put_Accent")]
+        [JsonPropertyName("put_accent")]
         public bool PutAccent { get; private set; } = true;
 
         [JsonPropertyName("put_yo")]

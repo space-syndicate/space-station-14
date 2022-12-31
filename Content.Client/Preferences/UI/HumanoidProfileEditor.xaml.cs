@@ -120,7 +120,7 @@ namespace Content.Client.Preferences.UI
             _preferencesManager = preferencesManager;
             _configurationManager = configurationManager;
             _markingManager = IoCManager.Resolve<MarkingManager>();
-            _sponsorsManager = IoCManager.Resolve<SponsorsManager>();
+            _sponsorsManager = IoCManager.Resolve<SponsorsManager>(); // Corvax-Sponsor
 
             #region Left
 
