@@ -1,19 +1,4 @@
 Entries:
-- author: illiux
-  changes:
-  - {message: Added bottle boxes to chemistry lockers, type: Add}
-  id: 2310
-  time: '2022-09-15T13:17:32.0000000+00:00'
-- author: metalgearsloth
-  changes:
-  - {message: Joints will break upon buckling to a vehicle., type: Fix}
-  id: 2311
-  time: '2022-09-15T13:19:40.0000000+00:00'
-- author: keronshb
-  changes:
-  - {message: 'Adds lightning, unused for now!', type: Add}
-  id: 2312
-  time: '2022-09-15T15:49:01.0000000+00:00'
 - author: themias
   changes:
   - {message: Added lathe recipe for glass chemistry bottles, type: Add}
@@ -2945,3 +2930,23 @@ Entries:
       maybe not...', type: Tweak}
   id: 2809
   time: '2022-12-29T04:44:53.0000000+00:00'
+- author: Carbonhell
+  changes:
+  - {message: 'Cryo pods now properly transfer the reagents from the contained beaker
+      to the patient. There''s also a wiki page explaining how cryo pods work, be
+      sure to read it if you need help!', type: Fix}
+  id: 2810
+  time: '2022-12-30T14:34:59.0000000+00:00'
+- author: EmoGarbage404
+  changes:
+  - {message: Puddles now become sparkles as soon as you finish mopping them. Still
+      be careful of wet floors!, type: Tweak}
+  - {message: Blood stains now fade out instead of becoming sparkles., type: Fix}
+  id: 2811
+  time: '2022-12-30T17:45:05.0000000+00:00'
+- author: Theomund
+  changes:
+  - {message: Added missing locale string for the carpotoxin physical reagent description.,
+    type: Fix}
+  id: 2812
+  time: '2022-12-31T21:51:44.0000000+00:00'
