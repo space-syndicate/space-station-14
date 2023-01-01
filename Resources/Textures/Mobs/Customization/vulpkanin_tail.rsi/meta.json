@@ -1,0 +1,23 @@
+{
+    "version": 1,
+    "size": {
+        "x": 32,
+        "y": 32
+    },
+    "license": "CC-BY-SA-3.0",
+    "copyright": "",
+    "states": [
+        {
+            "name": "tail1",
+            "directions": 4
+        },
+        {
+            "name": "tail2",
+            "directions": 4
+        },
+        {
+            "name": "tail3",
+            "directions": 4
+        }
+    ]
+}

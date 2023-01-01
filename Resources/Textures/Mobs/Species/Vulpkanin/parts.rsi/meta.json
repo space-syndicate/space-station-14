@@ -9,7 +9,7 @@
   "states": [
       {
           "name": "full",
-          "directions": 4
+          "directions": 1
       },
       {
           "name": "head_f",
@@ -54,6 +54,10 @@
       {
           "name": "r_leg",
           "directions": 4
+      },
+      {
+        "name": "tail_m",
+        "directions": 4
       },
       {
           "name": "torso_f",
