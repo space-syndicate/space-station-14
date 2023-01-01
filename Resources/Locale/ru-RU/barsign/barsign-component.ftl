@@ -16,7 +16,7 @@ barsign-prototype-description-singulo = Куда приходят люди, ко
 ## The Drunk Carp
 
 barsign-prototype-name-drunk-carp = Пьяный карп
-barsign-prototype-description-drunk-carp = Не пейте плавая.
+barsign-prototype-description-drunk-carp = Не пейте, плавая.
 
 ## Officer Beersky
 
@@ -56,7 +56,7 @@ barsign-prototype-description-ale-nath = По какой-то причине п�
 ## The Net
 
 barsign-prototype-name-the-net = Сеть
-barsign-prototype-description-the-net = Незаметишь как затянет на пару часов.
+barsign-prototype-description-the-net = Незаметишь, как затянет на пару часов.
 
 ## Maid Cafe
 
@@ -81,7 +81,7 @@ barsign-prototype-description-the-birdcage = Ку-ку!
 ## Zocalo
 
 barsign-prototype-name-zocalo = Сокало
-barsign-prototype-description-zocalo = Ранее находилось в Космоамерике.
+barsign-prototype-description-zocalo = Ранее находилось в КосмоАмерике.
 
 ## LV426
 
