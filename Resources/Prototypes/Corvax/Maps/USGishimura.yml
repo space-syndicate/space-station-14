@@ -4,7 +4,7 @@
   mapPath: /Maps/corvax_ishimura.yml
   minPlayers: 0
   stations:
-    Boxstation:
+    Ishimura:
       mapNameTemplate: 'USG Ишимура {1}'
       nameGenerator:
         !type:NanotrasenNameGenerator
