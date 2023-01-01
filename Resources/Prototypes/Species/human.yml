@@ -38,25 +38,25 @@
   points:
     Hair:
       points: 1
-      required: false
+      required: true
     FacialHair:
       points: 1
-      required: false
+      required: true
     Tail: # the cat tail joke
-      points: 1 # Corvax-Sponsors
-      required: false
+      points: 1 
+      required: true
     HeadTop: # the cat ear joke
-      points: 1 # Corvax-Sponsors
-      required: false
+      points: 1 
+      required: true
     Chest:
       points: 1
-      required: false
+      required: true
     Legs:
       points: 2
-      required: false
+      required: true
     Arms:
       points: 2
-      required: false
+      required: true
 
 - type: humanoidBaseSprite
   id: MobHumanoidEyes

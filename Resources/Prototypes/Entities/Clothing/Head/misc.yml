@@ -159,6 +159,20 @@
 
 - type: entity
   parent: ClothingHeadBase
+  id: ClothingHeadHatMouseEars
+  name: mouse ears
+  description: "SQUAK!"
+  components:
+  - type: Tag
+    tags: # ignore "WhitelistChameleon" tag
+      - DroneUsable
+  - type: Sprite
+    sprite: Clothing/Head/Hats/mouseears.rsi
+  - type: Clothing
+    sprite: Clothing/Head/Hats/mouseears.rsi
+
+- type: entity
+  parent: ClothingHeadBase
   id: ClothingHeadHatSquid
   name: squiddy
   description: "Scare your friends with this eldritch mask."
