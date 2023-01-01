@@ -4,9 +4,9 @@
   markingCategory: HeadTop
   speciesRestriction: [Human] 
   sprites:
-  - sprite: Sirena/Resources/Textures/Mobs/Customization/mouse_parts.rsi
+  - sprite: Mobs/Customization/mouse_parts.rsi
     state: ears_mouse_outer
-  - sprite: Sirena/Resources/Textures/Mobs/Customization/mouse_parts.rsi
+  - sprite: Mobs/Customization/mouse_parts.rsi
     state: ears_mouse_inner
 
 - type: marking
