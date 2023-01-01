@@ -1,0 +1,15 @@
+﻿- type: entity
+  name: Urog-Djax crowbar
+  parent: Crowbar
+  id: UrogCrowbarGold
+  components:
+    - type: Tag
+      tags:
+        - Crowbar
+    - type: Sprite
+      sprite: ADT/Items/gold-crowbar.rsi
+      state: gold-icon
+    - type: Item
+      sprite: ADT/Items/gold-crowbar.rsi
+      size: 10
+      heldPrefix: gold
