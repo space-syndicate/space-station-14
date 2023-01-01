@@ -18134,7 +18134,7 @@ entities:
       5,14: 2
       5,15: 0
       6,5: 0
-      6,6: 5
+      6,6: 6
       6,7: 2
       6,8: 2
       6,9: 0
@@ -18294,7 +18294,7 @@ entities:
       20,9: 0
       20,10: 0
       20,11: 0
-      20,12: 5
+      20,12: 6
       20,13: 0
       20,14: 0
       20,15: 0
@@ -21268,9 +21268,9 @@ entities:
       -95,-29: 0
       -95,-28: 0
       -95,-27: 0
-      -95,-26: 6
-      -95,-25: 6
-      -95,-24: 6
+      -95,-26: 7
+      -95,-25: 7
+      -95,-24: 7
       -95,-23: 0
       -95,-22: 0
       -95,-21: 0
@@ -21295,9 +21295,9 @@ entities:
       -93,-29: 0
       -93,-28: 0
       -93,-27: 0
-      -93,-26: 7
-      -93,-25: 7
-      -93,-24: 7
+      -93,-26: 8
+      -93,-25: 8
+      -93,-24: 8
       -93,-23: 0
       -93,-22: 0
       -93,-21: 0
@@ -21322,9 +21322,9 @@ entities:
       -91,-29: 0
       -91,-28: 0
       -91,-27: 0
-      -91,-26: 6
-      -91,-25: 6
-      -91,-24: 6
+      -91,-26: 7
+      -91,-25: 7
+      -91,-24: 7
       -91,-23: 0
       -91,-22: 0
       -91,-21: 0
@@ -21349,9 +21349,9 @@ entities:
       -89,-29: 0
       -89,-28: 0
       -89,-27: 0
-      -89,-26: 6
-      -89,-25: 6
-      -89,-24: 6
+      -89,-26: 7
+      -89,-25: 7
+      -89,-24: 7
       -89,-23: 0
       -89,-22: 0
       -89,-21: 0
@@ -21376,9 +21376,9 @@ entities:
       -87,-29: 0
       -87,-28: 0
       -87,-27: 0
-      -87,-26: 6
-      -87,-25: 6
-      -87,-24: 6
+      -87,-26: 7
+      -87,-25: 7
+      -87,-24: 7
       -87,-23: 0
       -87,-22: 0
       -87,-21: 0
@@ -21443,9 +21443,9 @@ entities:
       -82,-29: 0
       -82,-28: 0
       -82,-27: 0
-      -82,-26: 6
-      -82,-25: 6
-      -82,-24: 6
+      -82,-26: 7
+      -82,-25: 7
+      -82,-24: 7
       -82,-23: 0
       -82,-22: 0
       -82,-21: 0
@@ -21457,9 +21457,9 @@ entities:
       -81,-29: 0
       -81,-28: 0
       -81,-27: 0
-      -81,-26: 6
-      -81,-25: 6
-      -81,-24: 6
+      -81,-26: 7
+      -81,-25: 7
+      -81,-24: 7
       -81,-23: 0
       -81,-22: 0
       -81,-21: 0
@@ -21554,9 +21554,9 @@ entities:
       -101,-29: 0
       -101,-28: 0
       -101,-27: 0
-      -101,-26: 8
-      -101,-25: 8
-      -101,-24: 8
+      -101,-26: 9
+      -101,-25: 9
+      -101,-24: 9
       -101,-23: 0
       -101,-22: 0
       -101,-21: 0
@@ -21581,9 +21581,9 @@ entities:
       -99,-29: 0
       -99,-28: 0
       -99,-27: 0
-      -99,-26: 9
-      -99,-25: 9
-      -99,-24: 9
+      -99,-26: 10
+      -99,-25: 10
+      -99,-24: 10
       -99,-23: 0
       -99,-22: 0
       -99,-21: 0
@@ -21608,9 +21608,9 @@ entities:
       -97,-29: 0
       -97,-28: 0
       -97,-27: 0
-      -97,-26: 6
-      -97,-25: 6
-      -97,-24: 6
+      -97,-26: 7
+      -97,-25: 7
+      -97,-24: 7
       -97,-23: 0
       -97,-22: 0
       -97,-21: 0
@@ -22567,9 +22567,9 @@ entities:
       -80,-29: 0
       -80,-28: 0
       -80,-27: 0
-      -80,-26: 6
-      -80,-25: 6
-      -80,-24: 6
+      -80,-26: 7
+      -80,-25: 7
+      -80,-24: 7
       -80,-23: 0
       -80,-22: 0
       -80,-21: 0
@@ -25863,8 +25863,8 @@ entities:
     - volume: 2500
       temperature: 293.15
       moles:
-      - 21.213781
-      - 79.80423
+      - 20.619795
+      - 77.56971
       - 0
       - 0
       - 0
@@ -25878,38 +25878,53 @@ entities:
     - volume: 2500
       temperature: 235
       moles:
-      - 21.213781
-      - 79.80423
-      - 0
-      - 0
-      - 0
-      - 0
-      - 0
-      - 0
-      - 0
-      - 0
-      - 0
-      - 0
-    - volume: 2500
-      temperature: 293.15
-      moles:
-      - 21.197151
-      - 79.74166
-      - 0
-      - 0
-      - 0
-      - 0
-      - 0
-      - 0
-      - 0
-      - 0
-      - 0
-      - 0
-    - volume: 2500
-      temperature: 293.15
-      moles:
       - 20.619795
       - 77.56971
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+    - volume: 2500
+      temperature: 293.15
+      moles:
+      - 20.60363
+      - 77.508896
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+    - volume: 2500
+      temperature: 293.15
+      moles:
+      - 20.04244
+      - 75.39776
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+    - volume: 2500
+      temperature: 293.15
+      moles:
+      - 19.481253
+      - 73.28662
       - 0
       - 0
       - 0
@@ -26262,7 +26277,7 @@ entities:
   - pos: -27.5,-4.5
     parent: 0
     type: Transform
-  - SecondsUntilStateChange: -13673.808
+  - SecondsUntilStateChange: -13771.7
     state: Closing
     type: Door
 - uid: 40
@@ -26271,7 +26286,7 @@ entities:
   - pos: -27.5,-5.5
     parent: 0
     type: Transform
-  - SecondsUntilStateChange: -13674.541
+  - SecondsUntilStateChange: -13772.434
     state: Closing
     type: Door
 - uid: 41
@@ -55985,7 +56000,7 @@ entities:
   - pos: -27.5,-6.5
     parent: 0
     type: Transform
-  - SecondsUntilStateChange: -13675.207
+  - SecondsUntilStateChange: -13773.1
     state: Closing
     type: Door
 - uid: 4292
@@ -55994,7 +56009,7 @@ entities:
   - pos: -27.5,-7.5
     parent: 0
     type: Transform
-  - SecondsUntilStateChange: -13677.607
+  - SecondsUntilStateChange: -13775.5
     state: Closing
     type: Door
 - uid: 4293
@@ -59178,7 +59193,7 @@ entities:
   - pos: -63.5,-21.5
     parent: 0
     type: Transform
-  - SecondsUntilStateChange: -121088.836
+  - SecondsUntilStateChange: -121186.73
     state: Opening
     type: Door
   - inputs:
@@ -59797,7 +59812,7 @@ entities:
   - pos: -63.5,-18.5
     parent: 0
     type: Transform
-  - SecondsUntilStateChange: -121088.836
+  - SecondsUntilStateChange: -121186.73
     state: Opening
     type: Door
   - inputs:
@@ -59813,7 +59828,7 @@ entities:
   - pos: -59.5,-18.5
     parent: 0
     type: Transform
-  - SecondsUntilStateChange: -121077.266
+  - SecondsUntilStateChange: -121175.16
     state: Opening
     type: Door
   - inputs:
@@ -59837,7 +59852,7 @@ entities:
   - pos: -59.5,-21.5
     parent: 0
     type: Transform
-  - SecondsUntilStateChange: -121077.266
+  - SecondsUntilStateChange: -121175.16
     state: Opening
     type: Door
   - inputs:
@@ -79053,7 +79068,7 @@ entities:
     pos: 41.5,8.5
     parent: 0
     type: Transform
-  - SecondsUntilStateChange: -108995.984
+  - SecondsUntilStateChange: -109093.875
     state: Opening
     type: Door
   - inputs:
@@ -79070,7 +79085,7 @@ entities:
     pos: 41.5,6.5
     parent: 0
     type: Transform
-  - SecondsUntilStateChange: -108995.984
+  - SecondsUntilStateChange: -109093.875
     state: Opening
     type: Door
   - inputs:
@@ -79087,7 +79102,7 @@ entities:
     pos: 41.5,9.5
     parent: 0
     type: Transform
-  - SecondsUntilStateChange: -108995.984
+  - SecondsUntilStateChange: -109093.875
     state: Opening
     type: Door
   - inputs:
@@ -81167,7 +81182,7 @@ entities:
   - pos: -101.5,29.5
     parent: 0
     type: Transform
-  - SecondsUntilStateChange: -107822.02
+  - SecondsUntilStateChange: -107919.914
     state: Opening
     type: Door
   - inputs:
@@ -81303,7 +81318,7 @@ entities:
   - pos: -99.5,29.5
     parent: 0
     type: Transform
-  - SecondsUntilStateChange: -107820.625
+  - SecondsUntilStateChange: -107918.516
     state: Opening
     type: Door
   - inputs:
@@ -99437,7 +99452,7 @@ entities:
   - pos: -36.5,33.5
     parent: 0
     type: Transform
-  - SecondsUntilStateChange: -11975.575
+  - SecondsUntilStateChange: -12073.468
     state: Opening
     type: Door
 - uid: 10298
@@ -99751,7 +99766,7 @@ entities:
   - pos: -21.5,31.5
     parent: 0
     type: Transform
-  - SecondsUntilStateChange: -12620.374
+  - SecondsUntilStateChange: -12718.267
     state: Opening
     type: Door
 - uid: 10349
@@ -115657,6 +115672,16 @@ entities:
     type: Transform
   - color: '#FF0000FF'
     type: AtmosPipeColor
+- uid: 12826
+  type: CigarGoldCase
+  components:
+  - flags: InContainer
+    type: MetaData
+  - parent: 15319
+    type: Transform
+  - canCollide: False
+    type: Physics
+  - type: InsideEntityStorage
 - uid: 12827
   type: ClothingHeadsetMedical
   components:
@@ -132579,12 +132604,12 @@ entities:
         - 15336
         - 15337
         - 15338
-        - 15339
         - 15348
         - 15349
         - 15350
         - 15351
         - 15352
+        - 12826
         - 15353
     type: ContainerContainer
 - uid: 15320
@@ -132824,100 +132849,6 @@ entities:
   - canCollide: False
     type: Physics
   - type: InsideEntityStorage
-- uid: 15339
-  type: CigarGoldCase
-  components:
-  - flags: InContainer
-    type: MetaData
-  - parent: 15319
-    type: Transform
-  - containers:
-      storagebase: !type:Container
-        ents:
-        - 15340
-        - 15341
-        - 15342
-        - 15343
-        - 15344
-        - 15345
-        - 15346
-        - 15347
-    type: ContainerContainer
-  - canCollide: False
-    type: Physics
-  - type: InsideEntityStorage
-- uid: 15340
-  type: CigarGold
-  components:
-  - flags: InContainer
-    type: MetaData
-  - parent: 15339
-    type: Transform
-  - canCollide: False
-    type: Physics
-- uid: 15341
-  type: CigarGold
-  components:
-  - flags: InContainer
-    type: MetaData
-  - parent: 15339
-    type: Transform
-  - canCollide: False
-    type: Physics
-- uid: 15342
-  type: CigarGold
-  components:
-  - flags: InContainer
-    type: MetaData
-  - parent: 15339
-    type: Transform
-  - canCollide: False
-    type: Physics
-- uid: 15343
-  type: CigarGold
-  components:
-  - flags: InContainer
-    type: MetaData
-  - parent: 15339
-    type: Transform
-  - canCollide: False
-    type: Physics
-- uid: 15344
-  type: CigarGold
-  components:
-  - flags: InContainer
-    type: MetaData
-  - parent: 15339
-    type: Transform
-  - canCollide: False
-    type: Physics
-- uid: 15345
-  type: CigarGold
-  components:
-  - flags: InContainer
-    type: MetaData
-  - parent: 15339
-    type: Transform
-  - canCollide: False
-    type: Physics
-- uid: 15346
-  type: CigarGold
-  components:
-  - flags: InContainer
-    type: MetaData
-  - parent: 15339
-    type: Transform
-  - canCollide: False
-    type: Physics
-- uid: 15347
-  type: CigarGold
-  components:
-  - flags: InContainer
-    type: MetaData
-  - parent: 15339
-    type: Transform
-  - canCollide: False
-    type: Physics
 - uid: 15348
   type: ClothingHeadsetAltCommand
   components:
@@ -145394,7 +145325,7 @@ entities:
   - pos: -27.5,-8.5
     parent: 0
     type: Transform
-  - SecondsUntilStateChange: -13676.24
+  - SecondsUntilStateChange: -13774.133
     state: Closing
     type: Door
 - uid: 17240
