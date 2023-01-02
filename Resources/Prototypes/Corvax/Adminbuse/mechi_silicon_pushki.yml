@@ -136,7 +136,7 @@
     - type: UIFragment
 
 - type: entity
-  nospawn: true
+  noSpawn: true
   name: пустая орудийная система меха
   parent: BaseItem
   id: BaseItemGavna9000
@@ -270,6 +270,28 @@
   - type: Appearance
   - type: MechEquipment
   - type: UIFragment
+
+- type: entity
+  id: BFGBullet
+  name: снаряд BSG
+  noSpawn: true
+  parent: BaseBullet
+  components:
+  - type: Sprite
+    sprite: Objects/Weapons/Guns/Projectiles/magic.rsi
+    layers:
+    - state: bluespace
+  - type: Projectile
+    ignoreResistances: true
+    damage:
+      groups:
+        Brute: 20
+        Burn: 20
+  - type: PointLight
+    enabled: true
+    color: "#0000FF"
+    radius: 5.0
+    energy: 4.0
 
 - type: entity
   name: Пушка-испепелитель ZFI

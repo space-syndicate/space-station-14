@@ -122,7 +122,7 @@
     damage:
       types:
         Slash: 20
-    hitSound:
+    soundHit:
       path: /Audio/Weapons/bladeslice.ogg
   - type: Tool
     qualities:
@@ -130,35 +130,7 @@
     useSound:
       path: /Audio/Items/crowbar.ogg
   - type: TilePrying
-
-
-- type: entity
-  parent: ClothingHandsBase
-  id: ClothingHandsGlovesSpetsnazcombat
-  name: боевые перчатки спецназа
-  description: Эти тактические перчатки огнеупорны и ударопрочны.
-  components:
-  - type: Sprite
-    sprite: Clothing/Hands/Gloves/ihscombat.rsi
-  - type: Clothing
-    sprite: Clothing/Hands/Gloves/ihscombat.rsi
-  - type: Fiber
-    fiberMaterial: fibers-durathread
-  - type: FingerprintMask
-  - type: Armor
-    modifiers:
-      coefficients:
-        Blunt: 0.90
-        Slash: 0.90
-        Piercing: 0.95
-        Heat: 0.95
-  - type: Thieving
-    stealTime: 1
-    stealthy: true
-  - type: GloveHeatResistance
-    heatResistance: 1400
-  - type: Insulated
-
+  
 
 - type: entity
   parent: ClothingShoesBase
