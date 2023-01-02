@@ -1,0 +1,546 @@
+- type: entity
+  name: молчун
+  id: OneStarMechReticence
+  parent: OneStarMechMauler
+  components:
+  - type: InnateTool
+    tools:
+      - id: WeaponSilence9000
+      - id: JawsOfLife
+      - id: BaseItemGavna9000
+      - id: BaseItemGavna9000
+      - id: BaseItemGavna9000
+      - id: BaseItemGavna9000
+  - type: Sprite
+    drawdepth: Mobs
+    netsync: false
+    layers:
+    - state: reticence
+      sprite: Objects/Specific/Mech/mecha.rsi
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 1000
+      behaviors:
+      - !type:DoActsBehavior
+        acts: ["Destruction"]
+      - !type:PlaySoundBehavior
+        sound:
+          path: /Audio/Effects/metalbreak.ogg
+      - !type:ExplodeBehavior
+      - !type:SpawnEntitiesBehavior
+        spawn:
+          MechGavnaReticenceDestroyed:
+            min: 1
+            max: 1
+
+- type: entity
+  noSpawn: true
+  id: MechGavnaReticenceDestroyed
+  parent: MechGavnaMaulerDestroyed
+  name: полностью сломанный молчун
+  description: Вы больше не сможете его починить.
+  components:
+  - type: Sprite
+    sprite: Objects/Specific/Mech/mecha.rsi
+    state: reticence-broken
+    netsync: false
+
+
+
+#----------------------------------------------------------------------------
+
+- type: entity
+  name: маулер синдиката
+  id: OneStarMechMaulerReal
+  description: Перекрашенный синдикатом мародёр, был изрядно изменен, но, все тот же старый добрый мародёр.
+  parent: OneStarMechMauler
+  suffix: VovaMech
+  components:
+  - type: MobState
+    thresholds:
+      0: Alive
+      2000: Dead
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 2000
+      behaviors:
+      - !type:DoActsBehavior
+        acts: ["Destruction"]
+      - !type:PlaySoundBehavior
+        sound:
+          path: /Audio/Effects/metalbreak.ogg
+      - !type:ExplodeBehavior
+      - !type:SpawnEntitiesBehavior
+        spawn:
+          MechGavnaMaulerDestroyed:
+            min: 1
+            max: 1
+  - type: InnateTool
+    tools:
+      - id: WeaponLightMachineGunL69000
+      - id: WeaponLauncherMultipleRocket9000
+      - id: WeaponBFG9000
+      - id: SyndicateJawsOfLife
+      - id: WeaponGrenadeFragLauncher9000
+      - id: WeaponLightMachineGunL69000
+  - type: GhostTakeoverAvailable
+    makeSentient: true
+    name: маулер синдиката
+    description: Боевой мех на службе синдиката.
+    rules: Используйте свое оружие, чтобы вызвать хаос. Вы антагонист.
+
+- type: entity
+  noSpawn: true
+  name: маулер синдиката
+  id: OneStarMechMauler
+  parent: PlayerSiliconBase
+  suffix: VovaMech
+  components:
+  - type: MeleeWeapon
+    hidden: true
+    attackRate: 0.75
+    damage:
+      types:
+        Blunt: 25 #thwack
+        Structural: 20
+  - type: Actions
+  - type: MobMover
+  - type: InputMover
+  - type: UnpoweredFlashlight
+    toggleAction:
+      name: action-name-toggle-light
+      description: action-description-toggle-light
+      icon: { sprite: Objects/Tools/flashlight.rsi, state: flashlight }
+      iconOn: Objects/Tools/flashlight.rsi/flashlight-on.png
+      event: !type:ToggleActionEvent
+  - type: PointLight
+    color: red
+    enabled: false
+    radius: 6.5
+    mask: /Textures/Effects/LightMasks/cone.png
+    autoRot: true
+  - type: Pullable
+  - type: MovementIgnoreGravity
+  - type: Tag
+    tags:
+    - DoorBumpOpener
+    - FootstepSound
+  - type: Puller
+    needsHands: false
+  - type: FootstepModifier
+    footstepSoundCollection:
+      path: /Audio/Mecha/sound_mecha_powerloader_step.ogg
+  - type: UserInterface
+    interfaces:
+    - key: enum.StrippingUiKey.Key
+      type: StrippableBoundUserInterface
+  - type: MovementSpeedModifier
+    baseWalkSpeed : 2
+    baseSprintSpeed : 2
+  - type: Repairable
+    fuelcost: 80
+    doAfterDelay: 35
+  - type: MobState
+    thresholds:
+      0: Alive
+      1000: Dead
+  - type: Sprite
+    drawdepth: Mobs
+    netsync: false
+    layers:
+    - state: mauler
+      sprite: Objects/Specific/Mech/mecha.rsi
+  - type: Appearance
+  - type: CombatMode
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 1000
+      behaviors:
+      - !type:DoActsBehavior
+        acts: ["Destruction"]
+      - !type:PlaySoundBehavior
+        sound:
+          path: /Audio/Effects/metalbreak.ogg
+      - !type:ExplodeBehavior
+      - !type:SpawnEntitiesBehavior
+        spawn:
+          MechGavnaMaulerDestroyed:
+            min: 1
+            max: 1
+
+- type: entity
+  noSpawn: true
+  id: MechGavnaMaulerDestroyed
+  parent: PlayerSiliconBase
+  name: полностью сломанный маулер
+  description: Вы больше не сможете его починить.
+  components:
+  - type: Sprite
+    sprite: Objects/Specific/Mech/mecha.rsi
+    state: mauler-broken
+    netsync: false
+  - type: Physics
+    bodyType: KinematicController
+  - type: MobState
+    thresholds:
+      0: Alive
+      500: Dead
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 500
+      behaviors:
+      - !type:DoActsBehavior
+        acts: ["Destruction"]
+      - !type:PlaySoundBehavior
+        sound:
+          path: /Audio/Effects/metalbreak.ogg
+      - !type:ExplodeBehavior
+      - !type:SpawnEntitiesBehavior
+        spawn:
+          SheetPlasteel1:
+            min: 1
+            max: 5
+
+#----------------------------------------------------------------------------
+
+- type: entity
+  name: id карта Броне-Пехотного Оперативника Спецвойск
+  id: DedSquadronGavnaIDCardMarauder
+  parent: DedSquadronGavnaIDCard
+  components:
+  - type: IdCard
+    jobTitle: Omicron - 3
+    fullName: Броне-Пехотный Автономный-Бот Спецвойск
+
+- type: entity
+  name: мародёр
+  description: Мародёр, старый добрый мародёр. Используеться силами НТ в разных боевых сферах
+  id: OneStarMechMarauder
+  parent: OneStarMechMauler
+  components:
+  - type: PointLight
+    color: cyan
+  - type: InnateTool
+    tools:
+      - id: WeaponAS2Ultra9000
+      - id: WeaponShotgunEnforcer9000
+      - id: JawsOfLife
+      - id: DedSquadronGavnaIDCardMarauder
+      - id: WeaponLauncherMultipleRocket9000
+      - id: WeaponPulseRifle9000
+  - type: Sprite
+    drawdepth: Mobs
+    netsync: false
+    layers:
+    - state: marauder
+      sprite: Objects/Specific/Mech/mecha.rsi
+  - type: GhostTakeoverAvailable
+    makeSentient: true
+    name: мародёр НаноТрейзен
+    description: Боевой мех на службе НаноТрейзен.
+    rules: Выполняйте различные приказы, ваша задача будет варьироваться от задач центрального командования.
+  - type: Faction
+    factions:
+    - NanoTrasen
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 1000
+      behaviors:
+      - !type:DoActsBehavior
+        acts: ["Destruction"]
+      - !type:PlaySoundBehavior
+        sound:
+          path: /Audio/Effects/metalbreak.ogg
+      - !type:ExplodeBehavior
+      - !type:SpawnEntitiesBehavior
+        spawn:
+          MechGavnaMarauderDestroyed:
+            min: 1
+            max: 1
+
+- type: entity
+  noSpawn: true
+  id: MechGavnaMarauderDestroyed
+  parent: MechGavnaMaulerDestroyed
+  name: полностью сломанный мародёр
+  description: Вы больше не сможете его починить.
+  components:
+  - type: Sprite
+    sprite: Objects/Specific/Mech/mecha.rsi
+    state: marauder-broken
+    netsync: false
+
+
+
+#----------------------------------------------------------------------------
+
+
+
+- type: entity
+  name: темный гайгэкс синдиката
+  description: Перекрашенный синдикатом боевой мех гайгэкс, потрепанный и сильно изношен, но все еще функционирует в штатном режиме. Прямо как с последней корпоротивной войны.
+  id: OneStarMechDarkGygax
+  parent: OneStarMechMauler
+  components:
+  - type: GhostTakeoverAvailable
+    makeSentient: true
+    name: гайгэкс Синдиката
+    description: Боевой мех на службе Синдиката.
+    rules: Выполняйте различные приказы, ваша задача будет варьироваться от задач центрального командования.
+  - type: InnateTool
+    tools:
+      - id: WeaponLightMachineGunL69000
+      - id: WeaponShotgunEnforcer9000
+      - id: WeaponXrayCannon9000
+      - id: SyndicateJawsOfLife
+      - id: WeaponLauncherMultipleRocket9000
+      - id: WeaponLightMachineGunL69000
+  - type: Sprite
+    drawdepth: Mobs
+    netsync: false
+    layers:
+    - state: darkgygax
+      sprite: Objects/Specific/Mech/mecha.rsi
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 1000
+      behaviors:
+      - !type:DoActsBehavior
+        acts: ["Destruction"]
+      - !type:PlaySoundBehavior
+        sound:
+          path: /Audio/Effects/metalbreak.ogg
+      - !type:ExplodeBehavior
+      - !type:SpawnEntitiesBehavior
+        spawn:
+          MechGavnaDarkGygaxDestroyed:
+            min: 1
+            max: 1
+
+- type: entity
+  noSpawn: true
+  id: MechGavnaDarkGygaxDestroyed
+  parent: MechGavnaMaulerDestroyed
+  name: полностью сломанный темный гайгэкс
+  description: Вы больше не сможете его починить.
+  components:
+  - type: Sprite
+    sprite: Objects/Specific/Mech/mecha.rsi
+    state: darkgygax-broken
+    netsync: false
+
+
+
+#----------------------------------------------------------------------------
+
+- type: entity
+  name: id карта Броне-Пехотного Коммандера Спецвойск
+  id: DedSquadronGavnaIDCardSeraph
+  parent: DedSquadronGavnaIDCard
+  components:
+  - type: IdCard
+    jobTitle: Omicron - 3
+    fullName: Броне-Пехотный Автономный-Бот Коммандер Спецвойск
+
+- type: entity
+  name: серафим
+  description: Боевой мех нового поколения, Серафим. Используется спецвойсками НаноТрейзен для выполнения миссий где требуеться высокая огневая мощь.
+  id: OneStarMechSeraph
+  parent: OneStarMechMauler
+  components:
+  - type: PointLight
+    color: cyan
+  - type: InnateTool
+    tools:
+      - id: WeaponPulseRifle9000
+      - id: WeaponBFG9000
+      - id: JawsOfLife
+      - id: DedSquadronGavnaIDCardSeraph
+      - id: WeaponLauncherRocket9000
+      - id: WeaponGrenadeFragLauncher9000
+  - type: Sprite
+    drawdepth: Mobs
+    netsync: false
+    layers:
+    - state: seraph
+      sprite: Objects/Specific/Mech/mecha.rsi
+  - type: GhostTakeoverAvailable
+    makeSentient: true
+    name: командный мех-серафим НаноТрейзен
+    description: Командующий мех на службе НаноТрейзен.
+    rules: Выполняйте различные приказы, ваша задача будет варьироваться от задач центрального командования.
+  - type: Faction
+    factions:
+    - NanoTrasen
+  - type: MobState
+    thresholds:
+      0: Alive
+      2000: Dead
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 2000
+      behaviors:
+      - !type:DoActsBehavior
+        acts: ["Destruction"]
+      - !type:PlaySoundBehavior
+        sound:
+          path: /Audio/Effects/metalbreak.ogg
+      - !type:ExplodeBehavior
+      - !type:SpawnEntitiesBehavior
+        spawn:
+          MechGavnaSeraphDestroyed:
+            min: 1
+            max: 1
+
+- type: entity
+  noSpawn: true
+  id: MechGavnaSeraphDestroyed
+  parent: MechGavnaMaulerDestroyed
+  name: полностью сломанный серафим
+  description: Вы больше не сможете его починить.
+  components:
+  - type: Sprite
+    sprite: Objects/Specific/Mech/mecha.rsi
+    state: seraph-broken
+    netsync: false
+
+
+
+#----------------------------------------------------------------------------
+
+- type: entity
+  noSpawn: true
+  id: MechGavnaDurandDestroyed
+  parent: MechGavnaMaulerDestroyed
+  name: полностью сломанный дюранд
+  description: Вы больше не сможете его починить.
+  components:
+  - type: Sprite
+    sprite: Objects/Specific/Mech/mecha.rsi
+    state: durand-broken
+    netsync: false
+
+- type: entity
+  name: дюранд
+  description: Древний полицейский мех правительства Земли. Благодоря продвинутой системе автономной зарядки, мех все еще функционирует.
+  id: OneStarMechDurand
+  parent: OneStarMechMauler
+  components:
+  - type: PointLight
+    color: green
+  - type: InnateTool
+    tools:
+      - id: WeaponTaser9000
+      - id: WeaponGrenadeLauncher9000
+      - id: JawsOfLife
+      - id: WeaponFireExtinguisher9000
+      - id: WeaponGrenadeLauncher9000
+      - id: WeaponTaser9000
+  - type: Sprite
+    drawdepth: Mobs
+    netsync: false
+    layers:
+    - state: durand
+      sprite: Objects/Specific/Mech/mecha.rsi
+  - type: GhostTakeoverAvailable
+    makeSentient: true
+    name: древний дюранд
+    description: Боевой мех правительства земли, интересно, что он тут забыл?
+    rules: Вы древний мех, древнего правительства которого уже нет. Задачи нету.
+  - type: Faction
+    factions:
+    - NanoTrasen
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 1000
+      behaviors:
+      - !type:DoActsBehavior
+        acts: ["Destruction"]
+      - !type:PlaySoundBehavior
+        sound:
+          path: /Audio/Effects/metalbreak.ogg
+      - !type:ExplodeBehavior
+      - !type:SpawnEntitiesBehavior
+        spawn:
+          MechGavnaDurandDestroyed:
+            min: 1
+            max: 1
+
+#----------------------------------------------------------------------------
+
+- type: entity
+  noSpawn: true
+  id: MechGavnaGygaxDestroyed
+  parent: MechGavnaMaulerDestroyed
+  name: полностью сломанный дюранд
+  description: Вы больше не сможете его починить.
+  components:
+  - type: Sprite
+    sprite: Objects/Specific/Mech/mecha.rsi
+    state: gygax-broken
+    netsync: false
+
+- type: entity
+  name: гайгэкс
+  description: Гайгэкс, один из старых но хорошо зарекомендовавший себя. Используеться НаноТрейзен как вторичный мех поддержки.
+  id: OneStarMechGygax
+  parent: OneStarMechMauler
+  components:
+  - type: PointLight
+    color: green
+  - type: InnateTool
+    tools:
+      - id: WeaponLaserCHPS9000
+      - id: WeaponGrenadeLauncher9000
+      - id: JawsOfLife
+      - id: DedSquadronGavnaIDCardMarauder
+      - id: WeaponLauncherMultipleRocket9000
+      - id: WeaponAS2Ultra9000
+  - type: Sprite
+    drawdepth: Mobs
+    netsync: false
+    layers:
+    - state: gygax
+      sprite: Objects/Specific/Mech/mecha.rsi
+  - type: GhostTakeoverAvailable
+    makeSentient: true
+    name: гайгэкс НаноТрейзен
+    description: Боевой мех на службе НаноТрейзен.
+    rules: Выполняйте различные приказы, ваша задача будет варьироваться от задач центрального командования.
+  - type: Faction
+    factions:
+    - NanoTrasen
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 1000
+      behaviors:
+      - !type:DoActsBehavior
+        acts: ["Destruction"]
+      - !type:PlaySoundBehavior
+        sound:
+          path: /Audio/Effects/metalbreak.ogg
+      - !type:ExplodeBehavior
+      - !type:SpawnEntitiesBehavior
+        spawn:
+          MechGavnaGygaxDestroyed:
+            min: 1
+            max: 1
+          
