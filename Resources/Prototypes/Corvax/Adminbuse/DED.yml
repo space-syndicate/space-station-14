@@ -85,8 +85,8 @@
     sprite: Markers/jobs.rsi
     state: cyborg
   - type: Vocal
-    maleScream: /Corvax/Effects/off.ogg
-    femaleScream: /Corvax/Effects/off.ogg
+    maleScream: /Audio/Corvax/Effects/off.ogg
+    femaleScream: /Audio/Corvax/Effects/off.ogg
   - type: Speech
     speechSounds: Сombine
   - type: Stamina
