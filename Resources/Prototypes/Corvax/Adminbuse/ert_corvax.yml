@@ -141,6 +141,8 @@
   parent: ClothingBackpackERTEngineer
   id: ClothingBackpackERTEngineerFilledV2.1
   components:
+    - type: Storage
+      capacity: 300
     - type: StorageFill
       contents:
         - id: BoxFlare
