@@ -3,38 +3,41 @@
   parent: JetpackBlackFilled
   id: ClothingBackpackSpecialForce
   components:
-    - type: Item
-      sprite: Objects/Tanks/Jetpacks/black.rsi
-    - type: Sprite
-      sprite: Objects/Tanks/Jetpacks/black.rsi
-    - type: Clothing
-      sprite: Clothing/Hands/Gloves/robohands.rsi
-      slots:
-        - Back
-    - type: Storage
-      capacity: 300
-    - type: ContainerContainer
-      containers:
-        storagebase: !type:Container
-          ents: []
-    - type: UserInterface
-      interfaces:
-      - key: enum.StorageUiKey.Key
-        type: StorageBoundUserInterface
-    - type: StorageFill
-      contents:
-        - id: BoxFlare
-        - id: PinpointerNuclear
-        - id: WeaponPulseRifle
-        - id: SpeedLoaderMagnum
-        - id: SpeedLoaderMagnum
-        - id: C4
-        - id: C4
-        - id: C4
-        - id: C4
-        - id: SpetsnazMedipen
-        - id: SpetsnazMedipen
-        - id: SpetsnazMedipen
+  - type: Item
+    sprite: Objects/Tanks/Jetpacks/black.rsi
+  - type: Sprite
+    sprite: Objects/Tanks/Jetpacks/black.rsi
+  - type: Item
+    size: 9999
+  - type: Clothing
+    quickEquip: false
+    sprite: Clothing/Hands/Gloves/robohands.rsi
+    slots:
+      - Back
+  - type: Storage
+    capacity: 300
+  - type: ContainerContainer
+    containers:
+      storagebase: !type:Container
+        ents: []
+  - type: UserInterface
+    interfaces:
+    - key: enum.StorageUiKey.Key
+      type: StorageBoundUserInterface
+  - type: StorageFill
+    contents:
+      - id: BoxFlare
+      - id: PinpointerNuclear
+      - id: WeaponPulseRifle
+      - id: SpeedLoaderMagnum
+      - id: SpeedLoaderMagnum
+      - id: C4
+      - id: C4
+      - id: C4
+      - id: C4
+      - id: SpetsnazMedipen
+      - id: SpetsnazMedipen
+      - id: SpetsnazMedipen
 
 
 - type: entity
