@@ -59,6 +59,7 @@
     tags:
       - Wall
       - RCDDeconstructWhitelist
+      - PlasmaCuttable
   - type: Sprite
     sprite: Structures/Walls/brick.rsi
   - type: Icon
@@ -89,6 +90,7 @@
     tags:
       - Wall
       - RCDDeconstructWhitelist
+      - PlasmaCuttable
   - type: Sprite
     sprite: Structures/Walls/clock.rsi
   - type: Icon
@@ -119,6 +121,7 @@
     tags:
       - Wall
       - RCDDeconstructWhitelist
+      - PlasmaCuttable
   - type: Sprite
     sprite: Structures/Walls/clown.rsi
   - type: Icon
@@ -149,6 +152,7 @@
   - type: Tag
     tags:
       - RCDDeconstructWhitelist
+      - PlasmaCuttable
       - Wall
   - type: Sprite
     sprite: Structures/Walls/cult.rsi
@@ -182,6 +186,7 @@
       - Wall
       - Debug
       - RCDDeconstructWhitelist
+      - PlasmaCuttable
   - type: Sprite
     sprite: Structures/Walls/debug.rsi
   - type: Icon
@@ -212,6 +217,7 @@
     tags:
       - Wall
       - RCDDeconstructWhitelist
+      - PlasmaCuttable
   - type: Sprite
     sprite: Structures/Walls/diamond.rsi
   - type: Icon
@@ -242,6 +248,7 @@
     tags:
       - Wall
       - RCDDeconstructWhitelist
+      - PlasmaCuttable
   - type: Sprite
     sprite: Structures/Walls/gold.rsi
   - type: Icon
@@ -283,6 +290,7 @@
     tags:
       - Wall
       - RCDDeconstructWhitelist
+      - PlasmaCuttable
   - type: Sprite
     sprite: Structures/Walls/ice.rsi
   - type: Icon
@@ -313,6 +321,7 @@
     tags:
       - Wall
       - RCDDeconstructWhitelist
+      - PlasmaCuttable
   - type: Sprite
     sprite: Structures/Walls/plasma.rsi
   - type: Icon
@@ -354,6 +363,7 @@
     tags:
       - Wall
       - RCDDeconstructWhitelist
+      - PlasmaCuttable
   - type: Sprite
     sprite: Structures/Walls/plastic.rsi
   - type: Icon
@@ -395,6 +405,7 @@
       tags:
         - Wall
         - RCDDeconstructWhitelist
+        - PlasmaCuttable
     - type: Sprite
       sprite: Structures/Walls/plastitanium.rsi
     - type: Icon
@@ -466,6 +477,7 @@
     tags:
       - Wall
       - RCDDeconstructWhitelist
+      - PlasmaCuttable
   - type: Sprite
     sprite: Structures/Walls/riveted.rsi
   - type: Icon
@@ -498,6 +510,7 @@
     tags:
       - Wall
       - RCDDeconstructWhitelist
+      - PlasmaCuttable
   - type: Sprite
     sprite: Structures/Walls/sandstone.rsi
   - type: Icon
@@ -528,6 +541,7 @@
     tags:
       - Wall
       - RCDDeconstructWhitelist
+      - PlasmaCuttable
   - type: Sprite
     sprite: Structures/Walls/silver.rsi
   - type: Icon
@@ -569,6 +583,7 @@
     mode: SnapgridCenter
     snap:
     - Wall
+    - PlasmaCuttable
   components:
   - type: Transform
     anchored: true
@@ -631,6 +646,7 @@
     tags:
       - Wall
       - RCDDeconstructWhitelist
+      - PlasmaCuttable
   - type: Sprite
     sprite: Structures/Walls/shuttle.rsi
   - type: Icon
@@ -661,6 +677,7 @@
     tags:
       - Wall
       - RCDDeconstructWhitelist
+      - PlasmaCuttable
   - type: Sprite
     sprite: Structures/Walls/solid.rsi
   - type: Construction

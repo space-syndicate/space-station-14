@@ -4,6 +4,9 @@
   name: maintenance wall closet
   description: It's a storage unit.
   components:
+  - type: Tag
+    tags:
+      - PlasmaCuttable
   - type: Appearance
     visuals:
     - type: StorageVisualizer

@@ -4,6 +4,11 @@
   name: booze storage
   description: This is where the bartender keeps the booze.
   components:
+  - type: Tag
+    tags:
+      - Wall
+      - RCDDeconstructWhitelist
+      - PlasmaCuttable
   - type: Appearance
     visuals:
     - type: StorageVisualizer
@@ -25,6 +30,9 @@
   parent: LockerBase
   name: quartermaster's locker
   components:
+  - type: Tag
+    tags:
+      - PlasmaCuttable
   - type: Appearance
     visuals:
     - type: StorageVisualizer
@@ -40,6 +48,9 @@
   name: salvage specialist's equipment
   description: Nevermind the pickaxe.
   components:
+  - type: Tag
+    tags:
+      - PlasmaCuttable
   - type: Appearance
     visuals:
     - type: StorageVisualizer
@@ -55,6 +66,9 @@
   parent: LockerBaseSecure
   name: captain's locker
   components:
+  - type: Tag
+    tags:
+      - PlasmaCuttable
   - type: Appearance
     visuals:
     - type: StorageVisualizer
@@ -69,6 +83,9 @@
   parent: LockerBaseSecure
   name: head of personnel's locker
   components:
+  - type: Tag
+    tags:
+      - PlasmaCuttable
   - type: Appearance
     visuals:
     - type: StorageVisualizer
@@ -84,6 +101,9 @@
   parent: LockerBaseSecure
   name: chief engineer's locker
   components:
+  - type: Tag
+    tags:
+      - PlasmaCuttable
   - type: Appearance
     visuals:
     - type: StorageVisualizer
@@ -99,6 +119,9 @@
   parent: LockerBase
   name: electrical supplies locker
   components:
+  - type: Tag
+    tags:
+      - PlasmaCuttable
   - type: Appearance
     visuals:
     - type: StorageVisualizer
@@ -114,6 +137,9 @@
   parent: LockerBase
   name: welding supplies locker
   components:
+  - type: Tag
+    tags:
+      - PlasmaCuttable
   - type: Appearance
     visuals:
     - type: StorageVisualizer
@@ -129,6 +155,9 @@
   parent: LockerBase
   name: atmospheric technician's locker
   components:
+  - type: Tag
+    tags:
+      - PlasmaCuttable
   - type: Appearance
     visuals:
     - type: StorageVisualizer
@@ -144,6 +173,9 @@
   parent: LockerBase
   name: engineer's locker
   components:
+  - type: Tag
+    tags:
+      - PlasmaCuttable
   - type: Appearance
     visuals:
     - type: StorageVisualizer
@@ -159,6 +191,9 @@
   parent: LockerBase
   name: freezer
   components:
+  - type: Tag
+    tags:
+      - PlasmaCuttable
   - type: Appearance
     visuals:
     - type: StorageVisualizer
@@ -177,6 +212,9 @@
   parent: LockerBase
   name: botanist's locker
   components:
+  - type: Tag
+    tags:
+      - PlasmaCuttable
   - type: Appearance
     visuals:
     - type: StorageVisualizer
@@ -193,6 +231,9 @@
   name: medicine locker
   description: Filled to the brim with medical junk.
   components:
+  - type: Tag
+    tags:
+      - PlasmaCuttable
   - type: Appearance
     visuals:
     - type: StorageVisualizer
@@ -208,6 +249,9 @@
   parent: LockerBase
   name: medical doctor's locker
   components:
+  - type: Tag
+    tags:
+      - PlasmaCuttable
   - type: Appearance
     visuals:
     - type: StorageVisualizer
@@ -223,6 +267,9 @@
   parent: LockerBase
   name: chemical locker
   components:
+  - type: Tag
+    tags:
+      - PlasmaCuttable
   - type: Appearance
     visuals:
     - type: StorageVisualizer
@@ -238,6 +285,9 @@
   parent: LockerBaseSecure
   name: chief medical officer's locker
   components:
+  - type: Tag
+    tags:
+      - PlasmaCuttable
   - type: Appearance
     visuals:
     - type: StorageVisualizer
@@ -253,6 +303,9 @@
   parent: LockerBase
   name: research director's locker
   components:
+  - type: Tag
+    tags:
+      - PlasmaCuttable
   - type: Appearance
     visuals:
     - type: StorageVisualizer
@@ -267,6 +320,9 @@
   parent: LockerBase
   name: scientist's locker
   components:
+    - type: Tag
+      tags:
+        - PlasmaCuttable
     - type: Appearance
       visuals:
         - type: StorageVisualizer
@@ -282,6 +338,9 @@
   parent: LockerBaseSecure
   name: head of security's locker
   components:
+  - type: Tag
+    tags:
+      - PlasmaCuttable
   - type: Appearance
     visuals:
     - type: StorageVisualizer
@@ -297,6 +356,9 @@
   parent: LockerBaseSecure
   name: warden's locker
   components:
+  - type: Tag
+    tags:
+      - PlasmaCuttable
   - type: Appearance
     visuals:
     - type: StorageVisualizer
@@ -312,6 +374,9 @@
   parent: LockerBaseSecure
   name: security officer's locker
   components:
+  - type: Tag
+    tags:
+      - PlasmaCuttable
   - type: Appearance
     visuals:
     - type: StorageVisualizer
@@ -328,6 +393,9 @@
   name: detective's cabinet
   description: Usually cold and empty... like your heart.
   components:
+  - type: Tag
+    tags:
+      - PlasmaCuttable
   - type: AccessReader
     access: [["Security"]] # TODO access [["Detective"]]
 
@@ -337,6 +405,9 @@
   name: evidence locker
   description: To store bags of bullet casings and detainee belongings.
   components:
+  - type: Tag
+    tags:
+      - PlasmaCuttable
   - type: AccessReader
     access: [["Security"]]
 
@@ -347,6 +418,9 @@
   parent: LockerBaseSecure
   description: It's a personal storage unit for operative gear.
   components:
+  - type: Tag
+    tags:
+      - PlasmaCuttable
   - type: Appearance
     visuals:
     - type: StorageVisualizer
