@@ -5,10 +5,9 @@ namespace Content.Shared.Localizations
     public sealed class ContentLocalizationManager
     {
         [Dependency] private readonly ILocalizationManager _loc = default!;
-        [Dependency] private readonly IEntityManager _ent = default!;
 
         // If you want to change your codebase's language, do it here.
-        private const string Culture = "ru-RU";
+        private const string Culture = "ru-RU"; // Corvax-Localization
 
         /// <summary>
         /// Custom format strings used for parsing and displaying minutes:seconds timespans.

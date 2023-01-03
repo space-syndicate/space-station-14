@@ -1,10 +1,13 @@
 - type: job
   id: Passenger
   name: job-name-passenger
+  description: job-description-passenger
   playTimeTracker: JobPassenger
   startingGear: PassengerGear
   icon: "Passenger"
   supervisors: job-supervisors-everyone
+#  access: # Corvax
+#  - Maintenance
 
 - type: startingGear
   id: PassengerGear

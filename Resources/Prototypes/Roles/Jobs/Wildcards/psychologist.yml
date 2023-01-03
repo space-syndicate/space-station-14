@@ -1,6 +1,7 @@
 - type: job
   id: Psychologist
   name: job-name-psychologist
+  description: job-description-psychologist
   playTimeTracker: JobPsychologist
   startingGear: PsychologistGear
   icon: "Psychologist"
@@ -19,6 +20,6 @@
     shoes: ClothingShoesLeather
     id: PsychologistPDA
     ears: ClothingHeadsetMedical
-  innerclothingskirt: ClothingUniformJumpskirtPsychologist # Corvax
+  innerclothingskirt: ClothingUniformJumpskirtPsychologist # Corvax-Resprite
   satchel: ClothingBackpackSatchelMedicalFilled
   duffelbag: ClothingBackpackDuffelMedicalFilled

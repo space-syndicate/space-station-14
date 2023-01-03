@@ -78,5 +78,7 @@ public enum LogType
     StorePurchase = 73,
     LatticeCut = 74,
     Stripping = 75,
-    PlasmaCutter = 76,
+    PlasmaCutter = 78,
+    Stamina = 76,
+    EntitySpawn = 77,
 }

@@ -1,11 +1,12 @@
 - type: job
   id: MedicalDoctor
   name: job-name-doctor
+  description: job-description-doctor
   playTimeTracker: JobMedicalDoctor
   requirements:
     - !type:DepartmentTimeRequirement
       department: Medical
-      time: 7200
+      time: 7200 # Corvax-RoleTime
   startingGear: DoctorGear
   icon: "MedicalDoctor"
   supervisors: job-supervisors-cmo
