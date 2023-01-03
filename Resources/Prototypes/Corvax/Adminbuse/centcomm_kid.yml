@@ -78,6 +78,10 @@
       collection: trashBagRustle
     storageInsertSound:
       collection: trashBagRustle
+    whitelist:
+      tags:
+        - Cartridge
+        - Trash
   - type: Tag
     tags:
     - TrashBag
