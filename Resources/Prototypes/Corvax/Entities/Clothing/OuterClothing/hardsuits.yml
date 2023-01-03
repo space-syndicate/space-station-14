@@ -5,9 +5,9 @@
   description: A lightweight yet strong exosuit used for special cleanup operations.
   components:
   - type: Sprite
-    sprite: Corvax/Clothing/OuterClothing/Hardsuits/cburncommander.rsi
+    sprite: Corvax/Clothing/OuterClothing/hardsuits/cburncommander.rsi
   - type: Clothing
-    sprite: Corvax/Clothing/OuterClothing/Hardsuits/cburncommander.rsi
+    sprite: Corvax/Clothing/OuterClothing/hardsuits/cburncommander.rsi
   - type: PressureProtection
     highPressureMultiplier: 0.02
     lowPressureMultiplier: 1000
