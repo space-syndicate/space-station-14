@@ -25863,8 +25863,8 @@ entities:
     - volume: 2500
       temperature: 293.15
       moles:
-      - 20.619795
-      - 77.56971
+      - 20.04244
+      - 75.39776
       - 0
       - 0
       - 0
@@ -25877,36 +25877,6 @@ entities:
       - 0
     - volume: 2500
       temperature: 235
-      moles:
-      - 20.619795
-      - 77.56971
-      - 0
-      - 0
-      - 0
-      - 0
-      - 0
-      - 0
-      - 0
-      - 0
-      - 0
-      - 0
-    - volume: 2500
-      temperature: 293.15
-      moles:
-      - 20.60363
-      - 77.508896
-      - 0
-      - 0
-      - 0
-      - 0
-      - 0
-      - 0
-      - 0
-      - 0
-      - 0
-      - 0
-    - volume: 2500
-      temperature: 293.15
       moles:
       - 20.04244
       - 75.39776
@@ -25923,8 +25893,38 @@ entities:
     - volume: 2500
       temperature: 293.15
       moles:
+      - 20.026728
+      - 75.338646
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+    - volume: 2500
+      temperature: 293.15
+      moles:
       - 19.481253
       - 73.28662
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+    - volume: 2500
+      temperature: 293.15
+      moles:
+      - 18.405577
+      - 69.24003
       - 0
       - 0
       - 0
@@ -26277,7 +26277,7 @@ entities:
   - pos: -27.5,-4.5
     parent: 0
     type: Transform
-  - SecondsUntilStateChange: -13771.7
+  - SecondsUntilStateChange: -15429.779
     state: Closing
     type: Door
 - uid: 40
@@ -26286,7 +26286,7 @@ entities:
   - pos: -27.5,-5.5
     parent: 0
     type: Transform
-  - SecondsUntilStateChange: -13772.434
+  - SecondsUntilStateChange: -15430.513
     state: Closing
     type: Door
 - uid: 41
@@ -56000,7 +56000,7 @@ entities:
   - pos: -27.5,-6.5
     parent: 0
     type: Transform
-  - SecondsUntilStateChange: -13773.1
+  - SecondsUntilStateChange: -15431.179
     state: Closing
     type: Door
 - uid: 4292
@@ -56009,7 +56009,7 @@ entities:
   - pos: -27.5,-7.5
     parent: 0
     type: Transform
-  - SecondsUntilStateChange: -13775.5
+  - SecondsUntilStateChange: -15433.579
     state: Closing
     type: Door
 - uid: 4293
@@ -59193,7 +59193,7 @@ entities:
   - pos: -63.5,-21.5
     parent: 0
     type: Transform
-  - SecondsUntilStateChange: -121186.73
+  - SecondsUntilStateChange: -122844.805
     state: Opening
     type: Door
   - inputs:
@@ -59812,7 +59812,7 @@ entities:
   - pos: -63.5,-18.5
     parent: 0
     type: Transform
-  - SecondsUntilStateChange: -121186.73
+  - SecondsUntilStateChange: -122844.805
     state: Opening
     type: Door
   - inputs:
@@ -59828,7 +59828,7 @@ entities:
   - pos: -59.5,-18.5
     parent: 0
     type: Transform
-  - SecondsUntilStateChange: -121175.16
+  - SecondsUntilStateChange: -122833.234
     state: Opening
     type: Door
   - inputs:
@@ -59852,7 +59852,7 @@ entities:
   - pos: -59.5,-21.5
     parent: 0
     type: Transform
-  - SecondsUntilStateChange: -121175.16
+  - SecondsUntilStateChange: -122833.234
     state: Opening
     type: Door
   - inputs:
@@ -60504,14 +60504,14 @@ entities:
   - containers:
       entity_storage: !type:Container
         ents:
-        - 14043
-        - 14045
-        - 14040
-        - 14046
-        - 14041
-        - 14047
-        - 14042
         - 14044
+        - 14042
+        - 14047
+        - 14041
+        - 14046
+        - 14040
+        - 14045
+        - 14043
     type: ContainerContainer
 - uid: 4859
   type: GasPipeStraight
@@ -79068,7 +79068,7 @@ entities:
     pos: 41.5,8.5
     parent: 0
     type: Transform
-  - SecondsUntilStateChange: -109093.875
+  - SecondsUntilStateChange: -110751.95
     state: Opening
     type: Door
   - inputs:
@@ -79085,7 +79085,7 @@ entities:
     pos: 41.5,6.5
     parent: 0
     type: Transform
-  - SecondsUntilStateChange: -109093.875
+  - SecondsUntilStateChange: -110751.95
     state: Opening
     type: Door
   - inputs:
@@ -79102,7 +79102,7 @@ entities:
     pos: 41.5,9.5
     parent: 0
     type: Transform
-  - SecondsUntilStateChange: -109093.875
+  - SecondsUntilStateChange: -110751.95
     state: Opening
     type: Door
   - inputs:
@@ -81182,7 +81182,7 @@ entities:
   - pos: -101.5,29.5
     parent: 0
     type: Transform
-  - SecondsUntilStateChange: -107919.914
+  - SecondsUntilStateChange: -109577.99
     state: Opening
     type: Door
   - inputs:
@@ -81318,7 +81318,7 @@ entities:
   - pos: -99.5,29.5
     parent: 0
     type: Transform
-  - SecondsUntilStateChange: -107918.516
+  - SecondsUntilStateChange: -109576.59
     state: Opening
     type: Door
   - inputs:
@@ -99452,7 +99452,7 @@ entities:
   - pos: -36.5,33.5
     parent: 0
     type: Transform
-  - SecondsUntilStateChange: -12073.468
+  - SecondsUntilStateChange: -13731.547
     state: Opening
     type: Door
 - uid: 10298
@@ -99766,7 +99766,7 @@ entities:
   - pos: -21.5,31.5
     parent: 0
     type: Transform
-  - SecondsUntilStateChange: -12718.267
+  - SecondsUntilStateChange: -14376.346
     state: Opening
     type: Door
 - uid: 10349
@@ -132623,6 +132623,12 @@ entities:
     type: Physics
   - type: ActiveUserInterface
   - type: InsideEntityStorage
+- uid: 15321
+  type: SpawnPointSecurityCadet
+  components:
+  - pos: 31.5,-7.5
+    parent: 0
+    type: Transform
 - uid: 15322
   type: PinpointerNuclear
   components:
@@ -132849,6 +132855,60 @@ entities:
   - canCollide: False
     type: Physics
   - type: InsideEntityStorage
+- uid: 15339
+  type: SpawnPointSecurityCadet
+  components:
+  - pos: 33.5,-8.5
+    parent: 0
+    type: Transform
+- uid: 15340
+  type: SpawnPointSecurityCadet
+  components:
+  - pos: 32.5,-8.5
+    parent: 0
+    type: Transform
+- uid: 15341
+  type: SpawnPointSecurityCadet
+  components:
+  - pos: 33.5,-5.5
+    parent: 0
+    type: Transform
+- uid: 15342
+  type: SpawnPointSecurityCadet
+  components:
+  - pos: 34.5,-5.5
+    parent: 0
+    type: Transform
+- uid: 15343
+  type: SpawnPointAssistant
+  components:
+  - pos: -94.5,15.5
+    parent: 0
+    type: Transform
+- uid: 15344
+  type: SpawnPointAssistant
+  components:
+  - pos: -92.5,16.5
+    parent: 0
+    type: Transform
+- uid: 15345
+  type: SpawnPointAssistant
+  components:
+  - pos: -91.5,13.5
+    parent: 0
+    type: Transform
+- uid: 15346
+  type: SpawnPointAssistant
+  components:
+  - pos: -93.5,13.5
+    parent: 0
+    type: Transform
+- uid: 15347
+  type: SpawnPointServiceWorker
+  components:
+  - pos: -22.5,-4.5
+    parent: 0
+    type: Transform
 - uid: 15348
   type: ClothingHeadsetAltCommand
   components:
@@ -143959,7 +144019,7 @@ entities:
 - uid: 17020
   type: ToyMarauder
   components:
-  - desc: СЛАВА КОРВАКСУ!
+  - desc: Мародёр с позывным "кочевник", получил огромную огласку после вторжение ксеносов на одну из колоний, где он участвовал как защитник.
     name: игрушечный no_mad
     type: MetaData
   - pos: 33.371323,-7.2137203
@@ -145325,7 +145385,7 @@ entities:
   - pos: -27.5,-8.5
     parent: 0
     type: Transform
-  - SecondsUntilStateChange: -13774.133
+  - SecondsUntilStateChange: -15432.212
     state: Closing
     type: Door
 - uid: 17240
