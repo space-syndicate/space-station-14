@@ -2,7 +2,7 @@ vending-machine-restock-invalid-inventory = { CAPITALIZE($this) } не подх�
 vending-machine-restock-needs-panel-open = Техническая панель { CAPITALIZE($target) } должна быть открыта.
 vending-machine-restock-start = { $user } начинает пополнять { $target }.
 vending-machine-restock-done =
-    { $user } { $gender ->
+    { $user } { GENDER($user) ->
         [male] закончил
         [female] закончила
         [epicene] закончили
