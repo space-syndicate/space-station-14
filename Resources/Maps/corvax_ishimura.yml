@@ -338,6 +338,8 @@ entities:
     type: Physics
   - fixtures: []
     type: Fixtures
+  - id: Ishimura
+    type: BecomesStation
   - type: OccluderTree
   - type: Shuttle
   - nextUpdate: 28274.6885341
