@@ -138,6 +138,9 @@
       - id: MedicalTechFabCircuitboard
       - id: MaterialBiomass
         amount: 3
+      - id: TrackingImplanter
+        amount: 3
+      - id: NitrousOxideTankFilled
 
 - type: entity
   id: LockerResearchDirectorFilled
