@@ -1,0 +1,5 @@
+- type: gameRule
+  id: Assaultops
+  config:
+    !type:AssaultopsRuleConfiguration
+    id: Assaultops

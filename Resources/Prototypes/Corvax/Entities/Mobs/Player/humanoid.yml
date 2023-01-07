@@ -1,0 +1,18 @@
+# Random humanoids
+
+## AssaultOps
+
+- type: entity
+  id: RandomHumanoidSpawnerAssaultOp
+  name: Assault Operative
+  components:
+    - type: Icon
+      sprite: Mobs/Species/Human/parts.rsi
+      state: full
+    - type: RandomHumanoidSpawner
+      settings: AssaultOp
+
+- type: randomHumanoidSettings
+  id: AssaultOp
+  components:
+    - type: AssaultOperative
