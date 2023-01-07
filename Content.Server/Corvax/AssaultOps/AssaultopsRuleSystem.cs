@@ -53,13 +53,13 @@ public sealed class AssaultopsRuleSystem : GameRuleSystem
         /// </summary>
         OpsMinor,
         /// <summary>
-        ///     Stalemate. Goldeneye not activated and ops still alive.
-        /// </summary>
-        Stalemate,
-        /// <summary>
         ///     Hearty. Goldeneye activated but no ops alive.
         /// </summary>
         Hearty,
+        /// <summary>
+        ///     Stalemate. Goldeneye not activated and ops still alive.
+        /// </summary>
+        Stalemate,
         /// <summary>
         ///     Crew major win. Goldeneye not activated and no ops alive.
         /// </summary>
@@ -68,14 +68,14 @@ public sealed class AssaultopsRuleSystem : GameRuleSystem
     
     private enum WinCondition
     {
-        GoldenEyeActivated,
+        IcarusActivated,
         AllOpsDead,
         SomeOpsAlive,
         AllOpsAlive
     }
     
     private WinType _winType = WinType.Stalemate;
-    private List<WinCondition> _winConditions = new();
+    private readonly List<WinCondition> _winConditions = new();
     
     private MapId? _outpostMap;
     
@@ -107,6 +107,7 @@ public sealed class AssaultopsRuleSystem : GameRuleSystem
         SubscribeLocalEvent<RoundStartAttemptEvent>(OnStartAttempt);
         SubscribeLocalEvent<RulePlayerSpawningEvent>(OnPlayersSpawning);
         SubscribeLocalEvent<GameRunLevelChangedEvent>(OnRunLevelChanged);
+        SubscribeLocalEvent<RoundEndTextAppendEvent>(OnRoundEndText);
         SubscribeLocalEvent<AssaultOperativeComponent, ComponentInit>(OnComponentInit);
     }
 
@@ -330,6 +331,24 @@ public sealed class AssaultopsRuleSystem : GameRuleSystem
         else
         {
             _winConditions.Add(WinCondition.SomeOpsAlive);
+        }
+    }
+
+    private void OnRoundEndText(RoundEndTextAppendEvent ev)
+    {
+        if (!RuleAdded)
+            return;
+
+        ev.AddLine(Loc.GetString($"assaultops-{_winType.ToString().ToLower()}"));
+
+        foreach (var cond in _winConditions)
+            ev.AddLine(Loc.GetString($"assaultops-cond-{cond.ToString().ToLower()}"));
+
+        ev.AddLine(Loc.GetString("assaultops-list-start"));
+        foreach (var (name, session) in _operativePlayers)
+        {
+            var listing = Loc.GetString("assaultops-list-name", ("name", name), ("user", session.Name));
+            ev.AddLine(listing);
         }
     }
 
