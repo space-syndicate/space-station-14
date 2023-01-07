@@ -27,6 +27,5 @@ public sealed class IcarusBeamComponent : Component
     [DataField("flameRadius")]
     public float FlameRadius = 4f;
 
-    [DataField("accumulator")]
-    public float Accumulator = 0f;
+    public TimeSpan LifetimeEnd;
 }

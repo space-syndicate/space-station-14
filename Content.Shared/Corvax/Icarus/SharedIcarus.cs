@@ -1,7 +1,7 @@
 ﻿using Content.Shared.Nuke;
 using Robust.Shared.Serialization;
 
-namespace Content.Shared.Icarus;
+namespace Content.Shared.Corvax.Icarus;
 
 [Serializable, NetSerializable]
 public enum IcarusTerminalUiKey

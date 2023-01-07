@@ -2,31 +2,36 @@
 using Content.Server.Atmos.EntitySystems;
 using Content.Server.Ghost.Components;
 using Robust.Shared.Map;
+using Robust.Shared.Map.Components;
 using Robust.Shared.Physics.Components;
+using Robust.Shared.Physics.Systems;
+using Robust.Shared.Timing;
 
 namespace Content.Server.Corvax.Icarus;
 
 public sealed class IcarusBeamSystem : EntitySystem
 {
     [Dependency] private readonly IMapManager _map = default!;
+    [Dependency] private readonly IGameTiming _timing = default!;
     [Dependency] private readonly EntityLookupSystem _lookup = default!;
     [Dependency] private readonly FlammableSystem _flammable = default!;
+    [Dependency] private readonly SharedPhysicsSystem _physics = default!;
 
     public override void Update(float frameTime)
     {
         base.Update(frameTime);
 
         var query = EntityQuery<IcarusBeamComponent, TransformComponent>(true);
-        foreach (var (beam, trans) in query)
+        foreach (var (comp, xform) in query)
         {
-            AccumulateLifetime(beam, frameTime);
-            DestroyEntities(beam, trans);
-            BurnEntities(beam, trans);
+            DestroyEntities(comp, xform);
+            BurnEntities(comp, xform);
 
-            if (!beam.DestroyTiles)
-                continue;
+            if (comp.DestroyTiles)
+                DestroyTiles(comp, xform);
 
-            DestroyTiles(beam, trans);
+            if (_timing.CurTime > comp.LifetimeEnd)
+                QueueDel(comp.Owner);
         }
     }
 
@@ -38,6 +43,7 @@ public sealed class IcarusBeamSystem : EntitySystem
 
     private void OnComponentInit(EntityUid uid, IcarusBeamComponent component, ComponentInit args)
     {
+        component.LifetimeEnd = _timing.CurTime + component.Lifetime;
         if (TryComp(uid, out PhysicsComponent? phys))
         {
             phys.LinearDamping = 0f;
@@ -46,22 +52,13 @@ public sealed class IcarusBeamSystem : EntitySystem
         }
     }
 
-    public void LaunchInDirection(EntityUid uid, Vector2 dir, IcarusBeamComponent? beam = null)
+    public void LaunchInDirection(EntityUid uid, Vector2 dir, IcarusBeamComponent? comp = null)
     {
-        if (!Resolve(uid, ref beam))
+        if (!Resolve(uid, ref comp))
             return;
 
-        if (TryComp(beam.Owner, out PhysicsComponent? phys))
-            phys.ApplyLinearImpulse(dir * beam.Speed);
-    }
-
-    private void AccumulateLifetime(IcarusBeamComponent beam, float frameTime)
-    {
-        beam.Accumulator += frameTime;
-        if (beam.Accumulator > beam.Lifetime.TotalSeconds)
-        {
-            QueueDel(beam.Owner);
-        }
+        if (TryComp(comp.Owner, out PhysicsComponent? phys))
+            _physics.ApplyLinearImpulse(phys, dir * comp.Speed);
     }
 
     /// <summary>
@@ -130,7 +127,7 @@ public sealed class IcarusBeamSystem : EntitySystem
     private bool CanDestroy(IcarusBeamComponent component, EntityUid entity)
     {
         return entity != component.Owner &&
-               !EntityManager.HasComponent<IMapGridComponent>(entity) &&
+               !EntityManager.HasComponent<MapGridComponent>(entity) &&
                !EntityManager.HasComponent<GhostComponent>(entity);
     }
 }

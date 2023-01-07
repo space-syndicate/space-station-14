@@ -21,25 +21,30 @@ public sealed class SpawnIcarusCommand : IConsoleCommand
             shell.WriteError("Incorrect number of arguments. " + Help);
             return;
         }
-
-        if (!int.TryParse(args[0], out var id))
+        
+        if (!EntityUid.TryParse(args[0], out var uid))
         {
-            shell.WriteLine($"{args[0]} is not a valid integer.");
+            shell.WriteError("Not a valid entity ID.");
             return;
         }
 
-        var gridId = new GridId(int.Parse(args[0]));
-        var mapManager = IoCManager.Resolve<IMapManager>();
-
-        if (mapManager.TryGetGrid(gridId, out var grid))
+        var entityManager = IoCManager.Resolve<IEntityManager>();
+        if (!entityManager.EntityExists(uid))
         {
-            var icarusSystem = EntitySystem.Get<IcarusTerminalSystem>();
-            var coords = icarusSystem.FireBeam(grid.WorldAABB);
+            shell.WriteError("That grid does not exist.");
+            return;
+        }
+        
+        var mapManager = IoCManager.Resolve<IMapManager>();
+        if (mapManager.TryGetGrid(uid, out var grid))
+        {
+            var icarusSystem = IoCManager.Resolve<IEntityManager>().System<IcarusTerminalSystem>();
+            var coords = icarusSystem.FireBeam(grid.LocalAABB);
             shell.WriteLine($"Icarus was spawned: {coords.ToString()}");
         }
         else
         {
-            shell.WriteError($"No grid exists with id {id}");
+            shell.WriteError($"No grid exists with ID {uid}");
         }
     }
 }

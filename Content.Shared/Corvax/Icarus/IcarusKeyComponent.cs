@@ -1,4 +1,4 @@
-﻿namespace Content.Shared.Icarus;
+﻿namespace Content.Shared.Corvax.Icarus;
 
 /// <summary>
 /// Used for Icarus terminal activation

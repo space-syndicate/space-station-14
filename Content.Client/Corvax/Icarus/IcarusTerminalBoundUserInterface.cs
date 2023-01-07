@@ -1,15 +1,13 @@
-﻿using Content.Shared.Icarus;
-using JetBrains.Annotations;
+﻿using Content.Shared.Corvax.Icarus;
 using Robust.Client.GameObjects;
 
-namespace Content.Client.Icarus;
+namespace Content.Client.Corvax.Icarus;
 
-[UsedImplicitly]
 public sealed class IcarusTerminalBoundUserInterface : BoundUserInterface
 {
     private IcarusTerminalWindow? _window;
 
-    public IcarusTerminalBoundUserInterface([NotNull] ClientUserInterfaceComponent owner, [NotNull] object uiKey) : base(owner, uiKey)
+    public IcarusTerminalBoundUserInterface(ClientUserInterfaceComponent owner, Enum uiKey) : base(owner, uiKey)
     {
     }
 

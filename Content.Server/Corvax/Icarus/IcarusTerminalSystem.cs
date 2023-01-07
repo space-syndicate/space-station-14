@@ -4,12 +4,15 @@ using Content.Server.GameTicking;
 using Content.Server.Station.Components;
 using Content.Server.Station.Systems;
 using Content.Shared.Containers.ItemSlots;
-using Content.Shared.Icarus;
+using Content.Shared.Corvax.Icarus;
 using Robust.Server.GameObjects;
 using Robust.Shared.Audio;
+using Robust.Shared.Containers;
 using Robust.Shared.Map;
+using Robust.Shared.Map.Components;
 using Robust.Shared.Player;
 using Robust.Shared.Random;
+using Robust.Shared.Utility;
 
 namespace Content.Server.Corvax.Icarus;
 
@@ -51,7 +54,8 @@ public sealed class IcarusTerminalSystem : EntitySystem
     {
         base.Initialize();
         SubscribeLocalEvent<IcarusTerminalComponent, ComponentInit>(OnInit);
-        SubscribeLocalEvent<IcarusTerminalComponent, ItemSlotChangedEvent>(OnItemSlotChanged);
+        SubscribeLocalEvent<IcarusTerminalComponent, EntInsertedIntoContainerMessage>(OnItemSlotChanged);
+        SubscribeLocalEvent<IcarusTerminalComponent, EntRemovedFromContainerMessage>(OnItemSlotChanged);
 
         // UI events
         SubscribeLocalEvent<IcarusTerminalComponent, IcarusTerminalFireMessage>(OnFireButtonPressed);
@@ -64,7 +68,7 @@ public sealed class IcarusTerminalSystem : EntitySystem
         UpdateUserInterface(component);
     }
 
-    private void OnItemSlotChanged(EntityUid uid, IcarusTerminalComponent component, ref ItemSlotChangedEvent args)
+    private void OnItemSlotChanged(EntityUid uid, IcarusTerminalComponent component, ContainerModifiedMessage args)
     {
         UpdateStatus(component);
         UpdateUserInterface(component);
@@ -87,7 +91,7 @@ public sealed class IcarusTerminalSystem : EntitySystem
             Loc.GetString("icarus-fire-announcement", ("seconds", component.Timer)),
             Loc.GetString("icarus-announce-sender"),
             false,
-            Color.Red);
+            colorOverride: Color.Red);
         SoundSystem.Play(component.AlertSound.GetSound(), Filter.Broadcast());
     }
 
@@ -203,16 +207,20 @@ public sealed class IcarusTerminalSystem : EntitySystem
         coords = new MapCoordinates(center + offset, _gameTicker.DefaultMap);
     }
 
+    /// <summary>
+    ///     Determine box of all stations and all of they grids. (copy-paste from pirate gamerule)
+    /// </summary>
+    /// <returns>Box of all station grids</returns>
     private Box2 GetStationArea()
     {
-        var areas = _stationSystem.Stations.SelectMany(x =>
-            Comp<StationDataComponent>(x).Grids.Select(x => _mapManager.GetGridComp(x).Grid.WorldAABB)).ToArray();
-        var stationArea = areas[0];
+        var xformQuery = GetEntityQuery<TransformComponent>();
+        var areas = _stationSystem.Stations.SelectMany(s =>
+            Comp<StationDataComponent>(s).Grids.Select(g => 
+                xformQuery.GetComponent(g).WorldMatrix.TransformBox(Comp<MapGridComponent>(g).LocalAABB))).ToArray();
 
+        var stationArea = areas[0];
         for (var i = 1; i < areas.Length; i++)
-        {
             stationArea.Union(areas[i]);
-        }
 
         return stationArea;
     }

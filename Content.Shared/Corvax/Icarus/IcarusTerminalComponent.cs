@@ -1,7 +1,8 @@
 ﻿using Content.Shared.Containers.ItemSlots;
 using Content.Shared.Sound;
+using Robust.Shared.Audio;
 
-namespace Content.Shared.Icarus;
+namespace Content.Shared.Corvax.Icarus;
 
 /// <summary>
 /// Used for Icarus terminal activation
