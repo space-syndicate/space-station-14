@@ -26,6 +26,7 @@ using Content.Shared.Popups;
 using Content.Server.Atmos.Miasma;
 using Content.Server.Humanoid;
 using Content.Server.IdentityManagement;
+using Content.Shared.CombatMode.Pacification;
 using Content.Shared.Humanoid;
 using Content.Shared.Movement.Systems;
 using Content.Shared.Weapons.Melee;
@@ -110,6 +111,7 @@ namespace Content.Server.Zombies
             RemComp<CombatModeComponent>(target);
             var combat = AddComp<CombatModeComponent>(target);
             combat.IsInCombatMode = true;
+            RemComp<PacifiedComponent>(target); // Corvax-DionaPacifist: Allow dionas nukes to harm
 
             var vocal = EnsureComp<VocalComponent>(target);
             var scream = new SoundCollectionSpecifier ("ZombieScreams");
