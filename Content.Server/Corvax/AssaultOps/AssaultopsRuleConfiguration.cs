@@ -36,7 +36,7 @@ public sealed class AssaultopsRuleConfiguration : GameRuleConfiguration
     public string RandomHumanoidSettingsPrototype = "AssaultOp";
 
     [DataField("spawnPointProto", customTypeSerializer: typeof(PrototypeIdSerializer<StartingGearPrototype>))]
-    public string SpawnPointPrototype = "SpawnPointNukies"; // TODO: Replace with custom when map will be ready
+    public string SpawnPointPrototype = "SpawnPointAssaultops";
 
     [DataField("operativeRoleProto", customTypeSerializer: typeof(PrototypeIdSerializer<StartingGearPrototype>))]
     public string OperativeRoleProto = "Assaultops";
