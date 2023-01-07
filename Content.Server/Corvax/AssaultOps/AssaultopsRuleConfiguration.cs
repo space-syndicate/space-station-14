@@ -48,7 +48,7 @@ public sealed class AssaultopsRuleConfiguration : GameRuleConfiguration
     public string OperativeNames = "SyndicateNamesNormal";
 
     [DataField("outpostMap", customTypeSerializer: typeof(ResourcePathSerializer))]
-    public ResourcePath? OutpostMap = new("/Maps/nukieplanet.yml"); // TODO: Create some new map
+    public ResourcePath? OutpostMap = new("/Maps/corvax_assaultopsplanet.yml");
 
     [DataField("shuttleMap", customTypeSerializer: typeof(ResourcePathSerializer))]
     public ResourcePath? ShuttleMap = new("/Maps/infiltrator.yml"); // TODO: Create custom shuttle
