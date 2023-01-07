@@ -36,22 +36,22 @@ public sealed class AssaultopsRuleConfiguration : GameRuleConfiguration
     public string RandomHumanoidSettingsPrototype = "AssaultOp";
 
     [DataField("spawnPointProto", customTypeSerializer: typeof(PrototypeIdSerializer<StartingGearPrototype>))]
-    public string SpawnPointPrototype = "SpawnPointNukies";
+    public string SpawnPointPrototype = "SpawnPointNukies"; // TODO: Replace with custom when map will be ready
 
     [DataField("operativeRoleProto", customTypeSerializer: typeof(PrototypeIdSerializer<StartingGearPrototype>))]
     public string OperativeRoleProto = "Assaultops";
 
     [DataField("operativeStartGearProto", customTypeSerializer: typeof(PrototypeIdSerializer<StartingGearPrototype>))]
-    public string OperativeStartGearPrototype = "SyndicateOperativeGearFull";
+    public string OperativeStartGearPrototype = "SyndicateOperativeGearFull"; // TODO: Use stealth gear
 
     [DataField("normalNames", customTypeSerializer: typeof(PrototypeIdSerializer<DatasetPrototype>))]
     public string OperativeNames = "SyndicateNamesNormal";
 
     [DataField("outpostMap", customTypeSerializer: typeof(ResourcePathSerializer))]
-    public ResourcePath? OutpostMap = new("/Maps/nukieplanet.yml");
+    public ResourcePath? OutpostMap = new("/Maps/nukieplanet.yml"); // TODO: Create some new map
 
     [DataField("shuttleMap", customTypeSerializer: typeof(ResourcePathSerializer))]
-    public ResourcePath? ShuttleMap = new("/Maps/infiltrator.yml");
+    public ResourcePath? ShuttleMap = new("/Maps/infiltrator.yml"); // TODO: Create custom shuttle
 
     [DataField("greetingSound", customTypeSerializer: typeof(SoundSpecifierTypeSerializer))]
     public SoundSpecifier? GreetSound = new SoundPathSpecifier("/Audio/Corvax/Misc/assaultops.ogg");
