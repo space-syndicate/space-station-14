@@ -42,7 +42,7 @@ public sealed class AssaultopsRuleConfiguration : GameRuleConfiguration
     public string OperativeRoleProto = "Assaultops";
 
     [DataField("operativeStartGearProto", customTypeSerializer: typeof(PrototypeIdSerializer<StartingGearPrototype>))]
-    public string OperativeStartGearPrototype = "SyndicateOperativeGearFull"; // TODO: Use stealth gear
+    public string OperativeStartGearPrototype = "AssaultOperativeGear";
 
     [DataField("normalNames", customTypeSerializer: typeof(PrototypeIdSerializer<DatasetPrototype>))]
     public string OperativeNames = "SyndicateNamesNormal";

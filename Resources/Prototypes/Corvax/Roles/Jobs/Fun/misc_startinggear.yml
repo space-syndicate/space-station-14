@@ -1,0 +1,17 @@
+# Assault Operative Outfit
+- type: startingGear
+  id: AssaultOperativeGear
+  equipment:
+    jumpsuit: ClothingUniformJumpsuitTactical
+    back: ClothingBackpackChameleon
+    mask: ClothingMaskGaiter
+    eyes: ClothingEyesGlassesSunglasses
+    ears: ClothingHeadsetAltSyndicate
+    gloves: ClothingHandsGlovesCombat
+    shoes: ClothingShoesBootsCombatFilled
+    id: AgentIDCard
+    pocket1: ExtendedEmergencyOxygenTankFilled
+    pocket2: BaseUplinkRadio20TC
+  innerclothingskirt: ClothingUniformJumpsuitTactical
+  satchel: ClothingBackpackChameleon
+  duffelbag: ClothingBackpackChameleon
