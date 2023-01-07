@@ -41,3 +41,14 @@
       sprite: Corvax/Clothing/Uniforms/Jumpsuit/centcom_admiral.rsi
     - type: Clothing
       sprite: Corvax/Clothing/Uniforms/Jumpsuit/centcom_admiral.rsi
+
+- type: entity
+  parent: ClothingUniformBase
+  id: ClothingUniformJumpsuitTactical
+  name: tactical turtleneck suit
+  description: A double seamed tactical turtleneck disguised as a civilian grade silk suit. Intended for the most formal operator. The collar is really sharp.
+  components:
+    - type: Sprite
+      sprite: Corvax/Clothing/Uniforms/Jumpsuit/tactical_suit.rsi
+    - type: Clothing
+      sprite: Corvax/Clothing/Uniforms/Jumpsuit/tactical_suit.rsi
