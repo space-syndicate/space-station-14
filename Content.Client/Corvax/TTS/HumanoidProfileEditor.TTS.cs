@@ -1,5 +1,6 @@
 ﻿using System.Linq;
 using Content.Client.Corvax.Sponsors;
+using Content.Client.Corvax.TTS;
 using Content.Shared.Corvax.TTS;
 using Content.Shared.Humanoid;
 using Robust.Shared.Network;
@@ -9,12 +10,14 @@ namespace Content.Client.Preferences.UI;
 public sealed partial class HumanoidProfileEditor
 {
     private IClientNetManager _net = default!;
+    private TTSSystem _ttsSys = default!;
     private List<TTSVoicePrototype> _voiceList = default!;
     private const string SampleText = "съешь ещё этих мягких французских булок, да выпей чаю";
 
     private void InitializeVoice()
     {
         _net = IoCManager.Resolve<IClientNetManager>();
+        _ttsSys = _entMan.System<TTSSystem>();
         _voiceList = _prototypeManager.EnumeratePrototypes<TTSVoicePrototype>().Where(o => o.RoundStart).ToList();
 
         _voiceButton.OnItemSelected += args =>
@@ -66,7 +69,8 @@ public sealed partial class HumanoidProfileEditor
     {
         if (_previewDummy is null || Profile is null)
             return;
-        
+
+        _ttsSys.StopAllStreams();
         var msg = new RequestTTSEvent() { Text = SampleText, Uid = _previewDummy.Value, VoiceId = Profile.Voice };
         _net.ClientSendMessage(msg);
     }

@@ -110,6 +110,12 @@ public sealed class TTSSystem : EntitySystem
         var stream = new AudioStream(ev.Uid, source);
         AddEntityStreamToQueue(stream);
     }
+
+    public void StopAllStreams()
+    {
+        foreach (var stream in _currentStreams)
+            stream.Source.StopPlaying();
+    }
     
     private bool TryCreateAudioSource(byte[] data, [NotNullWhen(true)] out IClydeAudioSource? source)
     {
