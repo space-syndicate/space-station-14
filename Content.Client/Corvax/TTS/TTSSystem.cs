@@ -1,13 +1,13 @@
 ﻿using System.Diagnostics.CodeAnalysis;
 using System.IO;
 using System.Linq;
-using Content.Shared.CCVar;
 using Content.Shared.Corvax.CCCVars;
 using Content.Shared.Corvax.TTS;
 using Content.Shared.Physics;
 using Robust.Client.Graphics;
 using Robust.Shared.Configuration;
 using Robust.Shared.Map;
+using Robust.Shared.Network;
 using Robust.Shared.Physics;
 using Robust.Shared.Physics.Systems;
 
@@ -23,6 +23,7 @@ public sealed class TTSSystem : EntitySystem
     [Dependency] private readonly IEntityManager _entity = default!;
     [Dependency] private readonly IEyeManager _eye = default!;
     [Dependency] private readonly IConfigurationManager _cfg = default!;
+    [Dependency] private readonly IClientNetManager _netMgr = default!;
     [Dependency] private readonly SharedPhysicsSystem _broadPhase = default!;
     
     private ISawmill _sawmill = default!;
@@ -34,6 +35,7 @@ public sealed class TTSSystem : EntitySystem
     public override void Initialize()
     {
         _sawmill = Logger.GetSawmill("tts");
+        _netMgr.RegisterNetMessage<RequestTTSEvent>();
         _cfg.OnValueChanged(CCCVars.TtsVolume, OnTtsVolumeChanged, true);
         SubscribeNetworkEvent<PlayTTSEvent>(OnPlayTTS);
     }
@@ -107,11 +109,6 @@ public sealed class TTSSystem : EntitySystem
 
         var stream = new AudioStream(ev.Uid, source);
         AddEntityStreamToQueue(stream);
-    }
-
-    public void PlayCustomText(string text)
-    {
-        RaiseNetworkEvent(new RequestTTSEvent(text));
     }
     
     private bool TryCreateAudioSource(byte[] data, [NotNullWhen(true)] out IClydeAudioSource? source)

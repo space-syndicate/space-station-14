@@ -2,15 +2,19 @@
 using Content.Client.Corvax.Sponsors;
 using Content.Shared.Corvax.TTS;
 using Content.Shared.Humanoid;
+using Robust.Shared.Network;
 
 namespace Content.Client.Preferences.UI;
 
 public sealed partial class HumanoidProfileEditor
 {
-    private List<TTSVoicePrototype> _voiceList = default!; // Corvax-TTS
+    private IClientNetManager _net = default!;
+    private List<TTSVoicePrototype> _voiceList = default!;
+    private const string SampleText = "съешь ещё этих мягких французских булок, да выпей чаю";
 
     private void InitializeVoice()
     {
+        _net = IoCManager.Resolve<IClientNetManager>();
         _voiceList = _prototypeManager.EnumeratePrototypes<TTSVoicePrototype>().Where(o => o.RoundStart).ToList();
 
         _voiceButton.OnItemSelected += args =>
@@ -26,8 +30,6 @@ public sealed partial class HumanoidProfileEditor
     {
         if (Profile is null)
             return;
-        
-        var sponsorsManager = IoCManager.Resolve<SponsorsManager>();
 
         _voiceButton.Clear();
 
@@ -45,7 +47,7 @@ public sealed partial class HumanoidProfileEditor
                 firstVoiceChoiceId = i;
 
             if (voice.SponsorOnly &&
-                sponsorsManager.TryGetInfo(out var sponsor) &&
+                IoCManager.Resolve<SponsorsManager>().TryGetInfo(out var sponsor) &&
                 !sponsor.AllowedMarkings.Contains(voice.ID))
             {
                 _voiceButton.SetItemDisabled(i, true);
@@ -62,6 +64,10 @@ public sealed partial class HumanoidProfileEditor
 
     private void PlayTTS()
     {
+        if (_previewDummy is null || Profile is null)
+            return;
         
+        var msg = new RequestTTSEvent() { Text = SampleText, Uid = _previewDummy.Value, VoiceId = Profile.Voice };
+        _net.ClientSendMessage(msg);
     }
 }

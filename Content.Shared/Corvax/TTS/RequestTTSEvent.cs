@@ -1,15 +1,29 @@
-﻿using Robust.Shared.Serialization;
+﻿using Lidgren.Network;
+using Robust.Shared.Network;
+using Robust.Shared.Serialization;
 
 namespace Content.Shared.Corvax.TTS;
 
-[Serializable, NetSerializable]
 // ReSharper disable once InconsistentNaming
-public sealed class RequestTTSEvent : EntityEventArgs
+public sealed class RequestTTSEvent : NetMessage
 {
-    public string Text { get; }
+    public override MsgGroups MsgGroup => MsgGroups.Command;
 
-    public RequestTTSEvent(string text)
+    public EntityUid Uid { get; set; } = EntityUid.Invalid;
+    public string Text { get; set; } = String.Empty;
+    public string VoiceId { get; set; } = String.Empty;
+
+    public override void ReadFromBuffer(NetIncomingMessage buffer, IRobustSerializer serializer)
     {
-        Text = text;
+        Uid = new EntityUid(buffer.ReadInt32());
+        Text = buffer.ReadString();
+        VoiceId = buffer.ReadString();
+    }
+
+    public override void WriteToBuffer(NetOutgoingMessage buffer, IRobustSerializer serializer)
+    {
+        buffer.Write((int)Uid);
+        buffer.Write(Text);
+        buffer.Write(VoiceId);
     }
 }
