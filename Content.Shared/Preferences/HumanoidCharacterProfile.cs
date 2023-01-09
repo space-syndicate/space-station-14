@@ -186,7 +186,7 @@ namespace Content.Shared.Preferences
             // Corvax-TTS-Start
             var voiceId = random.Pick(prototypeManager
                 .EnumeratePrototypes<TTSVoicePrototype>()
-                .Where(o => o.RoundStart && o.Sex == sex).ToArray()
+                .Where(o => CanHaveVoice(o, sex)).ToArray()
             ).ID;
             // Corvax-TTS-End
 
@@ -515,7 +515,21 @@ namespace Content.Shared.Preferences
 
             _traitPreferences.Clear();
             _traitPreferences.AddRange(traits);
+            
+            // Corvax-TTS-Start
+            prototypeManager.TryIndex<TTSVoicePrototype>(Voice, out var voice);
+            if (voice is null || !CanHaveVoice(voice, Sex))
+                Voice = SharedHumanoidSystem.DefaultSexVoice[sex];
+            // Corvax-TTS-End
         }
+        
+        // Corvax-TTS-Start
+        // MUST NOT BE PUBLIC, BUT....
+        public static bool CanHaveVoice(TTSVoicePrototype voice, Sex sex)
+        {
+            return voice.RoundStart && sex == Sex.Unsexed || (voice.Sex == sex || voice.Sex == Sex.Unsexed);
+        }
+        // Corvax-TTS-End
 
         // sorry this is kind of weird and duplicated,
         /// working inside these non entity systems is a bit wack

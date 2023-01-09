@@ -3,6 +3,7 @@ using Content.Client.Corvax.Sponsors;
 using Content.Client.Corvax.TTS;
 using Content.Shared.Corvax.TTS;
 using Content.Shared.Humanoid;
+using Content.Shared.Preferences;
 using Robust.Shared.Network;
 
 namespace Content.Client.Preferences.UI;
@@ -40,7 +41,7 @@ public sealed partial class HumanoidProfileEditor
         for (var i = 0; i < _voiceList.Count; i++)
         {
             var voice = _voiceList[i];
-            if (voice.Sex != Sex.Unsexed && voice.Sex != Profile.Sex)
+            if (!HumanoidCharacterProfile.CanHaveVoice(voice, Profile.Sex))
                 continue;
                 
             var name = Loc.GetString(voice.Name);
