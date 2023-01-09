@@ -126,7 +126,6 @@ public sealed class StationSpawningSystem : EntitySystem
             {
                 EntityManager.AddComponent<DetailExaminableComponent>(entity).Content = profile.FlavorText;
             }
-            EntityManager.AddComponent<TTSComponent>(entity).VoicePrototypeId = profile.Voice; // Corvax-TTS
         }
 
         DoJobSpecials(job, entity);
