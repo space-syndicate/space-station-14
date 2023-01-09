@@ -35,7 +35,7 @@ public sealed class TTSSystem : EntitySystem
     public override void Initialize()
     {
         _sawmill = Logger.GetSawmill("tts");
-        _netMgr.RegisterNetMessage<RequestTTSEvent>();
+        _netMgr.RegisterNetMessage<MsgRequestTTS>();
         _cfg.OnValueChanged(CCCVars.TtsVolume, OnTtsVolumeChanged, true);
         SubscribeNetworkEvent<PlayTTSEvent>(OnPlayTTS);
     }

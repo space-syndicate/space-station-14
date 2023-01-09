@@ -71,7 +71,7 @@ public sealed partial class HumanoidProfileEditor
             return;
 
         _ttsSys.StopAllStreams();
-        var msg = new RequestTTSEvent() { Text = SampleText, Uid = _previewDummy.Value, VoiceId = Profile.Voice };
+        var msg = new MsgRequestTTS() { Text = SampleText, Uid = _previewDummy.Value, VoiceId = Profile.Voice };
         _net.ClientSendMessage(msg);
     }
 }

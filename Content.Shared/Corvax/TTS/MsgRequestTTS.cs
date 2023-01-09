@@ -5,7 +5,7 @@ using Robust.Shared.Serialization;
 namespace Content.Shared.Corvax.TTS;
 
 // ReSharper disable once InconsistentNaming
-public sealed class RequestTTSEvent : NetMessage
+public sealed class MsgRequestTTS : NetMessage
 {
     public override MsgGroups MsgGroup => MsgGroups.Command;
 

@@ -31,10 +31,10 @@ public sealed partial class TTSSystem : EntitySystem
         SubscribeLocalEvent<TTSComponent, EntitySpokeEvent>(OnEntitySpoke);
         SubscribeLocalEvent<RoundRestartCleanupEvent>(OnRoundRestartCleanup);
 
-        _netMgr.RegisterNetMessage<RequestTTSEvent>(OnRequestTTS);
+        _netMgr.RegisterNetMessage<MsgRequestTTS>(OnRequestTTS);
     }
 
-    private async void OnRequestTTS(RequestTTSEvent ev)
+    private async void OnRequestTTS(MsgRequestTTS ev)
     {
         if (!_playerManager.TryGetSessionByChannel(ev.MsgChannel, out var session) ||
             !_prototypeManager.TryIndex<TTSVoicePrototype>(ev.VoiceId, out var protoVoice))
