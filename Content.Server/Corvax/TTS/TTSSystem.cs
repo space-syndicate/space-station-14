@@ -19,6 +19,7 @@ public sealed partial class TTSSystem : EntitySystem
     [Dependency] private readonly IServerNetManager _netMgr = default!;
     [Dependency] private readonly IPlayerManager _playerManager = default!;
     [Dependency] private readonly TTSManager _ttsManager = default!;
+    [Dependency] private readonly SharedTransformSystem _xforms = default!;
 
     private const int MaxMessageChars = 100; // same as SingleBubbleCharLimit
     private bool _isEnabled = false;
@@ -50,9 +51,34 @@ public sealed partial class TTSSystem : EntitySystem
             args.OriginalMessage.Length > MaxMessageChars ||
             !_prototypeManager.TryIndex<TTSVoicePrototype>(component.VoicePrototypeId, out var protoVoice))
             return;
-
+        
         var soundData = await GenerateTTS(args.OriginalMessage, protoVoice.Speaker);
-        RaiseNetworkEvent(new PlayTTSEvent(uid, soundData), Filter.Pvs(uid));
+        var ttsEvent = new PlayTTSEvent(uid, soundData);
+
+        // Say
+        if (args.ObfuscatedMessage is null)
+        {
+            RaiseNetworkEvent(ttsEvent, Filter.Pvs(uid));
+            return;
+        }
+        
+        // Whisper
+        var obfSoundData = await GenerateTTS(args.ObfuscatedMessage, protoVoice.Speaker);
+        var obfTtsEvent = new PlayTTSEvent(uid, obfSoundData);
+        
+        var xformQuery = GetEntityQuery<TransformComponent>();
+        var sourcePos = _xforms.GetWorldPosition(xformQuery.GetComponent(uid), xformQuery);
+        var receptions = Filter.Pvs(uid).Recipients;
+        foreach (var session in receptions)
+        {
+            if (!session.AttachedEntity.HasValue) continue;
+            var xform = xformQuery.GetComponent(session.AttachedEntity.Value);
+            var distance = (sourcePos - _xforms.GetWorldPosition(xform, xformQuery)).LengthSquared;
+            if (distance > ChatSystem.VoiceRange * ChatSystem.VoiceRange)
+                continue;
+
+            RaiseNetworkEvent(distance > ChatSystem.WhisperRange ? obfTtsEvent : ttsEvent, session);
+        }
     }
 
     private void OnRoundRestartCleanup(RoundRestartCleanupEvent ev)
