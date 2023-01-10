@@ -4,6 +4,7 @@ using Content.Client.Chat;
 using Content.Client.Chat.Managers;
 using Content.Client.Chat.TypingIndicator;
 using Content.Client.Chat.UI;
+using Content.Client.Corvax.TTS;
 using Content.Client.Examine;
 using Content.Client.Gameplay;
 using Content.Client.Ghost;
@@ -44,6 +45,7 @@ public sealed class ChatUIController : UIController
     [UISystemDependency] private readonly ExamineSystem? _examine = default;
     [UISystemDependency] private readonly GhostSystem? _ghost = default;
     [UISystemDependency] private readonly TypingIndicatorSystem? _typingIndicator = default;
+    [UISystemDependency] private readonly TTSSystem? _tts = default;
 
     private ISawmill _sawmill = default!;
 
@@ -684,6 +686,9 @@ public sealed class ChatUIController : UIController
                 AddSpeechBubble(msg, SpeechBubble.SpeechType.Emote);
                 break;
         }
+
+        if (msg.TTSData != null)
+            _tts?.Play(msg.SenderEntity, msg.TTSData);
     }
 
     public char GetPrefixFromChannel(ChatSelectChannel channel)
