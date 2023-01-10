@@ -18,12 +18,11 @@ namespace Content.Shared.Chat
         public Color? MessageColorOverride;
         public string? AudioPath;
         public float AudioVolume;
-        public byte[]? TTSData;
 
         [NonSerialized]
         public bool Read;
 
-        public ChatMessage(ChatChannel channel, string message, string wrappedMessage, EntityUid source, bool hideChat = false, Color? colorOverride = null, string? audioPath = null, float audioVolume = 0, byte[]? ttsData = null)
+        public ChatMessage(ChatChannel channel, string message, string wrappedMessage, EntityUid source, bool hideChat = false, Color? colorOverride = null, string? audioPath = null, float audioVolume = 0)
         {
             Channel = channel;
             Message = message;
@@ -33,7 +32,6 @@ namespace Content.Shared.Chat
             MessageColorOverride = colorOverride;
             AudioPath = audioPath;
             AudioVolume = audioVolume;
-            TTSData = ttsData;
         }
     }
 

@@ -37,6 +37,7 @@ public sealed class TTSSystem : EntitySystem
         _sawmill = Logger.GetSawmill("tts");
         _netMgr.RegisterNetMessage<MsgRequestTTS>();
         _cfg.OnValueChanged(CCCVars.TtsVolume, OnTtsVolumeChanged, true);
+        SubscribeNetworkEvent<PlayTTSEvent>(OnPlayTTS);
     }
 
     public override void Shutdown()
@@ -101,12 +102,12 @@ public sealed class TTSSystem : EntitySystem
         _volume = volume;
     }
 
-    public void Play(EntityUid uid, byte[] data)
+    private void OnPlayTTS(PlayTTSEvent ev)
     {
-        if (!TryCreateAudioSource(data, out var source))
+        if (!TryCreateAudioSource(ev.Data, out var source))
             return;
 
-        var stream = new AudioStream(uid, source);
+        var stream = new AudioStream(ev.Uid, source);
         AddEntityStreamToQueue(stream);
     }
 

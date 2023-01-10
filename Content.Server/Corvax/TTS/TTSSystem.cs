@@ -28,7 +28,7 @@ public sealed partial class TTSSystem : EntitySystem
         _cfg.OnValueChanged(CCCVars.TTSEnabled, v => _isEnabled = v, true);
         
         SubscribeLocalEvent<TransformSpeechEvent>(OnTransformSpeech);
-        // SubscribeLocalEvent<TTSComponent, EntitySpokeEvent>(OnEntitySpoke);
+        SubscribeLocalEvent<TTSComponent, EntitySpokeEvent>(OnEntitySpoke);
         SubscribeLocalEvent<RoundRestartCleanupEvent>(OnRoundRestartCleanup);
 
         _netMgr.RegisterNetMessage<MsgRequestTTS>(OnRequestTTS);
@@ -44,16 +44,16 @@ public sealed partial class TTSSystem : EntitySystem
         RaiseNetworkEvent(new PlayTTSEvent(ev.Uid, soundData), Filter.SinglePlayer(session));
     }
 
-    // private async void OnEntitySpoke(EntityUid uid, TTSComponent component, EntitySpokeEvent args)
-    // {
-    //     if (!_isEnabled ||
-    //         args.OriginalMessage.Length > MaxMessageChars ||
-    //         !_prototypeManager.TryIndex<TTSVoicePrototype>(component.VoicePrototypeId, out var protoVoice))
-    //         return;
-    //
-    //     var soundData = await GenerateTTS(args.OriginalMessage, protoVoice.Speaker);
-    //     RaiseNetworkEvent(new PlayTTSEvent(uid, soundData), Filter.Pvs(uid));
-    // }
+    private async void OnEntitySpoke(EntityUid uid, TTSComponent component, EntitySpokeEvent args)
+    {
+        if (!_isEnabled ||
+            args.OriginalMessage.Length > MaxMessageChars ||
+            !_prototypeManager.TryIndex<TTSVoicePrototype>(component.VoicePrototypeId, out var protoVoice))
+            return;
+
+        var soundData = await GenerateTTS(args.OriginalMessage, protoVoice.Speaker);
+        RaiseNetworkEvent(new PlayTTSEvent(uid, soundData), Filter.Pvs(uid));
+    }
 
     private void OnRoundRestartCleanup(RoundRestartCleanupEvent ev)
     {
@@ -61,7 +61,7 @@ public sealed partial class TTSSystem : EntitySystem
     }
     
     // ReSharper disable once InconsistentNaming
-    public async Task<byte[]> GenerateTTS(string text, string speaker)
+    private async Task<byte[]> GenerateTTS(string text, string speaker)
     {
         var textSanitized = Sanitize(text);
         var textSsml = ToSsmlText(textSanitized, SpeechRate.Fast);

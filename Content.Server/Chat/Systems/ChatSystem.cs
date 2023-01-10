@@ -3,7 +3,6 @@ using System.Text;
 using Content.Server.Administration.Logs;
 using Content.Server.Administration.Managers;
 using Content.Server.Chat.Managers;
-using Content.Server.Corvax.TTS;
 using Content.Server.GameTicking;
 using Content.Server.Ghost.Components;
 using Content.Server.MobState;
@@ -14,7 +13,6 @@ using Content.Server.Station.Systems;
 using Content.Shared.ActionBlocker;
 using Content.Shared.CCVar;
 using Content.Shared.Chat;
-using Content.Shared.Corvax.TTS;
 using Content.Shared.Database;
 using Content.Shared.IdentityManagement;
 using Content.Shared.Inventory;
@@ -54,7 +52,6 @@ public sealed partial class ChatSystem : SharedChatSystem
     [Dependency] private readonly PopupSystem _popup = default!;
     [Dependency] private readonly StationSystem _stationSystem = default!;
     [Dependency] private readonly MobStateSystem _mobStateSystem = default!;
-    [Dependency] private readonly TTSSystem _ttsSystem = default!; // Corvax-TTS
 
     public const int VoiceRange = 10; // how far voice goes in world units
     public const int WhisperRange = 2; // how far whisper goes in world units
@@ -310,7 +307,7 @@ public sealed partial class ChatSystem : SharedChatSystem
             _adminLogger.Add(LogType.Chat, LogImpact.Low, $"Say from {ToPrettyString(source):user}, original: {originalMessage}, transformed: {message}.");
     }
 
-    private async void SendEntityWhisper(EntityUid source, string originalMessage, bool hideChat, bool hideGlobalGhostChat, RadioChannelPrototype? channel, string? nameOverride)
+    private void SendEntityWhisper(EntityUid source, string originalMessage, bool hideChat, bool hideGlobalGhostChat, RadioChannelPrototype? channel, string? nameOverride)
     {
         if (!_actionBlocker.CanSpeak(source))
             return;
@@ -352,18 +349,10 @@ public sealed partial class ChatSystem : SharedChatSystem
             if (hideGlobalGhostChat && data.Observer && data.Range < 0)
                 continue; // Won't get logged to chat, and ghosts are too far away to see the pop-up, so we just won't send it to them.
 
-            byte[]? fullTts = null;
-            byte[]? obfuscatedTts = null;
-            if (TryComp<TTSComponent>(source, out var tts) && _prototypeManager.TryIndex<TTSVoicePrototype>(tts.VoicePrototypeId, out var protoVoice))
-            {
-                fullTts = await _ttsSystem.GenerateTTS(message, protoVoice.Speaker);
-                obfuscatedTts = await _ttsSystem.GenerateTTS(obfuscatedMessage, protoVoice.Speaker);
-            }
-
             if (data.Range <= WhisperRange)
-                _chatManager.ChatMessageToOne(ChatChannel.Whisper, message, wrappedMessage, source, data.HideChatOverride ?? hideChat, session.ConnectedClient, ttsData: fullTts);
+                _chatManager.ChatMessageToOne(ChatChannel.Whisper, message, wrappedMessage, source, data.HideChatOverride ?? hideChat, session.ConnectedClient);
             else
-                _chatManager.ChatMessageToOne(ChatChannel.Whisper, obfuscatedMessage, wrappedobfuscatedMessage, source, data.HideChatOverride ?? hideChat, session.ConnectedClient, ttsData: obfuscatedTts);
+                _chatManager.ChatMessageToOne(ChatChannel.Whisper, obfuscatedMessage, wrappedobfuscatedMessage, source, data.HideChatOverride ?? hideChat, session.ConnectedClient);
         }
 
         _replay.QueueReplayMessage(new ChatMessage(ChatChannel.Whisper, message, wrappedMessage, source, hideChat));
