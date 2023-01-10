@@ -2,22 +2,19 @@
 using Content.Client.Corvax.Sponsors;
 using Content.Client.Corvax.TTS;
 using Content.Shared.Corvax.TTS;
-using Content.Shared.Humanoid;
 using Content.Shared.Preferences;
-using Robust.Shared.Network;
 
 namespace Content.Client.Preferences.UI;
 
 public sealed partial class HumanoidProfileEditor
 {
-    private IClientNetManager _net = default!;
+    private TTSManager _ttsMgr = default!;
     private TTSSystem _ttsSys = default!;
     private List<TTSVoicePrototype> _voiceList = default!;
     private const string SampleText = "съешь ещё этих мягких французских булок, да выпей чаю";
 
     private void InitializeVoice()
     {
-        _net = IoCManager.Resolve<IClientNetManager>();
         _ttsSys = _entMan.System<TTSSystem>();
         _voiceList = _prototypeManager.EnumeratePrototypes<TTSVoicePrototype>().Where(o => o.RoundStart).ToList();
 
@@ -72,7 +69,6 @@ public sealed partial class HumanoidProfileEditor
             return;
 
         _ttsSys.StopAllStreams();
-        var msg = new MsgRequestTTS() { Text = SampleText, Uid = _previewDummy.Value, VoiceId = Profile.Voice };
-        _net.ClientSendMessage(msg);
+        _ttsMgr.RequestTTS(_previewDummy.Value, SampleText, Profile.Voice);
     }
 }
