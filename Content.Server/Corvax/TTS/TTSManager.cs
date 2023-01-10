@@ -46,8 +46,7 @@ public sealed class TTSManager
         _cfg.OnValueChanged(CCCVars.TTSMaxCache, val =>
         {
             _maxCachedCount = val;
-            _cache.Clear();
-            _cacheKeysSeq.Clear();
+            ResetCache();
         }, true);
     }
 
@@ -132,6 +131,7 @@ public sealed class TTSManager
     public void ResetCache()
     {
         _cache.Clear();
+        _cacheKeysSeq.Clear();
     }
 
     private string GenerateCacheKey(string speaker, string text)
