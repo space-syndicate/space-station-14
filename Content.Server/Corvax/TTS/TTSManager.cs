@@ -31,10 +31,6 @@ public sealed class TTSManager
         "tts_reused_count",
         "Amount of reused TTS audio from cache.");
     
-    private static readonly Gauge CachedCount = Metrics.CreateGauge(
-        "tts_cached_count",
-        "Amount of cached TTS audio.");
-    
     [Dependency] private readonly IConfigurationManager _cfg = default!;
     
     private readonly HttpClient _httpClient = new();
@@ -113,7 +109,6 @@ public sealed class TTSManager
                 _cache.Remove(firstKey);
                 _cacheKeysSeq.Remove(firstKey);
             }
-            CachedCount.Inc();
 
             _sawmill.Debug($"Generated new sound for '{text}' speech by '{speaker}' speaker ({soundData.Length} bytes)");
             RequestTimings.WithLabels("Success").Observe((DateTime.UtcNow - reqTime).TotalSeconds);
@@ -137,7 +132,6 @@ public sealed class TTSManager
     public void ResetCache()
     {
         _cache.Clear();
-        CachedCount.Set(0);
     }
 
     private string GenerateCacheKey(string speaker, string text)
