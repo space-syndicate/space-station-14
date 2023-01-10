@@ -3,6 +3,7 @@ using Content.Client.Corvax.Sponsors;
 using Content.Client.Corvax.TTS;
 using Content.Shared.Corvax.TTS;
 using Content.Shared.Preferences;
+using Robust.Shared.Random;
 
 namespace Content.Client.Preferences.UI;
 
@@ -11,7 +12,12 @@ public sealed partial class HumanoidProfileEditor
     private TTSManager _ttsMgr = default!;
     private TTSSystem _ttsSys = default!;
     private List<TTSVoicePrototype> _voiceList = default!;
-    private const string SampleText = "съешь ещё этих мягких французских булок, да выпей чаю";
+    private readonly List<string> SampleText = new()
+    {
+        "Съешь же ещё этих мягких французских булок, да выпей чаю.",
+        "Клоун, прекрати разбрасывать банановые кожурки офицерам под ноги!",
+        "Капитан, вы уверены что хотите назначить клоуна на должность главы персонала?",
+    };
 
     private void InitializeVoice()
     {
@@ -69,6 +75,6 @@ public sealed partial class HumanoidProfileEditor
             return;
 
         _ttsSys.StopAllStreams();
-        _ttsMgr.RequestTTS(_previewDummy.Value, SampleText, Profile.Voice);
+        _ttsMgr.RequestTTS(_previewDummy.Value, _random.Pick(SampleText), Profile.Voice);
     }
 }
