@@ -63,7 +63,7 @@ public sealed partial class TTSSystem : EntitySystem
         }
         
         // Whisper
-        var obfSoundData = await GenerateTTS(args.ObfuscatedMessage, protoVoice.Speaker);
+        var obfSoundData = await GenerateTTS(args.ObfuscatedMessage, protoVoice.Speaker, SpeechRate.VerySlow);
         var obfTtsEvent = new PlayTTSEvent(uid, obfSoundData);
         
         var xformQuery = GetEntityQuery<TransformComponent>();
@@ -87,10 +87,10 @@ public sealed partial class TTSSystem : EntitySystem
     }
     
     // ReSharper disable once InconsistentNaming
-    private async Task<byte[]> GenerateTTS(string text, string speaker)
+    private async Task<byte[]> GenerateTTS(string text, string speaker, SpeechRate rate = SpeechRate.Fast)
     {
         var textSanitized = Sanitize(text);
-        var textSsml = ToSsmlText(textSanitized, SpeechRate.Fast);
+        var textSsml = ToSsmlText(textSanitized, rate);
         return await _ttsManager.ConvertTextToSpeech(speaker, textSsml);
     }
 }
