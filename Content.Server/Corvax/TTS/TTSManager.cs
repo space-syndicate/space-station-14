@@ -41,10 +41,18 @@ public sealed class TTSManager
 
     private ISawmill _sawmill = default!;
     private readonly Dictionary<string, byte[]> _cache = new();
+    private readonly List<string> _cacheKeysSeq = new();
+    private int _maxCachedCount = 200;
 
     public void Initialize()
     {
         _sawmill = Logger.GetSawmill("tts");
+        _cfg.OnValueChanged(CCCVars.TTSMaxCache, val =>
+        {
+            _maxCachedCount = val;
+            _cache.Clear();
+            _cacheKeysSeq.Clear();
+        }, true);
     }
 
     /// <summary>
@@ -96,7 +104,15 @@ public sealed class TTSManager
 
             var json = await response.Content.ReadFromJsonAsync<GenerateVoiceResponse>();
             var soundData = Convert.FromBase64String(json.Results.First().Audio);
+            
             _cache.Add(cacheKey, soundData);
+            _cacheKeysSeq.Add(cacheKey);
+            if (_cache.Count > _maxCachedCount)
+            {
+                var firstKey = _cacheKeysSeq.First();
+                _cache.Remove(firstKey);
+                _cacheKeysSeq.Remove(firstKey);
+            }
             CachedCount.Inc();
 
             _sawmill.Debug($"Generated new sound for '{text}' speech by '{speaker}' speaker ({soundData.Length} bytes)");

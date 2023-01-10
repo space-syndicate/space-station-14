@@ -78,4 +78,10 @@ public sealed class CCCVars
     /// </summary>
     public static readonly CVarDef<float> TtsVolume =
         CVarDef.Create("tts.volume", 0f, CVar.CLIENTONLY | CVar.ARCHIVE);
+
+    /// <summary>
+    /// Count of in-memory cached tts voice lines.
+    /// </summary>
+    public static readonly CVarDef<int> TTSMaxCache =
+        CVarDef.Create("tts.max_cache", 250, CVar.SERVERONLY | CVar.ARCHIVE);
 }
