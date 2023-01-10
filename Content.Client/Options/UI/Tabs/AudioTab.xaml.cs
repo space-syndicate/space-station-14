@@ -129,7 +129,7 @@ namespace Content.Client.Options.UI.Tabs
             _cfg.SetCVar(CVars.MidiVolume, LV100ToDB(MidiVolumeSlider.Value));
             _cfg.SetCVar(CCVars.AmbienceVolume, LV100ToDB(AmbienceVolumeSlider.Value));
             _cfg.SetCVar(CCVars.LobbyMusicVolume, LV100ToDB(LobbyVolumeSlider.Value));
-            _cfg.SetCVar(CCCVars.TtsVolume, LV100ToDB(TtsVolumeSlider.Value)); // Corvax-TTS
+            _cfg.SetCVar(CCCVars.TTSVolume, LV100ToDB(TtsVolumeSlider.Value)); // Corvax-TTS
             _cfg.SetCVar(CCVars.MaxAmbientSources, (int)AmbienceSoundsSlider.Value);
             _cfg.SetCVar(CCVars.LobbyMusicEnabled, LobbyMusicCheckBox.Pressed);
             _cfg.SetCVar(CCVars.RestartSoundsEnabled, RestartSoundsCheckBox.Pressed);
@@ -152,7 +152,7 @@ namespace Content.Client.Options.UI.Tabs
             MidiVolumeSlider.Value = DBToLV100(_cfg.GetCVar(CVars.MidiVolume));
             AmbienceVolumeSlider.Value = DBToLV100(_cfg.GetCVar(CCVars.AmbienceVolume));
             LobbyVolumeSlider.Value = DBToLV100(_cfg.GetCVar(CCVars.LobbyMusicVolume));
-            TtsVolumeSlider.Value = DBToLV100(_cfg.GetCVar(CCCVars.TtsVolume)); // Corvax-TTS
+            TtsVolumeSlider.Value = DBToLV100(_cfg.GetCVar(CCCVars.TTSVolume)); // Corvax-TTS
             AmbienceSoundsSlider.Value = _cfg.GetCVar(CCVars.MaxAmbientSources);
             LobbyMusicCheckBox.Pressed = _cfg.GetCVar(CCVars.LobbyMusicEnabled);
             RestartSoundsCheckBox.Pressed = _cfg.GetCVar(CCVars.RestartSoundsEnabled);
@@ -187,7 +187,7 @@ namespace Content.Client.Options.UI.Tabs
             var isLobbyVolumeSame =
                 Math.Abs(LobbyVolumeSlider.Value - DBToLV100(_cfg.GetCVar(CCVars.LobbyMusicVolume))) < 0.01f;
             var isTtsVolumeSame =
-                Math.Abs(TtsVolumeSlider.Value - DBToLV100(_cfg.GetCVar(CCCVars.TtsVolume))) < 0.01f; // Corvax-TTS
+                Math.Abs(TtsVolumeSlider.Value - DBToLV100(_cfg.GetCVar(CCCVars.TTSVolume))) < 0.01f; // Corvax-TTS
             var isAmbientSoundsSame = (int)AmbienceSoundsSlider.Value == _cfg.GetCVar(CCVars.MaxAmbientSources);
             var isLobbySame = LobbyMusicCheckBox.Pressed == _cfg.GetCVar(CCVars.LobbyMusicEnabled);
             var isRestartSoundsSame = RestartSoundsCheckBox.Pressed == _cfg.GetCVar(CCVars.RestartSoundsEnabled);

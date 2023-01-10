@@ -33,14 +33,14 @@ public sealed class TTSSystem : EntitySystem
     public override void Initialize()
     {
         _sawmill = Logger.GetSawmill("tts");
-        _cfg.OnValueChanged(CCCVars.TtsVolume, OnTtsVolumeChanged, true);
+        _cfg.OnValueChanged(CCCVars.TTSVolume, OnTtsVolumeChanged, true);
         SubscribeNetworkEvent<PlayTTSEvent>(OnPlayTTS);
     }
 
     public override void Shutdown()
     {
         base.Shutdown();
-        _cfg.UnsubValueChanged(CCCVars.TtsVolume, OnTtsVolumeChanged);
+        _cfg.UnsubValueChanged(CCCVars.TTSVolume, OnTtsVolumeChanged);
         EndStreams();
     }
 

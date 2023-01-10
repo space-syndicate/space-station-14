@@ -76,7 +76,7 @@ public sealed class CCCVars
     /// <summary>
     /// Lobby / round end music volume.
     /// </summary>
-    public static readonly CVarDef<float> TtsVolume =
+    public static readonly CVarDef<float> TTSVolume =
         CVarDef.Create("tts.volume", 0f, CVar.CLIENTONLY | CVar.ARCHIVE);
 
     /// <summary>
