@@ -6,11 +6,11 @@ examine-headset-channel = [color={ $color }]:{ $key } для { $id } ({ $freq })
 examine-headset-chat-prefix = Используйте { $prefix } для текущей настроенной частоты.
 chat-radio-common = Общий
 chat-radio-centcom = ЦК
-chat-radio-command = Кмд.
-chat-radio-engineering = Инж.
-chat-radio-medical = Мед.
-chat-radio-science = Науч.
+chat-radio-command = Кмнд
+chat-radio-engineering = Инж
+chat-radio-medical = Мед
+chat-radio-science = Науч
 chat-radio-security = СБ
 chat-radio-service = Сервис
-chat-radio-supply = Снаб.
-chat-radio-syndicate = Синд.
+chat-radio-supply = Снаб
+chat-radio-syndicate = Синд
