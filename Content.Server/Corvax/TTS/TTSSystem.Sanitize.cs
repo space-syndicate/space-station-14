@@ -143,6 +143,7 @@ public sealed partial class TTSSystem
             {"f", "ф"},
             {"h", "х"},
             {"c", "ц"},
+            {"x", "кс"},
             {"ch", "ч"},
             {"sh", "ш"},
             {"jsh", "щ"},
