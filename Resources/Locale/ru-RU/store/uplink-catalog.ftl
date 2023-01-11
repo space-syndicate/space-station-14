@@ -9,8 +9,8 @@ uplink-rifle-mosin-name = { ent-WeaponSniperMosin }
 uplink-rifle-mosin-desc = Затворная винтовка, повидавшая не одну войну. Не современная ни по каким стандартам, заряжается вручную и имеет ужасную отдачу, но зато дешёвая.
 uplink-esword-name = { ent-EnergySword }
 uplink-esword-desc = { ent-EnergySword.desc }
-uplink-edagger-name = { ent-EnergyDagger }
-uplink-edagger-desc = { ent-EnergyDagger.desc }
+uplink-edagger-name = Энергокинжал
+uplink-edagger-desc = Небольшой энергитический кинжал, удобно замаскированный под ручку.
 uplink-fire-axe-flaming-name = { ent-FireAxeFlaming }
 uplink-fire-axe-flaming-desc = Классическое оружие, оснащенное передовой атмос-технологией, позволяющей ему поджигать цели.
 # Explosives
