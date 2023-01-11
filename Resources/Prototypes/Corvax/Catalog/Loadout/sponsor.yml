@@ -1,0 +1,80 @@
+﻿# OopsieDoopsie
+- type: loadout
+  id: ClothingOuterAtmosianBomberJacketLoadout
+  entity: ClothingOuterAtmosianBomberJacket
+  sponsorOnly: true
+
+- type: loadout
+  id: ClothingMaskGasAtmosianLoadout
+  entity: ClothingMaskGasAtmosian
+  sponsorOnly: true
+
+- type: loadout
+  id: ClothingCloakAtmosianLoadout
+  entity: ClothingCloakAtmosian
+  sponsorOnly: true
+
+# Fezory
+- type: loadout
+  id: ClothingMaskSkullLoadout
+  entity: ClothingMaskSkull
+  sponsorOnly: true
+
+- type: loadout
+  id: ClothingCloakGamerLoadout
+  entity: ClothingCloakGamer
+  sponsorOnly: true
+
+- type: loadout
+  id: ClothingUniformJumpsuitSkeletonLoadout
+  entity: ClothingUniformJumpsuitSkeleton
+  sponsorOnly: true
+
+# NEKISH
+- type: loadout
+  id: OldHoSJumpsuitLoadout
+  entity: ClothingUniformJumpsuitHoSOld
+  sponsorOnly: true
+  whitelistJobs: [HeadOfSecurity]
+
+- type: loadout
+  id: OldHoSCoatLoadout
+  entity: ClothingOuterCoatHoSOvercoat
+  sponsorOnly: true
+  whitelistJobs: [HeadOfSecurity]
+
+- type: loadout
+  id: OldHoSCapLoadout
+  entity: ClothingHeadHatCapHoS
+  sponsorOnly: true
+  whitelistJobs: [HeadOfSecurity]
+
+- type: loadout
+  id: OldHoSGlovesLoadout
+  entity: ClothingHandsGlovesLeatherHoS
+  sponsorOnly: true
+  whitelistJobs: [HeadOfSecurity]
+
+- type: loadout
+  id: OldHoSBeltLoadout
+  entity: ClothingBeltHoS
+  sponsorOnly: true
+  whitelistJobs: [HeadOfSecurity]
+
+- type: loadout
+  id: OldHoSBackpackLoadout
+  entity: ClothingBackpackSatchelHoS
+  sponsorOnly: true
+  whitelistJobs: [HeadOfSecurity]
+
+- type: loadout
+  id: OldHoSBootsLoadout
+  entity: ClothingShoesBootsJack
+  sponsorOnly: true
+  whitelistJobs: [HeadOfSecurity]
+
+- type: loadout
+  id: OldHoSHeadsetLoadout
+  entity: ClothingHeadsetSecurity
+  sponsorOnly: true
+  whitelistJobs: [HeadOfSecurity]
