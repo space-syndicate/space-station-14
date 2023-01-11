@@ -430,6 +430,19 @@
             "name": "machine2"
         },
         {
+            "name": "machine3",
+            "delays": [
+                [
+                    0.1,
+                    0.1,
+                    0.1,
+                    0.1,
+                    0.1,
+                    0.1
+                ]
+            ]
+        },
+        {
             "name": "robot0",
             "delays": [
                 [
