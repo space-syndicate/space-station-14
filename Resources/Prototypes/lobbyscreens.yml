@@ -1,19 +1,39 @@
-﻿- type: lobbyBackground
-  id: Robotics
-  background: /Textures/LobbyScreens/robotics.png
+#- type: lobbyBackground
+#  id: Robotics
+#  background: /Textures/LobbyScreens/robotics.png
+
+#- type: lobbyBackground
+#  id: Supermatter
+#  background: /Textures/LobbyScreens/supermatter.png
+
+#- type: lobbyBackground
+#  id: Warden
+#  background: /Textures/LobbyScreens/warden.png
+
+#- type: lobbyBackground
+#  id: Pharmacy
+#  background: /Textures/LobbyScreens/pharmacy.png
+
+#- type: lobbyBackground
+#  id: SSXIV
+#  background: /Textures/LobbyScreens/ssxiv.png
 
 - type: lobbyBackground
-  id: Supermatter
-  background: /Textures/LobbyScreens/supermatter.png
+  id: Lobby1
+  background: /Textures/LobbyScreens/Lobby1.png
 
 - type: lobbyBackground
-  id: Warden
-  background: /Textures/LobbyScreens/warden.png
+  id: Lobby2
+  background: /Textures/LobbyScreens/Lobby2.png
 
 - type: lobbyBackground
-  id: Pharmacy
-  background: /Textures/LobbyScreens/pharmacy.png
+  id: Lobby3
+  background: /Textures/LobbyScreens/Lobby3.png
 
 - type: lobbyBackground
-  id: SSXIV
-  background: /Textures/LobbyScreens/ssxiv.png
+  id: Lobby4
+  background: /Textures/LobbyScreens/Lobby4.png
+
+- type: lobbyBackground
+  id: Lobby5
+  background: /Textures/LobbyScreens/Lobby5.png
