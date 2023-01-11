@@ -1425,27 +1425,5 @@ namespace Content.Shared.CCVar
         /// </summary>
         public static readonly CVarDef<bool> ConfigPresetDebug =
             CVarDef.Create("config.preset_debug", false, CVar.SERVERONLY);
-
-        /**
-         * Corvax | TTS (Text-To-Speech)
-         */
-
-        /// <summary>
-        /// URL of the TTS server API.
-        /// </summary>
-        public static readonly CVarDef<bool> TTSEnabled =
-            CVarDef.Create("tts.enabled", false, CVar.SERVERONLY);
-
-        /// <summary>
-        /// URL of the TTS server API.
-        /// </summary>
-        public static readonly CVarDef<string> TTSApiUrl =
-            CVarDef.Create("tts.api_url", "", CVar.SERVERONLY);
-
-        /// <summary>
-        /// Auth token of the TTS server API.
-        /// </summary>
-        public static readonly CVarDef<string> TTSApiToken =
-            CVarDef.Create("tts.api_token", "", CVar.SERVERONLY);
     }
 }
