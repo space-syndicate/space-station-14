@@ -38,13 +38,25 @@ public sealed class TypingIndicatorVisualizerSystem : VisualizerSystem<TypingInd
     {
         base.OnAppearanceChange(uid, component, ref args);
 
-        if (!TryComp(uid, out SpriteComponent? sprite))
+        if (!TryComp(uid, out SpriteComponent? sprite) ||
+            !_prototypeManager.TryIndex<TypingIndicatorPrototype>(component.Prototype, out var proto)) // Corvax-TypingIndicator
             return;
 
-        args.Component.TryGetData(TypingIndicatorVisuals.IsTyping, out bool isTyping);
+        args.Component.TryGetData(TypingIndicatorVisuals.State, out TypingIndicatorState state); // Corvax-TypingIndicator
         if (sprite.LayerMapTryGet(TypingIndicatorLayers.Base, out var layer))
         {
-            sprite.LayerSetVisible(layer, isTyping);
+            // Corvax-TypingIndicator-Start
+            sprite.LayerSetVisible(layer, state != TypingIndicatorState.None);
+            switch (state)
+            {
+                case TypingIndicatorState.Idle:
+                    sprite.LayerSetState(layer, proto.IdleState);
+                    break;
+                case TypingIndicatorState.Typing:
+                    sprite.LayerSetState(layer, proto.TypingState);
+                    break;
+            }
+            // Corvax-TypingIndicator-End
         }
     }
 }
