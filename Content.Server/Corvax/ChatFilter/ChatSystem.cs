@@ -113,9 +113,11 @@ public sealed partial class ChatSystem
         if (string.IsNullOrEmpty(message))
             return message;
 
-        foreach (var (word, replacement) in SlangReplace)
-            message = Regex.Replace(message, $"\\b{word}\\b", replacement);
-
-        return message;
+        return Regex.Replace(message, "\\b(\\w+)\\b", match =>
+        {
+            if (SlangReplace.TryGetValue(match.Value.ToLower(), out var replacement))
+                return replacement;
+            return match.Value;
+        });
     }
 }
