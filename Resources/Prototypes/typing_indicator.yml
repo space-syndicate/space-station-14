@@ -22,3 +22,8 @@
   id: holo
   typingState: holo0
   idleState: holo3 # Corvax-TypingIndicator
+
+- type: typingIndicator
+  id: lawyer
+  typingState: lawyer0
+  idleState: lawyer3 # Corvax-TypingIndicator
