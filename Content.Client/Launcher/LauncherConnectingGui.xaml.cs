@@ -7,12 +7,16 @@ using Robust.Shared.IoC;
 using Robust.Shared.Timing;
 using Robust.Shared.Localization;
 using Robust.Shared.Network;
+using Content.Shared.CCVar;
 
 namespace Content.Client.Launcher
 {
     [GenerateTypedNameReferences]
     public sealed partial class LauncherConnectingGui : Control
     {
+    
+        [Dependency] private readonly IConfigurationManager _cfg = default!;
+        [Dependency] private readonly IUriOpener _uri = default!;
         private const float RedialWaitTimeSeconds = 15f;
         private readonly LauncherConnecting _state;
         private float _redialWaitTime = RedialWaitTimeSeconds;
