@@ -28,6 +28,7 @@ namespace Content.Client.Launcher
             Stylesheet = IoCManager.Resolve<IStylesheetManager>().SheetSpace;
 
             ReconnectButton.OnPressed += _ => _state.RetryConnect();
+            DiscordButton.OnPressed += _ => _uri.OpenUri(_cfg.GetCVar(CCVars.InfoLinksDiscord));
             // Redial shouldn't fail, but if it does, try a reconnect (maybe we're being run from debug)
             RedialButton.OnPressed += _ =>
             {
