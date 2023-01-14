@@ -46,7 +46,7 @@
   parent: ClothingUniformBase
   id: ClothingUniformJumpsuitERTJanitor
   name: ERT janitor uniform
-  description: Emergency response team uniform with clean pauldron.
+  description: Comfortable and reliable uniform issued to members of emergency response team. This one looks water-resistant.
   components:
     - type: Sprite
       sprite: Corvax/Clothing/Uniforms/Jumpsuit/janitorERT.rsi
@@ -57,7 +57,7 @@
   parent: ClothingUniformBase
   id: ClothingUniformJumpsuitERTLeader
   name: ERT leader uniform
-  description: Emergency response team uniform with beautiful pauldron.
+  description: Comfortable and reliable uniform issued to members of emergency response team. This one looks like it's made of durathread.
   components:
     - type: Sprite
       sprite: Corvax/Clothing/Uniforms/Jumpsuit/leaderERT.rsi
@@ -68,7 +68,7 @@
   parent: ClothingUniformBase
   id: ClothingUniformJumpsuitERTEngineer
   name: ERT engineer uniform
-  description: Emergency response team uniform with antirad pauldron.
+  description: Comfortable and reliable uniform issued to members of emergency response team. This one seems to have a lot of extra pockets.
   components:
     - type: Sprite
       sprite: Corvax/Clothing/Uniforms/Jumpsuit/engineerERT.rsi
@@ -79,7 +79,7 @@
   parent: ClothingUniformBase
   id: ClothingUniformJumpsuitERTMedic
   name: ERT medic uniform
-  description: Emergency response team uniform with comfort plus pauldron.
+  description: Comfortable and reliable uniform issued to members of emergency response team. This one seems to have an antibacterial coating.
   components:
     - type: Sprite
       sprite: Corvax/Clothing/Uniforms/Jumpsuit/medicERT.rsi
@@ -89,8 +89,8 @@
 - type: entity
   parent: ClothingUniformBase
   id: ClothingUniformJumpsuitERTSecurity
-  name: ERT seсurity uniform
-  description: Emergency response team uniform with comfort plus pauldron.
+  name: ERT security uniform
+  description: Comfortable and reliable uniform issued to members of emergency response team. 
   components:
     - type: Sprite
       sprite: Corvax/Clothing/Uniforms/Jumpsuit/sesutiryERT.rsi
