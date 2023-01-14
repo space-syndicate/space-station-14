@@ -7,6 +7,3 @@ ent-ClothingHeadCapCentcomNaval = naval cap
 ent-ClothingHeadHatBeretCentcomNaval = naval beret
     .desc = A beret worn by those in the Nanotrasen Navy.
     .suffix = { "" }
-ent-ClothingHeadHatERTLeaderBeret = leader beret
-    .desc = Cool beret.
-    .suffix = { "" }
