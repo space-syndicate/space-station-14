@@ -44,6 +44,8 @@
   - type: Access
     tags:
     - NuclearOperative
+  - type: IdCard
+    jobTitle: Marine EarthGov
 
 - type: entity
   parent: IDbadgeStandard
@@ -57,6 +59,8 @@
   - type: Access
     tags:
     - NuclearOperative
+  - type: IdCard
+    jobTitle: Staff Sergeant EarthGov
 
 - type: entity
   parent: IDbadgeStandard
@@ -67,6 +71,10 @@
     layers:
     - state: silver
     - state: id_officer
+  - type: Item
+    heldPrefix: silver
   - type: Access
     tags:
     - NuclearOperative
+  - type: IdCard
+    jobTitle: Officer EarthGov
