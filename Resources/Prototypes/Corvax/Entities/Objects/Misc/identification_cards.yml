@@ -43,7 +43,7 @@
     - state: id_private
   - type: Access
     tags:
-    - EGovGeneral
+    - NuclearOperative
 
 - type: entity
   parent: IDbadgeStandard
@@ -56,8 +56,7 @@
     - state: id_sergeant
   - type: Access
     tags:
-    - EGovGeneral
-    - EGovCommand
+    - NuclearOperative
 
 - type: entity
   parent: IDbadgeStandard
@@ -70,5 +69,4 @@
     - state: id_officer
   - type: Access
     tags:
-    - EGovGeneral
-    - EGovCommand
+    - NuclearOperative
