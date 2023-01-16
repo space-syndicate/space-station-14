@@ -7,6 +7,7 @@ using Robust.Shared.IoC;
 using Robust.Shared.Timing;
 using Robust.Shared.Localization;
 using Robust.Shared.Network;
+using Content.Shared.CCVar;
 
 namespace Content.Client.Launcher
 {
@@ -28,6 +29,7 @@ namespace Content.Client.Launcher
             Stylesheet = IoCManager.Resolve<IStylesheetManager>().SheetSpace;
 
             ReconnectButton.OnPressed += _ => _state.RetryConnect();
+            DiscordButton.OnPressed += _ => IoCManager.Resolve<IUriOpener>().OpenUri("https://discord.com/invite/sSZjPZMbV7");
             // Redial shouldn't fail, but if it does, try a reconnect (maybe we're being run from debug)
             RedialButton.OnPressed += _ =>
             {
