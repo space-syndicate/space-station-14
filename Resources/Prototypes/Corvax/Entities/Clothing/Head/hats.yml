@@ -42,7 +42,7 @@
     - type: Clothing
       sprite: Corvax/Clothing/Head/Hats/ERT_leader_beret.rsi
       
- - type: entity
+- type: entity
   parent: ClothingHeadBase
   id: ClothingHeadHatEgovCap
   name: marine navy cap
