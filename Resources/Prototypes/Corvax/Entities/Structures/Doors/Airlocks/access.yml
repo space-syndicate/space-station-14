@@ -6,18 +6,4 @@
   - type: Sprite
     sprite: Structures/Doors/Airlocks/Standard/security.rsi
   - type: AccessReader
-    access: [["EGovGeneral"]]
-  - type: Sprite
-    sprite: Structures/Doors/Airlocks/Standard/freezer.rsi
-
-- type: entity
-  parent: Airlock
-  id: AirlockEgovCommand
-  suffix: Command, Locked
-  components:
-  - type: Sprite
-    sprite: Structures/Doors/Airlocks/Standard/security.rsi
-  - type: AccessReader
-    access: [["EGovCommand"]]
-  - type: Sprite
-    sprite: Structures/Doors/Airlocks/Standard/freezer.rsi
+    access: [["NuclearOperative"]]
