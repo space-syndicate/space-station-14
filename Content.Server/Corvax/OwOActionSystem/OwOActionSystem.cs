@@ -2,7 +2,7 @@
 using Content.Server.Speech.Components;
 using Content.Shared.Actions;
 using Content.Shared.Actions.ActionTypes;
-using Content.Shared.MobState.Components;
+using Content.Shared.Mobs.Components;
 using Content.Shared.Verbs;
 using Robust.Shared.Prototypes;
 
