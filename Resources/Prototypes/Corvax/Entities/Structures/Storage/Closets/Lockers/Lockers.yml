@@ -25,4 +25,4 @@
       state_open: egov_open
       state_closed: egov_door
   - type: AccessReader
-    access: [ [ "EGovGeneral" ] ]
+    access: [ [ "NuclearOperative" ] ]
