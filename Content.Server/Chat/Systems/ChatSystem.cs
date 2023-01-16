@@ -5,7 +5,6 @@ using Content.Server.Administration.Managers;
 using Content.Server.Chat.Managers;
 using Content.Server.GameTicking;
 using Content.Server.Ghost.Components;
-using Content.Server.MobState;
 using Content.Server.Players;
 using Content.Server.Popups;
 using Content.Server.Station.Components;
@@ -16,6 +15,7 @@ using Content.Shared.Chat;
 using Content.Shared.Database;
 using Content.Shared.IdentityManagement;
 using Content.Shared.Inventory;
+using Content.Shared.Mobs.Systems;
 using Content.Shared.Radio;
 using Robust.Server.GameObjects;
 using Robust.Server.Player;
@@ -473,6 +473,7 @@ public sealed partial class ChatSystem : SharedChatSystem
     private string SanitizeInGameICMessage(EntityUid source, string message, out string? emoteStr, bool capitalize = true, bool punctuate = false)
     {
         var newMessage = message.Trim();
+        newMessage = ReplaceWords(newMessage); // Corvax-ChatSanitize
         if (capitalize)
             newMessage = SanitizeMessageCapital(newMessage);
         if (punctuate)
