@@ -174,3 +174,15 @@
       sprite: Corvax/Sponsor/NEKISH/Clothing/Uniforms/Jumpsuit/hos.rsi
     - type: Clothing
       sprite: Corvax/Sponsor/NEKISH/Clothing/Uniforms/Jumpsuit/hos.rsi
+
+# ken41k
+- type: entity
+  parent: ClothingHandsBase
+  id: ClothingHandsWatch
+  name: watch
+  description: TODO
+  components:
+    - type: Sprite
+      sprite: Corvax/Clothing/Hands/Accessories/watch.rsi
+    - type: Clothing
+      sprite: Corvax/Clothing/Hands/Accessories/watch.rsi
