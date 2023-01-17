@@ -178,5 +178,5 @@ flavor-complex-pilk = как сладкое молоко
 
 flavor-complex-medicine = как лекарство
 flavor-complex-carpet = как горсть шерсти
-flavor-complex-bee = невероятно
+flavor-complex-bee = беспчеловечно
 flavor-complex-sax = как джаз
