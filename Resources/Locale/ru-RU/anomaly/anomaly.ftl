@@ -6,12 +6,12 @@ anomaly-particles-epsilon = Эпсилон-частицы
 anomaly-particles-zeta = Зета-частицы
 anomaly-scanner-component-scan-complete = Сканирование завершено!
 anomaly-scanner-ui-title = сканер аномалий
-anomaly-scanner-no-anomaly = В настоящий момент аномалия не сканируется.
+anomaly-scanner-no-anomaly = Нет просканированной аномалии.
 anomaly-scanner-severity-percentage = Текущая опасность: [color=gray]{ $percent }[/color]
 anomaly-scanner-stability-low = Текущее состояние аномалии: [color=gold]Распад[/color]
 anomaly-scanner-stability-medium = Текущее состояние аномалии: [color=forestgreen]Стабильное[/color]
 anomaly-scanner-stability-high = Текущее состояние аномалии: [color=crimson]Рост[/color]
-anomaly-scanner-point-output = Приблизительное получение очков: [color=gray]{ $point }[/color]
+anomaly-scanner-point-output = Пассивная генерация очков: [color=gray]{ $point }[/color]
 anomaly-scanner-particle-readout = Анализ реакции на частицы:
 anomaly-scanner-particle-danger = - [color=crimson]Опасный тип:[/color] { $type }
 anomaly-scanner-particle-unstable = - [color=plum]Нестабильный тип:[/color] { $type }
