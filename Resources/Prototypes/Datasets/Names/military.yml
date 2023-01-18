@@ -6,7 +6,7 @@
   - Подполковник
   - Майор
   - Лейтенант
-  
+
 - type: dataset
   id: NamesFirstMilitary
   values:
@@ -15,7 +15,9 @@
   - Сержант
   - Капрал
   - Ефрейтор
-  
+
+#Corvax-related below
+
 - type: dataset
   id: NamesLastERTCallsign
   values:

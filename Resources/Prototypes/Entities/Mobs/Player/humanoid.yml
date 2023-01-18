@@ -12,7 +12,7 @@
     - type: RandomMetadata
       nameSegments:
       - NamesFirstMilitaryLeader
-      - NamesLastERTCallsign
+      - NamesLastERTCallsign #Corvax
     - type: RandomHumanoidSpawner
       settings: ERTLeader
 
@@ -28,7 +28,7 @@
     - type: RandomMetadata
       nameSegments:
       - NamesFirstMilitaryLeader
-      - NamesLastERTCallsign
+      - NamesLastERTCallsign #Corvax
 
 - type: entity
   id: RandomHumanoidSpawnerERTLeaderEVA
@@ -65,7 +65,7 @@
     - type: RandomMetadata
       nameSegments:
       - NamesFirstMilitary
-      - NamesLastERTCallsign
+      - NamesLastERTCallsign #Corvax
     - type: RandomHumanoidSpawner
       settings: ERTJanitor
 
@@ -79,7 +79,7 @@
     - type: RandomMetadata
       nameSegments:
       - NamesFirstMilitary
-      - NamesLastERTCallsign
+      - NamesLastERTCallsign #Corvax
     - type: Loadout
       prototypes: [ ERTJanitorGear ]
 
@@ -118,7 +118,7 @@
     - type: RandomMetadata
       nameSegments:
       - NamesFirstMilitary
-      - NamesLastERTCallsign
+      - NamesLastERTCallsign #Corvax
     - type: RandomHumanoidSpawner
       settings: ERTEngineer
 
@@ -132,7 +132,7 @@
     - type: RandomMetadata
       nameSegments:
       - NamesFirstMilitary
-      - NamesLastERTCallsign
+      - NamesLastERTCallsign #Corvax
     - type: Loadout
       prototypes: [ ERTEngineerGear ]
 
@@ -171,7 +171,7 @@
     - type: RandomMetadata
       nameSegments:
       - NamesFirstMilitary
-      - NamesLastERTCallsign
+      - NamesLastERTCallsign #Corvax
     - type: RandomHumanoidSpawner
       settings: ERTSecurity
 
@@ -185,7 +185,7 @@
     - type: RandomMetadata
       nameSegments:
       - NamesFirstMilitary
-      - NamesLastERTCallsign
+      - NamesLastERTCallsign #Corvax
     - type: Loadout
       prototypes: [ ERTSecurityGear ]
 
@@ -224,7 +224,7 @@
     - type: RandomMetadata
       nameSegments:
       - NamesFirstMilitary
-      - NamesLastERTCallsign
+      - NamesLastERTCallsign #Corvax
     - type: RandomHumanoidSpawner
       settings: ERTMedical
 
@@ -238,7 +238,7 @@
     - type: RandomMetadata
       nameSegments:
       - NamesFirstMilitary
-      - NamesLastERTCallsign
+      - NamesLastERTCallsign #Corvax
     - type: Loadout
       prototypes: [ ERTMedicalGear ]
 
@@ -277,14 +277,14 @@
   id: CBURNAgent
   components:
     - type: Loadout
-      prototypes: [CBURNGear]
+      prototypes: [ CBURNGear ]
     - type: GhostTakeoverAvailable
       name: CBURN Agent
       description: A highly trained CentCom agent, capable of dealing with various threats.
     - type: RandomMetadata
       nameSegments:
       - NamesFirstMilitary
-      - NamesLastERTCallsign
+      - NamesLastERTCallsign #Corvax
       
 ## Central Command
 
