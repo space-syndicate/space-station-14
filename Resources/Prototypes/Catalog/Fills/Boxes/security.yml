@@ -67,7 +67,7 @@
   - type: StorageFill
     contents:
       - id: ForensicPad
-        amount: 10
+        amount: 30 # Corvax-Balance
   - type: Sprite
     layers:
       - state: box_security
