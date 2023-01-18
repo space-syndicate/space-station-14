@@ -14,7 +14,7 @@ anomaly-scanner-stability-high = Текущее состояние аномал�
 anomaly-scanner-point-output = Приблизительное получение очков: [color=gray]{ $point }[/color]
 anomaly-scanner-particle-readout = Анализ реакции на частицы:
 anomaly-scanner-particle-danger = - [color=crimson]Опасный тип:[/color] { $type }
-anomaly-scanner-particle-unstable = - [color=plum]Настабильный тип:[/color] { $type }
+anomaly-scanner-particle-unstable = - [color=plum]Нестабильный тип:[/color] { $type }
 anomaly-scanner-particle-containment = - [color=goldenrod]Сдерживающий тип:[/color] { $type }
 anomaly-scanner-pulse-timer = Время до следующего импульса: [color=gray]{ $time }[/color]
 anomaly-generator-ui-title = генератор аномалий
