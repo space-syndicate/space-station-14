@@ -1,9 +1,9 @@
-ent-MachineAnomalyVessel = anomaly vessel
-    .desc = A container able to harness a scan of an anomaly and turn it into research points.
+ent-MachineAnomalyVessel = сосуд аномалии
+    .desc = Контейнер, способный проводить сканирование аномалии и превращать её в очки исследований.
     .suffix = { "" }
-ent-MachineAPE = A.P.E.
-    .desc = An Anomalous Particle Emitter, capable of shooting out unstable particles which can interface with anomalies.
+ent-MachineAPE = Ч.А.И.
+    .desc = Частиц Аномальных Излучатель - эмиттер, способный излучать нестабильные частицы, которые способны взаимодействовать с аномалиями.
     .suffix = { "" }
-ent-MachineAnomalyGenerator = anomaly generator
-    .desc = The peak of psuedoscientific technology.
+ent-MachineAnomalyGenerator = генератор аномалий
+    .desc = Вершина псевдонаучных технологий.
     .suffix = { "" }
