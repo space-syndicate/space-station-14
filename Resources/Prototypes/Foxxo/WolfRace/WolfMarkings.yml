@@ -1,0 +1,9 @@
+- type: marking
+  id: WolfTail
+  bodyPart: Tail
+  markingCategory: Tail
+  followSkinColor: true
+  speciesRestriction: [Wolf]
+  sprites:
+  - sprite: Foxxo/Species/Wolf/custom.rsi
+    state: WolfTail

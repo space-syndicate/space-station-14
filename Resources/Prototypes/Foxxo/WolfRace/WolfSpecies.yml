@@ -1,0 +1,159 @@
+- type: species
+  id: Wolf
+  name: species-name-furrywolf
+  roundStart: true
+  prototype: MobWolf
+  sprites: PlWolfSprites
+  defaultSkinTone: "#e68010" 
+  markingLimits: PlWolfMarkingLimits
+  dollPrototype: MobWolfDummy
+  skinColoration: Hues
+
+# The lack of a layer means that
+# this person cannot have round-start anything
+# applied to that layer. It has to instead
+# be defined as a 'custom base layer'
+# in either the mob's starting marking prototype,
+# or it has to be added in C#.
+- type: speciesBaseSprites
+  id: PlWolfSprites
+  sprites:
+    Head: PlWolfHead
+    Hair: PlWolfAnyMarking
+    FacialHair: PlWolfAnyMarking
+    Chest: PlWolfTorso
+    Tail: MobHumanoidAnyMarking 
+    Eyes: PlWolfEyes
+    LArm: PlWolfLArm
+    RArm: PlWolfRArm
+    LHand: PlWolfLHand
+    RHand: PlWolfRHand
+    LLeg: PlWolfLLeg
+    RLeg: PlWolfRLeg
+    LFoot: PlWolfLFoot
+    RFoot: PlWolfRFoot
+
+- type: markingPoints
+  id: PlWolfMarkingLimits
+  points:
+    Hair:
+      points: 1
+      required: false
+    FacialHair:
+      points: 1
+      required: false
+    Tail: # the cat tail joke
+      points: 1 
+      required: true
+      defaultMarkings: [ WolfTail ]
+    HeadTop: # the cat ear joke
+      points: 1 
+      required: false
+    Chest:
+      points: 1
+      required: false
+    Legs:
+      points: 2
+      required: false
+    Arms:
+      points: 2
+      required: false
+
+- type: humanoidBaseSprite
+  id: PlWolfEyes
+  baseSprite:
+    sprite: Mobs/Customization/eyes.rsi
+    state: eyes
+
+- type: humanoidBaseSprite
+  id: PlWolfAnyMarking
+
+- type: humanoidBaseSprite
+  id: PlWolfMarkingMatchSkin
+  markingsMatchSkin: true
+
+- type: humanoidBaseSprite
+  id: PlWolfHead
+  baseSprite:
+    sprite: Foxxo/Species/Wolf/parts.rsi
+    state: head_m
+
+- type: humanoidBaseSprite
+  id: PlWolfHeadMale
+  baseSprite:
+    sprite: Foxxo/Species/Wolf/parts.rsi
+    state: head_m
+
+- type: humanoidBaseSprite
+  id: PlWolfHeadFemale
+  baseSprite:
+    sprite: Foxxo/Species/Wolf/parts.rsi
+    state: head_f
+
+- type: humanoidBaseSprite
+  id: PlWolfTorso
+  baseSprite:
+    sprite: Foxxo/Species/Wolf/parts.rsi
+    state: torso_m
+
+- type: humanoidBaseSprite
+  id: PlWolfTorsoMale
+  baseSprite:
+    sprite: Foxxo/Species/Wolf/parts.rsi
+    state: torso_m
+
+- type: humanoidBaseSprite
+  id: PlWolfTorsoFemale
+  baseSprite:
+    sprite: Foxxo/Species/Wolf/parts.rsi
+    state: torso_f
+
+- type: humanoidBaseSprite
+  id: PlWolfLLeg
+  baseSprite:
+    sprite: Foxxo/Species/Wolf/parts.rsi
+    state: l_leg
+
+- type: humanoidBaseSprite
+  id: PlWolfLArm
+  baseSprite:
+    sprite: Foxxo/Species/Wolf/parts.rsi
+    state: l_arm
+
+- type: humanoidBaseSprite
+  id: PlWolfLHand
+  baseSprite:
+    sprite: Foxxo/Species/Wolf/parts.rsi
+    state: l_hand
+
+- type: humanoidBaseSprite
+  id: PlWolfLFoot
+  baseSprite:
+    sprite: Foxxo/Species/Wolf/parts.rsi
+    state: l_foot
+
+- type: humanoidBaseSprite
+  id: PlWolfRLeg
+  baseSprite:
+    sprite: Foxxo/Species/Wolf/parts.rsi
+    state: r_leg
+
+- type: humanoidBaseSprite
+  id: PlWolfRArm
+  baseSprite:
+    sprite: Foxxo/Species/Wolf/parts.rsi
+    state: r_arm
+
+- type: humanoidBaseSprite
+  id: PlWolfRHand
+  baseSprite:
+    sprite: Foxxo/Species/Wolf/parts.rsi
+    state: r_hand
+
+- type: humanoidBaseSprite
+  id: PlWolfRFoot
+  baseSprite:
+    sprite: Foxxo/Species/Wolf/parts.rsi
+    state: r_foot
+
+
