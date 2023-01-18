@@ -1,0 +1,9 @@
+- type: marking
+  id: FoxTail
+  bodyPart: Tail
+  markingCategory: Tail
+  followSkinColor: true
+  speciesRestriction: [Fox2]
+  sprites:
+  - sprite: Foxxo/Species/Fox/custom.rsi
+    state: FoxTail

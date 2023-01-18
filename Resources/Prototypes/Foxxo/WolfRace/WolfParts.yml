@@ -1,0 +1,191 @@
+# TODO: Add descriptions (many)
+# TODO BODY: Part damage
+- type: entity
+  id: PartWolf
+  parent: BaseItem
+  name: "Wolf body part"
+  abstract: true
+  components:
+  - type: Damageable
+    damageContainer: Biological
+  - type: BodyPart
+  - type: ContainerContainer
+    containers:
+      bodypart: !type:Container
+        ents: []
+
+- type: entity
+  id: TorsoWolf
+  name: "Wolf torso"
+  parent: PartReptilian
+  components:
+  - type: Sprite
+    netsync: false
+    sprite: Foxxo/Species/Wolf/parts.rsi
+    state: "torso_m"
+  - type: Icon
+    sprite: Foxxo/Species/Wolf/parts.rsi
+    state: "torso_m"
+  - type: BodyPart
+    partType: Torso
+
+- type: entity
+  id: HeadWolf
+  name: "Wolf head"
+  parent: PartReptilian
+  components:
+  - type: Sprite
+    netsync: false
+    sprite: Foxxo/Species/Wolf/parts.rsi
+    state: "head_m"
+  - type: Icon
+    sprite: Foxxo/Species/Wolf/parts.rsi
+    state: "head_m"
+  - type: BodyPart
+    partType: Head
+    vital: true
+  - type: Input
+    context: "ghost"
+  - type: MovementSpeedModifier
+    baseWalkSpeed: 0
+    baseSprintSpeed: 0
+  - type: InputMover
+  - type: GhostOnMove
+  - type: Tag
+    tags:
+      - Head
+
+- type: entity
+  id: LeftArmWolf
+  name: "left Wolf arm"
+  parent: PartReptilian
+  components:
+  - type: Sprite
+    netsync: false
+    sprite: Foxxo/Species/Wolf/parts.rsi
+    state: "l_arm"
+  - type: Icon
+    sprite: Foxxo/Species/Wolf/parts.rsi
+    state: "l_arm"
+  - type: BodyPart
+    partType: Arm
+    symmetry: Left
+
+- type: entity
+  id: RightArmWolf
+  name: "right Wolf arm"
+  parent: PartReptilian
+  components:
+  - type: Sprite
+    netsync: false
+    sprite: Foxxo/Species/Wolf/parts.rsi
+    state: "r_arm"
+  - type: Icon
+    sprite: Foxxo/Species/Wolf/parts.rsi
+    state: "r_arm"
+  - type: BodyPart
+    partType: Arm
+    symmetry: Right
+
+- type: entity
+  id: LeftHandWolf
+  name: "left Wolf hand"
+  parent: PartReptilian
+  components:
+  - type: Sprite
+    netsync: false
+    sprite: Foxxo/Species/Wolf/parts.rsi
+    state: "l_hand"
+  - type: Icon
+    sprite: Foxxo/Species/Wolf/parts.rsi
+    state: "l_hand"
+  - type: BodyPart
+    partType: Hand
+    symmetry: Left
+
+- type: entity
+  id: RightHandWolf
+  name: "right Wolf hand"
+  parent: PartReptilian
+  components:
+  - type: Sprite
+    netsync: false
+    sprite: Foxxo/Species/Wolf/parts.rsi
+    state: "r_hand"
+  - type: Icon
+    sprite: Foxxo/Species/Wolf/parts.rsi
+    state: "r_hand"
+  - type: BodyPart
+    partType: Hand
+    symmetry: Right
+
+- type: entity
+  id: LeftLegWolf
+  name: "left Wolf leg"
+  parent: PartReptilian
+  components:
+  - type: Sprite
+    netsync: false
+    sprite: Foxxo/Species/Wolf/parts.rsi
+    state: "l_leg"
+  - type: Icon
+    sprite: Foxxo/Species/Wolf/parts.rsi
+    state: "l_leg"
+  - type: BodyPart
+    partType: Leg
+    symmetry: Left
+  - type: MovementSpeedModifier
+    baseWalkSpeed : 2.7
+    baseSprintSpeed : 4.5
+
+- type: entity
+  id: RightLegWolf
+  name: "right Wolf leg"
+  parent: PartReptilian
+  components:
+  - type: Sprite
+    netsync: false
+    sprite: Foxxo/Species/Wolf/parts.rsi
+    state: "r_leg"
+  - type: Icon
+    sprite: Foxxo/Species/Wolf/parts.rsi
+    state: "r_leg"
+  - type: BodyPart
+    partType: Leg
+    symmetry: Right
+  - type: MovementSpeedModifier
+    baseWalkSpeed : 2.7
+    baseSprintSpeed : 4.5
+
+- type: entity
+  id: LeftFootWolf
+  name: "left Wolf foot"
+  parent: PartReptilian
+  components:
+  - type: Sprite
+    netsync: false
+    sprite: Foxxo/Species/Wolf/parts.rsi
+    state: "l_foot"
+  - type: Icon
+    sprite: Foxxo/Species/Wolf/parts.rsi
+    state: "l_foot"
+  - type: BodyPart
+    partType: Foot
+    symmetry: Left
+
+- type: entity
+  id: RightFootWolf
+  name: "right Wolf foot"
+  parent: PartReptilian
+  components:
+  - type: Sprite
+    netsync: false
+    sprite: Foxxo/Species/Wolf/parts.rsi
+    state: "r_foot"
+  - type: Icon
+    sprite: Foxxo/Species/Wolf/parts.rsi
+    state: "r_foot"
+  - type: BodyPart
+    partType: Foot
+    symmetry: Right
+

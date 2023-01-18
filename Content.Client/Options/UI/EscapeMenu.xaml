@@ -10,7 +10,11 @@
         <ui:VoteCallMenuButton />
         <Button Access="Public" Name="OptionsButton" Text="{Loc 'ui-escape-options'}" />
         <Button Access="Public" Name="RulesButton" Text="{Loc 'ui-escape-rules'}" />
+<<<<<<< HEAD
+        <Button Access="Public" Name="DiscordButton" Text="{Loc 'ui-escape-discord'}" />
+=======
         <Button Access="Public" Name="GuidebookButton" Text="{Loc 'ui-escape-guidebook'}" />
+>>>>>>> 7a834c35977f5013c60c870d360c1f3363cd715a
         <Button Access="Public" Name="WikiButton" Text="{Loc 'ui-escape-wiki'}" />
         <Button Access="Public" Name="DisconnectButton" Text="{Loc 'ui-escape-disconnect'}" />
         <Button Access="Public" Name="QuitButton" Text="{Loc 'ui-escape-quit'}" />
