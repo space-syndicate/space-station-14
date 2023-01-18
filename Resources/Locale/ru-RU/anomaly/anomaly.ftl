@@ -1,5 +1,5 @@
 anomaly-vessel-component-anomaly-assigned = Аномалия присвоена сосуду.
-anomaly-vessel-component-not-assigned = Этому судну не присвоена ни одна аномалия. Попробуйте использовать на нём сканер.
+anomaly-vessel-component-not-assigned = Этому сосуду не присвоена ни одна аномалия. Попробуйте использовать на нём сканер.
 anomaly-vessel-component-assigned = Этому сосуду уже присвоена аномалия.
 anomaly-particles-delta = Дельта-частицы
 anomaly-particles-epsilon = Эпсилон-частицы
