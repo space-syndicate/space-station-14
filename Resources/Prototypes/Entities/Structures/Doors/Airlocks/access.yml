@@ -295,6 +295,14 @@
   - type: AccessReader
     access: [["External"]]
 
+  - type: entity
+  parent: Airlock
+  id: AirlockSyndicateLocked
+  suffix: Syndicate, Locked
+  components:
+  - type: AccessReader
+    access: [["External"]]
+
 # Glass Airlocks
 - type: entity
   parent: AirlockGlass
