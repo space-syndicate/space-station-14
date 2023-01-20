@@ -65,7 +65,7 @@ public sealed class CCCVars
     /// URL of the TTS server API.
     /// </summary>
     public static readonly CVarDef<string> TTSApiUrl =
-        CVarDef.Create("tts.api_url", "http://94.103.93.57:5001/voice", CVar.SERVERONLY);
+        CVarDef.Create("tts.api_url", "", CVar.SERVERONLY);
 
     /// <summary>
     /// Auth token of the TTS server API.
