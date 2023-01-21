@@ -76,6 +76,7 @@ namespace Content.Server.Entry
             }
 
             prototypes.RegisterIgnore("parallax");
+            prototypes.RegisterIgnore("guideEntry");
 
             ServerContentIoC.Register();
 
