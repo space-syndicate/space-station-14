@@ -4,13 +4,17 @@ using Content.Server.Mind.Components;
 using Content.Server.NodeContainer;
 using Content.Server.Power.Components;
 using Content.Server.UserInterface;
+using Content.Server.Radio.EntitySystems;
+using Content.Server.Radio.Components;
 using Content.Shared.AME;
 using Content.Shared.Database;
+using Content.Shared.Radio;
 using Content.Shared.Hands.EntitySystems;
 using Robust.Server.GameObjects;
 using Robust.Shared.Audio;
 using Robust.Shared.Containers;
 using Robust.Shared.Player;
+using Robust.Shared.Prototypes;
 
 namespace Content.Server.AME.Components
 {
@@ -20,6 +24,7 @@ namespace Content.Server.AME.Components
         [Dependency] private readonly IEntityManager _entities = default!;
         [Dependency] private readonly IEntitySystemManager _sysMan = default!;
         [Dependency] private readonly IAdminLogManager _adminLogger = default!;
+        [Dependency] private readonly IPrototypeManager _prototypeManager = default!;
 
         [ViewVariables] private BoundUserInterface? UserInterface => Owner.GetUIOrNull(AMEControllerUiKey.Key);
         private bool _injecting;
@@ -37,6 +42,7 @@ namespace Content.Server.AME.Components
         private int _stability = 100;
 
         public ContainerSlot JarSlot = default!;
+        int _warningCD = 3;
         [ViewVariables] public bool HasJar => JarSlot.ContainedEntity != null;
 
         protected override void Initialize()
@@ -83,6 +89,21 @@ namespace Content.Server.AME.Components
                 fuelJar.FuelAmount -= availableInject;
                 InjectSound(overloading);
                 UpdateUserInterface();
+
+                float fuelRatio = (float) fuelJar.FuelAmount / (float) fuelJar.MaxFuelAmount;
+
+                if (fuelRatio <= 0.1f
+                    && _entities.TryGetComponent<IntrinsicRadioReceiverComponent>(this.Owner, out var component))
+                {
+                    if (_warningCD == 0)
+                    {
+                        _entities.EntitySysManager.GetEntitySystem<RadioSystem>().SendRadioMessage(this.Owner, Loc.GetString("ame-controller-warning", ("percentage", Math.Round(fuelRatio * 100f))), _prototypeManager.Index<RadioChannelPrototype>("Engineering"));
+                        _warningCD = 3;
+                    } else
+                    {
+                        _warningCD--;
+                    }
+                }
             }
 
             _stability = group.GetTotalStability();
@@ -165,7 +186,7 @@ namespace Content.Server.AME.Components
                     ToggleInjection();
                     break;
                 case UiButton.IncreaseFuel:
-                    InjectionAmount += 2;
+                    InjectionAmount = Math.Min(InjectionAmount + 2, GetCoreCount() * 2);
                     break;
                 case UiButton.DecreaseFuel:
                     InjectionAmount = InjectionAmount > 0 ? InjectionAmount -= 2 : 0;

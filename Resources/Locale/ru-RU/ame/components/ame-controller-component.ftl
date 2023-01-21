@@ -20,3 +20,6 @@ ame-window-toggle-injection-button = Переключение впрыска
 ame-window-eject-button = Извлечь
 ame-window-increase-fuel-button = Увеличить
 ame-window-decrease-fuel-button = Уменьшить
+
+## Foxxo
+ame-controller-warning = Внимание: уровень топлива ДАМ %{$percentage}%!
