@@ -1,0 +1,12 @@
+- type: entity
+  id: ClothingBeltMilitaryWebbingL
+  parent: ClothingBeltMilitaryWebbing
+  suffix: L
+  components:
+  - type: StorageFill
+    contents:
+      - id: EmergencyMedipen
+      - id: Ointment 
+      - id: Gauze
+      - id: Brutepack
+      - id: MagazinePistolSubMacihineGun

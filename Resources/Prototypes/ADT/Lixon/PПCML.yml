@@ -1,0 +1,15 @@
+- type: entity
+  id: ClothingBeltMilitaryWebbingL
+  parent: ClothingBeltMilitaryWebbing
+  suffix: L
+  components:
+  - type: StorageFill
+    contents:
+      - id: EmergencyMedipen
+      - id: EmergencyMedipen
+      - id: AlwaysPoweredWallLight
+      - id: AlwaysPoweredWallLight
+      - id: EpinephrineChemistryBottle
+      - id: EphedrineChemistryBottle
+      - id: BicaridineChemistryBottle
+      - id: DermalineChemistryBottle
