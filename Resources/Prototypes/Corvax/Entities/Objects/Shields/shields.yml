@@ -1,0 +1,13 @@
+- type: entity
+  name: assault tower shield
+  parent: BaseShield
+  id: EgovShield
+  description: A shield that covers the wearer from head to toe, not everyone can lift this.
+  components:
+    - type: Sprite
+      sprite: Corvax/Objects/Weapons/Melee/shields.rsi
+      state: egov-icon
+    - type: Item
+      sprite: Corvax/Objects/Weapons/Melee/shields.rsi
+      size: 100
+      heldPrefix: egov

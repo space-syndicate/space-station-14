@@ -1,0 +1,28 @@
+- type: entity
+  id: LockerEGov
+  parent: LockerBase
+  name: navy's locker
+  description: A standard-issue EarthGovernment storage unit.
+  components:
+  - type: Sprite
+    netsync: false
+    sprite: Corvax/Structures/Storage/closet.rsi
+    noRot: true
+    layers:
+    - state: egov
+    - state: egov_door
+      map: ["enum.StorageVisualLayers.Door"]
+    - state: locked
+      map: ["enum.StorageVisualLayers.Lock"]
+      shader: unshaded
+    - state: welded
+      visible: false
+      map: ["enum.WeldableLayers.BaseWelded"]
+  - type: Appearance
+    visuals:
+    - type: StorageVisualizer
+      state: egov
+      state_open: egov_open
+      state_closed: egov_door
+  - type: AccessReader
+    access: [ [ "NuclearOperative" ] ]

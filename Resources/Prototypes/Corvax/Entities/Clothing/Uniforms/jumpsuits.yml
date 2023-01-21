@@ -96,3 +96,25 @@
       sprite: Corvax/Clothing/Uniforms/Jumpsuit/securityERT.rsi
     - type: Clothing
       sprite: Corvax/Clothing/Uniforms/Jumpsuit/securityERT.rsi
+
+- type: entity
+  parent: ClothingUniformBase
+  id: ClothingUniformJumpsuitEgov
+  name: marine navy uniform
+  description: Jumpsuit made of dense camouflage fabric. Doesn't make you invisible.
+  components:
+    - type: Sprite
+      sprite: Corvax/Clothing/Uniforms/Jumpsuit/marine_suit.rsi
+    - type: Clothing
+      sprite: Corvax/Clothing/Uniforms/Jumpsuit/marine_suit.rsi
+
+- type: entity
+  parent: ClothingUniformBase
+  id: ClothingUniformJumpsuitEgovOfficer
+  name: navy officer uniform
+  description: Navy officer uniform. Better than any stripes will emphasize your importance and rank.
+  components:
+    - type: Sprite
+      sprite: Corvax/Clothing/Uniforms/Jumpsuit/officer_suit.rsi
+    - type: Clothing
+      sprite: Corvax/Clothing/Uniforms/Jumpsuit/officer_suit.rsi

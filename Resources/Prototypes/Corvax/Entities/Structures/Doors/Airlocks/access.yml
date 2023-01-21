@@ -1,0 +1,9 @@
+- type: entity
+  parent: Airlock
+  id: AirlockEgov
+  suffix: General, Locked
+  components:
+  - type: Sprite
+    sprite: Structures/Doors/Airlocks/Standard/security.rsi
+  - type: AccessReader
+    access: [["NuclearOperative"]]

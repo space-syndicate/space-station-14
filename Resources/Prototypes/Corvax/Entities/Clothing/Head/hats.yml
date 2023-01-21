@@ -41,3 +41,25 @@
       sprite: Corvax/Clothing/Head/Hats/ERT_leader_beret.rsi
     - type: Clothing
       sprite: Corvax/Clothing/Head/Hats/ERT_leader_beret.rsi
+      
+- type: entity
+  parent: ClothingHeadBase
+  id: ClothingHeadHatEgovCap
+  name: marine navy cap
+  description: Cap made of thick camouflage fabric.
+  components:
+  - type: Sprite
+    sprite: Corvax/Clothing/Head/Hats/marine_cap.rsi
+  - type: Clothing
+    sprite: Corvax/Clothing/Head/Hats/marine_cap.rsi
+
+- type: entity
+  parent: ClothingHeadBase
+  id: ClothingHeadHatEgovOfficerCap
+  name: navy officer cap #имеется ввиду фуражка :humanTorch:
+  description: Navy officer cap. Better than any stripes will emphasize your importance and rank.
+  components:
+  - type: Sprite
+    sprite: Corvax/Clothing/Head/Hats/officer_cap.rsi
+  - type: Clothing
+    sprite: Corvax/Clothing/Head/Hats/officer_cap.rsi

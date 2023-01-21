@@ -9,3 +9,72 @@
         - state: idiaa
     - type: PresetIdCard
       job: IAA
+
+- type: entity
+  parent: Clothing
+  id: IDbadgeStandard
+  name: identification badge
+  description: A badge necessary to access various areas.
+  noSpawn: true
+  components:
+  - type: Sprite
+    sprite: Corvax/Objects/Misc/id_badges.rsi
+  - type: Clothing
+    slots:
+    - idcard
+    sprite: Corvax/Objects/Misc/id_badges.rsi
+  - type: Item
+    heldPrefix: default
+  - type: Access
+  - type: IdCard
+  - type: StationRecordKeyStorage
+  - type: Tag
+    tags:
+    - DoorBumpOpener
+
+- type: entity
+  parent: IDbadgeStandard
+  id: MarineIDbadge
+  name: navy marine ID badge
+  components:
+  - type: Sprite
+    layers:
+    - state: default
+    - state: id_private
+  - type: Access
+    tags:
+    - NuclearOperative
+  - type: IdCard
+    jobTitle: Marine EarthGov
+
+- type: entity
+  parent: IDbadgeStandard
+  id: MarineSergeantIDbadge
+  name: navy marine commander ID badge
+  components:
+  - type: Sprite
+    layers:
+    - state: default
+    - state: id_sergeant
+  - type: Access
+    tags:
+    - NuclearOperative
+  - type: IdCard
+    jobTitle: Staff Sergeant EarthGov
+
+- type: entity
+  parent: IDbadgeStandard
+  id: OfficerIDbadge
+  name: navy officer ID badge
+  components:
+  - type: Sprite
+    layers:
+    - state: silver
+    - state: id_officer
+  - type: Item
+    heldPrefix: silver
+  - type: Access
+    tags:
+    - NuclearOperative
+  - type: IdCard
+    jobTitle: Officer EarthGov
