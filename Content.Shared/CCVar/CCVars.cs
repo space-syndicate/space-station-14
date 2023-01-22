@@ -415,6 +415,22 @@ namespace Content.Shared.CCVar
             CVarDef.Create("tips.in_game_frequency", 60f * 60);
 
         /*
+         * GCF
+         */
+
+        /// <summary>
+        ///     Whether GCF being shown is enabled at all.
+        /// </summary>
+        public static readonly CVarDef<bool> GCFEnabled =
+            CVarDef.Create("gcf_auto.enabled", true);
+
+        /// <summary>
+        ///     The number of seconds between each GCF
+        /// </summary>
+        public static readonly CVarDef<float> GCFFrequency =
+            CVarDef.Create("gcf_auto.frequency", 300f);
+
+        /*
          * Console
          */
 
