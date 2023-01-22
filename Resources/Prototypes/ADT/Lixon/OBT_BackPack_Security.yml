@@ -1,0 +1,12 @@
+- type: entity
+  noSpawn: true
+  parent: ClothingBackpackERTSecurity
+  id: ClothingBackpackERTSecurityFilledL
+  components:
+    - type: StorageFill
+      contents:
+        - id: BoxSurvival
+        - id: WeaponPulseCarbine
+        - id: Handcuffs
+        - id: Handcuffs
+        - id: WeaponSubMachineGunAtreides
