@@ -22,4 +22,4 @@ ame-window-increase-fuel-button = Увеличить
 ame-window-decrease-fuel-button = Уменьшить
 
 ## Foxxo
-ame-controller-warning = Внимание: уровень топлива ДАМ %{$percentage}%!
+ame-controller-warning = Внимание: уровень топлива ДАМ {$percentage}%!

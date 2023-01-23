@@ -73,6 +73,7 @@
   - type: ContainerContainer
     containers:
       AMEController-fuelJarContainer: !type:ContainerSlot {}
+  - type: IntrinsicRadioReceiver
   - type: GuideHelp
     guides: [ AME, Power ]
 
