@@ -6,8 +6,10 @@
   requirements:
     - !type:DepartmentTimeRequirement
       department: Engineering
-      time: 72000 # Foxxo-RoleTime
+      time: 36000 # Foxxo-RoleTime
       inverted: true # stop playing intern if you're good at engineering!
+    - !type:OverallPlaytimeRequirement
+      time: 36000 # Foxxo-RoleTime
   startingGear: TechnicalAssistantGear
   icon: "TechnicalAssistant"
   supervisors: job-supervisors-engineering
