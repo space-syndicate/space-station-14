@@ -1,0 +1,23 @@
+- type: entity
+  parent: ClothingBeltStorageBase
+  id: ADTClothingBeltSupremeCommanderSheath
+  name: suppreme connamder's sabre sheath
+  description: where is my beauty?
+  components:
+  - type: Sprite
+    sprite: ADT/Clothing/Belt/supreme-commander-sheath.rsi
+    state: sheath
+  - type: Clothing
+    sprite: ADT/Clothing/Belt/supreme-commander-sheath.rsi
+  - type: Storage
+    capacity: 15
+    whitelist:
+      tags:
+        - SupremeCommanderSabre
+  - type: ItemMapper
+    mapLayers:
+      sheath-sabre:
+        whitelist:
+          tags:
+          - SupremeCommanderSabre
+  - type: Appearance
