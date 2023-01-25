@@ -45,6 +45,9 @@
       prototypes: [SyndicateOperativeGearExtremelyBasic]
     - type: RandomMetadata
       nameSegments: [ corvax_names_death_commando ] # corvax-localization
+    - type: Faction
+      factions:
+      - Syndicate
 
 # Nuclear Operative
 - type: entity
