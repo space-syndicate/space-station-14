@@ -1,0 +1,8 @@
+- type: entity
+  parent: ClothingNeckBase
+  id: ADTClothingNeckSupremeCommanderCloak
+  name: supreme commander's cloak
+  description: Don't let it get dirty. It made from super-tecnological blue-space threads. Only you have this unique coat!
+  components:
+  - type: Sprite
+    sprite: ADT/Clothing/Neck/Cloaks/supreme-commander-cloak.rsi

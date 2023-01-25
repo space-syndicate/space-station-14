@@ -1,0 +1,13 @@
+- type: entity
+  parent: ClothingHandsBase
+  id: ADTClothingHandsSupremeCommanderGloves
+  name: supreme commander's gloves
+  description: These gloves decorated bluespace sewing cost as much as 10 similar station. These gloves are one of a kind.
+  components:
+  - type: Sprite
+    sprite: ADT/Clothing/Hands/Gloves/supreme-commander-gloves.rsi
+  - type: Clothing
+    sprite: ADT/Clothing/Hands/Gloves/supreme-commander-gloves.rsi
+  - type: Fiber
+    fiberMaterial: fibers-nanomachines
+  - type: FingerprintMask

@@ -1,0 +1,23 @@
+- type: entity
+  name: arkalis
+  parent: BaseItem
+  id: ADTObjectWeaponsMeleeArkalis
+  description: Don't even try to use it like a razor. It's forget from bluespace steel. Lagand says it took the energy of several stars to create it.
+  components:
+  - type: Sharp
+  - type: Tag
+    tags:
+    - SupremeCommanderSabre
+  - type: Sprite
+    sprite: ADT/Objects/Weapons/Melee/supreme-commander-sabre.rsi
+    state: icon
+  - type: MeleeWeapon
+    attackRate: 1.5 #Attack rate like a ScalpelShiv
+    damage:
+      types:
+        Cellular: 50
+        Radiation: 50
+  - type: Item
+    size: 15
+    sprite: ADT/Objects/Weapons/Melee/supreme-commander-sabre.rsi
+  - type: DisarmMalus

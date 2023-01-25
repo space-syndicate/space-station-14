@@ -1,0 +1,14 @@
+- type: entity
+  parent: ClothingShoesBaseButcherable
+  id: ADTClothingHandsSupremeCommanderBoots
+  name: Supreme Commander's boots
+  description: i'm are the Speed! CHiao :)
+  components:
+  - type: Sprite
+    sprite: ADT/Clothing/Shoes/Boots/supreme-commander-boots.rsi
+  - type: Clothing
+    sprite: ADT/Clothing/Shoes/Boots/supreme-commander-boots.rsi
+  - type: NoSlip
+  - type: ClothingSpeedModifier
+    walkModifier: 1.7
+    sprintModifier: 1.7

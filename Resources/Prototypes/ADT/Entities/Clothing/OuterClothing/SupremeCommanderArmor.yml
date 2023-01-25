@@ -1,0 +1,24 @@
+- type: entity
+  parent: ClothingOuterBaseLarge
+  id: ADTClothingOuterClothingSupreneCommanderArmor
+  name: "Supreme commander's carapace"
+  description: "This thing is impossible to create, but we could. Fully covered bluespace plates. When you wear it, you feel like the emperor of mankind"
+  components:
+  - type: Sprite
+    sprite: ADT/Clothing/OuterClothing/Armor/supreme-commander-armor.rsi
+  - type: Clothing
+    sprite: ADT/Clothing/OuterClothing/Armor/supreme-commander-armor.rsi
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.01 #true best armor in the game
+        Slash: 0.01
+        Piercing: 0.01
+        Heat: 0.01
+        Radiation: 0.01
+  - type: ExplosionResistance
+    damageCoefficient: 0.01
+  - type: GroupExamine
+  - type: ClothingSpeedModifier
+    walkModifier: 1.1
+    sprintModifier: 1.1
