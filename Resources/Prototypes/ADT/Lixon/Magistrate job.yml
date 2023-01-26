@@ -1,0 +1,18 @@
+- type: job
+  id: Magistrate
+  name: job-name-magistrate
+  playTimeTracker: JobMagistrate
+  requirements:
+    - !type:DepartmentTimeRequirement
+      department: Security
+      time: 1200
+  startingGear: MagistrateGear
+  icon: "Magistrate"
+  supervisors: job-supervisors-captain
+  canBeAntag: false
+  access:
+    - Command
+    - Brig
+    - Maintenance
+    - Service
+

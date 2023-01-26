@@ -1,0 +1,78 @@
+- type: startingGear
+  id: Magistrate
+  equipment:
+    jumpsuit: ClothingUniformJumpsuitChaplain 
+    back: ClothingBackpack
+    shoes: ClothingShoesBootsLaceup
+    mask: 
+    outerClothing: ClothingOuterRobesJudge
+    eyes: 
+    head: ClothingHeadHatPwig
+    id: MagistratePDA
+    gloves: 
+    ears: ClothingHeadsetMagistrate
+    belt: 
+    Neck: ClothingNeckLawyerbadge
+    pocket1: RubberStampIAA
+
+- type: startingGear
+  id: OfficerCommand
+  equipment:
+    jumpsuit: ClothingUniformJumpskirtCentcomOfficer
+    back: ClothingBackpackERTMedicalFilled
+    shoes: ClothingShoesBootsMagAdv
+    mask: ClothingMaskGasAtmosian
+    outerClothing: ClothingOuterArmorHeavyGreen
+    eyes: ClothingEyesGlassesSecurity
+    head: ClothingHeadHelmetBombSuit
+    id: CentcomPDA
+    gloves: ClothingHandsGlovesCombat
+    ears: ClothingHeadsetCentCom
+    belt: ClothingBeltMilitaryWebbingMed
+    pocket1: WeaponMinigun
+
+- type: startingGear
+  id: ERTLeaderGearEVA_L
+  equipment:
+    jumpsuit: ClothingUniformJumpsuitColorBlue
+    back: ClothingBackpackERTLeaderFilledL
+    shoes: ClothingShoesBootsMag
+    mask: ClothingMaskBreath
+    eyes: ClothingEyesGlassesSecurity
+    gloves: ClothingHandsGlovesColorBlack
+    outerClothing: ClothingOuterHardsuitERTLeader
+    suitStorage: OxygenTankFilled
+    id: ERTLeaderPDA
+    ears: ClothingHeadsetAltCommand
+    belt: ClothingBeltMilitaryWebbingL
+
+- type: startingGear
+  id: ERTMedicalGearEVA_L
+  equipment:
+    jumpsuit: ClothingUniformJumpsuitColorBlue
+    back: ClothingBackpackERTMedicalFilledL
+    shoes: ClothingShoesBootsMag
+    mask: ClothingMaskBreath
+    eyes: ClothingEyesHudMedical
+    gloves: ClothingHandsGlovesColorBlack
+    outerClothing: ClothingOuterHardsuitERTMedical
+    suitStorage: OxygenTankFilled
+    id: ERTLeaderPDA
+    ears: ClothingHeadsetAltCommand
+    belt: ClothingBeltMilitaryWebbingMedL
+    pocket1: Hypospray
+
+- type: startingGear
+  id: ERTSecurityGearEVA_L
+  equipment:
+    jumpsuit: ClothingUniformJumpsuitColorBlue
+    back: ClothingBackpackERTSecurityFilledL
+    shoes: ClothingShoesBootsMag
+    mask: ClothingMaskBreath
+    eyes: ClothingEyesGlassesSecurity
+    gloves: ClothingHandsGlovesColorBlack
+    outerClothing: ClothingOuterHardsuitERTSecurity
+    suitStorage: OxygenTankFilled
+    id: ERTLeaderPDA
+    ears: ClothingHeadsetAltCommand
+    belt: ClothingBeltMilitaryWebbingL
