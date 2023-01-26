@@ -1,0 +1,49 @@
+- type: body
+  name: "wolf"
+  id: Wolf
+  root: torso
+  slots:
+    head:
+      part: HeadWolf
+      connections:
+      - torso
+      organs:
+        brain: OrganHumanBrain
+        eyes: OrganHumanEyes
+    torso:
+      part: TorsoWolf
+      organs:
+        heart: OrganAnimalHeart
+        lungs: OrganHumanLungs
+        stomach: OrganWolfStomach
+        liver: OrganAnimalLiver
+        kidneys: OrganHumanKidneys
+      connections:
+      - left arm
+      - right arm
+      - left leg
+      - right leg
+    right arm:
+      part: RightArmWolf
+      connections:
+      - right hand
+    left arm:
+      part: LeftArmWolf
+      connections:
+      - left hand
+    right hand:
+      part: RightHandWolf
+    left hand:
+      part: LeftHandWolf
+    right leg:
+      part: RightLegWolf
+      connections:
+      - right foot
+    left leg:
+      part: LeftLegWolf
+      connections:
+      - left foot
+    right foot:
+      part: RightFootWolf
+    left foot:
+      part: LeftFootWolf

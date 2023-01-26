@@ -1,8 +1,8 @@
 - type: species
-  id: Fox22
+  id: Fox
   name: species-name-furryfox
   roundStart: true
-  prototype: MobFox2
+  prototype: MobFoxCustom
   sprites: PlFoxSprites
   defaultSkinTone: "#e68010" 
   markingLimits: PlFoxMarkingLimits
@@ -155,5 +155,3 @@
   baseSprite:
     sprite: Foxxo/Species/Fox/parts.rsi
     state: r_foot
-
-
