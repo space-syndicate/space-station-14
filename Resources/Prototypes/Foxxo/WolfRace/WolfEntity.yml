@@ -5,7 +5,7 @@
   id: BaseMobWolf
   abstract: true
   components:
-  - type: Humanoid
+  - type: HumanoidAppearance
     species: Wolf
   - type: Hunger
   - type: Thirst

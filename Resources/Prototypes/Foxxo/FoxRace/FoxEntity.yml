@@ -5,7 +5,7 @@
   id: BaseMobFox
   abstract: true
   components:
-  - type: Humanoid
+  - type: HumanoidAppearance
     species: Fox2
   - type: Hunger
   - type: Thirst
@@ -55,7 +55,7 @@
   noSpawn: true
   description: A dummy reptilian meant to be used in character setup.
   components:
-  - type: Humanoid
+  - type: HumanoidAppearance
     species: Fox2
 
 #Weh
