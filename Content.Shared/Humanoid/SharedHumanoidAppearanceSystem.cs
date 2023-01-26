@@ -23,12 +23,12 @@ public abstract class SharedHumanoidAppearanceSystem : EntitySystem
 
     public const string DefaultSpecies = "Human";
     // Corvax-TTS-Start
-    public const string DefaultVoice = "Garithos";
+    public const string DefaultVoice = "Random";
     public static readonly Dictionary<Sex, string> DefaultSexVoice = new()
     {
-        {Sex.Male, "Garithos"},
-        {Sex.Female, "Maiev"},
-        {Sex.Unsexed, "Myron"},
+        {Sex.Male, "Aidar"},
+        {Sex.Female, "Kseniya"},
+        {Sex.Unsexed, "Baya"},
     };
     // Corvax-TTS-End
 
