@@ -47,7 +47,7 @@ public sealed class SponsorsManager
     {
         var info = await LoadSponsorInfo(e.UserId);
 
-        if (info?.Tier == null)
+        if (info?.Tier is null or 0)
         {
             _cachedSponsors.Remove(e.UserId); // Remove from cache if sponsor expired
             return;
