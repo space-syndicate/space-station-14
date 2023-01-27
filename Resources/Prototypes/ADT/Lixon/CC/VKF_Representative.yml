@@ -1,0 +1,66 @@
+- type: startingGear
+  id: ADTMilitarySpaceNaviRepresentativeL
+  equipment:
+    jumpsuit: ClothingUniformJumpsuitCentcomOfficer
+    back: ClothingBackpackFilled_VKF_R
+    shoes: ClothingShoesBootCombatFilled
+    mask: ClothingMaskGasCentcom
+    outerClothing: ClothingOuterVestWeb
+    eyes: ClothingEyesGlassesSecurity
+    head: ClothingHeadHatBeretHos
+    id: CentcomPDA
+    gloves: ClothingHandsGlovesColorWhite
+    ears: ClothingHeadsetCentCom
+    belt: SecurityFilled
+    pocket1: FlashlightSeclite
+    pocket2: MicroBombImpanter
+
+- type: entity
+  parent: ClothingBackpack
+  id: ClothingBackpackFilled_VKF_R
+  noSpawn: true
+  components:
+  - type: StorageFill
+    contents:
+      - id: BoxSurvivalSecurity
+      - id: RubberStampCentcom
+      - id: BoxFolderGreyFilled
+
+- type: entity
+  id: BoxFolderGreyFilled
+  parent: BoxFolderBase
+  suffix: Red
+  components:
+    - type: StorageFill
+      contents:
+      - id: Paper
+        amount: 10
+    - type: Sprite
+      sprite: Objects/Misc/bureaucracy.rsi
+      layers:
+      - state: folder-colormap
+        color: "#999999"
+      - state: folder-base
+
+- type: entity
+  parent: ClothingOuterStorageBase
+  id: ADTClothingOuterVestWebL
+  name: web vest
+  description: A synthetic armor vest. This one has added webbing and ballistic plates.
+  components:
+  - type: Sprite
+    sprite: Clothing/OuterClothing/Vests/webvest.rsi
+  - type: Clothing
+    sprite: Clothing/OuterClothing/Vests/webvest.rsi
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.6 #ballistic plates = better protection
+        Slash: 0.6
+        Piercing: 0.3
+        Heat: 0.9
+  - type: ExplosionResistance
+    damageCoefficient: 0.9
+  - type: StorageFill
+    contents:
+      - id: WeaponPulsePistol

@@ -1,0 +1,26 @@
+- type: entity
+  parent: BasePDA
+  id: MagistratePDA
+  name: Magistrate PDA
+  description: Тут должно быть описание.
+  components:
+  - type: PDA
+    id: MagistrateIDCard
+  - type: Appearance
+    visuals:
+      - type: PDAVisualizer
+        state: pda-lawyer
+  - type: Icon
+    state: pda-lawyer
+
+- type: entity
+  parent: IDCardStandard
+  id: MagistrateIDCard
+  name: Magistrate ID card
+  components:
+    - type: Sprite
+      layers:
+        - state: default
+        - state: idlawyer
+    - type: PresetIdCard
+      job: Magistrate

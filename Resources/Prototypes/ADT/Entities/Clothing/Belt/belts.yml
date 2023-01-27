@@ -1,0 +1,77 @@
+#Supreme commander
+- type: entity
+  parent: ClothingBeltStorageBase
+  id: ADTClothingBeltSupremeCommanderSheath
+  name: suppreme connamder's sabre sheath
+  description: where is my beauty?
+  components:
+  - type: Sprite
+    sprite: ADT/Clothing/Belt/supreme-commander-sheath.rsi
+    state: sheath
+  - type: Clothing
+    sprite: ADT/Clothing/Belt/supreme-commander-sheath.rsi
+  - type: Storage
+    capacity: 15
+    whitelist:
+      tags:
+        - SupremeCommanderSabre
+  - type: ItemMapper
+    mapLayers:
+      sheath-sabre:
+        whitelist:
+          tags:
+          - SupremeCommanderSabre
+  - type: Appearance
+
+
+
+#ERT
+#RPSSL
+- type: entity
+  id: ADTClothingBeltMilitaryWebbingRPSSL
+  parent: ClothingBeltMilitaryWebbing
+  name: ERT security belt
+  description: Part of ERT security's gear
+  components:
+  - type: StorageFill
+    contents:
+      - id: EmergencyMedipen
+      - id: Ointment 
+      - id: Gauze
+      - id: Brutepack
+      - id: MagazinePistolSubMachineGun
+
+#RPSL
+- type: entity
+  id: ADTClothingBeltMilitaryWebbingRPSL
+  parent: ClothingBeltMilitaryWebbing
+  name: ERT Leader belt
+  description: Part of ERT leader's gear
+  components:
+  - type: StorageFill
+    contents:
+      - id: MagazinePistolHighCapacity
+      - id: MagazinePistolHighCapacity
+      - id: MagazinePistolHighCapacity
+      - id: EmergencyMedipen
+      - id: Ointment 
+      - id: Gauze
+      - id: Brutepack
+
+#RPSML
+- type: entity
+  id: ADTClothingBeltMilitaryWebbingRPSML
+  parent: ClothingBeltMilitaryWebbing
+  name: ERT medical belt
+  description: Part of ERT medical's gear
+  components:
+  - type: StorageFill
+    contents:
+      - id: EmergencyMedipen
+      - id: EmergencyMedipen
+      - id: AlwaysPoweredWallLight
+      - id: AlwaysPoweredWallLight
+      - id: EpinephrineChemistryBottle
+      - id: EphedrineChemistryBottle
+      - id: ADTObjectsSpecificBicaridineChemistryBottle
+      - id: ADTObjectsSpecificDermalineChemistryBottle

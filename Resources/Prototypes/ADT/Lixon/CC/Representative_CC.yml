@@ -1,0 +1,42 @@
+- type: startingGear
+  id: ADTCentComRepresentativeL
+  equipment:
+    jumpsuit: ClothingUniformJumpsuitCentcomOfficer
+    back: ClothingBackpackFilled_CC_R
+    shoes: ClothingShoesBootsLaceup
+    mask: 
+    outerClothing: ClothingOuterVest
+    eyes: ClothingEyesGlassesSunglasses
+    head: ClothingHeadHatBeretCentcomNaval
+    id: CentcomPDA
+    gloves: ClothingHandsGlovesColorGray
+    ears: ClothingHeadsetCentCom
+    belt: 
+    pocket2: MicroBombImpanter
+    
+- type: entity
+  parent: ClothingBackpack
+  id: ClothingBackpackFilled_CC_R
+  noSpawn: true
+  components:
+  - type: StorageFill
+    contents:
+      - id: BoxSurvival
+      - id: RubberStampIAA
+      - id: BoxFolderRedFilled
+
+- type: entity
+  id: BoxFolderRedFilled
+  parent: BoxFolderBase
+  suffix: Red
+  components:
+    - type: StorageFill
+      contents:
+      - id: Paper
+        amount: 10
+    - type: Sprite
+      sprite: Objects/Misc/bureaucracy.rsi
+      layers:
+      - state: folder-colormap
+        color: "#cc2323"
+      - state: folder-base

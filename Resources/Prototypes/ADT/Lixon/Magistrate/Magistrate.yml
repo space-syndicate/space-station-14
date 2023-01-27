@@ -1,0 +1,34 @@
+- type: job
+  id: Magistrate
+  name: job-name-magistrate
+  playTimeTracker: JobMagistrate
+  requirements:
+    - !type:DepartmentTimeRequirement
+      department: Security
+      time: 1200
+  startingGear: MagistrateGear
+  icon: "Magistrate"
+  supervisors: job-supervisors-captain
+  canBeAntag: false
+  access:
+    - Command
+    - Brig
+    - Maintenance
+    - Service
+
+- type: startingGear
+  id: Magistrate
+  equipment:
+    jumpsuit: ClothingUniformJumpsuitChaplain 
+    back: ClothingBackpack
+    shoes: ClothingShoesBootsLaceup
+    mask: 
+    outerClothing: ClothingOuterRobesJudge
+    eyes: 
+    head: ClothingHeadHatPwig
+    id: MagistratePDA
+    gloves: 
+    ears: ClothingHeadsetMagistrate
+    belt: 
+    Neck: ClothingNeckLawyerbadge
+    pocket1: RubberStampIAA

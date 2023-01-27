@@ -1,4 +1,4 @@
-﻿- type: species
+- type: species
   id: TajaranSpecies
   name: species-name-tajaran
   roundStart: true #can player role
@@ -37,6 +37,9 @@
       points: 1
       required: false
     Tail:
+      points: 1
+      required: false
+    Head:
       points: 1
       required: false
 

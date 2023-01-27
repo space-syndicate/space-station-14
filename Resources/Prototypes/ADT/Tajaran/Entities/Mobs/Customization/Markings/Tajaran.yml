@@ -1,4 +1,4 @@
-﻿- type: marking
+- type: marking
   id: Belly1
   bodyPart: Chest
   markingCategory: Chest
@@ -120,6 +120,7 @@
   bodyPart: Head
   markingCategory: Head
   speciesRestriction: [TajaranSpecies]
+  sponsorOnly: true
   sprites:
     - sprite: Mobs/Customization/tajaran_head.rsi
       state: patch_SPONSOR_ONLY
