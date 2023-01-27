@@ -1,4 +1,4 @@
-﻿- type: species
+- type: species
   id: VulpkaninSpecies
   name: species-name-vulpkanin
   roundStart: true #can player role
@@ -31,7 +31,16 @@
   onlyWhitelisted: true
   points:
     Hair:
-      points: 0
+      points: 1
+      required: false
+    Chest:
+      points: 1
+      required: false
+    Tail:
+      points: 1
+      required: false
+    Head:
+      points: 3
       required: false
 
 - type: humanoidBaseSprite

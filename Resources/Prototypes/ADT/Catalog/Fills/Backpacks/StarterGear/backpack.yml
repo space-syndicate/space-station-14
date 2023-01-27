@@ -1,78 +1,44 @@
-- type: startingGear
-  id: Magistrate
-  equipment:
-    jumpsuit: ClothingUniformJumpsuitChaplain 
-    back: ClothingBackpack
-    shoes: ClothingShoesBootsLaceup
-    mask: 
-    outerClothing: ClothingOuterRobesJudge
-    eyes: 
-    head: ClothingHeadHatPwig
-    id: MagistratePDA
-    gloves: 
-    ears: ClothingHeadsetMagistrate
-    belt: 
-    Neck: ClothingNeckLawyerbadge
-    pocket1: RubberStampIAA
 
-- type: startingGear
-  id: OfficerCommand
-  equipment:
-    jumpsuit: ClothingUniformJumpskirtCentcomOfficer
-    back: ClothingBackpackERTMedicalFilled
-    shoes: ClothingShoesBootsMagAdv
-    mask: ClothingMaskGasAtmosian
-    outerClothing: ClothingOuterArmorHeavyGreen
-    eyes: ClothingEyesGlassesSecurity
-    head: ClothingHeadHelmetBombSuit
-    id: CentcomPDA
-    gloves: ClothingHandsGlovesCombat
-    ears: ClothingHeadsetCentCom
-    belt: ClothingBeltMilitaryWebbingMed
-    pocket1: WeaponMinigun
+#ERT
 
-- type: startingGear
-  id: ERTLeaderGearEVA_L
-  equipment:
-    jumpsuit: ClothingUniformJumpsuitColorBlue
-    back: ClothingBackpackERTLeaderFilledL
-    shoes: ClothingShoesBootsMag
-    mask: ClothingMaskBreath
-    eyes: ClothingEyesGlassesSecurity
-    gloves: ClothingHandsGlovesColorBlack
-    outerClothing: ClothingOuterHardsuitERTLeader
-    suitStorage: OxygenTankFilled
-    id: ERTLeaderPDA
-    ears: ClothingHeadsetAltCommand
-    belt: ClothingBeltMilitaryWebbingL
+- type: entity
+  noSpawn: true
+  parent: ClothingBackpackERTMedical
+  id: ADTClothingBackpackERTMedicalFilledL
+  components:
+    - type: StorageFill
+      contents:
+        - id: BoxSurvival
+        - id: MedkitAdvancedFilled
+        - id: WeaponShotgunEnforcer
+        - id: WeaponPulsePistol
+        - id: BoxLethalshot
+        - id: BoxShotgunSlug
 
-- type: startingGear
-  id: ERTMedicalGearEVA_L
-  equipment:
-    jumpsuit: ClothingUniformJumpsuitColorBlue
-    back: ClothingBackpackERTMedicalFilledL
-    shoes: ClothingShoesBootsMag
-    mask: ClothingMaskBreath
-    eyes: ClothingEyesHudMedical
-    gloves: ClothingHandsGlovesColorBlack
-    outerClothing: ClothingOuterHardsuitERTMedical
-    suitStorage: OxygenTankFilled
-    id: ERTLeaderPDA
-    ears: ClothingHeadsetAltCommand
-    belt: ClothingBeltMilitaryWebbingMedL
-    pocket1: Hypospray
+- type: entity
+  noSpawn: true
+  parent: ClothingBackpackERTSecurity
+  id: ADTClothingBackpackERTSecurityFilledL
+  components:
+    - type: StorageFill
+      contents:
+        - id: BoxSurvival
+        - id: WeaponPulseCarbine
+        - id: Handcuffs
+        - id: Handcuffs
+        - id: WeaponSubMachineGunAtreides
 
-- type: startingGear
-  id: ERTSecurityGearEVA_L
-  equipment:
-    jumpsuit: ClothingUniformJumpsuitColorBlue
-    back: ClothingBackpackERTSecurityFilledL
-    shoes: ClothingShoesBootsMag
-    mask: ClothingMaskBreath
-    eyes: ClothingEyesGlassesSecurity
-    gloves: ClothingHandsGlovesColorBlack
-    outerClothing: ClothingOuterHardsuitERTSecurity
-    suitStorage: OxygenTankFilled
-    id: ERTLeaderPDA
-    ears: ClothingHeadsetAltCommand
-    belt: ClothingBeltMilitaryWebbingL
+- type: entity
+  noSpawn: true
+  parent: ClothingBackpackERTLeader
+  id: ADTClothingBackpackERTLeaderFilledL
+  components:
+    - type: StorageFill
+      contents:
+        - id: BoxSurvival
+        - id: WeaponPulsePistol
+        - id: WeaponPistolMk58
+        - id: EmergencyMedipen
+        - id: Ointment 
+        - id: Gauze
+        - id: Brutepack

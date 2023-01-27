@@ -77,3 +77,19 @@
   - type: Tag
     tags:
     - Bottle
+
+- type: entity
+  id:  ADTObjectsSpecificLeporazineChemistryBottle
+  name: Leporazine bottle
+  parent: BaseChemistryEmptyBottle
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      drink:
+        maxVol: 30
+        reagents:
+        - ReagentId: Leporazine
+          Quantity: 30
+  - type: Tag
+    tags:
+    - Bottle

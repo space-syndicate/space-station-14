@@ -1,0 +1,43 @@
+- type: startingGear
+  id: SpecialOperationsOfficerGear
+  equipment:
+    jumpsuit: ClothingUniformJumpsuitCentcomFormal
+    back: ClothingBackpackERTLeaderFilled_SOO
+    shoes: ClothingShoesBootsJack
+    head: ClothingHeadHatCentcom
+    eyes: ClothingEyesGlassesSunglasses
+    gloves: ClothingHandsGlovesCentcomNaval
+    outerClothing: ClothingOuterVestKevlar
+    id: CentcomPDA
+    ears: ClothingHeadsetAltCentCom
+    belt: SecurityFilled
+    mask: ClothingMaskGasCentcom
+    pocket1: MacroBombImplanter
+
+- type: entity
+  noSpawn: true
+  parent: ClothingBackpackERTLeader
+  id: ClothingBackpackERTLeaderFilled_SOO
+  components:
+    - type: StorageFill
+      contents:
+        - id: BoxSurvival
+        - id: RubberStampCentcom
+        - id: BoxMagazineMagnumSubMachineGunHighVelocity
+        - id: WeaponSubMachineGunVector
+
+- type: entity
+  id: BoxFolderBlueFilled
+  parent: BoxFolderBase
+  suffix: Blue
+  components:
+    - type: StorageFill
+      contents:
+      - id: Paper
+        amount: 10
+    - type: Sprite
+      sprite: Objects/Misc/bureaucracy.rsi
+      layers:
+      - state: folder-colormap
+        color: "#355d99"
+      - state: folder-base

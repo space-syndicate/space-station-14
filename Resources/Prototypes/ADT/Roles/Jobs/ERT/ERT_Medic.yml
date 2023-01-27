@@ -1,0 +1,15 @@
+- type: startingGear
+  id: ADTERTMedicalGearEVA_L
+  equipment:
+    jumpsuit: ClothingUniformJumpsuitColorBlue
+    back: ADTClothingBackpackERTMedicalFilledL
+    shoes: ClothingShoesBootsMag
+    mask: ClothingMaskBreath
+    eyes: ClothingEyesHudMedical
+    gloves: ClothingHandsGlovesColorBlack
+    outerClothing: ClothingOuterHardsuitERTMedical
+    suitStorage: OxygenTankFilled
+    id: ERTLeaderPDA
+    ears: ClothingHeadsetAltCommand
+    belt: ClothingBeltMilitaryWebbingMedL
+    pocket1: Hypospray

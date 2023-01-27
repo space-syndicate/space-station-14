@@ -1,0 +1,15 @@
+- type: startingGear
+  id: OfficerCommand
+  equipment:
+    jumpsuit: ClothingUniformJumpskirtCentcomOfficer
+    back: ClothingBackpackERTMedicalFilled
+    shoes: ClothingShoesBootsMagAdv
+    mask: ClothingMaskGasAtmosian
+    outerClothing: ClothingOuterArmorHeavyGreen
+    eyes: ClothingEyesGlassesSecurity
+    head: ClothingHeadHelmetBombSuit
+    id: CentcomPDA
+    gloves: ClothingHandsGlovesCombat
+    ears: ClothingHeadsetCentCom
+    belt: ClothingBeltMilitaryWebbingMed
+    pocket1: WeaponMinigun
