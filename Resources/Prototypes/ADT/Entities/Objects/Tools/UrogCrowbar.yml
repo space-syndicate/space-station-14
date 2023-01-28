@@ -13,3 +13,8 @@
       sprite: ADT/Memes/gold-crowbar.rsi
       size: 10
       heldPrefix: gold
+
+- type: loadout
+  id: UrogDjaxLoadout
+  entity: UrogCrowbarGold
+  sponsorOnly: true
