@@ -104,5 +104,5 @@ public sealed class CCCVars
     ///     This increases the chances of the average player getting on the server.
     /// </summary>
     public static readonly CVarDef<bool>
-        IgnorePrivileged = CVarDef.Create("game.ignore_privileged", true, CVar.SERVERONLY);
+        IgnorePrivileged = CVarDef.Create("game.ignore_privileged", false, CVar.SERVERONLY);
 }
