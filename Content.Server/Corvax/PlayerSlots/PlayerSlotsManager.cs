@@ -22,30 +22,30 @@ public sealed class PlayerSlotsManager
 
     /// <summary>
     ///     Value that mostly must be used to determine total players
-    ///     Ignores admins and sponsors 
+    ///     Ignores privileged if enabled
     /// </summary>
-    public int PlayersCount => _playerManager.PlayerCount - _privilegedCount;
+    public int PlayersCount
+    {
+        get
+        {
+            if (_ignorePrivileged)
+                return _playerManager.PlayerCount - _privilegedCount;
+
+            return _playerManager.PlayerCount;
+        }
+    }
 
     /// <summary>
     ///     The actual number of players currently playing
-    ///     Ignore that stay in queue
+    ///     Ignore only that stay in queue
     /// </summary>
     public int InGamePlayersCount => _playerManager.PlayerCount - _queueManager.PlayerInQueueCount;
 
     /// <summary>
     ///     Online that must be visible publicly
-    ///     Does not take into account players in the queue and sponsors
+    ///     Ignores privileged if enabled and in queue
     /// </summary>
-    public int PublicPlayersCount
-    {
-        get
-        {
-            if (_ignorePrivileged)
-                return InGamePlayersCount - _privilegedCount;
-
-            return InGamePlayersCount;
-        }
-    }
+    public int PublicPlayersCount => PlayersCount - _queueManager.PlayerInQueueCount;
 
     public void Initialize()
     {
