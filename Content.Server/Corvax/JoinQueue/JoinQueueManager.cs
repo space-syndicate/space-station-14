@@ -1,5 +1,6 @@
 ﻿using System.Linq;
 using Content.Server.Connection;
+using Content.Server.Corvax.PlayerSlots;
 using Content.Shared.CCVar;
 using Content.Shared.Corvax.CCCVars;
 using Content.Shared.Corvax.JoinQueue;
@@ -24,13 +25,13 @@ public sealed class JoinQueueManager
     private static readonly Counter QueueBypassCount = Metrics.CreateCounter(
         "join_queue_bypass_count",
         "Amount of players who bypassed queue by privileges.");
-    
+
     private static readonly Histogram QueueTimings = Metrics.CreateHistogram(
         "join_queue_timings",
         "Timings of players in queue",
         new HistogramConfiguration()
         {
-            LabelNames = new[] {"type"},
+            LabelNames = new[] { "type" },
             Buckets = Histogram.ExponentialBuckets(1, 2, 14),
         });
 
@@ -38,17 +39,18 @@ public sealed class JoinQueueManager
     [Dependency] private readonly IConnectionManager _connectionManager = default!;
     [Dependency] private readonly IConfigurationManager _cfg = default!;
     [Dependency] private readonly IServerNetManager _netManager = default!;
+    [Dependency] private readonly PlayerSlotsManager _slotsManager = default!; // Corvax-PlayerSlots
 
     /// <summary>
     ///     Queue of active player sessions
+    ///     NOTE: Real Queue class can't delete disconnected users
     /// </summary>
-    private readonly List<IPlayerSession> _queue = new(); // Real Queue class can't delete disconnected users
+    private readonly List<IPlayerSession> _queue = new();
 
     private bool _isEnabled = false;
 
     public int PlayerInQueueCount => _queue.Count;
-    public int ActualPlayersCount => _playerManager.PlayerCount - PlayerInQueueCount; // Now it's only real value with actual players count that in game
-    
+
     public void Initialize()
     {
         _netManager.RegisterNetMessage<MsgQueueUpdate>();
@@ -81,12 +83,12 @@ public sealed class JoinQueueManager
             }
                 
             var isPrivileged = await _connectionManager.HavePrivilegedJoin(e.Session.UserId);
-            var currentOnline = _playerManager.PlayerCount - 1; // Do not count current session in general online, because we are still deciding her fate
+            var currentOnline = _slotsManager.PlayersCount - 1; // Do not count current session in general online, because we are still deciding her fate
             var haveFreeSlot = currentOnline < _cfg.GetCVar(CCVars.SoftMaxPlayers);
             if (isPrivileged || haveFreeSlot)
             {
                 SendToGame(e.Session);
-                
+
                 if (isPrivileged && !haveFreeSlot)
                     QueueBypassCount.Inc();
 
@@ -114,10 +116,10 @@ public sealed class JoinQueueManager
     /// <param name="connectedTime">Session connected time for histogram metrics</param>
     private void ProcessQueue(bool isDisconnect, DateTime connectedTime)
     {
-        var players = ActualPlayersCount;
+        var players = _slotsManager.PlayersCount;
         if (isDisconnect)
             players--; // Decrease currently disconnected session but that has not yet been deleted
-        
+
         var haveFreeSlot = players < _cfg.GetCVar(CCVars.SoftMaxPlayers);
         var queueContains = _queue.Count > 0;
         if (haveFreeSlot && queueContains)

@@ -50,7 +50,7 @@ public sealed class CCCVars
     /// </summary>
     public static readonly CVarDef<bool>
         QueueEnabled = CVarDef.Create("queue.enabled", false, CVar.SERVERONLY);
-        
+
     /**
      * TTS (Text-To-Speech)
      */
@@ -94,4 +94,15 @@ public sealed class CCCVars
     /// </summary>
     public static readonly CVarDef<bool> PeacefulRoundEnd =
         CVarDef.Create("game.peaceful_end", true, CVar.SERVERONLY);
+    
+    /*
+     * Player Slots
+     */
+    
+    /// <summary>
+    ///     Do not count privileged (admins, sponsors) joined players when calculating total occupied slots.
+    ///     This increases the chances of the average player getting on the server.
+    /// </summary>
+    public static readonly CVarDef<bool>
+        IgnorePrivileged = CVarDef.Create("game.ignore_privileged", true, CVar.SERVERONLY);
 }
