@@ -11,10 +11,10 @@ using Content.Shared.Hands;
 using Content.Shared.IdentityManagement;
 using Content.Shared.Interaction;
 using Content.Shared.Interaction.Events;
-using Content.Shared.MobState.Components;
 using Robust.Shared.GameStates;
 using Robust.Shared.Player;
 using System.Threading;
+using Content.Shared.Mobs.Components;
 using Content.Shared.Verbs;
 using Robust.Server.GameObjects;
 using Content.Shared.Popups;
@@ -188,7 +188,7 @@ public sealed partial class ChemistrySystem
 
     private void OnInjectorStartup(EntityUid uid, InjectorComponent component, ComponentStartup args)
     {
-        /// ???? why ?????
+        // ???? why ?????
         Dirty(component);
     }
 

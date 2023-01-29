@@ -15,7 +15,7 @@
                                 <BoxContainer Orientation="Vertical">
                                     <BoxContainer Orientation="Horizontal" VerticalExpand="True">
                                         <Label Text="{Loc 'humanoid-profile-editor-name-label'}" />
-                                        <LineEdit Name="CNameEdit" MinSize="270 0" VerticalAlignment="Center" />
+                                        <LineEdit Name="CNameEdit" MinSize="270 0" VerticalAlignment="Center" Margin="5 0 0 0" />
                                         <Button Name="CNameRandomize" Text="{Loc 'humanoid-profile-editor-name-random-button'}" />
                                     </BoxContainer>
                                     <Button Name="CRandomizeEverything" HorizontalAlignment="Center"
@@ -84,7 +84,7 @@
                                         <OptionButton Name="CSpeciesButton" />
                                     </BoxContainer>
                                 </prefUi:HighlightedContainer>
-                                <!-- Voice - Corvax - Start -->
+                                <!-- Corvax-TTS-Start -->
                                 <prefUi:HighlightedContainer>
                                     <BoxContainer Orientation="Horizontal">
                                         <Label Text="{Loc 'humanoid-profile-editor-voice-label'}" />
@@ -92,7 +92,7 @@
                                         <Button Name="CVoicePlayButton" Text="{Loc 'humanoid-profile-editor-voice-play'}" MaxWidth="80" />
                                     </BoxContainer>
                                 </prefUi:HighlightedContainer>
-                                <!-- Voice - Corvax - End -->
+                                <!-- Corvax-TTS-End -->
                             </BoxContainer>
                             <!-- Skin -->
                             <prefUi:HighlightedContainer>

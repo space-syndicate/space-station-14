@@ -1,5 +1,4 @@
 using System.Threading;
-using Content.Shared.MobState.Components;
 using Content.Shared.Interaction;
 using Content.Shared.Audio;
 using Content.Shared.Jittering;
@@ -10,7 +9,6 @@ using Content.Shared.Nutrition.Components;
 using Content.Shared.Administration.Logs;
 using Content.Shared.CCVar;
 using Content.Shared.Database;
-using Content.Server.MobState;
 using Content.Server.Power.Components;
 using Content.Server.Fluids.EntitySystems;
 using Content.Server.Body.Components;
@@ -21,11 +19,14 @@ using Content.Server.Materials;
 using Content.Server.Mind.Components;
 using Content.Shared.Humanoid;
 using Content.Shared.Interaction.Events;
+using Content.Shared.Mobs.Components;
+using Content.Shared.Mobs.Systems;
 using Content.Shared.Popups;
 using Robust.Shared.Random;
 using Robust.Shared.Configuration;
 using Robust.Server.Player;
 using Robust.Shared.Physics.Components;
+using Content.Shared.Humanoid;
 
 namespace Content.Server.Medical.BiomassReclaimer
 {
@@ -256,7 +257,7 @@ namespace Content.Server.Medical.BiomassReclaimer
 
             // Reject souled bodies in easy mode.
             if (_configManager.GetCVar(CCVars.BiomassEasyMode) &&
-                HasComp<HumanoidComponent>(dragged) &&
+                HasComp<HumanoidAppearanceComponent>(dragged) &&
                 TryComp<MindComponent>(dragged, out var mindComp))
             {
                 if (mindComp.Mind?.UserId != null && _playerManager.TryGetSessionById(mindComp.Mind.UserId.Value, out _))
