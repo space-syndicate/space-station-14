@@ -4,12 +4,6 @@
   parent: BaseMobDiona
   id: MobDiona
   components:
-    - type: CombatMode
-      combatToggleAction: # Corvax - Diona pacifist
-        enabled: false
-        autoPopulate: false
-        name: action-name-combat
-      canDisarm: true
     - type: InteractionPopup
       successChance: 1
       interactSuccessString: hugging-success-generic
@@ -28,6 +22,9 @@
           Asphyxiation: -1.0
     - type: MobMover
     - type: InputMover
+    - type: Vocal
+      maleScream: /Audio/Voice/Diona/diona_scream.ogg
+      femaleScream: /Audio/Voice/Diona/diona_scream.ogg
     - type: Alerts
     - type: Eye
     - type: CameraRecoil
@@ -36,4 +33,4 @@
     - type: Faction
       factions:
         - NanoTrasen
-    - type: Pacified # Corvax - Diona pacifist
+    - type: Pacifist # Corvax-DionaPacifist
