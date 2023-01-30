@@ -2,7 +2,7 @@
 - type: emote
   id: Scream
   category: Vocal
-  chatMessages: [кричит, орёт]
+  chatMessages: [кричит, орёт] # Corvax-Localization
   chatTriggers:
     - scream
     - screams
@@ -20,12 +20,14 @@
     - yells
     - yelled
     - yelling
+    # Corvax-Localization-Start
     - крик
     - кричит
     - ор
     - орёт
     - визг
     - визжит
+    # Corvax-Localization-End
 
 - type: emote
   id: Laugh
