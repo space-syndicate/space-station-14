@@ -2,63 +2,69 @@
 - type: emote
   id: Scream
   category: Vocal
-  chatMessages: [screams, yells]
+  chatMessages: [кричит]
   chatTriggers:
-    - scream
-    - screams
-    - screaming
-    - screamed
-    - shriek
-    - shrieks
-    - shrieking
-    - shrieked
-    - screech
-    - screechs
-    - screeching
-    - screeched
-    - yell
-    - yells
-    - yelled
-    - yelling
+    - кричит
+    - вскрикивает
+    - орёт
+    - вопит
+    - визжит
+    - голосит
+    - кричат
+    - истошно орёт
+    - издаёт вопль
+    - вскричал
+    - вскричала
+    - закричал
+    - закричала
+    - завопил
+    - завопила
+    - завизжал
+    - завизжала
+    - вскрикнул
+    - вскрикнула
+    - взвизгнул
+    - взвизгнула
 
 - type: emote
   id: Laugh
   category: Vocal
-  chatMessages: [laughs]
+  chatMessages: [смеётся]
   chatTriggers:
-    - laugh
-    - laughs
-    - laughing
-    - laughed
-    - chuckle
-    - chuckles
-    - chuckled
-    - chuckling
-    - giggle
-    - giggles
-    - giggling
-    - giggled
+    - смеётся
+    - хохочет
+    - хихикает
+    - угарает
+    - угорает
+    - засмеялся
+    - засмеялась
+    - умирает от смеха
+    - посмеивается
+    - усмехается
+    - заливается
+    - гогочет
+    - давит лыбу
 
 # hand emotes
 - type: emote
   id: Clap
   category: Hands
-  chatMessages: [claps]
+  chatMessages: [аплодирует]
   chatTriggers:
-    - clap
-    - claps
-    - clapping
-    - clapped
+    - хлопает
+    - хлопает в ладоши
+    - рукоплещет
+    - аплодирует
 
 - type: emote
   id: Snap
   category: Hands
-  chatMessages: [snaps fingers]
+  chatMessages: [щёлкает пальцами]
   chatTriggers:
-    - snap
-    - snaps
-    - snapping
-    - snapped
+    - щёлкает
+    - щёлкает пальцами
+    - щёлкают пальцами
+    - щёлкают
     - snap fingers
     - snaps fingers
     - snapping fingers
