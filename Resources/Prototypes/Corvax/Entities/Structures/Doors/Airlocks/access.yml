@@ -1,0 +1,15 @@
+  - type: entity
+  parent: Airlock
+  id: AirlockSyndicateLocked
+  suffix: Syndicate, Locked
+  components:
+  - type: AccessReader
+    access: [["NuclearOperative"]]
+
+  - type: entity
+  parent: Airlock
+  id: AirlockSyndicateExternal
+  suffix: Syndicate
+  components:
+  - type: AccessReader
+    access: [["External"]]
