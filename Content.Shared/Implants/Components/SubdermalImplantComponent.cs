@@ -24,6 +24,12 @@ public sealed class SubdermalImplantComponent : Component
     public EntityUid? ImplantedEntity;
 
     /// <summary>
+    /// The entity that applied this implant
+    /// </summary>
+    [ViewVariables(VVAccess.ReadWrite)]
+    public EntityUid? ImplantedBy;
+
+    /// <summary>
     /// Should this implant be removeable?
     /// </summary>
     [ViewVariables(VVAccess.ReadWrite)]
