@@ -110,7 +110,7 @@
       state: tail3
 
 - type: marking
-  id: ASDVulpkaninear
+  id: ADTVulpkaninear
   name: ear
   bodyPart: Head
   markingCategory: Head
@@ -120,7 +120,7 @@
       state: ear
 
 - type: marking
-  id: ASDVulpkaninmuzzle
+  id: ADTVulpkaninmuzzle
   name: muzzle
   bodyPart: Head
   markingCategory: Head
@@ -130,7 +130,7 @@
       state: muzzle
 
 - type: marking
-  id: ASDVulpkaninmuzzleear
+  id: ADTVulpkaninmuzzleear
   name: muzzleear
   bodyPart: Head
   markingCategory: Head
@@ -140,7 +140,7 @@
       state: muzzle_ear
 
 - type: marking
-  id: ASDVulpkaninnose
+  id: ADTVulpkaninnose
   name: nose
   bodyPart: Head
   markingCategory: Head
@@ -150,7 +150,7 @@
       state: nose
 
 - type: marking
-  id: ASDVulpkaninpoints_fade
+  id: ADTVulpkaninpoints_fade
   name: points_fade
   bodyPart: Head
   markingCategory: Head
@@ -160,7 +160,7 @@
       state: points_fade
 
 - type: marking
-  id: ASDVulpkaninpoints_sharp
+  id: ADTVulpkaninpoints_sharp
   name: points_sharp
   bodyPart: Head
   markingCategory: Head
@@ -170,7 +170,7 @@
       state: points_sharp
 
 - type: marking
-  id: ASDVulpkaninskull_sponsor
+  id: ADTVulpkaninskull_sponsor
   name: skull_sponsor
   bodyPart: Head
   markingCategory: Head
@@ -181,7 +181,7 @@
       state: skull_sponsor
 
 - type: marking
-  id: ASDVulpkanintiger_face
+  id: ADTVulpkanintiger_face
   name: tiger_face
   bodyPart: Head
   markingCategory: Head
@@ -191,7 +191,7 @@
       state: tiger_face
 
 - type: marking
-  id: ASDVulpkanintiger_head
+  id: ADTVulpkanintiger_head
   name: tiger_head
   bodyPart: Head
   markingCategory: Head
