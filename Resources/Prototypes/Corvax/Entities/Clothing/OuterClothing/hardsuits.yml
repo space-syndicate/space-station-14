@@ -1,6 +1,6 @@
 - type: entity
   parent: ClothingOuterHardsuitBase
-  id: ClothingOuterHardsuitCBURNLeaderCorvax
+  id: ClothingOuterHardsuitCBURNLeader
   name: CBURN commander exosuit
   description: A lightweight yet strong exosuit used for special cleanup operations.
   components:
@@ -29,4 +29,4 @@
   - type: ExplosionResistance
     damageCoefficient: 0.7
   - type: ToggleableClothing
-    clothingPrototype: ClothingHeadHelmetCBURNLeaderCorvax
+    clothingPrototype: ClothingHeadHelmetCBURNLeader
