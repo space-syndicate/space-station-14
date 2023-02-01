@@ -1,4 +1,5 @@
 ﻿using Content.Server.Cuffs.Components;
+using Content.Server.Popups;
 using Content.Shared.Implants;
 using Content.Shared.Implants.Components;
 using Content.Shared.Interaction.Events;
@@ -10,12 +11,13 @@ namespace Content.Server.Implants;
 public sealed class SubdermalImplantSystem : SharedSubdermalImplantSystem
 {
     [Dependency] private readonly SharedContainerSystem _container = default!;
-
+    [Dependency] private readonly PopupSystem _popupSystem = default!;
     public override void Initialize()
     {
         base.Initialize();
 
         SubscribeLocalEvent<SubdermalImplantComponent, UseFreedomImplantEvent>(OnFreedomImplant);
+        SubscribeLocalEvent<SubdermalImplantComponent, CheckMindMasterImplantEvent>(OnImplantCheck);
 
         SubscribeLocalEvent<ImplantedComponent, MobStateChangedEvent>(RelayToImplantEvent);
         SubscribeLocalEvent<ImplantedComponent, SuicideEvent>(RelayToImplantEvent);
@@ -30,6 +32,12 @@ public sealed class SubdermalImplantSystem : SharedSubdermalImplantSystem
         {
             cuffs.Uncuff(component.ImplantedEntity.Value, cuffs.LastAddedCuffs, cuff, true);
         }
+    }
+
+    private void OnImplantCheck(EntityUid uid, SubdermalImplantComponent component, CheckMindMasterImplantEvent args)
+    {
+        var player = component.ImplantedEntity == null ? default(EntityUid) : component.ImplantedEntity.Value;
+        _popupSystem.PopupEntity("Your master is " + Name(component.ImplantedBy), player, player);
     }
 
     #region Relays

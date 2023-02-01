@@ -27,7 +27,7 @@ public sealed class SubdermalImplantComponent : Component
     /// The entity that applied this implant
     /// </summary>
     [ViewVariables(VVAccess.ReadWrite)]
-    public EntityUid? ImplantedBy;
+    public EntityUid ImplantedBy;
 
     /// <summary>
     /// Should this implant be removeable?
@@ -46,6 +46,14 @@ public sealed class OpenStorageImplantEvent : InstantActionEvent
 }
 
 public sealed class UseFreedomImplantEvent : InstantActionEvent
+{
+
+}
+
+/// <summary>
+/// Used for finding out who's your master via action
+/// </summary>
+public sealed class CheckMindMasterImplantEvent : InstantActionEvent
 {
 
 }
