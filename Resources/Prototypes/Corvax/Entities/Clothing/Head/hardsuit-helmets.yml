@@ -1,8 +1,8 @@
 - type: entity
   parent: ClothingHeadHardsuitWithLightBase
-  id: ClothingHeadHelmetCBURNLeaderCorvax
+  id: ClothingHeadHelmetCBURNLeader
   noSpawn: true
-  name: cburn commander helmet #почему в оригинале он назывался как синдикатовский шлем :thinking:
+  name: cburn commander helmet
   description: A pressure resistant and fireproof hood worn by special cleanup units.
   components:
   - type: Sprite
