@@ -55,3 +55,15 @@
     state: ears_slime_torn_outer
   - sprite: Corvax/Mobs/Customization/slime_cat_parts.rsi
     state: ears_slime_torn_inner
+
+- type: marking
+  id: SlimeCatTailStripes
+  bodyPart: Tail
+  markingCategory: Tail
+  speciesRestriction: [SlimePerson]
+  sponsorOnly: true # Corvax-Sponsors
+  sprites:
+    - sprite: Corvax/Mobs/Customization/slime_cat_parts.rsi
+      state: slime_tail_cat_wag_stripes_prime
+    - sprite: Corvax/Mobs/Customization/slime_cat_parts.rsi
+      state: slime_tail_cat_wag_stripes_second
