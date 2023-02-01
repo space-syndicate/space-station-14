@@ -1,3 +1,3 @@
-ent-ClothingBackpackDuffelMilitary = army duffel bag
-    .desc = A large duffel bag for holding any army goods.
+ent-ClothingBackpackDuffelMilitary = армейский вещмешок
+    .desc = Большой вещмешок для хранения любого армейского снаряжения.
     .suffix = { "" }
