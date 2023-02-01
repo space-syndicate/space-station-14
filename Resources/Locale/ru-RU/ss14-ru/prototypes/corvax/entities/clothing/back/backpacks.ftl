@@ -1,3 +1,3 @@
-ent-ClothingMilitaryBackpack = army backpack
-    .desc = A spacious backpack with lots of pockets, worn by military structures.
+ent-ClothingMilitaryBackpack = армейский рюкзак
+    .desc = Вместительный рюкзак с множеством карманов, который носят военные структуры.
     .suffix = { "" }
