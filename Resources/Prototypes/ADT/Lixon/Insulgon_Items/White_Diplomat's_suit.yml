@@ -1,0 +1,10 @@
+- type: entity
+  parent: ClothingUniformBase
+  id: ADTClothingUniformsJumpsuitWhiteDiplomatSuitL
+  name: White diplomat suit
+  description: Exquisite white suit worn by NanoTrasen diplomats.
+  components:
+  - type: Sprite
+    sprite: ADT/Clothing/Uniforms/Jumpsuit/white-diplomat-suit.rsi
+  - type: Clothing
+    sprite: ADT/Clothing/Uniforms/Jumpsuit/white-diplomat-suit.rsi

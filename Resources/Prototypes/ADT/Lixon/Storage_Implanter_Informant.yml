@@ -1,0 +1,30 @@
+- type: entity
+  id: ADTStorageImplanterInformant
+  name: storage implanter informant
+  description: a single use implanter, the implant grants hidden storage
+  parent: BaseImplantOnlyImplanter
+  components:
+    - type: Implanter
+      implant: ADTStorageImplant
+
+- type: entity
+  parent: BaseSubdermalImplant
+  id: ADTStorageImplant
+  name: storage implant
+  description: made with bluespace technology, allows the user to fit a few items in hidden storage
+  noSpawn: true
+  components:
+    - type: SubdermalImplant
+      implantAction: OpenStorageImplant
+    - type: Item
+      size: 9999
+    - type: Storage
+      capacity: 9999 #10-20 should be more than enough for this
+    - type: ContainerContainer
+      containers:
+        storagebase: !type:Container
+          ents: [ ]
+    - type: UserInterface
+      interfaces:
+        - key: enum.StorageUiKey.Key
+          type: StorageBoundUserInterface
