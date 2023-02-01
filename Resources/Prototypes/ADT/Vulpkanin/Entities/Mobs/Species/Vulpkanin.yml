@@ -5,7 +5,7 @@
   id: BaseMobVulpkanin
   abstract: true
   components:
-    - type: Humanoid
+    - type: HumanoidAppearance
       species: VulpkaninSpecies
     - type: Body
       prototype: VulpkaninBody
@@ -52,6 +52,6 @@
   noSpawn: true
   description: A dummy vulpkanin meant to be used in character setup.
   components:
-    - type: Humanoid
+    - type: HumanoidAppearance
       species: Vulpkanin
 
