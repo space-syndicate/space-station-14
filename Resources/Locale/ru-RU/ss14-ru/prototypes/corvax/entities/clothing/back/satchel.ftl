@@ -1,3 +1,3 @@
-ent-ClothingBackpackMilitarySatchel = army satchel
-    .desc = A tactical satchel for army related needs.
+ent-ClothingBackpackMilitarySatchel = армейский ранец
+    .desc = Тактический ранец для армейских нужд.
     .suffix = { "" }
