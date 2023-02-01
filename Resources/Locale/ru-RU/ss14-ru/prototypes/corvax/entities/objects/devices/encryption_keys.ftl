@@ -1,3 +1,3 @@
-ent-EncryptionKeyIAA = iaa encryption key
-    .desc = An encryption key used by the most meticulous person.
+ent-EncryptionKeyIAA = ключ шифрования агента внутренних дел
+    .desc = Ключ шифрования, используемый самой дотошной персоной.
     .suffix = { "" }
