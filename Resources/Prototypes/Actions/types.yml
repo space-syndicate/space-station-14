@@ -56,6 +56,17 @@
   event: !type:UseFreedomImplantEvent
 
 - type: instantAction
+  id: CheckMindMasterImplant
+  name: Who's your Master?
+  description: displays your master's name
+  checkCanInteract: false
+  itemIconStyle: BigAction
+  icon:
+    sprite: Mobs/Species/Human/organs.rsi
+    state: brain
+  event: !type:CheckMindMasterImplantEvent
+
+- type: instantAction
   id: ToggleSuitHelmet
   name: action-name-hardsuit
   description: action-description-hardsuit

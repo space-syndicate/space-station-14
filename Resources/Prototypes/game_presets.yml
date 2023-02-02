@@ -53,6 +53,17 @@
     - BasicStationEventScheduler
 
 - type: gamePreset
+  id: Crewmates
+  alias:
+    - crewmates
+  name: crewmates-title
+  description: crewmates-description
+  showInVote: true
+  rules:
+    - Crewmates
+    - BasicStationEventScheduler
+
+- type: gamePreset
   id: Suspicion
   alias:
     - suspicion

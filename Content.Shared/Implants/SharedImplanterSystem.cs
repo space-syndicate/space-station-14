@@ -40,7 +40,7 @@ public abstract class SharedImplanterSystem : EntitySystem
 
     //Instantly implant something and add all necessary components and containers.
     //Set to draw mode if not implant only
-    public void Implant(EntityUid implanter, EntityUid target, ImplanterComponent component)
+    public void Implant(EntityUid implanter, EntityUid target, EntityUid instigator, ImplanterComponent component)
     {
         var implanterContainer = component.ImplanterSlot.ContainerSlot;
 
@@ -57,6 +57,7 @@ public abstract class SharedImplanterSystem : EntitySystem
         var implantContainer = implantedComp.ImplantContainer;
 
         implanterContainer.Remove(implant);
+        implantComp.ImplantedBy = instigator;
         implantComp.ImplantedEntity = target;
         implantContainer.OccludesLight = false;
         implantContainer.Insert(implant);

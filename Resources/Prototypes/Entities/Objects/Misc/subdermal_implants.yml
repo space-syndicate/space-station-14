@@ -112,6 +112,15 @@
     - type: SubdermalImplant
       implantAction: ActivateFreedomImplant
 
+- type: entity
+  id: MindControlImplant
+  name: mind control Implant
+  description: Chip that allows to take control of ones mind
+  noSpawn: true
+  components:
+    - type: SubdermalImplant
+      implantAction: CheckMindMasterImplant
+
 #Nuclear Operative/Special Exclusive implants
 
 - type: entity
