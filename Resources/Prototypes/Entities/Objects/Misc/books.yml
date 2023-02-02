@@ -69,21 +69,21 @@
           Blunt: 6
     - type: Paper
       content: |
-        When it comes to getting robusted, it's all about strategy. Do it right and you'll be the envy of the station. Do it wrong and the gods themselves may turn against you. Personally, I always aim for the former...
+        Когда дело доходит до робаста, все зависит от стратегии. Делайте это правильно, и вам будет завидовать вся станция. Сделай это неправильно, и сами боги могут обернуться против вас. Лично я всегда стремлюсь к первому...
 
-        First things first: let the insults fly! This is your chance to really let your opponent know what you think of their ridiculously large shoes and that annoying bike horn.
+        Перво-наперво: отпустите оскорбления! Это ваш шанс действительно дать понять вашему оппоненту, что вы думаете о его смехотворно больших ботинках и этом раздражающем велосипедном гудке.
 
-        No conflict is complete without a little bit of physicality. Give your opponent a good shove or two, and if you're lucky, they'll stumble and fall, providing even more opportunities for insults.
+        Ни один конфликт не является полным без небольшой физической составляющей. Дайте своему оппоненту один-два хороших пинка, и, если вам повезет, он споткнется и упадет, предоставляя еще больше возможностей для оскорблений.
 
-        But beware, because by now your opponent is probably trying to kill you. So, try to calm things down a bit. It'll make you look good during the inevitable homicide investigation.
+        Но будьте осторожны, потому что сейчас ваш противник, вероятно, пытается убить вас. Так что постарайся немного успокоиться. Это заставит вас хорошо выглядеть во время неизбежного расследования убийства.
 
-        If deescalation doesn't work, it's time to grab a weapon. But be smart about it - choose something that looks like it couldn't possibly be deadly, like this book.
+        Если деэскалация не сработает, самое время браться за оружие. Но отнеситесь к этому с умом - выберите что-нибудь, что выглядит так, будто оно не может быть смертельным, как эта книга.
 
-        And if you're both still standing, it's time to pull out the big guns. Find the sharpest thing you can and end things, because everyone's getting kind of tired of this by now.
+        И если вы оба все еще стоите на ногах, пришло время вытащить большие пушки. Найдите самую острую вещь, какую только сможете, и покончите с этим, потому что все уже немного устали от этого.
 
-        Now parade your vanquished opponent through the halls to the medbay so that everyone knows just how robust you really are.
+        Теперь проведите своего поверженного противника по коридорам в медотсек, чтобы все знали, насколько вы на самом деле сильны.
 
-        Remember, it's all about conserving energy. Let your opponent do some of the escalation for you - it's a win-win!
+        Помните, что все дело в экономии энергии. Позвольте вашему оппоненту сделать часть эскалации за вас - это беспроигрышный вариант!
 
 - type: entity
   parent: BookBase
@@ -101,17 +101,17 @@
           Blunt: 6
     - type: Paper
       content: |
-        Get it right and you'll have the whole station calling you shitsec. Get it wrong and you'll face harmbatoning from the gods. Personally, I always aim for the former...
+        Сделай это правильно, и вся станция будет называть тебя дерьмохранником. Сделай это неправильно, и ты столкнешься с наказанием богов. Лично я всегда стремлюсь к первому...
 
-        They say the pen is mightier than the sword, but you don't have a sword, you have a stun baton, and as soon as you start writing, any suspect is going to leave.
+        Говорят, перо сильнее меча, но у вас нет меча, у вас есть электрошоковая дубинка, и как только вы начнете писать, любой подозреваемый уйдет.
 
-        So, try starting your confrontations with words. It probably won't get you called shitsec, but it's also not likely to be very effective against someone with lethal intent.
+        Итак, попробуйте начать свои конфронтации со слов. Это, вероятно, не приведет к тому, что вас назовут дерьмохранником, но также вряд ли будет очень эффективно против кого-то со смертельным исходом.
 
-        Your next move should be to use non-lethal or less lethal devices, like stun batons, disablers, flashes, and flashbangs. Just make sure you get some training on these before trying to use them - offering them to a suspect in exchange for their cooperation is not an effective use of these tools.
+        Вашим следующим шагом должно быть использование несмертельных или менее смертоносных устройств, таких как электрошоковые дубинки, выключатели, вспышки и светошумовые гранаты. Просто убедитесь, что вы прошли некоторое обучение по этим инструментам, прежде чем пытаться их использовать - предлагать их подозреваемому в обмен на его сотрудничество не является эффективным использованием этих инструментов.
 
-        If you're lucky enough to run into a suspect who is a lethal threat, it's time to bust out all the goodies you've been hoarding from the armory.
+        Если вам посчастливилось столкнуться с подозреваемым, представляющим смертельную угрозу, самое время вытащить все припасенные вами лакомства из арсенала.
 
-        For an extra intimidation factor, take your robusted suspects to the medbay to be healed instead of the brig. That way, the whole crew can see just how robust you are.
+        Для дополнительного фактора устрашения отведите своих подозреваемых в робасте в медотсек на лечение вместо брига. Таким образом, весь экипаж сможет увидеть, насколько вы робастны.
 
 - type: entity
   parent: BookBase
@@ -125,23 +125,23 @@
         - state: book5
     - type: Paper
       content: |
-        The distribution network, or "distro" for short, is the station's lifeline. It's responsible for transporting air from atmospherics throughout the station.
+        Распределительная сеть, или сокращенно "дистрибутив", является спасательным кругом станции. Он отвечает за транспортировку воздуха из атмосферы по всей станции.
 
-        Relevant pipes are often painted Popping Subdued Blue, but a surefire way to identify them is to use a tray scanner to trace which pipes are connected to active vents on the station.
+        Соответствующие трубы часто окрашены в приглушенный синий цвет, но верный способ идентифицировать их - использовать т-лучевой сканер, чтобы отследить, какие трубы подключены к активным вентиляционным отверстиям на станции.
 
-        The standard gas mix of the distribution network is 20 degrees celsius, 78% nitrogen, 22% oxygen. You can check this by using a gas analyzer on a distro pipe or any vent connected to it. Special circumstances may call for special mixes.
+        Стандартная газовая смесь распределительной сети составляет 20 градусов Цельсия, 78% азота, 22% кислорода. Вы можете проверить это с помощью газоанализатора на распределительной трубе или любом вентиляционном отверстии, подключенном к ней. Особые обстоятельства могут потребовать специальных смесей.
 
-        When it comes to deciding on a distro pressure, there are a few things to consider. Active vents will regulate the station's pressure, so as long as everything is functioning properly, there's no such thing as too high of a distro pressure.
+        Когда дело доходит до выбора дистрибутива, есть несколько вещей, которые следует учитывать. Активные вентиляционные отверстия будут регулировать давление на станции, поэтому, пока все функционирует должным образом, не существует такой вещи, как слишком высокое давление в распределительном устройстве.
 
-        A higher distro pressure will allow the distro network to act as a buffer between the gas miners and vents, providing a significant amount of extra air that can be used to re-pressurize the station after a spacing.
+        Более высокое давление в распределительной сети позволит распределительной сети действовать как буфер между газодобытчиками и вентиляционными отверстиями, обеспечивая значительное количество дополнительного воздуха, который может быть использован для повторного повышения давления на станции после перерыва.
 
-        A lower distro pressure will reduce the amount of gas lost in the event that the distro is spaced, a quick way to deal with distro contamination. It can also help slow or prevent over-pressurization of the station in the event of vent issues.
+        Более низкое давление в дистрибутиве уменьшит количество газа, теряемого в случае разнесения дистрибутива, что является быстрым способом борьбы с загрязнением дистрибутива. Это также может помочь замедлить или предотвратить избыточное давление в станции в случае проблем с вентиляцией.
 
-        Common distro pressures are in the range of 300-375 kPa, but other pressures can be used with knowledge of the risks and benefits.
+        Обычное давление в распределительном устройстве находится в диапазоне 300-375 кПа, но при знании рисков и преимуществ можно использовать и другие давления.
 
-        The pressure of the network is determined by the last pump pumping into it. To prevent bottlenecks, all other pumps between the miners and the last pump should be set to their maximum rate, and any unnecessary devices should be removed.
+        Давление в сети определяется последним закачивающим насосом. Чтобы предотвратить узкие места, все остальные насосы между газодобытчиками и последним насосом должны быть настроены на максимальную скорость, а все ненужные устройства должны быть удалены.
 
-        You can validate the distro pressure with a gas analyzer, but keep in mind that high demand due to things like spacings can cause the distro to be below the set target pressure for extended periods. So, if you see a dip in pressure, don't panic - it might be temporary.
+        Вы можете проверить давление в распределителе с помощью газоанализатора, но имейте в виду, что высокий спрос из-за таких факторов, как расстояния, может привести к тому, что давление в распределителе будет ниже установленного целевого значения в течение длительного времени. Так что, если вы видите падение давления, не паникуйте - это может быть временным.
 
 - type: entity
   parent: BookBase
@@ -155,15 +155,15 @@
         - state: book5
     - type: Paper
       content: |
-        The waste network is the primary system responsible for keeping the air on the station free of contaminants.
+        Система очистки отходов является основной системой, ответственной за очистку воздуха на станции от загрязняющих веществ.
 
-        You can identify the relevant pipes by their Pleasing Dull Red color or by using a tray scanner to trace which pipes are connected to the scrubbers on the station.
+        Вы можете идентифицировать соответствующие трубы по их приятному тускло-красному цвету или с помощью т-лучевого сканера отследить, какие трубы подключены к скрубберам на станции.
 
-        The waste network is used to transport waste gasses to either be filtered or spaced. It is ideal to keep the pressure at 0 kPa, but it may sometimes be at a low non-zero pressure while in use.
+        Мусорная сеть используется для транспортировки отработанных газов либо для фильтрации, либо для разнесения. Идеально поддерживать давление на уровне 0 кПа, но иногда во время использования оно может быть низким, отличным от нуля.
 
-        Technicians have the option to filter or space the waste gasses. While spacing is faster, filtering allows for the gasses to be reused for recycling or selling.
+        Технические специалисты имеют возможность фильтровать или размещать отработанные газы в пространстве. В то время как разделение происходит быстрее, фильтрация позволяет повторно использовать газы для переработки или продажи.
 
-        The waste network can also be used to diagnose atmospheric issues on the station. High levels of a waste gas may suggest a large leak, while the presence of non-waste gases may indicate a scrubber configuration or physical connection issue. If the gases are at a high temperature, it could indicate a fire.
+        Сеть сбора отходов также может быть использована для диагностики атмосферных проблем на станции. Высокие уровни отходящего газа могут свидетельствовать о большой утечке, в то время как наличие не отходящих газов может указывать на конфигурацию скруббера или проблему с физическим подключением. Если газы имеют высокую температуру, это может указывать на пожар.
 
 - type: entity
   parent: BookBase
@@ -177,17 +177,17 @@
         - state: book5
     - type: Paper
       content: |
-        Air alarms are located throughout stations to allow management and monitoring of the local atmosphere.
+        Воздушная сигнализация расположена по всем станциям, чтобы обеспечить управление и мониторинг местной атмосферы.
 
-        The air alarm interface provides technicians with a list of connected sensors, their readings, and the ability to adjust thresholds. These thresholds are used to determine the alarm condition of the air alarm. Technicians can also use the interface to set target pressures for vents and configure the operating speeds and targeted gases for scrubbers.
+        Интерфейс воздушной сигнализации предоставляет специалистам список подключенных датчиков, их показания и возможность настройки пороговых значений. Эти пороговые значения используются для определения аварийного состояния воздушной сигнализации. Технические специалисты также могут использовать интерфейс для установки целевого давления для вентиляционных отверстий и настройки рабочих скоростей и целевых газов для скрубберов.
 
-        While the interface allows for fine-tuning of the devices under the air alarm's control, there are also several modes available for rapid configuration of the alarm. These modes are automatically switched to when the alarm state changes:
-        - Filtering: The default mode
-        - Filtering (wide): A filtering mode that modifies the operation of scrubbers to scrub a wider area
-        - Fill: Disables scrubbers and sets vents to their maximum pressure
-        - Panic: Disables vents and sets scrubbers to siphon
+        В то время как интерфейс позволяет точно настраивать устройства, находящиеся под управлением воздушной сигнализации, также доступно несколько режимов для быстрой настройки сигнализации. Эти режимы автоматически переключаются при изменении состояния тревоги:
+        - Фильтрация: режим по умолчанию
+        - Фильтрация (широкая): Режим фильтрации, который изменяет работу скрубберов для очистки более широкой области
+        - Заполнение: отключает скрубберы и устанавливает максимальное давление в вентиляционных отверстиях.
+        - Паника: отключает вентиляционные отверстия и настраивает скрубберы на сифон.
 
-        A multitool can be used to link devices to air alarms.
+        Мультитул можно использовать для подключения устройств к воздушной сигнализации.
 
 - type: entity
   parent: BookBase
@@ -201,16 +201,16 @@
         - state: book5
     - type: Paper
       content: |
-        Below is a quick reference guide to several atmospheric devices:
+        Ниже приведено краткое справочное руководство по нескольким атмосферным устройствам:
 
-        Passive Vents:
-        These vents don't require power, they allow gases to flow freely both into and out of the pipe network they are attached to.
+        Пассивные вентиляционные отверстия:
+        Эти вентиляционные отверстия не требуют питания, они позволяют газам свободно поступать как в трубопроводную сеть, к которой они присоединены, так и из нее.
 
-        Active Vents:
-        These are the most common vents on the station. They have an internal pump, and require power. By default, they will only pump gases out of pipes, and only up to 101 kpa. However, they can be reconfigured using an air alarm. They will also lock out if the room is under 1 kpa, to prevent pumping gasses into space.
+        Активные вентиляционные отверстия:
+        Это наиболее распространенные вентиляционные отверстия на станции. Они имеют внутренний насос и требуют питания. По умолчанию они будут откачивать газы только из труб и только до 101 кпа. Однако их можно перенастроить с помощью воздушной сигнализации. Они также блокируются, если давление в помещении ниже 1 кПа, чтобы предотвратить выброс газов в космос.
 
-        Air Scrubbers:
-        These devices allow gases to be removed from the environment and put into the connected pipe network. They can be configured to select specific gases when connected to an air alarm.
+        Скрубберы:
+        Эти устройства позволяют удалять газы из окружающей среды и направлять их в подключенную трубопроводную сеть. Они могут быть сконфигурированы для выбора определенных газов при подключении к воздушной сигнализации.
 
-        Air Injectors:
-        Injectors are similar to active vents, but they have no internal pump and do not require power. They cannot be configured, but they can continue to pump gasses up to much higher pressures.
+        Воздушные инжекторы:
+        Форсунки похожи на активные вентиляционные отверстия, но они не имеют внутреннего насоса и не требуют питания. Они не могут быть сконфигурированы, но они могут продолжать перекачивать газы до гораздо более высоких давлений.
