@@ -26,6 +26,7 @@
     contents:
       - id: BoxSurvivalSecurity
       - id: Flash
+      - id: BookCorpLaw
 
 - type: entity
   noSpawn: true
@@ -44,6 +45,7 @@
   - type: StorageFill
     contents:
       - id: BoxSurvival
+      - id: BookCorpLaw
       #- name: StationCharter
       #- name: TelescopicBaton
 
@@ -137,6 +139,7 @@
       - id: CigPackBlack
       - id: BoxForensicPad
       - id: HandLabeler
+      - id: BookCorpLaw
 
 - type: entity
   noSpawn: true
