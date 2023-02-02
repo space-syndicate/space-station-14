@@ -32,10 +32,10 @@
   components:
   - type: Paper
     content: |
-      How To Summon a Demon
-      - by J.G. Wizgerald
+      Как призвать демона
+      - Дж.Дж. Уизджеральд
 
-      1. todo finish writing demon summoning guide
+      1. задача: закончить написание руководства по призыву демона
 
 - type: entity
   parent: BookDemonomicon
@@ -44,11 +44,11 @@
   components:
   - type: Paper
     content: |
-      How To Summon a Lemon
-      - by J.G. Wizgerald
+      Как призвать лимон
+      - Дж.Дж. Уизджеральд
 
-      1. todo finish writing lemon summoning guide
-      2. WAit. Typo. Oh shit. Sorry guys
+      1. задача: закончить написание руководства по призыву лимона
+      2. ПОгодите. Опечатка. О черт. Извините, ребята
 
 - type: entity
   parent: BookDemonomicon
@@ -57,8 +57,8 @@
   components:
   - type: Paper
     content: |
-      Cool Demon Names I Found
-      - by Ms. Mossrock
+      Классные Имена Демонов, которые я нашел
+      - мисс Моссрок
 
       Abraxas
       Nephilim
@@ -82,24 +82,24 @@
     - state: book_chemistry
   - type: Paper
     content: |
-      IGOR CHEMISTRY GUIDE TO CHEMISTRY
+      ИГОРЬ ХИМИЯ РУКОВОДСТВО ПО ХИМИИ
 
-      TITLE: GUIDE TO CHEMISTRY
+      НАЗВАНИЕ: РУКОВОДСТВО ПО ХИМИИ
 
-      ABSTRACT: GUIDE TO CHEMISTRY
+      АННОТАЦИЯ: РУКОВОДСТВО ПО ХИМИИ
 
-      SECTION: WISE WORDS OF IGOR CHEMISTRY
+      РАЗДЕЛ: МУДРЫЕ СЛОВА ХИМИКА ИГОРЯ
 
-      MY NUMBER ONE TIP. IS TO ALWAYS HAVE FUN. YOU NEVER KNOW WHEN IT'LL ALL END.
-      SO JUST KEEP AT IT!!
+      МОЙ СОВЕТ НОМЕР ОДИН. ЭТО ВСЕГДА ПОЛУЧАТЬ УДОВОЛЬСТВИЕ. ТЫ НИКОГДА НЕ ЗНАЕШЬ, КОГДА ВСЕ ЭТО ЗАКОНЧИТСЯ.
+      ТАК ЧТО ПРОСТО ПРОДОЛЖАЙТЕ В ТОМ ЖЕ ДУХЕ!!
 
-      MY NUMBER TWO TIP. I JUST CAN'T STOP FUCKING GRINDING UP JUMPSUITS. MY "COLLEAGUES" (agents) KEEP YELLING AT ME
-      TO STOP AND THAT 'itll come out of our paychecks' BUT THE STUFF IS SO GOOD. I'M LIKE AN INTERIOR DECORATION GENIUS.
-      SAXOPHONES AND BATTERIES TAKE MY MIND OFF OF IT BUT I'M ALWAYS BACK TO THE JUMPSUITS. HOO WEE.
+      МОЙ СОВЕТ НОМЕР ДВА. Я ПРОСТО НЕ МОГУ ПЕРЕСТАТЬ, БЛЯДЬ, ШЛИФОВАТЬ КОМБИНЕЗОНЫ. МОИ "КОЛЛЕГИ" (агенты) ПРОДОЛЖАЮТ КРИЧАТЬ НА МЕНЯ
+      ОСТАНОВИТЬСЯ И ЧТО "это будет вычтено из наших зарплат", НО МАТЕРИАЛ ТАКОЙ ХОРОШИЙ. Я КАК ГЕНИЙ В ОТДЕЛКЕ ИНТЕРЬЕРА.
+      САКСОФОНЫ И БАТАРЕЙКИ ОТВЛЕКАЮТ МЕНЯ ОТ ЭТОГО, НО Я ВСЕГДА ВОЗВРАЩАЮСЬ К КОМБИНЕЗОНАМ. ХУ ВИ.
 
-      MY NUMBER THREE TIP. THANK YOU FOR READING!! IGOR CHEMISTRY
+      МОЙ СОВЕТ НОМЕР ТРИ. СПАСИБО ВАМ ЗА ЧТЕНИЕ!! ХИМИЯ ИГОРЯ
 
-      CONCLUSION: IGOR CHEMISTRY
+      ЗАКЛЮЧЕНИЕ: ХИМИЯ ИГОРЯ
 
 - type: entity
   name: botanical textbook
@@ -114,22 +114,22 @@
     - state: book_hydroponics_pod_people
   - type: Paper
     content: |
-      ** Applications of Botanical Specimens Found In Nanotrasen Territories **
+      ** Применение ботанических образцов, найденных на территориях НаноТрейсена **
 
-      Many plants, when ground, yield useful chemicals. S. (spessmens) papaver and S. aloe vera
-      are known for their basic healing properties.
+      Многие растения при измельчении выделяют полезные химические вещества. S. (spessmens) papaver и S. aloe vera
+      известны своими основными целебными свойствами.
 
-      S. lucidum, or lingzhi, is known for its potent ability to save those near death from toxins. Eating too much
-      is known to cause adverse effects.
+      S. lucidum, или линчжи, известен своей мощной способностью спасать тех, кто находится на грани смерти, от токсинов. Известно, что чрезмерное употребление
+      в пищу вызывает неблагоприятные последствия.
 
-      S. amanita, a powerfully poisonous specimen (Rest In Peace Sir Alacaster), and S. galactica, a
-      seemingly ordinary antitoxin, appear to have some sort of relation to eachother.
+      S. amanita, сильно ядовитый экземпляр (покойся с миром, сэр Алакастер), и S. galactica,
+      кажущийся обычным антитоксином, по-видимому, имеют какое-то отношение друг к другу.
 
-      Some research is being done on combinations of the medicinal plants discussed, and they may prove fruitful.
+      Проводятся некоторые исследования комбинаций обсуждаемых лекарственных растений, и они могут оказаться плодотворными.
 
       ----
 
-      - penned by James Alacaster and Golzuk Amaranth
+      - написано Джеймсом Алакастер и Гользук Амарант
 
 - type: entity
   parent: BookBase
@@ -144,15 +144,15 @@
     - state: book5
   - type: Paper
     content: |
-      All Hail Our Gnome King
+      Да здравствует наш король гномов
 
-      He who is the grand cartographer who placed our kind into the world of the Island!
+      Тот, кто является великим картографом, который поместил наш вид в мир Острова!
 
-      He who loves those with the largest of Hats!
+      Тот, кто любит тех, у кого самые большие шляпы!
 
-      Struck down by the evildoers who cannot appreciate our kind!
+      Пораженный злодеями, которые не могут оценить наш вид!
 
-      Our revenge will be dealt in full! He will Rise once more! hee Hoo!
+      Наша месть свершится в полной мере! Он воскреснет еще раз! хи-Ху!
 
 - type: entity
   parent: BookBase
@@ -167,15 +167,15 @@
     - state: book_fish
   - type: Paper
     content: |
-      When I grow up, I want to be one of the harvesters of the space sea!
+      Когда я вырасту, я хочу быть одним из сборщиков космического моря!
 
-      I think before my days are done I want to catch the fabled space fish!
+      Я думаю, что до конца своих дней я хочу поймать легендарную космическую рыбу!
 
-      I'm like a little rat sailing the seas of cheese! The bastards come to end me but I am as sly as a cat and as lucky as they come!
+      Я как маленькая крыса, плывущая по морям сыра! Эти ублюдки пришли прикончить меня, но я хитер, как кошка, и так же удачлив, как и они!
 
-      Press the <L BUMPER> and <R TRIGGER> to activate the fishing minigame.
+      Нажмите <L BUMPER> и <R TRIGGER>, чтобы активировать мини-игру "Рыбалка".
 
-      - Sgt. John Baker Aclopoly
+      - Сержант. Джон Бейкер Аклополия
 
 - type: entity
   parent: BookBase
@@ -190,16 +190,16 @@
     - state: book_detective
   - type: Paper
     content: |
-      CHAPTER 1: SMALL ADVENTURES IN A BIG STATION
+      ГЛАВА 1: МАЛЕНЬКИЕ ПРИКЛЮЧЕНИЯ НА БОЛЬШОЙ СТАНЦИИ
 
-      This station is filled with crime and grime...
+      Эта станция наполнена преступностью и грязью...
 
-      I was shooting hoops down on Bagel when I heard a cry and a laser shot. I walked under the table nearby to hide, but there wasn't a second shot.
+      Я играл с баскетбольным мячом на Багеле, когда услышал крик и лазерный выстрел. Я забрался под ближайший стол, чтобы спрятаться, но второго выстрела не последовало.
 
-      Outside, the engineerin chief got blasted by two Syndies hooked up with some fierce contraband. There wasn't enough of him for an open casket funeral.
+      Снаружи Старший инженер был застрелен двумя синдикатами, замешанными в какой-то жестокой контрабанде. Его было недостаточно для похорон в открытом гробу.
 
-      Things always go wild here.. I'll never look at clowns the same.
+      Здесь всегда все идет наперекосяк.. Я никогда не буду смотреть на клоунов по-прежнему.
 
-      The question is.. Who did it?
+      Вопрос в том.. Кто это сделал?
 
 # ---- End Library Salvage Fills ----

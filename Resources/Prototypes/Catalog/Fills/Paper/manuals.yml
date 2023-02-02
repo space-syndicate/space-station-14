@@ -5,16 +5,16 @@
   components:
   - type: Paper
     content: |
-      I don't know if you're trained already, so I hope this'll help.
-      AME controller needs LV power and an HV wire to output to. Check the area with a crowbar if you aren't sure.
-      There should be an empty room next to where you found this, that room's wired for the AME.
-      You can put an AME anywhere if you can get the wires to it, though.
-      3x3 grid of AME parts, multitool them to unpack. Be careful not to 'trap' anything.
-      AME controller adjacent horizontally or vertically (not diagonally) to any point.
-      With only 1 core (what a 3x3 grid will get you), don't turn it up above 2.
-      The golden rule is 2 injection for every 1 core. You can go lower to save fuel.
-      Higher will burn the engine out and eventually make it explode. Don't.
-      Don't forget to refuel it, it tends to stop at the worst possible time.
+      Я не знаю, обучены ли вы уже, поэтому я надеюсь, что это поможет.
+      Контроллеру ДАМ требуется низковольтные провода на вход и высоковольтные провода на выход. Проверьте область с помощью лома, если вы не уверены, что провода подключены.
+      Рядом с тем местом, где вы нашли это, должна быть пустая комната, эта комната оснащена проводами для ДАМ.
+      Однако вы можете поместить ДАМ куда угодно, если сможете подсоединить к нему провода.
+      сетка из деталей 3х3, мультитул для их распаковки. Будьте осторожны, чтобы ничего не "заманить в ловушку".
+      Контроллер ДАМ, примыкающий по горизонтали или вертикали (не по диагонали) к любой точке.
+      Имея только 1 ядро (что даст вам сетка 3x3), не увеличивайте его выше 2.
+      Золотое правило - 2 впрыска на каждое 1 ядро. Вы можете снизить впрыск, чтобы сэкономить топливо.
+      Более высокий уровень впрыска приведет к перегреву двигателя и в конечном итоге к его взрыву. Не стоит.
+      Не забывайте заправлять его, он имеет тенденцию останавливаться в самый неподходящий момент.
 
 - type: entity
   parent: BaseItem
@@ -34,16 +34,14 @@
       type: PaperBoundUserInterface
   - type: Paper
     content: |
-      Thanks for choosing our holoparasite package!
-      At cybersun, we pride ourselves on cutting-edge military and industrial technology, and greatly appreciate your contribution to our establishment!
-      Guardians are helpful and intelligent beings which nest within your body, completely immune to common hazards such as pressure, temperature and even bullets!
-      You have purchased the holoparasite package, which contains a holoparasite activator, an instruction booklet, and our softcap merchandise.
-      Instructions for use:
-      1. Activate the holoparasite injector (preferably in a secluded area).
-      2. Wait for the tingling and/or painful metaphysical sensation.
-      3. Check your holoparasite for the ability to communicate and cooperate, and capacity to understand your orders.
-      4. Use your recall-manifest ability to summon or recall the holoparasite back into your body.
-      5. Keep the holoparasite within a short distance from yourself, otherwise it will be recalled by force!
-      WARNING: Guardians are metaphysical beings, but draw from your HEALTH in order to exist. Direct damage done to guardians will be partially transferred to you!
-      Cybersun inc. is not responsible for complete annihilation following the misuse of Holoparasite technology.
+      Спасибо, что выбрали наш пакет с голопаразитами!
+      В Cybersun мы гордимся передовыми военными и промышленными технологиями и высоко ценим ваш вклад в наше учреждение!
+      Стражи - это полезные и разумные существа, которые гнездятся в вашем теле, полностью невосприимчивые к обычным опасностям, таким как давление, температура и даже пули!
+      Вы приобрели коробку с голопаразитом, которая содержит инъектор голопаразита, буклет с инструкцией и наш мерч.
+      Инструкция по применению:
+      1. Активируйте инъектор голопаразита (предпочтительно в уединенном месте).
+      2. Дождитесь покалывания и/или болезненного метафизического ощущения.
+      3. Проверьте своего голопаразита на способность общаться и сотрудничать, а также на способность понимать ваши приказы.
+      4. Используйте свою новую способность, чтобы вызвать или отозвать голопаразита обратно в свое тело.
+      5. Держите голопаразита на небольшом расстоянии от себя, иначе он будет отозван.
 
