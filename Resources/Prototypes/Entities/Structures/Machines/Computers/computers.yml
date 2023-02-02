@@ -501,6 +501,10 @@
     access: [[ "Command" ]]
   - type: CommunicationsConsole
     title: comms-console-announcement-title-station
+    sound: # Corvax-Announcements
+      path: /Audio/Corvax/Announcements/announce.ogg
+      params:
+        volume: -4
   - type: ActivatableUI
     key: enum.CommunicationsConsoleUiKey.Key
   - type: UserInterface
@@ -513,6 +517,9 @@
     radius: 1.5
     energy: 1.6
     color: "#3c5eb5"
+  - type: Damageable
+    damageContainer: Inorganic
+    damageModifierSet: StrongMetallic
 
 - type: entity
   parent: ComputerComms
@@ -713,6 +720,9 @@
         type: CloningConsoleBoundUserInterface
   - type: Speech
     speechSounds: Pai
+  - type: Damageable
+    damageContainer: Inorganic
+    damageModifierSet: StrongMetallic
 
 - type: entity
   parent: BaseComputer
