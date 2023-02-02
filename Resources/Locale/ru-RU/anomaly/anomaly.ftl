@@ -11,7 +11,7 @@ anomaly-scanner-ui-title = сканер аномалий
 anomaly-scanner-no-anomaly = Нет просканированной аномалии.
 anomaly-scanner-severity-percentage = Текущая серьёзность: [color=gray]{ $percent }[/color]
 anomaly-scanner-stability-low = Текущее состояние аномалии: [color=gold]Распад[/color]
-anomaly-scanner-stability-medium = Текущее состояние аномалии: [color=forestgreen]Стабильность[/color]
+anomaly-scanner-stability-medium = Текущее состояние аномалии: [color=forestgreen]Стабильное[/color]
 anomaly-scanner-stability-high = Текущее состояние аномалии: [color=crimson]Рост[/color]
 anomaly-scanner-point-output = Пассивная генерация очков: [color=gray]{ $point }[/color]
 anomaly-scanner-particle-readout = Анализ реакции на частицы:
