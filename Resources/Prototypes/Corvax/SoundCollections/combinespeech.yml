@@ -1,8 +1,8 @@
 - type: speechSounds
-  id: Сombine
+  id: Combine
   saySound:
-    path: /Audio/Corvax/Effects/off2.ogg
+    path: Audio/Corvax/Effects/Footsteps/off2.ogg
   askSound:
-    path: /Audio/Corvax/Effects/off3.ogg
+    path: Audio/Corvax/Effects/Footsteps/off3.ogg
   exclaimSound:
-    path: /Audio/Corvax/Effects/off1.ogg
+    path: Audio/Corvax/Effects/Footsteps/off1.ogg
