@@ -12,7 +12,7 @@
 
 #CentCom
 - type: entity
-  parent: CentcomIDCard
+  parent: CentcomIDCardDeathsquad
   id: DedSquadronOperativeIDCard
   name: Id карта оперативника специальных операций
   components:
@@ -28,7 +28,7 @@
     fullName: Оперативник СпецВойск
 
 - type: entity
-  parent: CentcomIDCard
+  parent: CentcomIDCardDeathsquad
   id: DedSquadronLeaderIDCard
   name: Id карта Коммандера Специальных Операций
   components:
@@ -79,7 +79,7 @@
     jobTitle: Офицер Специальной Службы Безопастности
 
 - type: entity
-  parent: CentcomIDCard
+  parent: CentcomIDCardDeathsquad
   id: IDSFO
   name: Id Офицера СП
   description: Карта, необходимая для доступа в различные области станции.
@@ -185,7 +185,7 @@
 
 - type: entity
   noSpawn: true
-  parent: CentcomIDCard
+  parent: OBRIDCard
   id: OBRLeaderIDCard
   name: Id карта командира ОБР
   components:
