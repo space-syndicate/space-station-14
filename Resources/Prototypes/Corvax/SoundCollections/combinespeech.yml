@@ -1,0 +1,8 @@
+- type: speechSounds
+  id: Сombine
+  saySound:
+    path: /Audio/Corvax/Effects/off2.ogg
+  askSound:
+    path: /Audio/Corvax/Effects/off3.ogg
+  exclaimSound:
+    path: /Audio/Corvax/Effects/off1.ogg
