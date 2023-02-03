@@ -1,0 +1,263 @@
+- type: entity
+  noSpawn: true
+  parent: BoxFolderBlack
+  id: BoxFolderSecretBlack
+  components:
+    - type: StorageFill
+      contents:
+        - id: StationGoalPaper
+        - id: Paper
+          amount: 3
+
+- type: entity
+  noSpawn: true
+  name: дубинка-шокер спецсил
+  parent: Stunbaton
+  id: StunbatonSuper
+  description: Электрошоковая дубинка для обездвиживания людей. Слишком усердное причинение вреда с помощью этого предмета считается дурным тоном.
+  components:
+  - type: Stunbaton
+    energyPerUse: 10
+
+- type: entity
+  noSpawn: true
+  name: станнер спецсил
+  parent: WeaponDisabler
+  id: WeaponDisablerSuper
+  description: Оружие для самозащиты, которое изнуряет органические цели, пока они не свалятся с ног.
+  components:
+    - type: ProjectileBatteryAmmoProvider
+      proto: BulletDisabler
+      fireCost: 10
+
+- type: entity
+  noSpawn: true
+  name: пояс охраны спецсил
+  description: Может вмещать различное снаряжение службы безопасности, такое как наручники и вспышки.
+  parent: ClothingBeltSecurity
+  id: ClothingBeltSecuritySuper
+  components:
+    - type: Storage
+      capacity: 60
+    - type: StorageFill
+      contents:
+        - id: WeaponDisablerSuper
+        - id: StunbatonSuper
+        - id: GrenadeFlashBang
+          amount: 2
+        - id: Handcuffs
+          amount: 2
+
+- type: entity
+  noSpawn: true
+  parent: ClothingHeadHatBeretHoS
+  id: ClothingHeadHatBeretCentComSecurity
+  name: берет офицера безопасности
+  description: Черный берет с вышитой командирской эмблемой. Для офицеров, которые предпочитают стиль безопасности.
+
+- type: entity
+  noSpawn: true
+  parent: ClothingHeadHatBeretHoS
+  id: ClothingHeadHatBeretMobileTaskForce
+  name: берет спецопераций
+  description: Черный берет с вышитой командирской эмблемой. Для офицеров, которые предпочитают стиль безопасности.
+
+- type: entity
+  name: рюкзак спецназа
+  parent: JetpackBlackFilled
+  id: ClothingBackpackOperative
+  components:
+  - type: Item
+    sprite: Objects/Tanks/Jetpacks/black.rsi
+  - type: Sprite
+    sprite: Objects/Tanks/Jetpacks/black.rsi
+  - type: Item
+    size: 9999
+  - type: Clothing
+    quickEquip: false
+    sprite: Clothing/Hands/Gloves/robohands.rsi
+    slots:
+      - Back
+  - type: Storage
+    capacity: 300
+  - type: ContainerContainer
+    containers:
+      storagebase: !type:Container
+        ents: []
+  - type: UserInterface
+    interfaces:
+    - key: enum.StorageUiKey.Key
+      type: StorageBoundUserInterface
+  - type: StorageFill
+    contents:
+      - id: BoxFlare
+      - id: PinpointerNuclear
+      - id: WeaponPulseRifle
+      - id: SpeedLoaderMagnum
+        amount: 2
+      - id: C4
+        amount: 4
+      - id: SpetsnazMedipen
+        amount: 3
+
+- type: entity
+  noSpawn: true
+  parent: ClothingBackpackDuffelMilitary
+  id: ClothingBackpackDuffelRXBZZ
+  components:
+    - type: Storage
+      capacity: 250
+    - type: StorageFill
+      contents:
+        - id: BoxFlare
+        - id: WeaponLaserCarbine
+        - id: MedkitAdvancedRXBZZ
+        - id: WeaponRifleLecter
+        - id: MagazineRifle
+          amount: 5
+        - id: WeaponShotgunEnforcer
+
+
+- type: entity
+  name: продвинутая аптечка стимуляторов
+  parent: MedkitAdvanced
+  id: MedkitAdvancedRXBZZ
+  components:
+    - type: Item
+      size: 31
+    - type: Storage
+      capacity: 30
+    - type: StorageFill
+      contents:
+        - id: BattleMedipenAntiVirus
+          amount: 3
+        - id: BattleMedipen
+          amount: 4
+
+
+- type: entity
+  noSpawn: true
+  parent: ClothingBeltBandolier
+  id: ClothingBeltBandolierRXBZZ
+  components:
+    - type: Storage
+      capacity: 100
+    - type: StorageFill
+      contents:
+        - id: ShellShotgunIncendiary
+          amount: 10
+        - id: ShellShotgun
+          amount: 20
+
+- type: entity
+  noSpawn: true
+  parent: ClothingBackpackERTLeader
+  id: ClothingBackpackERTLeaderFilledCentCom
+  components:
+    - type: StorageFill
+      contents:
+        - id: BoxFlare
+          amount: 2
+        - id: BattleMedipen
+          amount: 2
+        - id: WeaponDisabler
+        - id: WeaponPistolMk58
+        - id: MagazinePistol
+          amount: 2
+        - id: WeaponRifleLecter
+        - id: MagazineRifle
+          amount: 3
+        - id: BoxHandcuff
+
+- type: entity
+  noSpawn: true
+  parent: ClothingBackpackERTEngineer
+  id: ClothingBackpackERTEngineerFilledCentCom
+  components:
+    - type: Storage
+      capacity: 300
+    - type: StorageFill
+      contents:
+        - id: BoxFlare
+          amount: 2
+        - id: BattleMedipen
+          amount: 2
+        - id: trayScanner
+        - id: WeaponPistolMk58
+        - id: MagazinePistol
+          amount: 2
+        - id: WeaponRifleLecter
+        - id: MagazineRifle
+          amount: 3
+        - id: C4
+          amount: 4
+        - id: RCD
+        - id: RCDAmmo
+          amount: 2
+        - id: SheetSteel
+          amount: 2
+        - id: SheetPlasteel
+          amount: 2
+        - id: SheetRPGlass
+          amount: 2
+
+- type: entity
+  noSpawn: true
+  parent: ClothingBackpackERTSecurity
+  id: ClothingBackpackERTSecurityFilledCentCom
+  components:
+    - type: StorageFill
+      contents:
+        - id: BoxFlare
+          amount: 2
+        - id: BattleMedipen
+          amount: 2
+        - id: WeaponDisabler
+        - id: WeaponPistolMk58
+        - id: MagazinePistol
+          amount: 2
+        - id: WeaponRifleLecter
+        - id: MagazineRifle
+          amount: 3
+        - id: BoxHandcuff
+
+- type: entity
+  noSpawn: true
+  parent: ClothingBackpackERTMedical
+  id: ClothingBackpackERTMedicalFilledCentCom
+  components:
+    - type: StorageFill
+      contents:
+        - id: BoxFlare
+          amount: 2
+        - id: BattleMedipen
+          amount: 2
+        - id: WeaponPistolMk58
+        - id: MagazinePistol
+          amount: 2
+        - id: WeaponRifleLecter
+        - id: MagazineRifle
+          amount: 3
+        - id: MedkitAdvancedRXBZZ
+        - id: SyringeInaprovaline
+          amount: 2
+        - id: EpinephrineChemistryBottle
+          amount: 2
+        - id: OmnizineChemistryBottle
+
+- type: entity
+  noSpawn: true
+  parent: ClothingBackpackERTJanitor
+  id: ClothingBackpackERTJanitorFilledCentCom
+  components:
+    - type: StorageFill
+      contents:
+        - id: BattleMedipen
+          amount: 2
+        - id: WeaponPistolMk58
+        - id: MagazinePistol
+          amount: 2
+        - id: MedkitFilled
+        - id: BoxLightMixed
+          amount: 2
+        - id: Soap
