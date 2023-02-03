@@ -1,11 +1,14 @@
 ent-ClothingBackpackSatchel = сумка
     .desc = Модная сумка.
     .suffix = { "" }
+ent-ClothingBackpackSatchelLeather = кожаная сумка
+    .desc = Модная сумка из ушедшей эпохи.
+    .suffix = { "" }
 ent-ClothingBackpackSatchelEngineering = инженерная сумка
     .desc = Прочная сумка с дополнительными карманами.
     .suffix = { "" }
-ent-ClothingBackpackSatchelMedical = медицинская ранец
-    .desc = Стерильная сумка, используемая в медицинских отделениях.
+ent-ClothingBackpackSatchelMedical = медицинская сумка
+    .desc = Стерильная сумка, используемая в медицинских отсеках.
     .suffix = { "" }
 ent-ClothingBackpackSatchelChemistry = химическая сумка
     .desc = Стерильная сумка аптечной расцветки.
