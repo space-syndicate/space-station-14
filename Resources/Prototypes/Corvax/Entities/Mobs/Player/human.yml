@@ -8,10 +8,10 @@
     sprite: Markers/jobs.rsi
     state: cyborg
   - type: Vocal
-    maleScream: /Audio/Corvax/Effects/off.ogg
-    femaleScream: /Audio/Corvax/Effects/off.ogg
+    maleScream: /Audio/Corvax/Effects/Footsteps/off.ogg
+    femaleScream: /Audio/Corvax/Effects/Footsteps/off.ogg
   - type: Speech
-    speechSounds: Сombine
+    speechSounds: Combine
   - type: Stamina
     excess: 250
   - type: MobState
