@@ -10,3 +10,18 @@
         - EncryptionKeyIAA
     - type: Sprite
       sprite: Clothing/Ears/Headsets/servicesecurity.rsi
+
+- type: entity
+  parent: ClothingHeadset
+  id: ClothingHeadsetCentComOperative
+  name: CentCom headset
+  description: A headset used by the upper echelons of Nanotrasen.
+  components:
+  - type: ContainerFill
+    containers:
+      key_slots:
+      - EncryptionKeyCentComOperative
+  - type: Sprite
+    sprite: Clothing/Ears/Headsets/centcom.rsi
+  - type: Clothing
+    sprite: Clothing/Ears/Headsets/centcom.rsi
