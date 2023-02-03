@@ -1,0 +1,61 @@
+- type: entity
+  name: боевой стимулятор
+  parent: ChemicalMedipen
+  id: BattleMedipen
+  description: Боевой медипен для быстрого возращения в бой бойца, осторожно, после использования обратиться к настоящему врачу.
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      pen:
+        maxVol: 55
+        reagents:
+        - ReagentId: Omnizine
+          Quantity: 20
+        - ReagentId: Epinephrine
+          Quantity: 12
+        - ReagentId: THC
+          Quantity: 10
+        - ReagentId: TranexamicAcid
+          Quantity: 3
+        - ReagentId: DexalinPlus
+          Quantity: 10
+  - type: Hypospray
+    solutionName: pen
+    transferAmount: 70
+  - type: Sprite
+    sprite: Objects/Specific/Medical/medipen.rsi
+    netsync: false
+    layers:
+    - state: hypovolemic
+      map: [ "enum.SolutionContainerLayers.Fill" ]
+
+- type: entity
+  name: противовирусный стимулятор
+  parent: ChemicalMedipen
+  id: BattleMedipenAntiVirus
+  description: Боевой медипен для быстрого возращения в бой бойца, осторожно, после использования обратиться к настоящему врачу.
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      pen:
+        maxVol: 75
+        reagents:
+        - ReagentId: Omnizine
+          Quantity: 20
+        - ReagentId: Epinephrine
+          Quantity: 15
+        - ReagentId: THC
+          Quantity: 10
+        - ReagentId: Romerol
+          Quantity: 20
+        - ReagentId: Spaceacillin
+          Quantity: 10
+  - type: Hypospray
+    solutionName: pen
+    transferAmount: 75
+  - type: Sprite
+    sprite: Objects/Specific/Medical/medipen.rsi
+    netsync: false
+    layers:
+    - state: hypovolemic
+      map: [ "enum.SolutionContainerLayers.Fill" ]
