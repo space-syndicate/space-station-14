@@ -12,6 +12,8 @@
     quickEquip: false
     slots:
       - Belt
+      - suitStorage
+      - Pocket
   - type: MeleeWeapon
     damage:
       types:
