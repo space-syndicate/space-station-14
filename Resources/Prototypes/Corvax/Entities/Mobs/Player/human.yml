@@ -1,0 +1,25 @@
+- type: entity
+  name: Урист Макбайн
+  parent: MobHuman
+  description: Жалкая кучка спецназа.
+  id: MobHumanCombine
+  components:
+  - type: Icon
+    sprite: Markers/jobs.rsi
+    state: cyborg
+  - type: Vocal
+    maleScream: /Audio/Corvax/Effects/off.ogg
+    femaleScream: /Audio/Corvax/Effects/off.ogg
+  - type: Speech
+    speechSounds: Сombine
+  - type: Stamina
+    excess: 250
+  - type: MobState
+    thresholds:
+      0: Alive
+      200: Critical
+      250: Dead
+  - type: SlowOnDamage
+    speedModifierThresholds:
+      100: 0.7
+      150: 0.5

@@ -1,0 +1,254 @@
+#CentComOfficial
+- type: entity
+  name:  Представитель Центрального Командования
+  parent: MobHuman
+  suffix: CentCom
+  id: MobHumanCentComRepresentative
+  components:
+  - type: Icon
+    sprite: Markers/jobs.rsi
+    state: centcom
+  - type: GhostTakeoverAvailable
+    name: Представитель Центрального Командования
+    description: Летит на станцию, дабы удостовериться, насколько экипаж станции компетентен.
+  - type: Loadout
+    prototypes: [CentComRepresentative]
+  - type: RandomMetadata
+  - type: RandomHumanoidAppearance
+
+#CentComOperator
+- type: entity
+  name:  Оператор Центрального Командования
+  parent: MobHuman
+  suffix: CentCom
+  id: MobHumanCentComOperator
+  components:
+  - type: Icon
+    sprite: Markers/jobs.rsi
+    state: centcom
+  - type: GhostTakeoverAvailable
+    name: Оператор Центрального Командования
+    description: Оператор центрального командования, выполняет приказы офицера цк и координирует действия станции.
+  - type: Loadout
+    prototypes: [OperatorCentCom]
+  - type: RandomMetadata
+  - type: RandomHumanoidAppearance
+
+#CentComSecurity
+- type: entity
+  name:  Охрана ЦК
+  parent: MobHuman
+  suffix: CentCom
+  id: MobHumanCentComOfficerSecurity
+  components:
+  - type: Icon
+    sprite: Markers/jobs.rsi
+    state: security_officer
+  - type: GhostTakeoverAvailable
+    name: Охрана ЦК
+    description: Охрана ЦК, охраняет членов ЦК и само ЦК.
+  - type: Loadout
+    prototypes: [CentComSecurity]
+  - type: RandomMetadata
+  - type: RandomHumanoidAppearance
+
+#SpecialForce
+- type: entity
+  name: Эскадрон Смерти
+  suffix: CentCom
+  parent: MobHumanCombine
+  id: MobHumanSpecialReAgent
+  components:
+  - type: GhostTakeoverAvailable
+    name: Оперативник спец войск
+    description: Элитный солдат отряда Omega - 0, напичканые импланты и курсы космического спецназа сделали из него бесчувственную машину.
+    rules: Выполняйте различные приказы, ваша задача будет варьироваться от задач центрального командования.
+  - type: Loadout
+    prototypes: [SpecialForceGearFull]
+  - type: RandomMetadata
+    nameSegments:
+    - NameSpetsOperative
+    - NameSpets
+  - type: RandomHumanoidAppearance
+    randomizeName: False
+
+
+- type: entity
+  name: Эскадрон Смерти Лидер
+  suffix: CentCom
+  parent: MobHumanCombine
+  id: MobHumanSpecialReAgentLeader
+  components:
+  - type: GhostTakeoverAvailable
+    name: коммандер спец войск
+    description: Элитный коммандер отряда Omega - 0, напичканые импланты и курсы космического спецназа сделали из него бесчувственную машину с тактическим интеллектом.
+    rules: Выполняйте различные приказы, ваша задача будет варьироваться от задач центрального командования.
+  - type: Loadout
+    prototypes: [SpecialForceGearCommanderFull]
+  - type: RandomMetadata
+    nameSegments:
+    - NameSpetsCommander
+    - NameSpets
+  - type: RandomHumanoidAppearance
+    randomizeName: False
+
+- type: entity
+  name: Офицер специальных операций
+  parent: MobHumanCombine
+  suffix: CentCom
+  id: MobHumanSFOfficer
+  components:
+  - type: GhostTakeoverAvailable
+    name: Офицер Специальных Операций
+    description: Офицер Специальных Операций, руководитель департамента специальных операций в секторе.
+  - type: Loadout
+    prototypes: [SFOForma]
+  - type: RandomMetadata
+  - type: RandomHumanoidAppearance
+
+- type: entity
+  name:  РХБЗЗ Агент
+  parent: MobHuman
+  suffix: CentCom
+  id: MobHumanRXBZZ
+  components:
+  - type: GhostTakeoverAvailable
+    name: Оперативник РХБЗЗ
+    description: Особый агент НаноТрейзен по борьбе с радиационно, химическо, биологическоми и зомби опасностями.
+  - type: Loadout
+    prototypes: [RXBZZ]
+  - type: RandomMetadata
+    nameSegments:
+    - NameSpetsOperative
+    - names_last_male
+  - type: RandomHumanoidAppearance
+    randomizeName: false
+
+- type: entity
+  name:  РХБЗЗ Лидер
+  parent: MobHuman
+  suffix: CentCom
+  id: MobHumanRXBZZLeader
+  components:
+  - type: GhostTakeoverAvailable
+    name: Лидер РХБЗЗ
+    description: Особый агент НаноТрейзен по борьбе с радиационно, химическо, биологическоми и зомби опасностями.
+  - type: Loadout
+    prototypes: [RXBZZLeader]
+  - type: RandomMetadata
+    nameSegments:
+    - NameSpetsCommander
+    - names_last_male
+  - type: RandomHumanoidAppearance
+    randomizeName: false
+
+#MTF
+- type: entity
+  name:  лидер ОБР
+  parent: MobHuman
+  suffix: CentCom
+  id: MobHumanERTLeaderCentCom
+  components:
+  - type: Icon
+    sprite: Markers/jobs.rsi
+    state: ertleadereva
+  - type: GhostTakeoverAvailable
+    name: ОБР лидер
+    description: Командир отряда Theta - 9, великий воин, герой НТ, знаменитый полководец, мог бы им быть.
+    rules: Выполняйте различные приказы, ваша задача будет варьироваться от задач центрального командования.
+  - type: Loadout
+    prototypes: [ERTLeaderGearEVAV2.1]
+  - type: RandomMetadata
+    nameSegments: 
+    - NamesSGTs
+    - names_last_male
+  - type: RandomHumanoidAppearance
+    randomizeName: false
+
+- type: entity
+  name: инженер ОБР
+  suffix: corvax
+  parent: MobHuman
+  id: MobHumanERTEngineerCentCom
+  components:
+  - type: Icon
+    sprite: Markers/jobs.rsi
+    state: ertengineereva
+  - type: GhostTakeoverAvailable
+    name: ОБР инженер
+    description: Инженер отряда Theta - 9, может и не очень хороший инженер, но дело свое знает, наверное.
+    rules: Выполняйте различные приказы, ваша задача будет варьироваться от задач центрального командования.
+  - type: Loadout
+    prototypes: [ERTEngineerGearEVAV2.1]
+  - type: RandomMetadata
+    nameSegments: 
+    - NamesCPLs
+    - names_last_male
+  - type: RandomHumanoidAppearance
+    randomizeName: false
+
+- type: entity
+  name: офицер безопасности ОБР
+  suffix: CentCom
+  parent: MobHuman
+  id: MobHumanERTSecurityCentCom
+  components:
+  - type: Icon
+    sprite: Markers/jobs.rsi
+    state: ertsecurityeva
+  - type: GhostTakeoverAvailable
+    name: ОБР офицер безопасности
+    description: Солдат или же охранник Theta - 9, прошедший небольшую подготовку и готовый стрелять во все что движеться.
+    rules: Выполняйте различные приказы, ваша задача будет варьироваться от задач центрального командования.
+  - type: Loadout
+    prototypes: [ERTSecurityGearEVAV2.1]
+  - type: RandomMetadata
+    nameSegments: 
+    - NamesPVTs
+    - names_last_male
+  - type: RandomHumanoidAppearance
+    randomizeName: false
+
+- type: entity
+  name: медик ОБР
+  parent: MobHuman
+  suffix: CentCom
+  id: MobHumanERTMedicalCentCom
+  components:
+  - type: Icon
+    sprite: Markers/jobs.rsi
+    state: ertmedicaleva
+  - type: GhostTakeoverAvailable
+    name: ОБР медик
+    description: Медик отделения Theta - 9, был в медицинском институте, поэтому и взяли в качестве медика, но никого не волнует что он там был всего неделю.
+    rules: Выполняйте различные приказы, ваша задача будет варьироваться от задач центрального командования.
+  - type: Loadout
+    prototypes: [ERTMedicalGearEVAV2.1]
+  - type: RandomMetadata
+    nameSegments: 
+    - NamesCPLs
+    - names_last_male
+  - type: RandomHumanoidAppearance
+    randomizeName: false
+
+- type: entity
+  name: уборщик ОБР
+  parent: MobHuman
+  suffix: CentCom
+  id: MobHumanERTJunitorCentCom
+  components:
+  - type: Icon
+    sprite: Markers/jobs.rsi
+    state: ertjanitoreva
+  - type: GhostTakeoverAvailable
+    name: ОБР уборщик
+    description: Уборщик отделения Theta - 9, эй! кто дал ему пистолет?!
+    rules: Выполняйте различные приказы, ваша задача будет варьироваться от задач центрального командования.
+  - type: Loadout
+    prototypes: [ERTJanitorGearEVAV2.1]
+  - type: RandomMetadata
+    nameSegments: 
+    - NamesPVTs
+    - names_last_male
+  - type: RandomHumanoidAppearance
+    randomizeName: false
