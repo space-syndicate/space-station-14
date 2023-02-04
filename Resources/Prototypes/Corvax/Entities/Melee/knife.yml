@@ -1,8 +1,8 @@
 - type: entity
-  name: тактический нож
+  name: Tactical knife
   parent: BaseItem
   id: CombatKnifeOperative
-  description: Нож для оперативников специальных операций, острый!
+  description: Knife for special operations operatives, sharp!
   components:
   - type: EmitSoundOnLand
     sound:
