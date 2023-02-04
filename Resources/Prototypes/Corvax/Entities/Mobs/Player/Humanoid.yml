@@ -157,7 +157,7 @@
     description: Командир отряда Theta - 9, великий воин, герой НТ, знаменитый полководец, мог бы им быть.
     rules: Выполняйте различные приказы, ваша задача будет варьироваться от задач центрального командования.
   - type: Loadout
-    prototypes: [ERTLeaderGearEVAV2.1]
+    prototypes: [ERTLeaderGearCentCom]
   - type: RandomMetadata
     nameSegments: 
     - NamesSGTs
@@ -179,7 +179,7 @@
     description: Инженер отряда Theta - 9, может и не очень хороший инженер, но дело свое знает, наверное.
     rules: Выполняйте различные приказы, ваша задача будет варьироваться от задач центрального командования.
   - type: Loadout
-    prototypes: [ERTEngineerGearEVAV2.1]
+    prototypes: [ERTEngineerGearCentCom]
   - type: RandomMetadata
     nameSegments: 
     - NamesCPLs
@@ -201,7 +201,7 @@
     description: Солдат или же охранник Theta - 9, прошедший небольшую подготовку и готовый стрелять во все что движеться.
     rules: Выполняйте различные приказы, ваша задача будет варьироваться от задач центрального командования.
   - type: Loadout
-    prototypes: [ERTSecurityGearEVAV2.1]
+    prototypes: [ERTSecurityGearCentCom]
   - type: RandomMetadata
     nameSegments: 
     - NamesPVTs
@@ -223,7 +223,7 @@
     description: Медик отделения Theta - 9, был в медицинском институте, поэтому и взяли в качестве медика, но никого не волнует что он там был всего неделю.
     rules: Выполняйте различные приказы, ваша задача будет варьироваться от задач центрального командования.
   - type: Loadout
-    prototypes: [ERTMedicalGearEVAV2.1]
+    prototypes: [ERTMedicalGearCentCom]
   - type: RandomMetadata
     nameSegments: 
     - NamesCPLs
@@ -245,7 +245,7 @@
     description: Уборщик отделения Theta - 9, эй! кто дал ему пистолет?!
     rules: Выполняйте различные приказы, ваша задача будет варьироваться от задач центрального командования.
   - type: Loadout
-    prototypes: [ERTJanitorGearEVAV2.1]
+    prototypes: [ERTJanitorGearCentCom]
   - type: RandomMetadata
     nameSegments: 
     - NamesPVTs
