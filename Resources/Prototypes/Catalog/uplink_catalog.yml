@@ -141,6 +141,23 @@
   categories:
   - UplinkExplosives
 
+- type: listing
+  id: UplinkBombImplanter
+  name: uplink-bomb-implanter-name
+  description: uplink-bomb-implanter-desc
+  productEntity: BombImplanter
+  cost:
+    Telecrystal: 7
+  categories:
+  - UplinkExplosives
+  conditions:
+    - !type:BuyerJobCondition
+      blacklist:
+      - MedicalDoctor
+      - Chemist
+      - ChiefMedicalOfficer
+
+
 # Ammo
 
 - type: listing
