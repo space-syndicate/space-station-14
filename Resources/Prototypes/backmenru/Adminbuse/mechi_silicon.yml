@@ -58,6 +58,7 @@
   parent: OneStarMechMauler
   suffix: VovaMech
   components:
+  - type: MobState
   - type: MobThresholds
     thresholds:
       0: Alive
@@ -144,6 +145,7 @@
   - type: Repairable
     fuelcost: 80
     doAfterDelay: 35
+  - type: MobState
   - type: MobThresholds
     thresholds:
       0: Alive
@@ -187,6 +189,7 @@
     netsync: false
   - type: Physics
     bodyType: KinematicController
+  - type: MobState
   - type: MobThresholds
     thresholds:
       0: Alive
@@ -384,6 +387,7 @@
   - type: Faction
     factions:
     - NanoTrasen
+  - type: MobState
   - type: MobThresholds
     thresholds:
       0: Alive
