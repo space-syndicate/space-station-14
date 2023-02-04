@@ -11,15 +11,8 @@ jobs:
     runs-on: self-hosted
     steps:
       - uses: actions/checkout@v2
-      - name: Setup submodule
-        run: |
-          git submodule update --init --recursive
-      - name: Pull engine updates
-        uses: space-wizards/submodule-dependency@v0.1.5
-      - name: Update Engine Submodules
-        run: |
-          cd RobustToolbox/
-          git submodule update --init --recursive
+        with:
+          submodules: 'recursive'
       - name: Install dependencies
         run: dotnet restore
       - name: Build
