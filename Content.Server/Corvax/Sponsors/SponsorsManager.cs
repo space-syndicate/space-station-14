@@ -71,7 +71,7 @@ public sealed class SponsorsManager
         if (string.IsNullOrEmpty(_apiUrl))
             return null;
 
-        var url = $"{_apiUrl}/sponsors/{userId.ToString()}";
+        var url = $"{_apiUrl}/sponsors?userid={userId.ToString()}";
         var response = await _httpClient.GetAsync(url);
         if (response.StatusCode == HttpStatusCode.NotFound)
             return null;
