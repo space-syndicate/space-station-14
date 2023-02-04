@@ -22,6 +22,8 @@
   - type: Hypospray
     solutionName: pen
     transferAmount: 55
+  - type: Tag
+    tags: []
 
 - type: entity
   name: "AntiVirus" stimulant
@@ -47,3 +49,5 @@
   - type: Hypospray
     solutionName: pen
     transferAmount: 75
+  - type: Tag
+    tags: []
