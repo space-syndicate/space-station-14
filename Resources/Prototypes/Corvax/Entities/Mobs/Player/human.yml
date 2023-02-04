@@ -14,7 +14,7 @@
     speechSounds: Combine
   - type: Stamina
     excess: 250
-  - type: MobState
+  - type: MobThresholds
     thresholds:
       0: Alive
       200: Critical
