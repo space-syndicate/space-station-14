@@ -21,12 +21,12 @@ uplink-flash-grenade-desc = { ent-GrenadeFlashBang.desc }
 uplink-mini-bomb-name = { ent-SyndieMiniBomb }
 uplink-mini-bomb-desc = { ent-SyndieMiniBomb.desc }
 uplink-penguin-grenade-name = { ent-MobGrenadePenguin }
-uplink-penguin-grenade-desc = { ent-MobGrenadePenguin.desc }
+uplink-penguin-grenade-desc = { ent-MobGrenadePenguin.desc }ф
 uplink-c4-name = C-4
 uplink-c4-desc = Используйте её, чтобы разрушать стены, шлюзы или саботировать оборудование. Её можно прикрепить практически к любому объекту, а таймер можно изменять, минимальное значение - 10 секунд.
 uplink-c4-bundle-name = набор C-4
 uplink-c4-bundle-desc = Иногда количество - это качество. Содержит 8 штук взрывчатки C-4.
-uplink-bomb-implanter-name = Долгая подкожная бомба
+uplink-bomb-implanter-name = долгая подкожная бомба
 uplink-bomb-implanter-desc = Устанавливает подкожный имплант, взрывающийся через 50 минут после установки. Гарантированно убивает носителя.
 # Ammo
 uplink-pistol-magazine-name = пистолетный магазин (.35 авто)
