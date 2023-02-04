@@ -10,70 +10,12 @@
           amount: 3
 
 - type: entity
-  noSpawn: true
-  name: baton-shocker
-  parent: Stunbaton
-  id: StunbatonSuper
-  description: Electroshock baton for immobilizing people. It is considered bad form to cause harm with this item too zealously.
-  components:
-  - type: Stunbaton
-    energyPerUse: 10
-
-- type: entity
-  noSpawn: true
-  name: stunner
-  parent: WeaponDisabler
-  id: WeaponDisablerSuper
-  description: a self-defense weapon that exhausts organic targets until they fall off their feet.
-  components:
-    - type: ProjectileBatteryAmmoProvider
-      proto: BulletDisabler
-      fireCost: 10
-
-- type: entity
-  noSpawn: true
-  name: security belt
-  description: Can hold a variety of security gear such as handcuffs and flashlights.
-  parent: ClothingBeltSecurity
-  id: ClothingBeltSecuritySuper
-  components:
-    - type: Storage
-      capacity: 60
-    - type: StorageFill
-      contents:
-        - id: WeaponDisablerSuper
-        - id: StunbatonSuper
-        - id: GrenadeFlashBang
-          amount: 2
-        - id: Handcuffs
-          amount: 2
-
-- type: entity
   name: backjet
-  parent: JetpackBlackFilled
+  parent: ClothingMilitaryBackpack
   id: ClothingBackpackOperative
   components:
-  - type: Item
-    sprite: Objects/Tanks/Jetpacks/black.rsi
-  - type: Sprite
-    sprite: Objects/Tanks/Jetpacks/black.rsi
-  - type: Item
-    size: 9999
-  - type: Clothing
-    quickEquip: false
-    sprite: Clothing/Hands/Gloves/robohands.rsi
-    slots:
-      - Back
   - type: Storage
     capacity: 300
-  - type: ContainerContainer
-    containers:
-      storagebase: !type:Container
-        ents: []
-  - type: UserInterface
-    interfaces:
-    - key: enum.StorageUiKey.Key
-      type: StorageBoundUserInterface
   - type: StorageFill
     contents:
       - id: BoxFlare
@@ -83,7 +25,7 @@
         amount: 2
       - id: C4
         amount: 4
-      - id: BattleMedipen
+      - id: SpetsnazMedipen
         amount: 3
 
 - type: entity
@@ -91,6 +33,8 @@
   parent: ClothingBackpackDuffelMilitary
   id: ClothingBackpackDuffelRXBZZ
   components:
+    - type: Storage
+      capacity: 300
     - type: StorageFill
       contents:
         - id: BoxFlare
