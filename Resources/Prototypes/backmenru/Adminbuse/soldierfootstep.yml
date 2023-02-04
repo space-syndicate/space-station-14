@@ -1,0 +1,18 @@
+- type: speechSounds
+  id: Сombine
+  saySound:
+    path: /Audio/Corvax/Effects/Footsteps/off2.ogg
+  askSound:
+    path: /Audio/Corvax/Effects/Footsteps/off3.ogg
+  exclaimSound:
+    path: /Audio/Corvax/Effects/Footsteps/off1.ogg
+
+- type: soundCollection
+  id: FootstepSoldier
+  files:
+  - /Audio/Corvax/Effects/Footsteps/gear1.ogg
+  - /Audio/Corvax/Effects/Footsteps/gear2.ogg
+  - /Audio/Corvax/Effects/Footsteps/gear3.ogg
+  - /Audio/Corvax/Effects/Footsteps/gear4.ogg
+  - /Audio/Corvax/Effects/Footsteps/gear5.ogg
+  - /Audio/Corvax/Effects/Footsteps/gear6.ogg

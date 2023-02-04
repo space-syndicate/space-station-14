@@ -1,0 +1,443 @@
+- type: entity
+  name: рюкзак спецназа
+  parent: JetpackBlackFilled
+  id: ClothingBackpackSpecialForce
+  components:
+  - type: Item
+    sprite: Objects/Tanks/Jetpacks/black.rsi
+    size: 9999
+  - type: Sprite
+    sprite: Objects/Tanks/Jetpacks/black.rsi
+  - type: Clothing
+    quickEquip: false
+    sprite: Clothing/Hands/Gloves/robohands.rsi
+    slots:
+      - Back
+  - type: Storage
+    capacity: 300
+  - type: ContainerContainer
+    containers:
+      storagebase: !type:Container
+        ents: []
+  - type: UserInterface
+    interfaces:
+    - key: enum.StorageUiKey.Key
+      type: StorageBoundUserInterface
+  - type: StorageFill
+    contents:
+      - id: BoxFlare
+      - id: PinpointerNuclear
+      - id: WeaponPulseRifle
+      - id: SpeedLoaderMagnum
+      - id: SpeedLoaderMagnum
+      - id: C4
+      - id: C4
+      - id: C4
+      - id: C4
+      - id: SpetsnazMedipen
+      - id: SpetsnazMedipen
+      - id: SpetsnazMedipen
+
+- type: entity
+  noSpawn: true
+  parent: ClothingHeadHatBeretHoS
+  id: ClothingHeadHatBeretMobileTaskForce
+  name: берет отдела специальных операций
+  description: Черный берет с вышитой командирской эмблемой. Для офицеров, которые предпочитают стиль безопасности.
+
+
+- type: entity
+  name: энергетический меч спецназа
+  parent: EnergySword
+  id: EnergySwordDedSad
+  description: Энергетический меч спецвойск NanoTrasen, используеться для веселой нарезки экипажа.
+  components:
+  - type: Sprite
+    sprite: Objects/Weapons/Melee/e_sword.rsi
+    layers:
+      - state: e_sword
+      - state: e_sword_blade
+        color: "#00FFFFFF"
+        visible: false
+        shader: unshaded
+        map: [ "blade" ]
+  - type: PointLight
+    netsync: false
+    enabled: false
+    radius: 2
+    energy: 2
+    color: cyan
+  - type: EnergySword
+    litDamageBonus:
+        types:
+            Slash: 15
+            Heat: 30
+            Blunt: -4.5
+    litDisarmMalus: 0.6
+
+
+- type: entity
+  name: Урист Макбайн
+  parent: MobHuman
+  description: Жалкая кучка спецназа.
+  id: MobHumanCombine
+  components:
+  - type: Icon
+    sprite: Markers/jobs.rsi
+    state: cyborg
+  - type: Vocal
+    maleScream: /Audio/Corvax/Effects/off.ogg
+    femaleScream: /Audio/Corvax/Effects/off.ogg
+  - type: Speech
+    speechSounds: Сombine
+  - type: Stamina
+    excess: 250
+  - type: MobThresholds
+    thresholds:
+      0: Alive
+      200: Critical
+      250: Dead
+  - type: SlowOnDamage
+    speedModifierThresholds:
+      100: 0.7
+      150: 0.5
+
+
+- type: startingGear
+  id: SpecialForceGearCommanderFull
+  equipment:
+    jumpsuit: ClothingUniformJumpsuitSpetsnaz
+    back: ClothingBackpackSpecialForce
+    shoes: ClothingShoesBootsSpetsnaz
+    mask: ClothingMaskGasExplorer
+    neck: CombatKnifeSpetsnaz
+    eyes: ClothingEyesGlassesSecurity
+    gloves: ClothingHandsGlovesCombat
+    outerClothing: ClothingOuterHardsuitDeathsquad
+    suitstorage: OxygenTankFilled
+    head: ClothingHeadHatBeretMobileTaskForce
+    id: DedSquadronLeaderGavnaIDCard
+    ears: ClothingHeadsetCentComCC
+    belt: WeaponRevolverMateba
+    pocket1: EnergySwordDedSad
+    pocket2: WeaponPulsePistol
+
+
+- type: startingGear
+  id: SpecialForceGearFull
+  equipment:
+    jumpsuit: ClothingUniformJumpsuitSpetsnaz
+    back: ClothingBackpackSpecialForce
+    shoes: ClothingShoesBootsSpetsnaz
+    mask: ClothingMaskGasExplorer
+    neck: CombatKnifeSpetsnaz
+    eyes: ClothingEyesGlassesSecurity
+    gloves: ClothingHandsGlovesCombat
+    outerClothing: ClothingOuterHardsuitDeathsquad
+    suitstorage: OxygenTankFilled
+    id: DedSquadronGavnaIDCard
+    ears: ClothingHeadsetCentComCC
+    belt: WeaponRevolverMateba
+    pocket1: EnergySwordDedSad
+    pocket2: WeaponPulsePistol
+
+
+- type: dataset
+  id: NameSpets
+  values:
+  - ДипКол
+  - БитКоп
+  - Джаз
+  - Йололо
+  - Байкон
+  - Гуест
+  - Под
+  - Неил
+  - Песок
+  - ГЮСП
+  - Фиери
+  - Лайм
+  - Максвелл
+  - Ваилд
+  - Номпад
+  - Хенри
+  - Стик
+  - Крейзи
+  - Даймонд
+  - Джоджо
+  - Айзек
+  - Кларк
+  - Бёрн
+  - Джакарта
+  - Норманди
+  - Аквамарин
+  - Альбатрос
+  - Барракуда
+  - Кюрли
+  - Файтинг Боб
+  - Робуст
+  - Волтер
+  - Анджел
+  - Аткинс
+  - Аттила
+  - Краут
+  - Бальтар
+  - Джокер
+  - Доктор
+  - Патриот
+  - Проффесор
+  - Гомес
+  - Финекс
+
+
+- type: dataset
+  id: NameSpetsCommander
+  values:
+  - Командир
+
+
+- type: dataset
+  id: NameSpetsOperative
+  values:
+  - Оперативник
+
+
+- type: entity
+  name: Spestnaz
+  suffix: corvax
+  parent: MobHumanCombine
+  description: Жалкая кучка спецназа.
+  id: MobHumanSpecialReAgent
+  components:
+  - type: Icon
+    sprite: Markers/jobs.rsi
+    state: ai
+  - type: GhostTakeoverAvailable
+    name: Оперативник спец войск
+    description: Элитный солдат отряда Omega - 0, напичканые импланты и курсы космического спецназа сделали из него бесчувственную машину.
+    rules: Выполняйте различные приказы, ваша задача будет варьироваться от задач центрального командования.
+  - type: Loadout
+    prototypes: [SpecialForceGearFull]
+  - type: RandomMetadata
+    nameSegments:
+    - NameSpetsOperative
+    - NameSpets
+  - type: RandomHumanoidAppearance
+    randomizeName: False
+
+
+- type: entity
+  name: SpestnazCommander
+  suffix: corvax
+  parent: MobHumanCombine
+  description: Жалкая кучка спецназа.
+  id: MobHumanSpecialReAgentCOM
+  components:
+  - type: Icon
+    sprite: Markers/jobs.rsi
+    state: ai
+  - type: GhostTakeoverAvailable
+    name: коммандер спец войск
+    description: Элитный коммандер отряда Omega - 0, напичканые импланты и курсы космического спецназа сделали из него бесчувственную машину с тактическим интеллектом.
+    rules: Выполняйте различные приказы, ваша задача будет варьироваться от задач центрального командования.
+  - type: Loadout
+    prototypes: [SpecialForceGearCommanderFull]
+  - type: RandomMetadata
+    nameSegments:
+    - NameSpetsCommander
+    - NameSpets
+  - type: RandomHumanoidAppearance
+    randomizeName: False
+
+
+#------------------------------------
+
+
+- type: entity
+  name: Офицер специальный операций
+  parent: MobHumanCombine
+  suffix: CentCom
+  id: MobHumanSFOfficer
+  components:
+  - type: Icon
+    sprite: Markers/jobs.rsi
+    state: centcom
+  - type: GhostTakeoverAvailable
+    name: Офицер Специальных Операций
+    description: Офицер Специальных Операций, руководитель департамента специальных операций в секторе.
+  - type: Loadout
+    prototypes: [SFOForma]
+  - type: RandomMetadata
+  - type: RandomHumanoidAppearance
+
+
+- type: startingGear
+  id: SFOForma
+  equipment:
+    jumpsuit: ClothingUniformJumpsuitCentcomOfficerBlack
+    shoes: ClothingShoesCentcomBlack
+    head: ClothingHeadCapCentcomBlack
+    neck: ClothingNeckCloakCentcomBlack
+    eye: ClothingEyesGlassesSunglasses
+    id: IDSFO
+    ears: ClothingHeadsetCentComCCAlt
+
+
+- type: entity
+  parent: CentcomIDCard
+  id: IDSFO
+  name: Id Офицера СП
+  description: Карта, необходимая для доступа в различные области станции.
+  components:
+  - type: Sprite
+    layers:
+    - state: gold
+    - state: idintern-cadet
+    - state: idcentcom
+  - type: Item
+    heldPrefix: gold
+  - type: IdCard
+    jobTitle: Офицер Специальный Операций
+
+
+#------------------------------------
+
+
+- type: entity
+  parent: CentcomIDCardDeathsquad
+  id: RXBZZIdCardCorvax
+  name: Id карта Оперативника РХБЗЗ
+  components:
+  - type: Sprite
+    layers:
+    - state: syndie
+    - state: idgeneticist
+  - type: Item
+    heldPrefix: blue
+  - type: IdCard
+    jobTitle: Sierra - 6
+    fullName: Оперативник РХБЗЗ
+
+
+- type: startingGear
+  id: RXBZZ
+  equipment:
+    jumpsuit: ClothingUniformJumpsuitSpetsnaz
+    back: ClothingBackpackDuffelRXBZZ
+    shoes: ClothingShoesBootsNedoSpetsnaz
+    mask: ClothingMaskGasExplorer
+    eyes: ClothingEyesGlassesSecurity
+    neck: CombatKnifeSpetsnaz
+    gloves: ClothingHandsGlovesCombat
+    outerClothing: ClothingOuterHardsuitCBURN
+    suitstorage: YellowOxygenTankFilled
+    id: RXBZZGavna
+    ears: ClothingHeadsetCentComCC
+    belt: ClothingBeltBandolierRXBZZ
+    pocket1: WeaponAdvancedLaser
+
+
+- type: entity
+  noSpawn: true
+  parent: ClothingBackpackDuffel
+  id: ClothingBackpackDuffelRXBZZ
+  components:
+    - type: Storage
+      capacity: 250
+    - type: StorageFill
+      contents:
+        - id: BoxFlare
+        - id: BoxFlare
+        - id: MedkitAdvancedRXBZZ
+        - id: WeaponDisabler
+        - id: WeaponRifleLecterFire
+        - id: MagazineRifleFire
+        - id: MagazineRifleFire
+        - id: MagazineRifleFire
+        - id: MagazineRifleFire
+        - id: MagazineRifleFire
+        - id: WeaponShotgunEnforcerRXBZZ
+
+
+- type: entity
+  name: продвинутая аптечка стимуляторов
+  parent: MedkitAdvanced
+  id: MedkitAdvancedRXBZZ
+  components:
+    - type: Item
+      size: 30
+    - type: Storage
+      capacity: 30
+    - type: StorageFill
+      contents:
+        - id: BattleMedipenAntiVirus
+        - id: BattleMedipenAntiVirus
+        - id: BattleMedipenAntiVirus
+        - id: BattleMedipen
+        - id: BattleMedipen
+        - id: BattleMedipen
+        - id: BattleMedipen
+
+
+- type: entity
+  noSpawn: true
+  parent: ClothingBeltBandolier
+  id: ClothingBeltBandolierRXBZZ
+  components:
+    - type: Storage
+      capacity: 100
+    - type: StorageFill
+      contents:
+        - id: ShellShotgunIncendiary
+        - id: ShellShotgunIncendiary
+        - id: ShellShotgunIncendiary
+        - id: ShellShotgunIncendiary
+        - id: ShellShotgunIncendiary
+        - id: ShellShotgunIncendiary
+        - id: ShellShotgunIncendiary
+        - id: ShellShotgunIncendiary
+        - id: ShellShotgunIncendiary
+        - id: ShellShotgunIncendiary
+        - id: ShellShotgunIncendiary
+        - id: ShellShotgunIncendiary
+        - id: ShellShotgunIncendiary
+        - id: ShellShotgunIncendiary
+        - id: ShellShotgunIncendiary
+        - id: ShellShotgunIncendiary
+        - id: ShellShotgunIncendiary
+        - id: ShellShotgunIncendiary
+        - id: ShellShotgunIncendiary
+        - id: ShellShotgunIncendiary
+        - id: ShellShotgunIncendiary
+        - id: ShellShotgunIncendiary
+        - id: ShellShotgunIncendiary
+        - id: ShellShotgunIncendiary
+        - id: ShellShotgunIncendiary
+        - id: ShellShotgunIncendiary
+        - id: ShellShotgunIncendiary
+        - id: ShellShotgunIncendiary
+        - id: ShellShotgunIncendiary
+        - id: ShellShotgunIncendiary
+        - id: ShellShotgunIncendiary
+        - id: ShellShotgunIncendiary
+        - id: ShellShotgunIncendiary
+        - id: ShellShotgunIncendiary
+
+
+- type: entity
+  name:  РХБЗЗ Реагент
+  parent: MobHuman
+  suffix: corvax
+  id: MobHumanRXBZZ
+  components:
+  - type: GhostTakeoverAvailable
+    name: Оперативник РХБЗЗ
+    description: Особый агент НаноТрейзен по борьбе с радиационно, химическо, биологическоми и зомби опасностями.
+  - type: Loadout
+    prototypes: [RXBZZ]
+  - type: RandomMetadata
+    nameSegments:
+    - NameSpetsOperative
+    - names_last_male
+  - type: RandomHumanoidAppearance
+    randomizeName: false

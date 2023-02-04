@@ -58,7 +58,7 @@
   parent: OneStarMechMauler
   suffix: VovaMech
   components:
-  - type: MobState
+  - type: MobThresholds
     thresholds:
       0: Alive
       2000: Dead
@@ -144,7 +144,7 @@
   - type: Repairable
     fuelcost: 80
     doAfterDelay: 35
-  - type: MobState
+  - type: MobThresholds
     thresholds:
       0: Alive
       1000: Dead
@@ -187,7 +187,7 @@
     netsync: false
   - type: Physics
     bodyType: KinematicController
-  - type: MobState
+  - type: MobThresholds
     thresholds:
       0: Alive
       500: Dead
@@ -384,7 +384,7 @@
   - type: Faction
     factions:
     - NanoTrasen
-  - type: MobState
+  - type: MobThresholds
     thresholds:
       0: Alive
       2000: Dead
@@ -543,4 +543,3 @@
           MechGavnaGygaxDestroyed:
             min: 1
             max: 1
-          
