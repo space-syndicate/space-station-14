@@ -2,7 +2,7 @@
 - type: entity
   name:  Представитель Центрального Командования
   parent: MobHuman
-  suffix: CentCom
+  suffix: ЦентКом
   id: MobHumanCentComRepresentative
   components:
   - type: Icon
@@ -20,7 +20,7 @@
 - type: entity
   name:  Оператор Центрального Командования
   parent: MobHuman
-  suffix: CentCom
+  suffix: ЦентКом
   id: MobHumanCentComOperator
   components:
   - type: Icon
@@ -38,7 +38,7 @@
 - type: entity
   name:  Охрана ЦК
   parent: MobHuman
-  suffix: CentCom
+  suffix: ЦентКом
   id: MobHumanCentComOfficerSecurity
   components:
   - type: Icon
@@ -55,7 +55,7 @@
 #SpecialForce
 - type: entity
   name: Эскадрон Смерти
-  suffix: CentCom
+  suffix: ЭС
   parent: MobHumanCombine
   id: MobHumanSpecialReAgent
   components:
@@ -75,7 +75,7 @@
 
 - type: entity
   name: Эскадрон Смерти Лидер
-  suffix: CentCom
+  suffix: ЭС
   parent: MobHumanCombine
   id: MobHumanSpecialReAgentLeader
   components:
@@ -95,7 +95,7 @@
 - type: entity
   name: Офицер специальных операций
   parent: MobHumanCombine
-  suffix: CentCom
+  suffix: ЦентКом
   id: MobHumanSFOfficer
   components:
   - type: GhostTakeoverAvailable
@@ -109,7 +109,7 @@
 - type: entity
   name:  РХБЗЗ Агент
   parent: MobHuman
-  suffix: CentCom
+  suffix: ЦентКом
   id: MobHumanRXBZZ
   components:
   - type: GhostTakeoverAvailable
@@ -127,7 +127,7 @@
 - type: entity
   name:  РХБЗЗ Лидер
   parent: MobHuman
-  suffix: CentCom
+  suffix: ЦентКом
   id: MobHumanRXBZZLeader
   components:
   - type: GhostTakeoverAvailable
@@ -146,7 +146,7 @@
 - type: entity
   name:  лидер ОБР
   parent: MobHuman
-  suffix: CentCom
+  suffix: МТФ
   id: MobHumanERTLeaderCentCom
   components:
   - type: Icon
@@ -167,7 +167,7 @@
 
 - type: entity
   name: инженер ОБР
-  suffix: corvax
+  suffix: МТФ
   parent: MobHuman
   id: MobHumanERTEngineerCentCom
   components:
@@ -189,7 +189,7 @@
 
 - type: entity
   name: офицер безопасности ОБР
-  suffix: CentCom
+  suffix: МТФ
   parent: MobHuman
   id: MobHumanERTSecurityCentCom
   components:
@@ -212,7 +212,7 @@
 - type: entity
   name: медик ОБР
   parent: MobHuman
-  suffix: CentCom
+  suffix: МТФ
   id: MobHumanERTMedicalCentCom
   components:
   - type: Icon
@@ -234,7 +234,7 @@
 - type: entity
   name: уборщик ОБР
   parent: MobHuman
-  suffix: CentCom
+  suffix: МТФ
   id: MobHumanERTJunitorCentCom
   components:
   - type: Icon
