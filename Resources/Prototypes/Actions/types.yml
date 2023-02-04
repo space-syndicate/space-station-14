@@ -57,8 +57,8 @@
 
 - type: instantAction
   id: CheckMindMasterImplant
-  name: Who's your Master?
-  description: displays your master's name
+  name: check-mindcontol-implant-action-name
+  description: check-mindcontol-implant-action-description
   checkCanInteract: false
   itemIconStyle: BigAction
   icon:

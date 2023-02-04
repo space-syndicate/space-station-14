@@ -20,3 +20,6 @@ activate-micro-bomb-action-name = активировать имплант Мик
 activate-micro-bomb-action-description = Активирует вживлённую микробомбу, полностью уничтожая вас и ваше снаряжение.
 use-freedom-implant-action-name = активировать имплант Свобода
 use-freedom-implant-action-description = Освобождает вас от наручников и других ограничителей.
+check-mindcontol-implant-action-name = Отобразить мастера
+check-mindcontol-implant-action-description = Отобразить имя того, кому следует подчиняться
+check-mindcontol-result = Вы подчиняетесь { $user }
