@@ -37,7 +37,10 @@ public sealed class SubdermalImplantSystem : SharedSubdermalImplantSystem
     private void OnImplantCheck(EntityUid uid, SubdermalImplantComponent component, CheckMindMasterImplantEvent args)
     {
         var player = component.ImplantedEntity == null ? default(EntityUid) : component.ImplantedEntity.Value;
-        _popupSystem.PopupEntity("Your master is " + Name(component.ImplantedBy), player, player);
+        // Loc.GetString("traitor-user-was-a-traitor", ("user", traitor.Mind.Session.Name))
+        // _popupSystem.PopupEntity("Your master is " + Name(component.ImplantedBy), player, player);
+        _popupSystem.PopupEntity(Loc.GetString("check-mindcontol-result", ("user", Name(component.ImplantedBy))), player, player);
+
     }
 
     #region Relays
