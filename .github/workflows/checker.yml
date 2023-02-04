@@ -8,7 +8,7 @@ on:
 jobs:
   build:
     if: github.actor != 'PJBot' && github.event.pull_request.draft == false
-    runs-on: ubuntu-latest
+    runs-on: self-hosted
     steps:
       - uses: actions/checkout@v2
       - name: Setup submodule
@@ -20,10 +20,6 @@ jobs:
         run: |
           cd RobustToolbox/
           git submodule update --init --recursive
-      - name: Setup .NET Core
-        uses: actions/setup-dotnet@v3
-        with:
-          dotnet-version: 6.0.100
       - name: Install dependencies
         run: dotnet restore
       - name: Build
