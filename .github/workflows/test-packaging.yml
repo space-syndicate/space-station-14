@@ -31,25 +31,9 @@ jobs:
     runs-on: self-hosted
 
     steps:
-      - name: Checkout Master
-        uses: actions/checkout@v2
-
-      - name: Setup Submodule
-        run: |
-          git submodule update --init --recursive
-
-      - name: Pull engine updates
-        uses: space-wizards/submodule-dependency@v0.1.5
-
-      - name: Update Engine Submodules
-        run: |
-          cd RobustToolbox/
-          git submodule update --init --recursive
-
-      - name: Setup .NET Core
-        uses: actions/setup-dotnet@v3
+      - uses: actions/checkout@v2
         with:
-          dotnet-version: 6.0.x
+          submodules: 'recursive'
 
       - name: Install dependencies
         run: dotnet restore
