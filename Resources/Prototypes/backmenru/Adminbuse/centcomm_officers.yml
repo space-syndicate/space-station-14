@@ -1,0 +1,181 @@
+- type: entity
+  parent: CentcomIDCardDeathsquad
+  id: IDCardCentComOfficialCorvax
+  name: Id карта ПЦК
+  components:
+  - type: Sprite
+    layers:
+    - state: silver
+    - state: idiaa
+    - state: idcentcom
+  - type: Item
+    heldPrefix: silver
+  - type: IdCard
+    jobTitle: Представитель Центрального Командования
+
+- type: startingGear
+  id: CentComCorvax
+  equipment:
+    jumpsuit: ClothingUniformJumpsuitCentcomOfficer
+    shoes: ClothingShoesBootsLaceup
+    mask: ClothingMaskGasCentcom
+    eyes: ClothingEyesGlassesSunglasses
+    gloves: ClothingHandsGlovesCentcomNaval
+    head: ClothingHeadHatCentcom
+    outerClothing: ClothingOuterArmorCentcomCarapace
+    suitstorage: OxygenTankFilled
+    id: IDCardCentComOfficialCorvax
+    ears: ClothingHeadsetAltCentCom
+    pocket1: CyberPen
+    pocket2: BoxFolderSecretBlack
+
+- type: entity
+  noSpawn: true
+  parent: BoxFolderBlack
+  id: BoxFolderSecretBlack
+  components:
+    - type: StorageFill
+      contents:
+        - id: StationGoalPaper
+        - id: Paper
+        - id: Paper
+        - id: Paper
+
+- type: entity
+  name:  Представитель Центрального Командования
+  parent: MobHuman
+  suffix: CentCom
+  id: MobHumanCentComCorvax
+  components:
+  - type: Icon
+    sprite: Markers/jobs.rsi
+    state: centcom
+  - type: GhostTakeoverAvailable
+    name: Представитель Центрального Командования
+    description: Летит на станцию, дабы удостовериться, насколько экипаж станции убог.
+  - type: Loadout
+    prototypes: [CentComCorvax]
+  - type: RandomMetadata
+  - type: RandomHumanoidAppearance
+
+#-----------------------------------------
+
+- type: entity
+  parent: CentcomIDCardDeathsquad
+  id: IDCardCentComGavnaOperator
+  name: Id карта оператора ЦК
+  components:
+  - type: IdCard
+    jobTitle: Оператор Центрального Командования
+
+- type: startingGear
+  id: OperatorGavna
+  equipment:
+    jumpsuit: ClothingUniformJumpsuitCentcomOfficer
+    shoes: ClothingShoesBootsLaceup
+    id: IDCardCentComGavnaOperator
+    ears: ClothingHeadsetCentCom
+    pocket1: ClothingMaskGasCentcom
+
+- type: entity
+  name:  Оператор Центрального Командования
+  parent: MobHuman
+  suffix: CentCom
+  id: MobHumanCentComOperatorCorvax
+  components:
+  - type: Icon
+    sprite: Markers/jobs.rsi
+    state: centcom
+  - type: GhostTakeoverAvailable
+    name: Оператор Центрального Командования
+    description: Оператор центрального командования, выполняет приказы офицера цк и координирует действия станции.
+  - type: Loadout
+    prototypes: [OperatorGavna]
+  - type: RandomMetadata
+  - type: RandomHumanoidAppearance
+
+#-----------------------------------------
+
+- type: entity
+  parent: CentcomIDCardDeathsquad
+  id: IDCardCentComGavnaOfficerSesurity
+  name: Id карта охраны ЦК
+  components:
+  - type: Sprite
+    layers:
+    - state: centcom
+    - state: idsecurityofficer
+  - type: IdCard
+    jobTitle: Офицер Специальной Службы Безопастности
+
+- type: entity
+  noSpawn: true
+  name: дубинка-шокер спецсил
+  parent: Stunbaton
+  id: StunbatonSuper
+  description: Электрошоковая дубинка для обездвиживания людей. Слишком усердное причинение вреда с помощью этого предмета считается дурным тоном.
+  components:
+  - type: Stunbaton
+    energyPerUse: 10
+
+- type: entity
+  noSpawn: true
+  name: станнер спецсил
+  parent: WeaponDisabler
+  id: WeaponDisablerSuper
+  description: Оружие для самозащиты, которое изнуряет органические цели, пока они не свалятся с ног.
+  components:
+    - type: ProjectileBatteryAmmoProvider
+      proto: BulletDisabler
+      fireCost: 10
+
+- type: entity
+  name: пояс охраны спецсил
+  description: Может вмещать различное снаряжение службы безопасности, такое как наручники и вспышки.
+  parent: ClothingBeltSecurity
+  id: ClothingBeltSecuritySuper
+  components:
+    - type: Storage
+      capacity: 60
+    - type: StorageFill
+      contents:
+        - id: WeaponDisablerSuper
+        - id: StunbatonSuper
+        - id: GrenadeFlashBang
+        - id: GrenadeFlashBang
+        - id: Handcuffs
+        - id: Handcuffs
+
+- type: startingGear
+  id: OfficerSesurity
+  equipment:
+    jumpsuit: ClothingUniformJumpsuitHoSAlt
+    shoes: ClothingShoesBootsNedoSpetsnaz
+    mask: ClothingMaskGasSecurity
+    neck: CombatKnifeSpetsnaz
+    eyes: ClothingEyesGlassesSecurity
+    gloves: ClothingHandsGlovesCombat
+    outerClothing: ClothingOuterVestKevlar
+    suitstorage: WeaponPistolMk58
+    head: ClothingHeadHatBeretHoS
+    id: IDCardCentComGavnaOfficerSesurity
+    ears: ClothingHeadsetCentComCC
+    belt: ClothingBeltSecuritySuper
+    pocket2: MagazinePistol
+
+- type: entity
+  name:  Охрана ЦК
+  parent: MobHuman
+  suffix: CentCom
+  id: MobHumanCentComOfficerSesurityGavna
+  components:
+  - type: Icon
+    sprite: Markers/jobs.rsi
+    state: security_officer
+  - type: GhostTakeoverAvailable
+    name: Охрана ЦК
+    description: Охрана ЦК, охраняет членов ЦК и саму ЦК.
+  - type: Loadout
+    prototypes: [OfficerSesurity]
+  - type: RandomMetadata
+  - type: RandomHumanoidAppearance

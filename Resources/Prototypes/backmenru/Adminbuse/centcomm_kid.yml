@@ -1,0 +1,481 @@
+- type: entity
+  parent: BaseComputer
+  id: ComputerCommssCentComm
+  name: Коммуникационный компьютер ЦК
+  suffix: CentCom
+  description: Это может быть использовано для различных важных функций. Все еще находится на стадии разработки.
+  components:
+  - type: AccessReader
+    access: [[ "Command" ]]
+  - type: CommunicationsConsole
+    title: comms-console-announcement-title-centcom
+    sound: /Audio/Misc/notice1.ogg
+    global: true
+    color: "#2681a5"
+  - type: ActivatableUI
+    key: enum.CommunicationsConsoleUiKey.Key
+  - type: ActivatableUIRequiresPower
+  - type: UserInterface
+    interfaces:
+    - key: enum.CommunicationsConsoleUiKey.Key
+      type: CommunicationsConsoleBoundUserInterface
+  - type: Computer
+    board: CommsComputerCircuitboard
+  - type: PointLight
+    radius: 1.5
+    energy: 1.6
+    color: "#43ccb5"
+
+
+- type: entity
+  parent: ClothingHeadset
+  id: ClothingHeadsetCentComCC
+  suffix: CentCom
+  name: Гарнитура оператора ЦК
+  description: Стандартная гарнитура ЦК.
+  components:
+  - type: Headset
+    channels:
+    - CentCom
+  - type: Sprite
+    sprite: Clothing/Ears/Headsets/centcom.rsi
+  - type: Clothing
+    sprite: Clothing/Ears/Headsets/centcom.rsi
+
+
+- type: entity
+  parent: ClothingHeadsetAlt
+  id: ClothingHeadsetCentComCCAlt
+  suffix: CentCom
+  name: Гарнитура офицера ЦК
+  description: Стандартная гарнитура ЦК.
+  components:
+  - type: Headset
+    channels:
+    - CentCom
+  - type: Sprite
+    sprite: Clothing/Ears/Headsets/centcom.rsi
+  - type: Clothing
+    sprite: Clothing/Ears/Headsets/centcom.rsi
+
+
+- type: entity
+  name: мусорный мешок специального назначения
+  id: TrashBagExtended
+  parent: BaseStorageItem
+  components:
+  - type: Sprite
+    netSync: false
+    sprite: Objects/Specific/Janitorial/trashbag.rsi
+    layers:
+      - state: icon-0
+        map: ["enum.StorageFillLayers.Fill"]
+  - type: Storage
+    capacity: 1000
+    quickInsert: true
+    areaInsert: true
+    storageOpenSound:
+      collection: trashBagRustle
+    storageInsertSound:
+      collection: trashBagRustle
+    whitelist:
+      tags:
+        - Cartridge
+        - Trash
+  - type: Tag
+    tags:
+    - TrashBag
+    - DroneUsable
+  - type: Appearance
+  - type: StorageFillVisualizer
+    maxFillLevels: 4
+    fillBaseName: icon
+  - type: Dumpable
+  - type: Clothing
+    slots: [belt]
+    sprite: Objects/Specific/Janitorial/trashbag.rsi
+  - type: Item
+    size: 1001
+
+
+- type: entity
+  name: тактический нож
+  parent: BaseItem
+  id: CombatKnifeSpetsnaz
+  description: Нож для оперативников специальных операций, острый!
+  components:
+  - type: EmitSoundOnLand
+    sound:
+      path: /Audio/Items/crowbar_drop.ogg
+  - type: Tag
+    tags:
+    - Knife
+  - type: Sharp
+  - type: Sprite
+    sprite: Objects/Weapons/Melee/combat_knife.rsi
+    state: icon
+  - type: Clothing
+    quickEquip: false
+    slots:
+    - neck
+  - type: Item
+    sprite: Objects/Weapons/Melee/combat_knife.rsi
+    size: 10
+  - type: ItemCooldown
+  - type: MeleeWeapon
+    damage:
+      types:
+        Slash: 20
+    soundHit:
+      path: /Audio/Weapons/bladeslice.ogg
+  - type: Tool
+    qualities:
+      - Prying
+    useSound:
+      path: /Audio/Items/crowbar.ogg
+  - type: TilePrying
+  
+
+- type: entity
+  parent: ClothingShoesBase
+  id: ClothingShoesBootsSpetsnaz
+  name: обувь спецназа
+  suffix: noslip
+  description: Обувь спецназа Nanotrasen, для боевых операций или боевых действий. Борьба - всё, борьба - всегда.
+  components:
+  - type: Sprite
+    sprite: Clothing/Shoes/Specific/swat.rsi
+  - type: Clothing
+    sprite: Clothing/Shoes/Specific/swat.rsi
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.90
+        Slash: 0.90
+        Piercing: 0.95
+        Heat: 0.95
+  - type: NoSlip
+  - type: FootstepModifier
+    footstepSoundCollection:
+      collection: FootstepSoldier
+
+
+- type: entity
+  parent: ClothingShoesBase
+  id: ClothingShoesBootsNedoSpetsnaz
+  name: боевая обувь
+  description: Обувь спецназа Nanotrasen, для боевых операций или боевых действий. Борьба - всё, борьба - всегда.
+  components:
+  - type: Sprite
+    sprite: Clothing/Shoes/Boots/jackboots.rsi
+  - type: Clothing
+    sprite: Clothing/Shoes/Boots/jackboots.rsi
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.90
+        Slash: 0.90
+        Piercing: 0.95
+        Heat: 0.95
+  - type: FootstepModifier
+    footstepSoundCollection:
+      collection: FootstepSoldier
+
+
+- type: entity
+  parent: ClothingUniformBase
+  id: ClothingUniformJumpsuitSpetsnaz
+  name: форма спецвойск
+  description: Форма бойцов спецвойск.
+  components:
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.80
+        Slash: 0.80
+        Piercing: 0.70
+        Heat: 0.90
+  - type: Sprite
+    sprite: Clothing/Uniforms/Jumpsuit/Color/black.rsi
+  - type: Clothing
+    sprite: Clothing/Uniforms/Jumpsuit/Color/black.rsi
+  - type: SuitSensor
+    controlsLocked: true
+    randomMode: false
+    mode: SensorOff
+
+
+- type: entity
+  name: боевой стимулятор
+  parent: ChemicalMedipen
+  id: BattleMedipen
+  description: Боевой медипен для быстрого возращения в бой бойца, осторожно, после использования обратиться к настоящему врачу.
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      pen:
+        maxVol: 55
+        reagents:
+        - ReagentId: Omnizine
+          Quantity: 20
+        - ReagentId: Epinephrine
+          Quantity: 12
+        - ReagentId: THC
+          Quantity: 10
+        - ReagentId: TranexamicAcid
+          Quantity: 3
+        - ReagentId: DexalinPlus
+          Quantity: 10
+  - type: Hypospray
+    solutionName: pen
+    transferAmount: 70
+  - type: Sprite
+    sprite: Objects/Specific/Medical/medipen.rsi
+    netsync: false
+    layers:
+    - state: hypovolemic
+      map: [ "enum.SolutionContainerLayers.Fill" ]
+
+
+- type: entity
+  name: стимулятор спецназа
+  parent: ChemicalMedipen
+  id: SpetsnazMedipen
+  description: Боевой медипен для быстрого возращения в бой бойца, осторожно, после использования обратиться к настоящему врачу.
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      pen:
+        maxVol: 80
+        reagents:
+        - ReagentId: Omnizine
+          Quantity: 20
+        - ReagentId: Ichor
+          Quantity: 20
+        - ReagentId: Epinephrine
+          Quantity: 15
+        - ReagentId: THC
+          Quantity: 10
+        - ReagentId: TranexamicAcid
+          Quantity: 5
+        - ReagentId: DexalinPlus
+          Quantity: 10
+  - type: Hypospray
+    solutionName: pen
+    transferAmount: 80
+  - type: Sprite
+    sprite: Objects/Specific/Medical/medipen.rsi
+    netsync: false
+    layers:
+    - state: hypovolemic
+      map: [ "enum.SolutionContainerLayers.Fill" ]
+
+
+- type: entity
+  name: боевой космический стимулятор
+  parent: ChemicalMedipen
+  id: BattleSpaceMedipen
+  description: Боевой медипен для более менее безопастного хождения по космосу без скафандра, осторожно, после использования обратиться к настоящему врачу.
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      pen:
+        maxVol: 90
+        reagents:
+        - ReagentId: Omnizine
+          Quantity: 30
+        - ReagentId: Leporazine
+          Quantity: 20
+        - ReagentId: Barozine
+          Quantity: 40
+  - type: Hypospray
+    solutionName: pen
+    transferAmount: 90
+  - type: Sprite
+    sprite: Objects/Specific/Medical/medipen.rsi
+    netsync: false
+    layers:
+    - state: hypovolemic
+      map: [ "enum.SolutionContainerLayers.Fill" ]
+
+
+- type: entity
+  name: противовирусный стимулятор
+  parent: ChemicalMedipen
+  id: BattleMedipenAntiVirus
+  description: Боевой медипен для быстрого возращения в бой бойца, осторожно, после использования обратиться к настоящему врачу.
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      pen:
+        maxVol: 75
+        reagents:
+        - ReagentId: Omnizine
+          Quantity: 20
+        - ReagentId: Epinephrine
+          Quantity: 15
+        - ReagentId: THC
+          Quantity: 10
+        - ReagentId: Romerol
+          Quantity: 20
+        - ReagentId: Spaceacillin
+          Quantity: 10
+  - type: Hypospray
+    solutionName: pen
+    transferAmount: 75
+  - type: Sprite
+    sprite: Objects/Specific/Medical/medipen.rsi
+    netsync: false
+    layers:
+    - state: hypovolemic
+      map: [ "enum.SolutionContainerLayers.Fill" ]
+
+
+- type: entity
+  name: автоматический Силовик
+  parent: WeaponShotgunEnforcer
+  id: WeaponShotgunEnforcerRXBZZ
+  description: Дробовик марки Frozen Star нового поколения. Использует патроны калибра .50 ружейный.
+  components:
+  - type: BallisticAmmoProvider
+    autoCycle: true
+    whitelist:
+      tags:
+      - ShellShotgun
+    capacity: 10
+    proto: ShellShotgun
+    soundInsert:
+      path: /Audio/Weapons/Guns/MagIn/shotgun_insert.ogg
+
+
+- type: entity
+  name: Лектер
+  suffix: Зажигательные
+  parent: WeaponRifleLecter
+  id: WeaponRifleLecterFire
+  description: Первоклассная армейская штурмовая винтовка. Использует патроны калибра .20 винтовочный.
+  components:
+  - type: ItemSlots
+    slots:
+      gun_magazine:
+        name: Magazine
+        startingItem: MagazineRifleFire
+        insertSound: /Audio/Weapons/Guns/MagIn/ltrifle_magin.ogg
+        ejectSound: /Audio/Weapons/Guns/MagOut/ltrifle_magout.ogg
+        priority: 2
+        whitelist:
+          tags:
+            - MagazineRifle
+      gun_chamber:
+        name: Chamber
+        startingItem: CartridgeRifleFire
+        priority: 1
+        whitelist:
+          tags:
+            - CartridgeRifle
+
+
+- type: entity
+  id: MagazineRifleFire
+  name: "магазин (.20 винтовочно-зажигательные)"
+  parent: BaseMagazineRifle
+  components:
+  - type: BallisticAmmoProvider
+    proto: CartridgeRifleFire
+  - type: Sprite
+    layers:
+    - state: practice
+      map: ["enum.GunVisualLayers.Base"]
+    - state: mag-1
+      map: ["enum.GunVisualLayers.Mag"]
+
+
+- type: entity
+  id: CartridgeRifleFire
+  name: патрон (.20 винтовочно-зажигательные)
+  parent: BaseCartridgeRifle
+  components:
+  - type: CartridgeAmmo
+    proto: BulletFire
+
+
+- type: entity
+  id: BulletFire
+  name: огненная пуля
+  parent: BaseBullet
+  noSpawn: true
+  components:
+  - type: Projectile
+    damage:
+      types:
+        Piercing: 8
+  - type: IgniteOnCollide
+    fireStacks: 0.3
+
+
+#------------------------------------
+  
+    
+- type: dataset
+  id: NamesSGTs
+  values:
+  - Старший Лейтенант
+  - Лейтенант
+  - Капитан
+  
+- type: dataset
+  id: NamesCPLs
+  values:
+  - Младший капрал
+  - Капрал
+  - Специалист
+  - Прапорщик
+  - Сержант
+  - Старший сержант
+
+- type: dataset
+  id: NamesPVTs
+  values:
+  - Рядовой
+  - Рядовой
+  - Рядовой
+  - Рядовой
+  - Рядовой
+  - Ефрейтор
+  - Ефрейтор
+  - Ефрейтор
+  - Старшина
+
+#----------------------------------------------------------------------
+
+- type: entity
+  parent: CentcomIDCard
+  id: DedSquadronGavnaIDCard
+  name: Id карта оперативника специальных операций
+  components:
+  - type: Sprite
+    layers:
+    - state: syndie
+    - state: idcaptain
+    - state: idcentcom
+  - type: Item
+    heldPrefix: blue
+  - type: IdCard
+    jobTitle: Omega-0
+    fullName: Оперативник СпецВойск
+
+- type: entity
+  parent: CentcomIDCard
+  id: DedSquadronLeaderGavnaIDCard
+  name: Id карта Коммандера Специальных Операций
+  components:
+  - type: Sprite
+    layers:
+    - state: syndie
+    - state: idcaptain
+    - state: idcentcom
+  - type: Item
+    heldPrefix: blue
+  - type: IdCard
+    jobTitle: Omega-0
+    fullName: Коммандер СпецВойск

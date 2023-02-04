@@ -1,0 +1,426 @@
+- type: entity
+  noSpawn: true
+  parent: CentcomIDCard
+  id: OBRIDCard
+  name: Id карта пехотинца ОБР
+  components:
+  - type: Sprite
+    layers:
+    - state: ert_security
+  - type: Item
+    heldPrefix: blue
+  - type: IdCard
+    jobTitle: Theta-9
+    fullName: Офицер безопасности отделения
+
+
+
+- type: entity
+  noSpawn: true
+  parent: OBRIDCard
+  id: OBRMedicIDCard
+  name: Id карта медика ОБР
+  components:
+  - type: Sprite
+    layers:
+    - state: ert_medic
+  - type: IdCard
+    jobTitle: Theta-9
+    fullName: Медик отделения
+
+
+- type: entity
+  noSpawn: true
+  parent: OBRIDCard
+  id: OBREngineerIDCard
+  name: Id карта инженера ОБР
+  components:
+  - type: Sprite
+    layers:
+    - state: ert_engineer
+  - type: IdCard
+    jobTitle: Theta-9
+    fullName: Инженер отделения
+
+
+- type: entity
+  noSpawn: true
+  parent: OBRIDCard
+  id: OBRJunitorIDCard
+  name: Id карта уборщика ОБР
+  components:
+  - type: Sprite
+    layers:
+    - state: ert_janitor
+  - type: IdCard
+    jobTitle: Theta-9
+    fullName: Уборщик отделения
+
+
+- type: entity
+  noSpawn: true
+  parent: CentcomIDCard
+  id: OBRLeaderIDCard
+  name: Id карта командира ОБР
+  components:
+  - type: Sprite
+    layers:
+    - state: silver
+    - state: idcaptain
+    - state: idcentcom
+  - type: Item
+    heldPrefix: silver
+  - type: IdCard
+    jobTitle: Theta-9
+    fullName: Командир отделения
+
+
+#------------------------------------
+
+  
+# Leader
+- type: startingGear
+  id: ERTLeaderGearEVAV2.1
+  equipment:
+    jumpsuit: ClothingUniformJumpsuitColorDarkBlue
+    back: ClothingBackpackERTLeaderFilledV2.1
+    shoes: ClothingShoesBootsNedoSpetsnaz
+    mask: ClothingMaskGasSecurity
+    eyes: ClothingEyesGlassesSunglasses
+    gloves: ClothingHandsGlovesCombat
+    outerClothing: ClothingOuterHardsuitERTLeader
+    suitstorage: OxygenTankFilled
+    id: OBRLeaderIDCard
+    ears: ClothingHeadsetCentComCC
+    belt: ClothingBeltSecurityFilled
+    pocket1: CombatKnifeSpetsnaz
+
+
+- type: entity
+  noSpawn: true
+  parent: ClothingBackpackERTLeader
+  id: ClothingBackpackERTLeaderFilledV2.1
+  components:
+    - type: StorageFill
+      contents:
+        - id: BoxFlare
+        - id: BoxFlare
+        - id: BattleMedipen
+        - id: BattleMedipen
+        - id: WeaponDisabler
+        - id: WeaponPistolMk58
+        - id: MagazinePistol
+        - id: MagazinePistol
+        - id: WeaponRifleLecter
+        - id: MagazineRifle
+        - id: MagazineRifle
+        - id: MagazineRifle
+        - id: BoxHandcuff
+
+
+# Engineer
+- type: startingGear
+  id: ERTEngineerGearEVAV2.1
+  equipment:
+    jumpsuit: ClothingUniformJumpsuitColorLightBrown
+    back: ClothingBackpackERTEngineerFilledV2.1
+    shoes: ClothingShoesBootsMagAdv
+    mask: ClothingMaskGasAtmos
+    eyes: ClothingEyesGlassesMeson
+    gloves: ClothingHandsGlovesColorYellow
+    outerClothing: ClothingOuterHardsuitERTEngineer
+    suitstorage: OxygenTankFilled
+    id: OBREngineerIDCard
+    ears: ClothingHeadsetCentComCC
+    belt: ClothingBeltChiefEngineerFilled
+    pocket1: CombatKnifeSpetsnaz
+
+
+- type: entity
+  noSpawn: true
+  parent: ClothingBackpackERTEngineer
+  id: ClothingBackpackERTEngineerFilledV2.1
+  components:
+    - type: Storage
+      capacity: 300
+    - type: StorageFill
+      contents:
+        - id: BoxFlare
+        - id: BoxFlare
+        - id: BattleMedipen
+        - id: BattleMedipen
+        - id: trayScanner
+        - id: WeaponPistolMk58
+        - id: MagazinePistol
+        - id: MagazinePistol
+        - id: WeaponRifleLecter
+        - id: MagazineRifle
+        - id: MagazineRifle
+        - id: MagazineRifle
+        - id: C4
+        - id: C4
+        - id: C4
+        - id: C4
+        - id: RCD
+        - id: RCDAmmo
+        - id: RCDAmmo
+        - id: SheetSteel
+          amount: 2
+        - id: SheetPlasteel
+          amount: 2
+        - id: SheetRPGlass
+          amount: 2
+
+
+# Security
+- type: startingGear
+  id: ERTSecurityGearEVAV2.1
+  equipment:
+    jumpsuit: ClothingUniformJumpsuitColorRed
+    back: ClothingBackpackERTSecurityFilledV2.1
+    shoes: ClothingShoesBootsNedoSpetsnaz
+    mask: ClothingMaskGasSecurity
+    eyes: ClothingEyesGlassesSecurity
+    gloves: ClothingHandsGlovesCombat
+    outerClothing: ClothingOuterHardsuitERTSecurity
+    suitstorage: OxygenTankFilled
+    id: OBRIDCard
+    ears: ClothingHeadsetCentComCC
+    belt: ClothingBeltSecurityFilled
+    pocket1: CombatKnifeSpetsnaz
+
+
+- type: entity
+  noSpawn: true
+  parent: ClothingBackpackERTSecurity
+  id: ClothingBackpackERTSecurityFilledV2.1
+  components:
+    - type: StorageFill
+      contents:
+        - id: BoxFlare
+        - id: BoxFlare
+        - id: BattleMedipen
+        - id: BattleMedipen
+        - id: WeaponDisabler
+        - id: WeaponPistolMk58
+        - id: MagazinePistol
+        - id: MagazinePistol
+        - id: WeaponRifleLecter
+        - id: MagazineRifle
+        - id: MagazineRifle
+        - id: MagazineRifle
+        - id: BoxHandcuff
+
+
+# Medical
+- type: job
+  id: ERTMedicalV2.1
+  name: job-name-ertmedic
+  playTimeTracker: JobERTMedical
+  setPreference: false
+  startingGear: ERTMedicalGearEVAV2.1
+  icon: "Nanotrasen"
+  supervisors: job-supervisors-centcom
+  canBeAntag: false
+  accessGroups:
+  - AllAccess
+
+
+- type: startingGear
+  id: ERTMedicalGearEVAV2.1
+  equipment:
+    jumpsuit: ClothingUniformJumpsuitColorWhite
+    back: ClothingBackpackERTMedicalFilledV2.1
+    shoes: ClothingShoesBootsNedoSpetsnaz
+    mask: ClothingMaskBreathMedical
+    eyes: ClothingEyesHudMedical
+    gloves: ClothingHandsGlovesCombat
+    outerClothing: ClothingOuterHardsuitERTMedical
+    suitstorage: OxygenTankFilled
+    id: OBRMedicIDCard
+    ears: ClothingHeadsetCentComCC
+    belt: ClothingBeltMedicalFilled
+    pocket1: HandheldHealthAnalyzer
+    pocket2: CombatKnifeSpetsnaz
+
+
+- type: entity
+  noSpawn: true
+  parent: ClothingBackpackERTMedical
+  id: ClothingBackpackERTMedicalFilledV2.1
+  components:
+    - type: StorageFill
+      contents:
+        - id: BoxFlare
+        - id: BoxFlare
+        - id: BattleMedipen
+        - id: BattleMedipen
+        - id: WeaponPistolMk58
+        - id: MagazinePistol
+        - id: MagazinePistol
+        - id: WeaponRifleLecter
+        - id: MagazineRifle
+        - id: MagazineRifle
+        - id: MagazineRifle
+        - id: MedkitFilled
+        - id: SyringeInaprovaline
+          amount: 2
+        - id: EpinephrineChemistryBottle
+          amount: 2
+        - id: OmnizineChemistryBottle
+        - id: Hypospray
+
+
+#Janitor
+- type: startingGear
+  id: ERTJanitorGearEVAV2.1
+  equipment:
+    jumpsuit: ClothingUniformJumpsuitColorPurple
+    back: ClothingBackpackERTJanitorFilledV2.1
+    shoes: ClothingShoesBootsSpetsnaz
+    mask: ClothingMaskBreath
+    gloves: ClothingHandsGlovesCombat
+    outerClothing: ClothingOuterHardsuitERTJanitor
+    suitstorage: OxygenTankFilled
+    id: OBRJunitorIDCard
+    ears: ClothingHeadsetCentComCC
+    belt: TrashBagExtended
+    pocket1: CombatKnifeSpetsnaz
+
+
+- type: entity
+  noSpawn: true
+  parent: ClothingBackpackERTJanitor
+  id: ClothingBackpackERTJanitorFilledV2.1
+  components:
+    - type: StorageFill
+      contents:
+        - id: BattleMedipen
+        - id: BattleMedipen
+        - id: WeaponPistolMk58
+        - id: MagazinePistol
+        - id: MagazinePistol
+        - id: MagazinePistol
+        - id: MedkitFilled
+        - id: BoxLightMixed
+        - id: BoxLightMixed
+        - id: Soap
+
+
+#------------------------------------
+
+
+- type: entity
+  name:  лидер ОБР
+  parent: MobHuman
+  suffix: corvax
+  id: MobHumanERTLeaderEVAV2.1
+  components:
+  - type: Icon
+    sprite: Markers/jobs.rsi
+    state: ertleadereva
+  - type: GhostTakeoverAvailable
+    name: ОБР лидер
+    description: Командир отряда Theta - 9, великий воин, герой НТ, знаменитый полководец, мог бы им быть.
+    rules: Выполняйте различные приказы, ваша задача будет варьироваться от задач центрального командования.
+  - type: Loadout
+    prototypes: [ERTLeaderGearEVAV2.1]
+  - type: RandomMetadata
+    nameSegments: 
+    - NamesSGTs
+    - names_last_male
+  - type: RandomHumanoidAppearance
+    randomizeName: false
+
+
+# ERT Engineer
+- type: entity
+  name: инженер ОБР
+  suffix: corvax
+  parent: MobHuman
+  id: MobHumanERTEngineerEVAV2.1
+  components:
+  - type: Icon
+    sprite: Markers/jobs.rsi
+    state: ertengineereva
+  - type: GhostTakeoverAvailable
+    name: ОБР инженер
+    description: Инженер отряда Theta - 9, может и не очень хороший инженер, но дело свое знает, наверное.
+    rules: Выполняйте различные приказы, ваша задача будет варьироваться от задач центрального командования.
+  - type: Loadout
+    prototypes: [ERTEngineerGearEVAV2.1]
+  - type: RandomMetadata
+    nameSegments: 
+    - NamesCPLs
+    - names_last_male
+  - type: RandomHumanoidAppearance
+    randomizeName: false
+
+# ERT Security
+- type: entity
+  name: офицер безопасности ОБР
+  suffix: corvax
+  parent: MobHuman
+  id: MobHumanERTSecurityEVAV2.1
+  components:
+  - type: Icon
+    sprite: Markers/jobs.rsi
+    state: ertsecurityeva
+  - type: GhostTakeoverAvailable
+    name: ОБР офицер безопасности
+    description: Солдат или же охранник Theta - 9, прошедший небольшую подготовку и готовый стрелять во все что движеться.
+    rules: Выполняйте различные приказы, ваша задача будет варьироваться от задач центрального командования.
+  - type: Loadout
+    prototypes: [ERTSecurityGearEVAV2.1]
+  - type: RandomMetadata
+    nameSegments: 
+    - NamesPVTs
+    - names_last_male
+  - type: RandomHumanoidAppearance
+    randomizeName: false
+
+# ERT Medical
+- type: entity
+  name: медик ОБР
+  parent: MobHuman
+  suffix: corvax
+  id: MobHumanERTMedicalEVAV2.1
+  components:
+  - type: Icon
+    sprite: Markers/jobs.rsi
+    state: ertmedicaleva
+  - type: GhostTakeoverAvailable
+    name: ОБР медик
+    description: Медик отделения Theta - 9, был в медицинском институте, поэтому и взяли в качестве медика, но никого не волнует что он там был всего неделю.
+    rules: Выполняйте различные приказы, ваша задача будет варьироваться от задач центрального командования.
+  - type: Loadout
+    prototypes: [ERTMedicalGearEVAV2.1]
+  - type: RandomMetadata
+    nameSegments: 
+    - NamesCPLs
+    - names_last_male
+  - type: RandomHumanoidAppearance
+    randomizeName: false
+
+# ERT Junitor
+- type: entity
+  name: уборщик ОБР
+  parent: MobHuman
+  suffix: corvax
+  id: MobHumanERTJunitorEVAV2.1
+  components:
+  - type: Icon
+    sprite: Markers/jobs.rsi
+    state: ertjanitoreva
+  - type: GhostTakeoverAvailable
+    name: ОБР уборщик
+    description: Уборщик отделения Theta - 9, эй! кто дал ему пистолет?!
+    rules: Выполняйте различные приказы, ваша задача будет варьироваться от задач центрального командования.
+  - type: Loadout
+    prototypes: [ERTJanitorGearEVAV2.1]
+  - type: RandomMetadata
+    nameSegments: 
+    - NamesPVTs
+    - names_last_male
+  - type: RandomHumanoidAppearance
+    randomizeName: false

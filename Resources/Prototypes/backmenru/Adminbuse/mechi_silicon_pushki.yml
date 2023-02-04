@@ -1,0 +1,539 @@
+- type: entity
+  name: Тяжёлый импульсный карабин М-4
+  parent: BaseItem
+  id: WeaponPulseRifle9000
+  description: Навесное импульсное орудие, действующее по тому же принципу, что и ручной импульсный карабин. Чрезвычайно эффективно против всего.
+  components:
+  - type: Sprite
+    netsync: false
+    state: mecha_pulse
+    sprite: Objects/Specific/Mech/mecha_equipment.rsi
+  - type: Item
+    size: 80
+  - type: AmmoCounter
+  - type: Gun
+    maxAngle: 60
+    minAngle: 60
+    fireRate: 6
+    selectedMode: FullAuto
+    availableModes:
+    - FullAuto
+    soundGunshot:
+      path: /Audio/Weapons/Guns/Gunshots/laser3.ogg
+  - type: HitscanBatteryAmmoProvider
+    proto: Pulse
+    fireCost: 100
+  - type: Battery
+    maxCharge: 40000
+    startingCharge: 40000
+  - type: MagazineVisuals
+    magState: mag
+    steps: 5
+    zeroVisible: false
+  - type: Appearance
+  - type: StaticPrice
+    price: 500
+  - type: MechEquipment
+  - type: UIFragment
+
+- type: entity
+  name: Пусковой ракетный комплекс SRM-8
+  parent: BaseItem
+  id: WeaponLauncherMultipleRocket9000
+  description: Навесная ракетная установка.
+  components:
+  - type: Sprite
+    sprite: Objects/Specific/Mech/mecha_equipment.rsi
+    state: mecha_missilerack
+  - type: Item
+    size: 80
+  - type: Gun
+    fireRate: 1
+    selectedMode: FullAuto
+    availableModes:
+      - FullAuto
+    soundGunshot:
+      path: /Audio/Weapons/Guns/Gunshots/rpgfire.ogg
+  - type: AmmoCounter
+  - type: BallisticAmmoProvider
+    whitelist:
+      tags:
+        - CartridgeRocket
+    capacity: 10
+    proto: CartridgeRocketSlow
+    soundInsert:
+      path: /Audio/Weapons/Guns/MagIn/batrifle_magin.ogg
+  - type: MagazineVisuals
+    magState: mag
+    steps: 1
+    zeroVisible: true
+  - type: Appearance
+  - type: MechEquipment
+  - type: UIFragment
+
+- type: entity
+  name: Пусковой ракетный комплекс SRM-6
+  parent: WeaponLauncherMultipleRocket9000
+  id: WeaponLauncherRocket9000
+  description: Навесная ракетная установка.
+  components:
+  - type: Sprite
+    sprite: Objects/Specific/Mech/mecha_equipment.rsi
+    state: mecha_missilerack_six
+  - type: Gun
+    fireRate: 1
+    selectedMode: SemiAuto
+    availableModes:
+      - SemiAuto
+    soundGunshot:
+      path: /Audio/Weapons/Guns/Gunshots/rpgfire.ogg
+  - type: BallisticAmmoProvider
+    whitelist:
+      tags:
+        - CartridgeRocket
+    capacity: 6
+    proto: CartridgeRocket
+    soundInsert:
+      path: /Audio/Weapons/Guns/MagIn/batrifle_magin.ogg
+
+- type: entity
+  name: Навесной тазер PBT «Усмиритель»
+  parent: BaseItem
+  id: WeaponTaser9000
+  description: Навесной нелетальный тазер, позволяющий оглушить злоумышленников.
+  components:
+    - type: Tag
+      tags:
+        - Taser
+    - type: Sprite
+      netsync: false
+      sprite: Objects/Specific/Mech/mecha_equipment.rsi
+      state: mecha_disabler
+    - type: Gun
+      maxAngle: 30
+      minAngle: 30
+      fireRate: 4
+      soundGunshot:
+        path: /Audio/Weapons/Guns/Gunshots/taser2.ogg
+      selectedMode: FullAuto
+      availableModes:
+      - FullAuto
+    - type: ProjectileBatteryAmmoProvider
+      proto: BulletDisabler
+      fireCost: 100
+    - type: Battery
+      maxCharge: 20000
+      startingCharge: 20000
+    - type: MagazineVisuals
+      magState: mag
+      steps: 5
+      zeroVisible: true
+    - type: Appearance
+    - type: StaticPrice
+      price: 500
+    - type: AmmoCounter
+    - type: MechEquipment
+    - type: UIFragment
+
+- type: entity
+  noSpawn: true
+  name: пустая орудийная система меха
+  parent: BaseItem
+  id: BaseItemGavna9000
+  components:
+  - type: Sprite
+    netsync: false
+    sprite: Objects/Specific/Mech/mecha_equipment.rsi
+    state: mecha_weapon_bay
+  - type: MechEquipment
+  - type: UIFragment
+
+- type: entity
+  name: LBX AC 10 «Залп»
+  parent: BaseItem
+  id: WeaponShotgunEnforcer9000
+  description: Навесное огнестрельное орудие, стреляющее дробовыми патронами.
+  components:
+  - type: Sprite
+    sprite: Objects/Specific/Mech/mecha_equipment.rsi
+    state: mecha_scatter
+  - type: BallisticAmmoProvider
+    autoCycle: true
+    whitelist:
+      tags:
+      - ShellShotgun
+    capacity: 20
+    proto: ShellShotgun
+    soundInsert:
+      path: /Audio/Weapons/Guns/MagIn/shotgun_insert.ogg
+  - type: AmmoCounter
+  - type: Gun
+    fireRate: 1
+    selectedMode: FullAuto
+    availableModes:
+    - FullAuto
+  - type: ContainerContainer
+    containers:
+      ballistic-ammo: !type:Container
+        ents: []
+  - type: MechEquipment
+  - type: UIFragment
+
+- type: entity
+  name: Карабин FNX-99 «Аид»
+  id: WeaponLightMachineGunL69000
+  parent: BaseItem
+  description: Навесной карабин, бронебойными патронами.
+  components:
+  - type: Sprite
+    sprite: Objects/Specific/Mech/mecha_equipment.rsi
+    state: mecha_carbine
+  - type: Item
+    size: 80
+  - type: Gun
+    angleIncrease: 4
+    angleDecay: 16
+    fireRate: 8
+    maxAngle: 60
+    minAngle: 60
+    selectedMode: FullAuto
+    availableModes:
+    - FullAuto
+    soundGunshot:
+      path: /Audio/Weapons/Guns/Gunshots/lmg.ogg
+    soundEmpty:
+      path: /Audio/Weapons/Guns/Empty/lmg_empty.ogg
+  - type: ChamberMagazineAmmoProvider
+  - type: AmmoCounter
+  - type: MagazineVisuals
+    magState: mag
+    steps: 4
+    zeroVisible: true
+  - type: ItemSlots
+    slots:
+      gun_magazine:
+        name: Magazine
+        startingItem: MagazineLightRifleBox9000
+        insertSound: /Audio/Weapons/Guns/MagIn/batrifle_magin.ogg
+        ejectSound: /Audio/Weapons/Guns/MagOut/batrifle_magout.ogg
+        priority: 2
+        whitelist:
+          tags:
+            - MagazineLightRifleBox
+      gun_chamber:
+        name: Chamber
+        startingItem: CartridgeLightRifle
+        priority: 1
+        whitelist:
+          tags:
+            - CartridgeLightRifle
+  - type: ContainerContainer
+    containers:
+      gun_magazine: !type:ContainerSlot
+      gun_chamber: !type:ContainerSlot
+  - type: Appearance
+  - type: MechEquipment
+  - type: UIFragment
+
+- type: entity
+  name: магазин Карабина FNX-99
+  parent: MagazineLightRifleBox
+  id: MagazineLightRifleBox9000
+  components:
+  - type: BallisticAmmoProvider
+    capacity: 300
+
+- type: entity
+  name: Тесла-пушка P-X
+  parent: BaseItem
+  id: WeaponBFG9000
+  description: Орудие для боевых мехов, стреляющее энергетическими шарами, по принципу экспериментального тесла-двигателя.
+  components:
+  - type: Sprite
+    netsync: false
+    sprite: Objects/Specific/Mech/mecha_equipment.rsi
+    state: mecha_wholegen
+  - type: Item
+    size: 80
+  - type: AmmoCounter
+  - type: Gun
+    soundGunshot:
+      path: /Audio/Weapons/Guns/Gunshots/laser_cannon2.ogg
+    fireRate: 1
+    projectileSpeed: 2
+    selectedMode: SemiAuto
+    availableModes:
+      - SemiAuto
+  - type: BallisticAmmoProvider
+    proto: BFGBullet
+    capacity: 10
+  - type: Appearance
+  - type: MechEquipment
+  - type: UIFragment
+
+- type: entity
+  id: BFGBullet
+  name: снаряд BSG
+  noSpawn: true
+  parent: BaseBullet
+  components:
+  - type: Sprite
+    sprite: Objects/Weapons/Guns/Projectiles/magic.rsi
+    layers:
+    - state: bluespace
+  - type: Projectile
+    ignoreResistances: true
+    damage:
+      groups:
+        Brute: 20
+        Burn: 20
+  - type: PointLight
+    enabled: true
+    color: "#0000FF"
+    radius: 5.0
+    energy: 4.0
+
+- type: entity
+  name: Пушка-испепелитель ZFI
+  parent: BaseItem
+  id: WeaponXrayCannon9000
+  description: Орудие для боевых мехов, стреляющее высокотемпературными лучами.
+  components:
+  - type: Sprite
+    netsync: false
+    sprite: Objects/Specific/Mech/mecha_equipment.rsi
+    state: mecha_ion
+  - type: Item
+    size: 80
+  - type: MagazineVisuals
+    magState: mag
+    steps: 5
+    zeroVisible: true
+  - type: Appearance
+  - type: Battery
+    maxCharge: 1000
+    startingCharge: 1000
+  - type: Gun
+    fireRate: 3
+    selectedMode: SemiAuto
+    availableModes:
+      - SemiAuto
+    soundGunshot:
+      path: /Audio/Weapons/Guns/Gunshots/laser3.ogg
+  - type: AmmoCounter
+  - type: HitscanBatteryAmmoProvider
+    proto: XrayLaser
+    fireCost: 100
+  - type: StaticPrice
+    price: 500
+  - type: MechEquipment
+  - type: UIFragment
+
+- type: entity
+  name: Лазер «Дожигатель» CH-PS
+  parent: WeaponXrayCannon9000
+  id: WeaponLaserCHPS9000
+  description: Стандартное боевое вооружение мехов, боевой навесной лазер.
+  components:
+  - type: Sprite
+    netsync: false
+    sprite: Objects/Specific/Mech/mecha_equipment.rsi
+    state: mecha_laser
+  - type: Battery
+    maxCharge: 200000
+    startingCharge: 200000
+  - type: Gun
+    maxAngle: 30
+    minAngle: 30
+    fireRate: 4
+    selectedMode: FullAuto
+    availableModes:
+    - FullAuto
+    soundGunshot:
+      path: /Audio/Weapons/Guns/Gunshots/laser.ogg
+  - type: HitscanBatteryAmmoProvider
+    proto: RedLaser
+    fireCost: 1000
+
+- type: entity
+  name: SGL-6 Светошумовой гранатомёт
+  parent: WeaponLauncherMultipleRocket9000
+  id: WeaponGrenadeLauncher9000
+  description: Навесная пусковая установка светошумовых гранат.
+  components:
+  - type: Sprite
+    sprite: Objects/Specific/Mech/mecha_equipment.rsi
+    state: mecha_grenadelnchr
+  - type: Gun
+    fireRate: 1
+    selectedMode: SemiAuto
+    availableModes:
+      - SemiAuto
+    soundGunshot:
+      path: /Audio/Weapons/Guns/Gunshots/grenade_launcher.ogg
+  - type: BallisticAmmoProvider
+    autoCycle: true
+    whitelist:
+      tags:
+        - Grenade
+    capacity: 8
+    proto: GrenadeFlash
+    soundInsert:
+      path: /Audio/Weapons/Guns/MagIn/batrifle_magin.ogg
+
+- type: entity
+  name: Т.С.С. Карабин «Тихий час»
+  id: WeaponSilence9000
+  parent: BaseItem
+  description: Навесной карабин, стреляющий пулями, удивительно.
+  components:
+  - type: Sprite
+    sprite: Objects/Specific/Mech/mecha_equipment.rsi
+    state: mecha_mime
+  - type: Item
+    size: 80
+  - type: Gun
+    fireRate: 2
+    selectedMode: FullAuto
+    availableModes:
+    - FullAuto
+    soundGunshot:
+      path: /Audio/Weapons/Guns/Gunshots/silenced.ogg
+  - type: BallisticAmmoProvider
+    capacity: 100
+    proto: CartridgeAntiMaterial
+  - type: AmmoCounter
+  - type: Appearance
+  - type: MechEquipment
+  - type: UIFragment
+
+- type: entity
+  name: Навесной огнетушитель
+  parent: BaseItem
+  id: WeaponFireExtinguisher9000
+  description: Навесной огнетушитель, эффективный в борьбе со слизнями. Пускает быстрые, контролируемые струи воды.
+  components:
+  - type: Sprite
+    netsync: false
+    sprite: Objects/Specific/Mech/mecha_equipment.rsi
+    state: mecha_exting
+  - type: Item
+    size: 80
+  - type: SolutionContainerManager
+    solutions:
+      spray:
+        maxVol: 10000
+        reagents:
+        - ReagentId: Water
+          Quantity: 10000
+  - type: RefillableSolution
+    solution: spray
+  - type: DrainableSolution
+    solution: spray
+  - type: ItemCooldown
+  - type: Spray
+    spraySound:
+      path: /Audio/Effects/extinguish.ogg
+    sprayedPrototype: ExtinguisherSpray
+    sprayDistance: 50
+    vaporAmount: 7
+    vaporSpread: 90
+    sprayVelocity: 2.0
+    sprayTimeAlive: 9.75
+    transferAmount: 20
+    impulse: 100.0
+  - type: FireExtinguisher
+    hasSafety: false
+  - type: Appearance
+  - type: MechEquipment
+  - type: UIFragment
+
+- type: entity
+  name: SGL-8 Осколочный гранатомёт
+  parent: WeaponLauncherMultipleRocket9000
+  id: WeaponGrenadeFragLauncher9000
+  description: Навесная пусковая установка осколочный гранат.
+  components:
+  - type: Sprite
+    sprite: Objects/Specific/Mech/mecha_equipment.rsi
+    state: mecha_grenadelnchr
+  - type: Gun
+    fireRate: 1
+    selectedMode: SemiAuto
+    availableModes:
+      - SemiAuto
+    soundGunshot:
+      path: /Audio/Weapons/Guns/Gunshots/grenade_launcher.ogg
+  - type: BallisticAmmoProvider
+    autoCycle: true
+    whitelist:
+      tags:
+        - Grenade
+    capacity: 6
+    proto: GrenadeFrag
+    soundInsert:
+      path: /Audio/Weapons/Guns/MagIn/batrifle_magin.ogg
+
+- type: entity
+  name: AC 2 «Ультра»
+  id: WeaponAS2Ultra9000
+  parent: BaseItem
+  description: Навесной пулемет.
+  components:
+  - type: Sprite
+    sprite: Objects/Specific/Mech/mecha_equipment.rsi
+    state: mecha_uac2
+  - type: Item
+    size: 80
+  - type: Gun
+    angleIncrease: 4
+    angleDecay: 16
+    fireRate: 5
+    maxAngle: 30
+    minAngle: 30
+    selectedMode: FullAuto
+    availableModes:
+    - FullAuto
+    soundGunshot:
+      path: /Audio/Weapons/Guns/Gunshots/batrifle.ogg
+    soundEmpty:
+      path: /Audio/Weapons/Guns/Empty/lmg_empty.ogg
+  - type: ChamberMagazineAmmoProvider
+  - type: AmmoCounter
+  - type: MagazineVisuals
+    magState: mag
+    steps: 4
+    zeroVisible: true
+  - type: ItemSlots
+    slots:
+      gun_magazine:
+        name: Magazine
+        startingItem: MagazineLightRifleBoxAS29000
+        insertSound: /Audio/Weapons/Guns/MagIn/batrifle_magin.ogg
+        ejectSound: /Audio/Weapons/Guns/MagOut/batrifle_magout.ogg
+        priority: 2
+        whitelist:
+          tags:
+            - MagazineLightRifleBox
+      gun_chamber:
+        name: Chamber
+        startingItem: CartridgeLightRifle
+        priority: 1
+        whitelist:
+          tags:
+            - CartridgeLightRifle
+  - type: ContainerContainer
+    containers:
+      gun_magazine: !type:ContainerSlot
+      gun_chamber: !type:ContainerSlot
+  - type: Appearance
+  - type: MechEquipment
+  - type: UIFragment
+
+- type: entity
+  name: магазин AC 2 «Ультра»
+  parent: MagazineLightRifleBox
+  id: MagazineLightRifleBoxAS29000
+  components:
+  - type: BallisticAmmoProvider
+    capacity: 500
