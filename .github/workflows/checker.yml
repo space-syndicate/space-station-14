@@ -10,9 +10,10 @@ jobs:
     if: github.actor != 'PJBot' && github.event.pull_request.draft == false
     runs-on: self-hosted
     steps:
-      - name: Checkout submodules
-        run: |
-          git submodule update --init --recursive
+      - name: Checkout
+        uses: actions/checkout@v3
+        with:
+          submodules: 'recursive'
       - name: Install dependencies
         run: dotnet restore
       - name: Build
