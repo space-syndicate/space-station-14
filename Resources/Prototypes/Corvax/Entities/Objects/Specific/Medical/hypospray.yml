@@ -1,6 +1,6 @@
 - type: entity
   name: battle stimulant
-  parent: ChemicalMedipen
+  parent: EmergencyMedipen
   id: BattleMedipen
   description: Combat Medipen for a quick return to battle of a fighter, carefully, after use, consult a real doctor.
   components:
@@ -22,12 +22,10 @@
   - type: Hypospray
     solutionName: pen
     transferAmount: 55
-  - type: Tag
-    tags: []
 
 - type: entity
   name: antivirus stimulant
-  parent: ChemicalMedipen
+  parent: EmergencyMedipen
   id: BattleMedipenAntiVirus
   description: Combat Medipen for a quick return to battle of a fighter, carefully, after use, consult a real doctor.
   components:
@@ -49,5 +47,3 @@
   - type: Hypospray
     solutionName: pen
     transferAmount: 75
-  - type: Tag
-    tags: []
