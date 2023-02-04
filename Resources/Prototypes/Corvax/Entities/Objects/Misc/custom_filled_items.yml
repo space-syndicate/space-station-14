@@ -11,20 +11,20 @@
 
 - type: entity
   noSpawn: true
-  name: дубинка-шокер спецсил
+  name: baton-shocker
   parent: Stunbaton
   id: StunbatonSuper
-  description: Электрошоковая дубинка для обездвиживания людей. Слишком усердное причинение вреда с помощью этого предмета считается дурным тоном.
+  description: Electroshock baton for immobilizing people. It is considered bad form to cause harm with this item too zealously.
   components:
   - type: Stunbaton
     energyPerUse: 10
 
 - type: entity
   noSpawn: true
-  name: станнер спецсил
+  name: stunner
   parent: WeaponDisabler
   id: WeaponDisablerSuper
-  description: Оружие для самозащиты, которое изнуряет органические цели, пока они не свалятся с ног.
+  description: a self-defense weapon that exhausts organic targets until they fall off their feet.
   components:
     - type: ProjectileBatteryAmmoProvider
       proto: BulletDisabler
@@ -32,8 +32,8 @@
 
 - type: entity
   noSpawn: true
-  name: пояс охраны спецсил
-  description: Может вмещать различное снаряжение службы безопасности, такое как наручники и вспышки.
+  name: security belt
+  description: Can hold a variety of security gear such as handcuffs and flashlights.
   parent: ClothingBeltSecurity
   id: ClothingBeltSecuritySuper
   components:
@@ -49,21 +49,7 @@
           amount: 2
 
 - type: entity
-  noSpawn: true
-  parent: ClothingHeadHatBeretHoS
-  id: ClothingHeadHatBeretCentComSecurity
-  name: берет офицера безопасности
-  description: Черный берет с вышитой командирской эмблемой. Для офицеров, которые предпочитают стиль безопасности.
-
-- type: entity
-  noSpawn: true
-  parent: ClothingHeadHatBeretHoS
-  id: ClothingHeadHatBeretMobileTaskForce
-  name: берет спецопераций
-  description: Черный берет с вышитой командирской эмблемой. Для офицеров, которые предпочитают стиль безопасности.
-
-- type: entity
-  name: рюкзак спецназа
+  name: backjet
   parent: JetpackBlackFilled
   id: ClothingBackpackOperative
   components:
@@ -105,8 +91,6 @@
   parent: ClothingBackpackDuffelMilitary
   id: ClothingBackpackDuffelRXBZZ
   components:
-    - type: Storage
-      capacity: 250
     - type: StorageFill
       contents:
         - id: BoxFlare
@@ -119,7 +103,7 @@
 
 
 - type: entity
-  name: продвинутая аптечка стимуляторов
+  name: medkit advanced stimulant
   parent: MedkitAdvanced
   id: MedkitAdvancedRXBZZ
   components:
@@ -154,6 +138,8 @@
   parent: ClothingBackpackERTLeader
   id: ClothingBackpackERTLeaderFilledCentCom
   components:
+    - type: Storage
+      capacity: 300
     - type: StorageFill
       contents:
         - id: BoxFlare
@@ -206,6 +192,8 @@
   parent: ClothingBackpackERTSecurity
   id: ClothingBackpackERTSecurityFilledCentCom
   components:
+    - type: Storage
+      capacity: 300
     - type: StorageFill
       contents:
         - id: BoxFlare
@@ -226,6 +214,8 @@
   parent: ClothingBackpackERTMedical
   id: ClothingBackpackERTMedicalFilledCentCom
   components:
+    - type: Storage
+      capacity: 300
     - type: StorageFill
       contents:
         - id: BoxFlare
@@ -250,6 +240,8 @@
   parent: ClothingBackpackERTJanitor
   id: ClothingBackpackERTJanitorFilledCentCom
   components:
+    - type: Storage
+      capacity: 300
     - type: StorageFill
       contents:
         - id: BattleMedipen

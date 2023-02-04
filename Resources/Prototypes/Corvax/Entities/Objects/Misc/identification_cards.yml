@@ -14,7 +14,7 @@
 - type: entity
   parent: CentcomIDCardDeathsquad
   id: DedSquadronOperativeIDCard
-  name: Id карта оперативника специальных операций
+  name: Id card special operations operative
   components:
   - type: Sprite
     layers:
@@ -30,7 +30,7 @@
 - type: entity
   parent: CentcomIDCardDeathsquad
   id: DedSquadronLeaderIDCard
-  name: Id карта Коммандера Специальных Операций
+  name: Id card special operations commander
   components:
   - type: Sprite
     layers:
@@ -46,7 +46,7 @@
 - type: entity
   parent: CentcomIDCardDeathsquad
   id: IDCardCentComOfficialRepresentative
-  name: Id карта ПЦК
+  name: Id card CentCom Officcial
   components:
   - type: Sprite
     layers:
@@ -61,7 +61,7 @@
 - type: entity
   parent: CentcomIDCardDeathsquad
   id: IDCardCentComOperator
-  name: Id карта оператора ЦК
+  name: Id card operator CentCom
   components:
   - type: IdCard
     jobTitle: Оператор Центрального Командования
@@ -69,7 +69,7 @@
 - type: entity
   parent: CentcomIDCardDeathsquad
   id: IDCardCentComOfficerSecurity
-  name: Id карта охраны ЦК
+  name: Id card CentCom Security
   components:
   - type: Sprite
     layers:
@@ -81,8 +81,7 @@
 - type: entity
   parent: CentcomIDCardDeathsquad
   id: IDSFO
-  name: Id Офицера СП
-  description: Карта, необходимая для доступа в различные области станции.
+  name: Id card SFO
   components:
   - type: Sprite
     layers:
@@ -97,7 +96,7 @@
 - type: entity
   parent: CentcomIDCardDeathsquad
   id: IdCardRXBZZ
-  name: Id карта Оперативника РХБЗЗ
+  name: Id card CBURN
   components:
   - type: Sprite
     layers:
@@ -112,7 +111,7 @@
 - type: entity
   parent: CentcomIDCardDeathsquad
   id: IdCardRXBZZLeader
-  name: Id карта Лидер РХБЗЗ
+  name: Id card leader CBURN
   components:
   - type: Sprite
     layers:
@@ -128,7 +127,7 @@
   noSpawn: true
   parent: CentcomIDCard
   id: OBRIDCard
-  name: Id карта пехотинца ОБР
+  name: Id card
   components:
   - type: Sprite
     layers:
@@ -145,7 +144,7 @@
   noSpawn: true
   parent: OBRIDCard
   id: OBRMedicIDCard
-  name: Id карта медика ОБР
+  name: Id card
   components:
   - type: Sprite
     layers:
@@ -159,7 +158,7 @@
   noSpawn: true
   parent: OBRIDCard
   id: OBREngineerIDCard
-  name: Id карта инженера ОБР
+  name: Id card
   components:
   - type: Sprite
     layers:
@@ -173,7 +172,7 @@
   noSpawn: true
   parent: OBRIDCard
   id: OBRJunitorIDCard
-  name: Id карта уборщика ОБР
+  name: Id card
   components:
   - type: Sprite
     layers:
@@ -187,7 +186,7 @@
   noSpawn: true
   parent: OBRIDCard
   id: OBRLeaderIDCard
-  name: Id карта командира ОБР
+  name: Id card
   components:
   - type: Sprite
     layers:
