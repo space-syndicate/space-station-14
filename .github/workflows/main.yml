@@ -1,0 +1,34 @@
+name: Publish
+
+concurrency:
+  group: publish
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '0 1 * * *'
+    
+jobs:
+  build:
+    name: deploy to staging
+    runs-on: self-hosted
+    steps:
+    - uses: actions/checkout@v2
+      with:
+        submodules: 'recursive'
+    - name: Get Engine Tag
+      run: |
+        cd RobustToolbox
+        git fetch --depth=1
+    - name: Package all
+      run: |
+        Tools/package_server_build.py -p win-x64 linux-x64 osx-x64 linux-arm64
+        Tools/package_client_build.py
+    - name: Update Build Info
+      run: Tools/gen_build_info.py
+    - name: Shuffle files around
+      run: |
+        mkdir "/opt/builds/${{ github.sha }}"
+        mv release/* "/opt/builds/${{ github.sha }}"
+    - name: push_to_cdn
+      run: "curl -X POST -d \"\" -H 'Authorization: Bearer ${{ secrets.CDN_TOKEN }}' http://localhost:5001/control/update"
