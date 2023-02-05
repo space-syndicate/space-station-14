@@ -1,0 +1,9 @@
+ent-ADTClothingBeltMilitaryWebbingRPSSL = РПС ОБР СБ
+    .desc = "РПС службы безопасности ОБР"
+    .suffix = { "" }
+ent-ADTClothingBeltMilitaryWebbingRPSL = РПС ОБР Лидера
+    .desc = "РПС лидера ОБР"
+    .suffix = { "" }
+ent-ADTClothingBeltMilitaryWebbingRPSML = РПС ОБР Медика
+    .desc = "РПС медика ОБР"
+    .suffix = { "" }
