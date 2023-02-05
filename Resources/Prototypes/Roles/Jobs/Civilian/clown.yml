@@ -3,6 +3,10 @@
   name: job-name-clown
   description: job-description-clown
   playTimeTracker: JobClown
+#  requirements:
+#    - !type:DepartmentTimeRequirement
+#      department: Civilian
+#      time: 36000 # Corvax-RoleTime
   startingGear: ClownGear
   icon: "Clown"
   supervisors: job-supervisors-hop
