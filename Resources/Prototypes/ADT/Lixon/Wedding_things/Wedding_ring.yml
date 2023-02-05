@@ -13,15 +13,11 @@
     - type: Insulated
 
 - type: entity
-  parent: ClothingHandsBase
-  id: ADTClothingHandsGlovesWeddingRingZD
-  name: Wedding ring
-  description: The oath of eternal love between Zoya Grigoriev and Demyana Grigorieva.
-  components:
-    - type: Sprite
-      sprite: ADT/Clothing/Hands/Gloves/wedding-ring.rsi
-    - type: Clothing
-      sprite: ADT/Clothing/Hands/Gloves/wedding-ring.rsi
-    - type: GloveHeatResistance
-      heatResistance: 1400
-    - type: Insulated
+  parent: ADTClothingHandsGlovesWeddingRing
+  id: ADTClothingHandsGlovesWeddingRingZoyaDemyan
+  description: The oath of eternal love between Zoya Grigorieva and Demyan Grigoriev.
+
+- type: entity
+  parent: ADTClothingHandsGlovesWeddingRing
+  id: ADTClothingHandsGlovesWeddingRingYanaAidan
+  description: The oath of eternal love between Yana Simp and Aidan Simp.

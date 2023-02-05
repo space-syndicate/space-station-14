@@ -8,3 +8,8 @@
     sprite: ADT/Clothing/Uniforms/Jumpsuit/white-diplomat-suit.rsi
   - type: Clothing
     sprite: ADT/Clothing/Uniforms/Jumpsuit/white-diplomat-suit.rsi
+
+- type: loadout
+  id: ADTClothingUniformsJumpsuitInsulgonLoadout
+  entity: ADTClothingUniformsJumpsuitWhiteDiplomatSuitL
+  sponsorOnly: true

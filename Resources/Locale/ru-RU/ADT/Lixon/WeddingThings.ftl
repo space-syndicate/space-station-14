@@ -6,6 +6,10 @@ ent-ADTClothingUniformJumpsuitWeddingDressL = Свадебное платье
     .desc = "Сказочное платье, с некой воздушностью и невообразимой красотой, в таком платье ходит настоящая принцесса, сладкий мед для глаз. Просто шикарное платье!"
     .suffix = { "" }
 
-ent-ADTClothingHandsGlovesWeddingRingZD = Обручальное кольцо
-    .desc = "Клятва в вечной любви между Зоей Григорьевой и Демьяной Григорьевой."
+ent-ADTClothingHandsGlovesWeddingRingZoyaDemyan = Обручальное кольцо
+    .desc = "Клятва в вечной любви между Зоей Григорьевой и Демьяной Григорьевым."
+    .suffix = { "" }
+
+ent-ADTClothingHandsGlovesWeddingRingYanaAidan = Обручальное кольцо
+    .desc = "Клятва в вечной любви между Яной Симп и Эйданом Симп."
     .suffix = { "" }

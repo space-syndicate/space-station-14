@@ -23,3 +23,8 @@
       - Prying
   - type: IgniteOnMeleeHit
     fireStacks: 1
+
+- type: loadout
+  id: ADTHolographicMonoclineInsulgonLoadout
+  entity: ADTHolographicMonoclineL
+  sponsorOnly: true
