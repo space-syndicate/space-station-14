@@ -35,3 +35,5 @@ jobs:
         mv release/* "/opt/builds/${{ github.sha }}"
     - name: push_to_cdn
       run: "curl -X POST -d \"\" -H 'Authorization: Bearer ${{ secrets.CDN_TOKEN }}' http://localhost:5001/control/update"
+    - name: update minifest.json
+      run: "python /opt/push.py"
