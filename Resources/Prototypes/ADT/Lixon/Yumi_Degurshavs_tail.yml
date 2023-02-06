@@ -1,0 +1,56 @@
+- type: entity
+  name: Yumi Degurshav's tail.
+  id: ADTWeaponMinigunL
+  parent: BaseWeaponHeavyMachineGun
+  description: An improved minigun model with a reduced magazine, increased damage and a toxic effect. Made by a brilliant cat girl. P.S. "This weapon saved her life when escaping from the captivity of the cultists."
+  components:
+  - type: Sprite
+    sprite: ADT/Objects/Weapons/Guns/HMGs/yumidegurshavstail.rsi
+    layers:
+    - state: icon
+      map: ["enum.GunVisualLayers.Base"]
+  - type: Item
+    size: 1
+    sprite: ADT/Objects/Weapons/Guns/HMGs/yumidegurshavstail.rsi
+  - type: Gun
+    fireRate: 30
+    soundGunshot:
+      path: /Audio/Weapons/Guns/Gunshots/minigun.ogg
+  - type: BallisticAmmoProvider
+    proto: ADTCartridgeMinigun
+    capacity: 150
+  - type: MagazineVisuals
+    magState: mag
+    steps: 4
+    zeroVisible: true
+  - type: Appearance
+  - type: ContainerContainer
+    containers:
+      ballistic-ammo: !type:Container
+        ents: []
+
+- type: entity
+  id: ADTCartridgeMinigun
+  name: cartridge (.10 rifle)
+  parent: BaseCartridgeHeavyRifle
+  components:
+  - type: CartridgeAmmo
+    proto: ADTBulletMinigun
+    deleteOnSpawn: true
+
+- type: entity
+  id: ADTBulletMinigun
+  name: minigun bullet (.10 rifle)
+  parent: BulletHeavyRifle
+  noSpawn: true
+  components:
+  - type: Projectile
+    damage:
+      types:
+        Piercing: 6
+        Poison: 1
+
+- type: loadout
+  id: LixonLoadout
+  entity: ADTWeaponMinigunL
+  sponsorOnly: true
