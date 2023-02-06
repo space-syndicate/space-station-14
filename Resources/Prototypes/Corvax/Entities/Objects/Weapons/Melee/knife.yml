@@ -1,0 +1,36 @@
+- type: entity
+  name: Tactical knife
+  parent: BaseItem
+  id: CombatKnifeOperative
+  description: Knife for special operations operatives, sharp!
+  components:
+  - type: EmitSoundOnLand
+    sound:
+      path: /Audio/Items/crowbar_drop.ogg
+  - type: Tag
+    tags:
+    - Knife
+  - type: Sharp
+  - type: Sprite
+    sprite: Objects/Weapons/Melee/combat_knife.rsi
+    state: icon
+  - type: Clothing
+    quickEquip: false
+    slots:
+    - neck
+  - type: Item
+    sprite: Objects/Weapons/Melee/combat_knife.rsi
+    size: 10
+  - type: ItemCooldown
+  - type: MeleeWeapon
+    damage:
+      types:
+        Slash: 15
+    soundHit:
+      path: /Audio/Weapons/bladeslice.ogg
+  - type: Tool
+    qualities:
+      - Prying
+    useSound:
+      path: /Audio/Items/crowbar.ogg
+  - type: TilePrying
