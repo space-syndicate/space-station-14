@@ -236,3 +236,19 @@
   conditions:
     - !type:RandomTraitorProgressCondition {}
   canBeDuplicate: true
+
+- type: objective
+  id: CorpLawFullStealObjective
+  issuer: syndicate
+  difficultyOverride: 2.75
+  requirements:
+  - !type:TraitorRequirement {}
+  - !type:IncompatibleConditionsRequirement
+    conditions:
+    - DieCondition
+  - !type:NotRoleRequirement
+    roleId: Warden
+  conditions:
+  - !type:StealCondition
+    prototype: BookCorpLawFull
+    owner: job-name-warden
