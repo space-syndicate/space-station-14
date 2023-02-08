@@ -149,7 +149,7 @@ namespace Content.Server.Voting.Managers
 
         private void CreateMapVote(IPlayerSession? initiator)
         {
-            var maps = _gameMapManager.CurrentlyEligibleMaps().ToDictionary(map => map, map => map.MapName);
+            var maps = _gameMapManager.CurrentlyEligibleMaps().OrderBy(x => Guid.NewGuid()).Take(3).ToList().ToDictionary(map => map, map => map.MapName); // Corvax special random map vote
 
             var alone = _playerManager.PlayerCount == 1 && initiator != null;
             var options = new VoteOptions
