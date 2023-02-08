@@ -3,10 +3,9 @@
   name: job-name-scientist
   description: job-description-scientist
   playTimeTracker: JobScientist
-  requirements:
-    - !type:DepartmentTimeRequirement
-      department: Science
-      time: 18000 # Corvax-RoleTime
+  requirements:  # Corvax-RoleTime
+    - !type:OverallPlaytimeRequirement
+      time: 18000
   startingGear: ScientistGear
   icon: "Scientist"
   supervisors: job-supervisors-rd
