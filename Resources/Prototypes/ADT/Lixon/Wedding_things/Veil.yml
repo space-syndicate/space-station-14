@@ -1,10 +1,10 @@
-- type: entity
-  parent: ClothingHeadBase
-  id: ADTClothingHeadHatVeilL
-  name: Veil
-  description: "No other attribute of a wedding dress is able to give the bride so much grace and beauty."
-  components:
-  - type: Sprite
-    sprite: ADT/Clothing/Head/Hats/Veil.rsi
-  - type: Clothing
-    sprite: ADT/Clothing/Head/Hats/Veil.rsi
+#- type: entity
+#  parent: ClothingHeadBase
+#  id: ADTClothingHeadHatVeilL
+#  name: Veil
+#  description: "No other attribute of a wedding dress is able to give the bride so much grace and beauty."
+#  components:
+#  - type: Sprite
+#    sprite: ADT/Clothing/Head/Hats/Veil.rsi
+#  - type: Clothing
+#    sprite: ADT/Clothing/Head/Hats/Veil.rsi
