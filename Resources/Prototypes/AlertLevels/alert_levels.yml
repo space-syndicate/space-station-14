@@ -5,6 +5,7 @@
     green:
       announcement: alert-level-green-announcement
       color: Green
+      sound: /Audio/Misc/greenalert.ogg
       shuttleTime: 600
     blue:
       announcement: alert-level-blue-announcement
@@ -61,3 +62,17 @@
       emergencyLightColor: DarkViolet
       forceEnableEmergencyLights: true
       shuttleTime: 1200
+    sintwave:
+      announcement: alert-level-sintwave-announcement
+      selectable: true
+      sound:
+        path: /Audio/Misc/sintwave.ogg
+        params:
+          volume: -4
+      disableSelection: true
+      color: Pink
+      emergencyLightColor: Pink
+      forceEnableEmergencyLights: false
+      shuttleTime: 600
+
+
