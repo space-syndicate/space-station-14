@@ -1,0 +1,42 @@
+- type: weightedRandom
+  id: ModularGoalsGroups
+  weights:
+    ModularRNDGoals : 1
+    ModularMedGoals : 1
+    ModularSecGoals : 0.7
+    ModularServGoals : 1
+    ModularCMDGoals : 0.0
+
+#R&D
+- type: weightedRandom
+  id: GoalRNDResearchPC
+  weights: 
+    GoalRNDResearchPC : 0.3
+    GoalRNDNewRoom: 1
+
+#MED
+- type: weightedRandom
+  id: ModularMedGoals
+  weights:
+    GoalMedMakeMoreEpinephrine : 0.3
+    GoalMedVeterinary : 1
+
+#SEC
+- type: weightedRandom
+  id: ModularSecGoals
+  weights:
+    GoalSecFingerprints: 0.7
+    GoalSecLection: 1
+
+#Service
+- type: weightedRandom
+  id: ModularServGoals
+  weights:
+    GoalServLattery: 1
+
+#CMD
+- type: weightedRandom
+  id: ModularCMDGoals
+  weights:
+    CMDGoalParty: 1
+

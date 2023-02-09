@@ -61,7 +61,7 @@ public sealed partial class ImplanterSystem : SharedImplanterSystem
         {
             //Implant self instantly, otherwise try to inject the target.
             if (args.User == args.Target)
-                Implant(uid, args.Target.Value, component);
+                Implant(uid, args.Target.Value, args.User, component);
 
             else
                 TryImplant(component, args.User, args.Target.Value, uid);
@@ -98,7 +98,7 @@ public sealed partial class ImplanterSystem : SharedImplanterSystem
             BreakOnTargetMove = true,
             BreakOnDamage = true,
             BreakOnStun = true,
-            UsedFinishedEvent = new ImplanterImplantCompleteEvent(implanter, target),
+            UsedFinishedEvent = new ImplanterImplantCompleteEvent(implanter, target, user),
             UserCancelledEvent = new ImplanterCancelledEvent()
         });
     }
@@ -138,7 +138,7 @@ public sealed partial class ImplanterSystem : SharedImplanterSystem
     {
         component.CancelToken?.Cancel();
         component.CancelToken = null;
-        Implant(args.Implanter, args.Target, component);
+        Implant(args.Implanter, args.Target, args.Instigator, component);
     }
 
     private void OnDrawAttemptSuccess(EntityUid uid, ImplanterComponent component, ImplanterDrawCompleteEvent args)
@@ -158,11 +158,13 @@ public sealed partial class ImplanterSystem : SharedImplanterSystem
     {
         public EntityUid Implanter;
         public EntityUid Target;
+        public EntityUid Instigator;
 
-        public ImplanterImplantCompleteEvent(EntityUid implanter, EntityUid target)
+        public ImplanterImplantCompleteEvent(EntityUid implanter, EntityUid target, EntityUid instigator)
         {
             Implanter = implanter;
             Target = target;
+            Instigator = instigator;
         }
     }
 

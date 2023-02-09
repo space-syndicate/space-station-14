@@ -1,6 +1,8 @@
 using System.Linq;
 using Content.Server.Fax;
+using Content.Server.Objectives;
 using Content.Shared.GameTicking;
+using Content.Shared.Random;
 using Content.Shared.Random.Helpers;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Random;
@@ -29,9 +31,20 @@ namespace Content.Server.Corvax.StationGoal
 
         public bool SendRandomGoal()
         {
+            var chance = _random.NextFloat(0.0f, 1.0f);
+
+
+            if (chance > 0.3f)
+            {
+                var newgoal = GetRandomModularGoal("ModularGoalsGroups");
+                if (newgoal != null)
+                    return SendStationGoal(newgoal);
+            }
+
             var availableGoals = _prototypeManager.EnumeratePrototypes<StationGoalPrototype>().ToList();
             var goal = _random.Pick(availableGoals);
-            return SendStationGoal(goal);
+            return SendStationGoal(goal!);
+
         }
 
         /// <summary>
@@ -59,5 +72,64 @@ namespace Content.Server.Corvax.StationGoal
 
             return wasSent;
         }
+        public StationGoalPrototype? GetRandomModularGoal(string modGoalsGroupProto)
+        {
+            if (!_prototypeManager.TryIndex<WeightedRandomPrototype>(modGoalsGroupProto, out var groups))
+            {
+                Logger.Error("Tried to get a random objective, but can't index WeightedRandomPrototype " + modGoalsGroupProto);
+                return null;
+            }
+
+            var goals = new List<StationGoalModularPrototype>();
+
+            Int32 goalsNum = 3;
+
+
+
+            for (Int32 i = 0; i < goalsNum; i++)
+            {
+                if (groups.Weights.Count < 1)
+                    break;
+
+                var groupId = groups.Pick(_random);
+                if (!_prototypeManager.TryIndex<WeightedRandomPrototype>(groupId, out var group))
+                {
+                    continue;
+                }
+
+                var goalid = group.Pick(_random);
+                if (!_prototypeManager.TryIndex<StationGoalModularPrototype>(goalid, out var goal))
+                {
+                    continue;
+                }
+                if (goal != null)
+                {
+                    goals.Add(goal);
+                    groups.Weights.Remove(groupId);
+                }
+            }
+            if (goals.Count < 2)
+                return null;
+
+            String goalString = String.Empty;
+            foreach (var goal in goals)
+            {
+                goalString += "\n" + Loc.GetString(goal.Text);
+            }
+            if (goalString == String.Empty)
+                return null;
+
+            var mainGoal = new StationGoalPrototype();
+            mainGoal.Text = Loc.GetString("station-goal-modular");
+            mainGoal.Text += goalString;
+
+            return mainGoal;
+
+
+
+        }
+
+
+
     }
 }

@@ -125,6 +125,25 @@
     - type: Implanter
       implant: FreedomImplant
 
+- type: entity
+  id: BombImplanter
+  name: bomb implanter
+  description: bomb go boom
+  parent: BaseImplantOnlyImplanter
+  components:
+    - type: Implanter
+      implant: TickingBombImplant
+
+
+- type: entity
+  id: MindControlImplanter
+  name: mind control implanter
+  description: a single use implanter, the implant lets the user break out of hand restraints three times
+  parent: BaseImplantOnlyImplanter
+  components:
+    - type: Implanter
+      implant: MindControlImplant
+
 #Nuclear Operative/Special implanters
 
 - type: entity

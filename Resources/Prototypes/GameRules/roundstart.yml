@@ -43,6 +43,12 @@
     id: Traitor
 
 - type: gameRule
+  id: Crewmates
+  config:
+    !type:GenericGameRuleConfiguration
+    id: Crewmates
+
+- type: gameRule
   id: TraitorDeathMatch
   config:
     !type:GenericGameRuleConfiguration

@@ -56,6 +56,17 @@
   event: !type:UseFreedomImplantEvent
 
 - type: instantAction
+  id: CheckMindMasterImplant
+  name: check-mindcontol-implant-action-name
+  description: check-mindcontol-implant-action-description
+  checkCanInteract: false
+  itemIconStyle: BigAction
+  icon:
+    sprite: Mobs/Species/Human/organs.rsi
+    state: brain
+  event: !type:CheckMindMasterImplantEvent
+
+- type: instantAction
   id: ToggleSuitHelmet
   name: action-name-hardsuit
   description: action-description-hardsuit

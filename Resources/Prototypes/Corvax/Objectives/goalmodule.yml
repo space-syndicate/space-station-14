@@ -1,0 +1,36 @@
+#R&D
+- type: stationGoalModular
+  id: GoalRNDResearchPC
+  text: station-goal-rnd-pc
+
+- type: stationGoalModular
+  id: GoalRNDNewRoom
+  text: station-goal-rnd-newroom
+
+# Med
+- type: stationGoalModular
+  id: GoalMedMakeMoreEpinephrine
+  text: station-goal-med-epinephrine
+
+- type: stationGoalModular
+  id: GoalMedVeterinary
+  text: station-goal-med-veterinary
+
+# Sec
+- type: stationGoalModular
+  id: GoalSecFingerprints
+  text: station-goal-sec-fingerprints
+
+- type: stationGoalModular
+  id: GoalSecLection
+  text: station-goal-sec-lection
+
+# Service
+- type: stationGoalModular
+  id: GoalServLattery
+  text: station-goal-serv-lattery
+
+# CMD
+- type: stationGoalModular
+  id: GoalCMDParty
+  text: station-goal-cmd-party

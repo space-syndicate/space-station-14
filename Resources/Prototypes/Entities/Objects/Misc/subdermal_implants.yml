@@ -78,6 +78,27 @@
     - type: WirelessNetworkConnection
       range: 500
 
+- type: entity
+  parent: BaseSubdermalImplant
+  id: TickingBombImplant
+  name: ticking bomb template
+  description: tic-tac, tic-tac, you're dead
+  noSpawn: false
+  components:
+    - type: SubdermalImplant
+    - type: ActiveTimerTrigger
+      timeRemaining: 3000
+    - type: ExplodeOnTrigger
+    - type: GibOnTrigger
+      deleteItems: true
+    - type: Explosive
+      explosionType: MicroBomb
+      totalIntensity: 50
+      intensitySlope: 1
+      maxIntensity: 30
+      canCreateVacuum: false
+
+
 #Traitor implants
 
 - type: entity
@@ -111,6 +132,15 @@
   components:
     - type: SubdermalImplant
       implantAction: ActivateFreedomImplant
+
+- type: entity
+  id: MindControlImplant
+  name: mind control Implant
+  description: Chip that allows to take control of ones mind
+  noSpawn: true
+  components:
+    - type: SubdermalImplant
+      implantAction: CheckMindMasterImplant
 
 #Nuclear Operative/Special Exclusive implants
 
