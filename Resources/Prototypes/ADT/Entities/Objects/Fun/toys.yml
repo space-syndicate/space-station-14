@@ -1,0 +1,62 @@
+- type: entity
+  parent: BasePlushie
+  id: ADTPlushieResomiBlue #molochko!
+  name: resomi plushie blue
+  description: Little cute Resomi! UwU
+  components:
+  - type: Sprite
+    state: plushie_resomi_blue
+  - type: EmitSoundOnUse
+    sound:
+      path: /Audio/Items/Toys/toysqueak2.ogg
+  - type: EmitSoundOnLand
+    sound:
+      path: /Audio/Items/Toys/toysqueak2.ogg
+  - type: EmitSoundOnActivate
+    sound:
+      path: /Audio/Items/Toys/toysqueak2.ogg
+  - type: MeleeWeapon
+    soundHit:
+      path: /Audio/Items/Toys/toysqueak2.ogg
+
+- type: entity
+  parent: BasePlushie
+  id: ADTPlushieResomiGreen #molochko!
+  name: resomi plushie green
+  description: Little cute Resomi! UwU
+  components:
+  - type: Sprite
+    state: plushie_resomi_green
+  - type: EmitSoundOnUse
+    sound:
+      path: /Audio/Items/Toys/toysqueak2.ogg
+  - type: EmitSoundOnLand
+    sound:
+      path: /Audio/Items/Toys/toysqueak2.ogg
+  - type: EmitSoundOnActivate
+    sound:
+      path: /Audio/Items/Toys/toysqueak2.ogg
+  - type: MeleeWeapon
+    soundHit:
+      path: /Audio/Items/Toys/toysqueak2.ogg
+
+- type: entity
+  parent: BasePlushie
+  id: ADTPlushieResomiYellow #molochko!
+  name: resomi plushie yellow
+  description: Little cute Resomi! UwU
+  components:
+  - type: Sprite
+    state: plushie_resomi_yellow
+  - type: EmitSoundOnUse
+    sound:
+      path: /Audio/Items/Toys/toysqueak2.ogg
+  - type: EmitSoundOnLand
+    sound:
+      path: /Audio/Items/Toys/toysqueak2.ogg
+  - type: EmitSoundOnActivate
+    sound:
+      path: /Audio/Items/Toys/toysqueak2.ogg
+  - type: MeleeWeapon
+    soundHit:
+      path: /Audio/Items/Toys/toysqueak2.ogg
