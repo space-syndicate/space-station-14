@@ -19,10 +19,12 @@ using Robust.Shared.Prototypes;
 using Robust.Shared.Random;
 using Robust.Shared.Utility;
 using Robust.Shared.Timing;
+using Content.Shared.Inventory;
+using Content.Shared.Hands.EntitySystems;
 
 namespace Content.Server.GameTicking.Rules;
 
-public sealed class TraitorRuleSystem : GameRuleSystem
+public sealed class CrewmatesRuleSystem : GameRuleSystem
 {
     [Dependency] private readonly IPrototypeManager _prototypeManager = default!;
     [Dependency] private readonly IRobustRandom _random = default!;
@@ -35,10 +37,12 @@ public sealed class TraitorRuleSystem : GameRuleSystem
     [Dependency] private readonly MobStateSystem _mobStateSystem = default!;
     [Dependency] private readonly UplinkSystem _uplink = default!;
     [Dependency] private readonly SharedAudioSystem _audioSystem = default!;
+    [Dependency] private readonly InventorySystem _inventorySystem = default!;
+    [Dependency] private readonly SharedHandsSystem _sharedHandSystem = default!;
 
     private ISawmill _sawmill = default!;
 
-    public override string Prototype => "Traitor";
+    public override string Prototype => "Crewmates";
 
     private readonly SoundSpecifier _addedSound = new SoundPathSpecifier("/Audio/Misc/tatoralert.ogg");
     public List<TraitorRole> Traitors = new();
@@ -247,7 +251,7 @@ public sealed class TraitorRuleSystem : GameRuleSystem
         // PDA should be in place already
         DebugTools.AssertNotNull(mind.OwnedEntity);
 
-        var startingBalance = _cfg.GetCVar(CCVars.TraitorStartingBalance);
+        var startingBalance = _cfg.GetCVar(CCVars.TraitorStartingBalance) / 2;
 
         if (mind.CurrentJob != null)
             startingBalance = Math.Max(startingBalance - mind.CurrentJob.Prototype.AntagAdvantage, 0);
@@ -276,6 +280,20 @@ public sealed class TraitorRuleSystem : GameRuleSystem
             if (traitorRole.Mind.TryAddObjective(objective))
                 difficulty += objective.Difficulty;
         }
+
+
+        if (_inventorySystem.TryGetSlotContainer(mind.OwnedEntity!.Value, "pocket2", out var pocket, out _))
+        {
+            if (pocket.ContainedEntity != null)
+            {
+                var item = pocket.ContainedEntity!.Value;
+                pocket.Remove(item);
+                _sharedHandSystem.TryPickupAnyHand(mind.OwnedEntity!.Value, item);
+            }
+        }
+
+        var implanter = IoCManager.Resolve<IEntityManager>().SpawnEntity("MindControlImplanter", Transform(mind.OwnedEntity!.Value).Coordinates);
+        _inventorySystem.TryEquip(mind.OwnedEntity!.Value, implanter, "pocket2", true, true);
 
         //give traitors their codewords to keep in their character info menu
         traitorRole.Mind.Briefing = Loc.GetString("traitor-role-codewords", ("codewords", string.Join(", ", Codewords)));
