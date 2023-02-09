@@ -1,26 +1,26 @@
-﻿- type: entity
-  name: piano
-  parent: BasePlaceableInstrumentRotatable
-  id: PianoInstrument
-  description: Play Needles Piano Now.
-  components:
-  - type: Instrument
-    program: 1
-  - type: Sprite
-    state: piano
-  - type: Climbable
+﻿#- type: entity
+#  name: piano
+ # parent: BasePlaceableInstrumentRotatable
+ # id: PianoInstrument
+ # description: Play Needles Piano Now.
+  #components:
+  #- type: Instrument
+  #  program: 1
+  #- type: Sprite
+  #  state: piano
+  #- type: Climbable
 
-- type: entity
-  name: upright piano
-  parent: BasePlaceableInstrumentRotatable
-  id: UprightPianoInstrument
-  description: I said Piannie!
-  components:
-  - type: Instrument
-    program: 3
-  - type: Sprite
-    state: piano-upright
-  - type: Climbable
+#- type: entity
+ # name: upright piano
+  #parent: BasePlaceableInstrumentRotatable
+  #id: UprightPianoInstrument
+  #description: I said Piannie!
+  #components:
+  #- type: Instrument
+  #  program: 3
+  #- type: Sprite
+  #  state: piano-upright
+  #- type: Climbable
 
 - type: entity
   name: vibraphone
@@ -43,16 +43,16 @@
   - type: Sprite
     state: marimba
 
-- type: entity
-  name: church organ
-  parent: BasePlaceableInstrumentRotatable
-  id: ChurchOrganInstrument
-  description: This thing really blows!
-  components:
-  - type: Instrument
-    program: 19
-  - type: Sprite
-    state: church-organ
+#- type: entity
+ # name: church organ
+  #parent: BasePlaceableInstrumentRotatable
+  #id: ChurchOrganInstrument
+  #description: This thing really blows!
+  #components:
+  #- type: Instrument
+  #  program: 19
+  #- type: Sprite
+  #  state: church-organ
 
 - type: entity
   name: tuba
