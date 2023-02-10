@@ -1,3 +1,4 @@
+---
 - type: alertLevels
   id: stationAlerts
   defaultLevel: green
@@ -9,7 +10,6 @@
         params:
             volume: -4
       color: Green
-      sound: /Audio/Misc/greenalert.ogg
       shuttleTime: 600
     blue:
       announcement: alert-level-blue-announcement
@@ -84,17 +84,3 @@
       emergencyLightColor: Pink
       forceEnableEmergencyLights: false
       shuttleTime: 400
-    sintwave:
-      announcement: alert-level-sintwave-announcement
-      selectable: true
-      sound:
-        path: /Audio/Misc/sintwave.ogg
-        params:
-          volume: -4
-      disableSelection: true
-      color: Pink
-      emergencyLightColor: Pink
-      forceEnableEmergencyLights: false
-      shuttleTime: 600
-
-
