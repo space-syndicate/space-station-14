@@ -61,6 +61,7 @@ SERVER_IGNORED_RESOURCES = {
 # Assembly names to copy from content.
 # PDBs are included if available, .dll/.pdb appended automatically.
 SERVER_CONTENT_ASSEMBLIES = [
+    "Content.CorvaxServer", # Corvax-Secrets
     "Content.Server.Database",
     "Content.Server",
     "Content.Shared",
@@ -156,6 +157,23 @@ def build_platform(platform: PlatformReg, skip_build: bool, hybrid_acz: bool) ->
     print(Fore.GREEN + f"Building project for {platform.rid}..." + Style.RESET_ALL)
 
     if not skip_build:
+        # Corvax-Secrets-Start
+        if os.path.exists(p("Secrets", "Content.CorvaxServer")):
+            print(Fore.GREEN + f"Secrets found. Building secret project for {platform.rid}..." + Style.RESET_ALL)
+            subprocess.run([
+                "dotnet",
+                "build",
+                p("Secrets","Content.CorvaxServer", "Content.CorvaxServer.csproj"),
+                "-c", "Release",
+                "--nologo",
+                "/v:m",
+                f"/p:TargetOS={platform.target_os}",
+                "/t:Rebuild",
+                "/p:FullRelease=True",
+                "/m"
+            ], check=True)
+        # Corvax-Secrets-End
+    
         subprocess.run([
             "dotnet",
             "build",
