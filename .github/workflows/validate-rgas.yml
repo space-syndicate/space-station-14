@@ -7,8 +7,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
-    - name: Setup Submodule
-      run: git submodule update --init
+      with:
+        submodules: 'recursive'
+        ssh-key: ${{ secrets.SECRETS_PRIVATE_KEY }}
     - name: Pull engine updates
       uses: space-wizards/submodule-dependency@v0.1.5
     - uses: PaulRitter/yaml-schema-validator@v1
