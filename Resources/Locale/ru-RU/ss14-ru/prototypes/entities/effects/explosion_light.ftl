@@ -1,3 +1,3 @@
-ent-ExplosionLight = explosion light
+ent-ExplosionLight = свет от взрыва
     .desc = { "" }
     .suffix = { "" }
