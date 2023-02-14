@@ -1,8 +1,8 @@
 admin-explosion-eui-title = Заспавнить взрывы
 admin-explosion-eui-label-type = Тип взрыва
 admin-explosion-eui-label-mapid = ID карты
-admin-explosion-eui-label-xmap = X (Map)
-admin-explosion-eui-label-ymap = Y (Map)
+admin-explosion-eui-label-xmap = X (Карты)
+admin-explosion-eui-label-ymap = Y (Карты)
 admin-explosion-eui-label-current = Текущая позиция
 admin-explosion-eui-label-preview = Предпросмотр
 admin-explosion-eui-label-total = Общая интенсивность
