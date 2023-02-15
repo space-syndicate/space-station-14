@@ -50,13 +50,6 @@
   - type: MovementSpeedModifier
     baseWalkSpeed : 1.5
     baseSprintSpeed : 3.5
-  - type: Vocal
-    sounds:
-      Male: UnisexDiona
-      Female: UnisexDiona
-      Unsexed: UnisexDiona
-  - type: BodyEmotes
-    soundsId: DionaBodyEmotes
 
 - type: entity
   save: false

@@ -17,10 +17,6 @@ using Robust.Shared.Timing;
 using Robust.Shared.Utility;
 using System.Diagnostics.CodeAnalysis;
 using Content.Shared.Mobs.Systems;
-using Content.Shared.Mech.Components;
-using Content.Shared.Parallax.Biomes;
-using Robust.Shared.Map.Components;
-using Robust.Shared.Noise;
 using Robust.Shared.Physics.Components;
 using Robust.Shared.Physics.Systems;
 
@@ -36,7 +32,6 @@ namespace Content.Shared.Movement.Systems
         [Dependency] protected readonly IGameTiming Timing = default!;
         [Dependency] private readonly IMapManager _mapManager = default!;
         [Dependency] private readonly ITileDefinitionManager _tileDefinitionManager = default!;
-        [Dependency] private readonly SharedBiomeSystem _biome = default!;
         [Dependency] private readonly InventorySystem _inventory = default!;
         [Dependency] private readonly SharedContainerSystem _container = default!;
         [Dependency] private readonly EntityLookupSystem _lookup = default!;
@@ -454,7 +449,7 @@ namespace Content.Shared.Movement.Systems
             }
 
             if (_inventory.TryGetSlotEntity(mover.Owner, "shoes", out var shoes) &&
-                TryComp<FootstepModifierComponent>(shoes, out var modifier))
+                EntityManager.TryGetComponent<FootstepModifierComponent>(shoes, out var modifier))
             {
                 sound = modifier.Sound;
                 return true;
@@ -466,10 +461,10 @@ namespace Content.Shared.Movement.Systems
         private bool TryGetFootstepSound(TransformComponent xform, bool haveShoes, [NotNullWhen(true)] out SoundSpecifier? sound)
         {
             sound = null;
-            MapGridComponent? grid;
 
-            // Fallback to the map?
-            if (xform.GridUid == null)
+            // Fallback to the map
+            if (xform.MapUid == xform.GridUid ||
+                xform.GridUid == null)
             {
                 if (TryComp<FootstepModifierComponent>(xform.MapUid, out var modifier))
                 {
@@ -480,30 +475,25 @@ namespace Content.Shared.Movement.Systems
                 return false;
             }
 
-            grid = _mapManager.GetGrid(xform.GridUid.Value);
-            var position = grid.LocalToTile(xform.Coordinates);
+            var grid = _mapManager.GetGrid(xform.GridUid.Value);
+            var tile = grid.GetTileRef(xform.Coordinates);
+
+            if (tile.IsSpace(_tileDefinitionManager))
+                return false;
 
             // If the coordinates have a FootstepModifier component
             // i.e. component that emit sound on footsteps emit that sound
-            var anchored = grid.GetAnchoredEntitiesEnumerator(position);
-
-            while (anchored.MoveNext(out var maybeFootstep))
+            foreach (var maybeFootstep in grid.GetAnchoredEntities(tile.GridIndices))
             {
-                if (TryComp<FootstepModifierComponent>(maybeFootstep, out var footstep))
+                if (EntityManager.TryGetComponent(maybeFootstep, out FootstepModifierComponent? footstep))
                 {
                     sound = footstep.Sound;
                     return true;
                 }
             }
 
-            if (!grid.TryGetTileRef(position, out var tileRef))
-            {
-                sound = null;
-                return false;
-            }
-
             // Walking on a tile.
-            var def = (ContentTileDefinition) _tileDefinitionManager[tileRef.Tile.TypeId];
+            var def = (ContentTileDefinition) _tileDefinitionManager[tile.Tile.TypeId];
             sound = haveShoes ? def.FootstepSounds : def.BarestepSounds;
             return sound != null;
         }

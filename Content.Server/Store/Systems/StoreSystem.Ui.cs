@@ -1,5 +1,6 @@
 using Content.Server.Actions;
 using Content.Server.Administration.Logs;
+using Content.Server.Mind.Components;
 using Content.Server.Store.Components;
 using Content.Shared.Actions.ActionTypes;
 using Content.Shared.FixedPoint;
@@ -9,11 +10,11 @@ using Content.Shared.Database;
 using Robust.Server.GameObjects;
 using System.Linq;
 using Content.Server.Stack;
-using Content.Server.UserInterface;
+using Robust.Shared.Player;
 
 namespace Content.Server.Store.Systems;
 
-public sealed partial class StoreSystem
+public sealed partial class StoreSystem : EntitySystem
 {
     [Dependency] private readonly IAdminLogManager _admin = default!;
     [Dependency] private readonly SharedHandsSystem _hands = default!;
@@ -24,7 +25,7 @@ public sealed partial class StoreSystem
 
     private void InitializeUi()
     {
-        SubscribeLocalEvent<StoreComponent, StoreRequestUpdateInterfaceMessage>(OnRequestUpdate);
+        SubscribeLocalEvent<StoreComponent, StoreRequestUpdateInterfaceMessage>((_,c,r) => UpdateUserInterface(r.Session.AttachedEntity, c));
         SubscribeLocalEvent<StoreComponent, StoreBuyListingMessage>(OnBuyRequest);
         SubscribeLocalEvent<StoreComponent, StoreRequestWithdrawMessage>(OnRequestWithdraw);
     }
@@ -33,41 +34,45 @@ public sealed partial class StoreSystem
     /// Toggles the store Ui open and closed
     /// </summary>
     /// <param name="user">the person doing the toggling</param>
-    /// <param name="storeEnt">the store being toggled</param>
-    /// <param name="component"></param>
-    public void ToggleUi(EntityUid user, EntityUid storeEnt, StoreComponent? component = null)
+    /// <param name="component">the store being toggled</param>
+    public void ToggleUi(EntityUid user, StoreComponent component)
     {
-        if (!Resolve(storeEnt, ref component))
-            return;
-
         if (!TryComp<ActorComponent>(user, out var actor))
             return;
 
-        if (!_ui.TryToggleUi(storeEnt, StoreUiKey.Key, actor.PlayerSession))
+        if (!_ui.TryToggleUi(component.Owner, StoreUiKey.Key, actor.PlayerSession))
             return;
 
-        UpdateUserInterface(user, storeEnt, component);
+        UpdateUserInterface(user, component);
     }
 
     /// <summary>
     /// Updates the user interface for a store and refreshes the listings
     /// </summary>
     /// <param name="user">The person who if opening the store ui. Listings are filtered based on this.</param>
-    /// <param name="store">The store entity itself</param>
     /// <param name="component">The store component being refreshed.</param>
     /// <param name="ui"></param>
-    public void UpdateUserInterface(EntityUid? user, EntityUid store, StoreComponent? component = null, BoundUserInterface? ui = null)
+    public void UpdateUserInterface(EntityUid? user, StoreComponent component, BoundUserInterface? ui = null)
     {
-        if (!Resolve(store, ref component))
-            return;
+        if (ui == null)
+        {
+            ui = _ui.GetUiOrNull(component.Owner, StoreUiKey.Key);
+            if (ui == null)
+                return;
+        }
 
-        if (ui == null && !_ui.TryGetUi(store, StoreUiKey.Key, out ui))
-            return;
+        //if we haven't opened it before, initialize the shit
+        if (!component.Opened)
+        {
+            RefreshAllListings(component);
+            InitializeFromPreset(component.Preset, component);
+            component.Opened = true;
+        }
 
         //this is the person who will be passed into logic for all listing filtering.
         if (user != null) //if we have no "buyer" for this update, then don't update the listings
         {
-            component.LastAvailableListings = GetAvailableListings(component.AccountOwner ?? user.Value, store, component).ToHashSet();
+            component.LastAvailableListings = GetAvailableListings(component.AccountOwner ?? user.Value, component).ToHashSet();
         }
 
         //dictionary for all currencies, including 0 values for currencies on the whitelist
@@ -87,22 +92,12 @@ public sealed partial class StoreSystem
         _ui.SetUiState(ui, state);
     }
 
-    private void OnRequestUpdate(EntityUid uid, StoreComponent component, StoreRequestUpdateInterfaceMessage args)
-    {
-        UpdateUserInterface(args.Session.AttachedEntity, args.Entity, component);
-    }
-
-    private void BeforeActivatableUiOpen(EntityUid uid, StoreComponent component, BeforeActivatableUIOpenEvent args)
-    {
-        UpdateUserInterface(args.User, uid, component);
-    }
-
     /// <summary>
     /// Handles whenever a purchase was made.
     /// </summary>
     private void OnBuyRequest(EntityUid uid, StoreComponent component, StoreBuyListingMessage msg)
     {
-        var listing = component.Listings.FirstOrDefault(x => x.Equals(msg.Listing));
+        ListingData? listing = component.Listings.FirstOrDefault(x => x.Equals(msg.Listing));
         if (listing == null) //make sure this listing actually exists
         {
             Logger.Debug("listing does not exist");
@@ -119,7 +114,7 @@ public sealed partial class StoreSystem
         //condition checking because why not
         if (listing.Conditions != null)
         {
-            var args = new ListingConditionArgs(component.AccountOwner ?? buyer, uid, listing, EntityManager);
+            var args = new ListingConditionArgs(component.AccountOwner ?? buyer, component.Owner, listing, EntityManager);
             var conditionsMet = listing.Conditions.All(condition => condition.Condition(args));
 
             if (!conditionsMet)
@@ -161,13 +156,16 @@ public sealed partial class StoreSystem
         }
 
         //log dat shit.
-        _admin.Add(LogType.StorePurchase, LogImpact.Low,
-            $"{ToPrettyString(buyer):player} purchased listing \"{Loc.GetString(listing.Name)}\" from {ToPrettyString(uid)}");
+        if (TryComp<MindComponent>(buyer, out var mind))
+        {
+            _admin.Add(LogType.StorePurchase, LogImpact.Low,
+                $"{ToPrettyString(mind.Owner):player} purchased listing \"{Loc.GetString(listing.Name)}\" from {ToPrettyString(uid)}");
+        }
 
         listing.PurchaseAmount++; //track how many times something has been purchased
         _audio.PlayEntity(component.BuySuccessSound, msg.Session, uid); //cha-ching!
 
-        UpdateUserInterface(buyer, uid, component);
+        UpdateUserInterface(buyer, component);
     }
 
     /// <summary>
@@ -208,6 +206,6 @@ public sealed partial class StoreSystem
         }
 
         component.Balance[msg.Currency] -= msg.Amount;
-        UpdateUserInterface(buyer, uid, component);
+        UpdateUserInterface(buyer, component);
     }
 }

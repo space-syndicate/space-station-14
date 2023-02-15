@@ -15,6 +15,7 @@ namespace Content.MapRenderer.Painters
 {
     public sealed class TilePainter
     {
+        private const string TilesPath = "/Textures/Tiles/";
         public const int TileImageSize = EyeManager.PixelsPerMeter;
 
         private readonly ITileDefinitionManager _sTileDefinitionManager;

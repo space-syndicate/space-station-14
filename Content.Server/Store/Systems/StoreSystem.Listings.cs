@@ -3,7 +3,7 @@ using Content.Shared.Store;
 
 namespace Content.Server.Store.Systems;
 
-public sealed partial class StoreSystem
+public sealed partial class StoreSystem : EntitySystem
 {
     /// <summary>
     /// Refreshes all listings on a store.
@@ -64,12 +64,11 @@ public sealed partial class StoreSystem
     /// Gets the available listings for a store
     /// </summary>
     /// <param name="buyer">Either the account owner, user, or an inanimate object (e.g., surplus bundle)</param>
-    /// <param name="store"></param>
     /// <param name="component">The store the listings are coming from.</param>
     /// <returns>The available listings.</returns>
-    public IEnumerable<ListingData> GetAvailableListings(EntityUid buyer, EntityUid store, StoreComponent component)
+    public IEnumerable<ListingData> GetAvailableListings(EntityUid buyer, StoreComponent component)
     {
-        return GetAvailableListings(buyer, component.Listings, component.Categories, store);
+        return GetAvailableListings(buyer, component.Listings, component.Categories, component.Owner);
     }
 
     /// <summary>
@@ -82,7 +81,8 @@ public sealed partial class StoreSystem
     /// <returns>The available listings.</returns>
     public IEnumerable<ListingData> GetAvailableListings(EntityUid buyer, HashSet<ListingData>? listings, HashSet<string> categories, EntityUid? storeEntity = null)
     {
-        listings ??= GetAllListings();
+        if (listings == null)
+            listings = GetAllListings();
 
         foreach (var listing in listings)
         {

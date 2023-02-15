@@ -169,7 +169,7 @@ namespace Content.Server.Administration.Managers
             _netMgr.RegisterNetMessage<MsgUpdateAdminStatus>();
 
             // Cache permissions for loaded console commands with the requisite attributes.
-            foreach (var (cmdName, cmd) in _consoleHost.AvailableCommands)
+            foreach (var (cmdName, cmd) in _consoleHost.RegisteredCommands)
             {
                 var (isAvail, flagsReq) = GetRequiredFlag(cmd);
 

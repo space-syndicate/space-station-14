@@ -21,5 +21,11 @@ namespace Content.Server.Medical.Components
 
         [DataField("partRatingCloningFailChanceMultiplier")]
         public float PartRatingFailMultiplier = 0.75f;
+
+        // ECS this out!, when DragDropSystem and InteractionSystem refactored
+        public override bool DragDropOn(DragDropEvent eventArgs)
+        {
+            return true;
+        }
     }
 }

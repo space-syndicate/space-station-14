@@ -95,19 +95,17 @@ public sealed partial class NPCCombatSystem
 
         foreach (var (comp, _) in EntityQuery<NPCMeleeCombatComponent, ActiveNPCComponent>())
         {
-            var uid = comp.Owner;
-
-            if (!combatQuery.TryGetComponent(uid, out var combat) || !combat.IsInCombatMode)
+            if (!combatQuery.TryGetComponent(comp.Owner, out var combat) || !combat.IsInCombatMode)
             {
-                RemComp<NPCMeleeCombatComponent>(uid);
+                RemComp<NPCMeleeCombatComponent>(comp.Owner);
                 continue;
             }
 
-            Attack(uid, comp, curTime, physicsQuery, xformQuery);
+            Attack(comp, curTime, physicsQuery, xformQuery);
         }
     }
 
-    private void Attack(EntityUid uid, NPCMeleeCombatComponent component, TimeSpan curTime, EntityQuery<PhysicsComponent> physicsQuery, EntityQuery<TransformComponent> xformQuery)
+    private void Attack(NPCMeleeCombatComponent component, TimeSpan curTime, EntityQuery<PhysicsComponent> physicsQuery, EntityQuery<TransformComponent> xformQuery)
     {
         component.Status = CombatStatus.Normal;
 
@@ -117,7 +115,7 @@ public sealed partial class NPCCombatSystem
             return;
         }
 
-        if (!xformQuery.TryGetComponent(uid, out var xform) ||
+        if (!xformQuery.TryGetComponent(component.Owner, out var xform) ||
             !xformQuery.TryGetComponent(component.Target, out var targetXform))
         {
             component.Status = CombatStatus.TargetUnreachable;
@@ -136,7 +134,7 @@ public sealed partial class NPCCombatSystem
             return;
         }
 
-        if (TryComp<NPCSteeringComponent>(uid, out var steering) &&
+        if (TryComp<NPCSteeringComponent>(component.Owner, out var steering) &&
             steering.Status == SteeringStatus.NoPath)
         {
             component.Status = CombatStatus.TargetUnreachable;
@@ -149,11 +147,11 @@ public sealed partial class NPCCombatSystem
             return;
         }
 
-        steering = EnsureComp<NPCSteeringComponent>(uid);
+        steering = EnsureComp<NPCSteeringComponent>(component.Owner);
         steering.Range = MathF.Max(0.2f, weapon.Range - 0.4f);
 
         // Gets unregistered on component shutdown.
-        _steering.TryRegister(uid, new EntityCoordinates(component.Target, Vector2.Zero), steering);
+        _steering.TryRegister(component.Owner, new EntityCoordinates(component.Target, Vector2.Zero), steering);
 
         if (weapon.NextAttack > curTime || !Enabled)
             return;
@@ -162,11 +160,11 @@ public sealed partial class NPCCombatSystem
             physicsQuery.TryGetComponent(component.Target, out var targetPhysics) &&
             targetPhysics.LinearVelocity.LengthSquared != 0f)
         {
-            _melee.AttemptLightAttackMiss(uid, component.Weapon, weapon, targetXform.Coordinates.Offset(_random.NextVector2(0.5f)));
+            _melee.AttemptLightAttackMiss(component.Owner, weapon, targetXform.Coordinates.Offset(_random.NextVector2(0.5f)));
         }
         else
         {
-            _melee.AttemptLightAttack(uid, component.Weapon, weapon, component.Target);
+            _melee.AttemptLightAttack(component.Owner, weapon, component.Target);
         }
     }
 }

@@ -7,6 +7,7 @@ namespace Content.Shared.Mining;
 /// This is a prototype for defining ores that generate in rock
 /// </summary>
 [Prototype("ore")]
+[DataDefinition]
 public sealed class OrePrototype : IPrototype
 {
     /// <inheritdoc/>

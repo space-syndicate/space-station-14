@@ -10,10 +10,8 @@ using Content.Shared.Destructible;
 using Content.Shared.Hands.Components;
 using Content.Shared.Interaction;
 using Content.Shared.Item;
-using Content.Shared.Lock;
 using Content.Shared.Placeable;
 using Content.Shared.Storage;
-using Content.Shared.Storage.Components;
 using Content.Shared.Wall;
 using Content.Shared.Whitelist;
 using Robust.Server.Containers;
@@ -22,6 +20,7 @@ using Robust.Shared.Map;
 using Robust.Shared.Physics;
 using Robust.Shared.Physics.Components;
 using Robust.Shared.Physics.Systems;
+using Robust.Shared.Player;
 
 namespace Content.Server.Storage.EntitySystems;
 
@@ -168,15 +167,13 @@ public sealed class EntityStorageSystem : EntitySystem
         if (!Resolve(uid, ref component))
             return;
 
-        var beforeev = new StorageBeforeOpenEvent();
-        RaiseLocalEvent(uid, ref beforeev);
+        RaiseLocalEvent(uid, new StorageBeforeOpenEvent());
         component.Open = true;
         EmptyContents(uid, component);
         ModifyComponents(uid, component);
-        _audio.PlayPvs(component.OpenSound, uid);
+        _audio.PlayPvs(component.OpenSound, component.Owner);
         ReleaseGas(uid, component);
-        var afterev = new StorageAfterOpenEvent();
-        RaiseLocalEvent(uid, ref afterev);
+        RaiseLocalEvent(uid, new StorageAfterOpenEvent());
     }
 
     public void CloseStorage(EntityUid uid, EntityStorageComponent? component = null)
@@ -189,8 +186,8 @@ public sealed class EntityStorageSystem : EntitySystem
 
         var entities = _lookup.GetEntitiesInRange(targetCoordinates, component.EnteringRange, LookupFlags.Approximate | LookupFlags.Dynamic | LookupFlags.Sundries);
 
-        var ev = new StorageBeforeCloseEvent(entities, new());
-        RaiseLocalEvent(uid, ref ev);
+        var ev = new StorageBeforeCloseEvent(entities);
+        RaiseLocalEvent(uid, ev);
         var count = 0;
         foreach (var entity in ev.Contents)
         {
@@ -210,10 +207,9 @@ public sealed class EntityStorageSystem : EntitySystem
 
         TakeGas(uid, component);
         ModifyComponents(uid, component);
-        _audio.PlayPvs(component.CloseSound, uid);
+        _audio.PlayPvs(component.CloseSound, component.Owner);
         component.LastInternalOpenAttempt = default;
-        var afterev = new StorageAfterCloseEvent();
-        RaiseLocalEvent(uid, ref afterev);
+        RaiseLocalEvent(uid, new StorageAfterCloseEvent());
     }
 
     public bool Insert(EntityUid toInsert, EntityUid container, EntityStorageComponent? component = null)
@@ -306,7 +302,7 @@ public sealed class EntityStorageSystem : EntitySystem
         }
 
         var ev = new StorageOpenAttemptEvent(silent);
-        RaiseLocalEvent(target, ref ev, true);
+        RaiseLocalEvent(target, ev, true);
 
         return !ev.Cancelled;
     }
@@ -314,7 +310,7 @@ public sealed class EntityStorageSystem : EntitySystem
     public bool CanClose(EntityUid target, bool silent = false)
     {
         var ev = new StorageCloseAttemptEvent();
-        RaiseLocalEvent(target, ref ev, silent);
+        RaiseLocalEvent(target, ev, silent);
 
         return !ev.Cancelled;
     }
@@ -351,7 +347,7 @@ public sealed class EntityStorageSystem : EntitySystem
         // 6. if this is an item, then mobs must only be eaten if some other component prevents
         // pick-up interactions while a mob is inside (e.g. foldable)
         var attemptEvent = new InsertIntoEntityStorageAttemptEvent();
-        RaiseLocalEvent(toInsert, ref attemptEvent);
+        RaiseLocalEvent(toInsert, attemptEvent);
         if (attemptEvent.Cancelled)
             return false;
 
@@ -371,7 +367,7 @@ public sealed class EntityStorageSystem : EntitySystem
             else
             {
                 var storeEv = new StoreMobInItemContainerAttemptEvent();
-                RaiseLocalEvent(container, ref storeEv);
+                RaiseLocalEvent(container, storeEv);
                 allowedToEat = storeEv.Handled && !storeEv.Cancelled;
             }
         }

@@ -289,7 +289,7 @@ namespace Content.Server.Nuke
             // play alert sound if time is running out
             if (nuke.RemainingTime <= nuke.AlertSoundTime && !nuke.PlayedAlertSound)
             {
-                nuke.AlertAudioStream = SoundSystem.Play(nuke.AlertSound.GetSound(), Filter.Broadcast(), AudioParams.Default.AddVolume(-4)); // Corvax: Reduce sound volume
+                nuke.AlertAudioStream = SoundSystem.Play(nuke.AlertSound.GetSound(), Filter.Broadcast());
                 _soundSystem.StopStationEventMusic(uid, StationEventMusicType.Nuke);
                 nuke.PlayedAlertSound = true;
             }

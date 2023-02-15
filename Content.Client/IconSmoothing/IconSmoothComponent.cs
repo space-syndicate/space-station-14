@@ -1,6 +1,4 @@
 using JetBrains.Annotations;
-using Robust.Client.Graphics;
-using Robust.Shared.Serialization.TypeSerializers.Implementations.Custom.Prototype;
 
 namespace Content.Client.IconSmoothing
 {

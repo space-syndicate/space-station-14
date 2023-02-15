@@ -24,7 +24,7 @@ namespace Content.Server.Traitor.Uplink
         public int GetTCBalance(StoreComponent component)
         {
             FixedPoint2? tcBalance = component.Balance.GetValueOrDefault(TelecrystalCurrencyPrototype);
-            return tcBalance?.Int() ?? 0;
+            return tcBalance != null ? tcBalance.Value.Int() : 0;
         }
 
         /// <summary>
@@ -46,14 +46,15 @@ namespace Content.Server.Traitor.Uplink
             }
 
             var store = EnsureComp<StoreComponent>(uplinkEntity.Value);
-            _store.InitializeFromPreset(uplinkPresetId, uplinkEntity.Value, store);
+            _store.InitializeFromPreset(uplinkPresetId, store);
             store.AccountOwner = user;
             store.Balance.Clear();
 
             if (balance != null)
             {
                 store.Balance.Clear();
-                _store.TryAddCurrency(new Dictionary<string, FixedPoint2> { { TelecrystalCurrencyPrototype, balance.Value } }, uplinkEntity.Value, store);
+                _store.TryAddCurrency(
+                    new Dictionary<string, FixedPoint2>() { { TelecrystalCurrencyPrototype, balance.Value } }, store);
             }
 
             // TODO add BUI. Currently can't be done outside of yaml -_-

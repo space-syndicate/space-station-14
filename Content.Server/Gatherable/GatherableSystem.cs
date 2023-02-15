@@ -1,9 +1,7 @@
 using System.Threading;
-using Content.Server.Destructible;
 using Content.Server.DoAfter;
 using Content.Server.Gatherable.Components;
 using Content.Shared.Damage;
-using Content.Shared.Destructible;
 using Content.Shared.EntityList;
 using Content.Shared.Interaction;
 using Content.Shared.Tag;
@@ -14,13 +12,12 @@ namespace Content.Server.Gatherable;
 
 public sealed class GatherableSystem : EntitySystem
 {
-    [Dependency] private readonly IPrototypeManager _prototypeManager = default!;
-    [Dependency] private readonly IRobustRandom _random = default!;
-    [Dependency] private readonly DamageableSystem _damageableSystem = default!;
-    [Dependency] private readonly DestructibleSystem _destructible = default!;
-    [Dependency] private readonly DoAfterSystem _doAfterSystem = default!;
     [Dependency] private readonly SharedAudioSystem _audio = default!;
+    [Dependency] private readonly DoAfterSystem _doAfterSystem = default!;
+    [Dependency] private readonly DamageableSystem _damageableSystem = default!;
+    [Dependency] private readonly IRobustRandom _random = default!;
     [Dependency] private readonly TagSystem _tagSystem = default!;
+    [Dependency] private readonly IPrototypeManager _prototypeManager = default!;
 
     public override void Initialize()
     {
@@ -42,14 +39,10 @@ public sealed class GatherableSystem : EntitySystem
         if (tool.MaxGatheringEntities < tool.GatheringEntities.Count + 1)
             return;
 
-        var damageRequired = _destructible.DestroyedAt(uid);
-        var damageTime = (damageRequired / tool.Damage.Total).Float();
-        damageTime = Math.Max(1f, damageTime);
-
         cancelToken = new CancellationTokenSource();
         tool.GatheringEntities[uid] = cancelToken;
 
-        var doAfter = new DoAfterEventArgs(args.User, damageTime, cancelToken.Token, uid)
+        var doAfter = new DoAfterEventArgs(args.User, tool.GatheringTime, cancelToken.Token, uid)
         {
             BreakOnDamage = true,
             BreakOnStun = true,
@@ -69,7 +62,7 @@ public sealed class GatherableSystem : EntitySystem
             return;
 
         // Complete the gathering process
-        _destructible.DestroyEntity(uid);
+        _damageableSystem.TryChangeDamage(ev.Resource, tool.Damage, origin: ev.Player);
         _audio.PlayPvs(tool.GatheringSound, ev.Resource);
         tool.GatheringEntities.Remove(ev.Resource);
 

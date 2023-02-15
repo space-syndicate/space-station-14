@@ -60,38 +60,58 @@ namespace Content.Server.Interaction
         }
 
         #region Drag drop
-
         private void HandleDragDropRequestEvent(DragDropRequestEvent msg, EntitySessionEventArgs args)
         {
-            if (Deleted(msg.Dragged) || Deleted(msg.Target))
-                return;
-
-            var user = args.SenderSession.AttachedEntity;
-
-            if (user == null || !_actionBlockerSystem.CanInteract(user.Value, msg.Target))
-                return;
-
-            // must be in range of both the target and the object they are drag / dropping
-            // Client also does this check but ya know we gotta validate it.
-            if (!InRangeUnobstructed(user.Value, msg.Dragged, popup: true)
-                || !InRangeUnobstructed(user.Value, msg.Target, popup: true))
+            if (!ValidateClientInput(args.SenderSession, msg.DropLocation, msg.Target, out var userEntity))
             {
+                Logger.InfoS("system.interaction", $"DragDropRequestEvent input validation failed");
                 return;
             }
 
-            var dragArgs = new DragDropDraggedEvent(user.Value, msg.Target);
-
-            // trigger dragdrops on the dropped entity
-            RaiseLocalEvent(msg.Dragged, ref dragArgs);
-
-            if (dragArgs.Handled)
+            if (Deleted(msg.Dropped) || Deleted(msg.Target))
                 return;
 
-            var dropArgs = new DragDropTargetEvent(user.Value, msg.Dragged);
+            if (!_actionBlockerSystem.CanInteract(userEntity.Value, msg.Target))
+                return;
 
-            RaiseLocalEvent(msg.Target, ref dropArgs);
+            var interactionArgs = new DragDropEvent(userEntity.Value, msg.DropLocation, msg.Dropped, msg.Target);
+
+            // must be in range of both the target and the object they are drag / dropping
+            // Client also does this check but ya know we gotta validate it.
+            if (!InRangeUnobstructed(interactionArgs.User, interactionArgs.Dragged, popup: true)
+                || !InRangeUnobstructed(interactionArgs.User, interactionArgs.Target, popup: true))
+                return;
+
+            // trigger dragdrops on the dropped entity
+            RaiseLocalEvent(msg.Dropped, interactionArgs, true);
+
+            if (interactionArgs.Handled)
+                return;
+
+            foreach (var dragDrop in AllComps<IDraggable>(msg.Dropped))
+            {
+                if (dragDrop.CanDrop(interactionArgs) &&
+                    dragDrop.Drop(interactionArgs))
+                {
+                    return;
+                }
+            }
+
+            // trigger dragdropons on the targeted entity
+            RaiseLocalEvent(msg.Target, interactionArgs, false);
+
+            if (interactionArgs.Handled)
+                return;
+
+            foreach (var dragDropOn in AllComps<IDragDropOn>(msg.Target))
+            {
+                if (dragDropOn.CanDragDropOn(interactionArgs) &&
+                    dragDropOn.DragDropOn(interactionArgs))
+                {
+                    return;
+                }
+            }
         }
-
         #endregion
     }
 }

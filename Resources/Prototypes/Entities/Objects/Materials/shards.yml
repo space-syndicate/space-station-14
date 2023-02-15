@@ -76,7 +76,6 @@
     damage:
       types:
         Piercing: 5
-  - type: DeleteOnTrigger
   - type: StaticPrice
     price: 0
 

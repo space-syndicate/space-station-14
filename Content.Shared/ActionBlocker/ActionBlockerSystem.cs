@@ -1,7 +1,6 @@
 using Content.Shared.Body.Events;
 using Content.Shared.DragDrop;
 using Content.Shared.Emoting;
-using Content.Shared.Hands;
 using Content.Shared.Interaction;
 using Content.Shared.Interaction.Events;
 using Content.Shared.Item;
@@ -116,7 +115,7 @@ namespace Content.Shared.ActionBlocker
 
         public bool CanDrop(EntityUid uid)
         {
-            var ev = new DropAttemptEvent();
+            var ev = new DropAttemptEvent(uid);
             RaiseLocalEvent(uid, ev);
 
             return !ev.Cancelled;
