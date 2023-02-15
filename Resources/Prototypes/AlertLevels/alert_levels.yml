@@ -54,7 +54,7 @@
       sound:
         path: /Audio/Misc/delta.ogg
         params:
-          volume: -4
+          volume: -6 # Corvax: Reduce sound volume
       disableSelection: true
       color: DarkRed
       emergencyLightColor: Orange
