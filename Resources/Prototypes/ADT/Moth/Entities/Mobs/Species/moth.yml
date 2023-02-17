@@ -24,11 +24,6 @@
     - type: SlowOnDamage # Moths are weaker than everyone else, so they should take less speed penalties
       speedModifierThresholds:
         70: 0.8
-    - type: MobState
-      thresholds:
-        0: Alive
-        85: Critical
-        175: Dead
     - type: Damageable
       damageContainer: Biological
       damageModifierSet: Moff # moff

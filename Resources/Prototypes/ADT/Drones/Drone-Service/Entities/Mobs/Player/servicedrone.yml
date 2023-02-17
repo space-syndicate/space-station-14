@@ -28,8 +28,6 @@
     - Chapel
   - type: NameIdentifier
     group: Drone
-  - type: Inventory
-    templateId: dronealt
   - type: Strippable
   - type: UserInterface
     interfaces:
@@ -47,10 +45,6 @@
   - type: MovementSpeedModifier
     baseWalkSpeed : 5
     baseSprintSpeed : 5
-  - type: MobState
-    thresholds:
-      0: Alive
-      60: Dead
   - type: Flashable
   - type: NoSlip
   - type: StatusEffects
@@ -93,14 +87,14 @@
         Base: service_drone_alt
       Dead:
         Base: dead_drone_alt
-  - type: Appearance  
+  - type: Appearance
     visuals:
       - type: GenericEnumVisualizer
         key: enum.DroneVisuals.Status
         layer: 0
         states:
           enum.DroneStatus.Off: dead_drone_alt
-          enum.DroneStatus.On: service_drone_alt          
+          enum.DroneStatus.On: service_drone_alt
   #- type: ReplacementAccent
   #  accent: silicon
   - type: Repairable

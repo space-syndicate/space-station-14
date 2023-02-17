@@ -17,18 +17,18 @@
     - Service
 
 - type: startingGear
-  id: Magistrate
+  id: MagistrateGear
   equipment:
-    jumpsuit: ClothingUniformJumpsuitChaplain 
+    jumpsuit: ClothingUniformJumpsuitChaplain
     back: ClothingBackpack
     shoes: ClothingShoesBootsLaceup
-    mask: 
+    mask:
     outerClothing: ClothingOuterRobesJudge
-    eyes: 
+    eyes:
     head: ClothingHeadHatPwig
     id: MagistratePDA
-    gloves: 
+    gloves:
     ears: ClothingHeadsetMagistrate
-    belt: 
+    belt:
     Neck: ClothingNeckLawyerbadge
     pocket1: RubberStampIAA
