@@ -148,47 +148,6 @@
 
 - type: entity
   parent: BasePDA
-  id: PramedicPDA
-  name: Paramedic PDA
-  description: Shiny and sterile. Has a built-in health analyzer.
-  components:
-    - type: PDA
-      id: ParamedicIDCard
-    - type: Appearance
-      visuals:
-        - type: PDAVisualizer
-          state: pda-medical
-    - type: PDABorderColor
-      borderColor: "#d7d7d0"
-      accentVColor: "#447987"
-    - type: Icon
-      state: pda-medical
-    - type: HealthAnalyzer
-      scanDelay: 1.2
-    - type: CrewMonitoringConsole
-
-- type: entity
-  parent: BasePDA
-  id: VirusologPDA
-  name: Virusolog PDA
-  description: Shiny and sterile. Has a built-in health analyzer.
-  components:
-    - type: PDA
-      id: VirusologIDCard
-    - type: Appearance
-      visuals:
-        - type: PDAVisualizer
-          state: pda-medical
-    - type: PDABorderColor
-      borderColor: "#d7d7d0"
-      accentVColor: "#447987"
-    - type: Icon
-      state: pda-medical
-    - type: HealthAnalyzer
-      scanDelay: 1.2
-
-- type: entity
-  parent: BasePDA
   id: SecurityCadetPDA
   name: security cadet PDA
   description: Why isn't it red?

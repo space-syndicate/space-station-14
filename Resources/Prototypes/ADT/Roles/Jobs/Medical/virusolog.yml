@@ -28,3 +28,32 @@
   innerclothingskirt: ClothingUniformJumpskirtColorWhite
   satchel: ClothingBackpackSatchelMedicalFilled
   duffelbag: ClothingBackpackDuffelMedicalFilled
+
+- type: entity
+  parent: BasePDA
+  id: VirusologPDA
+  name: Virusolog PDA
+  description: Shiny and sterile. Has a built-in health analyzer.
+  components:
+    - type: PDA
+      id: VirusologIDCard
+      state: pda-medical
+    - type: Icon
+      state: pda-medical
+    - type: HealthAnalyzer
+      scanDelay: 1.2
+      scanningEndSound:
+        path: "/Audio/Items/Medical/healthscanner.ogg"
+    - type: CrewMonitoringConsole
+
+- type: entity
+  parent: IDCardStandard
+  id: VirusologIDCard
+  name: virusolog ID card
+  components:
+    - type: Sprite
+      layers:
+        - state: default
+        - state: idmedicaldoctor
+    - type: PresetIdCard
+      job: Virusolog
