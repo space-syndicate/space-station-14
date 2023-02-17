@@ -23,6 +23,9 @@
     - Engineering
     - Cargo
 
+- type: playTimeTracker
+  id: JobBlueShieldOfficer
+
 - type: startingGear
   id: BlueShieldOfficerGear
   equipment:
@@ -37,3 +40,43 @@
     gloves: ClothingHandsGlovesCombat
     id: BlueShieldOfficerPDA
 
+- type: entity
+  id: SpawnBlueShieldOfficer
+  parent: SpawnPointJobBase
+  name: BlueShieldOfficer
+  components:
+    - type: SpawnPoint
+      job_id: BlueShieldOfficer
+    - type: Sprite
+      layers:
+        - state: green
+        - state: hop
+
+- type: entity
+  parent: BasePDA
+  id: BlueShieldOfficerPDA
+  name: BlueShield PDA
+  description: Это пахнет защитой.
+  components:
+    - type: PDA
+      id: BlueShieldOfficerIDCard
+      state: pda-ert
+    - type: PDABorderColor
+      borderColor: "#A32D26"
+      accentVColor: "#447987"
+    - type: Icon
+      state: pda-ert
+    - type: HealthAnalyzer
+      scanDelay: 1.2
+
+- type: entity
+  parent: IDCardStandard
+  id: BlueShieldOfficerIDCard
+  name: Blue Shield Officer ID card
+  components:
+    - type: Sprite
+      layers:
+        - state: default
+        - state: ert_security
+    - type: PresetIdCard
+      job: BlueShieldOfficer

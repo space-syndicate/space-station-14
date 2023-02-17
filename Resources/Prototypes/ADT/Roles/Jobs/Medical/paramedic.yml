@@ -18,6 +18,9 @@
     - Chemistry
     - Maintenance
 
+- type: playTimeTracker
+  id: JobParamedic
+
 - type: startingGear
   id: ParamedicGear
   equipment:
@@ -62,3 +65,4 @@
         - state: idmedicaldoctor
     - type: PresetIdCard
       job: Paramedic
+
