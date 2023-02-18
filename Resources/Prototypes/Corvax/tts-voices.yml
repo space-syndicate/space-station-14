@@ -27,3 +27,66 @@
   name: tts-voice-name-eugene
   sex: Male
   speaker: eugene
+
+- type: ttsVoice
+  id: Garithos
+  name: tts-voice-name-garithos
+  sex: Male
+  speaker: garithos
+  roundStart: false
+
+- type: ttsVoice
+  id: Maiev
+  name: tts-voice-name-maiev
+  sex: Female
+  speaker: maiev
+  roundStart: false
+
+- type: ttsVoice
+  id: Myron
+  name: tts-voice-name-myron
+  sex: Unsexed
+  speaker: myron
+  roundStart: false
+
+- type: ttsVoice
+  id: Oleg
+  name: tts-voice-name-oleg
+  sex: Male
+  speaker: oleg
+
+- type: ttsVoice
+  id: Zina
+  name: tts-voice-name-zina
+  sex: Female
+  speaker: zina
+
+- type: ttsVoice
+  id: Alex
+  name: tts-voice-name-alex
+  sex: Female
+  speaker: alex
+
+- type: ttsVoice
+  id: Galina
+  name: tts-voice-name-galina
+  sex: Female
+  speaker: galina
+
+- type: ttsVoice
+  id: Katya
+  name: tts-voice-name-katya
+  sex: Female
+  speaker: katya
+
+- type: ttsVoice
+  id: Masha
+  name: tts-voice-name-masha
+  sex: Female
+  speaker: masha
+
+- type: ttsVoice
+  id: Vasya
+  name: tts-voice-name-vasya
+  sex: Male
+  speaker: vasya
