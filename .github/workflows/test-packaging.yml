@@ -32,6 +32,9 @@ jobs:
     steps:
       - name: Checkout Master
         uses: actions/checkout@v2
+        with:
+          submodules: 'recursive'
+          ssh-key: ${{ secrets.SECRETS_PRIVATE_KEY }}
 
       - name: Setup Submodule
         run: |
