@@ -47,6 +47,7 @@ jobs:
           cd RobustToolbox/
           git submodule update --init --recursive
           
+      # Corvax-Secrets-Start
       - name: Setup secrets
         continue-on-error: true
         run: |
@@ -56,6 +57,7 @@ jobs:
           echo "HOST *" > ~/.ssh/config
           echo "StrictHostKeyChecking no" >> ~/.ssh/config
           git -c submodule.Secrets.update=checkout submodule update --init
+      # Corvax-Secrets-End
 
       - name: Setup .NET Core
         uses: actions/setup-dotnet@v3
