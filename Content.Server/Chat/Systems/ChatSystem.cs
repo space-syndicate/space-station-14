@@ -359,7 +359,10 @@ public sealed partial class ChatSystem : SharedChatSystem
             name = nameEv.Name;
         }
         name = FormattedMessage.EscapeText(name);
-
+        // Corvax-SpeakerColor-Start
+        if (TryComp<HumanoidAppearanceComponent>(source, out var comp))
+            name = $"[color={comp.SpeakerColor.ToHex()}]{name}[/color]";
+        // Corvax-SpeakerColor-End
 
         var wrappedMessage = Loc.GetString("chat-manager-entity-whisper-wrap-message",
             ("entityName", name), ("message", FormattedMessage.EscapeText(message)));
