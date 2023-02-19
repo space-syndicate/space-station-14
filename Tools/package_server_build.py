@@ -288,7 +288,8 @@ def copy_content_assemblies(target, zipf):
 
     # Include content assemblies.
     for asm in base_assemblies:
-        files.append(asm + ".dll")
+        if os.path.exists(p(source_dir, dll_path)): # Corvax-Secrets: Allow optional assemblies
+            files.append(asm + ".dll")
         # If PDB available, include it aswell.
         pdb_path = asm + ".pdb"
         if os.path.exists(p(source_dir, pdb_path)):
