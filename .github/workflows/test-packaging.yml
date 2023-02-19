@@ -48,6 +48,7 @@ jobs:
           git submodule update --init --recursive
           
       - name: Setup secrets
+        continue-on-error: true
         run: |
           mkdir ~/.ssh
           echo "${{ secrets.SECRETS_PRIVATE_KEY }}" > ~/.ssh/id_rsa
