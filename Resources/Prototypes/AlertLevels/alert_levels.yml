@@ -80,7 +80,19 @@
         params:
           volume: -4
       disableSelection: false
-      color: Pink
-      emergencyLightColor: Pink
+      color: Violet
+      emergencyLightColor: Violet
       forceEnableEmergencyLights: false
       shuttleTime: 400
+    lockdown:
+      announcement: alert-level-lockdown-announcement
+      selectable: false
+      sound:
+        path: /Audio/Misc/siren.ogg
+        params:
+          volume: -4
+      disableSelection: true
+      color: Pink
+      emergencyLightColor: Violet
+      forceEnableEmergencyLights: true
+      shuttleTime: 1200
