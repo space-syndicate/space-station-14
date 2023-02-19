@@ -11,14 +11,15 @@ chat-manager-admin-ooc-chat-enabled-message = Админ OOC чат был вк�
 chat-manager-admin-ooc-chat-disabled-message = Админ OOC чат был выключен.
 chat-manager-max-message-length-exceeded-message = Ваше сообщение превышает лимит в { $limit } символов
 chat-manager-no-headset-on-message = У вас нет гарнитуры!
+chat-manager-no-radio-key = No radio key specified!
 chat-manager-no-such-channel = Нет такого канала!
 chat-manager-whisper-headset-on-message = Вы не можете шептать в радио!
 chat-manager-server-wrap-message = СЕРВЕР: { $message }
 chat-manager-sender-announcement-wrap-message =
     Объявление { $sender }:
     { $message }
-chat-manager-entity-say-wrap-message = { $entityName } говорит: "{ $message }"
-chat-manager-entity-whisper-wrap-message = { $entityName } шепчет: "{ $message }"
+chat-manager-entity-say-wrap-message = { $entityName } говорит, "{ $message }"
+chat-manager-entity-whisper-wrap-message = { $entityName } шепчет, "{ $message }"
 chat-manager-entity-me-wrap-message = { $entityName } { $message }
 chat-manager-entity-looc-wrap-message = LOOC: { $entityName }: { $message }
 chat-manager-send-ooc-wrap-message = OOC: { $playerName }: { $message }

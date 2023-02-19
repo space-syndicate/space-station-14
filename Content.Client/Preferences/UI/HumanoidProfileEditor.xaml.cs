@@ -420,7 +420,8 @@ namespace Content.Client.Preferences.UI
                             new Label
                             {
                                 Text = Loc.GetString("humanoid-profile-editor-department-jobs-label",
-                                    ("departmentName", departmentName))
+                                    ("departmentName", departmentName)),
+                                Margin = new Thickness(5f, 0, 0, 0)
                             }
                         }
                     });
@@ -563,7 +564,7 @@ namespace Content.Client.Preferences.UI
             #endregion FlavorText
 
             #region Dummy
-            var species = Profile?.Species ?? SharedHumanoidSystem.DefaultSpecies;
+            var species = Profile?.Species ?? SharedHumanoidAppearanceSystem.DefaultSpecies;
             var dollProto = _prototypeManager.Index<SpeciesPrototype>(species).DollPrototype;
 
             if (_previewDummy != null)
@@ -703,7 +704,7 @@ namespace Content.Client.Preferences.UI
 
         private void RebuildSpriteView()
         {
-            var species = Profile?.Species ?? SharedHumanoidSystem.DefaultSpecies;
+            var species = Profile?.Species ?? SharedHumanoidAppearanceSystem.DefaultSpecies;
             var dollProto = _prototypeManager.Index<SpeciesPrototype>(species).DollPrototype;
 
             if (_previewDummy != null)
@@ -1051,7 +1052,7 @@ namespace Content.Client.Preferences.UI
             if (Profile is null)
                 return;
 
-            EntitySystem.Get<HumanoidSystem>().LoadProfile(_previewDummy!.Value, Profile);
+            EntitySystem.Get<HumanoidAppearanceSystem>().LoadProfile(_previewDummy!.Value, Profile);
             LobbyCharacterPreviewPanel.GiveDummyJobClothes(_previewDummy!.Value, Profile);
         }
 
@@ -1131,7 +1132,8 @@ namespace Content.Client.Preferences.UI
                     ButtonStyle = StyleBase.ButtonOpenBoth,
                     LastButtonStyle = StyleBase.ButtonOpenLeft
                 };
-
+                //Override default radio option button width
+                _optionButton.GenerateItem = GenerateButton;
                 // Text, Value
                 _optionButton.AddItem(Loc.GetString("humanoid-profile-editor-job-priority-high-button"), (int) JobPriority.High);
                 _optionButton.AddItem(Loc.GetString("humanoid-profile-editor-job-priority-medium-button"), (int) JobPriority.Medium);
@@ -1179,8 +1181,9 @@ namespace Content.Client.Preferences.UI
 
                 _jobTitle = new Label()
                 {
+                    Margin = new Thickness(5f,0,5f,0),
                     Text = job.LocalizedName,
-                    MinSize = (175, 0),
+                    MinSize = (180, 0),
                     MouseFilter = MouseFilterMode.Stop
                 };
 
@@ -1216,6 +1219,16 @@ namespace Content.Client.Preferences.UI
                 _requirementsLabel.Visible = false;
                 _lockStripe.Visible = false;
                 _optionButton.Visible = true;
+            }
+
+            private Button GenerateButton(string text, int value)
+            {
+                var btn = new Button
+                {
+                    Text = text,
+                    MinWidth = 90
+                };
+                return btn;
             }
         }
 

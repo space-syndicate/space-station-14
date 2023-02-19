@@ -90,22 +90,13 @@ namespace Content.Server.Nutrition.EntitySystems
                 else
                 {
                     //general approximation
-                    string remainingString;
-                    switch ((int)_solutionContainerSystem.PercentFull(uid))
+                    var remainingString = (int) _solutionContainerSystem.PercentFull(uid) switch
                     {
-                        case int perc when perc == 100:
-                            remainingString = "drink-component-on-examine-is-full";
-                            break;
-                        case int perc when perc > 66:
-                            remainingString = "drink-component-on-examine-is-mostly-full";
-                            break;
-                        case int perc when perc > 33:
-                            remainingString = HalfEmptyOrHalfFull(args);
-                            break;
-                        default:
-                            remainingString = "drink-component-on-examine-is-mostly-empty";
-                            break;
-                    }
+                        100 => "drink-component-on-examine-is-full",
+                        > 66 => "drink-component-on-examine-is-mostly-full",
+                        > 33 => HalfEmptyOrHalfFull(args),
+                        _ => "drink-component-on-examine-is-mostly-empty",
+                    };
                     args.Message.AddMarkup($" - {Loc.GetString(remainingString)}");
                 }
             }
@@ -362,7 +353,7 @@ namespace Content.Server.Nutrition.EntitySystems
                     args.User, args.User);
 
                 // log successful forced drinking
-                _adminLogger.Add(LogType.ForceFeed, LogImpact.Medium, $"{ToPrettyString(uid):user} forced {ToPrettyString(args.User):target} to drink {ToPrettyString(args.Drink.Owner):drink}");
+                _adminLogger.Add(LogType.ForceFeed, LogImpact.Medium, $"{ToPrettyString(args.User):user} forced {ToPrettyString(uid):target} to drink {ToPrettyString(args.Drink.Owner):drink}");
             }
             else
             {

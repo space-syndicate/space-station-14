@@ -23,13 +23,17 @@ namespace Content.Shared.Maps
         [AbstractDataFieldAttribute]
         public bool Abstract { get; private set; }
 
-        [IdDataFieldAttribute] public string ID { get; } = string.Empty;
+        [IdDataField] public string ID { get; } = string.Empty;
 
         public ushort TileId { get; private set; }
 
         [DataField("name")]
         public string Name { get; private set; } = "";
         [DataField("sprite")] public ResourcePath? Sprite { get; }
+
+        [DataField("cornerSprites")] public List<ResourcePath> CornerSprites { get; } = new();
+
+        [DataField("cardinalSprites")] public List<ResourcePath> CardinalSprites { get; } = new();
 
         [DataField("isSubfloor")] public bool IsSubFloor { get; private set; }
 

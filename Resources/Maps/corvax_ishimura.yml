@@ -68518,12 +68518,6 @@ entities:
     type: Transform
   - color: '#FF0000FF'
     type: AtmosPipeColor
-- uid: 5814
-  type: PosterContrabandGotWood
-  components:
-  - pos: -52.5,11.5
-    parent: 0
-    type: Transform
 - uid: 5815
   type: ComfyChair
   components:
@@ -94608,13 +94602,13 @@ entities:
     parent: 0
     type: Transform
 - uid: 9518
-  type: SpawnVehiclePussywagon
+  type: SpawnVehicleJanicart
   components:
   - pos: -37.5,7.5
     parent: 0
     type: Transform
 - uid: 9519
-  type: VehicleKeyPussyWagon
+  type: VehicleKeyJanicart
   components:
   - pos: -35.51934,9.490755
     parent: 0
@@ -116287,7 +116281,7 @@ entities:
   - color: '#FF0000FF'
     type: AtmosPipeColor
 - uid: 12793
-  type: VehiclePussyWagonDestroyed
+  type: VehicleJanicartDestroyed
   components:
   - pos: -35.5,13.5
     parent: 0
@@ -129400,12 +129394,6 @@ entities:
   type: MaterialWoodPlank
   components:
   - pos: 8.49539,-21.442284
-    parent: 0
-    type: Transform
-- uid: 14728
-  type: PosterContrabandGotWood
-  components:
-  - pos: 9.5,-21.5
     parent: 0
     type: Transform
 - uid: 14729

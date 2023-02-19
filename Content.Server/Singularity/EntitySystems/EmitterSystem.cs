@@ -9,6 +9,7 @@ using Content.Server.Weapons.Ranged.Systems;
 using Content.Shared.Database;
 using Content.Shared.Examine;
 using Content.Shared.Interaction;
+using Content.Shared.Lock;
 using Content.Shared.Popups;
 using Content.Shared.Projectiles;
 using Content.Shared.Singularity.Components;
@@ -136,7 +137,7 @@ namespace Content.Server.Singularity.EntitySystems
             if (component.SelectableTypes.Count < 2)
                 return;
             var proto = _prototype.Index<EntityPrototype>(component.BoltType);
-            args.Message.AddText(Loc.GetString("emitter-component-current-type", ("type", proto.Name)));
+            args.PushMarkup(Loc.GetString("emitter-component-current-type", ("type", proto.Name)));
         }
 
         private void ReceivedChanged(
