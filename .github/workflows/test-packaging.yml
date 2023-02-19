@@ -50,6 +50,8 @@ jobs:
           mkdir ~/.ssh
           echo "${{ secrets.SECRETS_PRIVATE_KEY }}" > ~/.ssh/id_rsa
           chmod 600 ~/.ssh/id_rsa
+          echo "HOST *" > ~/.ssh/config
+          echo "StrictHostKeyChecking no" >> ~/.ssh/config
           git -c submodule.Secrets.update=checkout submodule update --init
 
       - name: Setup .NET Core
