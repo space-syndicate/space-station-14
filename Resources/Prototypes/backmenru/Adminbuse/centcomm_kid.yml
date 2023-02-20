@@ -34,9 +34,10 @@
   name: Гарнитура оператора ЦК
   description: Стандартная гарнитура ЦК.
   components:
-  - type: Headset
-    channels:
-    - CentCom
+  - type: ContainerFill
+    containers:
+      key_slots:
+      - EncryptionKeyCentCom
   - type: Sprite
     sprite: Clothing/Ears/Headsets/centcom.rsi
   - type: Clothing
@@ -50,9 +51,10 @@
   name: Гарнитура офицера ЦК
   description: Стандартная гарнитура ЦК.
   components:
-  - type: Headset
-    channels:
-    - CentCom
+  - type: ContainerFill
+    containers:
+      key_slots:
+      - EncryptionKeyCentCom
   - type: Sprite
     sprite: Clothing/Ears/Headsets/centcom.rsi
   - type: Clothing
@@ -134,7 +136,7 @@
     useSound:
       path: /Audio/Items/crowbar.ogg
   - type: TilePrying
-  
+
 
 - type: entity
   parent: ClothingShoesBase
@@ -414,15 +416,15 @@
 
 
 #------------------------------------
-  
-    
+
+
 - type: dataset
   id: NamesSGTs
   values:
   - Старший Лейтенант
   - Лейтенант
   - Капитан
-  
+
 - type: dataset
   id: NamesCPLs
   values:
