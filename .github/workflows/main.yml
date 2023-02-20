@@ -30,6 +30,7 @@ jobs:
       run: |
         cd RobustToolbox
         git fetch --depth=1
+        git describe --tags --abbrev=0
     - name: Package all
       run: |
         Tools/package_server_build.py -p win-x64 linux-x64 osx-x64 linux-arm64
