@@ -1,13 +1,15 @@
 using System.Diagnostics.CodeAnalysis;
 using System.Linq;
+using Content.Server.Administration.Logs;
 using Content.Server.GameTicking;
 using Content.Server.Ghost.Components;
 using Content.Server.Mind.Components;
-using Content.Server.MobState;
 using Content.Server.Objectives;
 using Content.Server.Players;
 using Content.Server.Roles;
-using Content.Shared.MobState.Components;
+using Content.Shared.Database;
+using Content.Shared.Mobs.Components;
+using Content.Shared.Mobs.Systems;
 using Robust.Server.GameObjects;
 using Robust.Server.Player;
 using Robust.Shared.Network;
@@ -32,6 +34,7 @@ namespace Content.Server.Mind
         private readonly MindSystem _mindSystem = default!;
         [Dependency] private readonly IPlayerManager _playerManager = default!;
         [Dependency] private readonly IEntityManager _entityManager = default!;
+        [Dependency] private readonly IAdminLogManager _adminLogger = default!;
 
         private readonly ISet<Role> _roles = new HashSet<Role>();
 
@@ -120,6 +123,13 @@ namespace Content.Server.Mind
         public bool PreventGhosting { get; set; }
 
         /// <summary>
+        ///     Prevents user from suiciding
+        /// </summary>
+        [ViewVariables(VVAccess.ReadWrite)]
+        [DataField("preventSuicide")]
+        public bool PreventSuicide { get; set; }
+
+        /// <summary>
         ///     The session of the player owning this mind.
         ///     Can be null, in which case the player is currently not logged in.
         /// </summary>
@@ -178,6 +188,21 @@ namespace Content.Server.Mind
         }
 
         /// <summary>
+        ///     A string to represent the mind for logging
+        /// </summary>
+        private string MindOwnerLoggingString
+        {
+            get
+            {
+                if (OwnedEntity != null)
+                    return _entityManager.ToPrettyString(OwnedEntity.Value);
+                if (UserId != null)
+                    return UserId.Value.ToString();
+                return "(originally " + OriginalOwnerUserId + ")";
+            }
+        }
+
+        /// <summary>
         ///     Gives this mind a new role.
         /// </summary>
         /// <param name="role">The type of the role to give.</param>
@@ -200,6 +225,8 @@ namespace Content.Server.Mind
             {
                 _entityManager.EventBus.RaiseLocalEvent(OwnedEntity.Value, message, true);
             }
+            _adminLogger.Add(LogType.Mind, LogImpact.Low,
+                $"'{role.Name}' added to mind of {MindOwnerLoggingString}");
 
             return role;
         }
@@ -226,6 +253,8 @@ namespace Content.Server.Mind
             {
                 _entityManager.EventBus.RaiseLocalEvent(OwnedEntity.Value, message, true);
             }
+            _adminLogger.Add(LogType.Mind, LogImpact.Low,
+                $"'{role.Name}' removed from mind of {MindOwnerLoggingString}");
         }
 
         public bool HasRole<T>() where T : Role
@@ -250,6 +279,11 @@ namespace Content.Server.Mind
             var objective = objectivePrototype.GetObjective(this);
             if (_objectives.Contains(objective))
                 return false;
+
+            foreach (var condition in objective.Conditions)
+                _adminLogger.Add(LogType.Mind, LogImpact.Low, $"'{condition.Title}' added to mind of {MindOwnerLoggingString}");
+
+
             _objectives.Add(objective);
             return true;
         }
@@ -263,6 +297,10 @@ namespace Content.Server.Mind
             if (_objectives.Count >= index) return false;
 
             var objective = _objectives[index];
+
+            foreach (var condition in objective.Conditions)
+                _adminLogger.Add(LogType.Mind, LogImpact.Low, $"'{condition.Title}' removed from the mind of {MindOwnerLoggingString}");
+
             _objectives.Remove(objective);
             return true;
         }
@@ -298,7 +336,7 @@ namespace Content.Server.Mind
                 {
                     component = _entityManager.AddComponent<MindComponent>(entity.Value);
                 }
-                else if (component!.HasMind)
+                else if (component.HasMind)
                 {
                     _gameTickerSystem.OnGhostAttempt(component.Mind!, false);
                 }
@@ -404,8 +442,13 @@ namespace Content.Server.Mind
         /// </summary>
         public void UnVisit()
         {
+            var currentEntity = Session?.AttachedEntity;
             Session?.AttachToEntity(OwnedEntity);
             RemoveVisitingEntity();
+
+            if (Session != null && OwnedEntity != null && currentEntity != OwnedEntity)
+                _adminLogger.Add(LogType.Mind, LogImpact.Low,
+                    $"{Session.Name} returned to {_entityManager.ToPrettyString(OwnedEntity.Value)}");
         }
 
         /// <summary>

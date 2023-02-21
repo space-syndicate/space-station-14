@@ -1,4 +1,4 @@
-﻿using System.Threading;
+using System.Threading;
 using Content.Server.Atmos;
 using Content.Server.Atmos.EntitySystems;
 using Content.Server.Atmos.Piping.Components;
@@ -20,7 +20,6 @@ using Content.Shared.Chemistry;
 using Content.Shared.Chemistry.Components;
 using Content.Shared.Chemistry.Reagent;
 using Content.Shared.Containers.ItemSlots;
-using Content.Shared.Destructible;
 using Content.Shared.DragDrop;
 using Content.Shared.Emag.Systems;
 using Content.Shared.Examine;
@@ -54,6 +53,7 @@ public sealed partial class CryoPodSystem: SharedCryoPodSystem
     {
         base.Initialize();
 
+        SubscribeLocalEvent<CryoPodComponent, CanDropTargetEvent>(OnCryoPodCanDropOn);
         SubscribeLocalEvent<CryoPodComponent, ComponentInit>(OnComponentInit);
         SubscribeLocalEvent<CryoPodComponent, GetVerbsEvent<AlternativeVerb>>(AddAlternativeVerbs);
         SubscribeLocalEvent<CryoPodComponent, GotEmaggedEvent>(OnEmagged);
@@ -63,7 +63,7 @@ public sealed partial class CryoPodSystem: SharedCryoPodSystem
         SubscribeLocalEvent<CryoPodComponent, CryoPodPryInterrupted>(OnCryoPodPryInterrupted);
 
         SubscribeLocalEvent<CryoPodComponent, AtmosDeviceUpdateEvent>(OnCryoPodUpdateAtmosphere);
-        SubscribeLocalEvent<CryoPodComponent, DragDropEvent>(HandleDragDropOn);
+        SubscribeLocalEvent<CryoPodComponent, DragDropTargetEvent>(HandleDragDropOn);
         SubscribeLocalEvent<CryoPodComponent, InteractUsingEvent>(OnInteractUsing);
         SubscribeLocalEvent<CryoPodComponent, ExaminedEvent>(OnExamined);
         SubscribeLocalEvent<CryoPodComponent, PowerChangedEvent>(OnPowerChanged);
@@ -127,7 +127,7 @@ public sealed partial class CryoPodSystem: SharedCryoPodSystem
 
     #region Interaction
 
-    private void HandleDragDropOn(EntityUid uid, CryoPodComponent cryoPodComponent, DragDropEvent args)
+    private void HandleDragDropOn(EntityUid uid, CryoPodComponent cryoPodComponent, ref DragDropTargetEvent args)
     {
         if (cryoPodComponent.BodyContainer.ContainedEntity != null)
         {
@@ -204,7 +204,7 @@ public sealed partial class CryoPodSystem: SharedCryoPodSystem
         if (args.IsInDetailsRange && container != null && _solutionContainerSystem.TryGetFitsInDispenser(container.Value, out var containerSolution))
         {
             args.PushMarkup(Loc.GetString("cryo-pod-examine", ("beaker", Name(container.Value))));
-            if (containerSolution.CurrentVolume == 0)
+            if (containerSolution.Volume == 0)
             {
                 args.PushMarkup(Loc.GetString("cryo-pod-empty-beaker"));
             }

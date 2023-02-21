@@ -1,6 +1,5 @@
 ﻿using System.Diagnostics.CodeAnalysis;
 using Content.Server.Administration.Logs;
-using Content.Server.Storage.Components;
 using Content.Shared.Alert;
 using Content.Shared.Bed.Sleep;
 using Content.Shared.Buckle.Components;
@@ -9,8 +8,9 @@ using Content.Shared.DragDrop;
 using Content.Shared.Hands.Components;
 using Content.Shared.IdentityManagement;
 using Content.Shared.Interaction;
-using Content.Shared.MobState.Components;
+using Content.Shared.Mobs.Components;
 using Content.Shared.Pulling.Components;
+using Content.Shared.Storage.Components;
 using Content.Shared.Stunnable;
 using Content.Shared.Vehicle.Components;
 using Content.Shared.Verbs;
@@ -31,8 +31,8 @@ public sealed partial class BuckleSystem
         SubscribeLocalEvent<BuckleComponent, InteractHandEvent>(HandleInteractHand);
         SubscribeLocalEvent<BuckleComponent, GetVerbsEvent<InteractionVerb>>(AddUnbuckleVerb);
         SubscribeLocalEvent<BuckleComponent, InsertIntoEntityStorageAttemptEvent>(OnEntityStorageInsertAttempt);
-        SubscribeLocalEvent<BuckleComponent, CanDropEvent>(OnBuckleCanDrop);
-        SubscribeLocalEvent<BuckleComponent, DragDropEvent>(OnBuckleDragDrop);
+        SubscribeLocalEvent<BuckleComponent, CanDropDraggedEvent>(OnBuckleCanDrop);
+        SubscribeLocalEvent<BuckleComponent, DragDropDraggedEvent>(OnBuckleDragDrop);
     }
 
     private void AddUnbuckleVerb(EntityUid uid, BuckleComponent component, GetVerbsEvent<InteractionVerb> args)
@@ -98,18 +98,18 @@ public sealed partial class BuckleSystem
         TryUnbuckle(uid, buckle.Owner, true, buckle);
     }
 
-    private void OnEntityStorageInsertAttempt(EntityUid uid, BuckleComponent comp, InsertIntoEntityStorageAttemptEvent args)
+    private void OnEntityStorageInsertAttempt(EntityUid uid, BuckleComponent comp, ref InsertIntoEntityStorageAttemptEvent args)
     {
         if (comp.Buckled)
-            args.Cancel();
+            args.Cancelled = true;
     }
 
-    private void OnBuckleCanDrop(EntityUid uid, BuckleComponent component, CanDropEvent args)
+    private void OnBuckleCanDrop(EntityUid uid, BuckleComponent component, ref CanDropDraggedEvent args)
     {
         args.Handled = HasComp<StrapComponent>(args.Target);
     }
 
-    private void OnBuckleDragDrop(EntityUid uid, BuckleComponent component, DragDropEvent args)
+    private void OnBuckleDragDrop(EntityUid uid, BuckleComponent component, ref DragDropDraggedEvent args)
     {
         args.Handled = TryBuckle(uid, args.User, args.Target, component);
     }
@@ -360,8 +360,10 @@ public sealed partial class BuckleSystem
             _standing.Stand(buckleId);
         }
 
-        _mobState.EnterState(mobState, mobState?.CurrentState);
-
+        if (_mobState.IsIncapacitated(buckleId, mobState))
+        {
+            _standing.Down(buckleId);
+        }
         // Sync StrapComponent data
         _appearance.SetData(oldBuckledTo.Owner, StrapVisuals.State, false);
         if (oldBuckledTo.BuckledEntities.Remove(buckleId))

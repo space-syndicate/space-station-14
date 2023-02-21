@@ -106,7 +106,10 @@ namespace Content.Server.Connection
 
             var adminData = await _dbManager.GetAdminDataForAsync(e.UserId);
 
-            if (_cfg.GetCVar(CCVars.PanicBunkerEnabled))
+            // Corvax-Start: Allow privileged players bypass bunker
+            var isPrivileged = await HavePrivilegedJoin(e.UserId);
+            if (_cfg.GetCVar(CCVars.PanicBunkerEnabled) && !isPrivileged)
+            // Corvax-End
             {
                 var showReason = _cfg.GetCVar(CCVars.PanicBunkerShowReason);
 
@@ -125,7 +128,7 @@ namespace Content.Server.Connection
                 var minOverallHours = _cfg.GetCVar(CCVars.PanicBunkerMinOverallHours);
                 var overallTime = ( await _db.GetPlayTimes(e.UserId)).Find(p => p.Tracker == PlayTimeTrackingShared.TrackerOverall);
                 var haveMinOverallTime = overallTime != null && overallTime.TimeSpent.TotalHours > minOverallHours;
-                
+
                 if (showReason && !haveMinOverallTime)
                 {
                     return (ConnectionDenyReason.Panic,
@@ -140,7 +143,6 @@ namespace Content.Server.Connection
             }
 
             // Corvax-Queue-Start
-            var isPrivileged = await HavePrivilegedJoin(e.UserId);
             var isQueueEnabled = _cfg.GetCVar(CCCVars.QueueEnabled);
             if (_plyMgr.PlayerCount >= _cfg.GetCVar(CCVars.SoftMaxPlayers) && !isPrivileged && !isQueueEnabled)
             // Corvax-Queue-End
@@ -155,11 +157,21 @@ namespace Content.Server.Connection
                 return (ConnectionDenyReason.Ban, firstBan.DisconnectMessage, bans);
             }
 
-            if (_cfg.GetCVar(CCVars.WhitelistEnabled)
-                && await _db.GetWhitelistStatusAsync(userId) == false
-                && adminData is null)
+            if (_cfg.GetCVar(CCVars.WhitelistEnabled))
             {
-                return (ConnectionDenyReason.Whitelist, Loc.GetString(_cfg.GetCVar(CCVars.WhitelistReason)), null);
+                var min = _cfg.GetCVar(CCVars.WhitelistMinPlayers);
+                var max = _cfg.GetCVar(CCVars.WhitelistMaxPlayers);
+                var playerCountValid = _plyMgr.PlayerCount > min && _plyMgr.PlayerCount < max;
+
+                if (playerCountValid && await _db.GetWhitelistStatusAsync(userId) == false
+                                     && adminData is null)
+                {
+                    var msg = Loc.GetString(_cfg.GetCVar(CCVars.WhitelistReason));
+                    // was the whitelist playercount changed?
+                    if (min > 0 || max < int.MaxValue)
+                        msg += "\n" + Loc.GetString("whitelist-playercount-invalid", ("min", min), ("max", max));
+                    return (ConnectionDenyReason.Whitelist, msg, null);
+                }
             }
 
             return null;

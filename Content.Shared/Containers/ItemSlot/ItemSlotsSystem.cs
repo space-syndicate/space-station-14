@@ -111,7 +111,7 @@ namespace Content.Shared.Containers.ItemSlots
         /// </summary>
         public void RemoveItemSlot(EntityUid uid, ItemSlot slot, ItemSlotsComponent? itemSlots = null)
         {
-            if (slot.ContainerSlot == null)
+            if (Terminating(uid) || slot.ContainerSlot == null)
                 return;
 
             slot.ContainerSlot.Shutdown();
@@ -541,7 +541,10 @@ namespace Content.Shared.Containers.ItemSlots
             foreach (var slot in component.Slots.Values)
             {
                 if (slot.EjectOnBreak && slot.HasItem)
+                {
+                    SetLock(uid, slot, false, component);
                     TryEject(uid, slot, null, out var _);
+                }
             }
         }
 
