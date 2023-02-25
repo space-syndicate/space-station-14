@@ -76,9 +76,9 @@
         radius: 0.35
       density: 50
       mask:
-      - MobMask
+      - FlyingMobMask
       layer:
-      - MobLayer
+      - FlyingMobLayer
   - type: DamageStateVisuals
     states:
       Alive:
