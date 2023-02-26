@@ -75,9 +75,9 @@
         radius: 0.35
       density: 50
       mask:
-      - MobMask
+      - FlyingMobMask
       layer:
-      - MobLayer
+      - FlyingMobLayer
   - type: DamageStateVisuals
     states:
       Alive:
@@ -98,6 +98,10 @@
     fuelcost: 15
     doAfterDelay: 8
   - type: Actions
+  - type: TypingIndicator
+    proto: robot
+  - type: Speech
+    speechSounds: Pai
   - type: UnpoweredFlashlight
     toggleAction:
       name: action-name-toggle-light
