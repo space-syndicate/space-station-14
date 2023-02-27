@@ -49,6 +49,17 @@
       - !type:DoActsBehavior
         acts: [ "Destruction" ]
 
+# Own
+
+- type: entity
+  parent: PosterBase
+  id: ADTPosterQuadroElectronics
+  name: "Quadro Electronics"
+  description: "When you look at the poaster you want to wear an animal mask"
+  components:
+  - type: Sprite
+    state: quadro_electronics
+
 # Contraband
 - type: entity
   parent: PosterBase
