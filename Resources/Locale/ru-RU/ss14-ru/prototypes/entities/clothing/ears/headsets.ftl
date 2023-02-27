@@ -43,6 +43,6 @@ ent-ClothingHeadsetSecurity = гарнитура службы безопасно
 ent-ClothingHeadsetService = гарнитура сервисного отдела
     .desc = Гарнитура, используемая сотрудниками сервисного отдела, которым поручено поддерживать станцию сытой, счастливой, и чистой.
     .suffix = { "" }
-ent-ClothingHeadsetGrey = гарнитура пассажира
+ent-ClothingHeadsetGrey = гарнитура ассистента
     .desc = { ent-ClothingHeadset.desc }
     .suffix = { "" }
