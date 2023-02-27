@@ -1,0 +1,14 @@
+- type: entity
+  name: honk soap
+  id: SoapHonk
+  parent: Soap
+  description: Soap created by Honk-Mother, it is intelligent and can move. He is a friend of the clown and obeys only his unprotected Honk-Mother.
+  components:
+  - type: Sprite
+    state: honk
+  - type: Slippery
+    paralyzeTime: 6
+    launchForwardsMultiplier: 15.0
+  - type: StepTrigger
+  - type: Item
+    heldPrefix: honk
