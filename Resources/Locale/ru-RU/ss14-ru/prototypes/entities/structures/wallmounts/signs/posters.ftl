@@ -316,3 +316,6 @@ ent-PosterMapWaystation = карта Waystation
 ent-PosterMapOrigin = карта Origin
     .desc = Карта станции Origin.
     .suffix = { "" }
+ent-ADTPosterQuadroElectronics = Quadro Electronics
+    .desc = При виде него хочется надеть маску животного..
+    .suffix = { "" }
