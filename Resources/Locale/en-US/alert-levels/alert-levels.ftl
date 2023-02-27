@@ -24,5 +24,5 @@ alert-level-delta-announcement = The station is currently under threat of immine
 alert-level-epsilon = Epsilon
 alert-level-epsilon-announcement = Central Command has ordered the Epsilon security level on the station. Consider all contracts terminated.
 
-alert-level-lockdown = Lockdown
-alert-level-lockdown-announcement = Central Command has ordered a complete lockdown of the station. All personnel must go to their department. Security personnel are allowed to use lethal weapons.
+alert-level-sigma = Lockdown
+alert-level-sigma-announcement = Central Command has ordered a complete lockdown of the station. All personnel must go to their department. Security personnel are allowed to use lethal weapons.

@@ -84,11 +84,11 @@
       emergencyLightColor: Violet
       forceEnableEmergencyLights: false
       shuttleTime: 400
-    lockdown:
-      announcement: alert-level-lockdown-announcement
+    sigma:
+      announcement: alert-level-sigma-announcement
       selectable: false
       sound:
-        path: /Audio/Misc/siren.ogg
+        path: /Audio/Misc/sigma.ogg
         params:
           volume: -4
       disableSelection: true
