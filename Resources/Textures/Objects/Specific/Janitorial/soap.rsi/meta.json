@@ -6,72 +6,83 @@
     "x": 32,
     "y": 32
   },
-  "states": [
-    {
-      "name": "soap"
-    },
-    {
-      "name": "deluxe"
-    },
-    {
-      "name": "gibs"
-    },
-    {
-      "name": "nt"
-    },
-    {
-      "name": "omega"
-    },
-    {
-      "name": "syndie"
-    },
-    {
-      "name": "inhand-left",
-      "directions": 4
-    },
-    {
-      "name": "inhand-right",
-      "directions": 4
-    },
-    {
-      "name": "deluxe-inhand-left",
-      "directions": 4
-    },
-    {
-      "name": "deluxe-inhand-right",
-      "directions": 4
-    },
-    {
-      "name": "gibs-inhand-left",
-      "directions": 4
-    },
-    {
-      "name": "gibs-inhand-right",
-      "directions": 4
-    },
-    {
-      "name": "nt-inhand-left",
-      "directions": 4
-    },
-    {
-      "name": "nt-inhand-right",
-      "directions": 4
-    },
-    {
-      "name": "omega-inhand-left",
-      "directions": 4
-    },
-    {
-      "name": "omega-inhand-right",
-      "directions": 4
-    },
-    {
-      "name": "syndie-inhand-left",
-      "directions": 4
-    },
-    {
-      "name": "syndie-inhand-right",
-      "directions": 4
-    }
-  ]
+    "states": [
+        {
+            "name": "soap"
+        },
+        {
+            "name": "honk"
+        },
+        {
+            "name": "deluxe"
+        },
+        {
+            "name": "gibs"
+        },
+        {
+            "name": "nt"
+        },
+        {
+            "name": "omega"
+        },
+        {
+            "name": "syndie"
+        },
+        {
+            "name": "inhand-left",
+            "directions": 4
+        },
+        {
+            "name": "inhand-right",
+            "directions": 4
+        },
+        {
+            "name": "honk-inhand-left",
+            "directions": 4
+        },
+        {
+            "name": "honk-inhand-right",
+            "directions": 4
+        },
+        {
+            "name": "deluxe-inhand-left",
+            "directions": 4
+        },
+        {
+            "name": "deluxe-inhand-right",
+            "directions": 4
+        },
+        {
+            "name": "gibs-inhand-left",
+            "directions": 4
+        },
+        {
+            "name": "gibs-inhand-right",
+            "directions": 4
+        },
+        {
+            "name": "nt-inhand-left",
+            "directions": 4
+        },
+        {
+            "name": "nt-inhand-right",
+            "directions": 4
+        },
+        {
+            "name": "omega-inhand-left",
+            "directions": 4
+        },
+        {
+            "name": "omega-inhand-right",
+            "directions": 4
+        },
+        {
+            "name": "syndie-inhand-left",
+            "directions": 4
+        },
+        {
+            "name": "syndie-inhand-right",
+            "directions": 4
+        }
+    ]
 }
