@@ -5,9 +5,5 @@
   description: Он решит вашу судьбу.
   components:
     - type: Headset
-      channels:
-        - Common
-        - Command
-        - Security
     - type: Sprite
       sprite: Clothing/Ears/Headsets/servicesecurity.rsi
