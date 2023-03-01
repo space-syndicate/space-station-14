@@ -1,4 +1,5 @@
 ﻿using System.Linq;
+using Content.Server.Corvax.OwOAction;
 using Content.Server.Corvax.Sponsors;
 using Content.Server.GameTicking;
 using Content.Server.Hands.Systems;
@@ -19,7 +20,8 @@ public sealed class LoadoutSystem : EntitySystem
     [Dependency] private readonly HandsSystem _handsSystem = default!;
     [Dependency] private readonly StorageSystem _storageSystem = default!;
     [Dependency] private readonly SponsorsManager _sponsorsManager = default!;
-    
+    [Dependency] private readonly EntityManager _entityManager = default!;
+
     public override void Initialize()
     {
         SubscribeLocalEvent<PlayerSpawnCompleteEvent>(OnPlayerSpawned);
@@ -29,6 +31,12 @@ public sealed class LoadoutSystem : EntitySystem
     {
         if (_sponsorsManager.TryGetInfo(ev.Player.UserId, out var sponsor))
         {
+            // Тут можно снабжать компонентами спонсоров
+            if (sponsor.Tier >= 3)
+            {
+                _entityManager.AddComponent<OwOActionComponent>(ev.Mob);
+            }
+
             foreach (var loadoutId in sponsor.AllowedMarkings)
             {
                 // NOTE: Now is easy to not extract method because event give all info we need
@@ -49,14 +57,14 @@ public sealed class LoadoutSystem : EntitySystem
                         continue;
 
                     var entity = Spawn(loadout.EntityId, Transform(ev.Mob).Coordinates);
-                    
+
                     // Take in hand if not clothes
                     if (!TryComp<ClothingComponent>(entity, out var clothing))
                     {
                         _handsSystem.TryPickup(ev.Mob, entity);
                         continue;
                     }
-                    
+
                     // Automatically search empty slot for clothes to equip
                     string? firstSlotName = null;
                     bool isEquiped = false;
@@ -67,7 +75,7 @@ public sealed class LoadoutSystem : EntitySystem
 
                         if (firstSlotName == null)
                             firstSlotName = slot.Name;
-                        
+
                         if (_inventorySystem.TryGetSlotEntity(ev.Mob, slot.Name, out var _))
                             continue;
 
@@ -77,7 +85,7 @@ public sealed class LoadoutSystem : EntitySystem
                             break;
                         }
                     }
-                    
+
                     if (isEquiped || firstSlotName == null)
                         continue;
 

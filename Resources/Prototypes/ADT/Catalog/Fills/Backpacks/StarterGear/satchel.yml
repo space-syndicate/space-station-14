@@ -1,0 +1,9 @@
+- type: entity
+  noSpawn: true
+  parent: ClothingBackpackSatchelMedical
+  id: ADTClothingBackpackSatchelParamedicalFilled
+  components:
+  - type: StorageFill
+    contents:
+      - id: BoxSurvivalMedical
+      - id: JawsOfLife

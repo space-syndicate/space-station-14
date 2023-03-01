@@ -42,3 +42,16 @@
         - id: Ointment 
         - id: Gauze
         - id: Brutepack
+
+
+        #Paramedic
+
+- type: entity
+  noSpawn: true
+  parent: ClothingBackpackMedical
+  id: ADTClothingBackpackParamedicalMedicalFilled
+  components:
+  - type: StorageFill
+    contents:
+      - id: BoxSurvivalMedical
+      - id: JawsOfLife

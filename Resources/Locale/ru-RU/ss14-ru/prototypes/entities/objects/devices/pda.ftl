@@ -1,7 +1,7 @@
 ent-BasePDA = КПК
     .desc = Ассистент по персональным данным.
     .suffix = { "" }
-ent-PassengerPDA = КПК пассажира
+ent-PassengerPDA = КПК ассистента
     .desc = Почему он не серый?
     .suffix = { "" }
 ent-TechnicalAssistantPDA = КПК ассистента-техника
