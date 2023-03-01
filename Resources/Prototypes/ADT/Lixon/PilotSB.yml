@@ -1,0 +1,17 @@
+- type: startingGear
+  id: ADTSecurityPilotGear
+  equipment:
+    jumpsuit: ClothingUniformJumpsuitSec
+    outer: ClothingOuterWinterSec
+    back: ClothingBackpackSecurityFilled
+    shoes: ClothingShoesBootsJackSec # Corvax-Resprite
+    eyes: ClothingEyesGlassesSecurity
+    head: ClothingHeadHatBeret
+    outerClothing: ClothingOuterVestArmorSec # Corvax-Resprite
+    id: SecurityPDA
+    ears: ClothingHeadsetSecurity
+    belt: ClothingBeltSecurityFilled
+    Hands: ClothingHandsGlovesFingerless
+  innerclothingskirt: ClothingUniformJumpskirtSec
+  satchel: ClothingBackpackSatchelSecurityFilled
+  duffelbag: ClothingBackpackDuffelSecurityFilled
