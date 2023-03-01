@@ -205,13 +205,6 @@ namespace Content.Server.GameTicking
                     playDefaultSound: false);
             }
 
-            var info = _sponsorsManager.TryGetInfo(player.UserId, out var sponsorInfo);
-            if (info && sponsorInfo != null && sponsorInfo.Tier == 3 && sponsorInfo.ExpireDate > DateTime.Now)
-            {
-                EntityManager.AddComponent<OwOActionComponent>(mob);
-            }
-
-
             _stationJobs.TryAssignJob(station, jobPrototype);
 
             if (lateJoin)
