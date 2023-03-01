@@ -39,16 +39,6 @@
 
 - type: entity
   noSpawn: true
-  parent: ClothingBackpackMedical
-  id: ClothingBackpackParamedicalMedicalFilled
-  components:
-  - type: StorageFill
-    contents:
-      - id: BoxSurvivalMedical
-      - id: JawsOfLife
-
-- type: entity
-  noSpawn: true
   parent: ClothingBackpackCaptain
   id: ClothingBackpackCaptainFilled
   components:
