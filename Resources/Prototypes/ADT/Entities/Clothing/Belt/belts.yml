@@ -26,7 +26,7 @@
 
 
 #ERT
-#RPSSL
+#RPSS
 - type: entity
   id: ADTClothingBeltMilitaryWebbingRPSSL
   parent: ClothingBeltMilitaryWebbing
@@ -50,15 +50,15 @@
   components:
   - type: StorageFill
     contents:
-      - id: MagazinePistolHighCapacity
-      - id: MagazinePistolHighCapacity
-      - id: MagazinePistolHighCapacity
+      - id: MagazinePistol
+      - id: MagazinePistol
+      - id: MagazinePistol
       - id: EmergencyMedipen
       - id: Ointment 
       - id: Gauze
       - id: Brutepack
 
-#RPSML
+#RPSM
 - type: entity
   id: ADTClothingBeltMilitaryWebbingRPSML
   parent: ClothingBeltMilitaryWebbing
