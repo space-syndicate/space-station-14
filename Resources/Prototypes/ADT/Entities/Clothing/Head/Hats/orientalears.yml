@@ -1,0 +1,29 @@
+- type: entity
+  parent: ClothingHeadBase
+  id: ADTClothingHeadHatBlackOrientalEars
+  name: oriental ears
+  description: "NYAH!"
+  components:
+  - type: Tag
+    tags: # ignore "WhitelistChameleon" tag
+      - DroneUsable
+  - type: Sprite
+    sprite: ADT/Clothing/Head/Hats/orientalears.rsi
+  - type: Clothing
+    sprite: ADT/Clothing/Head/Hats/orientalears.rsi
+  - type: AddAccentClothing
+    accent: OwOAccent
+
+- type: entity
+  parent: ClothingHeadBase
+  id: ADTClothingHeadHatOktyabrinaOrientalEars
+  name: gift for October
+  description: "On the inside is scrawled 'For the one whose hair is the color of lilac'. This smells like a joy and happy"
+  components:
+  - type: Tag
+    tags: # ignore "WhitelistChameleon" tag
+      - DroneUsable
+  - type: Sprite
+    sprite: ADT/Clothing/Head/Hats/orientalears.rsi
+  - type: Clothing
+    sprite: ADT/Clothing/Head/Hats/orientalears.rsi

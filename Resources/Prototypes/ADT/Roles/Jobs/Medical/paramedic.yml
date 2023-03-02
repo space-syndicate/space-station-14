@@ -1,4 +1,4 @@
-﻿- type: job
+- type: job
   id: Paramedic
   name: job-name-paramedic
   playTimeTracker: JobParamedic
@@ -17,6 +17,7 @@
     - Medical
     - Chemistry
     - Maintenance
+    - External
 
 - type: playTimeTracker
   id: JobParamedic
@@ -25,7 +26,7 @@
   id: ParamedicGear
   equipment:
     jumpsuit: ClothingUniformJumpsuitParamedic
-    back: ClothingBackpackParamedicalMedicalFilled
+    back: ADTClothingBackpackParamedicalMedicalFilled
     shoes: ClothingShoesColorWhite
     id: PramedicPDA
     ears: ClothingHeadsetMedical
@@ -34,8 +35,8 @@
     gloves: ClothingHandsGlovesNitrile
     # the purple glasses?
   innerclothingskirt: ClothingUniformJumpskirtColorWhite
-  satchel: ClothingBackpackSatchelMedicalFilled
-  duffelbag: ClothingBackpackDuffelMedicalFilled
+  satchel: ADTClothingBackpackSatchelParamedicalFilled
+  duffelbag: ADTClothingBackpackDuffelParamedicalFilled
 
 - type: entity
   parent: BasePDA
