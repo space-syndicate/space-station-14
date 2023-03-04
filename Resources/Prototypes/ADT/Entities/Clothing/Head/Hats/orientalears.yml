@@ -27,3 +27,12 @@
     sprite: ADT/Clothing/Head/Hats/orientalears.rsi
   - type: Clothing
     sprite: ADT/Clothing/Head/Hats/orientalears.rsi
+
+
+- type: loadout
+  id: OktyabrinaLoadout
+  entity: ADTClothingHeadHatOktyabrinaOrientalEars
+  sponsorOnly: true
+
+
+
