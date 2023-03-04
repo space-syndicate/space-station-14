@@ -1,7 +1,7 @@
 ent-IDCardStandard = идентификационная карта
     .desc = Карта, необходимая для доступа в различные области станции.
     .suffix = { "" }
-ent-PassengerIDCard = ID карта пассажира
+ent-PassengerIDCard = ID карта ассистента
     .desc = { ent-IDCardStandard.desc }
     .suffix = { "" }
 ent-TechnicalAssistantIDCard = ID карта ассистента-техника
