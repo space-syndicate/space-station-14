@@ -255,6 +255,7 @@ namespace Content.Shared.Humanoid
 
                         break;
                 }
+                markingSet.EnsureSpecies(species, skinColor, markingManager);
             }
 
             return new HumanoidCharacterAppearance(
