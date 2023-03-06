@@ -205,7 +205,7 @@ namespace Content.Shared.Humanoid
             {
                 hairStyleId = HairStyles.DefaultHairStyle;
             }
-            
+
             // Corvax-Sponsors-Start
             if (proto.TryIndex(hairStyleId, out MarkingPrototype? hairProto) &&
                 hairProto.SponsorOnly &&
@@ -219,7 +219,7 @@ namespace Content.Shared.Humanoid
             {
                 facialHairStyleId = HairStyles.DefaultFacialHairStyle;
             }
-            
+
             // Corvax-Sponsors-Start
             if (proto.TryIndex(facialHairStyleId, out MarkingPrototype? facialHairProto) &&
                 facialHairProto.SponsorOnly &&
@@ -235,7 +235,6 @@ namespace Content.Shared.Humanoid
             {
                 markingSet = new MarkingSet(appearance.Markings, speciesProto.MarkingPoints, markingManager, proto);
                 markingSet.EnsureValid(markingManager);
-                markingSet.FilterSpecies(species, markingManager);
                 markingSet.FilterSponsor(sponsorMarkings, markingManager); // Corvax-Sponsors
 
                 switch (speciesProto.SkinColoration)
@@ -255,6 +254,7 @@ namespace Content.Shared.Humanoid
 
                         break;
                 }
+                markingSet.EnsureSpecies(species, skinColor, markingManager);
             }
 
             return new HumanoidCharacterAppearance(

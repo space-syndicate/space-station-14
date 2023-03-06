@@ -46,7 +46,7 @@ public sealed class HumanoidAppearanceComponent : Component
     /// </summary>
     [DataField("species", customTypeSerializer: typeof(PrototypeIdSerializer<SpeciesPrototype>))]
     public string Species { get; set; } = string.Empty;
-    
+
     // Corvax-TTS-Start
     /// <summary>
     ///     Current voice. Used for correct cloning.
@@ -79,11 +79,23 @@ public sealed class HumanoidAppearanceComponent : Component
 
     [DataField("eyeColor")]
     public Color EyeColor = Color.Brown;
-    
+
     // Corvax-ChatColor-Start
     [DataField("speakerColor")]
     public Color SpeakerColor = Color.White;
     // Corvax-ChatColor-End
+
+    /// <summary>
+    ///     Hair color of this humanoid. Used to avoid looping through all markings
+    /// </summary>
+    [ViewVariables(VVAccess.ReadOnly)]
+    public Color? CachedHairColor;
+
+    /// <summary>
+    ///     Facial Hair color of this humanoid. Used to avoid looping through all markings
+    /// </summary>
+    [ViewVariables(VVAccess.ReadOnly)]
+    public Color? CachedFacialHairColor;
 }
 
 [Serializable, NetSerializable]
