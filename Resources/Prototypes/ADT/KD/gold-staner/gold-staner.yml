@@ -32,3 +32,8 @@
       steps: 5
       zeroVisible: true
     - type: Appearance
+
+  - type: loadout
+    id: GoldStanerLoadout
+    entity: WeaponDisablerIdan
+    sponsorOnly: true
