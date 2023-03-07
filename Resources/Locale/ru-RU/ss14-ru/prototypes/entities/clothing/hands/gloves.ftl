@@ -43,6 +43,6 @@ ent-ClothingHandsGlovesFingerless = беспалые перчатки
 ent-ThievingGloves = { ent-ClothingHandsGlovesColorBlack }
     .desc = { ent-ClothingHandsGlovesColorBlack.desc }
     .suffix = Воровские
-ent-ClothingHandsGlovesCluwne = руки клувня
+ent-ClothingHandsGlovesCluwne = руки клувеня
     .desc = Проклятая пара рук клувня.
     .suffix = Неснимаемый
