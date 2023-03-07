@@ -17,10 +17,14 @@
   joinNotifyCrew: true
   supervisors: job-supervisors-hos
   canBeAntag: false
-  accessGroups:
-    - Brig
-    - Security
-    - Medical
+  access:
+  - Brig
+  - Service
+  - External
+  - Medical
+  - Maintenance
+  extendedAccess:
+  - Chemistry
 - type: startingGear
   id: BrigMedic
   equipment:
