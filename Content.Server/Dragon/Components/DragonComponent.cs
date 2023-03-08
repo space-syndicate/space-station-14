@@ -31,6 +31,19 @@ namespace Content.Server.Dragon
         [DataField("devourAction")]
         public EntityTargetAction? DevourAction;
 
+
+        /// <summary>
+        /// For deadless dragon's :)
+        /// </summary>
+        [ViewVariables(VVAccess.ReadWrite), DataField("heNeedsAlive")]
+        public bool HeNeedsAlive = false;
+
+        /// <summary>
+        /// For Roar dragon's :)
+        /// </summary>
+        [ViewVariables(VVAccess.ReadWrite), DataField("Roar[DEBUG]")]
+        public bool HeRoars = false;
+
         /// <summary>
         /// If we have active rifts.
         /// </summary>
@@ -99,7 +112,14 @@ namespace Content.Server.Dragon
         public SoundSpecifier? SoundRoar =
             new SoundPathSpecifier("/Audio/Animals/space_dragon_roar.ogg")
             {
-                Params = AudioParams.Default.WithVolume(3f),
+                Params = AudioParams.Default.WithVolume(0.2f),
+            };
+
+        [ViewVariables(VVAccess.ReadWrite), DataField("soundAlterRoar")]
+        public SoundSpecifier? SoundAlterRoar =
+            new SoundPathSpecifier("/Audio/Animals/alternative_space_dragon_roar.ogg")
+            {
+                Params = AudioParams.Default.WithVolume(1f),
             };
 
         [ViewVariables(VVAccess.ReadWrite), DataField("devourWhitelist")]
@@ -125,4 +145,6 @@ namespace Content.Server.Dragon
     public sealed class DragonDevourActionEvent : EntityTargetActionEvent {}
 
     public sealed class DragonSpawnRiftActionEvent : InstantActionEvent {}
+
+    public sealed class DragonRoarActionEvent : InstantActionEvent { }
 }

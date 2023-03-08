@@ -75,6 +75,7 @@ namespace Content.Server.Dragon
             SubscribeLocalEvent<RoundEndTextAppendEvent>(OnRiftRoundEnd);
         }
 
+        
         private void OnDoAfter(EntityUid uid, DragonComponent component, DoAfterEvent args)
         {
             if (args.Handled || args.Cancelled)
@@ -140,8 +141,20 @@ namespace Content.Server.Dragon
                 // Delete it, naughty dragon!
                 if (comp.RiftAccumulator >= comp.RiftMaxAccumulator)
                 {
+                    if (comp.HeNeedsAlive)
+                    {
+                        return;
+                    } 
                     Roar(comp);
                     QueueDel(comp.Owner);
+                }
+
+                // For Debug sound
+                if ((int) comp.RiftAccumulator % 15 == 0 && comp.HeRoars)
+                {
+                    AlterRoar(comp);
+                    //Roar(comp);
+                    return;
                 }
             }
 
@@ -318,7 +331,14 @@ namespace Content.Server.Dragon
         private void Roar(DragonComponent component)
         {
             if (component.SoundRoar != null)
-                _audioSystem.Play(component.SoundRoar, Filter.Pvs(component.Owner, 4f, EntityManager), component.Owner, true, component.SoundRoar.Params);
+                _audioSystem.Play(component.SoundRoar, Filter.Pvs(component.Owner, 1f, EntityManager), component.Owner, true, component.SoundRoar.Params);
+        }
+
+        //ADT dragon's alter roar sound
+        private void AlterRoar(DragonComponent component)
+        {
+            if (component.SoundAlterRoar != null)
+                _audioSystem.Play(component.SoundAlterRoar, Filter.Pvs(component.Owner, 1f, EntityManager), component.Owner, true, component.SoundAlterRoar.Params);
         }
 
         private void OnStartup(EntityUid uid, DragonComponent component, ComponentStartup args)
@@ -355,7 +375,7 @@ namespace Content.Server.Dragon
                     case MobState.Critical:
                     case MobState.Dead:
 
-                        _doAfterSystem.DoAfter(new DoAfterEventArgs(uid, component.DevourTime, target:target)
+                        _doAfterSystem.DoAfter(new DoAfterEventArgs(uid, component.DevourTime, target: target)
                         {
                             BreakOnTargetMove = true,
                             BreakOnUserMove = true,
@@ -375,7 +395,7 @@ namespace Content.Server.Dragon
             if (component.SoundStructureDevour != null)
                 _audioSystem.PlayPvs(component.SoundStructureDevour, uid, component.SoundStructureDevour.Params);
 
-            _doAfterSystem.DoAfter(new DoAfterEventArgs(uid, component.StructureDevourTime, target:target)
+            _doAfterSystem.DoAfter(new DoAfterEventArgs(uid, component.StructureDevourTime, target: target)
             {
                 BreakOnTargetMove = true,
                 BreakOnUserMove = true,
