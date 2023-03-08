@@ -38,11 +38,27 @@ namespace Content.Server.Dragon
         [ViewVariables(VVAccess.ReadWrite), DataField("heNeedsAlive")]
         public bool HeNeedsAlive = false;
 
+
+
         /// <summary>
         /// For Roar dragon's :)
         /// </summary>
-        [ViewVariables(VVAccess.ReadWrite), DataField("Roar[DEBUG]")]
         public bool HeRoars = false;
+        [ViewVariables(VVAccess.ReadWrite), DataField("RoarFrequency")]
+        public int RoarFrequency = 30;
+        private int _defaultRoarTimeDelay = 100;
+        [ViewVariables(VVAccess.ReadWrite), DataField("DefaultRoarTimeDelay[DEBUG]")]
+        public int DefaultRoarTimeDelay
+        {
+            get
+            {
+                return _defaultRoarTimeDelay;
+            }
+            set
+            {
+                _defaultRoarTimeDelay = value;
+            }
+        }
 
         /// <summary>
         /// If we have active rifts.

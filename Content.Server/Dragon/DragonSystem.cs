@@ -53,6 +53,12 @@ namespace Content.Server.Dragon
 
         private const int RiftsAllowed = 3;
 
+        /// <summary>
+        /// Debug counter
+        /// </summary>
+        private int RoarTimeCounter = 100;
+
+
         public override void Initialize()
         {
             base.Initialize();
@@ -75,7 +81,7 @@ namespace Content.Server.Dragon
             SubscribeLocalEvent<RoundEndTextAppendEvent>(OnRiftRoundEnd);
         }
 
-        
+
         private void OnDoAfter(EntityUid uid, DragonComponent component, DoAfterEvent args)
         {
             if (args.Handled || args.Cancelled)
@@ -144,18 +150,29 @@ namespace Content.Server.Dragon
                     if (comp.HeNeedsAlive)
                     {
                         return;
-                    } 
+                    }
                     Roar(comp);
                     QueueDel(comp.Owner);
                 }
 
                 // For Debug sound
-                if ((int) comp.RiftAccumulator % 15 == 0 && comp.HeRoars)
+                if ((int) comp.RiftAccumulator % comp.RoarFrequency == 0 && !comp.HeRoars)
                 {
                     AlterRoar(comp);
-                    //Roar(comp);
-                    return;
+                    comp.HeRoars = true;
                 }
+
+                if (comp.HeRoars)
+                {
+                    if (RoarTimeCounter <= 0)
+                    {
+                        comp.HeRoars = false;
+                        RoarTimeCounter = comp.DefaultRoarTimeDelay;
+                        return;
+                    }
+                    RoarTimeCounter--;
+                }
+
             }
 
             foreach (var comp in EntityQuery<DragonRiftComponent>())
