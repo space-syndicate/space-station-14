@@ -1,0 +1,9 @@
+- type: cargoProduct
+  id: ArmoryVectorRubber
+  icon:
+    sprite: Objects/Weapons/Guns/SMGs/vector.rsi
+    state: icon
+  product: CrateArmoryVector
+  cost: 4000
+  category: Armory
+  group: market

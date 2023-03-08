@@ -1,0 +1,86 @@
+- type: job
+  id: BrigMedic
+  name: brig medic
+  description: medic at brig
+  playTimeTracker: JobBrigMedic
+  requirements:
+    - !type:DepartmentTimeRequirement
+      department: Security
+      time: 360
+    - !type:DepartmentTimeRequirement
+      department: Medical
+      time: 600     
+  weight: 20
+  startingGear: BrigMedic
+  icon: "BrigMedic"
+  requireAdminNotify: true
+  joinNotifyCrew: true
+  supervisors: job-supervisors-hos
+  canBeAntag: false
+  access:
+  - Brig
+  - Service
+  - External
+  - Medical
+  - Maintenance
+  extendedAccess:
+  - Chemistry
+- type: startingGear
+  id: BrigMedic
+  equipment:
+    jumpsuit: ClothingUniformJumpsuitMedicalDoctor
+    back: ClothingBackpackSecurityFilled
+    shoes: ClothingShoesBootsJack
+    outerClothing: ClothingOuterCoatLab
+    id: BrigMedicPDA
+    eyes: ClothingEyesGlassesSecurity
+    ears: ClothingHeadsetBrigMedic
+    belt: ClothingBeltMedicalFilled
+  innerclothingskirt: ClothingUniformJumpskirtMedicalDoctor
+  satchel: ClothingBackpackSatchelSecurityFilled
+  duffelbag: ClothingBackpackDuffelSecurityFilled
+
+- type: entity
+  id: SpawnBrigMedic
+  parent: SpawnPointJobBase
+  name: brig medic spawn
+  components:
+    - type: SpawnPoint
+      job_id: BrigMedic
+    - type: Sprite
+      layers:
+        - state: green
+        - state: hop
+
+- type: entity
+  parent: BasePDA
+  id: BrigMedicPDA
+  name: brig medic PDA
+  description: brig medic PDA
+  components:
+  - type: PDA
+    id: BrigMedicIDCard
+    state: pda-medical
+  - type: PDABorderColor
+    borderColor: "#d7d7d0"
+    accentVColor: "#447987"
+  - type: Icon
+    state: pda-medical
+  - type: HealthAnalyzer
+    scanDelay: 1
+    scanningEndSound:
+      path: "/Audio/Items/Medical/healthscanner.ogg"
+
+
+
+- type: entity
+  parent: IDCardStandard
+  id: BrigMedicIDCard
+  name: Brig Medic ID card
+  components:
+  - type: Sprite
+    layers:
+    - state: default
+    - state: idpsychologist
+  - type: PresetIdCard
+    job: Psychologist
