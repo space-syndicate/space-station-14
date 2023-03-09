@@ -1,0 +1,48 @@
+- type: entity
+  name: fire born
+  parent: BaseItem
+  id: FireBorn
+  description: born fire
+  components:
+  - type: Sprite
+    netsync: false
+    sprite: ADT/KD/fireborn.rsi
+    layers:
+        - state: fire_extinguisher_closed
+          map: [ "enabled" ]
+  - type: Item
+    sprite: ADT/KD/fireborn.rsi
+    size: 15
+  - type: SolutionContainerManager
+    solutions:
+      spray:
+        maxVol: 1000
+        reagents:
+        - ReagentId: Phlogiston
+          Quantity: 100
+        - ReagentId: Napalm
+          Quantity: 900          
+  - type: RefillableSolution
+    solution: spray
+  - type: DrainableSolution
+    solution: spray
+  - type: ItemCooldown
+  - type: Spray
+    spraySound:
+      path: /Audio/Effects/extinguish.ogg
+    sprayedPrototype: ExtinguisherSpray
+    vaporAmount: 3
+    vaporSpread: 90
+    sprayVelocity: 2.0
+    sprayTimeAlive: 1.5
+    transferAmount: 5
+    impulse: 50.0
+  - type: FireExtinguisher
+    hasSafety: true
+  - type: Appearance
+  - type: GenericVisualizer
+    visuals:
+      enum.FireExtinguisherVisuals.Safety:
+        enabled:
+          True: { state: fire_extinguisher_closed }
+          False: { state: fire_extinguisher_open }
