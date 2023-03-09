@@ -1,0 +1,13 @@
+- type: entity
+  parent: EncryptionKey
+  id: EncryptionKeyBotic
+  name: ключ к каналу ботов
+  description: ключ к доступу каналов ботов.
+  components:
+  - type: EncryptionKey
+    channels:
+    - Botic
+    defaultChannel: Botic
+  - type: Sprite
+    sprite: Objects/Devices/encryption_keys.rsi
+    state: bin_cypherkey
