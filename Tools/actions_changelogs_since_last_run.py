@@ -23,7 +23,7 @@ CHANGELOG_FILE = "Resources/Changelog/Changelog.yml"
 
 TYPES_TO_EMOJI = {
     "Fix":    "🐛",
-    "Add":    "🆕",
+    "Add":    "✨", # Corvax: Use gitmoji 💥
     "Remove": "❌",
     "Tweak":  "⚒️"
 }
@@ -116,27 +116,29 @@ def send_to_discord(entries: Iterable[ChangelogEntry]) -> None:
                 emoji = TYPES_TO_EMOJI.get(change['type'], "❓")
                 message = change['message']
                 # Corvax-Localization-Start
+                TRANSLATION_API_URL = os.environ.get("TRANSLATION_API_URL")
                 if TRANSLATION_API_URL:
-                    translate = requests.post(TRANSLATION_API_URL, json={
+                    resp = requests.post(TRANSLATION_API_URL, json={
                         "text": message,
                         "source_lang": "EN",
                         "target_lang": "RU"
                     })
-                    message = translate.data
+                    message = resp.json()['data']
                 # Corvax-Localization-End
                 content.write(f"{emoji} {message}\n")
 
-    body = {
-        "content": content.getvalue(),
-        # Do not allow any mentions.
-        "allowed_mentions": {
-            "parse": []
-        },
-        # SUPPRESS_EMBEDS
-        "flags": 1 << 2
-    }
+    for chunk in iter(lambda: content.read(2000), ''): # Corvax: Split big changelogs messages
+        body = {
+            "content": chunk
+            # Do not allow any mentions.
+            "allowed_mentions": {
+                "parse": []
+            },
+            # SUPPRESS_EMBEDS
+            "flags": 1 << 2
+        }
 
-    requests.post(DISCORD_WEBHOOK_URL, json=body)
+        requests.post(DISCORD_WEBHOOK_URL, json=body)
 
 
 main()

@@ -255,6 +255,7 @@ namespace Content.Shared.Humanoid
                         break;
                 }
                 markingSet.EnsureSpecies(species, skinColor, markingManager);
+                markingSet.FilterSponsor(sponsorMarkings, markingManager); // Corvax-Sponsors
             }
 
             return new HumanoidCharacterAppearance(

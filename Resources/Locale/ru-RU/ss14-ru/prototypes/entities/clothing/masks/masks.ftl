@@ -46,3 +46,6 @@ ent-ClothingMaskMuzzle = намордник
 ent-ClothingMaskPlague = маска чумного доктора
     .desc = Плохой знак.
     .suffix = { "" }
+ent-ClothingMaskCluwne = лицо и волосы клувеня
+    .desc = Проклятые лицо и волосы клувеня.
+    .suffix = Неснимаемый
