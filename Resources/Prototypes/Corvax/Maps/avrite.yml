@@ -15,7 +15,7 @@
       availableJobs:
         CargoTechnician: [ 3, 3 ]
         Passenger: [ -1, -1 ]
-        Bartender: [ 2, 2 ]
+        Bartender: [ 1, 1 ]
         Botanist: [ 3, 3 ]
         Chef: [ 2, 2 ]
         Clown: [ 1, 1 ]
@@ -31,6 +31,7 @@
         MedicalDoctor: [ 4, 4 ]
         Chemist: [ 3, 3 ]
         Zookeeper: [ 1, 1 ]
+        Boxer: [ 2, 2 ]
         ResearchDirector: [ 1, 1 ]
         Scientist: [ 4, 4 ]
         HeadOfSecurity: [ 1, 1 ]
