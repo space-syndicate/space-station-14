@@ -49,7 +49,8 @@ public abstract class SharedHumanoidAppearanceSystem : EntitySystem
             component.Age,
             component.Species,
             component.SkinColor,
-            component.EyeColor);
+            component.EyeColor,
+            component.SpeakerColor); // Corvax-SpeakerColor
     }
 
     /// <summary>
@@ -138,7 +139,7 @@ public abstract class SharedHumanoidAppearanceSystem : EntitySystem
         }
 
         humanoid.Species = species;
-        humanoid.MarkingSet.FilterSpecies(species, _markingManager);
+        humanoid.MarkingSet.EnsureSpecies(species, humanoid.SkinColor, _markingManager);
         var oldMarkings = humanoid.MarkingSet.GetForwardEnumerator().ToList();
         humanoid.MarkingSet = new(oldMarkings, prototype.MarkingPoints, _markingManager, _prototypeManager);
 
