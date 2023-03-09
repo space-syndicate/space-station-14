@@ -11,10 +11,12 @@
     channels:
     - Common
     - Service
+    - Robotic  
   - type: ActiveRadio
     channels:
     - Common
     - Service
+    - Robotic 
   - type: IntrinsicRadioReceiver
   - type: Access
     tags:
