@@ -1,7 +1,7 @@
 - type: job
   id: BrigMedic
-  name: brig medic
-  description: medic at brig
+  name: job-name-brigmedic
+  description: job-description-brigmedic
   playTimeTracker: JobBrigMedic
   requirements:
     - !type:DepartmentTimeRequirement
@@ -83,4 +83,4 @@
     - state: default
     - state: idpsychologist
   - type: PresetIdCard
-    job: Psychologist
+    job: BrigMedic
