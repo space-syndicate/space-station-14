@@ -10,10 +10,6 @@ ent-BrigMedicIDCard = ID карта бриг медика
     .desc = "ID карта бриг медика"
     .suffix = { "" }
 
-job-BrigMedic = бриг медик
-    .desc = "медик, работающий у СБ"
-    .suffix = { "" }
-
 ent-SpawnBrigMedic = спавн бриг медика
     .desc = "спавн бриг медика"
     .suffix = { "" }
