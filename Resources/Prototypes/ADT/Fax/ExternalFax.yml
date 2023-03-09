@@ -1,0 +1,13 @@
+﻿- type: entity
+  parent: FaxMachineBase
+  id: ExternalFaxMachine
+  name: captain long range fax machine
+  suffix: External
+  components:
+    - type: FaxMachine
+      name: "Внешняя Станция"
+      notifyAdmins: false
+    - type: DeviceNetwork
+      examinableAddress: true
+      receiveFrequencyId: Fax
+      transmitFrequencyId: Fax
