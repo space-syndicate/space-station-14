@@ -1,0 +1,48 @@
+- type: entity
+  name: JessusX
+  description: Give live
+  parent: BaseStorageItem
+  id: JessusX
+  components:
+  - type: UseDelay
+    delay: 60.0
+  - type: Bible
+    damage:
+      groups:
+        Brute: -100000
+        Airloss: -100000
+        Caustic: -100000
+        Genetic: -100000
+        Toxin: -100000
+        Burn: -100000
+    damageOnFail:
+      groups:
+        Burn: 0
+    damageOnUntrainedUse: ## What a non-chaplain takes when attempting to heal someone
+      groups:
+        Burn: 10000
+  - type: Prayable
+    bibleUserOnly: true
+  - type: Summonable
+    specialItem: SpawnPointGhostUrist
+  - type: ReactionMixer
+    mixMessage: "bible-mixing-success"
+    reactionTypes:
+    - Holy
+  - type: ItemCooldown
+  - type: Sprite
+    netsync: false
+    sprite: ADT/KD/JessusX.rsi
+    state: icon
+  - type: Item
+    size: 5
+    sprite: ADT/KD/JessusX.rsi
+  - type: Clothing
+    slots:
+    - Mask
+  - type: Storage
+    capacity: 0
+  - type: UserInterface
+    interfaces:
+    - key: enum.StorageUiKey.Key
+      type: StorageBoundUserInterface
