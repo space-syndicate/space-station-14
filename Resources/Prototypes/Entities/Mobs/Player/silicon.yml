@@ -135,10 +135,10 @@
   - type: MovementIgnoreGravity
   - type: IntrinsicRadioTransmitter
     channels:
-    - Robotic 
+    - Botic
   - type: ActiveRadio
     channels:
-    - Robotic  
+    - Botic 
   - type: Fixtures
     fixtures:
     - shape:
