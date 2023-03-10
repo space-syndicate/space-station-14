@@ -4,7 +4,7 @@
   mapPath: /Maps/corvax_avrit.yml
   minPlayers: 40
   stations:
-    Delta:
+    Avrit:
       mapNameTemplate: '{0} Avrit {1}'
       emergencyShuttlePath: /Maps/Shuttles/emergency_avrit.yml
       nameGenerator:
