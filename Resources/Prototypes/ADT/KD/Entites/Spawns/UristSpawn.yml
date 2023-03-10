@@ -1,0 +1,17 @@
+- type: entity
+  id: SpawnPointGhostUrist
+  name: ghost role spawn point
+  suffix: urist
+  parent: MarkerBase
+  components:
+  - type: GhostRoleMobSpawner
+    prototype: MobHuman
+    name: Создания креста Иисуса
+    description: Ты Адам, а может и Ева.
+    rules: Помогай всему.
+  - type: Sprite
+    sprite: Markers/jobs.rsi
+    layers:
+      - state: green
+      - sprite: Mobs/Animals/bat.rsi
+        state: bat

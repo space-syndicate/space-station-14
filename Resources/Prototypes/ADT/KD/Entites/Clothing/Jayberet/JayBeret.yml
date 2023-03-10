@@ -1,0 +1,10 @@
+- type: entity
+  parent: ClothingHeadBase
+  id: ClothingHeadHatBeretJay
+  name: jay's beret
+  description: The best beret in the world.
+  components:
+  - type: Sprite
+    sprite: ADT/KD/jayberet.rsi
+  - type: Clothing
+    sprite: ADT/KD/jayberet.rsi

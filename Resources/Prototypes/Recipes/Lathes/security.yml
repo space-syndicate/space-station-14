@@ -227,3 +227,17 @@
   materials:
     Steel: 350
     Plastic: 600
+
+- type: latheRecipe
+  id: MagazinePistolHighCapacity
+  result: MagazinePistolHighCapacity
+  completetime: 2
+  materials:
+    Steel: 300
+
+- type: latheRecipe
+  id: MagazinePistolCaselessRifle
+  result: MagazinePistolCaselessRifle
+  completetime: 2
+  materials:
+    Steel: 300
