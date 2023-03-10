@@ -2,6 +2,7 @@ using Content.Server.Administration;
 using Content.Server.Administration.Logs;
 using Content.Server.Administration.Managers;
 using Content.Server.Administration.Notes;
+using Content.Server.ADT.RabbitMq;
 using Content.Server.Afk;
 using Content.Server.Chat.Managers;
 using Content.Server.Connection;
@@ -66,6 +67,7 @@ namespace Content.Server.IoC
             IoCManager.Register<JoinQueueManager>(); // Corvax-Queue
             IoCManager.Register<TTSManager>(); // Corvax-TTS
             IoCManager.Register<ServerInfoManager>();
+            IoCManager.Register<IRabbitMqService, RabbitMqService>();
         }
     }
 }
