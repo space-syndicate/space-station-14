@@ -133,6 +133,12 @@
     - state: shell
       sprite: Mobs/Silicon/drone.rsi
   - type: MovementIgnoreGravity
+  - type: IntrinsicRadioTransmitter
+    channels:
+    - Botic
+  - type: ActiveRadio
+    channels:
+    - Botic 
   - type: Fixtures
     fixtures:
     - shape:

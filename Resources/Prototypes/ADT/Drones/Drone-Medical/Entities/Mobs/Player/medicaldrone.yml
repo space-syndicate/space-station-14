@@ -13,10 +13,12 @@
     channels:
     - Common
     - Medical
+    - Botic
   - type: ActiveRadio
     channels:
     - Common
     - Medical
+    - Botic
   - type: IntrinsicRadioReceiver
   - type: Access
     tags:

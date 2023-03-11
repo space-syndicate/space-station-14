@@ -1,0 +1,11 @@
+- type: entity
+  id: CrateArmoryVector
+  name: vector crate (rubber)
+  parent: CrateWeaponSecure
+  components:
+  - type: StorageFill
+    contents:
+      - id: WeaponSubMachineGunVectorRubber
+        amount: 2
+      - id: MagazineMagnumSubMachineGunRubber
+        amount: 6

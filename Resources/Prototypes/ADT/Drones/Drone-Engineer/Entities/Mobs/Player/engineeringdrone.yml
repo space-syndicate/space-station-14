@@ -10,10 +10,12 @@
       - id: WelderExperimental
   - type: IntrinsicRadioTransmitter
     channels:
+    - Botic
     - Common
     - Engineering
   - type: ActiveRadio
     channels:
+    - Botic
     - Common
     - Engineering
   - type: IntrinsicRadioReceiver

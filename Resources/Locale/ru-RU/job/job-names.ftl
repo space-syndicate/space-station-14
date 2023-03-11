@@ -88,3 +88,4 @@ JobTechnicalAssistant = атмосферный техник
 JobWarden = смотритель
 JobBoxer = боксёр
 JobZookeeper = зоотехник
+job-name-brigmedic = бриг медик

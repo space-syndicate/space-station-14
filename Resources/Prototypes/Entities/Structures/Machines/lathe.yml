@@ -326,6 +326,7 @@
       - TraversalDistorterMachineCircuitboard
       - BoozeDispenserMachineCircuitboard
       - SodaDispenserMachineCircuitboard
+      - TelecomServerCircuitboard
   - type: MaterialStorage
     whitelist:
       tags:
@@ -427,6 +428,8 @@
       - MagazineBoxRifleRubber
       - MagazineBoxLightRifle
       - MagazineBoxLightRifleRubber
+      - MagazinePistolHighCapacity
+      - MagazinePistolCaselessRifle
   - type: MaterialStorage
     whitelist:
       tags:
