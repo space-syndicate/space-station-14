@@ -1,0 +1,87 @@
+- type: job
+  id: Magistrat
+  name: job-name-magistrat
+  description: job-description-magistrat
+  playTimeTracker: JobMagistrat
+  requirements:
+    - !type:DepartmentTimeRequirement
+      department: Security
+      time: 36000
+  startingGear: MagistratGear
+  icon: "Magistrat"
+  requireAdminNotify: true
+  joinNotifyCrew: true
+  supervisors: job-supervisors-captain
+  canBeAntag: false
+  access:
+    - Command
+    - Brig
+    - Maintenance
+    - Service
+    - Security
+
+- type: startingGear
+  id: MagistratGear
+  equipment:
+    jumpsuit: ClothingUniformJumpsuitLawyerBlack
+    back: ClothingBackpack
+    shoes: ClothingShoesBootsLaceup
+    mask:
+    outerClothing: ClothingOuterRobesJudge
+    eyes: ClothingEyesGlassesSunglasses
+    head: ClothingHeadHatPwig
+    id: MagistratPDA
+    gloves:
+    ears: ClothingHeadsetMagistrat
+    belt:
+    Neck: ClothingNeckLawyerbadge
+  innerclothingskirt: ClothingUniformJumpsuitLawyerBlack
+  satchel: ClothingBackpackSatchel
+  duffelbag: ClothingBackpackDuffel
+
+
+
+
+- type: entity
+  id: SpawnMagistrat
+  parent: SpawnPointJobBase
+  name: magistrat spawn
+  components:
+    - type: SpawnPoint
+      job_id: Magistrat
+    - type: Sprite
+      layers:
+        - state: green
+        - state: hop
+
+
+
+- type: entity
+  parent: BasePDA
+  id: MagistratPDA
+  name: magistrat PDA
+  description: magistrat PDA
+  components:
+  - type: PDA
+    id: MagistratIDCard
+    state: pda-lawyer
+  - type: Icon
+    state: pda-lawyer
+
+- type: entity
+  parent: IDCardStandard
+  id: MagistratIDCard
+  name: magistrat ID card
+  description: magistrat ID card
+  components:
+    - type: Sprite
+      layers:
+        - state: default
+        - state: idlawyer
+    - type: PresetIdCard
+      job: Magistrat
+
+
+
+
+
