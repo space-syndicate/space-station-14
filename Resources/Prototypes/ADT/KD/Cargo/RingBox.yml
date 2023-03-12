@@ -1,0 +1,9 @@
+- type: cargoProduct
+  id: FunRingBox
+  icon:
+    sprite: ADT/KD/RingBox.rsi
+    state: box
+  product: RingBox
+  cost: 4000
+  category: Fun
+  group: market

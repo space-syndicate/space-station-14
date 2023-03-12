@@ -1,0 +1,14 @@
+- type: entity
+  parent: ClothingHandsBase
+  id: ClothingHandsRingTurk
+  name: turk ring
+  description: Good ring.
+  components:
+  - type: Sprite
+    sprite: ADT/KD/RingTurk.rsi
+  - type: Clothing
+    sprite: ADT/KD/RingTurk.rsi
+  - type: Item
+    size: 1
+  - type: StaticPrice
+    price: 1000

@@ -1,0 +1,22 @@
+- type: entity
+  parent: FoodTinBase
+  id: FoodTinMRECooked
+  name: cooked tin
+  description: A standard issue tin of meat and it cooked.
+  components:
+  - type: Sprite
+    sprite: ADT/KD/CookedTin.rsi
+    state: tin-hot
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        reagents:
+        - ReagentId: Nutriment
+          Quantity: 15
+  - type: FlavorProfile
+    flavors:
+      - meaty
+      - salty
+      - cheap
+  - type: Food
+    trash: FoodTinMRETrash
