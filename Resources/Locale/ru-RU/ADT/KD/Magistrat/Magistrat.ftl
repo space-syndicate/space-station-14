@@ -14,4 +14,6 @@ ent-SpawnMagistrat = спавн магистрата
     .desc = спавн магистрата
     .suffix = { "" }
 
-    
+ent-RubberStampMagistrat = печать магистрата
+    .desc = Владелец этой печати - Закон.
+    .suffix = { "" }

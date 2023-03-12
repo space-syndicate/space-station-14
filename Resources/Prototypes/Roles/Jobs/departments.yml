@@ -19,7 +19,6 @@
   - Clown
   - HeadOfPersonnel
   - Janitor
-#  - Lawyer # Corvax-IAA
   - Librarian
   - MedicalIntern
   - Mime
@@ -38,8 +37,9 @@
   color: "#334E6D"
   roles:
   - Captain
-  - IAA # Corvax-IAA
   - CentralCommandOfficial
+  - IAA
+  - Magistrat
   - ChiefEngineer
   - ChiefMedicalOfficer
   - HeadOfPersonnel
@@ -47,7 +47,6 @@
   - ResearchDirector
   - Quartermaster
   - BlueShieldOfficer
-  - Magistrat
 
 - type: department
   id: Engineering
@@ -92,3 +91,13 @@
   - ResearchDirector
   - Scientist
   - ResearchAssistant
+
+- type: department
+  id: Law
+  description: department-Command-description
+  color: "#E9967A"
+  roles:
+  - Lawyer
+  - IAA
+  - Magistrat
+  

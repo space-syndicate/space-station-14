@@ -4,12 +4,17 @@
   description: job-description-lawyer
   playTimeTracker: JobLawyer
   startingGear: LawyerGear
+  requirements:
+  - !type:DepartmentTimeRequirement
+    department: Security
+    time: 72000
   icon: "Lawyer"
   supervisors: job-supervisors-hop
   access:
   - Service
   - Brig
   - Maintenance
+
 
 - type: startingGear
   id: LawyerGear
