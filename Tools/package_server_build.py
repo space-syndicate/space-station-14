@@ -65,13 +65,14 @@ SERVER_CONTENT_ASSEMBLIES = [
     "Content.Server.Database",
     "Content.Server",
     "Content.Shared",
-    "Content.Shared.Database"
+    "Content.Shared.Database",
+    "RabbitMQ.Client"
 ]
 
 # Extra assemblies to copy on the server, with a startswith
 SERVER_EXTRA_ASSEMBLIES = [
     "Npgsql.",
-    "Microsoft",
+    "Microsoft"
 ]
 
 SERVER_NOT_EXTRA_ASSEMBLIES = [
