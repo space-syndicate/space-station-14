@@ -1,0 +1,17 @@
+- type: entity
+  name: creator pen
+  parent: BaseItem
+  id: PenCreator
+  description: creator's pen
+  components:
+  - type: Tag
+    tags:
+    - Write
+  - type: Sprite
+    sprite: ADT/KD/pen.rsi
+    state: pen
+  - type: Item
+    sprite: ADT/KD/pen.rsi
+    heldPrefix: pen
+    size: 2
+  - type: Recyclable
