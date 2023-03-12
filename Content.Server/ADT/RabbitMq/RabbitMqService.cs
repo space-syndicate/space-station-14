@@ -13,7 +13,7 @@ public sealed class RabbitMqService : IRabbitMqService
         using (var connection = factory.CreateConnection())
         using (var channel = connection.CreateModel())
         {
-            channel.ExchangeDeclare(exchange:"SS14",type: ExchangeType.Fanout, durable: false, autoDelete: false, arguments: null);
+            channel.ExchangeDeclare(exchange:"SS14", type: ExchangeType.Fanout, durable: false, autoDelete: false, arguments: null);
         }
     }
 
@@ -25,7 +25,6 @@ public sealed class RabbitMqService : IRabbitMqService
 
     public void SendMessage(string message)
     {
-
         using (var connection = factory.CreateConnection())
         using (var channel = connection.CreateModel())
         {

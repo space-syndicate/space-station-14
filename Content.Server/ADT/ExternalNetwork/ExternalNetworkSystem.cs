@@ -11,9 +11,11 @@ using Content.Server.DeviceNetwork;
 using Content.Server.DeviceNetwork.Systems;
 using Content.Server.Fax;
 using Content.Server.Popups;
+using Newtonsoft.Json;
 using RabbitMQ.Client;
 using RabbitMQ.Client.Events;
 using Robust.Shared.Player;
+using JsonSerializer = System.Text.Json.JsonSerializer;
 
 namespace Content.Server.ADT.ExternalNetwork;
 
@@ -36,12 +38,8 @@ public sealed class ExternalNetworkSystem: EntitySystem
         var queueId = Guid.NewGuid().ToString();
 
         channel = connection.CreateModel();
-        channel.QueueDeclare(queue: queueId,
-            durable: false,
-            exclusive: true,
-            autoDelete: true,
-            arguments: null);
 
+        channel.QueueDeclare(queue: queueId, durable: false, exclusive: true, autoDelete: true, arguments: null);
         channel.QueueBind(queue: queueId, exchange: "SS14", routingKey: "all", arguments: null );
 
         var consumer = new AsyncEventingBasicConsumer(channel);
@@ -137,6 +135,8 @@ public sealed class ExternalNetworkSystem: EntitySystem
             PropertyNameCaseInsensitive = true,
             NumberHandling = JsonNumberHandling.WriteAsString,
         };
+
+        var packageTest = JsonConvert.DeserializeObject<NetworkPackage>(Encoding.UTF8.GetString(@event.Body.ToArray()));
 
         var networkObject = await JsonSerializer.DeserializeAsync<NetworkPackage>(memoryStream, options);
         if (networkObject != null)
