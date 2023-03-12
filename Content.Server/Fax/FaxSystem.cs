@@ -2,6 +2,7 @@ using Content.Server.Administration;
 using Content.Server.Administration.Managers;
 using Content.Server.ADT.ExternalNetwork;
 using Content.Server.ADT.RabbitMq;
+using Content.Server.ADT.RabbitMQ;
 using Content.Server.Chat.Managers;
 using Content.Server.DeviceNetwork;
 using Content.Server.DeviceNetwork.Components;
@@ -39,7 +40,7 @@ public sealed class FaxSystem : EntitySystem
     [Dependency] private readonly QuickDialogSystem _quickDialog = default!;
     [Dependency] private readonly UserInterfaceSystem _userInterface = default!;
     [Dependency] private readonly ISharedAdminLogManager _adminLogger = default!;
-    [Dependency] private readonly IRabbitMqService _mqService = default!;
+    [Dependency] private readonly RabbitMQManager _mqManager = default!;
 
     public const string PaperSlotId = "Paper";
 
@@ -380,7 +381,7 @@ public sealed class FaxSystem : EntitySystem
                 component.KnownFaxes[host] = $"External-{hostName}";
             }
 
-            _mqService.SendMessage(new NetworkPackage()
+            _mqManager.SendMessage(new NetworkPackage()
             {
                 Command = NetworkCommand.Ping,
                 PackageType = DeviceTypes.Fax,
@@ -449,7 +450,7 @@ public sealed class FaxSystem : EntitySystem
                     SenderAddress = _externalNetwork.Address,
                     Data = payload
                 };
-                _mqService.SendMessage(networkPackage);
+                _mqManager.SendMessage(networkPackage);
             }
         }
         else

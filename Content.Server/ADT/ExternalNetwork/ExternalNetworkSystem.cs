@@ -6,12 +6,14 @@ using System.Text.Json.Serialization;
 using System.Threading.Tasks;
 using Content.Server.Administration.Managers;
 using Content.Server.ADT.RabbitMq;
+using Content.Server.ADT.RabbitMQ;
 using Content.Server.Chat.Managers;
 using Content.Server.DeviceNetwork;
 using Content.Server.DeviceNetwork.Systems;
 using Content.Server.Fax;
 using Content.Server.Popups;
 using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
 using RabbitMQ.Client;
 using RabbitMQ.Client.Events;
 using Robust.Shared.Player;
@@ -24,27 +26,12 @@ public sealed class ExternalNetworkSystem: EntitySystem
     [Dependency] private readonly SharedAudioSystem _audioSystem = default!;
     [Dependency] private readonly IAdminManager _adminManager = default!;
     [Dependency] private readonly DeviceNetworkSystem _deviceNetworkSystem = default!;
-    [Dependency] private readonly FaxSystem _faxSystem = default!;
-    [Dependency] private readonly IRabbitMqService _mqService = default!;
-
-    private IModel channel = default!;
+    [Dependency] private readonly PopupSystem _popupSystem = default!;
+    [Dependency] private readonly RabbitMQManager _mqManager = default!;
 
     public override void Initialize()
     {
         base.Initialize();
-
-        var factory = new ConnectionFactory() { DispatchConsumersAsync = true, Uri = new Uri("amqps://rlzzrent:9rvGAG53rSYH4NZMDFpel4pJSQbpjbmr@cow.rmq2.cloudamqp.com/rlzzrent") };
-        var connection = factory.CreateConnection();
-        var queueId = Guid.NewGuid().ToString();
-
-        channel = connection.CreateModel();
-
-        channel.QueueDeclare(queue: queueId, durable: false, exclusive: true, autoDelete: true, arguments: null);
-        channel.QueueBind(queue: queueId, exchange: "SS14", routingKey: "all", arguments: null );
-
-        var consumer = new AsyncEventingBasicConsumer(channel);
-        consumer.Received += ReceivedMessage;
-        channel.BasicConsume(queue: queueId, autoAck: true, consumer: consumer);
 
         SubscribeLocalEvent<ExternalNetworkComponent, ComponentStartup>(OnNetworkStartup);
         SubscribeLocalEvent<ExternalNetworkComponent, ComponentShutdown>(OnNetworkShutdown);
@@ -79,7 +66,7 @@ public sealed class ExternalNetworkSystem: EntitySystem
             {
                 foreach (var device in devices)
                 {
-                    _mqService.SendMessage(new NetworkPackage()
+                    _mqManager.SendMessage(new NetworkPackage()
                     {
                         Command = NetworkCommand.Register,
                         Sender = (int) device.Owner,
@@ -98,53 +85,26 @@ public sealed class ExternalNetworkSystem: EntitySystem
                 TryComp<FaxMachineComponent>(device.Owner, out var _faxMachineComponent);
                 if(_faxMachineComponent == null) return;
 
-                string? _paperName = string.Empty;
-                string? _paperContent = string.Empty;
+                if(!args.Data.TryGetValue(FaxConstants.FaxPaperNameData, out string? paperName)) return;
+                if(!args.Data.TryGetValue(FaxConstants.FaxPaperContentData, out string? paperContent)) return;
 
-                if(!args.Data.TryGetValue(FaxConstants.FaxPaperNameData, out var paperName)) return;
-                if(string.IsNullOrEmpty(paperName?.ToString())) return;
-                else _paperName = paperName?.ToString();
+                args.Data.TryGetValue(FaxConstants.FaxPaperStampStateData, out string? stampState);
+                args.Data.TryGetValue(FaxConstants.FaxPaperStampedByData, out JArray? stampedBy);
+                args.Data.TryGetValue(FaxConstants.FaxPaperPrototypeData, out string? prototypeId);
 
-                if(!args.Data.TryGetValue(FaxConstants.FaxPaperContentData, out var paperContent)) return;
-                if(string.IsNullOrEmpty(paperContent?.ToString())) return;
-                else _paperContent = paperContent?.ToString();
+                string? faxName = args.SenderAddress?.Substring(args.SenderAddress.Length - 6);
+                string faxPaperName = $"{paperName} от {faxName}";
+                var printout = new FaxPrintout(paperContent, faxPaperName, prototypeId, stampState, stampedBy?.ToObject<List<string>>());
 
+                //Нет доступа к UID
+                //_faxSystem.Receive(_faxMachineComponent.Owner,printout,args.SenderAddress,_faxMachineComponent);
 
-                args.Data.TryGetValue(FaxConstants.FaxPaperStampStateData, out var stampState);
-                args.Data.TryGetValue(FaxConstants.FaxPaperStampedByData, out List<string>? stampedBy);
-                args.Data.TryGetValue(FaxConstants.FaxPaperPrototypeData, out var prototypeId);
+                _audioSystem.PlayGlobal("/Audio/Machines/high_tech_confirm.ogg", Filter.Empty().AddPlayers(_adminManager.ActiveAdmins), false);
+                _faxMachineComponent.PrintingQueue.Enqueue(printout);
 
-                if (_paperName != null && _paperContent != null)
-                {
-                    var printout = new FaxPrintout(_paperContent, _paperName, prototypeId?.ToString(),
-                        stampState?.ToString(), stampedBy);
-
-
-                    _audioSystem.PlayGlobal("/Audio/Machines/high_tech_confirm.ogg", Filter.Empty().AddPlayers(_adminManager.ActiveAdmins), false);
-                    _faxMachineComponent.PrintingQueue.Enqueue(printout);
-                }
             }
         }
     }
-
-    private async Task ReceivedMessage(object sender, BasicDeliverEventArgs @event)
-    {
-        var memoryStream = new MemoryStream(@event.Body.ToArray());
-        var options = new JsonSerializerOptions
-        {
-            PropertyNameCaseInsensitive = true,
-            NumberHandling = JsonNumberHandling.WriteAsString,
-        };
-
-        var packageTest = JsonConvert.DeserializeObject<NetworkPackage>(Encoding.UTF8.GetString(@event.Body.ToArray()));
-
-        var networkObject = await JsonSerializer.DeserializeAsync<NetworkPackage>(memoryStream, options);
-        if (networkObject != null)
-        {
-            RaiseLocalEvent(networkObject);
-        }
-    }
-
 
     private void OnNetworkStartup(EntityUid uid, ExternalNetworkComponent component, ComponentStartup args)
     {
@@ -153,7 +113,7 @@ public sealed class ExternalNetworkSystem: EntitySystem
         {
             component.Address = Guid.NewGuid().ToString();
 
-            _mqService.SendMessage(new NetworkPackage()
+            _mqManager.SendMessage(new NetworkPackage()
             {
                 Command = NetworkCommand.Register,
                 Sender = (int) uid,
@@ -166,7 +126,7 @@ public sealed class ExternalNetworkSystem: EntitySystem
     private void OnNetworkShutdown(EntityUid uid, ExternalNetworkComponent component, ComponentShutdown args)
     {
         //Удаляем девайс из внешней системы
-        _mqService.SendMessage(new NetworkPackage()
+        _mqManager.SendMessage(new NetworkPackage()
         {
             Command = NetworkCommand.UnRegister,
             Sender = (int)uid,

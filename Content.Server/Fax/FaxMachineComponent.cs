@@ -147,7 +147,8 @@ public sealed class FaxPrintout
     [DataField("stampedBy")]
     public List<string> StampedBy { get; }
 
-    public FaxPrintout(string content, string name, string? prototypeId, string? stampState = null, List<string>? stampedBy = null)
+    public FaxPrintout(string content, string name, string? prototypeId, string? stampState = null,
+        List<string>? stampedBy = null)
     {
         Content = content;
         Name = name;
