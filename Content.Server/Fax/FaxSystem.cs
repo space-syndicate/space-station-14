@@ -272,22 +272,6 @@ public sealed class FaxSystem : EntitySystem
 
                     component.KnownFaxes[args.SenderAddress] = faxName;
 
-                    if (HasComp<ExternalNetworkComponent>(uid))
-                    {
-                        if (args.Data.ContainsKey("ExternalHosts"))
-                        {
-                            var hosts = args.Data["ExternalHosts"] as List<string>;
-                            if (hosts != null)
-                            {
-                                foreach (string host in hosts)
-                                {
-                                    var hostName = host.Substring(host.Length - 6);
-                                    component.KnownFaxes.TryAdd(host, $"External-{hostName}");
-                                }
-                            }
-                        }
-                    }
-
                     UpdateUserInterface(uid, component);
 
                     break;
@@ -390,11 +374,17 @@ public sealed class FaxSystem : EntitySystem
 
         if (TryComp<ExternalNetworkComponent>(uid, out var _externalNetwork))
         {
-            payload.Add("ExternalHosts", _externalNetwork.KnownHosts);
+            foreach (string host in _externalNetwork.KnownHosts)
+            {
+                var hostName = host.Substring(host.Length - 6);
+                component.KnownFaxes[host] = $"External-{hostName}";
+            }
+
             _mqService.SendMessage(new NetworkPackage()
             {
                 Command = NetworkCommand.Ping,
-                PackageType = DeviceTypes.Fax
+                PackageType = DeviceTypes.Fax,
+                Sender = (int)uid
             });
         }
 

@@ -5,6 +5,7 @@ using System.Text.Json;
 using System.Text.Json.Serialization;
 using System.Threading.Tasks;
 using Content.Server.Administration.Managers;
+using Content.Server.ADT.RabbitMq;
 using Content.Server.Chat.Managers;
 using Content.Server.DeviceNetwork;
 using Content.Server.DeviceNetwork.Systems;
@@ -22,6 +23,7 @@ public sealed class ExternalNetworkSystem: EntitySystem
     [Dependency] private readonly IAdminManager _adminManager = default!;
     [Dependency] private readonly DeviceNetworkSystem _deviceNetworkSystem = default!;
     [Dependency] private readonly FaxSystem _faxSystem = default!;
+    [Dependency] private readonly IRabbitMqService _mqService = default!;
 
     private IModel channel = default!;
 
@@ -31,16 +33,20 @@ public sealed class ExternalNetworkSystem: EntitySystem
 
         var factory = new ConnectionFactory() { DispatchConsumersAsync = true, Uri = new Uri("amqps://rlzzrent:9rvGAG53rSYH4NZMDFpel4pJSQbpjbmr@cow.rmq2.cloudamqp.com/rlzzrent") };
         var connection = factory.CreateConnection();
+        var queueId = Guid.NewGuid().ToString();
+
         channel = connection.CreateModel();
-        channel.QueueDeclare(queue: "ExternalNetwork",
+        channel.QueueDeclare(queue: queueId,
             durable: false,
-            exclusive: false,
-            autoDelete: false,
+            exclusive: true,
+            autoDelete: true,
             arguments: null);
+
+        channel.QueueBind(queue: queueId, exchange: "SS14", routingKey: "all", arguments: null );
 
         var consumer = new AsyncEventingBasicConsumer(channel);
         consumer.Received += ReceivedMessage;
-        channel.BasicConsume(queue: "ExternalNetwork", autoAck: true, consumer: consumer);
+        channel.BasicConsume(queue: queueId, autoAck: true, consumer: consumer);
 
         SubscribeLocalEvent<ExternalNetworkComponent, ComponentStartup>(OnNetworkStartup);
         SubscribeLocalEvent<ExternalNetworkComponent, ComponentShutdown>(OnNetworkShutdown);
@@ -57,8 +63,10 @@ public sealed class ExternalNetworkSystem: EntitySystem
             {
                 foreach (var device in devices)
                 {
-                    if(!string.IsNullOrEmpty(args.SenderAddress) && !device.KnownHosts.Any(x=>x == args.SenderAddress) && device.Address != args.SenderAddress)
+                    if (!string.IsNullOrEmpty(args.SenderAddress) && !device.KnownHosts.Any(x => x == args.SenderAddress) && device.Address != args.SenderAddress)
+                    {
                         device.KnownHosts.Add(args.SenderAddress);
+                    }
                 }
             }
             else if (args.Command == NetworkCommand.UnRegister)
@@ -73,7 +81,7 @@ public sealed class ExternalNetworkSystem: EntitySystem
             {
                 foreach (var device in devices)
                 {
-                    SendMessage(new NetworkPackage()
+                    _mqService.SendMessage(new NetworkPackage()
                     {
                         Command = NetworkCommand.Register,
                         Sender = (int) device.Owner,
@@ -145,7 +153,7 @@ public sealed class ExternalNetworkSystem: EntitySystem
         {
             component.Address = Guid.NewGuid().ToString();
 
-            SendMessage(new NetworkPackage()
+            _mqService.SendMessage(new NetworkPackage()
             {
                 Command = NetworkCommand.Register,
                 Sender = (int) uid,
@@ -158,31 +166,13 @@ public sealed class ExternalNetworkSystem: EntitySystem
     private void OnNetworkShutdown(EntityUid uid, ExternalNetworkComponent component, ComponentShutdown args)
     {
         //Удаляем девайс из внешней системы
-        SendMessage(new NetworkPackage()
+        _mqService.SendMessage(new NetworkPackage()
         {
             Command = NetworkCommand.UnRegister,
             Sender = (int)uid,
             SenderAddress = component.Address,
             PackageType = DeviceTypes.Fax
         });
-    }
-
-
-
-    private void SendMessage(object obj)
-    {
-        var message = JsonSerializer.Serialize(obj);
-        SendMessage(message);
-    }
-
-    private void SendMessage(string message)
-    {
-        var body = Encoding.UTF8.GetBytes(message);
-
-        channel.BasicPublish(exchange: "",
-            routingKey: "ExternalNetwork",
-            basicProperties: null,
-            body: body);
     }
 }
 
