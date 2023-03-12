@@ -1,4 +1,4 @@
-﻿namespace Content.Shared.Administration
+namespace Content.Shared.Administration
 {
     /// <summary>
     ///     Permissions that admins can have.
@@ -88,6 +88,11 @@
         ///     Lets you create, edit and delete admin notes.
         /// </summary>
         EditNotes = 1 << 14,
+
+        /// <summary>
+        ///     Lets you write in admin chat.
+        /// </summary>
+        AdminChat = 1 << 15,
 
         /// <summary>
         ///     Dangerous host permissions like scsi.
