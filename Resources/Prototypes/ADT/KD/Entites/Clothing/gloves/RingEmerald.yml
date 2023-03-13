@@ -1,0 +1,14 @@
+- type: entity
+  parent: ClothingHandsBase
+  id: ClothingHandsRingEmerald
+  name: emerald ring
+  description: Good ring.
+  components:
+  - type: Sprite
+    sprite: ADT/KD/RingEmerald.rsi
+  - type: Clothing
+    sprite: ADT/KD/RingEmerald.rsi
+  - type: Item
+    size: 1
+  - type: StaticPrice
+    price: 1000

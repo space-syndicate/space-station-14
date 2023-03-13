@@ -1,0 +1,14 @@
+- type: entity
+  parent: ClothingHandsBase
+  id: ClothingHandsRingPlazma
+  name: plazma ring
+  description: Good ring.
+  components:
+  - type: Sprite
+    sprite: ADT/KD/RingPlazma.rsi
+  - type: Clothing
+    sprite: ADT/KD/RingPlazma.rsi
+  - type: Item
+    size: 1
+  - type: StaticPrice
+    price: 1000

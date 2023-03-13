@@ -1,0 +1,14 @@
+- type: entity
+  parent: ClothingHandsBase
+  id: ClothingHandsRingBlood
+  name: blood ring
+  description: Good ring.
+  components:
+  - type: Sprite
+    sprite: ADT/KD/RingBlood.rsi
+  - type: Clothing
+    sprite: ADT/KD/RingBlood.rsi
+  - type: Item
+    size: 1
+  - type: StaticPrice
+    price: 1000

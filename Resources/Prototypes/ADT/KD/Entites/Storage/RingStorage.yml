@@ -1,0 +1,33 @@
+- type: entity
+  parent: BoxCardboard
+  id: RingBox
+  name: ring box
+  description: very good.
+  components:
+  - type: Sprite
+    netsync: false
+    sprite: ADT/KD/RingBox.rsi
+    state: box
+  - type: Storage
+    capacity: 4
+  - type: Item
+    sprite: ADT/KD/RingBox.rsi
+    size: 4
+    heldPrefix: box
+  - type: StorageFill
+    contents:
+    - id: ClothingHandsRingPlazma
+      amount: 1
+    - id: ClothingHandsRingEmerald
+      amount: 1
+    - id: ClothingHandsRingBlood
+      amount: 1
+    - id: ClothingHandsRingTurk
+      amount: 1
+  - type: Appearance
+    visuals:
+    - type: BagOpenCloseVisualizer
+      openIcon: box-open
+  - type: StaticPrice
+    price: 500
+  
