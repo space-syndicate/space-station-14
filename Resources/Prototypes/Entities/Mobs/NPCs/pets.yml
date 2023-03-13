@@ -403,8 +403,11 @@
     allowMovement: true
     name: ghost-role-information-hamlet-name
     description: ghost-role-information-hamlet-description
+  - type: Inventory
+    templateId: monkey
   - type: InteractionPopup
     successChance: 1
+  - type: CanHostGuardian
   - type: Butcherable
     spawned:
     - id: FoodMeat
@@ -413,4 +416,10 @@
     attributes:
       proper: true
       gender: male
+  - type: Strippable
+  - type: UserInterface
+    interfaces:
+    - key: enum.StrippingUiKey.Key
+      type: StrippableBoundUserInterface
+  - type: Hands
 
