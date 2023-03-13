@@ -9,7 +9,7 @@
     - !type:DepartmentTimeRequirement
       department: Security
       time: 72000 # Corvax-RoleTime
-      inverted: true # stop playing intern if you're good at security!
+      inverted: false # stop playing intern if you're good at security!
   startingGear: SecurityCadetGear
   icon: "SecurityCadet"
   supervisors: job-supervisors-security

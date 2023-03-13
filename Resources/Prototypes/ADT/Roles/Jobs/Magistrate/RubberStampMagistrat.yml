@@ -1,11 +1,11 @@
-# - type: entity
-#   name: magistrat's rubber stamp
-#   parent: RubberStampMime
-#   id: RubberStampMagistrat
-#   components:
-#   - type: Stamp
-#     stampedName: stamp-component-stamped-name-magistrat
-#     stampState: "paper_stamp-mag"
-#   - type: Sprite
-#     sprite: ADT/KD/Magistrat.rsi
-#     state: stamp-magistrat
+- type: entity
+  name: magistrat's rubber stamp
+  parent: RubberStampMime
+  id: RubberStampMagistrat
+  components:
+  - type: Stamp
+    stampedName: stamp-component-stamped-name-magistrat
+    stampState: "paper_stamp-mag"
+  - type: Sprite
+    sprite: ADT/KD/Magistrat.rsi
+    state: stamp-magistrat
