@@ -7,6 +7,9 @@
     - !type:DepartmentTimeRequirement
       department: Security
       time: 600000
+    # - !type:DepartmentTimeRequirement
+    #   department: Sponsor
+    #   time: 10  
   startingGear: MagistratGear
   icon: "Magistrat"
   requireAdminNotify: true
