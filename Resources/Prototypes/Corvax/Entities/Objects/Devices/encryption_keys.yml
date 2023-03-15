@@ -13,3 +13,17 @@
     - type: Sprite
       sprite: Objects/Devices/encryption_keys.rsi
       state: nt_cypherkey
+      
+- type: entity
+  parent: EncryptionKey
+  id: EncryptionKeyCentComOperative
+  name: central command encryption key
+  description: An encryption key used by captain's bosses.
+  components:
+  - type: EncryptionKey
+    channels:
+    - CentCom
+    defaultChannel: CentCom
+  - type: Sprite
+    sprite: Objects/Devices/encryption_keys.rsi
+    state: bin_cypherkey

@@ -1,0 +1,49 @@
+- type: entity
+  name: battle stimulant
+  parent: EmergencyMedipen
+  id: BattleMedipen
+  description: Combat Medipen for a quick return to battle of a fighter, carefully, after use, consult a real doctor.
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      pen:
+        maxVol: 55
+        reagents:
+        - ReagentId: Omnizine
+          Quantity: 20
+        - ReagentId: Epinephrine
+          Quantity: 12
+        - ReagentId: THC
+          Quantity: 10
+        - ReagentId: TranexamicAcid
+          Quantity: 3
+        - ReagentId: DexalinPlus
+          Quantity: 10
+  - type: Hypospray
+    solutionName: pen
+    transferAmount: 55
+
+- type: entity
+  name: antivirus stimulant
+  parent: EmergencyMedipen
+  id: BattleMedipenAntiVirus
+  description: Combat Medipen for a quick return to battle of a fighter, carefully, after use, consult a real doctor.
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      pen:
+        maxVol: 75
+        reagents:
+        - ReagentId: Omnizine
+          Quantity: 20
+        - ReagentId: Epinephrine
+          Quantity: 15
+        - ReagentId: THC
+          Quantity: 10
+        - ReagentId: Romerol
+          Quantity: 20
+        - ReagentId: Spaceacillin
+          Quantity: 10
+  - type: Hypospray
+    solutionName: pen
+    transferAmount: 75

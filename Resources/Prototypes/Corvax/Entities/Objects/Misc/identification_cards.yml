@@ -9,3 +9,192 @@
         - state: idiaa
     - type: PresetIdCard
       job: IAA
+
+#CentCom
+- type: entity
+  parent: CentcomIDCardDeathsquad
+  id: DedSquadronOperativeIDCard
+  name: Id card special operations operative
+  components:
+  - type: Sprite
+    layers:
+    - state: syndie
+    - state: idcaptain
+    - state: idcentcom
+  - type: Item
+    heldPrefix: blue
+  - type: IdCard
+    jobTitle: Omega-0
+    fullName: Оперативник СпецВойск
+
+- type: entity
+  parent: CentcomIDCardDeathsquad
+  id: DedSquadronLeaderIDCard
+  name: Id card special operations commander
+  components:
+  - type: Sprite
+    layers:
+    - state: syndie
+    - state: idcaptain
+    - state: idcentcom
+  - type: Item
+    heldPrefix: blue
+  - type: IdCard
+    jobTitle: Omega-0
+    fullName: Коммандер СпецВойск
+
+- type: entity
+  parent: CentcomIDCardDeathsquad
+  id: IDCardCentComOfficialRepresentative
+  name: Id card CentCom Officcial
+  components:
+  - type: Sprite
+    layers:
+    - state: silver
+    - state: idiaa
+    - state: idcentcom
+  - type: Item
+    heldPrefix: silver
+  - type: IdCard
+    jobTitle: Представитель Центрального Командования
+
+- type: entity
+  parent: CentcomIDCardDeathsquad
+  id: IDCardCentComOperator
+  name: Id card operator CentCom
+  components:
+  - type: IdCard
+    jobTitle: Оператор Центрального Командования
+
+- type: entity
+  parent: CentcomIDCardDeathsquad
+  id: IDCardCentComOfficerSecurity
+  name: Id card CentCom Security
+  components:
+  - type: Sprite
+    layers:
+    - state: centcom
+    - state: idsecurityofficer
+  - type: IdCard
+    jobTitle: Офицер Специальной Службы Безопастности
+
+- type: entity
+  parent: CentcomIDCardDeathsquad
+  id: IDSFO
+  name: Id card SFO
+  components:
+  - type: Sprite
+    layers:
+    - state: gold
+    - state: idintern-cadet
+    - state: idcentcom
+  - type: Item
+    heldPrefix: gold
+  - type: IdCard
+    jobTitle: Офицер Специальный Операций
+
+- type: entity
+  parent: CentcomIDCardDeathsquad
+  id: IdCardRXBZZ
+  name: Id card CBURN
+  components:
+  - type: Sprite
+    layers:
+    - state: syndie
+    - state: idgeneticist
+  - type: Item
+    heldPrefix: blue
+  - type: IdCard
+    jobTitle: Sierra - 6
+    fullName: Оперативник РХБЗЗ
+
+- type: entity
+  parent: CentcomIDCardDeathsquad
+  id: IdCardRXBZZLeader
+  name: Id card leader CBURN
+  components:
+  - type: Sprite
+    layers:
+    - state: syndie
+    - state: idgeneticist
+  - type: Item
+    heldPrefix: blue
+  - type: IdCard
+    jobTitle: Sierra - 6
+    fullName: Командир РХБЗЗ
+
+- type: entity
+  noSpawn: true
+  parent: CentcomIDCard
+  id: OBRIDCard
+  name: Id card
+  components:
+  - type: Sprite
+    layers:
+    - state: ert_security
+  - type: Item
+    heldPrefix: blue
+  - type: IdCard
+    jobTitle: Theta-9
+    fullName: Офицер безопасности отделения
+
+
+
+- type: entity
+  noSpawn: true
+  parent: OBRIDCard
+  id: OBRMedicIDCard
+  name: Id card
+  components:
+  - type: Sprite
+    layers:
+    - state: ert_medic
+  - type: IdCard
+    jobTitle: Theta-9
+    fullName: Медик отделения
+
+
+- type: entity
+  noSpawn: true
+  parent: OBRIDCard
+  id: OBREngineerIDCard
+  name: Id card
+  components:
+  - type: Sprite
+    layers:
+    - state: ert_engineer
+  - type: IdCard
+    jobTitle: Theta-9
+    fullName: Инженер отделения
+
+
+- type: entity
+  noSpawn: true
+  parent: OBRIDCard
+  id: OBRJunitorIDCard
+  name: Id card
+  components:
+  - type: Sprite
+    layers:
+    - state: ert_janitor
+  - type: IdCard
+    jobTitle: Theta-9
+    fullName: Уборщик отделения
+
+
+- type: entity
+  noSpawn: true
+  parent: OBRIDCard
+  id: OBRLeaderIDCard
+  name: Id card
+  components:
+  - type: Sprite
+    layers:
+    - state: silver
+    - state: idcaptain
+    - state: idcentcom
+  - type: Item
+    heldPrefix: silver
+  - type: IdCard
+    jobTitle: Theta-9
+    fullName: Командир отделения

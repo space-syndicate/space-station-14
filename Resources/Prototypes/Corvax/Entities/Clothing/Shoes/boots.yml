@@ -1,4 +1,4 @@
-﻿- type: entity
+- type: entity
   parent: ClothingShoesBootsJack
   id: ClothingShoesBootsJackSec
   components:
@@ -6,3 +6,47 @@
       sprite: Corvax/Clothing/Shoes/Boots/jackboots_sec.rsi
     - type: Clothing
       sprite: Corvax/Clothing/Shoes/Boots/jackboots_sec.rsi
+
+- type: entity
+  parent: ClothingShoesBase
+  id: ClothingShoesBootsOperativeNoSlip
+  name: обувь оперативника
+  suffix: noslip
+  description: Обувь спецназа Nanotrasen, для боевых операций или боевых действий. Борьба - всё, борьба - всегда.
+  components:
+  - type: Sprite
+    sprite: Clothing/Shoes/Boots/jackboots.rsi
+  - type: Clothing
+    sprite: Clothing/Shoes/Boots/jackboots.rsi
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.90
+        Slash: 0.90
+        Piercing: 0.95
+        Heat: 0.95
+  - type: NoSlip
+  - type: FootstepModifier
+    footstepSoundCollection:
+      collection: FootstepSoldier
+
+- type: entity
+  parent: ClothingShoesBase
+  id: ClothingShoesBootsOperative
+  name: обувь оперативника
+  description: Обувь спецназа Nanotrasen, для боевых операций или боевых действий. Борьба - всё, борьба - всегда.
+  components:
+  - type: Sprite
+    sprite: Clothing/Shoes/Boots/jackboots.rsi
+  - type: Clothing
+    sprite: Clothing/Shoes/Boots/jackboots.rsi
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.90
+        Slash: 0.90
+        Piercing: 0.95
+        Heat: 0.95
+  - type: FootstepModifier
+    footstepSoundCollection:
+      collection: FootstepSoldier
