@@ -8,3 +8,14 @@
     sprite: Corvax/Back/Backpacks/military.rsi
   - type: Storage
     capacity: 131
+
+- type: entity
+  parent: ClothingBackpack
+  id: ClothingBackpackDeathSquad
+  name: death squad backpack
+  description: Modified backpack with the latest bluespace technology, worn by special operation operatives.
+  components:
+  - type: Sprite
+    sprite: Corvax/Back/Backpacks/deathsquad.rsi
+  - type: Storage
+    capacity: 300
