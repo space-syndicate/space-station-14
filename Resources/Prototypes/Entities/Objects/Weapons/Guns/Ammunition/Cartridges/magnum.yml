@@ -14,7 +14,7 @@
     netsync: false
     sprite: Objects/Weapons/Guns/Ammunition/Casings/ammo_casing.rsi
     layers:
-    - state: base
+    - state: 45combat #corvax-resprite
       map: ["enum.AmmoVisualLayers.Base"]
   - type: Appearance
   - type: SpentAmmoVisuals
@@ -26,6 +26,12 @@
   name: cartridge (.45 magnum)
   parent: BaseCartridgeMagnum
   components:
+  - type: Sprite
+    layers:
+    - state: 45combat #corvax-resprite
+      map: ["enum.AmmoVisualLayers.Base"]
+  - type: SpentAmmoVisuals
+    state: "45combat" #corvax-resprite
   - type: CartridgeAmmo
     proto: BulletMagnum
 
@@ -34,6 +40,12 @@
   name: cartridge (.45 magnum high-velocity)
   parent: BaseCartridgeMagnum
   components:
+  - type: Sprite
+    layers:
+    - state: 45fast #corvax-resprite
+      map: ["enum.AmmoVisualLayers.Base"]
+  - type: SpentAmmoVisuals
+    state: "45fast" #corvax-resprite
   - type: CartridgeAmmo
     proto: BulletMagnumHighVelocity
 
@@ -42,6 +54,12 @@
   name: cartridge (.45 magnum practice)
   parent: BaseCartridgeMagnum
   components:
+  - type: Sprite
+    layers:
+    - state: 45training #corvax-resprite
+      map: ["enum.AmmoVisualLayers.Base"]
+  - type: SpentAmmoVisuals
+    state: "45training" #corvax-resprite
   - type: CartridgeAmmo
     proto: BulletMagnumPractice
 
@@ -50,5 +68,11 @@
   name: cartridge (.45 magnum rubber)
   parent: BaseCartridgeMagnum
   components:
+  - type: Sprite
+    layers:
+    - state: 45rubber #corvax-resprite
+      map: ["enum.AmmoVisualLayers.Base"]
+  - type: SpentAmmoVisuals
+    state: "45rubber" #corvax-resprite
   - type: CartridgeAmmo
     proto: BulletMagnumRubber

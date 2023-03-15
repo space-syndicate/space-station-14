@@ -14,10 +14,11 @@
     netsync: false
     sprite: Objects/Weapons/Guns/Ammunition/Casings/ammo_casing.rsi
     layers:
-    - state: base
+    - state: 20combat #corvax-resprite
       map: ["enum.AmmoVisualLayers.Base"]
-  - type: Appearance
   - type: SpentAmmoVisuals
+    state: "20combat" #corvax-resprite
+  - type: Appearance
   - type: StaticPrice
     price: 10
 
@@ -26,6 +27,10 @@
   name: cartridge (.10 rifle)
   parent: BaseCartridgeHeavyRifle
   components:
+  - type: Sprite
+    layers:
+    - state: 20combat #corvax-resprite
+      map: ["enum.AmmoVisualLayers.Base"]
   - type: CartridgeAmmo
     proto: BulletMinigun
     deleteOnSpawn: true

@@ -14,7 +14,7 @@
     netsync: false
     sprite: Objects/Weapons/Guns/Ammunition/Casings/ammo_casing.rsi
     layers:
-    - state: base
+    - state: 20combat #corvax-resprite
       map: ["enum.AmmoVisualLayers.Base"]
   - type: Appearance
   - type: SpentAmmoVisuals
@@ -26,6 +26,12 @@
   name: cartridge (.20 rifle)
   parent: BaseCartridgeRifle
   components:
+  - type: Sprite
+    layers:
+    - state: 20combat #corvax-resprite
+      map: ["enum.AmmoVisualLayers.Base"]
+  - type: SpentAmmoVisuals
+    state: "20combat" #corvax-resprite
   - type: CartridgeAmmo
     proto: BulletRifle
 
@@ -34,6 +40,12 @@
   name: cartridge (.20 rifle high-velocity)
   parent: BaseCartridgeRifle
   components:
+  - type: Sprite
+    layers:
+    - state: 20fast #corvax-resprite
+      map: ["enum.AmmoVisualLayers.Base"]
+  - type: SpentAmmoVisuals
+    state: "20fast" #corvax-resprite
   - type: CartridgeAmmo
     proto: BulletRifleHighVelocity
 
@@ -42,6 +54,12 @@
   name: cartridge (.20 rifle practice)
   parent: BaseCartridgeRifle
   components:
+  - type: Sprite
+    layers:
+    - state: 20training #corvax-resprite
+      map: ["enum.AmmoVisualLayers.Base"]
+  - type: SpentAmmoVisuals
+    state: "20training" #corvax-resprite
   - type: CartridgeAmmo
     proto: BulletRiflePractice
 
@@ -50,5 +68,11 @@
   name: cartridge (.20 rifle rubber)
   parent: BaseCartridgeRifle
   components:
+  - type: Sprite
+    layers:
+    - state: 20rubber #corvax-resprite
+      map: ["enum.AmmoVisualLayers.Base"]
+  - type: SpentAmmoVisuals
+    state: "20rubber" #corvax-resprite
   - type: CartridgeAmmo
     proto: BulletRifleRubber

@@ -15,7 +15,7 @@
     noRot: false
     sprite: Objects/Weapons/Guns/Ammunition/Casings/ammo_casing.rsi
     layers:
-    - state: base
+    - state: 25combat #corvax-resprite
       map: ["enum.AmmoVisualLayers.Base"]
   - type: Appearance
   - type: SpentAmmoVisuals
@@ -27,6 +27,10 @@
   name: cartridge (.25 caseless)
   parent: BaseCartridgeCaselessRifle
   components:
+  - type: Sprite
+    layers:
+    - state: 25combat #corvax-resprite
+      map: ["enum.AmmoVisualLayers.Base"]
   - type: CartridgeAmmo
     proto: BulletCaselessRifle
 
@@ -35,6 +39,10 @@
   name: cartridge (.25 caseless high-velocity)
   parent: BaseCartridgeCaselessRifle
   components:
+  - type: Sprite
+    layers:
+    - state: 25fast #corvax-resprite
+      map: ["enum.AmmoVisualLayers.Base"]
   - type: CartridgeAmmo
     proto: BulletCaselessRifleHighVelocity
 
@@ -43,6 +51,10 @@
   name: cartridge (.25 caseless practice)
   parent: BaseCartridgeCaselessRifle
   components:
+  - type: Sprite
+    layers:
+    - state: 25training #corvax-resprite
+      map: ["enum.AmmoVisualLayers.Base"]
   - type: CartridgeAmmo
     proto: BulletCaselessRiflePractice
 
@@ -51,5 +63,10 @@
   name: cartridge (.25 caseless rubber)
   parent: BaseCartridgeCaselessRifle
   components:
+  - type: Sprite
+    sprite: Objects/Weapons/Guns/Ammunition/Casings/ammo_casing.rsi
+    layers:
+    - state: 25rubber #corvax-resprite
+      map: ["enum.AmmoVisualLayers.Base"]
   - type: CartridgeAmmo
     proto: BulletCaselessRifleRubber
