@@ -76,3 +76,6 @@ ent-ComputerSurveillanceCameraMonitor = монитор камер
 ent-ComputerSurveillanceWirelessCameraMonitor = монитор беспроводных камер
     .desc = Монитор беспроводных камер наблюдения. Вы наблюдаете за ними. Возможно.
     .suffix = { "" }
+ent-ComputerPalletConsole = консоль продажи товаров
+    .desc = Используется для продажи товаров, размещенных на грузовых поддонах.
+    .suffix = { "" }

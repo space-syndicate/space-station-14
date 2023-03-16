@@ -16,3 +16,6 @@ ent-WeaponShotgunKammerer = Каммерер
 ent-WeaponShotgunSawn = обрез
     .desc = Против всякой шелупони. Использует патроны калибра .50 ружейный.
     .suffix = Дробовик
+ent-WeaponShotgunHandmade = самодельный пистолет
+    .desc = Выглядит ненадежно. Использует патроны калибра .50 ружейный.
+    .suffix = Пистолет, Дробовик
