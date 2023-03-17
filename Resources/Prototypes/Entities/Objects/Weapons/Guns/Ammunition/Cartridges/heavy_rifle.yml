@@ -12,7 +12,7 @@
     proto: BulletHeavyRifle
   - type: Sprite
     netsync: false
-    sprite: Objects/Weapons/Guns/Ammunition/Casings/ammo_casing.rsi
+    sprite: Corvax/Objects/Weapons/Guns/Ammunition/Casings/ammo_casing.rsi
     layers:
     - state: 20combat #corvax-resprite
       map: ["enum.AmmoVisualLayers.Base"]
