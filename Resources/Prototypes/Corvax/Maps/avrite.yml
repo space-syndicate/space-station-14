@@ -9,7 +9,7 @@
       emergencyShuttlePath: /Maps/Shuttles/emergency_avrit.yml
       nameGenerator:
         !type:NanotrasenNameGenerator
-        prefixCreator: 'Corvax'
+        prefixCreator: 'TG'
       overflowJobs:
         - Passenger
       availableJobs:
