@@ -1,0 +1,24 @@
+- type: entity
+  name: astra knife
+  parent: BaseKnife
+  id: AstraKnife
+  description: A deadly knife intended for melee confrontations.
+  components:
+  - type: Tag
+    tags:
+    - CombatKnife
+    - Knife
+  - type: Sprite
+    sprite: ADT/Objects/Weapons/Melee/astra-knife.rsi
+    size: 2
+    state: icon
+  - type: MeleeWeapon
+    attackRate: 1.5
+    damage:
+      types:
+        Slash: 10
+  - type: Item
+    size: 10
+    sprite: ADT/Objects/Weapons/Melee/astra-knife.rsi
+  - type: DisarmMalus
+    malus: 0.225
