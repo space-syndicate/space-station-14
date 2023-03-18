@@ -1,12 +1,11 @@
 ﻿using Robust.Shared.Prototypes;
-using Robust.Shared.Serialization.Manager.Attributes;
 
 namespace Content.Shared.Body.Prototypes
 {
     [Prototype("metabolizerType")]
     public sealed class MetabolizerTypePrototype : IPrototype
     {
-        [DataField("id", required: true)]
+        [IdDataField]
         public string ID { get; } = default!;
     }
 }

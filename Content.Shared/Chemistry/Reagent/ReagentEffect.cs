@@ -1,16 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text.Json.Serialization;
-using Content.Shared.Administration.Logs;
+﻿using System.Text.Json.Serialization;
 using Content.Shared.Chemistry.Components;
-using Content.Shared.Chemistry.Reagent;
 using Content.Shared.Database;
 using Content.Shared.FixedPoint;
 using JetBrains.Annotations;
-using Robust.Shared.GameObjects;
-using Robust.Shared.IoC;
 using Robust.Shared.Random;
-using Robust.Shared.Serialization.Manager.Attributes;
 
 namespace Content.Shared.Chemistry.Reagent
 {
@@ -89,6 +82,7 @@ namespace Content.Shared.Chemistry.Reagent
         ReagentPrototype Reagent,
         FixedPoint2 Quantity,
         IEntityManager EntityManager,
-        ReactionMethod? Method
+        ReactionMethod? Method,
+        float Scale
     );
 }

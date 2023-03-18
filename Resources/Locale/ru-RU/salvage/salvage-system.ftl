@@ -1,15 +1,25 @@
-salvage-system-announcement-source = Salvage Control System
-salvage-system-announcement-arrived = A piece of salvagable debris has been pulled in. Estimated hold time: { $timeLeft } seconds.
-salvage-system-announcement-losing = The magnet is no longer able to hold the salvagable debris. Estimated time until loss: { $timeLeft } seconds.
-salvage-system-announcement-lost = The salvagable debris have been lost.
-salvage-system-announcement-spawn-magnet-lost = The salvage magnet has been lost.
-salvage-system-announcement-spawn-no-debris-available = No debris could be recovered by the salvage magnet.
-salvage-system-announcement-spawn-debris-disintegrated = Debris disintegrated during orbital transfer.
-salvage-system-report-already-active = The salvage magnet is already active.
-salvage-system-report-cooling-down = The salvage magnet is cooling down.
-salvage-system-report-activate-success = The salvage magnet is pulling in a piece of debris!
-salvage-system-magnet-examined-inactive = The salvage magnet is inactive.
-salvage-system-magnet-examined-pulling-in = The salvage magnet is attempting to pull in salvage.
-salvage-system-magnet-examined-active = The salvage magnet is holding salvage in place. Can hold for { $timeLeft } seconds.
-salvage-system-magnet-examined-releasing = The salvage magnet is releasing the salvage.
-salvage-system-magnet-examined-cooling-down = The salvage magnet is cooling down.
+salvage-system-announcement-source = Система контроля магнита
+salvage-system-announcement-arrived = Кусок обломков был притянут для утилизации. Расчетное время удержания: { $timeLeft } секунд.
+salvage-system-announcement-losing = Магнит больше не может удерживать обломок. Оставшееся время удержания: { $timeLeft } секунд.
+salvage-system-announcement-lost = Магнит перестал удерживать обломок.
+salvage-system-announcement-spawn-magnet-lost = Магнит был потерян.
+salvage-system-announcement-spawn-no-debris-available = Нет обломков которые можно притянуть магнитом.
+salvage-system-announcement-spawn-debris-disintegrated = Обломок развалился при орбитальном перемещении.
+salvage-system-report-already-active = Магнит уже активен.
+salvage-system-report-cooling-down = Магнит остывает.
+salvage-system-report-activate-success = Магнит притягивает кусок обломков!
+salvage-system-magnet-examined-inactive = Магнит неактивен.
+salvage-system-magnet-examined-pulling-in = Магнит пытается притянуть обломки.
+salvage-system-magnet-examined-active =
+    Магнит удерживает обломки на месте. Время удержания { $timeLeft ->
+        [one] 1 секунда.
+        [few] { $timeLeft } секунды.
+       *[other] { $timeLeft } секунд.
+    }
+salvage-system-magnet-examined-releasing = Магнит перестаёт удерживать обломки.
+salvage-system-magnet-examined-cooling-down =
+    Магнит остывает. Он будет снова готов через { $timeLeft ->
+        [one] 1 секунду.
+        [few] { $timeLeft } секунды.
+       *[other] { $timeLeft } секунд.
+    }.

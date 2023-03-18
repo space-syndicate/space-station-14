@@ -1,24 +1,21 @@
-using Content.Client.EscapeMenu.UI;
+using Content.Client.UserInterface.Systems.EscapeMenu;
 using Robust.Client.ResourceManagement;
+using Robust.Client.UserInterface;
 using Robust.Client.UserInterface.Controls;
 using Robust.Client.UserInterface.CustomControls;
-using Robust.Shared.IoC;
-using Robust.Shared.Localization;
+using Robust.Shared.Configuration;
+using Robust.Shared.ContentPack;
 
 namespace Content.Client.Info
 {
     public sealed class RulesAndInfoWindow : DefaultWindow
     {
-        [Dependency] private readonly RulesManager _rulesManager = default!;
         [Dependency] private readonly IResourceCache _resourceManager = default!;
-
-        private OptionsMenu optionsMenu;
+        [Dependency] private readonly RulesManager _rules = default!;
 
         public RulesAndInfoWindow()
         {
             IoCManager.InjectDependencies(this);
-
-            optionsMenu = new OptionsMenu();
 
             Title = Loc.GetString("ui-info-title");
 
@@ -33,17 +30,12 @@ namespace Content.Client.Info
             TabContainer.SetTabTitle(rulesList, Loc.GetString("ui-info-tab-rules"));
             TabContainer.SetTabTitle(tutorialList, Loc.GetString("ui-info-tab-tutorial"));
 
-            PopulateRules(rulesList);
+            AddSection(rulesList, _rules.RulesSection());
             PopulateTutorial(tutorialList);
 
             Contents.AddChild(rootContainer);
 
             SetSize = (650, 650);
-        }
-
-        private void PopulateRules(Info rulesList)
-        {
-            AddSection(rulesList, Loc.GetString("ui-rules-header"), "Rules.txt", true);
         }
 
         private void PopulateTutorial(Info tutorialList)
@@ -54,20 +46,23 @@ namespace Content.Client.Info
             AddSection(tutorialList, Loc.GetString("ui-info-header-gameplay"), "Gameplay.txt", true);
             AddSection(tutorialList, Loc.GetString("ui-info-header-sandbox"), "Sandbox.txt", true);
 
-            infoControlSection.ControlsButton.OnPressed += _ => optionsMenu.OpenCentered();
+            infoControlSection.ControlsButton.OnPressed += _ => UserInterfaceManager.GetUIController<OptionsUIController>().OpenWindow();
+        }
+
+        private static void AddSection(Info info, Control control)
+        {
+            info.InfoContainer.AddChild(control);
         }
 
         private void AddSection(Info info, string title, string path, bool markup = false)
         {
-            info.InfoContainer.AddChild(new InfoSection(title,
-                _resourceManager.ContentFileReadAllText($"/Server Info/{path}"), markup));
+            AddSection(info, MakeSection(title, path, markup, _resourceManager));
         }
 
-        protected override void Opened()
+        private static Control MakeSection(string title, string path, bool markup, IResourceManager res)
         {
-            base.Opened();
-
-            _rulesManager.SaveLastReadTime();
+            return new InfoSection(title, res.ContentFileReadAllText($"/Server Info/{path}"), markup);
         }
+
     }
 }

@@ -3,9 +3,7 @@ using Content.Shared.Body.Prototypes;
 using Content.Shared.Chemistry.Reagent;
 using Content.Shared.FixedPoint;
 using JetBrains.Annotations;
-using Robust.Shared.IoC;
 using Robust.Shared.Prototypes;
-using Robust.Shared.Serialization.Manager.Attributes;
 using Robust.Shared.Serialization.TypeSerializers.Implementations.Custom.Prototype;
 
 namespace Content.Server.Chemistry.ReagentEffects
@@ -34,12 +32,16 @@ namespace Content.Server.Chemistry.ReagentEffects
             if (args.Source != null)
             {
                 var solutionSys = args.EntityManager.EntitySysManager.GetEntitySystem<SolutionContainerSystem>();
+                var amount = Amount;
+
+                amount *= args.Scale;
+
                 if (Reagent != null)
                 {
-                    if (Amount < 0 && args.Source.ContainsReagent(Reagent))
-                        solutionSys.TryRemoveReagent(args.SolutionEntity, args.Source, Reagent, -Amount);
-                    if (Amount > 0)
-                        solutionSys.TryAddReagent(args.SolutionEntity, args.Source, Reagent, Amount, out _);
+                    if (amount < 0 && args.Source.ContainsReagent(Reagent))
+                        solutionSys.TryRemoveReagent(args.SolutionEntity, args.Source, Reagent, -amount);
+                    if (amount > 0)
+                        solutionSys.TryAddReagent(args.SolutionEntity, args.Source, Reagent, amount, out _);
                 }
                 else if (Group != null)
                 {
@@ -49,10 +51,10 @@ namespace Content.Server.Chemistry.ReagentEffects
                         var proto = prototypeMan.Index<ReagentPrototype>(quant.ReagentId);
                         if (proto.Metabolisms != null && proto.Metabolisms.ContainsKey(Group))
                         {
-                            if (Amount < 0)
-                                solutionSys.TryRemoveReagent(args.SolutionEntity, args.Source, quant.ReagentId, Amount);
-                            if (Amount > 0)
-                                solutionSys.TryAddReagent(args.SolutionEntity, args.Source, quant.ReagentId, Amount, out _);
+                            if (amount < 0)
+                                solutionSys.TryRemoveReagent(args.SolutionEntity, args.Source, quant.ReagentId, amount);
+                            if (amount > 0)
+                                solutionSys.TryAddReagent(args.SolutionEntity, args.Source, quant.ReagentId, amount, out _);
                         }
                     }
                 }

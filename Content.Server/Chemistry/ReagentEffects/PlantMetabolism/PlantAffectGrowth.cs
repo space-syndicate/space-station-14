@@ -1,7 +1,6 @@
-﻿using Content.Shared.Chemistry.Components;
+﻿using Content.Server.Botany.Systems;
 using Content.Shared.Chemistry.Reagent;
 using JetBrains.Annotations;
-using Robust.Shared.GameObjects;
 
 namespace Content.Server.Chemistry.ReagentEffects.PlantMetabolism
 {
@@ -13,7 +12,9 @@ namespace Content.Server.Chemistry.ReagentEffects.PlantMetabolism
             if (!CanMetabolize(args.SolutionEntity, out var plantHolderComp, args.EntityManager))
                 return;
 
-            plantHolderComp.AffectGrowth((int) Amount);
+            var plantHolder = args.EntityManager.System<PlantHolderSystem>();
+
+            plantHolder.AffectGrowth(args.SolutionEntity, (int) Amount, plantHolderComp);
         }
     }
 }

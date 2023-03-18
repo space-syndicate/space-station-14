@@ -1,18 +1,16 @@
-﻿using System.Collections.Generic;
-using System.Diagnostics.CodeAnalysis;
 using Content.Server.Access.Systems;
 using Content.Server.Administration;
-using Content.Server.Cloning;
+using Content.Server.Administration.Systems;
 using Content.Server.Mind.Components;
 using Content.Server.PDA;
+using Content.Server.StationRecords.Systems;
 using Content.Shared.Access.Components;
 using Content.Shared.Administration;
 using Content.Shared.PDA;
+using Content.Shared.StationRecords;
 using Robust.Server.GameObjects;
 using Robust.Server.Player;
 using Robust.Shared.Console;
-using Robust.Shared.GameObjects;
-using Robust.Shared.IoC;
 
 namespace Content.Server.Mind.Commands;
 
@@ -50,33 +48,33 @@ public sealed class RenameCommand : IConsoleCommand
 
         var entSysMan = IoCManager.Resolve<IEntitySystemManager>();
 
-        if (entMan.TryGetComponent(entityUid, out MindComponent mind) && mind.Mind != null)
+        if (entMan.TryGetComponent(entityUid, out MindComponent? mind) && mind.Mind != null)
         {
             // Mind
             mind.Mind.CharacterName = name;
-
-            // Cloner entries
-            if (entSysMan.TryGetEntitySystem<CloningSystem>(out var cloningSystem)
-                && cloningSystem.MindToId.TryGetValue(mind.Mind, out var cloningId)
-                && cloningSystem.IdToDNA.ContainsKey(cloningId))
-            {
-                cloningSystem.IdToDNA[cloningId] =
-                    new ClonerDNAEntry(mind.Mind, cloningSystem.IdToDNA[cloningId].Profile.WithName(name));
-            }
         }
 
         // Id Cards
         if (entSysMan.TryGetEntitySystem<IdCardSystem>(out var idCardSystem))
         {
             if (idCardSystem.TryFindIdCard(entityUid, out var idCard))
-                idCardSystem.TryChangeFullName(idCard.Owner, name, idCard);
-            else
             {
-                foreach (var idCardComponent in entMan.EntityQuery<IdCardComponent>())
+                idCardSystem.TryChangeFullName(idCard.Owner, name, idCard);
+
+                // Records
+                // This is done here because ID cards are linked to station records
+                if (entSysMan.TryGetEntitySystem<StationRecordsSystem>(out var recordsSystem)
+                    && entMan.TryGetComponent(idCard.Owner, out StationRecordKeyStorageComponent? keyStorage)
+                    && keyStorage.Key != null)
                 {
-                    if (idCardComponent.OriginalOwnerName != oldName)
-                        continue;
-                    idCardSystem.TryChangeFullName(idCardComponent.Owner, name, idCardComponent);
+                    if (recordsSystem.TryGetRecord<GeneralStationRecord>(keyStorage.Key.Value.OriginStation,
+                            keyStorage.Key.Value,
+                            out var generalRecord))
+                    {
+                        generalRecord.Name = name;
+                    }
+
+                    recordsSystem.Synchronize(keyStorage.Key.Value.OriginStation);
                 }
             }
         }

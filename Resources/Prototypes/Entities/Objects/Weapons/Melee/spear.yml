@@ -10,46 +10,70 @@
   - type: Sharp
   - type: Sprite
     sprite: Objects/Weapons/Melee/spear.rsi
+    netsync: false
     state: spear
   - type: MeleeWeapon
     damage:
       types:
         Piercing: 10
-    range: 1.5
-    arcwidth: 0
-    arc: spear
+    angle: 0
+    animation: WeaponArcThrust
   - type: DamageOtherOnHit
     damage:
       types:
         Piercing: 15
+  - type: Item
+    size: 40
   - type: Clothing
-    size: 24
-    sprite: Objects/Weapons/Melee/spear.rsi
-    QuickEquip: false
-    Slots:
+    quickEquip: false
+    slots:
     - back
   - type: Construction
     graph: Spear
     node: spear
   - type: ItemCooldown
-  - type: MeleeChemicalInjector
   - type: SolutionContainerManager
     solutions:
       melee:
         maxVol: 5
+  - type: MeleeChemicalInjector
+    solution: melee
   - type: RefillableSolution
+    solution: melee
+  - type: InjectableSolution
     solution: melee
   - type: SolutionTransfer
     maxTransferAmount: 5
   - type: Wieldable
   - type: IncreaseDamageOnWield
-    modifiers:
-      flatReductions:
-        Piercing: -7
-
-- type: MeleeWeaponAnimation
-  id: spear
-  state: spear
-  length: 0.10
-  speed: 6
-  arcType: Poke
+    damage:
+      types:
+        Piercing: 7
+  - type: Damageable
+    damageContainer: Inorganic
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 30 #excess damage avoids cost of spawning entities.
+      behaviors:
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+    - trigger:
+        !type:DamageTrigger
+        damage: 20
+      behaviors:
+      - !type:PlaySoundBehavior
+        sound:
+          collection: GlassBreak
+      - !type:SpawnEntitiesBehavior
+        spawn:
+          PartRodMetal1:
+            min: 1
+            max: 1
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+  - type: DamageOnLand
+    damage:
+      types:
+        Blunt: 5

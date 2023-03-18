@@ -1,7 +1,6 @@
 ﻿using Content.Server.Body.Components;
 using Content.Server.Body.Systems;
 using Content.Shared.Chemistry.Reagent;
-using Content.Shared.FixedPoint;
 
 namespace Content.Server.Chemistry.ReagentEffects;
 
@@ -19,6 +18,8 @@ public sealed class ModifyBleedAmount : ReagentEffect
         {
             var sys = EntitySystem.Get<BloodstreamSystem>();
             var amt = Scaled ? Amount * args.Quantity.Float() : Amount;
+            amt *= args.Scale;
+
             sys.TryModifyBleedAmount(args.SolutionEntity, amt, blood);
         }
     }

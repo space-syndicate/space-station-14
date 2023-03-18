@@ -1,5 +1,3 @@
-using System;
-using System.Collections.Generic;
 using System.Collections.Immutable;
 using System.Linq;
 using System.Net;
@@ -8,15 +6,12 @@ using System.Threading;
 using System.Threading.Tasks;
 using Content.Server.Administration.Logs;
 using Content.Shared.Administration.Logs;
-using Content.Shared.CharacterAppearance;
+using Content.Shared.Humanoid;
+using Content.Shared.Humanoid.Markings;
 using Content.Shared.Preferences;
-using Content.Shared.Species;
 using Microsoft.EntityFrameworkCore;
 using Robust.Shared.Enums;
-using Robust.Shared.IoC;
-using Robust.Shared.Maths;
 using Robust.Shared.Network;
-using Robust.Shared.Prototypes;
 using Robust.Shared.Utility;
 
 namespace Content.Server.Database
@@ -32,6 +27,7 @@ namespace Content.Server.Database
                 .Preference
                 .Include(p => p.Profiles).ThenInclude(h => h.Jobs)
                 .Include(p => p.Profiles).ThenInclude(h => h.Antags)
+                .Include(p => p.Profiles).ThenInclude(h => h.Traits)
                 .AsSingleQuery()
                 .SingleOrDefaultAsync(p => p.UserId == userId.UserId);
 
@@ -161,6 +157,7 @@ namespace Content.Server.Database
         {
             var jobs = profile.Jobs.ToDictionary(j => j.JobName, j => (JobPriority) j.Priority);
             var antags = profile.Antags.Select(a => a.AntagName);
+            var traits = profile.Traits.Select(t => t.TraitName);
 
             var sex = Sex.Male;
             if (Enum.TryParse<Sex>(profile.Sex, true, out var sexVal))
@@ -177,10 +174,34 @@ namespace Content.Server.Database
             var gender = sex == Sex.Male ? Gender.Male : Gender.Female;
             if (Enum.TryParse<Gender>(profile.Gender, true, out var genderVal))
                 gender = genderVal;
+            
+            // Corvax-TTS-Start
+            var voice = profile.Voice;
+            if (voice == String.Empty)
+                voice = SharedHumanoidAppearanceSystem.DefaultSexVoice[sex];
+            // Corvax-TTS-End
+
+            // ReSharper disable once ConditionalAccessQualifierIsNonNullableAccordingToAPIContract
+            var markingsRaw = profile.Markings?.Deserialize<List<string>>();
+
+            List<Marking> markings = new();
+            if (markingsRaw != null)
+            {
+                foreach (var marking in markingsRaw)
+                {
+                    var parsed = Marking.ParseFromDbString(marking);
+
+                    if (parsed is null) continue;
+
+                    markings.Add(parsed);
+                }
+            }
 
             return new HumanoidCharacterProfile(
                 profile.CharacterName,
+                profile.FlavorText,
                 profile.Species,
+                voice, // Corvax-TTS
                 profile.Age,
                 sex,
                 gender,
@@ -191,24 +212,34 @@ namespace Content.Server.Database
                     profile.FacialHairName,
                     Color.FromHex(profile.FacialHairColor),
                     Color.FromHex(profile.EyeColor),
-                    Color.FromHex(profile.SkinColor)
+                    Color.FromHex(profile.SkinColor),
+                    markings
                 ),
                 clothing,
                 backpack,
                 jobs,
                 (PreferenceUnavailableMode) profile.PreferenceUnavailable,
-                antags.ToList()
+                antags.ToList(),
+                traits.ToList()
             );
         }
 
         private static Profile ConvertProfiles(HumanoidCharacterProfile humanoid, int slot)
         {
             var appearance = (HumanoidCharacterAppearance) humanoid.CharacterAppearance;
+            List<string> markingStrings = new();
+            foreach (var marking in appearance.Markings)
+            {
+                markingStrings.Add(marking.ToString());
+            }
+            var markings = JsonSerializer.SerializeToDocument(markingStrings);
 
             var entity = new Profile
             {
                 CharacterName = humanoid.Name,
+                FlavorText = humanoid.FlavorText,
                 Species = humanoid.Species,
+                Voice = humanoid.Voice, // Corvax-TTS
                 Age = humanoid.Age,
                 Sex = humanoid.Sex.ToString(),
                 Gender = humanoid.Gender.ToString(),
@@ -220,6 +251,7 @@ namespace Content.Server.Database
                 SkinColor = appearance.SkinColor.ToHex(),
                 Clothing = humanoid.Clothing.ToString(),
                 Backpack = humanoid.Backpack.ToString(),
+                Markings = markings,
                 Slot = slot,
                 PreferenceUnavailable = (DbPreferenceUnavailableMode) humanoid.PreferenceUnavailable
             };
@@ -231,6 +263,10 @@ namespace Content.Server.Database
             entity.Antags.AddRange(
                 humanoid.AntagPreferences
                     .Select(a => new Antag {AntagName = a})
+            );
+            entity.Traits.AddRange(
+                humanoid.TraitPreferences
+                        .Select(t => new Trait {TraitName = t})
             );
 
             return entity;
@@ -335,6 +371,59 @@ namespace Content.Server.Database
 
         public abstract Task AddServerRoleBanAsync(ServerRoleBanDef serverRoleBan);
         public abstract Task AddServerRoleUnbanAsync(ServerRoleUnbanDef serverRoleUnban);
+        #endregion
+
+        #region Playtime
+        public async Task<List<PlayTime>> GetPlayTimes(Guid player)
+        {
+            await using var db = await GetDb();
+
+            return await db.DbContext.PlayTime
+                .Where(p => p.PlayerId == player)
+                .ToListAsync();
+        }
+
+        public async Task UpdatePlayTimes(IReadOnlyCollection<PlayTimeUpdate> updates)
+        {
+            await using var db = await GetDb();
+
+            // Ideally I would just be able to send a bunch of UPSERT commands, but EFCore is a pile of garbage.
+            // So... In the interest of not making this take forever at high update counts...
+            // Bulk-load play time objects for all players involved.
+            // This allows us to semi-efficiently load all entities we need in a single DB query.
+            // Then we can update & insert without further round-trips to the DB.
+
+            var players = updates.Select(u => u.User.UserId).Distinct().ToArray();
+            var dbTimes = (await db.DbContext.PlayTime
+                    .Where(p => players.Contains(p.PlayerId))
+                    .ToArrayAsync())
+                .GroupBy(p => p.PlayerId)
+                .ToDictionary(g => g.Key, g => g.ToDictionary(p => p.Tracker, p => p));
+
+            foreach (var (user, tracker, time) in updates)
+            {
+                if (dbTimes.TryGetValue(user.UserId, out var userTimes)
+                    && userTimes.TryGetValue(tracker, out var ent))
+                {
+                    // Already have a tracker in the database, update it.
+                    ent.TimeSpent = time;
+                    continue;
+                }
+
+                // No tracker, make a new one.
+                var playTime = new PlayTime
+                {
+                    Tracker = tracker,
+                    PlayerId = user.UserId,
+                    TimeSpent = time
+                };
+
+                db.DbContext.PlayTime.Add(playTime);
+            }
+
+            await db.DbContext.SaveChangesAsync();
+        }
+
         #endregion
 
         #region Player Records
@@ -500,7 +589,7 @@ namespace Content.Server.Database
             await db.DbContext.SaveChangesAsync(cancel);
         }
 
-        public virtual async Task<int> AddNewRound(params Guid[] playerIds)
+        public virtual async Task<int> AddNewRound(Server server, params Guid[] playerIds)
         {
             await using var db = await GetDb();
 
@@ -510,7 +599,8 @@ namespace Content.Server.Database
 
             var round = new Round
             {
-                Players = players
+                Players = players,
+                ServerId = server.Id
             };
 
             db.DbContext.Round.Add(round);
@@ -574,6 +664,28 @@ namespace Content.Server.Database
 
         #region Admin Logs
 
+        public async Task<(Server, bool existed)> AddOrGetServer(string serverName)
+        {
+            await using var db = await GetDb();
+            var server = await db.DbContext.Server
+                .Where(server => server.Name.Equals(serverName))
+                .SingleOrDefaultAsync();
+
+            if (server != default)
+                return (server, true);
+
+            server = new Server
+            {
+                Name = serverName
+            };
+
+            db.DbContext.Server.Add(server);
+
+            await db.DbContext.SaveChangesAsync();
+
+            return (server, false);
+        }
+
         public virtual async Task AddAdminLogs(List<QueuedLog> logs)
         {
             await using var db = await GetDb();
@@ -636,27 +748,26 @@ namespace Content.Server.Database
                 query = query.Where(log => log.Date > filter.After);
             }
 
-            if (filter.AnyPlayers != null)
+            if (filter.IncludePlayers)
             {
-                var players = await db.AdminLogPlayer
-                    .Where(player => filter.AnyPlayers.Contains(player.PlayerUserId))
-                    .ToListAsync();
-
-                if (players.Count > 0)
+                if (filter.AnyPlayers != null)
                 {
-                    query = from log in query
-                        join player in db.AdminLogPlayer on log.Id equals player.LogId
-                        where filter.AnyPlayers.Contains(player.Player.UserId)
-                        select log;
+                    query = query.Where(log =>
+                        log.Players.Any(p => filter.AnyPlayers.Contains(p.PlayerUserId)) ||
+                        log.Players.Count == 0 && filter.IncludeNonPlayers);
+                }
+
+                if (filter.AllPlayers != null)
+                {
+                    query = query.Where(log =>
+                        log.Players.All(p => filter.AllPlayers.Contains(p.PlayerUserId)) ||
+                        log.Players.Count == 0 && filter.IncludeNonPlayers);
                 }
             }
-
-            if (filter.AllPlayers != null)
+            else
             {
-                // TODO ADMIN LOGGING
+                query = query.Where(log => log.Players.Count == 0);
             }
-
-            query = query.Distinct();
 
             if (filter.LastLogId != null)
             {
@@ -677,9 +788,14 @@ namespace Content.Server.Database
                     $"Unknown {nameof(DateOrder)} value {filter.DateOrder}")
             };
 
+            const int hardLogLimit = 500_000;
             if (filter.Limit != null)
             {
-                query = query.Take(filter.Limit.Value);
+                query = query.Take(Math.Min(filter.Limit.Value, hardLogLimit));
+            }
+            else
+            {
+                query = query.Take(hardLogLimit);
             }
 
             return query;
@@ -752,6 +868,121 @@ namespace Content.Server.Database
             await db.DbContext.SaveChangesAsync();
         }
 
+        public async Task<DateTime?> GetLastReadRules(NetUserId player)
+        {
+            await using var db = await GetDb();
+
+            return await db.DbContext.Player
+                .Where(dbPlayer => dbPlayer.UserId == player)
+                .Select(dbPlayer => dbPlayer.LastReadRules)
+                .SingleOrDefaultAsync();
+        }
+
+        public async Task SetLastReadRules(NetUserId player, DateTime date)
+        {
+            await using var db = await GetDb();
+
+            var dbPlayer = await db.DbContext.Player.Where(dbPlayer => dbPlayer.UserId == player).SingleOrDefaultAsync();
+            if (dbPlayer == null)
+            {
+                return;
+            }
+
+            dbPlayer.LastReadRules = date;
+            await db.DbContext.SaveChangesAsync();
+        }
+
+        #endregion
+
+        #region Uploaded Resources Logs
+
+        public async Task AddUploadedResourceLogAsync(NetUserId user, DateTime date, string path, byte[] data)
+        {
+            await using var db = await GetDb();
+
+            db.DbContext.UploadedResourceLog.Add(new UploadedResourceLog() { UserId = user, Date = date, Path = path, Data = data });
+            await db.DbContext.SaveChangesAsync();
+        }
+
+        public async Task PurgeUploadedResourceLogAsync(int days)
+        {
+            await using var db = await GetDb();
+
+            var date = DateTime.Now.Subtract(TimeSpan.FromDays(days));
+
+            await foreach (var log in db.DbContext.UploadedResourceLog
+                               .Where(l => date > l.Date)
+                               .AsAsyncEnumerable())
+            {
+                db.DbContext.UploadedResourceLog.Remove(log);
+            }
+
+            await db.DbContext.SaveChangesAsync();
+        }
+
+        #endregion
+
+        #region Admin Notes
+
+        public virtual async Task<int> AddAdminNote(AdminNote note)
+        {
+            await using var db = await GetDb();
+            db.DbContext.AdminNotes.Add(note);
+            await db.DbContext.SaveChangesAsync();
+            return note.Id;
+        }
+
+        public async Task<AdminNote?> GetAdminNote(int id)
+        {
+            await using var db = await GetDb();
+            return await db.DbContext.AdminNotes
+                .Where(note => note.Id == id)
+                .Include(note => note.Round)
+                .Include(note => note.CreatedBy)
+                .Include(note => note.LastEditedBy)
+                .Include(note => note.DeletedBy)
+                .Include(note => note.Player)
+                .SingleOrDefaultAsync();
+        }
+
+        public async Task<List<AdminNote>> GetAdminNotes(Guid player)
+        {
+            await using var db = await GetDb();
+            return await db.DbContext.AdminNotes
+                .Where(note => note.PlayerUserId == player)
+                .Where(note => !note.Deleted)
+                .Include(note => note.Round)
+                .Include(note => note.CreatedBy)
+                .Include(note => note.LastEditedBy)
+                .Include(note => note.Player)
+                .ToListAsync();
+        }
+
+        public async Task DeleteAdminNote(int id, Guid deletedBy, DateTime deletedAt)
+        {
+            await using var db = await GetDb();
+
+            var note = await db.DbContext.AdminNotes.Where(note => note.Id == id).SingleAsync();
+
+            note.Deleted = true;
+            note.DeletedById = deletedBy;
+            note.DeletedAt = deletedAt;
+
+            await db.DbContext.SaveChangesAsync();
+        }
+
+        public async Task EditAdminNote(int id, string message, Guid editedBy, DateTime editedAt)
+        {
+            await using var db = await GetDb();
+
+            var note = await db.DbContext.AdminNotes.Where(note => note.Id == id).SingleAsync();
+            note.Message = message;
+            note.LastEditedById = editedBy;
+            note.LastEditedAt = editedAt;
+
+            await db.DbContext.SaveChangesAsync();
+        }
+
         #endregion
 
         protected abstract Task<DbGuard> GetDb();
@@ -762,5 +993,6 @@ namespace Content.Server.Database
 
             public abstract ValueTask DisposeAsync();
         }
+
     }
 }

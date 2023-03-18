@@ -5,8 +5,8 @@ using Content.Shared.Access;
 using Content.Shared.Access.Components;
 using Content.Shared.Access.Systems;
 using Content.Shared.Containers.ItemSlots;
+using Content.Shared.Hands.EntitySystems;
 using Content.Shared.Inventory;
-using Content.Shared.Item;
 using Content.Shared.PDA;
 using Content.Shared.Sandbox;
 using Robust.Server.Console;
@@ -14,11 +14,6 @@ using Robust.Server.GameObjects;
 using Robust.Server.Placement;
 using Robust.Server.Player;
 using Robust.Shared.Enums;
-using Robust.Shared.GameObjects;
-using Robust.Shared.IoC;
-using Robust.Shared.Network;
-using Robust.Shared.Prototypes;
-using Robust.Shared.ViewVariables;
 
 namespace Content.Server.Sandbox
 {
@@ -28,10 +23,11 @@ namespace Content.Server.Sandbox
         [Dependency] private readonly IPlacementManager _placementManager = default!;
         [Dependency] private readonly IConGroupController _conGroupController = default!;
         [Dependency] private readonly IServerConsoleHost _host = default!;
-        [Dependency] private readonly AccessSystem _access = default!;
+        [Dependency] private readonly SharedAccessSystem _access = default!;
         [Dependency] private readonly InventorySystem _inventory = default!;
         [Dependency] private readonly ItemSlotsSystem _slots = default!;
         [Dependency] private readonly GameTicker _ticker = default!;
+        [Dependency] private readonly SharedHandsSystem _handsSystem = default!;
 
         private bool _isSandboxEnabled;
 
@@ -154,18 +150,13 @@ namespace Content.Server.Sandbox
                 var card = CreateFreshId();
                 if (!_inventory.TryEquip(attached, card, "id", true, true))
                 {
-                    hands.PutInHandOrDrop(Comp<SharedItemComponent>(card));
+                    _handsSystem.PickupOrDrop(attached, card, handsComp: hands);
                 }
             }
 
             void UpgradeId(EntityUid id)
             {
                 _access.TrySetTags(id, allAccess);
-
-                if (TryComp<SpriteComponent>(id, out var sprite))
-                {
-                    sprite.LayerSetState(0, "gold");
-                }
             }
 
             EntityUid CreateFreshId()

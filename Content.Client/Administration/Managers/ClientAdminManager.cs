@@ -1,23 +1,24 @@
-using System;
-using System.Collections.Generic;
-using System.Reflection;
 using Content.Shared.Administration;
+using Content.Shared.Administration.Managers;
 using Robust.Client.Console;
-using Robust.Shared.Console;
-using Robust.Shared.IoC;
-using Robust.Shared.Log;
+using Robust.Client.Player;
+using Robust.Shared.ContentPack;
 using Robust.Shared.Network;
-using Robust.Shared.Reflection;
+using Robust.Shared.Utility;
 
 namespace Content.Client.Administration.Managers
 {
-    public sealed class ClientAdminManager : IClientAdminManager, IClientConGroupImplementation, IPostInjectInit
+    public sealed class ClientAdminManager : IClientAdminManager, IClientConGroupImplementation, IPostInjectInit, ISharedAdminManager
     {
+        [Dependency] private readonly IPlayerManager _player = default!;
         [Dependency] private readonly IClientNetManager _netMgr = default!;
         [Dependency] private readonly IClientConGroupController _conGroup = default!;
+        [Dependency] private readonly IResourceManager _res = default!;
 
         private AdminData? _adminData;
         private readonly HashSet<string> _availableCommands = new();
+
+        private readonly AdminCommandPermissions _localCommandPermissions = new();
 
         public event Action? AdminStatusUpdated;
 
@@ -33,6 +34,16 @@ namespace Content.Client.Administration.Managers
 
         public bool CanCommand(string cmdName)
         {
+            if (_adminData != null && _adminData.HasFlag(AdminFlags.Host))
+            {
+                // Host can execute all commands when connected.
+                // Kind of a shortcut to avoid pains during development.
+                return true;
+            }
+
+            if (_localCommandPermissions.CanCommand(cmdName, _adminData))
+                return true;
+
             return _availableCommands.Contains(cmdName);
         }
 
@@ -59,6 +70,12 @@ namespace Content.Client.Administration.Managers
         public void Initialize()
         {
             _netMgr.RegisterNetMessage<MsgUpdateAdminStatus>(UpdateMessageRx);
+
+            // Load flags for engine commands, since those don't have the attributes.
+            if (_res.TryContentFileRead(new ResourcePath("/clientCommandPerms.yml"), out var efs))
+            {
+                _localCommandPermissions.LoadPermissionsFromStream(efs);
+            }
         }
 
         private void UpdateMessageRx(MsgUpdateAdminStatus message)
@@ -67,7 +84,7 @@ namespace Content.Client.Administration.Managers
             var host = IoCManager.Resolve<IClientConsoleHost>();
 
             // Anything marked as Any we'll just add even if the server doesn't know about it.
-            foreach (var (command, instance) in host.RegisteredCommands)
+            foreach (var (command, instance) in host.AvailableCommands)
             {
                 if (Attribute.GetCustomAttribute(instance.GetType(), typeof(AnyCommandAttribute)) == null) continue;
                 _availableCommands.Add(command);
@@ -96,6 +113,13 @@ namespace Content.Client.Administration.Managers
         void IPostInjectInit.PostInject()
         {
             _conGroup.Implementation = this;
+        }
+
+        public AdminData? GetAdminData(EntityUid uid, bool includeDeAdmin = false)
+        {
+            return uid == _player.LocalPlayer?.ControlledEntity
+                ? _adminData
+                : null;
         }
     }
 }

@@ -1,8 +1,6 @@
 ﻿using System.Reflection;
-using Content.Shared.Chemistry.Reagent;
 using Content.Shared.FixedPoint;
 using NUnit.Framework;
-using Robust.Shared.Serialization.Manager;
 using Robust.Shared.Serialization.Manager.Attributes;
 using Robust.Shared.Serialization.Markdown.Mapping;
 using Robust.Shared.Serialization.Markdown.Value;
@@ -20,17 +18,32 @@ namespace Content.IntegrationTests.Tests.Chemistry
         [Test]
         public void DeserializeNullTest()
         {
-            var node = new ValueDataNode("null");
-            var unit = Serialization.ReadValue<FixedPoint2?>(node);
+            var node = ValueDataNode.Null();
+            var unit = Serialization.Read<FixedPoint2?>(node);
 
             Assert.That(unit, Is.Null);
         }
 
         [Test]
+        public void SerializeNullTest()
+        {
+            var node = Serialization.WriteValue<FixedPoint2?>(null);
+            Assert.That(node.IsNull);
+        }
+
+        [Test]
+        public void SerializeNullableValueTest()
+        {
+            var node = Serialization.WriteValue<FixedPoint2?>(FixedPoint2.New(2.5f));
+            Assert.That(node is ValueDataNode);
+            Assert.That(((ValueDataNode)node).Value, Is.EqualTo("2.5"));
+        }
+
+        [Test]
         public void DeserializeNullDefinitionTest()
         {
-            var node = new MappingDataNode().Add("unit", "null");
-            var definition = Serialization.ReadValueOrThrow<FixedPoint2TestDefinition>(node);
+            var node = new MappingDataNode().Add("unit", ValueDataNode.Null());
+            var definition = Serialization.Read<FixedPoint2TestDefinition>(node);
 
             Assert.That(definition.Unit, Is.Null);
         }

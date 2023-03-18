@@ -5,6 +5,7 @@ using Content.Shared.Damage;
 using JetBrains.Annotations;
 using Robust.Shared.Audio;
 using Robust.Shared.Physics.Dynamics;
+using Robust.Shared.Physics.Events;
 using Robust.Shared.Player;
 using Robust.Shared.Random;
 using Robust.Shared.Timing;
@@ -25,7 +26,7 @@ namespace Content.Server.Damage.Systems
             SubscribeLocalEvent<DamageOnHighSpeedImpactComponent, StartCollideEvent>(HandleCollide);
         }
 
-        private void HandleCollide(EntityUid uid, DamageOnHighSpeedImpactComponent component, StartCollideEvent args)
+        private void HandleCollide(EntityUid uid, DamageOnHighSpeedImpactComponent component, ref StartCollideEvent args)
         {
             if (!EntityManager.HasComponent<DamageableComponent>(uid)) return;
 
@@ -34,7 +35,7 @@ namespace Content.Server.Damage.Systems
 
             if (speed < component.MinimumSpeed) return;
 
-            SoundSystem.Play(Filter.Pvs(otherBody), component.SoundHit.GetSound(), otherBody, AudioHelpers.WithVariation(0.125f).WithVolume(-0.125f));
+            SoundSystem.Play(component.SoundHit.GetSound(), Filter.Pvs(otherBody), otherBody, AudioHelpers.WithVariation(0.125f).WithVolume(-0.125f));
 
             if ((_gameTiming.CurTime - component.LastHit).TotalSeconds < component.DamageCooldown)
                 return;

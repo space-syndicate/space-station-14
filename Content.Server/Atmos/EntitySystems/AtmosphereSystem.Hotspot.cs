@@ -2,14 +2,10 @@ using Content.Server.Atmos.Components;
 using Content.Server.Atmos.Reactions;
 using Content.Shared.Atmos;
 using Content.Shared.Audio;
-using Robust.Server.GameObjects;
+using Content.Shared.Database;
 using Robust.Shared.Audio;
-using Robust.Shared.GameObjects;
-using Robust.Shared.IoC;
 using Robust.Shared.Map;
-using Robust.Shared.Maths;
 using Robust.Shared.Player;
-using Robust.Shared.ViewVariables;
 
 namespace Content.Server.Atmos.EntitySystems
 {
@@ -89,8 +85,8 @@ namespace Content.Server.Atmos.EntitySystems
                 // A few details on the audio parameters for fire.
                 // The greater the fire state, the lesser the pitch variation.
                 // The greater the fire state, the greater the volume.
-                SoundSystem.Play(Filter.Pvs(coordinates), HotspotSound, coordinates,
-                    AudioHelpers.WithVariation(0.15f/tile.Hotspot.State).WithVolume(-5f + 5f * tile.Hotspot.State));
+                SoundSystem.Play(HotspotSound, Filter.Pvs(coordinates),
+                    coordinates, AudioHelpers.WithVariation(0.15f/tile.Hotspot.State).WithVolume(-5f + 5f * tile.Hotspot.State));
             }
 
             if (_hotspotSoundCooldown > HotspotSoundCooldownCycles)
@@ -99,7 +95,8 @@ namespace Content.Server.Atmos.EntitySystems
             // TODO ATMOS Maybe destroy location here?
         }
 
-        private void HotspotExpose(GridAtmosphereComponent gridAtmosphere, TileAtmosphere tile, float exposedTemperature, float exposedVolume, bool soh = false)
+        private void HotspotExpose(GridAtmosphereComponent gridAtmosphere, TileAtmosphere tile,
+            float exposedTemperature, float exposedVolume, bool soh = false, EntityUid? sparkSourceUid = null)
         {
             if (tile.Air == null)
                 return;
@@ -130,6 +127,9 @@ namespace Content.Server.Atmos.EntitySystems
 
             if ((exposedTemperature > Atmospherics.PlasmaMinimumBurnTemperature) && (plasma > 0.5f || tritium > 0.5f))
             {
+                if (sparkSourceUid.HasValue)
+                    _adminLog.Add(LogType.Flammable, LogImpact.High, $"Heat/spark of {ToPrettyString(sparkSourceUid.Value)} caused atmos ignition of gas: {tile.Air.Temperature.ToString():temperature}K - {oxygen}mol Oxygen, {plasma}mol Plasma, {tritium}mol Tritium");
+
                 tile.Hotspot = new Hotspot
                 {
                     Volume = exposedVolume * 25f,
@@ -138,7 +138,6 @@ namespace Content.Server.Atmos.EntitySystems
                     Valid = true,
                     State = 1
                 };
-
 
                 AddActiveTile(gridAtmosphere, tile);
                 gridAtmosphere.HotspotTiles.Add(tile);
@@ -158,7 +157,7 @@ namespace Content.Server.Atmos.EntitySystems
             }
             else
             {
-                var affected = tile.Air.RemoveRatio(tile.Hotspot.Volume / tile.Air.Volume);
+                var affected = tile.Air.RemoveVolume(tile.Hotspot.Volume);
                 affected.Temperature = tile.Hotspot.Temperature;
                 React(affected, tile);
                 tile.Hotspot.Temperature = affected.Temperature;

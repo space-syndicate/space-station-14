@@ -11,10 +11,15 @@
     damage:
       types:
         Blunt: 14
-  - type: Clothing
+  - type: Wieldable
+  - type: IncreaseDamageOnWield
+    damage:
+      types:
+        Blunt: 5
+  - type: Item
     size: 15
-    sprite: Objects/Weapons/Melee/baseball_bat.rsi
-    Slots:
+  - type: Clothing
+    slots:
     - back
   - type: Construction
     graph: WoodenBat

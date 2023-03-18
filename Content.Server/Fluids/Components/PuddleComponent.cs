@@ -1,11 +1,6 @@
 using Content.Server.Fluids.EntitySystems;
-using Content.Shared.Chemistry.Reagent;
 using Content.Shared.FixedPoint;
-using Content.Shared.Sound;
-using Robust.Shared.Analyzers;
-using Robust.Shared.GameObjects;
-using Robust.Shared.Serialization.Manager.Attributes;
-using Robust.Shared.ViewVariables;
+using Robust.Shared.Audio;
 
 namespace Content.Server.Fluids.Components
 {
@@ -13,11 +8,11 @@ namespace Content.Server.Fluids.Components
     /// Puddle on a floor
     /// </summary>
     [RegisterComponent]
-    [Friend(typeof(PuddleSystem))]
+    [Access(typeof(PuddleSystem))]
     public sealed class PuddleComponent : Component
     {
         public const string DefaultSolutionName = "puddle";
-        private static readonly FixedPoint2 DefaultSlipThreshold = FixedPoint2.New(3);
+        private static readonly FixedPoint2 DefaultSlipThreshold = FixedPoint2.New(-1); //Not slippery by default. Set specific slipThresholds in YAML if you want your puddles to be slippery. Lower = more slippery, and zero means any volume can slip.
         public static readonly FixedPoint2 DefaultOverflowVolume = FixedPoint2.New(20);
 
         // Current design: Something calls the SpillHelper.Spill, that will either
@@ -38,30 +33,17 @@ namespace Content.Server.Fluids.Components
         [DataField("slipThreshold")]
         public FixedPoint2 SlipThreshold = DefaultSlipThreshold;
 
-        /// <summary>
-        /// Puddles with volume below this threshold will have their sprite changed to a wet floor effect,
-        /// provided they can evaporate down to zero.
-        /// </summary>
-        [DataField("wetFloorEffectThreshold")]
-        public FixedPoint2 WetFloorEffectThreshold = FixedPoint2.New(5);
-
         [DataField("spillSound")]
         public SoundSpecifier SpillSound = new SoundPathSpecifier("/Audio/Effects/Fluids/splat.ogg");
 
-        [ViewVariables(VVAccess.ReadOnly)]
-        public FixedPoint2 CurrentVolume => EntitySystem.Get<PuddleSystem>().CurrentVolume(Owner);
-
-        [ViewVariables] [DataField("overflowVolume")]
+        [DataField("overflowVolume")]
         public FixedPoint2 OverflowVolume = DefaultOverflowVolume;
 
         /// <summary>
         ///     How much should this puddle's opacity be multiplied by?
         ///     Useful for puddles that have a high overflow volume but still want to be mostly opaque.
         /// </summary>
-        [DataField("opacityModifier")]
-        public float OpacityModifier = 1.0f;
-
-        public FixedPoint2 OverflowLeft => CurrentVolume - OverflowVolume;
+        [DataField("opacityModifier")] public float OpacityModifier = 1.0f;
 
         [DataField("solution")] public string SolutionName { get; set; } = DefaultSolutionName;
     }

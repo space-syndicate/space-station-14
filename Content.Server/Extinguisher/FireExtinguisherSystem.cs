@@ -1,18 +1,14 @@
-﻿using Content.Server.Chemistry.Components;
 using Content.Server.Chemistry.EntitySystems;
 using Content.Server.Fluids.EntitySystems;
 using Content.Server.Popups;
-using Content.Shared.ActionBlocker;
 using Content.Shared.Audio;
-using Content.Shared.CharacterAppearance.Systems;
+using Content.Shared.Chemistry.Components;
 using Content.Shared.Extinguisher;
 using Content.Shared.FixedPoint;
 using Content.Shared.Interaction;
+using Content.Shared.Interaction.Events;
 using Content.Shared.Verbs;
 using Robust.Shared.Audio;
-using Robust.Shared.GameObjects;
-using Robust.Shared.IoC;
-using Robust.Shared.Localization;
 using Robust.Shared.Player;
 
 namespace Content.Server.Extinguisher;
@@ -21,13 +17,13 @@ public sealed class FireExtinguisherSystem : EntitySystem
 {
     [Dependency] private readonly SolutionContainerSystem _solutionContainerSystem = default!;
     [Dependency] private readonly PopupSystem _popupSystem = default!;
+    [Dependency] private readonly SharedAppearanceSystem _appearance = default!;
 
     public override void Initialize()
     {
         base.Initialize();
 
         SubscribeLocalEvent<FireExtinguisherComponent, ComponentInit>(OnFireExtinguisherInit);
-        SubscribeLocalEvent<FireExtinguisherComponent, DroppedEvent>(OnDropped);
         SubscribeLocalEvent<FireExtinguisherComponent, UseInHandEvent>(OnUseInHand);
         SubscribeLocalEvent<FireExtinguisherComponent, AfterInteractEvent>(OnAfterInteract);
         SubscribeLocalEvent<FireExtinguisherComponent, GetVerbsEvent<InteractionVerb>>(OnGetInteractionVerbs);
@@ -40,12 +36,6 @@ public sealed class FireExtinguisherSystem : EntitySystem
         {
             UpdateAppearance(uid, component);
         }
-    }
-
-    private void OnDropped(EntityUid uid, FireExtinguisherComponent component, DroppedEvent args)
-    {
-        // idk why this has to be done??????????
-        UpdateAppearance(uid, component);
     }
 
     private void OnUseInHand(EntityUid uid, FireExtinguisherComponent component, UseInHandEvent args)
@@ -68,12 +58,10 @@ public sealed class FireExtinguisherSystem : EntitySystem
         if (args.Handled)
             return;
 
-        args.Handled = true;
-
         if (component.HasSafety && component.Safety)
         {
             _popupSystem.PopupEntity(Loc.GetString("fire-extinguisher-component-safety-on-message"), uid,
-                Filter.Entities(args.User));
+                args.User);
             return;
         }
 
@@ -84,21 +72,23 @@ public sealed class FireExtinguisherSystem : EntitySystem
             return;
         }
 
+        args.Handled = true;
+
         var transfer = container.AvailableVolume;
         if (TryComp<SolutionTransferComponent>(uid, out var solTrans))
         {
             transfer = solTrans.TransferAmount;
         }
-        transfer = FixedPoint2.Min(transfer, targetSolution.DrainAvailable);
+        transfer = FixedPoint2.Min(transfer, targetSolution.Volume);
 
         if (transfer > 0)
         {
             var drained = _solutionContainerSystem.Drain(target, targetSolution, transfer);
             _solutionContainerSystem.TryAddSolution(uid, container, drained);
 
-            SoundSystem.Play(Filter.Pvs(uid), component.RefillSound.GetSound(), uid);
+            SoundSystem.Play(component.RefillSound.GetSound(), Filter.Pvs(uid), uid);
             _popupSystem.PopupEntity(Loc.GetString("fire-extinguisher-component-after-interact-refilled-message", ("owner", uid)),
-                uid, Filter.Entities(args.Target.Value));
+                uid, args.Target.Value);
         }
     }
 
@@ -121,7 +111,7 @@ public sealed class FireExtinguisherSystem : EntitySystem
         if (component.HasSafety && component.Safety)
         {
             _popupSystem.PopupEntity(Loc.GetString("fire-extinguisher-component-safety-on-message"), uid,
-                Filter.Entities(args.User));
+                args.User);
             args.Cancel();
         }
     }
@@ -134,7 +124,7 @@ public sealed class FireExtinguisherSystem : EntitySystem
 
         if (comp.HasSafety)
         {
-            appearance.SetData(FireExtinguisherVisuals.Safety, comp.Safety);
+            _appearance.SetData(uid, FireExtinguisherVisuals.Safety, comp.Safety, appearance);
         }
     }
 
@@ -145,8 +135,8 @@ public sealed class FireExtinguisherSystem : EntitySystem
             return;
 
         extinguisher.Safety = !extinguisher.Safety;
-        SoundSystem.Play(Filter.Pvs(uid), extinguisher.SafetySound.GetSound(), uid,
-            AudioHelpers.WithVariation(0.125f).WithVolume(-4f));
+        SoundSystem.Play(extinguisher.SafetySound.GetSound(), Filter.Pvs(uid),
+            uid, AudioHelpers.WithVariation(0.125f).WithVolume(-4f));
         UpdateAppearance(uid, extinguisher);
     }
 }

@@ -1,4 +1,5 @@
-﻿using Robust.Client.Graphics;
+using Content.Client.Administration.Systems;
+using Robust.Client.Graphics;
 using Robust.Client.ResourceManagement;
 using Robust.Shared.Enums;
 using Robust.Shared.GameObjects;
@@ -29,16 +30,16 @@ namespace Content.Client.Administration
 
         protected override void Draw(in OverlayDrawArgs args)
         {
-            var viewport = _eyeManager.GetWorldViewport();
+            var viewport = args.WorldAABB;
 
             foreach (var playerInfo in _system.PlayerList)
             {
                 // Otherwise the entity can not exist yet
-                var entity = playerInfo.EntityUid;
-                if (!_entityManager.EntityExists(entity))
+                if (!_entityManager.EntityExists(playerInfo.EntityUid))
                 {
                     continue;
                 }
+                var entity = playerInfo.EntityUid.Value;
 
                 // if not on the same map, continue
                 if (_entityManager.GetComponent<TransformComponent>(entity).MapID != _eyeManager.CurrentMap)

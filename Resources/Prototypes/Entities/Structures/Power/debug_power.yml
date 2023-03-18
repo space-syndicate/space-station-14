@@ -24,7 +24,7 @@
     fixtures:
     - shape:
         !type:PhysShapeAabb
-          bounds: "-0.5,-0.5,0.5,0.5"
+        bounds: "-0.5,-0.5,0.5,0.5"
       layer: [MobMask, Opaque]
   - type: Transform
     anchored: true
@@ -68,7 +68,7 @@
     fixtures:
     - shape:
         !type:PhysShapeAabb
-          bounds: "-0.5,-0.5,0.5,0.5"
+        bounds: "-0.5,-0.5,0.5,0.5"
       layer: [MobMask, Opaque]
   - type: Transform
     anchored: true
@@ -94,13 +94,14 @@
     tags:
       - Debug
   - type: Clickable
+  - type: PowerNetworkBattery
   - type: InteractionOutline
   - type: Physics
   - type: Fixtures
     fixtures:
     - shape:
         !type:PhysShapeAabb
-          bounds: "-0.5,-0.5,0.5,0.5"
+        bounds: "-0.5,-0.5,0.5,0.5"
       layer: [MobMask, Opaque]
   - type: Transform
     anchored: true
@@ -160,7 +161,7 @@
     fixtures:
     - shape:
         !type:PhysShapeAabb
-          bounds: "-0.5,-0.5,0.5,0.5"
+        bounds: "-0.5,-0.5,0.5,0.5"
       layer: [MobMask, Opaque]
   - type: Transform
     anchored: true

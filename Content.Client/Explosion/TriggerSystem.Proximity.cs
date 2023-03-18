@@ -9,6 +9,7 @@ namespace Content.Client.Explosion;
 public sealed partial class TriggerSystem
 {
     [Dependency] private readonly AnimationPlayerSystem _player = default!;
+    [Dependency] private readonly SharedAppearanceSystem _appearance = default!;
 
     /*
      * Currently all of the appearance stuff is hardcoded for portable flashers
@@ -53,7 +54,7 @@ public sealed partial class TriggerSystem
         if (!TryComp<AppearanceComponent>(uid, out var appearance)) return;
 
         // So animation doesn't get spammed if no server state comes in.
-        appearance.SetData(ProximityTriggerVisualState.State, ProximityTriggerVisuals.Inactive);
+        _appearance.SetData(uid, ProximityTriggerVisualState.State, ProximityTriggerVisuals.Inactive, appearance);
         OnChangeData(uid, component, appearance);
     }
 
@@ -64,15 +65,16 @@ public sealed partial class TriggerSystem
 
     private void OnProxAppChange(EntityUid uid, TriggerOnProximityComponent component, ref AppearanceChangeEvent args)
     {
-        OnChangeData(uid, component, args.Component);
+        OnChangeData(uid, component, args.Component, args.Sprite);
     }
 
-    private void OnChangeData(EntityUid uid, TriggerOnProximityComponent component, AppearanceComponent appearance)
+    private void OnChangeData(EntityUid uid, TriggerOnProximityComponent component, AppearanceComponent appearance, SpriteComponent? spriteComponent = null)
     {
-        if (!TryComp<SpriteComponent>(component.Owner, out var spriteComponent)) return;
+        if (!Resolve(uid, ref spriteComponent))
+            return;
 
         TryComp<AnimationPlayerComponent>(component.Owner, out var player);
-        appearance.TryGetData(ProximityTriggerVisualState.State, out ProximityTriggerVisuals state);
+        _appearance.TryGetData<ProximityTriggerVisuals>(appearance.Owner, ProximityTriggerVisualState.State, out var state, appearance);
 
         switch (state)
         {

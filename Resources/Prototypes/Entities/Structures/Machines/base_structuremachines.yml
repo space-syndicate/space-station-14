@@ -8,17 +8,18 @@
     delay: 2
   - type: Physics
     bodyType: Static
+  - type: Transform
+    noRot: true
   - type: Fixtures
     fixtures:
     - shape:
         !type:PhysShapeAabb
-          bounds: "-0.45,-0.45,0.45,0.45"
-      mass: 25
-      layer:
-      - MobMask
-      - Opaque
+        bounds: "-0.45,-0.45,0.45,0.45"
+      density: 190
       mask:
-      - MobMask
+      - MachineMask
+      layer:
+      - MachineLayer
   - type: Damageable
     damageContainer: Inorganic
     damageModifierSet: Metallic
@@ -42,3 +43,19 @@
   - type: ApcPowerReceiver
     powerLoad: 1000
   - type: ExtensionCableReceiver
+
+- type: entity
+  abstract: true
+  id: ConstructibleMachine
+  components:
+  - type: Machine
+  - type: ContainerContainer
+    containers:
+      machine_board: !type:Container
+      machine_parts: !type:Container
+  - type: Construction
+    graph: Machine
+    node: machine
+    containers:
+    - machine_parts
+    - machine_board

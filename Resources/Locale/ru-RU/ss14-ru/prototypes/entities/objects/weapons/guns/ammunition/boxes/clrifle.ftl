@@ -1,13 +1,13 @@
 ent-BoxClRifleBase = коробка патронов (.25 безгильзовые)
     .desc = { ent-BaseItem.desc }
     .suffix = { "" }
-ent-BoxClRifle10x24 = ящик патронов (.25 безгильзовые)
+ent-BoxClRifle10x24 = коробка патронов (.25 безгильзовые)
     .desc = { ent-BoxClRifleBase.desc }
     .suffix = { "" }
-ent-BoxClRifleBigBox = ящик патронов (.25 безгильзовые)
+ent-BoxClRifleBigBox = коробка патронов (.25 безгильзовые)
     .desc = { ent-BoxClRifleBase.desc }
     .suffix = { "" }
-ent-BoxClRifleBigBoxRubber = ящик патронов (.25 безгильзовые резиновые)
+ent-BoxClRifleBigBoxRubber = коробка патронов (.25 безгильзовые резиновые)
     .desc = { ent-BoxClRifleBase.desc }
     .suffix = { "" }
 ent-BoxClRifleBox = коробка патронов (.25 безгильзовые)

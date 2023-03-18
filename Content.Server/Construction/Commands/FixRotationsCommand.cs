@@ -5,10 +5,7 @@ using Content.Shared.Construction;
 using Content.Shared.Tag;
 using Robust.Server.Player;
 using Robust.Shared.Console;
-using Robust.Shared.GameObjects;
-using Robust.Shared.IoC;
 using Robust.Shared.Map;
-using Robust.Shared.Maths;
 
 namespace Content.Server.Construction.Commands
 {
@@ -24,7 +21,7 @@ namespace Content.Server.Construction.Commands
         {
             var player = shell.Player as IPlayerSession;
             var entityManager = IoCManager.Resolve<IEntityManager>();
-            GridId gridId;
+            EntityUid? gridId;
             var xformQuery = entityManager.GetEntityQuery<TransformComponent>();
 
             switch (args.Length)
@@ -36,16 +33,16 @@ namespace Content.Server.Construction.Commands
                         return;
                     }
 
-                    gridId = xformQuery.GetComponent(playerEntity).GridID;
+                    gridId = xformQuery.GetComponent(playerEntity).GridUid;
                     break;
                 case 1:
-                    if (!int.TryParse(args[0], out var id))
+                    if (!EntityUid.TryParse(args[0], out var id))
                     {
-                        shell.WriteError($"{args[0]} is not a valid integer.");
+                        shell.WriteError($"{args[0]} is not a valid entity.");
                         return;
                     }
 
-                    gridId = new GridId(id);
+                    gridId = id;
                     break;
                 default:
                     shell.WriteLine(Help);
@@ -59,16 +56,16 @@ namespace Content.Server.Construction.Commands
                 return;
             }
 
-            if (!entityManager.EntityExists(grid.GridEntityId))
+            if (!entityManager.EntityExists(grid.Owner))
             {
                 shell.WriteError($"Grid {gridId} doesn't have an associated grid entity.");
                 return;
             }
 
             var changed = 0;
-            var tagSystem = EntitySystem.Get<TagSystem>();
+            var tagSystem = entityManager.EntitySysManager.GetEntitySystem<TagSystem>();
 
-            foreach (var child in xformQuery.GetComponent(grid.GridEntityId).ChildEntities)
+            foreach (var child in xformQuery.GetComponent(grid.Owner).ChildEntities)
             {
                 if (!entityManager.EntityExists(child))
                 {

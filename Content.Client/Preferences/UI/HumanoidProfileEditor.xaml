@@ -1,7 +1,7 @@
 <Control xmlns="https://spacestation14.io"
          xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-         xmlns:magicmirror="clr-namespace:Content.Client.CharacterAppearance"
-         xmlns:prefUi="clr-namespace:Content.Client.Preferences.UI">
+         xmlns:prefUi="clr-namespace:Content.Client.Preferences.UI"
+         xmlns:humanoid="clr-namespace:Content.Client.Humanoid">
     <BoxContainer Orientation="Horizontal">
         <!-- Left side -->
         <BoxContainer Orientation="Vertical" Margin="10 10 10 10">
@@ -15,7 +15,7 @@
                                 <BoxContainer Orientation="Vertical">
                                     <BoxContainer Orientation="Horizontal" VerticalExpand="True">
                                         <Label Text="{Loc 'humanoid-profile-editor-name-label'}" />
-                                        <LineEdit Name="CNameEdit" MinSize="270 0" VerticalAlignment="Center" />
+                                        <LineEdit Name="CNameEdit" MinSize="270 0" VerticalAlignment="Center" Margin="5 0 0 0" />
                                         <Button Name="CNameRandomize" Text="{Loc 'humanoid-profile-editor-name-random-button'}" />
                                     </BoxContainer>
                                     <Button Name="CRandomizeEverything" HorizontalAlignment="Center"
@@ -45,6 +45,7 @@
                     </prefUi:HighlightedContainer>
                 </BoxContainer>
             </BoxContainer>
+            <Control MinHeight="10" />
             <!-- tabContainer -->
             <TabContainer Name="CTabContainer" VerticalExpand="True">
                 <BoxContainer Orientation="Vertical">
@@ -57,8 +58,7 @@
                                 <prefUi:HighlightedContainer>
                                     <BoxContainer Orientation="Horizontal">
                                         <Label Text="{Loc 'humanoid-profile-editor-sex-label'}" />
-                                        <Button Name="CSexMale" Text="{Loc 'humanoid-profile-editor-sex-male-button'}" />
-                                        <Button Name="CSexFemale" Text="{Loc 'humanoid-profile-editor-sex-female-button'}" />
+                                        <OptionButton Name="CSexButton" />
                                     </BoxContainer>
                                 </prefUi:HighlightedContainer>
                                 <!-- Age -->
@@ -84,19 +84,29 @@
                                         <OptionButton Name="CSpeciesButton" />
                                     </BoxContainer>
                                 </prefUi:HighlightedContainer>
+                                <!-- Corvax-TTS-Start -->
+                                <prefUi:HighlightedContainer>
+                                    <BoxContainer Orientation="Horizontal">
+                                        <Label Text="{Loc 'humanoid-profile-editor-voice-label'}" />
+                                        <OptionButton Name="CVoiceButton" />
+                                        <Button Name="CVoicePlayButton" Text="{Loc 'humanoid-profile-editor-voice-play'}" MaxWidth="80" />
+                                    </BoxContainer>
+                                </prefUi:HighlightedContainer>
+                                <!-- Corvax-TTS-End -->
                             </BoxContainer>
                             <!-- Skin -->
                             <prefUi:HighlightedContainer>
-                                <BoxContainer HorizontalExpand="True">
+                                <BoxContainer HorizontalExpand="True" Orientation="Vertical">
                                     <Label Text="{Loc 'humanoid-profile-editor-skin-color-label'}" />
                                     <Slider HorizontalExpand="True" Name="CSkin" MinValue="0" MaxValue="100" Value="20" />
+                                    <BoxContainer Name="CRgbSkinColorContainer" Visible="False" Orientation="Vertical" HorizontalExpand="True"></BoxContainer>
                                 </BoxContainer>
                             </prefUi:HighlightedContainer>
                             <!-- Hair -->
                             <prefUi:HighlightedContainer>
                                 <BoxContainer Orientation="Horizontal">
-                                    <magicmirror:HairStylePicker Name="CHairStylePicker" HorizontalAlignment="Center" />
-                                    <magicmirror:HairStylePicker Name="CFacialHairPicker" />
+                                    <humanoid:SingleMarkingPicker Name="CHairStylePicker" Category="Hair" />
+                                    <humanoid:SingleMarkingPicker Name="CFacialHairPicker" Category="FacialHair" />
                                 </BoxContainer>
                             </prefUi:HighlightedContainer>
                             <!-- Clothing -->
@@ -117,7 +127,7 @@
                             <prefUi:HighlightedContainer>
                                 <BoxContainer Orientation="Vertical">
                                     <Label Text="{Loc 'humanoid-profile-editor-eyes-label'}" />
-                                    <magicmirror:EyeColorPicker Name="CEyeColorPicker" />
+                                    <humanoid:EyeColorPicker Name="CEyeColorPicker" />
                                 </BoxContainer>
                             </prefUi:HighlightedContainer>
                         </BoxContainer>
@@ -130,10 +140,22 @@
                         <BoxContainer Name="CJobList" Orientation="Vertical" />
                     </ScrollContainer>
                 </BoxContainer>
-                <BoxContainer Orientation="Vertical">
+                <BoxContainer Orientation="Vertical" Margin="10">
                     <!-- Antags -->
                     <ScrollContainer VerticalExpand="True">
                         <BoxContainer Name="CAntagList" Orientation="Vertical" />
+                    </ScrollContainer>
+                </BoxContainer>
+                <BoxContainer Orientation="Vertical" Margin="10">
+                    <!-- Traits -->
+                    <ScrollContainer VerticalExpand="True">
+                        <BoxContainer Name="CTraitsList" Orientation="Vertical" />
+                    </ScrollContainer>
+                </BoxContainer>
+                <BoxContainer Name="CMarkingsTab" Orientation="Vertical" Margin="10">
+                    <!-- Markings -->
+                    <ScrollContainer VerticalExpand="True">
+                        <humanoid:MarkingPicker Name="CMarkings" IgnoreCategories="Hair,FacialHair" />
                     </ScrollContainer>
                 </BoxContainer>
             </TabContainer>

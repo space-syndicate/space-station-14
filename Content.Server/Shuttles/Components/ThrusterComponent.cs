@@ -1,17 +1,12 @@
-using System.Collections.Generic;
-using Content.Server.Shuttles.EntitySystems;
+using Content.Server.Shuttles.Systems;
+using Content.Shared.Construction.Prototypes;
 using Content.Shared.Damage;
-using Robust.Shared.Analyzers;
-using Robust.Shared.GameObjects;
-using Robust.Shared.Maths;
-using Robust.Shared.Physics.Collision.Shapes;
-using Robust.Shared.Serialization.Manager.Attributes;
-using Robust.Shared.ViewVariables;
+using Robust.Shared.Serialization.TypeSerializers.Implementations.Custom.Prototype;
 
 namespace Content.Server.Shuttles.Components
 {
     [RegisterComponent]
-    [Friend(typeof(ThrusterSystem))]
+    [Access(typeof(ThrusterSystem))]
     public sealed class ThrusterComponent : Component
     {
         /// <summary>
@@ -47,11 +42,12 @@ namespace Content.Server.Shuttles.Components
         /// </summary>
         public bool IsOn;
 
-        [ViewVariables]
-        [DataField("impulse")]
-        public float Impulse = 450f;
+        [ViewVariables(VVAccess.ReadWrite)]
+        public float Thrust;
 
-        [ViewVariables]
+        [DataField("baseThrust"), ViewVariables(VVAccess.ReadWrite)]
+        public float BaseThrust = 750f;
+
         [DataField("thrusterType")]
         public ThrusterType Type = ThrusterType.Linear;
 
@@ -66,13 +62,22 @@ namespace Content.Server.Shuttles.Components
         /// <summary>
         /// How much damage is done per second to anything colliding with our thrust.
         /// </summary>
-        [ViewVariables] [DataField("damage")] public DamageSpecifier? Damage = new();
+        [DataField("damage")] public DamageSpecifier? Damage = new();
+
+        [DataField("requireSpace")]
+        public bool RequireSpace = true;
 
         // Used for burns
 
         public List<EntityUid> Colliding = new();
 
         public bool Firing = false;
+
+        [DataField("machinePartThrust", customTypeSerializer: typeof(PrototypeIdSerializer<MachinePartPrototype>))]
+        public string MachinePartThrust = "Laser";
+
+        [DataField("partRatingThrustMultiplier")]
+        public float PartRatingThrustMultiplier = 1.5f;
     }
 
     public enum ThrusterType

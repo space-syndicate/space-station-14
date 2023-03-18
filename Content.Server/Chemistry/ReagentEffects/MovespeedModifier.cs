@@ -1,11 +1,6 @@
-using System;
 using Content.Shared.Chemistry.Components;
 using Content.Shared.Chemistry.Reagent;
-using Content.Shared.Movement.Components;
-using Content.Shared.Movement.EntitySystems;
-using Robust.Shared.GameObjects;
-using Robust.Shared.IoC;
-using Robust.Shared.Serialization.Manager.Attributes;
+using Content.Shared.Movement.Systems;
 using Robust.Shared.Timing;
 
 namespace Content.Server.Chemistry.ReagentEffects
@@ -48,7 +43,11 @@ namespace Content.Server.Chemistry.ReagentEffects
             status.WalkSpeedModifier = WalkSpeedModifier;
             status.SprintSpeedModifier = SprintSpeedModifier;
 
-            IncreaseTimer(status, StatusLifetime);
+            // only going to scale application time
+            var statusLifetime = StatusLifetime;
+            statusLifetime *= args.Scale;
+
+            IncreaseTimer(status, statusLifetime);
 
             if (modified)
                 EntitySystem.Get<MovementSpeedModifierSystem>().RefreshMovementSpeedModifiers(args.SolutionEntity);

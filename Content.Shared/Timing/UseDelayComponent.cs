@@ -1,8 +1,6 @@
-using System;
 using System.Threading;
-using Robust.Shared.GameObjects;
-using Robust.Shared.Serialization.Manager.Attributes;
-using Robust.Shared.ViewVariables;
+using Robust.Shared.GameStates;
+using Robust.Shared.Serialization;
 
 namespace Content.Shared.Timing
 {
@@ -10,20 +8,38 @@ namespace Content.Shared.Timing
     /// Timer that creates a cooldown each time an object is activated/used
     /// </summary>
     [RegisterComponent]
+    [NetworkedComponent]
     public sealed class UseDelayComponent : Component
     {
-        [ViewVariables]
         public TimeSpan LastUseTime;
 
-        [ViewVariables]
+        public TimeSpan? DelayEndTime;
+
         [DataField("delay")]
-        public float Delay = 1;
+        [ViewVariables(VVAccess.ReadWrite)]
+        public TimeSpan Delay = TimeSpan.FromSeconds(1);
 
-        [ViewVariables]
-        public float Elapsed = 0f;
+        /// <summary>
+        ///     Stores remaining delay pausing (and eventually, serialization).
+        /// </summary>
+        [DataField("remainingDelay")]
+        public TimeSpan? RemainingDelay;
 
-        public CancellationTokenSource? CancellationTokenSource;
+        public bool ActiveDelay => DelayEndTime != null;
+    }
 
-        public bool ActiveDelay => CancellationTokenSource is { Token: { IsCancellationRequested: false } };
+    [Serializable, NetSerializable]
+    public sealed class UseDelayComponentState : ComponentState
+    {
+        public readonly TimeSpan LastUseTime;
+        public readonly TimeSpan Delay;
+        public readonly TimeSpan? DelayEndTime;
+
+        public UseDelayComponentState(TimeSpan lastUseTime, TimeSpan delay, TimeSpan? delayEndTime)
+        {
+            LastUseTime = lastUseTime;
+            Delay = delay;
+            DelayEndTime = delayEndTime;
+        }
     }
 }

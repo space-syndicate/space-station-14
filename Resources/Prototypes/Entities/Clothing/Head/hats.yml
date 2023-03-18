@@ -85,11 +85,15 @@
     sprite: Clothing/Head/Hats/cardborg_h.rsi
   - type: Clothing
     sprite: Clothing/Head/Hats/cardborg_h.rsi
+  - type: TypingIndicatorClothing
+    proto: robot
+  - type: IdentityBlocker
+  - type: IngestionBlocker
 
 - type: entity
   parent: ClothingHeadBase
   id: ClothingHeadHatCentcom
-  name: centcom brand hat
+  name: CentCom brand hat
   description: "It's good to be the emperor."
   components:
   - type: Sprite
@@ -107,6 +111,15 @@
     sprite: Clothing/Head/Hats/chefhat.rsi
   - type: Clothing
     sprite: Clothing/Head/Hats/chefhat.rsi
+  - type: Storage
+    capacity: 5
+  - type: UserInterface
+    interfaces:
+      - key: enum.StorageUiKey.Key
+        type: StorageBoundUserInterface
+  - type: ContainerContainer
+    containers:
+      storagebase: !type:Container
 
 - type: entity
   parent: ClothingHeadBase
@@ -165,6 +178,17 @@
 
 - type: entity
   parent: ClothingHeadBase
+  id: ClothingHeadHatOutlawHat
+  name: outlaw's hat
+  description: A hat that makes you look like you carry a notched pistol, numbered one and nineteen more.
+  components:
+  - type: Sprite
+    sprite: Clothing/Head/Hats/outlawhat.rsi
+  - type: Clothing
+    sprite: Clothing/Head/Hats/outlawhat.rsi
+
+- type: entity
+  parent: ClothingHeadBase
   id: ClothingHeadHatWitch1
   name: witch hat
   description: A witch hat.
@@ -199,7 +223,7 @@
 - type: entity
   parent: ClothingHeadBase
   id: ClothingHeadHatPlaguedoctor
-  name: plague doctor mask
+  name: plague doctor hat
   description: These were once used by plague doctors.
   components:
   - type: Sprite
@@ -409,11 +433,97 @@
 
 - type: entity
   parent: ClothingHeadBase
-  id: ClothingHeadCapCentcomBlack
-  name: special operations officer cap
-  description: The NanoTrasen gold-engraved special cap of the higher ranks, which has long gone through more than one blitzkrieg...
+  id: ClothingHeadPaperSack
+  name: papersack hat
+  description: A paper sack with crude holes cut out for eyes. Useful for hiding one's identity or ugliness.
+  components:
+  - type: Sprite
+    sprite: Clothing/Head/Hats/papersack.rsi
+  - type: Clothing
+    sprite: Clothing/Head/Hats/papersack.rsi
+
+- type: entity
+  parent: ClothingHeadBase
+  id: ClothingHeadPaperSackSmile
+  name: smiling papersack hat
+  description: A paper sack with crude holes cut out for eyes and a sketchy smile drawn on the front. Not creepy at all.
+  components:
+  - type: Sprite
+    sprite: Clothing/Head/Hats/papersacksmile.rsi
+  - type: Clothing
+    sprite: Clothing/Head/Hats/papersacksmile.rsi
+
+- type: entity
+  parent: ClothingHeadBase
+  id: ClothingHeadFishCap
+  name: fishing cap
+  description: Women fear me. Fish fear me. Men turn their eyes away from me. As I walk no beast dares make a sound in my presence. I am alone on this barren Earth.
+  components:
+  - type: Sprite
+    sprite: Clothing/Head/Hats/fishcap.rsi
+  - type: Clothing
+    sprite: Clothing/Head/Hats/fishcap.rsi
+
+- type: entity
+  parent: ClothingHeadBase
+  id: ClothingHeadNurseHat
+  name: nurse hat
+  description: Somehow I feel I'm not supposed to leave this place.
+  components:
+  - type: Sprite
+    sprite: Clothing/Head/Hats/nursehat.rsi
+  - type: Clothing
+    sprite: Clothing/Head/Hats/nursehat.rsi
+
+- type: entity
+  parent: ClothingHeadBase
+  id: ClothingHeadRastaHat
+  name: rasta hat
+  description: Right near da beach, boyee.
+  components:
+  - type: Sprite
+    sprite: Clothing/Head/Hats/rasta.rsi
+  - type: Clothing
+    sprite: Clothing/Head/Hats/rasta.rsi
+
+- type: entity
+  parent: ClothingHeadBase
+  id: ClothingHeadSafari
+  name: safari hat
+  description: Keeps the sun out of your eyes. Makes you a target for the locals.
+  components:
+  - type: Sprite
+    sprite: Clothing/Head/Hats/safarihat.rsi
+  - type: Clothing
+    sprite: Clothing/Head/Hats/safarihat.rsi
+
+- type: entity
+  parent: ClothingHeadBase
+  id: ClothingHeadHatJester
+  name: jester hat
+  description: A hat with bells, to add some merriness to the suit.
   components:
     - type: Sprite
-      sprite: Clothing/Head/Hats/centcom_officer_black.rsi
+      sprite: Clothing/Head/Hats/jester.rsi
     - type: Clothing
-      sprite: Clothing/Head/Hats/centcom_officer_black.rsi
+      sprite: Clothing/Head/Hats/jester.rsi
+
+- type: entity
+  parent: ClothingHeadHatJester
+  id: ClothingHeadHatJesterAlt
+  components:
+    - type: Sprite
+      sprite: Clothing/Head/Hats/jester2.rsi
+    - type: Clothing
+      sprite: Clothing/Head/Hats/jester2.rsi
+
+- type: entity
+  parent: ClothingHeadBase
+  id: ClothingHeadHatBeretCmo
+  name: chief medical officer's beret
+  description: Turquoise beret with a cross on the front. The sight of it calms you down and makes it clear that you will be cured.
+  components:
+  - type: Sprite
+    sprite: Clothing/Head/Hats/beret_cmo.rsi
+  - type: Clothing
+    sprite: Clothing/Head/Hats/beret_cmo.rsi

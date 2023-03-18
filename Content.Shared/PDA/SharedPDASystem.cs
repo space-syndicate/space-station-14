@@ -1,14 +1,13 @@
 using Content.Shared.Access.Components;
 using Content.Shared.Containers.ItemSlots;
 using Robust.Shared.Containers;
-using Robust.Shared.GameObjects;
-using Robust.Shared.IoC;
 
 namespace Content.Shared.PDA
 {
     public abstract class SharedPDASystem : EntitySystem
     {
         [Dependency] protected readonly ItemSlotsSystem ItemSlotsSystem = default!;
+        [Dependency] protected readonly SharedAppearanceSystem _appearance = default!;
 
         public override void Initialize()
         {
@@ -26,10 +25,10 @@ namespace Content.Shared.PDA
             if (pda.IdCard != null)
                 pda.IdSlot.StartingItem = pda.IdCard;
 
-            ItemSlotsSystem.AddItemSlot(uid, $"{pda.Name}-id", pda.IdSlot);
-            ItemSlotsSystem.AddItemSlot(uid, $"{pda.Name}-pen", pda.PenSlot);
+            ItemSlotsSystem.AddItemSlot(uid, PDAComponent.PDAIdSlotId, pda.IdSlot);
+            ItemSlotsSystem.AddItemSlot(uid, PDAComponent.PDAPenSlotId, pda.PenSlot);
 
-            UpdatePDAAppearance(pda);
+            UpdatePdaAppearance(uid, pda);
         }
 
         private void OnComponentRemove(EntityUid uid, PDAComponent pda, ComponentRemove args)
@@ -40,12 +39,10 @@ namespace Content.Shared.PDA
 
         protected virtual void OnItemInserted(EntityUid uid, PDAComponent pda, EntInsertedIntoContainerMessage args)
         {
-            if (!pda.Initialized) return;
-
-            if (args.Container.ID == pda.IdSlot.ID)
+            if (args.Container.ID == PDAComponent.PDAIdSlotId)
                 pda.ContainedID = CompOrNull<IdCardComponent>(args.Entity);
 
-            UpdatePDAAppearance(pda);
+            UpdatePdaAppearance(uid, pda);
         }
 
         protected virtual void OnItemRemoved(EntityUid uid, PDAComponent pda, EntRemovedFromContainerMessage args)
@@ -53,13 +50,13 @@ namespace Content.Shared.PDA
             if (args.Container.ID == pda.IdSlot.ID)
                 pda.ContainedID = null;
 
-            UpdatePDAAppearance(pda);
+            UpdatePdaAppearance(uid, pda);
         }
 
-        private void UpdatePDAAppearance(PDAComponent pda)
+        private void UpdatePdaAppearance(EntityUid uid, PDAComponent pda)
         {
             if (TryComp(pda.Owner, out AppearanceComponent ? appearance))
-                appearance.SetData(PDAVisuals.IDCardInserted, pda.ContainedID != null);
+                _appearance.SetData(uid, PDAVisuals.IDCardInserted, pda.ContainedID != null, appearance);
         }
     }
 }

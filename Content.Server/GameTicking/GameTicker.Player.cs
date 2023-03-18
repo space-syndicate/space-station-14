@@ -1,16 +1,11 @@
-using System;
+using Content.Server.Database;
 using Content.Server.Players;
-using Content.Server.Roles;
-using Content.Server.Station;
 using Content.Shared.GameTicking;
 using Content.Shared.GameWindow;
 using Content.Shared.Preferences;
-using Content.Shared.Station;
 using JetBrains.Annotations;
 using Robust.Server.Player;
 using Robust.Shared.Enums;
-using Robust.Shared.IoC;
-using Robust.Shared.Localization;
 using Robust.Shared.Timing;
 using Robust.Shared.Utility;
 
@@ -20,23 +15,19 @@ namespace Content.Server.GameTicking
     public sealed partial class GameTicker
     {
         [Dependency] private readonly IPlayerManager _playerManager = default!;
+        [Dependency] private readonly IServerDbManager _dbManager = default!;
 
         private void InitializePlayer()
         {
             _playerManager.PlayerStatusChanged += PlayerStatusChanged;
         }
 
-        private void PlayerStatusChanged(object? sender, SessionStatusEventArgs args)
+        private async void PlayerStatusChanged(object? sender, SessionStatusEventArgs args)
         {
             var session = args.Session;
 
             switch (args.NewStatus)
             {
-                case SessionStatus.Connecting:
-                    // Cancel shutdown update timer in progress.
-                    _updateShutdownCts?.Cancel();
-                    break;
-
                 case SessionStatus.Connected:
                 {
                     AddPlayerToDb(args.Session.UserId.UserId);
@@ -47,9 +38,15 @@ namespace Content.Server.GameTicking
 
                     // Make the player actually join the game.
                     // timer time must be > tick length
-                    Timer.Spawn(0, args.Session.JoinGame);
+                    // Timer.Spawn(0, args.Session.JoinGame); // Corvax-Queue: Moved to `JoinQueueManager`
 
-                    _chatManager.SendAdminAnnouncement(Loc.GetString("player-join-message", ("name", args.Session.Name)));
+                    var record = await _dbManager.GetPlayerRecordByUserId(args.Session.UserId);
+                    var firstConnection = record != null &&
+                                          Math.Abs((record.FirstSeenTime - record.LastSeenTime).TotalMinutes) < 1;
+
+                    _chatManager.SendAdminAnnouncement(firstConnection
+                        ? Loc.GetString("player-first-join-message", ("name", args.Session.Name))
+                        : Loc.GetString("player-join-message", ("name", args.Session.Name)));
 
                     if (LobbyEnabled && _roundStartCountdownHasNotStartedYetDueToNoPlayers)
                     {
@@ -62,7 +59,7 @@ namespace Content.Server.GameTicking
 
                 case SessionStatus.InGame:
                 {
-                    _prefsManager.OnClientConnected(session);
+                    _userDb.ClientConnected(session);
 
                     var data = session.ContentData();
 
@@ -77,13 +74,13 @@ namespace Content.Server.GameTicking
                         }
 
 
-                        SpawnWaitPrefs();
+                        SpawnWaitDb();
                     }
                     else
                     {
                         if (data.Mind.CurrentEntity == null)
                         {
-                            SpawnWaitPrefs();
+                            SpawnWaitDb();
                         }
                         else
                         {
@@ -97,20 +94,20 @@ namespace Content.Server.GameTicking
 
                 case SessionStatus.Disconnected:
                 {
-                    if (_playersInLobby.ContainsKey(session)) _playersInLobby.Remove(session);
-
                     _chatManager.SendAdminAnnouncement(Loc.GetString("player-leave-message", ("name", args.Session.Name)));
 
-                    ServerEmptyUpdateRestartCheck();
-                    _prefsManager.OnClientDisconnected(session);
+                    if (_playerGameStatuses.ContainsKey(args.Session.UserId)) // Corvax-Queue: Delete data only if player was in game
+                        _userDb.ClientDisconnected(session);
                     break;
                 }
             }
+            //When the status of a player changes, update the server info text
+            UpdateInfoText();
 
-            async void SpawnWaitPrefs()
+            async void SpawnWaitDb()
             {
-                await _prefsManager.WaitPreferencesLoaded(session);
-                SpawnPlayer(session, StationId.Invalid);
+                await _userDb.WaitLoadComplete(session);
+                SpawnPlayer(session, EntityUid.Invalid);
             }
 
             async void AddPlayerToDb(Guid id)
@@ -131,30 +128,38 @@ namespace Content.Server.GameTicking
         {
             _chatManager.DispatchServerMessage(session, Loc.GetString("game-ticker-player-join-game-message"));
 
-            if (_playersInLobby.ContainsKey(session))
-                _playersInLobby.Remove(session);
-
-            _playersInGame.Add(session.UserId);
+            _playerGameStatuses[session.UserId] = PlayerGameStatus.JoinedGame;
+            _db.AddRoundPlayers(RoundId, session.UserId);
 
             RaiseNetworkEvent(new TickerJoinGameEvent(), session.ConnectedClient);
         }
 
         private void PlayerJoinLobby(IPlayerSession session)
         {
-            _playersInLobby[session] = LobbyPlayerStatus.NotReady;
-            _playersInGame.Remove(session.UserId);
+            _playerGameStatuses[session.UserId] = LobbyEnabled ? PlayerGameStatus.NotReadyToPlay : PlayerGameStatus.ReadyToPlay;
+            _db.AddRoundPlayers(RoundId, session.UserId);
 
             var client = session.ConnectedClient;
             RaiseNetworkEvent(new TickerJoinLobbyEvent(), client);
             RaiseNetworkEvent(GetStatusMsg(session), client);
             RaiseNetworkEvent(GetInfoMsg(), client);
             RaiseNetworkEvent(GetPlayerStatus(), client);
-            RaiseNetworkEvent(GetJobsAvailable(), client);
+            RaiseLocalEvent(new PlayerJoinedLobbyEvent(session));
         }
 
         private void ReqWindowAttentionAll()
         {
             RaiseNetworkEvent(new RequestWindowAttentionEvent());
+        }
+    }
+
+    public sealed class PlayerJoinedLobbyEvent : EntityEventArgs
+    {
+        public readonly IPlayerSession PlayerSession;
+
+        public PlayerJoinedLobbyEvent(IPlayerSession playerSession)
+        {
+            PlayerSession = playerSession;
         }
     }
 }

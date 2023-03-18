@@ -1,10 +1,15 @@
 - type: entity
   id: SolarPanelBasePhysSprite
-  abstract: true
+  noSpawn: true
   name: solar panel
   placement:
     mode: SnapgridCenter
   components:
+  - type: MeleeSound
+    soundGroups:
+      Brute:
+        path:
+          "/Audio/Effects/glass_hit.ogg"
   - type: Clickable
   - type: InteractionOutline
   - type: Transform
@@ -15,18 +20,12 @@
     fixtures:
     - shape:
         !type:PhysShapeAabb
-          bounds: "-0.45,-0.1,0.45,0.1"
-      mass: 100
+        bounds: "-0.45,-0.1,0.45,0.1"
+      density: 550
       mask:
-      - Impassable
-      - MobImpassable
-      - VaultImpassable
-      - SmallImpassable
+      - MachineMask
       layer:
-      - Opaque
-      - MobImpassable
-      - VaultImpassable
-      - SmallImpassable
+      - MachineLayer
   - type: Sprite
     sprite: Structures/Power/Generation/solar_panel.rsi
     state: normal
@@ -44,6 +43,7 @@
   id: SolarPanel
   parent: SolarPanelBasePhysSprite
   name: solar panel
+  description: A solar panel that generates power.
   components:
   - type: PowerSupplier
     supplyRampTolerance: 500
@@ -73,6 +73,7 @@
   id: SolarPanelBroken
   parent: SolarPanelBasePhysSprite
   name: solar panel
+  description: A broken solar panel.
   suffix: Broken
   components:
   - type: Sprite
@@ -116,16 +117,17 @@
     - shape:
         !type:PhysShapeCircle
         radius: 0.25
-      mass: 75
+      density: 375
       mask:
-      - VaultImpassable
+      - MachineMask
       layer:
-      - VaultImpassable
+      - MachineLayer
   - type: Sprite
     sprite: Structures/Power/Generation/solar_panel.rsi
     state: solar_assembly
   - type: Transform
     anchored: true
+    noRot: true
   - type: Damageable
     damageContainer: Inorganic
     damageModifierSet: Metallic
@@ -146,6 +148,7 @@
 - type: entity
   id: SolarTracker
   name: solar tracker
+  description: A solar tracker. Tracks the nearest star.
   placement:
     mode: SnapgridCenter
   components:
@@ -157,23 +160,18 @@
     fixtures:
     - shape:
         !type:PhysShapeAabb {}
-      mass: 100
+      density: 100
       mask:
-      - Impassable
-      - MobImpassable
-      - VaultImpassable
-      - SmallImpassable
+      - MachineMask
       layer:
-      - Opaque
-      - MobImpassable
-      - VaultImpassable
-      - SmallImpassable
+      - MachineLayer
   - type: Sprite
     sprite: Structures/Power/Generation/solar_panel.rsi
     state: solar_tracker
     netsync: false
   - type: Transform
     anchored: true
+    noRot: true
   - type: Damageable
     damageContainer: Inorganic
     damageModifierSet: Metallic

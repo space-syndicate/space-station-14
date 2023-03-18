@@ -5,18 +5,56 @@
   abstract: true
   components:
   - type: HandheldLight
-    toggleAction:
-      name: action-name-toggle-light
-      description: action-description-toggle-light
-      icon: Objects/Tools/flashlight.rsi/flashlight.png
-      iconOn: Objects/Tools/flashlight.rsi/flashlight-on.png
-      event: !type:ToggleActionEvent
+    addPrefix: true
+    blinkingBehaviourId: blinking
+    radiatingBehaviourId: radiating
+  - type: LightBehaviour
+    behaviours:
+      - !type:FadeBehaviour
+        id: radiating
+        interpolate: Linear
+        maxDuration: 2.0
+        startValue: 3.0
+        endValue: 2.0
+        isLooped: true
+        property: Radius
+        enabled: false
+        reverseWhenFinished: true
+      - !type:PulseBehaviour
+        id: blinking
+        interpolate: Nearest
+        maxDuration: 1.0
+        minValue: 0.1
+        maxValue: 2.0
+        isLooped: true
+        property: Radius
+        enabled: false
   - type: PowerCellSlot
+    cellSlotId: cell_slot
+  - type: ItemSlots
+    slots:
+      cell_slot:
+        name: power-cell-slot-component-slot-name-default
+        startingItem: PowerCellSmall
+  - type: ContainerContainer
+    containers:
+      cell_slot: !type:ContainerSlot
   - type: Sprite
     sprite: Objects/Misc/Lights/lights.rsi
     netsync: false
   - type: Item
     sprite: Objects/Misc/Lights/lights.rsi
+    size: 20
+    heldPrefix: off
+  - type: PointLight
+    netsync: false
+    enabled: false
+    radius: 3
+    energy: 2
+  - type: ToggleableLightVisuals
+  - type: Appearance
+  - type: Physics
+    canCollide: false
 
 - type: entity
   name: lamp
@@ -31,15 +69,9 @@
       - state: lamp-on
         shader: unshaded
         visible: false
+        map: [ "light" ]
   - type: Item
     sprite: Objects/Misc/Lights/lamp.rsi
-  - type: PointLight
-    enabled: false
-    radius: 3
-    energy: 2
-  - type: Appearance
-    visuals:
-      - type: FlashLightVisualizer
 
 - type: entity
   name: banana lamp
@@ -53,13 +85,7 @@
       - state: bananalamp_on
         shader: unshaded
         visible: false
-  - type: PointLight
-    enabled: false
-    radius: 3
-    energy: 2
-  - type: Appearance
-    visuals:
-      - type: FlashLightVisualizer
+        map: [ "light" ]
 
 - type: entity
   name: desk lamp
@@ -74,15 +100,9 @@
       - state: lampgreen-on
         shader: unshaded
         visible: false
+        map: [ "light" ]
   - type: Item
     sprite: Objects/Misc/Lights/lampgreen.rsi
-  - type: PointLight
-    enabled: false
-    radius: 3
-    energy: 2
-  - type: Appearance
-    visuals:
-      - type: FlashLightVisualizer
 
 - type: entity
   name: floodlight
@@ -90,24 +110,27 @@
   parent: BaseLamp
   description: A pole with powerful mounted lights on it.
   components:
+  - type: Item
+    size: 50
   - type: Sprite
     layers:
       - state: floodlight
       - state: floodlight_on
         shader: unshaded
         visible: false
+        map: [ "light" ]
   - type: Physics
+    canCollide: true
   - type: Fixtures
     fixtures:
     - shape:
         !type:PhysShapeAabb
-          bounds: "-0.2, -0.5, 0.2, 0.5"
-      mass: 20
+        bounds: "-0.2, -0.5, 0.2, 0.5"
+      density: 50
       mask:
-      - Impassable
+      - MachineMask
       layer:
-      - Opaque
-      - Impassable
+      - MachineLayer
   - type: PointLight
     enabled: false
     radius: 8
@@ -132,9 +155,6 @@
             max: 1
       - !type:DoActsBehavior
         acts: [ "Destruction" ]
-  - type: Appearance
-    visuals:
-      - type: FlashLightVisualizer
 
 - type: entity
   name: broken floodlight
@@ -169,10 +189,10 @@
   - type: Fixtures
     fixtures:
     - shape:
-        !type:PhysShapeAabb {}
+        !type:PhysShapeAabb
+        bounds: "-0.2, -0.5, 0.2, 0.5"
+      density: 50
+      mask:
+      - MachineMask
       layer:
-      - Opaque
-      - Impassable
-      - MobImpassable
-      - VaultImpassable
-      - SmallImpassable
+      - MachineLayer

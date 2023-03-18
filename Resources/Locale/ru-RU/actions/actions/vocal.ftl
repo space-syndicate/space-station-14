@@ -1,1 +1,2 @@
-action-name-scream = Scream
+action-name-scream = Крикнуть
+action-description-scream = AAAAAAAAAAAAAAAAAAAAAAAAA

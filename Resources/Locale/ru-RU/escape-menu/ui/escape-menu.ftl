@@ -2,6 +2,8 @@
 
 ui-escape-title = Esc Меню
 ui-escape-options = Настройки
-ui-escape-ahelp = Админ помощь
+ui-escape-rules = Правила
+ui-escape-guidebook = Руководство
+ui-escape-wiki = Wiki
 ui-escape-disconnect = Отключиться
 ui-escape-quit = Выйти

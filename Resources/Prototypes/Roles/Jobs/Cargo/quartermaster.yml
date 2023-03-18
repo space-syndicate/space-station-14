@@ -1,28 +1,39 @@
 - type: job
   id: Quartermaster
-  name: "quartermaster"
-  head: true
+  name: job-name-qm
+  description: job-description-qm
+  playTimeTracker: JobQuartermaster
+  requirements:
+    - !type:RoleTimeRequirement
+      role: JobSalvageSpecialist
+      time: 36000 # Corvax-RoleTime
+    - !type:DepartmentTimeRequirement
+      department: Cargo
+      time: 54000 # Corvax-RoleTime
+#    - !type:OverallPlaytimeRequirement
+#      time: 108000
+  weight: 10
   startingGear: QuartermasterGear
-  departments:
-  - Cargo
   icon: "QuarterMaster"
-  supervisors: "the head of personnel"
+  supervisors: job-supervisors-hop
   access:
   - Cargo
   - Salvage
   - Quartermaster
   - Maintenance
   - External
+  - Command
 
 - type: startingGear
   id: QuartermasterGear
   equipment:
-    head: ClothingHeadHatCargosoft
+    head: ClothingHeadHatQMsoft
     jumpsuit: ClothingUniformJumpsuitQM
-    back: ClothingBackpackFilled
+    back: ClothingBackpackQuartermasterFilled
     shoes: ClothingShoesColorBrown
     id: QuartermasterPDA
-    ears: ClothingHeadsetCargo
+    ears: ClothingHeadsetQM
+    pocket1: AppraisalTool
   innerclothingskirt: ClothingUniformJumpskirtQM
-  satchel: ClothingBackpackSatchelFilled
-  duffelbag: ClothingBackpackDuffelFilled
+  satchel: ClothingBackpackSatchelQuartermasterFilled
+  duffelbag: ClothingBackpackDuffelQuartermasterFilled

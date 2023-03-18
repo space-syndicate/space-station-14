@@ -1,11 +1,11 @@
 - type: job
   id: Clown
-  name: "clown"
+  name: job-name-clown
+  description: job-description-clown
+  playTimeTracker: JobClown
   startingGear: ClownGear
-  departments:
-  - Civilian
   icon: "Clown"
-  supervisors: "the head of personnel"
+  supervisors: job-supervisors-hop
   access:
   - Theatre
   - Maintenance
@@ -19,6 +19,8 @@
           Piercing: 4
         groups:
           Burn: 3
+  - !type:AddImplantSpecial
+    implants: [ SadTromboneImplant ]
 
 - type: startingGear
   id: ClownGear

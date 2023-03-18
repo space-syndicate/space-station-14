@@ -9,7 +9,7 @@
   - type: Sprite
     sprite: Objects/Specific/Hydroponics/cannabis.rsi
   - type: Produce
-    seed: cannabis
+    seedId: cannabis
   - type: Food
   - type: SolutionContainerManager
     solutions:
@@ -26,7 +26,6 @@
   components:
   - type: Stack
     stackType: LeavesCannabisDried
-    max: 5
     count: 1
   - type: SolutionContainerManager
     solutions:
@@ -35,7 +34,7 @@
         - ReagentId: THC
           Quantity: 2
   - type: Sprite
-    sprite: Objects/Specific/Hydroponics/tobacco.rsi
+    sprite: Objects/Specific/Hydroponics/cannabis.rsi # Corvax-Resprite: Fix path
     state: dried
 
 - type: entity
@@ -46,7 +45,6 @@
   components:
   - type: Stack
     stackType: GroundCannabis
-    max: 5
     count: 1
   - type: SolutionContainerManager
     solutions:
@@ -55,12 +53,15 @@
         - ReagentId: THC
           Quantity: 10
   - type: Sprite
-    sprite: Objects/Misc/reageant_fillings.rsi
+    sprite: Objects/Misc/reagent_fillings.rsi
     state: powderpile
     color: darkgreen
   - type: Construction
     graph: smokeableGroundCannabis
     node: ground
+  - type: Tag
+    tags:
+      - Smokable
 
 - type: entity
   name: tobacco leaves
@@ -71,7 +72,7 @@
   - type: Sprite
     sprite: Objects/Specific/Hydroponics/tobacco.rsi
   - type: Produce
-    seed: tobacco
+    seedId: tobacco
 
 - type: entity
   name: dried tobacco leaves
@@ -81,7 +82,6 @@
   components:
   - type: Stack
     stackType: LeavesTobaccoDried
-    max: 5
     count: 1
   - type: SolutionContainerManager
     solutions:
@@ -101,7 +101,6 @@
   components:
   - type: Stack
     stackType: GroundTobacco
-    max: 5
     count: 1
   - type: SolutionContainerManager
     solutions:
@@ -110,9 +109,12 @@
         - ReagentId: Nicotine
           Quantity: 10
   - type: Sprite
-    sprite: Objects/Misc/reageant_fillings.rsi
+    sprite: Objects/Misc/reagent_fillings.rsi
     state: powderpile
     color: brown
   - type: Construction
     graph: smokeableGroundTobacco
     node: ground
+  - type: Tag
+    tags:
+      - Smokable

@@ -1,9 +1,6 @@
 using Content.Shared.Maps;
 using JetBrains.Annotations;
-using Robust.Shared.GameObjects;
 using Robust.Shared.Map;
-using Robust.Shared.Maths;
-using Robust.Shared.Serialization.Manager.Attributes;
 
 namespace Content.Shared.Construction.Conditions
 {
@@ -24,9 +21,9 @@ namespace Content.Shared.Construction.Conditions
             return !tileRef.Value.IsBlockedTurf(_filterMobs);
         }
 
-        public ConstructionGuideEntry? GenerateGuideEntry()
+        public ConstructionGuideEntry GenerateGuideEntry()
         {
-            return new ConstructionGuideEntry()
+            return new ConstructionGuideEntry
             {
                 Localization = "construction-step-condition-tile-not-blocked",
             };

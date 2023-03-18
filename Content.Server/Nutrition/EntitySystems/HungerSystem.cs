@@ -1,6 +1,6 @@
 using Content.Server.Nutrition.Components;
+using Content.Shared.Rejuvenate;
 using JetBrains.Annotations;
-using Robust.Shared.GameObjects;
 
 namespace Content.Server.Nutrition.EntitySystems
 {
@@ -8,6 +8,13 @@ namespace Content.Server.Nutrition.EntitySystems
     public sealed class HungerSystem : EntitySystem
     {
         private float _accumulatedFrameTime;
+
+        public override void Initialize()
+        {
+            base.Initialize();
+
+            SubscribeLocalEvent<HungerComponent, RejuvenateEvent>(OnRejuvenate);
+        }
 
         public override void Update(float frameTime)
         {
@@ -22,6 +29,11 @@ namespace Content.Server.Nutrition.EntitySystems
 
                 _accumulatedFrameTime -= 1;
             }
+        }
+
+        private void OnRejuvenate(EntityUid uid, HungerComponent component, RejuvenateEvent args)
+        {
+            component.ResetFood();
         }
     }
 }

@@ -1,121 +1,135 @@
 - type: reagent
   id: Flour
-  name: flour
+  name: reagent-name-flour
   group: Foods
-  desc: Used for baking.
-  physicalDesc: powdery
+  desc: reagent-desc-flour
+  physicalDesc: reagent-physical-desc-powdery
+  flavor: chalky
   color: white
   metabolisms:
     Food:
       effects:
-      - !type:SatiateHunger
-        factor: 1
+      - !type:AdjustReagent
+        reagent: Sugar
+        amount: 0.4
+      - !type:AdjustReagent
+        reagent: Nutriment
+        amount: 0.1
 
 - type: reagent
   id: Oats
-  name: oats
+  name: reagent-name-oats
   group: Foods
-  desc: Used for a variety of tasty purposes.
-  physicalDesc: coarse
+  desc: reagent-desc-oats
+  physicalDesc: reagent-physical-desc-coarse
+  flavor: oats
   color: tan
   metabolisms:
     Food:
       effects:
-      - !type:SatiateHunger
-        factor: 1
+      - !type:AdjustReagent
+        reagent: Sugar
+        amount: 0.2
+      - !type:AdjustReagent
+        reagent: Nutriment
+        amount: 0.3
 
 - type: reagent
   id: Enzyme
-  name: universal enzyme
+  name: reagent-name-enzyme
   group: Foods
-  desc: Used in cooking various dishes.
+  desc: reagent-desc-enzyme
+  physicalDesc: reagent-physical-desc-chalky
+  flavor: bitter
   color: "#009900"
-  metabolisms:
-    Food:
-      effects:
-      - !type:SatiateHunger
-        nutritionFactor: 1
 
 - type: reagent
   id: Egg
-  name: egg
+  name: reagent-name-egg
   group: Foods
-  desc: Used for baking.
-  physicalDesc: mucus-like
+  desc: reagent-desc-egg
+  physicalDesc: reagent-physical-desc-mucus-like
+  flavor: egg
   color: white
   metabolisms:
     Food:
       effects:
-      - !type:SatiateHunger
-        factor: 1
-
-- type: reagent
-  id: Sugar
-  name: sugar
-  group: Foods
-  desc: Tasty spacey sugar!
-  physicalDesc:
-  color: white
-  metabolisms:
-    Food:
-      effects:
-      - !type:SatiateHunger
-        factor: 1
+      - !type:AdjustReagent
+        reagent: Protein
+        amount: 0.5
 
 - type: reagent
   id: Blackpepper
-  name: black pepper
+  name: reagent-name-blackpepper
   group: Foods
-  desc: Often used to flavor food or make people sneeze.
-  physicalDesc: Grainy.
+  desc: reagent-desc-blackpepper
+  physicalDesc: reagent-physical-desc-grainy
+  flavor: peppery
   color: black
-  metabolisms:
-    Food:
-      effects:
-      - !type:SatiateHunger
-        factor: 1
 
 - type: reagent
   id: Vinegar
-  name: vinegar
+  name: reagent-name-vinegar
   group: Foods
-  desc: Often used to flavor food.
+  desc: reagent-desc-vinegar
+  physicalDesc: reagent-physical-desc-sour
+  flavor: bitter
   color: tan
   metabolisms:
     Food:
       effects:
-      - !type:SatiateHunger
-        factor: 1
+      - !type:AdjustReagent
+        reagent: Water
+        amount: 0.4
+      - !type:AdjustReagent
+        reagent: Vitamin
+        amount: 0.1
+      - !type:ChemVomit
+        probability: 0.1
+        conditions:
+          - !type:ReagentThreshold
+            min: 6
 
 - type: reagent
   id: Rice
-  name: rice
+  name: reagent-name-rice
   group: Foods
-  desc: Hard, small white grains.
+  desc: reagent-desc-rice
+  physicalDesc: reagent-physical-desc-chewy
+  flavor: rice
   color: white
   metabolisms:
     Food:
       effects:
-      - !type:SatiateHunger
+      - !type:AdjustReagent
+        reagent: Sugar
+        amount: 0.4
+      - !type:AdjustReagent
+        reagent: Nutriment
+        amount: 0.1
 
 - type: reagent
   id: OilOlive
-  name: olive oil
+  name: reagent-name-oil-olive
   group: Foods
-  desc: Viscous and fragrant.
+  desc: reagent-desc-oil-olive
+  physicalDesc: reagent-physical-desc-oily
+  flavor: oily
   color: olive
   metabolisms:
     Food:
       effects:
-      - !type:SatiateHunger
-        factor: 1
+      - !type:AdjustReagent
+        reagent: Nutriment
+        amount: 0.75
 
 - type: reagent
   id: Oil
-  name: oil
+  name: reagent-name-oil
   group: Foods
-  desc: Used by chefs to cook.
-  physicalDesc: oily
+  desc: reagent-desc-oil
+  physicalDesc: reagent-physical-desc-oily
+  flavor: oily
   color: "#b67823"
   boilingPoint: 300.0
   meltingPoint: -16.0
@@ -124,19 +138,23 @@
 
 - type: reagent
   id: CapsaicinOil
-  name: Capsaicin Oil
-  desc: Capsaicin Oil is the ingredient found in different types of hot peppers.
-  physicalDesc: oily
+  name: reagent-name-capsaicin-oil
+  desc: reagent-desc-capsaicin-oil
+  physicalDesc: reagent-physical-desc-oily
+  flavor: spicy
   color: "#FF0000"
   meltingPoint: 146
   boilingPoint: 410 # Really high boiling point compared to its melting
   metabolisms:
+    Food:
+      effects:
+      - !type:AdjustReagent
+        reagent: Nutriment #Oils enhance nutrition
+        amount: 0.75
     Poison:
       effects:
-        - !type:HealthChange
-          damage:
-            groups:
-              Caustic: 0.5
+        - !type:AdjustTemperature
+          amount: 250 # thermal energy, not temp
         - !type:HealthChange
           conditions:
             - !type:ReagentThreshold

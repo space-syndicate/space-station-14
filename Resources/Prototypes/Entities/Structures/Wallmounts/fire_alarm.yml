@@ -5,31 +5,55 @@
   components:
   - type: WallMount
   - type: ApcPowerReceiver
+  - type: Electrified
+    enabled: false
+    usesApcPower: true
   - type: ExtensionCableReceiver
-  - type: DeviceNetworkComponent
-    deviceNetId: Apc
-    frequency: 1621
-  - type: ApcNetworkConnection
-  - type: AtmosMonitor
-    monitorFire: true
-    displayMaxAlarmInNet: true
+  - type: DeviceNetwork
+    deviceNetId: AtmosDevices
+    receiveFrequencyId: AtmosMonitor
+    transmitFrequencyId: AtmosMonitor
+    prefix: device-address-prefix-fire-alarm
+    sendBroadcastAttemptEvent: true
+    examinableAddress: true
+  - type: DeviceList
+  - type: WiredNetworkConnection
+  - type: DeviceNetworkRequiresPower
   - type: AtmosDevice
   - type: AtmosAlarmable
-    alarmedBy: ["FireAlarm"] # alarm itself, network effect
+    syncWith:
+      - FireAlarm
+      - AirSensor
+      - GasVent
+      - GasScrubber
+    monitorAlertTypes:
+      - Temperature
+  - type: AtmosAlarmableVisuals
+    layerMap: "fireAlarmState"
+    alarmStates:
+      Normal: fire_off
+      Warning: fire_off # shouldn't be alarming at a warning
+      Danger: fire_on
+      Emagged: fire_emagged
+    hideOnDepowered: [ "fireAlarmState" ]
+  - type: Tag
+    tags:
+      - FireAlarm
   - type: Clickable
   - type: InteractionOutline
   - type: FireAlarm
+  - type: AccessReader
+    access: [ [ "Atmospherics" ] ]
   - type: Appearance
-    visuals:
-    - type: AtmosMonitorVisualizer
-      layerMap: "fireAlarmState"
-      alarmStates:
-        Normal: fire_off
-        Warning: fire_off # shouldn't be alarming at a warning
-        Danger: fire_on
-        Emagged: fire_emagged
-      hideOnDepowered: ["fireAlarmState"]
-    - type: WiresVisualizer
+  - type: WiresVisuals
+  - type: AlertLevelDisplay
+    alertVisuals:
+      green: fire_0
+      blue: fire_1
+      red: fire_2
+      violet: fire_1
+      yellow: fire_1
+      delta: fire_3
   - type: UserInterface
     interfaces:
     - key: enum.WiresUiKey.Key
@@ -51,6 +75,20 @@
   - type: Construction
     graph: FireAlarm
     node: fire_alarm
+  - type: Damageable
+    damageContainer: Inorganic
+    damageModifierSet: Metallic
+  - type: Destructible
+    thresholds:
+      - trigger:
+          !type:DamageTrigger
+          damage: 80
+        behaviors:
+          - !type:DoActsBehavior
+            acts: [ "Destruction" ]
+          - !type:PlaySoundBehavior
+            sound:
+              path: /Audio/Effects/metalbreak.ogg
   placement:
     mode: SnapgridCenter
     snap:
@@ -70,6 +108,8 @@
   - type: Construction
     graph: FireAlarm
     node: assembly
+  - type: Transform
+    anchored: true
   placement:
     mode: SnapgridCenter
     snap:

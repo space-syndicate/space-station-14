@@ -11,10 +11,12 @@ namespace Content.Shared.SubFloor;
 
 public sealed class TrayScannerSystem : EntitySystem
 {
-    [Dependency] private IMapManager _mapManager = default!;
-    [Dependency] private IGameTiming _gameTiming = default!;
-    [Dependency] private SharedSubFloorHideSystem _subfloorSystem = default!;
-    [Dependency] private SharedContainerSystem _containerSystem = default!;
+    [Dependency] private readonly IMapManager _mapManager = default!;
+    [Dependency] private readonly IGameTiming _gameTiming = default!;
+    [Dependency] private readonly SharedAppearanceSystem _appearance = default!;
+    [Dependency] private readonly SharedSubFloorHideSystem _subfloorSystem = default!;
+    [Dependency] private readonly SharedContainerSystem _containerSystem = default!;
+    [Dependency] private readonly SharedTransformSystem _transform = default!;
 
     private HashSet<EntityUid> _activeScanners = new();
     private RemQueue<EntityUid> _invalidScanners = new();
@@ -40,7 +42,7 @@ public sealed class TrayScannerSystem : EntitySystem
             return;
 
         scanner.Enabled = enabled;
-        scanner.Dirty();
+        Dirty(scanner);
 
         if (scanner.Enabled)
             _activeScanners.Add(uid);
@@ -50,7 +52,7 @@ public sealed class TrayScannerSystem : EntitySystem
 
         if (EntityManager.TryGetComponent<AppearanceComponent>(uid, out var appearance))
         {
-            appearance.SetData(TrayScannerVisual.Visual, scanner.Enabled == true ? TrayScannerVisual.On : TrayScannerVisual.Off);
+            _appearance.SetData(uid, TrayScannerVisual.Visual, scanner.Enabled ? TrayScannerVisual.On : TrayScannerVisual.Off, appearance);
         }
     }
 
@@ -64,7 +66,7 @@ public sealed class TrayScannerSystem : EntitySystem
         if (args.Current is not TrayScannerState state)
             return;
 
-        SetScannerEnabled(uid, scanner.Enabled, scanner);
+        SetScannerEnabled(uid, state.Enabled, scanner);
 
         // This is hacky and somewhat inefficient for the client. But when resetting predicted entities we have to unset
         // last position. This is because appearance data gets reset, but if the position isn't reset the scanner won't
@@ -83,7 +85,8 @@ public sealed class TrayScannerSystem : EntitySystem
         if (!_gameTiming.IsFirstTimePredicted)
             return;
 
-        if (!_activeScanners.Any()) return;
+        if (!_activeScanners.Any())
+            return;
 
         foreach (var scanner in _activeScanners)
         {
@@ -96,7 +99,9 @@ public sealed class TrayScannerSystem : EntitySystem
         }
 
         foreach (var invalidScanner in _invalidScanners)
+        {
             _activeScanners.Remove(invalidScanner);
+        }
 
         _invalidScanners.List?.Clear();
     }
@@ -148,15 +153,16 @@ public sealed class TrayScannerSystem : EntitySystem
         }
 
         var pos = transform.LocalPosition;
+        var parent = _transform.GetParent(transform);
 
         // zero vector implies container
         //
         // this means we should get the entity transform's parent
         if (pos == Vector2.Zero
-            && transform.Parent != null
+            && parent != null
             && _containerSystem.ContainsEntity(transform.ParentUid, uid))
         {
-            pos = transform.Parent.LocalPosition;
+            pos = parent.LocalPosition;
 
             // if this is also zero, we can check one more time
             //
@@ -165,7 +171,7 @@ public sealed class TrayScannerSystem : EntitySystem
             // that doesn't work, just don't bother any further
             if (pos == Vector2.Zero)
             {
-                var gpTransform = transform.Parent.Parent;
+                var gpTransform = _transform.GetParent(parent);
                 if (gpTransform != null
                     && _containerSystem.ContainsEntity(gpTransform.Owner, transform.ParentUid))
                 {
@@ -208,7 +214,7 @@ public sealed class TrayScannerSystem : EntitySystem
 
         // For now, limiting to the scanner's own grid. We could do a grid-lookup, but then what do we do if one grid
         // flies away, while the scanner's local-position remains unchanged?
-        if (_mapManager.TryGetGrid(transform.GridID, out var grid))
+        if (_mapManager.TryGetGrid(transform.GridUid, out var grid))
         {
             foreach (var entity in grid.GetAnchoredEntities(worldBox))
             {

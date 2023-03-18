@@ -1,12 +1,7 @@
-using System.Collections.Generic;
 using Content.Server.Storage.Components;
 using Content.Shared.Construction;
 using Content.Shared.Examine;
 using JetBrains.Annotations;
-using Robust.Shared.GameObjects;
-using Robust.Shared.IoC;
-using Robust.Shared.Localization;
-using Robust.Shared.Serialization.Manager.Attributes;
 
 namespace Content.Server.Construction.Conditions
 {
@@ -36,7 +31,7 @@ namespace Content.Server.Construction.Conditions
 
             if (entityStorage.IsWeldedShut != Welded)
             {
-                if (Welded == true)
+                if (Welded)
                     args.PushMarkup(Loc.GetString("construction-examine-condition-door-weld", ("entityName", metaData.EntityName)) + "\n");
                 else
                     args.PushMarkup(Loc.GetString("construction-examine-condition-door-unweld", ("entityName", metaData.EntityName)) + "\n");

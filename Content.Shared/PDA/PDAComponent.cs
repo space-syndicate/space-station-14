@@ -1,16 +1,23 @@
 using Content.Shared.Access.Components;
 using Content.Shared.Containers.ItemSlots;
-using Robust.Shared.GameObjects;
 using Robust.Shared.Prototypes;
-using Robust.Shared.Serialization.Manager.Attributes;
+using Robust.Shared.GameStates;
 using Robust.Shared.Serialization.TypeSerializers.Implementations.Custom.Prototype;
-using Robust.Shared.ViewVariables;
 
 namespace Content.Shared.PDA
 {
-    [RegisterComponent]
+    [RegisterComponent, NetworkedComponent]
     public sealed class PDAComponent : Component
     {
+        public const string PDAIdSlotId = "PDA-id";
+        public const string PDAPenSlotId = "PDA-pen";
+
+        /// <summary>
+        /// The base PDA sprite state, eg. "pda", "pda-clown"
+        /// </summary>
+        [DataField("state")]
+        public string? State;
+
         [DataField("idSlot")]
         public ItemSlot IdSlot = new();
 
@@ -27,5 +34,6 @@ namespace Content.Shared.PDA
         [ViewVariables] public bool FlashlightOn;
 
         [ViewVariables] public string? OwnerName;
+        [ViewVariables] public string? StationName;
     }
 }

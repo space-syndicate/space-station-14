@@ -1,12 +1,12 @@
 using Content.Server.Chat.Managers;
+using Content.Server.GameTicking.Rules.Configurations;
 using Content.Shared.CCVar;
 using Content.Shared.Damage;
-using Content.Shared.MobState.Components;
+using Content.Shared.Mobs.Components;
+using Content.Shared.Mobs.Systems;
 using Robust.Server.Player;
 using Robust.Shared.Configuration;
 using Robust.Shared.Enums;
-using Robust.Shared.IoC;
-using Robust.Shared.Localization;
 
 namespace Content.Server.GameTicking.Rules;
 
@@ -20,6 +20,7 @@ public sealed class DeathMatchRuleSystem : GameRuleSystem
 
     [Dependency] private readonly IPlayerManager _playerManager = default!;
     [Dependency] private readonly IChatManager _chatManager = default!;
+    [Dependency] private readonly MobStateSystem _mobStateSystem = default!;
     [Dependency] private readonly IConfigurationManager _cfg = default!;
 
     private const float RestartDelay = 10f;
@@ -65,7 +66,7 @@ public sealed class DeathMatchRuleSystem : GameRuleSystem
 
     private void RunDelayedCheck()
     {
-        if (!Enabled || _deadCheckTimer != null)
+        if (!RuleAdded || _deadCheckTimer != null)
             return;
 
         _deadCheckTimer = DeadCheckDelay;
@@ -73,7 +74,7 @@ public sealed class DeathMatchRuleSystem : GameRuleSystem
 
     public override void Update(float frameTime)
     {
-        if (!Enabled)
+        if (!RuleAdded)
             return;
 
         // If the restart timer is active, that means the round is ending soon, no need to check for winners.
@@ -107,7 +108,7 @@ public sealed class DeathMatchRuleSystem : GameRuleSystem
                 || !TryComp(playerEntity, out MobStateComponent? state))
                 continue;
 
-            if (!state.IsAlive())
+            if (!_mobStateSystem.IsAlive(playerEntity, state))
                 continue;
 
             // Found a second person alive, nothing decided yet!

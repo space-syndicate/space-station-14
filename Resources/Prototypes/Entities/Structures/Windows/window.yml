@@ -8,6 +8,11 @@
     snap:
     - Window
   components:
+  - type: MeleeSound
+    soundGroups:
+      Brute:
+        path:
+          "/Audio/Effects/glass_hit.ogg"
   - type: WallMount
     arc: 360 # interact despite grilles
   - type: Tag
@@ -28,13 +33,10 @@
     fixtures:
     - shape:
         !type:PhysShapeAabb {}
-      layer:
-      - Impassable
-      - MobImpassable
-      - VaultImpassable
-      - SmallImpassable
       mask:
-      - VaultImpassable
+      - FullTileMask
+      layer:
+      - GlassLayer
   - type: Damageable
     damageContainer: Inorganic
     damageModifierSet: Glass
@@ -65,24 +67,25 @@
         acts: [ "Destruction" ]
   - type: Airtight
   - type: IconSmooth
-    key: windows
+    key: walls  # Corvax-Resprite
     base: window
   - type: InteractionPopup
     interactSuccessString: comp-window-knock
-    popupPerceivedByOthers: true
+    messagePerceivedByOthers: comp-window-knock
     interactSuccessSound:
       path: /Audio/Effects/glass_knock.ogg
   - type: Construction
     graph: Window
     node: window
   - type: Appearance
-    visuals:
-    - type: DamageVisualizer
-      thresholds: [4, 8, 12]
-      damageDivisor: 2
-      trackAllDamage: true
-      damageOverlay:
-        sprite: Structures/Windows/cracks.rsi
+  - type: DamageVisuals
+    thresholds: [4, 8, 12]
+    damageDivisor: 2
+    trackAllDamage: true
+    damageOverlay:
+      sprite: Structures/Windows/cracks.rsi
+  - type: StaticPrice
+    price: 100
 
 - type: entity
   id: WindowDirectional
@@ -101,7 +104,13 @@
   - type: Tag
     tags:
       - Window
+  - type: MeleeSound
+    soundGroups:
+      Brute:
+        path:
+          "/Audio/Effects/glass_hit.ogg"
   - type: Sprite
+    drawdepth: Mobs
     netsync: false
     sprite: Structures/Windows/directional.rsi
     state: window
@@ -110,7 +119,7 @@
     state: window
   - type: InteractionPopup
     interactSuccessString: comp-window-knock
-    popupPerceivedByOthers: true
+    messagePerceivedByOthers: comp-window-knock
     interactSuccessSound:
       path: /Audio/Effects/glass_knock.ogg
   - type: Physics
@@ -118,15 +127,12 @@
     fixtures:
     - shape:
         !type:PhysShapeAabb
-        bounds: "-0.49,-0.49,0.49,-0.3"
-      mass: 50
-      layer:
-      - Impassable
-      - MobImpassable
-      - VaultImpassable
-      - SmallImpassable
+        bounds: "-0.49,-0.39,0.49,-0.36"
+      density: 1500
       mask:
-      - VaultImpassable
+      - FullTileMask
+      layer:
+      - GlassLayer
   - type: Repairable
   - type: Damageable
     damageContainer: Inorganic
@@ -162,6 +168,8 @@
   - type: Construction
     graph: WindowDirectional
     node: windowDirectional
+  - type: StaticPrice
+    price: 5
 
 - type: entity
   id: WindowTintedDirectional
@@ -185,6 +193,8 @@
     state: tinted_window
   - type: Occluder
     boundingBox: "-0.5,-0.5,0.5,-0.3"
+  - type: StaticPrice
+    price: 5
 
 - type: entity
   id: WindowFrostedDirectional
@@ -203,3 +213,5 @@
   - type: Icon
     sprite: Structures/Windows/directional.rsi
     state: frosted_window
+  - type: StaticPrice
+    price: 5

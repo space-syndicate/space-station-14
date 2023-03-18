@@ -7,18 +7,34 @@
     - type: Sprite
       layers:
         - state: red
-        - texture: Clothing/Eyes/Glasses/gar.rsi/icon-super.png
+        - sprite: Clothing/Eyes/Glasses/gar.rsi
+          state: icon-super
     - type: RandomSpawner
       rarePrototypes:
         - CigarGold
         - ClothingNeckCloakHerald
         - ClothingHeadHelmetTemplar
+        - ClothingNeckCloakTrans
+        - ClothingNeckCloakAdmin
+        - ClothingNeckCloakGoliathCloak
         - ToySkeleton
         - Basketball
         - Football
         - BalloonCorgi
         - PonderingOrb
         - Skub
+        - ClothingHeadHatCatEars
+        - DrinkMugDog
+        - ClothingNeckLGBTPin
+        - ClothingNeckAromanticPin
+        - ClothingNeckAsexualPin
+        - ClothingNeckBisexualPin
+        - ClothingNeckIntersexPin
+        - ClothingNeckLesbianPin
+        - ClothingNeckNonBinaryPin
+        - ClothingNeckPansexualPin
+        - ClothingNeckTransPin
+        - CluwneHorn
       rareChance: 0.01
       prototypes:
         - Lighter
@@ -35,10 +51,11 @@
         - ClothingShoeSlippersDuck
         - ClothingUnderSocksBee
         - ClothingUnderSocksCoder
+        - ClothingHeadHatSquid
       chance: 0.6
       offset: 0.0
-      
-      
+
+
 - type: entity
   name: Maint Loot Spawner
   suffix: Tools+Cells+Mats
@@ -48,14 +65,13 @@
     - type: Sprite
       layers:
         - state: red
-        - texture: Objects/Power/PowerCells/power_cell_large_sup.rsi/l_sup.png
+        - sprite: Objects/Power/power_cells.rsi
+          state: high
     - type: RandomSpawner
       rarePrototypes:
         - lanternextrabright
-        - PowerCellMediumSuper
-        - PowerCellSmallSuper
-        - PowerCellLargeSuper
-        - PowerCellSmallAutorecharge
+        - PowerCellHigh
+        - NetProbeCartridge
       rareChance: 0.08
       prototypes:
         - FlashlightLantern
@@ -67,13 +83,13 @@
         - ClothingBeltUtilityFilled
         - Shovel
         - Welder
-        - FlareGun
-        - IngotIron
+        - WeaponFlareGun
         - SheetSteel
         - SheetPlastic
+        - ResearchDisk
       chance: 0.6
       offset: 0.0
-      
+
 - type: entity
   name: Maint Loot Spawner
   suffix: Scrap+Weapons
@@ -83,7 +99,8 @@
     - type: Sprite
       layers:
         - state: red
-        - texture: Objects/Weapons/Melee/machete.rsi/icon.png
+        - sprite: Objects/Weapons/Melee/machete.rsi
+          state: icon
     - type: RandomSpawner
       rarePrototypes:
         - Machete
@@ -99,7 +116,9 @@
         - Crowbar
         - Shovel
         - Welder
-        - FlareGun
+        - WeaponFlareGun
         - Spear
+        - LidSalami
+        - ClothingEyesBlindfold
       chance: 0.6
       offset: 0.0

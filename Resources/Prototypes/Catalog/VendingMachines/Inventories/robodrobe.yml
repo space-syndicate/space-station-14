@@ -1,7 +1,5 @@
 - type: vendingMachineInventory
   id: RoboDrobeInventory
-  name: RoboDrobe
-  spriteName: robodrobe
   startingInventory:
     ClothingOuterCoatLab: 2
     ClothingShoesColorBlack: 2
@@ -9,3 +7,4 @@
     ClothingHeadHatCorpsoft: 2
     HatBandSkull: 2
     ClothingHeadsetRobotics: 2
+    ClothingOuterWinterRobo: 2

@@ -1,13 +1,8 @@
-﻿using Content.Server.Botany.Components;
-using Content.Shared.Botany;
-using Content.Shared.Chemistry.Components;
+using Content.Server.Botany.Components;
+using Content.Server.Botany.Systems;
 using Content.Shared.Chemistry.Reagent;
 using JetBrains.Annotations;
-using Robust.Shared.GameObjects;
-using Robust.Shared.IoC;
-using Robust.Shared.Maths;
 using Robust.Shared.Random;
-using Robust.Shared.Serialization.Manager.Attributes;
 
 namespace Content.Server.Chemistry.ReagentEffects.PlantMetabolism
 {
@@ -22,19 +17,20 @@ namespace Content.Server.Chemistry.ReagentEffects.PlantMetabolism
                                     plantHolderComp.Seed.Immutable)
                 return;
 
+
+            var plantHolder = args.EntityManager.System<PlantHolderSystem>();
+
             var random = IoCManager.Resolve<IRobustRandom>();
 
-            var chance = MathHelper.Lerp(15f, 125f, plantHolderComp.Seed.Lifespan) * 2f;
-            if (random.Prob(chance))
+            if (random.Prob(0.1f))
             {
-                plantHolderComp.CheckForDivergence(true);
+                plantHolder.EnsureUniqueSeed(args.SolutionEntity, plantHolderComp);
                 plantHolderComp.Seed.Lifespan++;
             }
 
-            chance = MathHelper.Lerp(15f, 125f, plantHolderComp.Seed.Endurance) * 2f;
-            if (random.Prob(chance))
+            if (random.Prob(0.1f))
             {
-                plantHolderComp.CheckForDivergence(true);
+                plantHolder.EnsureUniqueSeed(args.SolutionEntity, plantHolderComp);
                 plantHolderComp.Seed.Endurance++;
             }
         }

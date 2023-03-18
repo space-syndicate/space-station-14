@@ -1,6 +1,4 @@
-﻿using System;
-using Robust.Shared.GameObjects;
-using Robust.Shared.Serialization;
+﻿using Robust.Shared.Serialization;
 
 namespace Content.Shared.Atmos.Piping.Binary.Components
 {
@@ -24,6 +22,7 @@ namespace Content.Shared.Atmos.Piping.Binary.Components
     {
         PressureState,
         TankInserted,
+        Locked
     }
 
     #endregion

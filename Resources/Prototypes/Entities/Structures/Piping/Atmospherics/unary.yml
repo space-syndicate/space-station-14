@@ -8,12 +8,16 @@
     - type: AtmosDevice
     - type: SubFloorHide
       blockInteractions: false
+      blockAmbience: false
     - type: NodeContainer
       nodes:
         pipe:
           !type:PipeNode
           nodeGroupID: Pipe
           pipeDirection: South
+    - type: CollideOnAnchor
+    - type: StaticPrice
+      price: 200
 
 - type: entity
   parent: GasUnaryBase
@@ -25,13 +29,32 @@
   components:
     - type: ApcPowerReceiver
     - type: ExtensionCableReceiver
-    - type: DeviceNetworkComponent
-      deviceNetId: Apc
-      frequency: 1621
-    - type: ApcNetworkConnection
-    - type: AtmosAlarmable
-      alarmedBy:
-      - AirAlarm
+    - type: DeviceNetwork
+      deviceNetId: AtmosDevices
+      receiveFrequencyId: AtmosMonitor
+      transmitFrequencyId: AtmosMonitor
+      prefix: device-address-prefix-vent
+      sendBroadcastAttemptEvent: true
+      examinableAddress: true
+    - type: WiredNetworkConnection
+    - type: DeviceNetworkRequiresPower
+    - type: AtmosDevice
+    - type: AtmosMonitor
+      temperatureThreshold: stationTemperature
+      pressureThreshold: stationPressure
+      gasThresholds:
+        Oxygen: stationOxygen
+        Nitrogen: ignore
+        CarbonDioxide: stationCO2
+        Plasma: danger # everything below is usually bad
+        Tritium: danger
+        WaterVapor: stationWaterVapor
+        Miasma: stationMiasma
+        NitrousOxide: stationNO
+        Frezon: danger
+    - type: Tag
+      tags:
+        - GasVent
     - type: Sprite
       netsync: false
       drawdepth: FloorObjects
@@ -39,24 +62,36 @@
       layers:
         - sprite: Structures/Piping/Atmospherics/pipe.rsi
           state: pipeHalf
-          map: [ "enum.PipeColorVisualizer+Layers.Pipe" ]
+          map: [ "enum.PipeVisualLayers.Pipe" ]
         - state: vent_off
-          map: [ "enum.VentVisualLayers.Vent", "enum.SubfloorLayers.FirstLayer" ]
+          map: [ "enabled", "enum.SubfloorLayers.FirstLayer" ]
     - type: Appearance
+    - type: PipeColorVisuals
+    - type: GenericVisualizer
       visuals:
-        - type: PipeColorVisualizer
-        - type: VentPumpVisualizer
+        enum.VentPumpVisuals.State:
+          enabled:
+            Off: { state: vent_off }
+            In: { state: vent_in }
+            Out: { state: vent_out }
+            Welded: { state: vent_welded }
     - type: GasVentPump
     - type: Construction
       graph: GasUnary
       node: ventpump
     - type: VentCritterSpawnLocation
+    - type: AmbientSound
+      enabled: false
+      volume: -12
+      range: 5
+      sound:
+        path: /Audio/Ambience/Objects/gas_vent.ogg
 
 - type: entity
   parent: GasUnaryBase
   id: GasPassiveVent
   name: passive vent
-  description: It is an open vent.
+  description: It's an open vent.
   placement:
     mode: SnapgridCenter
   components:
@@ -68,12 +103,11 @@
       layers:
         - sprite: Structures/Piping/Atmospherics/pipe.rsi
           state: pipeHalf
-          map: [ "enum.PipeColorVisualizer+Layers.Pipe" ]
+          map: [ "enum.PipeVisualLayers.Pipe" ]
         - state: vent_off
           map: [ "enum.SubfloorLayers.FirstLayer" ]
     - type: Appearance
-      visuals:
-        - type: PipeColorVisualizer
+    - type: PipeColorVisuals
     - type: GasPassiveVent
     - type: Construction
       graph: GasUnary
@@ -89,13 +123,29 @@
   components:
     - type: ApcPowerReceiver
     - type: ExtensionCableReceiver
-    - type: DeviceNetworkComponent
-      deviceNetId: Apc
-      frequency: 1621
-    - type: ApcNetworkConnection
-    - type: AtmosAlarmable
-      alarmedBy:
-      - AirAlarm
+    - type: DeviceNetwork
+      deviceNetId: AtmosDevices
+      receiveFrequencyId: AtmosMonitor
+      transmitFrequencyId: AtmosMonitor
+      prefix: device-address-prefix-scrubber
+      examinableAddress: true
+    - type: DeviceNetworkRequiresPower
+    - type: AtmosMonitor
+      temperatureThreshold: stationTemperature
+      pressureThreshold: stationPressure
+      gasThresholds:
+        Oxygen: stationOxygen
+        Nitrogen: ignore
+        CarbonDioxide: stationCO2
+        Plasma: danger # everything below is usually bad
+        Tritium: danger
+        WaterVapor: stationWaterVapor
+        Miasma: stationMiasma
+        NitrousOxide: stationNO
+        Frezon: danger
+    - type: Tag
+      tags:
+        - GasScrubber
     - type: Sprite
       netsync: false
       drawdepth: FloorObjects
@@ -103,18 +153,31 @@
       layers:
         - sprite: Structures/Piping/Atmospherics/pipe.rsi
           state: pipeHalf
-          map: [ "enum.PipeColorVisualizer+Layers.Pipe" ]
+          map: [ "enum.PipeVisualLayers.Pipe" ]
         - state: scrub_off
-          map: [ "enum.ScrubberVisualLayers.Scrubber", "enum.SubfloorLayers.FirstLayer" ]
+          map: [ "enabled", "enum.SubfloorLayers.FirstLayer" ]
     - type: Appearance
+    - type: PipeColorVisuals
+    - type: GenericVisualizer
       visuals:
-        - type: PipeColorVisualizer
-        - type: ScrubberVisualizer
+        enum.ScrubberVisuals.State:
+          enabled:
+            Off: { state: scrub_off }
+            Scrub: { state: scrub_on }
+            Siphon: { state: scrub_purge }
+            WideScrub: { state: scrub_wide }
+            Welded: { state: scrub_welded }
     - type: AtmosDevice
     - type: GasVentScrubber
     - type: Construction
       graph: GasUnary
       node: ventscrubber
+    - type: AmbientSound
+      enabled: false
+      volume: -12
+      range: 5
+      sound:
+        path: /Audio/Ambience/Objects/gas_vent.ogg
 
 - type: entity
   parent: GasUnaryBase
@@ -124,25 +187,40 @@
   placement:
     mode: SnapgridCenter
   components:
-
-    # TODO ATMOS: Actual sprite for this.
     - type: Sprite
       drawdepth: FloorObjects
       netsync: false
+      sprite: Structures/Piping/Atmospherics/outletinjector.rsi
       layers:
         - state: pipeHalf
           sprite: Structures/Piping/Atmospherics/pipe.rsi
-          map: [ "enum.PipeColorVisualizer+Layers.Pipe", "enum.SubfloorLayers.FirstLayer" ]
-    - type: Appearance
+          map: [ "enum.PipeVisualLayers.Pipe" ]
+        - state: injector
+          map: [ "enum.SubfloorLayers.FirstLayer" ]
+        - state: injector-unshaded
+          shader: unshaded
+          map: [ "enum.LightLayers.Unshaded" ]
+          color: "#990000"
+    - type: GenericVisualizer
       visuals:
-        - type: PipeColorVisualizer
+       # toggle color of the unshaded light:
+       enum.OutletInjectorVisuals.Enabled:
+         unshaded:
+           True: { color: "#5eff5e" }
+           False: { color: "#990000" }
+    - type: Appearance
+    - type: PipeColorVisuals
     - type: GasOutletInjector
     - type: Construction
       graph: GasUnary
       node: outletinjector
+    - type: SubFloorHide
+      visibleLayers:
+      - enum.SubfloorLayers.FirstLayer
+      - enum.LightLayers.Unshaded
 
 - type: entity
-  parent: BaseMachinePowered
+  parent: [ BaseMachinePowered, ConstructibleMachine ]
   id: BaseGasThermoMachine
   name: thermomachine
   abstract: true
@@ -154,8 +232,7 @@
       sprite: Structures/Piping/Atmospherics/thermomachine.rsi
       noRot: true
     - type: Appearance
-      visuals:
-        - type: PipeColorVisualizer
+    - type: PipeColorVisuals
     - type: Rotatable
     - type: GasThermoMachine
     - type: AtmosPipeColor
@@ -167,9 +244,6 @@
     - type: ActivatableUI
       inHandsOnly: false
       key: enum.ThermomachineUiKey.Key
-    - type: Construction
-      graph: Machine
-      node: machine
     - type: Wires
       BoardName: "Thermomachine"
       LayoutId: Thermomachine
@@ -179,6 +253,10 @@
           !type:PipeNode
           nodeGroupID: Pipe
           pipeDirection: South
+    - type: StaticPrice
+      price: 500
+    - type: Transform
+      noRot: false
 
 - type: entity
   parent: BaseGasThermoMachine
@@ -191,18 +269,17 @@
     - type: Sprite
       layers:
         - state: freezer_off
-          map: [ "enum.ThermoMachineVisualizer+Layers.Enabled" ]
+          map: [ "enabled" ]
         - state: pipe
-          map: [ "enum.PipeColorVisualizer+Layers.Pipe" ]
-    - type: Appearance
+          map: [ "enum.PipeVisualLayers.Pipe" ]
+    - type: GenericVisualizer
       visuals:
-        - type: PipeColorVisualizer
-        - type: ThermoMachineVisualizer
-          disabledState: freezer_off
-          enabledState: freezer_on
+        enum.ThermoMachineVisuals.Enabled:
+          enabled:
+            True: { state: freezer_on }
+            False: { state: freezer_off }
     - type: GasThermoMachine
       mode: Freezer
-      minTemperature: 73.15
     - type: Machine
       board: ThermomachineFreezerMachineCircuitBoard
 
@@ -217,17 +294,16 @@
     - type: Sprite
       layers:
         - state: heater_off
-          map: [ "enum.ThermoMachineVisualizer+Layers.Enabled" ]
+          map: [ "enabled" ]
         - state: pipe
-          map: [ "enum.PipeColorVisualizer+Layers.Pipe" ]
-    - type: Appearance
+          map: [ "enum.PipeVisualLayers.Pipe" ]
+    - type: GenericVisualizer
       visuals:
-        - type: PipeColorVisualizer
-        - type: ThermoMachineVisualizer
-          disabledState: heater_off
-          enabledState: heater_on
+        enum.ThermoMachineVisuals.Enabled:
+          enabled:
+            True: { state: heater_on }
+            False: { state: heater_off }
     - type: GasThermoMachine
       mode: Heater
-      maxTemperature: 573.15 # This is changed when parts are refreshed.
     - type: Machine
       board: ThermomachineHeaterMachineCircuitBoard

@@ -1,10 +1,10 @@
 ent-BoxSRifleBase = { ent-BaseItem }
     .desc = { ent-BaseItem.desc }
     .suffix = { "" }
-ent-BoxSRifleBigBox = ящик патронов (.20 винтовочные)
+ent-BoxSRifleBigBox = коробка патронов (.20 винтовочные)
     .desc = { ent-BoxSRifleBase.desc }
     .suffix = { "" }
-ent-BoxSRifleBigBoxRubber = ящик патронов (.20 винтовочные резиновые)
+ent-BoxSRifleBigBoxRubber = коробка патронов (.20 винтовочные резиновые)
     .desc = { ent-BoxSRifleBase.desc }
     .suffix = { "" }
 ent-BoxSRifleBox = коробка патронов (.20 винтовочные)

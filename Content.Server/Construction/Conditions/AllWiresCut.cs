@@ -1,11 +1,7 @@
-﻿using System.Collections.Generic;
-using Content.Server.WireHacking;
+﻿using Content.Server.Wires;
 using Content.Shared.Construction;
 using Content.Shared.Examine;
 using JetBrains.Annotations;
-using Robust.Shared.GameObjects;
-using Robust.Shared.Localization;
-using Robust.Shared.Serialization.Manager.Attributes;
 
 namespace Content.Server.Construction.Conditions
 {
@@ -39,6 +35,9 @@ namespace Content.Server.Construction.Conditions
 
         public bool DoExamine(ExaminedEvent args)
         {
+            if (Condition(args.Examined, IoCManager.Resolve<IEntityManager>()))
+                return false;
+
             args.PushMarkup(Loc.GetString(Value
                 ? "construction-examine-condition-all-wires-cut"
                 : "construction-examine-condition-all-wires-intact"));

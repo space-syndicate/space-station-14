@@ -1,11 +1,15 @@
 - type: job
   id: Chemist
-  name: "chemist"
+  name: job-name-chemist
+  description: job-description-chemist
+  playTimeTracker: JobChemist
+  requirements:
+    - !type:DepartmentTimeRequirement
+      department: Medical
+      time: 18000 # Corvax-RoleTime
   startingGear: ChemistGear
-  departments:
-  - Medical
   icon: "Chemist"
-  supervisors: "the chief medical officer"
+  supervisors: job-supervisors-cmo
   access:
   - Medical
   - Chemistry
@@ -20,7 +24,7 @@
     outerClothing: ClothingOuterCoatLabChem
     id: ChemistryPDA
     ears: ClothingHeadsetMedical
-    belt: ClothingBeltMedical
+    belt: ChemBag
     pocket1: HandLabeler
     # the purple glasses?
   innerclothingskirt: ClothingUniformJumpskirtChemistry

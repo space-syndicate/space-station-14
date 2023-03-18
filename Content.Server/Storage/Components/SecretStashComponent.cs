@@ -1,12 +1,8 @@
 using Content.Server.Storage.EntitySystems;
-using Content.Server.Toilet;
 using Content.Shared.Containers.ItemSlots;
 using Content.Shared.Item;
-using Robust.Shared.Analyzers;
+using Content.Shared.Toilet;
 using Robust.Shared.Containers;
-using Robust.Shared.GameObjects;
-using Robust.Shared.Serialization.Manager.Attributes;
-using Robust.Shared.ViewVariables;
 
 namespace Content.Server.Storage.Components
 {
@@ -16,21 +12,21 @@ namespace Content.Server.Storage.Components
     ///     Other classes like <see cref="ToiletComponent"/> should implement it.
     /// </summary>
     [RegisterComponent]
-    [Friend(typeof(SecretStashSystem))]
+    [Access(typeof(SecretStashSystem))]
     public sealed class SecretStashComponent : Component
     {
         /// <summary>
         ///     Max item size that can be fitted into secret stash.
         /// </summary>
-        [ViewVariables] [DataField("maxItemSize")]
+        [DataField("maxItemSize")]
         public int MaxItemSize = (int) ReferenceSizes.Pocket;
 
         /// <summary>
         ///     IC secret stash name. For example "the toilet cistern".
         ///     If empty string, will replace it with entity name in init.
         /// </summary>
-        [ViewVariables] [DataField("secretPartName")]
-        public string SecretPartName = "";
+        [DataField("secretPartName", readOnly: true)]
+        public string SecretPartName { get; set; } = "";
 
         /// <summary>
         ///     Container used to keep secret stash item.

@@ -2,6 +2,7 @@ using System;
 using System.Linq;
 using System.Threading.Tasks;
 using Content.Server.Chemistry.EntitySystems;
+using Content.Server.Engineering.Components;
 using Content.Shared.Chemistry.Components;
 using Content.Shared.Chemistry.Reaction;
 using NUnit.Framework;
@@ -14,7 +15,7 @@ namespace Content.IntegrationTests.Tests.Chemistry
 {
     [TestFixture]
     [TestOf(typeof(ReactionPrototype))]
-    public sealed class TryAllReactionsTest : ContentIntegrationTest
+    public sealed class TryAllReactionsTest
     {
         private const string Prototypes = @"
 - type: entity
@@ -23,47 +24,55 @@ namespace Content.IntegrationTests.Tests.Chemistry
   - type: SolutionContainerManager
     solutions:
       beaker:
-        maxVol: 50";
-
+        maxVol: 50
+        canMix: true";
         [Test]
         public async Task TryAllTest()
         {
-            var options = new ServerContentIntegrationOption{ExtraPrototypes = Prototypes};
-            var server = StartServer(options);
-
-            await server.WaitIdleAsync();
+            await using var pairTracker = await PoolManager.GetServerClient(new PoolSettings{NoClient = true, ExtraPrototypes = Prototypes});
+            var server = pairTracker.Pair.Server;
 
             var entityManager = server.ResolveDependency<IEntityManager>();
             var prototypeManager = server.ResolveDependency<IPrototypeManager>();
-            var mapManager = server.ResolveDependency<IMapManager>();
-            var coordinates = GetMainEntityCoordinates(mapManager);
+            var testMap = await PoolManager.CreateTestMap(pairTracker);
+            var coordinates = testMap.GridCoords;
+            var solutionSystem = server.ResolveDependency<IEntitySystemManager>()
+                .GetEntitySystem<SolutionContainerSystem>();
 
             foreach (var reactionPrototype in prototypeManager.EnumeratePrototypes<ReactionPrototype>())
             {
                 //since i have no clue how to isolate each loop assert-wise im just gonna throw this one in for good measure
                 Console.WriteLine($"Testing {reactionPrototype.ID}");
 
-                EntityUid beaker;
+                EntityUid beaker = default;
                 Solution component = null;
 
-                server.Assert(() =>
+                await server.WaitAssertion(() =>
                 {
                     beaker = entityManager.SpawnEntity("TestSolutionContainer", coordinates);
-                    Assert.That(EntitySystem.Get<SolutionContainerSystem>()
+                    Assert.That(solutionSystem
                         .TryGetSolution(beaker, "beaker", out component));
                     foreach (var (id, reactant) in reactionPrototype.Reactants)
                     {
-                        Assert.That(EntitySystem.Get<SolutionContainerSystem>()
+                        Assert.That(solutionSystem
                             .TryAddReagent(beaker, component, id, reactant.Amount, out var quantity));
                         Assert.That(reactant.Amount, Is.EqualTo(quantity));
                     }
 
-                    EntitySystem.Get<SolutionContainerSystem>().SetTemperature(beaker, component, reactionPrototype.MinimumTemperature);
+                    solutionSystem.SetTemperature(beaker, component, reactionPrototype.MinimumTemperature);
+
+                    if (reactionPrototype.MixingCategories != null)
+                    {
+                        var dummyEntity = entityManager.SpawnEntity(null, MapCoordinates.Nullspace);
+                        var mixerComponent = entityManager.AddComponent<ReactionMixerComponent>(dummyEntity);
+                        mixerComponent.ReactionTypes = reactionPrototype.MixingCategories;
+                        solutionSystem.UpdateChemicals(beaker, component, true, mixerComponent);
+                    }
                 });
 
                 await server.WaitIdleAsync();
 
-                server.Assert(() =>
+                await server.WaitAssertion(() =>
                 {
                     //you just got linq'd fool
                     //(i'm sorry)
@@ -78,8 +87,9 @@ namespace Content.IntegrationTests.Tests.Chemistry
 
                     Assert.That(foundProductsMap.All(x => x.Value));
                 });
-            }
 
+            }
+            await pairTracker.CleanReturnAsync();
         }
     }
 

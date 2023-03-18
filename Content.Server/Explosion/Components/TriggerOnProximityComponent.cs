@@ -1,10 +1,7 @@
 using Content.Server.Explosion.EntitySystems;
-using Robust.Shared.GameObjects;
-using Robust.Shared.Physics.Collision.Shapes;
-using Robust.Shared.Serialization.Manager.Attributes;
-using Robust.Shared.ViewVariables;
-using System.Collections.Generic;
 using Content.Shared.Explosion;
+using Robust.Shared.Physics.Collision.Shapes;
+using Robust.Shared.Physics.Components;
 
 namespace Content.Server.Explosion.Components
 {
@@ -17,26 +14,23 @@ namespace Content.Server.Explosion.Components
     {
         public const string FixtureID  = "trigger-on-proximity-fixture";
 
-        public HashSet<PhysicsComponent> Colliding = new();
+        public readonly HashSet<PhysicsComponent> Colliding = new();
 
         [DataField("shape", required: true)]
-        public IPhysShape Shape { get; set; } = new PhysShapeCircle {Radius = 2};
+        public IPhysShape Shape { get; set; } = new PhysShapeCircle(2f);
 
         /// <summary>
         /// How long the the proximity trigger animation plays for.
         /// </summary>
-        [ViewVariables]
         [DataField("animationDuration")]
         public float AnimationDuration = 0.3f;
 
         /// <summary>
         /// Whether the entity needs to be anchored for the proximity to work.
         /// </summary>
-        [ViewVariables]
         [DataField("requiresAnchored")]
         public bool RequiresAnchored { get; set; } = true;
 
-        [ViewVariables]
         [DataField("enabled")]
         public bool Enabled = true;
 
@@ -47,6 +41,7 @@ namespace Content.Server.Explosion.Components
         /// <summary>
         /// How much cooldown has elapsed (if relevant).
         /// </summary>
+        [DataField("accumulator")]
         public float Accumulator = 0f;
 
         /// <summary>

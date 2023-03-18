@@ -1,11 +1,8 @@
-using Content.Server.Administration;
 using Content.Server.GameTicking;
 using Content.Server.Players;
 using Content.Shared.Administration;
 using Robust.Server.Player;
 using Robust.Shared.Console;
-using Robust.Shared.GameObjects;
-using Robust.Shared.IoC;
 
 namespace Content.Server.Ghost
 {
@@ -21,21 +18,20 @@ namespace Content.Server.Ghost
             var player = shell.Player as IPlayerSession;
             if (player == null)
             {
-                shell?.WriteLine("You have no session, you can't ghost.");
+                shell.WriteLine("You have no session, you can't ghost.");
                 return;
             }
 
             var mind = player.ContentData()?.Mind;
             if (mind == null)
             {
-                shell?.WriteLine("You have no Mind, you can't ghost.");
+                shell.WriteLine("You have no Mind, you can't ghost.");
                 return;
             }
 
-            if (!EntitySystem.Get<GameTicker>().OnGhostAttempt(mind, true))
+            if (!EntitySystem.Get<GameTicker>().OnGhostAttempt(mind, true, viaCommand:true))
             {
-                shell?.WriteLine("You can't ghost right now.");
-                return;
+                shell.WriteLine("You can't ghost right now.");
             }
         }
     }

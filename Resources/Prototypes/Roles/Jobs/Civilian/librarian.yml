@@ -1,11 +1,11 @@
 - type: job
   id: Librarian
-  name: "librarian"
+  name: job-name-librarian
+  description: job-description-librarian
+  playTimeTracker: JobLibrarian
   startingGear: LibrarianGear
-  departments:
-  - Civilian
   icon: "Librarian"
-  supervisors: "the head of personnel"
+  supervisors: job-supervisors-hop
   access:
   - Service
   - Maintenance
@@ -14,10 +14,15 @@
   id: LibrarianGear
   equipment:
     jumpsuit: ClothingUniformJumpsuitLibrarian
-    back: ClothingBackpackBriefcaseFilled
-    shoes: ClothingShoesColorBlack
+    back: ClothingBackpackLibrarianFilled
+    shoes: ClothingShoesBootsLaceup
     id: LibrarianPDA
     ears: ClothingHeadsetService
     pocket1: d10Dice
-  innerclothingskirt: ClothingUniformJumpskirtColorLightBrown
-
+    belt: BooksBag
+    pocket2: HandLabeler # for making named bestsellers
+  inhand:
+    right hand: BriefcaseBrownFilled
+  innerclothingskirt: ClothingUniformJumpskirtLibrarian # Corvax-Resprite
+  satchel: ClothingBackpackSatchelLibrarianFilled
+  duffelbag: ClothingBackpackDuffelLibrarianFilled

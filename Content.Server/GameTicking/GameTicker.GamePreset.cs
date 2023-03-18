@@ -1,15 +1,17 @@
-using System;
 using System.Diagnostics.CodeAnalysis;
+using System.Linq;
+using System.Threading.Tasks;
+using Content.Server.GameTicking.Events;
 using Content.Server.GameTicking.Presets;
 using Content.Server.GameTicking.Rules;
 using Content.Server.Ghost.Components;
 using Content.Shared.CCVar;
 using Content.Shared.Damage;
 using Content.Shared.Damage.Prototypes;
-using Content.Shared.MobState.Components;
+using Content.Shared.Database;
+using Content.Shared.Mobs.Components;
+using Content.Shared.Mobs.Systems;
 using Robust.Server.Player;
-using Robust.Shared.GameObjects;
-using Robust.Shared.IoC;
 
 namespace Content.Server.GameTicking
 {
@@ -17,7 +19,9 @@ namespace Content.Server.GameTicking
     {
         public const float PresetFailedCooldownIncrease = 30f;
 
-        private GamePresetPrototype? _preset;
+        [Dependency] private readonly MobStateSystem _mobStateSystem = default!;
+
+        public GamePresetPrototype? Preset { get; private set; }
 
         private bool StartPreset(IPlayerSession[] origReadyPlayers, bool force)
         {
@@ -27,7 +31,7 @@ namespace Content.Server.GameTicking
             if (!startAttempt.Cancelled)
                 return true;
 
-            var presetTitle = _preset != null ? Loc.GetString(_preset.ModeTitle) : string.Empty;
+            var presetTitle = Preset != null ? Loc.GetString(Preset.ModeTitle) : string.Empty;
 
             void FailedPresetRestart()
             {
@@ -39,7 +43,7 @@ namespace Content.Server.GameTicking
 
             if (_configurationManager.GetCVar(CCVars.GameLobbyFallbackEnabled))
             {
-                var oldPreset = _preset;
+                var oldPreset = Preset;
                 ClearGameRules();
                 SetGamePreset(_configurationManager.GetCVar(CCVars.GameLobbyFallbackPreset));
                 AddGamePresetRules();
@@ -51,7 +55,7 @@ namespace Content.Server.GameTicking
                 _chatManager.DispatchServerAnnouncement(
                     Loc.GetString("game-ticker-start-round-cannot-start-game-mode-fallback",
                         ("failedGameMode", presetTitle),
-                        ("fallbackMode", Loc.GetString(_preset!.ModeTitle))));
+                        ("fallbackMode", Loc.GetString(Preset!.ModeTitle))));
 
                 if (startAttempt.Cancelled)
                 {
@@ -72,7 +76,7 @@ namespace Content.Server.GameTicking
 
         private void InitializeGamePreset()
         {
-            SetGamePreset(_configurationManager.GetCVar(CCVars.GameLobbyDefaultPreset));
+            SetGamePreset(LobbyEnabled ? _configurationManager.GetCVar(CCVars.GameLobbyDefaultPreset) : "sandbox");
         }
 
         public void SetGamePreset(GamePresetPrototype preset, bool force = false)
@@ -81,7 +85,7 @@ namespace Content.Server.GameTicking
             if (DummyTicker)
                 return;
 
-            _preset = preset;
+            Preset = preset;
             UpdateInfoText();
 
             if (force)
@@ -123,10 +127,10 @@ namespace Content.Server.GameTicking
 
         private bool AddGamePresetRules()
         {
-            if (DummyTicker || _preset == null)
+            if (DummyTicker || Preset == null)
                 return false;
 
-            foreach (var rule in _preset.Rules)
+            foreach (var rule in Preset.Rules)
             {
                 if (!_prototypeManager.TryIndex(rule, out GameRulePrototype? ruleProto))
                     continue;
@@ -139,14 +143,20 @@ namespace Content.Server.GameTicking
 
         private void StartGamePresetRules()
         {
-            foreach (var rule in _addedGameRules)
+            // May be touched by the preset during init.
+            foreach (var rule in _addedGameRules.ToArray())
             {
                 StartGameRule(rule);
             }
         }
 
-        public bool OnGhostAttempt(Mind.Mind mind, bool canReturnGlobal)
+        public bool OnGhostAttempt(Mind.Mind mind, bool canReturnGlobal, bool viaCommand = false)
         {
+            var playerEntity = mind.CurrentEntity;
+
+            if (playerEntity != null && viaCommand)
+                _adminLogger.Add(LogType.Mind, $"{EntityManager.ToPrettyString(playerEntity.Value):player} is attempting to ghost via command");
+
             var handleEv = new GhostAttemptHandleEvent(mind, canReturnGlobal);
             RaiseLocalEvent(handleEv);
 
@@ -154,10 +164,16 @@ namespace Content.Server.GameTicking
             if (handleEv.Handled)
                 return handleEv.Result;
 
-            var playerEntity = mind.OwnedEntity;
+            if (mind.PreventGhosting)
+            {
+                if (mind.Session != null)
+                    // Logging is suppressed to prevent spam from ghost attempts caused by movement attempts
+                    _chatManager.DispatchServerMessage(mind.Session, Loc.GetString("comp-mind-ghosting-prevented"),
+                        true);
+                return false;
+            }
 
-            var entities = IoCManager.Resolve<IEntityManager>();
-            if (entities.HasComponent<GhostComponent>(playerEntity))
+            if (HasComp<GhostComponent>(playerEntity))
                 return false;
 
             if (mind.VisitingEntity != default)
@@ -168,6 +184,9 @@ namespace Content.Server.GameTicking
             var position = playerEntity is {Valid: true}
                 ? Transform(playerEntity.Value).Coordinates
                 : GetObserverSpawnPoint();
+
+            if (position == default)
+                return false;
 
             // Ok, so, this is the master place for the logic for if ghosting is "too cheaty" to allow returning.
             // There's no reason at this time to move it to any other place, especially given that the 'side effects required' situations would also have to be moved.
@@ -181,7 +200,7 @@ namespace Content.Server.GameTicking
 
             if (canReturnGlobal && TryComp(playerEntity, out MobStateComponent? mobState))
             {
-                if (mobState.IsCritical())
+                if (_mobStateSystem.IsCritical(playerEntity.Value, mobState))
                 {
                     canReturn = true;
 
@@ -192,7 +211,10 @@ namespace Content.Server.GameTicking
                 }
             }
 
-            var ghost = Spawn("MobObserver", position.ToMap(entities));
+            var xformQuery = GetEntityQuery<TransformComponent>();
+            var coords = _transform.GetMoverCoordinates(position, xformQuery);
+
+            var ghost = Spawn("MobObserver", coords);
 
             // Try setting the ghost entity name to either the character name or the player name.
             // If all else fails, it'll default to the default entity prototype name, "observer".
@@ -210,6 +232,9 @@ namespace Content.Server.GameTicking
                 ghostComponent.TimeOfDeath = mind.TimeOfDeath!.Value;
             }
 
+            if (playerEntity != null)
+                _adminLogger.Add(LogType.Mind, $"{EntityManager.ToPrettyString(playerEntity.Value):player} ghosted{(!canReturn ? " (non-returnable)" : "")}");
+
             _ghosts.SetCanReturnToBody(ghostComponent, canReturn);
 
             if (canReturn)
@@ -217,6 +242,24 @@ namespace Content.Server.GameTicking
             else
                 mind.TransferTo(ghost);
             return true;
+        }
+
+        private void IncrementRoundNumber()
+        {
+            var playerIds = _playerGameStatuses.Keys.Select(player => player.UserId).ToArray();
+            var serverName = _configurationManager.GetCVar(CCVars.AdminLogsServerName);
+
+            // TODO FIXME AAAAAAAAAAAAAAAAAAAH THIS IS BROKEN
+            // Task.Run as a terrible dirty workaround to avoid synchronization context deadlock from .Result here.
+            // This whole setup logic should be made asynchronous so we can properly wait on the DB AAAAAAAAAAAAAH
+            var task = Task.Run(async () =>
+            {
+                var server = await _db.AddOrGetServer(serverName);
+                return await _db.AddNewRound(server, playerIds);
+            });
+
+            _taskManager.BlockWaitOnTask(task);
+            RoundId = task.GetAwaiter().GetResult();
         }
     }
 

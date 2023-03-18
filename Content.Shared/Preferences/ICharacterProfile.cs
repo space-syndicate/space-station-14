@@ -1,4 +1,4 @@
-using Content.Shared.CharacterAppearance;
+using Content.Shared.Humanoid;
 
 namespace Content.Shared.Preferences
 {
@@ -13,6 +13,6 @@ namespace Content.Shared.Preferences
         /// <summary>
         ///     Makes this profile valid so there's no bad data like negative ages.
         /// </summary>
-        void EnsureValid();
+        void EnsureValid(string[] sponsorMarkings); // Corvax-Sponsors: Integrated filtering for sponsor markings
     }
 }

@@ -4,10 +4,13 @@
   name: shutter
   abstract: true
   description: One shudders to think about what might be behind this shutter.
+  placement:
+    mode: SnapgridCenter
   components:
   - type: Sprite
     netsync: false
     sprite: Structures/Doors/Shutters/shutters.rsi
+    drawdepth: Overdoors
     layers:
     - state: closed
       map: ["enum.DoorVisualLayers.Base"]
@@ -17,17 +20,18 @@
     - shape:
         !type:PhysShapeAabb
         bounds: "-0.49,-0.49,0.49,0.49" # don't want this colliding with walls or they won't close
-      mass: 100
+      density: 100
       mask:
-      - MobImpassable
+      - FullTileMask
       layer:
-      - Opaque
-      - Impassable
-      - MobImpassable
-      - VaultImpassable
-      - SmallImpassable
+      - AirlockLayer
+  - type: ContainerFill
+    containers:
+      board: [ DoorElectronics ]
+  - type: ContainerContainer
+    containers:
+      board: !type:Container
   - type: Door
-    board: DoorElectronics
     bumpOpen: false
     clickOpen: false
     closeTimeOne: 0.2
@@ -41,6 +45,9 @@
       path: /Audio/Machines/blastdoor.ogg
     closeSound:
       path: /Audio/Machines/blastdoor.ogg
+  - type: Weldable
+    fuel: 3
+    time: 3
   - type: Appearance
     visuals:
       - type: AirlockVisualizer
@@ -52,6 +59,8 @@
       type: WiresBoundUserInterface
   - type: Airtight
     fixVacuum: true
+  - type: RadiationBlocker
+    resistance: 2
   - type: Damageable
     damageContainer: Inorganic
     damageModifierSet: Metallic
@@ -66,13 +75,17 @@
   - type: IconSmooth
     key: walls
     mode: NoSprite
+  - type: DoorSignalControl
   - type: SignalReceiver
     inputs:
-    - name: pressed
-  - type: ToggleDoorOnTrigger
-  - type: TriggerOnSignalReceived
-  placement:
-    mode: SnapgridCenter
+      Open: []
+      Close: []
+      Toggle: []
+  - type: InteractionPopup
+    interactSuccessString: comp-window-knock
+    messagePerceivedByOthers: comp-window-knock
+    interactSuccessSound:
+      path: /Audio/Effects/glass_knock.ogg
 
 - type: entity
   id: ShuttersNormal
@@ -82,6 +95,8 @@
   - type: Construction
     graph: Shutters
     node: Shutters
+    containers:
+    - board
 
 - type: entity
   id: ShuttersNormalOpen
@@ -90,9 +105,14 @@
   components:
   - type: Door
     state: Open
-  - type: Construction
-    graph: Shutters
-    node: Shutters
+  - type: Physics
+    canCollide: false
+  - type: Occluder
+    enabled: false
+  - type: Airtight
+    airBlocked: false
+  - type: RadiationBlocker
+    enabled: false
 
 - type: entity
   id: ShuttersRadiation
@@ -110,6 +130,8 @@
   - type: Construction
     graph: Shutters
     node: ShuttersRadiation
+    containers:
+    - board
 
 - type: entity
   id: ShuttersRadiationOpen
@@ -118,9 +140,14 @@
   components:
   - type: Door
     state: Open
-  - type: Construction
-    graph: Shutters
-    node: ShuttersRadiation
+  - type: Occluder
+    enabled: false
+  - type: Physics
+    canCollide: false
+  - type: Airtight
+    airBlocked: false
+  - type: RadiationBlocker
+    enabled: false
 
 - type: entity
   id: ShuttersWindow
@@ -137,6 +164,8 @@
   - type: Construction
     graph: Shutters
     node: ShuttersWindow
+    containers:
+    - board
 
 - type: entity
   id: ShuttersWindowOpen
@@ -145,9 +174,12 @@
   components:
   - type: Door
     state: Open
-  - type: Construction
-    graph: Shutters
-    node: ShuttersWindow
+  - type: Physics
+    canCollide: false
+  - type: Airtight
+    airBlocked: false
+  - type: RadiationBlocker
+    enabled: false
 
 # Frame for construction
 - type: entity
@@ -163,6 +195,8 @@
   - type: Construction
     graph: Shutters
     node: frame1
+    containers:
+    - board
   - type: InteractionOutline
   - type: Damageable
     damageContainer: Inorganic
@@ -181,7 +215,12 @@
     fixtures:
     - shape:
         !type:PhysShapeAabb
-          bounds: "-0.49,-0.49,0.49,0.49"
-      mass: 50
+        bounds: "-0.45,-0.45,0.45,0.45"
+      density: 55
+      mask:
+      - Impassable
+      - HighImpassable
       layer:
-      - Opaque
+      - HighImpassable
+  - type: Transform
+    noRot: true

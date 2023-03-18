@@ -1,8 +1,6 @@
-using System;
+using Content.Shared.Rejuvenate;
 using Content.Shared.StatusEffect;
-using Robust.Shared.GameObjects;
 using Robust.Shared.GameStates;
-using Robust.Shared.IoC;
 using Robust.Shared.Timing;
 
 namespace Content.Shared.Jittering
@@ -25,6 +23,7 @@ namespace Content.Shared.Jittering
         {
             SubscribeLocalEvent<JitteringComponent, ComponentGetState>(OnGetState);
             SubscribeLocalEvent<JitteringComponent, ComponentHandleState>(OnHandleState);
+            SubscribeLocalEvent<JitteringComponent, RejuvenateEvent>(OnRejuvenate);
         }
 
         private void OnGetState(EntityUid uid, JitteringComponent component, ref ComponentGetState args)
@@ -39,6 +38,11 @@ namespace Content.Shared.Jittering
 
             component.Amplitude = jitteringState.Amplitude;
             component.Frequency = jitteringState.Frequency;
+        }
+
+        private void OnRejuvenate(EntityUid uid, JitteringComponent component, RejuvenateEvent args)
+        {
+            EntityManager.RemoveComponentDeferred<JitteringComponent>(uid);
         }
 
         /// <summary>
@@ -75,6 +79,17 @@ namespace Content.Shared.Jittering
                 if (forceValueChange || jittering.Frequency < frequency)
                     jittering.Frequency = frequency;
             }
+        }
+
+        /// <summary>
+        /// For non mobs.
+        /// </summary>
+        public void AddJitter(EntityUid uid, float amplitude = 10f, float frequency = 4f)
+        {
+            var jitter = EnsureComp<JitteringComponent>(uid);
+            jitter.Amplitude = amplitude;
+            jitter.Frequency = frequency;
+            Dirty(jitter);
         }
     }
 }

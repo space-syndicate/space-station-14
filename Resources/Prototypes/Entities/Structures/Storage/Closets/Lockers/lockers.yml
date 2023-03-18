@@ -47,8 +47,8 @@
       state_open: mining_open
       state_closed: mining_door
   - type: AccessReader
-    access: [["Salvage"]] 
-    
+    access: [["Salvage"]]
+
 # Command
 - type: entity
   id: LockerCaptain
@@ -136,7 +136,7 @@
       state_open: atmos_open
       state_closed: atmos_door
   - type: AccessReader
-    access: [ [ "Engineering" ] ]
+    access: [ [ "Atmospherics" ] ]
 
 # Engineer
 - type: entity
@@ -167,6 +167,9 @@
       state_closed: freezer_door
   - type: AccessReader
     access: [ [ "Kitchen" ] ]
+  - type: ExplosionResistance
+    resistance: 0.90
+  - type: AntiRottingContainer
 
 # Botanist
 - type: entity
@@ -350,3 +353,29 @@
       state: syndicate
       state_open: syndicate_open
       state_closed: syndicate_door
+
+# Bluespace
+- type: entity
+  id: LockerBluespaceStation
+  name: bluespace locker
+  suffix: once to station
+  parent: LockerSyndicatePersonal
+  description: Advanced locker technology.
+  components:
+    - type: BluespaceLocker
+      minBluespaceLinks: 1
+      behaviorProperties:
+        delay: 1
+        actOnOpen: false
+        bluespaceEffectOnInit: true
+        bluespaceEffectOnTeleportSource: true
+        bluespaceEffectOnTeleportTarget: true
+        destroyAfterUses: 1
+        destroyAfterUsesMinItemsToCountUse: 1
+        destroyType: Delete
+      autoLinksUseProperties: true
+      autoLinkProperties:
+        actOnOpen: false
+        actOnClose: false
+        destroyAfterUses: 2
+        destroyType: DeleteComponent

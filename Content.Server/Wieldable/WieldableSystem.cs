@@ -1,18 +1,19 @@
 using Content.Server.DoAfter;
 using Content.Server.Hands.Components;
 using Content.Server.Hands.Systems;
-using Content.Server.Weapon.Melee;
 using Content.Server.Wieldable.Components;
 using Content.Shared.Hands;
-using Content.Shared.Interaction;
+using Content.Shared.Hands.Components;
+using Content.Shared.Hands.EntitySystems;
+using Content.Shared.Interaction.Events;
 using Content.Shared.Item;
 using Content.Shared.Popups;
 using Content.Shared.Verbs;
-using Robust.Shared.Audio;
-using Robust.Shared.GameObjects;
-using Robust.Shared.IoC;
-using Robust.Shared.Localization;
 using Robust.Shared.Player;
+using Content.Server.Actions.Events;
+using Content.Shared.DoAfter;
+using Content.Shared.Weapons.Melee.Events;
+
 
 namespace Content.Server.Wieldable
 {
@@ -20,24 +21,38 @@ namespace Content.Server.Wieldable
     {
         [Dependency] private readonly DoAfterSystem _doAfter = default!;
         [Dependency] private readonly HandVirtualItemSystem _virtualItemSystem = default!;
+        [Dependency] private readonly SharedHandsSystem _handsSystem = default!;
+        [Dependency] private readonly SharedItemSystem _itemSystem = default!;
+        [Dependency] private readonly SharedPopupSystem _popupSystem = default!;
+        [Dependency] private readonly SharedAudioSystem _audioSystem = default!;
 
         public override void Initialize()
         {
             base.Initialize();
 
             SubscribeLocalEvent<WieldableComponent, UseInHandEvent>(OnUseInHand);
-            SubscribeLocalEvent<WieldableComponent, ItemWieldedEvent>(OnItemWielded);
+            SubscribeLocalEvent<WieldableComponent, DoAfterEvent>(OnDoAfter);
             SubscribeLocalEvent<WieldableComponent, ItemUnwieldedEvent>(OnItemUnwielded);
             SubscribeLocalEvent<WieldableComponent, GotUnequippedHandEvent>(OnItemLeaveHand);
             SubscribeLocalEvent<WieldableComponent, VirtualItemDeletedEvent>(OnVirtualItemDeleted);
             SubscribeLocalEvent<WieldableComponent, GetVerbsEvent<InteractionVerb>>(AddToggleWieldVerb);
+            SubscribeLocalEvent<WieldableComponent, DisarmAttemptEvent>(OnDisarmAttemptEvent);
 
             SubscribeLocalEvent<IncreaseDamageOnWieldComponent, MeleeHitEvent>(OnMeleeHit);
+        }
+
+        private void OnDisarmAttemptEvent(EntityUid uid, WieldableComponent component, DisarmAttemptEvent args)
+        {
+            if (component.Wielded)
+                args.Cancel();
         }
 
         private void AddToggleWieldVerb(EntityUid uid, WieldableComponent component, GetVerbsEvent<InteractionVerb> args)
         {
             if (args.Hands == null || !args.CanAccess || !args.CanInteract)
+                return;
+
+            if (!_handsSystem.IsHolding(args.User, uid, out _, args.Hands))
                 return;
 
             // TODO VERB TOOLTIPS Make CanWield or some other function return string, set as verb tooltip and disable
@@ -46,7 +61,7 @@ namespace Content.Server.Wieldable
             // TODO VERBS ICON + localization
             InteractionVerb verb = new()
             {
-                Text = component.Wielded ? "Unwield" : "Wield",
+                Text = component.Wielded ? Loc.GetString("wieldable-verb-text-unwield") : Loc.GetString("wieldable-verb-text-wield"),
                 Act = component.Wielded
                     ? () => AttemptUnwield(component.Owner, component, args.User)
                     : () => AttemptWield(component.Owner, component, args.User)
@@ -71,31 +86,26 @@ namespace Content.Server.Wieldable
             if (!EntityManager.TryGetComponent<HandsComponent>(user, out var hands))
             {
                 if(!quiet)
-                    user.PopupMessage(Loc.GetString("wieldable-component-no-hands"));
-                return false;
-            }
-
-            if (hands.GetFreeHands() < component.FreeHandsRequired)
-            {
-                // TODO FLUENT need function to change 'hands' to 'hand' when there's only 1 required
-                if (!quiet)
-                {
-                    user.PopupMessage(Loc.GetString("wieldable-component-not-enough-free-hands",
-                        ("number", component.FreeHandsRequired),
-                        ("item", uid)));
-                }
-
+                    _popupSystem.PopupEntity(Loc.GetString("wieldable-component-no-hands"), user, user);
                 return false;
             }
 
             // Is it.. actually in one of their hands?
-            if (!hands.TryGetHandHoldingEntity(uid, out _))
+            if (!_handsSystem.IsHolding(user, uid, out _, hands))
+            {
+                if (!quiet)
+                    _popupSystem.PopupEntity(Loc.GetString("wieldable-component-not-in-hands", ("item", uid)), user, user);
+                return false;
+            }
+
+            if (hands.CountFreeHands() < component.FreeHandsRequired)
             {
                 if (!quiet)
                 {
-                    user.PopupMessage(Loc.GetString("wieldable-component-not-in-hands", ("item", uid)));
+                    var message = Loc.GetString("wieldable-component-not-enough-free-hands",
+                        ("number", component.FreeHandsRequired), ("item", uid));
+                    _popupSystem.PopupEntity(message, user, user);
                 }
-
                 return false;
             }
 
@@ -111,22 +121,17 @@ namespace Content.Server.Wieldable
             if (!CanWield(used, component, user))
                 return;
             var ev = new BeforeWieldEvent();
-            RaiseLocalEvent(used, ev, false);
+            RaiseLocalEvent(used, ev);
 
-            if (ev.Cancelled) return;
+            if (ev.Cancelled)
+                return;
 
-            var doargs = new DoAfterEventArgs(
-                user,
-                component.WieldTime,
-                default,
-                used)
+            var doargs = new DoAfterEventArgs(user, component.WieldTime, used:used)
             {
                 BreakOnUserMove = false,
                 BreakOnDamage = true,
                 BreakOnStun = true,
-                BreakOnTargetMove = true,
-                TargetFinishedEvent = new ItemWieldedEvent(user),
-                UserFinishedEvent = new WieldedItemEvent(used)
+                BreakOnTargetMove = true
             };
 
             _doAfter.DoAfter(doargs);
@@ -138,45 +143,41 @@ namespace Content.Server.Wieldable
         public void AttemptUnwield(EntityUid used, WieldableComponent component, EntityUid user)
         {
             var ev = new BeforeUnwieldEvent();
-            RaiseLocalEvent(used, ev, false);
+            RaiseLocalEvent(used, ev);
 
-            if (ev.Cancelled) return;
+            if (ev.Cancelled)
+                return;
 
             var targEv = new ItemUnwieldedEvent(user);
-            var userEv = new UnwieldedItemEvent(used);
 
-            RaiseLocalEvent(used, targEv, false);
-            RaiseLocalEvent(user, userEv, false);
+            RaiseLocalEvent(used, targEv);
         }
 
-        private void OnItemWielded(EntityUid uid, WieldableComponent component, ItemWieldedEvent args)
+        private void OnDoAfter(EntityUid uid, WieldableComponent component, DoAfterEvent args)
         {
-            if (args.User == null)
+            if (args.Handled || args.Cancelled || !CanWield(uid, component, args.Args.User) || component.Wielded)
                 return;
 
-            if (!CanWield(uid, component, args.User.Value) || component.Wielded)
-                return;
-
-            if (TryComp<SharedItemComponent>(uid, out var item))
+            if (TryComp<ItemComponent>(uid, out var item))
             {
-                component.OldInhandPrefix = item.EquippedPrefix;
-                item.EquippedPrefix = component.WieldedInhandPrefix;
+                component.OldInhandPrefix = item.HeldPrefix;
+                _itemSystem.SetHeldPrefix(uid, component.WieldedInhandPrefix, item);
             }
 
             component.Wielded = true;
 
             if (component.WieldSound != null)
+                _audioSystem.PlayPvs(component.WieldSound, uid);
+
+            for (int i = 0; i < component.FreeHandsRequired; i++)
             {
-                SoundSystem.Play(Filter.Pvs(uid), component.WieldSound.GetSound());
+                _virtualItemSystem.TrySpawnVirtualItemInHand(uid, args.Args.User);
             }
 
-            for (var i = 0; i < component.FreeHandsRequired; i++)
-            {
-                _virtualItemSystem.TrySpawnVirtualItemInHand(uid, args.User.Value);
-            }
+            _popupSystem.PopupEntity(Loc.GetString("wieldable-component-successful-wield", ("item", uid)), args.Args.User, args.Args.User);
+            _popupSystem.PopupEntity(Loc.GetString("wieldable-component-successful-wield-other", ("user", args.Args.User),("item", uid)), args.Args.User, Filter.PvsExcept(args.Args.User), true);
 
-            args.User.Value.PopupMessage(Loc.GetString("wieldable-component-successful-wield",
-                ("item", uid)));
+            args.Handled = true;
         }
 
         private void OnItemUnwielded(EntityUid uid, WieldableComponent component, ItemUnwieldedEvent args)
@@ -186,9 +187,9 @@ namespace Content.Server.Wieldable
             if (!component.Wielded)
                 return;
 
-            if (TryComp<SharedItemComponent>(uid, out var item))
+            if (TryComp<ItemComponent>(uid, out var item))
             {
-                item.EquippedPrefix = component.OldInhandPrefix;
+                _itemSystem.SetHeldPrefix(uid, component.OldInhandPrefix, item);
             }
 
             component.Wielded = false;
@@ -196,13 +197,12 @@ namespace Content.Server.Wieldable
             if (!args.Force) // don't play sound/popup if this was a forced unwield
             {
                 if (component.UnwieldSound != null)
-                {
-                    SoundSystem.Play(Filter.Pvs(uid),
-                        component.UnwieldSound.GetSound());
-                }
+                    _audioSystem.PlayPvs(component.UnwieldSound, uid);
 
-                args.User.Value.PopupMessage(Loc.GetString("wieldable-component-failed-wield",
-                    ("item", uid)));
+                _popupSystem.PopupEntity(Loc.GetString("wieldable-component-failed-wield",
+                    ("item", uid)), args.User.Value, args.User.Value);
+                _popupSystem.PopupEntity(Loc.GetString("wieldable-component-failed-wield-other",
+                    ("user", args.User.Value), ("item", uid)), args.User.Value, Filter.PvsExcept(args.User.Value), true);
             }
 
             _virtualItemSystem.DeleteInHandsMatching(args.User.Value, uid);
@@ -212,7 +212,7 @@ namespace Content.Server.Wieldable
         {
             if (!component.Wielded || component.Owner != args.Unequipped)
                 return;
-            RaiseLocalEvent(uid, new ItemUnwieldedEvent(args.User, force: true));
+            RaiseLocalEvent(uid, new ItemUnwieldedEvent(args.User, force: true), true);
         }
 
         private void OnVirtualItemDeleted(EntityUid uid, WieldableComponent component, VirtualItemDeletedEvent args)
@@ -231,7 +231,7 @@ namespace Content.Server.Wieldable
             if (args.Handled)
                 return;
 
-            args.ModifiersList.Add(component.Modifiers);
+            args.BonusDamage += component.BonusDamage;
         }
     }
 
@@ -239,32 +239,6 @@ namespace Content.Server.Wieldable
 
     public sealed class BeforeWieldEvent : CancellableEntityEventArgs
     {
-    }
-
-    /// <summary>
-    ///     Raised on the item that has been wielded.
-    /// </summary>
-    public sealed class ItemWieldedEvent : EntityEventArgs
-    {
-        public EntityUid? User;
-
-        public ItemWieldedEvent(EntityUid? user = null)
-        {
-            User = user;
-        }
-    }
-
-    /// <summary>
-    ///     Raised on the user who wielded the item.
-    /// </summary>
-    public sealed class WieldedItemEvent : EntityEventArgs
-    {
-        public EntityUid Item;
-
-        public WieldedItemEvent(EntityUid item)
-        {
-            Item = item;
-        }
     }
 
     public sealed class BeforeUnwieldEvent : CancellableEntityEventArgs
@@ -286,19 +260,6 @@ namespace Content.Server.Wieldable
         {
             User = user;
             Force = force;
-        }
-    }
-
-    /// <summary>
-    ///     Raised on the user who unwielded the item.
-    /// </summary>
-    public sealed class UnwieldedItemEvent : EntityEventArgs
-    {
-        public EntityUid Item;
-
-        public UnwieldedItemEvent(EntityUid item)
-        {
-            Item = item;
         }
     }
 

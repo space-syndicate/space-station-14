@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using Content.Shared.Construction.Steps;
-using Robust.Shared.Serialization.Manager.Attributes;
-using Robust.Shared.ViewVariables;
+﻿using Content.Shared.Construction.Steps;
 
 namespace Content.Shared.Construction
 {
@@ -19,7 +15,6 @@ namespace Content.Shared.Construction
         [DataField("completed", serverOnly: true)]
         private IGraphAction[] _completed = Array.Empty<IGraphAction>();
 
-        [ViewVariables]
         [DataField("to", required:true)]
         public string Target { get; } = string.Empty;
 

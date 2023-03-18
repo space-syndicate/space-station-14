@@ -1,91 +1,68 @@
-using Content.Server.Alert;
 using Content.Server.Atmos.Components;
 using Content.Server.Clothing.Components;
-using Content.Shared.Actions;
 using Content.Shared.Alert;
 using Content.Shared.Clothing;
+using Content.Shared.Clothing.EntitySystems;
+using Content.Shared.Inventory;
 using Content.Shared.Inventory.Events;
-using Content.Shared.Movement.EntitySystems;
-using Content.Shared.Slippery;
-using Content.Shared.Verbs;
+using Robust.Shared.Containers;
+using Robust.Shared.GameStates;
+using static Content.Shared.Clothing.MagbootsComponent;
 
-namespace Content.Server.Clothing
+namespace Content.Server.Clothing;
+
+public sealed class MagbootsSystem : SharedMagbootsSystem
 {
-    public sealed class MagbootsSystem : SharedMagbootsSystem
+    [Dependency] private readonly AlertsSystem _alertsSystem = default!;
+
+    public override void Initialize()
     {
-        [Dependency] private readonly AlertsSystem _alertsSystem = default!;
+        base.Initialize();
 
-        public override void Initialize()
+        SubscribeLocalEvent<MagbootsComponent, GotEquippedEvent>(OnGotEquipped);
+        SubscribeLocalEvent<MagbootsComponent, GotUnequippedEvent>(OnGotUnequipped);
+        SubscribeLocalEvent<MagbootsComponent, ComponentGetState>(OnGetState);
+    }
+
+    protected override void UpdateMagbootEffects(EntityUid parent, EntityUid uid, bool state, MagbootsComponent? component)
+    {
+        if (!Resolve(uid, ref component))
+            return;
+        state = state && component.On;
+
+        if (TryComp(parent, out MovedByPressureComponent? movedByPressure))
         {
-            base.Initialize();
-
-            SubscribeLocalEvent<MagbootsComponent, GetVerbsEvent<ActivationVerb>>(AddToggleVerb);
-            SubscribeLocalEvent<MagbootsComponent, SlipAttemptEvent>(OnSlipAttempt);
-            SubscribeLocalEvent<MagbootsComponent, RefreshMovementSpeedModifiersEvent>(OnRefreshMovespeed);
-            SubscribeLocalEvent<MagbootsComponent, GotEquippedEvent>(OnGotEquipped);
-            SubscribeLocalEvent<MagbootsComponent, GotUnequippedEvent>(OnGotUnequipped);
+            movedByPressure.Enabled = !state;
         }
 
-        public void UpdateMagbootEffects(EntityUid parent, EntityUid uid, bool state, MagbootsComponent? component)
+        if (state)
         {
-            if (!Resolve(uid, ref component))
-                return;
-            state = state && component.On;
-
-            if (TryComp(parent, out MovedByPressureComponent? movedByPressure))
-            {
-                movedByPressure.Enabled = state;
-            }
-
-            if (state)
-            {
-                _alertsSystem.ShowAlert(parent, AlertType.Magboots);
-            }
-            else
-            {
-                _alertsSystem.ClearAlert(parent, AlertType.Magboots);
-            }
+            _alertsSystem.ShowAlert(parent, AlertType.Magboots);
         }
-
-        private void OnGotUnequipped(EntityUid uid, MagbootsComponent component, GotUnequippedEvent args)
+        else
         {
-            if (args.Slot == "shoes")
-            {
-                UpdateMagbootEffects(args.Equipee, uid, false, component);
-            }
+            _alertsSystem.ClearAlert(parent, AlertType.Magboots);
         }
+    }
 
-        private void OnGotEquipped(EntityUid uid, MagbootsComponent component, GotEquippedEvent args)
+    private void OnGotUnequipped(EntityUid uid, MagbootsComponent component, GotUnequippedEvent args)
+    {
+        if (args.Slot == "shoes")
         {
-            if (args.Slot == "shoes")
-            {
-                UpdateMagbootEffects(args.Equipee, uid, true, component);
-            }
+            UpdateMagbootEffects(args.Equipee, uid, false, component);
         }
+    }
 
-        private void OnRefreshMovespeed(EntityUid uid, MagbootsComponent component, RefreshMovementSpeedModifiersEvent args)
+    private void OnGotEquipped(EntityUid uid, MagbootsComponent component, GotEquippedEvent args)
+    {
+        if (args.Slot == "shoes")
         {
-            args.ModifySpeed(component.WalkSpeedModifier, component.SprintSpeedModifier);
+            UpdateMagbootEffects(args.Equipee, uid, true, component);
         }
+    }
 
-        private void AddToggleVerb(EntityUid uid, MagbootsComponent component, GetVerbsEvent<ActivationVerb> args)
-        {
-            if (!args.CanAccess || !args.CanInteract)
-                return;
-
-            ActivationVerb verb = new();
-            verb.Text = Loc.GetString("toggle-magboots-verb-get-data-text");
-            verb.Act = () => component.On = !component.On;
-            // TODO VERB ICON add toggle icon? maybe a computer on/off symbol?
-            args.Verbs.Add(verb);
-        }
-
-        private void OnSlipAttempt(EntityUid uid, MagbootsComponent component, SlipAttemptEvent args)
-        {
-            if (component.On)
-            {
-                args.Cancel();
-            }
-        }
+    private void OnGetState(EntityUid uid, MagbootsComponent component, ref ComponentGetState args)
+    {
+        args.State = new MagbootsComponentState(component.On);
     }
 }

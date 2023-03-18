@@ -1,7 +1,4 @@
-using System.Collections.Generic;
 using Content.Shared.Tag;
-using Robust.Shared.GameObjects;
-using Robust.Shared.Serialization.Manager.Attributes;
 
 namespace Content.Shared.Construction.Steps
 {
@@ -18,7 +15,7 @@ namespace Content.Shared.Construction.Steps
             return list == null || list.Count == 0;
         }
 
-        public override bool EntityValid(EntityUid uid, IEntityManager entityManager)
+        public override bool EntityValid(EntityUid uid, IEntityManager entityManager, IComponentFactory compFactory)
         {
             // This step can only happen if either list has tags.
             if (IsNullOrEmpty(_allTags) && IsNullOrEmpty(_anyTags))
@@ -28,7 +25,7 @@ namespace Content.Shared.Construction.Steps
             if (!entityManager.TryGetComponent(uid, out TagComponent? tags))
                 return false;
 
-            var tagSystem = EntitySystem.Get<TagSystem>();
+            var tagSystem = entityManager.EntitySysManager.GetEntitySystem<TagSystem>();
 
             if (_allTags != null && !tagSystem.HasAllTags(tags, _allTags))
                 return false; // We don't have all the tags needed.

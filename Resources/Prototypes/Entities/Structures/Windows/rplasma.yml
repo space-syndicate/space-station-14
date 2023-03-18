@@ -10,7 +10,9 @@
     sprite: Structures/Windows/reinforced_plasma_window.rsi
   - type: Damageable
     damageContainer: Inorganic
-    damageModifierSet: Glass
+    damageModifierSet: RGlass
+  - type: RadiationBlocker
+    resistance: 4
   - type: Destructible
     thresholds:
     - trigger:
@@ -42,13 +44,14 @@
     graph: Window
     node: reinforcedPlasmaWindow
   - type: Appearance
-    visuals:
-    - type: DamageVisualizer
-      thresholds: [4, 8, 12]
-      damageDivisor: 36
-      trackAllDamage: true
-      damageOverlay:
-        sprite: Structures/Windows/cracks.rsi
+  - type: DamageVisuals
+    thresholds: [4, 8, 12]
+    damageDivisor: 36
+    trackAllDamage: true
+    damageOverlay:
+      sprite: Structures/Windows/cracks.rsi
+  - type: StaticPrice
+    price: 132
 
 - type: entity
   id: PlasmaReinforcedWindowDirectional
@@ -95,3 +98,5 @@
             max: 2
       - !type:DoActsBehavior
         acts: [ "Destruction" ]
+  - type: StaticPrice
+    price: 66

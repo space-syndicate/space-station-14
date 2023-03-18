@@ -17,28 +17,46 @@
         amount: 2
 
 - type: entity
+  id: LockerWallMedicalFilled
+  name: medicine wall locker
+  suffix: Filled
+  parent: LockerWallMedical
+  components:
+  - type: StorageFill
+    contents:
+      - id: BoxPillCanister
+        amount: 1
+      - id: BoxSyringe
+        amount: 1
+      - id: EpinephrineChemistryBottle
+        amount: 3
+      - id: Brutepack
+        amount: 2
+      - id: Ointment
+        amount: 2
+
+
+- type: entity
   id: LockerMedicalFilled
   suffix: Filled
   parent: LockerMedical
   components:
   - type: StorageFill
     contents:
+      - id: HandheldHealthAnalyzer
+        prob: 0.6
       - id: ClothingHandsGlovesLatex
-        prob: 1
       - id: ClothingHeadsetMedical
-        prob: 1
      # - id: ClothingEyesHudMedical #Removed until working properly
-     #   prob: 1
       - id: ClothingBeltMedical
-        prob: 1
-      - id: ClothingHeadHatSurgcapBlue
-        prob: 1
-        orGroup: Surgcaps
       - id: ClothingHeadHatSurgcapGreen
         prob: 0.1
         orGroup: Surgcaps
       - id: ClothingHeadHatSurgcapPurple
         prob: 0.05
+        orGroup: Surgcaps
+      - id: ClothingHeadHatSurgcapBlue
+        prob: 0.90
         orGroup: Surgcaps
       - id: UniformScrubsColorBlue
         prob: 0.5
@@ -49,8 +67,15 @@
       - id: UniformScrubsColorPurple
         prob: 0.05
         orGroup: Surgshrubs
+      - id: NitrousOxideTankFilled
+        prob: 0.3
       - id: ClothingMaskSterile
-        prob: 1
+
+- type: entity
+  id: LockerWallMedicalDoctorFilled
+  name: medical doctor's wall locker
+  suffix: Filled
+  parent: ["LockerWallMedical", "LockerMedicalFilled"]
 
 - type: entity
   id: LockerChemistryFilled
@@ -60,8 +85,7 @@
   - type: StorageFill
     contents:
       - id: BoxSyringe
-        prob: 1
       - id: BoxBeaker
-        prob: 1
       - id: BoxPillCanister
-        prob: 1
+      - id: BoxBottle
+      - id: BoxBottle

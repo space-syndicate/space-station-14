@@ -1,21 +1,19 @@
-using System;
-using Content.Shared.Whitelist;
-using Robust.Shared.Analyzers;
-using Robust.Shared.GameObjects;
 using Robust.Shared.GameStates;
-using Robust.Shared.Maths;
 using Robust.Shared.Serialization;
-using Robust.Shared.Serialization.Manager.Attributes;
 
 namespace Content.Shared.Pinpointer
 {
+    /// <summary>
+    /// Displays a sprite on the item that points towards the target component.
+    /// </summary>
     [RegisterComponent]
     [NetworkedComponent]
-    [Friend(typeof(SharedPinpointerSystem))]
+    [Access(typeof(SharedPinpointerSystem))]
     public sealed class PinpointerComponent : Component
     {
-        [DataField("whitelist")]
-        public EntityWhitelist? Whitelist;
+        // TODO: Type serializer oh god
+        [DataField("component")]
+        public string? Component;
 
         [DataField("mediumDistance")]
         public float MediumDistance = 16f;
@@ -26,27 +24,34 @@ namespace Content.Shared.Pinpointer
         [DataField("reachedDistance")]
         public float ReachedDistance = 1f;
 
+        /// <summary>
+        ///     Pinpointer arrow precision in radians.
+        /// </summary>
+        [DataField("precision")]
+        public double Precision = 0.09;
+
         public EntityUid? Target = null;
         public bool IsActive = false;
-        public Direction DirectionToTarget = Direction.Invalid;
-        public Distance DistanceToTarget = Distance.UNKNOWN;
+        public Angle ArrowAngle;
+        public Distance DistanceToTarget = Distance.Unknown;
+        public bool HasTarget => DistanceToTarget != Distance.Unknown;
     }
 
     [Serializable, NetSerializable]
     public sealed class PinpointerComponentState : ComponentState
     {
         public bool IsActive;
-        public Direction DirectionToTarget;
+        public Angle ArrowAngle;
         public Distance DistanceToTarget;
     }
 
     [Serializable, NetSerializable]
     public enum Distance : byte
     {
-        UNKNOWN,
-        REACHED,
-        CLOSE,
-        MEDIUM,
-        FAR
+        Unknown,
+        Reached,
+        Close,
+        Medium,
+        Far
     }
 }

@@ -18,11 +18,15 @@
         - type: ParticleAcceleratorPartVisualizer
           baseState: unlit
     - type: ApcPowerReceiver
+      powerLoad: 250
     - type: ExtensionCableReceiver
     - type: ParticleAcceleratorControlBox
     - type: Construction
       graph: ParticleAcceleratorControlBox
       node: completed
+    - type: ActivatableUI
+      key: enum.ParticleAcceleratorControlBoxUiKey.Key
+    - type: ActivatableUIRequiresPower
     - type: UserInterface
       interfaces:
         - key: enum.ParticleAcceleratorControlBoxUiKey.Key
@@ -32,7 +36,10 @@
     - type: Wires
       BoardName: "Mk2 Particle Accelerator"
       LayoutId: ParticleAccelerator
-
+    - type: GuideHelp
+      guides: [ Singularity, Power ]
+      
+      
 # Unfinished
 
 - type: entity
@@ -51,3 +58,5 @@
       graph: ParticleAcceleratorControlBox
       node: start
       defaultTarget: completed
+    - type: GuideHelp
+      guides: [ Singularity, Power ]

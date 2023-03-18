@@ -20,14 +20,20 @@
   - type: Appearance
     visuals:
     - type: AirlockVisualizer
-    - type: WiresVisualizer
+  - type: WiresVisuals
+  - type: PaintableAirlock
+    group: External
 
 - type: entity
   parent: AirlockExternal
   id: AirlockExternalGlass
   suffix: Glass, External
   components:
+  - type: Door
+    occludes: false
   - type: Occluder
     enabled: false
   - type: Sprite
     sprite: Structures/Doors/Airlocks/Glass/external.rsi
+  - type: PaintableAirlock
+    group: ExternalGlass

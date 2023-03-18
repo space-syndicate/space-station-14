@@ -2,7 +2,6 @@
 using Content.Server.Atmos.EntitySystems;
 using Content.Shared.Administration;
 using Robust.Shared.Console;
-using Robust.Shared.GameObjects;
 
 namespace Content.Server.Atmos.Commands
 {
@@ -19,7 +18,8 @@ namespace Content.Server.Atmos.Commands
 
             foreach (var gasPrototype in atmosSystem.Gases)
             {
-                shell.WriteLine($"{gasPrototype.Name} ID: {gasPrototype.ID}");
+                var gasName = Loc.GetString(gasPrototype.Name);
+                shell.WriteLine($"{gasName} ID: {gasPrototype.ID}");
             }
         }
     }

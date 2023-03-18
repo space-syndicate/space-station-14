@@ -1,8 +1,6 @@
 using Content.Server.Chat.Managers;
 using Content.Server.Roles;
 using Content.Shared.Roles;
-using Robust.Shared.IoC;
-using Robust.Shared.Localization;
 
 namespace Content.Server.Traitor
 {
@@ -13,7 +11,7 @@ namespace Content.Server.Traitor
         public TraitorRole(Mind.Mind mind, AntagPrototype antagPrototype) : base(mind)
         {
             Prototype = antagPrototype;
-            Name = antagPrototype.Name;
+            Name = Loc.GetString(antagPrototype.Name);
             Antagonist = antagPrototype.Antagonist;
         }
 

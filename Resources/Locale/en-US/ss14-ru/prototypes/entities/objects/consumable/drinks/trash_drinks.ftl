@@ -1,5 +1,5 @@
 ent-DrinkBottleBaseEmpty = base empty bottle
-    .desc = That's an empty bottle.
+    .desc = An empty bottle.
     .suffix = { "" }
 ent-DrinkBottleAbsinthe = jailbreaker verte bottle
     .desc = { ent-DrinkBottleBaseEmpty.desc }
@@ -22,7 +22,7 @@ ent-DrinkBottleGin = griffeater gin bottle
 ent-DrinkBottleGoldschlager = goldschlager bottle
     .desc = { ent-DrinkBottleBaseEmpty.desc }
     .suffix = { "" }
-ent-DrinkBottleKahlua = kahlua bottle
+ent-DrinkBottleCoffeeLiqueur = coffee liqueur bottle
     .desc = { ent-DrinkBottleBaseEmpty.desc }
     .suffix = { "" }
 ent-DrinkBottleNTCahors = nt cahors bottle

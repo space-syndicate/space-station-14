@@ -1,9 +1,4 @@
-﻿using System;
-using Content.Shared.Chemistry.Reagent;
-using Content.Shared.FixedPoint;
-using Robust.Shared.GameObjects;
-using Robust.Shared.Serialization.Manager.Attributes;
-using Robust.Shared.ViewVariables;
+﻿using Content.Shared.FixedPoint;
 
 namespace Content.Server.Chemistry.Components
 {
@@ -19,5 +14,12 @@ namespace Content.Server.Chemistry.Components
 
         [DataField("transferEfficiency")]
         private float _transferEfficiency = 1f;
+
+        /// <summary>
+        ///     Solution to inject from.
+        /// </summary>
+        [ViewVariables(VVAccess.ReadWrite)]
+        [DataField("solution")]
+        public string Solution { get; set; } = "default";
     }
 }

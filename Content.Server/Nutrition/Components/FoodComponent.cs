@@ -1,33 +1,24 @@
-using System;
-using System.Threading;
 using Content.Server.Chemistry.EntitySystems;
 using Content.Server.Nutrition.EntitySystems;
 using Content.Shared.FixedPoint;
-using Content.Shared.Sound;
-using Robust.Shared.Analyzers;
-using Robust.Shared.GameObjects;
+using Robust.Shared.Audio;
 using Robust.Shared.Prototypes;
-using Robust.Shared.Serialization.Manager.Attributes;
 using Robust.Shared.Serialization.TypeSerializers.Implementations.Custom.Prototype;
-using Robust.Shared.ViewVariables;
 
 namespace Content.Server.Nutrition.Components
 {
-    [RegisterComponent, Friend(typeof(FoodSystem))]
+    [RegisterComponent, Access(typeof(FoodSystem))]
     public sealed class FoodComponent : Component
     {
         [DataField("solution")]
         public string SolutionName { get; set; } = "food";
 
-        [ViewVariables]
         [DataField("useSound")]
         public SoundSpecifier UseSound { get; set; } = new SoundPathSpecifier("/Audio/Items/eatfood.ogg");
 
-        [ViewVariables]
         [DataField("trash", customTypeSerializer: typeof(PrototypeIdSerializer<EntityPrototype>))]
         public string? TrashPrototype { get; set; }
 
-        [ViewVariables]
         [DataField("transferAmount")]
         public FixedPoint2? TransferAmount { get; set; } = FixedPoint2.New(5);
 
@@ -43,8 +34,23 @@ namespace Content.Server.Nutrition.Components
         [DataField("utensilRequired")]
         public bool UtensilRequired = false;
 
+        /// <summary>
+        /// The localization identifier for the eat message. Needs a "food" entity argument passed to it.
+        /// </summary>
         [DataField("eatMessage")]
         public string EatMessage = "food-nom";
+
+        /// <summary>
+        /// Is this entity being forcefed?
+        /// </summary>
+        [DataField("forceFeed")]
+        public bool ForceFeed;
+
+        /// <summary>
+        /// Is this entity eating or being fed?
+        /// </summary>
+        [DataField(("eating"))]
+        public bool Eating;
 
         /// <summary>
         /// How long it takes to eat the food personally.
@@ -59,12 +65,6 @@ namespace Content.Server.Nutrition.Components
         [DataField("forceFeedDelay")]
         public float ForceFeedDelay = 3;
 
-        /// <summary>
-        ///     Token for interrupting a do-after action (e.g., force feeding). If not null, implies component is
-        ///     currently "in use".
-        /// </summary>
-        public CancellationTokenSource? CancelToken;
-
         [ViewVariables]
         public int UsesRemaining
         {
@@ -76,11 +76,11 @@ namespace Content.Server.Nutrition.Components
                 }
 
                 if (TransferAmount == null)
-                    return solution.CurrentVolume == 0 ? 0 : 1;
+                    return solution.Volume == 0 ? 0 : 1;
 
-                return solution.CurrentVolume == 0
+                return solution.Volume == 0
                     ? 0
-                    : Math.Max(1, (int) Math.Ceiling((solution.CurrentVolume / (FixedPoint2)TransferAmount).Float()));
+                    : Math.Max(1, (int) Math.Ceiling((solution.Volume / (FixedPoint2)TransferAmount).Float()));
             }
         }
     }

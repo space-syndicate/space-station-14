@@ -1,18 +1,31 @@
-using System;
-using System.Collections.Generic;
+using System.Linq;
+using Content.Server.Administration.Logs;
 using Content.Server.Construction.Components;
-using Content.Server.DoAfter;
+using Content.Server.Temperature.Components;
+using Content.Server.Temperature.Systems;
 using Content.Shared.Construction;
 using Content.Shared.Construction.Steps;
+using Content.Shared.DoAfter;
 using Content.Shared.Interaction;
+using Content.Shared.Tools.Components;
 using Robust.Shared.Containers;
-using Robust.Shared.GameObjects;
+using Robust.Shared.Utility;
+#if EXCEPTION_TOLERANCE
+// ReSharper disable once RedundantUsingDirective
+using Robust.Shared.Exceptions;
+#endif
 
 namespace Content.Server.Construction
 {
     public sealed partial class ConstructionSystem
     {
-        private readonly HashSet<EntityUid> _constructionUpdateQueue = new();
+        [Dependency] private readonly IAdminLogManager _adminLogger = default!;
+#if EXCEPTION_TOLERANCE
+        [Dependency] private readonly IRuntimeLog _runtimeLog = default!;
+#endif
+
+        private readonly Queue<EntityUid> _constructionUpdateQueue = new();
+        private readonly HashSet<EntityUid> _queuedUpdates = new();
 
         private void InitializeInteractions()
         {
@@ -26,11 +39,13 @@ namespace Content.Server.Construction
             SubscribeLocalEvent<ConstructionDoAfterCancelled>(OnDoAfterCancelled);
             SubscribeLocalEvent<ConstructionComponent, ConstructionDoAfterComplete>(EnqueueEvent);
             SubscribeLocalEvent<ConstructionComponent, ConstructionDoAfterCancelled>(EnqueueEvent);
+            SubscribeLocalEvent<ConstructionComponent, DoAfterEvent<ConstructionData>>(OnDoAfter);
 
             #endregion
 
             // Event handling. Add your subscriptions here! Just make sure they're all handled by EnqueueEvent.
-            SubscribeLocalEvent<ConstructionComponent, InteractUsingEvent>(EnqueueEvent);
+            SubscribeLocalEvent<ConstructionComponent, InteractUsingEvent>(EnqueueEvent, new []{typeof(AnchorableSystem)});
+            SubscribeLocalEvent<ConstructionComponent, OnTemperatureChangeEvent>(EnqueueEvent);
         }
 
         /// <summary>
@@ -269,6 +284,8 @@ namespace Content.Server.Construction
 
                     // TODO: Sanity checks.
 
+                    user = interactUsing.User;
+
                     // If this step's DoAfter was cancelled, we just fail the interaction.
                     if (doAfterState == DoAfterState.Cancelled)
                         return HandleResult.False;
@@ -277,7 +294,7 @@ namespace Content.Server.Construction
 
                     // Since many things inherit this step, we delegate the "is this entity valid?" logic to them.
                     // While this is very OOP and I find it icky, I must admit that it simplifies the code here a lot.
-                    if(!insertStep.EntityValid(insert, EntityManager))
+                    if(!insertStep.EntityValid(insert, EntityManager, _factory))
                         return HandleResult.False;
 
                     // If we're only testing whether this step would be handled by the given event, then we're done.
@@ -287,20 +304,19 @@ namespace Content.Server.Construction
                     // If we still haven't completed this step's DoAfter...
                     if (doAfterState == DoAfterState.None && insertStep.DoAfter > 0)
                     {
-                        _doAfterSystem.DoAfter(
-                            new DoAfterEventArgs(interactUsing.User, step.DoAfter, default, interactUsing.Target)
-                            {
-                                BreakOnDamage = false,
-                                BreakOnStun = true,
-                                BreakOnTargetMove = true,
-                                BreakOnUserMove = true,
-                                NeedHand = true,
+                        // These events will be broadcast and handled by this very same system, that will
+                        // raise them directed to the target. These events wrap the original event.
+                        var constructionData = new ConstructionData(new ConstructionDoAfterComplete(uid, ev), new ConstructionDoAfterCancelled(uid, ev));
+                        var doAfterEventArgs = new DoAfterEventArgs(interactUsing.User, step.DoAfter, target: interactUsing.Target)
+                        {
+                            BreakOnDamage = false,
+                            BreakOnStun = true,
+                            BreakOnTargetMove = true,
+                            BreakOnUserMove = true,
+                            NeedHand = true
+                        };
 
-                                // These events will be broadcast and handled by this very same system, that will
-                                // raise them directed to the target. These events wrap the original event.
-                                BroadcastFinishedEvent = new ConstructionDoAfterComplete(uid, ev),
-                                BroadcastCancelledEvent = new ConstructionDoAfterCancelled(uid, ev)
-                            });
+                        _doAfterSystem.DoAfter(doAfterEventArgs, constructionData);
 
                         // To properly signal that we're waiting for a DoAfter, we have to set the flag on the component
                         // and then also return the DoAfter HandleResult.
@@ -312,7 +328,7 @@ namespace Content.Server.Construction
                     // we split the stack in two and insert the split stack.
                     if (insertStep is MaterialConstructionGraphStep materialInsertStep)
                     {
-                        if (_stackSystem.Split(insert, materialInsertStep.Amount, EntityManager.GetComponent<TransformComponent>(interactUsing.User).Coordinates) is not {} stack)
+                        if (_stackSystem.Split(insert, materialInsertStep.Amount, Transform(interactUsing.User).Coordinates) is not {} stack)
                             return HandleResult.False;
 
                         insert = stack;
@@ -329,12 +345,12 @@ namespace Content.Server.Construction
                         construction.Containers.Add(store);
 
                         // The container doesn't necessarily need to exist, so we ensure it.
-                        _containerSystem.EnsureContainer<Container>(uid, store).Insert(insert);
+                        _container.EnsureContainer<Container>(uid, store).Insert(insert);
                     }
                     else
                     {
                         // If we don't store the item in a container on the entity, we just delete it right away.
-                        EntityManager.DeleteEntity(insert);
+                        Del(insert);
                     }
 
                     // Step has been handled correctly, so we signal this.
@@ -362,9 +378,9 @@ namespace Content.Server.Construction
                     if (doAfterState != DoAfterState.None)
                         return doAfterState == DoAfterState.Completed ? HandleResult.True : HandleResult.False;
 
-                    if (!_toolSystem.UseTool(interactUsing.Used, interactUsing.User,
-                        uid, toolInsertStep.Fuel, toolInsertStep.DoAfter, toolInsertStep.Tool,
-                        new ConstructionDoAfterComplete(uid, ev), new ConstructionDoAfterCancelled(uid, ev)))
+                    var toolEvData = new ToolEventData(new ConstructionDoAfterComplete(uid, ev), toolInsertStep.Fuel, new ConstructionDoAfterCancelled(uid, ev));
+
+                    if(!_toolSystem.UseTool(interactUsing.Used, interactUsing.User, uid, toolInsertStep.DoAfter, new [] {toolInsertStep.Tool}, toolEvData))
                         return HandleResult.False;
 
                     // In the case we're not waiting for a doAfter, then this step is complete!
@@ -373,6 +389,24 @@ namespace Content.Server.Construction
 
                     construction.WaitingDoAfter = true;
                     return HandleResult.DoAfter;
+                }
+
+                case TemperatureConstructionGraphStep temperatureChangeStep:
+                {
+                    if (ev is not OnTemperatureChangeEvent) {
+                        break;
+                    }
+
+                    if (TryComp<TemperatureComponent>(uid, out var tempComp))
+                    {
+                        if ((!temperatureChangeStep.MinTemperature.HasValue || tempComp.CurrentTemperature >= temperatureChangeStep.MinTemperature.Value) &&
+                            (!temperatureChangeStep.MaxTemperature.HasValue || tempComp.CurrentTemperature <= temperatureChangeStep.MaxTemperature.Value))
+                        {
+                            return HandleResult.True;
+                        }
+                    }
+                    return HandleResult.False;
+
                 }
 
                 #endregion
@@ -387,6 +421,13 @@ namespace Content.Server.Construction
             return HandleResult.False;
         }
 
+        /// <summary>
+        ///     Checks whether a number of <see cref="IGraphCondition"/>s are true for a given entity.
+        /// </summary>
+        /// <param name="uid">The entity to pass to the conditions.</param>
+        /// <param name="conditions">The conditions to evaluate.</param>
+        /// <remarks>This method is short-circuiting; if a condition evaluates to false, we stop checking the rest of conditions.</remarks>
+        /// <returns>Whether all conditions evaluate to true for the given entity.</returns>
         public bool CheckConditions(EntityUid uid, IEnumerable<IGraphCondition> conditions)
         {
             foreach (var condition in conditions)
@@ -398,11 +439,19 @@ namespace Content.Server.Construction
             return true;
         }
 
+        /// <summary>
+        ///     Performs a number of <see cref="IGraphAction"/>s for a given entity, with an optional user entity.
+        /// </summary>
+        /// <param name="uid">The entity to perform the actions on.</param>
+        /// <param name="userUid">An optional user entity to pass into the actions.</param>
+        /// <param name="actions">The actions to perform.</param>
+        /// <remarks>This method checks whether the given target entity exists before performing any actions.
+        ///          If the entity is deleted by an action, it will short-circuit and stop performing the rest of actions.</remarks>
         public void PerformActions(EntityUid uid, EntityUid? userUid, IEnumerable<IGraphAction> actions)
         {
             foreach (var action in actions)
             {
-                // If an action deletes the entity, we stop performing actions.
+                // If an action deletes the entity, we stop performing the rest of actions.
                 if (!Exists(uid))
                     break;
 
@@ -410,6 +459,12 @@ namespace Content.Server.Construction
             }
         }
 
+        /// <summary>
+        ///     Resets the current construction edge status on an entity.
+        /// </summary>
+        /// <param name="uid">The target entity.</param>
+        /// <param name="construction">The construction component. If null, it will be resolved on the entity.</param>
+        /// <remarks>This method updates the construction pathfinding on the entity automatically.</remarks>
         public void ResetEdge(EntityUid uid, ConstructionComponent? construction = null)
         {
             if (!Resolve(uid, ref construction))
@@ -419,6 +474,7 @@ namespace Content.Server.Construction
             construction.EdgeIndex = null;
             construction.StepIndex = 0;
 
+            // Update pathfinding to keep it in sync with the current construction status.
             UpdatePathfinding(uid, construction);
         }
 
@@ -427,25 +483,71 @@ namespace Content.Server.Construction
             // We iterate all entities waiting for their interactions to be handled.
             // This is much more performant than making an EntityQuery for ConstructionComponent,
             // since, for example, every single wall has a ConstructionComponent....
-            foreach (var uid in _constructionUpdateQueue)
+            while (_constructionUpdateQueue.TryDequeue(out var uid))
             {
+                _queuedUpdates.Remove(uid);
+
                 // Ensure the entity exists and has a Construction component.
-                if (!EntityManager.EntityExists(uid) || !EntityManager.TryGetComponent(uid, out ConstructionComponent? construction))
+                if (!TryComp(uid, out ConstructionComponent? construction))
                     continue;
+
+#if EXCEPTION_TOLERANCE
+                try
+                {
+#endif
+
+                // temporary code for debugging a grafana exception. Something is fishy with the girder graph.
+                object? prev = null;
+                var queued = string.Join(", ", construction.InteractionQueue.Select(x => x.GetType().Name));
 
                 // Handle all queued interactions!
                 while (construction.InteractionQueue.TryDequeue(out var interaction))
                 {
+                    if (construction.Deleted)
+                    {
+                        // I suspect the error might just happen if two users try to deconstruction or otherwise modify an entity at the exact same tick?
+                        // In which case this isn't really an error, but should just be a `if (deleted) -> break`
+                        // But might as well verify this.
+
+                        _sawmill.Error($"Construction component was deleted while still processing interactions." +
+                            $"Entity {ToPrettyString(uid)}, graph: {construction.Graph}, " +
+                            $"Previous: {prev?.GetType()?.Name ?? "null"}, " +
+                            $"Next: {interaction.GetType().Name}, " +
+                            $"Initial Queue: {queued}, " +
+                            $"Remaining Queue: {string.Join(", ", construction.InteractionQueue.Select(x => x.GetType().Name))}");
+                        break;
+                    }
+                    prev = interaction;
+
                     // We set validation to false because we actually want to perform the interaction here.
                     HandleEvent(uid, interaction, false, construction);
                 }
+#if EXCEPTION_TOLERANCE
+                }
+                catch (Exception e)
+                {
+                    _sawmill.Error($"Caught exception while processing construction queue. Entity {ToPrettyString(uid)}, graph: {construction.Graph}");
+                    _runtimeLog.LogException(e, $"{nameof(ConstructionSystem)}.{nameof(UpdateInteractions)}");
+                    Del(uid);
+                }
+#endif
             }
 
-            _constructionUpdateQueue.Clear();
+            DebugTools.Assert(_queuedUpdates.Count == 0);
         }
 
         #region Event Handlers
 
+        /// <summary>
+        ///     Queues a directed event to be handled by construction on the next update tick.
+        ///     Used as a handler for any events that construction can listen to. <seealso cref="InitializeInteractions"/>
+        /// </summary>
+        /// <param name="uid">The entity the event is directed to.</param>
+        /// <param name="construction">The construction component to queue the event on.</param>
+        /// <param name="args">The directed event to be queued.</param>
+        /// <remarks>Events inheriting <see cref="HandledEntityEventArgs"/> are treated specially by this method.
+        ///          They will only be queued if they can be validated against the current construction state,
+        ///          in which case they will also be set as handled.</remarks>
         private void EnqueueEvent(EntityUid uid, ConstructionComponent construction, object args)
         {
             // Handled events get treated specially.
@@ -467,13 +569,30 @@ namespace Content.Server.Construction
             construction.InteractionQueue.Enqueue(args);
 
             // Add this entity to the queue so it'll be updated next tick.
-            _constructionUpdateQueue.Add(uid);
+            if (_queuedUpdates.Add(uid))
+                _constructionUpdateQueue.Enqueue(uid);
+        }
+
+        private void OnDoAfter(EntityUid uid, ConstructionComponent component, DoAfterEvent<ConstructionData> args)
+        {
+            if (!Exists(args.Args.Target) || args.Handled)
+                return;
+
+            if (args.Cancelled)
+            {
+                RaiseLocalEvent(args.Args.Target.Value, args.AdditionalData.CancelEvent);
+                args.Handled = true;
+                return;
+            }
+
+            RaiseLocalEvent(args.Args.Target.Value, args.AdditionalData.CompleteEvent);
+            args.Handled = true;
         }
 
         private void OnDoAfterComplete(ConstructionDoAfterComplete ev)
         {
             // Make extra sure the target entity exists...
-            if (!EntityManager.EntityExists(ev.TargetUid))
+            if (!Exists(ev.TargetUid))
                 return;
 
             // Re-raise this event, but directed on the target UID.
@@ -483,7 +602,7 @@ namespace Content.Server.Construction
         private void OnDoAfterCancelled(ConstructionDoAfterCancelled ev)
         {
             // Make extra sure the target entity exists...
-            if (!EntityManager.EntityExists(ev.TargetUid))
+            if (!Exists(ev.TargetUid))
                 return;
 
             // Re-raise this event, but directed on the target UID.
@@ -493,6 +612,18 @@ namespace Content.Server.Construction
         #endregion
 
         #region Event Definitions
+
+        private sealed class ConstructionData
+        {
+            public readonly object CompleteEvent;
+            public readonly object CancelEvent;
+
+            public ConstructionData(object completeEvent, object cancelEvent)
+            {
+                CompleteEvent = completeEvent;
+                CancelEvent = cancelEvent;
+            }
+        }
 
         /// <summary>
         ///     This event signals that a construction interaction's DoAfter has completed successfully.

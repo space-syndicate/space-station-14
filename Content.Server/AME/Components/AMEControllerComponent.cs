@@ -1,34 +1,25 @@
-using System;
 using System.Linq;
-using System.Threading.Tasks;
-using Content.Server.Hands.Components;
+using Content.Server.Administration.Logs;
+using Content.Server.Mind.Components;
 using Content.Server.NodeContainer;
 using Content.Server.Power.Components;
 using Content.Server.UserInterface;
-using Content.Shared.ActionBlocker;
 using Content.Shared.AME;
-using Content.Shared.Interaction;
-using Content.Shared.Item;
-using Content.Shared.Popups;
-using Content.Shared.Sound;
+using Content.Shared.Database;
+using Content.Shared.Hands.EntitySystems;
 using Robust.Server.GameObjects;
 using Robust.Shared.Audio;
 using Robust.Shared.Containers;
-using Robust.Shared.GameObjects;
-using Robust.Shared.IoC;
-using Robust.Shared.Localization;
 using Robust.Shared.Player;
-using Robust.Shared.Serialization.Manager.Attributes;
-using Robust.Shared.ViewVariables;
 
 namespace Content.Server.AME.Components
 {
     [RegisterComponent]
-    [ComponentReference(typeof(IActivate))]
-    [ComponentReference(typeof(IInteractUsing))]
-    public sealed class AMEControllerComponent : SharedAMEControllerComponent, IActivate, IInteractUsing
+    public sealed class AMEControllerComponent : SharedAMEControllerComponent
     {
         [Dependency] private readonly IEntityManager _entities = default!;
+        [Dependency] private readonly IEntitySystemManager _sysMan = default!;
+        [Dependency] private readonly IAdminLogManager _adminLogger = default!;
 
         [ViewVariables] private BoundUserInterface? UserInterface => Owner.GetUIOrNull(AMEControllerUiKey.Key);
         private bool _injecting;
@@ -45,8 +36,8 @@ namespace Content.Server.AME.Components
         [ViewVariables]
         private int _stability = 100;
 
-        private ContainerSlot _jarSlot = default!;
-        [ViewVariables] private bool HasJar => _jarSlot.ContainedEntity != null;
+        public ContainerSlot JarSlot = default!;
+        [ViewVariables] public bool HasJar => JarSlot.ContainedEntity != null;
 
         protected override void Initialize()
         {
@@ -63,21 +54,8 @@ namespace Content.Server.AME.Components
 
             _injecting = false;
             InjectionAmount = 2;
-            _jarSlot = ContainerHelpers.EnsureContainer<ContainerSlot>(Owner, $"{Name}-fuelJarContainer");
-        }
-
-        [Obsolete("Component Messages are deprecated, use Entity Events instead.")]
-        public override void HandleMessage(ComponentMessage message, IComponent? component)
-        {
-#pragma warning disable 618
-            base.HandleMessage(message, component);
-#pragma warning restore 618
-            switch (message)
-            {
-                case PowerChangedMessage powerChanged:
-                    OnPowerChanged(powerChanged);
-                    break;
-            }
+            // TODO: Fix this bad name. I'd update maps but then people get mad.
+            JarSlot = ContainerHelpers.EnsureContainer<ContainerSlot>(Owner, $"AMEController-fuelJarContainer");
         }
 
         internal void OnUpdate(float frameTime)
@@ -94,7 +72,7 @@ namespace Content.Server.AME.Components
                 return;
             }
 
-            if (_jarSlot.ContainedEntity is not {Valid: true} jar)
+            if (JarSlot.ContainedEntity is not {Valid: true} jar)
                 return;
 
             _entities.TryGetComponent<AMEFuelContainerComponent?>(jar, out var fuelJar);
@@ -115,35 +93,6 @@ namespace Content.Server.AME.Components
 
         }
 
-        /// <summary>
-        /// Called when you click the owner entity with an empty hand. Opens the UI client-side if possible.
-        /// </summary>
-        /// <param name="args">Data relevant to the event such as the actor which triggered it.</param>
-        void IActivate.Activate(ActivateEventArgs args)
-        {
-            if (!_entities.TryGetComponent(args.User, out ActorComponent? actor))
-            {
-                return;
-            }
-
-            if (!_entities.TryGetComponent(args.User, out HandsComponent? hands))
-            {
-                Owner.PopupMessage(args.User, Loc.GetString("ame-controller-component-interact-no-hands-text"));
-                return;
-            }
-
-            var activeHandEntity = hands.GetActiveHandItem?.Owner;
-            if (activeHandEntity == null)
-            {
-                UserInterface?.Open(actor.PlayerSession);
-            }
-        }
-
-        private void OnPowerChanged(PowerChangedMessage e)
-        {
-            UpdateUserInterface();
-        }
-
         // Used to update core count
         public void OnAMENodeGroupUpdate()
         {
@@ -152,7 +101,7 @@ namespace Content.Server.AME.Components
 
         private AMEControllerBoundUserInterfaceState GetUserInterfaceState()
         {
-            if (_jarSlot.ContainedEntity is not {Valid: true} jar)
+            if (JarSlot.ContainedEntity is not {Valid: true} jar)
             {
                 return new AMEControllerBoundUserInterfaceState(Powered, IsMasterController(), false, HasJar, 0, InjectionAmount, GetCoreCount());
             }
@@ -179,7 +128,7 @@ namespace Content.Server.AME.Components
             return true;
         }
 
-        private void UpdateUserInterface()
+        public void UpdateUserInterface()
         {
             var state = GetUserInterfaceState();
             UserInterface?.SetState(state);
@@ -223,6 +172,19 @@ namespace Content.Server.AME.Components
                     break;
             }
 
+            // Logging
+            _entities.TryGetComponent(player, out MindComponent? mindComponent);
+            if (mindComponent != null)
+            {
+                var humanReadableState = _injecting ? "Inject" : "Not inject";
+
+                if (msg.Button == UiButton.IncreaseFuel || msg.Button == UiButton.DecreaseFuel)
+                    _adminLogger.Add(LogType.Action, LogImpact.Extreme, $"{_entities.ToPrettyString(mindComponent.Owner):player} has set the AME to inject {InjectionAmount} while set to {humanReadableState}");
+
+                if (msg.Button == UiButton.ToggleInjection)
+                    _adminLogger.Add(LogType.Action, LogImpact.Extreme, $"{_entities.ToPrettyString(mindComponent.Owner):player} has set the AME to {humanReadableState}");
+            }
+
             GetAMENodeGroup()?.UpdateCoreVisuals();
 
             UpdateUserInterface();
@@ -234,16 +196,13 @@ namespace Content.Server.AME.Components
             if (!HasJar || _injecting)
                 return;
 
-            if (_jarSlot.ContainedEntity is not {Valid: true} jar)
+            if (JarSlot.ContainedEntity is not {Valid: true} jar)
                 return;
 
-            _jarSlot.Remove(jar);
+            JarSlot.Remove(jar);
             UpdateUserInterface();
 
-            if (!_entities.TryGetComponent<HandsComponent?>(user, out var hands) || !_entities.TryGetComponent<SharedItemComponent?>(jar, out var item))
-                return;
-            if (hands.CanPutInHand(item))
-                hands.PutInHand(item);
+            _sysMan.GetEntitySystem<SharedHandsSystem>().PickupOrDrop(user, jar);
         }
 
         private void ToggleInjection()
@@ -320,49 +279,12 @@ namespace Content.Server.AME.Components
 
         private void ClickSound()
         {
-            SoundSystem.Play(Filter.Pvs(Owner), _clickSound.GetSound(), Owner, AudioParams.Default.WithVolume(-2f));
+            SoundSystem.Play(_clickSound.GetSound(), Filter.Pvs(Owner), Owner, AudioParams.Default.WithVolume(-2f));
         }
 
         private void InjectSound(bool overloading)
         {
-            SoundSystem.Play(Filter.Pvs(Owner), _injectSound.GetSound(), Owner, AudioParams.Default.WithVolume(overloading ? 10f : 0f));
-        }
-
-        async Task<bool> IInteractUsing.InteractUsing(InteractUsingEventArgs args)
-        {
-            if (!_entities.TryGetComponent(args.User, out HandsComponent? hands))
-            {
-                Owner.PopupMessage(args.User, Loc.GetString("ame-controller-component-interact-using-no-hands-text"));
-                return true;
-            }
-
-            if (hands.GetActiveHandItem == null)
-            {
-                Owner.PopupMessage(args.User, Loc.GetString("ame-controller-component-interact-using-nothing-in-hands-text"));
-                return false;
-            }
-
-            var activeHandEntity = hands.GetActiveHandItem.Owner;
-            if (_entities.HasComponent<AMEFuelContainerComponent?>(activeHandEntity))
-            {
-                if (HasJar)
-                {
-                    Owner.PopupMessage(args.User, Loc.GetString("ame-controller-component-interact-using-already-has-jar"));
-                }
-
-                else
-                {
-                    _jarSlot.Insert(activeHandEntity);
-                    Owner.PopupMessage(args.User, Loc.GetString("ame-controller-component-interact-using-success"));
-                    UpdateUserInterface();
-                }
-            }
-            else
-            {
-                Owner.PopupMessage(args.User, Loc.GetString("ame-controller-component-interact-using-fail"));
-            }
-
-            return true;
+            SoundSystem.Play(_injectSound.GetSound(), Filter.Pvs(Owner), Owner, AudioParams.Default.WithVolume(overloading ? 10f : 0f));
         }
     }
 

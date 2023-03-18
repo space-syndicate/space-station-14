@@ -2,14 +2,15 @@
   name: broken bottle
   parent: BaseItem
   id: BrokenBottle
-  description: In Space Glasgow this is called a conversation starter
+  description: In Space Glasgow this is called a conversation starter.
   components:
   - type: ItemCooldown
   - type: MeleeWeapon
+    attackRate: 1.5
     damage:
       types:
-        Slash: 7
-    hitSound:
+        Slash: 5
+    soundHit:
       path: /Audio/Weapons/bladeslice.ogg
   - type: Sprite
     sprite: Objects/Consumable/TrashDrinks/broken_bottle.rsi
@@ -20,7 +21,7 @@
         Slash: 2
   - type: Tag
     tags:
-    - Recyclable
     - Trash
   - type: Recyclable
+  - type: SpaceGarbage
 

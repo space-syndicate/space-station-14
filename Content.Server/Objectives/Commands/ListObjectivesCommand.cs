@@ -4,11 +4,10 @@ using Content.Server.Players;
 using Content.Shared.Administration;
 using Robust.Server.Player;
 using Robust.Shared.Console;
-using Robust.Shared.IoC;
 
 namespace Content.Server.Objectives.Commands
 {
-    [AdminCommand(AdminFlags.Admin)]
+    [AdminCommand(AdminFlags.Logs)]
     public sealed class ListObjectivesCommand : IConsoleCommand
     {
         public string Command => "lsobjectives";
@@ -43,7 +42,7 @@ namespace Content.Server.Objectives.Commands
             }
             for (var i = 0; i < objectives.Count; i++)
             {
-                shell.WriteLine($"- [{i}] {objectives[i]}");
+                shell.WriteLine($"- [{i + 1}] {objectives[i].Conditions[0].Title}");
             }
 
         }

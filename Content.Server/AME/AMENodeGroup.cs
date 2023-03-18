@@ -1,15 +1,11 @@
-using System;
-using System.Collections.Generic;
 using System.Linq;
 using Content.Server.AME.Components;
 using Content.Server.Explosion.EntitySystems;
 using Content.Server.NodeContainer.NodeGroups;
 using Content.Server.NodeContainer.Nodes;
-using Robust.Shared.GameObjects;
-using Robust.Shared.IoC;
 using Robust.Shared.Map;
+using Robust.Shared.Map.Components;
 using Robust.Shared.Random;
-using Robust.Shared.ViewVariables;
 
 namespace Content.Server.AME
 {
@@ -42,14 +38,21 @@ namespace Content.Server.AME
             base.LoadNodes(groupNodes);
 
             var mapManager = IoCManager.Resolve<IMapManager>();
-            var grid = mapManager.GetGrid(GridId);
+            MapGridComponent? grid = null;
 
             foreach (var node in groupNodes)
             {
                 var nodeOwner = node.Owner;
                 if (_entMan.TryGetComponent(nodeOwner, out AMEShieldComponent? shield))
                 {
-                    var nodeNeighbors = grid.GetCellsInSquareArea(_entMan.GetComponent<TransformComponent>(nodeOwner).Coordinates, 1)
+                    var xform = _entMan.GetComponent<TransformComponent>(nodeOwner);
+                    if (xform.GridUid != grid?.Owner && !mapManager.TryGetGrid(xform.GridUid, out grid))
+                        continue;
+
+                    if (grid == null)
+                        continue;
+
+                    var nodeNeighbors = grid.GetCellsInSquareArea(xform.Coordinates, 1)
                         .Where(entity => entity != nodeOwner && _entMan.HasComponent<AMEShieldComponent>(entity));
 
                     if (nodeNeighbors.Count() >= 8)
@@ -162,22 +165,21 @@ namespace Content.Server.AME
         {
             if(_cores.Count < 1 || MasterController == null) { return; }
 
-            var intensity = 0;
+            float radius = 0;
 
             /*
              * todo: add an exact to the shielding and make this find the core closest to the controller
              * so they chain explode, after helpers have been added to make it not cancer
             */
-            var epicenter = _cores.First();
 
             foreach (AMEShieldComponent core in _cores)
             {
-                intensity += MasterController.InjectionAmount;
+                radius += MasterController.InjectionAmount;
             }
 
-            intensity = Math.Min(intensity, 8);
-
-            EntitySystem.Get<ExplosionSystem>().SpawnExplosion(epicenter.Owner, intensity / 2, intensity, intensity * 2, intensity * 3);
+            radius *= 2;
+            radius = Math.Min(radius, 8);
+            EntitySystem.Get<ExplosionSystem>().TriggerExplosive(MasterController.Owner, radius: radius, delete: false);
         }
     }
 }

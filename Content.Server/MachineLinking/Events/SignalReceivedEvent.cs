@@ -1,16 +1,14 @@
-using Robust.Shared.GameObjects;
-
 namespace Content.Server.MachineLinking.Events
 {
     public sealed class SignalReceivedEvent : EntityEventArgs
     {
         public readonly string Port;
-        public readonly object? Value;
+        public readonly EntityUid? Trigger;
 
-        public SignalReceivedEvent(string port, object? value)
+        public SignalReceivedEvent(string port, EntityUid? trigger)
         {
             Port = port;
-            Value = value;
+            Trigger = trigger;
         }
     }
 }

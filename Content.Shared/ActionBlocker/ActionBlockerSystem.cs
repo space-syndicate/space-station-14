@@ -1,15 +1,16 @@
-﻿using Content.Shared.Body.Events;
+using Content.Shared.Body.Events;
 using Content.Shared.DragDrop;
 using Content.Shared.Emoting;
+using Content.Shared.Hands;
 using Content.Shared.Interaction;
 using Content.Shared.Interaction.Events;
-using Content.Shared.Inventory.Events;
 using Content.Shared.Item;
-using Content.Shared.Movement;
+using Content.Shared.Movement.Components;
+using Content.Shared.Movement.Events;
 using Content.Shared.Speech;
 using Content.Shared.Throwing;
 using JetBrains.Annotations;
-using Robust.Shared.GameObjects;
+using Robust.Shared.Containers;
 
 namespace Content.Shared.ActionBlocker
 {
@@ -19,11 +20,36 @@ namespace Content.Shared.ActionBlocker
     [UsedImplicitly]
     public sealed class ActionBlockerSystem : EntitySystem
     {
-        public bool CanMove(EntityUid uid)
+        [Dependency] private readonly SharedContainerSystem _container = default!;
+
+        public override void Initialize()
         {
-            var ev = new MovementAttemptEvent(uid);
+            base.Initialize();
+            SubscribeLocalEvent<InputMoverComponent, ComponentStartup>(OnMoverStartup);
+        }
+
+        private void OnMoverStartup(EntityUid uid, InputMoverComponent component, ComponentStartup args)
+        {
+            UpdateCanMove(uid, component);
+        }
+
+        public bool CanMove(EntityUid uid, InputMoverComponent? component = null)
+        {
+            return Resolve(uid, ref component, false) && component.CanMove;
+        }
+
+        public bool UpdateCanMove(EntityUid uid, InputMoverComponent? component = null)
+        {
+            if (!Resolve(uid, ref component, false))
+                return false;
+
+            var ev = new UpdateCanMoveEvent(uid);
             RaiseLocalEvent(uid, ev);
 
+            if (component.CanMove == ev.Cancelled)
+                Dirty(component);
+
+            component.CanMove = !ev.Cancelled;
             return !ev.Cancelled;
         }
 
@@ -71,9 +97,9 @@ namespace Content.Shared.ActionBlocker
             return !ev.Cancelled;
         }
 
-        public bool CanThrow(EntityUid user)
+        public bool CanThrow(EntityUid user, EntityUid itemUid)
         {
-            var ev = new ThrowAttemptEvent(user);
+            var ev = new ThrowAttemptEvent(user, itemUid);
             RaiseLocalEvent(user, ev);
 
             return !ev.Cancelled;
@@ -81,42 +107,68 @@ namespace Content.Shared.ActionBlocker
 
         public bool CanSpeak(EntityUid uid)
         {
+            // This one is used as broadcast
             var ev = new SpeakAttemptEvent(uid);
-            RaiseLocalEvent(uid, ev);
+            RaiseLocalEvent(uid, ev, true);
 
             return !ev.Cancelled;
         }
 
         public bool CanDrop(EntityUid uid)
         {
-            var ev = new DropAttemptEvent(uid);
+            var ev = new DropAttemptEvent();
             RaiseLocalEvent(uid, ev);
 
             return !ev.Cancelled;
         }
 
-        public bool CanPickup(EntityUid uid)
+        public bool CanPickup(EntityUid user, EntityUid item)
         {
-            var ev = new PickupAttemptEvent(uid);
-            RaiseLocalEvent(uid, ev);
+            var userEv = new PickupAttemptEvent(user, item);
+            RaiseLocalEvent(user, userEv);
 
-            return !ev.Cancelled;
+            if (userEv.Cancelled)
+                return false;
+
+            var itemEv = new GettingPickedUpAttemptEvent(user, item);
+            RaiseLocalEvent(item, itemEv);
+
+            return !itemEv.Cancelled;
         }
 
         public bool CanEmote(EntityUid uid)
         {
+            // This one is used as broadcast
             var ev = new EmoteAttemptEvent(uid);
-            RaiseLocalEvent(uid, ev);
+            RaiseLocalEvent(uid, ev, true);
 
             return !ev.Cancelled;
         }
 
         public bool CanAttack(EntityUid uid, EntityUid? target = null)
         {
+            _container.TryGetOuterContainer(uid, Transform(uid), out var outerContainer);
+            if (target != null &&  target != outerContainer?.Owner && _container.IsEntityInContainer(uid))
+            {
+                var containerEv = new CanAttackFromContainerEvent(uid, target);
+                RaiseLocalEvent(uid, containerEv);
+                return containerEv.CanAttack;
+            }
+
             var ev = new AttackAttemptEvent(uid, target);
             RaiseLocalEvent(uid, ev);
 
-            return !ev.Cancelled;
+            if (ev.Cancelled)
+                return false;
+
+            if (target != null)
+            {
+                var tev = new GettingAttackedAttemptEvent();
+                RaiseLocalEvent(target.Value, ref tev);
+                return !tev.Cancelled;
+            }
+
+            return true;
         }
 
         public bool CanChangeDirection(EntityUid uid)

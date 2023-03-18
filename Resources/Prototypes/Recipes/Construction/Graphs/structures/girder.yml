@@ -43,6 +43,7 @@
           steps:
             - material: Steel
               amount: 2
+              doAfter: 2
 
         - to: reinforcedGirder
           completed:
@@ -53,25 +54,172 @@
           steps:
             - material: Plasteel
               amount: 2
+              doAfter: 1
+
+        - to: woodWall
+          completed:
+            - !type:SnapToGrid
+              southRotation: true
+          conditions:
+            - !type:EntityAnchored {}
+          steps:
+            - material: WoodPlank
+              amount: 2
+              doAfter: 2
+
+        - to: uraniumWall
+          completed:
+            - !type:SnapToGrid
+              southRotation: true
+          conditions:
+            - !type:EntityAnchored {}
+          steps:
+            - material: Uranium
+              amount: 2
+            - tool: Welding
+              doAfter: 10
+
+        - to: silverWall
+          completed:
+            - !type:SnapToGrid
+              southRotation: true
+          conditions:
+            - !type:EntityAnchored {}
+          steps:
+            - material: Silver
+              amount: 2
+            - tool: Welding
+              doAfter: 20
+
+        - to: plasticWall
+          completed:
+            - !type:SnapToGrid
+              southRotation: true
+          conditions:
+            - !type:EntityAnchored {}
+          steps:
+            - material: Plastic
+              amount: 2
+              doAfter: 2
+
+        - to: plasmaWall
+          completed:
+            - !type:SnapToGrid
+              southRotation: true
+          conditions:
+            - !type:EntityAnchored {}
+          steps:
+            - material: Plasma
+              amount: 2
+            - tool: Welding
+              doAfter: 20
+
+        - to: goldWall
+          completed:
+            - !type:SnapToGrid
+              southRotation: true
+          conditions:
+            - !type:EntityAnchored {}
+          steps:
+            - material: Gold
+              amount: 2
+            - tool: Welding
+              doAfter: 20
 
     - node: wall
       entity: WallSolid
       edges:
         - to: girder
           completed:
-            - !type:SpawnPrototype
+            - !type:GivePrototype
               prototype: SheetSteel1
               amount: 2
           steps:
             - tool: Welding
-              doAfter: 2
+              doAfter: 10
+
+    - node: woodWall
+      entity: WallWood
+      edges:
+        - to: girder
+          completed:
+            - !type:GivePrototype
+              prototype: MaterialWoodPlank1
+              amount: 2
+          steps:
+            - tool: Prying
+              doAfter: 10
+
+    - node: uraniumWall
+      entity: WallUranium
+      edges:
+        - to: girder
+          completed:
+            - !type:GivePrototype
+              prototype: SheetUranium1
+              amount: 2
+          steps:
+            - tool: Welding
+              doAfter: 10
+            - tool: Prying
+              doAfter: 10
+
+    - node: silverWall
+      entity: WallSilver
+      edges:
+        - to: girder
+          completed:
+            - !type:GivePrototype
+              prototype: IngotSilver1
+              amount: 2
+          steps:
+            - tool: Welding
+              doAfter: 20
+            - tool: Prying
+              doAfter: 10
+
+    - node: plasticWall
+      entity: WallPlastic
+      edges:
+        - to: girder
+          completed:
+            - !type:GivePrototype
+              prototype: SheetSteel1
+              amount: 2
+          steps:
+            - tool: Prying
+              doAfter: 10
+
+    - node: plasmaWall
+      entity: WallPlasma
+      edges:
+        - to: girder
+          completed:
+            - !type:GivePrototype
+              prototype: SheetPlasma1
+              amount: 2
+          steps:
+            - tool: Welding
+              doAfter: 20
+            - tool: Prying
+              doAfter: 10
+
+    - node: goldWall
+      entity: WallGold
+      edges:
+        - to: girder
+          completed:
+            - !type:GivePrototype
+              prototype: IngotGold1
+              amount: 2
+          steps:
+            - tool: Welding
+              doAfter: 20
+            - tool: Prying
+              doAfter: 10
 
     - node: reinforcedGirder
-      actions:
-        - !type:SpriteChange
-          specifier:
-            sprite: /Textures/Structures/Walls/solid.rsi
-            state: reinforced_wall_girder
+      entity: ReinforcedGirder
       edges:
         - to: reinforcedWall
           completed:
@@ -88,16 +236,23 @@
           completed:
             - !type:SnapToGrid
               southRotation: true
+            - !type:SpawnPrototype
+              prototype: SheetPlasteel1
+              amount: 2
           conditions:
             - !type:EntityAnchored { }
           steps:
-            - tool: Welding
+            - tool: Cutting
               doAfter: 2
 
     - node: reinforcedWall
       entity: WallReinforced
       edges:
-        - to: girder
+        - to: reinforcedGirder
+          completed:
+            - !type:SpawnPrototype
+              prototype: SheetPlasteel1
+              amount: 2
           steps:
             - tool: Cutting
               doAfter: 1
@@ -108,7 +263,7 @@
             - tool: Screwing
               doAfter: 1
             - tool: Welding
-              doAfter: 1
+              doAfter: 5
               completed:
                 - !type:VisualizerDataInt
                   key: "enum.ReinforcedWallVisuals.DeconstructionStage"
@@ -122,7 +277,7 @@
                   key: "enum.ReinforcedWallVisuals.DeconstructionStage"
                   data: 3
             - tool: Welding
-              doAfter: 2
+              doAfter: 10
               completed:
                 - !type:VisualizerDataInt
                   key: "enum.ReinforcedWallVisuals.DeconstructionStage"
@@ -141,3 +296,16 @@
                   data: 0
             - tool: Cutting
               doAfter: 1
+
+    - node: wallrust
+      entity: WallSolidRust
+      edges:
+        - to: wall
+          completed:
+            - !type:SpawnPrototype
+              prototype: WallSolid
+              amount: 1
+            - !type:DeleteEntity {}
+          steps:
+            - tool: Welding
+              doAfter: 5

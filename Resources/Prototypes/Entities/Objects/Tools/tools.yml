@@ -13,8 +13,10 @@
     - Wirecutter
   - type: Sprite
     sprite: Objects/Tools/wirecutters.rsi
+    netsync: false
     layers:
-    - state: cutters-map
+    - state: cutters
+      map: [ "enum.DamageStateVisualLayers.Base" ]
     - state: cutters-cutty-thingy
   - type: ItemCooldown
   - type: MeleeWeapon
@@ -26,18 +28,15 @@
       - Cutting
     useSound:
       path: /Audio/Items/wirecutter.ogg
-  - type: RandomSpriteColor
-    state: cutters
-    colors:
-      blue: "#1861d5"
-      red: "#951710"
-      pink: "#d5188d"
-      brown: "#a05212"
-      green: "#0e7f1b"
-      cyan: "#18a2d5"
-      yellow: "#d58c18"
+  - type: RandomSprite
+    available:
+      - enum.DamageStateVisualLayers.Base:
+          cutters: Rainbow
   - type: Item
     sprite: Objects/Tools/wirecutters.rsi
+  - type: LatticeCutting
+  - type: StaticPrice
+    price: 40
 
 - type: entity
   name: screwdriver
@@ -53,37 +52,36 @@
     - Screwdriver
   - type: Sprite
     sprite: Objects/Tools/screwdriver.rsi
+    netsync: false
     layers:
-      - state: screwdriver-map
+      - state: screwdriver
+        map: [ "enum.DamageStateVisualLayers.Base" ]
       - state: screwdriver-screwybits
   - type: Item
     sprite: Objects/Tools/screwdriver.rsi
   - type: ItemCooldown
   - type: MeleeWeapon
+    attackRate: 1.5
     damage:
       types:
-        Piercing: 10
+        Piercing: 7
   - type: Tool
     qualities:
       - Screwing
     useSound:
       collection: Screwdriver
-  - type: RandomSpriteColor
-    state: screwdriver
-    colors:
-      blue: "#1861d5"
-      red: "#ff0000"
-      pink: "#d5188d"
-      brown: "#a05212"
-      green: "#0e7f1b"
-      cyan: "#18a2d5"
-      yellow: "#ffa500"
+  - type: RandomSprite
+    available:
+      - enum.DamageStateVisualLayers.Base:
+          screwdriver: Rainbow
+  - type: StaticPrice
+    price: 40
 
 - type: entity
   name: wrench
   parent: BaseItem
   id: Wrench
-  description: A common tool for assembly and disassembly, righty tighty lefty loosey.
+  description: 'A common tool for assembly and disassembly. Remember: righty tighty, lefty loosey.'
   components:
   - type: EmitSoundOnLand
     sound:
@@ -99,14 +97,17 @@
     sprite: Objects/Tools/wrench.rsi
   - type: ItemCooldown
   - type: MeleeWeapon
+    attackRate: 1.5
     damage:
       types:
-        Blunt: 10
+        Blunt: 6.5
   - type: Tool
     qualities:
       - Anchoring
     useSound:
       path: /Audio/Items/ratchet.ogg
+  - type: StaticPrice
+    price: 40
 
 - type: entity
   name: crowbar
@@ -138,6 +139,8 @@
     useSound:
       path: /Audio/Items/crowbar.ogg
   - type: TilePrying
+  - type: StaticPrice
+    price: 40
 
 - type: entity
   name: emergency crowbar
@@ -154,7 +157,7 @@
   - type: Item
     sprite: Objects/Tools/crowbar.rsi
     size: 10
-    HeldPrefix: red
+    heldPrefix: red
 
 - type: entity
   name: multitool
@@ -171,16 +174,34 @@
     - state: icon
     - state: green-unlit
       shader: unshaded
-  - type: Clothing
+  - type: Item
     size: 5
+  - type: Clothing
     sprite: Objects/Tools/multitool.rsi
-    QuickEquip: false
-    Slots:
+    quickEquip: false
+    slots:
     - Belt
   - type: Tool
     qualities:
       - Pulsing
   - type: SignalLinker
+  - type: NetworkConfigurator
+  - type: ActivatableUI
+    key: enum.NetworkConfiguratorUiKey.List
+    inHandsOnly: true
+  - type: UserInterface
+    interfaces:
+    - key: enum.SignalLinkerUiKey.Key
+      type: SignalPortSelectorBoundUserInterface
+    - key: enum.NetworkConfiguratorUiKey.List
+      type: NetworkConfiguratorBoundUserInterface
+    - key: enum.NetworkConfiguratorUiKey.Configure
+      type: NetworkConfiguratorBoundUserInterface
+  - type: Tag
+    tags:
+      - DroneUsable
+  - type: StaticPrice
+    price: 60
 
 - type: entity
   name: power drill
@@ -201,6 +222,7 @@
     qualities:
       - Screwing
     speed: 1.5
+    useSound: /Audio/Items/drill_use.ogg
   - type: MultipleTool
     statusShowBehavior: true
     entries:
@@ -220,6 +242,8 @@
           path: /Audio/Items/drill_use.ogg
         changeSound:
           path: /Audio/Items/change_drill.ogg
+  - type: StaticPrice
+    price: 60
 
 - type: entity
   name: RCD
@@ -233,13 +257,24 @@
   - type: Sprite
     sprite: Objects/Tools/rcd.rsi
     state: icon
-  - type: Clothing
+  - type: Item
     size: 20
+  - type: Clothing
     sprite: Objects/Tools/rcd.rsi
-    QuickEquip: false
-    Slots:
+    quickEquip: false
+    slots:
     - Belt
+  - type: StaticPrice
+    price: 100
 
+- type: entity
+  id: RCDEmpty
+  parent: RCD
+  suffix: Empty
+  components:
+  - type: RCD
+    ammo: 0
+  
 - type: entity
   name: RCD Ammo
   parent: BaseItem
@@ -252,7 +287,9 @@
     state: ammo
   - type: Item
     sprite: Objects/Tools/rcd.rsi
-    HeldPrefix: ammo
+    heldPrefix: ammo
+  - type: StaticPrice
+    price: 60
 
 - type: entity
   name: shovel
@@ -273,3 +310,70 @@
         Blunt: 10
   - type: Item
     sprite: Objects/Tools/shovel.rsi
+
+- type: entity
+  name: omnitool
+  parent: BaseItem
+  id: Omnitool
+  description: A drone's best friend.
+  components:
+  - type: Sprite
+    sprite: Objects/Tools/omnitool.rsi
+    state: omnitool-screwing
+  - type: Item
+    sprite: Objects/Tools/omnitool.rsi
+    size: 20
+  - type: TilePrying
+  - type: SignalLinker
+    requiredQuality: Pulsing
+  - type: UserInterface
+    interfaces:
+      - key: enum.SignalLinkerUiKey.Key
+        type: SignalPortSelectorBoundUserInterface
+  - type: Tool
+    qualities:
+      - Screwing
+    speed: 1.2 # Kept for future adjustments. Currently 1.2x for balance
+    useSound: /Audio/Items/drill_use.ogg
+  - type: LatticeCutting
+  - type: MultipleTool
+    statusShowBehavior: true
+    entries:
+      - behavior: Screwing
+        sprite:
+          sprite: Objects/Tools/omnitool.rsi
+          state: omnitool-screwing
+        useSound:
+          path: /Audio/Items/drill_use.ogg
+        changeSound:
+          path: /Audio/Items/change_drill.ogg
+      - behavior: Prying
+        sprite:
+          sprite: Objects/Tools/omnitool.rsi
+          state: omnitool-prying
+        useSound:
+          path: /Audio/Items/jaws_pry.ogg
+        changeSound:
+          path: /Audio/Items/change_drill.ogg
+      - behavior: Anchoring
+        sprite:
+          sprite: Objects/Tools/omnitool.rsi
+          state: omnitool-wrenching
+        useSound:
+          path: /Audio/Items/ratchet.ogg
+        changeSound:
+          path: /Audio/Items/change_drill.ogg
+      - behavior: Cutting
+        sprite:
+          sprite: Objects/Tools/omnitool.rsi
+          state: omnitool-snipping
+        useSound:
+          path: /Audio/Items/jaws_cut.ogg
+        changeSound:
+          path: /Audio/Items/change_drill.ogg
+      - behavior: Pulsing
+        sprite:
+          sprite: Objects/Tools/omnitool.rsi
+          state: omnitool-pulsing
+        changeSound:
+          path: /Audio/Items/change_drill.ogg

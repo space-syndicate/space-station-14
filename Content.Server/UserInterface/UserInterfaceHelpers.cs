@@ -1,14 +1,13 @@
 ﻿using Robust.Server.GameObjects;
-using Robust.Shared.GameObjects;
-using Robust.Shared.IoC;
 
 namespace Content.Server.UserInterface
 {
     public static class UserInterfaceHelpers
     {
-        public static BoundUserInterface? GetUIOrNull(this EntityUid entity, object uiKey)
+        [Obsolete("Use UserInterfaceSystem")]
+        public static BoundUserInterface? GetUIOrNull(this EntityUid entity, Enum uiKey)
         {
-            return IoCManager.Resolve<IEntityManager>().GetComponentOrNull<ServerUserInterfaceComponent>(entity)?.GetBoundUserInterfaceOrNull(uiKey);
+            return IoCManager.Resolve<IEntitySystemManager>().GetEntitySystem<UserInterfaceSystem>().GetUiOrNull(entity, uiKey);
         }
     }
 }

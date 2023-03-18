@@ -17,7 +17,7 @@
 - type: entity
   id: ChessBoardTabletop
   name: chessboard
-  abstract: true
+  noSpawn: true
   components:
   - type: Sprite
     sprite: Objects/Fun/Tabletop/chessboard_tabletop.rsi
@@ -36,8 +36,6 @@
     netsync: false
     noRot: true
   - type: Appearance
-    visuals:
-    - type: TabletopItemVisualizer
 
 # White pieces
 - type: entity

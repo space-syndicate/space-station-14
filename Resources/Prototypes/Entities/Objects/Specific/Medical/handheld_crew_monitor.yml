@@ -9,12 +9,17 @@
     state: scanner
   - type: ActivatableUI
     key: enum.CrewMonitoringUIKey.Key
+    closeOnHandDeselect: false
   - type: UserInterface
     interfaces:
       - key: enum.CrewMonitoringUIKey.Key
         type: CrewMonitoringBoundUserInterface
   - type: CrewMonitoringConsole
-  - type: DeviceNetworkComponent
+  - type: DeviceNetwork
     deviceNetId: Wireless
+    receiveFrequencyId: CrewMonitor
   - type: WirelessNetworkConnection
     range: 500
+  - type: StationLimitedNetwork
+  - type: StaticPrice
+    price: 500

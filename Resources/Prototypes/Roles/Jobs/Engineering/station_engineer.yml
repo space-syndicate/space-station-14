@@ -1,15 +1,21 @@
 - type: job
   id: StationEngineer
-  name: "station engineer"
+  name: job-name-engineer
+  description: job-description-engineer
+  playTimeTracker: JobStationEngineer
+  requirements:
+    - !type:DepartmentTimeRequirement
+      department: Engineering
+      time: 18000 # Corvax-RoleTime
   startingGear: StationEngineerGear
-  departments:
-  - Engineering
   icon: "StationEngineer"
-  supervisors: "the chief engineer"
+  supervisors: job-supervisors-ce
   access:
   - Maintenance
   - Engineering
   - External
+  extendedAccess:
+  - Atmospherics
 
 - type: startingGear
   id: StationEngineerGear
@@ -20,6 +26,7 @@
     shoes: ClothingShoesBootsWork
     outerClothing: ClothingOuterVestHazard
     id: EngineerPDA
+    eyes: ClothingEyesGlassesMeson
     belt: ClothingBeltUtilityFilled
     ears: ClothingHeadsetEngineering
   innerclothingskirt: ClothingUniformJumpskirtEngineering

@@ -1,10 +1,6 @@
-﻿using System.Collections.Generic;
-using Content.Shared.Maps;
+﻿using Content.Shared.Maps;
 using JetBrains.Annotations;
-using Robust.Shared.GameObjects;
 using Robust.Shared.Map;
-using Robust.Shared.Maths;
-using Robust.Shared.Serialization.Manager.Attributes;
 using Robust.Shared.Utility;
 
 namespace Content.Shared.Construction.Conditions
@@ -17,15 +13,13 @@ namespace Content.Shared.Construction.Conditions
         public List<string> TargetTiles { get; } = new();
 
         [DataField("guideText")]
-        public string? GuideText = null;
+        public string? GuideText;
 
         [DataField("guideIcon")]
-        public SpriteSpecifier? GuideIcon = null;
+        public SpriteSpecifier? GuideIcon;
 
         public bool Condition(EntityUid user, EntityCoordinates location, Direction direction)
         {
-            if (TargetTiles == null) return true;
-
             var tileFound = location.GetTileRef();
 
             if (tileFound == null)
@@ -34,9 +28,8 @@ namespace Content.Shared.Construction.Conditions
             var tile = tileFound.Value.Tile.GetContentTileDefinition();
             foreach (var targetTile in TargetTiles)
             {
-                if (tile.ID == targetTile) {
+                if (tile.ID == targetTile)
                     return true;
-                }
             }
             return false;
         }

@@ -1,6 +1,5 @@
+using Content.Server.Ghost.Components;
 using Content.Shared.Examine;
-using Robust.Shared.GameObjects;
-using Robust.Shared.Localization;
 
 namespace Content.Server.Warps;
 
@@ -12,8 +11,11 @@ public sealed class WarpPointSystem : EntitySystem
         SubscribeLocalEvent<WarpPointComponent, ExaminedEvent>(OnWarpPointExamine);
     }
 
-    private static void OnWarpPointExamine(EntityUid uid, WarpPointComponent component, ExaminedEvent args)
+    private void OnWarpPointExamine(EntityUid uid, WarpPointComponent component, ExaminedEvent args)
     {
+        if (!HasComp<GhostComponent>(args.Examiner))
+            return;
+
         var loc = component.Location == null ? "<null>" : $"'{component.Location}'";
         args.PushText(Loc.GetString("warp-point-component-on-examine-success", ("location", loc)));
     }

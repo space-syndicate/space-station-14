@@ -1,6 +1,12 @@
-ent-CrateArmorySMG = smg crate
-    .desc = Contains two high-powered, semiautomatic rifles with six mags. Requires Armory access to open.
+ent-CrateArmorySMG = ящик пистолетов-пулемётов
+    .desc = Содержит два мощных пистолета-пулемёта и четыре магазина. Чтобы открыть необходим доступ уровня Оружейной.
     .suffix = { "" }
-ent-CrateArmoryShotgun = shotgun crate
-    .desc = For when the enemy absolutely needs to be replaced with lead. Contains two Gladstone Combat Shotguns, and some standard shotgun shells. Requires Armory access to open.
+ent-CrateArmoryShotgun = ящик дробовиков
+    .desc = Когда необходимо нашпиговать врага свинцом. Содержит два дробовика Силовик, и немного обычных ружейных патронов. Чтобы открыть необходим доступ уровня Оружейной.
+    .suffix = { "" }
+ent-CrateTrackingImplants = ящик с имплантами Трекер
+    .desc = Содержит несколько следящих имплантов. Подходит для заключенных, которых вы хотите освободить, но за которыми продолжается наблюдение.
+    .suffix = { "" }
+ent-CrateArmoryLaser = ящик лазеров
+    .desc = Содержит три смертоносных высокоэнергетичных лазерных пистолета. Чтобы открыть необходим доступ уровня Оружейной.
     .suffix = { "" }

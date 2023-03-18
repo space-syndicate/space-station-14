@@ -1,11 +1,14 @@
 ent-BaseLightbulb = { ent-BaseItem }
     .desc = { ent-BaseItem.desc }
     .suffix = { "" }
+ent-BaseLightTube = { ent-BaseLightbulb }
+    .desc = { ent-BaseLightbulb.desc }
+    .suffix = { "" }
 ent-LightBulb = incandescent light bulb
-    .desc = That's a light bulb.
+    .desc = A light bulb.
     .suffix = { "" }
 ent-LightTube = fluorescent light tube
-    .desc = That's a light fixture.
+    .desc = A light fixture.
     .suffix = { "" }
 ent-LedLightTube = led light tube
     .desc = A high power high energy bulb.

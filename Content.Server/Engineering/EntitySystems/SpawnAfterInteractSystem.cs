@@ -2,12 +2,11 @@ using Content.Server.Coordinates.Helpers;
 using Content.Server.DoAfter;
 using Content.Server.Engineering.Components;
 using Content.Server.Stack;
+using Content.Shared.DoAfter;
 using Content.Shared.Interaction;
-using Content.Shared.Interaction.Helpers;
+using Content.Shared.Maps;
 using Content.Shared.Stacks;
 using JetBrains.Annotations;
-using Robust.Shared.GameObjects;
-using Robust.Shared.IoC;
 using Robust.Shared.Map;
 
 namespace Content.Server.Engineering.EntitySystems
@@ -28,16 +27,18 @@ namespace Content.Server.Engineering.EntitySystems
 
         private async void HandleAfterInteract(EntityUid uid, SpawnAfterInteractComponent component, AfterInteractEvent args)
         {
+            if (!args.CanReach && !component.IgnoreDistance)
+                return;
             if (string.IsNullOrEmpty(component.Prototype))
                 return;
-            if (!_mapManager.TryGetGrid(args.ClickLocation.GetGridId(EntityManager), out var grid))
+            if (!_mapManager.TryGetGrid(args.ClickLocation.GetGridUid(EntityManager), out var grid))
                 return;
             if (!grid.TryGetTileRef(args.ClickLocation, out var tileRef))
                 return;
 
             bool IsTileClear()
             {
-                return tileRef.Tile.IsEmpty == false;
+                return tileRef.Tile.IsEmpty == false && !tileRef.IsBlockedTurf(true);
             }
 
             if (!IsTileClear())
@@ -60,7 +61,7 @@ namespace Content.Server.Engineering.EntitySystems
             if (component.Deleted || Deleted(component.Owner))
                 return;
 
-            if (EntityManager.TryGetComponent<SharedStackComponent?>(component.Owner, out var stackComp)
+            if (EntityManager.TryGetComponent<StackComponent?>(component.Owner, out var stackComp)
                 && component.RemoveOnInteract && !_stackSystem.Use(uid, 1, stackComp))
             {
                 return;

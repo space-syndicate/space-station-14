@@ -5,10 +5,13 @@
   description: A bulky medical scanner.
   components:
   - type: MedicalScanner
+  - type: DeviceNetwork
+    deviceNetId: Wired
+  - type: DeviceList
   - type: Sprite
     netsync: false
-    noRot: true
     sprite: Structures/Machines/scanner.rsi
+    snapCardinals: true
     layers:
     - state: open
       map: ["enum.MedicalScannerVisualLayers.Machine"]
@@ -20,16 +23,29 @@
     fixtures:
     - shape:
         !type:PhysShapeAabb
-          bounds: "-0.25,-0.5,0.25,0.5"
-      mass: 25
-      layer:
-      - SmallImpassable
-      - Opaque
+        bounds: "-0.25,-0.5,0.25,0.5"
+      density: 190
       mask:
-      - MobMask
+      - MachineMask
+      layer:
+      - MachineLayer
   - type: Construction
     graph: Machine
     node: machine
+    containers:
+    - machine_parts
+    - machine_board
+  - type: ContainerContainer
+    containers:
+      scanner-bodyContainer: !type:ContainerSlot
+      machine_board: !type:Container
+      machine_parts: !type:Container
+  - type: SignalReceiver
+    inputs:
+      MedicalScannerReceiver: []
+  - type: Damageable
+    damageContainer: Inorganic
+    damageModifierSet: StrongMetallic
   - type: Destructible
     thresholds:
     - trigger:
@@ -42,14 +58,18 @@
         acts: ["Destruction"]
   - type: Machine
     board: MedicalScannerMachineCircuitboard
-  - type: MaterialStorage
   - type: Wires
     BoardName: "MedicalScanner"
     LayoutId: MedicalScanner
   - type: Appearance
     visuals:
     - type: MedicalScannerVisualizer
-  - type: UserInterface
-    interfaces:
-    - key: enum.MedicalScannerUiKey.Key
-      type: MedicalScannerBoundUserInterface
+  - type: Climbable
+  - type: ApcPowerReceiver
+    powerLoad: 200 #Receives most of its power from the console
+  - type: UpgradePowerDraw #upgrade it for the meme?
+    powerDrawMultiplier: 0.75
+    scaling: Exponential
+  - type: EmptyOnMachineDeconstruct
+    containers:
+    - scanner-bodyContainer

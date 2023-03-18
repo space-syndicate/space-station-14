@@ -12,19 +12,13 @@
     fixtures:
     - shape:
         !type:PhysShapeAabb
-          bounds: "-0.5,-0.5,0.5,0.1"
-      mass: 25
+        bounds: "-0.45,-0.45,0.45,0.1"
+      density: 190
       hard: false
       mask:
-      - Impassable
-      - MobImpassable
-      - VaultImpassable
-      - SmallImpassable
+      - FullTileMask
       layer:
-      - Opaque
-      - MobImpassable
-      - VaultImpassable
-      - SmallImpassable
+      - FullTileMask
   - type: Damageable
     damageContainer: Inorganic
     damageModifierSet: Metallic
@@ -40,6 +34,7 @@
     sprite: Structures/Hydroponics/misc.rsi
     state: soil
     netsync: false
+    noRot: true
   - type: PlantHolder
     drawWarnings: false
   - type: SolutionContainerManager
@@ -59,5 +54,4 @@
       - !type:AddToSolutionReaction
         solution: soil
   - type: Appearance
-    visuals:
-      - type: PlantHolderVisualizer
+  - type: PlantHolderVisuals

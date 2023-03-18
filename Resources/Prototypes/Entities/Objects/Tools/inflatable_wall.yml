@@ -8,7 +8,6 @@
     - type: Stack
       stackType: InflatableWall
       count: 10
-      max: 10
     - type: Sprite
       sprite: Objects/Misc/inflatable_wall.rsi
       state: item_wall
@@ -21,6 +20,9 @@
       doAfter: 1
       removeOnInteract: true
     - type: Clickable
+    - type: Tag
+      tags:
+        - DroneUsable
 #    - type: Appearance # TODO: Add stack sprites
 #      visuals:
 #        - type: StackVisualizer
@@ -39,7 +41,6 @@
     - type: Stack
       stackType: InflatableDoor
       count: 4
-      max: 4
     - type: Sprite
       sprite: Objects/Misc/inflatable_door.rsi
       state: item_door
@@ -52,6 +53,9 @@
       doAfter: 1
       removeOnInteract: true
     - type: Clickable
+    - type: Tag
+      tags:
+        - DroneUsable
 
 - type: entity
   parent: InflatableWallStack

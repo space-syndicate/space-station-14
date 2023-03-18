@@ -1,7 +1,7 @@
 {
   "version": 1,
   "license": "CC-BY-SA-3.0",
-  "copyright": "Taken from https://github.com/vgstation-coders/vgstation13/blob/e71d6c4fba5a51f99b81c295dcaec4fc2f58fb19/icons/mob/screen1.dmi, librarian by Peptide",
+  "copyright": "Taken from https://github.com/vgstation-coders/vgstation13/blob/e71d6c4fba5a51f99b81c295dcaec4fc2f58fb19/icons/mob/screen1.dmi, librarian by Peptide. cburn and cluwne made by brainfood1183 (github)",
   "size": {
     "x": 32,
     "y": 32
@@ -14,7 +14,7 @@
       "name": "ai"
     },
     {
-      "name": "assistant"
+      "name": "passenger"
     },
     {
       "name": "atmospherics"
@@ -26,10 +26,16 @@
       "name": "botanist"
     },
     {
+      "name": "boxer"
+    },
+    {
       "name": "captain"
     },
     {
       "name": "cargo_tech"
+    },
+    {
+      "name": "cburn"
     },
     {
       "name": "centcom"
@@ -62,6 +68,36 @@
       "name": "detective"
     },
     {
+      "name": "ertengineer"
+    },
+    {
+      "name": "ertengineereva"
+    },
+    {
+      "name": "ertjanitor"
+    },
+    {
+      "name": "ertjanitoreva"
+    },
+    {
+      "name": "ertleader"
+    },
+    {
+      "name": "ertleadereva"
+    },
+    {
+      "name": "ertmedical"
+    },
+    {
+      "name": "ertmedicaleva"
+    },
+    {
+      "name": "ertsecurity"
+    },
+    {
+      "name": "ertsecurityeva"
+    },
+    {
       "name": "geneticist"
     },
     {
@@ -81,6 +117,12 @@
     },
     {
       "name": "mime"
+    },
+    {
+      "name": "zookeeper"
+    },
+    {
+      "name": "reporter"
     },
     {
       "name": "paramedic"
@@ -120,6 +162,9 @@
     },
     {
       "name": "warden"
+    },
+	{
+      "name": "cluwne"
     },
     {
       "name": "musician"

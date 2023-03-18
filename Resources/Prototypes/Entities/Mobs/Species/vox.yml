@@ -1,15 +1,14 @@
 ﻿- type: entity
-  parent: MobHuman
-  abstract: True
-  id: BaseVox
+  parent: BaseMobOrganic
+  id: BaseMobVox
+  abstract: true
   components:
+  - type: Hunger
+  - type: Thirst
   - type: Icon
     sprite: Mobs/Species/Vox/parts.rsi
     state: vox_m
   - type: Sprite
-    netsync: false
-    noRot: true
-    drawdepth: Mobs
     layers:
       - map: [ "enum.HumanoidVisualLayers.Chest" ]
         sprite: Mobs/Species/Vox/parts.rsi
@@ -81,34 +80,41 @@
       - map: [ "pocket1" ]
       - map: [ "pocket2" ]
   - type: Body
-    template: HumanoidTemplate
-    preset: VoxPreset
-  # TODO Vox nitrogen
+    prototype: Vox
+    requiredLegs: 2
+  # Vox nitrogen stuff is handled in their metabolism
   - type: Respirator
     damage:
       types:
-        Asphyxiation: 3
+        Asphyxiation: 2
     damageRecovery:
       types:
-        Asphyxiation: -1.5
-#  - type: Appearance
-#    visuals:
-#      - type: RotationVisualizer
-#      - type: BuckleVisualizer
-#      - type: FireVisualizer
-#        sprite: Mobs/Effects/onfire.rsi
-#        normalState: Generic_mob_burning
-#        alternateState: Standing
-#        fireStackAlternateState: 3
-#      - type: CreamPiedVisualizer
-#        state: creampie_human
-  - type: HumanoidAppearance
-    canColorHair: false
-    canColorFacialHair: false
-    categoriesHair: VoxHair
-    categoriesFacialHair: VoxFacialHair
+        Asphyxiation: -1.0
+  - type:  HumanoidAppearance
+    species: Vox
+    # canColorHair: false
+    # canColorFacialHair: false
   - type: Inventory
     speciesId: vox
   - type: Butcherable
     butcheringType: Spike
-    spawned: FoodMeatChicken
+    spawned:
+    - id: FoodMeatChicken
+      amount: 5
+  - type: Vocal
+    sounds:
+      Male: UnisexVox
+      Female: UnisexVox
+      Unsexed: UnisexVox
+
+- type: entity
+  id: MobVoxDummy
+  parent: MobHumanDummy
+  noSpawn: true
+  components:
+  - type: HumanoidAppearance
+    species: Vox
+  - type: Body
+    prototype: Vox
+    requiredLegs: 2
+

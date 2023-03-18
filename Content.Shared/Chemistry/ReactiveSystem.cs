@@ -5,8 +5,6 @@ using Content.Shared.Chemistry.Reagent;
 using Content.Shared.Database;
 using Content.Shared.FixedPoint;
 using JetBrains.Annotations;
-using Robust.Shared.GameObjects;
-using Robust.Shared.IoC;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Random;
 
@@ -17,13 +15,21 @@ namespace Content.Shared.Chemistry
     {
         [Dependency] private readonly IPrototypeManager _prototypeManager = default!;
         [Dependency] private readonly IRobustRandom _robustRandom = default!;
-        [Dependency] private readonly SharedAdminLogSystem _logSystem = default!;
+        [Dependency] private readonly ISharedAdminLogManager _adminLogger = default!;
 
         public void ReactionEntity(EntityUid uid, ReactionMethod method, Solution solution)
         {
             foreach (var (id, quantity) in solution)
             {
                 ReactionEntity(uid, method, id, quantity, solution);
+            }
+        }
+
+        public void DoEntityReaction(EntityUid uid, Solution solution, ReactionMethod method)
+        {
+            foreach (var (reagentId, quantity) in solution.Contents.ToArray())
+            {
+                ReactionEntity(uid, method, reagentId, quantity, solution);
             }
         }
 
@@ -41,7 +47,7 @@ namespace Content.Shared.Chemistry
 
             // If we have a source solution, use the reagent quantity we have left. Otherwise, use the reaction volume specified.
             var args = new ReagentEffectArgs(uid, null, source, reagent,
-                source?.GetReagentQuantity(reagent.ID) ?? reactVolume, EntityManager, method);
+                source?.GetReagentQuantity(reagent.ID) ?? reactVolume, EntityManager, method, 1f);
 
             // First, check if the reagent wants to apply any effects.
             if (reagent.ReactiveEffects != null && reactive.ReactiveGroups != null)
@@ -65,7 +71,7 @@ namespace Content.Shared.Chemistry
                         if (effect.ShouldLog)
                         {
                             var entity = args.SolutionEntity;
-                            _logSystem.Add(LogType.ReagentEffect, effect.LogImpact,
+                            _adminLogger.Add(LogType.ReagentEffect, effect.LogImpact,
                                 $"Reactive effect {effect.GetType().Name:effect} of reagent {reagent.ID:reagent} with method {method} applied on entity {ToPrettyString(entity):entity} at {Transform(entity).Coordinates:coordinates}");
                         }
 
@@ -93,7 +99,7 @@ namespace Content.Shared.Chemistry
                         if (effect.ShouldLog)
                         {
                             var entity = args.SolutionEntity;
-                            _logSystem.Add(LogType.ReagentEffect, effect.LogImpact,
+                            _adminLogger.Add(LogType.ReagentEffect, effect.LogImpact,
                                 $"Reactive effect {effect.GetType().Name:effect} of {ToPrettyString(entity):entity} using reagent {reagent.ID:reagent} with method {method} at {Transform(entity).Coordinates:coordinates}");
                         }
 

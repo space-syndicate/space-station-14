@@ -1,25 +1,37 @@
 using Content.Shared.ActionBlocker;
+using Content.Shared.Administration.Logs;
 using Content.Shared.Buckle.Components;
+using Content.Shared.Database;
+using Content.Shared.Hands.EntitySystems;
+using Content.Shared.Interaction;
 using Content.Shared.Physics.Pull;
 using Content.Shared.Pulling.Components;
 using Content.Shared.Pulling.Events;
 using Robust.Shared.Containers;
-using Robust.Shared.GameObjects;
 using Robust.Shared.Map;
-using Robust.Shared.IoC;
 using Robust.Shared.Physics;
-using Robust.Shared.Log;
+using Robust.Shared.Physics.Components;
+using Robust.Shared.Physics.Systems;
 
 namespace Content.Shared.Pulling
 {
-    public abstract partial class SharedPullingSystem : EntitySystem
+    public abstract partial class SharedPullingSystem
     {
         [Dependency] private readonly ActionBlockerSystem _blocker = default!;
         [Dependency] private readonly SharedContainerSystem _containerSystem = default!;
+        [Dependency] private readonly SharedHandsSystem _handsSystem = default!;
+        [Dependency] private readonly SharedInteractionSystem _interaction = default!;
+        [Dependency] private readonly SharedPhysicsSystem _physics = default!;
+        [Dependency] private readonly ISharedAdminLogManager _adminLogger = default!;
 
         public bool CanPull(EntityUid puller, EntityUid pulled)
         {
-            if (!EntityManager.HasComponent<SharedPullerComponent>(puller))
+            if (!EntityManager.TryGetComponent<SharedPullerComponent>(puller, out var comp))
+            {
+                return false;
+            }
+
+            if (comp.NeedsHands && !_handsSystem.TryGetEmptyHand(puller, out _))
             {
                 return false;
             }
@@ -29,12 +41,12 @@ namespace Content.Shared.Pulling
                 return false;
             }
 
-            if (!EntityManager.TryGetComponent<IPhysBody?>(pulled, out var _physics))
+            if (!EntityManager.TryGetComponent<PhysicsComponent>(pulled, out var physics))
             {
                 return false;
             }
 
-            if (_physics.BodyType == BodyType.Static)
+            if (physics.BodyType == BodyType.Static)
             {
                 return false;
             }
@@ -49,7 +61,7 @@ namespace Content.Shared.Pulling
                 return false;
             }
 
-            if (EntityManager.TryGetComponent<SharedBuckleComponent?>(puller, out var buckle))
+            if (EntityManager.TryGetComponent<BuckleComponent?>(puller, out var buckle))
             {
                 // Prevent people pulling the chair they're on, etc.
                 if (buckle.Buckled && (buckle.LastEntityBuckledTo == pulled))
@@ -58,9 +70,11 @@ namespace Content.Shared.Pulling
                 }
             }
 
+            var getPulled = new BeingPulledAttemptEvent(puller, pulled);
+            RaiseLocalEvent(pulled, getPulled, true);
             var startPull = new StartPullAttemptEvent(puller, pulled);
-            RaiseLocalEvent(puller, startPull);
-            return !startPull.Cancelled;
+            RaiseLocalEvent(puller, startPull, true);
+            return (!startPull.Cancelled && !getPulled.Cancelled);
         }
 
         public bool TogglePull(EntityUid puller, SharedPullableComponent pullable)
@@ -82,9 +96,16 @@ namespace Content.Shared.Pulling
             }
 
             var msg = new StopPullingEvent(user);
-            RaiseLocalEvent(pullable.Owner, msg);
+            RaiseLocalEvent(pullable.Owner, msg, true);
 
             if (msg.Cancelled) return false;
+
+            // Stop pulling confirmed!
+
+            if (TryComp<PhysicsComponent>(pullable.Owner, out var pullablePhysics))
+            {
+                _physics.SetFixedRotation(pullable.Owner, pullable.PrevFixedRotation, body: pullablePhysics);
+            }
 
             _pullSm.ForceRelationship(null, pullable);
             return true;
@@ -116,12 +137,12 @@ namespace Content.Shared.Pulling
                 return false;
             }
 
-            if (!EntityManager.TryGetComponent<PhysicsComponent?>(puller.Owner, out var pullerPhysics))
+            if (!EntityManager.TryGetComponent<PhysicsComponent>(puller.Owner, out var pullerPhysics))
             {
                 return false;
             }
 
-            if (!EntityManager.TryGetComponent<PhysicsComponent?>(pullable.Owner, out var pullablePhysics))
+            if (!EntityManager.TryGetComponent<PhysicsComponent>(pullable.Owner, out var pullablePhysics))
             {
                 return false;
             }
@@ -161,7 +182,7 @@ namespace Content.Shared.Pulling
 
             // Continue with pulling process.
 
-            var pullAttempt = new PullAttemptMessage(pullerPhysics, pullablePhysics);
+            var pullAttempt = new PullAttemptEvent(pullerPhysics, pullablePhysics);
 
             RaiseLocalEvent(puller.Owner, pullAttempt, broadcast: false);
 
@@ -170,14 +191,18 @@ namespace Content.Shared.Pulling
                 return false;
             }
 
-            RaiseLocalEvent(pullable.Owner, pullAttempt);
+            RaiseLocalEvent(pullable.Owner, pullAttempt, true);
 
             if (pullAttempt.Cancelled)
-            {
                 return false;
-            }
+
+            _interaction.DoContactInteraction(pullable.Owner, puller.Owner);
 
             _pullSm.ForceRelationship(puller, pullable);
+            pullable.PrevFixedRotation = pullablePhysics.FixedRotation;
+            _physics.SetFixedRotation(pullable.Owner, pullable.FixedRotationOnPull, body: pullablePhysics);
+            _adminLogger.Add(LogType.Action, LogImpact.Low,
+                $"{ToPrettyString(puller.Owner):user} started pulling {ToPrettyString(pullable.Owner):target}");
             return true;
         }
 

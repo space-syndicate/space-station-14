@@ -1,27 +1,32 @@
 - type: job
   id: SecurityOfficer
-  name: "security officer"
+  name: job-name-security
+  description: job-description-security
+  playTimeTracker: JobSecurityOfficer
+  requirements:
+    - !type:DepartmentTimeRequirement
+      department: Security
+      time: 36000 # Corvax-RoleTime
   startingGear: SecurityOfficerGear
-  departments:
-  - Security
   icon: "SecurityOfficer"
-  supervisors: "the head of security"
+  supervisors: job-supervisors-hos
   canBeAntag: false
   access:
   - Security
   - Brig
   - Maintenance
   - Service
+  - External
 
 - type: startingGear
   id: SecurityOfficerGear
   equipment:
     jumpsuit: ClothingUniformJumpsuitSec
     back: ClothingBackpackSecurityFilled
-    shoes: ClothingShoesBootsJack
+    shoes: ClothingShoesBootsJackSec # Corvax-Resprite
     eyes: ClothingEyesGlassesSecurity
-    head: ClothingHeadHelmetHelmetOld
-    outerClothing: ClothingOuterVestKevlar
+    head: ClothingHeadHelmetHelmet # Corvax-Resprite
+    outerClothing: ClothingOuterVestArmorSec # Corvax-Resprite
     id: SecurityPDA
     ears: ClothingHeadsetSecurity
     belt: ClothingBeltSecurityFilled

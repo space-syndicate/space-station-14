@@ -1,11 +1,10 @@
-﻿using System;
 using Content.Shared.Body.Components;
 using Robust.Shared.Serialization;
 
 namespace Content.Shared.Body.Part
 {
     /// <summary>
-    ///     Defines the type of a <see cref="SharedBodyPartComponent"/>.
+    ///     Defines the type of a <see cref="BodyComponent"/>.
     /// </summary>
     [Serializable, NetSerializable]
     public enum BodyPartType
@@ -16,6 +15,7 @@ namespace Content.Shared.Body.Part
         Arm,
         Hand,
         Leg,
-        Foot
+        Foot,
+        Tail
     }
 }

@@ -11,11 +11,12 @@ namespace Content.Client.MedicalScanner
     [UsedImplicitly]
     public sealed class MedicalScannerVisualizer : AppearanceVisualizer
     {
+        [Obsolete("Subscribe to AppearanceChangeEvent instead.")]
         public override void OnChangeData(AppearanceComponent component)
         {
             base.OnChangeData(component);
 
-            var sprite = IoCManager.Resolve<IEntityManager>().GetComponent<ISpriteComponent>(component.Owner);
+            var sprite = IoCManager.Resolve<IEntityManager>().GetComponent<SpriteComponent>(component.Owner);
             if (!component.TryGetData(MedicalScannerVisuals.Status, out MedicalScannerStatus status)) return;
             sprite.LayerSetState(MedicalScannerVisualLayers.Machine, StatusToMachineStateId(status));
             sprite.LayerSetState(MedicalScannerVisualLayers.Terminal, StatusToTerminalStateId(status));
@@ -27,10 +28,10 @@ namespace Content.Client.MedicalScanner
             {
                 case Off: return "closed";
                 case Open: return "open";
-                case Red: return "closed";
-                case Death: return "closed";
+                case Red: return "occupied";
+                case Death: return "occupied";
                 case Green: return "occupied";
-                case Yellow: return "closed";
+                case Yellow: return "occupied";
                 default:
                     throw new ArgumentOutOfRangeException(nameof(status), status, "unknown MedicalScannerStatus");
             }
@@ -43,7 +44,7 @@ namespace Content.Client.MedicalScanner
                 case Off: return "off_unlit";
                 case Open: return "idle_unlit";
                 case Red: return "red_unlit";
-                case Death: return "red_unlit";
+                case Death: return "off_unlit";
                 case Green: return "idle_unlit";
                 case Yellow: return "maint_unlit";
                 default:

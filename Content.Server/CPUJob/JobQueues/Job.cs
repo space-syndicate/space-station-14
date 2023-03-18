@@ -1,7 +1,5 @@
-using System;
 using System.Threading;
 using System.Threading.Tasks;
-using Robust.Shared.Log;
 using Robust.Shared.Timing;
 using Robust.Shared.Utility;
 
@@ -176,7 +174,7 @@ namespace Content.Server.CPUJob.JobQueues
                 // Maybe?
                 _taskTcs.TrySetResult(Result);
             }
-            catch (TaskCanceledException)
+            catch (OperationCanceledException)
             {
                 _taskTcs.TrySetCanceled();
             }

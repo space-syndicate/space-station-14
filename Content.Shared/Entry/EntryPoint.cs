@@ -1,14 +1,12 @@
-using System;
-using System.Collections.Generic;
-using Content.Shared.CharacterAppearance;
 using Content.Shared.Chemistry.Reaction;
 using Content.Shared.Chemistry.Reagent;
+using Content.Shared.Humanoid.Markings;
 using Content.Shared.IoC;
 using Content.Shared.Localizations;
 using Content.Shared.Maps;
+using Robust.Shared;
+using Robust.Shared.Configuration;
 using Robust.Shared.ContentPack;
-using Robust.Shared.IoC;
-using Robust.Shared.Log;
 using Robust.Shared.Map;
 using Robust.Shared.Prototypes;
 
@@ -23,8 +21,11 @@ namespace Content.Shared.Entry
         {
             IoCManager.InjectDependencies(this);
             SharedContentIoC.Register();
+        }
 
-            Localization.Init();
+        public override void Shutdown()
+        {
+            _prototypeManager.PrototypesReloaded -= PrototypeReload;
         }
 
         public override void Init()
@@ -35,48 +36,34 @@ namespace Content.Shared.Entry
         {
             base.PostInit();
 
-            _initTileDefinitions();
-            CheckReactions();
-            IoCManager.Resolve<SpriteAccessoryManager>().Initialize();
+            InitTileDefinitions();
+            IoCManager.Resolve<MarkingManager>().Initialize();
+
+            var configMan = IoCManager.Resolve<IConfigurationManager>();
+#if DEBUG
+            configMan.OverrideDefault(CVars.NetFakeLagMin, 0.075f);
+            configMan.OverrideDefault(CVars.NetFakeLoss, 0.005f);
+            configMan.OverrideDefault(CVars.NetFakeDuplicates, 0.005f);
+
+            // fake lag rand leads to messages arriving out of order. Sadly, networking is not robust enough, so for now
+            // just leaving this disabled.
+            // configMan.OverrideDefault(CVars.NetFakeLagRand, 0.01f);
+#endif
         }
 
-        private void CheckReactions()
+        private void InitTileDefinitions()
         {
-            foreach (var reaction in _prototypeManager.EnumeratePrototypes<ReactionPrototype>())
-            {
-                foreach (var reactant in reaction.Reactants.Keys)
-                {
-                    if (!_prototypeManager.HasIndex<ReagentPrototype>(reactant))
-                    {
-                        Logger.ErrorS(
-                            "chem", "Reaction {reaction} has unknown reactant {reagent}.",
-                            reaction.ID, reactant);
-                    }
-                }
+            _prototypeManager.PrototypesReloaded += PrototypeReload;
 
-                foreach (var product in reaction.Products.Keys)
-                {
-                    if (!_prototypeManager.HasIndex<ReagentPrototype>(product))
-                    {
-                        Logger.ErrorS(
-                            "chem", "Reaction {reaction} has unknown product {product}.",
-                            reaction.ID, product);
-                    }
-                }
-            }
-        }
-
-        private void _initTileDefinitions()
-        {
             // Register space first because I'm a hard coding hack.
-            var spaceDef = _prototypeManager.Index<ContentTileDefinition>("space");
+            var spaceDef = _prototypeManager.Index<ContentTileDefinition>(ContentTileDefinition.SpaceID);
 
             _tileDefinitionManager.Register(spaceDef);
 
             var prototypeList = new List<ContentTileDefinition>();
             foreach (var tileDef in _prototypeManager.EnumeratePrototypes<ContentTileDefinition>())
             {
-                if (tileDef.ID == "space")
+                if (tileDef.ID == ContentTileDefinition.SpaceID)
                 {
                     continue;
                 }
@@ -94,6 +81,15 @@ namespace Content.Shared.Entry
             }
 
             _tileDefinitionManager.Initialize();
+        }
+
+        private void PrototypeReload(PrototypesReloadedEventArgs obj)
+        {
+            // Need to re-allocate tiledefs due to how prototype reloads work
+            foreach (var def in _prototypeManager.EnumeratePrototypes<ContentTileDefinition>())
+            {
+                def.AssignTileId(_tileDefinitionManager[def.ID].TileId);
+            }
         }
     }
 }

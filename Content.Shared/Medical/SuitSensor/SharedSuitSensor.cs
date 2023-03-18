@@ -1,7 +1,4 @@
-﻿using System;
-using Content.Shared.FixedPoint;
-using Robust.Shared.Map;
-using Robust.Shared.Maths;
+﻿using Robust.Shared.Map;
 using Robust.Shared.Serialization;
 
 namespace Content.Shared.Medical.SuitSensor
@@ -20,7 +17,7 @@ namespace Content.Shared.Medical.SuitSensor
         public string Job;
         public bool IsAlive;
         public int? TotalDamage;
-        public MapCoordinates? Coordinates;
+        public EntityCoordinates? Coordinates;
     }
 
     [Serializable, NetSerializable]
@@ -54,5 +51,8 @@ namespace Content.Shared.Medical.SuitSensor
         public const string NET_IS_ALIVE = "alive";
         public const string NET_TOTAL_DAMAGE = "vitals";
         public const string NET_CORDINATES = "cords";
+
+        ///Used by the CrewMonitoringServerSystem to send the status of all connected suit sensors to each crew monitor
+        public const string NET_STATUS_COLLECTION = "suit-status-collection";
     }
 }

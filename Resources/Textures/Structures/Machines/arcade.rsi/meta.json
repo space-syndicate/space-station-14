@@ -8,26 +8,19 @@
   },
   "states": [
     {
+      "name": "icon"
+    },
+    {
       "name": "arcade",
-      "directions": 1,
-      "delays": [
-        [
-          1
-        ]
-      ]
+      "directions": 4
     },
     {
       "name": "arcade_broken",
-      "directions": 1,
-      "delays": [
-        [
-          1
-        ]
-      ]
+      "directions": 4
     },
     {
       "name": "invaders",
-      "directions": 1,
+      "directions": 4,
       "delays": [
         [
           0.3,
@@ -36,12 +29,21 @@
           0.3,
           0.3,
           0.3
+        ],
+        [
+          1.8
+        ],
+        [
+          1.8
+        ],
+        [
+          1.8
         ]
       ]
     },
     {
       "name": "blockgame",
-      "directions": 1,
+      "directions": 4,
       "delays": [
         [
           0.2,
@@ -69,6 +71,15 @@
           0.1,
           0.1,
           0.5
+        ],
+        [
+          4.8
+        ],
+        [
+          4.8
+        ],
+        [
+          4.8
         ]
       ]
     }

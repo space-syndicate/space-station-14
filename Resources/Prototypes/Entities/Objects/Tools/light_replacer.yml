@@ -17,3 +17,11 @@
     - name: LightBulb
       amount: 5
       type: Bulb
+  - type: Tag
+    tags:
+      - DroneUsable
+  - type: StaticPrice
+    price: 100
+  - type: ContainerContainer
+    containers:
+      light_replacer_storage: !type:Container

@@ -1,24 +1,12 @@
 {
   "version": 1,
   "license": "CC-BY-SA-3.0",
-  "copyright": "Taken from tgstation at https://github.com/tgstation/tgstation/commit/e1142f20f5e4661cb6845cfcf2dd69f864d67432",
+  "copyright": "Taken from tgstation at https://github.com/tgstation/tgstation/commit/e05699709338e30ecde1bcd8f61d559ed2d7798e. stamp-warden is modified version of stamp-hos. stamp-iaa is modified version of stamp-approve. paper_receipt by eoineoineoin. paper_stamp-chaplain taken from https://github.com/tgstation/tgstation/commit/e1142f20f5e4661cb6845cfcf2dd69f864d67432",
   "size": {
     "x": 32,
     "y": 32
   },
   "states": [
-    {
-      "name": "chestdrawer"
-    },
-    {
-      "name": "chestdrawer-open",
-      "delays": [
-        [
-          0.5,
-          0.1
-        ]
-      ]
-    },
     {
       "name": "clipboard"
     },
@@ -42,18 +30,6 @@
     },
     {
       "name": "envelope_torn_overlay"
-    },
-    {
-      "name": "filingcabinet"
-    },
-    {
-      "name": "filingcabinet-open",
-      "delays": [
-        [
-          0.5,
-          0.1
-        ]
-      ]
     },
     {
       "name": "folder-base"
@@ -121,12 +97,6 @@
       "name": "paper_bin1"
     },
     {
-      "name": "paper_bin2"
-    },
-    {
-      "name": "paper_bin3"
-    },
-    {
       "name": "paper_plane"
     },
     {
@@ -151,6 +121,9 @@
       "name": "paper_stamp-deny"
     },
     {
+      "name": "paper_stamp-approve"
+    },
+    {
       "name": "paper_stamp-hop"
     },
     {
@@ -169,10 +142,16 @@
       "name": "paper_stamp-rd"
     },
     {
+      "name": "paper_stamp-syndicate"
+    },
+    {
       "name": "paper_stamp-trader"
     },
     {
       "name": "paper_stamp-warden"
+    },
+    {
+      "name": "paper_stamp-generic"
     },
     {
       "name": "paper_talisman"
@@ -220,7 +199,28 @@
       "name": "paper_words-blood"
     },
     {
+      "name": "paper_receipt"
+    },
+    {
+      "name": "paper_receipt_words"
+    },
+    {
+      "name": "paper_dotmatrix"
+    },
+    {
+      "name": "paper_dotmatrix_words"
+    },
+    {
       "name": "pen"
+    },
+    {
+      "name": "pen_cap"
+    },
+    {
+      "name": "pen_hop"
+    },
+    {
+      "name": "overpriced_pen"
     },
     {
       "name": "pen_blue"
@@ -264,6 +264,9 @@
       "name": "stamp-deny"
     },
     {
+      "name": "stamp-approve"
+    },
+    {
       "name": "stamp-hop"
     },
     {
@@ -282,22 +285,13 @@
       "name": "stamp-rd"
     },
     {
+      "name": "stamp-syndicate"
+    },
+    {
       "name": "stamp-trader"
     },
     {
       "name": "stamp-warden"
-    },
-    {
-      "name": "tallcabinet"
-    },
-    {
-      "name": "tallcabinet-open",
-      "delays": [
-        [
-          0.5,
-          0.1
-        ]
-      ]
     },
     {
       "name": "clipboard-equipped-BELT",

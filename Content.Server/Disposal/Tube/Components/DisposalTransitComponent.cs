@@ -1,8 +1,4 @@
-﻿using System;
 using Content.Server.Disposal.Unit.Components;
-using Robust.Shared.GameObjects;
-using Robust.Shared.IoC;
-using Robust.Shared.Maths;
 
 namespace Content.Server.Disposal.Tube.Components
 {
@@ -10,8 +6,11 @@ namespace Content.Server.Disposal.Tube.Components
     [RegisterComponent]
     [ComponentReference(typeof(IDisposalTubeComponent))]
     [Virtual]
+    [ComponentReference(typeof(DisposalTubeComponent))]
     public class DisposalTransitComponent : DisposalTubeComponent
     {
+        public override string ContainerId => "DisposalTransit";
+
         protected override Direction[] ConnectableDirections()
         {
             var rotation = IoCManager.Resolve<IEntityManager>().GetComponent<TransformComponent>(Owner).LocalRotation;

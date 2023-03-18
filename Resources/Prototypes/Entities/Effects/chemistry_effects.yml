@@ -1,15 +1,14 @@
 - type: entity
   id: Smoke
   name: smoke
-  abstract: true
+  noSpawn: true
   components:
   - type: Sprite
     drawdepth: Effects
     sprite: Effects/chemsmoke.rsi
     state: chemsmoke
   - type: Appearance
-    visuals:
-      - type: SmokeVisualizer
+  - type: SmokeVisuals
   - type: Occluder
   - type: Transform
     anchored: true
@@ -23,7 +22,7 @@
 - type: entity
   id: Foam
   name: foam
-  abstract: true
+  noSpawn: true
   components:
   - type: Sprite
     netsync: false
@@ -36,10 +35,9 @@
         map: ["enum.FoamVisualLayers.Base"]
   - type: AnimationPlayer
   - type: Appearance
-    visuals:
-      - type: FoamVisualizer
-        animationTime: 0.6
-        animationState: foam-dissolve
+  - type: FoamVisuals
+    animationTime: 0.6
+    animationState: foam-dissolve
   - type: Transform
     anchored: true
   - type: Physics
@@ -48,9 +46,11 @@
     - hard: false
       shape:
         !type:PhysShapeAabb
-          bounds: "-0.4,-0.4,0.4,0.4"
+        bounds: "-0.4,-0.4,0.4,0.4"
+      mask:
+      - ItemMask
       layer:
-      - MobImpassable
+      - SlipLayer
   - type: FoamSolutionAreaEffect
   - type: SolutionContainerManager
     solutions:
@@ -58,11 +58,12 @@
         maxVol: 600
         canReact: false
   - type: Slippery
+  - type: StepTrigger
 
 - type: entity
   id: IronMetalFoam
   name: iron metal foam
-  abstract: true
+  noSpawn: true
   parent: Foam
   components:
   - type: Sprite
@@ -70,27 +71,17 @@
     layers:
     - state: mfoam
       map: ["enum.FoamVisualLayers.Base"]
-  - type: Physics
-  - type: Fixtures
-    fixtures:
-    - hard: true
-      shape:
-        !type:PhysShapeAabb
-        bounds: "-0.4,-0.4,0.4,0.4"
-      layer:
-      - MobImpassable
   - type: Appearance
-    visuals:
-    - type: FoamVisualizer
-      animationTime: 0.6
-      animationState: mfoam-dissolve
+  - type: FoamVisuals
+    animationTime: 0.6
+    animationState: mfoam-dissolve
   - type: FoamSolutionAreaEffect
     foamedMetalPrototype: FoamedIronMetal
 
 - type: entity
   id: AluminiumMetalFoam
   name: aluminium metal foam
-  abstract: true
+  noSpawn: true
   parent: Foam
   components:
   - type: Sprite
@@ -98,20 +89,10 @@
     layers:
       - state: mfoam
         map: ["enum.FoamVisualLayers.Base"]
-  - type: Physics
-  - type: Fixtures
-    fixtures:
-    - hard: true
-      shape:
-        !type:PhysShapeAabb
-        bounds: "-0.4,-0.4,0.4,0.4"
-      layer:
-      - MobImpassable
   - type: Appearance
-    visuals:
-      - type: FoamVisualizer
-        animationTime: 0.6
-        animationState: mfoam-dissolve
+  - type: FoamVisuals
+    animationTime: 0.6
+    animationState: mfoam-dissolve
   - type: FoamSolutionAreaEffect
     foamedMetalPrototype: FoamedAluminiumMetal
 
@@ -138,14 +119,10 @@
     - shape:
         !type:PhysShapeAabb {}
       layer:
-        - Opaque
-        - Impassable
-        - MobImpassable
-        - VaultImpassable
-        - SmallImpassable
+      - WallLayer
+      mask:
+      - WallLayer
   - type: Occluder
-    sizeX: 32
-    sizeY: 32
   - type: Transform
     anchored: true
   - type: Airtight

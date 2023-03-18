@@ -1,14 +1,15 @@
 using Content.Server.Body.Systems;
+using Content.Server.Chemistry.EntitySystems;
 using Content.Shared.Chemistry.Components;
 using Content.Shared.Damage;
 using Content.Shared.Damage.Prototypes;
 using Content.Shared.FixedPoint;
-using Content.Shared.Sound;
+using Robust.Shared.Audio;
 using Robust.Shared.Serialization.TypeSerializers.Implementations.Custom.Prototype;
 
 namespace Content.Server.Body.Components
 {
-    [RegisterComponent, Friend(typeof(BloodstreamSystem))]
+    [RegisterComponent, Access(typeof(BloodstreamSystem), (typeof(ChemistrySystem)))]
     public sealed class BloodstreamComponent : Component
     {
         public static string DefaultChemicalsSolutionName = "chemicals";
@@ -52,13 +53,13 @@ namespace Content.Server.Body.Components
         ///     The base bloodloss damage to be incurred if below <see cref="BloodlossThreshold"/>
         /// </summary>
         [DataField("bloodlossDamage", required: true)]
-        public DamageSpecifier BloodlossDamage = default!;
+        public DamageSpecifier BloodlossDamage = new();
 
         /// <summary>
         ///     The base bloodloss damage to be healed if above <see cref="BloodlossThreshold"/>
         /// </summary>
         [DataField("bloodlossHealDamage", required: true)]
-        public DamageSpecifier BloodlossHealDamage = default!;
+        public DamageSpecifier BloodlossHealDamage = new();
 
         /// <summary>
         ///     How frequently should this bloodstream update, in seconds?
@@ -129,6 +130,7 @@ namespace Content.Server.Body.Components
         ///     Internal solution for reagent storage
         /// </summary>
         [ViewVariables(VVAccess.ReadWrite)]
+        [Access(typeof(BloodstreamSystem), Other = AccessPermissions.ReadExecute)] // FIXME Friends
         public Solution ChemicalSolution = default!;
 
         /// <summary>

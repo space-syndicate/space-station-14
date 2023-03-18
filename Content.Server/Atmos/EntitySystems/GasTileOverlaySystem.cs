@@ -1,236 +1,244 @@
-﻿using System;
-using System.Collections.Generic;
 using System.Linq;
 using System.Runtime.CompilerServices;
+using System.Threading.Tasks;
 using Content.Server.Atmos.Components;
 using Content.Shared.Atmos;
+using Content.Shared.Atmos.Components;
 using Content.Shared.Atmos.EntitySystems;
 using Content.Shared.CCVar;
+using Content.Shared.Chunking;
 using Content.Shared.GameTicking;
 using Content.Shared.Rounding;
 using JetBrains.Annotations;
+using Microsoft.Extensions.ObjectPool;
 using Robust.Server.Player;
 using Robust.Shared;
 using Robust.Shared.Configuration;
 using Robust.Shared.Enums;
-using Robust.Shared.GameObjects;
-using Robust.Shared.IoC;
+using Robust.Shared.GameStates;
 using Robust.Shared.Map;
-using Robust.Shared.Maths;
+using Robust.Shared.Threading;
 using Robust.Shared.Timing;
+using Robust.Shared.Utility;
+
 // ReSharper disable once RedundantUsingDirective
 
 namespace Content.Server.Atmos.EntitySystems
 {
     [UsedImplicitly]
-    internal sealed class GasTileOverlaySystem : SharedGasTileOverlaySystem
+    public sealed class GasTileOverlaySystem : SharedGasTileOverlaySystem
     {
         [Robust.Shared.IoC.Dependency] private readonly IGameTiming _gameTiming = default!;
         [Robust.Shared.IoC.Dependency] private readonly IPlayerManager _playerManager = default!;
         [Robust.Shared.IoC.Dependency] private readonly IMapManager _mapManager = default!;
+        [Robust.Shared.IoC.Dependency] private readonly IConfigurationManager _confMan = default!;
+        [Robust.Shared.IoC.Dependency] private readonly IParallelManager _parMan = default!;
         [Robust.Shared.IoC.Dependency] private readonly AtmosphereSystem _atmosphereSystem = default!;
+        [Robust.Shared.IoC.Dependency] private readonly ChunkingSystem _chunkingSys = default!;
+
+        private readonly Dictionary<IPlayerSession, Dictionary<EntityUid, HashSet<Vector2i>>> _lastSentChunks = new();
+
+        // Oh look its more duplicated decal system code!
+        private ObjectPool<HashSet<Vector2i>> _chunkIndexPool =
+            new DefaultObjectPool<HashSet<Vector2i>>(
+                new DefaultPooledObjectPolicy<HashSet<Vector2i>>(), 64);
+        private ObjectPool<Dictionary<EntityUid, HashSet<Vector2i>>> _chunkViewerPool =
+            new DefaultObjectPool<Dictionary<EntityUid, HashSet<Vector2i>>>(
+                new DefaultPooledObjectPolicy<Dictionary<EntityUid, HashSet<Vector2i>>>(), 64);
 
         /// <summary>
-        ///     The tiles that have had their atmos data updated since last tick
+        ///     Overlay update interval, in seconds.
         /// </summary>
-        private readonly Dictionary<GridId, HashSet<Vector2i>> _invalidTiles = new();
-
-        private readonly Dictionary<IPlayerSession, PlayerGasOverlay> _knownPlayerChunks =
-            new();
-
-        /// <summary>
-        ///     Gas data stored in chunks to make PVS / bubbling easier.
-        /// </summary>
-        private readonly Dictionary<GridId, Dictionary<Vector2i, GasOverlayChunk>> _overlay =
-            new();
-
-        /// <summary>
-        ///     How far away do we update gas overlays (minimum; due to chunking further away tiles may also be updated).
-        /// </summary>
-        private float _updateRange;
-
-        // Because the gas overlay updates aren't run every tick we need to avoid the pop-in that might occur with
-        // the regular PVS range.
-        private const float RangeOffset = 6.0f;
-
-        /// <summary>
-        ///     Overlay update ticks per second.
-        /// </summary>
-        private float _updateCooldown;
+        private float _updateInterval;
 
         private int _thresholds;
+
+        private bool _pvsEnabled;
 
         public override void Initialize()
         {
             base.Initialize();
+            _playerManager.PlayerStatusChanged += OnPlayerStatusChanged;
+            _confMan.OnValueChanged(CCVars.NetGasOverlayTickRate, UpdateTickRate, true);
+            _confMan.OnValueChanged(CCVars.GasOverlayThresholds, UpdateThresholds, true);
+            _confMan.OnValueChanged(CVars.NetPVS, OnPvsToggle, true);
 
             SubscribeLocalEvent<RoundRestartCleanupEvent>(Reset);
+            SubscribeLocalEvent<GasTileOverlayComponent, ComponentGetState>(OnGetState);
+            SubscribeLocalEvent<GasTileOverlayComponent, ComponentStartup>(OnStartup);
+        }
 
-            _playerManager.PlayerStatusChanged += OnPlayerStatusChanged;
-            _mapManager.OnGridRemoved += OnGridRemoved;
-            var configManager = IoCManager.Resolve<IConfigurationManager>();
-            configManager.OnValueChanged(CCVars.NetGasOverlayTickRate, value => _updateCooldown = value > 0.0f ? 1 / value : float.MaxValue, true);
-            configManager.OnValueChanged(CVars.NetMaxUpdateRange, value => _updateRange = value + RangeOffset, true);
-            configManager.OnValueChanged(CCVars.GasOverlayThresholds, value => _thresholds = value, true);
+        private void OnStartup(EntityUid uid, GasTileOverlayComponent component, ComponentStartup args)
+        {
+            // This **shouldn't** be required, but just in case we ever get entity prototypes that have gas overlays, we
+            // need to ensure that we send an initial full state to players.
+            Dirty(component);
         }
 
         public override void Shutdown()
         {
             base.Shutdown();
             _playerManager.PlayerStatusChanged -= OnPlayerStatusChanged;
-            _mapManager.OnGridRemoved -= OnGridRemoved;
+            _confMan.UnsubValueChanged(CCVars.NetGasOverlayTickRate, UpdateTickRate);
+            _confMan.UnsubValueChanged(CCVars.GasOverlayThresholds, UpdateThresholds);
+            _confMan.UnsubValueChanged(CVars.NetPVS, OnPvsToggle);
         }
+
+        private void OnPvsToggle(bool value)
+        {
+            if (value == _pvsEnabled)
+                return;
+
+            _pvsEnabled = value;
+
+            if (value)
+                return;
+
+            foreach (var lastSent in _lastSentChunks.Values)
+            {
+                foreach (var set in lastSent.Values)
+                {
+                    set.Clear();
+                    _chunkIndexPool.Return(set);
+                }
+                lastSent.Clear();
+            }
+
+            // PVS was turned off, ensure data gets sent to all clients.
+            foreach (var (grid, meta) in EntityQuery<GasTileOverlayComponent, MetaDataComponent>(true))
+            {
+                grid.ForceTick = _gameTiming.CurTick;
+                Dirty(grid, meta);
+            }
+        }
+
+        private void UpdateTickRate(float value) => _updateInterval = value > 0.0f ? 1 / value : float.MaxValue;
+        private void UpdateThresholds(int value) => _thresholds = value;
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public void Invalidate(GridId gridIndex, Vector2i indices)
+        public void Invalidate(EntityUid grid, Vector2i index, GasTileOverlayComponent? comp = null)
         {
-            if (!_invalidTiles.TryGetValue(gridIndex, out var existing))
-            {
-                existing = new HashSet<Vector2i>();
-                _invalidTiles[gridIndex] = existing;
-            }
-
-            existing.Add(indices);
-        }
-
-        private GasOverlayChunk GetOrCreateChunk(GridId gridIndex, Vector2i indices)
-        {
-            if (!_overlay.TryGetValue(gridIndex, out var chunks))
-            {
-                chunks = new Dictionary<Vector2i, GasOverlayChunk>();
-                _overlay[gridIndex] = chunks;
-            }
-
-            var chunkIndices = GetGasChunkIndices(indices);
-
-            if (!chunks.TryGetValue(chunkIndices, out var chunk))
-            {
-                chunk = new GasOverlayChunk(gridIndex, chunkIndices);
-                chunks[chunkIndices] = chunk;
-            }
-
-            return chunk;
-        }
-
-        private void OnGridRemoved(MapId mapId, GridId gridId)
-        {
-            if (_overlay.ContainsKey(gridId))
-            {
-                _overlay.Remove(gridId);
-            }
+            if (Resolve(grid, ref comp))
+                comp.InvalidTiles.Add(index);
         }
 
         private void OnPlayerStatusChanged(object? sender, SessionStatusEventArgs e)
         {
             if (e.NewStatus != SessionStatus.InGame)
             {
-                if (_knownPlayerChunks.ContainsKey(e.Session))
+                if (_lastSentChunks.Remove(e.Session, out var sets))
                 {
-                    _knownPlayerChunks.Remove(e.Session);
-                }
-
-                return;
-            }
-
-            if (!_knownPlayerChunks.ContainsKey(e.Session))
-            {
-                _knownPlayerChunks[e.Session] = new PlayerGasOverlay();
-            }
-        }
-
-        /// <summary>
-        ///     Checks whether the overlay-relevant data for a gas tile has been updated.
-        /// </summary>
-        /// <param name="grid"></param>
-        /// <param name="oldTile"></param>
-        /// <param name="indices"></param>
-        /// <param name="overlayData"></param>
-        /// <returns>true if updated</returns>
-        private bool TryRefreshTile(GridId grid, GasOverlayData oldTile, Vector2i indices, out GasOverlayData overlayData)
-        {
-            var tile = _atmosphereSystem.GetTileAtmosphereOrCreateSpace(grid, indices);
-
-            if (tile == null)
-            {
-                overlayData = default;
-                return false;
-            }
-
-            var tileData = new List<GasData>();
-
-            if(tile.Air != null)
-                for (byte i = 0; i < Atmospherics.TotalNumberOfGases; i++)
-                {
-                    var gas = _atmosphereSystem.GetGas(i);
-                    var overlay = _atmosphereSystem.GetOverlay(i);
-                    if (overlay == null) continue;
-
-                    var moles = tile.Air.Moles[i];
-
-                    if (moles < gas.GasMolesVisible) continue;
-
-                    var opacity = (byte) (ContentHelpers.RoundToLevels(MathHelper.Clamp01(moles / gas.GasMolesVisibleMax) * 255, byte.MaxValue, _thresholds) * 255 / (_thresholds - 1));
-                    var data = new GasData(i, opacity);
-                    tileData.Add(data);
-                }
-
-            overlayData = new GasOverlayData(tile!.Hotspot.State, tile.Hotspot.Temperature, tileData.Count == 0 ? Array.Empty<GasData>() : tileData.ToArray());
-
-            if (overlayData.Equals(oldTile))
-            {
-                return false;
-            }
-
-            return true;
-        }
-
-        /// <summary>
-        ///     Get every chunk in range of our entity that exists, including on other grids.
-        /// </summary>
-        /// <param name="entity"></param>
-        /// <returns></returns>
-        private List<GasOverlayChunk> GetChunksInRange(EntityUid entity)
-        {
-            var inRange = new List<GasOverlayChunk>();
-
-            // This is the max in any direction that we can get a chunk (e.g. max 2 chunks away of data).
-            var (maxXDiff, maxYDiff) = ((int) (_updateRange / ChunkSize) + 1, (int) (_updateRange / ChunkSize) + 1);
-
-            var worldBounds = Box2.CenteredAround(EntityManager.GetComponent<TransformComponent>(entity).WorldPosition,
-                new Vector2(_updateRange, _updateRange));
-
-            foreach (var grid in _mapManager.FindGridsIntersecting(EntityManager.GetComponent<TransformComponent>(entity).MapID, worldBounds))
-            {
-                if (!_overlay.TryGetValue(grid.Index, out var chunks))
-                {
-                    continue;
-                }
-
-                var entityTile = grid.GetTileRef(EntityManager.GetComponent<TransformComponent>(entity).Coordinates).GridIndices;
-
-                for (var x = -maxXDiff; x <= maxXDiff; x++)
-                {
-                    for (var y = -maxYDiff; y <= maxYDiff; y++)
+                    foreach (var set in sets.Values)
                     {
-                        var chunkIndices = GetGasChunkIndices(new Vector2i(entityTile.X + x * ChunkSize, entityTile.Y + y * ChunkSize));
-
-                        if (!chunks.TryGetValue(chunkIndices, out var chunk)) continue;
-
-                        // Now we'll check if it's in range and relevant for us
-                        // (e.g. if we're on the very edge of a chunk we may need more chunks).
-
-                        var (xDiff, yDiff) = (chunkIndices.X - entityTile.X, chunkIndices.Y - entityTile.Y);
-                        if (xDiff > 0 && xDiff > _updateRange ||
-                            yDiff > 0 && yDiff > _updateRange ||
-                            xDiff < 0 && Math.Abs(xDiff + ChunkSize) > _updateRange ||
-                            yDiff < 0 && Math.Abs(yDiff + ChunkSize) > _updateRange) continue;
-
-                        inRange.Add(chunk);
+                        set.Clear();
+                        _chunkIndexPool.Return(set);
                     }
                 }
             }
 
-            return inRange;
+            if (!_lastSentChunks.ContainsKey(e.Session))
+            {
+                _lastSentChunks[e.Session] = new();
+            }
+        }
+
+        /// <summary>
+        ///     Updates the visuals for a tile on some grid chunk. Returns true if the visuals have changed.
+        /// </summary>
+        private bool UpdateChunkTile(GridAtmosphereComponent gridAtmosphere, GasOverlayChunk chunk, Vector2i index, GameTick curTick)
+        {
+            ref var oldData = ref chunk.GetData(index);
+            if (!gridAtmosphere.Tiles.TryGetValue(index, out var tile))
+            {
+                if (oldData.Equals(default))
+                    return false;
+
+                chunk.LastUpdate = curTick;
+                oldData = default;
+                return true;
+            }
+
+            var changed = false;
+            if (oldData.Equals(default))
+            {
+                changed = true;
+                oldData = new GasOverlayData(tile.Hotspot.State, new byte[VisibleGasId.Length]);
+            }
+            else if (oldData.FireState != tile.Hotspot.State)
+            {
+                changed = true;
+                oldData = new GasOverlayData(tile.Hotspot.State, oldData.Opacity);
+            }
+
+            if (tile.Air != null)
+            {
+                for (var i = 0; i < VisibleGasId.Length; i++)
+                {
+                    var id = VisibleGasId[i];
+                    var gas = _atmosphereSystem.GetGas(id);
+                    var moles = tile.Air.Moles[id];
+                    ref var oldOpacity = ref oldData.Opacity[i];
+
+                    if (moles < gas.GasMolesVisible)
+                    {
+                        if (oldOpacity != 0)
+                        {
+                            oldOpacity = 0;
+                            changed = true;
+                        }
+
+                        continue;
+                    }
+
+                    var opacity = (byte) (ContentHelpers.RoundToLevels(
+                        MathHelper.Clamp01((moles - gas.GasMolesVisible) /
+                                           (gas.GasMolesVisibleMax - gas.GasMolesVisible)) * 255, byte.MaxValue,
+                        _thresholds) * 255 / (_thresholds - 1));
+
+                    if (oldOpacity == opacity)
+                        continue;
+
+                    oldOpacity = opacity;
+                    changed = true;
+                }
+            }
+            else
+            {
+                for (var i = 0; i < VisibleGasId.Length; i++)
+                {
+                    changed |= oldData.Opacity[i] != 0;
+                    oldData.Opacity[i] = 0;
+                }
+            }
+
+            if (!changed)
+                return false;
+
+            chunk.LastUpdate = curTick;
+            return true;
+        }
+
+        private void UpdateOverlayData(GameTick curTick)
+        {
+            // TODO parallelize?
+            foreach (var (overlay, gam, meta) in EntityQuery<GasTileOverlayComponent, GridAtmosphereComponent, MetaDataComponent>(true))
+            {
+                bool changed = false;
+                foreach (var index in overlay.InvalidTiles)
+                {
+                    var chunkIndex = GetGasChunkIndices(index);
+
+                    if (!overlay.Chunks.TryGetValue(chunkIndex, out var chunk))
+                        overlay.Chunks[chunkIndex] = chunk = new GasOverlayChunk(chunkIndex);
+
+                    changed |= UpdateChunkTile(gam, chunk, index, curTick);
+                }
+
+                if (changed)
+                    Dirty(overlay, meta);
+
+                overlay.InvalidTiles.Clear();
+            }
         }
 
         public override void Update(float frameTime)
@@ -238,254 +246,136 @@ namespace Content.Server.Atmos.EntitySystems
             base.Update(frameTime);
             AccumulatedFrameTime += frameTime;
 
-            if (AccumulatedFrameTime < _updateCooldown) return;
+            if (AccumulatedFrameTime < _updateInterval) return;
+            AccumulatedFrameTime -= _updateInterval;
 
-            // TODO: So in the worst case scenario we still have to send a LOT of tile data per tick if there's a fire.
-            // If we go with say 15 tile radius then we have up to 900 tiles to update per tick.
-            // In a saltern fire the worst you'll normally see is around 650 at the moment.
-            // Need a way to fake this more because sending almost 2,000 tile updates per second to even 50 players is... yikes
-            // I mean that's as big as it gets so larger maps will have the same but still, that's a lot of data.
+            var curTick = _gameTiming.CurTick;
 
-            // Some ways to do this are potentially: splitting fire and gas update data so they don't update at the same time
-            // (gives the illusion of more updates happening), e.g. if gas updates are 3 times a second and fires are 1.6 times a second or something.
-            // Could also look at updating tiles close to us more frequently (e.g. within 1 chunk every tick).
-            // Stuff just out of our viewport we need so when we move it doesn't pop in but it doesn't mean we need to update it every tick.
+            // First, update per-chunk visual data for any invalidated tiles.
+            UpdateOverlayData(curTick);
 
-            AccumulatedFrameTime -= _updateCooldown;
-
-            var gridAtmosComponents = new Dictionary<GridId, GridAtmosphereComponent>();
-            var updatedTiles = new Dictionary<GasOverlayChunk, HashSet<Vector2i>>();
-
-            // So up to this point we've been caching the updated tiles for multiple ticks.
-            // Now we'll go through and check whether the update actually matters for the overlay or not,
-            // and if not then we won't bother sending the data.
-            foreach (var (gridId, indices) in _invalidTiles)
-            {
-                if (!_mapManager.TryGetGrid(gridId, out var grid))
-                {
-                    return;
-                }
-
-                var gridEntityId = grid.GridEntityId;
-
-                if (!EntityManager.TryGetComponent(gridEntityId, out GridAtmosphereComponent? gam))
-                {
-                    continue;
-                }
-
-                // If it's being invalidated it should have this right?
-                // At any rate we'll cache it for here + the AddChunk
-                if (!gridAtmosComponents.ContainsKey(gridId))
-                {
-                    gridAtmosComponents[gridId] = gam;
-                }
-
-                foreach (var invalid in indices.ToArray())
-                {
-                    var chunk = GetOrCreateChunk(gridId, invalid);
-
-                    if (!TryRefreshTile(grid.Index, chunk.GetData(invalid), invalid, out var data)) continue;
-
-                    if (!updatedTiles.TryGetValue(chunk, out var tiles))
-                    {
-                        tiles = new HashSet<Vector2i>();
-                        updatedTiles[chunk] = tiles;
-                    }
-
-                    updatedTiles[chunk].Add(invalid);
-                    chunk.Update(data, invalid);
-                }
-            }
-
-            var currentTick = _gameTiming.CurTick;
-
-            // Set the LastUpdate for chunks.
-            foreach (var (chunk, _) in updatedTiles)
-            {
-                chunk.Dirty(currentTick);
-            }
+            if (!_pvsEnabled)
+                return;
 
             // Now we'll go through each player, then through each chunk in range of that player checking if the player is still in range
             // If they are, check if they need the new data to send (i.e. if there's an overlay for the gas).
             // Afterwards we reset all the chunk data for the next time we tick.
-            foreach (var (session, overlay) in _knownPlayerChunks)
-            {
-                if (session.AttachedEntity is not {Valid: true} entity) continue;
-
-                // Get chunks in range and update if we've moved around or the chunks have new overlay data
-                var chunksInRange = GetChunksInRange(entity);
-                var knownChunks = overlay.GetKnownChunks();
-                var chunksToRemove = new List<GasOverlayChunk>();
-                var chunksToAdd = new List<GasOverlayChunk>();
-
-                foreach (var chunk in chunksInRange)
-                {
-                    if (!knownChunks.Contains(chunk))
-                    {
-                        chunksToAdd.Add(chunk);
-                    }
-                }
-
-                foreach (var chunk in knownChunks)
-                {
-                    if (!chunksInRange.Contains(chunk))
-                    {
-                        chunksToRemove.Add(chunk);
-                    }
-                }
-
-                foreach (var chunk in chunksToAdd)
-                {
-                    var message = overlay.AddChunk(currentTick, chunk);
-                    if (message != null)
-                    {
-                        RaiseNetworkEvent(message, session.ConnectedClient);
-                    }
-                }
-
-                foreach (var chunk in chunksToRemove)
-                {
-                    overlay.RemoveChunk(chunk);
-                }
-
-                var clientInvalids = new Dictionary<GridId, List<(Vector2i, GasOverlayData)>>();
-
-                // Check for any dirty chunks in range and bundle the data to send to the client.
-                foreach (var chunk in chunksInRange)
-                {
-                    if (!updatedTiles.TryGetValue(chunk, out var invalids)) continue;
-
-                    if (!clientInvalids.TryGetValue(chunk.GridIndices, out var existingData))
-                    {
-                        existingData = new List<(Vector2i, GasOverlayData)>();
-                        clientInvalids[chunk.GridIndices] = existingData;
-                    }
-
-                    chunk.GetData(existingData, invalids);
-                }
-
-                foreach (var (grid, data) in clientInvalids)
-                {
-                    RaiseNetworkEvent(overlay.UpdateClient(grid, data), session.ConnectedClient);
-                }
-            }
-
-            // Cleanup
-            _invalidTiles.Clear();
+            var players = _playerManager.ServerSessions.Where(x => x.Status == SessionStatus.InGame).ToArray();
+            var opts = new ParallelOptions { MaxDegreeOfParallelism = _parMan.ParallelProcessCount };
+            Parallel.ForEach(players, opts, p => UpdatePlayer(p, curTick));
         }
-        private sealed class PlayerGasOverlay
+
+        private void UpdatePlayer(IPlayerSession playerSession, GameTick curTick)
         {
-            private readonly Dictionary<GridId, Dictionary<Vector2i, GasOverlayChunk>> _data =
-                new();
+            var xformQuery = GetEntityQuery<TransformComponent>();
+            var chunksInRange = _chunkingSys.GetChunksForSession(playerSession, ChunkSize, xformQuery, _chunkIndexPool, _chunkViewerPool);
+            var previouslySent = _lastSentChunks[playerSession];
 
-            private readonly Dictionary<GasOverlayChunk, GameTick> _lastSent =
-                new();
+            var ev = new GasOverlayUpdateEvent();
 
-            public GasOverlayMessage UpdateClient(GridId grid, List<(Vector2i, GasOverlayData)> data)
+            foreach (var (grid, oldIndices) in previouslySent)
             {
-                return new(grid, data);
-            }
-
-            public void Reset()
-            {
-                _data.Clear();
-                _lastSent.Clear();
-            }
-
-            public List<GasOverlayChunk> GetKnownChunks()
-            {
-                var known = new List<GasOverlayChunk>();
-
-                foreach (var (_, chunks) in _data)
+                // Mark the whole grid as stale and flag for removal.
+                if (!chunksInRange.TryGetValue(grid, out var chunks))
                 {
-                    foreach (var (_, chunk) in chunks)
+                    previouslySent.Remove(grid);
+
+                    // If grid was deleted then don't worry about sending it to the client.
+                    if (_mapManager.IsGrid(grid))
+                        ev.RemovedChunks[grid] = oldIndices;
+                    else
                     {
-                        known.Add(chunk);
+                        oldIndices.Clear();
+                        _chunkIndexPool.Return(oldIndices);
                     }
+
+                    continue;
                 }
 
-                return known;
+                var old = _chunkIndexPool.Get();
+                DebugTools.Assert(old.Count == 0);
+                foreach (var chunk in oldIndices)
+                {
+                    if (!chunks.Contains(chunk))
+                        old.Add(chunk);
+                }
+
+                if (old.Count == 0)
+                    _chunkIndexPool.Return(old);
+                else
+                    ev.RemovedChunks.Add(grid, old);
             }
 
-            public GasOverlayMessage? AddChunk(GameTick currentTick, GasOverlayChunk chunk)
+            foreach (var (grid, gridChunks) in chunksInRange)
             {
-                if (!_data.TryGetValue(chunk.GridIndices, out var chunks))
-                {
-                    chunks = new Dictionary<Vector2i, GasOverlayChunk>();
-                    _data[chunk.GridIndices] = chunks;
-                }
-
-                if (_lastSent.TryGetValue(chunk, out var last) && last >= chunk.LastUpdate)
-                {
-                    return null;
-                }
-
-                _lastSent[chunk] = currentTick;
-                var message = ChunkToMessage(chunk);
-
-                return message;
-            }
-
-            public void RemoveChunk(GasOverlayChunk chunk)
-            {
-                // Don't need to sync to client as they can manage it themself.
-                if (!_data.TryGetValue(chunk.GridIndices, out var chunks))
-                {
+                // Not all grids have atmospheres.
+                if (!TryComp(grid, out GasTileOverlayComponent? overlay))
                     return;
+
+                List<GasOverlayChunk> dataToSend = new();
+                ev.UpdatedChunks[grid] = dataToSend;
+
+                previouslySent.TryGetValue(grid, out var previousChunks);
+
+                foreach (var index in gridChunks)
+                {
+                    if (!overlay.Chunks.TryGetValue(index, out var value))
+                        continue;
+
+                    if (previousChunks != null &&
+                        previousChunks.Contains(index) &&
+                        value.LastUpdate != curTick)
+                        continue;
+
+                    dataToSend.Add(value);
                 }
 
-                if (chunks.ContainsKey(chunk.Vector2i))
+                previouslySent[grid] = gridChunks;
+                if (previousChunks != null)
                 {
-                    chunks.Remove(chunk.Vector2i);
+                    previousChunks.Clear();
+                    _chunkIndexPool.Return(previousChunks);
                 }
             }
 
-            /// <summary>
-            ///     Retrieve a whole chunk as a message, only getting the relevant tiles for the gas overlay.
-            /// </summary>
-            /// <param name="chunk"></param>
-            /// <returns></returns>
-            private GasOverlayMessage? ChunkToMessage(GasOverlayChunk chunk)
-            {
-                // Chunk data should already be up to date.
-                // Only send relevant tiles to client.
-
-                var tileData = new List<(Vector2i, GasOverlayData)>();
-
-                for (var x = 0; x < ChunkSize; x++)
-                {
-                    for (var y = 0; y < ChunkSize; y++)
-                    {
-                        // TODO: Check could be more robust I think.
-                        var data = chunk.TileData[x, y];
-                        if ((data.Gas == null || data.Gas.Length == 0) && data.FireState == 0 && data.FireTemperature == 0.0f)
-                        {
-                            continue;
-                        }
-
-                        var indices = new Vector2i(chunk.Vector2i.X + x, chunk.Vector2i.Y + y);
-                        tileData.Add((indices, data));
-                    }
-                }
-
-                if (tileData.Count == 0)
-                {
-                    return null;
-                }
-
-                return new GasOverlayMessage(chunk.GridIndices, tileData);
-            }
+            if (ev.UpdatedChunks.Count != 0 || ev.RemovedChunks.Count != 0)
+                RaiseNetworkEvent(ev, playerSession.ConnectedClient);
         }
 
         public void Reset(RoundRestartCleanupEvent ev)
         {
-            _invalidTiles.Clear();
-            _overlay.Clear();
-
-            foreach (var (_, data) in _knownPlayerChunks)
+            foreach (var data in _lastSentChunks.Values)
             {
-                data.Reset();
+                foreach (var previous in data.Values)
+                {
+                    previous.Clear();
+                    _chunkIndexPool.Return(previous);
+                }
+
+                data.Clear();
             }
+        }
+
+        private void OnGetState(EntityUid uid, GasTileOverlayComponent component, ref ComponentGetState args)
+        {
+            if (_pvsEnabled && !args.ReplayState)
+                return;
+
+            // Should this be a full component state or a delta-state?
+            if (args.FromTick <= component.CreationTick || args.FromTick <= component.ForceTick)
+            {
+                args.State = new GasTileOverlayState(component.Chunks);
+                return;
+            }
+
+            var data = new Dictionary<Vector2i, GasOverlayChunk>();
+            foreach (var (index, chunk) in component.Chunks)
+            {
+                if (chunk.LastUpdate >= args.FromTick)
+                    data[index] = chunk;
+            }
+
+            args.State = new GasTileOverlayState(data) { AllChunks = new(component.Chunks.Keys) };
         }
     }
 }

@@ -2,17 +2,14 @@
 using System.Collections.Generic;
 using System.IO;
 using Content.Shared.Decals;
-using Content.Shared.SubFloor;
 using Robust.Client.ResourceManagement;
 using Robust.Client.Utility;
-using Robust.Shared.GameObjects;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Timing;
 using Robust.Shared.Utility;
 using SixLabors.ImageSharp;
 using SixLabors.ImageSharp.PixelFormats;
 using SixLabors.ImageSharp.Processing;
-using static Robust.Client.Graphics.RSI.State;
 using static Robust.UnitTesting.RobustIntegrationTest;
 
 namespace Content.MapRenderer.Painters;
@@ -38,9 +35,12 @@ public sealed class DecalPainter
 
         decals.Sort(Comparer<DecalData>.Create((x, y) => x.Decal.ZIndex.CompareTo(y.Decal.ZIndex)));
 
-        foreach (var proto in _sPrototypeManager.EnumeratePrototypes<DecalPrototype>())
+        if (_decalTextures.Count == 0)
         {
-            _decalTextures.Add(proto.ID, proto.Sprite);
+            foreach (var proto in _sPrototypeManager.EnumeratePrototypes<DecalPrototype>())
+            {
+                _decalTextures.Add(proto.ID, proto.Sprite);
+            }
         }
 
         foreach (var decal in decals)

@@ -1,40 +1,42 @@
-using System;
-using System.Collections.Generic;
 using System.Linq;
+using System.Globalization;
 using System.Text.RegularExpressions;
 using Content.Shared.CCVar;
-using Content.Shared.CharacterAppearance;
-using Content.Shared.Dataset;
+using Content.Shared.Corvax.TTS;
 using Content.Shared.GameTicking;
+using Content.Shared.Humanoid;
+using Content.Shared.Humanoid.Prototypes;
 using Content.Shared.Random.Helpers;
 using Content.Shared.Roles;
-using Content.Shared.Species;
+using Content.Shared.Traits;
 using Robust.Shared.Configuration;
 using Robust.Shared.Enums;
-using Robust.Shared.IoC;
-using Robust.Shared.Localization;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Random;
 using Robust.Shared.Serialization;
+using Robust.Shared.Utility;
 
 namespace Content.Shared.Preferences
 {
     /// <summary>
     /// Character profile. Looks immutable, but uses non-immutable semantics internally for serialization/code sanity purposes.
     /// </summary>
+    [DataDefinition]
     [Serializable, NetSerializable]
     public sealed class HumanoidCharacterProfile : ICharacterProfile
     {
-        public const int MinimumAge = 18;
-        public const int MaximumAge = 120;
         public const int MaxNameLength = 32;
+        public const int MaxDescLength = 512;
 
         private readonly Dictionary<string, JobPriority> _jobPriorities;
         private readonly List<string> _antagPreferences;
+        private readonly List<string> _traitPreferences;
 
         private HumanoidCharacterProfile(
             string name,
+            string flavortext,
             string species,
+            string voice, // Corvax-TTS
             int age,
             Sex sex,
             Gender gender,
@@ -43,10 +45,13 @@ namespace Content.Shared.Preferences
             BackpackPreference backpack,
             Dictionary<string, JobPriority> jobPriorities,
             PreferenceUnavailableMode preferenceUnavailable,
-            List<string> antagPreferences)
+            List<string> antagPreferences,
+            List<string> traitPreferences)
         {
             Name = name;
+            FlavorText = flavortext;
             Species = species;
+            Voice = voice; // Corvax-TTS
             Age = age;
             Sex = sex;
             Gender = gender;
@@ -56,27 +61,31 @@ namespace Content.Shared.Preferences
             _jobPriorities = jobPriorities;
             PreferenceUnavailable = preferenceUnavailable;
             _antagPreferences = antagPreferences;
+            _traitPreferences = traitPreferences;
         }
 
         /// <summary>Copy constructor but with overridable references (to prevent useless copies)</summary>
         private HumanoidCharacterProfile(
             HumanoidCharacterProfile other,
             Dictionary<string, JobPriority> jobPriorities,
-            List<string> antagPreferences)
-            : this(other.Name, other.Species, other.Age, other.Sex, other.Gender, other.Appearance, other.Clothing, other.Backpack,
-                jobPriorities, other.PreferenceUnavailable, antagPreferences)
+            List<string> antagPreferences,
+            List<string> traitPreferences)
+            : this(other.Name, other.FlavorText, other.Species, other.Voice, other.Age, other.Sex, other.Gender, other.Appearance, other.Clothing, other.Backpack,
+                jobPriorities, other.PreferenceUnavailable, antagPreferences, traitPreferences)
         {
         }
 
         /// <summary>Copy constructor</summary>
         private HumanoidCharacterProfile(HumanoidCharacterProfile other)
-            : this(other, new Dictionary<string, JobPriority>(other.JobPriorities), new List<string>(other.AntagPreferences))
+            : this(other, new Dictionary<string, JobPriority>(other.JobPriorities), new List<string>(other.AntagPreferences), new List<string>(other.TraitPreferences))
         {
         }
 
         public HumanoidCharacterProfile(
             string name,
+            string flavortext,
             string species,
+            string voice, // Corvax-TTS
             int age,
             Sex sex,
             Gender gender,
@@ -85,21 +94,55 @@ namespace Content.Shared.Preferences
             BackpackPreference backpack,
             IReadOnlyDictionary<string, JobPriority> jobPriorities,
             PreferenceUnavailableMode preferenceUnavailable,
-            IReadOnlyList<string> antagPreferences)
-            : this(name, species, age, sex, gender, appearance, clothing, backpack, new Dictionary<string, JobPriority>(jobPriorities),
-                preferenceUnavailable, new List<string>(antagPreferences))
+            IReadOnlyList<string> antagPreferences,
+            IReadOnlyList<string> traitPreferences)
+            : this(name, flavortext, species, voice, age, sex, gender, appearance, clothing, backpack, new Dictionary<string, JobPriority>(jobPriorities),
+                preferenceUnavailable, new List<string>(antagPreferences), new List<string>(traitPreferences))
         {
         }
 
-        public static HumanoidCharacterProfile Default()
+        /// <summary>
+        ///     Get the default humanoid character profile, using internal constant values.
+        ///     Defaults to <see cref="SharedHumanoidAppearanceSystem.DefaultSpecies"/> for the species.
+        /// </summary>
+        /// <returns></returns>
+        public HumanoidCharacterProfile() : this(
+            "John Doe",
+            "",
+            SharedHumanoidAppearanceSystem.DefaultSpecies,
+            SharedHumanoidAppearanceSystem.DefaultVoice, // Corvax-TTS
+                18,
+                Sex.Male,
+                Gender.Male,
+               new HumanoidCharacterAppearance(),
+            ClothingPreference.Jumpsuit,
+            BackpackPreference.Backpack,
+            new Dictionary<string, JobPriority>
+            {
+                {SharedGameTicker.FallbackOverflowJob, JobPriority.High}
+            },
+            PreferenceUnavailableMode.SpawnAsOverflow,
+            new List<string>(),
+            new List<string>())
+        {
+        }
+
+        /// <summary>
+        ///     Return a default character profile, based on species.
+        /// </summary>
+        /// <param name="species">The species to use in this default profile. The default species is <see cref="SharedHumanoidAppearanceSystem.DefaultSpecies"/>.</param>
+        /// <returns>Humanoid character profile with default settings.</returns>
+        public static HumanoidCharacterProfile DefaultWithSpecies(string species = SharedHumanoidAppearanceSystem.DefaultSpecies)
         {
             return new(
                 "John Doe",
-                SpeciesManager.DefaultSpecies,
-                MinimumAge,
+                "",
+                species,
+                SharedHumanoidAppearanceSystem.DefaultVoice, // Corvax-TTS
+                18,
                 Sex.Male,
                 Gender.Male,
-                HumanoidCharacterAppearance.Default(),
+                HumanoidCharacterAppearance.DefaultWithSpecies(species),
                 ClothingPreference.Jumpsuit,
                 BackpackPreference.Backpack,
                 new Dictionary<string, JobPriority>
@@ -107,47 +150,89 @@ namespace Content.Shared.Preferences
                     {SharedGameTicker.FallbackOverflowJob, JobPriority.High}
                 },
                 PreferenceUnavailableMode.SpawnAsOverflow,
+                new List<string>(),
                 new List<string>());
         }
 
-        public static HumanoidCharacterProfile Random()
+        // TODO: This should eventually not be a visual change only.
+        public static HumanoidCharacterProfile Random(HashSet<string>? ignoredSpecies = null)
         {
+            var prototypeManager = IoCManager.Resolve<IPrototypeManager>();
             var random = IoCManager.Resolve<IRobustRandom>();
 
-            var species = random.Pick(IoCManager.Resolve<IPrototypeManager>()
-                .EnumeratePrototypes<SpeciesPrototype>().Where(x => x.RoundStart).ToArray()).ID;
-            var sex = random.Prob(0.5f) ? Sex.Male : Sex.Female;
+            var species = random.Pick(prototypeManager
+                .EnumeratePrototypes<SpeciesPrototype>()
+                .Where(x => ignoredSpecies == null ? x.RoundStart : x.RoundStart && !ignoredSpecies.Contains(x.ID))
+                .ToArray()
+            ).ID;
+
+            return RandomWithSpecies(species);
+        }
+
+        public static HumanoidCharacterProfile RandomWithSpecies(string species = SharedHumanoidAppearanceSystem.DefaultSpecies)
+        {
+            var prototypeManager = IoCManager.Resolve<IPrototypeManager>();
+            var random = IoCManager.Resolve<IRobustRandom>();
+
+            var sex = Sex.Unsexed;
+            var age = 18;
+            if (prototypeManager.TryIndex<SpeciesPrototype>(species, out var speciesPrototype))
+            {
+                sex = random.Pick(speciesPrototype.Sexes);
+                age = random.Next(speciesPrototype.MinAge, speciesPrototype.OldAge); // people don't look and keep making 119 year old characters with zero rp, cap it at middle aged
+            }
+
+            // Corvax-TTS-Start
+            var voiceId = random.Pick(prototypeManager
+                .EnumeratePrototypes<TTSVoicePrototype>()
+                .Where(o => CanHaveVoice(o, sex)).ToArray()
+            ).ID;
+            // Corvax-TTS-End
+
             var gender = sex == Sex.Male ? Gender.Male : Gender.Female;
 
-            var prototypeManager = IoCManager.Resolve<IPrototypeManager>();
-            var firstName = random.Pick(sex.FirstNames(prototypeManager).Values);
-            var lastName = random.Pick(sex.LastNames(prototypeManager).Values);
-            var name = $"{firstName} {lastName}";
-            var age = random.Next(MinimumAge, MaximumAge);
+            var name = GetName(species, gender);
 
-            return new HumanoidCharacterProfile(name, species, age, sex, gender, HumanoidCharacterAppearance.Random(sex), ClothingPreference.Jumpsuit, BackpackPreference.Backpack,
+            return new HumanoidCharacterProfile(name, "", species, voiceId, age, sex, gender, HumanoidCharacterAppearance.Random(species, sex), ClothingPreference.Jumpsuit, BackpackPreference.Backpack,
                 new Dictionary<string, JobPriority>
                 {
-                    {SharedGameTicker.FallbackOverflowJob, JobPriority.High}
-                }, PreferenceUnavailableMode.StayInLobby, new List<string>());
+                    {SharedGameTicker.FallbackOverflowJob, JobPriority.High},
+                }, PreferenceUnavailableMode.StayInLobby, new List<string>(), new List<string>());
         }
 
         public string Name { get; private set; }
+        public string FlavorText { get; private set; }
         public string Species { get; private set; }
+        public string Voice { get; private set; } // Corvax-TTS
+
+        [DataField("age")]
         public int Age { get; private set; }
+
+        [DataField("sex")]
         public Sex Sex { get; private set; }
+
+        [DataField("gender")]
         public Gender Gender { get; private set; }
+
         public ICharacterAppearance CharacterAppearance => Appearance;
+
+        [DataField("appearance")]
         public HumanoidCharacterAppearance Appearance { get; private set; }
         public ClothingPreference Clothing { get; private set; }
         public BackpackPreference Backpack { get; private set; }
         public IReadOnlyDictionary<string, JobPriority> JobPriorities => _jobPriorities;
         public IReadOnlyList<string> AntagPreferences => _antagPreferences;
+        public IReadOnlyList<string> TraitPreferences => _traitPreferences;
         public PreferenceUnavailableMode PreferenceUnavailable { get; private set; }
 
         public HumanoidCharacterProfile WithName(string name)
         {
             return new(this) { Name = name };
+        }
+
+        public HumanoidCharacterProfile WithFlavorText(string flavorText)
+        {
+            return new(this) { FlavorText = flavorText };
         }
 
         public HumanoidCharacterProfile WithAge(int age)
@@ -170,6 +255,12 @@ namespace Content.Shared.Preferences
             return new(this) { Species = species };
         }
 
+        // Corvax-TTS-Start
+        public HumanoidCharacterProfile WithVoice(string voice)
+        {
+            return new(this) { Voice = voice };
+        }
+        // Corvax-TTS-End
 
         public HumanoidCharacterProfile WithCharacterAppearance(HumanoidCharacterAppearance appearance)
         {
@@ -186,7 +277,7 @@ namespace Content.Shared.Preferences
         }
         public HumanoidCharacterProfile WithJobPriorities(IEnumerable<KeyValuePair<string, JobPriority>> jobPriorities)
         {
-            return new(this, new Dictionary<string, JobPriority>(jobPriorities), _antagPreferences);
+            return new(this, new Dictionary<string, JobPriority>(jobPriorities), _antagPreferences, _traitPreferences);
         }
 
         public HumanoidCharacterProfile WithJobPriority(string jobId, JobPriority priority)
@@ -200,7 +291,7 @@ namespace Content.Shared.Preferences
             {
                 dictionary[jobId] = priority;
             }
-            return new(this, dictionary, _antagPreferences);
+            return new(this, dictionary, _antagPreferences, _traitPreferences);
         }
 
         public HumanoidCharacterProfile WithPreferenceUnavailable(PreferenceUnavailableMode mode)
@@ -210,7 +301,7 @@ namespace Content.Shared.Preferences
 
         public HumanoidCharacterProfile WithAntagPreferences(IEnumerable<string> antagPreferences)
         {
-            return new(this, _jobPriorities, new List<string>(antagPreferences));
+            return new(this, _jobPriorities, new List<string>(antagPreferences), _traitPreferences);
         }
 
         public HumanoidCharacterProfile WithAntagPreference(string antagId, bool pref)
@@ -230,7 +321,29 @@ namespace Content.Shared.Preferences
                     list.Remove(antagId);
                 }
             }
-            return new(this, _jobPriorities, list);
+            return new(this, _jobPriorities, list, _traitPreferences);
+        }
+
+        public HumanoidCharacterProfile WithTraitPreference(string traitId, bool pref)
+        {
+            var list = new List<string>(_traitPreferences);
+
+            // TODO: Maybe just refactor this to HashSet? Same with _antagPreferences
+            if(pref)
+            {
+                if(!list.Contains(traitId))
+                {
+                    list.Add(traitId);
+                }
+            }
+            else
+            {
+                if(list.Contains(traitId))
+                {
+                    list.Remove(traitId);
+                }
+            }
+            return new(this, _jobPriorities, _antagPreferences, list);
         }
 
         public string Summary =>
@@ -253,19 +366,38 @@ namespace Content.Shared.Preferences
             if (Backpack != other.Backpack) return false;
             if (!_jobPriorities.SequenceEqual(other._jobPriorities)) return false;
             if (!_antagPreferences.SequenceEqual(other._antagPreferences)) return false;
+            if (!_traitPreferences.SequenceEqual(other._traitPreferences)) return false;
             return Appearance.MemberwiseEquals(other.Appearance);
         }
 
-        public void EnsureValid()
+        public void EnsureValid(string[] sponsorMarkings)
         {
-            var age = Math.Clamp(Age, MinimumAge, MaximumAge);
+            var prototypeManager = IoCManager.Resolve<IPrototypeManager>();
+
+            if (!prototypeManager.TryIndex<SpeciesPrototype>(Species, out var speciesPrototype))
+            {
+                Species = SharedHumanoidAppearanceSystem.DefaultSpecies;
+                speciesPrototype = prototypeManager.Index<SpeciesPrototype>(Species);
+            }
 
             var sex = Sex switch
             {
                 Sex.Male => Sex.Male,
                 Sex.Female => Sex.Female,
+                Sex.Unsexed => Sex.Unsexed,
                 _ => Sex.Male // Invalid enum values.
             };
+
+            // ensure the species can be that sex and their age fits the founds
+            var age = Age;
+            if (speciesPrototype != null)
+            {
+                if (!speciesPrototype.Sexes.Contains(sex))
+                {
+                    sex = speciesPrototype.Sexes[0];
+                }
+                age = Math.Clamp(Age, speciesPrototype.MinAge, speciesPrototype.MaxAge);
+            }
 
             var gender = Gender switch
             {
@@ -279,7 +411,7 @@ namespace Content.Shared.Preferences
             string name;
             if (string.IsNullOrEmpty(Name))
             {
-                name = RandomName();
+                name = GetName(Species, gender);
             }
             else if (Name.Length > MaxNameLength)
             {
@@ -292,17 +424,36 @@ namespace Content.Shared.Preferences
 
             name = name.Trim();
 
-            if (IoCManager.Resolve<IConfigurationManager>().GetCVar(CCVars.RestrictedNames))
+            var configManager = IoCManager.Resolve<IConfigurationManager>();
+            if (configManager.GetCVar(CCVars.RestrictedNames))
             {
-                name = Regex.Replace(name, @"[^А-Я,а-я,0-9, -]", string.Empty);
+                name = Regex.Replace(name, @"[^А-Я,а-я,0-9, -]", string.Empty); // Corvax: Only cyrillic names
+            }
+
+            if (configManager.GetCVar(CCVars.ICNameCase))
+            {
+                // This regex replaces the first character of the first and last words of the name with their uppercase version
+                name = Regex.Replace(name,
+                @"^(?<word>\w)|\b(?<word>\w)(?=\w*$)",
+                m => m.Groups["word"].Value.ToUpper());
             }
 
             if (string.IsNullOrEmpty(name))
             {
-                name = RandomName();
+                name = GetName(Species, gender);
             }
 
-            var appearance = HumanoidCharacterAppearance.EnsureValid(Appearance);
+            string flavortext;
+            if (FlavorText.Length > MaxDescLength)
+            {
+                flavortext = FormattedMessage.RemoveMarkup(FlavorText)[..MaxDescLength];
+            }
+            else
+            {
+                flavortext = FormattedMessage.RemoveMarkup(FlavorText);
+            }
+
+            var appearance = HumanoidCharacterAppearance.EnsureValid(Appearance, Species, sponsorMarkings);
 
             var prefsUnavailableMode = PreferenceUnavailable switch
             {
@@ -326,8 +477,6 @@ namespace Content.Shared.Preferences
                 _ => BackpackPreference.Backpack // Invalid enum values.
             };
 
-            var prototypeManager = IoCManager.Resolve<IPrototypeManager>();
-
             var priorities = new Dictionary<string, JobPriority>(JobPriorities
                 .Where(p => prototypeManager.HasIndex<JobPrototype>(p.Key) && p.Value switch
                 {
@@ -342,7 +491,12 @@ namespace Content.Shared.Preferences
                 .Where(prototypeManager.HasIndex<AntagPrototype>)
                 .ToList();
 
+            var traits = TraitPreferences
+                         .Where(prototypeManager.HasIndex<TraitPrototype>)
+                         .ToList();
+
             Name = name;
+            FlavorText = flavortext;
             Age = age;
             Sex = sex;
             Gender = gender;
@@ -362,14 +516,30 @@ namespace Content.Shared.Preferences
             _antagPreferences.Clear();
             _antagPreferences.AddRange(antags);
 
-            string RandomName()
-            {
-                var random = IoCManager.Resolve<IRobustRandom>();
-                var protoMan = IoCManager.Resolve<IPrototypeManager>();
-                var firstName = random.Pick(Sex.FirstNames(protoMan).Values);
-                var lastName = random.Pick(Sex.LastNames(protoMan).Values);
-                return $"{firstName} {lastName}";
-            }
+            _traitPreferences.Clear();
+            _traitPreferences.AddRange(traits);
+            
+            // Corvax-TTS-Start
+            prototypeManager.TryIndex<TTSVoicePrototype>(Voice, out var voice);
+            if (voice is null || !CanHaveVoice(voice, Sex))
+                Voice = SharedHumanoidAppearanceSystem.DefaultSexVoice[sex];
+            // Corvax-TTS-End
+        }
+        
+        // Corvax-TTS-Start
+        // MUST NOT BE PUBLIC, BUT....
+        public static bool CanHaveVoice(TTSVoicePrototype voice, Sex sex)
+        {
+            return voice.RoundStart && sex == Sex.Unsexed || (voice.Sex == sex || voice.Sex == Sex.Unsexed);
+        }
+        // Corvax-TTS-End
+
+        // sorry this is kind of weird and duplicated,
+        /// working inside these non entity systems is a bit wack
+        public static string GetName(string species, Gender gender)
+        {
+            var namingSystem = IoCManager.Resolve<IEntitySystemManager>().GetEntitySystem<NamingSystem>();
+            return namingSystem.GetName(species, gender);
         }
 
         public override bool Equals(object? obj)
@@ -392,7 +562,8 @@ namespace Content.Shared.Preferences
                 ),
                 PreferenceUnavailable,
                 _jobPriorities,
-                _antagPreferences
+                _antagPreferences,
+                _traitPreferences
             );
         }
     }

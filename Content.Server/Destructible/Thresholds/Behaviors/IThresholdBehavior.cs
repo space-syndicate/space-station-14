@@ -1,6 +1,4 @@
-﻿using Robust.Shared.GameObjects;
-
-namespace Content.Server.Destructible.Thresholds.Behaviors
+﻿namespace Content.Server.Destructible.Thresholds.Behaviors
 {
     public interface IThresholdBehavior
     {
@@ -12,6 +10,7 @@ namespace Content.Server.Destructible.Thresholds.Behaviors
         ///     An instance of <see cref="DestructibleSystem"/> to pull dependencies
         ///     and other systems from.
         /// </param>
-        void Execute(EntityUid owner, DestructibleSystem system);
+        /// <param name="cause">The entity that caused this behavior.</param>
+        void Execute(EntityUid owner, DestructibleSystem system, EntityUid? cause = null);
     }
 }

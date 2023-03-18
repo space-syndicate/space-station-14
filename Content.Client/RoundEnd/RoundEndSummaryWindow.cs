@@ -1,19 +1,23 @@
-using System;
 using System.Linq;
 using Content.Client.Message;
 using Content.Shared.GameTicking;
+using Robust.Client.GameObjects;
 using Robust.Client.UserInterface.Controls;
 using Robust.Client.UserInterface.CustomControls;
-using Robust.Shared.Localization;
+using Robust.Shared.Utility;
 using static Robust.Client.UserInterface.Controls.BoxContainer;
 
 namespace Content.Client.RoundEnd
 {
     public sealed class RoundEndSummaryWindow : DefaultWindow
     {
+        private readonly IEntityManager _entityManager;
 
-        public RoundEndSummaryWindow(int roundId, string gm, string roundEnd, TimeSpan roundTimeSpan, RoundEndMessageEvent.RoundEndPlayerInfo[] info)
+        public RoundEndSummaryWindow(string gm, string roundEnd, TimeSpan roundTimeSpan, int roundId,
+            RoundEndMessageEvent.RoundEndPlayerInfo[] info, IEntityManager entityManager)
         {
+            _entityManager = entityManager;
+
             MinSize = SetSize = (520, 580);
 
             Title = Loc.GetString("round-end-summary-window-title");
@@ -25,7 +29,7 @@ namespace Content.Client.RoundEnd
             // Also good for serious info.
 
             var roundEndTabs = new TabContainer();
-            roundEndTabs.AddChild(MakeRoundEndSummaryTab(roundId, gm, roundEnd, roundTimeSpan));
+            roundEndTabs.AddChild(MakeRoundEndSummaryTab(gm, roundEnd, roundTimeSpan, roundId));
             roundEndTabs.AddChild(MakePlayerManifestoTab(info));
 
             Contents.AddChild(roundEndTabs);
@@ -34,7 +38,7 @@ namespace Content.Client.RoundEnd
             MoveToFront();
         }
 
-        private BoxContainer MakeRoundEndSummaryTab(int roundId, string gamemode, string roundEnd, TimeSpan roundDuration)
+        private BoxContainer MakeRoundEndSummaryTab(string gamemode, string roundEnd, TimeSpan roundDuration, int roundId)
         {
             var roundEndSummaryTab = new BoxContainer
             {
@@ -44,7 +48,8 @@ namespace Content.Client.RoundEnd
 
             var roundEndSummaryContainerScrollbox = new ScrollContainer
             {
-                VerticalExpand = true
+                VerticalExpand = true,
+                Margin = new Thickness(10)
             };
             var roundEndSummaryContainer = new BoxContainer
             {
@@ -53,9 +58,11 @@ namespace Content.Client.RoundEnd
 
             //Gamemode Name
             var gamemodeLabel = new RichTextLabel();
-            gamemodeLabel.SetMarkup(Loc.GetString("round-end-summary-window-gamemode-name-label",
-                ("id", roundId),
-                ("gamemode", gamemode)));
+            var gamemodeMessage = new FormattedMessage();
+            gamemodeMessage.AddMarkup(Loc.GetString("round-end-summary-window-round-id-label", ("roundId", roundId)));
+            gamemodeMessage.AddText(" ");
+            gamemodeMessage.AddMarkup(Loc.GetString("round-end-summary-window-gamemode-name-label", ("gamemode", gamemode)));
+            gamemodeLabel.SetMessage(gamemodeMessage);
             roundEndSummaryContainer.AddChild(gamemodeLabel);
 
             //Duration
@@ -90,7 +97,8 @@ namespace Content.Client.RoundEnd
 
             var playerInfoContainerScrollbox = new ScrollContainer
             {
-                VerticalExpand = true
+                VerticalExpand = true,
+                Margin = new Thickness(10)
             };
             var playerInfoContainer = new BoxContainer
             {
@@ -103,7 +111,27 @@ namespace Content.Client.RoundEnd
             //Create labels for each player info.
             foreach (var playerInfo in sortedPlayersInfo)
             {
-                var playerInfoText = new RichTextLabel();
+                var hBox = new BoxContainer
+                {
+                    Orientation = LayoutOrientation.Horizontal,
+                };
+
+                var playerInfoText = new RichTextLabel
+                {
+                    VerticalAlignment = VAlignment.Center,
+                    VerticalExpand = true,
+                };
+
+                if (_entityManager.TryGetComponent(playerInfo.PlayerEntityUid, out SpriteComponent? sprite))
+                {
+                    hBox.AddChild(new SpriteView
+                    {
+                        Sprite = sprite,
+                        OverrideDirection = Direction.South,
+                        VerticalAlignment = VAlignment.Center,
+                        VerticalExpand = true,
+                    });
+                }
 
                 if (playerInfo.PlayerICName != null)
                 {
@@ -127,7 +155,8 @@ namespace Content.Client.RoundEnd
                                 ("playerRole", Loc.GetString(playerInfo.Role))));
                     }
                 }
-                playerInfoContainer.AddChild(playerInfoText);
+                hBox.AddChild(playerInfoText);
+                playerInfoContainer.AddChild(hBox);
             }
 
             playerInfoContainerScrollbox.AddChild(playerInfoContainer);

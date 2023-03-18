@@ -1,10 +1,7 @@
-using System;
 using Content.Shared.Nutrition.Components;
 using Content.Shared.Stunnable;
 using Content.Shared.Throwing;
 using JetBrains.Annotations;
-using Robust.Shared.GameObjects;
-using Robust.Shared.IoC;
 
 namespace Content.Shared.Nutrition.EntitySystems
 {
@@ -12,6 +9,7 @@ namespace Content.Shared.Nutrition.EntitySystems
     public abstract class SharedCreamPieSystem : EntitySystem
     {
         [Dependency] private SharedStunSystem _stunSystem = default!;
+        [Dependency] private readonly SharedAppearanceSystem _appearance = default!;
 
         public override void Initialize()
         {
@@ -31,8 +29,6 @@ namespace Content.Shared.Nutrition.EntitySystems
             creamPie.Splatted = true;
 
             SplattedCreamPie(uid, creamPie);
-
-            EntityManager.QueueDeleteEntity(uid);
         }
 
         protected virtual void SplattedCreamPie(EntityUid uid, CreamPieComponent creamPie) {}
@@ -46,11 +42,11 @@ namespace Content.Shared.Nutrition.EntitySystems
 
             if (EntityManager.TryGetComponent(uid, out AppearanceComponent? appearance))
             {
-                appearance.SetData(CreamPiedVisuals.Creamed, value);
+                _appearance.SetData(uid, CreamPiedVisuals.Creamed, value, appearance);
             }
         }
 
-        private void OnCreamPieLand(EntityUid uid, CreamPieComponent component, LandEvent args)
+        private void OnCreamPieLand(EntityUid uid, CreamPieComponent component, ref LandEvent args)
         {
             SplatCreamPie(uid, component);
         }

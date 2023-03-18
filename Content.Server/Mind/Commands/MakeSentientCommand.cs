@@ -1,19 +1,16 @@
 using Content.Server.Administration;
-using Content.Server.AI.Components;
 using Content.Server.Mind.Components;
+using Content.Server.NPC.Components;
 using Content.Shared.Administration;
 using Content.Shared.Emoting;
 using Content.Shared.Examine;
 using Content.Shared.Movement.Components;
 using Content.Shared.Speech;
 using Robust.Shared.Console;
-using Robust.Shared.GameObjects;
-using Robust.Shared.IoC;
-using Timer = Robust.Shared.Timing.Timer;
 
 namespace Content.Server.Mind.Commands
 {
-    [AdminCommand(AdminFlags.Fun)]
+    [AdminCommand(AdminFlags.Admin)]
     public sealed class MakeSentientCommand : IConsoleCommand
     {
         public string Command => "makesentient";
@@ -42,20 +39,25 @@ namespace Content.Server.Mind.Commands
                 return;
             }
 
-            MakeSentient(entId, entityManager);
+            MakeSentient(entId, entityManager, true, true);
         }
 
-        public static void MakeSentient(EntityUid uid, IEntityManager entityManager)
+        public static void MakeSentient(EntityUid uid, IEntityManager entityManager, bool allowMovement = true, bool allowSpeech = true)
         {
-            if(entityManager.HasComponent<AiControllerComponent>(uid))
-                entityManager.RemoveComponent<AiControllerComponent>(uid);
-
-
             entityManager.EnsureComponent<MindComponent>(uid);
-            entityManager.EnsureComponent<SharedPlayerInputMoverComponent>(uid);
-            entityManager.EnsureComponent<SharedPlayerMobMoverComponent>(uid);
-            entityManager.EnsureComponent<SharedSpeechComponent>(uid);
-            entityManager.EnsureComponent<SharedEmotingComponent>(uid);
+            if (allowMovement)
+            {
+                entityManager.EnsureComponent<InputMoverComponent>(uid);
+                entityManager.EnsureComponent<MobMoverComponent>(uid);
+                entityManager.EnsureComponent<MovementSpeedModifierComponent>(uid);
+            }
+
+            if (allowSpeech)
+            {
+                entityManager.EnsureComponent<SpeechComponent>(uid);
+                entityManager.EnsureComponent<EmotingComponent>(uid);
+            }
+
             entityManager.EnsureComponent<ExaminerComponent>(uid);
         }
     }

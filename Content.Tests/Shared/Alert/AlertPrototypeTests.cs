@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.IO;
 using Content.Shared.Alert;
 using NUnit.Framework;
@@ -15,9 +15,16 @@ namespace Content.Tests.Shared.Alert
     {
         private const string Prototypes = @"
 - type: alert
-  alertType: HumanHealth
+  id: HumanHealth
   category: Health
-  icon: /Textures/Interface/Alerts/Human/human.rsi/human.png
+  icons:
+  - /Textures/Interface/Alerts/Human/human.rsi/human0.png
+  - /Textures/Interface/Alerts/Human/human.rsi/human1.png
+  - /Textures/Interface/Alerts/Human/human.rsi/human2.png
+  - /Textures/Interface/Alerts/Human/human.rsi/human3.png
+  - /Textures/Interface/Alerts/Human/human.rsi/human4.png
+  - /Textures/Interface/Alerts/Human/human.rsi/human5.png
+  - /Textures/Interface/Alerts/Human/human.rsi/human6.png
   name: Health
   description: ""[color=green]Green[/color] good. [color=red]Red[/color] bad.""
   minSeverity: 0
@@ -78,7 +85,7 @@ namespace Content.Tests.Shared.Alert
             var proto = (YamlMappingNode) rootNode[0];
             var serMan = IoCManager.Resolve<ISerializationManager>();
 
-            return serMan.ReadValue<AlertPrototype>(new MappingDataNode(proto));
+            return serMan.Read<AlertPrototype>(new MappingDataNode(proto));
         }
     }
 }

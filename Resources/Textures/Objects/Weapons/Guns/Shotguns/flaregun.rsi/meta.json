@@ -11,20 +11,15 @@
       "name": "icon"
     },
     {
-      "name": "bolt-closed"
-    },
-    {
-      "name": "bolt-open"
-    },
-    {
-      "name": "base"
-    },
-    {
       "name": "inhand-right",
       "directions": 4
     },
     {
       "name": "inhand-left",
+      "directions": 4
+    },
+	{
+      "name": "equipped-BELT",
       "directions": 4
     }
   ]

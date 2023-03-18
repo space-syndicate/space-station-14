@@ -1,16 +1,19 @@
-﻿using Content.Server.Chemistry.Components;
+using Content.Server.Chemistry.Components;
 using Content.Server.Chemistry.Components.SolutionManager;
 using Content.Shared.Chemistry.Components;
 using Content.Shared.Chemistry.Reagent;
 using Content.Shared.FixedPoint;
 using Content.Shared.Physics;
+using Content.Shared.Spawners.Components;
+using Content.Shared.Throwing;
 using Content.Shared.Vapor;
 using JetBrains.Annotations;
-using Robust.Shared.GameObjects;
-using Robust.Shared.IoC;
 using Robust.Shared.Map;
-using Robust.Shared.Maths;
+using Robust.Shared.Map.Components;
+using Robust.Shared.Physics.Components;
 using Robust.Shared.Physics.Dynamics;
+using Robust.Shared.Physics.Events;
+using Robust.Shared.Physics.Systems;
 using Robust.Shared.Prototypes;
 
 namespace Content.Server.Chemistry.EntitySystems
@@ -20,7 +23,9 @@ namespace Content.Server.Chemistry.EntitySystems
     {
         [Dependency] private readonly IMapManager _mapManager = default!;
         [Dependency] private readonly IPrototypeManager _protoManager = default!;
+        [Dependency] private readonly SharedPhysicsSystem _physics = default!;
         [Dependency] private readonly SolutionContainerSystem _solutionContainerSystem = default!;
+        [Dependency] private readonly ThrowingSystem _throwing = default!;
 
         private const float ReactTime = 0.125f;
 
@@ -30,11 +35,11 @@ namespace Content.Server.Chemistry.EntitySystems
             SubscribeLocalEvent<VaporComponent, StartCollideEvent>(HandleCollide);
         }
 
-        private void HandleCollide(EntityUid uid, VaporComponent component, StartCollideEvent args)
+        private void HandleCollide(EntityUid uid, VaporComponent component, ref StartCollideEvent args)
         {
             if (!EntityManager.TryGetComponent(uid, out SolutionContainerManagerComponent? contents)) return;
 
-            foreach (var (_, value) in contents.Solutions)
+            foreach (var value in contents.Solutions.Values)
             {
                 value.DoEntityReaction(args.OtherFixture.Body.Owner, ReactionMethod.Touch);
             }
@@ -46,27 +51,34 @@ namespace Content.Server.Chemistry.EntitySystems
             }
         }
 
-        public void Start(VaporComponent vapor, Vector2 dir, float speed, EntityCoordinates target, float aliveTime)
+        public void Start(VaporComponent vapor, TransformComponent vaporXform, Vector2 dir, float speed, MapCoordinates target, float aliveTime, EntityUid? user = null)
         {
             vapor.Active = true;
-            vapor.Target = target;
-            vapor.AliveTime = aliveTime;
+            var despawn = EnsureComp<TimedDespawnComponent>(vapor.Owner);
+            despawn.Lifetime = aliveTime;
+
             // Set Move
             if (EntityManager.TryGetComponent(vapor.Owner, out PhysicsComponent? physics))
             {
-                physics.BodyStatus = BodyStatus.InAir;
-                physics.ApplyLinearImpulse(dir * speed);
+                _physics.SetLinearDamping(physics, 0f);
+                _physics.SetAngularDamping(physics, 0f);
+
+                _throwing.TryThrow(vapor.Owner, dir * speed, user: user, pushbackRatio: 50f);
+
+                var distance = (target.Position - vaporXform.WorldPosition).Length;
+                var time = (distance / physics.LinearVelocity.Length);
+                despawn.Lifetime = MathF.Min(aliveTime, time);
             }
         }
 
         internal bool TryAddSolution(VaporComponent vapor, Solution solution)
         {
-            if (solution.TotalVolume == 0)
+            if (solution.Volume == 0)
             {
                 return false;
             }
 
-            if (!_solutionContainerSystem.TryGetSolution(vapor.Owner, SharedVaporComponent.SolutionName,
+            if (!_solutionContainerSystem.TryGetSolution(vapor.Owner, VaporComponent.SolutionName,
                 out var vaporSolution))
             {
                 return false;
@@ -77,32 +89,30 @@ namespace Content.Server.Chemistry.EntitySystems
 
         public override void Update(float frameTime)
         {
-            foreach (var (vaporComp, solution) in EntityManager
-                .EntityQuery<VaporComponent, SolutionContainerManagerComponent>())
+            foreach (var (vaporComp, solution, xform) in EntityManager
+                .EntityQuery<VaporComponent, SolutionContainerManagerComponent, TransformComponent>())
             {
                 foreach (var (_, value) in solution.Solutions)
                 {
-                    Update(frameTime, vaporComp, value);
+                    Update(frameTime, vaporComp, value, xform);
                 }
             }
         }
 
-        private void Update(float frameTime, VaporComponent vapor, Solution contents)
+        private void Update(float frameTime, VaporComponent vapor, Solution contents, TransformComponent xform)
         {
             if (!vapor.Active)
                 return;
 
             var entity = vapor.Owner;
 
-            vapor.Timer += frameTime;
             vapor.ReactTimer += frameTime;
 
-            if (vapor.ReactTimer >= ReactTime && EntityManager.GetComponent<TransformComponent>(vapor.Owner).GridID.IsValid())
+            if (vapor.ReactTimer >= ReactTime && TryComp(xform.GridUid, out MapGridComponent? gridComp))
             {
                 vapor.ReactTimer = 0;
-                var mapGrid = _mapManager.GetGrid(EntityManager.GetComponent<TransformComponent>(entity).GridID);
 
-                var tile = mapGrid.GetTileRef(EntityManager.GetComponent<TransformComponent>(entity).Coordinates.ToVector2i(EntityManager, _mapManager));
+                var tile = gridComp.GetTileRef(xform.Coordinates.ToVector2i(EntityManager, _mapManager));
                 foreach (var reagentQuantity in contents.Contents.ToArray())
                 {
                     if (reagentQuantity.Quantity == FixedPoint2.Zero) continue;
@@ -112,15 +122,7 @@ namespace Content.Server.Chemistry.EntitySystems
                 }
             }
 
-            // Check if we've reached our target.
-            if (!vapor.Reached &&
-                vapor.Target.TryDistance(EntityManager, EntityManager.GetComponent<TransformComponent>(entity).Coordinates, out var distance) &&
-                distance <= 0.5f)
-            {
-                vapor.Reached = true;
-            }
-
-            if (contents.CurrentVolume == 0 || vapor.Timer > vapor.AliveTime)
+            if (contents.Volume == 0)
             {
                 // Delete this
                 EntityManager.QueueDeleteEntity(entity);

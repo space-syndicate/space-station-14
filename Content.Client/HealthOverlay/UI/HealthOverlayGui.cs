@@ -2,13 +2,11 @@ using Content.Client.IoC;
 using Content.Client.Resources;
 using Content.Shared.Damage;
 using Content.Shared.FixedPoint;
-using Content.Shared.MobState.Components;
+using Content.Shared.Mobs;
+using Content.Shared.Mobs.Components;
+using Content.Shared.Mobs.Systems;
 using Robust.Client.Graphics;
-using Robust.Client.UserInterface;
 using Robust.Client.UserInterface.Controls;
-using Robust.Shared.GameObjects;
-using Robust.Shared.IoC;
-using Robust.Shared.Maths;
 using Robust.Shared.Timing;
 
 namespace Content.Client.HealthOverlay.UI
@@ -21,7 +19,7 @@ namespace Content.Client.HealthOverlay.UI
         public HealthOverlayGui(EntityUid entity)
         {
             IoCManager.InjectDependencies(this);
-            IoCManager.Resolve<IUserInterfaceManager>().StateRoot.AddChild(this);
+            UserInterfaceManager.WindowRoot.AddChild(this);
             SeparationOverride = 0;
             Orientation = LayoutOrientation.Vertical;
 
@@ -86,11 +84,11 @@ namespace Content.Client.HealthOverlay.UI
                 return;
             }
 
-            FixedPoint2 threshold;
-
-            if (mobState.IsAlive())
+            var mobStateSystem = _entities.EntitySysManager.GetEntitySystem<MobStateSystem>();
+            var mobThresholdSystem = _entities.EntitySysManager.GetEntitySystem<MobThresholdSystem>();
+            if (mobStateSystem.IsAlive(mobState.Owner, mobState))
             {
-                if (!mobState.TryGetEarliestCriticalState(damageable.TotalDamage, out _, out threshold))
+                if (!mobThresholdSystem.TryGetThresholdForState(Entity,MobState.Critical, out var threshold))
                 {
                     CritBar.Visible = false;
                     HealthBar.Visible = false;
@@ -99,16 +97,16 @@ namespace Content.Client.HealthOverlay.UI
 
                 CritBar.Ratio = 1;
                 CritBar.Visible = true;
-                HealthBar.Ratio = 1 - (damageable.TotalDamage / threshold).Float();
+                HealthBar.Ratio = 1 - ((FixedPoint2)(damageable.TotalDamage / threshold)).Float();
                 HealthBar.Visible = true;
             }
-            else if (mobState.IsCritical())
+            else if (mobStateSystem.IsCritical(mobState.Owner, mobState))
             {
                 HealthBar.Ratio = 0;
                 HealthBar.Visible = false;
 
-                if (!mobState.TryGetPreviousCriticalState(damageable.TotalDamage, out _, out var critThreshold) ||
-                    !mobState.TryGetEarliestDeadState(damageable.TotalDamage, out _, out var deadThreshold))
+                if (!mobThresholdSystem.TryGetThresholdForState(Entity, MobState.Critical, out var critThreshold) ||
+                    !mobThresholdSystem.TryGetThresholdForState(Entity, MobState.Dead, out var deadThreshold))
                 {
                     CritBar.Visible = false;
                     return;
@@ -117,9 +115,9 @@ namespace Content.Client.HealthOverlay.UI
                 CritBar.Visible = true;
                 CritBar.Ratio = 1 -
                     ((damageable.TotalDamage - critThreshold) /
-                    (deadThreshold - critThreshold)).Float();
+                    (deadThreshold - critThreshold)).Value.Float();
             }
-            else if (mobState.IsDead())
+            else if (mobStateSystem.IsDead(mobState.Owner, mobState))
             {
                 CritBar.Ratio = 0;
                 CritBar.Visible = false;
@@ -156,7 +154,8 @@ namespace Content.Client.HealthOverlay.UI
         {
             base.Dispose(disposing);
 
-            if (!disposing) return;
+            if (!disposing)
+                return;
 
             HealthBar.Dispose();
         }

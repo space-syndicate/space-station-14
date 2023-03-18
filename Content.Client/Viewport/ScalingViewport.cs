@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using Robust.Client.Graphics;
 using Robust.Client.Input;
@@ -129,14 +129,10 @@ namespace Content.Client.Viewport
             _inputManager.ViewportKeyEvent(this, args);
         }
 
-
-        protected override void FrameUpdate(FrameEventArgs args)
-        {
-            EnsureViewportCreated();
-        }
-
         protected override void Draw(DrawingHandleScreen handle)
         {
+            EnsureViewportCreated();
+
             DebugTools.AssertNotNull(_viewport);
 
             _viewport!.Render();
@@ -254,7 +250,7 @@ namespace Content.Client.Viewport
 
             EnsureViewportCreated();
 
-            var matrix = Matrix3.Invert(LocalToScreenMatrix());
+            var matrix = Matrix3.Invert(GetLocalToScreenMatrix());
 
             return _viewport!.LocalToWorld(matrix.Transform(coords));
         }
@@ -268,26 +264,29 @@ namespace Content.Client.Viewport
 
             var vpLocal = _viewport!.WorldToLocal(map);
 
-            var matrix = LocalToScreenMatrix();
+            var matrix = GetLocalToScreenMatrix();
 
             return matrix.Transform(vpLocal);
         }
 
-        private Matrix3 LocalToScreenMatrix()
+        public Matrix3 GetWorldToScreenMatrix()
         {
-            DebugTools.AssertNotNull(_viewport);
+            EnsureViewportCreated();
+            return _viewport!.GetWorldToLocalMatrix() * GetLocalToScreenMatrix();
+        }
+
+        public Matrix3 GetLocalToScreenMatrix()
+        {
+            EnsureViewportCreated();
 
             var drawBox = GetDrawBox();
             var scaleFactor = drawBox.Size / (Vector2) _viewport!.Size;
 
-            if (scaleFactor == (0, 0))
+            if (scaleFactor.X == 0 || scaleFactor.Y == 0)
                 // Basically a nonsense scenario, at least make sure to return something that can be inverted.
                 return Matrix3.Identity;
 
-            var scale = Matrix3.CreateScale(scaleFactor);
-            var translate = Matrix3.CreateTranslation(GlobalPixelPosition + drawBox.TopLeft);
-
-            return scale * translate;
+            return Matrix3.CreateTransform(GlobalPixelPosition + drawBox.TopLeft, 0, scaleFactor);
         }
 
         private void EnsureViewportCreated()

@@ -1,41 +1,30 @@
-using System;
-using Robust.Shared.GameObjects;
 using Robust.Shared.Serialization;
 
 namespace Content.Shared.Paper
 {
-    [Virtual]
-    public class SharedPaperComponent : Component
+    public abstract class SharedPaperComponent : Component
     {
         [Serializable, NetSerializable]
         public sealed class PaperBoundUserInterfaceState : BoundUserInterfaceState
         {
             public readonly string Text;
+            public readonly List<string> StampedBy;
             public readonly PaperAction Mode;
 
-            public PaperBoundUserInterfaceState(string text, PaperAction mode = PaperAction.Read)
+            public PaperBoundUserInterfaceState(string text, List<string> stampedBy, PaperAction mode = PaperAction.Read)
             {
                 Text = text;
+                StampedBy = stampedBy;
                 Mode = mode;
             }
         }
 
         [Serializable, NetSerializable]
-        public sealed class PaperActionMessage : BoundUserInterfaceMessage
-        {
-            public readonly PaperAction Action;
-            public PaperActionMessage(PaperAction action)
-            {
-                Action = action;
-            }
-        }
-
-        [Serializable, NetSerializable]
-        public sealed class PaperInputText : BoundUserInterfaceMessage
+        public sealed class PaperInputTextMessage : BoundUserInterfaceMessage
         {
             public readonly string Text;
 
-            public PaperInputText(string text)
+            public PaperInputTextMessage(string text)
             {
                 Text = text;
             }
@@ -52,14 +41,13 @@ namespace Content.Shared.Paper
         {
             Read,
             Write,
-            CrossOut,
-            Stamp
         }
 
         [Serializable, NetSerializable]
         public enum PaperVisuals : byte
         {
-            Status
+            Status,
+            Stamp
         }
 
         [Serializable, NetSerializable]
@@ -68,6 +56,5 @@ namespace Content.Shared.Paper
             Blank,
             Written
         }
-
     }
 }

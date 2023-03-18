@@ -1,7 +1,5 @@
 using Content.Server.Explosion.Components;
 using JetBrains.Annotations;
-using Robust.Shared.GameObjects;
-using Robust.Shared.Serialization.Manager.Attributes;
 
 namespace Content.Server.Destructible.Thresholds.Behaviors
 {
@@ -12,9 +10,9 @@ namespace Content.Server.Destructible.Thresholds.Behaviors
     [DataDefinition]
     public sealed class ExplodeBehavior : IThresholdBehavior
     {
-        public void Execute(EntityUid owner, DestructibleSystem system)
+        public void Execute(EntityUid owner, DestructibleSystem system, EntityUid? cause = null)
         {
-            system.ExplosionSystem.SpawnExplosion(owner);
+            system.ExplosionSystem.TriggerExplosive(owner, user:cause);
         }
     }
 }

@@ -1,10 +1,7 @@
 ﻿using Content.Server.GameTicking;
 using Content.Shared.Administration;
 using Content.Shared.GameTicking;
-using Robust.Server.Player;
 using Robust.Shared.Console;
-using Robust.Shared.GameObjects;
-using Robust.Shared.IoC;
 
 namespace Content.Server.Administration.Commands
 {
@@ -32,11 +29,7 @@ namespace Content.Server.Administration.Commands
                 return;
             }
 
-            foreach (var (player, status) in gameTicker.PlayersInLobby)
-            {
-                if(status != LobbyPlayerStatus.Observer)
-                    gameTicker.ToggleReady(player, ready);
-            }
+            gameTicker.ToggleReadyAll(ready);
         }
     }
 }

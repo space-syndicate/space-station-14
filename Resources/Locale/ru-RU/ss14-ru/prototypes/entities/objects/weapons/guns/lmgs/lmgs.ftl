@@ -1,9 +1,6 @@
-ent-LMGBase = BaseLMG
-    .desc = A rooty tooty point and shooty.
+ent-BaseWeaponLightMachineGun = BaseWeaponLightMachineGun
+    .desc = Дерзай — налетай, целься и стреляй.
     .suffix = { "" }
-ent-LMGL6 = L6 SAW
-    .desc = Весьма традиционный легкий пулемет с удобной лакированной деревянной пистолетной рукоятью.
-    .suffix = { "" }
-ent-LMGPK = пулемёт Калашникова
-    .desc = Хорошо сохранившееся и исправное антикварное боевое оружие.
-    .suffix = { "" }
+ent-WeaponLightMachineGunL6 = L6 SAW
+    .desc = Весьма традиционный легкий пулемет с удобной лакированной деревянной пистолетной рукоятью. Использует патроны калибра .30 винтовочный.
+    .suffix = Пулемёт

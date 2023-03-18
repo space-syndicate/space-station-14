@@ -1,13 +1,12 @@
 using System.Diagnostics.CodeAnalysis;
 using Content.Server.Atmos.Piping.Binary.Components;
 using Content.Server.Atmos.Piping.Unary.Components;
-using Content.Server.Construction.Components;
 using Content.Server.NodeContainer;
 using Content.Server.NodeContainer.Nodes;
 using Content.Shared.Atmos.Piping.Unary.Components;
+using Content.Shared.Construction.Components;
 using JetBrains.Annotations;
-using Robust.Shared.GameObjects;
-using Robust.Shared.IoC;
+using Robust.Server.GameObjects;
 using Robust.Shared.Map;
 
 namespace Content.Server.Atmos.Piping.Unary.EntitySystems
@@ -16,12 +15,14 @@ namespace Content.Server.Atmos.Piping.Unary.EntitySystems
     public sealed class GasPortableSystem : EntitySystem
     {
         [Dependency] private readonly IMapManager _mapManager = default!;
+        [Dependency] private readonly SharedAppearanceSystem _appearance = default!;
 
         public override void Initialize()
         {
             base.Initialize();
 
             SubscribeLocalEvent<GasPortableComponent, AnchorAttemptEvent>(OnPortableAnchorAttempt);
+            // Shouldn't need re-anchored event.
             SubscribeLocalEvent<GasPortableComponent, AnchorStateChangedEvent>(OnAnchorChanged);
         }
 
@@ -31,7 +32,7 @@ namespace Content.Server.Atmos.Piping.Unary.EntitySystems
                 return;
 
             // If we can't find any ports, cancel the anchoring.
-            if(!FindGasPortIn(transform.GridID, transform.Coordinates, out _))
+            if(!FindGasPortIn(transform.GridUid, transform.Coordinates, out _))
                 args.Cancel();
         }
 
@@ -47,22 +48,20 @@ namespace Content.Server.Atmos.Piping.Unary.EntitySystems
 
             if (EntityManager.TryGetComponent(uid, out AppearanceComponent? appearance))
             {
-                appearance.SetData(GasPortableVisuals.ConnectedState, args.Anchored);
+                _appearance.SetData(uid, GasPortableVisuals.ConnectedState, args.Anchored, appearance);
             }
         }
 
-        private bool FindGasPortIn(GridId gridId, EntityCoordinates coordinates, [NotNullWhen(true)] out GasPortComponent? port)
+        public bool FindGasPortIn(EntityUid? gridId, EntityCoordinates coordinates, [NotNullWhen(true)] out GasPortComponent? port)
         {
             port = null;
 
-            if (!gridId.IsValid())
+            if (!_mapManager.TryGetGrid(gridId, out var grid))
                 return false;
-
-            var grid = _mapManager.GetGrid(gridId);
 
             foreach (var entityUid in grid.GetLocal(coordinates))
             {
-                if (EntityManager.TryGetComponent<GasPortComponent>(entityUid, out port))
+                if (EntityManager.TryGetComponent(entityUid, out port))
                 {
                     return true;
                 }

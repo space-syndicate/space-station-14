@@ -5,7 +5,7 @@ namespace Content.Shared.NameIdentifier;
 [Prototype("nameIdentifierGroup")]
 public sealed class NameIdentifierGroupPrototype : IPrototype
 {
-    [DataField("id", required: true)]
+    [IdDataField]
     public string ID { get; } = default!;
 
     /// <summary>

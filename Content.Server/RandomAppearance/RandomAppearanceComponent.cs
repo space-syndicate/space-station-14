@@ -1,19 +1,14 @@
-using Robust.Shared.Analyzers;
-using Robust.Shared.GameObjects;
-using Robust.Shared.IoC;
-using Robust.Shared.Log;
 using Robust.Shared.Reflection;
 using Robust.Shared.Serialization;
-using Robust.Shared.Serialization.Manager.Attributes;
 
 namespace Content.Server.RandomAppearance;
 
 [RegisterComponent]
-[Friend(typeof(RandomAppearanceSystem))]
+[Access(typeof(RandomAppearanceSystem))]
 public sealed class RandomAppearanceComponent : Component, ISerializationHooks
 {
     [DataField("spriteStates")]
-    public string[] SpriteStates = {"0", "1", "2", "3", "4"};
+    public string[] SpriteStates = { "0", "1", "2", "3", "4" };
 
     /// <summary>
     ///     What appearance enum key should be set to the random sprite state?
@@ -24,7 +19,7 @@ public sealed class RandomAppearanceComponent : Component, ISerializationHooks
     /// <summary>
     ///     The actual enum after reflection.
     /// </summary>
-    public System.Enum? EnumKey;
+    public Enum? EnumKey;
 
     void ISerializationHooks.AfterDeserialization()
     {

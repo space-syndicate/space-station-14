@@ -1,13 +1,12 @@
 ﻿using Content.Shared.Alert;
 using Robust.Shared.Prototypes;
-using Robust.Shared.Serialization.Manager.Attributes;
 
 namespace Content.Shared.StatusEffect
 {
     [Prototype("statusEffect")]
     public sealed class StatusEffectPrototype : IPrototype
     {
-        [DataField("id", required: true)]
+        [IdDataField]
         public string ID { get; } = default!;
 
         [DataField("alert")]

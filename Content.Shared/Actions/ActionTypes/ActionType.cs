@@ -1,11 +1,9 @@
-using Content.Shared.Sound;
 using Robust.Shared.Audio;
 using Robust.Shared.Serialization;
 using Robust.Shared.Utility;
 
 namespace Content.Shared.Actions.ActionTypes;
 
-[DataDefinition]
 [ImplicitDataDefinitionForInheritors]
 [Serializable, NetSerializable]
 public abstract class ActionType : IEquatable<ActionType>, IComparable, ICloneable
@@ -36,8 +34,8 @@ public abstract class ActionType : IEquatable<ActionType>, IComparable, ICloneab
     /// <summary>
     ///     Name to show in UI.
     /// </summary>
-    [DataField("name", required: true)]
-    public string Name = string.Empty;
+    [DataField("name")]
+    public string DisplayName = string.Empty;
 
     /// <summary>
     ///     Description to show in UI. Accepts formatting.
@@ -89,6 +87,17 @@ public abstract class ActionType : IEquatable<ActionType>, IComparable, ICloneab
     ///     this action has no provider (e.g., mapping tools), the this will result in broadcast events.
     /// </summary>
     public EntityUid? Provider;
+
+    /// <summary>
+    ///     Entity to use for the action icon. Defaults to using <see cref="Provider"/>.
+    /// </summary>
+    public EntityUid? EntityIcon
+    {
+        get => _entityIcon ?? Provider;
+        set => _entityIcon = value;
+    }
+
+    private EntityUid? _entityIcon;
 
     /// <summary>
     ///     Whether the action system should block this action if the user cannot currently interact. Some spells or
@@ -198,8 +207,8 @@ public abstract class ActionType : IEquatable<ActionType>, IComparable, ICloneab
         if (Priority != otherAction.Priority)
             return otherAction.Priority - Priority;
 
-        var name = FormattedMessage.RemoveMarkup(Loc.GetString(Name));
-        var otherName = FormattedMessage.RemoveMarkup(Loc.GetString(otherAction.Name));
+        var name = FormattedMessage.RemoveMarkup(Loc.GetString(DisplayName));
+        var otherName = FormattedMessage.RemoveMarkup(Loc.GetString(otherAction.DisplayName));
         if (name != otherName)
             return string.Compare(name, otherName, StringComparison.CurrentCulture);
 
@@ -235,7 +244,7 @@ public abstract class ActionType : IEquatable<ActionType>, IComparable, ICloneab
         Priority = toClone.Priority;
         Icon = toClone.Icon;
         IconOn = toClone.IconOn;
-        Name = toClone.Name;
+        DisplayName = toClone.DisplayName;
         Description = toClone.Description;
         Provider = toClone.Provider;
         AttachedEntity = toClone.AttachedEntity;
@@ -256,6 +265,7 @@ public abstract class ActionType : IEquatable<ActionType>, IComparable, ICloneab
         Popup = toClone.Popup;
         PopupToggleSuffix = toClone.PopupToggleSuffix;
         ItemIconStyle = toClone.ItemIconStyle;
+        _entityIcon = toClone._entityIcon;
     }
 
     public bool Equals(ActionType? other)
@@ -268,7 +278,7 @@ public abstract class ActionType : IEquatable<ActionType>, IComparable, ICloneab
         unchecked
         {
             var hashCode = Priority.GetHashCode();
-            hashCode = (hashCode * 397) ^ Name.GetHashCode();
+            hashCode = (hashCode * 397) ^ DisplayName.GetHashCode();
             hashCode = (hashCode * 397) ^ Provider.GetHashCode();
             return hashCode;
         }

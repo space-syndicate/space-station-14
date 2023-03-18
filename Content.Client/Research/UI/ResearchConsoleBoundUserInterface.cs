@@ -1,9 +1,8 @@
+using Content.Shared.Research.Components;
 using Content.Shared.Research.Prototypes;
+using Content.Shared.Research.Systems;
 using JetBrains.Annotations;
 using Robust.Client.GameObjects;
-using Robust.Shared.GameObjects;
-using Robust.Shared.IoC;
-using static Content.Shared.Research.Components.SharedResearchConsoleComponent;
 
 namespace Content.Client.Research.UI
 {
@@ -14,17 +13,22 @@ namespace Content.Client.Research.UI
         public int PointsPerSecond { get; private set; }
         private ResearchConsoleMenu? _consoleMenu;
         private TechnologyDatabaseComponent? _technologyDatabase;
+        private readonly IEntityManager _entityManager;
+        private readonly SharedResearchSystem _research;
 
-        public ResearchConsoleBoundUserInterface(ClientUserInterfaceComponent owner, object uiKey) : base(owner, uiKey)
+        public ResearchConsoleBoundUserInterface(ClientUserInterfaceComponent owner, Enum uiKey) : base(owner, uiKey)
         {
             SendMessage(new ConsoleServerSyncMessage());
+            _entityManager = IoCManager.Resolve<IEntityManager>();
+            _research = _entityManager.System<SharedResearchSystem>();
         }
 
         protected override void Open()
         {
             base.Open();
 
-            if (!IoCManager.Resolve<IEntityManager>().TryGetComponent(Owner.Owner, out _technologyDatabase)) return;
+            if (!_entityManager.TryGetComponent(Owner.Owner, out _technologyDatabase))
+                return;
 
             _consoleMenu = new ResearchConsoleMenu(this);
 
@@ -49,18 +53,22 @@ namespace Content.Client.Research.UI
             };
 
             _consoleMenu.OpenCentered();
-
-            _technologyDatabase.OnDatabaseUpdated += _consoleMenu.Populate;
         }
 
         public bool IsTechnologyUnlocked(TechnologyPrototype technology)
         {
-            return _technologyDatabase?.IsTechnologyUnlocked(technology) ?? false;
+            if (_technologyDatabase == null)
+                return false;
+
+            return _research.IsTechnologyUnlocked(_technologyDatabase.Owner, technology, _technologyDatabase);
         }
 
         public bool CanUnlockTechnology(TechnologyPrototype technology)
         {
-            return _technologyDatabase?.CanUnlockTechnology(technology) ?? false;
+            if (_technologyDatabase == null)
+                return false;
+
+            return _research.ArePrerequesitesUnlocked(_technologyDatabase.Owner, technology, _technologyDatabase);
         }
 
         protected override void UpdateState(BoundUserInterfaceState state)
@@ -72,12 +80,14 @@ namespace Content.Client.Research.UI
             PointsPerSecond = castState.PointsPerSecond;
             // We update the user interface here.
             _consoleMenu?.PopulatePoints();
+            _consoleMenu?.Populate();
         }
 
         protected override void Dispose(bool disposing)
         {
             base.Dispose(disposing);
-            if (!disposing) return;
+            if (!disposing)
+                return;
             _consoleMenu?.Dispose();
         }
     }

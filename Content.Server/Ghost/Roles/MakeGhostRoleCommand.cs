@@ -3,13 +3,10 @@ using Content.Server.Ghost.Roles.Components;
 using Content.Server.Mind.Components;
 using Content.Shared.Administration;
 using Robust.Shared.Console;
-using Robust.Shared.GameObjects;
-using Robust.Shared.IoC;
-using Robust.Shared.Localization;
 
 namespace Content.Server.Ghost.Roles
 {
-    [AdminCommand(AdminFlags.Fun)]
+    [AdminCommand(AdminFlags.Admin)]
     public sealed class MakeGhostRoleCommand : IConsoleCommand
     {
         public string Command => "makeghostrole";

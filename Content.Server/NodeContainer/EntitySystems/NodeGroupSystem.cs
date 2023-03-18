@@ -1,4 +1,3 @@
-using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
 using Content.Server.Administration.Managers;
@@ -9,11 +8,7 @@ using Content.Shared.NodeContainer;
 using JetBrains.Annotations;
 using Robust.Server.Player;
 using Robust.Shared.Enums;
-using Robust.Shared.GameObjects;
-using Robust.Shared.IoC;
-using Robust.Shared.Log;
 using Robust.Shared.Map;
-using Robust.Shared.Maths;
 using Robust.Shared.Utility;
 
 namespace Content.Server.NodeContainer.EntitySystems
@@ -49,6 +44,15 @@ namespace Content.Server.NodeContainer.EntitySystems
 
         private int _gen = 1;
         private int _groupNetIdCounter = 1;
+
+        /// <summary>
+        ///     If true, UpdateGrid() will not process grids.
+        /// </summary>
+        /// <remarks>
+        ///     Useful if something like a large explosion is in the process of shredding the grid, as it avoids uneccesary
+        ///     updating.
+        /// </remarks>
+        public bool PauseUpdating = false;
 
         public override void Initialize()
         {
@@ -138,8 +142,11 @@ namespace Content.Server.NodeContainer.EntitySystems
         {
             base.Update(frameTime);
 
-            DoGroupUpdates();
-            VisDoUpdate(frameTime);
+            if (!PauseUpdating)
+            {
+                DoGroupUpdates();
+                VisDoUpdate(frameTime);
+            }
         }
 
         private void DoGroupUpdates()
@@ -152,8 +159,8 @@ namespace Content.Server.NodeContainer.EntitySystems
 
             var sw = Stopwatch.StartNew();
 
-            var xformQuery = EntityManager.GetEntityQuery<TransformComponent>();
-            var nodeQuery = EntityManager.GetEntityQuery<NodeContainerComponent>();
+            var xformQuery = GetEntityQuery<TransformComponent>();
+            var nodeQuery = GetEntityQuery<NodeContainerComponent>();
 
             foreach (var toRemove in _toRemove)
             {
@@ -286,7 +293,7 @@ namespace Content.Server.NodeContainer.EntitySystems
         private BaseNodeGroup InitGroup(Node node, List<Node> groupNodes)
         {
             var newGroup = (BaseNodeGroup) _nodeGroupFactory.MakeNodeGroup(node.NodeGroupID);
-            newGroup.Initialize(node);
+            newGroup.Initialize(node, EntityManager);
             newGroup.NetId = _groupNetIdCounter++;
 
             var netIdCounter = 0;
@@ -335,7 +342,7 @@ namespace Content.Server.NodeContainer.EntitySystems
         private IEnumerable<Node> GetCompatibleNodes(Node node, EntityQuery<TransformComponent> xformQuery, EntityQuery<NodeContainerComponent> nodeQuery)
         {
             var xform = xformQuery.GetComponent(node.Owner);
-            _mapManager.TryGetGrid(xform.GridID, out var grid);
+            _mapManager.TryGetGrid(xform.GridUid, out var grid);
 
             if (!node.Connectable(EntityManager, xform))
                     yield break;
@@ -396,7 +403,7 @@ namespace Content.Server.NodeContainer.EntitySystems
 
             foreach (var network in _nodeGroups)
             {
-                msg.Groups.Add(VisMakeGroupState(network!));
+                msg.Groups.Add(VisMakeGroupState(network));
             }
 
             RaiseNetworkEvent(msg, player.ConnectedClient);

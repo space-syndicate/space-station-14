@@ -1,21 +1,19 @@
 ﻿using Content.Shared.Chemistry.Reagent;
 using Robust.Shared.Prototypes;
-using Robust.Shared.Serialization.Manager.Attributes;
 using Robust.Shared.Serialization.TypeSerializers.Implementations.Custom.Prototype;
-using Robust.Shared.ViewVariables;
 
 namespace Content.Shared.Atmos.Prototypes
 {
     [Prototype("gas")]
     public sealed class GasPrototype : IPrototype
     {
-        [DataField("name")] public string Name { get; } = string.Empty;
+        [DataField("name")] public string Name { get; set; } = "";
 
         // TODO: Control gas amount necessary for overlay to appear
         // TODO: Add interfaces for gas behaviours e.g. breathing, burning
 
         [ViewVariables]
-        [DataField("id", required: true)]
+        [IdDataField]
         public string ID { get; } = default!;
 
         /// <summary>
@@ -46,7 +44,10 @@ namespace Content.Shared.Atmos.Prototypes
         /// <summary>
         ///     Visibility for this gas will be max after this value.
         /// </summary>
-        public float GasMolesVisibleMax => GasMolesVisible * Atmospherics.FactorGasVisibleMax;
+        public float GasMolesVisibleMax => GasMolesVisible * GasVisibilityFactor;
+
+        [DataField("gasVisbilityFactor")]
+        public float GasVisibilityFactor = Atmospherics.FactorGasVisibleMax;
 
         /// <summary>
         ///     If this reagent is in gas form, this is the path to the overlay that will be used to make the gas visible.
@@ -79,5 +80,8 @@ namespace Content.Shared.Atmos.Prototypes
         public string? Reagent { get; } = default!;
 
         [DataField("color")] public string Color { get; } = string.Empty;
+
+        [DataField("pricePerMole")]
+        public float PricePerMole { get; set; } = 0;
     }
 }

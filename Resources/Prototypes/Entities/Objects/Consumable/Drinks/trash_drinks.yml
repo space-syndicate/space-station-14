@@ -4,7 +4,7 @@
   id: DrinkBottleBaseEmpty
   parent: BaseItem
   abstract: true
-  description: That's an empty bottle.
+  description: An empty bottle.
   components:
   - type: Sprite
     state: icon
@@ -18,6 +18,14 @@
   - type: Drink
     isOpen: true
   - type: Spillable
+    solution: drink
+  - type: FitsInDispenser
+    solution: drink
+  - type: DrawableSolution
+    solution: drink
+  - type: RefillableSolution
+    solution: drink
+  - type: DrainableSolution
     solution: drink
   - type: UserInterface
     interfaces:
@@ -52,9 +60,9 @@
         acts: [ "Destruction" ]
   - type: Tag
     tags:
-    - Recyclable
     - Trash
   - type: Recyclable
+  - type: SpaceGarbage
 
 # Containers
 - type: entity
@@ -121,12 +129,12 @@
 
 
 - type: entity
-  name: kahlua bottle
+  name: coffee liqueur bottle
   parent: DrinkBottleBaseEmpty
-  id: DrinkBottleKahlua
+  id: DrinkBottleCoffeeLiqueur
   components:
   - type: Sprite
-    sprite: Objects/Consumable/TrashDrinks/kahluabottle_empty.rsi
+    sprite: Objects/Consumable/TrashDrinks/coffeeliqueurbottle_empty.rsi
 
 
 - type: entity

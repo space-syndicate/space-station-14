@@ -1,84 +1,145 @@
+using Content.Shared.CombatMode;
+using Content.Shared.Hands.EntitySystems;
+using Content.Shared.Interaction;
 using Content.Shared.Inventory.Events;
 using Content.Shared.Verbs;
 using Robust.Shared.Containers;
-using Robust.Shared.GameObjects;
 using Robust.Shared.GameStates;
-using Robust.Shared.Localization;
-using System;
+using Robust.Shared.Utility;
 
-namespace Content.Shared.Item
+namespace Content.Shared.Item;
+
+public abstract class SharedItemSystem : EntitySystem
 {
-    public abstract class SharedItemSystem : EntitySystem
+    [Dependency] private   readonly SharedHandsSystem _handsSystem = default!;
+    [Dependency] private   readonly SharedCombatModeSystem _combatMode = default!;
+    [Dependency] protected readonly SharedContainerSystem Container = default!;
+
+    public override void Initialize()
     {
-        public override void Initialize()
-        {
-            base.Initialize();
-            SubscribeLocalEvent<SharedItemComponent, GetVerbsEvent<InteractionVerb>>(AddPickupVerb);
+        base.Initialize();
+        SubscribeLocalEvent<ItemComponent, GetVerbsEvent<InteractionVerb>>(AddPickupVerb);
 
-            SubscribeLocalEvent<SharedSpriteComponent, GotEquippedEvent>(OnEquipped);
-            SubscribeLocalEvent<SharedSpriteComponent, GotUnequippedEvent>(OnUnequipped);
+        SubscribeLocalEvent<SharedSpriteComponent, GotEquippedEvent>(OnEquipped);
+        SubscribeLocalEvent<SharedSpriteComponent, GotUnequippedEvent>(OnUnequipped);
+        SubscribeLocalEvent<ItemComponent, InteractHandEvent>(OnHandInteract);
 
-            SubscribeLocalEvent<SharedItemComponent, ComponentGetState>(OnGetState);
-            SubscribeLocalEvent<SharedItemComponent, ComponentHandleState>(OnHandleState);
-        }
+        SubscribeLocalEvent<ItemComponent, ComponentGetState>(OnGetState);
+        SubscribeLocalEvent<ItemComponent, ComponentHandleState>(OnHandleState);
+    }
 
-        private void OnHandleState(EntityUid uid, SharedItemComponent component, ref ComponentHandleState args)
-        {
-            if (args.Current is not ItemComponentState state)
-                return;
+    #region Public API
 
-            component.Size = state.Size;
-            component.EquippedPrefix = state.EquippedPrefix;
-        }
+    public void SetSize(EntityUid uid, int size, ItemComponent? component = null)
+    {
+        if (!Resolve(uid, ref component))
+            return;
 
-        private void OnGetState(EntityUid uid, SharedItemComponent component, ref ComponentGetState args)
-        {
-            args.State = new ItemComponentState(component.Size, component.EquippedPrefix);
-        }
+        component.Size = size;
+        Dirty(component);
+    }
 
-        // Although netsync is being set to false for items client can still update these
-        // Realistically:
-        // Container should already hide these
-        // Client is the only thing that matters.
+    public void SetHeldPrefix(EntityUid uid, string? heldPrefix, ItemComponent? component = null)
+    {
+        if (!Resolve(uid, ref component, false))
+            return;
 
-        private void OnUnequipped(EntityUid uid, SharedSpriteComponent component, GotUnequippedEvent args)
-        {
-            component.Visible = true;
-        }
+        if (component.HeldPrefix == heldPrefix)
+            return;
 
-        private void OnEquipped(EntityUid uid, SharedSpriteComponent component, GotEquippedEvent args)
-        {
-            component.Visible = false;
-        }
+        component.HeldPrefix = heldPrefix;
+        Dirty(component);
+        VisualsChanged(uid);
+    }
 
-        private void AddPickupVerb(EntityUid uid, SharedItemComponent component, GetVerbsEvent<InteractionVerb> args)
-        {
-            if (args.Hands == null ||
-                args.Using != null ||
-                !args.CanAccess ||
-                !args.CanInteract ||
-                !args.Hands.CanPickupEntityToActiveHand(args.Target))
-                return;
+    /// <summary>
+    ///     Copy all item specific visuals from another item.
+    /// </summary>
+    public void CopyVisuals(EntityUid uid, ItemComponent otherItem, ItemComponent? item = null)
+    {
+        if (!Resolve(uid, ref item))
+            return;
 
-            InteractionVerb verb = new();
-            verb.Act = () => args.Hands.TryPickupEntityToActiveHand(args.Target);
-            verb.IconTexture = "/Textures/Interface/VerbIcons/pickup.svg.192dpi.png";
+        item.RsiPath = otherItem.RsiPath;
+        item.InhandVisuals = otherItem.InhandVisuals;
+        item.HeldPrefix = otherItem.HeldPrefix;
 
-            // if the item already in a container (that is not the same as the user's), then change the text.
-            // this occurs when the item is in their inventory or in an open backpack
-            args.User.TryGetContainer(out var userContainer);
-            if (args.Target.TryGetContainer(out var container) && container != userContainer)
-                verb.Text = Loc.GetString("pick-up-verb-get-data-text-inventory");
-            else
-                verb.Text = Loc.GetString("pick-up-verb-get-data-text");
+        Dirty(item);
+        VisualsChanged(uid);
+    }
 
-            args.Verbs.Add(verb);
-        }
+    #endregion
 
-        /// <summary>
-        ///     Notifies any entity that is holding or wearing this item that they may need to update their sprite.
-        /// </summary>
-        public virtual void VisualsChanged(EntityUid owner, SharedItemComponent? item = null)
-        { }
+    private void OnHandInteract(EntityUid uid, ItemComponent component, InteractHandEvent args)
+    {
+        if (args.Handled || _combatMode.IsInCombatMode(args.User))
+            return;
+
+        args.Handled = _handsSystem.TryPickup(args.User, uid, animateUser: false);
+    }
+
+    private void OnHandleState(EntityUid uid, ItemComponent component, ref ComponentHandleState args)
+    {
+        if (args.Current is not ItemComponentState state)
+            return;
+
+        component.Size = state.Size;
+        SetHeldPrefix(uid, state.HeldPrefix, component);
+    }
+
+    private void OnGetState(EntityUid uid, ItemComponent component, ref ComponentGetState args)
+    {
+        args.State = new ItemComponentState(component.Size, component.HeldPrefix);
+    }
+
+    // Although netsync is being set to false for items client can still update these
+    // Realistically:
+    // Container should already hide these
+    // Client is the only thing that matters.
+
+    private void OnUnequipped(EntityUid uid, SharedSpriteComponent component, GotUnequippedEvent args)
+    {
+        component.Visible = true;
+    }
+
+    private void OnEquipped(EntityUid uid, SharedSpriteComponent component, GotEquippedEvent args)
+    {
+        component.Visible = false;
+    }
+
+    private void AddPickupVerb(EntityUid uid, ItemComponent component, GetVerbsEvent<InteractionVerb> args)
+    {
+        if (args.Hands == null ||
+            args.Using != null ||
+            !args.CanAccess ||
+            !args.CanInteract ||
+            !_handsSystem.CanPickupAnyHand(args.User, args.Target, handsComp: args.Hands, item: component))
+            return;
+
+        InteractionVerb verb = new();
+        verb.Act = () => _handsSystem.TryPickupAnyHand(args.User, args.Target, checkActionBlocker: false,
+            handsComp: args.Hands, item: component);
+        verb.Icon = new SpriteSpecifier.Texture(new ResourcePath("/Textures/Interface/VerbIcons/pickup.svg.192dpi.png"));
+
+        // if the item already in a container (that is not the same as the user's), then change the text.
+        // this occurs when the item is in their inventory or in an open backpack
+        Container.TryGetContainingContainer(args.User, out var userContainer);
+        if (Container.TryGetContainingContainer(args.Target, out var container) && container != userContainer)
+            verb.Text = Loc.GetString("pick-up-verb-get-data-text-inventory");
+        else
+            verb.Text = Loc.GetString("pick-up-verb-get-data-text");
+
+        args.Verbs.Add(verb);
+    }
+
+    /// <summary>
+    ///     Notifies any entity that is holding or wearing this item that they may need to update their sprite.
+    /// </summary>
+    /// <remarks>
+    ///     This is used for updating both inhand sprites and clothing sprites, but it's here just cause it needs to
+    ///     be in one place.
+    /// </remarks>
+    public virtual void VisualsChanged(EntityUid owner)
+    {
     }
 }

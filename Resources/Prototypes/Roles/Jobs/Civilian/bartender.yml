@@ -1,15 +1,22 @@
 - type: job
   id: Bartender
-  name: "bartender"
+  name: job-name-bartender
+  description: job-description-bartender
+  playTimeTracker: JobBartender
+  requirements:
+    - !type:DepartmentTimeRequirement
+      department: Civilian
+      time: 3600 # Corvax-RoleTime
   startingGear: BartenderGear
-  departments:
-  - Civilian
   icon: "Bartender"
-  supervisors: "the head of personnel"
+  supervisors: job-supervisors-hop
   access:
   - Service
   - Maintenance
   - Bar
+  extendedAccess:
+  - Kitchen
+  - Hydroponics
 
 - type: startingGear
   id: BartenderGear

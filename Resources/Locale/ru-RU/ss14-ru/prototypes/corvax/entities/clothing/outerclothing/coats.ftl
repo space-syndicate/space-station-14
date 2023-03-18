@@ -1,0 +1,12 @@
+ent-ClothingOuterCoatHoSGreatcoat = бронированная шинель
+    .desc = Шинель, усиленная специальными сплавами для дополнительной защиты и стиля для тех, кто обладает властным характером.
+    .suffix = { "" }
+ent-ClothingOuterCoatDetectiveDark = нуарный плащ
+    .desc = Темный плащ частного детектива.
+    .suffix = { "" }
+ent-ClothingOuterCoatWardenAlt = warden's jacket
+    .desc = A navy-blue armored jacket with blue shoulder designations and '/Warden/' stitched into one of the chest pockets.
+    .suffix = { "" }
+ent-ClothingOuterCoatSecurityOvercoat = security overcoat
+    .desc = Lightly armored leather overcoat meant as casual wear for high-ranking officers. Bears the crest of Nanotrasen Security.
+    .suffix = { "" }

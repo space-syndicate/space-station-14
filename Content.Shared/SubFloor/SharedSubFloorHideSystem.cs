@@ -1,8 +1,9 @@
-using Content.Shared.Interaction;
+using Content.Shared.Audio;
 using Content.Shared.Interaction.Events;
 using Content.Shared.Maps;
 using JetBrains.Annotations;
 using Robust.Shared.Map;
+using Robust.Shared.Map.Components;
 using Robust.Shared.Serialization;
 
 namespace Content.Shared.SubFloor
@@ -16,26 +17,27 @@ namespace Content.Shared.SubFloor
         [Dependency] protected readonly IMapManager MapManager = default!;
         [Dependency] private readonly ITileDefinitionManager _tileDefinitionManager = default!;
         [Dependency] private readonly TrayScannerSystem _trayScannerSystem = default!;
+        [Dependency] private readonly SharedAmbientSoundSystem _ambientSoundSystem = default!;
+        [Dependency] protected readonly SharedAppearanceSystem Appearance = default!;
 
         public override void Initialize()
         {
             base.Initialize();
 
-            MapManager.GridChanged += MapManagerOnGridChanged;
-            MapManager.TileChanged += MapManagerOnTileChanged;
-
+            SubscribeLocalEvent<GridModifiedEvent>(OnGridChanged);
+            SubscribeLocalEvent<TileChangedEvent>(OnTileChanged);
             SubscribeLocalEvent<SubFloorHideComponent, ComponentStartup>(OnSubFloorStarted);
             SubscribeLocalEvent<SubFloorHideComponent, ComponentShutdown>(OnSubFloorTerminating);
+            // Like 80% sure this doesn't need to handle re-anchoring.
             SubscribeLocalEvent<SubFloorHideComponent, AnchorStateChangedEvent>(HandleAnchorChanged);
             SubscribeLocalEvent<SubFloorHideComponent, GettingInteractedWithAttemptEvent>(OnInteractionAttempt);
+            SubscribeLocalEvent<SubFloorHideComponent, GettingAttackedAttemptEvent>(OnAttackAttempt);
         }
 
-        public override void Shutdown()
+        private void OnAttackAttempt(EntityUid uid, SubFloorHideComponent component, ref GettingAttackedAttemptEvent args)
         {
-            base.Shutdown();
-
-            MapManager.GridChanged -= MapManagerOnGridChanged;
-            MapManager.TileChanged -= MapManagerOnTileChanged;
+            if (component.BlockInteractions && component.IsUnderCover)
+                args.Cancelled = true;
         }
 
         private void OnInteractionAttempt(EntityUid uid, SubFloorHideComponent component, GettingInteractedWithAttemptEvent args)
@@ -70,9 +72,6 @@ namespace Content.Shared.SubFloor
                 var xform = Transform(uid);
                 _trayScannerSystem.OnSubfloorAnchored(uid, component, xform);
                 UpdateFloorCover(uid, component, xform);
-
-                if (component.IsUnderCover)
-                    UpdateAppearance(uid, component);
             }
             else if (component.IsUnderCover)
             {
@@ -81,22 +80,22 @@ namespace Content.Shared.SubFloor
             }
         }
 
-        private void MapManagerOnTileChanged(object? sender, TileChangedEventArgs e)
+        private void OnTileChanged(ref TileChangedEvent args)
         {
-            if (e.OldTile.IsEmpty)
+            if (args.OldTile.IsEmpty)
                 return; // Nothing is anchored here anyways.
 
-            if (e.NewTile.Tile.IsEmpty)
+            if (args.NewTile.Tile.IsEmpty)
                 return; // Anything that was here will be unanchored anyways.
 
-            UpdateTile(MapManager.GetGrid(e.NewTile.GridIndex), e.NewTile.GridIndices);
+            UpdateTile(MapManager.GetGrid(args.NewTile.GridUid), args.NewTile.GridIndices);
         }
 
-        private void MapManagerOnGridChanged(object? sender, GridChangedEventArgs e)
+        private void OnGridChanged(GridModifiedEvent args)
         {
-            foreach (var modified in e.Modified)
+            foreach (var modified in args.Modified)
             {
-                UpdateTile(e.Grid, modified.position);
+                UpdateTile(args.Grid, modified.position);
             }
         }
 
@@ -108,7 +107,7 @@ namespace Content.Shared.SubFloor
             if (!Resolve(uid, ref component, ref xform))
                 return;
 
-            if (xform.Anchored && MapManager.TryGetGrid(xform.GridID, out var grid))
+            if (xform.Anchored && MapManager.TryGetGrid(xform.GridUid, out var grid))
                 component.IsUnderCover = HasFloorCover(grid, grid.TileIndicesFor(xform.Coordinates));
             else
                 component.IsUnderCover = false;
@@ -116,14 +115,14 @@ namespace Content.Shared.SubFloor
             UpdateAppearance(uid, component);
         }
 
-        public bool HasFloorCover(IMapGrid grid, Vector2i position)
+        public bool HasFloorCover(MapGridComponent grid, Vector2i position)
         {
             // TODO Redo this function. Currently wires on an asteroid are always "below the floor"
             var tileDef = (ContentTileDefinition) _tileDefinitionManager[grid.GetTileRef(position).Tile.TypeId];
             return !tileDef.IsSubFloor;
         }
 
-        private void UpdateTile(IMapGrid grid, Vector2i position)
+        private void UpdateTile(MapGridComponent grid, Vector2i position)
         {
             var covered = HasFloorCover(grid, position);
 
@@ -176,11 +175,19 @@ namespace Content.Shared.SubFloor
             SubFloorHideComponent? hideComp = null,
             AppearanceComponent? appearance = null)
         {
-            if (!Resolve(uid, ref hideComp, ref appearance, false))
+            if (!Resolve(uid, ref hideComp, false))
                 return;
 
-            appearance.SetData(SubFloorVisuals.Covered, hideComp.IsUnderCover);
-            appearance.SetData(SubFloorVisuals.ScannerRevealed, hideComp.RevealedBy.Count != 0);
+            if (hideComp.BlockAmbience && hideComp.IsUnderCover)
+                _ambientSoundSystem.SetAmbience(uid, false);
+            else if (hideComp.BlockAmbience && !hideComp.IsUnderCover)
+                _ambientSoundSystem.SetAmbience(uid, true);
+
+            if (Resolve(uid, ref appearance, false))
+            {
+                Appearance.SetData(uid, SubFloorVisuals.Covered, hideComp.IsUnderCover, appearance);
+                Appearance.SetData(uid, SubFloorVisuals.ScannerRevealed, hideComp.RevealedBy.Count != 0, appearance);
+            }
         }
     }
 
@@ -189,5 +196,10 @@ namespace Content.Shared.SubFloor
     {
         Covered, // is there a floor tile over this entity
         ScannerRevealed, // is this entity revealed by a scanner or some other entity?
+    }
+
+    public enum SubfloorLayers : byte
+    {
+        FirstLayer
     }
 }

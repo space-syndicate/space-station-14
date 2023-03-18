@@ -8,6 +8,7 @@
   - type: AtmosDevice
   - type: SubFloorHide
     blockInteractions: false
+    blockAmbience: false
   - type: NodeContainer
     nodes:
       inlet:
@@ -33,16 +34,19 @@
     layers:
     - sprite: Structures/Piping/Atmospherics/pipe.rsi
       state: pipeStraight
-      map: [ "enum.PipeColorVisualizer+Layers.Pipe" ]
+      map: [ "enum.PipeVisualLayers.Pipe" ]
     - state: pumpPressure
-      map: [ "enum.SubfloorLayers.FirstLayer", "enum.PressurePumpVisualizer+Layers.Enabled" ]
+      map: [ "enum.SubfloorLayers.FirstLayer", "enabled" ]
   - type: Appearance
+  - type: GenericVisualizer
     visuals:
-    - type: PipeColorVisualizer
-    - type: PressurePumpVisualizer
-      disabledState: pumpPressure
-      enabledState: pumpPressureOn
+      enum.PumpVisuals.Enabled:
+        enabled:
+          True: { state: pumpPressureOn }
+          False: { state: pumpPressure }
+  - type: PipeColorVisuals
   - type: GasPressurePump
+    enabled: false
   - type: UserInterface
     interfaces:
       - key: enum.GasPressurePumpUiKey.Key
@@ -50,6 +54,12 @@
   - type: Construction
     graph: GasBinary
     node: pressurepump
+  - type: AmbientSound
+    enabled: false
+    volume: -9
+    range: 5
+    sound:
+      path: /Audio/Ambience/Objects/gas_pump.ogg
 
 - type: entity
   parent: GasBinaryBase
@@ -65,16 +75,19 @@
       layers:
         - sprite: Structures/Piping/Atmospherics/pipe.rsi
           state: pipeStraight
-          map: [ "enum.PipeColorVisualizer+Layers.Pipe" ]
+          map: [ "enum.PipeVisualLayers.Pipe" ]
         - state: pumpVolume
-          map: [ "enum.SubfloorLayers.FirstLayer", "enum.PressurePumpVisualizer+Layers.Enabled" ]
+          map: [ "enum.SubfloorLayers.FirstLayer", "enabled" ]
     - type: Appearance
+    - type: GenericVisualizer
       visuals:
-        - type: PipeColorVisualizer
-        - type: PressurePumpVisualizer
-          disabledState: pumpVolume
-          enabledState: pumpVolumeOn
+        enum.PumpVisuals.Enabled:
+          enabled:
+            True: { state: pumpVolumeOn }
+            False: { state: pumpVolume }
+    - type: PipeColorVisuals
     - type: GasVolumePump
+      enabled: false
     - type: UserInterface
       interfaces:
         - key: enum.GasVolumePumpUiKey.Key
@@ -82,6 +95,12 @@
     - type: Construction
       graph: GasBinary
       node: volumepump
+    - type: AmbientSound
+      enabled: false
+      volume: -9
+      range: 5
+      sound:
+        path: /Audio/Ambience/Objects/gas_pump.ogg
 
 - type: entity
   parent: GasBinaryBase
@@ -97,16 +116,21 @@
       layers:
         - sprite: Structures/Piping/Atmospherics/pipe.rsi
           state: pipeStraight
-          map: [ "enum.PipeColorVisualizer+Layers.Pipe" ]
+          map: [ "enum.PipeVisualLayers.Pipe" ]
         - state: pumpPassiveGate
           map: [ "enum.SubfloorLayers.FirstLayer" ]
     - type: Appearance
-      visuals:
-        - type: PipeColorVisualizer
+    - type: PipeColorVisuals
     - type: GasPassiveGate
     - type: Construction
       graph: GasBinary
       node: passivegate
+    - type: AmbientSound
+      enabled: true
+      volume: -9
+      range: 5
+      sound:
+        path: /Audio/Ambience/Objects/gas_hiss.ogg
 
 - type: entity
   parent: GasBinaryBase
@@ -123,15 +147,17 @@
       layers:
         - sprite: Structures/Piping/Atmospherics/pipe.rsi
           state: pipeStraight
-          map: [ "enum.PipeColorVisualizer+Layers.Pipe" ]
+          map: [ "enum.PipeVisualLayers.Pipe" ]
         - state: pumpManualValve
-          map: [ "enum.SubfloorLayers.FirstLayer", "enum.GasValveVisualizer+Layers.Enabled" ]
+          map: [ "enum.SubfloorLayers.FirstLayer", "enabled" ]
     - type: Appearance
+    - type: GenericVisualizer
       visuals:
-        - type: PipeColorVisualizer
-        - type: GasValveVisualizer
-          disabledState: pumpManualValve
-          enabledState: pumpManualValveOn
+        enum.FilterVisuals.Enabled:
+          enabled:
+            True: { state: pumpManualValveOn }
+            False: { state: pumpManualValve }
+    - type: PipeColorVisuals
     - type: GasValve
     - type: NodeContainer
       nodes:
@@ -148,6 +174,12 @@
     - type: Construction
       graph: GasBinary
       node: valve
+    - type: AmbientSound
+      enabled: false
+      volume: -9
+      range: 5
+      sound:
+        path: /Audio/Ambience/Objects/gas_hiss.ogg
 
 - type: entity
   parent: GasBinaryBase
@@ -163,12 +195,11 @@
       layers:
         - sprite: Structures/Piping/Atmospherics/pipe.rsi
           state: pipeHalf
-          map: [ "enum.PipeColorVisualizer+Layers.Pipe" ]
+          map: [ "enum.PipeVisualLayers.Pipe" ]
         - state: gasCanisterPort
           map: [ "enum.SubfloorLayers.FirstLayer" ]
     - type: Appearance
-      visuals:
-        - type: PipeColorVisualizer
+    - type: PipeColorVisuals
     - type: GasPort
     - type: NodeContainer
       nodes:
@@ -181,10 +212,10 @@
       node: port
 
 - type: entity
-  parent: GasUnaryBase
+  parent: GasVentPump
   id: GasDualPortVentPump
   name: dual-port air vent
-  description: Has a valve and a pump attached to it. There are two ports.
+  description: Has a valve and a pump attached to it. There are two ports, one is an input for releasing air, the other is an output when siphoning.
   placement:
     mode: SnapgridCenter
   components:
@@ -195,14 +226,95 @@
       layers:
         - sprite: Structures/Piping/Atmospherics/pipe.rsi
           state: pipeStraight
-          map: [ "enum.PipeColorVisualizer+Layers.Pipe" ]
+          map: [ "enum.PipeVisualLayers.Pipe" ]
         - state: vent_off
-          map: [ "enum.VentVisualLayers.Vent", "enum.SubfloorLayers.FirstLayer" ]
-    - type: Appearance
+          map: [ "enabled", "enum.SubfloorLayers.FirstLayer" ]
+    - type: GenericVisualizer
       visuals:
-        - type: PipeColorVisualizer
-        - type: VentPumpVisualizer
+        enum.VentPumpVisuals.State:
+          enabled:
+            Off: { state: vent_off }
+            In: { state: vent_in }
+            Out: { state: vent_out }
+            Welded: { state: vent_welded }
+    - type: PipeColorVisuals
     - type: GasVentPump
+      inlet: inlet
+      outlet: outlet
+      canLink: true
+    - type: SignalReceiver
+      inputs:
+        Pressurize: []
+        Depressurize: []
     - type: Construction
       graph: GasBinary
       node: dualportventpump
+    - type: NodeContainer
+      nodes:
+        inlet:
+          !type:PipeNode
+          nodeGroupID: Pipe
+          pipeDirection: North
+        outlet:
+          !type:PipeNode
+          nodeGroupID: Pipe
+          pipeDirection: South
+
+- type: entity
+  parent: [ BaseMachine, ConstructibleMachine ]
+  id: GasRecycler
+  name: gas recycler
+  description: Recycles carbon dioxide and nitrous oxide. Heater and compressor not included.
+  placement:
+    mode: SnapgridCenter
+  components:
+  - type: Sprite
+    sprite: Structures/Machines/gasrecycler.rsi
+    netsync: false
+    layers:
+    - sprite: Structures/Piping/Atmospherics/pipe.rsi
+      state: pipeStraight
+      map: [ "enum.PipeVisualLayers.Pipe" ]
+    - state: running
+    - state: unlit
+      shader: unshaded
+  - type: GenericVisualizer
+    visuals:
+      enum.PumpVisuals.Enabled:
+        enabled:
+          True: { state: running }
+          False: { state: unlit }
+  - type: Appearance
+  - type: PipeColorVisuals
+  - type: Rotatable
+  - type: GasRecycler
+  - type: NodeContainer
+    nodes:
+      inlet:
+        !type:PipeNode
+        nodeGroupID: Pipe
+        pipeDirection: North
+      outlet:
+        !type:PipeNode
+        nodeGroupID: Pipe
+        pipeDirection: South
+  - type: AtmosDevice
+  - type: AtmosPipeColor
+  - type: AmbientSound
+    enabled: false
+    volume: -9
+    range: 5
+    sound:
+      path: /Audio/Ambience/Objects/gas_pump.ogg
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 100
+      behaviors:
+      - !type:ChangeConstructionNodeBehavior
+        node: machineFrame
+      - !type:DoActsBehavior
+        acts: ["Destruction"]
+  - type: Machine
+    board: GasRecyclerMachineCircuitboard

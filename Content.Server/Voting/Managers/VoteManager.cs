@@ -1,22 +1,21 @@
-using System;
 using System.Collections;
-using System.Collections.Generic;
 using System.Collections.Immutable;
 using System.Diagnostics.CodeAnalysis;
 using System.Linq;
 using Content.Server.Administration;
+using Content.Server.Administration.Logs;
 using Content.Server.Administration.Managers;
 using Content.Server.Afk;
 using Content.Server.Chat.Managers;
+using Content.Server.GameTicking;
 using Content.Server.Maps;
 using Content.Shared.Administration;
 using Content.Shared.CCVar;
+using Content.Shared.Database;
 using Content.Shared.Voting;
 using Robust.Server.Player;
 using Robust.Shared.Configuration;
 using Robust.Shared.Enums;
-using Robust.Shared.IoC;
-using Robust.Shared.Localization;
 using Robust.Shared.Network;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Random;
@@ -35,9 +34,10 @@ namespace Content.Server.Voting.Managers
         [Dependency] private readonly IChatManager _chatManager = default!;
         [Dependency] private readonly IAdminManager _adminMgr = default!;
         [Dependency] private readonly IRobustRandom _random = default!;
-        [Dependency] private readonly IAfkManager _afkManager = default!;
         [Dependency] private readonly IPrototypeManager _prototypeManager = default!;
         [Dependency] private readonly IGameMapManager _gameMapManager = default!;
+        [Dependency] private readonly IEntityManager _entityManager = default!;
+        [Dependency] private readonly IAdminLogManager _adminLogger = default!;
 
         private int _nextVoteId = 1;
 
@@ -53,6 +53,7 @@ namespace Content.Server.Voting.Managers
         {
             _netManager.RegisterNetMessage<MsgVoteData>();
             _netManager.RegisterNetMessage<MsgVoteCanCall>();
+            _netManager.RegisterNetMessage<MsgVoteMenu>(ReceiveVoteMenu);
 
             _playerManager.PlayerStatusChanged += PlayerManagerOnPlayerStatusChanged;
             _adminMgr.OnPermsChanged += AdminPermsChanged;
@@ -67,6 +68,14 @@ namespace Content.Server.Voting.Managers
                     DirtyCanCallVoteAll();
                 });
             }
+        }
+
+        private void ReceiveVoteMenu(MsgVoteMenu message)
+        {
+            var sender = message.MsgChannel;
+            var session = _playerManager.GetSessionByChannel(sender);
+
+            _adminLogger.Add(LogType.Vote, LogImpact.Low, $"{session} opened vote menu");
         }
 
         private void AdminPermsChanged(AdminPermsChangedEventArgs obj)
@@ -229,7 +238,7 @@ namespace Content.Server.Voting.Managers
 
         private void SendSingleUpdate(VoteReg v, IPlayerSession player)
         {
-            var msg = _netManager.CreateNetMessage<MsgVoteData>();
+            var msg = new MsgVoteData();
 
             msg.VoteId = v.Id;
             msg.VoteActive = !v.Finished;
@@ -272,7 +281,7 @@ namespace Content.Server.Voting.Managers
 
         private void SendUpdateCanCallVote(IPlayerSession player)
         {
-            var msg = _netManager.CreateNetMessage<MsgVoteCanCall>();
+            var msg = new MsgVoteCanCall();
             msg.CanCall = CanCallVote(player, null, out var isAdmin, out var timeSpan);
             msg.WhenCanCallVote = timeSpan;
 
@@ -326,6 +335,19 @@ namespace Content.Server.Voting.Managers
             // Ghosts I understand you're dead but stop spamming the restart vote bloody hell.
             if (voteType != null && _standardVoteTimeout.TryGetValue(voteType.Value, out timeSpan))
                 return false;
+
+            // No, seriously, stop spamming the restart vote!
+            if (voteType == StandardVoteType.Restart && _cfg.GetCVar(CCVars.VoteRestartNotAllowedWhenAdminOnline) && _adminMgr.ActiveAdmins.Count() != 0)
+                return false;
+
+            // If only one Preset available thats not really a vote
+            // Still allow vote if availbable one is different from current one
+            if (voteType == StandardVoteType.Preset)
+            {
+                var presets = GetGamePresets();
+                if (presets.Count() == 1 && presets.Select(x => x.Key).Single() == EntitySystem.Get<GameTicker>().Preset?.ID)
+                    return false;
+            }
 
             return !_voteTimeout.TryGetValue(initiator.UserId, out timeSpan);
         }

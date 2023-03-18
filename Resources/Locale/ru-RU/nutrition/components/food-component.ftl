@@ -1,8 +1,8 @@
 ### Interaction Messages
 
 food-you-need-to-hold-utensil = Вы должны держать { $utensil }, чтобы съесть это!
-food-nom = Ням
-food-swallow = Вы проглатываете { $food }.
+food-nom = Ням. { $flavors }
+food-swallow = Вы проглатываете { $food }. { $flavors }
 food-system-remove-mask = Сначала вам нужно снять { $entity }.
 
 ## System
@@ -15,6 +15,6 @@ food-system-verb-eat = Съесть
 
 ## Force feeding
 
-food-system-force-feed = { $user } пытается скормить вам что-то!
-food-system-force-feed-success = { $user } скормил вам что-то!
+food-system-force-feed = { CAPITALIZE($user) } пытается вам что-то скормить!
+food-system-force-feed-success = { CAPITALIZE($user) } вам что-то скормил! { $flavors }
 food-system-force-feed-success-user = Вы успешно накормили { $target }

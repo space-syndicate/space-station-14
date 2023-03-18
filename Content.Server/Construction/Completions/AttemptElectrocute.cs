@@ -1,7 +1,5 @@
 using Content.Server.Electrocution;
 using Content.Shared.Construction;
-using Robust.Shared.GameObjects;
-using Robust.Shared.Serialization.Manager.Attributes;
 
 namespace Content.Server.Construction.Completions
 {
@@ -13,7 +11,7 @@ namespace Content.Server.Construction.Completions
             if (userUid == null)
                 return;
 
-            EntitySystem.Get<ElectrocutionSystem>().TryDoElectrifiedAct(uid, userUid.Value);
+            entityManager.EntitySysManager.GetEntitySystem<ElectrocutionSystem>().TryDoElectrifiedAct(uid, userUid.Value);
         }
     }
 }

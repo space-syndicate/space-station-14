@@ -1,21 +1,16 @@
-using System;
-using System.Collections.Generic;
 using System.Diagnostics.CodeAnalysis;
 using Content.Shared.Alert;
 using Content.Shared.GameTicking;
+using Content.Shared.Gravity;
 using Content.Shared.Input;
+using Content.Shared.Movement.Components;
 using Content.Shared.Physics.Pull;
 using Content.Shared.Pulling.Components;
-using Content.Shared.Rotatable;
 using Content.Shared.Verbs;
 using JetBrains.Annotations;
 using Robust.Shared.Containers;
-using Robust.Shared.GameObjects;
 using Robust.Shared.Input.Binding;
-using Robust.Shared.IoC;
-using Robust.Shared.Localization;
 using Robust.Shared.Map;
-using Robust.Shared.Maths;
 using Robust.Shared.Physics;
 using Robust.Shared.Players;
 
@@ -25,6 +20,7 @@ namespace Content.Shared.Pulling
     public abstract partial class SharedPullingSystem : EntitySystem
     {
         [Dependency] private readonly SharedPullingStateManagementSystem _pullSm = default!;
+        [Dependency] private readonly SharedGravitySystem _gravity = default!;
         [Dependency] private readonly AlertsSystem _alertsSystem = default!;
 
         /// <summary>
@@ -35,21 +31,6 @@ namespace Content.Shared.Pulling
 
         private readonly HashSet<SharedPullableComponent> _moving = new();
         private readonly HashSet<SharedPullableComponent> _stoppedMoving = new();
-
-        /// <summary>
-        ///     If distance between puller and pulled entity lower that this threshold,
-        ///     pulled entity will not change its rotation.
-        ///     Helps with small distance jittering
-        /// </summary>
-        private const float ThresholdRotDistance = 1;
-
-        /// <summary>
-        ///     If difference between puller and pulled angle  lower that this threshold,
-        ///     pulled entity will not change its rotation.
-        ///     Helps with diagonal movement jittering
-        ///     As of further adjustments, should divide cleanly into 90 degrees
-        /// </summary>
-        private const float ThresholdRotAngle = 22.5f;
 
         public IReadOnlySet<SharedPullableComponent> Moving => _moving;
 
@@ -62,8 +43,8 @@ namespace Content.Shared.Pulling
             SubscribeLocalEvent<RoundRestartCleanupEvent>(Reset);
             SubscribeLocalEvent<PullStartedMessage>(OnPullStarted);
             SubscribeLocalEvent<PullStoppedMessage>(OnPullStopped);
-            SubscribeLocalEvent<MoveEvent>(PullerMoved);
             SubscribeLocalEvent<EntInsertedIntoContainerMessage>(HandleContainerInsert);
+            SubscribeLocalEvent<SharedPullableComponent, JointRemovedEvent>(OnJointRemoved);
 
             SubscribeLocalEvent<SharedPullableComponent, PullStartedMessage>(PullableHandlePullStarted);
             SubscribeLocalEvent<SharedPullableComponent, PullStoppedMessage>(PullableHandlePullStopped);
@@ -75,9 +56,31 @@ namespace Content.Shared.Pulling
                 .Register<SharedPullingSystem>();
         }
 
+        private void OnJointRemoved(EntityUid uid, SharedPullableComponent component, JointRemovedEvent args)
+        {
+            if (component.Puller != args.OtherBody.Owner)
+                return;
+
+            // Do we have some other join with our Puller?
+            // or alternatively:
+            // TODO track the relevant joint.
+
+            if (TryComp(uid, out JointComponent? joints))
+            {
+                foreach (var jt in joints.GetJoints.Values)
+                {
+                    if (jt.BodyAUid == component.Puller || jt.BodyBUid == component.Puller)
+                        return;
+                }
+            }
+
+            // No more joints with puller -> force stop pull.
+            _pullSm.ForceDisconnectPullable(component);
+        }
+
         private void AddPullVerbs(EntityUid uid, SharedPullableComponent component, GetVerbsEvent<Verb> args)
         {
-            if (args.Hands == null || !args.CanAccess || !args.CanInteract)
+            if (!args.CanAccess || !args.CanInteract)
                 return;
 
             // Are they trying to pull themselves up by their bootstraps?
@@ -90,6 +93,7 @@ namespace Content.Shared.Pulling
                 Verb verb = new();
                 verb.Text = Loc.GetString("pulling-verb-get-data-text-stop-pulling");
                 verb.Act = () => TryStopPull(component, args.User);
+                verb.DoContactInteraction = false; // pulling handle its own contact interaction.
                 args.Verbs.Add(verb);
             }
             else if (CanPull(args.User, args.Target))
@@ -97,6 +101,7 @@ namespace Content.Shared.Pulling
                 Verb verb = new();
                 verb.Text = Loc.GetString("pulling-verb-get-data-text");
                 verb.Act = () => TryStartPull(args.User, args.Target);
+                verb.DoContactInteraction = false; // pulling handle its own contact interaction.
                 args.Verbs.Add(verb);
             }
         }
@@ -106,7 +111,7 @@ namespace Content.Shared.Pulling
         {
             if (args.Pulled.Owner != uid)
                 return;
-            
+
             _alertsSystem.ShowAlert(component.Owner, AlertType.Pulled);
         }
 
@@ -116,6 +121,11 @@ namespace Content.Shared.Pulling
                 return;
 
             _alertsSystem.ClearAlert(component.Owner, AlertType.Pulled);
+        }
+
+        public bool IsPulled(EntityUid uid, SharedPullableComponent? component = null)
+        {
+            return Resolve(uid, ref component, false) && component.BeingPulled;
         }
 
         public override void Update(float frameTime)
@@ -151,33 +161,6 @@ namespace Content.Shared.Pulling
         protected void OnPullableStopMove(EntityUid uid, SharedPullableComponent component, PullableStopMovingMessage args)
         {
             _stoppedMoving.Add(component);
-        }
-
-        private void PullerMoved(ref MoveEvent ev)
-        {
-            var puller = ev.Sender;
-
-            if (!TryGetPulled(ev.Sender, out var pulled))
-            {
-                return;
-            }
-
-            // The pulled object may have already been deleted.
-            // TODO: Work out why. Monkey + meat spike is a good test for this,
-            //  assuming you're still pulling the monkey when it gets gibbed.
-            if (Deleted(pulled.Value))
-            {
-                return;
-            }
-
-            if (!EntityManager.TryGetComponent(pulled.Value, out IPhysBody? physics))
-            {
-                return;
-            }
-
-            UpdatePulledRotation(puller, pulled.Value);
-
-            physics.WakeBody();
         }
 
         // TODO: When Joint networking is less shitcodey fix this to use a dedicated joints message.
@@ -217,6 +200,10 @@ namespace Content.Shared.Pulling
                 return false;
             }
 
+            if (_containerSystem.IsEntityInContainer(player) ||
+                _gravity.IsWeightless(player))
+                return false;
+
             TryMoveTo(pullable, coords);
 
             return false;
@@ -245,38 +232,6 @@ namespace Content.Shared.Pulling
         public bool IsPulling(EntityUid puller)
         {
             return _pullers.ContainsKey(puller);
-        }
-
-        private void UpdatePulledRotation(EntityUid puller, EntityUid pulled)
-        {
-            // TODO: update once ComponentReference works with directed event bus.
-            if (!EntityManager.TryGetComponent(pulled, out RotatableComponent? rotatable))
-                return;
-
-            if (!rotatable.RotateWhilePulling)
-                return;
-
-            var pulledXform = EntityManager.GetComponent<TransformComponent>(pulled);
-
-            var dir = EntityManager.GetComponent<TransformComponent>(puller).WorldPosition - pulledXform.WorldPosition;
-            if (dir.LengthSquared > ThresholdRotDistance * ThresholdRotDistance)
-            {
-                var oldAngle = pulledXform.WorldRotation;
-                var newAngle = Angle.FromWorldVec(dir);
-
-                var diff = newAngle - oldAngle;
-                if (Math.Abs(diff.Degrees) > (ThresholdRotAngle / 2f))
-                {
-                    // Ok, so this bit is difficult because ideally it would look like it's snapping to sane angles.
-                    // Otherwise PIANO DOOR STUCK! happens.
-                    // But it also needs to work with station rotation / align to the local parent.
-                    // So...
-                    var baseRotation = pulledXform.Parent?.WorldRotation ?? 0f;
-                    var localRotation = newAngle - baseRotation;
-                    var localRotationSnapped = Angle.FromDegrees(Math.Floor((localRotation.Degrees / ThresholdRotAngle) + 0.5f) * ThresholdRotAngle);
-                    pulledXform.LocalRotation = localRotationSnapped;
-                }
-            }
         }
     }
 }

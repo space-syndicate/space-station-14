@@ -2,10 +2,12 @@ using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 using NUnit.Framework;
+using Robust.Server.GameObjects;
 using Robust.Server.Maps;
 using Robust.Shared.ContentPack;
+using Robust.Shared.GameObjects;
+using Robust.Shared.Log;
 using Robust.Shared.Map;
-using Robust.Shared.Timing;
 using Robust.Shared.Utility;
 
 namespace Content.IntegrationTests.Tests
@@ -14,22 +16,25 @@ namespace Content.IntegrationTests.Tests
     ///     Tests that the
     /// </summary>
     [TestFixture]
-    public sealed class SaveLoadSaveTest : ContentIntegrationTest
+    public sealed class SaveLoadSaveTest
     {
         [Test]
         public async Task SaveLoadSave()
         {
-            var server = StartServer(new ServerContentIntegrationOption {Pool = false});
-            await server.WaitIdleAsync();
-            var mapLoader = server.ResolveDependency<IMapLoader>();
+            await using var pairTracker = await PoolManager.GetServerClient(new PoolSettings {Fresh = true, Disconnected = true});
+            var server = pairTracker.Pair.Server;
+            var mapLoader = server.ResolveDependency<IEntitySystemManager>().GetEntitySystem<MapLoaderSystem>();
             var mapManager = server.ResolveDependency<IMapManager>();
-            server.Post(() =>
+
+            await server.WaitPost(() =>
             {
-                // TODO: Un-hardcode the grid Id for this test.
-                mapLoader.SaveBlueprint(new GridId(1), "save load save 1.yml");
-                var mapId = mapManager.CreateMap();
-                var grid = mapLoader.LoadBlueprint(mapId, "save load save 1.yml");
-                mapLoader.SaveBlueprint(grid!.Index, "save load save 2.yml");
+                var mapId0 = mapManager.CreateMap();
+                // TODO: Properly find the "main" station grid.
+                var grid0 = mapManager.CreateGrid(mapId0);
+                mapLoader.Save(grid0.Owner, "save load save 1.yml");
+                var mapId1 = mapManager.CreateMap();
+                var grid1 = mapLoader.LoadGrid(mapId1, "save load save 1.yml", new MapLoadOptions() {LoadMap = false});
+                mapLoader.Save(grid1!.Value, "save load save 2.yml");
             });
 
             await server.WaitIdleAsync();
@@ -39,17 +44,17 @@ namespace Content.IntegrationTests.Tests
             string two;
 
             var rp1 = new ResourcePath("/save load save 1.yml");
-            using (var stream = userData.Open(rp1, FileMode.Open))
+            await using (var stream = userData.Open(rp1, FileMode.Open))
             using (var reader = new StreamReader(stream))
             {
-                one = reader.ReadToEnd();
+                one = await reader.ReadToEndAsync();
             }
 
             var rp2 = new ResourcePath("/save load save 2.yml");
-            using (var stream = userData.Open(rp2, FileMode.Open))
+            await using (var stream = userData.Open(rp2, FileMode.Open))
             using (var reader = new StreamReader(stream))
             {
-                two = reader.ReadToEnd();
+                two = await reader.ReadToEndAsync();
             }
 
             Assert.Multiple(() => {
@@ -70,37 +75,38 @@ namespace Content.IntegrationTests.Tests
                     TestContext.Error.WriteLine(twoTmp);
                 }
             });
+            await pairTracker.CleanReturnAsync();
         }
 
         /// <summary>
         ///     Loads the default map, runs it for 5 ticks, then assert that it did not change.
         /// </summary>
         [Test]
-        public async Task LoadSaveTicksSaveSaltern()
+        public async Task LoadSaveTicksSaveBagel()
         {
-            var server = StartServerDummyTicker();
-            await server.WaitIdleAsync();
-            var mapLoader = server.ResolveDependency<IMapLoader>();
+            await using var pairTracker = await PoolManager.GetServerClient(new PoolSettings{NoClient = true});
+            var server = pairTracker.Pair.Server;
+            var mapLoader = server.ResolveDependency<IEntitySystemManager>().GetEntitySystem<MapLoaderSystem>();
             var mapManager = server.ResolveDependency<IMapManager>();
 
-            IMapGrid grid = default;
+            MapId mapId = default;
 
             // Load saltern.yml as uninitialized map, and save it to ensure it's up to date.
             server.Post(() =>
             {
-                var mapId = mapManager.CreateMap();
+                mapId = mapManager.CreateMap();
                 mapManager.AddUninitializedMap(mapId);
                 mapManager.SetMapPaused(mapId, true);
-                grid = mapLoader.LoadBlueprint(mapId, "Maps/saltern.yml");
-                mapLoader.SaveBlueprint(grid.Index, "load save ticks save 1.yml");
+                mapLoader.LoadMap(mapId, "Maps/bagel.yml");
+                mapLoader.SaveMap(mapId, "load save ticks save 1.yml");
             });
 
             // Run 5 ticks.
             server.RunTicks(5);
 
-            server.Post(() =>
+            await server.WaitPost(() =>
             {
-                mapLoader.SaveBlueprint(grid.Index, "/load save ticks save 2.yml");
+                mapLoader.SaveMap(mapId, "/load save ticks save 2.yml");
             });
 
             await server.WaitIdleAsync();
@@ -109,16 +115,16 @@ namespace Content.IntegrationTests.Tests
             string one;
             string two;
 
-            using (var stream = userData.Open(new ResourcePath("/load save ticks save 1.yml"), FileMode.Open))
+            await using (var stream = userData.Open(new ResourcePath("/load save ticks save 1.yml"), FileMode.Open))
             using (var reader = new StreamReader(stream))
             {
-                one = reader.ReadToEnd();
+                one = await reader.ReadToEndAsync();
             }
 
-            using (var stream = userData.Open(new ResourcePath("/load save ticks save 2.yml"), FileMode.Open))
+            await using (var stream = userData.Open(new ResourcePath("/load save ticks save 2.yml"), FileMode.Open))
             using (var reader = new StreamReader(stream))
             {
-                two = reader.ReadToEnd();
+                two = await reader.ReadToEndAsync();
             }
 
             Assert.Multiple(() => {
@@ -139,6 +145,7 @@ namespace Content.IntegrationTests.Tests
                     TestContext.Error.WriteLine(twoTmp);
                 }
             });
+            await pairTracker.CleanReturnAsync();
         }
     }
 }

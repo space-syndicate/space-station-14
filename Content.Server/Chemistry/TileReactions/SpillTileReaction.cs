@@ -1,15 +1,14 @@
-﻿using Content.Server.Fluids.Components;
 using Content.Server.Fluids.EntitySystems;
 using Content.Shared.Chemistry.Components;
 using Content.Shared.Chemistry.Reaction;
 using Content.Shared.Chemistry.Reagent;
 using Content.Shared.FixedPoint;
 using Content.Shared.Slippery;
+using Content.Shared.StepTrigger;
+using Content.Shared.StepTrigger.Components;
+using Content.Shared.StepTrigger.Systems;
 using JetBrains.Annotations;
-using Robust.Shared.GameObjects;
-using Robust.Shared.IoC;
 using Robust.Shared.Map;
-using Robust.Shared.Serialization.Manager.Attributes;
 
 namespace Content.Server.Chemistry.TileReactions
 {
@@ -26,16 +25,21 @@ namespace Content.Server.Chemistry.TileReactions
         {
             if (reactVolume < 5) return FixedPoint2.Zero;
 
+            var entityManager = IoCManager.Resolve<IEntityManager>();
+
             // TODO Make this not puddle smear.
-            var puddle = EntitySystem.Get<SpillableSystem>()
+            var puddle = entityManager.EntitySysManager.GetEntitySystem<SpillableSystem>()
                 .SpillAt(tile, new Solution(reagent.ID, reactVolume), "PuddleSmear", _overflow, false, true);
 
             if (puddle != null)
             {
-                var slippery = IoCManager.Resolve<IEntityManager>().GetComponent<SlipperyComponent>(puddle.Owner);
+                var slippery = entityManager.EnsureComponent<SlipperyComponent>(puddle.Owner);
                 slippery.LaunchForwardsMultiplier = _launchForwardsMultiplier;
-                slippery.RequiredSlipSpeed = _requiredSlipSpeed;
                 slippery.ParalyzeTime = _paralyzeTime;
+                entityManager.Dirty(slippery);
+
+                var step = entityManager.EnsureComponent<StepTriggerComponent>(puddle.Owner);
+                entityManager.EntitySysManager.GetEntitySystem<StepTriggerSystem>().SetRequiredTriggerSpeed(puddle.Owner, _requiredSlipSpeed, step);
 
                 return reactVolume;
             }

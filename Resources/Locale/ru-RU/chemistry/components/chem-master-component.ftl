@@ -5,10 +5,12 @@ chem-master-component-cannot-put-entity-message = Вы не можете пом�
 
 ## Bound UI
 
-chem-master-bound-user-interface-title = ChemMaster 4000
+chem-master-bound-user-interface-title = ХимМастер 4000
 
 ## UI
 
+chem-master-window-input-tab = Вход
+chem-master-window-output-tab = Выход
 chem-master-window-container-label = Контейнер
 chem-master-window-eject-button = Извлечь
 chem-master-window-no-container-loaded-text = Контейнер не загружен.
@@ -17,15 +19,14 @@ chem-master-window-buffer-label = буфер:
 chem-master-window-buffer-all-amount = Всё
 chem-master-window-buffer-empty-text = Буфер пуст.
 chem-master-window-buffer-low-text = Недостаточно раствора в буфере
-chem-master-window-transfer-button = Перевести
+chem-master-window-transfer-button = Перенести
 chem-master-window-discard-button = Уничтожить
 chem-master-window-packaging-text = Упаковка
 chem-master-current-text-label = Метка:
 chem-master-window-pills-label = Таблетка:
 chem-master-window-pill-type-label = Тип таблеток:
-chem-master-window-max-pills-volume-text = макс 50 ед./каждая
-chem-master-window-max-bottles-volume-text = макс 30 ед./каждая
-chem-master-window-create-pill-button = Создать
-chem-master-window-create-bottle-button = Создать
-chem-master-window-bottles-label = Банки:
+chem-master-window-pills-number-label = Кол-во:
+chem-master-window-dose-label = Дозировка (ед.):
+chem-master-window-create-button = Создать
+chem-master-window-bottles-label = Бутылочки:
 chem-master-window-unknown-reagent-text = Неизвестный реагент

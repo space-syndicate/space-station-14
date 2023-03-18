@@ -1,22 +1,21 @@
-using System;
-using System.Collections.Generic;
 using Content.Server.Atmos.Components;
 using Content.Server.Doors.Components;
-using Content.Shared.Administration.Logs;
+using Content.Server.Doors.Systems;
 using Content.Shared.Atmos;
+using Content.Shared.Atmos.Components;
 using Content.Shared.Database;
-using Robust.Shared.GameObjects;
-using Robust.Shared.IoC;
 using Robust.Shared.Map;
-using Robust.Shared.Maths;
+using Robust.Shared.Map.Components;
+using Robust.Shared.Physics.Components;
 using Robust.Shared.Random;
 using Robust.Shared.Utility;
+using System.Linq;
 
 namespace Content.Server.Atmos.EntitySystems
 {
     public sealed partial class AtmosphereSystem
     {
-        [Dependency] private readonly IRobustRandom _robustRandom = default!;
+        [Dependency] private readonly FirelockSystem _firelockSystem = default!;
 
         private readonly TileAtmosphereComparer _monstermosComparer = new();
 
@@ -28,7 +27,7 @@ namespace Content.Server.Atmos.EntitySystems
         private readonly TileAtmosphere[] _depressurizeSpaceTiles = new TileAtmosphere[Atmospherics.MonstermosHardTileLimit];
         private readonly TileAtmosphere[] _depressurizeProgressionOrder = new TileAtmosphere[Atmospherics.MonstermosHardTileLimit * 2];
 
-        private void EqualizePressureInZone(IMapGrid mapGrid, GridAtmosphereComponent gridAtmosphere, TileAtmosphere tile, int cycleNum)
+        private void EqualizePressureInZone(MapGridComponent mapGrid, GridAtmosphereComponent gridAtmosphere, TileAtmosphere tile, int cycleNum, GasTileOverlayComponent? visuals)
         {
             if (tile.Air == null || (tile.MonstermosInfo.LastCycle >= cycleNum))
                 return; // Already done.
@@ -87,11 +86,11 @@ namespace Content.Server.Atmos.EntitySystems
                     if(tileCount < Atmospherics.MonstermosHardTileLimit)
                         _equalizeTiles[tileCount++] = adj;
 
-                    if (adj.Air.Immutable && MonstermosDepressurization)
+                    if (adj.Space && MonstermosDepressurization)
                     {
                         // Looks like someone opened an airlock to space!
 
-                        ExplosivelyDepressurize(mapGrid, gridAtmosphere, tile, cycleNum);
+                        ExplosivelyDepressurize(mapGrid, gridAtmosphere, tile, cycleNum, visuals);
                         return;
                     }
                 }
@@ -152,6 +151,7 @@ namespace Content.Server.Atmos.EntitySystems
                         var direction = (AtmosDirection) (1 << j);
                         if (!otherTile.AdjacentBits.IsFlagSet(direction)) continue;
                         var tile2 = otherTile.AdjacentTiles[j]!;
+                        DebugTools.Assert(tile2.AdjacentBits.IsFlagSet(direction.GetOpposite()));
 
                         // skip anything that isn't part of our current processing block.
                         if (tile2.MonstermosInfo.FastDone || tile2.MonstermosInfo.LastQueueCycle != queueCycle)
@@ -219,8 +219,8 @@ namespace Content.Server.Atmos.EntitySystems
                             var otherTile2 = otherTile.AdjacentTiles[k];
                             if (giver.MonstermosInfo.MoleDelta <= 0) break; // We're done here now. Let's not do more work than needed.
                             if (otherTile2 == null || otherTile2.MonstermosInfo.LastQueueCycle != queueCycle) continue;
+                            DebugTools.Assert(otherTile2.AdjacentBits.IsFlagSet(direction.GetOpposite()));
                             if (otherTile2.MonstermosInfo.LastSlowQueueCycle == queueCycleSlow) continue;
-
                             _equalizeQueue[queueLength++] = otherTile2;
                             otherTile2.MonstermosInfo.LastSlowQueueCycle = queueCycleSlow;
                             otherTile2.MonstermosInfo.CurrentTransferDirection = direction.GetOpposite();
@@ -285,6 +285,7 @@ namespace Content.Server.Atmos.EntitySystems
 
                             if (taker.MonstermosInfo.MoleDelta >= 0) break; // We're done here now. Let's not do more work than needed.
                             if (otherTile2 == null || otherTile2.MonstermosInfo.LastQueueCycle != queueCycle) continue;
+                            DebugTools.Assert(otherTile2.AdjacentBits.IsFlagSet(direction.GetOpposite()));
                             if (otherTile2.MonstermosInfo.LastSlowQueueCycle == queueCycleSlow) continue;
                             _equalizeQueue[queueLength++] = otherTile2;
                             otherTile2.MonstermosInfo.LastSlowQueueCycle = queueCycleSlow;
@@ -330,7 +331,7 @@ namespace Content.Server.Atmos.EntitySystems
             for (var i = 0; i < tileCount; i++)
             {
                 var otherTile = _equalizeTiles[i]!;
-                FinalizeEq(gridAtmosphere, otherTile);
+                FinalizeEq(gridAtmosphere, otherTile, visuals);
             }
 
             for (var i = 0; i < tileCount; i++)
@@ -341,7 +342,8 @@ namespace Content.Server.Atmos.EntitySystems
                     var direction = (AtmosDirection) (1 << j);
                     if (!otherTile.AdjacentBits.IsFlagSet(direction)) continue;
                     var otherTile2 = otherTile.AdjacentTiles[j]!;
-                    if (otherTile2.Air?.Compare(tile.Air) == GasMixture.GasCompareResult.NoExchange) continue;
+                    DebugTools.Assert(otherTile2.AdjacentBits.IsFlagSet(direction.GetOpposite()));
+                    if (otherTile2.Air != null && CompareExchange(otherTile2.Air, tile.Air) == GasCompareResult.NoExchange) continue;
                     AddActiveTile(gridAtmosphere, otherTile2);
                     break;
                 }
@@ -354,7 +356,7 @@ namespace Content.Server.Atmos.EntitySystems
             Array.Clear(_equalizeQueue, 0, Atmospherics.MonstermosTileLimit);
         }
 
-        private void ExplosivelyDepressurize(IMapGrid mapGrid, GridAtmosphereComponent gridAtmosphere, TileAtmosphere tile, int cycleNum)
+        private void ExplosivelyDepressurize(MapGridComponent mapGrid, GridAtmosphereComponent gridAtmosphere, TileAtmosphere tile, int cycleNum, GasTileOverlayComponent? visuals)
         {
             // Check if explosive depressurization is enabled and if the tile is valid.
             if (!MonstermosDepressurization || tile.Air == null)
@@ -378,7 +380,7 @@ namespace Content.Server.Atmos.EntitySystems
                 otherTile.MonstermosInfo.LastCycle = cycleNum;
                 otherTile.MonstermosInfo.CurrentTransferDirection = AtmosDirection.Invalid;
                 // Tiles in the _depressurizeTiles array cannot have null air.
-                if (!otherTile.Air!.Immutable)
+                if (!otherTile.Space)
                 {
                     for (var j = 0; j < Atmospherics.Directions; j++)
                     {
@@ -386,9 +388,10 @@ namespace Content.Server.Atmos.EntitySystems
                         if (!otherTile.AdjacentBits.IsFlagSet(direction)) continue;
                         var otherTile2 = otherTile.AdjacentTiles[j];
                         if (otherTile2?.Air == null) continue;
+                        DebugTools.Assert(otherTile2.AdjacentBits.IsFlagSet(direction.GetOpposite()));
                         if (otherTile2.MonstermosInfo.LastQueueCycle == queueCycle) continue;
 
-                        ConsiderFirelocks(gridAtmosphere, otherTile, otherTile2);
+                        ConsiderFirelocks(gridAtmosphere, otherTile, otherTile2, visuals, mapGrid);
 
                         // The firelocks might have closed on us.
                         if (!otherTile.AdjacentBits.IsFlagSet(direction)) continue;
@@ -427,11 +430,12 @@ namespace Content.Server.Atmos.EntitySystems
                 {
                     var direction = (AtmosDirection) (1 << j);
                     // Tiles in _depressurizeProgressionOrder cannot have null air.
-                    if (!otherTile.AdjacentBits.IsFlagSet(direction) && !otherTile.Air!.Immutable) continue;
+                    if (!otherTile.AdjacentBits.IsFlagSet(direction) && !otherTile.Space) continue;
                     var tile2 = otherTile.AdjacentTiles[j];
                     if (tile2?.MonstermosInfo.LastQueueCycle != queueCycle) continue;
+                    DebugTools.Assert(tile2.AdjacentBits.IsFlagSet(direction.GetOpposite()));
                     if (tile2.MonstermosInfo.LastSlowQueueCycle == queueCycleSlow) continue;
-                    if(tile2.Air?.Immutable ?? false) continue;
+                    if(tile2.Space) continue;
                     tile2.MonstermosInfo.CurrentTransferDirection = direction.GetOpposite();
                     tile2.MonstermosInfo.CurrentTransferAmount = 0;
                     tile2.PressureSpecificTarget = otherTile.PressureSpecificTarget;
@@ -469,7 +473,7 @@ namespace Content.Server.Atmos.EntitySystems
                 // therefore there is no more gas in the tile, therefore the tile should be as cold as space!
                 otherTile.Air.Temperature = Atmospherics.TCMB;
 
-                InvalidateVisuals(otherTile.GridIndex, otherTile.GridIndices);
+                InvalidateVisuals(otherTile.GridIndex, otherTile.GridIndices, visuals);
                 HandleDecompressionFloorRip(mapGrid, otherTile, sum);
             }
 
@@ -477,11 +481,11 @@ namespace Content.Server.Atmos.EntitySystems
             {
                 var direction = ((Vector2)_depressurizeTiles[tileCount - 1].GridIndices - tile.GridIndices).Normalized;
 
-                var gridPhysics = Comp<PhysicsComponent>(mapGrid.GridEntityId);
+                var gridPhysics = Comp<PhysicsComponent>(mapGrid.Owner);
 
                 // TODO ATMOS: Come up with better values for these.
-                gridPhysics.ApplyLinearImpulse(direction * totalMolesRemoved * gridPhysics.Mass);
-                gridPhysics.ApplyAngularImpulse(Vector2.Cross(tile.GridIndices - gridPhysics.LocalCenter, direction) * totalMolesRemoved);
+                _physics.ApplyLinearImpulse(mapGrid.Owner, direction * totalMolesRemoved * gridPhysics.Mass, body: gridPhysics);
+                _physics.ApplyAngularImpulse(mapGrid.Owner, Vector2.Cross(tile.GridIndices - gridPhysics.LocalCenter, direction) * totalMolesRemoved, body: gridPhysics);
             }
 
             if(tileCount > 10 && (totalMolesRemoved / tileCount) > 20)
@@ -493,11 +497,8 @@ namespace Content.Server.Atmos.EntitySystems
             Array.Clear(_depressurizeProgressionOrder, 0, Atmospherics.MonstermosHardTileLimit * 2);
         }
 
-        private void ConsiderFirelocks(GridAtmosphereComponent gridAtmosphere, TileAtmosphere tile, TileAtmosphere other)
+        private void ConsiderFirelocks(GridAtmosphereComponent gridAtmosphere, TileAtmosphere tile, TileAtmosphere other, GasTileOverlayComponent? visuals, MapGridComponent mapGrid)
         {
-            if (!_mapManager.TryGetGrid(tile.GridIndex, out var mapGrid))
-                return;
-
             var reconsiderAdjacent = false;
 
             foreach (var entity in mapGrid.GetAnchoredEntities(tile.GridIndices))
@@ -505,7 +506,7 @@ namespace Content.Server.Atmos.EntitySystems
                 if (!TryComp(entity, out FirelockComponent? firelock))
                     continue;
 
-                reconsiderAdjacent |= firelock.EmergencyPressureStop();
+                reconsiderAdjacent |= _firelockSystem.EmergencyPressureStop(entity, firelock);
             }
 
             foreach (var entity in mapGrid.GetAnchoredEntities(other.GridIndices))
@@ -513,19 +514,21 @@ namespace Content.Server.Atmos.EntitySystems
                 if (!TryComp(entity, out FirelockComponent? firelock))
                     continue;
 
-                reconsiderAdjacent |= firelock.EmergencyPressureStop();
+                reconsiderAdjacent |= _firelockSystem.EmergencyPressureStop(entity, firelock);
             }
 
             if (!reconsiderAdjacent)
                 return;
 
-            UpdateAdjacent(mapGrid, gridAtmosphere, tile);
-            UpdateAdjacent(mapGrid, gridAtmosphere, other);
-            InvalidateVisuals(tile.GridIndex, tile.GridIndices);
-            InvalidateVisuals(other.GridIndex, other.GridIndices);
+            var tileEv = new UpdateAdjacentMethodEvent(mapGrid.Owner, tile.GridIndices);
+            var otherEv = new UpdateAdjacentMethodEvent(mapGrid.Owner, other.GridIndices);
+            GridUpdateAdjacent(mapGrid.Owner, gridAtmosphere, ref tileEv);
+            GridUpdateAdjacent(mapGrid.Owner, gridAtmosphere, ref otherEv);
+            InvalidateVisuals(tile.GridIndex, tile.GridIndices, visuals);
+            InvalidateVisuals(other.GridIndex, other.GridIndices, visuals);
         }
 
-        private void FinalizeEq(GridAtmosphereComponent gridAtmosphere, TileAtmosphere tile)
+        private void FinalizeEq(GridAtmosphereComponent gridAtmosphere, TileAtmosphere tile, GasTileOverlayComponent? visuals)
         {
             Span<float> transferDirections = stackalloc float[Atmospherics.Directions];
             var hasTransferDirs = false;
@@ -547,22 +550,22 @@ namespace Content.Server.Atmos.EntitySystems
                 var amount = transferDirections[i];
                 var otherTile = tile.AdjacentTiles[i];
                 if (otherTile?.Air == null) continue;
-                if (amount > 0)
-                {
-                    // Everything that calls this method already ensures that Air will not be null.
-                    if (tile.Air!.TotalMoles < amount)
-                        FinalizeEqNeighbors(gridAtmosphere, tile, transferDirections);
+                DebugTools.Assert(otherTile.AdjacentBits.IsFlagSet(direction.GetOpposite()));
+                if (amount <= 0) continue;
 
-                    otherTile.MonstermosInfo[direction.GetOpposite()] = 0;
-                    Merge(otherTile.Air, tile.Air.Remove(amount));
-                    InvalidateVisuals(tile.GridIndex, tile.GridIndices);
-                    InvalidateVisuals(otherTile.GridIndex, otherTile.GridIndices);
-                    ConsiderPressureDifference(gridAtmosphere, tile, otherTile, amount);
-                }
+                // Everything that calls this method already ensures that Air will not be null.
+                if (tile.Air!.TotalMoles < amount)
+                    FinalizeEqNeighbors(gridAtmosphere, tile, transferDirections, visuals);
+
+                otherTile.MonstermosInfo[direction.GetOpposite()] = 0;
+                Merge(otherTile.Air, tile.Air.Remove(amount));
+                InvalidateVisuals(tile.GridIndex, tile.GridIndices, visuals);
+                InvalidateVisuals(otherTile.GridIndex, otherTile.GridIndices, visuals);
+                ConsiderPressureDifference(gridAtmosphere, tile, direction, amount);
             }
         }
 
-        private void FinalizeEqNeighbors(GridAtmosphereComponent gridAtmosphere, TileAtmosphere tile, ReadOnlySpan<float> transferDirs)
+        private void FinalizeEqNeighbors(GridAtmosphereComponent gridAtmosphere, TileAtmosphere tile, ReadOnlySpan<float> transferDirs, GasTileOverlayComponent? visuals)
         {
             for (var i = 0; i < Atmospherics.Directions; i++)
             {
@@ -570,20 +573,36 @@ namespace Content.Server.Atmos.EntitySystems
                 var amount = transferDirs[i];
                 // Since AdjacentBits is set, AdjacentTiles[i] wouldn't be null, and neither would its air.
                 if(amount < 0 && tile.AdjacentBits.IsFlagSet(direction))
-                    FinalizeEq(gridAtmosphere, tile.AdjacentTiles[i]!);  // A bit of recursion if needed.
+                    FinalizeEq(gridAtmosphere, tile.AdjacentTiles[i]!, visuals);  // A bit of recursion if needed.
             }
         }
 
         private void AdjustEqMovement(TileAtmosphere tile, AtmosDirection direction, float amount)
         {
+            DebugTools.AssertNotNull(tile);
             DebugTools.Assert(tile.AdjacentBits.IsFlagSet(direction));
             DebugTools.Assert(tile.AdjacentTiles[direction.ToIndex()] != null);
-            tile.MonstermosInfo[direction] += amount;
             // Every call to this method already ensures that the adjacent tile won't be null.
-            tile.AdjacentTiles[direction.ToIndex()]!.MonstermosInfo[direction.GetOpposite()] -= amount;
+
+            // Turns out: no they don't. Temporary debug checks to figure out which caller is causing problems:
+            if (tile == null)
+            {
+                Logger.Error($"Encountered null-tile in {nameof(AdjustEqMovement)}. Trace: {Environment.StackTrace}");
+                return;
+            }
+            var adj = tile.AdjacentTiles[direction.ToIndex()];
+            if (adj == null)
+            {
+                var nonNull = tile.AdjacentTiles.Where(x => x != null).Count();
+                Logger.Error($"Encountered null adjacent tile in {nameof(AdjustEqMovement)}. Dir: {direction}, Tile: {tile.Tile}, non-null adj count: {nonNull}, Trace: {Environment.StackTrace}");
+                return;
+            }
+
+            tile.MonstermosInfo[direction] += amount;
+            adj.MonstermosInfo[direction.GetOpposite()] -= amount;
         }
 
-        private void HandleDecompressionFloorRip(IMapGrid mapGrid, TileAtmosphere tile, float sum)
+        private void HandleDecompressionFloorRip(MapGridComponent mapGrid, TileAtmosphere tile, float sum)
         {
             if (!MonstermosRipTiles)
                 return;

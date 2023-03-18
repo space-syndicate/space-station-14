@@ -1,10 +1,3 @@
-using System;
-using Content.Server.Atmos.Components;
-using Robust.Shared.GameObjects;
-using Robust.Shared.Map;
-using Robust.Shared.Serialization.Manager.Attributes;
-using Robust.Shared.ViewVariables;
-
 namespace Content.Server.Atmos.Piping.Components
 {
     /// <summary>
@@ -23,7 +16,6 @@ namespace Content.Server.Atmos.Piping.Components
         /// <summary>
         ///     Whether this device will join an entity system to process when not in a grid.
         /// </summary>
-        [ViewVariables]
         [DataField("joinSystem")]
         public bool JoinSystem { get; } = false;
 
@@ -36,7 +28,7 @@ namespace Content.Server.Atmos.Piping.Components
         [ViewVariables]
         public TimeSpan LastProcess { get; set; } = TimeSpan.Zero;
 
-        public GridId? JoinedGrid { get; set; }
+        public EntityUid? JoinedGrid { get; set; }
     }
 
     public sealed class AtmosDeviceUpdateEvent : EntityEventArgs

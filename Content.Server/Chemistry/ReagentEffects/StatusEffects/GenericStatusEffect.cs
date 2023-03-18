@@ -1,11 +1,6 @@
-﻿using System;
-using Content.Shared.Chemistry.Components;
-using Content.Shared.Chemistry.Reagent;
+﻿using Content.Shared.Chemistry.Reagent;
 using Content.Shared.StatusEffect;
 using JetBrains.Annotations;
-using Robust.Shared.GameObjects;
-using Robust.Shared.IoC;
-using Robust.Shared.Serialization.Manager.Attributes;
 
 namespace Content.Server.Chemistry.ReagentEffects.StatusEffects
 {
@@ -45,17 +40,21 @@ namespace Content.Server.Chemistry.ReagentEffects.StatusEffects
         public override void Effect(ReagentEffectArgs args)
         {
             var statusSys = args.EntityManager.EntitySysManager.GetEntitySystem<StatusEffectsSystem>();
+
+            var time = Time;
+            time *= args.Scale;
+
             if (Type == StatusEffectMetabolismType.Add && Component != String.Empty)
             {
-                statusSys.TryAddStatusEffect(args.SolutionEntity, Key, TimeSpan.FromSeconds(Time), Refresh, Component);
+                statusSys.TryAddStatusEffect(args.SolutionEntity, Key, TimeSpan.FromSeconds(time), Refresh, Component);
             }
             else if (Type == StatusEffectMetabolismType.Remove)
             {
-                statusSys.TryRemoveTime(args.SolutionEntity, Key, TimeSpan.FromSeconds(Time));
+                statusSys.TryRemoveTime(args.SolutionEntity, Key, TimeSpan.FromSeconds(time));
             }
             else if (Type == StatusEffectMetabolismType.Set)
             {
-                statusSys.TrySetTime(args.SolutionEntity, Key, TimeSpan.FromSeconds(Time));
+                statusSys.TrySetTime(args.SolutionEntity, Key, TimeSpan.FromSeconds(time));
             }
         }
     }

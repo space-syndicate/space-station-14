@@ -1,15 +1,8 @@
-using System;
-using System.Collections.Generic;
 using System.Threading;
 using Content.Server.Atmos;
-using Content.Server.UserInterface;
 using Content.Shared.Atmos;
 using Content.Shared.Disposal.Components;
-using Robust.Server.GameObjects;
 using Robust.Shared.Containers;
-using Robust.Shared.GameObjects;
-using Robust.Shared.Serialization.Manager.Attributes;
-using Robust.Shared.ViewVariables;
 
 namespace Content.Server.Disposal.Unit.Components
 {
@@ -27,9 +20,11 @@ namespace Content.Server.Disposal.Unit.Components
         ///     The current pressure of this disposal unit.
         ///     Prevents it from flushing if it is not equal to or bigger than 1.
         /// </summary>
-        [ViewVariables]
         [DataField("pressure")]
         public float Pressure = 1f;
+
+        [DataField("autoEngageEnabled")]
+        public bool AutomaticEngage = true;
 
         [ViewVariables(VVAccess.ReadWrite)]
         [DataField("autoEngageTime")]

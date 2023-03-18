@@ -1,14 +1,7 @@
-using System.Collections.Generic;
-using System.Threading.Tasks;
-using Content.Server.WireHacking;
+using Content.Server.Wires;
 using Content.Shared.Construction;
 using Content.Shared.Examine;
 using JetBrains.Annotations;
-using Robust.Shared.GameObjects;
-using Robust.Shared.IoC;
-using Robust.Shared.Localization;
-using Robust.Shared.Serialization.Manager.Attributes;
-using Robust.Shared.Utility;
 
 namespace Content.Server.Construction.Conditions
 {
@@ -20,8 +13,9 @@ namespace Content.Server.Construction.Conditions
 
         public bool Condition(EntityUid uid, IEntityManager entityManager)
         {
+            //if it doesn't have a wire panel, then just let it work.
             if (!entityManager.TryGetComponent(uid, out WiresComponent? wires))
-                return false;
+                return true;
 
             return wires.IsPanelOpen == Open;
         }

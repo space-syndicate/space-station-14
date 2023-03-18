@@ -1,22 +1,20 @@
-﻿using System.Collections.Generic;
-using System.Linq;
+﻿using System.Linq;
 using Content.Server.Objectives.Interfaces;
 using Robust.Shared.Prototypes;
-using Robust.Shared.Serialization.Manager.Attributes;
-using Robust.Shared.ViewVariables;
 
 namespace Content.Server.Objectives
 {
+    /// <summary>
+    ///     Prototype for objectives. Remember that to be assigned, it should be added to one or more objective groups in prototype. E.g. crew, traitor, wizard
+    /// </summary>
     [Prototype("objective")]
     public sealed class ObjectivePrototype : IPrototype
     {
         [ViewVariables]
-        [DataField("id", required: true)]
+        [IdDataField]
         public string ID { get; } = default!;
 
-        [ViewVariables] [DataField("issuer")] public string Issuer { get; private set; } = "Unknown";
-
-        [ViewVariables] [DataField("prob")] public float Probability { get; private set; } = 0.3f;
+        [DataField("issuer")] public string Issuer { get; private set; } = "Unknown";
 
         [ViewVariables]
         public float Difficulty => _difficultyOverride ?? _conditions.Sum(c => c.Difficulty);
@@ -29,7 +27,6 @@ namespace Content.Server.Objectives
         [ViewVariables]
         public IReadOnlyList<IObjectiveCondition> Conditions => _conditions;
 
-        [ViewVariables]
         [DataField("canBeDuplicate")]
         public bool CanBeDuplicateAssignment { get; private set; }
 

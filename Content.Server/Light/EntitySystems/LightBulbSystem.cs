@@ -1,22 +1,24 @@
 using Content.Server.Light.Components;
-using Content.Server.Light.Events;
-using Content.Shared.Light;
+using Content.Shared.Destructible;
+using Content.Shared.Light.Component;
 using Content.Shared.Throwing;
+using Robust.Server.GameObjects;
 using Robust.Shared.Audio;
-using Robust.Shared.GameObjects;
-using Robust.Shared.Maths;
 using Robust.Shared.Player;
 
 namespace Content.Server.Light.EntitySystems
 {
     public sealed class LightBulbSystem : EntitySystem
     {
+        [Dependency] private readonly SharedAppearanceSystem _appearance = default!;
+
         public override void Initialize()
         {
             base.Initialize();
 
             SubscribeLocalEvent<LightBulbComponent, ComponentInit>(OnInit);
             SubscribeLocalEvent<LightBulbComponent, LandEvent>(HandleLand);
+            SubscribeLocalEvent<LightBulbComponent, BreakageEventArgs>(OnBreak);
         }
 
         private void OnInit(EntityUid uid, LightBulbComponent bulb, ComponentInit args)
@@ -26,10 +28,15 @@ namespace Content.Server.Light.EntitySystems
             SetState(uid, bulb.State, bulb);
         }
 
-        private void HandleLand(EntityUid uid, LightBulbComponent bulb, LandEvent args)
+        private void HandleLand(EntityUid uid, LightBulbComponent bulb, ref LandEvent args)
         {
             PlayBreakSound(uid, bulb);
             SetState(uid, LightBulbState.Broken, bulb);
+        }
+
+        private void OnBreak(EntityUid uid, LightBulbComponent component, BreakageEventArgs args)
+        {
+            SetState(uid, LightBulbState.Broken, component);
         }
 
         /// <summary>
@@ -61,7 +68,7 @@ namespace Content.Server.Light.EntitySystems
             if (!Resolve(uid, ref bulb))
                 return;
 
-            SoundSystem.Play(Filter.Pvs(uid), bulb.BreakSound.GetSound(), uid);
+            SoundSystem.Play(bulb.BreakSound.GetSound(), Filter.Pvs(uid), uid);
         }
 
         private void UpdateAppearance(EntityUid uid, LightBulbComponent? bulb = null,
@@ -71,8 +78,8 @@ namespace Content.Server.Light.EntitySystems
                 return;
 
             // try to update appearance and color
-            appearance.SetData(LightBulbVisuals.State, bulb.State);
-            appearance.SetData(LightBulbVisuals.Color, bulb.Color);
+            _appearance.SetData(uid, LightBulbVisuals.State, bulb.State, appearance);
+            _appearance.SetData(uid, LightBulbVisuals.Color, bulb.Color, appearance);
         }
     }
 }

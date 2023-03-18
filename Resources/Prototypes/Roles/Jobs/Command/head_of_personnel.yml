@@ -1,40 +1,49 @@
 - type: job
   id: HeadOfPersonnel
-  name: "head of personnel"
-  head: true
+  name: job-name-hop
+  description: job-description-hop
+  playTimeTracker: JobHeadOfPersonnel
+  requirements:
+    - !type:DepartmentTimeRequirement
+      department: Engineering
+      time: 18000 # Corvax-RoleTime
+    - !type:DepartmentTimeRequirement
+      department: Medical
+      time: 18000 # Corvax-RoleTime
+    - !type:DepartmentTimeRequirement
+      department: Security
+      time: 18000 # Corvax-RoleTime
+    - !type:OverallPlaytimeRequirement
+      time: 180000 # Corvax-RoleTime
+  weight: 20
   startingGear: HoPGear
-  departments:
-  - Command
-  - Civilian
   icon: "HeadOfPersonnel"
   requireAdminNotify: true
-  supervisors: "the captain"
+  supervisors: job-supervisors-captain
   canBeAntag: false
   access:
   - Command
   - HeadOfPersonnel
-  - Security # HoPcurity strikes again
+  - Bar
   - Service
-  - Quartermaster
-  - Salvage
-  - Cargo
   - Maintenance
   - Janitor
   - Theatre
   - Kitchen
   - Chapel
   - Hydroponics
+  - External
   # I mean they'll give themselves the rest of the access levels *anyways*.
 
 - type: startingGear
   id: HoPGear
   equipment:
     jumpsuit: ClothingUniformJumpsuitHoP
-    back: ClothingBackpackFilled
+    back: ClothingBackpackHOPFilled
     shoes: ClothingShoesColorBrown
     head: ClothingHeadHatHopcap
     id: HoPPDA
     ears: ClothingHeadsetAltCommand
   innerclothingskirt: ClothingUniformJumpskirtHoP
-  satchel: ClothingBackpackSatchelFilled
-  duffelbag: ClothingBackpackDuffelFilled
+  satchel: ClothingBackpackSatchelHOPFilled
+  duffelbag: ClothingBackpackDuffelHOPFilled

@@ -1,13 +1,9 @@
-using System.Collections.Generic;
 using System.Linq;
 using Content.Server.Atmos.Components;
 using Content.Server.Atmos.EntitySystems;
-using Content.Server.Temperature.Systems;
 using Content.Shared.Atmos;
-using Robust.Shared.GameObjects;
-using Robust.Shared.IoC;
 using Robust.Shared.Map;
-using Robust.Shared.Maths;
+using Robust.Shared.Map.Components;
 using Robust.Shared.Random;
 
 namespace Content.Server.Kudzu;
@@ -33,9 +29,9 @@ public sealed class SpreaderSystem : EntitySystem
         SubscribeLocalEvent<AirtightChanged>(OnAirtightChanged);
     }
 
-    private void OnAirtightChanged(AirtightChanged e)
+    private void OnAirtightChanged(ref AirtightChanged ev)
     {
-        UpdateNearbySpreaders((e.Airtight).Owner, e.Airtight);
+        UpdateNearbySpreaders(ev.Entity, ev.Airtight);
     }
 
     private void SpreaderAddHandler(EntityUid uid, SpreaderComponent component, ComponentAdd args)
@@ -49,17 +45,23 @@ public sealed class SpreaderSystem : EntitySystem
         if (!EntityManager.TryGetComponent<TransformComponent>(blocker, out var transform))
             return; // how did we get here?
 
-        if (!_mapManager.TryGetGrid(transform.GridID, out var grid)) return;
+        if (!_mapManager.TryGetGrid(transform.GridUid, out var grid)) return;
+
+        var spreaderQuery = GetEntityQuery<SpreaderComponent>();
+        var tile = grid.TileIndicesFor(transform.Coordinates);
 
         for (var i = 0; i < Atmospherics.Directions; i++)
         {
             var direction = (AtmosDirection) (1 << i);
             if (!comp.AirBlockedDirection.IsFlagSet(direction)) continue;
 
-            foreach (var ent in grid.GetInDir(transform.Coordinates, direction.ToDirection()))
+            var directionEnumerator =
+                grid.GetAnchoredEntitiesEnumerator(SharedMapSystem.GetDirection(tile, direction.ToDirection()));
+
+            while (directionEnumerator.MoveNext(out var ent))
             {
-                if (EntityManager.TryGetComponent<SpreaderComponent>(ent, out var s) && s.Enabled)
-                    _edgeGrowths.Add(ent);
+                if (spreaderQuery.TryGetComponent(ent, out var s) && s.Enabled)
+                    _edgeGrowths.Add(ent.Value);
             }
         }
     }
@@ -94,7 +96,7 @@ public sealed class SpreaderSystem : EntitySystem
 
         if (spreader.Enabled == false) return false;
 
-        if (!_mapManager.TryGetGrid(transform.GridID, out var grid)) return false;
+        if (!_mapManager.TryGetGrid(transform.GridUid, out var grid)) return false;
 
         var didGrow = false;
 
@@ -102,7 +104,7 @@ public sealed class SpreaderSystem : EntitySystem
         {
             var direction = (DirectionFlag) (1 << i);
             var coords = transform.Coordinates.Offset(direction.AsDir().ToVec());
-            if (grid.GetTileRef(coords).Tile.IsEmpty || _robustRandom.Prob(spreader.Chance)) continue;
+            if (grid.GetTileRef(coords).Tile.IsEmpty || _robustRandom.Prob(1 - spreader.Chance)) continue;
             var ents = grid.GetLocal(coords);
 
             if (ents.Any(x => IsTileBlockedFrom(x, direction))) continue;

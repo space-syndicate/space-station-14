@@ -11,6 +11,9 @@
   - type: Repairable
     fuelCost: 10
     doAfterDelay: 2
+  - type: Damageable
+    damageContainer: Inorganic
+    damageModifierSet: RGlass
   - type: Destructible
     thresholds:
     - trigger:
@@ -39,13 +42,12 @@
     graph: Window
     node: reinforcedWindow
   - type: Appearance
-    visuals:
-    - type: DamageVisualizer
-      thresholds: [4, 8, 12]
-      damageDivisor: 10
-      trackAllDamage: true
-      damageOverlay:
-        sprite: Structures/Windows/cracks.rsi
+  - type: DamageVisuals
+    thresholds: [4, 8, 12]
+    damageDivisor: 10
+    trackAllDamage: true
+    damageOverlay:
+      sprite: Structures/Windows/cracks.rsi
 
 - type: entity
   parent: ReinforcedWindow
@@ -63,8 +65,8 @@
     graph: Window
     node: tintedWindow
   - type: Occluder
-    sizeX: 32
-    sizeY: 32
+  - type: StaticPrice
+    price: 44
 
 - type: entity
   id: WindowReinforcedDirectional
@@ -86,6 +88,8 @@
   - type: Construction
     graph: WindowDirectional
     node: windowReinforcedDirectional
+  - type: Damageable
+    damageModifierSet: RGlass
   - type: Destructible
     thresholds:
     - trigger:
@@ -102,3 +106,5 @@
             max: 2
       - !type:DoActsBehavior
         acts: [ "Destruction" ]
+  - type: StaticPrice
+    price: 22

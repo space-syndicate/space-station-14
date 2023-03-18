@@ -1,8 +1,6 @@
-using System.Collections.Generic;
 using System.Linq;
 using Content.Server.Chat.Managers;
 using Content.Shared.Roles;
-using Robust.Shared.Localization;
 
 namespace Content.Server.Suspicion.Roles
 {
@@ -13,12 +11,12 @@ namespace Content.Server.Suspicion.Roles
         public SuspicionTraitorRole(Mind.Mind mind, AntagPrototype antagPrototype) : base(mind)
         {
             Prototype = antagPrototype;
-            Name = antagPrototype.Name;
+            Name = Loc.GetString(antagPrototype.Name);
             Antagonist = antagPrototype.Antagonist;
         }
 
         public override string Name { get; }
-        public string Objective => Prototype.Objective;
+        public string Objective => Loc.GetString(Prototype.Objective);
         public override bool Antagonist { get; }
 
         public void GreetSuspicion(List<SuspicionTraitorRole> traitors, IChatManager chatMgr)
@@ -32,7 +30,7 @@ namespace Content.Server.Suspicion.Roles
 
                 var partnerText = Loc.GetString(
                     "suspicion-partners-in-crime",
-                    ("partnerCount", traitors.Count-1),
+                    ("partnersCount", traitors.Count-1),
                     ("partnerNames", allPartners)
                 );
 

@@ -1,17 +1,14 @@
 using System.Linq;
- using Content.Server.Atmos;
 using Content.Server.Atmos.EntitySystems;
 using Content.Server.Disposal.Tube.Components;
 using Content.Server.Disposal.Tube;
 using Content.Server.Disposal.Unit.Components;
 using JetBrains.Annotations;
 using Robust.Shared.Containers;
-using Robust.Shared.GameObjects;
-using Robust.Shared.IoC;
 using Robust.Shared.Map;
-using Robust.Shared.Log;
-using Robust.Shared.Maths;
 using Robust.Shared.Physics;
+using Robust.Shared.Physics.Systems;
+using Robust.Shared.Physics.Components;
 
 namespace Content.Server.Disposal.Unit.EntitySystems
 {
@@ -21,9 +18,14 @@ namespace Content.Server.Disposal.Unit.EntitySystems
         [Dependency] private readonly IMapManager _mapManager = default!;
         [Dependency] private readonly DisposalUnitSystem _disposalUnitSystem = default!;
         [Dependency] private readonly DisposalTubeSystem _disposalTubeSystem = default!;
+        [Dependency] private readonly AtmosphereSystem _atmosphereSystem = default!;
+        [Dependency] private readonly SharedPhysicsSystem _physicsSystem = default!;
 
         public void ExitDisposals(EntityUid uid, DisposalHolderComponent? holder = null, TransformComponent? holderTransform = null)
         {
+            if (Terminating(uid))
+                return;
+
             if (!Resolve(uid, ref holder, ref holderTransform))
                 return;
             if (holder.IsExitingDisposals)
@@ -36,52 +38,51 @@ namespace Content.Server.Disposal.Unit.EntitySystems
             // Check for a disposal unit to throw them into and then eject them from it.
             // *This ejection also makes the target not collide with the unit.*
             // *This is on purpose.*
-            var grid = _mapManager.GetGrid(holderTransform.GridID);
-            var gridTileContents = grid.GetLocal(holderTransform.Coordinates);
+
+            EntityUid? disposalId = null;
             DisposalUnitComponent? duc = null;
-            foreach (var contentUid in gridTileContents)
+            if (_mapManager.TryGetGrid(holderTransform.GridUid, out var grid))
             {
-                if (EntityManager.TryGetComponent(contentUid, out duc))
-                    break;
+                foreach (var contentUid in grid.GetLocal(holderTransform.Coordinates))
+                {
+                    if (EntityManager.TryGetComponent(contentUid, out duc))
+                    {
+                        disposalId = contentUid;
+                        break;
+                    }
+                }
             }
 
             foreach (var entity in holder.Container.ContainedEntities.ToArray())
             {
-                if (HasComp<BeingDisposedComponent>(entity))
-                    RemComp <BeingDisposedComponent>(entity);
+                RemComp<BeingDisposedComponent>(entity);
 
-                if (EntityManager.TryGetComponent(entity, out IPhysBody? physics))
+                var meta = MetaData(entity);
+                holder.Container.Remove(entity, EntityManager, meta: meta, reparent: false, force: true);
+
+                var xform = Transform(entity);
+                if (xform.ParentUid != uid)
+                    continue;
+
+                if (duc != null)
+                    duc.Container.Insert(entity, EntityManager, xform, meta: meta);
+                else
+                    xform.AttachToGridOrMap();
+
+                if (EntityManager.TryGetComponent(entity, out PhysicsComponent? physics))
                 {
-                    physics.CanCollide = true;
-                }
-
-                holder.Container.ForceRemove(entity);
-
-                if (EntityManager.GetComponent<TransformComponent>(entity).Parent == holderTransform)
-                {
-                    if (duc != null)
-                    {
-                        // Insert into disposal unit
-                        EntityManager.GetComponent<TransformComponent>(entity).Coordinates = new EntityCoordinates((duc).Owner, Vector2.Zero);
-                        duc.Container.Insert(entity);
-                    }
-                    else
-                    {
-                        EntityManager.GetComponent<TransformComponent>(entity).AttachParentToContainerOrGrid();
-                    }
+                    _physicsSystem.WakeBody(entity, body: physics);
                 }
             }
 
-            if (duc != null)
+            if (disposalId != null && duc != null)
             {
-                _disposalUnitSystem.TryEjectContents(duc);
+                _disposalUnitSystem.TryEjectContents(disposalId.Value, duc);
             }
 
-            var atmosphereSystem = EntitySystem.Get<AtmosphereSystem>();
-
-            if (atmosphereSystem.GetTileMixture(holderTransform.Coordinates, true) is {} environment)
+            if (_atmosphereSystem.GetContainingMixture(uid, false, true) is {} environment)
             {
-                atmosphereSystem.Merge(environment, holder.Air);
+                _atmosphereSystem.Merge(environment, holder.Air);
                 holder.Air.Clear();
             }
 
@@ -111,7 +112,6 @@ namespace Content.Server.Disposal.Unit.EntitySystems
             }
 
             // Insert into next tube
-            holderTransform.Coordinates = new EntityCoordinates(toUid, Vector2.Zero);
             if (!to.Contents.Insert(holder.Owner))
             {
                 ExitDisposals(holderUid, holder, holderTransform);
@@ -123,7 +123,6 @@ namespace Content.Server.Disposal.Unit.EntitySystems
                 holder.PreviousTube = holder.CurrentTube;
                 holder.PreviousDirection = holder.CurrentDirection;
             }
-            holderTransform.Coordinates = toTransform.Coordinates;
             holder.CurrentTube = to;
             holder.CurrentDirection = to.NextDirection(holder);
             holder.StartingTime = 0.1f;
@@ -174,14 +173,15 @@ namespace Content.Server.Disposal.Unit.EntitySystems
                     var destination = holder.CurrentDirection.ToVec();
                     var newPosition = destination * progress;
 
-                    EntityManager.GetComponent<TransformComponent>(holder.Owner).Coordinates = origin.Offset(newPosition);
+                    // This is some supreme shit code.
+                    EntityManager.GetComponent<TransformComponent>(holder.Owner).Coordinates = origin.Offset(newPosition).WithEntityId(currentTube.Owner);
 
                     continue;
                 }
 
                 // Past this point, we are performing inter-tube transfer!
                 // Remove current tube content
-                currentTube.Contents.ForceRemove(holder.Owner);
+                currentTube.Contents.Remove(holder.Owner, reparent: false, force: true);
 
                 // Find next tube
                 var nextTube = _disposalTubeSystem.NextTubeFor(currentTube.Owner, holder.CurrentDirection);

@@ -1,7 +1,3 @@
-using Robust.Shared.GameObjects;
-using Robust.Shared.Serialization.Manager.Attributes;
-using Robust.Shared.ViewVariables;
-
 namespace Content.Server.Singularity.Components
 {
     /// <summary>
@@ -12,6 +8,6 @@ namespace Content.Server.Singularity.Components
     {
         [ViewVariables(VVAccess.ReadWrite)]
         [DataField("energy")]
-        public int Energy { get; set; } = 1;
+        public float Energy { get; set; } = 1f;
     }
 }

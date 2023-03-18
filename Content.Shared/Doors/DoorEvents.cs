@@ -1,5 +1,4 @@
 using Content.Shared.Doors.Components;
-using Robust.Shared.GameObjects;
 
 namespace Content.Shared.Doors
 {
@@ -69,7 +68,13 @@ namespace Content.Shared.Doors
     /// </summary>
     public sealed class DoorGetPryTimeModifierEvent : EntityEventArgs
     {
+        public readonly EntityUid User;
         public float PryTimeModifier = 1.0f;
+
+        public DoorGetPryTimeModifierEvent(EntityUid user)
+        {
+            User = user;
+        }
     }
 
     /// <summary>
@@ -79,10 +84,12 @@ namespace Content.Shared.Doors
     public sealed class BeforeDoorPryEvent : CancellableEntityEventArgs
     {
         public readonly EntityUid User;
+        public readonly EntityUid Tool;
 
-        public BeforeDoorPryEvent(EntityUid user)
+        public BeforeDoorPryEvent(EntityUid user, EntityUid tool)
         {
             User = user;
+            Tool = tool;
         }
     }
 }

@@ -1,7 +1,7 @@
 ent-BoxLRifleBase = коробка патронов (.30 винтовочные)
     .desc = { ent-BaseItem.desc }
     .suffix = { "" }
-ent-BoxLRifleBigBox = ящик патронов (.30 винтовочные)
+ent-BoxLRifleBigBox = коробка патронов (.30 винтовочные)
     .desc = { ent-BoxLRifleBase.desc }
     .suffix = { "" }
 ent-BoxLRifleBox = коробка патронов (.30 винтовочные)

@@ -5,9 +5,16 @@
   components:
   - type: Item
     size: 5
+  - type: StaticPrice
+    price: 20
   - type: Clickable
   - type: InteractionOutline
   - type: MovedByPressure
+  - type: EmitSoundOnLand
+    sound:
+      path: /Audio/Effects/drop.ogg
+      params:
+        volume: 2
   - type: DamageOnHighSpeedImpact
     damage:
       types:
@@ -24,15 +31,30 @@
     fixtures:
     - shape:
         !type:PhysShapeAabb
-          bounds: "-0.25,-0.25,0.25,0.25"
-      mass: 5
+        bounds: "-0.25,-0.25,0.25,0.25"
+      density: 20
       mask:
-      - Impassable
-      - SmallImpassable
+      - ItemMask
       restitution: 0.3  # fite me
       friction: 0.2
   - type: Sprite
     drawdepth: Items
     noRot: false
   - type: Pullable
-  - type: ExplosionLaunched
+
+- type: entity
+  name: "storage item"
+  id: BaseStorageItem
+  parent: BaseItem
+  abstract: true
+  components:
+  - type: Storage
+  - type: UserInterface
+    interfaces:
+    - key: enum.StorageUiKey.Key
+      type: StorageBoundUserInterface
+  - type: ContainerContainer
+    containers:
+      storagebase: !type:Container
+        ents: []
+

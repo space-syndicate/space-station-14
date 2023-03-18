@@ -1,6 +1,6 @@
-ent-AirAlarmElectronics = микросхема воздушной тревоги
+ent-AirAlarmElectronics = микросхема воздушной сигнализации
     .desc = { ent-BaseItem.desc }
     .suffix = { "" }
-ent-FireAlarmElectronics = микросхема пожарной тревоги
+ent-FireAlarmElectronics = микросхема пожарной сигнализации
     .desc = { ent-BaseItem.desc }
     .suffix = { "" }

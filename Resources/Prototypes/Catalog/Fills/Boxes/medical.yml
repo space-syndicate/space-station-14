@@ -10,7 +10,7 @@
         amount: 6
   - type: Sprite
     layers:
-      - state: box
+      - state: box_medical # Corvax-Resprite
       - state: syringe
 
 - type: entity
@@ -25,28 +25,43 @@
         amount: 6
   - type: Sprite
     layers:
-      - state: box
+      - state: box_medical # Corvax-Resprite
       - state: pillbox
 
 - type: entity
-  name: sterile box
+  name: bottle box
   parent: BoxCardboard
-  id: BoxSterile
+  id: BoxBottle
+  description: A box full of bottles.
+  components:
+  - type: StorageFill
+    contents:
+      - id: ChemistryEmptyBottle01
+        amount: 6
+  - type: Sprite
+    layers:
+      - state: box
+      - state: bottle
+
+- type: entity
+  name: sterile mask box
+  parent: BoxCardboard
+  id: BoxSterileMask
   description: This box contains sterile medical masks.
   components:
   - type: StorageFill
     contents:
       - id: ClothingMaskSterile
-        amount: 4
+        amount: 6
   - type: Sprite
     layers:
-      - state: box
+      - state: box_medical # Corvax-Resprite
       - state: sterile
 
 - type: entity
-  name: latex box
+  name: latex gloves box
   parent: BoxCardboard
-  id: BoxLatex
+  id: BoxLatexGloves
   description: Contains sterile latex gloves.
   components:
   - type: StorageFill
@@ -55,9 +70,34 @@
         amount: 4
   - type: Sprite
     layers:
-      - state: box
+      - state: box_medical # Corvax-Resprite
       - state: latex
       
+- type: entity
+  name: nitrile gloves box
+  parent: BoxCardboard
+  id: BoxNitrileGloves
+  description: Contains sterile nitrile gloves. Better than latex.
+  components:
+  - type: StorageFill
+    contents:
+      - id: ClothingHandsGlovesNitrile
+        amount: 4
+  - type: Sprite
+    layers:
+      - state: box_medical # Corvax-Resprite
+      - state: nitrile
+
+- type: entity
+  name: sterile swab box
+  parent: BoxCardboard
+  id: BoxMouthSwab
+  components:
+  - type: StorageFill
+    contents:
+      - id: DiseaseSwab
+        amount: 30
+
 - type: entity
   name: body bag box
   parent: BoxCardboard
@@ -70,7 +110,7 @@
         amount: 5
   - type: Sprite
     layers:
-      - state: box
+      - state: box_medical # Corvax-Resprite
       - state: bodybags
     whitelist:
       tags:

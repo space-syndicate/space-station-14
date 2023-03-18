@@ -1,9 +1,6 @@
-using Content.Server.Buckle.Components;
+using Content.Server.Buckle.Systems;
 using Content.Shared.Alert;
 using JetBrains.Annotations;
-using Robust.Shared.GameObjects;
-using Robust.Shared.IoC;
-using Robust.Shared.Serialization.Manager.Attributes;
 
 namespace Content.Server.Alert.Click
 {
@@ -16,10 +13,7 @@ namespace Content.Server.Alert.Click
     {
         public void AlertClicked(EntityUid player)
         {
-            if (IoCManager.Resolve<IEntityManager>().TryGetComponent(player, out BuckleComponent? buckle))
-            {
-                buckle.TryUnbuckle(player);
-            }
+            IoCManager.Resolve<IEntityManager>().System<BuckleSystem>().TryUnbuckle(player, player);
         }
     }
 }

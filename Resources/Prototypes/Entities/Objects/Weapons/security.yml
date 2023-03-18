@@ -6,33 +6,50 @@
   components:
   - type: Sprite
     sprite: Objects/Weapons/Melee/stunbaton.rsi
-    state: stunbaton_off
+    netsync: false
+    layers:
+    - state: stunbaton_off
+      map: [ "enum.ToggleVisuals.Layer" ]
   - type: Stunbaton
+    energyPerUse: 100
   - type: MeleeWeapon
     damage:
       types:
-        Blunt: 10
-    range: 1.5
-    arcwidth: 60
-    arc: default
-  - type: PowerCellSlot
-    slotSize: Medium
-    cellSlot:
-      startingItem: PowerCellMediumHigh
+        Blunt: 7
+    bluntStaminaDamageFactor: 2.0
+    angle: 60
+    animation: WeaponArcSlash
+  - type: StaminaDamageOnHit
+    damage: 55
+  - type: Battery
+    maxCharge: 1000
+    startingCharge: 1000
   - type: ItemCooldown
+  - type: Item
+    heldPrefix: off
+    size: 20
   - type: Clothing
     sprite: Objects/Weapons/Melee/stunbaton.rsi
-    HeldPrefix: off
-    QuickEquip: false
-    size: 20
-    Slots:
+    quickEquip: false
+    slots:
     - Belt
+  - type: DisarmMalus
+    malus: 0.225
+  - type: Appearance
+  - type: GenericVisualizer
+    visuals:
+     enum.ToggleVisuals.Toggled:
+        enum.ToggleVisuals.Layer:
+          True: {state: stunbaton_on}
+          False: {state: stunbaton_off}
+  - type: StaticPrice
+    price: 100
 
 - type: entity
   name: flash
   parent: BaseItem
   id: Flash
-  description: An ultrabright flashbulb with a trigger, causes the victum to be dazed and lose their eyesight for a moment. Useless when burnt out.
+  description: An ultrabright flashbulb with a trigger, which causes the victim to be dazed and lose their eyesight for a moment. Useless when burnt out.
   components:
     - type: Sprite
       sprite: Objects/Weapons/Melee/flash.rsi
@@ -42,13 +59,13 @@
       damage:
         types:
           Blunt: 0 # why is this classed as a melee weapon? Is it needed for some interaction?
-      range: 1
-      arcWidth: 10
-      arc: default
+      angle: 10
     - type: Item
-      size: 2
+      size: 5
       sprite: Objects/Weapons/Melee/flash.rsi
     - type: ItemCooldown
+    - type: StaticPrice
+      price: 40
 
 - type: entity
   name: portable flasher
@@ -56,7 +73,7 @@
   id: PortableFlasher
   description: An ultrabright flashbulb with a proximity trigger, useful for making an area security-only.
   components:
-    - type: SoundOnTrigger
+    - type: EmitSoundOnTrigger
       sound:
         path: /Audio/Weapons/flash.ogg
     - type: FlashOnTrigger
@@ -81,14 +98,12 @@
       fixtures:
       - shape:
           !type:PhysShapeAabb
-            bounds: "-0.15,-0.3,0.15,0.3"
+          bounds: "-0.15,-0.3,0.15,0.3"
         mask:
-        - Impassable
-        - VaultImpassable
-        - SmallImpassable
+        - MachineMask
         layer:
-        - MobImpassable
-        mass: 70
+        - MachineLayer
+        density: 380
     - type: Appearance
     - type: AnimationPlayer
     - type: PointLight

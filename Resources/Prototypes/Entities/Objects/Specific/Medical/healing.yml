@@ -7,7 +7,10 @@
     sprite: Objects/Specific/Medical/medical.rsi
   - type: Item
     sprite: Objects/Specific/Medical/medical.rsi
-    HeldPrefix: ointment
+    heldPrefix: ointment
+  # Inherited
+  - type: StaticPrice
+    price: 0
 
 - type: entity
   name: ointment
@@ -21,20 +24,21 @@
   - type: Sprite
     state: ointment
   - type: Item
-    HeldPrefix: ointment
+    heldPrefix: ointment
   - type: Healing
     damageContainer: Biological
     damage:
       groups:
-        Burn: -10 # 5 for each type in the group
+        Burn: -15 # 5 for each type in the group
     healingBeginSound:
       path: "/Audio/Items/Medical/ointment_begin.ogg"
     healingEndSound:
       path: "/Audio/Items/Medical/ointment_end.ogg"
   - type: Stack
     stackType: Ointment
-    max: 5
-    count: 5
+    count: 10
+  - type: StackPrice
+    price: 10
 
 - type: entity
   name: bruise pack
@@ -59,6 +63,9 @@
       path: "/Audio/Items/Medical/brutepack_end.ogg"
   - type: Stack
     stackType: Brutepack
+    count: 10
+  - type: StackPrice
+    price: 10
 
 - type: entity
   name: roll of gauze
@@ -87,6 +94,9 @@
       path: "/Audio/Items/Medical/brutepack_end.ogg"
   - type: Stack
     stackType: Gauze
+    count: 10
+  - type: StackPrice
+    price: 10
 
 - type: entity
   id: Gauze1
@@ -105,8 +115,11 @@
     netsync: false
     sprite: Objects/Specific/Hydroponics/aloe.rsi
     state: cream
+  - type: Stack
+    stackType: AloeCream
+    count: 10
 
-# Pills     
+# Pills
 - type: entity
   name: dexalin pill
   parent: Pill
@@ -119,7 +132,7 @@
         reagents:
         - ReagentId: Dexalin
           Quantity: 15
-          
+
 - type: entity
   name: dylovene pill
   parent: Pill
@@ -145,7 +158,7 @@
         reagents:
         - ReagentId: Hyronalin
           Quantity: 15
-          
+
 - type: entity
   name: iron pill
   parent: Pill
@@ -171,7 +184,7 @@
         reagents:
         - ReagentId: Kelotane
           Quantity: 15
-       
+
 - type: entity
   name: space drugs
   parent: Pill
@@ -184,7 +197,7 @@
         reagents:
         - ReagentId: SpaceDrugs
           Quantity: 15
-          
+
 - type: entity
   name: tricordrazine pill
   parent: Pill
@@ -197,11 +210,24 @@
         reagents:
         - ReagentId: Tricordrazine
           Quantity: 15
-          
+
+- type: entity
+  name: romerol pill
+  parent: Pill
+  id: PillRomerol
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 50
+        reagents:
+        - ReagentId: Romerol
+          Quantity: 10
+
 # Syringes
 - type: entity
   name: ephedrine syringe
-  parent: Syringe
+  parent: BaseSyringe
   id: SyringeEphedrine
   components:
   - type: SolutionContainerManager
@@ -214,7 +240,7 @@
 
 - type: entity
   name: inaprovaline syringe
-  parent: Syringe
+  parent: BaseSyringe
   id: SyringeInaprovaline
   components:
   - type: SolutionContainerManager
@@ -226,8 +252,21 @@
           Quantity: 15
 
 - type: entity
+  name: tranexamic acid syringe
+  parent: BaseSyringe
+  id: SyringeTranexamicAcid
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      injector:
+        maxVol: 15
+        reagents:
+        - ReagentId: TranexamicAcid
+          Quantity: 15
+
+- type: entity
   name: spaceacillin syringe
-  parent: Syringe
+  parent: BaseSyringe
   id: SyringeSpaceacillin
   components:
   - type: SolutionContainerManager
@@ -239,15 +278,28 @@
           Quantity: 15
 
 - type: entity
-  name: tranexamic acid syringe
-  parent: Syringe
-  id: SyringeTranexamicAcid
+  name: ipecac syringe
+  parent: BaseSyringe
+  id: SyringeIpecac
   components:
   - type: SolutionContainerManager
     solutions:
       injector:
         maxVol: 15
         reagents:
-        - ReagentId: TranexamicAcid
+        - ReagentId: Ipecac
           Quantity: 15
-        
+
+#this is where all the syringes are so i didn't know where to put it
+- type: entity
+  name: corpium syringe
+  parent: BaseSyringe
+  id: SyringeCorpium
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      injector:
+        maxVol: 15
+        reagents:
+        - ReagentId: Corpium
+          Quantity: 10

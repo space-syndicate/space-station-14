@@ -2,10 +2,6 @@
 using System.Linq;
 using Content.Server.NodeContainer;
 using Content.Server.NodeContainer.NodeGroups;
-using Robust.Shared.GameObjects;
-using Robust.Shared.IoC;
-using Robust.Shared.Serialization.Manager.Attributes;
-using Robust.Shared.ViewVariables;
 
 namespace Content.Server.Power.Components
 {
@@ -32,7 +28,7 @@ namespace Content.Server.Power.Components
         [ViewVariables]
         private bool _needsNet => _net != null;
 
-        [DataField("node")] [ViewVariables] public string? NodeId { get; set; }
+        [DataField("node")] public string? NodeId { get; set; }
 
         protected override void Initialize()
         {

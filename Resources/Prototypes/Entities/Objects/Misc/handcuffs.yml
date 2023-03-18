@@ -7,18 +7,20 @@
   - type: Item
     size: 3
   - type: Handcuff
-    cuffTime: 3.0
-    uncuffTime: 3.0
-    stunBonus: 2.0
-    breakoutTime: 20.0
     cuffedRSI: Objects/Misc/handcuffs.rsi
-    iconState: body-overlay
+    bodyIconState: body-overlay
   - type: Sprite
     sprite: Objects/Misc/handcuffs.rsi
     state: handcuff
   - type: Tag
     tags:
     - Handcuffs
+  - type: MeleeWeapon
+    resetOnHandSelected: false
+    animation: WeaponArcDisarm
+    damage:
+      types:
+        Blunt: 0
 
 - type: entity
   name: makeshift handcuffs
@@ -29,17 +31,12 @@
   - type: Item
     size: 5
   - type: Handcuff
-    cuffTime: 3.5
-    uncuffTime: 3.5
-    stunBonus: 2.0
-    breakoutTime: 15.0
+    breakoutTime: 15
     cuffedRSI: Objects/Misc/cablecuffs.rsi
     bodyIconState: body-overlay
-    color: red
+    color: forestgreen
     breakOnRemove: true
-    brokenIconState: cuff-broken
-    brokenName: broken cables
-    brokenDesc: These cables are broken in several places and don't seem very useful.
+    brokenPrototype: CablecuffsBroken
     startCuffSound:
       path: /Audio/Items/Handcuffs/rope_start.ogg
     endCuffSound:
@@ -56,7 +53,7 @@
   - type: Sprite
     sprite: Objects/Misc/cablecuffs.rsi
     state: cuff
-    color: red
+    color: forestgreen
 
 - type: entity
   name: zipties
@@ -67,16 +64,11 @@
   - type: Item
     size: 2
   - type: Handcuff
-    cuffTime: 3.5
-    uncuffTime: 3.5
-    stunBonus: 2.0
-    breakoutTime: 17.5 #halfway between improvised cablecuffs and metal ones
-    cuffedRSI: Objects/Misc/cablecuffs.rsi #cablecuffs will look fine
+    breakoutTime: 20  # halfway between improvised cablecuffs and metal ones
+    cuffedRSI: Objects/Misc/cablecuffs.rsi  # cablecuffs will look fine
     bodyIconState: body-overlay
     breakOnRemove: true
-    brokenIconState: cuff-broken
-    brokenName: broken zipties
-    brokenDesc: These zipties look like they tried to manage the wrong cables.
+    brokenPrototype: ZiptiesBroken
     startCuffSound:
       path: /Audio/Items/Handcuffs/ziptie_start.ogg
     endCuffSound:
@@ -90,3 +82,30 @@
   - type: Sprite
     sprite: Objects/Misc/zipties.rsi
     state: cuff
+
+- type: entity
+  name: broken zipties
+  description: These zipties look like they tried to manage the wrong cables.
+  id: ZiptiesBroken
+  parent: BaseItem
+  components:
+  - type: Sprite
+    sprite: Objects/Misc/zipties.rsi
+    state: cuff-broken
+  - type: Item
+    size: 2
+  - type: Recyclable
+
+- type: entity
+  name: broken cables
+  description: These cables are broken in several places and don't seem very useful.
+  id: CablecuffsBroken
+  parent: BaseItem
+  components:
+  - type: Sprite
+    sprite: Objects/Misc/cablecuffs.rsi
+    state: cuff-broken
+    color: red
+  - type: Item
+    size: 2
+  - type: Recyclable

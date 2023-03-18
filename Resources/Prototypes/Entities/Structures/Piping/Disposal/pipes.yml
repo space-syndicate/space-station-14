@@ -10,12 +10,21 @@
   components:
   - type: Sprite
     netsync: false
+    visible: false
+  - type: Appearance
   - type: SubFloorHide
   - type: Clickable
   - type: InteractionOutline
   - type: Physics
     bodyType: Static
+    canCollide: false
   - type: Fixtures
+    fixtures:
+    - shape:
+        !type:PhysShapeAabb
+        bounds: "-0.25,-0.5,0.25,0.5"
+      mask:
+      - SubfloorMask
   - type: Transform
     anchored: true
   - type: Anchorable
@@ -40,13 +49,22 @@
         node: broken
   - type: Rotatable
   - type: Pullable
+  - type: CollideOnAnchor
+  - type: ContainerContainer
+    containers:
+      DisposalTube: !type:Container
+  - type: StaticPrice
+    price: 100
 
 - type: entity
   id: DisposalHolder
-  abstract: true
+  noSpawn: true
   name: disposal holder
   components:
   - type: DisposalHolder
+  - type: ContainerContainer
+    containers:
+      DisposalHolderComponent: !type:Container
 
 # Pipes
 
@@ -59,14 +77,9 @@
   - type: Sprite
     drawdepth: ThickPipe
     sprite: Structures/Piping/disposal.rsi
-    state: pipe-b
-  - type: Physics
-  - type: Fixtures
-    fixtures:
-    - shape:
-        !type:PhysShapeAabb
-          bounds: "-0.25,-0.5,0.25,0.5"
-      layer: [ Underplating ]
+    layers:
+    - map: [ "pipe" ]
+      state: pipe-b
   - type: Construction
     graph: DisposalPipe
     node: broken
@@ -75,25 +88,24 @@
   id: DisposalPipe
   parent: DisposalPipeBase
   name: disposal pipe segment
-  description: A huge pipe segment used for constructing disposal systems
+  description: A huge pipe segment used for constructing disposal systems.
   components:
   - type: Sprite
     drawdepth: ThickPipe
     sprite: Structures/Piping/disposal.rsi
-    state: conpipe-s
+    layers:
+    - map: [ "pipe" ]
+      state: conpipe-s
   - type: DisposalTransit
-  - type: Appearance
+  - type: ContainerContainer
+    containers:
+      DisposalTransit: !type:Container
+  - type: GenericVisualizer
     visuals:
-    - type: DisposalVisualizer
-      state_free: conpipe-s
-      state_anchored: pipe-s
-  - type: Physics
-  - type: Fixtures
-    fixtures:
-    - shape:
-        !type:PhysShapeAabb
-          bounds: "-0.25,-0.5,0.25,0.5"
-      layer: [ Underplating ]
+      enum.DisposalTubeVisuals.VisualState:
+        pipe:
+          Free: { state: conpipe-s }
+          Anchored: { state: pipe-s }
   - type: Construction
     graph: DisposalPipe
     node: pipe
@@ -102,29 +114,30 @@
   id: DisposalTagger
   parent: DisposalPipeBase
   name: disposal pipe tagger
-  description: A pipe that tags entities for routing
+  description: A pipe that tags entities for routing.
   components:
   - type: Sprite
     drawdepth: ThickPipe
     sprite: Structures/Piping/disposal.rsi
-    state: conpipe-tagger
+    layers:
+    - map: [ "pipe" ]
+      state: conpipe-tagger
   - type: DisposalTagger
-  - type: Appearance
+  - type: ContainerContainer
+    containers:
+      DisposalTagger: !type:Container
+  - type: GenericVisualizer
     visuals:
-    - type: DisposalVisualizer
-      state_free: conpipe-tagger
-      state_anchored: pipe-tagger
+      enum.DisposalTubeVisuals.VisualState:
+        pipe:
+          Free: { state: conpipe-tagger }
+          Anchored: { state: pipe-tagger }
+  - type: ActivatableUI
+    key: enum.DisposalTaggerUiKey.Key
   - type: UserInterface
     interfaces:
     - key: enum.DisposalTaggerUiKey.Key
       type: DisposalTaggerBoundUserInterface
-  - type: Physics
-  - type: Fixtures
-    fixtures:
-      - shape:
-          !type:PhysShapeAabb
-            bounds: "-0.25,-0.5,0.25,0.5"
-        layer: [ Underplating ]
   - type: Construction
     graph: DisposalPipe
     node: tagger
@@ -133,25 +146,31 @@
   id: DisposalTrunk
   parent: DisposalPipeBase
   name: disposal trunk
-  description: A pipe trunk used as an entry point for disposal systems
+  description: A pipe trunk used as an entry point for disposal systems.
   components:
   - type: Sprite
     drawdepth: ThickPipe
     sprite: Structures/Piping/disposal.rsi
-    state: conpipe-t
+    layers:
+    - map: [ "pipe" ]
+      state: conpipe-t
   - type: DisposalEntry
-  - type: Appearance
+  - type: ContainerContainer
+    containers:
+      DisposalEntry: !type:Container
+  - type: GenericVisualizer
     visuals:
-    - type: DisposalVisualizer
-      state_free: conpipe-t
-      state_anchored: pipe-t
-  - type: Physics
+      enum.DisposalTubeVisuals.VisualState:
+        pipe:
+          Free: { state: conpipe-t }
+          Anchored: { state: pipe-t }
   - type: Fixtures
     fixtures:
-      - shape:
-          !type:PhysShapeAabb
-            bounds: "-0.25,-0.5,0.25,0.4"
-        layer: [ Underplating ]
+    - shape:
+        !type:PhysShapeAabb
+        bounds: "-0.25,-0.5,0.25,0.4"
+      mask:
+      - SubfloorMask
   - type: Construction
     graph: DisposalPipe
     node: trunk
@@ -160,129 +179,158 @@
   id: DisposalRouter
   parent: DisposalPipeBase
   name: disposal router
-  description: A three-way router. Entities with matching tags get routed to the side
+  description: A three-way router. Entities with matching tags get routed to the side via configurable filters.
   components:
   - type: Sprite
     drawdepth: ThickPipe
     sprite: Structures/Piping/disposal.rsi
-    state: conpipe-j1s
+    layers:
+    - map: [ "pipe" ]
+      state: conpipe-j1s
   - type: DisposalRouter
     degrees:
     - 0
     - -90
     - 180
-  - type: Appearance
+  - type: ContainerContainer
+    containers:
+      DisposalRouter: !type:Container
+  - type: GenericVisualizer
     visuals:
-    - type: DisposalVisualizer
-      state_free: conpipe-j1s
-      state_anchored: pipe-j1s
+      enum.DisposalTubeVisuals.VisualState:
+        pipe:
+          Free: { state: conpipe-j1s }
+          Anchored: { state: pipe-j1s }
   - type: Flippable
     mirrorEntity: DisposalRouterFlipped
+  - type: ActivatableUI
+    key: enum.DisposalRouterUiKey.Key
   - type: UserInterface
     interfaces:
     - key: enum.DisposalRouterUiKey.Key
       type: DisposalRouterBoundUserInterface
-  - type: Physics
   - type: Fixtures
     fixtures:
-      - shape:
-          !type:PhysShapeAabb
-            bounds: "-0.5,-0.5,0.25,0.5"
-        layer: [ Underplating ]
+    - shape:
+        !type:PhysShapeAabb
+        bounds: "-0.5,-0.5,0.25,0.5"
+      mask:
+      - SubfloorMask
   - type: Construction
     graph: DisposalPipe
     node: router
 
 - type: entity
   id: DisposalRouterFlipped
+  description: A three-way router. Entities with matching tags get routed to the side.
   parent: DisposalRouter
   suffix: flipped
   components:
   - type: Sprite
     drawdepth: ThickPipe
     sprite: Structures/Piping/disposal.rsi
-    state: conpipe-j2s
+    layers:
+    - map: [ "pipe" ]
+      state: conpipe-j2s
   - type: DisposalRouter
     degrees:
     - 0
     - 90
     - 180
-  - type: Appearance
+  - type: ContainerContainer
+    containers:
+      DisposalRouter: !type:Container
+  - type: GenericVisualizer
     visuals:
-    - type: DisposalVisualizer
-      state_free: conpipe-j2s
-      state_anchored: pipe-j2s
+      enum.DisposalTubeVisuals.VisualState:
+        pipe:
+          Free: { state: conpipe-j2s }
+          Anchored: { state: pipe-j2s }
   - type: Flippable
     mirrorEntity: DisposalRouter
-  - type: Physics
   - type: Fixtures
     fixtures:
     - shape:
         !type:PhysShapeAabb
-          bounds: "-0.25,-0.5,0.5,0.5"
-      layer: [ Underplating ]
+        bounds: "-0.25,-0.5,0.5,0.5"
+      mask:
+      - SubfloorMask
 
 - type: entity
   id: DisposalJunction
   parent: DisposalPipeBase
   name: disposal junction
-  description: A three-way junction. The arrow indicates where items exit
+  description: A three-way junction. The arrow indicates where items exit.
   components:
   - type: Sprite
     drawdepth: ThickPipe
     sprite: Structures/Piping/disposal.rsi
-    state: conpipe-j1
+    layers:
+    - map: [ "pipe" ]
+      state: conpipe-j1
+    visible: true
   - type: DisposalJunction
     degrees:
     - 0
     - -90
     - 180
-  - type: Appearance
+  - type: ContainerContainer
+    containers:
+      DisposalJunction: !type:Container
+  - type: GenericVisualizer
     visuals:
-    - type: DisposalVisualizer
-      state_free: conpipe-j1
-      state_anchored: pipe-j1
+      enum.DisposalTubeVisuals.VisualState:
+        pipe:
+          Free: { state: conpipe-j1 }
+          Anchored: { state: pipe-j1 }
   - type: Flippable
     mirrorEntity: DisposalJunctionFlipped
-  - type: Physics
   - type: Fixtures
     fixtures:
     - shape:
         !type:PhysShapeAabb
-          bounds: "-0.5,-0.5,0.25,0.5"
-      layer: [ Underplating ]
+        bounds: "-0.5,-0.5,0.25,0.5"
+      mask:
+      - SubfloorMask
   - type: Construction
     graph: DisposalPipe
     node: junction
 
 - type: entity
   id: DisposalJunctionFlipped
+  description: A three-way junction. The arrow indicates where items exit.
   parent: DisposalJunction
   suffix: flipped
   components:
   - type: Sprite
     drawdepth: ThickPipe
     sprite: Structures/Piping/disposal.rsi
-    state: conpipe-j2
+    layers:
+    - map: [ "pipe" ]
+      state: conpipe-j2
   - type: DisposalJunction
     degrees:
     - 0
     - 90
     - 180
-  - type: Appearance
+  - type: ContainerContainer
+    containers:
+      DisposalJunction: !type:Container
+  - type: GenericVisualizer
     visuals:
-    - type: DisposalVisualizer
-      state_free: conpipe-j2
-      state_anchored: pipe-j2
+      enum.DisposalTubeVisuals.VisualState:
+        pipe:
+          Free: { state: conpipe-j2 }
+          Anchored: { state: pipe-j2 }
   - type: Flippable
     mirrorEntity: DisposalJunction
-  - type: Physics
   - type: Fixtures
     fixtures:
     - shape:
         !type:PhysShapeAabb
-          bounds: "-0.25,-0.5,0.5,0.5"
-      layer: [ Underplating ]
+        bounds: "-0.25,-0.5,0.5,0.5"
+      mask:
+      - SubfloorMask
 
 - type: entity
   id: DisposalYJunction
@@ -293,24 +341,30 @@
   - type: Sprite
     drawdepth: ThickPipe
     sprite: Structures/Piping/disposal.rsi
-    state: conpipe-y
+    layers:
+    - map: [ "pipe" ]
+      state: conpipe-y
   - type: DisposalJunction
     degrees:
     - 0
     - 90
     - -90
-  - type: Appearance
+  - type: ContainerContainer
+    containers:
+      DisposalJunction: !type:Container
+  - type: GenericVisualizer
     visuals:
-    - type: DisposalVisualizer
-      state_free: conpipe-y
-      state_anchored: pipe-y
-  - type: Physics
+      enum.DisposalTubeVisuals.VisualState:
+        pipe:
+          Free: { state: conpipe-y }
+          Anchored: { state: pipe-y }
   - type: Fixtures
     fixtures:
     - shape:
         !type:PhysShapeAabb
-          bounds: "-0.5,-0.5,0.5,0.25"
-      layer: [ Underplating ]
+        bounds: "-0.5,-0.5,0.5,0.25"
+      mask:
+      - SubfloorMask
   - type: Construction
     graph: DisposalPipe
     node: yJunction
@@ -324,20 +378,26 @@
   - type: Sprite
     drawdepth: ThickPipe
     sprite: Structures/Piping/disposal.rsi
-    state: conpipe-c
+    layers:
+    - map: [ "pipe" ]
+      state: conpipe-c
   - type: DisposalBend
-  - type: Appearance
+  - type: ContainerContainer
+    containers:
+      DisposalBend: !type:Container
+  - type: GenericVisualizer
     visuals:
-    - type: DisposalVisualizer
-      state_free: conpipe-c
-      state_anchored: pipe-c
-  - type: Physics
+      enum.DisposalTubeVisuals.VisualState:
+        pipe:
+          Free: { state: conpipe-c }
+          Anchored: { state: pipe-c }
   - type: Fixtures
     fixtures:
     - shape:
         !type:PhysShapeAabb
-          bounds: "-0.5,-0.5,0.25,0.25"
-      layer: [ Underplating ]
+        bounds: "-0.5,-0.5,0.25,0.25"
+      mask:
+      - SubfloorMask
   - type: Construction
     graph: DisposalPipe
     node: bend

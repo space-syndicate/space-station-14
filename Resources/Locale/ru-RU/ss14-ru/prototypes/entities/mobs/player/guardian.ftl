@@ -1,3 +1,9 @@
-ent-MobHoloparasite = Holoparasite
-    .desc = A mesmerising whirl of hard-light patterns weaves a marvelous, yet oddly familiar visage. It stands proud, tuning into its owner's life to sustain itself.
+ent-MobGuardianBase = БазовыйСтраж
+    .desc = страж
+    .suffix = { "" }
+ent-MobHoloparasiteGuardian = Голопаразит
+    .desc = Завораживающий вихрь узоров яркого света сплетает удивительный, но странно знакомый облик. Он стоит гордо, настраиваясь на жизнь своего владельца, чтобы поддерживать себя.
+    .suffix = { "" }
+ent-MobIfritGuardian = Ифрит
+    .desc = Испорченный джинн, вырванный из Фитры, чтобы прислуживать волшебнику в его низменных нуждах. Он стоит злой, настраиваясь на жизнь своего владельца, чтобы поддерживать себя.
     .suffix = { "" }

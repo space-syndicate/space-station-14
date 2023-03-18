@@ -10,3 +10,6 @@ ent-BoxSechud = sechud box
 ent-BoxZiptie = ziptie box
     .desc = A box full of zipties.
     .suffix = { "" }
+ent-BoxForensicPad = forensic pad box
+    .desc = A box of forensic pads.
+    .suffix = { "" }

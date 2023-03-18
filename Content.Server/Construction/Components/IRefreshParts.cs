@@ -1,5 +1,4 @@
-﻿using System.Collections.Generic;
-using Robust.Shared.Analyzers;
+﻿using Content.Shared.Construction.Components;
 
 namespace Content.Server.Construction.Components
 {

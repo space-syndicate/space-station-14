@@ -1,11 +1,15 @@
 - type: job
   id: Warden
-  name: "warden"
+  name: job-name-warden
+  description: job-description-warden
+  playTimeTracker: JobWarden
+  requirements:
+    - !type:DepartmentTimeRequirement
+      department: Security
+      time: 108000 # Corvax-RoleTime
   startingGear: WardenGear
-  departments:
-  - Security
   icon: "Warden"
-  supervisors: "the head of security"
+  supervisors: job-supervisors-hos
   canBeAntag: false
   access:
   - Security
@@ -13,6 +17,7 @@
   - Maintenance
   - Service
   - Brig
+  - External
 
 - type: startingGear
   id: WardenGear
@@ -20,7 +25,7 @@
     head: ClothingHeadHatWarden
     jumpsuit: ClothingUniformJumpsuitWarden
     back: ClothingBackpackSecurityFilled
-    shoes: ClothingShoesBootsJack
+    shoes: ClothingShoesBootsJackSec # Corvax-Resprite
     eyes: ClothingEyesGlassesSecurity
     outerClothing: ClothingOuterCoatWarden
     id: WardenPDA

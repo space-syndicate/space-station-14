@@ -1,5 +1,5 @@
 - type: entity
-  parent: BaseItem
+  parent: BaseStorageItem
   id: DiceBag
   name: bag of dice
   description: Contains all the luck you'll ever need.
@@ -12,7 +12,7 @@
       - id: d10Dice
       - id: d12Dice
       - id: d20Dice
-      - id: d100Dice
+      - id: PercentileDie
   - type: Sprite
     netsync: false
     sprite: Objects/Fun/dice.rsi

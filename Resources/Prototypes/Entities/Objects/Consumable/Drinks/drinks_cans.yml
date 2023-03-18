@@ -25,21 +25,30 @@
     state: icon
     layers:
       - state: icon
-        map: ["enum.DrinkCanVisualLayers.Icon"]
+        map: ["drinkCanIcon"]
     netsync: false
+  - type: FitsInDispenser
+    solution: drink
+  - type: DrawableSolution
+    solution: drink
+  - type: RefillableSolution
+    solution: drink
   - type: DrainableSolution
     solution: drink
   - type: Appearance
+  - type: GenericVisualizer
     visuals:
-    - type: DrinkCanVisualizer
-      stateClosed: icon
-      stateOpen: icon_open
-  - type: Tag
-    tags:
-    - Recyclable
-    - Trash
+      enum.DrinkCanStateVisual.Opened:
+        drinkCanIcon:
+          True: {state: "icon_open"}
+          False: {state: "icon"}
+  - type: Spillable
+    solution: drink
   - type: ItemCooldown
   - type: Recyclable
+  - type: SpaceGarbage
+  - type: TrashOnEmpty
+    solution: drink
 
 - type: entity
   parent: DrinkCanBaseFull
@@ -58,7 +67,6 @@
     tags:
     - Cola
     - Recyclable
-    - Trash
   - type: Sprite
     sprite: Objects/Consumable/Drinks/cola.rsi
   - type: Item
@@ -137,7 +145,7 @@
     sprite: Objects/Consumable/Drinks/rootbeer.rsi
 
 - type: entity
-  parent: DrinkGlassBase
+  parent: DrinkCanBaseFull
   id: DrinkSodaWaterCan
   name: soda water can
   description: Soda water. Why not make a scotch and soda?
@@ -145,10 +153,10 @@
   - type: SolutionContainerManager
     solutions:
       drink:
-        maxVol: 50
+        maxVol: 30
         reagents:
         - ReagentId: SodaWater
-          Quantity: 50
+          Quantity: 30
   - type: Drink
   - type: Sprite
     sprite: Objects/Consumable/Drinks/sodawater.rsi
@@ -216,10 +224,10 @@
   - type: SolutionContainerManager
     solutions:
       drink:
-        maxVol: 50
+        maxVol: 30
         reagents:
         - ReagentId: TonicWater
-          Quantity: 50
+          Quantity: 30
   - type: Drink
   - type: Sprite
     sprite: Objects/Consumable/Drinks/tonic.rsi
@@ -301,7 +309,7 @@
 
 - type: entity
   id: DrinkCanPack
-  parent: BaseItem
+  parent: BaseStorageItem
   name: 6pack
   components:
   - type: Sprite

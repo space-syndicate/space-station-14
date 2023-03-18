@@ -1,8 +1,8 @@
 using Content.Shared.Damage;
-using Content.Shared.Sound;
 using Content.Shared.Tools;
+using JetBrains.Annotations;
+using Robust.Shared.Audio;
 using Robust.Shared.GameStates;
-using Robust.Shared.Prototypes;
 using Robust.Shared.Serialization;
 using Robust.Shared.Serialization.TypeSerializers.Implementations.Custom;
 using Robust.Shared.Serialization.TypeSerializers.Implementations.Custom.Prototype;
@@ -59,6 +59,9 @@ public sealed class DoorComponent : Component, ISerializationHooks
     [DataField("denyDuration")]
     public readonly TimeSpan DenyDuration = TimeSpan.FromSeconds(0.45f);
 
+    [DataField("emagDuration")]
+    public readonly TimeSpan EmagDuration = TimeSpan.FromSeconds(0.8f);
+
     /// <summary>
     ///     When the door is active, this is the time when the state will next update.
     /// </summary>
@@ -70,24 +73,6 @@ public sealed class DoorComponent : Component, ISerializationHooks
     /// </summary>
     [DataField("partial")]
     public bool Partial;
-    #endregion
-
-    #region Welding
-    // TODO WELDING. Consider creating a WeldableComponent for use with doors, crates and lockers? Currently they all
-    // have their own welding logic.
-    [DataField("weldingQuality", customTypeSerializer: typeof(PrototypeIdSerializer<ToolQualityPrototype>))]
-    public string WeldingQuality = "Welding";
-
-    /// <summary>
-    /// Whether the door can ever be welded shut.
-    /// </summary>
-    [DataField("weldable")]
-    public bool Weldable = true;
-
-    /// <summary>
-    ///     Whether something is currently using a welder on this so DoAfter isn't spammed.
-    /// </summary>
-    public bool BeingWelded;
     #endregion
 
     public bool BeingPried;
@@ -116,6 +101,12 @@ public sealed class DoorComponent : Component, ISerializationHooks
     /// </summary>
     [DataField("tryOpenDoorSound")]
     public SoundSpecifier TryOpenDoorSound = new SoundPathSpecifier("/Audio/Effects/bang.ogg");
+
+    /// <summary>
+    /// Sound to play when door has been emagged or possibly electrically tampered
+    /// </summary>
+    [DataField("sparkSound")]
+    public SoundSpecifier SparkSound = new SoundCollectionSpecifier("sparks");
     #endregion
 
     #region Crushing
@@ -155,31 +146,29 @@ public sealed class DoorComponent : Component, ISerializationHooks
     ///     Time until next state change. Because apparently <see cref="IGameTiming.CurTime"/> might not get saved/restored.
     /// </summary>
     [DataField("SecondsUntilStateChange")]
-    private float? _secondsUntilStateChange;
-
-    void ISerializationHooks.BeforeSerialization()
+    private float? SecondsUntilStateChange
     {
-        if (NextStateChange == null)
+        [UsedImplicitly]
+        get
         {
-            _secondsUntilStateChange = null;
-            return;
-        };
-        
-        var curTime = IoCManager.Resolve<IGameTiming>().CurTime;
-        _secondsUntilStateChange = (float) (NextStateChange.Value - curTime).TotalSeconds;
-    }
+            if (NextStateChange == null)
+            {
+                return null;
+            }
 
-    void ISerializationHooks.AfterDeserialization()
-    {
-        if (_secondsUntilStateChange == null || _secondsUntilStateChange.Value > 0)
-            return;
+            var curTime = IoCManager.Resolve<IGameTiming>().CurTime;
+            return (float) (NextStateChange.Value - curTime).TotalSeconds;
+        }
+        set
+        {
+            if (value == null || value.Value > 0)
+                return;
 
-        NextStateChange = IoCManager.Resolve<IGameTiming>().CurTime + TimeSpan.FromSeconds(_secondsUntilStateChange.Value);
+            NextStateChange = IoCManager.Resolve<IGameTiming>().CurTime + TimeSpan.FromSeconds(value.Value);
+
+        }
     }
     #endregion
-
-    [DataField("board", customTypeSerializer: typeof(PrototypeIdSerializer<EntityPrototype>))]
-    public string? BoardPrototype;
 
     [DataField("pryingQuality", customTypeSerializer: typeof(PrototypeIdSerializer<ToolQualityPrototype>))]
     public string PryingQuality = "Prying";
@@ -230,6 +219,7 @@ public enum DoorState
     Opening,
     Welded,
     Denying,
+    Emagging
 }
 
 [Serializable, NetSerializable]
@@ -239,6 +229,8 @@ public enum DoorVisuals
     Powered,
     BoltLights,
     EmergencyLights,
+    ClosedLights,
+    BaseRSI,
 }
 
 [Serializable, NetSerializable]

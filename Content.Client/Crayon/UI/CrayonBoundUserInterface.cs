@@ -10,7 +10,7 @@ namespace Content.Client.Crayon.UI
 {
     public sealed class CrayonBoundUserInterface : BoundUserInterface
     {
-        public CrayonBoundUserInterface(ClientUserInterfaceComponent owner, object uiKey) : base(owner, uiKey)
+        public CrayonBoundUserInterface(ClientUserInterfaceComponent owner, Enum uiKey) : base(owner, uiKey)
         {
         }
 
@@ -38,6 +38,11 @@ namespace Content.Client.Crayon.UI
         public void Select(string state)
         {
             SendMessage(new CrayonSelectMessage(state));
+        }
+
+        public void SelectColor(Color color)
+        {
+            SendMessage(new CrayonColorMessage(color));
         }
 
         protected override void Dispose(bool disposing)

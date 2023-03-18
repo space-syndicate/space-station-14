@@ -1,12 +1,8 @@
-﻿using System.Collections.Generic;
-using Content.Shared.Chemistry.Reagent;
+﻿using Content.Shared.Chemistry.Reagent;
 using Content.Shared.FixedPoint;
-using Robust.Shared.Localization;
 using Robust.Shared.Prototypes;
-using Robust.Shared.Serialization.Manager.Attributes;
 using Robust.Shared.Serialization.TypeSerializers.Implementations.Custom.Prototype;
 using Robust.Shared.Serialization.TypeSerializers.Implementations.Custom.Prototype.Dictionary;
-using Robust.Shared.ViewVariables;
 
 namespace Content.Shared.Kitchen
 {
@@ -17,7 +13,7 @@ namespace Content.Shared.Kitchen
     public sealed class FoodRecipePrototype : IPrototype
     {
         [ViewVariables]
-        [DataField("id", required: true)]
+        [IdDataField]
         public string ID { get; } = default!;
 
         [DataField("name")]
@@ -39,5 +35,21 @@ namespace Content.Shared.Kitchen
 
         public IReadOnlyDictionary<string, FixedPoint2> IngredientsReagents => _ingsReagents;
         public IReadOnlyDictionary<string, FixedPoint2> IngredientsSolids => _ingsSolids;
+
+        /// <summary>
+        ///    Count the number of ingredients in a recipe for sorting the recipe list.
+        ///    This makes sure that where ingredient lists overlap, the more complex
+        ///    recipe is picked first.
+        /// </summary>
+        public FixedPoint2 IngredientCount()
+        {
+            FixedPoint2 n = 0;
+            n += _ingsReagents.Count; // number of distinct reagents
+            foreach (FixedPoint2 i in _ingsSolids.Values) // sum the number of solid ingredients
+            {
+                n += i;
+            }
+            return n;
+        }
     }
 }

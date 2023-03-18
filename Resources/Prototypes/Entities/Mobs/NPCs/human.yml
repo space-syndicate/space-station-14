@@ -1,38 +1,35 @@
 - type: entity
   name: Civilian
-  parent: MobHumanBase
+  parent: BaseMobHuman
   id: MobCivilian
   description: A miserable pile of secrets.
   components:
-  - type: UtilityAI
-    behaviorSets:
-    - Clothing
-    - Hunger
-    - Thirst
-    - Idle
-    startingGear: AssistantGear
-  - type: AiFactionTag
+  - type: InputMover
+  - type: MobMover
+  - type: Loadout
+    prototypes: [PassengerGear]
+  - type: Faction
     factions:
     - NanoTrasen
 
 - type: entity
   name: Spirate
-  parent: MobHumanBase
+  parent: BaseMobHuman
   id: MobSpirate
   description: Yarr!
   components:
-  - type: UtilityAI
-    behaviorSets:
-    - Clothing
-    - Hunger
-    - Thirst
-    - Idle
-    - Spirate
+  - type: Faction
+    factions:
+      - Syndicate
+  - type: InputMover
+  - type: MobMover
+  - type: HTN
+    rootTask: RangedCombatCompound
 
 - type: entity
-  parent: MobHumanBase
+  parent: BaseMobHuman
   suffix: Dead
-  save: true
+  save: false # mobs are currently not saveable.
   id: SalvageHumanCorpse
   name: unidentified human
   description: We barely knew ye.
@@ -42,3 +39,10 @@
       types:
         Blunt: 200
 
+- type: entity
+  parent: MobHuman
+  id: MobCluwne
+  name: person
+  description: A polymorphed unfortunate.
+  components:
+  - type: Cluwne

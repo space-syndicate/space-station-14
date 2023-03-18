@@ -5,8 +5,22 @@
   description: A cardboard box for storing things.
   components:
   - type: Sprite
-    layers:
-      - state: box
+    state: box
+
+- type: entity
+  name: mousetrap box
+  parent: BoxCardboard
+  id: BoxMousetrap
+  description: This box is filled with mousetraps. Try not to get your hand stuck in one.
+  components:
+    - type: StorageFill
+      contents:
+        - id: Mousetrap
+          amount: 6
+    - type: Sprite
+      layers:
+        - state: box
+        - state: mousetraps
 
 - type: entity
   name: lightbulb box
@@ -27,6 +41,9 @@
     whitelist:
       components:
       - LightBulb
+  - type: Tag
+    tags:
+      - DroneUsable
 
 - type: entity
   name: lighttube box
@@ -47,6 +64,9 @@
     whitelist:
       components:
       - LightBulb
+  - type: Tag
+    tags:
+      - DroneUsable
 
 - type: entity
   name: mixed lights box
@@ -69,6 +89,9 @@
     whitelist:
       components:
       - LightBulb
+  - type: Tag
+    tags:
+      - DroneUsable
 
 - type: entity
   name: PDA box
@@ -78,7 +101,7 @@
   components:
   - type: StorageFill
     contents:
-      - id: AssistantPDA
+      - id: PassengerPDA
         amount: 6
   - type: Sprite
     layers:
@@ -98,18 +121,37 @@
   components:
   - type: StorageFill
     contents:
-      - id: AssistantIDCard
+      - id: PassengerIDCard
         amount: 6
   - type: Sprite
     layers:
       - state: box
-      - state: pda
+      - state: id # Corvax-Resprite
   - type: Storage
     capacity: 60
     whitelist:
       components:
       - IdCard
 
+- type: entity
+  name: headset box
+  parent: BoxCardboard
+  id: BoxHeadset
+  description: A box of spare passenger headsets.
+  components:
+  - type: StorageFill
+    contents:
+      - id: ClothingHeadsetGrey
+        amount: 6
+  - type: Sprite
+    layers:
+      - state: box
+      - state: headset
+  - type: Storage
+    capacity: 60
+    whitelist:
+      components:
+      - Headset
 
 - type: entity
   name: meson box
@@ -127,27 +169,26 @@
       - state: meson
 
 - type: entity
-  name: survival box
+  name: M.R.E.
   parent: BoxCardboard
-  id: BoxSurvival
-  description: It's box with basic internals inside.
+  id: BoxMRE
+  description: A box of decades old military surplus rations. It is surprisingly not rotten.
   components:
   - type: StorageFill
     contents:
-      - id: ClothingMaskBreath
-      - id: EmergencyOxygenTankFilled
-      - id: EmergencyMedipen
-      - id: Flare
-      - id: FoodSnackChocolate
+      - id: DrinkMREFlask
+      - id: FoodSnackNutribrick
+      - id: FoodSnackMREBrownie
+      - id: FoodCondimentPacketKetchup
   - type: Sprite
     layers:
-      - state: box
+      - state: box_olive
       - state: writing
 
 - type: entity
   name: box of hugs
   parent: BoxCardboard
-  id: BoxHug
+  id: BoxHugHealing
   description: A special box for sensitive people.
   components:
   - type: Sprite
@@ -155,11 +196,14 @@
       - state: box_hug
       - state: heart
   - type: Item
-    HeldPrefix: hug
+    heldPrefix: hug
   - type: StorageFill
     contents:
       - id: Brutepack
         amount: 6
+  - type: Tag
+    tags:
+      - BoxHug
 
 - type: entity
   name: inflatable wall box
@@ -177,7 +221,24 @@
     layers:
       - state: box
       - state: writing
-      
+  - type: Tag
+    tags:
+      - DroneUsable
+
+
+- type: entity
+  name: hatsune miku day box
+  parent: BoxCardboard
+  id: BoxPerformer
+  description: Happy Hatsune Miku Day!
+  components:
+  - type: StorageFill
+    contents:
+      - id: ClothingShoesBootsPerformer
+      - id: ClothingUniformJumpskirtPerformer
+      - id: FoodMealMemoryleek
+        amount: 2
+
 - type: entity
   name: flare box
   parent: BoxCardboard
@@ -192,7 +253,7 @@
     layers:
       - state: box
       - state: writing
-      
+
 - type: entity
   name: trashbag box
   parent: BoxCardboard
@@ -212,3 +273,106 @@
     layers:
       - state: box
       - state: writing
+  - type: Tag
+    tags:
+      - DroneUsable
+
+- type: entity
+  name: passenger encryption key box
+  parent: BoxCardboard
+  id: BoxEncryptionKeyPassenger
+  description: A box of spare encryption keys.
+  components:
+  - type: StorageFill
+    contents:
+      - id: EncryptionKeyCommon
+        amount: 6
+  - type: Sprite
+    layers:
+      - state: box
+      - state: encryptokey
+  - type: Storage
+    capacity: 30
+    whitelist:
+      components:
+      - EncryptionKey
+
+- type: entity
+  name: cargo encryption key box
+  parent: BoxEncryptionKeyPassenger
+  id: BoxEncryptionKeyCargo
+  components:
+  - type: StorageFill
+    contents:
+      - id: EncryptionKeyCargo
+        amount: 6
+
+- type: entity
+  name: engineering encryption key box
+  parent: BoxEncryptionKeyPassenger
+  id: BoxEncryptionKeyEngineering
+  components:
+  - type: StorageFill
+    contents:
+      - id: EncryptionKeyEngineering
+        amount: 6
+
+- type: entity
+  name: med-sci encryption key box
+  parent: BoxEncryptionKeyPassenger
+  id: BoxEncryptionKeyMedicalScience
+  components:
+  - type: StorageFill
+    contents:
+      - id: EncryptionKeyMedicalScience
+        amount: 6
+
+- type: entity
+  name: medical encryption key box
+  parent: BoxEncryptionKeyPassenger
+  id: BoxEncryptionKeyMedical
+  components:
+  - type: StorageFill
+    contents:
+      - id: EncryptionKeyMedical
+        amount: 6
+
+- type: entity
+  name: robotech encryption key box
+  parent: BoxEncryptionKeyPassenger
+  id: BoxEncryptionKeyRobo
+  components:
+  - type: StorageFill
+    contents:
+      - id: EncryptionKeyRobo
+        amount: 6
+
+- type: entity
+  name: science encryption key box
+  parent: BoxEncryptionKeyPassenger
+  id: BoxEncryptionKeyScience
+  components:
+  - type: StorageFill
+    contents:
+      - id: EncryptionKeyScience
+        amount: 6
+
+- type: entity
+  name: security encryption key box
+  parent: BoxEncryptionKeyPassenger
+  id: BoxEncryptionKeySecurity
+  components:
+  - type: StorageFill
+    contents:
+      - id: EncryptionKeySecurity
+        amount: 6
+
+- type: entity
+  name: service encryption key box
+  parent: BoxEncryptionKeyPassenger
+  id: BoxEncryptionKeyService
+  components:
+  - type: StorageFill
+    contents:
+      - id: EncryptionKeyService
+        amount: 6

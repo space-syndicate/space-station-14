@@ -1,40 +1,53 @@
 ﻿using System.Linq;
 using Content.Server.Power.Components;
 using Content.Server.Power.EntitySystems;
+using Content.Server.Station.Components;
 using JetBrains.Annotations;
 using Robust.Shared.Random;
 
 namespace Content.Server.StationEvents.Events;
 
 [UsedImplicitly]
-public sealed class BreakerFlip : StationEvent
+public sealed class BreakerFlip : StationEventSystem
 {
-    [Dependency] private readonly IEntityManager _entityManager = default!;
-    [Dependency] private readonly IRobustRandom _random = default!;
+    [Dependency] private readonly ApcSystem _apcSystem = default!;
 
-    public override string Name => "BreakerFlip";
-    public override string? StartAnnouncement =>
-        Loc.GetString("station-event-breaker-flip-announcement", ("data", Loc.GetString(Loc.GetString($"random-sentience-event-data-{_random.Next(1, 6)}"))));
-    public override float Weight => WeightNormal;
-    protected override float EndAfter => 1.0f;
-    public override int? MaxOccurrences => 5;
-    public override int MinimumPlayers => 15;
+    public override string Prototype => "BreakerFlip";
 
-    public override void Startup()
+    public override void Added()
     {
-        base.Startup();
+        base.Added();
 
-        var apcSys = EntitySystem.Get<ApcSystem>();
-        var allApcs = _entityManager.EntityQuery<ApcComponent>().ToList();
-        var toDisable = Math.Min(_random.Next(3, 7), allApcs.Count);
+        var str = Loc.GetString("station-event-breaker-flip-announcement", ("data", Loc.GetString(Loc.GetString($"random-sentience-event-data-{RobustRandom.Next(1, 6)}"))));
+        ChatSystem.DispatchGlobalAnnouncement(str, playSound: false, colorOverride: Color.Gold);
+    }
+
+    public override void Started()
+    {
+        base.Started();
+
+        if (StationSystem.Stations.Count == 0)
+            return;
+        var chosenStation = RobustRandom.Pick(StationSystem.Stations.ToList());
+
+        var stationApcs = new List<ApcComponent>();
+        foreach (var (apc, transform) in EntityQuery<ApcComponent, TransformComponent>()) 
+        {
+            if (apc.MainBreakerEnabled && CompOrNull<StationMemberComponent>(transform.GridUid)?.Station == chosenStation)
+            {
+                stationApcs.Add(apc);
+            }
+        }
+        
+        var toDisable = Math.Min(RobustRandom.Next(3, 7), stationApcs.Count);
         if (toDisable == 0)
             return;
 
-        _random.Shuffle(allApcs);
+        RobustRandom.Shuffle(stationApcs);
 
         for (var i = 0; i < toDisable; i++)
         {
-            apcSys.ApcToggleBreaker(allApcs[i].Owner, allApcs[i]);
+            _apcSystem.ApcToggleBreaker(stationApcs[i].Owner, stationApcs[i]);
         }
     }
 }

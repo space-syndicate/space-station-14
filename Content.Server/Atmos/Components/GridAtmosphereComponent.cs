@@ -1,27 +1,19 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using Content.Server.Atmos.EntitySystems;
 using Content.Server.Atmos.Piping.Components;
+using Content.Server.Atmos.Serialization;
 using Content.Server.NodeContainer.NodeGroups;
-using Robust.Shared.GameObjects;
-using Robust.Shared.Maths;
-using Robust.Shared.Serialization;
-using Robust.Shared.Serialization.Manager.Attributes;
-using Robust.Shared.ViewVariables;
-using Dependency = Robust.Shared.IoC.DependencyAttribute;
 
 namespace Content.Server.Atmos.Components
 {
     /// <summary>
     ///     Internal Atmos class. Use <see cref="AtmosphereSystem"/> to interact with atmos instead.
     /// </summary>
-    [ComponentReference(typeof(IAtmosphereComponent))]
-    [RegisterComponent, Serializable]
-    [Virtual]
-    public class GridAtmosphereComponent : Component, IAtmosphereComponent, ISerializationHooks
+    [RegisterComponent, Serializable,
+     Access(typeof(AtmosphereSystem), typeof(GasTileOverlaySystem), typeof(AtmosDebugOverlaySystem))]
+    public sealed class GridAtmosphereComponent : Component
     {
-        public virtual bool Simulated => true;
+        [ViewVariables(VVAccess.ReadWrite)]
+        public bool Simulated { get; set; } = true;
 
         [ViewVariables]
         public bool ProcessingPaused { get; set; } = false;
@@ -30,15 +22,10 @@ namespace Content.Server.Atmos.Components
         public float Timer { get; set; } = 0f;
 
         [ViewVariables]
-        public int UpdateCounter { get; set; } = 0;
-
-        [DataField("uniqueMixes")]
-        public List<GasMixture>? UniqueMixes;
-
-        [DataField("tiles")]
-        public Dictionary<Vector2i, int>? TilesUniqueMixes;
+        public int UpdateCounter { get; set; } = 1; // DO NOT SET TO ZERO BY DEFAULT! It will break roundstart atmos...
 
         [ViewVariables]
+        [IncludeDataField(customTypeSerializer:typeof(TileAtmosCollectionSerializer))]
         public readonly Dictionary<Vector2i, TileAtmosphere> Tiles = new(1000);
 
         [ViewVariables]
@@ -102,35 +89,6 @@ namespace Content.Server.Atmos.Components
         public long EqualizationQueueCycleControl { get; set; }
 
         [ViewVariables]
-        public AtmosphereProcessingState State { get; set; } = AtmosphereProcessingState.TileEqualize;
-
-        void ISerializationHooks.BeforeSerialization()
-        {
-            var uniqueMixes = new List<GasMixture>();
-            var uniqueMixHash = new Dictionary<GasMixture, int>();
-            var tiles = new Dictionary<Vector2i, int>();
-
-            foreach (var (indices, tile) in Tiles)
-            {
-                if (tile.Air == null) continue;
-
-                if (uniqueMixHash.TryGetValue(tile.Air, out var index))
-                {
-                    tiles[indices] = index;
-                    continue;
-                }
-
-                uniqueMixes.Add(tile.Air);
-                var newIndex = uniqueMixes.Count - 1;
-                uniqueMixHash[tile.Air] = newIndex;
-                tiles[indices] = newIndex;
-            }
-
-            if (uniqueMixes.Count == 0) uniqueMixes = null;
-            if (tiles.Count == 0) tiles = null;
-
-            UniqueMixes = uniqueMixes;
-            TilesUniqueMixes = tiles;
-        }
+        public AtmosphereProcessingState State { get; set; } = AtmosphereProcessingState.Revalidate;
     }
 }

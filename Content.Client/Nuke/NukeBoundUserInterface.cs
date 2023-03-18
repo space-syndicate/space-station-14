@@ -1,9 +1,7 @@
-using Content.Client.Traitor.Uplink;
+using Content.Shared.Containers.ItemSlots;
 using Content.Shared.Nuke;
 using JetBrains.Annotations;
 using Robust.Client.GameObjects;
-using Robust.Shared.GameObjects;
-using Robust.Shared.Localization;
 
 namespace Content.Client.Nuke
 {
@@ -12,7 +10,7 @@ namespace Content.Client.Nuke
     {
         private NukeMenu? _menu;
 
-        public NukeBoundUserInterface([NotNull] ClientUserInterfaceComponent owner, [NotNull] object uiKey) : base(owner, uiKey)
+        public NukeBoundUserInterface([NotNull] ClientUserInterfaceComponent owner, [NotNull] Enum uiKey) : base(owner, uiKey)
         {
         }
 
@@ -37,7 +35,7 @@ namespace Content.Client.Nuke
 
             _menu.EjectButton.OnPressed += _ =>
             {
-                SendMessage(new NukeEjectMessage());
+                SendMessage(new ItemSlotButtonPressedEvent(SharedNukeComponent.NukeDiskSlotId));
             };
             _menu.AnchorButton.OnPressed += _ =>
             {

@@ -1,7 +1,4 @@
-using System.Collections.Generic;
-using Robust.Shared.GameObjects;
 using Robust.Shared.GameStates;
-using Robust.Shared.ViewVariables;
 
 namespace Content.Shared.Alert;
 
@@ -14,4 +11,6 @@ namespace Content.Shared.Alert;
 public sealed class AlertsComponent : Component
 {
     [ViewVariables] public Dictionary<AlertKey, AlertState> Alerts = new();
+
+    public override bool SendOnlyToOwner => true;
 }

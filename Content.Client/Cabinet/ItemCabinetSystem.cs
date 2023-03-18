@@ -1,20 +1,22 @@
-﻿using Content.Shared.Cabinet;
+using Content.Shared.Cabinet;
 using Robust.Client.GameObjects;
 
 namespace Content.Client.Cabinet;
 
-public sealed class ItemCabinetSystem : VisualizerSystem<ItemCabinetVisualsComponent>
+public sealed class ItemCabinetSystem : SharedItemCabinetSystem
 {
-    protected override void OnAppearanceChange(EntityUid uid, ItemCabinetVisualsComponent component, ref AppearanceChangeEvent args)
+    protected override void UpdateAppearance(EntityUid uid, ItemCabinetComponent? cabinet = null)
     {
-        if (TryComp(uid, out SpriteComponent? sprite)
-            && args.Component.TryGetData(ItemCabinetVisuals.IsOpen, out bool isOpen)
-            && args.Component.TryGetData(ItemCabinetVisuals.ContainsItem, out bool contains))
-        {
-            var state = isOpen ? component.OpenState : component.ClosedState;
+        if (!Resolve(uid, ref cabinet))
+            return;
+
+        if (!TryComp<SpriteComponent>(uid, out var sprite))
+            return;
+
+        var state = cabinet.Opened ? cabinet.OpenState : cabinet.ClosedState;
+        if (state != null)
             sprite.LayerSetState(ItemCabinetVisualLayers.Door, state);
-            sprite.LayerSetVisible(ItemCabinetVisualLayers.ContainsItem, contains);
-        }
+        sprite.LayerSetVisible(ItemCabinetVisualLayers.ContainsItem, cabinet.CabinetSlot.HasItem);
     }
 }
 

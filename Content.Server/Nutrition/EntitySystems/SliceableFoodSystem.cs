@@ -5,13 +5,10 @@ using Content.Server.Nutrition.Components;
 using Content.Shared.Chemistry.Components;
 using Content.Shared.Examine;
 using Content.Shared.FixedPoint;
+using Content.Shared.Hands.EntitySystems;
 using Content.Shared.Interaction;
-using Content.Shared.Item;
 using Robust.Shared.Audio;
 using Robust.Shared.Containers;
-using Robust.Shared.GameObjects;
-using Robust.Shared.IoC;
-using Robust.Shared.Localization;
 using Robust.Shared.Player;
 
 namespace Content.Server.Nutrition.EntitySystems
@@ -19,6 +16,8 @@ namespace Content.Server.Nutrition.EntitySystems
     internal sealed class SliceableFoodSystem : EntitySystem
     {
         [Dependency] private readonly SolutionContainerSystem _solutionContainerSystem = default!;
+        [Dependency] private readonly SharedHandsSystem _handsSystem = default!;
+        [Dependency] private readonly SharedContainerSystem _containerSystem = default!;
 
         public override void Initialize()
         {
@@ -60,21 +59,25 @@ namespace Content.Server.Nutrition.EntitySystems
             var sliceUid = EntityManager.SpawnEntity(component.Slice, transform.Coordinates);
 
             var lostSolution = _solutionContainerSystem.SplitSolution(uid, solution,
-                solution.CurrentVolume / FixedPoint2.New(component.Count));
+                solution.Volume / FixedPoint2.New(component.Count));
 
             // Fill new slice
             FillSlice(sliceUid, lostSolution);
 
-            if (EntityManager.TryGetComponent(user, out HandsComponent? handsComponent))
+            var inCont = _containerSystem.IsEntityInContainer(component.Owner);
+            if (inCont)
             {
-                if (ContainerHelpers.IsInContainer(component.Owner))
-                {
-                    handsComponent.PutInHandOrDrop(EntityManager.GetComponent<SharedItemComponent>(sliceUid));
-                }
+                _handsSystem.PickupOrDrop(user, sliceUid);
+            }
+            else
+            {
+                var xform = Transform(sliceUid);
+                _containerSystem.AttachParentToContainerOrGrid(xform);
+                xform.LocalRotation = 0;
             }
 
-            SoundSystem.Play(Filter.Pvs(uid), component.Sound.GetSound(), transform.Coordinates,
-                AudioParams.Default.WithVolume(-2));
+            SoundSystem.Play(component.Sound.GetSound(), Filter.Pvs(uid),
+                transform.Coordinates, AudioParams.Default.WithVolume(-2));
 
             component.Count--;
             // If someone makes food proto with 1 slice...
@@ -85,15 +88,26 @@ namespace Content.Server.Nutrition.EntitySystems
             }
 
             // Split last slice
-            if (component.Count == 1) {
-                var lastSlice = EntityManager.SpawnEntity(component.Slice, transform.Coordinates);
+            if (component.Count > 1)
+                return true;
 
-                // Fill last slice with the rest of the solution
-                FillSlice(lastSlice, solution);
+            sliceUid = EntityManager.SpawnEntity(component.Slice, transform.Coordinates);
 
-                EntityManager.DeleteEntity(uid);
+            // Fill last slice with the rest of the solution
+            FillSlice(sliceUid, solution);
+
+            if (inCont)
+            {
+                _handsSystem.PickupOrDrop(user, sliceUid);
+            }
+            else
+            {
+                var xform = Transform(sliceUid);
+                _containerSystem.AttachParentToContainerOrGrid(xform);
+                xform.LocalRotation = 0;
             }
 
+            EntityManager.DeleteEntity(uid);
             return true;
         }
 

@@ -1,21 +1,14 @@
-using System;
 using Content.Server.Chemistry.Components;
 using Content.Server.Chemistry.EntitySystems;
 using Content.Server.Coordinates.Helpers;
 using Content.Shared.Audio;
-using Content.Shared.Chemistry.Components;
 using Content.Shared.Chemistry.Reagent;
 using Content.Shared.Database;
-using Content.Shared.Sound;
 using JetBrains.Annotations;
 using Robust.Shared.Audio;
-using Robust.Shared.GameObjects;
-using Robust.Shared.IoC;
-using Robust.Shared.Log;
 using Robust.Shared.Map;
 using Robust.Shared.Player;
 using Robust.Shared.Serialization;
-using Robust.Shared.Serialization.Manager.Attributes;
 
 namespace Content.Server.Chemistry.ReactionEffects
 {
@@ -84,7 +77,7 @@ namespace Content.Server.Chemistry.ReactionEffects
             if (args.Source == null)
                 return;
 
-            var splitSolution = EntitySystem.Get<SolutionContainerSystem>().SplitSolution(args.SolutionEntity, args.Source, args.Source.MaxVolume);
+            var splitSolution = EntitySystem.Get<SolutionContainerSystem>().SplitSolution(args.SolutionEntity, args.Source, args.Source.Volume);
             // We take the square root so it becomes harder to reach higher amount values
             var amount = (int) Math.Round(_rangeConstant + _rangeMultiplier*Math.Sqrt(args.Quantity.Float()));
             amount = Math.Min(amount, _maxRange);
@@ -97,7 +90,7 @@ namespace Content.Server.Chemistry.ReactionEffects
                 // Weird formulas here but basically when amount increases, solutionFraction gets closer to 0 in a reciprocal manner
                 // _reagentDilutionFactor defines how fast solutionFraction gets closer to 0
                 float solutionFraction = 1 / (_reagentDilutionFactor*(amount) + 1);
-                splitSolution.RemoveSolution(splitSolution.TotalVolume * (1 - solutionFraction));
+                splitSolution.RemoveSolution(splitSolution.Volume * (1 - solutionFraction));
             }
 
             var transform = args.EntityManager.GetComponent<TransformComponent>(args.SolutionEntity);
@@ -120,7 +113,7 @@ namespace Content.Server.Chemistry.ReactionEffects
             areaEffectComponent.TryAddSolution(splitSolution);
             areaEffectComponent.Start(amount, _duration, _spreadDelay, _removeDelay);
 
-            SoundSystem.Play(Filter.Pvs(args.SolutionEntity), _sound.GetSound(), args.SolutionEntity, AudioHelpers.WithVariation(0.125f));
+            SoundSystem.Play(_sound.GetSound(), Filter.Pvs(args.SolutionEntity), args.SolutionEntity, AudioHelpers.WithVariation(0.125f));
         }
 
         protected abstract SolutionAreaEffectComponent? GetAreaEffectComponent(EntityUid entity);

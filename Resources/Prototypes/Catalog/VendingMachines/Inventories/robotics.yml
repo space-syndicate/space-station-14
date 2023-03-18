@@ -1,14 +1,11 @@
 - type: vendingMachineInventory
   id: RobotechDeluxeInventory
-  name: Robotech Deluxe
-  spriteName: robotics
   startingInventory:
     #TO DO: add missing prototypes
     ClothingOuterCoatLab: 4
     #roboticist under
     CableStack: 4
     Flash: 4
-    PowerCellLargeHigh: 12
     #proximity sensor
     #signaller
     #health anaylzer

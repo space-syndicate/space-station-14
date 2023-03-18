@@ -1,23 +1,23 @@
-﻿using Content.Shared.Database;
-using Content.Shared.Ghost;
-using Content.Shared.Movement.EntitySystems;
-using Content.Shared.Verbs;
-using Robust.Shared.GameObjects;
-using Robust.Shared.Localization;
+using Content.Shared.Database;
 using Content.Shared.Follower.Components;
-using Robust.Shared.Maths;
-using Robust.Shared.Serialization;
+using Content.Shared.Ghost;
+using Content.Shared.Movement.Events;
+using Content.Shared.Verbs;
+using Robust.Shared.Map;
+using Robust.Shared.Utility;
 
 namespace Content.Shared.Follower;
 
 public sealed class FollowerSystem : EntitySystem
 {
+    [Dependency] private readonly SharedTransformSystem _transform = default!;
+
     public override void Initialize()
     {
         base.Initialize();
 
         SubscribeLocalEvent<GetVerbsEvent<AlternativeVerb>>(OnGetAlternativeVerbs);
-        SubscribeLocalEvent<FollowerComponent, RelayMoveInputEvent>(OnFollowerMove);
+        SubscribeLocalEvent<FollowerComponent, MoveInputEvent>(OnFollowerMove);
         SubscribeLocalEvent<FollowedComponent, EntityTerminatingEvent>(OnFollowedTerminating);
     }
 
@@ -26,7 +26,7 @@ public sealed class FollowerSystem : EntitySystem
         if (!HasComp<SharedGhostComponent>(ev.User))
             return;
 
-        if (ev.User == ev.Target)
+        if (ev.User == ev.Target || ev.Target.IsClientSide())
             return;
 
         var verb = new AlternativeVerb
@@ -38,13 +38,13 @@ public sealed class FollowerSystem : EntitySystem
             }),
             Impact = LogImpact.Low,
             Text = Loc.GetString("verb-follow-text"),
-            IconTexture = "/Textures/Interface/VerbIcons/open.svg.192dpi.png",
+            Icon = new SpriteSpecifier.Texture(new ResourcePath("/Textures/Interface/VerbIcons/open.svg.192dpi.png")),
         };
 
         ev.Verbs.Add(verb);
     }
 
-    private void OnFollowerMove(EntityUid uid, FollowerComponent component, RelayMoveInputEvent args)
+    private void OnFollowerMove(EntityUid uid, FollowerComponent component, ref MoveInputEvent args)
     {
         StopFollowingEntity(uid, component.Following);
     }
@@ -74,15 +74,16 @@ public sealed class FollowerSystem : EntitySystem
         followedComp.Following.Add(follower);
 
         var xform = Transform(follower);
-        xform.AttachParent(entity);
+        _transform.SetParent(follower, xform, entity);
         xform.LocalPosition = Vector2.Zero;
+        xform.LocalRotation = Angle.Zero;
 
         EnsureComp<OrbitVisualsComponent>(follower);
 
         var followerEv = new StartedFollowingEntityEvent(entity, follower);
         var entityEv = new EntityStartedFollowingEvent(entity, follower);
 
-        RaiseLocalEvent(follower, followerEv);
+        RaiseLocalEvent(follower, followerEv, true);
         RaiseLocalEvent(entity, entityEv, false);
     }
 
@@ -92,7 +93,7 @@ public sealed class FollowerSystem : EntitySystem
     public void StopFollowingEntity(EntityUid uid, EntityUid target,
         FollowedComponent? followed=null)
     {
-        if (!Resolve(target, ref followed))
+        if (!Resolve(target, ref followed, false))
             return;
 
         if (!HasComp<FollowerComponent>(uid))
@@ -103,14 +104,20 @@ public sealed class FollowerSystem : EntitySystem
             RemComp<FollowedComponent>(target);
         RemComp<FollowerComponent>(uid);
 
-        Transform(uid).AttachToGridOrMap();
+        var xform = Transform(uid);
+        xform.AttachToGridOrMap();
+        if (xform.MapID == MapId.Nullspace)
+        {
+            Del(uid);
+            return;
+        }
 
         RemComp<OrbitVisualsComponent>(uid);
 
         var uidEv = new StoppedFollowingEntityEvent(target, uid);
         var targetEv = new EntityStoppedFollowingEvent(target, uid);
 
-        RaiseLocalEvent(uid, uidEv);
+        RaiseLocalEvent(uid, uidEv, true);
         RaiseLocalEvent(target, targetEv, false);
     }
 

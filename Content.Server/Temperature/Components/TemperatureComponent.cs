@@ -1,11 +1,8 @@
 using Content.Shared.Atmos;
 using Content.Shared.Damage;
 using Content.Shared.FixedPoint;
-using Robust.Shared.GameObjects;
-using Robust.Shared.IoC;
 using Robust.Shared.Physics;
-using Robust.Shared.Serialization.Manager.Attributes;
-using Robust.Shared.ViewVariables;
+using Robust.Shared.Physics.Components;
 
 namespace Content.Server.Temperature.Components
 {
@@ -18,6 +15,7 @@ namespace Content.Server.Temperature.Components
     public sealed class TemperatureComponent : Component
     {
         [ViewVariables(VVAccess.ReadWrite)]
+        [DataField("currentTemperature")]
         public float CurrentTemperature { get; set; } = Atmospherics.T20C;
 
         [DataField("heatDamageThreshold")]
@@ -27,6 +25,18 @@ namespace Content.Server.Temperature.Components
         [DataField("coldDamageThreshold")]
         [ViewVariables(VVAccess.ReadWrite)]
         public float ColdDamageThreshold = 260f;
+
+        /// <summary>
+        /// Overrides HeatDamageThreshold if the entity's within a parent with the TemperatureDamageThresholdsComponent component.
+        /// </summary>
+        [ViewVariables(VVAccess.ReadWrite)]
+        public float? ParentHeatDamageThreshold;
+
+        /// <summary>
+        /// Overrides ColdDamageThreshold if the entity's within a parent with the TemperatureDamageThresholdsComponent component.
+        /// </summary>
+        [ViewVariables(VVAccess.ReadWrite)]
+        public float? ParentColdDamageThreshold;
 
         [DataField("specificHeat")]
         [ViewVariables(VVAccess.ReadWrite)]
@@ -43,22 +53,22 @@ namespace Content.Server.Temperature.Components
         {
             get
             {
-                if (IoCManager.Resolve<IEntityManager>().TryGetComponent<IPhysBody?>(Owner, out var physics) && physics.Mass != 0)
+                if (IoCManager.Resolve<IEntityManager>().TryGetComponent<PhysicsComponent>(Owner, out var physics) && physics.FixturesMass != 0)
                 {
-                    return SpecificHeat * physics.Mass;
+                    return SpecificHeat * physics.FixturesMass;
                 }
 
                 return Atmospherics.MinimumHeatCapacity;
             }
         }
 
-        [DataField("coldDamage", required: true)]
+        [DataField("coldDamage")]
         [ViewVariables(VVAccess.ReadWrite)]
-        public DamageSpecifier ColdDamage = default!;
+        public DamageSpecifier ColdDamage = new();
 
-        [DataField("heatDamage", required: true)]
+        [DataField("heatDamage")]
         [ViewVariables(VVAccess.ReadWrite)]
-        public DamageSpecifier HeatDamage = default!;
+        public DamageSpecifier HeatDamage = new();
 
         /// <summary>
         ///     Temperature won't do more than this amount of damage per second.

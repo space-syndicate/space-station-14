@@ -1,4 +1,3 @@
-using System.Collections.Generic;
 using Content.Server.Atmos.EntitySystems;
 using Content.Server.Light.Components;
 using Content.Shared.Audio;
@@ -8,17 +7,18 @@ using Content.Shared.Smoking;
 using Content.Shared.Temperature;
 using Robust.Server.GameObjects;
 using Robust.Shared.Audio;
-using Robust.Shared.GameObjects;
-using Robust.Shared.IoC;
 using Robust.Shared.Player;
 
 namespace Content.Server.Light.EntitySystems
 {
     public sealed class MatchstickSystem : EntitySystem
     {
+        [Dependency] private readonly AtmosphereSystem _atmosphereSystem = default!;
+        [Dependency] private readonly TransformSystem _transformSystem = default!;
+        [Dependency] private readonly SharedItemSystem _item = default!;
+        [Dependency] private readonly SharedAppearanceSystem _appearance = default!;
+
         private HashSet<MatchstickComponent> _litMatches = new();
-        [Dependency]
-        private readonly AtmosphereSystem _atmosphereSystem = default!;
 
         public override void Initialize()
         {
@@ -41,7 +41,14 @@ namespace Content.Server.Light.EntitySystems
                 if (match.CurrentState != SmokableState.Lit || Paused(match.Owner) || match.Deleted)
                     continue;
 
-                _atmosphereSystem.HotspotExpose(EntityManager.GetComponent<TransformComponent>(match.Owner).Coordinates, 400, 50, true);
+                var xform = Transform(match.Owner);
+
+                if (xform.GridUid is not {} gridUid)
+                    return;
+
+                var position = _transformSystem.GetGridOrMapTilePosition(match.Owner, xform);
+
+                _atmosphereSystem.HotspotExpose(gridUid, position, 400, 50, match.Owner, true);
             }
         }
 
@@ -56,7 +63,7 @@ namespace Content.Server.Light.EntitySystems
             if (!isHotEvent.IsHot)
                 return;
 
-            Ignite(component, args.User);
+            Ignite(uid, component, args.User);
             args.Handled = true;
         }
 
@@ -65,24 +72,23 @@ namespace Content.Server.Light.EntitySystems
             args.IsHot = component.CurrentState == SmokableState.Lit;
         }
 
-        public void Ignite(MatchstickComponent component, EntityUid user)
+        public void Ignite(EntityUid uid, MatchstickComponent component, EntityUid user)
         {
             // Play Sound
-            SoundSystem.Play(
-                Filter.Pvs(component.Owner), component.IgniteSound.GetSound(), component.Owner,
-                AudioHelpers.WithVariation(0.125f).WithVolume(-0.125f));
+            SoundSystem.Play(component.IgniteSound.GetSound(), Filter.Pvs(component.Owner),
+                component.Owner, AudioHelpers.WithVariation(0.125f).WithVolume(-0.125f));
 
             // Change state
-            SetState(component, SmokableState.Lit);
+            SetState(uid, component, SmokableState.Lit);
             _litMatches.Add(component);
             component.Owner.SpawnTimer(component.Duration * 1000, delegate
             {
-                SetState(component, SmokableState.Burnt);
+                SetState(uid, component, SmokableState.Burnt);
                 _litMatches.Remove(component);
             });
         }
 
-        private void SetState(MatchstickComponent component, SmokableState value)
+        private void SetState(EntityUid uid, MatchstickComponent component, SmokableState value)
         {
             component.CurrentState = value;
 
@@ -91,22 +97,22 @@ namespace Content.Server.Light.EntitySystems
                 pointLightComponent.Enabled = component.CurrentState == SmokableState.Lit;
             }
 
-            if (EntityManager.TryGetComponent(component.Owner, out SharedItemComponent? item))
+            if (EntityManager.TryGetComponent(component.Owner, out ItemComponent? item))
             {
                 switch (component.CurrentState)
                 {
                     case SmokableState.Lit:
-                        item.EquippedPrefix = "lit";
+                        _item.SetHeldPrefix(component.Owner, "lit", item);
                         break;
                     default:
-                        item.EquippedPrefix = "unlit";
+                        _item.SetHeldPrefix(component.Owner, "unlit", item);
                         break;
                 }
             }
 
             if (EntityManager.TryGetComponent(component.Owner, out AppearanceComponent? appearance))
             {
-                appearance.SetData(SmokingVisuals.Smoking, component.CurrentState);
+                _appearance.SetData(uid, SmokingVisuals.Smoking, component.CurrentState, appearance);
             }
         }
     }

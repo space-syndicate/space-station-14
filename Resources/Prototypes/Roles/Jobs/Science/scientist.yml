@@ -1,11 +1,15 @@
 - type: job
   id: Scientist
-  name: "scientist"
+  name: job-name-scientist
+  description: job-description-scientist
+  playTimeTracker: JobScientist
+  requirements:
+    - !type:DepartmentTimeRequirement
+      department: Science
+      time: 18000 # Corvax-RoleTime
   startingGear: ScientistGear
-  departments:
-  - Science
   icon: "Scientist"
-  supervisors: "the research director"
+  supervisors: job-supervisors-rd
   access:
   - Research
   - Maintenance

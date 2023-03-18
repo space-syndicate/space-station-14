@@ -1,16 +1,18 @@
-using System;
-using System.Collections.Generic;
 using Content.Shared.Containers.ItemSlots;
-using Robust.Shared.GameObjects;
+using Robust.Shared.GameStates;
 using Robust.Shared.Serialization;
-using Robust.Shared.Serialization.Manager.Attributes;
+using Robust.Shared.Serialization.TypeSerializers.Implementations.Custom.Prototype.List;
 
 namespace Content.Shared.Access.Components
 {
+    [NetworkedComponent]
     public abstract class SharedIdCardConsoleComponent : Component
     {
-        public const int MaxFullNameLength = 256;
-        public const int MaxJobTitleLength = 256;
+        public const int MaxFullNameLength = 30;
+        public const int MaxJobTitleLength = 30;
+
+        public static string PrivilegedIdCardSlotId = "IdCardConsole-privilegedId";
+        public static string TargetIdCardSlotId = "IdCardConsole-targetId";
 
         [DataField("privilegedIdSlot")]
         public ItemSlot PrivilegedIdSlot = new();
@@ -18,37 +20,57 @@ namespace Content.Shared.Access.Components
         [DataField("targetIdSlot")]
         public ItemSlot TargetIdSlot = new();
 
-        public enum UiButton
-        {
-            PrivilegedId,
-            TargetId,
-        }
-
-        [Serializable, NetSerializable]
-        public sealed class IdButtonPressedMessage : BoundUserInterfaceMessage
-        {
-            public readonly UiButton Button;
-
-            public IdButtonPressedMessage(UiButton button)
-            {
-                Button = button;
-            }
-        }
-
         [Serializable, NetSerializable]
         public sealed class WriteToTargetIdMessage : BoundUserInterfaceMessage
         {
             public readonly string FullName;
             public readonly string JobTitle;
             public readonly List<string> AccessList;
+            public readonly string JobPrototype;
 
-            public WriteToTargetIdMessage(string fullName, string jobTitle, List<string> accessList)
+            public WriteToTargetIdMessage(string fullName, string jobTitle, List<string> accessList, string jobPrototype)
             {
                 FullName = fullName;
                 JobTitle = jobTitle;
                 AccessList = accessList;
+                JobPrototype = jobPrototype;
             }
         }
+
+        // Put this on shared so we just send the state once in PVS range rather than every time the UI updates.
+
+        [DataField("accessLevels", customTypeSerializer: typeof(PrototypeIdListSerializer<AccessLevelPrototype>))]
+        public List<string> AccessLevels = new()
+        {
+            "Armory",
+            "Atmospherics",
+            "Bar",
+            "Brig",
+            // "Detective",
+            "Captain",
+            "Cargo",
+            "Chapel",
+            "Chemistry",
+            "ChiefEngineer",
+            "ChiefMedicalOfficer",
+            "Command",
+            "Engineering",
+            "External",
+            "HeadOfPersonnel",
+            "HeadOfSecurity",
+            "Hydroponics",
+            "Janitor",
+            "Kitchen",
+            "Maintenance",
+            "Medical",
+            "Quartermaster",
+            "Research",
+            "ResearchDirector",
+            "Salvage",
+            "Security",
+            "Service",
+            "Theatre",
+        };
 
         [Serializable, NetSerializable]
         public sealed class IdCardConsoleBoundUserInterfaceState : BoundUserInterfaceState
@@ -61,13 +83,17 @@ namespace Content.Shared.Access.Components
             public readonly string? TargetIdFullName;
             public readonly string? TargetIdJobTitle;
             public readonly string[]? TargetIdAccessList;
+            public readonly string TargetIdJobPrototype;
 
             public IdCardConsoleBoundUserInterfaceState(bool isPrivilegedIdPresent,
                 bool isPrivilegedIdAuthorized,
                 bool isTargetIdPresent,
                 string? targetIdFullName,
                 string? targetIdJobTitle,
-                string[]? targetIdAccessList, string privilegedIdName, string targetIdName)
+                string[]? targetIdAccessList,
+                string targetIdJobPrototype,
+                string privilegedIdName,
+                string targetIdName)
             {
                 IsPrivilegedIdPresent = isPrivilegedIdPresent;
                 IsPrivilegedIdAuthorized = isPrivilegedIdAuthorized;
@@ -75,13 +101,14 @@ namespace Content.Shared.Access.Components
                 TargetIdFullName = targetIdFullName;
                 TargetIdJobTitle = targetIdJobTitle;
                 TargetIdAccessList = targetIdAccessList;
+                TargetIdJobPrototype = targetIdJobPrototype;
                 PrivilegedIdName = privilegedIdName;
                 TargetIdName = targetIdName;
             }
         }
 
         [Serializable, NetSerializable]
-        public enum IdCardConsoleUiKey
+        public enum IdCardConsoleUiKey : byte
         {
             Key,
         }

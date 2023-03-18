@@ -13,12 +13,13 @@
     fixtures:
     - shape:
         !type:PhysShapeAabb
-          bounds: "-0.45,-0.45,0.45,0.45"
-      mass: 50
-      layer:
-      - VaultImpassable
+        bounds: "-0.45,-0.45,0.45,0.45"
+      density: 60
       mask:
-      - Impassable
+      - MachineMask
+      layer:
+      - MidImpassable
+      - LowImpassable
   - type: Pullable
   - type: Tag
     tags:
@@ -44,13 +45,16 @@
     fixtures:
     - shape:
         !type:PhysShapeAabb
-          bounds: "-0.45,-0.45,0.45,0.45"
-      mass: 50
-      layer:
-      - SmallImpassable
+        bounds: "-0.45,-0.45,0.45,0.45"
+      density: 60
       mask:
-      - VaultImpassable
+      - MachineMask
+      layer:
+      - MidImpassable
+      - LowImpassable
   - type: Anchorable
+  - type: StaticPrice
+    price: 50
 
 - type: Tag
   id: Structure

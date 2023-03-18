@@ -17,9 +17,17 @@ verb-categories-insert = Insert
 verb-categories-buckle = Buckle
 verb-categories-unbuckle = Unbuckle
 verb-categories-rotate = Rotate
+verb-categories-smite = Smite
+verb-categories-tricks = Tricks
 verb-categories-transfer = Set Transfer Amount
 verb-categories-split = Split
+verb-categories-instrument-style = Instrument Style
+verb-categories-channel-select = Channels
 verb-categories-set-sensor = Sensor
+verb-categories-timer = Set Delay
+verb-categories-lever = Lever
+verb-categories-select-type = Select Type
+verb-categories-fax = Set Destination
 
 verb-common-toggle-light = Toggle light
 verb-common-close = Close

@@ -1,12 +1,11 @@
 using System.Linq;
 using Content.Server.Administration;
+using Content.Server.Body.Systems;
 using Content.Shared.Administration;
 using Content.Shared.Body.Components;
 using Content.Shared.Body.Part;
 using Robust.Server.Player;
 using Robust.Shared.Console;
-using Robust.Shared.GameObjects;
-using Robust.Shared.IoC;
 using Robust.Shared.Random;
 
 namespace Content.Server.Body.Commands
@@ -33,7 +32,8 @@ namespace Content.Server.Body.Commands
                 return;
             }
 
-            if (!IoCManager.Resolve<IEntityManager>().TryGetComponent(player.AttachedEntity, out SharedBodyComponent? body))
+            var entityManager = IoCManager.Resolve<IEntityManager>();
+            if (!entityManager.TryGetComponent(player.AttachedEntity, out BodyComponent? body))
             {
                 var random = IoCManager.Resolve<IRobustRandom>();
                 var text = $"You have no body{(random.Prob(0.2f) ? " and you must scream." : ".")}";
@@ -42,15 +42,16 @@ namespace Content.Server.Body.Commands
                 return;
             }
 
-            var hand = body.GetPartsOfType(BodyPartType.Hand).FirstOrDefault();
+            var bodySystem = entityManager.System<BodySystem>();
+            var hand = bodySystem.GetBodyChildrenOfType(player.AttachedEntity, BodyPartType.Hand, body).FirstOrDefault();
 
-            if (hand == null)
+            if (hand == default)
             {
                 shell.WriteLine("You have no hands.");
             }
             else
             {
-                body.RemovePart(hand);
+                bodySystem.DropPart(hand.Id, hand.Component);
             }
         }
     }

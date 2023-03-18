@@ -1,9 +1,12 @@
-ent-SmallboxItem = { ent-BaseItem }
-    .desc = { ent-BaseItem.desc }
+ent-SmallboxItem = { ent-BaseStorageItem }
+    .desc = { ent-BaseStorageItem.desc }
     .suffix = { "" }
 ent-Matchstick = match stick
     .desc = A simple match stick, used for lighting fine smokables.
     .suffix = { "" }
+ent-MatchstickSpent = { ent-Matchstick }
+    .suffix = spent
+    .desc = { ent-Matchstick.desc }
 ent-Matchbox = match box
     .desc = A small box of Almost But Not Quite Plasma Premium Matches.
     .suffix = { "" }

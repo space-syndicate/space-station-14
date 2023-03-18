@@ -1,9 +1,4 @@
-using System;
-using Content.Shared.Inventory;
 using Content.Shared.Medical.SuitSensor;
-using Robust.Shared.Analyzers;
-using Robust.Shared.GameObjects;
-using Robust.Shared.Serialization.Manager.Attributes;
 
 namespace Content.Server.Medical.SuitSensors
 {
@@ -12,7 +7,7 @@ namespace Content.Server.Medical.SuitSensors
     ///     If enabled, will report to crew monitoring console owners position and status.
     /// </summary>
     [RegisterComponent]
-    [Friend(typeof(SuitSensorSystem))]
+    [Access(typeof(SuitSensorSystem))]
     public sealed class SuitSensorComponent : Component
     {
         /// <summary>
@@ -40,19 +35,40 @@ namespace Content.Server.Medical.SuitSensors
         public string ActivationSlot = "jumpsuit";
 
         /// <summary>
-        ///     How often does sensor update its owners status (in seconds).
+        /// Activate sensor if user has this in a sensor-compatible container.
+        /// </summary>
+        [DataField("activationContainer")]
+        public string? ActivationContainer;
+
+        /// <summary>
+        ///     How often does sensor update its owners status (in seconds). Limited by the system update rate.
         /// </summary>
         [DataField("updateRate")]
-        public float UpdateRate = 2f;
+        public TimeSpan UpdateRate = TimeSpan.FromSeconds(2f);
 
         /// <summary>
         ///     Current user that wears suit sensor. Null if nobody wearing it.
         /// </summary>
+        [ViewVariables]
         public EntityUid? User = null;
 
         /// <summary>
         ///     Last time when sensor updated owners status
         /// </summary>
         public TimeSpan LastUpdate = TimeSpan.Zero;
+
+        /// <summary>
+        ///     The station this suit sensor belongs to. If it's null the suit didn't spawn on a station and the sensor doesn't work.
+        /// </summary>
+        [DataField("station")]
+        public EntityUid? StationId = null;
+
+        /// <summary>
+        ///     The server the suit sensor sends it state to.
+        ///     The suit sensor will try connecting to a new server when no server is connected.
+        ///     It does this by calling the servers entity system for performance reasons.
+        /// </summary>
+        [DataField("server")]
+        public string? ConnectedServer = null;
     }
 }

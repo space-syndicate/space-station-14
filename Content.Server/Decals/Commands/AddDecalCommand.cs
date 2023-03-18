@@ -1,14 +1,9 @@
-using System;
-using System.Collections.Generic;
 using Content.Server.Administration;
 using Content.Shared.Administration;
 using Content.Shared.Decals;
 using Content.Shared.Maps;
 using Robust.Shared.Console;
-using Robust.Shared.GameObjects;
-using Robust.Shared.IoC;
 using Robust.Shared.Map;
-using Robust.Shared.Maths;
 using Robust.Shared.Prototypes;
 
 namespace Content.Server.Decals.Commands
@@ -45,13 +40,13 @@ namespace Content.Server.Decals.Commands
             }
 
             var mapManager = IoCManager.Resolve<IMapManager>();
-            if (!int.TryParse(args[3], out var gridIdRaw) || !mapManager.TryGetGrid(new GridId(gridIdRaw), out var grid))
+            if (!EntityUid.TryParse(args[3], out var gridIdRaw) || !mapManager.TryGetGrid(gridIdRaw, out var grid))
             {
                 shell.WriteError($"Failed parsing gridId '{args[3]}'.");
                 return;
             }
 
-            var coordinates = new EntityCoordinates(grid.GridEntityId, new Vector2(x, y));
+            var coordinates = new EntityCoordinates(grid.Owner, new Vector2(x, y));
             if (grid.GetTileRef(coordinates).IsSpace())
             {
                 shell.WriteError($"Cannot create decal on space tile at {coordinates}.");

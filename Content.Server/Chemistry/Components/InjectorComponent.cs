@@ -1,30 +1,5 @@
-using System;
-using System.Threading;
-using System.Threading.Tasks;
-using Content.Server.Administration.Logs;
-using Content.Server.Body.Components;
-using Content.Server.Body.Systems;
-using Content.Server.Chemistry.Components.SolutionManager;
-using Content.Server.Chemistry.EntitySystems;
-using Content.Server.CombatMode;
-using Content.Server.DoAfter;
-using Content.Shared.ActionBlocker;
-using Content.Shared.Body.Components;
 using Content.Shared.Chemistry.Components;
-using Content.Shared.Chemistry.Reagent;
-using Content.Shared.Database;
 using Content.Shared.FixedPoint;
-using Content.Shared.Interaction;
-using Content.Shared.Interaction.Helpers;
-using Content.Shared.MobState.Components;
-using Content.Shared.Popups;
-using Robust.Shared.GameObjects;
-using Robust.Shared.IoC;
-using Robust.Shared.Localization;
-using Robust.Shared.Player;
-using Robust.Shared.Players;
-using Robust.Shared.Serialization.Manager.Attributes;
-using Robust.Shared.ViewVariables;
 
 namespace Content.Server.Chemistry.Components
 {
@@ -42,9 +17,31 @@ namespace Content.Server.Chemistry.Components
         /// Whether or not the injector is able to draw from containers or if it's a single use
         /// device that can only inject.
         /// </summary>
-        [ViewVariables]
         [DataField("injectOnly")]
         public bool InjectOnly;
+
+        /// <summary>
+        /// Whether or not the injector is able to draw from or inject from mobs
+        /// </summary>
+        /// <remarks>
+        ///     for example: droppers would ignore mobs
+        /// </remarks>
+        [DataField("ignoreMobs")]
+        public bool IgnoreMobs = false;
+
+        /// <summary>
+        ///     The minimum amount of solution that can be transferred at once from this solution.
+        /// </summary>
+        [DataField("minTransferAmount")]
+        [ViewVariables(VVAccess.ReadWrite)]
+        public FixedPoint2 MinimumTransferAmount { get; set; } = FixedPoint2.New(5);
+
+        /// <summary>
+        ///     The maximum amount of solution that can be transferred at once from this solution.
+        /// </summary>
+        [DataField("maxTransferAmount")]
+        [ViewVariables(VVAccess.ReadWrite)]
+        public FixedPoint2 MaximumTransferAmount { get; set; } = FixedPoint2.New(50);
 
         /// <summary>
         /// Amount to inject or draw on each usage. If the injector is inject only, it will
@@ -65,13 +62,7 @@ namespace Content.Server.Chemistry.Components
         [DataField("delay")]
         public float Delay = 5;
 
-        /// <summary>
-        ///     Token for interrupting a do-after action (e.g., injection another player). If not null, implies
-        ///     component is currently "in use".
-        /// </summary>
-        public CancellationTokenSource? CancelToken;
-
-        private InjectorToggleMode _toggleState;
+        [DataField("toggleState")] private InjectorToggleMode _toggleState;
 
         /// <summary>
         /// The state of the injector. Determines it's attack behavior. Containers must have the
