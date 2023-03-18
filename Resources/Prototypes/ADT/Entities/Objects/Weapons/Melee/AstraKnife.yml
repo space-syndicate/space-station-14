@@ -1,3 +1,8 @@
+- type: loadout
+  id: AstraKnifeLoadout
+  entity: AstraKnife
+  sponsorOnly: true
+  
 - type: entity
   name: astra knife
   parent: BaseKnife
