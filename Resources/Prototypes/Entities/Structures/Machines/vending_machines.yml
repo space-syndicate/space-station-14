@@ -114,7 +114,7 @@
     pack: AmmoVendAds
   - type: Speech
   - type: Sprite
-    sprite: Corvax/Structures/Machines/VendingMachines/ammo.rsi
+    sprite: Corvax/Structures/Machines/VendingMachines/Аmmo.rsi
     layers:
     - state: "off"
       map: ["enum.VendingMachineVisualLayers.Base"]
