@@ -19,7 +19,7 @@
     sprite: Clothing/Shoes/Boots/jackboots.rsi
   - type: Clothing
     sprite: Clothing/Shoes/Boots/jackboots.rsi
-  - type: FootstepModifier
+  - type: FootstepModifier # Corvax-Sounds
     footstepSoundCollection:
       collection: FootstepBoots
 
