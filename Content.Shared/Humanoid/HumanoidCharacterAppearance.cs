@@ -84,17 +84,16 @@ namespace Content.Shared.Humanoid
             return new(HairStyleId, HairColor, FacialHairStyleId, FacialHairColor, EyeColor, SkinColor, newMarkings);
         }
 
-        public static HumanoidCharacterAppearance Default()
+        public HumanoidCharacterAppearance() : this(
+            HairStyles.DefaultHairStyle,
+            Color.Black,
+            HairStyles.DefaultFacialHairStyle,
+            Color.Black,
+            Color.Black,
+            Humanoid.SkinColor.ValidHumanSkinTone,
+            new ()
+        )
         {
-            return new(
-                HairStyles.DefaultHairStyle,
-                Color.Black,
-                HairStyles.DefaultFacialHairStyle,
-                Color.Black,
-                Color.Black,
-                Humanoid.SkinColor.ValidHumanSkinTone,
-                new ()
-            );
         }
 
         public static HumanoidCharacterAppearance DefaultWithSpecies(string species)
@@ -255,6 +254,7 @@ namespace Content.Shared.Humanoid
                         break;
                 }
                 markingSet.EnsureSpecies(species, skinColor, markingManager);
+                markingSet.FilterSponsor(sponsorMarkings, markingManager); // Corvax-Sponsors
             }
 
             return new HumanoidCharacterAppearance(

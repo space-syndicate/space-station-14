@@ -1,0 +1,17 @@
+﻿- type: entity
+  parent: FaxMachineBase
+  id: ExternalFaxMachine
+  name: Fax
+  suffix: External
+  components:
+    - type: FaxMachine
+      name: "External Fax Prototupe"
+      notifyAdmins: false
+    - type: DeviceNetwork
+      examinableAddress: true
+      receiveFrequencyId: Fax
+      transmitFrequencyId: Fax
+    - type: ExternalNetworkConnection
+      deviceType: Fax
+      autoConnect: true
+

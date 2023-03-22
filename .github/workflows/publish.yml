@@ -43,7 +43,7 @@ jobs:
 
     - name: Package all
       run: |
-        Tools/package_server_build.py -p win-x64 linux-x64 osx-x64 linux-arm64
+        Tools/package_server_build.py -p linux-x64
         Tools/package_client_build.py
 
     - name: Update Build Info
@@ -77,3 +77,4 @@ jobs:
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         DISCORD_WEBHOOK_URL: ${{ secrets.CHANGELOG_DISCORD_WEBHOOK }}
+        TRANSLATION_API_URL: ${{ secrets.CHANGELOG_TRANSLATION_API_URL }}

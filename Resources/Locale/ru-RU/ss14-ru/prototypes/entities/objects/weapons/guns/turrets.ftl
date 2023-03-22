@@ -13,3 +13,6 @@ ent-WeaponTurretNanoTrasen = { ent-BaseWeaponTurret }
 ent-WeaponTurretHostile = { ent-BaseWeaponTurret }
     .suffix = Враждебная
     .desc = { ent-BaseWeaponTurret.desc }
+ent-WeaponTurretXeno = ксено турель
+    .desc = Стреляет кислотными зарядами калибра 9 мм.
+    .suffix = Ксено

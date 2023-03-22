@@ -39,6 +39,7 @@ flavor-base-fizzy = шипуче
 flavor-base-shocking = шокирующе
 flavor-base-cheap = дёшево
 flavor-base-piquant = пикантно
+flavor-base-sharp = резко
 # lmao
 flavor-base-terrible = ужасно
 
@@ -97,6 +98,7 @@ flavor-complex-bungo = как бунго
 flavor-complex-raisins = как сушеный виноград
 flavor-complex-orange = как апельсины
 flavor-complex-watermelon = как арбуз
+flavor-complex-garlic = как чеснок
 
 ## Complex foodstuffs (cooked foods, joke flavors, etc)
 
@@ -182,3 +184,4 @@ flavor-complex-medicine = как лекарство
 flavor-complex-carpet = как горсть шерсти
 flavor-complex-bee = беспчеловечно
 flavor-complex-sax = как джаз
+flavor-complex-bottledlightning = как молния в бутылке

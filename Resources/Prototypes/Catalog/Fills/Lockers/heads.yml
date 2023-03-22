@@ -71,7 +71,6 @@
       - id: ClothingNeckCloakHop
       - id: ClothingHeadHatHopcap
       - id: HoPIDCard
-        prob: 0.9
       - id: ClothingHeadsetCommand
       - id: BoxPDA
       - id: BoxID
@@ -179,6 +178,8 @@
     contents:
       - id: WeaponDisabler
       - id: ClothingHeadHatBeretHoS
+      - id: ClothingHeadHatCapHoS  # Corvax-SecFashion
+        prob: 0.5
       - id: ClothingHeadHatHoshat
       - id: ClothingNeckCloakHos
       - id: ClothingOuterCoatHoSTrench
