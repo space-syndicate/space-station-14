@@ -12,6 +12,7 @@ ui-disposal-unit-button-power = Питание
 
 disposal-flush-verb-get-data-text = Смыть
 
+<<<<<<< HEAD
 ## SelfInsertVerb
 
 disposal-self-insert-verb-get-data-text = Залезть внутрь
@@ -26,3 +27,8 @@ disposal-unit-state-Ready = Готов
 disposal-unit-state-Pressurizing = Нагнетание
 disposal-self-insert-verb-get-data-text = Залезть внутрь
 disposal-eject-verb-get-data-text = Извлечь всё
+=======
+ui-disposal-unit-is-valid-interaction-cannot=interact = You can't do that!
+ui-disposal-unit-is-valid-interaction-cannot-reach = You can't reach there!
+ui-disposal-unit-is-valid-interaction-no-hands = У вас нет рук.
+>>>>>>> parent of a3be9dc... Translate can't react text

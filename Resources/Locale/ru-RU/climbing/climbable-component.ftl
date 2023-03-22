@@ -14,7 +14,12 @@ comp-climbable-user-climbs-force = Вы заставляете { CAPITALIZE($mov
 # Shown to others when someone force other $moved-user to climb on $climbable
 comp-climbable-user-climbs-force-other = { CAPITALIZE($user) } заставляет { $moved-user } взабраться на { $climbable }!
 # Shown to you when your character is far away from climbable
+<<<<<<< HEAD
 comp-climbable-cant-reach = Вы не можете туда достать!
+=======
+comp-climbable-cant-reach = You can't reach there!
+
+>>>>>>> parent of a3be9dc... Translate can't react text
 # Shown to you when your character can't interact with climbable for some reason
 comp-climbable-cant-interact = Вы не можете этого сделать!
 # Shown to you when your character can't climb

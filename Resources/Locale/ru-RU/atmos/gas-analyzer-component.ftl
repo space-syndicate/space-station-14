@@ -1,7 +1,13 @@
 ## Entity
 
+<<<<<<< HEAD
 gas-analyzer-component-player-cannot-reach-message = Вы не можете туда достать.
 gas-analyzer-shutoff = Газоанализатор выключается.
+=======
+gas-analyzer-component-player-has-no-hands-message = У вас нет рук.
+gas-analyzer-component-need-gas-analyzer-in-hand-message = You need a Gas Analyzer in your hand!
+gas-analyzer-component-player-cannot-reach-message = You can't reach there.
+>>>>>>> parent of a3be9dc... Translate can't react text
 
 ## UI
 
