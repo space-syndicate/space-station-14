@@ -1,3 +1,3 @@
-ent-GeigerCounter = счётчик Гейгера
-    .desc = Портативное устройство, используемое для определения и измерения радиационных импульсов.
+ent-GeigerCounter = Geiger counter
+    .desc = A handheld device used for detecting and measuring radiation pulses.
     .suffix = { "" }
