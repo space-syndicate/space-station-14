@@ -16,6 +16,7 @@
     prototype: Reptilian
     requiredLegs: 2
   - type: LizardAccent
+  #- type: LizardBlood
   - type: Speech
     speechSounds: Lizard
   - type: Vocal
@@ -39,7 +40,7 @@
         Piercing: 5
   - type: Temperature
     heatDamageThreshold: 400
-    coldDamageThreshold: 285
+    coldDamageThreshold: 260  #starting temperature damage treshold
     currentTemperature: 310.15
     specificHeat: 46
     coldDamage:
