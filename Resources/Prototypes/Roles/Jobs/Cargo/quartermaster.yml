@@ -15,7 +15,7 @@
   weight: 10
   startingGear: QuartermasterGear
   icon: "QuarterMaster"
-  supervisors: job-supervisors-hop
+  supervisors: job-supervisors-captain #corvax-hierarchy
   access:
   - Cargo
   - Salvage
