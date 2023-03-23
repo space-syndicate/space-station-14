@@ -1,0 +1,19 @@
+- type: reagent
+  id: ADTZessulsBlood
+  name: reagent-name-zessul-blood
+  group: Medicine
+  desc: reagent-desc-zessul-blood
+  physicalDesc: reagent-physical-desc-bloody
+  flavor: metallic
+  color: "#800000"
+  metabolisms:
+    Medicine:
+      effects:
+      - !type:HealthChange
+        damage:
+          groups:
+            Brute: -1
+            Burn: -1
+          types:
+            Cold: -1
+
