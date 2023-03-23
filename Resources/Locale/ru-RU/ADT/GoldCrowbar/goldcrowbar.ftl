@@ -1,3 +1,6 @@
-﻿ent-UrogCrowbarGold = Лом Урог-Джаха
-    .desc = "Гравировка на рукояти 'Пиши заявку с*ка'"
+ent-ADTCalliePillow = Келли
+    .desc = "Малышка Келли!"
+    .suffix = { "" }
+ent-ADTAuroraPillow = Аврора
+    .desc = "Маленькая симпатичная аврорская подушечка! УвУ"
     .suffix = { "" }

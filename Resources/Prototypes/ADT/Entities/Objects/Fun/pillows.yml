@@ -1,0 +1,69 @@
+- type: entity
+  parent: BasePillow
+  id: ADTAuroraPillow
+  name: AuroraPillow
+  description: Little cute AuroraPillow! UwU
+  components:
+  - type: Sprite
+    state: aurora
+  - type: EmitSoundOnUse
+    sound:
+      path: /Audio/Items/Toys/toysqueak2.ogg
+  - type: EmitSoundOnLand
+    sound:
+      path: /Audio/Items/Toys/toysqueak2.ogg
+  - type: EmitSoundOnActivate
+    sound:
+      path: /Audio/Items/Toys/toysqueak2.ogg
+  - type: MeleeWeapon
+    soundHit:
+      path: /Audio/Items/Toys/toysqueak2.ogg
+
+- type: entity          
+  parent: BasePillow
+  id: ADTCalliePillow
+  name: CalliePillow
+  description: Little Callie! 
+  components:
+  - type: Sprite
+    state: callie
+  - type: EmitSoundOnUse
+    sound:
+      path: /Audio/Items/Toys/toysqueak2.ogg
+  - type: EmitSoundOnLand
+    sound:
+      path: /Audio/Items/Toys/toysqueak2.ogg
+  - type: EmitSoundOnActivate
+    sound:
+      path: /Audio/Items/Toys/toysqueak2.ogg
+  - type: MeleeWeapon
+    soundHit:
+      path: /Audio/Items/Toys/toysqueak2.ogg
+
+
+- type: entity
+  parent: BaseItem
+  id: BasePillow
+  abstract: true
+  components:
+  - type: Sprite
+    sprite: ADT/Objects/Fun/daki.rsi
+    netsync: false
+  - type: EmitSoundOnUse
+    sound:
+      collection: ToySqueak
+  - type: EmitSoundOnLand
+    sound:
+      collection: ToySqueak
+  - type: EmitSoundOnActivate
+    sound:
+      collection: ToySqueak
+  - type: ItemCooldown
+  - type: UseDelay
+    delay: 1.0
+  - type: MeleeWeapon
+    soundHit:
+      collection: ToySqueak
+    damage:
+      types:
+        Blunt: 0
