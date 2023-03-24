@@ -1,0 +1,9 @@
+- type: entity
+  parent: ClothingOuterBase
+  id: ADTJayBomber
+  name: jaybomber
+  components:
+  - type: Sprite
+    sprite: ADT/Clothing/OuterClothing/Coats/jaybomber.rsi
+  - type: Clothing
+    sprite: ADT/Clothing/OuterClothing/Coats/jaybomber.rsi

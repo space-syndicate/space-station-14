@@ -1,8 +1,8 @@
 - type: entity
-  name: Тайзер Эйдана
+  name: станнер Эйдана
   parent: BaseWeaponBatterySmall
   id: WeaponDisablerIdan
-  description: На вкус как бикаридин. По урону всё тоже самое.
+  description: На вкус как бикаридин.
   components:
     - type: Tag
       tags:

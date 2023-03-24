@@ -1,0 +1,45 @@
+- type: entity
+  parent: ClothingOuterHardsuitBase
+  id: ADTSpaceMarinne
+  name: berserker hardsuit
+  description: Repent of your sins.
+  components:
+  - type: Sprite
+    sprite: ADT/Clothing/OuterClothing/Hardsuits/marinne.rsi
+  - type: Clothing
+    sprite: ADT/Clothing/OuterClothing/Hardsuits/marinne.rsi
+  - type: PressureProtection
+    highPressureMultiplier: 0.02
+    lowPressureMultiplier: 1000
+  - type: ClothingSpeedModifier
+    walkModifier: 1.0
+    sprintModifier: 1.0
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.2 #best armor in the game
+        Slash: 0.2
+        Piercing: 0.15 #лучшая броня имеет 0.2. Имбааа!
+        Heat: 0.2
+        Radiation: 0.2
+  - type: ExplosionResistance
+    damageCoefficient: 0.2
+  - type: ToggleableClothing
+    clothingPrototype: ADTSpaceMarinneHead
+
+- type: entity
+  parent: ClothingHeadHardsuitWithLightBase
+  id: ADTSpaceMarinneHead
+  noSpawn: true
+  name: berserker hardsuit helmet
+  description: You have been given power over destinies.
+  components:
+  - type: Sprite
+    sprite: ADT/Clothing/Head/Hardsuits/marinnehead.rsi
+  - type: Clothing
+    sprite: ADT/Clothing/Head/Hardsuits/marinnehead.rsi
+  - type: PointLight
+    color: red
+  - type: PressureProtection
+    highPressureMultiplier: 0.08
+    lowPressureMultiplier: 1000
