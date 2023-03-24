@@ -28,6 +28,8 @@ uplink-c4-bundle-name = набор C-4
 uplink-c4-bundle-desc = Иногда количество - это качество. Содержит 8 штук взрывчатки C-4.
 uplink-emp-grenade-name = { ent-EmpGrenade }
 uplink-emp-grenade-desc = { ent-EmpGrenade.desc }
+uplink-exploding-pen-name = Взрывающаяся ручка
+uplink-exploding-pen-desc = Взрывное устройство класса IV, помещённое в стандартную ручку. Снабжено 4-секундным таймером.
 # Ammo
 uplink-pistol-magazine-name = пистолетный магазин (.35 авто)
 uplink-pistol-magazine-desc = Пистолетный магазин на 10 патронов. Совместим с "Гадюкой".
@@ -102,6 +104,8 @@ uplink-necronomicon-name = некрономикон
 uplink-necronomicon-desc = Нечестивая книга, позволяющая призвать демонического фамильяра.
 uplink-revolver-cap-gun-fake-name = Фальшивый игрушечный пистолет
 uplink-revolver-cap-gun-fake-desc = Одурачьте своих врагов! Использует как пистоны, так и патроны калибра .45 магнум. Последними и будет заряжен при покупке.
+uplink-banana-peel-explosive-name = Explosive Banana Peel
+uplink-banana-peel-explosive-desc = They will burst into laughter when they slip on it!
 # Armor
 uplink-chameleon-name = набор "Хамелеон"
 uplink-chameleon-desc = Рюкзак, полный вещей, оснащенных технологией хамелеона, позволяющих вам маскироваться под кого угодно на станции, и даже больше!
