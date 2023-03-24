@@ -712,6 +712,27 @@
     soundHit:
       path: /Audio/Items/Toys/toysqueak2.ogg
 
+- type: entity          
+  parent: BasePillow
+  id: ADTKirravaPillow
+  name: kirravaPillow
+  description: Little kirrava! 
+  components:
+  - type: Sprite
+    state: kirrava
+  - type: EmitSoundOnUse
+    sound:
+      path: /Audio/Items/Toys/toysqueak2.ogg
+  - type: EmitSoundOnLand
+    sound:
+      path: /Audio/Items/Toys/toysqueak2.ogg
+  - type: EmitSoundOnActivate
+    sound:
+      path: /Audio/Items/Toys/toysqueak2.ogg
+  - type: MeleeWeapon
+    soundHit:
+      path: /Audio/Items/Toys/toysqueak2.ogg
+
 - type: entity
   parent: BaseItem
   id: BasePillow
