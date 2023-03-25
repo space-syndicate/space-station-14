@@ -9,3 +9,6 @@
   - type: Clothing
     sprite: Corvax\Clothing\Head\hoods\moth.rsi
   - type: IdentityBlocker
+  - type: Tag
+    tags:
+    - HidesHair
