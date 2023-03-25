@@ -732,6 +732,8 @@
   - type: MeleeWeapon
     soundHit:
       path: /Audio/Items/Toys/toysqueak2.ogg
+  - type: StaminaDamageOnHit
+    damage: 20
 
 - type: entity          
   parent: BasePillow
@@ -753,6 +755,8 @@
   - type: MeleeWeapon
     soundHit:
       path: /Audio/Items/Toys/toysqueak2.ogg
+  - type: StaminaDamageOnHit
+    damage: 20
 
 - type: entity          
   parent: BasePillow
@@ -774,6 +778,8 @@
   - type: MeleeWeapon
     soundHit:
       path: /Audio/Items/Toys/toysqueak2.ogg
+  - type: StaminaDamageOnHit
+    damage: 20
 
 - type: entity          
   parent: BasePillow
@@ -795,6 +801,32 @@
   - type: MeleeWeapon
     soundHit:
       path: /Audio/Items/Toys/toysqueak2.ogg
+  - type: StaminaDamageOnHit
+    damage: 20
+
+- type: entity          
+  parent: BasePillow
+  id: ADTYunaPillow
+  name: YunaPillow
+  description: Little yuna! UwU
+  components:
+  - type: Sprite
+    state: yuna
+  - type: EmitSoundOnUse
+    sound:
+      path: /Audio/Items/Toys/toysqueak2.ogg
+  - type: EmitSoundOnLand
+    sound:
+      path: /Audio/Items/Toys/toysqueak2.ogg
+  - type: EmitSoundOnActivate
+    sound:
+      path: /Audio/Items/Toys/toysqueak2.ogg
+  - type: MeleeWeapon
+    soundHit:
+      path: /Audio/Items/Toys/toysqueak2.ogg
+  - type: StaminaDamageOnHit
+    damage: 20
+
 
 - type: entity
   parent: BaseItem
@@ -804,6 +836,8 @@
   - type: Sprite
     sprite: ADT/Objects/Fun/daki.rsi
     netsync: false
+  - type: StaminaDamageOnHit
+    damage: 5
   - type: EmitSoundOnUse
     sound:
       collection: ToySqueak
