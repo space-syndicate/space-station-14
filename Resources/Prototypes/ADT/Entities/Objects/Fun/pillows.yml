@@ -733,6 +733,69 @@
     soundHit:
       path: /Audio/Items/Toys/toysqueak2.ogg
 
+- type: entity          
+  parent: BasePillow
+  id: ADTYrogPillow
+  name: YrogPillow
+  description: Little yrog! 
+  components:
+  - type: Sprite
+    state: yrog
+  - type: EmitSoundOnUse
+    sound:
+      path: /Audio/Items/Toys/toysqueak2.ogg
+  - type: EmitSoundOnLand
+    sound:
+      path: /Audio/Items/Toys/toysqueak2.ogg
+  - type: EmitSoundOnActivate
+    sound:
+      path: /Audio/Items/Toys/toysqueak2.ogg
+  - type: MeleeWeapon
+    soundHit:
+      path: /Audio/Items/Toys/toysqueak2.ogg
+
+- type: entity          
+  parent: BasePillow
+  id: ADTKysPillow
+  name: KysPillow
+  description: Little kys! 
+  components:
+  - type: Sprite
+    state: kys
+  - type: EmitSoundOnUse
+    sound:
+      path: /Audio/Items/Toys/toysqueak2.ogg
+  - type: EmitSoundOnLand
+    sound:
+      path: /Audio/Items/Toys/toysqueak2.ogg
+  - type: EmitSoundOnActivate
+    sound:
+      path: /Audio/Items/Toys/toysqueak2.ogg
+  - type: MeleeWeapon
+    soundHit:
+      path: /Audio/Items/Toys/toysqueak2.ogg
+
+- type: entity          
+  parent: BasePillow
+  id: ADTNa_leuPillow
+  name: Na_leuPillow
+  description: Little na_leu! 
+  components:
+  - type: Sprite
+    state: na_leu
+  - type: EmitSoundOnUse
+    sound:
+      path: /Audio/Items/Toys/toysqueak2.ogg
+  - type: EmitSoundOnLand
+    sound:
+      path: /Audio/Items/Toys/toysqueak2.ogg
+  - type: EmitSoundOnActivate
+    sound:
+      path: /Audio/Items/Toys/toysqueak2.ogg
+  - type: MeleeWeapon
+    soundHit:
+      path: /Audio/Items/Toys/toysqueak2.ogg
+
 - type: entity
   parent: BaseItem
   id: BasePillow
