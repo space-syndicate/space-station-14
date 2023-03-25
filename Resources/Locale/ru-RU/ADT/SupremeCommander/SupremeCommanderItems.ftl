@@ -29,3 +29,11 @@ ent-ADTObjectWeaponsMeleeArkalis = Аркалис.
 ent-ADTClothingBeltSupremeCommanderSheath = Ножны высшего главнокомандующего.
     .desc = "Где моя прелесть?"
     .suffix = { "" }
+
+ent-ADTObjectWeaponsMeleeSupremeSabre = катана у ниндзя.
+    .desc = "Даже не пытайся бриться этой штукой."
+    .suffix = { "" }
+
+ent-ADTClothingBeltSupremeSheath = Ножны от ниндзя.
+    .desc = "Где моя прелесть?"
+    .suffix = { "" }
