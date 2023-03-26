@@ -1,0 +1,27 @@
+- type: polymorph
+  id: BSkeletonMorph
+  entity: MobSkeletonPerson
+  forced: true
+  transferName: true
+  # transferHumanoidAppearance: true
+  revertOnCrit: false
+  revertOnDeath: false
+  inventory: Transfer
+- type: polymorph
+  id: BDwarfMorph
+  entity: MobDwarf
+  forced: true
+  transferName: true
+  # transferHumanoidAppearance: true
+  revertOnCrit: false
+  revertOnDeath: false
+  inventory: Transfer
+- type: polymorph
+  id: BVoxMorph
+  entity: MobVox
+  forced: true
+  transferName: true
+  # transferHumanoidAppearance: true
+  revertOnCrit: false
+  revertOnDeath: false
+  inventory: Transfer
