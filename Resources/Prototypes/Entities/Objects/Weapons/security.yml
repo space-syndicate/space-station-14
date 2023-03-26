@@ -16,7 +16,7 @@
     damage:
       types:
         Blunt: 7
-    bluntStaminaDamageFactor: 2.0
+    bluntStaminaDamageFactor: 2.0 
     angle: 60
     animation: WeaponArcSlash
   - type: StaminaDamageOnHit
