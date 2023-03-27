@@ -496,6 +496,7 @@ public sealed class ChatUIController : UIController
         if (_admin.HasFlag(AdminFlags.AdminChat))
         {
             FilterableChannels |= ChatChannel.Admin;
+            FilterableChannels |= ChatChannel.AdminAlert;
             FilterableChannels |= ChatChannel.AdminChat;
             CanSendChannels |= ChatSelectChannel.Admin;
         }
