@@ -21,3 +21,28 @@
     size: 15
     sprite: ADT/Objects/Weapons/Melee/supreme-commander-sabre.rsi
   - type: DisarmMalus
+
+- type: entity
+  name: ninja katana
+  parent: BaseItem
+  id: ADTObjectWeaponsMeleeSupremeSabre
+  description: Don't even try to use it like a razor. It's forget from bluespace steel. Lagand says it took the energy of several stars to create it.
+  components:
+  - type: Sharp
+  - type: Tag
+    tags:
+    - SupremeSabre
+  - type: Sprite
+    sprite: ADT/Objects/Weapons/Melee/supreme-sabre.rsi
+    state: icon
+  - type: MeleeWeapon
+    attackRate: 1.0 
+    damage:
+      types:
+        Slash: 20 
+        Radiation: 15
+        Blunt: -1
+  - type: Item
+    size: 15
+    sprite: ADT/Objects/Weapons/Melee/supreme-sabre.rsi
+  - type: DisarmMalus
