@@ -17,3 +17,38 @@
           types:
             Cold: -1
 
+- type: reagent
+  id: SalineGlucoseSolution
+  name: reagent-name-salineglucosesolution
+  group: Medicine
+  desc: reagent-desc-salineglucosesolution
+  physicalDesc: reagent-physical-desc-salineglucosesolution
+  flavor: somesalty
+  color: "#75b1f0"
+  metabolisms:
+    Medicine:
+      effects:
+      - !type:HealthChange
+        damage:
+          groups:
+            Burn: -0.5
+            Brute: -0.5
+          types:
+            Bloodloss: -2
+
+- type: flavor
+  id: somesalty
+  flavorType: Complex
+  description: flavor-complex-somesalty
+
+- type: reaction
+  id: SalineGlucoseSolution
+  reactants:
+    Water:
+      amount: 1
+    TableSalt:
+      amount: 1
+    Sugar:
+      amount: 1
+  products:
+    SalineGlucoseSolution: 3
