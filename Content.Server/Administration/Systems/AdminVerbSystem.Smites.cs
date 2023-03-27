@@ -686,6 +686,48 @@ public sealed partial class AdminVerbSystem
         };
         args.Verbs.Add(reptilian);
 
+        Verb dwarf = new()
+        {
+            Text = "Dwarf Species Swap",
+            Category = VerbCategory.Smite,
+            Icon = new SpriteSpecifier.Rsi(new ResourcePath("/Textures/Objects/Fun/toys.rsi"), "plushie_lizard"),
+            Act = () =>
+            {
+                _polymorphSystem.PolymorphEntity(args.Target, "BDwarfMorph");
+            },
+            Impact = LogImpact.Extreme,
+            Message = Loc.GetString("admin-smite-dwarf-species-swap-description"),
+        };
+        args.Verbs.Add(dwarf);
+
+        Verb vox = new()
+        {
+            Text = "Vox Species Swap",
+            Category = VerbCategory.Smite,
+            Icon = new SpriteSpecifier.Rsi(new ResourcePath("/Textures/Objects/Fun/toys.rsi"), "plushie_lizard"),
+            Act = () =>
+            {
+                _polymorphSystem.PolymorphEntity(args.Target, "BVoxMorph");
+            },
+            Impact = LogImpact.Extreme,
+            Message = Loc.GetString("admin-smite-vox-species-swap-description"),
+        };
+        args.Verbs.Add(vox);
+
+        Verb skilet = new()
+        {
+            Text = "Skilet Species Swap",
+            Category = VerbCategory.Smite,
+            Icon = new SpriteSpecifier.Rsi(new ResourcePath("/Textures/Objects/Fun/toys.rsi"), "plushie_lizard"),
+            Act = () =>
+            {
+                _polymorphSystem.PolymorphEntity(args.Target, "BSkeletonMorph");
+            },
+            Impact = LogImpact.Extreme,
+            Message = Loc.GetString("admin-smite-skilet-species-swap-description"),
+        };
+        args.Verbs.Add(skilet);
+
         Verb locker = new()
         {
             Text = "Locker stuff",
