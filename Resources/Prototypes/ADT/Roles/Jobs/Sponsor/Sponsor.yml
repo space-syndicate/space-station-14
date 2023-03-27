@@ -1,0 +1,19 @@
+# - type: job
+#   id: Sponsor
+#   name: job-name-sponsor
+#   description: job-description-magistrat
+#   playTimeTracker: JobMagistrat
+#   startingGear: MagistratGear
+#   icon: "Magistrat"
+#   requireAdminNotify: true
+#   joinNotifyCrew: true
+#   supervisors: job-supervisors-captain
+#   canBeAntag: false
+#   access:
+#     - Command
+#     - Brig
+#     - Maintenance
+#     - Service
+#     - Security
+
+

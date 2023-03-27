@@ -8,19 +8,24 @@
     makeSentient: true
     allowMovement: true
     allowSpeech: true
-    name: Remilia, the chaplain's familiar
-    description: Obey your master. Eat fruit.
-    rules: You are an intelligent fruit bat. Follow the chaplain around. Don't cause any trouble unless the chaplain tells you to.
+    name: Ремилия, фамильяр священика
+    description: Повинуйся своему хозяину. Ешьте фрукты.
+    rules: Вы умная фруктовая летучая мышь. Следуйте за священиком повсюду. Не создавайте никаких проблем, если только капеллан не скажет вам об этом.
   - type: Grammar
     attributes:
       gender: female
       proper: true
+  - type: CanEscapeInventory
+  - type: Puller
+    needsHands: false
   - type: Tag
     tags:
       - DoorBumpOpener
   - type: Access
     tags:
     - Chapel
+  - type: Item
+    size: 5
   - type: Mind
     showExamineInfo: true
   - type: Alerts

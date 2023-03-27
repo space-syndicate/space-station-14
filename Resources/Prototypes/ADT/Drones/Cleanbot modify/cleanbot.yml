@@ -1,0 +1,7 @@
+- type: body
+  id: MobCleanBot
+  name: "Cleanbot"
+  root: hand 1
+  slots:
+    hand 1:
+      part: LeftArmBorg
