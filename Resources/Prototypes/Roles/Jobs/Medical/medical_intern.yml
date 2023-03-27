@@ -1,4 +1,4 @@
-﻿- type: job
+- type: job
   id: MedicalIntern
   name: job-name-intern
   description: job-description-intern
@@ -6,7 +6,7 @@
   requirements:
     - !type:DepartmentTimeRequirement
       department: Medical
-      time: 36000 # Corvax-RoleTime
+      time: 36000 # Fix
       inverted: true # stop playing intern if you're good at med!
   startingGear: MedicalInternGear
   icon: "MedicalIntern"
