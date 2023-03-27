@@ -1,0 +1,87 @@
+- type: entity
+  save: false
+  name: Capibara
+  description: JustCapibara
+  parent: SimpleMobBase
+  id: Capibara
+  components:
+  - type: Sprite
+    drawdepth: Mobs
+    sprite: ADT/Mobs/Capibara.rsi
+    layers:
+    - map: ["enum.DamageStateVisualLayers.Base"]
+      state: capibara
+  - type: Physics
+  - type: Fixtures
+    fixtures:
+    - shape:
+        !type:PhysShapeCircle
+        radius: 0.35
+      density: 30
+      mask:
+      - MobMask
+      layer:
+      - MobLayer
+  - type: Inventory
+    speciesId: dog
+    templateId: pet
+  - type: Strippable
+  - type: UserInterface
+    interfaces:
+    - key: enum.StrippingUiKey.Key
+      type: StrippableBoundUserInterface
+  - type: DamageStateVisuals
+    states:
+      Alive:
+        Base: capibara
+      Critical:
+        Base: capibara_dead
+      Dead:
+        Base: capibara_dead
+  - type: Appearance
+  - type: Butcherable
+    spawned:
+    - id: FoodMeat
+      amount: 2
+  - type: InteractionPopup
+    interactSuccessString: petting-success-dog
+    interactFailureString: petting-failure-generic
+    interactSuccessSound:
+      path: /Audio/Animals/small_dog_bark_happy.ogg
+  - type: Grammar
+    attributes:
+      gender: epicene
+  - type: SentienceTarget
+    flavorKind: station-event-random-sentience-flavor-corgi
+  - type: Puller
+  - type: MobPrice
+    price: 200
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  - type: Capibara
+    actionRaiseArmy:
+      useDelay: 100
+      icon: ADT/Interface/Actions/capibaraborn.png
+      name: capibara-born-name
+      description: capibara-born-description
+      itemIconStyle: NoItem
+      event: !type:CapibaraRaiseArmyActionEvent
+    hungerPerArmyUse: 5

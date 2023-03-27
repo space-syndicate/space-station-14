@@ -1,0 +1,38 @@
+- type: entity
+  name: Jana
+  parent: BaseItem
+  description: A sterile injector for rapid administration of drugs to patients.
+  id: JanaHypo
+  components:
+  - type: Sprite
+    sprite: ADT/Objects/Misc/Hyppo.rsi
+    state: hypo
+  - type: Item
+    sprite: ADT/Objects/Misc/Hyppo.rsi
+  - type: SolutionContainerManager
+    solutions:
+      hypospray:
+        maxVol: 50
+  - type: RefillableSolution
+    solution: hypospray
+  - type: ExaminableSolution
+    solution: hypospray
+  - type: Hypospray
+  - type: UseDelay
+    delay: 0
+  - type: StaticPrice
+    price: 750
+  - type: UnpoweredFlashlight
+    toggleAction:
+      name: action-name-toggle-light
+      description: action-description-toggle-light
+      icon: { sprite: Objects/Tools/flashlight.rsi, state: flashlight }
+      iconOn: Objects/Tools/flashlight.rsi/flashlight-on.png
+      event: !type:ToggleActionEvent
+  - type: PointLight
+    enabled: false
+    radius: 2
+    softness: 5
+    autoRot: true
+    color: "#be090e"
+    energy: 3
