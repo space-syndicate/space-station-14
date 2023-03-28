@@ -25,3 +25,15 @@
   revertOnCrit: false
   revertOnDeath: false
   inventory: Transfer
+- type: polymorph
+  id: BChicken
+  entity: MobChicken
+  revertOnCrit: true
+  revertOnDeath: true
+  transferName: true
+- type: polymorph
+  id: BMouse
+  entity: MobMouse
+  revertOnCrit: true
+  revertOnDeath: true
+  transferName: true
