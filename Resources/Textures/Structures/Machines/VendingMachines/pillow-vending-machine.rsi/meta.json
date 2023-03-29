@@ -17,15 +17,26 @@
       "name": "panel"
     },
     {
-      "name": "normal-unshaded",
-      "delays": [
-        [
-          1.5,
-          0.5,
-          1.5,
-          0.5
+        "name": "normal-unshaded",
+        "delays": [
+            [
+                1.5,
+                0.5,
+                1.5,
+                0.5
+            ]
         ]
-      ]
+    },
+    {
+        "name": "deny-unshaded",
+        "delays": [
+            [
+                1.5,
+                0.5,
+                1.5,
+                0.5
+            ]
+        ]
     }
   ]
 }
