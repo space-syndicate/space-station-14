@@ -1,12 +1,12 @@
-﻿- type: job
+- type: job
   id: TechnicalAssistant
   name: job-name-technical-assistant
   description: job-description-technical-assistant
   playTimeTracker: JobTechnicalAssistant
   requirements:
     - !type:DepartmentTimeRequirement
-      department: Engineering
-      time: 36000 # Corvax-RoleTime
+      department: Civilian
+      time: 3600 # Corvax-RoleTime
       inverted: true # stop playing intern if you're good at engineering!
   startingGear: TechnicalAssistantGear
   icon: "TechnicalAssistant"
