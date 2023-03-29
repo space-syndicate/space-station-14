@@ -6,7 +6,7 @@
   stations:
     Delta:
       mapNameTemplate: '{0} Дельта {1}'
-      emergencyShuttlePath: /Maps/Shuttles/delta_shuttle.yml
+      emergencyShuttlePath: /Maps/Shuttles/emergency_delta.yml
       nameGenerator:
         !type:NanotrasenNameGenerator
         prefixCreator: 'TG'
@@ -42,6 +42,7 @@
         AtmosphericTechnician: [ 2, 3 ]
         TechnicalAssistant: [ 3, 3 ]
         ResearchAssistant: [ 3, 3 ]
+        Reporter: [ 2, 2 ]
         MedicalIntern: [ 3, 3 ]
         ServiceWorker: [ 3, 3 ]
         SecurityCadet: [ 3, 3 ]
