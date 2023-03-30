@@ -83,6 +83,8 @@
     attributes:
       proper: true
       gender: female
+  - type: TTS
+    voice: naisha
 
 - type: entity
   name: Runtime
