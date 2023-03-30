@@ -104,7 +104,7 @@ entities:
   components:
   - type: MetaData
   - rot: -0.003097802633419633 rad
-    pos: -269.4442,108.115295
+    pos: 0,0
     parent: invalid
     type: Transform
   - chunks:
@@ -18607,28 +18607,6 @@ entities:
     pos: -37.5,8.5
     parent: 0
     type: Transform
-- uid: 1739
-  type: BiomassReclaimer
-  components:
-  - pos: -40.5,0.5
-    parent: 0
-    type: Transform
-  - containers:
-      machine_board: !type:Container
-        ents:
-        - 1740
-      machine_parts: !type:Container
-        ents:
-        - 1741
-        - 1742
-        - 1743
-        - 1744
-        - 1745
-        - 1746
-        - 1747
-        - 1748
-        - 1749
-    type: ContainerContainer
 - uid: 1740
   type: BiomassReclaimerMachineCircuitboard
   components:
