@@ -34,7 +34,7 @@ ent-ADTHoloPillow = Холо
     .desc = "Симпатичная подушечка "Холо" >w<"
     .suffix = { "" }
 
-ent-ADTIanPillow = Яна 
+ent-ADTIanPillow = Иан 
     .desc = "Симпатичная подушечка "Иан" Гуф"
     .suffix = { "" }
 
@@ -126,8 +126,8 @@ ent-ADTUmaruPillow = Умару
     .desc = "Милая подушечка "Девочка аниме Умару""
     .suffix = { "" }
 
-ent-ADTYaranaikaPillow = РОБОТ Чистобот! 
-    .desc = "Подушечка "РОБОТ ДОЛЖЕН УБИРАТЬ ГОВНО!"
+ent-ADTYaranaikaPillow = Чистобот 
+    .desc = "Подушечка "Чистобот"
     .suffix = { "" }
 
 ent-ADTKirravaPillow = Киирава 
@@ -152,4 +152,8 @@ ent-ADTYunaPillow = Юна
 
 ent-ADTNarsiePillow = Нар'Си 
     .desc = "Подушечка культиста Нар'Си!"
+    .suffix = { "" }
+
+ent-ADTJunalPillow = Джунала 
+    .desc = Милая подушечка "Джунала! UwU""
     .suffix = { "" }
