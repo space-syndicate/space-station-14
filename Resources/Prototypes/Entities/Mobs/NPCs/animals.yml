@@ -939,6 +939,8 @@
   id: MobLizard
   description: A harmless dragon.
   components:
+  - type: TTS
+    voice: Scout
   - type: MovementSpeedModifier
     baseWalkSpeed : 2
     baseSprintSpeed : 3
@@ -1522,6 +1524,8 @@
     speciesId: fox
     templateId: pet
   - type: Strippable
+  - type: TTS
+    voice: Ahri
   - type: UserInterface
     interfaces:
     - key: enum.StrippingUiKey.Key
@@ -1756,8 +1760,6 @@
       amount: 3
   - type: ReplacementAccent
     accent: cat
-  - type: TTS
-    voice: yuumi
   - type: InteractionPopup
     successChance: 0.7
     interactSuccessString: petting-success-cat
@@ -1783,6 +1785,8 @@
     - map: ["enum.DamageStateVisualLayers.Base"]
       state: cat2
   - type: Appearance
+  - type: TTS
+    voice: myron
   - type: DamageStateVisuals
     states:
       Alive:
@@ -1839,6 +1843,8 @@
     - map: ["enum.DamageStateVisualLayers.Base"]
       state: caracal_flop
   - type: Appearance
+  - type: TTS
+    voice: myron
   - type: DamageStateVisuals
     states:
       Alive:
@@ -1907,6 +1913,8 @@
   - type: Grammar
     attributes:
       gender: epicene
+  - type: TTS
+    voice: priest
 
 - type: entity
   name: ferret
@@ -1932,6 +1940,8 @@
       layer:
       - MobLayer
   - type: Appearance
+  - type: TTS
+    voice: Meepo
   - type: Inventory
     speciesId: fox #close enough
     templateId: pet
