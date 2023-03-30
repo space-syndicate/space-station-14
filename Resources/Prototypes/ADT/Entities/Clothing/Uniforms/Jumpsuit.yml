@@ -1,0 +1,54 @@
+- type: entity
+  parent: ClothingUniformBase
+  id: ADTClothingUniformSupremeCommanderJumpsuit
+  name: supreme comander's jumpsuit
+  description: Suitable for situations on a supergalactic scale.
+  components:
+  - type: Sprite
+    sprite: ADT/Clothing/Uniforms/Jumpsuit/supreme-commander-uniform.rsi
+  - type: Clothing
+    sprite: ADT/Clothing/Uniforms/Jumpsuit/supreme-commander-uniform.rsi
+
+- type: entity
+  parent: ClothingUniformBase
+  id: ADTClothingUniformBlackWeddingSuit
+  name: Black Wedding Suit
+  description: Made in USSP
+  components:
+  - type: Sprite
+    sprite: ADT/Clothing/Uniforms/Jumpsuit/black_wedding_suit_male.rsi
+  - type: Clothing
+    sprite: ADT/Clothing/Uniforms/Jumpsuit/black_wedding_suit_male.rsi
+
+- type: entity
+  parent: ClothingUniformBase
+  id: ADTClothingUniformBlueWeddingSuit
+  name: Blue Wedding suit
+  description: Made in USSP
+  components:
+  - type: Sprite
+    sprite: ADT/Clothing/Uniforms/Jumpsuit/blue_wedding_suit_male.rsi
+  - type: Clothing
+    sprite: ADT/Clothing/Uniforms/Jumpsuit/blue_wedding_suit_male.rsi
+
+- type: entity
+  parent: ClothingUniformBase
+  id: ADTClothingUniformBrownWeddingSuit
+  name: Brown Wedding suit
+  description: Made in USSP
+  components:
+  - type: Sprite
+    sprite: ADT/Clothing/Uniforms/Jumpsuit/brown_wedding_suit_male.rsi
+  - type: Clothing
+    sprite: ADT/Clothing/Uniforms/Jumpsuit/brown_wedding_suit_male.rsi
+
+- type: entity
+  parent: ClothingUniformBase
+  id: ADTClothingUniformPriestPrimalSuit
+  name: Priest's primal suit
+  description: Primal suit for primal rituals
+  components:
+  - type: Sprite
+    sprite: ADT/Clothing/Uniforms/Jumpsuit/priest_primal_suit.rsi
+  - type: Clothing
+    sprite: ADT/Clothing/Uniforms/Jumpsuit/priest_primal_suit.rsi
