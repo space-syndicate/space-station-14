@@ -69,3 +69,27 @@
   sprites:
     - sprite: ADT/Customization/Markings/hair.rsi
       state: turanga
+
+- type: marking
+  id: ADTAllAyanami
+  bodyPart: Hair
+  markingCategory: Hair
+  sprites:
+    - sprite: ADT/Customization/Markings/hair.rsi
+      state: ayanami
+
+- type: marking
+  id: ADTAllBubleGum
+  bodyPart: Hair
+  markingCategory: Hair
+  sprites:
+    - sprite: ADT/Customization/Markings/hair.rsi
+      state: buble_gum
+
+- type: marking
+  id: ADTAllMavis
+  bodyPart: Hair
+  markingCategory: Hair
+  sprites:
+    - sprite: ADT/Customization/Markings/hair.rsi
+      state: mavis
