@@ -1,0 +1,22 @@
+- type: entity
+  parent: ClothingOuterBaseLarge
+  id: ClothingOuterArmorCrusader
+  name: Crusader Armor
+  description: An armored vest with heavy padding to protect against melee attacks, perfect for fighting delinquents around the station.
+  components:
+  - type: Sprite
+    sprite: Backmen/Clothing/OuterClothing/Armor/armor_crusader.rsi
+  - type: Clothing
+    sprite: Backmen/Clothing/OuterClothing/Armor/armor_crusader.rsi
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.65
+        Slash: 0.6
+        Piercing: 0.5
+        Heat: 0.4
+        Radiation: 0.20
+        Caustic: 0.75
+  - type: ExplosionResistance
+    damageCoefficient: 0.8
+  - type: GroupExamine
