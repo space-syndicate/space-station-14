@@ -36,6 +36,20 @@
   roundStart: false
 
 - type: ttsVoice
+  id: TrainingRobot
+  name: tts-voice-name-trainingrobot
+  sex: Unsexed
+  speaker: baya
+  roundStart: false
+
+- type: ttsVoice
+  id: Kelthuzad
+  name: tts-voice-name-kelthuzad
+  sex: Unsexed
+  speaker: baya
+  roundStart: false
+
+- type: ttsVoice
   id: Maiev
   name: tts-voice-name-maiev
   sex: Female
