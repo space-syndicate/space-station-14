@@ -1,3 +1,3 @@
-ent-SingularityGenerator = gravitational singularity generator
-    .desc = An Odd Device which produces a Gravitational Singularity when set up.
+ent-SingularityGenerator = gravitational pizzalarity generator
+    .desc = An Odd Device which produces a Gravitational Pizzalarity when set up.
     .suffix = { "" }

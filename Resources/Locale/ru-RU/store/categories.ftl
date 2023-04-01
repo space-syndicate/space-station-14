@@ -11,6 +11,7 @@ store-category-utility = Утилиты
 store-category-implants = Импланты
 store-category-job = Работа
 store-category-armor = Броня
+store-category-magic = Magic
 store-category-pointless = Безделушки
 # Revenant
 store-category-abilities = Способности

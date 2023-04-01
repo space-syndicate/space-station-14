@@ -1,5 +1,5 @@
-ent-Welder = welding tool
-    .desc = Melts anything as long as it's fueled, don't forget your eye protection!
+ent-Welder = cowelding tool
+    .desc = Melts anything as long as it's fueled, don't forget your eye protection! Moo!
     .suffix = { "" }
 ent-WelderIndustrial = industrial welding tool
     .desc = An industrial welder with over double the fuel capacity.
