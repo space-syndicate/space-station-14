@@ -12,5 +12,5 @@ trait-muted-name = Немота
 trait-muted-desc = Вы не можете говорить
 trait-paracusia-name = Паракузия
 trait-paracusia-desc = Вы слышите звуки, которых на самом деле нет
-trait-truly-good-and-honest-pure-of-heart-christian-boy-name = Truly Good and Honest Pure of Heart Christian Boy
-trait-truly-good-and-honest-pure-of-heart-christian-boy-desc = Through the glorious light of Our Father, you realize that impure speech is a one way sentence to Hell.
+trait-truly-good-and-honest-pure-of-heart-christian-boy-name = Истинно добрый и честный чистый сердцем христианский мальчик
+trait-truly-good-and-honest-pure-of-heart-christian-boy-desc = Через славный свет Отца нашего вы понимаете, что нечистая речь - это приговор в один конец, в ад.

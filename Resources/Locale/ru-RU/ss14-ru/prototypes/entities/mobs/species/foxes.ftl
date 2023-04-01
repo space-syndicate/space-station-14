@@ -1,6 +1,6 @@
-ent-BaseMobHumanoidFox = Urist McFox
+ent-BaseMobHumanoidFox = Урист МакФокс
     .desc = { ent-BaseMobOrganic.desc }
     .suffix = { "" }
-ent-MobHumanoidFoxDummy = Urist McHands
-    .desc = A dummy fox meant to be used in character setup.
+ent-MobHumanoidFoxDummy = Урист МакХэндс
+    .desc = Манекен-человек, используемый при создании персонажа.
     .suffix = { "" }

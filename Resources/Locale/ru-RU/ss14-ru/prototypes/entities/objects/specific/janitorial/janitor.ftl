@@ -1,8 +1,8 @@
 ent-MopItem = швабра
     .desc = Швабра, которую невозможно остановить, viscera cleanup detail ждёт вас.
     .suffix = { "" }
-ent-AdvMopItem = advanced mop
-    .desc = Motorized mop that have a bigger reservoir and can mop multiple puddles at once. Automatic Clown Countermeasure no included.
+ent-AdvMopItem = передовая швабра
+    .desc = Моторизованная швабра с большим резервуаром и возможностью мытья нескольких луж одновременно. Автоматическое противодействие клоуну в комплект не входит.
     .suffix = { "" }
 ent-MopBucket = ведро для швабры
     .desc = Содержит воду и слезы уборщика.
