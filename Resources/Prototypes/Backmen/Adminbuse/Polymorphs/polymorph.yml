@@ -26,6 +26,15 @@
   revertOnDeath: false
   inventory: Transfer
 - type: polymorph
+  id: BFoxMorph
+  entity: MobHumanoidFox
+  forced: true
+  transferName: true
+  # transferHumanoidAppearance: true
+  revertOnCrit: false
+  revertOnDeath: false
+  inventory: Transfer
+- type: polymorph
   id: BChicken
   entity: MobChicken
   revertOnCrit: true
@@ -37,3 +46,15 @@
   revertOnCrit: true
   revertOnDeath: true
   transferName: true
+- type: polymorph
+  id: BKenguru
+  entity: MobKangaroo
+  revertOnCrit: true
+  revertOnDeath: true
+  transferName: false
+- type: polymorph
+  id: BKenguru2
+  entity: MobKangarooBoxer
+  revertOnCrit: true
+  revertOnDeath: true
+  transferName: false

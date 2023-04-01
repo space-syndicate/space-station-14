@@ -1,0 +1,91 @@
+- type: disease
+  id: furry
+  name: disease-proto-furry
+  cureResist: 0.50
+  stages:
+    - 0
+    - 120
+    - 560
+  effects:
+    # compulsion pop ups
+    - !type:DiseasePopUp
+      probability: 0.015
+      type: Pvs
+      message: disease-meow
+      visualType: Medium
+      stages:
+        - 0
+        - 1
+    - !type:DiseasePopUp
+      probability: 0.03
+      message: disease-sick-generic
+      visualType: Medium
+      stages:
+        - 0
+        - 1
+    # Screeches - spreads disease
+    - !type:DiseaseSnough
+      probability: 0.03
+      snoughMessage: disease-screech
+      snoughSound:
+        collection: CatMeows
+      stages:
+        - 0
+    - !type:DiseaseSnough
+      probability: 0.05
+      snoughMessage: disease-screech
+      snoughSound:
+        collection: CatMeows
+      stages:
+        - 1
+    - !type:DiseaseSnough
+      probability: 0.2
+      snoughMessage: disease-screech
+      snoughSound:
+        collection: CatMeows
+      stages:
+        - 2
+    # asphyxiation damage, probably from all the screeching
+    - !type:DiseaseHealthChange
+      probability: 0.53
+      damage:
+        types:
+          Asphyxiation: 1
+      stages:
+        - 1
+    - !type:DiseasePolymorph
+      probability: 1
+      polymorphId: BFoxMorph
+      polymorphMessage: disease-polymorph
+      polymorphSound:
+        path: /Audio/Animals/cat_meow.ogg
+      stages:
+        - 2
+    - !type:DiseaseGenericStatusEffect
+      probability: 0.5
+      key: Stutter
+      component: OwOAccent
+      stages:
+        - 1
+    - !type:DiseaseGenericStatusEffect
+      probability: 1
+      key: Stutter
+      component: OwOAccent
+      stages:
+        - 2
+  cures:
+    - !type:DiseaseReagentCure
+      reagent: Sigynate
+      min: 300
+      stages:
+        - 1
+    - !type:DiseaseReagentCure
+      reagent: Theobromine
+      min: 100
+      stages:
+        - 2
+    - !type:DiseaseReagentCure
+      reagent: WhiteRussian
+      min: 500
+      stages:
+        - 0
