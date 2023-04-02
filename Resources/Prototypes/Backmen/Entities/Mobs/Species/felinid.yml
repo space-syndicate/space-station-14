@@ -114,7 +114,6 @@
     prototype: Felinid
   - type: Damageable
     damageContainer: Biological
-    damageModifierSet: Felinid
   - type: MeleeWeapon
     soundHit:
       collection: Punch

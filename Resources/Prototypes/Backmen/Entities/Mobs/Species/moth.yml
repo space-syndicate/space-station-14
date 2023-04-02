@@ -29,7 +29,6 @@
       200: Dead
   - type: Damageable
     damageContainer: Biological
-    damageModifierSet: Moff # moff
   - type: Temperature
     heatDamageThreshold: 330
     coldDamageThreshold: 195
