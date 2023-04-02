@@ -166067,6 +166067,8 @@ entities:
     type: Physics
   - fixtures: []
     type: Fixtures
+  - id: Avrit
+    type: BecomesStation
   - type: OccluderTree
   - type: Shuttle
   - nextUpdate: 1611.3860379
