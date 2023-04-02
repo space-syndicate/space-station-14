@@ -35,10 +35,10 @@ entities:
   - space: False
     mixture:
       volume: 2500
-      temperature: 160.15
+      temperature: 270.15
       moles:
-      - 11.82478
-      - 52.10312
+      - 21.82478
+      - 82.10312
       - 0
       - 0
       - 0
@@ -117,8 +117,6 @@ entities:
     type: Physics
   - fixtures: []
     type: Fixtures
-  - id: Empty
-    type: BecomesStation
   - type: OccluderTree
   - type: Shuttle
   - nextUpdate: 5089.3217253
@@ -2973,7 +2971,7 @@ entities:
     parent: 2
     type: Transform
 - uid: 323
-  type: RandomPosterLegit
+  type: PosterContrabandPwrGame
   components:
   - rot: -1.5707963267948966 rad
     pos: -12.5,1.5
