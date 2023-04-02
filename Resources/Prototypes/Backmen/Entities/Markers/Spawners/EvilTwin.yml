@@ -1,0 +1,6 @@
+- type: entity
+  name: Злой Близнец
+  id: MobEvilTwin
+  parent: SimpleMobBase
+  components:
+  - type: EvilTwinSpawner
