@@ -1,0 +1,15 @@
+﻿ - type: objective
+   id: KillObjectiveEvilTwin
+   issuer: Злой Близнец
+   conditions:
+     - !type:EvilTwinKillCondition {}
+   canBeDuplicate: false
+  
+ - type: objective
+   id: EscapeShuttleObjectiveEvilTwin
+   issuer: Злой Близнец
+   conditions:
+     - !type:EscapeShuttleCondition {}
+   canBeDuplicate: false
+  
+

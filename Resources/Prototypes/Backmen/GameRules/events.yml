@@ -1,0 +1,9 @@
+- type: gameRule
+  id: EvilTwin
+  config:
+    !type:StationEventRuleConfiguration
+    id: EvilTwin
+    earliestStart: 15
+    minimumPlayers: 5
+    weight: 10
+    endAfter: 1200
