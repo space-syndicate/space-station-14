@@ -1,0 +1,49 @@
+- type: body
+  id: foodDistributorBots
+  name: "foodDistributor"
+  root: torso
+  slots:
+    head:
+      part: HeadReptilian
+      connections:
+      - torso
+    torso:
+      part: TorsoReptilian
+      connections:
+      - left arm
+      - right arm
+    right arm:
+      part: RightArmReptilian
+      connections:
+      - right hand
+    left arm:
+      part: LeftArmReptilian
+      connections:
+      - left hand
+    right hand:
+      part: RightHandReptilian
+    left hand:
+      part: LeftHandReptilian
+
+
+
+- type: inventoryTemplate
+  id: foodDistributorBots
+  slots:
+    - name: outerClothing
+      slotTexture: suit
+      slotFlags: OUTERCLOTHING
+      slotGroup: MainHotbar
+      stripTime: 6
+      uiWindowPos: 1,2
+      strippingWindowPos: 1,2
+      displayName: Suit
+
+    - name: back
+      slotTexture: back
+      slotFlags: BACK
+      slotGroup: MainHotbar
+      stripTime: 6
+      uiWindowPos: 3,0
+      strippingWindowPos: 0,5
+      displayName: Back

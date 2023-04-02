@@ -1,0 +1,136 @@
+- type: entity
+  name: "Сервисный робот"
+  id: foodDistributorBot
+  parent: PlayerSiliconBase
+  components:
+  #- type: Drone
+  - type: IntrinsicRadioTransmitter
+    channels:
+    - Common
+    - Service
+    - Botic
+  - type: ActiveRadio
+    channels:
+    - Common
+    - Service
+    - Botic
+  - type: IntrinsicRadioReceiver
+  - type: Access
+    tags:
+    - HeadOfPersonnel
+    - Bar
+    - Kitchen
+    - Hydroponics
+    - Service
+    - Janitor
+    - Theatre
+    - Chapel
+  - type: NameIdentifier
+    group: Drone
+  - type: Strippable
+  - type: UserInterface
+    interfaces:
+    - key: enum.StrippingUiKey.Key
+      type: StrippableBoundUserInterface 
+  - type: Body
+    prototype: foodDistributorBots
+  - type: Inventory
+    speciesId: dog
+    templateId: foodDistributorBots
+  #- type: GhostTakeoverAvailable
+  #  makeSentient: true
+  #  name: Maintenance Drone
+  #  description: Maintain the station. Ignore other beings except drones.
+  #  rules: |
+  #   You are bound by these laws both in-game and out-of-character:
+  #   1. You may not involve yourself in the matters of another being, even if such matters conflict with Law Two or Law Three, unless the other being is another Drone.
+  #   2. You may not harm any being, regardless of intent or circumstance.
+  #   3. Your goals are to build, maintain, repair, improve, and power to the best of your abilities, You must never actively work against these goals.
+  - type: MovementSpeedModifier
+    baseWalkSpeed : 2.5
+    baseSprintSpeed : 2.5
+  - type: Flashable 
+  - type: NoSlip
+  - type: StatusEffects
+    allowed:
+    - Stun
+    - KnockedDown
+    - SlowedDown
+  - type: SlowOnDamage
+    speedModifierThresholds:
+      30: 0.7
+      50: 0.5
+  - type: Temperature
+    heatDamageThreshold: 5000
+    currentTemperature: 310.15
+    specificHeat: 42
+    heatDamage:
+      types:
+        Heat : 1 #per second, scales with temperature & other constants
+  - type: Sprite
+    drawdepth: Mobs
+    netsync: false
+    layers:
+    - map: [ "enum.HumanoidVisualLayers.Chest" ]
+    - map: [ "enum.HumanoidVisualLayers.Head" ]
+    - map: [ "enum.HumanoidVisualLayers.Snout" ]
+    - map: [ "enum.HumanoidVisualLayers.Eyes" ]
+    - map: ["enum.DamageStateVisualLayers.Base"]
+      state: robot_food_distributor_bot
+      sprite: ADT\Mobs\Silicon\Bots\robot_food_distributor_bot.rsi
+  - type: MovementIgnoreGravity
+  - type: Fixtures
+    fixtures:
+    - shape:
+        !type:PhysShapeCircle
+        radius: 0.35
+      density: 50
+      mask:
+      - FlyingMobMask
+      layer:
+      - FlyingMobLayer
+  - type: DamageStateVisuals
+    states:
+      Alive:
+        Base: robot_food_distributor_bot
+      Dead:
+        Base: dead_bot
+  - type: Appearance
+    visuals:
+      - type: GenericEnumVisualizer
+        key: enum.DroneVisuals.Status
+        layer: 0
+        states:
+          enum.DroneStatus.Off: dead_bot
+          enum.DroneStatus.On: robot_food_distributor_bot
+  #- type: ReplacementAccent
+  #  accent: silicon
+  - type: Repairable
+    fuelcost: 25
+    doAfterDelay: 8
+  - type: Actions
+  - type: TypingIndicator
+    proto: robot
+  - type: Speech
+    speechSounds: Pai
+  - type: UnpoweredFlashlight
+    toggleAction:
+      name: action-name-toggle-light
+      description: action-description-toggle-light
+      icon: { sprite: Objects/Tools/flashlight.rsi, state: flashlight }
+      iconOn: Objects/Tools/flashlight.rsi/flashlight-on.png
+      event: !type:ToggleActionEvent
+  - type: PointLight
+    enabled: false
+    color: Yellow
+  - type: Tag
+    tags:
+      - ShoesRequiredStepTriggerImmune
+      - CannotSuicide
+      - DoorBumpOpener
+  - type: GhostTakeoverAvailable
+    makeSentient: true
+    name: robot food distributor
+    description: You are an experimental mecha created by who-knows-what, all you know is that you have weapons and you detect fleshy moving targets nearby...
+    rules: Вы сервисный робот, помогайте ГП. Вы не можете быть антагонистом!
+
