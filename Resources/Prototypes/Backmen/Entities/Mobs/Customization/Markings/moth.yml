@@ -1,0 +1,1277 @@
+# All the moth customization
+
+#
+# Antennas
+#
+- type: marking
+  id: MothAntennasPlain
+  bodyPart: HeadTop
+  markingCategory: HeadTop
+  forcedColoring: true
+  speciesRestriction: [Moth]
+  sprites:
+  - sprite: Backmen/Mobs/Customization/moth_antennas.rsi
+    state: plain
+
+- type: marking
+  id: MothAntennasReddish
+  bodyPart: HeadTop
+  markingCategory: HeadTop
+  forcedColoring: true
+  speciesRestriction: [Moth]
+  sprites:
+  - sprite: Backmen/Mobs/Customization/moth_antennas.rsi
+    state: reddish
+
+- type: marking
+  id: MothAntennasRoyal
+  bodyPart: HeadTop
+  markingCategory: HeadTop
+  forcedColoring: true
+  speciesRestriction: [Moth]
+  sprites:
+  - sprite: Backmen/Mobs/Customization/moth_antennas.rsi
+    state: royal
+
+- type: marking
+  id: MothAntennasGothic
+  bodyPart: HeadTop
+  markingCategory: HeadTop
+  forcedColoring: true
+  speciesRestriction: [Moth]
+  sprites:
+  - sprite: Backmen/Mobs/Customization/moth_antennas.rsi
+    state: gothic
+
+- type: marking
+  id: MothAntennasLovers
+  bodyPart: HeadTop
+  markingCategory: HeadTop
+  forcedColoring: true
+  speciesRestriction: [Moth]
+  sprites:
+  - sprite: Backmen/Mobs/Customization/moth_antennas.rsi
+    state: lovers
+
+- type: marking
+  id: MothAntennasWhitefly
+  bodyPart: HeadTop
+  markingCategory: HeadTop
+  forcedColoring: true
+  speciesRestriction: [Moth]
+  sprites:
+  - sprite: Backmen/Mobs/Customization/moth_antennas.rsi
+    state: whitefly
+
+- type: marking
+  id: MothAntennasFirewatch
+  bodyPart: HeadTop
+  markingCategory: HeadTop
+  forcedColoring: true
+  speciesRestriction: [Moth]
+  sprites:
+  - sprite: Backmen/Mobs/Customization/moth_antennas.rsi
+    state: firewatch
+
+- type: marking
+  id: MothAntennasDeathshead
+  bodyPart: HeadTop
+  markingCategory: HeadTop
+  forcedColoring: true
+  speciesRestriction: [Moth]
+  sprites:
+  - sprite: Backmen/Mobs/Customization/moth_antennas.rsi
+    state: deathshead
+
+- type: marking
+  id: MothAntennasPoison
+  bodyPart: HeadTop
+  markingCategory: HeadTop
+  forcedColoring: true
+  speciesRestriction: [Moth]
+  sprites:
+  - sprite: Backmen/Mobs/Customization/moth_antennas.rsi
+    state: poison
+
+- type: marking
+  id: MothAntennasMoonfly
+  bodyPart: HeadTop
+  markingCategory: HeadTop
+  forcedColoring: true
+  speciesRestriction: [Moth]
+  sprites:
+  - sprite: Backmen/Mobs/Customization/moth_antennas.rsi
+    state: moonfly
+
+- type: marking
+  id: MothAntennasSnow
+  bodyPart: HeadTop
+  markingCategory: HeadTop
+  forcedColoring: true
+  speciesRestriction: [Moth]
+  sprites:
+  - sprite: Backmen/Mobs/Customization/moth_antennas.rsi
+    state: snow
+
+- type: marking
+  id: MothAntennasOakworm
+  bodyPart: HeadTop
+  markingCategory: HeadTop
+  forcedColoring: true
+  speciesRestriction: [Moth]
+  sprites:
+  - sprite: Backmen/Mobs/Customization/moth_antennas.rsi
+    state: oakworm
+
+- type: marking
+  id: MothAntennasWitchking
+  bodyPart: HeadTop
+  markingCategory: HeadTop
+  forcedColoring: true
+  speciesRestriction: [Moth]
+  sprites:
+  - sprite: Backmen/Mobs/Customization/moth_antennas.rsi
+    state: witchking
+
+- type: marking
+  id: MothAntennasJungle
+  bodyPart: HeadTop
+  markingCategory: HeadTop
+  forcedColoring: true
+  speciesRestriction: [Moth]
+  sprites:
+  - sprite: Backmen/Mobs/Customization/moth_antennas.rsi
+    state: jungle
+
+- type: marking
+  id: MothAntennasRegal
+  bodyPart: HeadTop
+  markingCategory: HeadTop
+  forcedColoring: true
+  speciesRestriction: [Moth]
+  sprites:
+  - sprite: Backmen/Mobs/Customization/moth_antennas.rsi
+    state: regal
+
+- type: marking
+  id: MothAntennasRosy
+  bodyPart: HeadTop
+  markingCategory: HeadTop
+  forcedColoring: true
+  speciesRestriction: [Moth]
+  sprites:
+  - sprite: Backmen/Mobs/Customization/moth_antennas.rsi
+    state: rosy
+
+- type: marking
+  id: MothAntennasFeathery
+  bodyPart: HeadTop
+  markingCategory: HeadTop
+  forcedColoring: true
+  speciesRestriction: [Moth]
+  sprites:
+  - sprite: Backmen/Mobs/Customization/moth_antennas.rsi
+    state: feathery
+
+- type: marking
+  id: MothAntennasBrown
+  bodyPart: HeadTop
+  markingCategory: HeadTop
+  forcedColoring: true
+  speciesRestriction: [Moth]
+  sprites:
+  - sprite: Backmen/Mobs/Customization/moth_antennas.rsi
+    state: brown
+
+- type: marking
+  id: MothAntennasPlasmafire
+  bodyPart: HeadTop
+  markingCategory: HeadTop
+  forcedColoring: true
+  speciesRestriction: [Moth]
+  sprites:
+  - sprite: Backmen/Mobs/Customization/moth_antennas.rsi
+    state: plasmafire
+
+- type: marking
+  id: MothAntennasMoffra
+  bodyPart: HeadTop
+  markingCategory: HeadTop
+  forcedColoring: true
+  speciesRestriction: [Moth]
+  sprites:
+  - sprite: Backmen/Mobs/Customization/moth_antennas.rsi
+    state: moffra
+
+- type: marking
+  id: MothAntennasAspen
+  bodyPart: HeadTop
+  markingCategory: HeadTop
+  forcedColoring: true
+  speciesRestriction: [Moth]
+  sprites:
+  - sprite: Backmen/Mobs/Customization/moth_antennas.rsi
+    state: aspen
+
+- type: marking
+  id: MothAntennasMint
+  bodyPart: HeadTop
+  markingCategory: HeadTop
+  forcedColoring: true
+  speciesRestriction: [Moth]
+  sprites:
+  - sprite: Backmen/Mobs/Customization/moth_antennas.rsi
+    state: mint
+
+#
+# Wings
+#
+
+- type: marking
+  id: MothWingsPlain
+  bodyPart: Tail
+  markingCategory: Tail
+  forcedColoring: true
+  speciesRestriction: [Moth]
+  sprites:
+  - sprite: Backmen/Mobs/Customization/moth_wings.rsi
+    state: plain
+
+- type: marking
+  id: MothWingsAtlas
+  bodyPart: Tail
+  markingCategory: Tail
+  forcedColoring: true
+  speciesRestriction: [Moth]
+  sprites:
+  - sprite: Backmen/Mobs/Customization/moth_wings.rsi
+    state: atlas
+
+- type: marking
+  id: MothWingsLuna
+  bodyPart: Tail
+  markingCategory: Tail
+  forcedColoring: true
+  speciesRestriction: [Moth]
+  sprites:
+  - sprite: Backmen/Mobs/Customization/moth_wings.rsi
+    state: luna
+
+- type: marking
+  id: MothWingsMonarch
+  bodyPart: Tail
+  markingCategory: Tail
+  forcedColoring: true
+  speciesRestriction: [Moth]
+  sprites:
+  - sprite: Backmen/Mobs/Customization/moth_wings.rsi
+    state: monarch
+
+- type: marking
+  id: MothWingsReddish
+  bodyPart: Tail
+  markingCategory: Tail
+  forcedColoring: true
+  speciesRestriction: [Moth]
+  sprites:
+  - sprite: Backmen/Mobs/Customization/moth_wings.rsi
+    state: reddish
+
+- type: marking
+  id: MothWingsRoyal
+  bodyPart: Tail
+  markingCategory: Tail
+  forcedColoring: true
+  speciesRestriction: [Moth]
+  sprites:
+  - sprite: Backmen/Mobs/Customization/moth_wings.rsi
+    state: royal
+
+- type: marking
+  id: MothWingsGothic
+  bodyPart: Tail
+  markingCategory: Tail
+  forcedColoring: true
+  speciesRestriction: [Moth]
+  sprites:
+  - sprite: Backmen/Mobs/Customization/moth_wings.rsi
+    state: gothic
+
+- type: marking
+  id: MothWingsLovers
+  bodyPart: Tail
+  markingCategory: Tail
+  forcedColoring: true
+  speciesRestriction: [Moth]
+  sprites:
+  - sprite: Backmen/Mobs/Customization/moth_wings.rsi
+    state: lovers
+
+- type: marking
+  id: MothWingsWhitefly
+  bodyPart: Tail
+  markingCategory: Tail
+  forcedColoring: true
+  speciesRestriction: [Moth]
+  sprites:
+  - sprite: Backmen/Mobs/Customization/moth_wings.rsi
+    state: whitefly
+
+- type: marking
+  id: MothWingsFirewatch
+  bodyPart: Tail
+  markingCategory: Tail
+  forcedColoring: true
+  speciesRestriction: [Moth]
+  sprites:
+  - sprite: Backmen/Mobs/Customization/moth_wings.rsi
+    state: firewatch
+
+- type: marking
+  id: MothWingsDeathshead
+  bodyPart: Tail
+  markingCategory: Tail
+  forcedColoring: true
+  speciesRestriction: [Moth]
+  sprites:
+  - sprite: Backmen/Mobs/Customization/moth_wings.rsi
+    state: deathshead
+
+- type: marking
+  id: MothWingsPoison
+  bodyPart: Tail
+  markingCategory: Tail
+  forcedColoring: true
+  speciesRestriction: [Moth]
+  sprites:
+  - sprite: Backmen/Mobs/Customization/moth_wings.rsi
+    state: poison
+
+- type: marking
+  id: MothWingsRagged
+  bodyPart: Tail
+  markingCategory: Tail
+  forcedColoring: true
+  speciesRestriction: [Moth]
+  sprites:
+  - sprite: Backmen/Mobs/Customization/moth_wings.rsi
+    state: ragged
+
+- type: marking
+  id: MothWingsMoonfly
+  bodyPart: Tail
+  markingCategory: Tail
+  forcedColoring: true
+  speciesRestriction: [Moth]
+  sprites:
+  - sprite: Backmen/Mobs/Customization/moth_wings.rsi
+    state: moonfly
+
+- type: marking
+  id: MothWingsSnow
+  bodyPart: Tail
+  markingCategory: Tail
+  forcedColoring: true
+  speciesRestriction: [Moth]
+  sprites:
+  - sprite: Backmen/Mobs/Customization/moth_wings.rsi
+    state: snow
+
+- type: marking
+  id: MothWingsOakworm
+  bodyPart: Tail
+  markingCategory: Tail
+  forcedColoring: true
+  speciesRestriction: [Moth]
+  sprites:
+  - sprite: Backmen/Mobs/Customization/moth_wings.rsi
+    state: oakworm
+
+- type: marking
+  id: MothWingsWitchking
+  bodyPart: Tail
+  markingCategory: Tail
+  forcedColoring: true
+  speciesRestriction: [Moth]
+  sprites:
+  - sprite: Backmen/Mobs/Customization/moth_wings.rsi
+    state: witchking
+
+- type: marking
+  id: MothWingsJungle
+  bodyPart: Tail
+  markingCategory: Tail
+  forcedColoring: true
+  speciesRestriction: [Moth]
+  sprites:
+  - sprite: Backmen/Mobs/Customization/moth_wings.rsi
+    state: jungle
+
+- type: marking
+  id: MothWingsRosy
+  bodyPart: Tail
+  markingCategory: Tail
+  forcedColoring: true
+  speciesRestriction: [Moth]
+  sprites:
+  - sprite: Backmen/Mobs/Customization/moth_wings.rsi
+    state: rosy
+
+- type: marking
+  id: MothWingsFeathery
+  bodyPart: Tail
+  markingCategory: Tail
+  forcedColoring: true
+  speciesRestriction: [Moth]
+  sprites:
+  - sprite: Backmen/Mobs/Customization/moth_wings.rsi
+    state: feathery
+
+- type: marking
+  id: MothWingsBrown
+  bodyPart: Tail
+  markingCategory: Tail
+  forcedColoring: true
+  speciesRestriction: [Moth]
+  sprites:
+  - sprite: Backmen/Mobs/Customization/moth_wings.rsi
+    state: brown
+
+- type: marking
+  id: MothWingsPlasmafire
+  bodyPart: Tail
+  markingCategory: Tail
+  forcedColoring: true
+  speciesRestriction: [Moth]
+  sprites:
+  - sprite: Backmen/Mobs/Customization/moth_wings.rsi
+    state: plasmafire
+
+- type: marking
+  id: MothWingsMoffra
+  bodyPart: Tail
+  markingCategory: Tail
+  forcedColoring: true
+  speciesRestriction: [Moth]
+  sprites:
+  - sprite: Backmen/Mobs/Customization/moth_wings.rsi
+    state: moffra
+
+- type: marking
+  id: MothWingsAspen
+  bodyPart: Tail
+  markingCategory: Tail
+  forcedColoring: true
+  speciesRestriction: [Moth]
+  sprites:
+  - sprite: Backmen/Mobs/Customization/moth_wings.rsi
+    state: aspen
+
+- type: marking
+  id: MothWingsMint
+  bodyPart: Tail
+  markingCategory: Tail
+  forcedColoring: true
+  speciesRestriction: [Moth]
+  sprites:
+  - sprite: Backmen/Mobs/Customization/moth_wings.rsi
+    state: mint
+
+#
+# Markings
+#
+# Temp fix of arm markings goes on hand and leg markings on foot to avoid the marking being hidden behind hand/foot.
+# All markings need to be selected individually but it would be nice if eventually we get a one button applies all.
+
+# Reddish
+- type: marking
+  id: MothMarkingsReddishHead
+  bodyPart: Head
+  markingCategory: Head
+  forcedColoring: true
+  speciesRestriction: [Moth]
+  sprites:
+  - sprite: Backmen/Mobs/Customization/moth_markings/reddish.rsi
+    state: head
+
+- type: marking
+  id: MothMarkingsReddishChest
+  bodyPart: Chest
+  markingCategory: Chest
+  forcedColoring: true
+  speciesRestriction: [Moth]
+  sprites:
+  - sprite: Backmen/Mobs/Customization/moth_markings/reddish.rsi
+    state: chest
+
+- type: marking
+  id: MothMarkingsReddishLeftArm
+  bodyPart: LHand
+  markingCategory: Arms
+  forcedColoring: true
+  speciesRestriction: [Moth]
+  sprites:
+  - sprite: Backmen/Mobs/Customization/moth_markings/reddish.rsi
+    state: leftarm
+
+- type: marking
+  id: MothMarkingsReddishRightArm
+  bodyPart: RHand
+  markingCategory: Arms
+  forcedColoring: true
+  speciesRestriction: [Moth]
+  sprites:
+  - sprite: Backmen/Mobs/Customization/moth_markings/reddish.rsi
+    state: rightarm
+
+- type: marking
+  id: MothMarkingsReddishLeftLeg
+  bodyPart: LFoot
+  markingCategory: Legs
+  forcedColoring: true
+  speciesRestriction: [Moth]
+  sprites:
+  - sprite: Backmen/Mobs/Customization/moth_markings/reddish.rsi
+    state: leftleg
+
+- type: marking
+  id: MothMarkingsReddishRightLeg
+  bodyPart: RFoot
+  markingCategory: Legs
+  forcedColoring: true
+  speciesRestriction: [Moth]
+  sprites:
+  - sprite: Backmen/Mobs/Customization/moth_markings/reddish.rsi
+    state: rightleg
+
+# Royal
+- type: marking
+  id: MothMarkingsRoyalHead
+  bodyPart: Head
+  markingCategory: Head
+  forcedColoring: true
+  speciesRestriction: [Moth]
+  sprites:
+  - sprite: Backmen/Mobs/Customization/moth_markings/royal.rsi
+    state: head
+
+- type: marking
+  id: MothMarkingsRoyalChest
+  bodyPart: Chest
+  markingCategory: Chest
+  forcedColoring: true
+  speciesRestriction: [Moth]
+  sprites:
+  - sprite: Backmen/Mobs/Customization/moth_markings/royal.rsi
+    state: chest
+
+- type: marking
+  id: MothMarkingsRoyalLeftArm
+  bodyPart: LHand
+  markingCategory: Arms
+  forcedColoring: true
+  speciesRestriction: [Moth]
+  sprites:
+  - sprite: Backmen/Mobs/Customization/moth_markings/royal.rsi
+    state: leftarm
+
+- type: marking
+  id: MothMarkingsRoyalRightArm
+  bodyPart: RHand
+  markingCategory: Arms
+  forcedColoring: true
+  speciesRestriction: [Moth]
+  sprites:
+  - sprite: Backmen/Mobs/Customization/moth_markings/royal.rsi
+    state: rightarm
+
+- type: marking
+  id: MothMarkingsRoyalLeftLeg
+  bodyPart: LFoot
+  markingCategory: Legs
+  forcedColoring: true
+  speciesRestriction: [Moth]
+  sprites:
+  - sprite: Backmen/Mobs/Customization/moth_markings/royal.rsi
+    state: leftleg
+
+- type: marking
+  id: MothMarkingsRoyalRightLeg
+  bodyPart: RFoot
+  markingCategory: Legs
+  forcedColoring: true
+  speciesRestriction: [Moth]
+  sprites:
+  - sprite: Backmen/Mobs/Customization/moth_markings/royal.rsi
+    state: rightleg
+
+# Gothic
+- type: marking
+  id: MothMarkingsGothicHead
+  bodyPart: Head
+  markingCategory: Head
+  forcedColoring: true
+  speciesRestriction: [Moth]
+  sprites:
+  - sprite: Backmen/Mobs/Customization/moth_markings/gothic.rsi
+    state: head
+
+- type: marking
+  id: MothMarkingsGothicChest
+  bodyPart: Chest
+  markingCategory: Chest
+  forcedColoring: true
+  speciesRestriction: [Moth]
+  sprites:
+  - sprite: Backmen/Mobs/Customization/moth_markings/gothic.rsi
+    state: chest
+
+- type: marking
+  id: MothMarkingsGothicLeftArm
+  bodyPart: LHand
+  markingCategory: Arms
+  forcedColoring: true
+  speciesRestriction: [Moth]
+  sprites:
+  - sprite: Backmen/Mobs/Customization/moth_markings/gothic.rsi
+    state: leftarm
+
+- type: marking
+  id: MothMarkingsGothicRightArm
+  bodyPart: RHand
+  markingCategory: Arms
+  forcedColoring: true
+  speciesRestriction: [Moth]
+  sprites:
+  - sprite: Backmen/Mobs/Customization/moth_markings/gothic.rsi
+    state: rightarm
+
+- type: marking
+  id: MothMarkingsGothicLeftLeg
+  bodyPart: LFoot
+  markingCategory: Legs
+  forcedColoring: true
+  speciesRestriction: [Moth]
+  sprites:
+  - sprite: Backmen/Mobs/Customization/moth_markings/gothic.rsi
+    state: leftleg
+
+- type: marking
+  id: MothMarkingsGothicRightLeg
+  bodyPart: RFoot
+  markingCategory: Legs
+  forcedColoring: true
+  speciesRestriction: [Moth]
+  sprites:
+  - sprite: Backmen/Mobs/Customization/moth_markings/gothic.rsi
+    state: rightleg
+
+# Lovers
+- type: marking
+  id: MothMarkingsLoversHead
+  bodyPart: Head
+  markingCategory: Head
+  forcedColoring: true
+  speciesRestriction: [Moth]
+  sprites:
+  - sprite: Backmen/Mobs/Customization/moth_markings/lovers.rsi
+    state: head
+
+- type: marking
+  id: MothMarkingsLoversChest
+  bodyPart: Chest
+  markingCategory: Chest
+  forcedColoring: true
+  speciesRestriction: [Moth]
+  sprites:
+  - sprite: Backmen/Mobs/Customization/moth_markings/lovers.rsi
+    state: chest
+
+- type: marking
+  id: MothMarkingsLoversLeftArm
+  bodyPart: LHand
+  markingCategory: Arms
+  forcedColoring: true
+  speciesRestriction: [Moth]
+  sprites:
+  - sprite: Backmen/Mobs/Customization/moth_markings/lovers.rsi
+    state: leftarm
+
+- type: marking
+  id: MothMarkingsLoversRightArm
+  bodyPart: RHand
+  markingCategory: Arms
+  forcedColoring: true
+  speciesRestriction: [Moth]
+  sprites:
+  - sprite: Backmen/Mobs/Customization/moth_markings/lovers.rsi
+    state: rightarm
+
+- type: marking
+  id: MothMarkingsLoversLeftLeg
+  bodyPart: LFoot
+  markingCategory: Legs
+  forcedColoring: true
+  speciesRestriction: [Moth]
+  sprites:
+  - sprite: Backmen/Mobs/Customization/moth_markings/lovers.rsi
+    state: leftleg
+
+- type: marking
+  id: MothMarkingsLoversRightLeg
+  bodyPart: RFoot
+  markingCategory: Legs
+  forcedColoring: true
+  speciesRestriction: [Moth]
+  sprites:
+  - sprite: Backmen/Mobs/Customization/moth_markings/lovers.rsi
+    state: rightleg
+
+# Whitefly
+- type: marking
+  id: MothMarkingsWhiteflyHead
+  bodyPart: Head
+  markingCategory: Head
+  forcedColoring: true
+  speciesRestriction: [Moth]
+  sprites:
+  - sprite: Backmen/Mobs/Customization/moth_markings/whitefly.rsi
+    state: head
+
+- type: marking
+  id: MothMarkingsWhiteflyChest
+  bodyPart: Chest
+  markingCategory: Chest
+  forcedColoring: true
+  speciesRestriction: [Moth]
+  sprites:
+  - sprite: Backmen/Mobs/Customization/moth_markings/whitefly.rsi
+    state: chest
+
+- type: marking
+  id: MothMarkingsWhiteflyLeftArm
+  bodyPart: LHand
+  markingCategory: Arms
+  forcedColoring: true
+  speciesRestriction: [Moth]
+  sprites:
+  - sprite: Backmen/Mobs/Customization/moth_markings/whitefly.rsi
+    state: leftarm
+
+- type: marking
+  id: MothMarkingsWhiteflyRightArm
+  bodyPart: RHand
+  markingCategory: Arms
+  forcedColoring: true
+  speciesRestriction: [Moth]
+  sprites:
+  - sprite: Backmen/Mobs/Customization/moth_markings/whitefly.rsi
+    state: rightarm
+
+- type: marking
+  id: MothMarkingsWhiteflyLeftLeg
+  bodyPart: LFoot
+  markingCategory: Legs
+  forcedColoring: true
+  speciesRestriction: [Moth]
+  sprites:
+  - sprite: Backmen/Mobs/Customization/moth_markings/whitefly.rsi
+    state: leftleg
+
+- type: marking
+  id: MothMarkingsWhiteflyRightLeg
+  bodyPart: RFoot
+  markingCategory: Legs
+  forcedColoring: true
+  speciesRestriction: [Moth]
+  sprites:
+  - sprite: Backmen/Mobs/Customization/moth_markings/whitefly.rsi
+    state: rightleg
+
+# Firewatch
+- type: marking
+  id: MothMarkingsFirewatchHead
+  bodyPart: Head
+  markingCategory: Head
+  forcedColoring: true
+  speciesRestriction: [Moth]
+  sprites:
+  - sprite: Backmen/Mobs/Customization/moth_markings/firewatch.rsi
+    state: head
+
+- type: marking
+  id: MothMarkingsFirewatchChest
+  bodyPart: Chest
+  markingCategory: Chest
+  forcedColoring: true
+  speciesRestriction: [Moth]
+  sprites:
+  - sprite: Backmen/Mobs/Customization/moth_markings/firewatch.rsi
+    state: chest
+
+- type: marking
+  id: MothMarkingsFirewatchLeftArm
+  bodyPart: LHand
+  markingCategory: Arms
+  forcedColoring: true
+  speciesRestriction: [Moth]
+  sprites:
+  - sprite: Backmen/Mobs/Customization/moth_markings/firewatch.rsi
+    state: leftarm
+
+- type: marking
+  id: MothMarkingsFirewatchRightArm
+  bodyPart: RHand
+  markingCategory: Arms
+  forcedColoring: true
+  speciesRestriction: [Moth]
+  sprites:
+  - sprite: Backmen/Mobs/Customization/moth_markings/firewatch.rsi
+    state: rightarm
+
+- type: marking
+  id: MothMarkingsFirewatchLeftLeg
+  bodyPart: LFoot
+  markingCategory: Legs
+  forcedColoring: true
+  speciesRestriction: [Moth]
+  sprites:
+  - sprite: Backmen/Mobs/Customization/moth_markings/firewatch.rsi
+    state: leftleg
+
+- type: marking
+  id: MothMarkingsFirewatchRightLeg
+  bodyPart: RFoot
+  markingCategory: Legs
+  forcedColoring: true
+  speciesRestriction: [Moth]
+  sprites:
+  - sprite: Backmen/Mobs/Customization/moth_markings/firewatch.rsi
+    state: rightleg
+
+# Deathshead
+- type: marking
+  id: MothMarkingsDeathsheadHead
+  bodyPart: Head
+  markingCategory: Head
+  forcedColoring: true
+  speciesRestriction: [Moth]
+  sprites:
+  - sprite: Backmen/Mobs/Customization/moth_markings/deathshead.rsi
+    state: head
+
+- type: marking
+  id: MothMarkingsDeathsheadChest
+  bodyPart: Chest
+  markingCategory: Chest
+  forcedColoring: true
+  speciesRestriction: [Moth]
+  sprites:
+  - sprite: Backmen/Mobs/Customization/moth_markings/deathshead.rsi
+    state: chest
+
+- type: marking
+  id: MothMarkingsDeathsheadLeftArm
+  bodyPart: LHand
+  markingCategory: Arms
+  forcedColoring: true
+  speciesRestriction: [Moth]
+  sprites:
+  - sprite: Backmen/Mobs/Customization/moth_markings/deathshead.rsi
+    state: leftarm
+
+- type: marking
+  id: MothMarkingsDeathsheadRightArm
+  bodyPart: RHand
+  markingCategory: Arms
+  forcedColoring: true
+  speciesRestriction: [Moth]
+  sprites:
+  - sprite: Backmen/Mobs/Customization/moth_markings/deathshead.rsi
+    state: rightarm
+
+- type: marking
+  id: MothMarkingsDeathsheadLeftLeg
+  bodyPart: LFoot
+  markingCategory: Legs
+  forcedColoring: true
+  speciesRestriction: [Moth]
+  sprites:
+  - sprite: Backmen/Mobs/Customization/moth_markings/deathshead.rsi
+    state: leftleg
+
+- type: marking
+  id: MothMarkingsDeathsheadRightLeg
+  bodyPart: RFoot
+  markingCategory: Legs
+  forcedColoring: true
+  speciesRestriction: [Moth]
+  sprites:
+  - sprite: Backmen/Mobs/Customization/moth_markings/deathshead.rsi
+    state: rightleg
+
+# Poison
+- type: marking
+  id: MothMarkingsPoisonHead
+  bodyPart: Head
+  markingCategory: Head
+  forcedColoring: true
+  speciesRestriction: [Moth]
+  sprites:
+  - sprite: Backmen/Mobs/Customization/moth_markings/poison.rsi
+    state: head
+
+- type: marking
+  id: MothMarkingsPoisonChest
+  bodyPart: Chest
+  markingCategory: Chest
+  forcedColoring: true
+  speciesRestriction: [Moth]
+  sprites:
+  - sprite: Backmen/Mobs/Customization/moth_markings/poison.rsi
+    state: chest
+
+- type: marking
+  id: MothMarkingsPoisonLeftArm
+  bodyPart: LHand
+  markingCategory: Arms
+  forcedColoring: true
+  speciesRestriction: [Moth]
+  sprites:
+  - sprite: Backmen/Mobs/Customization/moth_markings/poison.rsi
+    state: leftarm
+
+- type: marking
+  id: MothMarkingsPoisonRightArm
+  bodyPart: RHand
+  markingCategory: Arms
+  forcedColoring: true
+  speciesRestriction: [Moth]
+  sprites:
+  - sprite: Backmen/Mobs/Customization/moth_markings/poison.rsi
+    state: rightarm
+
+- type: marking
+  id: MothMarkingsPoisonLeftLeg
+  bodyPart: LFoot
+  markingCategory: Legs
+  forcedColoring: true
+  speciesRestriction: [Moth]
+  sprites:
+  - sprite: Backmen/Mobs/Customization/moth_markings/poison.rsi
+    state: leftleg
+
+- type: marking
+  id: MothMarkingsPoisonRightLeg
+  bodyPart: RFoot
+  markingCategory: Legs
+  forcedColoring: true
+  speciesRestriction: [Moth]
+  sprites:
+  - sprite: Backmen/Mobs/Customization/moth_markings/poison.rsi
+    state: rightleg
+
+# Ragged
+- type: marking
+  id: MothMarkingsRaggedHead
+  bodyPart: Head
+  markingCategory: Head
+  forcedColoring: true
+  speciesRestriction: [Moth]
+  sprites:
+  - sprite: Backmen/Mobs/Customization/moth_markings/ragged.rsi
+    state: head
+
+- type: marking
+  id: MothMarkingsRaggedChest
+  bodyPart: Chest
+  markingCategory: Chest
+  forcedColoring: true
+  speciesRestriction: [Moth]
+  sprites:
+  - sprite: Backmen/Mobs/Customization/moth_markings/ragged.rsi
+    state: chest
+
+- type: marking
+  id: MothMarkingsRaggedLeftArm
+  bodyPart: LHand
+  markingCategory: Arms
+  forcedColoring: true
+  speciesRestriction: [Moth]
+  sprites:
+  - sprite: Backmen/Mobs/Customization/moth_markings/ragged.rsi
+    state: leftarm
+
+- type: marking
+  id: MothMarkingsRaggedRightArm
+  bodyPart: RHand
+  markingCategory: Arms
+  forcedColoring: true
+  speciesRestriction: [Moth]
+  sprites:
+  - sprite: Backmen/Mobs/Customization/moth_markings/ragged.rsi
+    state: rightarm
+
+- type: marking
+  id: MothMarkingsRaggedLeftLeg
+  bodyPart: LFoot
+  markingCategory: Legs
+  forcedColoring: true
+  speciesRestriction: [Moth]
+  sprites:
+  - sprite: Backmen/Mobs/Customization/moth_markings/ragged.rsi
+    state: leftleg
+
+- type: marking
+  id: MothMarkingsRaggedRightLeg
+  bodyPart: RFoot
+  markingCategory: Legs
+  forcedColoring: true
+  speciesRestriction: [Moth]
+  sprites:
+  - sprite: Backmen/Mobs/Customization/moth_markings/ragged.rsi
+    state: rightleg
+
+# Moonfly
+- type: marking
+  id: MothMarkingsMoonflyHead
+  bodyPart: Head
+  markingCategory: Head
+  forcedColoring: true
+  speciesRestriction: [Moth]
+  sprites:
+  - sprite: Backmen/Mobs/Customization/moth_markings/moonfly.rsi
+    state: head
+
+- type: marking
+  id: MothMarkingsMoonflyChest
+  bodyPart: Chest
+  markingCategory: Chest
+  forcedColoring: true
+  speciesRestriction: [Moth]
+  sprites:
+  - sprite: Backmen/Mobs/Customization/moth_markings/moonfly.rsi
+    state: chest
+
+- type: marking
+  id: MothMarkingsMoonflyLeftArm
+  bodyPart: LHand
+  markingCategory: Arms
+  forcedColoring: true
+  speciesRestriction: [Moth]
+  sprites:
+  - sprite: Backmen/Mobs/Customization/moth_markings/moonfly.rsi
+    state: leftarm
+
+- type: marking
+  id: MothMarkingsMoonflyRightArm
+  bodyPart: RHand
+  markingCategory: Arms
+  forcedColoring: true
+  speciesRestriction: [Moth]
+  sprites:
+  - sprite: Backmen/Mobs/Customization/moth_markings/moonfly.rsi
+    state: rightarm
+
+- type: marking
+  id: MothMarkingsMoonflyLeftLeg
+  bodyPart: LFoot
+  markingCategory: Legs
+  forcedColoring: true
+  speciesRestriction: [Moth]
+  sprites:
+  - sprite: Backmen/Mobs/Customization/moth_markings/moonfly.rsi
+    state: leftleg
+
+- type: marking
+  id: MothMarkingsMoonflyRightLeg
+  bodyPart: RFoot
+  markingCategory: Legs
+  forcedColoring: true
+  speciesRestriction: [Moth]
+  sprites:
+  - sprite: Backmen/Mobs/Customization/moth_markings/moonfly.rsi
+    state: rightleg
+
+# Oakworm
+- type: marking
+  id: MothMarkingsOakwormHead
+  bodyPart: Head
+  markingCategory: Head
+  forcedColoring: true
+  speciesRestriction: [Moth]
+  sprites:
+  - sprite: Backmen/Mobs/Customization/moth_markings/oakworm.rsi
+    state: head
+
+- type: marking
+  id: MothMarkingsOakwormChest
+  bodyPart: Chest
+  markingCategory: Chest
+  forcedColoring: true
+  speciesRestriction: [Moth]
+  sprites:
+  - sprite: Backmen/Mobs/Customization/moth_markings/oakworm.rsi
+    state: chest
+
+- type: marking
+  id: MothMarkingsOakwormLeftArm
+  bodyPart: LHand
+  markingCategory: Arms
+  forcedColoring: true
+  speciesRestriction: [Moth]
+  sprites:
+  - sprite: Backmen/Mobs/Customization/moth_markings/oakworm.rsi
+    state: leftarm
+
+- type: marking
+  id: MothMarkingsOakwormRightArm
+  bodyPart: RHand
+  markingCategory: Arms
+  forcedColoring: true
+  speciesRestriction: [Moth]
+  sprites:
+  - sprite: Backmen/Mobs/Customization/moth_markings/oakworm.rsi
+    state: rightarm
+
+- type: marking
+  id: MothMarkingsOakwormLeftLeg
+  bodyPart: LFoot
+  markingCategory: Legs
+  forcedColoring: true
+  speciesRestriction: [Moth]
+  sprites:
+  - sprite: Backmen/Mobs/Customization/moth_markings/oakworm.rsi
+    state: leftleg
+
+- type: marking
+  id: MothMarkingsOakwormRightLeg
+  bodyPart: RFoot
+  markingCategory: Legs
+  forcedColoring: true
+  speciesRestriction: [Moth]
+  sprites:
+  - sprite: Backmen/Mobs/Customization/moth_markings/oakworm.rsi
+    state: rightleg
+
+# Jungle
+- type: marking
+  id: MothMarkingsJungleHead
+  bodyPart: Head
+  markingCategory: Head
+  forcedColoring: true
+  speciesRestriction: [Moth]
+  sprites:
+  - sprite: Backmen/Mobs/Customization/moth_markings/jungle.rsi
+    state: head
+
+- type: marking
+  id: MothMarkingsJungleChest
+  bodyPart: Chest
+  markingCategory: Chest
+  forcedColoring: true
+  speciesRestriction: [Moth]
+  sprites:
+  - sprite: Backmen/Mobs/Customization/moth_markings/jungle.rsi
+    state: chest
+
+- type: marking
+  id: MothMarkingsJungleLeftArm
+  bodyPart: LHand
+  markingCategory: Arms
+  forcedColoring: true
+  speciesRestriction: [Moth]
+  sprites:
+  - sprite: Backmen/Mobs/Customization/moth_markings/jungle.rsi
+    state: leftarm
+
+- type: marking
+  id: MothMarkingsJungleRightArm
+  bodyPart: RHand
+  markingCategory: Arms
+  forcedColoring: true
+  speciesRestriction: [Moth]
+  sprites:
+  - sprite: Backmen/Mobs/Customization/moth_markings/jungle.rsi
+    state: rightarm
+
+- type: marking
+  id: MothMarkingsJungleLeftLeg
+  bodyPart: LFoot
+  markingCategory: Legs
+  forcedColoring: true
+  speciesRestriction: [Moth]
+  sprites:
+  - sprite: Backmen/Mobs/Customization/moth_markings/jungle.rsi
+    state: leftleg
+
+- type: marking
+  id: MothMarkingsJungleRightLeg
+  bodyPart: RFoot
+  markingCategory: Legs
+  forcedColoring: true
+  speciesRestriction: [Moth]
+  sprites:
+  - sprite: Backmen/Mobs/Customization/moth_markings/jungle.rsi
+    state: rightleg
+
+# Witchking
+- type: marking
+  id: MothMarkingsWitchkingHead
+  bodyPart: Head
+  markingCategory: Head
+  forcedColoring: true
+  speciesRestriction: [Moth]
+  sprites:
+  - sprite: Backmen/Mobs/Customization/moth_markings/witchking.rsi
+    state: head
+
+- type: marking
+  id: MothMarkingsWitchkingChest
+  bodyPart: Chest
+  markingCategory: Chest
+  forcedColoring: true
+  speciesRestriction: [Moth]
+  sprites:
+  - sprite: Backmen/Mobs/Customization/moth_markings/witchking.rsi
+    state: chest
+
+- type: marking
+  id: MothMarkingsWitchkingLeftArm
+  bodyPart: LHand
+  markingCategory: Arms
+  forcedColoring: true
+  speciesRestriction: [Moth]
+  sprites:
+  - sprite: Backmen/Mobs/Customization/moth_markings/witchking.rsi
+    state: leftarm
+
+- type: marking
+  id: MothMarkingsWitchkingRightArm
+  bodyPart: RHand
+  markingCategory: Arms
+  forcedColoring: true
+  speciesRestriction: [Moth]
+  sprites:
+  - sprite: Backmen/Mobs/Customization/moth_markings/witchking.rsi
+    state: rightarm
+
+- type: marking
+  id: MothMarkingsWitchkingLeftLeg
+  bodyPart: LFoot
+  markingCategory: Legs
+  forcedColoring: true
+  speciesRestriction: [Moth]
+  sprites:
+  - sprite: Backmen/Mobs/Customization/moth_markings/witchking.rsi
+    state: leftleg
+
+- type: marking
+  id: MothMarkingsWitchkingRightLeg
+  bodyPart: RFoot
+  markingCategory: Legs
+  forcedColoring: true
+  speciesRestriction: [Moth]
+  sprites:
+  - sprite: Backmen/Mobs/Customization/moth_markings/witchking.rsi
+    state: rightleg
