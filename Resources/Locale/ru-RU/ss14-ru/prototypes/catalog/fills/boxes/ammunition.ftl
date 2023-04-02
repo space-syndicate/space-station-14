@@ -1,5 +1,5 @@
-ent-BoxMagazine = box of magazines
-    .desc = A box full of magazines.
+ent-BoxMagazine = коробка магазинов
+    .desc = Полная коробка магазинов.
     .suffix = { "" }
 ent-BoxMagazinePistolCaselessRifle = коробка магазинов с .25 безгильзовыми
     .desc = Полная коробка магазинов с патронами калибра .25 безгильзовый.
