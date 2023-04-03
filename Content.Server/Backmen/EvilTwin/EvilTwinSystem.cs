@@ -67,16 +67,14 @@ public sealed class EvilTwinSystem : EntitySystem
                     {
                         mind.TransferTo(twinMob);
                     }
-                    _adminLogger.Add(LogType.Action, LogImpact.Extreme, $"{(args.Player != null ? args.Player.Name : "An administrator")} take EvilTwin with target {_entityManager.ToPrettyString(targetUid.Value)}");
+                    _adminLogger.Add(LogType.Action, LogImpact.Extreme, $"{_entityManager.ToPrettyString(twinMob.Value)} take EvilTwin with target {_entityManager.ToPrettyString(targetUid.Value)}");
                 }
             }
         }
         else
         {
-            _adminLogger.Add(LogType.Action, LogImpact.Extreme, $"{(args.Player != null ? args.Player.Name : "An administrator")} take EvilTwin with no target (delete)");
-            if(args.Player != null){
-                _prayerSystem.SendSubtleMessage(args.Player, args.Player, Loc.GetString("evil-twin-error-message"),  Loc.GetString("prayer-popup-subtle-default"));
-            }
+            _adminLogger.Add(LogType.Action, LogImpact.Extreme, $"{_entityManager.ToPrettyString(uid)} take EvilTwin with no target (delete)");
+            _prayerSystem.SendSubtleMessage(args.Player, args.Player, Loc.GetString("evil-twin-error-message"),  Loc.GetString("prayer-popup-subtle-default"));
         }
 
         QueueDel(uid);
