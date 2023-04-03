@@ -4,6 +4,7 @@ using Content.Server.Nutrition.Components;
 using Content.Server.Popups;
 using Content.Shared.Actions;
 using Content.Shared.Atmos;
+using Content.Shared.Nutrition.Components;
 using Robust.Server.GameObjects;
 using Robust.Shared.Player;
 
@@ -51,7 +52,7 @@ namespace Content.Server.Capibara
             hunger.CurrentHunger -= component.HungerPerArmyUse;
             Spawn(component.ArmyMobSpawnId, Transform(uid).Coordinates); //spawn the little mouse boi
         }
-        
+
     }
 
     public sealed class CapibaraRaiseArmyActionEvent : InstantActionEvent { };
