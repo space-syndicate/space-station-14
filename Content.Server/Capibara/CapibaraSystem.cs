@@ -5,6 +5,7 @@ using Content.Server.Popups;
 using Content.Shared.Actions;
 using Content.Shared.Atmos;
 using Content.Shared.Nutrition.Components;
+using Content.Shared.Nutrition.EntitySystems;
 using Robust.Server.GameObjects;
 using Robust.Shared.Player;
 
@@ -16,6 +17,7 @@ namespace Content.Server.Capibara
         [Dependency] private readonly ActionsSystem _action = default!;
         [Dependency] private readonly AtmosphereSystem _atmos = default!;
         [Dependency] private readonly TransformSystem _xform = default!;
+        [Dependency] private readonly HungerSystem _hunger = default!;
 
         public override void Initialize()
         {
@@ -49,7 +51,7 @@ namespace Content.Server.Capibara
                 return;
             }
             args.Handled = true;
-            hunger.CurrentHunger -= component.HungerPerArmyUse;
+            _hunger.ModifyHunger(uid, -component.HungerPerArmyUse, hunger);
             Spawn(component.ArmyMobSpawnId, Transform(uid).Coordinates); //spawn the little mouse boi
         }
 
