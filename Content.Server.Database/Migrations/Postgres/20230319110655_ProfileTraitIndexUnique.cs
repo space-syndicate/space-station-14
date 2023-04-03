@@ -8,15 +8,15 @@ namespace Content.Server.Database.Migrations.Postgres
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
-            migrationBuilder.DropIndex(
-                name: "IX_trait_profile_id",
-                table: "trait");
+            //migrationBuilder.DropIndex(
+            //    name: "IX_trait_profile_id",
+            //    table: "trait");
 
-            migrationBuilder.CreateIndex(
-                name: "IX_trait_profile_id_trait_name",
-                table: "trait",
-                columns: new[] { "profile_id", "trait_name" },
-                unique: true);
+            //migrationBuilder.CreateIndex(
+            //    name: "IX_trait_profile_id_trait_name",
+            //    table: "trait",
+            //    columns: new[] { "profile_id", "trait_name" },
+            //   unique: true);
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)
