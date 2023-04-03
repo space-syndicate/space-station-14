@@ -151,7 +151,7 @@
   description: The creep of automation now threatening space janitors.
   components:
     #Modify
-  - type: Sprite
+  - type: Sprite 
     drawdepth: Mobs
     sprite: ADT/Mobs/Silicon/Bots/cleanbot.rsi
     state: cleanbot

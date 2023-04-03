@@ -79,16 +79,16 @@
       state: robot_food_distributor_bot
       sprite: ADT\Mobs\Silicon\Bots\robot_food_distributor_bot.rsi
   - type: MovementIgnoreGravity
-  - type: Fixtures
-    fixtures:
-    - shape:
-        !type:PhysShapeCircle
-        radius: 0.35
-      density: 50
-      mask:
-      - FlyingMobMask
-      layer:
-      - FlyingMobLayer
+#  - type: Fixtures
+#    fixtures:
+#    - shape:
+#        !type:PhysShapeCircle
+#        radius: 0.35
+#      density: 50
+#      mask:
+#      - FlyingMobMask
+#      layer: 
+#      - FlyingMobLayer
   - type: DamageStateVisuals
     states:
       Alive:
