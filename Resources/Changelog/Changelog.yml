@@ -1,55 +1,4 @@
 Entries:
-- author: Whisper
-  changes:
-  - {message: 'Pill canisters will now fit in coat storage, at the cost of having
-      less space for pills. (12 -> 9)', type: Tweak}
-  id: 2808
-  time: '2022-12-29T03:57:28.0000000+00:00'
-- author: Ungle McBumblefuck
-  changes:
-  - {message: 'Spaceacillin use now seems to impair brain function. A worthy risk?
-      maybe not...', type: Tweak}
-  id: 2809
-  time: '2022-12-29T04:44:53.0000000+00:00'
-- author: Carbonhell
-  changes:
-  - {message: 'Cryo pods now properly transfer the reagents from the contained beaker
-      to the patient. There''s also a wiki page explaining how cryo pods work, be
-      sure to read it if you need help!', type: Fix}
-  id: 2810
-  time: '2022-12-30T14:34:59.0000000+00:00'
-- author: EmoGarbage404
-  changes:
-  - {message: Puddles now become sparkles as soon as you finish mopping them. Still
-      be careful of wet floors!, type: Tweak}
-  - {message: Blood stains now fade out instead of becoming sparkles., type: Fix}
-  id: 2811
-  time: '2022-12-30T17:45:05.0000000+00:00'
-- author: Theomund
-  changes:
-  - {message: Added missing locale string for the carpotoxin physical reagent description.,
-    type: Fix}
-  id: 2812
-  time: '2022-12-31T21:51:44.0000000+00:00'
-- author: Theomund
-  changes:
-  - {message: Added missing interaction outline component to cardboard boxes., type: Fix}
-  id: 2813
-  time: '2023-01-01T00:42:36.0000000+00:00'
-- author: Theomund
-  changes:
-  - {message: 'Flashlights now have an empty variant, which can be manufactured by
-      a protolathe.', type: Add}
-  - {message: Changed the protolathe recipe for flashlights to use the empty variant.,
-    type: Fix}
-  id: 2814
-  time: '2023-01-01T05:48:58.0000000+00:00'
-- author: Theomund
-  changes:
-  - {message: Added logic for sorting crew manifest entries by job titles and names.,
-    type: Fix}
-  id: 2815
-  time: '2023-01-01T05:49:30.0000000+00:00'
 - author: EmoGarbage404
   changes:
   - {message: Added several new beneficial artifact effects., type: Add}
@@ -2908,3 +2857,49 @@ Entries:
   - {message: Fixed ghost lighting being disabled when any ghost is removed., type: Fix}
   id: 3307
   time: '2023-04-01T22:56:01.0000000+00:00'
+- author: Slava0135
+  changes:
+  - {message: Energy sword can now reflect kinetic projectiles (low chance) and energetic
+      shots like laser and disabler (50/50), type: Add}
+  - {message: Increased energy sword TC cost (6 => 8), type: Tweak}
+  id: 3308
+  time: '2023-04-02T13:48:33.0000000+00:00'
+- author: metalgearsloth
+  changes:
+  - {message: Fix audio leak with bullet fly-bys., type: Fix}
+  id: 3309
+  time: '2023-04-02T14:08:16.0000000+00:00'
+- author: Ilya246
+  changes:
+  - {message: 'The Syndicate has downscaled thieving glove nanotech, making it no
+      longer identifiable on inspection.', type: Tweak}
+  id: 3310
+  time: '2023-04-02T19:34:56.0000000+00:00'
+- author: adamsong
+  changes:
+  - {message: Fixed ghosts being unable to hear radio cross-map, type: Fix}
+  id: 3311
+  time: '2023-04-02T23:56:07.0000000+00:00'
+- author: Emisse
+  changes:
+  - {message: Dwarf real;, type: Add}
+  id: 3312
+  time: '2023-04-03T00:06:24.0000000+00:00'
+- author: PuroSlavKing
+  changes:
+  - {message: Added crate of theater supplies is now available for purchase through
+      Cargo., type: Add}
+  id: 3313
+  time: '2023-04-03T02:45:42.0000000+00:00'
+- author: Visne
+  changes:
+  - {message: Text boxes now allow you to remove a word at a time using Ctrl+Backspace
+      and Ctrl+Delete., type: Tweak}
+  id: 3314
+  time: '2023-04-03T02:58:53.0000000+00:00'
+- author: ElectroJr
+  changes:
+  - {message: Fix a DoAfter bug that was blocking crafting & some other construction
+      interactions., type: Fix}
+  id: 3315
+  time: '2023-04-03T04:53:25.0000000+00:00'
