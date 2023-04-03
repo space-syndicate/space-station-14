@@ -24,10 +24,6 @@ namespace Content.Server.Capibara
         /// </summary>
         [ViewVariables(VVAccess.ReadWrite), DataField("armyMobSpawnId", customTypeSerializer: typeof(PrototypeIdSerializer<EntityPrototype>))]
         public string ArmyMobSpawnId = "MobMouse";
-        /// <summary>
-        ///     The amount of hunger one use of Domain consumes
-        /// </summary>
-        [ViewVariables(VVAccess.ReadWrite), DataField("hungerPerDomainUse", required: true)]
-        public float HungerPerDomainUse = 50f;
+
     }
 };
