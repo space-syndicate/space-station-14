@@ -5,8 +5,8 @@
   playTimeTracker: JobResearchAssistant
   requirements:
     - !type:DepartmentTimeRequirement
-      department: Civilian
-      time: 3600 # Corvax-RoleTime
+      department: Science
+      time: 36000 # Corvax-RoleTime
       inverted: true # stop playing intern if you're good at science!
   startingGear: ResearchAssistantGear
   icon: "ResearchAssistant"
