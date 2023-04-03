@@ -434,7 +434,6 @@ namespace Content.Server.Kitchen.EntitySystems
             base.Update(frameTime);
             foreach (var (active, microwave) in EntityManager.EntityQuery<ActiveMicrowaveComponent, MicrowaveComponent>())
             {
-                
                 //check if there's still cook time left
                 active.CookTimeRemaining -= frameTime;
                 if (active.CookTimeRemaining > 0)
