@@ -76,16 +76,16 @@
   cures:
     - !type:DiseaseReagentCure
       reagent: Sigynate
-      min: 300
+      min: 30
       stages:
         - 1
     - !type:DiseaseReagentCure
       reagent: Theobromine
-      min: 100
+      min: 30
       stages:
         - 2
     - !type:DiseaseReagentCure
       reagent: WhiteRussian
-      min: 500
+      min: 90
       stages:
         - 0

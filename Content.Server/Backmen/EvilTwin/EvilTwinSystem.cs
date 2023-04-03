@@ -1,5 +1,6 @@
 ﻿using System.Diagnostics.CodeAnalysis;
 using System.Linq;
+using Content.Server.Administration.Logs;
 using Content.Server.DetailExaminable;
 using Content.Server.GameTicking;
 using Content.Server.GameTicking.Rules.Components;
@@ -10,10 +11,12 @@ using Content.Server.Objectives;
 using Content.Server.Players;
 using Content.Server.Prayer;
 using Content.Server.Preferences.Managers;
+using Content.Server.Shuttles.Components;
 using Content.Server.Station.Systems;
 using Content.Server.Traitor;
 using Content.Server.Traits.Assorted;
 using Content.Shared.CombatMode.Pacification;
+using Content.Shared.Database;
 using Content.Shared.Humanoid;
 using Content.Shared.Humanoid.Prototypes;
 using Content.Shared.Preferences;
@@ -52,12 +55,16 @@ public sealed class EvilTwinSystem : EntitySystem
                     {
                         mind.TransferTo(twinMob);
                     }
+                    _adminLogger.Add(LogType.Action, LogImpact.Extreme, $"{(args.Player != null ? args.Player.Name : "An administrator")} take EvilTwin with target {_entityManager.ToPrettyString(targetUid.Value)}");
                 }
             }
         }
         else
         {
+            _adminLogger.Add(LogType.Action, LogImpact.Extreme, $"{(args.Player != null ? args.Player.Name : "An administrator")} take EvilTwin with no target (delete)");
+            if(args.Player != null){
                 _prayerSystem.SendSubtleMessage(args.Player, args.Player, Loc.GetString("evil-twin-error-message"),  Loc.GetString("prayer-popup-subtle-default"));
+            }
         }
 
         QueueDel(uid);
@@ -77,6 +84,8 @@ public sealed class EvilTwinSystem : EntitySystem
 
         RemComp<PacifistComponent>(uid);
         RemComp<PacifiedComponent>(uid);
+
+        EnsureComp<PendingClockInComponent>(uid);
     }
 
     private void OnRoundEnd(RoundEndTextAppendEvent ev)
@@ -247,6 +256,10 @@ public sealed class EvilTwinSystem : EntitySystem
     [Dependency] private readonly StationSystem _stationSystem = default!;
 
     [Dependency] private readonly PrayerSystem _prayerSystem = default!;
+
+    [Dependency] private readonly IAdminLogManager _adminLogger = default!;
+
+    [Dependency] private readonly IEntityManager _entityManager = default!;
 
     private const string EvilTwinRole = "EvilTwin";
 
