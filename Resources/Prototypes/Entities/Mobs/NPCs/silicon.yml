@@ -180,6 +180,9 @@
     interactFailureString: petting-failure-cleanbot
     interactSuccessSound:
       path: /Audio/Ambience/Objects/periodic_beep.ogg
+  - type: Inventory
+    speciesId: dog
+    templateId: cleanbot
   #Modify
   - type: Hands
     showInHands: false

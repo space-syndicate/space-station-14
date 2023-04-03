@@ -1,5 +1,5 @@
 - type: inventoryTemplate
-  id: drone
+  id: cleanbot
   slots:
   - name: head
     slotTexture: head
@@ -8,4 +8,4 @@
     uiWindowPos: 0,0
     strippingWindowPos: 0,0
     displayName: Head
-    offset: 0,0
+    offset: 0, -0.45

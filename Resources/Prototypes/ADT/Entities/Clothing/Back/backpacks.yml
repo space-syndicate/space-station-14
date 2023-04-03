@@ -56,3 +56,33 @@
   # to prevent bag open/honk spam
   - type: UseDelay
     delay: 0.5
+
+
+- type: entity
+  parent: Clothing
+  id: ADTSyndicateBack
+  name: Syndicate Bag
+  description: You wear this on your back and put items into it.
+  components:
+  - type: Sprite
+    sprite: ADT/Clothing/Back/syndicate_bag.rsi
+    state: icon
+  - type: Item
+    size: 9999
+  - type: Clothing
+    quickEquip: false
+    slots:
+    - back
+  - type: Storage
+    capacity: 360
+  - type: ContainerContainer
+    containers:
+      storagebase: !type:Container
+        ents: []
+  - type: UserInterface
+    interfaces:
+    - key: enum.StorageUiKey.Key
+      type: StorageBoundUserInterface
+  # to prevent bag open/honk spam
+  - type: UseDelay
+    delay: 0.5
