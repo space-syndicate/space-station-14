@@ -19,6 +19,8 @@ using Content.Shared.CombatMode.Pacification;
 using Content.Shared.Database;
 using Content.Shared.Humanoid;
 using Content.Shared.Humanoid.Prototypes;
+using Content.Shared.Mobs;
+using Content.Shared.Mobs.Systems;
 using Content.Shared.Preferences;
 using Content.Shared.Roles;
 using Robust.Server.GameObjects;
@@ -37,7 +39,17 @@ public sealed class EvilTwinSystem : EntitySystem
         SubscribeLocalEvent<EvilTwinSpawnerComponent, PlayerAttachedEvent>(OnPlayerAttached);
         SubscribeLocalEvent<EvilTwinComponent, MindAddedMessage>(OnMindAdded);
         SubscribeLocalEvent<RoundEndTextAppendEvent>(OnRoundEnd);
+        SubscribeLocalEvent<EvilTwinComponent, MobStateChangedEvent>(OnHandleComponentState);
     }
+
+    private void OnHandleComponentState(EntityUid uid, EvilTwinComponent component, MobStateChangedEvent args)
+    {
+        if (args.NewMobState==MobState.Dead && TryComp<MindComponent>(uid, out var mind) && mind.Mind!=null)
+        {
+            mind.Mind.PreventGhosting = false;
+        }
+    }
+
 
     private void OnPlayerAttached(EntityUid uid, EvilTwinSpawnerComponent component, PlayerAttachedEvent args)
     {
@@ -81,6 +93,7 @@ public sealed class EvilTwinSystem : EntitySystem
         mind.AddRole(new TraitorRole(mind, _prototype.Index<AntagPrototype>(EvilTwinRole)));
         mind.TryAddObjective(_prototype.Index<ObjectivePrototype>(KillObjective));
         mind.TryAddObjective(_prototype.Index<ObjectivePrototype>(EscapeObjective));
+        mind.PreventGhosting = true;
 
         RemComp<PacifistComponent>(uid);
         RemComp<PacifiedComponent>(uid);
@@ -260,6 +273,8 @@ public sealed class EvilTwinSystem : EntitySystem
     [Dependency] private readonly IAdminLogManager _adminLogger = default!;
 
     [Dependency] private readonly IEntityManager _entityManager = default!;
+
+    [Dependency] private readonly MobStateSystem _mobStateSystem = default!;
 
     private const string EvilTwinRole = "EvilTwin";
 
