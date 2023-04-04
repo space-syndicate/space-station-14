@@ -1,6 +1,7 @@
 ﻿- type: job
   id: Virusolog
   name: job-name-virusolog
+  description: job-description-virusolog
   playTimeTracker: JobVirusolog
   requirements:
     - !type:DepartmentTimeRequirement
