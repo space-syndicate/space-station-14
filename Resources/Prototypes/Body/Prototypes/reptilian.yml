@@ -1,4 +1,4 @@
-﻿- type: body
+- type: body
   name: "reptilian"
   id: Reptilian
   root: torso
@@ -6,11 +6,11 @@
     head:
       part: HeadReptilian
       connections:
-      - torso
+      - torso 
       organs:
         brain: OrganHumanBrain
         eyes: OrganHumanEyes
-    torso:
+    torso: 
       part: TorsoReptilian
       organs:
         heart: OrganAnimalHeart
