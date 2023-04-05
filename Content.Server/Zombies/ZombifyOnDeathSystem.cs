@@ -197,11 +197,13 @@ namespace Content.Server.Zombies
                 _damageable.SetAllDamage(target, damageablecomp, 0);
 
             //gives it the funny "Zombie ___" name.
-            var meta = MetaData(target);
-            zombiecomp.BeforeZombifiedEntityName = meta.EntityName;
-            meta.EntityName = Loc.GetString("zombie-name-prefix", ("target", meta.EntityName));
+            //Corvax-ZombieRP-Start
+            //var meta = MetaData(target);
+            //zombiecomp.BeforeZombifiedEntityName = meta.EntityName;
+            //meta.EntityName = Loc.GetString("zombie-name-prefix", ("target", meta.EntityName));
 
-            _identity.QueueIdentityUpdate(target);
+            //_identity.QueueIdentityUpdate(target);
+            //Corvax-ZombieRP-end
 
             //He's gotta have a mind
             var mindcomp = EnsureComp<MindComponent>(target);
