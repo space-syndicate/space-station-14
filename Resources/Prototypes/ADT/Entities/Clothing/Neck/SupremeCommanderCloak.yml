@@ -6,3 +6,13 @@
   components:
   - type: Sprite
     sprite: ADT/Clothing/Neck/Cloaks/supreme-commander-cloak.rsi
+
+
+- type: entity
+  parent: ClothingNeckBase
+  id: ADTClothingNeckKirasCloakn
+  name: KirasCloakn
+  description: Don't let it get dirty. It made from super-tecnological blue-space threads. Only you have this unique coat!
+  components:
+  - type: Sprite
+    sprite: ADT/Clothing/Neck/Cloaks/kiras_cloakn.rsi

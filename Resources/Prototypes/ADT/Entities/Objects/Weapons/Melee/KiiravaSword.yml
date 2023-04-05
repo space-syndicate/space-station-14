@@ -1,0 +1,22 @@
+- type: entity
+  name: Kiirava sword
+  parent: BaseItem
+  id: ADTObjectWeaponsMeleeKiiravaSword
+  description: Don't even try to use it like a razor. It's forget from bluespace steel. Lagand says it took the energy of several stars to create it.
+  components:
+  - type: Sharp
+  - type: Tag
+    tags:
+    - SupremeSabre
+  - type: Sprite
+    sprite: ADT/Objects/Weapons/Melee/kiirava-sword.rsi
+    state: icon
+  - type: MeleeWeapon
+    attackRate: 1.5 
+    damage:
+      types:
+        Slash: 25 
+  - type: Item
+    size: 15
+    sprite: ADT/Objects/Weapons/Melee/kiirava-sword.rsi
+  - type: DisarmMalus
