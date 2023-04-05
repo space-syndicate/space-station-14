@@ -47,35 +47,44 @@ public sealed class EvilTwinSystem : EntitySystem
         if (args.NewMobState==MobState.Dead && TryComp<MindComponent>(uid, out var mind) && mind.Mind!=null)
         {
             mind.Mind.PreventGhosting = false;
+
         }
     }
 
 
     private void OnPlayerAttached(EntityUid uid, EvilTwinSpawnerComponent component, PlayerAttachedEvent args)
     {
+        HumanoidCharacterProfile? pref = null;
         if (TryGetEligibleHumanoid(out var targetUid))
         {
             var xform = Transform(uid);
-            var twinMob = SpawnEvilTwin(targetUid.Value, xform.Coordinates);
+            (var twinMob, pref) = SpawnEvilTwin(targetUid.Value, xform.Coordinates);
             if (twinMob != null)
             {
                 var playerData = args.Player.ContentData();
                 if (playerData != null)
                 {
                     var mind = playerData.Mind;
-                    if (mind != null)
+                    mind?.TransferTo(twinMob);
+
+                    var station = _stationSystem.GetOwningStation(uid, xform);
+                    if (pref != null && station!= null && TryComp<MindComponent>(targetUid, out var targetMind) && mind!=null)
                     {
-                        mind.TransferTo(twinMob);
+                        RaiseLocalEvent(new PlayerSpawnCompleteEvent(twinMob.Value, targetMind.Mind!.Session!, targetMind.Mind.CurrentJob?.Prototype.ID, false,
+                            0, station.Value, pref));
                     }
+
                     _adminLogger.Add(LogType.Action, LogImpact.Extreme, $"{_entityManager.ToPrettyString(twinMob.Value)} take EvilTwin with target {_entityManager.ToPrettyString(targetUid.Value)}");
                 }
             }
         }
         else
         {
+
             _adminLogger.Add(LogType.Action, LogImpact.Extreme, $"{_entityManager.ToPrettyString(uid)} take EvilTwin with no target (delete)");
             _prayerSystem.SendSubtleMessage(args.Player, args.Player, Loc.GetString("evil-twin-error-message"),  Loc.GetString("prayer-popup-subtle-default"));
         }
+
 
         QueueDel(uid);
     }
@@ -207,14 +216,14 @@ public sealed class EvilTwinSystem : EntitySystem
         return false;
     }
 
-    private EntityUid? SpawnEvilTwin(EntityUid target, EntityCoordinates coords)
+    private (EntityUid?, HumanoidCharacterProfile? pref) SpawnEvilTwin(EntityUid target, EntityCoordinates coords)
     {
         if (!TryComp<MindComponent>(target, out var mind) ||
             !TryComp<HumanoidAppearanceComponent>(target, out var humanoid) ||
             !TryComp<ActorComponent>(target, out var actor) ||
             !_prototype.TryIndex<SpeciesPrototype>(humanoid.Species, out var species))
         {
-            return null;
+            return (null,null);
         }
 
         var pref = (HumanoidCharacterProfile) _prefs.GetPreferences(actor.PlayerSession.UserId).SelectedCharacter;
@@ -251,7 +260,8 @@ public sealed class EvilTwinSystem : EntitySystem
         }
 
         EnsureComp<EvilTwinComponent>(twinUid).TwinMind = mind?.Mind;
-        return new EntityUid?(twinUid);
+
+        return (new EntityUid?(twinUid),pref);
     }
 
     [Dependency] private readonly IRobustRandom _random = default!;
