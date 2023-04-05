@@ -52,3 +52,80 @@
     sprite: ADT/Clothing/Uniforms/Jumpsuit/priest_primal_suit.rsi
   - type: Clothing
     sprite: ADT/Clothing/Uniforms/Jumpsuit/priest_primal_suit.rsi
+
+- type: entity
+  parent: ClothingUniformBase
+  id: ADTClothingUniformLushWhiteWeddingDress
+  name: Lush white wedding dress
+  description: Primal suit for primal rituals
+  components:
+  - type: Sprite
+    sprite: ADT/Clothing/Uniforms/Jumpsuit/lush_white_wedding_dress.rsi
+  - type: Clothing
+    sprite: ADT/Clothing/Uniforms/Jumpsuit/lush_white_wedding_dress.rsi
+
+- type: entity
+  parent: ClothingUniformBase
+  id: ADTClothingUniformLushRoseWeddingDress
+  name: Rose white wedding dress
+  description: Primal suit for primal rituals
+  components:
+  - type: Sprite
+    sprite: ADT/Clothing/Uniforms/Jumpsuit/lush_rose_wedding_dress.rsi
+  - type: Clothing
+    sprite: ADT/Clothing/Uniforms/Jumpsuit/lush_rose_wedding_dress.rsi
+
+- type: entity
+  parent: ClothingUniformBase
+  id: ADTClothingUniformWhiteGhoticWeddingDress
+  name: White ghotic wedding dress
+  description: Primal suit for primal rituals
+  components:
+  - type: Sprite
+    sprite: ADT/Clothing/Uniforms/Jumpsuit/white_ghotic_dress.rsi
+  - type: Clothing
+    sprite: ADT/Clothing/Uniforms/Jumpsuit/white_ghotic_dress.rsi
+
+- type: entity
+  parent: ClothingUniformBase
+  id: ADTClothingUniformBlackGhoticWeddingDress
+  name: Black ghotic wedding dress
+  description: Primal suit for primal rituals
+  components:
+  - type: Sprite
+    sprite: ADT/Clothing/Uniforms/Jumpsuit/black_ghotic_dress.rsi
+  - type: Clothing
+    sprite: ADT/Clothing/Uniforms/Jumpsuit/black_ghotic_dress.rsi
+
+- type: entity
+  parent: ClothingUniformBase
+  id: ADTClothingUniformWhiteShortWeddingDress
+  name: White short wedding dress
+  description: Primal suit for primal rituals
+  components:
+  - type: Sprite
+    sprite: ADT/Clothing/Uniforms/Jumpsuit/white_short_wedding_dress.rsi
+  - type: Clothing
+    sprite: ADT/Clothing/Uniforms/Jumpsuit/white_short_wedding_dress.rsi
+
+- type: entity
+  parent: ClothingUniformBase
+  id: ADTClothingUniformWhiteWeddingSuitFromLuna
+  name: White wedding suit for Luna
+  description: Primal suit for primal rituals
+  components:
+  - type: Sprite
+    sprite: ADT/Clothing/Uniforms/Jumpsuit/white_wedding_suit_luna.rsi
+  - type: Clothing
+    sprite: ADT/Clothing/Uniforms/Jumpsuit/white_wedding_suit_luna.rsi
+
+- type: entity
+  parent: ClothingUniformBase
+  id: ADTClothingUniformBlackWeddingSuitFromLuna
+  name: Black wedding suit for Luna
+  description: Primal suit for primal rituals
+  components:
+  - type: Sprite
+    sprite: ADT/Clothing/Uniforms/Jumpsuit/black_wedding_suit_luna.rsi
+  - type: Clothing
+    sprite: ADT/Clothing/Uniforms/Jumpsuit/black_wedding_suit_luna.rsi
