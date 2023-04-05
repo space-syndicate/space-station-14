@@ -78,12 +78,12 @@
       reagent: Sigynate
       min: 30
       stages:
-        - 1
+        - 2
     - !type:DiseaseReagentCure
       reagent: Theobromine
-      min: 30
+      min: 10
       stages:
-        - 2
+        - 1
     - !type:DiseaseReagentCure
       reagent: WhiteRussian
       min: 90
