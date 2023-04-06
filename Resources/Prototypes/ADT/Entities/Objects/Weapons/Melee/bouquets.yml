@@ -43,7 +43,7 @@
   parent: BaseItem
   id: ADTObjectWeaponsMeleeYellowBouquet
   name: Yellow bouquet
-  description: THis is a bouquet of yellow peonies. Especially for connoisseurs of peonies
+  description: This is a bouquet of yellow peonies. Especially for connoisseurs of peonies
   components:
   - type: Sharp
   - type: Sprite
@@ -57,4 +57,44 @@
   - type: Item
     size: 15
     sprite: ADT/Objects/Weapons/Melee/yellow_bouquet.rsi
+  - type: DisarmMalus
+
+- type: entity
+  parent: BaseItem
+  id: ADTObjectWeaponsMeleeBouquetWithBeer
+  name: Bouquet with beer
+  description: Be unique! GIve a bouquet that you can eat, at the same time knocking over a bottle of beer
+  components:
+  - type: Sharp
+  - type: Sprite
+    sprite: ADT/Objects/Weapons/Melee/bouquet_with_beer.png
+    state: icon
+  - type: MeleeWeapon
+    attackRate: 1.0 
+    damage:
+      types:
+        Slash: 1
+  - type: Item
+    size: 15
+    sprite: ADT/Objects/Weapons/Melee/bouquet_with_beer.png
+  - type: DisarmMalus
+
+- type: entity
+  parent: BaseItem
+  id: ADTObjectWeaponsMeleeBlackBouquet
+  name: Black bouquet
+  description: This roses are difinietly not colored, thay have always been like thah
+  components:
+  - type: Sharp
+  - type: Sprite
+    sprite: ADT/Objects/Weapons/Melee/black_bouquet.rsi
+    state: icon
+  - type: MeleeWeapon
+    attackRate: 1.0 
+    damage:
+      types:
+        Slash: 1
+  - type: Item
+    size: 15
+    sprite: ADT/Objects/Weapons/Melee/black_bouquet.rsi
   - type: DisarmMalus
