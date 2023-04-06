@@ -62,10 +62,16 @@ public sealed class DiscordAuthManager
 
     private async void OnPlayerStatusChanged(object? sender, SessionStatusEventArgs e)
     {
+        if (!_isEnabled)
+        {
+            PlayerVerified?.Invoke(this, e.Session);
+            return;
+        }
+
         if (e.NewStatus == SessionStatus.Connected)
         {
             var isVerified = await IsVerified(e.Session.UserId);
-            if (!_isEnabled || isVerified)
+            if (isVerified)
             {
                 PlayerVerified?.Invoke(this, e.Session);
                 return;
