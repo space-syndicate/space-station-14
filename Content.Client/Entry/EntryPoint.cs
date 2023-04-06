@@ -74,7 +74,7 @@ namespace Content.Client.Entry
         [Dependency] private readonly SponsorsManager _sponsorsManager = default!; // Corvax-Sponsors
         [Dependency] private readonly JoinQueueManager _queueManager = default!; // Corvax-Queue
         [Dependency] private readonly TTSManager _ttsManager = default!; // Corvax-TTS
-        [Dependency] private readonly DiscordAuthManager _discordAuthManager = default!; // Corvax-TTS
+        [Dependency] private readonly DiscordAuthManager _discordAuthManager = default!; // Corvax-DiscordAuth
 
         public override void Init()
         {
