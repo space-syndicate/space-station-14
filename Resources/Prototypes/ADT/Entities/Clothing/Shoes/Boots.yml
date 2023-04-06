@@ -1,0 +1,38 @@
+- type: entity
+  parent: ClothingShoesBaseButcherable
+  id: ADTClothingHandsSupremeCommanderBoots
+  name: Supreme Commander's boots
+  description: i'm are the Speed! CHiao :)
+  components:
+  - type: Sprite
+    sprite: ADT/Clothing/Shoes/Boots/supreme-commander-boots.rsi
+  - type: Clothing
+    sprite: ADT/Clothing/Shoes/Boots/supreme-commander-boots.rsi
+  - type: NoSlip
+  - type: ClothingSpeedModifier
+    walkModifier: 1.7
+    sprintModifier: 1.7
+
+- type: entity
+  parent: ClothingShoesBaseButcherable
+  id: ADTClothingHandsWhiteHeels
+  name: White heels
+  description: Specially for your dress!
+  components:
+  - type: Sprite
+    sprite: ADT/Clothing/Shoes/Boots/white_heels.rsi
+  - type: Clothing
+    sprite: ADT/Clothing/Shoes/Boots/white_heels.rsi
+  - type: NoSlip
+
+- type: entity
+  parent: ClothingShoesBaseButcherable
+  id: ADTClothingHandsGoldHeels
+  name: Gold heels
+  description: Gold plated heels. How much does it cost?
+  components:
+  - type: Sprite
+    sprite: ADT/Clothing/Shoes/Boots/gold_heels.rsi
+  - type: Clothing
+    sprite: ADT/Clothing/Shoes/Boots/gold_heels.rsi
+  - type: NoSlip

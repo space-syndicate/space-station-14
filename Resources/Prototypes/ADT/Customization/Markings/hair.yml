@@ -93,3 +93,11 @@
   sprites:
     - sprite: ADT/Customization/Markings/hair.rsi
       state: mavis
+
+- type: marking
+  id: ADTAllCloud
+  bodyPart: Hair
+  markingCategory: Hair
+  sprites:
+    - sprite: ADT/Customization/Markings/hair.rsi
+      state: cloud
