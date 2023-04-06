@@ -1,0 +1,9 @@
+ent-ADTObjectWeaponsMeleeWhiteBouquet = Белый букет
+    .desc = Букет из белых роз. Классика.
+    .suffix = { "" }
+ent-ADTObjectWeaponsMeleeRoseBouquet = Розовый букет
+    .desc = Нежный букет из розовых цветов гибискуса. Специально для нее.
+    .suffix = { "" }
+ent-ADTObjectWeaponsMeleeYellowBouquet = Желтый букет
+    .desc = Это букет из желтых пионов. Специально для ценителей пионов.
+    .suffix = { "" }

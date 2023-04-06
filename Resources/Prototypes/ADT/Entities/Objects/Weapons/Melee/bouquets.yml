@@ -1,0 +1,60 @@
+
+- type: entity
+  parent: BaseItem
+  id: ADTObjectWeaponsMeleeWhiteBouquet  
+  name: White bouquet
+  description: Bouquet of white roses. Classic!
+  components:
+  - type: Sharp
+  - type: Sprite
+    sprite: ADT/Objects/Weapons/Melee/white_bouquet.rsi
+    state: icon
+  - type: MeleeWeapon
+    attackRate: 1.0 
+    damage:
+      types:
+        Slash: 1
+  - type: Item
+    size: 15
+    sprite: ADT/Objects/Weapons/Melee/white_bouquet.rsi
+  - type: DisarmMalus
+
+- type: entity
+  parent: BaseItem
+  id: ADTObjectWeaponsMeleeRoseBouquet
+  name: Rose bouquet
+  description: Delicate bouquet of pink hibiscus flowers. Especialy for her!
+  components:
+  - type: Sharp
+  - type: Sprite
+    sprite: ADT/Objects/Weapons/Melee/rose_bouquet.rsi
+    state: icon
+  - type: MeleeWeapon
+    attackRate: 1.0 
+    damage:
+      types:
+        Slash: 1
+  - type: Item
+    size: 15
+    sprite: ADT/Objects/Weapons/Melee/rose_bouquet.rsi
+  - type: DisarmMalus
+
+- type: entity
+  parent: BaseItem
+  id: ADTObjectWeaponsMeleeYellowBouquet
+  name: Yellow bouquet
+  description: THis is a bouquet of yellow peonies. Especially for connoisseurs of peonies
+  components:
+  - type: Sharp
+  - type: Sprite
+    sprite: ADT/Objects/Weapons/Melee/yellow_bouquet.rsi
+    state: icon
+  - type: MeleeWeapon
+    attackRate: 1.0 
+    damage:
+      types:
+        Slash: 1
+  - type: Item
+    size: 15
+    sprite: ADT/Objects/Weapons/Melee/yellow_bouquet.rsi
+  - type: DisarmMalus

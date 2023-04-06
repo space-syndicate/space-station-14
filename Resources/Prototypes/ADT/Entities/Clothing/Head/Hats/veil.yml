@@ -1,0 +1,33 @@
+- type: entity
+  parent: ClothingHeadBase
+  id: ADTClothingHeadHatsBlackVeil
+  name: Black veil
+  description: Gothic, nice. For those who destroy traditions but not much
+  components:
+  - type: Sprite
+    sprite: ADT/Clothing/Head/Hats/black_veil.rsi
+  - type: Clothing
+    sprite: ADT/Clothing/Head/Hats/black_veil.rsi
+  - type: DamageOtherOnHit
+    damage:
+      types:
+        Piercing: 15
+  - type: Item
+    size: 5
+
+- type: entity
+  parent: ClothingHeadBase
+  id: ADTClothingHeadHatsWhiteVeil
+  name: White veil
+  description: For those who follow tradition
+  components:
+  - type: Sprite
+    sprite: ADT/Clothing/Head/Hats/white_veil.rsi
+  - type: Clothing
+    sprite: ADT/Clothing/Head/Hats/white_veil.rsi
+  - type: DamageOtherOnHit
+    damage:
+      types:
+        Piercing: 15
+  - type: Item
+    size: 5

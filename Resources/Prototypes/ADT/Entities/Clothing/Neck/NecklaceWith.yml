@@ -1,0 +1,35 @@
+- type: entity
+  parent: ClothingNeckBase
+  id: ADTClothingNeckNecklaceWithEmerald
+  name: Necklace with emerald
+  description: This stone is so mesmerizing.. it's just like your green eyes
+  components:
+  - type: Sprite
+    sprite: ADT/Clothing/Neck/Cloaks/necklace_with_emerald.rsi
+
+- type: entity
+  parent: ClothingNeckBase
+  id: ADTClothingNeckNecklaceWithPlasma
+  name: Necklace with plasma
+  description: Necklace with plasma is it safe?
+  components:
+  - type: Sprite
+    sprite: ADT/Clothing/Neck/Cloaks/necklace_with_plasma.rsi
+
+- type: entity
+  parent: ClothingNeckBase
+  id: ADTClothingNeckNecklaceWithSapphire
+  name: Necklace with sapphire
+  description: THis necklace is missng rubies
+  components:
+  - type: Sprite
+    sprite: ADT/Clothing/Neck/Cloaks/necklace_with_sapphire.rsi
+
+- type: entity
+  parent: ClothingNeckBase
+  id: ADTClothingNeckRaincoatForAShortDress
+  name: Raincoat for a short dress
+  description: Cloak with gold plating. Blindingly
+  components:
+  - type: Sprite
+    sprite: ADT/Clothing/Neck/Cloaks/raincoat_for_a_short_dress.rsi

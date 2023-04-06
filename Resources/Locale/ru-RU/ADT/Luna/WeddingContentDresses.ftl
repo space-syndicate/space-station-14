@@ -1,0 +1,22 @@
+ent-ADTClothingUniformBlackWeddingWomenSuit = Свадебный костюм черный
+    .desc = Это женский костюм, для тех кому надоели платья. Выглядит сексуально.
+    .suffix = { "" }
+ent-ADTClothingUniformWhiteWeddingWomenSuit = Свадебный костюм белый
+    .desc = Это женский костюм, для тех кому надоели платья. Выглядит сексуально.
+    .suffix = { "" }
+ent-ADTClothingUniformWhiteShortWeddingDress = Белое короткое платье
+    .desc = Белое платье с золотыми блестками. Для тех кто устал от платьев в пол!
+    .suffix = { "" }
+ent-ADTClothingUniformBlackGhoticWeddingDress = Чёрное готическое платье
+    .desc = Мортиша Аддамс ставит лайк. Лучше этого сексуального платья вы не найдете.
+    .suffix = { "" }
+ent-ADTClothingUniformWhiteGhoticWeddingDress = Белое готическое платье
+    .desc = Это платье так подчеркивает твою фигуру! Ты будешь самой сексуальной невестой.
+    .suffix = { "" }
+ent-ADTClothingUniformLushRoseWeddingDress = Пышное розовое платье
+    .desc = Специально для принцессы.
+    .suffix = { "" }
+ent-ADTClothingUniformLushWhiteWeddingDress = Пышное белое платье
+    .desc = Ты выглядишь так нежно... Как зефир!
+    .suffix = { "" }
+
