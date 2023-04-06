@@ -8,7 +8,7 @@
     sprite: ADT/Objects/Weapons/Guns/kiiravamagicwand.rsi
     layers:
     - state: icon
-      map: ["enum.GunVisualLayers.Base"]
+      map: ["enum.GunVisualLayers.Base"] 
   - type: Item
     size: 1
     sprite: ADT/Objects/Weapons/Guns/kiiravamagicwand.rsi
