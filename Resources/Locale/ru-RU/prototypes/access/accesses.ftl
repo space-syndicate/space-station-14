@@ -3,6 +3,7 @@ id-card-access-level-captain = Капитан
 id-card-access-level-head-of-personnel = Глава персонала
 id-card-access-level-head-of-security = Глава службы безопасности
 id-card-access-level-security = Служба безопасности
+id-card-access-level-detective = Детектив
 id-card-access-level-armory = Оружейная
 id-card-access-level-brig = Бриг
 id-card-access-level-chief-engineer = Старший инженер
