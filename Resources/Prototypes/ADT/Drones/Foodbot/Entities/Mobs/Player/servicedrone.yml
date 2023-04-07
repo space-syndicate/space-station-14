@@ -77,7 +77,7 @@
     - map: [ "enum.HumanoidVisualLayers.Eyes" ]
     - map: ["enum.DamageStateVisualLayers.Base"]
       state: robot_food_distributor_bot
-      sprite: ADT\Mobs\Silicon\Bots\robot_food_distributor_bot.rsi
+      sprite: ADT/Mobs/Silicon/Bots/robot_food_distributor_bot.rsi
   - type: MovementIgnoreGravity
 #  - type: Fixtures
 #    fixtures:
