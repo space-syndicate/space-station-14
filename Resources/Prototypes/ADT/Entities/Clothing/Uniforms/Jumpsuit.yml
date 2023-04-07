@@ -52,3 +52,81 @@
     sprite: ADT/Clothing/Uniforms/Jumpsuit/priest_primal_suit.rsi
   - type: Clothing
     sprite: ADT/Clothing/Uniforms/Jumpsuit/priest_primal_suit.rsi
+
+#Luna
+- type: entity
+  parent: ClothingUniformBase
+  id: ADTClothingUniformLushWhiteWeddingDress
+  name: Lush white wedding dress
+  description: You look so tender.. like a marshmallow!
+  components:
+  - type: Sprite
+    sprite: ADT/Clothing/Uniforms/Jumpsuit/lush_white_wedding_dress.rsi
+  - type: Clothing
+    sprite: ADT/Clothing/Uniforms/Jumpsuit/lush_white_wedding_dress.rsi
+
+- type: entity
+  parent: ClothingUniformBase
+  id: ADTClothingUniformLushRoseWeddingDress
+  name: Rose white wedding dress
+  description: Specially for a princess!
+  components:
+  - type: Sprite
+    sprite: ADT/Clothing/Uniforms/Jumpsuit/lush_rose_wedding_dress.rsi
+  - type: Clothing
+    sprite: ADT/Clothing/Uniforms/Jumpsuit/lush_rose_wedding_dress.rsi
+
+- type: entity
+  parent: ClothingUniformBase
+  id: ADTClothingUniformWhiteGhoticWeddingDress
+  name: White ghotic wedding dress
+  description: This dress really flatters your figure. YOu will be the sexiest bride
+  components:
+  - type: Sprite
+    sprite: ADT/Clothing/Uniforms/Jumpsuit/white_ghotic_dress.rsi
+  - type: Clothing
+    sprite: ADT/Clothing/Uniforms/Jumpsuit/white_ghotic_dress.rsi
+
+- type: entity
+  parent: ClothingUniformBase
+  id: ADTClothingUniformBlackGhoticWeddingDress
+  name: Black ghotic wedding dress
+  description: Morticia Addams likes. You will not find better than this sexy dress
+  components:
+  - type: Sprite
+    sprite: ADT/Clothing/Uniforms/Jumpsuit/black_ghotic_dress.rsi
+  - type: Clothing
+    sprite: ADT/Clothing/Uniforms/Jumpsuit/black_ghotic_dress.rsi
+
+- type: entity
+  parent: ClothingUniformBase
+  id: ADTClothingUniformWhiteShortWeddingDress
+  name: White short wedding dress
+  description: White dress with gold sequins. For those who are tired of floor length dresses!
+  components:
+  - type: Sprite
+    sprite: ADT/Clothing/Uniforms/Jumpsuit/white_short_wedding_dress.rsi
+  - type: Clothing
+    sprite: ADT/Clothing/Uniforms/Jumpsuit/white_short_wedding_dress.rsi
+
+- type: entity
+  parent: ClothingUniformBase
+  id: ADTClothingUniformWhiteWeddingWomenSuit
+  name: White wedding women suit
+  description: This is a women's suit. For those who are tired of dresses. Looks sexy
+  components:
+  - type: Sprite
+    sprite: ADT/Clothing/Uniforms/Jumpsuit/white_wedding_women_suit.rsi
+  - type: Clothing
+    sprite: ADT/Clothing/Uniforms/Jumpsuit/white_wedding_women_suit.rsi
+
+- type: entity
+  parent: ClothingUniformBase
+  id: ADTClothingUniformBlackWeddingWomenSuit
+  name: Black wedding women suit
+  description: This is a women's suit. For those who are tired of dresses. Looks sexy
+  components:
+  - type: Sprite
+    sprite: ADT/Clothing/Uniforms/Jumpsuit/black_wedding_women_suit.rsi
+  - type: Clothing
+    sprite: ADT/Clothing/Uniforms/Jumpsuit/black_wedding_women_suit.rsi
