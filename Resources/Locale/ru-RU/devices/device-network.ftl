@@ -21,11 +21,11 @@ device-frequency-prototype-name-surveillance-camera-general = Камеры (Об
 device-frequency-prototype-name-surveillance-camera-entertainment = Камеры (Развлечения)
 device-address-prefix-sensor = Сенс-
 device-address-prefix-fire-alarm = Пож-
-#PDAs and terminals
+# PDAs and terminals
 device-address-prefix-console = Конс-
 device-address-prefix-air-alarm = Возд-
 device-address-examine-message = Адрес устройства: { $address }.
-#Device net ID names
+# Device net ID names
 device-net-id-private = Частные
 device-net-id-wired = Проводные
 device-net-id-wireless = Беспроводные
