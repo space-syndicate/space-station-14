@@ -18,19 +18,24 @@ public sealed class RabbitMQManager
 
     public void Initialize()
     {
-        factory = new ConnectionFactory() {DispatchConsumersAsync = true, Uri = new Uri(_cfg.GetCVar(ACCVars.RabbitMQConnectionString)) };
-        var connection = factory.CreateConnection();
-        var channel = connection.CreateModel();
+        string url = _cfg.GetCVar(ACCVars.RabbitMQConnectionString);
+        if (!string.IsNullOrEmpty(url))
+        {
+            factory = new ConnectionFactory() { DispatchConsumersAsync = true, Uri = new Uri(url) };
+            var connection = factory.CreateConnection();
+            var channel = connection.CreateModel();
 
-        channel.ExchangeDeclare(exchange:"SS14", type: ExchangeType.Fanout, durable: false, autoDelete: false, arguments: null);
+            channel.ExchangeDeclare(exchange: "SS14", type: ExchangeType.Fanout, durable: false, autoDelete: false,
+                arguments: null);
 
-        var queueId = Guid.NewGuid().ToString();
-        channel.QueueDeclare(queue: queueId, durable: false, exclusive: true, autoDelete: true, arguments: null);
-        channel.QueueBind(queue: queueId, exchange: "SS14", routingKey: "all", arguments: null );
+            var queueId = Guid.NewGuid().ToString();
+            channel.QueueDeclare(queue: queueId, durable: false, exclusive: true, autoDelete: true, arguments: null);
+            channel.QueueBind(queue: queueId, exchange: "SS14", routingKey: "all", arguments: null);
 
-        var consumer = new AsyncEventingBasicConsumer(channel);
-        consumer.Received += ReceivedMessage;
-        channel.BasicConsume(queue: queueId, autoAck: true, consumer: consumer);
+            var consumer = new AsyncEventingBasicConsumer(channel);
+            consumer.Received += ReceivedMessage;
+            channel.BasicConsume(queue: queueId, autoAck: true, consumer: consumer);
+        }
 
     }
 
@@ -55,15 +60,20 @@ public sealed class RabbitMQManager
 
     public void SendMessage(string message)
     {
-        using (var connection = factory.CreateConnection())
-        using (var channel = connection.CreateModel())
-        {
-            var body = Encoding.UTF8.GetBytes(message);
+        string url = _cfg.GetCVar(ACCVars.RabbitMQConnectionString);
 
-            channel.BasicPublish(exchange: "SS14",
-                routingKey: "all",
-                basicProperties: null,
-                body: body);
+        if (factory != null && !string.IsNullOrEmpty(url))
+        {
+            using (var connection = factory.CreateConnection())
+            using (var channel = connection.CreateModel())
+            {
+                var body = Encoding.UTF8.GetBytes(message);
+
+                channel.BasicPublish(exchange: "SS14",
+                    routingKey: "all",
+                    basicProperties: null,
+                    body: body);
+            }
         }
     }
 }

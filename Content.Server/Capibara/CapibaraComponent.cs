@@ -24,5 +24,6 @@ namespace Content.Server.Capibara
         /// </summary>
         [ViewVariables(VVAccess.ReadWrite), DataField("armyMobSpawnId", customTypeSerializer: typeof(PrototypeIdSerializer<EntityPrototype>))]
         public string ArmyMobSpawnId = "MobMouse";
+
     }
 };

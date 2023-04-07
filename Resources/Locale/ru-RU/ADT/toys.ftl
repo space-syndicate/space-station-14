@@ -1,9 +1,0 @@
-ent-ADTPlushieResomiBlue = плюшевый синий резоми
-    .desc = Очаровательный, милый Резоми UwU".
-    .suffix = { "" }
-ent-ADTPlushieResomiGreen = плюшевый зелёный резоми
-    .desc = Очаровательный, милый Резоми UwU".
-    .suffix = { "" }
-ent-ADTPlushieResomiYellow = плюшевый жёлтый резоми
-    .desc = Очаровательный, милый Резоми UwU".
-    .suffix = { "" }
