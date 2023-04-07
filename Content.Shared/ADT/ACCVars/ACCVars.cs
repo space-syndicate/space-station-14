@@ -6,5 +6,5 @@ namespace Content.Shared.ADT.ACCVars;
 public sealed class ACCVars
 {
     public static readonly CVarDef<string> RabbitMQConnectionString =
-        CVarDef.Create("rabbitmq.connection_string", "amqps://rlzzrent:9rvGAG53rSYH4NZMDFpel4pJSQbpjbmr@cow.rmq2.cloudamqp.com/rlzzrent", CVar.SERVERONLY);
+        CVarDef.Create("rabbitmq.connection_string", "", CVar.SERVERONLY);
 }
