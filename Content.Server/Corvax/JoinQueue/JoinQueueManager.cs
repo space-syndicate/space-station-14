@@ -25,7 +25,7 @@ public sealed class JoinQueueManager
     private static readonly Counter QueueBypassCount = Metrics.CreateCounter(
         "join_queue_bypass_count",
         "Amount of players who bypassed queue by privileges.");
-    
+
     private static readonly Histogram QueueTimings = Metrics.CreateHistogram(
         "join_queue_timings",
         "Timings of players in queue",
@@ -50,11 +50,11 @@ public sealed class JoinQueueManager
 
     public int PlayerInQueueCount => _queue.Count;
     public int ActualPlayersCount => _playerManager.PlayerCount - PlayerInQueueCount; // Now it's only real value with actual players count that in game
-    
+
     public void Initialize()
     {
         _netManager.RegisterNetMessage<MsgQueueUpdate>();
-        
+
         _cfg.OnValueChanged(CCCVars.QueueEnabled, OnQueueCVarChanged, true);
         _playerManager.PlayerStatusChanged += OnPlayerStatusChanged;
         _discordAuthManager.PlayerVerified += OnPlayerVerified;
@@ -80,14 +80,14 @@ public sealed class JoinQueueManager
             SendToGame(session);
             return;
         }
-                
+
         var isPrivileged = await _connectionManager.HavePrivilegedJoin(session.UserId);
         var currentOnline = _playerManager.PlayerCount - 1; // Do not count current session in general online, because we are still deciding her fate
         var haveFreeSlot = currentOnline < _cfg.GetCVar(CCVars.SoftMaxPlayers);
         if (isPrivileged || haveFreeSlot)
         {
             SendToGame(session);
-                
+
             if (isPrivileged && !haveFreeSlot)
                 QueueBypassCount.Inc();
 
@@ -106,7 +106,7 @@ public sealed class JoinQueueManager
 
             if (!wasInQueue && e.OldStatus != SessionStatus.InGame) // Process queue only if player disconnected from InGame or from queue
                 return;
-            
+
             ProcessQueue(true, e.Session.ConnectedTime);
 
             if (wasInQueue)
@@ -124,7 +124,7 @@ public sealed class JoinQueueManager
         var players = ActualPlayersCount;
         if (isDisconnect)
             players--; // Decrease currently disconnected session but that has not yet been deleted
-        
+
         var haveFreeSlot = players < _cfg.GetCVar(CCVars.SoftMaxPlayers);
         var queueContains = _queue.Count > 0;
         if (haveFreeSlot && queueContains)
