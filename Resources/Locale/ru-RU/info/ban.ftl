@@ -17,3 +17,20 @@ cmd-banlist-desc = Список активных банов пользовате
 cmd-banlist-help = Использование: banlist <name or user ID>
 cmd-banlist-empty = Нет активных банов у пользователя { $user }
 cmd-banlistF-hint = <name/user ID>
+cmd-ban_exemption_update-desc = Установить исключение на типы банов игрока.
+cmd-ban_exemption_update-help =
+    Использование: ban_exemption_update <player> <flag> [<flag> [...]]
+    Укажите несколько флагов, чтобы дать игроку исключение из нескольких типов банов.
+    Чтобы удалить все исключения, выполните эту команду и укажите единственным флагом "None".
+cmd-ban_exemption_update-nargs = Ожидалось хотя бы 2 аргумента
+cmd-ban_exemption_update-locate = Не удалось найти игрока '{ $player }'.
+cmd-ban_exemption_update-invalid-flag = Недопустимый флаг '{ $flag }'.
+cmd-ban_exemption_update-success = Обновлены флаги исключений банов для '{ $player }' ({ $uid }).
+cmd-ban_exemption_update-arg-player = <player>
+cmd-ban_exemption_update-arg-flag = <flag>
+cmd-ban_exemption_get-desc = Показать исключения банов для определённого игрока.
+cmd-ban_exemption_get-help = Использование: ban_exemption_get <player>
+cmd-ban_exemption_get-nargs = Ожидался ровно 1 аргумент
+cmd-ban_exemption_get-none = Пользователь не имеет исключений от банов.
+cmd-ban_exemption_get-show = Пользователь исключён из банов со следующими флагами: { $flags }.
+cmd-ban_exemption_get-arg-player = <player>
