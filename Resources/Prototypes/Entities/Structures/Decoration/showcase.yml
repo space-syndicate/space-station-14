@@ -1,6 +1,5 @@
 - type: entity
   id: BaseShowcaseRobot
-  abstract: true
   parent: BaseStructure
   name: security robot showcase
   description: A non-functional replica of an old security robot.

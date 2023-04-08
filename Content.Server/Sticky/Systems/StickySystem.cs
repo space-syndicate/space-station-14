@@ -1,20 +1,22 @@
+using Content.Server.DoAfter;
 using Content.Server.Popups;
 using Content.Server.Sticky.Components;
 using Content.Server.Sticky.Events;
 using Content.Shared.DoAfter;
 using Content.Shared.Hands.EntitySystems;
 using Content.Shared.Interaction;
-using Content.Shared.Sticky;
 using Content.Shared.Sticky.Components;
 using Content.Shared.Verbs;
+using Robust.Server.GameObjects;
 using Robust.Shared.Containers;
+using Robust.Shared.Player;
 using Robust.Shared.Utility;
 
 namespace Content.Server.Sticky.Systems;
 
 public sealed class StickySystem : EntitySystem
 {
-    [Dependency] private readonly SharedDoAfterSystem _doAfterSystem = default!;
+    [Dependency] private readonly DoAfterSystem _doAfterSystem = default!;
     [Dependency] private readonly PopupSystem _popupSystem = default!;
     [Dependency] private readonly SharedContainerSystem _containerSystem = default!;
     [Dependency] private readonly SharedHandsSystem _handsSystem = default!;
@@ -26,7 +28,7 @@ public sealed class StickySystem : EntitySystem
     public override void Initialize()
     {
         base.Initialize();
-        SubscribeLocalEvent<StickyComponent, StickyDoAfterEvent>(OnStickFinished);
+        SubscribeLocalEvent<StickyComponent, DoAfterEvent>(OnStickSuccessful);
         SubscribeLocalEvent<StickyComponent, AfterInteractEvent>(OnAfterInteract);
         SubscribeLocalEvent<StickyComponent, GetVerbsEvent<Verb>>(AddUnstickVerb);
     }
@@ -86,8 +88,9 @@ public sealed class StickySystem : EntitySystem
             component.Stick = true;
 
             // start sticking object to target
-            _doAfterSystem.TryStartDoAfter(new DoAfterArgs(user, delay, new StickyDoAfterEvent(), uid, target: target, used: uid)
+            _doAfterSystem.DoAfter(new DoAfterEventArgs(user, delay, target: target, used: uid)
             {
+                BreakOnStun = true,
                 BreakOnTargetMove = true,
                 BreakOnUserMove = true,
                 NeedHand = true
@@ -102,13 +105,14 @@ public sealed class StickySystem : EntitySystem
         return true;
     }
 
-    private void OnStickFinished(EntityUid uid, StickyComponent component, DoAfterEvent args)
+    private void OnStickSuccessful(EntityUid uid, StickyComponent component, DoAfterEvent args)
     {
         if (args.Handled || args.Cancelled || args.Args.Target == null)
             return;
 
         if (component.Stick)
             StickToEntity(uid, args.Args.Target.Value, args.Args.User, component);
+
         else
             UnstickFromEntity(uid, args.Args.User, component);
 
@@ -133,8 +137,9 @@ public sealed class StickySystem : EntitySystem
             component.Stick = false;
 
             // start unsticking object
-            _doAfterSystem.TryStartDoAfter(new DoAfterArgs(user, delay, new StickyDoAfterEvent(), uid, target: uid)
+            _doAfterSystem.DoAfter(new DoAfterEventArgs(user, delay, target: uid)
             {
+                BreakOnStun = true,
                 BreakOnTargetMove = true,
                 BreakOnUserMove = true,
                 NeedHand = true

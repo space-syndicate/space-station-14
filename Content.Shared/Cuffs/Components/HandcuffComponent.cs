@@ -79,16 +79,24 @@ public sealed class HandcuffComponent : Component
 
     [DataField("endUncuffSound"), ViewVariables(VVAccess.ReadWrite)]
     public SoundSpecifier EndUncuffSound = new SoundPathSpecifier("/Audio/Items/Handcuffs/cuff_takeoff_end.ogg");
+
+    /// <summary>
+    ///     Used to prevent DoAfter getting spammed.
+    /// </summary>
+    [DataField("cuffing"), ViewVariables(VVAccess.ReadWrite)]
+    public bool Cuffing;
 }
 
 [Serializable, NetSerializable]
 public sealed class HandcuffComponentState : ComponentState
 {
     public readonly string? IconState;
+    public readonly bool Cuffing;
 
-    public HandcuffComponentState(string? iconState)
+    public HandcuffComponentState(string? iconState, bool cuffing)
     {
         IconState = iconState;
+        Cuffing = cuffing;
     }
 }
 

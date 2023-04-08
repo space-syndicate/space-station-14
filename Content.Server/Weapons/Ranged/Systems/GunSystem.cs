@@ -36,7 +36,6 @@ public sealed partial class GunSystem : SharedGunSystem
     [Dependency] private readonly PricingSystem _pricing = default!;
     [Dependency] private readonly StaminaSystem _stamina = default!;
     [Dependency] private readonly StunSystem _stun = default!;
-    [Dependency] private readonly SharedTransformSystem _transform = default!;
 
     public const float DamagePitchVariation = SharedMeleeWeaponSystem.DamagePitchVariation;
     public const float GunClumsyChance = 0.5f;
@@ -193,42 +192,18 @@ public sealed partial class GunSystem : SharedGunSystem
                     ShootProjectile(ent.Value, mapDirection, gunVelocity, user, gun.ProjectileSpeed);
                     break;
                 case HitscanPrototype hitscan:
+                    var ray = new CollisionRay(fromMap.Position, mapDirection.Normalized, hitscan.CollisionMask);
 
-                    EntityUid? lastHit = null;
+                    var rayCastResults =
+                        Physics.IntersectRay(fromMap.MapId, ray, hitscan.MaxLength, user, false).ToList();
 
-                    var from = fromMap;
-                    var fromEffect = fromCoordinates; // can't use map coords above because funny FireEffects
-                    var dir = mapDirection.Normalized;
-                    var lastUser = user;
-                    for (var reflectAttempt = 0; reflectAttempt < 3; reflectAttempt++)
+                    if (rayCastResults.Count >= 1)
                     {
-                        var ray = new CollisionRay(from.Position, dir, hitscan.CollisionMask);
-                        var rayCastResults =
-                            Physics.IntersectRay(from.MapId, ray, hitscan.MaxLength, lastUser, false).ToList();
-                        if (!rayCastResults.Any())
-                            break;
-
                         var result = rayCastResults[0];
-                        var hit = result.HitEntity;
-                        lastHit = hit;
+                        var hitEntity = result.HitEntity;
+                        var distance = result.Distance;
+                        FireEffects(fromCoordinates, distance, mapDirection.ToAngle(), hitscan, hitEntity);
 
-                        FireEffects(fromEffect, result.Distance, dir.Normalized.ToAngle(), hitscan, hit);
-
-                        var ev = new HitScanReflectAttemptEvent(dir, false);
-                        RaiseLocalEvent(hit, ref ev);
-
-                        if (!ev.Reflected)
-                            break;
-
-                        fromEffect = Transform(hit).Coordinates;
-                        from = fromEffect.ToMap(EntityManager, _transform);
-                        dir = ev.Direction;
-                        lastUser = hit;
-                    }
-
-                    if (lastHit != null)
-                    {
-                        EntityUid hitEntity = lastHit.Value;
                         if (hitscan.StaminaDamage > 0f)
                             _stamina.TakeStaminaDamage(hitEntity, hitscan.StaminaDamage, source:user);
 
@@ -244,7 +219,7 @@ public sealed partial class GunSystem : SharedGunSystem
                             if (!Deleted(hitEntity))
                             {
                                 if (dmg.Total > FixedPoint2.Zero)
-                                    RaiseNetworkEvent(new DamageEffectEvent(Color.Red, new List<EntityUid> {hitEntity}), Filter.Pvs(hitEntity, entityManager: EntityManager));
+                                    RaiseNetworkEvent(new DamageEffectEvent(Color.Red, new List<EntityUid> {result.HitEntity}), Filter.Pvs(hitEntity, entityManager: EntityManager));
 
                                 // TODO get fallback position for playing hit sound.
                                 PlayImpactSound(hitEntity, dmg, hitscan.Sound, hitscan.ForceSound);
@@ -264,7 +239,7 @@ public sealed partial class GunSystem : SharedGunSystem
                     }
                     else
                     {
-                        FireEffects(fromEffect, hitscan.MaxLength, dir.ToAngle(), hitscan);
+                        FireEffects(fromCoordinates, hitscan.MaxLength, mapDirection.ToAngle(), hitscan);
                     }
 
                     Audio.PlayPredicted(gun.SoundGunshot, gunUid, user);

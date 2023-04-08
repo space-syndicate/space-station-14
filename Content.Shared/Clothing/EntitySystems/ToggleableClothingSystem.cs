@@ -12,7 +12,6 @@ using Content.Shared.Verbs;
 using Robust.Shared.Containers;
 using Robust.Shared.Network;
 using Robust.Shared.Prototypes;
-using Robust.Shared.Serialization;
 using Robust.Shared.Utility;
 
 namespace Content.Shared.Clothing.EntitySystems;
@@ -48,7 +47,7 @@ public sealed class ToggleableClothingSystem : EntitySystem
         SubscribeLocalEvent<ToggleableClothingComponent, InventoryRelayedEvent<GetVerbsEvent<EquipmentVerb>>>(GetRelayedVerbs);
         SubscribeLocalEvent<ToggleableClothingComponent, GetVerbsEvent<EquipmentVerb>>(OnGetVerbs);
         SubscribeLocalEvent<AttachedClothingComponent, GetVerbsEvent<EquipmentVerb>>(OnGetAttachedStripVerbsEvent);
-        SubscribeLocalEvent<ToggleableClothingComponent, ToggleClothingDoAfterEvent>(OnDoAfterComplete);
+        SubscribeLocalEvent<ToggleableClothingComponent, DoAfterEvent<ToggleClothingEvent>>(OnDoAfterComplete);
     }
 
     private void GetRelayedVerbs(EntityUid uid, ToggleableClothingComponent component, InventoryRelayedEvent<GetVerbsEvent<EquipmentVerb>> args)
@@ -93,29 +92,37 @@ public sealed class ToggleableClothingSystem : EntitySystem
 
     private void StartDoAfter(EntityUid user, EntityUid item, EntityUid wearer, ToggleableClothingComponent component)
     {
-        if (component.StripDelay == null)
+        // TODO predict do afters & networked clothing toggle.
+        if (_net.IsClient)
+            return;
+
+        if (component.DoAfterId != null || component.StripDelay == null)
             return;
 
         var (time, stealth) = _strippable.GetStripTimeModifiers(user, wearer, (float) component.StripDelay.Value.TotalSeconds);
-
-        var args = new DoAfterArgs(user, time, new ToggleClothingDoAfterEvent(), item, wearer, item)
-        {
-            BreakOnDamage = true,
-            BreakOnTargetMove = true,
-            // This should just re-use the BUI range checks & cancel the do after if the BUI closes. But that is all
-            // server-side at the moment.
-            // TODO BUI REFACTOR.
-            DistanceThreshold = 2,
-        };
-
-        if (!_doAfter.TryStartDoAfter(args))
-            return;
 
         if (!stealth)
         {
             var popup = Loc.GetString("strippable-component-alert-owner-interact", ("user", Identity.Entity(user, EntityManager)), ("item", item));
             _popupSystem.PopupEntity(popup, wearer, wearer, PopupType.Large);
         }
+
+        var args = new DoAfterEventArgs(user, time, default, wearer, item)
+        {
+            BreakOnDamage = true,
+            BreakOnStun = true,
+            BreakOnTargetMove = true,
+            RaiseOnTarget = false,
+            RaiseOnUsed = true,
+            RaiseOnUser = false,
+            // This should just re-use the BUI range checks & cancel the do after if the BUI closes. But that is all
+            // server-side at the moment.
+            // TODO BUI REFACTOR.
+            DistanceThreshold = 2,
+        };
+
+        var doAfter = _doAfter.DoAfter(args, new ToggleClothingEvent() { Performer = user });
+        component.DoAfterId = doAfter.ID;
     }
 
     private void OnGetAttachedStripVerbsEvent(EntityUid uid, AttachedClothingComponent component, GetVerbsEvent<EquipmentVerb> args)
@@ -124,12 +131,15 @@ public sealed class ToggleableClothingSystem : EntitySystem
         OnGetVerbs(component.AttachedUid, Comp<ToggleableClothingComponent>(component.AttachedUid), args);
     }
 
-    private void OnDoAfterComplete(EntityUid uid, ToggleableClothingComponent component, ToggleClothingDoAfterEvent args)
+    private void OnDoAfterComplete(EntityUid uid, ToggleableClothingComponent component, DoAfterEvent<ToggleClothingEvent> args)
     {
+        DebugTools.Assert(component.DoAfterId == args.Id);
+        component.DoAfterId = null;
+
         if (args.Cancelled)
             return;
 
-        ToggleClothing(args.User, uid, component);
+        OnToggleClothing(uid, component, args.AdditionalData);
     }
 
     public override void Update(float frameTime)
@@ -231,28 +241,21 @@ public sealed class ToggleableClothingSystem : EntitySystem
     /// </summary>
     private void OnToggleClothing(EntityUid uid, ToggleableClothingComponent component, ToggleClothingEvent args)
     {
-        if (args.Handled)
+        if (args.Handled || component.Container == null || component.ClothingUid == null)
             return;
 
-        args.Handled = true;
-        ToggleClothing(args.Performer, uid, component);
-    }
-
-    private void ToggleClothing(EntityUid user, EntityUid target, ToggleableClothingComponent component)
-    {
-        if (component.Container == null || component.ClothingUid == null)
-            return;
-
-        var parent = Transform(target).ParentUid;
+        var parent = Transform(uid).ParentUid;
         if (component.Container.ContainedEntity == null)
-            _inventorySystem.TryUnequip(user, parent, component.Slot);
+            _inventorySystem.TryUnequip(parent, component.Slot);
         else if (_inventorySystem.TryGetSlotEntity(parent, component.Slot, out var existing))
         {
             _popupSystem.PopupEntity(Loc.GetString("toggleable-clothing-remove-first", ("entity", existing)),
-                user, user);
+                args.Performer, args.Performer);
         }
         else
-            _inventorySystem.TryEquip(user, parent, component.ClothingUid.Value, component.Slot);
+            _inventorySystem.TryEquip(parent, component.ClothingUid.Value, component.Slot);
+
+        args.Handled = true;
     }
 
     private void OnGetActions(EntityUid uid, ToggleableClothingComponent component, GetItemActionsEvent args)
@@ -309,11 +312,4 @@ public sealed class ToggleableClothingSystem : EntitySystem
     }
 }
 
-public sealed class ToggleClothingEvent : InstantActionEvent
-{
-}
-
-[Serializable, NetSerializable]
-public sealed class ToggleClothingDoAfterEvent : SimpleDoAfterEvent
-{
-}
+public sealed class ToggleClothingEvent : InstantActionEvent { }

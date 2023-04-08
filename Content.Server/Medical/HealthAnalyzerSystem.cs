@@ -1,3 +1,4 @@
+using Content.Server.DoAfter;
 using Content.Server.Medical.Components;
 using Content.Server.Disease;
 using Content.Server.Popups;
@@ -5,7 +6,6 @@ using Content.Shared.Damage;
 using Content.Shared.DoAfter;
 using Content.Shared.IdentityManagement;
 using Content.Shared.Interaction;
-using Content.Shared.MedicalScanner;
 using Content.Shared.Mobs.Components;
 using Robust.Server.GameObjects;
 using static Content.Shared.MedicalScanner.SharedHealthAnalyzerComponent;
@@ -16,7 +16,7 @@ namespace Content.Server.Medical
     {
         [Dependency] private readonly SharedAudioSystem _audio = default!;
         [Dependency] private readonly DiseaseSystem _disease = default!;
-        [Dependency] private readonly SharedDoAfterSystem _doAfterSystem = default!;
+        [Dependency] private readonly DoAfterSystem _doAfterSystem = default!;
         [Dependency] private readonly PopupSystem _popupSystem = default!;
         [Dependency] private readonly UserInterfaceSystem _uiSystem = default!;
 
@@ -25,7 +25,7 @@ namespace Content.Server.Medical
             base.Initialize();
             SubscribeLocalEvent<HealthAnalyzerComponent, ActivateInWorldEvent>(HandleActivateInWorld);
             SubscribeLocalEvent<HealthAnalyzerComponent, AfterInteractEvent>(OnAfterInteract);
-            SubscribeLocalEvent<HealthAnalyzerComponent, HealthAnalyzerDoAfterEvent>(OnDoAfter);
+            SubscribeLocalEvent<HealthAnalyzerComponent, DoAfterEvent>(OnDoAfter);
         }
 
         private void HandleActivateInWorld(EntityUid uid, HealthAnalyzerComponent healthAnalyzer, ActivateInWorldEvent args)
@@ -40,10 +40,11 @@ namespace Content.Server.Medical
 
             _audio.PlayPvs(healthAnalyzer.ScanningBeginSound, uid);
 
-            _doAfterSystem.TryStartDoAfter(new DoAfterArgs(args.User, healthAnalyzer.ScanDelay, new HealthAnalyzerDoAfterEvent(), uid, target: args.Target, used: uid)
+            _doAfterSystem.DoAfter(new DoAfterEventArgs(args.User, healthAnalyzer.ScanDelay, target: args.Target, used:uid)
             {
                 BreakOnTargetMove = true,
                 BreakOnUserMove = true,
+                BreakOnStun = true,
                 NeedHand = true
             });
         }

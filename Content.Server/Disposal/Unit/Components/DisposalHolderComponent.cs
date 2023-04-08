@@ -3,11 +3,13 @@ using Content.Server.Disposal.Tube.Components;
 using Content.Shared.Body.Components;
 using Content.Shared.Item;
 using Robust.Shared.Containers;
+using Robust.Shared.Physics;
 using Robust.Shared.Physics.Components;
 using Robust.Shared.Physics.Systems;
 
 namespace Content.Server.Disposal.Unit.Components
 {
+    // TODO: Add gas
     [RegisterComponent]
     public sealed class DisposalHolderComponent : Component, IGasMixtureHolder
     {
@@ -29,7 +31,7 @@ namespace Content.Server.Disposal.Unit.Components
         public float TimeLeft { get; set; }
 
         [ViewVariables]
-        public DisposalTubeComponent? PreviousTube { get; set; }
+        public IDisposalTubeComponent? PreviousTube { get; set; }
 
         [ViewVariables]
         public Direction PreviousDirection { get; set; } = Direction.Invalid;
@@ -38,7 +40,7 @@ namespace Content.Server.Disposal.Unit.Components
         public Direction PreviousDirectionFrom => (PreviousDirection == Direction.Invalid) ? Direction.Invalid : PreviousDirection.GetOpposite();
 
         [ViewVariables]
-        public DisposalTubeComponent? CurrentTube { get; set; }
+        public IDisposalTubeComponent? CurrentTube { get; set; }
 
         // CurrentDirection is not null when CurrentTube isn't null.
         [ViewVariables]

@@ -3,7 +3,6 @@ using Robust.Client.GameObjects;
 using Robust.Client.Graphics;
 using Robust.Shared.Enums;
 using Robust.Shared.Prototypes;
-using Robust.Shared.Timing;
 using Robust.Shared.Utility;
 
 namespace Content.Client.DoAfter;
@@ -11,30 +10,17 @@ namespace Content.Client.DoAfter;
 public sealed class DoAfterOverlay : Overlay
 {
     private readonly IEntityManager _entManager;
-    private readonly IGameTiming _timing;
     private readonly SharedTransformSystem _transform;
-    private readonly MetaDataSystem _meta;
 
     private readonly Texture _barTexture;
     private readonly ShaderInstance _shader;
 
-    /// <summary>
-    ///     Flash time for cancelled DoAfters
-    /// </summary>
-    private const float FlashTime = 0.125f;
-
-    // Hardcoded width of the progress bar because it doesn't match the texture.
-    private const float StartX = 2;
-    private const float EndX = 22f;
-
     public override OverlaySpace Space => OverlaySpace.WorldSpaceBelowFOV;
 
-    public DoAfterOverlay(IEntityManager entManager, IPrototypeManager protoManager, IGameTiming timing)
+    public DoAfterOverlay(IEntityManager entManager, IPrototypeManager protoManager)
     {
         _entManager = entManager;
-        _timing = timing;
         _transform = _entManager.EntitySysManager.GetEntitySystem<SharedTransformSystem>();
-        _meta = _entManager.EntitySysManager.GetEntitySystem<MetaDataSystem>();
         var sprite = new SpriteSpecifier.Rsi(new ResourcePath("/Textures/Interface/Misc/progress_bar.rsi"), "icon");
         _barTexture = _entManager.EntitySysManager.GetEntitySystem<SpriteSystem>().Frame0(sprite);
 
@@ -45,6 +31,7 @@ public sealed class DoAfterOverlay : Overlay
     {
         var handle = args.WorldHandle;
         var rotation = args.Viewport.Eye?.Rotation ?? Angle.Zero;
+        var spriteQuery = _entManager.GetEntityQuery<SpriteComponent>();
         var xformQuery = _entManager.GetEntityQuery<TransformComponent>();
 
         // If you use the display UI scale then need to set max(1f, displayscale) because 0 is valid.
@@ -53,42 +40,43 @@ public sealed class DoAfterOverlay : Overlay
         var rotationMatrix = Matrix3.CreateRotation(-rotation);
         handle.UseShader(_shader);
 
-        var curTime = _timing.CurTime;
-
-        var bounds = args.WorldAABB.Enlarged(5f);
-
-        var metaQuery = _entManager.GetEntityQuery<MetaDataComponent>();
-        var enumerator = _entManager.AllEntityQueryEnumerator<ActiveDoAfterComponent, DoAfterComponent, SpriteComponent, TransformComponent>();
-        while (enumerator.MoveNext(out var uid, out _, out var comp, out var sprite, out var xform))
+        // TODO: Need active DoAfter component (or alternatively just make DoAfter itself active)
+        foreach (var comp in _entManager.EntityQuery<DoAfterComponent>(true))
         {
-            if (xform.MapID != args.MapId)
+            if (comp.DoAfters.Count == 0 ||
+                !xformQuery.TryGetComponent(comp.Owner, out var xform) ||
+                xform.MapID != args.MapId)
+            {
                 continue;
+            }
 
-            if (comp.DoAfters.Count == 0)
-                continue;
-
-            var worldPosition = _transform.GetWorldPosition(xform, xformQuery);
-            if (!bounds.Contains(worldPosition))
-                continue;
-
-            // If the entity is paused, we will draw the do-after as it was when the entity got paused.
-            var meta = metaQuery.GetComponent(uid);
-            var time = meta.EntityPaused
-                ? curTime - _meta.GetPauseTime(uid, meta)
-                : curTime;
-
+            var worldPosition = _transform.GetWorldPosition(xform);
+            var index = 0;
             var worldMatrix = Matrix3.CreateTranslation(worldPosition);
-            Matrix3.Multiply(scaleMatrix, worldMatrix, out var scaledWorld);
-            Matrix3.Multiply(rotationMatrix, scaledWorld, out var matty);
-            handle.SetTransform(matty);
-
-            var offset = 0f;
 
             foreach (var doAfter in comp.DoAfters.Values)
             {
+                var elapsed = doAfter.Elapsed;
+                var displayRatio = MathF.Min(1.0f,
+                    (float)elapsed.TotalSeconds / doAfter.Delay);
+
+                Matrix3.Multiply(scaleMatrix, worldMatrix, out var scaledWorld);
+                Matrix3.Multiply(rotationMatrix, scaledWorld, out var matty);
+
+                handle.SetTransform(matty);
+                var offset = _barTexture.Height / scale * index;
+
                 // Use the sprite itself if we know its bounds. This means short or tall sprites don't get overlapped
                 // by the bar.
-                float yOffset = sprite.Bounds.Height / 2f + 0.05f;
+                float yOffset;
+                if (spriteQuery.TryGetComponent(comp.Owner, out var sprite))
+                {
+                    yOffset = sprite.Bounds.Height / 2f + 0.05f;
+                }
+                else
+                {
+                    yOffset = 0.5f;
+                }
 
                 // Position above the entity (we've already applied the matrix transform to the entity itself)
                 // Offset by the texture size for every do_after we have.
@@ -98,30 +86,33 @@ public sealed class DoAfterOverlay : Overlay
                 // Draw the underlying bar texture
                 handle.DrawTexture(_barTexture, position);
 
+                // Draw the bar itself
+                var cancelled = doAfter.Cancelled;
                 Color color;
-                float elapsedRatio;
+                const float flashTime = 0.125f;
 
                 // if we're cancelled then flick red / off.
-                if (doAfter.CancelledTime != null)
+                if (cancelled)
                 {
-                    var elapsed = doAfter.CancelledTime.Value - doAfter.StartTime;
-                    elapsedRatio = (float) Math.Min(1, elapsed.TotalSeconds / doAfter.Args.Delay.TotalSeconds);
-                    var cancelElapsed  = (time - doAfter.CancelledTime.Value).TotalSeconds;
-                    var flash = Math.Floor(cancelElapsed / FlashTime) % 2 == 0;
+                    var flash = Math.Floor((float)doAfter.CancelledElapsed.TotalSeconds / flashTime) % 2 == 0;
                     color = new Color(1f, 0f, 0f, flash ? 1f : 0f);
                 }
                 else
                 {
-                    var elapsed = time - doAfter.StartTime;
-                    elapsedRatio = (float) Math.Min(1, elapsed.TotalSeconds / doAfter.Args.Delay.TotalSeconds);
-                    color = GetProgressColor(elapsedRatio);
+                    color = GetProgressColor(displayRatio);
                 }
 
-                var xProgress = (EndX - StartX) * elapsedRatio + StartX;
-                var box = new Box2(new Vector2(StartX, 3f) / EyeManager.PixelsPerMeter, new Vector2(xProgress, 4f) / EyeManager.PixelsPerMeter);
+                // Hardcoded width of the progress bar because it doesn't match the texture.
+                const float startX = 2f;
+                const float endX = 22f;
+
+                var xProgress = (endX - startX) * displayRatio + startX;
+
+                var box = new Box2(new Vector2(startX, 3f) / EyeManager.PixelsPerMeter, new Vector2(xProgress, 4f) / EyeManager.PixelsPerMeter);
                 box = box.Translated(position);
                 handle.DrawRect(box, color);
-                offset += _barTexture.Height / scale;
+
+                index++;
             }
         }
 

@@ -1,12 +1,14 @@
 using System.Linq;
 using Content.Server.Atmos.EntitySystems;
-using Content.Server.Disposal.Tube;
 using Content.Server.Disposal.Tube.Components;
+using Content.Server.Disposal.Tube;
 using Content.Server.Disposal.Unit.Components;
 using JetBrains.Annotations;
+using Robust.Shared.Containers;
 using Robust.Shared.Map;
-using Robust.Shared.Physics.Components;
+using Robust.Shared.Physics;
 using Robust.Shared.Physics.Systems;
+using Robust.Shared.Physics.Components;
 
 namespace Content.Server.Disposal.Unit.EntitySystems
 {
@@ -88,7 +90,7 @@ namespace Content.Server.Disposal.Unit.EntitySystems
         }
 
         // Note: This function will cause an ExitDisposals on any failure that does not make an ExitDisposals impossible.
-        public bool EnterTube(EntityUid holderUid, EntityUid toUid, DisposalHolderComponent? holder = null, TransformComponent? holderTransform = null, DisposalTubeComponent? to = null, TransformComponent? toTransform = null)
+        public bool EnterTube(EntityUid holderUid, EntityUid toUid, DisposalHolderComponent? holder = null, TransformComponent? holderTransform = null, IDisposalTubeComponent? to = null, TransformComponent? toTransform = null)
         {
             if (!Resolve(holderUid, ref holder, ref holderTransform))
                 return false;
@@ -122,9 +124,7 @@ namespace Content.Server.Disposal.Unit.EntitySystems
                 holder.PreviousDirection = holder.CurrentDirection;
             }
             holder.CurrentTube = to;
-            var ev = new GetDisposalsNextDirectionEvent(holder);
-            RaiseLocalEvent(toUid, ref ev);
-            holder.CurrentDirection = ev.Next;
+            holder.CurrentDirection = to.NextDirection(holder);
             holder.StartingTime = 0.1f;
             holder.TimeLeft = 0.1f;
             // Logger.InfoS("c.s.disposal.holder", $"Disposals dir {holder.CurrentDirection}");
@@ -192,7 +192,7 @@ namespace Content.Server.Disposal.Unit.EntitySystems
                 }
 
                 // Perform remainder of entry process
-                if (!EnterTube((holder).Owner, nextTube.Owner, holder))
+                if (!EnterTube((holder).Owner, nextTube.Owner, holder, null, nextTube, null))
                 {
                     break;
                 }

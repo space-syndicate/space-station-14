@@ -1,5 +1,4 @@
 using Content.Server.Administration;
-using Content.Server.Disposal.Tube;
 using Content.Server.Disposal.Tube.Components;
 using Content.Shared.Administration;
 using Robust.Server.Player;
@@ -10,8 +9,6 @@ namespace Content.Server.Disposal
     [AdminCommand(AdminFlags.Debug)]
     public sealed class TubeConnectionsCommand : IConsoleCommand
     {
-        [Dependency] private readonly IEntityManager _entities = default!;
-
         public string Command => "tubeconnections";
         public string Description => Loc.GetString("tube-connections-command-description");
         public string Help => Loc.GetString("tube-connections-command-help-text", ("command", Command));
@@ -37,21 +34,22 @@ namespace Content.Server.Disposal
                 return;
             }
 
-            if (!_entities.EntityExists(id))
+            var entityManager = IoCManager.Resolve<IEntityManager>();
+            if (!entityManager.EntityExists(id))
             {
                 shell.WriteLine(Loc.GetString("shell-could-not-find-entity-with-uid",("uid", id)));
                 return;
             }
 
-            if (!_entities.TryGetComponent(id, out DisposalTubeComponent? tube))
+            if (!entityManager.TryGetComponent(id, out IDisposalTubeComponent? tube))
             {
                 shell.WriteLine(Loc.GetString("shell-entity-with-uid-lacks-component",
                                               ("uid", id),
-                                              ("componentName", nameof(DisposalTubeComponent))));
+                                              ("componentName", nameof(IDisposalTubeComponent))));
                 return;
             }
 
-            _entities.System<DisposalTubeSystem>().PopupDirections(id, tube, player.AttachedEntity.Value);
+            tube.PopupDirections(player.AttachedEntity.Value);
         }
     }
 }

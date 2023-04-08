@@ -16,9 +16,9 @@ public sealed partial class DockingSystem
         var dockingQuery = GetEntityQuery<DockingComponent>();
         var xformQuery = GetEntityQuery<TransformComponent>();
         var recentQuery = GetEntityQuery<RecentlyDockedComponent>();
-        var query = EntityQueryEnumerator<AutoDockComponent>();
+        var query = EntityQueryEnumerator<AutoDockComponent, PhysicsComponent>();
 
-        while (query.MoveNext(out var dockUid, out var comp))
+        while (query.MoveNext(out var dockUid, out var comp, out var body))
         {
             if (comp.Requesters.Count == 0 || !dockingQuery.TryGetComponent(dockUid, out var dock))
             {
@@ -30,43 +30,39 @@ public sealed partial class DockingSystem
             if (dock.Docked || recentQuery.HasComponent(dockUid))
                 continue;
 
-            var dockable = GetDockable(dockUid, xformQuery.GetComponent(dockUid));
+            var dockable = GetDockable(body, xformQuery.GetComponent(dockUid));
 
-            if (dockable == null)
-                continue;
+            if (dockable == null) continue;
 
             TryDock(dockUid, dock, dockable.Owner, dockable);
         }
 
         // Work out recent docks that have gone past their designated threshold.
         var checkedRecent = new HashSet<EntityUid>();
-        var recentQueryEnumerator = EntityQueryEnumerator<RecentlyDockedComponent, TransformComponent>();
 
-        while (recentQueryEnumerator.MoveNext(out var uid, out var comp, out var xform))
+        foreach (var (comp, xform) in EntityQuery<RecentlyDockedComponent, TransformComponent>())
         {
-            if (!checkedRecent.Add(uid))
-                continue;
+            if (!checkedRecent.Add(comp.Owner)) continue;
 
-            if (!dockingQuery.HasComponent(uid))
+            if (!dockingQuery.TryGetComponent(comp.Owner, out var dock))
             {
-                RemCompDeferred<RecentlyDockedComponent>(uid);
+                RemComp<RecentlyDockedComponent>(comp.Owner);
                 continue;
             }
 
             if (!xformQuery.TryGetComponent(comp.LastDocked, out var otherXform))
             {
-                RemCompDeferred<RecentlyDockedComponent>(uid);
+                RemComp<RecentlyDockedComponent>(comp.Owner);
                 continue;
             }
 
             var worldPos = _transform.GetWorldPosition(xform, xformQuery);
             var otherWorldPos = _transform.GetWorldPosition(otherXform, xformQuery);
 
-            if ((worldPos - otherWorldPos).Length < comp.Radius)
-                continue;
+            if ((worldPos - otherWorldPos).Length < comp.Radius) continue;
 
-            _sawmill.Debug($"Removed RecentlyDocked from {ToPrettyString(uid)} and {ToPrettyString(comp.LastDocked)}");
-            RemComp<RecentlyDockedComponent>(uid);
+            _sawmill.Debug($"Removed RecentlyDocked from {ToPrettyString(comp.Owner)} and {ToPrettyString(comp.LastDocked)}");
+            RemComp<RecentlyDockedComponent>(comp.Owner);
             RemComp<RecentlyDockedComponent>(comp.LastDocked);
         }
     }
@@ -83,7 +79,7 @@ public sealed partial class DockingSystem
             return;
         }
 
-        Undock(args.DockEntity, dock);
+        Undock(dock);
     }
 
     private void OnRequestAutodock(EntityUid uid, ShuttleConsoleComponent component, AutodockRequestMessage args)

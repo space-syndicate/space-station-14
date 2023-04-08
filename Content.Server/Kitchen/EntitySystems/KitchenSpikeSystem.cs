@@ -1,4 +1,5 @@
 using Content.Server.Administration.Logs;
+using Content.Server.DoAfter;
 using Content.Server.Kitchen.Components;
 using Content.Server.Popups;
 using Content.Shared.Database;
@@ -24,7 +25,7 @@ namespace Content.Server.Kitchen.EntitySystems
     public sealed class KitchenSpikeSystem : SharedKitchenSpikeSystem
     {
         [Dependency] private readonly PopupSystem _popupSystem = default!;
-        [Dependency] private readonly SharedDoAfterSystem _doAfter = default!;
+        [Dependency] private readonly DoAfterSystem _doAfter = default!;
         [Dependency] private readonly IAdminLogManager _logger = default!;
         [Dependency] private readonly MobStateSystem _mobStateSystem = default!;
         [Dependency] private readonly IRobustRandom _random = default!;
@@ -42,7 +43,7 @@ namespace Content.Server.Kitchen.EntitySystems
             SubscribeLocalEvent<KitchenSpikeComponent, DragDropTargetEvent>(OnDragDrop);
 
             //DoAfter
-            SubscribeLocalEvent<KitchenSpikeComponent, SpikeDoAfterEvent>(OnDoAfter);
+            SubscribeLocalEvent<KitchenSpikeComponent, DoAfterEvent>(OnDoAfter);
 
             SubscribeLocalEvent<KitchenSpikeComponent, SuicideEvent>(OnSuicide);
 
@@ -250,15 +251,16 @@ namespace Content.Server.Kitchen.EntitySystems
             butcherable.BeingButchered = true;
             component.InUse = true;
 
-            var doAfterArgs = new DoAfterArgs(userUid, component.SpikeDelay + butcherable.ButcherDelay, new SpikeDoAfterEvent(), uid, target: victimUid, used: uid)
+            var doAfterArgs = new DoAfterEventArgs(userUid, component.SpikeDelay + butcherable.ButcherDelay, target:victimUid, used:uid)
             {
                 BreakOnTargetMove = true,
                 BreakOnUserMove = true,
                 BreakOnDamage = true,
+                BreakOnStun = true,
                 NeedHand = true
             };
 
-            _doAfter.TryStartDoAfter(doAfterArgs);
+            _doAfter.DoAfter(doAfterArgs);
 
             return true;
         }

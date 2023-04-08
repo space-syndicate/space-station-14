@@ -55,7 +55,7 @@ public sealed class MaterialStorageComponent : Component
     /// <summary>
     /// How long the inserting animation will play
     /// </summary>
-    [DataField("insertionTime")]
+    [DataField("insertionTime", customTypeSerializer: typeof(TimeOffsetSerializer))]
     public TimeSpan InsertionTime = TimeSpan.FromSeconds(0.79f); // 0.01 off for animation timing
 }
 

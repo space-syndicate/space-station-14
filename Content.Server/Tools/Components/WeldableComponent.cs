@@ -48,8 +48,14 @@ public sealed class WeldableComponent : SharedWeldableComponent
     public string? WeldedExamineMessage = "weldable-component-examine-is-welded";
 
     /// <summary>
+    ///     Whether something is currently using a welder on this so DoAfter isn't spammed.
+    /// </summary>
+    [ViewVariables(VVAccess.ReadOnly)]
+    public bool BeingWelded;
+
+    /// <summary>
     ///     Is this entity currently welded shut?
     /// </summary>
-    [DataField("isWelded")]
+    [ViewVariables(VVAccess.ReadOnly)]
     public bool IsWelded;
 }

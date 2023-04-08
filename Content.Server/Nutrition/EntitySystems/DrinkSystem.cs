@@ -2,6 +2,7 @@ using Content.Server.Body.Components;
 using Content.Server.Body.Systems;
 using Content.Server.Chemistry.Components.SolutionManager;
 using Content.Server.Chemistry.EntitySystems;
+using Content.Server.DoAfter;
 using Content.Server.Fluids.EntitySystems;
 using Content.Server.Forensics;
 using Content.Server.Nutrition.Components;
@@ -9,6 +10,7 @@ using Content.Server.Popups;
 using Content.Shared.Administration.Logs;
 using Content.Shared.Body.Components;
 using Content.Shared.Chemistry;
+using Content.Shared.Chemistry.Components;
 using Content.Shared.Chemistry.Reagent;
 using Content.Shared.Database;
 using Content.Shared.DoAfter;
@@ -19,7 +21,6 @@ using Content.Shared.Interaction;
 using Content.Shared.Interaction.Events;
 using Content.Shared.Mobs.Components;
 using Content.Shared.Mobs.Systems;
-using Content.Shared.Nutrition;
 using Content.Shared.Nutrition.Components;
 using Content.Shared.Throwing;
 using Content.Shared.Verbs;
@@ -41,7 +42,7 @@ namespace Content.Server.Nutrition.EntitySystems
         [Dependency] private readonly PopupSystem _popupSystem = default!;
         [Dependency] private readonly BodySystem _bodySystem = default!;
         [Dependency] private readonly StomachSystem _stomachSystem = default!;
-        [Dependency] private readonly SharedDoAfterSystem _doAfterSystem = default!;
+        [Dependency] private readonly DoAfterSystem _doAfterSystem = default!;
         [Dependency] private readonly ISharedAdminLogManager _adminLogger = default!;
         [Dependency] private readonly MobStateSystem _mobStateSystem = default!;
         [Dependency] private readonly SpillableSystem _spillableSystem = default!;
@@ -54,7 +55,6 @@ namespace Content.Server.Nutrition.EntitySystems
         {
             base.Initialize();
 
-            // TODO add InteractNoHandEvent for entities like mice.
             SubscribeLocalEvent<DrinkComponent, SolutionChangedEvent>(OnSolutionChange);
             SubscribeLocalEvent<DrinkComponent, ComponentInit>(OnDrinkInit);
             SubscribeLocalEvent<DrinkComponent, LandEvent>(HandleLand);
@@ -63,7 +63,7 @@ namespace Content.Server.Nutrition.EntitySystems
             SubscribeLocalEvent<DrinkComponent, GetVerbsEvent<AlternativeVerb>>(AddDrinkVerb);
             SubscribeLocalEvent<DrinkComponent, ExaminedEvent>(OnExamined);
             SubscribeLocalEvent<DrinkComponent, SolutionTransferAttemptEvent>(OnTransferAttempt);
-            SubscribeLocalEvent<DrinkComponent, ConsumeDoAfterEvent>(OnDoAfter);
+            SubscribeLocalEvent<DrinkComponent, DoAfterEvent<DrinkData>>(OnDoAfter);
         }
 
         public bool IsEmpty(EntityUid uid, DrinkComponent? component = null)
@@ -218,7 +218,7 @@ namespace Content.Server.Nutrition.EntitySystems
 
         private bool TryDrink(EntityUid user, EntityUid target, DrinkComponent drink, EntityUid item)
         {
-            if (!EntityManager.HasComponent<BodyComponent>(target))
+            if (!EntityManager.HasComponent<BodyComponent>(target) || drink.Drinking)
                 return false;
 
             if (!drink.Opened)
@@ -236,18 +236,16 @@ namespace Content.Server.Nutrition.EntitySystems
                 return true;
             }
 
-            if (drinkSolution.Name == null)
-                return false;
-
             if (_foodSystem.IsMouthBlocked(target, user))
                 return true;
 
             if (!_interactionSystem.InRangeUnobstructed(user, item, popup: true))
                 return true;
 
-            var forceDrink = user != target;
+            drink.Drinking = true;
+            drink.ForceDrink = user != target;
 
-            if (forceDrink)
+            if (drink.ForceDrink)
             {
                 var userName = Identity.Entity(user, EntityManager);
 
@@ -265,52 +263,53 @@ namespace Content.Server.Nutrition.EntitySystems
 
             var flavors = _flavorProfileSystem.GetLocalizedFlavorsMessage(user, drinkSolution);
 
-            var doAfterEventArgs = new DoAfterArgs(
-                user,
-                forceDrink ? drink.ForceFeedDelay : drink.Delay,
-                new ConsumeDoAfterEvent(drinkSolution.Name, flavors),
-                eventTarget: item,
-                target: target,
-                used: item)
+            var drinkData = new DrinkData(drinkSolution, flavors);
+
+            var doAfterEventArgs = new DoAfterEventArgs(user, drink.ForceDrink ? drink.ForceFeedDelay : drink.Delay,
+                target: target, used: item)
             {
-                BreakOnUserMove = forceDrink,
+                RaiseOnTarget = user != target,
+                RaiseOnUser = false,
+                BreakOnUserMove = drink.ForceDrink,
                 BreakOnDamage = true,
-                BreakOnTargetMove = forceDrink,
+                BreakOnStun = true,
+                BreakOnTargetMove = drink.ForceDrink,
                 MovementThreshold = 0.01f,
                 DistanceThreshold = 1.0f,
-                // Mice and the like can eat without hands.
-                // TODO maybe set this based on some CanEatWithoutHands event or component?
-                NeedHand = forceDrink,
-                CancelDuplicate = false,
+                NeedHand = true
             };
 
-            _doAfterSystem.TryStartDoAfter(doAfterEventArgs);
+            _doAfterSystem.DoAfter(doAfterEventArgs, drinkData);
+
             return true;
         }
 
         /// <summary>
         ///     Raised directed at a victim when someone has force fed them a drink.
         /// </summary>
-        private void OnDoAfter(EntityUid uid, DrinkComponent component, ConsumeDoAfterEvent args)
+        private void OnDoAfter(EntityUid uid, DrinkComponent component, DoAfterEvent<DrinkData> args)
         {
-            if (args.Handled || args.Cancelled || component.Deleted)
+            if (args.Cancelled)
+            {
+                component.ForceDrink = false;
+                component.Drinking = false;
+                return;
+            }
+
+            if (args.Handled || component.Deleted)
                 return;
 
             if (!TryComp<BodyComponent>(args.Args.Target, out var body))
                 return;
 
-            if (!_solutionContainerSystem.TryGetSolution(args.Used, args.Solution, out var solution))
-                return;
+            component.Drinking = false;
 
-            var transferAmount = FixedPoint2.Min(component.TransferAmount, solution.Volume);
-            var drained = _solutionContainerSystem.Drain(uid, solution, transferAmount);
-            var forceDrink = args.User != args.Target;
-
-            //var forceDrink = args.Args.Target.Value != args.Args.User;
+            var transferAmount = FixedPoint2.Min(component.TransferAmount, args.AdditionalData.DrinkSolution.Volume);
+            var drained = _solutionContainerSystem.Drain(uid, args.AdditionalData.DrinkSolution, transferAmount);
 
             if (!_bodySystem.TryGetBodyOrganComponents<StomachComponent>(args.Args.Target.Value, out var stomachs, body))
             {
-                _popupSystem.PopupEntity(forceDrink ? Loc.GetString("drink-component-try-use-drink-cannot-drink-other") : Loc.GetString("drink-component-try-use-drink-had-enough"), args.Args.Target.Value, args.Args.User);
+                _popupSystem.PopupEntity(component.ForceDrink ? Loc.GetString("drink-component-try-use-drink-cannot-drink-other") : Loc.GetString("drink-component-try-use-drink-had-enough"), args.Args.Target.Value, args.Args.User);
 
                 if (HasComp<RefillableSolutionComponent>(args.Args.Target.Value))
                 {
@@ -319,7 +318,7 @@ namespace Content.Server.Nutrition.EntitySystems
                     return;
                 }
 
-                _solutionContainerSystem.Refill(args.Args.Target.Value, solution, drained);
+                _solutionContainerSystem.Refill(args.Args.Target.Value, args.AdditionalData.DrinkSolution, drained);
                 args.Handled = true;
                 return;
             }
@@ -331,21 +330,21 @@ namespace Content.Server.Nutrition.EntitySystems
             {
                 _popupSystem.PopupEntity(Loc.GetString("drink-component-try-use-drink-had-enough"), args.Args.Target.Value, args.Args.Target.Value);
 
-                if (forceDrink)
+                if (component.ForceDrink)
                 {
                     _popupSystem.PopupEntity(Loc.GetString("drink-component-try-use-drink-had-enough-other"), args.Args.Target.Value, args.Args.User);
                     _spillableSystem.SpillAt(args.Args.Target.Value, drained, "PuddleSmear");
                 }
                 else
-                    _solutionContainerSystem.TryAddSolution(uid, solution, drained);
+                    _solutionContainerSystem.TryAddSolution(uid, args.AdditionalData.DrinkSolution, drained);
 
                 args.Handled = true;
                 return;
             }
 
-            var flavors = args.FlavorMessage;
+            var flavors = args.AdditionalData.FlavorMessage;
 
-            if (forceDrink)
+            if (component.ForceDrink)
             {
                 var targetName = Identity.Entity(args.Args.Target.Value, EntityManager);
                 var userName = Identity.Entity(args.Args.User, EntityManager);
@@ -373,9 +372,11 @@ namespace Content.Server.Nutrition.EntitySystems
 
             _audio.PlayPvs(_audio.GetSound(component.UseSound), args.Args.Target.Value, AudioParams.Default.WithVolume(-2f));
 
-            _reaction.DoEntityReaction(args.Args.Target.Value, solution, ReactionMethod.Ingestion);
+            _reaction.DoEntityReaction(args.Args.Target.Value, args.AdditionalData.DrinkSolution, ReactionMethod.Ingestion);
             //TODO: Grab the stomach UIDs somehow without using Owner
             _stomachSystem.TryTransferSolution(firstStomach.Value.Comp.Owner, drained, firstStomach.Value.Comp);
+
+            component.ForceDrink = false;
             args.Handled = true;
 
             var comp = EnsureComp<ForensicsComponent>(uid);
@@ -419,6 +420,12 @@ namespace Content.Server.Nutrition.EntitySystems
                 remainingString = "drink-component-on-examine-is-half-empty";
 
             return remainingString;
+        }
+
+        private record struct DrinkData(Solution DrinkSolution, string FlavorMessage)
+        {
+            public readonly Solution DrinkSolution = DrinkSolution;
+            public readonly string FlavorMessage = FlavorMessage;
         }
     }
 }

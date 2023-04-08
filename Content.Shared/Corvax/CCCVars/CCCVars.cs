@@ -50,7 +50,7 @@ public sealed class CCCVars
     /// </summary>
     public static readonly CVarDef<bool>
         QueueEnabled = CVarDef.Create("queue.enabled", false, CVar.SERVERONLY);
-
+        
     /**
      * TTS (Text-To-Speech)
      */
@@ -71,10 +71,10 @@ public sealed class CCCVars
     /// Auth token of the TTS server API.
     /// </summary>
     public static readonly CVarDef<string> TTSApiToken =
-        CVarDef.Create("tts.api_token", "", CVar.SERVERONLY | CVar.CONFIDENTIAL);
+        CVarDef.Create("tts.api_token", "", CVar.SERVERONLY);
 
     /// <summary>
-    /// Default volume setting of TTS sound
+    /// Lobby / round end music volume.
     /// </summary>
     public static readonly CVarDef<float> TTSVolume =
         CVarDef.Create("tts.volume", 0f, CVar.CLIENTONLY | CVar.ARCHIVE);
@@ -84,36 +84,14 @@ public sealed class CCCVars
     /// </summary>
     public static readonly CVarDef<int> TTSMaxCache =
         CVarDef.Create("tts.max_cache", 250, CVar.SERVERONLY | CVar.ARCHIVE);
-
+    
     /*
      * Peaceful Round End
      */
-
+    
     /// <summary>
     /// Making everyone a pacifist at the end of a round.
     /// </summary>
     public static readonly CVarDef<bool> PeacefulRoundEnd =
         CVarDef.Create("game.peaceful_end", true, CVar.SERVERONLY);
-
-    /*
-     * Discord Auth
-     */
-
-    /// <summary>
-    ///     Enabled Discord linking, show linking button and modal window
-    /// </summary>
-    public static readonly CVarDef<bool> DiscordAuthEnabled =
-        CVarDef.Create("discord_auth.enabled", false, CVar.SERVERONLY);
-
-    /// <summary>
-    ///     URL of the Discord auth server API
-    /// </summary>
-    public static readonly CVarDef<string> DiscordAuthApiUrl =
-        CVarDef.Create("discord_auth.api_url", "", CVar.SERVERONLY);
-
-    /// <summary>
-    ///     Secret key of the Discord auth server API
-    /// </summary>
-    public static readonly CVarDef<string> DiscordAuthApiKey =
-        CVarDef.Create("discord_auth.api_key", "", CVar.SERVERONLY | CVar.CONFIDENTIAL);
 }

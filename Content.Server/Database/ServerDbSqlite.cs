@@ -68,11 +68,9 @@ namespace Content.Server.Database
         {
             await using var db = await GetDbImpl();
 
-            var exempt = await GetBanExemptionCore(db, userId);
-
             // SQLite can't do the net masking stuff we need to match IP address ranges.
             // So just pull down the whole list into memory.
-            var bans = await GetAllBans(db.SqliteDbContext, includeUnbanned: false, exempt);
+            var bans = await GetAllBans(db.SqliteDbContext, includeUnbanned: false);
 
             return bans.FirstOrDefault(b => BanMatches(b, address, userId, hwId)) is { } foundBan
                 ? ConvertBan(foundBan)
@@ -85,11 +83,9 @@ namespace Content.Server.Database
         {
             await using var db = await GetDbImpl();
 
-            var exempt = await GetBanExemptionCore(db, userId);
-
             // SQLite can't do the net masking stuff we need to match IP address ranges.
             // So just pull down the whole list into memory.
-            var queryBans = await GetAllBans(db.SqliteDbContext, includeUnbanned, exempt);
+            var queryBans = await GetAllBans(db.SqliteDbContext, includeUnbanned);
 
             return queryBans
                 .Where(b => BanMatches(b, address, userId, hwId))
@@ -99,19 +95,13 @@ namespace Content.Server.Database
 
         private static async Task<List<ServerBan>> GetAllBans(
             SqliteServerDbContext db,
-            bool includeUnbanned,
-            ServerBanExemptFlags? exemptFlags)
+            bool includeUnbanned)
         {
             IQueryable<ServerBan> query = db.Ban.Include(p => p.Unban);
             if (!includeUnbanned)
             {
                 query = query.Where(p =>
                     p.Unban == null && (p.ExpirationTime == null || p.ExpirationTime.Value > DateTime.UtcNow));
-            }
-
-            if (exemptFlags is { } exempt)
-            {
-                query = query.Where(b => (b.ExemptFlags & exempt) == 0);
             }
 
             return await query.ToListAsync();

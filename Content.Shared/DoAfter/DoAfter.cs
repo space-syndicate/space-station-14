@@ -1,109 +1,82 @@
+using System.Threading.Tasks;
+using Content.Shared.Hands.Components;
 using Robust.Shared.Map;
 using Robust.Shared.Serialization;
-using Robust.Shared.Serialization.TypeSerializers.Implementations.Custom;
-using Robust.Shared.Utility;
+using Robust.Shared.Timing;
 
 namespace Content.Shared.DoAfter;
-
 [Serializable, NetSerializable]
 [DataDefinition]
-[Access(typeof(SharedDoAfterSystem))]
 public sealed class DoAfter
 {
-    [DataField("index", required:true)]
-    public ushort Index;
+    [NonSerialized]
+    [Obsolete]
+    public Task<DoAfterStatus> AsTask;
 
-    public DoAfterId Id => new(Args.User, Index);
+    [NonSerialized]
+    [Obsolete("Will be obsolete for EventBus")]
+    public TaskCompletionSource<DoAfterStatus> Tcs;
 
-    [IncludeDataField]
-    public readonly DoAfterArgs Args = default!;
+    //TODO: Should be merged into here
+    public readonly DoAfterEventArgs EventArgs;
 
-    /// <summary>
-    ///     Time at which this do after was started.
-    /// </summary>
-    [DataField("startTime", customTypeSerializer: typeof(TimeOffsetSerializer), required:true)]
+    //ID so the client DoAfterSystem can track
+    public byte ID;
+
+    public bool Cancelled = false;
+
+    //Cache the delay so the timer properly shows
+    public float Delay;
+
+    //Keep track of the time this DoAfter started
     public TimeSpan StartTime;
 
-    /// <summary>
-    ///     The time at which this do after was canceled
-    /// </summary>
-    [DataField("cancelledTime", customTypeSerializer: typeof(TimeOffsetSerializer), required:true)]
-    public TimeSpan? CancelledTime;
+    //Keep track of the time this DoAfter was cancelled
+    public TimeSpan CancelledTime;
+
+    //How long has the do after been running?
+    public TimeSpan Elapsed = TimeSpan.Zero;
 
     /// <summary>
-    ///     If true, this do after has finished, passed the final checks, and has raised its events.
+    /// Accrued time when cancelled.
     /// </summary>
-    [DataField("completed")]
-    public bool Completed;
+    public TimeSpan CancelledElapsed = TimeSpan.Zero;
 
-    /// <summary>
-    ///     Whether the do after has been canceled.
-    /// </summary>
-    public bool Cancelled => CancelledTime != null;
+    public EntityCoordinates UserGrid;
+    public EntityCoordinates TargetGrid;
 
-    /// <summary>
-    ///     Position of the user relative to their parent when the do after was started.
-    /// </summary>
-    [DataField("userPosition")]
-    public EntityCoordinates UserPosition;
+    [NonSerialized]
+    public Action<bool>? Done;
 
-    /// <summary>
-    ///     Position of the target relative to their parent when the do after was started.
-    /// </summary>
-    [DataField("targetPosition")]
-    public EntityCoordinates TargetPosition;
+#pragma warning disable RA0004
+    public DoAfterStatus Status => AsTask.IsCompletedSuccessfully ? AsTask.Result : DoAfterStatus.Running;
+#pragma warning restore RA0004
 
-    /// <summary>
-    ///     If <see cref="DoAfterArgs.NeedHand"/> is true, this is the hand that was selected when the doafter started.
-    /// </summary>
-    [DataField("activeHand")]
-    public string? InitialHand;
+    // NeedHand
+    public readonly string? ActiveHand;
+    public readonly EntityUid? ActiveItem;
 
-    /// <summary>
-    ///     If <see cref="NeedHand"/> is true, this is the entity that was in the active hand when the doafter started.
-    /// </summary>
-    [DataField("activeItem")]
-    public EntityUid? InitialItem;
-
-    // cached attempt event for the sake of avoiding unnecessary reflection every time this needs to be raised.
-    [NonSerialized] public object? AttemptEvent;
-
-    private DoAfter()
+    public DoAfter(DoAfterEventArgs eventArgs, IEntityManager entityManager)
     {
-    }
+        EventArgs = eventArgs;
+        StartTime = IoCManager.Resolve<IGameTiming>().CurTime;
 
-    public DoAfter(ushort index, DoAfterArgs args, TimeSpan startTime)
-    {
-        Index = index;
+        if (eventArgs.BreakOnUserMove)
+            UserGrid = entityManager.GetComponent<TransformComponent>(eventArgs.User).Coordinates;
 
-        if (args.Target == null)
+        if (eventArgs.Target != null && eventArgs.BreakOnTargetMove)
+            // Target should never be null if the bool is set.
+            TargetGrid = entityManager.GetComponent<TransformComponent>(eventArgs.Target!.Value).Coordinates;
+
+        // For this we need to stay on the same hand slot and need the same item in that hand slot
+        // (or if there is no item there we need to keep it free).
+        if (eventArgs.NeedHand && entityManager.TryGetComponent(eventArgs.User, out SharedHandsComponent? handsComponent))
         {
-            DebugTools.Assert(!args.BreakOnTargetMove);
-            args.BreakOnTargetMove = false;
+            ActiveHand = handsComponent.ActiveHand?.Name;
+            ActiveItem = handsComponent.ActiveHandEntity;
         }
 
-        Args = args;
-        StartTime = startTime;
-    }
-
-    public DoAfter(DoAfter other)
-    {
-        Index = other.Index;
-        Args = new(other.Args);
-        StartTime = other.StartTime;
-        CancelledTime = other.CancelledTime;
-        Completed = other.Completed;
-        UserPosition = other.UserPosition;
-        TargetPosition = other.TargetPosition;
-        InitialHand = other.InitialHand;
-        InitialItem = other.InitialItem;
+        Tcs = new TaskCompletionSource<DoAfterStatus>();
+        AsTask = Tcs.Task;
     }
 }
-
-/// <summary>
-///     Simple struct that contains data required to uniquely identify a doAfter.
-/// </summary>
-/// <remarks>
-///     Can be used to track currently active do-afters to prevent simultaneous do-afters.
-/// </remarks>
-public record struct DoAfterId(EntityUid Uid, ushort Index);

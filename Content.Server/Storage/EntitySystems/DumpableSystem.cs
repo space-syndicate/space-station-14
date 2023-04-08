@@ -1,10 +1,11 @@
+using System.Threading;
 using Content.Shared.Interaction;
 using Content.Server.Storage.Components;
 using Content.Shared.Storage.Components;
 using Content.Shared.Verbs;
 using Content.Server.Disposal.Unit.Components;
 using Content.Server.Disposal.Unit.EntitySystems;
-using Content.Server.Xenoarchaeology.XenoArtifacts.Triggers.Systems;
+using Content.Server.DoAfter;
 using Content.Shared.DoAfter;
 using Content.Shared.Placeable;
 using Content.Shared.Storage;
@@ -16,7 +17,7 @@ namespace Content.Server.Storage.EntitySystems
 {
     public sealed class DumpableSystem : EntitySystem
     {
-        [Dependency] private readonly SharedDoAfterSystem _doAfterSystem = default!;
+        [Dependency] private readonly DoAfterSystem _doAfterSystem = default!;
         [Dependency] private readonly DisposalUnitSystem _disposalUnitSystem = default!;
         [Dependency] private readonly IRobustRandom _random = default!;
         [Dependency] private readonly SharedContainerSystem _container = default!;
@@ -27,19 +28,16 @@ namespace Content.Server.Storage.EntitySystems
             SubscribeLocalEvent<DumpableComponent, AfterInteractEvent>(OnAfterInteract, after: new[]{ typeof(StorageSystem) });
             SubscribeLocalEvent<DumpableComponent, GetVerbsEvent<AlternativeVerb>>(AddDumpVerb);
             SubscribeLocalEvent<DumpableComponent, GetVerbsEvent<UtilityVerb>>(AddUtilityVerbs);
-            SubscribeLocalEvent<DumpableComponent, DumpableDoAfterEvent>(OnDoAfter);
+            SubscribeLocalEvent<DumpableComponent, DoAfterEvent>(OnDoAfter);
         }
 
         private void OnAfterInteract(EntityUid uid, DumpableComponent component, AfterInteractEvent args)
         {
-            if (!args.CanReach || args.Handled)
+            if (!args.CanReach)
                 return;
 
-            if (!HasComp<DisposalUnitComponent>(args.Target) && !HasComp<PlaceableSurfaceComponent>(args.Target))
-                return;
-
-            StartDoAfter(uid, args.Target.Value, args.User, component);
-            args.Handled = true;
+            if (HasComp<DisposalUnitComponent>(args.Target) || HasComp<PlaceableSurfaceComponent>(args.Target))
+                StartDoAfter(uid, args.Target.Value, args.User, component);
         }
 
         private void AddDumpVerb(EntityUid uid, DumpableComponent dumpable, GetVerbsEvent<AlternativeVerb> args)
@@ -54,7 +52,7 @@ namespace Content.Server.Storage.EntitySystems
             {
                 Act = () =>
                 {
-                    StartDoAfter(uid, args.Target, args.User, dumpable);//Had multiplier of 0.6f
+                    StartDoAfter(uid, null, args.User, dumpable);//Had multiplier of 0.6f
                 },
                 Text = Loc.GetString("dump-verb-name"),
                 Icon = new SpriteSpecifier.Texture(new ResourcePath("/Textures/Interface/VerbIcons/drop.svg.192dpi.png")),
@@ -106,10 +104,12 @@ namespace Content.Server.Storage.EntitySystems
 
             float delay = storage.StoredEntities.Count * (float) dumpable.DelayPerItem.TotalSeconds * dumpable.Multiplier;
 
-            _doAfterSystem.TryStartDoAfter(new DoAfterArgs(userUid, delay, new DumpableDoAfterEvent(), storageUid, target: targetUid, used: storageUid)
+            _doAfterSystem.DoAfter(new DoAfterEventArgs(userUid, delay, target: targetUid, used: storageUid)
             {
+                RaiseOnTarget = false,
                 BreakOnTargetMove = true,
                 BreakOnUserMove = true,
+                BreakOnStun = true,
                 NeedHand = true
             });
         }

@@ -1,4 +1,4 @@
-- type: entity
+﻿- type: entity
   id: FireAxeCabinet
   name: fire axe cabinet
   description: There is a small label that reads "For Emergency use only" along with details for safe use of the axe. As if.
@@ -34,7 +34,7 @@
   - type: Appearance
   - type: Lock
   - type: AccessReader
-    access: [["Atmospherics"], ["Command"]]
+    access: [["Atmospherics"]]
   - type: ItemSlots
   - type: ContainerContainer
     containers:

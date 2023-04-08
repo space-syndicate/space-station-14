@@ -10,10 +10,10 @@
         amount: 1
       - id: Brutepack
         amount: 2
+      - id: Gauze
+        amount: 1
       - id: Ointment
         amount: 2
-      - id: PillTricordrazine
-        amount: 3
       # see https://github.com/tgstation/blob/master/code/game/objects/items/storage/firstaid.dm for example contents
 
 - type: entity
@@ -24,9 +24,11 @@
   - type: StorageFill
     contents:
       - id: Ointment
-        amount: 4
+        amount: 2
       - id: PillKelotane
         amount: 3
+      - id: SyringeInaprovaline
+        amount: 1
 
 - type: entity
   id: MedkitBruteFilled
@@ -40,11 +42,7 @@
       - id: PillIron
         amount: 2
       - id: Gauze
-        amount: 1
-      - id: Bloodpack
-        amount: 1
-      - id: SyringeTranexamicAcid
-        amount: 1
+        amount: 2
 
 - type: entity
   id: MedkitToxinFilled
@@ -59,8 +57,6 @@
         amount: 1
       - id: PillDylovene
         amount: 3
-      - id: AntiPoisonMedipen
-        amount: 1
 
 - type: entity
   id: MedkitOxygenFilled
@@ -74,7 +70,7 @@
       - id: PillDexalin
         amount: 3
       - id: SyringeInaprovaline
-        amount: 2
+        amount: 1
 
 - type: entity
   id: MedkitRadiationFilled
@@ -97,14 +93,16 @@
   components:
   - type: StorageFill
     contents:
+      - id: HandheldHealthAnalyzer
+        amount: 1
       - id: Brutepack
-        amount: 2 # TO DO: Advanced fills
-      - id: Gauze
+        amount: 3 # TO DO: Advanced fills
+      - id: SyringeTranexamicAcid
         amount: 1
-      - id: Ointment
+      - id: PillTricordrazine
         amount: 1
-      - id: Bloodpack
-        amount: 2
+      - id: AntiPoisonMedipen
+        amount: 1
 
 - type: entity
   id: MedkitCombatFilled
@@ -119,10 +117,10 @@
         amount: 1 # TO DO: More combat meds
       - id: SyringeTranexamicAcid
         amount: 1
+      - id: PillTricordrazine
+        amount: 1
       - id: AntiPoisonMedipen
         amount: 1
-      - id: Bloodpack
-        amount: 2
 
 - type: entity
   id: StimkitFilled

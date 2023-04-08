@@ -45,3 +45,8 @@
     damage:
       types:
         Blunt: 4
+  - type: Anchorable
+  - type: Transform
+    anchored: true
+  - type: Physics
+    canCollide: false

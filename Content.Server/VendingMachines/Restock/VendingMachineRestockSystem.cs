@@ -1,5 +1,6 @@
 using System.Linq;
 using Content.Server.Cargo.Systems;
+using Content.Server.DoAfter;
 using Content.Shared.DoAfter;
 using Content.Shared.Interaction;
 using Content.Shared.Popups;
@@ -15,7 +16,7 @@ namespace Content.Server.VendingMachines.Restock
     {
         [Dependency] private readonly IPrototypeManager _prototypeManager = default!;
 
-        [Dependency] private readonly SharedDoAfterSystem _doAfterSystem = default!;
+        [Dependency] private readonly DoAfterSystem _doAfterSystem = default!;
         [Dependency] private readonly SharedPopupSystem _popupSystem = default!;
         [Dependency] private readonly AudioSystem _audioSystem = default!;
         [Dependency] private readonly PricingSystem _pricingSystem = default!;
@@ -64,7 +65,7 @@ namespace Content.Server.VendingMachines.Restock
 
         private void OnAfterInteract(EntityUid uid, VendingMachineRestockComponent component, AfterInteractEvent args)
         {
-            if (args.Target == null || !args.CanReach || args.Handled)
+            if (args.Target == null || !args.CanReach)
                 return;
 
             if (!TryComp<VendingMachineComponent>(args.Target, out var machineComponent))
@@ -76,19 +77,14 @@ namespace Content.Server.VendingMachines.Restock
             if (!TryAccessMachine(uid, component, machineComponent, args.User, args.Target.Value))
                 return;
 
-            args.Handled = true;
-
-            var doAfterArgs = new DoAfterArgs(args.User, (float) component.RestockDelay.TotalSeconds, new RestockDoAfterEvent(), args.Target,
-                target: args.Target, used: uid)
+            _doAfterSystem.DoAfter(new DoAfterEventArgs(args.User, (float) component.RestockDelay.TotalSeconds, target:args.Target, used:uid)
             {
                 BreakOnTargetMove = true,
                 BreakOnUserMove = true,
+                BreakOnStun = true,
                 BreakOnDamage = true,
                 NeedHand = true
-            };
-
-            if (!_doAfterSystem.TryStartDoAfter(doAfterArgs))
-                return;
+            });
 
             _popupSystem.PopupEntity(Loc.GetString("vending-machine-restock-start", ("this", uid), ("user", args.User), ("target", args.Target)),
                 args.User,

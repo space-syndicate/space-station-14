@@ -6,6 +6,9 @@ namespace Content.Server.Tools.Components;
 [RegisterComponent]
 public sealed class LatticeCuttingComponent : Component
 {
+    [DataField("toolComponentNeeded")]
+    public bool ToolComponentNeeded = true;
+
     [DataField("qualityNeeded", customTypeSerializer:typeof(PrototypeIdSerializer<ToolQualityPrototype>))]
     public string QualityNeeded = "Cutting";
 

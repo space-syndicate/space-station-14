@@ -219,8 +219,8 @@
   - type: MobThresholds
     thresholds:
       0: Alive
-      15: Critical
-      30: Dead
+      40: Critical
+      60: Dead
   - type: Stamina
     excess: 60
   - type: MeleeWeapon

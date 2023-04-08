@@ -1,11 +1,9 @@
 using Content.Server.Construction.Components;
 using Content.Server.Stack;
-using Content.Shared.Construction;
-using Content.Shared.DoAfter;
 using Content.Shared.Interaction;
 using Content.Shared.Stacks;
 using Content.Shared.Tools;
-using Robust.Shared.Serialization;
+using Content.Shared.Tools.Components;
 
 namespace Content.Server.Construction
 {
@@ -17,21 +15,28 @@ namespace Content.Server.Construction
         {
             base.Initialize();
             SubscribeLocalEvent<WelderRefinableComponent, InteractUsingEvent>(OnInteractUsing);
-            SubscribeLocalEvent<WelderRefinableComponent, WelderRefineDoAfterEvent>(OnDoAfter);
         }
 
-        private void OnInteractUsing(EntityUid uid, WelderRefinableComponent component, InteractUsingEvent args)
+        private async void OnInteractUsing(EntityUid uid, WelderRefinableComponent component, InteractUsingEvent args)
         {
-            if (args.Handled)
+            // check if object is welder
+            if (!HasComp<ToolComponent>(args.Used))
                 return;
 
-            args.Handled = _toolSystem.UseTool(args.Used, args.User, uid, component.RefineTime, component.QualityNeeded, new WelderRefineDoAfterEvent(), component.RefineFuel);
-        }
-
-        private void OnDoAfter(EntityUid uid, WelderRefinableComponent component, WelderRefineDoAfterEvent args)
-        {
-            if (args.Cancelled)
+            // check if someone is already welding object
+            if (component.BeingWelded)
                 return;
+
+            component.BeingWelded = true;
+
+            var toolEvData = new ToolEventData(null);
+
+            if (!_toolSystem.UseTool(args.Used, args.User, uid, component.RefineTime, component.QualityNeeded, toolEvData, component.RefineFuel))
+            {
+                // failed to veld - abort refine
+                component.BeingWelded = false;
+                return;
+            }
 
             // get last owner coordinates and delete it
             var resultPosition = Transform(uid).Coordinates;
@@ -45,7 +50,7 @@ namespace Content.Server.Construction
                 // TODO: If something has a stack... Just use a prototype with a single thing in the stack.
                 // This is not a good way to do it.
                 if (TryComp<StackComponent?>(droppedEnt, out var stack))
-                    _stackSystem.SetCount(droppedEnt, 1, stack);
+                    _stackSystem.SetCount(droppedEnt,1, stack);
             }
         }
     }

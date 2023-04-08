@@ -8,7 +8,6 @@ namespace Content.Server.Speech.EntitySystems;
 public sealed class MobsterAccentSystem : EntitySystem
 {
     [Dependency] private readonly IRobustRandom _random = default!;
-    [Dependency] private readonly ReplacementAccentSystem _replacement = default!;
 
     private static readonly Dictionary<string, string> DirectReplacements = new()
     {
@@ -73,8 +72,12 @@ public sealed class MobsterAccentSystem : EntitySystem
         // Do text manipulations first
         // Then prefix/suffix funnyies
 
-        // direct word replacements
-        var msg = _replacement.ApplyReplacements(message, "mobster");
+        var msg = message;
+
+        foreach (var (first, replace) in DirectReplacements)
+        {
+            msg = Regex.Replace(msg, $@"(?<!\w){first}(?!\w)", replace, RegexOptions.IgnoreCase);
+        }
 
         // thinking -> thinkin'
         // king -> king

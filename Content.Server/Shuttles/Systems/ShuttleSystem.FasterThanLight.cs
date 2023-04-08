@@ -361,14 +361,12 @@ public sealed partial class ShuttleSystem
 
     private void SetDocks(EntityUid uid, bool enabled)
     {
-        var query = AllEntityQuery<DockingComponent, TransformComponent>();
-
-        while (query.MoveNext(out var dockUid, out var dock, out var xform))
+        foreach (var (dock, xform) in EntityQuery<DockingComponent, TransformComponent>(true))
         {
             if (xform.ParentUid != uid || dock.Enabled == enabled)
                 continue;
 
-            _dockSystem.Undock(dockUid, dock);
+            _dockSystem.Undock(dock);
             dock.Enabled = enabled;
         }
     }

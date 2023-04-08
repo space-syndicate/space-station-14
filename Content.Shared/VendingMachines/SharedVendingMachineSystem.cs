@@ -1,8 +1,6 @@
 using Content.Shared.Emag.Components;
 using Robust.Shared.Prototypes;
 using System.Linq;
-using Content.Shared.DoAfter;
-using Robust.Shared.Serialization;
 
 namespace Content.Shared.VendingMachines;
 
@@ -113,7 +111,3 @@ public abstract class SharedVendingMachineSystem : EntitySystem
     }
 }
 
-[Serializable, NetSerializable]
-public sealed class RestockDoAfterEvent : SimpleDoAfterEvent
-{
-}

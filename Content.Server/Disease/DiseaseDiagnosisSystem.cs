@@ -3,6 +3,7 @@ using Content.Shared.Disease;
 using Content.Shared.Interaction;
 using Content.Shared.Inventory;
 using Content.Shared.Examine;
+using Content.Server.DoAfter;
 using Content.Server.Popups;
 using Content.Server.Hands.Components;
 using Content.Server.Nutrition.EntitySystems;
@@ -17,7 +18,7 @@ using Content.Shared.Tools.Components;
 using Content.Server.Station.Systems;
 using Content.Shared.DoAfter;
 using Content.Shared.IdentityManagement;
-using Content.Shared.Swab;
+using Robust.Server.GameObjects;
 
 namespace Content.Server.Disease
 {
@@ -26,7 +27,7 @@ namespace Content.Server.Disease
     /// </summary>
     public sealed class DiseaseDiagnosisSystem : EntitySystem
     {
-        [Dependency] private readonly SharedDoAfterSystem _doAfterSystem = default!;
+        [Dependency] private readonly DoAfterSystem _doAfterSystem = default!;
         [Dependency] private readonly PopupSystem _popupSystem = default!;
         [Dependency] private readonly IRobustRandom _random = default!;
         [Dependency] private readonly InventorySystem _inventorySystem = default!;
@@ -46,7 +47,7 @@ namespace Content.Server.Disease
             // Private Events
             SubscribeLocalEvent<DiseaseDiagnoserComponent, DiseaseMachineFinishedEvent>(OnDiagnoserFinished);
             SubscribeLocalEvent<DiseaseVaccineCreatorComponent, DiseaseMachineFinishedEvent>(OnVaccinatorFinished);
-            SubscribeLocalEvent<DiseaseSwabComponent, DiseaseSwabDoAfterEvent>(OnSwabDoAfter);
+            SubscribeLocalEvent<DiseaseSwabComponent, DoAfterEvent>(OnSwabDoAfter);
         }
 
         private Queue<EntityUid> AddQueue = new();
@@ -115,10 +116,15 @@ namespace Content.Server.Disease
                 return;
             }
 
-            _doAfterSystem.TryStartDoAfter(new DoAfterArgs(args.User, swab.SwabDelay, new DiseaseSwabDoAfterEvent(), uid, target: args.Target, used: uid)
+            var isTarget = args.User != args.Target;
+
+            _doAfterSystem.DoAfter(new DoAfterEventArgs(args.User, swab.SwabDelay, target: args.Target, used: uid)
             {
+                RaiseOnTarget = isTarget,
+                RaiseOnUser = !isTarget,
                 BreakOnTargetMove = true,
                 BreakOnUserMove = true,
+                BreakOnStun = true,
                 NeedHand = true
             });
         }

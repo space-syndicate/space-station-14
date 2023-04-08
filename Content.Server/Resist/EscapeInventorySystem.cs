@@ -1,3 +1,5 @@
+using System.Threading;
+using Content.Server.DoAfter;
 using Content.Server.Contests;
 using Robust.Shared.Containers;
 using Content.Server.Popups;
@@ -8,13 +10,12 @@ using Content.Shared.ActionBlocker;
 using Content.Shared.DoAfter;
 using Content.Shared.Movement.Events;
 using Content.Shared.Interaction.Events;
-using Content.Shared.Resist;
 
 namespace Content.Server.Resist;
 
 public sealed class EscapeInventorySystem : EntitySystem
 {
-    [Dependency] private readonly SharedDoAfterSystem _doAfterSystem = default!;
+    [Dependency] private readonly DoAfterSystem _doAfterSystem = default!;
     [Dependency] private readonly PopupSystem _popupSystem = default!;
     [Dependency] private readonly SharedContainerSystem _containerSystem = default!;
     [Dependency] private readonly ActionBlockerSystem _actionBlockerSystem = default!;
@@ -31,7 +32,7 @@ public sealed class EscapeInventorySystem : EntitySystem
         base.Initialize();
 
         SubscribeLocalEvent<CanEscapeInventoryComponent, MoveInputEvent>(OnRelayMovement);
-        SubscribeLocalEvent<CanEscapeInventoryComponent, EscapeInventoryEvent>(OnEscape);
+        SubscribeLocalEvent<CanEscapeInventoryComponent, DoAfterEvent<EscapeInventoryEvent>>(OnEscape);
         SubscribeLocalEvent<CanEscapeInventoryComponent, DroppedEvent>(OnDropped);
     }
 
@@ -68,37 +69,50 @@ public sealed class EscapeInventorySystem : EntitySystem
         if (component.IsEscaping)
             return;
 
-        var doAfterEventArgs = new DoAfterArgs(user, component.BaseResistTime * multiplier, new EscapeInventoryEvent(), user, target: container)
+        component.CancelToken = new CancellationTokenSource();
+        component.IsEscaping = true;
+        var escapeEvent = new EscapeInventoryEvent();
+        var doAfterEventArgs = new DoAfterEventArgs(user, component.BaseResistTime * multiplier, cancelToken: component.CancelToken.Token, target:container)
         {
             BreakOnTargetMove = false,
             BreakOnUserMove = true,
             BreakOnDamage = true,
+            BreakOnStun = true,
             NeedHand = false
         };
 
-        if (!_doAfterSystem.TryStartDoAfter(doAfterEventArgs, out component.DoAfter))
-            return;
-
-        Dirty(component);
         _popupSystem.PopupEntity(Loc.GetString("escape-inventory-component-start-resisting"), user, user);
         _popupSystem.PopupEntity(Loc.GetString("escape-inventory-component-start-resisting-target"), container, container);
+        _doAfterSystem.DoAfter(doAfterEventArgs, escapeEvent);
     }
 
-    private void OnEscape(EntityUid uid, CanEscapeInventoryComponent component, EscapeInventoryEvent args)
+    private void OnEscape(EntityUid uid, CanEscapeInventoryComponent component, DoAfterEvent<EscapeInventoryEvent> args)
     {
-        component.DoAfter = null;
-        Dirty(component);
+        if (args.Cancelled)
+        {
+            component.CancelToken = null;
+            component.IsEscaping = false;
+            return;
+        }
 
-        if (args.Handled || args.Cancelled)
+        if (args.Handled)
             return;
 
         Transform(uid).AttachParentToContainerOrGrid(EntityManager);
+
+        component.CancelToken = null;
+        component.IsEscaping = false;
         args.Handled = true;
     }
 
     private void OnDropped(EntityUid uid, CanEscapeInventoryComponent component, DroppedEvent args)
     {
-        if (component.DoAfter != null)
-            _doAfterSystem.Cancel(component.DoAfter);
+        component.CancelToken?.Cancel();
+        component.CancelToken = null;
+    }
+
+    private sealed class EscapeInventoryEvent : EntityEventArgs
+    {
+
     }
 }

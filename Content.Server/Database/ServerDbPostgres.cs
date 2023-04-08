@@ -6,7 +6,6 @@ using System.Threading;
 using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
 using Robust.Shared.Network;
-using Robust.Shared.Utility;
 
 namespace Content.Server.Database
 {
@@ -59,8 +58,7 @@ namespace Content.Server.Database
 
             await using var db = await GetDbImpl();
 
-            var exempt = await GetBanExemptionCore(db, userId);
-            var query = MakeBanLookupQuery(address, userId, hwId, db, includeUnbanned: false, exempt)
+            var query = MakeBanLookupQuery(address, userId, hwId, db, includeUnbanned: false)
                 .OrderByDescending(b => b.BanTime);
 
             var ban = await query.FirstOrDefaultAsync();
@@ -79,8 +77,7 @@ namespace Content.Server.Database
 
             await using var db = await GetDbImpl();
 
-            var exempt = await GetBanExemptionCore(db, userId);
-            var query = MakeBanLookupQuery(address, userId, hwId, db, includeUnbanned, exempt);
+            var query = MakeBanLookupQuery(address, userId, hwId, db, includeUnbanned);
 
             var queryBans = await query.ToArrayAsync();
             var bans = new List<ServerBanDef>(queryBans.Length);
@@ -103,11 +100,8 @@ namespace Content.Server.Database
             NetUserId? userId,
             ImmutableArray<byte>? hwId,
             DbGuardImpl db,
-            bool includeUnbanned,
-            ServerBanExemptFlags? exemptFlags)
+            bool includeUnbanned)
         {
-            DebugTools.Assert(!(address == null && userId == null && hwId == null));
-
             IQueryable<ServerBan>? query = null;
 
             if (userId is { } uid)
@@ -137,22 +131,14 @@ namespace Content.Server.Database
                 query = query == null ? newQ : query.Union(newQ);
             }
 
-            DebugTools.Assert(
-                query != null,
-                "At least one filter item (IP/UserID/HWID) must have been given to make query not null.");
-
             if (!includeUnbanned)
             {
-                query = query.Where(p =>
+                query = query?.Where(p =>
                     p.Unban == null && (p.ExpirationTime == null || p.ExpirationTime.Value > DateTime.Now));
             }
 
-            if (exemptFlags is { } exempt)
-            {
-                query = query.Where(b => (b.ExemptFlags & exempt) == 0);
-            }
-
-            return query.Distinct();
+            query = query!.Distinct();
+            return query;
         }
 
         private static ServerBanDef? ConvertBan(ServerBan? ban)

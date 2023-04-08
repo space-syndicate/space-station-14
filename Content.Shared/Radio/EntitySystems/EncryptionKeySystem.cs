@@ -1,6 +1,5 @@
 using System.Linq;
 using Content.Shared.Chat;
-using Content.Shared.DoAfter;
 using Content.Shared.Examine;
 using Content.Shared.Hands.EntitySystems;
 using Content.Shared.Interaction;
@@ -12,7 +11,6 @@ using Content.Shared.Wires;
 using Robust.Shared.Containers;
 using Robust.Shared.Network;
 using Robust.Shared.Prototypes;
-using Robust.Shared.Serialization;
 using Robust.Shared.Timing;
 
 namespace Content.Shared.Radio.EntitySystems;
@@ -42,13 +40,16 @@ public sealed class EncryptionKeySystem : EntitySystem
         SubscribeLocalEvent<EncryptionKeyHolderComponent, EntInsertedIntoContainerMessage>(OnContainerModified);
         SubscribeLocalEvent<EncryptionKeyHolderComponent, EntRemovedFromContainerMessage>(OnContainerModified);
         SubscribeLocalEvent<EncryptionKeyHolderComponent, EncryptionRemovalFinishedEvent>(OnKeyRemoval);
+        SubscribeLocalEvent<EncryptionKeyHolderComponent, EncryptionRemovalCancelledEvent>(OnKeyCancelled);
+    }
+
+    private void OnKeyCancelled(EntityUid uid, EncryptionKeyHolderComponent component, EncryptionRemovalCancelledEvent args)
+    {
+        component.Removing = false;
     }
 
     private void OnKeyRemoval(EntityUid uid, EncryptionKeyHolderComponent component, EncryptionRemovalFinishedEvent args)
     {
-        if (args.Cancelled)
-            return;
-
         var contained = component.KeyContainer.ContainedEntities.ToArray();
         _container.EmptyContainer(component.KeyContainer, reparent: false);
         foreach (var ent in contained)
@@ -59,6 +60,7 @@ public sealed class EncryptionKeySystem : EntitySystem
         // if tool use ever gets predicted this needs changing.
         _popup.PopupEntity(Loc.GetString("encryption-keys-all-extracted"), uid, args.User);
         _audio.PlayPvs(component.KeyExtractionSound, uid);
+        component.Removing = false;
     }
 
     public void UpdateChannels(EntityUid uid, EncryptionKeyHolderComponent component)
@@ -89,30 +91,26 @@ public sealed class EncryptionKeySystem : EntitySystem
 
     private void OnInteractUsing(EntityUid uid, EncryptionKeyHolderComponent component, InteractUsingEvent args)
     {
-        if ( args.Handled || !TryComp<ContainerManagerComponent>(uid, out var storage))
+        if (!TryComp<ContainerManagerComponent>(uid, out var _) || args.Handled || component.Removing)
             return;
-
-        if (HasComp<EncryptionKeyComponent>(args.Used))
-        {
-            args.Handled = true;
-            TryInsertKey(uid, component, args);
-        }
-        else if (TryComp<ToolComponent>(args.Used, out var tool) && tool.Qualities.Contains(component.KeysExtractionMethod))
-        {
-            args.Handled = true;
-            TryRemoveKey(uid, component, args, tool);
-        }
-    }
-
-    private void TryInsertKey(EntityUid uid, EncryptionKeyHolderComponent component, InteractUsingEvent args)
-    {
         if (!component.KeysUnlocked)
         {
             if (_net.IsClient && _timing.IsFirstTimePredicted)
                 _popup.PopupEntity(Loc.GetString("encryption-keys-are-locked"), uid, args.User);
             return;
         }
+        if (TryComp<EncryptionKeyComponent>(args.Used, out var key))
+        {
+            TryInsertKey(uid, component, args);
+        }
+        else
+        {
+            TryRemoveKey(uid, component, args);
+        }
+    }
 
+    private void TryInsertKey(EntityUid uid, EncryptionKeyHolderComponent component, InteractUsingEvent args)
+    {
         if (TryComp<WiresPanelComponent>(uid, out var panel) && !panel.Open)
         {
             if (_net.IsClient && _timing.IsFirstTimePredicted)
@@ -137,15 +135,10 @@ public sealed class EncryptionKeySystem : EntitySystem
         }
     }
 
-    private void TryRemoveKey(EntityUid uid, EncryptionKeyHolderComponent component, InteractUsingEvent args,
-        ToolComponent? tool)
+    private void TryRemoveKey(EntityUid uid, EncryptionKeyHolderComponent component, InteractUsingEvent args)
     {
-        if (!component.KeysUnlocked)
-        {
-            if (_net.IsClient && _timing.IsFirstTimePredicted)
-                _popup.PopupEntity(Loc.GetString("encryption-keys-are-locked"), uid, args.User);
+        if (!TryComp<ToolComponent>(args.Used, out var tool) || !tool.Qualities.Contains(component.KeysExtractionMethod))
             return;
-        }
 
         if (TryComp<WiresPanelComponent>(uid, out var panel) && !panel.Open)
         {
@@ -161,7 +154,14 @@ public sealed class EncryptionKeySystem : EntitySystem
             return;
         }
 
-        _tool.UseTool(args.Used, args.User, uid, 1f, component.KeysExtractionMethod, new EncryptionRemovalFinishedEvent(), toolComponent: tool);
+        if (_net.IsServer)
+        {
+            //This is honestly the poor mans fix because the InteractUsingEvent fires off 12 times
+            component.Removing = true;
+            var toolEvData = new ToolEventData(new EncryptionRemovalFinishedEvent(args.User), cancelledEv: new EncryptionRemovalCancelledEvent(), targetEntity: uid);
+            if (_tool.UseTool(args.Used, args.User, uid, 1f, new[] { component.KeysExtractionMethod }, toolEvData, toolComponent: tool))
+                args.Handled = true;
+        }
     }
 
     private void OnStartup(EntityUid uid, EncryptionKeyHolderComponent component, ComponentStartup args)
@@ -244,8 +244,18 @@ public sealed class EncryptionKeySystem : EntitySystem
         }
     }
 
-    [Serializable, NetSerializable]
-    public sealed class EncryptionRemovalFinishedEvent : SimpleDoAfterEvent
+    public sealed class EncryptionRemovalFinishedEvent : EntityEventArgs
     {
+        public EntityUid User;
+
+        public EncryptionRemovalFinishedEvent(EntityUid user)
+        {
+            User = user;
+        }
+    }
+
+    public sealed class EncryptionRemovalCancelledEvent : EntityEventArgs
+    {
+
     }
 }

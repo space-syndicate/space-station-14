@@ -65,7 +65,7 @@
     bloodlossHealDamage:
       types:
         Bloodloss:
-          -1
+          -0.25
   - type: Stamina
   - type: StatusEffects
     allowed:

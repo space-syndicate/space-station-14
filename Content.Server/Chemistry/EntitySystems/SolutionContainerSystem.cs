@@ -317,11 +317,11 @@ public sealed partial class SolutionContainerSystem : EntitySystem
         return true;
     }
 
-    public bool TryGetSolution([NotNullWhen(true)] EntityUid? uid, string name,
+    public bool TryGetSolution(EntityUid uid, string name,
         [NotNullWhen(true)] out Solution? solution,
         SolutionContainerManagerComponent? solutionsMgr = null)
     {
-        if (uid == null || !Resolve(uid.Value, ref solutionsMgr, false))
+        if (!Resolve(uid, ref solutionsMgr, false))
         {
             solution = null;
             return false;

@@ -4,8 +4,6 @@ using Content.Server.Nutrition.Components;
 using Content.Server.Popups;
 using Content.Shared.Actions;
 using Content.Shared.Atmos;
-using Content.Shared.Nutrition.Components;
-using Content.Shared.Nutrition.EntitySystems;
 using Robust.Server.GameObjects;
 using Robust.Shared.Player;
 
@@ -13,10 +11,9 @@ namespace Content.Server.RatKing
 {
     public sealed class RatKingSystem : EntitySystem
     {
+        [Dependency] private readonly PopupSystem _popup = default!;
         [Dependency] private readonly ActionsSystem _action = default!;
         [Dependency] private readonly AtmosphereSystem _atmos = default!;
-        [Dependency] private readonly HungerSystem _hunger = default!;
-        [Dependency] private readonly PopupSystem _popup = default!;
         [Dependency] private readonly TransformSystem _xform = default!;
 
         public override void Initialize()
@@ -53,7 +50,7 @@ namespace Content.Server.RatKing
                 return;
             }
             args.Handled = true;
-            _hunger.ModifyHunger(uid, -component.HungerPerArmyUse, hunger);
+            hunger.CurrentHunger -= component.HungerPerArmyUse;
             Spawn(component.ArmyMobSpawnId, Transform(uid).Coordinates); //spawn the little mouse boi
         }
 
@@ -76,7 +73,7 @@ namespace Content.Server.RatKing
                 return;
             }
             args.Handled = true;
-            _hunger.ModifyHunger(uid, -component.HungerPerDomainUse, hunger);
+            hunger.CurrentHunger -= component.HungerPerDomainUse;
 
             _popup.PopupEntity(Loc.GetString("rat-king-domain-popup"), uid);
 
@@ -87,13 +84,6 @@ namespace Content.Server.RatKing
         }
     }
 
-    public sealed class RatKingRaiseArmyActionEvent : InstantActionEvent
-    {
-
-    }
-
-    public sealed class RatKingDomainActionEvent : InstantActionEvent
-    {
-
-    }
+    public sealed class RatKingRaiseArmyActionEvent : InstantActionEvent { };
+    public sealed class RatKingDomainActionEvent : InstantActionEvent { };
 };

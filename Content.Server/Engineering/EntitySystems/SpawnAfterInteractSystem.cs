@@ -1,4 +1,5 @@
 using Content.Server.Coordinates.Helpers;
+using Content.Server.DoAfter;
 using Content.Server.Engineering.Components;
 using Content.Server.Stack;
 using Content.Shared.DoAfter;
@@ -14,7 +15,7 @@ namespace Content.Server.Engineering.EntitySystems
     public sealed class SpawnAfterInteractSystem : EntitySystem
     {
         [Dependency] private readonly IMapManager _mapManager = default!;
-        [Dependency] private readonly SharedDoAfterSystem _doAfterSystem = default!;
+        [Dependency] private readonly DoAfterSystem _doAfterSystem = default!;
         [Dependency] private readonly StackSystem _stackSystem = default!;
 
         public override void Initialize()
@@ -45,9 +46,11 @@ namespace Content.Server.Engineering.EntitySystems
 
             if (component.DoAfterTime > 0)
             {
-                var doAfterArgs = new DoAfterArgs(args.User, component.DoAfterTime, new AwaitedDoAfterEvent(), null)
+                var doAfterArgs = new DoAfterEventArgs(args.User, component.DoAfterTime)
                 {
                     BreakOnUserMove = true,
+                    BreakOnStun = true,
+                    PostCheck = IsTileClear,
                 };
                 var result = await _doAfterSystem.WaitDoAfter(doAfterArgs);
 
@@ -55,7 +58,7 @@ namespace Content.Server.Engineering.EntitySystems
                     return;
             }
 
-            if (component.Deleted || !IsTileClear())
+            if (component.Deleted || Deleted(component.Owner))
                 return;
 
             if (EntityManager.TryGetComponent<StackComponent?>(component.Owner, out var stackComp)

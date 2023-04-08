@@ -41,12 +41,6 @@
       thresholds:
         - trigger:
             !type:DamageTrigger
-            damage: 600
-          behaviors:
-            - !type:DoActsBehavior
-              acts: [ "Destruction" ]
-        - trigger:
-            !type:DamageTrigger
             damage: 300
           behaviors:
             - !type:PlaySoundBehavior
@@ -122,12 +116,6 @@
       thresholds:
       - trigger:
           !type:DamageTrigger
-          damage: 600
-        behaviors:
-          - !type:DoActsBehavior
-            acts: [ "Destruction" ]
-      - trigger:
-          !type:DamageTrigger
           damage: 300
         behaviors:
         - !type:PlaySoundBehavior
@@ -162,12 +150,6 @@
     thresholds:
     - trigger:
         !type:DamageTrigger
-        damage: 600
-      behaviors:
-        - !type:DoActsBehavior
-          acts: [ "Destruction" ]
-    - trigger:
-        !type:DamageTrigger
         damage: 300
       behaviors:
       - !type:PlaySoundBehavior
@@ -197,12 +179,6 @@
       temperature: 293.15
   - type: Destructible
     thresholds:
-    - trigger:
-        !type:DamageTrigger
-        damage: 600
-      behaviors:
-        - !type:DoActsBehavior
-          acts: [ "Destruction" ]
     - trigger:
         !type:DamageTrigger
         damage: 300
@@ -237,12 +213,6 @@
       thresholds:
       - trigger:
           !type:DamageTrigger
-          damage: 600
-        behaviors:
-          - !type:DoActsBehavior
-            acts: [ "Destruction" ]
-      - trigger:
-          !type:DamageTrigger
           damage: 300
         behaviors:
         - !type:PlaySoundBehavior
@@ -274,12 +244,6 @@
         temperature: 293.15
     - type: Destructible
       thresholds:
-      - trigger:
-          !type:DamageTrigger
-          damage: 600
-        behaviors:
-          - !type:DoActsBehavior
-            acts: [ "Destruction" ]
       - trigger:
           !type:DamageTrigger
           damage: 300
@@ -318,12 +282,6 @@
       thresholds:
       - trigger:
           !type:DamageTrigger
-          damage: 600
-        behaviors:
-          - !type:DoActsBehavior
-            acts: [ "Destruction" ]
-      - trigger:
-          !type:DamageTrigger
           damage: 300
         behaviors:
         - !type:PlaySoundBehavior
@@ -359,12 +317,6 @@
         temperature: 293.15
     - type: Destructible
       thresholds:
-      - trigger:
-          !type:DamageTrigger
-          damage: 600
-        behaviors:
-          - !type:DoActsBehavior
-            acts: [ "Destruction" ]
       - trigger:
           !type:DamageTrigger
           damage: 300
@@ -405,12 +357,6 @@
       thresholds:
       - trigger:
           !type:DamageTrigger
-          damage: 600
-        behaviors:
-          - !type:DoActsBehavior
-            acts: [ "Destruction" ]
-      - trigger:
-          !type:DamageTrigger
           damage: 300
         behaviors:
         - !type:PlaySoundBehavior
@@ -446,12 +392,6 @@
         temperature: 293.15
     - type: Destructible
       thresholds:
-      - trigger:
-          !type:DamageTrigger
-          damage: 600
-        behaviors:
-          - !type:DoActsBehavior
-            acts: [ "Destruction" ]
       - trigger:
           !type:DamageTrigger
           damage: 300
@@ -494,12 +434,6 @@
       thresholds:
       - trigger:
           !type:DamageTrigger
-          damage: 600
-        behaviors:
-          - !type:DoActsBehavior
-            acts: [ "Destruction" ]
-      - trigger:
-          !type:DamageTrigger
           damage: 300
         behaviors:
         - !type:PlaySoundBehavior
@@ -539,12 +473,6 @@
     thresholds:
     - trigger:
         !type:DamageTrigger
-        damage: 600
-      behaviors:
-        - !type:DoActsBehavior
-          acts: [ "Destruction" ]
-    - trigger:
-        !type:DamageTrigger
         damage: 300
       behaviors:
       - !type:PlaySoundBehavior
@@ -569,12 +497,6 @@
   components:
     - type: Destructible
       thresholds:
-      - trigger:
-          !type:DamageTrigger
-          damage: 200
-        behaviors:
-          - !type:DoActsBehavior
-            acts: [ "Destruction" ]
       - trigger:
           !type:DamageTrigger
           damage: 100

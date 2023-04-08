@@ -1,3 +1,4 @@
+using Content.Server.Disposal.Unit.Components;
 using Content.Server.UserInterface;
 using Robust.Server.GameObjects;
 using Robust.Shared.Audio;
@@ -9,9 +10,12 @@ using static Content.Shared.Disposal.Components.SharedDisposalRouterComponent;
 namespace Content.Server.Disposal.Tube.Components
 {
     [RegisterComponent]
-    [Access(typeof(DisposalTubeSystem))]
+    [ComponentReference(typeof(IDisposalTubeComponent))]
+    [ComponentReference(typeof(DisposalTubeComponent))]
     public sealed class DisposalRouterComponent : DisposalJunctionComponent
     {
+        public override string ContainerId => "DisposalRouter";
+
         [Dependency] private readonly IEntityManager _entMan = default!;
 
         [DataField("tags")]
@@ -25,6 +29,18 @@ namespace Content.Server.Disposal.Tube.Components
         [ViewVariables] public BoundUserInterface? UserInterface => Owner.GetUIOrNull(DisposalRouterUiKey.Key);
 
         [DataField("clickSound")] private SoundSpecifier _clickSound = new SoundPathSpecifier("/Audio/Machines/machine_switch.ogg");
+
+        public override Direction NextDirection(DisposalHolderComponent holder)
+        {
+            var directions = ConnectableDirections();
+
+            if (holder.Tags.Overlaps(Tags))
+            {
+                return directions[1];
+            }
+
+            return _entMan.GetComponent<TransformComponent>(Owner).LocalRotation.GetDir();
+        }
 
         protected override void Initialize()
         {

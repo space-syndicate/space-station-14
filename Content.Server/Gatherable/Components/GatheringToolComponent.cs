@@ -32,7 +32,6 @@ namespace Content.Server.Gatherable.Components
         public int MaxGatheringEntities = 1;
 
         [ViewVariables]
-        [DataField("gatheringEntities")]
         public readonly List<EntityUid> GatheringEntities = new();
     }
 }

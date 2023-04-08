@@ -4,18 +4,16 @@ using Robust.Shared.Serialization.TypeSerializers.Implementations.Custom.Prototy
 
 namespace Content.Shared.Parallax.Biomes;
 
-[RegisterComponent, NetworkedComponent, AutoGenerateComponentState(true)]
-public sealed partial class BiomeComponent : Component
+[RegisterComponent, NetworkedComponent]
+public sealed class BiomeComponent : Component
 {
     public FastNoiseLite Noise = new();
 
     [ViewVariables(VVAccess.ReadWrite), DataField("seed")]
-    [AutoNetworkedField]
     public int Seed;
 
     [ViewVariables(VVAccess.ReadWrite),
      DataField("prototype", customTypeSerializer: typeof(PrototypeIdSerializer<BiomePrototype>))]
-    [AutoNetworkedField]
     public string BiomePrototype = "Grasslands";
 
     // TODO: Need to flag tiles as not requiring custom data anymore, e.g. if we spawn an ent and don't unspawn it.

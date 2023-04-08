@@ -99,8 +99,7 @@ public sealed partial class NPCSteeringSystem
                     if (doorQuery.TryGetComponent(ent, out var door) && door.State != DoorState.Open)
                     {
                         // TODO: Use the verb.
-
-                        if (door.State != DoorState.Opening)
+                        if (door.State != DoorState.Opening && !door.BeingPried)
                             _doors.TryPryDoor(ent, uid, uid, door, true);
 
                         return SteeringObstacleStatus.Continuing;

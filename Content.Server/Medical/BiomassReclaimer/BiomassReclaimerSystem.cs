@@ -1,3 +1,4 @@
+using System.Threading;
 using Content.Shared.Interaction;
 using Content.Shared.Audio;
 using Content.Shared.Jittering;
@@ -13,6 +14,7 @@ using Content.Server.Fluids.EntitySystems;
 using Content.Server.Body.Components;
 using Content.Server.Climbing;
 using Content.Server.Construction;
+using Content.Server.DoAfter;
 using Content.Server.Materials;
 using Content.Server.Mind.Components;
 using Content.Shared.DoAfter;
@@ -25,7 +27,7 @@ using Robust.Shared.Random;
 using Robust.Shared.Configuration;
 using Robust.Server.Player;
 using Robust.Shared.Physics.Components;
-using Content.Shared.Medical;
+using Content.Shared.Humanoid;
 
 namespace Content.Server.Medical.BiomassReclaimer
 {
@@ -41,7 +43,7 @@ namespace Content.Server.Medical.BiomassReclaimer
         [Dependency] private readonly ThrowingSystem _throwing = default!;
         [Dependency] private readonly IRobustRandom _robustRandom = default!;
         [Dependency] private readonly ISharedAdminLogManager _adminLogger = default!;
-        [Dependency] private readonly SharedDoAfterSystem _doAfterSystem = default!;
+        [Dependency] private readonly DoAfterSystem _doAfterSystem = default!;
         [Dependency] private readonly IPlayerManager _playerManager = default!;
         [Dependency] private readonly MaterialStorageSystem _material = default!;
 
@@ -95,7 +97,7 @@ namespace Content.Server.Medical.BiomassReclaimer
             SubscribeLocalEvent<BiomassReclaimerComponent, UpgradeExamineEvent>(OnUpgradeExamine);
             SubscribeLocalEvent<BiomassReclaimerComponent, PowerChangedEvent>(OnPowerChanged);
             SubscribeLocalEvent<BiomassReclaimerComponent, SuicideEvent>(OnSuicide);
-            SubscribeLocalEvent<BiomassReclaimerComponent, ReclaimerDoAfterEvent>(OnDoAfter);
+            SubscribeLocalEvent<BiomassReclaimerComponent, DoAfterEvent>(OnDoAfter);
         }
 
         private void OnSuicide(EntityUid uid, BiomassReclaimerComponent component, SuicideEvent args)
@@ -150,10 +152,11 @@ namespace Content.Server.Medical.BiomassReclaimer
             if (!HasComp<MobStateComponent>(args.Used) || !CanGib(uid, args.Used, component))
                 return;
 
-            _doAfterSystem.TryStartDoAfter(new DoAfterArgs(args.User, 7f, new ReclaimerDoAfterEvent(), uid, target: args.Target, used: args.Used)
+            _doAfterSystem.DoAfter(new DoAfterEventArgs(args.User, 7f, target:args.Target, used:args.Used)
             {
                 BreakOnTargetMove = true,
                 BreakOnUserMove = true,
+                BreakOnStun = true,
                 NeedHand = true
             });
         }

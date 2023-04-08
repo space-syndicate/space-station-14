@@ -15,7 +15,7 @@ namespace Content.Server.Database.Migrations.Sqlite
         protected override void BuildModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
-            modelBuilder.HasAnnotation("ProductVersion", "7.0.4");
+            modelBuilder.HasAnnotation("ProductVersion", "6.0.5");
 
             modelBuilder.Entity("Content.Server.Database.Admin", b =>
                 {
@@ -278,7 +278,8 @@ namespace Content.Server.Database.Migrations.Sqlite
                     b.HasKey("Id")
                         .HasName("PK_admin_rank_flag");
 
-                    b.HasIndex("AdminRankId");
+                    b.HasIndex("AdminRankId")
+                        .HasDatabaseName("IX_admin_rank_flag_admin_rank_id");
 
                     b.HasIndex("Flag", "AdminRankId")
                         .IsUnique();
@@ -403,7 +404,8 @@ namespace Content.Server.Database.Migrations.Sqlite
                     b.HasKey("Id")
                         .HasName("PK_job");
 
-                    b.HasIndex("ProfileId");
+                    b.HasIndex("ProfileId")
+                        .HasDatabaseName("IX_job_profile_id");
 
                     b.HasIndex("ProfileId", "JobName")
                         .IsUnique();
@@ -413,35 +415,6 @@ namespace Content.Server.Database.Migrations.Sqlite
                         .HasFilter("priority = 3");
 
                     b.ToTable("job", (string)null);
-                });
-
-            modelBuilder.Entity("Content.Server.Database.PlayTime", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("INTEGER")
-                        .HasColumnName("play_time_id");
-
-                    b.Property<Guid>("PlayerId")
-                        .HasColumnType("TEXT")
-                        .HasColumnName("player_id");
-
-                    b.Property<TimeSpan>("TimeSpent")
-                        .HasColumnType("TEXT")
-                        .HasColumnName("time_spent");
-
-                    b.Property<string>("Tracker")
-                        .IsRequired()
-                        .HasColumnType("TEXT")
-                        .HasColumnName("tracker");
-
-                    b.HasKey("Id")
-                        .HasName("PK_play_time");
-
-                    b.HasIndex("PlayerId", "Tracker")
-                        .IsUnique();
-
-                    b.ToTable("play_time", (string)null);
                 });
 
             modelBuilder.Entity("Content.Server.Database.Player", b =>
@@ -493,6 +466,35 @@ namespace Content.Server.Database.Migrations.Sqlite
                         .IsUnique();
 
                     b.ToTable("player", (string)null);
+                });
+
+            modelBuilder.Entity("Content.Server.Database.PlayTime", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("INTEGER")
+                        .HasColumnName("play_time_id");
+
+                    b.Property<Guid>("PlayerId")
+                        .HasColumnType("TEXT")
+                        .HasColumnName("player_id");
+
+                    b.Property<TimeSpan>("TimeSpent")
+                        .HasColumnType("TEXT")
+                        .HasColumnName("time_spent");
+
+                    b.Property<string>("Tracker")
+                        .IsRequired()
+                        .HasColumnType("TEXT")
+                        .HasColumnName("tracker");
+
+                    b.HasKey("Id")
+                        .HasName("PK_play_time");
+
+                    b.HasIndex("PlayerId", "Tracker")
+                        .IsUnique();
+
+                    b.ToTable("play_time", (string)null);
                 });
 
             modelBuilder.Entity("Content.Server.Database.Preference", b =>
@@ -684,10 +686,6 @@ namespace Content.Server.Database.Migrations.Sqlite
                         .HasColumnType("TEXT")
                         .HasColumnName("address");
 
-                    b.Property<bool>("AutoDelete")
-                        .HasColumnType("INTEGER")
-                        .HasColumnName("auto_delete");
-
                     b.Property<DateTime>("BanTime")
                         .HasColumnType("TEXT")
                         .HasColumnName("ban_time");
@@ -695,10 +693,6 @@ namespace Content.Server.Database.Migrations.Sqlite
                     b.Property<Guid?>("BanningAdmin")
                         .HasColumnType("TEXT")
                         .HasColumnName("banning_admin");
-
-                    b.Property<int>("ExemptFlags")
-                        .HasColumnType("INTEGER")
-                        .HasColumnName("exempt_flags");
 
                     b.Property<DateTime?>("ExpirationTime")
                         .HasColumnType("TEXT")
@@ -724,30 +718,9 @@ namespace Content.Server.Database.Migrations.Sqlite
 
                     b.HasIndex("UserId");
 
-                    b.ToTable("server_ban", null, t =>
-                        {
-                            t.HasCheckConstraint("HaveEitherAddressOrUserIdOrHWId", "address IS NOT NULL OR user_id IS NOT NULL OR hwid IS NOT NULL");
-                        });
-                });
+                    b.ToTable("server_ban", (string)null);
 
-            modelBuilder.Entity("Content.Server.Database.ServerBanExemption", b =>
-                {
-                    b.Property<Guid>("UserId")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("TEXT")
-                        .HasColumnName("user_id");
-
-                    b.Property<int>("Flags")
-                        .HasColumnType("INTEGER")
-                        .HasColumnName("flags");
-
-                    b.HasKey("UserId")
-                        .HasName("PK_server_ban_exemption");
-
-                    b.ToTable("server_ban_exemption", null, t =>
-                        {
-                            t.HasCheckConstraint("FlagsNotZero", "flags != 0");
-                        });
+                    b.HasCheckConstraint("HaveEitherAddressOrUserIdOrHWId", "address IS NOT NULL OR user_id IS NOT NULL OR hwid IS NOT NULL");
                 });
 
             modelBuilder.Entity("Content.Server.Database.ServerBanHit", b =>
@@ -825,10 +798,9 @@ namespace Content.Server.Database.Migrations.Sqlite
 
                     b.HasIndex("UserId");
 
-                    b.ToTable("server_role_ban", null, t =>
-                        {
-                            t.HasCheckConstraint("HaveEitherAddressOrUserIdOrHWId", "address IS NOT NULL OR user_id IS NOT NULL OR hwid IS NOT NULL");
-                        });
+                    b.ToTable("server_role_ban", (string)null);
+
+                    b.HasCheckConstraint("HaveEitherAddressOrUserIdOrHWId", "address IS NOT NULL OR user_id IS NOT NULL OR hwid IS NOT NULL");
                 });
 
             modelBuilder.Entity("Content.Server.Database.ServerRoleUnban", b =>
@@ -906,8 +878,8 @@ namespace Content.Server.Database.Migrations.Sqlite
                     b.HasKey("Id")
                         .HasName("PK_trait");
 
-                    b.HasIndex("ProfileId", "TraitName")
-                        .IsUnique();
+                    b.HasIndex("ProfileId")
+                        .HasDatabaseName("IX_trait_profile_id");
 
                     b.ToTable("trait", (string)null);
                 });

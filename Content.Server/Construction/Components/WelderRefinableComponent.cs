@@ -21,5 +21,7 @@ namespace Content.Server.Construction.Components
 
         [DataField("qualityNeeded", customTypeSerializer:typeof(PrototypeIdSerializer<ToolQualityPrototype>))]
         public string QualityNeeded = "Welding";
+
+        public bool BeingWelded;
     }
 }

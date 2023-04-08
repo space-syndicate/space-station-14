@@ -1,7 +1,5 @@
-using Content.Shared.DoAfter;
 using Content.Shared.DragDrop;
 using Content.Shared.Movement.Events;
-using Robust.Shared.Serialization;
 
 namespace Content.Shared.Climbing;
 
@@ -25,10 +23,5 @@ public abstract class SharedClimbSystem : EntitySystem
     protected virtual void OnCanDragDropOn(EntityUid uid, ClimbableComponent component, ref CanDropTargetEvent args)
     {
         args.CanDrop = HasComp<ClimbingComponent>(args.Dragged);
-    }
-
-    [Serializable, NetSerializable]
-    protected sealed class ClimbDoAfterEvent : SimpleDoAfterEvent
-    {
     }
 }

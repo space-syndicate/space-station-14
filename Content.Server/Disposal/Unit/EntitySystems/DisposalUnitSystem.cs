@@ -4,6 +4,7 @@ using Content.Server.Administration.Logs;
 using Content.Server.Atmos.EntitySystems;
 using Content.Server.Disposal.Tube.Components;
 using Content.Server.Disposal.Unit.Components;
+using Content.Server.DoAfter;
 using Content.Server.Hands.Components;
 using Content.Server.Popups;
 using Content.Server.Power.Components;
@@ -41,7 +42,7 @@ namespace Content.Server.Disposal.Unit.EntitySystems
         [Dependency] private readonly ActionBlockerSystem _actionBlockerSystem = default!;
         [Dependency] private readonly AppearanceSystem _appearance = default!;
         [Dependency] private readonly AtmosphereSystem _atmosSystem = default!;
-        [Dependency] private readonly SharedDoAfterSystem _doAfterSystem = default!;
+        [Dependency] private readonly DoAfterSystem _doAfterSystem = default!;
         [Dependency] private readonly EntityLookupSystem _lookup = default!;
         [Dependency] private readonly PopupSystem _popupSystem = default!;
         [Dependency] private readonly SharedContainerSystem _containerSystem = default!;
@@ -78,7 +79,7 @@ namespace Content.Server.Disposal.Unit.EntitySystems
             SubscribeLocalEvent<DisposalUnitComponent, GetVerbsEvent<Verb>>(AddClimbInsideVerb);
 
             // Units
-            SubscribeLocalEvent<DisposalUnitComponent, DisposalDoAfterEvent>(OnDoAfter);
+            SubscribeLocalEvent<DisposalUnitComponent, DoAfterEvent>(OnDoAfter);
 
             //UI
             SubscribeLocalEvent<DisposalUnitComponent, SharedDisposalUnitComponent.UiButtonPressedMessage>(OnUiButtonPressed);
@@ -488,15 +489,19 @@ namespace Content.Server.Disposal.Unit.EntitySystems
 
             // Can't check if our target AND disposals moves currently so we'll just check target.
             // if you really want to check if disposals moves then add a predicate.
-            var doAfterArgs = new DoAfterArgs(userId.Value, delay, new DisposalDoAfterEvent(), unitId, target: toInsertId, used: unitId)
+            var doAfterArgs = new DoAfterEventArgs(userId.Value, delay, target:toInsertId, used:unitId)
             {
                 BreakOnDamage = true,
+                BreakOnStun = true,
                 BreakOnTargetMove = true,
                 BreakOnUserMove = true,
-                NeedHand = false
+                NeedHand = false,
+                RaiseOnTarget = false,
+                RaiseOnUser = false,
+                RaiseOnUsed = true,
             };
 
-            _doAfterSystem.TryStartDoAfter(doAfterArgs);
+            _doAfterSystem.DoAfter(doAfterArgs);
             return true;
         }
 

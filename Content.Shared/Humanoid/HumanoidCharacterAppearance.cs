@@ -235,11 +235,23 @@ namespace Content.Shared.Humanoid
                 markingSet = new MarkingSet(appearance.Markings, speciesProto.MarkingPoints, markingManager, proto);
                 markingSet.EnsureValid(markingManager);
 
-                if (!Humanoid.SkinColor.VerifySkinColor(speciesProto.SkinColoration, skinColor))
+                switch (speciesProto.SkinColoration)
                 {
-                    skinColor = Humanoid.SkinColor.ValidSkinTone(speciesProto.SkinColoration, skinColor);
-                }
+                    case HumanoidSkinColor.HumanToned:
+                        if (!Humanoid.SkinColor.VerifyHumanSkinTone(skinColor))
+                        {
+                            skinColor = Humanoid.SkinColor.ValidHumanSkinTone;
+                        }
 
+                        break;
+                    case HumanoidSkinColor.TintedHues:
+                        if (!Humanoid.SkinColor.VerifyTintedHues(skinColor))
+                        {
+                            skinColor = Humanoid.SkinColor.ValidTintedHuesSkinTone(skinColor);
+                        }
+
+                        break;
+                }
                 markingSet.EnsureSpecies(species, skinColor, markingManager);
                 markingSet.FilterSponsor(sponsorMarkings, markingManager); // Corvax-Sponsors
             }

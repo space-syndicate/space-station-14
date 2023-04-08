@@ -4,7 +4,7 @@ using Content.Shared.Medical.Cryogenics;
 
 namespace Content.Server.Medical.Components;
 
-[RegisterComponent, ComponentReference(typeof(SharedCryoPodComponent))]
+[RegisterComponent]
 public sealed class CryoPodComponent: SharedCryoPodComponent
 {
     /// <summary>

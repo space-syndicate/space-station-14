@@ -69,4 +69,7 @@ public sealed class ToggleableClothingComponent : Component
     /// </summary>
     [DataField("verbText")]
     public string? VerbText;
+
+    // prevent duplicate doafters
+    public byte? DoAfterId;
 }

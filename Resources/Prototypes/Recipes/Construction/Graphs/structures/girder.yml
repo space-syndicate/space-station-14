@@ -184,7 +184,7 @@
         - to: girder
           completed:
             - !type:GivePrototype
-              prototype: SheetPlastic1
+              prototype: SheetSteel1
               amount: 2
           steps:
             - tool: Prying

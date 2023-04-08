@@ -76,6 +76,8 @@ public abstract class SharedCryoPodComponent: Component
     [DataField("permaLocked")]
     public bool PermaLocked { get; set; }
 
+    public bool IsPrying { get; set; }
+
     [Serializable, NetSerializable]
     public enum CryoPodVisuals : byte
     {

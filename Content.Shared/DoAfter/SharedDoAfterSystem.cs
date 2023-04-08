@@ -1,47 +1,83 @@
-using System.Diagnostics.CodeAnalysis;
+using System.Linq;
+using System.Threading;
 using System.Threading.Tasks;
-using Content.Shared.ActionBlocker;
 using Content.Shared.Damage;
 using Content.Shared.Hands.Components;
 using Content.Shared.Mobs;
+using Content.Shared.Stunnable;
 using Robust.Shared.GameStates;
-using Robust.Shared.Serialization;
 using Robust.Shared.Timing;
 using Robust.Shared.Utility;
 
 namespace Content.Shared.DoAfter;
 
-public abstract partial class SharedDoAfterSystem : EntitySystem
+public abstract class SharedDoAfterSystem : EntitySystem
 {
     [Dependency] protected readonly IGameTiming GameTiming = default!;
-    [Dependency] private readonly ActionBlockerSystem _actionBlocker = default!;
-    [Dependency] private readonly SharedTransformSystem _transform = default!;
 
-    /// <summary>
-    ///     We'll use an excess time so stuff like finishing effects can show.
-    /// </summary>
-    private static readonly TimeSpan ExcessTime = TimeSpan.FromSeconds(0.5f);
+    // We cache the list as to not allocate every update tick...
+    private readonly Queue<DoAfter> _pending = new();
 
     public override void Initialize()
     {
         base.Initialize();
         SubscribeLocalEvent<DoAfterComponent, DamageChangedEvent>(OnDamage);
-        SubscribeLocalEvent<DoAfterComponent, EntityUnpausedEvent>(OnUnpaused);
         SubscribeLocalEvent<DoAfterComponent, MobStateChangedEvent>(OnStateChanged);
         SubscribeLocalEvent<DoAfterComponent, ComponentGetState>(OnDoAfterGetState);
-        SubscribeLocalEvent<DoAfterComponent, ComponentHandleState>(OnDoAfterHandleState);
     }
 
-    private void OnUnpaused(EntityUid uid, DoAfterComponent component, ref EntityUnpausedEvent args)
-    {
-        foreach (var doAfter in component.DoAfters.Values)
-        {
-            doAfter.StartTime += args.PausedTime;
-            if (doAfter.CancelledTime != null)
-                doAfter.CancelledTime = doAfter.CancelledTime.Value + args.PausedTime;
-        }
+    public bool DoAfterExists(EntityUid uid, DoAfter doAFter, DoAfterComponent? component = null)
+        => DoAfterExists(uid, doAFter.ID, component);
 
+    public bool DoAfterExists(EntityUid uid, byte id, DoAfterComponent? component = null)
+    {
+        if (!Resolve(uid, ref component))
+            return false;
+
+        return component.DoAfters.ContainsKey(id);
+    }
+
+    private void Add(EntityUid entity, DoAfterComponent component, DoAfter doAfter)
+    {
+        doAfter.ID = component.RunningIndex;
+        doAfter.Delay = doAfter.EventArgs.Delay;
+        component.DoAfters.Add(component.RunningIndex, doAfter);
+        EnsureComp<ActiveDoAfterComponent>(entity);
+        component.RunningIndex++;
         Dirty(component);
+    }
+
+    private void OnDoAfterGetState(EntityUid uid, DoAfterComponent component, ref ComponentGetState args)
+    {
+        args.State = new DoAfterComponentState(component.DoAfters);
+    }
+
+    private void Cancelled(DoAfterComponent component, DoAfter doAfter)
+    {
+        if (!component.DoAfters.TryGetValue(doAfter.ID, out var index))
+            return;
+
+        component.DoAfters.Remove(doAfter.ID);
+
+        if (component.DoAfters.Count == 0)
+            RemComp<ActiveDoAfterComponent>(component.Owner);
+
+        RaiseNetworkEvent(new CancelledDoAfterMessage(component.Owner, index.ID));
+    }
+
+    /// <summary>
+    ///     Call when the particular DoAfter is finished.
+    ///     Client should be tracking this independently.
+    /// </summary>
+    private void Finished(DoAfterComponent component, DoAfter doAfter)
+    {
+        if (!component.DoAfters.ContainsKey(doAfter.ID))
+            return;
+
+        component.DoAfters.Remove(doAfter.ID);
+
+        if (component.DoAfters.Count == 0)
+            RemComp<ActiveDoAfterComponent>(component.Owner);
     }
 
     private void OnStateChanged(EntityUid uid, DoAfterComponent component, MobStateChangedEvent args)
@@ -49,319 +85,321 @@ public abstract partial class SharedDoAfterSystem : EntitySystem
         if (args.NewMobState != MobState.Dead || args.NewMobState != MobState.Critical)
             return;
 
-        foreach (var doAfter in component.DoAfters.Values)
+        foreach (var (_, doAfter) in component.DoAfters)
         {
-            InternalCancel(doAfter, component);
+            Cancel(uid, doAfter, component);
         }
-        Dirty(component);
     }
 
     /// <summary>
     /// Cancels DoAfter if it breaks on damage and it meets the threshold
     /// </summary>
+    /// <param name="uid">The EntityUID of the user</param>
+    /// <param name="component"></param>
+    /// <param name="args"></param>
     private void OnDamage(EntityUid uid, DoAfterComponent component, DamageChangedEvent args)
     {
         if (!args.InterruptsDoAfters || !args.DamageIncreased || args.DamageDelta == null)
             return;
 
-        var delta = args.DamageDelta?.Total;
-
-        var dirty = false;
         foreach (var doAfter in component.DoAfters.Values)
         {
-            if (doAfter.Args.BreakOnDamage && delta >= doAfter.Args.DamageThreshold)
+            if (doAfter.EventArgs.BreakOnDamage && args.DamageDelta?.Total.Float() > doAfter.EventArgs.DamageThreshold)
+                Cancel(uid, doAfter, component);
+        }
+    }
+
+    public override void Update(float frameTime)
+    {
+        base.Update(frameTime);
+
+        foreach (var (_, comp) in EntityManager.EntityQuery<ActiveDoAfterComponent, DoAfterComponent>())
+        {
+            //Don't run the doafter if its comp or owner is deleted.
+            if (EntityManager.Deleted(comp.Owner) || comp.Deleted)
+                continue;
+
+            foreach (var doAfter in comp.DoAfters.Values.ToArray())
             {
-                InternalCancel(doAfter, component);
-                dirty = true;
+                Run(comp.Owner, comp, doAfter);
+
+                switch (doAfter.Status)
+                {
+                    case DoAfterStatus.Running:
+                        break;
+                    case DoAfterStatus.Cancelled:
+                        _pending.Enqueue(doAfter);
+                        break;
+                    case DoAfterStatus.Finished:
+                        _pending.Enqueue(doAfter);
+                        break;
+                    default:
+                        throw new ArgumentOutOfRangeException();
+                }
+            }
+
+            while (_pending.TryDequeue(out var doAfter))
+            {
+                if (doAfter.Status == DoAfterStatus.Cancelled)
+                {
+                    Cancelled(comp, doAfter);
+
+                    if (doAfter.Done != null)
+                        doAfter.Done(true);
+                }
+
+                if (doAfter.Status == DoAfterStatus.Finished)
+                {
+                    Finished(comp, doAfter);
+
+                    if (doAfter.Done != null)
+                        doAfter.Done(false);
+                }
             }
         }
-
-        if (dirty)
-            Dirty(component);
     }
 
-    private void RaiseDoAfterEvents(DoAfter doAfter, DoAfterComponent component)
-    {
-        var ev = doAfter.Args.Event;
-        ev.DoAfter = doAfter;
-
-        if (Exists(doAfter.Args.EventTarget))
-            RaiseLocalEvent(doAfter.Args.EventTarget.Value, (object)ev, doAfter.Args.Broadcast);
-        else if (doAfter.Args.Broadcast)
-            RaiseLocalEvent((object)ev);
-
-        if (component.AwaitedDoAfters.Remove(doAfter.Index, out var tcs))
-            tcs.SetResult(doAfter.Cancelled ? DoAfterStatus.Cancelled : DoAfterStatus.Finished);
-    }
-
-    private void OnDoAfterGetState(EntityUid uid, DoAfterComponent comp, ref ComponentGetState args)
-    {
-        args.State = new DoAfterComponentState(comp);
-    }
-
-    private void OnDoAfterHandleState(EntityUid uid, DoAfterComponent comp, ref ComponentHandleState args)
-    {
-        if (args.Current is not DoAfterComponentState state)
-            return;
-
-        // Note that the client may have correctly predicted the creation of a do-after, but that doesn't guarantee that
-        // the contents of the do-after data are correct. So this just takes the brute force approach and completely
-        // overwrites the state.
-
-        comp.DoAfters.Clear();
-        foreach (var (id, doAfter) in state.DoAfters)
-        {
-            comp.DoAfters.Add(id, new(doAfter));
-        }
-
-        comp.NextId = state.NextId;
-        DebugTools.Assert(!comp.DoAfters.ContainsKey(comp.NextId));
-
-        if (comp.DoAfters.Count == 0)
-            RemCompDeferred<ActiveDoAfterComponent>(uid);
-        else
-            EnsureComp<ActiveDoAfterComponent>(uid);
-    }
-
-
-    #region Creation
     /// <summary>
     ///     Tasks that are delayed until the specified time has passed
     ///     These can be potentially cancelled by the user moving or when other things happen.
     /// </summary>
-    // TODO remove this, as well as AwaitedDoAfterEvent and DoAfterComponent.AwaitedDoAfters
-    [Obsolete("Use the synchronous version instead.")]
-    public async Task<DoAfterStatus> WaitDoAfter(DoAfterArgs doAfter, DoAfterComponent? component = null)
-    {
-        if (!Resolve(doAfter.User, ref component))
-            return DoAfterStatus.Cancelled;
-
-        if (!TryStartDoAfter(doAfter, out var id, component))
-            return DoAfterStatus.Cancelled;
-
-        if (doAfter.Delay <= TimeSpan.Zero)
-        {
-            Logger.Warning("Awaited instant DoAfters are not supported fully supported");
-            return DoAfterStatus.Finished;
-        }
-
-        var tcs = new TaskCompletionSource<DoAfterStatus>();
-        component.AwaitedDoAfters.Add(id.Value.Index, tcs);
-        return await tcs.Task;
-    }
-
-    /// <summary>
-    ///     Attempts to start a new DoAfter. Note that even if this function returns true, an interaction may have
-    ///     occured, as starting a duplicate DoAfter may cancel currently running DoAfters.
-    /// </summary>
-    /// <param name="args">The DoAfter arguments</param>
-    /// <param name="component">The user's DoAfter component</param>
+    /// <param name="eventArgs"></param>
     /// <returns></returns>
-    public bool TryStartDoAfter(DoAfterArgs args, DoAfterComponent? component = null)
-        => TryStartDoAfter(args, out _, component);
-
-    /// <summary>
-    ///     Attempts to start a new DoAfter. Note that even if this function returns false, an interaction may have
-    ///     occured, as starting a duplicate DoAfter may cancel currently running DoAfters.
-    /// </summary>
-    /// <param name="args">The DoAfter arguments</param>
-    /// <param name="id">The Id of the newly started DoAfter</param>
-    /// <param name="comp">The user's DoAfter component</param>
-    /// <returns></returns>
-    public bool TryStartDoAfter(DoAfterArgs args, [NotNullWhen(true)] out DoAfterId? id, DoAfterComponent? comp = null)
+    [Obsolete("Use the synchronous version instead, DoAfter")]
+    public async Task<DoAfterStatus> WaitDoAfter(DoAfterEventArgs eventArgs)
     {
-        DebugTools.Assert(args.Broadcast || Exists(args.EventTarget) || args.Event.GetType() == typeof(AwaitedDoAfterEvent));
-        DebugTools.Assert(args.Event.GetType().HasCustomAttribute<NetSerializableAttribute>()
-            || args.Event.GetType().Namespace is {} ns && ns.StartsWith("Content.IntegrationTests"), // classes defined in tests cannot be marked as serializable.
-            $"Do after event is not serializable. Event: {args.Event.GetType()}");
+        var doAfter = CreateDoAfter(eventArgs);
 
-        if (!Resolve(args.User, ref comp))
-        {
-            Logger.Error($"Attempting to start a doAfter with invalid user: {ToPrettyString(args.User)}.");
-            id = null;
-            return false;
-        }
+        await doAfter.AsTask;
 
-        // Duplicate blocking & cancellation.
-        if (!ProcessDuplicates(args, comp))
-        {
-            id = null;
-            return false;
-        }
-
-        id = new DoAfterId(args.User, comp.NextId++);
-        var doAfter = new DoAfter(id.Value.Index, args, GameTiming.CurTime);
-
-        if (args.BreakOnUserMove)
-            doAfter.UserPosition = Transform(args.User).Coordinates;
-
-        if (args.Target != null && args.BreakOnTargetMove)
-            // Target should never be null if the bool is set.
-            doAfter.TargetPosition = Transform(args.Target.Value).Coordinates;
-
-        // For this we need to stay on the same hand slot and need the same item in that hand slot
-        // (or if there is no item there we need to keep it free).
-        if (args.NeedHand && args.BreakOnHandChange)
-        {
-            if (!TryComp(args.User, out SharedHandsComponent? handsComponent))
-                return false;
-
-            doAfter.InitialHand = handsComponent.ActiveHand?.Name;
-            doAfter.InitialItem = handsComponent.ActiveHandEntity;
-        }
-
-        // Inital checks
-        if (ShouldCancel(doAfter, GetEntityQuery<TransformComponent>(), GetEntityQuery<SharedHandsComponent>()))
-            return false;
-
-        if (args.AttemptFrequency == AttemptFrequency.StartAndEnd && !TryAttemptEvent(doAfter))
-            return false;
-
-        if (args.Delay <= TimeSpan.Zero)
-        {
-            RaiseDoAfterEvents(doAfter, comp);
-            // We don't store instant do-afters. This is just a lazy way of hiding them from client-side visuals.
-            return true;
-        }
-
-        comp.DoAfters.Add(doAfter.Index, doAfter);
-        EnsureComp<ActiveDoAfterComponent>(args.User);
-        Dirty(comp);
-        args.Event.DoAfter = doAfter;
-        return true;
+        return doAfter.Status;
     }
 
     /// <summary>
-    ///     Cancel any applicable duplicate DoAfters and return whether or not the new DoAfter should be created.
+    ///     Creates a DoAfter without waiting for it to finish. You can use events with this.
+    ///     These can be potentially cancelled by the user moving or when other things happen.
+    ///     Use this when you need to send extra data with the DoAfter
     /// </summary>
-    private bool ProcessDuplicates(DoAfterArgs args, DoAfterComponent component)
+    /// <param name="eventArgs">The DoAfterEventArgs</param>
+    /// <param name="data">The extra data sent over </param>
+    public DoAfter DoAfter<T>(DoAfterEventArgs eventArgs, T data)
     {
-        var blocked = false;
-        foreach (var existing in component.DoAfters.Values)
-        {
-            if (existing.Cancelled || existing.Completed)
-                continue;
-
-            if (!IsDuplicate(existing.Args, args))
-                continue;
-
-            blocked = blocked | args.BlockDuplicate | existing.Args.BlockDuplicate;
-
-            if (args.CancelDuplicate || existing.Args.CancelDuplicate)
-                Cancel(args.User, existing.Index, component);
-        }
-
-        return !blocked;
+        var doAfter = CreateDoAfter(eventArgs);
+        doAfter.Done = cancelled => { Send(data, cancelled, eventArgs, doAfter.ID); };
+        return doAfter;
     }
 
-    private bool IsDuplicate(DoAfterArgs args, DoAfterArgs otherArgs)
+    /// <summary>
+    ///     Creates a DoAfter without waiting for it to finish. You can use events with this.
+    ///     These can be potentially cancelled by the user moving or when other things happen.
+    ///     Use this if you don't have any extra data to send with the DoAfter
+    /// </summary>
+    /// <param name="eventArgs">The DoAfterEventArgs</param>
+    public DoAfter DoAfter(DoAfterEventArgs eventArgs)
     {
-        if (IsDuplicate(args, otherArgs, args.DuplicateCondition))
-            return true;
-
-        if (args.DuplicateCondition == otherArgs.DuplicateCondition)
-            return false;
-
-        return IsDuplicate(args, otherArgs, otherArgs.DuplicateCondition);
+        var doAfter = CreateDoAfter(eventArgs);
+        doAfter.Done = cancelled => { Send(cancelled, eventArgs, doAfter.ID); };
+        return doAfter;
     }
 
-    private bool IsDuplicate(DoAfterArgs args, DoAfterArgs otherArgs, DuplicateConditions conditions )
+    private DoAfter CreateDoAfter(DoAfterEventArgs eventArgs)
     {
-        if ((conditions & DuplicateConditions.SameTarget) != 0
-            && args.Target != otherArgs.Target)
+        // Setup
+        var doAfter = new DoAfter(eventArgs, EntityManager);
+        // Caller's gonna be responsible for this I guess
+        var doAfterComponent = Comp<DoAfterComponent>(eventArgs.User);
+        doAfter.ID = doAfterComponent.RunningIndex;
+        doAfter.StartTime = GameTiming.CurTime;
+        Add(eventArgs.User, doAfterComponent, doAfter);
+        return doAfter;
+    }
+
+    private void Run(EntityUid entity, DoAfterComponent comp, DoAfter doAfter)
+    {
+        switch (doAfter.Status)
         {
-            return false;
+            case DoAfterStatus.Running:
+                break;
+            case DoAfterStatus.Cancelled:
+            case DoAfterStatus.Finished:
+                return;
+            default:
+                throw new ArgumentOutOfRangeException();
         }
 
-        if ((conditions & DuplicateConditions.SameTool) != 0
-            && args.Used != otherArgs.Used)
+        doAfter.Elapsed = GameTiming.CurTime - doAfter.StartTime;
+
+        if (IsFinished(doAfter))
         {
-            return false;
+            if (!TryPostCheck(doAfter))
+            {
+                Cancel(entity, doAfter, comp);
+            }
+            else
+            {
+                doAfter.Tcs.SetResult(DoAfterStatus.Finished);
+            }
+
+            return;
         }
 
-        if ((conditions & DuplicateConditions.SameEvent) != 0
-            && args.Event.GetType() != otherArgs.Event.GetType())
+        if (IsCancelled(doAfter))
         {
-            return false;
+            Cancel(entity, doAfter, comp);
         }
+    }
+
+    private bool TryPostCheck(DoAfter doAfter)
+    {
+        return doAfter.EventArgs.PostCheck?.Invoke() != false;
+    }
+
+    private bool IsFinished(DoAfter doAfter)
+    {
+        var delay = TimeSpan.FromSeconds(doAfter.EventArgs.Delay);
+
+        if (doAfter.Elapsed <= delay)
+            return false;
 
         return true;
     }
 
-    #endregion
-
-    #region Cancellation
-    /// <summary>
-    ///     Cancels an active DoAfter.
-    /// </summary>
-    public void Cancel(DoAfterId? id, DoAfterComponent? comp = null)
+    private bool IsCancelled(DoAfter doAfter)
     {
-        if (id != null)
-            Cancel(id.Value.Uid, id.Value.Index, comp);
+        var eventArgs = doAfter.EventArgs;
+        var xForm = GetEntityQuery<TransformComponent>();
+
+        if (!Exists(eventArgs.User) || eventArgs.Target is { } target && !Exists(target))
+            return true;
+
+        if (eventArgs.CancelToken.IsCancellationRequested)
+            return true;
+
+        //TODO: Handle Inertia in space
+        if (eventArgs.BreakOnUserMove && !xForm.GetComponent(eventArgs.User).Coordinates
+                .InRange(EntityManager, doAfter.UserGrid, eventArgs.MovementThreshold))
+            return true;
+
+        if (eventArgs.Target != null && eventArgs.BreakOnTargetMove && !xForm.GetComponent(eventArgs.Target!.Value)
+                .Coordinates.InRange(EntityManager, doAfter.TargetGrid, eventArgs.MovementThreshold))
+            return true;
+
+        if (eventArgs.ExtraCheck != null && !eventArgs.ExtraCheck.Invoke())
+            return true;
+
+        if (eventArgs.BreakOnStun && HasComp<StunnedComponent>(eventArgs.User))
+            return true;
+
+        if (eventArgs.NeedHand)
+        {
+            if (!TryComp<SharedHandsComponent>(eventArgs.User, out var handsComp))
+            {
+                //TODO: Figure out active hand and item values
+
+                // If we had a hand but no longer have it that's still a paddlin'
+                if (doAfter.ActiveHand != null)
+                    return true;
+            }
+            else
+            {
+                var currentActiveHand = handsComp.ActiveHand?.Name;
+                if (doAfter.ActiveHand != currentActiveHand)
+                    return true;
+
+                var currentItem = handsComp.ActiveHandEntity;
+                if (doAfter.ActiveItem != currentItem)
+                    return true;
+            }
+        }
+
+        if (eventArgs.DistanceThreshold != null)
+        {
+            var userXform = xForm.GetComponent(eventArgs.User);
+
+            if (eventArgs.Target != null && !eventArgs.User.Equals(eventArgs.Target))
+            {
+                //recalculate Target location in case Target has also moved
+                var targetCoords = xForm.GetComponent(eventArgs.Target.Value).Coordinates;
+                if (!userXform.Coordinates.InRange(EntityManager, targetCoords, eventArgs.DistanceThreshold.Value))
+                    return true;
+            }
+
+            if (eventArgs.Used != null)
+            {
+                var usedCoords = xForm.GetComponent(eventArgs.Used.Value).Coordinates;
+                if (!userXform.Coordinates.InRange(EntityManager, usedCoords, eventArgs.DistanceThreshold.Value))
+                    return true;
+            }
+        }
+
+        return false;
     }
 
-    /// <summary>
-    ///     Cancels an active DoAfter.
-    /// </summary>
-    public void Cancel(EntityUid entity, ushort id, DoAfterComponent? comp = null)
+    public void Cancel(EntityUid entity, DoAfter doAfter, DoAfterComponent? comp = null)
     {
         if (!Resolve(entity, ref comp, false))
             return;
 
-        if (!comp.DoAfters.TryGetValue(id, out var doAfter))
-        {
-            Logger.Error($"Attempted to cancel do after with an invalid id ({id}) on entity {ToPrettyString(entity)}");
-            return;
-        }
-
-        InternalCancel(doAfter, comp);
-        Dirty(comp);
-    }
-
-    private void InternalCancel(DoAfter doAfter, DoAfterComponent component)
-    {
-        if (doAfter.Cancelled || doAfter.Completed)
+        if (comp.CancelledDoAfters.ContainsKey(doAfter.ID))
             return;
 
-        // Caller is responsible for dirtying the component.
+        if (!comp.DoAfters.ContainsKey(doAfter.ID))
+            return;
+
+        doAfter.Cancelled = true;
         doAfter.CancelledTime = GameTiming.CurTime;
-        RaiseDoAfterEvents(doAfter, component);
-    }
-    #endregion
 
-    #region Query
-    /// <summary>
-    ///     Returns the current status of a DoAfter
-    /// </summary>
-    public DoAfterStatus GetStatus(DoAfterId? id, DoAfterComponent? comp = null)
-    {
-        if (id != null)
-            return GetStatus(id.Value.Uid, id.Value.Index, comp);
-        else
-            return DoAfterStatus.Invalid;
+        var doAfterMessage = comp.DoAfters[doAfter.ID];
+        comp.CancelledDoAfters.Add(doAfter.ID, doAfterMessage);
+
+        if (doAfter.Status == DoAfterStatus.Running)
+        {
+            doAfter.Tcs.SetResult(DoAfterStatus.Cancelled);
+        }
     }
 
     /// <summary>
-    ///     Returns the current status of a DoAfter
+    /// Send the DoAfter event, used where you don't need any extra data to send.
     /// </summary>
-    public DoAfterStatus GetStatus(EntityUid entity, ushort id, DoAfterComponent? comp = null)
+    /// <param name="cancelled"></param>
+    /// <param name="args"></param>
+    private void Send(bool cancelled, DoAfterEventArgs args, byte Id)
     {
-        if (!Resolve(entity, ref comp, false))
-            return DoAfterStatus.Invalid;
+        var ev = new DoAfterEvent(cancelled, args, Id);
 
-        if (!comp.DoAfters.TryGetValue(id, out var doAfter))
-            return DoAfterStatus.Invalid;
-
-        if (doAfter.Cancelled)
-            return DoAfterStatus.Cancelled;
-
-        if (GameTiming.CurTime - doAfter.StartTime < doAfter.Args.Delay)
-            return DoAfterStatus.Running;
-
-        // Theres the chance here that the DoAfter hasn't actually finished yet if the system's update hasn't run yet.
-        // This would also mean the post-DoAfter checks haven't run yet. But whatever, I can't be bothered tracking and
-        // networking whether a do-after has raised its events or not.
-        return DoAfterStatus.Finished;
+        RaiseDoAfterEvent(ev, args);
     }
-    #endregion
+
+    /// <summary>
+    /// Send the DoAfter event, used where you need extra data to send
+    /// </summary>
+    /// <param name="data"></param>
+    /// <param name="cancelled"></param>
+    /// <param name="args"></param>
+    /// <typeparam name="T"></typeparam>
+    private void Send<T>(T data, bool cancelled, DoAfterEventArgs args, byte id)
+    {
+        var ev = new DoAfterEvent<T>(data, cancelled, args, id);
+
+        RaiseDoAfterEvent(ev, args);
+    }
+
+    private void RaiseDoAfterEvent<TEvent>(TEvent ev, DoAfterEventArgs args) where TEvent : notnull
+    {
+        if (args.RaiseOnUser && Exists(args.User))
+            RaiseLocalEvent(args.User, ev, args.Broadcast);
+
+        if (args.RaiseOnTarget && args.Target is { } target && Exists(target))
+        {
+            DebugTools.Assert(!args.RaiseOnUser || args.Target != args.User);
+            DebugTools.Assert(!args.RaiseOnUsed || args.Target != args.Used);
+            RaiseLocalEvent(target, ev, args.Broadcast);
+        }
+
+        if (args.RaiseOnUsed && args.Used is { } used && Exists(used))
+        {
+            DebugTools.Assert(!args.RaiseOnUser || args.Used != args.User);
+            RaiseLocalEvent(used, ev, args.Broadcast);
+        }
+    }
 }

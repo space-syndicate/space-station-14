@@ -1573,7 +1573,7 @@
     - state: panel
       map: ["enum.WiresVisualLayers.MaintenancePanel"]
   - type: AccessReader
-    access: [["Detective"]]
+    access: [["Security"]]
 
 - type: entity
   parent: VendingMachine

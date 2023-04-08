@@ -1,6 +1,7 @@
+using System.Threading;
+using Content.Server.DoAfter;
 using Content.Shared.Alert;
 using Content.Shared.DoAfter;
-using Content.Shared.Ensnaring;
 using Content.Shared.Ensnaring.Components;
 using Content.Shared.IdentityManagement;
 using Content.Shared.StepTrigger.Systems;
@@ -10,7 +11,7 @@ namespace Content.Server.Ensnaring;
 
 public sealed partial class EnsnareableSystem
 {
-    [Dependency] private readonly SharedDoAfterSystem _doAfter = default!;
+    [Dependency] private readonly DoAfterSystem _doAfter = default!;
     [Dependency] private readonly AlertsSystem _alerts = default!;
 
     public void InitializeEnsnaring()
@@ -73,35 +74,40 @@ public sealed partial class EnsnareableSystem
     /// <summary>
     /// Used where you want to try to free an entity with the <see cref="EnsnareableComponent"/>
     /// </summary>
-    /// <param name="target">The entity that will be freed</param>
-    /// <param name="user">The entity that is freeing the target</param>
+    /// <param name="target">The entity that will be free</param>
     /// <param name="ensnare">The entity used to ensnare</param>
     /// <param name="component">The ensnaring component</param>
-    public void TryFree(EntityUid target,  EntityUid user, EntityUid ensnare, EnsnaringComponent component)
+    public void TryFree(EntityUid target, EntityUid ensnare, EnsnaringComponent component, EntityUid? user = null)
     {
         //Don't do anything if they don't have the ensnareable component.
         if (!HasComp<EnsnareableComponent>(target))
             return;
 
-        var freeTime = user == target ? component.BreakoutTime : component.FreeTime;
-        var breakOnMove = user != target || !component.CanMoveBreakout;
+        var isOwner = !(user != null && target != user);
+        var freeTime = isOwner ? component.BreakoutTime : component.FreeTime;
+        bool breakOnMove;
 
-        var doAfterEventArgs = new DoAfterArgs(user, freeTime, new EnsnareableDoAfterEvent(), target, target: target, used: ensnare)
+        if (isOwner)
+            breakOnMove = !component.CanMoveBreakout;
+        else
+            breakOnMove = true;
+
+        var doAfterEventArgs = new DoAfterEventArgs(target, freeTime, target: target, used:ensnare)
         {
             BreakOnUserMove = breakOnMove,
             BreakOnTargetMove = breakOnMove,
             BreakOnDamage = false,
-            NeedHand = true,
-            BlockDuplicate = true,
+            BreakOnStun = true,
+            NeedHand = true
         };
 
-        if (!_doAfter.TryStartDoAfter(doAfterEventArgs))
-            return;
+        _doAfter.DoAfter(doAfterEventArgs);
 
-        if (user == target)
+        if (isOwner)
             _popup.PopupEntity(Loc.GetString("ensnare-component-try-free", ("ensnare", ensnare)), target, target);
-        else
-            _popup.PopupEntity(Loc.GetString("ensnare-component-try-free-other", ("ensnare", ensnare), ("user", Identity.Entity(target, EntityManager))), user, user);
+
+        if (!isOwner && user != null)
+            _popup.PopupEntity(Loc.GetString("ensnare-component-try-free-other", ("ensnare", ensnare), ("user", Identity.Entity(target, EntityManager))), user.Value, user.Value);
     }
 
     /// <summary>

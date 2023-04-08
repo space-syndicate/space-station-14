@@ -9,8 +9,8 @@ using Robust.Shared.Containers;
 using Robust.Shared.Prototypes;
 using Content.Shared.Verbs;
 using Content.Server.Popups;
+using Content.Server.DoAfter;
 using Content.Shared.DoAfter;
-using Content.Shared.Internals;
 using Robust.Shared.Utility;
 
 namespace Content.Server.Body.Systems;
@@ -20,7 +20,7 @@ public sealed class InternalsSystem : EntitySystem
     [Dependency] private readonly IPrototypeManager _protoManager = default!;
     [Dependency] private readonly AlertsSystem _alerts = default!;
     [Dependency] private readonly AtmosphereSystem _atmos = default!;
-    [Dependency] private readonly SharedDoAfterSystem _doAfter = default!;
+    [Dependency] private readonly DoAfterSystem _doAfter = default!;
     [Dependency] private readonly GasTankSystem _gasTank = default!;
     [Dependency] private readonly HandsSystem _hands = default!;
     [Dependency] private readonly InventorySystem _inventory = default!;
@@ -34,7 +34,7 @@ public sealed class InternalsSystem : EntitySystem
         SubscribeLocalEvent<InternalsComponent, ComponentStartup>(OnInternalsStartup);
         SubscribeLocalEvent<InternalsComponent, ComponentShutdown>(OnInternalsShutdown);
         SubscribeLocalEvent<InternalsComponent, GetVerbsEvent<InteractionVerb>>(OnGetInteractionVerbs);
-        SubscribeLocalEvent<InternalsComponent, InternalsDoAfterEvent>(OnDoAfter);
+        SubscribeLocalEvent<InternalsComponent, DoAfterEvent<InternalsData>>(OnDoAfter);
     }
 
     private void OnGetInteractionVerbs(EntityUid uid, InternalsComponent component, GetVerbsEvent<InteractionVerb> args)
@@ -85,19 +85,24 @@ public sealed class InternalsSystem : EntitySystem
 
         var isUser = uid == user;
 
+        var internalsData = new InternalsData();
+
         if (!force)
         {
             // Is the target not you? If yes, use a do-after to give them time to respond.
             //If no, do a short delay. There's no reason it should be beyond 1 second.
             var delay = !isUser ? internals.Delay : 1.0f;
 
-            _doAfter.TryStartDoAfter(new DoAfterArgs(user, delay, new InternalsDoAfterEvent(), uid, target: uid)
+            _doAfter.DoAfter(new DoAfterEventArgs(user, delay, target:uid)
             {
                 BreakOnUserMove = true,
                 BreakOnDamage = true,
+                BreakOnStun = true,
                 BreakOnTargetMove = true,
                 MovementThreshold = 0.1f,
-            });
+                RaiseOnUser = isUser,
+                RaiseOnTarget = !isUser
+            }, internalsData);
 
             return;
         }
@@ -105,12 +110,12 @@ public sealed class InternalsSystem : EntitySystem
         _gasTank.ConnectToInternals(tank);
     }
 
-    private void OnDoAfter(EntityUid uid, InternalsComponent component, InternalsDoAfterEvent args)
+    private void OnDoAfter(EntityUid uid, InternalsComponent component, DoAfterEvent<InternalsData> args)
     {
         if (args.Cancelled || args.Handled)
             return;
 
-        ToggleInternals(uid, args.User, true, component);
+        ToggleInternals(uid, args.Args.User, true, component);
 
         args.Handled = true;
     }
@@ -260,5 +265,10 @@ public sealed class InternalsSystem : EntitySystem
         }
 
         return null;
+    }
+
+    private record struct InternalsData
+    {
+
     }
 }

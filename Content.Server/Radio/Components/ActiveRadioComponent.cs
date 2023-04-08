@@ -14,10 +14,4 @@ public sealed class ActiveRadioComponent : Component
     /// </summary>
     [DataField("channels", customTypeSerializer: typeof(PrototypeIdHashSetSerializer<RadioChannelPrototype>))]
     public HashSet<string> Channels = new();
-
-    /// <summary>
-    ///     If this radio can hear all messages on all maps
-    /// </summary>
-    [DataField("globalReceive")]
-    public bool GlobalReceive = false;
 }

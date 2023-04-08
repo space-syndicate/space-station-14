@@ -1,8 +1,6 @@
-using Content.Shared.DoAfter;
 using Content.Shared.DragDrop;
 using Content.Shared.Kitchen.Components;
 using Content.Shared.Nutrition.Components;
-using Robust.Shared.Serialization;
 
 namespace Content.Shared.Kitchen;
 
@@ -30,9 +28,4 @@ public abstract class SharedKitchenSpikeSystem : EntitySystem
         // TODO: Once we get silicons need to check organic
         args.CanDrop = true;
     }
-}
-
-[Serializable, NetSerializable]
-public sealed class SpikeDoAfterEvent : SimpleDoAfterEvent
-{
 }

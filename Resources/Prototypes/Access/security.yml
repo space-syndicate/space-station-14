@@ -14,9 +14,8 @@
   id: Brig
   name: id-card-access-level-brig
 
-- type: accessLevel
-  id: Detective
-  name: id-card-access-level-detective
+#- type: accessLevel
+#  id: Detective
 
 - type: accessGroup
   id: Security
@@ -25,7 +24,7 @@
   - Security
   - Armory
   - Brig
-  - Detective
+  # - Detective
 
 - type: accessGroup
   id: Armory

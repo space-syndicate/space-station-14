@@ -15,8 +15,6 @@
         amount: 2
       - id: Ointment
         amount: 2
-      - id: Bloodpack
-        amount: 2
 
 - type: entity
   id: LockerWallMedicalFilled
@@ -35,8 +33,6 @@
       - id: Brutepack
         amount: 2
       - id: Ointment
-        amount: 2
-      - id: Bloodpack
         amount: 2
 
 
@@ -89,10 +85,7 @@
   - type: StorageFill
     contents:
       - id: BoxSyringe
-        amount: 1
       - id: BoxBeaker
-        amount: 1
       - id: BoxPillCanister
-        amount: 1
       - id: BoxBottle
-        amount: 2
+      - id: BoxBottle

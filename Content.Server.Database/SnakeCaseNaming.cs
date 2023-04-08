@@ -200,12 +200,12 @@ namespace Content.Server.Database
                 return;
             }
 
-            if (entityType.FindPrimaryKey() is { } primaryKey)
+            if (entityType.FindPrimaryKey() is IConventionKey primaryKey)
             {
                 if (entityType.FindRowInternalForeignKeys(tableIdentifier).FirstOrDefault() is null
                     && (entityType.BaseType is null || entityType.GetTableName() == entityType.BaseType.GetTableName()))
                 {
-                    primaryKey.Builder.HasName(RewriteName(primaryKey.GetDefaultName()!));
+                    primaryKey.Builder.HasName(RewriteName(primaryKey.GetDefaultName()));
                 }
                 else
                 {
@@ -215,16 +215,16 @@ namespace Content.Server.Database
 
             foreach (var foreignKey in entityType.GetForeignKeys())
             {
-                foreignKey.Builder.HasConstraintName(RewriteName(foreignKey.GetDefaultName()!));
+                foreignKey.Builder.HasConstraintName(RewriteName(foreignKey.GetDefaultName()));
             }
 
             foreach (var index in entityType.GetIndexes())
             {
-                index.Builder.HasDatabaseName(RewriteName(index.GetDefaultDatabaseName()!));
+                index.Builder.HasDatabaseName(RewriteName(index.GetDefaultDatabaseName()));
             }
 
             if (annotation?.Value is not null
-                && entityType.FindOwnership() is { } ownership
+                && entityType.FindOwnership() is IConventionForeignKey ownership
                 && (string)annotation.Value != ownership.PrincipalEntityType.GetTableName())
             {
                 foreach (var property in entityType.GetProperties()
@@ -234,9 +234,9 @@ namespace Content.Server.Database
                     RewriteColumnName(property.Builder);
                 }
 
-                if (entityType.FindPrimaryKey() is { } key)
+                if (entityType.FindPrimaryKey() is IConventionKey key)
                 {
-                    key.Builder.HasName(RewriteName(key.GetDefaultName()!));
+                    key.Builder.HasName(RewriteName(key.GetDefaultName()));
                 }
             }
         }
@@ -245,7 +245,7 @@ namespace Content.Server.Database
             IConventionForeignKeyBuilder relationshipBuilder,
             IConventionContext<IConventionForeignKeyBuilder> context)
         {
-            relationshipBuilder.HasConstraintName(RewriteName(relationshipBuilder.Metadata.GetDefaultName()!));
+            relationshipBuilder.HasConstraintName(RewriteName(relationshipBuilder.Metadata.GetDefaultName()));
         }
 
         public void ProcessKeyAdded(IConventionKeyBuilder keyBuilder, IConventionContext<IConventionKeyBuilder> context)
@@ -257,7 +257,7 @@ namespace Content.Server.Database
 
             if (entityType.FindOwnership() is null)
             {
-                keyBuilder.HasName(RewriteName(keyBuilder.Metadata.GetDefaultName()!));
+                keyBuilder.HasName(RewriteName(keyBuilder.Metadata.GetDefaultName()));
             }
         }
 
@@ -270,7 +270,7 @@ namespace Content.Server.Database
 
                 foreach (var property in entityType.GetProperties())
                 {
-                    var columnName = property.GetColumnName();
+                    var columnName = property.GetColumnBaseName();
                     if (columnName.StartsWith(entityType.ShortName() + '_', StringComparison.Ordinal))
                     {
                         property.Builder.HasColumnName(
@@ -310,11 +310,11 @@ namespace Content.Server.Database
 
             var baseColumnName = StoreObjectIdentifier.Create(property.DeclaringEntityType, StoreObjectType.Table) is { } tableIdentifier
                 ? property.GetDefaultColumnName(tableIdentifier)
-                : property.GetDefaultColumnName();
+                : property.GetDefaultColumnBaseName();
 
             if (baseColumnName == "Id")
                 baseColumnName = entityType.GetTableName() + baseColumnName;
-            propertyBuilder.HasColumnName(RewriteName(baseColumnName!));
+            propertyBuilder.HasColumnName(RewriteName(baseColumnName));
 
             foreach (var storeObjectType in _storeObjectTypes)
             {
