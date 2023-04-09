@@ -1,0 +1,50 @@
+- type: entity
+  name: Kiirava magic wand.
+  id: ADTKiiravamagicwand
+  parent: BaseWeaponHeavyMachineGun
+  description: "Improved minigun model with reduced magazine, increased damage and toxic effect. Made by a brilliant beastman girl. P.S. This weapon saved her life when escaping from the captivity of the cultists."
+  components:
+  - type: Sprite
+    sprite: ADT/Objects/Weapons/Guns/kiiravamagicwand.rsi
+    layers:
+    - state: icon
+      map: ["enum.GunVisualLayers.Base"] 
+  - type: Item
+    size: 1
+    sprite: ADT/Objects/Weapons/Guns/kiiravamagicwand.rsi
+  - type: Gun
+    fireRate: 1 
+    soundGunshot:
+      path: /Audio/Weapons/Guns/Gunshots/Magic/staff_healing.ogg
+  - type: BallisticAmmoProvider
+    proto: ADTCartridgeMinigun
+    capacity: 1500
+  - type: MagazineVisuals
+    magState: mag
+    steps: 4
+    zeroVisible: true
+  - type: Appearance
+  - type: ContainerContainer
+    containers:
+      ballistic-ammo: !type:Container
+        ents: []
+        
+- type: entity
+  id: ADTCartridgeWand
+  name: cartridge (.10 rifle)
+  parent: BaseCartridgeHeavyRifle
+  components:
+  - type: CartridgeAmmo
+    proto: ADTBulletWand
+    deleteOnSpawn: true
+
+- type: entity
+  id: ADTBulletWand
+  name: minigun bullet (.10 rifle)
+  parent: BulletHeavyRifle
+  noSpawn: true
+  components:
+  - type: Projectile
+    damage:
+      types:
+        Slash: 50 

@@ -67,7 +67,7 @@
   components:
   - type: Sharp
   - type: Sprite
-    sprite: ADT/Objects/Weapons/Melee/bouquet_with_beer.png
+    sprite: ADT/Objects/Weapons/Melee/bouquet_with_beer.rsi
     state: icon
   - type: MeleeWeapon
     attackRate: 1.0 
@@ -76,7 +76,7 @@
         Slash: 1
   - type: Item
     size: 15
-    sprite: ADT/Objects/Weapons/Melee/bouquet_with_beer.png
+    sprite: ADT/Objects/Weapons/Melee/bouquet_with_beer.rsi
   - type: DisarmMalus
 
 - type: entity

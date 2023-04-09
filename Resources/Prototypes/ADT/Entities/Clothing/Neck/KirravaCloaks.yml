@@ -1,0 +1,24 @@
+- type: entity
+  parent: ClothingNeckBase
+  id: ADTClothingNeckKirasCloakn
+  name: Kiras cloakns
+  description: cloakn Kiras
+  components:
+  - type: Sprite
+    sprite: ADT/Clothing/Neck/Cloaks/kiras_cloakns.rsi
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.9
+        Slash: 0.9
+        Piercing: 0.9
+        Heat: 0.9
+        Radiation: 0.9
+  - type: ClothingSpeedModifier
+    walkModifier: 1.2
+    sprintModifier: 1.2
+
+#  - type: ClothingSpeedModifier
+#    walkModifier: 0.7
+#    sprintModifier: 0.7
+#  - type: ExplosionResistance
