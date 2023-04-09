@@ -1,0 +1,87 @@
+- type: body
+  id: BodyHaisenberg
+  name: "BodyHaisenberg"
+  root: torso
+  slots:
+    torso:
+      part: TorsoAnimal
+      connections:
+      - right arm
+      - left arm
+      - legs
+      organs:
+        lungs: OrganAnimalLungs
+        stomach: OrganAnimalStomach
+        liver: OrganAnimalLiver
+        heart: OrganAnimalHeart
+        kidneys: OrganAnimalKidneys
+    right arm:
+      part: RightArmHuman
+      connections:
+      - right hand
+    left arm:
+      part: LeftArmHuman
+      connections:
+      - left hand
+    right hand:
+      part: RightHandHuman
+    left hand:
+      part: LeftHandHuman
+    legs:
+      part: LegsAnimal
+      connections:
+      - feet
+    feet:
+      part: FeetAnimal
+
+- type: entity
+  name:  Хайзенберг
+  parent: MobHamster
+  suffix: backmen
+  id: MobHaisenberg
+  components:
+  - type: Icon
+    sprite: Markers/jobs.rsi
+  - type: GhostTakeoverAvailable
+    name: Хайзенберг
+    description: Варите сладости и раздавайте другим!
+    rules: Вы Хайзенберг, ваша задача сварить и продавать таблетки!
+  - type: Identity
+  - type: Hands
+  - type: Clickable
+  - type: Fingerprint
+  - type: Dna
+  - type: UserInterface
+    interfaces:
+    - key: enum.StrippingUiKey.Key
+      type: StrippableBoundUserInterface
+  - type: CanHostGuardian
+  - type: Inventory
+    templateId: InvHaisenberg
+  - type: Body
+    prototype: BodyHaisenberg
+
+
+- type: inventoryTemplate
+  id: InvHaisenberg
+  slots:
+  - name: back
+    slotTexture: back
+    slotFlags: BACK
+    stripTime: 60
+    uiWindowPos: 0,1
+    slotGroup: MainHotbar
+    strippingWindowPos: 2,5
+    displayName: Back
+  - name: mask
+    slotTexture: mask
+    slotFlags: MASK
+    slotGroup: MainHotbar
+    uiWindowPos: 0,2
+    strippingWindowPos: 1,1
+    displayName: Mask
+    whitelist:
+      tags:
+        - PetWearable
+      components:
+        - Smokable
