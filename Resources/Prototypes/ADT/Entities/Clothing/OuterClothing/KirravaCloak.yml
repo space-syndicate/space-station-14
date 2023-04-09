@@ -26,10 +26,10 @@
         Radiation: 0.9
   - type: ToggleableClothing
     clothingPrototype: ADTClothingHeadHelmetHardsuitKiravaHoodsec
-
+    
 - type: entity
-  parent: ClothingHeadHardsuitWithLightBase
-  id: ADTPilotSuitHelm
+  parent: ClothingHeadBase
+  id: ADTKirasHead
   noSpawn: true
   name: Kirava Hoodsec
   description: The steering wheel is imprinted in the visor of this helmet.

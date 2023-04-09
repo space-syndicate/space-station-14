@@ -12,7 +12,8 @@
   - type: Item
     size: 1
     sprite: ADT/Objects/Weapons/Guns/kiiravamagicwand.rsi
-    fireRate: 150
+  - type: Gun
+    fireRate: 1 
     soundGunshot:
       path: /Audio/Weapons/Guns/Gunshots/Magic/staff_healing.ogg
   - type: BallisticAmmoProvider
@@ -27,7 +28,7 @@
     containers:
       ballistic-ammo: !type:Container
         ents: []
-
+        
 - type: entity
   id: ADTCartridgeWand
   name: cartridge (.10 rifle)
