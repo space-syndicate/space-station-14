@@ -1,0 +1,8 @@
+- type: entity
+  parent: ClothingNeckBase
+  id: ClothingNeckCloakPirate
+  name: Плащ пирата
+  description: Когда нету флагштока, ты сам становишься флагштоком!
+  components:
+  - type: Sprite
+    sprite: Backmen/Clothing/Neck/Cloaks/pirate.rsi
