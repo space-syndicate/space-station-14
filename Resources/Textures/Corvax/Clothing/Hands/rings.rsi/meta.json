@@ -1,0 +1,53 @@
+{
+  "version": 1,
+  "license": "CC-BY-SA-3.0",
+  "copyright": "Created by discord: no_mad#0260",
+  "size": {
+    "x": 32,
+    "y": 32
+  },
+  "states": [
+    {
+      "name": "silverring"
+    },
+    {
+      "name": "silverring_frame"
+    },
+    {
+      "name": "goldring"
+    },
+    {
+      "name": "goldring_frame"
+    },
+    {
+      "name": "gold-glowing"
+    },
+    {
+      "name": "goldframed-glowing"
+    },
+    {
+      "name": "ruby"
+    },
+    {
+      "name": "ruby-glowing"
+    },
+    {
+      "name": "sapphire"
+    },
+    {
+      "name": "sapphire-glowing"
+    },
+    {
+      "name": "gold-equipped-HAND",
+      "directions": 4
+    },
+    {
+      "name": "silver-equipped-HAND",
+      "directions": 4
+    },
+    {
+      "name": "gold-glowing-equipped-HAND",
+      "directions": 4
+    }
+  ]
+}
