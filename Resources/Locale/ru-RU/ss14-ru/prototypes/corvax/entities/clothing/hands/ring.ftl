@@ -1,4 +1,4 @@
-ent-ClothingStandardRing = серебряное кольцо.
+ent-ClothingStandardRing = серебряное кольцо
     .desc = Перекрашенное стальное кольцо.
     .suffix = { "" }
 ent-ClothingSilverSapphireRing = серебряное кольцо с сапфиром
