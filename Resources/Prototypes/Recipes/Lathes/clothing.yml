@@ -486,15 +486,6 @@
     Cloth: 150
     Durathread: 150
 
-type: latheRecipe # Only corvax mantle
-  id: ClothingNeckMantleQM
-  result: ClothingNeckMantleQM
-  completetime: 2.8
-  materials:
-    Cloth: 150
-    Durathread: 150
-
-
 - type: latheRecipe # Corvax-Resprite: Old HOS mantle
   id: ClothingNeckMantleHOSShoulder
   icon:
