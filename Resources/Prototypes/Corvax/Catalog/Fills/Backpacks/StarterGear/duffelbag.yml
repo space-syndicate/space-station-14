@@ -1,7 +1,7 @@
 - type: entity
   noSpawn: true
-  parent: ClothingDuffelbag
-  id: ClothingDuffelbagIAAFilled
+  parent: ClothingBackpackDuffel
+  id: ClothingBackpackDuffelIAAFilled
   components:
     - type: StorageFill
       contents:
