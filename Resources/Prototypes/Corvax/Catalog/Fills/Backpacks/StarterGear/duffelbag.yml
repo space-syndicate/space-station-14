@@ -1,0 +1,10 @@
+- type: entity
+  noSpawn: true
+  parent: ClothingDuffelbag
+  id: ClothingDuffelbagIAAFilled
+  components:
+    - type: StorageFill
+      contents:
+        - id: BoxSurvival
+        - id: BriefcaseIAAFilled
+
