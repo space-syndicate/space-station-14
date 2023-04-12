@@ -1,0 +1,14 @@
+- type: latheRecipe
+  id: Ring
+  result: ClothingStandardRing
+  completetime: 2
+  materials:
+    Steel: 100
+
+- type: latheRecipe
+  id: SapphireRing
+  result: ClothingSilverSapphireRing
+  completetime: 2
+  materials:
+    Steel: 100
+    Glass: 50
