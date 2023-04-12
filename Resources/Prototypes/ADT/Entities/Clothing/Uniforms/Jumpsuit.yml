@@ -130,3 +130,58 @@
     sprite: ADT/Clothing/Uniforms/Jumpsuit/black_wedding_women_suit.rsi
   - type: Clothing
     sprite: ADT/Clothing/Uniforms/Jumpsuit/black_wedding_women_suit.rsi
+
+- type: entity
+  parent: ClothingUniformBase
+  id: ADTClothingUniformAiryWhiteSuit
+  name: Airy White suit
+  description: The same, only white. Do not wear a black bra under a white sleeve!
+  components:
+  - type: Sprite
+    sprite: ADT/Clothing/Uniforms/Jumpsuit/airy_white_suit.rsi
+  - type: Clothing
+    sprite: ADT/Clothing/Uniforms/Jumpsuit/airy_white_suit.rsi
+
+- type: entity
+  parent: ClothingUniformBase
+  id: ADTClothingUniformAiryBlackSuit
+  name: Airy White suit
+  description: Gothic, strict, sexy. For those who like to show their beautiful bra.
+  components:
+  - type: Sprite
+    sprite: ADT/Clothing/Uniforms/Jumpsuit/airy_black_suit.rsi
+  - type: Clothing
+    sprite: ADT/Clothing/Uniforms/Jumpsuit/airy_black_suit.rsi
+
+- type: entity
+  parent: ClothingUniformBase
+  id: ADTClothingUniformRedCocktailDress
+  name: Red Cocktail Dress
+  description: Girl, this dress is made for this party! Blow up the dance floor!
+  components:
+  - type: Sprite
+    sprite: ADT/Clothing/Uniforms/Jumpsuit/red_cocktail_dress.rsi
+  - type: Clothing
+    sprite: ADT/Clothing/Uniforms/Jumpsuit/red_cocktail_dress.rsi
+
+- type: entity
+  parent: ClothingUniformBase
+  id: ADTClothingUniformBlackElegantDress
+  name: Black Elegant Dress
+  description: Isn't it too short? Can't see my behind?
+  components:
+  - type: Sprite
+    sprite: ADT/Clothing/Uniforms/Jumpsuit/black-elegant-dress.rsi
+  - type: Clothing
+    sprite: ADT/Clothing/Uniforms/Jumpsuit/black-elegant-dress.rsi
+
+- type: entity
+  parent: ClothingUniformBase
+  id: ADTClothingUniformOrangeBeachSuit
+  name: Orange Beach Suit
+  description: The mood color is orange. For the fans of oranges and a good tan.
+  components:
+  - type: Sprite
+    sprite: ADT/Clothing/Uniforms/Jumpsuit/orange-beach-suit.rsi
+  - type: Clothing
+    sprite: ADT/Clothing/Uniforms/Jumpsuit/orange-beach-suit.rsi
