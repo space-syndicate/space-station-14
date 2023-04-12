@@ -61,7 +61,7 @@
   parent: ClothingStandardRing
   id: ClothingGlowingGoldRing
   name: shiny gold ring
-  description: Golden ring with ruby!
+  description: A ring made from ultra-rare gold materials.
   components:
   - type: PointLight
     enabled: true
@@ -88,7 +88,7 @@
   parent: ClothingGlowingGoldRing
   id: ClothingGlowingGoldRubyRing
   name: shiny gold ring with ruby
-  description: Golden ring with ruby!
+  description: A ring made from ultra-rare gold materials and a rare space ruby!
   components:
   - type: Sprite
     layers:
@@ -107,7 +107,7 @@
   parent: ClothingStandardRing
   id:  ClothingGlowingSilverSapphireRing
   name: shiny silver ring with sapphire
-  description: Silver ring with sapphire!
+  description: Simple silver ring and a rare space sapphire!
   components:
   - type: PointLight
     enabled: true
