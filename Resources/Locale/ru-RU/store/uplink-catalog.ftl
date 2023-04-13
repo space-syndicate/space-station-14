@@ -68,7 +68,7 @@ uplink-voice-mask-desc = Противогаз, позволяющий подст
 uplink-storage-implanter-name = имплантер Хранилище
 uplink-storage-implanter-desc = Прячьте предметы внутри себя благодаря новой блюспейс-технологии!
 uplink-freedom-implanter-name = имплантер Свобода
-uplink-freedom-implanter-desc = Сбегите от этих противных сотрудников СБ при помощи этого имплантата, который можно использовать аж три раза!
+uplink-freedom-implanter-desc = Сбегите от этих противных сотрудников СБ при помощи этого импланта, который можно использовать аж три раза!
 uplink-macro-bomb-implanter-name = имплантер Макробомба
 uplink-macro-bomb-implanter-desc = Вколите его, и после смерти вы устроите большой взрыв. Большой риск для союзников, используйте на свой страх и риск. Заменяет Микробомбу.
 # Bundles
