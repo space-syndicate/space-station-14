@@ -97,12 +97,12 @@
 - type: entity
   parent: BaseUplinkRadio
   id: BaseUplinkRadio40TC
-  suffix: 60 TC, NukeOps
+  suffix: 60 TC, NukeOps #Corvax-Rebalance
   components:
   - type: Store
     preset: StorePresetUplink
     balance:
-      Telecrystal: 60
+      Telecrystal: 60 #Corvax-Rebalance
   - type: Tag
     tags:
     - NukeOpsUplink
