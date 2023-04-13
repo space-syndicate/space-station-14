@@ -1,26 +1,25 @@
 - type: entity          
   parent: BaseWhips
   id: ADTWhips
-  name: Whips
-  description: Whips
+  name: Whip
+  description: Hot whip
   components:
   - type: Sprite
-    sprite: ADT/Objects/Fun/whips.rsi
+    sprite: ADT/Objects/Fun/ERP/whips.rsi
     state: icon
   - type: Item
-    sprite: ADT/Objects/Fun/whips.rsi
+    sprite: ADT/Objects/Fun/ERP/whips.rsi
     size: 5
   - type: Clothing
-    sprite: ADT/Objects/Fun/whips.rsi
+    sprite: ADT/Objects/Fun/ERP/whips.rsi
     slots: [Belt]
     quickEquip: false
   - type: EmitSoundOnUse
     sound:
-      collection: CluwneHorn
+      path: /Audio/Effects/whip.ogg
       params:
         variation: 0.246
-
-       
+   
 
 - type: entity
   parent: BaseItem
@@ -28,25 +27,22 @@
   abstract: true
   components:
   - type: Sprite
-    sprite: ADT/Objects/Fun/whips.rsi
+    sprite: ADT/Objects/Fun/ERP/whips.rsi
     netsync: false
   - type: StaminaDamageOnHit
-    damage: 5
+    damage: 5      
   - type: EmitSoundOnUse
     sound:
-      collection: ToySqueak
+      path: /Audio/Effects/whip.ogg
   - type: EmitSoundOnLand
     sound:
-      collection: ToySqueak
-  - type: EmitSoundOnActivate
-    sound:
-      collection: ToySqueak
+      path: /Audio/Effects/whip.ogg
   - type: ItemCooldown
   - type: UseDelay
     delay: 1.0
   - type: MeleeWeapon
     soundHit:
-      collection: ToySqueak
+      path: /Audio/Effects/whip.ogg
     damage:
       types:
         Blunt: 0
