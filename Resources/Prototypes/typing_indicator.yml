@@ -1,4 +1,4 @@
-﻿- type: typingIndicator
+- type: typingIndicator
   id: default
   typingState: default0
   idleState: default3 # Corvax-TypingIndicator
@@ -27,3 +27,7 @@
   id: lawyer
   typingState: lawyer0
   idleState: lawyer3 # Corvax-TypingIndicator
+
+- type: typingIndicator
+  id: moth
+  typingState: moth0
