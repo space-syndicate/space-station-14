@@ -77,6 +77,8 @@
   cures:
     - !type:DiseaseBedrestCure
       maxLength: 30
+    - !type:DiseaseJustWaitCure
+      maxLength: 800
     - !type:DiseaseReagentCure
       reagent: Sigynate
       min: 30
