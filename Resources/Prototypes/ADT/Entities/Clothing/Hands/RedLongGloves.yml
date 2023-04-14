@@ -1,0 +1,13 @@
+- type: entity
+  parent: ClothingHandsBase
+  id: ADTClothingHandsLongRedGloves
+  name: Long Red Gloves
+  description: Silk, soft gloves. Your touch will be remembered by everyone.
+  components:
+  - type: Sprite
+    sprite: ADT/Clothing/Hands/Gloves/long-red-gloves.rsi
+  - type: Clothing
+    sprite: ADT/Clothing/Hands/Gloves/long-red-gloves.rsi
+  - type: Fiber
+    fiberMaterial: fibers-synthetic
+  - type: FingerprintMask
