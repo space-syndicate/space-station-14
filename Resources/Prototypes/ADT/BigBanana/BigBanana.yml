@@ -58,7 +58,6 @@
       - ItemMask
   - type: Tag
     tags:
-    - Recyclable
     - Trash
   - type: SolutionContainerManager
     solutions:
@@ -69,7 +68,6 @@
           Quantity: 4
   - type: Extractable
     grindableSolutionName: food
-  - type: Recyclable
   - type: SpaceGarbage
 
 #Более большая версия. Тут наследование уже работает адекватно. По скольку это просто шалость, то я не особо заморачивался надо что то друблировать или нет.
