@@ -13,9 +13,10 @@
       state: ripley-alt
   - type: MobMover
   - type: Mech
-    baseState: ripley-alt
-    openState: ripley-open-alt
-    brokenState: ripley-broken-alt
+    baseState: ripley
+    openState: ripley-open
+    brokenState: ripley-broken
+  - type: MechAir
   - type: DoAfter
   - type: Repairable
     fuelCost: 25
