@@ -1,7 +1,12 @@
+- type: emote
+  id: BCatMeow
+  category: Vocal
+  chatMessages: [meows]
+
 - type: disease
-  id: furry
-  name: disease-proto-furry
-  cureResist: 0.50
+  id: FurryVirus
+  name: disease-proto-furry-virus
+  cureResist: 0.7
   stages:
     - 0
     - 120
@@ -27,22 +32,19 @@
     - !type:DiseaseSnough
       probability: 0.03
       snoughMessage: disease-screech
-      snoughSound:
-        collection: CatMeows
+      emote: BCatMeow
       stages:
         - 0
     - !type:DiseaseSnough
       probability: 0.05
       snoughMessage: disease-screech
-      snoughSound:
-        collection: CatMeows
+      emote: BCatMeow
       stages:
         - 1
     - !type:DiseaseSnough
       probability: 0.2
       snoughMessage: disease-screech
-      snoughSound:
-        collection: CatMeows
+      emote: BCatMeow
       stages:
         - 2
     # asphyxiation damage, probably from all the screeching
@@ -54,7 +56,6 @@
       stages:
         - 1
     - !type:DiseasePolymorph
-      probability: 1
       polymorphId: BFoxMorph
       polymorphMessage: disease-polymorph
       polymorphSound:
@@ -74,6 +75,10 @@
       stages:
         - 2
   cures:
+    - !type:DiseaseBedrestCure
+      maxLength: 30
+    - !type:DiseaseJustWaitCure
+      maxLength: 400
     - !type:DiseaseReagentCure
       reagent: Sigynate
       min: 30
@@ -83,9 +88,11 @@
       reagent: Theobromine
       min: 50
       stages:
+        - 0
         - 1
     - !type:DiseaseReagentCure
       reagent: WhiteRussian
       min: 90
       stages:
         - 0
+        - 1
