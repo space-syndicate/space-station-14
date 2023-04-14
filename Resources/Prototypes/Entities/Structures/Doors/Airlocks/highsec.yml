@@ -58,6 +58,7 @@
   - type: Appearance
     visuals:
     - type: AirlockVisualizer
+      openUnlitVisible: true # Corvax-Resprite-Airlocks
   - type: WiresVisuals
   - type: ApcPowerReceiver
     powerLoad: 20
