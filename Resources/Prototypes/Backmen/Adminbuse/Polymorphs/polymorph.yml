@@ -30,7 +30,7 @@
   entity: MobHumanoidFox
   forced: true
   transferName: true
-  transferHumanoidAppearance: true
+#  transferHumanoidAppearance: true
   revertOnCrit: false
   revertOnDeath: false
   inventory: Transfer
