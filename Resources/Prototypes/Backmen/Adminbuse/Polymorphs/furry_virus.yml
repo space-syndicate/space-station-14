@@ -75,8 +75,6 @@
       stages:
         - 2
   cures:
-    - !type:DiseaseBedrestCure
-      maxLength: 30
     - !type:DiseaseJustWaitCure
       maxLength: 800
     - !type:DiseaseReagentCure
