@@ -138,3 +138,14 @@
       shader: unshaded
   - type: Storage
     capacity: 9999
+
+- type: entity
+  parent: ClothingBackpackSatchel
+  id: ClothingBackpackSatchelCE
+  name: chief engineer's satchel
+  description: Innovational satchel with more reinforced shoulder strap.
+  components:
+  - type: Sprite
+    sprite: Clothing/Back/Satchels/ce.rsi
+  - type: Storage
+    capacity: 150

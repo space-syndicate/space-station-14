@@ -37,3 +37,6 @@ ent-ClothingBackpackSatchelSalvage = сумка утилизатора
 ent-ClothingBackpackSatchelHolding = сумка хранения
     .desc = Сумка, открывающаяся в локальный карман блюспейса.
     .suffix = { "" }
+ent-ClothingBackpackSatchelCE = сумка старшего инженера
+    .desc = Инновационная сумка с укрепленной лямкой.
+    .suffix = { "" }
