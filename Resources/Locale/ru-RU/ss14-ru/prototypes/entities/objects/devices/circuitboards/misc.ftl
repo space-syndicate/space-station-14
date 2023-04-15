@@ -1,2 +1,2 @@
-ent-StationMapCircuitboard = станционная карта (машинная плата)
+ent-StationMapCircuitboard = карта станции (машинная плата)
     .desc = Машинная плата для станционной карты.
