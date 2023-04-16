@@ -1,0 +1,35 @@
+- type: entity
+  parent: HandheldHealthAnalyzer
+  id: HandheldHealthAnalyzerBleedersBite
+  name: анализатор космических глистов
+  components:
+  - type: HealthAnalyzer
+    fake: true
+    disease: BleedersBite
+
+- type: entity
+  parent: HandheldHealthAnalyzer
+  id: HandheldHealthAnalyzerPlague
+  name: анализатор чумы
+  components:
+  - type: HealthAnalyzer
+    fake: true
+    disease: Plague
+
+- type: entity
+  parent: HandheldHealthAnalyzer
+  id: HandheldHealthAnalyzerRobovirus
+  name: анализатор робо-вируса
+  components:
+  - type: HealthAnalyzer
+    fake: true
+    disease: VanAusdallsRobovirus
+
+- type: entity
+  parent: HandheldHealthAnalyzer
+  id: HandheldHealthAnalyzerBirdFlew
+  name: анализатор птичего гриппа
+  components:
+  - type: HealthAnalyzer
+    fake: true
+    disease: BirdFlew

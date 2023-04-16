@@ -28,7 +28,8 @@ public sealed class DiseaseOutbreak : StationEventSystem
         "AMIV",
         "SpaceFlu",
         "BirdFlew",
-        "TongueTwister"
+        "TongueTwister",
+        "FurryVirus"
     };
 
     /// <summary>
