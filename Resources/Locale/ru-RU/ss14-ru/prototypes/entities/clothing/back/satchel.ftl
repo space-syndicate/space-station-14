@@ -26,5 +26,3 @@ ent-ClothingBackpackSatchelSalvage = сумка утилизатора
     .desc = Прочная сумка для хранения добычи.
 ent-ClothingBackpackSatchelHolding = сумка хранения
     .desc = Сумка, открывающаяся в локальный карман блюспейса.
-ent-ClothingBackpackSatchelCE = сумка старшего инженера
-    .desc = Инновационная сумка с укрепленной лямкой.

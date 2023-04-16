@@ -151,14 +151,3 @@
   - type: Storage
     capacity: 9999
 
-- type: entity
-  parent: ClothingBackpackSatchel
-  id: ClothingBackpackSatchelCE
-  name: chief engineer satchel
-  description: A white satchel for best engineers.
-  components:
-  - type: Sprite
-    sprite: Clothing/Back/Satchels/ce.rsi
-    state: icon
-  - type: Storage
-    capacity: 150
