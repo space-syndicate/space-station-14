@@ -51,7 +51,7 @@
 
 - type: entity
   noSpawn: true
-  parent: ClothingBackpackCE #Corvax-Resprite
+  parent: ClothingBackpackCE # Corvax-Resprite
   id: ClothingBackpackChiefEngineerFilled
   components:
   - type: StorageFill
