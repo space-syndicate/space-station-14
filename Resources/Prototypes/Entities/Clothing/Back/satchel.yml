@@ -44,18 +44,6 @@
 
 - type: entity
   parent: ClothingBackpackSatchel
-  id: ClothingBackpackSatchelClown
-  name: clown satchel
-  description: For fast running from security.
-  components:
-  - type: Sprite
-    sprite: Clothing/Back/Satchels/clown.rsi
-  - type: Storage
-    storageOpenSound:
-      collection: BikeHorn
-
-- type: entity
-  parent: ClothingBackpackSatchel
   id: ClothingBackpackSatchelMedical
   name: medical satchel
   description: A sterile satchel used in medical departments.
@@ -71,7 +59,7 @@
   components:
   - type: Sprite
     sprite: Clothing/Back/Satchels/chemistry.rsi
-
+    
 - type: entity
   parent: ClothingBackpackSatchel
   id: ClothingBackpackSatchelVirology
@@ -80,7 +68,7 @@
   components:
   - type: Sprite
     sprite: Clothing/Back/Satchels/virology.rsi
-
+    
 - type: entity
   parent: ClothingBackpackSatchel
   id: ClothingBackpackSatchelGenetics
@@ -150,3 +138,14 @@
       shader: unshaded
   - type: Storage
     capacity: 9999
+
+- type: entity
+  parent: ClothingBackpackSatchel
+  id: ClothingBackpackSatchelCE
+  name: chief engineer's satchel
+  description: Innovational satchel with more reinforced shoulder strap.
+  components:
+  - type: Sprite
+    sprite: Clothing/Back/Satchels/ce.rsi
+  - type: Storage
+    capacity: 150
