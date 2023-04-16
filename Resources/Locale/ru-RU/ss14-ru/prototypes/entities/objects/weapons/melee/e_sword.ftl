@@ -1,6 +1,10 @@
 ent-EnergySword = энергетический меч
     .desc = Очень громкий, и столь же опасный. Выключенным может храниться в кармане.
-    .suffix = { "" }
 ent-EnergyDagger = ручка
     .desc = Ручка с чёрными чернилами.
     .suffix = Энергокинжал
+ent-EnergyDaggerBox = e-dagger box
+    .desc = A small box containing an e-dagger. Packaging disintegrates when opened, leaving no evidence behind.
+    .suffix = E-Dagger
+ent-EnergyCutlass = абордажная энергосабля
+    .desc = Экзотическое энергетическое оружие.

@@ -1,6 +1,7 @@
 using Content.Client.Administration.Managers;
 using Content.Client.Changelog;
 using Content.Client.Chat.Managers;
+using Content.Client.Corvax.DiscordAuth;
 using Content.Client.Corvax.JoinQueue;
 using Content.Client.Corvax.Sponsors;
 using Content.Client.Corvax.TTS;
@@ -27,7 +28,6 @@ using Content.Shared.Administration;
 using Content.Shared.AME;
 using Content.Shared.Gravity;
 using Content.Shared.Localizations;
-using Content.Shared.Markers;
 using Robust.Client;
 using Robust.Client.Graphics;
 using Robust.Client.Input;
@@ -73,6 +73,7 @@ namespace Content.Client.Entry
         [Dependency] private readonly SponsorsManager _sponsorsManager = default!; // Corvax-Sponsors
         [Dependency] private readonly JoinQueueManager _queueManager = default!; // Corvax-Queue
         [Dependency] private readonly TTSManager _ttsManager = default!; // Corvax-TTS
+        [Dependency] private readonly DiscordAuthManager _discordAuthManager = default!; // Corvax-DiscordAuth
 
         public override void Init()
         {
@@ -92,7 +93,6 @@ namespace Content.Client.Entry
             _componentFactory.IgnoreMissingComponents();
 
             // Do not add to these, they are legacy.
-            _componentFactory.RegisterClass<SharedSpawnPointComponent>();
             _componentFactory.RegisterClass<SharedGravityGeneratorComponent>();
             _componentFactory.RegisterClass<SharedAMEControllerComponent>();
             // Do not add to the above, they are legacy
@@ -171,6 +171,7 @@ namespace Content.Client.Entry
             _sponsorsManager.Initialize(); // Corvax-Sponsors
             _queueManager.Initialize(); // Corvax-Queue
             _ttsManager.Initialize(); // Corvax-TTS
+            _discordAuthManager.Initialize(); // Corvax-DiscordAuth
             _documentParsingManager.Initialize();
 
             _baseClient.RunLevelChanged += (_, args) =>
