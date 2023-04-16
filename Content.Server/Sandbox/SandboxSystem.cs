@@ -13,6 +13,7 @@ using Robust.Server.Console;
 using Robust.Server.Placement;
 using Robust.Server.Player;
 using Robust.Shared.Enums;
+using Robust.Shared.Network.Messages;
 
 namespace Content.Server.Sandbox
 {
@@ -27,6 +28,8 @@ namespace Content.Server.Sandbox
         [Dependency] private readonly ItemSlotsSystem _slots = default!;
         [Dependency] private readonly GameTicker _ticker = default!;
         [Dependency] private readonly SharedHandsSystem _handsSystem = default!;
+
+        public event EventHandler<MsgPlacement> OnAdminPlacement = (o,e) => { };
 
         private bool _isSandboxEnabled;
 
@@ -65,6 +68,7 @@ namespace Content.Server.Sandbox
 
                 if (_conGroupController.CanAdminPlace(player))
                 {
+                    OnAdminPlacement.Invoke(this,placement);
                     return true;
                 }
 
