@@ -1,0 +1,17 @@
+- type: entity
+  parent: ClothingMaskGas
+  id: ClothingMaskRed
+  name: Противогаз красного ордена
+  suffix: Clothing
+  description: Древний противогаз  ордена красного дракона. Слава космо-драконам БОЛЬШЕ КРОВИ.
+  components:
+  - type: Sprite
+    sprite: Backmen/Clothing/Head/Masks/mask_orden.rsi
+  - type: Clothing
+    sprite: Backmen/Clothing/Head/Masks/mask_orden.rsi
+  - type: AddAccentClothing
+    accent: StutteringAccent
+  - type: Armor
+    modifiers:
+      coefficients:
+        Heat: 0.95
