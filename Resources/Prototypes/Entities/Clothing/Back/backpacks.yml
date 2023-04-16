@@ -138,17 +138,6 @@
     - type: Sprite
       sprite: Clothing/Back/Backpacks/salvage.rsi
 
-- type: entity
-  parent: ClothingBackpack
-  id: ClothingBackpackCE
-  name: chief engineer's backpack
-  description: Technicially progressive backpack.
-  components:
-  - type: Sprite
-    sprite: Clothing/Back/Backpacks/ce.rsi
-  - type: Storage
-    capacity: 150
-
 #ERT
 - type: entity
   parent: ClothingBackpack
