@@ -1,9 +1,6 @@
 ent-ClothingBackpack = рюкзак
     .desc = Вы носите это на спине и кладете в него предметы.
     .suffix = { "" }
-ent-ClothingBackpackCE = рюкзак старшего инженера
-    .desc = Технически продвинутый рюкзак.
-    .suffix = { "" }
 ent-ClothingBackpackClown = хихишкин фон хонкертон
     .desc = Это рюкзак, изготовленный компанией «Honk! Co».
     .suffix = { "" }
@@ -64,3 +61,6 @@ ent-ClothingBackpackHolding = блюспейс рюкзак
 ent-ClothingBackpackCluwne = проклятый хихишкин фон хонкертон
     .desc = Проклятый рюкзак хихишкин фон хонкертон.
     .suffix = Неснимаемый
+ent-ClothingBackpackCE = рюкзак старшего инженера
+    .desc = Технически продвинутый рюкзак.
+    .suffix = { "" }
