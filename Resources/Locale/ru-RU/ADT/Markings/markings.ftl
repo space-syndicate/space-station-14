@@ -20,3 +20,5 @@ marking-ADTAlloldpain = Лорд Боли
 marking-ADTAlltavrhorn = Минотавр
 marking-ADTAlltelehorn = Телерог
 marking-ADTAllvampirehorn = Рога Вампира
+marking-ADTSharkTail = Акулий хвост
+marking-ADTSharkFin = Акулий плавник
