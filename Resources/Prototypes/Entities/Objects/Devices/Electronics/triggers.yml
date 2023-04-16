@@ -26,7 +26,7 @@
       initialBeepDelay: 0
       beepSound: /Audio/Machines/Nuke/general_beep.ogg
     - type: StaticPrice
-      price: 40
+      price: 20
 
 - type: entity
   parent: TimerTrigger
@@ -42,7 +42,7 @@
     - type: TriggerOnSignal
     - type: SignalReceiver
     - type: StaticPrice
-      price: 40
+      price: 20
 
 - type: entity
   parent: BaseItem
@@ -57,4 +57,4 @@
     components:
     - type: TriggerOnVoice
     - type: StaticPrice
-      price: 40
+      price: 20
