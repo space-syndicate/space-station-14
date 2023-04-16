@@ -50,9 +50,10 @@
   - type: Icon
     sprite: Markers/jobs.rsi
     state: centcom
-  - type: GhostTakeoverAvailable
+  - type: GhostRole
     name: Представитель Центрального Командования
     description: Летит на станцию, дабы удостовериться, насколько экипаж станции убог.
+  - type: GhostTakeoverAvailable
   - type: Loadout
     prototypes: [CentComCorvax]
   - type: RandomMetadata
@@ -86,9 +87,10 @@
   - type: Icon
     sprite: Markers/jobs.rsi
     state: centcom
-  - type: GhostTakeoverAvailable
+  - type: GhostRole
     name: Оператор Центрального Командования
     description: Оператор центрального командования, выполняет приказы офицера цк и координирует действия станции.
+  - type: GhostTakeoverAvailable
   - type: Loadout
     prototypes: [OperatorGavna]
   - type: RandomMetadata
@@ -172,9 +174,10 @@
   - type: Icon
     sprite: Markers/jobs.rsi
     state: security_officer
-  - type: GhostTakeoverAvailable
+  - type: GhostRole
     name: Охрана ЦК
     description: Охрана ЦК, охраняет членов ЦК и саму ЦК.
+  - type: GhostTakeoverAvailable
   - type: Loadout
     prototypes: [OfficerSesurity]
   - type: RandomMetadata

@@ -4,11 +4,12 @@
   suffix: evil twin
   parent: MarkerBase
   components:
-  - type: GhostRoleMobSpawner
-    prototype: MobEvilTwin
+  - type: GhostRole
     name: Злой Близнец (Антагонист)
     description: Вы злой близнец. Ваша задача убить своего оригинала.
     rules: Вы злой близнец (антагонист). Ваша задача заменить свой оригинал. Вы не можете убивать никого, кроме своего оригинала.
+  - type: GhostRoleMobSpawner
+    prototype: MobEvilTwin
   - type: Sprite
     sprite: Markers/jobs.rsi
     layers:

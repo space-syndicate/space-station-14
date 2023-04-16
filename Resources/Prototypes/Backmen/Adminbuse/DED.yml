@@ -213,10 +213,11 @@
   - type: Icon
     sprite: Markers/jobs.rsi
     state: ai
-  - type: GhostTakeoverAvailable
+  - type: GhostRole
     name: Оперативник спец войск
     description: Элитный солдат отряда Omega - 0, напичканые импланты и курсы космического спецназа сделали из него бесчувственную машину.
     rules: Выполняйте различные приказы, ваша задача будет варьироваться от задач центрального командования.
+  - type: GhostTakeoverAvailable
   - type: Loadout
     prototypes: [SpecialForceGearFull]
   - type: RandomMetadata
@@ -237,10 +238,11 @@
   - type: Icon
     sprite: Markers/jobs.rsi
     state: ai
-  - type: GhostTakeoverAvailable
+  - type: GhostRole
     name: коммандер спец войск
     description: Элитный коммандер отряда Omega - 0, напичканые импланты и курсы космического спецназа сделали из него бесчувственную машину с тактическим интеллектом.
     rules: Выполняйте различные приказы, ваша задача будет варьироваться от задач центрального командования.
+  - type: GhostTakeoverAvailable
   - type: Loadout
     prototypes: [SpecialForceGearCommanderFull]
   - type: RandomMetadata
@@ -263,9 +265,10 @@
   - type: Icon
     sprite: Markers/jobs.rsi
     state: centcom
-  - type: GhostTakeoverAvailable
+  - type: GhostRole
     name: Офицер Специальных Операций
     description: Офицер Специальных Операций, руководитель департамента специальных операций в секторе.
+  - type: GhostTakeoverAvailable
   - type: Loadout
     prototypes: [SFOForma]
   - type: RandomMetadata
@@ -431,9 +434,10 @@
   suffix: corvax
   id: MobHumanRXBZZ
   components:
-  - type: GhostTakeoverAvailable
+  - type: GhostRole
     name: Оперативник РХБЗЗ
     description: Особый агент НаноТрейзен по борьбе с радиационно, химическо, биологическоми и зомби опасностями.
+  - type: GhostTakeoverAvailable
   - type: Loadout
     prototypes: [RXBZZ]
   - type: RandomMetadata

@@ -1,0 +1,97 @@
+- type: startingGear
+  id: PlagueDoctorGear
+  equipment:
+    eyes: ClothingEyesGlassesSunglasses
+    head: ClothingHeadHatPlaguedoctorUnremoveable
+    mask: ClothingMaskPlagueUnremoveable
+    outerClothing: ClothingOuterPlagueSuitUnremoveable
+    id: PassengerPDA
+    ears: ClothingHeadsetService
+    shoes: ClothingShoesCult
+    jumpsuit: ClothingUniformJumpsuitColorBlack
+    back: ClothingBackpackPlagueDoctorFilled
+    belt: ClothingBeltUtilityFilledUnremoveable
+    pocket1: Bible
+    pocket2: BibleNecronomicon
+  innerclothingskirt: ClothingUniformJumpskirtColorBlack
+  satchel: ClothingBackpackSatchelPlagueDoctorFilled
+  duffelbag: ClothingBackpackDuffelPlagueDoctorFilled
+
+- type: entity
+  parent: ClothingHeadHatPlaguedoctor
+  id: ClothingHeadHatPlaguedoctorUnremoveable
+  suffix: Unremoveable
+  components:
+  - type: Unremoveable
+
+- type: entity
+  parent: ClothingMaskPlague
+  id: ClothingMaskPlagueUnremoveable
+  suffix: Unremoveable
+  components:
+  - type: Unremoveable
+
+- type: entity
+  parent: ClothingOuterPlagueSuit
+  id: ClothingOuterPlagueSuitUnremoveable
+  suffix: Unremoveable
+  components:
+  - type: Unremoveable
+
+- type: entity
+  parent: ClothingBeltUtilityFilled
+  id: ClothingBeltUtilityFilledUnremoveable
+  suffix: Unremoveable
+  components:
+  - type: Unremoveable
+
+- type: entity
+  noSpawn: true
+  parent: ClothingBackpackDuffel
+  id: ClothingBackpackDuffelPlagueDoctorFilled
+  suffix: PlagueDoctor
+  components:
+  - type: StorageFill
+    contents:
+      - id: BoxSurvival
+      - id: HandheldHealthAnalyzerPlague
+      - id: HandheldHealthAnalyzerBirdFlew
+      - id: SyringeSpaceacillin
+        amount: 3
+      - id: RitualDagger
+      - id: PillRomerol
+        amount: 3
+
+- type: entity
+  noSpawn: true
+  parent: ClothingBackpackSatchel
+  id: ClothingBackpackSatchelPlagueDoctorFilled
+  suffix: PlagueDoctor
+  components:
+  - type: StorageFill
+    contents:
+      - id: BoxSurvival
+      - id: HandheldHealthAnalyzerPlague
+      - id: HandheldHealthAnalyzerBirdFlew
+      - id: SyringeSpaceacillin
+        amount: 3
+      - id: RitualDagger
+      - id: PillRomerol
+        amount: 3
+
+- type: entity
+  parent: ClothingBackpack
+  id: ClothingBackpackPlagueDoctorFilled
+  suffix: PlagueDoctor
+  noSpawn: true
+  components:
+  - type: StorageFill
+    contents:
+      - id: BoxSurvival
+      - id: HandheldHealthAnalyzerPlague
+      - id: HandheldHealthAnalyzerBirdFlew
+      - id: SyringeSpaceacillin
+        amount: 3
+      - id: RitualDagger
+      - id: PillRomerol
+        amount: 3
