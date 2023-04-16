@@ -57,6 +57,7 @@
     contents:
       - id: Flash
       - id: WeaponDisabler
+      - id: BrigmedicHypo
       - id: ClothingOuterHardsuitBrigmed
       - id: ClothingHeadHelmetSecurityMedic # Corvax-Resprite
       - id: ClothingOuterVestSecurityMedic # Corvax-Resprite
@@ -78,6 +79,8 @@
         prob: 0.3
       - id: MedkitBurnFilled
         prob: 0.7
+      - id: OmnizineChemistryBottle
+        prob: 0.1
 
 - type: entity
   id: LockerDetectiveFilled
