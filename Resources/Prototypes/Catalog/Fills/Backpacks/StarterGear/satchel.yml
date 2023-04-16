@@ -50,6 +50,16 @@
 
 - type: entity
   noSpawn: true
+  parent: ClothingBackpackSatchelCE #Corvax-Resprite
+  id: ClothingBackpackSatchelChiefEngineerFilled
+  components:
+  - type: StorageFill
+    contents:
+      - id: BoxSurvivalEngineering
+      - id: Flash
+
+- type: entity
+  noSpawn: true
   parent: ClothingBackpackSatchelScience
   id: ClothingBackpackSatchelResearchDirectorFilled
   components:

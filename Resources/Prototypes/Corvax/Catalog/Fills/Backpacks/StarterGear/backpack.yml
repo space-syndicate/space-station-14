@@ -7,13 +7,3 @@
       contents:
         - id: BoxSurvival
         - id: BriefcaseIAAFilled
-
-- type: entity
-  noSpawn: true
-  parent: ClothingBackpackCE
-  id: ClothingBackpackChiefEngineerFilled
-  components:
-  - type: StorageFill
-    contents:
-      - id: BoxSurvivalEngineering
-      - id: Flash
