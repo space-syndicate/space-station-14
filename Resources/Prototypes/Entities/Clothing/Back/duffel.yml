@@ -218,3 +218,14 @@
       shader: unshaded
   - type: Storage
     capacity: 9999
+
+- type: entity
+  parent: ClothingBackpackDuffel
+  id: ClothingBackpackDuffelCE
+  name: chief engineer duffel bag
+  description: A large duffel bag for all instruments you need to create singularity.
+  components:
+  - type: Sprite
+    sprite: Clothing/Back/Duffels/ce.rsi
+  - type: Storage
+    capacity: 170
