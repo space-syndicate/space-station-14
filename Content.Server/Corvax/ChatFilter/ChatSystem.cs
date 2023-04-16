@@ -1,4 +1,5 @@
-﻿using System.Text.RegularExpressions;
+using System.Linq;
+using System.Text.RegularExpressions;
 
 namespace Content.Server.Chat.Systems;
 
@@ -15,8 +16,11 @@ public sealed partial class ChatSystem
         { "хопа", "гп" },
         { "рд", "нр" },
         { "вард", "варден" },
-        { "рофл", "прикол" },
-        { "рофлишь", "шутишь" },
+        { "кэп", "капитан" },
+        { "кеп", "капитан" },
+        { "кэпа", "капитана" },
+        { "кепа", "капитана" },
+        { "геник", "генератор" },
         { "кк", "красный код" },
         { "ск", "синий код" },
         { "зк", "зелёный код" },
@@ -31,6 +35,7 @@ public sealed partial class ChatSystem
         { "мш", "имплант защиты разума" },
         { "трейтор", "предатель" },
         { "инжи", "инженеры" },
+        { "инжы", "инженеры" },
         { "инжинер", "инженер" },
         { "яо", "яой" }, // braindead
         { "нюк", "ядерный оперативник" },
@@ -45,6 +50,12 @@ public sealed partial class ChatSystem
         { "дизарм", "толкнуть" },
         { "синга", "сингулярность" },
         { "сингу", "сингулярность" },
+        { "разгерм", "разгерметизация" },
+        { "бикардин", "бикаридин" },
+        { "бика", "бикаридин" },
+        { "бику", "бикаридин" },
+        { "декса", "дексалин" },
+        { "дексу", "дексалин" },
         // IC
         { "норм", "нормально" },
         { "хз", "не знаю" },
@@ -91,6 +102,8 @@ public sealed partial class ChatSystem
         { "хелп", "помоги" },
         { "хелпани", "помоги" },
         { "хелпанул", "помог" },
+        { "рофл", "прикол" },
+        { "рофлишь", "шутишь" },
         // OOC
         { "афк", "ссд" },
         { "админ", "бог" },
@@ -120,8 +133,10 @@ public sealed partial class ChatSystem
 
         return Regex.Replace(message, "\\b(\\w+)\\b", match =>
         {
+            bool isUpperCase = match.Value.All(Char.IsUpper);
+
             if (SlangReplace.TryGetValue(match.Value.ToLower(), out var replacement))
-                return replacement;
+                return isUpperCase ? replacement.ToUpper() : replacement;
             return match.Value;
         });
     }

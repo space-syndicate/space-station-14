@@ -92,6 +92,15 @@
   components:
   - type: Sprite
     sprite: Clothing/Back/Duffels/virology.rsi
+    
+- type: entity
+  parent: ClothingBackpackDuffel
+  id: ClothingBackpackDuffelGenetics
+  name: genetics duffel bag
+  description: A large duffel bag for holding extra genetic mutations.
+  components:
+  - type: Sprite
+    sprite: Clothing/Back/Duffels/genetics.rsi
 
 - type: entity
   parent: ClothingBackpackDuffel
@@ -209,3 +218,14 @@
       shader: unshaded
   - type: Storage
     capacity: 9999
+
+- type: entity
+  parent: ClothingBackpackDuffel
+  id: ClothingBackpackDuffelCE
+  name: chief engineer's duffel bag
+  description: A large duffel bag for all instruments you need to create singularity.
+  components:
+  - type: Sprite
+    sprite: Clothing/Back/Duffels/ce.rsi
+  - type: Storage
+    capacity: 170
