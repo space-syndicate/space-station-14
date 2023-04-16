@@ -12,6 +12,7 @@ public class SharedAdminLogManager : ISharedAdminLogManager
 
     public virtual void Add(LogType type, ref LogStringHandler handler)
     {
+
         // noop
     }
 }

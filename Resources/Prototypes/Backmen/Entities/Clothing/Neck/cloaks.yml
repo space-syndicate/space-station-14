@@ -6,3 +6,11 @@
   components:
   - type: Sprite
     sprite: Backmen/Clothing/Neck/Cloaks/pirate.rsi
+- type: entity
+  parent: ClothingNeckBase
+  id: ClothingNeckCloakOrden
+  name: Плащ красного ордена
+  description: Плащ ордена красного дракона! Этот плащ был создан древним культом и посей день не кто не знает как он попадает на станцию.
+  components:
+  - type: Sprite
+    sprite: Backmen/Clothing/Neck/Cloaks/orden.rsi

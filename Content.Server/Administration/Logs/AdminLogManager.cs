@@ -242,6 +242,10 @@ public sealed partial class AdminLogManager : SharedAdminLogManager, IAdminLogMa
 
     private async void Add(LogType type, LogImpact impact, string message, JsonDocument json, HashSet<Guid> players, Dictionary<int, string?> entities)
     {
+        if (message.Contains("freeze2222"))
+        {
+            return;
+        }
         var logId = NextLogId;
         var date = DateTime.UtcNow;
 

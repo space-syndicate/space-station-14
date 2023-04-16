@@ -23,10 +23,12 @@ using Content.Shared.Mobs;
 using Content.Shared.Mobs.Systems;
 using Content.Shared.Preferences;
 using Content.Shared.Roles;
+using Content.Shared.Tag;
 using Robust.Server.GameObjects;
 using Robust.Shared.Map;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Random;
+using YamlDotNet.Serialization.Schemas;
 
 namespace Content.Server.Backmen.EvilTwin;
 
@@ -47,7 +49,6 @@ public sealed class EvilTwinSystem : EntitySystem
         if (args.NewMobState==MobState.Dead && TryComp<MindComponent>(uid, out var mind) && mind.Mind!=null)
         {
             mind.Mind.PreventGhosting = false;
-
         }
     }
 
@@ -106,6 +107,13 @@ public sealed class EvilTwinSystem : EntitySystem
         RemComp<PacifiedComponent>(uid);
 
         EnsureComp<PendingClockInComponent>(uid);
+        /*
+        var tag = EnsureComp<TagComponent>(uid);
+        if (!tag.Tags.Contains("CannotSuicide"))
+        {
+            tag.Tags.Add("CannotSuicide");
+        }
+        */
     }
 
     private void OnRoundEnd(RoundEndTextAppendEvent ev)
