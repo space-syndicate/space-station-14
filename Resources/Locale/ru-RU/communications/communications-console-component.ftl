@@ -10,6 +10,6 @@ comms-console-permission-denied = В доступе отказано
 comms-console-announcement-sent-by = Отправитель
 comms-console-announcement-unknown-sender = Неизвестный
 # Comms console variant titles
-comms-console-announcement-title-station = Консоль связи
-comms-console-announcement-title-centcom = Центральное командование
-comms-console-announcement-title-nukie = Ядерные оперативники Синдиката
+comms-console-announcement-title-station = консоли связи
+comms-console-announcement-title-centcom = центрального командования
+comms-console-announcement-title-nukie = ядерных оперативников Синдиката
