@@ -49,6 +49,23 @@ public sealed partial class AdminVerbSystem
         };
         args.Verbs.Add(traitor);
 
+        Verb EvilTwin = new()
+        {
+            Text = "Make EvilTwin",
+            Category = VerbCategory.Antag,
+            Icon = new SpriteSpecifier.Rsi((new ResourcePath("/Textures/Structures/Wallmounts/posters.rsi")), "poster3_legit"),
+            Act = () =>
+            {
+                if (targetMindComp.Mind == null || targetMindComp.Mind.Session == null || targetMindComp.Mind.CurrentEntity == null)
+                    return;
+
+                EntityManager.System<Content.Server.Backmen.EvilTwin.EvilTwinSystem>().MakeTwin(out _,targetMindComp.Mind.CurrentEntity);
+            },
+            Impact = LogImpact.High,
+            Message = Loc.GetString("admin-verb-make-eviltwin"),
+        };
+        args.Verbs.Add(EvilTwin);
+
         Verb zombie = new()
         {
             Text = "Make Zombie",
@@ -101,6 +118,5 @@ public sealed partial class AdminVerbSystem
             Message = Loc.GetString("admin-verb-make-pirate"),
         };
         args.Verbs.Add(pirate);
-
     }
 }

@@ -1,5 +1,6 @@
 ﻿using System.Diagnostics.CodeAnalysis;
 using System.Linq;
+using System.Text;
 using Content.Server.Administration.Logs;
 using Content.Server.DetailExaminable;
 using Content.Server.GameTicking;
@@ -12,6 +13,7 @@ using Content.Server.Players;
 using Content.Server.Prayer;
 using Content.Server.Preferences.Managers;
 using Content.Server.Shuttles.Components;
+using Content.Server.Spawners.Components;
 using Content.Server.Station.Systems;
 using Content.Server.Traitor;
 using Content.Server.Traits.Assorted;
@@ -28,7 +30,7 @@ using Robust.Server.GameObjects;
 using Robust.Shared.Map;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Random;
-using YamlDotNet.Serialization.Schemas;
+using Content.Server.Ghost.Roles.Events;
 
 namespace Content.Server.Backmen.EvilTwin;
 
@@ -41,22 +43,61 @@ public sealed class EvilTwinSystem : EntitySystem
         SubscribeLocalEvent<EvilTwinSpawnerComponent, PlayerAttachedEvent>(OnPlayerAttached);
         SubscribeLocalEvent<EvilTwinComponent, MindAddedMessage>(OnMindAdded);
         SubscribeLocalEvent<RoundEndTextAppendEvent>(OnRoundEnd);
+        SubscribeLocalEvent<EvilTwinSpawnerComponent,GhostRoleSpawnerUsedEvent>(OnGhostRoleSpawnerUsed);
         SubscribeLocalEvent<EvilTwinComponent, MobStateChangedEvent>(OnHandleComponentState);
     }
 
-    private void OnHandleComponentState(EntityUid uid, EvilTwinComponent component, MobStateChangedEvent args)
+    private void OnGhostRoleSpawnerUsed(EntityUid uid, EvilTwinSpawnerComponent component, GhostRoleSpawnerUsedEvent args)
     {
+        //forward
+        if(TryComp<EvilTwinSpawnerComponent>(args.Spawner, out var comp)){
+            component.TargetForce = comp.TargetForce;
+        }
+    }
+
+    private void OnHandleComponentState(EntityUid uid, EvilTwinComponent component, MobStateChangedEvent args){
         if (args.NewMobState==MobState.Dead && TryComp<MindComponent>(uid, out var mind) && mind.Mind!=null)
         {
             mind.Mind.PreventGhosting = false;
         }
     }
 
+    public bool MakeTwin([NotNullWhen(true)] out EntityUid? TwinSpawn,EntityUid? uid = null){
+        TwinSpawn = null;
+
+        var latejoin = (from s in EntityQuery<SpawnPointComponent, TransformComponent>()
+        where s.Item1.SpawnType == SpawnPointType.LateJoin
+        select s.Item2.Coordinates).ToList();
+
+        if(latejoin.Count == 0){
+            return false;
+        }
+
+        var coords = _random.Pick(latejoin);
+        TwinSpawn = Spawn(SpawnPointPrototype, coords);
+
+        if(uid.HasValue && TwinSpawn.HasValue){
+            EnsureComp<EvilTwinSpawnerComponent>(TwinSpawn.Value).TargetForce = uid.Value;
+        }
+
+        return true;
+    }
 
     private void OnPlayerAttached(EntityUid uid, EvilTwinSpawnerComponent component, PlayerAttachedEvent args)
     {
         HumanoidCharacterProfile? pref = null;
-        if (TryGetEligibleHumanoid(out var targetUid))
+
+        EntityUid? targetUid = null;
+
+        if(component.TargetForce != EntityUid.Invalid){
+            if(IsEligibleHumanoid(component.TargetForce)){
+                targetUid = component.TargetForce;
+            }
+        }else{
+            TryGetEligibleHumanoid(out targetUid);
+        }
+
+        if (targetUid.HasValue)
         {
             var xform = Transform(uid);
             (var twinMob, pref) = SpawnEvilTwin(targetUid.Value, xform.Coordinates);
@@ -101,123 +142,123 @@ public sealed class EvilTwinSystem : EntitySystem
         mind.AddRole(new TraitorRole(mind, _prototype.Index<AntagPrototype>(EvilTwinRole)));
         mind.TryAddObjective(_prototype.Index<ObjectivePrototype>(KillObjective));
         mind.TryAddObjective(_prototype.Index<ObjectivePrototype>(EscapeObjective));
+
         mind.PreventGhosting = true;
 
         RemComp<PacifistComponent>(uid);
         RemComp<PacifiedComponent>(uid);
 
         EnsureComp<PendingClockInComponent>(uid);
-        /*
-        var tag = EnsureComp<TagComponent>(uid);
-        if (!tag.Tags.Contains("CannotSuicide"))
-        {
-            tag.Tags.Add("CannotSuicide");
-        }
-        */
+
+        _tagSystem.AddTag(uid,"CannotSuicide");
     }
+
+#region  OnRoundEnd
+
 
     private void OnRoundEnd(RoundEndTextAppendEvent ev)
     {
-        var twins = EntityQuery<EvilTwinComponent, MindComponent>()
-            .ToList();
-        if (twins.Count < 1)
+        var twins = EntityQuery<EvilTwinComponent, MindComponent>().ToArray();
+        if (twins.Length < 1)
         {
             return;
         }
 
-        var result = Loc.GetString("evil-twin-round-end-result", new ValueTuple<string, object>("evil-twin-count", twins.Count));
-        foreach (var fugi in twins)
+        var result = new StringBuilder();
+        result.Append(Loc.GetString("evil-twin-round-end-result", ("evil-twin-count", twins.Length)));
+        foreach (var (twin, mind) in twins)
         {
-            if (fugi.Item2.Mind == null)
+            if (mind.Mind == null)
                 continue;
-            var name = fugi.Item2.Mind.CharacterName;
-            fugi.Item2.Mind.TryGetSession(out var session);
-            var username = session?.Name;
-            var objectives = fugi.Item2.Mind.AllObjectives.ToArray();
+            var name = mind.Mind.CharacterName;
+            var username = mind.Mind.TryGetSession(out var session) ? session?.Name : null;
+            var objectives = mind.Mind.AllObjectives.ToArray();
             if (objectives.Length == 0)
             {
                 if (username != null)
                 {
                     if (name == null)
                     {
-                        result = result + "\n" + Loc.GetString("evil-twin-user-was-an-evil-twin", new ValueTuple<string, object>("user", username));
+                        result.Append("\n" + Loc.GetString("evil-twin-user-was-an-evil-twin", ("user", username)));
                     }
                     else
                     {
-                        result = result + "\n" + Loc.GetString("evil-twin-user-was-an-evil-twin-named", new ValueTuple<string, object>("user", username), new ValueTuple<string, object>("name", name));
+                        result.Append("\n" + Loc.GetString("evil-twin-user-was-an-evil-twin-named", ("user", username), ("name", name)));
                     }
                 }
                 else if (name != null)
                 {
-                    result = result + "\n" + Loc.GetString("evil-twin-was-an-evil-twin-named", new ValueTuple<string, object>("name", name));
-                }
-            }
-            else
-            {
-                if (username != null)
-                {
-                    if (name == null)
-                    {
-                        result = result + "\n" + Loc.GetString("evil-twin-user-was-an-evil-twin-with-objectives", new ValueTuple<string, object>("user", username));
-                    }
-                    else
-                    {
-                        result = result + "\n" + Loc.GetString(
-                            "evil-twin-user-was-an-evil-twin-with-objectives-named", new ValueTuple<string, object>("user", username), new ValueTuple<string, object>("name", name));
-                    }
-                }
-                else if (name != null)
-                {
-                    result = result + "\n" + Loc.GetString("evil-twin-was-an-evil-twin-with-objectives-named", new ValueTuple<string, object>("name", name));
+                    result.Append("\n" + Loc.GetString("evil-twin-was-an-evil-twin-named", ("name", name)));
                 }
 
-                foreach (IGrouping<string, Objective> grouping in from o in objectives
-                         group o by o.Prototype.Issuer)
+                continue;
+            }
+            if (username != null)
+            {
+                if (name == null)
                 {
-                    foreach (var objective in grouping)
-                    {
-                        foreach (var condition in objective.Conditions)
-                        {
-                            var progress = condition.Progress;
-                            if (progress > 0.99f)
-                            {
-                                result = result + "\n- " + Loc.GetString("traitor-objective-condition-success", new ValueTuple<string, object>("condition", condition.Title), new ValueTuple<string, object>("markupColor", "green"));
-                            }
-                            else
-                            {
-                                result = result + "\n- " + Loc.GetString("traitor-objective-condition-fail", new ValueTuple<string, object>("condition", condition.Title), new ValueTuple<string, object>("progress", (int) (progress * 100f)), new ValueTuple<string, object>("markupColor", "red"));
-                            }
-                        }
-                    }
+                    result.Append("\n" + Loc.GetString("evil-twin-user-was-an-evil-twin-with-objectives", ("user", username)));
+                }
+                else
+                {
+                    result.Append("\n" + Loc.GetString("evil-twin-user-was-an-evil-twin-with-objectives-named", ("user", username), ("name", name)));
+                }
+            }
+            else if (name != null)
+            {
+                result.Append("\n" + Loc.GetString("evil-twin-was-an-evil-twin-with-objectives-named", ("name", name)));
+            }
+
+            foreach (var condition in objectives.GroupBy(x=>x.Prototype.Issuer).SelectMany(x=>x.SelectMany(z=>z.Conditions)))
+            {
+                var progress = condition.Progress;
+                if (progress > 0.99f)
+                {
+                    result.Append("\n- " + Loc.GetString("traitor-objective-condition-success", ("condition", condition.Title), ("markupColor", "green")));
+                }
+                else
+                {
+                    result.Append("\n- " + Loc.GetString("traitor-objective-condition-fail", ("condition", condition.Title), ("progress", (int) (progress * 100f)), ("markupColor", "red")));
                 }
             }
         }
 
-        ev.AddLine(result);
+        ev.AddLine(result.ToString());
     }
-
+#endregion
+    private bool IsEligibleHumanoid(EntityUid? uid){
+        if(!uid.HasValue || !uid.Value.IsValid() || uid.Value.IsClientSide()){
+            return false;
+        }
+        if(HasComp<EvilTwinComponent>(uid) || HasComp<NukeOperativeComponent>(uid)){
+            return false;
+        }
+        return true;
+    }
     private bool TryGetEligibleHumanoid([NotNullWhen(true)] out EntityUid? uid)
     {
-        var targets = EntityQuery<ActorComponent, MindComponent, HumanoidAppearanceComponent>()
-            .ToList();
+        var targets = EntityQuery<ActorComponent, MindComponent, HumanoidAppearanceComponent>().ToList();
         _random.Shuffle(targets);
-        foreach (var target in targets)
+        foreach ((_,var target,_) in targets)
         {
-            var mind = target.Item2.Mind;
-            if (mind?.CurrentJob != null)
+            if(target?.Mind == null){
+                continue;
+            }
+            var mind = target.Mind!;
+            if (mind?.CurrentJob == null)
             {
-                var mind2 = target.Item2.Mind;
-                if (mind2 is { CurrentEntity: { } })
+                continue;
+            }
+            if (mind is { CurrentEntity: { } })
+            {
+                var targetUid = mind.CurrentEntity;
+                if (IsEligibleHumanoid(targetUid))
                 {
-                    var targetUid = target.Item2.Mind?.CurrentEntity!.Value;
-                    if (targetUid != null && !HasComp<EvilTwinComponent>(targetUid) &&
-                        !HasComp<NukeOperativeComponent>(targetUid))
-                    {
-                        uid = new EntityUid?(targetUid.Value);
-                        return true;
-                    }
+                    uid = targetUid;
+                    return true;
                 }
             }
+
         }
 
         uid = null;
@@ -243,22 +284,16 @@ public sealed class EvilTwinSystem : EntitySystem
             EnsureComp<DetailExaminableComponent>(twinUid).Content = detail.Content;
         }
 
-        var mind2 = mind.Mind!;
-        bool flag;
+        var twinTartetMindJob = mind.Mind?.CurrentJob;
+        if (twinTartetMindJob?.StartingGear != null)
         {
-            var currentJob = mind2.CurrentJob;
-            flag = (currentJob?.StartingGear != null);
-        }
-        if (flag)
-        {
-            if (_prototype.TryIndex<StartingGearPrototype>(mind2.CurrentJob!.StartingGear!, out var gear))
+            if (_prototype.TryIndex<StartingGearPrototype>(twinTartetMindJob?.StartingGear!, out var gear))
             {
                 _stationSpawning.EquipStartingGear(twinUid, gear, pref);
-                _stationSpawning.EquipIdCard(twinUid, pref.Name, mind2.CurrentJob.Prototype,
-                    _stationSystem.GetOwningStation(target));
+                _stationSpawning.EquipIdCard(twinUid, pref.Name, twinTartetMindJob!.Prototype, _stationSystem.GetOwningStation(target));
             }
 
-            foreach (var special in mind2.CurrentJob.Prototype.Special)
+            foreach (var special in twinTartetMindJob!.Prototype.Special)
             {
                 if (special is AddComponentSpecial)
                 {
@@ -290,11 +325,13 @@ public sealed class EvilTwinSystem : EntitySystem
 
     [Dependency] private readonly IEntityManager _entityManager = default!;
 
-    [Dependency] private readonly MobStateSystem _mobStateSystem = default!;
+    [Dependency] private readonly TagSystem _tagSystem = default!;
 
     private const string EvilTwinRole = "EvilTwin";
 
     private const string KillObjective = "KillObjectiveEvilTwin";
 
     private const string EscapeObjective = "EscapeShuttleObjectiveEvilTwin";
+
+    private const string SpawnPointPrototype = "SpawnPointEvilTwin";
 }

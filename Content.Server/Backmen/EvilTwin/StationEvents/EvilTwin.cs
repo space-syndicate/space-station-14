@@ -11,17 +11,12 @@ public sealed class EvilTwin : StationEventSystem
         public override void Started()
         {
             base.Started();
-            var lateJoinSpawns = (from s in EntityQuery<SpawnPointComponent, TransformComponent>()
-                where s.Item1.SpawnType == SpawnPointType.LateJoin
-                select s).ToList<ValueTuple<SpawnPointComponent, TransformComponent>>();
-            if (lateJoinSpawns.Count == 0)
-            {
-                Sawmill.Error("Map not have latejoin spawnpoints for creating evil twin spawner");
-                return;
-            }
-            var coords = _random.Pick(lateJoinSpawns).Item2.Coordinates;
-            cloneSpawnPoint = Spawn(SpawnPointPrototype, coords);
 
+            if(_evilTwinSystem.MakeTwin(out var _cloneSpawnPoint)){
+                cloneSpawnPoint = _cloneSpawnPoint;
+            }else{
+                Sawmill.Error("Map not have latejoin spawnpoints for creating evil twin spawner");
+            }
         }
 
         public override void Ended()
@@ -37,5 +32,5 @@ public sealed class EvilTwin : StationEventSystem
 
         [Dependency] private readonly IRobustRandom _random = default!;
 
-        private const string SpawnPointPrototype = "SpawnPointEvilTwin";
+        [Dependency] private readonly EvilTwinSystem _evilTwinSystem = default!;
     }
