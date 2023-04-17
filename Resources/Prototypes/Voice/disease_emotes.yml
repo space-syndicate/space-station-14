@@ -13,21 +13,22 @@
     # Corvax-Localization-Start
     - кашель
     - кашляет
+    # Corvax-Localization-End
 
 - type: emote
   id: CatMeow
   category: Vocal
-  chatMessages: [meows]
+  chatMessages: [мяукает] # Corvax-Localization
 
 - type: emote
   id: CatHisses
   category: Vocal
-  chatMessages: [hisses]
+  chatMessages: [шипит] # Corvax-Localization
 
 - type: emote
   id: MonkeyScreeches
   category: Vocal
-  chatMessages: [screeches]
+  chatMessages: [визжит] # Corvax-Localization
 
 - type: emote
   id: RobotBeep
@@ -44,6 +45,7 @@
     # Corvax-Localization-Start
     - зевок
     - зевает
+    # Corvax-Localization-End
 
 - type: emote
   id: Snore
