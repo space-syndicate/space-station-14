@@ -14,3 +14,11 @@
   components:
   - type: Sprite
     sprite: Backmen/Clothing/Neck/Cloaks/orden.rsi
+- type: entity
+  parent: ClothingNeckBase
+  id: ClothingNeckCloakSssp
+  name: Плащ СССП
+  description: Выдаётся за заслугу перед СССП. Вы лучший. Можете это не скрывать.
+  components:
+  - type: Sprite
+    sprite: Backmen/Clothing/Neck/Cloaks/SSSP.rsi
