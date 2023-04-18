@@ -1,7 +1,7 @@
 {
   "version": 1,
   "license": "CC-BY-SA-3.0",
-  "copyright": "Taken from tgstation at https://github.com/tgstation/tgstation/commit/59f2a4e10e5ba36033c9734ddebfbbdc6157472d, pda-cluwne made by brainfood1183 (github) ss14, pda-brigmed made by PuroSlavKing (Github)",
+  "copyright": "Backmen.ru @Firefox#5958",
   "size": {
     "x": 32,
     "y": 32
@@ -20,161 +20,7 @@
     {
       "name": "light_overlay"
     },
-    {
-      "name": "pda"
-    },
-    {
-      "name": "pda-atmos"
-    },
-    {
-      "name": "pda-bartender"
-    },
-    {
-      "name": "pda-boxer"
-    },
-    {
-      "name": "pda-captain"
-    },
-    {
-      "name": "pda-cargo"
-    },
-    {
-      "name": "pda-ce"
-    },
-    {
-      "name": "pda-chaplain"
-    },
-    {
-      "name": "pda-chemistry"
-    },
-    {
-      "name": "pda-clear"
-    },
-    {
-      "name": "pda-clown"
-    },
-    {
-      "name": "pda-cmo"
-    },
-    {
-      "name": "pda-cook"
-    },
-    {
-      "name": "pda-detective"
-    },
-    {
-      "name": "pda-engineer"
-    },
-    {
-      "name": "pda-genetics"
-    },
-    {
-      "name": "pda-hop"
-    },
-    {
-      "name": "pda-hos"
-    },
-    {
-      "name": "pda-hydro"
-    },
-    {
-      "name": "pda-janitor"
-    },
-    {
-      "name": "pda-lawyer"
-    },
-    {
-      "name": "pda-library",
-      "delays": [
-        [
-          0.3,
-          0.3,
-          0.3,
-          0.3
-        ]
-      ]
-    },
-    {
-      "name": "pda-medical"
-    },
-    {
-      "name": "pda-mime"
-    },
-    {
-      "name": "pda-miner"
-    },
-    {
-      "name": "pda-qm"
-    },
-    {
-      "name": "pda-r",
-      "delays": [
-        [
-          0.8,
-          0.8
-        ]
-      ]
-    },
-    {
-      "name": "pda-r-library",
-      "delays": [
-        [
-          0.8,
-          0.8
-        ]
-      ]
-    },
-    {
-      "name": "pda-rd"
-    },
-    {
-      "name": "pda-roboticist"
-    },
-    {
-      "name": "pda-science"
-    },
-    {
-      "name": "pda-security"
-    },
-    {
-      "name": "pda-brigmed",
-      "delays": [
-        [
-          0.3,
-          0.3,
-          0.3,
-          0.3
-        ]
-      ]
-    },
-    {
-      "name": "pda-syndi"
-    },
-    {
-      "name": "pda-virology"
-    },
-    {
-      "name": "pda-warden"
-    },
-    {
-      "name": "pda-musician"
-    },
-    {
-      "name": "pda-reporter"
-    },
-    {
-      "name": "pda-interncadet"
-    },
-    {
-      "name": "pda-internmed"
-    },
-    {
-      "name": "pda-internsci"
-    },
-    {
-      "name": "pda-internservice"
-    },
-
+  
     {
       "name": "pda-iog"
     },
@@ -182,17 +28,6 @@
     {
       "name": "pda-mog"
     },
-    {
-      "name": "pda-interntech"
-    },
-    {
-      "name": "pda-zookeeper"
-    },
-    {
-      "name": "pda-ert"
-    },
-	{
-      "name": "pda-cluwne"
-    }
+      
   ]
 }
