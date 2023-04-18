@@ -8,10 +8,10 @@
     sprite: Clothing/Eyes/Hud/diag.rsi
   - type: Clothing
     sprite: Clothing/Eyes/Hud/diag.rsi
-  #- type: ClothingGrantComponent  # Sirena-Edit's-Star
-  #  component:
-  #  - type: ShowHealthBars
-  #    damageContainer: Inorganic  # Sirena-Edit's-End
+  - type: ClothingGrantComponent  # Sirena-Edit's-Star
+    component:
+    - type: ShowHealthBars
+      damageContainer: Inorganic  # Sirena-Edit's-End
 
 
 - type: entity
@@ -24,10 +24,10 @@
     sprite: Clothing/Eyes/Hud/med.rsi
   - type: Clothing
     sprite: Clothing/Eyes/Hud/med.rsi
-  #- type: ClothingGrantComponent  # Sirena-Edit's-Start
-  #  component:
-  #  - type: ShowHealthBars
-  #    damageContainer: Biological # Sirena-Edit's-End
+  - type: ClothingGrantComponent  # Sirena-Edit's-Start
+    component:
+    - type: ShowHealthBars
+      damageContainer: Biological # Sirena-Edit's-End
 
 - type: entity
   parent: ClothingEyesBase
@@ -39,6 +39,6 @@
     sprite: Clothing/Eyes/Hud/sec.rsi
   - type: Clothing
     sprite: Clothing/Eyes/Hud/sec.rsi
-  #- type: ClothingGrantComponent # Sirena-Edit's-Start
-  #  component:
-  #  - type: ShowJobInfo # Sirena-Edit's-End
+  - type: ClothingGrantComponent # Sirena-Edit's-Start
+    component:
+    - type: ShowJobInfo # Sirena-Edit's-End
