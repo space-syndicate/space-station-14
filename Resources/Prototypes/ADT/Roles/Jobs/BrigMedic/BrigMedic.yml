@@ -1,8 +1,8 @@
 - type: job
-  id: BrigMedic
+  id: ADTBrigMedic
   name: job-name-brigmedic
   description: job-description-brigmedic
-  playTimeTracker: JobBrigMedic
+  playTimeTracker: JobADTBrigMedic
   requirements:
     - !type:DepartmentTimeRequirement
       department: Security
@@ -11,8 +11,8 @@
       department: Medical
       time: 36000     
   weight: 20
-  startingGear: BrigMedic
-  icon: "BrigMedic"
+  startingGear: ADTBrigMedic
+  icon: "ADTBrigMedic"
   requireAdminNotify: true
   joinNotifyCrew: true
   supervisors: job-supervisors-hos
@@ -27,27 +27,27 @@
   extendedAccess:
   - Chemistry
 - type: startingGear
-  id: BrigMedic
+  id: ADTBrigMedic
   equipment:
     jumpsuit: ClothingUniformJumpsuitMedicalDoctor
     back: ClothingBackpackSecurityFilled
     shoes: ClothingShoesBootsJack
     outerClothing: ADTClothingOuterCoatLabSec
-    id: BrigMedicPDA
+    id: ADTBrigMedicPDA
     eyes: ClothingEyesGlassesSecurity
-    ears: ClothingHeadsetBrigMedic
+    ears: ClothingHeadsetADTBrigMedic
     belt: ClothingBeltMedicalFilled
   innerclothingskirt: ClothingUniformJumpskirtMedicalDoctor
   satchel: ClothingBackpackSatchelSecurityFilled
   duffelbag: ClothingBackpackDuffelSecurityFilled
 
 - type: entity
-  id: SpawnBrigMedic
+  id: SpawnADTBrigMedic
   parent: SpawnPointJobBase
   name: brig medic spawn
   components:
     - type: SpawnPoint
-      job_id: BrigMedic
+      job_id: ADTBrigMedic
     - type: Sprite
       layers:
         - state: green
@@ -55,12 +55,12 @@
 
 - type: entity
   parent: BasePDA
-  id: BrigMedicPDA
+  id: ADTBrigMedicPDA
   name: brig medic PDA
   description: brig medic PDA
   components:
   - type: PDA
-    id: BrigMedicIDCard
+    id: ADTBrigMedicIDCard
     state: pda-medical
   - type: PDABorderColor
     borderColor: "#d7d7d0"
@@ -76,7 +76,7 @@
 
 - type: entity
   parent: IDCardStandard
-  id: BrigMedicIDCard
+  id: ADTBrigMedicIDCard
   name: Brig Medic ID card
   components:
   - type: Sprite
@@ -84,4 +84,4 @@
     - state: default
     - state: idpsychologist
   - type: PresetIdCard
-    job: BrigMedic
+    job: ADTBrigMedic
