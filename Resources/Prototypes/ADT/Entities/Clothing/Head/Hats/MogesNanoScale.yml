@@ -1,0 +1,43 @@
+#nano scale
+- type: entity
+  parent: ClothingHeadHardsuitWithLightBase
+  id: ADTClothingClothingHeadHelmetHardsuitNanoScale
+  noSpawn: true
+  name: Nano scale armor helmet
+  description: Reptiles are not as primitive as you thought.
+  components:
+  - type: Sprite
+    sprite: ADT/Clothing/Head/Hardsuits/nano_scale_armor_hardsuithead.rsi
+  - type: Clothing
+    sprite: ADT/Clothing/Head/Hardsuits/nano_scale_armor_hardsuithead.rsi
+  - type: PointLight
+    color: red
+  - type: PressureProtection
+    highPressureMultiplier: 0.08
+    lowPressureMultiplier: 1000
+  - type: TemperatureProtection
+    coefficient: 0.005
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.8
+        Slash: 0.8
+        Piercing: 0.8
+        Heat: 0.2
+        Radiation: 0.5
+
+#nano scale chameleon
+- type: entity
+  parent: ClothingHeadEVAHelmetBase
+  id: ADTClothingClothingHeadHelmetNanoScaleChameleon
+  name: Nano scale chameleon helmet
+  description: Very secretive and smells very sugary
+  components:
+  - type: Sprite
+    sprite: ADT/Clothing/Head/Hardsuits/nano_scale_armor_chameleon_head.rsi
+  - type: Clothing
+    sprite: ADT/Clothing/Head/Hardsuits/nano_scale_armor_chameleon_head.rsi
+  - type: Tag
+    tags:
+    - HidesHair
+  - type: IdentityBlocker

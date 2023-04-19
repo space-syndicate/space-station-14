@@ -1,0 +1,49 @@
+- type: entity
+  name: PPCh-45s
+  parent: BaseWeaponSubMachineGun
+  id: ADTObjectsWeaponSubMachineGunPPCH45S
+  description: Submachine gun Chekhov 45. Magnum Shortened. A shortened version of the PPC-45 was developed in the late 2550s and early 2560s to equip crews of combat vehicles, space marines. It is also used in the KGB SSSP and security structures due to its small size.
+  components:
+  - type: Sprite
+    sprite: ADT/Objects/Weapons/Guns/SMGs/ppch_45u.rsi
+    layers:
+      - state: base
+        map: ["enum.GunVisualLayers.Base"]
+      - state: mag-0
+        map: ["enum.GunVisualLayers.Mag"]
+  - type: Clothing
+    sprite: ADT/Objects/Weapons/Guns/SMGs/ppch_45u.rsi
+  - type: Gun
+    fireRate: 6
+    selectedMode: FullAuto
+    soundGunshot:
+      path: /Audio/Weapons/Guns/Gunshots/silenced.ogg
+    availableModes:
+    - FullAuto
+  - type: ItemSlots
+    slots:
+      gun_magazine:
+        name: Magazine
+        startingItem: MagazineMagnumSubMachineGun
+        insertSound: /Audio/Weapons/Guns/MagIn/smg_magin.ogg
+        ejectSound: /Audio/Weapons/Guns/MagOut/smg_magout.ogg
+        priority: 2
+        whitelist:
+          tags:
+            - MagazineMagnumSubMachineGun
+      gun_chamber:
+        name: Chamber
+        startingItem: CartridgeMagnum
+        priority: 1
+        whitelist:
+          tags:
+            - CartridgeMagnum
+  - type: ContainerContainer
+    containers:
+      gun_magazine: !type:ContainerSlot
+      gun_chamber: !type:ContainerSlot
+  - type: MagazineVisuals
+    magState: mag
+    steps: 1
+    zeroVisible: true
+  - type: Appearance
