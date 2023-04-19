@@ -37,24 +37,24 @@ namespace Content.Server.Arcade.Components
         [DataField("possibleFightVerbs")]
         private List<string> _possibleFightVerbs = new List<string>()
         /// Corvax-Localization-Start
-            {"Победи", "Аннигилируй", "Спаси", "Ударь", "Останови", "Уничтожь", "Заробасти", "Одолей"};
+            {"Победи", "Аннигилируй", "Спаси", "Ударь", "Останови", "Уничтожь", "Заробасти", "Одолей", "Завладей"};
         /// Corvax-Localization-End
         [ViewVariables(VVAccess.ReadWrite)]
         [DataField("possibleFirstEnemyNames")]
         private List<string> _possibleFirstEnemyNames = new List<string>(){
-    `   /// Corvax-Localization-Start
-            "Автоматического", "Фермера", "Лорда", "Профессора", "Кубинца", "Злого", "Грозного Короля",
-            "Космического", "Лорда", "Могучего", "Герцога", "Обычного"
-    `   /// Corvax-Localization-End
+        /// Corvax-Localization-Start
+            "Автоматический", "Фермер", "Лорд", "Профессор", "Кубинец", "Злой", "Грозный Король",
+            "Космический", "Лорд", "Могучий", "Герцог", "Обычный"
+        /// Corvax-Localization-End
         };
         [ViewVariables(VVAccess.ReadWrite)]
         [DataField("possibleLastEnemyNames")]
         private List<string> _possibleLastEnemyNames = new List<string>()
         {
-    `   /// Corvax-Localization-Start
-            "Мелоноида", "Мурдетрона", "Волшебника", "Руину", "Джеффа", "Эктоплазму", "Крушелона", "Унахгоида",
-            "Вакойда", "Петеоида", "слизня", "Грифера", "ЕРПшера", "Человека Ящерицу", "Единорога"
-    `   /// Corvax-Localization-End
+        /// Corvax-Localization-Start
+            "Мелоноид", "Мурдетрон", "Волшебник", "Руина", "Джефф", "Эктоплазма", "Крушелон", "Унахгоид",
+            "Вакойд", "Петеоид", "слизень", "Грифер", "ЕРПшер", "Человек Ящерица", "Единорог"
+        /// Corvax-Localization-End
         };
         [ViewVariables(VVAccess.ReadWrite)]
         [DataField("possibleRewards", customTypeSerializer:typeof(PrototypeIdListSerializer<EntityPrototype>))]
