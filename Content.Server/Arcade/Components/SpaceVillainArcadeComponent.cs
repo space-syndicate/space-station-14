@@ -37,7 +37,7 @@ namespace Content.Server.Arcade.Components
         [DataField("possibleFightVerbs")]
         private List<string> _possibleFightVerbs = new List<string>()
         /// Corvax-Localization-Start
-            {"Победи", "Аннигилируй", "Спаси", "Ударь", "Останови", "Уничтожь", "Заробасти", "Одолей", "Завладей"};
+            {"Победи", "Аннигилируй", "Спаси", "Ударь", "Останови", "Уничтожь", "Заробасти", "Добейся", "Отымей", "Завладей", };
         /// Corvax-Localization-End
         [ViewVariables(VVAccess.ReadWrite)]
         [DataField("possibleFirstEnemyNames")]
