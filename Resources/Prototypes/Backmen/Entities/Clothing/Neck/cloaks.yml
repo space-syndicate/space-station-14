@@ -22,3 +22,11 @@
   components:
   - type: Sprite
     sprite: Backmen/Clothing/Neck/Cloaks/SSSP.rsi
+- type: entity
+  parent: ClothingNeckBase
+  id: ClothingNeckCloakmeibe
+  name: Плащ лучшего инженера мейбе
+  description: Данный плащ обозначает что вы гордость Атмосии. Гордитесь собой ведь такой плащ есть только у единиц !
+  components:
+  - type: Sprite
+    sprite: Backmen/Clothing/Neck/Cloaks/cloak_best_engineer_meibe.yml
