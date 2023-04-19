@@ -36,19 +36,25 @@ namespace Content.Server.Arcade.Components
         [ViewVariables(VVAccess.ReadWrite)]
         [DataField("possibleFightVerbs")]
         private List<string> _possibleFightVerbs = new List<string>()
-            {"Defeat", "Annihilate", "Save", "Strike", "Stop", "Destroy", "Robust", "Romance", "Pwn", "Own"};
+        /// Corvax-Localization-Start
+            {"Победи", "Аннигилируй", "Спаси", "Ударь", "Останови", "Уничтожь", "Заробасти", "Одолей"};
+        /// Corvax-Localization-End
         [ViewVariables(VVAccess.ReadWrite)]
         [DataField("possibleFirstEnemyNames")]
         private List<string> _possibleFirstEnemyNames = new List<string>(){
-            "the Automatic", "Farmer", "Lord", "Professor", "the Cuban", "the Evil", "the Dread King",
-            "the Space", "Lord", "the Great", "Duke", "General"
+    `   /// Corvax-Localization-Start
+            "Автоматического", "Фермера", "Лорда", "Профессора", "Кубинца", "Злого", "Грозного Короля",
+            "Космического", "Лорда", "Могучего", "Герцога", "Обычного"
+    `   /// Corvax-Localization-End
         };
         [ViewVariables(VVAccess.ReadWrite)]
         [DataField("possibleLastEnemyNames")]
         private List<string> _possibleLastEnemyNames = new List<string>()
         {
-            "Melonoid", "Murdertron", "Sorcerer", "Ruin", "Jeff", "Ectoplasm", "Crushulon", "Uhangoid",
-            "Vhakoid", "Peteoid", "slime", "Griefer", "ERPer", "Lizard Man", "Unicorn"
+    `   /// Corvax-Localization-Start
+            "Мелоноида", "Мурдетрона", "Волшебника", "Руину", "Джеффа", "Эктоплазму", "Крушелона", "Унахгоида",
+            "Вакойда", "Петеоида", "слизня", "Грифера", "ЕРПшера", "Человека Ящерицу", "Единорога"
+    `   /// Corvax-Localization-End
         };
         [ViewVariables(VVAccess.ReadWrite)]
         [DataField("possibleRewards", customTypeSerializer:typeof(PrototypeIdListSerializer<EntityPrototype>))]
