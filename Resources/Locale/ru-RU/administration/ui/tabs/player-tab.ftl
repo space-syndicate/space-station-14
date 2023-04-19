@@ -2,5 +2,6 @@ player-tab-username = Пользователь
 player-tab-character = Персонаж
 player-tab-job = Должность
 player-tab-antagonist = Антагонист
+player-tab-show-disconnected = Показать отключившихся
 player-tab-sponsor = Спонсор
-player-tab-overlay = Overlay
+player-tab-overlay = Оверлей
