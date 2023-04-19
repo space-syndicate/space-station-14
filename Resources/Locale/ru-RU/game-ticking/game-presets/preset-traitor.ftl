@@ -20,7 +20,7 @@ preset-traitor-objective-issuer-spiderclan = [color=#33cc00]Spider Clan[/color]
 traitor-objective-condition-success = { $condition } | [color={ $markupColor }]Успех![/color]
 # Shown at the end of a round of Traitor
 traitor-objective-condition-fail = { $condition } | [color={ $markupColor }]Провал![/color] ({ $progress }%)
-traitor-title = Предатель
+traitor-title = Предатели
 traitor-description = Среди нас есть предатели...
 traitor-not-enough-ready-players = Недостаточно игроков готовы к игре! Из { $minimumPlayers } необходимых игроков готовы { $readyPlayersCount }.
 traitor-no-one-ready = Нет готовых игроков! Не удалось начать режим Предателя.
