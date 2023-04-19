@@ -241,3 +241,17 @@
   completetime: 2
   materials:
     Steel: 300
+
+- type: latheRecipe
+  id: MagazineRifle
+  result: MagazineRifle
+  completetime: 2
+  materials:
+    Steel: 300
+
+- type: latheRecipe
+  id: MagazinePistolSubMachineGun
+  result: MagazinePistolSubMachineGun
+  completetime: 2
+  materials:
+    Steel: 300
