@@ -1,12 +1,12 @@
 - type: job
-  id: BlueShieldOfficer
-  name: job-name-blueshieldofficer
-  playTimeTracker: JobBlueShieldOfficer
+  id: ADTBlueShieldOfficer
+  name: job-name-ADTBlueShieldOfficer
+  playTimeTracker: JobADTBlueShieldOfficer
   requirements:
     - !type:DepartmentTimeRequirement
       department: Command
       time: 72000
-  startingGear: BlueShieldOfficerGear
+  startingGear: ADTBlueShieldOfficerGear
   icon: "blueshield"
   supervisors: job-supervisors-captain
   canBeAntag: false
@@ -24,29 +24,29 @@
     - Cargo
 
 - type: playTimeTracker
-  id: JobBlueShieldOfficer
+  id: JobADTBlueShieldOfficer
 
 - type: startingGear
-  id: BlueShieldOfficerGear
+  id: ADTBlueShieldOfficerGear
   equipment:
     head: ClothingHeadHatBeretWarden
     eyes: ClothingEyesGlassesSecurity
     ears: ClothingHeadsetAltCommand
     jumpsuit: ClothingUniformJumpsuitNanotrasen
-    back: ClothingBackpackBlueShieldOfficerFilled
+    back: ClothingBackpackADTBlueShieldOfficerFilled
     shoes: ClothingShoesBootsCombatFilled
     outerClothing: ClothingOuterVestWeb
     belt: ClothingBeltMilitaryWebbingMedFilled
     gloves: ClothingHandsGlovesCombat
-    id: BlueShieldOfficerPDA
+    id: ADTBlueShieldOfficerPDA
 
 - type: entity
-  id: SpawnBlueShieldOfficer
+  id: SpawnADTBlueShieldOfficer
   parent: SpawnPointJobBase
-  name: BlueShieldOfficer
+  name: ADTBlueShieldOfficer
   components:
     - type: SpawnPoint
-      job_id: BlueShieldOfficer
+      job_id: ADTBlueShieldOfficer
     - type: Sprite
       layers:
         - state: green
@@ -54,12 +54,12 @@
 
 - type: entity
   parent: BasePDA
-  id: BlueShieldOfficerPDA
+  id: ADTBlueShieldOfficerPDA
   name: BlueShield PDA
   description: Это пахнет защитой.
   components:
     - type: PDA
-      id: BlueShieldOfficerIDCard
+      id: ADTBlueShieldOfficerIDCard
       state: pda-ert
     - type: PDABorderColor
       borderColor: "#A32D26"
@@ -71,7 +71,7 @@
 
 - type: entity
   parent: IDCardStandard
-  id: BlueShieldOfficerIDCard
+  id: ADTBlueShieldOfficerIDCard
   name: Blue Shield Officer ID card
   components:
     - type: Sprite
@@ -79,4 +79,4 @@
         - state: default
         - state: ert_security
     - type: PresetIdCard
-      job: BlueShieldOfficer
+      job: ADTBlueShieldOfficer

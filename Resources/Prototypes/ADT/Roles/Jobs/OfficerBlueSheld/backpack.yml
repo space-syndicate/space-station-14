@@ -1,7 +1,7 @@
 ﻿- type: entity
   noSpawn: true
   parent: ClothingBackpackERTSecurity
-  id: ClothingBackpackBlueShieldOfficerFilled
+  id: ClothingBackpackADTBlueShieldOfficerFilled
   components:
     - type: StorageFill
       contents:
