@@ -54,5 +54,7 @@
   - type: Clothing
     sprite: Backmen/Clothing/OuterClothing/Armor/deathrobes.rsi
   - type: Armor
+   modifiers:
+      coefficients:
   - type: ExplosionResistance
   - type: GroupExamine
