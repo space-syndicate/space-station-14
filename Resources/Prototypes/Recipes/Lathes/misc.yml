@@ -84,3 +84,12 @@
   materials:
     Steel: 1000
     Plastic: 500
+
+- type: latheRecipe
+  id: RadioHandheld
+  result: RadioHandheld
+  completetime: 2
+  materials:
+    Steel: 200
+    Glass: 100
+
