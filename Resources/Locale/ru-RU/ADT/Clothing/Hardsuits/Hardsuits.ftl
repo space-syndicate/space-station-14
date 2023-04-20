@@ -1,3 +1,15 @@
 ent-ADTClothingOuterHardsuitCybersunBodyGuard = Скафандр телохранителя Cybersun
     .desc = Тяжелобронированный скафандр элитного подразделения телохранителей Cybersun
     .suffix = { "" }
+ent-ADTClothingOuterHardsuitNanoScale = Нано-чешуйчатая броня
+    .desc = Рептилии не настолько примитивны, как вы считали
+    .suffix = { "" }
+ent-ADTClothingOuterHardsuitNanoScaleChameleon = Нано-чешуйчатый шлем
+    .desc = Очень скрытно и очень пахнет сахаром
+    .suffix = { "" }
+ent-ADTClothingClothingHeadHelmetHardsuitNanoScale = Нано-чешуйчатый шлем
+    .desc = Рептилии не настолько примитивны, как вы считали
+    .suffix = { "" }
+ent-ADTClothingClothingHeadHelmetNanoScaleChameleon = Нано-чешуйчатый шлем Хамелеон
+    .desc = Очень скрытно и очень пахнет сахаром
+    .suffix = { "" }

@@ -2,7 +2,6 @@
   "version": 1,
   "license": "CC-BY-SA-3.0",
   "copyright": "Created by discord:IAmRasputin#5242",
-
   "size": {
     "x": 32,
     "y": 32
@@ -12,14 +11,15 @@
       "name": "icon"
     },
     {
-      "name": "icon-flash"
-    },
-    {
-      "name": "off-equipped-HELMET",
+      "name": "equipped-OUTERCLOTHING",
       "directions": 4
     },
     {
-      "name": "on-equipped-HELMET",
+      "name": "inhand-left",
+      "directions": 4
+    },
+    {
+      "name": "inhand-right",
       "directions": 4
     }
   ]
