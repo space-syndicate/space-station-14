@@ -1,9 +1,10 @@
 ent-MobHuman = Урист МакХэндс
     .desc = { ent-BaseMobHuman.desc }
-    .suffix = { "" }
 ent-MobHumanSyndicateAgent = Агент Синдиката
     .desc = { ent-MobHuman.desc }
-    .suffix = { "" }
 ent-MobHumanNukeOp = Ядерный оперативник
     .desc = { ent-MobHuman.desc }
-    .suffix = { "" }
+ent-MobHumanLoneNuclearOperative = Lone Operative
+    .desc = { ent-MobHuman.desc }
+ent-MobHumanSpaceNinja = Space Ninja
+    .desc = { ent-MobHuman.desc }
