@@ -22,8 +22,3 @@ ninja-download-success =
        *[other] новых нод исследований
     }
 ninja-terror-already-called = Вы уже призвали угрозу!
-
- ->
-        [one] кредит
-        [few] кредита
-       *[other] кредитов
