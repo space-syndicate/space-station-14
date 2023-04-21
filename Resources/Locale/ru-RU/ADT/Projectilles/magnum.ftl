@@ -8,4 +8,3 @@ ent-ADTMagazineMagnumSubMachineGunHighVelocityTranquilizer = магазин Ве
     .desc = { ent-BaseMagazineMagnumSubMachineGun.desc }
 ent-BoxMagazineMagnumSubMachineGunPractice = Ящик магазинов для вектора (высокоскоростные, транквилизатор)
     .desc = Ящик, полный магазинов для Вектора (высокоскоростные, транквилизатор)
-ф
