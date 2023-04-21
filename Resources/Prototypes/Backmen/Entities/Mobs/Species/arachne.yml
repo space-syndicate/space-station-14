@@ -100,7 +100,7 @@
     requiredLegs: 8
   - type: Damageable
     damageContainer: Biological
-    damageModifierSet: Arachne
+    #damageModifierSet: Arachne TODO!
   - type: DiseaseCarrier
     naturalImmunities:
     - BleedersBite
