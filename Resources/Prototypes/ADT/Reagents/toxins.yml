@@ -1,0 +1,23 @@
+- type: reagent
+  id: ADTUltraChloralHydrate
+  name: reagent-name-ultra-chloral-hydrate
+  group: Toxins
+  desc: reagent-desc-ultra-chloral-hydrate
+  flavor: bitter
+  color: "#000067"
+  physicalDesc: reagent-physical-desc-nondescript
+  metabolisms:
+    Poison:
+      effects:
+      - !type:MovespeedModifier
+        walkSpeedModifier: 0.65
+        sprintSpeedModifier: 0.65
+      - !type:GenericStatusEffect
+        conditions:
+        - !type:ReagentThreshold
+          reagent: ADTUltraChloralHydrate
+          min: 3
+        key: ForcedSleep
+        component: ForcedSleeping
+        refresh: false
+        type: Add

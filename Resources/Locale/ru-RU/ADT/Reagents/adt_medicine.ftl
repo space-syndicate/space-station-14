@@ -5,3 +5,5 @@ reagent-name-adtsalineglucosesolution = физраствор
 reagent-desc-adtsalineglucosesolution = Прозрачное.
 reagent-physical-desc-adtsalineglucosesolution = прозрачное
 flavor-complex-somesalty = солёненькое
+reagent-name-ultra-chloral-hydrate = Ультрахлоральгидрат
+reagent-desc-ultra-chloral-hydrate = Модифицированный хлоральгидрат. В малых дозах вызывает сонливость. В больших дозах усыпляет. Передозировки нет

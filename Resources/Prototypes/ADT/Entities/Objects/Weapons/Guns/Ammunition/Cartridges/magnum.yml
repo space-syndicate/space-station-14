@@ -1,0 +1,7 @@
+- type: entity
+  id: ADTCartridgeMagnumHighVelocityTranquilizer
+  name: cartridge (.45 magnum high-velocity)
+  parent: BaseCartridgeMagnum
+  components:
+  - type: CartridgeAmmo
+    proto: ADTBulletMagnumHighVelocityTranquilizer
