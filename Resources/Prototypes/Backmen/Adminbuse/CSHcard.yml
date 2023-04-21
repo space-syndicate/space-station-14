@@ -1,0 +1,25 @@
+- type: entity
+  parent: CentcomIDCardDeathsquad
+  id: IDCardMOG
+  name: Id карта МОГ
+  components:
+  - type: Sprite
+    layers: Backmen/Objects/Devices/id_cards.rsi/idcardmog.png
+    - state: 
+  - type: Item
+    heldPrefix: black
+  - type: IdCard
+    jobTitle: Сотрудник Мобильной Группы
+
+- type: entity
+  parent: CentcomIDCardDeathsquad
+  id: IdCardIOG
+  name: Id карта ИОГ
+  components:
+  - type: Sprite
+    layers: Backmen/Objects/Devices/id_cards.rsi/idcardiog.png
+    - state: 
+  - type: Item
+    heldPrefix: black
+  - type: IdCard
+    jobTitle: Сотрудник Исследовательской Группы
