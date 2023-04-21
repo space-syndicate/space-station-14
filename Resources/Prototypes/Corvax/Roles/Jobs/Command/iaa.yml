@@ -1,11 +1,11 @@
 - type: job
   id: IAA
-  name: PIDORAS
+  name: job-name-iaa
   playTimeTracker: JobIAA
   requirements:
     - !type:DepartmentTimeRequirement
       department: Command
-      time: 99999999999999999999999999999
+      time: 72000
     - !type:DepartmentTimeRequirement
       department: Security
       time: 36000
