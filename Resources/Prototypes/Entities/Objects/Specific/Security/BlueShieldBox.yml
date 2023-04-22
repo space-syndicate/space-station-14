@@ -1,0 +1,16 @@
+- type: entity
+  noSpawn: true
+  parent: BaseItem
+  id: BlueShieldBox
+  name: BlueBox
+  description: Маленькая коробочка с использованием блюспейс технологии. При открытии выдает скафандр. Одноразовая
+  components:
+  - type: Sprite
+    sprite: Objects/Storage/boxes.rsi
+    state: box
+    netsync: false
+  - type: SpawnItemsOnUse
+    items:
+    - id: BlueShieldsuit
+    sound:
+      path: /Audio/Effects/unwrap.ogg

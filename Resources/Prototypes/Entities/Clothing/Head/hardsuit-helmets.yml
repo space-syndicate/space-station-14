@@ -123,6 +123,8 @@
     sprite: Clothing/Head/Hardsuits/ihsvoid.rsi
   - type: Clothing
     sprite: Clothing/Head/Hardsuits/ihsvoid.rsi
+  - type: PointLight
+    color: "#daffad"
   - type: PressureProtection
     highPressureMultiplier: 0.3
     lowPressureMultiplier: 10000
