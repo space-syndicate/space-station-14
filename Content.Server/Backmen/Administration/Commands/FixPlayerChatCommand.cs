@@ -1,11 +1,14 @@
 using Content.Server.Administration;
 using Content.Server.Administration.Logs;
+using Content.Server.Mind;
 using Content.Server.Mind.Components;
 using Content.Server.Players;
 using Content.Shared.Administration;
 using Content.Shared.Database;
+using Robust.Server.GameObjects;
 using Robust.Server.Player;
 using Robust.Shared.Console;
+using Robust.Shared.Timing;
 
 namespace Content.Server.Backmen.Administration.Commands
 {
@@ -52,14 +55,14 @@ namespace Content.Server.Backmen.Administration.Commands
                 return;
             }
 
-            if (!_entityManager.HasComponent<MindComponent>(eUid))
+            if (!_entityManager.HasComponent<MindComponent>(eUid) || !_entityManager.HasComponent<ActorComponent>(eUid))
             {
                 shell.WriteLine(Loc.GetString("set-mind-command-target-has-no-mind-message"));
                 return;
             }
 
+            _entityManager.RemoveComponent<ActorComponent>(eUid);
             _entityManager.RemoveComponent<MindComponent>(eUid);
-            _entityManager.AddComponent<MindComponent>(eUid);
 
             // hm, does player have a mind? if not we may need to give them one
             var playerCData = session.ContentData();
@@ -79,8 +82,12 @@ namespace Content.Server.Backmen.Administration.Commands
                 mind.ChangeOwningPlayer(session.UserId);
             }
 
-            mind.TransferTo(eUid);
-
+            //mind.TransferTo(null);
+            Timer.Spawn(1_000, ()=>{
+                if(eUid.IsValid() && _entityManager.HasComponent<MetaDataComponent>(eUid)){
+                    mind.TransferTo(eUid);
+                }
+            });
             _adminLogger.Add(LogType.Mind, LogImpact.High, $"{(shell.Player != null ? shell.Player.Name : "An administrator")} fixplayerchat {_entityManager.ToPrettyString(eUid)}");
         }
 
