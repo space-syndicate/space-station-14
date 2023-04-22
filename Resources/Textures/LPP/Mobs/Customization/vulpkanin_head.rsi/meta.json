@@ -1,0 +1,47 @@
+{
+    "version": 1,
+    "size": {
+        "x": 32,
+        "y": 32
+    },
+    "license": "CC-BY-SA-3.0",
+    "copyright": "",
+    "states": [
+        {
+            "name": "ear",
+            "directions": 4
+        },
+        {
+            "name": "muzzle",
+            "directions": 4
+        },
+        {
+            "name": "muzzle_ear",
+            "directions": 4
+        },
+        {
+            "name": "nose",
+            "directions": 4
+        },
+        {
+            "name": "points_fade",
+            "directions": 4
+        },
+        {
+            "name": "points_sharp",
+            "directions": 4
+        },
+        {
+            "name": "tiger_face",
+            "directions": 4
+        },
+        {
+            "name": "tiger_head",
+            "directions": 4
+        },
+        {
+            "name": "skull_sponsor",
+            "directions": 4
+        }
+    ]
+}

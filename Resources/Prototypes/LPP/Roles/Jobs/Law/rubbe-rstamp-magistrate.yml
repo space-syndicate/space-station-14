@@ -1,0 +1,11 @@
+- type: entity
+  name: magistrate rubber stamp
+  parent: RubberStampMime
+  id: RubberStampMagistrate
+  components:
+  - type: Stamp
+    stampedName: stamp-component-stamped-name-magistrate
+    stampState: "paper_stamp-mag"
+  - type: Sprite
+    sprite: LPP/Objects/Misc/magistrate.rsi
+    state: stamp-magistrate

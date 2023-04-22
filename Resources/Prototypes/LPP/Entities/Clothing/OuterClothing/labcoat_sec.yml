@@ -1,0 +1,17 @@
+- type: entity
+  parent: ClothingOuterStorageBase
+  id: LPPClothingOuterCoatLabSec
+  name: lab coat (sec)
+  description: A suit that protects against minor chemical spills. Has an red stripe on the shoulder.
+  components:
+  - type: Sprite
+    sprite: LPP/Clothing/OuterClothing/Coats/labcoat_sec.rsi
+  - type: Clothing
+    sprite: LPP/Clothing/OuterClothing/Coats/labcoat_sec.rsi
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.9
+        Slash: 0.9
+        Piercing: 0.4
+        Heat: 0.9

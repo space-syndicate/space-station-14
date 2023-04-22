@@ -1,0 +1,191 @@
+﻿- type: marking
+  id: ADTVulpkaninabhara
+  bodyPart: Hair
+  markingCategory: Hair
+  speciesRestriction: [VulpkaninSpecies]
+  sprites:
+    - sprite: LPP/Mobs/Customization/vulpkanin_hair.rsi
+      state: abhara
+
+- type: marking
+  id: ADTVulpkaninanite
+  bodyPart: Hair
+  markingCategory: Hair
+  speciesRestriction: [VulpkaninSpecies]
+  sprites:
+    - sprite: LPP/Mobs/Customization/vulpkanin_hair.rsi
+      state: anite
+
+- type: marking
+  id: ADTVulpkaninapollo
+  bodyPart: Hair
+  markingCategory: Hair
+  speciesRestriction: [VulpkaninSpecies]
+  sprites:
+    - sprite: LPP/Mobs/Customization/vulpkanin_hair.rsi
+      state: apollo
+
+- type: marking
+  id: ADTVulpkaninbelle
+  bodyPart: Hair
+  markingCategory: Hair
+  speciesRestriction: [VulpkaninSpecies]
+  sprites:
+    - sprite: LPP/Mobs/Customization/vulpkanin_hair.rsi
+      state: belle
+
+- type: marking
+  id: ADTVulpkaninbraided
+  bodyPart: Hair
+  markingCategory: Hair
+  speciesRestriction: [VulpkaninSpecies]
+  sprites:
+    - sprite: LPP/Mobs/Customization/vulpkanin_hair.rsi
+      state: braided
+
+- type: marking
+  id: ADTVulpkaninbun
+  bodyPart: Hair
+  markingCategory: Hair
+  speciesRestriction: [VulpkaninSpecies]
+  sprites:
+    - sprite: LPP/Mobs/Customization/vulpkanin_hair.rsi
+      state: bun
+
+- type: marking
+  id: ADTVulpkanincurl
+  bodyPart: Hair
+  markingCategory: Hair
+  speciesRestriction: [VulpkaninSpecies]
+  sprites:
+    - sprite: LPP/Mobs/Customization/vulpkanin_hair.rsi
+      state: curl
+
+- type: marking
+  id: ADTVulpkaninhair_sponsor
+  bodyPart: Hair
+  markingCategory: Hair
+  speciesRestriction: [VulpkaninSpecies]
+  sponsorOnly: true
+  sprites:
+    - sprite: LPP/Mobs/Customization/vulpkanin_hair.rsi
+      state: hair_sponsor
+
+- type: marking
+  id: ADTVulpkaninhawk
+  bodyPart: Hair
+  markingCategory: Hair
+  speciesRestriction: [VulpkaninSpecies]
+  sprites:
+    - sprite: LPP/Mobs/Customization/vulpkanin_hair.rsi
+      state: hawk
+
+- type: marking
+  id: ADTVulpkaninjagged_sponsor_hair
+  bodyPart: Hair
+  markingCategory: Hair
+  speciesRestriction: [VulpkaninSpecies]
+  sponsorOnly: true
+  sprites:
+    - sprite: LPP/Mobs/Customization/vulpkanin_hair.rsi
+      state: jagged_sponsor_hair
+
+- type: marking
+  id: ADTVulpkaninkajam1
+  bodyPart: Hair
+  markingCategory: Hair
+  speciesRestriction: [VulpkaninSpecies]
+  sprites:
+    - sprite: LPP/Mobs/Customization/vulpkanin_hair.rsi
+      state: kajam1
+
+- type: marking
+  id: ADTVulpkaninkajam2
+  bodyPart: Hair
+  markingCategory: Hair
+  speciesRestriction: [VulpkaninSpecies]
+  sprites:
+    - sprite: LPP/Mobs/Customization/vulpkanin_hair.rsi
+      state: kajam2
+
+- type: marking
+  id: ADTVulpkaninkeid
+  bodyPart: Hair
+  markingCategory: Hair
+  speciesRestriction: [VulpkaninSpecies]
+  sprites:
+    - sprite: LPP/Mobs/Customization/vulpkanin_hair.rsi
+      state: keid
+
+- type: marking
+  id: ADTVulpkaninkleeia
+  bodyPart: Hair
+  markingCategory: Hair
+  speciesRestriction: [VulpkaninSpecies]
+  sprites:
+    - sprite: LPP/Mobs/Customization/vulpkanin_hair.rsi
+      state: kleeia
+
+- type: marking
+  id: ADTVulpkaninmizar
+  bodyPart: Hair
+  markingCategory: Hair
+  speciesRestriction: [VulpkaninSpecies]
+  sprites:
+    - sprite: LPP/Mobs/Customization/vulpkanin_hair.rsi
+      state: mizar
+
+- type: marking
+  id: ADTVulpkaninraine
+  bodyPart: Hair
+  markingCategory: Hair
+  speciesRestriction: [VulpkaninSpecies]
+  sprites:
+    - sprite: LPP/Mobs/Customization/vulpkanin_hair.rsi
+      state: raine
+
+- type: marking
+  id: ADTVulpkaninrough
+  bodyPart: Hair
+  markingCategory: Hair
+  speciesRestriction: [VulpkaninSpecies]
+  sprites:
+    - sprite: LPP/Mobs/Customization/vulpkanin_hair.rsi
+      state: rough
+
+- type: marking
+  id: ADTVulpkaninshort
+  bodyPart: Hair
+  markingCategory: Hair
+  speciesRestriction: [VulpkaninSpecies]
+  sprites:
+    - sprite: LPP/Mobs/Customization/vulpkanin_hair.rsi
+      state: short
+
+- type: marking
+  id: ADTVulpkaninshort2
+  bodyPart: Hair
+  markingCategory: Hair
+  speciesRestriction: [VulpkaninSpecies]
+  sprites:
+    - sprite: LPP/Mobs/Customization/vulpkanin_hair.rsi
+      state: short2
+
+- type: marking
+  id: ADTVulpkaninspike
+  bodyPart: Hair
+  markingCategory: Hair
+  speciesRestriction: [VulpkaninSpecies]
+  sprites:
+    - sprite: LPP/Mobs/Customization/vulpkanin_hair.rsi
+      state: spike
+
+- type: marking
+  id: ADTVulpkaninykiteru_sponsor_hair
+  bodyPart: Hair
+  markingCategory: Hair
+  speciesRestriction: [VulpkaninSpecies]
+  sponsorOnly: true
+  sprites:
+    - sprite: LPP/Mobs/Customization/vulpkanin_hair.rsi
+      state: ykiteru_sponsor_hair

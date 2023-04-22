@@ -1,0 +1,53 @@
+- type: job
+  id: LPPBlueShieldOfficer
+  name: job-name-blueshieldofficer
+  playTimeTracker: JobBlueShieldOfficer
+  requirements:
+    - !type:DepartmentTimeRequirement
+      department: Command
+      time: 72000
+    - !type:DepartmentTimeRequirement
+      department: Security
+      time: 54000
+    - !type:DepartmentTimeRequirement
+      department: Medical
+      time: 36000
+  startingGear: LPPBlueShieldOfficerGear
+  icon: "Blueshield"
+  supervisors: job-supervisors-captain
+  canBeAntag: false
+  accessGroups:
+  - AllAccess
+  special:
+  - !type:AddImplantSpecial
+    implants: [ TrackingImplant ]
+
+- type: startingGear
+  id: LPPBlueShieldOfficerGear
+  equipment:
+    jumpsuit: LPPClothingUniformJumpsuitBlueshield
+    back: LPPClothingBackpackBlueshieldFilled
+    shoes: ClothingShoesBootsCombatFilled
+    head: LPPClothingHeadHatBeretBlueshield
+    eyes: ClothingEyesGlassesSunglasses
+    gloves: ClothingHandsGlovesCombat
+    outerClothing: LPPClothingOuterArmorBlueshield
+    neck: LPPClothingNeckCloakBlueshield
+    id: LPPBlueShieldOfficerPDA
+    ears: ClothingHeadsetAltCommand
+    pocket1: LPPBlueshieldlaser
+    belt: ClothingBeltSecurityFilled
+  satchel: LPPClothingBackpackSatchelBlueshieldFilled
+  duffelbag: LPPClothingBackpackDuffelBlueshieldFilled
+
+- type: entity
+  id: SpawnBlueShieldOfficer
+  parent: SpawnPointJobBase
+  name: BlueShieldOfficer
+  components:
+    - type: SpawnPoint
+      job_id: LPPBlueShieldOfficer
+    - type: Sprite
+      layers:
+        - state: green
+        - state: hop

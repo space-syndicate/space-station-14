@@ -1,0 +1,65 @@
+- type: entity
+  noSpawn: true
+  parent: LPPClothingBackpackBlueshield
+  id: LPPClothingBackpackBlueshieldFilled
+  components:
+  - type: StorageFill
+    contents:
+      - id: BoxSurvivalSecurity
+      - id: Flash
+      - id: Hypospray
+      - id: HandheldCrewMonitor
+
+- type: entity
+  noSpawn: true
+  parent: LPPClothingBackpackDuffelBlueshield
+  id: LPPClothingBackpackDuffelBlueshieldFilled
+  components:
+  - type: StorageFill
+    contents:
+      - id: BoxSurvivalSecurity
+      - id: Flash
+      - id: Hypospray
+      - id: HandheldCrewMonitor
+
+- type: entity
+  noSpawn: true
+  parent: LPPClothingBackpackSatchelBlueshield
+  id: LPPClothingBackpackSatchelBlueshieldFilled
+  components:
+  - type: StorageFill
+    contents:
+      - id: BoxSurvivalSecurity
+      - id: Flash
+      - id: Hypospray
+      - id: HandheldCrewMonitor
+      
+- type: entity
+  noSpawn: true
+  parent: ClothingBackpackMedical
+  id: LPPClothingBackpackParamedicFilled
+  components:
+  - type: StorageFill
+    contents:
+      - id: BoxSurvivalMedical
+      - id: JawsOfLife
+
+- type: entity
+  noSpawn: true
+  parent: ClothingBackpackDuffelMedical
+  id: LPPClothingBackpackDuffelParamedicFilled
+  components:
+  - type: StorageFill
+    contents:
+      - id: BoxSurvivalMedical
+      - id: JawsOfLife
+
+- type: entity
+  noSpawn: true
+  parent: ClothingBackpackSatchelMedical
+  id: LPPClothingBackpackSatchelParamedicFilled
+  components:
+  - type: StorageFill
+    contents:
+      - id: BoxSurvivalMedical
+      - id: JawsOfLife
