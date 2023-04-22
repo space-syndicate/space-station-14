@@ -1,0 +1,10 @@
+- type: entity
+  name: box of Vector (high-velocity) magazines
+  parent: BoxMagazine
+  id: ADTBoxMagazineMagnumSubMachineGunHighVelocityTranquilizer
+  description: A box full of Vector (high-velocity tranquilizer) magazines.
+  components:
+  - type: StorageFill
+    contents:
+      - id: ADTMagazineMagnumSubMachineGunHighVelocityTranquilizer
+        amount: 3
