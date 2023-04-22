@@ -48,9 +48,10 @@
       - id: Flash
       #- name: StationCharter
       #- name: TelescopicBaton
+
 - type: entity
   noSpawn: true
-  parent: ClothingBackpackEngineering
+  parent: ClothingBackpackCE # Corvax-Resprite
   id: ClothingBackpackChiefEngineerFilled
   components:
   - type: StorageFill
@@ -157,7 +158,7 @@
   components:
   - type: StorageFill
     contents:
-      - id: BoxSurvival
+      - id: BoxSurvivalMedical
 
 - type: entity
   noSpawn: true

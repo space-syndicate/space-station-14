@@ -2,6 +2,7 @@
 using System.Linq;
 using System.Text;
 using Content.Server.Administration.Logs;
+using Content.Server.CartridgeLoader.Cartridges;
 using Content.Server.DetailExaminable;
 using Content.Server.GameTicking;
 using Content.Server.GameTicking.Rules.Components;
@@ -31,6 +32,11 @@ using Robust.Shared.Map;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Random;
 using Content.Server.Ghost.Roles.Events;
+using Content.Server.PDA;
+using Content.Server.Station.Components;
+using Content.Shared.CartridgeLoader;
+using Content.Shared.Inventory;
+using Content.Shared.PDA;
 
 namespace Content.Server.Backmen.EvilTwin;
 
@@ -108,12 +114,30 @@ public sealed class EvilTwinSystem : EntitySystem
                 {
                     var mind = playerData.Mind;
                     mind?.TransferTo(twinMob);
-
-                    var station = _stationSystem.GetOwningStation(uid, xform);
+                    var station = _stationSystem.GetOwningStation(targetUid.Value) ?? EntityQuery<BecomesStationComponent>().FirstOrDefault()?.Owner;
                     if (pref != null && station!= null && TryComp<MindComponent>(targetUid, out var targetMind) && mind!=null)
                     {
                         RaiseLocalEvent(new PlayerSpawnCompleteEvent(twinMob.Value, targetMind.Mind!.Session!, targetMind.Mind.CurrentJob?.Prototype.ID, false,
                             0, station.Value, pref));
+                        if (_inventory.TryGetSlotEntity(targetUid.Value,"id",out var targetPda) &&
+                            _inventory.TryGetSlotEntity(twinMob.Value,"id",out var twinPda) &&
+                            TryComp<CartridgeLoaderComponent>(targetPda, out var targetPdaComp) &&
+                            TryComp<CartridgeLoaderComponent>(twinPda, out var twinPdaComp))
+                        {
+                            var twinProgram = twinPdaComp.InstalledPrograms.FirstOrDefault(HasComp<NotekeeperCartridgeComponent>);
+                            var targetProgram = targetPdaComp.InstalledPrograms.FirstOrDefault(HasComp<NotekeeperCartridgeComponent>);
+                            if (twinProgram.Valid &&
+                                targetProgram.Valid &&
+                                TryComp<NotekeeperCartridgeComponent>(targetProgram, out var targetNotesComp) &&
+                                TryComp<NotekeeperCartridgeComponent>(twinProgram, out var twinNotesComp))
+                            {
+                                foreach (var note in targetNotesComp.Notes)
+                                {
+                                    twinNotesComp.Notes.Add(note);
+                                }
+                            }
+                        }
+
                     }
 
                     _adminLogger.Add(LogType.Action, LogImpact.Extreme, $"{_entityManager.ToPrettyString(twinMob.Value)} take EvilTwin with target {_entityManager.ToPrettyString(targetUid.Value)}");
@@ -306,6 +330,7 @@ public sealed class EvilTwinSystem : EntitySystem
 
         return (new EntityUid?(twinUid),pref);
     }
+    [Dependency] private readonly InventorySystem _inventory = default!;
 
     [Dependency] private readonly IRobustRandom _random = default!;
 

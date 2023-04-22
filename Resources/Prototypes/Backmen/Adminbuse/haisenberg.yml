@@ -42,10 +42,14 @@
   components:
   - type: Icon
     sprite: Markers/jobs.rsi
-  - type: GhostTakeoverAvailable
+  - type: GhostRole
+    makeSentient: true
+    allowSpeech: true
+    allowMovement: true
     name: Хайзенберг
     description: Варите сладости и раздавайте другим!
     rules: Вы Хайзенберг, ваша задача сварить и продавать таблетки!
+  - type: GhostTakeoverAvailable
   - type: Identity
   - type: Hands
   - type: Clickable

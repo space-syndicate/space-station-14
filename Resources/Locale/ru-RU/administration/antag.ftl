@@ -6,3 +6,4 @@ admin-verb-make-pirate = Сделать цель пиратом\капером. 
 
 
 admin-verb-make-eviltwin = Сделать цели злого близнеца.
+admin-verb-make-space-ninja = Make the target into a space ninja. Note that you must enable the Traitor game rule for the end round summary, as space ninja uses this.
