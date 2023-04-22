@@ -540,6 +540,7 @@
     clothingPrototype: ClothingHeadHelmetHardsuitSpatio
 
 - type: entity
+  noSpawn: true
   parent: ClothingOuterHardsuitBase
   id: BlueShieldsuit
   name: Скафандр Синего Щита
