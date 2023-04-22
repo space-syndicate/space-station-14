@@ -1,0 +1,62 @@
+- type: entity
+  save: false
+  name: Vulpkanin McHands
+  parent: BaseMobOrganic
+  id: BaseMobVulpkanin
+  abstract: true
+  components:
+    - type: HumanoidAppearance
+      species: VulpkaninSpecies
+    - type: Body
+      prototype: VulpkaninBody
+      requiredLegs: 2
+    - type: RoarAccent
+    - type: Vocal
+      sounds:
+        Male: MaleVulpkanin
+        Female: FemaleVulpkanin
+        Unsexed: FemaleVulpkanin
+    - type: Hunger
+    - type: Thirst
+    - type: Icon
+      sprite: LPP/Mobs/Species/Vulpkanin/parts.rsi
+      state: vulpkanin_m
+    - type: Damageable
+      damageContainer: Biological
+      damageModifierSet: Scale
+    - type: MeleeWeapon
+      hidden: true
+      soundHit:
+        path: /Audio/Weapons/pierce.ogg
+      angle: 30
+      animation: WeaponArcPunch
+      damage:
+        types:
+          Piercing: 5
+    - type: Temperature
+      heatDamageThreshold: 400
+      coldDamageThreshold: 200
+      currentTemperature: 310.15
+      specificHeat: 46
+      coldDamage:
+        types:
+          Cold : 0.2 #per second, scales with temperature & other constants
+      heatDamage:
+        types:
+          Heat : 0.1 #per second, scales with temperature & other constants
+    - type: MovementSpeedModifier
+      baseWalkSpeed : 3.0
+      baseSprintSpeed : 4.9
+    - type: Perishable
+
+- type: entity
+  save: false
+  name: Vulpkanin McHands
+  parent: MobHumanDummy
+  id: MobVulpkaninDummy
+  noSpawn: true
+  description: A dummy vulpkanin meant to be used in character setup.
+  components:
+    - type: HumanoidAppearance
+      species: VulpkaninSpecies
+

@@ -1,0 +1,40 @@
+- type: species
+  id: ElfSpecies
+  name: species-name-elf
+  roundStart: true
+  prototype: MobElf
+  sprites: MobHumanSprites
+  markingLimits: MobElfMarkingLimits
+  dollPrototype: MobElfDummy
+  skinColoration: HumanToned
+  
+  minAge: 50
+  youngAge: 100
+  oldAge: 200
+  maxAge: 300
+
+- type: markingPoints
+  id: MobElfMarkingLimits
+  #onlyWhitelisted: true
+  points:
+    Hair:
+      points: 1
+      required: true
+    FacialHair:
+      points: 0
+      required: false
+    Tail: # the cat tail joke
+      points: 1 # Corvax-Sponsors
+      required: false
+    HeadTop: # the cat ear joke
+      points: 1 # Corvax-Sponsors
+      required: false
+    Chest:
+      points: 1
+      required: false
+    Legs:
+      points: 2
+      required: false
+    Arms:
+      points: 2
+      required: false

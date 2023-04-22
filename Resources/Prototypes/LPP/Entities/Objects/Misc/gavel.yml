@@ -1,0 +1,40 @@
+- type: entity
+  parent: BaseItem
+  id: LPPJudgesGavel
+  name: judges gavel
+  description: The sound of justice.
+  components:
+  - type: Sprite
+    sprite: LPP/Objects/Misc/judgesgavel.rsi
+    state: icon
+  - type: Item
+    sprite: LPP/Objects/Misc/judgesgavel.rsi
+    size: 5
+  - type: Clothing
+    sprite: LPP/Objects/Misc/judgesgavel.rsi
+    slots: [Belt]
+    quickEquip: false
+  - type: ItemCooldown
+  - type: EmitSoundOnUse
+    sound:
+      path: /Audio/LPP/Misc/gavel.ogg
+      params:
+        variation: 0.125
+  - type: UseDelay
+    delay: 0.5
+  - type: EmitSoundOnTrigger
+    sound:
+      path: /Audio/LPP/Misc/gavel.ogg
+      params:
+        variation: 0.125
+  - type: Tag
+    tags:
+    - Payload # yes, you can make re-usable prank grenades
+  - type: MeleeWeapon
+    soundHit:
+      path: /Audio/LPP/Misc/gavel.ogg
+      params:
+        variation: 0.125
+    damage:
+      types:
+        Blunt: 0

@@ -1,0 +1,140 @@
+#Жулик, не воруй, имей совесть!
+#Сумки
+- type: entity
+  parent: ClothingBackpack
+  id: LPPClothingBackpackBlueshield
+  name: blueshield backpack
+  description: They say it's bulletproof.
+  components:
+  - type: Sprite
+    sprite: LPP/Clothing/Back/blueshield_backpack.rsi
+
+- type: entity
+  parent: ClothingBackpackDuffel
+  id: LPPClothingBackpackDuffelBlueshield
+  name: blueshield duffel bag
+  description: Twice as many handcuffs!
+  components:
+  - type: Sprite
+    sprite: LPP/Clothing/Back/blueshield_duffel.rsi
+    
+- type: entity
+  parent: ClothingBackpackSatchel
+  id: LPPClothingBackpackSatchelBlueshield
+  name: blueshield satchel
+  description: Convenient to throw off rifle magazines.
+  components:
+  - type: Sprite
+    sprite: LPP/Clothing/Back/blueshield_satchel.rsi
+    
+#Костюмчик
+- type: entity
+  parent: ClothingUniformBase
+  id: LPPClothingUniformJumpsuitBlueshield
+  name: blueshield's jumpsuit
+  description: This is the costume of a man of high rank.
+  components:
+  - type: Sprite
+    sprite: LPP/Clothing/Uniforms/Jumpsuit/blueshield_suit.rsi
+  - type: Clothing
+    sprite: LPP/Clothing/Uniforms/Jumpsuit/blueshield_suit.rsi
+    
+#Берет (В рот за тренч)
+- type: entity
+  parent: ClothingHeadBase
+  id: LPPClothingHeadHatBeretBlueshield
+  name: blueshield's beret
+  description: Dark blue beret with the emblem of the commander's rank. For officers who think more about other people's safety than their own.
+  components:
+  - type: Sprite
+    sprite: LPP/Clothing/Head/Hats/blueshield_beret.rsi
+  - type: Clothing
+    sprite: LPP/Clothing/Head/Hats/blueshield_beret.rsi
+
+#Плащ
+- type: entity
+  parent: ClothingNeckBase
+  id: LPPClothingNeckCloakBlueshield
+  name: blueshield's cloak
+  description: They can hide those who really need protection.
+  components:
+  - type: Sprite
+    sprite: LPP/Clothing/Neck/Cloaks/blueshield_neck.rsi
+    
+#Броня
+- type: entity
+  parent: ClothingOuterBaseLarge
+  id: LPPClothingOuterArmorBlueshield
+  name: blueshield's carapace
+  description: An armored chestpiece that provides protection whilst still offering maximum mobility and flexibility. Issued only to the station's finest.
+  components:
+  - type: Sprite
+    sprite: LPP/Clothing/OuterClothing/Armor/blueshield_armor.rsi
+  - type: Clothing
+    sprite: LPP/Clothing/OuterClothing/Armor/blueshield_armor.rsi
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.5
+        Slash: 0.5
+        Piercing: 0.6
+        Heat: 0.5
+        Caustic: 0.9
+  - type: ExplosionResistance
+    damageCoefficient: 0.65
+  - type: GroupExamine
+
+#Скафандр
+- type: entity
+  parent: ClothingOuterHardsuitERTLeader
+  id: LPPClothingOuterHardsuitBlueshield
+  name: blueshield's hardsuit
+  components:
+  - type: Sprite
+    sprite: LPP/Clothing/OuterClothing/Hardsuits/blueshield_hardsuit.rsi
+  - type: Clothing
+    sprite: LPP/Clothing/OuterClothing/Hardsuits/blueshield_hardsuit.rsi
+  - type: ToggleableClothing
+    clothingPrototype: LPPClothingOuterHardsuitBlueshieldHelm
+    
+- type: entity
+  parent: ClothingHeadHelmetHardsuitERTLeader
+  id: LPPClothingOuterHardsuitBlueshieldHelm
+  name: blueshield's hardsuit helmet
+  components:
+  - type: Sprite
+    sprite: LPP/Clothing/Head/Hardsuits/blueshield_hardsuithead.rsi
+  - type: Clothing
+    sprite: LPP/Clothing/Head/Hardsuits/blueshield_hardsuithead.rsi
+  - type: PointLight
+    color: blue
+    
+ #КПК и Айди
+- type: entity
+  parent: BasePDA
+  id: LPPBlueShieldOfficerPDA
+  name: BlueShield PDA
+  description: Smells like protection.
+  components:
+    - type: PDA
+      id: LPPBlueShieldOfficerIDCard
+      state: pda-ert
+    - type: PDABorderColor
+      borderColor: "#2b92ad"
+      accentVColor: "#447987"
+    - type: Icon
+      state: pda-ert
+    - type: HealthAnalyzer
+      scanDelay: 1.2
+
+- type: entity
+  parent: IDCardStandard
+  id: LPPBlueShieldOfficerIDCard
+  name: Blue Shield Officer ID card
+  components:
+    - type: Sprite
+      layers:
+        - state: default
+        - state: ert_security
+    - type: PresetIdCard
+      job: LPPBlueShieldOfficer

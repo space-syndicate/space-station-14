@@ -1,0 +1,205 @@
+﻿# TODO: Add descriptions (many)
+# TODO BODY: Part damage
+- type: entity
+  id: PartVulpkanin
+  parent: BaseItem
+  name: "Вульпканин части тела"
+  abstract: true
+  components:
+    - type: Damageable
+      damageContainer: Biological
+    - type: BodyPart
+    - type: ContainerContainer
+      containers:
+        bodypart: !type:Container
+          ents: []
+
+- type: entity
+  id: TorsoVulpkanin
+  name: "тело вульпканина"
+  parent: PartVulpkanin
+  components:
+    - type: Sprite
+      netsync: false
+      sprite: LPP/Mobs/Species/Vulpkanin/parts.rsi
+      state: "torso_m"
+    - type: Icon
+      sprite: LPP/Mobs/Species/Vulpkanin/parts.rsi
+      state: "torso_m"
+    - type: BodyPart
+      partType: Torso
+
+- type: entity
+  id: HeadVulpkanin
+  name: "голова вульпканина"
+  parent: PartVulpkanin
+  components:
+    - type: Sprite
+      netsync: false
+      sprite: LPP/Mobs/Species/Vulpkanin/parts.rsi
+      state: "head_m"
+    - type: Icon
+      sprite: LPP/Mobs/Species/Vulpkanin/parts.rsi
+      state: "head_m"
+    - type: BodyPart
+      partType: Head
+      vital: true
+    - type: Input
+      context: "ghost"
+    - type: MovementSpeedModifier
+      baseWalkSpeed: 0
+      baseSprintSpeed: 0
+    - type: InputMover
+    - type: GhostOnMove
+    - type: Tag
+      tags:
+        - Head
+
+- type: entity
+  id: LeftArmVulpkanin
+  name: "левая рука вульпканина"
+  parent: PartVulpkanin
+  components:
+    - type: Sprite
+      netsync: false
+      sprite: LPP/Mobs/Species/Vulpkanin/parts.rsi
+      state: "l_arm"
+    - type: Icon
+      sprite: LPP/Mobs/Species/Vulpkanin/parts.rsi
+      state: "l_arm"
+    - type: BodyPart
+      partType: Arm
+      symmetry: Left
+
+- type: entity
+  id: RightArmVulpkanin
+  name: "правая рука вульпканина"
+  parent: PartVulpkanin
+  components:
+    - type: Sprite
+      netsync: false
+      sprite: LPP/Mobs/Species/Vulpkanin/parts.rsi
+      state: "r_arm"
+    - type: Icon
+      sprite: LPP/Mobs/Species/Vulpkanin/parts.rsi
+      state: "r_arm"
+    - type: BodyPart
+      partType: Arm
+      symmetry: Right
+
+- type: entity
+  id: LeftHandVulpkanin
+  name: "левая кисть вульпканина"
+  parent: PartVulpkanin
+  components:
+    - type: Sprite
+      netsync: false
+      sprite: LPP/Mobs/Species/Vulpkanin/parts.rsi
+      state: "l_hand"
+    - type: Icon
+      sprite: LPP/Mobs/Species/Vulpkanin/parts.rsi
+      state: "l_hand"
+    - type: BodyPart
+      partType: Hand
+      symmetry: Left
+
+- type: entity
+  id: RightHandVulpkanin
+  name: "правая кисть вульпканина"
+  parent: PartVulpkanin
+  components:
+    - type: Sprite
+      netsync: false
+      sprite: LPP/Mobs/Species/Vulpkanin/parts.rsi
+      state: "r_hand"
+    - type: Icon
+      sprite: LPP/Mobs/Species/Vulpkanin/parts.rsi
+      state: "r_hand"
+    - type: BodyPart
+      partType: Hand
+      symmetry: Right
+
+- type: entity
+  id: TailVulpkanin
+  name: "хвост вульпканина"
+  parent: PartVulpkanin
+  components:
+    - type: Sprite
+      netsync: false
+      sprite: LPP/Mobs/Species/Vulpkanin/parts.rsi
+      state: "tail_m"
+    - type: Icon
+      sprite: LPP/Mobs/Species/Vulpkanin/parts.rsi
+      state: "tail_m"
+    - type: BodyPart
+      partType: Tail
+
+- type: entity
+  id: LeftLegVulpkanin
+  name: "левая нога вульпканина"
+  parent: PartVulpkanin
+  components:
+    - type: Sprite
+      netsync: false
+      sprite: LPP/Mobs/Species/Vulpkanin/parts.rsi
+      state: "l_leg"
+    - type: Icon
+      sprite: LPP/Mobs/Species/Vulpkanin/parts.rsi
+      state: "l_leg"
+    - type: BodyPart
+      partType: Leg
+      symmetry: Left
+    - type: MovementSpeedModifier
+      baseWalkSpeed: 3
+      baseSprintSpeed: 4.9
+
+- type: entity
+  id: RightLegVulpkanin
+  name: "правая нога вульпканина"
+  parent: PartVulpkanin
+  components:
+    - type: Sprite
+      netsync: false
+      sprite: LPP/Mobs/Species/Vulpkanin/parts.rsi
+      state: "r_leg"
+    - type: Icon
+      sprite: LPP/Mobs/Species/Vulpkanin/parts.rsi
+      state: "r_leg"
+    - type: BodyPart
+      partType: Leg
+      symmetry: Right
+    - type: MovementSpeedModifier
+      baseWalkSpeed: 3
+      baseSprintSpeed: 4.9
+
+- type: entity
+  id: LeftFootVulpkanin
+  name: "левая ступня вульпканина"
+  parent: PartVulpkanin
+  components:
+    - type: Sprite
+      netsync: false
+      sprite: LPP/Mobs/Species/Vulpkanin/parts.rsi
+      state: "l_foot"
+    - type: Icon
+      sprite: LPP/Mobs/Species/Vulpkanin/parts.rsi
+      state: "l_foot"
+    - type: BodyPart
+      partType: Foot
+      symmetry: Left
+
+- type: entity
+  id: RightFootVulpkanin
+  name: "правая ступня вульпканина"
+  parent: PartVulpkanin
+  components:
+    - type: Sprite
+      netsync: false
+      sprite: LPP/Mobs/Species/Vulpkanin/parts.rsi
+      state: "r_foot"
+    - type: Icon
+      sprite: LPP/Mobs/Species/Vulpkanin/parts.rsi
+      state: "r_foot"
+    - type: BodyPart
+      partType: Foot
+      symmetry: Right
