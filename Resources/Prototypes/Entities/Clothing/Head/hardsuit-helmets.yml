@@ -128,6 +128,12 @@
   - type: PressureProtection
     highPressureMultiplier: 0.3
     lowPressureMultiplier: 10000
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.8
+        Slash: 0.8
+        Piercing: 0.8
 
 - type: entity
   parent: ClothingHeadHardsuitWithLightBase
