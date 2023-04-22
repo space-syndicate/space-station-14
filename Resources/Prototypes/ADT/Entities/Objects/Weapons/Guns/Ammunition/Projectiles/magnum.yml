@@ -1,0 +1,26 @@
+- type: entity
+  id: ADTBulletMagnumHighVelocityTranquilizer
+  name: bullet (.45 magnum high-velocity)
+  parent: BaseBulletHighVelocity
+  noSpawn: true
+  components:
+  - type: Projectile
+    damage:
+      types:
+        Blunt: 0.01
+  - type: SolutionContainerManager
+    solutions:
+      ammo:
+        maxVol: 6
+        reagents:
+        - ReagentId: ADTUltraChloralHydrate
+          Quantity: 6
+  - type: RefillableSolution
+    solution: ammo
+  - type: DrainableSolution
+    solution: ammo
+  - type: SolutionInjectOnCollide
+    transferAmount: 6
+    blockSlots: NONE #tranquillizer darts shouldn't be blocked by a mask
+  - type: InjectableSolution
+    solution: ammo

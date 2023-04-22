@@ -1,0 +1,11 @@
+- type: reaction
+  id: ADTUltraChloralHydrate
+  impact: Medium
+  minTemp: 370
+  reactants:
+    ChloralHydrate:
+      amount: 3
+    Stellibinin:
+      amount: 1
+  products:
+    ADTUltraChloralHydrate: 1
