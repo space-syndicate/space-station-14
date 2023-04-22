@@ -42,19 +42,3 @@
   - type: ExplosionResistance
     damageCoefficient: 0.60
   - type: GroupExamine
-  
-- type: entity
-  parent: ClothingOuterBaseLarge
-  id: DeathRobeOutfit
-  name: "Роба смерти"
-  description: "При ее виде по спине пробегает холодок"
-  components:
-  - type: Sprite
-    sprite: Backmen/Clothing/OuterClothing/Armor/deathrobes.rsi
-  - type: Clothing
-    sprite: Backmen/Clothing/OuterClothing/Armor/deathrobes.rsi
-  - type: Armor
-    modifiers:
-      coefficients:
-        Blunt: 0.90
-  - type: GroupExamine
