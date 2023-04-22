@@ -1,0 +1,21 @@
+- type: entity
+  parent: ClothingUniformBase
+  id: ClothingUniformJumpsuitAdjutant
+  name: adjutant's jumpsuit
+  description: #Rather bland and inoffensive. Perfect for vanishing off the face of the universe.
+  components:
+  - type: Sprite
+    sprite: LPP/Clothing/Uniforms/Jumpsuit/adjutant_suite.rsi
+  - type: Clothing
+    sprite: LPP/Clothing/Uniforms/Jumpsuit/adjutant_suite.rsi
+    
+- type: entity
+  parent: ClothingUniformSkirtBase
+  id: ClothingUniformJumpskirtAdjutant
+  name: adjutant's jumpskirt
+  description: #Rather bland and inoffensive. Perfect for vanishing off the face of the universe.
+  components:
+  - type: Sprite
+    sprite: LPP/Clothing/Uniforms/Jumpsuit/adjutant_skirt.rsi
+  - type: Clothing
+    sprite: LPP/Clothing/Uniforms/Jumpsuit/adjutant_skirt.rsi

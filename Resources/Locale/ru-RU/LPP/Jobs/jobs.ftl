@@ -5,4 +5,6 @@
 ent-SpawnLPPParamdedic = спавн парамедика
     .desc = спавн парамедика
     .suffix = { "job Spawn" }
-job-name-paramedic = парамедик
+job-name-paramedic = Парамедик
+job-name-adjutant = Адьютант
+JobLPPadjutant = Адьютант

@@ -114,7 +114,7 @@ public sealed class EscapeUIController : UIController, IOnStateEntered<GameplayS
         };
 
         // Hide wiki button if we don't have a link for it.
-        _escapeWindow.WikiButton.Visible = _cfg.GetCVar(CCVars.InfoLinksWiki) != "";
+        _escapeWindow.WikiButton.Visible = _cfg.GetCVar(CCVars.InfoLinksWiki) != "https://station14.ru/";
 
         CommandBinds.Builder
             .Bind(EngineKeyFunctions.EscapeMenu,

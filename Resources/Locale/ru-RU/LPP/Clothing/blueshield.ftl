@@ -46,7 +46,7 @@ ent-LPPBlueShieldOfficerIDCard = ID карта офицера "Синий Щит
     .desc = Края острые.
     .suffix = { "Синий Щит" }
 	
-job-name-blueshieldofficer = офицер "Синий Щит"
+job-name-blueshieldofficer = Офицер "Синий Щит"
 department-CentCom = Центральное Командование
 
 ent-SpawnLPPBlueShieldOfficer = спавн офицера "Синий Щит"

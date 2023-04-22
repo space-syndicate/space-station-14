@@ -18,7 +18,7 @@ ent-RubberStampMagistrate = печать магистрата
     .desc = Владелец этой печати - Закон.
     .suffix = { "" }
 
-job-name-magistrate = магистрат
+job-name-magistrate = Магистрат
 department-Law = Юридический отдел
 
 ent-LPPJudgesGavel = молоток магистрата
