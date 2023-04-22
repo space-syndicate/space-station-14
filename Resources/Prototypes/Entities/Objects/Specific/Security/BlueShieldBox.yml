@@ -3,7 +3,7 @@
   parent: BaseItem
   id: BlueShieldBox
   name: BlueBox
-  description: Маленькая коробочка с использованием блюспейс технологии. При открытии выдает скафандр. Одноразовая
+  description: Маленькая коробочка с использованием блюспейс технологии. При открытии выдает скафандр. Одноразовая.
   components:
   - type: Sprite
     sprite: Objects/Storage/boxes.rsi
