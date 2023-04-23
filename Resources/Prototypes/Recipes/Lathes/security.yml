@@ -255,3 +255,12 @@
   completetime: 2
   materials:
     Steel: 300
+
+- type: latheRecipe
+  id: ClothingEyesHudSecurity
+  result: ClothingEyesHudSecurity
+  completetime: 2
+  materials:
+    Steel: 300
+    Glass: 200
+    Plastic: 200

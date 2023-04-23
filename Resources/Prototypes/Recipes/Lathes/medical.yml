@@ -158,3 +158,12 @@
   completetime: 2
   materials:
     Plastic: 300
+
+- type: latheRecipe
+  id: ClothingEyesHudMedical
+  result: ClothingEyesHudMedical
+  completetime: 2
+  materials:
+    Steel: 300
+    Glass: 200
+    Plastic: 200

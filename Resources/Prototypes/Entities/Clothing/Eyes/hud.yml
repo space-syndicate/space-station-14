@@ -42,3 +42,13 @@
   - type: ClothingGrantComponent # Sirena-Edit's-Start
     component:
     - type: ShowJobInfo # Sirena-Edit's-End
+  - type: FlashImmunity
+  - type: EyeProtection
+    protectionTime: 5
+   
+#- type: ClothingGrantComponent # Sirena-Edit's-Start
+  #  component:
+  #  - type: ShowJobInfo # Sirena-Edit's-End
+  # - type: ClothingGrantComponent # Sirena-Edit's-Start
+  #  component:
+  #  - type: ShowJobInfo # Sirena-Edit's-End
