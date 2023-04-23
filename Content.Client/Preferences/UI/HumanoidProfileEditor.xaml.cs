@@ -1233,7 +1233,7 @@ namespace Content.Client.Preferences.UI
 
                 if (job.Icon != null)
                 {
-                    var specifier = new SpriteSpecifier.Rsi(new ResourcePath("/Textures/Interface/Misc/job_icons.rsi"),
+                    var specifier = new SpriteSpecifier.Rsi(new ("/Textures/Interface/Misc/job_icons.rsi"),
                         job.Icon);
                     icon.Texture = specifier.Frame0();
                 }

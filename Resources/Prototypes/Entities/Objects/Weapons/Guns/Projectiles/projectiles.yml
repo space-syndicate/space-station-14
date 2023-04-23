@@ -272,7 +272,6 @@
       hard: false
       id: projectile
       mask:
-      - Impassable
       - Opaque
     - *flybyfixture
   - type: Projectile
@@ -333,7 +332,6 @@
       hard: false
       id: projectile
       mask:
-      - Impassable
       - Opaque
     - *flybyfixture
   - type: Projectile
