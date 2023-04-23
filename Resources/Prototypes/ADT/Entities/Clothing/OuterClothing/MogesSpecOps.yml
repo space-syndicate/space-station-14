@@ -1,4 +1,4 @@
-# Nano-Scale 
+# Nano-Scale
 - type: entity
   parent: ClothingOuterHardsuitBase
   id: ADTClothingOuterHardsuitNanoScale
@@ -55,7 +55,6 @@
         Slash: 0.6
         Piercing: 0.6
         Heat: 0.6
-  - type: NinjaSuit
   - type: PowerCellSlot
     cellSlotId: cell_slot
     # throwing in a recharger would bypass glove charging mechanic
