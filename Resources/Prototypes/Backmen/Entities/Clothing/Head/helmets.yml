@@ -1,0 +1,15 @@
+- type: entity
+  parent: ClothingHeadBase
+  id: ClothingMogHelmet
+  name: Баллистический Шлем МОГ
+  description: Баллистический Шлем корпорации CSH для бойцов МОГ, покрыт желтым слоем стекла, обеспечивает защиту от осколков, разработан инженером CSH Беловым.
+  components:
+  - type: Sprite
+    sprite: Backmen/Clothing/Head/Helmets/mog_helmet.rsi
+  - type: Clothing
+    sprite: Backmen/Clothing/Head/Helmets/mog_helmet.rsi
+  - type: IngestionBlocker
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.7
