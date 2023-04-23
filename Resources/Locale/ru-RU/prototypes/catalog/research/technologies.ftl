@@ -62,3 +62,5 @@ technologies-robotics-technology = Робототехника
 technologies-robotics-technology-description = Запчасти для роботов.
 technologies-super-parts-technology = Суперкомпоненты
 technologies-super-parts-technology-description = Новые высоты производительности оборудования.
+technologies-magboots-technology = Технология магнитных ботинок
+technologies-magboots-technology-description = Магнитные ботинки для побега от ассистентов через космос.
