@@ -1,0 +1,85 @@
+- type: job
+  id: LPPCentralCommandRepresentative
+  name: job-name-centcom-representative
+  description: job-description-representative
+  playTimeTracker: JobCentralCommandOfficial
+#  requirements:
+#    - !type:DepartmentTimeRequirement
+#      department: Command
+#      time: 108000
+#    - !type:RoleTimeRequirement
+#      role: JobCaptain
+#      time: 54000
+  setPreference: false
+  startingGear: CentcomRepresentativeGear
+  icon: "Nanotrasen"
+  supervisors: job-supervisors-centcom
+  canBeAntag: false
+  accessGroups:
+  - AllAccess
+
+- type: startingGear
+  id: CentcomRepresentativeGear
+  equipment:
+    jumpsuit: ClothingUniformJumpsuitCentcomOfficer
+    back: ClothingBackpackHOPFilled
+    shoes: ClothingShoesBootsLaceup
+    head: ClothingHeadHatBeretCentcomNaval
+    eyes: ClothingEyesGlassesSunglasses
+    gloves: ClothingHandsGlovesColorGray
+    outerClothing: ClothingOuterVest
+    id: LPPCentralCommandRepresentativePDA
+    ears: ClothingHeadsetCentCom
+    pocket1: Paper
+  innerclothingskirt: ClothingUniformJumpskirtCentcomOfficer
+  satchel: ClothingBackpackSatchelHOPFilled
+  duffelbag: ClothingBackpackDuffelHOPFilled
+    
+- type: entity
+  parent: BasePDA
+  id: LPPCentralCommandRepresentativePDA
+  name: centcom representative PDA
+  description: Centcom representative PDA.
+  components:
+  - type: PDA
+    id: CentcomIDCardSyndie
+    state: pda-centcom
+    penSlot:
+      startingItem: PenCentcom
+      whitelist:
+        tags:
+        - Write
+  - type: PDABorderColor
+    borderColor: "#32CD32"
+  - type: Icon
+    state: pda-centcom
+
+- type: entity
+  parent: IDCardStandard
+  id: LPPCentralCommandRepresentativeIDCard
+  name: centcom representative ID card
+  description: Centcom representative ID card.
+  components:
+  - type: Sprite
+    layers:
+    - state: gold
+    - state: idcentcom
+  - type: Item
+    heldPrefix: gold
+  - type: IdCard
+    jobTitle: Central Commander
+  - type: Access
+    groups:
+    - AllAccess
+    
+- type: entity
+  id: SpawnLPPCentralCommandRepresentative
+  parent: SpawnPointJobBase
+  name: central command representative spawn
+  components:
+    - type: SpawnPoint
+      job_id: LPPCentralCommandRepresentative
+    - type: Sprite
+      layers:
+        - state: green
+        - state: centcom

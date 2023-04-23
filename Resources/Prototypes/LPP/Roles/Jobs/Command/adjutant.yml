@@ -62,9 +62,9 @@
   components:
   - type: PDA
     id: LPPAdjutantIDCard
-    state: pda-lawyer
+    state: pda-clear
   - type: Icon
-    state: pda-lawyer
+    state: pda-clear
 
 - type: entity
   parent: IDCardStandard

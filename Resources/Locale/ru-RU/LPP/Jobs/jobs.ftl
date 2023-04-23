@@ -8,3 +8,6 @@ ent-SpawnLPPParamdedic = спавн парамедика
 job-name-paramedic = Парамедик
 job-name-adjutant = Адьютант
 JobLPPadjutant = Адьютант
+ent-LPPAdjutantPDA = КПК Адьютанта
+    .desc = Установлена прошивка для помощников командования.
+job-name-centcom-representative = Представитель ЦентКом

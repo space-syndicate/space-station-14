@@ -1,4 +1,8 @@
 species-name-tajaran = Таяр
+TajaranSpecies = Таяр
+MothSpecies = Ниан
+VulpkaninSpecies = Вульпканин
+ElfSpecies = Эльф
 species-tajaran-body-parts = "Таяран части тела"
 species-tajaran-torso = "Таяран тело"
 species-name-vulpkanin = Вульпканин

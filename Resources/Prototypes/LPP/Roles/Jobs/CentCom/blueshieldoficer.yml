@@ -14,7 +14,7 @@
       time: 36000
   startingGear: LPPBlueShieldOfficerGear
   icon: "Blueshield"
-  supervisors: job-supervisors-captain
+  supervisors: job-supervisors-centcom
   canBeAntag: false
   accessGroups:
   - AllAccess
@@ -50,4 +50,4 @@
     - type: Sprite
       layers:
         - state: green
-        - state: hop
+        - state: ertleader

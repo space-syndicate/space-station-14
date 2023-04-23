@@ -72,6 +72,8 @@
     sprite: LPP/Clothing/OuterClothing/Armor/blueshield_armor.rsi
   - type: Clothing
     sprite: LPP/Clothing/OuterClothing/Armor/blueshield_armor.rsi
+  - type: Item
+    size: 15
   - type: Armor
     modifiers:
       coefficients:
@@ -96,6 +98,8 @@
     sprite: LPP/Clothing/OuterClothing/Hardsuits/blueshield_hardsuit.rsi
   - type: ToggleableClothing
     clothingPrototype: LPPClothingOuterHardsuitBlueshieldHelm
+  - type: Item
+    size: 30
     
 - type: entity
   parent: ClothingHeadHelmetHardsuitERTLeader

@@ -23,4 +23,6 @@ department-Law = Юридический отдел
 
 ent-LPPJudgesGavel = молоток магистрата
     .desc = Издаёт звуки справедливости.
-    .suffix = { "" }
+    .suffix = { "Магистрат" }
+	
+stamp-component-stamped-name-magistrate = Магистрат

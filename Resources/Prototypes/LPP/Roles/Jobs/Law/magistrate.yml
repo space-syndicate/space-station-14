@@ -60,9 +60,7 @@
     - type: Sprite
       layers:
         - state: green
-        - state: hop
-
-
+        - state: reporter
 
 - type: entity
   parent: BasePDA
