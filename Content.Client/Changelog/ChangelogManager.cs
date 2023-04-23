@@ -88,7 +88,7 @@ namespace Content.Client.Changelog
         }
         // Corvax-MultiChangelog-End
 
-        private Task<List<ChangelogEntry>> LoadChangelogFile(ResourcePath path)
+        private Task<List<ChangelogEntry>> LoadChangelogFile(ResPath path)
         {
             return Task.Run(() =>
             {
