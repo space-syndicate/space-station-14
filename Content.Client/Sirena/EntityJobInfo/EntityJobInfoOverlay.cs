@@ -63,7 +63,7 @@ public sealed class EntityJobInfoOverlay : Overlay
             if (icon_job != null)
                 icon = icon_job;
 
-            var sprite_icon = new SpriteSpecifier.Rsi(new ResourcePath("/Textures/Interface/Misc/job_icons.rsi"), icon);
+            var sprite_icon = new SpriteSpecifier.Rsi(new ResPath("/Textures/Interface/Misc/job_icons.rsi"), icon);
             var _iconTexture = _entManager.EntitySysManager.GetEntitySystem<SpriteSystem>().Frame0(sprite_icon);
 
             // Use the sprite itself if we know its bounds. This means short or tall sprites don't get overlapped

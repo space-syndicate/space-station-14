@@ -33,7 +33,7 @@ public sealed class EntityHealthBarOverlay : Overlay
         _mobStateSystem = _entManager.EntitySysManager.GetEntitySystem<MobStateSystem>();
         _mobThresholdSystem = _entManager.EntitySysManager.GetEntitySystem<MobThresholdSystem>();
 
-        var sprite = new SpriteSpecifier.Rsi(new ResourcePath("/Textures/Interface/Misc/health_status.rsi"), "background");
+        var sprite = new SpriteSpecifier.Rsi(new ResPath("/Textures/Interface/Misc/health_status.rsi"), "background");
         _barTexture = _entManager.EntitySysManager.GetEntitySystem<SpriteSystem>().Frame0(sprite);
 
         _shader = protoManager.Index<ShaderPrototype>("unshaded").Instance();
@@ -108,7 +108,7 @@ public sealed class EntityHealthBarOverlay : Overlay
             else
                 current_state = "dead_state";
 
-            var icon_sprite = new SpriteSpecifier.Rsi(new ResourcePath("/Textures/Interface/Misc/health_state.rsi"), current_state);
+            var icon_sprite = new SpriteSpecifier.Rsi(new ResPath("/Textures/Interface/Misc/health_state.rsi"), current_state);
             Texture _stateIcon = _entManager.EntitySysManager.GetEntitySystem<SpriteSystem>().Frame0(icon_sprite);
 
             var icon_position = new Vector2(xIconOffset / EyeManager.PixelsPerMeter,
