@@ -5,7 +5,8 @@
   components:
   - type: Sprite
     layers: 
-    - state: Backmen/Objects/Devices/id_cards.rsi/idcardmog.png
+    - state: black
+    - state: idcardmog
   - type: Item
     heldPrefix: black
   - type: IdCard
@@ -18,7 +19,8 @@
   components:
   - type: Sprite
     layers: 
-    - state: Backmen/Objects/Devices/id_cards.rsi/idcardiog.png
+    - state: black
+    - state: idcardiog
   - type: Item
     heldPrefix: black
   - type: IdCard
