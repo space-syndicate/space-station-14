@@ -540,7 +540,6 @@
     clothingPrototype: ClothingHeadHelmetHardsuitSpatio
 
 - type: entity
-  noSpawn: true
   parent: ClothingOuterHardsuitBase
   id: BlueShieldsuit
   name: Скафандр Синего Щита
@@ -551,8 +550,8 @@
   - type: Clothing
     sprite: Clothing/OuterClothing/Hardsuits/ihsvoid.rsi
   - type: ClothingSpeedModifier
-    walkModifier: 0.9
-    sprintModifier: 0.9
+    walkModifier: 0.8
+    sprintModifier: 0.8
   - type: PressureProtection
     highPressureMultiplier: 0.3
     lowPressureMultiplier: 10000

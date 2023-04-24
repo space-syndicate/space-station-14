@@ -66,3 +66,5 @@ ent-ClothingOuterHardsuitPirateEVA = скафандр EVA космических
     .suffix = Пират
 ent-ClothingOuterHardsuitClown = скафандр клоуна
     .desc = Самодельный клоунский скафандр.
+ent-BlueShieldsuit = скафандр Синего щита 
+    .desc =  Скафандр для обеспечения защиты даже в космосе!
