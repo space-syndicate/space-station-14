@@ -15,6 +15,8 @@
       availableJobs:
         CargoTechnician: [ 5, 5 ]
         Passenger: [ -1, -1 ]
+        Boxer: [ 4, 4 ]
+        Zookeeper: [ 2, 2 ]
         Bartender: [ 1, 1 ]
         Botanist: [ 3, 4 ]
         Chef: [ 1, 2 ]
@@ -35,6 +37,7 @@
         SecurityOfficer: [ 5, 5 ]
         Chaplain: [ 1, 1 ]
         Warden: [ 1, 1 ]
+        Brigmedic: [ 1, 1 ]
         Librarian: [ 1, 1 ]
         Quartermaster: [ 1, 1 ]
         SalvageSpecialist: [ 3, 3 ]
