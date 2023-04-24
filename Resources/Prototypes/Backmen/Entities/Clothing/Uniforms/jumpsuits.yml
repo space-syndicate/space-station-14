@@ -1,4 +1,4 @@
-﻿- type: entity
+- type: entity
   parent: ClothingUniformBase
   id: ClothingUniformJumpsuitgalaxy
   name: galaxy blue suit
@@ -8,11 +8,13 @@
       sprite: Backmen/Clothing/Uniforms/jumpsuit/blue_fuvala.rsi
     - type: Clothing
       sprite: Backmen/Clothing/Uniforms/jumpsuit/blue_fuvala.rsi
+
 - type: entity
   parent: ClothingUniformBase
   id: ClothingUniformJumpsuitgalaxyred
   name: galaxy red suit
   description: Galactic overalls. Created by the ancient dwarf Myphistopheles
+  components:
     - type: Sprite
       sprite: Backmen/Clothing/Uniforms/jumpsuit/red_fuvala.rsi
     - type: Clothing
