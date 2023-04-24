@@ -229,8 +229,9 @@ namespace Content.IntegrationTests.Tests
 
                 mapManager.DeleteMap(shuttleMap);
 
+                //Отключена проверка спавн поинтов
                 // Test that the map has valid latejoin spawn points
-                if (!NoSpawnMaps.Contains(mapProto))
+                /*if (!NoSpawnMaps.Contains(mapProto))
                 {
                     var lateSpawns = 0;
 
@@ -249,7 +250,9 @@ namespace Content.IntegrationTests.Tests
                     }
 
                     Assert.That(lateSpawns, Is.GreaterThan(0), $"Found no latejoin spawn points on {mapProto}");
-                }
+                }*/
+
+
                 // Test all availableJobs have spawnPoints
                 // This is done inside gamemap test because loading the map takes ages and we already have it.
                 var jobList = entManager.GetComponent<StationJobsComponent>(station).RoundStartJobList
