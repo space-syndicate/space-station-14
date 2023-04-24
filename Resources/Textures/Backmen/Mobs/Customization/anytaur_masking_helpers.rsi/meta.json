@@ -1,0 +1,68 @@
+{
+    "copyright": "Rane",
+    "license": "CC-BY-SA-3.0",
+    "size": {
+        "x": 32,
+        "y": 32
+    },
+    "states": [
+        {
+            "delays": [
+                [
+                    1.0
+                ],
+                [
+                    1.0
+                ],
+                [
+                    1.0
+                ],
+                [
+                    1.0
+                ]
+            ],
+            "directions": 4,
+            "name": "female_none"
+        },
+        {
+            "delays": [
+                [
+                    1.0
+                ],
+                [
+                    1.0
+                ],
+                [
+                    1.0
+                ],
+                [
+                    1.0
+                ]
+            ],
+            "directions": 4,
+            "name": "female_full"
+        },
+        {
+            "delays": [
+                [
+                    1.0
+                ],
+                [
+                    1.0
+                ],
+                [
+                    1.0
+                ],
+                [
+                    1.0
+                ]
+            ],
+            "directions": 4,
+            "name": "female_top"
+        },
+        {
+            "name": "none"
+        }
+    ],
+    "version": 1
+}

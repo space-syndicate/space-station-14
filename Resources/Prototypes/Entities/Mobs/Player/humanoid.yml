@@ -18,6 +18,7 @@
       settings: ERTLeader
 
 - type: randomHumanoidSettings
+  parent: BackmenSpecies
   id: ERTLeader
   randomizeName: false
   components:
@@ -299,6 +300,7 @@
 
 - type: randomHumanoidSettings
   id: CBURNAgent
+  parent: BackmenSpecies
   components:
     - type: Loadout
       prototypes: [CBURNGear]
@@ -325,6 +327,7 @@
 
 - type: randomHumanoidSettings
   id: CentcomOfficial
+  parent: BackmenSpecies
   components:
     - type: GhostRole
       name: CentCom official
@@ -350,6 +353,7 @@
 
 - type: randomHumanoidSettings
   id: SyndicateAgent
+  parent: BackmenSpecies
   components:
     - type: Loadout
       prototypes: [SyndicateOperativeGearExtremelyBasic]
@@ -367,6 +371,7 @@
 
 - type: randomHumanoidSettings
   id: NukeOp
+  parent: BackmenSpecies
   components:
     - type: NukeOperative
 
@@ -389,6 +394,7 @@
 
 - type: randomHumanoidSettings
   id: Cluwne
+  parent: BackmenSpecies
   randomizeName: false
   components:
     - type: GhostRole

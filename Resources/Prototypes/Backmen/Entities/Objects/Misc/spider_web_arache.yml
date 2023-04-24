@@ -1,0 +1,19 @@
+- type: entity
+  parent: SpiderWeb
+  id: SpiderWebArache
+  name: Паутина арахны
+  description: Замедляет всех кроме арахн.
+  components:
+    - type: Sprite
+      sprite: Backmen/Objects/Misc/spiderwebArachne.rsi
+      layers:
+        - state: spider_web_1
+          map: ["spiderWebLayer"]
+      drawdepth: WallMountedItems
+      netsync: false
+    - type: SlowContacts
+      walkSpeedModifier: 0.5
+      sprintSpeedModifier: 0.5
+      ignoreWhitelist:
+        components:
+            - IgnoreSpiderWebArachne

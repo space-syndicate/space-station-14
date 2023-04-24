@@ -1,0 +1,65 @@
+- type: entity
+  id: PartSpider
+  parent: BaseItem
+  name: "spider body part"
+  abstract: true
+  components:
+  - type: Damageable
+    damageContainer: Biological
+  - type: BodyPart
+  - type: ContainerContainer
+    containers:
+      bodypart: !type:Container
+        ents: []
+
+- type: entity
+  id: ThoraxSpider
+  name: "spider thorax" #for arachne, actual spiders should get a cephalothorax that combines with head.
+  parent: PartSpider
+  components:
+  - type: Sprite
+    netsync: false
+    sprite: Backmen/Mobs/Species/Moth/parts.rsi # placeholder sprite
+    state: "torso_m"
+  - type: Icon
+    sprite: Backmen/Mobs/Species/Moth/parts.rsi
+    state: "torso_m"
+  - type: BodyPart #"Other" type
+
+- type: entity
+  id: RightLegSpider
+  name: "right spider leg"
+  parent: PartSpider
+  components:
+  - type: Sprite
+    netsync: false
+    sprite: Objects/Consumable/Food/meat.rsi # placeholder sprite
+    state: spiderleg
+  - type: Icon
+    sprite: Objects/Consumable/Food/meat.rsi
+    state: spiderleg
+  - type: BodyPart
+    partType: Leg
+    symmetry: Right
+  - type: MovementSpeedModifier #should actual spiders get a seperate part from arachne?
+    baseWalkSpeed : 2.7
+    baseSprintSpeed : 4.5
+
+- type: entity
+  id: LeftLegSpider
+  name: "left spider leg"
+  parent: PartSpider
+  components:
+  - type: Sprite
+    netsync: false
+    sprite: Objects/Consumable/Food/meat.rsi # placeholder sprite
+    state: spiderleg
+  - type: Icon
+    sprite: Objects/Consumable/Food/meat.rsi
+    state: spiderleg
+  - type: BodyPart
+    partType: Leg
+    symmetry: Left
+  - type: MovementSpeedModifier #should actual spiders get a seperate part from arachne?
+    baseWalkSpeed : 2.7
+    baseSprintSpeed : 4.5
