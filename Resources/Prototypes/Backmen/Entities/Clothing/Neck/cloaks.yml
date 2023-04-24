@@ -6,6 +6,7 @@
   components:
   - type: Sprite
     sprite: Backmen/Clothing/Neck/Cloaks/pirate.rsi
+
 - type: entity
   parent: ClothingNeckBase
   id: ClothingNeckCloakOrden
@@ -14,6 +15,7 @@
   components:
   - type: Sprite
     sprite: Backmen/Clothing/Neck/Cloaks/orden.rsi
+
 - type: entity
   parent: ClothingNeckBase
   id: ClothingNeckCloakSssp
@@ -22,3 +24,21 @@
   components:
   - type: Sprite
     sprite: Backmen/Clothing/Neck/Cloaks/SSSP.rsi
+
+- type: entity
+  parent: ClothingNeckBase
+  id: ClothingNeckCloakmeibe
+  name: Плащ лучшего инженера мейбе
+  description: Данный плащ обозначает что вы гордость Атмосии. Гордитесь собой ведь такой плащ есть только у единиц !
+  components:
+  - type: Sprite
+    sprite: Backmen/Clothing/Neck/Cloaks/cloak_best_engineer_meibe.rsi
+
+- type: entity
+  parent: ClothingNeckBase
+  id: ClothingNeckCloakchess
+  name: Плащ лучшего шахматиста станции!
+  description: Только истенный стратег сможет поднять его !
+  components:
+  - type: Sprite
+    sprite: Backmen/Clothing/Neck/Cloaks/chess.rsi
