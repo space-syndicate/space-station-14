@@ -11,7 +11,7 @@
       groups:
         Brute: -100000
         Airloss: -100000
-        Caustic: -100000
+        #Caustic: -100000 #Unknown damage group given to DamageSpecifier
         Genetic: -100000
         Toxin: -100000
         Burn: -100000
