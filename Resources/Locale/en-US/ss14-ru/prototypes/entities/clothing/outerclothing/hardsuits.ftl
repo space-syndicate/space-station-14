@@ -66,3 +66,5 @@ ent-ClothingOuterHardsuitPirateEVA = deep space EVA suit
     .suffix = Pirate
 ent-ClothingOuterHardsuitClown = clown hardsuit
     .desc = A custom made clown hardsuit.
+ent-BlueShieldsuit = BlueShield hardsuit 
+    .desc = BlueShield hardsuit.
