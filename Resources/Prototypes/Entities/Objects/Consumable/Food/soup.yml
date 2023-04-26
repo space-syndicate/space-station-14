@@ -536,6 +536,29 @@
           Quantity: 6
 # Tastes like jelly, mushroom.
 
+- type: entity
+  name: pelmeni
+  parent: FoodBowlBase
+  id: FoodPelmeniBowl
+  description: Tasty meat.
+  components:
+  - type: FlavorProfile
+    flavors:
+      - meaty
+  - type: Sprite
+    layers:
+    - state: bowl
+    - state: pelmeni
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxvol: 12
+        reagents:
+        - ReagentId: Nutriment
+          Quantity: 8
+        - ReagentId: Vitamin
+          Quantity: 4
+          
 # Soup
 
 - type: entity
