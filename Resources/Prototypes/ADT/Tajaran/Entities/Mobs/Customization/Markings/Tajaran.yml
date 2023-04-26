@@ -61,6 +61,15 @@
     - sprite: Mobs/Customization/tajaran_tail.rsi
       state: wingler
 
+type: marking
+  id: Tail2
+  bodyPart: Tail
+  markingCategory: Tail
+  speciesRestriction: [TajaranSpecies]
+  sprites:
+    - sprite: Mobs/Customization/tajaran_tail.rsi
+      state: tail_tip
+
 - type: marking
   id: Head1
   bodyPart: Head
@@ -295,6 +304,7 @@
   sprites:
     - sprite: Mobs/Customization/tajaran_hairs.rsi
       state: victory
+
 
 
 
