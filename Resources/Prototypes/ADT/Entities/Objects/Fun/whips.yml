@@ -46,3 +46,65 @@
     damage:
       types:
         Blunt: 0
+
+#Special whips
+- type: entity          
+  parent: BaseWhips
+  id: ADTERPRitasWhip
+  name: Rita's whip
+  description: when you take it in your hand, images of naked bodies writhing under the blows of the whip appear before your eyes, it seems that you even hear their cries... and groans..
+  components:
+  - type: Sprite
+    sprite: ADT/Objects/Fun/ERP/ritas_whip.rsi
+    state: icon
+  - type: Item
+    sprite: ADT/Objects/Fun/ERP/ritas_whip.rsi
+    size: 5
+  - type: Clothing
+    sprite: ADT/Objects/Fun/ERP/ritas_whip.rsi
+    slots: [Belt]
+    quickEquip: false
+  - type: EmitSoundOnUse
+    sound:
+      path: /Audio/Effects/whip.ogg
+      params:
+        variation: 0.600
+  - type: UseDelay
+    delay: 0.5
+  - type: MeleeWeapon
+    soundHit:
+      path: /Audio/Effects/whip.ogg
+    damage:
+      types:
+        Blunt: 2
+
+- type: entity          
+  parent: BaseWhips
+  id: ADTERPEscusWhip
+  name: Escu's whip
+  description: The handle of this truly royal whip is adorned with 4 stones ":" sapphire, ruby, pink amethyst and yellow topaz. When you take it in your hands, you feel how it burns your skin. You want to knead this fire on all disobedient slaves
+  components:
+  - type: Sprite
+    sprite: ADT/Objects/Fun/ERP/escu_whip.rsi
+    state: icon
+  - type: Item
+    sprite: ADT/Objects/Fun/ERP/escu_whip.rsi
+    size: 5
+  - type: Clothing
+    sprite: ADT/Objects/Fun/ERP/escu_whip.rsi
+    slots: [Belt]
+    quickEquip: false
+  - type: EmitSoundOnUse
+    sound:
+      path: /Audio/Effects/whip.ogg
+      params:
+        variation: 0.600
+  - type: UseDelay
+    delay: 0.5
+  - type: MeleeWeapon
+    soundHit:
+      path: /Audio/Effects/whip.ogg
+    damage:
+      types:
+        Blunt: 0
+
