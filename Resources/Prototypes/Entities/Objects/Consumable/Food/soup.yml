@@ -540,7 +540,7 @@
   name: pelmeni
   parent: FoodBowlBase
   id: FoodPelmeniBowl
-  description: Tasty meat.
+  description: Lots of meat, little dough.
   components:
   - type: FlavorProfile
     flavors:
@@ -552,12 +552,14 @@
   - type: SolutionContainerManager
     solutions:
       food:
-        maxvol: 12
+        maxvol: 32
         reagents:
         - ReagentId: Nutriment
-          Quantity: 8
+          Quantity: 10
+        - ReagentId: Protein
+          Quantity: 16
         - ReagentId: Vitamin
-          Quantity: 4
+          Quantity: 6
           
 # Soup
 
