@@ -154,6 +154,6 @@ ent-ADTNarsiePillow = Нар'Си
     .desc = "Подушечка культиста Нар'Си!"
     .suffix = { "" }
 
-ent-ADTJunalPillow = Джунала 
-    .desc = Милая подушечка "Джунала! UwU""
+ent-ADTJunalPillow = Джунал
+    .desc = Милая подушечка "Джунал! UwU""
     .suffix = { "" }
