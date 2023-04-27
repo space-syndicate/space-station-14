@@ -1,4 +1,4 @@
-- type: entity
+﻿- type: entity
   parent: ClothingNeckBase
   id: SirenaChokerWithSpike
   name: Choker Spike
@@ -6,7 +6,7 @@
 
   components:
     - type: Sprite
-      sprite: ADT/Clothing/Neck/Chokers/сhoker_with_spike.rsi
+      sprite: ADT/Clothing/Neck/Chokers/choker_with_spike.rsi
 
 - type: entity
   parent: ClothingNeckBase
