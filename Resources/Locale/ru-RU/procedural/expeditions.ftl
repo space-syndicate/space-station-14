@@ -5,7 +5,7 @@ salvage-expedition-structure-remaining =
         [few] цели.
        *[other] целей.
     }
-salvage-expedition-window-title = Экспедиции
+salvage-expedition-window-title = Утилизаторские экспедиции
 salvage-expedition-window-difficulty = Сложность:
 salvage-expedition-window-details = Подробности:
 salvage-expedition-window-hostiles = Враги:
