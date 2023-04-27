@@ -1,0 +1,61 @@
+- type: entity
+  parent: ClothingOuterHardsuitBase
+  id: ADTClothingOuterHardsuitCybersunBodyGuard
+  name: cybersun bodyguard hardsuit
+  description: An upgraded version of the blood red hardsuit that features enhanced fireproofing, pressure resist, and superior armor.
+  components:
+  - type: Sprite
+    sprite: ADT/Clothing/OuterClothing/Hardsuits/cybersunbodyguard.rsi
+  - type: Clothing
+    sprite: ADT/Clothing/OuterClothing/Hardsuits/cybersunbodyguard.rsi
+  - type: PressureProtection
+    highPressureMultiplier: 0.02
+    lowPressureMultiplier: 1000
+  - type: ClothingSpeedModifier
+    walkModifier: 1.0
+    sprintModifier: 1.0
+  - type: TemperatureProtection
+    coefficient: 0.001
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.5
+        Slash: 0.5
+        Piercing: 0.4
+        Heat: 0.2
+        Radiation: 0.20
+  - type: ExplosionResistance
+    damageCoefficient: 0.3
+  - type: ToggleableClothing
+    clothingPrototype: ADTClothingHeadHelmetHardsuitCybersunBodyGuard
+
+- type: entity
+  parent: ClothingOuterHardsuitBase
+  id: ADTClothingOuterHardsuitCybersunCrysis
+  name: cybersun supersoldier's hardsuit
+  description: CyberSun's most advanced, secret security technology. It seems this development is leading to the creation of super soldiers. It smells of plastitan and dishonorable fight
+  components:
+  - type: Sprite
+    sprite: ADT/Clothing/OuterClothing/Hardsuits/cybersun_crysis_hardsuit.rsi
+  - type: Clothing
+    sprite: ADT/Clothing/OuterClothing/Hardsuits/cybersun_crysis_hardsuit.rsi
+  - type: PressureProtection
+    highPressureMultiplier: 0.02
+    lowPressureMultiplier: 1000
+  - type: ClothingSpeedModifier
+    walkModifier: 0.55
+    sprintModifier: 0.55
+  - type: TemperatureProtection
+    coefficient: 0.001
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.05
+        Slash: 0.05
+        Piercing: 0.05
+        Heat: 0.05
+        Radiation: 0
+  - type: ExplosionResistance
+    damageCoefficient: 0.05
+  - type: ToggleableClothing
+    clothingPrototype: ADTClothingHeadHelmetHardsuitCybersunCrysis
