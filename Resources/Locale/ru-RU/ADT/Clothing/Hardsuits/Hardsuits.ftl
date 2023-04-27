@@ -13,3 +13,7 @@ ent-ADTClothingClothingHeadHelmetHardsuitNanoScale = Нано-чешуйчаты
 ent-ADTClothingClothingHeadHelmetNanoScaleChameleon = Нано-чешуйчатый шлем Хамелеон
     .desc = Очень скрытно и очень пахнет сахаром
     .suffix = { "" }
+ent-ADTClothingOuterHardsuitCybersunCrysis = Скафандр суперсолдата Cybersun
+    .desc = Самая передовая, секретная технология CyberSun в сфере защиты. Кажется эта разработка ведёт к созданию супер солдат. Пахнет пластитаном и бесчестным боем
+    .suffix = { "" }
+ent-ADTClothingHeadHelmetHardsuitCybersunCrysis = Шлем суперсолдата Cybersun
