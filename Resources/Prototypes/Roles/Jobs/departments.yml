@@ -94,6 +94,16 @@
   - ResearchAssistant
 
 - type: department
+  id: Specific
+  description: department-Specific-description
+  color: "#9FED58"
+  roles:
+  - Boxer
+  - Reporter
+  - Zookeeper
+  - Psychologist
+
+- type: department
   id: Law
   description: department-Command-description
   color: "#E9967A"
