@@ -1,20 +1,20 @@
 
-#- type: marking
-#  id: ADTSharkFin
-#  bodyPart: HeadTop
-#  markingCategory: HeadTop
-#  speciesRestriction: [Reptilian]
-#  sponsorOnly: false
-#  sprites:
-#    - sprite: ADT/Mobs/Customization/shark_parts.rsi
-#      state: shark_fin
+- type: marking
+  id: ADTSharkFin
+  bodyPart: HeadTop
+  markingCategory: HeadTop
+  speciesRestriction: [Reptilian]
+  sponsorOnly: false
+  sprites:
+    - sprite: ADT/Mobs/Customization/shark_parts.rsi
+      state: shark_fin
 
-#- type: marking
-#  id: ADTSharkTail
-#  bodyPart: Tail
-#  markingCategory: Tail
-#  speciesRestriction: [Reptilian]
-#  sponsorOnly: false
-#  sprites:
-#    - sprite: ADT/Mobs/Customization/shark_parts.rsi
-#      state: shark_tail
+- type: marking
+  id: ADTSharkTail
+  bodyPart: Tail
+  markingCategory: Tail
+  speciesRestriction: [Reptilian]
+  sponsorOnly: false
+  sprites:
+    - sprite: ADT/Mobs/Customization/shark_parts.rsi
+      state: shark_tail
