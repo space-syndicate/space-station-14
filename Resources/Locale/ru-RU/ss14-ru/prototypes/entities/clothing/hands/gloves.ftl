@@ -34,5 +34,5 @@ ent-ThievingGloves = { ent-ClothingHandsGlovesColorBlack }
 ent-ClothingHandsGlovesCluwne = руки клувеня
     .desc = Проклятая пара рук клувеня.
     .suffix = Неснимаемый
-ent-ForensicGloves = forensic gloves
-    .desc = Do not leave fibers or fingerprints. If you work without them, you're A TERRIBLE DETECTIVE.
+ent-ForensicGloves = криминалистические перчатки
+    .desc = Не оставляют ни волокна, ни отпечатки пальцев. Если вы работаете без них, то вы - УЖАСНЫЙ ДЕТЕКТИВ.
