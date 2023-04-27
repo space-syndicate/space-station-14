@@ -539,7 +539,7 @@
 - type: entity
   name: pelmeni
   parent: FoodBowlBase
-  id: FoodPelmeniBowl # Corvax-Meal
+  id: FoodPelmeniBowl #Corvax-Meal
   description: Lots of meat, little dough.
   components:
   - type: FlavorProfile
@@ -552,14 +552,12 @@
   - type: SolutionContainerManager
     solutions:
       food:
-        maxvol: 32
+        maxvol: 30
         reagents:
         - ReagentId: Nutriment
           Quantity: 10
         - ReagentId: Protein
-          Quantity: 16
-        - ReagentId: Vitamin
-          Quantity: 6
+          Quantity: 20
           
 # Soup
 
