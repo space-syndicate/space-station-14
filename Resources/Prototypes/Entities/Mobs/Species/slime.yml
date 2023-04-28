@@ -16,6 +16,8 @@
     species: SlimePerson
   - type: Speech
     speechSounds: Slime
+  - type: TypingIndicator
+    proto: slime
   - type: Damageable
     damageContainer: Biological
     damageModifierSet: Slime
