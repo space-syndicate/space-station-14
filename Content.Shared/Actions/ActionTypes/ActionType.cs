@@ -164,6 +164,20 @@ public abstract class ActionType : IEquatable<ActionType>, IComparable, ICloneab
     public SoundSpecifier? Sound;
 
     /// <summary>
+    ///     A pop-up to show to all players when performing this action. Gets passed through localization.
+    /// </summary>
+    [DataField("popup")]
+    public string? Popup;
+
+    /// <summary>
+    ///     If not null, this string will be appended to the pop-up localization strings when the action was toggled on
+    ///     after execution. Exists to make it easy to have a different pop-up for turning the action on or off (e.g.,
+    ///     combat mode toggle).
+    /// </summary>
+    [DataField("popupToggleSuffix")]
+    public string? PopupToggleSuffix = null;
+
+    /// <summary>
     ///     Compares two actions based on their properties. This is used to determine equality when the client requests the
     ///     server to perform some action. Also determines the order in which actions are automatically added to the action bar.
     /// </summary>
