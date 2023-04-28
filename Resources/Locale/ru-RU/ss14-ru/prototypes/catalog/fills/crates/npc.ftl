@@ -38,3 +38,5 @@ ent-CrateNPCHamlet = { ent-CrateRodentCage }
     .suffix = Гамлет
 ent-CrateNPCLizard = ящик с ящерицей
     .desc = Ящик, содержащий одну ящерицу.
+ent-CrateNPCKangaroo = ящик с кенгуру
+    .desc = Ящик, содержащий одного кенгуру.
