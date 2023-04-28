@@ -1,0 +1,183 @@
+- type: marking
+  id: LizardFrillsAquatic2
+  bodyPart: HeadSide
+  markingCategory: HeadSide
+  speciesRestriction: [KobaltSpecies]
+  sprites:
+  - sprite: Mobs/Customization/reptilian_parts.rsi
+    state: frills_aquatic
+
+- type: marking
+  id: LizardFrillsShort2
+  bodyPart: HeadSide
+  markingCategory: HeadSide
+  speciesRestriction: [KobaltSpecies]
+  sprites:
+  - sprite: Mobs/Customization/reptilian_parts.rsi
+    state: frills_short
+
+- type: marking
+  id: LizardFrillsSimple2
+  bodyPart: HeadSide
+  markingCategory: HeadSide
+  speciesRestriction: [KobaltSpecies]
+  sprites:
+  - sprite: Mobs/Customization/reptilian_parts.rsi
+    state: frills_simple
+
+- type: marking
+  id: LizardFrillsDivinity2
+  bodyPart: HeadSide
+  markingCategory: HeadSide
+  speciesRestriction: [KobaltSpecies]
+  sprites:
+  - sprite: Mobs/Customization/reptilian_parts.rsi
+    state: frills_divinity
+
+- type: marking
+  id: LizardFrillsBig2
+  bodyPart: HeadSide
+  markingCategory: HeadSide
+  speciesRestriction: [KobaltSpecies]
+  sprites:
+  - sprite: Mobs/Customization/reptilian_parts.rsi
+    state: frills_big
+
+- type: marking
+  id: LizardFrillsAxolotl2
+  bodyPart: HeadSide
+  markingCategory: HeadSide
+  speciesRestriction: [KobaltSpecies]
+  sprites:
+  - sprite: Mobs/Customization/reptilian_parts.rsi
+    state: frills_axolotl
+
+- type: marking
+  id: LizardFrillsHood2
+  bodyPart: HeadSide
+  markingCategory: HeadSide
+  speciesRestriction: [KobaltSpecies]
+  sprites:
+  - sprite: Mobs/Customization/reptilian_parts.rsi
+    state: frills_hood_primary
+  - sprite: Mobs/Customization/reptilian_parts.rsi
+    state: frills_hood_secondary
+
+- type: marking
+  id: LizardHornsAngler2
+  bodyPart: HeadTop
+  markingCategory: HeadTop
+  speciesRestriction: [KobaltSpecies]
+  sprites:
+  - sprite: Mobs/Customization/reptilian_parts.rsi
+    state: horns_angler
+
+- type: marking
+  id: LizardHornsCurled2
+  bodyPart: HeadTop
+  markingCategory: HeadTop
+  speciesRestriction: [KobaltSpecies]
+  sprites:
+  - sprite: Mobs/Customization/reptilian_parts.rsi
+    state: horns_curled
+
+- type: marking
+  id: LizardHornsRam2
+  bodyPart: HeadTop
+  markingCategory: HeadTop
+  speciesRestriction: [KobaltSpecies]
+  sprites:
+  - sprite: Mobs/Customization/reptilian_parts.rsi
+    state: horns_ram
+
+- type: marking
+  id: LizardHornsShort2
+  bodyPart: HeadTop
+  markingCategory: HeadTop
+  speciesRestriction: [KobaltSpecies]
+  sprites:
+  - sprite: Mobs/Customization/reptilian_parts.rsi
+    state: horns_short
+
+- type: marking
+  id: LizardHornsSimple2
+  bodyPart: HeadTop
+  markingCategory: HeadTop
+  speciesRestriction: [KobaltSpecies]
+  sprites:
+  - sprite: Mobs/Customization/reptilian_parts.rsi
+    state: horns_simple
+
+- type: marking
+  id: LizardHornsDouble2
+  bodyPart: HeadTop
+  markingCategory: HeadTop
+  speciesRestriction: [KobaltSpecies]
+  sprites:
+  - sprite: Mobs/Customization/reptilian_parts.rsi
+    state: horns_double
+
+- type: marking
+  id: LizardTailSmooth2
+  bodyPart: Tail
+  markingCategory: Tail
+  speciesRestriction: [KobaltSpecies]
+  sprites:
+  - sprite: Mobs/Customization/reptilian_parts.rsi
+    state: tail_smooth
+
+- type: marking
+  id: LizardTailSpikes2
+  bodyPart: Tail
+  markingCategory: Tail
+  speciesRestriction: [KobaltSpecies]
+  sprites:
+  - sprite: Mobs/Customization/reptilian_parts.rsi
+    state: tail_spikes
+
+- type: marking
+  id: LizardTailLTiger2
+  bodyPart: Tail
+  markingCategory: Tail
+  speciesRestriction: [KobaltSpecies]
+  sprites:
+  - sprite: Mobs/Customization/reptilian_parts.rsi
+    state: tail_ltiger
+
+- type: marking
+  id: LizardTailDTiger2
+  bodyPart: Tail
+  markingCategory: Tail
+  speciesRestriction: [KobaltSpecies]
+  sprites:
+  - sprite: Mobs/Customization/reptilian_parts.rsi
+    state: tail_dtiger
+
+- type: marking
+  id: LizardSnoutRound2
+  bodyPart: Snout
+  markingCategory: Snout
+  forcedColoring: true
+  speciesRestriction: [KobaltSpecies]
+  sprites:
+  - sprite: Mobs/Customization/reptilian_parts.rsi
+    state: snout_round
+
+- type: marking
+  id: LizardSnoutSharp2
+  bodyPart: Snout
+  markingCategory: Snout
+  forcedColoring: true
+  speciesRestriction: [KobaltSpecies]
+  sprites:
+  - sprite: Mobs/Customization/reptilian_parts.rsi
+    state: snout_sharp
+
+- type: marking
+  id: LizardChestTiger2
+  bodyPart: Chest
+  markingCategory: Chest
+  speciesRestriction: [KobaltSpecies]
+  sprites:
+  - sprite: Mobs/Customization/reptilian_parts.rsi
+    state: body_tiger
