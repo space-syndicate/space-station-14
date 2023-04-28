@@ -3,5 +3,5 @@ ent-StationMapBroken = карта станции
     .suffix = Настенный, Сломано
 ent-StationMap = карта станции
     .suffix = Настенный
-    .desc = { ent-WallStationMapBroken.desc }
+    .desc = { ent-StationMapBroken.desc }
     
