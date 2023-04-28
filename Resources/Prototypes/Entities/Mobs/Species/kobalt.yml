@@ -6,7 +6,7 @@
   abstract: true
   components:
   - type: HumanoidAppearance
-    species: Kobolt
+    species: KoboltSpecies
   - type: Hunger
   - type: Thirst
   - type: Icon
@@ -68,4 +68,4 @@
   description: A dummy reptilian meant to be used in character setup.
   components:
   - type: HumanoidAppearance
-    species: Kobolt
+    species: KoboltSpecies
