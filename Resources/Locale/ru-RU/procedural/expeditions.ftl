@@ -30,16 +30,16 @@ salvage-expedition-difficulty-Hazardous = Высокая
 salvage-expedition-difficulty-Extreme = Экстремальная
 # Runner
 salvage-expedition-announcement-countdown-minutes =
-    { $duration ->
-        [one] До окончания экспедиции осталась { $duration } минута.
-        [few] До окончания экспедиции осталось { $duration } минуты.
-       *[other] До окончания экспедиции осталось { $duration } минут.
-    }
+    До окончания экспедиции осталась { $duration } { $duration ->
+        [one] минута
+        [few] минуты
+       *[other] минут
+    }.
 salvage-expedition-announcement-countdown-seconds =
-    { $duration ->
-        [one] До окончания экспедиции осталась { $duration } секунда.
-        [few] До окончания экспедиции осталось { $duration } секунды.
-       *[other] До окончания экспедиции осталось { $duration } секунд.
-    }
+    До окончания экспедиции осталось { $duration } { $duration ->
+        [one] секунда
+        [few] секунды
+       *[other] секунд
+    }.
 salvage-expedition-announcement-dungeon = Подземелье расположено от вас на { $direction }.
 salvage-expedition-completed = Экспедиция окончена.
