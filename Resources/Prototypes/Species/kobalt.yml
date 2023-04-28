@@ -1,0 +1,141 @@
+- type: species
+  id: KobaltSpecies
+  name: species-name-kobalt
+  roundStart: true
+  prototype: MobKobalt
+  sprites: MobKobaltSprites
+  defaultSkinTone: "#34a223"
+  markingLimits: MobKobaltMarkingLimits
+  dollPrototype: MobKobaltDummy
+  skinColoration: Hues
+  maleFirstNames: names_reptilian_male
+  femaleFirstNames: names_reptilian_female
+  naming: FirstDashFirst
+
+- type: speciesBaseSprites
+  id: MobKobaltSprites
+  sprites:
+    Head: MobKobaltHead
+    Snout: MobHumanoidAnyMarking
+    Chest: MobKobaltTorso
+    HeadTop: MobHumanoidAnyMarking
+    HeadSide: MobHumanoidAnyMarking
+    Tail: MobHumanoidAnyMarking
+    Eyes: MobHumanoidEyes
+    LArm: MobKobaltLArm
+    RArm: MobKobaltRArm
+    LHand: MobKobaltLHand
+    RHand: MobKobaltRHand
+    LLeg: MobKobaltLLeg
+    RLeg: MobKobaltRLeg
+    LFoot: MobKobaltLFoot
+    RFoot: MobKobaltRFoot
+
+- type: markingPoints
+  id: MobKobaltMarkingLimits
+  onlyWhitelisted: true
+  points:
+    Hair:
+      points: 0
+      required: false
+    FacialHair:
+      points: 0
+      required: false
+    Tail:
+      points: 1
+      required: true
+      defaultMarkings: [ LizardTailSmooth ]
+    Snout:
+      points: 1
+      required: true
+      defaultMarkings: [ LizardSnoutRound ]
+    HeadTop:
+      points: 1
+      required: false
+    HeadSide:
+      points: 1
+      required: false
+
+- type: humanoidBaseSprite
+  id: MobKobaltHead
+  baseSprite:
+    sprite: Mobs/Species/Reptilian/parts.rsi
+    state: head_m
+
+- type: humanoidBaseSprite
+  id: MobKobaltHeadMale
+  baseSprite:
+    sprite: Mobs/Species/Reptilian/parts.rsi
+    state: head_m
+
+- type: humanoidBaseSprite
+  id: MobKobaltHeadFemale
+  baseSprite:
+    sprite: Mobs/Species/Reptilian/parts.rsi
+    state: head_f
+
+- type: humanoidBaseSprite
+  id: MobKobaltTorso
+  baseSprite:
+    sprite: Mobs/Species/Reptilian/parts.rsi
+    state: torso_m
+
+- type: humanoidBaseSprite
+  id: MobKobaltTorsoMale
+  baseSprite:
+    sprite: Mobs/Species/Reptilian/parts.rsi
+    state: torso_m
+
+- type: humanoidBaseSprite
+  id: MobKobaltTorsoFemale
+  baseSprite:
+    sprite: Mobs/Species/Reptilian/parts.rsi
+    state: torso_f
+
+- type: humanoidBaseSprite
+  id: MobKobaltLLeg
+  baseSprite:
+    sprite: Mobs/Species/Reptilian/parts.rsi
+    state: l_leg
+
+- type: humanoidBaseSprite
+  id: MobKobaltLHand
+  baseSprite:
+    sprite: Mobs/Species/Reptilian/parts.rsi
+    state: l_hand
+
+- type: humanoidBaseSprite
+  id: MobKobaltLArm
+  baseSprite:
+    sprite: Mobs/Species/Reptilian/parts.rsi
+    state: l_arm
+
+- type: humanoidBaseSprite
+  id: MobKobaltLFoot
+  baseSprite:
+    sprite: Mobs/Species/Reptilian/parts.rsi
+    state: l_foot
+
+- type: humanoidBaseSprite
+  id: MobKobaltRLeg
+  baseSprite:
+    sprite: Mobs/Species/Reptilian/parts.rsi
+    state: r_leg
+
+- type: humanoidBaseSprite
+  id: MobKobaltRHand
+  baseSprite:
+    sprite: Mobs/Species/Reptilian/parts.rsi
+    state: r_hand
+
+- type: humanoidBaseSprite
+  id: MobKobaltRArm
+  baseSprite:
+    sprite: Mobs/Species/Reptilian/parts.rsi
+    state: r_arm
+
+- type: humanoidBaseSprite
+  id: MobKobaltRFoot
+  baseSprite:
+    sprite: Mobs/Species/Reptilian/parts.rsi
+    state: r_foot

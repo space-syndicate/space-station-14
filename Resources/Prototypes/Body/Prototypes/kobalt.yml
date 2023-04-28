@@ -1,0 +1,49 @@
+- type: body
+  name: "kobalt"
+  id: Kobalt
+  root: torso
+  slots:
+    head:
+      part: HeadKobalt
+      connections:
+      - torso
+      organs:
+        brain: OrganHumanBrain
+        eyes: OrganHumanEyes
+    torso:
+      part: TorsoKobalt
+      organs:
+        heart: OrganAnimalHeart
+        lungs: OrganHumanLungs
+        stomach: OrganKobaltStomach
+        liver: OrganAnimalLiver
+        kidneys: OrganHumanKidneys
+      connections:
+      - left arm
+      - right arm
+      - left leg
+      - right leg
+    right arm:
+      part: RightArmKobalt
+      connections:
+      - right hand
+    left arm:
+      part: LeftArmKobalt
+      connections:
+      - left hand
+    right hand:
+      part: RightHandKobalt
+    left hand:
+      part: LeftHandKobalt
+    right leg:
+      part: RightLegKobalt
+      connections:
+      - right foot
+    left leg:
+      part: LeftLegKobalt
+      connections:
+      - left foot
+    right foot:
+      part: RightFootKobalt
+    left foot:
+      part: LeftFootKobalt
