@@ -164,6 +164,16 @@
     state: snout_round
 
 - type: marking
+  id: LizardSnoutRoundLight
+  bodyPart: Snout
+  markingCategory: Snout
+  forcedColoring: true
+  speciesRestriction: [Reptilian]
+  sprites:
+  - sprite: Mobs/Customization/reptilian_parts.rsi
+    state: snout_roundlight
+
+- type: marking
   id: LizardSnoutSharp
   bodyPart: Snout
   markingCategory: Snout
@@ -172,6 +182,16 @@
   sprites:
   - sprite: Mobs/Customization/reptilian_parts.rsi
     state: snout_sharp
+
+- type: marking
+  id: LizardSnoutSharpLight
+  bodyPart: Snout
+  markingCategory: Snout
+  forcedColoring: true
+  speciesRestriction: [Reptilian]
+  sprites:
+  - sprite: Mobs/Customization/reptilian_parts.rsi
+    state: snout_sharplight
 
 - type: marking
   id: LizardChestTiger
