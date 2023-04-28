@@ -1,8 +1,8 @@
 - type: entity
   save: false
-  name: Urisst' Mzhand Kobalt
-  parent: BaseMobKobalt
-  id: MobKobalt
+  name: Urisst' Mzhand Kobolt
+  parent: BaseMobKobolt
+  id: MobKobolt
   components:
     - type: CombatMode
     - type: InteractionPopup

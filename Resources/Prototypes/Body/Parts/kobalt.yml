@@ -1,7 +1,7 @@
 # TODO: Add descriptions (many)
 # TODO BODY: Part damage
 - type: entity
-  id: PartKobalt
+  id: PartKobolt
   parent: BaseItem
   name: "reptilian body part"
   abstract: true
@@ -18,9 +18,9 @@
       - Trash
 
 - type: entity
-  id: TorsoKobalt
+  id: TorsoKobolt
   name: "reptilian torso"
-  parent: PartKobalt
+  parent: PartKobolt
   components:
   - type: Sprite
     netsync: false
@@ -33,9 +33,9 @@
     partType: Torso
 
 - type: entity
-  id: HeadKobalt
+  id: HeadKobolt
   name: "reptilian head"
-  parent: PartKobalt
+  parent: PartKobolt
   components:
   - type: Sprite
     netsync: false
@@ -59,9 +59,9 @@
       - Head
 
 - type: entity
-  id: LeftArmKobalt
+  id: LeftArmKobolt
   name: "left reptilian arm"
-  parent: PartKobalt
+  parent: PartKobolt
   components:
   - type: Sprite
     netsync: false
@@ -75,9 +75,9 @@
     symmetry: Left
 
 - type: entity
-  id: RightArmKobalt
+  id: RightArmKobolt
   name: "right reptilian arm"
-  parent: PartKobalt
+  parent: PartKobolt
   components:
   - type: Sprite
     netsync: false
@@ -91,9 +91,9 @@
     symmetry: Right
 
 - type: entity
-  id: LeftHandKobalt
+  id: LeftHandKobolt
   name: "left reptilian hand"
-  parent: PartKobalt
+  parent: PartKobolt
   components:
   - type: Sprite
     netsync: false
@@ -107,9 +107,9 @@
     symmetry: Left
 
 - type: entity
-  id: RightHandKobalt
+  id: RightHandKobolt
   name: "right reptilian hand"
-  parent: PartKobalt
+  parent: PartKobolt
   components:
   - type: Sprite
     netsync: false
@@ -123,9 +123,9 @@
     symmetry: Right
 
 - type: entity
-  id: LeftLegKobalt
+  id: LeftLegKobolt
   name: "left reptilian leg"
-  parent: PartKobalt
+  parent: PartKobolt
   components:
   - type: Sprite
     netsync: false
@@ -142,9 +142,9 @@
     baseSprintSpeed : 4.5
 
 - type: entity
-  id: RightLegKobalt
+  id: RightLegKobolt
   name: "right reptilian leg"
-  parent: PartKobalt
+  parent: PartKobolt
   components:
   - type: Sprite
     netsync: false
@@ -161,9 +161,9 @@
     baseSprintSpeed : 4.5
 
 - type: entity
-  id: LeftFootKobalt
+  id: LeftFootKobolt
   name: "left reptilian foot"
-  parent: PartKobalt
+  parent: PartKobolt
   components:
   - type: Sprite
     netsync: false
@@ -177,9 +177,9 @@
     symmetry: Left
 
 - type: entity
-  id: RightFootKobalt
+  id: RightFootKobolt
   name: "right reptilian foot"
-  parent: PartKobalt
+  parent: PartKobolt
   components:
   - type: Sprite
     netsync: false

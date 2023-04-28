@@ -1,12 +1,12 @@
 - type: entity
   save: false
-  name: Urisst' Mzhand
+  name: Urisst' Mzhand Kobolt
   parent: BaseMobOrganic
-  id: BaseMobKobalt
+  id: BaseMobKobolt
   abstract: true
   components:
   - type: HumanoidAppearance
-    species: Kobalt
+    species: Kobolt
   - type: Hunger
   - type: Thirst
   - type: Icon
@@ -18,7 +18,7 @@
     drawdepth: Mobs
     scale: 0.8, 0.8
   - type: Body
-    prototype: Kobalt
+    prototype: Kobolt
     requiredLegs: 2
   - type: LizardAccent
   #- type: LizardBlood
@@ -63,9 +63,9 @@
   save: false
   name: Urist McHands
   parent: MobHumanDummy
-  id: MobKobaltDummy
+  id: MobKoboltDummy
   noSpawn: true
   description: A dummy reptilian meant to be used in character setup.
   components:
   - type: HumanoidAppearance
-    species: Kobalt
+    species: Kobolt
