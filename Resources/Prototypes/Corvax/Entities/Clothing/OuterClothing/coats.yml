@@ -105,3 +105,20 @@
         Slash: 0.5
         Piercing: 0.6
         Heat: 0.5
+
+- type: entity
+  parent: ClothingOuterStorageBase
+  id: ClothingOuterCoatHOP
+  name: head of personnel's jacket
+  description: Business jacket of the HOP for a professional look.
+  components:
+  - type: Sprite
+    sprite: Corvax/Clothing/OuterClothing/Coats/hop.rsi
+  - type: Clothing
+    sprite: Corvax/Clothing/OuterClothing/Coats/hop.rsi
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.9
+        Slash: 0.9
+        Piercing: 0.8
