@@ -32,3 +32,8 @@
   id: moth
   typingState: moth0
   idleState: moth3 # Corvax-TypingIndicator
+
+- type: typingIndicator
+  id: slime
+  typingState: slime0
+  idleState: slime3
