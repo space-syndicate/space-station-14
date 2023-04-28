@@ -58,7 +58,7 @@ accent-words-pig-2 = Хрю?
 accent-words-pig-3 = Хрю!
 accent-words-pig-4 = Хрю Хрю!
 # Kangaroo
-accent-words-kangaroo-1 = Grr!
-accent-words-kangaroo-2 = Hisss!
-accent-words-kangaroo-3 = Shreak!
-accent-words-kangaroo-4 = Chuu!
+accent-words-kangaroo-1 = Гррррр!
+accent-words-kangaroo-2 = Хиссс!
+accent-words-kangaroo-3 = Визг!
+accent-words-kangaroo-4 = Чууу!
