@@ -52,4 +52,4 @@ traitor-role-uplink-code =
 traitor-role-codewords-short =
     Кодовые слова:
     { $codewords }.
-traitor-role-uplink-code-short = Ваш код алинка: { $code }.
+traitor-role-uplink-code-short = Ваш код аплинка: { $code }.
