@@ -60,3 +60,25 @@
   - type: MeleeWeapon
     soundHit:
       path: /Audio/Items/Toys/toysqueak2.ogg
+
+- type: entity
+  parent: BaseItem
+  id: ADTGarbagerama
+  name: Garbagerama
+  description: Someone forgot it here.
+  components:
+  - type: Sprite
+    sprite: Objects/Fun/toys.rsi
+    state: garbagerama
+  - type: MeleeWeapon
+    attackRate: 1.5
+    angle: 0
+    animation: WeaponArcThrust
+    damage:
+      types:
+        Blunt: 0
+  - type: Item
+    size: 10
+    sprite: Objects/Fun/toys.rsi
+    heldPrefix: garbagerama
+  - type: ItemCooldown

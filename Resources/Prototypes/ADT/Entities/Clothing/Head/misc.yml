@@ -1,0 +1,28 @@
+- type: entity
+  parent: ClothingHeadBase
+  id: ADTClothingHeadHelmetHardsuitKiravaHoodsec
+  noSpawn: true
+  name: Kirava Hoodsec
+  description: beautiful kapeshon u Kirava
+  components:
+  - type: Sprite
+    sprite: ADT/Clothing/Head/Hardsuits/kirava_hoodsec.rsi
+  - type: Clothing
+    sprite: ADT/Clothing/Head/Hardsuits/kirava_hoodsec.rsi
+  - type: PressureProtection
+    highPressureMultiplier: 0.08
+    lowPressureMultiplier: 50
+  - type: TemperatureProtection
+    coefficient: 0.005
+
+- type: entity
+  parent: ClothingHeadBase
+  id: ADTClothingHeadHatRacoon
+  name: racoon head
+  description: "It's a racoon head. Snort snort snort!"
+  components:
+  - type: Sprite
+    sprite: ADT/Clothing/Head/Misc/racoonhead.rsi
+  - type: Clothing
+    sprite: ADT/Clothing/Head/Misc/racoonhead.rsi
+  - type: IngestionBlocker

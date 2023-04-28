@@ -1,0 +1,10 @@
+- type: entity
+  parent: ClothingOuterBase
+  id: ADTClothingOuterSuitRacoon
+  name: racoon suit
+  description: Snort snort snort!
+  components:
+  - type: Sprite
+    sprite: ADT/Clothing/OuterClothing/Suits/racoon.rsi
+  - type: Clothing
+    sprite: ADT/Clothing/OuterClothing/Suits/racoon.rsi
