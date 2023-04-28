@@ -42,3 +42,5 @@ ent-ClothingOuterNunRobe = монашеская ряса
     .desc = Максимум благочестия в этой звездной системе.
 ent-ClothingOuterGhostSheet = простыня-призрак
     .desc = Страшно!!!
+ent-ClothingOuterHospitalGown = больничный халат
+    .desc = Изготовлена из шерсти забитых ягнят. За счет жестокости она приобрела мягкость.

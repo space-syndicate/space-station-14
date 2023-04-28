@@ -183,3 +183,5 @@ ent-ClothingUniformJumpsuitDameDane = костюм якудзы
     .desc = Какой же я дурак...
 ent-ClothingUniformJumpsuitPirate = пиратская форма
     .desc = Пиратская вариация комбинезона космического моряка.
+ent-ClothingUniformJumpsuitCossack = казачий костюм
+    .desc = Старые добрые штаны да бригантина.
