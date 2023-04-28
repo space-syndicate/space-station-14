@@ -163,6 +163,13 @@ public abstract class ActionType : IEquatable<ActionType>, IComparable, ICloneab
     [DataField("sound")]
     public SoundSpecifier? Sound;
 
+
+    /// <summary>
+    ///     A pop-up to show the user when performing this action. Gets passed through localization.
+    /// </summary>
+    [DataField("userPopup")]
+    public string? UserPopup;
+
     /// <summary>
     ///     A pop-up to show to all players when performing this action. Gets passed through localization.
     /// </summary>
