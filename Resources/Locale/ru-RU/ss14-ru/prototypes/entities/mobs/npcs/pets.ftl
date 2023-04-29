@@ -1,7 +1,7 @@
 ent-MobCorgiIan = Иан
     .desc = Любимое домашнее животное - корги.
 ent-MobCorgiIanOld = Старый Иан
-    .desc = Все еще любимый домашний корги. Любит свои колеса.
+    .desc = Всё ещё любимый домашний корги. Любит свои колеса.
 ent-MobCorgiLisa = Лиза
     .desc = Любимая корги Иана.
 ent-MobCatRuntime = Рантайм
@@ -32,3 +32,5 @@ ent-MobHamsterHamlet = Гамлет
     .desc = Ворчливый, милый и пушистый хомяк.
 ent-MobSpiderShiva = Шива
     .desc = Первый защитник станции.
+ent-MobKangarooWillow = Уиллоу
+    .desc = Уиллоу, кенгуру-боксёр.

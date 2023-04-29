@@ -10,3 +10,7 @@ signal-port-name-right = Направо
 signal-port-description-right = Этот порт задействуется всякий раз, когда рычаг перемещается в крайнее правое положение.
 signal-port-name-middle = Середина
 signal-port-description-middle = Этот порт задействуется всякий раз, когда рычаг перемещается в нейтральное положение.
+signal-port-name-timer-trigger = Таймер-триггер
+signal-port-description-timer-trigger = Этот порт активируется каждый раз, когда срабатывает таймер.
+signal-port-name-timer-start = Таймер-старт
+signal-port-description-timer-start = Этот порт активируется каждый раз, когда запускается таймер.

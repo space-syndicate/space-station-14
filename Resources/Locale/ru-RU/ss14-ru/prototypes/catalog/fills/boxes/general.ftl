@@ -46,3 +46,5 @@ ent-BoxEncryptionKeySecurity = коробка ключей шифрования 
     .desc = { ent-BoxEncryptionKeyPassenger.desc }
 ent-BoxEncryptionKeyService = коробка ключей шифрования сервисного отдела
     .desc = { ent-BoxEncryptionKeyPassenger.desc }
+ent-BoxEncryptionKeySyndie = коробка ключей шифрования синдиката
+    .desc = Два ключа шифрования синдиката по цене одного. Для простоты использования уменьшена.
