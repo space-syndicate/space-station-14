@@ -5,4 +5,4 @@ species-name-dwarf = Дворф
 species-name-reptilian = Унатх
 species-name-slime = Слаймолюд
 species-name-diona = Диона
-species-name-kobolt = Кобольт
+species-name-kobolt = Кобольд
