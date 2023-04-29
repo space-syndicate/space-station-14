@@ -1,0 +1,131 @@
+- type: entity
+  parent: ClothingShoesBaseButcherable
+  id: LPPUnathiWraps
+  name: unathi wraps
+  description: Unathi Wraps.
+  components:
+  - type: Sprite
+    sprite: LPP/Clothing/Shoes/Boots/unathiwraps.rsi
+  - type: Clothing
+    sprite: LPP/Clothing/Shoes/Boots/unathiwraps.rsi
+
+- type: entity
+  parent: ClothingBeltStorageWaistbag
+  id: LPPWaistbag01
+  name: waist bag
+  description: A waist bag meant for carrying small items.
+  components:
+  - type: Sprite
+    sprite: LPP/Clothing/Belt/waistbag01.rsi
+  - type: Clothing
+    sprite: LPP/Clothing/Belt/waistbag01.rsi
+
+- type: entity
+  parent: ClothingBeltStorageWaistbag
+  id: LPPWaistbag02
+  name: waist bag
+  description: A waist bag meant for carrying small items.
+  components:
+  - type: Sprite
+    sprite: LPP/Clothing/Belt/waistbag02.rsi
+  - type: Clothing
+    sprite: LPP/Clothing/Belt/waistbag02.rsi
+
+- type: entity
+  parent: ClothingBeltStorageWaistbag
+  id: LPPWaistbag03
+  name: waist bag
+  description: A waist bag meant for carrying small items.
+  components:
+  - type: Sprite
+    sprite: LPP/Clothing/Belt/waistbag03.rsi
+  - type: Clothing
+    sprite: LPP/Clothing/Belt/waistbag03.rsi
+
+- type: entity
+  parent: ClothingBeltStorageWaistbag
+  id: LPPWaistbag04
+  name: waist bag
+  description: A waist bag meant for carrying small items.
+  components:
+  - type: Sprite
+    sprite: LPP/Clothing/Belt/waistbag04.rsi
+  - type: Clothing
+    sprite: LPP/Clothing/Belt/waistbag04.rsi
+
+- type: entity
+  parent: ClothingBeltStorageWaistbag
+  id: LPPWaistbag05
+  name: waist bag
+  description: A waist bag meant for carrying small items.
+  components:
+  - type: Sprite
+    sprite: LPP/Clothing/Belt/waistbag05.rsi
+  - type: Clothing
+    sprite: LPP/Clothing/Belt/waistbag05.rsi
+
+- type: entity
+  parent: ClothingBeltStorageWaistbag
+  id: LPPWaistbag06
+  name: waist bag
+  description: A waist bag meant for carrying small items.
+  components:
+  - type: Sprite
+    sprite: LPP/Clothing/Belt/waistbag06.rsi
+  - type: Clothing
+    sprite: LPP/Clothing/Belt/waistbag06.rsi
+
+- type: entity
+  parent: ClothingBeltStorageWaistbag
+  id: LPPWaistbag07
+  name: waist bag
+  description: A waist bag meant for carrying small items.
+  components:
+  - type: Sprite
+    sprite: LPP/Clothing/Belt/waistbag07.rsi
+  - type: Clothing
+    sprite: LPP/Clothing/Belt/waistbag07.rsi
+
+- type: entity
+  parent: ClothingBeltStorageWaistbag
+  id: LPPWaistbag08
+  name: waist bag
+  description: A waist bag meant for carrying small items.
+  components:
+  - type: Sprite
+    sprite: LPP/Clothing/Belt/waistbag08.rsi
+  - type: Clothing
+    sprite: LPP/Clothing/Belt/waistbag08.rsi
+
+- type: entity
+  parent: ClothingBeltStorageWaistbag
+  id: LPPWaistbag01
+  name: waist bag
+  description: A waist bag meant for carrying small items.
+  components:
+  - type: Sprite
+    sprite: LPP/Clothing/Belt/waistbag09.rsi
+  - type: Clothing
+    sprite: LPP/Clothing/Belt/waistbag09.rsi
+
+- type: entity
+  parent: ClothingBeltStorageWaistbag
+  id: LPPWaistbag10
+  name: waist bag
+  description: A waist bag meant for carrying small items.
+  components:
+  - type: Sprite
+    sprite: LPP/Clothing/Belt/waistbag10.rsi
+  - type: Clothing
+    sprite: LPP/Clothing/Belt/waistbag10.rsi
+
+- type: entity
+  parent: ClothingHeadBaseButcherable
+  id: LPPBandana
+  name: snake bandana
+  description: A bandana to make you look even cooler.
+  components:
+  - type: Sprite
+    sprite: LPP/Clothing/Head/Bandanas/bandana.rsi
+  - type: Clothing
+    sprite: LPP/Clothing/Head/Bandanas/bandana.rsi
