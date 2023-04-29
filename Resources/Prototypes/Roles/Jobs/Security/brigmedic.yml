@@ -6,10 +6,10 @@
   requirements:
     - !type:DepartmentTimeRequirement
       department: Medical
-      time: 18000
+      time: 54000 # Corvax-RoleTime
     - !type:DepartmentTimeRequirement
       department: Security
-      time: 7200
+      time: 72000 # Corvax-RoleTime
   startingGear: BrigmedicGear
   icon: "Brigmedic"
   supervisors: job-supervisors-hos
