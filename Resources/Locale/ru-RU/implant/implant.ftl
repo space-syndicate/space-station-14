@@ -21,4 +21,4 @@ activate-micro-bomb-action-description = Активирует вживлённу
 use-freedom-implant-action-name = Активировать имплант Свобода
 use-freedom-implant-action-description = Освобождает вас от наручников и других ограничителей.
 open-uplink-implant-action-name = Открыть аплинк
-open-uplink-implant-action-description = Открывает аплинк синдиката, скрытый под вашей кожей.
+open-uplink-implant-action-description = Открывает аплинк Синдиката, скрытый под вашей кожей.
