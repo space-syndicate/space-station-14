@@ -5,7 +5,7 @@
   description: A hamburger bun. Round and convenient to hold.
   components:
   - type: Sprite
-    sprite: ADT\Objects\Fun\ERP\dildo.rsi
+    sprite: ADT/Objects/Fun/ERP/dildo.rsi
     layers:
       - state: dildo_avian
   - type: Tag
@@ -21,7 +21,7 @@
   description: A hamburger bun. Round and convenient to hold.
   components:
   - type: Sprite
-    sprite: ADT\Objects\Fun\ERP\dildo.rsi
+    sprite: ADT/Objects/Fun/ERP/dildo.rsi
     layers:
       - state: dildo_canine
   - type: Tag
@@ -37,7 +37,7 @@
   description: A hamburger bun. Round and convenient to hold.
   components:
   - type: Sprite
-    sprite: ADT\Objects\Fun\ERP\dildo.rsi
+    sprite: ADT/Objects/Fun/ERP/dildo.rsi
     layers:
       - state: dildo_double
   - type: Tag
@@ -53,7 +53,7 @@
   description: A hamburger bun. Round and convenient to hold.
   components:
   - type: Sprite
-    sprite: ADT\Objects\Fun\ERP\dildo.rsi
+    sprite: ADT/Objects/Fun/ERP/dildo.rsi
     layers:
       - state: dildo_dragon
   - type: Tag
@@ -69,7 +69,7 @@
   description: A hamburger bun. Round and convenient to hold.
   components:
   - type: Sprite
-    sprite: ADT\Objects\Fun\ERP\dildo.rsi
+    sprite: ADT/Objects/Fun/ERP/dildo.rsi
     layers:
       - state: dildo_equine
   - type: Tag
@@ -85,7 +85,7 @@
   description: A hamburger bun. Round and convenient to hold.
   components:
   - type: Sprite
-    sprite: ADT\Objects\Fun\ERP\dildo.rsi
+    sprite: ADT/Objects/Fun/ERP/dildo.rsi
     layers:
       - state: dildo_human
   - type: Tag
@@ -101,7 +101,7 @@
   description: A hamburger bun. Round and convenient to hold.
   components:
   - type: Sprite
-    sprite: ADT\Objects\Fun\ERP\dildo.rsi
+    sprite: ADT/Objects/Fun/ERP/dildo.rsi
     layers:
       - state: dildo_tentacle
   - type: Tag
@@ -117,7 +117,7 @@
   description: A hamburger bun. Round and convenient to hold.
   components:
   - type: Sprite
-    sprite: ADT\Objects\Fun\ERP\dildo.rsi
+    sprite: ADT/Objects/Fun/ERP/dildo.rsi
     layers:
       - state: polydildo_big
   - type: Tag
@@ -133,7 +133,7 @@
   description: A hamburger bun. Round and convenient to hold.
   components:
   - type: Sprite
-    sprite: ADT\Objects\Fun\ERP\dildo.rsi
+    sprite: ADT/Objects/Fun/ERP/dildo.rsi
     layers:
       - state: polydildo_med
   - type: Tag
@@ -149,7 +149,7 @@
   description: A hamburger bun. Round and convenient to hold.
   components:
   - type: Sprite
-    sprite: ADT\Objects\Fun\ERP\dildo.rsi
+    sprite: ADT/Objects/Fun/ERP/dildo.rsi
     layers:
       - state: polydildo_small
   - type: Tag
