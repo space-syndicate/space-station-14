@@ -1,0 +1,65 @@
+﻿{
+    "version": 1,
+    "license": "CC-BY-SA-3.0",
+    "copyright": "Taken from tgstation and modified by Swept at https://github.com/tgstation/tgstation/commit/40d75cc340c63582fb66ce15bf75a36115f6bdaa, ian.png created by EmoGarbage",
+    "size": {
+        "x": 32,
+        "y": 32
+    },
+    "states": [
+        {
+            "name": "green_big"
+        },
+        {
+            "name": "green_med"
+        },
+        {
+            "name": "green_small"
+        },
+        {
+            "name": "metal_big"
+        },
+        {
+            "name": "metal_med"
+        },
+        {
+            "name": "metal_small"
+        },
+        {
+            "name": "pink_big"
+        },
+        {
+            "name": "pink_med"
+        },
+        {
+            "name": "pink_small"
+        },
+        {
+            "name": "tail_big"
+        },
+        {
+            "name": "tail_med"
+        },
+        {
+            "name": "tail_small"
+        },
+        {
+            "name": "teal_big"
+        },
+        {
+            "name": "teal_med"
+        },
+        {
+            "name": "teal_small"
+        },
+        {
+            "name": "yellow_big"
+        },
+        {
+            "name": "yellow_med"
+        },
+        {
+            "name": "yellow_small"
+        }
+    ]
+}
