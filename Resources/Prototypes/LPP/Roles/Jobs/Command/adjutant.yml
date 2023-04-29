@@ -1,0 +1,80 @@
+- type: job
+  id: LPPAdjutant
+  name: job-name-adjutant
+  description: job-description-adjutant
+  playTimeTracker: JobLPPАdjutant
+  requirements:
+    - !type:DepartmentTimeRequirement
+      department: Engineering
+      time: 9000
+    - !type:DepartmentTimeRequirement
+      department: Medical
+      time: 9000
+    - !type:OverallPlaytimeRequirement
+      time: 72000
+  startingGear: AdjutantGear
+  icon: "Adjutant"
+  requireAdminNotify: true
+  joinNotifyCrew: true
+  supervisors: job-supervisors-hop
+  canBeAntag: false
+  access:
+  - Command
+  - Bar
+  - Service
+  - Maintenance
+  - Janitor
+  - Theatre
+  - Kitchen
+  - Chapel
+  - Hydroponics
+  - External
+
+- type: startingGear
+  id: AdjutantGear
+  equipment:
+    jumpsuit: ClothingUniformJumpsuitAdjutant
+    back: ClothingBackpackHOPFilled
+    shoes: ClothingShoesColorBlack
+    id: LPPAdjutantPDA
+    ears: ClothingHeadsetCommand
+  innerclothingskirt: ClothingUniformJumpskirtAdjutant
+  satchel: ClothingBackpackSatchelHOPFilled
+  duffelbag: ClothingBackpackDuffelHOPFilled
+
+- type: entity
+  id: LPPAdjutantSpawn
+  parent: SpawnPointJobBase
+  name: adjutant spawn
+  components:
+  - type: SpawnPoint
+    job_id: LPPAdjutant
+  - type: Sprite
+    layers:
+    - state: green
+    - state: hop
+
+- type: entity
+  parent: BasePDA
+  id: LPPAdjutantPDA
+  name: adjutant PDA
+  description: Adjutant PDA.
+  components:
+  - type: PDA
+    id: LPPAdjutantIDCard
+    state: pda-clear
+  - type: Icon
+    state: pda-clear
+
+- type: entity
+  parent: IDCardStandard
+  id: LPPAdjutantIDCard
+  name: adjutant ID card
+  description: Adjutant ID card.
+  components:
+  - type: Sprite
+    layers:
+    - state: default
+    - state: idheadofpersonnel
+  - type: PresetIdCard
+    job: LPPAdjutant

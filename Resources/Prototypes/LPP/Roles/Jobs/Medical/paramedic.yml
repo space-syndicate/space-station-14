@@ -1,0 +1,78 @@
+- type: job
+  id: LPPParamedic
+  name: job-name-paramedic
+  playTimeTracker: JobParamedic
+  requirements:
+    - !type:RoleTimeRequirement
+      role: JobChemist
+      time: 18000
+    - !type:DepartmentTimeRequirement
+      department: Medical
+      time: 54000
+  startingGear: ParamedicGear
+  icon: "LPPParamedic"
+  supervisors: job-supervisors-cmo
+  canBeAntag: false
+  access:
+    - Medical
+    - Chemistry
+    - Maintenance
+    - External
+
+- type: startingGear
+  id: ParamedicGear
+  equipment:
+    jumpsuit: ClothingUniformJumpsuitParamedic
+    back: LPPClothingBackpackParamedicFilled
+    shoes: ClothingShoesColorWhite
+    id: LPPPramedicPDA
+    ears: ClothingHeadsetMedical
+    belt: ClothingBeltMedicalFilled
+    pocket1: HandheldCrewMonitor
+    gloves: ClothingHandsGlovesNitrile
+    outerClothing: ClothingOuterCoatParamedicWB
+    head: ClothingHeadHatParamedicsoft
+  innerclothingskirt: ClothingUniformJumpskirtParamedic
+  satchel: LPPClothingBackpackSatchelParamedicFilled
+  duffelbag: LPPClothingBackpackDuffelParamedicFilled
+
+- type: entity
+  parent: BasePDA
+  id: LPPPramedicPDA
+  name: Paramedic PDA
+  description: Shiny and sterile. Has a built-in health analyzer.
+  components:
+    - type: PDA
+      id: LPPParamedicIDCard
+      state: pda-medical
+    - type: Icon
+      state: pda-medical
+    - type: HealthAnalyzer
+      scanDelay: 1.2
+      scanningEndSound:
+        path: "/Audio/Items/Medical/healthscanner.ogg"
+    - type: CrewMonitoringConsole
+
+- type: entity
+  parent: IDCardStandard
+  id: LPPParamedicIDCard
+  name: paramedic ID card
+  components:
+    - type: Sprite
+      layers:
+        - state: default
+        - state: idmedicaldoctor
+    - type: PresetIdCard
+      job: LPPParamedic
+
+- type: entity
+  id: SpawnLPPParamedic
+  parent: SpawnPointJobBase
+  name: Pararmedic
+  components:
+    - type: SpawnPoint
+      job_id: LPPParamedic
+    - type: Sprite
+      layers:
+        - state: green
+        - state: geneticist

@@ -20,7 +20,6 @@
   - Clown
   - HeadOfPersonnel
   - Janitor
-#  - Lawyer # Corvax-IAA
   - Librarian
   - MedicalIntern
   - Mime
@@ -32,6 +31,7 @@
   - ServiceWorker
   - TechnicalAssistant
   - ResearchAssistant
+  - LPPAdjutant
 
 - type: department
   id: Command
@@ -39,7 +39,6 @@
   color: "#334E6D"
   roles:
   - Captain
-  - IAA # Corvax-IAA
   - CentralCommandOfficial
   - ChiefEngineer
   - ChiefMedicalOfficer
@@ -47,6 +46,7 @@
   - HeadOfSecurity
   - ResearchDirector
   - Quartermaster
+  - Magistrate
 
 - type: department
   id: Engineering
@@ -68,6 +68,7 @@
   - MedicalDoctor
   - MedicalIntern
   - Psychologist
+  - LPPParamedic
 
 - type: department
   id: Security
@@ -80,6 +81,24 @@
   - Detective
   - Warden
   - Brigmedic
+  
+- type: department
+  id: Law
+  description: department-Command-description
+  color: "#de7e3a"
+  roles:
+  - Magistrate
+  - IAA
+  - Lawyer
+  
+- type: department
+  id: CentCom
+  description: department-Command-description
+  color: "#49c423"
+  roles:
+  - CentralCommandOfficial
+  - LPPBlueShieldOfficer
+  - LPPCentralCommandRepresentative
 
 - type: department
   id: Science

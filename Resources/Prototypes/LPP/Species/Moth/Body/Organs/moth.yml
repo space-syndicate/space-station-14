@@ -1,0 +1,40 @@
+- type: entity
+  id: BaseMothOrgan
+  parent: BaseItem
+  abstract: true
+  components:
+  - type: Sprite
+    netsync: false
+    sprite: Mobs/Species/Human/organs.rsi
+  - type: Organ
+  - type: Food
+  - type: Extractable
+    grindableSolutionName: organ
+  - type: SolutionContainerManager
+    solutions:
+      organ:
+        reagents:
+        - ReagentId: Nutriment
+          Quantity: 10
+
+- type: entity
+  id: OrganMothStomach
+  parent: BaseMothOrgan
+  name: moth stomach
+  description: "Gross. This is hard to stomach."
+  components:
+  - type: Sprite
+    state: stomach
+  - type: Organ
+  - type: SolutionContainerManager
+    solutions:
+      stomach:
+        maxVol: 150
+  - type: Stomach
+    maxVolume: 10
+  - type: Metabolizer
+    maxReagents: 3
+    metabolizerTypes: [Human,Moth]
+    groups:
+    - id: Food
+    - id: Drink

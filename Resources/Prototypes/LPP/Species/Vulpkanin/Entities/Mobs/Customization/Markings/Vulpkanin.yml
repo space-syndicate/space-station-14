@@ -1,0 +1,180 @@
+- type: marking
+  id: ADTVulpkaninaltpointsfadebelly
+  bodyPart: Chest
+  markingCategory: Chest
+  speciesRestriction: [VulpkaninSpecies]
+  sprites:
+    - sprite: LPP/Mobs/Customization/vulpkanin_body.rsi
+      state: altpointsfadebelly
+
+- type: marking
+  id: ADTVulpkaninbellycrest
+  bodyPart: Chest
+  markingCategory: Chest
+  speciesRestriction: [VulpkaninSpecies]
+  sprites:
+    - sprite: LPP/Mobs/Customization/vulpkanin_body.rsi
+      state: bellycrest
+
+- type: marking
+  id: ADTVulpkanincrestpoints
+  bodyPart: Chest
+  markingCategory: Chest
+  speciesRestriction: [VulpkaninSpecies]
+  sprites:
+    - sprite: LPP/Mobs/Customization/vulpkanin_body.rsi
+      state: crestpoints
+
+- type: marking
+  id: ADTVulpkaninfoxbelly
+  bodyPart: Chest
+  markingCategory: Chest
+  speciesRestriction: [VulpkaninSpecies]
+  sprites:
+    - sprite: LPP/Mobs/Customization/vulpkanin_body.rsi
+      state: foxbelly
+
+- type: marking
+  id: ADTVulpkaninfullbelly
+  bodyPart: Chest
+  markingCategory: Chest
+  speciesRestriction: [VulpkaninSpecies]
+  sprites:
+    - sprite: LPP/Mobs/Customization/vulpkanin_body.rsi
+      state: fullbelly
+
+- type: marking
+  id: ADTVulpkaninpointsfade
+  bodyPart: Chest
+  markingCategory: Chest
+  speciesRestriction: [VulpkaninSpecies]
+  sprites:
+    - sprite: LPP/Mobs/Customization/vulpkanin_body.rsi
+      state: pointsfade
+
+- type: marking
+  id: ADTVulpkaninpointsfadebelly
+  bodyPart: Chest
+  markingCategory: Chest
+  speciesRestriction: [VulpkaninSpecies]
+  sprites:
+    - sprite: LPP/Mobs/Customization/vulpkanin_body.rsi
+      state: pointsfadebelly
+
+- type: marking
+  id: ADTVulpkaninsharppoints
+  bodyPart: Chest
+  markingCategory: Chest
+  speciesRestriction: [VulpkaninSpecies]
+  sprites:
+    - sprite: LPP/Mobs/Customization/vulpkanin_body.rsi
+      state: sharppoints
+
+- type: marking
+  id: ADTVulpkanintail1
+  bodyPart: Tail
+  markingCategory: Tail
+  speciesRestriction: [VulpkaninSpecies]
+  sprites:
+    - sprite: LPP/Mobs/Customization/vulpkanin_tail.rsi
+      state: tail1
+
+- type: marking
+  id: ADTVulpkanintail2
+  bodyPart: Tail
+  markingCategory: Tail
+  speciesRestriction: [VulpkaninSpecies]
+  sprites:
+    - sprite: LPP/Mobs/Customization/vulpkanin_tail.rsi
+      state: tail2
+
+- type: marking
+  id: ADTVulpkanintail3
+  bodyPart: Tail
+  markingCategory: Tail
+  speciesRestriction: [VulpkaninSpecies]
+  sprites:
+    - sprite: LPP/Mobs/Customization/vulpkanin_tail.rsi
+      state: tail3
+
+- type: marking
+  id: ADTVulpkaninear
+  bodyPart: Head
+  markingCategory: Head
+  speciesRestriction: [VulpkaninSpecies]
+  sprites:
+    - sprite: LPP/Mobs/Customization/vulpkanin_head.rsi
+      state: ear
+
+- type: marking
+  id: ADTVulpkaninmuzzle
+  bodyPart: Head
+  markingCategory: Head
+  speciesRestriction: [VulpkaninSpecies]
+  sprites:
+    - sprite: LPP/Mobs/Customization/vulpkanin_head.rsi
+      state: muzzle
+
+- type: marking
+  id: ADTVulpkaninmuzzleear
+  bodyPart: Head
+  markingCategory: Head
+  speciesRestriction: [VulpkaninSpecies]
+  sprites:
+    - sprite: LPP/Mobs/Customization/vulpkanin_head.rsi
+      state: muzzle_ear
+
+- type: marking
+  id: ADTVulpkaninnose
+  bodyPart: Head
+  markingCategory: Head
+  speciesRestriction: [VulpkaninSpecies]
+  sprites:
+    - sprite: LPP/Mobs/Customization/vulpkanin_head.rsi
+      state: nose
+
+- type: marking
+  id: ADTVulpkaninpoints_fade
+  bodyPart: Head
+  markingCategory: Head
+  speciesRestriction: [VulpkaninSpecies]
+  sprites:
+    - sprite: LPP/Mobs/Customization/vulpkanin_head.rsi
+      state: points_fade
+
+- type: marking
+  id: ADTVulpkaninpoints_sharp
+  bodyPart: Head
+  markingCategory: Head
+  speciesRestriction: [VulpkaninSpecies]
+  sprites:
+    - sprite: LPP/Mobs/Customization/vulpkanin_head.rsi
+      state: points_sharp
+
+- type: marking
+  id: ADTVulpkaninskull_sponsor
+  bodyPart: Head
+  markingCategory: Head
+  speciesRestriction: [VulpkaninSpecies]
+  sponsorOnly: true
+  sprites:
+    - sprite: LPP/Mobs/Customization/vulpkanin_head.rsi
+      state: skull_sponsor
+
+- type: marking
+  id: ADTVulpkanintiger_face
+  bodyPart: Head
+  markingCategory: Head
+  speciesRestriction: [VulpkaninSpecies]
+  sprites:
+    - sprite: LPP/Mobs/Customization/vulpkanin_head.rsi
+      state: tiger_face
+
+- type: marking
+  id: ADTVulpkanintiger_head
+  bodyPart: Head
+  markingCategory: Head
+  speciesRestriction: [VulpkaninSpecies]
+  sprites:
+    - sprite: LPP/Mobs/Customization/vulpkanin_head.rsi
+      state: tiger_head

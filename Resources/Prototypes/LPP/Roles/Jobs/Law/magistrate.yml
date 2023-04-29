@@ -1,0 +1,93 @@
+- type: job
+  id: Magistrate
+  name: job-name-magistrate
+  description: job-description-magistrate
+  playTimeTracker: JobMagistrate
+  requirements:
+    - !type:DepartmentTimeRequirement
+      department: Security
+      time: 54000
+    - !type:RoleTimeRequirement
+      role: JobHeadOfSecurity
+      time: 36000
+    - !type:RoleTimeRequirement
+      role: JobCaptain
+      time: 36000
+    - !type:RoleTimeRequirement
+      role: JobIAA
+      time: 54000
+  startingGear: MagistrateGear
+  icon: "Magistrate"
+  requireAdminNotify: true
+  joinNotifyCrew: true
+  supervisors: job-supervisors-captain
+  canBeAntag: false
+  access:
+    - Command
+    - Brig
+    - Maintenance
+    - Service
+    - Security
+
+- type: startingGear
+  id: MagistrateGear
+  equipment:
+    jumpsuit: ClothingUniformJumpsuitLawyerBlack
+    back: ClothingBackpackFilled
+    shoes: ClothingShoesBootsLaceup
+    mask:
+    outerClothing: ClothingOuterRobesJudge
+    eyes: ClothingEyesGlassesSunglasses
+    head: ClothingHeadHatPwig
+    id: MagistratePDA
+    gloves:
+    ears: ClothingHeadsetMagistrate
+    belt:
+    neck: ClothingNeckLawyerbadge
+    pocket1: RubberStampMagistrate
+    pocket2: LPPJudgesGavel
+  innerclothingskirt: ClothingUniformJumpsuitLawyerBlack
+  satchel: ClothingBackpackSatchel
+  duffelbag: ClothingBackpackDuffel
+
+- type: entity
+  id: SpawnMagistrate
+  parent: SpawnPointJobBase
+  name: magistrate spawn
+  components:
+    - type: SpawnPoint
+      job_id: Magistrate
+    - type: Sprite
+      layers:
+        - state: green
+        - state: reporter
+
+- type: entity
+  parent: BasePDA
+  id: MagistratePDA
+  name: magistrate PDA
+  description: magistrate PDA
+  components:
+  - type: PDA
+    id: MagistrateIDCard
+    state: pda-lawyer
+  - type: Icon
+    state: pda-lawyer
+
+- type: entity
+  parent: IDCardStandard
+  id: MagistrateIDCard
+  name: magistrate ID card
+  description: magistrate ID card
+  components:
+    - type: Sprite
+      layers:
+        - state: default
+        - state: idlawyer
+    - type: PresetIdCard
+      job: Magistrate
+
+
+
+
+

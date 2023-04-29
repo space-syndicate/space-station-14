@@ -1,0 +1,11 @@
+- type: entity
+  name: another deny stamp
+  parent: RubberStampMime
+  id: LPPStampDeny
+  components:
+  - type: Stamp
+    stampedName: stamp-component-stamped-name-lppdeny
+    stampState: "paper_stamp-deny"
+  - type: Sprite
+    sprite: LPP/Objects/Misc/stampppd.rsi
+    state: stamp-deny-lpp
