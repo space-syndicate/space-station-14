@@ -1,0 +1,39 @@
+- type: emoteSounds
+  id: MaleTajaran
+  params:
+    variation: 0.125
+  sounds:
+    Scream:
+      path: /Audio/LPP/Voice/Tajaran/tajarahiss.ogg
+    Laugh:
+      collection: MaleLaugh
+
+- type: emoteSounds
+  id: FemaleTajaran
+  params:
+    variation: 0.125
+  sounds:
+    Scream:
+      path: /Audio/LPP/Voice/Tajaran/tajarahiss.ogg
+    Laugh:
+      collection: FemaleLaugh
+      
+- type: emoteSounds
+  id: MaleVulpkanin
+  params:
+    variation: 0.125
+  sounds:
+    Scream:
+      path: /Audio/LPP/Voice/Vulpkanin/howl.ogg
+    Laugh:
+      collection: MaleLaugh
+
+- type: emoteSounds
+  id: FemaleVulpkanin
+  params:
+    variation: 0.125
+  sounds:
+    Scream:
+      path: /Audio/LPP/Voice/Vulpkanin/howl.ogg
+    Laugh:
+      collection: FemaleLaugh

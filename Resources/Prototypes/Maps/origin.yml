@@ -36,7 +36,7 @@
         Chaplain: [ 2, 2 ]
         Warden: [ 1, 1 ]
         Librarian: [ 2, 2 ]
-        Lawyer: [ 0, 0 ] # Corvax-IAA
+        Lawyer: [ 3, 3 ] # Corvax-IAA
         Quartermaster: [ 1, 1 ]
         SalvageSpecialist: [ 3, 3 ]
         Musician: [ 2, 2 ]
@@ -49,3 +49,7 @@
         ResearchAssistant: [ 2, 2]
         Brigmedic: [ 1, 1]
         Boxer: [ 1, 1]
+        LPPParamedic: [ 1, 1 ]
+        Magistrate: [ 1, 1 ]
+        LPPBlueShieldOfficer: [ 2, 2 ]
+        LPPAdjutant: [ 1, 1 ]
