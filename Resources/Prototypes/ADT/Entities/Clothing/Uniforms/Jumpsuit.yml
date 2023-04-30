@@ -185,3 +185,14 @@
     sprite: ADT/Clothing/Uniforms/Jumpsuit/orange-beach-suit.rsi
   - type: Clothing
     sprite: ADT/Clothing/Uniforms/Jumpsuit/orange-beach-suit.rsi
+
+- type: entity
+  parent: ClothingUniformBase
+  id: ADTClothingUniformCyberSun
+  name: костюм Киберсан
+  description: Костюм Киберсан, стильно и практично !
+  components:
+  - type: Sprite
+    sprite: ADT/Clothing/OuterClothing/Coats/suitcyber.rsi
+  - type: Clothing
+    sprite: ADT/Clothing/OuterClothing/Coats/suitcyber.rsi
