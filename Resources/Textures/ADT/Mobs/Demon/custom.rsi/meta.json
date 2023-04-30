@@ -1,0 +1,63 @@
+{
+  "version": 1,
+  "license": "CC-BY-SA-3.0",
+  "copyright": "https://github.com/tgstation/tgstation/blob/8024397cc81c5f47f74cf4279e35728487d0a1a7/icons/mob/human_parts_greyscale.dmi and modified by DrSmugleaf",
+  "size": {
+    "x": 32,
+    "y": 32
+  },
+  "states": [
+    {
+        "name": "cow_ears",
+        "directions": 4
+    },
+    {
+        "name": "cow_horns",
+        "directions": 4
+    },
+    {
+        "name": "cow_spots",
+        "directions": 4
+    },
+    {
+        "name": "deer_antlers_horns",
+        "directions": 4
+    },
+    {
+        "name": "guards_stripes",
+        "directions": 4
+    },
+    {
+        "name": "lines_emperos",
+        "directions": 4
+    },
+    {
+        "name": "queen_lines",
+        "directions": 4
+    },
+    {
+        "name": "small_horns",
+        "directions": 4
+    },
+    {
+        "name": "tree_lines",
+        "directions": 4
+    },
+    {
+        "name": "trinity_spots",
+        "directions": 4
+    },
+    {
+        "name": "demon_tail",
+        "directions": 4
+    },
+    {
+        "name": "long",
+        "directions": 4
+    },
+    {
+        "name": "up",
+        "directions": 4
+    }
+  ]
+}

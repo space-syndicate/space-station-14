@@ -11,12 +11,11 @@
   - type: Thirst
   - type: Icon
     sprite: ADT/Mobs/Demon/parts.rsi
-    state: full
+    state: full_m
   - type: Sprite
     netsync: false
     noRot: true
     drawdepth: Mobs
-    scale: 0.7, 0.8
   - type: Body
     prototype: Demon
     requiredLegs: 2
