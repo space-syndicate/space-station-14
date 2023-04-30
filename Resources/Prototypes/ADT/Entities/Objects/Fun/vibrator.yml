@@ -5,9 +5,10 @@
   description: A hamburger bun. Round and convenient to hold.
   components:
   - type: Sprite
-    sprite: ADT\Objects\Fun\ERP\vibrator.rsi
+    sprite: ADT/Objects/Fun/ERP/vibrator.rsi
     layers:
       - state: magicwand_hard
+    scale: 0.7, 0.7
   - type: Tag
     tags:
     - ERP
@@ -21,7 +22,8 @@
   description: A hamburger bun. Round and convenient to hold.
   components:
   - type: Sprite
-    sprite: ADT\Objects\Fun\ERP\vibrator.rsi
+    sprite: ADT/Objects/Fun/ERP/vibrator.rsi
+    scale: 0.7, 0.7
     layers:
       - state: vibrator_green
   - type: Tag
@@ -37,7 +39,8 @@
   description: A hamburger bun. Round and convenient to hold.
   components:
   - type: Sprite
-    sprite: ADT\Objects\Fun\ERP\vibrator.rsi
+    sprite: ADT/Objects/Fun/ERP/vibrator.rsi
+    scale: 0.7, 0.7
     layers:
       - state: vibrator_pink
   - type: Tag
@@ -53,7 +56,8 @@
   description: A hamburger bun. Round and convenient to hold.
   components:
   - type: Sprite
-    sprite: ADT\Objects\Fun\ERP\vibrator.rsi
+    sprite: ADT/Objects/Fun/ERP/vibrator.rsi
+    scale: 0.7, 0.7
     layers:
       - state: vibrator_red
   - type: Tag
@@ -69,7 +73,8 @@
   description: A hamburger bun. Round and convenient to hold.
   components:
   - type: Sprite
-    sprite: ADT\Objects\Fun\ERP\vibrator.rsi
+    sprite: ADT/Objects/Fun/ERP/vibrator.rsi
+    scale: 0.7, 0.7
     layers:
       - state: vibrator_teal
   - type: Tag
@@ -85,7 +90,8 @@
   description: A hamburger bun. Round and convenient to hold.
   components:
   - type: Sprite
-    sprite: ADT\Objects\Fun\ERP\vibrator.rsi
+    sprite: ADT/Objects/Fun/ERP/vibrator.rsi
+    scale: 0.7, 0.7
     layers:
       - state: vibrator_yellow
   - type: Tag
