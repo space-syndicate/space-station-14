@@ -1,0 +1,93 @@
+- type: entity
+  parent: ClothingOuterHardsuitBase
+  id: ADTClothingOuterFemHardsuitSyndieCommander
+  name: женский командирский скафандр синдиката
+  description: Кроваво-красный женский скафандр, специально разработан для командиров синдиката.
+  components:
+  - type: Sprite
+    sprite: ADT/Clothing/OuterClothing/Hardsuits/syndiecommander_fem.rsi
+  - type: Clothing
+    sprite: ADT/Clothing/OuterClothing/Hardsuits/syndiecommander_fem.rsi
+  - type: PressureProtection
+    highPressureMultiplier: 0.05
+    lowPressureMultiplier: 1000
+  - type: ClothingSpeedModifier
+    walkModifier: 1.0
+    sprintModifier: 1.0
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.4
+        Slash: 0.4
+        Piercing: 0.3
+        Heat: 0.3
+        Radiation: 0.20
+        Caustic: 0.4
+  - type: ExplosionResistance
+    damageCoefficient: 0.5
+  - type: ToggleableClothing
+    clothingPrototype: ADTClothingHeadFemHelmetHardsuitSyndieCommander
+
+- type: entity
+  parent: ClothingOuterHardsuitBase
+  id: ADTClothingOuterFemHardsuitSyndieElite
+  name: женский элитный скафандр синдиката
+  description: Усовершенствованная версия женского кроваво-красного скафандра, отличающаяся повышенной огнеупорностью, устойчивостью к давлению и превосходной броней.
+  components:
+  - type: Sprite
+    sprite: ADT/Clothing/OuterClothing/Hardsuits/syndieelite_fem.rsi
+  - type: Clothing
+    sprite: ADT/Clothing/OuterClothing/Hardsuits/syndieelite_fem.rsi
+  - type: PressureProtection
+    highPressureMultiplier: 0.02
+    lowPressureMultiplier: 1000
+  - type: ClothingSpeedModifier
+    walkModifier: 1.0
+    sprintModifier: 1.0
+  - type: TemperatureProtection
+    coefficient: 0.001
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.5
+        Slash: 0.5
+        Piercing: 0.4
+        Heat: 0.2
+        Radiation: 0.20
+        Caustic: 0.5
+  - type: ExplosionResistance
+    damageCoefficient: 0.3
+  - type: ToggleableClothing
+    clothingPrototype: ADTClothingFemHeadHelmetHardsuitSyndieElite
+  - type: DiseaseProtection
+    protection: 0.2
+
+- type: entity
+  parent: ClothingOuterHardsuitBase
+  id: ADTClothingOuterFemHardsuitSyndie
+  name: женский кроваво-красный скафандр
+  description: Женский тяжелобронированный и мобильный скафандр, предназначенный для специальных операций.
+  components:
+  - type: Sprite
+    sprite: ADT/Clothing/OuterClothing/Hardsuits/syndi_fem.rsi
+  - type: Clothing
+    sprite: ADT/Clothing/OuterClothing/Hardsuits/syndi_fem.rsi
+  - type: PressureProtection
+    highPressureMultiplier: 0.05
+    lowPressureMultiplier: 1000
+  - type: ClothingSpeedModifier
+    walkModifier: 1.0
+    sprintModifier: 1.0
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.65
+        Slash: 0.6
+        Piercing: 0.5
+        Heat: 0.4
+        Radiation: 0.20
+        Caustic: 0.75
+  - type: ExplosionResistance
+    damageCoefficient: 0.5
+  - type: ToggleableClothing
+    clothingPrototype: ADTClothingFemHeadHelmetHardsuitSyndie
