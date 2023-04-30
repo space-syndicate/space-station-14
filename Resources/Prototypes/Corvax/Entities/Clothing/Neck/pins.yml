@@ -5,11 +5,11 @@
   description: The pin of United Soviet Socialist Planet.
   components:
   - type: Sprite
-    sprite: Corvax/Entities/Clothing/Neck/Misc/pins.rsi
+    sprite: Corvax/Clothing/Neck/Misc/pins.rsi
     layers:
     - state: comm
   - type: Clothing
-    sprite: Corvax/Entities/Clothing/Neck/Misc/pins.rsi
+    sprite: Corvax/Clothing/Neck/Misc/pins.rsi
     clothingVisuals:
       neck:
       - state: comm-equipped
@@ -21,11 +21,11 @@
   description: The pin of corporation Donk Pocket.
   components:
   - type: Sprite
-    sprite: Corvax/Entities/Clothing/Neck/Misc/pins.rsi
+    sprite: Corvax/Clothing/Neck/Misc/pins.rsi
     layers:
     - state: donk
   - type: Clothing
-    sprite: Corvax/Entities/Clothing/Neck/Misc/pins.rsi
+    sprite: Corvax/Clothing/Neck/Misc/pins.rsi
     clothingVisuals:
       neck:
       - state: donk-equipped
@@ -37,11 +37,11 @@
   description: The pin of United Earth Government.
   components:
   - type: Sprite
-    sprite: Corvax/Entities/Clothing/Neck/Misc/pins.rsi
+    sprite: Corvax/Clothing/Neck/Misc/pins.rsi
     layers:
     - state: earth
   - type: Clothing
-    sprite: Corvax/Entities/Clothing/Neck/Misc/pins.rsi
+    sprite: Corvax/Clothing/Neck/Misc/pins.rsi
     clothingVisuals:
       neck:
       - state: earth-equipped
@@ -53,11 +53,11 @@
   description: The pin of corporation Kosmologistika.
   components:
   - type: Sprite
-    sprite: Corvax/Entities/Clothing/Neck/Misc/pins.rsi
+    sprite: Corvax/Clothing/Neck/Misc/pins.rsi
     layers:
     - state: logistika
   - type: Clothing
-    sprite: Corvax/Entities/Clothing/Neck/Misc/pins.rsi
+    sprite: Corvax/Clothing/Neck/Misc/pins.rsi
     clothingVisuals:
       neck:
       - state: logistika-equipped
@@ -69,11 +69,11 @@
   description: The pin of corporation DeForest.
   components:
   - type: Sprite
-    sprite: Corvax/Entities/Clothing/Neck/Misc/pins.rsi
+    sprite: Corvax/Clothing/Neck/Misc/pins.rsi
     layers:
     - state: med
   - type: Clothing
-    sprite: Corvax/Entities/Clothing/Neck/Misc/pins.rsi
+    sprite: Corvax/Clothing/Neck/Misc/pins.rsi
     clothingVisuals:
       neck:
       - state: med-equipped
@@ -85,11 +85,11 @@
   description: The pin of corporation Nakamura engineering.
   components:
   - type: Sprite
-    sprite: Corvax/Entities/Clothing/Neck/Misc/pins.rsi
+    sprite: Corvax/Clothing/Neck/Misc/pins.rsi
     layers:
     - state: nakamura
   - type: Clothing
-    sprite: Corvax/Entities/Clothing/Neck/Misc/pins.rsi
+    sprite: Corvax/Clothing/Neck/Misc/pins.rsi
     clothingVisuals:
       neck:
       - state: nakamura-equipped
@@ -101,11 +101,11 @@
   description: The pin of corporation NanoTrasen.
   components:
   - type: Sprite
-    sprite: Corvax/Entities/Clothing/Neck/Misc/pins.rsi
+    sprite: Corvax/Clothing/Neck/Misc/pins.rsi
     layers:
     - state: nano
   - type: Clothing
-    sprite: Corvax/Entities/Clothing/Neck/Misc/pins.rsi
+    sprite: Corvax/Clothing/Neck/Misc/pins.rsi
     clothingVisuals:
       neck:
       - state: nano-equipped
@@ -117,11 +117,11 @@
   description: The pin of corporation NanoTrasen.
   components:
   - type: Sprite
-    sprite: Corvax/Entities/Clothing/Neck/Misc/pins.rsi
+    sprite: Corvax/Clothing/Neck/Misc/pins.rsi
     layers:
     - state: nano
   - type: Clothing
-    sprite: Corvax/Entities/Clothing/Neck/Misc/pins.rsi
+    sprite: Corvax/Clothing/Neck/Misc/pins.rsi
     clothingVisuals:
       neck:
       - state: nano-equipped
@@ -133,11 +133,11 @@
   description: The pin of Syndicakes, on backside have a little numbers "2559".
   components:
   - type: Sprite
-    sprite: Corvax/Entities/Clothing/Neck/Misc/pins.rsi
+    sprite: Corvax/Clothing/Neck/Misc/pins.rsi
     layers:
     - state: sind
   - type: Clothing
-    sprite: Corvax/Entities/Clothing/Neck/Misc/pins.rsi
+    sprite: Corvax/Clothing/Neck/Misc/pins.rsi
     clothingVisuals:
       neck:
       - state: sind-equipped
@@ -149,11 +149,11 @@
   description: The pin of corporation Vitezstvi.
   components:
   - type: Sprite
-    sprite: Corvax/Entities/Clothing/Neck/Misc/pins.rsi
+    sprite: Corvax/Clothing/Neck/Misc/pins.rsi
     layers:
     - state: vit
   - type: Clothing
-    sprite: Corvax/Entities/Clothing/Neck/Misc/pins.rsi
+    sprite: Corvax/Clothing/Neck/Misc/pins.rsi
     clothingVisuals:
       neck:
       - state: vit-equipped
