@@ -6,8 +6,7 @@
   description: A hamburger bun. Round and convenient to hold.
   components:
   - type: Sprite
-    sprite: ADT/Objects/Fun/ERP/buttplug.rsi
-    scale: 0.7, 0.7
+    sprite: ADT\Objects\Fun\ERP\buttplug.rsi
     layers:
       - state: green_big
   - type: Tag
@@ -23,8 +22,7 @@
   description: A hamburger bun. Round and convenient to hold.
   components:
   - type: Sprite
-    sprite: ADT/Objects/Fun/ERP/buttplug.rsi
-    scale: 0.7, 0.7
+    sprite: ADT\Objects\Fun\ERP\buttplug.rsi
     layers:
       - state: green_med
   - type: Tag
@@ -40,8 +38,7 @@
   description: A hamburger bun. Round and convenient to hold.
   components:
   - type: Sprite
-    sprite: ADT/Objects/Fun/ERP/buttplug.rsi
-    scale: 0.7, 0.7
+    sprite: ADT\Objects\Fun\ERP\buttplug.rsi
     layers:
       - state: green_small
   - type: Tag
@@ -57,8 +54,7 @@
   description: A hamburger bun. Round and convenient to hold.
   components:
   - type: Sprite
-    sprite: ADT/Objects/Fun/ERP/buttplug.rsi
-    scale: 0.7, 0.7
+    sprite: ADT\Objects\Fun\ERP\buttplug.rsi
     layers:
       - state: metal_big
   - type: Tag
@@ -74,8 +70,7 @@
   description: A hamburger bun. Round and convenient to hold.
   components:
   - type: Sprite
-    sprite: ADT/Objects/Fun/ERP/buttplug.rsi
-    scale: 0.7, 0.7
+    sprite: ADT\Objects\Fun\ERP\buttplug.rsi
     layers:
       - state: metal_med
   - type: Tag
@@ -91,8 +86,7 @@
   description: A hamburger bun. Round and convenient to hold.
   components:
   - type: Sprite
-    sprite: ADT/Objects/Fun/ERP/buttplug.rsi
-    scale: 0.7, 0.7
+    sprite: ADT\Objects\Fun\ERP\buttplug.rsi
     layers:
       - state: metal_small
   - type: Tag
@@ -108,8 +102,7 @@
   description: A hamburger bun. Round and convenient to hold.
   components:
   - type: Sprite
-    sprite: ADT/Objects/Fun/ERP/buttplug.rsi
-    scale: 0.7, 0.7
+    sprite: ADT\Objects\Fun\ERP\buttplug.rsi
     layers:
       - state: pink_big
   - type: Tag
@@ -125,8 +118,7 @@
   description: A hamburger bun. Round and convenient to hold.
   components:
   - type: Sprite
-    sprite: ADT/Objects/Fun/ERP/buttplug.rsi
-    scale: 0.7, 0.7
+    sprite: ADT\Objects\Fun\ERP\buttplug.rsi
     layers:
       - state: pink_med
   - type: Tag
@@ -142,8 +134,7 @@
   description: A hamburger bun. Round and convenient to hold.
   components:
   - type: Sprite
-    sprite: ADT/Objects/Fun/ERP/buttplug.rsi
-    scale: 0.7, 0.7
+    sprite: ADT\Objects\Fun\ERP\buttplug.rsi
     layers:
       - state: pink_small
   - type: Tag
@@ -159,8 +150,7 @@
   description: A hamburger bun. Round and convenient to hold.
   components:
   - type: Sprite
-    sprite: ADT/Objects/Fun/ERP/buttplug.rsi
-    scale: 0.7, 0.7
+    sprite: ADT\Objects\Fun\ERP\buttplug.rsi
     layers:
       - state: tail_big
   - type: Tag
@@ -176,8 +166,7 @@
   description: A hamburger bun. Round and convenient to hold.
   components:
   - type: Sprite
-    sprite: ADT/Objects/Fun/ERP/buttplug.rsi
-    scale: 0.7, 0.7
+    sprite: ADT\Objects\Fun\ERP\buttplug.rsi
     layers:
       - state: tail_med
   - type: Tag
@@ -193,8 +182,7 @@
   description: A hamburger bun. Round and convenient to hold.
   components:
   - type: Sprite
-    sprite: ADT/Objects/Fun/ERP/buttplug.rsi
-    scale: 0.7, 0.7
+    sprite: ADT\Objects\Fun\ERP\buttplug.rsi
     layers:
       - state: tail_small
   - type: Tag
@@ -210,8 +198,7 @@
   description: A hamburger bun. Round and convenient to hold.
   components:
   - type: Sprite
-    sprite: ADT/Objects/Fun/ERP/buttplug.rsi
-    scale: 0.7, 0.7
+    sprite: ADT\Objects\Fun\ERP\buttplug.rsi
     layers:
       - state: teal_big
   - type: Tag
@@ -227,8 +214,7 @@
   description: A hamburger bun. Round and convenient to hold.
   components:
   - type: Sprite
-    sprite: ADT/Objects/Fun/ERP/buttplug.rsi
-    scale: 0.7, 0.7
+    sprite: ADT\Objects\Fun\ERP\buttplug.rsi
     layers:
       - state: teal_med
   - type: Tag
@@ -244,8 +230,7 @@
   description: A hamburger bun. Round and convenient to hold.
   components:
   - type: Sprite
-    sprite: ADT/Objects/Fun/ERP/buttplug.rsi
-    scale: 0.7, 0.7
+    sprite: ADT\Objects\Fun\ERP\buttplug.rsi
     layers:
       - state: teal_small
   - type: Tag
@@ -261,8 +246,7 @@
   description: A hamburger bun. Round and convenient to hold.
   components:
   - type: Sprite
-    sprite: ADT/Objects/Fun/ERP/buttplug.rsi
-    scale: 0.7, 0.7
+    sprite: ADT\Objects\Fun\ERP\buttplug.rsi
     layers:
       - state: yellow_big
   - type: Tag
@@ -278,8 +262,7 @@
   description: A hamburger bun. Round and convenient to hold.
   components:
   - type: Sprite
-    sprite: ADT/Objects/Fun/ERP/buttplug.rsi
-    scale: 0.7, 0.7
+    sprite: ADT\Objects\Fun\ERP\buttplug.rsi
     layers:
       - state: yellow_med
   - type: Tag
@@ -295,8 +278,7 @@
   description: A hamburger bun. Round and convenient to hold.
   components:
   - type: Sprite
-    sprite: ADT/Objects/Fun/ERP/buttplug.rsi
-    scale: 0.7, 0.7
+    sprite: ADT\Objects\Fun\ERP\buttplug.rsi
     layers:
       - state: yellow_small
   - type: Tag
