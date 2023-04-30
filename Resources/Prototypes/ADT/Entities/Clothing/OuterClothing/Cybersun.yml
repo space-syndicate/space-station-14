@@ -50,13 +50,13 @@
   - type: Armor
     modifiers:
       coefficients:
-        Blunt: 0.05
-        Slash: 0.05
-        Piercing: 0.05
-        Heat: 0.05
+        Blunt: 0.125
+        Slash: 0.125
+        Piercing: 0.125
+        Heat: 0.125
         Radiation: 0
   - type: ExplosionResistance
-    damageCoefficient: 0.05
+    damageCoefficient: 0.125
   - type: ToggleableClothing
     clothingPrototype: ADTClothingHeadHelmetHardsuitCybersunCrysis
 
