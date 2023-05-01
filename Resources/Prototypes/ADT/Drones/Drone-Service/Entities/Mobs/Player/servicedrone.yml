@@ -11,12 +11,12 @@
     channels:
     - Common
     - Service
-    - Botic
+    - ADTSilicon
   - type: ActiveRadio
     channels:
     - Common
     - Service
-    - Botic
+    - ADTSilicon
   - type: IntrinsicRadioReceiver
   - type: Access
     tags:
