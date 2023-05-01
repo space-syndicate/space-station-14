@@ -6,3 +6,4 @@ species-name-reptilian = Унатх
 species-name-slime = Слаймолюд
 species-name-diona = Диона
 species-name-kobolt = Кобольд
+species-name-demon = Аркан
