@@ -14,12 +14,13 @@
   roles:
   - Bartender
   - Botanist
+  - Boxer
   - Chaplain
   - Chef
   - Clown
   - HeadOfPersonnel
   - Janitor
-#  - Lawyer # Corvax-IAA
+  - Lawyer
   - Librarian
   - MedicalIntern
   - Mime
@@ -88,3 +89,13 @@
   - ResearchDirector
   - Scientist
   - ResearchAssistant
+
+- type: department
+  id: Specific
+  description: department-Specific-description
+  color: "#9FED58"
+  roles:
+  - Boxer
+  - Reporter
+  - Zookeeper
+  - Psychologist

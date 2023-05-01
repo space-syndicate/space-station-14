@@ -19,7 +19,7 @@ preset-traitor-objective-issuer-syndicate = [color=#87cefa]Синдикат[/col
 traitor-objective-condition-success = { $condition } | [color={ $markupColor }]Успех![/color]
 # Shown at the end of a round of Traitor
 traitor-objective-condition-fail = { $condition } | [color={ $markupColor }]Провал![/color] ({ $progress }%)
-traitor-title = Предатель
+traitor-title = Предатели
 traitor-description = Среди нас есть предатели...
 traitor-not-enough-ready-players = Недостаточно игроков готовы к игре! Из { $minimumPlayers } необходимых игроков готовы { $readyPlayersCount }.
 traitor-no-one-ready = Нет готовых игроков! Не удалось начать режим Предателя.
@@ -45,3 +45,11 @@ traitor-role-codewords =
     { $codewords }
     Кодовые слова можно использовать в обычном разговоре, чтобы незаметно идентифицировать себя для других агентов Синдиката.
     Прислушивайтесь к ним и храните их в тайне.
+traitor-role-uplink-code =
+    Установите рингтон Вашего КПК на { $code } чтобы заблокировать или разблокировать аплинк.
+    Не забудьте заблокировать его и сменить код, иначе любой член экипажа станции сможет открыть аплинк!
+# don't need all the flavour text for character menu
+traitor-role-codewords-short =
+    Кодовые слова:
+    { $codewords }.
+traitor-role-uplink-code-short = Ваш код аплинка: { $code }.
