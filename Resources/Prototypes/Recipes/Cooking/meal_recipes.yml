@@ -511,7 +511,7 @@
   solids:
     FoodFlyAmanita: 3
 
-type: microwaveMealRecipe
+- type: microwaveMealRecipe
   id: RecipePelmeni #Corvax-MealRecipe
   name: pelmeni recipe
   result: FoodPelmeniBowl
@@ -522,7 +522,7 @@ type: microwaveMealRecipe
     FoodBowlBig: 1
     FoodMeatMeatball: 1
     FoodDoughSlice: 3
-    
+
 #Other
 
 - type: microwaveMealRecipe
