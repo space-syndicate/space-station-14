@@ -32,6 +32,11 @@ traitor-death-match-station-is-too-unsafe-announcement = На станции с�
 traitor-death-match-end-round-description-first-line = КПК были восстановлены...
 traitor-death-match-end-round-description-entry = КПК { $originalName }, с { $tcBalance } ТК
 
+## TraitorHijack # Corvax gamemode
+
+traitor-hijack-title = Хайджек
+traitor-hijack-description = Агенты синдиката были засланы на станцию под прикрытием чтобы устроить хаос и угнать эвакуационный шаттл!
+
 ## TraitorRole
 
 # TraitorRole

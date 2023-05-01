@@ -78,3 +78,9 @@
   config:
     !type:GenericGameRuleConfiguration
     id: RampingStationEventScheduler
+
+- type: gameRule
+  id: TraitorHijack # Corvax all traitors hijack
+  config:
+    !type:GenericGameRuleConfiguration
+    id: TraitorHijack

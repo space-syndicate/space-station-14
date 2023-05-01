@@ -40,4 +40,14 @@
     RandomTraitorAliveObjective: 1
     RandomTraitorProgressObjective: 1
 
+- type: weightedRandom
+  id: TraitorObjectiveGroupHijack # Corvax all traitors hijack gamemode
+  weights:
+    TraitorObjectiveHijack: 1 # Corvax-Hijack
+
+- type: weightedRandom
+  id: TraitorObjectiveHijack # spaghetti code
+  weights:
+    HijackShuttleObjective: 1 # Corvax-Hijack
+
 #Changeling, crew, wizard, when you code it...

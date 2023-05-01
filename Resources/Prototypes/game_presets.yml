@@ -53,6 +53,19 @@
     - BasicStationEventScheduler
 
 - type: gamePreset
+  id: TraitorHijack # Corval all traitors hijack
+  alias:
+    - traitorhijack
+    - Hijack
+    - hijack
+  name: traitor-hijack-title
+  description: traitor-hijack-description
+  showInVote: false
+  rules:
+    - TraitorHijack
+    - BasicStationEventScheduler
+
+- type: gamePreset
   id: Suspicion
   alias:
     - suspicion
