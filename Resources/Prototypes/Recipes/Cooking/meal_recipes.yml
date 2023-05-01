@@ -511,18 +511,6 @@
   solids:
     FoodFlyAmanita: 3
 
-- type: microwaveMealRecipe
-  id: RecipePelmeni #Corvax-MealRecipe
-  name: pelmeni recipe
-  result: FoodPelmeniBowl
-  time: 10
-  reagents:
-    Water: 20
-  solids:
-    FoodBowlBig: 1
-    FoodMeatMeatball: 1
-    FoodDoughSlice: 3
-
 #Other
 
 - type: microwaveMealRecipe

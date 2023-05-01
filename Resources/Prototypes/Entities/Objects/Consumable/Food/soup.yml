@@ -536,29 +536,6 @@
           Quantity: 6
 # Tastes like jelly, mushroom.
 
-- type: entity
-  name: pelmeni
-  parent: FoodBowlBase
-  id: FoodPelmeniBowl #Corvax-Meal
-  description: Lots of meat, little dough.
-  components:
-  - type: FlavorProfile
-    flavors:
-      - meaty
-  - type: Sprite
-    layers:
-    - state: bowl
-    - state: pelmeni
-  - type: SolutionContainerManager
-    solutions:
-      food:
-        maxvol: 30
-        reagents:
-        - ReagentId: Nutriment
-          Quantity: 10
-        - ReagentId: Protein
-          Quantity: 20
-          
 # Soup
 
 - type: entity
