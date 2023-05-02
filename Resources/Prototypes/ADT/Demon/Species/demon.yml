@@ -18,6 +18,8 @@
   id: MobDemonSprites
   sprites:
     Head: MobDemonHead
+    Hair: MobHumanoidAnyMarking
+    FacialHair: MobHumanoidAnyMarking
     Snout: MobHumanoidAnyMarking
     Chest: MobDemonTorso
     HeadTop: MobHumanoidAnyMarking
@@ -42,12 +44,6 @@
     FacialHair:
       points: 1
       required: false
-    Tail:
-      points: 1
-      required: false
-    Snout:
-      points: 1
-      required: false
     HeadTop:
       points: 1
       required: false
@@ -56,6 +52,18 @@
       required: false
     Chest:
       points: 1
+      required: false
+    Tail:
+      points: 1
+      required: false
+    Snout:
+      points: 1
+      required: false
+    Legs:
+      points: 2
+      required: false
+    Arms:
+      points: 2
       required: false
 
 - type: humanoidBaseSprite
