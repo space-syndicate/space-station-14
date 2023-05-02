@@ -80,6 +80,7 @@
   description: A dummy reptilian meant to be used in character setup.
   components:
   - type: HumanoidAppearance
+    species: KoboltSpecies
   - type: Sprite
     netsync: false
     noRot: true
