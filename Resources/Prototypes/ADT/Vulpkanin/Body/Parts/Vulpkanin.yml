@@ -1,4 +1,4 @@
-﻿# TODO: Add descriptions (many)
+# TODO: Add descriptions (many)
 # TODO BODY: Part damage
 - type: entity
   id: PartVulpkanin
@@ -149,9 +149,9 @@
     - type: BodyPart
       partType: Leg
       symmetry: Left
-    - type: MovementSpeedModifier
-      baseWalkSpeed: 3
-      baseSprintSpeed: 4.9
+    - type: MovementBodyPart
+      walkSpeed: 3
+      sprintSpeed: 4.9
 
 - type: entity
   id: RightLegVulpkanin
@@ -168,9 +168,9 @@
     - type: BodyPart
       partType: Leg
       symmetry: Right
-    - type: MovementSpeedModifier
-      baseWalkSpeed: 3
-      baseSprintSpeed: 4.9
+    - type: MovementBodyPart
+      walkSpeed: 3
+      sprintSpeed: 4.9
 
 - type: entity
   id: LeftFootVulpkanin
