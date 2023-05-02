@@ -76,6 +76,8 @@
         acts: ["Destruction"]
   - type: Machine
     board: HydroponicsTrayMachineCircuitboard
+  - type: TTS
+    voice: TrainingRobot
   - type: Wires
     BoardName: "HydroponicsTray"
     LayoutId: HydroponicsTray
