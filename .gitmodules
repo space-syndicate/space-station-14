@@ -7,3 +7,6 @@
 	url = git@gitlab.com:Morbo/corvax-secrets.git
 	branch = master
 	update = none
+[submodule "SalutResourses"]
+	path = SalutResourses
+	url = https://github.com/GameComplect/SalutResourses
