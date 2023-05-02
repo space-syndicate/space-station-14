@@ -1,4 +1,4 @@
-﻿- type: entity
+- type: entity
   id: PartMoth
   parent: BaseItem
   name: "moth body part"
@@ -139,9 +139,9 @@
     - type: BodyPart
       partType: Leg
       symmetry: Left
-    - type: MovementSpeedModifier
-      baseWalkSpeed: 3.1
-      baseSprintSpeed: 5.1
+    - type: MovementBodyPart
+      walkSpeed: 3.1
+      sprintSpeed: 5.1
 #    criticalThreshold: 45
 #    deadThreshold: 90
 
@@ -160,9 +160,9 @@
     - type: BodyPart
       partType: Leg
       symmetry: Right
-    - type: MovementSpeedModifier
-      baseWalkSpeed: 3.1
-      baseSprintSpeed: 5.1
+    - type: MovementBodyPart
+      walkSpeed: 3.1
+      sprintSpeed: 5.1
 #    criticalThreshold: 45
 #    deadThreshold: 90
 
