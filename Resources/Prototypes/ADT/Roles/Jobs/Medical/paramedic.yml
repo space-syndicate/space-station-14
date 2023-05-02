@@ -1,70 +1,70 @@
-- type: job
-  id: Paramedic
-  name: job-name-paramedic
-  description: job-description-paramedic
-  playTimeTracker: JobParamedic
-  requirements:
-    - !type:RoleTimeRequirement
-      role: JobChemist
-      time: 18000
-    - !type:DepartmentTimeRequirement
-      department: Medical
-      time: 54000
-  startingGear: ParamedicGear
-  icon: "MedicalDoctor"
-  supervisors: job-supervisors-cmo
-  canBeAntag: false
-  access:
-    - Medical
-    - Chemistry
-    - Maintenance
-    - External
-
-- type: playTimeTracker
-  id: JobParamedic
-
-- type: startingGear
-  id: ParamedicGear
-  equipment:
-    jumpsuit: ClothingUniformJumpsuitParamedic
-    back: ADTClothingBackpackParamedicalMedicalFilled
-    shoes: ClothingShoesColorWhite
-    id: PramedicPDA
-    ears: ClothingHeadsetMedical
-    belt: ClothingBeltMedical
-    pocket1: HandheldCrewMonitor
-    gloves: ClothingHandsGlovesNitrile
-    # the purple glasses?
-  innerclothingskirt: ClothingUniformJumpskirtColorWhite
-  satchel: ADTClothingBackpackSatchelParamedicalFilled
-  duffelbag: ADTClothingBackpackDuffelParamedicalFilled
-
-- type: entity
-  parent: BasePDA
-  id: PramedicPDA
-  name: Paramedic PDA
-  description: Shiny and sterile. Has a built-in health analyzer.
-  components:
-    - type: PDA
-      id: ParamedicIDCard
-      state: pda-medical
-    - type: Icon
-      state: pda-medical
-    - type: HealthAnalyzer
-      scanDelay: 1.2
-      scanningEndSound:
-        path: "/Audio/Items/Medical/healthscanner.ogg"
-    - type: CrewMonitoringConsole
-
-- type: entity
-  parent: IDCardStandard
-  id: ParamedicIDCard
-  name: paramedic ID card
-  components:
-    - type: Sprite
-      layers:
-        - state: default
-        - state: idmedicaldoctor
-    - type: PresetIdCard
-      job: Paramedic
-
+#- type: job
+#  id: Paramedic
+#  name: job-name-paramedic
+#  description: job-description-paramedic
+#  playTimeTracker: JobParamedic
+#  requirements:
+#    - !type:RoleTimeRequirement
+#      role: JobChemist
+#      time: 18000
+#    - !type:DepartmentTimeRequirement
+#      department: Medical
+#      time: 54000
+#  startingGear: ParamedicGear
+#  icon: "MedicalDoctor"
+#  supervisors: job-supervisors-cmo
+#  canBeAntag: false
+#  access:
+#    - Medical
+#    - Chemistry
+#    - Maintenance
+#    - External
+#
+#- type: playTimeTracker
+#  id: JobParamedic
+#
+#- type: startingGear
+#  id: ParamedicGear
+#  equipment:
+#    jumpsuit: ClothingUniformJumpsuitParamedic
+#    back: ADTClothingBackpackParamedicalMedicalFilled
+#    shoes: ClothingShoesColorWhite
+#    id: PramedicPDA
+#    ears: ClothingHeadsetMedical
+#    belt: ClothingBeltMedical
+#    pocket1: HandheldCrewMonitor
+#    gloves: ClothingHandsGlovesNitrile
+#    # the purple glasses?
+#  innerclothingskirt: ClothingUniformJumpskirtColorWhite
+#  satchel: ADTClothingBackpackSatchelParamedicalFilled
+#  duffelbag: ADTClothingBackpackDuffelParamedicalFilled
+#
+#- type: entity
+#  parent: BasePDA
+#  id: PramedicPDA
+#  name: Paramedic PDA
+#  description: Shiny and sterile. Has a built-in health analyzer.
+#  components:
+#    - type: PDA
+#      id: ParamedicIDCard
+#      state: pda-medical
+#    - type: Icon
+#      state: pda-medical
+#    - type: HealthAnalyzer
+#      scanDelay: 1.2
+#      scanningEndSound:
+#        path: "/Audio/Items/Medical/healthscanner.ogg"
+#    - type: CrewMonitoringConsole
+#
+#- type: entity
+#  parent: IDCardStandard
+#  id: ParamedicIDCard
+#  name: paramedic ID card
+#  components:
+#    - type: Sprite
+#      layers:
+#        - state: default
+#        - state: idmedicaldoctor
+#    - type: PresetIdCard
+#      job: Paramedic
+#
