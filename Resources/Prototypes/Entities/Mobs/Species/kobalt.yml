@@ -16,10 +16,22 @@
     netsync: false
     noRot: true
     drawdepth: Mobs
-    scale: 0.7, 0.8
+    scale: 0.9, 0.8
   - type: Body
     prototype: Kobolt
     requiredLegs: 2
+  - type: Fixtures
+    fixtures: # TODO: This needs a second fixture just for mob collisions.
+    - shape:
+        !type:PhysShapeCircle
+        radius: 0.35
+      # they r smaller
+      density: 120
+      restitution: 0.0
+      mask:
+      - MobMask
+      layer:
+      - MobLayer
   - type: LizardAccent
   #- type: LizardBlood
   - type: Speech
@@ -68,4 +80,8 @@
   description: A dummy reptilian meant to be used in character setup.
   components:
   - type: HumanoidAppearance
-    species: KoboltSpecies
+  - type: Sprite
+    netsync: false
+    noRot: true
+    drawdepth: Mobs
+    scale: 0.9, 0.8
