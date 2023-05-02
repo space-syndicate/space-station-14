@@ -137,7 +137,7 @@
   - type: BodyPart
     partType: Leg
     symmetry: Left
-  - type: MovementSpeedModifier
+  - type: MovementBodyPart
     baseWalkSpeed : 2.7
     baseSprintSpeed : 4.5
 
@@ -156,7 +156,7 @@
   - type: BodyPart
     partType: Leg
     symmetry: Right
-  - type: MovementSpeedModifier
+  - type: MovementBodyPart
     baseWalkSpeed : 2.7
     baseSprintSpeed : 4.5
 

@@ -1,4 +1,4 @@
-﻿# TODO: Add descriptions (many)
+# TODO: Add descriptions (many)
 # TODO BODY: Part damage
 - type: entity
   id: PartTajaran
@@ -149,7 +149,7 @@
     - type: BodyPart
       partType: Leg
       symmetry: Left
-    - type: MovementSpeedModifier
+    - type: MovementBodyPart
       baseWalkSpeed: 3
       baseSprintSpeed: 4.9
 
@@ -168,7 +168,7 @@
     - type: BodyPart
       partType: Leg
       symmetry: Right
-    - type: MovementSpeedModifier
+    - type: MovementBodyPart
       baseWalkSpeed: 3
       baseSprintSpeed: 4.9
 
