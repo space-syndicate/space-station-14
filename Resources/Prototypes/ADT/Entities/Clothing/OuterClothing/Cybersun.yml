@@ -50,12 +50,27 @@
   - type: Armor
     modifiers:
       coefficients:
-        Blunt: 0.05
-        Slash: 0.05
-        Piercing: 0.05
-        Heat: 0.05
+        Blunt: 0.1
+        Slash: 0.1
+        Piercing: 0.1
+        Heat: 0.1
         Radiation: 0
   - type: ExplosionResistance
-    damageCoefficient: 0.05
+    damageCoefficient: 0.1
   - type: ToggleableClothing
     clothingPrototype: ADTClothingHeadHelmetHardsuitCybersunCrysis
+
+- type: entity
+  parent: ClothingOuterStorageBase
+  id: ADTClothingOuterCoatCyberSun
+  name: лабораторный халат Киберсан
+  description: Лабораторный халат Киберсан, предоставляющий минимальную защиту от вредного воздействия
+  components:
+  - type: Sprite
+    sprite: ADT/Clothing/OuterClothing/Coats/labcyber.rsi
+  - type: Clothing
+    sprite: ADT/Clothing/OuterClothing/Coats/labcyber.rsi
+  - type: Armor
+    modifiers:
+      coefficients:
+        Caustic: 0.75

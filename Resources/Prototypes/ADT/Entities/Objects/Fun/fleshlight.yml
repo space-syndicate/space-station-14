@@ -1,0 +1,118 @@
+- type: entity
+  name: fleshlight green
+  id: ERPFleshlightGreen
+  parent: BaseItem
+  description: A hamburger bun. Round and convenient to hold.
+  components:
+  - type: Sprite
+    sprite: ADT/Objects/Fun/ERP/fleshlight.rsi
+    scale: 0.6, 0.6
+    layers:
+      - state: fleshlight_green
+  - type: Tag
+    tags:
+    - ERP
+  - type: Item
+    size: 10
+
+- type: entity
+  name: fleshlight pink
+  id: ERPFleshlightPink
+  parent: BaseItem
+  description: A hamburger bun. Round and convenient to hold.
+  components:
+  - type: Sprite
+    sprite: ADT/Objects/Fun/ERP/fleshlight.rsi
+    scale: 0.6, 0.6
+    layers:
+      - state: fleshlight_pink
+  - type: Tag
+    tags:
+    - ERP
+  - type: Item
+    size: 5
+
+- type: entity
+  name: fleshlight red
+  id: ERPFleshlightRed
+  parent: BaseItem
+  description: A hamburger bun. Round and convenient to hold.
+  components:
+  - type: Sprite
+    sprite: ADT/Objects/Fun/ERP/fleshlight.rsi
+    scale: 0.6, 0.6
+    layers:
+      - state: fleshlight_red
+  - type: Tag
+    tags:
+    - ERP
+  - type: Item
+    size: 5
+
+- type: entity
+  name: fleshlight teal
+  id: ERPFleshlightTeal
+  parent: BaseItem
+  description: A hamburger bun. Round and convenient to hold.
+  components:
+  - type: Sprite
+    sprite: ADT/Objects/Fun/ERP/fleshlight.rsi
+    scale: 0.6, 0.6
+    layers:
+      - state: fleshlight_teal
+  - type: Tag
+    tags:
+    - ERP
+  - type: Item
+    size: 5
+
+- type: entity
+  name: fleshlight yellow
+  id: ERPFleshlightYellow
+  parent: BaseItem
+  description: A hamburger bun. Round and convenient to hold.
+  components:
+  - type: Sprite
+    sprite: ADT/Objects/Fun/ERP/fleshlight.rsi
+    scale: 0.6, 0.6
+    layers:
+      - state: fleshlight_yellow
+  - type: Tag
+    tags:
+    - ERP
+  - type: Item
+    size: 5
+
+- type: entity
+  name: pillow pink
+  id: ERPPillowPink
+  parent: BaseItem
+  description: A hamburger bun. Round and convenient to hold.
+  components:
+  - type: Sprite
+    sprite: ADT/Objects/Fun/ERP/fleshlight.rsi
+    scale: 0.5, 0.5
+    layers:
+      - state: pillow_pink
+  - type: Tag
+    tags:
+    - ERP
+  - type: Item
+    size: 5
+
+- type: entity
+  name: pillow teal
+  id: ERPPillowTeal
+  parent: BaseItem
+  description: A hamburger bun. Round and convenient to hold.
+  components:
+  - type: Sprite
+    sprite: ADT/Objects/Fun/ERP/fleshlight.rsi
+    scale: 0.5, 0.5
+    layers:
+      - state: pillow_teal
+  - type: Tag
+    tags:
+    - ERP
+  - type: Item
+    size: 5

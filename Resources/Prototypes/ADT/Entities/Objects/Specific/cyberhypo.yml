@@ -1,0 +1,22 @@
+- type: entity
+  name: гипоспрей Киберсан
+  parent: BaseItem
+  description: Великолепный медицинский девайс в удобном дизайне от Киберсан !
+  id: ADTCyberHypospray
+  components:
+  - type: Sprite
+    sprite: ADT/Objects/Specific/cyberhypo.rsi
+    state: hypo
+  - type: Item
+    sprite: ADT/Objects/Specific/cyberhypo.rsi
+  - type: SolutionContainerManager
+    solutions:
+      hypospray:
+        maxVol: 30
+  - type: RefillableSolution
+    solution: hypospray
+  - type: ExaminableSolution
+    solution: hypospray
+  - type: Hypospray
+  - type: UseDelay
+    delay: 0.5

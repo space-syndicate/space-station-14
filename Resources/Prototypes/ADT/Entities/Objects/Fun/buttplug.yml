@@ -1,0 +1,307 @@
+
+- type: entity
+  name: big green buttplug
+  id: ERPBigGreenButtplug
+  parent: BaseItem
+  description: A hamburger bun. Round and convenient to hold.
+  components:
+  - type: Sprite
+    sprite: ADT/Objects/Fun/ERP/buttplug.rsi
+    scale: 0.7, 0.7
+    layers:
+      - state: green_big
+  - type: Tag
+    tags:
+    - ERP
+  - type: Item
+    size: 15
+
+- type: entity
+  name: Medium green buttplug
+  id: ERPMedGreenButtplug
+  parent: BaseItem
+  description: A hamburger bun. Round and convenient to hold.
+  components:
+  - type: Sprite
+    sprite: ADT/Objects/Fun/ERP/buttplug.rsi
+    scale: 0.7, 0.7
+    layers:
+      - state: green_med
+  - type: Tag
+    tags:
+    - ERP
+  - type: Item
+    size: 10
+
+- type: entity
+  name: Small green buttplug
+  id: ERPSmallGreenButtplug
+  parent: BaseItem
+  description: A hamburger bun. Round and convenient to hold.
+  components:
+  - type: Sprite
+    sprite: ADT/Objects/Fun/ERP/buttplug.rsi
+    scale: 0.7, 0.7
+    layers:
+      - state: green_small
+  - type: Tag
+    tags:
+    - ERP
+  - type: Item
+    size: 5
+
+- type: entity
+  name: big metal buttplug
+  id: ERPBigmetalButtplug
+  parent: BaseItem
+  description: A hamburger bun. Round and convenient to hold.
+  components:
+  - type: Sprite
+    sprite: ADT/Objects/Fun/ERP/buttplug.rsi
+    scale: 0.7, 0.7
+    layers:
+      - state: metal_big
+  - type: Tag
+    tags:
+    - ERP
+  - type: Item
+    size: 15
+
+- type: entity
+  name: Medium metal buttplug
+  id: ERPMedmetalButtplug
+  parent: BaseItem
+  description: A hamburger bun. Round and convenient to hold.
+  components:
+  - type: Sprite
+    sprite: ADT/Objects/Fun/ERP/buttplug.rsi
+    scale: 0.7, 0.7
+    layers:
+      - state: metal_med
+  - type: Tag
+    tags:
+    - ERP
+  - type: Item
+    size: 10
+
+- type: entity
+  name: Small metal buttplug
+  id: ERPSmallmetalButtplug
+  parent: BaseItem
+  description: A hamburger bun. Round and convenient to hold.
+  components:
+  - type: Sprite
+    sprite: ADT/Objects/Fun/ERP/buttplug.rsi
+    scale: 0.7, 0.7
+    layers:
+      - state: metal_small
+  - type: Tag
+    tags:
+    - ERP
+  - type: Item
+    size: 5
+
+- type: entity
+  name: big pink buttplug
+  id: ERPBigpinkButtplug
+  parent: BaseItem
+  description: A hamburger bun. Round and convenient to hold.
+  components:
+  - type: Sprite
+    sprite: ADT/Objects/Fun/ERP/buttplug.rsi
+    scale: 0.7, 0.7
+    layers:
+      - state: pink_big
+  - type: Tag
+    tags:
+    - ERP
+  - type: Item
+    size: 15
+
+- type: entity
+  name: Medium pink buttplug
+  id: ERPMedpinkButtplug
+  parent: BaseItem
+  description: A hamburger bun. Round and convenient to hold.
+  components:
+  - type: Sprite
+    sprite: ADT/Objects/Fun/ERP/buttplug.rsi
+    scale: 0.7, 0.7
+    layers:
+      - state: pink_med
+  - type: Tag
+    tags:
+    - ERP
+  - type: Item
+    size: 10
+
+- type: entity
+  name: Small pink buttplug
+  id: ERPSmallpinkButtplug
+  parent: BaseItem
+  description: A hamburger bun. Round and convenient to hold.
+  components:
+  - type: Sprite
+    sprite: ADT/Objects/Fun/ERP/buttplug.rsi
+    scale: 0.7, 0.7
+    layers:
+      - state: pink_small
+  - type: Tag
+    tags:
+    - ERP
+  - type: Item
+    size: 5
+
+- type: entity
+  name: big tail buttplug
+  id: ERPBigtailButtplug
+  parent: BaseItem
+  description: A hamburger bun. Round and convenient to hold.
+  components:
+  - type: Sprite
+    sprite: ADT/Objects/Fun/ERP/buttplug.rsi
+    scale: 0.7, 0.7
+    layers:
+      - state: tail_big
+  - type: Tag
+    tags:
+    - ERP
+  - type: Item
+    size: 15
+
+- type: entity
+  name: Medium tail buttplug
+  id: ERPMedtailButtplug
+  parent: BaseItem
+  description: A hamburger bun. Round and convenient to hold.
+  components:
+  - type: Sprite
+    sprite: ADT/Objects/Fun/ERP/buttplug.rsi
+    scale: 0.7, 0.7
+    layers:
+      - state: tail_med
+  - type: Tag
+    tags:
+    - ERP
+  - type: Item
+    size: 10
+
+- type: entity
+  name: Small tail buttplug
+  id: ERPSmalltailButtplug
+  parent: BaseItem
+  description: A hamburger bun. Round and convenient to hold.
+  components:
+  - type: Sprite
+    sprite: ADT/Objects/Fun/ERP/buttplug.rsi
+    scale: 0.7, 0.7
+    layers:
+      - state: tail_small
+  - type: Tag
+    tags:
+    - ERP
+  - type: Item
+    size: 5
+
+- type: entity
+  name: big teal buttplug
+  id: ERPBigtealButtplug
+  parent: BaseItem
+  description: A hamburger bun. Round and convenient to hold.
+  components:
+  - type: Sprite
+    sprite: ADT/Objects/Fun/ERP/buttplug.rsi
+    scale: 0.7, 0.7
+    layers:
+      - state: teal_big
+  - type: Tag
+    tags:
+    - ERP
+  - type: Item
+    size: 15
+
+- type: entity
+  name: Medium teal buttplug
+  id: ERPMedtealButtplug
+  parent: BaseItem
+  description: A hamburger bun. Round and convenient to hold.
+  components:
+  - type: Sprite
+    sprite: ADT/Objects/Fun/ERP/buttplug.rsi
+    scale: 0.7, 0.7
+    layers:
+      - state: teal_med
+  - type: Tag
+    tags:
+    - ERP
+  - type: Item
+    size: 10
+
+- type: entity
+  name: Small teal buttplug
+  id: ERPSmalltealButtplug
+  parent: BaseItem
+  description: A hamburger bun. Round and convenient to hold.
+  components:
+  - type: Sprite
+    sprite: ADT/Objects/Fun/ERP/buttplug.rsi
+    scale: 0.7, 0.7
+    layers:
+      - state: teal_small
+  - type: Tag
+    tags:
+    - ERP
+  - type: Item
+    size: 5
+
+- type: entity
+  name: big yellow buttplug
+  id: ERPBigyellowButtplug
+  parent: BaseItem
+  description: A hamburger bun. Round and convenient to hold.
+  components:
+  - type: Sprite
+    sprite: ADT/Objects/Fun/ERP/buttplug.rsi
+    scale: 0.7, 0.7
+    layers:
+      - state: yellow_big
+  - type: Tag
+    tags:
+    - ERP
+  - type: Item
+    size: 15
+
+- type: entity
+  name: Medium yellow buttplug
+  id: ERPMedyellowButtplug
+  parent: BaseItem
+  description: A hamburger bun. Round and convenient to hold.
+  components:
+  - type: Sprite
+    sprite: ADT/Objects/Fun/ERP/buttplug.rsi
+    scale: 0.7, 0.7
+    layers:
+      - state: yellow_med
+  - type: Tag
+    tags:
+    - ERP
+  - type: Item
+    size: 10
+
+- type: entity
+  name: Small yellow buttplug
+  id: ERPSmallyellowButtplug
+  parent: BaseItem
+  description: A hamburger bun. Round and convenient to hold.
+  components:
+  - type: Sprite
+    sprite: ADT/Objects/Fun/ERP/buttplug.rsi
+    scale: 0.7, 0.7
+    layers:
+      - state: yellow_small
+  - type: Tag
+    tags:
+    - ERP
+  - type: Item
+    size: 5
+
