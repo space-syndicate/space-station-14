@@ -758,7 +758,7 @@
 
 #ERT
 - type: entity
-  parent: ClothingOuterHardsuitSyndie
+  parent: ClothingOuterHardsuitSyndieCommander
   id: ClothingOuterHardsuitERTLeader
   name: ERT leader's hardsuit
   description: A protective hardsuit worn by members of an emergency response team.
@@ -771,7 +771,7 @@
     clothingPrototype: ClothingHeadHelmetHardsuitERTLeader
 
 - type: entity
-  parent: ClothingOuterHardsuitERTLeader
+  parent: ClothingOuterHardsuitSyndie
   id: ClothingOuterHardsuitERTEngineer
   name: ERT engineer's hardsuit
   components:
@@ -783,7 +783,7 @@
     clothingPrototype: ClothingHeadHelmetHardsuitERTEngineer
 
 - type: entity
-  parent: ClothingOuterHardsuitERTLeader
+  parent: ClothingOuterHardsuitSyndieElite
   id: ClothingOuterHardsuitERTMedical
   name: ERT medic's hardsuit
   components:
@@ -798,7 +798,7 @@
 
 
 - type: entity
-  parent: ClothingOuterHardsuitERTLeader
+  parent: ClothingOuterHardsuitSyndie
   id: ClothingOuterHardsuitERTSecurity
   name: ERT security's hardsuit
   components:
@@ -810,7 +810,7 @@
     clothingPrototype: ClothingHeadHelmetHardsuitERTSecurity
 
 - type: entity
-  parent: ClothingOuterHardsuitERTLeader
+  parent: ClothingOuterHardsuitSyndie
   id: ClothingOuterHardsuitERTJanitor
   name: ERT janitor's hardsuit
   components:
