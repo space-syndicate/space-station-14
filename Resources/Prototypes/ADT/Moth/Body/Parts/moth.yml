@@ -140,8 +140,8 @@
       partType: Leg
       symmetry: Left
     - type: MovementBodyPart
-      baseWalkSpeed: 3.1
-      baseSprintSpeed: 5.1
+      walkSpeed: 3.1
+      sprintSpeed: 5.1
 #    criticalThreshold: 45
 #    deadThreshold: 90
 
@@ -161,8 +161,8 @@
       partType: Leg
       symmetry: Right
     - type: MovementBodyPart
-      baseWalkSpeed: 3.1
-      baseSprintSpeed: 5.1
+      walkSpeed: 3.1
+      sprintSpeed: 5.1
 #    criticalThreshold: 45
 #    deadThreshold: 90
 

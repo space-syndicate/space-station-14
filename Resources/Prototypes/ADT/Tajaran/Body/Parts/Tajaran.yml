@@ -150,8 +150,8 @@
       partType: Leg
       symmetry: Left
     - type: MovementBodyPart
-      baseWalkSpeed: 3
-      baseSprintSpeed: 4.9
+      walkSpeed: 3
+      sprintSpeed: 4.9
 
 - type: entity
   id: RightLegTajaran
@@ -169,8 +169,8 @@
       partType: Leg
       symmetry: Right
     - type: MovementBodyPart
-      baseWalkSpeed: 3
-      baseSprintSpeed: 4.9
+      walkSpeed: 3
+      sprintSpeed: 4.9
 
 - type: entity
   id: LeftFootTajaran
