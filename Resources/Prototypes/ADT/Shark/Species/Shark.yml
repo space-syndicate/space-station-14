@@ -17,6 +17,8 @@
   id: MobSharkSprites
   sprites:
     Head: MobSharkHead
+    HeadTop: MobHumanoidAnyMarking
+    HeadSide: MobHumanoidAnyMarking
     Hair: MobHumanoidAnyMarking
     FacialHair: MobHumanoidAnyMarking
     Chest: MobSharkTorso
@@ -33,10 +35,18 @@
 
 - type: markingPoints
   id: MobSharkMarkingLimits
-  onlyWhitelisted: true
   points:
     Hair:
       points: 1
+      required: false
+    HeadTop:
+      points: 1
+      required: false
+    HeadSide:
+      points: 1
+      required: false
+    FacialHair:
+      points: 0
       required: false
     Chest:
       points: 1

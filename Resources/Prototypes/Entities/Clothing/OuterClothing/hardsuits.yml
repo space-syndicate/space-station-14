@@ -343,9 +343,11 @@
   description: A special suit that protects against hazardous, low pressure environments. Has an additional layer of armor.
   components:
   - type: Sprite
-    sprite: Clothing/OuterClothing/Hardsuits/security-red.rsi
+    #sprite: Clothing/OuterClothing/Hardsuits/security-red.rsi
+    sprite: ADT/Clothing/OuterClothing/Hardsuits/hos_hardsuit.rsi
   - type: Clothing
-    sprite: Clothing/OuterClothing/Hardsuits/security-red.rsi
+    #sprite: Clothing/OuterClothing/Hardsuits/security-red.rsi
+    sprite: ADT/Clothing/OuterClothing/Hardsuits/hos_hardsuit.rsi
   - type: PressureProtection
     highPressureMultiplier: 0.45
     lowPressureMultiplier: 10000
@@ -403,9 +405,11 @@
   description: A specialized riot suit geared to combat low pressure environments while maintaining agility.
   components:
   - type: Sprite
-    sprite: Clothing/OuterClothing/Hardsuits/security-warden.rsi
+    #sprite: Clothing/OuterClothing/Hardsuits/security-warden.rsi
+    sprite: ADT/Clothing/OuterClothing/Hardsuits/warden_hardsuit.rsi
   - type: Clothing
-    sprite: Clothing/OuterClothing/Hardsuits/security-warden.rsi
+    #sprite: Clothing/OuterClothing/Hardsuits/security-warden.rsi
+    sprite: ADT/Clothing/OuterClothing/Hardsuits/warden_hardsuit.rsi
   - type: PressureProtection
     highPressureMultiplier: 0.525
     lowPressureMultiplier: 10000
@@ -546,9 +550,9 @@
   description: Скафандр предназначенный для защитника командования.
   components:
   - type: Sprite
-    sprite: Clothing/OuterClothing/Hardsuits/ihsvoid.rsi
+    sprite: ADT/Clothing/OuterClothing/Hardsuits/blueshield_hardsuit.rsi
   - type: Clothing
-    sprite: Clothing/OuterClothing/Hardsuits/ihsvoid.rsi
+    sprite: ADT/Clothing/OuterClothing/Hardsuits/blueshield_hardsuit.rsi
   - type: ClothingSpeedModifier
     walkModifier: 0.8
     sprintModifier: 0.8
@@ -567,7 +571,7 @@
   - type: ExplosionResistance
     damageCoefficient: 0.2
   - type: ToggleableClothing
-    clothingPrototype: ClothingHeadHelmetIHSVoidHelm
+    clothingPrototype: ClothingHeadHelmetBlueShield
 
 #- type: entity
 #  parent: ClothingOuterEVASuitBase

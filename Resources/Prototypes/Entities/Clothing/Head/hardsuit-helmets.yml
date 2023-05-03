@@ -123,6 +123,21 @@
     sprite: Clothing/Head/Hardsuits/ihsvoid.rsi
   - type: Clothing
     sprite: Clothing/Head/Hardsuits/ihsvoid.rsi
+  - type: PressureProtection
+    highPressureMultiplier: 0.3
+    lowPressureMultiplier: 10000
+
+- type: entity
+  parent: ClothingHeadHardsuitWithLightBase
+  id: ClothingHeadHelmetBlueShield
+  noSpawn: true
+  name: BlueShield helmet
+  description: A robust, tactical helmet.
+  components:
+  - type: Sprite
+    sprite: ADT/Clothing/Head/Hardsuits/blueshield_hardsuithead.rsi
+  - type: Clothing
+    sprite: ADT/Clothing/Head/Hardsuits/blueshield_hardsuithead.rsi
   - type: PointLight
     color: "#daffad"
   - type: PressureProtection
@@ -226,9 +241,11 @@
   description: Security hardsuit helmet with the latest top secret NT-HUD software. Belongs to the HoS.
   components:
   - type: Sprite
-    sprite: Clothing/Head/Hardsuits/security-red.rsi
+    #sprite: Clothing/Head/Hardsuits/security-red.rsi
+    sprite: ADT/Clothing/Head/Hardsuits/hos_hardsuithead.rsi
   - type: Clothing
-    sprite: Clothing/Head/Hardsuits/security-red.rsi
+    #sprite: Clothing/Head/Hardsuits/security-red.rsi
+    sprite: ADT/Clothing/Head/Hardsuits/hos_hardsuithead.rsi
   - type: PointLight
     color: "#ffeead"
   - type: PressureProtection
@@ -277,9 +294,11 @@
   description: A modified riot helmet. Oddly comfortable.
   components:
   - type: Sprite
-    sprite: Clothing/Head/Hardsuits/security-warden.rsi
+    #sprite: Clothing/Head/Hardsuits/security-warden.rsi
+    sprite: ADT/Clothing/Head/Hardsuits/warden_hardsuithead.rsi
   - type: Clothing
-    sprite: Clothing/Head/Hardsuits/security-warden.rsi
+    #sprite: Clothing/Head/Hardsuits/security-warden.rsi
+    sprite: ADT/Clothing/Head/Hardsuits/warden_hardsuithead.rsi
   - type: PointLight
     color: "#ffeead"
   - type: PressureProtection
