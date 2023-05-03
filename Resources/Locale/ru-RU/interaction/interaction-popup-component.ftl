@@ -24,6 +24,7 @@ petting-success-holo = Вы гладите { $target } по { POSS-ADJ($target) 
 petting-success-dragon = Уворачиваясь от клыков, когтей, и пламени, вы гладите { $target } по { POSS-ADJ($target) } огромной чешуйчатой голове.
 petting-success-hamster = Вы гладите { $target } по { POSS-ADJ($target) } маленькой пушистой голове.
 petting-success-bear = Вы нерешительно гладите { $target } по { POSS-ADJ($target) } таинственной голове.
+petting-success-slimes = You pet { THE($target) } on { POSS-ADJ($target) } mucous surface.
 petting-failure-generic = Вы тянетесь погладить { $target }, но { $target } настороженно уклоняется от вас.
 petting-failure-bat = Вы тянетесь погладить { $target }, но { $target } очень трудно поймать!
 petting-failure-corrupted-corgi = Вы тянетесь погладить { $target }, но решаете, что лучше не надо.
