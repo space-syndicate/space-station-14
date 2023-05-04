@@ -1,10 +1,8 @@
 ﻿using System.Diagnostics.CodeAnalysis;
-using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Net.Http.Json;
 using System.Threading.Tasks;
-using Content.Server.Database;
 using Content.Shared.Corvax.CCCVars;
 using Content.Shared.Corvax.Sponsors;
 using Robust.Shared.Configuration;
@@ -17,7 +15,6 @@ public sealed class SponsorsManager
 {
     [Dependency] private readonly IServerNetManager _netMgr = default!;
     [Dependency] private readonly IConfigurationManager _cfg = default!;
-    [Dependency] private readonly IServerDbManager _dbManager = default!;
 
     private readonly HttpClient _httpClient = new();
 
@@ -46,7 +43,6 @@ public sealed class SponsorsManager
     private async Task OnConnecting(NetConnectingArgs e)
     {
         var info = await LoadSponsorInfo(e.UserId);
-
         if (info?.Tier is null or 0)
         {
             _cachedSponsors.Remove(e.UserId); // Remove from cache if sponsor expired
@@ -61,7 +57,6 @@ public sealed class SponsorsManager
     private void OnConnected(object? sender, NetChannelArgs e)
     {
         var info = _cachedSponsors.TryGetValue(e.Channel.UserId, out var sponsor) ? sponsor : null;
-
         var msg = new MsgSponsorInfo() { Info = info };
         _netMgr.ServerSendMessage(msg, e.Channel);
     }
@@ -73,46 +68,24 @@ public sealed class SponsorsManager
 
     private async Task<SponsorInfo?> LoadSponsorInfo(NetUserId userId)
     {
-        if (!string.IsNullOrEmpty(_apiUrl))
-        {
-            var url = $"{_apiUrl}/sponsors/{userId.ToString()}";
-            var response = await _httpClient.GetAsync(url);
-            if (response.StatusCode == HttpStatusCode.NotFound)
-                return null;
+        if (string.IsNullOrEmpty(_apiUrl))
+            return null;
 
-            if (response.StatusCode != HttpStatusCode.OK)
-            {
-                var errorText = await response.Content.ReadAsStringAsync();
-                _sawmill.Error(
-                    "Failed to get player sponsor OOC color from API: [{StatusCode}] {Response}",
-                    response.StatusCode,
-                    errorText);
-                return null;
-            }
+        var url = $"{_apiUrl}/sponsors/{userId.ToString()}";
+        var response = await _httpClient.GetAsync(url);
+        if (response.StatusCode == HttpStatusCode.NotFound)
+            return null;
 
-            return await response.Content.ReadFromJsonAsync<SponsorInfo>();
-        }
-        else
+        if (response.StatusCode != HttpStatusCode.OK)
         {
-            var sponsorInfo = await _dbManager.GetSponsorInfo(userId);
-            if (sponsorInfo != null)
-            {
-                return new SponsorInfo()
-                {
-                    Tier = sponsorInfo.Tier,
-                    AllowedMarkings = sponsorInfo.AllowedMarkings.Split(";",StringSplitOptions.RemoveEmptyEntries),
-                    CharacterName = string.Empty,
-                    ExtraSlots = sponsorInfo.ExtraSlots,
-                    HavePriorityJoin = sponsorInfo.HavePriorityJoin,
-                    OOCColor = sponsorInfo.OOCColor,
-                    ExpireDate = sponsorInfo.ExpireDate,
-                    AllowJob = sponsorInfo.AllowJob
-                };
-            }
-            else
-            {
-                return null;
-            }
+            var errorText = await response.Content.ReadAsStringAsync();
+            _sawmill.Error(
+                "Failed to get player sponsor OOC color from API: [{StatusCode}] {Response}",
+                response.StatusCode,
+                errorText);
+            return null;
         }
+
+        return await response.Content.ReadFromJsonAsync<SponsorInfo>();
     }
 }

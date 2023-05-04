@@ -6,14 +6,13 @@
     xmlns:tabs="clr-namespace:Content.Client.Administration.UI.Tabs"
     xmlns:playerTab="clr-namespace:Content.Client.Administration.UI.Tabs.PlayerTab"
     xmlns:objectsTab="clr-namespace:Content.Client.Administration.UI.Tabs.ObjectsTab"
-    xmlns:sponsorTab="clr-namespace:Content.Client.Administration.UI.Tabs.SponsorTab">
+    >
     <TabContainer Name="MasterTabContainer">
         <adminTab:AdminTab />
         <adminbusTab:AdminbusTab />
         <atmosTab:AtmosTab />
         <tabs:RoundTab />
         <tabs:ServerTab />
-        <sponsorTab:SponsorTab Name="SponsorTab" Access="Public" />
         <playerTab:PlayerTab Name="PlayerTabControl" Access="Public" />
         <objectsTab:ObjectsTab Name="ObjectsTabControl" Access="Public" />
     </TabContainer>
