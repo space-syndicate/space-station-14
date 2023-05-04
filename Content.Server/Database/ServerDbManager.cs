@@ -242,12 +242,6 @@ namespace Content.Server.Database
         Task EditAdminNote(int id, string message, Guid editedBy, DateTime editedAt);
 
         #endregion
-
-        #region Sponsors
-        Task<Sponsor?> GetSponsorInfo(NetUserId userId, CancellationToken cancel = default);
-        Task<Sponsor[]?> GetSponsorList(CancellationToken cancel = default);
-
-        #endregion
     }
 
     public sealed class ServerDbManager : IServerDbManager
@@ -699,18 +693,6 @@ namespace Content.Server.Database
                 return command();
 
             return Task.Run(command);
-        }
-
-        public async Task<Sponsor?> GetSponsorInfo(NetUserId userId, CancellationToken cancel = default)
-        {
-            DbWriteOpsMetric.Inc();
-            return await _db.GetSponsorInfo(userId);
-        }
-
-        public async Task<Sponsor[]?> GetSponsorList(CancellationToken cancel = default)
-        {
-            DbWriteOpsMetric.Inc();
-            return await _db.GetSponsorList();
         }
 
         private DbContextOptions<PostgresServerDbContext> CreatePostgresOptions()
