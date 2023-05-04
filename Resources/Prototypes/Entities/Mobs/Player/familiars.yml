@@ -29,6 +29,9 @@
     size: 5
   - type: Mind
     showExamineInfo: true
+  - type: Faction
+    factions:
+    - PetsNT
   - type: Alerts
   - type: Familiar
 
