@@ -174,7 +174,7 @@ namespace Content.Server.Database
             var gender = sex == Sex.Male ? Gender.Male : Gender.Female;
             if (Enum.TryParse<Gender>(profile.Gender, true, out var genderVal))
                 gender = genderVal;
-            
+
             // Corvax-TTS-Start
             var voice = profile.Voice;
             if (voice == String.Empty)
@@ -1031,21 +1031,6 @@ namespace Content.Server.Database
 
         #endregion
 
-        #region Sponsors
-
-        public async Task<Sponsor?> GetSponsorInfo(NetUserId userId)
-        {
-            await using var db = await GetDb();
-            return await db.DbContext.Sponsors.AsNoTracking().FirstOrDefaultAsync(x => x.UserId == userId.UserId);
-        }
-
-        public async Task<Sponsor[]?> GetSponsorList()
-        {
-            await using var db = await GetDb();
-            return await db.DbContext.Sponsors.AsNoTracking().ToArrayAsync();
-        }
-
-        #endregion
         protected abstract Task<DbGuard> GetDb();
 
         protected abstract class DbGuard : IAsyncDisposable
