@@ -44,10 +44,6 @@ namespace Content.Server.Database
                 .HasIndex(p => p.UserId)
                 .IsUnique();
 
-            modelBuilder.Entity<Sponsor>()
-                .HasIndex(p => p.UserId)
-                .IsUnique();
-
             modelBuilder.Entity<Profile>()
                 .HasIndex(p => new {p.Slot, PrefsId = p.PreferenceId})
                 .IsUnique();
@@ -729,18 +725,5 @@ namespace Content.Server.Database
         public DateTime? DeletedAt { get; set; }
 
         public bool ShownToPlayer { get; set; }
-    }
-
-    [Table("sponsors")]
-    public class Sponsor
-    {
-        [Required, Key] public Guid UserId { get; set; }
-        public int Tier { get; set; }
-        public string OOCColor { get; set; } = "#00FF00";
-        public bool HavePriorityJoin { get; set; }
-        public string AllowedMarkings { get; set; } = null!;
-        public int ExtraSlots { get; set; }
-        public DateTime ExpireDate {get;set;}
-        public bool AllowJob { get; set; } = false;
     }
 }
