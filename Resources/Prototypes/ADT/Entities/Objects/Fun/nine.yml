@@ -1,0 +1,164 @@
+- type: entity
+  parent: ClothingHeadBase
+  id: ADTClothingHeadHatBMF
+  name: hat bmf
+  description:
+  components:
+  - type: Sprite
+    sprite: ADT/Clothing/Head/Hats/Nine/bmf.rsi
+  - type: Clothing
+    sprite: ADT/Clothing/Head/Hats/Nine/bmf.rsi
+
+- type: entity
+  parent: ClothingHeadBase
+  id: ADTClothingHeadMusical
+  name: hat mus
+  description:
+  components:
+  - type: Sprite
+    sprite: ADT/Clothing/Head/Hats/Nine/musical.rsi
+  - type: Clothing
+    sprite: ADT/Clothing/Head/Hats/Nine/musical.rsi
+
+- type: entity
+  parent: ClothingHeadBase
+  id: ADTClothingHeadKVD
+  name: hat KVD
+  description:
+  components:
+  - type: Sprite
+    sprite: ADT/Clothing/Head/Hats/Nine/kvdhead.rsi
+  - type: Clothing
+    sprite: ADT/Clothing/Head/Hats/Nine/kvdhead.rsi
+
+- type: entity
+  parent: ClothingHeadBase
+  id: ADTClothingHeadMVD
+  name: hat mvd
+  description:
+  components:
+  - type: Sprite
+    sprite: ADT/Clothing/Head/Hats/Nine/mvd.rsi
+  - type: Clothing
+    sprite: ADT/Clothing/Head/Hats/Nine/mvd.rsi
+
+- type: entity
+  parent: ClothingHeadBase
+  id: ADTClothingHeadMSH
+  name: hat msh
+  description:
+  components:
+  - type: Sprite
+    sprite: ADT/Clothing/Head/Hats/Nine/msh.rsi
+  - type: Clothing
+    sprite: ADT/Clothing/Head/Hats/Nine/msh.rsi
+
+- type: entity
+  parent: ClothingHeadBase
+  id: ADTClothingHeadSea
+  name: hat sea
+  description:
+  components:
+  - type: Sprite
+    sprite: ADT/Clothing/Head/Hats/Nine/sea.rsi
+  - type: Clothing
+    sprite: ADT/Clothing/Head/Hats/Nine/sea.rsi
+
+- type: entity
+  parent: ClothingHeadBase
+  id: ADTClothingHeadMil
+  name: hat millitary
+  description:
+  components:
+  - type: Sprite
+    sprite: ADT/Clothing/Head/Hats/Nine/millitary.rsi
+  - type: Clothing
+    sprite: ADT/Clothing/Head/Hats/Nine/millitary.rsi
+
+- type: entity
+  parent: ClothingHeadBase
+  id: ADTClothingHeadBorder
+  name: hat border
+  description:
+  components:
+  - type: Sprite
+    sprite: ADT/Clothing/Head/Hats/Nine/border.rsi
+  - type: Clothing
+    sprite: ADT/Clothing/Head/Hats/Nine/border.rsi
+
+- type: entity
+  parent: ClothingUniformBase
+  id: ADTClothingUniformBMF
+  name: UniformBMF
+  description: Pepe
+  components:
+  - type: Sprite
+    sprite: ADT/Clothing/Uniforms/Nine/bmf.rsi
+  - type: Clothing
+    sprite: ADT/Clothing/Uniforms/Nine/bmf.rsi
+
+- type: entity
+  parent: ClothingUniformBase
+  id: ADTClothingUniformMusical
+  name: Uniform Mus
+  description: Pepe
+  components:
+  - type: Sprite
+    sprite: ADT/Clothing/Uniforms/Nine/musical.rsi
+  - type: Clothing
+    sprite: ADT/Clothing/Uniforms/Nine/musical.rsi
+
+- type: entity
+  parent: ClothingUniformBase
+  id: ADTClothingUniformKVD
+  name: UniformKVD
+  description: Pepe
+  components:
+  - type: Sprite
+    sprite: ADT/Clothing/Uniforms/Nine/kvd.rsi
+  - type: Clothing
+    sprite: ADT/Clothing/Uniforms/Nine/kvd.rsi
+
+- type: entity
+  parent: ClothingUniformBase
+  id: ADTClothingUniformSea
+  name: UniformSea
+  description: Pepe
+  components:
+  - type: Sprite
+    sprite: ADT/Clothing/Uniforms/Nine/sea.rsi
+  - type: Clothing
+    sprite: ADT/Clothing/Uniforms/Nine/sea.rsi
+
+- type: entity
+  parent: ClothingUniformBase
+  id: ADTClothingUniformCommon
+  name: UniformCommon
+  description: Pepe
+  components:
+  - type: Sprite
+    sprite: ADT/Clothing/Uniforms/Nine/commonnine.rsi
+  - type: Clothing
+    sprite: ADT/Clothing/Uniforms/Nine/commonnine.rsi
+
+- type: entity
+  parent: ClothingUniformBase
+  id: ADTClothingUniformMillitary
+  name: UniformMillitary
+  description: Pepe
+  components:
+  - type: Sprite
+    sprite: ADT/Clothing/Uniforms/Nine/millitary.rsi
+  - type: Clothing
+    sprite: ADT/Clothing/Uniforms/Nine/millitary.rsi
+
+- type: entity
+  parent: ClothingUniformBase
+  id: ADTClothingUniformBorder
+  name: UniformBorder
+  description: Pepe
+  components:
+  - type: Sprite
+    sprite: ADT/Clothing/Uniforms/Nine/border.rsi
+  - type: Clothing
+    sprite: ADT/Clothing/Uniforms/Nine/border.rsi
