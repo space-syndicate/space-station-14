@@ -895,7 +895,7 @@ entities:
   - canCollide: False
     type: Physics
 - uid: 8
-  type: MicroLaserStockPart
+  type: AdvancedCapacitorStockPart
   components:
   - flags: InContainer
     type: MetaData
@@ -904,7 +904,7 @@ entities:
   - canCollide: False
     type: Physics
 - uid: 9
-  type: MicroLaserStockPart
+  type: AdvancedCapacitorStockPart
   components:
   - flags: InContainer
     type: MetaData
@@ -913,7 +913,7 @@ entities:
   - canCollide: False
     type: Physics
 - uid: 10
-  type: MicroLaserStockPart
+  type: AdvancedCapacitorStockPart
   components:
   - flags: InContainer
     type: MetaData
@@ -922,7 +922,7 @@ entities:
   - canCollide: False
     type: Physics
 - uid: 11
-  type: MicroLaserStockPart
+  type: AdvancedCapacitorStockPart
   components:
   - flags: InContainer
     type: MetaData
@@ -1010,7 +1010,7 @@ entities:
   - canCollide: False
     type: Physics
 - uid: 16
-  type: MicroLaserStockPart
+  type: AdvancedCapacitorStockPart
   components:
   - flags: InContainer
     type: MetaData
@@ -1019,7 +1019,7 @@ entities:
   - canCollide: False
     type: Physics
 - uid: 17
-  type: MicroLaserStockPart
+  type: AdvancedCapacitorStockPart
   components:
   - flags: InContainer
     type: MetaData
@@ -1028,7 +1028,7 @@ entities:
   - canCollide: False
     type: Physics
 - uid: 18
-  type: MicroLaserStockPart
+  type: AdvancedCapacitorStockPart
   components:
   - flags: InContainer
     type: MetaData
@@ -1037,7 +1037,7 @@ entities:
   - canCollide: False
     type: Physics
 - uid: 19
-  type: MicroLaserStockPart
+  type: AdvancedCapacitorStockPart
   components:
   - flags: InContainer
     type: MetaData
@@ -1292,7 +1292,7 @@ entities:
   - canCollide: False
     type: Physics
 - uid: 41
-  type: MicroLaserStockPart
+  type: AdvancedCapacitorStockPart
   components:
   - flags: InContainer
     type: MetaData
@@ -1301,7 +1301,7 @@ entities:
   - canCollide: False
     type: Physics
 - uid: 42
-  type: MicroLaserStockPart
+  type: AdvancedCapacitorStockPart
   components:
   - flags: InContainer
     type: MetaData
@@ -1310,7 +1310,7 @@ entities:
   - canCollide: False
     type: Physics
 - uid: 43
-  type: MicroLaserStockPart
+  type: AdvancedCapacitorStockPart
   components:
   - flags: InContainer
     type: MetaData
@@ -1319,7 +1319,7 @@ entities:
   - canCollide: False
     type: Physics
 - uid: 44
-  type: MicroLaserStockPart
+  type: AdvancedCapacitorStockPart
   components:
   - flags: InContainer
     type: MetaData
@@ -1574,7 +1574,7 @@ entities:
   - canCollide: False
     type: Physics
 - uid: 72
-  type: MicroLaserStockPart
+  type: AdvancedCapacitorStockPart
   components:
   - flags: InContainer
     type: MetaData
@@ -1583,7 +1583,7 @@ entities:
   - canCollide: False
     type: Physics
 - uid: 73
-  type: MicroLaserStockPart
+  type: AdvancedCapacitorStockPart
   components:
   - flags: InContainer
     type: MetaData
@@ -1592,7 +1592,7 @@ entities:
   - canCollide: False
     type: Physics
 - uid: 74
-  type: MicroLaserStockPart
+  type: AdvancedCapacitorStockPart
   components:
   - flags: InContainer
     type: MetaData
@@ -1601,7 +1601,7 @@ entities:
   - canCollide: False
     type: Physics
 - uid: 75
-  type: MicroLaserStockPart
+  type: AdvancedCapacitorStockPart
   components:
   - flags: InContainer
     type: MetaData
@@ -1702,7 +1702,7 @@ entities:
   - canCollide: False
     type: Physics
 - uid: 82
-  type: MicroLaserStockPart
+  type: AdvancedCapacitorStockPart
   components:
   - flags: InContainer
     type: MetaData
@@ -1711,7 +1711,7 @@ entities:
   - canCollide: False
     type: Physics
 - uid: 83
-  type: MicroLaserStockPart
+  type: AdvancedCapacitorStockPart
   components:
   - flags: InContainer
     type: MetaData
@@ -1720,7 +1720,7 @@ entities:
   - canCollide: False
     type: Physics
 - uid: 84
-  type: MicroLaserStockPart
+  type: AdvancedCapacitorStockPart
   components:
   - flags: InContainer
     type: MetaData
@@ -1729,7 +1729,7 @@ entities:
   - canCollide: False
     type: Physics
 - uid: 85
-  type: MicroLaserStockPart
+  type: AdvancedCapacitorStockPart
   components:
   - flags: InContainer
     type: MetaData
@@ -1883,7 +1883,7 @@ entities:
   - canCollide: False
     type: Physics
 - uid: 99
-  type: MicroLaserStockPart
+  type: AdvancedCapacitorStockPart
   components:
   - flags: InContainer
     type: MetaData
@@ -1892,7 +1892,7 @@ entities:
   - canCollide: False
     type: Physics
 - uid: 100
-  type: MicroLaserStockPart
+  type: AdvancedCapacitorStockPart
   components:
   - flags: InContainer
     type: MetaData
@@ -1901,7 +1901,7 @@ entities:
   - canCollide: False
     type: Physics
 - uid: 101
-  type: MicroLaserStockPart
+  type: AdvancedCapacitorStockPart
   components:
   - flags: InContainer
     type: MetaData
@@ -1910,7 +1910,7 @@ entities:
   - canCollide: False
     type: Physics
 - uid: 102
-  type: MicroLaserStockPart
+  type: AdvancedCapacitorStockPart
   components:
   - flags: InContainer
     type: MetaData
@@ -2027,7 +2027,7 @@ entities:
   - canCollide: False
     type: Physics
 - uid: 116
-  type: ScanningModuleStockPart
+  type: AdvancedCapacitorStockPart
   components:
   - flags: InContainer
     type: MetaData
@@ -2036,7 +2036,7 @@ entities:
   - canCollide: False
     type: Physics
 - uid: 117
-  type: ScanningModuleStockPart
+  type: AdvancedCapacitorStockPart
   components:
   - flags: InContainer
     type: MetaData
@@ -2131,7 +2131,7 @@ entities:
   - canCollide: False
     type: Physics
 - uid: 123
-  type: MicroLaserStockPart
+  type: AdvancedCapacitorStockPart
   components:
   - flags: InContainer
     type: MetaData
@@ -2140,7 +2140,7 @@ entities:
   - canCollide: False
     type: Physics
 - uid: 124
-  type: MicroLaserStockPart
+  type: AdvancedCapacitorStockPart
   components:
   - flags: InContainer
     type: MetaData
@@ -2149,7 +2149,7 @@ entities:
   - canCollide: False
     type: Physics
 - uid: 125
-  type: MicroLaserStockPart
+  type: AdvancedCapacitorStockPart
   components:
   - flags: InContainer
     type: MetaData
@@ -2158,7 +2158,7 @@ entities:
   - canCollide: False
     type: Physics
 - uid: 126
-  type: MicroLaserStockPart
+  type: AdvancedCapacitorStockPart
   components:
   - flags: InContainer
     type: MetaData
@@ -2336,7 +2336,7 @@ entities:
   - canCollide: False
     type: Physics
 - uid: 145
-  type: MicroLaserStockPart
+  type: AdvancedCapacitorStockPart
   components:
   - flags: InContainer
     type: MetaData
@@ -2345,7 +2345,7 @@ entities:
   - canCollide: False
     type: Physics
 - uid: 146
-  type: MicroLaserStockPart
+  type: AdvancedCapacitorStockPart
   components:
   - flags: InContainer
     type: MetaData
@@ -2354,7 +2354,7 @@ entities:
   - canCollide: False
     type: Physics
 - uid: 147
-  type: MicroLaserStockPart
+  type: AdvancedCapacitorStockPart
   components:
   - flags: InContainer
     type: MetaData
@@ -2363,7 +2363,7 @@ entities:
   - canCollide: False
     type: Physics
 - uid: 148
-  type: MicroLaserStockPart
+  type: AdvancedCapacitorStockPart
   components:
   - flags: InContainer
     type: MetaData
@@ -2559,7 +2559,7 @@ entities:
   - canCollide: False
     type: Physics
 - uid: 166
-  type: MicroLaserStockPart
+  type: AdvancedCapacitorStockPart
   components:
   - flags: InContainer
     type: MetaData
@@ -2568,7 +2568,7 @@ entities:
   - canCollide: False
     type: Physics
 - uid: 167
-  type: MicroLaserStockPart
+  type: AdvancedCapacitorStockPart
   components:
   - flags: InContainer
     type: MetaData
@@ -2577,7 +2577,7 @@ entities:
   - canCollide: False
     type: Physics
 - uid: 168
-  type: MicroLaserStockPart
+  type: AdvancedCapacitorStockPart
   components:
   - flags: InContainer
     type: MetaData
@@ -2586,7 +2586,7 @@ entities:
   - canCollide: False
     type: Physics
 - uid: 169
-  type: MicroLaserStockPart
+  type: AdvancedCapacitorStockPart
   components:
   - flags: InContainer
     type: MetaData
@@ -2819,7 +2819,7 @@ entities:
   - canCollide: False
     type: Physics
 - uid: 190
-  type: MicroLaserStockPart
+  type: AdvancedCapacitorStockPart
   components:
   - flags: InContainer
     type: MetaData
@@ -2828,7 +2828,7 @@ entities:
   - canCollide: False
     type: Physics
 - uid: 191
-  type: MicroLaserStockPart
+  type: AdvancedCapacitorStockPart
   components:
   - flags: InContainer
     type: MetaData
@@ -2837,7 +2837,7 @@ entities:
   - canCollide: False
     type: Physics
 - uid: 192
-  type: MicroLaserStockPart
+  type: AdvancedCapacitorStockPart
   components:
   - flags: InContainer
     type: MetaData
@@ -2846,7 +2846,7 @@ entities:
   - canCollide: False
     type: Physics
 - uid: 193
-  type: MicroLaserStockPart
+  type: AdvancedCapacitorStockPart
   components:
   - flags: InContainer
     type: MetaData
@@ -3290,7 +3290,7 @@ entities:
   - canCollide: False
     type: Physics
 - uid: 231
-  type: MicroLaserStockPart
+  type: AdvancedCapacitorStockPart
   components:
   - flags: InContainer
     type: MetaData
@@ -3299,7 +3299,7 @@ entities:
   - canCollide: False
     type: Physics
 - uid: 232
-  type: MicroLaserStockPart
+  type: AdvancedCapacitorStockPart
   components:
   - flags: InContainer
     type: MetaData
@@ -3308,7 +3308,7 @@ entities:
   - canCollide: False
     type: Physics
 - uid: 233
-  type: MicroLaserStockPart
+  type: AdvancedCapacitorStockPart
   components:
   - flags: InContainer
     type: MetaData
@@ -3317,7 +3317,7 @@ entities:
   - canCollide: False
     type: Physics
 - uid: 234
-  type: MicroLaserStockPart
+  type: AdvancedCapacitorStockPart
   components:
   - flags: InContainer
     type: MetaData
