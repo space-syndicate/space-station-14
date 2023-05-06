@@ -5,4 +5,4 @@ ent-ADTObjectsWeaponSubMachineGunPPCH45S = ППЧ-45У
 ent-ADTObjectsWeaponSubMachineGunUmp = ПП Юмп
     .desc = "Ну типо ну там это."
     .suffix = { "" }
-    ы
+    
