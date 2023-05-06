@@ -7,7 +7,7 @@
   stations:
     Cluster:
       mapNameTemplate: '{0} Cluster Station {1}'
-      emergencyShuttlePath: /Maps/Shuttles/corvax_emergency.yml # Corvax-EmergencyShuttle
+      emergencyShuttlePath: /Maps/Shuttles/emergency.yml # Corvax-EmergencyShuttle
       nameGenerator:
         !type:NanotrasenNameGenerator
         prefixCreator: '14'

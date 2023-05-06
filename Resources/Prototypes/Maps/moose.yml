@@ -8,7 +8,7 @@
   stations:
     Moose:
       mapNameTemplate: '{0} Moose {1}'
-      emergencyShuttlePath: /Maps/Shuttles/corvax_emergency.yml # Corvax-EmergencyShuttle
+      emergencyShuttlePath: /Maps/Shuttles/emergency.yml # Corvax-EmergencyShuttle
       nameGenerator:
         !type:NanotrasenNameGenerator
         prefixCreator: '14'
