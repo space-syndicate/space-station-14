@@ -39,7 +39,7 @@
     materialComposition:
       Steel: 100
   - type: StaticPrice
-    price: 40
+    price: 10
 
 - type: entity
   name: screwdriver
@@ -81,7 +81,7 @@
     materialComposition:
       Steel: 100
   - type: StaticPrice
-    price: 40
+    price: 10
 
 - type: entity
   name: wrench
@@ -116,7 +116,7 @@
     materialComposition:
       Steel: 100
   - type: StaticPrice
-    price: 40
+    price: 10
 
 - type: entity
   name: crowbar
@@ -152,7 +152,7 @@
     materialComposition:
       Steel: 100
   - type: StaticPrice
-    price: 40
+    price: 10
 
 - type: entity
   name: emergency crowbar
@@ -217,7 +217,7 @@
       Steel: 100
       Plastic: 100
   - type: StaticPrice
-    price: 60
+    price: 20
 
 - type: entity
   name: power drill
