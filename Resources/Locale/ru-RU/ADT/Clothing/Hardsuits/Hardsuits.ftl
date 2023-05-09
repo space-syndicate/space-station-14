@@ -17,3 +17,6 @@ ent-ADTClothingOuterHardsuitCybersunCrysis = Скафандр суперсолд
     .desc = Самая передовая, секретная технология CyberSun в сфере защиты. Кажется эта разработка ведёт к созданию супер солдат. Пахнет пластитаном и бесчестным боем
     .suffix = { "" }
 ent-ADTClothingHeadHelmetHardsuitCybersunCrysis = Шлем суперсолдата Cybersun
+ent-ADTClothingOuterHardsuitCerber = Скафандр Броне Отряда "Церберы"
+    .desc = Специализированный черный скафандр, который использовался в азиатских странах 19 века, центральной полицией.
+    .suffix = { "" }
