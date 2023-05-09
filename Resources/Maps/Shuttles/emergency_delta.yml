@@ -137,8 +137,6 @@ entities:
     fixedRotation: False
     bodyType: Dynamic
     type: Physics
-  - fixtures: []
-    type: Fixtures
   - type: OccluderTree
   - type: Shuttle
   - nextUpdate: 1021.7228243
@@ -2358,32 +2356,6 @@ entities:
     pos: 1.5,-4.5
     parent: 0
     type: Transform
-  - fixtures:
-    - shape: !type:PolygonShape
-        vertices:
-        - 0.49,-0.49
-        - 0.49,0.49
-        - -0.49,0.49
-        - -0.49,-0.49
-      mask:
-      - Impassable
-      - MidImpassable
-      - HighImpassable
-      - LowImpassable
-      - InteractImpassable
-      layer:
-      - MidImpassable
-      - HighImpassable
-      - BulletImpassable
-      - InteractImpassable
-      - Opaque
-      density: 100
-    - shape: !type:PhysShapeCircle
-        radius: 0.2
-        position: 0,-0.5
-      hard: False
-      id: docking
-    type: Fixtures
   - needsPower: False
     type: ApcPowerReceiver
 - uid: 2
@@ -2393,32 +2365,6 @@ entities:
     pos: 1.5,-2.5
     parent: 0
     type: Transform
-  - fixtures:
-    - shape: !type:PolygonShape
-        vertices:
-        - 0.49,-0.49
-        - 0.49,0.49
-        - -0.49,0.49
-        - -0.49,-0.49
-      mask:
-      - Impassable
-      - MidImpassable
-      - HighImpassable
-      - LowImpassable
-      - InteractImpassable
-      layer:
-      - MidImpassable
-      - HighImpassable
-      - BulletImpassable
-      - InteractImpassable
-      - Opaque
-      density: 100
-    - shape: !type:PhysShapeCircle
-        radius: 0.2
-        position: 0,-0.5
-      hard: False
-      id: docking
-    type: Fixtures
   - needsPower: False
     type: ApcPowerReceiver
 - uid: 3
@@ -2428,32 +2374,6 @@ entities:
     pos: 1.5,5.5
     parent: 0
     type: Transform
-  - fixtures:
-    - shape: !type:PolygonShape
-        vertices:
-        - 0.49,-0.49
-        - 0.49,0.49
-        - -0.49,0.49
-        - -0.49,-0.49
-      mask:
-      - Impassable
-      - MidImpassable
-      - HighImpassable
-      - LowImpassable
-      - InteractImpassable
-      layer:
-      - MidImpassable
-      - HighImpassable
-      - BulletImpassable
-      - InteractImpassable
-      - Opaque
-      density: 100
-    - shape: !type:PhysShapeCircle
-        radius: 0.2
-        position: 0,-0.5
-      hard: False
-      id: docking
-    type: Fixtures
   - needsPower: False
     type: ApcPowerReceiver
 - uid: 4
@@ -2463,32 +2383,6 @@ entities:
     pos: 1.5,3.5
     parent: 0
     type: Transform
-  - fixtures:
-    - shape: !type:PolygonShape
-        vertices:
-        - 0.49,-0.49
-        - 0.49,0.49
-        - -0.49,0.49
-        - -0.49,-0.49
-      mask:
-      - Impassable
-      - MidImpassable
-      - HighImpassable
-      - LowImpassable
-      - InteractImpassable
-      layer:
-      - MidImpassable
-      - HighImpassable
-      - BulletImpassable
-      - InteractImpassable
-      - Opaque
-      density: 100
-    - shape: !type:PhysShapeCircle
-        radius: 0.2
-        position: 0,-0.5
-      hard: False
-      id: docking
-    type: Fixtures
   - needsPower: False
     type: ApcPowerReceiver
 - uid: 5
