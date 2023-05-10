@@ -47,8 +47,6 @@
         shape:
           !type:PhysShapeAabb
           bounds: "-0.2,-0.2,0.2,0.2"
-        id: "slips"
-        hard: false
         layer:
         - SlipLayer
       fix2:
