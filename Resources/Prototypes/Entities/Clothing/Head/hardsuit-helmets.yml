@@ -509,9 +509,6 @@
         Shock: 0.1
         Cold: 0.2
         Radiation: 0.2
-  - type: DiseaseProtection
-    protection: 0.25
-        #test
 
 - type: entity
   parent: ClothingHeadHardsuitWithLightBase

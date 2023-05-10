@@ -104,8 +104,6 @@
         Piercing: 0.8
         Heat: 0.2
         Radiation: 0.5
-  - type: DiseaseProtection
-    protection: 0.15
 
 - type: entity
   parent: ClothingHeadHardsuitWithLightBase
