@@ -129,3 +129,28 @@
         Piercing: 0.8
         Heat: 0.8
         Radiation: 0.5
+
+- type: entity
+  parent: ClothingHeadHardsuitWithLightBase
+  id: ADTClothingHeadHelmetHardsuitCerber
+  noSpawn: true
+  name: Cerber helmet
+  description: Special hardsuit helmet, made for the chief engineer of the station.
+  components:
+  - type: Sprite
+    sprite: ADT/Clothing/Head/Hardsuits/cerber_helmet.rsi
+  - type: Clothing
+    sprite: ADT/Clothing/Head/Hardsuits/cerber_helmet.rsi
+  - type: PointLight
+    color: "#FF0000"
+  - type: PressureProtection
+    highPressureMultiplier: 0.08
+    lowPressureMultiplier: 1000
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.2
+        Slash: 0.2
+        Piercing: 0.4
+        Heat: 0.3
+        Radiation: 0.7
