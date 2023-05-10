@@ -31,7 +31,7 @@
   - type: UserInterface
     interfaces:
     - key: enum.StrippingUiKey.Key
-      type: StrippableBoundUserInterface 
+      type: StrippableBoundUserInterface
   - type: Body
     prototype: foodDistributorBots
   - type: Inventory
@@ -49,7 +49,7 @@
   - type: MovementSpeedModifier
     baseWalkSpeed : 2.5
     baseSprintSpeed : 2.5
-  - type: Flashable 
+  - type: Flashable
   - type: NoSlip
   - type: StatusEffects
     allowed:
@@ -79,16 +79,17 @@
       state: robot_food_distributor_bot
       sprite: ADT/Mobs/Silicon/Bots/robot_food_distributor_bot.rsi
   - type: MovementIgnoreGravity
-#  - type: Fixtures
-#    fixtures:
-#    - shape:
-#        !type:PhysShapeCircle
-#        radius: 0.35
-#      density: 50
-#      mask:
-#      - FlyingMobMask
-#      layer: 
-#      - FlyingMobLayer
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeCircle
+          radius: 0.35
+        density: 50
+        mask:
+        - FlyingMobMask
+        layer:
+        - FlyingMobLayer
   - type: DamageStateVisuals
     states:
       Alive:

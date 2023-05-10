@@ -12,10 +12,10 @@
   - type: Signaller
   - type: UseDelay
   - type: StaticPrice
-    price: 20
-  - type: SignalTransmitter
-    outputs:
-      Pressed: []
+    price: 40
+  - type: DeviceLinkSource
+    ports:
+      - Pressed
   - type: Tag
     tags:
     - Payload

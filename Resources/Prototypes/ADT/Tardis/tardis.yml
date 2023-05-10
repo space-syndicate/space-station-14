@@ -81,7 +81,8 @@
     - type: Physics
     - type: Fixtures
       fixtures:
-        - shape:
+        fix1:
+          shape:
             !type:PhysShapeAabb
             bounds: "-0.25,-0.48,0.25,0.48"
           density: 145
