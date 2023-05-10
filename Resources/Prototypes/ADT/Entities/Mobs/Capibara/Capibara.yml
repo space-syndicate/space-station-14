@@ -16,7 +16,7 @@
     fixtures:
       fix1:
         shape: !type:PhysShapeCircle
-        radius: 0.35
+        bounds: "-0.25,-0.25,0.25,0.25"
         density: 30
         mask:
           - MobMask
