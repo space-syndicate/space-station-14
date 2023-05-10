@@ -12,6 +12,17 @@
     - map: ["enum.DamageStateVisualLayers.Base"]
       state: capibara
   - type: Physics
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape: !type:PhysShapeCircle
+        radius: 0.35
+        density: 30
+        mask:
+          - MobMask
+        layer:
+          - MobLayer
+
   - type: Inventory
     speciesId: dog
     templateId: pet
