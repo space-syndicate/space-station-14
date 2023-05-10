@@ -45,7 +45,9 @@ job-name-ertjanitor = Уборщик ОБР
 job-name-boxer = Боксёр
 job-name-zookeeper = Зоотехник
 job-name-magistrat = Магистрат
+job-name-virusolog = Вирусолог
 # Role timers - Make these alphabetical or I cut you
+JobVirusolog = Вирусолог
 JobAtmosphericTechnician = Атмосферный техник
 JobBartender = Бармен
 JobBotanist = Ботаник
