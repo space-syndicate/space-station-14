@@ -15,8 +15,6 @@
     - type: Body
       prototype: MothBody
       requiredLegs: 2
-    - type: DiseaseCarrier
-      diseaseResist: 0.1
     - type: Flammable
       damage:
         types:
