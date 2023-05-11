@@ -1,4 +1,4 @@
-﻿using Microsoft.EntityFrameworkCore.Migrations;
+using Microsoft.EntityFrameworkCore.Migrations;
 
 #nullable disable
 
@@ -10,7 +10,7 @@ namespace Content.Server.Database.Migrations.Postgres
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
         {
-            migrationBuilder.DropTable(name: "sponsors");
+            //migrationBuilder.DropTable(name: "sponsors");
         }
 
         /// <inheritdoc />

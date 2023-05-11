@@ -199,6 +199,7 @@ namespace Content.Server.Database
             return new HumanoidCharacterProfile(
                 profile.CharacterName,
                 profile.FlavorText,
+                profile.ERPStatus,
                 profile.Species,
                 voice, // Corvax-TTS
                 profile.Age,
@@ -237,6 +238,7 @@ namespace Content.Server.Database
             {
                 CharacterName = humanoid.Name,
                 FlavorText = humanoid.FlavorText,
+                ERPStatus = (int) humanoid.ERPStatus,
                 Species = humanoid.Species,
                 Voice = humanoid.Voice, // Corvax-TTS
                 Age = humanoid.Age,

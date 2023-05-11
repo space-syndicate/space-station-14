@@ -1,12 +1,16 @@
-﻿using Content.Shared.Examine;
+using Content.Shared.Examine;
 using Content.Shared.Verbs;
+using Content.Shared.Sirena;
 using Robust.Shared.Utility;
+using Robust.Shared.Configuration;
+using Content.Shared.ADT.ACCVars;
 
 namespace Content.Server.DetailExaminable
 {
     public sealed class DetailExaminableSystem : EntitySystem
     {
         [Dependency] private readonly ExamineSystemShared _examineSystem = default!;
+        [Dependency] private readonly IConfigurationManager _configurationManager = default!;
 
         public override void Initialize()
         {
@@ -26,6 +30,19 @@ namespace Content.Server.DetailExaminable
                 {
                     var markup = new FormattedMessage();
                     markup.AddMarkup(component.Content);
+                    if (_configurationManager.GetCVar(ACCVars.IsERP))
+                    {
+                        // Sirena-ERPStatus-Start
+                        if (component.ERPStatus == EnumERPStatus.FULL)
+                            markup.PushColor(Color.Green);
+                        else if (component.ERPStatus == EnumERPStatus.HALF)
+                            markup.PushColor(Color.Yellow);
+                        else
+                            markup.PushColor(Color.Red);
+                        markup.AddMarkup("\n" + component.GetERPStatusName());
+                        // Sirena-ERPStatus-End
+                    }
+
                     _examineSystem.SendExamineTooltip(args.User, uid, markup, false, false);
                 },
                 Text = Loc.GetString("detail-examinable-verb-text"),
