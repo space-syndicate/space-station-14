@@ -62,3 +62,5 @@ ent-SpawnMobAdultSlimesYellow = Slimes Spawner Yellow
     .desc = { ent-MarkerBase.desc }
 ent-SpawnMobAdultSlimesYellowAngry = Slimes Spawner Yellow Angry
     .desc = { ent-MarkerBase.desc }
+ent-SpawnMobMonkeyPunpun = Pun Pun Spawner
+    .desc = { ent-MarkerBase.desc }

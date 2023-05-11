@@ -260,3 +260,5 @@ ent-DrinkRamen = cup ramen
     .desc = Just add 10ml boiling water. A taste that reminds you of your school years.
 ent-DrinkHellRamen = hell ramen
     .desc = Just add 10ml boiling water. Super spicy flavor.
+ent-DrinkTheMartinez = The Martinez glass
+    .desc = The edgerunner legend.  Remembered by a drink, Forgotten by a drunk.
