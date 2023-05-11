@@ -54,11 +54,3 @@ aphrodisiac-effect-15N = Вы чувствуете, что вам хочется
 aphrodisiac-effect-16N = Во взгляде слаймолюда царит похоть, это существо смотрит на вас с желанием.
 aphrodisiac-effect-17N = Половые органы слаймолюда сильно возбуждены.
 aphrodisiac-effect-18N = Слаймолюда трясёт от желания секса.
-
-reagent-physical-desc-silver = серебряный
-
-reagent-name-bluespacecrystal = блюспей кристалл
-reagent-desc-bluespacecrystal = Перемолотые блюспей кристаллы
-reagent-physical-desc-bluespacecrystal = нестабильный
-
-materials-bluespacecrystal = блюспейс кристалл
