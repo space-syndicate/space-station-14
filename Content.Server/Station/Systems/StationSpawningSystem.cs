@@ -152,7 +152,11 @@ public sealed class StationSpawningSystem : EntitySystem
             MetaData(entity).EntityName = profile.Name;
             if (profile.FlavorText != "" && _configurationManager.GetCVar(CCVars.FlavorText))
             {
-                AddComp<DetailExaminableComponent>(entity).Content = profile.FlavorText;
+                // Sirena-ERPStatus-Start
+                var _DetailExamineComp = EntityManager.AddComponent<DetailExaminableComponent>(entity);
+                _DetailExamineComp.Content = profile.FlavorText;
+                _DetailExamineComp.ERPStatus = profile.ERPStatus;
+                // Sirena-ERPStatus-End
             }
         }
 

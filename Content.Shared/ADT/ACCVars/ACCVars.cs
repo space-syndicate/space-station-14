@@ -1,4 +1,4 @@
-﻿using Robust.Shared.Configuration;
+using Robust.Shared.Configuration;
 
 namespace Content.Shared.ADT.ACCVars;
 
@@ -7,4 +7,7 @@ public sealed class ACCVars
 {
     public static readonly CVarDef<string> RabbitMQConnectionString =
         CVarDef.Create("rabbitmq.connection_string", "", CVar.SERVERONLY);
+
+    public static readonly CVarDef<bool> IsERP =
+    CVarDef.Create("ic.erp", false, CVar.SERVER | CVar.REPLICATED);
 }

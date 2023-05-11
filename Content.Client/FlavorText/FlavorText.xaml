@@ -1,5 +1,8 @@
-﻿<Control Name="CFlavorText" xmlns="https://spacestation14.io">
+<Control Name="CFlavorText" xmlns="https://spacestation14.io">
     <BoxContainer Orientation="Vertical" HorizontalExpand="True">
         <LineEdit Name="CFlavorTextInput" Access="Public" MinSize="220 0" HorizontalExpand="True" />
+        <!-- Sirena-ERPStatus-Start -->
+        <OptionButton Name="CERPStatusOption" Access="Public" MinSize="220 0" HorizontalExpand="True" />
+        <!-- Sirena-ERPStatus-End   -->
     </BoxContainer>
 </Control>
