@@ -207,7 +207,7 @@
   description: uplink-mosin-ammo-desc
   productEntity: BoxMagazineLightRifle
   cost:
-    Telecrystal: 1
+    Telecrystal: 15
   categories:
   - UplinkAmmo
 
@@ -436,6 +436,7 @@
     Telecrystal: 25
   categories:
   - UplinkBundles
+
 
 # - type: listing
 #   id: UplinkGrenadeLauncherBundle

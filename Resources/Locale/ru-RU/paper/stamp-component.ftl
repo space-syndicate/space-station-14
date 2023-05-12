@@ -15,4 +15,5 @@ stamp-component-stamped-name-warden = Смотритель
 stamp-component-stamped-name-trader = Торговец
 stamp-component-stamped-name-syndicate = Синдикат
 stamp-component-stamped-name-ce = Старший инженер
-stamp-component-stamped-name-magistrat = Магистратstamp-component-stamped-name-psychologist = Психолог
+stamp-component-stamped-name-magistrat = Магистрат
+stamp-component-stamped-name-psychologist = Психолог

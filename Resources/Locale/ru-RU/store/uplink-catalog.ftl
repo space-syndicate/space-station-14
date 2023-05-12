@@ -39,6 +39,12 @@ uplink-speedloader-magnum-name = спидлоадер (.45 магнум)
 uplink-speedloader-magnu-desc = Спидлоадер на 6 патронов для револьвера. Совместим с "Питоном".
 uplink-mosin-ammo-name = коробка патронов (.30 винтовочные)
 uplink-mosin-ammo-desc = Коробка патронов для резервной винтовки.
+uplink-Shothgun-magazine-name = барабан .50 дробь
+uplink-Shothgun-magazine-desc = Один барабан с 8 патронами. Совместим с "Бульдогом".
+uplink-MachineGun-magazine-name = магазин ПП (.35 авто)
+uplink-MachineGun-magazine-desc = Магазин с 30 патронами. Совместим с "C-20r"
+uplink-LightRifle-magazine-name = магазин (.30 винтовочные)
+uplink-LightRifle-magazine-desc = Магазин с 30 патронами. Совместим с "AKMS"
 # Utility
 uplink-holopara-kit-name = набор "Голопаразит"
 uplink-holopara-kit-desc =
@@ -90,6 +96,8 @@ uplink-surplus-bundle-name = ящик припасов синдиката
 uplink-surplus-bundle-desc = Содержит случайное снаряжение Синдиката, общей стоимостью в 50 телекристаллов. Оно может быть как бесполезным хламом, так и реально крутым.
 uplink-super-surplus-bundle-name = ящик суперприпасов синдиката
 uplink-super-surplus-bundle-desc = Содержит случайное снаряжение Синдиката, общей стоимостью в 125 телекристаллов.
+uplink-AKMS-bundle-name = набор "AKMS"
+uplink-AKMS-bundle-desc = Содержит в себе AKMS и два запасных магазина к нему
 # Tools
 uplink-toolbox-name = ящик инструментов
 uplink-toolbox-desc = Полный набор инструментов для предателя с тягой к механике. Включает пару изолированных боевых перчаток, противогаз синдиката и плечевую кобуру.
