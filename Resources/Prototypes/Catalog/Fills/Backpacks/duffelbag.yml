@@ -54,7 +54,8 @@
     contents:
       - id: WeaponShotgunBulldog
       - id: MagazineShotgun
-      - id: MagazineShotgunBeanbag
+        amount: 2
+      # - id: MagazineShotgunBeanbag
 #     - id: ThermalImagingGoggles
 
 - type: entity

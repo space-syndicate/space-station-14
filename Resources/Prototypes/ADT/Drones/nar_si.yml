@@ -1,0 +1,82 @@
+- type: entity
+  name: Robot Nar Si
+  id: ADTNarSi
+  parent: PlayerSiliconBase
+  components:
+  - type: Strap
+    buckleOffset: "0.10, 0.36"
+    maxBuckleDistance: 1
+  - type: InteractionOutline
+  - type: ItemSlots
+    slots:
+      key_slot: #this slot name is important
+        name: Keys
+        whitelist:
+          requireAll: true
+          tags:
+          - VehicleKey
+        insertSound:
+          path: /Audio/Effects/Vehicle/vehiclestartup.ogg
+          params:
+            volume: -3
+  - type: InnateTool
+    tools:
+      - id: WeaponMinigun
+      - id: SpawnSpellbook
+      - id: FireballSpellbook
+      - id: WeaponXrayCannon
+  - type: UserInterface
+    interfaces:
+    - key: enum.StrippingUiKey.Key
+      type: StrippableBoundUserInterface
+  - type: GhostTakeoverAvailable
+  - type: MovementSpeedModifier
+    baseWalkSpeed : 3
+    baseSprintSpeed : 2
+  - type: MobState
+    allowedStates:
+      - Alive
+      - Dead
+  - type: MobThresholds
+    thresholds:
+      0: Alive
+      800: Dead
+  - type: Sprite
+    drawdepth: Mobs
+    netsync: false
+    sprite: ADT/Mobs/nar.rsi
+    state: mech_narsi
+  - type: FootstepModifier
+    footstepSoundCollection:
+      path: /Audio/Mecha/sound_mecha_powerloader_step.ogg
+  - type: MovementIgnoreGravity
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeCircle
+          radius: 1
+        density: 160
+        mask:
+        - LargeMobMask
+        layer:
+        - MobLayer
+  - type: Appearance
+    rotate: true
+    states:
+      Alive:
+        Base: mech_narsi
+      Dead:
+        Base: died_mech_narsi
+  - type: CombatMode
+  - type: Tag
+    tags:
+      - FootstepSound
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.75
+        Slash: 0.75
+        Piercing: 0.75
+        Heat: 0.75
+        Radiation: 0

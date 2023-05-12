@@ -1,0 +1,43 @@
+- type: listing
+  id: ADTUplinkBulldogAKMS
+  name: uplink-AKMS-bundle-name
+  description: uplink-AKMS-bundle-desc
+  icon: { sprite: /Textures/Objects/Weapons/Guns/Rifles/ak.rsi, state: icon }
+  productEntity: ADTClothingBackpackDuffelSyndicateFilledAKMS
+  cost:
+    Telecrystal: 25
+  categories:
+  - UplinkBundles
+
+- type: listing
+  id: ADTUplinkMagazineShothgun
+  name: uplink-Shothgun-magazine-name
+  description: uplink-Shothgun-magazine-desc
+  icon: { sprite: /Textures/Objects/Weapons/Guns/Ammunition/Magazine/Shotgun/m12.rsi, state: slug }
+  productEntity: MagazineShotgun
+  cost:
+    Telecrystal: 4
+  categories:
+  - UplinkAmmo
+
+- type: listing
+  id: ADTUplinkMagazineMachineGun
+  name: uplink-MachineGun-magazine-name
+  description: uplink-MachineGun-magazine-desc
+  icon: { sprite: /Textures/Objects/Weapons/Guns/Ammunition/Magazine/Pistol/smg_mag.rsi, state: red }
+  productEntity: MagazinePistolSubMachineGun
+  cost:
+    Telecrystal: 4
+  categories:
+  - UplinkAmmo
+
+- type: listing
+  id: ADTUplinkMagazineLightRifle
+  name: uplink-LightRifle-magazine-name
+  description: uplink-LightRifle-magazine-desc
+  icon: { sprite: /Textures/Objects/Weapons/Guns/Ammunition/Magazine/LightRifle/light_rifle_mag.rsi, state: red }
+  productEntity: MagazineLightRifle
+  cost:
+    Telecrystal: 4
+  categories:
+  - UplinkAmmo

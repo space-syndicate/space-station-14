@@ -53,10 +53,10 @@
     animation: WeaponArcPunch
     damage:
       types:
-        Piercing: 5
+        Piercing: 3
   - type: Temperature
-    heatDamageThreshold: 400
-    coldDamageThreshold: 260  #starting temperature damage treshold
+    heatDamageThreshold: 350
+    coldDamageThreshold: 275  #starting temperature damage treshold
     currentTemperature: 310.15
     specificHeat: 46
     coldDamage:
@@ -69,6 +69,11 @@
     baseWalkSpeed : 2.7
     baseSprintSpeed : 4.5
   - type: Perishable
+  - type: MobThresholds
+    thresholds:
+      0: Alive
+      80: Critical
+      200: Dead
 
 - type: entity
   save: false
