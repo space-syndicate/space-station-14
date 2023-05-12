@@ -40,15 +40,15 @@
         Piercing: 5
   - type: Temperature
     heatDamageThreshold: 400
-    coldDamageThreshold: 260  #starting temperature damage treshold
+    coldDamageThreshold: 193  #starting temperature damage treshold
     currentTemperature: 310.15
     specificHeat: 46
     coldDamage:
       types:
-        Cold : 0.2 #per second, scales with temperature & other constants
+        Cold : 0.1 #per second, scales with temperature & other constants
     heatDamage:
       types:
-        Heat : 0.1 #per second, scales with temperature & other constants
+        Heat : 0.3 #per second, scales with temperature & other constants
   - type: MovementSpeedModifier
     baseWalkSpeed : 2.7
     baseSprintSpeed : 4.5
