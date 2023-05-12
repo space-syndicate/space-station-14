@@ -45,7 +45,7 @@
     drawdepth: Mobs
     netsync: false
     sprite: ADT/Mobs/nar.rsi
-    state: mech_nar'si
+    state: mech_narsi
   - type: FootstepModifier
     footstepSoundCollection:
       path: /Audio/Mecha/sound_mecha_powerloader_step.ogg
@@ -65,9 +65,9 @@
     rotate: true
     states:
       Alive:
-        Base: mech_nar'si
+        Base: mech_narsi
       Dead:
-        Base: died_mech_nar'si
+        Base: died_mech_narsi
   - type: CombatMode
   - type: Tag
     tags:
