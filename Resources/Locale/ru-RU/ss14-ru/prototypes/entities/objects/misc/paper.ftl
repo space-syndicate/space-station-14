@@ -77,3 +77,5 @@ ent-RubberStampSyndicate = печать Синдиката
     .desc = { ent-RubberStampMime.desc }
 ent-RubberStampCE = печать старшего инженера
     .desc = { ent-RubberStampMime.desc }
+ent-RubberStampDetective = печать детектива
+    .desc

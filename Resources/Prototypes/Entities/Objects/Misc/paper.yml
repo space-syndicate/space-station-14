@@ -572,3 +572,15 @@
   - type: Sprite
     sprite: Objects/Misc/bureaucracy.rsi
     state: stamp-ce
+
+- type: entity
+  name: detective's rubber stamp
+  parent: RubberStampMime
+  id: RubberStampDetective
+  components:
+  - type: Stamp
+    stampedName: stamp-component-stamped-name-detective
+    stampState: "paper_stamp-detective"
+  - type: Sprite
+    sprite: Objects/Misc/bureaucracy.rsi
+    state: stamp-detective
