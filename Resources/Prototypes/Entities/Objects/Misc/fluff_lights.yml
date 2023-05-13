@@ -83,7 +83,7 @@
   - type: Sprite
     layers:
       - state: bananalamp
-      - state: bananalamp_on
+      - state: bananalamp-on
         shader: unshaded
         visible: false
         map: [ "light" ]
