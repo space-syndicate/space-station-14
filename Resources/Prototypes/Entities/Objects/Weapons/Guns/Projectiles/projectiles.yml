@@ -167,7 +167,7 @@
       path: "/Audio/Weapons/Guns/Hits/taser_hit.ogg"
     soundForce: true
   - type: StaminaDamageOnCollide
-    damage: 100
+    damage: 50
 
 - type: entity
   name : disabler bolt
