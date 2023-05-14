@@ -1,0 +1,8 @@
+- type: entity
+  id: CrateMaterialPaper
+  parent: CrateGenericSteel
+  components:
+  - type: StorageFill
+    contents:
+      - id: SheetPaper
+        amount: 3
