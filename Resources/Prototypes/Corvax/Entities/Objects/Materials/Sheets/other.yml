@@ -1,0 +1,30 @@
+- type: entity
+  parent: SheetOtherBase
+  id: SheetInk
+  name: solid ink
+  suffix: Full
+  components:
+  - type: Stack
+    stackType: Ink
+  - type: Sprite
+    state: ink_3
+  - type: Item
+    heldPrefix: ink
+  - type: Appearance
+    visuals:
+    - type: StackVisualizer
+      stackLayers:
+      - ink
+      - ink_2
+      - ink_3
+
+- type: entity
+  parent: SheetInk
+  id: SheetInk1
+  name: solid ink
+  suffix: Single
+  components:
+  - type: Sprite
+    state: ink
+  - type: Stack
+    count: 1

@@ -1,0 +1,6 @@
+- type: stack
+  id: Ink
+  name: solid ink
+  icon: { sprite: /Textures/Corvax/Objects/Materials/Sheets/other.rsi, state: ink }
+  spawn: SheetInk1
+  maxCount: 30
