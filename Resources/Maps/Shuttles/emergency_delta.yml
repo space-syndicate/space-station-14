@@ -24,6 +24,7 @@ entities:
     - pos: 7.1183667,4.2130127
       parent: invalid
       type: Transform
+    - type: ProtectedGrid
     - chunks:
         -1,-1:
           ind: -1,-1
