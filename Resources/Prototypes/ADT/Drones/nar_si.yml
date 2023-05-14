@@ -3,28 +3,12 @@
   id: ADTNarSi
   parent: PlayerSiliconBase
   components:
-  - type: Strap
-    buckleOffset: "0.10, 0.36"
-    maxBuckleDistance: 1
   - type: InteractionOutline
-  - type: ItemSlots
-    slots:
-      key_slot: #this slot name is important
-        name: Keys
-        whitelist:
-          requireAll: true
-          tags:
-          - VehicleKey
-        insertSound:
-          path: /Audio/Effects/Vehicle/vehiclestartup.ogg
-          params:
-            volume: -3
   - type: InnateTool
     tools:
-      - id: WeaponMinigun
-      - id: SpawnSpellbook
-      - id: FireballSpellbook
-      - id: WeaponXrayCannon
+      - id: UnholyHalberd
+      - id: ADTNarSiSpawnSpellbook
+      - id: ADTNarsiFireballSpellbook
   - type: UserInterface
     interfaces:
     - key: enum.StrippingUiKey.Key
@@ -46,9 +30,6 @@
     netsync: false
     sprite: ADT/Mobs/nar.rsi
     state: mech_narsi
-  - type: FootstepModifier
-    footstepSoundCollection:
-      path: /Audio/Mecha/sound_mecha_powerloader_step.ogg
   - type: MovementIgnoreGravity
   - type: Fixtures
     fixtures:
@@ -69,9 +50,6 @@
       Dead:
         Base: died_mech_narsi
   - type: CombatMode
-  - type: Tag
-    tags:
-      - FootstepSound
   - type: Armor
     modifiers:
       coefficients:
@@ -80,3 +58,216 @@
         Piercing: 0.75
         Heat: 0.75
         Radiation: 0
+
+#Spawn Demons Start
+- type: entity
+  id: ADTNarSiSpawnSpellbook
+  name: spawn spellbook
+  parent: BaseSpellbook
+  components:
+    - type: Spellbook
+      instantSpells:
+        FlashRune: -1
+      worldSpells:
+        SpawnNarsiSpell: -1
+
+- type: worldTargetAction
+  id: SpawnNarsiSpell
+  name: action-name-spell-summon-demons
+  description: action-description-spell-summon-demons
+  useDelay: 10
+  range: 4
+  itemIconStyle: BigAction
+  icon:
+    sprite: Objects/Magic/magicactions.rsi
+    state: spell_default
+  serverEvent: !type:WorldSpawnSpellEvent
+    prototypes:
+      - id: ADTBlodyEyesDemon
+        amount: 1
+      - id: ADTBunchDemonicEyesDemon
+        amount: 3
+      - id: ADTDemonicEyeDemon
+        amount: 4
+    offsetVector2: 0, 1
+    speech: action-speech-spell-summon-demons
+
+#BaseNarSiDemons
+- type: entity
+  parent: SimpleMobBase
+  id: ADTBaseMobNarsiDemon
+  name: narsi demon
+  description: narsi demon
+  abstract: true
+  components:
+  - type: HTN
+    rootTask: SimpleHostileCompound
+  - type: Faction
+    factions:
+    - SimpleHostile
+  - type: Tag
+    tags:
+    - DoorBumpOpener
+    - Flesh
+  - type: Sprite
+    drawdepth: Mobs
+    sprite: ADT/Mobs/Aliens/nar_si_demons.rsi
+  - type: MovementAlwaysTouching
+  - type: MovementSpeedModifier
+    baseWalkSpeed: 1
+    baseSprintSpeed: 1.5
+  - type: MobState
+    allowedStates:
+    - Alive
+    - Dead
+  - type: MobThresholds
+    thresholds:
+      0: Alive
+      75: Dead
+  - type: Stamina
+    excess: 50
+  - type: Appearance
+  - type: Butcherable
+    spawned:
+    - id: FoodMeat
+      amount: 1
+  - type: Bloodstream
+    bloodMaxVolume: 100
+  - type: CombatMode
+  - type: MeleeWeapon
+    hidden: true
+    soundHit:
+        path: /Audio/Weapons/Xeno/alien_claw_flesh3.ogg
+    angle: 0
+    animation: WeaponArcClaw
+    damage:
+      types:
+        Slash: 3
+  - type: ReplacementAccent
+    accent: genericAggressive
+
+- type: entity
+  parent: ADTBaseMobNarsiDemon
+  id: ADTBlodyEyesDemon
+  components:
+  - type: Sprite
+    layers:
+    - map: [ "enum.DamageStateVisualLayers.Base" ]
+      state: blody_eyes
+    scale: 1.4, 1.4
+  - type: DamageStateVisuals
+    states:
+      Alive:
+        Base: blody_eyes
+      Critical:
+        Base: blody_eyes_dead
+      Dead:
+        Base: blody_eyes_dead
+  - type: MobThresholds
+    thresholds:
+      0: Alive
+      450: Dead
+  - type: MeleeWeapon
+    hidden: true
+    soundHit:
+        path: /Audio/Weapons/Xeno/alien_claw_flesh3.ogg
+    angle: 0
+    animation: WeaponArcClaw
+    damage:
+      types:
+        Slash: 25
+
+- type: entity
+  parent: ADTBaseMobNarsiDemon
+  id: ADTBunchDemonicEyesDemon
+  components:
+  - type: Sprite
+    layers:
+    - map: [ "enum.DamageStateVisualLayers.Base" ]
+      state: bunch_demonic_eyes
+  - type: DamageStateVisuals
+    states:
+      Alive:
+        Base: bunch_demonic_eyes
+      Critical:
+        Base: bunch_demonic_eyes_dead
+      Dead:
+        Base: bunch_demonic_eyes_dead
+    scale: 1.2, 1.2
+  - type: MobThresholds
+    thresholds:
+      0: Alive
+      150: Dead
+  - type: MeleeWeapon
+    hidden: true
+    soundHit:
+        path: /Audio/Weapons/Xeno/alien_claw_flesh3.ogg
+    angle: 0
+    animation: WeaponArcClaw
+    damage:
+      types:
+        Slash: 10
+
+- type: entity
+  parent: ADTBaseMobNarsiDemon
+  id: ADTDemonicEyeDemon
+  components:
+  - type: Sprite
+    layers:
+    - map: [ "enum.DamageStateVisualLayers.Base" ]
+      state: demonic_eye
+  - type: DamageStateVisuals
+    states:
+      Alive:
+        Base: demonic_eye
+      Critical:
+        Base: demonic_eye_dead
+      Dead:
+        Base: demonic_eye_dead
+  - type: MobThresholds
+    thresholds:
+      0: Alive
+      50: Dead
+  - type: MeleeWeapon
+    hidden: true
+    soundHit:
+        path: /Audio/Weapons/Xeno/alien_claw_flesh3.ogg
+    angle: 0
+    animation: WeaponArcClaw
+    damage:
+      types:
+        Slash: 5
+
+#Spawn Demons End
+
+- type: entity
+  id: ADTNarsiFireballSpellbook
+  name: fireball spellbook
+  parent: BaseSpellbook
+  components:
+  - type: Sprite
+    netsync: false
+    sprite: Objects/Magic/spellbooks.rsi
+    layers:
+    - state: bookfireball
+  - type: Spellbook
+    worldSpells:
+      ADTFireball: -1
+
+- type: worldTargetAction
+  id: ADTFireball
+  name: action-name-spell-fireball
+  description: action-description-spell-fireball
+  useDelay: 0.1
+  itemIconStyle: BigAction
+  checkCanAccess: false
+  range: 60
+  sound: !type:SoundPathSpecifier
+    path: /Audio/Magic/fireball.ogg
+  icon:
+    sprite: Objects/Magic/magicactions.rsi
+    state: fireball
+  serverEvent: !type:ProjectileSpellEvent
+    prototype: ProjectileFireball
+    posData: !type:TargetCasterPos
+    speech: action-speech-spell-fireball
