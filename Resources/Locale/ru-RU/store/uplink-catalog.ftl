@@ -116,8 +116,8 @@ uplink-hot-potato-name = Горячая картошка
 uplink-hot-potato-desc = После активации эту бомбу замедленного действия нельзя бросить - только передать кому-то другому!
 uplink-chimp-ammo-name = Коробка с 10 патронами Омега.
 uplink-chimp-ammo-desc = Коробка с десятью патронами для М.А.Р.Т.Ы.Х, несущими в себе омега-частицы. Омега-частицы причиняют сильные ожоги и способствуют переходу аномалий в сверхкритическое состояние.
-uplink-proximity-mine-name = Proximity Mine
-uplink-proximity-mine-desc = A mine disguised as a wet floor sign.
+uplink-proximity-mine-name = неконтактная мина
+uplink-proximity-mine-desc = Мина, замаскированная под знак мокрого пола.
 # Armor
 uplink-chameleon-name = набор "Хамелеон"
 uplink-chameleon-desc = Рюкзак, полный вещей, оснащенных технологией хамелеона, позволяющих вам маскироваться под кого угодно на станции, и даже больше!
