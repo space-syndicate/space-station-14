@@ -31,6 +31,10 @@
   name: paper
   suffix: Full
   components:
+  - type: Material # Corvax feature
+  - type: PhysicalComposition # Corvax feature
+    materialComposition:
+      Paper: 100
   - type: Stack
     stackType: Paper
   - type: Sprite

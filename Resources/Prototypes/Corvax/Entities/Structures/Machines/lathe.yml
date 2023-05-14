@@ -1,0 +1,57 @@
+- type: entity
+  parent: Autolathe
+  id: PaperPrinter
+  name: printer
+  description: Prints ready documents, remains only to write data.
+  components:
+  - type: Sprite
+    sprite: Structures/Machines/autolathe.rsi
+    snapCardinals: true
+    netsync: false
+    layers:
+    - state: icon
+      map: ["enum.LatheVisualLayers.IsRunning"]
+    - state: unlit
+      shader: unshaded
+      map: ["enum.PowerDeviceVisualLayers.Powered"]
+    - state: inserting
+      map: ["enum.MaterialStorageVisualLayers.Inserting"]
+    - state: panel
+      map: ["enum.WiresVisualLayers.MaintenancePanel"]
+  - type: Machine
+    board: PaperPrinterCircuitboard
+  - type: Lathe
+    idleState: icon
+    runningState: icon
+    staticRecipes: # сохранять порядок как в documents.yml
+    - PaperStationSituationReport
+    - PaperGoalAchievementReport
+    - PaperPassengerJobApplication
+    - PaperJobChangeApplication
+    - PaperDismissalOrder
+    - PaperIDCardApplication
+    - PaperPDACardApplication
+    - PaperSOPViolationReport
+    - PaperComplaint
+    - PaperIAAReport
+    - PaperExplanation
+    - PaperCarryWeaponsPermit
+    - PaperExecutionOrder
+    - PaperArrestWarrant
+    - PaperSearchWarrant
+    - PaperChemicalOrder
+    - PaperDeathCertificate
+    - PaperMentalHealthConclusion
+    - PaperMedicinalPrescription
+    - PaperEuthanasiaRequest
+    - PaperProductManufacturingOrder
+    - PaperArtifactReport
+    - PaperStudyObjectReport
+    - PaperSentientBeingRecognition
+    - PaperOrder
+    - PaperWeaponOrder
+  - type: MaterialStorage
+    materialWhiteList:
+    - Ink
+    - Paper
+

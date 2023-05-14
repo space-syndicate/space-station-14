@@ -1,0 +1,265 @@
+### СОХРАНЯТЬ В ТАКОМ ПОРЯДКЕ КАК НА ВИКИ https://station14.ru/wiki/%D0%91%D1%83%D0%BC%D0%B0%D0%B6%D0%BD%D0%B0%D1%8F_%D1%80%D0%B0%D0%B1%D0%BE%D1%82%D0%B0
+### Не полный список доументов, пока что добавил только самые используемые по моему мнению
+### В коментариях будут выделены те, которые я пропустил
+
+### Документы глав станции
+
+- type: entity
+  id: PaperStationSituationReport
+  name: station situation report
+  parent: PaperOffice
+  components:
+  - type: Paper
+    content: document-text-station-situation-report
+
+# Заявление о назначении ВрИО Капитана
+# Заявление о назначении ВрИО Главы отдела
+# Заявление об увольнении Главы отдела
+
+- type: entity
+  id: PaperGoalAchievementReport
+  name: goal achievement report
+  parent: PaperOffice
+  components:
+  - type: Paper
+    content: document-text-goal-achievement-report
+
+- type: entity
+  id: PaperPassengerJobApplication
+  name: passenger job application
+  parent: PaperOffice
+  components:
+  - type: Paper
+    content: document-text-passenger-job-application
+
+- type: entity
+  id: PaperJobChangeApplication
+  name: job change application
+  parent: PaperOffice
+  components:
+  - type: Paper
+    content: document-text-job-change-application
+
+# Ордер на повышение доступа
+# Приказ о лишении доступа
+# Сертификат о повышение квалификации
+
+- type: entity
+  id: PaperDismissalOrder
+  name: dismissal order
+  parent: PaperOffice
+  components:
+  - type: Paper
+    content: document-text-dismissal-order
+
+# Запрос на вызов ОБР
+# Запрос на вызов ПЦК
+# Запрос на выдачу премии
+# Приказ о награждении
+
+- type: entity
+  id: PaperIDCardApplication
+  name: application for an id-card
+  parent: PaperOffice
+  components:
+  - type: Paper
+    content: document-text-id-card-application
+
+- type: entity
+  id: PaperPDACardApplication
+  name: application for a PDA
+  parent: PaperOffice
+  components:
+  - type: Paper
+    content: document-text-pda-application
+
+### Документы Агента Внутренних Дел
+
+- type: entity
+  id: PaperSOPViolationReport
+  name: reporting a SOP violation
+  parent: PaperOffice
+  components:
+  - type: Paper
+    content: document-text-sop-violation-report
+
+- type: entity
+  id: PaperComplaint
+  name: complaint
+  parent: PaperOffice
+  components:
+  - type: Paper
+    content: document-text-complaint
+
+# Запрос на УДО для заключенного
+
+- type: entity
+  id: PaperIAAReport
+  name: IAA report
+  parent: PaperOffice
+  components:
+  - type: Paper
+    content: document-text-iaa-report
+
+### Документы службы безопасности
+
+- type: entity
+  id: PaperExplanation
+  name: explanation
+  parent: PaperOffice
+  components:
+  - type: Paper
+    content: document-text-explanation
+
+# Явка с повинной
+# Приказ о дежурствах
+# Судебное производство
+# Постановление о розыске
+
+- type: entity
+  id: PaperCarryWeaponsPermit
+  name: permit to carry weapons
+  parent: PaperOffice
+  components:
+  - type: Paper
+    content: document-text-carry-weapons-permit
+
+# Постановление об установке отслеживающего импланта
+
+- type: entity
+  id: PaperExecutionOrder
+  name: execution order
+  parent: PaperOffice
+  components:
+  - type: Paper
+    content: document-text-execution-order
+
+- type: entity
+  id: PaperArrestWarrant
+  name: arrest warrant
+  parent: PaperOffice
+  components:
+  - type: Paper
+    content: document-text-arrest-warrant
+
+- type: entity
+  id: PaperSearchWarrant
+  name: search warrant
+  parent: PaperOffice
+  components:
+  - type: Paper
+    content: document-text-search-warrant
+
+# Отчет о расследовании
+
+### Документы медицинского отдела
+
+- type: entity
+  id: PaperChemicalOrder
+  name: chemical order
+  parent: PaperOffice
+  components:
+  - type: Paper
+    content: document-text-chemical-order
+
+# Выписной эпикриз
+# Запрос на производство лекарственных препаратов
+
+- type: entity
+  id: PaperDeathCertificate
+  name: death certificate
+  parent: PaperOffice
+  components:
+  - type: Paper
+    content: document-text-death-certificate
+
+- type: entity
+  id: PaperMentalHealthConclusion
+  name: mental health conclusion
+  parent: PaperOffice
+  components:
+  - type: Paper
+    content: document-text-mental-health-conclusion
+
+- type: entity
+  id: PaperMedicinalPrescription
+  name: medicinal prescription
+  parent: PaperOffice
+  components:
+  - type: Paper
+    content: document-text-medicinal-prescription
+
+- type: entity
+  id: PaperEuthanasiaRequest
+  name: euthanasia request
+  parent: PaperOffice
+  components:
+  - type: Paper
+    content: document-text-euthanasia-request
+
+### Документы инженерного отдела (кто-то ими пользуется?)
+
+# Разрешение на строительство
+# Заявление на проведение строительных работ
+# Запрос на проведение технических работ
+# Утверждённый чертёж цели
+# Отчет о проведении технических работ
+# Отчет о работе системы электроснабжения
+# Отчет о работе системы АТМОС
+
+### Документы научного отдела
+
+- type: entity
+  id: PaperProductManufacturingOrder
+  name: product manufacturing order
+  parent: PaperOffice
+  components:
+  - type: Paper
+    content: document-text-product-manufacturing-order
+
+- type: entity
+  id: PaperArtifactReport
+  name: artifact report
+  parent: PaperOffice
+  components:
+  - type: Paper
+    content: document-text-artifact-report
+
+- type: entity
+  id: PaperStudyObjectReport
+  name: report on the study of the object
+  parent: PaperOffice
+  components:
+  - type: Paper
+    content: document-text-study-object-report
+
+- type: entity
+  id: PaperSentientBeingRecognition
+  name: recognition of a sentient being
+  parent: PaperOffice
+  components:
+  - type: Paper
+    content: document-text-sentient-being-recognition
+
+### Документы отдела снабжения
+
+- type: entity
+  id: PaperOrder
+  name: order
+  parent: PaperOffice
+  components:
+  - type: Paper
+    content: document-text-order
+
+- type: entity
+  id: PaperWeaponOrder
+  name: weapon order
+  parent: PaperOffice
+  components:
+  - type: Paper
+    content: document-text-weapon-order
+
+### Документы сервисного отдела
+
+# Свидетельство о заключении брака
+# Свидетельство о расторжении брака

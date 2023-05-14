@@ -4,6 +4,10 @@
   name: solid ink
   suffix: Full
   components:
+  - type: Material
+  - type: PhysicalComposition
+    materialComposition:
+      Ink: 100
   - type: Stack
     stackType: Ink
   - type: Sprite

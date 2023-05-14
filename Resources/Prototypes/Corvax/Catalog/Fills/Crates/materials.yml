@@ -6,3 +6,12 @@
     contents:
       - id: SheetPaper
         amount: 3
+
+- type: entity
+  id: CrateMaterialInk
+  parent: CrateGenericSteel
+  components:
+  - type: StorageFill
+    contents:
+      - id: SheetInk
+        amount: 3
