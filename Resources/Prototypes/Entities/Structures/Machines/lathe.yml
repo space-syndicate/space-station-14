@@ -341,6 +341,7 @@
       - BoozeDispenserMachineCircuitboard
       - SodaDispenserMachineCircuitboard
       - TelecomServerCircuitboard
+      - PaperPrinterCircuitboard # Corvax feature
   - type: MaterialStorage
     whitelist:
       tags:
