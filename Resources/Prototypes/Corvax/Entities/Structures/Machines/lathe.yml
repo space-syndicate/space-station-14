@@ -2,10 +2,10 @@
   parent: Autolathe
   id: PaperPrinter
   name: printer
-  description: Prints ready documents, remains only to write data.
+  description: The most common printer, prints with ink on paper.
   components:
   - type: Sprite
-    sprite: Structures/Machines/autolathe.rsi
+    sprite: Corvax/Structures/Machines/paperprinter.rsi
     snapCardinals: true
     netsync: false
     layers:
@@ -22,7 +22,7 @@
     board: PaperPrinterCircuitboard
   - type: Lathe
     idleState: icon
-    runningState: icon
+    runningState: building
     staticRecipes: # сохранять порядок как в documents.yml
     - PaperStationSituationReport
     - PaperGoalAchievementReport

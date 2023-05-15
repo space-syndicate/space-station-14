@@ -4,16 +4,19 @@
   name: solid ink
   suffix: Full
   components:
+  - type: Sprite
+    netsync: false
+    sprite: Corvax/Objects/Materials/Sheets/other.rsi
+    state: ink_3
+  - type: Item
+    sprite: Corvax/Objects/Materials/Sheets/other.rsi
+    heldPrefix: ink
   - type: Material
   - type: PhysicalComposition
     materialComposition:
       Ink: 100
   - type: Stack
     stackType: Ink
-  - type: Sprite
-    state: ink_3
-  - type: Item
-    heldPrefix: ink
   - type: Appearance
     visuals:
     - type: StackVisualizer
