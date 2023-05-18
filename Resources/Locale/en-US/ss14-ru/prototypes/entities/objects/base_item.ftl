@@ -8,3 +8,5 @@ ent-PowerCellSlotSmallItem = { "" }
     .desc = { "" }
 ent-PowerCellSlotMediumItem = { "" }
     .desc = { "" }
+ent-PowerCellSlotHighItem = { "" }
+    .desc = { "" }
