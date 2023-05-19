@@ -33,6 +33,9 @@
                         <Button Name="ReconnectButton" Text="{Loc 'connecting-reconnect'}"
                                 HorizontalAlignment="Center"
                                 VerticalExpand="True" VerticalAlignment="Bottom" />
+						<Button Name="DiscordButton" Text="{Loc 'connecting-discord'}"
+                                HorizontalAlignment="Center"
+                                VerticalExpand="True" VerticalAlignment="Bottom" />
                         <Button Name="RedialButton" Text="{Loc 'connecting-redial'}"
                                 Disabled="True"
                                 HorizontalAlignment="Center"
