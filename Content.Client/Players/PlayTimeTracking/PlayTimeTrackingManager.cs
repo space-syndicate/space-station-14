@@ -1,5 +1,7 @@
 ﻿using System.Diagnostics.CodeAnalysis;
 using System.Text;
+using System.Linq;
+using Content.Client.Corvax.Sponsors;
 using Content.Shared.CCVar;
 using Content.Shared.Players.PlayTimeTracking;
 using Content.Shared.Roles;
@@ -18,6 +20,7 @@ public sealed class PlayTimeTrackingManager
     [Dependency] private readonly IConfigurationManager _cfg = default!;
     [Dependency] private readonly IPlayerManager _playerManager = default!;
     [Dependency] private readonly IPrototypeManager _prototypes = default!;
+	[Dependency] private readonly SponsorsManager _sponsors = default!;
 
     private readonly Dictionary<string, TimeSpan> _roles = new();
 
@@ -65,6 +68,8 @@ public sealed class PlayTimeTrackingManager
         var player = _playerManager.LocalPlayer?.Session;
 
         if (player == null) return true;
+		if (_sponsors.TryGetInfo(out var sponsor) && sponsor.AllowedMarkings.Contains(job.ID))
+			return true;
 
         var roles = _roles;
         var reasonBuilder = new StringBuilder();
