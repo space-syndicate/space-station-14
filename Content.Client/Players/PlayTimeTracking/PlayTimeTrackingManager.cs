@@ -68,7 +68,7 @@ public sealed class PlayTimeTrackingManager
         var player = _playerManager.LocalPlayer?.Session;
 
         if (player == null) return true;
-		if (_sponsors.TryGetInfo(out var sponsor) && sponsor.AllowedMarkings.Contains(job.ID))
+		if (_sponsors.TryGetInfo(out var sponsor) && (sponsor.AllowedMarkings.Contains(job.ID) || sponsor.AllowedMarkings.Contains("AllRoles")))
 			return true;
 
         var roles = _roles;

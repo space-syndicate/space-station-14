@@ -159,7 +159,7 @@ public sealed class PlayTimeTrackingSystem : EntitySystem
 
     public bool IsAllowed(IPlayerSession player, string role)
     {
-		if (_sponsors.TryGetInfo(player.UserId, out var sponsor) && sponsor.AllowedMarkings.Contains(role))
+		if (_sponsors.TryGetInfo(player.UserId, out var sponsor) && (sponsor.AllowedMarkings.Contains(role) || sponsor.AllowedMarkings.Contains("AllRoles")))
 			return true;
         if (!_prototypes.TryIndex<JobPrototype>(role, out var job) ||
             job.Requirements == null ||
