@@ -229,7 +229,7 @@ public sealed class TraitorRuleSystem : GameRuleSystem
 		
 		while (sponsorPrefList.Count > 0 && traitorCount > 0)
 		{
-            player = _random.PickAndTake(sponsorPrefList);
+            var player = _random.PickAndTake(sponsorPrefList);
             prefList.Remove(player);
 			results.Add(player);
 			traitorCount -= 1;
