@@ -176,8 +176,6 @@ public sealed class TraitorRuleSystem : GameRuleSystem
         var list = new List<IPlayerSession>(candidates.Keys).Where(x =>
             x.Data.ContentData()?.Mind?.AllRoles.All(role => role is not Job { CanBeAntag: false }) ?? false
         ).ToList();
-		
-		var listSponsors = new List<IPlayerSession>();
 
         var prefList = new List<IPlayerSession>();
 
@@ -187,16 +185,8 @@ public sealed class TraitorRuleSystem : GameRuleSystem
             if (profile.AntagPreferences.Contains(TraitorPrototypeID))
             {
                 prefList.Add(player);
-				if (_sponsors.TryGetInfo(player.UserId, out var sponsor) && sponsor.HavePriorityAntag)
-				{
-					listSponsors.Add(player);
-				}
             }
         }
-		if (listSponsors.Count != 0)
-		{
-			return listSponsors;
-		}
         if (prefList.Count == 0)
         {
             _sawmill.Info("Insufficient preferred traitors, picking at random.");
@@ -213,6 +203,22 @@ public sealed class TraitorRuleSystem : GameRuleSystem
             _sawmill.Info("Insufficient ready players to fill up with traitors, stopping the selection.");
             return results;
         }
+		var sponsorPrefList = new List<IPlayerSession>();
+		foreach (var player in prefList)
+        {
+            if (_sponsors.TryGetInfo(player.UserId, out var sponsor) && sponsor.HavePriorityAntag)
+			{
+				sponsorPrefList.Add(player);
+				prefList.Remove(player);
+			}
+        }
+		
+		while (sponsorPrefList.Count > 0 && traitorCount > 0)
+		{
+			results.Add(_random.PickAndTake(sponsorPrefList));
+			traitorCount -= 1;
+		}
+		if (traitorCount == 0) return results;
 
         for (var i = 0; i < traitorCount; i++)
         {
