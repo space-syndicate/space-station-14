@@ -37,6 +37,7 @@
   name: tts-voice-name-arthas
   sex: Male
   speaker: arthas
+  sponsorOnly: true
 
 - type: ttsVoice
   id: Thrall
@@ -249,12 +250,14 @@
   name: tts-voice-name-wheatley
   sex: Male
   speaker: wheatley
+  sponsorOnly: true
 
 - type: ttsVoice
   id: Barney
   name: tts-voice-name-barney
   sex: Male
   speaker: barney
+  sponsorOnly: true
 
 - type: ttsVoice
   id: Raynor
@@ -291,6 +294,7 @@
   name: tts-voice-name-meepo
   sex: Unsexed
   speaker: meepo
+  sponsorOnly: true
 
 - type: ttsVoice
   id: Lina
@@ -351,6 +355,7 @@
   name: tts-voice-name-pudge
   sex: Male
   speaker: pudge
+  sponsorOnly: true
 
 - type: ttsVoice
   id: Juggernaut
@@ -393,6 +398,7 @@
   name: tts-voice-name-bounty
   sex: Unsexed
   speaker: bounty
+  sponsorOnly: true
 
 - type: ttsVoice
   id: Huskar
@@ -471,6 +477,7 @@
   name: tts-voice-name-antimage
   sex: Unsexed
   speaker: antimage
+  sponsorOnly: true
 
 - type: ttsVoice
   id: Witchdoctor
@@ -489,12 +496,14 @@
   name: tts-voice-name-yuumi
   sex: Unsexed
   speaker: yuumi
+  sponsorOnly: true
 
 - type: ttsVoice
   id: Bandit
   name: tts-voice-name-bandit
   sex: Male
   speaker: bandit
+  sponsorOnly: true
 
 - type: ttsVoice
   id: Pantheon
@@ -723,6 +732,7 @@
   name: tts-voice-name-myron
   sex: Unsexed
   speaker: myron
+  sponsorOnly: true
 
 - type: ttsVoice
   id: Nicole
@@ -771,6 +781,7 @@
   name: tts-voice-name-dude
   sex: Male
   speaker: dude
+  sponsorOnly: true
 
 - type: ttsVoice
   id: Archmage
@@ -789,24 +800,28 @@
   name: tts-voice-name-engineer
   sex: Male
   speaker: engineer
+  sponsorOnly: true
 
 - type: ttsVoice
   id: Heavy
   name: tts-voice-name-heavy
   sex: Male
   speaker: heavy
+  sponsorOnly: true
 
 - type: ttsVoice
   id: Medic
   name: tts-voice-name-medic
   sex: Male
   speaker: medic
+  sponsorOnly: true
 
 - type: ttsVoice
   id: Scout
   name: tts-voice-name-scout
   sex: Male
   speaker: scout
+  sponsorOnly: true
 
 - type: ttsVoice
   id: SniperTf
@@ -825,12 +840,14 @@
   name: tts-voice-name-spy
   sex: Male
   speaker: spy
+  sponsorOnly: true
 
 - type: ttsVoice
   id: Admiral
   name: tts-voice-name-admiral
   sex: Male
   speaker: admiral
+  sponsorOnly: true
 
 - type: ttsVoice
   id: Alchemist
@@ -849,6 +866,7 @@
   name: tts-voice-name-breaker
   sex: Male
   speaker: breaker
+  sponsorOnly: true
 
 - type: ttsVoice
   id: Captain
@@ -861,12 +879,14 @@
   name: tts-voice-name-dryad
   sex: Unsexed
   speaker: dryad
+  sponsorOnly: true
 
 - type: ttsVoice
   id: ElfEng
   name: tts-voice-name-elfeng
   sex: Unsexed
   speaker: elf_eng
+  sponsorOnly: true
 
 - type: ttsVoice
   id: Footman
@@ -945,6 +965,7 @@
   name: tts-voice-name-sidorovich
   sex: Male
   speaker: sidorovich
+  sponsorOnly: true
 
 - type: ttsVoice
   id: P3
