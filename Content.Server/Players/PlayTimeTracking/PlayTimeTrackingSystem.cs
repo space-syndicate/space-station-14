@@ -159,8 +159,10 @@ public sealed class PlayTimeTrackingSystem : EntitySystem
 
     public bool IsAllowed(IPlayerSession player, string role)
     {
-		if (_sponsors.TryGetInfo(player.UserId, out var sponsor) && (sponsor.AllowedMarkings.Contains(role) || sponsor.AllowedMarkings.Contains("AllRoles")))
-			return true;
+        // DeadSpace-Sponsors-Start
+        if (_sponsors.TryGetInfo(player.UserId, out var sponsor) && (sponsor.AllowedMarkings.Contains(role) || sponsor.AllowedMarkings.Contains("AllRoles")))
+            return true;
+        // DeadSpace-Sponsors-End
         if (!_prototypes.TryIndex<JobPrototype>(role, out var job) ||
             job.Requirements == null ||
             !_cfg.GetCVar(CCVars.GameRoleTimers))
@@ -178,20 +180,24 @@ public sealed class PlayTimeTrackingSystem : EntitySystem
             return roles;
 
         var playTimes = _tracking.GetTrackerTimes(player);
-
+			
         foreach (var job in _prototypes.EnumeratePrototypes<JobPrototype>())
         {
-            if (job.Requirements != null)
+            // DeadSpace-Sponsors-Start
+            if (!(_sponsors.TryGetInfo(player.UserId, out var sponsor) && (sponsor.AllowedMarkings.Contains(job.ID) || sponsor.AllowedMarkings.Contains("AllRoles"))))
             {
-                foreach (var requirement in job.Requirements)
+                // DeadSpace-Sponsors-End
+                if (job.Requirements != null)
                 {
-                    if (JobRequirements.TryRequirementMet(requirement, playTimes, out _, _prototypes))
-                        continue;
-
-                    goto NoRole;
+                    foreach (var requirement in job.Requirements)
+                    {
+                        if (JobRequirements.TryRequirementMet(requirement, playTimes, out _, _prototypes))
+                            continue;
+                    
+                        goto NoRole;
+                    }
                 }
             }
-
             roles.Add(job.ID);
             NoRole:;
         }
@@ -206,10 +212,19 @@ public sealed class PlayTimeTrackingSystem : EntitySystem
 
         var player = _playerManager.GetSessionByUserId(userId);
         var playTimes = _tracking.GetTrackerTimes(player);
-
+		
+		// DeadSpace-Sponsors-Start
+        if (_sponsors.TryGetInfo(player.UserId, out var sponsor) && sponsor.AllowedMarkings.Contains("AllRoles"))
+			return;
+        // DeadSpace-Sponsors-End
         for (var i = 0; i < jobs.Count; i++)
         {
             var job = jobs[i];
+			
+            // DeadSpace-Sponsors-Start
+            if (sponsor != null && sponsor.AllowedMarkings.Contains(job))
+                continue;
+            // DeadSpace-Sponsors-End
 
             if (!_prototypes.TryIndex<JobPrototype>(job, out var jobber) ||
                 jobber.Requirements == null ||
