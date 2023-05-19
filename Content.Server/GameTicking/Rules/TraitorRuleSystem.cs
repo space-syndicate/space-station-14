@@ -7,6 +7,7 @@ using Content.Server.Traitor;
 using Content.Server.Traitor.Uplink;
 using Content.Server.NPC.Systems;
 using Content.Server.Corvax.Sponsors;
+using Content.Server.Shuttles.Components;
 using Content.Shared.CCVar;
 using Content.Shared.Dataset;
 using Content.Shared.Preferences;
@@ -173,9 +174,23 @@ public sealed class TraitorRuleSystem : GameRuleSystem
 
     public List<IPlayerSession> FindPotentialTraitors(in Dictionary<IPlayerSession, HumanoidCharacterProfile> candidates)
     {
-        var list = new List<IPlayerSession>(candidates.Keys).Where(x =>
-            x.Data.ContentData()?.Mind?.AllRoles.All(role => role is not Job { CanBeAntag: false }) ?? false
-        ).ToList();
+        var list = new List<IPlayerSession>();
+        var pendingQuery = GetEntityQuery<PendingClockInComponent>();
+
+        foreach (var player in candidates.Keys)
+        {
+            // Role prevents antag.
+            if (!(player.Data.ContentData()?.Mind?.AllRoles.All(role => role is not Job { CanBeAntag: false }) ?? false))
+            {
+                continue;
+            }
+
+            // Latejoin
+            if (player.AttachedEntity != null && pendingQuery.HasComponent(player.AttachedEntity.Value))
+                continue;
+
+            list.Add(player);
+        }
 
         var prefList = new List<IPlayerSession>();
 
@@ -209,13 +224,14 @@ public sealed class TraitorRuleSystem : GameRuleSystem
             if (_sponsors.TryGetInfo(player.UserId, out var sponsor) && sponsor.HavePriorityAntag)
 			{
 				sponsorPrefList.Add(player);
-				prefList.Remove(player);
 			}
         }
 		
 		while (sponsorPrefList.Count > 0 && traitorCount > 0)
 		{
-			results.Add(_random.PickAndTake(sponsorPrefList));
+            player = _random.PickAndTake(sponsorPrefList)
+            prefList.Remove(player);
+			results.Add(player);
 			traitorCount -= 1;
 		}
 		if (traitorCount == 0) return results;
@@ -342,6 +358,8 @@ public sealed class TraitorRuleSystem : GameRuleSystem
             return;
 
         var result = Loc.GetString("traitor-round-end-result", ("traitorCount", Traitors.Count));
+
+        result += "\n" + Loc.GetString("traitor-round-end-codewords", ("codewords", string.Join(", ", Codewords))) + "\n";
 
         foreach (var traitor in Traitors)
         {
