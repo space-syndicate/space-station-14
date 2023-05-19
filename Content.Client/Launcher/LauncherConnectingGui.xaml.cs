@@ -12,7 +12,7 @@ namespace Content.Client.Launcher
 {
     [GenerateTypedNameReferences]
     public sealed partial class LauncherConnectingGui : Control
-    {
+    {		
         private const float RedialWaitTimeSeconds = 15f;
         private readonly LauncherConnecting _state;
         private float _redialWaitTime = RedialWaitTimeSeconds;
@@ -28,7 +28,9 @@ namespace Content.Client.Launcher
             Stylesheet = IoCManager.Resolve<IStylesheetManager>().SheetSpace;
 
             ReconnectButton.OnPressed += _ => _state.RetryConnect();
+			DiscordButton.OnPressed += _ => IoCManager.Resolve<IUriOpener>().OpenUri("https://dsc.gg/deadspace14");
             // Redial shouldn't fail, but if it does, try a reconnect (maybe we're being run from debug)
+			
             RedialButton.OnPressed += _ =>
             {
                 if (!_state.Redial())
