@@ -29,7 +29,7 @@ public sealed class PlayTimeTrackingSystem : EntitySystem
     [Dependency] private readonly IPrototypeManager _prototypes = default!;
     [Dependency] private readonly IConfigurationManager _cfg = default!;
     [Dependency] private readonly PlayTimeTrackingManager _tracking = default!;
-	[Dependency] private readonly SponsorsManager _sponsors = default!;
+    [Dependency] private readonly SponsorsManager _sponsors = default!;
 
     public override void Initialize()
     {
@@ -180,7 +180,7 @@ public sealed class PlayTimeTrackingSystem : EntitySystem
             return roles;
 
         var playTimes = _tracking.GetTrackerTimes(player);
-			
+
         foreach (var job in _prototypes.EnumeratePrototypes<JobPrototype>())
         {
             // DeadSpace-Sponsors-Start
@@ -193,13 +193,13 @@ public sealed class PlayTimeTrackingSystem : EntitySystem
                     {
                         if (JobRequirements.TryRequirementMet(requirement, playTimes, out _, _prototypes))
                             continue;
-                    
+
                         goto NoRole;
                     }
                 }
             }
             roles.Add(job.ID);
-            NoRole:;
+        NoRole:;
         }
 
         return roles;
@@ -212,15 +212,15 @@ public sealed class PlayTimeTrackingSystem : EntitySystem
 
         var player = _playerManager.GetSessionByUserId(userId);
         var playTimes = _tracking.GetTrackerTimes(player);
-		
-		// DeadSpace-Sponsors-Start
+
+        // DeadSpace-Sponsors-Start
         if (_sponsors.TryGetInfo(player.UserId, out var sponsor) && sponsor.AllowedMarkings.Contains("AllRoles"))
-			return;
+            return;
         // DeadSpace-Sponsors-End
         for (var i = 0; i < jobs.Count; i++)
         {
             var job = jobs[i];
-			
+
             // DeadSpace-Sponsors-Start
             if (sponsor != null && sponsor.AllowedMarkings.Contains(job))
                 continue;
