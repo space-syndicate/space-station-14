@@ -10,6 +10,7 @@
         <ScrollContainer HScrollEnabled="False">
             <BoxContainer Orientation="Vertical" SeparationOverride="10">
                 <info:RulesControl />
+				<info:RulesLinksSection />
                 <Label Name="WaitLabel" />
                 <BoxContainer Orientation="Horizontal">
                     <Button Name="AcceptButton"

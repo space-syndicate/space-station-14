@@ -25,6 +25,9 @@ namespace Content.Client.Info
             var tutorialList = new Info();
 
             rootContainer.AddChild(rulesList);
+			var rulesLinksSection = new RulesLinksSection();
+            rulesList.InfoContainer.AddChild(rulesLinksSection);
+
             rootContainer.AddChild(tutorialList);
 
             TabContainer.SetTabTitle(rulesList, Loc.GetString("ui-info-tab-rules"));
@@ -61,7 +64,7 @@ namespace Content.Client.Info
 
         private static Control MakeSection(string title, string path, bool markup, IResourceManager res)
         {
-            return new InfoSection(title, res.ContentFileReadAllText($"/ServerInfo/{path}"), markup);
+            return new InfoSection(title, res.ContentFileReadAllText($"/Server Info/{path}"), markup);
         }
 
     }

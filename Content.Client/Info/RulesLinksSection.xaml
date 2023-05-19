@@ -1,0 +1,16 @@
+<BoxContainer xmlns="https://spacestation14.io"
+              Orientation="Vertical">
+    <Label Text="{Loc 'ui-rules-header-links'}" StyleClasses="LabelHeading"/>
+    <BoxContainer Orientation="Horizontal"
+                  SeparationOverride="5">
+        <Button Name="DiscordButton"
+                Text="{Loc 'ui-rules-discord'}"
+                Access="Public"/>
+        <Button Name="RolesButton"
+                Text="{Loc 'ui-rules-roles'}"
+                Access="Public"/>
+        <Button Name="LawsButton"
+                Text="{Loc 'ui-rules-laws'}"
+                Access="Public"/>
+    </BoxContainer>
+</BoxContainer>
