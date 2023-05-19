@@ -25,6 +25,9 @@ public sealed class SponsorInfo
 
     [JsonPropertyName("allowedMarkings")] // TODO: Rename API field in separate PR as breaking change!
     public string[] AllowedMarkings { get; set; } = Array.Empty<string>();
+	
+    [JsonPropertyName("priorityAntag")]
+    public bool HavePriorityAntag { get; set; } = false;
 }
 
 
