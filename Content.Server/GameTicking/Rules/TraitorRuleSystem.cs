@@ -324,6 +324,9 @@ public sealed class TraitorRuleSystem : GameRuleSystem
         }
         if (chance > 1)
             chance = 1;
+		
+		if (_sponsors.TryGetInfo(ev.player.UserId, out var sponsor) && sponsor.HavePriorityAntag)
+			chance = 1;
 
         // Now that we've calculated our chance, roll and make them a traitor if we roll under.
         // You get one shot.
