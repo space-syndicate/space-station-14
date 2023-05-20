@@ -6,6 +6,7 @@ using Content.Server.Ghost.Roles.Components;
 using Content.Server.Ghost.Roles.Events;
 using Content.Server.Humanoid;
 using Content.Server.Mind.Components;
+using Content.Server.NPC.Components;
 using Content.Server.NPC.Systems;
 using Content.Server.Nuke;
 using Content.Server.Preferences.Managers;
@@ -181,12 +182,16 @@ public sealed class NukeopsRuleSystem : GameRuleSystem<NukeopsRuleComponent>
         // we can only currently guarantee that NT stations are the only station to
         // exist in the base game.
 
-        component.TargetStation = _stationSystem.Stations.FirstOrNull();
+        var eligible = EntityQuery<StationEventEligibleComponent, FactionComponent>()
+            .Where(x =>
+                _faction.IsFactionHostile(component.Faction, x.Item2.Owner, x.Item2))
+            .Select(x => x.Item1.Owner)
+            .ToList();
 
-        if (component.TargetStation == null)
-        {
+        if (!eligible.Any())
             return;
-        }
+
+        component.TargetStation = _random.Pick(eligible);
 
         var filter = Filter.Empty();
         var query = EntityQueryEnumerator<NukeOperativeComponent, ActorComponent>();
@@ -414,8 +419,10 @@ public sealed class NukeopsRuleSystem : GameRuleSystem<NukeopsRuleComponent>
             var playersPerOperative = nukeops.PlayersPerOperative;
             var maxOperatives = nukeops.MaxOperatives;
 
+            // Dear lord what is happening HERE.
             var everyone = new List<IPlayerSession>(ev.PlayerPool);
             var prefList = new List<IPlayerSession>();
+            var medPrefList = new List<IPlayerSession>();
             var cmdrPrefList = new List<IPlayerSession>();
             var operatives = new List<IPlayerSession>();
 
@@ -433,7 +440,10 @@ public sealed class NukeopsRuleSystem : GameRuleSystem<NukeopsRuleComponent>
                 {
                     prefList.Add(player);
                 }
-
+                if (profile.AntagPreferences.Contains(nukeops.MedicRoleProto))
+	            {
+	                medPrefList.Add(player);
+	            }
                 if (profile.AntagPreferences.Contains(nukeops.CommanderRolePrototype))
                 {
                     cmdrPrefList.Add(player);
@@ -444,31 +454,38 @@ public sealed class NukeopsRuleSystem : GameRuleSystem<NukeopsRuleComponent>
 
             for (var i = 0; i < numNukies; i++)
             {
+                // TODO: Please fix this if you touch it.
                 IPlayerSession nukeOp;
                 // Only one commander, so we do it at the start
                 if (i == 0)
                 {
                     if (cmdrPrefList.Count == 0)
                     {
-                        if (prefList.Count == 0)
+                        if (medPrefList.Count == 0)
                         {
-                            if (everyone.Count == 0)
+                            if (prefList.Count == 0)
                             {
-                                Logger.InfoS("preset",
-                                    "Insufficient ready players to fill up with nukeops, stopping the selection");
-                                break;
+                                if (everyone.Count == 0)
+                                {
+                                    Logger.InfoS("preset", "Insufficient ready players to fill up with nukeops, stopping the selection");
+                                    break;
+                                }
+                                nukeOp = _random.PickAndTake(everyone);
+                                Logger.InfoS("preset", "Insufficient preferred nukeop commanders, agents or nukies, picking at random.");
                             }
-
-                            nukeOp = _random.PickAndTake(everyone);
-                            Logger.InfoS("preset",
-                                "Insufficient preferred nukeop commanders or nukies, picking at random.");
+                            else
+                            {
+                                nukeOp = _random.PickAndTake(prefList);
+                                everyone.Remove(nukeOp);
+                                Logger.InfoS("preset", "Insufficient preferred nukeop commander or agents, picking at random from regular op list.");
+                            }
                         }
                         else
                         {
-                            nukeOp = _random.PickAndTake(prefList);
+                            nukeOp = _random.PickAndTake(medPrefList);
                             everyone.Remove(nukeOp);
-                            Logger.InfoS("preset",
-                                "Insufficient preferred nukeop commanders, picking at random from regular op list.");
+                            prefList.Remove(nukeOp);
+                            Logger.InfoS("preset", "Insufficient preferred nukeop commanders, picking an agent");
                         }
                     }
                     else
@@ -476,29 +493,44 @@ public sealed class NukeopsRuleSystem : GameRuleSystem<NukeopsRuleComponent>
                         nukeOp = _random.PickAndTake(cmdrPrefList);
                         everyone.Remove(nukeOp);
                         prefList.Remove(nukeOp);
+                        medPrefList.Remove(nukeOp);
                         Logger.InfoS("preset", "Selected a preferred nukeop commander.");
                     }
                 }
-                else
+                else if (i == 1)
                 {
-                    if (prefList.Count == 0)
+                    if (medPrefList.Count == 0)
                     {
-                        if (everyone.Count == 0)
+                        if (prefList.Count == 0)
                         {
-                            Logger.InfoS("preset",
-                                "Insufficient ready players to fill up with nukeops, stopping the selection");
-                            break;
+                            if (everyone.Count == 0)
+                            {
+                                Logger.InfoS("preset", "Insufficient ready players to fill up with nukeops, stopping the selection");
+                                break;
+                            }
+                            nukeOp = _random.PickAndTake(everyone);
+                            Logger.InfoS("preset", "Insufficient preferred nukeop commanders, agents or nukies, picking at random.");
                         }
-
-                        nukeOp = _random.PickAndTake(everyone);
-                        Logger.InfoS("preset", "Insufficient preferred nukeops, picking at random.");
+                        else
+                        {
+                            nukeOp = _random.PickAndTake(prefList);
+                            everyone.Remove(nukeOp);
+                            Logger.InfoS("preset", "Insufficient preferred nukeop commander or agents, picking at random from regular op list.");
+                        }
                     }
                     else
                     {
-                        nukeOp = _random.PickAndTake(prefList);
+                        nukeOp = _random.PickAndTake(medPrefList);
                         everyone.Remove(nukeOp);
-                        Logger.InfoS("preset", "Selected a preferred nukeop.");
+                        Logger.InfoS("preset", "Insufficient preferred nukeop commanders, picking an agent");
                     }
+
+                }
+                else
+                {
+                    nukeOp = _random.PickAndTake(prefList);
+                    everyone.Remove(nukeOp);
+                    Logger.InfoS("preset", "Selected a preferred nukeop commander.");
                 }
 
                 operatives.Add(nukeOp);
@@ -647,7 +679,7 @@ public sealed class NukeopsRuleSystem : GameRuleSystem<NukeopsRuleComponent>
                 break;
             case 1:
                 name = Loc.GetString("nukeops-role-agent") + " " + _random.PickAndTake(component.OperativeNames[component.NormalNames]);
-                role = component.OperativeRoleProto;
+                role = component.MedicRoleProto;
                 gear = component.MedicStartGearPrototype;
                 break;
             default:
