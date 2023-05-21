@@ -17,9 +17,12 @@ public sealed class SponsorInfo
     [JsonPropertyName("oocColor")]
     public string? OOCColor { get; set; }
 
+    [JsonPropertyName("ghostTheme")]
+    public string? GhostTheme { get; set; }
+
     [JsonPropertyName("priorityJoin")]
     public bool HavePriorityJoin { get; set; } = false;
-    
+
     [JsonPropertyName("extraSlots")]
     public int ExtraSlots { get; set; }
 
@@ -36,7 +39,7 @@ public sealed class MsgSponsorInfo : NetMessage
     public override MsgGroups MsgGroup => MsgGroups.Command;
 
     public SponsorInfo? Info;
-    
+
     public override void ReadFromBuffer(NetIncomingMessage buffer, IRobustSerializer serializer)
     {
         var isSponsor = buffer.ReadBoolean();
