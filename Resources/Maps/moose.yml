@@ -47902,63 +47902,63 @@ entities:
     - pos: -19.5,-21.5
       parent: 6
       type: Transform
-    - name: Medbay
+    - name: Медбей
       type: FaxMachine
   - uid: 7799
     components:
     - pos: 8.5,-15.5
       parent: 6
       type: Transform
-    - name: Lawyer's Office
+    - name: Офис АВД
       type: FaxMachine
   - uid: 14068
     components:
     - pos: 12.5,-42.5
       parent: 6
       type: Transform
-    - name: Cargo
+    - name: Карго
       type: FaxMachine
   - uid: 14074
     components:
     - pos: -12.5,-51.5
       parent: 6
       type: Transform
-    - name: Science
+    - name: Научный
       type: FaxMachine
   - uid: 14076
     components:
     - pos: 3.5,-5.5
       parent: 6
       type: Transform
-    - name: HoP
+    - name: Офис ГП
       type: FaxMachine
   - uid: 14078
     components:
     - pos: 14.5,1.5
       parent: 6
       type: Transform
-    - name: Security
+    - name: Бриг
       type: FaxMachine
   - uid: 14083
     components:
     - pos: 11.5,20.5
       parent: 6
       type: Transform
-    - name: Brig
+    - name: Пермабриг
       type: FaxMachine
   - uid: 14084
     components:
     - pos: -20.5,-40.5
       parent: 6
       type: Transform
-    - name: Library
+    - name: Библиотека
       type: FaxMachine
   - uid: 14093
     components:
     - pos: -2.5,10.5
       parent: 6
       type: Transform
-    - name: Bridge
+    - name: Мостик
       type: FaxMachine
 - proto: FaxMachineCaptain
   entities:
@@ -72102,7 +72102,7 @@ entities:
     - pos: -28.609644,-18.461634
       parent: 6
       type: Transform
-    - content: "1:1:1\nwater:dexalin:oxygen\n \nturn the freezer down to 150 or below\n \nmake sure to have some warm clothes and maybe some hot cocoa for people when they get done\n"
+    - content: "1:1:1\nвода:дексалин:кислород\n \nвключите охладитель на 150 или ниже\n \nубедитесь что вы имеете тёплую одежду и может немного какао для людей, когда она будут готовы\n"
       type: Paper
   - uid: 5148
     components:
@@ -72110,7 +72110,7 @@ entities:
       parent: 6
       type: Transform
     - content: >
-        NT is having trouble getting supplies all the way out here so we only have one AME core for now. Make sure all four solar arrays are connected and calibrated or get those braniacs down in science to build us a couple generators in the meantime.
+        NT испытывает проблемы с доставкой снабжения в эту отдаленную местность, поэтому у нас на данный момент есть только одно ядро ДАМ. Убедитесь, что все четыре солнечные батареи подключены и откалиброваны, или попросите этих умников из научного отдела построить нам пару генераторов на время.
       type: Paper
   - uid: 5634
     components:

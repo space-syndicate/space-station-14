@@ -64123,8 +64123,8 @@ entities:
   entities:
   - uid: 9971
     components:
-    - desc: Legendary boots worn by the king of the tiders
-      name: boots of the grey king
+    - desc: Легендарные сапоги, носимые королем серой толпы.
+      name: ботинки серого короля
       type: MetaData
     - pos: -22.53896,-24.152784
       parent: 1
@@ -71701,14 +71701,14 @@ entities:
     - pos: -34.5,9.5
       parent: 1
       type: Transform
-    - name: Mail Room
+    - name: Почтовая комната
       type: FaxMachine
   - uid: 6676
     components:
     - pos: -28.5,7.5
       parent: 1
       type: Transform
-    - name: Library
+    - name: Библиотека
       type: FaxMachine
   - uid: 6847
     components:
@@ -71720,63 +71720,63 @@ entities:
     - pos: 5.5,64.5
       parent: 1
       type: Transform
-    - name: Lawyer's Office
+    - name: Офис АВД
       type: FaxMachine
   - uid: 8230
     components:
     - pos: -19.5,53.5
       parent: 1
       type: Transform
-    - name: Security
+    - name: Бриг
       type: FaxMachine
   - uid: 8284
     components:
     - pos: -28.5,43.5
       parent: 1
       type: Transform
-    - name: Perma
+    - name: Пермабриг
       type: FaxMachine
   - uid: 8518
     components:
     - pos: 7.5,32.5
       parent: 1
       type: Transform
-    - name: MedBay
+    - name: Медбей
       type: FaxMachine
   - uid: 8697
     components:
     - pos: -9.5,28.5
       parent: 1
       type: Transform
-    - name: Science
+    - name: Научный
       type: FaxMachine
   - uid: 9177
     components:
     - pos: 13.5,-11.5
       parent: 1
       type: Transform
-    - name: Engineering
+    - name: Инженерный
       type: FaxMachine
   - uid: 9226
     components:
     - pos: 24.5,4.5
       parent: 1
       type: Transform
-    - name: HoP's Office
+    - name: Офис ГП
       type: FaxMachine
   - uid: 17613
     components:
     - pos: 5.5,73.5
       parent: 1
       type: Transform
-    - name: Bridge
+    - name: Мостик
       type: FaxMachine
   - uid: 18175
     components:
     - pos: 0.5,3.5
       parent: 8756
       type: Transform
-    - name: Captain's Private Shuttle
+    - name: Личный шаттл Капитана
       type: FaxMachine
 - proto: FaxMachineCaptain
   entities:

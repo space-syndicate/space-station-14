@@ -5511,7 +5511,7 @@ entities:
   entities:
   - uid: 4187
     components:
-    - name: Secret Documents
+    - name: секретные документы
       type: MetaData
     - pos: -1.5007826,16.646563
       parent: 31
@@ -5525,7 +5525,7 @@ entities:
   entities:
   - uid: 8742
     components:
-    - name: lizard secrets
+    - name: секреты ящерицы
       type: MetaData
     - pos: -35.410393,-24.380575
       parent: 31
@@ -33412,8 +33412,8 @@ entities:
       type: Transform
   - uid: 4297
     components:
-    - desc: A comfy-looking raccoon bed. You can even strap your pet in, in case the gravity turns off.
-      name: raccoon bed
+    - desc: Удобная по виду кровать для енота. Вы даже можете пристегнуть своего питомца, на случай если выключится гравитация.
+      name: кровать для енота
       type: MetaData
     - pos: 26.5,10.5
       parent: 31
@@ -34040,49 +34040,49 @@ entities:
     - pos: 15.5,-6.5
       parent: 31
       type: Transform
-    - name: medical
+    - name: Медбей
       type: FaxMachine
   - uid: 1264
     components:
     - pos: 40.5,4.5
       parent: 31
       type: Transform
-    - name: engineering
+    - name: Инженерный
       type: FaxMachine
   - uid: 6298
     components:
     - pos: -2.5,-17.5
       parent: 31
       type: Transform
-    - name: science
+    - name: Научный
       type: FaxMachine
   - uid: 7405
     components:
     - pos: 24.5,13.5
       parent: 31
       type: Transform
-    - name: cargo
+    - name: Карго
       type: FaxMachine
   - uid: 8323
     components:
     - pos: 9.5,-28.5
       parent: 31
       type: Transform
-    - name: library
+    - name: Библиотека
       type: FaxMachine
   - uid: 9686
     components:
     - pos: 7.5,24.5
       parent: 31
       type: Transform
-    - name: captain's office
+    - name: Офис Капитана
       type: FaxMachine
   - uid: 9687
     components:
     - pos: 8.5,18.5
       parent: 31
       type: Transform
-    - name: hop's office
+    - name: Офис ГП
       type: FaxMachine
 - proto: FigureSpawner
   entities:
@@ -51978,19 +51978,19 @@ entities:
       parent: 31
       type: Transform
     - content: >
-        NOTICE FOR TRASH MEN
+        УВЕДОМЛЕНИЕ ДЛЯ МУСОРЩИКОВ
 
-        hello fellow garbage eater!
+        привет товарищ пожиратель мусора!
 
-        since you are taking over, heres how you do your new job
+        поскольку ты берешь на себя эту работу, вот как её выполнять:
 
-        first switch the lever on the left so items go south
+        сначала переключите рычаг слева, чтобы предметы двигались на юг
 
-        then when someone flushes trash, try not to eat it: instead put it in the reclaimer
+        затем, когда кто-то сбрасывает мусор, старайтесь не есть его: вместо этого помещайте его в переработчик
 
-        it will produce some materials and reagents
+        он будет производить материалы и реагенты
 
-        build your TRASH EMPIRE!
+        построй свою собственную МУСОРНУЮ ИМПЕРИЮ!
       type: Paper
   - uid: 968
     components:
@@ -52073,22 +52073,22 @@ entities:
       parent: 31
       type: Transform
     - content: >+
-        Nanotrasen Morgue Unit Manual
+        Руководство по моргу Nanotrasen
 
 
-        Thank you for choosing our finest appliance for body storage, the Nanotrasen Morgue Unit.
+        Благодарим вас за выбор нашего лучшего устройства для хранения тел — морга Nanotrasen.
 
 
-        Click a Morgue Unit to slide out the compartment, and then place a body in the compartment.(Nanotrasen is not responsible for any injury)
+        Щелкните блок морга, чтобы выдвинуть отсек, а затем поместите тело в отсек. (Nanotrasen не несет ответственности за какие-либо травмы)
 
 
-        Green Light: Patient's soul is still intact. You should clone them.
+        Зеленый свет: Душа пациента все еще цела. Вы должны клонировать его.
 
 
-        Red Light: Patient's soul is gone or isn't present at the moment. In doubt, verify the body inside.
+        Красный свет: Душа пациента ушла или отсутствует в данный момент. Если есть сомнения, проверьте тело внутри.
 
 
-        Blue Light: There is no body inside the Morgue Unit.
+        Синий свет: Внутри морга нет тела.
 
       type: Paper
 - proto: ParchisBoard
@@ -58688,7 +58688,7 @@ entities:
       type: Transform
   - uid: 9947
     components:
-    - desc: A sign indicating the miner dock, which is north of here.
+    - desc: Знак, указывающий на шахтерский причал, который находится к северу отсюда.
       type: MetaData
     - rot: 3.141592653589793 rad
       pos: 28.5,22.5
@@ -69819,8 +69819,8 @@ entities:
   entities:
   - uid: 7110
     components:
-    - desc: Smells of formaldehyde, smoke and menthol.
-      name: mortician's wardrobe
+    - desc: Пахнет формальдегидом, дымом и ментолом.
+      name: гардероб гробовщика
       type: MetaData
     - pos: 15.536513,-13.5
       parent: 31

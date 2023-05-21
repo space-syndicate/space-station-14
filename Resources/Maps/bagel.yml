@@ -13999,8 +13999,8 @@ entities:
   entities:
   - uid: 1806
     components:
-    - desc: This bar isn't actually located in outer space.
-      name: The Outer Spess
+    - desc: Фактически, этот бар не находится в космосе.
+      name: Открытый Космос
       type: MetaData
     - pos: 11.5,-25.5
       parent: 60
@@ -15170,7 +15170,7 @@ entities:
   - uid: 18453
     components:
     - flags: InContainer
-      name: secret documents
+      name: секретные документы
       type: MetaData
     - parent: 18441
       type: Transform
@@ -75527,7 +75527,7 @@ entities:
   entities:
   - uid: 23663
     components:
-    - desc: Fashionably expensive.
+    - desc: Стильно дорого.
       name: NT Timbs
       type: MetaData
     - pos: -62.548008,43.377228
@@ -78002,7 +78002,7 @@ entities:
   entities:
   - uid: 1296
     components:
-    - name: Antique Cryostasis Beaker
+    - name: античная криостазисная мензурка
       type: MetaData
     - pos: -40.49813,5.006082
       parent: 60
@@ -82817,15 +82817,15 @@ entities:
       type: Transform
   - uid: 13096
     components:
-    - name: raccoon bed
+    - name: кровать для енота
       type: MetaData
     - pos: 44.5,15.5
       parent: 60
       type: Transform
   - uid: 18542
     components:
-    - desc: A comfy-looking fox bed. You can even strap your pet in, in case the gravity turns off.
-      name: fox bed
+    - desc: Удобная по виду лисья кровать. Вы даже можете пристегнуть своего питомца, на случай если выключится гравитация.
+      name: кровать для лисы
       type: MetaData
     - pos: -8.5,-3.5
       parent: 60
@@ -84097,14 +84097,14 @@ entities:
     - pos: -48.5,-17.5
       parent: 60
       type: Transform
-    - name: Lawyer's Office
+    - name: Офис АВД
       type: FaxMachine
   - uid: 5116
     components:
     - pos: 5.5,-27.5
       parent: 60
       type: Transform
-    - name: HoP Office
+    - name: Офис ГП
       type: FaxMachine
   - uid: 7919
     components:
@@ -84116,49 +84116,49 @@ entities:
     - pos: 49.5,-18.5
       parent: 60
       type: Transform
-    - name: Medical
+    - name: Медбей
       type: FaxMachine
   - uid: 11472
     components:
     - pos: -53.5,9.5
       parent: 60
       type: Transform
-    - name: Science
+    - name: Научный
       type: FaxMachine
   - uid: 16417
     components:
     - pos: 36.5,13.5
       parent: 60
       type: Transform
-    - name: Reporter's Room
+    - name: Офис репортёра
       type: FaxMachine
   - uid: 17995
     components:
     - pos: -24.5,-30.5
       parent: 60
       type: Transform
-    - name: Detective
+    - name: Детектив
       type: FaxMachine
   - uid: 23425
     components:
     - pos: 47.5,12.5
       parent: 60
       type: Transform
-    - name: Cargo
+    - name: Карго
       type: FaxMachine
   - uid: 23429
     components:
     - pos: 1.5,21.5
       parent: 60
       type: Transform
-    - name: Engineering
+    - name: Инженерный
       type: FaxMachine
   - uid: 23430
     components:
     - pos: -9.5,22.5
       parent: 60
       type: Transform
-    - name: Library
+    - name: Библиотека
       type: FaxMachine
 - proto: FaxMachineCaptain
   entities:
@@ -84167,7 +84167,7 @@ entities:
     - pos: 2.5,3.5
       parent: 60
       type: Transform
-    - name: Bridge
+    - name: Мостик
       type: FaxMachine
 - proto: FigureSpawner
   entities:
@@ -127116,8 +127116,8 @@ entities:
   entities:
   - uid: 6638
     components:
-    - desc: In honor of the architects who value work safety so much, they built a singularity in the middle of the station.
-      name: Bagel Station 13 Memorial
+    - desc: В честь архитекторов, которым так важна безопасность работы, они построили сингулярность в центре станции.
+      name: Мемориал Bagel Station 13
       type: MetaData
     - pos: 0.5,-66.5
       parent: 60
@@ -129278,8 +129278,8 @@ entities:
       type: Transform
   - uid: 18554
     components:
-    - desc: This poster looks like it was hastily put up to cover something.
-      name: Suspiciously Placed Nanotrasen Poster
+    - desc: Этот плакат выглядит так, будто его быстро повесили, чтобы что-то закрыть.
+      name: подозрительно размещённый плакат Нанотрейзен
       type: MetaData
     - pos: -1.5,-9.5
       parent: 60
@@ -139965,7 +139965,7 @@ entities:
   entities:
   - uid: 3017
     components:
-    - name: Jani Garage Opener
+    - name: пульт от гаража уборщиков
       type: MetaData
     - pos: -11.495448,-28.362686
       parent: 60
@@ -142508,7 +142508,7 @@ entities:
   entities:
   - uid: 21771
     components:
-    - name: Panic Mode
+    - name: режим паники
       type: MetaData
     - pos: -1.5,-1.5
       parent: 60
@@ -149475,7 +149475,7 @@ entities:
   entities:
   - uid: 16442
     components:
-    - name: Channel 13 Camera
+    - name: камера канала 13
       type: MetaData
     - rot: 3.141592653589793 rad
       pos: 36.5,16.5
@@ -149488,7 +149488,7 @@ entities:
       type: SurveillanceCamera
   - uid: 17197
     components:
-    - name: The Entertainment Channel Camera
+    - name: камера развлекательного канала
       type: MetaData
     - rot: 1.5707963267948966 rad
       pos: 35.5,13.5

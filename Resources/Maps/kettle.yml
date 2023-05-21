@@ -19457,8 +19457,8 @@ entities:
   entities:
   - uid: 7311
     components:
-    - desc: Nearly illegible scribbles and crude doodles fill this book cover to cover with incomprehensible ramblings
-      name: RD's Diary
+    - desc: Почти неразборчивые каракули и грубые каракули заполняют эту книгу от корки до корки непонятным бредом.
+      name: дневник научрука
       type: MetaData
     - pos: 15.490507,75.56723
       parent: 82
@@ -80128,7 +80128,7 @@ entities:
   entities:
   - uid: 25509
     components:
-    - name: Maintscalibur
+    - name: Техскалибур
       type: MetaData
     - pos: 33.46861,68.93209
       parent: 82
@@ -96007,78 +96007,78 @@ entities:
     - pos: -53.5,2.5
       parent: 82
       type: Transform
-    - name: Detective
+    - name: Офис детектива
       type: FaxMachine
   - uid: 25868
     components:
     - pos: 6.5,-13.5
       parent: 82
       type: Transform
-    - destinationAddress: Bridge
-      name: Bridge
+    - destinationAddress: Мостик
+      name: Мостик
       type: FaxMachine
   - uid: 25874
     components:
     - pos: 29.5,59.5
       parent: 82
       type: Transform
-    - name: Science
+    - name: Научный
       type: FaxMachine
   - uid: 25875
     components:
     - pos: -12.5,39.5
       parent: 82
       type: Transform
-    - name: Engineering
+    - name: Инженерный
       type: FaxMachine
   - uid: 25880
     components:
     - pos: -51.5,-27.5
       parent: 82
       type: Transform
-    - name: Medbay
+    - name: Медбей
       type: FaxMachine
   - uid: 25881
     components:
     - pos: -11.5,-0.5
       parent: 82
       type: Transform
-    - name: HoP
+    - name: Офис ГП
       type: FaxMachine
   - uid: 25885
     components:
     - pos: 44.5,-14.5
       parent: 82
       type: Transform
-    - name: Security
+    - name: Бриг
       type: FaxMachine
   - uid: 25887
     components:
     - pos: 38.5,18.5
       parent: 82
       type: Transform
-    - name: Cargo
+    - name: Карго
       type: FaxMachine
   - uid: 25889
     components:
     - pos: 52.5,-39.5
       parent: 82
       type: Transform
-    - name: Brig
+    - name: Пермабриг
       type: FaxMachine
   - uid: 25893
     components:
     - pos: 26.5,-25.5
       parent: 82
       type: Transform
-    - name: Lawyers Office
+    - name: Офис АВД
       type: FaxMachine
   - uid: 25969
     components:
     - pos: 19.5,-91.5
       parent: 82
       type: Transform
-    - name: AI Core
+    - name: Ядро ИИ
       type: FaxMachine
 - proto: FaxMachineCaptain
   entities:
@@ -139234,7 +139234,7 @@ entities:
       type: Transform
   - uid: 2683
     components:
-    - name: Quantum Gemerald
+    - name: квантовый гизумруд
       type: MetaData
     - pos: -10.526169,-10.42016
       parent: 82
@@ -140449,12 +140449,12 @@ entities:
       type: Transform
   - uid: 26125
     components:
-    - name: scribbled notes
+    - name: нацарапанные заметки
       type: MetaData
     - pos: -51.226093,-34.52108
       parent: 82
       type: Transform
-    - content: "water\ndexalin\noxygen\n \nfreeze to 150k or below\n \nbe ready with some warm clothes and maybe some cocoa\n"
+    - content: "вода\nдексалин\nкислород\n \nохладить до 150К или ниже\n \nприготовить какую-то тёплую одежду и может немного какао\n"
       type: Paper
 - proto: PaperBin10
   entities:

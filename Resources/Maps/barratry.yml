@@ -15915,8 +15915,8 @@ entities:
   entities:
   - uid: 15368
     components:
-    - desc: A box of spare encryption keys.
-      name: spare encryption keys box
+    - desc: Коробка с запасными ключами шифрования.
+      name: коробка запасных ключей шифрования
       type: MetaData
     - pos: 27.49369,23.624804
       parent: 1
@@ -51548,8 +51548,8 @@ entities:
   entities:
   - uid: 5938
     components:
-    - desc: These specially insulated grey gloves belong to the king of tiders. A small tag is inscribed with the initials, "H.M."
-      name: grey gloves of the tider king
+    - desc: Эти специальные изолированные серые перчатки принадлежат королю серой толпы. Небольшая бирка имеет надпись с инициалами "Е.В."
+      name: серые перчатки короля серой толпы
       type: MetaData
     - pos: -7.521523,39.691025
       parent: 1
@@ -52931,7 +52931,7 @@ entities:
   entities:
   - uid: 15085
     components:
-    - name: crate (For Med)
+    - name: ящик (Для медбея)
       type: MetaData
     - pos: -5.5,-5.5
       parent: 1
@@ -58313,70 +58313,70 @@ entities:
     - pos: -0.5,-3.5
       parent: 1
       type: Transform
-    - name: Science
+    - name: Научный
       type: FaxMachine
   - uid: 586
     components:
     - pos: -1.5,1.5
       parent: 1
       type: Transform
-    - name: RD Office
+    - name: Офис НР
       type: FaxMachine
   - uid: 2320
     components:
     - pos: 10.5,25.5
       parent: 1
       type: Transform
-    - name: Medical
+    - name: Медбей
       type: FaxMachine
   - uid: 3745
     components:
     - pos: -46.5,2.5
       parent: 1
       type: Transform
-    - name: Cargo
+    - name: Карго
       type: FaxMachine
   - uid: 5809
     components:
     - pos: -28.5,13.5
       parent: 1
       type: Transform
-    - name: Library
+    - name: Библиотека
       type: FaxMachine
   - uid: 7545
     components:
     - pos: -19.5,48.5
       parent: 1
       type: Transform
-    - name: HoP Office
+    - name: Офис ГП
       type: FaxMachine
   - uid: 7989
     components:
     - pos: -55.5,58.5
       parent: 1
       type: Transform
-    - name: Security
+    - name: Бриг
       type: FaxMachine
   - uid: 10803
     components:
     - pos: -36.5,37.5
       parent: 1
       type: Transform
-    - name: Bar
+    - name: Бар
       type: FaxMachine
   - uid: 10901
     components:
     - pos: -10.5,55.5
       parent: 1
       type: Transform
-    - name: Bridge
+    - name: Мостик
       type: FaxMachine
   - uid: 13602
     components:
     - pos: -64.5,25.5
       parent: 1
       type: Transform
-    - name: Engineering
+    - name: Инженерный
       type: FaxMachine
 - proto: FaxMachineCaptain
   entities:
@@ -60825,7 +60825,7 @@ entities:
   entities:
   - uid: 5803
     components:
-    - desc: A highly detailed replica of a real armblade.
+    - desc: Высокодетализированная реплика настоящей руки-клинка.
       type: MetaData
     - pos: -9.533392,20.561493
       parent: 1
@@ -85478,7 +85478,7 @@ entities:
   - uid: 6645
     components:
     - flags: SessionSpecific
-      name: captain's skull
+      name: череп капитана
       type: MetaData
     - pos: -14.534092,66.507454
       parent: 1
@@ -86223,8 +86223,8 @@ entities:
   entities:
   - uid: 7517
     components:
-    - desc: THE ONLY THING I KNOW FOR REAL
-      name: murasama
+    - desc: ЕДИНСТВЕННОЕ ЧТО Я ЗНАЮ НА САМОМ ДЕЛЕ
+      name: мурасама
       type: MetaData
     - pos: -25.461504,57.4935
       parent: 1
@@ -89334,8 +89334,8 @@ entities:
   entities:
   - uid: 6318
     components:
-    - desc: A crude replication of a real nuclear authentication disk. You could tell this thing was fake from a mile away.
-      name: flimsy nuclear authentication disk
+    - desc: Грубая репликация настоящего диска ядерной аутентификации. Вы увидите что это подделка за милю.
+      name: хлипкий диск ядерной аутентификации
       type: MetaData
     - pos: 12.55704,43.506477
       parent: 1
@@ -89590,7 +89590,7 @@ entities:
       type: Transform
   - uid: 2402
     components:
-    - name: hastily scribbled note
+    - name: торопливо набросанная записка
       type: MetaData
     - pos: 10.220547,33.42669
       parent: 1
@@ -89702,22 +89702,22 @@ entities:
       type: EmitSoundOnCollide
   - uid: 14200
     components:
-    - name: hastily scribbled note
+    - name: торопливо набросанная записка
       type: MetaData
     - pos: -77.6763,42.345108
       parent: 1
       type: Transform
     - content: >
-        Allan, please remember to fill these tanks.
+        Аллан, пожалуйста, не забудь заправить эти балоны.
       type: Paper
   - uid: 15092
     components:
     - flags: InContainer
-      name: missing parts list
+      name: список отсутствующих деталей
       type: MetaData
     - parent: 15085
       type: Transform
-    - content: "Still missing:\n \n2 knives (ask kitchen) for biomass reclaimer\n \nGlass, steel, & wires (make sure to bring some!)\n \nOther things to remember: One of their chem stations blew up. Getting parts for cloning's more important but keep it in mind.\n \nOh, and it looks like someone took the cloning boards recently. Only give these parts to med if they need them.\n \n- Research Director Samuel Mendez\n"
+    - content: "По-прежнему отсутствуют:\n \n2 ножа(попросите на кухне) для переработчика биомассы\n \nСтекло, сталь и провода (не забудьте принести несколько)\n \Другие вещи, о которых стоит помнить: Одна их химических установок взорвалась. Получение деталей для клонирования более важно, но имейте это в виду.\n \nО, и похоже, что кто-то недавно забрал клонирующие платы. Отдавайте эти детали только в медблок, если им они нужны.\n \n- Научный Руководитель Самуэль Мендес\n"
       type: Paper
     - nextSound: 515.1956099
       type: EmitSoundOnCollide
@@ -89730,9 +89730,9 @@ entities:
       parent: 1
       type: Transform
     - content: >
-        Stole your boards, nerds!
+        Украл ваши платы, тупицы!
 
-        - R.C.
+        - Р.К.
       type: Paper
     - nextSound: 52.7101011
       type: EmitSoundOnCollide
@@ -98936,7 +98936,7 @@ entities:
       type: SignalTransmitter
   - uid: 7901
     components:
-    - name: armory button
+    - name: кнопка оружейной
       type: MetaData
     - rot: -1.5707963267948966 rad
       pos: -45.5,61.5
@@ -102047,8 +102047,8 @@ entities:
       type: Transform
   - uid: 12770
     components:
-    - desc: A suspicious looking syringe.
-      name: suspicious syringe
+    - desc: Подозрительно выглядящий шприц.
+      name: подозрительный шприц
       type: MetaData
     - pos: 19.469204,28.644407
       parent: 1

@@ -34860,8 +34860,8 @@ entities:
   entities:
   - uid: 8275
     components:
-    - desc: Robust pilot's boots for combat scenarios or combat situations. All combat, all the time.
-      name: pilot's boots
+    - desc: Робастные ботинки пилота для боевых ситуаций или боевых мероприятий. Боевые действия, всегда и везде.
+      name: ботинки пилота
       type: MetaData
     - pos: -19.507818,-48.36427
       parent: 1
@@ -40506,7 +40506,7 @@ entities:
     - pos: -8.5,31.5
       parent: 1
       type: Transform
-    - name: Bridge
+    - name: Мостик
       type: FaxMachine
   - uid: 4968
     components:
@@ -40520,56 +40520,56 @@ entities:
     - pos: 26.5,10.5
       parent: 1
       type: Transform
-    - name: Security
+    - name: Бриг
       type: FaxMachine
   - uid: 5582
     components:
     - pos: -37.5,-4.5
       parent: 1
       type: Transform
-    - name: Library
+    - name: Библиотека
       type: FaxMachine
   - uid: 5882
     components:
     - pos: -12.5,6.5
       parent: 1
       type: Transform
-    - name: Medical
+    - name: Медбей
       type: FaxMachine
   - uid: 5974
     components:
     - pos: 4.5,7.5
       parent: 1
       type: Transform
-    - name: Bar
+    - name: Бар
       type: FaxMachine
   - uid: 6027
     components:
     - pos: -16.5,-3.5
       parent: 1
       type: Transform
-    - name: Science
+    - name: Научный
       type: FaxMachine
   - uid: 6785
     components:
     - pos: 11.5,-12.5
       parent: 1
       type: Transform
-    - name: Engineering
+    - name: Инженерный
       type: FaxMachine
   - uid: 7242
     components:
     - pos: 11.5,-17.5
       parent: 1
       type: Transform
-    - name: Cargo
+    - name: Карго
       type: FaxMachine
   - uid: 9129
     components:
     - pos: 40.5,33.5
       parent: 1
       type: Transform
-    - name: Courthouse
+    - name: Зал суда
       type: FaxMachine
 - proto: FaxMachineCaptain
   entities:
@@ -62951,8 +62951,8 @@ entities:
   - uid: 8257
     components:
     - flags: SessionSpecific
-      desc: jim :)
-      name: jim :)
+      desc: джим :)
+      name: джим :)
       type: MetaData
     - pos: 25.50356,16.52645
       parent: 1
@@ -66413,8 +66413,8 @@ entities:
   entities:
   - uid: 12340
     components:
-    - desc: It shines a brilliant irradiating blue.
-      name: demon core
+    - desc: Оно сияет блестяще-облучающим синим.
+      name: демоническое ядро
       type: MetaData
     - pos: -0.50479734,65.52099
       parent: 1
@@ -76476,8 +76476,8 @@ entities:
   entities:
   - uid: 8272
     components:
-    - desc: Weapon of last resort for a certified pilot.
-      name: dataknife
+    - desc: Оружие последней надежды для квалифицированного пилота..
+      name: дата-нож
       type: MetaData
     - pos: -19.460943,-48.42677
       parent: 1
@@ -78674,8 +78674,8 @@ entities:
   entities:
   - uid: 8259
     components:
-    - desc: A figure of a well known titan, and perhaps an old friend.
-      name: bt-7274 figurine
+    - desc: Фигурка известного титана и, возможно, старого друга.
+      name: статуэтка БТ-7274
       type: MetaData
     - pos: -17.266478,-52.27695
       parent: 1

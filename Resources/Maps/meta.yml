@@ -13372,8 +13372,8 @@ entities:
   entities:
   - uid: 2389
     components:
-    - desc: All right, buddy. I think you've had EI NATH. Time to get a cab.
-      name: The Ale' Nath
+    - desc: Хорошо приятель. I think you've had EI NATH. Время вызвать такси.
+      name: Эль'натх
       type: MetaData
     - pos: 20.5,1.5
       parent: 5350
@@ -14543,7 +14543,7 @@ entities:
       type: Transform
   - uid: 1943
     components:
-    - name: secret documents
+    - name: секретные документы
       type: MetaData
     - pos: 6.46647,-13.68577
       parent: 5350
@@ -87732,7 +87732,7 @@ entities:
   entities:
   - uid: 1055
     components:
-    - name: fox bed
+    - name: кровать для лисы
       type: MetaData
     - pos: 11.5,6.5
       parent: 5350
@@ -87744,7 +87744,7 @@ entities:
       type: Transform
   - uid: 4007
     components:
-    - name: raccoon bed
+    - name: кровать для енота
       type: MetaData
     - pos: -29.5,14.5
       parent: 5350
@@ -87756,7 +87756,7 @@ entities:
       type: Transform
   - uid: 14919
     components:
-    - name: cat bed
+    - name: кровать для кота
       type: MetaData
     - pos: -14.5,-33.5
       parent: 5350
@@ -89023,49 +89023,49 @@ entities:
     - pos: -40.5,5.5
       parent: 5350
       type: Transform
-    - name: Cargo Mail Room
+    - name: Почтовая комната
       type: FaxMachine
   - uid: 5359
     components:
     - pos: -5.5,-3.5
       parent: 5350
       type: Transform
-    - name: Command Meeting Room
+    - name: Конференц зал
       type: FaxMachine
   - uid: 5360
     components:
     - pos: -4.5,4.5
       parent: 5350
       type: Transform
-    - name: Bridge
+    - name: Мостик
       type: FaxMachine
   - uid: 5361
     components:
     - pos: -11.5,-3.5
       parent: 5350
       type: Transform
-    - name: HoP's Office
+    - name: Офис ГП
       type: FaxMachine
   - uid: 5795
     components:
     - pos: -16.5,-31.5
       parent: 5350
       type: Transform
-    - name: 'Medical '
+    - name: Медбей
       type: FaxMachine
   - uid: 7750
     components:
     - pos: -15.5,-36.5
       parent: 5350
       type: Transform
-    - name: CMO's Office
+    - name: Офис ГВ
       type: FaxMachine
   - uid: 8068
     components:
     - pos: 12.5,-25.5
       parent: 5350
       type: Transform
-    - name: RnD
+    - name: Научный
       type: FaxMachine
   - uid: 8093
     components:
@@ -89077,14 +89077,14 @@ entities:
     - pos: -27.5,-63.5
       parent: 5350
       type: Transform
-    - name: Chaplain's Office
+    - name: Церковь
       type: FaxMachine
   - uid: 8362
     components:
     - pos: 51.5,1.5
       parent: 5350
       type: Transform
-    - name: Engineering
+    - name: Инженерный
       type: FaxMachine
   - uid: 8467
     components:
@@ -89096,35 +89096,35 @@ entities:
     - pos: 10.5,39.5
       parent: 5350
       type: Transform
-    - name: Security
+    - name: Бриг
       type: FaxMachine
   - uid: 8469
     components:
     - pos: 12.5,45.5
       parent: 5350
       type: Transform
-    - name: HoS's Office
+    - name: Офис ГСБ
       type: FaxMachine
   - uid: 8470
     components:
     - pos: 13.5,28.5
       parent: 5350
       type: Transform
-    - name: Detective's Office
+    - name: Офис детектива
       type: FaxMachine
   - uid: 8472
     components:
     - pos: 13.5,20.5
       parent: 5350
       type: Transform
-    - name: Lawyer's Office
+    - name: Офис АВД
       type: FaxMachine
   - uid: 8473
     components:
     - pos: -29.5,-6.5
       parent: 5350
       type: Transform
-    - name: Library
+    - name: Библиотека
       type: FaxMachine
 - proto: FaxMachineCaptain
   entities:
@@ -152512,7 +152512,7 @@ entities:
       type: Transform
   - uid: 15663
     components:
-    - name: Medical Garage Door opener
+    - name: пульт от гаража медбея
       type: MetaData
     - pos: -20.888597,-23.402483
       parent: 5350

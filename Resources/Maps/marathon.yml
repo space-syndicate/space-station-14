@@ -15041,8 +15041,8 @@ entities:
   entities:
   - uid: 576
     components:
-    - desc: Don't drink and swim.
-      name: The Drunk Carp
+    - desc: Не плавай пьяным.
+      name: Пьяный карп
       type: MetaData
     - pos: -7.5,5.5
       parent: 30
@@ -15051,8 +15051,8 @@ entities:
       type: BarSign
   - uid: 14984
     components:
-    - desc: Caw caw!
-      name: The Birdcage
+    - desc: Кар кар!
+      name: Вольер
       type: MetaData
     - pos: 16.5,63.5
       parent: 30
@@ -16139,7 +16139,7 @@ entities:
   - uid: 5615
     components:
     - flags: InContainer
-      name: secret documents
+      name: секретные документы
       type: MetaData
     - parent: 5608
       type: Transform
@@ -79996,49 +79996,49 @@ entities:
     - pos: 23.5,14.5
       parent: 30
       type: Transform
-    - name: Science
+    - name: Научный
       type: FaxMachine
   - uid: 22274
     components:
     - pos: -5.5,43.5
       parent: 30
       type: Transform
-    - name: Bridge
+    - name: Мостик
       type: FaxMachine
   - uid: 22276
     components:
     - pos: -33.5,54.5
       parent: 30
       type: Transform
-    - name: Security
+    - name: Бриг
       type: FaxMachine
   - uid: 22277
     components:
     - pos: -82.5,-44.5
       parent: 30
       type: Transform
-    - name: Chaplain
+    - name: Церковь
       type: FaxMachine
   - uid: 22278
     components:
     - pos: 15.5,2.5
       parent: 30
       type: Transform
-    - name: Cargo
+    - name: Карго
       type: FaxMachine
   - uid: 22279
     components:
     - pos: -30.5,-0.5
       parent: 30
       type: Transform
-    - name: Psych
+    - name: Офис психолога
       type: FaxMachine
   - uid: 22435
     components:
     - pos: -57.5,-63.5
       parent: 30
       type: Transform
-    - name: Library
+    - name: Библиотека
       type: FaxMachine
 - proto: FaxMachineCaptain
   entities:
@@ -80047,7 +80047,7 @@ entities:
     - pos: -21.5,30.5
       parent: 30
       type: Transform
-    - name: Captain
+    - name: Офис Капитана
       type: FaxMachine
 - proto: filingCabinet
   entities:
@@ -121825,27 +121825,27 @@ entities:
       parent: 30
       type: Transform
     - content: >
-        Basic Med Recipes
+        Основные медицинские рецепты
 
-        Inaprovaline (Airloss)
+        Инапровалин (Удешения)
 
-        Carbon+Oxygen+Sugar
+        Углерод+Кислород+Сахар
 
-        Bicaridine (Brute)
+        Бикаридин (Удары)
 
-        Inaprovaline+3x Carbon
+        Инапровалин+3x Углерод
 
-        Kelotane (Burns)
+        Келотан (Ожоги)
 
-        Carbon+Silicon
+        Углерод+Кремний
 
-        Dylovene (Poison)
+        Диловен (Яды)
 
-        Nitrogen+Potassium+Silicon
+        Азот+Калий+Кремний
 
-        Hyronalin (Anti-Rad)
+        Хироналин (Анти-Рад)
 
-        Dylovene+3x Radium
+        Диловен+3x Радий
       type: Paper
   - uid: 11629
     components:
@@ -121983,17 +121983,17 @@ entities:
       parent: 30
       type: Transform
     - content: >
-        Basic Food Recipes
+        Основные рецепты еды
 
-        Ground Wheat = Flour
+        Молотая пшеница = Мука
 
-        Water + Flour = Dough
+        Вода + Мука = Тесто
 
-        1 Dough(15 Seconds) = Bread
+        1 Тесто(15 Секунд) = Хлеб
 
-        1 Dough + 1 Banana(25 Seconds) = Banana Bread
+        1 Тесто + 1 Банна(25 Секунд) = Банановый хлеб
 
-        1 Corn(5 Seconds) = Popcorn
+        1 Кукурудза(5 Секунд) = Попкорн
       type: Paper
   - uid: 21714
     components:
