@@ -1,5 +1,5 @@
-ent-ClothingUniformJumpsuitDeathSquad = Death squad uniform
-    .desc = Advanced armored jumpsuit used by special forces in special operations.
+ent-ClothingUniformJumpsuitDeathSquad = униформа Эскадрона смерти
+    .desc = Усовершенствованный бронированный комбинезон, используемый спецподразделениями при проведении специальных операций.
 ent-ClothingUniformJumpsuitAncient = старинный комбинезон
     .desc = Ужасно поношенный и потрепанный серый комбинезон. Он выглядит так, будто его не стирали более десяти лет.
 ent-ClothingUniformJumpsuitBartender = униформа бармена
