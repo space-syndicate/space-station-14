@@ -1,10 +1,10 @@
-ent-BaseAsteroidDebris = Обломки астероида
+ent-BaseAsteroidDebris = Обломок астероида
     .desc = { ent-BaseDebris.desc }
-ent-AsteroidDebrisSmall = Обломки астероида маленькие
+ent-AsteroidDebrisSmall = Обломок астероида маленький
     .desc = { ent-BaseAsteroidDebris.desc }
-ent-AsteroidDebrisMedium = Обломки астероида средние
+ent-AsteroidDebrisMedium = Обломок астероида средний
     .desc = { ent-BaseAsteroidDebris.desc }
-ent-AsteroidDebrisLarge = Обломки астероида большие
+ent-AsteroidDebrisLarge = Обломок астероида большой
     .desc = { ent-BaseAsteroidDebris.desc }
-ent-AsteroidDebrisLarger = Обломки астероида огромные
+ent-AsteroidDebrisLarger = Обломок астероида огромный
     .desc = { ent-BaseAsteroidDebris.desc }
