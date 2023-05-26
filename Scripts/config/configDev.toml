@@ -1,0 +1,76 @@
+[game]
+hostname = "[RU][XRP] Dev station server"
+desc = "Сервер, ориентированный на разработку."
+maxplayers = 15
+soft_max_players = 15
+lobbyenabled = false
+lobbyduration = 180
+role_timers = false
+station_rotation = false
+defaultpreset = "extended"
+fallbackpreset = "extended"
+map_pool = "DefaultMapPool"
+
+[server]
+rules_file = "Rules.txt"
+id = "dev"
+
+[rules]
+time = 0
+exempt_local = true
+
+[events]
+enabled = false
+
+[mapping]
+autosave_interval = 300.0
+
+[ooc]
+enable_during_round = true
+
+[vote]
+map_enabled = true
+preset_enabled = true
+restart_enabled = true
+restart_required_ratio = 0.25
+restart_not_allowed_when_admin_online = false
+timermap = 30
+
+[console]
+loginlocal = true
+
+[log]
+path = "logs"
+format = "log_%(date)s-%(time)s.txt"
+level = 1
+enabled = true
+
+[net]
+tickrate = 60
+port = 1212
+bindto = "::,0.0.0.0"
+pvs = true
+
+[status]
+enabled = true
+
+[netres]
+limit = 0.0
+
+[build]
+fork_id = "dev"
+
+[database]
+# Тип базы данных для использования. В настоящее время это может быть "sqlite" или "postgres".
+engine = "sqlite"
+
+# Путь для хранения базы данных при использовании SQLite. Обратите внимание, что это НЕ путь к диску.
+# Это относительно каталога данных сервера, который задается параметром --data-dir при запуске сервера из команды (или автоматически устанавливается SS14.Watchdog).
+sqlite_dbpath = "preferences.db"
+
+# Конфигурация базы данных PostgreSQL, должна быть прописана отдельно.
+# pg_host = "localhost"
+# pg_port = 5432
+# pg_database = "ss14"
+# pg_username = "ss14"
+# pg_password = "ss14"

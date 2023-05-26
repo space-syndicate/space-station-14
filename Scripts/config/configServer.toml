@@ -1,0 +1,101 @@
+[game]
+hostname = "[RU][XRP] Game server to play"
+desc = "Сервер, ориентированный на RP ожидания и более спокойные раунды."
+maxplayers = 64
+soft_max_players = 48
+lobbyenabled = true
+lobbyduration = 180
+map_pool = "CorvaxDefaultMapPool"
+
+[server]
+rules_file = "RulesCorvax.txt"
+id = "game"
+
+[rules]
+time = 60
+
+[events]
+ramping_average_end_time = 120.0
+ramping_average_chaos = 7.0
+
+[traitor]
+min_players = 2
+players_per_traitor = 8
+starting_balance = 16
+
+[zombie]
+min_players = 10
+players_per_infected = 5
+
+[atmos]
+space_wind = true
+space_wind_max_velocity = 22.0
+
+[shuttle]
+emergency_early_launch_allowed = true
+emergency_dock_time = 180.0
+recall_turning_point = 0.75
+auto_call_time = 120
+
+[explosion]
+tiles_per_tick = 75
+incremental_tile = true
+
+[ic]
+restricted_names = true
+flavor_text = true
+
+[vote]
+map_enabled = true
+restart_enabled = true
+restart_required_ratio = 0.75
+restart_not_allowed_when_admin_online = true
+
+[hub]
+advertise = false
+tags = "lang:ru,region:eu_e,rp:low,no_tag_infer"
+
+[auth]
+# 0 = Optional, 1 = Required, 2 = Disabled
+mode = 0
+allowlocal = true
+
+[net]
+tickrate = 30
+port = 1212
+bindto = "::,0.0.0.0"
+log_late_msg = false
+
+[status]
+enabled = true
+
+[infolinks]
+discord = "https://discord.gg/corvax"
+github = "https://github.com/space-syndicate/space-station-14"
+wiki = "https://station14.ru"
+
+[discord]
+# НЕ УКАЗЫВАЙТЕ URL WEBHOOK в этом файле, если вы не собираетесь его как PR отправлять. Этот файл может быть просмотрен любым пользователем на GitHub, только разместите URL на реальном сервере.
+ahelp_webhook = ""
+ahelp_avatar = ""
+
+[netres]
+limit = 10.0
+
+[build]
+fork_id = "game"
+
+[database]
+# Тип базы данных для использования. В настоящее время это может быть "sqlite" или "postgres".
+engine = "sqlite"
+
+# Путь для хранения базы данных при использовании SQLite. Обратите внимание, что это НЕ путь к диску.
+# Это относительно каталога данных сервера, который задается параметром --data-dir при запуске сервера из команды (или автоматически устанавливается SS14.Watchdog).
+sqlite_dbpath = "preferences.db"
+
+# Конфигурация базы данных PostgreSQL, должна быть прописана отдельно.
+# pg_host = "localhost"
+# pg_port = 5432
+# pg_database = "ss14"
+# pg_username = "ss14"
+# pg_password = "ss14"
