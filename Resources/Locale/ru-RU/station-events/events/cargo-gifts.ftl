@@ -1,5 +1,5 @@
-cargo-gifts-event-announcement = Поздравляем! { $sender } решили отправить { $description } { $dest } станции. Look for it in your next cargo shipment.
-cargo-gift-default-description = A bundle of gifts
+cargo-gifts-event-announcement = Поздравляем! { $sender } решили отправить { $description } { $dest } станции. Всё прибудет со следующей партией груза.
+cargo-gift-default-description = Набор подарков
 cargo-gift-default-sender = Nanotrasen
 cargo-gift-default-dest = Отделу снабжения
 cargo-gift-dest-bar = Бару
