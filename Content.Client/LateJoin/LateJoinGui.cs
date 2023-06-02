@@ -22,7 +22,7 @@ namespace Content.Client.LateJoin
         [Dependency] private readonly IClientConsoleHost _consoleHost = default!;
         [Dependency] private readonly IConfigurationManager _configManager = default!;
         [Dependency] private readonly IEntitySystemManager _entitySystem = default!;
-        [Dependency] private readonly PlayTimeTrackingManager _playTimeTracking = default!;
+        [Dependency] private readonly JobRequirementsManager _jobRequirements = default!;
 
         public event Action<(EntityUid, string)> SelectedId;
 
@@ -38,7 +38,7 @@ namespace Content.Client.LateJoin
 
         public LateJoinGui()
         {
-            MinSize = SetSize = (360, 560);
+            MinSize = SetSize = (450, 560);
             IoCManager.InjectDependencies(this);
             _sprites = _entitySystem.GetEntitySystem<SpriteSystem>();
             _crewManifest = _entitySystem.GetEntitySystem<CrewManifestSystem>();
@@ -54,6 +54,7 @@ namespace Content.Client.LateJoin
 
             Contents.AddChild(_base);
 
+            _jobRequirements.Updated += RebuildUI;
             RebuildUI();
 
             SelectedId += x =>
@@ -249,7 +250,7 @@ namespace Content.Client.LateJoin
 
                         jobButton.OnPressed += _ => SelectedId.Invoke((id, jobButton.JobId));
 
-                        if (!_playTimeTracking.IsAllowed(prototype, out var reason))
+                        if (!_jobRequirements.IsAllowed(prototype, out var reason))
                         {
                             jobButton.Disabled = true;
 
@@ -289,6 +290,7 @@ namespace Content.Client.LateJoin
 
             if (disposing)
             {
+                _jobRequirements.Updated -= RebuildUI;
                 _gameTicker.LobbyJobsAvailableUpdated -= JobsAvailableUpdated;
                 _jobButtons.Clear();
                 _jobCategories.Clear();
