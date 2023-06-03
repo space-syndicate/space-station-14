@@ -26,8 +26,11 @@
   id: HandsAnimal
   name: "animal hands"
   parent: PartAnimal
-  noSpawn: true
   components:
+  - type: Sprite
+    netsync: false
+    sprite: Mobs/Animals/parts.rsi
+    state: "r_hand"
   - type: BodyPart
     partType: Hand
     symmetry: Left
@@ -36,8 +39,11 @@
   id: LegsAnimal
   name: "animal legs"
   parent: PartAnimal
-  noSpawn: true
   components:
+  - type: Sprite
+    netsync: false
+    sprite: Mobs/Animals/parts.rsi
+    state: "r_leg"
   - type: BodyPart
     partType: Leg
   - type: MovementBodyPart
@@ -46,8 +52,11 @@
   id: FeetAnimal
   name: "animal feet"
   parent: PartAnimal
-  noSpawn: true
   components:
+  - type: Sprite
+    netsync: false
+    sprite: Mobs/Animals/parts.rsi
+    state: "r_foot"
   - type: BodyPart
     partType: Foot
 
@@ -55,8 +64,11 @@
   id: TorsoAnimal
   name: "animal torso"
   parent: PartAnimal
-  noSpawn: true
   components:
+  - type: Sprite
+    netsync: false
+    sprite: Mobs/Animals/parts.rsi
+    state: "torso_f"
   - type: BodyPart
     partType: Torso
   - type: Damageable
