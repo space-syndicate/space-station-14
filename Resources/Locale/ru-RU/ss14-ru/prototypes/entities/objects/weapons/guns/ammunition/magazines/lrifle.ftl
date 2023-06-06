@@ -22,6 +22,6 @@ ent-MagazineLRifleRubber = магазин (.30 винтовочные резин
 ent-MagazineLRifleMaxim = дисковый магазин (.30 винтовочные)
     .desc = { ent-MagazineLRifleBase.desc }
     .suffix = { "" }
-ent-MagazineLRiflePkBox = короб боеприпасок ПК (.30 винтовочные)
+ent-MagazineLRiflePkBox =короб патронов ПК (.30 винтовочные)
     .desc = { ent-MagazineLRifleBase.desc }
     .suffix = { "" }
