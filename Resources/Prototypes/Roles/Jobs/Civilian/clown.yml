@@ -3,7 +3,7 @@
   name: job-name-clown
   description: job-description-clown
   playTimeTracker: JobClown
-  requirements:
+  requirements: # Corvax
   - !type:OverallPlaytimeRequirement
       time: 90000 # Corvax-RoleTime
   startingGear: ClownGear

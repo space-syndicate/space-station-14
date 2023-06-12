@@ -3,7 +3,7 @@
   name: job-name-mime
   description: job-description-mime
   playTimeTracker: JobMime
-  requirements:
+  requirements: # Corvax
   - !type:OverallPlaytimeRequirement
       time: 90000 # Corvax-RoleTime
   startingGear: MimeGear
