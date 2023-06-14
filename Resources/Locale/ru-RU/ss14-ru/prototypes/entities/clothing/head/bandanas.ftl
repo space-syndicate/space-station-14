@@ -16,3 +16,5 @@ ent-HatBandSkull = бандана с черепом
     .desc = Бандана с черепом, чтобы выглядеть еще круче.
 ent-HatBandMerc = бандана наёмника
     .desc = Для защиты головы от солнца, насекомых и других угроз сверху.
+ent-HatBandBrown = brown bandana
+    .desc = A brown bandana to make you look cool.

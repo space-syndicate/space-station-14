@@ -1,5 +1,7 @@
 ent-BookBase = book
     .desc = A hardcover book.
+ent-BookChemicalCompendium = chemical compendium
+    .desc = A comprehensive guide written by some old skeleton of a professor about chemical synthesis.
 ent-BookRandom = { ent-BookBase }
     .suffix = random
     .desc = { ent-BookBase.desc }

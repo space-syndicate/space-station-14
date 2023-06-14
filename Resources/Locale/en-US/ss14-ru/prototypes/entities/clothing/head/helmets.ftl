@@ -32,3 +32,5 @@ ent-ClothingHeadHelmetLing = chitinous helmet
     .desc = Inflates the changeling's body into an all-consuming chitinous mass of armor.
 ent-ClothingHeadHelmetVoidParamed = Paramedic Void Helmet
     .desc = A void helmet made for paramedics.
+ent-ClothingHeadHelmetAncient = NTSRA void helmet
+    .desc = An ancient space helmet, designed by the NTSRA branch of CentCom.

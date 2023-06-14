@@ -32,3 +32,5 @@ ent-ClothingHeadHelmetLing = хитиновый шлем
     .desc = Раздувает тело генокрада во всепоглощающий массив хитиновый брони. Обеспечивает высокую защиту от физических повреждений, более низкую от других типов. Его вес замедляет движение генокрада, а его поддержание замедляет выработку химических веществ.
 ent-ClothingHeadHelmetVoidParamed = шлем скафандра парамедика
     .desc = Шлем от скафандра парамедика.
+ent-ClothingHeadHelmetAncient = NTSRA void helmet
+    .desc = An ancient space helmet, designed by the NTSRA branch of CentCom.

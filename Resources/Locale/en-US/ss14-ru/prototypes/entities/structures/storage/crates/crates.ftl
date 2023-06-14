@@ -48,3 +48,6 @@ ent-CrateRodentCage = hamster cage
     .desc = { ent-CrateGeneric.desc }
 ent-CratePirate = pirate chest
     .desc = A space pirate chest, not for station lubbers.
+ent-CrateToyBox = toy box
+    .desc = A box overflowing with fun.
+    .suffix = Empty

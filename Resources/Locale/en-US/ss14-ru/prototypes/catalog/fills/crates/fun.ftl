@@ -32,3 +32,6 @@ ent-CrateFunBoxing = { ent-CrateGenericSteel }
     .desc = { ent-CrateGenericSteel.desc }
 ent-CrateFunPirate = { ent-CratePirate }
     .desc = { ent-CratePirate.desc }
+ent-CrateFunToyBox = { ent-CrateToyBox }
+    .suffix = Filled
+    .desc = { ent-CrateToyBox.desc }

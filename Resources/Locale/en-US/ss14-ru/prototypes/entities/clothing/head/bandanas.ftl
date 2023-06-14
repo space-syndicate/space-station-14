@@ -16,3 +16,5 @@ ent-HatBandSkull = skull bandana
     .desc = A bandana with a skull to make you look even cooler.
 ent-HatBandMerc = mercenary bandana
     .desc = To protect the head from the sun, insects and other dangers of the higher path.
+ent-HatBandBrown = brown bandana
+    .desc = A brown bandana to make you look cool.
