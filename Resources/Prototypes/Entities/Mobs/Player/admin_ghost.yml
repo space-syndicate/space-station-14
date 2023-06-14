@@ -49,7 +49,7 @@
         toggleAction:
           name: action-name-show-solar-console
           description: action-description-show-solar-console
-          icon: { sprite: Interface/AdminActions/moreactions.rsi, state: solar }
+          icon: Corvax/Interface/AdminActions/solar.png # Corvax-Resprite
           iconOn: Structures/Machines/parts.rsi/box_2.png
           keywords: [ "AI", "console", "interface" ]
           priority: -10
@@ -58,7 +58,7 @@
         toggleAction:
           name: action-name-show-communications-console
           description: action-description-show-communications-console
-          icon: { sprite: Interface/AdminActions/moreactions.rsi, state: communication }
+          icon: Corvax/Interface/AdminActions/communications.png # Corvax-Resprite
           iconOn: Structures/Machines/parts.rsi/box_2.png
           keywords: [ "AI", "console", "interface" ]
           priority: -10
@@ -67,7 +67,7 @@
         toggleAction:
           name: action-name-show-radar-console
           description: action-description-show-radar-console
-          icon: { sprite: Interface/AdminActions/moreactions.rsi, state: radar }
+          icon: Corvax/Interface/AdminActions/radar.png # Corvax-Resprite
           iconOn: Structures/Machines/parts.rsi/box_2.png
           keywords: [ "AI", "console", "interface" ]
           priority: -10
@@ -76,7 +76,7 @@
         toggleAction:
           name: action-name-show-cargo-console
           description: action-description-show-cargo-console
-          icon: { sprite: Interface/AdminActions/moreactions.rsi, state: cargo }
+          icon: Corvax/Interface/AdminActions/cargo.png # Corvax-Resprite
           iconOn: Structures/Machines/parts.rsi/box_2.png
           keywords: [ "AI", "console", "interface" ]
           priority: -10
@@ -85,7 +85,7 @@
         toggleAction:
           name: action-name-show-crew-monitoring-console
           description: action-description-crew-monitoring-console
-          icon: { sprite: Interface/AdminActions/moreactions.rsi, state: monitoring }
+          icon: Corvax/Interface/AdminActions/monitoring.png # Corvax-Resprite
           iconOn: Structures/Machines/parts.rsi/box_2.png
           keywords: [ "AI", "console", "interface" ]
           priority: -10
