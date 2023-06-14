@@ -1,10 +1,51 @@
 - type: instantAction
   id: Scream
   useDelay: 10
+  priority: -5
   icon: Interface/Actions/scream.png
   name: action-name-scream
   description: action-description-scream
   serverEvent: !type:ScreamActionEvent
+  checkCanInteract: false
+
+- type: instantAction
+  id: Laugh
+  useDelay: 5
+  priority: -6
+  icon: Corvax/Interface/Actions/laugh.png
+  name: action-name-laugh
+  description: action-description-laugh
+  serverEvent: !type:LaughActionEvent
+  checkCanInteract: false
+
+- type: instantAction
+  id: Sigh
+  useDelay: 10
+  priority: -7
+  icon: Corvax/Interface/Actions/sigh.png
+  name: action-name-sigh
+  description: action-description-sigh
+  serverEvent: !type:SighActionEvent
+  checkCanInteract: false
+
+- type: instantAction
+  id: Clap
+  useDelay: 10
+  priority: -8
+  icon: Corvax/Interface/Actions/clap.png
+  name: action-name-clap
+  description: action-description-clap
+  serverEvent: !type:ClapActionEvent
+  checkCanInteract: false
+
+- type: instantAction
+  id: Snap
+  useDelay: 2
+  priority: -9
+  icon: Corvax/Interface/Actions/snap.png
+  name: action-name-snap
+  description: action-description-snap
+  serverEvent: !type:SnapActionEvent
   checkCanInteract: false
 
 - type: instantAction

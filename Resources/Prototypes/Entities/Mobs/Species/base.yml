@@ -284,6 +284,10 @@
         amount: 5
   - type: Speech
     speechSounds: Alto
+  - type: Laugh
+  - type: Sigh
+  - type: Clap
+  - type: Snap
   - type: Vocal
     sounds:
       Male: MaleHuman
