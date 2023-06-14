@@ -20,7 +20,13 @@
       "name": "highfueltank"
     },
     {
-      "name": "watercooler"
+      "name": "watercooler",
+	  "delays": [
+        [
+          1,
+          1
+        ]
+      ]
     },
     {
       "name": "watertank-2"
@@ -101,19 +107,49 @@
       "name": "highfueltank-2-7"
     },
     {
-      "name": "watercooler-2"
+      "name": "watercooler-2",
+	  "delays": [
+        [
+          1,
+          1
+        ]
+      ]
     },
     {
-      "name": "watercooler-2-1"
+      "name": "watercooler-2-1",
+	  "delays": [
+        [
+          1,
+          1
+        ]
+      ]
     },
     {
-      "name": "watercooler-2-2"
+      "name": "watercooler-2-2",
+	  "delays": [
+        [
+          1,
+          1
+        ]
+      ]
     },
     {
-      "name": "watercooler-2-3"
+      "name": "watercooler-2-3",
+	  "delays": [
+        [
+          1,
+          1
+        ]
+      ]
     },
     {
-      "name": "watercooler-2-4"
+      "name": "watercooler-2-4",
+	  "delays": [
+        [
+          1,
+          1
+        ]
+      ]
     }
   ]
 }
