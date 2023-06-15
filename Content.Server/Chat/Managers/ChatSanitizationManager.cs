@@ -24,7 +24,6 @@ public sealed class ChatSanitizationManager : IChatSanitizationManager
         { "яхз", "chatsan-shrugs" },
         { ":О", "chatsan-surprised" }, // cyrillic о
         { ":р", "chatsan-stick-out-tongue" }, // cyrillic р
-        { "лол", "chatsan-laughs" },
         { "кек", "chatsan-laughs" },
         { "Т_Т", "chatsan-cries" },
         { "=_(", "chatsan-cries" },
