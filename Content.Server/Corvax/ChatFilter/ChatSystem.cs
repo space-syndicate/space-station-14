@@ -108,6 +108,16 @@ public sealed partial class ChatSystem
         { "рофлишь", "шутишь" },
         { "крч", "короче говоря" },
         { "шатл", "шаттл" },
+        { "пидр", "гей" }, //Twitch banword
+        { "пидор", "гей" }, //Twitch banword
+        { "пидар", "гей" }, //Twitch banword
+        { "пидоры", "геи" }, //Twitch banword
+        { "пидорасы", "геи" }, //Twitch banword
+        { "пидарасы", "геи" }, //Twitch banword
+        { "негр", "чёрный" }, //Twitch banword
+        { "негры", "чёрные" }, //Twitch banword
+        { "нигр", "чёрный" }, //Twitch banword
+        { "нигеры", "чёрные" }, //Twitch banword
         // OOC
         { "афк", "ссд" },
         { "админ", "бог" },
