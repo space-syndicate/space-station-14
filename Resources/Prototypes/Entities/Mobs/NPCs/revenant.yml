@@ -46,6 +46,8 @@
     voice: Kelthuzad
   - type: Eye
     drawFov: false
+  - type: ContentEye
+    maxZoom: 1.2, 1.2
   - type: DoAfter
   - type: Alerts
   - type: NameIdentifier
