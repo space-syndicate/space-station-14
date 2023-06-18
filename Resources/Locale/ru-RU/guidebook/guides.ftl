@@ -12,6 +12,7 @@ guide-entry-singularity = Сингулярный двигатель
 guide-entry-science = Наука
 guide-entry-radio = Радиосвязь
 guide-entry-machine-upgrading = Улучшение оборудования
+guide-entry-cargo = Cargo
 guide-entry-salvage = Утилизация обломков
 guide-entry-controls = Управление
 guide-entry-chemicals = Chemicals

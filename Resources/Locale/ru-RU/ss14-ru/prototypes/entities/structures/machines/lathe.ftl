@@ -14,3 +14,5 @@ ent-UniformPrinter = принтер униформы
     .desc = Печать новой или запасной униформы.
 ent-OreProcessor = переработчик руды
     .desc = Он производит металлические листы и слитки из руды.
+ent-Sheetifier = sheet-meister 2000
+    .desc = A very sheety machine.

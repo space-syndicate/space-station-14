@@ -14,3 +14,5 @@ ent-UniformPrinter = uniform printer
     .desc = Prints new or replacement uniforms.
 ent-OreProcessor = ore processor
     .desc = It produces sheets and ingots using ores.
+ent-Sheetifier = sheet-meister 2000
+    .desc = A very sheety machine.

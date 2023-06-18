@@ -31,3 +31,5 @@ ent-WeaponAntiqueLaser = antique laser gun
     .desc = This is an antique laser gun. All craftsmanship is of the highest quality. It is decorated with assistant leather and chrome. The object menaces with spikes of energy.
 ent-WeaponAdvancedLaser = advanced laser gun
     .desc = An experimental laser gun with a self charging nuclear powered battery.
+ent-WeaponBehonkerLaser = Eye of a behonker
+    .desc = The eye of a behonker, it fires a laser when squeezed.
