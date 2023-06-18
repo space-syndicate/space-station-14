@@ -103,6 +103,7 @@
       - FirelockElectronics
       - DoorElectronics
       - AirAlarmElectronics
+      - StationMapElectronics
       - FireAlarmElectronics
       - MailingUnitElectronics
       - APCElectronics
@@ -243,6 +244,7 @@
       - HolofanProjector
       - WeaponForceGun
       - WeaponTetherGun
+      - WeaponGrapplingGun
       - ClothingBackpackHolding
       - ClothingBackpackSatchelHolding
       - ClothingBackpackDuffelHolding
@@ -609,6 +611,7 @@
       - ClothingNeckMantleHOS
       - ClothingNeckMantleHOSShoulder # Corvax-Resprite: Old mantle
       - ClothingNeckMantleRD
+      - ClothingNeckMantleQM # Corvax-Resprite
       - ClothingOuterWinterMusician
       - ClothingOuterWinterClown
       - ClothingOuterWinterMime
