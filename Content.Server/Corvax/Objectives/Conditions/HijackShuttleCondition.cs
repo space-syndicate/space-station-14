@@ -1,3 +1,4 @@
+using Content.Server.Mind;
 using Content.Server.Mind.Components;
 using Content.Server.Objectives.Interfaces;
 using Content.Server.Roles;
@@ -12,6 +13,8 @@ namespace Content.Server.Objectives.Conditions
     [DataDefinition]
     public sealed class HijackShuttleCondition : IObjectiveCondition
     {
+        [Dependency] private readonly MindSystem _mindSystem = default!;
+
         private Mind.Mind? _mind;
 
         public IObjectiveCondition GetAssigned(Mind.Mind mind)
@@ -48,10 +51,10 @@ namespace Content.Server.Objectives.Conditions
             var entities = lookupSys.GetEntitiesIntersecting(shuttleXform.MapID, shuttleAabb);
             foreach (var entity in entities)
             {
-                if (!entMan.TryGetComponent<MindComponent>(entity, out var mind) || mind.Mind == null)
+                if (!entMan.TryGetComponent<MindContainerComponent>(entity, out var mind) || mind.Mind == null)
                     continue;
 
-                var isPersonTraitor = mind.Mind.HasRole<TraitorRole>();
+                var isPersonTraitor = _mindSystem.HasRole<TraitorRole>(mind.Mind);
                 if (!isPersonTraitor)
                 {
                     var isPersonCuffed =
@@ -76,7 +79,7 @@ namespace Content.Server.Objectives.Conditions
                     return 0f;
 
                 var shuttleHijacked = false;
-                var agentIsAlive = !_mind.CharacterDeadIC;
+                var agentIsAlive = _mindSystem.IsCharacterDeadIc(_mind);
                 var agentIsFree = !(entMan.TryGetComponent<CuffableComponent>(_mind.OwnedEntity, out var cuffed)
                                      && cuffed.CuffedHandCount > 0); // You're not escaping if you're restrained!
 
