@@ -51,7 +51,6 @@ class FluentAstTerm:
         return self.term.id.name
 
 
-
 class FluentAstAttribute:
     def __init__(self, id, value, parent_key = None):
         self.id = id
