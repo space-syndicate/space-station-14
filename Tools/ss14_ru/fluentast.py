@@ -13,6 +13,8 @@ class FluentAstAbstract:
             return FluentAstJunk(element).get_id_name()
         elif isinstance(element, ast.Message):
             return FluentAstMessage(element).get_id_name()
+        elif isinstance(element, ast.Term):
+            return FluentAstTerm(element).get_id_name()
         else:
             return None
 
@@ -23,6 +25,9 @@ class FluentAstAbstract:
             return cls.element
         elif isinstance(element, ast.Message):
             cls.element = FluentAstMessage(element)
+            return cls.element
+        elif isinstance(element, ast.Term):
+            cls.element = FluentAstTerm(element)
             return cls.element
         else:
             return None
@@ -35,6 +40,15 @@ class FluentAstMessage:
 
     def get_id_name(self):
         return self.message.id.name
+
+
+class FluentAstTerm:
+    def __init__(self, term: ast.Term):
+        self.term = term
+        self.element = term
+
+    def get_id_name(self):
+        return self.term.id.name
 
 
 class FluentAstAttribute:
