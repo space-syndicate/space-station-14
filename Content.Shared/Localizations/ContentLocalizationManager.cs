@@ -40,6 +40,7 @@ namespace Content.Shared.Localizations
             _loc.AddFunction(culture, "LOC", FormatLoc);
             _loc.AddFunction(culture, "NATURALFIXED", FormatNaturalFixed);
             _loc.AddFunction(culture, "NATURALPERCENT", FormatNaturalPercent);
+            _loc.AddFunction(culture, "MANY", FormatMany); // TODO: Temporary fix for MANY() fluent errors. Remove after resolve errors.
 
 
             /*
