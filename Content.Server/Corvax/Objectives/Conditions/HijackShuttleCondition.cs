@@ -1,7 +1,8 @@
+using Content.Server.Mind;
 using Content.Server.Mind.Components;
 using Content.Server.Objectives.Interfaces;
+using Content.Server.Roles;
 using Content.Server.Shuttles.Components;
-using Content.Server.Traitor;
 using Content.Shared.Cuffs.Components;
 using Robust.Server.GameObjects;
 using Robust.Shared.Map.Components;
@@ -34,8 +35,9 @@ namespace Content.Server.Objectives.Conditions
                 return false;
 
             var entMan = IoCManager.Resolve<IEntityManager>();
-            var transformSys = IoCManager.Resolve<TransformSystem>();
-            var lookupSys = IoCManager.Resolve<IEntitySystemManager>().GetEntitySystem<EntityLookupSystem>();
+            var transformSys = entMan.EntitySysManager.GetEntitySystem<TransformSystem>();
+            var lookupSys = entMan.EntitySysManager.GetEntitySystem<EntityLookupSystem>();
+            var mindSystem = entMan.EntitySysManager.GetEntitySystem<MindSystem>();
 
             if (!entMan.TryGetComponent<MapGridComponent>(shuttle, out var shuttleGrid) ||
                 !entMan.TryGetComponent<TransformComponent>(shuttle, out var shuttleXform))
@@ -48,10 +50,10 @@ namespace Content.Server.Objectives.Conditions
             var entities = lookupSys.GetEntitiesIntersecting(shuttleXform.MapID, shuttleAabb);
             foreach (var entity in entities)
             {
-                if (!entMan.TryGetComponent<MindComponent>(entity, out var mind) || mind.Mind == null)
+                if (!entMan.TryGetComponent<MindContainerComponent>(entity, out var mind) || mind.Mind == null)
                     continue;
 
-                var isPersonTraitor = mind.Mind.HasRole<TraitorRole>();
+                var isPersonTraitor = mindSystem.HasRole<TraitorRole>(mind.Mind);
                 if (!isPersonTraitor)
                 {
                     var isPersonCuffed =
@@ -70,13 +72,14 @@ namespace Content.Server.Objectives.Conditions
         {
             get {
                 var entMan = IoCManager.Resolve<IEntityManager>();
+                var mindSystem = entMan.EntitySysManager.GetEntitySystem<MindSystem>();
 
                 if (_mind?.OwnedEntity == null
                     || !entMan.TryGetComponent<TransformComponent>(_mind.OwnedEntity, out var xform))
                     return 0f;
 
                 var shuttleHijacked = false;
-                var agentIsAlive = !_mind.CharacterDeadIC;
+                var agentIsAlive = mindSystem.IsCharacterDeadIc(_mind);
                 var agentIsFree = !(entMan.TryGetComponent<CuffableComponent>(_mind.OwnedEntity, out var cuffed)
                                      && cuffed.CuffedHandCount > 0); // You're not escaping if you're restrained!
 
