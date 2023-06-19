@@ -96,5 +96,3 @@ ent-CBURNIDcard = ID карта РХБЗЗ
 ent-CluwneIDCard = ID карта клувеня
     .suffix = Неснимаемый
     .desc = { ent-IDCardStandard.desc }
-ent-BlueShieldIDCard = ID карта офицера "Синий щит"
-    .desc = { ent-IDCardStandard.desc }

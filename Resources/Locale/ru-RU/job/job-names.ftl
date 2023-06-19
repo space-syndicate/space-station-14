@@ -43,7 +43,6 @@ job-name-ertmedic = медик ОБР
 job-name-ertjanitor = уборщик ОБР
 job-name-boxer = боксёр
 job-name-zookeeper = зоотехник
-job-name-blueshield = офицер "Синий щит"
 # Role timers - Make these alphabetical or I cut you
 JobAtmosphericTechnician = атмосферный техник
 JobBartender = бармен
@@ -90,4 +89,3 @@ JobTechnicalAssistant = технический ассистент
 JobWarden = смотритель
 JobBoxer = боксёр
 JobZookeeper = зоотехник
-JobBlueShield = офицер "Синий щит"
