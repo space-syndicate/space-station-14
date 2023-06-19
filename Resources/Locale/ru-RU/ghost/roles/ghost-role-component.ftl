@@ -63,6 +63,7 @@ ghost-role-information-salvage-spider-name = Космический паук н�
 ghost-role-information-salvage-spider-description = Космические пауки так же агрессивны, как и обычные пауки. Питайтесь.
 ghost-role-information-guardian-name = Страж
 ghost-role-information-guardian-description = Слушайте своего хозяина. Не танкуйте урон. Сильно стукайте врагов.
+ghost-role-information-holoparasiteblue-name = Голопаразит "Синий Щит"
 ghost-role-information-holoparasite-name = Голопаразит
 ghost-role-information-holoparasite-description = Слушайте своего хозяина. Не танкуйте урон. Сильно стукайте врагов.
 ghost-role-information-ifrit-name = Ифрит
