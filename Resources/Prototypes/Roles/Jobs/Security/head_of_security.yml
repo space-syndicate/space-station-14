@@ -7,11 +7,15 @@
     - !type:RoleTimeRequirement
       role: JobWarden
       time: 36000 # Corvax-RoleTime
+#    - !type:RoleTimeRequirement
+#      role: JobDetective
+#      time: 7200 #2 hrs
+#    - !type:RoleTimeRequirement
+#      role: JobSecurityOfficer
+#      time: 36000 #10 hrs
     - !type:DepartmentTimeRequirement
       department: Security
       time: 108000 # Corvax-RoleTime
-#    - !type:OverallPlaytimeRequirement
-#      time: 108000
   weight: 10
   startingGear: HoSGear
   icon: "HeadOfSecurity"

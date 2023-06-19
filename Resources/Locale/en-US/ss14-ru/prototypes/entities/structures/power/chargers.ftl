@@ -1,6 +1,6 @@
 ent-PowerCellRecharger = cell recharger
-    .desc = { "" }
+    .desc = { ent-ConstructibleMachine.desc }
 ent-WeaponCapacitorRecharger = recharger
     .desc = { ent-PowerCellRecharger.desc }
 ent-WallWeaponCapacitorRecharger = wall recharger
-    .desc = { ent-WeaponCapacitorRecharger.desc }
+    .desc = { "" }
