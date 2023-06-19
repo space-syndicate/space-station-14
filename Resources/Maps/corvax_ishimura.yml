@@ -9519,21 +9519,6 @@ entities:
     - pos: 1.5,-15.5
       parent: 89
       type: Transform
-  - uid: 14609
-    components:
-    - pos: -99.5,23.5
-      parent: 89
-      type: Transform
-    - type: Mind
-    - lerpTarget: 0
-      type: InputMover
-    - type: MobMover
-    - type: MovementSpeedModifier
-    - type: Speech
-    - type: Emoting
-    - type: Examiner
-    - type: Eye
-    - type: TypingIndicator
   - uid: 15303
     components:
     - pos: 26.5,22.5
@@ -132352,21 +132337,6 @@ entities:
     - pos: -60.5,19.5
       parent: 89
       type: Transform
-  - uid: 7885
-    components:
-    - pos: -61.5,19.5
-      parent: 89
-      type: Transform
-    - type: Mind
-    - lerpTarget: 0
-      type: InputMover
-    - type: MobMover
-    - type: MovementSpeedModifier
-    - type: Speech
-    - type: Emoting
-    - type: Examiner
-    - type: Eye
-    - type: TypingIndicator
   - uid: 7930
     components:
     - pos: -61.5,6.5
