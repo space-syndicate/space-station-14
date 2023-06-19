@@ -16,3 +16,6 @@ ent-DoorRemoteMedical = пульт от дверей медотсека
     .desc = { ent-DoorRemoteDefault.desc }
 ent-DoorRemoteEngineering = пульт от дверей инженерного отдела
     .desc = { ent-DoorRemoteDefault.desc }
+ent-DoorRemoteAll = super door remote
+    .suffix = Admeme
+    .desc = { ent-DoorRemoteDefault.desc }
