@@ -1,0 +1,1 @@
+ghost-role-information-holoparasiteblue-name = Голопаразит "Синий Щит"
