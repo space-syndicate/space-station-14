@@ -16,3 +16,5 @@ ent-ProjectilePolyboltCluwne = cluwne polybolt
     .desc = knoH KnoH!
 ent-ProjectileIcicle = Icicle
     .desc = Brrrrr.
+ent-ProjectilePolyboltBread = bread polybolt
+    .desc = Nooo, I don't wanna be bread!

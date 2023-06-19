@@ -42,3 +42,5 @@ ent-FoodBakedPretzel = poppy pretzel
     .desc = It's all twisted up!
 ent-FoodBakedCannoli = cannoli
     .desc = A Sicilian treat that makes you into a wise guy.
+ent-FoodBakedDumplings = dumplings
+    .desc = Average recipe for meat in doughs.

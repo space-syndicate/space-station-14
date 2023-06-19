@@ -8,3 +8,7 @@ ent-HonkerPeripheralsElectronics = модуль управления периф�
     .desc = Модуль управления периферией меха Х.О.Н.К.
 ent-HonkerTargetingElectronics = модуль управления огнём Х.О.Н.К.
     .desc = Электрическая система управления огнём меха Х.О.Н.К.
+ent-HamtrCentralElectronics = HAMTR central control module
+    .desc = The electrical control center for the HAMTR mech.
+ent-HamtrPeripheralsElectronics = HAMTR peripherals control module
+    .desc = The electrical peripherals control for the HAMTR mech.
