@@ -1,0 +1,139 @@
+- type: job
+  id: BlueShield
+  name: Blue Shield Officer
+  description: Heads guard.
+  playTimeTracker: JobBlueShield
+  requirements:
+  - !type:RoleTimeRequirement
+    department: JobCaptain
+    time: 43200 # Corvax-RoleTime
+  startingGear: BlueShieldGear
+  icon: "BlueShield"
+  supervisors: job-supervisors-centcom
+  canBeAntag: false
+  accessGroups:
+  - AllAccess
+
+- type: startingGear
+  id: BlueShieldGear
+  equipment:
+    jumpsuit: ClothingUniformJumpsuitBlueShield
+    back: ClothingBackpackFilled
+    shoes: ClothingShoesBootsJack
+    eyes: ClothingEyesGlassesBlueShield
+    head: ClothingHeadHatBeretNavyBlue
+    outerClothing: ClothingOuterArmorBulletproof
+    id: BlueShieldPDA
+    ears: ClothingHeadsetAltCentCom
+    pocket1: WeaponHKPhalanx
+    pocket2: HoloBlueInjector
+    belt: ClothingBeltSecurityFilled
+  satchel: ClothingBackpackSatchelFilled
+  duffelbag: ClothingBackpackDuffelFilled
+
+
+- type: entity
+  parent: BasePDA
+  id: BlueShieldPDA
+  name: PDA BlueShield Officer
+  description: Good PDA. Fear...
+  components:
+  - type: PDA
+    id: BlueShieldIDCard
+    state: pda-bs
+  - type: Icon
+    state: pda-bs
+
+- type: entity
+  name: LaserRevolver
+  parent: BaseWeaponBatterySmall
+  id: WeaponHKPhalanx
+  description: BlueShield Weapon.
+  components:
+  - type: Sprite
+    sprite: Objects/Weapons/Guns/Battery/laser_revolver.rsi
+    layers:
+    - state: base
+      map: ["enum.GunVisualLayers.Base"]
+    - state: mag-unshaded-4
+      map: ["enum.GunVisualLayers.MagUnshaded"]
+      shader: unshaded
+  - type: Clothing
+    sprite: Objects/Weapons/Guns/Battery/laser_revolver.rsi
+  - type: Gun
+    soundGunshot:
+      path: /Audio/Weapons/Guns/Gunshots/laser_cannon.ogg
+  - type: HitscanBatteryAmmoProvider
+    proto: RedMediumLaser
+    fireCost: 100
+  - type: MagazineVisuals
+    magState: mag
+    steps: 5
+    zeroVisible: true
+  - type: Appearance
+  - type: StaticPrice
+    price: 150
+
+- type: entity
+  id: SpawnPointBlueShield
+  parent: SpawnPointJobBase
+  name: blueshield
+  components:
+  - type: SpawnPoint
+    job_id: BlueShield
+  - type: Sprite
+    layers:
+      - state: green
+
+- type: entity
+  parent: PassengerIDCard
+  id: BlueShieldIDCard
+  name: ID Card BlueShield Officer
+  components:
+  - type: PresetIdCard
+    job: BlueShield
+  - type: Sprite
+    layers:
+    - state: default
+    - state: idblueshield
+
+- type: entity
+  parent: ClothingEyesBase
+  id: ClothingEyesGlassesBlueShield
+  name: Glasses BlueShield
+  description: Glassess
+  components:
+  - type: Sprite
+    sprite: Clothing/Eyes/Glasses/bsglasses.rsi
+  - type: Clothing
+    sprite: Clothing/Eyes/Glasses/bsglasses.rsi
+  - type: FlashImmunity
+  - type: EyeProtection
+    protectionTime: 5
+
+- type: entity
+  parent: ClothingUniformBase
+  id: ClothingUniformJumpsuitBlueShield
+  name: Uniform BlueShield
+  description: Good uniform.
+  components:
+  - type: Sprite
+    sprite: Clothing/Uniforms/Jumpsuit/blueshield.rsi
+  - type: Clothing
+    sprite: Clothing/Uniforms/Jumpsuit/blueshield.rsi
+  - type: Armor
+    modifiers:
+      coefficients:
+        Slash: 0.9
+        Piercing: 0.9
+
+- type: entity
+  parent: ClothingHeadBase
+  id: ClothingHeadHatBeretNavyBlue
+  name: navy blue officers beret
+  description: Good beret.
+  components:
+  - type: Sprite
+    sprite: Clothing/Head/Hats/beret_navyblue.rsi
+  - type: Clothing
+    sprite: Clothing/Head/Hats/beret_navyblue.rsi
