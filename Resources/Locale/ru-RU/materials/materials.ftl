@@ -17,5 +17,6 @@ materials-plastic = пластик
 materials-wood = дерево
 materials-uranium = уран
 materials-bananium = бананиум
+materials-meat = meat
 # Material Reclaimer
 material-reclaimer-upgrade-process-rate = скорость переработки

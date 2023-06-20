@@ -108,6 +108,72 @@
     - вздохнула.
     # Corvax-Localization-End
 
+- type: emote
+  id: Whistle
+  category: Vocal
+  chatMessages: [свистит]
+  chatTriggers:
+    - whistle
+    - whistle.
+    - whistle!
+    - whistles
+    - whistles.
+    - whistles!
+    - whistleblowing
+    - whistleblowing.
+    - whistleblowing!
+    # Corvax-Localization-Start
+    - свистит
+    - свистит.
+    - свистит!
+    - свистнул
+    - свистнул.
+    - свистнул!
+    # Corvax-Localization-End
+
+- type: emote
+  id: Crying
+  category: Vocal
+  chatMessages: [плачет] # Corvax-Localization
+  chatTriggers:
+    - cry
+    - cry.
+    - cry!
+    - crying
+    - crying.
+    - crying!
+    - cries
+    - cries.
+    - cries!
+    # Corvax-Localization-Start
+    - плачет
+    - плачет.
+    - плачет!
+    - рыдает
+    - рыдает.
+    - рыдает!
+    # Corvax-Localization-End
+
+- type: emote
+  id: Squish
+  category: Vocal
+  chatMessages: [хлюпает] # Corvax-Localization
+  chatTriggers:
+    - squish
+    - squish.
+    - squish!
+    - squishing
+    - squishing.
+    - squishing!
+    - squishes
+    - squishes.
+    - squishes!
+    # Corvax-Localization-Start
+    - хлюпает
+    - хлюпает.
+    - хлюпает!
+    # Corvax-Localization-End
+
 # hand emotes
 - type: emote
   id: Clap
@@ -175,4 +241,21 @@
     - щёлкает пальцами!
     - щёлкнул пальцами
     - щёлкнула пальцами
+    # Corvax-Localization-End
+
+- type: emote
+  id: Salute
+  category: Hands
+  chatMessages: [салютует] # Corvax-Localization
+  chatTriggers:
+    - salute
+    - salute.
+    - salute!
+    - salutes
+    - salutes.
+    - salutes!
+    # Corvax-Localization-Start
+    - салютует
+    - салютует.
+    - салютует!
     # Corvax-Localization-End

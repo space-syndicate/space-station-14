@@ -27,3 +27,6 @@ ent-WallRockUranium = { ent-WallRock }
 ent-WallRockBananium = { ent-WallRock }
     .desc = An ore vein rich with bananium.
     .suffix = Bananium
+ent-WallRockArtifactFragment = { ent-WallRock }
+    .desc = A rock wall. What's that sticking out of it?
+    .suffix = Artifact Fragment
