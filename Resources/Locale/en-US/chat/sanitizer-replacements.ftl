@@ -19,5 +19,5 @@ chatsan-waves = waves
 chatsan-salutes = salutes
 chatsan-tearfully-salutes = tearfully salutes
 chatsan-shrugs = shrugs
-chatsan-clap = clap
-chatsan-snap = snap
+chatsan-clap = claps
+chatsan-snap = snaps
