@@ -8,3 +8,5 @@ ent-MagazineBoxMagnumPractice = коробка патронов (.45 магну�
     .desc = { ent-BaseMagazineBoxMagnum.desc }
 ent-MagazineBoxMagnumRubber = коробка патронов (.45 магнум резиновые)
     .desc = { ent-BaseMagazineBoxMagnum.desc }
+ent-MagazineBoxMagnumIncendiary = ammunition box (.45 magnum incendiary)
+    .desc = { ent-BaseMagazineBoxMagnum.desc }

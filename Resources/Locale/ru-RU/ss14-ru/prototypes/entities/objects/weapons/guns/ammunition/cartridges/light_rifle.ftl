@@ -8,3 +8,5 @@ ent-CartridgeLightRiflePractice = патрон (.30 винтовочный уч�
     .desc = { ent-BaseCartridgeLightRifle.desc }
 ent-CartridgeLightRifleRubber = патрон (.30 винтовочный резиновый)
     .desc = { ent-BaseCartridgeLightRifle.desc }
+ent-CartridgeLightRifleIncendiary = cartridge (.30 rifle incendiary)
+    .desc = { ent-BaseCartridgeLightRifle.desc }

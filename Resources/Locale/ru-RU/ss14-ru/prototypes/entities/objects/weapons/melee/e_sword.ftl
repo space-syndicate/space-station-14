@@ -8,3 +8,5 @@ ent-EnergyDaggerBox = футляр энергокинжала
     .suffix = Энергокинжал
 ent-EnergyCutlass = абордажная энергосабля
     .desc = Экзотическое энергетическое оружие.
+ent-EnergySwordDouble = Double Bladed Energy Sword
+    .desc = Syndicate Command Interns thought that having one blade on the energy sword was not enough. This can be stored in pockets.
