@@ -18,6 +18,8 @@
   - type: Muted
   - type: TypingIndicator
     proto: robot
+  - type: TTS
+    voice: Meepo
   - type: Actions
   - type: MobState
     allowedStates:
