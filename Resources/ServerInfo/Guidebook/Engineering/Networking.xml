@@ -1,25 +1,25 @@
 <Document>
-# Networking
-Some devices on the station need to communicate with each other, and they do this by utilizing device networking.
-With networking machines and devices can send arbitrary data between each other.
-There are multiple networks that get used, such as the wireless and wired network.
-Each network device has a frequency it receives on. PDAs for example, use the frequency: [color=green]220.2[/color]
+# Сетевое взаимодействие
+Некоторые устройства на станции должны взаимодействовать друг с другом, и для этого они используют сетевое взаимодействие устройств.
+С помощью сетевого взаимодействия машины и устройства могут передавать друг другу произвольные данные.
+Существует несколько сетей, которые используются, например, беспроводная и проводная сеть.
+Каждое сетевое устройство имеет свою частоту, на которой оно принимает сигнал. КПК, например, используют частоту: [color=green]220.2[/color].
 
-## Device Lists
-Some devices need to know what other devices to communicate with specifically.
+## Списки устройств
+Некоторым устройствам необходимо знать, с какими другими устройствами конкретно общаться.
 <Box>
   <GuideEntityEmbed Entity="AirAlarm"/>
 </Box>
-Air alarms for example require you to tell it which vents, scrubbers, sensors, and firelocks to interact with.
-You do that by using the Network Configurator.
+Например, для воздушной сигнализации необходимо указать, с какими вентиляционными отверстиями, скрубберами, датчиками и противопожарными замками взаимодействовать.
+Это можно сделать с помощью конфигуратора сети.
 
 ## Linking
-If devices basic or still more advanced but need finer control of how and what connects to each other they will generally use device linking.
+Если устройства базовые или более продвинутые, но нуждаются в более тонком контроле того, как и что соединяется друг с другом, то обычно используется связывание устройств.
   <Box>
     <GuideEntityEmbed Entity="SignalSwitch"/>
     <GuideEntityEmbed Entity="Airlock"/>
   </Box>
-With linking you can connect the outputs of a device like [color=gray]On[/color] or [color=gray]Off[/color] with the inputs of a device like the airlocks
-[color=gray]Open[/color] or [color=gray]Close[/color] inputs.
-The Network Configurator is also used for linking devices together.
+С помощью связывания вы можете соединить выходы устройства, такие как [color=gray]On[/color] или [color=gray]Off[/color], с входами устройства, такого как воздушные замки.
+[color=gray]Открыть[/color] или [color=gray]Закрыть[/color] входы.
+Сетевой конфигуратор также используется для объединения устройств вместе.
 </Document>

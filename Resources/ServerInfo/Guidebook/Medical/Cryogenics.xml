@@ -1,12 +1,12 @@
 <Document>
-# Cryogenics
-Cryogenics can be a bit daunting to understand, but hopefully, quick run through of this diagram, you'll learn how to work it! So, let's go over what each part does:
+# Криогенная техника
+Криогенная техника может быть немного сложной для понимания, но, надеемся, быстро пробежавшись по этой схеме, вы научитесь работать с ней! Итак, давайте рассмотрим, что делает каждая часть:
 
-- Air in: Air comes in here through the distro or an air tank, giving those inside something to breathe, and the freezer something to chill.
-- Gas pump: Limits the network pressure, so those in the tube aren't crushed.
-- Freezer: Chills the air, and by extension, patients in the tube, so Cryoxadone can activate.
-- Gas filters: Removes waste gas (Carbon Dioxide and Nitrous Oxide) from the loop.
-- Air out: Waste gasses go here, either into a storage tank, or into the waste network.
+- Поступление воздуха: Воздух поступает сюда через распределитель или воздушный резервуар, давая тем, кто находится внутри, чем дышать, а морозильнику - что охлаждать.
+- Газовый насос: Ограничивает давление в сети, чтобы не раздавить тех, кто находится в трубе.
+- Морозильник: Охлаждает воздух и, соответственно, пациентов в трубке, чтобы криоксадон мог активироваться.
+- Газовые фильтры: Удаляют отработанный газ (двуокись углерода и закись азота) из контура.
+- Выход воздуха: Отработанные газы поступают сюда, либо в резервуар для хранения, либо в канализационную сеть.
 <Box>
 <GuideEntityEmbed Entity="GasPipeBend" Rotation="90"/>
 <GuideEntityEmbed Entity="GasPipeStraight" Rotation="90"/>

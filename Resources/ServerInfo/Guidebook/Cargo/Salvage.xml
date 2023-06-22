@@ -1,23 +1,23 @@
 <Document>
-# Salvage
+# Сальваж
 
-Salvage is one of Cargo's key sources of income... until atmos comes along with a bajillion dollars worth of frezon. Until then though, your main job will be making them money, and totally not making a shuttle
+Утилизация - один из основных источников дохода Карго... пока не придет Атмос с фризоном стоимостью в миллиард долларов. До тех пор ваша основная работа будет заключаться в том, чтобы зарабатывать им деньги, а не делать шаттл.
 
-## How to prepare for a salvage
+## Как подготовиться к спасению
 
-Firstly you need a few things before you can commence on your salvaging.
+Прежде всего, вам нужно несколько вещей, прежде чем вы сможете приступить к спасению.
 
 <Box>
 <GuideEntityEmbed Entity="ClothingOuterHardsuitSpatio"/>
 <GuideEntityEmbed Entity="ClothingShoesBootsMag"/>
 </Box>
-Your Hardsuit is important, as it provides EVA protection. Meaning the lack of pressure and tempurature of space wont kill you. It will also provide minor defense against any space fauna you may encounter. The magboots will ensure you can move smoothly on a salvage and pull things in and out. They also make you slip proof!
+Ваш комбинезон очень важен, так как он обеспечивает защиту EVA. Это означает, что отсутствие давления и температуры в космосе не убьет вас. Он также обеспечит небольшую защиту от любой космической фауны, с которой вы можете столкнуться. Магботы обеспечат вам возможность плавно перемещаться по спасательной платформе и затаскивать и вытаскивать вещи. Они также защитят вас от скольжения!
 
 <Box>
 <GuideEntityEmbed Entity="JetpackBlue"/>
 <GuideEntityEmbed Entity="JetpackMini"/>
 </Box>
-Jetpacks will be needed to move thoughout space, since without floors and gravity, you will not be able to move. Its fueled by gases like oxygen, nitrogen, water vapor, or other gases that can be found in canisters.
+Джетпаки понадобятся для перемещения по космосу, поскольку без пола и гравитации вы не сможете двигаться. Его топливом служат газы, такие как кислород, азот, водяной пар или другие газы, которые можно найти в канистрах.
 
 <Box>
 <GuideEntityEmbed Entity="ClothingMaskGasExplorer"/>
@@ -25,14 +25,14 @@ Jetpacks will be needed to move thoughout space, since without floors and gravit
 <GuideEntityEmbed Entity="YellowOxygenTankFilled"/>
 <GuideEntityEmbed Entity="NitrogenTankFilled"/>
 </Box>
-Internals will be important, given all species need to breathe, and space doesnt have any gases. Your mask is used to connect the gas tank to your mouth to breath, while the gas tanks hold consumable gases and can be refilled at gas canisters. All species breathe oxygen (blue + yellow tanks) except slimes, which need nitrogen (red tanks)
+Внутренние органы будут важны, учитывая, что всем видам необходимо дышать, а в космосе нет газов. Ваша маска используется для подключения газового баллона ко рту, чтобы дышать, а в газовых баллонах хранятся расходуемые газы, которые можно пополнять в газовых канистрах. Все виды дышат кислородом (синий + желтый баллоны), кроме слизи, которой нужен азот (красные баллоны).
 
 <Box>
 <GuideEntityEmbed Entity="WeaponCrusherGlaive"/>
 <GuideEntityEmbed Entity="WeaponCrusherDagger"/>
 <GuideEntityEmbed Entity="WeaponProtoKineticAccelerator"/>
 </Box>
-The crusher devices are your first and last line of defense against space fauna and other things that want to bring cargo harm. While the dagger is just a standard knife, the glaive is has a special property that if you shoot something with it, then follow up with a melee attack, it deals 2x more damage. The protokinetic accelerator is like a recharging weapon that can provide thrust in the scenerio that your jetpack runs dry, or mine for you.
+Дробильные устройства - это ваша первая и последняя линия обороны от космической фауны и других вещей, которые хотят навредить грузу. Кинжал - это обычный нож, а глайв обладает особым свойством: если вы выстрелите им во что-то, а затем последует атака в ближнем бою, то урон будет в 2 раза больше. Протокинетический ускоритель - это как перезаряжающееся оружие, которое может обеспечить тягу в ситуации, когда ваш реактивный ранец иссякнет, или когда мина за вас.
 
 <Box>
 <GuideEntityEmbed Entity="Pickaxe"/>
@@ -40,17 +40,17 @@ The crusher devices are your first and last line of defense against space fauna 
 <GuideEntityEmbed Entity="OreBag"/>
 <GuideEntityEmbed Entity="ClothingBeltUtilityFilled"/>
 </Box>
-Mining equipment and a full utility belt are needed to be able to plunder the full value of a salvage. The mining to quickly gather ore for the ore processor to make usefull, and the tools of the utility belt for breaking things apart and moving high value objects out.
+Горное оборудование и полный пояс полезности необходимы для того, чтобы иметь возможность разграбить всю ценность спасения. Горное снаряжение необходимо для быстрого сбора руды для переработки в полезную руду, а инструменты пояса полезностей - для разбора вещей на части и перемещения дорогостоящих предметов.
 
-## How to make money as a salvager
+## Как заработать деньги в качестве спасателя
 <Box>
 <GuideEntityEmbed Entity="SalvageMagnet"/>
 </Box>
 <Box>
 <GuideEntityEmbed Entity="ComputerSalvageExpedition"/>
 </Box>
-There are 2 primary forms of income for salvage. The magnet and Expeditions.
-The salvage magnet, when activated, calls in one of many random salvages to be generated somewhere within space. Once you find the salvage, you will need to fight off any present space fauna as well as loot it as much possible. A salvage will only be present for 4 minutes, before dissapearing, taking everything unlooted with it. And in worse case scenerios, will take the bodies of other salvagers in critical condition or dead. Afterwards, the magnet needs some time to recharge before being usable again.
-Expeditions are like adventures that you can do with your salvage buddies. First you must pick a mission from the salvage console, each of which of varying difficulty and reward. Afterwards you must FTL to the location via a shuttle. Once you arrive, the chat will tell you in which direction the dungeon of the salvage is, and you must go and conquer the dangers and gain the loot!
+Существует 2 основные формы дохода за спасение. Магнит и Экспедиции.
+Магнит для спасения, когда он активирован, вызывает одно из многих случайных спасений, которое должно быть сгенерировано где-то в космосе. Как только вы найдете спасжилет, вам нужно будет отбиться от присутствующей космической фауны, а также разграбить его как можно больше. Спасение будет существовать только 4 минуты, а затем исчезнет, забрав с собой все награбленное. А в худшем случае - заберет тела других спасателей в критическом состоянии или мертвыми. После этого магниту нужно некоторое время на перезарядку, чтобы снова стать пригодным для использования.
+Экспедиции - это что-то вроде приключений, которые вы можете совершать вместе со своими друзьями-спасателями. Сначала вы должны выбрать задание на консоли спасателей, каждое из которых отличается по сложности и вознаграждению. После этого вы должны добраться до места на сверхсветовом шаттле. Как только вы прибудете на место, чат сообщит вам, в каком направлении находится подземелье спасения, и вы должны отправиться туда, чтобы преодолеть опасности и получить добычу!
 
 </Document>

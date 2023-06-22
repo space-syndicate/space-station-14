@@ -1,16 +1,16 @@
 
-[color=#ffffff]Entity spawn panel options[/color]
-[color=#a4885c]Default[/color] spawns small entities like mugs without aligning them to anything, while aligning block entities like walls to the grid.
-[color=#a4885c]PlaceFree[/color] spawns all entities without aligning them.
-[color=#a4885c]PlaceNearby[/color] limits the spawn radius to around 2 tiles.
-[color=#a4885c]SnapgridCenter[/color] aligns the entity to the middle of the tile.
-[color=#a4885c]SnapgridBorder[/color] aligns the entity to the border of the tile.
+[color=#ffffff]Параметры панели спавна сущностей[/color]
+[color=#a4885c]Default[/color] порождает маленькие сущности, такие как кружки, не выравнивая их по чему-либо, в то время как блочные сущности, такие как стены, выравниваются по сетке.
+[color=#a4885c]PlaceFree[/color] порождает все сущности без выравнивания.
+[color=#a4885c]PlaceNearby[/color] ограничивает радиус порождения примерно 2 тайлами.
+[color=#a4885c]SnapgridCenter[/color] выравнивает сущность по центру тайла.
+[color=#a4885c]SnapgridBorder[/color] выравнивает объект по границе плитки.
 
-[color=#ffffff]Grid aligned options[/color]
-[color=#a4885c]AlignSimilar[/color] snaps the entity to similar entities. Currently broken.
-[color=#a4885c]AlignTileAny[/color] aligns the entity to the grid.
-[color=#a4885c]AlignTileEmpty[/color] target tile must be empty
-[color=#a4885c]AlignTileNonDense[/color] no colliders allowed in the target tile.
-[color=#a4885c]AlignTileDense[/color] colliders must be in the target tile.
-[color=#a4885c]AlignWall[/color] snaps to vertical halftiles.
-[color=#a4885c]AlignWallProper[/color] snaps the entity to the middle of the tile edges
+[color=#ffffff]Варианты выравнивания по сетке[/color]
+[color=#a4885c]AlignSimilar[/color] привязывает объект к похожим объектам. В настоящее время не работает.
+[color=#a4885c]AlignTileAny[/color] выравнивает сущность по сетке.
+[color=#a4885c]AlignTileEmpty[/color] целевая плитка должна быть пустой.
+[color=#a4885c]AlignTileNonDense[/color] в целевом тайле не должно быть коллайдеров.
+[color=#a4885c]AlignTileDense[/color] коллайдеры должны быть в целевом тайле.
+[color=#a4885c]AlignWall[/color] привязывается к вертикальным полуплиткам.
+[color=#a4885c]AlignWallProper[/color] привязывает объект к середине краев плитки.
