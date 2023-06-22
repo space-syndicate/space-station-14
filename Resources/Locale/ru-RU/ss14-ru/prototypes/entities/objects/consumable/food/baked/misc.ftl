@@ -42,5 +42,5 @@ ent-FoodBakedPretzel = крендель с маком
     .desc = Как всё закручено!
 ent-FoodBakedCannoli = канноли
     .desc = Сицилийское лакомство, превращает вас в мудреца.
-ent-FoodBakedDumplings = dumplings
-    .desc = Average recipe for meat in doughs.
+ent-FoodBakedDumplings = пельмени
+    .desc = Усредненный рецепт мяса в тесте.
