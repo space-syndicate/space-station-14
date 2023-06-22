@@ -3199,28 +3199,6 @@ entities:
           occludes: True
           ent: null
       type: ContainerContainer
-- proto: DrinkBeer
-  entities:
-  - uid: 361
-    components:
-    - pos: 5.3257403,-5.361799
-      parent: 845
-      type: Transform
-  - uid: 362
-    components:
-    - pos: 5.6226153,-6.127424
-      parent: 845
-      type: Transform
-  - uid: 363
-    components:
-    - pos: 9.310112,-6.127424
-      parent: 845
-      type: Transform
-  - uid: 364
-    components:
-    - pos: 9.685112,-5.346174
-      parent: 845
-      type: Transform
 - proto: DrinkMugOne
   entities:
   - uid: 674

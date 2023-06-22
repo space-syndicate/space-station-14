@@ -67704,18 +67704,6 @@ entities:
     - pos: -51.686626,48.310047
       parent: 89
       type: Transform
-- proto: DrinkBeer
-  entities:
-  - uid: 15898
-    components:
-    - pos: 10.14653,37.72771
-      parent: 89
-      type: Transform
-  - uid: 17874
-    components:
-    - pos: 62.468678,-9.397333
-      parent: 89
-      type: Transform
 - proto: DrinkBlueCuracaoGlass
   entities:
   - uid: 16424
