@@ -31,7 +31,7 @@ reagent-effect-condition-guidebook-body-temperature =
         [2147483648] не менее { NATURALFIXED($min, 2) }k
        *[other]
             { $min ->
-                [0] at most { NATURALFIXED($max, 2) }k
+                [0] не более { NATURALFIXED($max, 2) }k
                *[other] между { NATURALFIXED($min, 2) }k и { NATURALFIXED($max, 2) }k
             }
     }

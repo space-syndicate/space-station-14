@@ -73,12 +73,12 @@ reagent-effect-guidebook-status-effect =
             { $chance ->
                 [1] Вызывает
                *[other] вызывает
-            } { LOC($key) } минимум на { NATURALFIXED($time, 3) } { MANY("second", $time) } и эффект накапливается
+            } { LOC($key) } минимум на { NATURALFIXED($time, 3) } { MANY("second", $time) }, эффект накапливается
        *[set]
             { $chance ->
                 [1] Вызывает
                *[other] вызывает
-            } { LOC($key) } минимум на { NATURALFIXED($time, 3) } { MANY("second", $time) } и эффект не накапливается
+            } { LOC($key) } минимум на { NATURALFIXED($time, 3) } { MANY("second", $time) }, эффект не накапливается
         [remove]
             { $chance ->
                 [1] Удаляет
@@ -156,9 +156,9 @@ reagent-effect-guidebook-adjust-temperature =
                *[-1] удаляет
             }
     } { POWERJOULES($amount) } тепла { $deltasign ->
-        [1] к
-       *[-1] из
-    } тела, в котором он находится
+        [1] к телу
+       *[-1] из тела
+    }, в котором он метабилизируется
 reagent-effect-guidebook-chem-cause-disease =
     { $chance ->
         [1] Вызывает
