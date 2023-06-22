@@ -56,14 +56,14 @@ reagent-effect-guidebook-health-change =
     { $chance ->
         [1]
             { $healsordeals ->
-                [heals] Лечит
-                [deals] Повреждает
+                [heals] Излечивает
+                [deals] Наносит
                *[both] Изменяет здоровье на
             }
        *[other]
             { $healsordeals ->
-                [heals] лечит
-                [deals] повреждает
+                [heals] излечивать
+                [deals] наносить
                *[both] изменяет здоровье на
             }
     } { $changes }
@@ -73,12 +73,12 @@ reagent-effect-guidebook-status-effect =
             { $chance ->
                 [1] Вызывает
                *[other] вызывает
-            } { LOC($key) } минимум на { NATURALFIXED($time, 3) } { MANY("second", $time) } и накапливается
+            } { LOC($key) } минимум на { NATURALFIXED($time, 3) } { MANY("second", $time) } и эффект накапливается
        *[set]
             { $chance ->
                 [1] Вызывает
                *[other] вызывает
-            } { LOC($key) } минимум на { NATURALFIXED($time, 3) } { MANY("second", $time) } и не накапливается
+            } { LOC($key) } минимум на { NATURALFIXED($time, 3) } { MANY("second", $time) } и эффект не накапливается
         [remove]
             { $chance ->
                 [1] Удаляет
@@ -181,20 +181,20 @@ reagent-effect-guidebook-chem-clean-bloodstream =
     } кровеносную систему от других веществ
 reagent-effect-guidebook-cure-disease =
     { $chance ->
-        [1] Лечит
-       *[other] лечить
+        [1] Излечивает
+       *[other] излечить
     } болезнь
 reagent-effect-guidebook-cure-eye-damage =
     { $chance ->
         [1]
             { $deltasign ->
-                [1] Лечит
-               *[-1] Повреждает
+                [1] Излечивает
+               *[-1] Наносит
             }
        *[other]
             { $deltasign ->
-                [1] лечит
-               *[-1] повреждает
+                [1] излечить
+               *[-1] наносить
             }
     } повреждения глаз
 reagent-effect-guidebook-chem-vomit =
@@ -273,9 +273,9 @@ reagent-effect-guidebook-paralyze =
     } употребившего минимум на { NATURALFIXED($time, 3) } { MANY("second", $time) }
 reagent-effect-guidebook-movespeed-modifier =
     { $chance ->
-        [1] Изменяет
-       *[other] изменять
-    } скорость передвижения в { NATURALFIXED($walkspeed, 3) }x минимум на { NATURALFIXED($time, 3) } { MANY("second", $time) }
+        [1] Делает
+       *[other] делать
+    } скорость передвижения { NATURALFIXED($walkspeed, 3) }x от стандартной минимум на { NATURALFIXED($time, 3) } { MANY("second", $time) }
 reagent-effect-guidebook-reset-narcolepsy =
     { $chance ->
         [1] Предотвращает

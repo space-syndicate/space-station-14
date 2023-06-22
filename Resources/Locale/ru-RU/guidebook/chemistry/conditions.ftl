@@ -1,6 +1,6 @@
 reagent-effect-condition-guidebook-total-damage =
     { $max ->
-        [2147483648] имеет по крайней мере { NATURALFIXED($min, 2) } общего урона
+        [2147483648] тело имеет по крайней мере { NATURALFIXED($min, 2) } общего урона
        *[other]
             { $min ->
                 [0] имеет по крайней мере { NATURALFIXED($max, 2) } общего урона
@@ -9,7 +9,7 @@ reagent-effect-condition-guidebook-total-damage =
     }
 reagent-effect-condition-guidebook-reagent-threshold =
     { $max ->
-        [2147483648] есть по крайней мере { NATURALFIXED($min, 2) }ед. { $reagent }
+        [2147483648] в кровеносной система есть по крайней мере { NATURALFIXED($min, 2) }ед. { $reagent }
        *[other]
             { $min ->
                 [0] есть по крайней мере { NATURALFIXED($max, 2) }ед. { $reagent }
