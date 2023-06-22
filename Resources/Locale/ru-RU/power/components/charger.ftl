@@ -1,2 +1,2 @@
 charger-examine = Заряжает [color={ $color }]{ $chargeRate }Вт[/color] в секунду.
-charger-component-charge-rate = Charge rate
+charger-component-charge-rate = скорость зарядки

@@ -1,2 +1,2 @@
-logic-gate-examine = It is currently { INDEFINITE($gate) } { $gate } gate.
-logic-gate-cycle = Switched to { INDEFINITE($gate) } { $gate } gate
+logic-gate-examine = Установлен гейт { $gate }.
+logic-gate-cycle = Переключить на гейт { $gate }
