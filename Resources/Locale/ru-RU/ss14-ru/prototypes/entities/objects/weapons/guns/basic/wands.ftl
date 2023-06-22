@@ -12,5 +12,5 @@ ent-WeaponWandPolymorphDoor = волшебная палочка входа
     .desc = На случай, когда нужен маршрут для побега.
 ent-WeaponWandCluwne = волшебная палочка клувеня
     .desc = Усугубите их положение, превратив их в клувеня.
-ent-WeaponWandPolymorphBread = magic bread wand
-    .desc = Turn all your friends into bread! Your boss! Your enemies! Your dog! Make everything bread!
+ent-WeaponWandPolymorphBread =  волшебная палочка хлеба
+    .desc = Превратите в хлеб всех своих друзей! Вашего босса! Ваших врагов! Вашу собаку! Превратите всё в хлеб!

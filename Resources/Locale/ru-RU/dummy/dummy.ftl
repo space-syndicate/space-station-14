@@ -1,7 +1,7 @@
-dummy-cant-speak = You cannot speak without a helping hand.
-dummy-insert-hand = You insert your hand.
-dummy-remove-hand = You remove your hand.
-dummy-inserted-hand = You have a helping hand.
-dummy-removed-hand = you have lost your helping hand.
-dummy-role-name = A dummy
-dummy-role-description = Become a dummy, dummy!
+dummy-cant-speak = Вы не можете говорить без руки помощи.
+dummy-insert-hand = Вы вставляете свою руку.
+dummy-remove-hand = Вы вытаскиваете свою руку.
+dummy-inserted-hand = У вас появилась рука помощи.
+dummy-removed-hand = Вы потеряли свою руку помощи.
+dummy-role-name = Кукла
+dummy-role-description = Стань куклой!

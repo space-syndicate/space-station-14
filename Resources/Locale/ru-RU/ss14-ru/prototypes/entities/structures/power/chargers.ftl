@@ -1,6 +1,6 @@
-ent-PowerCellRecharger = зарядник для батарей
+ent-PowerCellRecharger = зарядник батарей
     .desc = { "" }
-ent-WeaponCapacitorRecharger = зарядник
+ent-WeaponCapacitorRecharger = зарядник энергооружия
     .desc = { ent-PowerCellRecharger.desc }
-ent-WallWeaponCapacitorRecharger = настенный зарядник
+ent-WallWeaponCapacitorRecharger = настенный зарядник энергооружия
     .desc = { ent-WeaponCapacitorRecharger.desc }
