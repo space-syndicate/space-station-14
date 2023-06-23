@@ -12,3 +12,6 @@ ent-MobCarpSalvage = { ent-MobCarp }
 ent-MobCarpDragon = space carp
     .suffix = DragonBrood
     .desc = { ent-BaseMobCarp.desc }
+ent-MobCarpDungeon = { ent-MobCarp }
+    .suffix = Dungeon
+    .desc = { ent-MobCarp.desc }

@@ -102,3 +102,5 @@ ent-ClothingHeadHatWatermelon = watermelon helmet
     .desc = A carelessly cut half of a watermelon, gutted from the inside, to be worn as a helmet. It can soften the blow to the head.
 ent-ClothingHeadHatHetmanHat = Hetman hat
     .desc = From the Zaporozhian Sich with love.
+ent-ClothingHeadHatMagician = magician's top hat.
+    .desc = A magician's top hat.

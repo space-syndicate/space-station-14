@@ -12,3 +12,5 @@ ent-WeaponWandPolymorphDoor = wand of entrance
     .desc = For when you need a get-away route.
 ent-WeaponWandCluwne = wand of cluwning
     .desc = Make their situation worse by turning them into a cluwne.
+ent-WeaponWandPolymorphBread = magic bread wand
+    .desc = Turn all your friends into bread! Your boss! Your enemies! Your dog! Make everything bread!

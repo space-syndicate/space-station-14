@@ -32,3 +32,6 @@ ent-CrateFunBoxing = ящик боксерского снаряжения
     .desc = Хотите организовать подпольный бойцовский клуб или провести турнир среди сотрудников станции? Этот ящик для вас!
 ent-CrateFunPirate = { ent-CratePirate }
     .desc = { ent-CratePirate.desc }
+ent-CrateFunToyBox = { ent-CrateToyBox }
+    .suffix = Filled
+    .desc = { ent-CrateToyBox.desc }

@@ -102,3 +102,5 @@ ent-ClothingHeadHatWatermelon = арбузный шлем
     .desc = Небрежно отрезанная половина арбуза, выпотрошенная изнутри, для ношения в качестве шлема. Она способна смягчить удар по голове.
 ent-ClothingHeadHatHetmanHat = гетманская шапка
     .desc = Из Запорожской Сечи с любовью.
+ent-ClothingHeadHatMagician = magician's top hat.
+    .desc = A magician's top hat.
