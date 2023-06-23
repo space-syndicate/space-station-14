@@ -97,7 +97,8 @@
     - type: Tag
       tags:
         - CannotSuicide
-    - type: TTS # Corvax-TTS
+  # Corvax-VoiceMask-Start
+    - type: TTS
     - type: Inventory
     - type: InventorySlots
     - type: UserInterface
@@ -106,6 +107,7 @@
           type: VoiceMaskBoundUserInterface
     - type: Loadout
       prototypes: [ HoloMaskGear ]
+ # Corvax-VoiceMask-End
 
 # From the uplink injector
 - type: entity
