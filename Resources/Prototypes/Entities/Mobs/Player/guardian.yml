@@ -134,31 +134,6 @@
           color: "#40a7d7"
           shader: unshaded
 
-
-
-- type: startingGear
-  id: HoloMaskGear
-  equipment:
-    mask: VoiceMaskHOLO
-
-- type: entity
-  parent: ClothingMaskBase
-  name: MaskHolo
-  id: VoiceMaskHOLO
-  suffix: Voice Mask, HOLO
-  components:
-    - type: VoiceMasker
-    - type: Sprite
-      layers:
-      - sprite: Clothing/Mask/gas.rsi
-        state: equipped-MASK
-        visible: false
-      - sprite: Clothing/Mask/gas.rsi
-        state: icon
-    - type: Clothing
-      slots: [mask]
-
-
 # From Wizard deck of cards
 - type: entity
   name: Ifrit
