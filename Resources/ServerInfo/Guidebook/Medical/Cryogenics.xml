@@ -1,12 +1,12 @@
 <Document>
-# Cryogenics
-Cryogenics can be a bit daunting to understand, but hopefully, quick run through of this diagram, you'll learn how to work it! So, let's go over what each part does:
+# Криогеника
+Криогеника не самая простая дисциплина, однако мы надеемся, что используя схему ниже, вы быстро войдёте в курс дела и разберётесь, как же она работает! Итак, начнём разбор:
 
-- Air in: Air comes in here through the distro or an air tank, giving those inside something to breathe, and the freezer something to chill.
-- Gas pump: Limits the network pressure, so those in the tube aren't crushed.
-- Freezer: Chills the air, and by extension, patients in the tube, so Cryoxadone can activate.
-- Gas filters: Removes waste gas (Carbon Dioxide and Nitrous Oxide) from the loop.
-- Air out: Waste gasses go here, either into a storage tank, or into the waste network.
+- Ввод воздуха: Сюда проходит воздух из дистро-трубы (синяя) или  канистры со смесью воздуха, что предоставляет возможность дышать тем, кто внутри, а холодильнику возможность охладить атмосферу.
+- Газовый насос: Является сдерживающим фактором для давления, чтобы пациента не раздавило при нахождении в камере.
+- Холодильник: Охлаждает смесь газа, и, с помощью этого, и пациента, чтобы он мог правильно метаболизировать Криоксадон
+- Газовые фильтры: Убирают лишние газы (углекислый газ или оксид азота) из системы.
+- Вывод воздуха: Здесь фильтруются лишние газы, которые либо выходят в специальную канистру, либо в трубу отходов (красную)
 <Box>
 <GuideEntityEmbed Entity="GasPipeBend" Rotation="90"/>
 <GuideEntityEmbed Entity="GasPipeStraight" Rotation="90"/>
@@ -32,16 +32,17 @@ Cryogenics can be a bit daunting to understand, but hopefully, quick run through
 <GuideEntityEmbed Entity="GasPipeBend" Rotation="270"/>
 </Box>
 
-Not every network will look like this, but hopefully, it's enough to give you the basic gist of how it's functioning.
+Не все сети конфигурации должны выглядеть так, но надеемся, что этот пример объяснит вам базовый функционал всей системы.
 
-An important thing to note, winter clothing (and hardsuits) will make cryogenic treatment less, or completely ineffective. Be sure to remove cold preventative clothing before placing people in the pod.
+Важно подметить, что пациент, одетый в зимнюю одежду (или скафандр), будет дольше доходить до нужной температуры в капсуле криогеники. В случае со скафандром он просто никогда не дойдёт до кондиции. По этой причине перед помещением пациента в капсулу - убедитесь в том, что его экипировка не помешает процессу.
 
-## Using the Pod
-Once things have been set up, you're going to require a specific medication, Cryoxadone. Cryoxadone heals all damage types when a patient is chilled, and can either be pre-adminsitered (with a pill), or loaded into the cell directly with a beaker. Do note, patients won't begin to heal until they've chilled to the appropriate temperature, it may be worthwhile to wait a bit before placing a beaker inside.
+## Использования капсулы
+Закончив с настройкой системы, можно переходить к следующему шагу - Криоксадону. 
+Криоксадон вылечит практически все типы урона, пока пациент находится в состоянии заморозки. Вы можете дать пациенту таблетку заранее, перед погружением в капсулу, либо загрузив химикат в мензурку прямо в саму капсулу. Стоит помнить, что пациенту понадобится время для охлаждения до необходимой температуры, потому бывает полезно подождать какое-то время, перед тем, как помещать мензурку в капсулу.
 
-## Additional Information:
+## Дополнительная информация:
 
-The standard pressure for a gas pump is 1.325 kpa. Cryoxadone works at under 170K, but it is standard practice to set the freezer to 100K for faster freezing.
+Стандартное давление газового насоса 1.325 Кпа. Криоксадон работает при температуре ниже 170К, но обычно параметры охладителя ставят на 100К для ускорения процесса охлаждения.
 
 <GuideReagentEmbed Reagent="Cryoxadone"/>
 <GuideReagentEmbed Reagent="Dexalin"/>

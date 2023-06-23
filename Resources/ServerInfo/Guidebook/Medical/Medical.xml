@@ -1,10 +1,10 @@
 <Document>
-# Medical
-This is the department where people go to when they're hurt, it's up to the folks working here to fix them.
+# Медбей
+Первое место, куда стоит направиться члену экипажа, если его физическое состояние ухудшилось. Работа сотрудников медбея - возвращать таких сотрудников в идеальное состояние.
 
-Right now, medbay is divided into two different sets of care:
+На данный момент медбей разделён на 2 подотдела:
 
-## Medical Treatment
+## Первая помощь
 <Box>
 <GuideEntityEmbed Entity="Brutepack"/>
 <GuideEntityEmbed Entity="Bloodpack"/>
@@ -12,7 +12,7 @@ Right now, medbay is divided into two different sets of care:
 <GuideEntityEmbed Entity="Gauze"/>
 <GuideEntityEmbed Entity="HandheldHealthAnalyzer"/>
 </Box>
-## Chemical Production
+## Производство медикаментов
 <Box>
 <GuideEntityEmbed Entity="ChemDispenser"/>
 <GuideEntityEmbed Entity="LargeBeaker"/>

@@ -1,20 +1,21 @@
 <Document>
-# Cloning
-If all else fails, patients will need to be cloned. This should only be used as a last resort, if recovery is impossible. This is most often the case when the body has started to rot, or if they have excessive amounts of damage.
+# Клонирование
+Когда вы перепробовали всё, что могли, но пациент всё равно испустил дух - в дело вступает клонирование. Обычно используется только в самых крайних случаях, когда восстановление иными путями невозможно. К примеру, если тело уже начало гнить или было ужасно обезображено и проще клонировать, чем собирать плоть в паззл.
 
-Cloning itself is relatively simple. (Assuming the network is set.) Just drag a body into the scanner, check the cloning console, and clone! If they've taken cellular damage, or have rotted for too long, the results can be... less than pleasant.
+Сам по себе процесс клонирования довольно прост (если конечно все машины уже связаны между собой по Сети). Просто перетащите тело в сканнер, проверьте машину клонирования, нажмите кнопку - готово! Однако если целостность клеток тела нарушена, или же тело успело основательно сгнить, то последствия клонирования могут быть... не очень приятными.
 
-As a note: Cloning isn't always available, and it would be best not to rely on it. Science might be able to set up cloning, if it's unavailable.
+Важно: Клонирование не всегда доступно для персонала станции, потому на него не нужно надеяться для решения всех вопросов.
+
 <Box>
 <GuideEntityEmbed Entity="ComputerCloningConsole" Caption="cloning console"/>
 <GuideEntityEmbed Entity="MedicalScanner"/>
 <GuideEntityEmbed Entity="CloningPod"/>
 <GuideEntityEmbed Entity="NetworkConfigurator"/>
 </Box>
-## Biomass
-Creating a clone requires biomass, which, gruesomely, involves recycling organic material. Be it crew members without a soul, station pets, or hostile creatures that have been 'taken care of', things can often be recycled.
+## Биомасса
+Создание клона из ничего требует биомасса, запас которой, к сожалению, можно стабильно пополнять в адекватных количествах только с помощью переработки умерщвлённых тел. Будь то ваши погибшие товарищи, чья душа наконец покинула этот бренный мир и не желает больше быть клонированной, питомцы станции, или даже враждебна фауна - всё можно переработать.
 
-Dragging a body onto the biomass reclaimer (with your cursor) will mulch it for re-use. If it's a crew member, it's common practice to strip the body and return departmental gear before doing such.
+Перетащите тело на переработчик биомассы - остальное он сделает сам. Если речь идёт о члене экипажа, то стандартной процедурой будет раздеть тело, перед тем как перерабатывать его и, затем, передать экипировку в отдел погибшего.
 <Box>
 <GuideEntityEmbed Entity="BiomassReclaimer"/>
 <GuideEntityEmbed Entity="MaterialBiomass"/>

@@ -1,10 +1,10 @@
 <Document>
-# Chemist
-Now you've done it, you picked the one job where -math- is mandatory. Grab your beaker, pull up a chair, and get cracking, it's time to cook up some chems.
+# Химик
+Ну вот, ты добился своего - ты выбрал единственную работу, где уметь считать обязательно. Ну что ж, хватай свою мензурку, пододвигай стул и хорошенько разомни свои пальчики. Время варить.
 
-While chemists primarily make medications, there's a very wide variety of chemicals that can be made, all of which are showcased in the Chemicals section of the Guidebook.
+В то время как химики в основном занимаются изготовлением медицины, существует огромный список химикатов, которые можно изготовить. Все эти химикаты показаны в секции Химикаты этой книги.
 
-## Equipment:
+## Оборудование:
 
 <Box>
 <GuideEntityEmbed Entity="ChemDispenser"/>
@@ -20,24 +20,26 @@ While chemists primarily make medications, there's a very wide variety of chemic
 <GuideEntityEmbed Entity="PillCanister"/>
 </Box>
 
-## The Basics:
-Chemistry is fairly straightforward once you know what to expect. Here's a simple, step-by-step process on how to begin.
+## Основы:
+На самом деле весь процесс изготовления предельно прост, нужно лишь знать чего ожидать. Внизу для вас расписан простой, пошаговый процесс.
 
-- Grab a beaker, Pill Canister, and if desired, some Bottles.
-- Place the beaker in the Chemical Dispenser, and Pill Canister (or bottle) in the Chem Master.
-- Open the Chemical Dispenser UI, and make your mix. Recipies are in other sections of the guidebook.
-- Alt-click the dispenser to remove your beaker, and place it in the Chem Master.
-- Open the Chem Master UI. On the Input tab, move your mix into the buffer.
-- Move to the Output tab, customise your pill, and press the Create button.
-- Alt-click the Chem Master to get the pill bottle out. You may have to remove the beaker first.
-- Click on a table, crate, or another surface to empty the pill bottle if desired. Alternatively, store or empty it into another storage container.
+- Возьмите мензурку, таблетницу, и, по желанию, несколько бутылочек.
+- Поместите мензурку в Раздатчик Химикатов, а таблетницу (или бутыль) в Хим Мастер.
+- Откройте интерфейс Раздатчика Химикатов и наберите необходимых реагентов для желаемого лекарства. Рецепты находятся в других секциях этой книги.
+- Альт-кликом по Раздатчику вытащите мензурку и переместите её в Хим Мастер.
+- Откройте интерфейс Хим Мастера. На вкладке Ввод, переместите всё, что вы сварили в буффер.
+- Перейдите на вкладку вывода, впишите название для своих таблеток, подберите цвет, дозировку, и, наконец, нажмите Создать.
+- Альт-кликом по Хим Мастеру вытащите таблетницу, возможно сначала возьмётся мензурка.
+- Нажмите на стол, ящик или другую поверхность с активной таблетницей, чтобы выгрузить на это пространство все готовые к употреблению таблетки. Также можно просто оставить её как есть или вручную забрать таблетки из таблетницы и переместить их куда душе угодно.
 
-That's it, you've made your first set of pills! Consider checking with Medical Doctors and other crew to see what else may be requested, refilling the medical kits in medbay storage, or just experimenting!
+Вот и всё. Вы сделали свой первый набор таблеток! Обязательно уточните у врачей и Главного Врача какие виды лекарств сейчас необходимы. Заполняйте потраченные лекарства из аптечек и хранилищ, пробуйте новые и интересные рецепты или в конце концов просто экспериментируйте!
 
-You can also use the hand labeler to organize individual bottles or bags without using the Chem Master labeling system.
+Вы также можете использовать этикетировщик, чтобы упростить процесс хранения и использования бутылочек, таблетниц или целых сумок, не используя систему Хим Мастера.
 
-## Extra Content:
+## Дополнительный контент:
 
+Кстати об экспериментах. Есть ещё несколько игрушек которые помогут вам в отделе Химии.
+Эта работа требует особого упорства, и в ней нередко совершают ошибки даже самые
 Speaking of experimentation, there are a few more toy you can use when it comes to chemistry. This job requires a lot of trial and error, but it was worth mentioning that these things exist! It's up to you to figure out what to make with them.
 
 <Box>
