@@ -11,14 +11,14 @@ replay-loading-failed =
     { $reason }
 # Main Menu
 replay-menu-subtext = Повторы
-replay-menu-load = Загрузить выбранный реплей
-replay-menu-select = Выбрать реплей
-replay-menu-open = Открыть папку реплеев
-replay-menu-none = Реплеи не найдены.
+replay-menu-load = Загрузить выбранный повтор
+replay-menu-select = Выбрать повтор
+replay-menu-open = Открыть папку повторов
+replay-menu-none = Повторы не найдены.
 # Main Menu Info Box
-replay-info-title = Информация о реплее
-replay-info-none-selected = Реплей не выбран
-replay-info-invalid = [color=red]Выбран неверный реплей[/color]
+replay-info-title = Информация о повторе
+replay-info-none-selected = Повтор не выбран
+replay-info-invalid = [color=red]Выбран неверный повтор[/color]
 replay-info-info =
     { "[" }color=gray]Выбрано:[/color]  { $name } ({ $file })
     { "[" }color=gray]Время:[/color]   { $time }
@@ -30,7 +30,7 @@ replay-info-info =
     { "[" }color=gray]Type Hash:[/color]   { $hash }
     { "[" }color=gray]Comp Hash:[/color]   { $compHash }
 # Replay selection window
-replay-menu-select-title = Выбрать реплей
+replay-menu-select-title = Выбрать повтор
 # Replay related verbs
 replay-verb-spectate = Наблюдать
 # command
