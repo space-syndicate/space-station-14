@@ -19,7 +19,7 @@ reagent-effect-guidebook-create-entity-reaction-effect =
        *[other] создают
     } { $amount ->
         [1] { INDEFINITE($entname) }
-       *[other] { $amount } { MAKEPLURAL($entname) }
+       *[other] { $amount } { $entname }
     }
 reagent-effect-guidebook-explosion-reaction-effect =
     { $chance ->
