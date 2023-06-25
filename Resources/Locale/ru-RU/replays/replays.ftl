@@ -7,10 +7,10 @@ replay-loading-spawning = Спавн сущностей
 replay-loading-initializing = Инициализация сущностей
 replay-loading-starting = Запуск сущностей
 replay-loading-failed =
-    Не удалось загрузить реплей:
+    Не удалось загрузить повтор:
     { $reason }
 # Main Menu
-replay-menu-subtext = Реплей клиент
+replay-menu-subtext = Повторы
 replay-menu-load = Загрузить выбранный реплей
 replay-menu-select = Выбрать реплей
 replay-menu-open = Открыть папку реплеев

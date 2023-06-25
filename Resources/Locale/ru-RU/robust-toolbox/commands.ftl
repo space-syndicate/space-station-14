@@ -11,7 +11,7 @@ cmd-parse-failure-uid = { $arg } не является допустимым UID 
 cmd-parse-failure-mapid = { $arg } не является допустимым MapId.
 cmd-parse-failure-entity-exist = UID { $arg } не соответствует существующей сущности.
 cmd-error-file-not-found = Не удалось найти файл: { $file }.
-cmd-error-dir-not-found = Не удалось найти каталог: { $dir }.
+cmd-error-dir-not-found = Не удалось найти директорию: { $dir }.
 cmd-failure-no-attached-entity = К этой оболочке не привязана никакая сущность.
 
 ## 'help' command
