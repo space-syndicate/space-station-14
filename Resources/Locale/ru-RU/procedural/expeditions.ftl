@@ -13,7 +13,7 @@ salvage-expedition-window-hostiles = Враги:
 salvage-expedition-window-duration = Продолжительность:
 salvage-expedition-window-biome = Биом:
 salvage-expedition-window-modifiers = Модификаторы:
-salvage-expedition-window-rewards = Rewards:
+salvage-expedition-window-rewards = Награды:
 salvage-expedition-window-claimed = Принято
 salvage-expedition-window-claim = Принять
 salvage-expedition-window-next = Следующее предложение
@@ -45,6 +45,6 @@ salvage-expedition-announcement-countdown-seconds =
         [few] секунды
        *[other] секунд
     }.
-salvage-expedition-reward-description = Mission completion reward
+salvage-expedition-reward-description = Награда за завершение миссии
 salvage-expedition-announcement-dungeon = Подземелье расположено от вас на { $direction }.
 salvage-expedition-completed = Экспедиция окончена.

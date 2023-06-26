@@ -1,12 +1,13 @@
-ent-ClothingOuterHardsuitEVA = EVA suit
-    .desc = A lightweight space suit with the basic ability to protect the wearer from the vacuum of space during emergencies.
-ent-ClothingOuterHardsuitSyndicate = syndicate EVA suit
-    .desc = Has a tag on the back that reads: 'Totally not property of an enemy corporation, honest!'
-ent-ClothingOuterSuitEmergency = emergency EVA suit
-    .desc = An emergency EVA suit with a built-in helmet. It's horribly slow and lacking in temperature protection, but enough to bide you time from the harsh vaccuum of space.
-ent-ClothingOuterHardsuitEVAPrisoner = prisoner EVA suit
-    .desc = A lightweight space suit for prisoners to protect them from the vacuum of space during emergencies.
-ent-ClothingOuterHardsuitAncientEVA = NTSRA voidsuit
-    .desc = An ancient space suit, designed by the NTSRA branch of CentCom. It is very finely crafted, allowing for greater mobility than most modern space suits.
-ent-ClothingOuterHardsuitVoidParamed = Paramedic Void Suit
-    .desc = A void suit made for paramedics.
+ent-ClothingOuterHardsuitEVA = скафандр EVA
+    .desc = Легкий космический скафандр, способный защитить владельца от космического вакуума во время аварийной ситуации.
+ent-ClothingOuterHardsuitSyndicate = скафандр EVA синдиката
+    .desc = На бирке написано 'Совершенно не собственность вражеской корпорации, честно!'.
+ent-ClothingOuterSuitEmergency = аварийный скафандр EVA
+    .desc = Аварийный скафандр EVA со встроенным шлемом. Он ужасно медленный и не имеет температурной защиты, но его достаточно, чтобы выиграть время в жестком вакууме космоса.
+ent-ClothingOuterHardsuitEVAPrisoner = тюремный скафандр EVA
+    .desc = Легкий космический скафандр, способный защитить заключённого от космического вакуума во время аварийной ситуации.
+ent-ClothingOuterHardsuitAncientEVA = пустотный скафандр NTSRA
+    .desc = Древний космический скафандр, разработанный по заказу Центкома подразделением NTSRA - агентством космических исследований Nanotrasen. Он изготовлен с особой тщательностью, обеспечивая большую мобильность, чем большинство современных космических костюмов.
+ent-ClothingOuterHardsuitVoidParamed = пустотный скафандр парамедика
+    .desc = Пустотный скафандр, предназначенный для парамедиков.
+

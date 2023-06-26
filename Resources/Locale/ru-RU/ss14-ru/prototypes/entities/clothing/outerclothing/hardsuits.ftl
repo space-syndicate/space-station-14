@@ -1,5 +1,5 @@
-ent-ClothingOuterHardsuitBasic = basic hardsuit
-    .desc = A basic, universal hardsuit that protects the wearer against the horrors of life in space. Beats not having a hardsuit, at least.
+ent-ClothingOuterHardsuitBasic = базовый скафандр
+    .desc = Базовый, универсальный скафандр, защищающий владельца от ужасов пребывания в космосе. По крайней мере, это лучше, чем отсутствие скафандра.
 ent-ClothingOuterHardsuitAtmos = скафандр атмос-техника
     .desc = Специальный костюм, защищающий от опасной среды с низким давлением. Имеет тепловую защиту.
 ent-ClothingOuterHardsuitCap = бронескафандр капитана
