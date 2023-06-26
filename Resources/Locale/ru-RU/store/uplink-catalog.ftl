@@ -145,6 +145,8 @@ uplink-decoy-disk-name = Фальшивый диск ядерной автори
 uplink-decoy-disk-desc = Кусок пластика с лентикулярным принтом, сделанным так, чтобы быть похожим на диск ядерной авторизации.
 uplink-cigarettes-name = { ent-CigPackSyndicate }
 uplink-cigarettes-desc = { ent-CigPackSyndicate.desc }
+uplink-eshield-name = Energy Shield
+uplink-eshield-desc = Exotic energy shield that reflects almost all laser beams, as well as a little protection from bullets and other physical attacks.
 uplink-soap-name = { ent-SoapSyndie }
 uplink-soap-desc = { ent-SoapSyndie.desc }
 uplink-ultrabright-lantern-name = Сверхъяркий светильник
@@ -155,8 +157,6 @@ uplink-stimpack-name = Стимпак
 uplink-stimpack-desc = Легендарный химический коктейль, производимый компанией Donk Co. для Синдиката. Одна инъекция этого вещества увеличивает скорость бега и позволяет быстрее восстанавливаться после оглушения в течение 5 минут.
 uplink-stimkit-name = Набор стимпаков
 uplink-stimkit-desc = Аптечка, содержащая 6 микро-стимпаков, каждый из которых содержит минутную дозу стимулятора.
-uplink-experimental-stimpack-name = Экспериментальный стимпак
-uplink-experimental-stimpack-desc = Очень нестабильный и токсичный стимпак, используйте на свой страх и риск. Основными эффектами являются практически полная невосприимчивость к оглушающему оружию, ускоренная регенерация ран, огромная скорость передвижения, но при этом химикат будет постоянно отравлять вас, пока находится в вашей крови.
 uplink-syndicate-segway-crate-name = { ent-VehicleSyndicateSegway }
 uplink-syndicate-segway-crate-desc = { ent-VehicleSyndicateSegway.desc }
 # Pointless

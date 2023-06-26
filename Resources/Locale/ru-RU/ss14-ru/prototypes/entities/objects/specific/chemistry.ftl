@@ -1,5 +1,7 @@
 ent-BaseBeaker = { ent-BaseItem }
     .desc = { ent-BaseItem.desc }
+ent-BaseBeakerMetallic = { ent-BaseItem }
+    .desc = { ent-BaseItem.desc }
 ent-Beaker = мензурка
     .desc = Используется для хранения среднего количества химикатов и растворов.
 ent-CryoxadoneBeakerSmall = мензурка криоксадона

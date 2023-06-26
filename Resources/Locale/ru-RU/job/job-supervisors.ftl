@@ -1,10 +1,10 @@
 job-supervisors-centcom = представителю Центкома
 job-supervisors-captain = капитану
 job-supervisors-hop = главе персонала
-job-supervisors-hop-qm = квартирмейстеру и главе персонала
 job-supervisors-hos = главе службы безопасности
 job-supervisors-ce = старшему инженеру
 job-supervisors-cmo = главному врачу
+job-supervisors-qm = the quartermaster
 job-supervisors-rd = научному руководителю
 job-supervisors-service = поварам, ботаникам, барменам, и главе персонала
 job-supervisors-engineering = инженерам, атмосферным техникам, и старшему инженеру
