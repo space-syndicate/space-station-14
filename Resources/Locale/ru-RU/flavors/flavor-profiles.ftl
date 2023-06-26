@@ -148,8 +148,8 @@ flavor-complex-chaos = как хаос
 flavor-complex-squirming = как шевеление
 flavor-complex-electrons = как электроны
 flavor-complex-parents = как чьи-то родители
-flavor-complex-plastic = like plastic
-flavor-complex-glue = like glue
+flavor-complex-plastic = как пластик
+flavor-complex-glue = как клей
 
 ## Generic alcohol/soda taste. This should be replaced with an actual flavor profile.
 
@@ -201,7 +201,7 @@ flavor-complex-themartinez = как фиалки и лимонная водка
 
 ### This is exactly what pilk tastes like. I'm not even joking. I might've been a little drunk though
 
-flavor-complex-white-gilgamesh = like lightly carbonated cream
+flavor-complex-white-gilgamesh = как слегка газированные сливки
 flavor-complex-antifreeze = как тепло
 flavor-complex-pilk = как сладкое молоко
 
