@@ -8,11 +8,11 @@ cmd-parse-failure-integer = { $arg } не является допустимым 
 cmd-parse-failure-float = { $arg } не является допустимым float.
 cmd-parse-failure-bool = { $arg } не является допустимым bool.
 cmd-parse-failure-uid = { $arg } не является допустимым UID сущности.
-cmd-parse-failure-mapid = { $arg } is not a valid MapId.
+cmd-parse-failure-mapid = { $arg } не является допустимым MapId.
 cmd-parse-failure-entity-exist = UID { $arg } не соответствует существующей сущности.
-cmd-error-file-not-found = Could not find file: { $file }.
-cmd-error-dir-not-found = Could not find directory: { $dir }.
-cmd-failure-no-attached-entity = There is no entity attached to this shell.
+cmd-error-file-not-found = Не удалось найти файл: { $file }.
+cmd-error-dir-not-found = Не удалось найти директорию: { $dir }.
+cmd-failure-no-attached-entity = К этой оболочке не привязана никакая сущность.
 
 ## 'help' command
 
@@ -146,9 +146,9 @@ cmd-monitor-plus-all-hint = Показывает все мониторы
 
 ## Mapping commands
 
-cmd-set-ambient-light-desc = Allows you to set the ambient light for the specified map, in SRGB.
+cmd-set-ambient-light-desc = Позволяет установить эмбиентое освещение для указанной карты, в формате SRGB.
 cmd-set-ambient-light-help = setambientlight [mapid] [r g b a]
-cmd-set-ambient-light-parse = Unable to parse args as a byte values for a color.
+cmd-set-ambient-light-parse = Не удалось спарсить аргументы как байтовые значения цветов.
 cmd-savemap-desc = Сериализует карту на диск. Не будет сохранять карту после инициализации, если это не будет сделано принудительно.
 cmd-savemap-help = savemap <MapID> <Path> [force]
 cmd-savemap-not-exist = Целевая карта не существует.
