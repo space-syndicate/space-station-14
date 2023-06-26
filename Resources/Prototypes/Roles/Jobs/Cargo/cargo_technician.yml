@@ -5,7 +5,7 @@
   playTimeTracker: JobCargoTechnician
   startingGear: CargoTechGear
   icon: "CargoTechnician"
-  supervisors: job-supervisors-qm # Corvax-JobSupervisors
+  supervisors: job-supervisors-qm
   access:
   - Cargo
   - Maintenance

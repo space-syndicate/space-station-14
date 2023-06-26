@@ -34,4 +34,20 @@ SS14 имеет довольно продвинутую систему элек�
 
 Установка СМЭС требует наличия рядом кабельной клеммы. СМЭС будет получать электроэнергию через клемму, и подавать её на кабель под собой. Клемма нужна чтобы высоковольтный вход и высоковольтный выход не соединялись. Не подключайте СМЭС к самому себе, это приведет к короткому замыканию, которое в зависимости от степени тяжести может вызвать мерцание или перебои в подаче электроэнергии.
 
+## APC breaking
+Currently the only power storage device that has a limit to it's power network is APC. As soon as all connected devices and machinery demand more than [color=#a4885c]24kW[/color] it's breaker will pop and everything will turn off.
+<Box>
+<GuideEntityEmbed Entity="APCBasic"/>
+</Box>
+
+## Checking power grid
+1. Use the [color=#a4885c]t-ray scanner[/color] in order to locate cables that are hidden under tiles. (skip this step if cables aren't hidden)
+2. Pry open the tile that is blocking your access to the cable with a [color=#a4885c]crowbar[/color]. (skip this step if cables aren't hidden)
+3. Equip your trusty [color=#a4885c]Multitool[/color] and click on any cable to see powergrid stats.
+<Box>
+<GuideEntityEmbed Entity="Multitool"/>
+<GuideEntityEmbed Entity="Crowbar"/>
+<GuideEntityEmbed Entity="trayScanner"/>
+</Box>
+
 </Document>
