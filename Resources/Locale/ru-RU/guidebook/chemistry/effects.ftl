@@ -1,293 +1,293 @@
 -create-3rd-person =
     { $chance ->
-        [1] Создаёт
-       *[other] создают
+        [1] Creates
+       *[other] create
     }
 -cause-3rd-person =
     { $chance ->
-        [1] Вызывает
-       *[other] вызывают
+        [1] Causes
+       *[other] cause
     }
 -satiate-3rd-person =
     { $chance ->
-        [1] Насыщает
-       *[other] насыщают
+        [1] Satiates
+       *[other] satiate
     }
 reagent-effect-guidebook-create-entity-reaction-effect =
     { $chance ->
-        [1] Создаёт
-       *[other] создают
+        [1] Creates
+       *[other] create
     } { $amount ->
         [1] { INDEFINITE($entname) }
-       *[other] { $amount } { $entname }
+       *[other] { $amount } { MAKEPLURAL($entname) }
     }
 reagent-effect-guidebook-explosion-reaction-effect =
     { $chance ->
-        [1] Вызывает
-       *[other] вызывают
-    } взрыв
+        [1] Causes
+       *[other] cause
+    } an explosion
 reagent-effect-guidebook-foam-area-reaction-effect =
     { $chance ->
-        [1] Создаёт
-       *[other] создают
-    } большое количество пены
+        [1] Creates
+       *[other] create
+    } large quantities of foam
 reagent-effect-guidebook-foam-area-reaction-effect =
     { $chance ->
-        [1] Создаёт
-       *[other] создают
-    } большое количество дыма
+        [1] Creates
+       *[other] create
+    } large quantities of smoke
 reagent-effect-guidebook-satiate-thirst =
     { $chance ->
-        [1] Утоляет
-       *[other] утоляют
+        [1] Satiates
+       *[other] satiate
     } { $relative ->
-        [1] жажду средне
-       *[other] жажду на { NATURALFIXED($relative, 3) }x от обычного
+        [1] thirst averagely
+       *[other] thirst at { NATURALFIXED($relative, 3) }x the average rate
     }
 reagent-effect-guidebook-satiate-hunger =
     { $chance ->
-        [1] Насыщает
-       *[other] насыщают
+        [1] Satiates
+       *[other] satiate
     } { $relative ->
-        [1] голод средне
-       *[other] голод на { NATURALFIXED($relative, 3) }x от обычного
+        [1] hunger averagely
+       *[other] hunger at { NATURALFIXED($relative, 3) }x the average rate
     }
 reagent-effect-guidebook-health-change =
     { $chance ->
         [1]
             { $healsordeals ->
-                [heals] Излечивает
-                [deals] Наносит
-               *[both] Изменяет здоровье на
+                [heals] Heals
+                [deals] Deals
+               *[both] Modifies health by
             }
        *[other]
             { $healsordeals ->
-                [heals] излечивать
-                [deals] наносить
-               *[both] изменяют здоровье на
+                [heals] heal
+                [deals] deal
+               *[both] modify health by
             }
     } { $changes }
 reagent-effect-guidebook-status-effect =
     { $type ->
         [add]
             { $chance ->
-                [1] Вызывает
-               *[other] вызывают
-            } { LOC($key) } минимум на { NATURALFIXED($time, 3) }, эффект накапливается
+                [1] Causes
+               *[other] cause
+            } { LOC($key) } for at least { NATURALFIXED($time, 3) } { MANY("second", $time) } with accumulation
        *[set]
             { $chance ->
-                [1] Вызывает
-               *[other] вызывают
-            } { LOC($key) } минимум на { NATURALFIXED($time, 3) }, эффект не накапливается
+                [1] Causes
+               *[other] cause
+            } { LOC($key) } for at least { NATURALFIXED($time, 3) } { MANY("second", $time) } without accumulation
         [remove]
             { $chance ->
-                [1] Удаляет
-               *[other] удаляют
-            } { NATURALFIXED($time, 3) } от { LOC($key) }
+                [1] Removes
+               *[other] remove
+            } { NATURALFIXED($time, 3) } { MANY("second", $time) } of { LOC($key) }
     }
 reagent-effect-guidebook-activate-artifact =
     { $chance ->
-        [1] Пытается
-       *[other] пытаются
-    } активировать артефакт
+        [1] Attempts
+       *[other] attempt
+    } to activate an artifact
 reagent-effect-guidebook-set-solution-temperature-effect =
     { $chance ->
-        [1] Устанавливает
-       *[other] устанавливают
-    } температуру раствора точно { NATURALFIXED($temperature, 2) }k
+        [1] Sets
+       *[other] set
+    } the solution temperature to exactly { NATURALFIXED($temperature, 2) }k
 reagent-effect-guidebook-adjust-solution-temperature-effect =
     { $chance ->
         [1]
             { $deltasign ->
-                [1] Добавляет
-               *[-1] Удаляет
+                [1] Adds
+               *[-1] Removes
             }
        *[other]
             { $deltasign ->
-                [1] добавляют
-               *[-1] удаляют
+                [1] add
+               *[-1] remove
             }
-    } тепло из раствора, пока температура не достигнет { $deltasign ->
-        [1] не более { NATURALFIXED($maxtemp, 2) }k
-       *[-1] не менее { NATURALFIXED($mintemp, 2) }k
+    } heat from the solution until it reaches { $deltasign ->
+        [1] at most { NATURALFIXED($maxtemp, 2) }k
+       *[-1] at least { NATURALFIXED($mintemp, 2) }k
     }
 reagent-effect-guidebook-adjust-reagent-reagent =
     { $chance ->
         [1]
             { $deltasign ->
-                [1] Добавляют
-               *[-1] Удаляет
+                [1] Adds
+               *[-1] Removes
             }
        *[other]
             { $deltasign ->
-                [1] добавляют
-               *[-1] удаляют
+                [1] add
+               *[-1] remove
             }
-    } { NATURALFIXED($amount, 2) }ед. от { $reagent } { $deltasign ->
-        [1] к
-       *[-1] из
-    } раствора
+    } { NATURALFIXED($amount, 2) }u of { $reagent } { $deltasign ->
+        [1] to
+       *[-1] from
+    } the solution
 reagent-effect-guidebook-adjust-reagent-group =
     { $chance ->
         [1]
             { $deltasign ->
-                [1] Добавляет
-               *[-1] Удаляет
+                [1] Adds
+               *[-1] Removes
             }
        *[other]
             { $deltasign ->
-                [1] добавляют
-               *[-1] удаляют
+                [1] add
+               *[-1] remove
             }
-    } { NATURALFIXED($amount, 2) }ед реагентов в группе { $group } { $deltasign ->
-        [1] к
-       *[-1] из
-    } раствора
+    } { NATURALFIXED($amount, 2) }u of reagents in the group { $group } { $deltasign ->
+        [1] to
+       *[-1] from
+    } the solution
 reagent-effect-guidebook-adjust-temperature =
     { $chance ->
         [1]
             { $deltasign ->
-                [1] Добавляют
-               *[-1] Удаляют
+                [1] Adds
+               *[-1] Removes
             }
        *[other]
             { $deltasign ->
-                [1] добавляют
-               *[-1] удаляют
+                [1] add
+               *[-1] remove
             }
-    } { POWERJOULES($amount) } тепла { $deltasign ->
-        [1] к телу
-       *[-1] из тела
-    }, в котором он метабилизируется
+    } { POWERJOULES($amount) } of heat { $deltasign ->
+        [1] to
+       *[-1] from
+    } the body it's in
 reagent-effect-guidebook-chem-cause-disease =
     { $chance ->
-        [1] Вызывает
-       *[other] вызывают
-    } болезнь { $disease }
+        [1] Causes
+       *[other] cause
+    } the disease { $disease }
 reagent-effect-guidebook-chem-cause-random-disease =
     { $chance ->
-        [1] Вызывает
-       *[other] вызывают
-    } болезнь { $diseases }
+        [1] Causes
+       *[other] cause
+    } the diseases { $diseases }
 reagent-effect-guidebook-jittering =
     { $chance ->
-        [1] Вызывает
-       *[other] вызывают
-    } тряску
+        [1] Causes
+       *[other] cause
+    } jittering
 reagent-effect-guidebook-chem-clean-bloodstream =
     { $chance ->
-        [1] Очищает
-       *[other] очищают
-    } кровеносную систему от других веществ
+        [1] Cleanses
+       *[other] cleanse
+    } the bloodstream of other chemicals
 reagent-effect-guidebook-cure-disease =
     { $chance ->
-        [1] Излечивает
-       *[other] излечивают
-    } болезнь
+        [1] Cures
+       *[other] cure
+    } diseases
 reagent-effect-guidebook-cure-eye-damage =
     { $chance ->
         [1]
             { $deltasign ->
-                [1] Излечивает
-               *[-1] Наносит
+                [1] Heals
+               *[-1] Deals
             }
        *[other]
             { $deltasign ->
-                [1] излечивают
-               *[-1] наносят
+                [1] heal
+               *[-1] deal
             }
-    } повреждения глаз
+    } eye damage
 reagent-effect-guidebook-chem-vomit =
     { $chance ->
-        [1] Вызывает
-       *[other] вызывают
-    } рвоту
+        [1] Causes
+       *[other] cause
+    } vomiting
 reagent-effect-guidebook-create-gas =
     { $chance ->
-        [1] Создаёт
-       *[other] создают
+        [1] Creates
+       *[other] create
     } { $moles } { $moles ->
-        [1] моль
-       *[other] моль
-    } газа { $gas }
+        [1] mole
+       *[other] moles
+    } of { $gas }
 reagent-effect-guidebook-drunk =
     { $chance ->
-        [1] Вызывает
-       *[other] вызывают
-    } опьянение
+        [1] Causes
+       *[other] cause
+    } drunkness
 reagent-effect-guidebook-electrocute =
     { $chance ->
-        [1] Бьёт током
-       *[other] бьют током
-    } употребившего в течении { NATURALFIXED($time, 3) }
+        [1] Electrocutes
+       *[other] electrocute
+    } the metabolizer for { NATURALFIXED($time, 3) } { MANY("second", $time) }
 reagent-effect-guidebook-extinguish-reaction =
     { $chance ->
-        [1] Гасит
-       *[other] гасят
-    } огонь
+        [1] Extinguishes
+       *[other] extinguish
+    } fire
 reagent-effect-guidebook-flammable-reaction =
     { $chance ->
-        [1] Повышает
-       *[other] повышают
-    } воспламеняемость
+        [1] Increases
+       *[other] increase
+    } flammability
 reagent-effect-guidebook-ignite =
     { $chance ->
-        [1] Поджигает
-       *[other] поджигают
-    } употребившего
+        [1] Ignites
+       *[other] ignite
+    } the metabolizer
 reagent-effect-guidebook-make-sentient =
     { $chance ->
-        [1] Делает
-       *[other] делают
-    } употребившего разумным
+        [1] Makes
+       *[other] make
+    } the metabolizer sentient
 reagent-effect-guidebook-modify-bleed-amount =
     { $chance ->
         [1]
             { $deltasign ->
-                [1] Усиливает
-               *[-1] Ослабляет
+                [1] Induces
+               *[-1] Reduces
             }
        *[other]
             { $deltasign ->
-                [1] усиливают
-               *[-1] ослабляют
+                [1] induce
+               *[-1] reduce
             }
-    } кровотечение
+    } bleeding
 reagent-effect-guidebook-modify-blood-level =
     { $chance ->
         [1]
             { $deltasign ->
-                [1] Повышает
-               *[-1] Понижает
+                [1] Increases
+               *[-1] Decreases
             }
        *[other]
             { $deltasign ->
-                [1] повышают
-               *[-1] понижают
+                [1] increases
+               *[-1] decreases
             }
-    } уровень крови в организме
+    } blood level
 reagent-effect-guidebook-paralyze =
     { $chance ->
-        [1] Парализует
-       *[other] парализуют
-    } употребившего минимум на { NATURALFIXED($time, 3) }
+        [1] Paralyzes
+       *[other] paralyze
+    } the metabolizer for at least { NATURALFIXED($time, 3) } { MANY("second", $time) }
 reagent-effect-guidebook-movespeed-modifier =
     { $chance ->
-        [1] Делает
-       *[other] делают
-    } скорость передвижения { NATURALFIXED($walkspeed, 3) }x от стандартной минимум на { NATURALFIXED($time, 3) }
+        [1] Modifies
+       *[other] modify
+    } movement speed by { NATURALFIXED($walkspeed, 3) }x for at least { NATURALFIXED($time, 3) } { MANY("second", $time) }
 reagent-effect-guidebook-reset-narcolepsy =
     { $chance ->
-        [1] Предотвращает
-       *[other] предотвращают
-    } приступы нарколепсии
+        [1] Temporarily staves
+       *[other] temporarily stave
+    } off narcolepsy
 reagent-effect-guidebook-wash-cream-pie-reaction =
     { $chance ->
-        [1] Смывает
-       *[other] смывают
-    } кремовый пирог с лица
+        [1] Washes
+       *[other] wash
+    } off cream pie from one's face
 reagent-effect-guidebook-missing =
     { $chance ->
-        [1] Вызывает
-       *[other] вызывают
-    } неизвестный эффект, так как никто еще не написал об этом эффекте
+        [1] Causes
+       *[other] cause
+    } an unknown effect as nobody has written this effect yet
