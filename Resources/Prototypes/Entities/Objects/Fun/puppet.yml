@@ -18,8 +18,6 @@
   - type: Muted
   - type: TypingIndicator
     proto: robot
-  - type: TTS
-    voice: Meepo
   - type: Actions
   - type: MobState
     allowedStates:
@@ -43,5 +41,3 @@
     sprite: Objects/Fun/mrdips.rsi
     layers:
     - state: icon
-  - type: TTS
-    voice: Zibb

@@ -16,5 +16,5 @@ ent-ProjectilePolyboltCluwne = полизаряд клувеня
     .desc = кноХ кноХ!
 ent-ProjectileIcicle = сосулька
     .desc = Бррррр.
-ent-ProjectilePolyboltBread = полизаряд хлеба
-    .desc = Неееет, я не хочу быть хлебом!
+ent-ProjectilePolyboltBread = bread polybolt
+    .desc = Nooo, I don't wanna be bread!

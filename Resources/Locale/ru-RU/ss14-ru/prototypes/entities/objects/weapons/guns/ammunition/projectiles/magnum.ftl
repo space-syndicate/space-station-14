@@ -6,5 +6,5 @@ ent-BulletMagnumPractice = пуля (.45 магнум учебная)
     .desc = { ent-BaseBulletPractice.desc }
 ent-BulletMagnumRubber = пуля (.45 магнум резиновая)
     .desc = { ent-BaseBulletRubber.desc }
-ent-BulletMagnumIncendiary = пуля (.45 магнум зажигательная)
+ent-BulletMagnumIncendiary = bullet (.45 magnum incendiary)
     .desc = { ent-BaseBulletIncendiary.desc }

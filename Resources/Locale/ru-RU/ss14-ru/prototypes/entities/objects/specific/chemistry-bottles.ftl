@@ -20,5 +20,5 @@ ent-EphedrineChemistryBottle = бутылочка эфедрина
     .desc = { ent-BaseChemistryEmptyBottle.desc }
 ent-OmnizineChemistryBottle = бутылочка омнизина
     .desc = { ent-BaseChemistryEmptyBottle.desc }
-ent-CognizineChemistryBottle = бутылочка когнизина
+ent-CognizineChemistryBottle = cognizine bottle
     .desc = { ent-BaseChemistryEmptyBottle.desc }
