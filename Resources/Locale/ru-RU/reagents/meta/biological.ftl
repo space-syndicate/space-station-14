@@ -8,5 +8,5 @@ reagent-name-ichor = ихор
 reagent-desc-ichor = Чрезвычайно мощное регенеративное химическое вещество, доведенное до совершенства эволюцией космической фауны. Производится в пищеварительной системе дракона и считается экзотическим товаром, поскольку охота на него требует огромных усилий.
 reagent-name-fat = жир
 reagent-desc-fat = Независимо от того, как он был получен, его применение важно.
-reagent-name-vomit = vomit
-reagent-desc-vomit = You can see a few chunks of someones last meal in it.
+reagent-name-vomit = рвота
+reagent-desc-vomit = Вы можете увидеть в ней несколько кусков чьей-то последней еды.
