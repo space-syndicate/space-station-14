@@ -154,9 +154,9 @@ uplink-ultrabright-lantern-desc = Ослепительно.
 uplink-nocturine-chemistry-bottle-name = { ent-NocturineChemistryBottle }
 uplink-nocturine-chemistry-bottle-desc = Химическое вещество, от которого ваша цель не устоит (на ногах).
 uplink-stimpack-name = Стимпак
-uplink-stimpack-desc = Легендарный химический коктейль, производимый компанией Donk Co. для Синдиката. Одна инъекция этого вещества увеличивает скорость бега и позволяет быстрее восстанавливаться после оглушения в течение 5 минут.
+uplink-stimpack-desc = Легендарный химический коктейль, производимый компанией Donk Co. для Синдиката. Одна инъекция этого вещества увеличивает скорость бега и позволяет быстрее восстанавливаться после оглушения в течение 30-ти секунд.
 uplink-stimkit-name = Набор стимпаков
-uplink-stimkit-desc = Аптечка, содержащая 6 микро-стимпаков, каждый из которых содержит минутную дозу стимулятора.
+uplink-stimkit-desc = Аптечка, содержащая 6 микро-стимпаков, каждый из которых содержит дозу стимулятора на 15 секунд.
 uplink-syndicate-segway-crate-name = { ent-VehicleSyndicateSegway }
 uplink-syndicate-segway-crate-desc = { ent-VehicleSyndicateSegway.desc }
 # Pointless
