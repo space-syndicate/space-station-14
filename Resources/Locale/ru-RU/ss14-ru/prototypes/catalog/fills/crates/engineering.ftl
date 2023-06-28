@@ -18,3 +18,5 @@ ent-CrateEngineeringMiniJetpack = ящик мини-джетпаков
     .desc = Два мини-джетпака для тех, кому хочется вызова.
 ent-CrateAirlockKit = ящик компонентов шлюза
     .desc = Набор для строительства 6 воздушных шлюзов, инструменты в комплект не входят.
+ent-CrateEvaKit = { ent-CrateCommandSecure }
+    .desc = { ent-CrateCommandSecure.desc }
