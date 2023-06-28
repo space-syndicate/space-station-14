@@ -1,5 +1,7 @@
 ent-BaseBeaker = { ent-BaseItem }
     .desc = { ent-BaseItem.desc }
+ent-BaseBeakerMetallic = { ent-BaseItem }
+    .desc = { ent-BaseItem.desc }
 ent-Beaker = beaker
     .desc = Used to contain a moderate amount of chemicals and solutions.
 ent-CryoxadoneBeakerSmall = cryoxadone beaker

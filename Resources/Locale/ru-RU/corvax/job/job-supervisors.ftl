@@ -1,1 +1,0 @@
-job-supervisors-qm = квартирмейстеру

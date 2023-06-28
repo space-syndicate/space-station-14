@@ -13,6 +13,7 @@ guide-entry-science = Научный отдел
 guide-entry-radio = Радиосвязь
 guide-entry-machine-upgrading = Улучшение оборудования
 guide-entry-cargo = Отдел снабжения
+guide-entry-cargo-bounties = Cargo Bounties
 guide-entry-salvage = Утилизация обломков
 guide-entry-controls = Управление
 guide-entry-chemicals = Химикаты
