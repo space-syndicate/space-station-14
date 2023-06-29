@@ -24,5 +24,6 @@ ent-ClothingHeadHatFancyCrown = fancy crown
     .desc = It smells like dead rat. Lets you speak like one!
 ent-ClothingHeadHatCatEars = cat ears
     .desc = NYAH!
+    .suffix = DO NOT MAP
 ent-ClothingHeadHatSquid = squiddy
     .desc = Scare your friends with this eldritch mask.

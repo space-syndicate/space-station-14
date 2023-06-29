@@ -8,13 +8,13 @@
     Cluster:
       stationProto: StandardNanotrasenStation
       components:
+        - type: StationEmergencyShuttle
+          emergencyShuttlePath: /Maps/Shuttles/emergency_transit.yml
         - type: StationNameSetup
           mapNameTemplate: '{0} Cluster Station {1}'
           nameGenerator:
             !type:NanotrasenNameGenerator
             prefixCreator: '14'
-        - type: StationEmergencyShuttle
-          emergencyShuttlePath: /Maps/Shuttles/corvax_emergency.yml # Corvax-EmergencyShuttle
         - type: StationJobs
           overflowJobs:
             - Passenger

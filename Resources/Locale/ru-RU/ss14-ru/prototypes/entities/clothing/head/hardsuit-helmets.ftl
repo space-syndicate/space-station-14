@@ -1,3 +1,5 @@
+ent-ClothingHeadHelmetHardsuitBasic = базовый шлем скафандра
+    .desc = Базовый шлем скафандра, обеспечивающий незначительную защиту от большинства источников повреждений.
 ent-ClothingHeadHelmetHardsuitAtmos = шлем скафандра атмос-техника
     .desc = Специальный шлем скафандра, предназначенный для работы в условиях низкого давления и высокой температуры.
 ent-ClothingHeadHelmetHardsuitCap = шлем скафандра капитана
@@ -8,8 +10,6 @@ ent-ClothingHeadHelmetHardsuitEngineering = шлем скафандра инже
     .desc = Шлем инженерного скафандра, предназначенный для работы в условиях низкого давления и высокой радиоактивности.
 ent-ClothingHeadHelmetHardsuitEngineeringWhite = шлем скафандра старшего инженера
     .desc = Специальный шлем скафандра, изготовленный для старшего инженера станции.
-ent-ClothingHeadHelmetIHSVoidHelm = шлем скафандра IHS
-    .desc = Прочный, тактический шлем скафандра IHS.
 ent-ClothingHeadHelmetHardsuitMedical = шлем скафандра главного врача
     .desc = Легкий медицинский шлем скафандра, не стесняющий движений головы.
 ent-ClothingHeadHelmetHardsuitRd = экспериментальный шлем исследовательского скафандра

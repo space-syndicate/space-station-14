@@ -9,7 +9,7 @@
       time: 10800 # Corvax-RoleTime
   icon: "ShaftMiner"
   startingGear: SalvageSpecialistGear
-  supervisors: job-supervisors-hop-qm
+  supervisors: job-supervisors-qm
   access:
   - Cargo
   - Salvage

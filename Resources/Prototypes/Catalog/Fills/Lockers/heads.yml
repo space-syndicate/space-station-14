@@ -19,6 +19,8 @@
       - id: CargoRequestComputerCircuitboard
       - id: CargoShuttleComputerCircuitboard
       - id: CargoShuttleConsoleCircuitboard
+      - id: SalvageShuttleConsoleCircuitboard
+      - id: CargoBountyComputerCircuitboard
       - id: CigPackGreen
         prob: 0.50
       - id: DoorRemoteCargo

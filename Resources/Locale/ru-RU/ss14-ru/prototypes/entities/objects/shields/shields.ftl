@@ -14,3 +14,7 @@ ent-ClockworkShield = часовой щит
     .desc = Ratvar oyrffrf lbh jvgu uvf cebgrpgvba. Ратвар благословляет вас Своей защитой.
 ent-MirrorShield = зеркальный щит
     .desc = Пугающе светится красным... вы слышите, как шепчет геометр.
+ent-EnergyShield = energy shield
+    .desc = Exotic energy shield, when folded, can even fit in your pocket.
+ent-BrokenEnergyShield = broken energy shield
+    .desc = Something inside is burned out, it is no longer functional.
