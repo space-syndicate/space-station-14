@@ -132,5 +132,3 @@ ent-PlasticBanana = banana
     .suffix = Plastic
 ent-CrazyGlue = crazy glue
     .desc = A bottle of crazy glue manufactured by Honk! Co.
-ent-CrazyGlueEmpty = empty crazy glue
-    .desc = { ent-BaseItem.desc }

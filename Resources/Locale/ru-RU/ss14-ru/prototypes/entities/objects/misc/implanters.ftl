@@ -29,4 +29,6 @@ ent-MicroBombImplanter = { ent-Implanter }
 ent-MacroBombImplanter = { ent-Implanter }
     .desc = { ent-BaseImplantOnlyImplanter.desc }
     .suffix = Макробомба
+
 # Corvax anti-meta localization end
+
