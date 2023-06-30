@@ -7,7 +7,9 @@
   loots:
     - !type:BiomeMarkerLoot
       proto:
+        Caves: OreTin
         Grasslands: OreTin
+        Lava: BasaltOreTin
         Snow: SnowOreTin
 
 - type: salvageLoot
@@ -17,7 +19,9 @@
   loots:
     - !type:BiomeMarkerLoot
       proto:
+        Caves: OreQuartz
         Grasslands: OreQuartz
+        Lava: BasaltOreQuartz
         Snow: SnowOreQuartz
 
 # - Medium value
@@ -28,7 +32,9 @@
   loots:
     - !type:BiomeMarkerLoot
       proto:
+        Caves: OreGold
         Grasslands: OreGold
+        Lava: BasaltOreGold
         Snow: SnowOreGold
 
 - type: salvageLoot
@@ -38,7 +44,9 @@
   loots:
     - !type:BiomeMarkerLoot
       proto:
+        Caves: OreSilver
         Grasslands: OreSilver
+        Lava: BasaltOreSilver
         Snow: SnowOreSilver
 
 # - High value
@@ -49,7 +57,9 @@
   loots:
     - !type:BiomeMarkerLoot
       proto:
+        Caves: OrePlasma
         Grasslands: OrePlasma
+        Lava: BasaltOrePlasma
         Snow: SnowOrePlasma
 
 - type: salvageLoot
@@ -59,7 +69,9 @@
   loots:
     - !type:BiomeMarkerLoot
       proto:
+        Caves: OreUranium
         Grasslands: OreUranium
+        Lava: BasaltOreUranium
         Snow: SnowOreUranium
 
 - type: salvageLoot
@@ -69,7 +81,9 @@
   loots:
     - !type:BiomeMarkerLoot
       proto:
+        Caves: OreBananium
         Grasslands: OreBananium
+        Lava: BasaltOreBananium
         Snow: SnowOreBananium
 
 - type: salvageLoot
@@ -79,5 +93,7 @@
   loots:
     - !type:BiomeMarkerLoot
       proto:
+        Caves: OreArtifactFragment
         Grasslands: OreArtifactFragment
+        Lava: BasaltOreArtifactFragment
         Snow: SnowOreArtifactFragment

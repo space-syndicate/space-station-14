@@ -16,5 +16,7 @@ ent-JanitorialTrolley = janitorial trolley
     .desc = This is the alpha and omega of sanitation.
 ent-FloorDrain = drain
     .desc = Drains puddles around it. Useful for dumping mop buckets or keeping certain rooms clean.
+ent-Plunger = plunger
+    .desc = A plunger with a red plastic suction-cup and a wooden handle. Used to unclog drains.
 ent-RagItem = damp rag
     .desc = For cleaning up messes, you suppose.

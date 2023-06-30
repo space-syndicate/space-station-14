@@ -16,5 +16,7 @@ ent-JanitorialTrolley = тележка уборщика
     .desc = Это альфа и омега санитарии.
 ent-FloorDrain = дренаж
     .desc = Сливает лужи вокруг в себя. Пригодится для опорожнения ведер или поддержания чистоты в определенных помещениях.
+ent-Plunger = plunger
+    .desc = A plunger with a red plastic suction-cup and a wooden handle. Used to unclog drains.
 ent-RagItem = тряпка
     .desc = Предположительно, для устранения беспорядка.
