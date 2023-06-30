@@ -1,10 +1,12 @@
 ent-ClothingHeadHelmetBombSuit = сапёрный шлем
     .desc = Тяжелый шлем, предназначенный для защиты от осколков и давления, создаваемого взрывом.
-ent-ClothingHeadHelmetSwat = SWAT helmet
-    .desc = An extremely robust helmet, commonly used by paramilitary forces. This one has the Nanotrasen logo emblazoned on the top.
-ent-ClothingHeadHelmetSwatSyndicate = SWAT helmet
-    .desc = An extremely robust helmet, commonly used by paramilitary forces. It is adorned in a nefarious red and black stripe pattern.
-    .suffix = Syndicate
+ent-ClothingHeadHelmetSwat = шлем спецназа
+    .desc = Очень прочный шлем, широко используемый военизированными организациями. На его верхней части выгравирован логотип Nanotrasen.
+ent-ClothingHeadHelmetMerc = mercenary helmet
+    .desc = The combat helmet is commonly used by mercenaries, is strong, light and smells like gunpowder and the jungle.
+ent-ClothingHeadHelmetSwatSyndicate = шлем спецназа
+    .desc = Очень прочный шлем, широко используемый военизированными организациями. Его украшает ужасный узор из красных и черных полос.
+    .suffix = Синдикат
 ent-ClothingHeadHelmetCult = шлем культа
     .desc = Крепкий, злобно выглядящий шлем культа.
 ent-ClothingHeadHelmetHelmet = каска

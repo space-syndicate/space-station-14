@@ -1,3 +1,3 @@
-glue-success = { THE($target) } has been covered in glue.
-glued-name-prefix = Glued { $target }
-glue-failure = { THE($target) } is already covered in glue.
+glue-success = Вы покрыли { $target } клеем.
+glued-name-prefix = липкий { $target }
+glue-failure = { $target } уже покрыт клеем.

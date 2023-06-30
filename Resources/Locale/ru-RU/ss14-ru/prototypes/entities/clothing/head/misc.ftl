@@ -24,5 +24,6 @@ ent-ClothingHeadHatFancyCrown = причудливая корона
     .desc = Пахнет дохлой крысой. Позволяет тебе говорить как она!
 ent-ClothingHeadHatCatEars = кошачьи ушки
     .desc = НЯ!
+    .suffix = DO NOT MAP
 ent-ClothingHeadHatSquid = сквидди
     .desc = Напугайте своих друзей этой маской древнего ужаса.

@@ -16,7 +16,7 @@
   weight: 10
   startingGear: QuartermasterGear
   icon: "QuarterMaster"
-  supervisors: job-supervisors-captain # Corvax-JobSupervisors
+  supervisors: job-supervisors-captain
   canBeAntag: false
   access:
   - Cargo

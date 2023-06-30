@@ -12,7 +12,8 @@
 
   ## Вспышки
   Вспышки являются эффективным средством для разгона толпы и задержания особо ловких целей, при этом большая площадь воздействия ослепит всех, кто не имеет соответствующей защиты.
-Служба безопасности и [color=#a4885c]некоторые[/color] другие сотрудники имеют средства защиты глаз от вспышек и светошумовых гранат.
+  It is worth noting that flashes can be both used in a large area 	([color=yellow]Z[/color] hotkey) and if you attack somebody with it while [color=red]harm mode[/color] is active. Important to note that localized flashes last [color=yellow]2.5[/color] times as long as large area ones.
+  Служба безопасности и [color=#a4885c]некоторые[/color] другие сотрудники имеют средства защиты глаз от вспышек и светошумовых гранат.
   <Box>
     <GuideEntityEmbed Entity="Flash"/>
     <GuideEntityEmbed Entity="ClothingEyesGlassesSecurity"/>
@@ -20,11 +21,11 @@
   </Box>
 
   ## Летальные боеприпасы
-Если того потребует ситуация, служба безопасности имеет доступ к лазерным винтовкам, дробовикам, пистолетам и автоматам, способным вести огонь на поражение по любому, кто решит выступит против станции.
+  Если того потребует ситуация, служба безопасности имеет доступ к лазерным винтовкам, дробовикам, пистолетам и автоматам, способным вести огонь на поражение по любому, кто решит выступит против станции.
   <Box>
-  <GuideEntityEmbed Entity="WeaponLaserCarbine"/>
-  <GuideEntityEmbed Entity="WeaponShotgunKammerer"/>
-  <GuideEntityEmbed Entity="WeaponPistolMk58"/>
-  <GuideEntityEmbed Entity="WeaponRifleLecter"/>
+    <GuideEntityEmbed Entity="WeaponLaserCarbine"/>
+    <GuideEntityEmbed Entity="WeaponShotgunKammerer"/>
+    <GuideEntityEmbed Entity="WeaponPistolMk58"/>
+    <GuideEntityEmbed Entity="WeaponRifleLecter"/>
   </Box>
 </Document>
