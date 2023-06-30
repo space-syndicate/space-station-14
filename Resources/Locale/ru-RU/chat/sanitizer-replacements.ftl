@@ -20,5 +20,3 @@ chatsan-waves = машет
 chatsan-salutes = отдаёт честь
 chatsan-tearfully-salutes = отдаёт честь со слезами на глазах
 chatsan-shrugs = пожимает плечами
-chatsan-claps = хлопает
-chatsan-snaps = щёлкает
