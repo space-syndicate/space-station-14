@@ -1,8 +1,8 @@
-drain-component-empty-verb-using-is-empty-message = { CAPITALIZE($object) } пуста!
-drain-component-empty-verb-target-is-full-message = { CAPITALIZE($object) } полна!
-drain-component-empty-verb-inhand = Опустошить { $object }
-drain-component-examine-hint-full = [color="blue"]Она заполнена до краёв. Может, вантуз поможет?[/color]
-drain-component-examine-volume = [color="blue"]Оставшийся объём - { $volume }ед.[/color]
-drain-component-unclog-fail = { CAPITALIZE($object) } всё ещё полна.
-drain-component-unclog-success = { CAPITALIZE($object) } прочищена.
-drain-component-unclog-notapplicable = { CAPITALIZE($object) } не заполнена.
+drain-component-empty-verb-using-is-empty-message = В { $object } пусто!
+drain-component-empty-verb-target-is-full-message = Устройство { $object } переполнилось!
+drain-component-empty-verb-inhand = Вылить { $object }
+drain-component-examine-hint-full = [color=cyan]Устройство { $object } заполнено до краёв. Может, вантуз поможет?[/color]
+drain-component-examine-volume = [color=cyan]Доступный объём - { $volume } ед.[/color]
+drain-component-unclog-fail = Устройство { $object } всё ещё переполнено.
+drain-component-unclog-success = Устройство { $object } было прочищено.
+drain-component-unclog-notapplicable = Это не переполнено.
