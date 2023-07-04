@@ -5,4 +5,4 @@ drain-component-examine-hint-full = [color="blue"]Она заполнена до
 drain-component-examine-volume = [color="blue"]Оставшийся объём - { $volume }ед.[/color]
 drain-component-unclog-fail = { CAPITALIZE($object) } всё ещё полна.
 drain-component-unclog-success = { CAPITALIZE($object) } прочищена.
-drain-component-unclog-notapplicable = { CAPITALIZE(THE($object)) } не заполнена.
+drain-component-unclog-notapplicable = { CAPITALIZE($object) } не заполнена.
