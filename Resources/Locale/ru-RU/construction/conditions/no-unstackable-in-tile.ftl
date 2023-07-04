@@ -1,1 +1,1 @@
-construction-step-condition-no-unstackable-in-tile = You cannot make a stack of similar devices.
+construction-step-condition-no-unstackable-in-tile = Вы не можете поместить несколько одинаковых устройств в одну клетку.
