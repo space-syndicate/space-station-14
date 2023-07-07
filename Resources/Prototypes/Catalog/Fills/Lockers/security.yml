@@ -83,7 +83,12 @@
       - id: TrackingImplanter
         amount: 2
       - id: ClothingOuterHardsuitBrigmedic
-      - id: BoxSterileMask
+      - id: ClothingHeadsetBrigmedic # Corvax-Feature
+      - id: BoxSurvivalBrigmedic # Corvax-Feature
+      - id: ClothingBackpackBrigmedic # Corvax-Feature
+      - id: ClothingBackpackDuffelBrigmedic # Corvax-Feature
+      - id: ClothingBackpackSatchelBrigmedic # Corvax-Feature
+      - id: ClothingEyesHudMedical # Corvax-Feature
       - id: ClothingHeadHatBeretBrigmedic
       - id: ClothingOuterCoatAMG
       - id: ClothingUniformJumpsuitBrigmedic
