@@ -442,7 +442,7 @@
   components:
   - type: Sprite
     drawdepth: SmallMobs
-    sprite: Mobs/Animals/hamster.rsi
+    sprite: Corvax/Mobs/Pets/hamlet.rsi # Corvax-Resprite
     layers:
     - map: ["enum.DamageStateVisualLayers.Base"]
       state: hamster-0
