@@ -330,10 +330,10 @@
     amount: 1
 
 - type: reagent
-  id: DryRamen
-  name: reagent-name-dry-ramen
+  id: DryDoshirak
+  name: reagent-name-dry-Doshirak
   parent: BaseDrink
-  desc: reagent-desc-dry-ramen
+  desc: reagent-desc-dry-Doshirak
   physicalDesc: reagent-physical-desc-wormy
   flavor: cheapnoodles
   color: "#664300"
@@ -344,10 +344,10 @@
         factor: 1
 
 - type: reagent
-  id: HotRamen
-  name: reagent-name-hot-ramen
+  id: HotDoshirak
+  name: reagent-name-hot-Doshirak
   parent: BaseDrink
-  desc: reagent-desc-hot-ramen
+  desc: reagent-desc-hot-Doshirak
   physicalDesc: reagent-physical-desc-wormy
   flavor: cheapnoodles
   color: "#664300"
