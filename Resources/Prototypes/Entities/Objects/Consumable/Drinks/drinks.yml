@@ -2160,6 +2160,8 @@
   name: hell ramen
   description: Just add 10ml boiling water. Super spicy flavor.
   components:
+  - type: Sprite
+    sprite: Objects/Consumable/Drinks/hell_doshirak.rsi
   - type: SolutionContainerManager
     solutions:
       drink:
