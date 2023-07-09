@@ -64,11 +64,11 @@ reagent-desc-water = A colorless liquid that humans need in order to survive.
 reagent-name-ice = ice
 reagent-desc-ice = Frozen water.
 
-reagent-name-dry-Doshirak = dry Doshirak
-reagent-desc-dry-Doshirak = Dry noodles and salt.
+reagent-name-dry-doshirak = dry doshirak
+reagent-desc-dry-doshirak = dry noodles and salt.
 
-reagent-name-hot-Doshirak = hot Doshirak
-reagent-desc-hot-Doshirak = Hot noodles.
+reagent-name-hot-doshirak = hot Doshirak
+reagent-desc-hot-doshirak = Hot noodles.
 
 reagent-name-pilk = pilk
 reagent-desc-pilk = A sickening mixture of milk and cola.
