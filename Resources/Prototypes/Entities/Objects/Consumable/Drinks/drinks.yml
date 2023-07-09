@@ -2140,6 +2140,10 @@
   name: cup Doshirak
   description: Just add 10ml boiling water. A taste that reminds you of your school years.
   components:
+  - type: Drink
+    isOpen: false
+    openSounds:
+      collection: plasticContainerOpen
   - type: SolutionContainerManager
     solutions:
       drink:
