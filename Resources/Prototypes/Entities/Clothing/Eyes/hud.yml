@@ -2,16 +2,12 @@
   parent: ClothingEyesBase
   id: ClothingEyesHudDiagnostic
   name: diagnostic hud
-  description: A heads-up display capable of analyzing the integrity and status of robotics, exosuits and golems.
+  description: A heads-up display capable of analyzing the integrity and status of robotics and exosuits.
   components:
   - type: Sprite
     sprite: Clothing/Eyes/Hud/diag.rsi
   - type: Clothing
     sprite: Clothing/Eyes/Hud/diag.rsi
-  - type: ClothingGrantComponent
-    component:
-    - type: ShowHealthBars
-      damageContainer: Inorganic
 
 - type: entity
   parent: ClothingEyesBase
@@ -23,10 +19,6 @@
     sprite: Clothing/Eyes/Hud/med.rsi
   - type: Clothing
     sprite: Clothing/Eyes/Hud/med.rsi
-  - type: ClothingGrantComponent
-    component:
-    - type: ShowHealthBars
-      damageContainer: Biological
 
 - type: entity
   parent: ClothingEyesBase
@@ -38,6 +30,3 @@
     sprite: Clothing/Eyes/Hud/sec.rsi
   - type: Clothing
     sprite: Clothing/Eyes/Hud/sec.rsi
-  - type: ClothingGrantComponent
-    component:
-    - type: ShowJobInfo
