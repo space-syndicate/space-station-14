@@ -6,16 +6,10 @@
   requirements:
     - !type:RoleTimeRequirement
       role: JobWarden
-      time: 156000 # Corvax-RoleTime
-#    - !type:RoleTimeRequirement
-#      role: JobDetective
-#      time: 7200 #2 hrs
-#    - !type:RoleTimeRequirement
-#      role: JobSecurityOfficer
-#      time: 36000 #10 hrs
+      time: 156000
     - !type:DepartmentTimeRequirement
-      department: Security
-      time: 228000 # Corvax-RoleTime
+      department: SpacePrison
+      time: 120000 # 200 minutes on space prison dep gameplay req
   weight: 10
   startingGear: HoSGear
   icon: "SPWarden"
