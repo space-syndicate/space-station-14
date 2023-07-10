@@ -1,0 +1,29 @@
+﻿[game]
+hostname = "[RU][MRP][TTS] Corvax 🪐 Nova (ss14.ru)"
+desc = "[Требуется 40 часов на другом сервере Corvax]\nРусскоязычный сервер проекта Corvax с повышенным уровнем РП отыгрыша"
+map_pool = "CorvaxDefaultMapPool"
+maxplayers = 120
+soft_max_players = 60
+map_rotation = false
+
+[game.panic_bunker]
+enabled = true
+show_reason = true
+min_account_age = 0
+min_overall_hours = 40
+
+[rules]
+time = 10.0
+
+[queue]
+enabled = true
+
+[tts]
+enabled = true
+
+[discord_auth]
+enabled = true
+
+[hub]
+advertise = true
+tags = "lang:ru,rp:med,region:eu_e,tts"
