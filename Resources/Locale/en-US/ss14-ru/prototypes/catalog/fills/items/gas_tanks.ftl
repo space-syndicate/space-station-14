@@ -23,5 +23,5 @@ ent-NitrousOxideTankFilled = nitrous oxide tank
     .suffix = Filled
     .desc = { ent-NitrousOxideTank.desc }
 ent-PlasmaTankFilled = plasma tank
-    .desc = Contains dangerous plasma. Do not inhale. Warning: extremely flammable.
     .suffix = Filled
+    .desc = { ent-PlasmaTank.desc }
