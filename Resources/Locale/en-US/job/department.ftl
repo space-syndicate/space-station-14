@@ -5,4 +5,5 @@ department-Engineering = Engineering
 department-Medical = Medical
 department-Security = Security
 department-Science = Science
+department-SpacePrison = Space Prison
 department-Specific = Station specific

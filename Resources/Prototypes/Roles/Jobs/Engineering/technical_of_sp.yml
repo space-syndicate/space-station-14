@@ -1,16 +1,24 @@
 - type: job
-  id: StationEngineer
-  name: job-name-engineer
-  description: job-description-engineer
-  playTimeTracker: JobStationEngineer
+  id: TechnicalSP
+  name: job-name-technical-sp
+  description: job-description-tsp
+  playTimeTracker: JobTechnicalSP
   requirements:
     - !type:DepartmentTimeRequirement
+      department: Security
+      time: 156000 # Corvax-RoleTime
+    - !type:DepartmentTimeRequirement
       department: Engineering
-      time: 18000 # Corvax-RoleTime
+      time: 138000 # Corvax-RoleTime
   startingGear: StationEngineerGear
   icon: "StationEngineer"
-  supervisors: job-supervisors-ce
+  supervisors: job-supervisors-wosp
   access:
+  - Security
+  - Brig
+  - Maintenance
+  - Service
+  - External
   - Maintenance
   - Engineering
   - External
