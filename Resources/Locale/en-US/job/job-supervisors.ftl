@@ -2,6 +2,7 @@
 job-supervisors-captain = the captain
 job-supervisors-hop = the head of personnel
 job-supervisors-hos = the head of security
+job-supervisors-wosp = the warden of sp
 job-supervisors-ce = the chief engineer
 job-supervisors-cmo = the chief medical officer
 job-supervisors-rd = the research director

@@ -1,0 +1,51 @@
+- type: job
+  id: WardenOfSP
+  name: job-name-warden-sp
+  description: job-description-wosp
+  playTimeTracker: JobWardenSP
+  requirements:
+    - !type:RoleTimeRequirement
+      role: JobWarden
+      time: 156000 # Corvax-RoleTime
+#    - !type:RoleTimeRequirement
+#      role: JobDetective
+#      time: 7200 #2 hrs
+#    - !type:RoleTimeRequirement
+#      role: JobSecurityOfficer
+#      time: 36000 #10 hrs
+    - !type:DepartmentTimeRequirement
+      department: Security
+      time: 228000 # Corvax-RoleTime
+  weight: 10
+  startingGear: HoSGear
+  icon: "HeadOfSecurity"
+  requireAdminNotify: true
+  supervisors: job-supervisors-centcom
+  canBeAntag: false
+  access:
+  - HeadOfSecurity
+  - Command
+  - Brig
+  - Security
+  - Armory
+  - Maintenance
+  - Service
+  - External
+  - Detective
+
+- type: startingGear
+  id: HoSGear
+  equipment:
+    jumpsuit: ClothingUniformJumpsuitHoS
+    back: ClothingBackpackHOSFilled
+    shoes: ClothingShoesBootsJackSec # Corvax-Resprite
+    outerClothing: ClothingOuterCoatHoSTrench
+    eyes: ClothingEyesGlassesSecurity
+    head: ClothingHeadHatBeretHoS
+    id: HoSPDA
+    gloves: ClothingHandsGlovesCombat
+    ears: ClothingHeadsetAltSecurity
+    belt: ClothingBeltSecurityFilled
+  innerclothingskirt: ClothingUniformJumpskirtHoS
+  satchel: ClothingBackpackSatchelHOSFilled
+  duffelbag: ClothingBackpackDuffelHOSFilled
