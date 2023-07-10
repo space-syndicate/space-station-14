@@ -354,7 +354,7 @@
     layers:
       - state: green
       - state: doctor
-      
+
 - type: entity
   id: SpawnPointParamedic
   parent: SpawnPointJobBase
@@ -466,7 +466,46 @@
       - state: brigmedic
 
 # SPECIAL
+# SP
+
+- type: entity
+  id: SpawnPointWardenOfSP
+  parent: SpawnPointJobBase
+  name: wardenofsp
+  components:
+  - type: SpawnPoint
+    job_id: WardenOfSP
+  - type: Sprite
+    layers:
+      - state: green
+      - state: hos
+
+- type: entity
+  id: SpawnPointOfficerSP
+  parent: SpawnPointJobBase
+  name: officersp
+  components:
+  - type: SpawnPoint
+    job_id: OfficerSP
+  - type: Sprite
+    layers:
+      - state: green
+      - state: security_officer
+
+- type: entity
+  id: SpawnPointTechnicalSP
+  parent: SpawnPointJobBase
+  name: technicalsp
+  components:
+  - type: SpawnPoint
+    job_id: TechnicalSP
+  - type: Sprite
+    layers:
+      - state: green
+      - state: engineer
+
 # ERT
+
 - type: entity
   id: SpawnPointERTLeader
   parent: SpawnPointJobBase
