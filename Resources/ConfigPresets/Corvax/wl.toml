@@ -4,9 +4,7 @@ desc = "Русскоязычный сервер проекта Corvax с дос�
 map_pool = "CorvaxDefaultMapPool"
 maxplayers = 80
 soft_max_players = 70
-fallbackpreset = "extended"
-lobbyenabled = true
-role_timers = false
+map_rotation = true
 peaceful_end = false
 
 [atmos]
