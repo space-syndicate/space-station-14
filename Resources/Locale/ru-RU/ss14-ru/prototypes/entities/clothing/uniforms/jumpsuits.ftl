@@ -203,5 +203,7 @@ ent-ClothingUniformJumpsuitHawaiRed = красная гавайская руба
     .desc = Красная, как сочные арбузы.
 ent-ClothingUniformJumpsuitHawaiYellow = жёлтая гавайская рубашка
     .desc = Желтая, как яркое солнце.
+ent-ClothingUniformJumpsuitSyndieFormalDress = syndicate formal dress
+    .desc = The syndicate's uniform is made in an elegant style, it's even a pity to do dirty tricks in this.
 ent-ClothingUniformJumpsuitFlannel = фланелевый комбинезон
     .desc = Пахнет так, будто кто-то жарил на гриле.
