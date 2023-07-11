@@ -1,4 +1,5 @@
 using System.Linq;
+using System.Numerics;
 using Content.Client.Humanoid;
 using Content.Client.Lobby.UI;
 using Content.Client.Message;
@@ -496,7 +497,7 @@ namespace Content.Client.Preferences.UI
             _previewSprite = new SpriteView
             {
                 Sprite = sprite,
-                Scale = (6, 6),
+                Scale = new Vector2(6, 6),
                 OverrideDirection = Direction.South,
                 VerticalAlignment = VAlignment.Center,
                 SizeFlagsStretchRatio = 1
@@ -506,7 +507,7 @@ namespace Content.Client.Preferences.UI
             _previewSpriteSide = new SpriteView
             {
                 Sprite = sprite,
-                Scale = (6, 6),
+                Scale = new Vector2(6, 6),
                 OverrideDirection = Direction.East,
                 VerticalAlignment = VAlignment.Center,
                 SizeFlagsStretchRatio = 1
@@ -735,7 +736,7 @@ namespace Content.Client.Preferences.UI
                 _previewSprite = new SpriteView
                 {
                     Sprite = sprite,
-                    Scale = (6, 6),
+                    Scale = new Vector2(6, 6),
                     OverrideDirection = Direction.South,
                     VerticalAlignment = VAlignment.Center,
                     SizeFlagsStretchRatio = 1
@@ -752,7 +753,7 @@ namespace Content.Client.Preferences.UI
                 _previewSpriteSide = new SpriteView
                 {
                     Sprite = sprite,
-                    Scale = (6, 6),
+                    Scale = new Vector2(6, 6),
                     OverrideDirection = Direction.East,
                     VerticalAlignment = VAlignment.Center,
                     SizeFlagsStretchRatio = 1
@@ -1237,7 +1238,7 @@ namespace Content.Client.Preferences.UI
 
                 var icon = new TextureRect
                 {
-                    TextureScale = (2, 2),
+                    TextureScale = new Vector2(2, 2),
                     Stretch = TextureRect.StretchMode.KeepCentered
                 };
 
@@ -1272,7 +1273,7 @@ namespace Content.Client.Preferences.UI
                 {
                     Margin = new Thickness(5f,0,5f,0),
                     Text = job.LocalizedName,
-                    MinSize = (180, 0),
+                    MinSize = new Vector2(180, 0),
                     MouseFilter = MouseFilterMode.Stop
                 };
 

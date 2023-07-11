@@ -203,5 +203,7 @@ ent-ClothingUniformJumpsuitHawaiRed = red hawaiian shirt
     .desc = Red as a juicy watermelons.
 ent-ClothingUniformJumpsuitHawaiYellow = yellow hawaiian shirt
     .desc = Yellow as a bright sun.
+ent-ClothingUniformJumpsuitSyndieFormalDress = syndicate formal dress
+    .desc = The syndicate's uniform is made in an elegant style, it's even a pity to do dirty tricks in this.
 ent-ClothingUniformJumpsuitFlannel = flannel jumpsuit
     .desc = Smells like someones been grillin'.
