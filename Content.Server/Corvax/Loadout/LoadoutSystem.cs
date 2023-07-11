@@ -15,6 +15,7 @@ public sealed class LoadoutSystem : EntitySystem
     private const string BackpackSlotId = "back";
 
     [Dependency] private readonly IPrototypeManager _prototypeManager = default!;
+    [Dependency] private readonly IEntityManager _entityManager = default!;
     [Dependency] private readonly InventorySystem _inventorySystem = default!;
     [Dependency] private readonly HandsSystem _handsSystem = default!;
     [Dependency] private readonly StorageSystem _storageSystem = default!;
@@ -68,6 +69,9 @@ public sealed class LoadoutSystem : EntitySystem
 
                 if (_inventorySystem.TryGetSlotEntity(ev.Mob, slot.Name, out var _))
                     continue;
+
+                if (loadout.Exclusive && _inventorySystem.TryUnequip(ev.Mob, firstSlotName, out var removedItem, true, true))
+                    _entityManager.DeleteEntity(removedItem.Value);
 
                 if (!_inventorySystem.TryEquip(ev.Mob, entity, slot.Name, true, loadout.Exclusive))
                     continue;

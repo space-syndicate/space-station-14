@@ -227,7 +227,10 @@ namespace Content.Client.Lobby.UI
                     if (invSystem.TryGetSlotEntity(dummy, slot.Name, out var _))
                         continue;
 
-                    if (!invSystem.TryEquip(dummy, entity, slot.Name, true, loadout.Exclusive))
+                    if (loadout.Exclusive && invSystem.TryUnequip(dummy, firstSlotName, out var removedItem, true, true))
+                        entMan.DeleteEntity(removedItem.Value);
+
+                    if (!invSystem.TryEquip(dummy, entity, slot.Name, true))
                         continue;
 
                     isEquipped = true;
@@ -237,8 +240,10 @@ namespace Content.Client.Lobby.UI
                 if (isEquipped || firstSlotName == null)
                     continue;
 
-                // Force equip to first valid clothes slot
-                invSystem.TryEquip(dummy, entity, firstSlotName, true);
+                // Force equip to first valid clothes slot even there already item
+                if (invSystem.TryUnequip(dummy, firstSlotName, out var unequippedItem, true, true))
+                    entMan.DeleteEntity(unequippedItem.Value);
+                invSystem.TryEquip(dummy, entity, firstSlotName, true, true);
             }
         }
         // Corvax-Loadout-End
