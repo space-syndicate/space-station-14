@@ -1,7 +1,125 @@
-﻿- type: loadout
+- type: loadout
   id: ClothingHeadHatFlowerCrownLoadout
-  entity: ClothingHeadHatFlowerCrown
+  category: loadout-category-accessories
+  cost: 1
+  prototype: ClothingHeadHatFlowerCrown
 
 - type: loadout
   id: ClothingHeadHatHairflowerLoadout
-  entity: ClothingHeadHatHairflower
+  category: loadout-category-accessories
+  cost: 1
+  prototype: ClothingHeadHatHairflower
+
+- type: loadout
+  id: LoadoutHeadBunny
+  category: loadout-category-accessories
+  cost: 3
+  prototype: ClothingHeadHatBunny
+
+- type: loadout
+  id: LoadoutHeadBeaverHat
+  category: loadout-category-accessories
+  cost: 2
+  prototype: ClothingHeadHatBeaverHat
+
+- type: loadout
+  id: LoadoutHeadTophat
+  category: loadout-category-accessories
+  cost: 2
+  prototype: ClothingHeadHatTophat
+
+- type: loadout
+  id: LoadoutHeadHatBluesoft
+  category: loadout-category-accessories
+  cost: 1
+  prototype: ClothingHeadHatBluesoft
+
+- type: loadout
+  id: LoadoutHeadHatBluesoftFlipped
+  category: loadout-category-accessories
+  cost: 1
+  prototype: ClothingHeadHatBluesoftFlipped
+
+- type: loadout
+  id: LoadoutHeadHatCorpsoft
+  category: loadout-category-accessories
+  cost: 1
+  prototype: ClothingHeadHatCorpsoft
+
+- type: loadout
+  id: LoadoutHeadHatCorpsoftFlipped
+  category: loadout-category-accessories
+  cost: 1
+  prototype: ClothingHeadHatCorpsoftFlipped
+
+- type: loadout
+  id: LoadoutHeadHatGreensoft
+  category: loadout-category-accessories
+  cost: 1
+  prototype: ClothingHeadHatGreensoft
+
+- type: loadout
+  id: LoadoutHeadHatGreensoftFlipped
+  category: loadout-category-accessories
+  cost: 1
+  prototype: ClothingHeadHatGreensoftFlipped
+
+- type: loadout
+  id: LoadoutHeadHatGreysoft
+  category: loadout-category-accessories
+  cost: 1
+  prototype: ClothingHeadHatGreysoft
+
+- type: loadout
+  id: LoadoutHeadHatGreysoftFlipped
+  category: loadout-category-accessories
+  cost: 1
+  prototype: ClothingHeadHatGreysoftFlipped
+
+- type: loadout
+  id: LoadoutHeadHatOrangesoft
+  category: loadout-category-accessories
+  cost: 1
+  prototype: ClothingHeadHatOrangesoft
+
+- type: loadout
+  id: LoadoutHeadHatOrangesoftFlipped
+  category: loadout-category-accessories
+  cost: 1
+  prototype: ClothingHeadHatOrangesoftFlipped
+
+- type: loadout
+  id: LoadoutHeadHatPurplesoft
+  category: loadout-category-accessories
+  cost: 1
+  prototype: ClothingHeadHatPurplesoft
+
+- type: loadout
+  id: LoadoutHeadHatPurplesoftFlipped
+  category: loadout-category-accessories
+  cost: 1
+  prototype: ClothingHeadHatPurplesoftFlipped
+
+- type: loadout
+  id: LoadoutHeadHatRedsoft
+  category: loadout-category-accessories
+  cost: 1
+  prototype: ClothingHeadHatRedsoft
+
+- type: loadout
+  id: LoadoutHeadHatRedsoftFlipped
+  category: loadout-category-accessories
+  cost: 1
+  prototype: ClothingHeadHatRedsoftFlipped
+
+- type: loadout
+  id: LoadoutHeadHatYellowsoft
+  category: loadout-category-accessories
+  cost: 1
+  prototype: ClothingHeadHatYellowsoft
+
+- type: loadout
+  id: LoadoutHeadHatYellowsoftFlipped
+  category: loadout-category-accessories
+  cost: 1
+  prototype: ClothingHeadHatYellowsoftFlipped

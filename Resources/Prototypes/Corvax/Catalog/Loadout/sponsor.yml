@@ -1,123 +1,165 @@
 ﻿# OopsieDoopsie
 - type: loadout
   id: ClothingOuterAtmosianBomberJacketLoadout
-  entity: ClothingOuterAtmosianBomberJacket
+  prototype: ClothingOuterAtmosianBomberJacket
   sponsorOnly: true
+  category: loadout-category-sponsor
+  cost: 4
 
 - type: loadout
   id: ClothingMaskGasAtmosianLoadout
-  entity: ClothingMaskGasAtmosian
+  prototype: ClothingMaskGasAtmosian
   sponsorOnly: true
+  category: loadout-category-sponsor
+  cost: 4
 
 - type: loadout
   id: ClothingCloakAtmosianLoadout
-  entity: ClothingCloakAtmosian
+  prototype: ClothingCloakAtmosian
   sponsorOnly: true
+  category: loadout-category-sponsor
+  cost: 4
 
 # Fezory
 - type: loadout
   id: ClothingMaskSkullLoadout
-  entity: ClothingMaskSkull
+  prototype: ClothingMaskSkull
   sponsorOnly: true
+  category: loadout-category-sponsor
+  cost: 4
 
 - type: loadout
   id: ClothingCloakGamerLoadout
-  entity: ClothingCloakGamer
+  prototype: ClothingCloakGamer
   sponsorOnly: true
+  category: loadout-category-sponsor
+  cost: 4
 
 - type: loadout
   id: ClothingUniformJumpsuitSkeletonLoadout
-  entity: ClothingUniformJumpsuitSkeleton
+  prototype: ClothingUniformJumpsuitSkeleton
   sponsorOnly: true
+  category: loadout-category-sponsor
+  cost: 4
 
 # NEKISH
 - type: loadout
   id: OldHoSJumpsuitLoadout
-  entity: ClothingUniformJumpsuitHoSOld
+  prototype: ClothingUniformJumpsuitHoSOld
   sponsorOnly: true
   whitelistJobs: [HeadOfSecurity]
+  category: loadout-category-sponsor
+  cost: 1
 
 - type: loadout
   id: OldHoSCoatLoadout
-  entity: ClothingOuterCoatHoSOvercoat
+  prototype: ClothingOuterCoatHoSOvercoat
   sponsorOnly: true
   whitelistJobs: [HeadOfSecurity]
+  category: loadout-category-sponsor
+  cost: 1
 
 - type: loadout
   id: OldHoSCapLoadout
-  entity: ClothingHeadHatCapHoS
+  prototype: ClothingHeadHatCapHoS
   sponsorOnly: true
   whitelistJobs: [HeadOfSecurity]
+  category: loadout-category-sponsor
+  cost: 1
 
 - type: loadout
   id: OldHoSGlovesLoadout
-  entity: ClothingHandsGlovesLeatherHoS
+  prototype: ClothingHandsGlovesLeatherHoS
   sponsorOnly: true
   whitelistJobs: [HeadOfSecurity]
+  category: loadout-category-sponsor
+  cost: 1
 
 - type: loadout
   id: OldHoSBeltLoadout
-  entity: ClothingBeltHoS
+  prototype: ClothingBeltHoS
   sponsorOnly: true
   whitelistJobs: [HeadOfSecurity]
+  category: loadout-category-sponsor
+  cost: 1
 
 - type: loadout
   id: OldHoSBackpackLoadout
-  entity: ClothingBackpackSatchelHoS
+  prototype: ClothingBackpackSatchelHoS
   sponsorOnly: true
   whitelistJobs: [HeadOfSecurity]
+  category: loadout-category-sponsor
+  cost: 1
 
 - type: loadout
   id: OldHoSBootsLoadout
-  entity: ClothingShoesBootsJack
+  prototype: ClothingShoesBootsJack
   sponsorOnly: true
   whitelistJobs: [HeadOfSecurity]
+  category: loadout-category-sponsor
+  cost: 1
 
 - type: loadout
   id: OldHoSHeadsetLoadout
-  entity: ClothingHeadsetSecurity
+  prototype: ClothingHeadsetSecurity
   sponsorOnly: true
   whitelistJobs: [HeadOfSecurity]
+  category: loadout-category-sponsor
+  cost: 1
 
 # ken41k
 - type: loadout
   id: DivineWatchLoadout
-  entity: ClothingHandsWatchDivine
+  prototype: ClothingHandsWatchDivine
   sponsorOnly: true
+  category: loadout-category-sponsor
+  cost: 14
 
 # jesuisunfou
 - type: loadout
   id: OldUSSPGlovesLoadout
-  entity: ClothingHandsGlovesLeatherUSSPBlack
+  prototype: ClothingHandsGlovesLeatherUSSPBlack
   sponsorOnly: true
   whitelistJobs: [HeadOfSecurity, IAA]
+  category: loadout-category-sponsor
+  cost: 2
 
 - type: loadout
   id: OldUSSPCapLoadout
-  entity: ClothingHeadHatCapUSSPBlack
+  prototype: ClothingHeadHatCapUSSPBlack
   sponsorOnly: true
   whitelistJobs: [HeadOfSecurity, IAA]
+  category: loadout-category-sponsor
+  cost: 2
 
 - type: loadout
   id: OldUSSPOvercoatLoadout
-  entity: ClothingOuterCoatUSSPOvercoatBlack
+  prototype: ClothingOuterCoatUSSPOvercoatBlack
   sponsorOnly: true
   whitelistJobs: [HeadOfSecurity, IAA]
+  category: loadout-category-sponsor
+  cost: 2
 
 - type: loadout
   id: OldUSSPJumpsuitLoadout
-  entity: ClothingUniformJumpsuitUSSPBlack
+  prototype: ClothingUniformJumpsuitUSSPBlack
   sponsorOnly: true
   whitelistJobs: [HeadOfSecurity, IAA]
+  category: loadout-category-sponsor
+  cost: 2
 
 - type: loadout
   id: OldUSSPShoesLoadout
-  entity: ClothingShoesUSSPBlack
+  prototype: ClothingShoesUSSPBlack
   sponsorOnly: true
   whitelistJobs: [HeadOfSecurity, IAA]
+  category: loadout-category-sponsor
+  cost: 2
 
 # ondapapers
 - type: loadout
   id: FancyCrownLoadout
-  entity: ClothingHeadHatFancyCrown
+  prototype: ClothingHeadHatFancyCrown
   sponsorOnly: true
+  category: loadout-category-sponsor
+  cost: 14

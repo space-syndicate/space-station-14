@@ -1,15 +1,20 @@
 using System.Linq;
 using System.Numerics;
+using Content.Client.Corvax.Sponsors;
+using Content.Client.Hands.Systems;
 using Content.Client.Humanoid;
 using Content.Client.Inventory;
 using Content.Client.Preferences;
 using Content.Client.UserInterface.Controls;
+using Content.Shared.Clothing.Components;
+using Content.Shared.Corvax.Loadout;
 using Content.Shared.GameTicking;
 using Content.Shared.Humanoid.Prototypes;
 using Content.Shared.Inventory;
 using Content.Shared.Preferences;
 using Content.Shared.Roles;
 using Robust.Client.GameObjects;
+using Robust.Client.Player;
 using Robust.Client.UserInterface;
 using Robust.Client.UserInterface.Controls;
 using Robust.Shared.Map;
@@ -131,6 +136,7 @@ namespace Content.Client.Lobby.UI
                     _summaryLabel.Text = selectedCharacter.Summary;
                     _entityManager.System<HumanoidAppearanceSystem>().LoadProfile(_previewDummy.Value, selectedCharacter);
                     GiveDummyJobClothes(_previewDummy.Value, selectedCharacter);
+                    GiveDummyLoadoutItems(_previewDummy.Value, selectedCharacter);
                 }
             }
         }
@@ -166,5 +172,75 @@ namespace Content.Client.Lobby.UI
                 }
             }
         }
+
+        // Corvax-Loadout-Start
+        // NOTE: Part is copy-paste of server LoadoutSystem.OnPlayerSpawned
+        public static void GiveDummyLoadoutItems(EntityUid dummy, HumanoidCharacterProfile profile)
+        {
+            var protoMan = IoCManager.Resolve<IPrototypeManager>();
+            var entMan = IoCManager.Resolve<IEntityManager>();
+            var sponsorsMan = IoCManager.Resolve<SponsorsManager>();
+            var handsSystem = entMan.System<HandsSystem>();
+            var invSystem = entMan.System<ClientInventorySystem>();
+
+            var highPriorityJobId = profile.JobPriorities.FirstOrDefault(p => p.Value == JobPriority.High).Key;
+
+            foreach (var loadoutId in profile.LoadoutPreferences)
+            {
+                sponsorsMan.TryGetInfo(out var sponsor);
+
+                if (!protoMan.TryIndex<LoadoutPrototype>(loadoutId, out var loadout))
+                    continue;
+
+                var isSponsorOnly = loadout.SponsorOnly && sponsor != null &&
+                                    !sponsor.AllowedMarkings.Contains(loadoutId);
+                var isWhitelisted = loadout.WhitelistJobs != null &&
+                                    !loadout.WhitelistJobs.Contains(highPriorityJobId ?? "");
+                var isBlacklisted = highPriorityJobId != null &&
+                                    loadout.BlacklistJobs != null &&
+                                    loadout.BlacklistJobs.Contains(highPriorityJobId);
+                var isSpeciesRestricted = loadout.SpeciesRestrictions != null &&
+                                          loadout.SpeciesRestrictions.Contains(profile.Species);
+
+                if (isSponsorOnly || isWhitelisted || isBlacklisted || isSpeciesRestricted)
+                    continue;
+
+                var entity = entMan.SpawnEntity(loadout.Prototype, MapCoordinates.Nullspace);
+
+                // Take in hand if not clothes
+                if (!entMan.TryGetComponent<ClothingComponent>(entity, out var clothing))
+                {
+                    handsSystem.TryPickup(dummy, entity);
+                    continue;
+                }
+
+                // Automatically search empty slot for clothes to equip
+                string? firstSlotName = null;
+                var isEquipped = false;
+                foreach (var slot in invSystem.GetSlots(dummy))
+                {
+                    if (!clothing.Slots.HasFlag(slot.SlotFlags))
+                        continue;
+
+                    firstSlotName ??= slot.Name;
+
+                    if (invSystem.TryGetSlotEntity(dummy, slot.Name, out var _))
+                        continue;
+
+                    if (!invSystem.TryEquip(dummy, entity, slot.Name, true, loadout.Exclusive))
+                        continue;
+
+                    isEquipped = true;
+                    break;
+                }
+
+                if (isEquipped || firstSlotName == null)
+                    continue;
+
+                // Force equip to first valid clothes slot
+                invSystem.TryEquip(dummy, entity, firstSlotName, true);
+            }
+        }
+        // Corvax-Loadout-End
     }
 }

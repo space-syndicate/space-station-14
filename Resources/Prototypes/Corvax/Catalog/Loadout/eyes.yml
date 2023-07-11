@@ -1,0 +1,17 @@
+- type: loadout
+  id: LoadoutEyesSalesman
+  category: loadout-category-accessories
+  cost: 1
+  prototype: ClothingEyesSalesman
+
+- type: loadout
+  id: LoadoutEyesEyepatch
+  category: loadout-category-accessories
+  cost: 1
+  prototype: ClothingEyesEyepatch
+
+- type: loadout
+  id: LoadoutEyesBlindfold
+  category: loadout-category-accessories
+  cost: 2
+  prototype: ClothingEyesBlindfold

@@ -1,0 +1,53 @@
+- type: loadout
+  id: LoadoutItemCig
+  category: loadout-category-items
+  cost: 1
+  prototype: Cigarette
+
+- type: loadout
+  id: LoadoutItemCigsGreen
+  category: loadout-category-items
+  cost: 2
+  prototype: CigPackGreen
+
+- type: loadout
+  id: LoadoutItemCigsRed
+  category: loadout-category-items
+  cost: 2
+  prototype: CigPackRed
+
+- type: loadout
+  id: LoadoutItemCigsBlue
+  category: loadout-category-items
+  cost: 2
+  prototype: CigPackBlue
+
+- type: loadout
+  id: LoadoutItemCigsBlack
+  category: loadout-category-items
+  cost: 2
+  prototype: CigPackBlack
+
+- type: loadout
+  id: LoadoutItemPAI
+  category: loadout-category-items
+  cost: 3
+  prototype: PersonalAI
+
+- type: loadout
+  id: LoadoutItemLighter
+  category: loadout-category-items
+  cost: 2
+  prototype: Lighter
+
+- type: loadout
+  id: LoadoutItemLighterCheap
+  category: loadout-category-items
+  cost: 1
+  prototype: CheapLighter
+
+- type: loadout
+  id: LoadoutItemMatches
+  category: loadout-category-items
+  cost: 1
+  prototype: Matchbox

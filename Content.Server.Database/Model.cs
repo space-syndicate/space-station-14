@@ -56,6 +56,12 @@ namespace Content.Server.Database
                         .HasIndex(p => new {HumanoidProfileId = p.ProfileId, p.TraitName})
                         .IsUnique();
 
+            // Corvax-Loadout-Start
+            modelBuilder.Entity<Loadout>()
+                        .HasIndex(p => new {HumanoidProfileId = p.ProfileId, p.LoadoutName})
+                        .IsUnique();
+            // Corvax-Loadout-End
+
             modelBuilder.Entity<Job>()
                 .HasIndex(j => j.ProfileId);
 
@@ -230,6 +236,7 @@ namespace Content.Server.Database
         public List<Job> Jobs { get; } = new();
         public List<Antag> Antags { get; } = new();
         public List<Trait> Traits { get; } = new();
+        public List<Loadout> Loadouts { get; } = new(); // Corvax-Loadout
 
         [Column("pref_unavailable")] public DbPreferenceUnavailableMode PreferenceUnavailable { get; set; }
 
@@ -273,6 +280,17 @@ namespace Content.Server.Database
 
         public string TraitName { get; set; } = null!;
     }
+
+    // Corvax-Loadout-Start
+    public class Loadout
+    {
+        public int Id { get; set; }
+        public Profile Profile { get; set; } = null!;
+        public int ProfileId { get; set; }
+
+        public string LoadoutName { get; set; } = null!;
+    }
+    // Corvax-Loadout-End
 
     public enum DbPreferenceUnavailableMode
     {

@@ -181,6 +181,7 @@ namespace Content.Client.Preferences.UI
                 if (humanoid != null)
                 {
                     LobbyCharacterPreviewPanel.GiveDummyJobClothes(_previewDummy, humanoid);
+                    LobbyCharacterPreviewPanel.GiveDummyLoadoutItems(_previewDummy, humanoid); // Corvax-Loadout
                 }
 
                 var isSelectedCharacter = profile == preferencesManager.Preferences?.SelectedCharacter;

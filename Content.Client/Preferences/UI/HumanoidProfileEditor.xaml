@@ -158,6 +158,15 @@
                         <humanoid:MarkingPicker Name="CMarkings" IgnoreCategories="Hair,FacialHair" />
                     </ScrollContainer>
                 </BoxContainer>
+                <!-- Corvax-Loadout-Start -->
+                <BoxContainer Orientation="Vertical" Margin="10" Name="CLoadoutsTab">
+                    <!-- Keep this value consistent with the Update__Preferences function's default 'points' value or issues will arise. -->
+                    <ProgressBar Name="LoadoutPoints" MaxValue="0" Value="0" />
+                    <ScrollContainer VerticalExpand="True">
+                        <TabContainer Name="CLoadoutsTabs" VerticalExpand="True" />
+                    </ScrollContainer>
+                </BoxContainer>
+                <!-- Corvax-Loadout-End -->
             </TabContainer>
         </BoxContainer>
         <!-- Right side -->

@@ -1,0 +1,29 @@
+- type: loadout
+  id: LoadoutOuterGhostSheet
+  category: loadout-category-outer
+  cost: 2
+  prototype: ClothingOuterGhostSheet
+
+- type: loadout
+  id: LoadoutOuterCoatBomberjacket
+  category: loadout-category-outer
+  cost: 3
+  prototype: ClothingOuterCoatBomber
+
+- type: loadout
+  id: LoadoutOuterCoatHoodieBlack
+  category: loadout-category-outer
+  cost: 2
+  prototype: ClothingOuterHoodieBlack
+
+- type: loadout
+  id: LoadoutOuterCoatHoodieGrey
+  category: loadout-category-outer
+  cost: 2
+  prototype: ClothingOuterHoodieGrey
+
+- type: loadout
+  id: LoadoutOuterCoatWinterCoat
+  category: loadout-category-outer
+  cost: 3
+  prototype: ClothingOuterWinterCoat

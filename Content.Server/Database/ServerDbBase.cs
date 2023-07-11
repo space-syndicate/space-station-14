@@ -27,6 +27,7 @@ namespace Content.Server.Database
                 .Include(p => p.Profiles).ThenInclude(h => h.Jobs)
                 .Include(p => p.Profiles).ThenInclude(h => h.Antags)
                 .Include(p => p.Profiles).ThenInclude(h => h.Traits)
+                .Include(p => p.Profiles).ThenInclude(h => h.Loadouts) // Corvax-Loadout
                 .AsSingleQuery()
                 .SingleOrDefaultAsync(p => p.UserId == userId.UserId);
 
@@ -74,6 +75,7 @@ namespace Content.Server.Database
                 .Include(p => p.Jobs)
                 .Include(p => p.Antags)
                 .Include(p => p.Traits)
+                .Include(p => p.Loadouts) // Corvax-Loadout
                 .AsSplitQuery()
                 .SingleOrDefault(h => h.Slot == slot);
 
@@ -160,6 +162,7 @@ namespace Content.Server.Database
             var jobs = profile.Jobs.ToDictionary(j => j.JobName, j => (JobPriority) j.Priority);
             var antags = profile.Antags.Select(a => a.AntagName);
             var traits = profile.Traits.Select(t => t.TraitName);
+            var loadouts = profile.Loadouts.Select(l => l.LoadoutName); // Corvax-Loadout
 
             var sex = Sex.Male;
             if (Enum.TryParse<Sex>(profile.Sex, true, out var sexVal))
@@ -222,7 +225,8 @@ namespace Content.Server.Database
                 jobs,
                 (PreferenceUnavailableMode) profile.PreferenceUnavailable,
                 antags.ToList(),
-                traits.ToList()
+                traits.ToList(),
+                loadouts.ToList() // Corvax-Loadout
             );
         }
 
@@ -274,6 +278,14 @@ namespace Content.Server.Database
                 humanoid.TraitPreferences
                         .Select(t => new Trait {TraitName = t})
             );
+
+            // Corvax-Loadout-Start
+            profile.Loadouts.Clear();
+            profile.Loadouts.AddRange(
+                humanoid.LoadoutPreferences
+                        .Select(l => new Loadout {LoadoutName = l})
+            );
+            // Corvax-Loadout-End
 
             return profile;
         }

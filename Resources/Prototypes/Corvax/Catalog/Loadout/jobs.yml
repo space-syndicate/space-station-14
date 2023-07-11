@@ -1,0 +1,444 @@
+# Command
+
+- type: loadout
+  id: LoadoutCommandNeckMantleCE
+  category: loadout-category-jobs
+  cost: 2
+  exclusive: true
+  whitelistJobs:
+    - ChiefEngineer
+  prototype: ClothingNeckMantleCE
+
+- type: loadout
+  id: LoadoutCommandNeckMantleCMO
+  category: loadout-category-jobs
+  cost: 2
+  exclusive: true
+  whitelistJobs:
+    - ChiefMedicalOfficer
+  prototype: ClothingNeckMantleCMO
+
+- type: loadout
+  id: LoadoutCommandNeckMantleHOP
+  category: loadout-category-jobs
+  cost: 2
+  exclusive: true
+  whitelistJobs:
+    - HeadOfPersonnel
+  prototype: ClothingNeckMantleHOP
+
+- type: loadout
+  id: LoadoutCommandNeckMantleHOS
+  category: loadout-category-jobs
+  cost: 2
+  exclusive: true
+  whitelistJobs:
+    - HeadOfSecurity
+  prototype: ClothingNeckMantleHOS
+
+- type: loadout
+  id: LoadoutCommandNeckMantleRD
+  category: loadout-category-jobs
+  cost: 2
+  exclusive: true
+  whitelistJobs:
+    - ResearchDirector
+  prototype: ClothingNeckMantleRD
+
+
+# Security
+
+- type: loadout
+  id: LoadoutSecurityUniformGrey
+  category: loadout-category-jobs
+  cost: 2
+  exclusive: true
+  whitelistJobs:
+    - SecurityOfficer
+  prototype: ClothingUniformJumpsuitSecGrey
+
+- type: loadout
+  id: LoadoutSecurityOuterKevlar
+  category: loadout-category-jobs
+  cost: 4
+  exclusive: true
+  whitelistJobs:
+    - SecurityOfficer
+  prototype: ClothingOuterArmorBasic
+
+# Medical
+
+- type: loadout
+  id: LoadoutMedicalEyesMediHUD
+  category: loadout-category-jobs
+  cost: 3
+  exclusive: true
+  whitelistJobs:
+    - MedicalDoctor
+    - ChiefMedicalOfficer
+  prototype: ClothingEyesHudMedical
+
+- type: loadout
+  id: LoadoutMedicalOuterLabcoat
+  category: loadout-category-jobs
+  cost: 2
+  exclusive: true
+  whitelistJobs:
+    - MedicalDoctor
+  prototype: ClothingOuterCoatLab
+
+- type: loadout
+  id: LoadoutMedicalNeckStethoscope
+  category: loadout-category-jobs
+  cost: 1
+  exclusive: true
+  whitelistJobs:
+    - MedicalDoctor
+    - ChiefMedicalOfficer
+  prototype: ClothingNeckStethoscope
+
+- type: loadout
+  id: LoadoutMedicalUniformChemistSuit
+  category: loadout-category-jobs
+  cost: 2
+  exclusive: true
+  whitelistJobs:
+    - MedicalDoctor
+  prototype: ClothingUniformJumpskirtChemistry
+
+- type: loadout
+  id: LoadoutMedicalUniformChemistSkirt
+  category: loadout-category-jobs
+  cost: 2
+  exclusive: true
+  whitelistJobs:
+    - MedicalDoctor
+  prototype: ClothingUniformJumpsuitChemistry
+
+- type: loadout
+  id: LoadoutMedicalOuterChemistLabcoat
+  category: loadout-category-jobs
+  cost: 2
+  exclusive: true
+  whitelistJobs:
+    - MedicalDoctor
+  prototype: ClothingOuterCoatLabChem
+
+- type: loadout
+  id: LoadoutMedicalUniformScrubsBlue
+  category: loadout-category-jobs
+  cost: 2
+  exclusive: true
+  whitelistJobs:
+    - MedicalDoctor
+  prototype: UniformScrubsColorBlue
+
+- type: loadout
+  id: LoadoutMedicalUniformScrubsGreen
+  category: loadout-category-jobs
+  cost: 2
+  exclusive: true
+  whitelistJobs:
+    - MedicalDoctor
+  prototype: UniformScrubsColorGreen
+
+- type: loadout
+  id: LoadoutMedicalUniformScrubsPurple
+  category: loadout-category-jobs
+  cost: 2
+  exclusive: true
+  whitelistJobs:
+    - MedicalDoctor
+  prototype: UniformScrubsColorPurple
+
+- type: loadout
+  id: LoadoutMedicalUniformParamedicJumpsuit
+  category: loadout-category-jobs
+  cost: 2
+  exclusive: true
+  whitelistJobs:
+    - MedicalDoctor
+  prototype: ClothingUniformJumpsuitParamedic
+
+- type: loadout
+  id: LoadoutMedicalUniformParamedicJumpskirt
+  category: loadout-category-jobs
+  cost: 2
+  exclusive: true
+  whitelistJobs:
+    - MedicalDoctor
+  prototype: ClothingUniformJumpskirtParamedic
+
+# Engineering
+
+- type: loadout
+  id: LoadoutEngineeringUniformHazard
+  category: loadout-category-jobs
+  cost: 2
+  exclusive: true
+  whitelistJobs:
+    - StationEngineer
+  prototype: ClothingUniformJumpsuitEngineeringHazard
+
+- type: loadout
+  id: LoadoutEngineeringOuterHazard
+  category: loadout-category-jobs
+  cost: 2
+  exclusive: true
+  whitelistJobs:
+    - StationEngineer
+  prototype: ClothingOuterVestHazard
+
+- type: loadout
+  id: LoadoutEngineeringOuterChickenSuit
+  category: loadout-category-jobs
+  cost: 3
+  exclusive: true
+  whitelistJobs:
+    - AtmosphericTechnician # :)
+  prototype: ClothingOuterSuitChicken
+
+- type: loadout
+  id: LoadoutEngineeringHeadChicken
+  category: loadout-category-jobs
+  cost: 2
+  exclusive: true
+  whitelistJobs:
+    - AtmosphericTechnician # :)
+  prototype: ClothingHeadHatChickenhead
+
+- type: loadout
+  id: LoadoutEngineeringEyesMeson
+  category: loadout-category-jobs
+  cost: 2
+  exclusive: true
+  whitelistJobs:
+    - StationEngineer
+    - AtmosphericTechnician
+  prototype: ClothingEyesGlassesMeson
+
+- type: loadout
+  id: LoadoutEngineeringHeadHardhatBlue
+  category: loadout-category-jobs
+  cost: 2
+  exclusive: true
+  whitelistJobs:
+    - StationEngineer
+    - AtmosphericTechnician
+  prototype: ClothingHeadHatHardhatBlue
+
+- type: loadout
+  id: LoadoutEngineeringHeadHardhatOrange
+  category: loadout-category-jobs
+  cost: 2
+  exclusive: true
+  whitelistJobs:
+    - StationEngineer
+    - AtmosphericTechnician
+  prototype: ClothingHeadHatHardhatOrange
+
+- type: loadout
+  id: LoadoutEngineeringHeadHardhatYellow
+  category: loadout-category-jobs
+  cost: 2
+  exclusive: true
+  whitelistJobs:
+    - StationEngineer
+    - AtmosphericTechnician
+  prototype: ClothingHeadHatHardhatYellow
+
+- type: loadout
+  id: LoadoutEngineeringHeadHardhatWhite
+  category: loadout-category-jobs
+  cost: 2
+  exclusive: true
+  whitelistJobs:
+    - StationEngineer
+    - AtmosphericTechnician
+  prototype: ClothingHeadHatHardhatWhite
+
+- type: loadout
+  id: LoadoutEngineeringHeadHardhatRed
+  category: loadout-category-jobs
+  cost: 2
+  exclusive: true
+  whitelistJobs:
+    - StationEngineer
+    - AtmosphericTechnician
+  prototype: ClothingHeadHatHardhatRed
+
+- type: loadout
+  id: LoadoutEngineeringItemInflatable
+  category: loadout-category-jobs
+  cost: 4
+  whitelistJobs:
+    - StationEngineer
+    - AtmosphericTechnician
+  prototype: BoxInflatable
+
+
+# Epistemics
+
+- type: loadout
+  id: LoadoutScienceOuterLabcoat
+  category: loadout-category-jobs
+  cost: 2
+  exclusive: true
+  whitelistJobs:
+    - Scientist
+  prototype: ClothingOuterCoatLab
+
+- type: loadout
+  id: LoadoutScienceItemNodeScanner
+  category: loadout-category-jobs
+  cost: 3
+  whitelistJobs:
+    - Scientist
+  prototype: NodeScanner
+
+
+# Service
+
+- type: loadout
+  id: LoadoutServiceClownUniformJesterAlt
+  category: loadout-category-jobs
+  cost: 2
+  exclusive: true
+  whitelistJobs:
+    - Clown
+  prototype: ClothingUniformJumpsuitJesterAlt
+
+- type: loadout
+  id: LoadoutServiceClownShoesJester
+  category: loadout-category-jobs
+  cost: 1
+  exclusive: true
+  whitelistJobs:
+    - Clown
+  prototype: ClothingShoesJester
+
+- type: loadout
+  id: LoadoutServiceClownHeadJesterHatAlt
+  category: loadout-category-jobs
+  cost: 1
+  exclusive: true
+  whitelistJobs:
+    - Clown
+  prototype: ClothingHeadHatJesterAlt
+
+- type: loadout
+  id: LoadoutServiceBartenderUniformPurple
+  category: loadout-category-jobs
+  cost: 2
+  exclusive: true
+  whitelistJobs:
+    - Bartender
+  prototype: ClothingUniformJumpsuitBartenderPurple
+
+- type: loadout
+  id: LoadoutServiceBotanistUniformOveralls
+  category: loadout-category-jobs
+  cost: 2
+  exclusive: true
+  whitelistJobs:
+    - Botanist
+  prototype: ClothingUniformOveralls
+
+- type: loadout
+  id: LoadoutServiceLawyerUniformBlueSuit
+  category: loadout-category-jobs
+  cost: 2
+  exclusive: true
+  whitelistJobs:
+    - Lawyer
+  prototype: ClothingUniformJumpsuitLawyerBlue
+
+- type: loadout
+  id: LoadoutServiceLawyerUniformBlueSkirt
+  category: loadout-category-jobs
+  cost: 2
+  exclusive: true
+  whitelistJobs:
+    - Lawyer
+  prototype: ClothingUniformJumpskirtLawyerBlue
+
+- type: loadout
+  id: LoadoutServiceLawyerUniformRedSuit
+  category: loadout-category-jobs
+  cost: 2
+  exclusive: true
+  whitelistJobs:
+    - Lawyer
+  prototype: ClothingUniformJumpsuitLawyerRed
+
+- type: loadout
+  id: LoadoutServiceLawyerUniformRedSkirt
+  category: loadout-category-jobs
+  cost: 2
+  exclusive: true
+  whitelistJobs:
+    - Lawyer
+  prototype: ClothingUniformJumpskirtLawyerRed
+
+- type: loadout
+  id: LoadoutServiceLawyerUniformPurpleSuit
+  category: loadout-category-jobs
+  cost: 2
+  exclusive: true
+  whitelistJobs:
+    - Lawyer
+  prototype: ClothingUniformJumpsuitLawyerPurple
+
+- type: loadout
+  id: LoadoutServiceLawyerUniformPurpleSkirt
+  category: loadout-category-jobs
+  cost: 2
+  exclusive: true
+  whitelistJobs:
+    - Lawyer
+  prototype: ClothingUniformJumpskirtLawyerPurple
+
+- type: loadout
+  id: LoadoutServiceLawyerUniformGoodSuit
+  category: loadout-category-jobs
+  cost: 2
+  exclusive: true
+  whitelistJobs:
+    - Lawyer
+  prototype: ClothingUniformJumpsuitLawyerGood
+
+- type: loadout
+  id: LoadoutServiceLawyerUniformGoodSkirt
+  category: loadout-category-jobs
+  cost: 2
+  exclusive: true
+  whitelistJobs:
+    - Lawyer
+  prototype: ClothingUniformJumpskirtLawyerGood
+
+- type: loadout
+  id: LoadoutServiceReporterUniformJournalist
+  category: loadout-category-jobs
+  cost: 2
+  exclusive: true
+  whitelistJobs:
+    - Reporter
+  prototype: ClothingUniformJumpsuitJournalist
+
+- type: loadout
+  id: LoadoutServiceReporterUniformDetectivesuit
+  category: loadout-category-jobs
+  cost: 2
+  exclusive: true
+  whitelistJobs:
+    - Reporter
+  prototype: ClothingUniformJumpsuitDetective
+
+- type: loadout
+  id: LoadoutServiceReporterUniformDetectiveskirt
+  category: loadout-category-jobs
+  cost: 2
+  exclusive: true
+  whitelistJobs:
+    - Reporter
+  prototype: ClothingUniformJumpskirtDetective
