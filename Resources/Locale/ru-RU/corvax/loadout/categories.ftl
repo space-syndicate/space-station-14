@@ -1,4 +1,4 @@
-﻿loadout-category-uncategorized = Без категории
+loadout-category-uncategorized = Без категории
 loadout-category-accessories = Аксессуары
 loadout-category-jobs = Работа
 loadout-category-uniform = Униформа
