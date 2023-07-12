@@ -1,5 +1,6 @@
 using System.Linq;
 using System.Numerics;
+using Content.Client.Corvax.Sponsors;
 using Content.Client.Humanoid;
 using Content.Client.Lobby.UI;
 using Content.Client.Message;
@@ -185,7 +186,8 @@ namespace Content.Client.Preferences.UI
 
             #region Species
 
-            _speciesList = prototypeManager.EnumeratePrototypes<SpeciesPrototype>().Where(o => o.RoundStart).ToList();
+            var isSponsor = IoCManager.Resolve<SponsorsManager>().TryGetInfo(out _); // Corvax-Sponsor
+            _speciesList = prototypeManager.EnumeratePrototypes<SpeciesPrototype>().Where(o => o.RoundStart && (!o.SponsorOnly || isSponsor)).ToList(); // Corvax-Sponsor
             for (var i = 0; i < _speciesList.Count; i++)
             {
                 var name = Loc.GetString(_speciesList[i].Name);

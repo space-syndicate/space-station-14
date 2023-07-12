@@ -2,6 +2,7 @@ using System.Linq;
 using System.Globalization;
 using System.Text.RegularExpressions;
 using Content.Shared.CCVar;
+using Content.Shared.Corvax.Sponsors;
 using Content.Shared.Corvax.TTS;
 using Content.Shared.GameTicking;
 using Content.Shared.Humanoid;
@@ -370,9 +371,14 @@ namespace Content.Shared.Preferences
             return Appearance.MemberwiseEquals(other.Appearance);
         }
 
-        public void EnsureValid(string[] sponsorMarkings)
+        public void EnsureValid(SponsorInfo? sponsorInfo)
         {
             var prototypeManager = IoCManager.Resolve<IPrototypeManager>();
+
+            // Corvax-Sponsor-Start: Reset to human if player not sponsor
+            if (prototypeManager.TryIndex<SpeciesPrototype>(Species, out var speciesProto) && speciesProto.SponsorOnly == (sponsorInfo != null))
+                Species = SharedHumanoidAppearanceSystem.DefaultSpecies;
+            // Corvax-Sponsor-End
 
             if (!prototypeManager.TryIndex<SpeciesPrototype>(Species, out var speciesPrototype))
             {
@@ -453,7 +459,8 @@ namespace Content.Shared.Preferences
                 flavortext = FormattedMessage.RemoveMarkup(FlavorText);
             }
 
-            var appearance = HumanoidCharacterAppearance.EnsureValid(Appearance, Species, sponsorMarkings);
+            var allowedMarkings = sponsorInfo != null ? sponsorInfo.AllowedMarkings : new string[]{}; // Corvax-Sponsor
+            var appearance = HumanoidCharacterAppearance.EnsureValid(Appearance, Species, allowedMarkings);
 
             var prefsUnavailableMode = PreferenceUnavailable switch
             {
@@ -518,14 +525,14 @@ namespace Content.Shared.Preferences
 
             _traitPreferences.Clear();
             _traitPreferences.AddRange(traits);
-            
+
             // Corvax-TTS-Start
             prototypeManager.TryIndex<TTSVoicePrototype>(Voice, out var voice);
             if (voice is null || !CanHaveVoice(voice, Sex))
                 Voice = SharedHumanoidAppearanceSystem.DefaultSexVoice[sex];
             // Corvax-TTS-End
         }
-        
+
         // Corvax-TTS-Start
         // MUST NOT BE PUBLIC, BUT....
         public static bool CanHaveVoice(TTSVoicePrototype voice, Sex sex)

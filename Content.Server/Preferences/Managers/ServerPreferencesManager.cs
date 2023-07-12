@@ -103,8 +103,8 @@ namespace Content.Server.Preferences.Managers
 
             // Corvax-Sponsors-Start: Ensure removing sponsor markings if client somehow bypassed client filtering
             // WARN! It's not removing markings from DB!
-            var allowedMarkings = _sponsors.TryGetInfo(message.MsgChannel.UserId, out var sponsor) ? sponsor.AllowedMarkings : new string[]{};
-            profile.EnsureValid(allowedMarkings);
+            _sponsors.TryGetInfo(message.MsgChannel.UserId, out var sponsor); // Corvax-Sponsors
+            profile.EnsureValid(sponsor);
             // Corvax-Sponsors-End
             var profiles = new Dictionary<int, ICharacterProfile>(curPrefs.Characters)
             {
@@ -201,8 +201,8 @@ namespace Content.Server.Preferences.Managers
                     // Corvax-Sponsors-Start: Remove sponsor markings from expired sponsors
                     foreach (var (_, profile) in prefs.Characters)
                     {
-                        var allowedMarkings = _sponsors.TryGetInfo(session.UserId, out var sponsor) ? sponsor.AllowedMarkings : new string[]{};
-                        profile.EnsureValid(allowedMarkings);
+                        _sponsors.TryGetInfo(session.UserId, out var sponsor);
+                        profile.EnsureValid(sponsor);
                     }
                     // Corvax-Sponsors-End
                     prefsData.Prefs = prefs;
@@ -232,7 +232,7 @@ namespace Content.Server.Preferences.Managers
             return maxSlots + extraSlots;
         }
         // Corvax-Sponsors-End
-        
+
         public bool HavePreferencesLoaded(IPlayerSession session)
         {
             return _cachedPlayerPrefs.ContainsKey(session.UserId);
