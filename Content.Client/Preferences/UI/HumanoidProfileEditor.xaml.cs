@@ -186,9 +186,9 @@ namespace Content.Client.Preferences.UI
 
             #region Species
 
-            IoCManager.Resolve<SponsorsManager>().TryGetInfo(out var sponsorInfo); // Corvax-Sponsor
-            var allowedMarkings = sponsorInfo != null ? sponsorInfo.AllowedMarkings : new string[]{}; // Corvax-Sponsor
-            _speciesList = prototypeManager.EnumeratePrototypes<SpeciesPrototype>().Where(o => o.RoundStart && (!o.SponsorOnly || allowedMarkings.Contains(o.Prototype))).ToList(); // Corvax-Sponsor
+            IoCManager.Resolve<SponsorsManager>().TryGetInfo(out var sponsorInfo); // Corvax-Sponsors
+            var allowedMarkings = sponsorInfo != null ? sponsorInfo.AllowedMarkings : new string[]{}; // Corvax-Sponsors
+            _speciesList = prototypeManager.EnumeratePrototypes<SpeciesPrototype>().Where(o => o.RoundStart && (!o.SponsorOnly || allowedMarkings.Contains(o.Prototype))).ToList(); // Corvax-Sponsors
             for (var i = 0; i < _speciesList.Count; i++)
             {
                 var name = Loc.GetString(_speciesList[i].Name);
