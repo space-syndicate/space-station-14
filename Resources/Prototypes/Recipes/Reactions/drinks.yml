@@ -89,7 +89,7 @@
     CogChamp: 3
   sound:
     path: /Audio/Magic/Cults/ClockCult/steam_whoosh.ogg
-    
+
 - type: reaction
   id: Barefoot
   reactants:
@@ -835,15 +835,15 @@
     WhiskeySoda: 3
 
 - type: reaction
-  id: HotRamen
+  id: HotDoshirak
   minTemp: 323.15
   reactants:
-    DryRamen:
+    DryDoshirak:
       amount: 3
     Water:
       amount: 1
   products:
-    HotRamen: 3
+    HotDoshirak: 3
 
 - type: reaction
   id: Pilk

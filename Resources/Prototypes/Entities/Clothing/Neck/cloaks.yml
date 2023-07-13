@@ -81,6 +81,15 @@
 
 - type: entity
   parent: ClothingNeckBase
+  id: ClothingNeckCloakUSSP
+  name: ussp cloak
+  description: A stately blue cloak to represent USSP.
+  components:
+    - type: Sprite
+      sprite: Clothing/Neck/Cloaks/ussp.rsi
+
+- type: entity
+  parent: ClothingNeckBase
   id: ClothingNeckCloakCapFormal
   name: captain's formal cloak
   description: A lavish and decorated cloak for special occasions.

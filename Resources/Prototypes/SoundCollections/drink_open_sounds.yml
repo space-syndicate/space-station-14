@@ -6,6 +6,11 @@
   - /Audio/Items/can_open3.ogg
 
 - type: soundCollection
+  id: plasticContainerOpen
+  files:
+  - /Audio/Items/open_plastic.ogg
+
+- type: soundCollection
   id: bottleOpenSounds
   files:
   - /Audio/Items/bottle_open1.ogg
