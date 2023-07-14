@@ -1,0 +1,42 @@
+- type: job
+  id: TechnicalSP
+  name: job-name-technical-sp
+  description: job-description-tsp
+  playTimeTracker: JobTechnicalSP
+  requirements:
+    - !type:DepartmentTimeRequirement
+      department: Security
+      time: 156000 # Corvax-RoleTime
+    - !type:DepartmentTimeRequirement
+      department: Engineering
+      time: 138000 # Corvax-RoleTime
+  startingGear: StationEngineerGear
+  icon: "SPEngineer"
+  supervisors: job-supervisors-wosp
+  access:
+  - Security
+  - Brig
+  - Maintenance
+  - Service
+  - External
+  - Maintenance
+  - Engineering
+  - External
+  extendedAccess:
+  - Atmospherics
+
+- type: startingGear
+  id: StationEngineerGear
+  equipment:
+    head: ClothingHeadHatHardhatYellow
+    jumpsuit: ClothingUniformJumpsuitEngineering
+    back: ClothingBackpackEngineeringFilled
+    shoes: ClothingShoesBootsWork
+    outerClothing: ClothingOuterVestHazard
+    id: EngineerPDA
+    eyes: ClothingEyesGlassesMeson
+    belt: ClothingBeltUtilityEngineering
+    ears: ClothingHeadsetEngineering
+  innerclothingskirt: ClothingUniformJumpskirtEngineering
+  satchel: ClothingBackpackSatchelEngineeringFilled
+  duffelbag: ClothingBackpackDuffelEngineeringFilled

@@ -17,6 +17,15 @@
   id: JobCaptain
 
 - type: playTimeTracker
+  id: JobWardenSP
+
+- type: playTimeTracker
+  id: JobOfficerSP
+
+- type: playTimeTracker
+  id: JobTechnicalSP
+
+- type: playTimeTracker
   id: JobCargoTechnician
 
 - type: playTimeTracker
@@ -87,7 +96,7 @@
 
 - type: playTimeTracker
   id: JobPassenger
-  
+
 - type: playTimeTracker
   id: JobParamedic
 
