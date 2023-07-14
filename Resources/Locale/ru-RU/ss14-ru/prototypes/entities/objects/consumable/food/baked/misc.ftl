@@ -44,3 +44,5 @@ ent-FoodBakedCannoli = канноли
     .desc = Сицилийское лакомство, превращает вас в мудреца.
 ent-FoodBakedDumplings = пельмени
     .desc = Усредненный рецепт мяса в тесте.
+ent-FoodBakedChevreChaud = chèvre chaud
+    .desc = A disk of slightly melted chèvre flopped on top of a crostini, and toasted all-round.
