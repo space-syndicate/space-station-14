@@ -1,6 +1,6 @@
 - type: entity
   name: law office's rubber stamp
-  parent: RubberStampMime
+  parent: RubberStampBase
   id: RubberStampIAA
   components:
     - type: Stamp
@@ -12,7 +12,7 @@
 
 - type: entity
   name: psychologist's rubber stamp
-  parent: RubberStampMime
+  parent: RubberStampBase
   id: RubberStampPsychologist
   components:
   - type: Stamp
@@ -21,4 +21,3 @@
   - type: Sprite
     sprite: Objects/Misc/bureaucracy.rsi
     state: stamp-psychologist
-    
