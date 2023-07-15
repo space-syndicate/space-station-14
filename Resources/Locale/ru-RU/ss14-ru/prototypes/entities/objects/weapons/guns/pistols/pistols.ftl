@@ -10,5 +10,5 @@ ent-WeaponPistolMk58 = МК 58
     .desc = Дешевый и распространённый пистолет, производимый дочерней компанией Nanotrasen. Использует патроны калибра .35 авто.
     .suffix = Пистолет
 ent-WeaponPistolMk58Nonlethal = { ent-WeaponPistolMk58 }
-    .suffix = Non-lethal
+    .suffix = Травматический
     .desc = { ent-WeaponPistolMk58.desc }
