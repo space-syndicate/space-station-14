@@ -1,0 +1,35 @@
+- type: job
+  id: OfficerSP
+  name: job-name-officer-sp
+  description: job-description-ssp
+  playTimeTracker: JobOfficerSP
+  requirements:
+    - !type:DepartmentTimeRequirement
+      department: Security
+      time: 36000 # Corvax-RoleTime
+  startingGear: SecurityOfficerGearSP
+  icon: "SPOfficer"
+  supervisors: job-supervisors-wosp
+  canBeAntag: false
+  access:
+  - Security
+  - Brig
+  - Maintenance
+  - Service
+  - External
+
+- type: startingGear
+  id: SecurityOfficerGearSP
+  equipment:
+    jumpsuit: ClothingUniformJumpsuitSec
+    back: ClothingBackpackSecurityFilled
+    shoes: ClothingShoesBootsJackSec # Corvax-Resprite
+    eyes: ClothingEyesGlassesSecurity
+    head: ClothingHeadHatERTLeaderBeret
+    outerClothing: ClothingOuterVestArmorSec # Corvax-Resprite
+    id: SecurityPDA
+    ears: ClothingHeadsetSecurity
+    belt: ClothingBeltSecurityFilled
+  innerclothingskirt: ClothingUniformJumpskirtSec
+  satchel: ClothingBackpackSatchelSecurityFilled
+  duffelbag: ClothingBackpackDuffelSecurityFilled

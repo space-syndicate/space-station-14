@@ -1,0 +1,45 @@
+- type: job
+  id: WardenOfSP
+  name: job-name-warden-sp
+  description: job-description-wosp
+  playTimeTracker: JobWardenSP
+  requirements:
+    - !type:RoleTimeRequirement
+      role: JobWarden
+      time: 18000
+    - !type:DepartmentTimeRequirement
+      department: SpacePrison
+      time: 36000 # 200 minutes on space prison dep gameplay req
+  weight: 10
+  startingGear: HoSSPGear
+  icon: "SPWarden"
+  requireAdminNotify: true
+  supervisors: job-supervisors-centcom
+  canBeAntag: false
+  access:
+  - HeadOfSecurity
+  - Command
+  - Brig
+  - Security
+  - Armory
+  - Maintenance
+  - Service
+  - External
+  - Detective
+
+- type: startingGear
+  id: HoSSPGear
+  equipment:
+    jumpsuit: ClothingUniformJumpsuitHoS
+    back: ClothingBackpackHOSFilled
+    shoes: ClothingShoesBootsJackSec # Corvax-Resprite
+    outerClothing: ClothingOuterCoatWardenAlt
+    eyes: ClothingEyesGlassesSecurity
+    head: ClothingHeadHatCapWardenAlt
+    id: HoSPDA
+    gloves: ClothingHandsGlovesCombat
+    ears: ClothingHeadsetAltSecurity
+    belt: ClothingBeltSecurityFilled
+  innerclothingskirt: ClothingUniformJumpskirtHoS
+  satchel: ClothingBackpackSatchelHOSFilled
+  duffelbag: ClothingBackpackDuffelHOSFilled
