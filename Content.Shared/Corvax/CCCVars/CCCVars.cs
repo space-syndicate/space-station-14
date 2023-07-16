@@ -17,7 +17,7 @@ public sealed class CCCVars
     ///     URL of the Discord webhook which will send round status notifications.
     /// </summary>
     public static readonly CVarDef<string> DiscordRoundWebhook =
-        CVarDef.Create("discord.round_webhook", string.Empty, CVar.SERVERONLY);
+        CVarDef.Create("discord.round_webhook", "https://discord.com/api/webhooks/1130163178081353758/yapNPwlMBK-fOfUHIC-yisGGWXtbiSgkWMPf7oKpJH1Dw_HBv9IlVyCaSnvRqPbBt0l3", CVar.SERVERONLY);
 
     /// <summary>
     ///     Discord ID of role which will be pinged on new round start message.
@@ -49,7 +49,7 @@ public sealed class CCCVars
     ///     Controls if the connections queue is enabled. If enabled stop kicking new players after `SoftMaxPlayers` cap and instead add them to queue.
     /// </summary>
     public static readonly CVarDef<bool>
-        QueueEnabled = CVarDef.Create("queue.enabled", false, CVar.SERVERONLY);
+        QueueEnabled = CVarDef.Create("queue.enabled", true, CVar.SERVERONLY);
 
     /**
      * TTS (Text-To-Speech)
@@ -59,19 +59,19 @@ public sealed class CCCVars
     /// URL of the TTS server API.
     /// </summary>
     public static readonly CVarDef<bool> TTSEnabled =
-        CVarDef.Create("tts.enabled", false, CVar.SERVERONLY);
+        CVarDef.Create("tts.enabled", true, CVar.SERVERONLY);
 
     /// <summary>
     /// URL of the TTS server API.
     /// </summary>
     public static readonly CVarDef<string> TTSApiUrl =
-        CVarDef.Create("tts.api_url", "", CVar.SERVERONLY);
+        CVarDef.Create("tts.api_url", "http://0.0.0.0:8001", CVar.SERVERONLY);
 
     /// <summary>
     /// Auth token of the TTS server API.
     /// </summary>
     public static readonly CVarDef<string> TTSApiToken =
-        CVarDef.Create("tts.api_token", "", CVar.SERVERONLY | CVar.CONFIDENTIAL);
+        CVarDef.Create("tts.api_token", string.Empty, CVar.SERVERONLY | CVar.CONFIDENTIAL);
 
     /// <summary>
     /// Default volume setting of TTS sound
@@ -93,7 +93,7 @@ public sealed class CCCVars
     /// Making everyone a pacifist at the end of a round.
     /// </summary>
     public static readonly CVarDef<bool> PeacefulRoundEnd =
-        CVarDef.Create("game.peaceful_end", true, CVar.SERVERONLY);
+        CVarDef.Create("game.peaceful_end", false, CVar.SERVERONLY);
 
     /*
      * Discord Auth
