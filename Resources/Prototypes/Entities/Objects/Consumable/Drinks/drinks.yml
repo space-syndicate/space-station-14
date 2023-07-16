@@ -2136,36 +2136,42 @@
 
 - type: entity
   parent: DrinkGlassBase
-  id: DrinkRamen
-  name: cup ramen
+  id: DrinkDoshirak
+  name: cup Doshirak
   description: Just add 10ml boiling water. A taste that reminds you of your school years.
   components:
+  - type: Drink
+    isOpen: false
+    openSounds:
+      collection: plasticContainerOpen
   - type: SolutionContainerManager
     solutions:
       drink:
         maxVol: 30
         reagents:
-        - ReagentId: DryRamen
+        - ReagentId: DryDoshirak
           Quantity: 30
   - type: Sprite
-    sprite: Objects/Consumable/Drinks/ramen.rsi
+    sprite: Objects/Consumable/Drinks/doshirak.rsi
   - type: Tag
     tags:
     - Trash
   - type: SpaceGarbage
 
 - type: entity
-  parent: DrinkRamen
-  id: DrinkHellRamen
-  name: hell ramen
+  parent: DrinkDoshirak
+  id: DrinkHellDoshirak
+  name: hell doshirak
   description: Just add 10ml boiling water. Super spicy flavor.
   components:
+  - type: Sprite
+    sprite: Objects/Consumable/Drinks/hell_doshirak.rsi
   - type: SolutionContainerManager
     solutions:
       drink:
         maxVol: 30
         reagents:
-        - ReagentId: DryRamen
+        - ReagentId: DryDoshirak
           Quantity: 30
         - ReagentId: CapsaicinOil
           Quantity: 5
