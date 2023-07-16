@@ -1,4 +1,4 @@
-﻿- type: entity
+- type: entity
   abstract: true
   parent: ClothingHeadset
   id: ClothingHeadsetAlt
@@ -98,6 +98,7 @@
       - EncryptionKeySecurity
       - EncryptionKeyCommand
       - EncryptionKeyCommon
+      - EncryptionKeyPrison #Вставлено в оригинальный код
   - type: Sprite
     sprite: Clothing/Ears/Headsets/security.rsi
   - type: Clothing
