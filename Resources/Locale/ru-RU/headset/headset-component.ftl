@@ -11,5 +11,6 @@ chat-radio-security = Безопасность
 chat-radio-service = Сервис
 chat-radio-supply = Снабжение
 chat-radio-syndicate = Синдикат
+chat-radio-prison = Тюрьма #Добавлено в оригинальный код
 # not headset but whatever
 chat-radio-handheld = Портативный
