@@ -17,7 +17,7 @@ public sealed class CCCVars
     ///     URL of the Discord webhook which will send round status notifications.
     /// </summary>
     public static readonly CVarDef<string> DiscordRoundWebhook =
-        CVarDef.Create("discord.round_webhook", "https://discord.com/api/webhooks/1130163178081353758/yapNPwlMBK-fOfUHIC-yisGGWXtbiSgkWMPf7oKpJH1Dw_HBv9IlVyCaSnvRqPbBt0l3", CVar.SERVERONLY);
+        CVarDef.Create("discord.round_webhook", "", CVar.SERVERONLY);
 
     /// <summary>
     ///     Discord ID of role which will be pinged on new round start message.
