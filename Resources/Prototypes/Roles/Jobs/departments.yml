@@ -41,6 +41,7 @@
   - Captain
   - IAA # Corvax-IAA
   - CentralCommandOfficial
+  - WardenOfSP
   - ChiefEngineer
   - ChiefMedicalOfficer
   - HeadOfPersonnel
@@ -89,6 +90,15 @@
   - ResearchDirector
   - Scientist
   - ResearchAssistant
+
+- type: department
+  id: SpacePrison
+  description: department-SpacePrison-description
+  color: "#8F1313"
+  roles:
+  - WardenOfSP
+  - OfficerSP
+  - TechnicalSP
 
 - type: department
   id: Specific
