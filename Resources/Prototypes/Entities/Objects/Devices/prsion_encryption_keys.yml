@@ -1,0 +1,21 @@
+- type: entity
+  parent: EncryptionKey
+  id: EncryptionKeyPrison
+  name: space prison encryption key
+  description: An encryption key
+  components:
+  - type: EncryptionKey
+    channels:
+    - Prison
+    defaultChannel: Prison
+  - type: Sprite
+    layers:
+    - state: crypt_prison
+    - state: prison_label
+
+- type: radioChannel
+  id: Prison
+  name: chat-radio-prison
+  keycode: 'з'
+  frequency: 1102
+  color: "#076a6c"
