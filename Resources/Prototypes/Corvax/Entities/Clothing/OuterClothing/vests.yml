@@ -30,3 +30,14 @@
       sprite: Corvax/Clothing/OuterClothing/Vests/vest_security_medic.rsi
     - type: Clothing
       sprite: Corvax/Clothing/OuterClothing/Vests/vest_security_medic.rsi
+
+- type: entity
+  parent: ClothingOuterArmorBasic
+  id: ClothingOuterVestArmorSP
+  name: armor vest
+  description: A slim Type I armored vest that provides decent protection against most types of damage.
+  components:
+    - type: Sprite
+      sprite: Corvax/Clothing/OuterClothing/Vests/armor_sp.rsi
+    - type: Clothing
+      sprite: Corvax/Clothing/OuterClothing/Vests/armor_sp.rsi

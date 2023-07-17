@@ -209,3 +209,5 @@ ent-ClothingUniformJumpsuitSyndieFormal = syndicate formal suit
     .desc = The syndicate's uniform is made in an elegant style, it's even a pity to do dirty tricks in this.
 ent-ClothingUniformJumpsuitFlannel = фланелевый комбинезон
     .desc = Пахнет так, будто кто-то жарил на гриле.
+ent-ClothingUniformJumpsuitSP = комбинезон службы безопасности кт
+    .desc = Комбинезон из прочного материала, обеспечивающий надежную защиту.

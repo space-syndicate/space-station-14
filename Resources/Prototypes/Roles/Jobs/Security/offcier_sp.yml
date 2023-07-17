@@ -21,15 +21,15 @@
 - type: startingGear
   id: SecurityOfficerGearSP
   equipment:
-    jumpsuit: ClothingUniformJumpsuitSec
-    back: ClothingBackpackSecurityFilled
-    shoes: ClothingShoesBootsJackSec # Corvax-Resprite
-    eyes: ClothingEyesGlassesSecurity
-    head: ClothingHeadHatERTLeaderBeret
-    outerClothing: ClothingOuterVestArmorSec # Corvax-Resprite
+    jumpsuit: ClothingUniformJumpsuitSP
+    back: ClothingBackpackSpacePrisonFilled
+    shoes: ClothingShoesBootsJackSP # Corvax-Resprite
+    eyes: ClothingEyesGlassesSpacePrison
+    head: ClothingHeadHatBeretSP
+    outerClothing: ClothingOuterVestArmorSP # Corvax-Resprite
     id: SecurityPDA
     ears: ClothingHeadsetPrison
     belt: ClothingBeltSecurityFilled
-  innerclothingskirt: ClothingUniformJumpskirtSec
-  satchel: ClothingBackpackSatchelSecurityFilled
-  duffelbag: ClothingBackpackDuffelSecurityFilled
+  innerclothingskirt: ClothingUniformJumpskirtSP
+  satchel: ClothingBackpackSatchelSpacePrisonFilled
+  duffelbag: ClothingBackpackDuffelSpacePrisonFilled

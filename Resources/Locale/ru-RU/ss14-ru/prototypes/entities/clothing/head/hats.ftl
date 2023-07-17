@@ -114,3 +114,5 @@ ent-ClothingHeadHatHetmanHat = гетманская шапка
     .desc = Из Запорожской Сечи с любовью.
 ent-ClothingHeadHatMagician = цилиндр фокусника
     .desc = Цилиндр фокусника.
+ent-ClothingHeadHatBeretSP = синий берет
+    .desc = Берет, любимый головной убор офицеров космической тюрьмы.

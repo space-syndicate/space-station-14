@@ -730,3 +730,18 @@
   - type: ContainerContainer
     containers:
       storagebase: !type:Container
+
+- type: entity
+  parent: ClothingHeadBase
+  id: ClothingHeadHatBeretSP
+  name: space prison beret
+  description: A beret, an artists favorite headwear.
+  components:
+  - type: Sprite
+    sprite: Clothing/Head/Hats/beret_sp.rsi
+  - type: Clothing
+    sprite: Clothing/Head/Hats/beret_sp.rsi
+  - type: Tag
+    tags:
+    - HamsterWearable
+    - WhitelistChameleon

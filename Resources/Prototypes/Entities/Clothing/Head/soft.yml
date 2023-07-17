@@ -317,3 +317,14 @@
     sprite: Clothing/Head/Soft/paramedicsoft_flipped.rsi
   - type: Clothing
     sprite: Clothing/Head/Soft/paramedicsoft_flipped.rsi
+
+- type: entity
+  parent: ClothingHeadBaseButcherable
+  id: ClothingHeadHatSPsoft
+  name: space prison cap
+  description: It's a robust baseball hat in tasteful blue colour.
+  components:
+  - type: Sprite
+    sprite: Clothing/Head/Soft/spsoft.rsi
+  - type: Clothing
+    sprite: Clothing/Head/Soft/spsoft.rsi

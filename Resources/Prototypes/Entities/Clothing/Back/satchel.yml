@@ -163,3 +163,11 @@
   - type: Storage
     capacity: 9999
 
+- type: entity
+  parent: ClothingBackpackSatchel
+  id: ClothingBackpackSatchelSpacePrison
+  name: space prison officer's satchel
+  description: A robust satchel for security related needs.
+  components:
+  - type: Sprite
+    sprite: Clothing/Back/Satchels/sp.rsi

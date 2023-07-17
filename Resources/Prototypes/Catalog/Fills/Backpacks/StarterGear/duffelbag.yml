@@ -224,3 +224,14 @@
     - type: StorageFill
       contents:
         - id: BoxSurvival
+
+- type: entity
+  noSpawn: true
+  parent: ClothingBackpackDuffelSpacePrison
+  id: ClothingBackpackDuffelSpacePrisonFilled
+  components:
+  - type: StorageFill
+    contents:
+      - id: BoxSurvivalSecurity
+      - id: Flash
+      - id: MagazinePistol
