@@ -36,4 +36,4 @@ ent-CrateFunToyBox = { ent-CrateToyBox }
     .suffix = Заполненный
     .desc = { ent-CrateToyBox.desc }
 ent-CrateFunBikeHornImplants = ящик хонк-имплантов
-    .desc = Тысяча гудков в день отпугивает сотрудников службы безопасности!
+    .desc = Тысяча гудков за день отпугнёт СБ на день!
