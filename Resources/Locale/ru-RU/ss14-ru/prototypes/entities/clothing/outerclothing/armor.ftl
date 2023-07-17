@@ -1,6 +1,6 @@
 ent-ClothingOuterArmorBasic = бронежилет
     .desc = Стандартный бронежилет типа I, обеспечивающий достойную защиту от большинства видов повреждений.
-ent-ClothingOuterArmorBasicSlim = armor vest
+ent-ClothingOuterArmorBasicSlim = бронежилет
     .desc = Тонкий бронежилет типа I, обеспечивающий достойную защиту от большинства видов повреждений.
     .suffix = тонкий
 ent-ClothingOuterArmorRiot = противоударная броня
