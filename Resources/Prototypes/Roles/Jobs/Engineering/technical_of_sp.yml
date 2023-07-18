@@ -13,6 +13,8 @@
   startingGear: StationEngineerGearSP
   icon: "SPEngineer"
   supervisors: job-supervisors-wosp
+  canBeAntag: false
+  weight: 8
   access:
   - Security
   - Brig
