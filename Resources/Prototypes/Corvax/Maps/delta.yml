@@ -4,20 +4,6 @@
   mapPath: /Maps/corvax_delta.yml
   minPlayers: 40
   stations:
-    DeltaPrison:
-      stationProto: StandardNanotrasenStation
-      components:
-        - type: StationNameSetup
-          mapNameTemplate: '{0} Дельта Тюрьма {1}'
-          nameGenerator:
-            !type:NanotrasenNameGenerator
-            prefixCreator: 'TG'
-        - type: StationJobs
-          availableJobs:
-            WardenOfSP: [ 1, 1 ]
-            OfficerSP: [ 4, 4 ]
-            TechnicalSP: [ 2, 2 ]
-
     Delta:
       stationProto: StandardNanotrasenStation
       components:
@@ -52,6 +38,9 @@
             Scientist: [ 7, 7 ]
             HeadOfSecurity: [ 1, 1 ]
             SecurityOfficer: [ 5, 5 ]
+            WardenOfSP: [ 1, 1 ]
+            OfficerSP: [ 4, 4 ]
+            TechnicalSP: [ 2, 2 ]
             Chaplain: [ 1, 1 ]
             Warden: [ 1, 1 ]
             Librarian: [ 1, 1 ]
