@@ -1,1 +1,1 @@
-objective-condition-kill-head-description = We need this head gone and you probably know why. Good luck, agent.
+objective-condition-kill-head-description = Нам нужно, чтобы этот глава исчез, и вы, вероятно, знаете, почему. Удачи, агент.
