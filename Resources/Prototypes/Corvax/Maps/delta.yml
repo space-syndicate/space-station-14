@@ -1,7 +1,7 @@
 ﻿- type: gameMap
   id: CorvaxDelta
   mapName: 'Delta Station'
-  mapPath: /Maps/corvax_delta.yml
+  mapPath: /Maps/F.yml
   minPlayers: 40
   stations:
     Delta:
@@ -39,7 +39,7 @@
             HeadOfSecurity: [ 1, 1 ]
             SecurityOfficer: [ 5, 5 ]
             WardenOfSP: [ 1, 1 ]
-            OfficerSP: [ 4, 4 ]
+            OfficerSP: [ 3, 3 ]
             TechnicalSP: [ 2, 2 ]
             Chaplain: [ 1, 1 ]
             Warden: [ 1, 1 ]
