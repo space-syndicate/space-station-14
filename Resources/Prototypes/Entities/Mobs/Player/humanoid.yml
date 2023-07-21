@@ -289,7 +289,7 @@
       settings: CBURNAgent
 
 - type: randomHumanoidSettings
-  speciesBlacklist: # Corvax MRP
+  speciesBlacklist: # Corvax-MRP
     - Diona
   id: CBURNAgent
   components:
