@@ -11,6 +11,7 @@
   icon: "SPOfficer"
   supervisors: job-supervisors-wosp
   canBeAntag: false
+  weight: 1
   access:
   - Security
   - Brig
