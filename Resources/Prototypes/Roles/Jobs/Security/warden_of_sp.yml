@@ -30,16 +30,16 @@
 - type: startingGear
   id: HoSSPGear
   equipment:
-    jumpsuit: ClothingUniformJumpsuitHoS
+    jumpsuit: ClothingUniformJumpsuitSP
     back: ClothingBackpackSpacePrisonFilled
-    shoes: ClothingShoesBootsJackSP # Corvax-Resprite
+    shoes: ClothingShoesBootsJackSP
     outerClothing: ClothingOuterCoatWardenAlt
     eyes: ClothingEyesGlassesSpacePrison
     head: ClothingHeadHatCapWardenAlt
-    id: HoSPDA
+    id: WardenOfSPPDA
     gloves: ClothingHandsGlovesCombat
-    ears: ClothingHeadsetAltPrison
+    ears: ClothingHeadsetPrisonAlt
     belt: ClothingBeltSecurityFilled
-  innerclothingskirt: ClothingUniformJumpskirtHoS
+  innerclothingskirt: ClothingUniformJumpskirtSP
   satchel: ClothingBackpackSatchelSpacePrisonFilled
   duffelbag: ClothingBackpackDuffelSpacePrisonFilled

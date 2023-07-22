@@ -31,15 +31,15 @@
   id: StationEngineerGearSP
   equipment:
     head: ClothingHeadHatBeretEngineering
-    jumpsuit: ClothingUniformJumpsuitColorBlue
+    jumpsuit: ClothingUniformJumpsuitSP
     back: ClothingBackpackEngineeringFilled
-    shoes: ClothingShoesBootsJack
+    shoes: ClothingShoesBootsJackSP
     outerClothing: ClothingOuterWinterEngi
-    id: EngineerPDA
+    id: TechnicalSPPDA
     eyes: ClothingEyesGlassesMeson
     belt: ClothingBeltUtilityEngineering
     ears: ClothingHeadsetPrison
     gloves: ClothingHandsGlovesColorYellow
-  innerclothingskirt: ClothingUniformJumpskirtEngineering
+  innerclothingskirt: ClothingUniformJumpskirtSP
   satchel: ClothingBackpackSatchelEngineeringFilled
   duffelbag: ClothingBackpackDuffelEngineeringFilled
