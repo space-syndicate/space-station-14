@@ -62,5 +62,3 @@ ent-ClothingOuterWinterSyndie = syndicate's winter coat
     .desc = Insulated winter coat, looks like a merch from "Syndieland"
 ent-ClothingOuterWinterMusician = зимнее пальто музыканта
     .desc = Безразмерный пластилиновый космический фрак, который заставит людей спрашивать: "Вы меня знаете?".
-ent-ClothingOuterWinterSP = зимнее пальто службы безопасности кт
-    .desc = { ent-ClothingOuterWinterCoat.desc }

@@ -124,5 +124,3 @@ ent-ClothingUniformJumpskirtTacticalMaid = tactical maid suitskirt
     .desc = It is assumed that the best maids should have designer suits.
 ent-ClothingUniformJumpskirtOfLife = юбка жизни
     .desc = Юбка, символизирующая позитив и радость нашей жизни.
-ent-ClothingUniformJumpskirtSP = юбка-комбинезон службы безопасности кт
-    .desc = Юбка-комбинезон из прочного материала, обеспечивающая надежную защиту.

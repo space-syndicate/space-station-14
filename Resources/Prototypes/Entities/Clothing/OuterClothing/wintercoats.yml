@@ -393,13 +393,3 @@
     sprite: Clothing/OuterClothing/WinterCoats/coatnomi.rsi
   - type: Clothing
     sprite: Clothing/OuterClothing/WinterCoats/coatnomi.rsi
-
-- type: entity
-  parent: ClothingOuterWinterCoat
-  id: ClothingOuterWinterSP
-  name: space prison winter coat
-  components:
-  - type: Sprite
-    sprite: Clothing/OuterClothing/WinterCoats/coatsp.rsi
-  - type: Clothing
-    sprite: Clothing/OuterClothing/WinterCoats/coatsp.rsi

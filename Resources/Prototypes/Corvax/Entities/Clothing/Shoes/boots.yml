@@ -6,12 +6,3 @@
       sprite: Corvax/Clothing/Shoes/Boots/jackboots_sec.rsi
     - type: Clothing
       sprite: Corvax/Clothing/Shoes/Boots/jackboots_sec.rsi
-
-- type: entity
-  parent: ClothingShoesBootsJack
-  id: ClothingShoesBootsJackSP
-  components:
-    - type: Sprite
-      sprite: Corvax/Clothing/Shoes/Boots/jackboots_sp.rsi
-    - type: Clothing
-      sprite: Corvax/Clothing/Shoes/Boots/jackboots_sp.rsi

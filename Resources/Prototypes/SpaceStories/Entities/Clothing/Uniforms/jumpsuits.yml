@@ -1,0 +1,10 @@
+- type: entity
+  parent: ClothingUniformBase
+  id: ClothingUniformJumpsuitSP
+  name: space prison officer's jumpsuit
+  description: A jumpsuit made of strong material, providing robust protection.
+  components:
+  - type: Sprite
+    sprite: SpaceStories/Clothing/Uniforms/Jumpsuit/officersp.rsi
+  - type: Clothing
+    sprite: SpaceStories/Clothing/Uniforms/Jumpsuit/officersp.rsi

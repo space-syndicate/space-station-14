@@ -1192,14 +1192,3 @@
       sprite: Clothing/Uniforms/Jumpsuit/flannel.rsi
     - type: Clothing
       sprite: Clothing/Uniforms/Jumpsuit/flannel.rsi
-
-- type: entity
-  parent: ClothingUniformBase
-  id: ClothingUniformJumpsuitSP
-  name: space prison officer's jumpsuit
-  description: A jumpsuit made of strong material, providing robust protection.
-  components:
-  - type: Sprite
-    sprite: Clothing/Uniforms/Jumpsuit/officersp.rsi
-  - type: Clothing
-    sprite: Clothing/Uniforms/Jumpsuit/officersp.rsi

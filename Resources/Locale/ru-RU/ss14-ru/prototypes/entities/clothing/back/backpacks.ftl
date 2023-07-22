@@ -47,5 +47,3 @@ ent-ClothingBackpackHolding = блюспейс рюкзак
 ent-ClothingBackpackCluwne = трясушкин фон трясхертон
     .desc = Это рюкзак, изготовленный компанией «Jonk! Co».
     .suffix = Неснимаемый
-ent-ClothingBackpackSpacePrison = рюкзак охраны космической тюрьмы
-    .desc = Это очень робастный рюкзак.

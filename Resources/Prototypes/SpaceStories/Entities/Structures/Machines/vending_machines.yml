@@ -1,0 +1,25 @@
+- type: entity
+  parent: VendingMachine
+  id: VendingMachineSPDrobe
+  name: SPDrobe
+  description: A vending machine for security and security-related clothing!
+  components:
+  - type: VendingMachine
+    pack: SPDrobeInventory
+    offState: off
+    brokenState: broken
+    normalState: normal-unshaded
+  - type: Advertise
+    pack: SecDrobeAds
+  - type: Sprite
+    sprite: SpaceStories\Structures\Machines\VendingMachines\spdrobe.rsi
+    layers:
+    - state: "off"
+      map: ["enum.VendingMachineVisualLayers.Base"]
+    - state: "off"
+      map: ["enum.VendingMachineVisualLayers.BaseUnshaded"]
+      shader: unshaded
+    - state: panel
+      map: ["enum.WiresVisualLayers.MaintenancePanel"]
+  - type: AccessReader
+    access: [["Security"]]

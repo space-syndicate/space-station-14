@@ -718,14 +718,3 @@
       sprite: Clothing/Uniforms/Jumpskirt/skirtoflife.rsi
     - type: Clothing
       sprite: Clothing/Uniforms/Jumpskirt/skirtoflife.rsi
-
-- type: entity
-  parent: ClothingUniformSkirtBase
-  id: ClothingUniformJumpskirtSP
-  name: space prison officer's jumpskirt
-  description: A jumpskirt made of strong material, providing robust protection.
-  components:
-  - type: Sprite
-    sprite: Clothing/Uniforms/Jumpskirt/officersp.rsi
-  - type: Clothing
-    sprite: Clothing/Uniforms/Jumpskirt/officersp.rsi

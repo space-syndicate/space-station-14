@@ -170,21 +170,3 @@
       coefficients:
         Heat: 0.95
   - type: GroupExamine
-
-- type: entity
-  parent: ClothingEyesBase
-  id: ClothingEyesGlassesSpacePrison
-  name: space prison officer's sunglasses
-  description: Strangely ancient technology used to help provide rudimentary eye cover. Enhanced shielding blocks many flashes. Often worn by budget security officers.
-  components:
-  - type: Sprite
-    sprite: Clothing/Eyes/Glasses/secglassessp.rsi
-  - type: Clothing
-    sprite: Clothing/Eyes/Glasses/secglassessp.rsi
-  - type: FlashImmunity
-  - type: EyeProtection
-    protectionTime: 5
-  - type: Tag
-    tags:
-    - HamsterWearable
-    - WhitelistChameleon
