@@ -1,0 +1,40 @@
+- type: entity
+  parent: IDCardStandard
+  id: OfficerSPIDCard
+  name: officer SP ID card
+  components:
+  - type: Sprite
+    sprite: SpaceStories/Objects/Misc/id_cards.rsi
+    layers:
+    - state: default
+    - state: idspofficer
+  - type: PresetIdCard
+    job: OfficerSP
+  - type: Clothing
+    slots:
+    - idcard
+    sprite: SpaceStories/Objects/Misc/id_cards.rsi
+
+- type: entity
+  parent: OfficerSPIDCard
+  id: TechnicalSPIDCard
+  name: technical of SP ID card
+  components:
+  - type: Sprite
+    layers:
+    - state: default
+    - state: idspengineer
+  - type: PresetIdCard
+    job: TechnicalSP
+
+- type: entity
+  parent: OfficerSPIDCard
+  id: WardenOfSPIDCard
+  name: warden of SP ID card
+  components:
+  - type: Sprite
+    layers:
+    - state: default
+    - state: idspwarden
+  - type: PresetIdCard
+    job: WardenOfSP

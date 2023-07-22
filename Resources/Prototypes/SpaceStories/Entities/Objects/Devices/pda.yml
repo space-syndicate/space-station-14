@@ -1,0 +1,46 @@
+- type: entity
+  parent: BasePDA
+  id: OfficerSPPDA
+  name: officer SP PDA
+  description: Red to hide the stains of passenger blood.
+  components:
+  - type: Sprite
+    sprite: SpaceStories/Objects/Devices/pda.rsi
+  - type: Pda
+    id: OfficerSPIDCard
+    state: pda-spofficer
+  - type: PdaBorderColor
+    borderColor: "#40408c"
+  - type: Icon
+    sprite: SpaceStories/Objects/Devices/pda.rsi
+    state: pda-spofficer
+
+- type: entity
+  parent: OfficerSPPDA
+  id: TechnicalSPPDA
+  name: technical of SP PDA
+  description: Red to hide the stains of passenger blood.
+  components:
+  - type: Pda
+    id: TechnicalSPIDCard
+    state: pda-spengineer
+  - type: PdaBorderColor
+    borderColor: "#6a6816"
+    accentVColor: "#40408c"
+  - type: Icon
+    state: pda-spengineer
+
+- type: entity
+  parent: OfficerSPPDA
+  id: WardenOfSPPDA
+  name: warden of SP PDA
+  description: Red to hide the stains of passenger blood.
+  components:
+  - type: Pda
+    id: WardenOfSPIDCard
+    state: pda-spwarden
+  - type: PdaBorderColor
+    borderColor: "#40408c"
+    accentVColor: "#b3b300"
+  - type: Icon
+    state: pda-spwarden
