@@ -1,5 +1,5 @@
-ent-BaseFigurine = figurine
-    .desc = A small miniature.
+ent-BaseFigurine = фигурка
+    .desc = Небольшая миниатюра.
 ent-ToyFigurinePassenger = passenger figure
     .desc = A figurine depicting an every day, run-of-the-mill passenger. No funny business here.
 ent-ToyFigurineGreytider = greytider figure
