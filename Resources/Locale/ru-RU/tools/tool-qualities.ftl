@@ -16,5 +16,5 @@ tool-quality-sawing-name = Отпиливание
 tool-quality-sawing-tool-name = Пила
 tool-quality-honking-name = Хонканье
 tool-quality-honking-tool-name = Велосипедный клаксон
-tool-quality-woodcutting-name = Лесопиление
+tool-quality-woodcutting-name = Рубка дерева
 tool-quality-woodcutting-tool-name = Топор
