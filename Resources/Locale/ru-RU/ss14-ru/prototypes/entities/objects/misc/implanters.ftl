@@ -26,11 +26,18 @@ ent-FreedomImplanter = { ent-Implanter }
 ent-UplinkImplanter = { ent-Implanter }
     .desc = { ent-BaseImplantOnlyImplanter.desc }
     .suffix = Аплинк
+ent-EmpImplanter = EMP implanter
+    .desc = a single use implanter, the implant creates an EMP pulse when you activate it.
+ent-DnaScramblerImplanter = dna scrambler implanter
+    .desc = a single use implanter, the implant allows you to randomly change your appearance and name once.
 ent-MicroBombImplanter = { ent-Implanter }
     .desc = { ent-BaseImplantOnlyImplanter.desc }
     .suffix = Микробомба
 ent-MacroBombImplanter = { ent-Implanter }
     .desc = { ent-BaseImplantOnlyImplanter.desc }
     .suffix = Макробомба
+ent-DeathRattleImplanter = Deathrattle implanter
+    .desc = a single use implanter, the implant will inform anyone with access to the syndicate radio channel of your death.
+
 # Corvax anti-meta localization end
 

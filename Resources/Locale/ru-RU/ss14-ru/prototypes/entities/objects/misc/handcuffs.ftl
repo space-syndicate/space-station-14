@@ -10,3 +10,5 @@ ent-ZiptiesBroken = порванные кабельные стяжки
     .desc = Эти кабельные стяжки выглядят так, словно ими пытались стянуть не тот кабель.
 ent-CablecuffsBroken = порванные самодельные наручники
     .desc = Провода разорваны в нескольких местах и не кажутся пригодными.
+ent-ClothingOuterStraightjacket = straitjacket
+    .desc = Used to restrain those who may cause harm to themselves or others.
