@@ -14,3 +14,5 @@ ent-ModularGrenade = modular grenade
     .desc = A grenade casing. Requires a trigger and a payload.
 ent-EmpGrenade = EMP grenade
     .desc = A grenade designed to wreak havoc on electronic systems.
+ent-HolyHandGrenade = holy hand grenade
+    .desc = O Lord, bless this thy hand grenade, that with it thou mayst blow thine enemies to tiny bits, in thy mercy.

@@ -48,3 +48,5 @@ ent-BoxEncryptionKeyService = коробка ключей шифрования �
     .desc = { ent-BoxEncryptionKeyPassenger.desc }
 ent-BoxEncryptionKeySyndie = коробка ключей шифрования синдиката
     .desc = Два ключа шифрования синдиката по цене одного. Для простоты использования уменьшена.
+ent-BoxDeathRattleImplants = deathrattle implant box
+    .desc = Six deathrattle implants and handheld GPS devices for the whole squad.
