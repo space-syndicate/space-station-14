@@ -1,5 +1,5 @@
-ent-BaseTabletopPiece = { ent-BaseItem }
-    .desc = { ent-BaseItem.desc }
+ent-BaseGenericTabletopPiece = { ent-BaseTabletopPiece }
+    .desc = { ent-BaseTabletopPiece.desc }
 ent-RedTabletopPiece = красная фишка
     .desc = { ent-BaseTabletopPiece.desc }
 ent-GreenTabletopPiece = зелёная фишка

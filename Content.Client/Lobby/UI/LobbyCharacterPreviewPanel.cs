@@ -1,5 +1,6 @@
 using System.Linq;
 using System.Numerics;
+using Content.Client.Alerts;
 using Content.Client.Corvax.Sponsors;
 using Content.Client.Hands.Systems;
 using Content.Client.Humanoid;
@@ -14,7 +15,6 @@ using Content.Shared.Inventory;
 using Content.Shared.Preferences;
 using Content.Shared.Roles;
 using Robust.Client.GameObjects;
-using Robust.Client.Player;
 using Robust.Client.UserInterface;
 using Robust.Client.UserInterface.Controls;
 using Robust.Shared.Map;

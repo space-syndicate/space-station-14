@@ -70,6 +70,7 @@ ent-ERTLeaderIDCard = ID карта ОБР
     .desc = { ent-CentcomIDCard.desc }
 ent-CentcomIDCardSyndie = ID карта представителя Центком
     .desc = { ent-IDCardStandard.desc }
+    .suffix = Fake
 ent-MusicianIDCard = ID карта музыканта
     .desc = { ent-IDCardStandard.desc }
 ent-CentcomIDCardDeathsquad = ID карта эскадрона смерти
