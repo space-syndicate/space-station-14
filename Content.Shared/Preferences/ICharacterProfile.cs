@@ -14,6 +14,6 @@ namespace Content.Shared.Preferences
         /// <summary>
         ///     Makes this profile valid so there's no bad data like negative ages.
         /// </summary>
-        void EnsureValid(SponsorInfo? sponsorMarkings); // Corvax-Sponsors: Integrated filtering for sponsor markings
+        void EnsureValid(SponsorInfo? sponsorInfo); // Corvax-Sponsors: Integrated filtering for sponsor things (markings/species/etc)
     }
 }
