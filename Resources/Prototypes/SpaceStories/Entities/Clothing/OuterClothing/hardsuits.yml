@@ -1,0 +1,38 @@
+- type: entity
+  parent: ClothingOuterHardsuitBase
+  id: ClothingOuterHardsuitEngiSP
+  name: engineering sp hardsuit
+  description: A special suit that protects against hazardous, low pressure environments. Has radiation shielding.
+  components:
+  - type: Sprite
+    sprite: SpaceStories/Clothing/OuterClothing/Hardsuits/engisp.rsi
+  - type: Clothing
+    sprite: SpaceStories/Clothing/OuterClothing/Hardsuits/engisp.rsi
+  - type: ToggleableClothing
+    clothingPrototype: ClothingHeadHelmetHardsuitEngiSP
+
+- type: entity
+  parent: ClothingOuterHardsuitBase
+  id: ClothingOuterHardsuitOfficerSP
+  name: officer sp hardsuit
+  description: A special suit that protects against hazardous, low pressure environments. Has an additional layer of armor.
+  components:
+  - type: Sprite
+    sprite: SpaceStories/Clothing/OuterClothing/Hardsuits/securitysp.rsi
+  - type: Clothing
+    sprite: SpaceStories/Clothing/OuterClothing/Hardsuits/securitysp.rsi
+  - type: ToggleableClothing
+    clothingPrototype: ClothingHeadHelmetHardsuitOfficerSP
+
+- type: entity
+  parent: ClothingOuterHardsuitBase
+  id: ClothingOuterHardsuitWardenOfSP
+  name: warden of sp hardsuit
+  description: A specialized riot suit geared to combat low pressure environments while maintaining agility.
+  components:
+  - type: Sprite
+    sprite: SpaceStories/Clothing/OuterClothing/Hardsuits/wardenofsp.rsi
+  - type: Clothing
+    sprite: SpaceStories/Clothing/OuterClothing/Hardsuits/wardenofsp.rsi
+  - type: ToggleableClothing
+    clothingPrototype: ClothingHeadHelmetHardsuitWardenOfSP

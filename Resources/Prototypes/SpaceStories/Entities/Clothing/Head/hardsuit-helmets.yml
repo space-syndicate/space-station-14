@@ -1,0 +1,35 @@
+- type: entity
+  parent: ClothingHeadHelmetHardsuitEngineering
+  id: ClothingHeadHelmetHardsuitEngiSP
+  noSpawn: true
+  name: engineering sp hardsuit helmet
+  description: An engineering hardsuit helmet designed for working in low-pressure, high radioactive environments.
+  components:
+  - type: Sprite
+    sprite: SpaceStories/Clothing/Head/Hardsuits/engisp.rsi
+  - type: Clothing
+    sprite: SpaceStories/Clothing/Head/Hardsuits/engisp.rsi
+
+- type: entity
+  parent: ClothingHeadHelmetHardsuitSecurity
+  id: ClothingHeadHelmetHardsuitOfficerSP
+  noSpawn: true
+  name: officer sp hardsuit helmet
+  description: Armored hardsuit helmet for security needs.
+  components:
+  - type: Sprite
+    sprite: SpaceStories/Clothing/Head/Hardsuits/securitysp.rsi
+  - type: Clothing
+    sprite: SpaceStories/Clothing/Head/Hardsuits/securitysp.rsi
+
+- type: entity
+  parent: ClothingHeadHelmetHardsuitWarden
+  id: ClothingHeadHelmetHardsuitWardenOfSP
+  noSpawn: true
+  name: warden of sp hardsuit helmet
+  description: A modified riot helmet. Oddly comfortable.
+  components:
+  - type: Sprite
+    sprite: SpaceStories/Clothing/Head/Hardsuits/wardenofsp.rsi
+  - type: Clothing
+    sprite: SpaceStories/Clothing/Head/Hardsuits/wardenofsp.rsi
