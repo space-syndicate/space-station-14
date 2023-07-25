@@ -1,5 +1,5 @@
-intercom-menu-title = Intercom
-intercom-channel-label = Channel:
-intercom-button-text-mic = Mic.
-intercom-button-text-speaker = Speak
-intercom-flavor-text-left = Keep lines free of chatter
+intercom-menu-title = Интерком
+intercom-channel-label = Канал:
+intercom-button-text-mic = Микр.
+intercom-button-text-speaker = Динам.
+intercom-flavor-text-left = Не засоряйте эфир болтовнёй
