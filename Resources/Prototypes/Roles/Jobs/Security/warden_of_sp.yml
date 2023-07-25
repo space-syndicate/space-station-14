@@ -30,7 +30,7 @@
 - type: startingGear
   id: HoSSPGear
   equipment:
-    jumpsuit: ClothingUniformJumpsuitSP
+    jumpsuit: ClothingUniformJumpsuitHoSP
     back: ClothingBackpackSpacePrisonFilled
     shoes: ClothingShoesBootsJackSP
     outerClothing: ClothingOuterCoatWardenAlt
@@ -40,6 +40,6 @@
     gloves: ClothingHandsGlovesCombat
     ears: ClothingHeadsetPrisonAlt
     belt: ClothingBeltSecurityFilled
-  innerclothingskirt: ClothingUniformJumpskirtSP
+  innerclothingskirt: ClothingUniformJumpskirtHoSP
   satchel: ClothingBackpackSatchelSpacePrisonFilled
   duffelbag: ClothingBackpackDuffelSpacePrisonFilled
