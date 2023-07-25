@@ -1,0 +1,11 @@
+- type: entity
+  name: head of sp rubber stamp
+  parent: RubberStampBase
+  id: RubberStampHoSP
+  components:
+    - type: Stamp
+      stampedName: stamp-component-stamped-name-hosp
+      stampState: "paper_stamp-hosp"
+    - type: Sprite
+      sprite: Objects/Misc/bureaucracy.rsi
+      state: stamp-hosp
