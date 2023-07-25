@@ -14,7 +14,7 @@
   - type: Sprite
     noRot: true
     drawdepth: Ghosts
-    sprite: Mobs/Ghosts/revenant.rsi
+    sprite: Mobs/Ghosts/revenant.rsi # Corvax-Resprite
     layers:
     - state: active
   - type: Clickable
