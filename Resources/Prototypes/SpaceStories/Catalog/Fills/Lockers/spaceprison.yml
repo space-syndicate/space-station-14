@@ -1,0 +1,19 @@
+- type: entity
+  id: LockerSpacePrisonFilled
+  suffix: Filled
+  parent: LockerSpacePrison
+  components:
+  - type: StorageFill
+    contents:
+      - id: FlashlightSeclite
+        prob: 0.8
+      - id: ClothingOuterArmorBasic
+      - id: ClothingBeltSecurityFilled
+      - id: Flash
+        prob: 0.5
+      - id: ClothingEyesGlassesSpacePrison
+      - id: ClothingHeadsetPrison
+      - id: ClothingHandsGlovesColorBlack
+      - id: ClothingShoesBootsJackSP
+      - id: ClothingOuterWinterSP
+        prob: 0.2
