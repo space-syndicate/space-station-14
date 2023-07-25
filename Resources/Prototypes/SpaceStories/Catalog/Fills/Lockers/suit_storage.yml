@@ -1,0 +1,36 @@
+- type: entity
+  id: SuitStorageOfficerSP
+  parent: SuitStorageBase
+  suffix: SP Officer
+  components:
+  - type: StorageFill
+    contents:
+        - id: NitrogenTankFilled
+        - id: OxygenTankFilled
+        - id: ClothingOuterHardsuitOfficerSP
+        - id: ClothingMaskBreath
+
+- type: entity
+  id: SuitStorageEngiSP
+  parent: SuitStorageBase
+  suffix: SP Engineer
+  components:
+  - type: StorageFill
+    contents:
+        - id: NitrogenTankFilled
+        - id: OxygenTankFilled
+        - id: ClothingShoesBootsMag
+        - id: ClothingOuterHardsuitEngiSP
+        - id: ClothingMaskBreath
+
+- type: entity
+  id: SuitStorageWardenOfSP
+  parent: SuitStorageBase
+  suffix: WardenOfSP
+  components:
+  - type: StorageFill
+    contents:
+        - id: NitrogenTankFilled
+        - id: OxygenTankFilled
+        - id: ClothingOuterHardsuitWardenOfSP
+        - id: ClothingMaskBreath
