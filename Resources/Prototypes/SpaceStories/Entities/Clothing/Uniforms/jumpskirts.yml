@@ -8,3 +8,14 @@
     sprite: SpaceStories/Clothing/Uniforms/Jumpskirt/officersp.rsi
   - type: Clothing
     sprite: SpaceStories/Clothing/Uniforms/Jumpskirt/officersp.rsi
+
+- type: entity
+  parent: ClothingUniformSkirtBase
+  id: ClothingUniformJumpskirtHoSP
+  name: space prison warden jumpskirt
+  description: A jumpskirt made of strong material, providing robust protection.
+  components:
+  - type: Sprite
+    sprite: SpaceStories/Clothing/Uniforms/Jumpskirt/hosp.rsi
+  - type: Clothing
+    sprite: SpaceStories/Clothing/Uniforms/Jumpskirt/hosp.rsi
