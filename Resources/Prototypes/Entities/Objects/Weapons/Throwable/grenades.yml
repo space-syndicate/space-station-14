@@ -1,6 +1,6 @@
 - type: entity
   abstract: true
-  DontPresent: true
+  DontPresent: true # Вставлено в оригинальный код
   parent: BaseItem
   id: GrenadeBase
   components:
@@ -34,7 +34,7 @@
 
 - type: entity
   name: explosive grenade
-  DontPresent: true
+  DontPresent: true # Вставлено в оригинальный код
   description: Grenade that creates a small but devastating explosion.
   parent: GrenadeBase
   id: ExGrenade
@@ -77,7 +77,7 @@
 
 - type: entity
   id: GrenadeFlashEffect
-  DontPresent: true
+  DontPresent: true # Вставлено в оригинальный код
   noSpawn: true
   components:
     - type: PointLight
@@ -94,7 +94,7 @@
 #Ideally, there should be a weak radius around the bomb outside of its gibbing / spacing range capable of dealing fair damage to players / structures.
 - type: entity
   name: syndicate minibomb
-  DontPresent: true
+  DontPresent: true # Вставлено в оригинальный код
   description: A syndicate-manufactured explosive used to stow destruction and cause chaos.
   parent: GrenadeBase
   id: SyndieMiniBomb
@@ -118,7 +118,7 @@
 
 - type: entity
   name: the nuclear option
-  DontPresent: true
+  DontPresent: true # Вставлено в оригинальный код
   description: Please don't throw it, think of the children.
   parent: GrenadeBase
   id: NuclearGrenade
@@ -149,7 +149,7 @@
 
 - type: entity
   name: modular grenade
-  DontPresent: true
+  DontPresent: true # Вставлено в оригинальный код
   description: A grenade casing. Requires a trigger and a payload.
   parent: BaseItem
   id: ModularGrenade
@@ -194,7 +194,7 @@
 
 - type: entity
   name: EMP grenade
-  DontPresent: true
+  DontPresent: true # Вставлено в оригинальный код
   description: A grenade designed to wreak havoc on electronic systems.
   parent: GrenadeBase
   id: EmpGrenade
