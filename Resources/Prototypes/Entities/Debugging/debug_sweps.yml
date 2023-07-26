@@ -4,6 +4,7 @@
   id: WeaponPistolDebug
   description: ded
   suffix: DEBUG
+  DontPresent: true
   components:
   - type: Tag
     tags:
