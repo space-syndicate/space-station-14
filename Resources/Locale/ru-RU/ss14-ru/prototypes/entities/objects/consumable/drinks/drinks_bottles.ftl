@@ -44,9 +44,8 @@ ent-DrinkBeerBottleFull = пиво
     .desc = Алкогольный напиток, приготовленный из солодовых зерен, хмеля, дрожжей и воды.
 ent-DrinkAleBottleFull = магма-эль
     .desc = Выбор истинных дворфов.
-ent-DrinkСhampagneBottleFull = champagne bottle
-
-  .desc = Only people devoid of imagination can't find an excuse for champagne.
+ent-DrinkСhampagneBottleFull = бутылка шампанского
+  .desc = Только люди, обделённые воображением, не могут найти оправдание шампанскому.
 ent-DrinkWaterBottleFull = бутылка воды
     .desc = Просто чистая вода неизвестного происхождения. Вы думаете, что и не хотите знать этого.
 ent-DrinkJuiceLimeCarton = лаймовый сок
