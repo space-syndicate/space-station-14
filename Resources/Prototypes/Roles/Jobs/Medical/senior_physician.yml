@@ -6,13 +6,13 @@
   requirements:
     - !type:RoleTimeRequirement
       role: JobChemist
-      time: 21600 #6 hrs
+      time: 72000 #20 hrs Corvax-RoleTime
     - !type:RoleTimeRequirement
       role: JobMedicalDoctor
-      time: 21600 #6 hrs
+      time: 72000 #20 hrs Corvax-RoleTime
     - !type:DepartmentTimeRequirement
       department: Medical
-      time: 216000 # 60 hrs
+      time: 360000 #100 hrs Corvax-RoleTime
   startingGear: SeniorPhysicianGear
   icon: "SeniorPhysician"
   supervisors: job-supervisors-cmo

@@ -6,13 +6,13 @@
   requirements:
     - !type:RoleTimeRequirement
       role: JobAtmosphericTechnician
-      time: 21600 #6 hrs
+      time: 72000 #20 hrs Corvax-RoleTime
     - !type:RoleTimeRequirement
       role: JobStationEngineer
-      time: 21600 #6 hrs
+      time: 72000 #20 hrs Corvax-RoleTime
     - !type:DepartmentTimeRequirement
       department: Engineering
-      time: 216000 # 60 hrs
+      time: 360000 #100 hrs Corvax-RoleTime
   startingGear: SeniorEngineerGear
   icon: "SeniorEngineer"
   supervisors: job-supervisors-ce
