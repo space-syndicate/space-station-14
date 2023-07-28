@@ -67,6 +67,7 @@ ent-RevolverCapGun = cap gun
     .desc = Looks almost like the real thing! Ages 8 and up.
 ent-RevolverCapGunFake = cap gun
     .desc = Looks almost like the real thing! Ages 8 and up.
+    .suffix = Fake
 ent-FoamBlade = foamblade
     .desc = It says "Sternside Changs number 1 fan" on it.
 ent-Basketball = basketball

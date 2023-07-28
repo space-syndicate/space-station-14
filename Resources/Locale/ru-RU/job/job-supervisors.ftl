@@ -10,5 +10,6 @@ job-supervisors-service = поварам, ботаникам, барменам, 
 job-supervisors-engineering = инженерам, атмосферным техникам, и старшему инженеру
 job-supervisors-medicine = врачам, химикам, и главному врачу
 job-supervisors-security = офицерам, смотрителю, и главе службы безопасности
+job-supervisors-science = scientists, the senior researcher, and the research director
 job-supervisors-hire = своим нанимателям
 job-supervisors-everyone = вообще всем

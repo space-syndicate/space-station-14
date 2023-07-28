@@ -96,6 +96,8 @@ uplink-meds-bundle-name = Медицинский набор
 uplink-meds-bundle-desc = Все, что нужно для возвращения в строй ваших товарищей: главным образом, боевая аптечка, дефибриллятор и три боевых медипена.
 uplink-ammo-bundle-name = Набор боеприпасов
 uplink-ammo-bundle-desc = Перезаряжаю! Содержит 4 магазина для C-20r, 4 барабана для Бульдога и 2 короба патронов для L6 SAW.
+uplink-sniper-bundle-name = Sniper Bundle
+uplink-sniper-bundle-desc = An inconspicuous briefcase that contains a hristov, 30 spare bullets and a convenient disguise
 # Bundles
 uplink-c20r-bundle-name = { ent-ClothingBackpackDuffelSyndicateFilledSMG }
 uplink-c20r-bundle-desc = { ent-ClothingBackpackDuffelSyndicateFilledSMG.desc }

@@ -1,9 +1,13 @@
+ent-FlaskBase = { ent-DrinkBase }
+    .desc = { ent-DrinkBase.desc }
 ent-DrinkShinyFlask = блестящая фляга
     .desc = Блестящая металлическая фляга. Похоже, на ней нарисован греческий символ.
 ent-DrinkMREFlask = фляга ИРП
     .desc = Старая военная фляга, наполненная самым лучшим содержимым для солдат.
 ent-DrinkDetFlask = фляга инспектора
     .desc = Металлическая фляга с кожаным ремешком и золотым значком, принадлежащая инспектору.
+ent-DrinkHosFlask = hos's flask
+    .desc = A metal flask, fit for a hard working HoS.
 ent-DrinkFlask = фляга капитана
     .desc = Металлическая фляга, принадлежащая капитану.
 ent-DrinkFlaskBar = барная фляга
