@@ -41,5 +41,5 @@ ent-ClothingHandsGlovesCluwne = cluwne hands
     .suffix = Unremoveable
 ent-ClothingHandsGlovesNorthStar = gloves of the north star
     .desc = These gloves allow you to punch incredibly fast.
-ent-ForensicGloves = forensic gloves
+ent-ClothingHandsGlovesForensic = forensic gloves
     .desc = Do not leave fibers or fingerprints. If you work without them, you're A TERRIBLE DETECTIVE.

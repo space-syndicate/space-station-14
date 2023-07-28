@@ -4,24 +4,6 @@
   description: job-description-captain
   playTimeTracker: JobCaptain
   requirements:
-#    - !type:RoleTimeRequirement
-#      role: JobHeadOfPersonnel
-#      time: 21600 #6 hrs
-#    - !type:RoleTimeRequirement
-#      role: JobHeadOfSecurity
-#      time: 21600 #6 hrs
-#    - !type:RoleTimeRequirement
-#      role: JobChiefMedicalOfficer
-#      time: 21600 #6 hrs
-#    - !type:RoleTimeRequirement
-#      role: JobChiefEngineer
-#      time: 21600 #6 hrs
-#    - !type:RoleTimeRequirement
-#      role: JobResearchDirector
-#      time: 21600 #6 hrs
-#    - !type:RoleTimeRequirement
-#      role: JobQuartermaster
-#      time: 21600 #6 hrs
     - !type:DepartmentTimeRequirement
       department: Engineering
       time: 72000 # Corvax-RoleTime
@@ -31,6 +13,9 @@
     - !type:DepartmentTimeRequirement
       department: Security
       time: 72000 # Corvax-RoleTime
+#    - !type:DepartmentTimeRequirement
+#      department: Command
+#      time: 54000 # 15 hours
     - !type:OverallPlaytimeRequirement
       time: 504000 # Corvax-RoleTime
   weight: 20
@@ -51,8 +36,6 @@
     shoes: ClothingShoesColorBlack
     head: ClothingHeadHatCaptain
     eyes: ClothingEyesGlassesSunglasses
-    gloves: ClothingHandsGlovesCaptain
-    outerClothing: ClothingOuterArmorCaptainCarapace
     id: CaptainPDA
     ears: ClothingHeadsetAltCommand
   innerclothingskirt: ClothingUniformJumpskirtCaptain

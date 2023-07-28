@@ -183,6 +183,8 @@
 
 - type: randomHumanoidSettings
   id: ERTSecurity
+  speciesBlacklist: # Corvax-MRP
+    - Diona
   parent: ERTLeader
   components:
     - type: GhostRole
@@ -287,6 +289,8 @@
       settings: CBURNAgent
 
 - type: randomHumanoidSettings
+  speciesBlacklist: # Corvax-MRP
+    - Diona
   id: CBURNAgent
   components:
     - type: Loadout
