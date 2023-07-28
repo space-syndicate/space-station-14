@@ -1,9 +1,10 @@
-pda-news-button-label = Новости
-pda-news-button-description = Просмотр новостей станции
 news-read-ui-next-text = След.
 news-read-ui-past-text = Пред.
 news-read-ui-default-title = Новости станции
+news-read-ui-notification-off = ̶♫̶
+news-read-ui-notification-on = ♫
 news-read-ui-not-found-text = Статей не найдено
+news-read-ui-author-prefix = Автор:
 news-read-ui-time-prefix-text = Время публикации:
 news-read-ui-no-author = Аноним
 news-write-ui-default-title = Управление СМИ
