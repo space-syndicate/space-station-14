@@ -1,7 +1,7 @@
 ﻿- type: entity
-  name: cargo gorilla
+  name: Largo
   parent: SimpleMobBase
-  id: MobGorillaCargo
+  id: MobGorillaLargo
   description: Cargo's pet gorilla. He seems to have an 'I love Mom' tattoo.
   components:
     - type: Sprite
@@ -9,7 +9,7 @@
       layers:
         - map: ["enum.DamageStateVisualLayers.Base"]
           state: crawling
-          sprite: Corvax/Mobs/Animals/cargogorilla.rsi
+          sprite: Corvax/Mobs/Pets/largo.rsi
     - type: Physics
     - type: Fixtures
       fixtures:

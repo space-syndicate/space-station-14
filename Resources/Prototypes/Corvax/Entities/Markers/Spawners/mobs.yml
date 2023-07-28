@@ -1,6 +1,6 @@
 ﻿- type: entity
-  name: Cargo Gorilla Spawner
-  id: SpawnMobGorillaCargo
+  name: Gorilla Largo Spawner
+  id: SpawnMobGorillaLargo
   parent: MarkerBase
   components:
     - type: Sprite
@@ -9,4 +9,4 @@
         - state: ai
     - type: ConditionalSpawner
       prototypes:
-        - MobGorillaCargo
+        - MobGorillaLargo
