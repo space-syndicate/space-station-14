@@ -1,0 +1,23 @@
+﻿[game]
+hostname = "[RU][MRP][TTS] Corvax 🚀 Main (ss14.ru)"
+desc = "Русскоязычный сервер проекта Corvax с пониженным уровнем РП отыгрыша"
+map_pool = "CorvaxMapPool"
+maxplayers = 190
+soft_max_players = 105
+map_rotation = true
+
+[rules]
+time = 180.0
+
+[queue]
+enabled = true
+
+[tts]
+enabled = true
+
+[discord_auth]
+enabled = true
+
+[hub]
+advertise = true
+tags = "lang:ru,rp:low,region:eu_e,tts"

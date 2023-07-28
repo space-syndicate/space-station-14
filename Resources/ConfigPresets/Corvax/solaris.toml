@@ -1,0 +1,23 @@
+﻿[game]
+hostname = "[RU][MRP][TTS] Corvax 🌕 Solaris (ss14.ru)"
+desc = "Русскоязычный сервер проекта Corvax со средним уровнем РП отыгрыша"
+map_pool = "CorvaxDefaultMapPool"
+maxplayers = 160
+soft_max_players = 80
+map_rotation = true
+
+[rules]
+time = 180.0
+
+[queue]
+enabled = true
+
+[tts]
+enabled = true
+
+[discord_auth]
+enabled = true
+
+[hub]
+advertise = true
+tags = "lang:ru,rp:med,region:eu_e,tts"
