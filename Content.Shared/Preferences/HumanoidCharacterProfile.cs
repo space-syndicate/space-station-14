@@ -531,7 +531,15 @@ namespace Content.Shared.Preferences
 
             // Corvax-Loadout-Start
             var loadouts = LoadoutPreferences
-                .Where(prototypeManager.HasIndex<LoadoutPrototype>)
+                .Where((protoId) =>
+                {
+                    prototypeManager.TryIndex<LoadoutPrototype>(protoId, out var proto);
+                    if (proto is null)
+                        return false;
+                    if (proto.SponsorOnly)
+                        return sponsorMarkings.Contains(protoId);
+                    return true;
+                })
                 .ToList();
             // Corvax-Loadout-End
 
