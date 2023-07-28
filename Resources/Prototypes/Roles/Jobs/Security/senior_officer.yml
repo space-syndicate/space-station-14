@@ -6,16 +6,16 @@
   requirements:
     - !type:RoleTimeRequirement
       role: JobWarden
-      time: 72000 #20 hrs Corvax-RoleTime
+      time: 72000 #20 hrs # Corvax-RoleTime
     - !type:RoleTimeRequirement
       role: JobDetective
-      time: 36000 #10 hrs Corvax-RoleTime
+      time: 36000 #10 hrs # Corvax-RoleTime
     - !type:RoleTimeRequirement
       role: JobSecurityOfficer
-      time: 72000 #20 hrs Corvax-RoleTime
+      time: 72000 #20 hrs # Corvax-RoleTime
     - !type:DepartmentTimeRequirement
       department: Security
-      time: 360000 #100 hrs Corvax-RoleTime
+      time: 360000 #100 hrs # Corvax-RoleTime
   startingGear: SeniorOfficerGear
   icon: "SeniorOfficer"
   supervisors: job-supervisors-hos
