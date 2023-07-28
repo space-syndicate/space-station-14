@@ -1,0 +1,29 @@
+﻿[game]
+hostname = "[RU][MRP][TTS] Corvax 🌌 Athara (ss14.ru)"
+desc = "Русскоязычный сервер проекта Corvax со средним уровнем РП отыгрыша"
+map_pool = "CorvaxMapPool"
+maxplayers = 150
+soft_max_players = 70
+map_rotation = false
+
+[game.panic_bunker]
+enabled = true
+show_reason = true
+min_account_age = 0
+min_overall_hours = 30
+
+[rules]
+time = 10.0
+
+[queue]
+enabled = true
+
+[tts]
+enabled = true
+
+[discord_auth]
+enabled = true
+
+[hub]
+advertise = true
+tags = "lang:ru,rp:med,region:eu_e,tts"

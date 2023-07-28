@@ -59,3 +59,5 @@ ent-ComputerSurveillanceWirelessCameraMonitor = wireless camera monitor
     .desc = A wireless surveillance camera monitor. You're watching them. Maybe.
 ent-ComputerPalletConsole = cargo sale computer
     .desc = Used to sell goods loaded onto cargo pallets
+ent-ComputerMassMedia = mass-media console
+    .desc = Write your message to the world!

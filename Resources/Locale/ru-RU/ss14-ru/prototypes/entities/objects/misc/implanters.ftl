@@ -11,8 +11,9 @@ ent-SadTromboneImplanter = { ent-Implanter }
 ent-LightImplanter = { ent-Implanter }
     .desc = { ent-BaseImplantOnlyImplanter.desc }
     .suffix = Свет
-ent-BikeHornImplanter = bike horn implanter
-    .desc = a single use implanter, the implant makes you able to honk anywhere at any time
+ent-BikeHornImplanter = { ent-Implanter }
+    .desc = { ent-BaseImplantOnlyImplanter.desc }
+    .suffix = Хонк-имплант
 ent-TrackingImplanter = { ent-Implanter }
     .desc = { ent-BaseImplantOnlyImplanter.desc }
     .suffix = Трекер
@@ -25,12 +26,21 @@ ent-FreedomImplanter = { ent-Implanter }
 ent-UplinkImplanter = { ent-Implanter }
     .desc = { ent-BaseImplantOnlyImplanter.desc }
     .suffix = Аплинк
+ent-EmpImplanter = { ent-Implanter }
+    .desc = { ent-BaseImplantOnlyImplanter.desc }
+    .suffix = ЭМИ
+ent-DnaScramblerImplanter = { ent-Implanter }
+    .desc = { ent-BaseImplantOnlyImplanter.desc }
+    .suffix = Миксер ДНК
 ent-MicroBombImplanter = { ent-Implanter }
     .desc = { ent-BaseImplantOnlyImplanter.desc }
     .suffix = Микробомба
 ent-MacroBombImplanter = { ent-Implanter }
     .desc = { ent-BaseImplantOnlyImplanter.desc }
     .suffix = Макробомба
+ent-DeathRattleImplanter = { ent-Implanter }
+    .desc = { ent-BaseImplantOnlyImplanter.desc }
+    .suffix = Предсмертный хрип
 
 # Corvax anti-meta localization end
 
