@@ -39,8 +39,8 @@
     - type: Puller
     - type: InteractionPopup
       successChance: 1
-      interactSuccessString: petting-success-sloth # Edit
-      interactFailureString: petting-failure-sloth
+      interactSuccessString: petting-success-gorilla
+      interactFailureString: petting-failure-gorilla
     - type: Tag
       tags:
         - CannotSuicide
