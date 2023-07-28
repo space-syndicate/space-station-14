@@ -1,4 +1,4 @@
-﻿using System.Text;
+using System.Text;
 using System.Text.RegularExpressions;
 using Content.Server.Chat.Systems;
 
@@ -55,7 +55,6 @@ public sealed partial class TTSSystem
             {"рд", "Эр Дэ"},
             {"гсб", "Гэ Эс Бэ"},
             {"гв", "Гэ Вэ"},
-            {"нр", "Эн Эр"},
             {"км", "Кэ Эм"},
             {"си", "Эс И"},
             {"срп", "Эс Эр Пэ"},
