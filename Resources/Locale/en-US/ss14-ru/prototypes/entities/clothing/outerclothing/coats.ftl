@@ -42,3 +42,7 @@ ent-ClothingOuterCoatSyndieCapArmored = syndicate's armored coat
     .desc = The syndicate's armored coat is made of durable fabric, with gilded patterns.
 ent-ClothingOuterCoatAMG = armored medical gown
     .desc = The version of the medical gown, with elements of a bulletproof vest, looks strange, but your heart is protected.
+ent-ClothingOuterCoatLabSeniorResearcher = senior researcher lab coat
+    .desc = A suit that protects against minor chemical spills. Has a purple collar and wrist trims.
+ent-ClothingOuterCoatLabSeniorPhysician = senior physician lab coat
+    .desc = A suit that protects against minor chemical spills. Has light blue sleeves and an orange waist trim.

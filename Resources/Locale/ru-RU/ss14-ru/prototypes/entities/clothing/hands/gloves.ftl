@@ -41,5 +41,5 @@ ent-ClothingHandsGlovesCluwne = руки клувеня
     .suffix = Неснимаемый
 ent-ClothingHandsGlovesNorthStar = перчатки Полярный звезды
     .desc = Эти перчатки позволяют наносить удары с невероятной скоростью.
-ent-ClothingHandsGlovesForensic = forensic gloves
-    .desc = Do not leave fibers or fingerprints. If you work without them, you're A TERRIBLE DETECTIVE.
+ent-ClothingHandsGlovesForensic = криминалистические перчатки
+    .desc = Не оставляют ни волокна, ни отпечатки пальцев. Если вы работаете без них, то вы - УЖАСНЫЙ ДЕТЕКТИВ.
