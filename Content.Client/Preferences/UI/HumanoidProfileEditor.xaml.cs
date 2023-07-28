@@ -1,5 +1,6 @@
 using System.Linq;
 using System.Numerics;
+using Content.Client.Corvax.Sponsors;
 using Content.Client.Humanoid;
 using Content.Client.Lobby.UI;
 using Content.Client.Message;
@@ -1612,6 +1613,10 @@ namespace Content.Client.Preferences.UI
                 };
                 _checkBox.OnToggled += OnCheckBoxToggled;
 
+                var sponsors = IoCManager.Resolve<SponsorsManager>();
+                if (loadout.SponsorOnly && !sponsors.TryGetInfo(out _))
+                    _checkBox.Disabled = true;
+
                 var tooltip = "";
                 tooltip += $"{Loc.GetString(loadoutMeta.EntityDescription)}";
                 if (loadout.WhitelistJobs != null || loadout.BlacklistJobs != null || loadout.SpeciesRestrictions != null)
@@ -1634,6 +1639,12 @@ namespace Content.Client.Preferences.UI
                     if (loadout.BlacklistJobs != null)
                         foreach (var require in loadout.BlacklistJobs)
                             tooltip += $"\n - {Loc.GetString($"Job{require}")} ({Loc.GetString("humanoid-profile-editor-loadouts-selector-job")})";
+                }
+
+                if (loadout.SponsorOnly)
+                {
+                    tooltip += "\n";
+                    tooltip += Loc.GetString("humanoid-profile-editor-loadouts-selector-sponsor");
                 }
 
                 if (tooltip != "")
