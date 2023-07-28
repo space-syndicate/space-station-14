@@ -49,8 +49,7 @@ entities:
       type: Fixtures
     - type: OccluderTree
     - type: Shuttle
-    - nextUpdate: 17129.1961066
-      type: GridPathfinding
+    - type: GridPathfinding
     - gravityShakeSound: !type:SoundPathSpecifier
         path: /Audio/Effects/alert.ogg
       type: Gravity
@@ -506,8 +505,7 @@ entities:
       type: GridAtmosphere
     - type: GasTileOverlay
     - type: RadiationGridResistance
-    - nextUpdate: 0
-      type: SpreaderGrid
+    - type: SpreaderGrid
 - proto: AcousticGuitarInstrument
   entities:
   - uid: 2
@@ -2855,7 +2853,6 @@ entities:
     - inletTwoConcentration: 0.78
       inletOneConcentration: 0.22
       targetPressure: 300
-      enabled: True
       type: GasMixer
 - proto: GasPassiveVent
   entities:
@@ -2865,8 +2862,6 @@ entities:
       pos: 10.5,-24.5
       parent: 1
       type: Transform
-    - nextSound: 33.6389337
-      type: EmitSoundOnCollide
 - proto: GasPipeBend
   entities:
   - uid: 385
@@ -3871,8 +3866,6 @@ entities:
     - pos: 10.5,-22.5
       parent: 1
       type: Transform
-    - enabled: True
-      type: GasVolumePump
     - color: '#ED0000FF'
       type: AtmosPipeColor
 - proto: GeneratorUranium
@@ -5886,7 +5879,7 @@ entities:
       pos: 12.5,0.5
       parent: 1
       type: Transform
-- proto: WindoorSecurityLocked
+- proto: WindoorSecureSecurityLocked
   entities:
   - uid: 840
     components:

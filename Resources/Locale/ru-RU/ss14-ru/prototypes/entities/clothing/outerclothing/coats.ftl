@@ -42,3 +42,7 @@ ent-ClothingOuterCoatSyndieCapArmored = бронированный тренч С
     .desc = Бронированный плащ Синдиката, изготовлен из прочной ткани, украшен позолоченными узорами.
 ent-ClothingOuterCoatAMG = медицинский бронехалат
     .desc = Вариация медицинского халата с элементами бронежилета. Выглядит странно, но вашему сердечку ничего не угрожает.
+ent-ClothingOuterCoatLabSeniorResearcher = senior researcher lab coat
+    .desc = A suit that protects against minor chemical spills. Has a purple collar and wrist trims.
+ent-ClothingOuterCoatLabSeniorPhysician = senior physician lab coat
+    .desc = A suit that protects against minor chemical spills. Has light blue sleeves and an orange waist trim.
