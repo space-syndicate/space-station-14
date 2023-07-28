@@ -1395,7 +1395,7 @@
     - state: panel
       map: ["enum.WiresVisualLayers.MaintenancePanel"]
   - type: AccessReader
-    access: [["Brig"]]
+    access: [["Command"]] # Corvax-IAA
 
 - type: entity
   parent: VendingMachine
