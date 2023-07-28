@@ -56,6 +56,6 @@ ent-CrateCoffin = гроб
 ent-CrateWoodenGrave = могила
     .desc = Здесь кто-то умер...
     .suffix = Дерево
-ent-CrateStoneGrave = grave
+ent-CrateStoneGrave = могила
     .desc = Здесь кто-то умер...
     .suffix = Камень
