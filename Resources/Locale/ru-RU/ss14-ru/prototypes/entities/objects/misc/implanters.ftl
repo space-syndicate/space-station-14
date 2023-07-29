@@ -1,9 +1,9 @@
 ent-BaseImplanter = имплантер
-    .desc = Специальный шприц, используемый только для имплантов.
+    .desc = Шприц, специально предназначенный для введения и извлечения подкожных имплантов.
 ent-Implanter = { ent-BaseImplanter }
-    .desc = { ent-BaseImplanter.desc }
+    .desc = Одноразовый шприц, специально предназначенный для введения и извлечения подкожных имплантов.
 ent-BaseImplantOnlyImplanter = { ent-Implanter }
-    .desc = Одноразовый имплантер.
+    .desc = Одноразовый шприц, специально предназначенный для введения подкожных имплантов.
 # Corvax anti-meta localization start
 ent-SadTromboneImplanter = { ent-Implanter }
     .desc = { ent-BaseImplantOnlyImplanter.desc }
