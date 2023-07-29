@@ -114,5 +114,5 @@ ent-ClothingHeadHatHetmanHat = гетманская шапка
     .desc = Из Запорожской Сечи с любовью.
 ent-ClothingHeadHatMagician = цилиндр фокусника
     .desc = Цилиндр фокусника.
-ent-ClothingHeadHatCapcap = кепи кепа
+ent-ClothingHeadHatCapcap = фуражка капитана
     .desc = Большая, стильная капитанская фуражка.
