@@ -1,4 +1,4 @@
-- type: job
+﻿- type: job
   id: Captain
   name: job-name-captain
   description: job-description-captain
@@ -6,18 +6,18 @@
   requirements:
     - !type:DepartmentTimeRequirement
       department: Engineering
-      time: 72000 # Corvax-RoleTime
+      time: 72000 #20 hrs # Corvax-RoleTime
     - !type:DepartmentTimeRequirement
       department: Medical
-      time: 72000 # Corvax-RoleTime
+      time: 72000 #20 hrs # Corvax-RoleTime
     - !type:DepartmentTimeRequirement
       department: Security
-      time: 72000 # Corvax-RoleTime
+      time: 72000 #20 hrs # Corvax-RoleTime
 #    - !type:DepartmentTimeRequirement
 #      department: Command
 #      time: 54000 # 15 hours
     - !type:OverallPlaytimeRequirement
-      time: 504000 # Corvax-RoleTime
+      time: 504000 #140 hrs # Corvax-RoleTime
   weight: 20
   startingGear: CaptainGear
   icon: "Captain"
