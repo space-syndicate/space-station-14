@@ -1,0 +1,63 @@
+﻿- type: entity
+  parent: BaseMachinePowered
+  id: CopierMachineBase
+  name: copier
+  description: Machine for copying your documents and something else
+  components:
+  - type: Sprite
+    sprite: Structures/Machines/fax_machine.rsi
+    drawdepth: SmallObjects
+    layers:
+    - state: icon
+      map: ["base"]
+  - type: Icon
+    sprite: Structures/Machines/fax_machine.rsi
+    state: icon
+  - type: Appearance
+  - type: Physics
+    bodyType: Static
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.25,-0.25,0.25,0.25"
+        density: 25
+        mask:
+        - TabletopMachineMask
+        layer:
+        - TabletopMachineLayer
+  - type: ActivatableUI
+    key: enum.DocumentCopierUiKey.Key
+  - type: ActivatableUIRequiresPower
+  - type: UserInterface
+    interfaces:
+    - key: enum.DocumentCopierUiKey.Key
+      type: DocumentCopierBoundUi
+  - type: ApcPowerReceiver
+    powerLoad: 250
+  - type: GenericVisualizer
+    visuals:
+      enum.PowerDeviceVisuals.Powered:
+        base:
+          True: { state: idle }
+          False: { state: icon }
+      enum.FaxMachineVisuals.VisualState:
+        base:
+          Inserting: { state: inserting }
+          Printing: { state: printing }
+  - type: DocumentCopier
+    sourceSheet: &slotDef
+      insertSound: /Audio/Machines/scanning.ogg
+      ejectSound: /Audio/Machines/tray_eject.ogg
+      whitelist:
+        components:
+          - Paper
+      swap: false
+    targetSheet: *slotDef
+  - type: ItemSlots
+  - type: ContainerContainer
+    containers: # TODO: make more slots for paper
+      sourceSheet: !type:ContainerSlot
+      targetSheet: !type:ContainerSlot
+  - type: DeviceNetworkRequiresPower

@@ -1,0 +1,26 @@
+<DefaultWindow xmlns="https://spacestation14.io"
+               Title="document copier"
+               MinWidth="250">
+    <BoxContainer Orientation="Vertical" VerticalExpand="True">
+        <BoxContainer Orientation="Vertical" VerticalExpand="True">
+            <BoxContainer Orientation="Horizontal">
+                <Label Text="Source document"/>
+                <Control MinWidth="4"></Control>
+                <Button Name="SourceDocumentControl"
+                        Text="insert"/>
+            </BoxContainer>
+            <BoxContainer Orientation="Horizontal">
+                <Label Text="Target document"/>
+                <Control MinWidth="4"></Control>
+                <Button Name="TargetDocumentControl"
+                        Text="insert"/>
+            </BoxContainer>
+        </BoxContainer>
+
+        <BoxContainer Orientation="Horizontal">
+            <Control MinWidth="10" />
+            <Button Name="PrintButton"
+                    Text="print"/>
+        </BoxContainer>
+    </BoxContainer>
+</DefaultWindow>
