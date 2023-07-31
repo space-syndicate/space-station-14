@@ -5,7 +5,7 @@
   playTimeTracker: JobClown
   requirements:
   - !type:OverallPlaytimeRequirement
-      time: 90000 # Corvax-RoleTime
+      time: 90000 #25 hrs # Corvax-RoleTime
   startingGear: ClownGear
   icon: "Clown"
   supervisors: job-supervisors-hop

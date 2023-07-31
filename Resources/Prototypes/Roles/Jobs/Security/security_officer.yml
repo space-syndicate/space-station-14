@@ -6,7 +6,7 @@
   requirements:
     - !type:DepartmentTimeRequirement
       department: Security
-      time: 36000 # Corvax-RoleTime
+      time: 36000 #10 hrs # Corvax-RoleTime
   startingGear: SecurityOfficerGear
   icon: "SecurityOfficer"
   supervisors: job-supervisors-hos
