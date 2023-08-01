@@ -353,15 +353,16 @@
   categories:
   - UplinkUtility
 
-- type: listing
-  id: UplinkStealthBox
-  name: uplink-stealth-box-name
-  description: uplink-stealth-box-desc
-  productEntity: StealthBox
-  cost:
-    Telecrystal: 5
-  categories:
-  - UplinkUtility
+# Corvax - No Stealth Box
+# - type: listing
+  # id: UplinkStealthBox
+  # name: uplink-stealth-box-name
+  # description: uplink-stealth-box-desc
+  # productEntity: StealthBox
+  # cost:
+    # Telecrystal: 5
+  # categories:
+  # - UplinkUtility
 
 #TODO: Remove this from the uplink
 - type: listing
