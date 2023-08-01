@@ -1,12 +1,8 @@
-using Content.Server.DeviceNetwork.Systems;
-using Content.Server.Fax;
 using Content.Server.Paper;
 using Content.Server.Popups;
 using Content.Server.Power.Components;
 using Content.Server.UserInterface;
-using Content.Shared.Administration.Logs;
 using Content.Shared.Containers.ItemSlots;
-using Content.Shared.Database;
 using Content.Shared.DocumentCopier;
 using Robust.Server.GameObjects;
 using Robust.Shared.Containers;
@@ -18,14 +14,13 @@ public sealed class DocumentCopierSystem : EntitySystem
     [Dependency] private readonly ItemSlotsSystem _itemSlotsSystem = default!;
     [Dependency] private readonly SharedAppearanceSystem _appearanceSystem = default!;
     [Dependency] private readonly UserInterfaceSystem _userInterface = default!;
-    [Dependency] private readonly DeviceNetworkSystem _deviceNetworkSystem = default!;
-    [Dependency] private readonly ISharedAdminLogManager _adminLogger = default!;
     [Dependency] private readonly PaperSystem _paperSystem = default!;
     [Dependency] private readonly PopupSystem _popupSystem = default!;
-    [Dependency] private readonly EntityManager _entityManager = default!;
+    [Dependency] private readonly SharedAudioSystem _audioSystem = default!;
 
     private const string TargetPaperSlotId = "targetSheet";
     private const string SourcePaperSlotId = "sourceSheet";
+
     public override void Initialize()
     {
         base.Initialize();
@@ -46,7 +41,6 @@ public sealed class DocumentCopierSystem : EntitySystem
 
     private void OnMapInit(EntityUid uid, DocumentCopierComponent component, MapInitEvent args)
     {
-
     }
 
     private void OnComponentInit(EntityUid uid, DocumentCopierComponent component, ComponentInit args)
@@ -64,19 +58,6 @@ public sealed class DocumentCopierSystem : EntitySystem
 
     private void OnItemSlotChanged(EntityUid uid, DocumentCopierComponent component, ContainerModifiedMessage args)
     {
-        // if (!component.Initialized)
-        //     return;
-        //
-        // if (args.Container.ID != component.PaperSlot.ID)
-        //     return;
-        //
-        // var isPaperInserted = component.PaperSlot.Item.HasValue;
-        // if (isPaperInserted)
-        // {
-        //     component.InsertingTimeRemaining = component.InsertionTime;
-        //     _itemSlotsSystem.SetLock(uid, component.PaperSlot, true);
-        // }
-        //
         UpdateUserInterface(uid, component);
     }
 
@@ -104,7 +85,43 @@ public sealed class DocumentCopierSystem : EntitySystem
         // _itemSlotsSystem.SetLock(uid, component.PaperSlot, !args.Powered); // Lock slot when power is off
     }
 
+    public override void Update(float frameTime)
+    {
+        base.Update(frameTime);
 
+        var query = EntityQueryEnumerator<DocumentCopierComponent, ApcPowerReceiverComponent>();
+        while (query.MoveNext(out var uid, out var documentCopier, out var receiver))
+        {
+            if (!receiver.Powered)
+                continue;
+
+            ProcessPrintingAnimation(uid, frameTime, documentCopier);
+        }
+    }
+
+    private void ProcessPrintingAnimation(EntityUid uid, float frameTime, DocumentCopierComponent comp)
+    {
+        if (comp.PrintingTimeRemaining > 0)
+        {
+            comp.PrintingTimeRemaining -= frameTime;
+            UpdateAppearance(uid, comp);
+
+            var isAnimationEnd = comp.PrintingTimeRemaining <= 0;
+            if (isAnimationEnd)
+            {
+                SpawnPaperFromQueue(uid, comp);
+                UpdateUserInterface(uid, comp);
+            }
+
+            return;
+        }
+
+        if (comp.PrintingQueue.Count > 0)
+        {
+            comp.PrintingTimeRemaining = comp.PrintingTime;
+            _audioSystem.PlayPvs(comp.PrintSound, uid);
+        }
+    }
 
     private void OnToggleInterface(EntityUid uid, DocumentCopierComponent component, AfterActivatableUIOpenEvent args)
     {
@@ -113,57 +130,76 @@ public sealed class DocumentCopierSystem : EntitySystem
 
     private void OnPrintButtonPressed(EntityUid uid, DocumentCopierComponent component, DocumentCopierPrintMessage args)
     {
-        if (component.TargetSheet.Item.HasValue && TrySpawnPaper(uid, component))
+        if (component.SourceSheet.Item == null || component.TargetSheet.Item == null)
+            return;
+
+        if (TryComp<PaperComponent>(component.TargetSheet.Item, out var targetPaper))
         {
-            EntityManager.DeleteEntity(component.TargetSheet.Item.Value);
+            if (targetPaper.StampState != null)
+            {
+                _popupSystem.PopupEntity("Target paper was already stamped, it can't being override", uid);
+                return;
+            }
         }
 
-        UpdateUserInterface(uid, component);
+        var sendEntity = component.SourceSheet.Item;
+        if (sendEntity == null)
+            return;
+
+        if (!TryComp<MetaDataComponent>(sendEntity, out var metadata) ||
+            !TryComp<PaperComponent>(sendEntity, out var paper))
+            return;
+
+        var printout = new DocumentCopierPrintout(paper.Content, metadata.EntityName);
+
+        if (paper.Content == "") // if source text is empty, it doesn't print
+        {
+            _popupSystem.PopupEntity("Source paper is empty, printing was automatically stopped", uid);
+            return;
+        }
+
+        if (metadata.EntityPrototype != null)
+        {
+            printout.PrototypeId = metadata.EntityPrototype.ID;
+        }
+
+        if (paper.StampState != null)
+        {
+            printout.StampState = paper.StampState;
+            printout.StampedBy.AddRange(paper.StampedBy);
+        }
+
+        component.PrintingQueue.Enqueue(printout);
+
+        EntityManager.DeleteEntity(component.TargetSheet.Item.Value);
     }
 
-    private bool TrySpawnPaper(EntityUid uid, DocumentCopierComponent? component = null)
+    private void SpawnPaperFromQueue(EntityUid uid, DocumentCopierComponent? component = null)
     {
-        if (!Resolve(uid, ref component) || component.SourceSheet.Item == null || component.TargetSheet.Item == null)
-            return false;
+        if (!Resolve(uid, ref component) || component.PrintingQueue.Count == 0)
+            return;
 
-        var source = component.SourceSheet.Item;
+        var printout = component.PrintingQueue.Dequeue();
 
-        if (!TryComp<PaperComponent>(component.TargetSheet.Item, out var targetPaper))
-            return false;
-        if (targetPaper.StampState != null)
+        var entityToSpawn = printout.PrototypeId.Length == 0 ? "Paper" : printout.PrototypeId;
+        var printed = EntityManager.SpawnEntity(entityToSpawn, Transform(uid).Coordinates);
+
+        if (TryComp<PaperComponent>(printed, out _))
         {
-            _popupSystem.PopupEntity("Target paper was already stamped, it can't being override", uid);
-            return false;
-        }
-
-        const string entityToSpawn = "Paper";
-        var target = EntityManager.SpawnEntity(entityToSpawn, Transform(uid).Coordinates);
-
-        if (TryComp<PaperComponent>(source, out var sourcePaper))
-        {
-            if (sourcePaper.Content == "") // if source text is empty, it doesn't print
-            {
-                _popupSystem.PopupEntity("Source paper is empty, printing was automatically stopped", uid);
-                return true;
-            }
-
-            _paperSystem.SetContent(target, sourcePaper.Content);
+            _paperSystem.SetContent(printed, printout.Content);
 
             // Apply stamps
-            if (sourcePaper.StampState != null)
+            if (printout.StampState != null)
             {
-                foreach (var stampedBy in sourcePaper.StampedBy)
+                foreach (var stampedBy in printout.StampedBy)
                 {
-                    _paperSystem.TryStamp(target, stampedBy, sourcePaper.StampState);
+                    _paperSystem.TryStamp(printed, stampedBy, printout.StampState);
                 }
             }
         }
 
-        if (TryComp<MetaDataComponent>(target, out var targetMetadata) &&
-            TryComp<MetaDataComponent>(source, out var sourceMetadata))
-            targetMetadata.EntityName = sourceMetadata.EntityName;
-
-        return true;
+        if (TryComp<MetaDataComponent>(printed, out var metadata))
+            metadata.EntityName = printout.Name;
     }
 
     // TODO: remake appearance to individual texture
@@ -173,11 +209,19 @@ public sealed class DocumentCopierSystem : EntitySystem
             return;
 
         if (component.InsertingTimeRemaining > 0)
-            _appearanceSystem.SetData(uid, DocumentCopierVisuals.VisualState, DocumentCopierMachineVisualState.Inserting);
+        {
+            _appearanceSystem.SetData(uid, DocumentCopierVisuals.VisualState,
+                DocumentCopierMachineVisualState.Inserting);
+        }
         else if (component.PrintingTimeRemaining > 0)
-            _appearanceSystem.SetData(uid, DocumentCopierVisuals.VisualState, DocumentCopierMachineVisualState.Printing);
+        {
+            _appearanceSystem.SetData(uid, DocumentCopierVisuals.VisualState,
+                DocumentCopierMachineVisualState.Printing);
+        }
         else
+        {
             _appearanceSystem.SetData(uid, DocumentCopierVisuals.VisualState, DocumentCopierMachineVisualState.Normal);
+        }
     }
 
     private void UpdateUserInterface(EntityUid uid, DocumentCopierComponent? component = null)

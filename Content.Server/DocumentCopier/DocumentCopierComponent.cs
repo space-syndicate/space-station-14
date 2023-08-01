@@ -1,5 +1,8 @@
+using Content.Server.Paper;
 using Content.Shared.Containers.ItemSlots;
 using Robust.Shared.Audio;
+using Robust.Shared.Prototypes;
+using Robust.Shared.Serialization.TypeSerializers.Implementations.Custom.Prototype;
 
 namespace Content.Server.DocumentCopier;
 
@@ -25,6 +28,13 @@ public sealed class DocumentCopierComponent : Component
     public SoundSpecifier PrintSound = new SoundPathSpecifier("/Audio/Machines/printer.ogg");
 
     /// <summary>
+    /// Print queue of the incoming message
+    /// </summary>
+    [ViewVariables]
+    [DataField("printingQueue")]
+    public Queue<DocumentCopierPrintout> PrintingQueue { get; } = new();
+
+    /// <summary>
     /// Remaining time of inserting animation
     /// </summary>
     [DataField("insertingTimeRemaining")]
@@ -47,4 +57,31 @@ public sealed class DocumentCopierComponent : Component
     /// </summary>
     [ViewVariables]
     public float PrintingTime = 2.3f;
+}
+
+public sealed class DocumentCopierPrintout
+{
+    [DataField("name", required: true)]
+    public string Name { get; }
+
+    [DataField("content", required: true)]
+    public string Content { get; }
+
+    [DataField("prototypeId", customTypeSerializer: typeof(PrototypeIdSerializer<EntityPrototype>), required: true)]
+    public string PrototypeId { get; set;  }
+
+    [DataField("stampState")]
+    public string? StampState { get; set; }
+
+    [DataField("stampedBy")]
+    public List<string> StampedBy { get; }
+
+    public DocumentCopierPrintout(string content, string name, string? prototypeId = null, string? stampState = null, List<string>? stampedBy = null)
+    {
+        Content = content;
+        Name = name;
+        PrototypeId = prototypeId ?? "";
+        StampState = stampState;
+        StampedBy = stampedBy ?? new List<string>();
+    }
 }
