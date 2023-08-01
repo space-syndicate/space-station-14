@@ -1,7 +1,7 @@
 ﻿- type: entity
   parent: BaseMachinePowered
   id: CopierMachineBase
-  name: copier
+  name: document copier
   description: Machine for copying your documents and something else
   components:
   - type: Sprite

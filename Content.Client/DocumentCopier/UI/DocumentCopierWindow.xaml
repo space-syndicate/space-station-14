@@ -1,26 +1,25 @@
 <DefaultWindow xmlns="https://spacestation14.io"
-               Title="document copier"
+               Title="{Loc 'document-copier-name'}"
                MinWidth="250">
     <BoxContainer Orientation="Vertical" VerticalExpand="True">
-        <BoxContainer Orientation="Vertical" VerticalExpand="True">
-            <BoxContainer Orientation="Horizontal">
-                <Label Text="Source document"/>
-                <Control MinWidth="4"></Control>
-                <Button Name="SourceDocumentControl"
-                        Text="insert"/>
+        <BoxContainer Orientation="Horizontal" VerticalExpand="True">
+            <BoxContainer Orientation="Vertical" MinWidth="100">
+                <Label Text="{Loc 'document-copier-ui-source-document'}"/>
+                <Label Text="{Loc 'document-copier-ui-target-document'}"/>
             </BoxContainer>
-            <BoxContainer Orientation="Horizontal">
-                <Label Text="Target document"/>
-                <Control MinWidth="4"></Control>
+            <Control MinWidth="50" />
+            <BoxContainer Orientation="Vertical" MinWidth="100">
+                <Button Name="SourceDocumentControl"
+                        Text="{Loc 'document-copier-ui-insert-document'}"/>
                 <Button Name="TargetDocumentControl"
-                        Text="insert"/>
+                        Text="{Loc 'document-copier-ui-insert-document'}"/>
             </BoxContainer>
         </BoxContainer>
-
         <BoxContainer Orientation="Horizontal">
-            <Control MinWidth="10" />
+            <Control MinWidth="150" />
             <Button Name="PrintButton"
-                    Text="print"/>
+                    Text="{Loc 'document-copier-ui-print-document'}"
+                    Disabled="True"/>
         </BoxContainer>
     </BoxContainer>
 </DefaultWindow>

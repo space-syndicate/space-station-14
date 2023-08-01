@@ -137,7 +137,7 @@ public sealed class DocumentCopierSystem : EntitySystem
         {
             if (targetPaper.StampState != null)
             {
-                _popupSystem.PopupEntity("Target paper was already stamped, it can't being override", uid);
+                _popupSystem.PopupEntity(Robust.Shared.Localization.Loc.GetString("document-copier-popup-stump-failed"), uid);
                 return;
             }
         }
@@ -154,7 +154,7 @@ public sealed class DocumentCopierSystem : EntitySystem
 
         if (paper.Content == "") // if source text is empty, it doesn't print
         {
-            _popupSystem.PopupEntity("Source paper is empty, printing was automatically stopped", uid);
+            _popupSystem.PopupEntity(Robust.Shared.Localization.Loc.GetString("document-copier-popup-override-failed"), uid);
             return;
         }
 

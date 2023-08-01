@@ -32,7 +32,9 @@ public sealed partial class DocumentCopierWindow : DefaultWindow
 
         void SetButtonText(Button target, bool buttonState)
         {
-            target.Text = buttonState ? "eject" : "insert";
+            target.Text = buttonState
+                ? Loc.GetString("document-copier-ui-eject-document")
+                : Loc.GetString("document-copier-ui-insert-document");
         }
     }
 }
