@@ -25,24 +25,14 @@ public sealed partial class DocumentCopierWindow : DefaultWindow
 
     public void UpdateState(DocumentCopierUiState state)
     {
-        var isDocumentInserted = true;
-
         SetButtonText(SourceDocumentControl, state.IsSourceDocumentInserted);
         SetButtonText(TargetDocumentControl, state.IsTargetDocumentInserted);
 
-        PrintButton.Disabled = !isDocumentInserted;
+        PrintButton.Disabled = !state.IsCanPrintDocument;
 
         void SetButtonText(Button target, bool buttonState)
         {
-            if (buttonState)
-            {
-                target.Text = "Eject";
-            }
-            else
-            {
-                SourceDocumentControl.Text = "Insert";
-                isDocumentInserted = false;
-            }
+            target.Text = buttonState ? "eject" : "insert";
         }
     }
 }

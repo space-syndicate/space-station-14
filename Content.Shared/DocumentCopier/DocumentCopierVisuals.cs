@@ -1,15 +1,15 @@
 using Robust.Shared.Serialization;
 
-namespace Content.Shared.Fax;
+namespace Content.Shared.DocumentCopier;
 
 [Serializable, NetSerializable]
-public enum FaxMachineVisuals : byte
+public enum DocumentCopierVisuals : byte
 {
     VisualState,
 }
 
 [Serializable, NetSerializable]
-public enum FaxMachineVisualState : byte
+public enum DocumentCopierMachineVisualState : byte
 {
     Normal,
     Inserting,

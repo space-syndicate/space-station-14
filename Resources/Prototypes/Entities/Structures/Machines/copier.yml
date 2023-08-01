@@ -42,22 +42,22 @@
         base:
           True: { state: idle }
           False: { state: icon }
-      enum.FaxMachineVisuals.VisualState:
+      enum.DocumentCopierVisuals.VisualState:
         base:
           Inserting: { state: inserting }
           Printing: { state: printing }
   - type: DocumentCopier
-    sourceSheet: &slotDef
+    targetSheet: &slotDef
       insertSound: /Audio/Machines/scanning.ogg
       ejectSound: /Audio/Machines/tray_eject.ogg
       whitelist:
         components:
           - Paper
       swap: false
-    targetSheet: *slotDef
+    sourceSheet: *slotDef
   - type: ItemSlots
   - type: ContainerContainer
     containers: # TODO: make more slots for paper
-      sourceSheet: !type:ContainerSlot
       targetSheet: !type:ContainerSlot
+      sourceSheet: !type:ContainerSlot
   - type: DeviceNetworkRequiresPower

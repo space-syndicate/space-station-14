@@ -44,8 +44,8 @@ public sealed class DocumentCopierSystem : EntitySystem
 
     private void OnComponentInit(EntityUid uid, DocumentCopierComponent component, ComponentInit args)
     {
-        _itemSlotsSystem.AddItemSlot(uid, SourcePaperSlotId, component.TargetSheet);
         _itemSlotsSystem.AddItemSlot(uid, TargetPaperSlotId, component.SourceSheet);
+        _itemSlotsSystem.AddItemSlot(uid, SourcePaperSlotId, component.TargetSheet);
         UpdateAppearance(uid, component);
     }
 
@@ -71,11 +71,6 @@ public sealed class DocumentCopierSystem : EntitySystem
         // }
         //
         UpdateUserInterface(uid, component);
-
-        if (!component.Initialized)
-            return;
-
-
     }
 
     private void OnPowerChanged(EntityUid uid, DocumentCopierComponent component, ref PowerChangedEvent args)
@@ -116,11 +111,11 @@ public sealed class DocumentCopierSystem : EntitySystem
             return;
 
         if (component.InsertingTimeRemaining > 0)
-            _appearanceSystem.SetData(uid, FaxMachineVisuals.VisualState, FaxMachineVisualState.Inserting);
+            _appearanceSystem.SetData(uid, DocumentCopierVisuals.VisualState, DocumentCopierMachineVisualState.Inserting);
         else if (component.PrintingTimeRemaining > 0)
-            _appearanceSystem.SetData(uid, FaxMachineVisuals.VisualState, FaxMachineVisualState.Printing);
+            _appearanceSystem.SetData(uid, DocumentCopierVisuals.VisualState, DocumentCopierMachineVisualState.Printing);
         else
-            _appearanceSystem.SetData(uid, FaxMachineVisuals.VisualState, FaxMachineVisualState.Normal);
+            _appearanceSystem.SetData(uid, DocumentCopierVisuals.VisualState, DocumentCopierMachineVisualState.Normal);
     }
 
     private void UpdateUserInterface(EntityUid uid, DocumentCopierComponent? component = null)

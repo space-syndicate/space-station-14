@@ -40,7 +40,7 @@ public sealed class DocumentCopierBoundUi : BoundUserInterface
 
     private void OnPrintButtonPressed()
     {
-
+        SendMessage(new DocumentCopierPrintMessage());
     }
 
     protected override void UpdateState(BoundUserInterfaceState state)

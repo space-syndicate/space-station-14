@@ -13,6 +13,7 @@ public sealed class DocumentCopierUiState : BoundUserInterfaceState
 {
     public bool IsSourceDocumentInserted;
     public bool IsTargetDocumentInserted;
+    public bool IsCanPrintDocument;
 
     public DocumentCopierUiState(
         bool isSourceDocumentInserted,
@@ -20,5 +21,12 @@ public sealed class DocumentCopierUiState : BoundUserInterfaceState
     {
         IsSourceDocumentInserted = isSourceDocumentInserted;
         IsTargetDocumentInserted = isTargetDocumentInserted;
+
+        IsCanPrintDocument = IsSourceDocumentInserted && IsTargetDocumentInserted;
     }
+}
+
+[Serializable, NetSerializable]
+public sealed class DocumentCopierPrintMessage : BoundUserInterfaceMessage
+{
 }
