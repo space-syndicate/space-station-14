@@ -1,5 +1,5 @@
-ent-CrateSyndicate = Syndicate crate
-    .desc = A dark steel crate with red bands and a letter S embossed on the front.
+ent-CrateSyndicate = ящик синдиката
+    .desc = Стальной ящик тёмного цвета с красными полосами и выдавленной на передней панели литерой S.
 ent-CrateSyndicateSurplusBundle = ящик припасов синдиката
     .desc = Содержит случайное снаряжение Синдиката, общей стоимостью в 50 телекристаллов. Оно может быть как бесполезным хламом, так и реально крутым.
 ent-CrateSyndicateSuperSurplusBundle = ящик суперприпасов синдиката
