@@ -71,9 +71,9 @@
   description: A pair of spectacular spectacles with prescription lenses.
   components:
   - type: Sprite
-    sprite: Clothing/Eyes/Glasses/glasses.rsi
+    sprite: Corvax/Clothing/Eyes/Glasses/glasses.rsi # Corvax-Resprite
   - type: Clothing
-    sprite: Clothing/Eyes/Glasses/glasses.rsi
+    sprite: Corvax/Clothing/Eyes/Glasses/glasses.rsi # Corvax-Resprite
   - type: VisionCorrection
   - type: Tag
     tags:
@@ -100,9 +100,9 @@
   description: Useful both for security and cargonia.
   components:
   - type: Sprite
-    sprite: Clothing/Eyes/Glasses/sunglasses.rsi
+    sprite: Corvax/Clothing/Eyes/Glasses/sunglasses.rsi # Corvax-Resprite
   - type: Clothing
-    sprite: Clothing/Eyes/Glasses/sunglasses.rsi
+    sprite: Corvax/Clothing/Eyes/Glasses/sunglasses.rsi # Corvax-Resprite
   - type: FlashImmunity
   - type: EyeProtection
     protectionTime: 5

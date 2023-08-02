@@ -74,7 +74,7 @@
 - type: latheRecipe
   id: Vape
   icon:
-    sprite: Objects/Consumable/Smokeables/Vapes/vape-standart.rsi
+    sprite: Corvax/Objects/Consumable/Smokeables/Vapes/vape-standart.rsi # Corvax-Resprite
     state: icon
   result: Vape
   completetime: 2

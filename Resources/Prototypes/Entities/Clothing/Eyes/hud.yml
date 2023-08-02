@@ -38,9 +38,9 @@
   description: A pair of sunHud outfitted with apparatus to scan reagents, as well as providing an innate understanding of liquid viscosity while in motion.
   components:
   - type: Sprite
-    sprite: Clothing/Eyes/Hud/beergoggles.rsi
+    sprite: Corvax/Clothing/Eyes/Hud/beergoggles.rsi # Corvax-Resprite
   - type: Clothing
-    sprite: Clothing/Eyes/Hud/beergoggles.rsi
+    sprite: Corvax/Clothing/Eyes/Hud/beergoggles.rsi # Corvax-Resprite
 
 - type: entity
   parent: ClothingEyesBase
