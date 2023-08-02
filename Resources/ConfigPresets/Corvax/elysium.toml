@@ -1,0 +1,23 @@
+﻿[game]
+hostname = "🛰️ Corvax — Элизиум 🌑"
+desc = "Корвакс первый русскоязычный проект в Space Station 14.\nЗдесь помогут новичкам!\nНа этом сервере пониженные требования к RP."
+map_pool = "CorvaxMapPool"
+maxplayers = 180
+soft_max_players = 100
+map_rotation = false
+
+[rules]
+time = 10.0
+
+[queue]
+enabled = true
+
+[tts]
+enabled = false
+
+[discord_auth]
+enabled = true
+
+[hub]
+advertise = true
+tags = "lang:ru,rp:med,region:eu_e,tts"

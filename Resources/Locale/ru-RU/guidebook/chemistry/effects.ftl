@@ -286,6 +286,21 @@ reagent-effect-guidebook-wash-cream-pie-reaction =
         [1] Смывает
        *[other] смывают
     } кремовый пирог с лица
+reagent-effect-guidebook-cure-zombie-infection =
+    { $chance ->
+        [1] Лечит
+       *[other] лечат
+    } зомби-вирус
+reagent-effect-guidebook-cause-zombie-infection =
+    { $chance ->
+        [1] Заражает
+       *[other] заражают
+    } человека зомби-вирусом
+reagent-effect-guidebook-innoculate-zombie-infection =
+    { $chance ->
+        [1] Лечит
+       *[other] лечат
+    } зомби-вирус и обеспечивает иммунитет к нему в будущем
 reagent-effect-guidebook-missing =
     { $chance ->
         [1] Вызывает

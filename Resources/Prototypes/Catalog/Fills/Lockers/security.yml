@@ -61,7 +61,7 @@
       - id: ClothingUniformJumpsuitSecGrey
         prob: 0.3
       - id: ClothingHeadHelmetBasic
-      - id: ClothingOuterArmorBulletproof
+      - id: ClothingOuterArmorBasic
       - id: ClothingBeltSecurityFilled
       - id: Flash
         prob: 0.5
@@ -128,7 +128,7 @@
       - id: WeaponRevolverInspector
       - id: DrinkDetFlask
       - id: SpeedLoaderMagnum
-      - id: ForensicGloves
+      - id: ClothingHandsGlovesForensic
 
 - type: entity
   id: ClosetBombFilled

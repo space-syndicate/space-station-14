@@ -40,3 +40,5 @@ guide-entry-ss14 = Космическая станция 14
 guide-entry-robotics = Робототехника
 guide-entry-security = Безопасность станции
 guide-entry-dna = ДНК
+guide-entry-antagonists = Антагонисты
+guide-entry-nuclear-operatives = Ядерные оперативники

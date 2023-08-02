@@ -9,8 +9,8 @@ implanter-draw-failed = Вы пытаетесь удалить имплант, �
 implanter-draw-text = Извлечение
 implanter-inject-text = Установка
 implanter-empty-text = Пусто
-implanter-implant-text = { $implantName }{ $lineBreak }{ $implantDescription }
-implanter-label = [color=white]Имплант: { $currentEntities }{ $lineBreak }Режим: { $modeString }[/color]
+implanter-label = Имплант: [color=green]{ $implantName }[/color] | [color=white]{ $modeString }[/color]{ $lineBreak }{ $implantDescription }
+implanter-contained-implant-text = [color=green]{ $desc }[/color]
 
 ## Implanter Actions
 
@@ -22,3 +22,13 @@ use-freedom-implant-action-name = Активировать имплант Сво
 use-freedom-implant-action-description = Освобождает вас от наручников и других ограничителей.
 open-uplink-implant-action-name = Открыть аплинк
 open-uplink-implant-action-description = Открывает аплинк Синдиката, скрытый под вашей кожей.
+action-name-honk = Хонк!
+action-desc-honk = Активирует ваш хонк-имплант, который будет издавать фирменный звук клоуна.
+use-emp-implant-action-name = Активировать ЭМИ
+use-emp-implant-action-description = Вызывает небольшой ЭМИ-импульс вокруг вас
+use-dna-scrambler-implant-action-name = Перемешать ДНК
+use-dna-scrambler-implant-action-description = ТЕНИ В ТЕХАХ!
+scramble-attempt-while-scrambled-popup = Обнаружено перемешивание ДНК. Пожалуйста, извлеките имплант, прежде чем отменять текущее перемешивание.
+scramble-implant-activated-popup = Вы превратились в { $identity }
+deathrattle-implant-dead-message = Зафиксирована смерть { $user } по координатам { $position }.
+deathrattle-implant-critical-message = Жизненные показатели { $user } критические, требуется немедленная помощь по координатам { $position }.

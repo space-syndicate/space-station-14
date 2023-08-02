@@ -3,9 +3,12 @@
   name: job-name-lawyer
   description: job-description-lawyer
   playTimeTracker: JobLawyer
+  requirements:
+    - !type:OverallPlaytimeRequirement
+      time: 36000 # 10 hrs
   startingGear: LawyerGear
-  setPreference: false
-  icon: "Lawyer"
+  setPreference: false # Corvax-IAA
+  icon: "JobIconLawyer"
   supervisors: job-supervisors-hop
   access:
   - Service

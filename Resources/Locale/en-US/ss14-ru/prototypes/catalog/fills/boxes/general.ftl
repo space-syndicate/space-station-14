@@ -48,3 +48,5 @@ ent-BoxEncryptionKeyService = service encryption key box
     .desc = { ent-BoxEncryptionKeyPassenger.desc }
 ent-BoxEncryptionKeySyndie = syndicate encryption key box
     .desc = Two syndicate encryption keys for the price of one. Miniaturized for ease of use.
+ent-BoxDeathRattleImplants = deathrattle implant box
+    .desc = Six deathrattle implants and handheld GPS devices for the whole squad.

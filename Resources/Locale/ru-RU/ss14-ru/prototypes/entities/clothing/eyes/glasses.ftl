@@ -1,5 +1,3 @@
-ent-ClothingEyesGlassesBeer = пивные очки
-    .desc = Пара солнцезащитных очков, оснащенных сканером реагентов, а также дающих понимание вязкости жидкости во время движения.
 ent-ClothingEyesGlassesGar = мужицкие очки
     .desc = Совершать невозможное и раздавать пинки здравому смыслу!
 ent-ClothingEyesGlassesGarOrange = оранжевые мужицкие очки
@@ -20,3 +18,5 @@ ent-ClothingEyesGlassesMercenary = очки наёмника
     .desc = Очки, созданные для ведения боя, для защиты глаз от ярких ослепляющих вспышек.
 ent-ClothingEyesGlassesThermal = оптический термальный сканер
     .desc = Термалы в форме очков.
+ent-ClothingEyesGlassesChemical = chemical analysis goggles
+    .desc = Goggles that can scan the chemical composition of a solution.

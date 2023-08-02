@@ -35,3 +35,5 @@ ent-CrateFunPirate = { ent-CratePirate }
 ent-CrateFunToyBox = { ent-CrateToyBox }
     .suffix = Заполненный
     .desc = { ent-CrateToyBox.desc }
+ent-CrateFunBikeHornImplants = ящик хонк-имплантов
+    .desc = Тысяча гудков за день отпугнёт СБ на день!

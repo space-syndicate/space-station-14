@@ -1,0 +1,40 @@
+﻿[game]
+hostname = "🛰️ Corvax — Вайтлист ☕"
+desc = "Русскоязычный сервер проекта Corvax с доступом по вайтлисту. Для получения доступа обратитесь в наш Discord!"
+map_pool = "CorvaxDefaultMapPool"
+maxplayers = 80
+soft_max_players = 70
+map_rotation = true
+peaceful_end = false
+
+[atmos]
+space_wind = true
+
+[biomass]
+easy_mode = false
+
+[rules]
+time = 10.0
+
+[whitelist]
+enabled = true
+
+[ic]
+flavor_text = true
+punctuation = true
+
+[shuttle]
+auto_call_time = 0
+
+[queue]
+enabled = true
+
+[tts]
+enabled = true
+
+[discord_auth]
+enabled = true
+
+[hub]
+advertise = true
+tags = "lang:ru,rp:high,region:eu_e,tts"

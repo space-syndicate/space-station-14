@@ -7,6 +7,8 @@ chat-manager-looc-chat-enabled-message = LOOC чат был включен.
 chat-manager-looc-chat-disabled-message = LOOC чат был отключен.
 chat-manager-dead-looc-chat-enabled-message = Мёртвые игроки теперь могут говорить в LOOC.
 chat-manager-dead-looc-chat-disabled-message = Мёртвые игроки больше не могут говорить в LOOC.
+chat-manager-crit-looc-chat-enabled-message = Игроки в критическом состоянии теперь могут говорить в LOOC.
+chat-manager-crit-looc-chat-disabled-message = Игроки в критическом состоянии больше не могут говорить в LOOC.
 chat-manager-admin-ooc-chat-enabled-message = Админ OOC чат был включен.
 chat-manager-admin-ooc-chat-disabled-message = Админ OOC чат был выключен.
 chat-manager-max-message-length-exceeded-message = Ваше сообщение превышает лимит в { $limit } символов
@@ -20,6 +22,7 @@ chat-manager-sender-announcement-wrap-message =
     { $message }
 chat-manager-entity-say-wrap-message = { $entityName } говорит, "{ $message }"
 chat-manager-entity-whisper-wrap-message = { $entityName } шепчет, "{ $message }"
+chat-manager-entity-whisper-unknown-wrap-message = Someone whispers, "{ $message }"
 chat-manager-entity-me-wrap-message = { $entityName } { $message }
 chat-manager-entity-looc-wrap-message = LOOC: { $entityName }: { $message }
 chat-manager-send-ooc-wrap-message = OOC: { $playerName }: { $message }
