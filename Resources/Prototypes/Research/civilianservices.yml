@@ -107,6 +107,18 @@
     - SynthesizerInstrument
     - DawInstrumentMachineCircuitboard
 
+- type: technology
+  id: BureaucraticEquipment
+  name: research-bureaucratic-equipment
+  icon:
+    sprite: Objects/Specific/Library/Equipment/books_bag.rsi
+    state: icon
+  discipline: CivilianServices
+  tier: 1
+  cost: 750
+  recipeUnlocks:
+    - DocumentCopierCircuitboard
+
 # Tier 2
 
 - type: technology
