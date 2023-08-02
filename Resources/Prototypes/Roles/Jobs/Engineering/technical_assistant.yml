@@ -9,7 +9,7 @@
       time: 36000 #10 hrs # Corvax-RoleTime
       inverted: true # stop playing intern if you're good at engineering!
   startingGear: TechnicalAssistantGear
-  icon: "TechnicalAssistant"
+  icon: "JobIconTechnicalAssistant"
   supervisors: job-supervisors-engineering
   canBeAntag: false
   access:

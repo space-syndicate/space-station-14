@@ -39,12 +39,16 @@ uplink-exploding-pen-desc = Взрывное устройство класса I
 # Ammo
 uplink-pistol-magazine-name = Пистолетный магазин (.35 авто)
 uplink-pistol-magazine-desc = Пистолетный магазин на 10 патронов. Совместим с "Гадюкой".
+uplink-pistol-magazine-c20r-name = SMG magazine (.35 auto)
+uplink-pistol-magazine-c20r-desc = Rifle magazine with 30 catridges. Compatible with C-20r.
 uplink-pistol-magazine-caseless-name = Пистолетный магазин (.25 безгильзовые)
 uplink-pistol-magazine-caseless-desc = Пистолетный магазин на 10 патронов. Совместим с "Коброй".
 uplink-speedloader-magnum-name = Спидлоадер (.45 магнум ББ)
 uplink-speedloader-magnu-desc = Спидлоадер с 6 бронебойными, полностью игнорирующими броню, патронами для револьвера. Совместим с "Питоном".
 uplink-mosin-ammo-name = Коробка патронов (.30 винтовочные)
 uplink-mosin-ammo-desc = Коробка патронов для резервной винтовки.
+uplink-sniper-ammo-name = ammunition box (.60 antimateriel)
+uplink-sniper-ammo-desc = a box of 10 cartridges for the hristov sniper rifle
 # Utility
 uplink-holopara-kit-name = Набор "Голопаразит"
 uplink-holopara-kit-desc =

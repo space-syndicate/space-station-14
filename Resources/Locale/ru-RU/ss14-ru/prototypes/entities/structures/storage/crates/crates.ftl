@@ -59,3 +59,5 @@ ent-CrateWoodenGrave = могила
 ent-CrateStoneGrave = могила
     .desc = Здесь кто-то умер...
     .suffix = Камень
+ent-CrateSyndicate = { ent-CrateBaseWeldable }
+    .desc = { ent-CrateBaseWeldable.desc }
