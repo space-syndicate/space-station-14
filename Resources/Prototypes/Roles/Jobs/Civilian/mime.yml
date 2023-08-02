@@ -7,7 +7,7 @@
   - !type:OverallPlaytimeRequirement
       time: 90000 #25 hrs # Corvax-RoleTime
   startingGear: MimeGear
-  icon: "Mime"
+  icon: "JobIconMime"
   supervisors: job-supervisors-hop
   access:
   - Theatre
