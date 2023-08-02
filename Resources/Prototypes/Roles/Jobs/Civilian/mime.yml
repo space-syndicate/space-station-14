@@ -11,7 +11,7 @@
   supervisors: job-supervisors-hop
   access:
   - Theatre
-  - Maintenance
+#  - Maintenance # Corvax-MRP
   special:
   - !type:AddComponentSpecial
     components:
