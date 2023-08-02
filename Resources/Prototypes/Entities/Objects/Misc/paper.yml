@@ -577,3 +577,27 @@
   - type: Sprite
     sprite: Objects/Misc/bureaucracy.rsi
     state: stamp-ce
+
+- type: entity
+  name: fuck you
+  parent: RubberStampMime
+  id: RubberStampAdminFuckYou
+  components:
+  - type: Stamp
+    stampedName: stamp-component-stamped-name-admin-fuck-you
+    stampState: "paper_stamp-syndicate"
+  - type: Sprite
+    sprite: Objects/Misc/bureaucracy.rsi
+    state: stamp-syndicate
+
+- type: entity
+  name: this is shit stamp
+  parent: RubberStampMime
+  id: RubberStampShitRedo
+  components:
+  - type: Stamp
+    stampedName: stamp-component-stamped-name-shit-redo
+    stampState: "paper_stamp-deny"
+  - type: Sprite
+    sprite: Objects/Misc/bureaucracy.rsi
+    state: stamp-deny

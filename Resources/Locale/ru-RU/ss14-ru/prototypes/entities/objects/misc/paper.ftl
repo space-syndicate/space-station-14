@@ -79,3 +79,7 @@ ent-RubberStampSyndicate = печать Синдиката
     .desc = { ent-RubberStampMime.desc }
 ent-RubberStampCE = печать старшего инженера
     .desc = { ent-RubberStampMime.desc }
+ent-RubberStampAdminFuckYou = печать "пошёл нахуй"
+    .desc = Я ПРОСТО НЕНАВИЖУ ЭТОГО ИГРОКА!
+ent-RubberStampShitRedo = печать "переделать"
+    .desc = Эти людишки посягнули на святое святых - бюрократию
