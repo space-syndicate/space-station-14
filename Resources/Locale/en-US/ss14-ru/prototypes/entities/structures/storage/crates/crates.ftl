@@ -59,3 +59,5 @@ ent-CrateWoodenGrave = grave
 ent-CrateStoneGrave = grave
     .desc = Someone died here...
     .suffix = stone
+ent-CrateSyndicate = { ent-CrateBaseWeldable }
+    .desc = { ent-CrateBaseWeldable.desc }
