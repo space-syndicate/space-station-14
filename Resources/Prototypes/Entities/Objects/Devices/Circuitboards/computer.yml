@@ -228,17 +228,6 @@
       - HighRiskItem
 
 - type: entity
-  parent: BaseMachineCircuitboard
-  id: DocumentCopierCircuitboard
-  name: document copier circuitboard
-  descrition: circuitboard to do document copier
-  components:
-    - type: ComputerBoard
-      prototype: CopierMachineBase
-    - type: StaticPrice
-      price: 75
-
-- type: entity
   parent: BaseComputerCircuitboard
   id: BodyScannerComputerCircuitboard
   name: body scanner computer board
