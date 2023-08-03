@@ -79,3 +79,7 @@ ent-RubberStampSyndicate = syndicate rubber stamp
     .desc = { ent-RubberStampMime.desc }
 ent-RubberStampCE = chief engineer's rubber stamp
     .desc = { ent-RubberStampMime.desc }
+ent-RubberStampAdminFuckYou = fuck you stamp
+    .desc = I JUST HATE THIS PLAYER
+ent-RubberStampShitRedo = shit. redo
+    .desc = these people are encroaching on the holy of holies - bureaucracy

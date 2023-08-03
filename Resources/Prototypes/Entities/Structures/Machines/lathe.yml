@@ -124,6 +124,7 @@
       - SubstationMachineCircuitboard
       - CellRechargerCircuitboard
       - WeaponCapacitorRechargerCircuitboard
+      - DocumentCopierCircuitboard
 
 - type: entity
   id: Protolathe
@@ -226,6 +227,7 @@
       - ClothingBackpackDuffelHolding
       - WelderExperimental
       - JawsOfLife
+      - DocumentCopierCircuitboard
 
 - type: entity
   id: CircuitImprinter
@@ -315,6 +317,7 @@
       - BoozeDispenserMachineCircuitboard
       - SodaDispenserMachineCircuitboard
       - TelecomServerCircuitboard
+      - DocumentCopierCircuitboard
   - type: MaterialStorage
     whitelist:
       tags:

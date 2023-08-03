@@ -106,3 +106,5 @@ ent-TelecomServerCircuitboard = telecommunication server machine board
     .desc = A machine printed circuit board for an telecommunication server.
 ent-SalvageMagnetMachineCircuitboard = salvage magnet machine board
     .desc = A machine printed circuit board for a salvage magnet.
+ent-DocumentCopierCircuitboard = document copier circuitboard
+    .desc = A printed circuit board for an document copier.

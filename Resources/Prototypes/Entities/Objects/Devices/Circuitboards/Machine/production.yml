@@ -905,3 +905,19 @@
       Steel: 5
       CableHV: 5
       Cable: 2
+
+- type: entity
+  parent: BaseMachineCircuitboard
+  id: DocumentCopierCircuitboard
+  name: document copier circuitboard
+  descrition: circuitboard to do document copier
+  components:
+    - type: MachineBoard
+      prototype: CopierMachineBase
+      requirements:
+        Capacitor: 2
+      meterialRequirements:
+        Steel: 2
+        Cable: 2
+    - type: StaticPrice
+      price: 75
