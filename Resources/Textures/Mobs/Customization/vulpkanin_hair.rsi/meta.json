@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "license": "CC-BY-SA-3.0",
+  "copyright": "BeatusSilva",
+  "size": {
+    "x": 32,
+    "y": 32
+  },
+  "states": [
+    {
+      "name": "apollo_s",
+      "directions": 4
+    },
+    {
+      "name": "belle_bands_s",
+      "directions": 4
+    },
+    {
+      "name": "belle_s",
+      "directions": 4
+    },
+    {
+      "name": "bun_s",
+      "directions": 4
+    },
+    {
+      "name": "raine_s",
+      "directions": 4
+    }
+  ]
+}
