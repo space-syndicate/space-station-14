@@ -1,0 +1,59 @@
+- type: entity
+  id: OrganVulpaStomach
+  parent: BaseAnimalOrgan
+  name: stomach
+  noSpawn: true
+  components:
+  - type: Organ
+  - type: SolutionContainerManager
+    solutions:
+      stomach:
+        maxVol: 40
+  - type: Stomach
+  - type: Metabolizer
+    maxReagents: 3
+    metabolizerTypes: [ Vulpa ]
+    groups:
+    - id: Food
+    - id: Drink
+
+- type: entity
+  id: OrganVulpaLiver
+  parent: BaseAnimalOrgan
+  name: liver
+  noSpawn: true
+  components:
+  - type: Organ
+  - type: Metabolizer
+    maxReagents: 1
+    metabolizerTypes: [ Vulpa ]
+    groups:
+    - id: Alcohol
+      rateModifier: 1.4
+
+- type: entity
+  id: OrganVulpaHeart
+  parent: BaseAnimalOrgan
+  name: heart
+  noSpawn: true
+  components:
+  - type: Organ
+  - type: Metabolizer
+    maxReagents: 2
+    metabolizerTypes: [ Vulpa ]
+    groups:
+    - id: Medicine
+    - id: Poison
+    - id: Narcotic
+
+- type: entity
+  id: OrganVulpaKidneys
+  parent: BaseAnimalOrgan
+  name: kidneys
+  noSpawn: true
+  components:
+  - type: Organ
+  - type: Metabolizer
+    maxReagents: 5
+    metabolizerTypes: [ Vulpa ]
+    removeEmpty: true
