@@ -2,7 +2,7 @@
   id: FellinidTail
   bodyPart: Tail
   markingCategory: Tail
-  speciesRestriction: [Vulpa]
+  speciesRestriction: [Fellinid]
   sprites:
   - sprite: Mobs/Customization/cat_parts.rsi
     state: tail_cat_wag
@@ -11,7 +11,7 @@
   id: FellinidSnout
   bodyPart: HeadTop
   markingCategory: HeadTop
-  speciesRestriction: [Vulpa]
+  speciesRestriction: [Fellinid]
   sprites:
     - sprite: Mobs/Customization/cat_parts.rsi
       state: ears_cat_outer
