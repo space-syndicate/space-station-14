@@ -1,0 +1,199 @@
+# TODO: Add descriptions (many)
+# TODO BODY: Part damage
+- type: entity
+  id: PartVulpa
+  parent: BaseItem
+  name: "vulpa body part"
+  abstract: true
+  components:
+  - type: Damageable
+    damageContainer: Biological
+  - type: BodyPart
+  - type: ContainerContainer
+    containers:
+      bodypart: !type:Container
+        ents: []
+  - type: Tag
+    tags:
+      - Trash
+  - type: Extractable
+    juiceSolution:
+      reagents:
+      - ReagentId: Fat
+        Quantity: 3
+      - ReagentId: Blood
+        Quantity: 10
+
+- type: entity
+  id: TorsoVulpa
+  name: "vulpa torso"
+  parent: PartVulpa
+  components:
+  - type: Sprite
+    sprite: Mobs/Species/Vulpa/parts.rsi
+    state: "torso_m"
+  - type: Icon
+    sprite: Mobs/Species/Vulpa/parts.rsi
+    state: "torso_m"
+  - type: BodyPart
+    partType: Torso
+  - type: Extractable
+    juiceSolution:
+      reagents:
+      - ReagentId: Fat
+        Quantity: 10
+      - ReagentId: Blood
+        Quantity: 20
+
+- type: entity
+  id: HeadVulpa
+  name: "vulpa head"
+  parent: PartVulpa
+  components:
+  - type: Sprite
+    sprite: Mobs/Species/Vulpa/parts.rsi
+    state: "head_m"
+  - type: Icon
+    sprite: Mobs/Species/Vulpa/parts.rsi
+    state: "head_m"
+  - type: BodyPart
+    partType: Head
+    vital: true
+  - type: Input
+    context: "ghost"
+  - type: Tag
+    tags:
+      - Head
+  - type: Extractable
+    juiceSolution:
+      reagents:
+      - ReagentId: Fat
+        Quantity: 5
+      - ReagentId: Blood
+        Quantity: 10
+
+- type: entity
+  id: LeftArmVulpa
+  name: "left vulpa arm"
+  parent: PartVulpa
+  components:
+  - type: Sprite
+    sprite: Mobs/Species/Vulpa/parts.rsi
+    state: "l_arm"
+  - type: Icon
+    sprite: Mobs/Species/Vulpa/parts.rsi
+    state: "l_arm"
+  - type: BodyPart
+    partType: Arm
+    symmetry: Left
+
+- type: entity
+  id: RightArmVulpa
+  name: "right vulpa arm"
+  parent: PartVulpa
+  components:
+  - type: Sprite
+    sprite: Mobs/Species/Vulpa/parts.rsi
+    state: "r_arm"
+  - type: Icon
+    sprite: Mobs/Species/Vulpa/parts.rsi
+    state: "r_arm"
+  - type: BodyPart
+    partType: Arm
+    symmetry: Right
+
+- type: entity
+  id: LeftHandVulpa
+  name: "left vulpa hand"
+  parent: PartVulpa
+  components:
+  - type: Sprite
+    sprite: Mobs/Species/Vulpa/parts.rsi
+    state: "l_hand"
+  - type: Icon
+    sprite: Mobs/Species/Vulpa/parts.rsi
+    state: "l_hand"
+  - type: BodyPart
+    partType: Hand
+    symmetry: Left
+
+- type: entity
+  id: RightHandVulpa
+  name: "right vulpa hand"
+  parent: PartVulpa
+  components:
+  - type: Sprite
+    sprite: Mobs/Species/Vulpa/parts.rsi
+    state: "r_hand"
+  - type: Icon
+    sprite: Mobs/Species/Vulpa/parts.rsi
+    state: "r_hand"
+  - type: BodyPart
+    partType: Hand
+    symmetry: Right
+
+- type: entity
+  id: LeftLegVulpa
+  name: "left Vulpa leg"
+  parent: PartVulpa
+  components:
+  - type: Sprite
+    sprite: Mobs/Species/Vulpa/parts.rsi
+    state: "l_leg"
+  - type: Icon
+    sprite: Mobs/Species/Vulpa/parts.rsi
+    state: "l_leg"
+  - type: BodyPart
+    partType: Leg
+    symmetry: Left
+  - type: MovementBodyPart
+    walkSpeed : 2.7
+    sprintSpeed : 4.5
+
+- type: entity
+  id: RightLegVulpa
+  name: "right vulpa leg"
+  parent: PartVulpa
+  components:
+  - type: Sprite
+    sprite: Mobs/Species/Vulpa/parts.rsi
+    state: "r_leg"
+  - type: Icon
+    sprite: Mobs/Species/Vulpa/parts.rsi
+    state: "r_leg"
+  - type: BodyPart
+    partType: Leg
+    symmetry: Right
+  - type: MovementBodyPart
+    walkSpeed : 2.7
+    sprintSpeed : 4.5
+
+- type: entity
+  id: LeftFootVulpa
+  name: "left vulpa foot"
+  parent: PartVulpa
+  components:
+  - type: Sprite
+    sprite: Mobs/Species/Vulpa/parts.rsi
+    state: "l_foot"
+  - type: Icon
+    sprite: Mobs/Species/Vulpa/parts.rsi
+    state: "l_foot"
+  - type: BodyPart
+    partType: Foot
+    symmetry: Left
+
+- type: entity
+  id: RightFootVulpa
+  name: "right vulpa foot"
+  parent: PartVulpa
+  components:
+  - type: Sprite
+    sprite: Mobs/Species/Vulpa/parts.rsi
+    state: "r_foot"
+  - type: Icon
+    sprite: Mobs/Species/Vulpa/parts.rsi
+    state: "r_foot"
+  - type: BodyPart
+    partType: Foot
+    symmetry: Right
