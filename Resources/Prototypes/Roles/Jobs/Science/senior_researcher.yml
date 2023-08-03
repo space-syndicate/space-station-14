@@ -6,7 +6,7 @@
   requirements:
     - !type:DepartmentTimeRequirement
       department: Science
-      time: 216000 # 60 hrs
+      time: 216000 #60 hrs
   startingGear: SeniorResearcherGear
   icon: "SeniorResearcher"
   supervisors: job-supervisors-rd
