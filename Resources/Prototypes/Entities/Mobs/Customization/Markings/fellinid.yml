@@ -1,0 +1,19 @@
+- type: marking
+  id: FellinidTail
+  bodyPart: Tail
+  markingCategory: Tail
+  speciesRestriction: [Vulpa]
+  sprites:
+  - sprite: Mobs/Customization/cat_parts.rsi
+    state: tail_cat_wag
+
+- type: marking
+  id: FellinidSnout
+  bodyPart: HeadTop
+  markingCategory: HeadTop
+  speciesRestriction: [Vulpa]
+  sprites:
+    - sprite: Mobs/Customization/cat_parts.rsi
+      state: ears_cat_outer
+    - sprite: Mobs/Customization/cat_parts.rsi
+      state: ears_cat_inner
