@@ -15,7 +15,7 @@
       time: 72000 #20 hrs # Corvax-RoleTime
     - !type:DepartmentTimeRequirement
       department: Security
-      time: 360000 #100 hrs # Corvax-RoleTime
+      time: 216000 # 60 hrs
   startingGear: SeniorOfficerGear
   icon: "SeniorOfficer"
   supervisors: job-supervisors-hos
