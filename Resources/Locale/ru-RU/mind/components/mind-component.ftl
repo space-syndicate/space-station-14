@@ -5,7 +5,8 @@ comp-mind-ghosting-prevented = Вы не можете стать призрак�
 ## Messages displayed when a body is examined and in a certain state
 
 comp-mind-examined-catatonic = { CAPITALIZE(SUBJECT($ent)) } в кататоническом ступоре. Стрессы жизни в глубоком космосе, должно быть, оказались слишком тяжелы для { OBJECT($ent) }. Восстановление маловероятно.
-comp-mind-examined-dead = { CAPITALIZE(SUBJECT($ent)) } { GENDER($ent) ->
+comp-mind-examined-dead =
+    { CAPITALIZE(SUBJECT($ent)) } { GENDER($ent) ->
         [male] мёртв
         [female] мертва
         [epicene] мертво
