@@ -12,7 +12,7 @@
       time: 72000 #20 hrs # Corvax-RoleTime
     - !type:DepartmentTimeRequirement
       department: Engineering
-      time: 360000 #100 hrs # Corvax-RoleTime
+      time: 216000 # 60 hrs
   startingGear: SeniorEngineerGear
   icon: "SeniorEngineer"
   supervisors: job-supervisors-ce
