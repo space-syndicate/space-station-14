@@ -1,0 +1,100 @@
+- type: marking
+  id: VulpaTailSmooth
+  bodyPart: Tail
+  markingCategory: Tail
+  speciesRestriction: [Vulpa]
+  sprites:
+  - sprite: Mobs/Customization/vulpkanin.rsi
+    state: vulptail_s
+
+- type: marking
+  id: VulpaTailTip
+  bodyPart: Tail
+  markingCategory: Tail
+  speciesRestriction: [Vulpa]
+  sprites:
+  - sprite: Mobs/Customization/vulpkanin.rsi
+    state: vulptail_s
+  - sprite: Mobs/Customization/vulpkanin.rsi
+    state: default_tip_s
+
+- type: marking
+  id: VulpaTailBlush
+  bodyPart: Tail
+  markingCategory: Tail
+  speciesRestriction: [Vulpa]
+  sprites:
+  - sprite: Mobs/Customization/vulpkanin.rsi
+    state: tail_bush
+
+- type: marking
+  id: VulpaHairApollo
+  bodyPart: Hair
+  markingCategory: Hair
+  speciesRestriction: [Vulpa]
+  sprites:
+    - sprite: Mobs/Customization/vulpkanin_hair.rsi
+      state: apollo_s
+
+- type: marking
+  id: VulpaHairBands
+  bodyPart: Hair
+  markingCategory: Hair
+  speciesRestriction: [Vulpa]
+  sprites:
+    - sprite: Mobs/Customization/vulpkanin_hair.rsi
+      state: belle_bands_s
+
+- type: marking
+  id: VulpaHairBelle
+  bodyPart: Hair
+  markingCategory: Hair
+  speciesRestriction: [Vulpa]
+  sprites:
+    - sprite: Mobs/Customization/vulpkanin_hair.rsi
+      state: belle_s
+
+- type: marking
+  id: VulpaHairBun
+  bodyPart: Hair
+  markingCategory: Hair
+  speciesRestriction: [Vulpa]
+  sprites:
+    - sprite: Mobs/Customization/vulpkanin_hair.rsi
+      state: bun_s
+
+- type: marking
+  id: VulpaHairRaine
+  bodyPart: Hair
+  markingCategory: Hair
+  speciesRestriction: [Vulpa]
+  sprites:
+    - sprite: Mobs/Customization/vulpkanin_hair.rsi
+      state: raine_s
+
+- type: marking
+  id: VulpaSnoutMuzzle
+  bodyPart: Snout
+  markingCategory: Snout
+  speciesRestriction: [Vulpa]
+  sprites:
+    - sprite: Mobs/Customization/vulpkanin_snout.rsi
+      state: muzzle_ear_s
+
+- type: marking
+  id: VulpaSnoutSharp
+  bodyPart: Snout
+  markingCategory: Snout
+  speciesRestriction: [Vulpa]
+  sprites:
+    - sprite: Mobs/Customization/vulpkanin_snout.rsi
+      state: points_sharp_s
+
+- type: marking
+  id: VulpaChestBelly
+  bodyPart: Chest
+  markingCategory: Chest
+  speciesRestriction: [Vulpa]
+  sprites:
+    - sprite: Mobs/Customization/vulpkanin_chest.rsi
+      state: pointsfadebelly_s
