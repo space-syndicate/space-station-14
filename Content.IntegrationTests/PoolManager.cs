@@ -376,6 +376,8 @@ public static class PoolManager
         var ticker = pair.Server.ResolveDependency<EntityManager>().System<GameTicker>();
         Assert.That(ticker.DummyTicker, Is.EqualTo(pair.Settings.DummyTicker));
 
+        var cfg = pair.Server.ResolveDependency<IConfigurationManager>();
+        Assert.That(cfg.GetCVar(CCVars.GameLobbyEnabled), Is.EqualTo(pair.Settings.InLobby));
         var status = ticker.PlayerGameStatuses[sPlayer.Sessions.Single().UserId];
         var expected = pair.Settings.InLobby
             ? PlayerGameStatus.NotReadyToPlay
@@ -947,6 +949,10 @@ public sealed class PairTracker : IAsyncDisposable
         _testOut = testOut;
     }
 
+    // Convenience properties.
+    public RobustIntegrationTest.ServerIntegrationInstance Server => Pair.Server;
+    public RobustIntegrationTest.ClientIntegrationInstance Client => Pair.Client;
+
     private async Task OnDirtyDispose()
     {
         var usageTime = UsageWatch.Elapsed;
@@ -957,6 +963,10 @@ public sealed class PairTracker : IAsyncDisposable
         PoolManager.NoCheckReturn(Pair);
         var disposeTime = dirtyWatch.Elapsed;
         await _testOut.WriteLineAsync($"{nameof(DisposeAsync)}: Disposed pair {Pair.PairId} in {disposeTime.TotalMilliseconds} ms");
+
+        // Test pairs should only dirty dispose if they are failing. If they are not failing, this probably happened
+        // because someone forgot to clean-return the pair.
+        Assert.Warn("Test was dirty-disposed.");
     }
 
     private async Task OnCleanDispose()

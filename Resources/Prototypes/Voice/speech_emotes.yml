@@ -174,6 +174,21 @@
     - хлюпает!
     # Corvax-Localization-End
 
+- type: emote
+  id: Chitter
+  category: Vocal
+  chatMessages: [chitters.]
+  chatTriggers:
+   - chitter
+   - chitter.
+   - chitter!
+   - chitters
+   - chitters.
+   - chitters!
+   - chittered
+   - chittered.
+   - chittered!
+
 # hand emotes
 - type: emote
   id: Clap
