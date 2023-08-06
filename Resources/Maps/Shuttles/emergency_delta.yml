@@ -22,7 +22,7 @@ entities:
     - name: NTES Fulcon HG-944
       type: MetaData
     - pos: 7.1183667,4.2130127
-      parent: invalid
+      parent: 1400
       type: Transform
     - chunks:
         -1,-1:
@@ -834,6 +834,16 @@ entities:
       type: GravityShake
     - type: GasTileOverlay
     - type: SpreaderGrid
+  - uid: 1400
+    components:
+    - type: MetaData
+    - type: Transform
+    - type: Map
+    - type: PhysicsMap
+    - type: GridTree
+    - type: MovedGrids
+    - type: Broadphase
+    - type: OccluderTree
 - proto: AirlockAtmosphericsLocked
   entities:
   - uid: 561
@@ -6043,16 +6053,22 @@ entities:
       supplyRampTolerance: 50000
       supplyRate: 150000000
       type: PowerSupplier
+    missingComponents:
+    - FuelGenerator
   - uid: 597
     components:
     - pos: -12.5,-14.5
       parent: 1399
       type: Transform
+    missingComponents:
+    - FuelGenerator
   - uid: 598
     components:
     - pos: -12.5,-13.5
       parent: 1399
       type: Transform
+    missingComponents:
+    - FuelGenerator
 - proto: GravityGeneratorMini
   entities:
   - uid: 609
