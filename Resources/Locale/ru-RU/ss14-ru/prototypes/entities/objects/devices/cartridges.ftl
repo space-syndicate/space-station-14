@@ -3,6 +3,6 @@ ent-NotekeeperCartridge = картридж Заметки
 ent-NewsReadCartridge = картридж Новости
     .desc = Программа для чтения новостей
 ent-CrewManifestCartridge = картридж Манифест экипажа
-    .desc = Программа для составления списка членов экипажа
+    .desc = Программа для отображения списка членов экипажа
 ent-NetProbeCartridge = картридж NetProbe
     .desc = Программа для получения адресов и частот сетевых устройств
