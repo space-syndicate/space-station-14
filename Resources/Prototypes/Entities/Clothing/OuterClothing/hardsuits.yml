@@ -421,6 +421,11 @@
     sprintModifier: 0.9
   - type: ToggleableClothing
     clothingPrototype: ClothingHeadHelmetHardsuitSyndie
+  - type: HardsuitIdentification
+    faction: Syndicate
+  - type: Speech
+  - type: TTS
+    voice: Adjutant
 
 #Cybersun Juggernaut Hardsuit
 - type: entity
@@ -452,6 +457,11 @@
     sprintModifier: 0.65
   - type: ToggleableClothing
     clothingPrototype: ClothingHeadHelmetHardsuitCybersun
+  - type: HardsuitIdentification
+    faction: Syndicate
+  - type: Speech
+  - type: TTS
+    voice: Adjutant
 
 #Syndicate Elite Hardsuit
 - type: entity
@@ -485,11 +495,151 @@
     sprintModifier: 1.0
   - type: ToggleableClothing
     clothingPrototype: ClothingHeadHelmetHardsuitSyndieElite
+  - type: HardsuitIdentification
+    faction: Syndicate
+  - type: Speech
+  - type: TTS
+    voice: Adjutant
 
 #Syndicate Commander Hardsuit
 - type: entity
   parent: ClothingOuterHardsuitBase
   id: ClothingOuterHardsuitSyndieCommander
+  name: syndicate commander hardsuit
+  description: A blood red hardsuit heavily modified for use by the commander of operative squads.
+  components:
+  - type: Sprite
+    sprite: Clothing/OuterClothing/Hardsuits/syndiecommander.rsi
+  - type: Clothing
+    sprite: Clothing/OuterClothing/Hardsuits/syndiecommander.rsi
+  - type: PressureProtection
+    highPressureMultiplier: 0.05
+    lowPressureMultiplier: 1000
+  - type: ExplosionResistance
+    damageCoefficient: 0.5
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.4
+        Slash: 0.4
+        Piercing: 0.3
+        Heat: 0.5
+        Radiation: 0.25
+        Caustic: 0.4
+  - type: ClothingSpeedModifier
+    walkModifier: 1.0
+    sprintModifier: 1.0
+  - type: ToggleableClothing
+    clothingPrototype: ClothingHeadHelmetHardsuitSyndieCommander
+  - type: HardsuitIdentification
+    faction: Syndicate
+  - type: Speech
+  - type: TTS
+    voice: Adjutant
+
+#Blood-red Hardsuit (No Hardsuit Identification)
+- type: entity
+  parent: ClothingOuterHardsuitBase
+  id: ClothingOuterHardsuitSyndieNoIdentification
+  suffix: no identification system
+  name: blood-red hardsuit
+  description: A heavily armored and agile advanced hardsuit designed for work in special operations.
+  components:
+  - type: Sprite
+    sprite: Clothing/OuterClothing/Hardsuits/syndicate.rsi
+  - type: Clothing
+    sprite: Clothing/OuterClothing/Hardsuits/syndicate.rsi
+  - type: PressureProtection
+    highPressureMultiplier: 0.05
+    lowPressureMultiplier: 1000
+  - type: ExplosionResistance
+    damageCoefficient: 0.5
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.5
+        Slash: 0.5
+        Piercing: 0.5
+        Heat: 0.5
+        Radiation: 0.5
+        Caustic: 0.5
+  - type: ClothingSpeedModifier
+    walkModifier: 0.9
+    sprintModifier: 0.9
+  - type: ToggleableClothing
+    clothingPrototype: ClothingHeadHelmetHardsuitSyndie
+
+#Cybersun Juggernaut Hardsuit (No Hardsuit Identification)
+- type: entity
+  parent: ClothingOuterHardsuitBase
+  id: ClothingOuterHardsuitJuggernautNoIdentification
+  suffix: no identification system
+  name: cybersun juggernaut suit
+  description: A suit made by the cutting edge R&D department at cybersun to be hyper resilient.
+  components:
+  - type: Sprite
+    sprite: Clothing/OuterClothing/Hardsuits/cybersun.rsi
+  - type: Clothing
+    sprite: Clothing/OuterClothing/Hardsuits/cybersun.rsi
+  - type: PressureProtection
+    highPressureMultiplier: 0.2
+    lowPressureMultiplier: 1000
+  - type: ExplosionResistance
+    damageCoefficient: 0.3
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.2
+        Slash: 0.2
+        Piercing: 0.2
+        Heat: 0.2
+        Radiation: 0.2
+        Caustic: 0.2
+  - type: ClothingSpeedModifier
+    walkModifier: 0.9
+    sprintModifier: 0.65
+  - type: ToggleableClothing
+    clothingPrototype: ClothingHeadHelmetHardsuitCybersun
+
+#Syndicate Elite Hardsuit (No Hardsuit Identification)
+- type: entity
+  parent: ClothingOuterHardsuitBase
+  id: ClothingOuterHardsuitSyndieEliteNoIdentification
+  suffix: no identification system
+  name: syndicate elite hardsuit
+  description: An upgraded version of the blood red hardsuit that features enhanced fireproofing, pressure resist, and superior armor.
+  components:
+  - type: Sprite
+    sprite: Clothing/OuterClothing/Hardsuits/syndieelite.rsi
+  - type: Clothing
+    sprite: Clothing/OuterClothing/Hardsuits/syndieelite.rsi
+  - type: PressureProtection
+    highPressureMultiplier: 0.02
+    lowPressureMultiplier: 1000
+  - type: TemperatureProtection
+    coefficient: 0.001
+  - type: ExplosionResistance
+    damageCoefficient: 0.3
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.5
+        Slash: 0.5
+        Piercing: 0.4
+        Heat: 0.2
+        Radiation: 0.25
+        Caustic: 0.5
+  - type: ClothingSpeedModifier
+    walkModifier: 1.0
+    sprintModifier: 1.0
+  - type: ToggleableClothing
+    clothingPrototype: ClothingHeadHelmetHardsuitSyndieElite
+
+#Syndicate Commander Hardsuit (No Hardsuit Identification)
+- type: entity
+  parent: ClothingOuterHardsuitBase
+  id: ClothingOuterHardsuitSyndieCommanderNoIdentification
+  suffix: no identification system
   name: syndicate commander hardsuit
   description: A blood red hardsuit heavily modified for use by the commander of operative squads.
   components:
