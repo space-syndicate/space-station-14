@@ -5,6 +5,7 @@ using Robust.Shared.Prototypes;
 using Robust.Shared.Utility;
 using System.Linq;
 using Content.Shared.Corvax.TTS;
+using Content.Shared.Decals;
 using Content.Shared.Preferences;
 using Robust.Shared.GameObjects.Components.Localization;
 using Robust.Shared.Network;
@@ -354,6 +355,12 @@ public abstract class SharedHumanoidAppearanceSystem : EntitySystem
         }
 
         humanoid.Age = profile.Age;
+        // Corvax-SpeakerColor-Start
+        const string paletteId = "Material";
+        var colors = _prototypeManager.Index<ColorPalettePrototype>(paletteId).Colors.Values.ToArray();
+        var colorIdx = Math.Abs(profile.Name.GetHashCode() % colors.Length);
+        humanoid.SpeakerColor = colors[colorIdx];
+        // Corvax-SpeakerColor-End
 
         Dirty(humanoid);
     }
