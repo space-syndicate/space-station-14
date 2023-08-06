@@ -1,4 +1,4 @@
-ent-BaseMobMoth = Urist McFluff
+ent-BaseMobMoth = Урист МакНиана
     .desc = { ent-BaseMobOrganic.desc }
-ent-MobMothDummy = Urist McFluff
-    .desc = A dummy moth meant to be used in character setup.
+ent-MobMothDummy = Урист МакНиана
+    .desc = Манекен-ниан, используемый при создании персонажа.
