@@ -1,38 +1,4 @@
 Entries:
-- author: lzk
-  changes:
-  - {message: Fixed slime and diona brute damage color., type: Fix}
-  id: 3959
-  time: '2023-06-07T08:57:49.0000000+00:00'
-- author: EmoGarbage404
-  changes:
-  - {message: Fixed missing text for the cogchamp effect in the bar guide., type: Fix}
-  id: 3960
-  time: '2023-06-07T09:52:24.0000000+00:00'
-- author: Kit0vras
-  changes:
-  - {message: 'Added new reagent: Fat.', type: Add}
-  - {message: Added reactions for creating soap and meat., type: Add}
-  - {message: 'Added the ability to get fat from raw meat, cutlets, body parts, mice
-      and hamster using a grinder.', type: Add}
-  id: 3961
-  time: '2023-06-07T13:04:37.0000000+00:00'
-- author: TemporalOroboros
-  changes:
-  - {message: The PDA ringtone now permits deleting/rewriting notes instead of requiring
-      copypasting., type: Tweak}
-  id: 3962
-  time: '2023-06-07T14:22:19.0000000+00:00'
-- author: EmoGarbage404
-  changes:
-  - {message: Defibrillators now revive people again., type: Fix}
-  id: 3963
-  time: '2023-06-07T19:12:49.0000000+00:00'
-- author: metalgearsloth
-  changes:
-  - {message: Added cargo pallets to the cargo product console., type: Add}
-  id: 3964
-  time: '2023-06-07T19:40:30.0000000+00:00'
 - author: deltanedas
   changes:
   - {message: 'APCs are now limited to 24kW of power, their breakers will pop if they
@@ -2992,3 +2958,39 @@ Entries:
     type: Tweak}
   id: 4458
   time: '2023-08-06T06:50:00.0000000+00:00'
+- author: Errant
+  changes:
+  - {message: Active energy swords no longer heal small amounts of blunt damage on
+      every hit. Cybersun CEO reportedly thrown out an airlock over "Bluntgate" scandal.,
+    type: Fix}
+  id: 4459
+  time: '2023-08-06T08:19:32.0000000+00:00'
+- author: notafet
+  changes:
+  - {message: 'Add radiators, which transfer heat from a pipe to its surroundings.',
+    type: Add}
+  id: 4460
+  time: '2023-08-06T08:21:05.0000000+00:00'
+- author: Flareguy
+  changes:
+  - {message: Added external hull plating tiles & hardened reinforced tiles. They
+      can only be normally destroyed using bombs., type: Add}
+  id: 4461
+  time: '2023-08-06T08:27:48.0000000+00:00'
+- author: deltanedas
+  changes:
+  - {message: 'Stimulants now double your stamina, making you harder to stun and letting
+      you use more heavy attacks.', type: Tweak}
+  id: 4462
+  time: '2023-08-06T11:06:23.0000000+00:00'
+- author: JoeHammad
+  changes:
+  - {message: 'Centcom has increased the spring strength on the brute and burn auto
+      injectors, they should now inject the full 20 units', type: Add}
+  id: 4463
+  time: '2023-08-06T11:38:07.0000000+00:00'
+- author: Slava0135
+  changes:
+  - {message: fixed reflected projectiles dealing stamina damage, type: Fix}
+  id: 4464
+  time: '2023-08-06T13:44:42.0000000+00:00'
