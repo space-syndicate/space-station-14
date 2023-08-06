@@ -217,3 +217,7 @@ uplink-scarf-syndie-red-name = Красный полосатый шарф Син
 uplink-scarf-syndie-red-desc = Стильный красный полосатый шарф Синдиката. Идеальный зимний аксессуар для тех, у кого обостренное чувство моды, и тех, кто просто в настроении что-нибудь украсть.
 uplink-scarf-syndie-green-name = Зелёный полосатый шарф Синдиката
 uplink-scarf-syndie-green-desc = Стильный зелёный полосатый шарф Синдиката. Идеальный зимний аксессуар для тех, у кого обостренное чувство моды, и тех, кто просто в настроении что-нибудь украсть.
+uplink-syndicate-pai-name = Syndicate personal ai device
+uplink-syndicate-pai-desc = A Syndicate variant of the pAI with access to the Syndicate radio channel. We do not guarantee their usefulness.
+uplink-bribe-name = Lobbying Bundle
+uplink-bribe-desc = A heartfelt gift that can help you sway someone's opinion. Real or counterfeit? Yes.
