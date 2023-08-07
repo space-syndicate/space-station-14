@@ -1,0 +1,49 @@
+- type: body
+  name: "vulpa"
+  id: Vulpa
+  root: torso
+  slots:
+    head:
+      part: HeadVulpa
+      connections:
+      - torso
+      organs:
+        brain: OrganHumanBrain
+        eyes: OrganHumanEyes
+    torso:
+      part: TorsoVulpa
+      organs:
+        heart: OrganVulpaHeart
+        lungs: OrganHumanLungs
+        stomach: OrganVulpaStomach
+        liver: OrganVulpaLiver
+        kidneys: OrganVulpaKidneys
+      connections:
+      - left arm
+      - right arm
+      - left leg
+      - right leg
+    right arm:
+      part: RightArmVulpa
+      connections:
+      - right hand
+    left arm:
+      part: LeftArmVulpa
+      connections:
+      - left hand
+    right hand:
+      part: RightHandVulpa
+    left hand:
+      part: LeftHandVulpa
+    right leg:
+      part: RightLegVulpa
+      connections:
+      - right foot
+    left leg:
+      part: LeftLegVulpa
+      connections:
+      - left foot
+    right foot:
+      part: RightFootVulpa
+    left foot:
+      part: LeftFootVulpa

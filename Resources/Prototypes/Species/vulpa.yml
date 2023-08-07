@@ -1,0 +1,142 @@
+- type: species
+  id: Vulpa
+  name: vulpkanin
+  roundStart: true
+  prototype: MobVulpa
+  sprites: MobVulpaSprites
+  defaultSkinTone: "#FF69B4"
+  markingLimits: MobVulpaMarkingLimits
+  dollPrototype: MobVulpaDummy
+  skinColoration: Hues
+  maleFirstNames: names_vulpa_female
+  femaleFirstNames: names_vulpa_female
+  naming: FirstDashFirst
+
+- type: speciesBaseSprites
+  id: MobVulpaSprites
+  sprites:
+    Head: MobVulpaHead
+    Hair: MobHumanoidAnyMarking
+    FacialHair: MobHumanoidAnyMarking
+    Snout: MobHumanoidAnyMarking
+    Chest: MobVulpaTorso
+    HeadTop: MobHumanoidAnyMarking
+    HeadSide: MobHumanoidAnyMarking
+    Tail: MobHumanoidAnyMarking
+    Eyes: MobHumanoidEyes
+    LArm: MobVulpaLArm
+    RArm: MobVulpaRArm
+    LHand: MobVulpaLHand
+    RHand: MobVulpaRHand
+    LLeg: MobVulpaLLeg
+    RLeg: MobVulpaRLeg
+    LFoot: MobVulpaLFoot
+    RFoot: MobVulpaRFoot
+
+- type: markingPoints
+  id: MobVulpaMarkingLimits
+  onlyWhitelisted: true
+  points:
+    Hair:
+      points: 1
+      required: false 
+    FacialHair:
+      points: 1
+      required: false
+    Tail:
+      points: 1
+      required: true
+      defaultMarkings: [ VulpaTailSmooth ]
+    Snout:
+      points: 1
+      required: false
+    HeadTop:
+      points: 1
+      required: false
+    HeadSide:
+      points: 1
+      required: false
+
+- type: humanoidBaseSprite
+  id: MobVulpaHead
+  baseSprite:
+    sprite: Mobs/Species/Vulpa/parts.rsi
+    state: head_m
+
+- type: humanoidBaseSprite
+  id: MobVulpaHeadMale
+  baseSprite:
+    sprite: Mobs/Species/Vulpa/parts.rsi
+    state: head_m
+
+- type: humanoidBaseSprite
+  id: MobVulpaHeadFemale
+  baseSprite:
+    sprite: Mobs/Species/Vulpa/parts.rsi
+    state: head_f
+
+- type: humanoidBaseSprite
+  id: MobVulpaTorso
+  baseSprite:
+    sprite: Mobs/Species/Vulpa/parts.rsi
+    state: torso_m
+
+- type: humanoidBaseSprite
+  id: MobVulpaTorsoMale
+  baseSprite:
+    sprite: Mobs/Species/Vulpa/parts.rsi
+    state: torso_m
+
+- type: humanoidBaseSprite
+  id: MobVulpaTorsoFemale
+  baseSprite:
+    sprite: Mobs/Species/Vulpa/parts.rsi
+    state: torso_f
+
+- type: humanoidBaseSprite
+  id: MobVulpaLLeg
+  baseSprite:
+    sprite: Mobs/Species/Vulpa/parts.rsi
+    state: l_leg
+
+- type: humanoidBaseSprite
+  id: MobVulpaLHand
+  baseSprite:
+    sprite: Mobs/Species/Vulpa/parts.rsi
+    state: l_hand
+
+- type: humanoidBaseSprite
+  id: MobVulpaLArm
+  baseSprite:
+    sprite: Mobs/Species/Vulpa/parts.rsi
+    state: l_arm
+
+- type: humanoidBaseSprite
+  id: MobVulpaLFoot
+  baseSprite:
+    sprite: Mobs/Species/Vulpa/parts.rsi
+    state: l_foot
+
+- type: humanoidBaseSprite
+  id: MobVulpaRLeg
+  baseSprite:
+    sprite: Mobs/Species/Vulpa/parts.rsi
+    state: r_leg
+
+- type: humanoidBaseSprite
+  id: MobVulpaRHand
+  baseSprite:
+    sprite: Mobs/Species/Vulpa/parts.rsi
+    state: r_hand
+
+- type: humanoidBaseSprite
+  id: MobVulpaRArm
+  baseSprite:
+    sprite: Mobs/Species/Vulpa/parts.rsi
+    state: r_arm
+
+- type: humanoidBaseSprite
+  id: MobVulpaRFoot
+  baseSprite:
+    sprite: Mobs/Species/Vulpa/parts.rsi
+    state: r_foot

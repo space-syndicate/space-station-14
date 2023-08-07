@@ -351,6 +351,8 @@
             min: 3
           - !type:OrganType
             type: Animal
+          - !type:OrganType
+            type: Vulpa
 
 - type: reagent
   id: Amatoxin
@@ -423,6 +425,27 @@
           type: Animal
         reagent: Protein
         amount: 0.5
+
+- type: reagent
+  id: Vitamin
+  name: reagent-name-vitamin
+  group: Foods
+  desc: reagent-desc-vitamin
+  physicalDesc: reagent-physical-desc-chalky
+  flavor: vitamin
+  color: "#D3D3D3"
+  metabolisms:
+    Poison: #This makes it not compete with medicines, a large bonus for something that can heal
+      effects:
+      - !type:HealthChange
+        conditions:
+        - !type:ReagentThreshold
+          min: 1
+        - !type:OrganType
+          type: Vulpa
+        damage:
+          types:
+            Poison: 2
 
 - type: reagent
   id: Allicin
