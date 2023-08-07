@@ -360,3 +360,24 @@
   icon:
     sprite: Interface/Misc/job_icons.rsi
     state: SeniorResearcher
+
+- type: statusIcon
+  parent: JobIcon
+  id: SPWarden
+  icon:
+    sprite: Interface/Misc/job_icons.rsi
+    state: SPWarden
+
+- type: statusIcon
+  parent: JobIcon
+  id: SPOfficer
+  icon:
+    sprite: Interface/Misc/job_icons.rsi
+    state: SPOfficer
+
+- type: statusIcon
+  parent: JobIcon
+  id: SPEngineer
+  icon:
+    sprite: Interface/Misc/job_icons.rsi
+    state: SPEngineer

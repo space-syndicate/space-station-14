@@ -551,6 +551,9 @@
     - JobIconSeniorOfficer
     - JobIconSeniorEngineer
     - JobIconSeniorResearcher
+    - SPWarden
+    - SPEngineer
+    - SPOfficer
   - type: ActivatableUI
     key: enum.AgentIDCardUiKey.Key
     inHandsOnly: true
