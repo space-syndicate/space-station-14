@@ -4,7 +4,6 @@
   id: WeaponPistolDebug
   description: ded
   suffix: DEBUG
-  DontPresent: true # Вставлено в оригинальный код
   components:
   - type: Tag
     tags:
@@ -44,7 +43,6 @@
   id: MagazinePistolDebug
   name: bang, ded mag
   parent: BaseMagazinePistol
-  DontPresent: true # Вставлено в оригинальный код
   suffix: DEBUG
   components:
   - type: Tag
@@ -58,7 +56,6 @@
 
 - type: entity
   id: BulletDebug
-  DontPresent: true # Вставлено в оригинальный код
   name: bang, ded bullet
   parent: BaseBullet
   noSpawn: true
@@ -75,7 +72,6 @@
 - type: entity
   id: CartridgeDebug
   name: bang, ded cartridge
-  DontPresent: true # Вставлено в оригинальный код
   parent: BaseCartridgePistol
   suffix: DEBUG
   components:
@@ -87,7 +83,6 @@
 
 - type: entity
   name: bang stick gibber
-  DontPresent: true # Вставлено в оригинальный код
   parent: BaseItem
   id: MeleeDebugGib
   description: hit hard ye
@@ -109,7 +104,6 @@
 
 - type: entity
   name: bang stick 100dmg
-  DontPresent: true # Вставлено в оригинальный код
   parent: MeleeDebugGib
   id: MeleeDebug100
   components:
@@ -123,7 +117,6 @@
 
 - type: entity
   name: bang stick 200dmg
-  DontPresent: true # Вставлено в оригинальный код
   parent: MeleeDebugGib
   id: MeleeDebug200
   components:
