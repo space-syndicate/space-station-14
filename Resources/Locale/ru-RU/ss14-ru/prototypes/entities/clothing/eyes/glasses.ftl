@@ -18,3 +18,5 @@ ent-ClothingEyesGlassesMercenary = очки наёмника
     .desc = Очки, созданные для ведения боя, для защиты глаз от ярких ослепляющих вспышек.
 ent-ClothingEyesGlassesThermal = оптический термальный сканер
     .desc = Термалы в форме очков.
+ent-ClothingEyesGlassesChemical = очки химического анализа
+    .desc = Очки, позволяющие сканировать химический состав раствора.

@@ -8,3 +8,4 @@ species-name-diona = Диона
 species-name-arachnid = Арахнид
 vulpkanin = Вульпканин
 species-name-fellinid = Феллинид
+species-name-moth = Moth Person

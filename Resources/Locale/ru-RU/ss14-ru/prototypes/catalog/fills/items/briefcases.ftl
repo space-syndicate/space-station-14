@@ -4,3 +4,6 @@ ent-BriefcaseBrownFilled = коричневый чемодан
 ent-BriefcaseSyndieSniperBundleFilled = коричневый чемодан
     .suffix = Заполненный, Христов
     .desc = { ent-BriefcaseSyndie.desc }
+ent-BriefcaseSyndieLobbyingBundleFilled = brown briefcase
+    .suffix = Filled, Spacebucks
+    .desc = { ent-BriefcaseSyndie.desc }
