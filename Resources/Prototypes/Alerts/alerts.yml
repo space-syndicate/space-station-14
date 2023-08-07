@@ -171,10 +171,20 @@
     state: health3
   - sprite: /Textures/Interface/Alerts/human_alive.rsi
     state: health4
+  - sprite: /Textures/Interface/Alerts/human_alive.rsi
+    state: health5
+  - sprite: /Textures/Interface/Alerts/human_alive.rsi
+    state: health6
+  - sprite: /Textures/Interface/Alerts/human_alive.rsi
+    state: health7
+  - sprite: /Textures/Interface/Alerts/human_alive.rsi
+    state: health8
+  - sprite: /Textures/Interface/Alerts/human_alive.rsi
+    state: health9
   name: alerts-health-name
   description: alerts-health-desc
   minSeverity: 0
-  maxSeverity: 4
+  maxSeverity: 9
 
 - type: alert
   id: Internals
