@@ -1,0 +1,20 @@
+- type: entity
+  name: Urist McFellinid
+  parent: BaseMobOrganic
+  id: BaseMobFellinid
+  abstract: true
+  components:
+  - type: Hunger
+  - type: Thirst
+  - type: Perishable
+  - type: Butcherable
+    butcheringType: Spike
+    spawned:
+    - id: FoodMeatHuman
+      amount: 5
+
+- type: entity
+  name: Urist McHands
+  id: MobFellinidDummy
+  parent: BaseMobOrganicDummy
+  noSpawn: true
