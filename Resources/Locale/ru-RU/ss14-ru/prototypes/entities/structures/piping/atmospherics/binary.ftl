@@ -16,3 +16,5 @@ ent-GasDualPortVentPump = двухпортовая вентиляция
     .desc = Имеет клапан и прикрепленный к нему насос. Один вход для закачивания воздуха, другой - для откачивания.
 ent-GasRecycler = переработчик газа
     .desc = Перерабатывает углекислый газ и оксид азота. Нагреватель и компрессор в комплект не входят.
+ent-HeatExchanger = radiator
+    .desc = Transfers heat between the pipe and its surroundings.
