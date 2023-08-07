@@ -1,0 +1,10 @@
+- type: entity
+  parent: ClothingHeadBaseButcherable
+  id: ClothingHeadHatSPsoft
+  name: space prison cap
+  description: It's a robust baseball hat in tasteful blue colour.
+  components:
+  - type: Sprite
+    sprite: SpaceStories/Clothing/Head/Soft/spsoft.rsi
+  - type: Clothing
+    sprite: SpaceStories/Clothing/Head/Soft/spsoft.rsi

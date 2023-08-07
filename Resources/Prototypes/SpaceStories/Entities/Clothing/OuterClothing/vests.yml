@@ -1,0 +1,10 @@
+- type: entity
+  parent: ClothingOuterArmorBasic
+  id: ClothingOuterVestArmorSP
+  name: armor vest
+  description: A slim Type I armored vest that provides decent protection against most types of damage.
+  components:
+    - type: Sprite
+      sprite: SpaceStories/Clothing/OuterClothing/Vests/armor_sp.rsi
+    - type: Clothing
+      sprite: SpaceStories/Clothing/OuterClothing/Vests/armor_sp.rsi

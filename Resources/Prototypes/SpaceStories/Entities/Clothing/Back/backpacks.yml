@@ -1,0 +1,8 @@
+- type: entity
+  parent: ClothingBackpack
+  id: ClothingBackpackSpacePrison
+  name: space prison officer's backpack
+  description: It's a very robust backpack.
+  components:
+  - type: Sprite
+    sprite: SpaceStories/Clothing/Back/Backpacks/sp.rsi

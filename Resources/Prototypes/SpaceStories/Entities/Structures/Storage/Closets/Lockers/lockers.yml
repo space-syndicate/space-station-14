@@ -1,0 +1,40 @@
+- type: entity
+  id: LockerSpacePrison
+  parent: LockerBaseSecure
+  name: space prison officer's locker
+  components:
+  - type: Sprite
+    sprite: SpaceStories/Structures/Storage/closet.rsi
+  - type: Appearance
+  - type: EntityStorageVisuals
+    stateBaseClosed: sp
+    stateDoorOpen: sp_open
+    stateDoorClosed: sp_door
+  - type: AccessReader
+    access: [["Security"]]
+
+#- type: entity
+#  id: LockerArmorySP
+#  parent: LockerSpacePrison
+#  name: space prison armory locker
+#  components:
+#  - type: Appearance
+#  - type: EntityStorageVisuals
+#    stateBaseClosed: sparmory
+#    stateDoorOpen: sparmory_open
+#    stateDoorClosed: sparmory_door
+#  - type: AccessReader
+#    access: [["Armory"]]
+
+- type: entity
+  id: LockerWardenOfSP
+  parent: LockerSpacePrison
+  name: space prison warden locker
+  components:
+  - type: Appearance
+  - type: EntityStorageVisuals
+    stateBaseClosed: hosofsp
+    stateDoorOpen: hosofsp_open
+    stateDoorClosed: hosofsp_door
+  - type: AccessReader
+    access: [["HeadOfSecurity"]]

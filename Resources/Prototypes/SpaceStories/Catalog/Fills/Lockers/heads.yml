@@ -1,0 +1,24 @@
+- type: entity
+  id: LockerHeadOfSPFilled
+  suffix: Filled
+  parent: LockerWardenOfSP
+  components:
+  - type: StorageFill
+    contents:
+      - id: WeaponDisabler
+        prob: 0.5
+      - id: DrinkVacuumFlask
+        prob: 0.8
+      - id: ClothingBeltSecurityFilled
+      - id: ClothingHeadsetPrisonAlt
+      - id: ClothingEyesGlassesSpacePrison
+      - id: ClothingShoesBootsJackSP
+      - id: CigarGoldCase
+        prob: 0.50
+      - id: PlushieSharkPink
+        prob: 0.1
+      - id: DoorRemoteSecurity
+      - id: ClothingUniformJumpskirtHoSP
+      - id: ClothingUniformJumpsuitHoSP
+      - id: RubberStampHoSP
+      - id: HoloprojectorSecurity
