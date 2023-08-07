@@ -28,9 +28,9 @@ reagent-effect-guidebook-explosion-reaction-effect =
     } взрыв
 reagent-effect-guidebook-emp-reaction-effect =
     { $chance ->
-        [1] Causes
-       *[other] cause
-    } an electromagnetic pulse
+        [1] Вызывает
+       *[other] вызывают
+    } электромагнитный импульс
 reagent-effect-guidebook-foam-area-reaction-effect =
     { $chance ->
         [1] Создаёт
