@@ -1,7 +1,7 @@
 ent-MobSiliconBase = { "" }
     .desc = { "" }
-ent-MobTaxiBot = taxibot
-    .desc = Give a ride?
+ent-MobTaxiBot = таксибот
+    .desc = Подвезти?
 ent-MobHonkBot = хонкбот
     .desc = Ужасающе.
 ent-MobJonkBot = кринжбот
