@@ -12,7 +12,7 @@
   - type: Advertise
     pack: SecDrobeAds
   - type: Sprite
-    sprite: SpaceStories\Structures\Machines\VendingMachines\spdrobe.rsi
+    sprite: SpaceStories/Structures/Machines/VendingMachines/spdrobe.rsi
     layers:
     - state: "off"
       map: ["enum.VendingMachineVisualLayers.Base"]
