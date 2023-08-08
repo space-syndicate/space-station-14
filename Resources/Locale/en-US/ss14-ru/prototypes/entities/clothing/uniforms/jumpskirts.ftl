@@ -132,3 +132,5 @@ ent-ClothingUniformJumpskirtSeniorPhysician = senior physician jumpskirt
     .desc = A sign of skill and prestige within the medical department.
 ent-ClothingUniformJumpskirtSeniorOfficer = senior officer jumpskirt
     .desc = A sign of skill and prestige within the security department.
+ent-ClothingUniformJumpskirtSecGrey = grey security jumpskirt
+    .desc = A tactical relic of years past before Nanotrasen decided it was cheaper to dye the suits red instead of washing out the blood.

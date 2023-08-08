@@ -132,3 +132,5 @@ ent-ClothingUniformJumpskirtSeniorPhysician = юбка-комбинезон ве
     .desc = Признак мастерства и престижа медицинского отдела.
 ent-ClothingUniformJumpskirtSeniorOfficer = юбка-комбинезон инструктора службы безопасности
     .desc = Признак мастерства и престижа отдела службы безопасности.
+ent-ClothingUniformJumpskirtSecGrey = grey security jumpskirt
+    .desc = A tactical relic of years past before Nanotrasen decided it was cheaper to dye the suits red instead of washing out the blood.

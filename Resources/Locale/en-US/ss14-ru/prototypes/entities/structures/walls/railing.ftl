@@ -1,6 +1,6 @@
-ent-Railing = railing
-    .desc = Basic railing meant to protect idiots like you from falling.
-ent-RailingCorner = railing
-    .desc = Basic railing meant to protect idiots like you from falling.
-ent-RailingCornerSmall = railing
-    .desc = Basic railing meant to protect idiots like you from falling.
+ent-Railing = { ent-BaseStructure }
+    .desc = { ent-BaseStructure.desc }
+ent-RailingCorner = { ent-BaseStructure }
+    .desc = { ent-BaseStructure.desc }
+ent-RailingCornerSmall = { ent-BaseStructure }
+    .desc = { ent-BaseStructure.desc }
