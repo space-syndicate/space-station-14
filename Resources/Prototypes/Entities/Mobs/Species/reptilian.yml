@@ -19,6 +19,7 @@
     prototype: Reptilian
     requiredLegs: 2
   - type: Inventory
+    templateId: reptilian
     speciesId: digi
   - type: Butcherable
     butcheringType: Spike
