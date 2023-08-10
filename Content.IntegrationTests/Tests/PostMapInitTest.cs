@@ -46,7 +46,6 @@ namespace Content.IntegrationTests.Tests
         {
             // Corvax-Start
             "CorvaxAvrite",
-            "CorvaxBox",
             "CorvaxDelta",
             "CorvaxIshimura",
             // Corvax-End
