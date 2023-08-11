@@ -159,7 +159,7 @@
     autoRot: true
   - type: TypingIndicator
     proto: robot
-  - type: TTS
+  - type: TTS # Corvax-TTS
     voice: Robold
 
 - type: entity
