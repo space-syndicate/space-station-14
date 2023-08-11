@@ -1,2 +1,2 @@
-ent-Barricade = { ent-BaseStructure }
+ent-Barricade = barricade
     .desc = { ent-BaseStructure.desc }

@@ -24,6 +24,10 @@ uplink-flash-grenade-name = { ent-GrenadeFlashBang }
 uplink-flash-grenade-desc = Стандартная светошумовая граната, ослепляющая и замедляющая движения всех, кто не имеет соответствующих средств защиты. Разумеется, это относится и к вам; прежде чем использовать её, убедитесь, что вы экипированы должным образом.
 uplink-mini-bomb-name = { ent-SyndieMiniBomb }
 uplink-mini-bomb-desc = Маломощное, высокоэффективное точечное взрывное устройство для диверсий, с пятисекундным взрывателем. Идеально подходит для быстрого уничтожения устройств, трупа или чего-либо еще.
+uplink-supermatter-grenade-name = Supermatter Grenade
+uplink-supermatter-grenade-desc = Grenade that simulates delamination of a suppermatter engine, generates powerful gravity well. Explosion comparable to a Mini Bomb.
+uplink-whitehole-grenade-name = Whitehole Grenade
+uplink-whitehole-grenade-desc = Grenade that are repulses everything around for about 10 seconds. Very useful in small rooms and for chasing someone.
 uplink-penguin-grenade-name = { ent-MobGrenadePenguin }
 uplink-penguin-grenade-desc = Маленький, крайне агрессивный пингвин с гранатой на шее. Такие собираются Синдикатом на отсталых ледяных планетах.
 uplink-c4-name = C-4
@@ -95,6 +99,9 @@ uplink-uplink-implanter-name = Имплантер Аплинк
 uplink-uplink-implanter-desc = Незаметно заказывайте снаряжение без использования КПК. Глотайте телекристаллы, чтобы пополнить аплинк.
 uplink-deathrattle-implant-name = Коробка имплантеров Предсмертный хрип
 uplink-deathrattle-implant-desc = Коробка, содержащая достаточное количество имплантов "Предсмертный хрип" на целый отряд. Передает сообщение с вашими координатами по радиоканалу Синдиката когда вы попадаете в критическое состояние или погибаете.
+# Bundles
+uplink-emp-kit-name = Electrical Disruptor Kit
+uplink-emp-kit-desc = The ultimate reversal on energy-based weaponry: Disables disablers, stuns stunbatons, discharges laser guns! Contains 3 EMP grenades and an EMP implanter. Note: Does not disrupt actual firearms.
 # Bundles
 uplink-meds-bundle-name = Медицинский набор
 uplink-meds-bundle-desc = Все, что нужно для возвращения в строй ваших товарищей: главным образом, боевая аптечка, дефибриллятор и три боевых медипена.

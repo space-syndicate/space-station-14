@@ -1,4 +1,4 @@
-ent-Grille = { ent-BaseStructure }
-    .desc = { ent-BaseStructure.desc }
-ent-GrilleBroken = { ent-BaseStructure }
-    .desc = { ent-BaseStructure.desc }
+ent-Grille = grille
+    .desc = A flimsy framework of iron rods.
+ent-GrilleBroken = grille
+    .desc = A flimsy framework of iron rods. It has seen better days.
