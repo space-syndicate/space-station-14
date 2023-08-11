@@ -7,7 +7,7 @@
   description: Handbook for samurai, weaboos, and armchair generals.
   components:
     - type: Sprite
-      sprite: Corvax/Objects/Misc/busido.rsi #TODO ADD
+      sprite: Corvax/Objects/Misc/books.rsi
       layers:
         - state: book_busido
     - type: Paper
