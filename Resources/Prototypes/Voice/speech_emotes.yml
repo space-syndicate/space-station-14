@@ -104,7 +104,7 @@
 - type: emote
   id: Whistle
   category: Vocal
-  chatMessages: [свистит.]
+  chatMessages: [свистит.] # Corvax-Localization
   chatTriggers:
     - whistle
     - whistle.
