@@ -5,17 +5,17 @@
   playTimeTracker: JobHeadOfSecurity
   requirements:
     - !type:RoleTimeRequirement
+      role: JobSecurityOfficer
+      time: 28800 #8 hrs
+    - !type:RoleTimeRequirement
       role: JobWarden
-      time: 36000 #10 hrs # Corvax-RoleTime
+      time: 21600 #6 hrs # Corvax-RoleTime
 #    - !type:RoleTimeRequirement
 #      role: JobDetective
 #      time: 7200 #2 hrs
-#    - !type:RoleTimeRequirement
-#      role: JobSecurityOfficer
-#      time: 36000 #10 hrs
     - !type:DepartmentTimeRequirement
       department: Security
-      time: 108000 #50 hrs # Corvax-RoleTime
+      time: 108000 #16 hrs # Corvax-RoleTime
   weight: 10
   startingGear: HoSGear
   icon: "JobIconHeadOfSecurity"
