@@ -59,13 +59,13 @@ public sealed class CCCVars
     /// URL of the TTS server API.
     /// </summary>
     public static readonly CVarDef<bool> TTSEnabled =
-        CVarDef.Create("tts.enabled", false, CVar.SERVERONLY);
+        CVarDef.Create("tts.enabled", false, CVar.SERVERONLY | CVar.ARCHIVE);
 
     /// <summary>
     /// URL of the TTS server API.
     /// </summary>
     public static readonly CVarDef<string> TTSApiUrl =
-        CVarDef.Create("tts.api_url", "", CVar.SERVERONLY);
+        CVarDef.Create("tts.api_url", "", CVar.SERVERONLY | CVar.ARCHIVE);
 
     /// <summary>
     /// Auth token of the TTS server API.
