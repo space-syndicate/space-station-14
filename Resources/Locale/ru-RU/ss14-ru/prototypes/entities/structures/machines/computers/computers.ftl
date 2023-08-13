@@ -61,3 +61,6 @@ ent-ComputerPalletConsole = консоль продажи товаров
     .desc = Используется для продажи товаров, размещенных на грузовых поддонах.
 ent-ComputerMassMedia = консоль СМИ
     .desc = Отправьте своё послание миру!
+ent-ComputerSensorMonitoring = sensor monitoring computer
+    .desc = A flexible console for monitoring all kinds of sensors.
+    .suffix = TESTING, DO NOT MAP

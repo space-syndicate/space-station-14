@@ -4,6 +4,7 @@ job-name-cadet = кадет СБ
 job-name-hos = глава службы безопасности
 job-name-detective = детектив
 job-name-brigmedic = бригмедик
+job-name-borg = Cyborg
 job-name-scientist = учёный
 job-name-research-assistant = научный ассистент
 job-name-rd = научный руководитель
