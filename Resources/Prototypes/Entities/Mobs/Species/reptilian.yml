@@ -15,6 +15,8 @@
   - type: Icon
     sprite: Mobs/Species/Reptilian/parts.rsi
     state: full
+  - type: Sprite
+    scale: 1.12, 1.12 # Corvax-Lore
   - type: Body
     prototype: Reptilian
     requiredLegs: 2

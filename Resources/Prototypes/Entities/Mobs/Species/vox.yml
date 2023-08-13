@@ -79,6 +79,7 @@
       - map: [ "head" ]
       - map: [ "pocket1" ]
       - map: [ "pocket2" ]
+    scale: 0.64, 0.86 # Corvax-Lore
   - type: Body
     prototype: Vox
     requiredLegs: 2

@@ -17,6 +17,8 @@
   - type: Icon
     sprite: Mobs/Species/Diona/parts.rsi
     state: full
+  - type: Sprite
+    scale: 1.02, 1.1 # Corvax-Lore
   - type: Body
     prototype: Diona
     requiredLegs: 2

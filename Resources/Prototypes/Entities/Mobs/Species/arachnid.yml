@@ -27,6 +27,8 @@
   - type: Icon
     sprite: Mobs/Species/Arachnid/parts.rsi
     state: full
+  - type: Sprite
+    scale: 0.9, 1 # Corvax-Lore
   # Damage and speed
   - type: Bloodstream
     bloodReagent: SpiderBlood
