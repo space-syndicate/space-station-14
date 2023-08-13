@@ -186,7 +186,7 @@
    - стрекочет.
    - стрекочет!
    # Corvax-Localization-End
-  
+
 - type: emote
   id: Squeak
   category: Vocal
@@ -301,3 +301,9 @@
     - отдала честь.
     - отдала честь!
     # Corvax-Localization-End
+
+- type: emote
+  id: DefaultDeathgasp
+  chatMessages: ["emote-deathgasp"]
+  chatTriggers:
+  - deathgasp

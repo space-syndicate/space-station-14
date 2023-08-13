@@ -1,5 +1,10 @@
+ent-BaseDefibrillator = defibrillator
+    .desc = CLEAR! Zzzzat!
 ent-Defibrillator = дефибриллятор
     .desc = ЧИСТО! РАЗРЯД!
 ent-DefibrillatorEmpty = { ent-Defibrillator }
     .suffix = Пустой
     .desc = { ent-Defibrillator.desc }
+ent-DefibrillatorOneHandedUnpowered = { ent-BaseDefibrillator }
+    .suffix = One-Handed, Unpowered
+    .desc = { ent-BaseDefibrillator.desc }

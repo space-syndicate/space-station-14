@@ -61,3 +61,7 @@ ent-CrateStoneGrave = grave
     .suffix = stone
 ent-CrateSyndicate = { ent-CrateGenericSteel }
     .desc = { ent-CrateGenericSteel.desc }
+ent-CrateTrashCart = trash cart
+    .desc = { ent-CrateBaseWeldable.desc }
+ent-CrateTrashCartJani = janitorial trash cart
+    .desc = { ent-CrateBaseSecure.desc }

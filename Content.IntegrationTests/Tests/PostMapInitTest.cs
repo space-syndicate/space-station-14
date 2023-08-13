@@ -50,6 +50,7 @@ namespace Content.IntegrationTests.Tests
             "CorvaxIshimura",
             // Corvax-End
             "Dev",
+            "TestTeg",
             "Fland",
             "Meta",
             "Packed",

@@ -22,10 +22,17 @@ device-frequency-prototype-name-surveillance-camera-general = Камеры (Об
 device-frequency-prototype-name-surveillance-camera-entertainment = Камеры (Развлечения)
 device-address-prefix-sensor = Сенс-
 device-address-prefix-fire-alarm = Пож-
+# Damn bet you couldn't see this one coming.
+device-address-prefix-teg = TEG-
+device-address-prefix-heater = HTR-
+device-address-prefix-freezer = FZR-
+device-address-prefix-volume-pump = VPP-
+device-address-prefix-smes = SMS-
 #PDAs and terminals
 device-address-prefix-console = Конс-
 device-address-prefix-air-alarm = Возд-
 device-address-examine-message = Адрес устройства: { $address }.
+device-address-prefix-sensor-monitor = MON-
 #Device net ID names
 device-net-id-private = Частные
 device-net-id-wired = Проводные
