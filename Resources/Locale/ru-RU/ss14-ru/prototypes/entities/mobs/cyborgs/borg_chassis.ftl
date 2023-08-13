@@ -1,6 +1,6 @@
 ent-BorgChassisGeneric = { ent-BaseBorgChassis }
     .desc = { ent-BaseBorgChassis.desc }
-ent-BorgChassisMining = киборг-утилизатор
+ent-BorgChassisMining = киборг-шахтёр
     .desc = { ent-BaseBorgChassis.desc }
 ent-BorgChassisEngineer = киборг-инженер
     .desc = { ent-BaseBorgChassis.desc }
