@@ -4,5 +4,5 @@ ent-WeaponCapacitorRecharger = зарядник энергооружия
     .desc = { ent-PowerCellRecharger.desc }
 ent-WallWeaponCapacitorRecharger = настенный зарядник энергооружия
     .desc = { "" }
-ent-BorgCharger = cyborg recharging station
-    .desc = A stationary charger for various robotic and cyborg entities. Surprisingly spacious.
+ent-BorgCharger = станция зарядки киборгов
+    .desc = Стационарное устройство для зарядки различных роботов и киборгов. Удивительно вместительное.
