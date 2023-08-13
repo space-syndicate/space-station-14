@@ -1,0 +1,12 @@
+ent-BorgChassisGeneric = { ent-BaseBorgChassis }
+    .desc = { ent-BaseBorgChassis.desc }
+ent-BorgChassisMining = salvage cyborg
+    .desc = { ent-BaseBorgChassis.desc }
+ent-BorgChassisEngineer = engineer cyborg
+    .desc = { ent-BaseBorgChassis.desc }
+ent-BorgChassisJanitor = janitor cyborg
+    .desc = { ent-BaseBorgChassis.desc }
+ent-BorgChassisMedical = medical cyborg
+    .desc = { ent-BaseBorgChassis.desc }
+ent-BorgChassisService = service cyborg
+    .desc = { ent-BaseBorgChassis.desc }

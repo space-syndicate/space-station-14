@@ -61,3 +61,6 @@ ent-ComputerPalletConsole = cargo sale computer
     .desc = Used to sell goods loaded onto cargo pallets
 ent-ComputerMassMedia = mass-media console
     .desc = Write your message to the world!
+ent-ComputerSensorMonitoring = sensor monitoring computer
+    .desc = A flexible console for monitoring all kinds of sensors.
+    .suffix = TESTING, DO NOT MAP
