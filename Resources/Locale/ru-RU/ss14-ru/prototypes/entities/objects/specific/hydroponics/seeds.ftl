@@ -72,3 +72,5 @@ ent-WatermelonSeeds = пакет семян арбуза
     .desc = { ent-SeedBase.desc }
 ent-GrapeSeeds = пакет семян винограда
     .desc = { ent-SeedBase.desc }
+ent-CocoaSeeds = packet of cocoa seeds
+    .desc = { ent-SeedBase.desc }

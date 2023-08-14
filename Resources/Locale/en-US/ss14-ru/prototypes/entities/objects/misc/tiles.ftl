@@ -94,3 +94,5 @@ ent-FloorTileItemSteelMaint = steel maint floor
     .desc = { ent-FloorTileItemBase.desc }
 ent-FloorTileItemGratingMaint = grating maint floor
     .desc = { ent-FloorTileItemBase.desc }
+ent-FloorTileItemWeb = web tile
+    .desc = { ent-FloorTileItemBase.desc }

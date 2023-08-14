@@ -22,7 +22,7 @@ public sealed class TTSManager
             LabelNames = new[] {"type"},
             Buckets = Histogram.ExponentialBuckets(.1, 1.5, 10),
         });
-    
+
     private static readonly Counter WantedCount = Metrics.CreateCounter(
         "tts_wanted_count",
         "Amount of wanted TTS audio.");
@@ -30,9 +30,9 @@ public sealed class TTSManager
     private static readonly Counter ReusedCount = Metrics.CreateCounter(
         "tts_reused_count",
         "Amount of reused TTS audio from cache.");
-    
+
     [Dependency] private readonly IConfigurationManager _cfg = default!;
-    
+
     private readonly HttpClient _httpClient = new();
 
     private ISawmill _sawmill = default!;
@@ -64,7 +64,7 @@ public sealed class TTSManager
         {
             throw new Exception("TTS Api url not specified");
         }
-        
+
         var token = _cfg.GetCVar(CCCVars.TTSApiToken);
         if (string.IsNullOrWhiteSpace(token))
         {
@@ -90,16 +90,17 @@ public sealed class TTSManager
         var reqTime = DateTime.UtcNow;
         try
         {
-            var cts = new CancellationTokenSource(TimeSpan.FromSeconds(2));
+            var timeout = _cfg.GetCVar(CCCVars.TTSApiTimeout);
+            var cts = new CancellationTokenSource(TimeSpan.FromSeconds(timeout));
             var response = await _httpClient.PostAsJsonAsync(url, body, cts.Token);
             if (!response.IsSuccessStatusCode)
             {
                 throw new Exception($"TTS request returned bad status code: {response.StatusCode}");
             }
 
-            var json = await response.Content.ReadFromJsonAsync<GenerateVoiceResponse>();
+            var json = await response.Content.ReadFromJsonAsync<GenerateVoiceResponse>(cancellationToken: cts.Token);
             var soundData = Convert.FromBase64String(json.Results.First().Audio);
-            
+
             _cache.Add(cacheKey, soundData);
             _cacheKeysSeq.Add(cacheKey);
             if (_cache.Count > _maxCachedCount)
@@ -185,7 +186,7 @@ public sealed class TTSManager
         [JsonPropertyName("original_sha1")]
         public string Hash { get; set; }
     }
-    
+
     private struct VoiceResult
     {
         [JsonPropertyName("audio")]

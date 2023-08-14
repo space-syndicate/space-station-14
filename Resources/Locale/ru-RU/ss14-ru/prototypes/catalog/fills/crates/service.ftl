@@ -22,3 +22,6 @@ ent-CrateServiceBox = ящик коробок
     .desc = Содержит 6 пустых универсальных коробок.
 ent-CrateJanitorBiosuit = ящик биозащитных костюмов уборщика
     .desc = Содержит 2 костюма биологической защиты, чтобы никакая зараза не отвлекала вас от уборки станции.
+ent-CrateTrashCartFilled = { ent-CrateTrashCart }
+    .suffix = Filled
+    .desc = { ent-CrateTrashCart.desc }
