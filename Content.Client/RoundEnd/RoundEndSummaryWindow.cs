@@ -9,6 +9,7 @@ using Robust.Shared.Utility;
 using static Robust.Client.UserInterface.Controls.BoxContainer;
 
 namespace Content.Client.RoundEnd
+
 {
     public sealed class RoundEndSummaryWindow : DefaultWindow
     {
@@ -18,6 +19,8 @@ namespace Content.Client.RoundEnd
         public RoundEndSummaryWindow(string gm, string roundEnd, TimeSpan roundTimeSpan, int roundId,
             RoundEndMessageEvent.RoundEndPlayerInfo[] info, IEntityManager entityManager)
         {
+
+
             _entityManager = entityManager;
 
             MinSize = SetSize = new Vector2(520, 580);
