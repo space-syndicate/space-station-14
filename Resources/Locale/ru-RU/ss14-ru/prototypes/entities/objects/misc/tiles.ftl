@@ -94,5 +94,5 @@ ent-FloorTileItemSteelMaint = стальной технический пол
     .desc = { ent-FloorTileItemBase.desc }
 ent-FloorTileItemGratingMaint = решётчатый технический пол
     .desc = { ent-FloorTileItemBase.desc }
-ent-FloorTileItemWeb = web tile
+ent-FloorTileItemWeb = паутинный пол
     .desc = { ent-FloorTileItemBase.desc }
