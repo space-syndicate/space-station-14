@@ -9,7 +9,8 @@
     factions:
     - SimpleNeutral
   - type: HTN
-    rootTask: SimpleHostileCompound
+    rootTask:
+      task: SimpleHostileCompound
   - type: Sprite
     drawdepth: Mobs
     sprite: Mobs/Aliens/slimes.rsi
@@ -116,7 +117,7 @@
     makeSentient: true
     name: ghost-role-information-slimes-name
     description: ghost-role-information-slimes-description
-  - type: TTS
+  - type: TTS # Corvax-TTS
     voice: Chen
 
 - type: entity

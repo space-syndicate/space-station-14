@@ -23,7 +23,6 @@ using Content.Server.NPC;
 using Content.Server.NPC.Components;
 using Content.Server.NPC.HTN;
 using Content.Server.NPC.Systems;
-using Content.Server.RoundEnd;
 using Content.Shared.Humanoid;
 using Content.Shared.Mobs;
 using Content.Shared.Mobs.Components;
@@ -32,12 +31,10 @@ using Content.Shared.Movement.Systems;
 using Content.Shared.Nutrition.Components;
 using Content.Shared.Popups;
 using Content.Shared.Roles;
-using Content.Shared.Tools;
 using Content.Shared.Tools.Components;
 using Content.Shared.Weapons.Melee;
 using Content.Shared.Zombies;
 using Robust.Shared.Audio;
-using Robust.Shared.Utility;
 
 namespace Content.Server.Zombies
 {
@@ -89,7 +86,7 @@ namespace Content.Server.Zombies
         public void ZombifyEntity(EntityUid target, MobStateComponent? mobState = null)
         {
             //Don't zombfiy zombies
-            if (HasComp<ZombieComponent>(target))
+            if (HasComp<ZombieComponent>(target) || HasComp<ZombieImmuneComponent>(target))
                 return;
 
             if (!Resolve(target, ref mobState, logMissing: false))
@@ -114,10 +111,7 @@ namespace Content.Server.Zombies
             var combat = AddComp<CombatModeComponent>(target);
             _combat.SetInCombatMode(target, true, combat);
 
-            // Corvax-DionaPacifist-Start: Allow dionas zombies to harm
-            RemComp<PacifistComponent>(target);
-            RemComp<PacifiedComponent>(target);
-            // Corvax-DionaPacifist-End
+            RemComp<PacifiedComponent>(target); // Corvax-DionaPacifist-Start: Allow dionas zombies to harm
 
             //This is the actual damage of the zombie. We assign the visual appearance
             //and range here because of stuff we'll find out later
@@ -239,7 +233,7 @@ namespace Content.Server.Zombies
             else
             {
                 var htn = EnsureComp<HTNComponent>(target);
-                htn.RootTask = "SimpleHostileCompound";
+                htn.RootTask = new HTNCompoundTask() {Task = "SimpleHostileCompound"};
                 htn.Blackboard.SetValue(NPCBlackboard.Owner, target);
                 _npc.WakeNPC(target, htn);
             }

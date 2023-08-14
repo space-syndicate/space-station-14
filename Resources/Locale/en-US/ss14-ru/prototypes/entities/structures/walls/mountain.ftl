@@ -1,4 +1,4 @@
-ent-MountainRock = mountain rock
-    .desc = A craggy mountain wall.
-ent-MountainRockMining = mountain rock
-    .desc = A craggy mountain wall.
+ent-MountainRock = { ent-AsteroidRock }
+    .desc = { ent-AsteroidRock.desc }
+ent-MountainRockMining = { ent-AsteroidRockMining }
+    .desc = { ent-AsteroidRockMining.desc }

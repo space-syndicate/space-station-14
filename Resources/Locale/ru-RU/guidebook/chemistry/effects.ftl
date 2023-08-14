@@ -26,6 +26,11 @@ reagent-effect-guidebook-explosion-reaction-effect =
         [1] Вызывает
        *[other] вызывают
     } взрыв
+reagent-effect-guidebook-emp-reaction-effect =
+    { $chance ->
+        [1] Вызывает
+       *[other] вызывают
+    } электромагнитный импульс
 reagent-effect-guidebook-foam-area-reaction-effect =
     { $chance ->
         [1] Создаёт
@@ -188,13 +193,13 @@ reagent-effect-guidebook-cure-eye-damage =
     { $chance ->
         [1]
             { $deltasign ->
-                [1] Излечивает
-               *[-1] Наносит
+                [1] Наносит
+               *[-1] Излечивает
             }
        *[other]
             { $deltasign ->
-                [1] излечивают
-               *[-1] наносят
+                [1] наносят
+               *[-1] излечивают
             }
     } повреждения глаз
 reagent-effect-guidebook-chem-vomit =

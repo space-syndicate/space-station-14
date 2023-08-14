@@ -5,6 +5,7 @@ map_pool = "CorvaxDefaultMapPool"
 maxplayers = 80
 soft_max_players = 70
 map_rotation = true
+role_timers = false
 peaceful_end = false
 
 [atmos]
