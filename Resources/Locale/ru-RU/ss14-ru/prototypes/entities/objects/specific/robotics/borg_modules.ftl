@@ -1,5 +1,5 @@
-ent-BaseBorgModule = borg module
-    .desc = A piece of tech that gives cyborgs new abilities.
+ent-BaseBorgModule = модуль борга
+    .desc = Техническая деталь, дающая киборгам новые способности.
 ent-BaseProviderBorgModule = { "" }
     .desc = { "" }
 ent-BaseBorgModuleCargo = { ent-BaseBorgModule }
@@ -12,72 +12,49 @@ ent-BaseBorgModuleMedical = { ent-BaseBorgModule }
     .desc = { ent-BaseBorgModule.desc }
 ent-BaseBorgModuleService = { ent-BaseBorgModule }
     .desc = { ent-BaseBorgModule.desc }
-ent-BorgModuleCable = cable cyborg module
-
-  .desc = { ent-['BaseBorgModule', 'BaseProviderBorgModule'].desc }
-ent-BorgModuleFireExtinguisher = fire extinguisher cyborg module
-
-  .desc = { ent-['BaseBorgModule', 'BaseProviderBorgModule'].desc }
-ent-BorgModuleGPS = GPS cyborg module
-
-  .desc = { ent-['BaseBorgModule', 'BaseProviderBorgModule'].desc }
-ent-BorgModuleRadiationDetection = radiation detection cyborg module
-
-  .desc = { ent-['BaseBorgModule', 'BaseProviderBorgModule'].desc }
-ent-BorgModuleTool = tool cyborg module
-
-  .desc = { ent-['BaseBorgModule', 'BaseProviderBorgModule'].desc }
-ent-BorgModuleAppraisal = appraisal cyborg module
-
-  .desc = { ent-['BaseBorgModuleCargo', 'BaseProviderBorgModule'].desc }
-ent-BorgModuleMining = mining cyborg module
-
-  .desc = { ent-['BaseBorgModuleCargo', 'BaseProviderBorgModule'].desc }
-ent-BorgModuleGrapplingGun = grappling gun cyborg module
-
-  .desc = { ent-['BaseBorgModuleCargo', 'BaseProviderBorgModule'].desc }
-ent-BorgModuleAdvancedTool = advanced tool cyborg module
-
-  .desc = { ent-['BaseBorgModuleEngineering', 'BaseProviderBorgModule'].desc }
-ent-BorgModuleGasAnalyzer = gas analyzer cyborg module
-
-  .desc = { ent-['BaseBorgModuleEngineering', 'BaseProviderBorgModule'].desc }
-ent-BorgModuleRCD = RCD cyborg module
-
-  .desc = { ent-['BaseBorgModuleEngineering', 'BaseProviderBorgModule'].desc }
-ent-BorgModuleLightReplacer = light replacer cyborg module
-
-  .desc = { ent-['BaseBorgModuleJanitor', 'BaseProviderBorgModule'].desc }
-ent-BorgModuleCleaning = cleaning cyborg module
-
-  .desc = { ent-['BaseBorgModuleJanitor', 'BaseProviderBorgModule'].desc }
-ent-BorgModuleTrashCollection = trash collection cyborg module
-
-  .desc = { ent-['BaseBorgModuleJanitor', 'BaseProviderBorgModule'].desc }
-ent-BorgModuleDiagnosis = diagnosis cyborg module
-
-  .desc = { ent-['BaseBorgModuleMedical', 'BaseProviderBorgModule'].desc }
-ent-BorgModuleTreatment = treatment cyborg module
-
-  .desc = { ent-['BaseBorgModuleMedical', 'BaseProviderBorgModule'].desc }
-ent-BorgModuleDefibrillator = defibrillator cyborg module
-
-  .desc = { ent-['BaseBorgModuleMedical', 'BaseProviderBorgModule'].desc }
-ent-BorgModuleArtifact = artifact cyborg module
-
-  .desc = { ent-['BaseBorgModule', 'BaseProviderBorgModule'].desc }
-ent-BorgModuleAnomaly = anomaly cyborg module
-
-  .desc = { ent-['BaseBorgModule', 'BaseProviderBorgModule'].desc }
-ent-BorgModuleLiteracy = literacy cyborg module
-
-  .desc = { ent-['BaseBorgModuleService', 'BaseProviderBorgModule'].desc }
-ent-BorgModuleMusique = musique cyborg module
-
-  .desc = { ent-['BaseBorgModuleService', 'BaseProviderBorgModule'].desc }
-ent-BorgModuleGardening = gardening cyborg module
-
-  .desc = { ent-['BaseBorgModuleService', 'BaseProviderBorgModule'].desc }
-ent-BorgModuleClowning = clowning cyborg module
-
-  .desc = { ent-['BaseBorgModuleService', 'BaseProviderBorgModule'].desc }
+ent-BorgModuleCable = кабельный модуль киборга
+    .desc = { ent-BaseBorgModule.desc }
+ent-BorgModuleFireExtinguisher = огнетушащий модуль киборга
+    .desc = { ent-BaseBorgModule.desc }
+ent-BorgModuleGPS = GPS модуль киборга
+    .desc = { ent-BaseBorgModule.desc }
+ent-BorgModuleRadiationDetection = Гейгер-модуль киборга
+    .desc = { ent-BaseBorgModule.desc }
+ent-BorgModuleTool = инструментальный модуль киборга
+    .desc = { ent-BaseBorgModule.desc }
+ent-BorgModuleAppraisal = оценочный модуль киборга
+    .desc = { ent-BaseBorgModule.desc }
+ent-BorgModuleMining = шахтёрский модуль киборга
+    .desc = { ent-BaseBorgModule.desc }
+ent-BorgModuleGrapplingGun = крюк-пушечный модуль киборга
+    .desc = { ent-BaseBorgModule.desc }
+ent-BorgModuleAdvancedTool = продвинутый инструментальный модуль киборга
+    .desc = { ent-BaseBorgModule.desc }
+ent-BorgModuleGasAnalyzer = газоанализаторный модуль киборга
+    .desc = { ent-BaseBorgModule.desc }
+ent-BorgModuleRCD = РСУ-модуль киборга
+    .desc = { ent-BaseBorgModule.desc }
+ent-BorgModuleLightReplacer = лампозаменительный модуль киборга
+    .desc = { ent-BaseBorgModule.desc }
+ent-BorgModuleCleaning = чистящий модуль киборга
+    .desc = { ent-BaseBorgModule.desc }
+ent-BorgModuleTrashCollection = мусоросборный модуль киборга
+    .desc = { ent-BaseBorgModule.desc }
+ent-BorgModuleDiagnosis = диагностический модуль киборга
+    .desc = { ent-BaseBorgModule.desc }
+ent-BorgModuleTreatment = лечащий модуль киборга
+    .desc = { ent-BaseBorgModule.desc }
+ent-BorgModuleDefibrillator = дефибрилляторный модуль киборга
+    .desc = { ent-BaseBorgModule.desc }
+ent-BorgModuleArtifact = артефактный модуль киборга
+    .desc = { ent-BaseBorgModule.desc }
+ent-BorgModuleAnomaly = аномальный модуль киборга
+    .desc = { ent-BaseBorgModule.desc }
+ent-BorgModuleLiteracy = литературный модуль киборга
+    .desc = { ent-BaseBorgModule.desc }
+ent-BorgModuleMusique = музыкальный модуль киборга
+    .desc = { ent-BaseBorgModule.desc }
+ent-BorgModuleGardening = садовый модуль киборга
+    .desc = { ent-BaseBorgModule.desc }
+ent-BorgModuleClowning = клоунский модуль киборга
+    .desc = { ent-BaseBorgModule.desc }

@@ -130,6 +130,8 @@
     noMindState: medical_e_r
   - type: Construction
     node: medical
+  - type: TTS # Corvax-TTS
+    voice: TrainingRobot
 
 - type: entity
   id: BorgChassisService

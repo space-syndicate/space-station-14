@@ -1,10 +1,11 @@
 ent-AnomalyScanner = сканер аномалий
     .desc = Ручной сканер, предназначенный для получения информации о различных аномальных объектах.
-ent-AnomalyLocatorUnpowered = anomaly locator
-    .desc = A device designed to aid in the locating of anomalies. Did you check the gas miners?
-    .suffix = Unpowered
-ent-AnomalyLocator = локатор аномалий
+ent-AnomalyLocatorUnpowered = локатор аномалий
     .desc = Устройство, предназначенное для помощи в поиске аномалий. Вы уже проверили газодобытчики?
+    .suffix = Разряжен
+ent-AnomalyLocator = { ent-AnomalyLocator }
+    .suffix = Заряжен
+    .desc = { ent-AnomalyLocator.desc }
 ent-AnomalyLocatorEmpty = { ent-AnomalyLocator }
     .suffix = Пустой
     .desc = { ent-AnomalyLocator.desc }
