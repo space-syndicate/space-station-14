@@ -72,3 +72,5 @@ ent-WatermelonSeeds = packet of watermelon seeds
     .desc = { ent-SeedBase.desc }
 ent-GrapeSeeds = packet of grape seeds
     .desc = { ent-SeedBase.desc }
+ent-CocoaSeeds = packet of cocoa seeds
+    .desc = { ent-SeedBase.desc }

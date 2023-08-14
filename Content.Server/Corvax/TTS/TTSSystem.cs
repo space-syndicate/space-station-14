@@ -82,6 +82,14 @@ public sealed partial class TTSSystem : EntitySystem
     {
         var soundData = await GenerateTTS(message, speaker);
         if (soundData is null) return;
+
+        if (HasComp<SiliconTTSComponent>(uid))
+        {
+            var soundDataSilicon = await ApplySiliconFilter(soundData);
+            if (soundDataSilicon != null)
+                soundData = soundDataSilicon;
+        }
+
         RaiseNetworkEvent(new PlayTTSEvent(uid, soundData), Filter.Pvs(uid));
     }
 
@@ -92,6 +100,16 @@ public sealed partial class TTSSystem : EntitySystem
 
         var obfSoundData = await GenerateTTS(obfMessage, speaker, true);
         if (obfSoundData is null) return;
+
+        if (HasComp<SiliconTTSComponent>(uid))
+        {
+            var fullSoundDataSilicon = await ApplySiliconFilter(fullSoundData);
+            if (fullSoundDataSilicon != null)
+                fullSoundData = fullSoundDataSilicon;
+            var obfSoundDataSilicon = await ApplySiliconFilter(fullSoundData);
+            if (obfSoundDataSilicon != null)
+                obfSoundData = obfSoundDataSilicon;
+        }
 
         var fullTtsEvent = new PlayTTSEvent(uid, fullSoundData, true);
         var obfTtsEvent = new PlayTTSEvent(uid, obfSoundData, true);
@@ -122,7 +140,7 @@ public sealed partial class TTSSystem : EntitySystem
 
         var ssmlTraits = SoundTraits.RateFast;
         if (isWhisper)
-            ssmlTraits |= SoundTraits.PitchVerylow;
+            ssmlTraits = SoundTraits.PitchVerylow;
         var textSsml = ToSsmlText(textSanitized, ssmlTraits);
 
         return await _ttsManager.ConvertTextToSpeech(speaker, textSsml);

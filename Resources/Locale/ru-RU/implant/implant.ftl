@@ -28,7 +28,6 @@ use-emp-implant-action-name = Активировать ЭМИ
 use-emp-implant-action-description = Вызывает небольшой ЭМИ-импульс вокруг вас
 use-dna-scrambler-implant-action-name = Перемешать ДНК
 use-dna-scrambler-implant-action-description = ТЕНИ В ТЕХАХ!
-scramble-attempt-while-scrambled-popup = Обнаружено перемешивание ДНК. Пожалуйста, извлеките имплант, прежде чем отменять текущее перемешивание.
 scramble-implant-activated-popup = Вы превратились в { $identity }
 deathrattle-implant-dead-message = Зафиксирована смерть { $user } по координатам { $position }.
 deathrattle-implant-critical-message = Жизненные показатели { $user } критические, требуется немедленная помощь по координатам { $position }.

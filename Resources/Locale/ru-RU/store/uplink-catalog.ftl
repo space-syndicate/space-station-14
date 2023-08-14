@@ -58,6 +58,10 @@ uplink-holopara-kit-name = Набор "Голопаразит"
 uplink-holopara-kit-desc =
     Предмет гордости и радости компании Cybersun. Содержит инжектор, в котором находится разумный метафизический страж из твердого света, который в неактивном состоянии скрывается в теле пользователя.
     Страж может наносить быстрые удары, невосприимчив к опасностям атмосферы и устойчив к механическу урону, но разделяет получаемые повреждения с хозяином.
+uplink-holoclown-kit-name = Holoclown Kit
+uplink-holoclown-kit-desc =
+    A joint venture between Cybersun and Honk.co. Contains an injector that hosts a sentient metaphysical clown made of hard light which resides in the user's body when not active.
+    The holoclown has pockets to store things, a hardlight hand it can manipulate the environment with and is immune to hazardous environments while being resistant to direct trauma, but shares any damage it takes with the user.
 uplink-holster-name = плечевая кобура
 uplink-holster-desc = { ent-ClothingBeltSyndieHolster.desc }
 uplink-emag-name = Криптографический секвенсор
