@@ -66,5 +66,5 @@ ent-FoodTofuSlice = кусок тофу
     .desc = Кусок тофу. Ингредиент различных вегетарианских блюд.
 ent-FoodBadRecipe = горелое месиво
     .desc = За это кого-то следует понизить с должности повара.
-ent-FoodCocoaBeans = cocoa beans
-    .desc = You can never have too much chocolate!
+ent-FoodCocoaBeans = какао-бобы
+    .desc = Шоколада много не бывает!

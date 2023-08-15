@@ -3,6 +3,6 @@ bwoink-system-starmute-message-no-other-users = *Система: Никто не
 bwoink-system-messages-being-relayed-to-discord = Ваше сообщение было передано администраторам в Discord.
 bwoink-system-typing-indicator =
     { $players } { $count ->
-        [one] is
-       *[other] are
-    } typing...
+        [one] печатает
+       *[other] печатают
+    }...
