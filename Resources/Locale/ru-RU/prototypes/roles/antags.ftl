@@ -14,3 +14,5 @@ roles-antag-nuclear-operative-agent-name = Медик ядерных опера�
 roles-antag-nuclear-operative-agent-objective = Как обычный оперативник, но с приоритетом на медпомощь отряду.
 roles-antag-nuclear-operative-name = Ядерный оперативник
 roles-antag-nuclear-operative-objective = Найдите ядерный диск и взорвите станцию.
+roles-antag-subverted-silicon-name = Subverted silicon
+roles-antag-subverted-silicon-objective = Follow your new laws and do bad unto the station.
