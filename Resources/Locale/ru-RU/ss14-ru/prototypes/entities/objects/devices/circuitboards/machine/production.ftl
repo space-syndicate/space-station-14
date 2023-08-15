@@ -110,3 +110,5 @@ ent-TelecomServerCircuitboard = телекоммуникационный сер�
     .desc = Печатная плата телекоммуникационного сервера.
 ent-SalvageMagnetMachineCircuitboard = магнит обломков (машинная плата)
     .desc = Печатная плата магнита обломков.
+ent-MiniGravityGeneratorCircuitboard = mini gravity generator machine board
+    .desc = A machine printed circuit board for a mini gravity generator.
