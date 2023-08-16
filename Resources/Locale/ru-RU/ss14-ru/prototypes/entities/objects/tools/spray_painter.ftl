@@ -1,2 +1,2 @@
-ent-SprayPainter = Spray painter
-    .desc = A spray painter for painting airlocks and pipes.
+ent-SprayPainter = краскопульт
+    .desc = Краскопульт для окрашивания шлюзов и труб.
