@@ -18,6 +18,8 @@ using Robust.Shared.Random;
 using Robust.Shared.Utility;
 using System.Linq;
 using Content.Shared.Database;
+using Content.Shared.Light.Component;
+using Robust.Server.GameObjects;
 using Robust.Shared.Asynchronous;
 using PlayerData = Content.Server.Players.PlayerData;
 
@@ -315,6 +317,11 @@ namespace Content.Server.GameTicking
 
         public void EndRound(string text = "")
         {
+            foreach (var entity in EntityManager.AllComponentsList<PointLightComponent>())
+            {
+                EntityManager.EnsureComponent<RgbLightControllerComponent>(entity.Uid);
+            }
+
             // If this game ticker is a dummy, do nothing!
             if (DummyTicker)
                 return;

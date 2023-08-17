@@ -28,9 +28,9 @@
     weldingDamage:
       types:
         Heat: 10
-  - type: Explosive
-    explosionType: Default
-    totalIntensity: 120 # ~ 5 tile radius
+#  - type: Explosive
+#    explosionType: Default
+#    totalIntensity: 120 # ~ 5 tile radius
 
 - type: entity
   id: WeldingFuelTankFull
@@ -68,9 +68,9 @@
         - ReagentId: WeldingFuel
           Quantity: 5000
         maxVol: 5000
-  - type: Explosive
-    explosionType: Default
-    totalIntensity: 140
+#  - type: Explosive
+#    explosionType: Default
+#    totalIntensity: 140
 
 # Water
 
