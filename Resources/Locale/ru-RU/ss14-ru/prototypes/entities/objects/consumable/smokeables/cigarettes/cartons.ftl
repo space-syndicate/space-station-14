@@ -6,3 +6,5 @@ ent-CigCartonBlue = блок сигарет AcmeCo
     .desc = Картонная коробка, содержащая 6 пачек сигарет AcmeCo.
 ent-CigCartonBlack = блок сигарет Nomads
     .desc = Картонная коробка, содержащая 6 пачек сигарет Nomads.
+ent-CigCartonMixed = Dan's soaked smokes
+    .desc = A carton containg 3 packets of Dan's soaked smokes.
