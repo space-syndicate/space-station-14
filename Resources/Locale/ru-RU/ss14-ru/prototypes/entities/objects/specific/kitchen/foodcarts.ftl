@@ -1,6 +1,6 @@
-ent-FoodCartBase = Food Cart
-    .desc = A cart for food.
-ent-FoodCartHot = Hot Food Cart
-    .desc = Get out there and slang some dogs.
-ent-FoodCartCold = Cold Food Cart
-    .desc = It's the Ice Cream Man! It's the Ice Cream Man!
+ent-FoodCartBase = тележка еды
+    .desc = Тележка для еды.
+ent-FoodCartHot = тележка горячей еды
+    .desc = Вопреки заблуждениям, не имеет отношения к собакам.
+ent-FoodCartCold = тележка холодной еды
+    .desc = Это мороженщик! Это мороженщик!
