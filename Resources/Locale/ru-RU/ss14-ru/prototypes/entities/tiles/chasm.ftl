@@ -1,2 +1,2 @@
-ent-FloorChasmEntity = chasm
-    .desc = You can't even see the bottom.
+ent-FloorChasmEntity = бездна
+    .desc = Дна даже не видно.
