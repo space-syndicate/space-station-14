@@ -171,6 +171,20 @@
     heldPrefix: red
 
 - type: entity
+  parent: Crowbar
+  id: CrowbarSyndicate
+  name: Лом синдиката
+  description: Лом агентов синдиката, использующийся на их операциях
+  components:
+  - type: Tag
+    tags:
+    - Crowbar
+  - type: Sprite
+    state: syndc-icon
+  - type: Item
+    heldPrefix: syndc
+
+- type: entity
   name: multitool
   parent: BaseItem
   id: Multitool
