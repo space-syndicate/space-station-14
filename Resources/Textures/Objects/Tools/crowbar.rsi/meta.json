@@ -24,10 +24,21 @@
       "directions": 4
     },
     {
+      "name": "syndc-inhand-left",
+      "directions": 4
+    },
+    {
+      "name": "syndc-inhand-right",
+      "directions": 4
+    },
+    {
       "name": "icon"
     },
     {
       "name": "red-icon"
+    },
+    {
+      "name": "syndc-icon"
     },
     {
       "name": "equipped-BELT",
@@ -35,6 +46,10 @@
     },
     {
       "name": "red-equipped-BELT",
+      "directions": 4
+    },
+    {
+      "name": "syndc-equipped-BELT",
       "directions": 4
     }
   ]
