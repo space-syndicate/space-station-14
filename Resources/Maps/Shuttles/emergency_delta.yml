@@ -22,6 +22,7 @@ entities:
     - name: NTES Fulcon HG-944
       type: MetaData
     - pos: 7.1183667,4.2130127
+      parent: 1400
       type: Transform
     - chunks:
         -1,-1:
