@@ -9920,13 +9920,6 @@ entities:
       pos: 0.5,14.5
       parent: 89
       type: Transform
-- proto: AirlockPainter
-  entities:
-  - uid: 1892
-    components:
-    - pos: -56.366257,5.479856
-      parent: 89
-      type: Transform
 - proto: AirlockQuartermasterLocked
   entities:
   - uid: 4479
@@ -111507,6 +111500,13 @@ entities:
   - uid: 17300
     components:
     - pos: -3.2461767,-1.3640878
+      parent: 89
+      type: Transform
+- proto: SprayPainter
+  entities:
+  - uid: 1892
+    components:
+    - pos: -56.366257,5.479856
       parent: 89
       type: Transform
 - proto: StasisBed
