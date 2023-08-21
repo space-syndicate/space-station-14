@@ -93,6 +93,34 @@ entities:
         version: 2
         nodes:
         - node:
+            angle: -3.141592653589793 rad
+            color: '#FFFFFFFF'
+            id: Arrows
+          decals:
+            371: -14,9
+            372: -13,9
+            373: -10,9
+            374: -9,9
+        - node:
+            angle: -1.5707963267948966 rad
+            color: '#FFFFFFFF'
+            id: Arrows
+          decals:
+            359: -3,6
+            360: -3,7
+            361: -3,8
+            362: -3,18
+            363: -3,19
+            364: -3,20
+            365: -7,18
+            366: -7,19
+            367: -7,20
+            368: -7,8
+            369: -7,7
+            370: -7,6
+            375: -15,16
+            376: -15,23
+        - node:
             color: '#FFFFFFFF'
             id: Bot
           decals:
@@ -7025,16 +7053,16 @@ entities:
     - pos: -22.026522,-14.709378
       parent: 2
       type: Transform
-- proto: GeneratorPlasma
+- proto: GeneratorBasic15kW
   entities:
   - uid: 1622
     components:
-    - pos: 5.5,-2.5
+    - pos: 9.5,-2.5
       parent: 2
       type: Transform
   - uid: 1626
     components:
-    - pos: 9.5,-2.5
+    - pos: 5.5,-2.5
       parent: 2
       type: Transform
 - proto: GeneratorRTG
