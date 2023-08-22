@@ -1,5 +1,7 @@
 using System.Linq;
+using System.Text.RegularExpressions;
 using Content.Server.Fax;
+using Content.Server.Station.Systems;
 using Content.Shared.GameTicking;
 using Content.Shared.Paper;
 using Robust.Shared.Prototypes;
@@ -15,6 +17,9 @@ namespace Content.Server.Corvax.StationGoal
         [Dependency] private readonly IPrototypeManager _prototypeManager = default!;
         [Dependency] private readonly IRobustRandom _random = default!;
         [Dependency] private readonly FaxSystem _faxSystem = default!;
+        [Dependency] private readonly StationSystem _station = default!;
+
+        private static readonly Regex StationIdRegex = new(@".*-(\d+)$");
 
         public override void Initialize()
         {
@@ -40,14 +45,21 @@ namespace Content.Server.Corvax.StationGoal
         /// <returns>True if at least one fax received paper</returns>
         public bool SendStationGoal(StationGoalPrototype goal)
         {
-            var faxes = EntityManager.EntityQuery<FaxMachineComponent>();
+            var enumerator = EntityManager.EntityQueryEnumerator<FaxMachineComponent>();
             var wasSent = false;
-            foreach (var fax in faxes)
+            while (enumerator.MoveNext(out var uid, out var fax))
             {
                 if (!fax.ReceiveStationGoal) continue;
 
+                if (!TryComp<MetaDataComponent>(_station.GetOwningStation(uid), out var meta))
+                    continue;
+
+                var stationId = StationIdRegex.Match(meta.EntityName).Groups[1].Value;
+
                 var printout = new FaxPrintout(
-                    Loc.GetString(goal.Text),
+                    Loc.GetString(goal.Text,
+                        ("date", DateTime.Now.AddYears(1000).ToString("dd.MM.yyyy")),
+                        ("station", string.IsNullOrEmpty(stationId) ? "???" : stationId)),
                     Loc.GetString("station-goal-fax-paper-name"),
                     null,
                     "paper_stamp-centcom",
@@ -55,7 +67,7 @@ namespace Content.Server.Corvax.StationGoal
                     {
                         new() { StampedName = Loc.GetString("stamp-component-stamped-name-centcom"), StampedColor = Color.FromHex("#BB3232") },
                     });
-                _faxSystem.Receive(fax.Owner, printout, null, fax);
+                _faxSystem.Receive(uid, printout, null, fax);
 
                 wasSent = true;
             }

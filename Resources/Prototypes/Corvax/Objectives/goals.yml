@@ -15,9 +15,41 @@
   text: station-goal-artifacts
 
 - type: stationGoal
-  id: StationGoalBank
-  text: station-goal-bank
+  id: StationGoalStorage
+  text: station-goal-storage
 
 - type: stationGoal
   id: StationGoalZoo
   text: station-goal-zoo
+
+- type: stationGoal
+  id: StationGoalXeno
+  text: station-goal-xeno
+
+- type: stationGoal
+  id: StationGoalArea
+  text: station-goal-area
+
+- type: stationGoal
+  id: StationGoalBureaucraticError
+  text: station-goal-bureaucratic-error
+
+- type: stationGoal
+  id: StationGoalMuseum
+  text: station-goal-museum
+
+- type: stationGoal
+  id: StationGoalCombat
+  text: station-goal-combat
+
+- type: stationGoal
+  id: StationGoalSpaceArtifacts
+  text: station-goal-space-artifacts
+
+- type: stationGoal
+  id: StationGoalLabor
+  text: station-goal-labor
+
+- type: stationGoal
+  id: StationGoalLectures
+  text: station-goal-lectures
