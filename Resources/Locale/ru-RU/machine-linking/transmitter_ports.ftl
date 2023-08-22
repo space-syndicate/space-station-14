@@ -6,7 +6,6 @@ signal-port-name-off-transmitter = Выкл
 signal-port-description-off-transmitter = Этот порт задействуется всякий раз, когда передатчик выключен.
 signal-port-name-status-transmitter = Status
 signal-port-description-status-transmitter = This port is invoked with HIGH or LOW depending on the transmitter status.
-signal-port-description-logic-output = This port is invoked with HIGH or LOW depending on the transmitter status.
 signal-port-name-left = Налево
 signal-port-description-left = Этот порт задействуется всякий раз, когда рычаг перемещается в крайнее левое положение.
 signal-port-name-right = Направо
