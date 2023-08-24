@@ -14,3 +14,4 @@ comp-mind-examined-dead =
     }
 comp-mind-examined-ssd = { CAPITALIZE(SUBJECT($ent)) } рассеяно смотрит в пустоту и ни на что не реагирует. { CAPITALIZE(SUBJECT($ent)) } может скоро придти в себя.
 comp-mind-examined-dead-and-ssd = { CAPITALIZE(POSS-ADJ($ent)) } душа покинула тело и пропала. Восстановление маловероятно.
+comp-mind-examined-dead-and-irrecoverable = { CAPITALIZE(POSS-ADJ($ent)) } soul has departed and moved on. Any recovery is unlikely.

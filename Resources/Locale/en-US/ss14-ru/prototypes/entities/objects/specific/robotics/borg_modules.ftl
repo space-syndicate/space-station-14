@@ -42,6 +42,9 @@ ent-BorgModuleAdvancedTool = advanced tool cyborg module
 ent-BorgModuleGasAnalyzer = gas analyzer cyborg module
 
   .desc = { ent-['BaseBorgModuleEngineering', 'BaseProviderBorgModule'].desc }
+ent-BorgModuleConstruction = construction cyborg module
+
+  .desc = { ent-['BaseBorgModuleEngineering', 'BaseProviderBorgModule'].desc }
 ent-BorgModuleRCD = RCD cyborg module
 
   .desc = { ent-['BaseBorgModuleEngineering', 'BaseProviderBorgModule'].desc }
@@ -76,6 +79,9 @@ ent-BorgModuleMusique = musique cyborg module
 
   .desc = { ent-['BaseBorgModuleService', 'BaseProviderBorgModule'].desc }
 ent-BorgModuleGardening = gardening cyborg module
+
+  .desc = { ent-['BaseBorgModuleService', 'BaseProviderBorgModule'].desc }
+ent-BorgModuleHarvesting = harvesting cyborg module
 
   .desc = { ent-['BaseBorgModuleService', 'BaseProviderBorgModule'].desc }
 ent-BorgModuleClowning = clowning cyborg module

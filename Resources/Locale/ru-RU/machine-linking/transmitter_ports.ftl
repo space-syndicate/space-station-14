@@ -19,6 +19,7 @@ signal-port-description-timer-trigger = Этот порт активируетс
 signal-port-name-timer-start = Таймер-старт
 signal-port-description-timer-start = Этот порт активируется каждый раз, когда запускается таймер.
 signal-port-name-logic-output = Output
+signal-port-description-logic-output = This port is invoked with HIGH or LOW depending on the selected gate and inputs.
 signal-port-name-logic-output-high = High Output
 signal-port-description-logic-output-high = This port is invoked whenever the input has a rising edge.
 signal-port-name-logic-output-low = Low Output
