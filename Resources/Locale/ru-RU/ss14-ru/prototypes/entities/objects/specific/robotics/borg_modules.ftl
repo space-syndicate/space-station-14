@@ -32,6 +32,9 @@ ent-BorgModuleAdvancedTool = продвинутый инструментальн
     .desc = { ent-BaseBorgModule.desc }
 ent-BorgModuleGasAnalyzer = газоанализаторный модуль киборга
     .desc = { ent-BaseBorgModule.desc }
+ent-BorgModuleConstruction = construction cyborg module
+
+  .desc = { ent-['BaseBorgModuleEngineering', 'BaseProviderBorgModule'].desc }
 ent-BorgModuleRCD = РСУ-модуль киборга
     .desc = { ent-BaseBorgModule.desc }
 ent-BorgModuleLightReplacer = лампозаменительный модуль киборга
@@ -56,5 +59,8 @@ ent-BorgModuleMusique = музыкальный модуль киборга
     .desc = { ent-BaseBorgModule.desc }
 ent-BorgModuleGardening = садовый модуль киборга
     .desc = { ent-BaseBorgModule.desc }
+ent-BorgModuleHarvesting = harvesting cyborg module
+
+  .desc = { ent-['BaseBorgModuleService', 'BaseProviderBorgModule'].desc }
 ent-BorgModuleClowning = клоунский модуль киборга
     .desc = { ent-BaseBorgModule.desc }

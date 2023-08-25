@@ -9,3 +9,6 @@ ent-PartRodMetal10 = metal rod
 ent-PartRodMetal1 = metal rod
     .suffix = Single
     .desc = { ent-PartRodMetal.desc }
+ent-PartRodMetalLingering0 = { ent-PartRodMetal }
+    .suffix = Lingering, 0
+    .desc = { ent-PartRodMetal.desc }
