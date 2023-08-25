@@ -8,10 +8,10 @@ using Robust.Server.GameObjects;
 using Robust.Shared.Map.Components;
 using Robust.Shared.Utility;
 
-namespace Content.Server.Objectives.Conditions
+namespace Content.Server.Corvax.Objectives.Conditions
 {
     [DataDefinition]
-    public sealed class HijackShuttleCondition : IObjectiveCondition
+    public sealed partial class HijackShuttleCondition : IObjectiveCondition
     {
         private Mind.Mind? _mind;
 
