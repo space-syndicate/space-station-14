@@ -58,13 +58,13 @@ namespace Content.Server.Corvax.Objectives.Conditions
                     continue;
 
                 var isPersonDead = mindSystem.IsCharacterDeadIc(mind.Mind);
-                if (isPersonDead)
-                    continue;
+                if (!isPersonDead)
+                    return false; // Fail if some crew alive
 
                 var isPersonCuffed =
                     entMan.TryGetComponent<CuffableComponent>(mind.Mind.OwnedEntity, out var cuffed)
                     && cuffed.CuffedHandCount == 0;
-                if (isPersonCuffed)
+                if (!isPersonCuffed)
                     return false; // Fail if some crew not cuffed
             }
             // TODO: Allow pets?
