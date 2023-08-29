@@ -9,6 +9,7 @@ guide-entry-networking = Сетевые соединения
 guide-entry-network-configurator = Конфигуратор сетей
 guide-entry-access-configurator = Конфигуратор доступа
 guide-entry-power = Электропитание
+guide-entry-portable-generator = Portable Generators
 guide-entry-ame = Двигатель антиматерии (ДАМ)
 guide-entry-singularity = Сингулярный двигатель
 guide-entry-teg = Термоэлектрический генератор (ТЭГ)
