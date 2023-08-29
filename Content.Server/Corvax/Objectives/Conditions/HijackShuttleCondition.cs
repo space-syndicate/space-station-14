@@ -8,14 +8,14 @@ using Robust.Server.GameObjects;
 using Robust.Shared.Map.Components;
 using Robust.Shared.Utility;
 
-namespace Content.Server.Objectives.Conditions
+namespace Content.Server.Corvax.Objectives.Conditions
 {
     [DataDefinition]
-    public sealed class HijackShuttleCondition : IObjectiveCondition
+    public sealed partial class HijackShuttleCondition : IObjectiveCondition
     {
-        private Mind.Mind? _mind;
+        private MindComponent _mind;
 
-        public IObjectiveCondition GetAssigned(Mind.Mind mind)
+        public IObjectiveCondition GetAssigned(EntityUid mindId, MindComponent mind)
         {
             return new HijackShuttleCondition
             {
@@ -38,6 +38,7 @@ namespace Content.Server.Objectives.Conditions
             var transformSys = entMan.EntitySysManager.GetEntitySystem<TransformSystem>();
             var lookupSys = entMan.EntitySysManager.GetEntitySystem<EntityLookupSystem>();
             var mindSystem = entMan.EntitySysManager.GetEntitySystem<MindSystem>();
+            var roleSystem = entMan.EntitySysManager.GetEntitySystem<RoleSystem>();
 
             if (!entMan.TryGetComponent<MapGridComponent>(shuttle, out var shuttleGrid) ||
                 !entMan.TryGetComponent<TransformComponent>(shuttle, out var shuttleXform))
@@ -50,18 +51,24 @@ namespace Content.Server.Objectives.Conditions
             var entities = lookupSys.GetEntitiesIntersecting(shuttleXform.MapID, shuttleAabb);
             foreach (var entity in entities)
             {
-                if (!entMan.TryGetComponent<MindContainerComponent>(entity, out var mind) || mind.Mind == null)
+                if (!mindSystem.TryGetMind(entity, out var mindId, out var mind))
                     continue;
 
-                var isPersonTraitor = mindSystem.HasRole<TraitorRole>(mind.Mind);
-                if (!isPersonTraitor)
-                {
-                    var isPersonCuffed =
-                        entMan.TryGetComponent<CuffableComponent>(mind.Mind.OwnedEntity, out var cuffed)
-                        && cuffed.CuffedHandCount == 0;
-                    if (isPersonCuffed)
-                        return false; // Fail if some crew not cuffed
-                }
+                var isPersonTraitor = roleSystem.MindHasRole<TraitorRoleComponent>(mindId);
+                if (isPersonTraitor)
+                    continue;
+
+                var isPersonDead = mindSystem.IsCharacterDeadIc(mind);
+                if (isPersonDead)
+                    continue;
+
+                var isPersonCuffed =
+                    entMan.TryGetComponent<CuffableComponent>(mindId, out var cuffed)
+                    && cuffed.CuffedHandCount == 0;
+                if (isPersonCuffed)
+                    continue;
+
+                return false;
             }
             // TODO: Allow pets?
 
@@ -79,7 +86,7 @@ namespace Content.Server.Objectives.Conditions
                     return 0f;
 
                 var shuttleHijacked = false;
-                var agentIsAlive = mindSystem.IsCharacterDeadIc(_mind);
+                var agentIsAlive = !mindSystem.IsCharacterDeadIc(_mind);
                 var agentIsFree = !(entMan.TryGetComponent<CuffableComponent>(_mind.OwnedEntity, out var cuffed)
                                      && cuffed.CuffedHandCount > 0); // You're not escaping if you're restrained!
 

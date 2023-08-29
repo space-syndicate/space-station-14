@@ -1,6 +1,9 @@
 ent-CigPackBase = cigarette pack
 
   .desc = { ent-['BaseStorageItem', 'BaseBagOpenClose'].desc }
+ent-CigPackMixedBase = soaked cigarette pack
+
+  .desc = { ent-['BaseStorageItem', 'BaseBagOpenClose'].desc }
 ent-CigPackGreen = Spessman's Smokes packet
     .desc = A label on the packaging reads, Wouldn't a slow death make a change?
 ent-CigPackRed = DromedaryCo packet
@@ -11,3 +14,9 @@ ent-CigPackBlack = Nomads packet
     .desc = Nomads's extra strong, for when your life is more extra hard.
 ent-CigPackSyndicate = Interdyne herbals packet
     .desc = Elite cigarettes for elite syndicate agents. Infused with medicine for when you need to do more than calm your nerves.
+ent-CigPackMixedMedical = Dan's soaked smokes
+    .desc = Dan worked with NT chemistry to dispose of excess chemicals, ENJOY.
+ent-CigPackMixed = Dan's soaked smokes
+    .desc = Dan worked with NT chemistry to dispose of excess chemicals, ENJOY.
+ent-CigPackMixedNasty = Dan's soaked smokes
+    .desc = Dan worked with NT chemistry to dispose of excess chemicals, ENJOY.

@@ -1,7 +1,8 @@
-ent-HandheldHealthAnalyzerUnpowered = health analyzer
-    .desc = A hand-held body scanner capable of distinguishing vital signs of the subject.
-ent-HandheldHealthAnalyzer = анализатор здоровья
+ent-HandheldHealthAnalyzerUnpowered = анализатор здоровья
     .desc = Ручной сканер тела, способный определять жизненные показатели пациента.
-ent-HandheldHealthAnalyzerEmpty = { ent-HandheldHealthAnalyzer }
+ent-HandheldHealthAnalyzer = { ent-HandheldHealthAnalyzerUnpowered }
+    .suffix = Заряжен
+    .desc = { ent-HandheldHealthAnalyzerUnpowered.desc }
+ent-HandheldHealthAnalyzerEmpty = { ent-HandheldHealthAnalyzerUnpowered }
     .suffix = Пустой
-    .desc = { ent-HandheldHealthAnalyzer.desc }
+    .desc = { ent-HandheldHealthAnalyzerUnpowered.desc }

@@ -46,8 +46,12 @@
     stopSearchVerbPopup: pai-system-stopped-searching
   - type: Examiner
   - type: IntrinsicRadioReceiver
+  - type: IntrinsicRadioTransmitter
+    channels:
+    - Binary
   - type: ActiveRadio
     channels:
+    - Binary
     - Common
   - type: DoAfter
   - type: Actions
@@ -56,6 +60,7 @@
   - type: TTS # Corvax-TTS
     voice: TrainingRobot
   - type: Speech
+    speechVerb: Robotic
     speechSounds: Pai
     # This has to be installed because otherwise they're not "alive",
     #  so they can ghost and come back.
@@ -84,6 +89,12 @@
     - state: pai-base
     - state: syndicate-pai-off-overlay
       shader: unshaded
+  - type: ToggleableGhostRole
+    roleName: pai-system-role-name-syndicate
+    roleDescription: pai-system-role-description-syndicate
+  - type: IntrinsicRadioTransmitter
+    channels:
+    - Syndicate
   - type: ActiveRadio
     channels:
     - Syndicate

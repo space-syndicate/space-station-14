@@ -1,6 +1,6 @@
-action-name-crit-succumb = Succumb
-action-description-crit-succumb = Accept your fate.
-action-name-crit-fake-death = Fake Death
-action-description-crit-fake-death = Pretend to take your final breath while staying alive.
-action-name-crit-last-words = Say Last Words
-action-description-crit-last-words = Whisper your last words to anyone nearby, and then succumb to your fate. You only have 30 characters to work with.
+action-name-crit-succumb = Сдаться
+action-description-crit-succumb = Смириться с судьбой.
+action-name-crit-fake-death = Притвориться мёртвым
+action-description-crit-fake-death = Притвориться, что вы делаете свой последний вдох, оставаясь при этом живым.
+action-name-crit-last-words = Произнести последние слова
+action-description-crit-last-words = Прошепчите свои последние слова всем, кто находится поблизости, а затем сдайтесь на милость судьбы. Вам доступно только 30 символов.
