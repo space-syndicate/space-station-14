@@ -1,28 +1,28 @@
 - type: entity
   save: false
-  name: Urist McFox
+  name: Urist McVulp
   parent: BaseMobOrganic
-  id: BaseMobHumanoidFox
+  id: BaseMobVulpkanin
   abstract: true
   components:
   - type: HumanoidAppearance
-    species: HumanoidFoxes
+    species: Vulpkanin
   - type: Hunger
   - type: Thirst
   - type: Icon
-    sprite: Mobs/Species/HumanoidFox/parts.rsi
+    sprite: Corvax/Mobs/Species/Vulpkanin/parts.rsi
     state: full
   - type: Body
-    prototype: HumanoidFox
+    prototype: Vulpkanin
     requiredLegs: 2
 
 - type: entity
   save: false
   name: Urist McHands
   parent: MobHumanDummy
-  id: MobHumanoidFoxDummy
+  id: MobVulpkaninDummy
   noSpawn: true
-  description: A dummy fox meant to be used in character setup.
+  description: A dummy vulpkanin meant to be used in character setup.
   components:
   - type: HumanoidAppearance
-    species: HumanoidFoxes
+    species: Vulpkanin

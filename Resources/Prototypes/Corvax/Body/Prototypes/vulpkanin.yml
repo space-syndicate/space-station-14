@@ -1,21 +1,21 @@
 ﻿- type: body
-  name: "reptilian"
-  id: HumanoidFox
+  name: "vulpkanin"
+  id: Vulpkanin
   root: torso
   slots:
     head:
-      part: HeadHumanoidFox
+      part: HeadVulpkanin
       connections:
       - torso
       organs:
         brain: OrganHumanBrain
         eyes: OrganHumanEyes
     torso:
-      part: TorsoHumanoidFox
+      part: TorsoVulpkanin
       organs:
         heart: OrganAnimalHeart
         lungs: OrganHumanLungs
-        stomach: OrganHumanoidFoxStomach
+        stomach: OrganVulpkaninStomach
         liver: OrganAnimalLiver
         kidneys: OrganHumanKidneys
       connections:
@@ -24,26 +24,26 @@
       - left leg
       - right leg
     right arm:
-      part: RightArmHumanoidFox
+      part: RightArmVulpkanin
       connections:
       - right hand
     left arm:
-      part: LeftArmHumanoidFox
+      part: LeftArmVulpkanin
       connections:
       - left hand
     right hand:
-      part: RightHandHumanoidFox
+      part: RightHandVulpkanin
     left hand:
-      part: LeftHandHumanoidFox
+      part: LeftHandVulpkanin
     right leg:
-      part: RightLegHumanoidFox
+      part: RightLegVulpkanin
       connections:
       - right foot
     left leg:
-      part: LeftLegHumanoidFox
+      part: LeftLegVulpkanin
       connections:
       - left foot
     right foot:
-      part: RightFootHumanoidFox
+      part: RightFootVulpkanin
     left foot:
-      part: LeftFootHumanoidFox
+      part: LeftFootVulpkanin

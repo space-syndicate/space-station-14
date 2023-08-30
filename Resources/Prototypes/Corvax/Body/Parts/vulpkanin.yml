@@ -1,9 +1,9 @@
 # TODO: Add descriptions (many)
 # TODO BODY: Part damage
 - type: entity
-  id: PartHumanoidFox
+  id: PartVulpkanin
   parent: BaseItem
-  name: "fox body part"
+  name: "vulpkanin body part"
   abstract: true
   components:
   - type: Damageable
@@ -18,31 +18,31 @@
       - Trash
 
 - type: entity
-  id: TorsoHumanoidFox
-  name: "fox torso"
-  parent: PartHumanoidFox
+  id: TorsoVulpkanin
+  name: "vulpkanin torso"
+  parent: PartVulpkanin
   components:
   - type: Sprite
     netsync: false
-    sprite: Mobs/Species/HumanoidFox/parts.rsi
+    sprite: Corvax/Mobs/Species/Vulpkanin/parts.rsi
     state: "torso_m"
   - type: Icon
-    sprite: Mobs/Species/HumanoidFox/parts.rsi
+    sprite: Corvax/Mobs/Species/Vulpkanin/parts.rsi
     state: "torso_m"
   - type: BodyPart
     partType: Torso
 
 - type: entity
-  id: HeadHumanoidFox
-  name: "fox head"
-  parent: PartHumanoidFox
+  id: HeadVulpkanin
+  name: "vulpkanin head"
+  parent: PartVulpkanin
   components:
   - type: Sprite
     netsync: false
-    sprite: Mobs/Species/HumanoidFox/parts.rsi
+    sprite: Corvax/Mobs/Species/Vulpkanin/parts.rsi
     state: "head_m"
   - type: Icon
-    sprite: Mobs/Species/HumanoidFox/parts.rsi
+    sprite: Corvax/Mobs/Species/Vulpkanin/parts.rsi
     state: "head_m"
   - type: BodyPart
     partType: Head
@@ -59,80 +59,80 @@
       - Head
 
 - type: entity
-  id: LeftArmHumanoidFox
-  name: "left fox arm"
-  parent: PartHumanoidFox
+  id: LeftArmVulpkanin
+  name: "left vulpkanin arm"
+  parent: PartVulpkanin
   components:
   - type: Sprite
     netsync: false
-    sprite: Mobs/Species/HumanoidFox/parts.rsi
+    sprite: Corvax/Mobs/Species/Vulpkanin/parts.rsi
     state: "l_arm"
   - type: Icon
-    sprite: Mobs/Species/HumanoidFox/parts.rsi
+    sprite: Corvax/Mobs/Species/Vulpkanin/parts.rsi
     state: "l_arm"
   - type: BodyPart
     partType: Arm
     symmetry: Left
 
 - type: entity
-  id: RightArmHumanoidFox
-  name: "right fox arm"
-  parent: PartHumanoidFox
+  id: RightArmVulpkanin
+  name: "right vulpkanin arm"
+  parent: PartVulpkanin
   components:
   - type: Sprite
     netsync: false
-    sprite: Mobs/Species/HumanoidFox/parts.rsi
+    sprite: Corvax/Mobs/Species/Vulpkanin/parts.rsi
     state: "r_arm"
   - type: Icon
-    sprite: Mobs/Species/HumanoidFox/parts.rsi
+    sprite: Corvax/Mobs/Species/Vulpkanin/parts.rsi
     state: "r_arm"
   - type: BodyPart
     partType: Arm
     symmetry: Right
 
 - type: entity
-  id: LeftHandHumanoidFox
-  name: "left fox hand"
-  parent: PartHumanoidFox
+  id: LeftHandVulpkanin
+  name: "left vulpkanin hand"
+  parent: PartVulpkanin
   components:
   - type: Sprite
     netsync: false
-    sprite: Mobs/Species/HumanoidFox/parts.rsi
+    sprite: Corvax/Mobs/Species/Vulpkanin/parts.rsi
     state: "l_hand"
   - type: Icon
-    sprite: Mobs/Species/HumanoidFox/parts.rsi
+    sprite: Corvax/Mobs/Species/Vulpkanin/parts.rsi
     state: "l_hand"
   - type: BodyPart
     partType: Hand
     symmetry: Left
 
 - type: entity
-  id: RightHandHumanoidFox
-  name: "right fox hand"
-  parent: PartHumanoidFox
+  id: RightHandVulpkanin
+  name: "right vulpkanin hand"
+  parent: PartVulpkanin
   components:
   - type: Sprite
     netsync: false
-    sprite: Mobs/Species/HumanoidFox/parts.rsi
+    sprite: Corvax/Mobs/Species/Vulpkanin/parts.rsi
     state: "r_hand"
   - type: Icon
-    sprite: Mobs/Species/HumanoidFox/parts.rsi
+    sprite: Corvax/Mobs/Species/Vulpkanin/parts.rsi
     state: "r_hand"
   - type: BodyPart
     partType: Hand
     symmetry: Right
 
 - type: entity
-  id: LeftLegHumanoidFox
-  name: "left fox leg"
-  parent: PartHumanoidFox
+  id: LeftLegVulpkanin
+  name: "left vulpkanin leg"
+  parent: PartVulpkanin
   components:
   - type: Sprite
     netsync: false
-    sprite: Mobs/Species/HumanoidFox/parts.rsi
+    sprite: Corvax/Mobs/Species/Vulpkanin/parts.rsi
     state: "l_leg"
   - type: Icon
-    sprite: Mobs/Species/HumanoidFox/parts.rsi
+    sprite: Corvax/Mobs/Species/Vulpkanin/parts.rsi
     state: "l_leg"
   - type: BodyPart
     partType: Leg
@@ -142,16 +142,16 @@
     baseSprintSpeed : 4.5
 
 - type: entity
-  id: RightLegHumanoidFox
-  name: "right fox leg"
-  parent: PartHumanoidFox
+  id: RightLegVulpkanin
+  name: "right vulpkanin leg"
+  parent: PartVulpkanin
   components:
   - type: Sprite
     netsync: false
-    sprite: Mobs/Species/HumanoidFox/parts.rsi
+    sprite: Corvax/Mobs/Species/Vulpkanin/parts.rsi
     state: "r_leg"
   - type: Icon
-    sprite: Mobs/Species/HumanoidFox/parts.rsi
+    sprite: Corvax/Mobs/Species/Vulpkanin/parts.rsi
     state: "r_leg"
   - type: BodyPart
     partType: Leg
@@ -161,32 +161,32 @@
     baseSprintSpeed : 4.5
 
 - type: entity
-  id: LeftFootHumanoidFox
-  name: "left fox foot"
-  parent: PartHumanoidFox
+  id: LeftFootVulpkanin
+  name: "left vulpkanin foot"
+  parent: PartVulpkanin
   components:
   - type: Sprite
     netsync: false
-    sprite: Mobs/Species/HumanoidFox/parts.rsi
+    sprite: Corvax/Mobs/Species/Vulpkanin/parts.rsi
     state: "l_foot"
   - type: Icon
-    sprite: Mobs/Species/HumanoidFox/parts.rsi
+    sprite: Corvax/Mobs/Species/Vulpkanin/parts.rsi
     state: "l_foot"
   - type: BodyPart
     partType: Foot
     symmetry: Left
 
 - type: entity
-  id: RightFootHumanoidFox
-  name: "right fox foot"
-  parent: PartHumanoidFox
+  id: RightFootVulpkanin
+  name: "right vulpkanin foot"
+  parent: PartVulpkanin
   components:
   - type: Sprite
     netsync: false
-    sprite: Mobs/Species/HumanoidFox/parts.rsi
+    sprite: Corvax/Mobs/Species/Vulpkanin/parts.rsi
     state: "r_foot"
   - type: Icon
-    sprite: Mobs/Species/HumanoidFox/parts.rsi
+    sprite: Corvax/Mobs/Species/Vulpkanin/parts.rsi
     state: "r_foot"
   - type: BodyPart
     partType: Foot
