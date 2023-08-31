@@ -1,4 +1,4 @@
-death-match-title = Бой насмерть
+death-match-title = Смертельная битва
 death-match-description = Убейте всё, что движется!
 death-match-name-player = [bold]{ $name }[/bold] ([italic]{ $username }[/italic])
 death-match-name-npc = [bold]{ $name }[/bold]
