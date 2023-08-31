@@ -247,9 +247,9 @@ reagent-effect-guidebook-make-sentient =
     } употребившего разумным
 reagent-effect-guidebook-make-polymorph =
     { $chance ->
-        [1] Polymorphs
-       *[other] polymorph
-    } the metabolizer into a { $entityname }
+        [1] Превращает
+       *[other] превращают
+    } употребившего в { $entityname }
 reagent-effect-guidebook-modify-bleed-amount =
     { $chance ->
         [1]
