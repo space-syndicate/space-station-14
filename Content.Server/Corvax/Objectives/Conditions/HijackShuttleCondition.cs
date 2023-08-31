@@ -1,11 +1,12 @@
 using Content.Server.Mind;
-using Content.Server.Mind.Components;
-using Content.Server.Objectives.Interfaces;
 using Content.Server.Roles;
 using Content.Server.Shuttles.Components;
 using Content.Shared.Cuffs.Components;
-using Robust.Server.GameObjects;
-using Robust.Shared.Map.Components;
+using Content.Shared.Humanoid;
+using Content.Shared.Mind;
+using Content.Shared.Mobs.Systems;
+using Content.Shared.Objectives.Interfaces;
+using Robust.Shared.Player;
 using Robust.Shared.Utility;
 
 namespace Content.Server.Corvax.Objectives.Conditions
@@ -14,12 +15,14 @@ namespace Content.Server.Corvax.Objectives.Conditions
     public sealed partial class HijackShuttleCondition : IObjectiveCondition
     {
         private MindComponent _mind;
+        private EntityUid _mindId;
 
         public IObjectiveCondition GetAssigned(EntityUid mindId, MindComponent mind)
         {
             return new HijackShuttleCondition
             {
                 _mind = mind,
+                _mindId = mindId,
             };
         }
 
@@ -29,48 +32,47 @@ namespace Content.Server.Corvax.Objectives.Conditions
 
         public SpriteSpecifier Icon => new SpriteSpecifier.Rsi(new ResPath("Objects/Tools/emag.rsi"), "icon");
 
-        private bool IsShuttleHijacked(TransformComponent agentXform, EntityUid? shuttle)
+        private bool IsShuttleHijacked(EntityUid shuttleGridId)
         {
-            if (shuttle == null)
-                return false;
-
             var entMan = IoCManager.Resolve<IEntityManager>();
-            var transformSys = entMan.EntitySysManager.GetEntitySystem<TransformSystem>();
-            var lookupSys = entMan.EntitySysManager.GetEntitySystem<EntityLookupSystem>();
-            var mindSystem = entMan.EntitySysManager.GetEntitySystem<MindSystem>();
-            var roleSystem = entMan.EntitySysManager.GetEntitySystem<RoleSystem>();
+            var mindSystem = entMan.System<MindSystem>();
+            var roleSystem = entMan.System<RoleSystem>();
+            var mobStateSystem = entMan.System<MobStateSystem>();
 
-            if (!entMan.TryGetComponent<MapGridComponent>(shuttle, out var shuttleGrid) ||
-                !entMan.TryGetComponent<TransformComponent>(shuttle, out var shuttleXform))
+            var agentOnShuttle = false;
+            var gridPlayers = Filter.BroadcastGrid(shuttleGridId).Recipients;
+            foreach (var player in gridPlayers)
             {
-                return false;
-            }
+                if (!player.AttachedEntity.HasValue ||
+                    !mindSystem.TryGetMind(player.AttachedEntity.Value, out var mindId, out _))
+                    continue;
 
-            var shuttleAabb = transformSys.GetWorldMatrix(shuttleXform).TransformBox(shuttleGrid.LocalAABB);
-            var agentOnShuttle = shuttleAabb.Contains(transformSys.GetWorldPosition(agentXform));
-            var entities = lookupSys.GetEntitiesIntersecting(shuttleXform.MapID, shuttleAabb);
-            foreach (var entity in entities)
-            {
-                if (!mindSystem.TryGetMind(entity, out var mindId, out var mind))
+                if (mindId == _mindId)
+                {
+                    agentOnShuttle = true;
+                    continue;
+                }
+
+                var isHumanoid = entMan.HasComponent<HumanoidAppearanceComponent>(player.AttachedEntity.Value);
+                if (!isHumanoid) // Only humanoids count as enemies
                     continue;
 
                 var isPersonTraitor = roleSystem.MindHasRole<TraitorRoleComponent>(mindId);
-                if (isPersonTraitor)
+                if (isPersonTraitor) // Allow traitors
                     continue;
 
-                var isPersonDead = mindSystem.IsCharacterDeadIc(mind);
-                if (isPersonDead)
+                var isPersonIncapacitated = mobStateSystem.IsIncapacitated(player.AttachedEntity.Value);
+                if (isPersonIncapacitated) // Allow dead and crit
                     continue;
 
                 var isPersonCuffed =
-                    entMan.TryGetComponent<CuffableComponent>(mindId, out var cuffed)
-                    && cuffed.CuffedHandCount == 0;
-                if (isPersonCuffed)
+                    entMan.TryGetComponent<CuffableComponent>(player.AttachedEntity.Value, out var cuffed)
+                    && cuffed.CuffedHandCount > 0;
+                if (isPersonCuffed) // Allow handcuffed
                     continue;
 
                 return false;
             }
-            // TODO: Allow pets?
 
             return agentOnShuttle;
         }
@@ -79,11 +81,7 @@ namespace Content.Server.Corvax.Objectives.Conditions
         {
             get {
                 var entMan = IoCManager.Resolve<IEntityManager>();
-                var mindSystem = entMan.EntitySysManager.GetEntitySystem<MindSystem>();
-
-                if (_mind?.OwnedEntity == null
-                    || !entMan.TryGetComponent<TransformComponent>(_mind.OwnedEntity, out var xform))
-                    return 0f;
+                var mindSystem = entMan.System<MindSystem>();
 
                 var shuttleHijacked = false;
                 var agentIsAlive = !mindSystem.IsCharacterDeadIc(_mind);
@@ -94,7 +92,10 @@ namespace Content.Server.Corvax.Objectives.Conditions
                 var query = entMan.AllEntityQueryEnumerator<StationEmergencyShuttleComponent>();
                 while (query.MoveNext(out var comp))
                 {
-                    if (IsShuttleHijacked(xform, comp.EmergencyShuttle))
+                    if (comp.EmergencyShuttle == null)
+                        continue;
+
+                    if (IsShuttleHijacked(comp.EmergencyShuttle.Value))
                     {
                         shuttleHijacked = true;
                         break;
@@ -105,7 +106,7 @@ namespace Content.Server.Corvax.Objectives.Conditions
             }
         }
 
-        public float Difficulty => 1.3f;
+        public float Difficulty => 2.75f;
 
         public bool Equals(IObjectiveCondition? other)
         {
