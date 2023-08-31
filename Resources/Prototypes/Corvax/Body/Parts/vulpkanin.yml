@@ -2,192 +2,124 @@
 # TODO BODY: Part damage
 - type: entity
   id: PartVulpkanin
-  parent: BaseItem
+  parent: [BaseItem, BasePart]
   name: "vulpkanin body part"
   abstract: true
   components:
-  - type: Damageable
-    damageContainer: Biological
-  - type: BodyPart
-  - type: ContainerContainer
-    containers:
-      bodypart: !type:Container
-        ents: []
-  - type: Tag
-    tags:
-      - Trash
+    - type: Extractable
+      juiceSolution:
+        reagents:
+          - ReagentId: Fat
+            Quantity: 3
+          - ReagentId: Blood
+            Quantity: 10
 
 - type: entity
   id: TorsoVulpkanin
   name: "vulpkanin torso"
-  parent: PartVulpkanin
+  parent: [PartVulpkanin, BaseTorso]
   components:
-  - type: Sprite
-    netsync: false
-    sprite: Corvax/Mobs/Species/Vulpkanin/parts.rsi
-    state: "torso_m"
-  - type: Icon
-    sprite: Corvax/Mobs/Species/Vulpkanin/parts.rsi
-    state: "torso_m"
-  - type: BodyPart
-    partType: Torso
+    - type: Sprite
+      sprite: Corvax/Mobs/Species/Vulpkanin/parts.rsi
+      state: "torso_m"
+    - type: Extractable
+      juiceSolution:
+        reagents:
+          - ReagentId: Fat
+            Quantity: 10
+          - ReagentId: Blood
+            Quantity: 20
 
 - type: entity
   id: HeadVulpkanin
   name: "vulpkanin head"
-  parent: PartVulpkanin
+  parent: [PartVulpkanin, BaseHead]
   components:
-  - type: Sprite
-    netsync: false
-    sprite: Corvax/Mobs/Species/Vulpkanin/parts.rsi
-    state: "head_m"
-  - type: Icon
-    sprite: Corvax/Mobs/Species/Vulpkanin/parts.rsi
-    state: "head_m"
-  - type: BodyPart
-    partType: Head
-    vital: true
-  - type: Input
-    context: "ghost"
-  - type: MovementSpeedModifier
-    baseWalkSpeed: 0
-    baseSprintSpeed: 0
-  - type: InputMover
-  - type: GhostOnMove
-  - type: Tag
-    tags:
-      - Head
+    - type: Sprite
+      sprite: Corvax/Mobs/Species/Vulpkanin/parts.rsi
+      state: "head_m"
+    - type: Extractable
+      juiceSolution:
+        reagents:
+          - ReagentId: Fat
+            Quantity: 5
+          - ReagentId: Blood
+            Quantity: 10
 
 - type: entity
   id: LeftArmVulpkanin
   name: "left vulpkanin arm"
-  parent: PartVulpkanin
+  parent: [PartVulpkanin, BaseLeftArm]
   components:
-  - type: Sprite
-    netsync: false
-    sprite: Corvax/Mobs/Species/Vulpkanin/parts.rsi
-    state: "l_arm"
-  - type: Icon
-    sprite: Corvax/Mobs/Species/Vulpkanin/parts.rsi
-    state: "l_arm"
-  - type: BodyPart
-    partType: Arm
-    symmetry: Left
+    - type: Sprite
+      sprite: Corvax/Mobs/Species/Vulpkanin/parts.rsi
+      state: "l_arm"
 
 - type: entity
   id: RightArmVulpkanin
   name: "right vulpkanin arm"
-  parent: PartVulpkanin
+  parent: [PartVulpkanin, BaseRightArm]
   components:
-  - type: Sprite
-    netsync: false
-    sprite: Corvax/Mobs/Species/Vulpkanin/parts.rsi
-    state: "r_arm"
-  - type: Icon
-    sprite: Corvax/Mobs/Species/Vulpkanin/parts.rsi
-    state: "r_arm"
-  - type: BodyPart
-    partType: Arm
-    symmetry: Right
+    - type: Sprite
+      sprite: Corvax/Mobs/Species/Vulpkanin/parts.rsi
+      state: "r_arm"
 
 - type: entity
   id: LeftHandVulpkanin
   name: "left vulpkanin hand"
-  parent: PartVulpkanin
+  parent: [PartVulpkanin, BaseLeftHand]
   components:
-  - type: Sprite
-    netsync: false
-    sprite: Corvax/Mobs/Species/Vulpkanin/parts.rsi
-    state: "l_hand"
-  - type: Icon
-    sprite: Corvax/Mobs/Species/Vulpkanin/parts.rsi
-    state: "l_hand"
-  - type: BodyPart
-    partType: Hand
-    symmetry: Left
+    - type: Sprite
+      sprite: Corvax/Mobs/Species/Vulpkanin/parts.rsi
+      state: "l_hand"
 
 - type: entity
   id: RightHandVulpkanin
   name: "right vulpkanin hand"
-  parent: PartVulpkanin
+  parent: [PartVulpkanin, BaseRightHand]
   components:
-  - type: Sprite
-    netsync: false
-    sprite: Corvax/Mobs/Species/Vulpkanin/parts.rsi
-    state: "r_hand"
-  - type: Icon
-    sprite: Corvax/Mobs/Species/Vulpkanin/parts.rsi
-    state: "r_hand"
-  - type: BodyPart
-    partType: Hand
-    symmetry: Right
+    - type: Sprite
+      sprite: Corvax/Mobs/Species/Vulpkanin/parts.rsi
+      state: "r_hand"
 
 - type: entity
   id: LeftLegVulpkanin
   name: "left vulpkanin leg"
-  parent: PartVulpkanin
+  parent: [PartVulpkanin, BaseLeftLeg]
   components:
-  - type: Sprite
-    netsync: false
-    sprite: Corvax/Mobs/Species/Vulpkanin/parts.rsi
-    state: "l_leg"
-  - type: Icon
-    sprite: Corvax/Mobs/Species/Vulpkanin/parts.rsi
-    state: "l_leg"
-  - type: BodyPart
-    partType: Leg
-    symmetry: Left
-  - type: MovementSpeedModifier
-    baseWalkSpeed : 2.7
-    baseSprintSpeed : 4.5
+    - type: Sprite
+      sprite: Corvax/Mobs/Species/Vulpkanin/parts.rsi
+      state: "l_leg"
+    - type: MovementBodyPart
+      walkSpeed : 2.7
+      sprintSpeed : 4.5
 
 - type: entity
   id: RightLegVulpkanin
   name: "right vulpkanin leg"
-  parent: PartVulpkanin
+  parent: [PartVulpkanin, BaseRightLeg]
   components:
-  - type: Sprite
-    netsync: false
-    sprite: Corvax/Mobs/Species/Vulpkanin/parts.rsi
-    state: "r_leg"
-  - type: Icon
-    sprite: Corvax/Mobs/Species/Vulpkanin/parts.rsi
-    state: "r_leg"
-  - type: BodyPart
-    partType: Leg
-    symmetry: Right
-  - type: MovementSpeedModifier
-    baseWalkSpeed : 2.7
-    baseSprintSpeed : 4.5
+    - type: Sprite
+      sprite: Corvax/Mobs/Species/Vulpkanin/parts.rsi
+      state: "r_leg"
+    - type: MovementBodyPart
+      walkSpeed : 2.7
+      sprintSpeed : 4.5
 
 - type: entity
   id: LeftFootVulpkanin
   name: "left vulpkanin foot"
-  parent: PartVulpkanin
+  parent: [PartVulpkanin, BaseLeftFoot]
   components:
-  - type: Sprite
-    netsync: false
-    sprite: Corvax/Mobs/Species/Vulpkanin/parts.rsi
-    state: "l_foot"
-  - type: Icon
-    sprite: Corvax/Mobs/Species/Vulpkanin/parts.rsi
-    state: "l_foot"
-  - type: BodyPart
-    partType: Foot
-    symmetry: Left
+    - type: Sprite
+      sprite: Corvax/Mobs/Species/Vulpkanin/parts.rsi
+      state: "l_foot"
 
 - type: entity
   id: RightFootVulpkanin
   name: "right vulpkanin foot"
-  parent: PartVulpkanin
+  parent: [PartVulpkanin, BaseRightFoot]
   components:
-  - type: Sprite
-    netsync: false
-    sprite: Corvax/Mobs/Species/Vulpkanin/parts.rsi
-    state: "r_foot"
-  - type: Icon
-    sprite: Corvax/Mobs/Species/Vulpkanin/parts.rsi
-    state: "r_foot"
-  - type: BodyPart
-    partType: Foot
-    symmetry: Right
+    - type: Sprite
+      sprite: Corvax/Mobs/Species/Vulpkanin/parts.rsi
+      state: "r_foot"
