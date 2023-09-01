@@ -47,6 +47,7 @@ namespace Content.Server.Corvax.Objectives.Conditions
                     !mindSystem.TryGetMind(player.AttachedEntity.Value, out var mindId, out _))
                     continue;
 
+
                 if (mindId == _mindId)
                 {
                     agentOnShuttle = true;
