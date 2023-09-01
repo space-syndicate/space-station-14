@@ -105,7 +105,6 @@
     sprite: Clothing/Eyes/Glasses/sunglasses.rsi
   - type: FlashImmunity
   - type: EyeProtection
-    protectionTime: 5
   - type: Tag
     tags:
     - HamsterWearable
@@ -123,7 +122,6 @@
     sprite: Clothing/Eyes/Glasses/secglasses.rsi
   - type: FlashImmunity
   - type: EyeProtection
-  - type: ShowSecurityIcons
   - type: Tag
     tags:
     - HamsterWearable
@@ -144,7 +142,6 @@
     sprite: Clothing/Eyes/Glasses/mercglasses.rsi
   - type: FlashImmunity
   - type: EyeProtection
-    protectionTime: 5
 
 #Make a scanner category when these actually function and we get the trayson
 - type: entity
