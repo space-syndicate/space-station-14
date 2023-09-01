@@ -65,7 +65,8 @@ namespace Content.IntegrationTests.Tests
             "Saltern",
             "Core",
             "Marathon",
-            "Kettle"
+            "Kettle",
+            "MeteorArena"
         };
 
         /// <summary>
@@ -74,8 +75,8 @@ namespace Content.IntegrationTests.Tests
         [Test, TestCaseSource(nameof(Grids))]
         public async Task GridsLoadableTest(string mapFile)
         {
-            await using var pairTracker = await PoolManager.GetServerClient();
-            var server = pairTracker.Pair.Server;
+            await using var pair = await PoolManager.GetServerClient();
+            var server = pair.Server;
 
             var entManager = server.ResolveDependency<IEntityManager>();
             var mapLoader = entManager.System<MapLoaderSystem>();
@@ -109,14 +110,14 @@ namespace Content.IntegrationTests.Tests
             });
             await server.WaitRunTicks(1);
 
-            await pairTracker.CleanReturnAsync();
+            await pair.CleanReturnAsync();
         }
 
         [Test]
         public async Task NoSavedPostMapInitTest()
         {
-            await using var pairTracker = await PoolManager.GetServerClient();
-            var server = pairTracker.Pair.Server;
+            await using var pair = await PoolManager.GetServerClient();
+            var server = pair.Server;
 
             var resourceManager = server.ResolveDependency<IResourceManager>();
             var mapFolder = new ResPath("/Maps");
@@ -151,14 +152,14 @@ namespace Content.IntegrationTests.Tests
 
                 Assert.That(postMapInit, Is.False, $"Map {map.Filename} was saved postmapinit");
             }
-            await pairTracker.CleanReturnAsync();
+            await pair.CleanReturnAsync();
         }
 
         [Test, TestCaseSource(nameof(GameMaps))]
         public async Task GameMapsLoadableTest(string mapProto)
         {
-            await using var pairTracker = await PoolManager.GetServerClient();
-            var server = pairTracker.Pair.Server;
+            await using var pair = await PoolManager.GetServerClient();
+            var server = pair.Server;
 
             var mapManager = server.ResolveDependency<IMapManager>();
             var entManager = server.ResolveDependency<IEntityManager>();
@@ -283,18 +284,18 @@ namespace Content.IntegrationTests.Tests
             });
             await server.WaitRunTicks(1);
 
-            await pairTracker.CleanReturnAsync();
+            await pair.CleanReturnAsync();
         }
 
         [Test]
         public async Task AllMapsTested()
         {
-            await using var pairTracker = await PoolManager.GetServerClient();
-            var server = pairTracker.Pair.Server;
+            await using var pair = await PoolManager.GetServerClient();
+            var server = pair.Server;
             var protoMan = server.ResolveDependency<IPrototypeManager>();
 
             var gameMaps = protoMan.EnumeratePrototypes<GameMapPrototype>()
-                .Where(x => !pairTracker.Pair.IsTestPrototype(x))
+                .Where(x => !pair.IsTestPrototype(x))
                 .Select(x => x.ID)
                 .ToHashSet();
 
@@ -302,14 +303,14 @@ namespace Content.IntegrationTests.Tests
 
             CollectionAssert.AreEquivalent(GameMaps.ToHashSet(), gameMaps, "Game map prototype missing from test cases.");
 
-            await pairTracker.CleanReturnAsync();
+            await pair.CleanReturnAsync();
         }
 
         [Test]
         public async Task NonGameMapsLoadableTest()
         {
-            await using var pairTracker = await PoolManager.GetServerClient();
-            var server = pairTracker.Pair.Server;
+            await using var pair = await PoolManager.GetServerClient();
+            var server = pair.Server;
 
             var mapLoader = server.ResolveDependency<IEntitySystemManager>().GetEntitySystem<MapLoaderSystem>();
             var mapManager = server.ResolveDependency<IMapManager>();
@@ -369,7 +370,7 @@ namespace Content.IntegrationTests.Tests
             });
 
             await server.WaitRunTicks(1);
-            await pairTracker.CleanReturnAsync();
+            await pair.CleanReturnAsync();
         }
     }
 }
