@@ -1,4 +1,5 @@
 ﻿using System.Linq;
+using System.Net;
 using System.Net.Http;
 using System.Net.Http.Json;
 using System.Text;
@@ -71,6 +72,8 @@ public sealed class TTSManager
             return data;
         }
 
+        _sawmill.Debug($"Generate new audio for '{text}' speech by '{speaker}' speaker");
+
         var body = new GenerateVoiceRequest
         {
             ApiToken = _apiToken,
@@ -86,6 +89,12 @@ public sealed class TTSManager
             var response = await _httpClient.PostAsJsonAsync(_apiUrl, body, cts.Token);
             if (!response.IsSuccessStatusCode)
             {
+                if (response.StatusCode == HttpStatusCode.TooManyRequests)
+                {
+                    _sawmill.Warning("TTS request was rate limited");
+                    return null;
+                }
+
                 _sawmill.Error($"TTS request returned bad status code: {response.StatusCode}");
                 return null;
             }
@@ -102,7 +111,7 @@ public sealed class TTSManager
                 _cacheKeysSeq.Remove(firstKey);
             }
 
-            _sawmill.Debug($"Generated new sound for '{text}' speech by '{speaker}' speaker ({soundData.Length} bytes)");
+            _sawmill.Debug($"Generated new audio for '{text}' speech by '{speaker}' speaker ({soundData.Length} bytes)");
             RequestTimings.WithLabels("Success").Observe((DateTime.UtcNow - reqTime).TotalSeconds);
 
             return soundData;
@@ -110,7 +119,7 @@ public sealed class TTSManager
         catch (TaskCanceledException)
         {
             RequestTimings.WithLabels("Timeout").Observe((DateTime.UtcNow - reqTime).TotalSeconds);
-            _sawmill.Error($"Timeout of request generation new sound for '{text}' speech by '{speaker}' speaker");
+            _sawmill.Error($"Timeout of request generation new audio for '{text}' speech by '{speaker}' speaker");
             return null;
         }
         catch (Exception e)
