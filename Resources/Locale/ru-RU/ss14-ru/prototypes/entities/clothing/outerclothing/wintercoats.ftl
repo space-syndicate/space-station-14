@@ -1,5 +1,7 @@
 ent-ClothingOuterWinterCoat = зимнее пальто
     .desc = Тяжелая куртка из 'синтетического' меха животных.
+ent-ClothingOuterWinterCoatToggleable = winter coat with hood
+    .desc = { ent-ClothingOuterWinterCoat.desc }
 ent-ClothingOuterWinterAtmos = зимнее пальто атмос-техника
     .desc = { ent-ClothingOuterWinterCoat.desc }
 ent-ClothingOuterWinterBar = зимнее пальто бармена
@@ -62,3 +64,5 @@ ent-ClothingOuterWinterSyndie = зимнее пальто Синдиката
     .desc = Утепленное зимнее пальто, похожее на товар из "Синдиленда".
 ent-ClothingOuterWinterMusician = зимнее пальто музыканта
     .desc = Безразмерный пластилиновый космический фрак, который заставит людей спрашивать: "Вы меня знаете?".
+ent-ClothingOuterWinterWeb = web winter coat
+    .desc = Feels like the inside of a cocoon, not that this would make you less afraid of being in one.

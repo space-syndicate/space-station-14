@@ -1,5 +1,7 @@
 ent-BaseVehicle = Транспорт
     .desc = { "" }
+ent-BaseVehicleRideable = Vehicle
+    .desc = { ent-BaseVehicle.desc }
 ent-VehicleJanicart = уборочная машина
     .desc = Верный скакун уборщика.
 ent-VehicleJanicartDestroyed = уничтоженная уборочная машина

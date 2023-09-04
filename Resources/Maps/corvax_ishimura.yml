@@ -143698,14 +143698,6 @@ entities:
     - pos: 39.5,21.5
       parent: 89
       type: Transform
-- proto: WebChair
-  entities:
-  - uid: 21012
-    components:
-    - rot: -1.5707963267948966 rad
-      pos: 41.5,22.5
-      parent: 89
-      type: Transform
 - proto: WelderIndustrial
   entities:
   - uid: 2577

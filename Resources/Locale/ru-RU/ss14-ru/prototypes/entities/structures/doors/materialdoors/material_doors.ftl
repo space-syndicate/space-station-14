@@ -14,3 +14,5 @@ ent-SilverDoor = серебряная дверь
     .desc = Дверь, куда она ведет?
 ent-BananiumDoor = бананиумовая дверь
     .desc = Дверь, куда она ведет?
+ent-WebDoor = web door
+    .desc = A door, leading to the lands of the spiders... or a spaced room.
