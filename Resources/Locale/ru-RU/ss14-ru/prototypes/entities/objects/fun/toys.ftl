@@ -101,3 +101,5 @@ ent-PlasticBanana = банан
     .suffix = Пластик
 ent-CrazyGlue = тюбик сумасшедшего клея
     .desc = Бутылка сумасшедшего клея производства компании Honk! Co.
+ent-PlushieMoth = moth plushie
+    .desc = Cute and fluffy moth plushie. Enjoy, bz!

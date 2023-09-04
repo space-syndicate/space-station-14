@@ -14,3 +14,7 @@ ent-ClothingOuterSuitShrineMaiden = наряд служительницы хра
     .desc = Так и хочется пойти и разобраться с каким-нибудь проблемным ёкаем.
 ent-ClothingOuterSuitMonkey = костюм обезьяны
     .desc = Костюм, напоминающий примата.
+ent-ClothingOuterSuitIan = ian suit
+    .desc = Who's a good boy?
+ent-ClothingOuterSuitCarp = carp suit
+    .desc = A special suit that makes you look just like a space carp, if your eyesight is bad.
