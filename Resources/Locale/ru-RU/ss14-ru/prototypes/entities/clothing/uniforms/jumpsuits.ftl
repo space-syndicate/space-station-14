@@ -221,5 +221,5 @@ ent-ClothingUniformJumpsuitSeniorPhysician = комбинезон ведущег
     .desc = Признак мастерства и престижа медицинского отдела.
 ent-ClothingUniformJumpsuitSeniorOfficer = комбинезон инструктора службы безопасности
     .desc = Признак мастерства и престижа отдела службы безопасности.
-ent-ClothingUniformJumpsuitWeb = web jumpsuit
-    .desc = Makes it clear that you are one with the webs.
+ent-ClothingUniformJumpsuitWeb = паутинный комбинезон
+    .desc = Даёт понять, что вы едины с паутиной.
