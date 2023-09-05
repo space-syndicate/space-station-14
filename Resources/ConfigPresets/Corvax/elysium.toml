@@ -4,7 +4,7 @@ desc = "Корвакс первый русскоязычный проект в S
 map_pool = "CorvaxDefaultMapPool"
 maxplayers = 180
 soft_max_players = 100
-map_rotation = false
+map_rotation = true
 
 [rules]
 time = 10.0
