@@ -1,8 +1,8 @@
 ## Traitor
 
 # Shown at the end of a round of Traitor
-traitor-round-end-agent-name = traitor
-objective-issuer-syndicate = [color=#87cefa]The Syndicate[/color]
+traitor-round-end-agent-name = предатель
+objective-issuer-syndicate = [color=#87cefa]Синдикат[/color]
 traitor-round-end-codewords = Кодовыми словами были: [color=White]{ $codewords }[/color].
 traitor-title = Предатели
 traitor-description = Среди нас есть предатели...
