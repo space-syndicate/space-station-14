@@ -1,6 +1,6 @@
-ent-BaseVehicle = Транспорт
+ent-BaseVehicle = { "" }
     .desc = { "" }
-ent-BaseVehicleRideable = Vehicle
+ent-BaseVehicleRideable = Транспорт
     .desc = { ent-BaseVehicle.desc }
 ent-VehicleJanicart = уборочная машина
     .desc = Верный скакун уборщика.
