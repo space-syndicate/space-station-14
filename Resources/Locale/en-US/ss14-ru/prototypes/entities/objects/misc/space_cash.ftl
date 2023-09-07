@@ -1,4 +1,4 @@
-ent-SpaceCash = spacebucks
+ent-SpaceCash = spesos
     .desc = You gotta have money.
 ent-SpaceCash10 = { ent-SpaceCash }
     .suffix = 10

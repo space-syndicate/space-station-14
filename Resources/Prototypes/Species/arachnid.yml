@@ -2,7 +2,6 @@
   id: Arachnid
   name: species-name-arachnid
   roundStart: true
-  sponsorOnly: true # Corvax-Sponsors
   prototype: MobArachnid
   sprites: MobArachnidSprites
   defaultSkinTone: "#385878"
@@ -61,7 +60,7 @@
     HeadSide:
       points: 1
       required: true
-      defaultMarkings: [ ArachnidCheliceraeBasic ]
+      defaultMarkings: [ ArachnidCheliceraeDownwards ]
     Chest:
       points: 1
       required: false

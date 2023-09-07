@@ -6,7 +6,7 @@
   requirements:
     - !type:RoleTimeRequirement
       role: JobWarden
-      time: 36000 # Corvax-RoleTime
+      time: 36000 #10 hrs # Corvax-RoleTime
 #    - !type:RoleTimeRequirement
 #      role: JobDetective
 #      time: 7200 #2 hrs
@@ -15,10 +15,10 @@
 #      time: 36000 #10 hrs
     - !type:DepartmentTimeRequirement
       department: Security
-      time: 108000 # Corvax-RoleTime
+      time: 108000 #50 hrs # Corvax-RoleTime
   weight: 10
   startingGear: HoSGear
-  icon: "HeadOfSecurity"
+  icon: "JobIconHeadOfSecurity"
   requireAdminNotify: true
   supervisors: job-supervisors-captain
   canBeAntag: false

@@ -3,12 +3,10 @@ using Robust.Shared.Audio;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Serialization.TypeSerializers.Implementations.Custom.Prototype.List;
 
-// TODO: ECS.
-
 namespace Content.Server.Arcade.SpaceVillain;
 
 [RegisterComponent]
-public sealed class SpaceVillainArcadeComponent : SharedSpaceVillainArcadeComponent
+public sealed partial class SpaceVillainArcadeComponent : SharedSpaceVillainArcadeComponent
 {
     /// <summary>
     /// Unused flag that can be hacked via wires.
@@ -65,7 +63,7 @@ public sealed class SpaceVillainArcadeComponent : SharedSpaceVillainArcadeCompon
     [ViewVariables(VVAccess.ReadWrite)]
     [DataField("possibleFightVerbs")]
     public List<string> PossibleFightVerbs = new()
-        {"Defeat", "Annihilate", "Save", "Strike", "Stop", "Destroy", "Robust", "Romance", "Pwn", "Own"};
+        {"Победи", "Аннигилируй", "Спаси", "Ударь", "Останови", "Уничтожь", "Заробасти", "Добейся", "Отымей", "Заовни"};
 
     /// <summary>
     /// The first names/titles that can be used to construct the name of the villain.
@@ -73,8 +71,8 @@ public sealed class SpaceVillainArcadeComponent : SharedSpaceVillainArcadeCompon
     [ViewVariables(VVAccess.ReadWrite)]
     [DataField("possibleFirstEnemyNames")]
     public List<string> PossibleFirstEnemyNames = new(){
-        "the Automatic", "Farmer", "Lord", "Professor", "the Cuban", "the Evil", "the Dread King",
-        "the Space", "Lord", "the Great", "Duke", "General"
+        "Автоматический", "Фермер", "Лорд", "Профессор", "Кубинец", "Злой", "Грозный Король",
+        "Космический", "Лорд", "Могучий", "Герцог", "Генерал"
     };
 
     /// <summary>
@@ -84,8 +82,8 @@ public sealed class SpaceVillainArcadeComponent : SharedSpaceVillainArcadeCompon
     [DataField("possibleLastEnemyNames")]
     public List<string> PossibleLastEnemyNames = new()
     {
-        "Melonoid", "Murdertron", "Sorcerer", "Ruin", "Jeff", "Ectoplasm", "Crushulon", "Uhangoid",
-        "Vhakoid", "Peteoid", "slime", "Griefer", "ERPer", "Lizard Man", "Unicorn"
+        "Мелоноид", "Киллертрон", "Волшебник", "Руина", "Джефф", "Эктоплазма", "Крушелон", "Ухангоид",
+        "Вакоид", "Петеоид", "слайм", "Грифер", "ЕРПшер", "Человек-ящерица", "Единорог"
     };
 
     /// <summary>
@@ -93,16 +91,7 @@ public sealed class SpaceVillainArcadeComponent : SharedSpaceVillainArcadeCompon
     /// </summary>
     [ViewVariables(VVAccess.ReadWrite)]
     [DataField("possibleRewards", customTypeSerializer: typeof(PrototypeIdListSerializer<EntityPrototype>))]
-    public List<string> PossibleRewards = new()
-    {
-        "ToyMouse", "ToyAi", "ToyNuke", "ToyAssistant", "ToyGriffin", "ToyHonk", "ToyIan",
-        "ToyMarauder", "ToyMauler", "ToyGygax", "ToyOdysseus", "ToyOwlman", "ToyDeathRipley",
-        "ToyPhazon", "ToyFireRipley", "ToyReticence", "ToyRipley", "ToySeraph", "ToyDurand", "ToySkeleton",
-        "FoamCrossbow", "RevolverCapGun", "PlushieHampter", "PlushieLizard", "PlushieAtmosian", "PlushieSpaceLizard",
-        "PlushieNuke", "PlushieCarp", "PlushieRatvar", "PlushieNar", "PlushieSnake", "Basketball", "Football",
-        "PlushieRouny", "PlushieBee", "PlushieSlime", "BalloonCorgi", "ToySword", "CrayonBox", "BoxDonkSoftBox", "BoxCartridgeCap",
-        "HarmonicaInstrument", "OcarinaInstrument", "RecorderInstrument", "GunpetInstrument", "BirdToyInstrument", "PlushieXeno", "BeachBall"
-    };
+    public List<string> PossibleRewards = new();
 
     /// <summary>
     /// The minimum number of prizes the arcade machine can have.

@@ -1,9 +1,9 @@
 ent-BaseImplanter = имплантер
-    .desc = Специальный шприц, используемый только для имплантов.
+    .desc = Шприц, специально предназначенный для введения и извлечения подкожных имплантов.
 ent-Implanter = { ent-BaseImplanter }
-    .desc = { ent-BaseImplanter.desc }
+    .desc = Одноразовый шприц, специально предназначенный для введения и извлечения подкожных имплантов.
 ent-BaseImplantOnlyImplanter = { ent-Implanter }
-    .desc = Одноразовый имплантер.
+    .desc = Одноразовый шприц, специально предназначенный для введения подкожных имплантов.
 # Corvax anti-meta localization start
 ent-SadTromboneImplanter = { ent-Implanter }
     .desc = { ent-BaseImplantOnlyImplanter.desc }
@@ -26,18 +26,21 @@ ent-FreedomImplanter = { ent-Implanter }
 ent-UplinkImplanter = { ent-Implanter }
     .desc = { ent-BaseImplantOnlyImplanter.desc }
     .suffix = Аплинк
-ent-EmpImplanter = EMP implanter
-    .desc = a single use implanter, the implant creates an EMP pulse when you activate it.
-ent-DnaScramblerImplanter = dna scrambler implanter
-    .desc = a single use implanter, the implant allows you to randomly change your appearance and name once.
+ent-EmpImplanter = { ent-Implanter }
+    .desc = { ent-BaseImplantOnlyImplanter.desc }
+    .suffix = ЭМИ
+ent-DnaScramblerImplanter = { ent-Implanter }
+    .desc = { ent-BaseImplantOnlyImplanter.desc }
+    .suffix = Миксер ДНК
 ent-MicroBombImplanter = { ent-Implanter }
     .desc = { ent-BaseImplantOnlyImplanter.desc }
     .suffix = Микробомба
 ent-MacroBombImplanter = { ent-Implanter }
     .desc = { ent-BaseImplantOnlyImplanter.desc }
     .suffix = Макробомба
-ent-DeathRattleImplanter = Deathrattle implanter
-    .desc = a single use implanter, the implant will inform anyone with access to the syndicate radio channel of your death.
+ent-DeathRattleImplanter = { ent-Implanter }
+    .desc = { ent-BaseImplantOnlyImplanter.desc }
+    .suffix = Предсмертный хрип
 
 # Corvax anti-meta localization end
 

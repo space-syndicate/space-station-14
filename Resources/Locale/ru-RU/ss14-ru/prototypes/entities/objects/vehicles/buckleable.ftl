@@ -1,5 +1,7 @@
-ent-BaseVehicle = Транспорт
+ent-BaseVehicle = { "" }
     .desc = { "" }
+ent-BaseVehicleRideable = Транспорт
+    .desc = { ent-BaseVehicle.desc }
 ent-VehicleJanicart = уборочная машина
     .desc = Верный скакун уборщика.
 ent-VehicleJanicartDestroyed = уничтоженная уборочная машина
@@ -17,3 +19,8 @@ ent-VehicleUnicycle = уницикл
 ent-VehicleUnicycleFolded = { ent-VehicleUnicycle }
     .suffix = Сложенный
     .desc = { ent-VehicleUnicycle.desc }
+ent-VehicleWheelchair = кресло-коляска
+    .desc = Кресло с большими колесами. Похоже, что на нём вы можете передвигаться самостоятельно.
+ent-VehicleWheelchairFolded = { ent-VehicleWheelchair }
+    .suffix = Сложенный
+    .desc = { ent-VehicleWheelchair.desc }

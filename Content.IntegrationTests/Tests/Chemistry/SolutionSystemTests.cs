@@ -14,6 +14,7 @@ namespace Content.IntegrationTests.Tests.Chemistry;
 [TestOf(typeof(SolutionContainerSystem))]
 public sealed class SolutionSystemTests
 {
+    [TestPrototypes]
     private const string Prototypes = @"
 - type: entity
   id: SolutionTarget
@@ -45,17 +46,13 @@ public sealed class SolutionSystemTests
     [Test]
     public async Task TryAddTwoNonReactiveReagent()
     {
-        await using var pairTracker = await PoolManager.GetServerClient(new PoolSettings
-        {
-            NoClient = true,
-            ExtraPrototypes = Prototypes
-        });
-        var server = pairTracker.Pair.Server;
+        await using var pair = await PoolManager.GetServerClient();
+        var server = pair.Server;
 
         var entityManager = server.ResolveDependency<IEntityManager>();
         var protoMan = server.ResolveDependency<IPrototypeManager>();
         var containerSystem = entityManager.EntitySysManager.GetEntitySystem<SolutionContainerSystem>();
-        var testMap = await PoolManager.CreateTestMap(pairTracker);
+        var testMap = await pair.CreateTestMap();
         var coordinates = testMap.GridCoords;
 
         EntityUid beaker;
@@ -85,7 +82,7 @@ public sealed class SolutionSystemTests
             });
         });
 
-        await pairTracker.CleanReturnAsync();
+        await pair.CleanReturnAsync();
     }
 
     // This test mimics current behavior
@@ -93,14 +90,10 @@ public sealed class SolutionSystemTests
     [Test]
     public async Task TryAddTooMuchNonReactiveReagent()
     {
-        await using var pairTracker = await PoolManager.GetServerClient(new PoolSettings
-        {
-            NoClient = true,
-            ExtraPrototypes = Prototypes
-        });
-        var server = pairTracker.Pair.Server;
+        await using var pair = await PoolManager.GetServerClient();
+        var server = pair.Server;
 
-        var testMap = await PoolManager.CreateTestMap(pairTracker);
+        var testMap = await pair.CreateTestMap();
 
         var entityManager = server.ResolveDependency<IEntityManager>();
         var protoMan = server.ResolveDependency<IPrototypeManager>();
@@ -134,24 +127,20 @@ public sealed class SolutionSystemTests
             });
         });
 
-        await pairTracker.CleanReturnAsync();
+        await pair.CleanReturnAsync();
     }
 
     // Unlike TryAddSolution this adds and two solution without then splits leaving only threshold in original
     [Test]
     public async Task TryMixAndOverflowTooMuchReagent()
     {
-        await using var pairTracker = await PoolManager.GetServerClient(new PoolSettings
-        {
-            NoClient = true,
-            ExtraPrototypes = Prototypes
-        });
-        var server = pairTracker.Pair.Server;
+        await using var pair = await PoolManager.GetServerClient();
+        var server = pair.Server;
 
 
         var entityManager = server.ResolveDependency<IEntityManager>();
         var protoMan = server.ResolveDependency<IPrototypeManager>();
-        var testMap = await PoolManager.CreateTestMap(pairTracker);
+        var testMap = await pair.CreateTestMap();
         var containerSystem = entityManager.EntitySysManager.GetEntitySystem<SolutionContainerSystem>();
         var coordinates = testMap.GridCoords;
 
@@ -193,24 +182,20 @@ public sealed class SolutionSystemTests
             });
         });
 
-        await pairTracker.CleanReturnAsync();
+        await pair.CleanReturnAsync();
     }
 
     // TryMixAndOverflow will fail if Threshold larger than MaxVolume
     [Test]
     public async Task TryMixAndOverflowTooBigOverflow()
     {
-        await using var pairTracker = await PoolManager.GetServerClient(new PoolSettings
-        {
-            NoClient = true,
-            ExtraPrototypes = Prototypes
-        });
-        var server = pairTracker.Pair.Server;
+        await using var pair = await PoolManager.GetServerClient();
+        var server = pair.Server;
 
         var entityManager = server.ResolveDependency<IEntityManager>();
         var protoMan = server.ResolveDependency<IPrototypeManager>();
         var containerSystem = entityManager.EntitySysManager.GetEntitySystem<SolutionContainerSystem>();
-        var testMap = await PoolManager.CreateTestMap(pairTracker);
+        var testMap = await pair.CreateTestMap();
         var coordinates = testMap.GridCoords;
 
         EntityUid beaker;
@@ -235,14 +220,14 @@ public sealed class SolutionSystemTests
                 Is.False);
         });
 
-        await pairTracker.CleanReturnAsync();
+        await pair.CleanReturnAsync();
     }
 
     [Test]
     public async Task TestTemperatureCalculations()
     {
-        await using var pairTracker = await PoolManager.GetServerClient(new PoolSettings { NoClient = true, ExtraPrototypes = Prototypes });
-        var server = pairTracker.Pair.Server;
+        await using var pair = await PoolManager.GetServerClient();
+        var server = pair.Server;
         var protoMan = server.ResolveDependency<IPrototypeManager>();
         const float temp = 100.0f;
 
@@ -274,6 +259,6 @@ public sealed class SolutionSystemTests
             Assert.That(solutionOne.GetHeatCapacity(protoMan) * solutionOne.Temperature, Is.EqualTo(thermalEnergyOne + thermalEnergyTwo));
         });
 
-        await pairTracker.CleanReturnAsync();
+        await pair.CleanReturnAsync();
     }
 }

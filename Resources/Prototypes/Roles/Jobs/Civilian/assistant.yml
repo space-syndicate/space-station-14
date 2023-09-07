@@ -4,9 +4,9 @@
   description: job-description-passenger
   playTimeTracker: JobPassenger
   startingGear: PassengerGear
-  icon: "Passenger"
-  supervisors: job-supervisors-hop # Corvax-JobSupervisors
-#  access: # Corvax
+  icon: "JobIconPassenger"
+  supervisors: job-supervisors-everyone
+#  access: # Corvax-MRP
 #  - Maintenance
 
 - type: startingGear

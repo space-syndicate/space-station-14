@@ -56,11 +56,12 @@ public sealed partial class TTSSystem : EntitySystem
 
     private async void OnEntitySpoke(EntityUid uid, TTSComponent component, EntitySpokeEvent args)
     {
+        var voiceId = component.VoicePrototypeId;
         if (!_isEnabled ||
-            args.Message.Length > MaxMessageChars)
+            args.Message.Length > MaxMessageChars ||
+            voiceId == null)
             return;
 
-        var voiceId = component.VoicePrototypeId;
         var voiceEv = new TransformSpeakerVoiceEvent(uid, voiceId);
         RaiseLocalEvent(uid, voiceEv);
         voiceId = voiceEv.VoiceId;
@@ -107,7 +108,7 @@ public sealed partial class TTSSystem : EntitySystem
             if (distance > ChatSystem.VoiceRange * ChatSystem.VoiceRange)
                 continue;
 
-            RaiseNetworkEvent(distance > ChatSystem.WhisperRange ? obfTtsEvent : fullTtsEvent, session);
+            RaiseNetworkEvent(distance > ChatSystem.WhisperClearRange ? obfTtsEvent : fullTtsEvent, session);
         }
     }
 
@@ -121,7 +122,7 @@ public sealed partial class TTSSystem : EntitySystem
 
         var ssmlTraits = SoundTraits.RateFast;
         if (isWhisper)
-            ssmlTraits |= SoundTraits.PitchVerylow;
+            ssmlTraits = SoundTraits.PitchVerylow;
         var textSsml = ToSsmlText(textSanitized, ssmlTraits);
 
         return await _ttsManager.ConvertTextToSpeech(speaker, textSsml);

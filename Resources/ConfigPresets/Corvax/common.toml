@@ -1,0 +1,24 @@
+﻿[net]
+tickrate = 30
+
+[netres]
+limit = 25.0
+
+[infolinks]
+discord = "https://discord.ss14.ru"
+github = "https://github.com/space-syndicate/space-station-14"
+wiki = "https://station14.ru"
+patreon = "https://boosty.to/corvax"
+appeal = "https://discord.ss14.ru"
+
+[viewport]
+maximum_width = 26
+
+[game]
+lobbyduration = 360
+
+[server]
+rules_header = "ui-rules-header-corvax"
+
+[discord]
+rich_main_icon_id = "corvax"

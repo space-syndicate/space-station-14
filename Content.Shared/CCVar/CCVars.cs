@@ -1,6 +1,5 @@
 using Robust.Shared;
 using Robust.Shared.Configuration;
-using Robust.Shared.Utility;
 
 namespace Content.Shared.CCVar
 {
@@ -307,10 +306,17 @@ namespace Content.Shared.CCVar
             CVarDef.Create("game.alert_level_change_delay", 30, CVar.SERVERONLY);
 
         /// <summary>
-        /// How many times per second artifacts when the round is over. 
-        /// If set to 0, they won't activate (on a timer) when the round ends. 
+        /// How many times per second artifacts when the round is over.
+        /// If set to 0, they won't activate (on a timer) when the round ends.
         /// </summary>
         public static readonly CVarDef<float> ArtifactRoundEndTimer = CVarDef.Create("game.artifact_round_end_timer", 0.5f, CVar.NOTIFY | CVar.REPLICATED);
+
+        /// <summary>
+        /// The time in seconds that the server should wait before restarting the round.
+        /// Defaults to 2 minutes.
+        /// </summary>
+        public static readonly CVarDef<float> RoundRestartTime =
+            CVarDef.Create("game.round_restart_time", 120f, CVar.SERVERONLY);
 
         /*
          * Discord
@@ -320,7 +326,7 @@ namespace Content.Shared.CCVar
         /// URL of the Discord webhook which will relay all ahelp messages.
         /// </summary>
         public static readonly CVarDef<string> DiscordAHelpWebhook =
-            CVarDef.Create("discord.ahelp_webhook", string.Empty, CVar.SERVERONLY);
+            CVarDef.Create("discord.ahelp_webhook", string.Empty, CVar.SERVERONLY | CVar.CONFIDENTIAL);
 
         /// <summary>
         /// The server icon to use in the Discord ahelp embed footer.
@@ -334,6 +340,18 @@ namespace Content.Shared.CCVar
         /// </summary>
         public static readonly CVarDef<string> DiscordAHelpAvatar =
             CVarDef.Create("discord.ahelp_avatar", string.Empty, CVar.SERVERONLY);
+
+        /// <summary>
+        /// URL of the Discord webhook which will relay round restart messages.
+        /// </summary>
+        public static readonly CVarDef<string> DiscordRoundUpdateWebhook =
+            CVarDef.Create("discord.round_update_webhook", string.Empty, CVar.SERVERONLY | CVar.CONFIDENTIAL);
+
+        /// <summary>
+        /// Role id for the Discord webhook to ping when the round ends.
+        /// </summary>
+        public static readonly CVarDef<string> DiscordRoundEndRoleWebhook =
+            CVarDef.Create("discord.round_end_role", string.Empty, CVar.SERVERONLY);
 
         /*
          * Suspicion
@@ -398,12 +416,6 @@ namespace Content.Shared.CCVar
 
         public static readonly CVarDef<int> ZombieMinPlayers =
             CVarDef.Create("zombie.min_players", 20);
-
-        public static readonly CVarDef<int> ZombieMaxInitialInfected =
-            CVarDef.Create("zombie.max_initial_infected", 6);
-
-        public static readonly CVarDef<int> ZombiePlayersPerInfected =
-            CVarDef.Create("zombie.players_per_infected", 10);
 
         /*
          * Pirates
@@ -705,6 +717,24 @@ namespace Content.Shared.CCVar
         public static readonly CVarDef<int> AdminAlertExplosionMinIntensity =
             CVarDef.Create("admin.alert.explosion_min_intensity", 60, CVar.SERVERONLY);
 
+        /// <summary>
+        ///     Minimum particle accelerator strength to create an admin alert message.
+        /// </summary>
+        public static readonly CVarDef<int> AdminAlertParticleAcceleratorMinPowerState =
+            CVarDef.Create("admin.alert.particle_accelerator_min_power_state", 3, CVar.SERVERONLY);
+
+        /// <summary>
+        ///     Should the ban details in admin channel include PII? (IP, HWID, etc)
+        public static readonly CVarDef<bool> AdminShowPIIOnBan =
+            CVarDef.Create("admin.show_pii_onban", false, CVar.SERVERONLY);
+
+        /// <summary>
+        /// If an admin joins a round by reading up or using the late join button, automatically
+        /// de-admin them.
+        /// </summary>
+        public static readonly CVarDef<bool> AdminDeadminOnJoin =
+            CVarDef.Create("admin.deadmin_on_join", false, CVar.SERVERONLY);
+
         /*
          * Explosions
          */
@@ -847,11 +877,17 @@ namespace Content.Shared.CCVar
         public static readonly CVarDef<float> AdminLogsQueueSendDelay =
             CVarDef.Create("adminlogs.queue_send_delay_seconds", 5f, CVar.SERVERONLY);
 
+        // When to skip the waiting time to save in-round admin logs, if no admin logs are currently being saved
         public static readonly CVarDef<int> AdminLogsQueueMax =
             CVarDef.Create("adminlogs.queue_max", 5000, CVar.SERVERONLY);
 
+        // When to skip the waiting time to save pre-round admin logs, if no admin logs are currently being saved
         public static readonly CVarDef<int> AdminLogsPreRoundQueueMax =
             CVarDef.Create("adminlogs.pre_round_queue_max", 5000, CVar.SERVERONLY);
+
+        // When to start dropping logs
+        public static readonly CVarDef<int> AdminLogsDropThreshold =
+            CVarDef.Create("adminlogs.drop_threshold", 20000, CVar.SERVERONLY);
 
         // How many logs to send to the client at once
         public static readonly CVarDef<int> AdminLogsClientBatchSize =
@@ -929,6 +965,12 @@ namespace Content.Shared.CCVar
         /// <remarks> Disabled by default, superconduction is awful. </remarks>
         public static readonly CVarDef<bool> Superconduction =
             CVarDef.Create("atmos.superconduction", false, CVar.SERVERONLY);
+
+        /// <summary>
+        ///     Heat loss per tile due to radiation at 20 degC, in W.
+        /// </summary>
+        public static readonly CVarDef<float> SuperconductionTileLoss =
+            CVarDef.Create("atmos.superconduction_tile_loss", 30f, CVar.SERVERONLY);
 
         /// <summary>
         ///     Whether excited groups will be processed and created.
@@ -1019,6 +1061,12 @@ namespace Content.Shared.CCVar
         /// False: Dead player LOOC gets redirected to dead chat
         /// </summary>
         public static readonly CVarDef<bool> DeadLoocEnabled = CVarDef.Create("looc.enabled_dead", false, CVar.NOTIFY | CVar.REPLICATED);
+
+        /// <summary>
+        /// True: Crit players can use LOOC
+        /// False: Crit player LOOC gets redirected to dead chat
+        /// </summary>
+        public static readonly CVarDef<bool> CritLoocEnabled = CVarDef.Create("looc.enabled_crit", false, CVar.NOTIFY | CVar.REPLICATED);
 
         /*
          * Entity Menu Grouping Types
@@ -1676,5 +1724,32 @@ namespace Content.Shared.CCVar
         /// </summary>
         public static readonly CVarDef<bool> ReplayRecordAdminChat =
             CVarDef.Create("replay.record_admin_chat", false, CVar.ARCHIVE);
+
+        /// <summary>
+        /// Automatically record full rounds as replays.
+        /// </summary>
+        public static readonly CVarDef<bool> ReplayAutoRecord =
+            CVarDef.Create("replay.auto_record", false, CVar.SERVERONLY);
+
+        /// <summary>
+        /// The file name to record automatic replays to. The path is relative to <see cref="CVars.ReplayDirectory"/>.
+        /// </summary>
+        /// <remarks>
+        /// <para>
+        /// If the path includes slashes, directories will be automatically created if necessary.
+        /// </para>
+        /// <para>
+        /// A number of substitutions can be used to automatically fill in the file name: <c>{year}</c>, <c>{month}</c>, <c>{day}</c>, <c>{hour}</c>, <c>{minute}</c>, <c>{round}</c>.
+        /// </para>
+        /// </remarks>
+        public static readonly CVarDef<string> ReplayAutoRecordName =
+            CVarDef.Create("replay.auto_record_name", "{year}_{month}_{day}-{hour}_{minute}-round_{round}.zip", CVar.SERVERONLY);
+
+        /// <summary>
+        /// Path that, if provided, automatic replays are initially recorded in.
+        /// When the recording is done, the file is moved into its final destination.
+        /// </summary>
+        public static readonly CVarDef<string> ReplayAutoRecordTempDir =
+            CVarDef.Create("replay.auto_record_temp_dir", "", CVar.SERVERONLY);
     }
 }

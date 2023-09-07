@@ -53,6 +53,7 @@ namespace Content.Server.Salvage
         [Dependency] private readonly ShuttleConsoleSystem _shuttleConsoles = default!;
         [Dependency] private readonly StationSystem _station = default!;
         [Dependency] private readonly UserInterfaceSystem _ui = default!;
+        [Dependency] private readonly MetaDataSystem _metaData = default!;
 
         private const int SalvageLocationPlaceAttempts = 25;
 
@@ -347,7 +348,7 @@ namespace Content.Server.Salvage
             EntityUid? salvageEnt;
             if (_random.Prob(component.AsteroidChance))
             {
-                var asteroidProto = _prototypeManager.Index<WeightedRandomPrototype>(component.AsteroidPool).Pick(_random);
+                var asteroidProto = _prototypeManager.Index<WeightedRandomEntityPrototype>(component.AsteroidPool).Pick(_random);
                 salvageEnt = Spawn(asteroidProto, new MapCoordinates(0, 0, salvMap));
             }
             else

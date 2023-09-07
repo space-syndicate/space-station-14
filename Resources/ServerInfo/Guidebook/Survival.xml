@@ -14,7 +14,7 @@
 <GuideEntityEmbed Entity="EmergencyMedipen"/>
 <GuideEntityEmbed Entity="SpaceMedipen"/>
 </Box>
-- Your emergency box contains a breath mask and oxygen tank, which can help you survive longer in a spacing situation. If you're one of the slimepeople, be aware that nitrogen replaces oxygen for you and you don't start with one of those in your emergency canister.
+- В вашем аварийном запасе имеются дыхательная маска и аварийный кислородный баллон, которые помогут вам продержаться немного дольше в случае утечки воздуха из отсека. Если же вы слаймолюд, то помните, что вы дышите азотом, и аварийный баллон вам не поможет.
 <Box>
 <GuideEntityEmbed Entity="ClothingMaskBreath"/>
 <GuideEntityEmbed Entity="EmergencyOxygenTankFilled"/>

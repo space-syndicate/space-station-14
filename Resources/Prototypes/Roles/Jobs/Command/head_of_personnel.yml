@@ -6,21 +6,21 @@
   requirements:
     - !type:DepartmentTimeRequirement
       department: Engineering
-      time: 18000 # Corvax-RoleTime
+      time: 18000 #5 hrs # Corvax-RoleTime
     - !type:DepartmentTimeRequirement
       department: Medical
-      time: 18000 # Corvax-RoleTime
+      time: 18000 #5 hrs # Corvax-RoleTime
     - !type:DepartmentTimeRequirement
       department: Security
-      time: 18000 # Corvax-RoleTime
+      time: 18000 #5 hrs # Corvax-RoleTime
 #    - !type:DepartmentTimeRequirement
 #      department: Command
 #      time: 72000 # 20 hrs
     - !type:OverallPlaytimeRequirement
-      time: 180000 # Corvax-RoleTime
+      time: 180000 #50 hrs # Corvax-RoleTime
   weight: 20
   startingGear: HoPGear
-  icon: "HeadOfPersonnel"
+  icon: "JobIconHeadOfPersonnel"
   requireAdminNotify: true
   supervisors: job-supervisors-captain
   canBeAntag: false
@@ -41,7 +41,6 @@
   # Head level access that isn't their own was deliberately left out, get AA from the captain instead.
   - Chemistry
   - Engineering
-  - Quartermaster
   - Research
   - Detective
   - Salvage
@@ -49,7 +48,6 @@
   - Brig
   - Cargo
   - Atmospherics
-  - Cargo
   - Medical
 
 - type: startingGear

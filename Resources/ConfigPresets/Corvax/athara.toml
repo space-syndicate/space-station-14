@@ -1,0 +1,23 @@
+﻿[game]
+hostname = "🛰️ Corvax — Атара 🌌 [TTS]"
+desc = "Корвакс первый русскоязычный проект в Space Station 14.\nНа этом сервере средние требования к RP.\n[Имеется интеграция TTS (Text-To-Speech)]"
+map_pool = "CorvaxDefaultMapPool"
+maxplayers = 150
+soft_max_players = 70
+map_rotation = true
+
+[rules]
+time = 180.0
+
+[queue]
+enabled = true
+
+[tts]
+enabled = true
+
+[discord_auth]
+enabled = true
+
+[hub]
+advertise = true
+tags = "lang:ru,rp:med,region:eu_e,tts"

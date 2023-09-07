@@ -1,5 +1,7 @@
-ent-BaseVehicle = Vehicle
+ent-BaseVehicle = { "" }
     .desc = { "" }
+ent-BaseVehicleRideable = Vehicle
+    .desc = { ent-BaseVehicle.desc }
 ent-VehicleJanicart = janicart
     .desc = The janitor's trusty steed.
 ent-VehicleJanicartDestroyed = destroyed janicart
@@ -17,3 +19,8 @@ ent-VehicleUnicycle = unicycle
 ent-VehicleUnicycleFolded = { ent-VehicleUnicycle }
     .suffix = folded
     .desc = { ent-VehicleUnicycle.desc }
+ent-VehicleWheelchair = Wheelchair
+    .desc = A chair with big wheels. It looks like you can move in these on your own.
+ent-VehicleWheelchairFolded = { ent-VehicleWheelchair }
+    .suffix = folded
+    .desc = { ent-VehicleWheelchair.desc }

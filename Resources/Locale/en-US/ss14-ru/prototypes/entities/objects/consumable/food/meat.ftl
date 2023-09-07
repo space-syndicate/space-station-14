@@ -1,5 +1,7 @@
 ent-FoodMeatBase = { ent-FoodInjectableBase }
     .desc = { ent-FoodInjectableBase.desc }
+ent-FoodMeatRawBase = { ent-FoodMeatBase }
+    .desc = { ent-FoodMeatBase.desc }
 ent-FoodMeat = raw meat
     .desc = A slab of raw meat.
 ent-FoodMeatHuman = raw human meat
@@ -50,7 +52,7 @@ ent-FoodMeatMeatball = meatball
     .desc = A raw ball of meat. Meat ball.
 ent-FoodMeatSlime = slimeball
     .desc = A gelatinous shaping of slime jelly.
-ent-MaterialSmileExtract = extract smile
+ent-MaterialSmileExtract = smile extract
     .desc = It's a real panacea. But at what cost?
 ent-FoodMeatCooked = steak
     .desc = A cooked slab of meat. Smells primal.
