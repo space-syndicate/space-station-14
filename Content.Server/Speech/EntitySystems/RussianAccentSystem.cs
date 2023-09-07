@@ -33,7 +33,7 @@ public sealed class RussianAccentSystem : EntitySystem
                 'Y' => 'У',
                 'W' => 'Ш',
                 'w' => 'ш',
-                # Corvax-Localization Start 
+                // Corvax-Localization Start 
                 'в' => 'b',
                 'И' => 'N',
                 'и' => 'N',
@@ -47,7 +47,7 @@ public sealed class RussianAccentSystem : EntitySystem
                 'У' => 'Y',
                 'Ш' => 'W',
                 'ш' => 'w',
-                # Corvax-Localization End
+                // Corvax-Localization End
                 _ => accentedMessage[i]
             };
         }
