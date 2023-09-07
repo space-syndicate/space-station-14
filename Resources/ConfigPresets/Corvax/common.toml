@@ -1,6 +1,9 @@
 ﻿[net]
 tickrate = 30
 
+[netres]
+limit = 25.0
+
 [infolinks]
 discord = "https://discord.ss14.ru"
 github = "https://github.com/space-syndicate/space-station-14"
