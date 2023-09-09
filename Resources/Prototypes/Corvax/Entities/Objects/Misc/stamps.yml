@@ -2,6 +2,7 @@
   name: law office's rubber stamp
   parent: RubberStampBase
   id: RubberStampIAA
+  suffix: DO NOT MAP
   components:
     - type: Stamp
       stampedName: stamp-component-stamped-name-iaa
@@ -15,6 +16,7 @@
   name: psychologist's rubber stamp
   parent: RubberStampBase
   id: RubberStampPsychologist
+  suffix: DO NOT MAP
   components:
   - type: Stamp
     stampedName: stamp-component-stamped-name-psychologist
