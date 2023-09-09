@@ -1,10 +1,10 @@
 ﻿[game]
-hostname = "🛰️ Corvax — Элизиум 🌑"
-desc = "Корвакс первый русскоязычный проект в Space Station 14.\nЗдесь помогут новичкам!\nНа этом сервере пониженные требования к RP."
-map_pool = "CorvaxMapPool"
+hostname = "🛰️ Corvax — Элизиум 🌑 [TTS]"
+desc = "Корвакс первый русскоязычный проект в Space Station 14.\nЗдесь помогут новичкам!\nНа этом сервере пониженные требования к RP.\nИмеется интеграция TTS (Text-To-Speech)."
+map_pool = "CorvaxDefaultMapPool"
 maxplayers = 180
 soft_max_players = 100
-map_rotation = false
+map_rotation = true
 
 [rules]
 time = 10.0
@@ -13,11 +13,11 @@ time = 10.0
 enabled = true
 
 [tts]
-enabled = false
+enabled = true
 
 [discord_auth]
 enabled = true
 
 [hub]
 advertise = true
-tags = "lang:ru,rp:low,rp:med,region:eu_e"
+tags = "lang:ru,rp:low,rp:med,region:eu_e,tts"

@@ -14,3 +14,7 @@ ent-ClothingOuterSuitShrineMaiden = shrine maiden outfit
     .desc = Makes you want to go deal with some troublesome youkai.
 ent-ClothingOuterSuitMonkey = monkey suit
     .desc = A suit that looks like a primate.
+ent-ClothingOuterSuitIan = ian suit
+    .desc = Who's a good boy?
+ent-ClothingOuterSuitCarp = carp suit
+    .desc = A special suit that makes you look just like a space carp, if your eyesight is bad.
