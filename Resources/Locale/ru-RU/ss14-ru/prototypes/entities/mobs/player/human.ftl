@@ -9,5 +9,3 @@ ent-MobHumanNukeOp = Ядерный оперативник
     .desc = { ent-MobHuman.desc }
 ent-MobHumanLoneNuclearOperative = Одинокий оперативник
     .desc = { ent-MobHuman.desc }
-ent-MobHumanScrambled = Перемешанный человек
-    .desc = { ent-MobHuman.desc }
