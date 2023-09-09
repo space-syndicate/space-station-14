@@ -5,7 +5,7 @@
   components:
     - type: Stamp
       stampedName: stamp-component-stamped-name-iaa
-      stampedColor: "33CC33"
+      stampedColor: "#33CC33"
       stampState: "paper_stamp-ok"
     - type: Sprite
       sprite: Objects/Misc/bureaucracy.rsi
@@ -18,7 +18,7 @@
   components:
   - type: Stamp
     stampedName: stamp-component-stamped-name-psychologist
-    stampedColor: "0082AE"
+    stampedColor: "#0082AE"
     stampState: "paper_stamp-psychologist"
   - type: Sprite
     sprite: Objects/Misc/bureaucracy.rsi
