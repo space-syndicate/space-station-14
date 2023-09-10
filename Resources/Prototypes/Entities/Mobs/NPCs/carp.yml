@@ -39,9 +39,9 @@
     - type: MobThresholds
       thresholds:
         0: Alive
-        100: Dead
+        50: Dead
     - type: Stamina
-      excess: 100
+      critThreshold: 100
     - type: MovementAlwaysTouching
     - type: DamageStateVisuals
       states:
@@ -75,6 +75,8 @@
         - DoorBumpOpener
     - type: ReplacementAccent
       accent: genericAggressive
+    - type: Speech
+      speechVerb: LargeMob
 
 - type: entity
   parent: BaseMobCarp

@@ -117,7 +117,9 @@
     makeSentient: true
     name: ghost-role-information-slimes-name
     description: ghost-role-information-slimes-description
-  - type: TTS
+  - type: Speech
+    speechVerb: Slime
+  - type: TTS # Corvax-TTS
     voice: Chen
 
 - type: entity

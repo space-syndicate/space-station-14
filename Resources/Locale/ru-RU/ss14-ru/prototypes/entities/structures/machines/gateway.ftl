@@ -1,7 +1,7 @@
-ent-BaseGateway = gateway
-    .desc = A mysterious gateway built by unknown hands, it allows for faster than light travel to far-flung locations.
+ent-BaseGateway = врата
+    .desc = Таинственные врата, возведенные неизвестно кем, позволяют преодолевать быстрее света огромные расстояния.
 ent-Gateway = { ent-BaseGateway }
     .desc = { ent-BaseGateway.desc }
 ent-GatewayDestination = { ent-BaseGateway }
-    .suffix = Destination
+    .suffix = Пункт назначения
     .desc = { ent-BaseGateway.desc }

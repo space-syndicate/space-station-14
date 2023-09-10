@@ -1,6 +1,6 @@
 ent-MobCivilian = гражданский
     .desc = Жалкая кучка тайн.
-ent-MobSalvager = Salvager
+ent-MobSalvager = утилизатор
     .desc = { ent-BaseMobHuman.desc }
 ent-MobSpirate = космопират
     .desc = Яррр!

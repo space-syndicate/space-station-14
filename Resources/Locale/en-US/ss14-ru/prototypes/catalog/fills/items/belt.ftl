@@ -34,3 +34,6 @@ ent-ClothingBeltMilitaryWebbingMedFilled = { ent-ClothingBeltMilitaryWebbingMed 
 ent-ClothingBeltWandFilled = { ent-ClothingBeltWand }
     .suffix = Filled
     .desc = { ent-ClothingBeltWand.desc }
+ent-ClothingBeltHolsterFilled = { ent-ClothingBeltHolster }
+    .suffix = Filled
+    .desc = { ent-ClothingBeltHolster.desc }

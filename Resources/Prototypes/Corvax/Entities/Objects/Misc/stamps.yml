@@ -2,9 +2,11 @@
   name: law office's rubber stamp
   parent: RubberStampBase
   id: RubberStampIAA
+  suffix: DO NOT MAP
   components:
     - type: Stamp
       stampedName: stamp-component-stamped-name-iaa
+      stampedColor: "#33CC33"
       stampState: "paper_stamp-ok"
     - type: Sprite
       sprite: Objects/Misc/bureaucracy.rsi
@@ -14,9 +16,11 @@
   name: psychologist's rubber stamp
   parent: RubberStampBase
   id: RubberStampPsychologist
+  suffix: DO NOT MAP
   components:
   - type: Stamp
     stampedName: stamp-component-stamped-name-psychologist
+    stampedColor: "#0082AE"
     stampState: "paper_stamp-psychologist"
   - type: Sprite
     sprite: Objects/Misc/bureaucracy.rsi

@@ -43,7 +43,7 @@
       0: Alive
       15: Dead
   - type: Stamina
-    excess: 15
+    critThreshold: 15
   - type: MovementAlwaysTouching
   - type: DamageStateVisuals
     states:
@@ -83,6 +83,8 @@
   - type: GhostTakeoverAvailable
   - type: ReplacementAccent
     accent: genericAggressive
+  - type: Speech
+    speechVerb: SmallMob
 
 - type: entity
   id: MobTickSalvage
