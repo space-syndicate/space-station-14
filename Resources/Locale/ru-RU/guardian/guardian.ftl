@@ -9,11 +9,6 @@ guardian-activator-invalid-target = Только гуманоиды подход
 guardian-no-soul = У вашего стража нет души.
 guardian-available = У вашего стража теперь есть душа.
 
-# Guardian action
-
-action-name-guardian = Призвать/отозвать стража
-action-description-guardian = Призывает либо отзывает стража обратно в ваше тело
-
 ## Guardian entity specific
 
 guardian-entity-recall = Страж исчезает в воздухе!

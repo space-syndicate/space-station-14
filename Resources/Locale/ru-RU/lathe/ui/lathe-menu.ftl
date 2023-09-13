@@ -8,13 +8,18 @@ lathe-menu-amount = Кол-во:
 lathe-menu-material-display =
     { $material } ({ $amount ->
         [1] { NATURALFIXED($amount, 2) } лист
-        *[other] { NATURALFIXED($amount, 2) } листов
+       *[other] { NATURALFIXED($amount, 2) } листов
     })
-lathe-menu-tooltip-display = 
+lathe-menu-tooltip-display =
     { $amount ->
         [1] { NATURALFIXED($amount, 2) } лист
-        *[other] { NATURALFIXED($amount, 2) } листов
+       *[other] { NATURALFIXED($amount, 2) } листов
     } ({ $material })
+lathe-menu-material-amount =
+    { $amount ->
+        [1] { NATURALFIXED($amount, 2) } { $unit }
+       *[other] { NATURALFIXED($amount, 2) } { MAKEPLURAL($unit) }
+    }
 lathe-menu-no-materials-message = Материалы не загружены
 lathe-menu-fabricating-message = Производится...
 lathe-menu-materials-title = Материалы

@@ -20,3 +20,5 @@ ent-ClothingEyesGlassesThermal = оптический термальный ск�
     .desc = Термалы в форме очков.
 ent-ClothingEyesGlassesChemical = очки химического анализа
     .desc = Очки, позволяющие сканировать химический состав раствора.
+ent-ClothingEyesVisorNinja = ninja visor
+    .desc = An advanced visor protecting a ninja's eyes from flashing lights.

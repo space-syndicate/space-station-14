@@ -63,6 +63,7 @@ namespace Content.IntegrationTests.Tests
             "Origin",
             "CentComm",
             "Box",
+            "Europa",
             "Barratry",
             "Saltern",
             "Core",
@@ -192,6 +193,7 @@ namespace Content.IntegrationTests.Tests
 
                 var grids = mapManager.GetAllMapGrids(mapId).ToList();
                 var gridUids = grids.Select(o => o.Owner).ToList();
+                targetGrid = gridUids.First();
 
                 foreach (var grid in grids)
                 {

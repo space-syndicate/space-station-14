@@ -9,15 +9,12 @@ ent-filingCabinetDrawer = chest drawer
     .suffix = Empty
 ent-BaseBureaucraticStorageFill = { "" }
     .desc = { "" }
-ent-filingCabinetRandom = { ent-['filingCabinet', 'BaseBureaucraticStorageFill'] }
-
+ent-filingCabinetRandom = { ent-filingCabinetDrawer }
   .suffix = Random
-  .desc = { ent-['filingCabinet', 'BaseBureaucraticStorageFill'].desc }
-ent-filingCabinetTallRandom = { ent-['filingCabinetTall', 'BaseBureaucraticStorageFill'] }
-
+  .desc = { ent-filingCabinetDrawer.desc }
+ent-filingCabinetTallRandom = { ent-filingCabinetDrawer }
   .suffix = Random
-  .desc = { ent-['filingCabinetTall', 'BaseBureaucraticStorageFill'].desc }
-ent-filingCabinetDrawerRandom = { ent-['filingCabinetDrawer', 'BaseBureaucraticStorageFill'] }
-
+  .desc = { ent-filingCabinetDrawer.desc }
+ent-filingCabinetDrawerRandom = { ent-filingCabinetDrawer }
   .suffix = Random
-  .desc = { ent-['filingCabinetDrawer', 'BaseBureaucraticStorageFill'].desc }
+  .desc = { ent-filingCabinetDrawer.desc }
