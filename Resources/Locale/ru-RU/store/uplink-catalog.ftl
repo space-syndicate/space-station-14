@@ -41,7 +41,7 @@ uplink-emp-grenade-desc = Граната, предназначенная для 
 uplink-exploding-pen-name = Взрывающаяся ручка
 uplink-exploding-pen-desc = Взрывное устройство класса IV, помещённое в стандартную ручку. Снабжено 4-секундным таймером.
 uplink-exploding-syndicate-bomb-name = Бомба синдиката
-uplink-exploding-syndicate-bomb-desc = Надежная бомба, которая может проделать большую дыру в станции. Полезно для отвлечения внимания.
+uplink-exploding-syndicate-bomb-desc = Надёжная бомба, которая может проделать большую дыру в станции. Полезно для отвлечения внимания.
 # Ammo
 uplink-pistol-magazine-name = Пистолетный магазин (.35 авто)
 uplink-pistol-magazine-desc = Пистолетный магазин на 10 патронов. Совместим с "Гадюкой".

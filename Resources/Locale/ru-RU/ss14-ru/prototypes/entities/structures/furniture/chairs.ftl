@@ -30,4 +30,4 @@ ent-ChairFoldingSpawnFolded = { ent-ChairFolding }
     .suffix = Сложенный
     .desc = { ent-ChairFolding.desc }
 ent-SteelBench = стальная скаймека
-    .desc = Длинная скамья, созданная для метро. Реальный стандартный дизайн.
+    .desc = Длинная скамья, созданная для метро. Реально стандартный дизайн.

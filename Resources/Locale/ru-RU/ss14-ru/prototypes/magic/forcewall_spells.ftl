@@ -1,2 +1,2 @@
-ent-ActionForceWall = Создает магический барьер.
-    .desc = TARCOL MINTI ZHERI
+ent-ActionForceWall = Магический барьер
+    .desc = Создает магический барьер.
