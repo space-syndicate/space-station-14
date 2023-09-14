@@ -1,3 +1,3 @@
-ninja-no-power = Not enough charge in suit battery!
-ninja-research-steal-fail = No new research nodes were stolen...
-ninja-research-steal-success = Stole { $count } new nodes from { THE($server) }.
+ninja-no-power = Недостаточно заряда в аккумуляторе костюма!
+ninja-research-steal-fail = Никакие новые исследовательские узлы украдены не были...
+ninja-research-steal-success = Украдено { $count } новых технологий из { ($server) }.
