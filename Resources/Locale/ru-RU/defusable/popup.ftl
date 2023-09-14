@@ -1,5 +1,5 @@
 defusable-popup-begun = { CAPITALIZE($name) } подает сигнал к жизни, свет горит!
-defusable-popup-defuse = { CAPITALIZE($name) } раздается последний сигнал, и свет навсегда гаснет.
+defusable-popup-defuse = { CAPITALIZE($name) } издаёт последний сигнал, и свет навсегда гаснет.
 defusable-popup-boom = { CAPITALIZE($name) } ревёт при взрыве внутренней бомбы!
 defusable-popup-fried = { CAPITALIZE($name) } искрит, но не начинает обратный отсчёт.
 defusable-popup-cant-anchor = { CAPITALIZE($name) } похоже, прикручен болтами к полу!
