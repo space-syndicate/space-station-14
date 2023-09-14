@@ -1,5 +1,5 @@
 ent-ActionScream = Крикнуть
-    .desc = AAAAAAAAAAAAAAAAAAAAAAAAA
+    .desc = ААААААААААААААААААААААААА
 ent-ActionTurnUndead = Обратиться в зомби
     .desc = Поддайтесь заражению и превратитесь в зомби.
 ent-ActionToggleLight = Переключить фонарь
