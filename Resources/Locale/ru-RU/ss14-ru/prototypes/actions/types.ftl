@@ -16,8 +16,8 @@ ent-ActionActivateEmpImplant = Активировать ЭМИ
     .desc = Вызывает небольшой ЭМИ-импульс вокруг вас.
 ent-ActionActivateDnaScramblerImplant = Перемешать ДНК
     .desc = Меняет имя и внешность случайным образом.
-ent-ActionToggleSuitPiece = Переключить шлем
-    .desc = Не забудьте надеть шлем, прежде чем прыгать в космос.
+ent-ActionToggleSuitPiece = Переключить элементы костюма
+    .desc = Не забудьте экипировать важные части костюма, прежде чем приступать к действиям.
 ent-ActionCombatModeToggle = [color=red]Боевой режим[/color]
     .desc = Войти в боевой режим
 ent-ActionCombatModeToggleOff = [color=red]Боевой режим[/color]
