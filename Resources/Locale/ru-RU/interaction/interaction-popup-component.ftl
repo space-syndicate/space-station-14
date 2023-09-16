@@ -35,7 +35,6 @@ petting-failure-dehydrated-carp = Вы гладите { $target } по { POSS-AD
 petting-failure-goat = Вы тянетесь погладить { $target }, но { $target } упорно отказывается!
 petting-failure-goose = Вы тянетесь погладить { $target }, но { $target } слишком ужасен!
 petting-failure-possum = Вы тянетесь погладить { $target }, но на вас шипят и рычат.
-petting-failure-pig = Вы тянетесь погладить { $target }, но сталкиваетесь с раздражённым хрюканьем и визгом!
 petting-failure-sloth = Вы тянетесь погладить { $target }, но { $target } с невероятной скоростью уклоняется!
 petting-failure-holo = Вы тянетесь погладить { $target }, но { $target } едва не пронзает шипами вашу руку!
 petting-failure-raccoon = Вы тянетесь погладить { $target }, но { $target } енотится от вас.

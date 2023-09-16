@@ -5,3 +5,7 @@ ent-MobRatKingBuff = { ent-MobRatKing }
     .desc = { ent-MobRatKing.desc }
 ent-MobRatServant = Rat Servant
     .desc = He's da mini rat. He don't make da roolz.
+ent-ActionRatKingRaiseArmy = Raise Army
+    .desc = Spend some hunger to summon an allied rat to help defend you.
+ent-ActionRatKingDomain = Rat King's Domain
+    .desc = Spend some hunger to release a cloud of miasma into the air.

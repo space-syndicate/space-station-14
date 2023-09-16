@@ -51,7 +51,7 @@ public sealed partial class TTSSystem : EntitySystem
         var soundData = await GenerateTTS(ev.Text, protoVoice.Speaker);
         if (soundData is null) return;
 
-        RaiseNetworkEvent(new PlayTTSEvent(ev.Uid, soundData), Filter.SinglePlayer(session));
+        RaiseNetworkEvent(new PlayTTSEvent(GetNetEntity(ev.Uid), soundData), Filter.SinglePlayer(session));
     }
 
     private async void OnEntitySpoke(EntityUid uid, TTSComponent component, EntitySpokeEvent args)
@@ -82,7 +82,7 @@ public sealed partial class TTSSystem : EntitySystem
     {
         var soundData = await GenerateTTS(message, speaker);
         if (soundData is null) return;
-        RaiseNetworkEvent(new PlayTTSEvent(uid, soundData), Filter.Pvs(uid));
+        RaiseNetworkEvent(new PlayTTSEvent(GetNetEntity(uid), soundData), Filter.Pvs(uid));
     }
 
     private async void HandleWhisper(EntityUid uid, string message, string obfMessage, string speaker)
@@ -93,8 +93,8 @@ public sealed partial class TTSSystem : EntitySystem
         var obfSoundData = await GenerateTTS(obfMessage, speaker, true);
         if (obfSoundData is null) return;
 
-        var fullTtsEvent = new PlayTTSEvent(uid, fullSoundData, true);
-        var obfTtsEvent = new PlayTTSEvent(uid, obfSoundData, true);
+        var fullTtsEvent = new PlayTTSEvent(GetNetEntity(uid), fullSoundData, true);
+        var obfTtsEvent = new PlayTTSEvent(GetNetEntity(uid), obfSoundData, true);
 
         // TODO: Check obstacles
         var xformQuery = GetEntityQuery<TransformComponent>();
