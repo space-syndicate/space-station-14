@@ -1,0 +1,176 @@
+# Роль
+- type: job
+  id: BlueShield
+  name: job-name-blueshield
+  description: job-description-blueshield
+  playTimeTracker: JobBlueShield
+  requirements:
+  - !type:DepartmentTimeRequirement
+    department: Security
+    time: 18000 # NuclearWastelands
+  startingGear: BlueShieldGear
+  icon: "BlueShield"
+  supervisors: job-supervisors-centcom
+  canBeAntag: false
+  access:
+  - Command
+  - Bar
+  - Service
+  - Maintenance
+  - Janitor
+  - Theatre
+  - Kitchen
+  - Chapel
+  - Hydroponics
+  - External
+  - Chemistry
+  - Engineering
+  - Research
+  - Detective
+  - Salvage
+  - Security
+  - Brig
+  - Cargo
+  - Atmospherics
+  - Cargo
+  - Medical
+
+# Набор снаряжения
+- type: startingGear
+  id: BlueShieldGear
+  equipment:
+    shoes: ClothingShoesBootsJack
+    jumpsuit: ClothingUniformJumpsuitNanotrasen
+    gloves: ClothingHandsGlovesCombat
+    eyes: ClothingEyesGlassesSunglasses
+    ears: ClothingHeadsetCommand
+    head: ClothingHeadHatBeretWarden
+    outerClothing: ClothingOuterVestWeb
+    pocket1: HandheldCrewMonitor
+    pocket2: WeaponPulsePistol
+    id: BlueShieldPDA 
+    belt: ClothingBeltBlueshieldWebbing
+    back: ClothingBackpackBlueShieldFilled
+  satchel: ClothingBackpackSatchelBlueShieldFilled
+  duffelbag: ClothingBackpackDuffelBlueShieldFilled
+  
+# Рюкзак
+- type: entity
+  parent: ClothingBackpack
+  id: ClothingBackpackBlueShieldFilled
+  description: Это рюкзак, от которого так и веет чувством защищённости.
+  name: Рюкзак синего щита
+  suffix: Заполненный
+  components:
+    - type: StorageFill
+      contents:
+        - id: BoxSurvivalBrigmedic
+        - id: MedkitCombatFilled
+        - id: Flash
+    - type: Sprite
+      sprite: NuclearWastelands/Clothing/Back/blueshield_backpack.rsi # спрайты от @dimaskarabas28
+    - type: Storage
+      capacity: 130
+      
+
+# Вещмешок
+- type: entity
+  parent: ClothingBackpackDuffel
+  id: ClothingBackpackDuffelBlueShieldFilled
+  description: Это вещмешок, от которого так и веет чувством защищённости.
+  name: Вещмешок синего щита
+  suffix: Заполненный
+  components:
+    - type: StorageFill
+      contents:
+        - id: BoxSurvivalBrigmedic
+        - id: MedkitCombatFilled
+        - id: Flash
+    - type: Sprite
+ #     sprite: NuclearWastelands/Clothing/Back/blueshield_duffelbag.rsi - ожидаем.
+      sprite: Textures/Clothing/Back/Satchels/security.rsi
+    - type: Storage
+      capacity: 150
+
+# Сумка
+- type: entity
+  parent: ClothingBackpackSatchel
+  id: ClothingBackpackSatchelBlueShieldFilled
+  description: Это сумка, от которой так и веет чувством защищённости.
+  name: Сумка синего щита
+  suffix: Заполненный
+  components:
+    - type: StorageFill
+      contents:
+        - id: BoxSurvivalBrigmedic
+        - id: MedkitCombatFilled
+        - id: Flash
+    - type: Sprite
+#      sprite: NuclearWastelands/Clothing/Back/blueshield_satchel.rsi - ожидаем.
+      sprite: Textures/Clothing/Back/Duffels/security.rsi
+    - type: Storage
+      capacity: 130
+
+# Разгрузка
+- type: entity
+  parent: ClothingBeltStorageBase
+  id: ClothingBeltBlueshieldWebbing
+  description: Разгрузка для самых робастных!
+  name: РПС Синего щита
+  suffix: Заполненный
+  components:
+    - type: StorageFill
+      contents:
+        - id: WeaponRevolverDeckard
+        - id: SpeedLoaderMagnum
+        - id: SpeedLoaderMagnum
+        - id: SpeedLoaderMagnumRubber
+        - id: CombatMedipen
+        - id: EmergencyMedipen
+        - id: EmergencyMedipen
+        - id: Zipties
+        - id: Zipties
+    - type: Sprite
+      sprite: NuclearWastelands/Clothing/Belt/blueshield_webbing.rsi # спрайты из tgstation13
+    - type: Storage
+      capacity: 40
+      
+# Айди карта
+- type: entity
+  parent: PassengerIDCard
+  id: BlueShieldIDCard
+  name: ID карта синего щита
+  components:
+  - type: PresetIdCard
+    job: BlueShield
+  - type: Sprite
+    layers:
+    - state: default
+    - state: idblueshield
+
+# КПК
+- type: entity
+  parent: BasePDA
+  id: BlueShieldPDA
+  name: КПК синего щита
+  description: Это пахнет профессионализмом.
+  components:
+  - type: Pda
+    id: BlueShieldIDCard
+    state: pda-blueshield
+  - type: Icon
+    state: pda-blueshield
+  - type: HealthAnalyzer
+    scanDelay: 2.5
+
+ # Маркер спавна
+- type: entity
+  id: SpawnPointBlueShield
+  parent: SpawnPointJobBase
+  name: blueshield
+  components:
+  - type: SpawnPoint
+    job_id: BlueShield
+  - type: Sprite
+    layers:
+      - state: green
