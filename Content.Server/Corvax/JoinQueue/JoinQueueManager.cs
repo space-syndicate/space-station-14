@@ -1,6 +1,6 @@
 ﻿using System.Linq;
+using Content.Corvax.Interfaces.Server;
 using Content.Server.Connection;
-using Content.Server.Corvax.DiscordAuth;
 using Content.Shared.CCVar;
 using Content.Shared.Corvax.CCCVars;
 using Content.Shared.Corvax.JoinQueue;
@@ -39,7 +39,7 @@ public sealed class JoinQueueManager
     [Dependency] private readonly IConnectionManager _connectionManager = default!;
     [Dependency] private readonly IConfigurationManager _cfg = default!;
     [Dependency] private readonly IServerNetManager _netManager = default!;
-    [Dependency] private readonly DiscordAuthManager _discordAuthManager = default!;
+    private IServerDiscordAuthManager? _discordAuthManager;
 
     /// <summary>
     ///     Queue of active player sessions
@@ -57,7 +57,10 @@ public sealed class JoinQueueManager
 
         _cfg.OnValueChanged(CCCVars.QueueEnabled, OnQueueCVarChanged, true);
         _playerManager.PlayerStatusChanged += OnPlayerStatusChanged;
-        _discordAuthManager.PlayerVerified += OnPlayerVerified;
+
+        IoCManager.Instance!.TryResolveType(out _discordAuthManager);
+        if (_discordAuthManager != null)
+            _discordAuthManager.PlayerVerified += OnPlayerVerified;
     }
 
     private void OnQueueCVarChanged(bool value)
@@ -74,6 +77,37 @@ public sealed class JoinQueueManager
     }
 
     private async void OnPlayerVerified(object? sender, IPlayerSession session)
+    {
+        HandleNewPlayer(session);
+    }
+
+    private async void OnPlayerStatusChanged(object? sender, SessionStatusEventArgs e)
+    {
+        if (e.NewStatus == SessionStatus.Connected &&
+            _discordAuthManager == null)
+        {
+            HandleNewPlayer(e.Session);
+        }
+
+        if (e.NewStatus == SessionStatus.Disconnected)
+        {
+            var wasInQueue = _queue.Remove(e.Session);
+
+            if (!wasInQueue && e.OldStatus != SessionStatus.InGame) // Process queue only if player disconnected from InGame or from queue
+                return;
+
+            ProcessQueue(true, e.Session.ConnectedTime);
+
+            if (wasInQueue)
+                QueueTimings.WithLabels("Unwaited").Observe((DateTime.UtcNow - e.Session.ConnectedTime).TotalSeconds);
+        }
+    }
+
+    /// <summary>
+    ///     Process new player and determines what to do with session
+    /// </summary>
+    /// <param name="session">New player session</param>
+    private async void HandleNewPlayer(IPlayerSession session)
     {
         if (!_isEnabled)
         {
@@ -96,22 +130,6 @@ public sealed class JoinQueueManager
 
         _queue.Add(session);
         ProcessQueue(false, session.ConnectedTime);
-    }
-
-    private async void OnPlayerStatusChanged(object? sender, SessionStatusEventArgs e)
-    {
-        if (e.NewStatus == SessionStatus.Disconnected)
-        {
-            var wasInQueue = _queue.Remove(e.Session);
-
-            if (!wasInQueue && e.OldStatus != SessionStatus.InGame) // Process queue only if player disconnected from InGame or from queue
-                return;
-
-            ProcessQueue(true, e.Session.ConnectedTime);
-
-            if (wasInQueue)
-                QueueTimings.WithLabels("Unwaited").Observe((DateTime.UtcNow - e.Session.ConnectedTime).TotalSeconds);
-        }
     }
 
     /// <summary>
