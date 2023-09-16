@@ -53,5 +53,5 @@ ent-FoodBakedBrownie = брауни
     .suffix = Свежий
 ent-FoodBakedCannabisBrownieBatch = особые брауни
     .desc = Противень "особых" брауни.
-ent-FoodBakedCannabisBrownie = особое брауни
+ent-FoodBakedCannabisBrownie = особый брауни
     .desc = "Особое" брауни.
