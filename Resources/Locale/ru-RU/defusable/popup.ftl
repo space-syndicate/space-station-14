@@ -5,5 +5,5 @@ defusable-popup-fried = { CAPITALIZE($name) } искрит, но не начин
 defusable-popup-cant-anchor = { CAPITALIZE($name) }, похоже, прикручена болтами к полу!
 defusable-popup-wire-bolt-pulse = Болты на мгновение проворачиваются на месте.
 defusable-popup-wire-proceed-pulse = { CAPITALIZE($name) } зловеще пищит!
-defusable-popup-wire-proceed-cut = Цифровой дисплей на { ($name) } выключается.
+defusable-popup-wire-proceed-cut = Цифровой дисплей на { $name } выключается.
 defusable-popup-wire-chirp = { CAPITALIZE($name) } трещит.
