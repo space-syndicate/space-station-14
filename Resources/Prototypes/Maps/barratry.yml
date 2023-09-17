@@ -19,7 +19,15 @@
           overflowJobs:
             - Passenger
           availableJobs:
-            #service
+            CargoTechnician: [ 2, 2 ]
+            Passenger: [ -1, -1 ]
+            Bartender: [ 2, 2 ]
+            Botanist: [ 2, 2]
+            BlueShield: [ 1, 1 ] # NuclearWastelands
+            Chef: [ 2, 2 ]
+            Clown: [ 1, 1 ]
+            Janitor: [ 2, 2 ]
+            Mime: [ 1, 1 ]
             Captain: [ 1, 1 ]
             IAA: [ 1, 1 ] # Corvax-IAA
             HeadOfPersonnel: [ 1, 1 ]
