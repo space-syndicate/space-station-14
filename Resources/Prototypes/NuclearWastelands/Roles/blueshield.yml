@@ -9,7 +9,7 @@
     department: Security
     time: 18000 # NuclearWastelands
   startingGear: BlueShieldGear
-  icon: "BlueShield"
+  icon: "JobIconBlueShield"
   supervisors: job-supervisors-centcom
   canBeAntag: false
   access:
@@ -163,7 +163,7 @@
   - type: HealthAnalyzer
     scanDelay: 2.5
 
- # Маркер спавна
+# Маркер спавна
 - type: entity
   id: SpawnPointBlueShield
   parent: SpawnPointJobBase
@@ -174,3 +174,11 @@
   - type: Sprite
     layers:
       - state: green
+
+# Иконка
+- type: statusIcon
+  parent: JobIcon
+  id: JobIconBlueShield
+  icon:
+    sprite: Interface/Misc/job_icons.rsi
+    state: BlueShield
