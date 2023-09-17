@@ -26,8 +26,8 @@
   group: Foods
   desc: обычная сметанка
   physicalDesc: reagent-physical-desc-gloopy
-  flavor: sweet
-  color: skyblue
+  flavor: vitamin
+  color: white
   recognizable: true
 
 - type: reaction
@@ -46,8 +46,8 @@
   group: Foods
   desc: закваска для сметаны
   physicalDesc: reagent-physical-desc-gloopy
-  flavor: sweet
-  color: skyblue
+  flavor: chalky
+  color: white
   recognizable: true
 
 - type: reagent
@@ -56,8 +56,8 @@
   group: Foods
   desc: сметанно-майонезный соус
   physicalDesc: reagent-physical-desc-gloopy
-  flavor: sweet
-  color: skyblue
+  flavor: salty
+  color: white
   recognizable: true
 
 - type: reaction
