@@ -1,0 +1,29 @@
+﻿- type: job
+  id: Pirate1lvl
+  name: пират-абориген
+  description: Скорее всего вы откинетесь при первом же абордаже.
+  playTimeTracker: JobPirate1lvl
+  startingGear: pirate1lvlGear
+  icon: "JobIconPrisoner"
+  requireAdminNotify: true
+  joinNotifyCrew: true
+  supervisors: job-supervisors-centcom
+  canBeAntag: false
+  accessGroups:
+  - Service
+  - Maintenance
+
+- type: startingGear
+  id: pirate1lvlGear
+  equipment:
+    equipment:
+    jumpsuit: ClothingUniformJumpsuitPirate
+    back: ClothingBackpackPirateFilled
+    head: ClothingHeadBandBlack
+    shoes: ClothingShoesBootsLaceup
+    id: PassengerPDA
+    belt: ClothingBeltUtility
+    pocket1: AppraisalTool
+  innerclothingskirt: ClothingUniformJumpsuitPirate
+  satchel: ClothingBackpackPirateFilled
+  duffelbag: ClothingBackpackPirateFilled

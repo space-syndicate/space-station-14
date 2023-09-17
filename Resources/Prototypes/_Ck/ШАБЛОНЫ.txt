@@ -1,0 +1,134 @@
+верхняя одежда 
+
+- type: entity
+  parent: ClothingOuterStorageBase
+  id: ClothingOuterJacketChef
+  name: chef jacket
+  description: An apron-jacket used by a high class chef.
+  components:
+  - type: Sprite
+    sprite: Clothing/OuterClothing/Misc/chef.rsi
+  - type: Clothing
+    sprite: Clothing/OuterClothing/Misc/chef.rsi
+
+перчатки обыкновенные
+
+- type: entity
+  parent: ClothingHandsBase
+  id: ClothingHandsGlovesCaptain
+  name: captain gloves
+  description: Regal blue gloves, with a nice gold trim. Swanky.
+  components:
+  - type: Sprite
+    sprite: Clothing/Hands/Gloves/captain.rsi
+  - type: Clothing
+    sprite: Clothing/Hands/Gloves/captain.rsi
+  - type: GloveHeatResistance
+    heatResistance: 1400
+  - type: Insulated
+  - type: Fiber
+    fiberMaterial: fibers-durathread
+    fiberColor: fibers-regal-blue
+  - type: FingerprintMask
+
+шапки
+
+- type: entity
+  parent: ClothingHeadBase
+  id: ClothingHeadHatBeaverHat
+  name: beaver hat
+  description: 'Gentlemen?'
+  components:
+  - type: Sprite
+    sprite: Clothing/Head/Hats/beaver_hat.rsi
+  - type: Clothing
+    sprite: Clothing/Head/Hats/beaver_hat.rsi
+
+- type: entity
+  parent: ClothingHeadBase
+  id: ClothingHeadHelmetSwat
+  name: SWAT helmet
+  description: An extremely robust helmet, commonly used by paramilitary forces. This one has the Nanotrasen logo emblazoned on the top.
+  components:
+  - type: Sprite
+    sprite: Clothing/Head/Helmets/swat.rsi
+  - type: Clothing
+    sprite: Clothing/Head/Helmets/swat.rsi
+  - type: Armor #This is intentionally not spaceproof, when the time comes to port the values from SS13 this should be buffed from what it was.
+    modifiers:
+      coefficients:
+        Blunt: 0.80
+        Slash: 0.80
+        Piercing: 0.80
+        Heat: 0.80
+        Radiation: 0.80
+        Caustic: 0.95
+  - type: ExplosionResistance
+    damageCoefficient: 0.75
+
+броня
+
+- type: entity
+  parent: ClothingOuterBaseLarge
+  id: ClothingOuterArmorHeavy
+  name: heavy armor suit
+  description: A heavily armored suit that protects against excessive damage.
+  components:
+  - type: Sprite
+    sprite: Clothing/OuterClothing/Armor/heavy.rsi
+  - type: Clothing
+    sprite: Clothing/OuterClothing/Armor/heavy.rsi
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.5
+        Slash: 0.5
+        Piercing: 0.5
+        Heat: 0.5
+        Radiation: 0
+        Caustic: 0.75
+  - type: GroupExamine
+
+обувь
+
+- type: entity
+  parent: ClothingShoesStorageBase
+  id: ClothingShoesBootsJack
+  name: jackboots
+  description: Nanotrasen-issue Security combat boots for combat scenarios or combat situations. All combat, all the time.
+  components:
+  - type: Sprite
+    sprite: Clothing/Shoes/Boots/jackboots.rsi
+  - type: Clothing
+    sprite: Clothing/Shoes/Boots/jackboots.rsi
+  - type: FootstepModifier # Corvax-Sounds
+    footstepSoundCollection:
+      collection: FootstepBoots
+  - type: Storage
+    whitelist:
+      tags:
+        - Knife
+
+форма
+
+- type: entity
+  parent: ClothingUniformBase
+  id: ClothingUniformJumpsuitDeathSquad
+  name: Death squad uniform
+  description: Advanced armored jumpsuit used by special forces in special operations.
+  components:
+  - type: Sprite
+    sprite: Clothing/Uniforms/Jumpsuit/deathsquad.rsi
+  - type: Clothing
+    sprite: Clothing/Uniforms/Jumpsuit/deathsquad.rsi
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.9
+        Slash: 0.9
+        Piercing: 0.9
+        Heat: 0.9
+
+
+
+

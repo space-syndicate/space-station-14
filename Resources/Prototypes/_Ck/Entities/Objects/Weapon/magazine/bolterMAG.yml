@@ -1,0 +1,48 @@
+# Empty mags
+- type: entity
+  id: BaseMagazineRifleBolt
+  name: "magazine (.20 rifle)"
+  parent: BaseItem
+  abstract: true
+  components:
+  - type: Tag
+    tags:
+      - MagazineRifleBolt
+  - type: Item
+    size: 5
+  - type: BallisticAmmoProvider
+    mayTransfer: true
+    whitelist:
+      tags:
+        - CartridgeAntiMateriel
+    capacity: 25
+  - type: ContainerContainer
+    containers:
+      ballistic-ammo: !type:Container
+  - type: Sprite
+    sprite: _Ck\Objects\Weapon\magazin\bolts.rsi
+    layers:
+    - state: base
+      map: ["enum.GunVisualLayers.Base"]
+    - state: mag-1
+      map: ["enum.GunVisualLayers.Mag"]
+  - type: MagazineVisuals
+    magState: mag
+    steps: 2
+    zeroVisible: false
+  - type: Appearance
+
+# Magazines
+- type: entity
+  id: MagazineRifleBolt
+  name: "magazine (.20 rifle)"
+  parent: BaseMagazineRifleBolt
+  components:
+  - type: BallisticAmmoProvider
+    proto: CartridgeAntiMateriel
+  - type: Sprite
+    layers:
+    - state: red
+      map: ["enum.GunVisualLayers.Base"]
+    - state: mag-1
+      map: ["enum.GunVisualLayers.Mag"]

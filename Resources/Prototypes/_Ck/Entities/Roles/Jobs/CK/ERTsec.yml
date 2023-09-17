@@ -1,0 +1,19 @@
+- type: job
+  id: ERTsec
+  name: Оперативник нанотрайзен
+  description: Вы на столько хорш что защищаете станцию ЦК.
+  playTimeTracker: JobERTsec
+  requirements:
+    - !type:DepartmentTimeRequirement
+      department: Security
+      time: 54000 #15hrs
+  startingGear: ERTSecurityGear
+  icon: "JobIconNanotrasen"
+  supervisors: job-supervisors-hos
+  canBeAntag: false
+  whitelistRequired: true
+  accessGroups:
+  - AllAccess
+  access:
+  - CCSecurity
+  - CCGeneral

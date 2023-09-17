@@ -1,0 +1,21 @@
+- type: entity
+  parent: ClothingShoesBaseButcherable
+  id: ClothingShoesChef_ck
+  name: chef shoes
+  description: Туфельки шефа
+  components:
+  - type: Sprite
+    sprite: _Ck\Entities\clothing\shoes\chef_ck.rsi
+  - type: Clothing
+    sprite: _Ck\Entities\clothing\shoes\chef_ck.rsi
+
+- type: entity
+  parent: ClothingShoesBaseButcherable
+  id: ClothingShoesLox
+  name: bich
+  description: Грубо и не удобно!
+  components:
+  - type: Sprite
+    sprite: _Ck\Entities\clothing\shoes\lox.rsi
+  - type: Clothing
+    sprite: _Ck\Entities\clothing\shoes\lox.rsi

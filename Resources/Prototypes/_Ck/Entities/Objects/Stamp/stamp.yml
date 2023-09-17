@@ -1,0 +1,38 @@
+- type: entity
+  name: Печать СССП
+  parent: RubberStampBase
+  id: RubberStampSSSP
+  components:
+  - type: Stamp
+    stampedName: СССП
+    stampedColor: "#999999"
+    stampState: "paper_stamp-warden"
+  - type: Sprite
+    sprite: _Ck\Objects\Stamp.rsi
+    state: stamp-sssp
+
+- type: entity
+  name: Печать шеф-повара
+  parent: RubberStampBase
+  id: RubberStampPOVAR
+  components:
+  - type: Stamp
+    stampedName: шеф-повара
+    stampedColor: "#3f3f3f"
+    stampState: "paper_stamp-ok"
+  - type: Sprite
+    sprite: _Ck\Objects\Stamp.rsi
+    state: stamp-povar
+
+- type: entity
+  name: Печать Нанотрайзен
+  parent: RubberStampBase
+  id: RubberStampNanotrayzen
+  components:
+  - type: Stamp
+    stampedName: Нанотрайзен
+    stampedColor: "#3f3f3f"
+    stampState: "paper_stamp-hop"
+  - type: Sprite
+    sprite: _Ck\Objects\Stamp.rsi
+    state: stamp-povar

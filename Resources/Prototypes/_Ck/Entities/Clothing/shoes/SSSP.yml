@@ -1,0 +1,14 @@
+- type: entity
+  parent: ClothingShoesBaseButcherable
+  id: ClothingShoesSSSP
+  name: Берцы
+  description: Берцы, никогда не подводят солдата.
+  components:
+  - type: Sprite
+    sprite: _Ck\Entities\clothing\shoes\SSSP_bots.rsi
+  - type: Clothing
+    sprite: _Ck\Entities\clothing\shoes\SSSP_bots.rsi
+  - type: NoSlip
+  - type: FootstepModifier
+    footstepSoundCollection:
+      collection: FootstepSoldier

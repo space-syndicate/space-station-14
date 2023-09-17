@@ -1,0 +1,228 @@
+#повар
+
+- type: entity
+  id: SpawnPointChefck
+  parent: SpawnPointJobBase
+  name: chefck
+  components:
+  - type: SpawnPoint
+    job_id: Chefck
+  - type: Sprite
+    layers:
+      - state: green
+      - state: Chef_ck_spawn
+
+#бомж
+
+- type: entity
+  id: SpawnPointLox
+  parent: SpawnPointJobBase
+  name: lox
+  components:
+  - type: SpawnPoint
+    job_id: Lox
+  - type: Sprite
+    layers:
+      - state: green
+      - state: passenger
+
+#пираты
+
+- type: entity
+  id: SpawnPointRab
+  parent: SpawnPointJobBase
+  name: rab
+  components:
+  - type: SpawnPoint
+    job_id: Rab
+  - type: Sprite
+    layers:
+      - state: green
+
+- type: entity
+  id: SpawnPointRabMaster
+  parent: SpawnPointJobBase
+  name: rabmaster
+  components:
+  - type: SpawnPoint
+    job_id: RabMaster
+  - type: Sprite
+    layers:
+      - state: green
+      - state: pirate2
+
+- type: entity
+  id: SpawnPointPirate3lvl
+  parent: SpawnPointJobBase
+  name: pirate3lvl
+  components:
+  - type: SpawnPoint
+    job_id: Pirate3lvl
+  - type: Sprite
+    layers:
+      - state: green
+      - state: pirate3
+
+- type: entity
+  id: SpawnPointPirate1lvl
+  parent: SpawnPointJobBase
+  name: pirate1lvl
+  components:
+  - type: SpawnPoint
+    job_id: Pirate1lvl
+  - type: Sprite
+    layers:
+      - state: green
+      - state: pirate1
+
+#пилот сб
+
+- type: entity
+  id: SpawnPointKTKP
+  parent: SpawnPointJobBase
+  name: KTKP
+  components:
+  - type: SpawnPoint
+    job_id: KTKP
+  - type: Sprite
+    layers:
+      - state: green
+      - state: KTKPspawn
+
+#АВД 
+
+- type: entity
+  id: SpawnPointIAA
+  parent: SpawnPointJobBase
+  name: IAA
+  components:
+  - type: SpawnPoint
+    job_id: IAA
+  - type: Sprite
+    layers:
+      - state: green
+      - state: hop
+
+#ЦК
+
+- type: entity
+  id: SpawnPointERTsec
+  parent: SpawnPointJobBase
+  name: ERTsec
+  components:
+  - type: SpawnPoint
+    job_id: ERTsec
+  - type: Sprite
+    layers:
+      - state: green
+      - state: ertsecurity
+
+- type: entity
+  id: SpawnPointERTmedic
+  parent: SpawnPointJobBase
+  name: ERTmedic
+  components:
+  - type: SpawnPoint
+    job_id: ERTmedic
+  - type: Sprite
+    layers:
+      - state: green
+      - state: ertmedical
+
+- type: entity
+  id: SpawnPointERTleader
+  parent: SpawnPointJobBase
+  name: ERTleader
+  components:
+  - type: SpawnPoint
+    job_id: ERTleader
+  - type: Sprite
+    layers:
+      - state: green
+      - state: ertleader
+
+- type: entity
+  id: SpawnPointCentralassist
+  parent: SpawnPointJobBase
+  name: Centralassist
+  components:
+  - type: SpawnPoint
+    job_id: Centralassist
+  - type: Sprite
+    layers:
+      - state: green
+      - state: centcom
+
+- type: entity
+  id: SpawnPointCentralOfficial
+  parent: SpawnPointJobBase
+  name: CentralOfficial
+  components:
+  - type: SpawnPoint
+    job_id: CentralOfficial
+  - type: Sprite
+    layers:
+      - state: green
+      - state: centcom
+
+#борги
+
+- type: entity
+  id: SpawnPointBORG
+  parent: SpawnPointJobBase
+  name: BORG
+  components:
+  - type: SpawnPoint
+    job_id: BORG
+  - type: Sprite
+    layers:
+      - state: green
+      - state: ai
+
+- type: entity
+  id: SpawnPointBORGassist
+  parent: SpawnPointJobBase
+  name: BORGassist
+  components:
+  - type: SpawnPoint
+    job_id: BORGassist
+  - type: Sprite
+    layers:
+      - state: green
+      - state: ai
+
+- type: entity
+  id: SpawnPointBORGmedical
+  parent: SpawnPointJobBase
+  name: BORGmedical
+  components:
+  - type: SpawnPoint
+    job_id: BORGmedical
+  - type: Sprite
+    layers:
+      - state: green
+      - state: ai
+
+- type: entity
+  id: SpawnPointBORGsalvage
+  parent: SpawnPointJobBase
+  name: BORGsalvage
+  components:
+  - type: SpawnPoint
+    job_id: BORGsalvage
+  - type: Sprite
+    layers:
+      - state: green
+      - state: ai
+
+- type: entity
+  id: SpawnPointBORGengineer
+  parent: SpawnPointJobBase
+  name: BORGengineer
+  components:
+  - type: SpawnPoint
+    job_id: BORGengineer
+  - type: Sprite
+    layers:
+      - state: green
+      - state: ai

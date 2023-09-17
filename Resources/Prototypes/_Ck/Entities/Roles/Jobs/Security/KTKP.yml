@@ -1,0 +1,18 @@
+- type: job
+  id: KTKP
+  name: пилот
+  description: Пилот, ваша задача патрулировать космос или выполнять задачи поставленные ГСБ.
+  playTimeTracker: JobKTKP
+  requirements:
+    - !type:OverallPlaytimeRequirement
+      time: 7200
+  startingGear: SecurityOfficerGear
+  icon: "JobIconSecurityOfficer"
+  supervisors: job-supervisors-hos
+  canBeAntag: false
+  access:
+  - Security
+  - Maintenance
+  - Service
+  - Brig
+  - External

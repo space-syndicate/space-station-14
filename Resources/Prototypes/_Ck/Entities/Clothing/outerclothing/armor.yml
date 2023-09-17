@@ -1,0 +1,20 @@
+- type: entity
+  parent: ClothingOuterArmorBasic
+  id: ClothingOuterArmorSSSP
+  name: Броня солдата СССП
+  description: Лучшая штурмовая броня СССП!
+  components:
+  - type: Sprite
+    sprite: _Ck\Entities\clothing\outerclothings\armor.rsi\SSSP_armor.rsi
+  - type: Clothing
+    sprite: _Ck\Entities\clothing\outerclothings\armor.rsi\SSSP_armor.rsi
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.8
+        Slash: 0.8
+        Piercing: 0.4
+        Heat: 0.8
+        Caustic: 0.7
+  - type: ExplosionResistance
+    damageCoefficient: 0.80

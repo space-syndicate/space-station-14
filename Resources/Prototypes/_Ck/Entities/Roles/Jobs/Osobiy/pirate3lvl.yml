@@ -1,0 +1,40 @@
+﻿- type: job
+  id: Pirate3lvl
+  name: Чёрная борода
+  description: Легенда космоса, тот чья голова стоит больше сектора!
+  playTimeTracker: JobPirate3lvl
+  startingGear: pirate3lvlGear
+  requirements:
+    - !type:RoleTimeRequirement
+      role: JobPirate1lvl
+      time: 3600 #1 hrs
+    - !type:RoleTimeRequirement
+      role: JobRabMaster
+      time: 7200 #2 hrs
+    - !type:DepartmentTimeRequirement
+      department: Osobiy
+      time: 14400 #4 hrs
+  icon: "JobIconPrisoner"
+  requireAdminNotify: true
+  joinNotifyCrew: true
+  supervisors: job-supervisors-centcom
+  canBeAntag: false
+  accessGroups:
+  - Service
+  - Maintenance
+
+- type: startingGear
+  id: pirate3lvlGear
+  equipment:
+    jumpsuit: ClothingUniformJumpsuitPirate
+    back: ClothingBackpackPirateFilled
+    head: ClothingHeadHatPirate
+    shoes: ClothingShoesBootsLaceup
+    id: PassengerPDA
+    belt: ClothingBeltUtility
+    pocket1: AppraisalTool
+    pocket2: EnergyCutlass
+    outerClothing: ClothingOuterCoatPirate
+  innerclothingskirt: ClothingUniformJumpskirtColorLightBrown
+  satchel: ClothingBackpackPirateFilled
+  duffelbag: ClothingBackpackPirateFilled

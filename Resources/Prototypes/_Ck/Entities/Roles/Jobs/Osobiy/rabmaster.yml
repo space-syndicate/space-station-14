@@ -1,0 +1,33 @@
+﻿- type: job
+  id: RabMaster
+  name: пират-ветеран
+  description: Вы уже не тот абориген.
+  playTimeTracker: JobRabMaster
+  requirements:
+    - !type:RoleTimeRequirement
+      role: JobPirate1lvl
+      time: 1800 #0.5 hrs
+  startingGear: RabMasterGear
+  icon: "JobIconPrisoner"
+  requireAdminNotify: true
+  joinNotifyCrew: true
+  supervisors: job-supervisors-centcom
+  canBeAntag: false
+  accessGroups:
+  - Service
+  - Maintenance
+
+- type: startingGear
+  id: RabMasterGear
+  equipment:
+    jumpsuit: ClothingUniformJumpsuitPirate
+    back: ClothingBackpackPirateFilled
+    head: ClothingHeadHatPirateTricord
+    shoes: ClothingShoesBootsLaceup
+    id: PassengerPDA
+    belt: ClothingBeltUtility
+    pocket1: AppraisalTool
+    outerClothing: ClothingOuterCoatGentle
+  innerclothingskirt: ClothingUniformJumpsuitPirate
+  satchel: ClothingBackpackPirateFilled
+  duffelbag: ClothingBackpackPirateFilled

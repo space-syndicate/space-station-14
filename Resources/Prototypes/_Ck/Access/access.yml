@@ -1,0 +1,29 @@
+- type: accessLevel
+  id: CCAssist
+  name: ЦК Асистент
+
+- type: accessLevel
+  id: CCSecurity
+  name: ЦК Охрана
+
+- type: accessLevel
+  id: CCGeneral
+  name: ЦК Общий
+
+- type: accessLevel
+  id: CCNanotrayzen
+  name: ЦК Представитель
+
+- type: accessLevel
+  id: CCAdmiral
+  name: ЦК Глава Охраны
+
+- type: accessGroup
+  id: CentCom
+  tags:
+  - CCAssist
+  - CCSecurity
+  - CCGeneral
+  - CCNanotrayzen
+  - CCAdmiral
+

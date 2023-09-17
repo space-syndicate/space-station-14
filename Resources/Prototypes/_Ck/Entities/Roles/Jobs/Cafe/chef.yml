@@ -1,0 +1,44 @@
+- type: job
+  id: Chef
+  name: Шеф-повар
+  description: Мамамиа! ты не знаешь что делать?
+  playTimeTracker: JobChef
+  requirements:
+    - !type:RoleTimeRequirement
+      role: JobBotanist
+      time: 7200 #2 hrs
+    - !type:RoleTimeRequirement
+      role: JobChefck
+      time: 10800 #3 hrs
+    - !type:DepartmentTimeRequirement
+      department: Cafe
+      time: 25200 #7 hrs
+  startingGear: ChefGear
+  icon: "JobIconChef"
+  supervisors: job-supervisors-hop
+  canBeAntag: false
+  access:
+  - Service
+  - Maintenance
+  - Hydroponics
+  - Bar
+  - Kitchen
+  - Command
+  extendedAccess:
+  - Hydroponics
+  - Bar
+
+- type: startingGear
+  id: ChefGear
+  equipment:
+    jumpsuit: ClothingUniformJumpsuitChef_ck
+    head: ClothingHeadHatChef_ck
+    back: ClothingBackpackFilled
+    mask: ClothingMaskItalianMoustache
+    shoes: ClothingShoesChef_ck
+    id: ChefPDA
+    ears: ClothingHeadsetService
+    outerClothing: ClothingOuterJacketChef_ck
+  innerclothingskirt: ClothingUniformJumpskirtChef
+  satchel: ClothingBackpackSatchelFilled
+  duffelbag: ClothingBackpackDuffelFilled

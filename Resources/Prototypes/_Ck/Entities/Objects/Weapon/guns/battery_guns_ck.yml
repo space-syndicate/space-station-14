@@ -1,0 +1,40 @@
+- type: entity
+  name: Автоматический станер
+  parent: BaseWeaponBatterySmall
+  id: WeaponDisabler_ck
+  description: Станер, разработка NT, имеет огромный запас энергии, применяется для подавлений бунтов, имеет автоматический огонь.
+  components:
+    - type: Tag
+      tags:
+        - Taser
+    - type: Sprite
+      sprite: _Ck\Objects\Weapon\guns\disabler_ck.rsi
+      layers:
+        - state: base
+          map: ["enum.GunVisualLayers.Base"]
+        - state: mag-unshaded-0
+          map: ["enum.GunVisualLayers.MagUnshaded"]
+          shader: unshaded
+    - type: Clothing
+      sprite: _Ck\Objects\Weapon\guns\disabler_ck.rsi
+      quickEquip: false
+    - type: Gun
+      selectedMode: SemiAuto
+      fireRate: 5
+      availableModes:
+      - SemiAuto
+      - FullAuto
+      soundGunshot:
+        path: /Audio/Weapons/Guns/Gunshots/taser2.ogg
+    - type: ProjectileBatteryAmmoProvider
+      proto: BulletDisabler
+      fireCost: 100
+    - type: Battery
+      maxCharge: 2500
+      startingCharge: 2500
+    - type: MagazineVisuals
+      magState: mag
+      steps: 5
+      zeroVisible: true
+    - type: Appearance
+    

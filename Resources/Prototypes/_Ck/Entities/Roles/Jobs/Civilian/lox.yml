@@ -1,0 +1,26 @@
+- type: job
+  id: Lox
+  name: Бомж
+  description: Вы неоплатили налоги, вас посадят! БЕГИ!
+  playTimeTracker: JobLox
+  startingGear: LoxGear
+  icon: "JobIconPrisoner"
+  supervisors: job-supervisors-everyone
+  canBeAntag: false
+#  access: # Corvax-MRP
+#  - Maintenance
+
+- type: startingGear
+  id: LoxGear
+  equipment:
+    jumpsuit: ClothingUniformJumpsuitLox
+    head: ClothingHeadHatLox
+    back: ClothingBackpackFilled
+    shoes: ClothingShoesLox
+    eyes: ClothingEyesGlassesLox
+    id: PassengerPDA
+    ears: ClothingHeadsetGrey
+    outerClothing: ClothingOuterLox
+  innerclothingskirt: ClothingUniformJumpskirtLox
+  satchel: ClothingBackpackSatchelFilled
+  duffelbag: ClothingBackpackDuffelFilled

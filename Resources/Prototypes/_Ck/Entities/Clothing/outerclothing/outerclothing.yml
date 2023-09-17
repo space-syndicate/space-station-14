@@ -1,0 +1,21 @@
+- type: entity
+  parent: ClothingOuterStorageBase
+  id: ClothingOuterJacketChef_ck
+  name: chef jacket
+  description: An apron-jacket used by a high class chef.
+  components:
+  - type: Sprite
+    sprite: _Ck\Entities\clothing\outerclothings\chef_ck.rsi
+  - type: Clothing
+    sprite: _Ck\Entities\clothing\outerclothings\chef_ck.rsi
+
+- type: entity
+  parent: ClothingOuterStorageBase
+  id: ClothingOuterLox
+  name: lox
+  description: Истаксканая и грязная @$#%*!
+  components:
+  - type: Sprite
+    sprite: _Ck\Entities\clothing\outerclothings\lox.rsi
+  - type: Clothing
+    sprite: _Ck\Entities\clothing\outerclothings\lox.rsi

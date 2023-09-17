@@ -1,0 +1,85 @@
+- type: job
+  id: BORGcleaner
+  name: Борг-уборщик
+  description: выполняй приказы
+  playTimeTracker: JobBorg
+  joinNotifyCrew: false
+  whitelistRequired: true
+  requirements:
+    - !type:OverallPlaytimeRequirement
+      time: 10800
+  icon: JobIconBorg
+  supervisors: job-supervisors-human
+  canBeAntag: false
+  jobEntity: BorgChassisJanitor
+  startingGear: RobotGear # for char preview only
+
+- type: job
+  id: BORGassist
+  name: Борг-асистент
+  description: выполняй приказы
+  playTimeTracker: JobBorgService
+  joinNotifyCrew: false
+  whitelistRequired: true
+  requirements:
+    - !type:OverallPlaytimeRequirement
+      time: 10800
+  icon: JobIconBorg
+  supervisors: job-supervisors-human
+  canBeAntag: false
+  jobEntity: BorgChassisService
+  startingGear: RobotGear # for char preview only
+
+- type: job
+  id: BORGmedical
+  name: Борг-медиков
+  description: выполняй приказы
+  playTimeTracker: JobBorgMedical
+  joinNotifyCrew: false
+  whitelistRequired: true
+  requirements:
+    - !type:OverallPlaytimeRequirement
+      time: 18000
+  icon: JobIconBorg
+  supervisors: job-supervisors-human
+  canBeAntag: false
+  jobEntity: BorgChassisMedical
+  startingGear: RobotGear # for char preview only
+
+- type: job
+  id: BORGsalvage
+  name: Борг-утилей
+  description: выполняй приказы
+  playTimeTracker: JobBorgMining
+  joinNotifyCrew: false
+  whitelistRequired: true
+  requirements:
+    - !type:OverallPlaytimeRequirement
+      time: 18000
+  icon: JobIconBorg
+  supervisors: job-supervisors-human
+  canBeAntag: false
+  jobEntity: BorgChassisMining
+  startingGear: RobotGear # for char preview only
+
+- type: job
+  id: BORGengineer
+  name: Борг-инженеров
+  description: выполняй приказы
+  playTimeTracker: JobBorgEngineer
+  joinNotifyCrew: false
+  whitelistRequired: true
+  requirements:
+    - !type:OverallPlaytimeRequirement
+      time: 18000
+  icon: JobIconBorg
+  supervisors: job-supervisors-human
+  canBeAntag: false
+  jobEntity: BorgChassisEngineer
+  startingGear: RobotGear # for char preview only
+
+- type: startingGear
+  id: RobotGear
+  equipment:
+    head: ClothingHeadHatCardborg
+    outerClothing: ClothingOuterCardborg

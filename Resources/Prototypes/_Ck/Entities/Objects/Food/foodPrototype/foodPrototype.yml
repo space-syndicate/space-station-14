@@ -1,0 +1,107 @@
+# Base
+- type: entity
+  parent: FoodInjectableBase
+  id: FoodBakedShawarmaBase
+  abstract: true
+  components:
+  - type: Food
+  - type: Sprite
+    sprite: _Ck\Objects\Food\shaurma.rsi
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 6
+        reagents:
+        - ReagentId: Nutriment
+          Quantity: 15
+        - ReagentId: Vitamin
+          Quantity: 5
+  - type: Item
+    size: 20
+#------------------------------------------------------
+- type: entity
+  name: огромная шаурма
+  parent: FoodBakedShawarmaBase
+  id: FoodBakedshaurma_bogaturskaia
+  description: ОГРОМНЫЕ обьёмы
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 8
+        reagents:
+        - ReagentId: Nutriment
+          Quantity: 35
+        - ReagentId: Vitamin
+          Quantity: 20
+  - type: Item
+    size: 30
+  - type: Sprite
+    state: bogaturskaia
+  - type: FlavorProfile
+    flavors:
+      - bacon
+
+- type: entity
+  name: сырная шаурма
+  parent: FoodBakedShawarmaBase
+  id: FoodBakedshaurma_chees
+  description: Не мало сыра, немало вкуса!
+  components:
+  - type: Sprite
+    state: chees
+  - type: FlavorProfile
+    flavors:
+      - bacon
+      - cheesy
+
+- type: entity
+  name: классическая шаурма
+  parent: FoodBakedShawarmaBase
+  id: FoodBakedshaurma_classic
+  description: Не стареющая классика
+  components:
+  - type: Sprite
+    state: classic
+  - type: FlavorProfile
+    flavors:
+      - bacon
+
+- type: entity
+  name: грибная шаурма
+  parent: FoodBakedShawarmaBase
+  id: FoodBakedshaurma_gribnoi
+  description: А ниче так, необычно и вкусно
+  components:
+  - type: Sprite
+    state: gribnoi
+  - type: FlavorProfile
+    flavors:
+      - bacon
+      - funny
+
+- type: entity
+  name: мясная шаурма
+  parent: FoodBakedShawarmaBase
+  id: FoodBakedshaurma_meat
+  description: Любители мяса одобрят
+  components:
+  - type: Sprite
+    state: meat
+  - type: FlavorProfile
+    flavors:
+      - bacon
+      - meaty
+
+- type: entity
+  name: острая шаурма
+  parent: FoodBakedShawarmaBase
+  id: FoodBakedshaurma_ostraia
+  description: Ужас как печёт во рту
+  components:
+  - type: Sprite
+    state: ostraia
+  - type: FlavorProfile
+    flavors:
+      - bacon
+      - spicy

@@ -1,0 +1,54 @@
+- type: entity
+  parent: ClothingHeadBase
+  id: ClothingHeadHatSSSP
+  name: Шапка ушанка
+  description: Шапка СССП
+  components:
+  - type: Sprite
+    sprite: _Ck\Entities\clothing\head\ushankaSSSP.rsi
+  - type: Clothing
+    sprite: _Ck\Entities\clothing\head\ushankaSSSP.rsi
+
+- type: entity
+  parent: ClothingHeadBase
+  id: ClothingHeadHelmetSSSP
+  name: каска СССП
+  description: Каска солдата СССП
+  components:
+  - type: Sprite
+    sprite: _Ck\Entities\clothing\head\SSSP_helmet.rsi
+  - type: Clothing
+    sprite: _Ck\Entities\clothing\head\SSSP_helmet.rsi
+  - type: Armor #This is intentionally not spaceproof, when the time comes to port the values from SS13 this should be buffed from what it was.
+    modifiers:
+      coefficients:
+        Blunt: 0.80
+        Slash: 0.80
+        Piercing: 0.80
+        Heat: 0.80
+        Radiation: 0.80
+        Caustic: 0.95
+  - type: ExplosionResistance
+    damageCoefficient: 0.75
+
+- type: entity
+  parent: ClothingHeadBase
+  id: ClothingHeadHelmetSSSPofficer
+  name: офицер СССП
+  description: Шапка офицера СССП
+  components:
+  - type: Sprite
+    sprite: _Ck\Entities\clothing\head\sovietcapbel.rsi
+  - type: Clothing
+    sprite: _Ck\Entities\clothing\head\sovietcapbel.rsi
+  - type: Armor #This is intentionally not spaceproof, when the time comes to port the values from SS13 this should be buffed from what it was.
+    modifiers:
+      coefficients:
+        Blunt: 0.9
+        Slash: 0.9
+        Piercing: 0.9
+        Heat: 0.9
+        Radiation: 0.9
+        Caustic: 0.95
+  - type: ExplosionResistance
+    damageCoefficient: 0.9

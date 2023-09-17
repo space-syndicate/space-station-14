@@ -1,0 +1,33 @@
+﻿- type: job
+  id: Centralassist
+  name: Асистент ЦК
+  description: Вы очень сильно постарались, теперь вы ассистент ПЦК! Ваша задача выполнять приказы вышестоящих.
+  playTimeTracker: JobCentralassist
+  requirements:
+    - !type:OverallPlaytimeRequirement
+      time: 54000 #15hrs
+    - !type:DepartmentTimeRequirement
+      department: Medical
+      time: 25200
+  startingGear: CentcomAssistGear
+  icon: "JobIconNanotrasen"
+  supervisors: job-supervisors-centcom
+  canBeAntag: false
+  whitelistRequired: true
+  accessGroups:
+  - AllAccess
+  access:
+  - CCAssist
+  - CCGeneral
+
+- type: startingGear
+  id: CentcomAssistGear
+  equipment:
+    jumpsuit: ClothingUniformJumpsuitCentcom
+    shoes: ClothingShoesBootsCombatFilled
+    head: ClothingHeadHatGreensoft
+    gloves: ClothingHandsGlovesColorBlack
+    id: CentcomPDA
+    ears: ClothingHeadsetAltCentCom
+    pocket1: BoxFolderBlack
+    pocket2: PenCentcom

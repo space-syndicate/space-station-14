@@ -1,0 +1,120 @@
+- type: radioChannel
+  id: GROUPS_1
+  name: Группа 1
+  keycode: '1'
+  frequency: 8101
+  color: "#10cae3"
+  longRange: true
+
+- type: radioChannel
+  id: GROUPS_2
+  name: Группа 2
+  keycode: '2'
+  frequency: 8102
+  color: "#10cae3"
+  longRange: true
+
+- type: radioChannel
+  id: GROUPS_3
+  name: Группа 3
+  keycode: '3'
+  frequency: 8103
+  color: "#10cae3"
+  longRange: true
+
+- type: radioChannel
+  id: GROUPS_4
+  name: Группа 4
+  keycode: '4'
+  frequency: 8104
+  color: "#10cae3"
+  longRange: true
+
+- type: radioChannel
+  id: GROUPS_5
+  name: Группа 5
+  keycode: '5'
+  frequency: 8105
+  color: "#10cae3"
+  longRange: true
+
+- type: radioChannel
+  id: GROUPS_6
+  name: Группа 6
+  keycode: '6'
+  frequency: 8106
+  color: "#10cae3"
+  longRange: true
+
+- type: radioChannel
+  id: GROUPS_7
+  name: Группа 7
+  keycode: '7'
+  frequency: 8107
+  color: "#10cae3"
+  longRange: true
+
+- type: radioChannel
+  id: GROUPS_8
+  name: Группа 8
+  keycode: '8'
+  frequency: 8108
+  color: "#10cae3"
+  longRange: true
+
+- type: radioChannel
+  id: GROUPS_9
+  name: Группа 9
+  keycode: '9'
+  frequency: 8109
+  color: "#10cae3"
+  longRange: true
+
+- type: radioChannel
+  id: GROUPS_0
+  name: Группа 0
+  keycode: '0'
+  frequency: 8100
+  color: "#10cae3"
+  longRange: true
+
+- type: radioChannel
+  id: povar_k
+  name: Кафе
+  keycode: 'k'
+  frequency: 8159
+  color: "#10cae3"
+  longRange: true
+
+- type: entity
+  parent: ClothingHeadset
+  id: ClothingHeadsetCentComCC
+  suffix: CentCom
+  name: Гарнитура оператора ЦК
+  description: Стандартная гарнитура ЦК.
+  components:
+  - type: ContainerFill
+    containers:
+      key_slots:
+      - EncryptionKeyCentCom
+  - type: Sprite
+    sprite: Clothing/Ears/Headsets/centcom.rsi
+  - type: Clothing
+    sprite: Clothing/Ears/Headsets/centcom.rsi
+
+
+- type: entity
+  parent: ClothingHeadsetAlt
+  id: ClothingHeadsetCentComCCAlt
+  suffix: CentCom
+  name: Гарнитура офицера ЦК
+  description: Стандартная гарнитура ЦК.
+  components:
+  - type: ContainerFill
+    containers:
+      key_slots:
+      - EncryptionKeyCentCom
+  - type: Sprite
+    sprite: Clothing/Ears/Headsets/centcom.rsi
+  - type: Clothing
+    sprite: Clothing/Ears/Headsets/centcom.rsi

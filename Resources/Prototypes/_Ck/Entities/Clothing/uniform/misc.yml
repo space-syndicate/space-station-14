@@ -1,0 +1,76 @@
+- type: entity
+  parent: ClothingUniformSkirtBase
+  id: ClothingUniformJumpskirtChef_ck
+  name: chef uniform
+  description: Can't cook without this.
+  components:
+  - type: Sprite
+    sprite: _Ck\Entities\clothing\uniform\skirt\chef_ck.rsi
+  - type: Clothing
+    sprite: _Ck\Entities\clothing\uniform\skirt\chef_ck.rsi
+
+- type: entity
+  parent: ClothingUniformBase
+  id: ClothingUniformJumpsuitChef_ck
+  name: chef uniform
+  description: Can't cook without this.
+  components:
+  - type: Sprite
+    sprite: _Ck\Entities\clothing\uniform\jump\chef_ck.rsi
+  - type: Clothing
+    sprite: _Ck\Entities\clothing\uniform\jump\chef_ck.rsi
+
+- type: entity
+  parent: ClothingUniformSkirtBase
+  id: ClothingUniformJumpskirtPovar_ck
+  name: povar uniform
+  description: Can't cook without this.
+  components:
+  - type: Sprite
+    sprite: _Ck\Entities\clothing\uniform\skirt\Povar_ck.rsi
+  - type: Clothing
+    sprite: _Ck\Entities\clothing\uniform\skirt\Povar_ck.rsi
+
+- type: entity
+  parent: ClothingUniformBase
+  id: ClothingUniformJumpsuitPovar_ck
+  name: povar uniform
+  description: Can't cook without this.
+  components:
+  - type: Sprite
+    sprite: _Ck\Entities\clothing\uniform\jump\Povar_ck.rsi
+  - type: Clothing
+    sprite: _Ck\Entities\clothing\uniform\jump\Povar_ck.rsi
+
+- type: entity
+  parent: ClothingUniformSkirtBase
+  id: ClothingUniformJumpskirtLox
+  name: bich
+  description: Ты жив благодаря ей.
+  components:
+  - type: Sprite
+    sprite: _Ck\Entities\clothing\uniform\skirt\lox.rsi
+  - type: Clothing
+    sprite: _Ck\Entities\clothing\uniform\skirt\lox.rsi
+
+- type: entity
+  parent: ClothingUniformBase
+  id: ClothingUniformJumpsuitLox
+  name: bich
+  description: Ты жив благодаря ей.
+  components:
+  - type: Sprite
+    sprite: _Ck\Entities\clothing\uniform\jump\lox.rsi
+  - type: Clothing
+    sprite: _Ck\Entities\clothing\uniform\jump\lox.rsi
+
+- type: entity
+  parent: ClothingUniformBase
+  id: ClothingUniformJumpsuitCentcom
+  name: chef uniform
+  description: Can't cook without this.
+  components:
+  - type: Sprite
+    sprite: _Ck\Entities\clothing\uniform\jump\centcom_official.rsi
+  - type: Clothing
+    sprite: _Ck\Entities\clothing\uniform\jump\centcom_official.rsi

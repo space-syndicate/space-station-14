@@ -1,0 +1,14 @@
+- type: entity
+  parent: ClothingEyesBase
+  id: ClothingEyesGlassesLox
+  name: lox 
+  description: ФУУУУУ!!! ОНИ ГРЯЗНЫЕ!!!!!!
+  components:
+  - type: Sprite
+    sprite: _Ck\Entities\clothing\eyes\glasses\lox.rsi
+  - type: Clothing
+    sprite: _Ck\Entities\clothing\eyes\glasses\lox.rsi
+  - type: MeleeWeapon
+    damage:
+      types:
+        Blunt: 35

@@ -1,0 +1,30 @@
+- type: job
+  id: Chefck
+  name: Повар
+  description: Слушай Шеф-повара
+  playTimeTracker: JobChefck
+  requirements:
+    - !type:RoleTimeRequirement
+      role: JobServiceWorker
+      time: 10800
+  startingGear: ChefckGear
+  icon: "JobIconBotanist"
+  supervisors: job-supervisors-hop
+  access:
+  - Service
+  - Maintenance
+  - Kitchen
+
+- type: startingGear
+  id: ChefckGear
+  equipment:
+    jumpsuit: ClothingUniformJumpsuitPovar_ck
+    head: ClothingHeadHatPovar_ck
+    back: ClothingBackpackFilled
+    shoes: ClothingShoesColorBlack
+    id: ChefPDA
+    ears: ClothingHeadsetService
+    outerClothing: ClothingOuterJacketChef
+  innerclothingskirt: ClothingUniformJumpskirtPovar_ck
+  satchel: ClothingBackpackSatchelFilled
+  duffelbag: ClothingBackpackDuffelFilled

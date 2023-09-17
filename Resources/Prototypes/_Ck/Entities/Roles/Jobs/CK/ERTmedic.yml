@@ -1,0 +1,23 @@
+- type: job
+  id: ERTmedic
+  name: Медик оперативников нанотрайзен
+  description: Вы лучший медик и оперативник вместе взятые!
+  playTimeTracker: JobERTmedic
+  requirements:
+    - !type:DepartmentTimeRequirement
+      department: Security
+      time: 54000 #15hrs
+    - !type:DepartmentTimeRequirement
+      department: Medical
+      time: 25200
+  startingGear: ERTMedicalGear
+  icon: "JobIconNanotrasen"
+  supervisors: job-supervisors-hos
+  canBeAntag: false
+  whitelistRequired: true
+  accessGroups:
+  - AllAccess
+  access:
+  - CCSecurity
+  - CCGeneral
+  - CCAssist

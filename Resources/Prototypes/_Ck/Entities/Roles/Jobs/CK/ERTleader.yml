@@ -1,0 +1,24 @@
+- type: job
+  id: ERTleader
+  name: Лидер оперативников нанотрайзен
+  description: Неужели такие есть? да...
+  playTimeTracker: ERTleader
+  requirements:
+    - !type:RoleTimeRequirement
+      role: JobERTmedic
+      time: 54000 #15hrs
+    - !type:RoleTimeRequirement
+      role: JobERTsec
+      time: 54000 #15hrs
+  startingGear: ERTLeaderGear
+  icon: "JobIconNanotrasen"
+  supervisors: job-supervisors-hos
+  canBeAntag: false
+  whitelistRequired: true
+  accessGroups:
+  - AllAccess
+  access:
+  - CCSecurity
+  - CCAdmiral
+  - CCGeneral
+  - CCAssist

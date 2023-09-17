@@ -1,0 +1,31 @@
+- type: job
+  id: CentralOfficial
+  name: Представитель ЦК
+  description: Вы представляете интересы Нанотрайзен.
+  playTimeTracker: JobCentralOfficial
+  requirements:
+    - !type:RoleTimeRequirement
+      role: JobCentralassist
+      time: 144000
+  startingGear: Centcom_ckGear
+  icon: "JobIconNanotrasen"
+  supervisors: job-supervisors-centcom # Corvax-JobSupervisors
+  canBeAntag: false
+  whitelistRequired: true
+  accessGroups:
+  - AllAccess
+  - CentCom
+
+- type: startingGear
+  id: Centcom_ckGear
+  equipment:
+    jumpsuit: ClothingUniformJumpsuitCentcomOfficial
+    shoes: ClothingShoesBootsCombatFilled
+    head: ClothingHeadHatCentcom
+    eyes: ClothingEyesGlassesSunglasses
+    gloves: ClothingHandsGlovesColorBlack
+    outerClothing: ClothingOuterArmorBasic
+    id: CentcomPDA
+    ears: ClothingHeadsetAltCentCom
+    pocket1: BoxFolderBlack
+    pocket2: PenCentcom

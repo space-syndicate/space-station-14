@@ -1,0 +1,79 @@
+# Empty mags
+- type: entity
+  id: BaseMagazineAK15
+  name: "Магазин АК15"
+  parent: BaseItem
+  abstract: true
+  components:
+  - type: Tag
+    tags:
+      - MagazineAK15
+  - type: BallisticAmmoProvider
+    mayTransfer: true
+    whitelist:
+      tags:
+        - CartridgeLightRifle
+    proto: CartridgeLightRifle
+    capacity: 30
+  - type: Item
+    size: 5
+  - type: ContainerContainer
+    containers:
+      ballistic-ammo: !type:Container
+  - type: Sprite
+    sprite: _Ck\Objects\Weapon\magazin\AK15.rsi
+    layers:
+    - state: base
+      map: ["enum.GunVisualLayers.Base"]
+    - state: mag-1
+      map: ["enum.GunVisualLayers.Mag"]
+  - type: MagazineVisuals
+    magState: mag
+    steps: 2
+    zeroVisible: false
+  - type: Appearance
+
+- type: entity
+  id: MagazineAK15
+  name: "Магазин АК15"
+  parent: BaseMagazineAK15
+  components:
+  - type: BallisticAmmoProvider
+    proto: CartridgeLightRifle
+  - type: Sprite
+    layers:
+    - state: red
+      map: ["enum.GunVisualLayers.Base"]
+    - state: mag-1
+      map: ["enum.GunVisualLayers.Mag"]
+
+- type: entity
+  id: MagazineAK15Rubber
+  name: "Магазин АК15"
+  parent: BaseMagazineAK15
+  components:
+  - type: BallisticAmmoProvider
+    proto: CartridgeLightRifleRubber
+  - type: Sprite
+    layers:
+    - state: practice
+      map: ["enum.GunVisualLayers.Base"]
+    - state: mag-1
+      map: ["enum.GunVisualLayers.Mag"]
+
+- type: entity
+  id: MagazineAK15two
+  name: "Магазин АК15 двойной"
+  parent: BaseMagazineAK15
+  components:
+  - type: Item
+    size: 15
+  - type: BallisticAmmoProvider
+    proto: CartridgeLightRifle
+    capacity: 60
+  - type: Sprite
+    layers:
+    - state: rubber
+      map: ["enum.GunVisualLayers.Base"]
+    - state: mag-1
+      map: ["enum.GunVisualLayers.Mag"]

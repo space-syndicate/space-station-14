@@ -1,0 +1,77 @@
+- type: entity
+  name: лаваш
+  parent: FoodBakingBase
+  id: FoodDoughLawa
+  description: Лаваш барма, сегодня будет шурма
+  components:
+  - type: Sprite
+    sprite: _Ck\Objects\Food\dop.rsi
+    state: lavash
+
+- type: entity
+  name: нарезанная капуста
+  parent: FoodBakingBase
+  id: FoodCabbageSlice
+  description: нарезанная...
+  components:
+  - type: Sprite
+    sprite: Objects/Specific/Hydroponics/cabbage.rsi
+    state: slice
+
+#реагент - рецепт - наполняемое им
+
+- type: reagent
+  id: Smetana
+  name: сметана
+  group: Foods
+  desc: обычная сметанка
+  physicalDesc: reagent-physical-desc-gloopy
+  flavor: sweet
+  color: skyblue
+  recognizable: true
+
+- type: reaction
+  id: CookingSmetana
+  reactants:
+    Milk:
+      amount: 10
+    sourCreamStarter:
+      amount: 5
+  products:
+    Smetana: 15
+
+- type: reagent
+  id: sourCreamStarter
+  name: закваска
+  group: Foods
+  desc: закваска для сметаны
+  physicalDesc: reagent-physical-desc-gloopy
+  flavor: sweet
+  color: skyblue
+  recognizable: true
+
+- type: reagent
+  id: classicSauce1
+  name: соус классический сметанно-майонезный
+  group: Foods
+  desc: сметанно-майонезный соус
+  physicalDesc: reagent-physical-desc-gloopy
+  flavor: sweet
+  color: skyblue
+  recognizable: true
+
+- type: reaction
+  id: CookingClassicSauce1
+  reactants:
+    Milk:
+      amount: 5
+    Mayo:
+      amount: 5
+    Smetana: 
+      amount: 5
+    Blackpepper:
+      amount: 1
+    TableSalt:
+      amount: 1
+  products:
+    classicSauce1: 17

@@ -1,0 +1,16 @@
+- type: job
+  id: Rab
+  name: раб
+  description: Ваша жизнь уже не ваша?
+  playTimeTracker: JobRab
+  startingGear: RabGear
+  icon: "JobIconPrisoner"
+  supervisors: job-supervisors-everyone
+#  access: # Corvax-MRP
+#  - Maintenance
+
+- type: startingGear
+  id: RabGear
+  equipment:
+    jumpsuit: ClothingUniformJumpsuitColorGrey
+  innerclothingskirt: ClothingUniformJumpskirtColorGrey

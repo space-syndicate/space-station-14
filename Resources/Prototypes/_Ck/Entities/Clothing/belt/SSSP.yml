@@ -1,0 +1,10 @@
+- type: entity
+  parent: ClothingBeltStorageBase
+  id: ClothingBeltSSSP
+  name: разгрузка СССП
+  description: Штурмовая разгрузка СССП
+  components:
+  - type: Sprite
+    sprite: _Ck\Entities\clothing\belt\SSSP.rsi
+  - type: Clothing
+    sprite: _Ck\Entities\clothing\belt\SSSP.rsi

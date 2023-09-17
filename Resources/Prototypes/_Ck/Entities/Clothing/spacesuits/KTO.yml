@@ -1,0 +1,108 @@
+#скафандр с шлемом - скафандр без шлема
+
+- type: entity
+  parent: ClothingOuterHardsuitBase
+  id: ClothingOuterHardsuitKTKPSecurity
+  name: скафандр СССП
+  description: A special suit that protects against hazardous, low pressure environments. Has an additional layer of armor.
+  components:
+  - type: Sprite
+    sprite: _Ck\Entities\clothing\spacesuits\hardsuit\KTKPsuit.rsi
+  - type: Clothing
+    sprite: _Ck\Entities\clothing\spacesuits\hardsuit\KTKPsuit.rsi
+  - type: PressureProtection
+    highPressureMultiplier: 0.525
+    lowPressureMultiplier: 10000
+  - type: ClothingSpeedModifier
+    walkModifier: 0.7
+    sprintModifier: 0.7   
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.6
+        Slash: 0.6
+        Piercing: 0.6
+        Heat: 0.8
+        Radiation: 0.25
+        Caustic: 0.75
+  - type: ExplosionResistance
+    damageCoefficient: 0.4
+  - type: ToggleableClothing
+    clothingPrototype: ClothingHeadHelmetHardsuitKTKPSecurity
+
+- type: entity
+  parent: ClothingHeadHardsuitWithLightBase
+  id: ClothingHeadHelmetHardsuitKTKPSecurity
+  noSpawn: true
+  name: шлем СССП
+  description: Armored hardsuit helmet for security needs.
+  components:
+  - type: Sprite
+    sprite: _Ck\Entities\clothing\spacesuits\hardsuit-helmet\KTKP.rsi
+  - type: Clothing
+    sprite: _Ck\Entities\clothing\spacesuits\hardsuit-helmet\KTKP.rsi
+  - type: PointLight
+    color: "#ffeead"
+  - type: PressureProtection
+    highPressureMultiplier: 0.525
+    lowPressureMultiplier: 10000
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.8
+        Slash: 0.8
+        Piercing: 0.8
+
+
+- type: entity
+  parent: ClothingOuterHardsuitBase
+  id: ClothingOuterHardsuitKTOtop
+  name: бронированный скафандр СССП
+  description: A special suit that protects against hazardous, low pressure environments. Has an additional layer of armor.
+  components:
+  - type: Sprite
+    sprite: _Ck\Entities\clothing\spacesuits\hardsuit\KTKPsuitTOP.rsi
+  - type: Clothing
+    sprite: _Ck\Entities\clothing\spacesuits\hardsuit\KTKPsuitTOP.rsi
+  - type: PressureProtection
+    highPressureMultiplier: 0.525
+    lowPressureMultiplier: 10000
+  - type: ClothingSpeedModifier
+    walkModifier: 0.65
+    sprintModifier: 0.65   
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.55
+        Slash: 0.55
+        Piercing: 0.55
+        Heat: 0.7
+        Radiation: 0.1
+        Caustic: 0.7
+  - type: ExplosionResistance
+    damageCoefficient: 0.4
+  - type: ToggleableClothing
+    clothingPrototype: ClothingHeadHelmetHardsuitKTOtop
+
+- type: entity
+  parent: ClothingHeadHardsuitWithLightBase
+  id: ClothingHeadHelmetHardsuitKTOtop
+  noSpawn: true
+  name: бронированный шлем СССП
+  description: Armored hardsuit helmet for security needs.
+  components:
+  - type: Sprite
+    sprite: _Ck\Entities\clothing\spacesuits\hardsuit-helmet\KTKPtop.rsi
+  - type: Clothing
+    sprite: _Ck\Entities\clothing\spacesuits\hardsuit-helmet\KTKPtop.rsi
+  - type: PointLight
+    color: "#ffeead"
+  - type: PressureProtection
+    highPressureMultiplier: 0.525
+    lowPressureMultiplier: 10000
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.7
+        Slash: 0.7
+        Piercing: 0.7

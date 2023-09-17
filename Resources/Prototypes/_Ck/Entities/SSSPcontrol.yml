@@ -1,0 +1,386 @@
+- type: startingGear
+  id: SolGearSSSP
+  equipment:
+    ears: ClothingHeadsetSSSP
+    jumpsuit: ClothingUniformJumpsuitSSSP
+    back: ClothingBackpackFilled
+    shoes: ClothingShoesSSSP
+    gloves: ClothingHandsGlovesSSSP
+    head: ClothingHeadHelmetSSSP
+    outerClothing: ClothingOuterJacketSSSP
+    id: SecurityPDA
+    belt: ClothingBeltSSSP
+  satchel: ClothingBackpackSatchelFilled
+  duffelbag: ClothingBackpackDuffelFilled
+
+- type: startingGear
+  id: AtaceGearSSSP
+  equipment:
+    ears: ClothingHeadsetSSSP
+    jumpsuit: ClothingUniformJumpsuitSSSP
+    back: ClothingBackpackFilled
+    shoes: ClothingShoesSSSP
+    gloves: ClothingHandsGlovesSSSP
+    head: ClothingHeadHelmetSSSP
+    outerClothing: ClothingOuterArmorSSSP
+    id: SecurityPDA
+    belt: ClothingBeltSSSP
+    pocket1: WeaponPistolMakarov
+  satchel: ClothingBackpackSatchelFilled
+  duffelbag: ClothingBackpackDuffelFilled
+
+- type: startingGear
+  id: OfficerGearSSSP
+  equipment:
+    ears: ClothingHeadsetSSSP
+    jumpsuit: ClothingUniformJumpsuitSSSP
+    back: ClothingBackpackFilled
+    shoes: ClothingShoesSSSP
+    gloves: ClothingHandsGlovesSSSP
+    head: ClothingHeadHelmetSSSPofficer
+    outerClothing: ClothingOuterJacketSSSPoficcer
+    id: SecurityPDA
+    pocket1: WeaponPistolMakarov
+  satchel: ClothingBackpackSatchelFilled
+  duffelbag: ClothingBackpackDuffelFilled
+
+- type: dataset
+  id: NameSpets
+  values:
+  - Зло
+  - Хирург
+  - Лагуна
+  - Звезда
+  - Хрыч
+  - Уазик
+  - Лабиринт
+  - Олень
+  - Дымок
+  - Царь
+  - Угрюмый
+  - Лаборант
+  - Жулик
+  - Лазер
+  - Лаванда
+  - Цветок
+  - Роджер
+  - Часовой
+  - Ладья
+  - Цезарь
+  - Чарли
+  - Свисток
+  - Лазер
+  - Химера
+  - Чародей
+  - Цейлон
+  - Лазурь
+  - Угол
+  - Чарли
+  - Лаки
+  - Желток
+  - Бизон
+  - Циркач
+  - Лакировка
+  - Чайка
+  - Харлей
+  - Лангуст
+  - Зомби
+  - Гранит
+  - Ландыш
+  - Цыган
+  - Хомяк
+  - Лопух
+  - Геолог
+  - Чебурашка
+  - Цыплёнок
+  - Хитрый
+  - Лас-Вегас
+  - Енот
+  - Авиатор
+  - Ласточка
+  - Удар
+  - Хлебец
+  - Чайник
+  - Лаура
+  - Европа
+  - Гений
+  - Ходок
+  - Лев
+  - Осина
+  - Ехидна
+  - Легенда
+  - Челленджер
+  - Бакс
+  - Хозяин
+  - Холмс
+  - Алекс
+  - Удача
+  - Легион
+  - Челнок
+  - Жук
+  - Холодный
+  - Барбос
+  - Лекарь
+  - Алабай
+  - Епископ
+  - Чемпион
+  - Холостяк
+  - Лексус
+  - Узбек
+  - Черепаха
+  - Хаммер
+  - Лемур
+  - Гуру
+  - Дядя
+  - Черёмуха
+  - Ленивец
+  - Хонда
+  - Вайпер
+  - Черкес
+  - Лентяй
+  - Журналист
+  - Хакер
+  - Леон
+  - Бабах
+  - Галактика
+  - Черномордый
+  - Хамелеон
+  - Леопольд
+  - Хорёк
+  - Чертяка
+  - Узник
+  - Лепрекон
+  - Аид
+  - Честер
+  - Гегемон
+  - Лесник
+  - Егерь
+  - Четвёрка
+  - Умка
+  - Кедр
+  - Чехов
+  - Шелест
+  - Газель
+  - Летучая мышь
+  - Швэд
+  - Ворон
+  - Фламинго
+  - Леший
+  - Академик
+  - Шатун
+  - Уран
+  - Чибис
+  - Лёлик
+  - Шарк
+  - Флинт
+  - Живчик
+  - Шандр
+  - Гвоздика
+  - Флюгер
+  - Шарик
+  - Ураган
+  - Вайпер
+  - Фокус
+  - Ёжик
+  - Эбонит
+  - Тормоз
+  - Шарпей
+  - Ученик
+  - Жмот
+  - Есаул
+  - Фокусник
+  - Жетон
+  - Усилитель
+  - Фома
+  - Газель
+  - Ястреб
+  - Фокс
+  - Абориген
+  - Жасмин
+  - Формат
+  - Бабл-гам
+  - Вагон
+  - Фотограф
+  - Бабник
+  - Шалтай-болтай
+  - Чиполино
+  - Шайтан
+  - Учитель
+  - Француз
+  - Ёлка
+  - Багаж
+  - Фредди
+  - Вектор
+  - Гайка
+  - Фрегат
+  - Базука
+  - Юпитер
+  - Фриман
+  - Шалун
+  - Энергетик
+  - Шаман
+  - Фургон
+  - Школьник
+  - Шанхай
+  - Фунтик
+  - ДипКол
+  - БитКоп
+  - Джаз
+  - Йололо
+  - Байкон
+  - Гуест
+  - Под
+  - Неил
+  - Песок
+  - ГЮСП
+  - Фиери
+  - Лайм
+  - Максвелл
+  - Ваилд
+  - Номпад
+  - Хенри
+  - Стик
+  - Крейзи
+  - Даймонд
+  - Джоджо
+  - Айзек
+  - Кларк
+  - Бёрн
+  - Джакарта
+  - Норманди
+  - Аквамарин
+  - Альбатрос
+  - Барракуда
+  - Кюрли
+  - Файтинг Боб
+  - Робуст
+  - Волтер
+  - Анджел
+  - Аткинс
+  - Аттила
+  - Краут
+  - Бальтар
+  - Джокер
+  - Доктор
+  - Патриот
+  - Проффесор
+  - Гомес
+  - Финекс
+  - Вася ВДВ
+
+- type: dataset
+  id: NameMlSB
+  values:
+  - Рядовой
+  - Ефрейтор
+
+- type: dataset
+  id: NameSrSB
+  values:
+  - Старший сержант
+  - Лейтенант
+
+- type: dataset
+  id: NameSpetsCamrad
+  values:
+  - Камрад
+
+- type: entity
+  name: Урист Макбайн
+  parent: MobHuman
+  description: солдатик, не пластиковый и не оловянный
+  id: MobHumanCombine
+  components:
+  - type: Icon
+    sprite: Markers/jobs.rsi
+    state: cyborg
+  - type: Vocal
+    maleScream: /Audio/Corvax/Effects/off.ogg
+    femaleScream: /Audio/Corvax/Effects/off.ogg
+  - type: Speech
+    speechSounds: Сombine
+  - type: Stamina
+    critThreshold: 200
+  - type: MobState
+  - type: MobThresholds
+    thresholds:
+      0: Alive
+      100: Critical
+      200: Dead
+  - type: SlowOnDamage
+    speedModifierThresholds:
+      50: 0.7
+      70: 0.5
+
+- type: entity
+  name: солдат СССП
+  suffix: corvax
+  parent: MobHumanCombine
+  description: человечик из СССП
+  id: MobHumanSSSPsol
+  components:
+  - type: Icon
+    sprite: Markers/jobs.rsi
+    state: red
+  - type: GhostRole
+    name: Рядовой морской пехоты СССП
+    description: Отборный солдат СССП, вы гвардия и лицо нашего отечества! Ни шагу назад! Вперёд! За родину-мать!
+    rules: Элита СССП, ваша задача выполнять приказ комрада, УРА!
+  - type: GhostTakeoverAvailable
+  - type: Loadout
+    prototypes: [SolGearSSSP]
+  - type: RandomMetadata
+    nameSegments:
+    - NameMlSB
+    - NameSpets
+  - type: RandomHumanoidAppearance
+    randomizeName: False
+
+- type: entity
+  name: штурмовик СССП
+  suffix: corvax
+  parent: MobHumanCombine
+  description: человечик с бронёй из СССП
+  id: MobHumanSSSPatace
+  components:
+  - type: Icon
+    sprite: Markers/jobs.rsi
+    state: red
+  - type: GhostRole
+    name: Штурмовик морской пехоты СССП
+    description: Отборный солдат СССП, вы гвардия и лицо нашего отечества! Ни шагу назад! Вперёд! За родину-мать!
+    rules: Элита СССП, ваша задача выполнять приказ комрада, УРА!
+  - type: GhostTakeoverAvailable
+  - type: Loadout
+    prototypes: [AtaceGearSSSP]
+  - type: RandomMetadata
+    nameSegments:
+    - NameSrSB
+    - NameSpets
+  - type: RandomHumanoidAppearance
+    randomizeName: False
+
+- type: entity
+  name: камрад СССП
+  suffix: corvax
+  parent: MobHumanCombine
+  description: ваша очеред, сер СССП
+  id: MobHumanSSSPofficer
+  components:
+  - type: Icon
+    sprite: Markers/jobs.rsi
+    state: red
+  - type: GhostRole
+    name: Камрад морской пехоты СССП
+    description: Отборный солдат СССП, вы гвардия и лицо нашей родины-матери!
+    rules: Элита СССП, ваша задача вести десант к победе, УРА!
+  - type: GhostTakeoverAvailable
+  - type: Loadout
+    prototypes: [OfficerGearSSSP]
+  - type: RandomMetadata
+    nameSegments:
+    - NameSpetsCamrad
+    - NameSpets
+  - type: RandomHumanoidAppearance
+    randomizeName: False
+

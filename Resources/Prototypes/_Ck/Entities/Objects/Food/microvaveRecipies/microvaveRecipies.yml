@@ -1,0 +1,98 @@
+- type: microwaveMealRecipe
+  id: RecipeLawa
+  name: Лавашик
+  result: FoodDoughLawa
+  time: 15
+  solids:
+    FoodDoughSlice: 1
+    FoodCabbageSlice: 2
+    FoodTomato: 1
+  reagents:
+    TableSalt: 2
+    OilOlive: 2
+
+- type: microwaveMealRecipe
+  id: RecipeFoodBakedshaurma_bogaturskaia
+  name: рецепт шаурмы 
+  result: FoodBakedshaurma_bogaturskaia
+  time: 10
+  solids:
+    FoodDoughLawa: 1
+    FoodCabbageSlice: 2
+    FoodOnionSlice: 2
+    FoodTomato: 2
+    FoodMeatCutlet: 2
+  reagents:
+    classicSauce1: 10
+
+- type: microwaveMealRecipe
+  id: RecipeFoodBakedshaurma_chees
+  name: рецепт шаурмы 
+  result: FoodBakedshaurma_chees
+  time: 10
+  solids:
+    FoodDoughLawa: 1
+    FoodCabbageSlice: 1
+    FoodOnionSlice: 1
+    FoodTomato: 1
+    FoodMeatCutlet: 1
+    FoodCheeseSlice: 1
+  reagents:
+    classicSauce1: 10
+
+- type: microwaveMealRecipe
+  id: RecipeFoodBakedshaurma_classic
+  name: рецепт шаурмы 
+  result: FoodBakedshaurma_classic
+  time: 10
+  solids:
+    FoodDoughLawa: 1
+    FoodCabbageSlice: 1
+    FoodOnionSlice: 1
+    FoodTomato: 1
+    FoodMeatCutletCooked: 1
+  reagents:
+    classicSauce1: 10
+
+- type: microwaveMealRecipe
+  id: RecipeFoodBakedshaurma_gribnoi
+  name: рецепт шаурмы 
+  result: FoodBakedshaurma_gribnoi
+  time: 10
+  solids:
+    FoodDoughLawa: 1
+    FoodCabbageSlice: 1
+    FoodOnionSlice: 1
+    FoodTomato: 1
+    FoodMeatCutlet: 1
+  reagents:
+    classicSauce1: 10
+
+- type: microwaveMealRecipe
+  id: RecipeFoodBakedshaurma_meat
+  name: рецепт шаурмы 
+  result: FoodBakedshaurma_meat
+  time: 10
+  solids:
+    FoodDoughLawa: 1
+    FoodCabbageSlice: 1
+    FoodOnionSlice: 1
+    FoodTomato: 1
+    FoodMeatCutlet: 2
+  reagents:
+    classicSauce1: 10
+
+- type: microwaveMealRecipe
+  id: RecipeFoodBakedshaurma_ostraia
+  name: рецепт шаурмы 
+  result: FoodBakedshaurma_ostraia
+  time: 10
+  solids:
+    FoodDoughLawa: 1
+    FoodCabbageSlice: 1
+    FoodOnionSlice: 1
+    FoodTomato: 1
+    FoodChili: 1
+    FoodMeatCutlet: 1
+  reagents:
+    classicSauce1: 10

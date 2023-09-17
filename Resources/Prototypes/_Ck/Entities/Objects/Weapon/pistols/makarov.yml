@@ -1,0 +1,21 @@
+- type: entity
+  name: Макаров
+  parent: BaseWeaponPistol
+  id: WeaponPistolMakarov
+  description: Культовое оружие, уважай его и он тебя спасёт.
+  components:
+  - type: Sprite
+    sprite: _Ck\Objects\Weapon\pistols\makarovbel.rsi
+    layers:
+    - state: base
+      map: ["enum.GunVisualLayers.Base"]
+    - state: mag-0
+      map: ["enum.GunVisualLayers.Mag"]
+  - type: Clothing
+    sprite: _Ck\Objects\Weapon\pistols\makarovbel.rsi
+  - type: Gun
+    fireRate: 5
+    availableModes:
+    - SemiAuto
+    soundGunshot:
+      path: /Audio/Weapons/Guns/Gunshots/mk58.ogg
