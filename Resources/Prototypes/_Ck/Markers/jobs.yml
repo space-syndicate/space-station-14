@@ -8,6 +8,7 @@
   - type: SpawnPoint
     job_id: Chefck
   - type: Sprite
+    sprite: _Ck\Markers
     layers:
       - state: green
       - state: Chef_ck_spawn
@@ -38,6 +39,7 @@
   - type: Sprite
     layers:
       - state: green
+      - state: passenger
 
 - type: entity
   id: SpawnPointRabMaster
@@ -47,6 +49,7 @@
   - type: SpawnPoint
     job_id: RabMaster
   - type: Sprite
+    sprite: _Ck\Markers
     layers:
       - state: green
       - state: pirate2
@@ -59,6 +62,7 @@
   - type: SpawnPoint
     job_id: Pirate3lvl
   - type: Sprite
+    sprite: _Ck\Markers
     layers:
       - state: green
       - state: pirate3
@@ -71,6 +75,7 @@
   - type: SpawnPoint
     job_id: Pirate1lvl
   - type: Sprite
+    sprite: _Ck\Markers
     layers:
       - state: green
       - state: pirate1
@@ -85,6 +90,7 @@
   - type: SpawnPoint
     job_id: KTKP
   - type: Sprite
+    sprite: _Ck\Markers
     layers:
       - state: green
       - state: KTKPspawn
@@ -101,7 +107,7 @@
   - type: Sprite
     layers:
       - state: green
-      - state: hop
+      - state: lawyer
 
 #ЦК
 
