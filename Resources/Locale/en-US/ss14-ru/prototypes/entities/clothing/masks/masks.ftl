@@ -69,3 +69,5 @@ ent-ClothingMaskScaredMime = scared mime mask
     .desc = Looks like it would scream if it wasn't a mask
 ent-ClothingMaskItalianMoustache = italian moustache
     .desc = Made from authentic Italian moustache hairs. Gives the wearer an irresistable urge to gesticulate wildly.
+ent-ClothingMaskNinja = ninja mask
+    .desc = A close-fitting nano-enhanced mask that acts both as an air filter and a post-modern fashion statement.

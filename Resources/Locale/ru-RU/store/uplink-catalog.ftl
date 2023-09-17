@@ -40,6 +40,8 @@ uplink-emp-grenade-name = { ent-EmpGrenade }
 uplink-emp-grenade-desc = Граната, предназначенная для выведения из строя электроники. Пригодится для нарушения коммуникаций, отключения энергетического оружия охраны и ЛКП, если вы оказались в стесненных обстоятельствах.
 uplink-exploding-pen-name = Взрывающаяся ручка
 uplink-exploding-pen-desc = Взрывное устройство класса IV, помещённое в стандартную ручку. Снабжено 4-секундным таймером.
+uplink-exploding-syndicate-bomb-name = Syndicate Bomb
+uplink-exploding-syndicate-bomb-desc = A reliable bomb that can put a big hole in the station. Useful as a distraction.
 # Ammo
 uplink-pistol-magazine-name = Пистолетный магазин (.35 авто)
 uplink-pistol-magazine-desc = Пистолетный магазин на 10 патронов. Совместим с "Гадюкой".
@@ -95,8 +97,6 @@ uplink-dna-scrambler-implanter-name = Имплантер Миксер ДНК
 uplink-dna-scrambler-implanter-desc = Одноразовый имплант, который можно активировать для перемешивания ДНК и приобретения совершенно нового облика, также имеет функцию отмены изменений. Невозможно изменить уже перемешанную ДНК.
 uplink-emp-implanter-name = Имплантер ЭМИ
 uplink-emp-implanter-desc = При активации создает небольшой ЭМИ, который обесточивает находящуюся рядом электронику; может быть использован три раза, прежде чем разрядится внутренняя батарея.
-uplink-micro-bomb-implanter-name = Имплантер Микробомба
-uplink-micro-bomb-implanter-desc = Взрывается при смерти или ручной активации. Уничтожает тело со всем снаряжением.
 uplink-macro-bomb-implanter-name = Имплантер Макробомба
 uplink-macro-bomb-implanter-desc = Вколите его, и после смерти вы устроите большой взрыв. Большой риск для союзников, используйте на свой страх и риск. Заменяет Микробомбу.
 uplink-uplink-implanter-name = Имплантер Аплинк
