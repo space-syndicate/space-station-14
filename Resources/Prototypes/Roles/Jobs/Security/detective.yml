@@ -6,7 +6,7 @@
   requirements:
   - !type:DepartmentTimeRequirement
     department: Security
-    time: 72000 #20 hrs # Corvax-RoleTime
+    time: 18000 #20 hrs # Corvax-RoleTime
   startingGear: DetectiveGear
   icon: "JobIconDetective"
   supervisors: job-supervisors-hos

@@ -12,12 +12,9 @@
   description: department-Civilian-description
   color: "#9FED58"
   roles:
-  - Bartender
   - Borg
-  - Botanist
   - Boxer
   - Chaplain
-  - Chef
   - Clown
   - HeadOfPersonnel
   - Janitor
@@ -27,8 +24,60 @@
   - Musician
   - Passenger
   - Reporter
+  - Lox
+
+- type: department
+  id: Silicon
+  description: department-Osobiy-description
+  color: "#EFB341"
+  roles:
+  - Borg
+  - BORGcleaner
+  - BORGassist
+  - BORGmedical
+  - BORGsalvage
+  - BORGengineer
+
+- type: department
+  id: Osobiy
+  description: department-Osobiy-description
+  color: "#791500"
+  roles:
+  - Rab
+  - RabMaster
+  - Pirate1lvl
+  - Pirate3lvl
+
+- type: department
+  id: Cafe
+  description: department-Cafe-description
+  color: "#F1A51B"
+  roles:
+  - Bartender
+  - Botanist
+  - Chefck
+  - Chef
   - Zookeeper
   - ServiceWorker
+
+- type: department
+  id: Nanotrasen
+  description: department-Nanotrasen-description
+  color: "#F1A51B"
+  roles:
+  - ERTsec
+  - ERTmedic
+  - ERTleader
+  - Centralassist
+  - CentralOfficial
+
+- type: department
+  id: IAA
+  description: department-IAA-description
+  color: "#EFB341"
+  roles:
+  - IAA
+  - Lawyer
 
 - type: department
   id: Command
@@ -36,6 +85,7 @@
   color: "#334E6D"
   roles:
   - Captain
+  - Chef
   - IAA # Corvax-IAA
   - CentralCommandOfficial
   - ChiefEngineer
@@ -80,6 +130,7 @@
   - SeniorOfficer
   - Detective
   - Warden
+  - KTKP
 
 - type: department
   id: Science
@@ -98,5 +149,4 @@
   roles:
   - Boxer
   - Reporter
-  - Zookeeper
   - Psychologist

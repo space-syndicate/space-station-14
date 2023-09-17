@@ -6,18 +6,18 @@
   requirements:
     - !type:DepartmentTimeRequirement
       department: Engineering
-      time: 72000 #20 hrs # Corvax-RoleTime
+      time: 36000 
     - !type:DepartmentTimeRequirement
       department: Medical
-      time: 72000 #20 hrs # Corvax-RoleTime
+      time: 36000 
     - !type:DepartmentTimeRequirement
       department: Security
-      time: 72000 #20 hrs # Corvax-RoleTime
+      time: 36000 
 #    - !type:DepartmentTimeRequirement
 #      department: Command
 #      time: 54000 # 15 hours
     - !type:OverallPlaytimeRequirement
-      time: 504000 #140 hrs # Corvax-RoleTime
+      time: 108000 
   weight: 20
   startingGear: CaptainGear
   icon: "JobIconCaptain"
@@ -33,11 +33,12 @@
   equipment:
     jumpsuit: ClothingUniformJumpsuitCaptain
     back: ClothingBackpackCaptainFilled
-    shoes: ClothingShoesBootsLaceup
+    shoes: ClothingShoesColorBlack
     head: ClothingHeadHatCaptain
     eyes: ClothingEyesGlassesSunglasses
     gloves: ClothingHandsGlovesCaptain
     outerClothing: ClothingOuterArmorCaptainCarapace
+    neck: ClothingNeckCloakCentcomAdmiral
     id: CaptainPDA
     ears: ClothingHeadsetAltCommand
   innerclothingskirt: ClothingUniformJumpskirtCaptain
