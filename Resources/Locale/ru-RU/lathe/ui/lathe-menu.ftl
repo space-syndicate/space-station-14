@@ -10,8 +10,8 @@ lathe-menu-tooltip-display = { $amount } { $material }
 lathe-menu-material-amount =
     { $amount ->
         [1] { NATURALFIXED($amount, 2) } ({ $unit })
-        *[other] { NATURALFIXED($amount, 2) } ({ $unit })
-}
+       *[other] { NATURALFIXED($amount, 2) } ({ $unit })
+    }
 lathe-menu-no-materials-message = Материалы не загружены
 lathe-menu-fabricating-message = Производится...
 lathe-menu-materials-title = Материалы

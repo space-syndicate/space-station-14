@@ -225,3 +225,5 @@ ent-ClothingUniformJumpsuitSeniorOfficer = комбинезон инструкт
     .desc = Признак мастерства и престижа отдела службы безопасности.
 ent-ClothingUniformJumpsuitWeb = паутинный комбинезон
     .desc = Даёт понять, что вы едины с паутиной.
+ent-ClothingUniformJumpsuitLoungewear = loungewear
+    .desc = A long stretch of fabric that wraps around your body for comfort.
