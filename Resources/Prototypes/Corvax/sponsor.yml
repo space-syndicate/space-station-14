@@ -230,7 +230,7 @@
     - type: Clothing
       sprite: Corvax/Sponsor/jesuisunfou/Clothing/Head/Hats/ussp.rsi
 
-- type: entity
+- type: entity 
   parent: ClothingOuterStorageBase
   id: ClothingOuterCoatUSSPOvercoatBlack
   name: old ussp armored overcoat
@@ -241,6 +241,16 @@
       sprite: Corvax/Sponsor/jesuisunfou/Clothing/OuterClothing/Coats/ussp.rsi
     - type: Clothing
       sprite: Corvax/Sponsor/jesuisunfou/Clothing/OuterClothing/Coats/ussp.rsi
+    - type: Armor # NuclearWastelands
+      modifiers:
+        coefficients:
+          Blunt: 0.70
+          Slash: 0.70
+          Piercing: 0.70
+          Heat: 0.70
+          Caustic: 0.75
+    - type: ExplosionResistance
+      damageCoefficient: 0.90 
 
 - type: entity
   parent: ClothingUniformBase

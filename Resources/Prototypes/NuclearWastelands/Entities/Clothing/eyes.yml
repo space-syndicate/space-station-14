@@ -1,0 +1,25 @@
+# Модифицированные солнцезащитные очки
+- type: entity
+  parent: ClothingEyesGlassesSunglasses
+  id: ClothingEyesGlassesSunglassesModified
+  name: Модифицированные солнцезащитные очки
+  description: Стильные чёрные солнцезащитные очки, но теперь с худами!
+  components:
+  - type: ShowSecurityIcons
+  - type: Sprite
+    sprite: NuclearWastelands/Clothing/Eyes/modifiedsunglasses.rsi
+  - type: Clothing
+    sprite: NuclearWastelands/Clothing/Eyes/modifiedsunglasses.rsi
+  
+# Синие солнцезащитные очки
+- type: entity
+  parent: ClothingEyesGlassesSunglasses
+  id: ClothingEyesGlassesSunglassesModifiedBlue
+  name: Синие солнцезащитные очки
+  description: Синий вариант стиля модифицированных солнцезащитных очков.
+  components:
+  - type: ShowSecurityIcons
+  - type: Sprite
+    sprite: NuclearWastelands/Clothing/Eyes/bluesunglasses.rsi
+  - type: Clothing
+    sprite: NuclearWastelands/Clothing/Eyes/bluesunglasses.rsi

@@ -42,7 +42,7 @@
     shoes: ClothingShoesBootsJack
     jumpsuit: ClothingUniformJumpsuitNanotrasen
     gloves: ClothingHandsGlovesCombat
-    eyes: ClothingEyesGlassesSunglasses
+    eyes: ClothingEyesGlassesSunglassesModified
     ears: ClothingHeadsetCommand
     head: ClothingHeadHatBeretWarden
     outerClothing: ClothingOuterVestWeb
@@ -87,7 +87,7 @@
         - id: MedkitCombatFilled
         - id: Flash
     - type: Sprite
-      sprite: NuclearWastelands/Clothing/Back/blueshield_duffelbag.rsi
+      sprite: NuclearWastelands/Clothing/Back/blueshield_duffelbag.rsi # спрайты от @dimaskarabas28
     - type: Storage
       capacity: 150
 
@@ -105,7 +105,7 @@
         - id: MedkitCombatFilled
         - id: Flash
     - type: Sprite
-      sprite: NuclearWastelands/Clothing/Back/blueshield_satchel.rsi
+      sprite: NuclearWastelands/Clothing/Back/blueshield_satchel.rsi # спрайты от @dimaskarabas28
     - type: Storage
       capacity: 130
 
