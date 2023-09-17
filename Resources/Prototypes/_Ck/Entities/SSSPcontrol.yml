@@ -293,7 +293,7 @@
   components:
   - type: Icon
     sprite: Markers/jobs.rsi
-    state: cyborg
+    state: passenger
   - type: Vocal
     maleScream: /Audio/Corvax/Effects/off.ogg
     femaleScream: /Audio/Corvax/Effects/off.ogg
@@ -320,7 +320,7 @@
   id: MobHumanSSSPsol
   components:
   - type: Icon
-    sprite: Markers/jobs.rsi
+    sprite: _Ck\Markers
     state: red
   - type: GhostRole
     name: Рядовой морской пехоты СССП
@@ -344,7 +344,7 @@
   id: MobHumanSSSPatace
   components:
   - type: Icon
-    sprite: Markers/jobs.rsi
+    sprite: _Ck\Markers
     state: red
   - type: GhostRole
     name: Штурмовик морской пехоты СССП
@@ -368,7 +368,7 @@
   id: MobHumanSSSPofficer
   components:
   - type: Icon
-    sprite: Markers/jobs.rsi
+    sprite: _Ck\Markers
     state: red
   - type: GhostRole
     name: Камрад морской пехоты СССП
