@@ -1,2 +1,2 @@
-ent-ActionVehicleHorn = Honk
-    .desc = Honk!
+ent-ActionVehicleHorn = Хонк
+    .desc = Хонк!

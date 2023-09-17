@@ -5,7 +5,7 @@ ent-MobDragon = { ent-BaseMobDragon }
 ent-MobDragonDungeon = { ent-BaseMobDragon }
     .suffix = Подземелье
     .desc = { ent-BaseMobDragon.desc }
-ent-ActionSpawnRift = Summon Carp Rift
-    .desc = Summons a carp rift that will periodically spawns carps.
-ent-ActionDevour = [color=red]Devour[/color]
-    .desc = Attempt to break a structure with your jaws or swallow a creature.
+ent-ActionSpawnRift = Создать карповый разлом
+    .desc = Создать карповый разлом, который будет периодически призывать карпов.
+ent-ActionDevour = [color=red]Поглотить[/color]
+    .desc = Попытаться разрушить конструкцию своими челюстями или проглотить существо.

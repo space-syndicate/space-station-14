@@ -1,5 +1,5 @@
 ent-WarpPoint = warp point
     .desc = { ent-MarkerBase.desc }
 ent-WarpPointBombing = warp point
-    .suffix = ninja bombing target
+    .suffix = Цель взрыва бомбы ниндзя
     .desc = { ent-WarpPoint.desc }

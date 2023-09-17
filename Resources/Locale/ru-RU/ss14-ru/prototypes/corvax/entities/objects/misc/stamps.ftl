@@ -1,6 +1,6 @@
 ent-RubberStampIAA = печать юридического бюро
     .desc = { ent-RubberStampMime.desc }
-    .suffix = DO NOT MAP
+    .suffix = НЕ МАППИТЬ
 ent-RubberStampPsychologist = печать психолога
     .desc = { ent-RubberStampMime.desc }
-    .suffix = DO NOT MAP
+    .suffix = НЕ МАППИТЬ
