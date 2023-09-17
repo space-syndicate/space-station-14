@@ -27,3 +27,21 @@
   - CCNanotrayzen
   - CCAdmiral
 
+- type: accessLevel
+  id: SSSPGeneral
+  name: СССП общий
+
+- type: accessLevel
+  id: SSSParmory
+  name: СССП оружейная
+
+- type: accessLevel
+  id: SSSPcommander
+  name: СССП командирский
+
+- type: accessGroup
+  id: SSSPall
+  tags:
+  - SSSPGeneral
+  - SSSParmory
+  - SSSPcommander

@@ -8,7 +8,7 @@
     gloves: ClothingHandsGlovesSSSP
     head: ClothingHeadHelmetSSSP
     outerClothing: ClothingOuterJacketSSSP
-    id: SecurityPDA
+    id: SSSPPDAsol
     belt: ClothingBeltSSSP
   satchel: ClothingBackpackSatchelFilled
   duffelbag: ClothingBackpackDuffelFilled
@@ -23,7 +23,7 @@
     gloves: ClothingHandsGlovesSSSP
     head: ClothingHeadHelmetSSSP
     outerClothing: ClothingOuterArmorSSSP
-    id: SecurityPDA
+    id: SSSPPDAsturm
     belt: ClothingBeltSSSP
     pocket1: WeaponPistolMakarov
   satchel: ClothingBackpackSatchelFilled
@@ -39,7 +39,7 @@
     gloves: ClothingHandsGlovesSSSP
     head: ClothingHeadHelmetSSSPofficer
     outerClothing: ClothingOuterJacketSSSPoficcer
-    id: SecurityPDA
+    id: SSSPPDAcom
     pocket1: WeaponPistolMakarov
   satchel: ClothingBackpackSatchelFilled
   duffelbag: ClothingBackpackDuffelFilled
@@ -293,7 +293,7 @@
   components:
   - type: Icon
     sprite: Markers/jobs.rsi
-    state: passenger
+    state: cyborg
   - type: Vocal
     maleScream: /Audio/Corvax/Effects/off.ogg
     femaleScream: /Audio/Corvax/Effects/off.ogg
@@ -320,7 +320,7 @@
   id: MobHumanSSSPsol
   components:
   - type: Icon
-    sprite: _Ck\Markers
+    sprite: Markers/jobs.rsi
     state: red
   - type: GhostRole
     name: Рядовой морской пехоты СССП
@@ -344,7 +344,7 @@
   id: MobHumanSSSPatace
   components:
   - type: Icon
-    sprite: _Ck\Markers
+    sprite: Markers/jobs.rsi
     state: red
   - type: GhostRole
     name: Штурмовик морской пехоты СССП
@@ -368,7 +368,7 @@
   id: MobHumanSSSPofficer
   components:
   - type: Icon
-    sprite: _Ck\Markers
+    sprite: Markers/jobs.rsi
     state: red
   - type: GhostRole
     name: Камрад морской пехоты СССП

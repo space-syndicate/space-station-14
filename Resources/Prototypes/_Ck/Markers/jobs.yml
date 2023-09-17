@@ -38,7 +38,7 @@
     job_id: Rab
   - type: Sprite
     layers:
-      - state: red
+      - state: green
       - state: passenger
 
 - type: entity
@@ -51,7 +51,7 @@
   - type: Sprite
     sprite: _Ck\Markers
     layers:
-      - state: red
+      - state: green
       - state: pirate2
 
 - type: entity
@@ -64,7 +64,7 @@
   - type: Sprite
     sprite: _Ck\Markers
     layers:
-      - state: red
+      - state: green
       - state: pirate3
 
 - type: entity
@@ -77,7 +77,7 @@
   - type: Sprite
     sprite: _Ck\Markers
     layers:
-      - state: red
+      - state: green
       - state: pirate1
 
 #пилот сб

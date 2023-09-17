@@ -109,3 +109,41 @@
   components:
     - type: AccessReader
       access: [["CCGeneral"]]
+
+#шлюзы СССП
+
+- type: entity
+  parent: HighSecDoor
+  id: HighSecSSSPArmoryLocked
+  name: Бронированная дверь СССП
+  suffix: SSSP
+  components:
+    - type: AccessReader
+      access: [["SSSParmory"]]
+    - type: PaintableAirlock
+      group: Glass
+    - type: Door
+      occludes: false
+    - type: Occluder
+      enabled: false
+    - type: Sprite
+      sprite: Structures/Doors/Airlocks/Glass/glass.rsi
+    - type: AnimationPlayer
+
+- type: entity
+  parent: AirlockSecurity
+  id: AirlockSSSPGeneraltLocked
+  name: Шлюз СССП
+  suffix: SSSP
+  components:
+    - type: AccessReader
+      access: [["SSSPGeneral"]]
+
+- type: entity
+  parent: AirlockSecurity
+  id: AirlockSSSPcommanderLocked
+  name: Шлюз СССП
+  suffix: SSSP
+  components:
+    - type: AccessReader
+      access: [["SSSPcommander"]]

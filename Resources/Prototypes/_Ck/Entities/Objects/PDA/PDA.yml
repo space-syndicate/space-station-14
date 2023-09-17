@@ -1,0 +1,50 @@
+- type: entity
+  parent: BasePDA
+  id: SSSPPDAsol
+  name: КПК СССП
+  description: один на всех!
+  components:
+    - type: Sprite
+      sprite: _Ck\Objects\PDA_ID\pda.rsi
+      state: pda-sssp
+    - type: Pda
+      id: SSSPsoldierIDCard
+      state: pda-sssp
+    - type: PdaBorderColor
+      borderColor: "#6f6192"
+    - type: Icon
+      state: pda-sssp
+
+- type: entity
+  parent: BasePDA
+  id: SSSPPDAsturm
+  name: КПК СССП
+  description: один на всех!
+  components:
+    - type: Sprite
+      sprite: _Ck\Objects\PDA_ID\pda.rsi
+      state: pda-sssp
+    - type: Pda
+      id: SSSPstormtrooperIDCard
+      state: pda-sssp
+    - type: PdaBorderColor
+      borderColor: "#6f6192"
+    - type: Icon
+      state: pda-sssp
+
+- type: entity
+  parent: BasePDA
+  id: SSSPPDAcom
+  name: КПК СССП
+  description: один на всех!
+  components:
+    - type: Sprite
+      sprite: _Ck\Objects\PDA_ID\pda.rsi
+      state: pda-sssp
+    - type: Pda
+      id: SSSPcommanderIDCard
+      state: pda-sssp
+    - type: PdaBorderColor
+      borderColor: "#6f6192"
+    - type: Icon
+      state: pda-sssp
