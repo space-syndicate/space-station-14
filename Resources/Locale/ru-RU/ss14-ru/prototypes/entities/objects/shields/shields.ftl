@@ -18,3 +18,5 @@ ent-EnergyShield = энергощит
     .desc = Экзотический энергетический щит, в сложенном состоянии может поместиться даже в кармане.
 ent-BrokenEnergyShield = сломанный энергощит
     .desc = Что-то внутри перегорело, он больше не функционирует.
+ent-TelescopicShield = telescopic shield
+    .desc = An advanced riot shield made of lightweight materials that collapses for easy storage.

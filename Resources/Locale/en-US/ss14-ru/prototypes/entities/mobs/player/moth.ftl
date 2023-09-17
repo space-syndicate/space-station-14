@@ -1,3 +1,2 @@
 ent-MobMoth = Urist McFluff
-
-  .desc = { ent-BaseMobMoth.desc }
+    .desc = { ent-BaseMobMoth.desc }
