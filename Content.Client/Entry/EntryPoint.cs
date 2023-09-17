@@ -1,7 +1,6 @@
 using Content.Client.Administration.Managers;
 using Content.Client.Changelog;
 using Content.Client.Chat.Managers;
-using Content.Client.Corvax.JoinQueue;
 using Content.Client.Corvax.TTS;
 using Content.Client.Options;
 using Content.Client.Eui;
@@ -67,7 +66,6 @@ namespace Content.Client.Entry
         [Dependency] private readonly ExtendedDisconnectInformationManager _extendedDisconnectInformation = default!;
         [Dependency] private readonly JobRequirementsManager _jobRequirements = default!;
         [Dependency] private readonly ContentLocalizationManager _contentLoc = default!;
-        [Dependency] private readonly JoinQueueManager _queueManager = default!; // Corvax-Queue
         [Dependency] private readonly TTSManager _ttsManager = default!; // Corvax-TTS
         [Dependency] private readonly ContentReplayPlaybackManager _playbackMan = default!;
         [Dependency] private readonly IResourceManager _resourceManager = default!;
@@ -165,7 +163,6 @@ namespace Content.Client.Entry
             _euiManager.Initialize();
             _voteManager.Initialize();
             _userInterfaceManager.SetDefaultTheme("SS14DefaultTheme");
-            _queueManager.Initialize(); // Corvax-Queue
             _ttsManager.Initialize(); // Corvax-TTS
 
             _baseClient.RunLevelChanged += (_, args) =>
