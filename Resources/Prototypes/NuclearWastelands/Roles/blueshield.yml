@@ -87,8 +87,7 @@
         - id: MedkitCombatFilled
         - id: Flash
     - type: Sprite
- #     sprite: NuclearWastelands/Clothing/Back/blueshield_duffelbag.rsi - ожидаем.
-      sprite: Textures/Clothing/Back/Satchels/security.rsi
+      sprite: NuclearWastelands/Clothing/Back/blueshield_duffelbag.rsi
     - type: Storage
       capacity: 150
 
@@ -106,8 +105,7 @@
         - id: MedkitCombatFilled
         - id: Flash
     - type: Sprite
-#      sprite: NuclearWastelands/Clothing/Back/blueshield_satchel.rsi - ожидаем.
-      sprite: Textures/Clothing/Back/Duffels/security.rsi
+      sprite: NuclearWastelands/Clothing/Back/blueshield_satchel.rsi
     - type: Storage
       capacity: 130
 
