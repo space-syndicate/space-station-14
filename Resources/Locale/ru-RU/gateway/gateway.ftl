@@ -1,6 +1,9 @@
 gateway-window-title = Врата
 gateway-window-ready = Готово!
 gateway-window-ready-in = Готовы через: { $time }сек.
+gateway-window-already-active = Already active
 gateway-window-open-portal = Открыть портал
 gateway-window-no-destinations = Отсутствуют пункты назначения.
 gateway-window-portal-closing = Портал закрывается
+gateway-access-denied = Access denied!
+gateway-close-portal = Close Portal
