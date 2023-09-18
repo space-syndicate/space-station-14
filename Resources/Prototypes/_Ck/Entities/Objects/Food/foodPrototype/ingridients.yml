@@ -41,6 +41,26 @@
     Smetana: 15
 
 - type: reagent
+  id: sgushenka
+  name: сгущёнка
+  group: Foods
+  desc: вау, сгущёнка!
+  physicalDesc: reagent-physical-desc-gloopy
+  flavor: vitamin
+  color: white
+  recognizable: true
+
+- type: reaction
+  id: Cookingsgushenka
+  reactants:
+    Milk:
+      amount: 10
+    Sugar:
+      amount: 5
+  products:
+    sgushenka: 10
+
+- type: reagent
   id: sourCreamStarter
   name: закваска
   group: Foods
