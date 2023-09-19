@@ -28,6 +28,9 @@ public sealed class ChatSanitizationManager : IChatSanitizationManager
         { "T_T", "chatsan-cries" },
         { "Т_Т", "chatsan-cries" }, // cyrillic T
         { "=_(", "chatsan-cries" },
+        { "пупупу", "chatsan-sighs" },
+        { "пу пу пу", "chatsan-sighs" },
+        { "пу-пу-пу", "chatsan-sighs" },
         { "!с", "chatsan-laughs" },
         { "!в", "chatsan-sighs" },
         { "!х", "chatsan-claps" },
