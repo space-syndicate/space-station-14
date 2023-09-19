@@ -1,3 +1,4 @@
+action-name-wake = Wake up
 sleep-onomatopoeia = Zzz...
 sleep-examined = [color=lightblue]{ CAPITALIZE($target) } спит.[/color]
 wake-other-success = Вы разбудили { $target }.

@@ -26,3 +26,5 @@ ent-EncryptionKeyService = service encryption key
     .desc = An encryption key used by the service staff, tasked with keeping the station full, happy and clean.
 ent-EncryptionKeySyndie = blood-red encryption key
     .desc = An encryption key used by... wait... Who is owner of this chip?
+ent-EncryptionKeyBinary = binary translator key
+    .desc = An encryption key that translates binary signals used by silicons.

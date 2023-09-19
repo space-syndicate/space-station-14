@@ -4,3 +4,6 @@ ent-HolofanProjector = holofan projector
     .desc = Stop suicidal passengers from killing everyone during atmos emergencies.
 ent-HoloprojectorSecurity = holobarrier projector
     .desc = Creates a solid but fragile holographic barrier.
+ent-HoloprojectorSecurityEmpty = { ent-HoloprojectorSecurity }
+    .suffix = Empty
+    .desc = { ent-HoloprojectorSecurity.desc }
