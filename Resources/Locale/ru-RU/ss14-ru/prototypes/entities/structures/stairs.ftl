@@ -1,5 +1,5 @@
-ent-Stairs = stairs
-    .desc = The greatest invention since rocket-propelled grenades.
+ent-Stairs = ступеньки
+    .desc = Величайшее изобретение после гранатомётов.
 ent-StairStage = { ent-Stairs }
-    .suffix = stage
+    .suffix = ступенька
     .desc = { ent-Stairs.desc }
