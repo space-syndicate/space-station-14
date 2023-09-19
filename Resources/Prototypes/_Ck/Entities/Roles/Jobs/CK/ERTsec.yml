@@ -1,7 +1,7 @@
 - type: job
   id: ERTsec
-  name: Оперативник нанотрайзен
-  description: Вы на столько хорш что защищаете станцию ЦК.
+  name: job-name-Operative
+  description: job-description-Operative
   playTimeTracker: JobERTsec
   requirements:
     - !type:DepartmentTimeRequirement

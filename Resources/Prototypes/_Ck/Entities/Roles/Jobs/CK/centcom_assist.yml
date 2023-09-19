@@ -1,7 +1,7 @@
 ﻿- type: job
   id: Centralassist
-  name: Асистент ЦК
-  description: Вы очень сильно постарались, теперь вы ассистент ПЦК! Ваша задача выполнять приказы вышестоящих.
+  name: job-name-AsistentCK
+  description: job-description-AsistentCK
   playTimeTracker: JobCentralassist
   requirements:
     - !type:OverallPlaytimeRequirement

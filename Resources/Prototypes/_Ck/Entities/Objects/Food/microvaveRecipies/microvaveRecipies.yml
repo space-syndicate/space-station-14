@@ -96,3 +96,51 @@
     FoodMeatCutlet: 1
   reagents:
     classicSauce1: 10
+
+- type: microwaveMealRecipe
+  id: RecipeFoodBakedChuck-Chuck
+  name: рецепт чак-чака
+  result: FoodBakedChuck-Chuck
+  time: 10
+  solids:
+    FoodDoughSlice: 1
+  reagents:
+    Sugar: 20
+
+- type: microwaveMealRecipe
+  id: RecipeFoodBakedCurry
+  name: рецепт кари
+  result: FoodBakedCurry
+  time: 10
+  solids:
+    FoodSoybeans: 2
+    FoodPotato: 2
+    FoodTomato: 1
+  reagents:
+    Blackpepper: 5
+    TableSalt: 1
+
+- type: microwaveMealRecipe
+  id: RecipeFoodBakedPlow
+  name: рецепт плова
+  result: FoodBakedPlow
+  time: 10
+  solids:
+    FoodDoughSlice: 2
+    FoodMeatCutlet: 2
+  reagents:
+    Blackpepper: 7
+    TableSalt: 2
+
+- type: microwaveMealRecipe
+  id: RecipeFoodBakedSamsa
+  name: рецепт чак-чака
+  result: FoodBakedSamsa
+  time: 10
+  solids:
+    FoodDoughSlice: 2
+    FoodMeatCutlet: 2
+  reagents:
+    Blackpepper: 7
+    TableSalt: 2
+

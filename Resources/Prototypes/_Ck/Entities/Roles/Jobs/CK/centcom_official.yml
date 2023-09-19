@@ -1,7 +1,7 @@
 - type: job
   id: CentralOfficial
-  name: Представитель ЦК
-  description: Вы представляете интересы Нанотрайзен.
+  name: job-name-Representative
+  description: job-description-Representative
   playTimeTracker: JobCentralOfficial
   requirements:
     - !type:RoleTimeRequirement

@@ -1,7 +1,7 @@
 - type: job
   id: ERTleader
-  name: Лидер оперативников нанотрайзен
-  description: Неужели такие есть? да...
+  name: job-name-OperativeLeader
+  description: job-description-OperativeLeader
   playTimeTracker: ERTleader
   requirements:
     - !type:RoleTimeRequirement

@@ -1,7 +1,7 @@
 ﻿- type: job
   id: Pirate1lvl
-  name: пират-абориген
-  description: Скорее всего вы откинетесь при первом же абордаже.
+  name: job-name-Pirate
+  description: job-description-Pirate
   playTimeTracker: JobPirate1lvl
   startingGear: pirate1lvlGear
   icon: "JobIconPrisoner"

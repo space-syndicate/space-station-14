@@ -1,7 +1,7 @@
 ﻿- type: job
   id: RabMaster
-  name: пират-ветеран
-  description: Вы уже не тот абориген.
+  name: job-name-PirateVeteran
+  description: job-description-PirateVeteran
   playTimeTracker: JobRabMaster
   requirements:
     - !type:RoleTimeRequirement

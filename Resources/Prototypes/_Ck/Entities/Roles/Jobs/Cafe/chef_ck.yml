@@ -1,7 +1,7 @@
 - type: job
   id: Chefck
-  name: Повар
-  description: Слушай Шеф-повара
+  name: job-name-Cook
+  description: job-description-Cook
   playTimeTracker: JobChefck
   requirements:
     - !type:RoleTimeRequirement

@@ -61,6 +61,16 @@
     sgushenka: 10
 
 - type: reagent
+  id: honey
+  name: мёд
+  group: Foods
+  desc: тянущийся и сладкий мёд
+  physicalDesc: reagent-physical-desc-gloopy
+  flavor: vitamin
+  color: yellow
+  recognizable: true
+
+- type: reagent
   id: sourCreamStarter
   name: закваска
   group: Foods

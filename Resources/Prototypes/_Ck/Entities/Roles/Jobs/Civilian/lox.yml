@@ -1,7 +1,7 @@
 - type: job
   id: Lox
-  name: Бомж
-  description: Вы неоплатили налоги, вас посадят! БЕГИ!
+  name: job-name-homeless
+  description: job-description-homeless
   playTimeTracker: JobLox
   startingGear: LoxGear
   icon: "JobIconPrisoner"

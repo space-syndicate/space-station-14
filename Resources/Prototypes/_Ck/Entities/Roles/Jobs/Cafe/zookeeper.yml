@@ -1,7 +1,7 @@
 - type: job
   id: Zookeeper
-  name: Зоотехник
-  description: Строй животных, ой...
+  name: job-name-Zootechnik
+  description: job-description-Zootechnik
   playTimeTracker: JobZookeeper
   requirements:
     - !type:RoleTimeRequirement

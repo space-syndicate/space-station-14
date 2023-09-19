@@ -1,7 +1,7 @@
 - type: job
   id: BORGcleaner
-  name: Борг-уборщик
-  description: выполняй приказы
+  name: job-name-cleanerCK
+  description: job-description-cleanerCK
   playTimeTracker: JobBorgcleaner
   joinNotifyCrew: false
   whitelistRequired: true
@@ -16,8 +16,8 @@
 
 - type: job
   id: BORGassist
-  name: Борг-асистент
-  description: выполняй приказы
+  name: job-name-assistantCK
+  description: job-description-assistantCK
   playTimeTracker: JobBorgService
   joinNotifyCrew: false
   whitelistRequired: true
@@ -32,8 +32,8 @@
 
 - type: job
   id: BORGmedical
-  name: Борг-медиков
-  description: выполняй приказы
+  name: job-name-medicCK
+  description: job-description-medicCK
   playTimeTracker: JobBorgMedical
   joinNotifyCrew: false
   whitelistRequired: true
@@ -48,8 +48,8 @@
 
 - type: job
   id: BORGsalvage
-  name: Борг-утилей
-  description: выполняй приказы
+  name: job-name-scrapCK
+  description: job-description-scrapCK
   playTimeTracker: JobBorgMining
   joinNotifyCrew: false
   whitelistRequired: true
@@ -64,8 +64,8 @@
 
 - type: job
   id: BORGengineer
-  name: Борг-инженеров
-  description: выполняй приказы
+  name: job-name-engineerCK
+  description: job-description-engineerCK
   playTimeTracker: JobBorgEngineer
   joinNotifyCrew: false
   whitelistRequired: true

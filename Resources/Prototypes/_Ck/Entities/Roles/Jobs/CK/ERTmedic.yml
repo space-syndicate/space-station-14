@@ -1,7 +1,7 @@
 - type: job
   id: ERTmedic
-  name: Медик оперативников нанотрайзен
-  description: Вы лучший медик и оперативник вместе взятые!
+  name: job-name-OperativeMedic
+  description: job-description-OperativeMedic
   playTimeTracker: JobERTmedic
   requirements:
     - !type:DepartmentTimeRequirement

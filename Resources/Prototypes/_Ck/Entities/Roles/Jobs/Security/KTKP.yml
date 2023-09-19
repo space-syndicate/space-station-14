@@ -1,7 +1,7 @@
 - type: job
   id: KTKP
-  name: пилот
-  description: Пилот, ваша задача патрулировать космос или выполнять задачи поставленные ГСБ.
+  name: job-name-pilot
+  description: job-description-pilot
   playTimeTracker: JobKTKP
   requirements:
     - !type:OverallPlaytimeRequirement

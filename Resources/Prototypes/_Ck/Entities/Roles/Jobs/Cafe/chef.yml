@@ -1,7 +1,7 @@
 - type: job
   id: Chef
-  name: Шеф-повар
-  description: Мамамиа! ты не знаешь что делать?
+  name: job-name-Chef
+  description: job-description-Chef
   playTimeTracker: JobChef
   requirements:
     - !type:RoleTimeRequirement
