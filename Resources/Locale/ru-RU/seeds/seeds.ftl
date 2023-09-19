@@ -92,3 +92,7 @@ seeds-grape-name = винограда
 seeds-grape-display-name = винограда
 seeds-cocoa-name = какао-боба
 seeds-cocoa-display-name = шоколадного дерева
+seeds-berries-name = berries
+seeds-berries-display-name = berry bush
+seeds-bungo-name = bungo
+seeds-bungo-display-name = bungo plant

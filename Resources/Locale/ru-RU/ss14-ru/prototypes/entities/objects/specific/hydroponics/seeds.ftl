@@ -90,3 +90,7 @@ ent-GrapeSeeds = пакет семян винограда
     .desc = { ent-SeedBase.desc }
 ent-CocoaSeeds = пакет семян какао-бобов
     .desc = { ent-SeedBase.desc }
+ent-BerrySeeds = packet of berry seeds
+    .desc = { ent-SeedBase.desc }
+ent-BungoSeeds = packet of bungo seeds
+    .desc = Don't eat the pits.
