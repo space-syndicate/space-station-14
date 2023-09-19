@@ -4,5 +4,5 @@ ent-MobSkeletonPirate = скелет-пират
     .desc = { ent-MobSkeletonPerson.desc }
 ent-MobSkeletonBiker = скелет-байкер
     .desc = { ent-MobSkeletonPerson.desc }
-ent-MobSkeletonCloset = Closet Skeleton
+ent-MobSkeletonCloset = скелет из шкафа
     .desc = { ent-MobSkeletonPerson.desc }
