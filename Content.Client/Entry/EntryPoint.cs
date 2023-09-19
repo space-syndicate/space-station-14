@@ -163,6 +163,7 @@ namespace Content.Client.Entry
             _euiManager.Initialize();
             _voteManager.Initialize();
             _userInterfaceManager.SetDefaultTheme("SS14DefaultTheme");
+            _userInterfaceManager.SetActiveTheme(_configManager.GetCVar(CVars.InterfaceTheme));
             _ttsManager.Initialize(); // Corvax-TTS
 
             _baseClient.RunLevelChanged += (_, args) =>

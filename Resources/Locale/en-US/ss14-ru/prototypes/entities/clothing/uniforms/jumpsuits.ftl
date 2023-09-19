@@ -225,3 +225,5 @@ ent-ClothingUniformJumpsuitSeniorOfficer = senior officer jumpsuit
     .desc = A sign of skill and prestige within the security department.
 ent-ClothingUniformJumpsuitWeb = web jumpsuit
     .desc = Makes it clear that you are one with the webs.
+ent-ClothingUniformJumpsuitLoungewear = loungewear
+    .desc = A long stretch of fabric that wraps around your body for comfort.

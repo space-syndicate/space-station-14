@@ -26,3 +26,5 @@ ent-EncryptionKeyService = ключ шифрования сервисного о
     .desc = Ключ шифрования, используемый сотрудниками сервисного отдела, которым поручено поддерживать станцию сытой, счастливой, и чистой.
 ent-EncryptionKeySyndie = кроваво-красный ключ шифрования
     .desc = Ключ шифрования, используемый... секундочку... Кто владелец этого чипа?
+ent-EncryptionKeyBinary = binary translator key
+    .desc = An encryption key that translates binary signals used by silicons.
