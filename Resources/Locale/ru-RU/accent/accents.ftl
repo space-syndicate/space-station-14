@@ -18,8 +18,8 @@ accent-words-mouse-2 = Пиип!
 accent-words-mouse-3 = Чууу!
 accent-words-mouse-4 = Ииии!
 accent-words-mouse-5 = Пип!
-accent-words-mouse-6 = Фвип!
-accent-words-mouse-7 = Хип!
+accent-words-mouse-6 = Уиип!
+accent-words-mouse-7 = Иип!
 # Mumble
 accent-words-mumble-1 = Ммпмв!
 accent-words-mumble-2 = Мммв мррввв!
