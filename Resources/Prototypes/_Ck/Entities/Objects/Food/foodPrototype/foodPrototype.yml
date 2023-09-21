@@ -240,6 +240,32 @@
           Quantity: 5
 
 - type: entity
+  name: Шурпа
+  parent: FoodBowlBaseEast
+  id: FoodBakedShurpa
+  description: Ты незнаешь что такое шурпа?
+  components:
+  - type: FlavorProfile
+    flavors:
+      - meaty
+      - potatoes
+  - type: Sprite
+    layers:
+    - state: bowl
+    - state: shurpa
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxvol: 15
+        reagents:
+        - ReagentId: Nutriment
+          Quantity: 16
+        - ReagentId: Vitamin
+          Quantity: 6
+        - ReagentId: DoctorsDelight
+          Quantity: 10
+
+- type: entity
   name: самса
   parent: FoodBakedMediumEastBase
   id: FoodBakedSamsa
@@ -263,4 +289,30 @@
   - type: FlavorProfile
     flavors:
       - magical
+      - funny
+
+- type: entity
+  name: лепёшки
+  parent: FoodBakedMediumEastBase
+  id: FoodBakedTortillas
+  description: восточные лепёшки
+  components:
+  - type: Sprite
+    state: EastTortillas
+  - type: FlavorProfile
+    flavors:
+      - magical
+      - shocking
+
+- type: entity
+  name: манты
+  parent: FoodBakedMediumEastBase
+  id: FoodBakedMantas
+  description: сочные, очень...
+  components:
+  - type: Sprite
+    state: mantas
+  - type: FlavorProfile
+    flavors:
+      - bacon
       - funny

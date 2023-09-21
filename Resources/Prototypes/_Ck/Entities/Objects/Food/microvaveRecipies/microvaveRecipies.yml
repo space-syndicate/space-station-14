@@ -111,11 +111,12 @@
   id: RecipeFoodBakedCurry
   name: рецепт кари
   result: FoodBakedCurry
-  time: 10
+  time: 20
   solids:
     FoodSoybeans: 2
     FoodPotato: 2
     FoodTomato: 1
+    FoodBowlBig: 1
   reagents:
     Blackpepper: 5
     TableSalt: 1
@@ -124,13 +125,16 @@
   id: RecipeFoodBakedPlow
   name: рецепт плова
   result: FoodBakedPlow
-  time: 10
+  time: 25
   solids:
     FoodDoughSlice: 2
     FoodMeatCutlet: 2
+    FoodTomato: 1
+    FoodGarlic: 1
+    FoodBowlBig: 1
   reagents:
     Blackpepper: 7
-    TableSalt: 2
+    Rice: 15
 
 - type: microwaveMealRecipe
   id: RecipeFoodBakedSamsa
@@ -143,4 +147,43 @@
   reagents:
     Blackpepper: 7
     TableSalt: 2
+
+- type: microwaveMealRecipe
+  id: RecipeFoodBakedShurpa
+  name: рецепт шурпы
+  result: FoodBakedShurpa
+  time: 20
+  solids:
+    FoodPotato: 2
+    FoodTomato: 1
+    FoodMeat: 1
+    FoodCabbage: 1
+    FoodOnion: 1
+    FoodGarlic: 1
+    FoodBowlBig: 1
+  reagents:
+    Blackpepper: 5
+    TableSalt: 1
+    OilOlive: 1
+
+- type: microwaveMealRecipe
+  id: RecipeFoodBakedTortillas
+  name: рецепт лепёшек
+  result: FoodBakedTortillas
+  time: 5
+  solids:
+    FoodDoughSlice: 1
+  reagents:
+    OilOlive: 5
+
+- type: microwaveMealRecipe
+  id: RecipeFoodBakedMantas
+  name: рецепт мантов
+  result: FoodBakedMantas
+  time: 15
+  solids:
+    FoodDoughSlice: 2
+    FoodMeatCutlet: 2
+  reagents:
+    Water: 15
 
