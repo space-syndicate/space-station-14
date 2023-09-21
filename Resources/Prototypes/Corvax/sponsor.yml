@@ -1,4 +1,5 @@
-﻿# OopsieDoopsie
+# OopsieDoopsie
+# OopsieDoopsie
 - type: entity
   parent: ClothingOuterBase
   id: ClothingOuterAtmosianBomberJacket
@@ -191,7 +192,6 @@
   id: AugmentsRoboticRightArm
   bodyPart: RArm
   markingCategory: Arms
-  sponsorOnly: true
   sprites:
     - sprite: Corvax/Mobs/Customization/augments.rsi
       state: robotic_r_arm
@@ -200,7 +200,6 @@
   id: AugmentsRoboticRightHand
   bodyPart: RHand
   markingCategory: Arms
-  sponsorOnly: true
   sprites:
     - sprite: Corvax/Mobs/Customization/augments.rsi
       state: robotic_r_hand
