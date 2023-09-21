@@ -1,2 +1,2 @@
 ent-MobVox = Vox
-  .desc = { ent-BaseMobVox.desc }
+    .desc = { ent-BaseMobVox.desc }

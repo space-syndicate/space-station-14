@@ -1,2 +1,2 @@
 ent-MobReptilian = Urisst' Mzhand
-  .desc = { ent-BaseMobReptilian.desc }
+    .desc = { ent-BaseMobReptilian.desc }
