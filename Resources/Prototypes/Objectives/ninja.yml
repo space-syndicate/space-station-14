@@ -22,8 +22,8 @@
       sprite: Objects/Tools/emag.rsi
       state: icon
   - type: NumberObjective
-    min: 15
-    max: 40
+    min: 5 # Corvax-MRP
+    max: 25 # Corvax-MRP
     title: objective-condition-doorjack-title
     description: objective-condition-doorjack-description
   - type: DoorjackCondition
