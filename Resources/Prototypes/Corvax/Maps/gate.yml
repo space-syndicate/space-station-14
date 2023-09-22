@@ -2,7 +2,7 @@
   id: CorvaxGate
   mapName: 'Gate Station'
   mapPath: /Maps/corvax_gate.yml
-  minPlayers: 50
+  minPlayers: 60
   stations:
     Gate:
       stationProto: StandardNanotrasenStation
@@ -27,6 +27,8 @@
             Chaplain: [ 1, 1 ]
             Librarian: [ 1, 1 ]
             ServiceWorker: [ 2, 2 ]
+            Zookeeper: [ 1, 1 ]
+            Reporter: [ 2, 2 ]
             #engineering
             ChiefEngineer: [ 1, 1 ]
             SeniorEngineer: [ 1, 1 ]
