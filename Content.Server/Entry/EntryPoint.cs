@@ -138,6 +138,9 @@ namespace Content.Server.Entry
                 file = resourceManager.UserData.OpenWriteText(resPath.WithName("react_" + dest));
                 ReactionJsonGenerator.PublishJson(file);
                 file.Flush();
+                file = resourceManager.UserData.OpenWriteText(resPath.WithName("entity_" + dest)); // Corvax-Wiki
+                EntityJsonGenerator.PublishJson(file); // Corvax-Wiki
+                file.Flush(); // Corvax-Wiki
                 IoCManager.Resolve<IBaseServer>().Shutdown("Data generation done");
             }
             else
