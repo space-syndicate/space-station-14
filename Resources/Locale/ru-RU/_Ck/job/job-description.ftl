@@ -14,6 +14,3 @@ job-description-assistant = Выполняй приказы
 job-description-medic = Выполняй приказы
 job-description-scrap = Выполняй приказы
 job-description-engineer = Выполняй приказы
-job-description-Pirate = Скорее всего вы откинетесь при первом же абордаже.
-job-description-PirateVeteran = Вы уже не тот абориген.
-job-description-PirateBlackbeard = Легенда космоса, тот чья голова стоит больше сектора!

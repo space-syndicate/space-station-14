@@ -1,0 +1,388 @@
+- type: startingGear
+  id: pirate1lvlGear
+  equipment:
+    equipment:
+    jumpsuit: ClothingUniformJumpsuitPirate
+    back: ClothingBackpackPirateFilled
+    head: ClothingHeadBandBlack
+    shoes: ClothingShoesBootsLaceup
+    id: PassengerPDA
+    belt: ClothingBeltUtility
+    pocket1: AppraisalTool
+  innerclothingskirt: ClothingUniformJumpsuitPirate
+  satchel: ClothingBackpackPirateFilled
+  duffelbag: ClothingBackpackPirateFilled
+
+- type: startingGear
+  id: pirate2lvlGear
+  equipment:
+    jumpsuit: ClothingUniformJumpsuitPirate
+    back: ClothingBackpackPirateFilled
+    head: ClothingHeadHatPirateTricord
+    shoes: ClothingShoesBootsLaceup
+    id: PassengerPDA
+    belt: ClothingBeltUtility
+    pocket1: AppraisalTool
+    outerClothing: ClothingOuterCoatGentle
+  innerclothingskirt: ClothingUniformJumpsuitPirate
+  satchel: ClothingBackpackPirateFilled
+  duffelbag: ClothingBackpackPirateFilled
+
+- type: startingGear
+  id: pirate3lvlGear
+  equipment:
+    jumpsuit: ClothingUniformJumpsuitPirate
+    back: ClothingBackpackPirateFilled
+    head: ClothingHeadHatPirate
+    shoes: ClothingShoesBootsLaceup
+    id: PassengerPDA
+    belt: ClothingBeltUtility
+    pocket1: AppraisalTool
+    pocket2: EnergyCutlass
+    outerClothing: ClothingOuterCoatPirate
+  innerclothingskirt: ClothingUniformJumpskirtColorLightBrown
+  satchel: ClothingBackpackPirateFilled
+  duffelbag: ClothingBackpackPirateFilled
+
+- type: dataset
+  id: NamePirate
+  values:
+  - Зло
+  - Хирург
+  - Лагуна
+  - Звезда
+  - Хрыч
+  - Уазик
+  - Лабиринт
+  - Олень
+  - Дымок
+  - Царь
+  - Угрюмый
+  - Лаборант
+  - Жулик
+  - Лазер
+  - Лаванда
+  - Цветок
+  - Роджер
+  - Часовой
+  - Ладья
+  - Цезарь
+  - Чарли
+  - Свисток
+  - Лазер
+  - Химера
+  - Чародей
+  - Цейлон
+  - Лазурь
+  - Угол
+  - Чарли
+  - Лаки
+  - Желток
+  - Бизон
+  - Циркач
+  - Лакировка
+  - Чайка
+  - Харлей
+  - Лангуст
+  - Зомби
+  - Гранит
+  - Ландыш
+  - Цыган
+  - Хомяк
+  - Лопух
+  - Геолог
+  - Чебурашка
+  - Цыплёнок
+  - Хитрый
+  - Лас-Вегас
+  - Енот
+  - Авиатор
+  - Ласточка
+  - Удар
+  - Хлебец
+  - Чайник
+  - Лаура
+  - Европа
+  - Гений
+  - Ходок
+  - Лев
+  - Осина
+  - Ехидна
+  - Легенда
+  - Челленджер
+  - Бакс
+  - Хозяин
+  - Холмс
+  - Алекс
+  - Удача
+  - Легион
+  - Челнок
+  - Жук
+  - Холодный
+  - Барбос
+  - Лекарь
+  - Алабай
+  - Епископ
+  - Чемпион
+  - Холостяк
+  - Лексус
+  - Узбек
+  - Черепаха
+  - Хаммер
+  - Лемур
+  - Гуру
+  - Дядя
+  - Черёмуха
+  - Ленивец
+  - Хонда
+  - Вайпер
+  - Черкес
+  - Лентяй
+  - Журналист
+  - Хакер
+  - Леон
+  - Бабах
+  - Галактика
+  - Черномордый
+  - Хамелеон
+  - Леопольд
+  - Хорёк
+  - Чертяка
+  - Узник
+  - Лепрекон
+  - Аид
+  - Честер
+  - Гегемон
+  - Лесник
+  - Егерь
+  - Четвёрка
+  - Умка
+  - Кедр
+  - Чехов
+  - Шелест
+  - Газель
+  - Летучая мышь
+  - Швэд
+  - Ворон
+  - Фламинго
+  - Леший
+  - Академик
+  - Шатун
+  - Уран
+  - Чибис
+  - Лёлик
+  - Шарк
+  - Флинт
+  - Живчик
+  - Шандр
+  - Гвоздика
+  - Флюгер
+  - Шарик
+  - Ураган
+  - Вайпер
+  - Фокус
+  - Ёжик
+  - Эбонит
+  - Тормоз
+  - Шарпей
+  - Ученик
+  - Жмот
+  - Есаул
+  - Фокусник
+  - Жетон
+  - Усилитель
+  - Фома
+  - Газель
+  - Ястреб
+  - Фокс
+  - Абориген
+  - Жасмин
+  - Формат
+  - Бабл-гам
+  - Вагон
+  - Фотограф
+  - Бабник
+  - Шалтай-болтай
+  - Чиполино
+  - Шайтан
+  - Учитель
+  - Француз
+  - Ёлка
+  - Багаж
+  - Фредди
+  - Вектор
+  - Гайка
+  - Фрегат
+  - Базука
+  - Юпитер
+  - Фриман
+  - Шалун
+  - Энергетик
+  - Шаман
+  - Фургон
+  - Школьник
+  - Шанхай
+  - Фунтик
+  - ДипКол
+  - БитКоп
+  - Джаз
+  - Йололо
+  - Байкон
+  - Гуест
+  - Под
+  - Неил
+  - Песок
+  - ГЮСП
+  - Фиери
+  - Лайм
+  - Максвелл
+  - Ваилд
+  - Номпад
+  - Хенри
+  - Стик
+  - Крейзи
+  - Даймонд
+  - Джоджо
+  - Айзек
+  - Кларк
+  - Бёрн
+  - Джакарта
+  - Норманди
+  - Аквамарин
+  - Альбатрос
+  - Барракуда
+  - Кюрли
+  - Файтинг Боб
+  - Робуст
+  - Волтер
+  - Анджел
+  - Аткинс
+  - Аттила
+  - Краут
+  - Бальтар
+  - Джокер
+  - Доктор
+  - Патриот
+  - Проффесор
+  - Гомес
+  - Финекс
+
+- type: dataset
+  id: NamePirateСadet
+  values:
+  - Боцман
+
+- type: dataset
+  id: NamePirateNavigator
+  values:
+  - Штурман
+
+- type: dataset
+  id: NamePirateBlack
+  values:
+  - Чёрная борода
+
+- type: entity
+  name: Урист Макбайн
+  parent: MobHuman
+  description: солдатик, не пластиковый и не оловянный
+  id: MobHumanCombinePirate
+  components:
+  - type: Icon
+    sprite: Markers/jobs.rsi
+    state: cyborg
+  - type: Vocal
+    maleScream: /Audio/Corvax/Effects/off.ogg
+    femaleScream: /Audio/Corvax/Effects/off.ogg
+  - type: Speech
+    speechSounds: Сombine
+  - type: Stamina
+    critThreshold: 200
+  - type: MobState
+  - type: MobThresholds
+    thresholds:
+      0: Alive
+      100: Critical
+      200: Dead
+  - type: SlowOnDamage
+    speedModifierThresholds:
+      50: 0.7
+      70: 0.5
+
+- type: entity
+  name: Пират боцман
+  suffix: corvax
+  parent: MobHumanCombinePirate
+  description: пират
+  id: MobHumanPIRATE1
+  components:
+  - type: Icon
+    sprite: _Ck\Markers
+    layers:
+      - state: red
+      - state: pirate1
+  - type: GhostRole
+    name: Пират боцман
+    description:  Добро пожаловать на Карибы, моя любовь.
+    rules: Вы новичёк, так что не расчитывайте на что либо.
+  - type: GhostTakeoverAvailable
+  - type: Loadout
+    prototypes: [pirate1lvlGear]
+  - type: RandomMetadata
+    nameSegments:
+    - NamePirateСadet
+    - NamePirate
+  - type: RandomHumanoidAppearance
+    randomizeName: False
+
+- type: entity
+  name: Пират штурман
+  suffix: corvax
+  parent: MobHumanCombinePirate
+  description: пират
+  id: MobHumanPIRATE2
+  components:
+  - type: Icon
+    sprite: _Ck\Markers
+    layers:
+      - state: red
+      - state: pirate2
+  - type: GhostRole
+    name: Пират штурман
+    description:  Добро пожаловать на Карибы, моя любовь.
+    rules: Слушай бороду, ты его опытный боец, прояви важность!
+  - type: GhostTakeoverAvailable
+  - type: Loadout
+    prototypes: [pirate2lvlGear]
+  - type: RandomMetadata
+    nameSegments:
+    - NamePirateNavigator
+    - NamePirate
+  - type: RandomHumanoidAppearance
+    randomizeName: False
+
+- type: entity
+  name: Чёрная борода
+  suffix: corvax
+  parent: MobHumanCombinePirate
+  description: пират
+  id: MobHumanPIRATE3
+  components:
+  - type: Icon
+    sprite: _Ck\Markers
+    layers:
+      - state: red
+      - state: pirate3
+  - type: GhostRole
+    name: Чёрная борода
+    description:  Добро пожаловать на Карибы, моя любовь.
+    rules: Командуй пиратами!
+  - type: GhostTakeoverAvailable
+  - type: Loadout
+    prototypes: [pirate3lvlGear]
+  - type: RandomMetadata
+    nameSegments:
+    - NamePirateBlack
+  - type: RandomHumanoidAppearance
+    randomizeName: False
+

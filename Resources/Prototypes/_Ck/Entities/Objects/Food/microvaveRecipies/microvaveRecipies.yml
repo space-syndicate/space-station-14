@@ -220,9 +220,9 @@
     Cream: 5
 
 - type: microwaveMealRecipe
-  id: RecipeFoodBakedKharaPera
+  id: RecipeFoodBakedDelight
   name: рецепт Рахата лукума
-  result: FoodBakedKharaPera
+  result: FoodBakedDelight
   time: 10
   solids:
     FoodMeatSlime: 1
@@ -230,9 +230,9 @@
     Sugar: 10
 
 - type: microwaveMealRecipe
-  id: RecipeFoodBakedKharaPera
+  id: RecipeFoodBakedBaklava
   name: рецепт Пахлавы
-  result: FoodBakedKharaPera
+  result: FoodBakedBAKLAVA
   time: 10
   solids:
     FoodDoughSlice: 1
@@ -243,9 +243,9 @@
     water: 1
 
 - type: microwaveMealRecipe
-  id: RecipeFoodBakedKharaPera
+  id: RecipeFoodBakedHalva
   name: рецепт Халвы
-  result: FoodBakedKharaPera
+  result: FoodBakedHalva
   time: 10
   solids:
     FoodButter: 1
