@@ -98,16 +98,6 @@
     classicSauce1: 10
 
 - type: microwaveMealRecipe
-  id: RecipeFoodBakedChuck-Chuck
-  name: рецепт чак-чака
-  result: FoodBakedChuck-Chuck
-  time: 10
-  solids:
-    FoodDoughSlice: 1
-  reagents:
-    Sugar: 20
-
-- type: microwaveMealRecipe
   id: RecipeFoodBakedCurry
   name: рецепт кари
   result: FoodBakedCurry
@@ -135,18 +125,6 @@
   reagents:
     Blackpepper: 7
     Rice: 15
-
-- type: microwaveMealRecipe
-  id: RecipeFoodBakedSamsa
-  name: рецепт чак-чака
-  result: FoodBakedSamsa
-  time: 10
-  solids:
-    FoodDoughSlice: 2
-    FoodMeatCutlet: 2
-  reagents:
-    Blackpepper: 7
-    TableSalt: 2
 
 - type: microwaveMealRecipe
   id: RecipeFoodBakedShurpa
@@ -187,3 +165,91 @@
   reagents:
     Water: 15
 
+- type: microwaveMealRecipe
+  id: RecipeFoodBakedSamsa
+  name: рецепт самсы
+  result: FoodBakedSamsa
+  time: 10
+  solids:
+    FoodDoughSlice: 2
+    FoodMeatCutlet: 2
+  reagents:
+    Blackpepper: 7
+    TableSalt: 2
+
+- type: microwaveMealRecipe
+  id: RecipeFoodBakedChuck-Chuck
+  name: рецепт чак-чака
+  result: FoodBakedChuck-Chuck
+  time: 10
+  solids:
+    FoodDoughSlice: 1
+  reagents:
+    Sugar: 20
+
+- type: microwaveMealRecipe
+  id: RecipeFoodBakedChebureks
+  name: рецепт чебурека
+  result: FoodBakedChebureks
+  time: 10
+  solids:
+    FoodDoughSlice: 1
+    FoodMeatChicken: 1
+
+- type: microwaveMealRecipe
+  id: RecipeFoodBakedGoshnan
+  name: рецепт Гошнана
+  result: FoodBakedGoshnan
+  time: 10
+  solids:
+    FoodDoughPie: 1
+    FoodOnionSlice: 2
+    FoodMeat: 1
+    
+- type: microwaveMealRecipe
+  id: RecipeFoodBakedKharaPera
+  name: рецепт Кхары перы
+  result: FoodBakedKharaPera
+  time: 10
+  solids:
+    FoodButter: 1
+  reagents:
+    Sugar: 10
+    Milk: 5
+    CocoaPowder: 5
+    Cream: 5
+
+- type: microwaveMealRecipe
+  id: RecipeFoodBakedKharaPera
+  name: рецепт Рахата лукума
+  result: FoodBakedKharaPera
+  time: 10
+  solids:
+    FoodMeatSlime: 1
+  reagents:
+    Sugar: 10
+
+- type: microwaveMealRecipe
+  id: RecipeFoodBakedKharaPera
+  name: рецепт Пахлавы
+  result: FoodBakedKharaPera
+  time: 10
+  solids:
+    FoodDoughSlice: 1
+  reagents:
+    Sugar: 10
+    honey: 10
+    OilOlive: 1
+    water: 1
+
+- type: microwaveMealRecipe
+  id: RecipeFoodBakedKharaPera
+  name: рецепт Халвы
+  result: FoodBakedKharaPera
+  time: 10
+  solids:
+    FoodButter: 1
+  reagents:
+    Sugar: 10
+    Flour: 10
+    TableSalt: 1
