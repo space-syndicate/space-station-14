@@ -10,7 +10,7 @@ enabled = false
 
 [net]
 tickrate = 25
-port = 8006
+port = 1212
 bindto = "::,0.0.0.0"
 max_connections = 35
 # Automatic port forwarding!
@@ -24,7 +24,7 @@ enabled = true
 
 # This is the address and port the status server binds to.
 # The port is by default set based on net.port so it will follow what you set there.
-bind = "*:8006"
+bind = "*:1212"
 
 # This is the address of the SS14 server as the launcher uses it.
 # This is only needed if you're proxying the status HTTP server -
@@ -54,7 +54,7 @@ tags = "RU"
 # URL of your server. Fill this in if you have a domain name,
 # want to use HTTPS (with a reverse proxy), or other advanced scenarios.
 # Must be in the form of an ss14:// or ss14s:// URI pointing to the status API.
-server_url = "https://efremov.vdska.ru:8006"
+server_url = ""
 
 [build]
 # *Absolutely all of these can be supplied using a "build.json" file*
