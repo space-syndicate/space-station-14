@@ -10,7 +10,7 @@ enabled = false
 
 [net]
 tickrate = 25
-port = 1212
+port = 8006
 bindto = "::,0.0.0.0"
 max_connections = 35
 # Automatic port forwarding!
