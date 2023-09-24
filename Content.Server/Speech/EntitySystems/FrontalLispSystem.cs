@@ -21,7 +21,15 @@ public sealed class FrontalLispSystem : EntitySystem
         // handles ex(c), x
         message = Regex.Replace(message, @"[E]+[Xx]+[Cc]*|[X]+", "EKTH");
         message = Regex.Replace(message, @"[e]+[x]+[c]*|[x]+", "ekth");
-
+        // Corvax-Localization Start
+        // с, в, ч, т in ф or ш
+        message = Regex.Replace(message, @"[СВЧТ]", prob(50) ? "Ф":"Ш");
+        message = Regex.Replace(message, @"[СсВвЧчТт]", prob(50) ? "ф":"ш");
+        // д in ф
+        message = Regex.Replace(message, @"(?![ИЕЁЮЯЬ])[Д]", "Ф");
+        message = Regex.Replace(message, @"(?![ИиЕеЁёЮюЯяЬь])[Дд]", "ф");
+        // Corvax-Localization End
+        
         args.Message = message;
     }
 }
