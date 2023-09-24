@@ -5,4 +5,3 @@ ventriloquist-puppet-inserted-hand = У вас появилась рука по�
 ventriloquist-puppet-removed-hand = Вы потеряли свою руку помощи.
 ventriloquist-puppet-role-name = Кукла-чревовещатель
 ventriloquist-puppet-role-description = Станьте куклой-чревовещателем!
-
