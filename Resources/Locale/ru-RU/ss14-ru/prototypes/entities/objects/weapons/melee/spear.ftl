@@ -6,5 +6,3 @@ ent-SpearPlasma = плазменное копьё
     .desc = Копье с осколком плазменного стекла в качестве наконечника.
 ent-SpearUranium = урановое копьё
     .desc = Копье с осколком уранового стекла в качестве наконечника.
-ent-SpearBone = bone spear
-    .desc = A spear made of bones.
