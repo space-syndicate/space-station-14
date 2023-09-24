@@ -1,10 +1,12 @@
 using System.Text.RegularExpressions;
 using Content.Server.Speech.Components;
+using Robust.Shared.Random; // Corvax Localization
 
 namespace Content.Server.Speech.EntitySystems;
 
 public sealed class FrontalLispSystem : EntitySystem
 {
+    [Dependency] private readonly IRobustRandom _random = default! // Corvax Localization
     public override void Initialize()
     {
         base.Initialize();
