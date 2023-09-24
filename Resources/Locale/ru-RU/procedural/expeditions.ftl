@@ -17,7 +17,7 @@ salvage-expedition-window-claimed = Принято
 salvage-expedition-window-claim = Принять
 salvage-expedition-window-next = Следующее предложение
 # Expedition descriptions
-salvage-expedition-difficulty-players = Рекомендуемо утилизаторов:
+salvage-expedition-difficulty-players = Рекомендовано утилизаторов:
 #  С вас удержат налог в размере { $tax }% от добытых ресурсов.
 salvage-expedition-difficulty-Moderate = Умеренная
 salvage-expedition-difficulty-Hazardous = Высокая
