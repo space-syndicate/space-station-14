@@ -1,3 +1,2 @@
 ent-MobVox = Vox
-
-  .desc = { ent-['BaseMobVox', 'BaseMob'].desc }
+    .desc = { ent-BaseMobVox.desc }

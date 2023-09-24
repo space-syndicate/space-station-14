@@ -29,7 +29,6 @@ public sealed class ThrowingSystem : EntitySystem
     [Dependency] private readonly SharedPhysicsSystem _physics = default!;
     [Dependency] private readonly SharedTransformSystem _transform = default!;
     [Dependency] private readonly ThrownItemSystem _thrownSystem = default!;
-    [Dependency] private readonly TagSystem _tagSystem = default!;
 
     public void TryThrow(
         EntityUid uid,
@@ -107,7 +106,8 @@ public sealed class ThrowingSystem : EntitySystem
             return;
         }
 
-        if (projectileQuery.HasComponent(uid))
+        // Allow throwing if this projectile only acts as a projectile when shot, otherwise disallow
+        if (projectileQuery.TryGetComponent(uid, out var proj) && !proj.OnlyCollideWhenShot)
             return;
 
         var comp = EnsureComp<ThrownItemComponent>(uid);

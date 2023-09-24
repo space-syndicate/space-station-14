@@ -1,9 +1,11 @@
 - type: gameMapPool
   id: CorvaxDefaultMapPool
   maps:
-  - CorvaxDelta
+#  - CorvaxDelta
   - CorvaxAvrite
   - CorvaxIshimura
+  - CorvaxSpectrum
+  - CorvaxGate
   - Aspid
   - Bagel
   - Barratry

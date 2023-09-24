@@ -133,10 +133,9 @@
       - id: FlashlightSeclite
       - id: ForensicScanner
       - id: BoxForensicPad
-      - id: WeaponRevolverInspector
       - id: DrinkDetFlask
-      - id: SpeedLoaderMagnum
       - id: ClothingHandsGlovesForensic
+      - id: BookBusido # Corvax-Books
 
 - type: entity
   id: ClosetBombFilled
@@ -147,7 +146,13 @@
     contents:
       - id: ClothingHeadHelmetBombSuit
       - id: ClothingOuterSuitBomb
-      - id: ClothingMaskGas
+      # NT is cheap, what can you do...
+      - id: Wirecutter
+        prob: 0.9
+      - id: Screwdriver
+        prob: 0.9
+      - id: Multitool
+        prob: 0.5
 
 - type: entity
   parent: GunSafe

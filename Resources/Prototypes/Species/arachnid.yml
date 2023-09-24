@@ -1,7 +1,7 @@
 - type: species
   id: Arachnid
   name: species-name-arachnid
-  roundStart: false # Corvax
+  roundStart: true
   prototype: MobArachnid
   sprites: MobArachnidSprites
   defaultSkinTone: "#385878"
@@ -22,8 +22,8 @@
     Snout: MobHumanoidAnyMarking
     Chest: MobArachnidTorso
     HeadTop: MobHumanoidAnyMarking
-    HeadSide: MobHumanoidMarkingMatchSkin
-    Tail: MobHumanoidMarkingMatchSkin
+    HeadSide: MobHumanoidAnyMarking
+    Tail: MobHumanoidAnyMarking
     Eyes: MobArachnidEyes
     LArm: MobArachnidLArm
     RArm: MobArachnidRArm
@@ -60,7 +60,7 @@
     HeadSide:
       points: 1
       required: true
-      defaultMarkings: [ ArachnidCheliceraeBasic ]
+      defaultMarkings: [ ArachnidCheliceraeDownwards ]
     Chest:
       points: 1
       required: false

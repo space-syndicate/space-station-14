@@ -1,6 +1,6 @@
-using Content.Server.Nutrition.Components;
-using Content.Shared.Chemistry.Reagent;
 using Content.Server.Nutrition.EntitySystems;
+using Content.Shared.Chemistry.Reagent;
+using Content.Shared.Nutrition.Components;
 using Robust.Shared.Prototypes;
 
 namespace Content.Server.Chemistry.ReagentEffects
@@ -9,7 +9,7 @@ namespace Content.Server.Chemistry.ReagentEffects
     /// Default metabolism for drink reagents. Attempts to find a ThirstComponent on the target,
     /// and to update it's thirst values.
     /// </summary>
-    public sealed class SatiateThirst : ReagentEffect
+    public sealed partial class SatiateThirst : ReagentEffect
     {
         private const float DefaultHydrationFactor = 3.0f;
 

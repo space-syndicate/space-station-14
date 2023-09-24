@@ -1,5 +1,8 @@
 ent-ClothingOuterApron = apron
     .desc = A fancy apron for a stylish person.
+ent-ClothingOuterApronBar = apron
+    .desc = A darker apron designed for bartenders.
+    .suffix = Bartender
 ent-ClothingOuterApronBotanist = apron
     .desc = A thick blue-apron, perfect for insulating your soft flesh from spills, soil and thorns.
     .suffix = Botanical
@@ -14,7 +17,7 @@ ent-ClothingOuterHoodieGrey = grey hoodie
     .desc = A grey hoodie.
 ent-ClothingOuterCardborg = cardborg costume
     .desc = An ordinary cardboard box with holes cut in the sides.
-ent-ClothingOuterHoodieChaplain = chaplain hoodie
+ent-ClothingOuterHoodieChaplain = chaplain's hoodie
     .desc = Black and strict chaplain hoodie.
 ent-ClothingOuterPonchoClassic = classic poncho
     .desc = A warm and comfy classic poncho.

@@ -13,5 +13,3 @@ ent-WeaponRevolverPythonAP = Python
     .suffix = armor-piercing
 ent-WeaponRevolverPirate = pirate revolver
     .desc = An odd, old-looking revolver, favoured by pirate crews. Uses .45 magnum ammo.
-ent-WeaponPistolCHIMP = C.H.I.M.P. handcannon
-    .desc = Just because it's a little C.H.I.M.P. doesn't mean it can't punch like an A.P.E.

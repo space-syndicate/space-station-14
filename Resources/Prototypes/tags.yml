@@ -17,6 +17,9 @@
   id: ArtifactFragment
 
 - type: Tag
+  id: Arrow
+
+- type: Tag
   id: ATVKeys
 
 - type: Tag
@@ -27,6 +30,9 @@
 
 - type: Tag
   id: BaseballBat
+
+- type: Tag
+  id: BBQsauce
 
 - type: Tag
   id: Bee
@@ -306,6 +312,9 @@
   id: Corn
 
 - type: Tag
+  id: Coldsauce
+
+- type: Tag
   id: Cow
 
 - type: Tag
@@ -525,7 +534,6 @@
 - type: Tag
   id: HappyHonk
 
-
 - type: Tag
   id: Hardsuit # Prevent melee injectors that can't penetrate hardsuits from injecting the wearer (nettles)
 
@@ -537,6 +545,9 @@
 
 - type: Tag
   id: HideContextMenu
+
+- type: Tag
+  id: HideCorgi # corgi hide for crafting, not for making corgis invisible
 
 - type: Tag
   id: HidesHair # for headwear.
@@ -574,6 +585,9 @@
 - type: Tag
   id: HonkerRArm
 
+- type: Tag
+  id: Hotsauce
+
 - type: Tag #Drop this innate tool instead of deleting it.
   id: InnateDontDelete
 
@@ -598,6 +612,8 @@
 - type: Tag
   id: Kangaroo
 
+- type: Tag
+  id: Ketchup
 
 - type: Tag
   id: KeyedInstrument
@@ -707,6 +723,12 @@
   id: Mop
 
 - type: Tag
+  id: MopAdv
+
+- type: Tag
+  id: MopBasic
+
+- type: Tag
   id: Mouse
 
 - type: Tag
@@ -782,6 +804,14 @@
 - type: Tag
   id: PlushieGhost
 
+- type: Tag
+  id: PlushieSharkBlue
+
+- type: Tag
+  id: PlushieSharkPink
+
+- type: Tag
+  id: PlushieSharkGrey
 
 - type: Tag
   id: PowerCellSmall
@@ -987,6 +1017,9 @@
 
 - type: Tag
   id: WallmountSubstationElectronics
+
+- type: Tag
+  id: WeaponPistolCHIMPUpgradeKit
 
 - type: Tag
   id: Window

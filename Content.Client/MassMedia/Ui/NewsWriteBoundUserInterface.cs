@@ -4,6 +4,8 @@ using Robust.Client.GameObjects;
 using Content.Shared.MassMedia.Systems;
 using Content.Shared.MassMedia.Components;
 using Content.Client.GameTicking.Managers;
+using Content.Shared.CCVar;
+using Robust.Shared.Configuration;
 using Robust.Shared.Utility;
 
 namespace Content.Client.MassMedia.Ui
@@ -15,7 +17,7 @@ namespace Content.Client.MassMedia.Ui
         private NewsWriteMenu? _menu;
 
         [Dependency] private readonly IEntitySystemManager _entitySystem = default!;
-        [Dependency] private readonly IGameTiming _gameTiming = default!;
+        [Dependency] private readonly IConfigurationManager _cfg = default!;
         private ClientGameTicker? _gameTicker;
 
         [ViewVariables]
@@ -67,20 +69,20 @@ namespace Content.Client.MassMedia.Ui
 
             var stringContent = Rope.Collapse(_menu.ContentInput.TextRope);
 
-            if (stringContent == null || stringContent.Length == 0) return;
-            if (_gameTicker == null) return;
+            if (stringContent == null || stringContent.Length == 0)
+                return;
 
-            NewsArticle article = new NewsArticle();
             var stringName = _menu.NameInput.Text;
-            var name = (stringName.Length <= 25 ? stringName.Trim() : $"{stringName.Trim().Substring(0, 25)}...");
-            article.Name = name;
-            article.Content = stringContent;
-            article.ShareTime = _gameTiming.CurTime.Subtract(_gameTicker.RoundStartTimeSpan);
+
+            var maxNameLength = _cfg.GetCVar(CCVars.NewsNameLimit);
+            var maxContentLength = _cfg.GetCVar(CCVars.NewsContentLimit);
+
+            var name = (stringName.Length <= maxNameLength ? stringName.Trim() : $"{stringName.Trim().Substring(0, maxNameLength)}...");
+            var content = (stringContent.Length <= maxContentLength ? stringContent.Trim() : $"{stringContent.Trim().Substring(0, maxContentLength)}...");
 
             _menu.ContentInput.TextRope = new Rope.Leaf(string.Empty);
             _menu.NameInput.Text = string.Empty;
-
-            SendMessage(new NewsWriteShareMessage(article));
+            SendMessage(new NewsWriteShareMessage(name, content));
         }
 
         private void OnDeleteButtonPressed(int articleNum)
