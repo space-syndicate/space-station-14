@@ -1,6 +1,6 @@
 - type: entity
-  id: ClothingShoesBootsJackSec
-  parent: ClothingShoesBootsJackSecFilled
+  id: ClothingShoesBootsJackSecFilled
+  parent: ClothingShoesBootsJackSec
   suffix: Filled
   components:
   - type: StorageFill
