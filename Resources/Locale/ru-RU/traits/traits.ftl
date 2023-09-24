@@ -20,5 +20,6 @@ trait-accentless-name = Отсутствие акцента
 trait-accentless-desc = У вас нет того акцента, который характерен для представителей вашего вида.
 trait-wheelchair-bound-name = Привязанность к креслу-коляске
 trait-wheelchair-bound-desc = Вы не можете передвигаться без своего кресла-коляски. Кресло-коляска прилагается.
-trait-frontal-lisp-name = Frontal Lisp
-trait-frontal-lisp-desc = You thpeak with a lithp
+trait-frontal-lisp-name = Сигматизм
+trait-frontal-lisp-desc = У вас имеются проблемы с произношением.
+# обыграть когда кто-нибудь адаптирует под нас
