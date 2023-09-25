@@ -1,2 +1,2 @@
 ent-FloorWaterEntity = water
-    .desc = { "" }
+    .desc = A real thirst quencher.

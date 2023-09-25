@@ -1,8 +1,12 @@
 ent-ClothingBackpackSatchelFilled = { ent-ClothingBackpackSatchel }
     .desc = { ent-ClothingBackpackSatchel.desc }
+ent-ClothingBackpackSatchelTools = { ent-ClothingBackpackSatchel }
+    .desc = { ent-ClothingBackpackSatchel.desc }
 ent-ClothingBackpackSatchelClownFilled = { ent-ClothingBackpackSatchelClown }
     .desc = { ent-ClothingBackpackSatchelClown.desc }
 ent-ClothingBackpackSatchelSecurityFilled = { ent-ClothingBackpackSatchelSecurity }
+    .desc = { ent-ClothingBackpackSatchelSecurity.desc }
+ent-ClothingBackpackSatchelSecurityFilledDetective = { ent-ClothingBackpackSatchelSecurity }
     .desc = { ent-ClothingBackpackSatchelSecurity.desc }
 ent-ClothingBackpackSatchelBrigmedicFilled = { ent-ClothingBackpackSatchelBrigmedic }
     .desc = { ent-ClothingBackpackSatchelBrigmedic.desc }

@@ -38,13 +38,14 @@ public sealed class MeleeWeaponSystem : SharedMeleeWeaponSystem
 {
     [Dependency] private readonly IRobustRandom _random = default!;
     [Dependency] private readonly BloodstreamSystem _bloodstream = default!;
+    [Dependency] private readonly ChatSystem _chat = default!;
     [Dependency] private readonly ContestsSystem _contests = default!;
+    [Dependency] private readonly DamageExamineSystem _damageExamine = default!;
     [Dependency] private readonly InventorySystem _inventory = default!;
     [Dependency] private readonly LagCompensationSystem _lag = default!;
+    [Dependency] private readonly SharedColorFlashEffectSystem _color = default!;
     [Dependency] private readonly SolutionContainerSystem _solutions = default!;
     [Dependency] private readonly TagSystem _tag = default!;
-    [Dependency] private readonly ChatSystem _chat = default!;
-    [Dependency] private readonly DamageExamineSystem _damageExamine = default!;
 
     public override void Initialize()
     {
@@ -101,15 +102,15 @@ public sealed class MeleeWeaponSystem : SharedMeleeWeaponSystem
             return false;
         }
 
-        var target = ev.Target!.Value;
+        var target = GetEntity(ev.Target!.Value);
 
-        if (!TryComp<HandsComponent>(ev.Target.Value, out var targetHandsComponent))
+        if (!TryComp<HandsComponent>(target, out var targetHandsComponent))
         {
-            if (!TryComp<StatusEffectsComponent>(ev.Target!.Value, out var status) || !status.AllowedEffects.Contains("KnockedDown"))
+            if (!TryComp<StatusEffectsComponent>(target, out var status) || !status.AllowedEffects.Contains("KnockedDown"))
                 return false;
         }
 
-        if (!InRange(user, ev.Target.Value, component.Range, session))
+        if (!InRange(user, target, component.Range, session))
         {
             return false;
         }
@@ -121,7 +122,7 @@ public sealed class MeleeWeaponSystem : SharedMeleeWeaponSystem
             inTargetHand = targetHandsComponent.ActiveHand.HeldEntity!.Value;
         }
 
-        Interaction.DoContactInteraction(user, ev.Target);
+        Interaction.DoContactInteraction(user, target);
 
         var attemptEvent = new DisarmAttemptEvent(target, user, inTargetHand);
 
@@ -166,7 +167,6 @@ public sealed class MeleeWeaponSystem : SharedMeleeWeaponSystem
         var eventArgs = new DisarmedEvent { Target = target, Source = user, PushProbability = 1 - chance };
         RaiseLocalEvent(target, eventArgs);
 
-        RaiseNetworkEvent(new ColorFlashEffectEvent(Color.Aqua, new List<EntityUid>() { target }));
         return true;
     }
 
@@ -192,7 +192,7 @@ public sealed class MeleeWeaponSystem : SharedMeleeWeaponSystem
     protected override void DoDamageEffect(List<EntityUid> targets, EntityUid? user, TransformComponent targetXform)
     {
         var filter = Filter.Pvs(targetXform.Coordinates, entityMan: EntityManager).RemoveWhereAttachedEntity(o => o == user);
-        RaiseNetworkEvent(new ColorFlashEffectEvent(Color.Red, targets), filter);
+        _color.RaiseEffect(Color.Red, targets, filter);
     }
 
     private float CalculateDisarmChance(EntityUid disarmer, EntityUid disarmed, EntityUid? inTargetHand, CombatModeComponent disarmerComp)
@@ -228,7 +228,7 @@ public sealed class MeleeWeaponSystem : SharedMeleeWeaponSystem
             filter = Filter.Pvs(user, entityManager: EntityManager);
         }
 
-        RaiseNetworkEvent(new MeleeLungeEvent(user, angle, localPos, animation), filter);
+        RaiseNetworkEvent(new MeleeLungeEvent(GetNetEntity(user), angle, localPos, animation), filter);
     }
 
     private void OnSpeechHit(EntityUid owner, MeleeSpeechComponent comp, MeleeHitEvent args)

@@ -7,9 +7,9 @@
     contents:
       - id: ClothingNeckCloakQm
       - id: ClothingHeadsetCargo
+      - id: ClothingUniformJumpsuitQMTurtleneck
+      - id: ClothingUniformJumpskirtQMTurtleneck
       - id: ClothingHandsGlovesColorBrown
-      - id: ClothingShoesColorBrown
-      - id: ClothingHeadHatQMsoft
       - id: CargoRequestComputerCircuitboard
       - id: CargoShuttleComputerCircuitboard
       - id: CargoShuttleConsoleCircuitboard
@@ -55,6 +55,7 @@
       - id: WeaponAntiqueLaser
       - id: JetpackCaptainFilled
       - id: MedalCase
+      - id: ClothingHeadHatCapcap
 
 - type: entity
   id: LockerCaptainFilled
@@ -109,7 +110,7 @@
       - id: BoxHeadset
       - id: IDComputerCircuitboard
       - id: WeaponDisabler
-      - id: ClothingShoesColorBlack
+      - id: ClothingOuterWinterHoP
       - id: CigarGoldCase
         prob: 0.25
         # Fuck the HoP they don't deserve fucking cigars.
@@ -122,6 +123,7 @@
       - id: ClothingBackpackIan
         prob: 0.5
       - id: ClothingOuterCoatHOP # Corvax-Resprite
+      - id: AccessConfigurator
 
 - type: entity
   id: LockerChiefEngineerFilledHardsuit
@@ -132,6 +134,8 @@
     contents:
       - id: ClothingOuterHardsuitEngineeringWhite
       - id: ClothingMaskBreath
+      - id: ClothingUniformJumpsuitChiefEngineerTurtle
+      - id: ClothingUniformJumpskirtChiefEngineerTurtle
       - id: OxygenTankFilled
       - id: NitrogenTankFilled
       - id: ClothingNeckCloakCe
@@ -147,6 +151,7 @@
       - id: JetpackVoidFilled
       - id: ClothingHeadsetAltEngineering
       - id: BoxEncryptionKeyEngineering
+      - id: AccessConfigurator
 
 - type: entity
   id: LockerChiefEngineerFilled
@@ -160,12 +165,15 @@
       - id: ClothingBeltChiefEngineerFilled
       - id: ClothingHeadHatBeretEngineering
       - id: ClothingHandsGlovesColorYellow
+      - id: ClothingUniformJumpsuitChiefEngineerTurtle
+      - id: ClothingUniformJumpskirtChiefEngineerTurtle
       - id: CigarCase
         prob: 0.15
       - id: DoorRemoteEngineering
       - id: RubberStampCE
       - id: ClothingHeadsetAltEngineering
       - id: BoxEncryptionKeyEngineering
+      - id: AccessConfigurator
 
 - type: entity
   id: LockerChiefMedicalOfficerFilledHardsuit
@@ -184,15 +192,11 @@
       - id: ClothingMaskSterile
       - id: ClothingHeadHatBeretCmo
       - id: ClothingOuterHardsuitMedical
-      - id: DiagnoserMachineCircuitboard
-      - id: VaccinatorMachineCircuitboard
       - id: Hypospray
       - id: HandheldCrewMonitor
       - id: DoorRemoteMedical
       - id: RubberStampCMO
       - id: MedicalTechFabCircuitboard
-      - id: MaterialBiomass
-        amount: 3
       - id: BoxEncryptionKeyMedical
 
 - type: entity
@@ -211,15 +215,11 @@
       - id: ClothingOuterCoatLabCmo
       - id: ClothingMaskSterile
       - id: ClothingHeadHatBeretCmo
-      - id: DiagnoserMachineCircuitboard
-      - id: VaccinatorMachineCircuitboard
       - id: Hypospray
       - id: HandheldCrewMonitor
       - id: DoorRemoteMedical
       - id: RubberStampCMO
       - id: MedicalTechFabCircuitboard
-      - id: MaterialBiomass
-        amount: 3
       - id: BoxEncryptionKeyMedical
 
 - type: entity
@@ -238,10 +238,11 @@
       - id: HandTeleporter
       - id: DoorRemoteResearch
       - id: ClothingHeadHatBeretRND
+      - id: ClothingHandsGlovesColorPurple
+      - id: ClothingBeltUtilityFilled
       - id: RubberStampRd
       - id: ClothingHeadsetAltScience
       - id: BoxEncryptionKeyScience
-      - id: BoxEncryptionKeyRobo
 
 - type: entity
   id: LockerResearchDirectorFilled
@@ -258,10 +259,11 @@
       - id: HandTeleporter
       - id: DoorRemoteResearch
       - id: ClothingHeadHatBeretRND
+      - id: ClothingHandsGlovesColorPurple
+      - id: ClothingBeltUtilityFilled
       - id: RubberStampRd
       - id: ClothingHeadsetAltScience
       - id: BoxEncryptionKeyScience
-      - id: BoxEncryptionKeyRobo
 
 - type: entity
   id: LockerHeadOfSecurityFilledHardsuit
@@ -270,6 +272,7 @@
   components:
   - type: StorageFill
     contents:
+      - id: ClothingEyesHudSecurity
       - id: WeaponDisabler
       - id: ClothingHeadHatBeretHoS
       - id: ClothingHeadHatCapHoS # Corvax-SecFashion
@@ -300,6 +303,8 @@
       - id: JetpackSecurityFilled
       - id: BoxEncryptionKeySecurity
       - id: HoloprojectorSecurity
+      - id: BookSecretDocuments
+      - id: BookBusido # Corvax-Books
 
 - type: entity
   id: LockerHeadOfSecurityFilled
@@ -308,6 +313,7 @@
   components:
   - type: StorageFill
     contents:
+      - id: ClothingEyesHudSecurity
       - id: WeaponDisabler
       - id: ClothingHeadHatBeretHoS
       - id: ClothingHeadHatCapHoS # Corvax-SecFashion
