@@ -1,6 +1,9 @@
+using Robust.Shared.Serialization;
+
 namespace Content.Shared.Corvax.TTS;
 
 // ReSharper disable once InconsistentNaming
+[Serializable, NetSerializable]
 public sealed class RequestGlobalTTSEvent : EntityEventArgs
 {
     public string Text { get; }

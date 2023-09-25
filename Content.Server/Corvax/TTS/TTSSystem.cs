@@ -40,7 +40,6 @@ public sealed partial class TTSSystem : EntitySystem
     {
         if (!_isEnabled ||
             ev.Text.Length > MaxMessageChars ||
-            args.SenderSession.AttachedEntity is null ||
             !_prototypeManager.TryIndex<TTSVoicePrototype>(ev.VoiceId, out var protoVoice))
             return;
 
@@ -48,8 +47,7 @@ public sealed partial class TTSSystem : EntitySystem
         if (soundData is null)
             return;
 
-        var netUid = GetNetEntity(args.SenderSession.AttachedEntity.Value);
-        RaiseNetworkEvent(new PlayTTSEvent(soundData, netUid), Filter.SinglePlayer(args.SenderSession));
+        RaiseNetworkEvent(new PlayTTSEvent(soundData), Filter.SinglePlayer(args.SenderSession));
     }
 
     private async void OnEntitySpoke(EntityUid uid, TTSComponent component, EntitySpokeEvent args)
