@@ -20,3 +20,5 @@ ent-ClothingEyesGlassesThermal = optical thermal scanner
     .desc = Thermals in the shape of glasses.
 ent-ClothingEyesGlassesChemical = chemical analysis goggles
     .desc = Goggles that can scan the chemical composition of a solution.
+ent-ClothingEyesVisorNinja = ninja visor
+    .desc = An advanced visor protecting a ninja's eyes from flashing lights.

@@ -1,28 +1,20 @@
-using Content.Server.Body.Systems;
+using System.Numerics;
 using Content.Server.Chat.Systems;
 using Content.Server.GameTicking;
 using Content.Server.NPC;
 using Content.Server.NPC.Systems;
 using Content.Server.Popups;
-using Content.Server.Station.Systems;
 using Content.Shared.Actions;
-using Content.Shared.Chemistry.Components;
 using Content.Shared.Damage;
-using Content.Shared.DoAfter;
 using Content.Shared.Dragon;
 using Content.Shared.Examine;
-using Content.Shared.Humanoid;
 using Content.Shared.Maps;
 using Content.Shared.Mobs;
-using Content.Shared.Mobs.Components;
 using Content.Shared.Movement.Systems;
-using Robust.Shared.Containers;
-using Robust.Shared.Player;
+using Content.Shared.Sprite;
 using Robust.Shared.GameStates;
 using Robust.Shared.Map;
-using Robust.Shared.Random;
-using System.Numerics;
-using Content.Shared.Sprite;
+using Robust.Shared.Player;
 using Robust.Shared.Serialization.Manager;
 
 namespace Content.Server.Dragon;
@@ -55,7 +47,7 @@ public sealed partial class DragonSystem : EntitySystem
     {
         base.Initialize();
 
-        SubscribeLocalEvent<DragonComponent, ComponentStartup>(OnStartup);
+        SubscribeLocalEvent<DragonComponent, MapInitEvent>(OnInit);
         SubscribeLocalEvent<DragonComponent, ComponentShutdown>(OnShutdown);
         SubscribeLocalEvent<DragonComponent, DragonSpawnRiftActionEvent>(OnDragonRift);
         SubscribeLocalEvent<DragonComponent, RefreshMovementSpeedModifiersEvent>(OnDragonMove);
@@ -300,12 +292,10 @@ public sealed partial class DragonSystem : EntitySystem
             _audioSystem.Play(component.SoundRoar, Filter.Pvs(component.Owner, 4f, EntityManager), component.Owner, true, component.SoundRoar.Params);
     }
 
-    private void OnStartup(EntityUid uid, DragonComponent component, ComponentStartup args)
+    private void OnInit(EntityUid uid, DragonComponent component, MapInitEvent args)
     {
-        if (component.SpawnRiftAction != null)
-            _actionsSystem.AddAction(uid, component.SpawnRiftAction, null);
-
         Roar(component);
+        _actionsSystem.AddAction(uid, ref component.SpawnRiftActionEntity, component.SpawnRiftAction);
     }
 }
 

@@ -22,9 +22,8 @@ ent-SheetPlastic1 = plastic
     .suffix = Single
     .desc = { ent-SheetPlastic.desc }
 ent-SheetUranium = uranium
-
   .suffix = Full
-  .desc = { ent-['SheetOtherBase', 'FoodBase'].desc }
+  .desc = { ent-SheetOtherBase.desc }
 ent-SheetUranium1 = uranium
     .suffix = Single
     .desc = { ent-SheetUranium.desc }
