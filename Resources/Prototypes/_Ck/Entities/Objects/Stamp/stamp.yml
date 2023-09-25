@@ -8,7 +8,7 @@
     stampedColor: "#999999"
     stampState: "paper_stamp-warden"
   - type: Sprite
-    sprite: _Ck\Objects\Stamp.rsi
+    sprite: _Ck/Objects/Stamp.rsi
     state: stamp-sssp
 
 - type: entity
@@ -21,7 +21,7 @@
     stampedColor: "#3f3f3f"
     stampState: "paper_stamp-ok"
   - type: Sprite
-    sprite: _Ck\Objects\Stamp.rsi
+    sprite: _Ck/Objects/Stamp.rsi
     state: stamp-povar
 
 - type: entity
@@ -34,5 +34,5 @@
     stampedColor: "#3f3f3f"
     stampState: "paper_stamp-hop"
   - type: Sprite
-    sprite: _Ck\Objects\Stamp.rsi
+    sprite: _Ck/Objects/Stamp.rsi
     state: stamp-nanotrayzen

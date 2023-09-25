@@ -5,9 +5,9 @@
   description: Туфельки шефа
   components:
   - type: Sprite
-    sprite: _Ck\Entities\clothing\shoes\chef_ck.rsi
+    sprite: _Ck/Entities/clothing/shoes/chef_ck.rsi
   - type: Clothing
-    sprite: _Ck\Entities\clothing\shoes\chef_ck.rsi
+    sprite: _Ck/Entities/clothing/shoes/chef_ck.rsi
 
 - type: entity
   parent: ClothingShoesBaseButcherable
@@ -16,6 +16,6 @@
   description: Грубо и не удобно!
   components:
   - type: Sprite
-    sprite: _Ck\Entities\clothing\shoes\lox.rsi
+    sprite: _Ck/Entities/clothing/shoes/lox.rsi
   - type: Clothing
-    sprite: _Ck\Entities\clothing\shoes\lox.rsi
+    sprite: _Ck/Entities/clothing/shoes/lox.rsi

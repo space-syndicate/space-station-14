@@ -8,7 +8,7 @@
       tags:
         - Taser
     - type: Sprite
-      sprite: _Ck\Objects\Weapon\guns\disabler_ck.rsi
+      sprite: _Ck/Objects/Weapon/guns/disabler_ck.rsi
       layers:
         - state: base
           map: ["enum.GunVisualLayers.Base"]
@@ -16,7 +16,7 @@
           map: ["enum.GunVisualLayers.MagUnshaded"]
           shader: unshaded
     - type: Clothing
-      sprite: _Ck\Objects\Weapon\guns\disabler_ck.rsi
+      sprite: _Ck/Objects/Weapon/guns/disabler_ck.rsi
       quickEquip: false
     - type: Gun
       selectedMode: SemiAuto

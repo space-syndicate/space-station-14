@@ -6,7 +6,7 @@
   components:
   - type: Food
   - type: Sprite
-    sprite: _Ck\Objects\Food\East.rsi
+    sprite: _Ck/Objects/Food/East.rsi
   - type: SolutionContainerManager
     solutions:
       food:
@@ -26,7 +26,7 @@
   components:
   - type: Food
   - type: Sprite
-    sprite: _Ck\Objects\Food\East.rsi
+    sprite: _Ck/Objects/Food/East.rsi
   - type: SolutionContainerManager
     solutions:
       food:
@@ -55,7 +55,7 @@
         - ReagentId: Nutriment
           Quantity: 20
   - type: Sprite
-    sprite: _Ck\Objects\Food\East.rsi
+    sprite: _Ck/Objects/Food/East.rsi
   - type: DamageOnLand
     damage:
       types:

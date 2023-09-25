@@ -5,9 +5,9 @@
   description: Лучшая штурмовая броня СССП!
   components:
   - type: Sprite
-    sprite: _Ck\Entities\clothing\outerclothings\armor.rsi\SSSP_armor.rsi
+    sprite: _Ck/Entities/clothing/outerclothings/armor.rsi/SSSP_armor.rsi
   - type: Clothing
-    sprite: _Ck\Entities\clothing\outerclothings\armor.rsi\SSSP_armor.rsi
+    sprite: _Ck/Entities/clothing/outerclothings/armor.rsi/SSSP_armor.rsi
   - type: Armor
     modifiers:
       coefficients:

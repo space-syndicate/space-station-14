@@ -7,12 +7,12 @@
   - type: Item
     size: 10
   - type: Sprite
-    sprite: _Ck\Objects\Weapon\guns\china_lake.rsi
+    sprite: _Ck/Objects/Weapon/guns/china_lake.rsi
     layers:
       - state: icon
         map: ["enum.GunVisualLayers.Base"]
   - type: Clothing
-    sprite: _Ck\Objects\Weapon\guns\china_lake.rsi
+    sprite: _Ck/Objects/Weapon/guns/china_lake.rsi
   - type: AmmoCounter
   - type: Gun
     fireRate: 1

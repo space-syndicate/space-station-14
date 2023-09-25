@@ -5,7 +5,7 @@
   description: Новейший автомат СССП, использует 30 калибр.
   components:
   - type: Sprite
-    sprite: _Ck\Objects\Weapon\guns\ak.rsi
+    sprite: _Ck/Objects/Weapon/guns/ak.rsi
     layers:
       - state: base
         map: ["enum.GunVisualLayers.Base"]

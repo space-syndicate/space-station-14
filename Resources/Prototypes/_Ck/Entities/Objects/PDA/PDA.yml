@@ -5,7 +5,7 @@
   description: один на всех!
   components:
     - type: Sprite
-      sprite: _Ck\Objects\PDA_ID\pda.rsi
+      sprite: _Ck/Objects/PDA_ID/pda.rsi
       state: pda-sssp
     - type: Pda
       id: SSSPsoldierIDCard
@@ -22,7 +22,7 @@
   description: один на всех!
   components:
     - type: Sprite
-      sprite: _Ck\Objects\PDA_ID\pda.rsi
+      sprite: _Ck/Objects/PDA_ID/pda.rsi
       state: pda-sssp
     - type: Pda
       id: SSSPstormtrooperIDCard
@@ -39,7 +39,7 @@
   description: один на всех!
   components:
     - type: Sprite
-      sprite: _Ck\Objects\PDA_ID\pda.rsi
+      sprite: _Ck/Objects/PDA_ID/pda.rsi
       state: pda-sssp
     - type: Pda
       id: SSSPcommanderIDCard
