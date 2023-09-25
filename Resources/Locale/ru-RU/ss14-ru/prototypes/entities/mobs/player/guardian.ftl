@@ -6,5 +6,5 @@ ent-MobIfritGuardian = Ифрит
     .desc = Испорченный джинн, вырванный из Фитры, чтобы прислуживать волшебнику в его низменных нуждах. Он стоит злой, настраиваясь на жизнь своего владельца, чтобы поддерживать себя.
 ent-MobHoloClownGuardian = Голоклоун
     .desc = Завораживающий вихрь узоров яркого света сплетает удивительный, синеватый облик клоуна сомнительного происхождения.
-ent-ActionToggleGuardian = Toggle Guardian
-    .desc = Either manifests the guardian or recalls it back into your body
+ent-ActionToggleGuardian = Призвать/отозвать стража
+    .desc = Призывает либо отзывает стража обратно в ваше тело.

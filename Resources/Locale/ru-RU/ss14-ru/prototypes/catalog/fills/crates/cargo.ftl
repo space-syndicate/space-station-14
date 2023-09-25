@@ -1,2 +1,2 @@
-ent-CrateCargoLuxuryHardsuit = { ent-CratePirate }
-    .desc = { ent-CratePirate.desc }
+ent-CrateCargoLuxuryHardsuit = ящик элитного шахтёрского скафандра
+    .desc = Наконец-то, скафандр, который квартирмейстеры могут назвать своим собственным. Центком услышал вас, а теперь перестаньте спрашивать.

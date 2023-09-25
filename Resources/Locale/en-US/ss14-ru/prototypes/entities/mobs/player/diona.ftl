@@ -1,2 +1,2 @@
 ent-MobDiona = Urist McPlants
-  .desc = { ent-BaseMobDiona.desc }
+    .desc = { ent-BaseMobDiona.desc }
