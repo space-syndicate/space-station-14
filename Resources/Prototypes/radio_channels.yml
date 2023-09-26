@@ -71,6 +71,14 @@
   longRange: true
 
 - type: radioChannel
+  id: USSP # NuclearWastelands
+  name: СССП 
+  keycode: 'й'
+  frequency: 2873
+  color: "#E60000"
+  longRange: true
+
+- type: radioChannel
   id: Handheld
   name: chat-radio-handheld
   frequency: 1330

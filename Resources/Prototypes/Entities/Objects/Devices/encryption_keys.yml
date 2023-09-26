@@ -216,6 +216,20 @@
 
 - type: entity
   parent: EncryptionKey
+  id: EncryptionKeyUSSP # NuclearWastelands
+  name: ключ шифрования СССП 
+  description: Ключ шифрования используемый коммунистами.
+  components:
+  - type: EncryptionKey
+    channels:
+    - USSP
+    defaultChannel: USSP
+  - type: Sprite
+    layers:
+    - state: crypt_red
+
+- type: entity
+  parent: EncryptionKey
   id: EncryptionKeyBinary
   name: binary translator key
   description: An encryption key that translates binary signals used by silicons.
