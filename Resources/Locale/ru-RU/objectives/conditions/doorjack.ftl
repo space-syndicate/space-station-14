@@ -1,4 +1,5 @@
-objective-condition-doorjack-title = Взломайте { $count } { $count ->
+objective-condition-doorjack-title =
+    Взломайте { $count } { $count ->
         [one] дверь
         [few] двери
        *[other] дверей

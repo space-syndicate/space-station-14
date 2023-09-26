@@ -1,3 +1,5 @@
+ent-ClothingHandsGlovesSyntheticBase = { ent-ClothingHandsBase }
+    .desc = { ent-ClothingHandsBase.desc }
 ent-ClothingHandsGlovesColorPurple = purple gloves
     .desc = Regular purple gloves that do not keep you from frying.
 ent-ClothingHandsGlovesColorRed = red gloves
