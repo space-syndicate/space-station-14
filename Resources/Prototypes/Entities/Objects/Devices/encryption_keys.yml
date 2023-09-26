@@ -226,7 +226,7 @@
     defaultChannel: USSP
   - type: Sprite
     layers:
-    - state: crypt_red
+    - state: crypt_ussp
 
 - type: entity
   parent: EncryptionKey
