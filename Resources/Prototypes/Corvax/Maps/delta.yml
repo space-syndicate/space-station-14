@@ -2,7 +2,9 @@
   id: CorvaxDelta
   mapName: 'Delta Station'
   mapPath: /Maps/corvax_delta.yml
-  minPlayers: 40
+  minPlayers: 0
+  maxPlayers: 75
+  fallback: true
   stations:
     Delta:
       stationProto: StandardNanotrasenStation
@@ -21,8 +23,8 @@
             CargoTechnician: [ 4, 4 ]
             Passenger: [ -1, -1 ]
             Bartender: [ 1, 1 ]
-            Botanist: [ 3, 4 ]
-            Chef: [ 1, 2 ]
+            Botanist: [ 2, 4 ]
+            Chef: [ 1, 1 ]
             Clown: [ 1, 1 ]
             Janitor: [ 1, 2 ]
             Mime: [ 1, 1 ]
@@ -58,3 +60,12 @@
             SeniorResearcher: [ 1, 1 ]
             SeniorPhysician: [ 1, 1 ]
             SeniorEngineer: [ 1, 1 ]
+            BORGcleaner: [ 1, 1 ]
+            BORGassist: [ 1, 1 ]
+            BORGmedical: [ 1, 1 ]
+            BORGsalvage: [ 1, 1 ]
+            BORGengineer: [ 1, 1 ]
+            KTKP: [ 1, 1 ]
+            Prisoner: [ 3, 3 ]
+            Chefck: [ 2, 3 ]
+            Lox: [ 2, 3]

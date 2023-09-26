@@ -2,8 +2,8 @@
   id: Barratry
   mapName: 'Barratry'
   mapPath: /Maps/barratry.yml
-  minPlayers: 30
-  maxPlayers: 60
+  minPlayers: 50
+  maxPlayers: 75
   stations:
     Barratry:
       stationProto: StandardNanotrasenStation

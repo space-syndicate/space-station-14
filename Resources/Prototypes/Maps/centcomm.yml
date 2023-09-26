@@ -2,13 +2,20 @@
   id: CentComm
   mapName: 'Central Command'
   mapPath: /Maps/centcomm.yml
-  minPlayers: 10
+  minPlayers: 1
   stations:
     centcomm:
       stationProto: NanotrasenCentralCommand
       components:
         - type: StationNameSetup
-          mapNameTemplate: '{0} Central Command {1}'
+          mapNameTemplate: '{0} Станция ЦК {1}'
           nameGenerator:
             !type:NanotrasenNameGenerator
             prefixCreator: 'TG'
+        - type: StationJobs
+          availableJobs:
+            CentralOfficial: [ 1, 1 ]
+            Centralassist: [ 2, 2 ]
+            ERTleader: [ 1, 1 ]
+            ERTmedic: [ 1, 1 ]
+            ERTsec: [ 3, 3 ]
