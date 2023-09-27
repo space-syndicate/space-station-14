@@ -45,7 +45,6 @@ namespace Content.Client.IoC
             IoCManager.Register<GhostKickManager>();
             IoCManager.Register<ExtendedDisconnectInformationManager>();
             IoCManager.Register<JobRequirementsManager>();
-            IoCManager.Register<TTSManager>(); // Corvax-TTS
             IoCManager.Register<DocumentParsingManager>();
             IoCManager.Register<ContentReplayPlaybackManager, ContentReplayPlaybackManager>();
         }
