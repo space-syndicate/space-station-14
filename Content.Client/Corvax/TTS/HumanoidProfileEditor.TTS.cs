@@ -10,7 +10,6 @@ namespace Content.Client.Preferences.UI;
 public sealed partial class HumanoidProfileEditor
 {
     private IRobustRandom _random = default!;
-    private TTSManager _ttsMgr = default!;
     private TTSSystem _ttsSys = default!;
     private IClientSponsorsManager? _sponsorsMgr;
     private List<TTSVoicePrototype> _voiceList = default!;
@@ -27,7 +26,6 @@ public sealed partial class HumanoidProfileEditor
         if (!IoCManager.Instance!.TryResolveType(out _sponsorsMgr))
             return;
 
-        _ttsMgr = IoCManager.Resolve<TTSManager>();
         _random = IoCManager.Resolve<IRobustRandom>();
         _ttsSys = _entMan.System<TTSSystem>();
         _voiceList = _prototypeManager
