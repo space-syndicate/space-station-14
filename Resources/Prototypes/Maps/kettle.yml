@@ -2,7 +2,8 @@
   id: Kettle
   mapName: 'Kettle'
   mapPath: /Maps/kettle.yml
-  minPlayers: 35
+  minPlayers: 50
+  maxPlayers: 75
   stations:
     Kettle:
       stationProto: StandardNanotrasenStation

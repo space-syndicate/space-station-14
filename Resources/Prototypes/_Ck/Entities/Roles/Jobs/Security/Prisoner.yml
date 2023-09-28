@@ -1,0 +1,18 @@
+- type: job
+  id: Prisoner
+  name: job-name-rab
+  description: job-description-rab
+  playTimeTracker: JobPrisoner
+  startingGear: PrisonerGear
+  icon: "JobIconPrisoner"
+  supervisors: job-supervisors-everyone
+#  access: # Corvax-MRP
+#  - Maintenance
+
+- type: startingGear
+  id: PrisonerGear
+  equipment:
+    jumpsuit: ClothingUniformJumpsuitColorGrey
+    id: PassengerPDA
+    shoes: ClothingShoesBootsLaceup
+  innerclothingskirt: ClothingUniformJumpskirtColorGrey

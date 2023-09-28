@@ -5,7 +5,7 @@
   description: Лаваш барма, сегодня будет шурма
   components:
   - type: Sprite
-    sprite: _Ck\Objects\Food\dop.rsi
+    sprite: _Ck/Objects/Food/dop.rsi
     state: lavash
 
 - type: entity

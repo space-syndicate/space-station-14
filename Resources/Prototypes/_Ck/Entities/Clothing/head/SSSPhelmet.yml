@@ -5,9 +5,9 @@
   description: Шапка СССП
   components:
   - type: Sprite
-    sprite: _Ck\Entities\clothing\head\ushankaSSSP.rsi
+    sprite: _Ck/Entities/clothing/head/ushankaSSSP.rsi
   - type: Clothing
-    sprite: _Ck\Entities\clothing\head\ushankaSSSP.rsi
+    sprite: _Ck/Entities/clothing/head/ushankaSSSP.rsi
 
 - type: entity
   parent: ClothingHeadBase
@@ -16,9 +16,9 @@
   description: Каска солдата СССП
   components:
   - type: Sprite
-    sprite: _Ck\Entities\clothing\head\SSSP_helmet.rsi
+    sprite: _Ck/Entities/clothing/head/SSSP_helmet.rsi
   - type: Clothing
-    sprite: _Ck\Entities\clothing\head\SSSP_helmet.rsi
+    sprite: _Ck/Entities/clothing/head/SSSP_helmet.rsi
   - type: Armor #This is intentionally not spaceproof, when the time comes to port the values from SS13 this should be buffed from what it was.
     modifiers:
       coefficients:
@@ -38,9 +38,9 @@
   description: Шапка офицера СССП
   components:
   - type: Sprite
-    sprite: _Ck\Entities\clothing\head\sovietcapbel.rsi
+    sprite: _Ck/Entities/clothing/head/sovietcapbel.rsi
   - type: Clothing
-    sprite: _Ck\Entities\clothing\head\sovietcapbel.rsi
+    sprite: _Ck/Entities/clothing/head/sovietcapbel.rsi
   - type: Armor #This is intentionally not spaceproof, when the time comes to port the values from SS13 this should be buffed from what it was.
     modifiers:
       coefficients:

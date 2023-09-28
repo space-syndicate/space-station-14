@@ -39,16 +39,6 @@
   - BORGengineer
 
 - type: department
-  id: Osobiy
-  description: department-Osobiy-description
-  color: "#791500"
-  roles:
-  - Rab
-  - RabMaster
-  - Pirate1lvl
-  - Pirate3lvl
-
-- type: department
   id: Cafe
   description: department-Cafe-description
   color: "#F1A51B"
@@ -131,6 +121,7 @@
   - Detective
   - Warden
   - KTKP
+  - Prisoner
 
 - type: department
   id: Science

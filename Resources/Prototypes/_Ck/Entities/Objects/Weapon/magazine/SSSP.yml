@@ -20,7 +20,7 @@
     containers:
       ballistic-ammo: !type:Container
   - type: Sprite
-    sprite: _Ck\Objects\Weapon\magazin\SVT.rsi
+    sprite: _Ck/Objects/Weapon/magazin/SVT.rsi
     layers:
     - state: base
       map: ["enum.GunVisualLayers.Base"]
@@ -68,7 +68,7 @@
     containers:
       ballistic-ammo: !type:Container
   - type: Sprite
-    sprite: _Ck\Objects\Weapon\magazin\PPSH.rsi
+    sprite: _Ck/Objects/Weapon/magazin/PPSH.rsi
     layers:
     - state: base
       map: ["enum.GunVisualLayers.Base"]

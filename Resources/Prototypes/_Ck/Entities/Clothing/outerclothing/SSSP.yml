@@ -5,9 +5,9 @@
   description: Тёплая, великая, спавшая миллионы людей.
   components:
   - type: Sprite
-    sprite: _Ck\Entities\clothing\outerclothings\ssspcoatbelov.rsi
+    sprite: _Ck/Entities/clothing/outerclothings/ssspcoatbelov.rsi
   - type: Clothing
-    sprite: _Ck\Entities\clothing\outerclothings\ssspcoatbelov.rsi
+    sprite: _Ck/Entities/clothing/outerclothings/ssspcoatbelov.rsi
 
 - type: entity
   parent: ClothingOuterStorageBase
@@ -16,6 +16,6 @@
   description: Тёплая, великая, спавшая миллионы людей.
   components:
   - type: Sprite
-    sprite: _Ck\Entities\clothing\outerclothings\ssspBlacKcoatbelov.rsi
+    sprite: _Ck/Entities/clothing/outerclothings/ssspBlacKcoatbelov.rsi
   - type: Clothing
-    sprite: _Ck\Entities\clothing\outerclothings\ssspBlacKcoatbelov.rsi
+    sprite: _Ck/Entities/clothing/outerclothings/ssspBlacKcoatbelov.rsi

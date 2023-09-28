@@ -4,7 +4,7 @@
   id: SSSPsoldierIDCard
   components:
   - type: Sprite
-    sprite: _Ck\Objects\PDA_ID\id.rsi
+    sprite: _Ck/Objects/PDA_ID/id.rsi
     state: sssp
   - type: Access
     tags:
@@ -16,7 +16,7 @@
   id: SSSPstormtrooperIDCard
   components:
   - type: Sprite
-    sprite: _Ck\Objects\PDA_ID\id.rsi
+    sprite: _Ck/Objects/PDA_ID/id.rsi
     state: sssp
   - type: Access
     tags:
@@ -29,7 +29,7 @@
   id: SSSPcommanderIDCard
   components:
   - type: Sprite
-    sprite: _Ck\Objects\PDA_ID\id.rsi
+    sprite: _Ck/Objects/PDA_ID/id.rsi
     state: sssp
   - type: Access
     tags:

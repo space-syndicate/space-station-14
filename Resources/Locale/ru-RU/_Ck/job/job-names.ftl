@@ -1,4 +1,4 @@
-job-name-rab = раб
+job-name-rab = заключённый
 job-name-OperativeLeader = лидер оперативников Нанотрайзен
 job-name-OperativeMedic = медик оперативников Нанотрайзен
 job-name-Operative = оперативник Нанотрайзен
@@ -14,19 +14,13 @@ job-name-assistantCK = борг-асистент
 job-name-medicCK = борг-медик
 job-name-scrapCK = борг-утиль
 job-name-engineerCK = борг-инженер
-job-name-Pirate = пират-абориген
-job-name-PirateVeteran = пират-ветеран
-job-name-PirateBlackbeard = Чёрная борода
 
 # Role timers - Make these alphabetical or I cut you
 
 JobChefck = повар
 JobKTKP = пилот
-JobRab = раб
-JobRabMaster = пират-ветеран
+JobPrisoner = заключённый
 JobLox = бомж
-JobPirate1lvl = пират-абориген
-JobPirate3lvl = чёрная борода
 JobERTsec = оперативник Нанотрайзен
 JobERTmedic = медик оперативников Нанотрайзен
 JobERTleader = лидер оперативников Нанотрайзен

@@ -6,7 +6,7 @@
   components:
   - type: Food
   - type: Sprite
-    sprite: _Ck\Objects\Food\East.rsi
+    sprite: _Ck/Objects/Food/East.rsi
   - type: SolutionContainerManager
     solutions:
       food:
@@ -26,7 +26,7 @@
   components:
   - type: Food
   - type: Sprite
-    sprite: _Ck\Objects\Food\East.rsi
+    sprite: _Ck/Objects/Food/East.rsi
   - type: SolutionContainerManager
     solutions:
       food:
@@ -55,7 +55,7 @@
         - ReagentId: Nutriment
           Quantity: 20
   - type: Sprite
-    sprite: _Ck\Objects\Food\East.rsi
+    sprite: _Ck/Objects/Food/East.rsi
   - type: DamageOnLand
     damage:
       types:
@@ -266,7 +266,7 @@
           Quantity: 10
 
 - type: entity
-  name: самса
+  name: самсы
   parent: FoodBakedMediumEastBase
   id: FoodBakedSamsa
   description: пирожок с востока
@@ -305,6 +305,19 @@
       - shocking
 
 - type: entity
+  name: чебуреки
+  parent: FoodBakedMediumEastBase
+  id: FoodBakedChebureks
+  description: чебурек барма
+  components:
+  - type: Sprite
+    state: chebureks
+  - type: FlavorProfile
+    flavors:
+      - magical
+      - shocking
+
+- type: entity
   name: манты
   parent: FoodBakedMediumEastBase
   id: FoodBakedMantas
@@ -316,3 +329,66 @@
     flavors:
       - bacon
       - funny
+
+- type: entity
+  name: Гошнан
+  parent: FoodBakedMediumEastBase
+  id: FoodBakedGoshnan
+  description: пирог с мясом
+  components:
+  - type: Sprite
+    state: MeatPie
+  - type: FlavorProfile
+    flavors:
+      - magical
+      - shocking
+      - bacon
+
+- type: entity
+  name: Кхара пера
+  parent: FoodBakedMediumEastBase
+  id: FoodBakedKharaPera
+  description: сладость востока
+  components:
+  - type: Sprite
+    state: KharaPera
+  - type: FlavorProfile
+    flavors:
+      - sweet
+      - chocolate
+
+- type: entity
+  name: Рахат лукум
+  parent: FoodBakedMediumEastBase
+  id: FoodBakedDelight
+  description: сладость востока
+  components:
+  - type: Sprite
+    state: delight
+  - type: FlavorProfile
+    flavors:
+      - sweet
+
+- type: entity
+  name: Пахлава
+  parent: FoodBakedMediumEastBase
+  id: FoodBakedBAKLAVA
+  description: сладость востока
+  components:
+  - type: Sprite
+    state: BAKLAVA
+  - type: FlavorProfile
+    flavors:
+      - sweet
+
+- type: entity
+  name: Халва
+  parent: FoodBakedMediumEastBase
+  id: FoodBakedHalva
+  description: сладость востока
+  components:
+  - type: Sprite
+    state: halva
+  - type: FlavorProfile
+    flavors:
+      - sweet

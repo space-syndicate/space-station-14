@@ -7,9 +7,9 @@
   description: A special suit that protects against hazardous, low pressure environments. Has an additional layer of armor.
   components:
   - type: Sprite
-    sprite: _Ck\Entities\clothing\spacesuits\hardsuit\KTKPsuit.rsi
+    sprite: _Ck/Entities/clothing/spacesuits/hardsuit/KTKPsuit.rsi
   - type: Clothing
-    sprite: _Ck\Entities\clothing\spacesuits\hardsuit\KTKPsuit.rsi
+    sprite: _Ck/Entities/clothing/spacesuits/hardsuit/KTKPsuit.rsi
   - type: PressureProtection
     highPressureMultiplier: 0.525
     lowPressureMultiplier: 10000
@@ -38,9 +38,9 @@
   description: Armored hardsuit helmet for security needs.
   components:
   - type: Sprite
-    sprite: _Ck\Entities\clothing\spacesuits\hardsuit-helmet\KTKP.rsi
+    sprite: _Ck/Entities/clothing/spacesuits/hardsuit-helmet/KTKP.rsi
   - type: Clothing
-    sprite: _Ck\Entities\clothing\spacesuits\hardsuit-helmet\KTKP.rsi
+    sprite: _Ck/Entities/clothing/spacesuits/hardsuit-helmet/KTKP.rsi
   - type: PointLight
     color: "#ffeead"
   - type: PressureProtection
@@ -61,9 +61,9 @@
   description: A special suit that protects against hazardous, low pressure environments. Has an additional layer of armor.
   components:
   - type: Sprite
-    sprite: _Ck\Entities\clothing\spacesuits\hardsuit\KTKPsuitTOP.rsi
+    sprite: _Ck/Entities/clothing/spacesuits/hardsuit/KTKPsuitTOP.rsi
   - type: Clothing
-    sprite: _Ck\Entities\clothing\spacesuits\hardsuit\KTKPsuitTOP.rsi
+    sprite: _Ck/Entities/clothing/spacesuits/hardsuit/KTKPsuitTOP.rsi
   - type: PressureProtection
     highPressureMultiplier: 0.525
     lowPressureMultiplier: 10000
@@ -92,9 +92,9 @@
   description: Armored hardsuit helmet for security needs.
   components:
   - type: Sprite
-    sprite: _Ck\Entities\clothing\spacesuits\hardsuit-helmet\KTKPtop.rsi
+    sprite: _Ck/Entities/clothing/spacesuits/hardsuit-helmet/KTKPtop.rsi
   - type: Clothing
-    sprite: _Ck\Entities\clothing\spacesuits\hardsuit-helmet\KTKPtop.rsi
+    sprite: _Ck/Entities/clothing/spacesuits/hardsuit-helmet/KTKPtop.rsi
   - type: PointLight
     color: "#ffeead"
   - type: PressureProtection
