@@ -4,6 +4,8 @@ ent-Implanter = { ent-BaseImplanter }
     .desc = Одноразовый шприц, специально предназначенный для введения и извлечения подкожных имплантов.
 ent-BaseImplantOnlyImplanter = { ent-Implanter }
     .desc = Одноразовый шприц, специально предназначенный для введения подкожных имплантов.
+ent-BaseImplantOnlyImplanterSyndi = { ent-BaseImplantOnlyImplanter }
+    .desc = A compact disposable syringe exclusively designed for the injection of subdermal implants.
 # Corvax anti-meta localization start
 ent-SadTromboneImplanter = { ent-Implanter }
     .desc = { ent-BaseImplantOnlyImplanter.desc }
