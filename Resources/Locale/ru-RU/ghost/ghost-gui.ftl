@@ -1,9 +1,11 @@
 ghost-gui-return-to-body-button = Вернуться в тело
 ghost-gui-ghost-warp-button = Телепорт призрака
 ghost-gui-ghost-roles-button = Роли призраков ({ $count })
-ghost-gui-toggle-ghost-visibility-popup = Видимость других призраков была изменена.
-ghost-gui-toggle-lighting-manager-popup = Рендеринг света был переключён.
-ghost-gui-toggle-fov-popup = Поле зрения было переключено.
+ghost-gui-toggle-ghost-visibility-popup = Видимость других призраков изменена.
+ghost-gui-toggle-lighting-manager-popup = Рендеринг света переключён.
+ghost-gui-toggle-fov-popup = Поле зрения переключено.
+ghost-gui-toggle-hearing-popup-on = Теперь вы слышите все фразы.
+ghost-gui-toggle-hearing-popup-off = Теперь вы слышите только радиосвязь и фразы поблизости.
 ghost-target-window-title = Телепорт призрака
 ghost-target-window-current-button = Телепорт в: { $name }
 ghost-roles-window-title = Роли призраков
