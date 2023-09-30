@@ -4,7 +4,6 @@
   description: job-description-scientist
   playTimeTracker: JobScientist
   requirements:
-  requirements:
     - !type:DepartmentTimeRequirement
       department: Science
       time: 10800 #3 hrs
