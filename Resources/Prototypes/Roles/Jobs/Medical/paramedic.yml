@@ -10,7 +10,7 @@
     - !type:OverallPlaytimeRequirement
       time: 54000 # 15 hrs
     - !type:RoleTimeRequirement
-      role: Chemist
+      role: JobChemist
       time: 10800 #3 hrs
   startingGear: ParamedicGear
   icon: "JobIconParamedic"
