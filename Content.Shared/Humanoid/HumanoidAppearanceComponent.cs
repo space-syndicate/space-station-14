@@ -51,8 +51,8 @@ public sealed partial class HumanoidAppearanceComponent : Component
     /// <summary>
     ///     Current voice. Used for correct cloning.
     /// </summary>
-    [DataField("voice", customTypeSerializer: typeof(PrototypeIdSerializer<TTSVoicePrototype>))]
-    public string Voice { get; set; } = SharedHumanoidAppearanceSystem.DefaultVoice;
+    [DataField("voice")]
+    public ProtoId<TTSVoicePrototype> Voice { get; set; } = SharedHumanoidAppearanceSystem.DefaultVoice;
     // Corvax-TTS-End
 
     /// <summary>
