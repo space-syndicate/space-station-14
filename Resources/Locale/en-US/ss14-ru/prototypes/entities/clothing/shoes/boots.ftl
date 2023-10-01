@@ -12,3 +12,5 @@ ent-ClothingShoesBootsMerc = mercenary boots
     .desc = Boots that have gone through many conflicts and that have proven their combat reliability.
 ent-ClothingShoesBootsLaceup = laceup shoes
     .desc = The height of fashion, and they're pre-polished!
+ent-ClothingShoesBootsWinter = winter boots
+    .desc = Fluffy boots to help survive even the coldest of winters.
