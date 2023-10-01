@@ -46,6 +46,12 @@ CLIENT_IGNORED_RESOURCES = {
 
 CLIENT_CONTENT_ASSEMBLIES = [
     # IF YOU ADD SOMETHING HERE, ADD IT TO MANIFEST.YML TOO.
+    # Corvax-Secrets-Start
+    "Content.Corvax.Interfaces.Shared",
+    "Content.Corvax.Interfaces.Client",
+    "Content.Corvax.Shared",
+    "Content.Corvax.Client",
+    # Corvax-Secrets-End
     "Content.Client",
     "Content.Shared",
     "Content.Shared.Database"
@@ -100,6 +106,21 @@ def build(skip_build: bool) -> None:
             "/p:FullRelease=True",
             "/m"
         ], check=True)
+    # Corvax-Secrets-Start
+    if os.path.exists(p("Secrets", "Content.Corvax.Client")):
+        print(Fore.GREEN + f"Secrets found. Building secret project..." + Style.RESET_ALL)
+        subprocess.run([
+            "dotnet",
+            "build",
+            p("Secrets","Content.Corvax.Client", "Content.Corvax.Client.csproj"),
+            "-c", "Release",
+            "--nologo",
+            "/v:m",
+            "/t:Rebuild",
+            "/p:FullRelease=True",
+            "/m"
+        ], check=True)
+    # Corvax-Secrets-End
 
     print(Fore.GREEN + "Packaging client..." + Style.RESET_ALL)
 
@@ -175,7 +196,8 @@ def copy_content_assemblies(target, zipf):
 
     # Include content assemblies.
     for asm in base_assemblies:
-        files.append(asm + ".dll")
+        if os.path.exists(p(source_dir, asm + ".dll")): # Corvax-Secrets: Allow optional assemblies
+            files.append(asm + ".dll")
         # If PDB available, include it aswell.
         pdb_path = asm + ".pdb"
         if os.path.exists(p(source_dir, pdb_path)):

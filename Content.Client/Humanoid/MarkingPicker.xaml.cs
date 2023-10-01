@@ -1,5 +1,5 @@
 using System.Linq;
-using Content.Client.Corvax.Sponsors;
+using Content.Corvax.Interfaces.Client;
 using Content.Shared.Humanoid;
 using Content.Shared.Humanoid.Markings;
 using Content.Shared.Humanoid.Prototypes;
@@ -19,7 +19,7 @@ public sealed partial class MarkingPicker : Control
 {
     [Dependency] private readonly MarkingManager _markingManager = default!;
     [Dependency] private readonly IPrototypeManager _prototypeManager = default!;
-    [Dependency] private readonly SponsorsManager _sponsorsManager = default!; // Corvax-Sponsors
+    private IClientSponsorsManager? _sponsorsManager; // Corvax-Sponsors
 
     public Action<MarkingSet>? OnMarkingAdded;
     public Action<MarkingSet>? OnMarkingRemoved;
@@ -125,6 +125,7 @@ public sealed partial class MarkingPicker : Control
     {
         RobustXamlLoader.Load(this);
         IoCManager.InjectDependencies(this);
+        IoCManager.Instance!.TryResolveType(out _sponsorsManager); // Corvax-Sponsors
 
         SetupCategoryButtons();
         CMarkingCategoryButton.OnItemSelected +=  OnCategoryChange;
@@ -208,7 +209,8 @@ public sealed partial class MarkingPicker : Control
             if (marking.SponsorOnly)
             {
                 item.Disabled = true;
-                if (_sponsorsManager.TryGetInfo(out var sponsor))
+                if (_sponsorsManager != null &&
+                    _sponsorsManager.TryGetInfo(out var sponsor))
                 {
                     item.Disabled = !sponsor.AllowedMarkings.Contains(marking.ID);
                 }
