@@ -1,9 +1,9 @@
-admin-manager-self-de-admin-message = { $exAdminName } снимает с себя права администратора.
-admin-manager-self-re-admin-message = { $newAdminName } возвращает себе права администратора.
+admin-manager-self-de-admin-message = { $exAdminName } снимает с себя права админа.
+admin-manager-self-re-admin-message = { $newAdminName } возвращает себе права админа.
 admin-manager-became-normal-player-message = Теперь вы обычный игрок.
 admin-manager-became-admin-message = Теперь вы администратор.
 admin-manager-no-longer-admin-message = Вы больше не администратор.
 admin-manager-admin-permissions-updated-message = Ваши права администратора были обновлены.
-admin-manager-admin-logout-message = Администратор вышел: { $name }
-admin-manager-admin-login-message = Администратор зашёл: { $name }
+admin-manager-admin-logout-message = Админ вышел: { $name }
+admin-manager-admin-login-message = Админ зашёл: { $name }
 admin-manager-admin-data-host-title = Хост
