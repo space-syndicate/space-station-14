@@ -56,3 +56,5 @@ marking-LizardHornsMyrsore-horns_myrsore = Унатх, рожки (Мирзор�
 marking-LizardHornsMyrsore = Унатх, рожки (Мирзора)
 marking-LizardHornsBighorn-horns_bighorn = Унатх, рожки (Бигхорн)
 marking-LizardHornsBighorn = Унатх, рожки (Бигхорн)
+marking-LizardHornsKoboldEars-horns_kobold_ears = Lizard Ears (Kobold)
+marking-LizardHornsKoboldEars = Lizard Ears (Kobold)
