@@ -104,8 +104,8 @@ namespace Content.Server.Preferences.Managers
 
             // Corvax-Sponsors-Start: Ensure removing sponsor markings if client somehow bypassed client filtering
             // WARN! It's not removing markings from DB!
-            var allowedMarkings = _sponsors != null && _sponsors.TryGetInfo(message.MsgChannel.UserId, out var sponsor)
-                ? sponsor.AllowedMarkings
+            var allowedMarkings = _sponsors != null && _sponsors.TryGetPrototypes(message.MsgChannel.UserId, out var prototypes)
+                ? prototypes.ToArray()
                 : new string[]{};
             profile.EnsureValid(allowedMarkings);
             // Corvax-Sponsors-End
@@ -204,8 +204,8 @@ namespace Content.Server.Preferences.Managers
                     // Corvax-Sponsors-Start: Remove sponsor markings from expired sponsors
                     foreach (var (_, profile) in prefs.Characters)
                     {
-                        var allowedMarkings = _sponsors != null && _sponsors.TryGetInfo(session.UserId, out var sponsor)
-                            ? sponsor.AllowedMarkings
+                        var allowedMarkings = _sponsors != null && _sponsors.TryGetPrototypes(session.UserId, out var prototypes)
+                            ? prototypes.ToArray()
                             : new string[]{};
                         profile.EnsureValid(allowedMarkings);
                     }
@@ -233,9 +233,7 @@ namespace Content.Server.Preferences.Managers
         private int GetMaxUserCharacterSlots(NetUserId userId)
         {
             var maxSlots = _cfg.GetCVar(CCVars.GameMaxCharacterSlots);
-            var extraSlots = _sponsors != null && _sponsors.TryGetInfo(userId, out var sponsor)
-                ? sponsor.ExtraSlots
-                : 0;
+            var extraSlots = _sponsors?.GetExtraCharSlots(userId) ?? 0;
             return maxSlots + extraSlots;
         }
         // Corvax-Sponsors-End

@@ -64,9 +64,7 @@ namespace Content.Client.Preferences
         public void UpdateCharacter(ICharacterProfile profile, int slot)
         {
             // Corvax-Sponsors-Start
-            var allowedMarkings = _sponsorsManager != null && _sponsorsManager.TryGetInfo(out var sponsor)
-                ? sponsor.AllowedMarkings
-                : new string[]{};
+            var allowedMarkings = _sponsorsManager?.Prototypes.ToArray() ?? new string[]{};
             profile.EnsureValid(allowedMarkings);
             // Corvax-Sponsors-End
             var characters = new Dictionary<int, ICharacterProfile>(Preferences.Characters) {[slot] = profile};
