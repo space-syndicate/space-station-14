@@ -1,9 +1,12 @@
-﻿using System.Diagnostics.CodeAnalysis;
-using Content.Corvax.Interfaces.Shared;
+﻿using Content.Corvax.Interfaces.Shared;
+using Robust.Shared.Maths;
 
 namespace Content.Corvax.Interfaces.Client;
 
 public interface IClientSponsorsManager : ISharedSponsorsManager
 {
-    public bool TryGetInfo([NotNullWhen(true)] out ISponsorInfo? sponsor);
+    public List<string> Prototypes { get; }
+    public bool PriorityJoin { get; }
+    public Color? OocColor { get; }
+    public int ExtraCharSlots { get; }
 }

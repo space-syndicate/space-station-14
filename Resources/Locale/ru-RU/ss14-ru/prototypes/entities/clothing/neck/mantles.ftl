@@ -12,3 +12,5 @@ ent-ClothingNeckMantleHOSShoulder = наплечная мантия главы �
     .desc = Перестрелка с ядерными оперативниками - обычный вторник для этого ГСБ. Эта мантия - символ его преданности станции.
 ent-ClothingNeckMantleRD = мантия научного руководителя
     .desc = Ужасно удобная драпировка на плечи для гения как в вопросах науки, так и моды.
+ent-ClothingNeckMantleQM = quartermaster's mantle
+    .desc = For the master of goods and materials to rule over the department, a befitting mantle to show off superiority!

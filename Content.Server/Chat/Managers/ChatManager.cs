@@ -206,11 +206,9 @@ namespace Content.Server.Chat.Managers
             }
 
             // Corvax-Sponsors-Start
-            if (_sponsorsManager != null &&
-                _sponsorsManager.TryGetInfo(player.UserId, out var sponsorData) &&
-                sponsorData.OOCColor != null)
+            if (_sponsorsManager != null && _sponsorsManager.TryGetOocColor(player.UserId, out var oocColor))
             {
-                wrappedMessage = Loc.GetString("chat-manager-send-ooc-patron-wrap-message", ("patronColor", sponsorData.OOCColor),("playerName", player.Name), ("message", FormattedMessage.EscapeText(message)));
+                wrappedMessage = Loc.GetString("chat-manager-send-ooc-patron-wrap-message", ("patronColor", oocColor),("playerName", player.Name), ("message", FormattedMessage.EscapeText(message)));
             }
             // Corvax-Sponsors-End
 
