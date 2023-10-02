@@ -118,3 +118,5 @@ ent-ClothingHeadHatMagician = magician's top hat.
     .desc = A magician's top hat.
 ent-ClothingHeadHatCapcap = cap cap
     .desc = A grand, stylish captain cap.
+ent-ClothingHeadHatGladiator = Gladiator helmet
+    .desc = Protects the head from harsh ash winds and toy spears.

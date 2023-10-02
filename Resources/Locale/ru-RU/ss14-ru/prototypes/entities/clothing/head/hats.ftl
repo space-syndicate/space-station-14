@@ -118,3 +118,5 @@ ent-ClothingHeadHatMagician = цилиндр фокусника
     .desc = Цилиндр фокусника.
 ent-ClothingHeadHatCapcap = фуражка капитана
     .desc = Большая, стильная капитанская фуражка.
+ent-ClothingHeadHatGladiator = гладиаторский шлем
+    .desc = Защищает голову от суровых пепельных ветров и игрушечных копий.

@@ -1,9 +1,6 @@
 using Content.Client.Administration.Managers;
 using Content.Client.Changelog;
 using Content.Client.Chat.Managers;
-using Content.Client.Corvax.DiscordAuth;
-using Content.Client.Corvax.JoinQueue;
-using Content.Client.Corvax.Sponsors;
 using Content.Client.Corvax.TTS;
 using Content.Client.Options;
 using Content.Client.Eui;
@@ -69,10 +66,6 @@ namespace Content.Client.Entry
         [Dependency] private readonly ExtendedDisconnectInformationManager _extendedDisconnectInformation = default!;
         [Dependency] private readonly JobRequirementsManager _jobRequirements = default!;
         [Dependency] private readonly ContentLocalizationManager _contentLoc = default!;
-        [Dependency] private readonly SponsorsManager _sponsorsManager = default!; // Corvax-Sponsors
-        [Dependency] private readonly JoinQueueManager _queueManager = default!; // Corvax-Queue
-        [Dependency] private readonly TTSManager _ttsManager = default!; // Corvax-TTS
-        [Dependency] private readonly DiscordAuthManager _discordAuthManager = default!; // Corvax-DiscordAuth
         [Dependency] private readonly ContentReplayPlaybackManager _playbackMan = default!;
         [Dependency] private readonly IResourceManager _resourceManager = default!;
         [Dependency] private readonly IReplayLoadManager _replayLoad = default!;
@@ -170,10 +163,6 @@ namespace Content.Client.Entry
             _voteManager.Initialize();
             _userInterfaceManager.SetDefaultTheme("SS14DefaultTheme");
             _userInterfaceManager.SetActiveTheme(_configManager.GetCVar(CVars.InterfaceTheme));
-            _sponsorsManager.Initialize(); // Corvax-Sponsors
-            _queueManager.Initialize(); // Corvax-Queue
-            _ttsManager.Initialize(); // Corvax-TTS
-            _discordAuthManager.Initialize(); // Corvax-DiscordAuth
             _documentParsingManager.Initialize();
 
             _baseClient.RunLevelChanged += (_, args) =>
