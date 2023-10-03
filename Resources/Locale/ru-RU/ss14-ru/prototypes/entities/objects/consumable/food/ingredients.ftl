@@ -1,5 +1,9 @@
 ent-ReagentContainerBase = { ent-BaseItem }
     .desc = { ent-BaseItem.desc }
+ent-ReagentPacketBase = { ent-ReagentContainerBase }
+    .desc = { ent-ReagentContainerBase.desc }
+ent-ItemHeftyBase = { "" }
+    .desc = { "" }
 ent-ReagentContainerFlour = мешок муки
     .desc = Большой мешок муки. Отлично подходит для выпечки!
 ent-ReagentContainerFlourSmall = пачка муки
