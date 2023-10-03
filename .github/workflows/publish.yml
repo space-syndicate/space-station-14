@@ -21,7 +21,7 @@ jobs:
         submodules: 'recursive'
 
     # Corvax-Secrets-Start
-    - name: Pull secrets
+    - name: Setup secrets
       env:
         SSH_KEY: ${{ secrets.SECRETS_PRIVATE_KEY }}
       if: ${{ env.SSH_KEY != '' }}
@@ -32,10 +32,7 @@ jobs:
         echo "HOST *" > ~/.ssh/config
         echo "StrictHostKeyChecking no" >> ~/.ssh/config
         git -c submodule.Secrets.update=checkout submodule update --init
-
-    - name: Setup secrets
-      shell: pwsh
-      run: .\Tools\corvax\setup_secrets.ps1
+        sh ./Tools/corvax/setup_secrets.sh
     # Corvax-Secrets-End
 
     - name: Setup .NET Core
