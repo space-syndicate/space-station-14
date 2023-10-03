@@ -32,7 +32,10 @@ jobs:
         echo "HOST *" > ~/.ssh/config
         echo "StrictHostKeyChecking no" >> ~/.ssh/config
         git -c submodule.Secrets.update=checkout submodule update --init
-        sh ./Tools/corvax/setup_secrets.sh
+        ln -s Secrets/Resources/Prototypes Resources/Prototypes/CorvaxSecrets
+        ln -s Secrets/Resources/ServerPrototypes Resources/Prototypes/CorvaxSecretsServer
+        ln -s Secrets/Resources/Locale Resources/Locale/ru-RU/corvax-secrets
+        ln -s Secrets/Resources/Textures Resources/Textures/CorvaxSecrets
     # Corvax-Secrets-End
 
     - name: Setup .NET Core
