@@ -675,13 +675,11 @@
   - type: GhostRole
     name: ghost-role-information-smile-name
     description: ghost-role-information-smile-description
-
   - type: Grammar
     attributes:
       proper: true
       gender: female
-- type: TTS # Corvax-TTS
-
+  - type: TTS # Corvax-TTS
     voice: Dryad
 
 - type: entity
