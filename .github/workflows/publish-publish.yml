@@ -1,7 +1,7 @@
 name: Publish Public
 
-concurrency:
-  group: publish
+#concurrency:
+#  group: publish
 
 on:
   workflow_dispatch:
