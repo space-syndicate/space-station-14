@@ -39,6 +39,8 @@ jobs:
         Tools/package_client_build.py
 
     - name: Update Build Info
+      env:
+        FORK_ID: "syndicate-public"
       run: Tools/gen_build_info.py
 
     - name: Shuffle files around
