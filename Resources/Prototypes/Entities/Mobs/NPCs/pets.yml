@@ -679,6 +679,8 @@
     attributes:
       proper: true
       gender: female
+  - type: TTS # Corvax-TTS
+    voice: Dryad
 
 - type: entity
   name: Pun Pun

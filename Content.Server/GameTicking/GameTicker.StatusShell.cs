@@ -35,7 +35,7 @@ namespace Content.Server.GameTicking
             lock (_statusShellLock)
             {
                 // Corvax-Queue-Start
-                var players = IoCManager.Instance!.TryResolveType<IServerJoinQueueManager>(out var joinQueueManager)
+                var players = IoCManager.Instance?.TryResolveType<IServerJoinQueueManager>(out var joinQueueManager) ?? false
                     ? joinQueueManager.ActualPlayersCount
                     : _playerManager.PlayerCount;
                 // Corvax-Queue-End
