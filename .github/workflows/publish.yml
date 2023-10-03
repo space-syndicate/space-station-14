@@ -32,6 +32,7 @@ jobs:
         echo "HOST *" > ~/.ssh/config
         echo "StrictHostKeyChecking no" >> ~/.ssh/config
         git -c submodule.Secrets.update=checkout submodule update --init
+        chmod +x ./Tools/corvax/setup_secrets.sh
         ./Tools/corvax/setup_secrets.sh
     # Corvax-Secrets-End
 
