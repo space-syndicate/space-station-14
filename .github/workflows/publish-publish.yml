@@ -17,9 +17,7 @@ jobs:
       env:
         PUBLIC_PATH: ${{ secrets.BUILDS_PUBLIC_PATH }}
       if: ${{ env.PUBLIC_PATH == '' }}
-      run: |
-        echo 'Public builds are not set up...'
-        exit 0
+      uses: andymckay/cancel-action@0.3
 
     - uses: actions/checkout@v3.6.0
       with:
