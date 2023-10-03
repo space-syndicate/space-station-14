@@ -686,7 +686,9 @@
     makeSentient: true
     name: ghost-role-information-smile-name
     description: ghost-role-information-smile-description
-
+  - type: TTS # Corvax-TTS
+    voice: Dryad
+    
 - type: entity
   name: Pun Pun
   parent: MobMonkey
