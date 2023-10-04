@@ -18,6 +18,8 @@
   - type: Body
     prototype: Reptilian
     requiredLegs: 2
+  - type: Inventory
+    speciesId: digi
   - type: Butcherable
     butcheringType: Spike
     spawned:
@@ -68,5 +70,7 @@
   components:
   - type: HumanoidAppearance
     species: Reptilian
+  - type: Inventory
+    speciesId: digi
 
 #Weh

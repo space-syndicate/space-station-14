@@ -1,4 +1,4 @@
-ent-EscapeShuttleTwinObjective = Escape to centcom alive and unrestrained.
-    .desc = Continue your covert implementation already on Centcom.
-ent-KillTwinObjective = Kill original persona.
-    .desc = Kill your original persona and take his place.
+ent-EscapeShuttleTwinObjective = Улететь на Центком живым и свободным.
+    .desc = Продолжите своё тайное внедрение на Центкоме.
+ent-KillTwinObjective = Убить оригинал.
+    .desc = Убейте свой оригинал и займите его место.
