@@ -17,6 +17,27 @@
     requiredLegs: 2
   - type: Inventory
     speciesId: digi
+  - type: Eye
+    zoom: "1.125, 1.125"
+  - type: MeleeWeapon
+    animation: WeaponArcClaw
+    soundHit:
+      collection: AlienClaw
+    damage:
+      types:
+        Slash: 8
+  - type: LightweightDrunk
+  - type: MovementSpeedModifier
+    acceleration: 20
+    baseWalkSpeed: 2.7
+    baseSprintSpeed: 4.5
+  - type: Respirator
+    damage:
+      types:
+        Asphyxiation: 2.0
+    damageRecovery:
+      types:
+        Asphyxiation: -2.0
 
 - type: entity
   save: false
