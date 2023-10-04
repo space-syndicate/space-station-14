@@ -1,33 +1,22 @@
 ent-PartVulpkanin = vulpkanin body part
-
-  .desc = { ent-['BaseItem', 'BasePart'].desc }
+  .desc = { ent-BasePart.desc }
 ent-TorsoVulpkanin = vulpkanin torso
-
-  .desc = { ent-['PartVulpkanin', 'BaseTorso'].desc }
+  .desc = { ent-PartVulpkanin.desc }
 ent-HeadVulpkanin = vulpkanin head
-
-  .desc = { ent-['PartVulpkanin', 'BaseHead'].desc }
+  .desc = { ent-PartVulpkanin.desc }
 ent-LeftArmVulpkanin = left vulpkanin arm
-
-  .desc = { ent-['PartVulpkanin', 'BaseLeftArm'].desc }
+  .desc = { ent-PartVulpkanin.desc }
 ent-RightArmVulpkanin = right vulpkanin arm
-
-  .desc = { ent-['PartVulpkanin', 'BaseRightArm'].desc }
+  .desc = { ent-PartVulpkanin.desc }
 ent-LeftHandVulpkanin = left vulpkanin hand
-
-  .desc = { ent-['PartVulpkanin', 'BaseLeftHand'].desc }
+  .desc = { ent-PartVulpkanin.desc }
 ent-RightHandVulpkanin = right vulpkanin hand
-
-  .desc = { ent-['PartVulpkanin', 'BaseRightHand'].desc }
+  .desc = { ent-PartVulpkanin.desc }
 ent-LeftLegVulpkanin = left vulpkanin leg
-
-  .desc = { ent-['PartVulpkanin', 'BaseLeftLeg'].desc }
+  .desc = { ent-PartVulpkanin.desc }
 ent-RightLegVulpkanin = right vulpkanin leg
-
-  .desc = { ent-['PartVulpkanin', 'BaseRightLeg'].desc }
+  .desc = { ent-PartVulpkanin.desc }
 ent-LeftFootVulpkanin = left vulpkanin foot
-
-  .desc = { ent-['PartVulpkanin', 'BaseLeftFoot'].desc }
+  .desc = { ent-PartVulpkanin.desc }
 ent-RightFootVulpkanin = right vulpkanin foot
-
-  .desc = { ent-['PartVulpkanin', 'BaseRightFoot'].desc }
+  .desc = { ent-PartVulpkanin.desc }

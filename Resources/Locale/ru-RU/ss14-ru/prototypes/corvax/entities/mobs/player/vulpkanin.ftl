@@ -1,3 +1,2 @@
 ent-MobVulpkanin = Urist McVulp
-
-  .desc = { ent-['BaseMobVulpkanin', 'BaseMob'].desc }
+  .desc = { ent-BaseMobVulpkanin.desc }
