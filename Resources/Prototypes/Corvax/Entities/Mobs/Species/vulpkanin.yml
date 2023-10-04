@@ -27,6 +27,9 @@
       types:
         Slash: 8
   - type: LightweightDrunk
+  - type: Damageable
+    damageContainer: Biological
+    damageModifierSet: Vulpkanin
   - type: MovementSpeedModifier
     acceleration: 20
     baseWalkSpeed: 2.7
