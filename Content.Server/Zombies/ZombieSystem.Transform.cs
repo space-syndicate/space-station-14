@@ -12,7 +12,6 @@ using Content.Server.NPC;
 using Content.Server.NPC.Components;
 using Content.Server.NPC.HTN;
 using Content.Server.NPC.Systems;
-using Content.Server.Nutrition.Components;
 using Content.Server.Roles;
 using Content.Server.Speech.Components;
 using Content.Server.Temperature.Components;
@@ -28,10 +27,12 @@ using Content.Shared.Mobs.Systems;
 using Content.Shared.Movement.Systems;
 using Content.Shared.Nutrition.Components;
 using Content.Shared.Popups;
+using Content.Shared.Roles;
 using Content.Shared.Tools.Components;
 using Content.Shared.Weapons.Melee;
 using Content.Shared.Zombies;
 using Robust.Shared.Audio;
+using Content.Shared.Prying.Components;
 
 namespace Content.Server.Zombies
 {
@@ -53,7 +54,7 @@ namespace Content.Server.Zombies
         [Dependency] private readonly SharedCombatModeSystem _combat = default!;
         [Dependency] private readonly IChatManager _chatMan = default!;
         [Dependency] private readonly MindSystem _mind = default!;
-        [Dependency] private readonly RoleSystem _roles = default!;
+        [Dependency] private readonly SharedRoleSystem _roles = default!;
         [Dependency] private readonly MobThresholdSystem _mobThreshold = default!;
         [Dependency] private readonly SharedAudioSystem _audio = default!;
 
@@ -105,8 +106,8 @@ namespace Content.Server.Zombies
 
             //This is needed for stupid entities that fuck up combat mode component
             //in an attempt to make an entity not attack. This is the easiest way to do it.
-            RemComp<CombatModeComponent>(target);
-            var combat = AddComp<CombatModeComponent>(target);
+            var combat = EnsureComp<CombatModeComponent>(target);
+            _combat.SetCanDisarm(target, false, combat);
             _combat.SetInCombatMode(target, true, combat);
 
             RemComp<PacifiedComponent>(target); // Corvax-DionaPacifist: Allow dionas zombies to harm
@@ -114,7 +115,7 @@ namespace Content.Server.Zombies
             //This is the actual damage of the zombie. We assign the visual appearance
             //and range here because of stuff we'll find out later
             var melee = EnsureComp<MeleeWeaponComponent>(target);
-            melee.ClickAnimation = zombiecomp.AttackAnimation;
+            melee.Animation = zombiecomp.AttackAnimation;
             melee.WideAnimation = zombiecomp.AttackAnimation;
             melee.Range = 1.2f;
 
@@ -164,11 +165,12 @@ namespace Content.Server.Zombies
                 melee.Damage = dspec;
 
                 // humanoid zombies get to pry open doors and shit
-                var tool = EnsureComp<ToolComponent>(target);
-                tool.SpeedModifier = 0.75f;
-                tool.Qualities = new ("Prying");
-                tool.UseSound = new SoundPathSpecifier("/Audio/Items/crowbar.ogg");
-                Dirty(tool);
+                var pryComp = EnsureComp<PryingComponent>(target);
+                pryComp.SpeedModifier = 0.75f;
+                pryComp.PryPowered = true;
+                pryComp.Force = true;
+
+                Dirty(target, pryComp);
             }
 
             Dirty(melee);
@@ -234,7 +236,7 @@ namespace Content.Server.Zombies
             else
             {
                 var htn = EnsureComp<HTNComponent>(target);
-                htn.RootTask = new HTNCompoundTask() {Task = "SimpleHostileCompound"};
+                htn.RootTask = new HTNCompoundTask() { Task = "SimpleHostileCompound" };
                 htn.Blackboard.SetValue(NPCBlackboard.Owner, target);
                 _npc.WakeNPC(target, htn);
             }

@@ -1,6 +1,10 @@
 ent-CrateVendingMachineRestockBoozeFilled = { ent-CratePlastic }
     .desc = { ent-CratePlastic.desc }
+ent-CrateVendingMachineRestockChefvendFilled = ChefVend restock crate
+    .desc = { ent-CratePlastic.desc }
 ent-CrateVendingMachineRestockClothesFilled = { ent-CratePlastic }
+    .desc = { ent-CratePlastic.desc }
+ent-CrateVendingMachineRestockCondimentStationFilled = Condiment Station restock crate
     .desc = { ent-CratePlastic.desc }
 ent-CrateVendingMachineRestockDinnerwareFilled = { ent-CratePlastic }
     .desc = { ent-CratePlastic.desc }

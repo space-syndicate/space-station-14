@@ -188,7 +188,7 @@ namespace Content.Shared.Humanoid
             return new(color.RByte, color.GByte, color.BByte);
         }
 
-        public static HumanoidCharacterAppearance EnsureValid(HumanoidCharacterAppearance appearance, string species, string[] sponsorMarkings)
+        public static HumanoidCharacterAppearance EnsureValid(HumanoidCharacterAppearance appearance, string species, Sex sex, string[] sponsorPrototypes)
         {
             var hairStyleId = appearance.HairStyleId;
             var facialHairStyleId = appearance.FacialHairStyleId;
@@ -204,11 +204,11 @@ namespace Content.Shared.Humanoid
             {
                 hairStyleId = HairStyles.DefaultHairStyle;
             }
-            
+
             // Corvax-Sponsors-Start
             if (proto.TryIndex(hairStyleId, out MarkingPrototype? hairProto) &&
                 hairProto.SponsorOnly &&
-                !sponsorMarkings.Contains(hairStyleId))
+                !sponsorPrototypes.Contains(hairStyleId))
             {
                 hairStyleId = HairStyles.DefaultHairStyle;
             }
@@ -218,11 +218,11 @@ namespace Content.Shared.Humanoid
             {
                 facialHairStyleId = HairStyles.DefaultFacialHairStyle;
             }
-            
+
             // Corvax-Sponsors-Start
             if (proto.TryIndex(facialHairStyleId, out MarkingPrototype? facialHairProto) &&
                 facialHairProto.SponsorOnly &&
-                !sponsorMarkings.Contains(facialHairStyleId))
+                !sponsorPrototypes.Contains(facialHairStyleId))
             {
                 facialHairStyleId = HairStyles.DefaultFacialHairStyle;
             }
@@ -241,7 +241,8 @@ namespace Content.Shared.Humanoid
                 }
 
                 markingSet.EnsureSpecies(species, skinColor, markingManager);
-                markingSet.FilterSponsor(sponsorMarkings, markingManager); // Corvax-Sponsors
+                markingSet.EnsureSexes(sex, markingManager);
+                markingSet.FilterSponsor(sponsorPrototypes, markingManager); // Corvax-Sponsors
             }
 
             return new HumanoidCharacterAppearance(

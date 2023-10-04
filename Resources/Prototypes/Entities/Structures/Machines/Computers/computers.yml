@@ -541,7 +541,7 @@
     sound: # Corvax-Announcements
       path: /Audio/Corvax/Announcements/announce.ogg
       params:
-        volume: -4
+        volume: -5
   - type: ActivatableUI
     key: enum.CommunicationsConsoleUiKey.Key
   - type: UserInterface

@@ -52,3 +52,5 @@ ent-FoodSaladWatermelonFruitBowl = melon fruit bowl
     .desc = The only salad where you can eat the bowl.
 ent-FoodMealTaco = taco
     .desc = Take a bite!
+ent-FoodMealCornInButter = corn in butter
+    .desc = Buttery.

@@ -1,13 +1,11 @@
 using Content.Client.Administration.Managers;
 using Content.Client.Changelog;
 using Content.Client.Chat.Managers;
-using Content.Client.Corvax.DiscordAuth;
-using Content.Client.Corvax.JoinQueue;
-using Content.Client.Corvax.Sponsors;
 using Content.Client.Corvax.TTS;
 using Content.Client.Options;
 using Content.Client.Eui;
 using Content.Client.Flash;
+using Content.Client.Fullscreen;
 using Content.Client.GhostKick;
 using Content.Client.Guidebook;
 using Content.Client.Info;
@@ -25,7 +23,6 @@ using Content.Client.Singularity;
 using Content.Client.Stylesheets;
 using Content.Client.Viewport;
 using Content.Client.Voting;
-using Content.Shared.Administration;
 using Content.Shared.Ame;
 using Content.Shared.Gravity;
 using Content.Shared.Localizations;
@@ -33,13 +30,11 @@ using Robust.Client;
 using Robust.Client.Graphics;
 using Robust.Client.Input;
 using Robust.Client.Replays.Loading;
-using Robust.Client.Replays.Playback;
 using Robust.Client.State;
 using Robust.Client.UserInterface;
 using Robust.Shared;
 using Robust.Shared.Configuration;
 using Robust.Shared.ContentPack;
-using Robust.Shared.Map;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Replays;
 
@@ -57,6 +52,7 @@ namespace Content.Client.Entry
         [Dependency] private readonly IConfigurationManager _configManager = default!;
         [Dependency] private readonly IStylesheetManager _stylesheetManager = default!;
         [Dependency] private readonly IScreenshotHook _screenshotHook = default!;
+        [Dependency] private readonly FullscreenHook _fullscreenHook = default!;
         [Dependency] private readonly ChangelogManager _changelogManager = default!;
         [Dependency] private readonly RulesManager _rulesManager = default!;
         [Dependency] private readonly ViewportManager _viewportManager = default!;
@@ -72,10 +68,6 @@ namespace Content.Client.Entry
         [Dependency] private readonly ExtendedDisconnectInformationManager _extendedDisconnectInformation = default!;
         [Dependency] private readonly JobRequirementsManager _jobRequirements = default!;
         [Dependency] private readonly ContentLocalizationManager _contentLoc = default!;
-        [Dependency] private readonly SponsorsManager _sponsorsManager = default!; // Corvax-Sponsors
-        [Dependency] private readonly JoinQueueManager _queueManager = default!; // Corvax-Queue
-        [Dependency] private readonly TTSManager _ttsManager = default!; // Corvax-TTS
-        [Dependency] private readonly DiscordAuthManager _discordAuthManager = default!; // Corvax-DiscordAuth
         [Dependency] private readonly ContentReplayPlaybackManager _playbackMan = default!;
         [Dependency] private readonly IResourceManager _resourceManager = default!;
         [Dependency] private readonly IReplayLoadManager _replayLoad = default!;
@@ -106,11 +98,8 @@ namespace Content.Client.Entry
             _prototypeManager.RegisterIgnore("utilityQuery");
             _prototypeManager.RegisterIgnore("utilityCurvePreset");
             _prototypeManager.RegisterIgnore("accent");
-            _prototypeManager.RegisterIgnore("material");
-            _prototypeManager.RegisterIgnore("reaction"); //Chemical reactions only needed by server. Reactions checks are server-side.
             _prototypeManager.RegisterIgnore("gasReaction");
             _prototypeManager.RegisterIgnore("seed"); // Seeds prototypes are server-only.
-            _prototypeManager.RegisterIgnore("barSign");
             _prototypeManager.RegisterIgnore("objective");
             _prototypeManager.RegisterIgnore("holiday");
             _prototypeManager.RegisterIgnore("aiFaction");
@@ -121,10 +110,7 @@ namespace Content.Client.Entry
             _prototypeManager.RegisterIgnore("npcFaction");
             _prototypeManager.RegisterIgnore("lobbyBackground");
             _prototypeManager.RegisterIgnore("advertisementsPack");
-            _prototypeManager.RegisterIgnore("metabolizerType");
-            _prototypeManager.RegisterIgnore("metabolismGroup");
             _prototypeManager.RegisterIgnore("salvageMap");
-            _prototypeManager.RegisterIgnore("salvageFaction");
             _prototypeManager.RegisterIgnore("gamePreset");
             _prototypeManager.RegisterIgnore("noiseChannel");
             _prototypeManager.RegisterIgnore("spaceBiome");
@@ -139,11 +125,11 @@ namespace Content.Client.Entry
             _prototypeManager.RegisterIgnore("nukeopsRole");
             _prototypeManager.RegisterIgnore("stationGoal"); // Corvax-StationGoal
             _prototypeManager.RegisterIgnore("loadout"); // Corvax-Loadout
-            _prototypeManager.RegisterIgnore("flavor");
 
             _componentFactory.GenerateNetIds();
             _adminManager.Initialize();
             _screenshotHook.Initialize();
+            _fullscreenHook.Initialize();
             _changelogManager.Initialize();
             _rulesManager.Initialize();
             _viewportManager.Initialize();
@@ -179,10 +165,7 @@ namespace Content.Client.Entry
             _euiManager.Initialize();
             _voteManager.Initialize();
             _userInterfaceManager.SetDefaultTheme("SS14DefaultTheme");
-            _sponsorsManager.Initialize(); // Corvax-Sponsors
-            _queueManager.Initialize(); // Corvax-Queue
-            _ttsManager.Initialize(); // Corvax-TTS
-            _discordAuthManager.Initialize(); // Corvax-DiscordAuth
+            _userInterfaceManager.SetActiveTheme(_configManager.GetCVar(CVars.InterfaceTheme));
             _documentParsingManager.Initialize();
 
             _baseClient.RunLevelChanged += (_, args) =>
