@@ -227,3 +227,5 @@ ent-ClothingUniformJumpsuitWeb = web jumpsuit
     .desc = Makes it clear that you are one with the webs.
 ent-ClothingUniformJumpsuitLoungewear = loungewear
     .desc = A long stretch of fabric that wraps around your body for comfort.
+ent-ClothingUniformJumpsuitGladiator = gladiator uniform
+    .desc = Made for true gladiators (or Ash Walkers).

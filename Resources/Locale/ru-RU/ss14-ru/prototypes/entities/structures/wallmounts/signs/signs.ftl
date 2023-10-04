@@ -280,3 +280,7 @@ ent-SignRedNine = знак "девять"
     .desc = Знак с цифрой, на котором нарисована девятка.
 ent-SignRedZero = знак "ноль"
     .desc = Знак с цифрой, на котором нарисован ноль.
+ent-SignSurvival = survival sign
+    .desc = A sign. "Survival" is written on it.
+ent-SignNTMine = mine sign
+    .desc = A sign. "Mine" is written on it.

@@ -185,6 +185,10 @@ namespace Content.Client.Preferences.UI
             #region Species
 
             _speciesList = prototypeManager.EnumeratePrototypes<SpeciesPrototype>().Where(o => o.RoundStart).ToList();
+            // Corvax-Sponsors-Start
+            if (_sponsorsMgr != null)
+                _speciesList = _speciesList.Where(p => !p.SponsorOnly || _sponsorsMgr.Prototypes.Contains(p.ID)).ToList();
+            // Corvax-Sponsors-End
             for (var i = 0; i < _speciesList.Count; i++)
             {
                 var name = Loc.GetString(_speciesList[i].Name);
