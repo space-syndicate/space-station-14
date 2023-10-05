@@ -27,6 +27,6 @@ disposal-unit-state-Ready = Готов
 disposal-unit-state-Flushed = Нагнетание
 disposal-unit-state-Pressurizing = Нагнетание
 # putting people in
-disposal-unit-being-inserted = { CAPITALIZE($user) } is trying to force you into a disposal chute!
+disposal-unit-being-inserted = { CAPITALIZE($user) } пытается затолкать вас в мусоропровод!
 disposal-self-insert-verb-get-data-text = Залезть внутрь
 disposal-eject-verb-get-data-text = Извлечь всё
