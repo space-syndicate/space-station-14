@@ -4,6 +4,8 @@ ent-Implanter = { ent-BaseImplanter }
     .desc = Одноразовый шприц, специально предназначенный для введения и извлечения подкожных имплантов.
 ent-BaseImplantOnlyImplanter = { ent-Implanter }
     .desc = Одноразовый шприц, специально предназначенный для введения подкожных имплантов.
+ent-BaseImplantOnlyImplanterSyndi = { ent-BaseImplantOnlyImplanter }
+    .desc = Компактный одноразовый шприц, специально предназначенный для введения подкожных имплантов.
 # Corvax anti-meta localization start
 ent-SadTromboneImplanter = { ent-Implanter }
     .desc = { ent-BaseImplantOnlyImplanter.desc }
@@ -41,6 +43,8 @@ ent-MacroBombImplanter = { ent-Implanter }
 ent-DeathRattleImplanter = { ent-Implanter }
     .desc = { ent-BaseImplantOnlyImplanter.desc }
     .suffix = Предсмертный хрип
+ent-MindShieldImplanter = mind-shield implanter
+    .desc = { ent-BaseImplantOnlyImplanter.desc }
 
 # Corvax anti-meta localization end
 

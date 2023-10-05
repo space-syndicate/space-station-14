@@ -24,3 +24,5 @@ ent-MacroBombImplant = macro-bomb implant
     .desc = This implant creates a large explosion on death after a preprogrammed countdown.
 ent-DeathRattleImplant = death rattle implant
     .desc = This implant will inform the Syndicate radio channel should the user fall into critical condition or die.
+ent-MindShieldImplant = mind-shield implant
+    .desc = This implant will ensure loyalty to Nanotrasen and prevent mind control devices.
