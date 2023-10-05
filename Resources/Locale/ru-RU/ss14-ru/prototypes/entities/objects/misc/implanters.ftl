@@ -43,6 +43,8 @@ ent-MacroBombImplanter = { ent-Implanter }
 ent-DeathRattleImplanter = { ent-Implanter }
     .desc = { ent-BaseImplantOnlyImplanter.desc }
     .suffix = Предсмертный хрип
+ent-MindShieldImplanter = mind-shield implanter
+    .desc = { ent-BaseImplantOnlyImplanter.desc }
 
 # Corvax anti-meta localization end
 

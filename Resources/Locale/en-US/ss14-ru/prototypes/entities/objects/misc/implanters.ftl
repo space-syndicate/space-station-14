@@ -30,3 +30,5 @@ ent-MacroBombImplanter = macro-bomb implanter
     .desc = { ent-BaseImplantOnlyImplanterSyndi.desc }
 ent-DeathRattleImplanter = death rattle implanter
     .desc = { ent-BaseImplantOnlyImplanterSyndi.desc }
+ent-MindShieldImplanter = mind-shield implanter
+    .desc = { ent-BaseImplantOnlyImplanter.desc }
