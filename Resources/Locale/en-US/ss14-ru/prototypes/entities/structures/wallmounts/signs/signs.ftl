@@ -280,3 +280,7 @@ ent-SignRedNine = nine sign
     .desc = A sign with a digit, nine is written on it.
 ent-SignRedZero = zero sign
     .desc = A sign with a digit, zero is written on it.
+ent-SignSurvival = survival sign
+    .desc = A sign. "Survival" is written on it.
+ent-SignNTMine = mine sign
+    .desc = A sign. "Mine" is written on it.
