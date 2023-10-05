@@ -55,7 +55,7 @@ jobs:
 
     - name: Update Build Info
       env:
-        FORK_ID: "syndicate"
+        FORK_ID: {{ vars.FORK_ID }}
       run: Tools/gen_build_info.py
 
     - name: Shuffle files around
