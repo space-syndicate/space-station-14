@@ -6,8 +6,8 @@ objective-issuer-syndicate = [color=#87cefa]Синдикат[/color]
 traitor-round-end-codewords = Кодовыми словами были: [color=White]{ $codewords }[/color].
 traitor-title = Предатели
 traitor-description = Среди нас есть предатели...
-traitor-not-enough-ready-players = Недостаточно игроков готовы к игре! Из { $minimumPlayers } необходимых игроков готовы { $readyPlayersCount }. Не удалось начать режим Предателя.
-traitor-no-one-ready = Нет готовых игроков! Не удалось начать режим Предателя.
+traitor-not-enough-ready-players = Недостаточно игроков готовы к игре! Из { $minimumPlayers } необходимых игроков готовы { $readyPlayersCount }. Нельзя запустить пресет Предатели.
+traitor-no-one-ready = Нет готовых игроков! Нельзя запустить пресет Предатели.
 
 ## TraitorDeathMatch
 
