@@ -24,3 +24,5 @@ ent-MacroBombImplant = имплант Макробомба
     .desc = Этот имплант создаёт большой взрыв при смерти пользователя после запрограммированного обратного отсчета.
 ent-DeathRattleImplant = имплант Предсмертный хрип
     .desc = Этот имплант сообщит в радиоканал Синдиката, если пользователь окажется в критическом состоянии или умрёт.
+ent-MindShieldImplant = mind-shield implant
+    .desc = This implant will ensure loyalty to Nanotrasen and prevent mind control devices.

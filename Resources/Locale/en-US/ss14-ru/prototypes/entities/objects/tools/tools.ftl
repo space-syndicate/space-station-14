@@ -31,3 +31,5 @@ ent-Omnitool = omnitool
     .desc = A drone's best friend.
 ent-Shovel = shovel
     .desc = A large tool for digging and moving dirt.
+ent-RollingPin = rolling pin
+    .desc = A tool used to shape and flatten dough.
