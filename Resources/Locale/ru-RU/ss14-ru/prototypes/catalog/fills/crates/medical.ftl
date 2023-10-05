@@ -2,7 +2,7 @@ ent-CrateMedicalSupplies = ящик медицинских припасов
     .desc = Стандартные медикаменты.
 ent-CrateChemistrySupplies = ящик химического оборудования
     .desc = Стандартное химическое оборудование.
-ent-CrateMindShieldImplants = = ящик имплантов Щит разума
+ent-CrateMindShieldImplants = ящик имплантов Щит разума
     .desc = Ящик, содержащий 3 импланта Щит разума.
 ent-CrateMedicalSurgery = ящик хирургических инструментов
     .desc = Хирургические инструменты.
