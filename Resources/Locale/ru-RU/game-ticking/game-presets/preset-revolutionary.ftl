@@ -11,19 +11,8 @@ head-rev-role-greeting =
 head-rev-briefing =
     Используйте вспышки, чтобы конвертировать членов экипажа на свою сторону.
     Убейте всех глав, чтобы захватить станцию.
-head-rev-initial-name =
-    [color=#5e9cff]{ $name }[/color] { $gender ->
-        [male] был
-        [female] была
-        [epicene] были
-       *[neuter] было
-    } главой революции.
-head-rev-initial-name-user = [color=#5e9cff]{ $name }[/color] ([color=gray]{ $username }[/color]) { $gender ->
-        [male] был одним
-        [female] была одной
-        [epicene] были одними
-       *[neuter] было одним
-    } из глав революции.
+head-rev-initial-name = [color=#5e9cff]{ $name }[/color] был главой революции.
+head-rev-initial-name-user = [color=#5e9cff]{ $name }[/color] ([color=gray]{ $username }[/color]) был одним из глав революции.
 head-rev-initial-count =
     { $initialCount ->
         [one] Единственным главой революции был:
