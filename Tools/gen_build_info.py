@@ -20,7 +20,8 @@ SERVER_FILES = [
 ]
 
 VERSION = os.environ['GITHUB_SHA']
-FORK_ID = os.environ.get('FORK_ID', "custom")
+FORK_ID = os.getenv('FORK_ID', "custom")
+DISABLE_MANIFEST = bool(os.getenv('DISABLE_MANIFEST', False))
 BUILD_URL = f"https://builds.station14.ru/{{FORK_ID}}/builds/{{FORK_VERSION}}/{FILE}"
 MANIFEST_URL = f"https://cdn.station14.ru/{{FORK_ID}}/version/{{FORK_VERSION}}/manifest"
 MANIFEST_DOWNLOAD_URL = f"https://cdn.station14.ru/{{FORK_ID}}/version/{{FORK_VERSION}}/download"
@@ -51,9 +52,9 @@ def generate_build_json(file: str) -> str:
         "version": VERSION,
         "fork_id": FORK_ID,
         "engine_version": engine_version,
-        "manifest_url": MANIFEST_URL,
-        "manifest_download_url": MANIFEST_DOWNLOAD_URL,
-        "manifest_hash": manifest_hash
+        "manifest_url": "" if DISABLE_MANIFEST else MANIFEST_URL,
+        "manifest_download_url": "" if DISABLE_MANIFEST else MANIFEST_DOWNLOAD_URL,
+        "manifest_hash": "" if DISABLE_MANIFEST else manifest_hash
     })
 
 def generate_manifest_hash(file: str) -> str:
