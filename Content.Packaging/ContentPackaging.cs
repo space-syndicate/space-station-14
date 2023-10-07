@@ -22,7 +22,7 @@ public static class ContentPackaging
             inputPass,
             contentDir,
             "Content.Client",
-            new[] { "Content.Client", "Content.Shared", "Content.Shared.Database" },
+            new[] { "Content.Client", "Content.Shared", "Content.Shared.Database", "Content.Corvax.Interfaces.Client", "Content.Corvax.Interfaces.Shared" }, // Corvax-Secrets: Add Corvax interfaces to Magic ACZ
             cancel);
 
         await RobustClientPackaging.WriteClientResources(contentDir, inputPass, cancel);
