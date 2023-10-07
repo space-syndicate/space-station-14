@@ -35,18 +35,12 @@ jobs:
 
     - name: Package all
       run: |
-        Tools/package_server_build.py -p win-x64 linux-x64 osx-x64 linux-arm64
-        Tools/package_client_build.py
-
-    - name: Update Build Info
-      env:
-        FORK_ID: "syndicate-public"
-      run: Tools/gen_build_info.py
+        Tools/package_server_build.py --hybrid-acz -p win-x64 linux-x64 osx-x64 linux-arm64
 
     - name: Shuffle files around
       run: |
         mkdir "release/${{ github.sha }}"
-        mv release/*.zip "release/${{ github.sha }}"
+        mv release/SS14.Server*.zip "release/${{ github.sha }}"
 
     - name: Upload files to mothership
       uses: burnett01/rsync-deployments@5.2
