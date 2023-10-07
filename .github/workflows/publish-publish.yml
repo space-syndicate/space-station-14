@@ -41,7 +41,6 @@ jobs:
     - name: Update Build Info
       env:
         FORK_ID: {{ vars.FORK_ID_PUBLIC }}
-        DISABLE_MANIFEST: 1 # Use zip based download
       run: Tools/gen_build_info.py
 
     - name: Shuffle files around
