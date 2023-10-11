@@ -9,16 +9,6 @@ map_rotation = true
 [rules]
 time = 10.0
 
-[queue]
-enabled = true
-alt_servers = true
-
-[tts]
-enabled = true
-
-[discord_auth]
-enabled = true
-
 [hub]
 advertise = true
 tags = "lang:ru,rp:low,rp:med,region:eu_e,tts"
