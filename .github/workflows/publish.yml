@@ -32,8 +32,10 @@ jobs:
         echo "HOST *" > ~/.ssh/config
         echo "StrictHostKeyChecking no" >> ~/.ssh/config
         git -c submodule.Secrets.update=checkout submodule update --init
-        cp -R Secrets/Prototypes Resources/Prototypes/CorvaxSecrets
-        cp -R Secrets/ServerPrototypes Resources/Prototypes/CorvaxSecretsServer
+        cp -R Secrets/Resources/Prototypes Resources/Prototypes/CorvaxSecrets
+        cp -R Secrets/Resources/ServerPrototypes Resources/Prototypes/CorvaxSecretsServer
+        cp -R Secrets/Resources/Locale Resources/Locale/ru-RU/corvax-secrets
+        cp -R Secrets/Resources/Textures Resources/Textures/CorvaxSecrets
     # Corvax-Secrets-End
 
     - name: Setup .NET Core
@@ -52,6 +54,8 @@ jobs:
         Tools/package_client_build.py
 
     - name: Update Build Info
+      env:
+        FORK_ID: ${{ vars.FORK_ID }}
       run: Tools/gen_build_info.py
 
     - name: Shuffle files around

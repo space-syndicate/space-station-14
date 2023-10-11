@@ -1,0 +1,61 @@
+name: Publish Public
+
+#concurrency:
+#  group: publish
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '0 1 * * *'
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Check configuration
+      env:
+        PUBLIC_PATH: ${{ secrets.BUILDS_PUBLIC_PATH }}
+      if: ${{ env.PUBLIC_PATH == '' }}
+      uses: andymckay/cancel-action@0.3
+
+    - uses: actions/checkout@v3.6.0
+      with:
+        submodules: 'recursive'
+
+    - name: Setup .NET Core
+      uses: actions/setup-dotnet@v3.2.0
+      with:
+        dotnet-version: 7.0.x
+
+    - name: Get Engine Tag
+      run: |
+        cd RobustToolbox
+        git fetch --depth=1
+
+    - name: Package all
+      run: |
+        Tools/package_server_build.py --hybrid-acz -p win-x64 linux-x64 osx-x64 linux-arm64
+
+    - name: Shuffle files around
+      run: |
+        mkdir "release/${{ github.sha }}"
+        mv release/SS14.Server*.zip "release/${{ github.sha }}"
+
+    - name: Upload files to mothership
+      uses: burnett01/rsync-deployments@5.2
+      with:
+        switches: -avzr --ignore-existing
+        path: "release/${{ github.sha }}"
+        remote_path: ${{ secrets.BUILDS_PUBLIC_PATH }}
+        remote_host: ${{ secrets.BUILDS_HOST }}
+        remote_user: ${{ secrets.BUILDS_USERNAME }}
+        remote_key: ${{ secrets.BUILDS_SSH_KEY }}
+
+    - name: Generate public HTML
+      uses: appleboy/ssh-action@master
+      with:
+        host: ${{ secrets.BUILDS_HOST }}
+        username: ${{ secrets.BUILDS_USERNAME }}
+        key: ${{ secrets.BUILDS_SSH_KEY }}
+        script: node ~/scripts/generate_html_page.js -fork syndicate-public -id ${{ github.sha }}

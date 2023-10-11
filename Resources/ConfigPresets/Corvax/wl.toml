@@ -27,15 +27,6 @@ punctuation = true
 [shuttle]
 auto_call_time = 0
 
-[queue]
-enabled = true
-
-[tts]
-enabled = true
-
-[discord_auth]
-enabled = true
-
 [hub]
 advertise = true
 tags = "lang:ru,rp:high,region:eu_e,tts"

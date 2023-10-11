@@ -1,3 +1,4 @@
+using Content.Corvax.Interfaces.Server;
 using Content.Server.Database;
 using Content.Server.Players;
 using Content.Shared.GameTicking;
@@ -29,8 +30,11 @@ namespace Content.Server.GameTicking
 
             if (_mind.TryGetMind(session.UserId, out var mindId, out var mind))
             {
-                if (args.OldStatus == SessionStatus.Connecting && args.NewStatus == SessionStatus.Connected)
+                if (args.NewStatus != SessionStatus.Disconnected)
+                {
                     mind.Session = session;
+                    _pvsOverride.AddSessionOverride(mindId.Value, session);
+                }
 
                 DebugTools.Assert(mind.Session == session);
             }
@@ -53,7 +57,10 @@ namespace Content.Server.GameTicking
 
                     // Make the player actually join the game.
                     // timer time must be > tick length
-                    // Timer.Spawn(0, args.Session.JoinGame); // Corvax-Queue: Moved to `JoinQueueManager`
+                    // Corvax-Queue-Start
+                    if (!IoCManager.Instance!.TryResolveType<IServerJoinQueueManager>(out _))
+                        Timer.Spawn(0, args.Session.JoinGame); // Moved to `JoinQueueManager` if manager registered
+                    // Corvax-Queue-End
 
                     var record = await _dbManager.GetPlayerRecordByUserId(args.Session.UserId);
                     var firstConnection = record != null &&
@@ -109,7 +116,10 @@ namespace Content.Server.GameTicking
                 {
                     _chatManager.SendAdminAnnouncement(Loc.GetString("player-leave-message", ("name", args.Session.Name)));
                     if (mind != null)
+                    {
+                        _pvsOverride.ClearOverride(mindId!.Value);
                         mind.Session = null;
+                    }
 
                     if (_playerGameStatuses.ContainsKey(args.Session.UserId)) // Corvax-Queue: Delete data only if player was in game
                         _userDb.ClientDisconnected(session);
