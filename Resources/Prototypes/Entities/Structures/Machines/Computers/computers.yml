@@ -538,10 +538,6 @@
     access: [[ "Command" ]]
   - type: CommunicationsConsole
     title: comms-console-announcement-title-station
-    sound: # Corvax-Announcements
-      path: /Audio/Corvax/Announcements/announce.ogg
-      params:
-        volume: -5
   - type: ActivatableUI
     key: enum.CommunicationsConsoleUiKey.Key
   - type: UserInterface

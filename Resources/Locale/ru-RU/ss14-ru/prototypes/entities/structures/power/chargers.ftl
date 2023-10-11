@@ -1,3 +1,7 @@
+ent-BaseRecharger = { ent-BaseMachinePowered }
+  .desc = { ent-BaseMachinePowered.desc }
+ent-BaseItemRecharger = { ent-BaseRecharger }
+    .desc = { ent-BaseRecharger.desc }
 ent-PowerCellRecharger = зарядник батарей
     .desc = { ent-ConstructibleMachine.desc }
 ent-WeaponCapacitorRecharger = зарядник энергооружия

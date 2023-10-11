@@ -151,6 +151,7 @@ marking-HumanHairShorthairg = Короткая 8
 marking-HumanHair80s = Короткая (80-ые)
 marking-HumanHairRosa = Короткая (Роза)
 marking-HumanHairB = Волосы до плеч
+marking-HumanHairShoulderLengthOverEye = Shoulder-length Over Eye
 marking-HumanHairSidecut = Боковой вырез
 marking-HumanHairSkinhead = Бритоголовый
 marking-HumanHairProtagonist = Слегка длинная

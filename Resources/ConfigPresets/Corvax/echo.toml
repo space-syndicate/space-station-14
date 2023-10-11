@@ -15,16 +15,6 @@ min_overall_hours = 10
 [rules]
 time = 180.0
 
-[queue]
-enabled = true
-alt_servers = true
-
-[tts]
-enabled = true
-
-[discord_auth]
-enabled = true
-
 [hub]
 advertise = true
 tags = "lang:ru,rp:med,region:eu_e,tts"
