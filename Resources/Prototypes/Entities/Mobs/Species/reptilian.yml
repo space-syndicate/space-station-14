@@ -21,7 +21,7 @@
   - type: Body
     prototype: Reptilian
     requiredLegs: 2
-  - type: Inventory
+  - type: Inventory # Corvax-Digitigrade
     speciesId: digi
   - type: Perishable
   - type: Butcherable
@@ -70,7 +70,7 @@
   components:
   - type: HumanoidAppearance
     species: Reptilian
-  - type: Inventory
+  - type: Inventory # Corvax-Digitigrade
     speciesId: digi
 
 #Weh
