@@ -1,2 +1,2 @@
-ent-AsteroidCrabSpawner = Asteroid Crab Spawner
+ent-AsteroidCrabSpawner = спавнер астероид рудный краб
     .desc = { ent-MarkerBase.desc }
