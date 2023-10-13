@@ -1,48 +1,4 @@
 Entries:
-- author: metalgearsloth
-  changes:
-  - {message: Added toggle to hide clothing in the character editor., type: Add}
-  id: 4493
-  time: '2023-08-09T06:26:34.0000000+00:00'
-- author: Vordenburg
-  changes:
-  - {message: Diona are no longer inhibited by kudzu., type: Tweak}
-  id: 4494
-  time: '2023-08-09T15:24:41.0000000+00:00'
-- author: themias
-  changes:
-  - {message: Taxibots have robot speech bubbles, type: Tweak}
-  id: 4495
-  time: '2023-08-09T16:48:08.0000000+00:00'
-- author: Ilya246
-  changes:
-  - {message: The air alarm UI now allows copying settings of one device to all similar
-      devices., type: Add}
-  id: 4496
-  time: '2023-08-09T18:20:20.0000000+00:00'
-- author: Nairodian
-  changes:
-  - {message: 'Changed Dark & Bushy, Death''s-Head, Firewatch, Moffra, Plasmafire,
-      and Royal moth wings to now have two separate color layers.', type: Tweak}
-  id: 4497
-  time: '2023-08-10T01:32:01.0000000+00:00'
-- author: Interrobang01
-  changes:
-  - {message: Added Mustard. It can be found in condiment stations., type: Add}
-  - {message: 'Mixing bleach and ammonia will now create... well, at least they got
-      the smell right.', type: Add}
-  id: 4498
-  time: '2023-08-10T01:38:37.0000000+00:00'
-- author: Doru991
-  changes:
-  - {message: 'Emagging the NutriMax will give a bottle of left-4-zed, for when you
-      need kudzu ASAP.', type: Add}
-  - {message: 'Since it got lost in translation last time, the NutriMax also has EZ
-      nutrient to satisfy increased nutrient demand.', type: Add}
-  - {message: New and improved formulas have increased the effectiveness of EZ nutrient
-      and Left-4-Zed., type: Tweak}
-  id: 4499
-  time: '2023-08-10T01:43:07.0000000+00:00'
 - author: crazybrain
   changes:
   - {message: Admin ghosts can now analyse solutions easier., type: Tweak}
@@ -2956,3 +2912,41 @@ Entries:
       inside., type: Tweak}
   id: 4992
   time: '2023-10-11T09:22:09.0000000+00:00'
+- author: Skarletto
+  changes:
+  - {message: Changed unary devices such as scrubbers and vents to not be able to
+      stack with each other, type: Tweak}
+  id: 4993
+  time: '2023-10-11T15:20:21.0000000+00:00'
+- author: ElectroJr
+  changes:
+  - {message: Fixed explosion resistance from clothing/equipment not being applied.,
+    type: Fix}
+  id: 4994
+  time: '2023-10-11T16:31:10.0000000+00:00'
+- author: JoeHammad
+  changes:
+  - {message: The nukie ship now has syndicate access airlocks, type: Add}
+  id: 4995
+  time: '2023-10-11T16:47:25.0000000+00:00'
+- author: notafet
+  changes:
+  - {message: Carbon dioxide poisoning is now more deadly. Victims of carbon dioxide
+      poisoning now gasp visibly., type: Tweak}
+  id: 4996
+  time: '2023-10-12T07:35:31.0000000+00:00'
+- author: Ubaser
+  changes:
+  - {message: Revamped the Paramedic Void Suit sprite., type: Tweak}
+  id: 4997
+  time: '2023-10-12T22:20:24.0000000+00:00'
+- author: pigeonpeas
+  changes:
+  - {message: Reptilians can now choose to have floppy kobold ears., type: Add}
+  id: 4998
+  time: '2023-10-13T01:30:31.0000000+00:00'
+- author: TheShuEd
+  changes:
+  - {message: Animals now give cute hearts when you pet them., type: Add}
+  id: 4999
+  time: '2023-10-13T17:34:18.0000000+00:00'
