@@ -47,7 +47,7 @@ jobs:
         run: |
           cd RobustToolbox/
           git submodule update --init --recursive
-          
+
       # Corvax-Secrets-Start
       - name: Setup secrets
         env:
@@ -76,6 +76,8 @@ jobs:
           Tools/package_client_build.py
 
       - name: Update Build Info
+        env:
+          FORK_ID: ${{ vars.FORK_ID }}
         run: Tools/gen_build_info.py
 
       - name: Shuffle files around

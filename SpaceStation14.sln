@@ -127,6 +127,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Robust.Shared.CompNetworkGe
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Robust.Serialization.Generator", "RobustToolbox\Robust.Serialization.Generator\Robust.Serialization.Generator.csproj", "{6FBF108E-5CB5-47DE-8D7E-B496ABA9E3E2}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Content.PatreonParser", "Content.PatreonParser\Content.PatreonParser.csproj", "{D97D8258-D915-4D1D-B1E3-1A8D00CF9EB5}"
+EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Corvax Interfaces", "Corvax Interfaces", "{DA6E23AF-5AC1-43C8-831D-812A2A758731}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Content.Corvax.Interfaces.Shared", "Corvax\Content.Corvax.Interfaces.Shared\Content.Corvax.Interfaces.Shared.csproj", "{F9F78EE1-1FBE-43F9-8E86-78327FE330DB}"
@@ -438,6 +440,14 @@ Global
 		{6FBF108E-5CB5-47DE-8D7E-B496ABA9E3E2}.DebugOpt|Any CPU.Build.0 = Debug|Any CPU
 		{6FBF108E-5CB5-47DE-8D7E-B496ABA9E3E2}.Tools|Any CPU.ActiveCfg = Debug|Any CPU
 		{6FBF108E-5CB5-47DE-8D7E-B496ABA9E3E2}.Tools|Any CPU.Build.0 = Debug|Any CPU
+		{D97D8258-D915-4D1D-B1E3-1A8D00CF9EB5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D97D8258-D915-4D1D-B1E3-1A8D00CF9EB5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D97D8258-D915-4D1D-B1E3-1A8D00CF9EB5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D97D8258-D915-4D1D-B1E3-1A8D00CF9EB5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D97D8258-D915-4D1D-B1E3-1A8D00CF9EB5}.DebugOpt|Any CPU.ActiveCfg = Debug|Any CPU
+		{D97D8258-D915-4D1D-B1E3-1A8D00CF9EB5}.DebugOpt|Any CPU.Build.0 = Debug|Any CPU
+		{D97D8258-D915-4D1D-B1E3-1A8D00CF9EB5}.Tools|Any CPU.ActiveCfg = Debug|Any CPU
+		{D97D8258-D915-4D1D-B1E3-1A8D00CF9EB5}.Tools|Any CPU.Build.0 = Debug|Any CPU
 		{F9F78EE1-1FBE-43F9-8E86-78327FE330DB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{F9F78EE1-1FBE-43F9-8E86-78327FE330DB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F9F78EE1-1FBE-43F9-8E86-78327FE330DB}.Release|Any CPU.ActiveCfg = Release|Any CPU

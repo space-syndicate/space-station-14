@@ -8,15 +8,6 @@
   },
   "states": [
     {
-      "name": "clipboard"
-    },
-    {
-      "name": "clipboard_over"
-    },
-    {
-      "name": "clipboard_pen"
-    },
-    {
       "name": "envelope_closed"
     },
     {
@@ -311,12 +302,8 @@
     {
       "name": "stamp-warden"
     },
-	{
-      "name": "stamp-psychologist"
-    },
     {
-      "name": "clipboard-equipped-BELT",
-      "directions": 4
+      "name": "stamp-psychologist"
     }
   ]
 }
