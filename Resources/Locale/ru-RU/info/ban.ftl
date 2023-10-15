@@ -70,6 +70,7 @@ ban-panel-ip-hwid-tooltip = Leave empty and check the checkbox below to use last
 ban-panel-severity = Severity:
 # Ban string
 server-ban-string = { $admin } created a { $severity } severity server ban that expires { $expires } for [{ $name }, { $ip }, { $hwid }], with reason: { $reason }
+ban-panel-erase = Erase chat messages and player from round
 server-ban-string-never = never
 server-ban-string-no-pii = { $admin } created a { $severity } severity server ban that expires { $expires } for { $name } with reason: { $reason }
 cmd-ban_exemption_get-arg-player = <player>
