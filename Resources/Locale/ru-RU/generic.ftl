@@ -8,3 +8,4 @@ generic-unknown-title = Неизвестно
 generic-error = ошибка
 generic-invalid = недействительно
 generic-hours = hours
+generic-playtime-title = Playtime
