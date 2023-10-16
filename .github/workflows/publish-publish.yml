@@ -58,4 +58,4 @@ jobs:
         host: ${{ secrets.BUILDS_HOST }}
         username: ${{ secrets.BUILDS_USERNAME }}
         key: ${{ secrets.BUILDS_SSH_KEY }}
-        script: node ~/scripts/generate_html_page.js -fork syndicate-public -id ${{ github.sha }}
+        script: node ~/scripts/generate_html_page.js -fork ${{ vars.FORK_ID_PUBLIC }} -id ${{ github.sha }}
