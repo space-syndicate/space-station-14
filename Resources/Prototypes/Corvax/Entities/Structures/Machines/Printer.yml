@@ -1,0 +1,150 @@
+- type: entity
+  parent: BaseLathe
+  id: Printer
+  name: Принтер документов
+  description: Уникальная разработка на NanoTrasen.
+  components:
+  - type: Sprite
+    sprite: Corvax/Structures/Machines/printer.rsi
+    snapCardinals: true
+    layers:
+    - state: icon
+      map: ["enum.LatheVisualLayers.IsRunning"]
+    - state: idle
+      shader: unshaded
+      map: ["enum.PowerDeviceVisualLayers.Powered"]
+    - state: inserting
+      map: ["enum.MaterialStorageVisualLayers.Inserting"]
+    - state: panel
+      map: ["enum.WiresVisualLayers.MaintenancePanel"]
+  - type: Transform
+    noRot: false
+  - type: Machine
+  - type: Lathe
+    producingSound: /Audio/Machines/scanning.ogg
+    idleState: idle
+    runningState: building
+    staticRecipes:
+      - ReportStationRecipe
+      - ReporDepartmentRecipe
+      - ReportEmployeePerformanceRecipe
+      - ReportOnTheChaptersMeetingRecipe
+      - InternalAffairsAgentsReportRecipe
+      - ConditionReportRecipe
+      - ReportStudyObjectRecipe
+      - DisposalReportRecipe
+      - ApplicationAppointmentInterimRecipe
+      - ApplicationEmploymentRecipe
+      - LetterResignationRecipe
+      - ApplicationAccessRecipe
+      - ApplicationEquipmentRecipe
+      - EvacuationShuttleRequestRecipe
+      - ShuttleRegistrationRequestRecipe
+      - RequestCallMembersCentralCommitteeDSORecipe
+      - RequestChangeSalaryRecipe
+      - RequestNonListedEmploymentRecipe
+      - RequestDocumentsRecipe
+      - RequestEuthanasiaRecipe
+      - RequestConstructionWorkRecipe
+      - RequestModernizationRecipe
+      - ComplaintViolationLaborRulesRecipe
+      - PermissionEquipmentRecipe
+      - SearchPermissionRecipe
+      - PermissionWeaponsRecipe
+      - PrescriptionDrugAuthorizationRecipe
+      - PermissionDisposeBodyRecipe
+      - ConstructionPermitRecipe
+      - OrderDismissalRecipe
+      - OrderDeprivationAccessRecipe
+      - OrderEncouragementRecipe
+      - OrderParolePrisonerRecipe
+      - OrderRecognizingSentienceCreatureRecipe
+      - OrderMedicalInterventionRecipe
+      - ProductManufacturingOrderRecipe
+      - OrderPurchaseResourcesEquipmentRecipe
+      - OrderingSpecialEquipmentRecipe
+      - OrderPurchaseWeaponsRecipe
+      - CertificateRecipe
+      - CertificateAdvancedTrainingRecipe
+      - CertificateOffenseRecipe
+      - DeathCertificateRecipe
+      - MarriageCertificateRecipe
+      - DivorceCertificateRecipe
+      - ClosingIndictmentRecipe
+      - SentenceRecipe
+      - StatementHealtheRecipe
+  - type: EmagLatheRecipes
+    emagStaticRecipes:
+        - NOTICEOFLIQUIDATIONRecipe
+        - BUSINESSDEALRecipe
+        - NOTEBEGINNINGMILITARYACTIONSRecipe
+        - REPORTACCOMPLISHMENTGOALSRecipe
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.25,-0.25,0.25,0.25"
+        density: 25
+        mask:
+        - TabletopMachineMask
+        layer:
+        - TabletopMachineLayer
+  - type: MaterialStorage
+    whitelist:
+      tags:
+      - Document
+    storage:
+      SheetPrinter: 500
+
+
+- type: entity
+  parent: Printer
+  id: ComputerCriminalRecords
+  name: Принтер документов
+  suffix: Консоль криминалистических записей
+  description: Уникальная разработка на NanoTrasen.
+  components:
+  - type: Sprite
+    sprite: Corvax/Structures/Machines/printer.rsi
+    snapCardinals: true
+    layers:
+    - state: icon
+      map: ["enum.LatheVisualLayers.IsRunning"]
+    - state: idle
+      shader: unshaded
+      map: ["enum.PowerDeviceVisualLayers.Powered"]
+    - state: inserting
+      map: ["enum.MaterialStorageVisualLayers.Inserting"]
+    - state: panel
+      map: ["enum.WiresVisualLayers.MaintenancePanel"]
+  - type: Lathe
+    producingSound: /Audio/Machines/scanning.ogg
+    idleState: icon
+    runningState: building
+
+- type: entity
+  parent: Printer
+  id: ComputerAlert
+  name: Принтер документов
+  suffix: Консоль оповещений
+  description: Уникальная разработка на NanoTrasen.
+  components:
+  - type: Sprite
+    sprite: Corvax/Structures/Machines/printer.rsi
+    snapCardinals: true
+    layers:
+    - state: icon
+      map: ["enum.LatheVisualLayers.IsRunning"]
+    - state: idle
+      shader: unshaded
+      map: ["enum.PowerDeviceVisualLayers.Powered"]
+    - state: inserting
+      map: ["enum.MaterialStorageVisualLayers.Inserting"]
+    - state: panel
+      map: ["enum.WiresVisualLayers.MaintenancePanel"]
+  - type: Lathe
+    producingSound: /Audio/Machines/scanning.ogg
+    idleState: icon
+    runningState: building
+
