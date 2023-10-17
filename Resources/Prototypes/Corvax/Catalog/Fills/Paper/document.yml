@@ -232,7 +232,7 @@
   description: Напечатано на принтере
   components:
     - type: Paper
-      content: >-
+      content: doc-text-printer-SearchPermission
 
 - type: entity
   parent: Paper
@@ -394,7 +394,7 @@
   description: Напечатано на принтере
   components:
     - type: Paper
-      content: DeathCertificate
+      content: doc-text-printer-DeathCertificate
 
 - type: entity
   parent: Paper
