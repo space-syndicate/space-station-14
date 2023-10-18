@@ -1,4 +1,4 @@
-ent-ComputerAlert = Принтер документов
+ent-ComputerAlert = принтер документов
     .desc = Уникальная разработка на NanoTrasen.
 ent-ComputerEmergencyShuttle = консоль аварийного шаттла
     .desc = Выдает разрешение на досрочный запуск шаттла.

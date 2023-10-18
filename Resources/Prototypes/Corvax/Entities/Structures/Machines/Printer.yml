@@ -1,7 +1,7 @@
 - type: entity
   parent: BaseLathe
   id: Printer
-  name: Принтер документов
+  name: принтер документов
   description: Уникальная разработка на NanoTrasen.
   components:
   - type: Sprite
@@ -101,7 +101,7 @@
 - type: entity
   parent: Printer
   id: ComputerCriminalRecords
-  name: Принтер документов
+  name: принтер документов
   suffix: Консоль криминалистических записей
   description: Уникальная разработка на NanoTrasen.
   components:
@@ -126,7 +126,7 @@
 - type: entity
   parent: Printer
   id: ComputerAlert
-  name: Принтер документов
+  name: принтер документов
   suffix: Консоль оповещений
   description: Уникальная разработка на NanoTrasen.
   components:
