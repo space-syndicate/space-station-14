@@ -79,7 +79,7 @@ jobs:
         host: ${{ secrets.BUILDS_HOST }}
         username: ${{ secrets.BUILDS_USERNAME }}
         key: ${{ secrets.BUILDS_SSH_KEY }}
-        script: node ~/scripts/push_to_manifest.js -fork syndicate -id ${{ github.sha }}
+        script: node ~/scripts/push_to_manifest.js -fork ${{ vars.FORK_ID }} -id ${{ github.sha }}
 
 #    - name: Publish changelog (Discord)
 #      run: Tools/actions_changelogs_since_last_run.py
