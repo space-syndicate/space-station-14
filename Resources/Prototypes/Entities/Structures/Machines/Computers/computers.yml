@@ -1,23 +1,21 @@
-#Corvax-Printer-Start
-# - type: entity
-#   parent: BaseComputer
-#   id: ComputerAlert
-#   name: alerts computer
-#   description: Used to access the station's automated alert system.
-#   components:
-#   - type: Computer
-#     board: AlertsComputerCircuitboard
-#   - type: Sprite
-#     layers:
-#     - map: ["computerLayerBody"]
-#       state: computer
-#     - map: ["computerLayerKeyboard"]
-#       state: generic_keyboard
-#     - map: ["computerLayerScreen"]
-#       state: alert-2
-#     - map: ["computerLayerKeys"]
-#       state: atmos_key
-#Corvax-Printer-End
+- type: entity
+  parent: BaseComputer
+  id: ComputerAlert
+  name: alerts computer
+  description: Used to access the station's automated alert system.
+  components:
+  - type: Computer
+    board: AlertsComputerCircuitboard
+  - type: Sprite
+    layers:
+    - map: ["computerLayerBody"]
+      state: computer
+    - map: ["computerLayerKeyboard"]
+      state: generic_keyboard
+    - map: ["computerLayerScreen"]
+      state: alert-2
+    - map: ["computerLayerKeys"]
+      state: atmos_key
 
 - type: entity
   parent: BaseComputer
@@ -277,30 +275,29 @@
   - type: Computer
     board: MedicalRecordsComputerCircuitboard
 
-#Corvax-Printer-Start
-# - type: entity
-#   parent: BaseComputer
-#   id: ComputerCriminalRecords
-#   name: criminal records computer
-#   description: This can be used to check criminal records.
-#   components:
-#   - type: Sprite
-#     layers:
-#     - map: ["computerLayerBody"]
-#       state: computer
-#     - map: ["computerLayerKeyboard"]
-#       state: generic_keyboard
-#     - map: ["computerLayerScreen"]
-#       state: explosive
-#     - map: ["computerLayerKeys"]
-#       state: security_key
-#   - type: PointLight
-#     radius: 1.5
-#     energy: 1.6
-#     color: "#1f8c28"
-#   - type: Computer
-#     board: CriminalRecordsComputerCircuitboard
-#Corvax-Printer-End
+- type: entity
+  parent: BaseComputer
+  id: ComputerCriminalRecords
+  name: criminal records computer
+  description: This can be used to check criminal records.
+  components:
+  - type: Sprite
+    layers:
+    - map: ["computerLayerBody"]
+      state: computer
+    - map: ["computerLayerKeyboard"]
+      state: generic_keyboard
+    - map: ["computerLayerScreen"]
+      state: explosive
+    - map: ["computerLayerKeys"]
+      state: security_key
+  - type: PointLight
+    radius: 1.5
+    energy: 1.6
+    color: "#1f8c28"
+  - type: Computer
+    board: CriminalRecordsComputerCircuitboard
+
 - type: entity
   parent: BaseComputer
   id: ComputerStationRecords
