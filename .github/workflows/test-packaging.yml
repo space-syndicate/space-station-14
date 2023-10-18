@@ -34,7 +34,7 @@ jobs:
 
     steps:
       - name: Checkout Master
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3.6.0
 
       - name: Setup Submodule
         run: |
@@ -47,7 +47,7 @@ jobs:
         run: |
           cd RobustToolbox/
           git submodule update --init --recursive
-          
+
       # Corvax-Secrets-Start
       - name: Setup secrets
         env:
@@ -63,9 +63,9 @@ jobs:
       # Corvax-Secrets-End
 
       - name: Setup .NET Core
-        uses: actions/setup-dotnet@v3
+        uses: actions/setup-dotnet@v3.2.0
         with:
-          dotnet-version: 6.0.x
+          dotnet-version: 7.0.x
 
       - name: Install dependencies
         run: dotnet restore
@@ -76,6 +76,8 @@ jobs:
           Tools/package_client_build.py
 
       - name: Update Build Info
+        env:
+          FORK_ID: ${{ vars.FORK_ID }}
         run: Tools/gen_build_info.py
 
       - name: Shuffle files around

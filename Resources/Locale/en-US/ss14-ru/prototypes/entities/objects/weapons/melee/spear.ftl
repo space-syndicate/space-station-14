@@ -6,3 +6,5 @@ ent-SpearPlasma = plasma spear
     .desc = A spear with a plasma shard as a tip.
 ent-SpearUranium = uranium spear
     .desc = A spear with a uranium shard as a tip.
+ent-SpearBone = bone spear
+    .desc = A spear made of bones.

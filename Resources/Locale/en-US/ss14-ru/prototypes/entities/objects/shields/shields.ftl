@@ -18,3 +18,5 @@ ent-EnergyShield = energy shield
     .desc = Exotic energy shield, when folded, can even fit in your pocket.
 ent-BrokenEnergyShield = broken energy shield
     .desc = Something inside is burned out, it is no longer functional.
+ent-TelescopicShield = telescopic shield
+    .desc = An advanced riot shield made of lightweight materials that collapses for easy storage.

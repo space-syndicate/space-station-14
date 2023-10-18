@@ -14,3 +14,5 @@ ent-SilverDoor = silver door
     .desc = A door, where will it lead?
 ent-BananiumDoor = bananium door
     .desc = A door, where will it lead?
+ent-WebDoor = web door
+    .desc = A door, leading to the lands of the spiders... or a spaced room.

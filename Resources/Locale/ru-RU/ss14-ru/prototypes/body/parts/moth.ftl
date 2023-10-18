@@ -1,32 +1,22 @@
 ent-PartMoth = часть тела нианы
-  .desc = { ent-['BaseItem', 'BasePart'].desc }
-
+    .desc = { ent-BasePart.desc }
 ent-TorsoMoth = торс нианы
-  .desc = { ent-['PartMoth', 'BaseTorso'].desc }
-
+    .desc = { ent-PartMoth.desc }
 ent-HeadMoth = голова нианы
-  .desc = { ent-['PartMoth', 'BaseHead'].desc }
-
+    .desc = { ent-PartMoth.desc }
 ent-LeftArmMoth = левая рука нианы
-  .desc = { ent-['PartMoth', 'BaseLeftArm'].desc }
-
+    .desc = { ent-PartMoth.desc }
 ent-RightArmMoth = правая рука нианы
-  .desc = { ent-['PartMoth', 'BaseRightArm'].desc }
-
+    .desc = { ent-PartMoth.desc }
 ent-LeftHandMoth = левая кисть нианы
-  .desc = { ent-['PartMoth', 'BaseLeftHand'].desc }
-
+    .desc = { ent-PartMoth.desc }
 ent-RightHandMoth = правая кисть нианы
-  .desc = { ent-['PartMoth', 'BaseRightHand'].desc }
-
+    .desc = { ent-PartMoth.desc }
 ent-LeftLegMoth = левая нога нианы
-  .desc = { ent-['PartMoth', 'BaseLeftLeg'].desc }
-
+    .desc = { ent-PartMoth.desc }
 ent-RightLegMoth = правая нога нианы
-  .desc = { ent-['PartMoth', 'BaseRightLeg'].desc }
-
+    .desc = { ent-PartMoth.desc }
 ent-LeftFootMoth = левая стопа нианы
-  .desc = { ent-['PartMoth', 'BaseLeftFoot'].desc }
-
+    .desc = { ent-PartMoth.desc }
 ent-RightFootMoth = правая стопа нианы
-  .desc = { ent-['PartMoth', 'BaseRightFoot'].desc }
+    .desc = { ent-PartMoth.desc }

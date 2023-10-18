@@ -106,6 +106,7 @@ flavor-complex-orange = как апельсины
 flavor-complex-watermelon = как арбуз
 flavor-complex-garlic = как чеснок
 flavor-complex-grape = как виноград
+flavor-complex-berry = как ягоды
 flavor-complex-meatballs = как фрикадельки
 flavor-complex-nettles = как крапива
 flavor-complex-jungle = как джунгли
@@ -152,6 +153,7 @@ flavor-complex-parents = как чьи-то родители
 flavor-complex-plastic = как пластик
 flavor-complex-glue = как клей
 flavor-complex-spaceshroom-cooked = как космический умами
+flavor-complex-lost-friendship = как прошедшая дружба
 
 ## Generic alcohol/soda taste. This should be replaced with an actual flavor profile.
 

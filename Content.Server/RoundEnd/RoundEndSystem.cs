@@ -90,7 +90,12 @@ namespace Content.Server.RoundEnd
             return _cooldownTokenSource == null;
         }
 
-        public void RequestRoundEnd(EntityUid? requester = null, bool checkCooldown = true, bool autoCall = false)
+        public bool IsRoundEndRequested()
+        {
+            return _countdownTokenSource != null;
+        }
+
+        public void RequestRoundEnd(EntityUid? requester = null, bool checkCooldown = true, string text = "round-end-system-shuttle-called-announcement", string name = "Station")
         {
             var duration = DefaultCountdownDuration;
 
@@ -105,10 +110,10 @@ namespace Content.Server.RoundEnd
                 }
             }
 
-            RequestRoundEnd(duration, requester, checkCooldown, autoCall);
+            RequestRoundEnd(duration, requester, checkCooldown, text, name);
         }
 
-        public void RequestRoundEnd(TimeSpan countdownTime, EntityUid? requester = null, bool checkCooldown = true, bool autoCall = false)
+        public void RequestRoundEnd(TimeSpan countdownTime, EntityUid? requester = null, bool checkCooldown = true, string text = "round-end-system-shuttle-called-announcement", string name = "Station")
         {
             if (_gameTicker.RunLevel != GameRunLevel.InRound) return;
 
@@ -141,29 +146,16 @@ namespace Content.Server.RoundEnd
                units = "eta-units-minutes";
             }
 
-            if (autoCall)
-            {
-                _chatSystem.DispatchGlobalAnnouncement(Loc.GetString("round-end-system-shuttle-auto-called-announcement",
-                    ("time", time),
-                    ("units", Loc.GetString(units))),
-                    Loc.GetString("Station"),
-                    false,
-                    null,
-                    Color.Gold);
-                SoundSystem.Play("/Audio/Corvax/Announcements/crew_s_called.ogg", Filter.Broadcast(), AudioParams.Default.AddVolume(-4)); // Corvax-Announcements
-            }
-            else
-            {
-                _chatSystem.DispatchGlobalAnnouncement(Loc.GetString("round-end-system-shuttle-called-announcement",
-                    ("time", time),
-                    ("units", Loc.GetString(units))),
-                    Loc.GetString("Station"),
-                    false,
-                    null,
-                    Color.Gold);
-            }
+            _chatSystem.DispatchGlobalAnnouncement(Loc.GetString(text,
+                ("time", time),
+                ("units", Loc.GetString(units))),
+                name,
+                false,
+                null,
+                Color.Gold);
 
-            if (!autoCall) SoundSystem.Play("/Audio/Announcements/shuttlecalled.ogg", Filter.Broadcast(), AudioParams.Default.AddVolume(-4)); // Corvax-Announcements: Custom sound for auto-called
+            if (!AutoCalledBefore) SoundSystem.Play("/Audio/Announcements/shuttlecalled.ogg", Filter.Broadcast(), AudioParams.Default.AddVolume(-4)); // Corvax-Announcements: Custom sound for auto-called
+            else SoundSystem.Play("/Audio/Corvax/Announcements/crew_s_called.ogg", Filter.Broadcast(), AudioParams.Default.AddVolume(-4)); // Corvax-Announcements
 
             LastCountdownStart = _gameTiming.CurTime;
             ExpectedCountdownEnd = _gameTiming.CurTime + countdownTime;
@@ -202,7 +194,7 @@ namespace Content.Server.RoundEnd
             RaiseLocalEvent(RoundEndSystemChangedEvent.Default);
         }
 
-        public void EndRound()
+        public void EndRound(TimeSpan? countdownTime = null)
         {
             if (_gameTicker.RunLevel != GameRunLevel.InRound) return;
             LastCountdownStart = null;
@@ -212,17 +204,17 @@ namespace Content.Server.RoundEnd
             _countdownTokenSource?.Cancel();
             _countdownTokenSource = new();
 
-            var countdownTime = TimeSpan.FromSeconds(_cfg.GetCVar(CCVars.RoundRestartTime));
+            countdownTime ??= TimeSpan.FromSeconds(_cfg.GetCVar(CCVars.RoundRestartTime));
             int time;
             string unitsLocString;
-            if (countdownTime.TotalSeconds < 60)
+            if (countdownTime.Value.TotalSeconds < 60)
             {
-                time = countdownTime.Seconds;
+                time = countdownTime.Value.Seconds;
                 unitsLocString = "eta-units-seconds";
             }
             else
             {
-                time = countdownTime.Minutes;
+                time = countdownTime.Value.Minutes;
                 unitsLocString = "eta-units-minutes";
             }
             _chatManager.DispatchServerAnnouncement(
@@ -230,7 +222,43 @@ namespace Content.Server.RoundEnd
                     "round-end-system-round-restart-eta-announcement",
                     ("time", time),
                     ("units", Loc.GetString(unitsLocString))));
-            Timer.Spawn(countdownTime, AfterEndRoundRestart, _countdownTokenSource.Token);
+            Timer.Spawn(countdownTime.Value, AfterEndRoundRestart, _countdownTokenSource.Token);
+        }
+
+        /// <summary>
+        /// Starts a behavior to end the round
+        /// </summary>
+        /// <param name="behavior">The way in which the round will end</param>
+        /// <param name="time"></param>
+        /// <param name="sender"></param>
+        /// <param name="textCall"></param>
+        /// <param name="textAnnounce"></param>
+        public void DoRoundEndBehavior(RoundEndBehavior behavior,
+            TimeSpan time,
+            string sender = "comms-console-announcement-title-centcom",
+            string textCall = "round-end-system-shuttle-called-announcement",
+            string textAnnounce = "round-end-system-shuttle-already-called-announcement")
+        {
+            switch (behavior)
+            {
+                case RoundEndBehavior.InstantEnd:
+                    EndRound();
+                    break;
+                case RoundEndBehavior.ShuttleCall:
+                    // Check is shuttle called or not. We should only dispatch announcement if it's already called
+                    if (IsRoundEndRequested())
+                    {
+                        _chatSystem.DispatchGlobalAnnouncement(Loc.GetString(textAnnounce),
+                            Loc.GetString(sender),
+                            colorOverride: Color.Gold);
+                    }
+                    else
+                    {
+                        RequestRoundEnd(time, null, false, textCall,
+                            Loc.GetString(sender));
+                    }
+                    break;
+            }
         }
 
         private void AfterEndRoundRestart()
@@ -261,8 +289,8 @@ namespace Content.Server.RoundEnd
             {
                 if (!_shuttle.EmergencyShuttleArrived && ExpectedCountdownEnd is null)
                 {
-                    RequestRoundEnd(null, false, true);
-                    AutoCalledBefore = true;
+                    AutoCalledBefore = true; // Corvax-Announcements: Move before call RequestRoundEnd to play correct announcement sound type
+                    RequestRoundEnd(null, false, "round-end-system-shuttle-auto-called-announcement");
                 }
 
                 // Always reset auto-call in case of a recall.
@@ -275,4 +303,22 @@ namespace Content.Server.RoundEnd
     {
         public static RoundEndSystemChangedEvent Default { get; } = new();
     }
+
+    public enum RoundEndBehavior : byte
+{
+        /// <summary>
+        /// Instantly end round
+        /// </summary>
+        InstantEnd,
+
+        /// <summary>
+        /// Call shuttle with custom announcement
+        /// </summary>
+        ShuttleCall,
+
+        /// <summary>
+        /// Do nothing
+        /// </summary>
+        Nothing
+}
 }
