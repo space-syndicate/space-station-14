@@ -1,10 +1,10 @@
-ent-Dart = dart
-    .desc = light throwing dart for playing darts. Don't get in the eye!
+ent-Dart = дротик
+    .desc = Лёгкий метательный дротик для игры в дартс. Не попадите в глаз!
 ent-DartBlue = { ent-Dart }
     .desc = { ent-Dart.desc }
 ent-DartPurple = { ent-Dart }
     .desc = { ent-Dart.desc }
 ent-DartYellow = { ent-Dart }
     .desc = { ent-Dart.desc }
-ent-TargetDarts = dartboard
-    .desc = A target for playing darts.
+ent-TargetDarts = доска для дартса
+    .desc = Мишень для игры в дартс.
