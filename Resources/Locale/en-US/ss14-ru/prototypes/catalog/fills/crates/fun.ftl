@@ -39,3 +39,5 @@ ent-CrateFunBikeHornImplants = { ent-CrateGenericSteel }
     .desc = { ent-CrateGenericSteel.desc }
 ent-CrateFunMysteryFigurines = { ent-CratePlastic }
     .desc = { ent-CratePlastic.desc }
+ent-CrateFunDartsSet = Dartboard Box Set
+    .desc = A box with everything you need for a fun game of darts.
