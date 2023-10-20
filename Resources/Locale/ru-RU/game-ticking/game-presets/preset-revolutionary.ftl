@@ -44,6 +44,7 @@ rev-title = Революционеры
 rev-description = Революционеры среди нас.
 rev-not-enough-ready-players = Недостаточно игроков готовы к игре! { $readyPlayersCount } игроков из необходимых { $minimumPlayers } готовы. Нельзя запустить пресет Революционеры.
 rev-no-one-ready = Нет готовых игроков! Нельзя запустить пресет Революционеры.
+rev-no-heads = There were no Head Revolutionaries to be selected. Can't start a Revolution.
 rev-all-heads-dead = Все главы мертвы, теперь разберитесь с оставшимися членами экипажа!
 rev-won = Главы революции выжили и уничтожили весь командный состав станции.
 rev-lost = Члены командного состава станции выжили и уничтожили всех Глав революции.

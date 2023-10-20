@@ -34,3 +34,5 @@ ent-CrateFunBikeHornImplants = ящик хонк-имплантов
     .desc = Тысяча гудков за день отпугнёт СБ на день!
 ent-CrateFunMysteryFigurines = ящик минифигурок Загадочные космонавты
     .desc = Коллекция из 10 коробок загадочных минифигурок. Дубликаты возврату не подлежат.
+ent-CrateFunDartsSet = Dartboard Box Set
+    .desc = A box with everything you need for a fun game of darts.
