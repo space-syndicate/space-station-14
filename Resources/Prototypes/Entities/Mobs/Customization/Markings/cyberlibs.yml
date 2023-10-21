@@ -3,7 +3,12 @@
   id: CyberlimbRArmBishop
   bodyPart: RArm
   markingCategory: Arms
-  #sponsorOnly: true
+  sponsorOnly: true
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+          color: "#FFFFFF"
   sprites:
     - sprite: Corvax/Mobs/Customization/Cyberlimbs/bishop.rsi
       state: r_arm
@@ -12,7 +17,12 @@
   id: CyberlimbLArmBishop
   bodyPart: LArm
   markingCategory: Arms
-  #sponsorOnly: true
+  sponsorOnly: true
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+          color: "#FFFFFF"
   sprites:
     - sprite: Corvax/Mobs/Customization/Cyberlimbs/bishop.rsi
       state: l_arm
@@ -21,7 +31,12 @@
   id: CyberlimbRHandBishop
   bodyPart: RHand
   markingCategory: Arms
-  #sponsorOnly: true
+  sponsorOnly: true
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+          color: "#FFFFFF"
   sprites:
     - sprite: Corvax/Mobs/Customization/Cyberlimbs/bishop.rsi
       state: r_hand
@@ -30,7 +45,12 @@
   id: CyberlimbLHandBishop
   bodyPart: LHand
   markingCategory: Arms
-  #sponsorOnly: true
+  sponsorOnly: true
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+          color: "#FFFFFF"
   sprites:
     - sprite: Corvax/Mobs/Customization/Cyberlimbs/bishop.rsi
       state: l_hand
@@ -39,7 +59,12 @@
   id: CyberlimbRLegBishop
   bodyPart: RLeg
   markingCategory: Legs
-  #sponsorOnly: true
+  sponsorOnly: true
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+          color: "#FFFFFF"
   sprites:
     - sprite: Corvax/Mobs/Customization/Cyberlimbs/bishop.rsi
       state: r_leg
@@ -48,7 +73,12 @@
   id: CyberlimbLLegBishop
   bodyPart: LLeg
   markingCategory: Legs
-  #sponsorOnly: true
+  sponsorOnly: true
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+          color: "#FFFFFF"
   sprites:
     - sprite: Corvax/Mobs/Customization/Cyberlimbs/bishop.rsi
       state: l_leg
@@ -57,7 +87,12 @@
   id: CyberlimbLFootBishop
   bodyPart: LFoot
   markingCategory: Legs
-  #sponsorOnly: true
+  sponsorOnly: true
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+          color: "#FFFFFF"
   sprites:
     - sprite: Corvax/Mobs/Customization/Cyberlimbs/bishop.rsi
       state: l_foot
@@ -66,7 +101,12 @@
   id: CyberlimbRFootBishop
   bodyPart: RFoot
   markingCategory: Legs
-  #sponsorOnly: true
+  sponsorOnly: true
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+          color: "#FFFFFF"
   sprites:
     - sprite: Corvax/Mobs/Customization/Cyberlimbs/bishop.rsi
       state: r_foot
@@ -75,7 +115,12 @@
   id: CyberlimbTorsoBishop
   bodyPart: Chest
   markingCategory: Chest
-  #sponsorOnly: true
+  sponsorOnly: true
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+          color: "#FFFFFF"
   sprites:
     - sprite: Corvax/Mobs/Customization/Cyberlimbs/bishop.rsi
       state: torso
@@ -85,7 +130,12 @@
   id: CyberlimbRArmHephaestus
   bodyPart: RArm
   markingCategory: Arms
-  #sponsorOnly: true
+  sponsorOnly: true
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+          color: "#FFFFFF"
   sprites:
     - sprite: Corvax/Mobs/Customization/Cyberlimbs/hephaestus.rsi
       state: r_arm
@@ -94,7 +144,12 @@
   id: CyberlimbLArmHephaestus
   bodyPart: LArm
   markingCategory: Arms
-  #sponsorOnly: true
+  sponsorOnly: true
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+          color: "#FFFFFF"
   sprites:
     - sprite: Corvax/Mobs/Customization/Cyberlimbs/hephaestus.rsi
       state: l_arm
@@ -103,7 +158,12 @@
   id: CyberlimbRHandHephaestus
   bodyPart: RHand
   markingCategory: Arms
-  #sponsorOnly: true
+  sponsorOnly: true
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+          color: "#FFFFFF"
   sprites:
     - sprite: Corvax/Mobs/Customization/Cyberlimbs/hephaestus.rsi
       state: r_hand
@@ -112,7 +172,12 @@
   id: CyberlimbLHandHephaestus
   bodyPart: LHand
   markingCategory: Arms
-  #sponsorOnly: true
+  sponsorOnly: true
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+          color: "#FFFFFF"
   sprites:
     - sprite: Corvax/Mobs/Customization/Cyberlimbs/hephaestus.rsi
       state: l_hand
@@ -121,7 +186,12 @@
   id: CyberlimbRLegHephaestus
   bodyPart: RLeg
   markingCategory: Legs
-  #sponsorOnly: true
+  sponsorOnly: true
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+          color: "#FFFFFF"
   sprites:
     - sprite: Corvax/Mobs/Customization/Cyberlimbs/hephaestus.rsi
       state: r_leg
@@ -130,7 +200,12 @@
   id: CyberlimbLLegHephaestus
   bodyPart: LLeg
   markingCategory: Legs
-  #sponsorOnly: true
+  sponsorOnly: true
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+          color: "#FFFFFF"
   sprites:
     - sprite: Corvax/Mobs/Customization/Cyberlimbs/hephaestus.rsi
       state: l_leg
@@ -139,7 +214,12 @@
   id: CyberlimbLFootHephaestus
   bodyPart: LFoot
   markingCategory: Legs
-  #sponsorOnly: true
+  sponsorOnly: true
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+          color: "#FFFFFF"
   sprites:
     - sprite: Corvax/Mobs/Customization/Cyberlimbs/hephaestus.rsi
       state: l_foot
@@ -148,7 +228,12 @@
   id: CyberlimbRFootHephaestus
   bodyPart: RFoot
   markingCategory: Legs
-  #sponsorOnly: true
+  sponsorOnly: true
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+          color: "#FFFFFF"
   sprites:
     - sprite: Corvax/Mobs/Customization/Cyberlimbs/hephaestus.rsi
       state: r_foot
@@ -157,7 +242,12 @@
   id: CyberlimbTorsoHephaestus
   bodyPart: Chest
   markingCategory: Chest
-  #sponsorOnly: true
+  sponsorOnly: true
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+          color: "#FFFFFF"
   sprites:
     - sprite: Corvax/Mobs/Customization/Cyberlimbs/hephaestus.rsi
       state: torso
@@ -167,7 +257,12 @@
   id: CyberlimbRArmHephaestusTitan
   bodyPart: RArm
   markingCategory: Arms
-  #sponsorOnly: true
+  sponsorOnly: true
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+          color: "#FFFFFF"
   sprites:
     - sprite: Corvax/Mobs/Customization/Cyberlimbs/hephaestus_titan.rsi
       state: r_arm
@@ -176,7 +271,12 @@
   id: CyberlimbLArmHephaestusTitan
   bodyPart: LArm
   markingCategory: Arms
-  #sponsorOnly: true
+  sponsorOnly: true
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+          color: "#FFFFFF"
   sprites:
     - sprite: Corvax/Mobs/Customization/Cyberlimbs/hephaestus_titan.rsi
       state: l_arm
@@ -185,7 +285,12 @@
   id: CyberlimbRHandHephaestusTitan
   bodyPart: RHand
   markingCategory: Arms
-  #sponsorOnly: true
+  sponsorOnly: true
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+          color: "#FFFFFF"
   sprites:
     - sprite: Corvax/Mobs/Customization/Cyberlimbs/hephaestus_titan.rsi
       state: r_hand
@@ -194,7 +299,12 @@
   id: CyberlimbLHandHephaestusTitan
   bodyPart: LHand
   markingCategory: Arms
-  #sponsorOnly: true
+  sponsorOnly: true
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+          color: "#FFFFFF"
   sprites:
     - sprite: Corvax/Mobs/Customization/Cyberlimbs/hephaestus_titan.rsi
       state: l_hand
@@ -203,7 +313,12 @@
   id: CyberlimbRLegHephaestusTitan
   bodyPart: RLeg
   markingCategory: Legs
-  #sponsorOnly: true
+  sponsorOnly: true
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+          color: "#FFFFFF"
   sprites:
     - sprite: Corvax/Mobs/Customization/Cyberlimbs/hephaestus_titan.rsi
       state: r_leg
@@ -212,7 +327,12 @@
   id: CyberlimbLLegHephaestusTitan
   bodyPart: LLeg
   markingCategory: Legs
-  #sponsorOnly: true
+  sponsorOnly: true
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+          color: "#FFFFFF"
   sprites:
     - sprite: Corvax/Mobs/Customization/Cyberlimbs/hephaestus_titan.rsi
       state: l_leg
@@ -221,7 +341,12 @@
   id: CyberlimbLFootHephaestusTitan
   bodyPart: LFoot
   markingCategory: Legs
-  #sponsorOnly: true
+  sponsorOnly: true
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+          color: "#FFFFFF"
   sprites:
     - sprite: Corvax/Mobs/Customization/Cyberlimbs/hephaestus_titan.rsi
       state: l_foot
@@ -230,7 +355,12 @@
   id: CyberlimbRFootHephaestusTitan
   bodyPart: RFoot
   markingCategory: Legs
-  #sponsorOnly: true
+  sponsorOnly: true
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+          color: "#FFFFFF"
   sprites:
     - sprite: Corvax/Mobs/Customization/Cyberlimbs/hephaestus_titan.rsi
       state: r_foot
@@ -239,7 +369,12 @@
   id: CyberlimbTorsoHephaestusTitan
   bodyPart: Chest
   markingCategory: Chest
-  #sponsorOnly: true
+  sponsorOnly: true
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+          color: "#FFFFFF"
   sprites:
     - sprite: Corvax/Mobs/Customization/Cyberlimbs/hephaestus_titan.rsi
       state: torso
@@ -249,7 +384,12 @@
   id: CyberlimbRArmMorpheus
   bodyPart: RArm
   markingCategory: Arms
-  #sponsorOnly: true
+  sponsorOnly: true
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+          color: "#FFFFFF"
   sprites:
     - sprite: Corvax/Mobs/Customization/Cyberlimbs/morpheus.rsi
       state: r_arm
@@ -258,7 +398,12 @@
   id: CyberlimbLArmMorpheus
   bodyPart: LArm
   markingCategory: Arms
-  #sponsorOnly: true
+  sponsorOnly: true
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+          color: "#FFFFFF"
   sprites:
     - sprite: Corvax/Mobs/Customization/Cyberlimbs/morpheus.rsi
       state: l_arm
@@ -267,7 +412,12 @@
   id: CyberlimbRHandMorpheus
   bodyPart: RHand
   markingCategory: Arms
-  #sponsorOnly: true
+  sponsorOnly: true
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+          color: "#FFFFFF"
   sprites:
     - sprite: Corvax/Mobs/Customization/Cyberlimbs/morpheus.rsi
       state: r_hand
@@ -276,7 +426,12 @@
   id: CyberlimbLHandMorpheus
   bodyPart: LHand
   markingCategory: Arms
-  #sponsorOnly: true
+  sponsorOnly: true
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+          color: "#FFFFFF"
   sprites:
     - sprite: Corvax/Mobs/Customization/Cyberlimbs/morpheus.rsi
       state: l_hand
@@ -285,7 +440,12 @@
   id: CyberlimbRLegMorpheus
   bodyPart: RLeg
   markingCategory: Legs
-  #sponsorOnly: true
+  sponsorOnly: true
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+          color: "#FFFFFF"
   sprites:
     - sprite: Corvax/Mobs/Customization/Cyberlimbs/morpheus.rsi
       state: r_leg
@@ -294,7 +454,12 @@
   id: CyberlimbLLegMorpheus
   bodyPart: LLeg
   markingCategory: Legs
-  #sponsorOnly: true
+  sponsorOnly: true
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+          color: "#FFFFFF"
   sprites:
     - sprite: Corvax/Mobs/Customization/Cyberlimbs/morpheus.rsi
       state: l_leg
@@ -303,7 +468,12 @@
   id: CyberlimbLFootMorpheus
   bodyPart: LFoot
   markingCategory: Legs
-  #sponsorOnly: true
+  sponsorOnly: true
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+          color: "#FFFFFF"
   sprites:
     - sprite: Corvax/Mobs/Customization/Cyberlimbs/morpheus.rsi
       state: l_foot
@@ -312,7 +482,12 @@
   id: CyberlimbRFootMorpheus
   bodyPart: RFoot
   markingCategory: Legs
-  #sponsorOnly: true
+  sponsorOnly: true
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+          color: "#FFFFFF"
   sprites:
     - sprite: Corvax/Mobs/Customization/Cyberlimbs/morpheus.rsi
       state: r_foot
@@ -321,7 +496,12 @@
   id: CyberlimbTorsoMorpheus
   bodyPart: Chest
   markingCategory: Chest
-  #sponsorOnly: true
+  sponsorOnly: true
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+          color: "#FFFFFF"
   sprites:
     - sprite: Corvax/Mobs/Customization/Cyberlimbs/morpheus.rsi
       state: torso
@@ -331,7 +511,12 @@
   id: CyberlimbRArmZenghu
   bodyPart: RArm
   markingCategory: Arms
-  #sponsorOnly: true
+  sponsorOnly: true
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+          color: "#FFFFFF"
   sprites:
     - sprite: Corvax/Mobs/Customization/Cyberlimbs/zenghu.rsi
       state: r_arm
@@ -340,7 +525,12 @@
   id: CyberlimbLArmZenghu
   bodyPart: LArm
   markingCategory: Arms
-  #sponsorOnly: true
+  sponsorOnly: true
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+          color: "#FFFFFF"
   sprites:
     - sprite: Corvax/Mobs/Customization/Cyberlimbs/zenghu.rsi
       state: l_arm
@@ -349,7 +539,12 @@
   id: CyberlimbRHandZenghu
   bodyPart: RHand
   markingCategory: Arms
-  #sponsorOnly: true
+  sponsorOnly: true
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+          color: "#FFFFFF"
   sprites:
     - sprite: Corvax/Mobs/Customization/Cyberlimbs/zenghu.rsi
       state: r_hand
@@ -358,7 +553,12 @@
   id: CyberlimbLHandZenghu
   bodyPart: LHand
   markingCategory: Arms
-  #sponsorOnly: true
+  sponsorOnly: true
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+          color: "#FFFFFF"
   sprites:
     - sprite: Corvax/Mobs/Customization/Cyberlimbs/zenghu.rsi
       state: l_hand
@@ -367,7 +567,12 @@
   id: CyberlimbRLegZenghu
   bodyPart: RLeg
   markingCategory: Legs
-  #sponsorOnly: true
+  sponsorOnly: true
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+          color: "#FFFFFF"
   sprites:
     - sprite: Corvax/Mobs/Customization/Cyberlimbs/zenghu.rsi
       state: r_leg
@@ -376,7 +581,12 @@
   id: CyberlimbLLegZenghu
   bodyPart: LLeg
   markingCategory: Legs
-  #sponsorOnly: true
+  sponsorOnly: true
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+          color: "#FFFFFF"
   sprites:
     - sprite: Corvax/Mobs/Customization/Cyberlimbs/zenghu.rsi
       state: l_leg
@@ -385,7 +595,12 @@
   id: CyberlimbLFootZenghu
   bodyPart: LFoot
   markingCategory: Legs
-  #sponsorOnly: true
+  sponsorOnly: true
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+          color: "#FFFFFF"
   sprites:
     - sprite: Corvax/Mobs/Customization/Cyberlimbs/zenghu.rsi
       state: l_foot
@@ -394,7 +609,12 @@
   id: CyberlimbRFootZenghu
   bodyPart: RFoot
   markingCategory: Legs
-  #sponsorOnly: true
+  sponsorOnly: true
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+          color: "#FFFFFF"
   sprites:
     - sprite: Corvax/Mobs/Customization/Cyberlimbs/zenghu.rsi
       state: r_foot
@@ -403,7 +623,12 @@
   id: CyberlimbTorsoZenghu
   bodyPart: Chest
   markingCategory: Chest
-  #sponsorOnly: true
+  sponsorOnly: true
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+          color: "#FFFFFF"
   sprites:
     - sprite: Corvax/Mobs/Customization/Cyberlimbs/zenghu.rsi
       state: torso
@@ -413,7 +638,12 @@
   id: CyberlimbRArmNanotrasen
   bodyPart: RArm
   markingCategory: Arms
-  #sponsorOnly: true
+  sponsorOnly: true
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+          color: "#FFFFFF"
   sprites:
     - sprite: Corvax/Mobs/Customization/Cyberlimbs/nanotrasen.rsi
       state: r_arm
@@ -422,7 +652,12 @@
   id: CyberlimbLArmNanotrasen
   bodyPart: LArm
   markingCategory: Arms
-  #sponsorOnly: true
+  sponsorOnly: true
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+          color: "#FFFFFF"
   sprites:
     - sprite: Corvax/Mobs/Customization/Cyberlimbs/nanotrasen.rsi
       state: l_arm
@@ -431,7 +666,12 @@
   id: CyberlimbRHandNanotrasen
   bodyPart: RHand
   markingCategory: Arms
-  #sponsorOnly: true
+  sponsorOnly: true
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+          color: "#FFFFFF"
   sprites:
     - sprite: Corvax/Mobs/Customization/Cyberlimbs/nanotrasen.rsi
       state: r_hand
@@ -440,7 +680,12 @@
   id: CyberlimbLHandNanotrasen
   bodyPart: LHand
   markingCategory: Arms
-  #sponsorOnly: true
+  sponsorOnly: true
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+          color: "#FFFFFF"
   sprites:
     - sprite: Corvax/Mobs/Customization/Cyberlimbs/nanotrasen.rsi
       state: l_hand
@@ -449,7 +694,12 @@
   id: CyberlimbRLegNanotrasen
   bodyPart: RLeg
   markingCategory: Legs
-  #sponsorOnly: true
+  sponsorOnly: true
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+          color: "#FFFFFF"
   sprites:
     - sprite: Corvax/Mobs/Customization/Cyberlimbs/nanotrasen.rsi
       state: r_leg
@@ -458,7 +708,12 @@
   id: CyberlimbLLegNanotrasen
   bodyPart: LLeg
   markingCategory: Legs
-  #sponsorOnly: true
+  sponsorOnly: true
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+          color: "#FFFFFF"
   sprites:
     - sprite: Corvax/Mobs/Customization/Cyberlimbs/nanotrasen.rsi
       state: l_leg
@@ -467,7 +722,12 @@
   id: CyberlimbLFootNanotrasen
   bodyPart: LFoot
   markingCategory: Legs
-  #sponsorOnly: true
+  sponsorOnly: true
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+          color: "#FFFFFF"
   sprites:
     - sprite: Corvax/Mobs/Customization/Cyberlimbs/nanotrasen.rsi
       state: l_foot
@@ -476,7 +736,12 @@
   id: CyberlimbRFootNanotrasen
   bodyPart: RFoot
   markingCategory: Legs
-  #sponsorOnly: true
+  sponsorOnly: true
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+          color: "#FFFFFF"
   sprites:
     - sprite: Corvax/Mobs/Customization/Cyberlimbs/nanotrasen.rsi
       state: r_foot
@@ -485,7 +750,12 @@
   id: CyberlimbTorsoNanotrasen
   bodyPart: Chest
   markingCategory: Chest
-  #sponsorOnly: true
+  sponsorOnly: true
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+          color: "#FFFFFF"
   sprites:
     - sprite: Corvax/Mobs/Customization/Cyberlimbs/nanotrasen.rsi
       state: torso
