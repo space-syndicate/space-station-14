@@ -10,7 +10,7 @@
       department: Security
       time: 36000
   startingGear: IAAGear
-  icon: "IAA"
+  icon: "JobIconIAA"
   supervisors: job-supervisors-centcom
   canBeAntag: false
   access:
@@ -19,6 +19,9 @@
     - Maintenance
     - Command
     - External
+  special:
+  - !type:AddImplantSpecial
+    implants: [ MindShieldImplant ]
 
 - type: startingGear
   id: IAAGear
@@ -30,6 +33,6 @@
     eyes: ClothingEyesGlassesSunglasses
     ears: ClothingHeadsetIAA
     neck: ClothingNeckLawyerbadge
-  innerclothingskirt: ClothingUniformJumpskirtLawyerBlack
+  innerClothingSkirt: ClothingUniformJumpskirtLawyerBlack
   satchel: ClothingBackpackSatchelIAAFilled
   duffelbag: ClothingBackpackDuffelIAAFilled

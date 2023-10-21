@@ -10,3 +10,5 @@ ent-ZiptiesBroken = broken zipties
     .desc = These zipties look like they tried to manage the wrong cables.
 ent-CablecuffsBroken = broken cables
     .desc = These cables are broken in several places and don't seem very useful.
+ent-ClothingOuterStraightjacket = straitjacket
+    .desc = Used to restrain those who may cause harm to themselves or others.

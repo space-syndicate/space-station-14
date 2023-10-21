@@ -6,9 +6,9 @@
   requirements:
     - !type:DepartmentTimeRequirement
       department: Engineering
-      time: 18000 # Corvax-RoleTime
+      time: 18000 #5 hrs # Corvax-RoleTime
   startingGear: StationEngineerGear
-  icon: "StationEngineer"
+  icon: "JobIconStationEngineer"
   supervisors: job-supervisors-ce
   access:
   - Maintenance
@@ -27,8 +27,8 @@
     outerClothing: ClothingOuterVestHazard
     id: EngineerPDA
     eyes: ClothingEyesGlassesMeson
-    belt: ClothingBeltUtilityFilled
+    belt: ClothingBeltUtilityEngineering
     ears: ClothingHeadsetEngineering
-  innerclothingskirt: ClothingUniformJumpskirtEngineering
+  innerClothingSkirt: ClothingUniformJumpskirtEngineering
   satchel: ClothingBackpackSatchelEngineeringFilled
   duffelbag: ClothingBackpackDuffelEngineeringFilled

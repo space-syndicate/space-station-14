@@ -4,6 +4,7 @@ using Content.Server.Popups;
 using Content.Server.Speech.Components;
 using Content.Server.Speech.EntitySystems;
 using Content.Shared.Chat.Prototypes;
+using Content.Shared.Puppet;
 using Content.Shared.Speech;
 
 namespace Content.Server.Speech.Muting
@@ -36,6 +37,7 @@ namespace Content.Server.Speech.Muting
 
             if (HasComp<MimePowersComponent>(uid))
                 _popupSystem.PopupEntity(Loc.GetString("mime-cant-speak"), uid, uid);
+
             else
                 _popupSystem.PopupEntity(Loc.GetString("speech-muted"), uid, uid);
             args.Handled = true;
@@ -44,10 +46,15 @@ namespace Content.Server.Speech.Muting
 
         private void OnSpeakAttempt(EntityUid uid, MutedComponent component, SpeakAttemptEvent args)
         {
+            // TODO something better than this.
+
             if (HasComp<MimePowersComponent>(uid))
                 _popupSystem.PopupEntity(Loc.GetString("mime-cant-speak"), uid, uid);
+            else if (HasComp<VentriloquistPuppetComponent>(uid))
+                _popupSystem.PopupEntity(Loc.GetString("ventriloquist-puppet-cant-speak"), uid, uid);
             else
                 _popupSystem.PopupEntity(Loc.GetString("speech-muted"), uid, uid);
+
             args.Cancel();
         }
     }

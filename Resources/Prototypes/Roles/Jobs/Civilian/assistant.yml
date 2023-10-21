@@ -4,9 +4,9 @@
   description: job-description-passenger
   playTimeTracker: JobPassenger
   startingGear: PassengerGear
-  icon: "Passenger"
+  icon: "JobIconPassenger"
   supervisors: job-supervisors-everyone
-#  access: # Corvax
+#  access: # Corvax-MRP
 #  - Maintenance
 
 - type: startingGear
@@ -17,6 +17,6 @@
     shoes: ClothingShoesColorBlack
     id: PassengerPDA
     ears: ClothingHeadsetGrey
-  innerclothingskirt: ClothingUniformJumpskirtColorGrey
+  innerClothingSkirt: ClothingUniformJumpskirtColorGrey
   satchel: ClothingBackpackSatchelFilled
   duffelbag: ClothingBackpackDuffelFilled

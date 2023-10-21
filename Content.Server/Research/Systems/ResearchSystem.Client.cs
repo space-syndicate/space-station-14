@@ -1,5 +1,4 @@
 using System.Diagnostics.CodeAnalysis;
-using System.Linq;
 using Content.Server.Power.EntitySystems;
 using Content.Shared.Research.Components;
 using Robust.Server.Player;
@@ -13,7 +12,6 @@ public sealed partial class ResearchSystem
         SubscribeLocalEvent<ResearchClientComponent, MapInitEvent>(OnClientMapInit);
         SubscribeLocalEvent<ResearchClientComponent, ComponentShutdown>(OnClientShutdown);
         SubscribeLocalEvent<ResearchClientComponent, BoundUIOpenedEvent>(OnClientUIOpen);
-        SubscribeLocalEvent<ResearchClientComponent, ConsoleServerSyncMessage>(OnConsoleSync);
         SubscribeLocalEvent<ResearchClientComponent, ConsoleServerSelectionMessage>(OnConsoleSelect);
 
         SubscribeLocalEvent<ResearchClientComponent, ResearchClientSyncMessage>(OnClientSyncMessage);
@@ -50,14 +48,6 @@ public sealed partial class ResearchSystem
 
         _uiSystem.TryToggleUi(uid, ResearchClientUiKey.Key, (IPlayerSession) args.Session);
     }
-
-    private void OnConsoleSync(EntityUid uid, ResearchClientComponent component, ConsoleServerSyncMessage args)
-    {
-        if (!this.IsPowered(uid, EntityManager))
-            return;
-
-        SyncClientWithServer(uid);
-    }
     #endregion
 
     private void OnClientRegistrationChanged(EntityUid uid, ResearchClientComponent component, ref ResearchRegistrationChangedEvent args)
@@ -67,9 +57,15 @@ public sealed partial class ResearchSystem
 
     private void OnClientMapInit(EntityUid uid, ResearchClientComponent component, MapInitEvent args)
     {
-        var allServers = EntityQuery<ResearchServerComponent>(true).ToArray();
-        if (allServers.Length > 0)
-            RegisterClient(uid, allServers[0].Owner, component, allServers[0]);
+        var allServers = new List<Entity<ResearchServerComponent>>();
+        var query = AllEntityQuery<ResearchServerComponent>();
+        while (query.MoveNext(out var serverUid, out var serverComp))
+        {
+            allServers.Add((serverUid, serverComp));
+        }
+
+        if (allServers.Count > 0)
+            RegisterClient(uid, allServers[0], component, allServers[0]);
     }
 
     private void OnClientShutdown(EntityUid uid, ResearchClientComponent component, ComponentShutdown args)
@@ -105,8 +101,10 @@ public sealed partial class ResearchSystem
     /// <param name="serverComponent">The server's ResearchServerComponent. Null if false</param>
     /// <param name="component">The client's Researchclient component</param>
     /// <returns>If the server was successfully retrieved.</returns>
-    public bool TryGetClientServer(EntityUid uid, [NotNullWhen(returnValue: true)] out EntityUid? server,
-        [NotNullWhen(returnValue: true)] out ResearchServerComponent? serverComponent, ResearchClientComponent? component = null)
+    public bool TryGetClientServer(EntityUid uid,
+        [NotNullWhen(returnValue: true)] out EntityUid? server,
+        [NotNullWhen(returnValue: true)] out ResearchServerComponent? serverComponent,
+        ResearchClientComponent? component = null)
     {
         server = null;
         serverComponent = null;
@@ -117,11 +115,10 @@ public sealed partial class ResearchSystem
         if (component.Server == null)
             return false;
 
-        if (!TryComp<ResearchServerComponent>(component.Server, out var sc))
+        if (!TryComp(component.Server, out serverComponent))
             return false;
 
         server = component.Server;
-        serverComponent = sc;
         return true;
     }
 }

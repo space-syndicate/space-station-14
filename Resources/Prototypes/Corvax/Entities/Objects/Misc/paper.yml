@@ -5,7 +5,7 @@
   description: 'It looks like you have a lot of work to do.'
   components:
     - type: Paper
-      stampState: paper_stamp-cent
+      stampState: paper_stamp-centcom
       stampedBy:
-        - CentComm
-        
+      - stampedName: stamp-component-stamped-name-centcom
+        stampedColor: "#bb3232"

@@ -1,16 +1,17 @@
 ﻿using System.Linq;
-using Content.Client.Corvax.Sponsors;
 using Content.Client.Corvax.TTS;
 using Content.Shared.Corvax.TTS;
 using Content.Shared.Preferences;
 using Robust.Shared.Random;
+using Content.Corvax.Interfaces.Client;
 
 namespace Content.Client.Preferences.UI;
 
 public sealed partial class HumanoidProfileEditor
 {
-    private TTSManager _ttsMgr = default!;
+    private IRobustRandom _random = default!;
     private TTSSystem _ttsSys = default!;
+    private IClientSponsorsManager? _sponsorsMgr;
     private List<TTSVoicePrototype> _voiceList = default!;
     private readonly List<string> _sampleText = new()
     {
@@ -22,7 +23,10 @@ public sealed partial class HumanoidProfileEditor
 
     private void InitializeVoice()
     {
-        _ttsMgr = IoCManager.Resolve<TTSManager>();
+        if (!IoCManager.Instance!.TryResolveType(out _sponsorsMgr))
+            return;
+
+        _random = IoCManager.Resolve<IRobustRandom>();
         _ttsSys = _entMan.System<TTSSystem>();
         _voiceList = _prototypeManager
             .EnumeratePrototypes<TTSVoicePrototype>()
@@ -35,13 +39,14 @@ public sealed partial class HumanoidProfileEditor
             _voiceButton.SelectId(args.Id);
             SetVoice(_voiceList[args.Id].ID);
         };
-            
+
         _voicePlayButton.OnPressed += _ => { PlayTTS(); };
     }
 
     private void UpdateTTSVoicesControls()
     {
-        if (Profile is null)
+        if (Profile is null ||
+            _sponsorsMgr is null)
             return;
 
         _voiceButton.Clear();
@@ -52,16 +57,15 @@ public sealed partial class HumanoidProfileEditor
             var voice = _voiceList[i];
             if (!HumanoidCharacterProfile.CanHaveVoice(voice, Profile.Sex))
                 continue;
-                
+
             var name = Loc.GetString(voice.Name);
             _voiceButton.AddItem(name, i);
 
             if (firstVoiceChoiceId == 1)
                 firstVoiceChoiceId = i;
 
-            if (voice.SponsorOnly &&
-                IoCManager.Resolve<SponsorsManager>().TryGetInfo(out var sponsor) &&
-                !sponsor.AllowedMarkings.Contains(voice.ID))
+            if (voice.SponsorOnly && _sponsorsMgr != null &&
+                !_sponsorsMgr.Prototypes.Contains(voice.ID))
             {
                 _voiceButton.SetItemDisabled(_voiceButton.GetIdx(i), true);
             }
@@ -80,7 +84,6 @@ public sealed partial class HumanoidProfileEditor
         if (_previewDummy is null || Profile is null)
             return;
 
-        _ttsSys.StopAllStreams();
-        _ttsMgr.RequestTTS(_previewDummy.Value, _random.Pick(_sampleText), Profile.Voice);
+        _ttsSys.RequestGlobalTTS(_random.Pick(_sampleText), Profile.Voice);
     }
 }

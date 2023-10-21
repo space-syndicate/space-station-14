@@ -48,4 +48,4 @@ ent-BarSignZocalo = Zocalo
 ent-BarSignEmprah = 4 The Emprah
     .desc = Enjoyed by fanatics, heretics, and brain-damaged patrons alike.
 ent-BarSignSpacebucks = Spacebucks
-    .desc = You can't get away from them, even in space.
+    .desc = You can't get away from them, even in space, and even after we started calling them 'spesos' instead.

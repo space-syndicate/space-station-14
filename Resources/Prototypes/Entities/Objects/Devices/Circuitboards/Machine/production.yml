@@ -49,6 +49,20 @@
           ExamineName: Glass Beaker
 
 - type: entity
+  id: AmmoTechFabCircuitboard
+  parent: BaseMachineCircuitboard
+  name: ammo techfab circuit board
+  description: A machine printed circuit board for an ammo techfab
+  components:
+    - type: Sprite
+      state: security
+    - type: MachineBoard
+      prototype: AmmoTechFab
+      requirements:
+        MatterBin: 1
+        Manipulator: 1
+
+- type: entity
   id: MedicalTechFabCircuitboard
   parent: BaseMachineCircuitboard
   name: medical techfab machine board
@@ -102,6 +116,20 @@
   - type: GuideHelp
     guides:
     - Robotics
+
+# yes i know this prototype name is long i'm just following conventions
+- type: entity
+  id: ResearchAndDevelopmentServerMachineCircuitboard
+  parent: BaseMachineCircuitboard
+  name: R&D server machine board
+  description: A machine printed circuit board for the R&D server.
+  components:
+  - type: Sprite
+    state: science
+  - type: MachineBoard
+    prototype: ResearchAndDevelopmentServer
+    materialRequirements:
+      Plasma: 5
 
 - type: entity
   id: UniformPrinterMachineCircuitboard
@@ -407,7 +435,7 @@
     - type: Sprite
       state: service
     - type: MachineBoard
-      prototype: hydroponicsTray
+      prototype: HydroponicsTrayEmpty
       materialRequirements:
         # replacing the console screen
         Glass: 5
@@ -448,7 +476,76 @@
     - type: MachineBoard
       prototype: SMESBasicEmpty
       requirements:
-        Capacitor: 5
+        Capacitor: 1
+        PowerCell: 4
+      materialRequirements:
+        CableHV: 10
+
+- type: entity
+  id: CellRechargerCircuitboard
+  parent: BaseMachineCircuitboard
+  name: cell recharger machine board
+  description: A machine printed circuit board for a cell recharger.
+  components:
+    - type: Sprite
+      sprite: Objects/Misc/module.rsi
+      state: charger_APC
+    - type: MachineBoard
+      prototype: PowerCellRecharger
+      requirements:
+        Capacitor: 2
+      materialRequirements:
+        Cable: 5
+    - type: PhysicalComposition
+      materialComposition:
+        Steel: 30
+        Plastic: 30
+    - type: StaticPrice
+      price: 15
+
+- type: entity
+  id: BorgChargerCircuitboard
+  parent: BaseMachineCircuitboard
+  name: cyborg recharging station machine board
+  description: A machine printed circuit board for a robot recharging station.
+  components:
+    - type: Sprite
+      sprite: Objects/Misc/module.rsi
+      state: charger_APC
+    - type: MachineBoard
+      prototype: BorgCharger
+      requirements:
+        Capacitor: 2
+      materialRequirements:
+        Cable: 5
+    - type: PhysicalComposition
+      materialComposition:
+        Steel: 30
+        Plastic: 30
+    - type: StaticPrice
+      price: 15
+
+- type: entity
+  id: WeaponCapacitorRechargerCircuitboard
+  parent: BaseMachineCircuitboard
+  name: recharger machine board
+  description: A machine printed circuit board for a recharger.
+  components:
+    - type: Sprite
+      sprite: Objects/Misc/module.rsi
+      state: charger_APC
+    - type: MachineBoard
+      prototype: WeaponCapacitorRecharger
+      requirements:
+        Capacitor: 2
+      materialRequirements:
+        CableMV: 5
+    - type: PhysicalComposition
+      materialComposition:
+        Steel: 30
+        Plastic: 30
+    - type: StaticPrice
+      price: 15
 
 - type: entity
   id: SubstationMachineCircuitboard
@@ -459,7 +556,8 @@
     - type: MachineBoard
       prototype: SubstationBasicEmpty
       requirements:
-        Capacitor: 3
+        Capacitor: 1
+        PowerCell: 1
       materialRequirements:
         CableMV: 5
         CableHV: 5
@@ -468,6 +566,8 @@
         Glass: 200
       chemicalComposition:
         Silicon: 20
+    - type: StaticPrice
+      price: 58
 
 - type: entity
   parent: BaseMachineCircuitboard
@@ -503,14 +603,14 @@
           ExamineName: Woodwind Instrument
 
 - type: entity
-  id: GeneratorPlasmaMachineCircuitboard
+  id: PortableGeneratorPacmanMachineCircuitboard
   parent: BaseMachineCircuitboard
-  name: generator (plasma) machine board
+  name: P.A.C.M.A.N.-type portable generator machine board
   components:
     - type: Sprite
       state: engineering
     - type: MachineBoard
-      prototype: GeneratorPlasma
+      prototype: PortableGeneratorPacman
       requirements:
         Capacitor: 1
       materialRequirements:
@@ -547,18 +647,37 @@
       Glass: 2
 
 - type: entity
-  id: GeneratorUraniumMachineCircuitboard
+  id: PortableGeneratorSuperPacmanMachineCircuitboard
   parent: BaseMachineCircuitboard
-  name: generator (uranium) machine board
+  name: S.U.P.E.R.P.A.C.M.A.N.-type portable generator machine board
   components:
     - type: Sprite
       state: engineering
     - type: MachineBoard
-      prototype: GeneratorUranium
+      prototype: PortableGeneratorSuperPacman
       requirements:
         Capacitor: 2
       materialRequirements:
         CableHV: 10
+    - type: PhysicalComposition
+      materialComposition:
+        Glass: 200
+      chemicalComposition:
+        Silicon: 20
+
+- type: entity
+  id: PortableGeneratorJrPacmanMachineCircuitboard
+  parent: BaseMachineCircuitboard
+  name: J.R.P.A.C.M.A.N.-type portable generator machine board
+  components:
+    - type: Sprite
+      state: engineering
+    - type: MachineBoard
+      prototype: PortableGeneratorJrPacman
+      requirements:
+        Capacitor: 1
+      materialRequirements:
+        Cable: 10
     - type: PhysicalComposition
       materialComposition:
         Glass: 200
@@ -594,6 +713,20 @@
         Capacitor: 2
       materialRequirements:
         Glass: 1
+
+- type: entity
+  parent: BaseMachineCircuitboard
+  id: ElectricGrillMachineCircuitboard
+  name: electric grill machine board
+  description: A machine printed circuit board for an electric grill.
+  components:
+  - type: MachineBoard
+    prototype: KitchenElectricGrill
+    requirements:
+      Capacitor: 4
+    materialRequirements:
+      Glass: 2
+      Cable: 5
 
 - type: entity
   id: StasisBedMachineCircuitboard
@@ -647,6 +780,17 @@
         Manipulator: 3
       materialRequirements:
         Glass: 1
+
+- type: entity
+  id: SheetifierMachineCircuitboard
+  parent: BaseMachineCircuitboard
+  name: sheet-meister 2000 machine board
+  components:
+  - type: MachineBoard
+    prototype: Sheetifier
+    requirements:
+      MatterBin: 1
+      Manipulator: 1
 
 - type: entity
   id: MicrowaveMachineCircuitboard
@@ -776,6 +920,21 @@
             ExamineName: Glass Beaker
 
 - type: entity
+  id: CargoTelepadMachineCircuitboard
+  parent: BaseMachineCircuitboard
+  name: cargo telepad machine board
+  description: A machine printed circuit board for a cargo telepad.
+  components:
+    - type: Sprite
+      state: supply
+    - type: MachineBoard
+      prototype: CargoTelepad
+      requirements:
+        Capacitor: 2
+      materialRequirements:
+        Steel: 5
+
+- type: entity
   id: SodaDispenserMachineCircuitboard
   parent: BaseMachineCircuitboard
   name: soda dispenser machine board
@@ -804,3 +963,34 @@
       materialRequirements:
         Steel: 1
         Cable: 2
+
+- type: entity
+  parent: BaseMachineCircuitboard
+  id: SalvageMagnetMachineCircuitboard
+  name: salvage magnet machine board
+  description: A machine printed circuit board for a salvage magnet.
+  components:
+  - type: MachineBoard
+    prototype: SalvageMagnet
+    requirements:
+      Capacitor: 4
+    materialRequirements:
+      Steel: 5
+      CableHV: 5
+      Cable: 2
+
+- type: entity
+  parent: BaseMachineCircuitboard
+  id: MiniGravityGeneratorCircuitboard
+  name: mini gravity generator machine board
+  description: A machine printed circuit board for a mini gravity generator.
+  components:
+  - type: MachineBoard
+    prototype: GravityGeneratorMini
+    requirements:
+      Capacitor: 4
+      MatterBin: 3
+    materialRequirements:
+      Steel: 5
+      CableHV: 5
+      Uranium: 2

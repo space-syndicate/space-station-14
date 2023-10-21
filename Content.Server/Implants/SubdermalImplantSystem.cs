@@ -1,48 +1,43 @@
 ﻿using Content.Server.Cuffs;
+using Content.Server.Humanoid;
 using Content.Server.Store.Components;
 using Content.Server.Store.Systems;
 using Content.Shared.Cuffs.Components;
+using Content.Shared.Humanoid;
 using Content.Shared.Implants;
 using Content.Shared.Implants.Components;
 using Content.Shared.Interaction;
-using Content.Shared.Interaction.Events;
-using Content.Shared.Mobs;
 using Content.Shared.Popups;
-using Robust.Shared.Containers;
+using Content.Shared.Preferences;
 
 namespace Content.Server.Implants;
 
 public sealed class SubdermalImplantSystem : SharedSubdermalImplantSystem
 {
     [Dependency] private readonly CuffableSystem _cuffable = default!;
-    [Dependency] private readonly SharedContainerSystem _container = default!;
-    [Dependency] private readonly SharedPopupSystem _popup = default!;
+    [Dependency] private readonly HumanoidAppearanceSystem _humanoidAppearance = default!;
+    [Dependency] private readonly MetaDataSystem _metaData = default!;
     [Dependency] private readonly StoreSystem _store = default!;
+    [Dependency] private readonly SharedPopupSystem _popup = default!;
 
     public override void Initialize()
     {
         base.Initialize();
 
         SubscribeLocalEvent<SubdermalImplantComponent, UseFreedomImplantEvent>(OnFreedomImplant);
+        SubscribeLocalEvent<StoreComponent, ImplantRelayEvent<AfterInteractUsingEvent>>(OnStoreRelay);
+        SubscribeLocalEvent<SubdermalImplantComponent, ActivateImplantEvent>(OnActivateImplantEvent);
+        SubscribeLocalEvent<SubdermalImplantComponent, UseDnaScramblerImplantEvent>(OnDnaScramblerImplant);
 
-        SubscribeLocalEvent<StoreComponent, AfterInteractUsingEvent>(OnUplinkInteractUsing);
-
-        SubscribeLocalEvent<ImplantedComponent, MobStateChangedEvent>(RelayToImplantEvent);
-        SubscribeLocalEvent<ImplantedComponent, AfterInteractUsingEvent>(RelayToImplantEvent);
-        SubscribeLocalEvent<ImplantedComponent, SuicideEvent>(RelayToImplantEvent);
     }
 
-    private void OnFreedomImplant(EntityUid uid, SubdermalImplantComponent component, UseFreedomImplantEvent args)
+    private void OnStoreRelay(EntityUid uid, StoreComponent store, ImplantRelayEvent<AfterInteractUsingEvent> implantRelay)
     {
-        if (!TryComp<CuffableComponent>(component.ImplantedEntity, out var cuffs) || cuffs.Container.ContainedEntities.Count < 1)
+        var args = implantRelay.Event;
+
+        if (args.Handled)
             return;
 
-        _cuffable.Uncuff(component.ImplantedEntity.Value, cuffs.LastAddedCuffs, cuffs.LastAddedCuffs);
-        args.Handled = true;
-    }
-
-    private void OnUplinkInteractUsing(EntityUid uid, StoreComponent store, AfterInteractUsingEvent args)
-    {
         // can only insert into yourself to prevent uplink checking with renault
         if (args.Target != args.User)
             return;
@@ -61,46 +56,34 @@ public sealed class SubdermalImplantSystem : SharedSubdermalImplantSystem
         QueueDel(args.Used);
     }
 
-    #region Relays
-
-    //Relays from the implanted to the implant
-    private void RelayToImplantEvent<T>(EntityUid uid, ImplantedComponent component, T args) where T: notnull
+    private void OnFreedomImplant(EntityUid uid, SubdermalImplantComponent component, UseFreedomImplantEvent args)
     {
-        if (!_container.TryGetContainer(uid, ImplanterComponent.ImplantSlotId, out var implantContainer))
+        if (!TryComp<CuffableComponent>(component.ImplantedEntity, out var cuffs) || cuffs.Container.ContainedEntities.Count < 1)
             return;
-        foreach (var implant in implantContainer.ContainedEntities)
-        {
-            RaiseLocalEvent(implant, args);
-        }
+
+        _cuffable.Uncuff(component.ImplantedEntity.Value, cuffs.LastAddedCuffs, cuffs.LastAddedCuffs);
+        args.Handled = true;
     }
 
-    //Relays from the implanted to the implant
-    private void RelayToImplantEventByRef<T>(EntityUid uid, ImplantedComponent component, ref T args) where T: notnull
+    private void OnActivateImplantEvent(EntityUid uid, SubdermalImplantComponent component, ActivateImplantEvent args)
     {
-        if (!_container.TryGetContainer(uid, ImplanterComponent.ImplantSlotId, out var implantContainer))
+        args.Handled = true;
+    }
+
+    private void OnDnaScramblerImplant(EntityUid uid, SubdermalImplantComponent component, UseDnaScramblerImplantEvent args)
+    {
+        if (component.ImplantedEntity is not { } ent)
             return;
-        foreach (var implant in implantContainer.ContainedEntities)
-        {
-            RaiseLocalEvent(implant,ref args);
-        }
-    }
 
-    //Relays from the implant to the implanted
-    private void RelayToImplantedEvent<T>(EntityUid uid, SubdermalImplantComponent component, T args) where T : EntityEventArgs
-    {
-        if (component.ImplantedEntity != null)
+        if (TryComp<HumanoidAppearanceComponent>(ent, out var humanoid))
         {
-            RaiseLocalEvent(component.ImplantedEntity.Value, args);
+            var newProfile = HumanoidCharacterProfile.RandomWithSpecies(humanoid.Species);
+            _humanoidAppearance.LoadProfile(ent, newProfile, humanoid);
+            _metaData.SetEntityName(ent, newProfile.Name);
+            _popup.PopupEntity(Loc.GetString("scramble-implant-activated-popup"), ent, ent);
         }
-    }
 
-    private void RelayToImplantedEventByRef<T>(EntityUid uid, SubdermalImplantComponent component, ref T args) where T : EntityEventArgs
-    {
-        if (component.ImplantedEntity != null)
-        {
-            RaiseLocalEvent(component.ImplantedEntity.Value, ref args);
-        }
+        args.Handled = true;
+        QueueDel(uid);
     }
-
-    #endregion
 }

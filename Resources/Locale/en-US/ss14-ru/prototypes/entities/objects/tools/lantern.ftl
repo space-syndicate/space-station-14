@@ -1,4 +1,5 @@
-ent-lantern = lantern
+ent-Lantern = lantern
     .desc = The holy light guides the way.
-ent-lanternextrabright = extra-bright lantern
-    .desc = Blinding.
+ent-LanternFlash = { ent-Lantern }
+    .suffix = Flash
+    .desc = { ent-Lantern.desc }

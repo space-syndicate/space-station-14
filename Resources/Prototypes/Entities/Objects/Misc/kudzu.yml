@@ -16,7 +16,6 @@
       sprite: Objects/Misc/kudzu.rsi
       state: kudzu_11
       drawdepth: Overdoors
-      netsync: false
     - type: Appearance
     - type: KudzuVisuals
     - type: Clickable
@@ -72,19 +71,19 @@
     - type: AtmosExposed
     - type: Kudzu
       growthTickChance: 0.3
+      spreadChance: 0.4
     - type: GrowingKudzu
     - type: SlowContacts
       walkSpeedModifier: 0.2
       sprintSpeedModifier: 0.2
+      ignoreWhitelist:
+        components:
+        - IgnoreKudzu
+    - type: ActiveEdgeSpreader
     - type: EdgeSpreader
-    - type: NodeContainer
-      nodes:
-        kudzu:
-          !type:SpreaderNode
-          nodeGroupID: Spreader
+      id: Kudzu
     - type: Food
       requiredStomachs: 2 # ruminants have 4 stomachs but i dont care to give them literally 4 stomachs. 2 is good
-      # TODO make botany plants edible to ruminants as well ...
       delay: 0.5
     - type: FlavorProfile
       flavors:
@@ -122,7 +121,6 @@
       sprite: Objects/Misc/fleshkudzu.rsi
       state: kudzu_11
       drawdepth: Overdoors
-      netsync: false
     - type: Appearance
     - type: KudzuVisuals
     - type: Clickable
@@ -157,7 +155,8 @@
         tags:
         - Flesh
     - type: Kudzu
-      growthTickChance: 0.3
+      growthTickChance: 0.1
+      spreadChance: 0.4
       # Heals each time it manages to do a growth tick:
       damageRecovery:
         types:
@@ -175,7 +174,7 @@
     - type: Barotrauma
       damage:
         types:
-          Blunt: 0.15 #per second, scales with pressure and other constants.
+          Blunt: 0.10 #per second, scales with pressure and other constants.
     - type: Flammable
       fireSpread: true
       damage:
@@ -184,12 +183,9 @@
     - type: GrowingKudzu
       growthTickChance: 0.3
     - type: AtmosExposed
+    - type: ActiveEdgeSpreader
     - type: EdgeSpreader
-    - type: NodeContainer
-      nodes:
-        kudzu:
-          !type:SpreaderNode
-          nodeGroupID: Spreader
+      id: Kudzu
     - type: SlowContacts
       walkSpeedModifier: 0.3
       sprintSpeedModifier: 0.3

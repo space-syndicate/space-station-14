@@ -37,21 +37,19 @@
       damageContainer: Box
     - type: Sprite
       noRot: true
-      netsync: false
       sprite: Structures/Storage/closet.rsi
       layers:
       - state: cardboard
+        map: ["enum.StorageVisualLayers.Base"]
       - state: cardboard_open
         map: ["enum.StorageVisualLayers.Door"]
     - type: Appearance
-      visuals:
-      - type: StorageVisualizer
-        state: cardboard
-        state_open: cardboard_open
+    - type: EntityStorageVisuals
+      stateBaseClosed: cardboard
+      stateDoorOpen: cardboard_open
     - type: Tag
       tags:
         - DoorBumpOpener
-    - type: InteractionOutline
     - type: Construction
       graph: BaseBigBox
       node: basebigbox
@@ -67,6 +65,7 @@
     - type: Damageable
       damageModifierSet: FlimsyMetallic #Syndicate boxes should have a bit of protection
     - type: Stealth
+      hadOutline: true
     - type: StealthOnMove
       passiveVisibilityRate: -0.37
       movementVisibilityRate: 0.20
@@ -75,6 +74,7 @@
   id: BigBox
   parent: BaseBigBox
   components:
+  - type: InteractionOutline
   - type: Destructible
     thresholds:
     - trigger:
@@ -122,9 +122,8 @@
       sprite: Structures/Storage/closet.rsi
       drawdepth: Effects
       noRot: true
-      netsync: false
       layers:
-        - state: "cardboard_special"
+      - state: "cardboard_special"
     - type: TimedDespawn
       lifetime: 1
     - type: Tag

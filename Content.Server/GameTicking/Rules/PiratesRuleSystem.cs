@@ -1,4 +1,5 @@
 using System.Linq;
+using System.Numerics;
 using Content.Server.Administration.Commands;
 using Content.Server.Cargo.Systems;
 using Content.Server.Chat.Managers;
@@ -9,17 +10,18 @@ using Content.Server.Station.Components;
 using Content.Server.Station.Systems;
 using Content.Shared.CCVar;
 using Content.Shared.Humanoid;
+using Content.Shared.Mind;
 using Content.Shared.Preferences;
 using Content.Shared.Roles;
 using Robust.Server.GameObjects;
 using Robust.Server.Maps;
 using Robust.Server.Player;
 using Robust.Shared.Configuration;
+using Robust.Shared.Enums;
 using Robust.Shared.Map;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Random;
 using Robust.Shared.Utility;
-using Robust.Shared.Enums;
 
 namespace Content.Server.GameTicking.Rules;
 
@@ -35,10 +37,12 @@ public sealed class PiratesRuleSystem : GameRuleSystem<PiratesRuleComponent>
     [Dependency] private readonly IMapManager _mapManager = default!;
     [Dependency] private readonly IServerPreferencesManager _prefs = default!;
     [Dependency] private readonly StationSpawningSystem _stationSpawningSystem = default!;
-    [Dependency] private readonly StationSystem _stationSystem = default!;
     [Dependency] private readonly PricingSystem _pricingSystem = default!;
     [Dependency] private readonly MapLoaderSystem _map = default!;
     [Dependency] private readonly NamingSystem _namingSystem = default!;
+    [Dependency] private readonly SharedMindSystem _mindSystem = default!;
+    [Dependency] private readonly SharedAudioSystem _audioSystem = default!;
+    [Dependency] private readonly MetaDataSystem _metaData = default!;
 
     /// <inheritdoc/>
     public override void Initialize()
@@ -62,15 +66,14 @@ public sealed class PiratesRuleSystem : GameRuleSystem<PiratesRuleComponent>
             }
             else
             {
-
                 List<(double, EntityUid)> mostValuableThefts = new();
 
                 var comp1 = pirates;
                 var finalValue = _pricingSystem.AppraiseGrid(pirates.PirateShip, uid =>
                 {
-                    foreach (var mind in comp1.Pirates)
+                    foreach (var mindId in comp1.Pirates)
                     {
-                        if (mind.CurrentEntity == uid)
+                        if (TryComp(mindId, out MindComponent? mind) && mind.CurrentEntity == uid)
                             return false; // Don't appraise the pirates twice, we count them in separately.
                     }
 
@@ -86,9 +89,9 @@ public sealed class PiratesRuleSystem : GameRuleSystem<PiratesRuleComponent>
                         mostValuableThefts.Pop();
                 });
 
-                foreach (var mind in pirates.Pirates)
+                foreach (var mindId in pirates.Pirates)
                 {
-                    if (mind.CurrentEntity is not null)
+                    if (TryComp(mindId, out MindComponent? mind) && mind.CurrentEntity is not null)
                         finalValue += _pricingSystem.GetPrice(mind.CurrentEntity.Value);
                 }
 
@@ -113,7 +116,10 @@ public sealed class PiratesRuleSystem : GameRuleSystem<PiratesRuleComponent>
             ev.AddLine(Loc.GetString("pirates-list-start"));
             foreach (var pirate in pirates.Pirates)
             {
-                ev.AddLine($"- {pirate.CharacterName} ({pirate.Session?.Name})");
+                if (TryComp(pirate, out MindComponent? mind))
+                {
+                    ev.AddLine($"- {mind.CharacterName} ({mind.Session?.Name})");
+                }
             }
         }
     }
@@ -144,8 +150,8 @@ public sealed class PiratesRuleSystem : GameRuleSystem<PiratesRuleComponent>
             var map = "/Maps/Shuttles/pirate.yml";
             var xformQuery = GetEntityQuery<TransformComponent>();
 
-            var aabbs = _stationSystem.Stations.SelectMany(x =>
-                    Comp<StationDataComponent>(x).Grids.Select(x =>
+            var aabbs = EntityQuery<StationDataComponent>().SelectMany(x =>
+                    x.Grids.Select(x =>
                         xformQuery.GetComponent(x).WorldMatrix.TransformBox(_mapManager.GetGridComp(x).LocalAABB)))
                 .ToArray();
 
@@ -156,9 +162,12 @@ public sealed class PiratesRuleSystem : GameRuleSystem<PiratesRuleComponent>
                 aabb.Union(aabbs[i]);
             }
 
+            // (Not commented?)
+            var a = MathF.Max(aabb.Height / 2f, aabb.Width / 2f) * 2.5f;
+
             var gridId = _map.LoadGrid(GameTicker.DefaultMap, map, new MapLoadOptions
             {
-                Offset = aabb.Center + MathF.Max(aabb.Height / 2f, aabb.Width / 2f) * 2.5f
+                Offset = aabb.Center + new Vector2(a, a),
             });
 
             if (!gridId.HasValue)
@@ -203,20 +212,20 @@ public sealed class PiratesRuleSystem : GameRuleSystem<PiratesRuleComponent>
                 var name = _namingSystem.GetName("Human", gender);
 
                 var session = ops[i];
-                var newMind = new Mind.Mind(session.UserId)
-                {
-                    CharacterName = name
-                };
-                newMind.ChangeOwningPlayer(session.UserId);
+                var newMind = _mindSystem.CreateMind(session.UserId, name);
+                _mindSystem.SetUserId(newMind, session.UserId);
 
                 var mob = Spawn("MobHuman", _random.Pick(spawns));
-                MetaData(mob).EntityName = name;
+                _metaData.SetEntityName(mob, name);
 
-                newMind.TransferTo(mob);
+                _mindSystem.TransferTo(newMind, mob);
                 var profile = _prefs.GetPreferences(session.UserId).SelectedCharacter as HumanoidCharacterProfile;
                 _stationSpawningSystem.EquipStartingGear(mob, pirateGear, profile);
 
                 pirates.Pirates.Add(newMind);
+
+                // Notificate every player about a pirate antagonist role with sound
+                _audioSystem.PlayGlobal(pirates.PirateAlertSound, session);
 
                 GameTicker.PlayerJoinGame(session);
             }
@@ -230,11 +239,25 @@ public sealed class PiratesRuleSystem : GameRuleSystem<PiratesRuleComponent>
     }
 
     //Forcing one player to be a pirate.
-    public void MakePirate(Mind.Mind mind)
+    public void MakePirate(EntityUid mindId, MindComponent mind)
     {
         if (!mind.OwnedEntity.HasValue)
             return;
         SetOutfitCommand.SetOutfit(mind.OwnedEntity.Value, "PirateGear", EntityManager);
+
+        var pirateRule = EntityQuery<PiratesRuleComponent>().FirstOrDefault();
+        if (pirateRule == null)
+        {
+            //todo fuck me this shit is awful
+            GameTicker.StartGameRule("Pirates", out var ruleEntity);
+            pirateRule = Comp<PiratesRuleComponent>(ruleEntity);
+        }
+
+        // Notificate every player about a pirate antagonist role with sound
+        if (mind.Session != null)
+        {
+            _audioSystem.PlayGlobal(pirateRule.PirateAlertSound, mind.Session);
+        }
     }
 
     private void OnStartAttempt(RoundStartAttemptEvent ev)
@@ -248,7 +271,7 @@ public sealed class PiratesRuleSystem : GameRuleSystem<PiratesRuleComponent>
             var minPlayers = _cfg.GetCVar(CCVars.PiratesMinPlayers);
             if (!ev.Forced && ev.Players.Length < minPlayers)
             {
-                _chatManager.DispatchServerAnnouncement(Loc.GetString("nukeops-not-enough-ready-players",
+                _chatManager.SendAdminAnnouncement(Loc.GetString("nukeops-not-enough-ready-players",
                     ("readyPlayersCount", ev.Players.Length), ("minimumPlayers", minPlayers)));
                 ev.Cancel();
                 return;

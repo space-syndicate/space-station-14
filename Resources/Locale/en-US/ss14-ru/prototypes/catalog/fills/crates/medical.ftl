@@ -1,8 +1,8 @@
-ent-CrateMedicalDefib = { ent-CrateMedical }
-    .desc = { ent-CrateMedical.desc }
 ent-CrateMedicalSupplies = { ent-CrateMedical }
     .desc = { ent-CrateMedical.desc }
 ent-CrateChemistrySupplies = { ent-CrateMedical }
+    .desc = { ent-CrateMedical.desc }
+ent-CrateMindShieldImplants = { ent-CrateMedical }
     .desc = { ent-CrateMedical.desc }
 ent-CrateMedicalSurgery = { ent-CrateSurgery }
     .desc = { ent-CrateSurgery.desc }

@@ -7,3 +7,6 @@ ent-MaintenanceToolSpawner = Maint Loot Spawner
 ent-MaintenanceWeaponSpawner = Maint Loot Spawner
     .suffix = Scrap+Weapons
     .desc = { ent-MarkerBase.desc }
+ent-MaintenancePlantSpawner = Maint Loot Spawner
+    .suffix = Plants
+    .desc = { ent-MarkerBase.desc }

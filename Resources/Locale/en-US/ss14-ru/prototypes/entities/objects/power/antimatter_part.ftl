@@ -1,2 +1,2 @@
-ent-AMEPart = AME part
+ent-AmePart = AME part
     .desc = A flatpack used for constructing an antimatter engine reactor. Use a multitool to unpack it.

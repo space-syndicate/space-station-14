@@ -29,15 +29,12 @@
     - yelled
     - yelling
     # Corvax-Localization-Start
-    - крик
     - кричит
     - кричит.
     - кричит!
-    - ор
     - орёт
     - орёт.
     - орёт!
-    - визг
     - визжит
     - визжит.
     - визжит!
@@ -46,7 +43,7 @@
 - type: emote
   id: Laugh
   category: Vocal
-  chatMessages: [смеётся] # Corvax-Localization
+  chatMessages: [смеётся.] # Corvax-Localization
   chatTriggers:
     - laugh
     - laughs
@@ -67,14 +64,12 @@
     - giggling
     - giggled
     # Corvax-Localization-Start
-    - смех
     - смеется
     - смеется.
     - смеется!
     - смеётся
     - смеётся.
     - смеётся!
-    - хохот
     - хохочет
     - хохочет.
     - хохочет!
@@ -87,9 +82,14 @@
     # Corvax-Localization-End
 
 - type: emote
+  id: Honk
+  category: Vocal
+  chatMessages: [honks]
+
+- type: emote
   id: Sigh
   category: Vocal
-  chatMessages: [sighs]
+  chatMessages: [вздыхает.] # Corvax-Localization
   chatTriggers:
     - sigh
     - sighs
@@ -97,6 +97,120 @@
     - sigh.
     - sighs.
     - sighed.
+    # Corvax-Localization-Start
+    - вздыхает
+    - вздыхает.
+    - вздохнул
+    - вздохнула
+    - вздохнул.
+    - вздохнула.
+    # Corvax-Localization-End
+
+- type: emote
+  id: Whistle
+  category: Vocal
+  chatMessages: [свистит.] # Corvax-Localization
+  chatTriggers:
+    - whistle
+    - whistle.
+    - whistle!
+    - whistles
+    - whistles.
+    - whistles!
+    - whistleblowing
+    - whistleblowing.
+    - whistleblowing!
+    # Corvax-Localization-Start
+    - свистит
+    - свистит.
+    - свистит!
+    - свистнул
+    - свистнул.
+    - свистнул!
+    # Corvax-Localization-End
+
+- type: emote
+  id: Crying
+  category: Vocal
+  chatMessages: [плачет.] # Corvax-Localization
+  chatTriggers:
+    - cry
+    - cry.
+    - cry!
+    - crying
+    - crying.
+    - crying!
+    - cries
+    - cries.
+    - cries!
+    # Corvax-Localization-Start
+    - плачет
+    - плачет.
+    - плачет!
+    - рыдает
+    - рыдает.
+    - рыдает!
+    # Corvax-Localization-End
+
+- type: emote
+  id: Squish
+  category: Vocal
+  chatMessages: [хлюпает.] # Corvax-Localization
+  chatTriggers:
+    - squish
+    - squish.
+    - squish!
+    - squishing
+    - squishing.
+    - squishing!
+    - squishes
+    - squishes.
+    - squishes!
+    # Corvax-Localization-Start
+    - хлюпает
+    - хлюпает.
+    - хлюпает!
+    # Corvax-Localization-End
+
+- type: emote
+  id: Chitter
+  category: Vocal
+  chatMessages: [стрекочет.] # Corvax-Localization
+  chatTriggers:
+   - chitter
+   - chitter.
+   - chitter!
+   - chitters
+   - chitters.
+   - chitters!
+   - chittered
+   - chittered.
+   - chittered!
+   # Corvax-Localization-Start
+   - стрекочет
+   - стрекочет.
+   - стрекочет!
+   # Corvax-Localization-End
+
+- type: emote
+  id: Squeak
+  category: Vocal
+  chatMessages: [пищит.] # Corvax-Localization
+  chatTriggers:
+   - squeak
+   - squeak.
+   - squeak!
+   - squeaks
+   - squeaks.
+   - squeaks!
+   - squeaked
+   - squeaked.
+   - squeaked!
+   # Corvax-Localization-Start
+   - пищит
+   - пищит.
+   - пищит!
+   # Corvax-Localization-End
 
 # hand emotes
 - type: emote
@@ -129,7 +243,7 @@
 - type: emote
   id: Snap
   category: Hands
-  chatMessages: [щёлкает пальцами] # Corvax-Localization
+  chatMessages: [щёлкает пальцами.] # Corvax-Localization
   chatTriggers:
     - snap
     - snaps
@@ -165,4 +279,36 @@
     - щёлкает пальцами!
     - щёлкнул пальцами
     - щёлкнула пальцами
-    # Corvax-Localization-End    
+    # Corvax-Localization-End
+
+- type: emote
+  id: Salute
+  category: Hands
+  chatMessages: [салютует.] # Corvax-Localization
+  chatTriggers:
+    - salute
+    - salute.
+    - salute!
+    - salutes
+    - salutes.
+    - salutes!
+    # Corvax-Localization-Start
+    - салютует
+    - салютует.
+    - салютует!
+    - отдаёт честь
+    - отдаёт честь.
+    - отдаёт честь!
+    - отдал честь
+    - отдал честь.
+    - отдал честь!
+    - отдала честь
+    - отдала честь.
+    - отдала честь!
+    # Corvax-Localization-End
+
+- type: emote
+  id: DefaultDeathgasp
+  chatMessages: ["emote-deathgasp"]
+  chatTriggers:
+  - deathgasp

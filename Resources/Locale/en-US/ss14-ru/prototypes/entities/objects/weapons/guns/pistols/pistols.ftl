@@ -6,3 +6,6 @@ ent-WeaponPistolCobra = cobra
     .desc = A rugged, robust operator handgun with inbuilt silencer. Uses .25 caseless ammo.
 ent-WeaponPistolMk58 = mk 58
     .desc = A cheap, ubiquitous sidearm, produced by a NanoTrasen subsidiary. Uses .35 auto ammo.
+ent-WeaponPistolMk58Nonlethal = { ent-WeaponPistolMk58 }
+    .suffix = Non-lethal
+    .desc = { ent-WeaponPistolMk58.desc }

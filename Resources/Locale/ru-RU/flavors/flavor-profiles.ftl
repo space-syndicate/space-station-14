@@ -42,6 +42,7 @@ flavor-base-cheap = дёшево
 flavor-base-piquant = пикантно
 flavor-base-sharp = резко
 flavor-base-syrupy = сиропово
+flavor-base-spaceshroom = таинственно
 # lmao
 flavor-base-terrible = ужасно
 
@@ -105,6 +106,7 @@ flavor-complex-orange = как апельсины
 flavor-complex-watermelon = как арбуз
 flavor-complex-garlic = как чеснок
 flavor-complex-grape = как виноград
+flavor-complex-berry = как ягоды
 flavor-complex-meatballs = как фрикадельки
 flavor-complex-nettles = как крапива
 flavor-complex-jungle = как джунгли
@@ -148,6 +150,10 @@ flavor-complex-chaos = как хаос
 flavor-complex-squirming = как шевеление
 flavor-complex-electrons = как электроны
 flavor-complex-parents = как чьи-то родители
+flavor-complex-plastic = как пластик
+flavor-complex-glue = как клей
+flavor-complex-spaceshroom-cooked = как космический умами
+flavor-complex-lost-friendship = как прошедшая дружба
 
 ## Generic alcohol/soda taste. This should be replaced with an actual flavor profile.
 
@@ -157,7 +163,7 @@ flavor-complex-juice = как сок
 
 ## Basic drinks
 
-flavor-complex-rocksandstones = like rocks and stones
+flavor-complex-rocksandstones = как скалы и камни
 flavor-complex-water = как вода
 flavor-complex-beer = как моча
 flavor-complex-ale = как хлеб
@@ -170,6 +176,7 @@ flavor-complex-coffee-liquor = как крепкий, горький кофе
 flavor-complex-whiskey = как патока
 flavor-complex-shitty-wine = как виноградная кожура
 flavor-complex-iced-tea = как холодный чай
+flavor-complex-champagne = как свежеиспечённый хлеб
 flavor-complex-coffee = как кофе
 flavor-complex-milk = как молоко
 flavor-complex-tea = как чай
@@ -199,6 +206,8 @@ flavor-complex-themartinez = как фиалки и лимонная водка
 
 ### This is exactly what pilk tastes like. I'm not even joking. I might've been a little drunk though
 
+flavor-complex-white-gilgamesh = как слегка газированные сливки
+flavor-complex-antifreeze = как тепло
 flavor-complex-pilk = как сладкое молоко
 
 # Medicine/chemical-specific flavors.

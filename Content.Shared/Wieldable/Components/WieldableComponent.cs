@@ -1,5 +1,6 @@
 using Robust.Shared.Audio;
 using Robust.Shared.GameStates;
+using Robust.Shared.Serialization;
 
 namespace Content.Shared.Wieldable.Components;
 
@@ -26,10 +27,16 @@ public sealed partial class WieldableComponent : Component
     public bool Wielded = false;
 
     [DataField("wieldedInhandPrefix")]
-    public string WieldedInhandPrefix = "wielded";
+    public string? WieldedInhandPrefix = "wielded";
 
     public string? OldInhandPrefix = null;
 
     [DataField("wieldTime")]
     public float WieldTime = 1.5f;
+}
+
+[Serializable, NetSerializable]
+public enum WieldableVisuals : byte
+{
+    Wielded
 }

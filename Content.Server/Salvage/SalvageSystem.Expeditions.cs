@@ -1,13 +1,16 @@
-using System.Linq;
-using System.Threading;
-using Content.Server.CPUJob.JobQueues;
-using Content.Server.CPUJob.JobQueues.Queues;
+using Content.Server.Cargo.Components;
 using Content.Server.Salvage.Expeditions;
 using Content.Server.Salvage.Expeditions.Structure;
-using Content.Server.Station.Systems;
 using Content.Shared.CCVar;
 using Content.Shared.Examine;
 using Content.Shared.Salvage;
+using Robust.Shared.CPUJob.JobQueues;
+using Robust.Shared.CPUJob.JobQueues.Queues;
+using System.Linq;
+using System.Threading;
+using Content.Shared.Procedural;
+using Content.Shared.Salvage.Expeditions;
+using Robust.Shared.GameStates;
 
 namespace Content.Server.Salvage;
 
@@ -17,19 +20,16 @@ public sealed partial class SalvageSystem
      * Handles setup / teardown of salvage expeditions.
      */
 
-    private const int MissionLimit = 5;
+    private const int MissionLimit = 3;
 
     private readonly JobQueue _salvageQueue = new();
     private readonly List<(SpawnSalvageMissionJob Job, CancellationTokenSource CancelToken)> _salvageJobs = new();
     private const double SalvageJobTime = 0.002;
 
     private float _cooldown;
-    private float _failedCooldown;
 
     private void InitializeExpeditions()
     {
-        SubscribeLocalEvent<StationInitializedEvent>(OnSalvageExpStationInit);
-
         SubscribeLocalEvent<SalvageExpeditionConsoleComponent, ComponentInit>(OnSalvageConsoleInit);
         SubscribeLocalEvent<SalvageExpeditionConsoleComponent, EntParentChangedMessage>(OnSalvageConsoleParent);
         SubscribeLocalEvent<SalvageExpeditionConsoleComponent, ClaimSalvageMessage>(OnSalvageClaimMessage);
@@ -38,19 +38,25 @@ public sealed partial class SalvageSystem
 
         SubscribeLocalEvent<SalvageExpeditionComponent, ComponentShutdown>(OnExpeditionShutdown);
         SubscribeLocalEvent<SalvageExpeditionComponent, EntityUnpausedEvent>(OnExpeditionUnpaused);
+        SubscribeLocalEvent<SalvageExpeditionComponent, ComponentGetState>(OnExpeditionGetState);
 
         SubscribeLocalEvent<SalvageStructureComponent, ExaminedEvent>(OnStructureExamine);
 
         _cooldown = _configurationManager.GetCVar(CCVars.SalvageExpeditionCooldown);
-        _failedCooldown = _configurationManager.GetCVar(CCVars.SalvageExpeditionFailedCooldown);
         _configurationManager.OnValueChanged(CCVars.SalvageExpeditionCooldown, SetCooldownChange);
-        _configurationManager.OnValueChanged(CCVars.SalvageExpeditionFailedCooldown, SetFailedCooldownChange);
+    }
+
+    private void OnExpeditionGetState(EntityUid uid, SalvageExpeditionComponent component, ref ComponentGetState args)
+    {
+        args.State = new SalvageExpeditionComponentState()
+        {
+            Stage = component.Stage
+        };
     }
 
     private void ShutdownExpeditions()
     {
         _configurationManager.UnsubValueChanged(CCVars.SalvageExpeditionCooldown, SetCooldownChange);
-        _configurationManager.UnsubValueChanged(CCVars.SalvageExpeditionFailedCooldown, SetFailedCooldownChange);
     }
 
     private void SetCooldownChange(float obj)
@@ -66,20 +72,6 @@ public sealed partial class SalvageSystem
         }
 
         _cooldown = obj;
-    }
-
-    private void SetFailedCooldownChange(float obj)
-    {
-        var diff = obj - _failedCooldown;
-
-        var query = AllEntityQuery<SalvageExpeditionDataComponent>();
-
-        while (query.MoveNext(out var comp))
-        {
-            comp.NextOffer += TimeSpan.FromSeconds(diff);
-        }
-
-        _failedCooldown = obj;
     }
 
     private void OnExpeditionShutdown(EntityUid uid, SalvageExpeditionComponent component, ComponentShutdown args)
@@ -101,7 +93,7 @@ public sealed partial class SalvageSystem
         // Finish mission
         if (TryComp<SalvageExpeditionDataComponent>(component.Station, out var data))
         {
-            FinishExpedition(data, component, null);
+            FinishExpedition(data, uid);
         }
     }
 
@@ -113,11 +105,6 @@ public sealed partial class SalvageSystem
     private void OnExpeditionUnpaused(EntityUid uid, SalvageExpeditionComponent component, ref EntityUnpausedEvent args)
     {
         component.EndTime += args.PausedTime;
-    }
-
-    private void OnSalvageExpStationInit(StationInitializedEvent ev)
-    {
-        EnsureComp<SalvageExpeditionDataComponent>(ev.Station);
     }
 
     private void UpdateExpeditions()
@@ -146,113 +133,31 @@ public sealed partial class SalvageSystem
             GenerateMissions(comp);
             UpdateConsoles(comp);
         }
-
-        var query = EntityQueryEnumerator<SalvageExpeditionComponent>();
-
-        while (query.MoveNext(out var uid, out var comp))
-        {
-            if (comp.EndTime < currentTime)
-            {
-                QueueDel(uid);
-            }
-        }
     }
 
-    private void FinishExpedition(SalvageExpeditionDataComponent component, SalvageExpeditionComponent expedition, EntityUid? shuttle)
+    private void FinishExpedition(SalvageExpeditionDataComponent component, EntityUid uid)
     {
-        // Finish mission cleanup.
-        switch (expedition.MissionParams.MissionType)
-        {
-            // Handles the mining taxation.
-            case SalvageMissionType.Mining:
-                expedition.Completed = true;
-
-                if (shuttle != null && TryComp<SalvageMiningExpeditionComponent>(expedition.Owner, out var mining))
-                {
-                    var xformQuery = GetEntityQuery<TransformComponent>();
-                    var entities = new List<EntityUid>();
-                    MiningTax(entities, shuttle.Value, mining, xformQuery);
-
-                    var tax = GetMiningTax(expedition.MissionParams.Difficulty);
-                    _random.Shuffle(entities);
-
-                    // TODO: urgh this pr is already taking so long I'll do this later
-                    for (var i = 0; i < Math.Ceiling(entities.Count * tax); i++)
-                    {
-                        // QueueDel(entities[i]);
-                    }
-                }
-
-                break;
-        }
-
-        // Payout already handled elsewhere.
-        if (expedition.Completed)
-        {
-            _sawmill.Debug($"Completed mission {expedition.MissionParams.MissionType} with seed {expedition.MissionParams.Seed}");
-            component.NextOffer = _timing.CurTime + TimeSpan.FromSeconds(_cooldown);
-            Announce(expedition.Owner, Loc.GetString("salvage-expedition-mission-completed"));
-        }
-        else
-        {
-            _sawmill.Debug($"Failed mission {expedition.MissionParams.MissionType} with seed {expedition.MissionParams.Seed}");
-            component.NextOffer = _timing.CurTime + TimeSpan.FromSeconds(_failedCooldown);
-            Announce(expedition.Owner, Loc.GetString("salvage-expedition-mission-failed"));
-        }
-
+        component.NextOffer = _timing.CurTime + TimeSpan.FromSeconds(_cooldown);
+        Announce(uid, Loc.GetString("salvage-expedition-mission-completed"));
         component.ActiveMission = 0;
         component.Cooldown = true;
         UpdateConsoles(component);
     }
 
-    /// <summary>
-    /// Deducts ore tax for mining.
-    /// </summary>
-    private void MiningTax(List<EntityUid> entities, EntityUid entity, SalvageMiningExpeditionComponent mining, EntityQuery<TransformComponent> xformQuery)
-    {
-        if (!mining.ExemptEntities.Contains(entity))
-        {
-            entities.Add(entity);
-        }
-
-        var xform = xformQuery.GetComponent(entity);
-        var children = xform.ChildEnumerator;
-
-        while (children.MoveNext(out var child))
-        {
-            MiningTax(entities, child.Value, mining, xformQuery);
-        }
-    }
-
     private void GenerateMissions(SalvageExpeditionDataComponent component)
     {
         component.Missions.Clear();
-        var configs = Enum.GetValues<SalvageMissionType>().ToList();
-
-        if (configs.Count == 0)
-            return;
-
-        // Temporarily removed coz it SUCKS
-        configs.Remove(SalvageMissionType.Mining);
 
         for (var i = 0; i < MissionLimit; i++)
         {
-            _random.Shuffle(configs);
-            var rating = (DifficultyRating) i;
-
-            foreach (var config in configs)
+            var mission = new SalvageMissionParams
             {
-                var mission = new SalvageMissionParams()
-                {
-                    Index = component.NextIndex,
-                    MissionType = config,
-                    Seed = _random.Next(),
-                    Difficulty = rating,
-                };
+                Index = component.NextIndex,
+                Seed = _random.Next(),
+                Difficulty = "Moderate",
+            };
 
-                component.Missions[component.NextIndex++] = mission;
-                break;
-            }
+            component.Missions[component.NextIndex++] = mission;
         }
     }
 
@@ -269,12 +174,13 @@ public sealed partial class SalvageSystem
             SalvageJobTime,
             EntityManager,
             _timing,
+            _logManager,
             _mapManager,
             _prototypeManager,
-            _tileDefManager,
+            _anchorable,
             _biome,
             _dungeon,
-            this,
+            _metaData,
             station,
             missionParams,
             cancelToken.Token);

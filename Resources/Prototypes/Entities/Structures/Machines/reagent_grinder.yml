@@ -27,16 +27,16 @@
       fix1:
         shape:
           !type:PhysShapeAabb
-          bounds: "-0.08,-0.35,0.15,0.25"
+          bounds: "-0.17,0,0.20,0.4"
         mask:
         - TabletopMachineMask
         layer:
         - TabletopMachineLayer
   - type: Sprite
-    netsync: false
     sprite: Structures/Machines/juicer.rsi
     drawdepth: SmallObjects
     snapCardinals: true
+    offset: "0.0,0.4"
     layers:
     - map: [ "grinder" ]
       state: "juicer0"

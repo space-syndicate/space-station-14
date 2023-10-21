@@ -79,11 +79,26 @@
     board: HydroponicsTrayMachineCircuitboard
   - type: TTS # Corvax-TTS
     voice: TrainingRobot
+  - type: WiresPanel
   - type: Wires
-    BoardName: "HydroponicsTray"
-    LayoutId: HydroponicsTray
+    boardName: wires-board-name-hydroponicstray
+    layoutId: HydroponicsTray
   - type: AmbientSound
     volume: -9
     range: 5
     sound:
       path: /Audio/Ambience/Objects/flowing_water_open.ogg
+  - type: GuideHelp
+    guides:
+    - Botany
+
+- type: entity
+  parent: hydroponicsTray
+  id: HydroponicsTrayEmpty
+  suffix: Empty
+  components:
+  - type: PlantHolder
+    waterLevel: 0
+    nutritionLevel: 0
+    # for the lights to update immediately
+    updateSpriteAfterUpdate: true

@@ -1,5 +1,5 @@
 ent-EnergySword = energy sword
-    .desc = Very loud and very dangerous energy sword that can reflect shots. Can be stored in pockets when turned off.
+    .desc = A very loud & dangerous sword with a beam made of pure, concentrated plasma. Cuts through unarmored targets like butter.
 ent-EnergyDagger = pen
     .desc = A dark ink pen.
     .suffix = E-Dagger
@@ -8,3 +8,5 @@ ent-EnergyDaggerBox = e-dagger box
     .suffix = E-Dagger
 ent-EnergyCutlass = energy cutlass
     .desc = An exotic energy weapon.
+ent-EnergySwordDouble = Double Bladed Energy Sword
+    .desc = Syndicate Command Interns thought that having one blade on the energy sword was not enough. This can be stored in pockets.

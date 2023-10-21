@@ -6,7 +6,6 @@
   components:
   - type: Sprite
     sprite: Objects/Weapons/Guns/Cannons/pneumatic_cannon.rsi
-    netsync: false
     layers:
     - state: icon
     - state: tank
@@ -28,11 +27,15 @@
       path: /Audio/Effects/thunk.ogg
     soundEmpty:
       path: /Audio/Items/hiss.ogg
+    clumsyProof: true
   - type: ContainerAmmoProvider
     container: storagebase
   - type: PneumaticCannon
   - type: Storage
     capacity: 30
+    blacklist:
+      tags:
+        - Arrow
   - type: Appearance
   - type: ItemMapper
     containerWhitelist: [gas_tank]
@@ -86,6 +89,7 @@
       path: /Audio/Effects/thunk.ogg
     soundEmpty:
       path: /Audio/Items/hiss.ogg
+    clumsyProof: true
   - type: ContainerAmmoProvider
     container: storagebase
   - type: Item

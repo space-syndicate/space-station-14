@@ -13,30 +13,38 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v2
+#    - name: Install dependencies
+#      run: sudo apt-get install -y python3-paramiko
+
+    - uses: actions/checkout@v3.6.0
       with:
         submodules: 'recursive'
 
     # Corvax-Secrets-Start
+    - name: Setup deploy key
+      uses: webfactory/ssh-agent@v0.4.1
+      env:
+        SSH_KEY: ${{ secrets.SECRETS_PRIVATE_KEY }}
+      if: ${{ env.SSH_KEY != '' }}
+      with:
+        ssh-private-key: ${{ env.SSH_KEY }}
+
     - name: Setup secrets
       env:
         SSH_KEY: ${{ secrets.SECRETS_PRIVATE_KEY }}
       if: ${{ env.SSH_KEY != '' }}
       run: |
-        mkdir ~/.ssh
-        echo "${{ secrets.SECRETS_PRIVATE_KEY }}" > ~/.ssh/id_rsa
-        chmod 600 ~/.ssh/id_rsa
-        echo "HOST *" > ~/.ssh/config
-        echo "StrictHostKeyChecking no" >> ~/.ssh/config
         git -c submodule.Secrets.update=checkout submodule update --init
-        cp -R Secrets/Prototypes Resources/Prototypes/CorvaxSecrets
-        cp -R Secrets/ServerPrototypes Resources/Prototypes/CorvaxSecretsServer
+        cp -R Secrets/Resources/Prototypes Resources/Prototypes/CorvaxSecrets
+        cp -R Secrets/Resources/ServerPrototypes Resources/Prototypes/CorvaxSecretsServer
+        cp -R Secrets/Resources/Locale Resources/Locale/ru-RU/corvax-secrets
+        cp -R Secrets/Resources/Textures Resources/Textures/CorvaxSecrets
     # Corvax-Secrets-End
 
     - name: Setup .NET Core
-      uses: actions/setup-dotnet@v3
+      uses: actions/setup-dotnet@v3.2.0
       with:
-        dotnet-version: 6.0.100
+        dotnet-version: 7.0.x
 
     - name: Get Engine Tag
       run: |
@@ -49,6 +57,8 @@ jobs:
         Tools/package_client_build.py
 
     - name: Update Build Info
+      env:
+        FORK_ID: ${{ vars.FORK_ID }}
       run: Tools/gen_build_info.py
 
     - name: Shuffle files around
@@ -72,11 +82,16 @@ jobs:
         host: ${{ secrets.BUILDS_HOST }}
         username: ${{ secrets.BUILDS_USERNAME }}
         key: ${{ secrets.BUILDS_SSH_KEY }}
-        script: node ~/scripts/push_to_manifest.js -fork syndicate -id ${{ github.sha }}
+        script: node ~/scripts/push_to_manifest.js -fork ${{ vars.FORK_ID }} -id ${{ github.sha }}
 
-    - name: Publish changelog
-      run: Tools/actions_changelogs_since_last_run.py
-      env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        DISCORD_WEBHOOK_URL: ${{ secrets.CHANGELOG_DISCORD_WEBHOOK }}
-        TRANSLATION_API_URL: ${{ secrets.CHANGELOG_TRANSLATION_API_URL }}
+#    - name: Publish changelog (Discord)
+#      run: Tools/actions_changelogs_since_last_run.py
+#      env:
+#        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+#        DISCORD_WEBHOOK_URL: ${{ secrets.CHANGELOG_DISCORD_WEBHOOK }}
+#        TRANSLATION_API_URL: ${{ secrets.CHANGELOG_TRANSLATION_API_URL }}
+#
+#    - name: Publish changelog (RSS)
+#      run: Tools/actions_changelog_rss.py
+#      env:
+#        CHANGELOG_RSS_KEY: ${{ secrets.CHANGELOG_RSS_KEY }}

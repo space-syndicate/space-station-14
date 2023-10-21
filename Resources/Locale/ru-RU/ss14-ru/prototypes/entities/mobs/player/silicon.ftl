@@ -1,6 +1,12 @@
 ent-PlayerSiliconBase = { "" }
     .desc = { "" }
-ent-Drone = drone
+ent-Drone = дрон
     .desc = { ent-PlayerSiliconBase.desc }
-ent-Onestar = onestar mecha
+ent-Onestar = мех Onestar
     .desc = { ent-PlayerSiliconBase.desc }
+ent-PlayerBorgGeneric = { ent-BorgChassisGeneric }
+    .desc = { ent-BorgChassisGeneric.desc }
+    .suffix = Батарея, Инструменты
+ent-PlayerBorgBattery = { ent-BorgChassisGeneric }
+    .suffix = Батарея
+    .desc = { ent-BorgChassisGeneric.desc }

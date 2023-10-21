@@ -3,10 +3,11 @@
   parent: BaseStructure
   name: high security door
   description: Keeps the bad out and keeps the good in.
+  placement:
+    mode: SnapgridCenter
   components:
   - type: InteractionOutline
   - type: Sprite
-    netsync: false
     sprite: Structures/Doors/Airlocks/highsec/highsec.rsi
     layers:
     - state: closed
@@ -54,9 +55,9 @@
     denySound:
       path: /Audio/Machines/airlock_deny.ogg
   - type: Weldable
-    fuel: 10
     time: 10
   - type: Airlock
+  - type: DoorBolt
   - type: Appearance
   - type: WiresVisuals
   - type: ApcPowerReceiver
@@ -65,9 +66,12 @@
   - type: Electrified
     enabled: false
     usesApcPower: true
+  - type: WiresPanel
+  - type: WiresPanelSecurity
+    securityLevel: maxSecurity
   - type: Wires
-    BoardName: "HighSec Control"
-    LayoutId: HighSec
+    boardName: wires-board-name-highsec
+    layoutId: HighSec
     alwaysRandomize: true
   - type: UserInterface
     interfaces:
@@ -90,5 +94,10 @@
   - type: IconSmooth
     key: walls
     mode: NoSprite
-  placement:
-    mode: SnapgridCenter
+  - type: Construction
+    graph: Airlock
+    node: highSecDoor
+  - type: Tag
+    tags:
+      - HighSecDoor
+      # This tag is used to nagivate the Airlock construction graph. It's needed because this construction graph is shared between Airlock, AirlockGlass, and HighSecDoor

@@ -14,8 +14,8 @@
   - type: Clickable
   - type: InteractionOutline
   - type: Sprite
+    drawdepth: SmallObjects
     sprite: Structures/Wallmounts/switch.rsi
-    netsync: false
     state: on
   - type: Appearance
   - type: Rotatable
@@ -52,6 +52,7 @@
     canEditLabel: true
   - type: TextScreenVisuals
   - type: Sprite
+    drawdepth: WallMountedItems
     sprite: Structures/Wallmounts/textscreen.rsi
     state: textscreen
     noRot: true
@@ -87,7 +88,6 @@
     anchored: true
   - type: Sprite
     drawdepth: WallMountedItems
-    netsync: false
     sprite: Structures/Wallmounts/textscreen.rsi
     state: textscreen
   - type: Construction

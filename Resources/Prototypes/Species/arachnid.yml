@@ -1,7 +1,7 @@
 - type: species
   id: Arachnid
   name: species-name-arachnid
-  roundStart: false # Corvax
+  roundStart: true
   prototype: MobArachnid
   sprites: MobArachnidSprites
   defaultSkinTone: "#385878"
@@ -10,7 +10,8 @@
   skinColoration: Hues
   maleFirstNames: names_arachnid_first
   femaleFirstNames: names_arachnid_first
-  lastNames: names_arachnid_last
+  maleLastNames: names_arachnid_last # Corvax-LastnameGender
+  femaleLastNames: names_arachnid_last # Corvax-LastnameGender
   sexes:
   - Unsexed
 
@@ -58,7 +59,8 @@
       required: false
     HeadSide:
       points: 1
-      required: false
+      required: true
+      defaultMarkings: [ ArachnidCheliceraeDownwards ]
     Chest:
       points: 1
       required: false

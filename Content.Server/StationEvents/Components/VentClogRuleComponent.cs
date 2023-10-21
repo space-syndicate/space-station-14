@@ -6,16 +6,16 @@ using Robust.Shared.Serialization.TypeSerializers.Implementations.Custom.Prototy
 namespace Content.Server.StationEvents.Components;
 
 [RegisterComponent, Access(typeof(VentClogRule))]
-public sealed class VentClogRuleComponent : Component
+public sealed partial class VentClogRuleComponent : Component
 {
     /// <summary>
     /// Somewhat safe chemicals to put in foam that probably won't instantly kill you.
     /// There is a small chance of using any reagent, ignoring this.
     /// </summary>
     [DataField("safeishVentChemicals", customTypeSerializer: typeof(PrototypeIdListSerializer<ReagentPrototype>))]
-    public readonly IReadOnlyList<string> SafeishVentChemicals = new[]
+    public IReadOnlyList<string> SafeishVentChemicals = new[]
     {
-        "Water", "Blood", "Slime", "SpaceDrugs", "SpaceCleaner", "Nutriment", "Sugar", "SpaceLube", "Ephedrine", "Ale", "Beer"
+        "Water", "Blood", "Slime", "SpaceDrugs", "SpaceCleaner", "Nutriment", "Sugar", "SpaceLube", "Ephedrine", "Ale", "Beer", "SpaceGlue"
     };
 
     /// <summary>
@@ -46,7 +46,10 @@ public sealed class VentClogRuleComponent : Component
     /// Reagents that gets the weak numbers used instead of regular ones.
     /// </summary>
     [DataField("weakReagents", customTypeSerializer: typeof(PrototypeIdListSerializer<ReagentPrototype>))]
-    public IReadOnlyList<string> WeakReagents = new[] { "SpaceLube" };
+    public IReadOnlyList<string> WeakReagents = new[]
+    {
+        "SpaceLube", "SpaceGlue"
+    };
 
     /// <summary>
     /// Quantity of weak reagents to put in the foam.

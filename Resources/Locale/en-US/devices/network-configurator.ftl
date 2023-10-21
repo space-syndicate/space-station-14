@@ -25,15 +25,13 @@ network-configurator-title-saved-devices = Saved Devices
 network-configurator-title-device-configuration = Device Configuration
 network-configurator-ui-clear-button = Clear
 network-configurator-ui-count-label = {$count} Devices
-network-configurator-clear-network-link-overlays = Clear network link overlays
-network-configurator-clear-network-link-overlays-desc = Clear network link overlays.
 
 # tooltips
 network-configurator-tooltip-set = Sets targets device list
 network-configurator-tooltip-add = Adds to targets device list
 network-configurator-tooltip-edit = Edit targets device list
 network-configurator-tooltip-clear = Clear targets device list
-network-configurator-tooltip-copy = Copy targets device list to multitool
+network-configurator-tooltip-copy = Copy targets device list to held tool
 network-configurator-tooltip-show = Show a holographic visualization of targets device list
 
 # examine

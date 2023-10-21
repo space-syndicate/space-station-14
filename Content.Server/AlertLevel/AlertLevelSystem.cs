@@ -1,9 +1,9 @@
 using System.Linq;
-using Content.Server.Chat;
 using Content.Server.Chat.Systems;
 using Content.Server.Station.Systems;
+using Content.Shared.CCVar;
 using Robust.Shared.Audio;
-using Robust.Shared.Player;
+using Robust.Shared.Configuration;
 using Robust.Shared.Prototypes;
 
 namespace Content.Server.AlertLevel;
@@ -13,6 +13,7 @@ public sealed class AlertLevelSystem : EntitySystem
     [Dependency] private readonly IPrototypeManager _prototypeManager = default!;
     [Dependency] private readonly ChatSystem _chatSystem = default!;
     [Dependency] private readonly StationSystem _stationSystem = default!;
+    [Dependency] private readonly IConfigurationManager _cfg = default!;
 
     // Until stations are a prototype, this is how it's going to have to be.
     public const string DefaultAlertLevelSet = "stationAlerts";
@@ -33,13 +34,10 @@ public sealed class AlertLevelSystem : EntitySystem
 
     public override void Update(float time)
     {
-        foreach (var station in _stationSystem.Stations)
-        {
-            if (!TryComp(station, out AlertLevelComponent? alert))
-            {
-                continue;
-            }
+        var query = EntityQueryEnumerator<AlertLevelComponent>();
 
+        while (query.MoveNext(out var station, out var alert))
+        {
             if (alert.CurrentDelay <= 0)
             {
                 if (alert.ActiveDelay)
@@ -56,9 +54,10 @@ public sealed class AlertLevelSystem : EntitySystem
 
     private void OnStationInitialize(StationInitializedEvent args)
     {
-        var alertLevelComponent = AddComp<AlertLevelComponent>(args.Station);
+        if (!TryComp<AlertLevelComponent>(args.Station, out var alertLevelComponent))
+            return;
 
-        if (!_prototypeManager.TryIndex(DefaultAlertLevelSet, out AlertLevelPrototype? alerts))
+        if (!_prototypeManager.TryIndex(alertLevelComponent.AlertLevelPrototype, out AlertLevelPrototype? alerts))
         {
             return;
         }
@@ -83,7 +82,8 @@ public sealed class AlertLevelSystem : EntitySystem
             return;
         }
 
-        foreach (var comp in EntityQuery<AlertLevelComponent>())
+        var query = EntityQueryEnumerator<AlertLevelComponent>();
+        while (query.MoveNext(out var uid, out var comp))
         {
             comp.AlertLevels = alerts;
 
@@ -95,7 +95,7 @@ public sealed class AlertLevelSystem : EntitySystem
                     defaultLevel = comp.AlertLevels.Levels.Keys.First();
                 }
 
-                SetLevel(comp.Owner, defaultLevel, true, true, true);
+                SetLevel(uid, defaultLevel, true, true, true);
             }
         }
 
@@ -141,7 +141,7 @@ public sealed class AlertLevelSystem : EntitySystem
                 return;
             }
 
-            component.CurrentDelay = AlertLevelComponent.Delay;
+            component.CurrentDelay = _cfg.GetCVar(CCVars.GameAlertLevelChangeDelay);
             component.ActiveDelay = true;
         }
 

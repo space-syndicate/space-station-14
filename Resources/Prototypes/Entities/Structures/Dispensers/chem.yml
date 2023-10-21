@@ -7,7 +7,6 @@
   - type: Sprite
     sprite: Structures/dispensers.rsi
     state: industrial-working
-    netsync: false
     snapCardinals: true
   - type: ReagentDispenser
     pack: ChemDispenserStandardInventory
@@ -27,8 +26,12 @@
   - type: Machine
     board: ChemDispenserMachineCircuitboard
   - type: Wires
-    BoardName: "ChemDispenser"
-    LayoutId: ChemDispenser
+    boardName: wires-board-name-chemdispenser
+    layoutId: ChemDispenser
   - type: UpgradePowerDraw
     powerDrawMultiplier: 0.75
     scaling: Exponential
+  - type: GuideHelp
+    guides:
+    - Chemicals
+    - Chemist

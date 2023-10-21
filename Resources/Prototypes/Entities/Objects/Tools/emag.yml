@@ -8,9 +8,10 @@
   - type: LimitedCharges
   - type: AutoRecharge
   - type: Sprite
-    netsync: false
     sprite: Objects/Tools/emag.rsi
     state: icon
+  - type: Item
+    sprite: Objects/Tools/emag.rsi
 
 - type: entity
   parent: BaseItem
@@ -21,6 +22,7 @@
   components:
   - type: Emag
   - type: Sprite
-    netsync: false
     sprite: Objects/Tools/emag.rsi
     state: icon
+  - type: Item
+    sprite: Objects/Tools/emag.rsi

@@ -1,16 +1,14 @@
+using System.Threading;
+using Content.Server.GameTicking.Rules.Components;
 using Content.Server.Power.Components;
+using Content.Server.Power.EntitySystems;
+using Content.Server.Station.Components;
+using Content.Server.StationEvents.Components;
 using JetBrains.Annotations;
 using Robust.Shared.Audio;
 using Robust.Shared.Player;
 using Robust.Shared.Utility;
-using System.Threading;
-using Content.Server.Power.EntitySystems;
 using Timer = Robust.Shared.Timing.Timer;
-using System.Linq;
-using Content.Server.GameTicking.Rules.Components;
-using Robust.Shared.Random;
-using Content.Server.Station.Components;
-using Content.Server.StationEvents.Components;
 
 namespace Content.Server.StationEvents.Events
 {
@@ -23,14 +21,14 @@ namespace Content.Server.StationEvents.Events
         {
             base.Started(uid, component, gameRule, args);
 
-            if (StationSystem.Stations.Count == 0)
+            if (!TryGetRandomStation(out var chosenStation))
                 return;
-            var chosenStation = RobustRandom.Pick(StationSystem.Stations.ToList());
 
-            foreach (var (apc, transform) in EntityQuery<ApcComponent, TransformComponent>(true))
+            var query = AllEntityQuery<ApcComponent, TransformComponent>();
+            while (query.MoveNext(out var apcUid ,out var apc, out var transform))
             {
                 if (apc.MainBreakerEnabled && CompOrNull<StationMemberComponent>(transform.GridUid)?.Station == chosenStation)
-                    component.Powered.Add(apc.Owner);
+                    component.Powered.Add(apcUid);
             }
 
             RobustRandom.Shuffle(component.Powered);

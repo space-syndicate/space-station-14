@@ -1,11 +1,8 @@
+using System.Diagnostics.CodeAnalysis;
 using System.Linq;
 using System.Runtime.CompilerServices;
-using System.Diagnostics.CodeAnalysis;
-using Content.Shared.Decals;
 using Content.Shared.Physics;
 using Robust.Shared.Map;
-using Robust.Shared.Physics;
-using Robust.Shared.Physics.Components;
 using Robust.Shared.Random;
 
 namespace Content.Shared.Maps
@@ -42,7 +39,7 @@ namespace Content.Shared.Maps
 
             mapManager ??= IoCManager.Resolve<IMapManager>();
             var pos = coordinates.ToMap(entityManager, entityManager.System<SharedTransformSystem>());
-            if (!mapManager.TryFindGridAt(pos, out var grid))
+            if (!mapManager.TryFindGridAt(pos, out _, out var grid))
                 return null;
 
             if (!grid.TryGetTileRef(coordinates, out var tile))
@@ -87,6 +84,30 @@ namespace Content.Shared.Maps
         public static bool IsSpace(this TileRef tile, ITileDefinitionManager? tileDefinitionManager = null)
         {
             return tile.Tile.IsSpace(tileDefinitionManager);
+        }
+
+        /// <summary>
+        ///     Returns a weighted pick of a tile variant.
+        /// </summary>
+        public static byte PickVariant(this ContentTileDefinition tile, IRobustRandom? random = null)
+        {
+            IoCManager.Resolve(ref random);
+            var variants = tile.PlacementVariants;
+
+            var sum = variants.Sum();
+            var accumulated = 0f;
+            var rand = random.NextFloat() * sum;
+
+            for (byte i = 0; i < variants.Length; ++i)
+            {
+                accumulated += variants[i];
+
+                if (accumulated >= rand)
+                    return i;
+            }
+
+            // Shouldn't happen
+            throw new InvalidOperationException($"Invalid weighted variantize tile pick for {tile.ID}!");
         }
 
         /// <summary>
@@ -140,13 +161,6 @@ namespace Content.Shared.Maps
             return IoCManager.Resolve<IEntitySystemManager>().GetEntitySystem<TurfSystem>().IsTileBlocked(turf, mask);
         }
 
-        public static EntityCoordinates GridPosition(this TileRef turf, IMapManager? mapManager = null)
-        {
-            mapManager ??= IoCManager.Resolve<IMapManager>();
-
-            return turf.GridIndices.ToEntityCoordinates(turf.GridUid, mapManager);
-        }
-
         /// <summary>
         /// Creates a box the size of a tile, at the same position in the world as the tile.
         /// </summary>
@@ -158,7 +172,7 @@ namespace Content.Shared.Maps
 
             if (map.TryGetGrid(turf.GridUid, out var tileGrid))
             {
-                var gridRot = entManager.GetComponent<TransformComponent>(tileGrid.Owner).WorldRotation;
+                var gridRot = entManager.GetComponent<TransformComponent>(turf.GridUid).WorldRotation;
 
                 // This is scaled to 90 % so it doesn't encompass walls on other tiles.
                 var tileBox = Box2.UnitCentered.Scale(0.9f);

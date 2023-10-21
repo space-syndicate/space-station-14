@@ -25,7 +25,6 @@
   - type: Sprite
     sprite: Structures/Wallmounts/Lighting/light_tube.rsi
     drawdepth: WallMountedItems
-    netsync: false
     layers:
     - state: on
       map: ["enum.PoweredLightLayers.Base"]
@@ -315,6 +314,7 @@
     maxCharge: 30000
     startingCharge: 0
   - type: EmergencyLight
+  - type: RotatingLight
   - type: Sprite
     sprite: Structures/Wallmounts/Lighting/emergency_light.rsi
     layers:

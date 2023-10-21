@@ -6,6 +6,22 @@
   - type: MobMover
   - type: Mech
   - type: MechAir
+  - type: MechAirFilter
+    # everything except oxygen and nitrogen
+    gases:
+    - 2
+    - 3
+    - 4
+    - 5
+    - 6
+    - 7
+    - 8
+    #- 9 TODO: fusion
+  - type: MechAirIntake
+  # for intake and filter to work
+  - type: AtmosDevice
+    requireAnchored: false
+    joinSystem: true
   - type: DoAfter
   - type: Repairable
     fuelCost: 25
@@ -36,9 +52,10 @@
   - type: Physics
     bodyType: KinematicController
   - type: Clickable
+  - type: WiresPanel
   - type: Wires #we just want the panel
-    BoardName: Mech
-    LayoutId: Mech
+    boardName: wires-board-name-mech
+    layoutId: Mech
   - type: Fixtures
     fixtures:
       fix1:
@@ -73,7 +90,6 @@
   description: Versatile and lightly armored, the Ripley is useful for almost any heavy work scenario. The "APLU" stands for Autonomous Power Loading Unit.
   components:
   - type: Sprite
-    netsync: false
     drawdepth: Mobs
     noRot: true
     sprite: Objects/Specific/Mech/mecha.rsi
@@ -88,6 +104,9 @@
     openState: ripley-open
     brokenState: ripley-broken
     mechToPilotDamageMultiplier: 0.75
+    pilotWhitelist:
+      components:
+        - HumanoidAppearance
   - type: MeleeWeapon
     hidden: true
     attackRate: 1
@@ -110,13 +129,12 @@
 
 # TODO: have a whitelist for honker equipment
 - type: entity
-  id: MechHonker
   parent: BaseMech
+  id: MechHonker
   name: H.O.N.K.
   description: "Produced by \"Tyranny of Honk, INC\", this exosuit is designed as heavy clown-support. Used to spread the fun and joy of life. HONK!"
   components:
   - type: Sprite
-    netsync: false
     drawdepth: Mobs
     noRot: true
     sprite: Objects/Specific/Mech/mecha.rsi
@@ -131,10 +149,128 @@
     openState: honker-open
     brokenState: honker-broken
     mechToPilotDamageMultiplier: 0.5
+    pilotWhitelist:
+      components:
+      - HumanoidAppearance
 
 - type: entity
-  id: MechHonkerBattery
   parent: MechHonker
+  id: MechHonkerBattery
+  suffix: Battery
+  components:
+  - type: ContainerFill
+    containers:
+      mech-battery-slot:
+      - PowerCellHigh
+
+- type: entity
+  parent: BaseMech
+  id: MechHamtr
+  name: HAMTR
+  description: "An experimental mech which uses a brain–computer interface to connect directly to a hamsters brain."
+  components:
+  - type: Sprite
+    drawdepth: Mobs
+    noRot: true
+    sprite: Objects/Specific/Mech/mecha.rsi
+    layers:
+    - map: [ "enum.MechVisualLayers.Base" ]
+      state: hamtr
+  - type: FootstepModifier
+    footstepSoundCollection:
+      path: /Audio/Mecha/sound_mecha_powerloader_step.ogg
+  - type: Mech
+    baseState: hamtr
+    openState: hamtr-open
+    brokenState: hamtr-broken
+    mechToPilotDamageMultiplier: 0.2
+    maxEquipmentAmount: 2
+    airtight: true
+    equipmentWhitelist:
+      tags:
+      - SmallMech
+    pilotWhitelist:
+      tags:
+      - Hamster
+  - type: MeleeWeapon
+    hidden: true
+    attackRate: 0.8
+    damage:
+      types:
+        Blunt: 10 #thwack
+        Structural: 2
+  - type: MovementSpeedModifier
+    baseWalkSpeed: 2.4
+    baseSprintSpeed: 3.7
+
+- type: entity
+  parent: MechHamtr
+  id: MechHamtrBattery
+  suffix: Battery
+  components:
+  - type: ContainerFill
+    containers:
+      mech-battery-slot:
+      - PowerCellHigh
+
+# Vim!!!!!!!
+
+- type: entity
+  parent: BaseMech
+  id: MechVim
+  name: Vim
+  description: A minature exosuit from Nanotrasen, developed to let the irreplacable station pets live a little longer.
+  components:
+  - type: Sprite
+    drawdepth: Mobs
+    noRot: true
+    sprite: Objects/Specific/Mech/mecha.rsi
+    layers:
+    - map: [ "enum.MechVisualLayers.Base" ]
+      state: vim
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeCircle
+          radius: 0.15
+        density: 80
+        mask:
+        - MobMask
+        layer:
+        - MobLayer
+  - type: FootstepModifier
+    footstepSoundCollection:
+      path: /Audio/Mecha/mechmove03.ogg
+      params:
+        volume: -10
+  - type: Mech
+    baseState: vim
+    openState: vim-open
+    brokenState: vim-broken
+    maxEquipmentAmount: 0
+    # keep mouse safe
+    mechToPilotDamageMultiplier: 0.1
+    airtight: true
+    pilotWhitelist:
+      tags:
+      - VimPilot
+  - type: MeleeWeapon
+    hidden: true
+    attackRate: 0.8
+    damage:
+      types:
+        Blunt: 10 #thwack
+        Structural: 2
+  - type: MovementSpeedModifier
+    baseWalkSpeed: 2.25
+    baseSprintSpeed: 3.6
+  # TOOD: buzz / chime actions
+  # TODO: builtin flashlight
+
+- type: entity
+  parent: MechVim
+  id: MechVimBattery
   suffix: Battery
   components:
   - type: ContainerFill
