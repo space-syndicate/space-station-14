@@ -75,3 +75,14 @@ marking-CyberlimbLLegNanotrasen = Протез, левая нога (Нанот�
 marking-CyberlimbLFootNanotrasen = Протез, правая стопа (Нанотрасен)
 marking-CyberlimbRFootNanotrasen = Протез, левая стопа (Нанотрасен)
 marking-CyberlimbTorsoNanotrasen = Протез, туловище (Нанотрасен)
+
+# Xion
+marking-CyberlimbRArmXion = Протез, правая рука (Ксион)
+marking-CyberlimbLArmXion = Протез, левая рука (Ксион)
+marking-CyberlimbRHandXion = Протез, кисть правой руки (Ксион)
+marking-CyberlimbLHandXion = Протез, кисть левой руки (Ксион)
+marking-CyberlimbRLegXion = Протез, правая нога (Ксион)
+marking-CyberlimbLLegXion = Протез, левая нога (Ксион)
+marking-CyberlimbLFootXion = Протез, правая стопа (Ксион)
+marking-CyberlimbRFootXion = Протез, левая стопа (Ксион)
+marking-CyberlimbTorsoXion = Протез, туловище (Ксион)
