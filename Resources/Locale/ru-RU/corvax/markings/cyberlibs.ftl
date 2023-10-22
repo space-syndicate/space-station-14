@@ -8,7 +8,6 @@ marking-CyberlimbLLegBishop = Протез, левая нога (Бисшоп)
 marking-CyberlimbLFootBishop = Протез, правая стопа (Бисшоп)
 marking-CyberlimbRFootBishop = Протез, левая стопа (Бисшоп)
 marking-CyberlimbTorsoBishop = Протез, туловище (Бисшоп)
-
 # Hephaestus
 marking-CyberlimbRArmHephaestus = Протез, правая рука (Гефест)
 marking-CyberlimbLArmHephaestus = Протез, левая рука (Гефест)
@@ -19,7 +18,6 @@ marking-CyberlimbLLegHephaestus = Протез, левая нога (Гефес�
 marking-CyberlimbLFootHephaestus = Протез, правая стопа (Гефест)
 marking-CyberlimbRFootHephaestus = Протез, левая стопа (Гефест)
 marking-CyberlimbTorsoHephaestus = Протез, туловище (Гефест)
-
 # Hephaestus Titan
 marking-CyberlimbRArmHephaestusTitan = Протез, правая рука (Гефест Титан)
 marking-CyberlimbLArmHephaestusTitan = Протез, левая рука (Гефест Титан)
@@ -30,7 +28,6 @@ marking-CyberlimbLLegHephaestusTitan = Протез, левая нога (Геф
 marking-CyberlimbLFootHephaestusTitan = Протез, правая стопа (Гефест Титан)
 marking-CyberlimbRFootHephaestusTitan = Протез, левая стопа (Гефест Титан)
 marking-CyberlimbTorsoHephaestusTitan = Протез, туловище (Гефест Титан)
-
 # Morpheus
 marking-CyberlimbRArmMorpheus = Протез, правая рука (Морфиус)
 marking-CyberlimbLArmMorpheus = Протез, левая рука (Морфиус)
@@ -41,7 +38,6 @@ marking-CyberlimbLLegMorpheus = Протез, левая нога (Морфиу�
 marking-CyberlimbLFootMorpheus = Протез, правая стопа (Морфиус)
 marking-CyberlimbRFootMorpheus = Протез, левая стопа (Морфиус)
 marking-CyberlimbTorsoMorpheus = Протез, туловище (Морфиус)
-
 # Zenghu
 marking-CyberlimbRArmZenghu = Протез, правая рука (Зенху)
 marking-CyberlimbLArmZenghu = Протез, левая рука (Зенху)
@@ -52,7 +48,6 @@ marking-CyberlimbLLegZenghu = Протез, левая нога (Зенху)
 marking-CyberlimbLFootZenghu = Протез, правая стопа (Зенху)
 marking-CyberlimbRFootZenghu = Протез, левая стопа (Зенху)
 marking-CyberlimbTorsoZenghu = Протез, туловище (Зенху)
-
 # Nanotrasen
 marking-CyberlimbRArmNanotrasen = Протез, правая рука (Нанотрасен)
 marking-CyberlimbLArmNanotrasen = Протез, левая рука (Нанотрасен)
