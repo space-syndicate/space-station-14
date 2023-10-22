@@ -42,6 +42,18 @@ marking-CyberlimbLFootMorpheus = Протез, правая стопа (Морф
 marking-CyberlimbRFootMorpheus = Протез, левая стопа (Морфиус)
 marking-CyberlimbTorsoMorpheus = Протез, туловище (Морфиус)
 
+# Wardtakahashi
+marking-CyberlimbRArmWardtakahashi = Протез, правая рука (Вардтакахаши)
+marking-CyberlimbLArmWardtakahashi = Протез, левая рука (Вардтакахаши)
+marking-CyberlimbRHandWardtakahashi = Протез, кисть правой руки (Вардтакахаши)
+marking-CyberlimbLHandWardtakahashi = Протез, кисть левой руки (Вардтакахаши)
+marking-CyberlimbRLegWardtakahashi = Протез, правая нога (Вардтакахаши)
+marking-CyberlimbLLegWardtakahashi = Протез, левая нога (Вардтакахаши)
+marking-CyberlimbLFootWardtakahashi = Протез, правая стопа (Вардтакахаши)
+marking-CyberlimbRFootWardtakahashi = Протез, левая стопа (Вардтакахаши)
+marking-CyberlimbTorsoWardtakahashiMale = Протез, туловище (Вардтакахаши)
+marking-CyberlimbTorsoWardtakahashiFemale = Протез, туловище (Вардтакахаши)
+
 # Zenghu
 marking-CyberlimbRArmZenghu = Протез, правая рука (Зенху)
 marking-CyberlimbLArmZenghu = Протез, левая рука (Зенху)
