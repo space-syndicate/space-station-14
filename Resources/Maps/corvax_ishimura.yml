@@ -61546,17 +61546,6 @@ entities:
     - canCollide: False
       type: Physics
     - type: InsideEntityStorage
-- proto: ClothingHandsGlovesLeatherHoS
-  entities:
-  - uid: 20913
-    components:
-    - flags: InContainer
-      type: MetaData
-    - parent: 20900
-      type: Transform
-    - canCollide: False
-      type: Physics
-    - type: InsideEntityStorage
 - proto: ClothingHandsGlovesNitrile
   entities:
   - uid: 12589
@@ -62275,13 +62264,6 @@ entities:
   - uid: 15206
     components:
     - pos: 27.533932,31.373447
-      parent: 89
-      type: Transform
-- proto: ClothingOuterCoatHoSOvercoat
-  entities:
-  - uid: 2768
-    components:
-    - pos: 44.540276,-6.513979
       parent: 89
       type: Transform
 - proto: ClothingOuterCoatLab
@@ -116721,7 +116703,6 @@ entities:
           - 20910
           - 20911
           - 20912
-          - 20913
           - 20914
           - 20915
           - 20916
