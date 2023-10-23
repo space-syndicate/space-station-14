@@ -18,7 +18,7 @@ public sealed class EntityEntry
     public EntityEntry(EntityPrototype proto)
     {
         Id = proto.ID;
-        Name = TextTools.TextTools.CapitalizeString(proto.Name);
+        Name = TextTools.TextTools.CapitalizeString(proto.Name); // Corvax-Wiki
         Description = proto.Description;
     }
 }
