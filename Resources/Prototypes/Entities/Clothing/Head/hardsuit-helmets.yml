@@ -194,7 +194,7 @@
   - type: Clothing
     sprite: Clothing/Head/Hardsuits/security-warden.rsi
   - type: PointLight
-    color: "#ffeead"
+    color: cyan # Corvax-Resprite
   - type: PressureProtection
     highPressureMultiplier: 0.525
     lowPressureMultiplier: 1000
@@ -558,7 +558,7 @@
   - type: Clothing
     sprite: Clothing/Head/Hardsuits/ERThelmets/ertengineer.rsi
   - type: PointLight
-    color: "#f4ffad"
+    color: cyan # Corvax-Resprite
   - type: Armor
     modifiers:
       coefficients:
@@ -593,7 +593,7 @@
   - type: Clothing
     sprite: Clothing/Head/Hardsuits/ERThelmets/ertsecurity.rsi
   - type: PointLight
-    color: "#ffadc6"
+    color: cyan # Corvax-Resprite
   - type: Armor
     modifiers:
       coefficients:
