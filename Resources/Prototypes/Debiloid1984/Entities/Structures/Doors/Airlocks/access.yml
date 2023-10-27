@@ -1,0 +1,111 @@
+﻿#HighSecDoors CC
+- type: entity
+  parent: HighSecDoor
+  id: HighSecCentComLocked
+  name: Бронированная дверь ЦК
+  suffix: CentCom, Locked
+  components:
+    - type: AccessReader
+      access: [["CCGeneral"]]
+    - type: PaintableAirlock
+      group: Glass
+    - type: Door
+      occludes: false
+    - type: Occluder
+      enabled: false
+    - type: Sprite
+      sprite: Structures/Doors/Airlocks/Glass/glass.rsi
+    - type: AnimationPlayer
+
+- type: entity
+  parent: HighSecDoor
+  id: HighSecCCArmoryLocked
+  name: Бронированная дверь ЦК
+  suffix: CentCom, Armory, Locked
+  components:
+    - type: AccessReader
+      access: [["CCSecurity"]]
+    - type: PaintableAirlock
+      group: Glass
+    - type: Door
+      occludes: false
+    - type: Occluder
+      enabled: false
+    - type: Sprite
+      sprite: Structures/Doors/Airlocks/Glass/glass.rsi
+    - type: AnimationPlayer
+
+- type: entity
+  parent: HighSecDoor
+  id: HighSecCCOfficerLocked
+  name: Бронированная дверь ЦК
+  suffix: CentCom, Officer, Locked
+  components:
+    - type: AccessReader
+      access: [["CCOfficer"]]
+    - type: PaintableAirlock
+      group: Glass
+    - type: Door
+      occludes: false
+    - type: Occluder
+      enabled: false
+    - type: Sprite
+      sprite: Structures/Doors/Airlocks/Glass/glass.rsi
+    - type: AnimationPlayer
+
+- type: entity
+  parent: HighSecDoor
+  id: HighSecCCAdmiralLocked
+  name: Бронированная дверь каюты Адмирала ЦК
+  suffix: CentCom, Admiral, Locked
+  components:
+    - type: AccessReader
+      access: [["CCAdmiral"]]
+    - type: PaintableAirlock
+      group: Glass
+    - type: Door
+      occludes: false
+    - type: Occluder
+      enabled: false
+    - type: Sprite
+      sprite: Structures/Doors/Airlocks/Glass/glass.rsi
+    - type: AnimationPlayer
+
+#Airlocks CC
+- type: entity
+  parent: AirlockCargo
+  id: AirlockCCCargoLocked
+  name: Шлюз ЦК
+  suffix: CentCom, Cargo, Locked
+  components:
+    - type: AccessReader
+      access: [["CCCargo"]]
+
+- type: entity
+  parent: AirlockSecurity
+  id: AirlockCCSecurityLocked
+  name: Шлюз ЦК
+  suffix: CentCom, Security, Locked
+  components:
+    - type: AccessReader
+      access: [["CCSecurity"]]
+    - type: Wires
+      LayoutId: AirlockSecurity
+
+- type: entity
+  parent: AirlockEngineering
+  id: AirlockCCEngineeringLocked
+  name: Шлюз ЦК
+  suffix: CentCom, Engineering, Locked
+  components:
+    - type: AccessReader
+      access: [["CCGeneral"]]
+
+- type: entity
+  parent: AirlockMedical
+  id: AirlockCCMedicalLocked
+  name: Шлюз ЦК
+  suffix: CentCom, Medical, Locked
+  components:
+    - type: AccessReader
+      access: [["CCGeneral"]]

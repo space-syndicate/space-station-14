@@ -1,0 +1,30 @@
+- type: entity
+  name: Рапира
+  parent: BaseItem
+  id: Rapier
+  description: Рапира выкована стариком Мифистофелем.
+  components:
+  - type: Sharp
+  - type: Sprite
+    sprite: Debiloid1984/Objects/Weapons/Melee/Rapier_cvasoc.rsi
+    state: icon
+  - type: MeleeWeapon
+    attackRate: 1.6
+    damage:
+      types:
+        Slash: 10 
+        Piercing: 5
+        Holy: 7
+    soundHit:
+        path: /Audio/Weapons/Rapier.ogg
+  - type: Reflect
+    enabled: true
+    reflectProb: .6
+    spread: 90        
+  - type: Item
+    size: 10
+    sprite: Debiloid1984/Objects/Weapons/Melee/Rapier_cvasoc.rsi
+  - type: Tag
+    tags:
+    - CaptainSabre
+  - type: DisarmMalus  

@@ -1,0 +1,20 @@
+- type: entity
+  name: RSH18
+  parent: BaseWeaponRevolver
+  id: WeaponRevolverRsh18
+  description: The iconic sidearm of the dreaded death squads. Uses .45 magnum ammo.
+  components:
+  - type: Sprite
+    sprite: Debiloid1984/Objects/Weapons/Guns/Revolvers/rsh18.rsi
+  - type: Clothing
+    sprite: Debiloid1984/Objects/Weapons/Guns/Revolvers/rsh18.rsi
+  - type: RevolverAmmoProvider
+    whitelist:
+      tags:
+        - CartridgeMagnum
+        - SpeedLoaderMagnum
+    proto: CartridgeMagnumAP
+  - type: Gun
+    fireRate: 3
+    soundGunshot:
+      path: /Audio/Debiloid1984/Weapons/Guns/Gunshots/rsh18.ogg

@@ -1,0 +1,13 @@
+﻿- type: entity
+  parent: ClothingHeadsetAlt
+  id: ClothingHeadsetAltBlueShield
+  name: command over-ear headset
+  components:
+  - type: ContainerFill
+    containers:
+      key_slots:
+      - EncryptionKeyStationMaster
+  - type: Sprite
+    sprite: Debiloid1984/Clothing/Ears/Headsets/blueshield.rsi
+  - type: Clothing
+    sprite: Debiloid1984/Clothing/Ears/Headsets/blueshield.rsi

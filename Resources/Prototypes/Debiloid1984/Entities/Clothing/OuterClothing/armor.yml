@@ -1,0 +1,66 @@
+- type: entity
+  parent: ClothingOuterBaseLarge
+  id: ClothingOuterArmorBlueshield
+  name: blueshield armor vest
+  description: Armor vest especially for Blueshield Officer
+  components:
+  - type: Sprite
+    sprite: Debiloid1984/Clothing/OuterClothing/Armor/blueshield.rsi
+  - type: Clothing
+    sprite: Debiloid1984/Clothing/OuterClothing/Armor/blueshield.rsi
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.5
+        Slash: 0.5
+        Piercing: 0.6
+        Heat: 0.5
+        Caustic: 0.9
+  - type: ExplosionResistance
+    damageCoefficient: 0.65
+  - type: GroupExamine
+
+- type: entity
+  parent: ClothingOuterBaseLarge
+  id: ClothingOuterArmorCrusader
+  name: Crusader Armor
+  description: An armored vest with heavy padding to protect against melee attacks, perfect for fighting delinquents around the station.
+  components:
+  - type: Sprite
+    sprite: Debiloid1984/Clothing/OuterClothing/Armor/armor_crusader.rsi
+  - type: Clothing
+    sprite: Debiloid1984/Clothing/OuterClothing/Armor/armor_crusader.rsi
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.65
+        Slash: 0.6
+        Piercing: 0.5
+        Heat: 0.4
+        Radiation: 0.20
+        Caustic: 0.75
+  - type: ExplosionResistance
+    damageCoefficient: 0.8
+  - type: GroupExamine
+
+- type: entity
+  parent: ClothingOuterBaseLarge
+  id: ClothingOuterArmorIOG
+  name: "Костюм биологической защиты ИОГ"
+  description: "Костюм биологической защиты ИОГ 3 класса. На груди виден бронежилет."
+  components:
+  - type: Sprite
+    sprite: Debiloid1984/Clothing/OuterClothing/Armor/armor_iog.rsi
+  - type: Clothing
+    sprite: Debiloid1984/Clothing/OuterClothing/Armor/armor_iog.rsi
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.5
+        Slash: 0.5
+        Piercing: 0.5
+        Heat: 0.5
+        Caustic: 0.5
+  - type: ExplosionResistance
+    damageCoefficient: 0.60
+  - type: GroupExamine

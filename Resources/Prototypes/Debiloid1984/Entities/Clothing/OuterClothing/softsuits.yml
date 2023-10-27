@@ -1,0 +1,16 @@
+#Cargo EVA
+- type: entity
+  parent: ClothingOuterEVASuitBase
+  id: ClothingOuterHardsuitCargoEVA
+  name: EVA cargo suit
+  description: Скафандр EVA изготовленный специально для отдела снабжения.
+  components:
+  - type: Sprite
+    sprite: Debiloid1984/Clothing/OuterClothing/Hardsuits/eva_cargo.rsi
+  - type: Clothing
+    sprite: Debiloid1984/Clothing/OuterClothing/Hardsuits/eva_cargo.rsi
+  - type: ToggleableClothing
+    clothingPrototype: ClothingHeadHelmetCargoEVA
+  - type: ContainerContainer
+    containers:
+      toggleable-clothing: !type:ContainerSlot {}

@@ -1,0 +1,35 @@
+{
+    "version": 1,
+    "license": "CC-BY-SA-3.0",
+    "copyright": "Taken/modified from tgstation at https://github.com/tgstation/tgstation/commit/23bf156fb0eb366075691eae8c3f080e61e09902",
+    "size": {
+        "x": 32,
+        "y": 32
+    },
+    "states": [
+	{
+		"name": "icon"
+	},
+	{
+		"name": "base"
+	},
+	{
+		"name": "bolt-open"
+	},
+	{
+		"name": "mag-0"
+	},
+	{
+		"name": "inhand-left",
+		"directions": 4
+	},
+	{
+		"name": "inhand-right",
+		"directions": 4
+	},
+	{
+		"name": "equipped-BACKPACK",
+		"directions": 4
+	}
+    ]
+}

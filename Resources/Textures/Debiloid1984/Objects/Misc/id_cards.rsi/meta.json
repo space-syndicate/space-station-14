@@ -1,0 +1,74 @@
+{
+  "version": 1,
+  "license": "CC-BY-SA-3.0",
+  "copyright": "Taken from tgstation at commit https://github.com/tgstation/tgstation/commit/d917f4c2a088419d5c3aec7656b7ff8cebd1822e idcluwne made by brainfood1183 (github) for ss14, idbrigmedic made by PuroSlavKing (Github), @Vordenburg",
+  "size": {
+    "x": 32,
+    "y": 32
+  },
+  "states": [
+    {
+      "name": "idcardmog"
+    },
+    {
+      "name": "idcardiog"
+    },
+    {
+      "name": "default"
+    },
+    {
+      "name": "black"
+    },
+    {
+      "name": "idcardro"
+    },
+    {
+      "name": "idbrigmedic"
+    },
+    {
+      "name": "iddelivery"
+    },
+    {
+      "name": "black-inhand-left",
+      "directions": 4
+    },
+    {
+      "name": "black-inhand-right",
+      "directions": 4
+    },
+    {
+      "name": "default-inhand-left",
+      "directions": 4
+    },
+    {
+      "name": "default-inhand-right",
+      "directions": 4
+    },
+    {
+      "name": "idexplorer"
+    },
+    {
+      "name": "idfreelancer"
+    },
+    {
+      "name": "idstudent"
+    },
+    {
+      "name": "unaffiliated"
+    },
+    {
+      "name": "unaffiliated-inhand-left",
+      "directions": 4
+    },
+    {
+      "name": "unaffiliated-inhand-right",
+      "directions": 4
+    },
+    {
+        "name": "idueg"
+    },
+    {
+        "name": "iduegofficer"
+    }
+  ]
+}

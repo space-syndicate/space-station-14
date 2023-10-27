@@ -680,6 +680,17 @@
   - UplinkBundles
 
 - type: listing
+  id: UplinkKR51Bundle
+  name: uplink-kr51-bundle-name
+  description: uplink-kr51-bundle-desc
+  icon: { sprite: /Textures/Objects/Weapons/Guns/Rifles/kr51.rsi, state: icon }
+  productEntity: ClothingBackpackDuffelSyndicateFilledRifle
+  cost:
+    Telecrystal: 17
+  categories:
+  - UplinkBundles
+
+- type: listing
   id: UplinkBulldogBundle
   name: uplink-buldog-bundle-name
   description: uplink-buldog-bundle-desc

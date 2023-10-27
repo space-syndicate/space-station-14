@@ -1,0 +1,93 @@
+- type: entity
+  parent: ClothingHeadset
+  id: ClothingHeadsetOrden
+  name: Headset of the Red Order
+  description: Special typeface used by members of the Red Order
+  components:
+  - type: ContainerFill
+    containers:
+      key_slots:
+      - EncryptionKeyOrden
+  - type: Sprite
+    sprite: Debiloid1984/Clothing/Ears/Headsets/orden.rsi
+  - type: Clothing
+    sprite: Debiloid1984/Clothing/Ears/Headsets/orden.rsi
+
+- type: entity
+  parent: ClothingHeadset
+  id: ClothingHeadsetFleetAdmiral
+  name: Fleet headset
+  description: A headset used by the upper echelons of Nanotrasen.
+  components:
+  - type: ContainerFill
+    containers:
+      key_slots:
+      - EncryptionKeyCentCom
+      - EncryptionKeyStationMaster
+      - EncryptionKeyFleet
+  - type: Sprite
+    sprite: Clothing/Ears/Headsets/centcom.rsi
+  - type: Clothing
+    sprite: Clothing/Ears/Headsets/centcom.rsi
+
+- type: entity
+  parent: ClothingHeadset
+  id: ClothingHeadsetFleet
+  name: Fleet headset
+  description: A headset used by the upper echelons of Nanotrasen.
+  components:
+  - type: ContainerFill
+    containers:
+      key_slots:
+      - EncryptionKeyFleet
+  - type: Sprite
+    sprite: Clothing/Ears/Headsets/centcom.rsi
+  - type: Clothing
+    sprite: Clothing/Ears/Headsets/centcom.rsi
+
+- type: entity
+  parent: ClothingHeadset
+  id: ClothingHeadsetUEG
+  name: Гарнитура ОПЗ
+  description: Гарнитура используемая представителями ОПЗ
+  components:
+  - type: ContainerFill
+    containers:
+      key_slots:
+      - EncryptionKeyUEG
+      - EncryptionKeyCommand
+  - type: Sprite
+    sprite: Clothing/Ears/Headsets/centcom.rsi
+  - type: Clothing
+    sprite: Clothing/Ears/Headsets/centcom.rsi
+
+- type: entity
+  parent: ClothingHeadset
+  id: ClothingHeadsetUEGofficer
+  name: Гарнитура охраны ОПЗ
+  description: Гарнитура используемая офицерами ОПЗ
+  components:
+  - type: ContainerFill
+    containers:
+      key_slots:
+      - EncryptionKeyUEG
+      - EncryptionKeySecurity
+  - type: Sprite
+    sprite: Clothing/Ears/Headsets/security.rsi
+  - type: Clothing
+    sprite: Clothing/Ears/Headsets/security.rsi
+
+- type: entity
+  parent: ClothingHeadset
+  id: ClothingHeadsetBlueShield
+  name: command headset
+  description: A headset with a commanding channel.
+  components:
+  - type: ContainerFill
+    containers:
+      key_slots:
+      - EncryptionKeyStationMaster
+  - type: Sprite
+    sprite: Debiloid1984/Clothing/Ears/Headsets/blueshield.rsi
+  - type: Clothing
+    sprite: Debiloid1984/Clothing/Ears/Headsets/blueshield.rsi

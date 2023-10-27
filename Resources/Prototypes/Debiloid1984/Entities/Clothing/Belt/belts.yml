@@ -1,0 +1,34 @@
+- type: entity
+  parent: ClothingBeltStorageBase
+  id: ClothingBeltOrden
+  name: Scabbard of the red order
+  description: A special scabbard created exclusively for the sabers of the Red Order.
+  components:
+  - type: Sprite
+    sprite: Debiloid1984/Clothing/Belt/orden_sheath.rsi
+    state: sheath
+  - type: Clothing
+    sprite: Debiloid1984/Clothing/Belt/orden_sheath.rsi
+  - type: Storage
+    capacity: 15
+    whitelist:
+      tags:
+        - CaptainSabre
+  - type: ItemMapper
+    mapLayers:
+      sheath-sabre:
+        whitelist:
+          tags:
+          - CaptainSabre
+  - type: Appearance
+
+- type: entity
+  parent: ClothingBeltStorageBase
+  id: ClothingBeltMiningWebbing
+  name: mining rig
+  description: Universal unloading system for work in space.
+  components:
+  - type: Sprite
+    sprite: Debiloid1984/Clothing/Belt/miningwebbing.rsi
+  - type: Clothing
+    sprite: Debiloid1984/Clothing/Belt/miningwebbing.rsi

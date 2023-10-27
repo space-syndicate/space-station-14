@@ -1,0 +1,2 @@
+job-description-comsalvage = Your task is to guide the salvage squad and train them as well. (Role be create by Debiloid3000)
+job-description-blueshield = Don't let the command members die. You should not follow their orders, the goal is one - not to let them die until the end of the shift.

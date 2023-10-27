@@ -1,0 +1,11 @@
+- type: entity
+  noSpawn: true
+  parent: ClothingBackpackSatchelBlueShield
+  id: ClothingBackpackSatchelBlueShieldFilled
+  components:
+  - type: StorageFill
+    contents:
+      - id: BoxSurvivalBlueShield
+      - id: TelescopicBaton
+      - id: Flash
+

@@ -1,0 +1,127 @@
+- type: entity
+  parent: ClothingHeadBase
+  id: ClothingMogHelmet
+  name: Баллистический Шлем МОГ
+  description: Баллистический Шлем корпорации CSH для бойцов МОГ, покрыт желтым слоем стекла, обеспечивает защиту от осколков, разработан инженером CSH Беловым.
+  components:
+  - type: Sprite
+    sprite: Debiloid1984/Clothing/Head/Helmets/mog_helmet.rsi
+  - type: Clothing
+    sprite: Debiloid1984/Clothing/Head/Helmets/mog_helmet.rsi
+  - type: IngestionBlocker
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.7
+
+- type: entity
+  parent: ClothingHeadBase
+  id: ClothingHeadIOGHelmet
+  name: Шлем биологической защиты ИОГ.
+  description: Шлем биологической защиты ИОГ. Оснащен прокладками из прочного материала, способного сдержать выстрел мелкокалиберного оружия.
+  components:
+  - type: Sprite
+    sprite: Debiloid1984/Clothing/Head/Helmets/biohazardIOG.rsi
+  - type: Clothing
+    sprite: Debiloid1984/Clothing/Head/Helmets/biohazardIOG.rsi
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.8
+        Slash: 0.8
+        Piercing: 0.9
+        Heat: 0.8
+
+- type: entity
+  parent: ClothingHeadBase
+  id: ClothingHeadHelmetPoloskiAltin
+  name: Тяжёлый шлем Алтын
+  description: Тяжелый шлем марки АЛТЫН, способен выдержать выстрел крупнокалиберного оружия.
+  components:
+  - type: Sprite
+    sprite: Debiloid1984/Clothing/Head/Helmets/altinbelov.rsi
+  - type: Clothing
+    sprite: Debiloid1984/Clothing/Head/Helmets/altinbelov.rsi
+  - type: IngestionBlocker
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.60
+        Slash: 0.8
+        Piercing: 0.9
+        Heat: 0.80
+
+- type: entity
+  parent: ClothingHeadBase
+  id: ClothingHeadGermanHelmet
+  name: Старый немецкий шлем
+  description: Довольно старый шлем, который потрепало временем.
+  components:
+  - type: Sprite
+    sprite: Debiloid1984/Clothing/Head/Helmets/germanhelmetbelov.rsi
+  - type: Clothing
+    sprite: Debiloid1984/Clothing/Head/Helmets/germanhelmetbelov.rsi
+  - type: IngestionBlocker
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.50
+        Heat: 0.40
+
+- type: entity
+  parent: ClothingHeadBase
+  id: ClothingHeadHelmetSSSP
+  name: Легкий советский шлем
+  description: Легкий шлем советских войск
+  components:
+  - type: Sprite
+    sprite: Debiloid1984/Clothing/Head/Helmets/helmetssspbel.rsi
+  - type: Clothing
+    sprite: Debiloid1984/Clothing/Head/Helmets/helmetssspbel.rsi
+  - type: IngestionBlocker
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.8
+        Slash: 0.8
+        Piercing: 0.9
+        Heat: 0.4
+
+- type: entity
+  parent: ClothingHeadBase
+  id: ClothingHeadHelmetIhsCombathelmet
+  name: Тяжелый тактический шлем IHS
+  description: Тяжелый шлем неизвестной корпорации, никто не знает кому принадлежат бойцы которые носят данный шлем.
+  components:
+  - type: Sprite
+    sprite: Debiloid1984/Clothing/Head/Helmets/ihscombathelmetbelsuper.rsi
+  - type: Clothing
+    sprite: Debiloid1984/Clothing/Head/Helmets/ihscombathelmetbelsuper.rsi
+  - type: IngestionBlocker
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.60
+        Slash: 0.8
+        Piercing: 0.9
+        Heat: 0.80
+
+#Cargo EVA Helmet
+- type: entity
+  parent: ClothingHeadHardsuitWithLightBase
+  id: ClothingHeadHelmetCargoEVA
+  noSpawn: true
+  name: EVA cargo helmet
+  description: Встроенный шлем скафандра EVA отдела снабжения. Есть фонарик.
+  components:
+  - type: Sprite
+    sprite: Debiloid1984/Clothing/Head/Helmets/eva_cargo.rsi
+  - type: Clothing
+    sprite: Debiloid1984/Clothing/Head/Helmets/eva_cargo.rsi 
+  - type: PointLight
+    color: "#ffdbad"
+  - type: Armor
+    modifiers:
+      coefficients:
+        Slash: 0.9
+        Heat: 0.95

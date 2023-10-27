@@ -1,0 +1,149 @@
+- type: entity
+  parent: EncryptionKey
+  id: EncryptionKey_GROUPS_1
+  name: Encryption Key GROUPS 1
+  components:
+  - type: EncryptionKey
+    channels:
+    - GROUPS_1
+    defaultChannel: GROUPS_1
+  - type: Sprite
+    sprite: Debiloid1984/Objects/Devices/encryption_keysGROUPS.rsi
+    layers:
+    - state: crypt_GROUPS
+    - state: 1_label
+
+- type: entity
+  parent: EncryptionKey
+  id: EncryptionKey_GROUPS_2
+  name: Encryption Key GROUPS 2
+  components:
+  - type: EncryptionKey
+    channels:
+    - GROUPS_2
+    defaultChannel: GROUPS_2
+  - type: Sprite
+    sprite: Debiloid1984/Objects/Devices/encryption_keysGROUPS.rsi
+    layers:
+    - state: crypt_GROUPS
+    - state: 2_label
+
+- type: entity
+  parent: EncryptionKey
+  id: EncryptionKey_GROUPS_3
+  name: Encryption Key GROUPS 3
+  components:
+  - type: EncryptionKey
+    channels:
+    - GROUPS_3
+    defaultChannel: GROUPS_3
+  - type: Sprite
+    sprite: Debiloid1984/Objects/Devices/encryption_keysGROUPS.rsi
+    layers:
+    - state: crypt_GROUPS
+    - state: 3_label
+
+- type: entity
+  parent: EncryptionKey
+  id: EncryptionKey_GROUPS_4
+  name: Encryption Key GROUPS 4
+  components:
+  - type: EncryptionKey
+    channels:
+    - GROUPS_4
+    defaultChannel: GROUPS_4
+  - type: Sprite
+    sprite: Debiloid1984/Objects/Devices/encryption_keysGROUPS.rsi
+    layers:
+    - state: crypt_GROUPS
+    - state: 4_label
+
+- type: entity
+  parent: EncryptionKey
+  id: EncryptionKey_GROUPS_5
+  name: Encryption Key GROUPS 5
+  components:
+  - type: EncryptionKey
+    channels:
+    - GROUPS_5
+    defaultChannel: GROUPS_5
+  - type: Sprite
+    sprite: Debiloid1984/Objects/Devices/encryption_keysGROUPS.rsi
+    layers:
+    - state: crypt_GROUPS
+    - state: 5_label
+
+- type: entity
+  parent: EncryptionKey
+  id: EncryptionKey_GROUPS_6
+  name: Encryption Key GROUPS 6
+  components:
+  - type: EncryptionKey
+    channels:
+    - GROUPS_6
+    defaultChannel: GROUPS_6
+  - type: Sprite
+    sprite: Debiloid1984/Objects/Devices/encryption_keysGROUPS.rsi
+    layers:
+    - state: crypt_GROUPS
+    - state: 6_label
+
+- type: entity
+  parent: EncryptionKey
+  id: EncryptionKey_GROUPS_7
+  name: Encryption Key GROUPS 7
+  components:
+  - type: EncryptionKey
+    channels:
+    - GROUPS_7
+    defaultChannel: GROUPS_7
+  - type: Sprite
+    sprite: Debiloid1984/Objects/Devices/encryption_keysGROUPS.rsi
+    layers:
+    - state: crypt_GROUPS
+    - state: 7_label
+
+- type: entity
+  parent: EncryptionKey
+  id: EncryptionKey_GROUPS_8
+  name: Encryption Key GROUPS 8
+  components:
+  - type: EncryptionKey
+    channels:
+    - GROUPS_8
+    defaultChannel: GROUPS_8
+  - type: Sprite
+    sprite: Debiloid1984/Objects/Devices/encryption_keysGROUPS.rsi
+    layers:
+    - state: crypt_GROUPS
+    - state: 8_label
+
+- type: entity
+  parent: EncryptionKey
+  id: EncryptionKey_GROUPS_9
+  name: Encryption Key GROUPS 9
+  components:
+  - type: EncryptionKey
+    channels:
+    - GROUPS_9
+    defaultChannel: GROUPS_9
+  - type: Sprite
+    sprite: Debiloid1984/Objects/Devices/encryption_keysGROUPS.rsi
+    layers:
+    - state: crypt_GROUPS
+    - state: 9_label
+
+- type: entity
+  parent: EncryptionKey
+  id: EncryptionKey_GROUPS_0
+  name: Encryption Key GROUPS 0
+  components:
+  - type: EncryptionKey
+    channels:
+    - GROUPS_0
+    defaultChannel: GROUPS_0
+  - type: Sprite
+    sprite: Debiloid1984/Objects/Devices/encryption_keysGROUPS.rsi
+    layers:
+    - state: crypt_GROUPS
+    - state: 0_label

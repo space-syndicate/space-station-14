@@ -1,0 +1,21 @@
+- type: entity
+  parent: ClothingHeadBaseButcherable
+  id: ClothingHeadHatCargoPostalsoft
+  name: postal cap
+  description: "It's a baseball hat painted in postal of Cargo colours."
+  components:
+  - type: Sprite
+    sprite: Debiloid1984/Clothing/Head/Soft/cargopostalsoft.rsi
+  - type: Clothing
+    sprite: Debiloid1984/Clothing/Head/Soft/cargopostalsoft.rsi
+
+- type: entity
+  parent: ClothingHeadBaseButcherable
+  id: ClothingHeadHatCargoPostalsoftFlipped
+  name: postal cap flipped
+  description: "It's a baseball hat painted in postal of Cargo colours. Flipped."
+  components:
+  - type: Sprite
+    sprite: Debiloid1984/Clothing/Head/Soft/cargopostalsoft_flipped.rsi
+  - type: Clothing
+    sprite: Debiloid1984/Clothing/Head/Soft/cargopostalsoft_flipped.rsi

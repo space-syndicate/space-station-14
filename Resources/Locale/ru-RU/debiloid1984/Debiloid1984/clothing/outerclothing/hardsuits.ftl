@@ -1,0 +1,13 @@
+ent-ClothingOuterHardsuitDeathsquadOld = старый скафандр эскадрона смерти
+    .desc = Старый скафандр эскадрона смерти.
+ent-ClothingOuterHardsuitSyndieCommanderOld = старый скафандр командира синдиката
+    .desc = Старый аналог скафаднра командира синдиката.
+ent-ClothingOuterHardsuitSyndieEliteNew = новый скафандр элиты синдиката
+    .desc = New era?
+ent-ClothingOuterHardsuitSyndieNew = новый кроваво-красный скафандр
+    .desc = Обновленный аналог скафандра синдиката.
+ent-ClothingOuterHardsuitQM = скафандр квартирмейстер
+    .desc = Специальный костюм, специально для квартирмейстера.
+ent-ClothingOuterHardsuitERTBlueShield = скафандр офицера синего щита
+    .desc = Тяжелобронированный и мобильный скафандр, предназначенный для специальных целей.
+    .suffix = { "" }

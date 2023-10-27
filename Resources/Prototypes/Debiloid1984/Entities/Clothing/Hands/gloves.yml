@@ -1,0 +1,17 @@
+- type: entity
+  parent: ClothingHandsBase
+  id: ClothingHandsGlovesOrdenHands
+  name: Gloves of the Elite Squad of the Red Order.
+  description: Gloves given to important members of the Red Order. they are inlaid with gold.
+  components:
+  - type: Sprite
+    sprite: Debiloid1984/Clothing/Hands/Gloves/ordenhands.rsi
+  - type: Clothing
+    sprite: Debiloid1984/Clothing/Hands/Gloves/ordenhands.rsi
+  - type: GloveHeatResistance
+    heatResistance: 1400
+  - type: Insulated
+  - type: Fiber
+    fiberMaterial: fibers-durathread
+    fiberColor: fibers-regal-blue
+  - type: FingerprintMask

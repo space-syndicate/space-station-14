@@ -1,0 +1,17 @@
+- type: entity
+  parent: ClothingBackpackSatchel
+  id: ClothingBackpackSatchelHOP
+  name: hop satchel
+  description: A hop satchel.
+  components:
+    - type: Sprite
+      sprite: Debiloid1984/Clothing/Back/Satchels/hop.rsi
+
+- type: entity
+  parent: ClothingBackpackSatchel
+  id: ClothingBackpackSatchelBlueShield
+  name: captain's satchel
+  description: An exclusive satchel for Nanotrasen officers.
+  components:
+  - type: Sprite
+    sprite: Debiloid1984/Clothing/Back/Satchels/blueshield.rsi

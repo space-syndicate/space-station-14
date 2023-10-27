@@ -1,0 +1,21 @@
+- type: entity
+  parent: ClothingOuterBase
+  id: ClothingWitchHunter
+  name: Накидка охотника за ведьмами
+  description: Убей этих ведьм!
+  components:
+  - type: Sprite
+    sprite: Debiloid1984/Clothing/OuterClothing/Misc/witchhunterbelov.rsi
+  - type: Clothing
+    sprite: Debiloid1984/Clothing/OuterClothing/Misc/witchhunterbelov.rsi
+
+- type: entity
+  parent: ClothingOuterBase
+  id: ClothingMagistrateroba
+  name: Накидка магистрата
+  description: Пора уволить срочников.
+  components:
+  - type: Sprite
+    sprite: Debiloid1984/Clothing/OuterClothing/Misc/magistratenaki.rsi
+  - type: Clothing
+    sprite: Debiloid1984/Clothing/OuterClothing/Misc/magistratenaki.rsi

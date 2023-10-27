@@ -13,7 +13,6 @@
   - type: IdentityBlocker
   - type: Tag
     tags:
-    - MonkeyWearable
     - HamsterWearable
     - WhitelistChameleon
 
@@ -99,6 +98,7 @@
         Slash: 0.90
         Piercing: 0.95
         Heat: 0.95
+  - type: EyeProtection
 
 - type: entity
   parent: ClothingMaskPullableBase

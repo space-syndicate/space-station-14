@@ -1,0 +1,114 @@
+- type: job
+  id: BKCCOfficial
+  name: job-name-centcomoffBK
+  description: job-description-centcomoffBK
+  playTimeTracker: JobCentralCommandRCC
+  setPreference: true
+  startingGear: CentComCorvax
+  icon: "JobIconNanotrasen"
+  supervisors: job-supervisors-hoh
+  canBeAntag: false
+  weight: 1
+  requireAdminNotify: true
+  joinNotifyCrew: true
+  whitelistRequired: true
+  requirements:
+    - !type:DepartmentTimeRequirement
+      department: Command
+      time: 108000
+    - !type:RoleTimeRequirement
+      role: JobCentralCommandAssistant
+      time: 10800
+    - !type:DepartmentTimeRequirement
+      department: CentCom
+      time: 21600
+  access:
+    - CCCargo
+    - CCSecurity
+    - CCGeneral
+    - CCOfficer
+  accessGroups:
+    - AllAccess
+  special:
+    - !type:AddImplantSpecial
+      implants: [ MindShieldImplant ]
+
+- type: startingGear
+  id: CentComCorvax
+  equipment:
+    jumpsuit: ClothingUniformJumpsuitCentcomOfficer
+    back: ClothingBackpackFilled
+    shoes: ClothingShoesBootsLaceup
+    mask: ClothingMaskGasCentcom
+    eyes: ClothingEyesGlassesSunglasses
+    gloves: ClothingHandsGlovesCentcomNaval
+    head: ClothingHeadHatCentcom
+    outerClothing: ClothingOuterArmorCentcomCarapace
+    suitstorage: OxygenTankFilled
+    id: CentcomPDABackmen
+    ears: ClothingHeadsetAltCentCom
+    pocket1: CyberPen
+    pocket2: BoxFolderSecretBlack
+  innerclothingskirt: ClothingUniformJumpskirtCentcomOfficer
+  satchel: ClothingBackpackSatchelFilled
+  duffelbag: ClothingBackpackDuffelFilled
+
+- type: startingGear
+  id: CentComOfficialEVAGear
+  equipment:
+    jumpsuit: ClothingUniformJumpsuitCentcomOfficer
+    shoes: ClothingShoesBootsLaceup
+    mask: ClothingMaskGasCentcom
+    eyes: ClothingEyesGlassesSunglasses
+    gloves: ClothingHandsGlovesCentcomNaval
+    outerClothing: ClothingOuterHardsuitCentcomCarporate
+    suitstorage: OxygenTankFilled
+    id: CentcomPDABackmen
+    ears: ClothingHeadsetAltCentCom
+    pocket1: CyberPen
+    pocket2: BoxFolderSecretBlack
+  innerclothingskirt: ClothingUniformJumpskirtCentcomOfficer
+  satchel: ClothingBackpackSatchelFilled
+  duffelbag: ClothingBackpackDuffelFilled
+
+- type: entity
+  parent: BasePDA
+  id: CentcomPDABackmen
+  name: CentCom PDA
+  description: Light green sign of walking bureaucracy.
+  components:
+    - type: Pda
+      id: IDCardCentComOfficialCorvax
+      state: pda-centcom
+      penSlot:
+        startingItem: PenCentcom
+        whitelist:
+          tags:
+            - Write
+    - type: PdaBorderColor
+      borderColor: "#00842e"
+    - type: Icon
+      state: pda-centcom
+
+- type: entity
+  parent: CentcomIDCardDeathsquad
+  id: IDCardCentComOfficialCorvax
+  name: ID карта ПЦК
+  components:
+    - type: Sprite
+      layers:
+      - state: silver
+      - state: idiaa
+      - state: idcentcom
+    - type: Item
+      heldPrefix: silver
+    - type: PresetIdCard
+      job: BKCCOfficial
+    - type: Access
+      tags:
+        - CCCargo
+        - CCSecurity
+        - CCGeneral
+        - CCOfficer
+      groups:
+        - AllAccess

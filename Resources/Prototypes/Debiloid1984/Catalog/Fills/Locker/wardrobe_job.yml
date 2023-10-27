@@ -1,0 +1,15 @@
+ - type: entity
+   id: WardrobeCargoPostalFilled
+   suffix: Filled
+   parent: WardrobeCargoPostal
+   description: "This locker? Maybe move it to the place of profit?."
+   components:
+   - type: StorageFill
+     contents:
+       - id: ClothingHeadHatCargoPostalsoft
+       - id: ClothingUniformJumpsuitCargoPostal
+       - id: ClothingBackpack
+       - id: ClothingShoesColorBlack
+       - id: ClothingUniformJumpskirtCargoPostal
+       - id: ClothingHandsGlovesFingerless
+       - id: BoxFolderYellow

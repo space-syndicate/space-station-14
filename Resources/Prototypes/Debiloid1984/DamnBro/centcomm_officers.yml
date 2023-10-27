@@ -1,0 +1,136 @@
+- type: entity
+  noSpawn: true
+  parent: BoxFolderBlack
+  id: BoxFolderSecretBlack
+  components:
+    - type: StorageFill
+      contents:
+        - id: StationGoalPaper
+        - id: Paper
+        - id: Paper
+        - id: Paper
+
+- type: entity
+  name:  Представитель ЦК
+  parent: MobHuman
+  suffix: CentCom
+  id: MobHumanCentComCorvax
+  components:
+    - type: Icon
+      sprite: Markers/jobs.rsi
+      state: centcom
+    - type: GhostRole
+      name: Представитель ЦК
+      description: Летит на станцию, дабы удостовериться, насколько экипаж станции убог.
+      whitelistRequired: true
+      requirements:
+        - !type:DepartmentTimeRequirement
+          department: Command
+          time: 216000
+        - !type:RoleTimeRequirement
+          role: JobCentralCommandAssistant
+          time: 21600
+        - !type:DepartmentTimeRequirement
+          department: CentCom
+          time: 43200
+    - type: Loadout
+      prototypes: [CentComCorvax]
+    - type: GhostTakeoverAvailable
+    - type: RandomMetadata
+    - type: RandomHumanoidAppearance
+#-----------------------------------------
+
+- type: entity
+  name:  Оператор ЦК
+  parent: MobHuman
+  suffix: CentCom
+  id: MobHumanCentComOperatorCorvax
+  components:
+    - type: Icon
+      sprite: Markers/jobs.rsi
+      state: centcom
+    - type: GhostRole
+      name: Оператор ЦК
+      description: Оператор центрального командования, выполняет приказы офицера цк и координирует действия станции.
+      whitelistRequired: true
+      requirements:
+        - !type:DepartmentTimeRequirement
+          department: Command
+          time: 216000
+        - !type:RoleTimeRequirement
+          role: JobCentralCommandAssistant
+          time: 21600
+        - !type:DepartmentTimeRequirement
+          department: CentCom
+          time: 43200
+    - type: Loadout
+      prototypes: [OperatorGavna]
+    - type: GhostTakeoverAvailable
+    - type: RandomMetadata
+    - type: RandomHumanoidAppearance
+
+#-----------------------------------------
+
+- type: entity
+  name: дубинка-шокер спецсил
+  parent: Stunbaton
+  id: StunbatonSuper
+  description: Электрошоковая дубинка для обездвиживания людей. Слишком усердное причинение вреда с помощью этого предмета считается дурным тоном.
+  components:
+    - type: Stunbaton
+      energyPerUse: 10
+
+- type: entity
+  name: станнер спецсил
+  parent: WeaponDisabler
+  id: WeaponDisablerSuper
+  description: Оружие для самозащиты, которое изнуряет органические цели, пока они не свалятся с ног.
+  components:
+    - type: ProjectileBatteryAmmoProvider
+      proto: BulletDisabler
+      fireCost: 10
+
+- type: entity
+  name: пояс охраны спецсил
+  description: Может вмещать различное снаряжение службы безопасности, такое как наручники и вспышки.
+  parent: ClothingBeltSecurity
+  id: ClothingBeltSecuritySuper
+  components:
+    - type: Storage
+      capacity: 60
+    - type: StorageFill
+      contents:
+        - id: WeaponDisablerSuper
+        - id: StunbatonSuper
+        - id: GrenadeFlashBang
+        - id: GrenadeFlashBang
+        - id: Handcuffs
+        - id: Handcuffs
+
+- type: entity
+  name:  Начальник Безопасности ЦК
+  parent: MobHuman
+  suffix: CentCom
+  id: MobHumanCentComOfficerSesurityGavna
+  components:
+    - type: Icon
+      sprite: Markers/jobs.rsi
+      state: security_officer
+    - type: GhostRole
+      name: Начальник Безопасности ЦК
+      description: Охрана ЦК, охраняет членов ЦК и саму ЦК.
+      requirements:
+        - !type:DepartmentTimeRequirement
+          department: Security
+          time: 240000
+        - !type:DepartmentTimeRequirement
+          department: Command
+          time: 720000
+        - !type:RoleTimeRequirement
+          role: JobIAA
+          time: 3600
+    - type: Loadout
+      prototypes: [HeadOfSecurityCentComGear]
+    - type: GhostTakeoverAvailable
+    - type: RandomMetadata
+    - type: RandomHumanoidAppearance

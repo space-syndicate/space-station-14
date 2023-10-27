@@ -1,0 +1,12 @@
+- type: department
+  id: CentCom
+  description: department-CentCom-description
+  color: "#13db0f"
+  roles:
+    - BKCCSecGavna
+    - BKCCSecOfficer
+    - BKCCOperator
+    - BKCCOfficial
+    - BKCCCargo
+    - BKCCAssistant
+    - BKCCAdmiral

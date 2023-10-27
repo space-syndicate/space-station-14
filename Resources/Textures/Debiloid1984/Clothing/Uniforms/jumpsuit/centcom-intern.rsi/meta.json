@@ -1,0 +1,30 @@
+{
+  "version": 1,
+  "license": "CC-BY-SA-3.0",
+  "copyright": "tajen from TG ss13 build at commit https://github.com/tgstation/tgstation/blob/a4850faf88179baaa463ca29ab659e475bf8ed49/icons/mob/clothing/under/centcom.dmi / https://github.com/tgstation/tgstation/blob/a4850faf88179baaa463ca29ab659e475bf8ed49/icons/obj/clothing/under/centcom.dmi modified and added missing sprites by Kirillcas(github)",
+  "size": {
+    "x": 32,
+    "y": 32
+  },
+  "states": [
+    {
+      "name": "equipped-INNERCLOTHING",
+      "directions": 4
+    },
+    {
+      "name": "equipped-INNERCLOTHING-monkey",
+      "directions": 4
+    },
+    {
+      "name": "icon"
+    },
+    {
+      "name": "inhand-left",
+      "directions": 4
+    },
+    {
+      "name": "inhand-right",
+      "directions": 4
+    }
+  ]
+}

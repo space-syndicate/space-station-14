@@ -1,0 +1,258 @@
+#ERT Security Hardsuit
+- type: entity
+  parent: ClothingHeadHelmetHardsuitSyndie
+  id: ClothingHeadHelmetHardsuitERTBlueShield
+  noSpawn: true
+  name: ERT security hardsuit helmet
+  components:
+  - type: Sprite
+    sprite: Debiloid1984/Clothing/Head/Hardsuits/ERThelmets/ertblueshield.rsi
+  - type: Clothing
+    sprite: Debiloid1984/Clothing/Head/Hardsuits/ERThelmets/ertblueshield.rsi
+  - type: PointLight
+    color: "#6088FF"
+
+#Deathsquad Hardsuit OLD
+- type: entity
+  parent: ClothingHeadHardsuitBase
+  id: ClothingHeadHelmetHardsuitDeathsquadOld
+  noSpawn: true
+  name: old deathsquad hardsuit helmet
+  description: A old robust helmet for special operations.
+  components:
+  - type: Sprite
+    sprite: Debiloid1984/Clothing/Head/Hardsuits/olddeathsquad.rsi
+  - type: Clothing
+    sprite: Debiloid1984/Clothing/Head/Hardsuits/olddeathsquad.rsi
+  - type: PressureProtection
+    highPressureMultiplier: 0.08
+    lowPressureMultiplier: 1000
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.80
+        Slash: 0.80
+        Piercing: 0.80
+        Heat: 0.80
+        Radiation: 0.80
+        Caustic: 0.95
+
+#Syndicate Elite Hardsuit New
+- type: entity
+  parent: ClothingHeadHardsuitWithLightBase
+  id: ClothingHeadHelmetHardsuitSyndieEliteNew
+  noSpawn: true
+  name: new syndicate elite helmet
+  description: A variant of the blood red helmet designed by the Gorlex Marauders to be exceptionally fireproof and pressure proof.
+  components:
+  - type: Sprite
+    sprite: Debiloid1984/Clothing/Head/Hardsuits/newsyndieelite.rsi
+  - type: Clothing
+    sprite: Debiloid1984/Clothing/Head/Hardsuits/newsyndieelite.rsi
+  - type: PointLight
+    color: red
+  - type: PressureProtection
+    highPressureMultiplier: 0.08
+    lowPressureMultiplier: 1000
+  - type: TemperatureProtection
+    coefficient: 0.005
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.9
+        Slash: 0.9
+        Piercing: 0.9
+        Heat: 0.9
+
+#Syndicate Commander Hardsuit Old
+- type: entity
+  parent: ClothingHeadHardsuitWithLightBase
+  id: ClothingHeadHelmetHardsuitSyndieCommanderOld
+  noSpawn: true
+  name: syndicate commander helmet
+  description: A syndicate hardsuit helmet custom designed for commanders of syndicate operative squads.
+  components:
+  - type: Sprite
+    sprite: Debiloid1984/Clothing/Head/Hardsuits/oldsyndiecommander.rsi
+  - type: Clothing
+    sprite: Debiloid1984/Clothing/Head/Hardsuits/oldsyndiecommander.rsi
+  - type: PointLight
+    color: green
+  - type: PressureProtection
+    highPressureMultiplier: 0.08
+    lowPressureMultiplier: 1000
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.9
+        Slash: 0.9
+        Piercing: 0.9
+        Heat: 0.9
+
+#Blood-red Hardsuit New
+- type: entity
+  parent: ClothingHeadHardsuitWithLightBase
+  id: ClothingHeadHelmetHardsuitSyndieNew
+  noSpawn: true
+  name: blood-red hardsuit helmet
+  description: An advanced red hardsuit helmet designed for work in special operations.
+  components:
+  - type: Sprite
+    sprite: Debiloid1984/Clothing/Head/Hardsuits/newsyndicate.rsi
+  - type: Clothing
+    sprite: Debiloid1984/Clothing/Head/Hardsuits/newsyndicate.rsi
+  - type: PointLight
+    color: green
+  - type: PressureProtection
+    highPressureMultiplier: 0.08
+    lowPressureMultiplier: 1000
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.9
+        Slash: 0.9
+        Piercing: 0.9
+        Heat: 0.9
+
+#QM Hardsuit
+- type: entity
+  parent: ClothingHeadHardsuitWithLightBase
+  id: ClothingHeadHelmetHardsuitQM
+  noSpawn: true
+  name: quartermaster hardsuit helmet
+  description: A special helmet quatermaster.
+  components:
+  - type: Sprite
+    sprite: Debiloid1984/Clothing/Head/Hardsuits/kmsuit.rsi
+  - type: Clothing
+    sprite: Debiloid1984/Clothing/Head/Hardsuits/kmsuit.rsi
+  - type: PressureProtection
+    highPressureMultiplier: 0.525
+    lowPressureMultiplier: 1000
+  - type: PointLight
+    radius: 7
+    energy: 3
+
+- type: entity
+  parent: ClothingHeadHardsuitBase
+  id: ClothingHeadHelmetHardsuitBerserk
+  noSpawn: true
+  name: Шлем берсерка
+  description: Хоть в нем ничего не видно, но лучшему мазиле это и не надо!
+  components:
+  - type: Sprite
+    sprite: Debiloid1984/Clothing/Head/Helmets/hardsuits/berserkhelm.rsi
+  - type: Clothing
+    sprite: Debiloid1984/Clothing/Head/Helmets/hardsuits/berserkhelm.rsi
+  - type: PressureProtection
+    highPressureMultiplier: 0.3
+    lowPressureMultiplier: 1000
+
+- type: entity
+  parent: ClothingHeadHardsuitWithLightBase
+  id: ClothingHeadHelmetHardsuitOrden
+  noSpawn: true
+  name: Helmet of the space suit of the elite special squad of the Red Order.
+  description: An indispensable part of the suit, it has small scratches.
+  components:
+  - type: Sprite
+    sprite: Debiloid1984/Clothing/Head/Hardsuits/orderhelm.rsi
+  - type: Clothing
+    sprite: Debiloid1984/Clothing/Head/Hardsuits/orderhelm.rsi
+  - type: PointLight
+    color:  red
+  - type: PressureProtection
+    highPressureMultiplier: 0.3
+    lowPressureMultiplier: 1000
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.9
+        Slash: 0.9
+        Piercing: 0.9
+        Heat: 0.1
+        Shock: 0.1
+        Cold: 0.2
+        Radiation: 0.2
+
+- type: entity
+  parent: ClothingHeadHardsuitWithLightBase
+  id: ClothingHeadHelmetHardsuitOrdinaryOrden
+  noSpawn: true
+  name: Helmet of the space suit of the Red Order.
+  description: An indispensable part of the suit, it has small scratches.
+  components:
+  - type: Sprite
+    sprite: Debiloid1984/Clothing/Head/Hardsuits/ordinary_ordenhelm.rsi
+  - type: Clothing
+    sprite: Debiloid1984/Clothing/Head/Hardsuits/ordinary_ordenhelm.rsi
+  - type: PointLight
+    color:  White
+  - type: PressureProtection
+    highPressureMultiplier: 0.3
+    lowPressureMultiplier: 1000
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.90
+        Slash: 0.90
+        Piercing: 0.95
+        Heat: 0.2
+        Radiation: 0.5
+  - type: TemperatureProtection
+    coefficient: 0.005
+
+# carporate hardsuit
+- type: entity
+  parent: ClothingHeadHardsuitWithLightBase
+  id: ClothingHeadHelmetHardsuitCentcomCarporate
+  noSpawn: true
+  name: Шлем скафандра ЦК (Корпорат)
+  description: Специальный космический шлем Корпорат сделаный для различных ситуация с хорошим фанариком лоялиста НаноТрайзен.
+  components:
+  - type: Sprite
+    sprite: Debiloid1984/Clothing/Head/Hardsuits/centcom_corparat.rsi
+  - type: Clothing
+    sprite: Debiloid1984/Clothing/Head/Hardsuits/centcom_corparat.rsi
+  - type: PressureProtection
+    highPressureMultiplier: 0.525
+    lowPressureMultiplier: 1000
+  - type: PointLight
+    color: blue
+    radius: 7
+    energy: 3
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.8
+        Slash: 0.9
+        Piercing: 0.9
+        Heat: 0.9
+        Radiation: 0.9
+
+- type: entity
+  parent: ClothingHeadHardsuitWithLightBase
+  id: ClothingHeadHelmetHardsuitUEG
+  noSpawn: true
+  name: Шлем скафандра охраны ОПЗ
+  description: Этот шлем был нагло скопирован с шлема лидера ОБР NanoTrasen
+  components:
+  - type: Sprite
+    sprite: Clothing/Head/Hardsuits/ERThelmets/ertleader.rsi
+  - type: Clothing
+    sprite: Clothing/Head/Hardsuits/ERThelmets/ertleader.rsi
+  - type: PressureProtection
+    highPressureMultiplier: 0.525
+    lowPressureMultiplier: 1000
+  - type: PointLight
+    color: green
+    radius: 5
+    energy: 3
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.8
+        Slash: 0.9
+        Piercing: 0.9
+        Heat: 0.9
+        Radiation: 0.9

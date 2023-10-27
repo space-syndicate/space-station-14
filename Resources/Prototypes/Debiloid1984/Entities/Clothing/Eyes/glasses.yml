@@ -1,0 +1,24 @@
+- type: entity
+  parent: ClothingEyesBase
+  id: ClothingEyesGlassesMonocle
+  name: Монокль аристократа.
+  description: Монокль является признаком высокого происхождения и интелекта.
+  components:
+  - type: Sprite
+    sprite:  Debiloid1984/Clothing/Eyes/Glasses/monocle.rsi
+  - type: Clothing
+    sprite:  Debiloid1984/Clothing/Eyes/Glasses/monocle.rsi
+
+- type: entity
+  parent: ClothingEyesGlassesSunglasses
+  id: ClothingEyesGlassesSunglassesBlueShield
+  name: sun glasses
+  description: Useful both for security and cargonia.
+  components:
+  - type: Sprite
+    sprite: Debiloid1984/Clothing/Eyes/Glasses/blueshieldglasses.rsi
+  - type: Clothing
+    sprite: Debiloid1984/Clothing/Eyes/Glasses/blueshieldglasses.rsi
+  - type: FlashImmunity
+  - type: EyeProtection
+  - type: ShowSecurityIcons

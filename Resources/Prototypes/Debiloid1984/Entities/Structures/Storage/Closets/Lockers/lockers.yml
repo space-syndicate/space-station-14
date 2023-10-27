@@ -1,0 +1,27 @@
+- type: entity
+  id: LockerBlueShield
+  parent: LockerBase
+  name: salvage specialist's equipment
+  description: Nevermind the pickaxe.
+  components:
+  - type: Appearance
+  - type: EntityStorageVisuals
+    stateBaseClosed: cap
+    stateDoorOpen: cap_open
+    stateDoorClosed: blueshield_door
+  - type: AccessReader
+    access: [["Captain"]]
+
+- type: entity
+  id: LockerComSalvage
+  parent: LockerBase
+  name: salvage specialist's equipment
+  description: Nevermind the pickaxe.
+  components:
+  - type: Appearance
+  - type: EntityStorageVisuals
+    stateBaseClosed: comsalvage
+    stateDoorOpen: qm_open
+    stateDoorClosed: comsalvage_door
+  - type: AccessReader
+    access: [["Quartermaster"]]

@@ -1,0 +1,284 @@
+- type: entity
+  parent: BriefcaseNT
+  id: WeaponCaseRifle
+  name: case smg
+  description: "Case blueshield officer with Drozd .35 auto"
+  components:
+  - type: StorageFill
+    contents:
+      - id: WeaponSubMachineGunDrozd
+      - id: MagazinePistolSubMachineGun
+      - id: MagazinePistolSubMachineGun
+      - id: WeaponRevolverPythonAP
+
+- type: entity
+  parent: BriefcaseNT
+  id: WeaponCaseShotgun
+  name: case shotgun
+  description: "Case blueshield officer with buldog"
+  components:
+  - type: StorageFill
+    contents:
+      - id: WeaponShotgunBulldog
+      - id: MagazineShotgun
+      - id: MagazineShotgun
+      - id: WeaponRevolverPythonAP
+
+- type: entity
+  parent: GarmentBag
+  id: GarmentBagBlueShield
+  name: blueshield's garment bag
+  description: A handy bag.
+  components:
+  - type: StorageFill
+    contents:
+      - id: ClothingShoesBootsCombatFilled
+      - id: ClothingUniformJumpsuitBlueShield
+      - id: ClothingEyesGlassesSunglassesBlueShield
+      - id: ClothingOuterWinterBS
+      - id: ClothingNeckMantleCap
+
+- type: entity
+  parent: GarmentBag
+  id: GarmentBagCaptain
+  name: captain's garment bag
+  description: A handy bag.
+  components:
+  - type: StorageFill
+    contents:
+      - id: ClothingNeckCloakCap
+      - id: ClothingNeckCloakCapFormal
+      - id: ClothingOuterWinterCap
+      - id: ClothingHandsGlovesCaptain
+      - id: ClothingHeadHatCaptain
+      - id: ClothingHeadHatCapcap
+      - id: ClothingUniformJumpsuitCaptain
+      - id: ClothingUniformJumpskirtCaptain
+      - id: ClothingUniformJumpsuitCapFormal
+      - id: ClothingUniformJumpskirtCapFormalDress
+      - id: ClothingShoesBootsLaceup
+
+- type: entity
+  parent: GarmentBag
+  id: GarmentBagHoP
+  name:  head of personnel's garment
+  description: A handy bag.
+  components:
+  - type: StorageFill
+    contents:
+      - id: ClothingNeckCloakHop
+      - id: ClothingOuterWinterHoP
+      - id: ClothingHeadHatHopcap
+      - id: ClothingEyesGlassesSunglasses
+      - id: ClothingUniformJumpsuitHoP
+      - id: ClothingUniformJumpskirtHoP
+      - id: ClothingShoesBootsLaceup
+
+- type: entity
+  parent: GarmentBag
+  id: GarmentBagHoS
+  name: head of security's garment bag
+  description: A handy bag.
+  components:
+  - type: StorageFill
+    contents:
+      - id: ClothingNeckCloakHos
+      - id: ClothingOuterWinterHoS
+      - id: ClothingOuterCoatHoSTrench
+      - id: ClothingHeadHatBeretHoS
+      - id: ClothingHeadHatHoshat
+      - id: ClothingUniformJumpsuitHoS
+      - id: ClothingUniformJumpskirtHoS
+      - id: ClothingUniformJumpsuitHoSAlt
+      - id: ClothingUniformJumpskirtHoSAlt
+      - id: ClothingUniformJumpsuitHoSParadeMale
+      - id: ClothingUniformJumpskirtHoSParadeMale
+      - id: ClothingUniformJumpsuitHosFormal
+      - id: ClothingUniformJumpskirtHosFormal
+      - id: ClothingUniformJumpsuitHoSBlue
+      - id: ClothingUniformJumpsuitHoSGrey
+      - id: ClothingShoesBootsJack
+
+- type: entity
+  parent: GarmentBag
+  id: GarmentBagCE
+  name: chief engineer's garment bag
+  description: A handy bag.
+  components:
+  - type: StorageFill
+    contents:
+      - id: ClothingNeckCloakCe
+      - id: ClothingOuterWinterCE
+      - id: ClothingHandsGlovesCE
+      - id: ClothingEyesGlassesMeson
+      - id: ClothingHeadHatHardhatWhite
+      - id: ClothingHeadHatBeretEngineering
+      - id: ClothingUniformJumpsuitChiefEngineer
+      - id: ClothingUniformJumpskirtChiefEngineer
+      - id: ClothingUniformJumpsuitChiefEngineerTurtle
+      - id: ClothingUniformJumpskirtChiefEngineerTurtle
+      - id: ClothingShoesColorBrown
+
+- type: entity
+  parent: GarmentBag
+  id: GarmentBagRD
+  name: research director's garment bag
+  description: A handy bag.
+  components:
+  - type: StorageFill
+    contents:
+      - id: ClothingNeckCloakRd
+      - id: ClothingOuterWinterRD
+      - id: ClothingHandsGlovesColorBlack
+      - id: ClothingHeadHatBeretRND
+      - id: ClothingUniformJumpsuitResearchDirector
+      - id: ClothingUniformJumpskirtResearchDirector
+      - id: ClothingShoesBootsJack
+
+- type: entity
+  parent: GarmentBag
+  id: GarmentBagQM
+  name: quartermasters's garment bag
+  description: A handy bag.
+  components:
+  - type: StorageFill
+    contents:
+      - id: ClothingNeckCloakQm
+      - id: ClothingOuterWinterQM
+      - id: ClothingHandsGlovesColorBrown
+      - id: ClothingHandsGlovesFingerless
+      - id: ClothingHeadHatQMsoft
+      - id: ClothingHeadHatQMsoftFlipped
+      - id: ClothingMaskGas
+      - id: ClothingUniformJumpsuitQM
+      - id: ClothingUniformJumpskirtQM
+      - id: ClothingUniformJumpsuitQMTurtleneck
+      - id: ClothingUniformJumpskirtQMTurtleneck
+      - id: ClothingShoesColorBrown
+
+- type: entity
+  parent: GarmentBag
+  id: GarmentBagCMO
+  name: chief medical officer's garment bag
+  description: A handy bag.
+  components:
+  - type: StorageFill
+    contents:
+      - id: ClothingCloakCmo
+      - id: ClothingOuterWinterCMO
+      - id: ClothingOuterCoatLabCmo
+      - id: ClothingHandsGlovesNitrile
+      - id: ClothingHeadHatBeretCmo
+      - id: ClothingHeadHatSurgcapBlue
+      - id: ClothingUniformJumpsuitCMO
+      - id: ClothingUniformJumpskirtCMO
+      - id: ClothingShoesColorBlue
+
+- type: entity
+  parent: BriefcaseSyndie
+  id: WeaponCaseKR51
+  name: KR51 bundle
+  description: "Hidden threat: The classic KR51 automatic rifle, bundled with three magazines."
+  components:
+  - type: StorageFill
+    contents:
+      - id: WeaponRifleKR51
+      - id: MagazineLightRifle
+        amount: 2
+
+- type: entity
+  parent: BriefcaseNT
+  id: WeaponCaseAsh9
+  name: case with Ash9
+  description: i hate this shit
+  components:
+  - type: StorageFill
+    contents:
+      - id: WeaponRifleAsh9
+      - id: MagazineUniversal
+        amount: 2
+      - id: MagazineUniversalShortHv
+      - id: WeaponRevolverRsh18
+
+- type: entity
+  parent: BriefcaseNT
+  id: WeaponCaseSaiga
+  name: case with Saiga
+  description: bozo xd
+  components:
+  - type: StorageFill
+    contents:
+      - id: WeaponShotgunSaiga
+      - id: MagazineShotgunSaiga
+        amount: 2
+      - id: WeaponRevolverRsh18
+
+- type: entity
+  parent: SyndiHardSuitBriefcase
+  id: SyndicateNowHardsuit
+  name: case with hardsuit
+  description: Syndicate hardsuit
+  components:
+  - type: StorageFill
+    contents:
+      - id: ClothingOuterHardsuitSyndie
+
+- type: entity
+  parent: SyndiHardSuitBriefcase
+  id: SyndicateNewHardsuit
+  name: case with hardsuit
+  description: Syndicate hardsuit
+  components:
+  - type: StorageFill
+    contents:
+      - id: ClothingOuterHardsuitSyndieNew
+
+- type: entity
+  parent: SyndiHardSuitBriefcase
+  id: ComSyndicateNowHardsuit
+  name: case with hardsuit
+  description: Syndicate hardsuit
+  components:
+  - type: StorageFill
+    contents:
+      - id: ClothingOuterHardsuitSyndieCommander
+
+- type: entity
+  parent: SyndiHardSuitBriefcase
+  id: ComSyndicateOldHardsuit
+  name: case with hardsuit
+  description: Syndicate hardsuit
+  components:
+  - type: StorageFill
+    contents:
+      - id: ClothingOuterHardsuitSyndieCommanderOld
+
+- type: entity
+  parent: SyndiHardSuitBriefcase
+  id: EliteSyndicateNowHardsuit
+  name: case with hardsuit
+  description: Syndicate hardsuit
+  components:
+  - type: StorageFill
+    contents:
+      - id: ClothingOuterHardsuitSyndieElite
+
+- type: entity
+  parent: SyndiHardSuitBriefcase
+  id: EliteSyndicateNewHardsuit
+  name: case with hardsuit
+  description: Syndicate hardsuit
+  components:
+  - type: StorageFill
+    contents:
+      - id: ClothingOuterHardsuitSyndieEliteNew
+
+- type: entity
+  parent: SyndiHardSuitBriefcase
+  id: SyndicateMedicHardsuit
+  name: case with hardsuit
+  description: Syndicate hardsuit
+  components:
+  - type: StorageFill
+    contents:
+      - id: ClothingOuterHardsuitMedic

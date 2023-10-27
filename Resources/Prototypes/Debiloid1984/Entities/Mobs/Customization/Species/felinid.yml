@@ -1,0 +1,40 @@
+# Anything human specific (e.g. UI, input) goes under MobHuman
+- type: entity
+  name: Urist McCat
+  parent: BaseMobSpeciesOrganic
+  id: BaseMobFelinid
+  abstract: true
+  components:
+  - type: HumanoidAppearance
+    species: Felinid
+  - type: Hunger
+    starvationDamage:
+      types:
+        Cold: 0.5
+        Bloodloss: 0.5
+  - type: Thirst
+  - type: Perishable
+  - type: Climbing
+    tableClimbMultiplier: 0.9
+  - type: Flashable   # Felinids get longer flashes from flashbangs because of their sensetive ears
+    durationMultiplier: 1
+    bangAddMultiplier: 0.65
+    bangFlash: false
+  - type: ReplacementAccent
+    accent: OwOAccent
+  - type: Speech
+    speechVerb: Felinid
+  - type: Vocal
+    sounds:
+      Male: MaleHuman
+      Female: FemaleHuman
+      Unsexed: UnisexFelinid
+
+- type: entity
+  name: Urist McHands
+  id: MobFelinidDummy
+  parent: BaseSpeciesDummy
+  noSpawn: true
+  components:
+  - type: HumanoidAppearance
+    species: Felinid

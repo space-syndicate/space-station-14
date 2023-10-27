@@ -1,0 +1,29 @@
+- type: accessLevel
+  id: CCCargo
+  name: ЦК карго
+
+- type: accessLevel
+  id: CCSecurity
+  name: ЦК Охрана
+
+- type: accessLevel
+  id: CCGeneral
+  name: ЦК Общий
+
+- type: accessLevel
+  id: CCOfficer
+  name: ЦК Офицеры
+
+- type: accessLevel
+  id: CCAdmiral
+  name: ЦК Адмирал
+
+- type: accessGroup
+  id: CentCom
+  tags:
+  - CCCargo
+  - CCSecurity
+  - CCGeneral
+  - CCOfficer
+  - CCAdmiral
+

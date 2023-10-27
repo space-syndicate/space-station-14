@@ -1,0 +1,158 @@
+﻿- type: entity
+  parent: IDCardStandard
+  id: UnaffiliatedIDCard
+  name: unaffiliated ID card
+  description: A card displaying a name and other identifying details.
+  # maybe make this not abstract when this is more developed
+  abstract: true
+  components:
+    - type: Sprite
+      sprite: Debiloid1984/Objects/Misc/id_cards.rsi
+      layers:
+        - state: unaffiliated
+    - type: Clothing
+      sprite: Debiloid1984/Objects/Misc/id_cards.rsi
+
+- type: entity
+  parent: UnaffiliatedIDCard
+  id: ExplorerIDCard
+  name: explorer ID card
+  components:
+    - type: Sprite
+      layers:
+        - state: unaffiliated
+        - state: idexplorer
+    - type: PresetIdCard
+      job: Explorer
+
+- type: entity
+  parent: CentcomIDCardDeathsquad
+  id: IDCardMOG
+  name: Id карта МОГ
+  components:
+  - type: Sprite
+    sprite: Debiloid1984/Objects/Misc/id_cards.rsi
+    layers:
+    - state: black
+    - state: idcardmog
+  - type: Item
+    heldPrefix: black
+  - type: IdCard
+    jobTitle: Сотрудник Мобильной Группы
+
+- type: entity
+  parent: CentcomIDCardDeathsquad
+  id: IdCardIOG
+  name: Id карта ИОГ
+  components:
+  - type: Sprite
+    sprite: Debiloid1984/Objects/Misc/id_cards.rsi
+    layers:
+    - state: black
+    - state: idcardiog
+  - type: Item
+    heldPrefix: black
+  - type: IdCard
+    jobTitle: Сотрудник Исследовательской Группы
+
+- type: entity
+  parent: CentcomIDCardDeathsquad
+  id: IdCardRO
+  name: Id карта RO
+  components:
+  - type: Sprite
+    sprite: Debiloid1984/Objects/Misc/id_cards.rsi
+    layers:
+    - state: black
+    - state: idcardro
+  - type: Item
+    heldPrefix: black
+  - type: IdCard
+    jobTitle: Агент Красного Ордена
+
+- type: entity
+  parent: IDCardStandard
+  id: BrigmedIDCard
+  name: brigmedic ID card
+  components:
+    - type: Sprite
+      sprite: Debiloid1984/Objects/Misc/id_cards.rsi
+      layers:
+        - state: default
+        - state: idbrigmedic
+    - type: PresetIdCard
+      job: Brigmedic
+
+- type: entity
+  parent: IDCardStandard
+  id: DeliveryIDCard
+  name: ID карта доставщика
+  components:
+    - type: Sprite
+      sprite: Debiloid1984/Objects/Misc/id_cards.rsi
+      layers:
+        - state: default
+        - state: iddelivery
+    - type: PresetIdCard
+      job: Deliveryman
+
+- type: entity
+  parent: IDCardStandard
+  id: UEGrepIDCard
+  name: ID карта представителя ОПЗ
+  components:
+    - type: Sprite
+      sprite: Debiloid1984/Objects/Misc/id_cards.rsi
+      layers:
+        - state: default
+        - state: idueg
+    - type: Access
+      groups:
+        - AllAccess
+        - CentCom
+    - type: IdCard
+      jobTitle: Представитель ОПЗ
+
+- type: entity
+  parent: IDCardStandard
+  id: UEGoffIDCard
+  name: ID карта офицера ОПЗ
+  components:
+    - type: Sprite
+      sprite: Debiloid1984/Objects/Misc/id_cards.rsi
+      layers:
+        - state: default
+        - state: iduegofficer
+    - type: Access
+      groups:
+        - AllAccess
+        - CentCom
+    - type: IdCard
+      jobTitle: Офицер ОПЗ
+
+- type: entity
+  parent: IDCardStandard
+  id: ComSalvageIDCard
+  name: commander salvage ID card
+  components:
+  - type: Sprite
+    layers:
+    - state: default
+    - state: idcomsalvage
+  - type: PresetIdCard
+    job: CommanderSalvage
+
+- type: entity
+  parent: IDCardStandard
+  id: BlueShieldIDCard
+  name: blueshield ID card
+  components:
+  - type: Sprite
+    layers:
+    - state: blue
+    - state: idblueshield
+  - type: Item
+    heldPrefix: blue
+  - type: PresetIdCard
+    job: BlueShield
+

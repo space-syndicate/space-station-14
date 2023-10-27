@@ -1,0 +1,102 @@
+# All ears
+- type: marking
+  id: FelinidEarsDefault
+  bodyPart: HeadTop
+  markingCategory: HeadTop
+  speciesRestriction: [Felinid]
+  coloring:
+    default:
+      type:
+        !type:CategoryColoring
+          category: Hair
+      fallbackTypes:
+        - !type:SkinColoring
+    layers:
+      ears_default_inner:
+        type:
+          !type:SimpleColoring
+            color: "#FFFFFF"
+  sprites:
+  - sprite: Debiloid1984/Mobs/Customization/felinid.rsi
+    state: ears_default_outer
+  - sprite: Debiloid1984/Mobs/Customization/felinid.rsi
+    state: ears_default_inner
+
+- type: marking
+  id: FelinidEarsStatic
+  bodyPart: HeadTop
+  markingCategory: HeadTop
+  speciesRestriction: [Felinid]
+  coloring:
+    default:
+      type:
+        !type:CategoryColoring
+          category: Hair
+      fallbackTypes:
+        - !type:SkinColoring
+    layers:
+      ears_static_inner:
+        type:
+          !type:SimpleColoring
+            color: "#FFFFFF"
+  sprites:
+  - sprite: Debiloid1984/Mobs/Customization/felinid.rsi
+    state: ears_static_outer
+  - sprite: Debiloid1984/Mobs/Customization/felinid.rsi
+    state: ears_static_inner
+
+
+# All tails
+- type: marking
+  id: FelinidTailDefault
+  bodyPart: Tail
+  markingCategory: Tail
+  speciesRestriction: [Felinid]
+  coloring:
+    default:
+      type:
+        !type:CategoryColoring
+          category: Hair
+      fallbackTypes:
+        - !type:CategoryColoring
+          category: FacialHair
+        - !type:SkinColoring
+  sprites:
+  - sprite: Debiloid1984/Mobs/Customization/felinid.rsi
+    state: tail_default
+
+- type: marking
+  id: FelinidTailResprite
+  bodyPart: Tail
+  markingCategory: Tail
+  speciesRestriction: [Felinid]
+  coloring:
+    default:
+      type:
+        !type:CategoryColoring
+          category: Hair
+      fallbackTypes:
+        - !type:CategoryColoring
+          category: FacialHair
+        - !type:SkinColoring
+  sprites:
+  - sprite: Debiloid1984/Mobs/Customization/felinid.rsi
+    state: tail_resprite
+
+- type: marking
+  id: FelinidTailStatic
+  bodyPart: Tail
+  markingCategory: Tail
+  speciesRestriction: [Felinid]
+  coloring:
+    default:
+      type:
+        !type:CategoryColoring
+          category: Hair
+      fallbackTypes:
+        - !type:CategoryColoring
+          category: FacialHair
+        - !type:SkinColoring
+  sprites:
+  - sprite: Debiloid1984/Mobs/Customization/felinid.rsi
+    state: tail_static

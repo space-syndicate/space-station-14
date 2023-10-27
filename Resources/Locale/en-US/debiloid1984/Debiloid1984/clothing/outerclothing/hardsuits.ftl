@@ -1,0 +1,13 @@
+ent-ClothingOuterHardsuitDeathsquadOld = old hardsuit death squad
+    .desc = Old analogue hardsuit Death Squad
+ent-ClothingOuterHardsuitSyndieCommanderOld = old hardsuit commander syndicate 
+    .desc = An old analogue of the syndicate commander's suit.
+ent-ClothingOuterHardsuitSyndieEliteNew = new syndicate elite hardsuit
+    .desc = New era?
+ent-ClothingOuterHardsuitSyndieNew = new blood red hardsuit
+    .desc = An updated analogue of the syndicate hardsuit.
+ent-ClothingOuterHardsuitQM = quartermaster hardsuit
+    .desc = A hardsuit, especially for the quartermaster.
+ent-ClothingOuterHardsuitERTBlueShield = hardsuit blueshield hardsuit
+    .desc = A heavily armored and mobile suit designed for special purposes.
+    .suffix = { "" }

@@ -1,0 +1,81 @@
+
+- type: entity
+  parent: ClothingNeckBase
+  id: ClothingNeckCloakPirate
+  name: Плащ пирата
+  description: Когда нету флагштока, ты сам становишься флагштоком!
+  components:
+  - type: Sprite
+    sprite: Debiloid1984/Clothing/Neck/Cloaks/pirate.rsi
+
+- type: entity
+  parent: ClothingNeckBase
+  id: ClothingNeckCloakOrden
+  name: Cloak of the Red Order
+  description: Cloak of the Order of the Red Dragon! This cloak was created by an ancient cult, and to this day no one knows how it got to the station.
+  components:
+  - type: Sprite
+    sprite: Debiloid1984/Clothing/Neck/Cloaks/orden.rsi
+
+- type: entity
+  parent: ClothingNeckBase
+  id: ClothingNeckCloakSssp
+  name: SSSP Officer's Cloak
+  description: Awarded for merit to the SSSP. You are the best. You can't hide it.
+  components:
+  - type: Sprite
+    sprite: Debiloid1984/Clothing/Neck/Cloaks/SSSP.rsi
+
+- type: entity
+  parent: ClothingNeckBase
+  id: ClothingNeckCloakmeibe
+  name: Плащ лучшего инженера
+  description: Выдаётся за особые заслуги перед Атмосией. Гордитесь собой ведь такой плащ есть только у единиц !
+  components:
+  - type: Sprite
+    sprite: Debiloid1984/Clothing/Neck/Cloaks/cloak_best_engineer_meibe.rsi
+
+- type: entity
+  parent: ClothingNeckBase
+  id: ClothingNeckCloakchess
+  name: Плащ лучшего шахматиста станции
+  description: Только истинный стратег сможет поднять его!
+  components:
+  - type: Sprite
+    sprite: Debiloid1984/Clothing/Neck/Cloaks/chess.rsi
+
+- type: entity
+  parent: ClothingNeckBase
+  id: ClothingNeckBelovOPG
+  name: Накидка ОПГ
+  description: Плащ главы знаменитой ОПГ, Александра Белова.
+  components:
+  - type: Sprite
+    sprite: Debiloid1984/Clothing/Neck/Cloaks/whitebelov.rsi
+
+- type: entity
+  parent: ClothingNeckBase
+  id: ClothingNeckCloakarbitr
+  name: Плащ Арбитра
+  description: Плащ арбитра идущий в комплекте с его костюмом. Настолько же ценен.
+  components:
+  - type: Sprite
+    sprite: Debiloid1984/Clothing/Neck/Cloaks/arbitr.rsi
+
+- type: entity
+  parent: ClothingNeckBase
+  id: ClothingNeckLeatherCoat
+  name: Кожаный плащ
+  description: Как у дедушки...
+  components:
+  - type: Sprite
+    sprite: Debiloid1984/Clothing/Neck/Cloaks/leather_coat.rsi
+
+- type: entity
+  parent: ClothingNeckBase
+  id: ClothingNeckCloakUEG
+  name: Плащ ОПЗ
+  description: Выдаётся только верхушке ОПЗ.
+  components:
+  - type: Sprite
+    sprite: Debiloid1984/Clothing/Neck/Cloaks/eug-cloak.rsi

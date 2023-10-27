@@ -1,0 +1,60 @@
+- type: entity
+  parent: EncryptionKey
+  id: EncryptionKeyOrden
+  name: Red order encryption key
+  description: Special encryption key needed to access Red Order communication channels
+  components:
+  - type: EncryptionKey
+    channels:
+    - Redorden
+    defaultChannel: Redorden
+  - type: Sprite
+    sprite: Debiloid1984/Objects/Devices/encryption_keysRO.rsi
+    layers:
+    - state: crypt_black
+    - state: ord_label
+
+- type: entity
+  parent: EncryptionKey
+  id: EncryptionKeyCSH
+  name: Encryption Key CSH
+  components:
+  - type: EncryptionKey
+    channels:
+    - CSH
+    defaultChannel: CSH
+  - type: Sprite
+    sprite: Debiloid1984/Objects/Devices/encryption_keysCSH.rsi
+    layers:
+    - state: crypt_CSH
+    - state: CSH_label
+
+- type: entity
+  parent: EncryptionKey
+  id: EncryptionKeyFleet
+  name: Encryption Key Fleet
+  components:
+  - type: EncryptionKey
+    channels:
+    - Fleet
+    defaultChannel: Fleet
+  - type: Sprite
+    sprite: Debiloid1984/Objects/Devices/encryption_keysFleet.rsi
+    layers:
+    - state: crypt_green
+    - state: nano_label
+
+- type: entity
+  parent: EncryptionKey
+  id: EncryptionKeyUEG
+  name: Ключ шифрования ОПЗ
+  components:
+  - type: EncryptionKey
+    channels:
+    - UEG
+    defaultChannel: UEG
+  - type: Sprite
+    sprite: Debiloid1984/Objects/Devices/encryption_keysUEG.rsi
+    layers:
+    - state: crypt_ueg
+    - state: ueg_label

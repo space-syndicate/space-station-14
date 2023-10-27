@@ -1,0 +1,328 @@
+#Deathsquad OLD
+- type: entity
+  parent: ClothingOuterHardsuitBase
+  id: ClothingOuterHardsuitDeathsquadOld
+  name: old deathsquad hardsuit
+  description: An advanced hardsuit favored by commandos for use in special operations.
+  components:
+  - type: Sprite
+    sprite: Debiloid1984/Clothing/OuterClothing/Hardsuits/olddeathsquad.rsi
+  - type: Clothing
+    sprite: Debiloid1984/Clothing/OuterClothing/Hardsuits/olddeathsquad.rsi
+  - type: PressureProtection
+    highPressureMultiplier: 0.02
+    lowPressureMultiplier: 1000
+  - type: TemperatureProtection
+    coefficient: 0.001
+  - type: ExplosionResistance
+    damageCoefficient: 0.2
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.2 # best armor in the game xd
+        Slash: 0.2
+        Piercing: 0.2
+        Heat: 0.1
+        Radiation: 0.1
+        Caustic: 0.2
+  - type: ClothingSpeedModifier
+    walkModifier: 1.0
+    sprintModifier: 1.0
+  - type: ToggleableClothing
+    clothingPrototype: ClothingHeadHelmetHardsuitDeathsquadOld
+
+#New Syndicate Elite Hardsuit
+- type: entity
+  parent: ClothingOuterHardsuitBase
+  id: ClothingOuterHardsuitSyndieEliteNew
+  name: new syndicate elite hardsuit
+  description: An upgraded version of the blood red hardsuit that features enhanced fireproofing, pressure resist, and superior armor.
+  components:
+  - type: Sprite
+    sprite: Debiloid1984/Clothing/OuterClothing/Hardsuits/newsyndieelite.rsi
+  - type: Clothing
+    sprite: Debiloid1984/Clothing/OuterClothing/Hardsuits/newsyndieelite.rsi
+  - type: PressureProtection
+    highPressureMultiplier: 0.02
+    lowPressureMultiplier: 1000
+  - type: TemperatureProtection
+    coefficient: 0.001
+  - type: ExplosionResistance
+    damageCoefficient: 0.3
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.5
+        Slash: 0.5
+        Piercing: 0.4
+        Heat: 0.2
+        Radiation: 0.25
+        Caustic: 0.5
+  - type: ClothingSpeedModifier
+    walkModifier: 1.0
+    sprintModifier: 1.0
+  - type: ToggleableClothing
+    clothingPrototype: ClothingHeadHelmetHardsuitSyndieEliteNew
+
+#Syndicate Commander Hardsuit Old
+- type: entity
+  parent: ClothingOuterHardsuitBase
+  id: ClothingOuterHardsuitSyndieCommanderOld
+  name: syndicate commander hardsuit
+  description: A blood red hardsuit heavily modified for use by the commander of operative squads.
+  components:
+  - type: Sprite
+    sprite: Debiloid1984/Clothing/OuterClothing/Hardsuits/oldsyndiecommander.rsi
+  - type: Clothing
+    sprite: Debiloid1984/Clothing/OuterClothing/Hardsuits/oldsyndiecommander.rsi
+  - type: PressureProtection
+    highPressureMultiplier: 0.05
+    lowPressureMultiplier: 1000
+  - type: ExplosionResistance
+    damageCoefficient: 0.5
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.4
+        Slash: 0.4
+        Piercing: 0.3
+        Heat: 0.5
+        Radiation: 0.25
+        Caustic: 0.4
+  - type: ClothingSpeedModifier
+    walkModifier: 1.0
+    sprintModifier: 1.0
+  - type: ToggleableClothing
+    clothingPrototype: ClothingHeadHelmetHardsuitSyndieCommanderOld
+
+#Blood-red Hardsuit NEW
+- type: entity
+  parent: ClothingOuterHardsuitBase
+  id: ClothingOuterHardsuitSyndieNew
+  name: new blood-red hardsuit
+  description: A heavily armored and agile advanced hardsuit designed for work in special operations.
+  components:
+  - type: Sprite
+    sprite: Debiloid1984/Clothing/OuterClothing/Hardsuits/newsyndicate.rsi
+  - type: Clothing
+    sprite: Debiloid1984/Clothing/OuterClothing/Hardsuits/newsyndicate.rsi
+  - type: PressureProtection
+    highPressureMultiplier: 0.05
+    lowPressureMultiplier: 1000
+  - type: ExplosionResistance
+    damageCoefficient: 0.5
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.5
+        Slash: 0.5
+        Piercing: 0.5
+        Heat: 0.5
+        Radiation: 0.5
+        Caustic: 0.5
+  - type: ClothingSpeedModifier
+    walkModifier: 0.9
+    sprintModifier: 0.9
+  - type: ToggleableClothing
+    clothingPrototype: ClothingHeadHelmetHardsuitSyndieNew
+
+#QM Hardsuit
+- type: entity
+  parent: ClothingOuterHardsuitBase
+  id: ClothingOuterHardsuitQM
+  name: quartermaster hardsuit
+  description: A special suit for quartermaster.
+  components:
+  - type: Sprite
+    sprite: Debiloid1984/Clothing/OuterClothing/Hardsuits/kmsuit.rsi
+  - type: Clothing
+    sprite: Debiloid1984/Clothing/OuterClothing/Hardsuits/kmsuit.rsi
+  - type: PressureProtection
+    highPressureMultiplier: 0.5
+    lowPressureMultiplier: 1000
+  - type: ExplosionResistance
+    damageCoefficient: 0.3
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.7
+        Slash: 0.7
+        Piercing: 0.5
+        Radiation: 0.3
+        Caustic: 0.7
+  - type: ClothingSpeedModifier
+    walkModifier: 0.75
+    sprintModifier: 0.75
+  - type: ToggleableClothing
+    clothingPrototype: ClothingHeadHelmetHardsuitQM
+
+#ERT Security hardsuit BlueShield
+- type: entity
+  parent: ClothingOuterHardsuitSyndie
+  id: ClothingOuterHardsuitERTBlueShield
+  name: ERT security's hardsuit
+  components:
+  - type: Sprite
+    sprite: Debiloid1984/Clothing/OuterClothing/Hardsuits/ERTSuits/ertblueshield.rsi
+  - type: Clothing
+    sprite: Debiloid1984/Clothing/OuterClothing/Hardsuits/ERTSuits/ertblueshield.rsi
+  - type: ToggleableClothing
+    clothingPrototype: ClothingHeadHelmetHardsuitERTBlueShield
+
+- type: entity
+  parent: ClothingOuterHardsuitBase
+  id: ClothingOuterHardsuitBerserk
+  name: Скафандр берсерка
+  description: Самая лучшая броня, для самого лучшего мазилы!
+  components:
+  - type: Sprite
+    sprite: Debiloid1984/Clothing/OuterClothing/Armor/hardsuit/hardsuit_berserk.rsi
+  - type: Clothing
+    sprite: Debiloid1984/Clothing/OuterClothing/Armor/hardsuit/hardsuit_berserk.rsi
+  - type: PressureProtection
+    highPressureMultiplier: 0.02
+    lowPressureMultiplier: 10000
+  - type: ClothingSpeedModifier
+    walkModifier: 0.70
+    sprintModifier: 0.75
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.60
+        Slash: 0.6
+        Piercing: 0.4
+        Heat: 0.3
+        Radiation: 0.25
+        Caustic: 0.75
+  - type: TemperatureProtection
+    coefficient: 0.001
+  - type: ExplosionResistance
+    damageCoefficient: 0.2
+  - type: ToggleableClothing
+    clothingPrototype: ClothingHeadHelmetHardsuitBerserk
+
+- type: entity
+  parent: ClothingOuterHardsuitBase
+  id: ClothingOuterHardsuitOrdersuit
+  name: Suit of the elite special squad of the red order
+  description: Extremely valuable and desirable for any corporation. an unreadable name engraved on the shoulder
+  components:
+  - type: Sprite
+    sprite: Debiloid1984/Clothing/OuterClothing/Hardsuits/order_suit.rsi
+  - type: Clothing
+    sprite: Debiloid1984/Clothing/OuterClothing/Hardsuits/order_suit.rsi
+  - type: PressureProtection
+    highPressureMultiplier: 0.02
+    lowPressureMultiplier: 10000
+  - type: ClothingSpeedModifier
+    walkModifier: 0.85
+    sprintModifier: 0.85
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.15
+        Slash: 0.15
+        Piercing: 0.20
+        Heat: 0.30
+        Radiation: 0.1
+        Caustic: 0.15
+  - type: TemperatureProtection
+    coefficient: 0.01
+  - type: ExplosionResistance
+    damageCoefficient: 0.1
+  - type: ToggleableClothing
+    clothingPrototype: ClothingHeadHelmetHardsuitOrden
+
+- type: entity
+  parent: ClothingOuterHardsuitBase
+  id: ClothingOuterHardsuitOrdinaryOrdersuit
+  name: Suit of the special detachment of the red order
+  description: Extremely valuable and desirable for any corporation. an unreadable name engraved on the shoulder
+  components:
+  - type: Sprite
+    sprite: Debiloid1984/Clothing/OuterClothing/Hardsuits/ordinary_orden_suit.rsi
+  - type: Clothing
+    sprite: Debiloid1984/Clothing/OuterClothing/Hardsuits/ordinary_orden_suit.rsi
+  - type: PressureProtection
+    highPressureMultiplier: 0.02
+    lowPressureMultiplier: 10000
+  - type: ClothingSpeedModifier
+    walkModifier: 0.85
+    sprintModifier: 0.85
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.9
+        Slash: 0.9
+        Piercing: 0.9
+        Heat: 0.2
+        Radiation: 0.25
+        Caustic: 0.85
+  - type: TemperatureProtection
+    coefficient: 0.01
+  - type: ExplosionResistance
+    damageCoefficient: 0.1
+  - type: ToggleableClothing
+    clothingPrototype: ClothingHeadHelmetHardsuitOrdinaryOrden
+
+# carprate hardsuit
+
+- type: entity
+  parent: ClothingOuterHardsuitBase
+  id: ClothingOuterHardsuitCentcomCarporate
+  name: Скафандр ЦК (Корпорат)
+  description: Специальный космический костюм Корпорат сделаный для различных ситуация и весьма лёгкий в ношении.
+  components:
+  - type: Sprite
+    sprite: Debiloid1984/Clothing/OuterClothing/Hardsuits/centcom_corparat.rsi
+  - type: Clothing
+    sprite: Debiloid1984/Clothing/OuterClothing/Hardsuits/centcom_corparat.rsi
+  - type: PressureProtection
+    highPressureMultiplier: 0.5
+    lowPressureMultiplier: 1000
+  - type: ExplosionResistance
+    damageCoefficient: 0.3
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.4
+        Slash: 0.5
+        Piercing: 0.5
+        Radiation: 0.6
+        Caustic: 0.6
+        Heat: 0.4
+  - type: ClothingSpeedModifier
+    walkModifier: 0.85
+    sprintModifier: 0.85
+  - type: ToggleableClothing
+    clothingPrototype: ClothingHeadHelmetHardsuitCentcomCarporate
+
+- type: entity
+  parent: ClothingOuterHardsuitBase
+  id: ClothingOuterHardsuitUEG
+  name: Скафандр С.О.Н
+  description: Обычный скафандр С.О.Н который выдаётся оперативникам С.О.Н и некоторым офицерам ОПЗ
+  components:
+  - type: Sprite
+    sprite: Debiloid1984/Clothing/OuterClothing/Hardsuits/ueg-hardsuit.rsi
+  - type: Clothing
+    sprite: Debiloid1984/Clothing/OuterClothing/Hardsuits/ueg-hardsuit.rsi
+  - type: PressureProtection
+    highPressureMultiplier: 0.5
+    lowPressureMultiplier: 1000
+  - type: ExplosionResistance
+    damageCoefficient: 0.3
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.4
+        Slash: 0.4
+        Piercing: 0.4
+        Radiation: 0.6
+        Caustic: 0.6
+        Heat: 0.4
+  - type: ClothingSpeedModifier
+    walkModifier: 0.85
+    sprintModifier: 0.85
+  - type: ToggleableClothing
+    clothingPrototype: ClothingHeadHelmetHardsuitUEG

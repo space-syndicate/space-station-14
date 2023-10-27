@@ -1,0 +1,94 @@
+- type: job
+  id: BKCCSecGavna
+  name: job-name-centcomSecGavna
+  description: job-description-centcomSecGavna
+  playTimeTracker: JobCentralCommandSecGavna
+  setPreference: true
+  startingGear: HeadOfSecurityCentComGear
+  icon: JobIconNanotrasen
+  supervisors: job-supervisors-hoh
+  canBeAntag: false
+  weight: 1
+  requireAdminNotify: true
+  joinNotifyCrew: true
+  requirements:
+    - !type:DepartmentTimeRequirement
+      department: Security
+      time: 60000
+    - !type:DepartmentTimeRequirement
+      department: Command
+      time: 63000
+    - !type:RoleTimeRequirement
+      role: JobHeadOfSecurity
+      time: 27000
+    - !type:RoleTimeRequirement
+      role: JobCentralCommandSecOfficer
+      time: 18000
+    - !type:RoleTimeRequirement
+      role: JobIAA
+      time: 9000
+  access:
+    - CCGeneral
+    - CCSecurity
+  accessGroups:
+    - AllAccess
+  special:
+    - !type:AddImplantSpecial
+      implants: [ MindShieldImplant ]
+
+- type: startingGear
+  id: HeadOfSecurityCentComGear
+  equipment:
+    jumpsuit: ClothingUniformJumpsuitCentcomMilitary
+    back: ClothingBackpackSecurityFilled
+    shoes: ClothingShoesBootsNedoSpetsnaz
+    mask: ClothingMaskGasSecurity
+    neck: CombatKnifeSpetsnaz
+    eyes: ClothingEyesGlassesSecurity
+    gloves: ClothingHandsGlovesCombat
+    outerClothing: ClothingOuterArmorBasic
+    suitstorage: WeaponPistolMk58
+    head: ClothingHeadHatBeretHoSCentcom
+    id: CCOfficerPDA
+    ears: ClothingHeadsetCentComCC
+    belt: ClothingBeltSecuritySuper
+    pocket2: MagazinePistol
+  satchel: ClothingBackpackSatchelSecurityFilled
+  duffelbag: ClothingBackpackDuffelSecurityFilled
+
+- type: entity
+  parent: OrdenPDA
+  id: CCOfficerPDA
+  name: Centcom Officer PDA
+  description: Black with green lines, sign of the walking protection of the bureaucracy.
+  components:
+    - type: Pda
+      id: IDCardCentComGavnaOfficerSesurity
+      state: pda-centcomsec
+      penSlot:
+        startingItem: PenCentcom
+        whitelist:
+          tags:
+            - Write
+    - type: PdaBorderColor
+      borderColor: "#5B5B5B"
+    - type: Icon
+      state: pda-centcomsec
+
+- type: entity
+  parent: CentcomIDCardDeathsquad
+  id: IDCardCentComGavnaOfficerSesurity
+  name: Id Начальника Безопасности ЦК
+  components:
+    - type: Sprite
+      layers:
+      - state: centcom
+      - state: idsecurityofficer
+    - type: PresetIdCard
+      job: BKCCSecGavna
+    - type: Access
+      tags:
+        - CCSecurity
+        - CCGeneral
+      groups:
+        - AllAccess

@@ -1,0 +1,14 @@
+- type: entity
+  parent: ClothingNeckBase
+  id: ClothingNeckTieCentCom
+  name: centcom-tie
+  description: The Green Tie of the Walking Bureaucracy.
+  components:
+  - type: Sprite
+    sprite: Debiloid1984/Clothing/Neck/Ties/centcomtie.rsi
+  - type: Clothing
+    sprite: Debiloid1984/Clothing/Neck/Ties/centcomtie.rsi
+  - type: Tag
+    tags:
+    - HamsterWearable
+    - WhitelistChameleon

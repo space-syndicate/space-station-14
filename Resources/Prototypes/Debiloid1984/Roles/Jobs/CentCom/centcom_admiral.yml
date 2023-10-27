@@ -1,0 +1,61 @@
+﻿- type: job
+  id: BKCCAdmiral
+  name: job-name-centcomadmiral
+  description: job-description-centcomadmiral
+  playTimeTracker: JobCentralCommandAdmiral
+  setPreference: true
+  startingGear: CentcomAdmiralGear
+  icon: JobIconNanotrasen
+  supervisors: job-supervisors-hoh
+  canBeAntag: false
+  weight: 1
+  requireAdminNotify: true
+  joinNotifyCrew: true
+  whitelistRequired: true
+  requirements:
+    - !type:RoleTimeRequirement
+      role: JobCentralCommandOperator
+      time: 10800
+    - !type:RoleTimeRequirement
+      role: JobCentralCommandOfficial
+      time: 10800
+    - !type:DepartmentTimeRequirement
+      department: CentCom
+      time: 15800
+  accessGroups:
+    - AllAccess
+    - CentCom
+  special:
+    - !type:AddImplantSpecial
+      implants: [ MindShieldImplant ]
+
+- type: entity
+  parent: CentcomPDABackmen
+  id: CCAdmiralPDA
+  name: Centcom Admiral PDA
+  description: Light green sign of walking bureaucracy.
+  components:
+    - type: Pda
+      id: IDCardCentComAdmiral
+      state: pda-centcom
+      penSlot:
+        startingItem: PenCentcom
+        whitelist:
+          tags:
+            - Write
+    - type: PdaBorderColor
+      borderColor: "#00842e"
+    - type: Icon
+      state: pda-centcom
+
+- type: entity
+  parent: CentcomIDCardDeathsquad
+  id: IDCardCentComAdmiral
+  name: ID card Admiral CC
+  components:
+    - type: PresetIdCard
+      job: BKCCOperator
+    - type: Access
+      groups:
+        - AllAccess
+        - CentCom

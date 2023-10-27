@@ -1,0 +1,28 @@
+- type: entity
+  parent: ClothingBackpack
+  id: ClothingOrdenBackpack
+  name: Backpack of the Red Order.
+  description: A backpack of the death squad, taken as a trophy and remade to fit their needs by the order!
+  components:
+  - type: Sprite
+    sprite: Debiloid1984/Clothing/Back/Backpacks/orden_backpacks.rsi
+  - type: Storage
+    capacity: 300
+
+- type: entity
+  parent: ClothingBackpack
+  id: ClothingBackpackHOP
+  name: hop backpack
+  description: nice backpack for head of person
+  components:
+  - type: Sprite
+    sprite: Debiloid1984/Clothing/Back/Backpacks/hop.rsi
+
+- type: entity
+  parent: ClothingBackpack
+  id: ClothingBackpackBlueShield
+  name: captain's backpack
+  description: It's a special backpack made exclusively for Nanotrasen officers.
+  components:
+  - type: Sprite
+    sprite: Debiloid1984/Clothing/Back/Backpacks/blueshield.rsi

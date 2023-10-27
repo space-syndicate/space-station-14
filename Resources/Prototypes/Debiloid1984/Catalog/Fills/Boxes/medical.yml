@@ -1,0 +1,10 @@
+- type: entity
+  name: box of tracking implants
+  parent: BoxCardboard
+  id: BoxCardboardTrackImp
+  description: A box full of implants.
+  components:
+  - type: StorageFill
+    contents:
+      - id: TrackingImplanter
+        amount: 6

@@ -1,0 +1,32 @@
+- type: entity
+  name: Рапира Мифистофеля
+  parent: BaseItem
+  id: MythistophelRapier
+  description: Рапира выкована стариком Мифистофелем, чувствуется запах напалма 
+  components:
+  - type: IgniteOnMeleeHit
+    fireStacks: 1
+  - type: Sharp
+  - type: Sprite
+    sprite: Debiloid1984/Objects/Weapons/Melee/Rapier_cvasoc.rsi
+    state: icon
+  - type: MeleeWeapon
+    attackRate: 1.6
+    damage:
+      types:
+        Slash: 12 #cmon, is an ELITE rapier
+        Piercing: 5
+        Holy: 10
+    soundHit:
+        path: /Audio/Weapons/Rapier.ogg
+  - type: Reflect
+    enabled: true
+    reflectProb: .7
+    spread: 90        
+  - type: Item
+    size: 10
+    sprite: Debiloid1984/Objects/Weapons/Melee/Rapier_cvasoc.rsi
+  - type: Tag
+    tags:
+    - CaptainSabre
+  - type: DisarmMalus 

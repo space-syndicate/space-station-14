@@ -232,6 +232,26 @@
     soundForce: true
 
 - type: entity
+  name : disabler bolt
+  id: BulletDisablerX01
+  parent: BulletDisabler
+  noSpawn: true
+  components:
+  - type: Fixtures
+    fixtures:
+      projectile:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.2,-0.2,0.2,0.2"
+        hard: false
+        mask:
+        - Opaque
+      fly-by: *flybyfixture
+  - type: Reflective
+    reflective:
+    - Energy
+
+- type: entity
   name : disabler bolt practice
   id: BulletDisablerPractice
   parent: BaseBullet
@@ -300,13 +320,27 @@
     damage:
       types:
         Heat: 14
-  # mining laser real
-  - type: GatheringProjectile
   - type: Tag
     tags:
     - EmitterBolt
   - type: TimedDespawn
     lifetime: 3
+
+- type: entity
+  name: emitter bolt
+  id: X01Attack
+  parent: EmitterBolt
+  noSpawn: true
+  components:
+  - type: Sprite
+    sprite: Objects/Weapons/Guns/Projectiles/projectiles_tg.rsi
+    layers:
+    - state: redtrac
+      shader: unshaded
+  - type: Projectile
+    damage:
+      types:
+        Heat: 22
 
 - type: entity
   name: watcher bolt

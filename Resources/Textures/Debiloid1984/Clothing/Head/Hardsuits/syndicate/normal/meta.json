@@ -1,0 +1,41 @@
+{
+  "version": 1,
+  "license": "CC-BY-SA-3.0",
+  "copyright": "Taken from tgstation at commit https://github.com/tgstation/tgstation/blob/8b79f5e4a1e1748baf8133466bf2fe6338d3a9dc/icons/obj/clothing/modsuit/mod_clothing.dmi. / https://github.com/tgstation/tgstation/blob/8b79f5e4a1e1748baf8133466bf2fe6338d3a9dc/icons/mob/clothing/modsuit/mod_clothing.dmi modified and added missing sprites by Kirillcas(github) ",
+  "size": {
+    "x": 32,
+    "y": 32
+  },
+  "states": [
+    {
+      "name": "on-inhand-right",
+      "directions": 4
+    },
+    {
+      "name": "on-inhand-left",
+      "directions": 4
+    },
+    {
+      "name": "on-equipped-HELMET",
+      "directions": 4
+    },
+    {
+      "name": "icon-flash"
+    },
+    {
+      "name": "off-inhand-right",
+      "directions": 4
+    },
+    {
+      "name": "off-inhand-left",
+      "directions": 4
+    },
+    {
+      "name": "icon"
+    },
+    {
+      "name": "off-equipped-HELMET",
+      "directions": 4
+    }
+  ]
+}

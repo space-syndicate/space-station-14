@@ -1,0 +1,380 @@
+- type: entity
+  parent: ClothingUniformBase
+  id: ClothingUniformHECU
+  name: HECU uniform
+  description: The HECU jumpsuit is used to protect against foreign environmental factors (besides, real American patriots like to wear it)
+  components:
+  - type: Sprite
+    sprite: Debiloid1984/Clothing/Uniforms/jumpsuit/hecu.rsi
+  - type: Clothing
+    sprite: Debiloid1984/Clothing/Uniforms/jumpsuit/hecu.rsi
+
+- type: entity
+  parent: ClothingUniformBase
+  id: ClothingUniformJumpsuitComSalvage
+  name: commander salvage jumpsuit
+  description: Looks like a jumpsuit senior officer...
+  components:
+  - type: Sprite
+    sprite: Debiloid1984/Clothing/Uniforms/jumpsuit/commander_salvage.rsi
+  - type: Clothing
+    sprite: Debiloid1984/Clothing/Uniforms/jumpsuit/commander_salvage.rsi
+
+- type: entity
+  parent: ClothingUniformBase
+  id: ClothingUniformJumpsuitBlueShield
+  name: captain's jumpsuit
+  description: It's a blue jumpsuit with some gold markings denoting the rank of "Captain".
+  components:
+  - type: Sprite
+    sprite: Debiloid1984/Clothing/Uniforms/jumpsuit/blueshield.rsi
+  - type: Clothing
+    sprite: Debiloid1984/Clothing/Uniforms/jumpsuit/blueshield.rsi
+
+- type: entity
+  parent: ClothingUniformBase
+  id: ClothingUniformJumpsuitBearBase
+  name: head of security's turtleneck
+  description: It's a turtleneck worn by those strong and disciplined enough to achieve the position of Head of Security.
+  components:
+  - type: Sprite
+    sprite: Debiloid1984/Clothing/Uniforms/jumpsuit/bearbase.rsi
+  - type: Clothing
+    sprite: Debiloid1984/Clothing/Uniforms/jumpsuit/bearbase.rsi
+
+- type: entity
+  parent: ClothingUniformBase
+  id: ClothingUniformJumpsuitBearfbifast
+  name: head of security's turtleneck
+  description: It's a turtleneck worn by those strong and disciplined enough to achieve the position of Head of Security.
+  components:
+  - type: Sprite
+    sprite: Debiloid1984/Clothing/Uniforms/jumpsuit/bearfbifast.rsi
+  - type: Clothing
+    sprite: Debiloid1984/Clothing/Uniforms/jumpsuit/bearfbifast.rsi
+
+- type: entity
+  parent: ClothingUniformBase
+  id: ClothingUniformJumpsuitBearG99
+  name: head of security's turtleneck
+  description: It's a turtleneck worn by those strong and disciplined enough to achieve the position of Head of Security.
+  components:
+  - type: Sprite
+    sprite: Debiloid1984/Clothing/Uniforms/jumpsuit/bearg99.rsi
+  - type: Clothing
+    sprite: Debiloid1984/Clothing/Uniforms/jumpsuit/bearg99.rsi
+
+- type: entity
+  parent: ClothingUniformBase
+  id: ClothingUniformJumpsuitgalaxy
+  name: galaxy blue suit red order
+  description: The galactic suit contains pieces of redspace. Created by the ancient dwarf Myphistopheles for the purposes of the Red Order.
+  components:
+    - type: Sprite
+      sprite: Debiloid1984/Clothing/Uniforms/jumpsuit/blue_fuvala.rsi
+    - type: Clothing
+      sprite: Debiloid1984/Clothing/Uniforms/jumpsuit/blue_fuvala.rsi
+
+- type: entity
+  parent: ClothingUniformBase
+  id: ClothingUniformJumpsuitgalaxyred
+  name: galaxy red suit red order
+  description: The galactic suit contains pieces of redspace. Created by the ancient dwarf Myphistopheles for the purposes of the Red Order.
+  components:
+    - type: Sprite
+      sprite: Debiloid1984/Clothing/Uniforms/jumpsuit/red_fuvala.rsi
+    - type: Clothing
+      sprite: Debiloid1984/Clothing/Uniforms/jumpsuit/red_fuvala.rsi
+
+- type: entity
+  parent: ClothingUniformBase
+  id: GermanSuit
+  name: Форма Немецкого Солдата
+  description: Военная форма немецких войск
+  components:
+  - type: Sprite
+    sprite: Debiloid1984/Clothing/Uniforms/jumpsuit/germansoldierbel.rsi
+  - type: Clothing
+    sprite: Debiloid1984/Clothing/Uniforms/jumpsuit/germansoldierbel.rsi
+
+- type: entity
+  parent: ClothingUniformBase
+  id: GermanOfficerSuit
+  name: Форма немецкого офицера
+  description: Форма которую носят немецкие офицеры
+  components:
+  - type: Sprite
+    sprite: Debiloid1984/Clothing/Uniforms/jumpsuit/officergermanbel.rsi
+  - type: Clothing
+    sprite: Debiloid1984/Clothing/Uniforms/jumpsuit/officergermanbel.rsi
+
+- type: entity
+  parent: ClothingUniformBase
+  id: SovietSoldierUniformSuit
+  name: Униформа солдата СССП
+  description: Опрятная форма бойца фракции СССП
+  components:
+  - type: Sprite
+    sprite: Debiloid1984/Clothing/Uniforms/jumpsuit/ssspsuitbel.rsi
+  - type: Clothing
+    sprite: Debiloid1984/Clothing/Uniforms/jumpsuit/ssspsuitbel.rsi
+
+- type: entity
+  parent: ClothingUniformBase
+  id: SovietOfficerUniformSuit
+  name: Униформа офицера СССП
+  description: Опрятная форма офицера фракции СССП
+  components:
+  - type: Sprite
+    sprite: Debiloid1984/Clothing/Uniforms/jumpsuit/officerssspsuitbel.rsi
+  - type: Clothing
+    sprite: Debiloid1984/Clothing/Uniforms/jumpsuit/officerssspsuitbel.rsi
+
+- type: entity
+  parent: ClothingUniformBase
+  id: ElPresidenteNanotrasenSuit
+  name: Костюм Президента Nanotrasen
+  description: Великолепно опрятный, элегантный и очень дорогой президента корпорации.
+  components:
+  - type: Sprite
+    sprite: Debiloid1984/Clothing/Uniforms/jumpsuit/elpresidentenanobel.rsi
+  - type: Clothing
+    sprite: Debiloid1984/Clothing/Uniforms/jumpsuit/elpresidentenanobel.rsi
+
+- type: entity
+  parent: ClothingUniformBase
+  id: PredstavitelNanotrasenSuit
+  name: Костюм Представителя корпорации NT
+  description: Великолепный костюм корпорационной шишки
+  components:
+  - type: Sprite
+    sprite: Debiloid1984/Clothing/Uniforms/jumpsuit/nanotrasenpredstavbel.rsi
+  - type: Clothing
+    sprite: Debiloid1984/Clothing/Uniforms/jumpsuit/nanotrasenpredstavbel.rsi
+
+- type: entity
+  parent: ClothingUniformBase
+  id: tsfPredstavSuit
+  name: Костюм Представителя ТСФ
+  description: Покажите кто тут главный в транс-солнечной-федерации!
+  components:
+  - type: Sprite
+    sprite: Debiloid1984/Clothing/Uniforms/jumpsuit/solgovpredstavbel.rsi
+  - type: Clothing
+    sprite: Debiloid1984/Clothing/Uniforms/jumpsuit/solgovpredstavbel.rsi
+
+- type: entity
+  parent: ClothingUniformBase
+  id: LeutenantUniformtfsSuit
+  name: Униформа лейтенанта войск ТСФ
+  description: Руководите военными силами ТСФ!
+  components:
+  - type: Sprite
+    sprite: Debiloid1984/Clothing/Uniforms/jumpsuit/solgovleutetantbel.rsi
+  - type: Clothing
+    sprite: Debiloid1984/Clothing/Uniforms/jumpsuit/solgovleutetantbel.rsi
+
+- type: entity
+  parent: ClothingUniformBase
+  id: soldiertsfuniformSuit
+  name: Униформа бойца ТСФ
+  description: Служите во славу ТСФ!
+  components:
+  - type: Sprite
+    sprite: Debiloid1984/Clothing/Uniforms/jumpsuit/solgovsoldierbel.rsi
+  - type: Clothing
+    sprite: Debiloid1984/Clothing/Uniforms/jumpsuit/solgovsoldierbel.rsi
+
+- type: entity
+  parent: ClothingUniformBase
+  id: ClothingUniformJumpsuitMTF
+  name: Водолазка сотрудника МОГ
+  description: Светло-серая водолазка без опознавательных знаков, которая носится членами МОГ спецподразделения Браво-716
+  components:
+  - type: Sprite
+    sprite: Debiloid1984/Clothing/Uniforms/jumpsuit/mtf_turtleneck.rsi
+  - type: Clothing
+    sprite: Debiloid1984/Clothing/Uniforms/jumpsuit/mtf_turtleneck.rsi
+
+- type: entity
+  parent: ClothingUniformBase
+  id: ClothingUniformJumpsuitGachi
+  name: Men's suit
+  description: A suit imbued with strong male relationships and solidarity!
+  components:
+  - type: Sprite
+    sprite: Debiloid1984/Clothing/Uniforms/jumpsuit/gachi.rsi
+  - type: Clothing
+    sprite: Debiloid1984/Clothing/Uniforms/jumpsuit/gachi.rsi
+
+- type: entity
+  parent: ClothingUniformBase
+  id: ClothingUniformArbitr
+  name: Костюм Арбитра
+  description:  Невероятно дорогой костюм Арбитра неизвестной корпорации.В комплекте идет золотая серьга в виде черепа и 2 золотых кольца
+  components:
+  - type: Sprite
+    sprite: Debiloid1984/Clothing/Uniforms/jumpsuit/arbitr_eblan.rsi
+  - type: Clothing
+    sprite: Debiloid1984/Clothing/Uniforms/jumpsuit/arbitr_eblan.rsi
+
+- type: entity
+  parent: ClothingUniformBase
+  id: ClothingUniformJumpsuitCargoPostal
+  name: Postal jumpsuit
+  description: A sturdy jumpskirt, issued to members of the Cargo department for postal work.
+  components:
+  - type: Sprite
+    sprite: Debiloid1984/Clothing/Uniforms/jumpsuit/cargopostal.rsi
+  - type: Clothing
+    sprite: Debiloid1984/Clothing/Uniforms/jumpsuit/cargopostal.rsi
+
+- type: entity
+  parent: ClothingUniformBase
+  id: AgentUniformOneSuit
+  name: Полосатый деловой костюм
+  description: Дорогой костюм распространенный в дорогих местах.
+  components:
+  - type: Sprite
+    sprite: Debiloid1984/Clothing/Uniforms/jumpsuit/avdpoloska.rsi
+  - type: Clothing
+    sprite: Debiloid1984/Clothing/Uniforms/jumpsuit/avdpoloska.rsi
+
+- type: entity
+  parent: ClothingUniformBase
+  id: AgentUniformTwoSuit
+  name: Деловая жилетка
+  description: Дорогой костюм распространенный в дорогих местах.
+  components:
+  - type: Sprite
+    sprite: Debiloid1984/Clothing/Uniforms/jumpsuit/avdvictoriavest.rsi
+  - type: Clothing
+    sprite: Debiloid1984/Clothing/Uniforms/jumpsuit/avdvictoriavest.rsi
+
+- type: entity
+  parent: ClothingUniformBase
+  id: AgentfoursevenSuit
+  name: Деловой костюм агента синдиката
+  description: Костюм сделанный по специальному заказу, ранее пренадлежал агенту 47
+  components:
+  - type: Sprite
+    sprite: Debiloid1984/Clothing/Uniforms/jumpsuit/syndicatetactic.rsi
+  - type: Clothing
+    sprite: Debiloid1984/Clothing/Uniforms/jumpsuit/syndicatetactic.rsi
+
+- type: entity
+  parent: ClothingUniformBase
+  id: MagistratUniformSuit
+  name: Костюм магистрата
+  description: Увольте пару срочников!
+  components:
+  - type: Sprite
+    sprite: Debiloid1984/Clothing/Uniforms/jumpsuit/magistratebel.rsi
+  - type: Clothing
+    sprite: Debiloid1984/Clothing/Uniforms/jumpsuit/magistratebel.rsi
+
+- type: entity
+  parent: ClothingUniformBase
+  id: ClothingUniformJumpsuitCentcomVeryOfficial
+  name: Официальная рубашка сотрудника ЦК
+  description: Вот прелесть карпоративной жизни, стильные костюмы в тему!
+  components:
+  - type: Sprite
+    sprite: Debiloid1984/Clothing/Uniforms/jumpsuit/centcom-official.rsi
+  - type: Clothing
+    sprite: Debiloid1984/Clothing/Uniforms/jumpsuit/centcom-official.rsi
+
+- type: entity
+  parent: ClothingUniformBase
+  id: ClothingUniformJumpsuitCentcomIntern
+  name: Форма ассистента ЦК
+  description: Носитель данного костюма обязан принести чащечку кофе.
+  components:
+  - type: Sprite
+    sprite: Debiloid1984/Clothing/Uniforms/jumpsuit/centcom-intern.rsi
+  - type: Clothing
+    sprite: Debiloid1984/Clothing/Uniforms/jumpsuit/centcom-intern.rsi
+
+- type: entity
+  parent: ClothingUniformBase
+  id: ClothingUniformJumpsuitCentcomMilitary
+  name: Военная униформа Начальника Безопасности ЦК
+  description: Свободная и крепкая униформа спец сил ЦК.
+  components:
+  - type: Sprite
+    sprite: Debiloid1984/Clothing/Uniforms/jumpsuit/centcom-military.rsi
+  - type: Clothing
+    sprite: Debiloid1984/Clothing/Uniforms/jumpsuit/centcom-military.rsi
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.8
+        Slash: 0.9
+        Piercing: 0.9
+        Heat: 0.9
+
+- type: entity
+  parent: ClothingUniformBase
+  id: ClothingUniformJumpsuitDeliveryman
+  name: Костюм доставщика
+  description: Пахнет пиццей
+  components:
+  - type: Sprite
+    sprite: Debiloid1984/Clothing/Uniforms/jumpsuit/space_club.rsi
+  - type: Clothing
+    sprite: Debiloid1984/Clothing/Uniforms/jumpsuit/space_club.rsi
+
+- type: entity
+  parent: ClothingUniformBase
+  id: ClothingUniformJumpsuitExplorer
+  name: explorer's uniform
+  description: A rugged set of overalls for trekking across the stars.
+  components:
+    - type: Sprite
+      sprite: Debiloid1984/Clothing/Uniforms/jumpsuit/explorer.rsi
+    - type: Clothing
+      sprite: Debiloid1984/Clothing/Uniforms/jumpsuit/explorer.rsi
+
+- type: entity
+  parent: ClothingOuterStorageBase
+  id: ClothingOuterExplorerCoat
+  name: explorer's labcoat
+  description: Looks like it's seen its fair share of dusty trails.
+  components:
+    - type: Sprite
+      sprite: Debiloid1984/Clothing/OuterClothing/Coats/explorer_coat.rsi
+    - type: Clothing
+      sprite: Debiloid1984/Clothing/OuterClothing/Coats/explorer_coat.rsi
+
+- type: entity
+  parent: ClothingUniformBase
+  id: ClothingUniformTShirtKhakiPants
+  name: drab t-shirt and khaki pants
+  description: Some drab but functional clothing.
+  components:
+    - type: Sprite
+      sprite: Debiloid1984/Clothing/Uniforms/jumpsuit/tshirt_khaki.rsi
+    - type: Clothing
+      sprite: Debiloid1984/Clothing/Uniforms/jumpsuit/tshirt_khaki.rsi
+
+- type: entity
+  parent: ClothingUniformBase
+  id: ClothingUniformJumpsuitUEG
+  name: Водолазка представителя ОПЗ
+  description: Лёгкая и комфортная водолазка
+  components:
+  - type: Sprite
+    sprite: Debiloid1984/Clothing/Uniforms/jumpsuit/eug-jumpsuit.rsi
+  - type: Clothing
+    sprite: Debiloid1984/Clothing/Uniforms/jumpsuit/eug-jumpsuit.rsi
+
+- type: entity
+  parent: ClothingUniformBase
+  id: ClothingUniformJumpsuitUEGofficer
+  name: Униформа офицера ОПЗ
+  description: Униформа с безполезным камуфляжем. Лучше не связыватся с её обладателями
+  components:
+  - type: Sprite
+    sprite: Debiloid1984/Clothing/Uniforms/jumpsuit/eug-officer-jumpsuit.rsi
+  - type: Clothing
+    sprite: Debiloid1984/Clothing/Uniforms/jumpsuit/eug-officer-jumpsuit.rsi

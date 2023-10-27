@@ -1,0 +1,110 @@
+- type: entity
+  id: SpawnPointCommanderSalvage
+  parent: SpawnPointJobBase
+  name: comsalvage
+  components:
+  - type: SpawnPoint
+    job_id: CommanderSalvage
+  - type: Sprite
+    layers:
+      - state: green
+      - state: comsalvage
+
+- type: entity
+  id: SpawnPointBlueShield
+  parent: SpawnPointJobBase
+  name: blueshield officer
+  components:
+  - type: SpawnPoint
+    job_id: BlueShield
+  - type: Sprite
+    layers:
+      - state: green
+      - state: captain
+
+- type: entity
+  id: SpawnPointBKCCAdmiral
+  parent: SpawnPointBKCCAssistant
+  name: ЦК Адмирал
+  components:
+    - type: SpawnPoint
+      job_id: BKCCAdmiral
+    - type: Sprite
+      layers:
+        - state: green
+        - state: centcom_operator
+
+- type: entity
+  id: SpawnPointBKCCOfficial
+  parent: SpawnPointBKCCAssistant
+  name: ЦК Представитель
+  components:
+    - type: SpawnPoint
+      job_id: BKCCOfficial
+    - type: Sprite
+      layers:
+        - state: green
+        - state: centcom_official
+
+- type: entity
+  id: SpawnPointBKCCOperator
+  parent: SpawnPointBKCCAssistant
+  name: ЦК Оператор
+  components:
+    - type: SpawnPoint
+      job_id: BKCCOperator
+    - type: Sprite
+      layers:
+        - state: green
+        - state: centcom_operator
+
+- type: entity
+  id: SpawnPointBKCCSecGavna
+  parent: SpawnPointBKCCAssistant
+  name: ЦК Начальник Безопасности
+  components:
+    - type: SpawnPoint
+      job_id: BKCCSecGavna
+    - type: Sprite
+      layers:
+        - state: green
+        - state: centcom_head_of_securiry
+
+- type: entity
+  id: SpawnPointBKCCCargo
+  parent: SpawnPointJobBase
+  name: ЦК Грузчик
+  components:
+    - type: SpawnPoint
+      job_id: BKCCCargo
+    - type: Sprite
+      layers:
+        - state: green
+        - state: qm
+
+- type: entity
+  id: SpawnPointBKCCAssistant
+  parent: SpawnPointJobBase
+  name: ЦК Ассистент
+  components:
+    - type: SpawnPoint
+      job_id: BKCCAssistant
+    - type: Sprite
+      sprite: Debiloid1984/Markers/jobs.rsi
+      layers:
+        - state: green
+        - state: centcom_intern
+
+- type: entity
+  id: SpawnPointBKCCSecOfficer
+  parent: SpawnPointJobBase
+  name: ЦК Приватный Офицер СБ
+  components:
+    - type: SpawnPoint
+      job_id: BKCCSecOfficer
+    - type: Sprite
+      layers:
+        - state: green
+        - state: security_officer
+
+

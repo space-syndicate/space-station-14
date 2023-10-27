@@ -1,0 +1,11 @@
+- type: entity
+  parent: ClothingOuterWinterCoatToggleable
+  id: ClothingOuterWinterBS
+  name: captain's winter coat
+  components:
+  - type: Sprite
+    sprite: Debiloid1984/Clothing/OuterClothing/WinterCoats/coatbs.rsi
+  - type: Clothing
+    sprite: Debiloid1984/Clothing/OuterClothing/WinterCoats/coatbs.rsi
+  - type: ToggleableClothing
+    clothingPrototype: ClothingHeadHatHoodWinterBlueShield

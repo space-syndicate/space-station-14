@@ -28,7 +28,6 @@
   parent: BaseStorageItem
   abstract: true
   id: BriefcaseSyndieBase
-  suffix: Syndicate, Empty
   description: Useful for carrying items in your hands.
   components:
   - type: Item
@@ -38,6 +37,8 @@
   - type: Tag
     tags:
     - Briefcase
+    storageOpenSound:
+      collection: WeaponCaseOpen
 
 - type: entity
   name: brown briefcase
@@ -46,7 +47,170 @@
   description: A handy briefcase.
   components:
   - type: Sprite
-    sprite: Objects/Storage/Briefcases/briefcase_brown.rsi
+    sprite: Debiloid1984/Objects/Storage/Briefcases/weapon_case_syndie.rsi
     state: icon
   - type: Item
-    sprite: Objects/Storage/Briefcases/briefcase_brown.rsi
+    sprite: Debiloid1984/Objects/Storage/Briefcases/weapon_case_syndie.rsi
+
+- type: entity
+  parent: BaseStorageItem
+  abstract: true
+  id: BriefcaseNTBase
+  description: Case for real patriots NanoTrasen.
+  components:
+  - type: Item
+    size: 80
+  - type: Storage
+    capacity: 80
+  - type: Tag
+    tags:
+    - Briefcase
+    storageOpenSound:
+      collection: WeaponCaseOpen
+
+- type: entity
+  name: brown briefcase
+  parent: BriefcaseNTBase
+  id: BriefcaseNT
+  description: Case for real patriots NanoTrasen.
+  components:
+  - type: Sprite
+    sprite: Debiloid1984/Objects/Storage/Briefcases/blueshield_case.rsi
+    state: icon
+  - type: Item
+    sprite: Debiloid1984/Objects/Storage/Briefcases/blueshield_case.rsi
+
+- type: entity
+  parent: BaseStorageItem
+  abstract: true
+  id: GarmentBagBase
+  description: Useful for carrying items in your hands.
+  components:
+  - type: Item
+    size: 105
+  - type: Storage
+    capacity: 120
+  - type: Tag
+    tags:
+    - Briefcase
+
+- type: entity
+  name: garment bag
+  parent: GarmentBagBase
+  id: GarmentBag
+  description: A handy bag.
+  components:
+  - type: Sprite
+    sprite: Debiloid1984/Objects/Storage/Briefcases/garment_bag.rsi
+    state: icon
+  - type: Item
+    sprite: Debiloid1984/Objects/Storage/Briefcases/garment_bag.rsi
+
+- type: entity
+  parent: PresentRandom
+  id: MysteryWeaponBox
+  name: mystery spacemen minifigure box
+  description: A box containing a mystery minifigure. The side of the box depicts a few blacked-out 'rare' figures, including one with a large, non-humanoid shilouette.
+  components:
+  - type: Item
+    sprite: Debiloid1984/Objects/Storage/Briefcases/blueshield_case.rsi
+  - type: Sprite
+    sprite: Debiloid1984/Objects/Storage/Briefcases/blueshield_case.rsi
+    layers:
+      - state: icon
+  - type: SpawnItemsOnUse
+    items:
+      - id: WeaponCaseRifle
+        orGroup: WeaponCaseRandom
+      - id: WeaponCaseShotgun
+        orGroup: WeaponCaseRandom
+      - id: ClothingOuterHardsuitERTBlueShield
+
+- type: entity
+  parent: BaseStorageItem
+  abstract: true
+  id: HardSuitBriefcase
+  description: Case for storage hardsuit
+  components:
+  - type: Item
+    size: 120
+  - type: Storage
+    capacity: 121
+  - type: Tag
+    tags:
+    - Briefcase
+
+- type: entity
+  name: syndi hardsuit briefcase
+  parent: HardSuitBriefcase
+  id: SyndiHardSuitBriefcase
+  description: Case with hardsuit syndicate
+  components:
+  - type: Sprite
+    sprite: Debiloid1984/Objects/Storage/Briefcases/weapon_case_syndie.rsi
+    state: icon
+  - type: Item
+    sprite: Debiloid1984/Objects/Storage/Briefcases/weapon_case_syndie.rsi
+
+- type: entity
+  parent: PresentRandom
+  id: SyndiHardsuitNormal
+  name: syndi hardsuit briefcase
+  description: A box containing a mystery minifigure. The side of the box depicts a few blacked-out 'rare' figures, including one with a large, non-humanoid shilouette.
+  components:
+  - type: Item
+    sprite: Debiloid1984/Objects/Storage/Briefcases/weapon_case_syndie.rsi
+  - type: Sprite
+    sprite: Debiloid1984/Objects/Storage/Briefcases/weapon_case_syndie.rsi
+    layers:
+      - state: icon
+  - type: SpawnItemsOnUse
+    items:
+      - id: SyndicateNowHardsuit
+        orGroup: GiftPool
+      - id: SyndicateNewHardsuit
+        orGroup: GiftPool
+      - id: EliteSyndicateNowHardsuit
+        orGroup: GiftPool
+      - id: EliteSyndicateNewHardsuit
+        orGroup: GiftPool
+
+- type: entity
+  parent: PresentRandom
+  id: SyndiHardsuitCom
+  name: syndi hardsuit briefcase
+  description: A box containing a mystery minifigure. The side of the box depicts a few blacked-out 'rare' figures, including one with a large, non-humanoid shilouette.
+  components:
+  - type: Item
+    sprite: Debiloid1984/Objects/Storage/Briefcases/weapon_case_syndie.rsi
+  - type: Sprite
+    sprite: Debiloid1984/Objects/Storage/Briefcases/weapon_case_syndie.rsi
+    layers:
+      - state: icon
+  - type: SpawnItemsOnUse
+    items:
+      - id: ComSyndicateNowHardsuit
+        orGroup: GiftPool
+      - id: ComSyndicateOldHardsuit
+        orGroup: GiftPool
+
+- type: entity
+  parent: PresentRandom
+  id: SyndiHardsuitMedic
+  name: syndi hardsuit briefcase
+  description: A box containing a mystery minifigure. The side of the box depicts a few blacked-out 'rare' figures, including one with a large, non-humanoid shilouette.
+  components:
+  - type: Item
+    sprite: Debiloid1984/Objects/Storage/Briefcases/weapon_case_syndie.rsi
+  - type: Sprite
+    sprite: Debiloid1984/Objects/Storage/Briefcases/weapon_case_syndie.rsi
+    layers:
+      - state: icon
+  - type: SpawnItemsOnUse
+    items:
+      - id: SyndicateMedicHardsuit
+        orGroup: GiftPool
+      - id: EliteSyndicateNowHardsuit
+        orGroup: GiftPool
+      - id: EliteSyndicateNewHardsuit
+        orGroup: GiftPool

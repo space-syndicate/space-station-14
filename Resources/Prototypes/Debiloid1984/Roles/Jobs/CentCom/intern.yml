@@ -1,0 +1,96 @@
+- type: job
+  id: BKCCAssistant
+  name: job-name-centcomassistant
+  description: job-description-centcomassistant
+  playTimeTracker: JobCentralCommandAssistant
+  setPreference: true
+  startingGear: CentComInternGear
+  icon: JobIconServiceWorker
+  supervisors: job-supervisors-centcommembers
+  canBeAntag: false
+  weight: 1
+  requireAdminNotify: true
+  joinNotifyCrew: true
+  requirements:
+    - !type:DepartmentTimeRequirement
+      department: Engineering
+      time: 54000
+    - !type:DepartmentTimeRequirement
+      department: Medical
+      time: 54000
+    - !type:DepartmentTimeRequirement
+      department: Civilian
+      time: 54000
+  access:
+    - CCGeneral
+  accessGroups:
+    - AllAccess
+  special:
+    - !type:AddImplantSpecial
+      implants: [ MindShieldImplant ]
+
+- type: startingGear
+  id: CentComInternGear
+  equipment:
+    jumpsuit: ClothingUniformJumpsuitCentcomIntern
+    back: ClothingBackpackFilled
+    shoes: ClothingShoesColorBlack
+    id: CentcomInternPDABackmen
+    ears: ClothingHeadsetCentCom
+  satchel: ClothingBackpackSatchelFilled
+  duffelbag: ClothingBackpackDuffelFilled
+
+- type: startingGear
+  id: CentComInternGearArmed # POWER IN QUANTITY!
+  equipment:
+    jumpsuit: ClothingUniformJumpsuitCentcomIntern
+    back: WeaponSniperMosin
+    shoes: ClothingShoesColorBlack
+    eyes: ClothingEyesGlassesSunglasses
+    neck: CombatKnifeSpetsnaz
+    id: CentcomInternPDABackmen
+    ears: ClothingHeadsetCentCom
+    gloves: ClothingHandsGlovesFingerless
+    head: ClothingHeadHatCorpsoft
+    pocket1: MedicatedSuture
+    pocket2: MagazineBoxLightRifle
+    outerClothing: ClothingOuterArmorBasic
+
+- type: entity
+  parent: BasePDA
+  id: CentcomInternPDABackmen
+  name: CentCom Assistant PDA
+  description: Light green sign of walking bureaucracy.
+  components:
+    - type: Pda
+      id: IDCardCentComIntern
+      state: pda-centcom
+      penSlot:
+        startingItem: PenCentcom
+        whitelist:
+          tags:
+            - Write
+    - type: PdaBorderColor
+      borderColor: "#00842e"
+    - type: Icon
+      state: pda-centcom
+
+- type: entity
+  parent: CentcomIDCardDeathsquad
+  id: IDCardCentComIntern
+  name: ID карта Ассистента ЦК
+  components:
+    - type: Sprite
+      layers:
+      - state: silver
+      - state: idiaa
+      - state: idintern-service
+    - type: Item
+      heldPrefix: silver
+    - type: PresetIdCard
+      job: BKCCAssistant
+    - type: Access
+      tags:
+        - CCGeneral
+      groups:
+        - AllAccess

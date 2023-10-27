@@ -1,0 +1,35 @@
+{
+  "version": 1,
+  "license": "CC-BY-SA-3.0",
+  "copyright": "Created by @kayzel for Backmen Station",
+  "size": {
+    "x": 32,
+    "y": 32
+  },
+  "states": [
+    {
+		"name": "1_label"
+	},    {
+		"name": "2_label"
+	},    {
+		"name": "3_label"
+	},    {
+		"name": "4_label"
+	},    {
+		"name": "5_label"
+	},    {
+		"name": "6_label"
+	},    {
+		"name": "7_label"
+	},    {
+		"name": "8_label"
+	},    {
+		"name": "9_label"
+	},    {
+		"name": "0_label"
+	},
+    {
+		"name": "crypt_GROUPS"
+	}
+  ]
+}

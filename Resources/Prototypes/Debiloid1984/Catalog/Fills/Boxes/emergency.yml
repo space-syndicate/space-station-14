@@ -1,0 +1,20 @@
+- type: entity
+  name: survival box
+  parent: BoxCardboard
+  id: BoxSurvivalBlueShield
+  description: It's a box with basic internals inside.
+  suffix: Security
+  components:
+  - type: StorageFill
+    contents:
+      - id: ClothingMaskGasSwat
+      - id: EmergencyOxygenTankFilled
+      - id: SpaceMedipen
+      - id: EmergencyMedipen
+      - id: Flare
+      - id: FoodTinMRE
+  - type: Sprite
+    layers:
+      - state: internals
+      - state: emergencytank
+

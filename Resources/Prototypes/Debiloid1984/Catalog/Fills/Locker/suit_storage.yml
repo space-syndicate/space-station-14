@@ -1,0 +1,23 @@
+- type: entity
+  id: SuitStorageCentcomCarporatHardsuit
+  parent: SuitStorageBase
+  suffix: CentCom Corparat
+  components:
+  - type: StorageFill
+    contents:
+        - id: NitrogenTankFilled
+        - id: OxygenTankFilled
+        - id: ClothingOuterHardsuitCentcomCarporate
+        - id: ClothingMaskBreath
+
+- type: entity
+  id: SuitStorageCargoEVAHardsuit
+  parent: SuitStorageBase
+  suffix: EVA cargo 
+  components:
+  - type: StorageFill
+    contents:
+        - id: NitrogenTankFilled
+        - id: OxygenTankFilled
+        - id: ClothingOuterHardsuitCargoEVA
+        - id: ClothingMaskBreath

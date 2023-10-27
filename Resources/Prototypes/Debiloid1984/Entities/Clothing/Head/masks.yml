@@ -1,0 +1,128 @@
+- type: entity
+  parent: ClothingMaskGas
+  id: ClothingMaskRed
+  name: Red order gas mask
+  suffix: Clothing
+  description: Ancient gas mask of the Red Order. Thank Redspace MORE BLOOD.
+  components:
+  - type: Sprite
+    sprite: Debiloid1984/Clothing/Head/Masks/mask_orden.rsi
+  - type: Clothing
+    sprite: Debiloid1984/Clothing/Head/Masks/mask_orden.rsi
+  - type: Armor
+    modifiers:
+      coefficients:
+        Heat: 0.95
+
+- type: entity
+  parent: ClothingMaskBase
+  id: ClothingDallasMask
+  name: Маска Далласа
+  description: Традиционная маска грабителя из банды PayDay
+  components:
+  - type: Sprite
+    sprite: Debiloid1984/Clothing/Head/Masks/dallasmaskbel.rsi
+  - type: Clothing
+    sprite: Debiloid1984/Clothing/Head/Masks/dallasmaskbel.rsi
+  - type: BreathMask
+  - type: IdentityBlocker
+
+- type: entity
+  parent: ClothingMaskBase
+  id: ClothingWolfMask
+  name: Маска Вулфа
+  description: Традиционная маска грабителя из банды PayDay
+  components:
+  - type: Sprite
+    sprite: Debiloid1984/Clothing/Head/Masks/wolfmaskbel.rsi
+  - type: Clothing
+    sprite: Debiloid1984/Clothing/Head/Masks/wolfmaskbel.rsi
+  - type: BreathMask
+  - type: IdentityBlocker
+
+- type: entity
+  parent: ClothingMaskBase
+  id: ClothingChainsMask
+  name: Маска Чейнса
+  description: Традиционная маска грабителя из банды PayDay
+  components:
+  - type: Sprite
+    sprite: Debiloid1984/Clothing/Head/Masks/chainsmaskbel.rsi
+  - type: Clothing
+    sprite: Debiloid1984/Clothing/Head/Masks/chainsmaskbel.rsi
+  - type: BreathMask
+  - type: IdentityBlocker
+
+- type: entity
+  parent: ClothingMaskBase
+  id: ClothingHoxtonMask
+  name: Маска Хокстона
+  description: Традиционная маска грабителя из банды PayDay
+  components:
+  - type: Sprite
+    sprite: Debiloid1984/Clothing/Head/Masks/hoxtonmaskbel
+  - type: Clothing
+    sprite: Debiloid1984/Clothing/Head/Masks/hoxtonmaskbel
+  - type: BreathMask
+  - type: IdentityBlocker
+
+- type: entity
+  parent: ClothingMaskGas
+  id: ClothingGermanGasMask
+  name: Немецкий противогаз
+  description: Противогаз немецких войск, потрепано временем но свою работу выполняет.
+  components:
+  - type: Sprite
+    sprite: Debiloid1984/Clothing/Head/Masks/germangasmaskbel.rsi
+  - type: Clothing
+    sprite: Debiloid1984/Clothing/Head/Masks/germangasmaskbel.rsi
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.90
+        Slash: 0.90
+        Piercing: 0.95
+        Heat: 0.95
+
+- type: entity
+  parent: ClothingMaskBase
+  id: ClothingBalaclavaSwat
+  name: Балаклава
+  description: Обычная балаклава из тончайшей ткани
+  components:
+  - type: Sprite
+    sprite: Debiloid1984/Clothing/Head/Masks/swatbalaclavabel.rsi
+  - type: Clothing
+    sprite: Debiloid1984/Clothing/Head/Masks/swatbalaclavabel.rsi
+  - type: BreathMask
+  - type: IdentityBlocker
+
+- type: entity
+  parent: ClothingMaskGas
+  id: ClothingihsGasmask
+  name: Противогаз IHS
+  description: Противогаз тактических войск IHS.
+  components:
+  - type: Sprite
+    sprite: Debiloid1984/Clothing/Head/Masks/ihsgasmaskheavybel.rsi
+  - type: Clothing
+    sprite: Debiloid1984/Clothing/Head/Masks/ihsgasmaskheavybel.rsi
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.95
+        Slash: 0.97
+        Piercing: 0.90
+        Heat: 0.95
+
+- type: entity
+  parent: ClothingMaskBase
+  id: ClothingMaskblacksilense
+  name: Трофейная маска черной тишины
+  suffix: Clothing
+  description: Маска знаменитого охотника по прозвищу Черная тишина. Источает отчаяние.
+  components:
+  - type: Sprite
+    sprite: Debiloid1984/Clothing/Head/Masks/blacksilense.rsi
+  - type: Clothing
+    sprite: Debiloid1984/Clothing/Head/Masks/blacksilense.rsi

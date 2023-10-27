@@ -1,0 +1,41 @@
+- type: job
+  id: CommanderSalvage
+  name: job-name-comsalvage
+  description: job-description-comsalvage
+  playTimeTracker: JobCommanderSalvage
+  requirements:
+    - !type:DepartmentTimeRequirement
+      department: Cargo
+      time: 108000 # 30 hrs
+    - !type:RoleTimeRequirement
+      role: JobSalvageSpecialist
+      time: 36000 #10 hrs
+#    - !type:OverallPlaytimeRequirement
+#      time: 108000 #30 hrs
+  icon: "JobIconCommanderSalvage"
+  startingGear: CommanderSalvageGear
+  supervisors: job-supervisors-qm
+  canBeAntag: false
+  access:
+  - Cargo
+  - Salvage
+  - Quartermaster
+  - Maintenance
+  - External
+
+- type: startingGear
+  id: CommanderSalvageGear
+  equipment:
+    jumpsuit: ClothingUniformJumpsuitComSalvage
+    back: ClothingBackpackSalvageFilled
+    shoes: ClothingShoesBootsJackSecFilled
+    mask: ClothingMaskGasExplorer
+    outerClothing: ClothingOuterHardsuitSpatio
+    id: ComSalvagePDA
+    ears: ClothingHeadsetCargo
+    head: ClothingHeadHatBeretCargo
+    neck: ClothingNeckCloakMiner
+    gloves: ClothingHandsGlovesComSalvage
+    belt: ClothingBeltUtilityFilled
+  satchel: ClothingBackpackSatchelSalvageFilled
+  duffelbag: ClothingBackpackDuffelSalvageFilled

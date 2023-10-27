@@ -1,0 +1,21 @@
+- type: entity
+  parent: ClothingOuterWinterCoat
+  id: Clothinghoscoat
+  name: Пальто ГСБ
+  description: Обычное пальто главы СБ, ничего примечательного.
+  components:
+  - type: Sprite
+    sprite: Debiloid1984/Clothing/OuterClothing/Coats/coathosbelov.rsi
+  - type: Clothing
+    sprite: Debiloid1984/Clothing/OuterClothing/Coats/coathosbelov.rsi
+
+- type: entity
+  parent: ClothingOuterWinterCoat
+  id: ClothingSovietCoat
+  name: Пальто СССП
+  description: Пальто которые носят высокие чины в СССП
+  components:
+  - type: Sprite
+    sprite: Debiloid1984/Clothing/OuterClothing/Coats/ssspcoatbelov.rsi
+  - type: Clothing
+    sprite: Debiloid1984/Clothing/OuterClothing/Coats/ssspcoatbelov.rsi

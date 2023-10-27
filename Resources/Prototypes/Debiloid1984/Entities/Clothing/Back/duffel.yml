@@ -1,0 +1,17 @@
+- type: entity
+  parent: ClothingBackpackDuffel
+  id: ClothingBackpackDuffelHOP
+  name: hop duffelbag
+  description: nice duffelbag bro
+  components:
+    - type: Sprite
+      sprite: Debiloid1984/Clothing/Back/Duffels/hop.rsi
+
+- type: entity
+  parent: ClothingBackpackDuffel
+  id: ClothingBackpackDuffelBlueShield
+  name: captain's duffel bag
+  description: A large duffel bag for holding extra captainly goods.
+  components:
+  - type: Sprite
+    sprite: Debiloid1984/Clothing/Back/Duffels/blueshield.rsi

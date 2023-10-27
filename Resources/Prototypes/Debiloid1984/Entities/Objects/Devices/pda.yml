@@ -1,0 +1,67 @@
+- type: entity
+  parent: BasePDA
+  id: OrdenPDA
+  name: PDA of the Red Order
+  description: An unusual variation of the PDA that draws energy from redspace crystals inside.
+  components:
+    - type: Sprite
+      sprite: Debiloid1984/Objects/Devices/pda.rsi
+      layers:
+      - map: [ "enum.PdaVisualLayers.Base" ]
+      - state: "light_overlay"
+        map: [ "enum.PdaVisualLayers.Flashlight" ]
+        shader: "unshaded"
+        visible: false
+      - state: "id_overlay"
+        map: [ "enum.PdaVisualLayers.IdLight" ]
+        shader: "unshaded"
+        visible: false
+    - type: Pda
+      id: IdCardRO
+      state: pda-orden
+      penSlot:
+        startingItem: EnergyDagger
+        priority: -1
+        whitelist:
+          tags:
+          - Write
+    - type: PdaBorderColor
+      borderColor: "#8b0000"
+    - type: Icon
+      sprite: Debiloid1984/Objects/Devices/pda.rsi
+      state: pda-orden
+
+- type: entity
+  parent: BasePDA
+  id: ComSalvagePDA
+  name: commander salvage PDA
+  description: Just a PDA.
+  components:
+  - type: Pda
+    id: ComSalvageIDCard
+    state: pda-comsalvage
+  - type: PdaBorderColor
+    borderColor: "#774705"
+  - type: Icon
+    state: pda-comsalvage
+
+- type: entity
+  parent: BasePDA
+  id: BlueShieldPDA
+  name: captain PDA
+  description: Surprisingly no different from your PDA.
+  components:
+  - type: Pda
+    id: BlueShieldIDCard
+    state: pda-blueshield
+    penSlot:
+      startingItem: PenCap
+      priority: -1
+      whitelist:
+        tags:
+        - Write
+  - type: PdaBorderColor
+    borderColor: "#1E1E32"
+    accentHColor: "#2851A4"
+  - type: Icon
+    state: pda-blueshield

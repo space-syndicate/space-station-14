@@ -1,0 +1,22 @@
+- type: entity
+  name: Saber of the Leader of the Red Order
+  parent: BaseItem
+  id: OrdenSabre
+  description: Unusual saber. Instead of a blade, this weapon uses the teeth of a space dragon, which cut and cling to the victim's flesh, tearing open wounds. Nightmare weapon.
+  components:
+  - type: Sharp
+  - type: Sprite
+    sprite: Debiloid1984/Objects/Weapons/Melee/orden_sabre.rsi
+    state: icon
+  - type: MeleeWeapon
+    attackRate: 2
+    damage:
+      types:
+        Slash: 17
+  - type: Item
+    size: 15
+    sprite:
+  - type: Tag
+    tags:
+    - CaptainSabre
+  - type: DisarmMalus

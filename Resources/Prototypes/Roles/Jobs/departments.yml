@@ -6,6 +6,7 @@
   - CargoTechnician
   - Quartermaster
   - SalvageSpecialist
+  - CommanderSalvage
 
 - type: department
   id: Civilian
@@ -36,6 +37,7 @@
   color: "#334E6D"
   roles:
   - Captain
+  - Blueshield
   - IAA # Corvax-IAA
   - CentralCommandOfficial
   - ChiefEngineer

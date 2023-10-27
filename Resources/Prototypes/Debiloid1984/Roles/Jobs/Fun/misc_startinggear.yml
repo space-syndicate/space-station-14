@@ -1,0 +1,29 @@
+#UEG representative
+- type: startingGear
+  id: UEGrepresentativeGear
+  equipment:
+    jumpsuit: ClothingUniformJumpsuitUEG
+    back: ClothingBackpackERTLeader
+    shoes: ClothingShoesBootsCombatFilled
+    gloves: ClothingHandsGlovesCombat
+    eyes: ClothingEyesGlassesSunglasses
+    head: ClothingHeadCapCentcomBlack
+    id: UEGrepIDCard
+    ears: ClothingHeadsetUEG
+    mask: ClothingMaskGasMerc
+    neck: ClothingNeckCloakUEG
+
+#UEG officer
+- type: startingGear
+  id: UEGofficerGear
+  equipment:
+    jumpsuit: ClothingUniformJumpsuitUEGofficer
+    outerClothing: ClothingOuterHardsuitUEG
+    back: ClothingBackpackERTSecurity
+    shoes: ClothingShoesSwat
+    gloves: ClothingHandsGlovesCombat
+    eyes: ClothingEyesGlassesSecurity
+    head: ClothingHeadHatERTLeaderBeret
+    id: UEGoffIDCard
+    ears: ClothingHeadsetUEGofficer
+    mask: ClothingMaskGasMerc

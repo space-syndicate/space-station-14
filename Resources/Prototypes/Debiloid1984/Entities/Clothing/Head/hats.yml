@@ -1,0 +1,72 @@
+- type: entity
+  parent: ClothingHeadBase
+  id: ClothingHeadHatBeretCargo
+  name: cargo beret
+  description: Beret for a real cargo man.
+  components:
+  - type: Sprite
+    sprite: Debiloid1984/Clothing/Head/Hats/beret_cargo.rsi
+  - type: Clothing
+    sprite: Debiloid1984/Clothing/Head/Hats/beret_cargo.rsi
+  - type: Tag
+    tags:
+    - ClothMade
+    - HamsterWearable
+    - WhitelistChameleon
+
+- type: entity
+  parent: ClothingHeadBase
+  id: ClothingHeadHatUshankaSSSP
+  name: Ушанка СССП
+  description: "Отлично подходит для Сибири, да?"
+  components:
+  - type: Sprite
+    sprite: Debiloid1984/Clothing/Head/Hats/ushankaSSSP.rsi
+  - type: Clothing
+    sprite: Debiloid1984/Clothing/Head/Hats/ushankaSSSP.rsi
+  - type: AddAccentClothing
+    accent: RussianAccent
+
+- type: entity
+  parent: ClothingHeadBase
+  id: ClothingHeadHatCapGerman
+  name: Фуражка немецкого офицера
+  description: Довольно старая фуражка офицера руководящего немецкими войсками
+  components:
+    - type: Sprite
+      sprite: Debiloid1984/Clothing/Head/Hats/germancapofficerbel.rsi
+    - type: Clothing
+      sprite: Debiloid1984/Clothing/Head/Hats/germancapofficerbel.rsi
+
+- type: entity
+  parent: ClothingHeadBase
+  id: ClothingHeadHatCapOfficerSoviet
+  name: Фуражка Советского Офицера
+  description: Современная версия фуражки офицера руководящего войсками СССП
+  components:
+    - type: Sprite
+      sprite: Debiloid1984/Clothing/Head/Hats/sovietcapbel.rsi
+    - type: Clothing
+      sprite: Debiloid1984/Clothing/Head/Hats/sovietcapbel.rsi
+
+- type: entity
+  parent: ClothingHeadBase
+  id: ClothingWhitsHunter
+  name: Шляпа охотника за ведьмами
+  description: Шляпа охотника за мифическими существами, а именно ведьмами в стиле средневековья
+  components:
+    - type: Sprite
+      sprite: Debiloid1984/Clothing/Head/Hats/whitshunterbelov.rsi
+    - type: Clothing
+      sprite: Debiloid1984/Clothing/Head/Hats/whitshunterbelov.rsi
+
+- type: entity
+  parent: ClothingHeadBase
+  id: ClothingHeadHatBeretHoSCentcom
+  name: Берет Начальника Безопасности ЦК
+  description: Стильный чёрный берет с зелёным значком показывает кто тут следит запорядком.
+  components:
+    - type: Sprite
+      sprite: Debiloid1984/Clothing/Head/Hats/cchos_beret.rsi
+    - type: Clothing
+      sprite: Debiloid1984/Clothing/Head/Hats/cchos_beret.rsi

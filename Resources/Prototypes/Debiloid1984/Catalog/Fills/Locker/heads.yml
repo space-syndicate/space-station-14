@@ -1,0 +1,20 @@
+- type: entity
+  id: LockerBlueShieldFilled
+  suffix: Filled
+  parent: LockerBlueShield
+  components:
+  - type: StorageFill
+    contents:
+      - id: MysteryWeaponBox
+      - id: BoxCardboardTrackImp
+      - id: MedkitCombatFilled
+      - id: Handcuffs
+      - id: Flash
+      - id: ClothingBeltSecurityWebbing
+      - id: ClothingShoesBootsCombatFilled
+      - id: ClothingUniformJumpsuitBlueShield
+      - id: ClothingEyesGlassesSunglassesBlueShield
+      - id: ClothingOuterWinterBS
+      - id: ClothingNeckMantleCap
+      - id: GarmentBagBlueShield
+

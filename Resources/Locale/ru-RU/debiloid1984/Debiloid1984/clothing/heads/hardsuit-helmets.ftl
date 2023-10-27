@@ -1,0 +1,13 @@
+ent-ClothingHeadHelmetHardsuitDeathsquadOld = старый шлем эскадрона смерти
+    .desc = Старый шлем скафандра эскадрона смерти.
+ent-ClothingHeadHelmetHardsuitSyndieEliteNew = новый шлем элиты синдиката
+    .desc = New era?
+ent-ClothingHeadHelmetHardsuitSyndieCommanderOld = старый шлем скафандра командира 
+    .desc = Старый аналог шлема скафандра командира синдиката.
+ent-ClothingHeadHelmetHardsuitSyndieNew = новый кроваво-красный шлем скафандра
+    .desc = Обновленный аналог шлема скафандра синдиката.
+ent-ClothingHeadHelmetHardsuitQM = шлем скафандра квартирмейстера
+    .desc = Специальный шлем для скафандра квартирмейстера.
+ent-ClothingHeadHelmetHardsuitERTBlueShield = шлем скафандра офицера синего щита
+    .desc = Специальный защитный шлем, который носят члены отрядов синего щита.
+    .suffix = { "" }
