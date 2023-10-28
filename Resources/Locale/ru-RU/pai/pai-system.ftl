@@ -10,6 +10,8 @@ pai-system-role-name-syndicate = персональный ИИ Синдикат�
 pai-system-role-description-syndicate =
     Станьте чьим-нибудь приятелем из Синдиката!
     (Воспоминания *не* прилагаются.)
+pai-system-role-name-potato = potato artificial intelligence
+pai-system-role-description-potato = It's a toy for children. And now you live in it.
 pai-system-wipe-device-verb-text = Удалить пИИ
 pai-system-wiped-device = пИИ был стерт с устройства.
 pai-system-stop-searching-verb-text = Прекратить поиск

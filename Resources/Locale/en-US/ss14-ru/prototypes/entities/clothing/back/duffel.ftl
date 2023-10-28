@@ -44,3 +44,5 @@ ent-ClothingBackpackDuffelSyndicateMedicalBundle = { ent-ClothingBackpackDuffelS
     .desc = { ent-ClothingBackpackDuffelSyndicateMedical.desc }
 ent-ClothingBackpackDuffelHolding = duffelbag of holding
     .desc = A duffelbag that opens into a localized pocket of bluespace.
+ent-ClothingBackpackDuffelCBURN = CBURN duffel bag
+    .desc = A duffel bag containing a variety of biological containment equipment.
