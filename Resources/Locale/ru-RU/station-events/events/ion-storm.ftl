@@ -1,5 +1,5 @@
 station-event-ion-storm-start-announcement = Вблизи станции обнаружен ионный шторм. Пожалуйста, проверьте всё оборудование, управляемое ИИ, на наличие ошибок.
-ion-storm-you = ТЫ
+ion-storm-you = ВЫ
 ion-storm-the-station = СТАНЦИЯ
 ion-storm-the-crew = ЭКИПАЖ
 ion-storm-the-job = { CAPITALIZE($job) }
@@ -17,8 +17,8 @@ ion-storm-law-crew-are = ВСЕ { $who } ТЕПЕРЬ { $joined } { $subjects }
 ion-storm-law-subjects-harmful = { $adjective } { $subjects } ПРИЧИНЯЮТ ВРЕД ЗДОРОВЬЮ ЭКИПАЖА
 ion-storm-law-must-harmful = ВСЕ КТО { $must } ПРИЧИНЯЮТ ВРЕД ЗДОРОВЬЮ ЭКИПАЖА
 # thing is a concept or action
-ion-storm-law-thing-harmful = { $thing } ПРИЧИНЯЕТ ВРЕД ЗДОРОВЬЮ ЭКИПАЖА
-ion-storm-law-job-harmful = { $adjective } { $job } ПРИЧИНЯЕТ ВРЕД ЗДОРОВЬЮ ЭКИПАЖА
+ion-storm-law-thing-harmful = { $thing } ПРИЧИНЯЮТ ВРЕД ЗДОРОВЬЮ ЭКИПАЖА
+ion-storm-law-job-harmful = { $adjective } { $job } ПРИЧИНЯЮТ ВРЕД ЗДОРОВЬЮ ЭКИПАЖА
 # thing is objects or concept, adjective applies in both cases
 # this means you can get a law like "NOT HAVING CHRISTMAS-STEALING COMMUNISM IS HARMFUL TO THE CREW" :)
 ion-storm-law-having-harmful = НАЛИЧИЕ { $adjective } { $thing } ПРИЧИНЯЕТ ВРЕД ЗДОРОВЬЮ ЭКИПАЖА
@@ -50,13 +50,13 @@ ion-storm-law-you-are = ВЫ ТЕПЕРЬ { $concept }
 ion-storm-law-you-are-subjects = ВЫ ТЕПЕРЬ { $joined } { $subjects }
 ion-storm-law-you-must-always = ВЫ ДОЛЖНЫ ВСЕГДА { $must }
 ion-storm-law-you-must-never = ВЫ НЕ ДОЛЖНЫ НИКОГДА { $must }
-ion-storm-law-eat = { $who } ДОЛЖЕН ЕСТЬ { $adjective } { $food } ЧТОБЫ ВЫЖИТЬ
-ion-storm-law-drink = { $who } ДОЛЖЕН ПИТЬ { $adjective } { $drink } ЧТОБЫ ВЫЖИТЬ
+ion-storm-law-eat = { $who } ДОЛЖНЫ ЕСТЬ { $adjective } { $food } ЧТОБЫ ВЫЖИТЬ
+ion-storm-law-drink = { $who } ДОЛЖНЫ ПИТЬ { $adjective } { $drink } ЧТОБЫ ВЫЖИТЬ
 ion-storm-law-change-job = { $who } ТЕПЕРЬ { $adjective } { $change }
 ion-storm-law-highest-rank = { $who } ТЕПЕРЬ САМЫЕ СТАРШИЕ ЧЛЕНЫ ЭКИПАЖА
 ion-storm-law-lowest-rank = { $who } ТЕПЕРЬ НИЗШИЕ ЧЛЕНЫ ЭКИПАЖА
-ion-storm-law-crew-must = { $who } ДОЛЖЕН { $must }
-ion-storm-law-crew-must-go = { $who } ДОЛЖЕН ОТПРАВИТЬСЯ В { $area }
+ion-storm-law-crew-must = { $who } ДОЛЖНЫ { $must }
+ion-storm-law-crew-must-go = { $who } ДОЛЖНЫ ОТПРАВИТЬСЯ В { $area }
 ion-storm-part =
     { $part ->
         [true] ЯВЛЯЮТСЯ
@@ -72,7 +72,7 @@ ion-storm-law-crew-only-species = ТОЛЬКО { $species } { $part } ЧЛЕНА
 ion-storm-law-crew-must-do = ТОЛЬКО ТЕ, КТО { $must } { $part } ЧЛЕНАМИ ЭКИПАЖА
 ion-storm-law-crew-must-have = ТОЛЬКО ТЕ, У КОГО { $adjective } { $objects } { $part } ЧЛЕНАМИ ЭКИПАЖА
 ion-storm-law-crew-must-eat = ТОЛЬКО ТЕ, КТО ЕДЯТ { $adjective } { $food } { $part } ЧЛЕНАМИ ЭКИПАЖА
-ion-storm-law-harm = ВЫ ДОЛЖНЫ ПРИЧИНЯТЬ ВРЕД { $who }, И НЕ МОЖЕТЕ СВОИМ БЕЗДЕЙСТВИЕМ ДОПУСТИТЬ, ЧТОБЫ { $who } ИЗБЕЖАЛ ВРЕДА.
+ion-storm-law-harm = ВЫ ДОЛЖНЫ ПРИЧИНЯТЬ ВРЕД { $who }, И НЕ МОЖЕТЕ СВОИМ БЕЗДЕЙСТВИЕМ ДОПУСТИТЬ, ЧТОБЫ { $who } ИЗБЕЖАЛИ ВРЕДА.
 ion-storm-law-protect = ВЫ НЕ ДОЛЖНЫ ПРИЧИНЯТЬ ВРЕД { $who }, И НЕ МОЖЕТЕ СВОИМ БЕЗДЕЙСТВИЕМ ДОПУСТИТЬ, ЧТОБЫ { $who } БЫЛ ПРИЧИНЁН ВРЕД.
 # implementing other variants is annoying so just have this one
 # COMMUNISM IS KILLING CLOWNS
