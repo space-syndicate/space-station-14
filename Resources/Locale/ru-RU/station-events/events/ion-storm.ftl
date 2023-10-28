@@ -1,7 +1,7 @@
 station-event-ion-storm-start-announcement = Вблизи станции обнаружен ионный шторм. Пожалуйста, проверьте всё оборудование, управляемое ИИ, на наличие ошибок.
 ion-storm-you = ВЫ
 ion-storm-the-station = СТАНЦИЯ
-ion-storm-the-crew = ЭКИПАЖ
+ion-storm-the-crew = ЧЛЕНЫ ЭКИПАЖА
 ion-storm-the-job = { CAPITALIZE($job) }
 ion-storm-clowns = КЛОУНЫ
 ion-storm-heads = ГЛАВЫ ОТДЕЛОВ
