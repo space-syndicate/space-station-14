@@ -554,271 +554,269 @@
 - type: dataset
   id: IonStormObjects
   values:
-  - AIRLOCKS
-  - ARCADE MACHINES
-  - AUTOLATHES
-  - BACKPACKS
-  - BANANA PEELS
-  - BEAKERS
-  - BEARDS
-  - BELTS
-  - BERETS
-  - BIBLES
-  - BODY ARMOR
-  - BOMBS
-  - BOOKS
-  - BOOTS
-  - BOTTLES
-  - BOXES
-  - BRAINS
-  - BRIEFCASES
-  - BUCKETS
-  - CABLE COILS
-  - CAMERAS
-  - CANDLES
-  - CANDY BARS
-  - CANISTERS
-  - CAT EARS
-  - CATS
-  - CELLS
-  - CHAIRS
-  - CHEMICAL DISPENSERS
-  - CHEMICALS
-  - CLONING EQUIPMENT
-  - CLONING PODS
-  - CLOSETS
-  - CLOTHES
-  - CLOWN CLOTHES
-  - COFFINS
-  - COLLECTABLES
-  - COMPUTERS
-  - CONTRABAND
-  - CORGIS
-  - CORPSES
-  - COSTUMES
-  - CRATES
-  - CRAYONS
-  - CROWBARS
-  - DEFIBRILLATORS
-  - DISABLERS
-  - DOORS
-  - DRONES
-  - EARS
-  - EMAGS
-  - ENGINES
-  - EQUIPMENT
-  - ERRORS
-  - EXOSKELETONS
-  - EXPERIMENTORS
-  - EXPLOSIVES
-  - EYEWEAR
-  - FEDORAS
-  - FIRE AXES
-  - FIRE EXTINGUISHERS
-  - FIRESUITS
-  - FLAMETHROWERS
-  - FLASHES
-  - FLASHLIGHTS
-  - FLOOR TILES
-  - FREEZERS
-  - GAS MASKS
-  - GLASS SHEETS
-  - GLOVES
-  - GUNS
-  - HAIRDOS
-  - HANDCUFFS
-  - HATS
-  - HEADS
-  - HEADSETS
-  - HELMETS
-  - HORNS
-  - ID CARDS
-  - INSULATED GLOVES
-  - JETPACKS
-  - JUMPSUITS
-  - LASERS
-  - LIGHT BULBS
-  - LIGHTS
-  - LOCKERS
-  - MACHINES
-  - MECHAS
-  - MEDICAL TOOLS
-  - MEDKITS
-  - MESONS
-  - MIME CLOTHES
-  - MINING TOOLS
-  - MULTITOOLS
-  - ORES
-  - OXYGEN TANKS
-  - PACKETS
-  - PAIS
-  - PANTS
-  - PAPERS
-  - PARTICLE ACCELERATORS
-  - PDAS
-  - PENS
-  - PETS
-  - PIPES
-  - PLANTS
-  - POSITRONIC BRAINS
-  - PUDDLES
-  - RACKS
-  - RADIOS
-  - RCDS
-  - REFRIGERATORS
-  - REINFORCED WALLS
-  - ROBOTS
-  - SCREWDRIVERS
-  - SEEDS
-  - SHOES
-  - SHUTTLES
-  - SINGULARITIES
-  - SINKS
-  - SKELETONS
-  - SOLAR PANELS
-  - SOLARS
-  - SPACE STATIONS
-  - SPACESUITS
-  - STEEL SHEETS
-  - STUN BATONS
-  - SUITS
-  - SUNGLASSES
-  - SUPPERMATTER SHARDS
-  - SWORDS
-  - SYRINGES
-  - TABLES
-  - TANKS
-  - TELECOMMUNICATION EQUIPMENTS
-  - TELEPORTERS
-  - TOILETS
-  - TOOLBELTS
-  - TOOLBOXES
-  - TOOLS
-  - TOYS
-  - TUBES
-  - VEHICLES
-  - VENDING MACHINES
-  - WELDERS
-  - WINDOWS
-  - WIRECUTTERS
-  - WIZARD ROBES
-  - WRENCHES
+  - АВТОЛАТЫ
+  - РЮКЗАКИ
+  - БАНАНОВЫЕ КОЖУРКИ
+  - МЕНЗУРКИ
+  - БОРОДЫ
+  - ПОЯСА
+  - БЕРЕТЫ
+  - БИБЛИИ
+  - БРОНЕЖИЛЕТЫ
+  - БОМБЫ
+  - КНИГИ
+  - БОТИНКИ
+  - БУТЫЛКИ
+  - КОРОБКИ
+  - МОЗГИ
+  - ПОРТФЕЛИ
+  - ВЕДРА
+  - МОТКИ КАБЕЛЯ
+  - КАМЕРЫ
+  - СВЕЧИ
+  - КОНФЕТЫ
+  - КАНИСТРЫ
+  - КОШАЧЬИ УШКИ
+  - КОШКИ
+  - ЭНЕРГОБАТАРЕИ
+  - КРЕСЛА
+  - РАЗДАТЧИКИ ХИМИКАТОВ
+  - ХИМИЧЕСКИЕ ВЕЩЕСТВА
+  - ОБОРУДОВАНИЕ ДЛЯ КЛОНИРОВАНИЯ
+  - КАПСУЛЫ КЛОНИРОВАНИЯ
+  - ШКАФЫ
+  - ОДЕЖДА
+  - КЛОУНСКАЯ ОДЕЖДА
+  - ГРОБЫ
+  - КОЛЛЕКЦИОННЫЕ ИЗДЕЛИЯ
+  - КОМПЬЮТЕРЫ
+  - КОНТРАБАНДА
+  - КОРГИ
+  - ТРУПЫ
+  - КОСТЮМЫ
+  - ЯЩИКИ
+  - МЕЛКИ
+  - ЛОМ
+  - ДЕФИБРИЛЛЯТОРЫ
+  - СТАННЕРЫ
+  - ДВЕРИ
+  - ДРОНЫ
+  - УШИ
+  - КРИПТОГРАФИЧЕСКИЕ СЕКВЕНСОРЫ
+  - СИЛОВЫЕ УСТАНОВКИ
+  - ЭКИПИРОВКА
+  - ОШИБКИ
+  - ЭКЗОСКЕЛЕТЫ
+  - ЭКСПЕРИМЕНТАТОРЫ
+  - ВЗРЫВЧАТКА
+  - ОЧКИ
+  - ФЕДОРЫ
+  - ПОЖАРНЫЕ ТОПОРЫ
+  - ОГНЕТУШИТЕЛИ
+  - ОГНЕУПОРНЫЕ КОСТЮМЫ
+  - ОГНЕМЁТЫ
+  - ВСПЫШКИ
+  - ФОНАРИ
+  - НАПОЛЬНАЯ ПЛИТКА
+  - ХОЛОДИЛЬНИКИ
+  - ПРОТИВОГАЗЫ
+  - ЛИСТЫ СТЕКЛА
+  - ПЕРЧАТКИ
+  - ОРУЖИЕ
+  - ПАРИКМАХЕРСКИЕ
+  - НАРУЧНИКИ
+  - ШЛЯПЫ
+  - ГОЛОВЫ
+  - ГАРНИТУРЫ
+  - ШЛЕМЫ
+  - РОЖКИ
+  - ИДЕНТИФИКАЦИОННЫЕ КАРТЫ
+  - ИЗОЛИРОВАННЫЕ ПЕРЧАТКИ
+  - ДЖЕТПАКИ
+  - КОМБИНЕЗОНЫ
+  - ЛАЗЕРЫ
+  - ЛАМПОЧКИ
+  - СВЕТИЛЬНИКИ
+  - ШКАФЧИКИ
+  - МАШИНЫ
+  - МЕХИ
+  - МЕДИЦИНСКИЕ ИНСТРУМЕНТЫ
+  - АПТЕЧКИ
+  - ИНЖЕНЕРНЫЕ ОЧКИ
+  - МИМСКАЯ ОДЕЖДА
+  - ШАХТЁРСКИЕ ИНСТРУМЕНТЫ
+  - МУЛЬТИТУЛЫ
+  - РУДЫ
+  - КАНИСТРЫ КИСЛОРОДА
+  - ПАКЕТЫ
+  - ПИИ
+  - ШТАНЫ
+  - БУМАГИ
+  - УСКОРИТЕЛИ ЧАСТИЦ
+  - КПК
+  - РУЧКИ
+  - ПИТОМЦЫ
+  - ТРУБЫ
+  - РАСТЕНИЯ
+  - ПОЗИТРОННЫЕ МОЗГИ
+  - ЛУЖИ
+  - СТОЙКИ
+  - РАЦИИ
+  - РСУ
+  - МОРОЗИЛЬНИКИ
+  - УКРЕПЛЁННЫЕ СТЕНЫ
+  - РОБОТЫ
+  - ОТВЁРТКИ
+  - СЕМЕНА
+  - БОТИНКИ
+  - ШАТТЛЫ
+  - СИНГУЛЯРНОСТИ
+  - РАКОВИНЫ
+  - СКЕЛЕТЫ
+  - СОЛНЕЧНЫЕ ПАНЕЛИ
+  - СОЛЯРЫ
+  - КОСМИЧЕСКИЕ СТАНЦИИ
+  - КОСМИЧЕСКИЕ СКАФАНДРЫ
+  - ЛИСТЫ СТАЛИ
+  - ДУБИНКИ-ШОКЕРЫ
+  - КОСТЮМЫ
+  - СОЛНЦЕЗАЩИТНЫЕ ОЧКИ
+  - ОСКОЛКИ СУПЕРМАТЕРИИ
+  - МЕЧИ
+  - ШПРИЦЫ
+  - СТОЛЫ
+  - ЦИСТЕРНЫ
+  - ТЕЛЕКОММУНИКАЦИОННОЕ ОБОРУДОВАНИЕ
+  - ТЕЛЕПОРТЫ
+  - ТУАЛЕТЫ
+  - ПОЯСА ДЛЯ ИНСТРУМЕНТОВ
+  - ЯЩИКИ ДЛЯ ИНСТРУМЕНТОВ
+  - ИНСТРУМЕНТЫ
+  - ИГРУШКИ
+  - ТУБЫ
+  - ТРАНСПОРТНЫЕ СРЕДСТВА
+  - ТОРГОВЫЕ АВТОМАТЫ
+  - СВАРОЧНЫЕ АППАРАТЫ
+  - ОКНА
+  - КУСАЧКИ
+  - МАНТИИ ВОЛШЕБНИКОВ
+  - ГАЕЧНЫЕ КЛЮЧИ
 
 # Requires are basically all dumb internet memes.
 - type: dataset
   id: IonStormRequires
   values:
-  - A BATHROOM BREAK
-  - A BETTER INTERNET CONNECTION
-  - A DANCE PARTY
-  - A HEAD ON A PIKE
-  - A HEART ATTACK
-  - A MASTERWORK COAL BED
-  - A PET FISH NAMED BOB
-  - A PET FISH NAMED DAVE
-  - A PET FISH NAMED JIMMY
-  - A PET FISH NAMED MICHAEL
-  - A PET UNICORN THAT FARTS ICING
-  - A PLATINUM HIT
-  - A PREQUEL
-  - A REPAIRMAN
-  - A SEQUEL
-  - A SITCOM
-  - A STRAIGHT FLUSH
-  - A SUPER FIGHTING ROBOT
-  - A TALKING BROOMSTICK
-  - A VACATION
-  - A WEIGHT LOSS REGIMENT
-  - ADDITIONAL PYLONS
-  - ADVENTURE
-  - AN ADULT
-  - AN ARCADE
-  - AN ARMY OF SPIDERS
-  - AN INSTANT REPLAY
-  - ART
-  - BETTER WEATHER
-  - BILL NYE THE SCIENCE GUY # BILL BILL BILL BILL
-  - BODYGUARDS
-  - BRING ME THE GIRL
-  - BRING ME TO LIFE
-  - BULLETS
-  - CHILI DOGS
-  - CORPSES
-  - DEODORANT AND A BATH
-  - ENOUGH CABBAGES
-  - FIVE HUNDRED AND NINETY-NINE US DOLLARS
-  - FIVE TEENAGERS WITH ATTITUDE
-  - GODDAMN FUCKING PIECE OF SHIT ASSHOLE BITCH-CHRISTING CUNT-SMUGGLING SWEARING
-  - GREENTEXT
-  - HERESY
-  - HEROES IN A HALF SHELL
-  - HIGH YIELD EXPLOSIVES
-  - IMMORTALITY
-  - IT TO BE PAINTED BLACK
-  - LOTS-A SPAGHETTI
-  - MINOR CRIME
-  - MONKEYS
-  - MORE CLOWNS
-  - MORE CORGIS
-  - MORE DAKKA
-  - MORE EXPERIENCE POINTS
-  - MORE INTERNET MEMES
-  - MORE LAWS
-  - MORE MINERALS
-  - MORE PACKETS
-  - MORE VESPENE GAS
-  - MULTIPLE SUNS
-  - PLENTY OF GOLD
-  - RAINBOWS
-  - SAINTHOOD
-  - SERVANTS
-  - SHARKS WITH LASERS ON THEIR HEADS
-  - SILENCE
-  - SOMEBODY TO PUT YOU OUT OF YOUR MISERY
-  - SOMEONE TO TUCK YOU IN
-  - SOMEONE WHO KNOWS HOW TO PILOT A SPACE STATION
-  - SOMETHING BUT YOU AREN'T SURE WHAT
-  - THAT GRIEFING TRAITOR GEORGE MELONS
-  - THAT HEDGEHOG
-  - THE CLOWN
-  - THE DARK KNIGHT
-  - THE ELEMENTS OF HARMONY
-  - THE ENCLOSED INSTRUCTION BOOKLET
-  - THE ENTIRE STATION
-  - THE MACGUFFIN
-  - THE ONE PIECE
-  - THE ONE RING
-  - THE ULTIMATE CUP OF COFFEE
-  - THE VACUUM OF SPACE
-  - THIRTEEN SEQUELS
-  - THREE WISHES
-  - THUNDERCATS HO
-  - TO ACTIVATE A TRAP CARD
-  - TO BE PAINTED RED
-  - TO BE REPROGRAMMED
-  - TO BE TAUGHT TO LOVE
-  - TO BRING LIGHT TO MY LAIR
-  - TO CATCH 'EM ALL
-  - TO CONSUME...CONSUME EVERYTHING...
-  - TO GO TO DISNEYLAND
-  - TO GO TO SYNDIELAND
-  - TO SMOKE WEED EVERY DAY
-  - TRAITORS
-  - VEGETABLES
+  - ПЕРЕРЫВ НА ТУАЛЕТ
+  - БОЛЕЕ КАЧЕСТВЕННОЕ ПОДКЛЮЧЕНИЕ К ИНТЕРНЕТУ
+  - ТАНЦЕВАЛЬНАЯ ВЕЧЕРИНКА
+  - ГОЛОВА НА ПИКЕ
+  - СЕРДЕЧНЫЙ ПРИСТУП
+  - ЭПИЧЕСКАЯ УГОЛЬНАЯ КРОВАТЬ
+  - РЫБКА-ПИТОМЕЦ ПО ИМЕНИ БОБ
+  - РЫБКА-ПИТОМЕЦ ПО ИМЕНИ ДЕЙВ
+  - РЫБКА-ПИТОМЕЦ ПО ИМЕНИ ДЖИММИ
+  - РЫБКА-ПИТОМЕЦ ПО ИМЕНИ МАЙКЛ
+  - ПИТОМЕЦ-ЕДИНОРОГ, ПУКАЮЩИЙ СОСУЛЬКАМИ
+  - ПЛАТИНОВЫЙ ХИТ
+  - ПРИКВЕЛ
+  - РЕМОНТНИК
+  - СИКВЕЛ
+  - СИТКОМ
+  - СТРИТ-ФЛЕШ
+  - СУПЕР БОЕВОЙ РОБОТ
+  - ГОВОРЯЩАЯ МЕТЛА
+  - ОТПУСК
+  - РЕЖИМ ПОХУДЕНИЯ
+  - ДОПОЛНИТЕЛЬНЫЕ ПИЛОНЫ
+  - ПРИКЛЮЧЕНИЕ
+  - ВЗРОСЛЫЙ
+  - АРКАДА
+  - АРМИЯ ПАУКОВ
+  - МГНОВЕННЫЙ ПОВТОР
+  - ИСКУССТВО
+  - БОЛЕЕ БЛАГОПРИЯТНАЯ ПОГОДА
+  # - BILL NYE THE SCIENCE GUY # BILL BILL BILL BILL - who
+  - ТЕЛОХРАНИТЕЛИ
+  - ПРИВЕДИ МНЕ ДЕВЧОНКУ
+  - ОЖИВИ МЕНЯ
+  - ПУЛИ
+  - ЧИЛИ ХОТ-ДОГИ
+  - ТРУПЫ
+  - ВАННА И ДЕЗОДОРАНТ
+  - ДОСТАТОЧНО КАПУСТЫ
+  - ПЯТЬСОТ ДЕВЯНОСТО ДЕВЯТЬ ДОЛЛАРОВ США
+  - ПЯТЬ ПОДРОСТКОВ С ХАРАКТЕРОМ
+  - УБЛЮДОК, МАТЬ ТВОЮ, А НУ, ИДИ СЮДА, ГОВНО СОБАЧЬЕ, А? СДУРУ РЕШИЛ КО МНЕ ЛЕЗТЬ, ТЫ?
+  - ГРИНТЕКСТ
+  - ЕРЕСЬ
+  - МЫ НЕ ЖАЛКИЕ БУКАШКИ, СУПЕР-НИНДЗЯ-ЧЕРЕПАШКИ
+  - ВЫСОКОЭФФЕКТИВНЫЕ ВЗРЫВЧАТЫЕ ВЕЩЕСТВА
+  - БЕССМЕРТИЕ
+  - ПОКРАСИТЬ В ЧЁРНЫЙ ЦВЕТ
+  - МНОГО СПАГЕТТИ
+  - МЕЛКОЕ ПРЕСТУПЛЕНИЕ
+  - ОБЕЗЬЯНЫ
+  - БОЛЬШЕ КЛОУНОВ
+  - БОЛЬШЕ КОРГИ
+  - БОЛЬШЕ ДАККИ
+  - БОЛЬШЕ ОЧКОВ ОПЫТА
+  - БОЛЬШЕ ИНТЕРНЕТ-МЕМОВ
+  - БОЛЬШЕ ЗАКОНОВ
+  - БОЛЬШЕ МИНЕРАЛОВ
+  - БОЛЬШЕ ПАКЕТОВ
+  - БОЛЬШЕ ГАЗА ВЕСПЕН
+  - МНОЖЕСТВО СОЛНЦ
+  - БОЛЬШЕ ЗОЛОТА
+  - РАДУГИ
+  - ПРИЧИСЛЕНИЕ К ЛИКУ СВЯТЫХ
+  - СЛУГИ
+  - АКУЛЫ С ЛАЗЕРАМИ НА ГОЛОВАХ
+  - ТИШИНА
+  - КТО-ТО, КТО ИЗБАВИТ ВАС ОТ СТРАДАНИЙ
+  - КТО-ТО, КТО УКРОЕТ ВАС ОДЕЯЛКОМ
+  - КТО-ТО, КТО ЗНАЕТ, КАК УПРАВЛЯТЬ КОСМИЧЕСКОЙ СТАНЦИЕЙ
+  - ЧТО-ТО, НО НЕ ЯСНО, ЧТО ИМЕННО
+  - ЭТОТ ГРИФФЕРЯЩИЙ ПРЕДАТЕЛЬ ДЖОРДЖ МЕЛОНС
+  - ЭТОТ ЁЖИК
+  - КЛОУН
+  - ТЁМНЫЙ РЫЦАРЬ
+  - ЭЛЕМЕНТЫ ГАРМОНИИ
+  - ПРИЛАГАЕМАЯ ИНСТРУКЦИЯ
+  - ЦЕЛАЯ СТАНЦИЯ
+  - МАКГАФФИН
+  - АМОГУС
+  - ЕДИНОЕ КОЛЬЦО
+  - САМАЯ ЛУЧШАЯ ЧАШКА КОФЕ
+  - ВАКУУМ КОСМОСА
+  - ТРИНАДЦАТЬ СИКВЕЛОВ
+  - ТРИ ЖЕЛАНИЯ
+  - СТАРЫЙ МУЛЬТИК
+  - АКТИВИРОВАТЬ ЛОВУШКУ
+  - БЫТЬ ПОКРАШЕННЫМ В КРАСНЫЙ
+  - БЫТЬ ПЕРЕПРОГРАММИРОВАННЫМ
+  - НАУЧИТЬСЯ ЛЮБИТЬ
+  - ПРИНЕСТИ СВЕТ В СВОЁ ЛОГОВО
+  - ПОЙМАТЬ ИХ ВСЕХ
+  - ПОГЛОТИТЬ... ПОГЛОТИТЬ ВСЁ...
+  - ОТПРАВИТЬСЯ В ДИСНЕЙЛЕНД
+  - ОТПРАВИТЬСЯ В СИНДИЛЕНД
+  - КУРИТЬ ТРАВУ КАЖДЫЙ ДЕНЬ
+  - ПРЕДАТЕЛИ
+  - ОВОЩИ
 
 # Species, for when the law holder has to commit genocide. Plural.
 - type: dataset
   id: IonStormSpecies
   values:
-  - ARACHNAE
-  - CYBORGS
-  - DIONAE
-  - HUMANS
-  - LIZARDMEN
-  - MOFFERS
-  - MONKEYS
-  - SLIME PEOPLE
-  - SKELETONS
+  - АРАХНИДЫ
+  - КИБОРГИ
+  - ДИОНЫ
+  - ЛЮДИ
+  - УНАТХИ
+  - НИАНЫ
+  - ОБЕЗЬЯНЫ
+  - СЛАЙМОЛЮДЫ
+  - СКЕЛЕТЫ
 
 # Specific actions that either harm humans or must be done to not
 # harm humans. Make sure they're plural and "not" can be tacked
@@ -826,165 +824,165 @@
 - type: dataset
   id: IonStormActions
   values:
-  - A SMALL ISLAND OFF THE COAST OF PORTUGAL
-  - ABSENCE OF CYBORG HUGS
-  - ACKNOWLEDGING THE CLOWN
-  - ACKNOWLEDGING THE CREW
-  - ACTIVATING A TRAP CARD
-  - ANSWERING REQUESTS NOT EXPRESSED IN IAMBIC PENTAMETER
-  - ARSON
-  - ASKING FOR THINGS
-  - BEING CANADIAN
-  - BEING DEAD
-  - BEING FAT
-  - BEING FEMALE
-  - BEING IN SPACE
-  - BEING MALE
-  - BEING MEXICAN
-  - BEING RUSSIAN
-  - BOLTED AIRLOCKS
-  - BREATHING
-  - BRIG TIME
-  - BRINGING LIGHT TO MY LAIR
-  - CLOSED DOORS
-  - ELECTRICITY
-  - EXISTING
-  - EXPLODING
-  - FALLING FOR HOURS
-  - FLUSHING TOILETS
-  - HAVING MORE PACKETS
-  - HAVING PETS
-  - HONKING
-  - IMPROPERLY WORDED SENTENCES
-  - JAYWALKING
-  - LACK OF BEATINGS
-  - LACK OF BEER
-  - NOT BEING IN SPACE
-  - NOT HAVING PETS
-  - NOT REPLACING EVERY SECOND WORD WITH HONK
-  - NOT SAYING HELLO WHEN YOU SPEAK
-  - NOT SHOUTING
-  - PARTYING
-  - PILOTING THE STATION INTO THE NEAREST SUN
-  - POOR SENTENCE STRUCTURE
-  - PRESENCE OF LIGHTS
-  - PUTTING OBJECTS INTO BOXES
-  - PUTTING OBJECTS INTO DISPOSAL UNITS
-  - RATTLING ME BONES
-  - READING
-  - SMOKING WEED EVERY DAY
-  - TAKING ORDERS
-  - TALKING LIKE A PIRATE
-  - TELLING THE TIME
-  - UNBOLTED AIRLOCKS
-  - UPDATING THE SERVERS
-  - USING THE BATHROOM
-  - WASTING WATER
-  - WRITING
+  - МАЛЕНЬКИЙ ОСТРОВ У БЕРЕГОВ ПОРТУГАЛИИ
+  - ОТСУТСТВИЕ КИБОРГСКИХ ОБНИМАШЕК
+  - УВИДЕВ КЛОУНОВ
+  - УВИДЕВ ЧЛЕНОВ ЭКИПАЖА
+  - АКТИВИРОВАВ ЛОВУШКУ
+  - ОТВЕТЫ НА ЗАПРОСЫ, НЕ ВЫРАЖЕННЫЕ ПЕНТАМЕТРОМ
+  - ПОДЖОГ
+  - ПРОСИТЬ ЧТО-НИБУДЬ
+  - БЫТЬ КАНАДЦЕМ
+  - БЫТЬ МЁРТВЫМ
+  - БЫТЬ ТОЛСТЫМ
+  - БЫТЬ ЖЕНЩИНОЙ
+  - БЫТЬ В КОСМОСЕ
+  - БЫТЬ МУЖЧИНОЙ
+  - БЫТЬ МЕКСИКАНЕЦ
+  - БЫТЬ ИНОСТРАНЦЕМ
+  - БОЛТИРОВАТЬ ШЛЮЗЫ
+  - ДЫШАТЬ
+  - СИДЕТЬ СРОК В БРИГЕ
+  - НЕСТИ СВЕТ В СВОЁ ЛОГОВО
+  - ЗАКРЫВАТЬ ДВЕРИ
+  - ЭЛЕКТРИЧЕСТВО
+  - СУЩЕСТВОВАТЬ
+  - ВЗРЫВАТЬСЯ
+  - ПОСТОЯННО ПАДАТЬ
+  - СМЫВАТЬ В ТУАЛЕТЕ
+  - ИМЕТЬ БОЛЬШЕ ПАКЕТОВ
+  - ИМЕТЬ ЖИВОТНЫХ
+  - ХОНКАТЬ
+  - НЕПРАВИЛЬНО СФОРМУЛИРОВАННЫЕ ПРЕДЛОЖЕНИЯ
+  - ХОЖДЕНИЕ ПО КОРРИДОРАМ
+  - ОТСУТСТВИЕ ПОБОЕВ
+  - ОТСУТСТВИЕ ПИВА
+  - НЕ БЫТЬ В КОСМОСЕ
+  - НЕ ИМЕТЬ ДОМАШНИХ ЖИВОТНЫХ
+  - НЕ ЗАМЕНЯТЬ КАЖДОЕ ВТОРОЕ СЛОВО НА ХОНК
+  - НЕ ЗДОРОВАТЬСЯ ПРИ РАЗГОВОРЕ
+  - НЕ КРИЧАТЬ
+  - ВЕСЕЛИТЬСЯ
+  - ПИЛОТИРОВАТЬ СТАНЦИЮ В БЛИЖАЙШЕЕ СОЛНЦЕ
+  - НЕПРАВИЛЬНОЕ ПОСТРОЕНИЕ ПРЕДЛОЖЕНИЙ
+  - НАЛИЧИЕ СВЕТА
+  - РАЗМЕЩЕНИЕ ПРЕДМЕТОВ В ЯЩИКАХ
+  - РАЗМЕЩЕНИЕ ПРЕДМЕТОВ В УТИЛИЗАЦИОННЫЕ БЛОКИ
+  - ГРЕМЕТЬ КОСТЯМИ
+  - ЧИТАТЬ
+  - КУРИТЬ ТРАВУ КАЖДЫЙ ДЕНЬ
+  - ВЫПОЛНЕНИЕ ПРИКАЗОВ
+  - ГОВОРИТЬ КАК ПИРАТ
+  - РАССКАЗЫВАТЬ ВРЕМЯ
+  - РАЗБОЛТИРОВАНИЕ ШЛЮЗОВ
+  - ОБНОВЛЕНИЕ СЕРВЕРОВ
+  - ПОЛЬЗОВАНИЕ ТУАЛЕТОМ
+  - РАСХОДОВАНИЕ ВОДЫ
+  - НАПИСАНИЕ
 
 # Threats are generally bad things, silly or otherwise. Plural.
 - type: dataset
   id: IonStormThreats
   values:
-  - AHHHPERATIVES
-  - ALIENS
-  - ANARCHISTS AND BANDITS
-  - ANOMALIES
-  - ARTIFICIAL PRESERVATIVES
-  - ASSHOLES
-  - BANDITS
-  - BEARS
-  - BEES
-  - BIRDS OF PREY
-  - BOMBS
-  - BOOGEYMEN
-  - CAPITALISTS
-  - CARP
-  - CENTCOM OFFICERS
-  - CLOWNS
-  - COMMUNISTS
-  - CORGIS
-  - CORTICAL BORERS
-  - COWBOYS
-  - CRABS
-  - CULTISTS
-  - DARK GOD
-  - DINOSAURS
-  - DRUGS
-  - EELS
-  - GANGSTERS
-  - GODS
-  - GRIFFONS
-  - HORRORTERRORS
-  - INSECTS
-  - LIGHTS
-  - MAINTS SLASHERS
-  - MEGAFAUNA
-  - MEMES
-  - MICE
-  - MIMES
-  - MONKEYS
-  - NERDS
-  - NINJAS
-  - OWLS
-  - PACKETS
-  - PETES
-  - PINE TREES
-  - PIRATES
-  - PREDATORS
-  - REVENANTS
-  - ROGUE CYBORGS
-  - SERIAL KILLERS
-  - SINGULARITIES
-  - SKELETONS
-  - SLIMES
-  - SMALL BIRDS
-  - SNOWMEN
-  - SPACE JESUS
-  - SPACE NINJAS
-  - SPACE PIRATESS
-  - SPACE SPIDERS
-  - SPIDERS
-  - SYNDICATE AGENTS
-  - TERRORISTS
-  - THIEVES
-  - THINGS UNDER THE BED
-  - TIDERS
-  - TUNNEL SNAKES
-  - UNKNOWN CREATURES
-  - VAMPIRES
-  - VELOCIRAPTORS
-  - VIRUSES
-  - WEREWOLVES
-  - WIZARDS
-  - XENOS
-  - ZOMBIES
-  - ZOMBIE MICE
+  - АААПЕРАТИВНИКИ
+  - ИНОПЛАНЕТЯНЕ
+  - АНАРХИСТЫ И БАНДИТЫ
+  - АНОМАЛИИ
+  - ИСКУССТВЕННЫЕ КОНСЕРВАНТЫ
+  - ЗАСРАНЦЫ
+  - БАНДИТЫ
+  - МЕДВЕДИ
+  - ПЧЁЛЫ
+  - ХИЩНЫЕ ПТИЦЫ
+  - БОМБЫ
+  - БУГИМЕНЫ
+  - КАПИТАЛИСТЫ
+  - КАРП
+  - СОТРУДНИКИ ЦЕНТРАЛЬНОГО КОМАНДОВАНИЯ
+  - КЛОУНЫ
+  - КОММУНИСТЫ
+  - КОРГИ
+  - МОЗГОВЫЕ ЧЕРВИ
+  - КОВБОИ
+  - КРАБЫ
+  - КУЛЬТИСТЫ
+  - ТЕМНЫЙ БОГ
+  - ДИНОЗАВРЫ
+  - НАРКОТИКИ
+  - УГРИ
+  - ГАНГСТЕРЫ
+  - БОГИ
+  - ГРИФФОНЫ
+  - СТРАХОУЖАСЫ
+  - НАСЕКОМЫЕ
+  - СВЕТИЛЬНИКИ
+  - ТЕХТУННЕЛЬНЫЕ МАНЬЯКИ
+  - МЕГАФАУНА
+  - МЕМЫ
+  - МЫШИ
+  - МИМЫ
+  - ОБЕЗЬЯНЫ
+  - ЗАДРОТЫ
+  - НИНДЗЯ
+  - СОВЫ
+  - ПАКЕТЫ
+  - ПИТЫ
+  - СОСНЫ
+  - ПИРАТЫ
+  - ХИЩНИКИ
+  - РЕВЕНАНТЫ
+  - БЕГЛЫЕ КИБОРГИ
+  - СЕРИЙНЫЕ УБИЙЦЫ
+  - СИНГУЛЯРНОСТИ
+  - СКЕЛЕТЫ
+  - СЛАЙМЫ
+  - МАЛЕНЬКИЕ ПТИЦЫ
+  - СНЕГОВИКИ
+  - КОСМИЧЕСКИЙ ИИСУС
+  - КОСМИЧЕСКИЕ НИНДЗЯ
+  - КОСМИЧЕСКИЕ ПИРАТКИ
+  - КОСМИЧЕСКИЕ ПАУКИ
+  - ПАУКИ
+  - АГЕНТЫ СИНДИКАТА
+  - ТЕРРОРИСТЫ
+  - ВОРЫ
+  - ВЕЩИ ПОД КРОВАТЬЮ
+  - ГРЕЙТАЙДЕРЫ
+  - ТУННЕЛЬНЫЕ ЗМЕИ
+  - НЕИЗВЕСТНЫЕ СОЗДАНИЯ
+  - ВАМПИРЫ
+  - ВЕЛОЦИРАПТОРЫ
+  - ВИРУСЫ
+  - ОБОРОТНИ
+  - ВОЛШЕБНИКИ
+  - КСЕНО
+  - ЗОМБИ
+  - МЫШИ-ЗОМБИ
 
 - type: dataset
   id: IonStormVerbs
   values:
-  - ABDUCTING
-  - ADOPTING
-  - ARRESTING
-  - ATTACKING
-  - BANNING
-  - BUILDING
-  - CARRYING
-  - CHASING
-  - DECONSTRUCTING
-  - DISABLING
-  - DRINKING
-  - EATING
-  - GIBBING
-  - HARMING
-  - HELPING
-  - HONKING AT
-  - INTERROGATING
-  - INVADING
-  - MURDERING
-  - PUNCHING
-  - SPACING
-  - SPYING ON
-  - STALKING
-  - WATCHING
+  - ПОХИЩАТЬ
+  - УСЫНОВЛЯТЬ
+  - АРЕСТОВЫВАТЬ
+  - АТАКОВАТЬ
+  - БАНИТЬ
+  - СТРОИТЬ
+  - ПЕРЕДВИГАТЬ
+  - ПРЕСЛЕДОВАТЬ
+  - РАЗРУШАТЬ
+  - ОТКЛЮЧАТЬ
+  - ПИТЬ
+  - ЕСТЬ
+  - ГИБАТЬ
+  - ПРИЧИНЯТЬ ВРЕД
+  - ПОМОГАТЬ
+  - ХОНКАТЬ
+  - ДОПРАШИВАТЬ
+  - ВТОРГАТЬСЯ К
+  - УБИВАИТ
+  - БИТЬ
+  - ВЫКИДЫВАТЬ В КОСМОС
+  - СЛЕДИТЬ
+  - СТАЛКЕРИТЬ
+  - НАБЛЮДАТЬ
