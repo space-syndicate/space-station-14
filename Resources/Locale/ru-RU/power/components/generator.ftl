@@ -21,11 +21,7 @@ portable-generator-ui-eject = Извлечь
 portable-generator-ui-eta = (~{ $minutes } минут)
 portable-generator-ui-unanchored = Не закреплено
 portable-generator-ui-current-output = Текущая мощность: { $voltage }
-power-switchable-generator-examine =
-    Выработанная энергия направлена на { $output ->
-        [HV] [color=orange]ВВ[/color]
-       *[MV] [color=yellow]СВ[/color]
-    }.
+power-switchable-generator-examine = Выработанная энергия направлена на { $voltage }.
 power-switchable-generator-switched = Выход переключен на { $voltage }!
 power-switchable-voltage =
     { $voltage ->
