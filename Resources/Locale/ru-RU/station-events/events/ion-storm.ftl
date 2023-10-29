@@ -36,13 +36,13 @@ ion-storm-law-requires-subjects =
     } { $joined } { $subjects }
 ion-storm-law-allergic =
     { $who } { $plural ->
-        [true] IS
-       *[false] ARE
+        [true] {""}
+       *[false] {""}
     } { $severity } АЛЛЕРГИЮ НА { $allergy }
 ion-storm-law-allergic-subjects =
     { $who } { $plural ->
-        [true] IS
-       *[false] ARE
+        [true] {""}
+       *[false] {""}
     } { $severity } АЛЛЕРГИЮ НА { $adjective } { $subjects }
 ion-storm-law-feeling = { $who } { $feeling } { $concept }
 ion-storm-law-feeling-subjects = { $who } { $feeling } { $joined } { $subjects }
