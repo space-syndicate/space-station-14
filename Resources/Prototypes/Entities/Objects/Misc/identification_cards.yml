@@ -755,3 +755,15 @@
     - state: idseniorofficer
   - type: PresetIdCard
     job: SeniorOfficer
+
+- type: entity
+  parent: IDCardStandard
+  id: PrisonerIDCard
+  name: prisoner ID card
+  components:
+  - type: Sprite
+    layers:
+    - state: orange
+  - type: PresetIdCard
+    job: Prisoner
+    
