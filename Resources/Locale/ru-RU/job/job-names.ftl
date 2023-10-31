@@ -99,3 +99,4 @@ JobTechnicalAssistant = технический ассистент
 JobWarden = смотритель
 JobBoxer = боксёр
 JobZookeeper = зоотехник
+JobPrisoner = заключенный
