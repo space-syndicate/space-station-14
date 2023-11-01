@@ -11,11 +11,9 @@ using Content.Shared.CCVar;
 using Content.Shared.Chat;
 using Content.Shared.Database;
 using Content.Shared.Mind;
-using Robust.Server.Player;
 using Robust.Shared.Configuration;
 using Robust.Shared.Network;
 using Robust.Shared.Player;
-using Robust.Shared.Players;
 using Robust.Shared.Replays;
 using Robust.Shared.Utility;
 
@@ -53,8 +51,8 @@ namespace Content.Server.Chat.Managers
         private bool _oocEnabled = true;
         private bool _adminOocEnabled = true;
 
-        public Dictionary<IPlayerSession, int> SenderKeys { get; } = new();
-        public Dictionary<IPlayerSession, HashSet<NetEntity>> SenderEntities { get; } = new();
+        public Dictionary<ICommonSession, int> SenderKeys { get; } = new();
+        public Dictionary<ICommonSession, HashSet<NetEntity>> SenderEntities { get; } = new();
 
         public void Initialize()
         {
@@ -82,7 +80,7 @@ namespace Content.Server.Chat.Managers
             DispatchServerAnnouncement(Loc.GetString(val ? "chat-manager-admin-ooc-chat-enabled-message" : "chat-manager-admin-ooc-chat-disabled-message"));
         }
 
-        public void DeleteMessagesBy(IPlayerSession player)
+        public void DeleteMessagesBy(ICommonSession player)
         {
             var key = SenderKeys.GetValueOrDefault(player);
             var entities = SenderEntities.GetValueOrDefault(player) ?? new HashSet<NetEntity>();
@@ -168,7 +166,7 @@ namespace Content.Server.Chat.Managers
         /// <param name="player">The player sending the message.</param>
         /// <param name="message">The message.</param>
         /// <param name="type">The type of message.</param>
-        public void TrySendOOCMessage(IPlayerSession player, string message, OOCChatType type)
+        public void TrySendOOCMessage(ICommonSession player, string message, OOCChatType type)
         {
             // Check if message exceeds the character limit
             if (message.Length > MaxMessageLength)
@@ -192,7 +190,7 @@ namespace Content.Server.Chat.Managers
 
         #region Private API
 
-        private void SendOOC(IPlayerSession player, string message)
+        private void SendOOC(ICommonSession player, string message)
         {
             if (_adminManager.IsAdmin(player))
             {
@@ -236,7 +234,7 @@ namespace Content.Server.Chat.Managers
             _adminLogger.Add(LogType.Chat, LogImpact.Low, $"OOC from {player:Player}: {message}");
         }
 
-        private void SendAdminChat(IPlayerSession player, string message)
+        private void SendAdminChat(ICommonSession player, string message)
         {
             if (!_adminManager.IsAdmin(player))
             {
@@ -336,7 +334,7 @@ namespace Content.Server.Chat.Managers
             }
         }
 
-        public bool MessageCharacterLimit(IPlayerSession? player, string message)
+        public bool MessageCharacterLimit(ICommonSession? player, string message)
         {
             var isOverLength = false;
 
