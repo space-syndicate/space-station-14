@@ -5,6 +5,7 @@ using Content.Client.Info;
 using Content.Client.Lobby.UI;
 using Content.Client.Resources;
 using Content.Client.Stylesheets;
+using Content.Corvax.Interfaces.Client;
 using Content.Shared.Humanoid;
 using Content.Shared.Humanoid.Prototypes;
 using Content.Shared.Preferences;
@@ -80,6 +81,11 @@ namespace Content.Client.Preferences.UI
             UpdateUI();
 
             RulesButton.OnPressed += _ => new RulesAndInfoWindow().Open();
+            if (IoCManager.Instance!.TryResolveType<ISponsorWindowCreator>(out var creator))
+            {
+                SponsorButton.Visible = true;
+                SponsorButton.OnPressed += _ => creator.OpenWindow();
+            }
             preferencesManager.OnServerDataLoaded += UpdateUI;
         }
 
