@@ -539,6 +539,7 @@
 - type: accent
   id: chatsanitize
   wordReplacements:
+   # Corvax-ChatSanitize-Start
 #    chatsan-word-1: chatsan-replacement-1
 #    chatsan-word-2: chatsan-replacement-2
 #    chatsan-word-3: chatsan-replacement-3
@@ -581,7 +582,6 @@
 #    chatsan-word-40: chatsan-replacement-etcetera
 #    chatsan-word-41: chatsan-replacement-41
 #    chatsan-word-42: chatsan-replacement-42
-    # Corvax-ChatSanitize-Start
     corvax-chatsan-word-1: corvax-chatsan-replacement-1
     corvax-chatsan-word-2: corvax-chatsan-replacement-2
     corvax-chatsan-word-3: corvax-chatsan-replacement-3
