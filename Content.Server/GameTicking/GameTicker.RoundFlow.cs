@@ -21,7 +21,6 @@ using Robust.Shared.Random;
 using Robust.Shared.Utility;
 using System.Linq;
 using Content.Shared.Database;
-using Content.Shared.Light.Component;
 using Robust.Server.GameObjects;
 using Robust.Shared.Asynchronous;
 
