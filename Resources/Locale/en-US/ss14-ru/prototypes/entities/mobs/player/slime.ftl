@@ -1,3 +1,2 @@
-ent-MobSlimePerson = { ent-['BaseMobSlimePerson', 'BaseMob'] }
-
-  .desc = { ent-['BaseMobSlimePerson', 'BaseMob'].desc }
+ent-MobSlimePerson = { ent-BaseMobSlimePerson }
+    .desc = { ent-BaseMobSlimePerson.desc }

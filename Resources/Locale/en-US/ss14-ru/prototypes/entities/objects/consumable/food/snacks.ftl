@@ -42,6 +42,7 @@ ent-FoodSnackMREBrownie = brownie
     .desc = A precisely mixed brownie, made to withstand blunt trauma and harsh conditions. Tastes like shit.
 ent-FoodSnackMREBrownieOpen = brownie
     .desc = A precisely mixed brownie, made to withstand blunt trauma and harsh conditions. Tastes like shit.
+    .suffix = MRE
 ent-FoodPacketTrash = { ent-BaseItem }
     .desc = This is rubbish.
 ent-FoodPacketBoritosTrash = boritos bag

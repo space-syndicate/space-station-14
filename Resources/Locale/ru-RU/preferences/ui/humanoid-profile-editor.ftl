@@ -1,4 +1,4 @@
-humanoid-profile-editor-randomize-everything-button = Сгенерировать случайного
+humanoid-profile-editor-randomize-everything-button = Случайный персонаж
 humanoid-profile-editor-name-label = Имя:
 humanoid-profile-editor-name-random-button = Сгенерировать
 humanoid-profile-editor-appearance-tab = Внешность
@@ -33,6 +33,8 @@ humanoid-profile-editor-preference-duffelbag = Вещмешок
 humanoid-profile-editor-jobs-amount-in-department-tooltip = { $departmentName }
 humanoid-profile-editor-department-jobs-label = { $departmentName }
 humanoid-profile-editor-antags-tab = Антагонисты
+humanoid-profile-editor-antag-preference-yes-button = Да
+humanoid-profile-editor-antag-preference-no-button = Нет
 humanoid-profile-editor-traits-tab = Черты персонажа
 humanoid-profile-editor-job-priority-high-button = Высокий
 humanoid-profile-editor-job-priority-medium-button = Средний
