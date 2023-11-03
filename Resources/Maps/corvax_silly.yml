@@ -21826,13 +21826,6 @@ entities:
     - pos: -12.5,9.5
       parent: 2
       type: Transform
-- proto: SpawnPointLibrarian
-  entities:
-  - uid: 4955
-    components:
-    - pos: -24.5,7.5
-      parent: 2
-      type: Transform
 - proto: SpawnPointMedicalDoctor
   entities:
   - uid: 3177
@@ -21949,32 +21942,6 @@ entities:
   - uid: 3194
     components:
     - pos: -9.5,11.5
-      parent: 2
-      type: Transform
-- proto: SpawnPointSeniorEngineer
-  entities:
-  - uid: 4952
-    components:
-    - pos: 21.5,1.5
-      parent: 2
-      type: Transform
-  - uid: 4953
-    components:
-    - pos: 22.5,-9.5
-      parent: 2
-      type: Transform
-- proto: SpawnPointSeniorOfficer
-  entities:
-  - uid: 4954
-    components:
-    - pos: -4.5,14.5
-      parent: 2
-      type: Transform
-- proto: SpawnPointSeniorPhysician
-  entities:
-  - uid: 4951
-    components:
-    - pos: 12.5,17.5
       parent: 2
       type: Transform
 - proto: SpawnPointStationEngineer
