@@ -14,6 +14,10 @@
                         Text="{Loc 'character-setup-gui-character-setup-rules-button'}"
                         StyleClasses="ButtonBig"
                         HorizontalAlignment="Right" />
+                <Button Name="SponsorButton"
+                        Text="{Loc 'character-setup-gui-character-setup-sponsor-button'}"
+                        Visible="False"
+                        StyleClasses="ButtonBig" />
                 <Button Name="SaveButton"
                         Access="Public"
                         Text="{Loc 'character-setup-gui-character-setup-save-button'}"
