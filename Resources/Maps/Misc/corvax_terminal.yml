@@ -64,6 +64,8 @@ entities:
       type: Physics
     - fixtures: {}
       type: Fixtures
+    - id: Empty
+      type: BecomesStation
     - type: OccluderTree
     - type: SpreaderGrid
     - type: Shuttle
