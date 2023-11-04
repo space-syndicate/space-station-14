@@ -46,3 +46,5 @@ ent-ClothingOuterCoatLabSeniorResearcher = senior researcher lab coat
     .desc = A suit that protects against minor chemical spills. Has a purple collar and wrist trims.
 ent-ClothingOuterCoatLabSeniorPhysician = senior physician lab coat
     .desc = A suit that protects against minor chemical spills. Has light blue sleeves and an orange waist trim.
+ent-ClothingOuterCoatSpaceAsshole = the coat of space asshole
+    .desc = And there he was...
