@@ -6,9 +6,9 @@ pick-up-verb-get-data-text = Подобрать
 
 pick-up-verb-get-data-text-inventory = Взять в руку
 item-component-on-examine-size = Размер: { $size }
-item-component-size-Tiny = tiny
-item-component-size-Small = small
-item-component-size-Normal = normal
-item-component-size-Large = large
-item-component-size-Huge = huge
-item-component-size-Ginormous = ginormous
+item-component-size-Tiny = крошечный
+item-component-size-Small = маленький
+item-component-size-Normal = средний
+item-component-size-Large = большой
+item-component-size-Huge = огромный
+item-component-size-Ginormous = гигантский

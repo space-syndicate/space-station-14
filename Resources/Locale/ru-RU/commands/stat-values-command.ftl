@@ -12,6 +12,6 @@ stat-lathe-id = ID
 stat-lathe-cost = Стоимость
 stat-lathe-sell = Цена продажи
 # Item Sizes
-stat-item-values = Item sizes
+stat-item-values = Размеры предметов
 stat-item-id = ID
-stat-item-price = Size
+stat-item-price = Размер
