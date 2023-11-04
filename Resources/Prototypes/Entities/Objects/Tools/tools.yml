@@ -140,7 +140,7 @@
     state: icon
   - type: Item
     sprite: Objects/Tools/crowbar.rsi
-    size: 10
+    size: Small
   - type: ItemCooldown
   - type: MeleeWeapon
     wideAnimationRotation: -135
@@ -205,7 +205,7 @@
     - state: green-unlit
       shader: unshaded
   - type: Item
-    size: 5
+    size: Small
   - type: Clothing
     sprite: Objects/Tools/multitool.rsi
     quickEquip: false
@@ -254,7 +254,7 @@
           map: ["enum.NetworkConfiguratorLayers.ModeLight"]
           shader: unshaded
     - type: Item
-      size: 5
+      size: Small
     - type: Clothing
       sprite: Objects/Tools/network_configurator.rsi
       quickEquip: false
@@ -304,7 +304,7 @@
     state: drill_screw
   - type: Item
     sprite: Objects/Tools/drill.rsi
-    size: 10
+    size: Small
   - type: Tool
     qualities:
       - Screwing
@@ -360,7 +360,7 @@
     sprite: Objects/Tools/rcd.rsi
     state: icon
   - type: Item
-    size: 20
+    size: Normal
   - type: Clothing
     sprite: Objects/Tools/rcd.rsi
     quickEquip: false
@@ -436,7 +436,7 @@
     state: omnitool-screwing
   - type: Item
     sprite: Objects/Tools/omnitool.rsi
-    size: 20
+    size: Normal
   - type: Tag
     tags:
     - Multitool
@@ -511,7 +511,7 @@
       types:
         Blunt: 14
   - type: Item
-    size: 90
+    size: Normal
     sprite: Objects/Tools/shovel.rsi
   - type: PhysicalComposition
     materialComposition:
@@ -531,7 +531,7 @@
     state: icon
   - type: Item
     sprite: Objects/Tools/rolling_pin.rsi
-    size: 10
+    size: Small
   - type: Clothing
     sprite: Objects/Tools/rolling_pin.rsi
     quickEquip: false

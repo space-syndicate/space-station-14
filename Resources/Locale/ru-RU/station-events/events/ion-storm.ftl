@@ -36,13 +36,13 @@ ion-storm-law-requires-subjects =
     } { $joined } { $subjects }
 ion-storm-law-allergic =
     { $who } { $plural ->
-        [true] {""}
-       *[false] {""}
+        [true] { "" }
+       *[false] { "" }
     } { $severity } АЛЛЕРГИЮ НА { $allergy }
 ion-storm-law-allergic-subjects =
     { $who } { $plural ->
-        [true] {""}
-       *[false] {""}
+        [true] { "" }
+       *[false] { "" }
     } { $severity } АЛЛЕРГИЮ НА { $adjective } { $subjects }
 ion-storm-law-feeling = { $who } { $feeling } { $concept }
 ion-storm-law-feeling-subjects = { $who } { $feeling } { $joined } { $subjects }
@@ -79,3 +79,4 @@ ion-storm-law-protect = ВЫ НЕ ДОЛЖНЫ ПРИЧИНЯТЬ ВРЕД { $wh
 ion-storm-law-concept-verb = { $concept } ЭТО { $verb } { $subjects }
 
 # leaving out renaming since its annoying for players to keep track of
+

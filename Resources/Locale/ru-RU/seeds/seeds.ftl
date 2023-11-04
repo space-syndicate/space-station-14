@@ -96,3 +96,7 @@ seeds-berries-name = ягоды
 seeds-berries-display-name = ягодный куст
 seeds-bungo-name = бунго
 seeds-bungo-display-name = куст бунго
+seeds-pea-name = pea
+seeds-pea-display-name = pea vines
+seeds-pumpkin-name = pumpkin
+seeds-pumpkin-display-name = pumpkins
