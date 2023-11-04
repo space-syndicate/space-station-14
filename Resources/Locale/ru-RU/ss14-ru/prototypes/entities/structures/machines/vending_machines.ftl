@@ -148,5 +148,5 @@ ent-VendingMachineTankDispenserEngineering = раздатчик газовых �
     .suffix = ИНЖ [O2, Плазма]
 ent-VendingMachineChemicals = ХимкоМат
     .desc = Вероятно, не кофемашина.
-ent-VendingMachineChemicalsSyndicate = SyndieJuice
-    .desc = Not made with freshly squeezed syndies I hope.
+ent-VendingMachineChemicalsSyndicate = СиндиСоки
+    .desc = Надеюсь, не из свежевыжатых синдикатовцев?
