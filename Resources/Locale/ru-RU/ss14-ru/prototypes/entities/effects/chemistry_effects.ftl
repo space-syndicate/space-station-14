@@ -1,7 +1,11 @@
+ent-BaseFoam = { "" }
+    .desc = { "" }
 ent-Smoke = дым
     .desc = { "" }
 ent-Foam = пена
     .desc = { "" }
+ent-MetalFoam = metal foam
+    .desc = { ent-Foam.desc }
 ent-IronMetalFoam = железная пена
     .desc = { ent-Foam.desc }
 ent-AluminiumMetalFoam = алюминиевая пена
