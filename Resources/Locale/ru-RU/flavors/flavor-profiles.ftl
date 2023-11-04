@@ -222,4 +222,4 @@ flavor-complex-carpet = как горсть шерсти
 flavor-complex-bee = беспчеловечно
 flavor-complex-sax = как джаз
 flavor-complex-bottledlightning = как молния в бутылке
-flavor-complex-punishment = like punishment
+flavor-complex-punishment = как наказание
