@@ -46,5 +46,5 @@ ent-JugOxygen = кувшин (кислород)
     .desc = { ent-Jug.desc }
 ent-JugPlantBGone = кувшин (Plant-B-Gone)
     .desc = { ent-Jug.desc }
-ent-JugWeldingFuel = jug (welding fuel)
+ent-JugWeldingFuel = кувшин (сварочное топливо)
     .desc = { ent-Jug.desc }
