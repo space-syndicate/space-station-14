@@ -6,7 +6,7 @@
   objective: roles-antag-rev-head-objective
   requirements:
   - !type:OverallPlaytimeRequirement
-    time: 108000 # 30 # Corvax-RoleTime
+    time: 108000 # 30h # Corvax-RoleTime
 
 - type: antag
   id: Rev
