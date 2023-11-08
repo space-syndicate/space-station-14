@@ -106,8 +106,7 @@ ent-SpawnMobOreCrab = ore crab spawner
     .desc = { ent-MarkerBase.desc }
 ent-SpawnMobLuminousPerson = luminous person spawner
     .desc = { ent-MarkerBase.desc }
-ent-SpawnMobLuminousОbject = luminous object spawner
-
-  .desc = { ent-MarkerBase.desc }
+ent-SpawnMobLuminousObject = luminous object spawner
+    .desc = { ent-MarkerBase.desc }
 ent-SpawnMobLuminousEntity = luminous entity spawner
     .desc = { ent-MarkerBase.desc }
