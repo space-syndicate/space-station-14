@@ -7,7 +7,7 @@
   - type: Sprite
     sprite: Corvax/Back/Duffels/military.rsi
   - type: Storage
-    capacity: 200
+    maxTotalWeight: 56
 
 - type: entity
   parent: ClothingBackpackDuffel
@@ -17,5 +17,3 @@
   components:
   - type: Sprite
     sprite: Corvax/Back/Duffels/ce.rsi
-  - type: Storage
-    capacity: 120
