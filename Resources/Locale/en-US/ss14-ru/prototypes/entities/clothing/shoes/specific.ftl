@@ -27,3 +27,5 @@ ent-ClothingShoesCluwne = cluwne shoes
     .suffix = Unremoveable
 ent-ClothingShoesClownLarge = large clown shoes
     .desc = When you need to stand out in a room full of clowns!
+ent-ClothingShoesSkates = roller skates
+    .desc = Get your skates on!

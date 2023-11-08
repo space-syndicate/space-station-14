@@ -10,3 +10,7 @@ ent-ClothingShoesTourist = туристическая обувь
     .desc = Эти дешевые сандалии не выглядят очень удобными.
 ent-ClothingShoesDameDane = туфли якудзы
     .desc = В конце концов...
+ent-ClothingShoesBootsSpeed = speed boots
+    .desc = High-tech boots woven with quantum fibers, able to convert electricity into pure speed!
+ent-ActionToggleSpeedBoots = Toggle Speed Boots
+    .desc = Toggles the speed boots on and off.

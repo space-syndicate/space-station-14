@@ -29,3 +29,5 @@ ent-ClothingOuterArmorChangeling = хитиновый панцирь
     .desc = Раздувает тело генокрада во всепоглощающий массив хитиновый брони. Обеспечивает высокую защиту от физических повреждений, более низкую от других типов. Его вес замедляет движение генокрада, а его поддержание замедляет выработку химических веществ.
 ent-ClothingOuterArmorBone = костяной доспех
     .desc = Сидит на вас как вторая кожа.
+ent-ClothingOuterArmorPodWars = ironclad II armor
+    .desc = A repurposed suit of ironclad II armor, a relic of the pod wars.
