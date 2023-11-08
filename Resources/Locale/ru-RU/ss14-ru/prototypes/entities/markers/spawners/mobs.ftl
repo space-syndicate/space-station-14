@@ -104,3 +104,10 @@ ent-SpawnMobPenguin = спавнер пингвин
     .desc = { ent-MarkerBase.desc }
 ent-SpawnMobOreCrab = спавнер рудный краб
     .desc = { ent-MarkerBase.desc }
+ent-SpawnMobLuminousPerson = luminous person spawner
+    .desc = { ent-MarkerBase.desc }
+ent-SpawnMobLuminousОbject = luminous object spawner
+
+  .desc = { ent-MarkerBase.desc }
+ent-SpawnMobLuminousEntity = luminous entity spawner
+    .desc = { ent-MarkerBase.desc }
