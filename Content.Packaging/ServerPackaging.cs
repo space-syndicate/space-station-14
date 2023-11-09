@@ -38,6 +38,10 @@ public static class ServerPackaging
 
     private static readonly List<string> ServerContentAssemblies = new()
     {
+        // Corvax-Secrets-Start
+        "Content.Corvax.Interfaces.Shared",
+        "Content.Corvax.Interfaces.Server",
+        // Corvax-Secrets-End
         "Content.Server.Database",
         "Content.Server",
         "Content.Shared",
@@ -73,6 +77,8 @@ public static class ServerPackaging
         "zh-Hans",
         "zh-Hant"
     };
+
+    private static readonly bool UseSecrets = Directory.Exists(Path.Combine("Secrets")); // Corvax-Secrets
 
     public static async Task PackageServer(bool skipBuild, bool hybridAcz, IPackageLogger logger, List<string>? platforms = null)
     {
@@ -122,6 +128,28 @@ public static class ServerPackaging
                     "/m"
                 }
             });
+            // Corvax-Secrets-Start
+            if (UseSecrets)
+            {
+                logger.Info($"Secrets found. Building secret project for {platform}...");
+                await ProcessHelpers.RunCheck(new ProcessStartInfo
+                {
+                    FileName = "dotnet",
+                    ArgumentList =
+                    {
+                        "build",
+                        Path.Combine("Secrets","Content.Corvax.Server", "Content.Corvax.Server.csproj"),
+                        "-c", "Release",
+                        "--nologo",
+                        "/v:m",
+                        $"/p:TargetOs={platform.TargetOs}",
+                        "/t:Rebuild",
+                        "/p:FullRelease=true",
+                        "/m"
+                    }
+                });
+            }
+            // Corvax-Secrets-End
 
             await PublishClientServer(platform.Rid, platform.TargetOs);
         }
@@ -179,6 +207,10 @@ public static class ServerPackaging
 
         var inputPass = graph.Input;
         var contentAssemblies = new List<string>(ServerContentAssemblies);
+        // Corvax-Secrets-Start
+        if (UseSecrets)
+            contentAssemblies.AddRange(new[] { "Content.Corvax.Shared", "Content.Corvax.Server" });
+        // Corvax-Secrets-End
 
         // Additional assemblies that need to be copied such as EFCore.
         var sourcePath = Path.Combine(contentDir, "bin", "Content.Server");
