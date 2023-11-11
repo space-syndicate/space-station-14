@@ -186,7 +186,7 @@
     - type: Damageable
       damageContainer: Inorganic
     - type: Bloodstream
-      bloodReagent: MotorOil
+      bloodReagent: Oil
       bloodlossDamage:
         types:
           Bloodloss: 1
