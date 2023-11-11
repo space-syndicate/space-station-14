@@ -44,9 +44,42 @@ public sealed class MicrowaveMealRecipeJsonGenerator
                 .Select(x => new GrindRecipeEntry(x))
                 .ToDictionary(x => x.Id, x => x);
 
+
+        // construction-related items start
+        var constructionGraphs =
+            constructable
+                .Where(x => (Regex.Match(x.ID.ToLower().Trim(), @".*.*[Bb]acon*|.*[Ss]teak*|[Pp]izza*").Success)) // we only need recipes that has "bacon", "steak" and "pizza" in it, since they are the only "constructable" recipes
+                .ToDictionary(x => x.ID, x => x);
+
+        var constructableEntities = // list of entities which names match regex and has Construction component
+            entities
+                .Where(x => (Regex.Match(x.ID.ToLower().Trim(), @"(?<![Cc]rate)[Ff]ood*").Success))
+                .Where(x => x.Components.ContainsKey("Construction"))
+                .ToList();
+
+        var entityGraphs = new Dictionary<string, string>(); // BFH. Since we cannot get component from another .Where call (because of CS0103), let's keep everything in one temp dictionary.
+
+        foreach (var ent in constructableEntities)
+        {
+            if (ent.Components.TryGetComponent("Construction", out var constructionCompRaw))
+            {
+                var constructionComp = (ConstructionComponent)constructionCompRaw;
+                entityGraphs[ent.ID] = constructionComp.Graph;
+            }
+        }
+
+        var constructableHeatableEntities = constructableEntities // let's finally create our heatable recipes list
+            .Where(x => constructionGraphs.ContainsKey(entityGraphs[x.ID]))
+            .Select(x => new HeatableRecipeEntry(constructionGraphs[entityGraphs[x.ID]], x))
+            .Where(x => (x.Result != null))
+            .Where(x => x.Id != x.Result) // sometimes things dupe (for example if someone puts construction component on both inout and output things)
+            .ToDictionary(x => x.Id, x => x);
+        // construction-related items end
+
         output["microwaveRecipes"] = microwaveRecipes;
         output["sliceableRecipes"] = sliceableRecipes;
         output["grindableRecipes"] = grindableRecipes;
+        output["heatableRecipes"] = constructableHeatableEntities;
 
         var serializeOptions = new JsonSerializerOptions
         {
