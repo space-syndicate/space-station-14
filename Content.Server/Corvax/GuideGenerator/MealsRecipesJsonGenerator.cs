@@ -35,8 +35,18 @@ public sealed class MicrowaveMealRecipeJsonGenerator
                 .Where(x => x.Count > 0) // Just in case.
                 .ToDictionary(x => x.Id, x => x);
 
+
+        var grindableRecipes =
+            entities
+                .Where(x => x.Components.TryGetComponent("Extractable", out var _))
+                .Where(x => x.Components.TryGetComponent("SolutionContainerManager", out var _))
+                .Where(x => (Regex.Match(x.ID.ToLower().Trim(), @".*[Ff]ood*").Success)) // we dont need some "organ" or "pills" prototypes.
+                .Select(x => new GrindRecipeEntry(x))
+                .ToDictionary(x => x.Id, x => x);
+
         output["microwaveRecipes"] = microwaveRecipes;
         output["sliceableRecipes"] = sliceableRecipes;
+        output["grindableRecipes"] = grindableRecipes;
 
         var serializeOptions = new JsonSerializerOptions
         {
