@@ -26,7 +26,17 @@ public sealed class MicrowaveMealRecipeJsonGenerator
                 .Select(x => new MicrowaveRecipeEntry(x))
                 .ToDictionary(x => x.Id, x => x);
 
+
+        var sliceableRecipes =
+            entities
+                .Where(x => x.Components.TryGetComponent("SliceableFood", out var _))
+                .Select(x => new SliceRecipeEntry(x))
+                .Where(x => x.Result != "") // SOMEONE THOUGHT THAT IT WOULD BE A GREAT IDEA TO PUT COMPONENT ON AN ITEM WITHOUT SPECIFYING THE OUTPUT THING.
+                .Where(x => x.Count > 0) // Just in case.
+                .ToDictionary(x => x.Id, x => x);
+
         output["microwaveRecipes"] = microwaveRecipes;
+        output["sliceableRecipes"] = sliceableRecipes;
 
         var serializeOptions = new JsonSerializerOptions
         {
