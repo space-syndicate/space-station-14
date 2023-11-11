@@ -74,12 +74,21 @@ public sealed class MicrowaveMealRecipeJsonGenerator
             .Where(x => (x.Result != null))
             .Where(x => x.Id != x.Result) // sometimes things dupe (for example if someone puts construction component on both inout and output things)
             .ToDictionary(x => x.Id, x => x);
+
+
+        var constructableToolableEntities = constructableEntities // let's finally create our toolmade recipes list
+            .Where(x => constructionGraphs.ContainsKey(entityGraphs[x.ID]))
+            .Select(x => new ToolRecipeEntry(constructionGraphs[entityGraphs[x.ID]], x))
+            .Where(x => (x.Result != null))
+            .Where(x => x.Id != x.Result) // the same here, things sometimes dupe
+            .ToDictionary(x => x.Id, x => x);
         // construction-related items end
 
         output["microwaveRecipes"] = microwaveRecipes;
         output["sliceableRecipes"] = sliceableRecipes;
         output["grindableRecipes"] = grindableRecipes;
         output["heatableRecipes"] = constructableHeatableEntities;
+        output["toolmadeRecipes"] = constructableToolableEntities;
 
         var serializeOptions = new JsonSerializerOptions
         {
