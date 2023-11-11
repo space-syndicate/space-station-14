@@ -1,4 +1,3 @@
-using System.Linq;
 using System.Text.Json.Serialization;
 using Robust.Shared.Prototypes;
 
