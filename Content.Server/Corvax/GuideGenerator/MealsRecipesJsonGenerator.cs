@@ -84,11 +84,38 @@ public sealed class MicrowaveMealRecipeJsonGenerator
             .ToDictionary(x => x.Id, x => x);
         // construction-related items end
 
+        // reaction-related items start
+        var reactionPrototypes =
+            prototype
+                .EnumeratePrototypes<ReactionPrototype>()
+                .Select(x => new ReactionEntry(x))
+                .ToList();
+
+
+        var mixableRecipes = new Dictionary<string, Dictionary<string, string>>(); // this is a list because we have https://station14.ru/wiki/Модуль:Chemistry_Lookup that already has everything we need and does everything for us.
+
+        foreach (var react in reactionPrototypes)
+        {
+            foreach (var effect in react.Effects)
+                if (effect.GetType().Equals(typeof(CreateEntityReactionEffect)))
+                {
+                    var trueEffect = (CreateEntityReactionEffect)effect;
+                    if (Regex.Match(trueEffect.Entity.ToLower().Trim(), @".*[Ff]ood*").Success) if (!mixableRecipes.ContainsKey(react.Id))
+                        {
+                            mixableRecipes[react.Id] = new Dictionary<string, string>();
+                            mixableRecipes[react.Id]["id"] = react.Id;
+                            mixableRecipes[react.Id]["type"] = "mixableRecipes";
+                        }
+                }
+        }
+        // reaction-related items end
+
         output["microwaveRecipes"] = microwaveRecipes;
         output["sliceableRecipes"] = sliceableRecipes;
         output["grindableRecipes"] = grindableRecipes;
         output["heatableRecipes"] = constructableHeatableEntities;
         output["toolmadeRecipes"] = constructableToolableEntities;
+        output["mixableRecipes"] = mixableRecipes;
 
         var serializeOptions = new JsonSerializerOptions
         {
