@@ -79,3 +79,13 @@ jobs:
         api_url: ${{ secrets.WIKI_ROOT_URL }}/api.php
         username: ${{ secrets.WIKI_BOT_USER }}
         password: ${{ secrets.WIKI_BOT_PASS }}
+
+    - name: Upload mealrecipes_prototypes.json to wiki
+      uses: jtmullen/mediawiki-edit-action@v0.1.1
+      with:
+        wiki_text_file: ./bin/Content.Server/data/mealrecipes_prototypes.json
+        edit_summary: Update mealrecipes_prototypes.json via GitHub Actions
+        page_name: "${{ secrets.WIKI_PAGE_ROOT }}/mealrecipes_prototypes.json"
+        api_url: ${{ secrets.WIKI_ROOT_URL }}/api.php
+        username: ${{ secrets.WIKI_BOT_USER }}
+        password: ${{ secrets.WIKI_BOT_PASS }}
