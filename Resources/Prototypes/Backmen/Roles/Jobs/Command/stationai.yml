@@ -1,0 +1,50 @@
+- type: job
+  id: SAI
+  name: job-name-sai
+  description: job-description-sai
+  playTimeTracker: JobSAI
+  requirements:
+    - !type:DepartmentTimeRequirement
+      department: Medical
+      time: 14400
+    - !type:DepartmentTimeRequirement
+      department: Science
+      time: 14400
+    - !type:DepartmentTimeRequirement
+      department: Security
+      time: 14400
+    - !type:DepartmentTimeRequirement
+      department: Civilian
+      time: 14400
+    - !type:DepartmentTimeRequirement
+      department: Engineering
+      time: 14400
+    - !type:OverallPlaytimeRequirement
+      time: 86400
+  weight: 30
+  icon: JobIconStationAI
+  supervisors: "all crew"
+  accessGroups:
+    - AllAccess
+  canBeAntag: false
+  jobEntity: AICore
+  startingGear: RobotGear # for char preview only
+  alwaysUseSpawner: true
+  #canHaveTraits: false
+  joinNotifyCrew: true
+  whitelistRequired: true
+
+# - type: startingGear
+#   id: AIGear
+#   equipment:
+#     id: AIPDA
+#   inhand:
+#     hand 1: AIPDA
+#     hand 2: DoorRemoteAI
+# - type: startingGear
+#   id: AIGearUnremoveable
+#   equipment:
+#     id: AIPDAur
+#   inhand:
+#     hand 1: AIPDAur
+#     hand 2: DoorRemoteAIur

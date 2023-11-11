@@ -1,0 +1,13 @@
+﻿#- type: statusIcon
+#  parent: JobIcon
+#  id: JobIconPrisoner
+#  icon:
+#    sprite: Backmen/Interface/Misc/job_icons.rsi
+#    state: Prisoner
+
+- type: statusIcon
+  parent: JobIcon
+  id: JobIconStationAI
+  icon:
+    sprite: Backmen/Interface/Misc/job_icons.rsi
+    state: stationAI

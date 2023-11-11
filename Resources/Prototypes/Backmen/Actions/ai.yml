@@ -1,0 +1,81 @@
+﻿- type: entity
+  id: AIEyeAction
+  name: AI Eye
+  description: Puts you in to the AI Eye form, allowing you to float about the station's cameras.
+  noSpawn: true
+  components:
+  - type: InstantAction
+    icon: Interface/VerbIcons/sentient.svg.192dpi.png
+    event: !type:AIEyePowerActionEvent
+    checkCanInteract: false
+    useDelay: 5
+    priority: 17
+
+- type: entity
+  id: AIHealthOverlay
+  name: Health Overlay
+  description: Toggles the AI's health overlay.
+  noSpawn: true
+  components:
+  - type: InstantAction
+    icon:
+      sprite: Interface/Alerts/human_alive.rsi
+      state: health0
+    event: !type:AIHealthOverlayEvent
+    checkCanInteract: false
+    useDelay: 2.5
+    priority: 18
+
+- type: entity
+  id: ActionAIShowCommunications
+  name: Communications Interface
+  description: View a communications interface.
+  noSpawn: true
+  components:
+  - type: InstantAction
+    icon: Corvax/Interface/AdminActions/communications.png # Corvax-Resprite
+    iconOn: Corvax/Interface/AdminActions/communications.png # Corvax-Resprite
+    keywords: [ "AI", "console", "interface" ]
+    priority: -1
+    event: !type:ToggleIntrinsicUIEvent { key: enum.CommunicationsConsoleUiKey.Key }
+    checkCanInteract: false
+
+
+- type: entity
+  id: ActionOpenCloseRemote
+  name: Open targeted door
+  noSpawn: true
+  components:
+  - type: EntityTargetAction
+    icon:
+      entity: DoorRemoteAIOpenClose
+    event: !type:InnateBeforeInteractActionEvent
+    checkCanInteract: false
+    priority: -1
+    range: 25
+
+- type: entity
+  id: ActionToggleBolts
+  name: Toggle bolts on door
+  noSpawn: true
+  components:
+  - type: EntityTargetAction
+    icon:
+      entity: DoorRemoteAIToggleBolts
+    event: !type:InnateBeforeInteractActionEvent
+    checkCanInteract: false
+    priority: -1
+    range: 25
+
+- type: entity
+  id: ActionToggleEmergencyAccess
+  name: Toggle emergency on door
+  noSpawn: true
+  components:
+  - type: EntityTargetAction
+    icon:
+      entity: DoorRemoteAIToggleEmergencyAccess
+    event: !type:InnateBeforeInteractActionEvent
+    checkCanInteract: false
+    priority: -1
+    range: 25

@@ -9,5 +9,8 @@ namespace Content.Shared.Eye
         None   = 0,
         Normal = 1 << 0,
         Ghost  = 1 << 1,
+        PsionicInvisibility = 1 << 2, // backmen: psionic,
+        DarkSwapInvisibility = 1 << 3, // backmen: shadowkin
+        AIEye = 1 << 4, // backmen: AI
     }
 }

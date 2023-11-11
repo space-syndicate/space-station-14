@@ -1,0 +1,351 @@
+- type: entity
+  abstract: true
+  save: false
+  id: AIBase
+  components:
+    - type: StationAI
+      lawsId: LawsStationAIDefault
+    - type: Visibility
+    - type: UserInterface
+      interfaces:
+        - key: enum.CommunicationsConsoleUiKey.Key
+          type: CommunicationsConsoleBoundUserInterface
+        - key: enum.AICameraListUiKey.Key
+          type: AICameraListBoundUserInterface
+    - type: IntrinsicUI
+      uis:
+      - key: enum.CommunicationsConsoleUiKey.Key
+        toggleAction: ActionAGhostShowCommunications
+    - type: CommunicationsConsole
+      title: Station AI
+      color: "#93e2ff"
+      delay: 5
+      global: true
+      showAuthor: false
+    # Innate door remotes (bolting, emergency access, etc)
+    - type: InnateItem
+      afterInteract: false
+      startingPriority: 25
+      slots:
+        opencloseremote: ActionOpenCloseRemote
+        boltremote: ActionToggleBolts
+        emergencyaccessremote: ActionToggleEmergencyAccess
+    # Hide the inhand sprites
+    - type: Hands
+      showInHands: false
+    # Allow examining things
+    - type: MindContainer
+      showExamineInfo: true
+    - type: Input
+      context: "human"
+    - type: MobMover
+    - type: InputMover
+    - type: Clickable
+    - type: InteractionOutline
+    - type: Examiner
+    - type: Actions
+    - type: Tag
+      tags:
+        - CannotSuicide
+    - type: DoAfter
+    - type: Speech
+      speechSounds: Pai
+    # Innate access
+    - type: Access
+      groups:
+        - AllAccess
+    # Wow, this is a lot of reoccurrances
+    - type: IntrinsicRadioReceiver
+      channels:
+        - Binary
+        - Common
+        - Command
+        - CentCom
+        - Engineering
+        - Medical
+        - Science
+        - Security
+        - Service
+    - type: IntrinsicRadioTransmitter
+      channels:
+        - Binary
+        - Common
+        - Command
+        - CentCom
+        - Engineering
+        - Medical
+        - Science
+        - Security
+        - Service
+    - type: ActiveRadio
+      channels:
+        - Binary
+        - Common
+        - Command
+        - CentCom
+        - Engineering
+        - Medical
+        - Science
+        - Security
+        - Service
+    # Can't see through walls
+    - type: Eye
+      drawFov: true
+    - type: TypingIndicator
+      proto: robot
+    - type: SiliconLawBound
+
+- type: entity
+  save: false
+  parent: AIBase
+  id: AICore
+  name: AI Core
+  description: Host for an AI. Likely more A than I.
+  components:
+    - type: AIEyePower
+    # Can't move
+    - type: MovementSpeedModifier
+      baseWalkSpeed: 0
+      baseSprintSpeed: 0
+    - type: Physics
+      bodyType: Dynamic
+    - type: Fixtures
+      fixtures:
+        fix1:
+          shape: !type:PhysShapeCircle
+            radius: 0.35
+          density: 1000
+          mask:
+            - MachineMask
+          layer:
+            - MachineLayer
+    - type: Anchorable
+      delay: 5
+    - type: Transform
+      anchored: true
+    - type: MobState
+    - type: MobThresholds
+      thresholds:
+        0: Alive
+        1000: Dead
+    # - type: DamageStateVisuals
+    #   states:
+    #     Alive:
+    #       Base: ai-blue
+    #     Dead:
+    #       Base: ai-blue_dead
+    - type: Appearance
+    - type: PointLight
+      radius: 3
+      energy: 1.25
+      color: "#9dc5c9"
+    - type: PowerConsumer
+      voltage: Medium
+      drawRate: 1000
+    - type: NodeContainer
+      examinable: true
+      nodes:
+        input: !type:CableDeviceNode
+          nodeGroupID: MVPower
+    - type: PowerNetworkBattery
+      maxChargeRate: 1000
+      canCharge: true
+      canDischarge: false
+    - type: BatteryCharger
+    - type: Battery
+      charge: 12000
+      maxCharge: 120000
+      pricePerJoule: 0
+    # - type: GenericVisualizer
+    #   visuals:
+    #     enum.PowerDeviceVisuals.VisualState:
+    #       enum.PowerDeviceVisualLayers.Powered:
+    #         Idle: { state: "ai-blue" }
+    #     enum.PowerDeviceVisuals.Powered:
+    #       enum.PowerDeviceVisualLayers.Powered:
+    #         True: { visible: true }
+    #         False: { visible: false }
+    - type: Sprite
+      sprite: Backmen/Mobs/Silicon/ai.rsi
+      drawdepth: Mobs
+      noRot: true
+      layers:
+        - map: ["enum.DamageStateVisualLayers.Base"]
+          state: 4
+        - map: ["enum.PowerDeviceVisualLayers.Powered"]
+          state: blue
+          shader: unshaded
+    - type: Damageable
+      damageContainer: Inorganic
+    - type: Bloodstream
+      bloodReagent: MotorOil
+      bloodlossDamage:
+        types:
+          Bloodloss: 1
+      bloodlossHealDamage:
+        types:
+          Bloodloss: -0.25
+    - type: RandomMetadata
+      nameSegments: [names_ai]
+    - type: Pullable
+    - type: Tag
+      tags:
+        - Structure
+    # Expensive
+    - type: StaticPrice
+      price: 50000
+    - type: CargoSellBlacklist
+    - type: NpcFactionMember
+      factions:
+        - NanoTrasen
+    - type: RandomSprite
+      available:
+        - enum.PowerDeviceVisualLayers.Powered:
+            thinking: ""
+        - enum.PowerDeviceVisualLayers.Powered:
+            alien: ""
+        - enum.PowerDeviceVisualLayers.Powered:
+            angel: ""
+        - enum.PowerDeviceVisualLayers.Powered:
+            banned: ""
+        - enum.PowerDeviceVisualLayers.Powered:
+            bliss: ""
+        - enum.PowerDeviceVisualLayers.Powered:
+            blue: ""
+        - enum.PowerDeviceVisualLayers.Powered:
+            clown: ""
+        - enum.PowerDeviceVisualLayers.Powered:
+            database: ""
+        - enum.PowerDeviceVisualLayers.Powered:
+            dorf: ""
+        - enum.PowerDeviceVisualLayers.Powered:
+            firewall: ""
+        - enum.PowerDeviceVisualLayers.Powered:
+            fuzzy: ""
+        - enum.PowerDeviceVisualLayers.Powered:
+            gentoo: ""
+        - enum.PowerDeviceVisualLayers.Powered:
+            glitchman: ""
+        - enum.PowerDeviceVisualLayers.Powered:
+            goon: ""
+        - enum.PowerDeviceVisualLayers.Powered:
+            hades: ""
+        - enum.PowerDeviceVisualLayers.Powered:
+            heartline: ""
+        - enum.PowerDeviceVisualLayers.Powered:
+            helios: ""
+        - enum.PowerDeviceVisualLayers.Powered:
+            house: ""
+        - enum.PowerDeviceVisualLayers.Powered:
+            inverted: ""
+        - enum.PowerDeviceVisualLayers.Powered:
+            matrix: ""
+        - enum.PowerDeviceVisualLayers.Powered:
+            monochrome: ""
+        - enum.PowerDeviceVisualLayers.Powered:
+            murica: ""
+        - enum.PowerDeviceVisualLayers.Powered:
+            nanotrasen: ""
+        - enum.PowerDeviceVisualLayers.Powered:
+            not_malf: ""
+        - enum.PowerDeviceVisualLayers.Powered:
+            president: ""
+        - enum.PowerDeviceVisualLayers.Powered:
+            rainbow: ""
+        - enum.PowerDeviceVisualLayers.Powered:
+            red: ""
+        - enum.PowerDeviceVisualLayers.Powered:
+            red_october: ""
+        - enum.PowerDeviceVisualLayers.Powered:
+            static: ""
+        - enum.PowerDeviceVisualLayers.Powered:
+            syndicat_meow: ""
+        - enum.PowerDeviceVisualLayers.Powered:
+            text: ""
+        - enum.PowerDeviceVisualLayers.Powered:
+            too_deep: ""
+        - enum.PowerDeviceVisualLayers.Powered:
+            triumvirate: ""
+        - enum.PowerDeviceVisualLayers.Powered:
+            triumvirate-m: ""
+        - enum.PowerDeviceVisualLayers.Powered:
+            weird: ""
+        - enum.PowerDeviceVisualLayers.Powered:
+            random: ""
+        - enum.PowerDeviceVisualLayers.Powered:
+            gondola: ""
+        - enum.PowerDeviceVisualLayers.Powered:
+            plain: ""
+        - enum.PowerDeviceVisualLayers.Powered:
+            cat: ""
+        - enum.PowerDeviceVisualLayers.Powered:
+            blob: ""
+        - enum.PowerDeviceVisualLayers.Powered:
+            malicious: ""
+
+- type: entity
+  id: AIEye
+  parent: AIBase
+  name: Invalid AI name
+  noSpawn: true
+  save: false
+  components:
+    - type: AIEye
+    # Only ghosts can see the eye
+    - type: Visibility
+      layer: 4
+    # Can see through walls for now
+    - type: Eye
+      drawFov: false
+    - type: Input
+      context: "human"
+    - type: MobMover
+    - type: InputMover
+    - type: MovementSpeedModifier
+      baseWalkSpeed: 8
+      baseSprintSpeed: 12
+    - type: MovementIgnoreGravity
+    - type: Physics
+      bodyType: KinematicController
+      fixedRotation: true
+    - type: Fixtures
+      fixtures:
+        fix1:
+          shape: !type:PhysShapeCircle
+            radius: 0.35
+          density: 1000
+          mask:
+            - GhostImpassable
+    - type: Sprite
+      drawdepth: Mobs
+      noRot: true
+      layers:
+        - map: ["enum.DamageStateVisualLayers.Base"]
+          sprite: Backmen/Mobs/Silicon/ai.rsi
+          state: aieye
+          shader: unshaded
+    - type: UserInterface
+      interfaces:
+      - key: enum.StrippingUiKey.Key
+        type: StrippableBoundUserInterface
+      - key: enum.SiliconLawsUiKey.Key
+        type: SiliconLawBoundUserInterface
+    - type: IntrinsicUI
+      uis:
+        - key: enum.CommunicationsConsoleUiKey.Key
+          toggleAction: ActionAGhostShowCommunications
+        #- key: enum.CommunicationsConsoleUiKey.Key
+        #  toggleAction:
+        # Mostly works, just not as I wish, so I'm disabling it for now.
+        # Need to split this into two PRs,
+        # There is too many issues this PR has fixed we need live for me to keep delaying it with more things
+        # - key: enum.AICameraListUiKey.Key
+        #   toggleAction:
+        #     name: ai-warp-menu-title
+        #     description: ai-warp-menu-description
+        #     icon: Backmen/Mobs/Silicon/ai.rsi/icon-camera.png
+        #     iconOn: Backmen/Mobs/Silicon/ai.rsi/icon-camera.png
+        #     keywords: ["AI", "console", "interface"]
+        #     priority: -3
+        #     event: !type:ToggleIntrinsicUIEvent
+

@@ -1,0 +1,266 @@
+- type: entity
+  id: SpawnPointBKCCAdmiral
+  parent: SpawnPointBKCCAssistant
+  name: ЦК Адмирал
+  components:
+    - type: SpawnPoint
+      job_id: BKCCAdmiral
+    - type: Sprite
+      layers:
+        - state: green
+        - state: centcom_operator
+
+- type: entity
+  id: SpawnPointBKCCOfficial
+  parent: SpawnPointBKCCAssistant
+  name: ЦК Представитель
+  components:
+    - type: SpawnPoint
+      job_id: BKCCOfficial
+    - type: Sprite
+      layers:
+        - state: green
+        - state: centcom_official
+
+- type: entity
+  id: SpawnPointBKCCOperator
+  parent: SpawnPointBKCCAssistant
+  name: ЦК Оператор
+  components:
+    - type: SpawnPoint
+      job_id: BKCCOperator
+    - type: Sprite
+      layers:
+        - state: green
+        - state: centcom_operator
+
+- type: entity
+  id: SpawnPointBKCCSecGavna
+  parent: SpawnPointBKCCAssistant
+  name: ЦК Начальник Безопасности
+  components:
+    - type: SpawnPoint
+      job_id: BKCCSecGavna
+    - type: Sprite
+      layers:
+        - state: green
+        - state: centcom_head_of_securiry
+
+- type: entity
+  id: SpawnPointBKCCCargo
+  parent: SpawnPointJobBase
+  name: ЦК Грузчик
+  components:
+    - type: SpawnPoint
+      job_id: BKCCCargo
+    - type: Sprite
+      layers:
+        - state: green
+        - state: qm
+
+- type: entity
+  id: SpawnPointBKCCAssistant
+  parent: SpawnPointJobBase
+  name: ЦК Ассистент
+  components:
+    - type: SpawnPoint
+      job_id: BKCCAssistant
+    - type: Sprite
+      sprite: Backmen/Markers/jobs.rsi
+      layers:
+        - state: green
+        - state: centcom_intern
+
+- type: entity
+  id: SpawnPointBKCCSecOfficer
+  parent: SpawnPointJobBase
+  name: ЦК Приватный Офицер СБ
+  components:
+    - type: SpawnPoint
+      job_id: BKCCSecOfficer
+    - type: Sprite
+      layers:
+        - state: green
+        - state: security_officer
+
+- type: entity
+  id: SpawnPointDelivery
+  parent: SpawnPointJobBase
+  name: Deliveryman
+  components:
+    - type: SpawnPoint
+      job_id: Deliveryman
+    - type: Sprite
+      sprite: Backmen/Markers/jobs.rsi
+      layers:
+        - state: green
+        - state: Delivery
+
+#- type: entity
+#  id: SpawnPointGladiator
+#  parent: SpawnPointJobBase
+#  name: gladiator
+#  components:
+#  - type: SpawnPoint
+#    job_id: Gladiator
+#  - type: Sprite
+#    layers:
+#      - state: green
+#      - state: gladiator
+#
+#- type: entity
+#  id: SpawnPointMailCarrier
+#  parent: SpawnPointJobBase
+#  name: mailcarrier
+#  components:
+#  - type: SpawnPoint
+#    job_id: MailCarrier
+#  - type: Sprite
+#    layers:
+#      - state: green
+##      - state: mailcarrier
+#
+#- type: entity
+#  id: SpawnPointForensicMantis
+#  parent: SpawnPointJobBase
+#  name: forensic mantis
+#  components:
+#  - type: SpawnPoint
+#    job_id: ForensicMantis
+#  - type: Sprite
+#    layers:
+#      - state: green
+#      - state: mantis
+#
+#- type: entity
+#  id: SpawnPointCyborg
+#  parent: SpawnPointJobBase
+#  name: robot
+#  components:
+#  - type: SpawnPoint
+#    job_id: Robot
+#  - type: Sprite
+#    layers:
+#      - state: green
+#      - state: cyborg
+
+#- type: entity
+#  id: SpawnPointMedicalCyborg
+#  parent: SpawnPointJobBase
+#  name: medical robot
+#  components:
+#  - type: SpawnPoint
+#    job_id: MedicalRobot
+#  - type: Sprite
+#    layers:
+#      - state: green
+#      - state: medicalcyborg
+
+#- type: entity
+#  id: SpawnPointMystagogue
+#  parent: SpawnPointJobBase
+#  name: mystagogue
+#  components:
+#  - type: SpawnPoint
+#    job_id: Mystagogue
+#  - type: Sprite
+#    layers:
+#      - state: green
+#      - state: rd
+#
+#- type: entity
+#  id: SpawnPointEpistemologist
+#  parent: SpawnPointJobBase
+#  name: epistemologist
+#  components:
+#  - type: SpawnPoint
+#    job_id: Epistemologist
+#  - type: Sprite
+#    layers:
+#      - state: green
+#      - state: scientist
+#
+#- type: entity
+#  id: SpawnPointCataloguer
+#  parent: SpawnPointJobBase
+#  name: cataloguer
+#  components:
+#  - type: SpawnPoint
+#    job_id: Cataloguer
+#  - type: Sprite
+#    layers:
+#      - state: green
+#      - state: librarian
+#
+#- type: entity
+#  id: SpawnPointSalvageTechnician
+#  parent: SpawnPointJobBase
+#  name: salvagetechnician
+#  components:
+#  - type: SpawnPoint
+#    job_id: SalvageTechnician
+#  - type: Sprite
+#    layers:
+#      - state: green
+#      - state: miner
+
+- type: entity
+  id: SpawnPointPrisoner
+  parent: SpawnPointJobBase
+  name: prisoner
+  components:
+    - type: SpawnPoint
+      job_id: Prisoner
+    - type: Sprite
+      sprite: Backmen/Interface/Misc/job_icons.rsi
+      layers:
+        - state: green
+        - state: prisoner
+
+#- type: entity
+#  id: SpawnPointValet
+#  parent: SpawnPointJobBase
+#  name: valet
+#  components:
+#  - type: SpawnPoint
+#    job_id: Valet
+#  - type: Sprite
+#    layers:
+#      - state: green
+#      - state: valet
+
+#- type: entity
+#  id: SpawnPointPrisonGuard
+#  parent: SpawnPointJobBase
+#  name: prison guard
+#  components:
+#  - type: SpawnPoint
+#    job_id: PrisonGuard
+#  - type: Sprite
+#    layers:
+#      - state: green
+#      - state: prisonguard
+
+#- type: entity
+#  id: SpawnPointMartialArtist
+#  parent: SpawnPointJobBase
+#  name: martial artist
+#  components:
+#  - type: SpawnPoint
+#    job_id: MartialArtist
+#  - type: Sprite
+#    layers:
+#      - state: green
+#      - state: martialartist
+
+- type: entity
+  id: SpawnPointStationAI
+  parent: SpawnPointJobBase
+  name: station AI
+  components:
+  - type: SpawnPoint
+    job_id: SAI
+  - type: Sprite
+    layers:
+    - state: green
+    - state: ai
