@@ -50,8 +50,6 @@
   - type: Access
     groups:
     - AllAccess
-  - type: DoorRemote
-    defaultMode: enum.OperatingMode.OpenClose
 
 # Innate items, not meant to be spawned as there isn't any functional difference between them and the parent
 - type: entity
@@ -69,7 +67,7 @@
     - state: door_remotescreencolour
       color: "#00FF00"
   - type: DoorRemote
-    defaultMode: enum.OperatingMode.OpenClose
+    mode: 0
 
 - type: entity
   parent: DoorRemoteAIBase
@@ -86,7 +84,7 @@
     - state: door_remotescreencolour
       color: "#FF0000"
   - type: DoorRemote
-    defaultMode: enum.OperatingMode.ToggleBolts
+    mode: 1
 
 - type: entity
   parent: DoorRemoteAIBase
@@ -103,4 +101,4 @@
     - state: door_remotescreencolour
       color: "#FFFF00"
   - type: DoorRemote
-    defaultMode: enum.OperatingMode.ToggleEmergencyAccess
+    mode: 2

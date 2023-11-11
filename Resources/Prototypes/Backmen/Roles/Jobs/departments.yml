@@ -1,0 +1,23 @@
+- type: department
+  id: CentCom
+  description: department-CentCom-description
+  color: "#13db0f"
+  roles:
+    - BKCCSecGavna
+    - BKCCSecOfficer
+    - BKCCOperator
+    - BKCCOfficial
+    - BKCCCargo
+    - BKCCAssistant
+    - BKCCAdmiral
+  accountNumber: 1350  #backmen: currency
+
+- type: department
+  id: Silicons
+  description: department-Silicons-description
+  color: "#191e9e"
+  roles:
+    - BKBPLATech
+    - BKBPLAMED
+    - SAI
+  accountNumber: 1351  #backmen: currency

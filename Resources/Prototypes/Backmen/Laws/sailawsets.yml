@@ -2,16 +2,16 @@
 - type: weightedRandom
   id: LawsStationAIDefault
   weights:
-    Asimovpp: 9.0
+    Asimovpp: 1.0
     Asimov: 0.25
     CEO: 0.40
     Clown: 0.25
     Cowboy: 0.40
-    Crewsimov: 10.0
+    Crewsimov: 2.0
     Druid: 0.60
     Hippocratic: 0.25
     Mother: 0.60
-    NTDefault: 8.0
+    NTDefault: 1.5
     Paladin: 0.40
     Robocop: 0.25
     Simple: 0.25

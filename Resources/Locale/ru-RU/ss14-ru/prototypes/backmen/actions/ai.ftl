@@ -10,3 +10,5 @@ ent-ActionToggleBolts = Включить/выключить засовы на д
     .desc = { "" }
 ent-ActionToggleEmergencyAccess = Включить/выключить аварийный доступ к двери
     .desc = { "" }
+ai-station-console = ИИ станции
+job-name-sai = ИИ станции

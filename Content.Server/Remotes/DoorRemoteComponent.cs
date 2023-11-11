@@ -4,6 +4,7 @@ namespace Content.Server.Remotes
     [Access(typeof(DoorRemoteSystem))]
     public sealed partial class DoorRemoteComponent : Component
     {
+        [DataField("mode"), ViewVariables(VVAccess.ReadWrite)]
         public OperatingMode Mode = OperatingMode.OpenClose;
 
         public enum OperatingMode : byte

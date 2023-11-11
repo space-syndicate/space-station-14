@@ -71,7 +71,7 @@ public sealed class AIEyePowerSystem : EntitySystem
         if (!_entityManager.HasComponent<StationAIComponent>(uid))
             return;
 
-        _actions.AddAction(uid, ref component.EyePowerAction, component.Prototype);
+        _actions.AddAction(uid, ref component.EyePowerAction, component.PrototypeAction);
     }
 
     private void OnShutdown(EntityUid uid, AIEyePowerComponent component, ComponentShutdown args)

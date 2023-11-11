@@ -50,6 +50,7 @@
     icon:
       entity: DoorRemoteAIOpenClose
     event: !type:InnateBeforeInteractActionEvent
+      item: DoorRemoteAIOpenClose
     checkCanInteract: false
     priority: -1
     range: 25
@@ -63,6 +64,7 @@
     icon:
       entity: DoorRemoteAIToggleBolts
     event: !type:InnateBeforeInteractActionEvent
+      item: DoorRemoteAIToggleBolts
     checkCanInteract: false
     priority: -1
     range: 25
@@ -76,6 +78,7 @@
     icon:
       entity: DoorRemoteAIToggleEmergencyAccess
     event: !type:InnateBeforeInteractActionEvent
+      item: DoorRemoteAIToggleEmergencyAccess
     checkCanInteract: false
     priority: -1
     range: 25

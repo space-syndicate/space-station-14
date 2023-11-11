@@ -3,6 +3,7 @@ using Content.Shared.Backmen.StationAI.Events;
 using Content.Shared.Interaction;
 using Content.Shared.Mind.Components;
 using Content.Shared.Tag;
+using Robust.Shared.Prototypes;
 using Robust.Shared.Utility;
 
 namespace Content.Server.Backmen.StationAI;
@@ -51,14 +52,33 @@ public sealed partial class InnateItemSystem : EntitySystem
 
     private void StartAfterInteract(EntityUid uid, InnateItemComponent component, InnateAfterInteractActionEvent args)
     {
-        var ev = new AfterInteractEvent(args.Performer, args.Item, args.Target, Transform(args.Target).Coordinates, true);
-        RaiseLocalEvent(args.Item, ev, false);
+        EnsureItem(uid, component, args.Item);
+        if (!component.Items.ContainsKey(args.Item))
+            return;
+        var ev = new AfterInteractEvent(args.Performer, component.Items[args.Item], args.Target, Transform(args.Target).Coordinates, true);
+        RaiseLocalEvent(component.Items[args.Item], ev, false);
     }
 
     private void StartBeforeInteract(EntityUid uid, InnateItemComponent component, InnateBeforeInteractActionEvent args)
     {
-        var ev = new BeforeRangedInteractEvent(args.Performer, args.Item, args.Target, Transform(args.Target).Coordinates, true);
-        RaiseLocalEvent(args.Item, ev, false);
+        EnsureItem(uid, component, args.Item);
+        if (!component.Items.ContainsKey(args.Item))
+            return;
+        var ev = new BeforeRangedInteractEvent(args.Performer, component.Items[args.Item], args.Target, Transform(args.Target).Coordinates, true);
+        RaiseLocalEvent(component.Items[args.Item], ev, false);
+    }
+
+    private void EnsureItem(EntityUid uid, InnateItemComponent component, EntProtoId args)
+    {
+        if (!component.Items.ContainsKey(args) && args != "")
+        {
+            if (!TrySpawnInContainer(args, uid, "tools", out var item))
+            {
+                Logger.Error($"Невозможно заспавнить tools {args}");
+                return;
+            }
+            component.Items[args] = item.Value;
+        }
     }
 }
 

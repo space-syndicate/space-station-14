@@ -12,15 +12,23 @@
           type: CommunicationsConsoleBoundUserInterface
         - key: enum.AICameraListUiKey.Key
           type: AICameraListBoundUserInterface
+        - key: enum.SiliconLawsUiKey.Key
+          type: SiliconLawBoundUserInterface
+        - key: enum.StrippingUiKey.Key
+          type: StrippableBoundUserInterface
     - type: IntrinsicUI
       uis:
       - key: enum.CommunicationsConsoleUiKey.Key
         toggleAction: ActionAGhostShowCommunications
+    - type: ContainerContainer
+      containers:
+        tools: !type:Container
+          ents: [ ]
     - type: CommunicationsConsole
-      title: Station AI
+      title: ai-station-console
       color: "#93e2ff"
       delay: 5
-      global: true
+      global: false
       showAuthor: false
     # Innate door remotes (bolting, emergency access, etc)
     - type: InnateItem
@@ -324,12 +332,6 @@
           sprite: Backmen/Mobs/Silicon/ai.rsi
           state: aieye
           shader: unshaded
-    - type: UserInterface
-      interfaces:
-      - key: enum.StrippingUiKey.Key
-        type: StrippableBoundUserInterface
-      - key: enum.SiliconLawsUiKey.Key
-        type: SiliconLawBoundUserInterface
     - type: IntrinsicUI
       uis:
         - key: enum.CommunicationsConsoleUiKey.Key
