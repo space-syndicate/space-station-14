@@ -71,7 +71,7 @@ namespace Content.IntegrationTests.Tests
             "Gemini",
             "MeteorArena",
             "Atlas",
-            "Reach"    
+            "Reach"
         };
 
         /// <summary>
@@ -263,6 +263,9 @@ namespace Content.IntegrationTests.Tests
                     // This is done inside gamemap test because loading the map takes ages and we already have it.
                     var jobList = entManager.GetComponent<StationJobsComponent>(station).RoundStartJobList
                         .Where(x => x.Value != 0)
+                        .Where(x=>x.Key != "Prisoner") // backmen: Fugitive
+                        .Where(x=>x.Key != "SAI") // backmen: SAI
+                        .Where(x=>x.Key != "Freelancer") // backmen: shipwrecked
                         .Select(x => x.Key);
                     var spawnPoints = entManager.EntityQuery<SpawnPointComponent>()
                         .Where(spawnpoint => spawnpoint.SpawnType == SpawnPointType.Job)

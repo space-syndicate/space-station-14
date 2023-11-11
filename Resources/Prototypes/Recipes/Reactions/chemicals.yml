@@ -312,14 +312,14 @@
   id: Ephedrine
   impact: Medium
   reactants:
-    Oil:
+    MotorOil:
       amount: 1
     Hydrogen:
       amount: 1
     Sugar:
       amount: 1
     Diethylamine:
-     amount: 1
+      amount: 1
   products:
     Ephedrine: 4
 
