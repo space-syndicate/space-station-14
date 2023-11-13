@@ -1,2 +1,2 @@
-toggle-clothing-verb-text = Toggle { CAPITALIZE($entity) }
+toggle-clothing-verb-text = Переключить { CAPITALIZE($entity) }
 toggleable-clothing-remove-first = Сперва снимите { $entity }.
