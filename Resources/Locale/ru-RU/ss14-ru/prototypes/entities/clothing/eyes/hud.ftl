@@ -20,5 +20,5 @@ ent-ClothingEyesHudMultiversal = multiversal hud
     .desc = Filler
 ent-ClothingEyesHudOmni = omni hud
     .desc = Filler
-ent-ClothingEyesHudSyndicate = визор Синдиката
+ent-ClothingEyesHudSyndicate = синди-визор
     .desc = Профессиональный окуляр Синдиката с индикатором на стекле, предназначенный для более точного обнаружения гуманоидов с их последующим уничтожением.
