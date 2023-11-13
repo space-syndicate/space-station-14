@@ -451,3 +451,427 @@ accent-archaic-replaced-231 = wants
 accent-archaic-replacement-231 = wishes
 accent-archaic-replaced-232 = want
 accent-archaic-replacement-232 = wish for
+
+
+
+corvax-accent-archaic-replaced-1 = сразу
+corvax-accent-archaic-replacement-1 = абие
+corvax-accent-archaic-replaced-201 = чтобы
+corvax-accent-archaic-replaced-202 = хотя бы
+corvax-accent-archaic-replacement-2 = абы
+corvax-accent-archaic-replaced-301 = что
+corvax-accent-archaic-replaced-302 = если
+corvax-accent-archaic-replacement-3 = аже
+corvax-accent-archaic-replaced-4 = как
+corvax-accent-archaic-replacement-4 = аки
+corvax-accent-archaic-replaced-501 = пирожок
+corvax-accent-archaic-replaced-502 = пирожочек
+corvax-accent-archaic-replaced-503 = оладьи
+corvax-accent-archaic-replacement-5 = алябиш
+corvax-accent-archaic-replaced-6 = куда
+corvax-accent-archaic-replacement-6 = камо
+corvax-accent-archaic-replaced-701 = даже
+corvax-accent-archaic-replaced-702 = но
+corvax-accent-archaic-replacement-7 = ано
+corvax-accent-archaic-replaced-8 = пусть
+corvax-accent-archaic-replacement-8 = ато
+corvax-accent-archaic-replaced-9 = хотя
+corvax-accent-archaic-replacement-9 = аще
+corvax-accent-archaic-replaced-10 = баня
+corvax-accent-archaic-replacement-10 = баенка
+corvax-accent-archaic-replaced-11 = баню
+corvax-accent-archaic-replacement-11 = баенку
+corvax-accent-archaic-replaced-1201 = броня
+corvax-accent-archaic-replaced-1202 = бронежилет
+corvax-accent-archaic-replacement-12 = байдана
+corvax-accent-archaic-replaced-1301 = врач
+corvax-accent-archaic-replaced-1302 = медик
+corvax-accent-archaic-replacement-13 = балий
+corvax-accent-archaic-replaced-14 = врача
+corvax-accent-archaic-replacement-14 = балия
+corvax-accent-archaic-replaced-1501 = врачи
+corvax-accent-archaic-replaced-1502 = медики
+corvax-accent-archaic-replacement-15 = балии
+corvax-accent-archaic-replaced-1601 = наряд
+corvax-accent-archaic-replaced-1602 = красота
+corvax-accent-archaic-replacement-16 = баса
+corvax-accent-archaic-replaced-17 = красивый
+corvax-accent-archaic-replacement-17 = баской
+corvax-accent-archaic-replaced-18 = красивая
+corvax-accent-archaic-replacement-18 = баская
+corvax-accent-archaic-replaced-19 = кукуруза
+corvax-accent-archaic-replacement-19 = белояровая пшеница
+corvax-accent-archaic-replaced-20 = кукурузу
+corvax-accent-archaic-replacement-20 = белояровою пшеницу
+corvax-accent-archaic-replaced-21 = безысходность
+corvax-accent-archaic-replacement-21 = беспроторица
+corvax-accent-archaic-replaced-2201 = добрый
+corvax-accent-archaic-replaced-2202 = хороший
+corvax-accent-archaic-replacement-22 = благий
+corvax-accent-archaic-replaced-2301 = добрая
+corvax-accent-archaic-replaced-2302 = хорошая
+corvax-accent-archaic-replacement-23 = благая
+corvax-accent-archaic-replaced-2401 = обман
+corvax-accent-archaic-replaced-2402 = ложь
+corvax-accent-archaic-replacement-24 = блазнь
+corvax-accent-archaic-replaced-2501 = обманывать
+corvax-accent-archaic-replaced-2502 = лгать
+corvax-accent-archaic-replacement-25 = блядословить
+corvax-accent-archaic-replaced-2601 = обманывает
+corvax-accent-archaic-replaced-2602 = лжёт
+corvax-accent-archaic-replacement-26 = блядословит
+corvax-accent-archaic-replaced-2701 = обманывают
+corvax-accent-archaic-replaced-2702 = лгут
+corvax-accent-archaic-replacement-27 = блядословят
+corvax-accent-archaic-replaced-2801 = лгу
+corvax-accent-archaic-replaced-2802 = обманываю
+corvax-accent-archaic-replacement-28 = блядословю
+corvax-accent-archaic-replaced-29 = более всего
+corvax-accent-archaic-replacement-29 = больма
+corvax-accent-archaic-replaced-30 = быстро
+corvax-accent-archaic-replacement-30 = борзо
+corvax-accent-archaic-replaced-31 = оборона
+corvax-accent-archaic-replacement-31 = бороня
+corvax-accent-archaic-replaced-32 = оборонять
+corvax-accent-archaic-replacement-32 = боронить
+corvax-accent-archaic-replaced-33 = обороняйте
+corvax-accent-archaic-replacement-33 = бороните
+corvax-accent-archaic-replaced-3401 = война
+corvax-accent-archaic-replaced-3402 = войну
+corvax-accent-archaic-replaced-3403 = войной
+corvax-accent-archaic-replaced-3404 = войне
+corvax-accent-archaic-replacement-34 = брань
+corvax-accent-archaic-replaced-3501 = еда
+corvax-accent-archaic-replaced-3502 = съедобное
+corvax-accent-archaic-replaced-3503 = еду
+corvax-accent-archaic-replaced-3504 = пища
+corvax-accent-archaic-replaced-3505 = пищу
+corvax-accent-archaic-replacement-35 = ество
+corvax-accent-archaic-replaced-3601 = едой
+corvax-accent-archaic-replaced-3602 = пищей
+corvax-accent-archaic-replacement-36 = еством
+corvax-accent-archaic-replaced-37 = будь
+corvax-accent-archaic-replacement-37 = буди
+corvax-accent-archaic-replaced-38 = сталь
+corvax-accent-archaic-replacement-38 = булат
+corvax-accent-archaic-replaced-39 = стальной
+corvax-accent-archaic-replacement-39 = булатный
+corvax-accent-archaic-replaced-40 = стальная
+corvax-accent-archaic-replacement-40 = булатная
+corvax-accent-archaic-replaced-4101 = тяжело
+corvax-accent-archaic-replaced-4102 = тяжко
+corvax-accent-archaic-replacement-41 = важно
+corvax-accent-archaic-replaced-42 = змея
+corvax-accent-archaic-replacement-42 = василиск
+corvax-accent-archaic-replaced-43 = змей
+corvax-accent-archaic-replacement-43 = василисков
+corvax-accent-archaic-replaced-44 = змею
+corvax-accent-archaic-replacement-44 = василиска
+corvax-accent-archaic-replaced-45 = будто
+corvax-accent-archaic-replacement-45 = васнь
+corvax-accent-archaic-replaced-4601 = умею
+corvax-accent-archaic-replaced-4602 = знаю
+corvax-accent-archaic-replacement-46 = ведаю
+corvax-accent-archaic-replaced-4701 = уметь
+corvax-accent-archaic-replaced-4702 = знать
+corvax-accent-archaic-replacement-47 = ведать
+corvax-accent-archaic-replaced-4801 = умеешь
+corvax-accent-archaic-replaced-4802 = знаешь
+corvax-accent-archaic-replacement-48 = ведаешь
+corvax-accent-archaic-replaced-4901 = умеет
+corvax-accent-archaic-replaced-4902 = знает
+corvax-accent-archaic-replacement-49 = ведает
+corvax-accent-archaic-replaced-5001 = умеют
+corvax-accent-archaic-replaced-5002 = знают
+corvax-accent-archaic-replacement-50 = ведают
+corvax-accent-archaic-replaced-5101 = очень
+corvax-accent-archaic-replaced-5102 = весьма
+corvax-accent-archaic-replacement-51 = вельми
+corvax-accent-archaic-replaced-52 = повреждён
+corvax-accent-archaic-replacement-52 = веръжен
+corvax-accent-archaic-replaced-5301 = плод
+corvax-accent-archaic-replaced-5302 = плодов
+corvax-accent-archaic-replaced-5303 = плода
+corvax-accent-archaic-replacement-53 = верше
+corvax-accent-archaic-replaced-54 = плоды
+corvax-accent-archaic-replacement-54 = вершие
+corvax-accent-archaic-replaced-55 = образ
+corvax-accent-archaic-replacement-55 = вид
+corvax-accent-archaic-replaced-56 = образа
+corvax-accent-archaic-replacement-56 = виду
+corvax-accent-archaic-replaced-57 = когда
+corvax-accent-archaic-replacement-57 = внегда
+corvax-accent-archaic-replaced-58 = который
+corvax-accent-archaic-replacement-58 = внеже
+corvax-accent-archaic-replaced-59 = войти
+corvax-accent-archaic-replacement-59 = внити
+corvax-accent-archaic-replaced-60 = напрасно
+corvax-accent-archaic-replacement-60 = всуе
+corvax-accent-archaic-replaced-61 = напечатать
+corvax-accent-archaic-replacement-61 = выдруковать
+corvax-accent-archaic-replaced-62 = напечатай
+corvax-accent-archaic-replacement-62 = выдрукуй
+corvax-accent-archaic-replaced-63 = напечатал
+corvax-accent-archaic-replacement-63 = выдруковал
+corvax-accent-archaic-replaced-64 = более
+corvax-accent-archaic-replacement-64 = вяще
+corvax-accent-archaic-replaced-6501 = голоден
+corvax-accent-archaic-replaced-6502 = голодный
+corvax-accent-archaic-replacement-65 = гладен
+corvax-accent-archaic-replaced-6601 = голодна
+corvax-accent-archaic-replaced-6602 = голодная
+corvax-accent-archaic-replacement-66 = гладная
+corvax-accent-archaic-replaced-67 = урожай
+corvax-accent-archaic-replacement-67 = гобино
+corvax-accent-archaic-replaced-68 = ведро
+corvax-accent-archaic-replacement-68 = година
+corvax-accent-archaic-replaced-6901 = ягода
+corvax-accent-archaic-replaced-6902 = плод
+corvax-accent-archaic-replaced-6903 = ягоду
+corvax-accent-archaic-replacement-69 = грезнъ
+corvax-accent-archaic-replaced-7001 = ягоды
+corvax-accent-archaic-replaced-7002 = плоды
+corvax-accent-archaic-replacement-70 = грезни
+corvax-accent-archaic-replaced-71 = идти
+corvax-accent-archaic-replacement-71 = грясти
+corvax-accent-archaic-replaced-72 = иду 
+corvax-accent-archaic-replacement-72 = гряду
+corvax-accent-archaic-replaced-7301 = идёшь
+corvax-accent-archaic-replaced-7302 = идешь
+corvax-accent-archaic-replacement-73 = грядёшь
+corvax-accent-archaic-replaced-7401 = идёт
+corvax-accent-archaic-replaced-7402 = идет
+corvax-accent-archaic-replacement-74 = грядёт
+corvax-accent-archaic-replaced-75 = иди
+corvax-accent-archaic-replacement-75 = гряди
+corvax-accent-archaic-replaced-7601 = идём
+corvax-accent-archaic-replaced-7602 = идем
+corvax-accent-archaic-replacement-76 = грядём
+corvax-accent-archaic-replaced-77 = идут
+corvax-accent-archaic-replacement-77 = грядут
+corvax-accent-archaic-replaced-78 = музыкант
+corvax-accent-archaic-replacement-78 = гудец
+corvax-accent-archaic-replaced-79 = музыканта
+corvax-accent-archaic-replacement-79 = гудца
+corvax-accent-archaic-replaced-80 = музыканту
+corvax-accent-archaic-replacement-80 = гудцу
+corvax-accent-archaic-replaced-81 = музыкантом
+corvax-accent-archaic-replacement-81 = гудцу
+corvax-accent-archaic-replaced-82 = музыканты
+corvax-accent-archaic-replacement-82 = гудцы
+corvax-accent-archaic-replaced-83 = музыкантов
+corvax-accent-archaic-replacement-83 = гудцов
+corvax-accent-archaic-replaced-84 = музыкантам
+corvax-accent-archaic-replacement-84 = гудцам
+corvax-accent-archaic-replaced-85 = музыкантами
+corvax-accent-archaic-replacement-85 = гудцами
+corvax-accent-archaic-replaced-86 = дважды
+corvax-accent-archaic-replacement-86 = дващи
+corvax-accent-archaic-replaced-8701 = для
+corvax-accent-archaic-replaced-8702 = ради
+corvax-accent-archaic-replacement-87 = деля
+corvax-accent-archaic-replaced-8801 = ужели
+corvax-accent-archaic-replaced-8802 = разве
+corvax-accent-archaic-replacement-88 = деи
+corvax-accent-archaic-replaced-89 = делать
+corvax-accent-archaic-replacement-89 = деяти
+corvax-accent-archaic-replaced-90 = делаю
+corvax-accent-archaic-replacement-90 = дею
+corvax-accent-archaic-replaced-91 = делаем
+corvax-accent-archaic-replacement-91 = деем
+corvax-accent-archaic-replaced-92 = делаешь
+corvax-accent-archaic-replacement-92 = деешь
+corvax-accent-archaic-replaced-93 = делаете
+corvax-accent-archaic-replacement-93 = деети
+corvax-accent-archaic-replaced-94 = делает
+corvax-accent-archaic-replacement-94 = деет
+corvax-accent-archaic-replaced-95 = делают
+corvax-accent-archaic-replacement-95 = деют
+corvax-accent-archaic-replaced-96 = сделал
+corvax-accent-archaic-replacement-96 = сдеел
+corvax-accent-archaic-replaced-97 = сделали
+corvax-accent-archaic-replacement-97 = сдеели
+corvax-accent-archaic-replaced-98 = ладонь
+corvax-accent-archaic-replacement-98 = долонь
+corvax-accent-archaic-replaced-99 = ладони
+corvax-accent-archaic-replacement-99 = долони
+corvax-accent-archaic-replaced-100 = сегодня
+corvax-accent-archaic-replacement-100 = днесь
+corvax-accent-archaic-replaced-101 = с тех пор
+corvax-accent-archaic-replacement-101 = докамест
+corvax-accent-archaic-replaced-102 = вниз
+corvax-accent-archaic-replacement-102 = долу
+corvax-accent-archaic-replaced-103 = до тех пор
+corvax-accent-archaic-replacement-103 = дондеже
+corvax-accent-archaic-replaced-104 = дочь
+corvax-accent-archaic-replacement-104 = дщерь
+corvax-accent-archaic-replaced-10501 = крепкий
+corvax-accent-archaic-replaced-10502 = сильный
+corvax-accent-archaic-replacement-105 = дублий
+corvax-accent-archaic-replaced-10601 = крепкая
+corvax-accent-archaic-replaced-10602 = сильная
+corvax-accent-archaic-replacement-106 = дублая
+corvax-accent-archaic-replaced-107 = которого
+corvax-accent-archaic-replacement-107 = егоже
+corvax-accent-archaic-replaced-108 = в то время как
+corvax-accent-archaic-replacement-108 = егда
+corvax-accent-archaic-replaced-109 = иначе
+corvax-accent-archaic-replacement-109 = еда
+corvax-accent-archaic-replaced-110 = позор
+corvax-accent-archaic-replacement-110 = зазор
+corvax-accent-archaic-replaced-111 = беспокойство
+corvax-accent-archaic-replacement-111 = замятня
+corvax-accent-archaic-replaced-112 = поймать
+corvax-accent-archaic-replacement-112 = изымати
+corvax-accent-archaic-replaced-113 = поймал
+corvax-accent-archaic-replacement-113 = изъял
+corvax-accent-archaic-replaced-114 = поймали
+corvax-accent-archaic-replacement-114 = изъяли
+corvax-accent-archaic-replaced-115 = поймаю
+corvax-accent-archaic-replacement-115 = изыму
+corvax-accent-archaic-replaced-116 = грязь
+corvax-accent-archaic-replacement-116 = кал
+corvax-accent-archaic-replaced-117 = грязный
+corvax-accent-archaic-replacement-117 = калный
+corvax-accent-archaic-replaced-118 = грязная
+corvax-accent-archaic-replacement-118 = калная
+corvax-accent-archaic-replaced-119 = грязно
+corvax-accent-archaic-replacement-119 = кално
+corvax-accent-archaic-replaced-120 = шапка
+corvax-accent-archaic-replacement-120 = капа
+corvax-accent-archaic-replaced-121 = шапку
+corvax-accent-archaic-replacement-121 = капу
+corvax-accent-archaic-replaced-122 = жена
+corvax-accent-archaic-replacement-122 = катуна
+corvax-accent-archaic-replaced-123 = жену
+corvax-accent-archaic-replacement-123 = катуну
+corvax-accent-archaic-replaced-124 = какой
+corvax-accent-archaic-replacement-124 = кой
+corvax-accent-archaic-replaced-125 = какую
+corvax-accent-archaic-replacement-125 = кую
+corvax-accent-archaic-replaced-126 = медленно
+corvax-accent-archaic-replacement-126 = косно
+corvax-accent-archaic-replaced-127 = бунт
+corvax-accent-archaic-replacement-127 = крамола
+corvax-accent-archaic-replaced-128 = куст
+corvax-accent-archaic-replacement-128 = купина
+corvax-accent-archaic-replaced-129 = лучший
+corvax-accent-archaic-replacement-129 = лепший
+corvax-accent-archaic-replaced-130 = лучшая
+corvax-accent-archaic-replacement-130 = лепшая
+corvax-accent-archaic-replaced-131 = лучшие
+corvax-accent-archaic-replacement-131 = лепшие
+corvax-accent-archaic-replaced-132 = можно
+corvax-accent-archaic-replacement-132 = леть
+corvax-accent-archaic-replaced-133 = особенно же
+corvax-accent-archaic-replacement-133 = наипаче
+corvax-accent-archaic-replaced-133 = пожалуй
+corvax-accent-archaic-replacement-133 = негли
+corvax-accent-archaic-replaced-134 = горох
+corvax-accent-archaic-replacement-134 = ногут
+corvax-accent-archaic-replaced-135 = гороха
+corvax-accent-archaic-replacement-135 = ногута
+corvax-accent-archaic-replaced-136 = горохом
+corvax-accent-archaic-replacement-136 = ногутом
+corvax-accent-archaic-replaced-137 = однако
+corvax-accent-archaic-replacement-137 = обаче
+corvax-accent-archaic-replaced-138 = недавно
+corvax-accent-archaic-replacement-138 = оногды
+corvax-accent-archaic-replaced-13901 = тайно
+corvax-accent-archaic-replaced-13902 = скрыто
+corvax-accent-archaic-replaced-13903 = скрытно
+corvax-accent-archaic-replacement-139 = отай
+corvax-accent-archaic-replaced-140 = снова
+corvax-accent-archaic-replacement-140 = паки
+corvax-accent-archaic-replaced-141 = половина
+corvax-accent-archaic-replacement-141 = полма
+corvax-accent-archaic-replaced-142 = половину
+corvax-accent-archaic-replacement-142 = полму
+corvax-accent-archaic-replaced-143 = свидетель
+corvax-accent-archaic-replacement-143 = послух
+corvax-accent-archaic-replaced-144 = свидетели
+corvax-accent-archaic-replacement-144 = послухи
+corvax-accent-archaic-replaced-145 = свидетеля
+corvax-accent-archaic-replacement-145 = послуха
+corvax-accent-archaic-replaced-146 = свидетелей
+corvax-accent-archaic-replacement-146 = послухов
+corvax-accent-archaic-replaced-147 = свидетелю
+corvax-accent-archaic-replacement-147 = послуху
+corvax-accent-archaic-replaced-148 = свидетелям
+corvax-accent-archaic-replacement-148 = послухам
+corvax-accent-archaic-replaced-149 = свидетелем
+corvax-accent-archaic-replacement-149 = послухом
+corvax-accent-archaic-replaced-150 = всегда
+corvax-accent-archaic-replacement-150 = присно
+corvax-accent-archaic-replaced-151 = кредит
+corvax-accent-archaic-replacement-151 = резана
+corvax-accent-archaic-replaced-15201 = кредиты
+corvax-accent-archaic-replaced-15202 = деньги
+corvax-accent-archaic-replacement-152 = резаны
+corvax-accent-archaic-replaced-15301 = кредитов
+corvax-accent-archaic-replaced-15302 = денег
+corvax-accent-archaic-replacement-153 = резан
+corvax-accent-archaic-replaced-15401 = кредитами
+corvax-accent-archaic-replaced-15402 = деньгами
+corvax-accent-archaic-replacement-154 = резанами
+corvax-accent-archaic-replaced-155 = стручок
+corvax-accent-archaic-replacement-155 = рожец
+corvax-accent-archaic-replaced-156 = стручки
+corvax-accent-archaic-replacement-156 = рожьци
+corvax-accent-archaic-replaced-15701 = кроме
+corvax-accent-archaic-replaced-15702 = помимо
+corvax-accent-archaic-replacement-157 = свене
+corvax-accent-archaic-replaced-15801 = соленый
+corvax-accent-archaic-replaced-15802 = солёный
+corvax-accent-archaic-replacement-158 = сланый
+corvax-accent-archaic-replaced-15901 = соленая
+corvax-accent-archaic-replaced-15902 = солёная
+corvax-accent-archaic-replacement-159 = сланая
+corvax-accent-archaic-replaced-160 = солёно
+corvax-accent-archaic-replacement-160 = слано
+corvax-accent-archaic-replaced-
+corvax-accent-archaic-replacement-
+corvax-accent-archaic-replaced-
+corvax-accent-archaic-replacement-
+corvax-accent-archaic-replaced-
+corvax-accent-archaic-replacement-
+corvax-accent-archaic-replaced-
+corvax-accent-archaic-replacement-
+corvax-accent-archaic-replaced-
+corvax-accent-archaic-replacement-
+corvax-accent-archaic-replaced-
+corvax-accent-archaic-replacement-
+corvax-accent-archaic-replaced-
+corvax-accent-archaic-replacement-
+corvax-accent-archaic-replaced-
+corvax-accent-archaic-replacement-
+corvax-accent-archaic-replaced-
+corvax-accent-archaic-replacement-
+corvax-accent-archaic-replaced-
+corvax-accent-archaic-replacement-
+corvax-accent-archaic-replaced-
+corvax-accent-archaic-replacement-
+corvax-accent-archaic-replaced-
+corvax-accent-archaic-replacement-
+corvax-accent-archaic-replaced-
+corvax-accent-archaic-replacement-
+corvax-accent-archaic-replaced-
+corvax-accent-archaic-replacement-
+corvax-accent-archaic-replaced-
+corvax-accent-archaic-replacement-
+corvax-accent-archaic-replaced-
+corvax-accent-archaic-replacement-
+corvax-accent-archaic-replaced-
+corvax-accent-archaic-replacement-
+corvax-accent-archaic-replaced-
+corvax-accent-archaic-replacement-
+corvax-accent-archaic-replaced-
+corvax-accent-archaic-replacement-
+corvax-accent-archaic-replaced-
+corvax-accent-archaic-replacement-
+corvax-accent-archaic-replaced-
+corvax-accent-archaic-replacement-
+corvax-accent-archaic-replaced-
+corvax-accent-archaic-replacement-
+corvax-accent-archaic-replaced-
+corvax-accent-archaic-replacement-
