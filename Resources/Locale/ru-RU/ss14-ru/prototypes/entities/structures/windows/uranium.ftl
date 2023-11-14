@@ -1,5 +1,5 @@
 ent-UraniumWindow = урановое окно
     .desc = { ent-Window.desc }
-ent-UraniumWindowDiagonal = diagonal uranium window
-    .suffix = diagonal
+ent-UraniumWindowDiagonal = диагональное урановое окно
+    .suffix = Диагональ
     .desc = { ent-UraniumWindow.desc }
