@@ -5,7 +5,6 @@ using Content.Shared.GameWindow;
 using Content.Shared.Players;
 using Content.Shared.Preferences;
 using JetBrains.Annotations;
-using Robust.Server.GameObjects;
 using Robust.Server.Player;
 using Robust.Shared.Enums;
 using Robust.Shared.Player;
@@ -19,7 +18,6 @@ namespace Content.Server.GameTicking
     {
         [Dependency] private readonly IPlayerManager _playerManager = default!;
         [Dependency] private readonly IServerDbManager _dbManager = default!;
-        [Dependency] private readonly ActorSystem _actor = default!;
 
         private void InitializePlayer()
         {
@@ -106,7 +104,7 @@ namespace Content.Server.GameTicking
                     }
                     else
                     {
-                        if (_actor.Attach(mind.CurrentEntity, session))
+                        if (_playerManager.SetAttachedEntity(session, mind.CurrentEntity))
                         {
                             PlayerJoinGame(session);
                         }
