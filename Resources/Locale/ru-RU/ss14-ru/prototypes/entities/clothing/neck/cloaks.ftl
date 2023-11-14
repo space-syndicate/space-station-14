@@ -30,3 +30,5 @@ ent-ClothingNeckCloakPirateCap = плащ капитана пиратов
     .desc = Довольно эффектный черный пиратский плащ с изображением черепа.
 ent-ClothingNeckCloakMoth = плащ моли
     .desc = Плащ в виде крыльев моли - необычный и оригинальный элемент гардероба, способный привлечь внимание окружающих. Он изготовлен из тонкой ткани, имитирующей крылья моли, с мягкими и пушистыми краями. Плащ застегивается на шее с помощью липучки и имеет капюшон в виде головы моли.
+ent-ClothingNeckCloakVoid = void cloak
+    .desc = A cloak of darkness. For those who have gone to the dark side of the force.
