@@ -100,5 +100,5 @@ seeds-pea-name = горох
 seeds-pea-display-name = гороховая лоза
 seeds-pumpkin-name = тыква
 seeds-pumpkin-display-name = тыква
-seeds-cotton-name = cotton
-seeds-cotton-display-name = cotton plant
+seeds-cotton-name = хлопок
+seeds-cotton-display-name = куст хлопка
