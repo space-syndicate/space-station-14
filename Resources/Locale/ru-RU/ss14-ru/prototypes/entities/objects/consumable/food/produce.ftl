@@ -114,5 +114,5 @@ ent-FoodPeaPod = стручок гороха
     .desc = Любимое лакомство уток!
 ent-FoodPumpkin = тыква
     .desc = Большой, оранжевый... ягода. Серьёзно.
-ent-CottonBol = cotton bol
-    .desc = Moth people's favorite snack, and just as fluffy as them.
+ent-CottonBol = хлопковый шарик
+    .desc = Любимая закуска ниан, такая же пушистая, как и они.

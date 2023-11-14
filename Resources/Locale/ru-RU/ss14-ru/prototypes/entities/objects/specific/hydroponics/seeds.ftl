@@ -98,5 +98,5 @@ ent-PeaSeeds = пакет семян (горох)
     .desc = Когда-то это скромное растение играло важную роль в изучении генетики.
 ent-PumpkinSeeds = пакет семян (тыква)
     .desc = { ent-SeedBase.desc }
-ent-CottonSeeds = packet of cotton seeds
+ent-CottonSeeds = пакет семян (хлопок)
     .desc = { ent-SeedBase.desc }
