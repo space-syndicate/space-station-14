@@ -114,3 +114,5 @@ ent-FoodPeaPod = pea pod
     .desc = A duck's favorite treat!
 ent-FoodPumpkin = pumpkin
     .desc = A large, orange... berry. Seriously.
+ent-CottonBol = cotton bol
+    .desc = Moth people's favorite snack, and just as fluffy as them.
