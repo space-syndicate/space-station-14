@@ -98,3 +98,5 @@ ent-PeaSeeds = packet of pea pods
     .desc = These humble plants were once a vital part in the study of genetics.
 ent-PumpkinSeeds = packet of pumpkin seeds
     .desc = { ent-SeedBase.desc }
+ent-CottonSeeds = packet of cotton seeds
+    .desc = { ent-SeedBase.desc }

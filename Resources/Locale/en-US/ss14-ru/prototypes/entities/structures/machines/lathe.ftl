@@ -1,5 +1,6 @@
 ent-BaseLathe = lathe
-  .desc = { ent-BaseMachinePowered.desc }
+
+  .desc = { ent-['BaseMachinePowered', 'ConstructibleMachine'].desc }
 ent-Autolathe = autolathe
     .desc = It produces items using metal and glass.
 ent-Protolathe = protolathe
