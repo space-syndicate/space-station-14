@@ -78,7 +78,7 @@ public static class ServerPackaging
         "zh-Hant"
     };
 
-    private static readonly bool UseSecrets = Directory.Exists(Path.Combine("Secrets")); // Corvax-Secrets
+    private static readonly bool UseSecrets = File.Exists(Path.Combine("Secrets", "CorvaxSecrets.sln")); // Corvax-Secrets
 
     public static async Task PackageServer(bool skipBuild, bool hybridAcz, IPackageLogger logger, List<string>? platforms = null)
     {

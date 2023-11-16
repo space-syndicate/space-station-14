@@ -10,7 +10,7 @@ namespace Content.Packaging;
 
 public static class ClientPackaging
 {
-    private static readonly bool UseSecrets = Directory.Exists(Path.Combine("Secrets")); // Corvax-Secrets
+    private static readonly bool UseSecrets = File.Exists(Path.Combine("Secrets", "CorvaxSecrets.sln")); // Corvax-Secrets
     /// <summary>
     /// Be advised this can be called from server packaging during a HybridACZ build.
     /// </summary>
