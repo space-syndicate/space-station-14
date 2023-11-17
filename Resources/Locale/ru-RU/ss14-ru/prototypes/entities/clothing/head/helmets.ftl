@@ -41,5 +41,5 @@ ent-ClothingHeadHelmetLing = хитиновый шлем
     .desc = Раздувает тело генокрада во всепоглощающий массив хитиновый брони. Обеспечивает высокую защиту от физических повреждений, более низкую от других типов. Его вес замедляет движение генокрада, а его поддержание замедляет выработку химических веществ.
 ent-ClothingHeadHelmetBone = костяной шлем
     .desc = Круто выглядящий шлем, сделанный из черепов ваших врагов.
-ent-ClothingHeadHelmetPodWars = ironclad II helmet
-    .desc = An ironclad II helmet, a relic of the pod wars.
+ent-ClothingHeadHelmetPodWars = шлем Броненосец II
+    .desc = Шлем Броненосец II, реликвия войн подов.

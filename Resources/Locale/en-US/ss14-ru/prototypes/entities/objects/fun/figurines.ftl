@@ -96,3 +96,5 @@ ent-ToyOwlman = owl figure
     .desc = An action figure modeled after 'The Owl', defender of justice.
 ent-ToySkeleton = skeleton figure
     .desc = Spooked ya!
+ent-ToyFigurineThief = thief character figure
+    .desc = Hiding in the shadows...
