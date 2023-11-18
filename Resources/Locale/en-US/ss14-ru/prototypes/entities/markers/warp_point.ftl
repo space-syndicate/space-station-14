@@ -19,5 +19,7 @@ ent-WarpPointBeaconNeutral = warp point (neutral)
     .desc = { ent-WarpPointBeacon.desc }
 ent-WarpPointBeaconScience = warp point (science)
     .desc = { ent-WarpPointBeacon.desc }
+ent-WarpPointBeaconSecurity = warp point (security)
+    .desc = { ent-WarpPointBeacon.desc }
 ent-WarpPointBeaconService = warp point (service)
     .desc = { ent-WarpPointBeacon.desc }

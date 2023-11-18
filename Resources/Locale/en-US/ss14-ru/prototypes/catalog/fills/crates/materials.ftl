@@ -14,3 +14,5 @@ ent-CrateMaterialPlasma = { ent-CratePlasma }
     .desc = { ent-CratePlasma.desc }
 ent-CrateMaterialCardboard = { ent-CrateGenericSteel }
     .desc = { ent-CrateGenericSteel.desc }
+ent-CrateMaterialPaper = { ent-CrateGenericSteel }
+    .desc = { ent-CrateGenericSteel.desc }

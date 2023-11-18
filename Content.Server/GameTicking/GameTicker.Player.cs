@@ -1,6 +1,5 @@
 using Content.Corvax.Interfaces.Server;
 using Content.Server.Database;
-using Content.Server.Players;
 using Content.Shared.GameTicking;
 using Content.Shared.GameWindow;
 using Content.Shared.Players;
@@ -8,6 +7,7 @@ using Content.Shared.Preferences;
 using JetBrains.Annotations;
 using Robust.Server.Player;
 using Robust.Shared.Enums;
+using Robust.Shared.Player;
 using Robust.Shared.Timing;
 using Robust.Shared.Utility;
 
@@ -30,8 +30,11 @@ namespace Content.Server.GameTicking
 
             if (_mind.TryGetMind(session.UserId, out var mindId, out var mind))
             {
-                if (args.OldStatus == SessionStatus.Connecting && args.NewStatus == SessionStatus.Connected)
+                if (args.NewStatus != SessionStatus.Disconnected)
+                {
                     mind.Session = session;
+                    _pvsOverride.AddSessionOverride(mindId.Value, session);
+                }
 
                 DebugTools.Assert(mind.Session == session);
             }
@@ -47,7 +50,7 @@ namespace Content.Server.GameTicking
                     // Always make sure the client has player data.
                     if (session.Data.ContentDataUncast == null)
                     {
-                        var data = new PlayerData(session.UserId, args.Session.Name);
+                        var data = new ContentPlayerData(session.UserId, args.Session.Name);
                         data.Mind = mindId;
                         session.Data.ContentDataUncast = data;
                     }
@@ -56,7 +59,7 @@ namespace Content.Server.GameTicking
                     // timer time must be > tick length
                     // Corvax-Queue-Start
                     if (!IoCManager.Instance!.TryResolveType<IServerJoinQueueManager>(out _))
-                        Timer.Spawn(0, args.Session.JoinGame); // Moved to `JoinQueueManager` if manager registered
+                        Timer.Spawn(0, () => _playerManager.JoinGame(args.Session));
                     // Corvax-Queue-End
 
                     var record = await _dbManager.GetPlayerRecordByUserId(args.Session.UserId);
@@ -101,9 +104,16 @@ namespace Content.Server.GameTicking
                     }
                     else
                     {
-                        // Simply re-attach to existing entity.
-                        session.AttachToEntity(mind.CurrentEntity);
-                        PlayerJoinGame(session);
+                        if (_playerManager.SetAttachedEntity(session, mind.CurrentEntity))
+                        {
+                            PlayerJoinGame(session);
+                        }
+                        else
+                        {
+                            Log.Error(
+                                $"Failed to attach player {session} with mind {ToPrettyString(mindId)} to its current entity {ToPrettyString(mind.CurrentEntity)}");
+                            SpawnObserverWaitDb();
+                        }
                     }
 
                     break;
@@ -113,7 +123,10 @@ namespace Content.Server.GameTicking
                 {
                     _chatManager.SendAdminAnnouncement(Loc.GetString("player-leave-message", ("name", args.Session.Name)));
                     if (mind != null)
+                    {
+                        _pvsOverride.ClearOverride(mindId!.Value);
                         mind.Session = null;
+                    }
 
                     if (_playerGameStatuses.ContainsKey(args.Session.UserId)) // Corvax-Queue: Delete data only if player was in game
                         _userDb.ClientDisconnected(session);
@@ -145,12 +158,12 @@ namespace Content.Server.GameTicking
             }
         }
 
-        private HumanoidCharacterProfile GetPlayerProfile(IPlayerSession p)
+        private HumanoidCharacterProfile GetPlayerProfile(ICommonSession p)
         {
             return (HumanoidCharacterProfile) _prefsManager.GetPreferences(p.UserId).SelectedCharacter;
         }
 
-        public void PlayerJoinGame(IPlayerSession session, bool silent = false)
+        public void PlayerJoinGame(ICommonSession session, bool silent = false)
         {
             if (!silent)
                 _chatManager.DispatchServerMessage(session, Loc.GetString("game-ticker-player-join-game-message"));
@@ -161,7 +174,7 @@ namespace Content.Server.GameTicking
             RaiseNetworkEvent(new TickerJoinGameEvent(), session.ConnectedClient);
         }
 
-        private void PlayerJoinLobby(IPlayerSession session)
+        private void PlayerJoinLobby(ICommonSession session)
         {
             _playerGameStatuses[session.UserId] = LobbyEnabled ? PlayerGameStatus.NotReadyToPlay : PlayerGameStatus.ReadyToPlay;
             _db.AddRoundPlayers(RoundId, session.UserId);
@@ -181,9 +194,9 @@ namespace Content.Server.GameTicking
 
     public sealed class PlayerJoinedLobbyEvent : EntityEventArgs
     {
-        public readonly IPlayerSession PlayerSession;
+        public readonly ICommonSession PlayerSession;
 
-        public PlayerJoinedLobbyEvent(IPlayerSession playerSession)
+        public PlayerJoinedLobbyEvent(ICommonSession playerSession)
         {
             PlayerSession = playerSession;
         }

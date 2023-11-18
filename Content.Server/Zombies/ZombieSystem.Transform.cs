@@ -16,6 +16,7 @@ using Content.Server.Roles;
 using Content.Server.Speech.Components;
 using Content.Server.Temperature.Components;
 using Content.Shared.CombatMode;
+using Content.Shared.CombatMode.Pacification;
 using Content.Shared.Damage;
 using Content.Shared.Hands.Components;
 using Content.Shared.Hands.EntitySystems;
@@ -107,10 +108,9 @@ namespace Content.Server.Zombies
             //This is needed for stupid entities that fuck up combat mode component
             //in an attempt to make an entity not attack. This is the easiest way to do it.
             var combat = EnsureComp<CombatModeComponent>(target);
+            RemComp<PacifiedComponent>(target);
             _combat.SetCanDisarm(target, false, combat);
             _combat.SetInCombatMode(target, true, combat);
-
-            RemComp<PacifiedComponent>(target); // Corvax-DionaPacifist: Allow dionas zombies to harm
 
             //This is the actual damage of the zombie. We assign the visual appearance
             //and range here because of stuff we'll find out later
@@ -199,12 +199,10 @@ namespace Content.Server.Zombies
             if (TryComp<TemperatureComponent>(target, out var tempComp))
                 tempComp.ColdDamage.ClampMax(0);
 
-            _mobThreshold.SetAllowRevives(target, true);
             //Heals the zombie from all the damage it took while human
             if (TryComp<DamageableComponent>(target, out var damageablecomp))
                 _damageable.SetAllDamage(target, damageablecomp, 0);
             _mobState.ChangeMobState(target, MobState.Alive);
-            _mobThreshold.SetAllowRevives(target, false);
 
             var factionComp = EnsureComp<NpcFactionMemberComponent>(target);
             foreach (var id in new List<string>(factionComp.Factions))

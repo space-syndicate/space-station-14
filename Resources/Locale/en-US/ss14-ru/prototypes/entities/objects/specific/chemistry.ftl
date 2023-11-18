@@ -25,4 +25,4 @@ ent-SyringeBluespace = bluespace syringe
 ent-Pill = pill
     .desc = It's not a suppository.
 ent-PillCanister = pill canister
-    .desc = Holds up to 9 pills.
+    .desc = Holds up to 10 pills.
