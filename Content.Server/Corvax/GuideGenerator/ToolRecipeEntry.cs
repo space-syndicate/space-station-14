@@ -88,7 +88,7 @@ public sealed class ToolRecipeEntry // because of https://github.com/space-wizar
             Result = null;
         }
         Input = entityPrototype.ID;
-        Name = entityPrototype.Name;
+        Name = TextTools.TextTools.CapitalizeString(entityPrototype.Name);
         Id = entityPrototype.ID;
         Type = "toolmadeRecipes";
     }

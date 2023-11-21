@@ -53,18 +53,7 @@ public sealed class MicrowaveRecipeEntry
     public MicrowaveRecipeEntry(FoodRecipePrototype proto)
     {
         Id = proto.ID;
-        if (proto.Name.Length > 1)
-        {
-            Name = char.ToUpper(proto.Name[0]) + proto.Name.Remove(0, 1);
-        }
-        else if (proto.Name.Length == 1)
-        {
-            Name = char.ToUpper(proto.Name[0]).ToString();
-        }
-        else
-        {
-            Name = proto.Name;
-        }
+        Name = TextTools.TextTools.CapitalizeString(proto.Name);
         Type = "microwaveRecipes";
         Time = proto.CookTime;
         Solids = proto.IngredientsSolids

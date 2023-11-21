@@ -47,18 +47,7 @@ public sealed class SliceRecipeEntry
     public SliceRecipeEntry(EntityPrototype proto)
     {
         Id = proto.ID;
-        if (proto.Name.Length > 1)
-        {
-            Name = char.ToUpper(proto.Name[0]) + proto.Name.Remove(0, 1);
-        }
-        else if (proto.Name.Length == 1)
-        {
-            Name = char.ToUpper(proto.Name[0]).ToString();
-        }
-        else
-        {
-            Name = proto.Name;
-        }
+        Name = TextTools.TextTools.CapitalizeString(proto.Name);
         Type = "sliceableRecipes";
         Input = proto.ID;
         if (proto.Components.TryGetComponent("SliceableFood", out var comp))
