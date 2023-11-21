@@ -29,3 +29,5 @@ ent-ClothingOuterArmorChangeling = chitinous armor
     .desc = Inflates the changeling's body into an all-consuming chitinous mass of armor.
 ent-ClothingOuterArmorBone = bone armor
     .desc = Sits on you like a second skin.
+ent-ClothingOuterArmorPodWars = ironclad II armor
+    .desc = A repurposed suit of ironclad II armor, a relic of the pod wars.

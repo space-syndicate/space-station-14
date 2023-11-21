@@ -46,3 +46,5 @@ ent-JugOxygen = jug (oxygen)
     .desc = { ent-Jug.desc }
 ent-JugPlantBGone = jug (Plant-B-Gone)
     .desc = { ent-Jug.desc }
+ent-JugWeldingFuel = jug (welding fuel)
+    .desc = { ent-Jug.desc }
