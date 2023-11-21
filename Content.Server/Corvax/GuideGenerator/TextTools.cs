@@ -6,7 +6,7 @@ public sealed class TextTools
     /// Capitalizes first letter of given string.
     /// </summary>
     /// <param name="str">String to capitalize</param>
-    /// <returns></returns>
+    /// <returns>String with capitalized first letter</returns>
     public static string CapitalizeString(string str)
     {
         if (str.Length > 1)
