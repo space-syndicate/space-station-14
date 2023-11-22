@@ -12,6 +12,7 @@ using Content.Server.Roles;
 using Content.Server.Roles.Jobs;
 using Content.Server.Station.Systems;
 using Content.Shared.Humanoid;
+using Content.Shared.Mind;
 using Content.Shared.Mind.Components;
 using Content.Shared.Objectives.Components;
 using Content.Shared.Objectives.Systems;
@@ -64,12 +65,11 @@ public sealed class EvilTwinSystem : EntitySystem
             if (spawnedTwin != null &&
                 _mindSystem.TryGetMind(args.Player, out var mindId, out var mind))
             {
+                Del(uid);
                 mind.CharacterName = MetaData(spawnedTwin.Value).EntityName;
                 _mindSystem.TransferTo(mindId, spawnedTwin);
             }
         }
-
-        QueueDel(uid);
     }
 
     private void OnMindAdded(EntityUid uid, EvilTwinComponent component, MindAddedMessage args)
@@ -85,8 +85,8 @@ public sealed class EvilTwinSystem : EntitySystem
         _roleSystem.MindAddRole(mindId, role, mind);
         _mindSystem.TryAddObjective(mindId, mind, EscapeObjective);
         _mindSystem.TryAddObjective(mindId, mind, KillObjective);
-        if (TryComp<TargetObjectiveComponent>(uid, out var targetObj))
-            _target.SetTarget(uid, evilTwin.TargetMindId, targetObj);
+        if (_mindSystem.TryGetObjectiveComp<TargetObjectiveComponent>(uid, out var obj))
+            _target.SetTarget(uid, evilTwin.TargetMindId, obj);
     }
 
     private void OnRoundEnd(RoundEndTextAppendEvent ev)
