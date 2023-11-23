@@ -1828,5 +1828,12 @@ namespace Content.Shared.CCVar
         /// </summary>
         public static readonly CVarDef<int> NewsContentLimit =
             CVarDef.Create("news.content_limit", 2048, CVar.SERVER | CVar.REPLICATED);
+
+        /*
+         * Miscellaneous
+         */
+
+        public static readonly CVarDef<bool> GatewayGeneratorEnabled =
+            CVarDef.Create("gateway.generator_enabled", true);
     }
 }
