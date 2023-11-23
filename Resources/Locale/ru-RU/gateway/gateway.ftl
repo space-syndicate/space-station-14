@@ -4,6 +4,5 @@ gateway-window-portal-cooldown = Cooldown
 gateway-window-portal-unlock = Next unlock
 gateway-window-locked = Locked
 gateway-window-no-destinations = Отсутствуют пункты назначения.
-gateway-window-portal-closing = Портал закрывается
 gateway-access-denied = Доступ запрещён!
 gateway-close-portal = Закрыть портал
