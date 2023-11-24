@@ -85,7 +85,7 @@ public sealed class HeatableRecipeEntry
             Result = null;
         }
         Input = entityPrototype.ID;
-        Name = entityPrototype.Name;
+        Name = TextTools.TextTools.CapitalizeString(entityPrototype.Name);
         Id = entityPrototype.ID;
         Type = "heatableRecipes";
     }
