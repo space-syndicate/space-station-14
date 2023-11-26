@@ -10,20 +10,20 @@ whitelist-playercount-invalid =
             }
     }
 whitelist-not-whitelisted-rp = Вас нет в вайтлисте. Чтобы попасть в вайтлист, посетите наш Discord (ссылку можно найти по адресу https://discord.station14.ru).
-cmd-whitelistadd-desc = Adds the player with the given username to the server whitelist.
-cmd-whitelistadd-help = Usage: whitelistadd <username>
-cmd-whitelistadd-existing = { $username } is already on the whitelist!
-cmd-whitelistadd-added = { $username } added to the whitelist
-cmd-whitelistadd-not-found = Unable to find '{ $username }'
+cmd-whitelistadd-desc = Добавить игрока в вайтлист сервера.
+cmd-whitelistadd-help = Использование: whitelistadd <username>
+cmd-whitelistadd-existing = { $username } уже находится в вайтлисте!
+cmd-whitelistadd-added = { $username } добавлен в вайтлист
+cmd-whitelistadd-not-found = Не удалось найти игрока '{ $username }'
 cmd-whitelistadd-arg-player = [player]
-cmd-whitelistremove-desc = Removes the player with the given username from the server whitelist.
-cmd-whitelistremove-help = Usage: whitelistremove <username>
-cmd-whitelistremove-existing = { $username } is not on the whitelist!
-cmd-whitelistremove-removed = { $username } removed from the whitelist
-cmd-whitelistremove-not-found = Unable to find '{ $username }'
+cmd-whitelistremove-desc = Удалить игрока с вайтлиста сервера.
+cmd-whitelistremove-help = Использование: whitelistremove <username>
+cmd-whitelistremove-existing = { $username } не находится в вайтлисте!
+cmd-whitelistremove-removed = { $username } удалён с вайтлиста
+cmd-whitelistremove-not-found = Не удалось найти игрока '{ $username }'
 cmd-whitelistremove-arg-player = [player]
-cmd-kicknonwhitelisted-desc = Kicks all non-whitelisted players from the server.
-cmd-kicknonwhitelisted-help = Usage: kicknonwhitelisted
+cmd-kicknonwhitelisted-desc = Кикнуть всег игроков не в белом списке с сервера.
+cmd-kicknonwhitelisted-help = Использование: kicknonwhitelisted
 ban-banned-permanent = Этот бан можно только обжаловать. Для этого посетите { $link }.
 ban-banned-permanent-appeal = Этот бан можно только обжаловать. Для этого посетите { $link }.
 ban-expires = Вы получили бан на { $duration } минут, и он истечёт { $time } по UTC (для москосвкого времени добавьте 3 часа).
@@ -31,10 +31,10 @@ ban-banned-1 = Вам, или другому пользователю этого
 ban-banned-2 = Причина бана: "{ $reason }"
 ban-banned-3 = Попытки обойти этот бан, например, путём создания нового аккаунта, будут фиксироваться.
 soft-player-cap-full = Сервер заполнен!
-panic-bunker-account-denied = Этот сервер находится в режиме "Бункер". В данный момент новые подключения не принимаются. Повторите попытку позже
+panic-bunker-account-denied = Этот сервер находится в режиме "Бункер". В данный момент новые подключения не принимаются. Повторите попытку позже.
 panic-bunker-account-denied-reason = Этот сервер находится в режиме "Бункер", и вам было отказано в доступе. Причина: "{ $reason }"
 panic-bunker-account-reason-account = Ваш аккаунт должен быть старше { $minutes } минут
-panic-bunker-account-reason-overall =
+panic-bunker-account-reason-overall = Общее время игры на аккаунте должно превышать {$hours} часов
     Необходимо минимальное отыгранное время — { $hours } { $hours ->
         [one] час
         [few] часа
