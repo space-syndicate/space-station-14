@@ -45,8 +45,7 @@ public sealed partial class HumanoidProfileEditor
 
     private void UpdateTTSVoicesControls()
     {
-        if (Profile is null ||
-            _sponsorsMgr is null)
+        if (Profile is null)
             return;
 
         _voiceButton.Clear();
@@ -64,6 +63,8 @@ public sealed partial class HumanoidProfileEditor
             if (firstVoiceChoiceId == 1)
                 firstVoiceChoiceId = i;
 
+            if (_sponsorsMgr is null)
+                continue;
             if (voice.SponsorOnly && _sponsorsMgr != null &&
                 !_sponsorsMgr.Prototypes.Contains(voice.ID))
             {
