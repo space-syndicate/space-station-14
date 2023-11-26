@@ -39,3 +39,7 @@ ent-ClothingHeadHelmetERTEngineer = ERT engineer helmet
     .desc = An in-atmosphere helmet worn by engineering members of the Nanotrasen Emergency Response Team. Has orange highlights.
 ent-ClothingHeadHelmetERTJanitor = ERT janitor helmet
     .desc = An in-atmosphere helmet worn by janitorial members of the Nanotrasen Emergency Response Team. Has dark purple highlights.
+ent-ClothingHeadHelmetBone = bone helmet
+    .desc = Cool-looking helmet made of skull of your enemies.
+ent-ClothingHeadHelmetPodWars = ironclad II helmet
+    .desc = An ironclad II helmet, a relic of the pod wars.

@@ -34,3 +34,5 @@ ent-ClothingHeadsetBrigmedic = brigmedic headset
     .desc = A headset that helps to hear the death cries.
 ent-ClothingHeadsetService = service headset
     .desc = Headset used by the service staff, tasked with keeping the station full, happy and clean.
+ent-ClothingHeadsetFreelance = freelancer headset
+    .desc = This is used by a roaming group of freelancers

@@ -1,11 +1,6 @@
 using System.IO;
 using System.Linq;
 using System.Text.Json;
-using System.Text.Json.Serialization;
-using Content.Shared.Chemistry.Reaction;
-using Content.Shared.Chemistry.Reagent;
-using Content.Shared.Damage;
-using Content.Shared.FixedPoint;
 using Robust.Shared.Prototypes;
 
 namespace Content.Server.GuideGenerator;

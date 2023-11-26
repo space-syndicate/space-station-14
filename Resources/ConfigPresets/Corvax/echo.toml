@@ -13,16 +13,7 @@ min_account_age = 0
 min_overall_hours = 10
 
 [rules]
-time = 180.0
-
-[queue]
-enabled = true
-
-[tts]
-enabled = true
-
-[discord_auth]
-enabled = true
+time = 10.0
 
 [hub]
 advertise = true

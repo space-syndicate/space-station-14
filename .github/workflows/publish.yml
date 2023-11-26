@@ -6,7 +6,7 @@ concurrency:
 on:
   workflow_dispatch:
   schedule:
-    - cron: '0 1 * * *'
+    - cron: '0 6 * * *'
 
 jobs:
   build:
@@ -32,8 +32,10 @@ jobs:
         echo "HOST *" > ~/.ssh/config
         echo "StrictHostKeyChecking no" >> ~/.ssh/config
         git -c submodule.Secrets.update=checkout submodule update --init
-        cp -R Secrets/Prototypes Resources/Prototypes/CorvaxSecrets
-        cp -R Secrets/ServerPrototypes Resources/Prototypes/CorvaxSecretsServer
+        cp -R Secrets/Resources/Prototypes Resources/Prototypes/CorvaxSecrets
+        cp -R Secrets/Resources/ServerPrototypes Resources/Prototypes/CorvaxSecretsServer
+        cp -R Secrets/Resources/Locale Resources/Locale/ru-RU/corvax-secrets
+        cp -R Secrets/Resources/Textures Resources/Textures/CorvaxSecrets
     # Corvax-Secrets-End
 
     - name: Setup .NET Core
@@ -46,12 +48,21 @@ jobs:
         cd RobustToolbox
         git fetch --depth=1
 
-    - name: Package all
-      run: |
-        Tools/package_server_build.py -p win-x64 linux-x64 osx-x64 linux-arm64
-        Tools/package_client_build.py
+    - name: Install dependencies
+      run: dotnet restore
+
+    - name: Build Packaging
+      run: dotnet build Content.Packaging --configuration Release --no-restore /m
+
+    - name: Package server
+      run: dotnet run --project Content.Packaging server --platform win-x64 --platform linux-x64 --platform osx-x64 --platform linux-arm64
+
+    - name: Package client
+      run: dotnet run --project Content.Packaging client --no-wipe-release
 
     - name: Update Build Info
+      env:
+        FORK_ID: ${{ vars.FORK_ID }}
       run: Tools/gen_build_info.py
 
     - name: Shuffle files around
@@ -75,7 +86,7 @@ jobs:
         host: ${{ secrets.BUILDS_HOST }}
         username: ${{ secrets.BUILDS_USERNAME }}
         key: ${{ secrets.BUILDS_SSH_KEY }}
-        script: node ~/scripts/push_to_manifest.js -fork syndicate -id ${{ github.sha }}
+        script: node ~/scripts/push_to_manifest.js -fork ${{ vars.FORK_ID }} -id ${{ github.sha }}
 
 #    - name: Publish changelog (Discord)
 #      run: Tools/actions_changelogs_since_last_run.py

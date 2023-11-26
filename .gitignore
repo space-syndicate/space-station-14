@@ -13,6 +13,8 @@
 # Secret
 Resources/Prototypes/CorvaxSecrets
 Resources/Prototypes/CorvaxSecretsServer
+Resources/Textures/CorvaxSecrets
+Resources/Locale/ru-RU/corvax-secrets
 
 # Build results
 [Dd]ebug/
@@ -166,6 +168,7 @@ PublishScripts/
 # NuGet v3's project.json files produces more ignoreable files
 *.nuget.props
 *.nuget.targets
+.nuget/
 
 # Microsoft Azure Build Output
 csx/

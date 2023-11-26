@@ -7,16 +7,7 @@ soft_max_players = 100
 map_rotation = true
 
 [rules]
-time = 10.0
-
-[queue]
-enabled = true
-
-[tts]
-enabled = true
-
-[discord_auth]
-enabled = true
+time = 180.0
 
 [hub]
 advertise = true

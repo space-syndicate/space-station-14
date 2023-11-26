@@ -1,3 +1,0 @@
-ent-ClothingHeadHatCapHoS = leather head of security's cap
-    .desc = Pretty old stuff for these times, bringing back old memories...
-    .suffix = { "" }

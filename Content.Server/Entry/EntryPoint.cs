@@ -5,9 +5,6 @@ using Content.Server.Administration.Managers;
 using Content.Server.Afk;
 using Content.Server.Chat.Managers;
 using Content.Server.Connection;
-using Content.Server.Corvax.DiscordAuth;
-using Content.Server.Corvax.JoinQueue;
-using Content.Server.Corvax.Sponsors;
 using Content.Server.Corvax.TTS;
 using Content.Server.Database;
 using Content.Server.EUI;
@@ -25,20 +22,20 @@ using Content.Server.ServerUpdates;
 using Content.Server.Voting.Managers;
 using Content.Shared.CCVar;
 using Content.Shared.Kitchen;
+using Content.Shared.Localizations;
 using Robust.Server;
-using Robust.Shared.Configuration;
 using Robust.Server.ServerStatus;
+using Robust.Shared.Configuration;
 using Robust.Shared.ContentPack;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Timing;
 using Robust.Shared.Utility;
-using Content.Shared.Localizations;
 
 namespace Content.Server.Entry
 {
     public sealed class EntryPoint : GameServer
     {
-        private const string ConfigPresetsDir = "/ConfigPresets/";
+        internal const string ConfigPresetsDir = "/ConfigPresets/";
         private const string ConfigPresetsDirBuild = $"{ConfigPresetsDir}Build/";
 
         private EuiManager _euiManager = default!;
@@ -108,9 +105,6 @@ namespace Content.Server.Entry
                 IoCManager.Resolve<INodeGroupFactory>().Initialize();
                 IoCManager.Resolve<ContentNetworkResourceManager>().Initialize();
                 IoCManager.Resolve<GhostKickManager>().Initialize();
-                IoCManager.Resolve<DiscordAuthManager>().Initialize(); // Corvax-DiscordAuth
-                IoCManager.Resolve<SponsorsManager>().Initialize(); // Corvax-Sponsors
-                IoCManager.Resolve<JoinQueueManager>().Initialize(); // Corvax-Queue
                 IoCManager.Resolve<TTSManager>().Initialize(); // Corvax-TTS
                 IoCManager.Resolve<ServerInfoManager>().Initialize();
 
@@ -141,6 +135,9 @@ namespace Content.Server.Entry
                 // Corvax-Wiki-Start
                 file = resourceManager.UserData.OpenWriteText(resPath.WithName("entity_" + dest));
                 EntityJsonGenerator.PublishJson(file);
+                file.Flush();
+                file = resourceManager.UserData.OpenWriteText(resPath.WithName("mealrecipes_" + dest));
+                MicrowaveMealRecipeJsonGenerator.PublishJson(file);
                 file.Flush();
                 // Corvax-Wiki-End
                 IoCManager.Resolve<IBaseServer>().Shutdown("Data generation done");

@@ -67,3 +67,6 @@ ent-CrateTrashCart = trash cart
     .desc = { ent-CrateBaseWeldable.desc }
 ent-CrateTrashCartJani = janitorial trash cart
     .desc = { ent-CrateBaseSecure.desc }
+ent-InvisibleCrate = { ent-CrateBaseWeldable }
+    .suffix = Stealth
+    .desc = { ent-CrateBaseWeldable.desc }

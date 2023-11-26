@@ -27,3 +27,7 @@ ent-ClothingOuterArmorCaptainCarapace = captain's carapace
     .desc = An armored chestpiece that provides protection whilst still offering maximum mobility and flexibility. Issued only to the station's finest.
 ent-ClothingOuterArmorChangeling = chitinous armor
     .desc = Inflates the changeling's body into an all-consuming chitinous mass of armor.
+ent-ClothingOuterArmorBone = bone armor
+    .desc = Sits on you like a second skin.
+ent-ClothingOuterArmorPodWars = ironclad II armor
+    .desc = A repurposed suit of ironclad II armor, a relic of the pod wars.
