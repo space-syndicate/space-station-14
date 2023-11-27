@@ -44,7 +44,3 @@ ent-CrateVendingMachineRestockHappyHonk = { ent-CrateVendingMachineRestockHappyH
     .desc = { ent-CrateVendingMachineRestockHappyHonkFilled.desc }
 ent-CrateVendingMachineRestockChemVend = { ent-CrateVendingMachineRestockChemVendFilled }
     .desc = { CrateVendingMachineRestockChemVendFilled.desc }
-ent-CrateVendingMachineRestockChefvend = { ent-CrateVendingMachineRestockChefvendFilled }
-    .desc = { CrateVendingMachineRestockChefvendFilled.desc }
-ent-CrateVendingMachineRestockCondimentStation = { ent-CrateVendingMachineRestockCondimentStationFilled }
-    .desc = { CrateVendingMachineRestockCondimentStationFilled.desc }
