@@ -31,10 +31,6 @@
   - type: Damageable
     damageContainer: Biological
     damageModifierSet: Vulpkanin
-  - type: MovementSpeedModifier
-    acceleration: 20
-    baseWalkSpeed: 2.7
-    baseSprintSpeed: 4.5
   - type: Respirator
     damage:
       types:
