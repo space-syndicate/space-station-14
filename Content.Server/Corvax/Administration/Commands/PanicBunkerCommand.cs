@@ -28,6 +28,6 @@ public sealed class PanicBunkerDenyVpnCommand : LocalizedCommands
         }
 
         _cfg.SetCVar(CCCVars.PanicBunkerDenyVPN, deny);
-        shell.WriteLine(deny ? "Доступ VPN соединениям был запрешён" : "Доступ VPN соединениям был разрешён");
+        shell.WriteLine(Loc.GetString(deny ? "panicbunker-command-deny-vpn-enabled" : "panicbunker-command-deny-vpn-disabled"));
     }
 }
