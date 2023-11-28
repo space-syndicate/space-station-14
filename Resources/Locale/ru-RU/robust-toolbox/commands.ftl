@@ -266,98 +266,98 @@ cmd-testbed-desc = Loads a physics testbed on the specified map.
 cmd-testbed-help = testbed <mapid> <test>
 cmd-saveconfig-desc = Saves the client configuration to the config file.
 cmd-saveconfig-help = saveconfig
-cmd-addcomp-desc = Adds a component to an entity.
+cmd-addcomp-desc = Добавляет компонент в сущность.
 cmd-addcomp-help = addcomp <uid> <componentName>
-cmd-addcompc-desc = Adds a component to an entity on the client.
+cmd-addcompc-desc = Добавляет компонент к сущности на клиенте.
 cmd-addcompc-help = addcompc <uid> <componentName>
-cmd-rmcomp-desc = Removes a component from an entity.
+cmd-rmcomp-desc = Удаляет компонент из сущности.
 cmd-rmcomp-help = rmcomp <uid> <componentName>
-cmd-rmcompc-desc = Removes a component from an entity on the client.
+cmd-rmcompc-desc = Удаляет компонент из сущности на клиенте.
 cmd-rmcompc-help = rmcomp <uid> <componentName>
-cmd-addview-desc = Allows you to subscribe to an entity's view for debugging purposes.
+cmd-addview-desc = Позволяет подписаться на просмотр сущности в целях отладки.
 cmd-addview-help = addview <entityUid>
-cmd-addviewc-desc = Allows you to subscribe to an entity's view for debugging purposes.
+cmd-addviewc-desc = Позволяет подписаться на просмотр сущности в целях отладки.
 cmd-addviewc-help = addview <entityUid>
-cmd-removeview-desc = Allows you to unsubscribe to an entity's view for debugging purposes.
+cmd-removeview-desc = Позволяет отказаться от подписки на просмотр сущности в целях отладки.
 cmd-removeview-help = removeview <entityUid>
-cmd-loglevel-desc = Changes the log level for a provided sawmill.
+cmd-loglevel-desc = Изменяет уровень журнала для предоставленной sawmill.
 cmd-loglevel-help =
-    Usage: loglevel <sawmill> <level>
-    sawmill: A label prefixing log messages. This is the one you're setting the level for.
-    level: The log level. Must match one of the values of the LogLevel enum.
-cmd-testlog-desc = Writes a test log to a sawmill.
+    Использование: loglevel <sawmill> <level>
+    sawmill: Метка, которая префиксирует сообщения журнала. Именно для него вы устанавливаете уровень.
+    level: Уровень журнала. Должно соответствовать одному из значений перечисления LogLevel.
+cmd-testlog-desc = Записывает протокол тестов на sawmill.
 cmd-testlog-help =
-    Usage: testlog <sawmill> <level> <message>
-    sawmill: A label prefixing the logged message.
-    level: The log level. Must match one of the values of the LogLevel enum.
-    message: The message to be logged. Wrap this in double quotes if you want to use spaces.
-cmd-vv-desc = Opens View Variables.
-cmd-vv-help = Usage: vv <entity ID|IoC interface name|SIoC interface name>
-cmd-showvelocities-desc = Displays your angular and linear velocities.
-cmd-showvelocities-help = Usage: showvelocities
-cmd-setinputcontext-desc = Sets the active input context.
-cmd-setinputcontext-help = Usage: setinputcontext <context>
-cmd-forall-desc = Runs a command over all entities with a given component.
-cmd-forall-help = Usage: forall <bql query> do <command...>
-cmd-delete-desc = Deletes the entity with the specified ID.
+    Использование: testlog <sawmill> <level> <message>
+    sawmill: Метка, префиксируемая зарегистрированному сообщению.
+    level: Уровень журнала. Должно соответствовать одному из значений перечисления LogLevel.
+    message: Сообщение, которое должно быть зарегистрировано. Если вы хотите использовать пробелы, заключите в двойные кавычки.
+cmd-vv-desc = Открывает просмотр переменных.
+cmd-vv-help = Использование: vv <entity ID|IoC interface name|SIoC interface name>
+cmd-showvelocities-desc = Отображает угловую и линейную скорости.
+cmd-showvelocities-help = Использование: showvelocities
+cmd-setinputcontext-desc = Устанавливает активный контекст ввода.
+cmd-setinputcontext-help = Использование: setinputcontext <context>
+cmd-forall-desc = Запускает команду для всех сущностей с данным компонентом.
+cmd-forall-help = Использование: forall <bql query> do <command...>
+cmd-delete-desc = Удаляет объект с указанным ID.
 cmd-delete-help = delete <entity UID>
 # System commands
-cmd-showtime-desc = Shows the server time.
+cmd-showtime-desc = Показывает время сервера.
 cmd-showtime-help = showtime
-cmd-restart-desc = Gracefully restarts the server (not just the round).
+cmd-restart-desc = Грамотно перезапускает сервер (не только раунд).
 cmd-restart-help = restart
-cmd-shutdown-desc = Gracefully shuts down the server.
+cmd-shutdown-desc = Грамотно выключает сервер.
 cmd-shutdown-help = shutdown
-cmd-netaudit-desc = Prints into about NetMsg security.
+cmd-netaudit-desc = Выводит информацию о безопасности NetMsg.
 cmd-netaudit-help = netaudit
 # Player commands
-cmd-tp-desc = Teleports a player to any location in the round.
+cmd-tp-desc = Телепортирует игрока в любую точку раунда.
 cmd-tp-help = tp <x> <y> [<mapID>]
-cmd-tpto-desc = Teleports the current player or the specified players/entities to the location of the first player/entity.
+cmd-tpto-desc = Телепортирует текущего игрока или указанных игроков/сущностей к местоположению первого игрока/сущности.
 cmd-tpto-help = tpto <username|uid> [username|uid]...
 cmd-tpto-destination-hint = destination (uid or username)
 cmd-tpto-victim-hint = entity to teleport (uid or username)
-cmd-tpto-parse-error = Cant resolve entity or player: { $str }
-cmd-listplayers-desc = Lists all players currently connected.
+cmd-tpto-parse-error = Не удается разрешить сущность или игрока: { $str }
+cmd-listplayers-desc = Перечисляет всех игроков, подключенных в данный момент.
 cmd-listplayers-help = listplayers
-cmd-kick-desc = Kicks a connected player out of the server, disconnecting them.
+cmd-kick-desc = Кикает подключенного игрока с сервера, отключая его от сети.
 cmd-kick-help = kick <PlayerIndex> [<Reason>]
 # Spin command
-cmd-spin-desc = Causes an entity to spin. Default entity is the attached player's parent.
+cmd-spin-desc = Заставляет объект вращаться. Объект по умолчанию является надклассом прикрепленного игрока.
 cmd-spin-help = spin velocity [drag] [entityUid]
 # Localization command
-cmd-rldloc-desc = Reloads localization (client & server).
-cmd-rldloc-help = Usage: rldloc
+cmd-rldloc-desc = Перезагружает локализацию (клиент и сервер).
+cmd-rldloc-help = Использование: rldloc
 # Debug entity controls
-cmd-spawn-desc = Spawns an entity with specific type.
-cmd-spawn-help = spawn <prototype> OR spawn <prototype> <relative entity ID> OR spawn <prototype> <x> <y>
-cmd-cspawn-desc = Spawns a client-side entity with specific type at your feet.
+cmd-spawn-desc = Создает сущность определенного типа.
+cmd-spawn-help = spawn <prototype> ИЛИ spawn <prototype> <relative entity ID> ИЛИ spawn <prototype> <x> <y>
+cmd-cspawn-desc = Спавнит на стороне клиента сущность определенного типа у ваших ног.
 cmd-cspawn-help = cspawn <entity type>
-cmd-scale-desc = Increases or decreases an entity's size naively.
+cmd-scale-desc = Наивно увеличивает или уменьшает размер сущности.
 cmd-scale-help = scale <entityUid> <float>
-cmd-dumpentities-desc = Dump entity list.
-cmd-dumpentities-help = Dumps entity list of UIDs and prototype.
-cmd-getcomponentregistration-desc = Gets component registration information.
+cmd-dumpentities-desc = Дамп списка объектов.
+cmd-dumpentities-help = Выводит список объектов с UID и prototype.
+cmd-getcomponentregistration-desc = Получает информацию о регистрации компонента.
 cmd-getcomponentregistration-help = Usage: getcomponentregistration <componentName>
-cmd-showrays-desc = Toggles debug drawing of physics rays. An integer for <raylifetime> must be provided.
-cmd-showrays-help = Usage: showrays <raylifetime>
-cmd-disconnect-desc = Immediately disconnect from the server and go back to the main menu.
-cmd-disconnect-help = Usage: disconnect
-cmd-entfo-desc = Displays verbose diagnostics for an entity.
+cmd-showrays-desc = Переключает отладку рисования физических лучей. Необходимо указать целое число для <raylifetime>.
+cmd-showrays-help = Использование: showrays <raylifetime>
+cmd-disconnect-desc = Немедленно надо отключиться от сервера и вернуться в главное меню.
+cmd-disconnect-help = Использование: disconnect
+cmd-entfo-desc = Отображает подробную диагностику объекта.
 cmd-entfo-help =
-    Usage: entfo <entityuid>
-    The entity UID can be prefixed with 'c' to convert it to a client entity UID.
-cmd-fuck-desc = Throws an exception
-cmd-fuck-help = Throws an exception
-cmd-showpos-desc = Enables debug drawing over all entity positions in the game.
-cmd-showpos-help = Usage: showpos
-cmd-sggcell-desc = Lists entities on a snap grid cell.
-cmd-sggcell-help = Usage: sggcell <gridID> <vector2i>\nThat vector2i param is in the form x<int>,y<int>.
-cmd-overrideplayername-desc = Changes the name used when attempting to connect to the server.
-cmd-overrideplayername-help = Usage: overrideplayername <name>
-cmd-showanchored-desc = Shows anchored entities on a particular tile
-cmd-showanchored-help = Usage: showanchored
-cmd-dmetamem-desc = Dumps a type's members in a format suitable for the sandbox configuration file.
+    Использование: entfo <entityuid>
+    UID сущности может иметь префикс 'c', чтобы преобразовать его в UID клиентской сущности.
+cmd-fuck-desc = Выдает бан
+cmd-fuck-help = Выдает бан
+cmd-showpos-desc = Включает отрисовку отладки для всех позиций объектов в игре.
+cmd-showpos-help = Использование: showpos
+cmd-sggcell-desc = Перечисляет сущности в ячейке сетки привязки.
+cmd-sggcell-help = Использование: sggcell <gridID> <vector2i>\nЭтот vector2i параметр имеет форму x<int>,y<int>.
+cmd-overrideplayername-desc = Изменяет имя, используемое при попытке подключения к серверу.
+cmd-overrideplayername-help = Использование: overrideplayername <name>
+cmd-showanchored-desc = Показывает закрепленные объекты на определенной плитке.
+cmd-showanchored-help = Использование: showanchored
+cmd-dmetamem-desc = Выводит типы членов в формате, подходящем для файла конфигурации песочницы.
 cmd-dmetamem-help = Usage: dmetamem <type>
 cmd-launchauth-desc = Load authentication tokens from launcher data to aid in testing of live servers.
 cmd-launchauth-help = Usage: launchauth <account name>
