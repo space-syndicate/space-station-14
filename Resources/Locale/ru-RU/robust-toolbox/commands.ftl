@@ -200,37 +200,37 @@ cmd-setclipboard-desc = Sets the system clipboard
 cmd-setclipboard-help = Usage: setclipboard <text>
 cmd-getclipboard-desc = Gets the system clipboard
 cmd-getclipboard-help = Usage: Getclipboard
-cmd-togglelight-desc = Toggles light rendering.
-cmd-togglelight-help = Usage: togglelight
-cmd-togglefov-desc = Toggles fov for client.
-cmd-togglefov-help = Usage: togglefov
-cmd-togglehardfov-desc = Toggles hard fov for client. (for debugging space-station-14#2353)
-cmd-togglehardfov-help = Usage: togglehardfov
-cmd-toggleshadows-desc = Toggles shadow rendering.
-cmd-toggleshadows-help = Usage: toggleshadows
-cmd-togglelightbuf-desc = Toggles lighting rendering. This includes shadows but not FOV.
-cmd-togglelightbuf-help = Usage: togglelightbuf
-cmd-chunkinfo-desc = Gets info about a chunk under your mouse cursor.
-cmd-chunkinfo-help = Usage: chunkinfo
-cmd-rldshader-desc = Reloads all shaders.
-cmd-rldshader-help = Usage: rldshader
-cmd-cldbglyr-desc = Toggle fov and light debug layers.
+cmd-togglelight-desc = Переключает рендеринг света.
+cmd-togglelight-help = Использование: togglelight
+cmd-togglefov-desc = Переключает fov для клиента.
+cmd-togglefov-help = Использование: togglefov
+cmd-togglehardfov-desc = Включает жесткий fov для клиента. (для отладки space-station-14#2353)
+cmd-togglehardfov-help = Использование: togglehardfov
+cmd-toggleshadows-desc = Переключение рендеринга теней.
+cmd-toggleshadows-help = Использование: toggleshadows
+cmd-togglelightbuf-desc = Переключение рендеринга освещения. Сюда входят тени, но не FOV.
+cmd-togglelightbuf-help = Использование: togglelightbuf
+cmd-chunkinfo-desc = Получает информацию о фрагменте под курсором мыши.
+cmd-chunkinfo-help = Использование: chunkinfo
+cmd-rldshader-desc = Перезагружает все шейдеры.
+cmd-rldshader-help = Использование: rldshader
+cmd-cldbglyr-desc = Переключение слоев отладки fov и освещения.
 cmd-cldbglyr-help =
-    Usage: cldbglyr <layer>: Toggle <layer>
-    cldbglyr: Turn all Layers off
-cmd-key-info-desc = Keys key info for a key.
-cmd-key-info-help = Usage: keyinfo <Key>
-cmd-bind-desc = Binds an input key combination to an input command.
+    Использование: cldbglyr <layer>: Переключение <layer>
+    cldbglyr: Отключить все слои
+cmd-key-info-desc = Информация о ключе для клавиши.
+cmd-key-info-help = Использование: keyinfo <Key>
+cmd-bind-desc = Связывает комбинацию клавиш ввода с командой ввода.
 cmd-bind-help =
-    Usage: bind { cmd-bind-arg-key } { cmd-bind-arg-mode } { cmd-bind-arg-command }
-    Note that this DOES NOT automatically save bindings.
-    Use the 'svbind' command to save binding configuration.
+    Использование: bind { cmd-bind-arg-key } { cmd-bind-arg-mode } { cmd-bind-arg-command }
+    Обратите внимание, что это НЕ сохраняет привязки автоматически.
+    Используйте команду «svbind», чтобы сохранить конфигурацию привязки.
 cmd-bind-arg-key = <KeyName>
 cmd-bind-arg-mode = <BindMode>
 cmd-bind-arg-command = <InputCommand>
-cmd-net-draw-interp-desc = Toggles the debug drawing of the network interpolation.
-cmd-net-draw-interp-help = Usage: net_draw_interp
-cmd-net-watch-ent-desc = Dumps all network updates for an EntityId to the console.
+cmd-net-draw-interp-desc = Переключает отладочный рисунок сетевой интерполяции.
+cmd-net-draw-interp-help = Использование: net_draw_interp
+cmd-net-watch-ent-desc = Выводит на консоль все сетевые обновления для EntityId.
 cmd-net-watch-ent-help = Usage: net_watchent <0|EntityUid>
 cmd-net-refresh-desc = Requests a full server state.
 cmd-net-refresh-help = Usage: net_refresh
