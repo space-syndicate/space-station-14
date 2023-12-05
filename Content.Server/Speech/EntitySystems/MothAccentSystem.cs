@@ -1,11 +1,14 @@
 ﻿using System.Text.RegularExpressions;
 using Content.Server.Speech.Components;
-using Robust.Shared.Random; // Corvax-Accent
+using Robust.Shared.Random; // Corvax-Localization
 
 namespace Content.Server.Speech.EntitySystems;
 
 public sealed class MothAccentSystem : EntitySystem
 {
+
+    [Dependency] private readonly IRobustRandom _random = default!; // Corvax-Localization
+    
     public override void Initialize()
     {
         base.Initialize();
