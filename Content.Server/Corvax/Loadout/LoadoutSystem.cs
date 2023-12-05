@@ -64,7 +64,9 @@ public sealed class LoadoutSystem : EntitySystem
                     // Automatically search empty slot for clothes to equip
                     string? firstSlotName = null;
                     bool isEquiped = false;
-                    foreach (var slot in _inventorySystem.GetSlots(ev.Mob))
+                    if (!_inventorySystem.TryGetSlots(ev.Mob, out var slotDefinitions))
+                        return;
+                    foreach (var slot in slotDefinitions)
                     {
                         if (!clothing.Slots.HasFlag(slot.SlotFlags))
                             continue;
