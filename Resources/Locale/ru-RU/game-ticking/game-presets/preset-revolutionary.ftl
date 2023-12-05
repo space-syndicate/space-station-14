@@ -11,13 +11,6 @@ head-rev-role-greeting =
 head-rev-briefing =
     Используйте вспышки, чтобы конвертировать членов экипажа на свою сторону.
     Убейте всех глав, чтобы захватить станцию.
-head-rev-initial-name = [color=#5e9cff]{ $name }[/color] был главой революции.
-head-rev-initial-name-user = [color=#5e9cff]{ $name }[/color] ([color=gray]{ $username }[/color]) был одним из глав революции.
-head-rev-initial-count =
-    { $initialCount ->
-        [one] Единственным главой революции был:
-       *[other] Глав революции было { $initialCount }, ими были:
-    }
 head-rev-break-mindshield = Щит разума был уничтожен!
 
 ## Rev
@@ -49,14 +42,14 @@ rev-all-heads-dead = Все главы мертвы, теперь разбери
 rev-won = Главы революции выжили и уничтожили весь командный состав станции.
 rev-headrev-count =
     { $initialCount ->
-        [one] There was one Head Revolutionary:
-       *[other] There were { $initialCount } Head Revolutionaries:
+        [one] Глава революции был один:
+       *[other] Глав революции было { $initialCount }:
     }
 rev-headrev-player =
-    { $title } converted { $count } { $count ->
-        [one] person
-       *[other] people
-    }.
+    { $title } конвертировал { $count } { $count ->
+        [one] члена
+       *[other] членов
+    } экипажа.
 rev-lost = Члены командного состава станции выжили и уничтожили всех Глав революции.
 rev-stalemate = Главы революции и командный состав станции погибли. Это ничья.
 rev-reverse-stalemate = Главы революции и командный состав станции выжили.

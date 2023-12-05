@@ -258,5 +258,5 @@ ent-DrinkHellRamen = чашка адского рамэна
     .desc = Просто добавьте 10 мл кипятка! Супер острый вкус.
 ent-DrinkTheMartinez = бокал Мартинес
     .desc = Легенда среди киберпанков. Вспоминается по напитку, забывается по пьяни.
-ent-DrinkBloodGlass = blood glass
-    .desc = Drink like a vampire!
+ent-DrinkBloodGlass = бокал крови
+    .desc = Пей как вампир!
