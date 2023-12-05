@@ -5,7 +5,6 @@ rules_file = "RulesCorvax.txt"
 fallbackpreset = "extended"
 lobbyenabled = true
 role_timers = true
-artifact_round_end_timer = 0.0
 
 [ic]
 flavor_text = true
