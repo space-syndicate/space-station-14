@@ -105,6 +105,10 @@ uplink-uplink-implanter-name = Имплантер Аплинк
 uplink-uplink-implanter-desc = Незаметно заказывайте снаряжение без использования КПК. Глотайте телекристаллы, чтобы пополнить аплинк.
 uplink-deathrattle-implant-name = Коробка имплантеров Предсмертный хрип
 uplink-deathrattle-implant-desc = Коробка, содержащая достаточное количество имплантов "Предсмертный хрип" на целый отряд. Передает сообщение с вашими координатами по радиоканалу Синдиката когда вы попадаете в критическое состояние или погибаете.
+uplink-death-acidifier-implant-name = Death Acidifier Implant
+uplink-death-acidifier-implant-desc = Completely melts the user and their equipment on use or death.
+uplink-micro-bomb-implanter-name = Micro Bomb Implanter
+uplink-micro-bomb-implanter-desc = Explode on death or manual activation with this implant. Destroys the body with all equipment.
 # Bundles
 uplink-emp-kit-name = Набор отключения электричества
 uplink-emp-kit-desc = Ультимативное противодействие энергетическому оружию: Выводит из строя станнеры, разряжает дубинки-шокеры, садит лазерное оружие! Содержит 3 ЭМИ гранаты и имплантер ЭМИ. Примечание: не выводит из строя настоящее огнестрельное оружие.

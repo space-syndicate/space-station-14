@@ -107,3 +107,5 @@ ent-SeniorOfficerPDA = senior officer PDA
     .desc = Beaten, battered and broken, but just barely useable.
 ent-PiratePDA = pirate PDA
     .desc = Yargh!
+ent-SyndiAgentPDA = syndicate agent PDA
+    .desc = For those days when healing normal syndicates aren't enough, try healing nuclear operatives instead!
