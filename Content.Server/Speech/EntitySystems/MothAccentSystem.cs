@@ -19,6 +19,33 @@ public sealed class MothAccentSystem : EntitySystem
         message = Regex.Replace(message, "z+", "zzz");
         // buZZZ
         message = Regex.Replace(message, "Z+", "ZZZ");
+
+        // Corvax-Localization-Start
+        // ж => жжж
+        message = Regex.Replace(
+            message,
+            "ж+",
+            _random.Pick(new List<string>() { "жж", "жжж" })
+        );
+        // Ж => ЖЖЖ
+        message = Regex.Replace(
+            message,
+            "Ж+",
+            _random.Pick(new List<string>() { "ЖЖ", "ЖЖЖ" })
+        );
+        // з => ссс
+        message = Regex.Replace(
+            message,
+            "з+",
+            _random.Pick(new List<string>() { "зз", "ззз" })
+        );
+        // З => CCC
+        message = Regex.Replace(
+            message,
+            "З+",
+            _random.Pick(new List<string>() { "ЗЗ", "ЗЗЗ" })
+        );
+        /// Corvax-Localization-End
         
         args.Message = message;
     }
