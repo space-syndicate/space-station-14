@@ -6,7 +6,6 @@ namespace Content.Server.Speech.EntitySystems;
 
 public sealed class MothAccentSystem : EntitySystem
 {
-
     [Dependency] private readonly IRobustRandom _random = default!; // Corvax-Localization
     
     public override void Initialize()
