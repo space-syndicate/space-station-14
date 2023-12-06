@@ -1,15 +1,16 @@
 - type: dataset
   id: NamesFirstMilitaryLeader
   values:
-  - Colonel
-  - Commander
-  - Lieutenant
-  - Major
+  - Коммандер
+  - Полковник
+  - Майор
+  - Лейтенант
   
 - type: dataset
   id: NamesFirstMilitary
   values:
-  - Corporal
-  - Sergeant
-  - Specialist
-  
+  - Прапорщик
+  - Старшина
+  - Сержант
+  - Капрал
+  - Ефрейтор
