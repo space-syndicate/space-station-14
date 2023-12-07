@@ -107,5 +107,5 @@ ent-SeniorOfficerPDA = КПК инструктора СБ
     .desc = Побит, помят, поломан, практически не пригоден для использования.
 ent-PiratePDA = КПК пирата
     .desc = Йарр!
-ent-SyndiAgentPDA = syndicate agent PDA
-    .desc = For those days when healing normal syndicates aren't enough, try healing nuclear operatives instead!
+ent-SyndiAgentPDA = КПК агента Синдиката
+    .desc = Когда лечения простых агентов Синдикатов недостаточно, займитесь лучением Ядерных оперативников!
