@@ -41,6 +41,7 @@ marking-HumanHairClassicAfro = Классическая Афро
 marking-HumanHairClassicBigAfro = Классическая Афро (Большая)
 marking-HumanHairClassicBusiness = Классическая Деловая
 marking-HumanHairClassicCia = Классическая ЦРУ
+marking-HumanHairClassicCornrows2 = Classic Cornrows 2
 marking-HumanHairClassicFloorlengthBedhead = Классическая Небрежная (До пола)
 marking-HumanHairClassicModern = Классическая Современная
 marking-HumanHairClassicMulder = Классическая Малдер

@@ -8,3 +8,5 @@ ent-Mattress = mattress
     .desc = Better sleep in that then on the floor i guess.
 ent-WebBed = web bed
     .desc = You got webbed.
+ent-PsychBed = psychologist bed
+    .desc = An upholstered bed for the psychological care of patients.
