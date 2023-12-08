@@ -3,6 +3,5 @@ ent-MobNarsieBase = Nar'Sie
 ent-MobNarsieSpawn = { ent-MobNarsieBase }
     .suffix = Spawn
     .desc = { ent-MobNarsieBase.desc }
-ent-MobNarsie = { ent-['MobNarsieBase', 'BaseMob'] }
-
-  .desc = { ent-['MobNarsieBase', 'BaseMob'].desc }
+ent-MobNarsie = { ent-MobNarsieBase }
+  .desc = { ent-MobNarsieBase.desc }
