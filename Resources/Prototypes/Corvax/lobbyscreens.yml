@@ -1,4 +1,4 @@
-﻿- type: lobbyBackground
+- type: lobbyBackground
   id: BarLife
   background: /Textures/Corvax/LobbyScreens/bar-life.png
 
@@ -121,3 +121,7 @@
 - type: lobbyBackground
   id: SingulordCage
   background: /Textures/Corvax/LobbyScreens/singulord-cage.png
+
+- type: lobbyBackground
+  id: YouLookLonely
+  background: /Textures/Corvax/LobbyScreens/you-look-lonely.png
