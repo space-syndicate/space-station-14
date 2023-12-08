@@ -8,3 +8,5 @@ ent-Mattress = матрас
     .desc = Лучше спать на нём, чем на полу, я полагаю.
 ent-WebBed = паутинная кровать
     .desc = Не оторваться.
+ent-PsychBed = psychologist bed
+    .desc = An upholstered bed for the psychological care of patients.
