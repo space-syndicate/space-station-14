@@ -1,6 +1,6 @@
 ﻿using System.Text.RegularExpressions;
 using Content.Server.Speech.Components;
-using Robust.Shared.Random; // Corvax-Localization
+using Robust.Shared.Random;
 
 namespace Content.Server.Speech.EntitySystems;
 
@@ -48,7 +48,7 @@ public sealed class MothAccentSystem : EntitySystem
             "З+",
             _random.Pick(new List<string>() { "ЗЗ", "ЗЗЗ" })
         );
-        /// Corvax-Localization-End
+        // Corvax-Localization-End
         
         args.Message = message;
     }
