@@ -15,7 +15,7 @@ barsign-prototype-description-singulo = Куда приходят люди, ко
 
 ## The Drunk Carp
 
-barsign-prototype-name-drunk-carp = Пьяный карп
+barsign-prototype-name-drunk-carp = Бухой карп
 barsign-prototype-description-drunk-carp = Не пейте плавая.
 
 ## Officer Beersky
