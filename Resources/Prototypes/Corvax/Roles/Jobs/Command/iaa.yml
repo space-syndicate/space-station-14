@@ -3,22 +3,23 @@
   name: job-name-iaa
   playTimeTracker: JobIAA
   requirements:
-    - !type:DepartmentTimeRequirement
-      department: Command
-      time: 72000
-    - !type:DepartmentTimeRequirement
-      department: Security
-      time: 36000
+  - !type:DepartmentTimeRequirement
+    department: Command
+    time: 72000
+  - !type:DepartmentTimeRequirement
+    department: Security
+    time: 36000
   startingGear: IAAGear
   icon: "JobIconIAA"
   supervisors: job-supervisors-centcom
   canBeAntag: false
   access:
-    - Service
-    - Brig
-    - Maintenance
-    - Command
-    - External
+  - Service
+  - Brig
+  - Maintenance
+  - Command
+  - External
+  - Lawyer
   special:
   - !type:AddImplantSpecial
     implants: [ MindShieldImplant ]
@@ -33,6 +34,8 @@
     eyes: ClothingEyesGlassesSunglasses
     ears: ClothingHeadsetIAA
     neck: ClothingNeckLawyerbadge
+  inhand:
+    - BriefcaseIAAFilled
   innerClothingSkirt: ClothingUniformJumpskirtLawyerBlack
   satchel: ClothingBackpackSatchelIAAFilled
   duffelbag: ClothingBackpackDuffelIAAFilled

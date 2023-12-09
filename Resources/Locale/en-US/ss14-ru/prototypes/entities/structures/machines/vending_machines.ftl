@@ -148,3 +148,5 @@ ent-VendingMachineTankDispenserEngineering = Gas Tank Dispenser
     .suffix = ENG [O2, Plasma]
 ent-VendingMachineChemicals = ChemVend
     .desc = Probably not the coffee machine.
+ent-VendingMachineChemicalsSyndicate = SyndieJuice
+    .desc = Not made with freshly squeezed syndies I hope.

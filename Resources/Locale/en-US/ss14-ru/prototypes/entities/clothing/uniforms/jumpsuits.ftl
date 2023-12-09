@@ -1,4 +1,4 @@
-ent-ClothingUniformJumpsuitDeathSquad = Death squad uniform
+ent-ClothingUniformJumpsuitDeathSquad = death squad uniform
     .desc = Advanced armored jumpsuit used by special forces in special operations.
 ent-ClothingUniformJumpsuitAncient = ancient jumpsuit
     .desc = A terribly ragged and frayed grey jumpsuit. It looks like it hasn't been washed in over a decade.
@@ -34,6 +34,8 @@ ent-ClothingUniformJumpsuitGenetics = genetics jumpsuit
     .desc = It's made of a special fiber that gives special protection against biohazards. It has a geneticist rank stripe on it.
 ent-ClothingUniformJumpsuitClown = clown suit
     .desc = HONK!
+ent-ClothingUniformJumpsuitClownBanana = banana clown suit
+    .desc = { ent-ClothingUniformJumpsuitClown.desc }
 ent-ClothingUniformJumpsuitJester = jester suit
     .desc = A jolly dress, well suited to entertain your master, nuncle.
 ent-ClothingUniformJumpsuitJesterAlt = { ent-ClothingUniformJumpsuitJester }

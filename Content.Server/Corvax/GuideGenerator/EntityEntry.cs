@@ -1,4 +1,3 @@
-using System.Linq;
 using System.Text.Json.Serialization;
 using Robust.Shared.Prototypes;
 
@@ -18,18 +17,7 @@ public sealed class EntityEntry
     public EntityEntry(EntityPrototype proto)
     {
         Id = proto.ID;
-        if (proto.Name.Length > 1)
-        {
-            Name = char.ToUpper(proto.Name[0]) + proto.Name.Remove(0, 1);
-        }
-        else if (proto.Name.Length == 1)
-        {
-            Name = char.ToUpper(proto.Name[0]).ToString(); // xD
-        }
-        else
-        {
-            Name = proto.Name;
-        }
+        Name = TextTools.TextTools.CapitalizeString(proto.Name); // Corvax-Wiki
         Description = proto.Description;
     }
 }

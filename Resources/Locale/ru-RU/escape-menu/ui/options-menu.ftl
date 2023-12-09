@@ -26,8 +26,12 @@ ui-options-volume-percent = { TOSTRING($volume, "P0") }
 
 ## Graphics menu
 
-ui-options-show-held-item = Показать удерживаемый элемент рядом с курсором?
-ui-options-show-combat-mode-indicators = Показать индикатор боевого режима рядом с курсором?
+ui-options-show-held-item = Показать удерживаемый элемент рядом с курсором
+ui-options-show-combat-mode-indicators = Показать индикатор боевого режима рядом с курсором
+ui-options-opaque-storage-window = Включить непрозрачность окна хранилища
+ui-options-show-looc-on-head = Показывать LOOC-чат над головами персонажей
+ui-options-fancy-speech = Показывать имена в облачках с текстом
+ui-options-fancy-name-background = Добавить фон облачкам с текстом
 ui-options-vsync = Вертикальная синхронизация
 ui-options-fullscreen = Полный экран
 ui-options-lighting-label = Качество освещения:
@@ -103,6 +107,9 @@ ui-options-function-alt-activate-item-in-world = Альтернативно ис
 ui-options-function-drop = Положить предмет
 ui-options-function-examine-entity = Осмотреть
 ui-options-function-swap-hands = Поменять руки
+ui-options-function-move-stored-item = Переместить хранящийся объект
+ui-options-function-rotate-stored-item = Повернуть хранящийся объект
+ui-options-static-storage-ui = Статичный интерфейс хранилища
 ui-options-function-smart-equip-backpack = Умная экипировка в рюкзак
 ui-options-function-smart-equip-belt = Умная экипировка на пояс
 ui-options-function-throw-item-in-hand = Бросить предмет
@@ -140,6 +147,7 @@ ui-options-function-show-escape-menu = Переключить игровое м�
 ui-options-function-escape-context = Закрыть текущее окно или переключить игровое меню
 ui-options-function-take-screenshot = Сделать скриншот
 ui-options-function-take-screenshot-no-ui = Сделать скриншот (без интерфейса)
+ui-options-function-toggle-fullscreen = Переключить полноэкранный режим
 ui-options-function-editor-place-object = Разместить объект
 ui-options-function-editor-cancel-place = Отменить размещение
 ui-options-function-editor-grid-place = Размещать в сетке

@@ -1,0 +1,19 @@
+﻿- type: entity
+  id: SpawnPointEvilTwin
+  name: evil twin spawn point
+  parent: MarkerBase
+  components:
+    - type: EvilTwinSpawner
+    - type: GhostRole
+      name: Злой двойник
+      description: Вы - злой двойник какой-то другой персоны.
+      rules: |
+        Старайтесь действовать скрытно, никто не должен прознать о подмене!
+        Действуйте от лица вашего оригинала, хитрите, подставляйте, запутывайте.
+    - type: GhostTakeoverAvailable
+    - type: Sprite
+      sprite: Markers/jobs.rsi
+      layers:
+        - state: green
+        - sprite: Mobs/Ghosts/ghost_human.rsi
+          state: icon

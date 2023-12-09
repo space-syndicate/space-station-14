@@ -34,7 +34,7 @@ public sealed class ReagentEntry
     public ReagentEntry(ReagentPrototype proto)
     {
         Id = proto.ID;
-        Name = proto.LocalizedName;
+        Name = TextTools.TextTools.CapitalizeString(proto.LocalizedName); // Corvax-Wiki
         Group = proto.Group;
         Description = proto.LocalizedDescription;
         PhysicalDescription = proto.LocalizedPhysicalDescription;
@@ -63,7 +63,7 @@ public sealed class ReactionEntry
     public ReactionEntry(ReactionPrototype proto)
     {
         Id = proto.ID;
-        Name = proto.Name;
+        Name = TextTools.TextTools.CapitalizeString(proto.Name); // Corvax-Wiki
         Reactants =
             proto.Reactants
                 .Select(x => KeyValuePair.Create(x.Key, new ReactantEntry(x.Value.Amount.Float(), x.Value.Catalyst)))
