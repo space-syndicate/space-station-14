@@ -10,5 +10,5 @@ crew-monitoring-user-interface-dead = Мёртв
 crew-monitoring-user-interface-no-info = Н/Д
 crew-monitoring-user-interface-no-server = Сервер не найден
 crew-monitoring-user-interface-no-department = Неизвестно
-crew-monitoring-user-interface-flavor-left =  В случае экстренной ситуации, немедленно свяжитесь с мед. персоналом станции.
+crew-monitoring-user-interface-flavor-left = В случае экстренной ситуации, немедленно свяжитесь с мед. персоналом станции.
 crew-monitoring-user-interface-flavor-right = v1.7
