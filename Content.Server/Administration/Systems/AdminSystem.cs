@@ -12,6 +12,7 @@ using Content.Server.StationRecords.Systems;
 using Content.Shared.Administration;
 using Content.Shared.Administration.Events;
 using Content.Shared.CCVar;
+using Content.Shared.Corvax.CCCVars;
 using Content.Shared.GameTicking;
 using Content.Shared.Hands.Components;
 using Content.Shared.IdentityManagement;
@@ -26,6 +27,7 @@ using Content.Shared.Throwing;
 using Robust.Server.GameObjects;
 using Robust.Server.Player;
 using Robust.Shared.Audio;
+using Robust.Shared.Audio.Systems;
 using Robust.Shared.Configuration;
 using Robust.Shared.Enums;
 using Robust.Shared.Network;
@@ -39,7 +41,6 @@ namespace Content.Server.Administration.Systems
         [Dependency] private readonly IChatManager _chat = default!;
         [Dependency] private readonly IConfigurationManager _config = default!;
         [Dependency] private readonly IPlayerManager _playerManager = default!;
-        [Dependency] private readonly AudioSystem _audio = default!;
         [Dependency] private readonly HandsSystem _hands = default!;
         [Dependency] private readonly SharedJobSystem _jobs = default!;
         [Dependency] private readonly InventorySystem _inventory = default!;
@@ -49,6 +50,7 @@ namespace Content.Server.Administration.Systems
         [Dependency] private readonly PlayTimeTrackingManager _playTime = default!;
         [Dependency] private readonly SharedRoleSystem _role = default!;
         [Dependency] private readonly GameTicker _gameTicker = default!;
+        [Dependency] private readonly SharedAudioSystem _audio = default!;
         [Dependency] private readonly StationRecordsSystem _stationRecords = default!;
         [Dependency] private readonly TransformSystem _transform = default!;
 
@@ -76,6 +78,7 @@ namespace Content.Server.Administration.Systems
             _config.OnValueChanged(CCVars.PanicBunkerShowReason, OnShowReasonChanged, true);
             _config.OnValueChanged(CCVars.PanicBunkerMinAccountAge, OnPanicBunkerMinAccountAgeChanged, true);
             _config.OnValueChanged(CCVars.PanicBunkerMinOverallHours, OnPanicBunkerMinOverallHoursChanged, true);
+            _config.OnValueChanged(CCCVars.PanicBunkerDenyVPN, OnPanicBunkerDenyVpnChanged, true); // Corvax-VPNGuard
 
             SubscribeLocalEvent<IdentityChangedEvent>(OnIdentityChanged);
             SubscribeLocalEvent<PlayerAttachedEvent>(OnPlayerAttached);
@@ -292,6 +295,14 @@ namespace Content.Server.Administration.Systems
             SendPanicBunkerStatusAll();
         }
 
+        // Corvax-VPNGuard-Start
+        private void OnPanicBunkerDenyVpnChanged(bool deny)
+        {
+            _panicBunker.DenyVpn = deny;
+            SendPanicBunkerStatusAll();
+        }
+        // Corvax-VPNGuard-End
+
         private void UpdatePanicBunker()
         {
             var admins = _panicBunker.CountDeadminnedAdmins
@@ -340,7 +351,7 @@ namespace Content.Server.Administration.Systems
                     _popup.PopupCoordinates(Loc.GetString("admin-erase-popup", ("user", name)), coordinates, PopupType.LargeCaution);
                     var filter = Filter.Pvs(coordinates, 1, EntityManager, _playerManager);
                     var audioParams = new AudioParams().WithVolume(3);
-                    _audio.Play("/Audio/Effects/pop_high.ogg", filter, coordinates, true, audioParams);
+                    _audio.PlayStatic("/Audio/Effects/pop_high.ogg", filter, coordinates, true, audioParams);
                 }
 
                 foreach (var item in _inventory.GetHandOrInventoryEntities(entity.Value))
@@ -367,15 +378,12 @@ namespace Content.Server.Administration.Systems
                     }
                 }
 
-                if (TryComp(entity.Value, out InventoryComponent? inventory) &&
-                    _inventory.TryGetSlots(entity.Value, out var slots, inventory))
+                if (_inventory.TryGetContainerSlotEnumerator(entity.Value, out var enumerator))
                 {
-                    foreach (var slot in slots)
+                    while (enumerator.NextItem(out var item, out var slot))
                     {
-                        if (_inventory.TryUnequip(entity.Value, entity.Value, slot.Name, out var item, true, true))
-                        {
-                            _physics.ApplyAngularImpulse(item.Value, ThrowingSystem.ThrowAngularImpulse);
-                        }
+                        if (_inventory.TryUnequip(entity.Value, entity.Value, slot.Name, true, true))
+                            _physics.ApplyAngularImpulse(item, ThrowingSystem.ThrowAngularImpulse);
                     }
                 }
 

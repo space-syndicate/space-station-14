@@ -60,4 +60,4 @@ ent-ClothingOuterHardsuitDeathsquad = death squad hardsuit
 ent-ClothingOuterHardsuitCBURN = CBURN exosuit
     .desc = A lightweight yet strong exosuit used for special cleanup operations.
 ent-ClothingOuterHardsuitClown = clown hardsuit
-    .desc = A custom made clown hardsuit.
+    .desc = A custom-made clown hardsuit.

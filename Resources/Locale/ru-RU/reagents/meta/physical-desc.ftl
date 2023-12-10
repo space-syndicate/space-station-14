@@ -89,3 +89,4 @@ reagent-physical-desc-energizing = заряжающее энергией
 reagent-physical-desc-exhilarating = бодрящее
 reagent-physical-desc-vibrant = вибрирующее
 reagent-physical-desc-fluffy = пушистое
+reagent-physical-desc-reflective = светоотражающее

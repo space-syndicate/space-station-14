@@ -15,8 +15,8 @@ marking-CyberlimbRHandHephaestus = Протез, кисть правой рук�
 marking-CyberlimbLHandHephaestus = Протез, кисть левой руки (Гефест)
 marking-CyberlimbRLegHephaestus = Протез, правая нога (Гефест)
 marking-CyberlimbLLegHephaestus = Протез, левая нога (Гефест)
-marking-CyberlimbLFootHephaestus = Протез, правая стопа (Гефест)
-marking-CyberlimbRFootHephaestus = Протез, левая стопа (Гефест)
+marking-CyberlimbRFootHephaestus = Протез, правая стопа (Гефест)
+marking-CyberlimbLFootHephaestus = Протез, левая стопа (Гефест)
 marking-CyberlimbTorsoHephaestus = Протез, туловище (Гефест)
 # Hephaestus Titan
 marking-CyberlimbRArmHephaestusTitan = Протез, правая рука (Гефест Титан)
