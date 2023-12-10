@@ -1,7 +1,7 @@
 ent-MachineAnomalyVessel = сосуд аномалии
     .desc = Контейнер, способный проводить сканирование аномалии и превращать её в очки исследований.
-ent-MachineAnomalyVesselExperimental = experimental anomaly vessel
-    .desc = An advanced anomaly vessel capable of greater research potential at the cost of increased volatility and low-level radioactive decay into the environment.
+ent-MachineAnomalyVesselExperimental = экспериментальный сосуд аномалии
+    .desc = Усовершенствованный сосуд аномалии, обладающий большим исследовательским потенциалом за счёт повышенной летучести и низкоуровневого радиоактивного распада в окружающую среду.
 ent-MachineAPE = М.А.К.А.К.
     .desc = Мобильный Аномальный Кинетический Акселератор - эмиттер, способный излучать нестабильные частицы, которые взаимодействуют с аномалиями.
 ent-MachineAnomalyGenerator = генератор аномалий
