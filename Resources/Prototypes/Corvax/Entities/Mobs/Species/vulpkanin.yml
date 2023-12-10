@@ -31,8 +31,9 @@
     requiredLegs: 2
   - type: Inventory
     speciesId: digi
-  - type: Eye
-    zoom: "1.125, 1.125"
+  - type: ContentEye
+    targetZoom: "1.125, 1.125"
+    maxZoom: "1.125, 1.125"
   - type: GrowlingAccent
   - type: MeleeWeapon
     animation: WeaponArcClaw
