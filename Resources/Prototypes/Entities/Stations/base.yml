@@ -46,7 +46,7 @@
     - type: GridSpawn
       paths:
         - /Maps/Shuttles/cargo.yml
-        - /Maps/Shuttles/mining.yml
+        - /Maps/Shuttles/corvax_mining.yml # Corvax-Mapping
 
 - type: entity
   id: BaseStationCentcomm
