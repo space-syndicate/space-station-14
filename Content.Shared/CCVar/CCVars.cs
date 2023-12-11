@@ -540,6 +540,16 @@ namespace Content.Shared.CCVar
         public static readonly CVarDef<int> DatabasePgConcurrency =
             CVarDef.Create("database.pg_concurrency", 8, CVar.SERVERONLY);
 
+        /// <summary>
+        /// Milliseconds to asynchronously delay all PostgreSQL database operations with.
+        /// </summary>
+        /// <remarks>
+        /// This is intended for performance testing. It works different from <see cref="DatabaseSqliteDelay"/>,
+        /// as the lag is applied after acquiring the database lock.
+        /// </remarks>
+        public static readonly CVarDef<int> DatabasePgFakeLag =
+            CVarDef.Create("database.pg_fake_lag", 0, CVar.SERVERONLY);
+
         // Basically only exists for integration tests to avoid race conditions.
         public static readonly CVarDef<bool> DatabaseSynchronous =
             CVarDef.Create("database.sync", false, CVar.SERVERONLY);
@@ -1235,6 +1245,12 @@ namespace Content.Shared.CCVar
         /// </summary>
         public static readonly CVarDef<bool> CameraRotationLocked =
             CVarDef.Create("shuttle.camera_rotation_locked", false, CVar.REPLICATED);
+
+        /// <summary>
+        /// Whether the arrivals terminal should be on a planet map.
+        /// </summary>
+        public static readonly CVarDef<bool> ArrivalsPlanet =
+            CVarDef.Create("shuttle.arrivals_planet", true, CVar.SERVERONLY);
 
         /// <summary>
         /// Whether the arrivals shuttle is enabled.
