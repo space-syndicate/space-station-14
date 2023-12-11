@@ -53,7 +53,7 @@ public sealed class SliceRecipeEntry
         if (proto.Components.TryGetComponent("SliceableFood", out var comp))
         {
             var sliceable = (SliceableFoodComponent) comp;
-            Result = sliceable.Slice;
+            Result = sliceable.Slice ?? "";
             Count = sliceable.TotalCount;
         }
         else // just in case something will go wrong and we somehow will not get our component
