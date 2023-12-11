@@ -4,3 +4,5 @@ ent-GeigerCounterClothing = { "" }
     .desc = { "" }
 ent-ClothingSlotBase = { "" }
     .desc = { "" }
+ent-ContentsExplosionResistanceBase = { "" }
+    .desc = { "" }

@@ -25,3 +25,5 @@ ent-CrateJanitorBiosuit = { ent-CratePlastic }
 ent-CrateTrashCartFilled = { ent-CrateTrashCart }
     .suffix = Filled
     .desc = { ent-CrateTrashCart.desc }
+ent-CrateJanitorExplosive = { ent-ClosetJanitorBomb }
+    .desc = { ent-ClosetJanitorBomb.desc }
