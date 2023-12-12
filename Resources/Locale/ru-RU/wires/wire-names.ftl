@@ -6,6 +6,7 @@ wires-board-name-thermomachine = Термомашина
 wires-board-name-pa = Ускоритель частиц Mk2
 wires-board-name-highsec = Управление бронедверью
 wires-board-name-vessel = Сосуд
+wires-board-name-crusher = Crusher
 wires-board-name-smes = СМЭС
 wires-board-name-substation = Подстанция
 wires-board-name-apc = ЛКП
