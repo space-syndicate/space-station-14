@@ -5,7 +5,6 @@ using Content.Shared.GameWindow;
 using Content.Shared.Players;
 using Content.Shared.Preferences;
 using JetBrains.Annotations;
-using Robust.Server.GameObjects;
 using Robust.Server.Player;
 using Robust.Shared.Enums;
 using Robust.Shared.Player;
@@ -19,7 +18,6 @@ namespace Content.Server.GameTicking
     {
         [Dependency] private readonly IPlayerManager _playerManager = default!;
         [Dependency] private readonly IServerDbManager _dbManager = default!;
-        [Dependency] private readonly ActorSystem _actor = default!;
 
         private void InitializePlayer()
         {
@@ -35,7 +33,7 @@ namespace Content.Server.GameTicking
                 if (args.NewStatus != SessionStatus.Disconnected)
                 {
                     mind.Session = session;
-                    _pvsOverride.AddSessionOverride(mindId.Value, session);
+                    _pvsOverride.AddSessionOverride(GetNetEntity(mindId.Value), session);
                 }
 
                 DebugTools.Assert(mind.Session == session);
@@ -106,7 +104,7 @@ namespace Content.Server.GameTicking
                     }
                     else
                     {
-                        if (_actor.Attach(mind.CurrentEntity, session))
+                        if (_playerManager.SetAttachedEntity(session, mind.CurrentEntity))
                         {
                             PlayerJoinGame(session);
                         }
@@ -126,7 +124,7 @@ namespace Content.Server.GameTicking
                     _chatManager.SendAdminAnnouncement(Loc.GetString("player-leave-message", ("name", args.Session.Name)));
                     if (mind != null)
                     {
-                        _pvsOverride.ClearOverride(mindId!.Value);
+                        _pvsOverride.ClearOverride(GetNetEntity(mindId!.Value));
                         mind.Session = null;
                     }
 
@@ -160,7 +158,7 @@ namespace Content.Server.GameTicking
             }
         }
 
-        private HumanoidCharacterProfile GetPlayerProfile(ICommonSession p)
+        public HumanoidCharacterProfile GetPlayerProfile(ICommonSession p)
         {
             return (HumanoidCharacterProfile) _prefsManager.GetPreferences(p.UserId).SelectedCharacter;
         }

@@ -1,5 +1,8 @@
 ent-ClothingOuterSuitBomb = сапёрный костюм
     .desc = Тяжелый костюм, предназначенный для защиты от осколков и давления, создаваемого взрывом.
+ent-ClothingOuterSuitJanitorBomb = janitorial bomb suit
+    .desc = A heavy helmet designed to withstand explosions formed from reactions between chemicals.
+    .suffix = DO NOT MAP
 ent-ClothingOuterSuitFire = пожарный костюм
     .desc = Костюм, обеспечивающий защиту от опасных температур.
 ent-ClothingOuterSuitAtmosFire = атмос-пожарный костюм

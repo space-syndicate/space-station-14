@@ -11,6 +11,7 @@ using Content.Server.Station.Systems;
 using Content.Shared.Database;
 using Content.Shared.GameTicking;
 using Robust.Shared.Audio;
+using Robust.Shared.Audio.Systems;
 using Robust.Shared.Configuration;
 using Robust.Shared.Player;
 using Robust.Shared.Prototypes;
@@ -33,6 +34,7 @@ namespace Content.Server.RoundEnd
         [Dependency] private readonly ChatSystem _chatSystem = default!;
         [Dependency] private readonly GameTicker _gameTicker = default!;
         [Dependency] private readonly EmergencyShuttleSystem _shuttle = default!;
+        [Dependency] private readonly SharedAudioSystem _audio = default!;
         [Dependency] private readonly StationSystem _stationSystem = default!;
 
         public TimeSpan DefaultCooldownDuration { get; set; } = TimeSpan.FromSeconds(30);
@@ -154,8 +156,8 @@ namespace Content.Server.RoundEnd
                 null,
                 Color.Gold);
 
-            if (!AutoCalledBefore) SoundSystem.Play("/Audio/Announcements/shuttlecalled.ogg", Filter.Broadcast(), AudioParams.Default.AddVolume(-4)); // Corvax-Announcements: Custom sound for auto-called
-            else SoundSystem.Play("/Audio/Corvax/Announcements/crew_s_called.ogg", Filter.Broadcast(), AudioParams.Default.AddVolume(-4)); // Corvax-Announcements
+            if (!AutoCalledBefore) _audio.PlayGlobal("/Audio/Announcements/shuttlecalled.ogg", Filter.Broadcast(), true, AudioParams.Default.AddVolume(-4)); // Corvax-Announcements: Custom sound for auto-called
+            else _audio.PlayGlobal("/Audio/Corvax/Announcements/crew_s_called.ogg", Filter.Broadcast(), true, AudioParams.Default.AddVolume(-4)); // Corvax-Announcements
 
             LastCountdownStart = _gameTiming.CurTime;
             ExpectedCountdownEnd = _gameTiming.CurTime + countdownTime;
@@ -186,7 +188,7 @@ namespace Content.Server.RoundEnd
             _chatSystem.DispatchGlobalAnnouncement(Loc.GetString("round-end-system-shuttle-recalled-announcement"),
                 Loc.GetString("Station"), false, colorOverride: Color.Gold);
 
-            SoundSystem.Play("/Audio/Announcements/shuttlerecalled.ogg", Filter.Broadcast(), AudioParams.Default.AddVolume(-4)); // Corvax-Announcements: Decrease volume
+            _audio.PlayGlobal("/Audio/Announcements/shuttlerecalled.ogg", Filter.Broadcast(), true, AudioParams.Default.AddVolume(-4)); // Corvax-Announcements: Decrease volume
 
             LastCountdownStart = null;
             ExpectedCountdownEnd = null;
