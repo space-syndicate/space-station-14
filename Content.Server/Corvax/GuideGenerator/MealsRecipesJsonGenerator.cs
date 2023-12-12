@@ -11,7 +11,7 @@ using Content.Server.Chemistry.ReactionEffects;
 
 namespace Content.Server.GuideGenerator;
 
-public sealed class MicrowaveMealRecipeJsonGenerator
+public sealed class MealsRecipesJsonGenerator
 {
     public static void PublishJson(StreamWriter file)
     {
