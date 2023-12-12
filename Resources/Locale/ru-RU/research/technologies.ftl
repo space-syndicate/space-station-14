@@ -39,7 +39,6 @@ research-technology-concentrated-laser-weaponry = Концентрированн
 research-technology-wave-particle-harnessing = Применение волновых частиц
 research-technology-advanced-riot-control = Продвинутое противодействие беспорядкам
 research-technology-portable-microfusion-weaponry = Оруженый портативный микросинтез
-research-technology-handheld-electrical-propulsion = Ручные электродвигатели
 research-technology-basic-robotics = Основы робототехники
 research-technology-basic-anomalous-research = Основы исследования аномалий
 research-technology-basic-xenoarcheology = Основы ксеноархеологии
