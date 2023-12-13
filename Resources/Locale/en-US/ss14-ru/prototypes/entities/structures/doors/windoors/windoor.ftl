@@ -83,6 +83,3 @@ ent-WindoorSecureHeadOfPersonnelLocked = { ent-WindoorSecure }
 ent-WindoorSecureAtmosphericsLocked = { ent-WindoorSecure }
     .suffix = Atmospherics, Locked
     .desc = { ent-WindoorSecure.desc }
-ent-WindoorSecureParamedicLocked = { ent-WindoorSecure }
-    .suffix = Paramedic, Locked
-    .desc = { ent-WindoorSecure.desc }

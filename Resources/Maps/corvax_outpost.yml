@@ -102365,14 +102365,6 @@ entities:
       pos: 8.5,-28.5
       parent: 2
       type: Transform
-- proto: WindoorSecureParamedicLocked
-  entities:
-  - uid: 1222
-    components:
-    - rot: -1.5707963267948966 rad
-      pos: 8.5,-19.5
-      parent: 2
-      type: Transform
 - proto: WindoorSecureSalvageLocked
   entities:
   - uid: 8723
