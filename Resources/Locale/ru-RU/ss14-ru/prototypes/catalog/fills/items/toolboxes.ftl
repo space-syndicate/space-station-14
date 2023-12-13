@@ -4,8 +4,9 @@ ent-ToolboxEmergencyFilled = аварийный ящик для инструме
 ent-ToolboxElectricalFilled = электротехнический ящик для инструментов
     .suffix = Заполненный
     .desc = { ent-ToolboxElectrical.desc }
-ent-ToolboxElectricalTurretFilled = электротехнический ящик для инструментов
-    .suffix = Заполненный, Турель
+ent-ToolboxElectricalTurretFilled = электрот
+ехнический ящик для инструментов
+    .suffix = Синдикат, Заполненный, Турель
     .desc = { ent-ToolboxElectricalTurret.desc }
 ent-ToolboxMechanicalFilled = технический ящик для инструментов
     .suffix = Заполненный
