@@ -1,4 +1,4 @@
-marking-ScarEyeRight-eyescarright = Eye scar (Right)
-marking-ScarEyeRight = Eye Scar (Right)
-marking-ScarEyeLeft-eyescarleft = Eye scar (Left)
-marking-ScarEyeLeft = Eye Scar (Left)
+marking-ScarEyeRight-eyescarright = Шрам на глазу (Правый)
+marking-ScarEyeRight = Шрам на глазу (Правый)
+marking-ScarEyeLeft-eyescarleft = Шрам на глазу (Левый)
+marking-ScarEyeLeft = Шрам на глазу (Левый)
