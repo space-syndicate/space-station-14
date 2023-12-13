@@ -9,3 +9,6 @@ ent-WeaponRifleM90GrenadeLauncher = М-90gl
 ent-WeaponRifleLecter = Лектер
     .desc = Первоклассная армейская штурмовая винтовка. Использует патроны калибра .20 винтовочный.
     .suffix = Автомат
+ent-WeaponRifleLecterRubber = Lecter
+    .suffix = Non-lethal
+    .desc = { ent-WeaponRifleLecter.desc }

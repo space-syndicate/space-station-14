@@ -12,3 +12,5 @@ ent-CrateRestraints = { ent-CrateSecgear }
     .desc = { ent-CrateSecgear.desc }
 ent-CrateSecurityBiosuit = { ent-CrateSecgear }
     .desc = { ent-CrateSecgear.desc }
+ent-CrateSecurityTrackingMindshieldImplants = Implanter Crate
+    .desc = { ent-CrateSecgear.desc }
