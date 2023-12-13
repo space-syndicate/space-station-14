@@ -5,18 +5,21 @@ ui-options-tab-graphics = Графика
 ui-options-tab-controls = Управление
 ui-options-tab-audio = Аудио
 ui-options-tab-network = Сеть
-ui-options-tab-misc = General
+ui-options-tab-misc = Основные
 ui-options-apply = Применить
 ui-options-reset-all = Сбросить всё
 ui-options-default = По-умолчанию
 
+# Misc/General menu
+
+ui-options-discordrich = Включить Discord Rich Presence
+ui-options-general-discord = Discord
+ui-options-general-cursor = Курсор
+ui-options-general-speech = Речь
+ui-options-general-storage = Инвентарь
+
 ## Audio menu
 
-ui-options-discordrich = Enable Discord Rich Presence
-ui-options-general-discord = Discord
-ui-options-general-cursor = Cursor
-ui-options-general-speech = Speech
-ui-options-general-storage = Storage
 ui-options-master-volume = Основная громкость:
 ui-options-midi-volume = Громкость MIDI (Муз. инструменты):
 ui-options-ambient-music-volume = Громкость музыки окружения:
