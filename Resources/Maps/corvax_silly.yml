@@ -2962,9 +2962,6 @@ entities:
     - links:
       - 3139
       type: DeviceLinkSink
-    - following:
-      - invalid
-      type: Followed
   - uid: 204
     components:
     - pos: 1.5,3.5
@@ -3974,9 +3971,6 @@ entities:
     - pos: -7.5,-7.5
       parent: 2
       type: Transform
-    - following:
-      - invalid
-      type: Followed
   - uid: 387
     components:
     - pos: -8.5,-7.5
@@ -10330,9 +10324,6 @@ entities:
     - pos: 25.5,-13.5
       parent: 2
       type: Transform
-    - following:
-      - invalid
-      type: Followed
 - proto: ClothingHeadHelmetSyndicate
   entities:
   - uid: 4674
@@ -14177,9 +14168,6 @@ entities:
       type: Transform
     - color: '#FF0000FF'
       type: AtmosPipeColor
-    - following:
-      - invalid
-      type: Followed
 - proto: GasPipeBend
   entities:
   - uid: 1935
@@ -16467,9 +16455,6 @@ entities:
       type: Transform
     - color: '#FF0000FF'
       type: AtmosPipeColor
-    - following:
-      - invalid
-      type: Followed
   - uid: 2226
     components:
     - rot: -1.5707963267948966 rad
@@ -25126,9 +25111,6 @@ entities:
     - pos: 27.5,-9.5
       parent: 2
       type: Transform
-    - following:
-      - invalid
-      type: Followed
 - proto: TwoWayLever
   entities:
   - uid: 3424
