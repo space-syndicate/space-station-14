@@ -1,93 +1,4 @@
 Entries:
-- author: deltanedas
-  changes:
-  - {message: Fixed objectives not being given in some cases., type: Fix}
-  id: 4840
-  time: '2023-09-16T12:10:06.0000000+00:00'
-- author: Flareguy
-  changes:
-  - {message: 'Added several new types of barricades for mappers to use, all using
-      sprites from /vg/station. The regular, full-tile barricade has also received
-      a new sprite from /vg/station.', type: Add}
-  - {message: Barricades are now slightly stronger & cheaper to make., type: Tweak}
-  id: 4841
-  time: '2023-09-16T12:50:48.0000000+00:00'
-- author: DrSmugleaf
-  changes:
-  - {message: Resized the non-admin Ahelp window to be taller and less wide., type: Tweak}
-  id: 4842
-  time: '2023-09-17T09:04:20.0000000+00:00'
-- author: ElectroJr
-  changes:
-  - {message: Fixed light animations not working., type: Fix}
-  id: 4843
-  time: '2023-09-17T17:57:50.0000000+00:00'
-- author: Henry12116
-  changes:
-  - {message: You can now eat most organs. Bon appetit!, type: Add}
-  id: 4844
-  time: '2023-09-18T00:20:11.0000000+00:00'
-- author: DrSmugleaf
-  changes:
-  - {message: Fixed fultons losing their beacon when the stack is split., type: Fix}
-  id: 4845
-  time: '2023-09-18T00:22:26.0000000+00:00'
-- author: Psychpsyo
-  changes:
-  - {message: The advanced mop no longer looks boring when attached to the janitorial
-      trolley., type: Tweak}
-  id: 4846
-  time: '2023-09-18T00:23:35.0000000+00:00'
-- author: lapatison
-  changes:
-  - {message: 'Now you can light matches with certain types (combat, work, merc, explorer)
-      of boots like a cool dude.', type: Add}
-  id: 4847
-  time: '2023-09-18T00:26:21.0000000+00:00'
-- author: JoeHammad
-  changes:
-  - {message: 'security now has access to its own beret, fancy!', type: Add}
-  id: 4848
-  time: '2023-09-18T00:30:31.0000000+00:00'
-- author: peptron1
-  changes:
-  - {message: 'The chaplain hoodie now comes with its hood as an action, similar to
-      winter coats', type: Tweak}
-  id: 4849
-  time: '2023-09-18T01:10:44.0000000+00:00'
-- author: Nairodian
-  changes:
-  - {message: Fixed Holobarriers being unable to be destroyed., type: Fix}
-  id: 4850
-  time: '2023-09-18T01:22:39.0000000+00:00'
-- author: Ilya246
-  changes:
-  - {message: Blood-red magboots' jetpack now works again., type: Fix}
-  id: 4851
-  time: '2023-09-18T06:13:12.0000000+00:00'
-- author: JoeHammad
-  changes:
-  - {message: The syndicate have started using cheaper materials in the manufacture
-      of their over ear headsets, type: Add}
-  id: 4852
-  time: '2023-09-18T19:18:56.0000000+00:00'
-- author: PursuitinAshes
-  changes:
-  - {message: Nanotrasen now properly supplies its captains with appropriate headgear
-      in all of their lockers., type: Fix}
-  id: 4853
-  time: '2023-09-18T19:20:10.0000000+00:00'
-- author: deltanedas
-  changes:
-  - {message: The Syndicate has cracked the binary radio channel's encryption and
-      is offering keys for 4 TC., type: Add}
-  id: 4854
-  time: '2023-09-18T19:20:56.0000000+00:00'
-- author: liltenhead
-  changes:
-  - {message: Increased the amount of barotrauma damage you receive., type: Tweak}
-  id: 4855
-  time: '2023-09-18T19:21:36.0000000+00:00'
 - author: HerCoyote23
   changes:
   - {message: 'The Syndicate has grown tired of losing overconfident "Loud" agents,
@@ -2903,3 +2814,87 @@ Entries:
   - {message: Jar now fills., type: Tweak}
   id: 5340
   time: '2023-12-12T07:54:15.0000000+00:00'
+- author: IProduceWidgets
+  changes:
+  - {message: Cig Cartons are slightly smaller., type: Tweak}
+  id: 5341
+  time: '2023-12-12T07:55:56.0000000+00:00'
+- author: IProduceWidgets
+  changes:
+  - {message: Cigar cases can now hold Small items., type: Tweak}
+  id: 5342
+  time: '2023-12-12T07:56:19.0000000+00:00'
+- author: IProduceWidgets
+  changes:
+  - {message: Pipes now have slightly bigger bowls! (30u), type: Tweak}
+  id: 5343
+  time: '2023-12-12T07:56:44.0000000+00:00'
+- author: IProduceWidgets
+  changes:
+  - {message: Long guns are now actually long., type: Tweak}
+  id: 5344
+  time: '2023-12-12T07:59:43.0000000+00:00'
+- author: IProduceWidgets
+  changes:
+  - {message: syndicate pens now come in suitably sized discarding boxes., type: Tweak}
+  id: 5345
+  time: '2023-12-12T08:01:33.0000000+00:00'
+- author: IProduceWidgets
+  changes:
+  - {message: Mops are now larger!, type: Tweak}
+  - {message: Defibs are now larger!, type: Tweak}
+  id: 5346
+  time: '2023-12-12T08:02:44.0000000+00:00'
+- author: metalgearsloth
+  changes:
+  - {message: 'Fix arrivals fog not actually blocking, no more free roaming.', type: Fix}
+  id: 5347
+  time: '2023-12-12T09:20:33.0000000+00:00'
+- author: themias
+  changes:
+  - {message: Added fill visuals to Hot Chocolate, type: Tweak}
+  id: 5348
+  time: '2023-12-13T00:01:24.0000000+00:00'
+- author: themias
+  changes:
+  - {message: Fixed secret doors not requiring metal rods, type: Fix}
+  id: 5349
+  time: '2023-12-13T00:01:51.0000000+00:00'
+- author: Vasilis
+  changes:
+  - {message: 'Added a General settings tab, and moved a bunch of options into it.',
+    type: Add}
+  - {message: Added the ability to toggle on and off the Discord Rich Presence., type: Add}
+  id: 5350
+  time: '2023-12-13T01:58:20.0000000+00:00'
+- author: Ubaser
+  changes:
+  - {message: RD now has a custom-made lab coat., type: Add}
+  id: 5351
+  time: '2023-12-13T08:51:00.0000000+00:00'
+- author: Ubaser
+  changes:
+  - {message: Some jetpacks can be now worn in more slots., type: Tweak}
+  id: 5352
+  time: '2023-12-13T08:51:09.0000000+00:00'
+- author: Ubaser
+  changes:
+  - {message: Ninjas and Nukies now get new sprites for their pinpointers., type: Add}
+  id: 5353
+  time: '2023-12-13T08:53:05.0000000+00:00'
+- author: Errant
+  changes:
+  - {message: A dying person's Last Words can no longer be sent to radio channels.,
+    type: Fix}
+  id: 5354
+  time: '2023-12-13T21:20:38.0000000+00:00'
+- author: deltanedas
+  changes:
+  - {message: Cybersun and centcom pens can now edit stamped paper., type: Tweak}
+  id: 5355
+  time: '2023-12-13T21:33:32.0000000+00:00'
+- author: Ubaser
+  changes:
+  - {message: Added a new "uneven" hair style., type: Add}
+  id: 5356
+  time: '2023-12-13T21:34:28.0000000+00:00'
