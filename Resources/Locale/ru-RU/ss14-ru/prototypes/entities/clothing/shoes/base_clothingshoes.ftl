@@ -5,4 +5,4 @@ ent-ClothingShoesBaseButcherable = { ent-ClothingShoesBase }
 ent-ClothingShoesMilitaryBase = { ent-ClothingShoesBase }
     .desc = { ent-ClothingShoesBase.desc }
 ent-ClothingShoesBaseWinterBoots = { ent-ClothingShoesBaseButcherable }
-    .desc = Fluffy boots to help survive even the coldest of winters.
+    .desc = Меховые ботинки, которые помогут пережить даже самую холодную зиму.

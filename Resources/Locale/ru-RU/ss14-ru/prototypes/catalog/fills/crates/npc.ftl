@@ -44,5 +44,5 @@ ent-CrateNPCLizard = ящик с ящерицей
     .desc = Ящик, содержащий одну ящерицу.
 ent-CrateNPCKangaroo = ящик с кенгуру
     .desc = Ящик, содержащий одного кенгуру.
-ent-CrateNPCMothroach = { ent-CrateLivestock }
-    .desc = { ent-CrateLivestock.desc }
+ent-CrateNPCMothroach = ящик таракамолей
+    .desc = Ящик, содержащий шесть таракамолей.
