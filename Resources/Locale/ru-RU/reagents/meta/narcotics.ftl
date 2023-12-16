@@ -24,3 +24,5 @@ reagent-name-mute-toxin = токсин немоты
 reagent-desc-mute-toxin = Густой препарат, воздействующий на голосовые связки и лишающий пользователя возможности говорить пока усваивается организмом.
 reagent-name-norepinephric-acid = норэпинефриновая кислота
 reagent-desc-norepinephric-acid = Мягкое химическое вещество, которое блокирует оптические рецепторы, делая употребившего слепым пока усваивается организмом.
+reagent-name-tear-gas = tear gas
+reagent-desc-tear-gas = A chemical that causes severe irritation and crying, commonly used in riot control.

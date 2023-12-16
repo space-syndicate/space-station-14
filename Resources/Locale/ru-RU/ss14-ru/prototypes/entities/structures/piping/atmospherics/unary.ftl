@@ -20,3 +20,5 @@ ent-GasThermoMachineHeater = нагреватель
 ent-GasThermoMachineHeaterEnabled = { ent-GasThermoMachineHeater }
     .suffix = Включено
     .desc = { ent-GasThermoMachineHeater.desc }
+ent-BaseGasCondenser = condenser
+    .desc = Condenses gases into liquids. Now we just need some plumbing.
