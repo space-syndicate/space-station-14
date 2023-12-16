@@ -20,3 +20,7 @@ ent-EmpGrenade = ЭМИ граната
     .desc = Граната, предназначенная для поражения электрических систем.
 ent-HolyHandGrenade = святая граната
     .desc = Благослови, Господи, свою ручную гранату, каковою можешь Ты в своей милости разносить врагов Твоих на маленькие кусочки.
+ent-SmokeGrenade = smoke grenade
+    .desc = A tactical grenade that releases a large, long-lasting cloud of smoke when used.
+ent-TearGasGrenade = tear gas grenade
+    .desc = A riot control tear gas grenade. Causes irritation, pain and makes you cry your eyes out.

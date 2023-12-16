@@ -76,3 +76,5 @@ reagent-name-puncturase = пунктураз
 reagent-desc-puncturase = Шипучее химическое вещество, залечивающее колотые ранения, ценой небольшого количества ушибов.
 reagent-name-bruizine = бруизин
 reagent-desc-bruizine = Изначально разрабатывавшееся как лекарство от кашля, это химическое вещество оказалось необычайно эффективным при лечении размозженных ран.
+reagent-name-holywater = holy water
+reagent-desc-holywater = The cleanest and purest of waters straight from the hands of god, is known to magically heal wounds.
