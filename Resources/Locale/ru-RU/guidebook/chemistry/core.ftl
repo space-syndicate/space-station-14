@@ -22,7 +22,7 @@ guidebook-reagent-recipes-mix-info =
        *[other]
             { $verb } { $hasMax ->
                 [true] между { $minTemp }K и { $maxTemp }K
-               *[false] выше{ $minTemp }K
+               *[false] выше { $minTemp }K
             }
     }
 guidebook-reagent-physical-description = [italic]На вид вещество { $description }.[/italic].
