@@ -16,13 +16,13 @@ guidebook-reagent-recipes-mix-info =
     { $minTemp ->
         [0]
             { $hasMax ->
-                [true] { $verb } below { $maxTemp }K
+                [true] { $verb } ниже { $maxTemp }K
                *[false] { $verb }
             }
        *[other]
             { $verb } { $hasMax ->
-                [true] between { $minTemp }K and { $maxTemp }K
-               *[false] above { $minTemp }K
+                [true] между { $minTemp }K и { $maxTemp }K
+               *[false] между { $minTemp }K
             }
     }
 guidebook-reagent-physical-description = На вид вещество { $description }.

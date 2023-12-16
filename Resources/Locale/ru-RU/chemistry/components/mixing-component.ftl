@@ -1,7 +1,7 @@
 # Types
-mixing-verb-centrifuge = centrifugation
-mixing-verb-electrolysis = electrolyze
-mixing-verb-holy = bless
+mixing-verb-centrifuge = центрифугирование
+mixing-verb-electrolysis = электролиз
+mixing-verb-holy = благословение
 
 ## Entity
 
