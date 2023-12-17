@@ -186,7 +186,7 @@ cmd-rldrsc-help = Использование: rldrsc <path> <type>
 cmd-gridtc-desc = Получить количество плиток в гриде.
 cmd-gridtc-help = Использование: gridtc <gridId>
 # Client-side commands
-cmd-guidump-desc = Дамп дерева графического интерфейса из /guidump.txt в пользовательские данные.
+cmd-guidump-desc = Дамп дерева интерфейса в /guidump.txt в данные пользователя.
 cmd-guidump-help = Использование: guidump
 cmd-uitest-desc = Открыть dummy UI окно для тестирования
 cmd-uitest-help = Использование: uitest
