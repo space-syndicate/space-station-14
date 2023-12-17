@@ -40,7 +40,7 @@ namespace Content.Server.Speech.EntitySystems
 
             return message.Replace("!", _random.Pick(Barks))
                 .Replace("l", "r").Replace("L", "R")
-                //Corvax-Localisation-Start
+                //Corvax-Localization-Start
                 .Replace("л", "р").Replace("Л", "Р");
                 //Corvax-Localization-End
         }
