@@ -14,3 +14,5 @@ ent-BoxMouthSwab = sterile swab box
     .desc = { ent-BoxCardboard.desc }
 ent-BoxBodyBag = body bag box
     .desc = Contains body bags.
+ent-BoxVial = vial box
+    .desc = A box full of vials.
