@@ -1,7 +1,13 @@
 ent-BaseWeaponBattery = { ent-BaseItem }
     .desc = { ent-BaseItem.desc }
+ent-BaseWeaponPowerCell = { ent-BaseItem }
+    .desc = { ent-BaseItem.desc }
 ent-BaseWeaponBatterySmall = { ent-BaseWeaponBattery }
     .desc = { ent-BaseWeaponBattery.desc }
+ent-BaseWeaponPowerCellSmall = { ent-BaseWeaponPowerCell }
+    .desc = { ent-BaseWeaponPowerCell.desc }
+ent-WeaponLaserSvalinn = svalinn laser pistol
+    .desc = A cheap and widely used laser pistol.
 ent-WeaponLaserGun = старомодный лазерный бластер
     .desc = Оружие, использующее свет, усиленный излучением радиации.
     .suffix = Пистолет
