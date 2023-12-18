@@ -32,7 +32,7 @@ public sealed class ReagentEntry
     public List<string> Recipes { get; } = new();
 
     [JsonPropertyName("metabolisms")]
-    public Dictionary<ProtoId<MetabolismGroupPrototype>, ReagentEffectsEntry>? Metabolisms { get; }
+    public Dictionary<string, ReagentEffectsEntry>? Metabolisms { get; }
 
     public ReagentEntry(ReagentPrototype proto)
     {
@@ -42,7 +42,13 @@ public sealed class ReagentEntry
         Description = proto.LocalizedDescription;
         PhysicalDescription = proto.LocalizedPhysicalDescription;
         SubstanceColor = proto.SubstanceColor.ToHex();
-        Metabolisms = proto.Metabolisms;
+        // Corvax-Wiki-Start
+        Dictionary<ProtoId<MetabolismGroupPrototype>, ReagentEffectsEntry>? metabolisms = proto.Metabolisms;
+        if (metabolisms is not null)
+            Metabolisms = metabolisms.ToDictionary(x => x.Key.ToString(), x => x.Value);
+        else
+            Metabolisms = null;
+        // Corvax-Wiki-End
     }
 }
 
