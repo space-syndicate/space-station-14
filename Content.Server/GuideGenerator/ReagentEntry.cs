@@ -32,7 +32,7 @@ public sealed class ReagentEntry
     public List<string> Recipes { get; } = new();
 
     [JsonPropertyName("metabolisms")]
-    public Dictionary<string, ReagentEffectsEntry>? Metabolisms { get; }
+    public Dictionary<string, ReagentEffectsEntry>? Metabolisms { get; } // Corvax-Wiki
 
     public ReagentEntry(ReagentPrototype proto)
     {
