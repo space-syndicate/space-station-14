@@ -110,3 +110,7 @@ ent-FloorTileItemGratingMaint = решётчатый технический по
     .desc = { ent-FloorTileItemBase.desc }
 ent-FloorTileItemWeb = паутинный пол
     .desc = { ent-FloorTileItemBase.desc }
+ent-FloorTileItemAstroGrass = astro-grass
+    .desc = Fake grass that covers up wires and even comes with realistic NanoTrimmings!
+ent-FloorTileItemAstroIce = astro-ice
+    .desc = Fake ice that's as slippery as the real thing, while being easily removable!
