@@ -4,6 +4,7 @@ ent-MobOreCrab = рудокраб
   .desc = { ent-MobElementalBase.desc }
 ent-MobQuartzCrab = { ent-MobOreCrab }
     .desc = Рудный краб, состоящий из кварца.
+    .suffix = Кварц
 ent-MobIronCrab = { ent-MobOreCrab }
     .desc = Рудный краб, состоящий из железа.
     .suffix = Железо
