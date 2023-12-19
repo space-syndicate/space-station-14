@@ -19,8 +19,8 @@ namespace Content.Server.Speech.EntitySystems
             { "oh", "oof" },
             { "Oh", "Oof" },
             //Corvax-Localization-Start
-            { "ага", "агаф" },
-            { "Ага", "Агаф" },
+            { "га", "гаф" },
+            { "Га", "Гаф" },
             { "угу", "вуф" },
             { "Угу", "Вуф" },
             //Corvax-Localization-End
