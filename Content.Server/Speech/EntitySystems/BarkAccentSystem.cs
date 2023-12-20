@@ -39,8 +39,8 @@ namespace Content.Server.Speech.EntitySystems
             }
 
             return message.Replace("!", _random.Pick(Barks))
-                .Replace("l", "r").Replace("L", "R")
                 //Corvax-Localization-Start
+                .Replace("l", "r").Replace("L", "R")
                 .Replace("л", "р").Replace("Л", "Р");
                 //Corvax-Localization-End
         }
