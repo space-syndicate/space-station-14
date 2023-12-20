@@ -48,7 +48,7 @@ public sealed class MealsRecipesJsonGenerator
         // construction-related items start
         var constructionGraphs =
             constructable
-                .Where(x => (Regex.Match(x.ID.ToLower().Trim(), @".*.*[Bb]acon*|.*[Ss]teak*|[Pp]izza*").Success)) // we only need recipes that has "bacon", "steak" and "pizza" in it, since they are the only "constructable" recipes
+                .Where(x => (Regex.Match(x.ID.ToLower().Trim(), @".*.*[Bb]acon*|.*[Ss]teak*|[Pp]izza*|[Tt]ortilla*|[Ee]gg*").Success)) // we only need recipes that has "bacon", "steak", "pizza" "tortilla" and "egg" in it, since they are the only "constructable" recipes
                 .ToDictionary(x => x.ID, x => x);
 
         var constructableEntities = // list of entities which names match regex and has Construction component

@@ -3,6 +3,7 @@ wires-board-name-default = Провода
 wires-board-name-booze = Раздатчик алкоголя
 wires-board-name-soda = Раздатчик безалкоголя
 wires-board-name-thermomachine = Термомашина
+wires-board-name-condenser = Конденсатор газа
 wires-board-name-pa = Ускоритель частиц Mk2
 wires-board-name-highsec = Управление бронедверью
 wires-board-name-vessel = Сосуд
