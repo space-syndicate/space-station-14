@@ -20,3 +20,7 @@ ent-CrateAirlockKit = { ent-CrateGenericSteel }
     .desc = { ent-CrateGenericSteel.desc }
 ent-CrateEvaKit = { ent-CrateCommandSecure }
     .desc = { ent-CrateCommandSecure.desc }
+ent-CrateRCDAmmo = { ent-CrateEngineering }
+    .desc = { ent-CrateEngineering.desc }
+ent-CrateRCD = { ent-CrateEngineeringSecure }
+    .desc = { ent-CrateEngineeringSecure.desc }

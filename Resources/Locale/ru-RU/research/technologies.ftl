@@ -11,7 +11,6 @@ research-technology-compact-power = Компактная энергогенер�
 research-technology-industrial-engineering = Промышленная инженерия
 research-technology-power-generation = Генерация электроэнергии
 research-technology-atmospheric-tech = Атмосферные технологии
-research-technology-rapid-construction = Быстрое строительство
 research-technology-shuttlecraft = Шаттлостроение
 research-technology-ripley-aplu = Рипли АВП
 research-technology-advanced-atmospherics = Продвинутые атмос-технологии

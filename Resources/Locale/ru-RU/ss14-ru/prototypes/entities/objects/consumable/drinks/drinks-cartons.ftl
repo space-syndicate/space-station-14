@@ -12,3 +12,5 @@ ent-DrinkMilkCarton = молоко
     .desc = Непрозрачная белая жидкость, вырабатываемая молочными железами млекопитающих.
 ent-DrinkSoyMilkCarton = соевое молоко
     .desc = Белое и питательное соевое удовольствие!
+ent-DrinkOatMilkCarton = oat milk
+    .desc = It's oat milk. Tan and nutritious goodness!
