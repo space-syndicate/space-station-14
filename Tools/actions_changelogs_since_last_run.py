@@ -118,8 +118,8 @@ def send_to_discord(entries: Iterable[ChangelogEntry]) -> None:
         for entry in group:
             for change in entry["changes"]:
                 emoji = TYPES_TO_EMOJI.get(change['type'], "❓")
-                url = entry["url"]
                 message = change['message']
+                url = entry.get("url")
                 # Corvax-Localization-Start
                 TRANSLATION_API_URL = os.environ.get("TRANSLATION_API_URL")
                 if TRANSLATION_API_URL:
@@ -130,7 +130,10 @@ def send_to_discord(entries: Iterable[ChangelogEntry]) -> None:
                     })
                     message = resp.json()['data']
                 # Corvax-Localization-End
-                content.write(f"{emoji} [-]({url}) {message}\n")
+                if url and url.strip():
+                    content.write(f"{emoji} [-]({url}) {message}\n")
+                else:
+                    content.write(f"{emoji} - {message}\n")
         content.write(f"\n") # Corvax: Better formatting
 
     content.seek(0) # Corvax
