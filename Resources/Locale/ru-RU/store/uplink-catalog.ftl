@@ -120,8 +120,8 @@ uplink-micro-bomb-implanter-desc = Взрывается при ручной ак
 # Bundles
 uplink-emp-kit-name = Набор отключения электричества
 uplink-emp-kit-desc = Ультимативное противодействие энергетическому оружию: Выводит из строя станнеры, разряжает дубинки-шокеры, садит лазерное оружие! Содержит 3 ЭМИ гранаты и имплантер ЭМИ. Примечание: не выводит из строя настоящее огнестрельное оружие.
-uplink-chemistry-kit-name = Chemical Synthesis Kit
-uplink-chemistry-kit-desc = A starter kit for the aspiring chemist, includes toxin and vestine for all your criminal needs!
+uplink-chemistry-kit-name = Набор химического синтеза
+uplink-chemistry-kit-desc = Стартовый набор начинающего химика, включающий токсин и вестин для всех ваших преступных нужд!
 # Bundles
 uplink-meds-bundle-name = Медицинский набор
 uplink-meds-bundle-desc = Все, что нужно для возвращения в строй ваших товарищей: главным образом, боевая аптечка, дефибриллятор и три боевых медипена.

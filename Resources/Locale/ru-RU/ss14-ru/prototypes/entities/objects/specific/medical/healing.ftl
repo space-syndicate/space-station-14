@@ -130,5 +130,5 @@ ent-SyringeSaline = шприц физраствора
     .desc = { ent-BaseSyringe.desc }
 ent-SyringeRomerol = шприц ромерола
     .desc = { ent-BaseSyringe.desc }
-ent-SyringeStimulants = stimulants syringe
+ent-SyringeStimulants = шприц стимулятора
     .desc = { ent-BaseSyringe.desc }
