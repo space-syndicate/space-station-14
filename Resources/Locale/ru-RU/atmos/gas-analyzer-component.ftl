@@ -19,7 +19,6 @@ gas-analyzer-window-temperature-val-text = { $tempK }К ({ $tempC }°C)
 gas-analyzer-window-gas-column-name = Газ
 gas-analyzer-window-molarity-column-name = моль
 gas-analyzer-window-percentage-column-name = %
-gas-analyzer-window-molarity-text = { $mol } моль ({ $percentage }%)
 gas-analyzer-window-percentage-text = { $percentage }
 gas-analyzer-window-molarity-percentage-text = { $gasName }: { $amount } моль ({ $percentage }%)
 # Used for GasEntry.ToString()
