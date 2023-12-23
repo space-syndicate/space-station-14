@@ -8,5 +8,5 @@ ent-BulletMagnumIncendiary = пуля (.45 магнум зажигательна
     .desc = { ent-BaseBulletIncendiary.desc }
 ent-BulletMagnumAP = пуля (.45 магнум бронебойная)
     .desc = { ent-BaseBulletAP.desc }
-ent-BulletMagnumUranium = bullet (.45 magnum uranium)
+ent-BulletMagnumUranium = пуля (.45 магнум урановая)
     .desc = { ent-BaseBullet.desc }

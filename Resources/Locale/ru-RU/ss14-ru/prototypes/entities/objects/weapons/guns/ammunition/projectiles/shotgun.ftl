@@ -14,5 +14,5 @@ ent-PelletShotgunTranquilizer = дробина (.50 транквилизатор
     .desc = { ent-BaseBulletPractice.desc }
 ent-PelletShotgunFlare = дробина (.50 фальшфейер)
     .desc = { ent-BaseBullet.desc }
-ent-PelletShotgunUranium = pellet (.50 uranium)
+ent-PelletShotgunUranium = дробина (.50 урановая)
     .desc = { ent-BaseBullet.desc }

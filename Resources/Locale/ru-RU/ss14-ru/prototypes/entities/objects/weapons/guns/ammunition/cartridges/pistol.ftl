@@ -8,5 +8,5 @@ ent-CartridgePistolRubber = патрон (.35 авто резиновый)
     .desc = { ent-BaseCartridgePistol.desc }
 ent-CartridgePistolIncendiary = патрон (.35 авто зажигательный)
     .desc = { ent-BaseCartridgePistol.desc }
-ent-CartridgePistolUranium = cartridge (.35 auto uranium)
+ent-CartridgePistolUranium = патрон (.35 авто урановый)
     .desc = { ent-BaseCartridgePistol.desc }
