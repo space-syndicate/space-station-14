@@ -1,8 +1,12 @@
+ent-BaseRecharger = { ent-BaseMachinePowered }
+  .desc = { ent-BaseMachinePowered.desc }
+ent-BaseItemRecharger = { ent-BaseRecharger }
+    .desc = { ent-BaseRecharger.desc }
 ent-PowerCellRecharger = cell recharger
-    .desc = { ent-ConstructibleMachine.desc }
+    .desc = { ent-BaseItemRecharger.desc }
 ent-WeaponCapacitorRecharger = recharger
-    .desc = { ent-PowerCellRecharger.desc }
+    .desc = { ent-BaseItemRecharger.desc }
 ent-WallWeaponCapacitorRecharger = wall recharger
-    .desc = { "" }
+    .desc = { ent-BaseItemRecharger.desc }
 ent-BorgCharger = cyborg recharging station
     .desc = A stationary charger for various robotic and cyborg entities. Surprisingly spacious.

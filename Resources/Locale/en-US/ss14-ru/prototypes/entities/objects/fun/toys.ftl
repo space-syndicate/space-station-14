@@ -103,3 +103,5 @@ ent-CrazyGlue = crazy glue
     .desc = A bottle of crazy glue manufactured by Honk! Co.
 ent-PlushieMoth = moth plushie
     .desc = Cute and fluffy moth plushie. Enjoy, bz!
+ent-PlushiePenguin = penguin plushie
+    .desc = I use arch btw!

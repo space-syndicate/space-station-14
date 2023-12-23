@@ -1,22 +1,19 @@
 using Content.Server.Access;
+using Content.Server.Administration.Logs;
 using Content.Server.Atmos.Components;
 using Content.Server.Atmos.EntitySystems;
+using Content.Server.Power.EntitySystems;
 using Content.Shared.Database;
-using Content.Shared.Doors;
 using Content.Shared.Doors.Components;
 using Content.Shared.Doors.Systems;
 using Content.Shared.Emag.Systems;
 using Content.Shared.Interaction;
+using Content.Shared.Prying.Components;
+using Content.Shared.Prying.Systems;
+using Content.Shared.Tools.Systems;
 using Robust.Shared.Audio;
-using Content.Server.Administration.Logs;
-using Content.Server.Power.EntitySystems;
-using Content.Shared.Tools;
 using Robust.Shared.Physics.Components;
 using Robust.Shared.Physics.Events;
-using Content.Shared.DoAfter;
-using Content.Shared.Prying.Systems;
-using Content.Shared.Prying.Components;
-using Content.Shared.Tools.Systems;
 
 namespace Content.Server.Doors.Systems;
 
@@ -25,8 +22,6 @@ public sealed class DoorSystem : SharedDoorSystem
     [Dependency] private readonly IAdminLogManager _adminLog = default!;
     [Dependency] private readonly DoorBoltSystem _bolts = default!;
     [Dependency] private readonly AirtightSystem _airtightSystem = default!;
-    [Dependency] private readonly SharedToolSystem _toolSystem = default!;
-    [Dependency] private readonly SharedDoAfterSystem _doAfterSystem = default!;
     [Dependency] private readonly PryingSystem _pryingSystem = default!;
 
     public override void Initialize()
@@ -64,7 +59,7 @@ public sealed class DoorSystem : SharedDoorSystem
             return;
 
         if (door.ChangeAirtight && TryComp(uid, out AirtightComponent? airtight))
-            _airtightSystem.SetAirblocked(uid, airtight, collidable);
+            _airtightSystem.SetAirblocked((uid, airtight), collidable);
 
         // Pathfinding / AI stuff.
         RaiseLocalEvent(new AccessReaderChangeEvent(uid, collidable));
@@ -206,14 +201,14 @@ public sealed class DoorSystem : SharedDoorSystem
         }
     }
 
-    protected override void CheckDoorBump(DoorComponent component, PhysicsComponent body)
+    protected override void CheckDoorBump(Entity<DoorComponent, PhysicsComponent> ent)
     {
-        var uid = body.Owner;
-        if (component.BumpOpen)
+        var (uid, door, physics) = ent;
+        if (door.BumpOpen)
         {
-            foreach (var other in PhysicsSystem.GetContactingEntities(uid, body, approximate: true))
+            foreach (var other in PhysicsSystem.GetContactingEntities(uid, physics, approximate: true))
             {
-                if (Tags.HasTag(other, "DoorBumpOpener") && TryOpen(uid, component, other, false, quiet: true))
+                if (Tags.HasTag(other, "DoorBumpOpener") && TryOpen(uid, door, other, quiet: true))
                     break;
             }
         }

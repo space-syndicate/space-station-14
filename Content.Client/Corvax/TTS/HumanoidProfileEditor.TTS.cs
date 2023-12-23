@@ -64,9 +64,8 @@ public sealed partial class HumanoidProfileEditor
             if (firstVoiceChoiceId == 1)
                 firstVoiceChoiceId = i;
 
-            if (voice.SponsorOnly &&
-                _sponsorsMgr.TryGetInfo(out var sponsor) &&
-                !sponsor.AllowedMarkings.Contains(voice.ID))
+            if (voice.SponsorOnly && _sponsorsMgr != null &&
+                !_sponsorsMgr.Prototypes.Contains(voice.ID))
             {
                 _voiceButton.SetItemDisabled(_voiceButton.GetIdx(i), true);
             }

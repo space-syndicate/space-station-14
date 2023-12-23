@@ -110,3 +110,7 @@ ent-FoodBungo = bungo fruit
     .desc = The humble bungo fruit.
 ent-FoodBungoPit = bungo pit
     .desc = { ent-FoodInjectableBase.desc }
+ent-FoodPeaPod = pea pod
+    .desc = A duck's favorite treat!
+ent-FoodPumpkin = pumpkin
+    .desc = A large, orange... berry. Seriously.

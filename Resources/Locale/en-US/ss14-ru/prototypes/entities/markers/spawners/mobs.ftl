@@ -1,5 +1,7 @@
 ent-SpawnMobMouse = Mouse Spawner
     .desc = { ent-MarkerBase.desc }
+ent-SpawnMobCockroach = Cockroach Spawner
+    .desc = { ent-MarkerBase.desc }
 ent-SpawnMobCorgi = HoP Corgi Spawner
     .desc = { ent-MarkerBase.desc }
 ent-SpawnMobPossumMorty = Possum Morty Spawner
@@ -99,4 +101,6 @@ ent-SpawnMobCow = Cow Spawner
 ent-SpawnMobGorilla = Gorilla Spawner
     .desc = { ent-MarkerBase.desc }
 ent-SpawnMobPenguin = Penguin Spawner
+    .desc = { ent-MarkerBase.desc }
+ent-SpawnMobOreCrab = ore crab spawner
     .desc = { ent-MarkerBase.desc }

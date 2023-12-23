@@ -12,6 +12,8 @@
           nameGenerator:
             !type:NanotrasenNameGenerator
             prefixCreator: 'ED'
+        - type: StationEmergencyShuttle
+          emergencyShuttlePath: /Maps/Shuttles/emergency_raven.yml
         - type: StationJobs
           overflowJobs:
             - Passenger

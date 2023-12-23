@@ -4,7 +4,7 @@ using Robust.Shared.Serialization.TypeSerializers.Implementations.Custom.Prototy
 namespace Content.Shared.Humanoid.Prototypes;
 
 [Prototype("species")]
-public sealed class SpeciesPrototype : IPrototype
+public sealed partial class SpeciesPrototype : IPrototype
 {
     /// <summary>
     /// Prototype ID of the species.
@@ -31,6 +31,14 @@ public sealed class SpeciesPrototype : IPrototype
     /// </summary>
     [DataField("roundStart", required: true)]
     public bool RoundStart { get; private set; } = false;
+
+    // Corvax-Sponsors-Start
+    /// <summary>
+    /// Whether the species is available only for sponsors
+    /// </summary>
+    [DataField("sponsorOnly")]
+    public bool SponsorOnly = false;
+    // Corvax-Sponsors-End
 
     // The below two are to avoid fetching information about the species from the entity
     // prototype.

@@ -12,3 +12,5 @@ ent-ClothingNeckMantleHOSShoulder = head of security's shoulder mantle
     .desc = Shootouts with nukies are just another Tuesday for this HoS. This mantle is a symbol of commitment to the station.
 ent-ClothingNeckMantleRD = research director's mantle
     .desc = A terribly comfortable shoulder draping for the discerning scientist of fashion.
+ent-ClothingNeckMantleQM = quartermaster's mantle
+    .desc = For the master of goods and materials to rule over the department, a befitting mantle to show off superiority!

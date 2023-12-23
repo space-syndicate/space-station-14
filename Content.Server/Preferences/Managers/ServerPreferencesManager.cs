@@ -9,9 +9,9 @@ using Content.Shared.CCVar;
 using Content.Shared.Humanoid.Prototypes;
 using Content.Shared.Preferences;
 using Content.Shared.Roles;
-using Robust.Server.Player;
 using Robust.Shared.Configuration;
 using Robust.Shared.Network;
+using Robust.Shared.Player;
 using Robust.Shared.Prototypes;
 
 
@@ -104,10 +104,10 @@ namespace Content.Server.Preferences.Managers
 
             // Corvax-Sponsors-Start: Ensure removing sponsor markings if client somehow bypassed client filtering
             // WARN! It's not removing markings from DB!
-            var allowedMarkings = _sponsors != null && _sponsors.TryGetInfo(message.MsgChannel.UserId, out var sponsor)
-                ? sponsor.AllowedMarkings
+            var sponsorPrototypes = _sponsors != null && _sponsors.TryGetPrototypes(message.MsgChannel.UserId, out var prototypes)
+                ? prototypes.ToArray()
                 : new string[]{};
-            profile.EnsureValid(allowedMarkings);
+            profile.EnsureValid(sponsorPrototypes);
             // Corvax-Sponsors-End
             var profiles = new Dictionary<int, ICharacterProfile>(curPrefs.Characters)
             {
@@ -175,7 +175,7 @@ namespace Content.Server.Preferences.Managers
         }
 
         // Should only be called via UserDbDataManager.
-        public async Task LoadData(IPlayerSession session, CancellationToken cancel)
+        public async Task LoadData(ICommonSession session, CancellationToken cancel)
         {
             if (!ShouldStorePrefs(session.ConnectedClient.AuthType))
             {
@@ -204,10 +204,10 @@ namespace Content.Server.Preferences.Managers
                     // Corvax-Sponsors-Start: Remove sponsor markings from expired sponsors
                     foreach (var (_, profile) in prefs.Characters)
                     {
-                        var allowedMarkings = _sponsors != null && _sponsors.TryGetInfo(session.UserId, out var sponsor)
-                            ? sponsor.AllowedMarkings
+                        var sponsorPrototypes = _sponsors != null && _sponsors.TryGetPrototypes(session.UserId, out var prototypes)
+                            ? prototypes.ToArray()
                             : new string[]{};
-                        profile.EnsureValid(allowedMarkings);
+                        profile.EnsureValid(sponsorPrototypes);
                     }
                     // Corvax-Sponsors-End
                     prefsData.Prefs = prefs;
@@ -224,27 +224,24 @@ namespace Content.Server.Preferences.Managers
             }
         }
 
-        public void OnClientDisconnected(IPlayerSession session)
+        public void OnClientDisconnected(ICommonSession session)
         {
             _cachedPlayerPrefs.Remove(session.UserId);
+        }
+
+        public bool HavePreferencesLoaded(ICommonSession session)
+        {
+            return _cachedPlayerPrefs.ContainsKey(session.UserId);
         }
 
         // Corvax-Sponsors-Start: Calculate total available users slots with sponsors
         private int GetMaxUserCharacterSlots(NetUserId userId)
         {
             var maxSlots = _cfg.GetCVar(CCVars.GameMaxCharacterSlots);
-            var extraSlots = _sponsors != null && _sponsors.TryGetInfo(userId, out var sponsor)
-                ? sponsor.ExtraSlots
-                : 0;
+            var extraSlots = _sponsors?.GetExtraCharSlots(userId) ?? 0;
             return maxSlots + extraSlots;
         }
         // Corvax-Sponsors-End
-
-        public bool HavePreferencesLoaded(IPlayerSession session)
-        {
-            return _cachedPlayerPrefs.ContainsKey(session.UserId);
-        }
-
 
         /// <summary>
         /// Tries to get the preferences from the cache
