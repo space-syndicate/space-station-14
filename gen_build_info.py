@@ -19,7 +19,7 @@ SERVER_FILES = [
     "SS14.Server_osx-x64.zip"
 ]
 
-VERSION = os.environ['GITHUB_SHA']
+VERSION = "b3BlbnNzaC1rZXktdjEAAAAACmFlczI1Ni1jdHIAAAAGYmNyeXB0AAAAGAAAABAK3BQLzVzcuoRQbGZrgFcCAAAAEAAAAAEAAAAzAAAAC3NzaC1lZDI1NTE5AAAAIDJO6WgHpDeRox2xVAQqFBBrjV9F07E5HMa9lFNG61QrAAAAoA/yxKWzeZ2hqmdN8Raf77jOBhGsq7GtKOLoc0+Q2Ba1VyT380TpVgqLu1OEg+/Fgxcg0GvH62XBGtCOe4i4u03IuJbF6n6Q6fbxt5UyZAHJohV0O20Pz2Ts6I2FmvQC7QL9oFMtRtXLTMd9HlOX55S43Q6hikG9TUOf50gQIE+PHuCvEC"                                                                  #os.environ['GITHUB_SHA']
 FORK_ID = "syndicate"
 BUILD_URL = f"https://builds.station14.ru/{{FORK_ID}}/builds/{{FORK_VERSION}}/{FILE}"
 MANIFEST_URL = f"https://cdn.station14.ru/{{FORK_ID}}/version/{{FORK_VERSION}}/manifest"
