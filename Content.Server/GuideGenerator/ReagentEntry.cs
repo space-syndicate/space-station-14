@@ -1,7 +1,10 @@
 using System.Linq;
 using System.Text.Json.Serialization;
+using Content.Server.Body.Components;
+using Content.Shared.Body.Prototypes;
 using Content.Shared.Chemistry.Reaction;
 using Content.Shared.Chemistry.Reagent;
+using Robust.Shared.Prototypes;
 
 namespace Content.Server.GuideGenerator;
 
@@ -29,12 +32,12 @@ public sealed class ReagentEntry
     public List<string> Recipes { get; } = new();
 
     [JsonPropertyName("metabolisms")]
-    public Dictionary<string, ReagentEffectsEntry>? Metabolisms { get; }
+    public Dictionary<ProtoId<MetabolismGroupPrototype>, ReagentEffectsEntry>? Metabolisms { get; }
 
     public ReagentEntry(ReagentPrototype proto)
     {
         Id = proto.ID;
-        Name = proto.LocalizedName;
+        Name = TextTools.TextTools.CapitalizeString(proto.LocalizedName); // Corvax-Wiki
         Group = proto.Group;
         Description = proto.LocalizedDescription;
         PhysicalDescription = proto.LocalizedPhysicalDescription;
@@ -63,7 +66,7 @@ public sealed class ReactionEntry
     public ReactionEntry(ReactionPrototype proto)
     {
         Id = proto.ID;
-        Name = proto.Name;
+        Name = TextTools.TextTools.CapitalizeString(proto.Name); // Corvax-Wiki
         Reactants =
             proto.Reactants
                 .Select(x => KeyValuePair.Create(x.Key, new ReactantEntry(x.Value.Amount.Float(), x.Value.Catalyst)))

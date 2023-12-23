@@ -130,3 +130,5 @@ ent-SyringeSaline = saline syringe
     .desc = { ent-BaseSyringe.desc }
 ent-SyringeRomerol = romerol syringe
     .desc = { ent-BaseSyringe.desc }
+ent-SyringeStimulants = stimulants syringe
+    .desc = { ent-BaseSyringe.desc }

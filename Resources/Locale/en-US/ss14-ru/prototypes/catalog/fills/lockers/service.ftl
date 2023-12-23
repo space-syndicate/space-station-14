@@ -16,3 +16,6 @@ ent-LockerBotanistFilled = { ent-LockerBotanist }
 ent-LockerBotanistLoot = { ent-LockerBotanist }
     .suffix = Loot
     .desc = { ent-LockerBotanist.desc }
+ent-ClosetJanitorBombFilled = { ent-ClosetJanitorBomb }
+    .suffix = Filled
+    .desc = { ent-ClosetJanitorBomb.desc }

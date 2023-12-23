@@ -1,6 +1,6 @@
 ent-BaseWeaponCrusher = крушитель
     .desc = Ранняя версия протокинетического ускорителя.
-ent-WeaponCrusher = крушитель
+ent-WeaponCrusher = { ent-BaseWeaponCrusher }
     .desc = { ent-BaseWeaponCrusher.desc }
 ent-WeaponCrusherDagger = кинжал-крушитель
     .desc = Уменьшенная версия протокинетического крушителя, обычно используется как оружие последнего шанса.

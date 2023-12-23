@@ -16,10 +16,10 @@
   canBeAntag: false
   access:
   - Security
+  - Brig
   - Armory
   - Maintenance
   - Service
-  - Brig
   - External
   - Detective
   special:
@@ -33,7 +33,7 @@
     jumpsuit: ClothingUniformJumpsuitWarden
     back: ClothingBackpackSecurityFilled
     shoes: ClothingShoesBootsJackSecFilled # Corvax-Resprite
-    eyes: ClothingEyesGlassesSecurity
+    eyes: ClothingEyesGlassesSunglasses
     outerClothing: ClothingOuterCoatWarden
     id: WardenPDA
     ears: ClothingHeadsetSecurity

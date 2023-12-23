@@ -60,6 +60,7 @@
   recipeUnlocks:
   - CryostasisBeaker
   - StasisBedMachineCircuitboard
+  - SyringeCryostasis
 
 - type: technology
   id: MechanizedTreatment
@@ -72,7 +73,6 @@
   cost: 7500
   recipeUnlocks:
   - BorgModuleDiagnosis
-  - BorgModuleTreatment
   - BorgModuleDefibrillator
 
 - type: technology

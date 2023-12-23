@@ -5,6 +5,7 @@ using Content.Server.Administration.Commands;
 using Content.Server.Chat.Managers;
 using Content.Server.Chat.Systems;
 using Content.Server.Communications;
+using Content.Server.RandomMetadata;
 using Content.Server.GameTicking.Rules.Components;
 using Content.Server.Ghost.Roles.Components;
 using Content.Server.Ghost.Roles.Events;
@@ -45,6 +46,7 @@ using Robust.Server.GameObjects;
 using Robust.Server.Maps;
 using Robust.Server.Player;
 using Robust.Shared.Audio;
+using Robust.Shared.Audio.Systems;
 using Robust.Shared.Map;
 using Robust.Shared.Player;
 using Robust.Shared.Prototypes;
@@ -68,6 +70,7 @@ public sealed class NukeopsRuleSystem : GameRuleSystem<NukeopsRuleComponent>
     [Dependency] private readonly IServerPreferencesManager _prefs = default!;
     [Dependency] private readonly MapLoaderSystem _map = default!;
     [Dependency] private readonly MetaDataSystem _metaData = default!;
+    [Dependency] private readonly RandomMetadataSystem _randomMetadata = default!;
     [Dependency] private readonly MindSystem _mind = default!;
     [Dependency] private readonly NpcFactionSystem _npcFaction = default!;
     [Dependency] private readonly PopupSystem _popupSystem = default!;
@@ -80,6 +83,7 @@ public sealed class NukeopsRuleSystem : GameRuleSystem<NukeopsRuleComponent>
     [Dependency] private readonly TagSystem _tag = default!;
     [Dependency] private readonly WarDeclaratorSystem _warDeclarator = default!;
 
+
     [ValidatePrototypeId<CurrencyPrototype>]
     private const string TelecrystalCurrencyPrototype = "Telecrystal";
 
@@ -88,6 +92,12 @@ public sealed class NukeopsRuleSystem : GameRuleSystem<NukeopsRuleComponent>
 
     [ValidatePrototypeId<AntagPrototype>]
     public const string NukeopsId = "Nukeops";
+
+    [ValidatePrototypeId<DatasetPrototype>]
+    private const string OperationPrefixDataset = "operationPrefix";
+
+    [ValidatePrototypeId<DatasetPrototype>]
+    private const string OperationSuffixDataset = "operationSuffix";
 
     public override void Initialize()
     {
@@ -346,6 +356,7 @@ public sealed class NukeopsRuleSystem : GameRuleSystem<NukeopsRuleComponent>
             return;
 
         component.TargetStation = _random.Pick(eligible);
+        component.OperationName = _randomMetadata.GetRandomFromSegments(new List<string> {OperationPrefixDataset, OperationSuffixDataset}, " ");
 
         var filter = Filter.Empty();
         var query = EntityQueryEnumerator<NukeOperativeComponent, ActorComponent>();
@@ -374,7 +385,7 @@ public sealed class NukeopsRuleSystem : GameRuleSystem<NukeopsRuleComponent>
                 continue;
 
             // UH OH
-            if (centcomms.Contains(nukeTransform.MapID))
+            if (nukeTransform.MapUid != null && centcomms.Contains(nukeTransform.MapUid.Value))
             {
                 component.WinConditions.Add(WinCondition.NukeActiveAtCentCom);
                 SetWinType(uid, WinType.OpsMajor, component);
@@ -438,8 +449,7 @@ public sealed class NukeopsRuleSystem : GameRuleSystem<NukeopsRuleComponent>
 
         while (diskQuery.MoveNext(out _, out var transform))
         {
-            var diskMapId = transform.MapID;
-            diskAtCentCom = centcomms.Contains(diskMapId);
+            diskAtCentCom = transform.MapUid != null && centcomms.Contains(transform.MapUid.Value);
 
             // TODO: The target station should be stored, and the nuke disk should store its original station.
             // This is fine for now, because we can assume a single station in base SS14.
@@ -971,6 +981,19 @@ public sealed class NukeopsRuleSystem : GameRuleSystem<NukeopsRuleComponent>
         }
     }
 
+    /// <summary>
+    /// Display a greeting message and play a sound for a nukie
+    /// </summary>
+    private void NotifyNukie(ICommonSession session, NukeOperativeComponent nukeop, NukeopsRuleComponent nukeopsRule)
+    {
+        if (nukeopsRule.TargetStation is not { } station)
+            return;
+
+        _chatManager.DispatchServerMessage(session, Loc.GetString("nukeops-welcome", ("station", station), ("name", nukeopsRule.OperationName)));
+        _audio.PlayGlobal(nukeop.GreetSoundNotification, session);
+    }
+
+
     private void SpawnOperativesForGhostRoles(EntityUid uid, NukeopsRuleComponent? component = null)
     {
         if (!Resolve(uid, ref component))
@@ -990,18 +1013,6 @@ public sealed class NukeopsRuleSystem : GameRuleSystem<NukeopsRuleComponent>
 
         var operatives = new List<ICommonSession>();
         SpawnOperatives(numNukies, operatives, true, component);
-    }
-
-    /// <summary>
-    /// Display a greeting message and play a sound for a nukie
-    /// </summary>
-    private void NotifyNukie(ICommonSession session, NukeOperativeComponent nukeop, NukeopsRuleComponent nukeopsRule)
-    {
-        if (nukeopsRule.TargetStation is not { } station)
-            return;
-
-        _chatManager.DispatchServerMessage(session, Loc.GetString("nukeops-welcome", ("station", station)));
-        _audio.PlayGlobal(nukeop.GreetSoundNotification, session);
     }
 
     //For admins forcing someone to nukeOps.

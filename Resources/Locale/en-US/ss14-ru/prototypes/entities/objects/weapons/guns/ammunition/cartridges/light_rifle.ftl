@@ -8,3 +8,5 @@ ent-CartridgeLightRifleRubber = cartridge (.30 rifle rubber)
     .desc = { ent-BaseCartridgeLightRifle.desc }
 ent-CartridgeLightRifleIncendiary = cartridge (.30 rifle incendiary)
     .desc = { ent-BaseCartridgeLightRifle.desc }
+ent-CartridgeLightRifleUranium = cartridge (.30 rifle uranium)
+    .desc = { ent-BaseCartridgeLightRifle.desc }

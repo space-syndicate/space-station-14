@@ -13,7 +13,7 @@ min_account_age = 0
 min_overall_hours = 20
 
 [rules]
-time = 180.0
+time = 10.0
 
 [hub]
 advertise = true
