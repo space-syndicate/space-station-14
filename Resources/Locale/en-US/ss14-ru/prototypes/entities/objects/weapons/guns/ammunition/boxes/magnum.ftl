@@ -8,3 +8,5 @@ ent-MagazineBoxMagnumRubber = ammunition box (.45 magnum rubber)
     .desc = { ent-BaseMagazineBoxMagnum.desc }
 ent-MagazineBoxMagnumIncendiary = ammunition box (.45 magnum incendiary)
     .desc = { ent-BaseMagazineBoxMagnum.desc }
+ent-MagazineBoxMagnumUranium = ammunition box (.45 magnum uranium)
+    .desc = { ent-BaseMagazineBoxMagnum.desc }
