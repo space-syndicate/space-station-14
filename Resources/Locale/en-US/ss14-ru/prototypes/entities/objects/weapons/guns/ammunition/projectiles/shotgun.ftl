@@ -14,3 +14,5 @@ ent-PelletShotgunTranquilizer = pellet (.50 tranquilizer)
     .desc = { ent-BaseBulletPractice.desc }
 ent-PelletShotgunFlare = pellet (.50 flare)
     .desc = { "" }
+ent-PelletShotgunUranium = pellet (.50 uranium)
+    .desc = { ent-BaseBullet.desc }

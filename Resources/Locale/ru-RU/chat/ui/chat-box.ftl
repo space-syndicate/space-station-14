@@ -1,4 +1,7 @@
 hud-chatbox-info = { $talk-key } для разговора, { $cycle-key } для переключения каналов.
+hud-chatbox-info-talk = { $talk-key } to talk.
+hud-chatbox-info-cycle = Click here to talk, { $cycle-key } to cycle channels.
+hud-chatbox-info-unbound = Click here to talk.
 hud-chatbox-select-name-prefixed = { $prefix } { $name }
 hud-chatbox-select-channel-Admin = Админ
 hud-chatbox-select-channel-Console = Консоль
