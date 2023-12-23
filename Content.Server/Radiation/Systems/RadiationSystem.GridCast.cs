@@ -1,4 +1,3 @@
-using System.Linq;
 using System.Numerics;
 using Content.Server.Radiation.Components;
 using Content.Server.Radiation.Events;
@@ -10,6 +9,7 @@ using Robust.Shared.Containers;
 using Robust.Shared.Map.Components;
 using Robust.Shared.Timing;
 using Robust.Shared.Utility;
+using System.Linq;
 
 namespace Content.Server.Radiation.Systems;
 
@@ -31,7 +31,7 @@ public partial class RadiationSystem
         stopwatch.Start();
 
         var sources = EntityQueryEnumerator<RadiationSourceComponent, TransformComponent>();
-        var destinations = EntityQueryEnumerator<RadiationReceiverComponent, TransformComponent>();
+        var destinations = EntityQuery<RadiationReceiverComponent, TransformComponent>();
         var resistanceQuery = GetEntityQuery<RadiationGridResistanceComponent>();
         var transformQuery = GetEntityQuery<TransformComponent>();
         var gridQuery = GetEntityQuery<MapGridComponent>();
@@ -51,8 +51,8 @@ public partial class RadiationSystem
 
         // trace all rays from rad source to rad receivers
         var rays = new List<RadiationRay>();
-        var receiversTotalRads = new ValueList<(Entity<RadiationReceiverComponent>, float)>();
-        while (destinations.MoveNext(out var destUid, out var dest, out var destTrs))
+        var receiversTotalRads = new ValueList<(RadiationReceiverComponent, float)>();
+        foreach (var (dest, destTrs) in destinations)
         {
             var destWorld = _transform.GetWorldPosition(destTrs, transformQuery);
 
@@ -64,7 +64,7 @@ public partial class RadiationSystem
 
                 // send ray towards destination entity
                 var ray = Irradiate(uid, sourceTrs, sourceWorld,
-                    destUid, destTrs, destWorld,
+                    destTrs.Owner, destTrs, destWorld,
                     intensity, source.Slope, saveVisitedTiles, resistanceQuery, transformQuery, gridQuery);
                 if (ray == null)
                     continue;
@@ -78,9 +78,9 @@ public partial class RadiationSystem
             }
 
             // Apply modifier if the destination entity is hidden within a radiation blocking container
-            rads = GetAdjustedRadiationIntensity(destUid, rads);
+            rads = GetAdjustedRadiationIntensity(dest.Owner, rads);
 
-            receiversTotalRads.Add(((destUid, dest), rads));
+            receiversTotalRads.Add((dest, rads));
         }
 
         // update information for debug overlay
@@ -94,11 +94,11 @@ public partial class RadiationSystem
         {
             // update radiation value of receiver
             // if no radiation rays reached target, that will set it to 0
-            receiver.Comp.CurrentRadiation = rads;
+            receiver.CurrentRadiation = rads;
 
             // also send an event with combination of total rad
             if (rads > 0)
-                IrradiateEntity(receiver, rads, GridcastUpdateRate);
+                IrradiateEntity(receiver.Owner, rads, GridcastUpdateRate);
         }
 
         // raise broadcast event that radiation system has updated
@@ -145,21 +145,20 @@ public partial class RadiationSystem
         {
             if (!gridQuery.TryGetComponent(sourceTrs.GridUid.Value, out var gridComponent))
                 return ray;
-            return Gridcast((sourceTrs.GridUid.Value, gridComponent), ray, saveVisitedTiles, resistanceQuery, sourceTrs, destTrs, transformQuery.GetComponent(sourceTrs.GridUid.Value));
+            return Gridcast(gridComponent, ray, saveVisitedTiles, resistanceQuery, sourceTrs, destTrs, transformQuery.GetComponent(sourceTrs.GridUid.Value));
         }
 
         // lets check how many grids are between source and destination
         // do a box intersection test between target and destination
         // it's not very precise, but really cheap
         var box = Box2.FromTwoPoints(sourceWorld, destWorld);
-        var grids = new List<Entity<MapGridComponent>>();
-        _mapManager.FindGridsIntersecting(mapId, box, ref grids, true);
+        var grids = _mapManager.FindGridsIntersecting(mapId, box, true);
 
         // gridcast through each grid and try to hit some radiation blockers
         // the ray will be updated with each grid that has some blockers
         foreach (var grid in grids)
         {
-            ray = Gridcast(grid, ray, saveVisitedTiles, resistanceQuery, sourceTrs, destTrs, transformQuery.GetComponent(grid));
+            ray = Gridcast(grid, ray, saveVisitedTiles, resistanceQuery, sourceTrs, destTrs, transformQuery.GetComponent(grid.Owner));
 
             // looks like last grid blocked all radiation
             // we can return right now
@@ -170,7 +169,7 @@ public partial class RadiationSystem
         return ray;
     }
 
-    private RadiationRay Gridcast(Entity<MapGridComponent> grid, RadiationRay ray, bool saveVisitedTiles,
+    private RadiationRay Gridcast(MapGridComponent grid, RadiationRay ray, bool saveVisitedTiles,
         EntityQuery<RadiationGridResistanceComponent> resistanceQuery,
         TransformComponent sourceTrs,
         TransformComponent destTrs,
@@ -199,12 +198,12 @@ public partial class RadiationSystem
             : gridTrs.InvLocalMatrix.Transform(ray.Destination);
 
         Vector2i sourceGrid = new(
-            (int) Math.Floor(srcLocal.X / grid.Comp.TileSize),
-            (int) Math.Floor(srcLocal.Y / grid.Comp.TileSize));
+            (int) Math.Floor(srcLocal.X / grid.TileSize),
+            (int) Math.Floor(srcLocal.Y / grid.TileSize));
 
         Vector2i destGrid = new(
-            (int) Math.Floor(dstLocal.X / grid.Comp.TileSize),
-            (int) Math.Floor(dstLocal.Y / grid.Comp.TileSize));
+            (int) Math.Floor(dstLocal.X / grid.TileSize),
+            (int) Math.Floor(dstLocal.Y / grid.TileSize));
 
         // iterate tiles in grid line from source to destination
         var line = new GridLineEnumerator(sourceGrid, destGrid);

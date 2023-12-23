@@ -14,7 +14,6 @@ public sealed partial class GeneratorWindow : FancyWindow
     [Dependency] private readonly IEntityManager _entityManager = default!;
     [Dependency] private readonly ILocalizationManager _loc = default!;
 
-    private readonly SharedPowerSwitchableSystem _switchable;
     private readonly FuelGeneratorComponent? _component;
     private PortableGeneratorComponentBuiState? _lastState;
 
@@ -25,7 +24,6 @@ public sealed partial class GeneratorWindow : FancyWindow
         IoCManager.InjectDependencies(this);
 
         _entityManager.TryGetComponent(entity, out _component);
-        _switchable = _entityManager.System<SharedPowerSwitchableSystem>();
 
         EntityView.SetEntity(entity);
         TargetPower.IsValid += IsValid;
@@ -101,16 +99,17 @@ public sealed partial class GeneratorWindow : FancyWindow
             StatusLabel.SetOnlyStyleClass("Danger");
         }
 
-        var canSwitch = _entityManager.TryGetComponent(_entity, out PowerSwitchableComponent? switchable);
+        var canSwitch = _entityManager.TryGetComponent(_entity, out PowerSwitchableGeneratorComponent? switchable);
         OutputSwitchLabel.Visible = canSwitch;
         OutputSwitchButton.Visible = canSwitch;
 
-        if (switchable != null)
+        if (canSwitch)
         {
-            var voltage = _switchable.VoltageString(_switchable.GetVoltage(_entity, switchable));
-            OutputSwitchLabel.Text = Loc.GetString("portable-generator-ui-current-output", ("voltage", voltage));
-            var nextVoltage = _switchable.VoltageString(_switchable.GetNextVoltage(_entity, switchable));
-            OutputSwitchButton.Text = Loc.GetString("power-switchable-switch-voltage", ("voltage", nextVoltage));
+            var isHV = switchable!.ActiveOutput == PowerSwitchableGeneratorOutput.HV;
+            OutputSwitchLabel.Text =
+                Loc.GetString(isHV ? "portable-generator-ui-switch-hv" : "portable-generator-ui-switch-mv");
+            OutputSwitchButton.Text =
+                Loc.GetString(isHV ? "portable-generator-ui-switch-to-mv" : "portable-generator-ui-switch-to-hv");
             OutputSwitchButton.Disabled = state.On;
         }
 

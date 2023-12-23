@@ -38,8 +38,8 @@
   - type: Appearance
   - type: WiresPanel
   - type: Wires
-    boardName: wires-board-name-vessel
-    layoutId: Vessel
+    BoardName: wires-board-name-vessel
+    LayoutId: Vessel
   - type: AmbientSound
     enabled: false
     range: 3
@@ -175,8 +175,8 @@
   - type: WiresPanel
   - type: WiresVisuals
   - type: Wires
-    boardName: wires-board-name-ape
-    layoutId: Ape
+    BoardName: wires-board-name-ape
+    LayoutId: Ape
   - type: GenericVisualizer
     visuals:
       enum.PowerDeviceVisuals.Powered:
@@ -264,8 +264,8 @@
     doAfterDelay: 5
   - type: WiresPanel
   - type: Wires
-    boardName: wires-board-name-anomalygenerator
-    layoutId: AnomalyGenerator
+    BoardName: wires-board-name-anomalygenerator
+    LayoutId: AnomalyGenerator
   - type: Destructible
     thresholds:
     - trigger:

@@ -2,13 +2,11 @@ using System.Linq;
 using System.Numerics;
 using System.Text;
 using Content.Shared.NPC;
-using Robust.Client.GameObjects;
 using Robust.Client.Graphics;
 using Robust.Client.Input;
 using Robust.Client.ResourceManagement;
 using Robust.Shared.Enums;
 using Robust.Shared.Map;
-using Robust.Shared.Map.Components;
 using Robust.Shared.Timing;
 using Robust.Shared.Utility;
 
@@ -22,7 +20,6 @@ namespace Content.Client.NPC
         [Dependency] private readonly IMapManager _mapManager = default!;
         [Dependency] private readonly IResourceCache _cache = default!;
         [Dependency] private readonly NPCSteeringSystem _steering = default!;
-        [Dependency] private readonly MapSystem _mapSystem = default!;
 
         public PathfindingDebugMode Modes
         {
@@ -39,7 +36,7 @@ namespace Content.Client.NPC
                 }
                 else if (!overlayManager.HasOverlay<PathfindingOverlay>())
                 {
-                    overlayManager.AddOverlay(new PathfindingOverlay(EntityManager, _eyeManager, _inputManager, _mapManager, _cache, this, _mapSystem));
+                    overlayManager.AddOverlay(new PathfindingOverlay(EntityManager, _eyeManager, _inputManager, _mapManager, _cache, this));
                 }
 
                 if ((value & PathfindingDebugMode.Steering) != 0x0)
@@ -139,12 +136,10 @@ namespace Content.Client.NPC
         private readonly IInputManager _inputManager;
         private readonly IMapManager _mapManager;
         private readonly PathfindingSystem _system;
-        private readonly MapSystem _mapSystem;
 
         public override OverlaySpace Space => OverlaySpace.ScreenSpace | OverlaySpace.WorldSpace;
 
         private readonly Font _font;
-        private List<Entity<MapGridComponent>> _grids = new();
 
         public PathfindingOverlay(
             IEntityManager entManager,
@@ -152,15 +147,13 @@ namespace Content.Client.NPC
             IInputManager inputManager,
             IMapManager mapManager,
             IResourceCache cache,
-            PathfindingSystem system,
-            MapSystem mapSystem)
+            PathfindingSystem system)
         {
             _entManager = entManager;
             _eyeManager = eyeManager;
             _inputManager = inputManager;
             _mapManager = mapManager;
             _system = system;
-            _mapSystem = mapSystem;
             _font = new VectorFont(cache.GetResource<FontResource>("/Fonts/NotoSans/NotoSans-Regular.ttf"), 10);
         }
 
@@ -189,14 +182,11 @@ namespace Content.Client.NPC
             {
                 var found = false;
 
-                _grids.Clear();
-                _mapManager.FindGridsIntersecting(mouseWorldPos.MapId, aabb, ref _grids);
-
-                foreach (var grid in _grids)
+                foreach (var grid in _mapManager.FindGridsIntersecting(mouseWorldPos.MapId, aabb))
                 {
-                    var netGrid = _entManager.GetNetEntity(grid);
+                    var netGrid = _entManager.GetNetEntity(grid.Owner);
 
-                    if (found || !_system.Breadcrumbs.TryGetValue(netGrid, out var crumbs) || !xformQuery.TryGetComponent(grid, out var gridXform))
+                    if (found || !_system.Breadcrumbs.TryGetValue(netGrid, out var crumbs) || !xformQuery.TryGetComponent(grid.Owner, out var gridXform))
                         continue;
 
                     var (_, _, worldMatrix, invWorldMatrix) = gridXform.GetWorldPositionRotationMatrixWithInv();
@@ -272,7 +262,7 @@ namespace Content.Client.NPC
                 if (!_system.Polys.TryGetValue(_entManager.GetNetEntity(gridUid), out var data))
                     return;
 
-                var tileRef = _mapSystem.GetTileRef(gridUid, grid, mouseWorldPos);
+                var tileRef = grid.GetTileRef(mouseWorldPos);
                 var localPos = tileRef.GridIndices;
                 var chunkOrigin = localPos / SharedPathfindingSystem.ChunkSize;
 
@@ -343,15 +333,12 @@ namespace Content.Client.NPC
             if ((_system.Modes & PathfindingDebugMode.Breadcrumbs) != 0x0 &&
                 mouseWorldPos.MapId == args.MapId)
             {
-                _grids.Clear();
-                _mapManager.FindGridsIntersecting(mouseWorldPos.MapId, aabb, ref _grids);
-
-                foreach (var grid in _grids)
+                foreach (var grid in _mapManager.FindGridsIntersecting(mouseWorldPos.MapId, aabb))
                 {
-                    var netGrid = _entManager.GetNetEntity(grid);
+                    var netGrid = _entManager.GetNetEntity(grid.Owner);
 
                     if (!_system.Breadcrumbs.TryGetValue(netGrid, out var crumbs) ||
-                        !xformQuery.TryGetComponent(grid, out var gridXform))
+                        !xformQuery.TryGetComponent(grid.Owner, out var gridXform))
                     {
                         continue;
                     }
@@ -405,15 +392,12 @@ namespace Content.Client.NPC
             if ((_system.Modes & PathfindingDebugMode.Polys) != 0x0 &&
                 mouseWorldPos.MapId == args.MapId)
             {
-                _grids.Clear();
-                _mapManager.FindGridsIntersecting(args.MapId, aabb, ref _grids);
-
-                foreach (var grid in _grids)
+                foreach (var grid in _mapManager.FindGridsIntersecting(args.MapId, aabb))
                 {
-                    var netGrid = _entManager.GetNetEntity(grid);
+                    var netGrid = _entManager.GetNetEntity(grid.Owner);
 
                     if (!_system.Polys.TryGetValue(netGrid, out var data) ||
-                        !xformQuery.TryGetComponent(grid, out var gridXform))
+                        !xformQuery.TryGetComponent(grid.Owner, out var gridXform))
                         continue;
 
                     var (_, _, worldMatrix, invWorldMatrix) = gridXform.GetWorldPositionRotationMatrixWithInv();
@@ -444,15 +428,12 @@ namespace Content.Client.NPC
             if ((_system.Modes & PathfindingDebugMode.PolyNeighbors) != 0x0 &&
                 mouseWorldPos.MapId == args.MapId)
             {
-                _grids.Clear();
-                _mapManager.FindGridsIntersecting(args.MapId, aabb, ref _grids);
-
-                foreach (var grid in _grids)
+                foreach (var grid in _mapManager.FindGridsIntersecting(args.MapId, aabb))
                 {
-                    var netGrid = _entManager.GetNetEntity(grid);
+                    var netGrid = _entManager.GetNetEntity(grid.Owner);
 
                     if (!_system.Polys.TryGetValue(netGrid, out var data) ||
-                        !xformQuery.TryGetComponent(grid, out var gridXform))
+                        !xformQuery.TryGetComponent(grid.Owner, out var gridXform))
                         continue;
 
                     var (_, _, worldMatrix, invMatrix) = gridXform.GetWorldPositionRotationMatrixWithInv();
@@ -503,15 +484,12 @@ namespace Content.Client.NPC
 
             if ((_system.Modes & PathfindingDebugMode.Chunks) != 0x0)
             {
-                _grids.Clear();
-                _mapManager.FindGridsIntersecting(args.MapId, args.WorldBounds, ref _grids);
-
-                foreach (var grid in _grids)
+                foreach (var grid in _mapManager.FindGridsIntersecting(args.MapId, args.WorldBounds))
                 {
-                    var netGrid = _entManager.GetNetEntity(grid);
+                    var netGrid = _entManager.GetNetEntity(grid.Owner);
 
                     if (!_system.Breadcrumbs.TryGetValue(netGrid, out var crumbs) ||
-                        !xformQuery.TryGetComponent(grid, out var gridXform))
+                        !xformQuery.TryGetComponent(grid.Owner, out var gridXform))
                         continue;
 
                     var (_, _, worldMatrix, invWorldMatrix) = gridXform.GetWorldPositionRotationMatrixWithInv();

@@ -11,29 +11,22 @@ public sealed class ArtifactMusicTriggerSystem : EntitySystem
 {
     [Dependency] private readonly ArtifactSystem _artifact = default!;
 
-    private readonly List<Entity<ArtifactMusicTriggerComponent, TransformComponent>> _artifacts = new();
-
     public override void Update(float frameTime)
     {
         base.Update(frameTime);
 
-        _artifacts.Clear();
-        var artifactQuery = EntityQueryEnumerator<ArtifactMusicTriggerComponent, TransformComponent>();
-        while (artifactQuery.MoveNext(out var uid, out var trigger, out var xform))
-        {
-            _artifacts.Add((uid, trigger, xform));
-        }
-
-        if (!_artifacts.Any())
+        var artifactQuery = EntityQuery<ArtifactMusicTriggerComponent, TransformComponent>().ToArray();
+        if (!artifactQuery.Any())
             return;
 
         List<EntityUid> toActivate = new();
-        var query = EntityQueryEnumerator<ActiveInstrumentComponent, TransformComponent>();
 
         //assume that there's more instruments than artifacts
-        while (query.MoveNext(out _, out var instXform))
+        foreach (var activeinstrument in EntityQuery<ActiveInstrumentComponent>())
         {
-            foreach (var (uid, trigger, xform) in _artifacts)
+            var instXform = Transform(activeinstrument.Owner);
+
+            foreach (var (trigger, xform) in artifactQuery)
             {
                 if (!instXform.Coordinates.TryDistance(EntityManager, xform.Coordinates, out var distance))
                     continue;
@@ -41,7 +34,7 @@ public sealed class ArtifactMusicTriggerSystem : EntitySystem
                 if (distance > trigger.Range)
                     continue;
 
-                toActivate.Add(uid);
+                toActivate.Add(trigger.Owner);
             }
         }
 

@@ -1,4 +1,4 @@
-using Content.Shared.Construction.Steps;
+﻿using Content.Shared.Construction.Steps;
 
 namespace Content.Shared.Construction
 {

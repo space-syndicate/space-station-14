@@ -1,9 +1,8 @@
 using System.Linq;
 using Content.Server.Body.Systems;
 using Content.Shared.Alert;
+using Content.Shared.Body.Components;
 using Content.Shared.Body.Part;
-using Content.Shared.Damage.Components;
-using Content.Shared.Damage.Systems;
 using Content.Shared.DoAfter;
 using Content.Shared.Ensnaring;
 using Content.Shared.Ensnaring.Components;
@@ -18,7 +17,6 @@ public sealed partial class EnsnareableSystem
     [Dependency] private readonly SharedDoAfterSystem _doAfter = default!;
     [Dependency] private readonly AlertsSystem _alerts = default!;
     [Dependency] private readonly BodySystem _body = default!;
-    [Dependency] private readonly StaminaSystem _stamina = default!;
 
     public void InitializeEnsnaring()
     {
@@ -73,15 +71,6 @@ public sealed partial class EnsnareableSystem
 
         if (freeLegs <= 0)
             return;
-
-        // Apply stamina damage to target if they weren't ensnared before.
-        if (ensnareable.IsEnsnared != true)
-        {
-            if (TryComp<StaminaComponent>(target, out var stamina))
-            {
-                _stamina.TakeStaminaDamage(target, component.StaminaDamage, with: ensnare);
-            }
-        }
 
         component.Ensnared = target;
         ensnareable.Container.Insert(ensnare);

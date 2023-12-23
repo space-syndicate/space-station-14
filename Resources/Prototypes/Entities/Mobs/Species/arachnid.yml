@@ -8,6 +8,7 @@
   - type: Body
     prototype: Arachnid
     requiredLegs: 2 # It would be funny if arachnids could use their little back limbs to move around once they lose their legs, but just something to consider post-woundmed
+  - type: Perishable
   - type: HumanoidAppearance
     species: Arachnid
   - type: Hunger
@@ -20,7 +21,7 @@
     baseDecayRate: 0.0125 # Read comment in hunger
   # Damage (Self)
   - type: Bloodstream
-    bloodReagent: CopperBlood
+    bloodReagent: SpiderBlood # would be cool if they had to drink copper instead of iron but that might just be more bloat to deal with.
   # Damage (Others)
   - type: MeleeWeapon
     animation: WeaponArcClaw
@@ -35,7 +36,6 @@
     productionLength: 3
     entityProduced: MaterialWebSilk1
     hungerCost: 9 # Should total to 12 total silk on full hunger
-  - type: Perishable
   - type: Butcherable
     butcheringType: Spike
     spawned:
@@ -109,11 +109,6 @@
         sprite: "Effects/creampie.rsi"
         state: "creampie_arachnid"
         visible: false
-  - type: Tag
-    tags:
-    - CanPilot
-    - FootstepSound
-    - DoorBumpOpener
 
 - type: entity
   parent: BaseSpeciesDummy

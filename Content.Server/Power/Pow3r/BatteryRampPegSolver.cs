@@ -170,7 +170,6 @@ namespace Content.Server.Power.Pow3r
                 }
             }
 
-            network.LastCombinedLoad = demand;
             network.LastCombinedSupply = totalSupply + totalBatterySupply;
             network.LastCombinedMaxSupply = totalMaxSupply + totalMaxBatterySupply;
 

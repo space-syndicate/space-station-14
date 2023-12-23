@@ -5,6 +5,7 @@ using Content.Shared.Hands.Components;
 using Content.Shared.Interaction;
 using Content.Shared.Tabletop.Components;
 using Content.Shared.Tabletop.Events;
+using Robust.Shared.GameStates;
 using Robust.Shared.Map;
 using Robust.Shared.Network;
 using Robust.Shared.Serialization;
@@ -21,6 +22,7 @@ namespace Content.Shared.Tabletop
 
         public override void Initialize()
         {
+            SubscribeLocalEvent<TabletopDraggableComponent, ComponentGetState>(GetDraggableState);
             SubscribeAllEvent<TabletopDraggingPlayerChangedEvent>(OnDraggingPlayerChanged);
             SubscribeAllEvent<TabletopMoveEvent>(OnTabletopMove);
         }
@@ -43,6 +45,11 @@ namespace Content.Shared.Tabletop
             var transform = EntityManager.GetComponent<TransformComponent>(moved);
             _transforms.SetParent(moved, transform, _mapMan.GetMapEntityId(transform.MapID));
             _transforms.SetLocalPositionNoLerp(transform, msg.Coordinates.Position);
+        }
+
+        private void GetDraggableState(EntityUid uid, TabletopDraggableComponent component, ref ComponentGetState args)
+        {
+            args.State = new TabletopDraggableComponentState(component.DraggingPlayer);
         }
 
         private void OnDraggingPlayerChanged(TabletopDraggingPlayerChangedEvent msg, EntitySessionEventArgs args)

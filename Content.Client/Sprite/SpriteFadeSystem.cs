@@ -77,13 +77,12 @@ public sealed class SpriteFadeSystem : EntitySystem
             }
         }
 
-        var query = AllEntityQuery<FadingSpriteComponent>();
-        while (query.MoveNext(out var uid, out var comp))
+        foreach (var comp in EntityQuery<FadingSpriteComponent>(true))
         {
             if (_comps.Contains(comp))
                 continue;
 
-            if (!spriteQuery.TryGetComponent(uid, out var sprite))
+            if (!spriteQuery.TryGetComponent(comp.Owner, out var sprite))
                 continue;
 
             var newColor = Math.Min(sprite.Color.A + change, comp.OriginalAlpha);
@@ -94,7 +93,7 @@ public sealed class SpriteFadeSystem : EntitySystem
             }
             else
             {
-                RemCompDeferred<FadingSpriteComponent>(uid);
+                RemCompDeferred<FadingSpriteComponent>(comp.Owner);
             }
         }
 

@@ -6,7 +6,6 @@ using Content.Server.Extinguisher;
 using Content.Server.Fluids.Components;
 using Content.Server.Gravity;
 using Content.Server.Popups;
-using Content.Shared.Chemistry.EntitySystems;
 using Content.Shared.Cooldown;
 using Content.Shared.FixedPoint;
 using Content.Shared.Interaction;
@@ -130,15 +129,14 @@ public sealed class SpraySystem : EntitySystem
 
             // Add the solution to the vapor and actually send the thing
             var vaporComponent = Comp<VaporComponent>(vapor);
-            var ent = (vapor, vaporComponent);
-            _vapor.TryAddSolution(ent, newSolution);
+            _vapor.TryAddSolution(vaporComponent, newSolution);
 
             // impulse direction is defined in world-coordinates, not local coordinates
             var impulseDirection = rotation.ToVec();
             var time = diffLength / component.SprayVelocity;
             cooldownTime = MathF.Max(time, cooldownTime);
 
-            _vapor.Start(ent, vaporXform, impulseDirection * diffLength, component.SprayVelocity, target, time, args.User);
+            _vapor.Start(vaporComponent, vaporXform, impulseDirection * diffLength, component.SprayVelocity, target, time, args.User);
 
             if (TryComp<PhysicsComponent>(args.User, out var body))
             {

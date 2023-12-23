@@ -4,6 +4,7 @@ using Content.Server.Cargo.Systems;
 using Content.Server.GameTicking;
 using Content.Server.GameTicking.Rules.Components;
 using Content.Server.StationEvents.Components;
+using Content.Shared.Cargo.Prototypes;
 using Robust.Shared.Prototypes;
 
 namespace Content.Server.StationEvents.Events;
@@ -55,7 +56,7 @@ public sealed class CargoGiftsRule : StationEventSystem<CargoGiftsRuleComponent>
             var (productId, qty) = component.Gifts.First();
             component.Gifts.Remove(productId);
 
-            var product = _prototypeManager.Index(productId);
+            var product = _prototypeManager.Index<CargoProductPrototype>(productId);
 
             if (!_cargoSystem.AddAndApproveOrder(
                     station!.Value,

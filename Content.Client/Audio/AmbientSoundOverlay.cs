@@ -39,7 +39,7 @@ public sealed class AmbientSoundOverlay : Overlay
 
             if (ambientSound.Enabled)
             {
-                if (_ambient.IsActive((ent, ambientSound)))
+                if (_ambient.IsActive(ambientSound))
                 {
                     worldHandle.DrawCircle(xformSystem.GetWorldPosition(xform), Size, Color.LightGreen.WithAlpha(Alpha * 2f));
                 }

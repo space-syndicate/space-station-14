@@ -12,8 +12,8 @@ namespace Content.Shared.Examine
         /// <summary>
         ///     A list of ExamineGroups.
         /// </summary>
-        [DataField]
-        public List<ExamineGroup> Group = new()
+        [DataField("group")]
+        public List<ExamineGroup> ExamineGroups = new()
         {
             // TODO Remove hardcoded component names.
             new ExamineGroup()
@@ -33,14 +33,14 @@ namespace Content.Shared.Examine
         /// <summary>
         ///     The title of the Examine Group. Localized string that gets added to the examine tooltip.
         /// </summary>
-        [DataField]
+        [DataField("title")]
         [ViewVariables(VVAccess.ReadWrite)]
         public string? Title;
 
         /// <summary>
         ///     A list of ExamineEntries, containing which component it belongs to, which priority it has, and what FormattedMessage it holds.
         /// </summary>
-        [DataField]
+        [DataField("entries")]
         public List<ExamineEntry> Entries = new();
 
         // TODO custom type serializer, or just make this work via some other automatic grouping process that doesn't
@@ -48,25 +48,25 @@ namespace Content.Shared.Examine
         /// <summary>
         ///     A list of all components this ExamineGroup encompasses.
         /// </summary>
-        [DataField]
+        [DataField("components")]
         public List<string> Components = new();
 
         /// <summary>
         ///     The icon path for the Examine Group.
         /// </summary>
-        [DataField]
+        [DataField("icon")]
         public SpriteSpecifier Icon = new SpriteSpecifier.Texture(new("/Textures/Interface/examine-star.png"));
 
         /// <summary>
         ///     The text shown in the context verb menu.
         /// </summary>
-        [DataField]
-        public LocId ContextText = "verb-examine-group-other";
+        [DataField("contextText")]
+        public string ContextText = "verb-examine-group-other";
 
         /// <summary>
         ///     Details shown when hovering over the button.
         /// </summary>
-        [DataField]
+        [DataField("hoverMessage")]
         public string HoverMessage = string.Empty;
     }
 
@@ -79,25 +79,25 @@ namespace Content.Shared.Examine
         /// <summary>
         ///     Which component does this entry relate to?
         /// </summary>
-        [DataField(required: true)]
-        public string Component;
+        [DataField("component", required: true)]
+        public string ComponentName;
 
         /// <summary>
         ///     What priority has this entry - entries are sorted high to low.
         /// </summary>
-        [DataField]
+        [DataField("priority")]
         public float Priority = 0f;
 
         /// <summary>
         ///     The FormattedMessage of this entry.
         /// </summary>
-        [DataField(required: true)]
+        [DataField("message", required: true)]
         public FormattedMessage Message;
 
-        /// <param name="component">Should be set to _componentFactory.GetComponentName(component.GetType()) to properly function.</param>
-        public ExamineEntry(string component, float priority, FormattedMessage message)
+        /// <param name="componentName">Should be set to _componentFactory.GetComponentName(component.GetType()) to properly function.</param>
+        public ExamineEntry(string componentName, float priority, FormattedMessage message)
         {
-            Component = component;
+            ComponentName = componentName;
             Priority = priority;
             Message = message;
         }
@@ -106,7 +106,7 @@ namespace Content.Shared.Examine
         {
             // parameterless ctor is required for data-definition serialization
             Message = default!;
-            Component = default!;
+            ComponentName = default!;
         }
     }
 

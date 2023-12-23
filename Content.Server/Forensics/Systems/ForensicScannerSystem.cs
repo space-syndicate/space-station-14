@@ -1,5 +1,8 @@
 using System.Linq;
-using System.Text;
+using System.Text; // todo: remove this stinky LINQy
+using Robust.Server.GameObjects;
+using Robust.Shared.Audio;
+using Robust.Shared.Timing;
 using Content.Server.Paper;
 using Content.Server.Popups;
 using Content.Server.UserInterface;
@@ -8,11 +11,6 @@ using Content.Shared.Forensics;
 using Content.Shared.Hands.EntitySystems;
 using Content.Shared.Interaction;
 using Content.Shared.Verbs;
-using Robust.Server.GameObjects;
-using Robust.Shared.Audio;
-using Robust.Shared.Player;
-using Robust.Shared.Timing;
-// todo: remove this stinky LINQy
 
 namespace Content.Server.Forensics
 {
@@ -85,7 +83,7 @@ namespace Content.Server.Forensics
                 scanner.LastScannedName = MetaData(args.Args.Target.Value).EntityName;
             }
 
-            OpenUserInterface(args.Args.User, (uid, scanner));
+            OpenUserInterface(args.Args.User, scanner);
         }
 
         /// <remarks>
@@ -162,14 +160,14 @@ namespace Content.Server.Forensics
             UpdateUserInterface(uid, component);
         }
 
-        private void OpenUserInterface(EntityUid user, Entity<ForensicScannerComponent> scanner)
+        private void OpenUserInterface(EntityUid user, ForensicScannerComponent component)
         {
             if (!TryComp<ActorComponent>(user, out var actor))
                 return;
 
-            UpdateUserInterface(scanner, scanner.Comp);
+            UpdateUserInterface(component.Owner, component);
 
-            _uiSystem.TryOpen(scanner, ForensicScannerUiKey.Key, actor.PlayerSession);
+            _uiSystem.TryOpen(component.Owner, ForensicScannerUiKey.Key, actor.PlayerSession);
         }
 
         private void OnPrint(EntityUid uid, ForensicScannerComponent component, ForensicScannerPrintMessage args)
@@ -194,7 +192,7 @@ namespace Content.Server.Forensics
             var printed = EntityManager.SpawnEntity(component.MachineOutput, Transform(uid).Coordinates);
             _handsSystem.PickupOrDrop(args.Session.AttachedEntity, printed, checkActionBlocker: false);
 
-            if (!HasComp<PaperComponent>(printed))
+            if (!TryComp<PaperComponent>(printed, out var paper))
             {
                 _sawmill.Error("Printed paper did not have PaperComponent.");
                 return;

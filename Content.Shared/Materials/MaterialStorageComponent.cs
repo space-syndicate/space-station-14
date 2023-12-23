@@ -1,65 +1,67 @@
 using Content.Shared.Whitelist;
 using Robust.Shared.Audio;
 using Robust.Shared.GameStates;
-using Robust.Shared.Prototypes;
 using Robust.Shared.Serialization;
+using Robust.Shared.Serialization.TypeSerializers.Implementations.Custom;
+using Robust.Shared.Serialization.TypeSerializers.Implementations.Custom.Prototype.Dictionary;
+using Robust.Shared.Serialization.TypeSerializers.Implementations.Custom.Prototype.List;
 
 namespace Content.Shared.Materials;
 
-[RegisterComponent, NetworkedComponent, AutoGenerateComponentState]
 [Access(typeof(SharedMaterialStorageSystem))]
+[RegisterComponent, NetworkedComponent]
 public sealed partial class MaterialStorageComponent : Component
 {
-    [DataField, AutoNetworkedField]
-    public Dictionary<ProtoId<MaterialPrototype>, int> Storage { get; set; } = new();
+    [DataField("storage", customTypeSerializer: typeof(PrototypeIdDictionarySerializer<int, MaterialPrototype>))]
+    public Dictionary<string, int> Storage { get; set; } = new();
 
     /// <summary>
     /// Whether or not interacting with the materialstorage inserts the material in hand.
     /// </summary>
-    [DataField]
+    [DataField("insertOnInteract")]
     public bool InsertOnInteract = true;
 
     /// <summary>
     ///     How much material the storage can store in total.
     /// </summary>
-    [ViewVariables(VVAccess.ReadWrite), DataField]
+    [ViewVariables(VVAccess.ReadWrite), DataField("storageLimit")]
     public int? StorageLimit;
 
     /// <summary>
     /// Whitelist for specifying the kind of items that can be insert into this entity.
     /// </summary>
-    [DataField]
-    public EntityWhitelist? Whitelist;
+    [DataField("whitelist")]
+    public EntityWhitelist? EntityWhitelist;
 
     /// <summary>
     /// Whether or not to drop contained materials when deconstructed.
     /// </summary>
-    [DataField]
+    [DataField("dropOnDeconstruct")]
     public bool DropOnDeconstruct = true;
 
     /// <summary>
     /// Whitelist generated on runtime for what specific materials can be inserted into this entity.
     /// </summary>
-    [DataField, AutoNetworkedField]
-    public List<ProtoId<MaterialPrototype>>? MaterialWhiteList;
+    [DataField("materialWhiteList", customTypeSerializer: typeof(PrototypeIdListSerializer<MaterialPrototype>))]
+    public List<string>? MaterialWhiteList;
 
     /// <summary>
     /// Whether or not the visualization for the insertion animation
     /// should ignore the color of the material being inserted.
     /// </summary>
-    [DataField]
+    [DataField("ignoreColor")]
     public bool IgnoreColor;
 
     /// <summary>
     /// The sound that plays when inserting an item into the storage
     /// </summary>
-    [DataField]
+    [DataField("insertingSound")]
     public SoundSpecifier? InsertingSound;
 
     /// <summary>
     /// How long the inserting animation will play
     /// </summary>
-    [DataField]
+    [DataField("insertionTime")]
     public TimeSpan InsertionTime = TimeSpan.FromSeconds(0.79f); // 0.01 off for animation timing
 }
 
@@ -92,5 +94,19 @@ public record struct GetMaterialWhitelistEvent(EntityUid Storage)
 {
     public readonly EntityUid Storage = Storage;
 
-    public List<ProtoId<MaterialPrototype>> Whitelist = new();
+    public List<string> Whitelist = new();
+}
+
+[Serializable, NetSerializable]
+public sealed class MaterialStorageComponentState : ComponentState
+{
+    public Dictionary<string, int> Storage;
+
+    public List<string>? MaterialWhitelist;
+
+    public MaterialStorageComponentState(Dictionary<string, int> storage, List<string>? materialWhitelist)
+    {
+        Storage = storage;
+        MaterialWhitelist = materialWhitelist;
+    }
 }

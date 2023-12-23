@@ -13,12 +13,5 @@ namespace Content.Shared.Administration
         NetEntity? NetEntity,
         NetUserId SessionId,
         bool Connected,
-        bool ActiveThisRound,
-        TimeSpan? OverallPlaytime)
-    {
-        private string? _playtimeString;
-
-        public string PlaytimeString => _playtimeString ??=
-            OverallPlaytime?.ToString("%d':'hh':'mm") ?? Loc.GetString("generic-unknown-title");
-    }
+        bool ActiveThisRound);
 }

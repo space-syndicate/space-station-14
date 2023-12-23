@@ -1,14 +1,16 @@
 using System.Numerics;
 using Content.Server.Administration;
+using Content.Server.Tools.Components;
 using Content.Shared.Administration;
 using Content.Shared.Maps;
+using Robust.Server.Player;
 using Robust.Shared.Console;
 using Robust.Shared.Map;
 
 namespace Content.Server.Interaction
 {
     /// <summary>
-    /// <see cref="Shared.Tools.Components.TilePryingComponent.TryPryTile"/>
+    /// <see cref="TilePryingComponent.TryPryTile"/>
     /// </summary>
     [AdminCommand(AdminFlags.Debug)]
     sealed class TilePryCommand : IConsoleCommand
@@ -21,7 +23,7 @@ namespace Content.Server.Interaction
 
         public void Execute(IConsoleShell shell, string argStr, string[] args)
         {
-            var player = shell.Player;
+            var player = shell.Player as IPlayerSession;
             if (player?.AttachedEntity is not {} attached)
             {
                 return;

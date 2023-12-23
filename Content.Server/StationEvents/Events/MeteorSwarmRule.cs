@@ -1,11 +1,10 @@
 using System.Numerics;
 using Content.Server.GameTicking.Rules.Components;
 using Content.Server.StationEvents.Components;
+using Content.Shared.Spawners.Components;
 using Robust.Shared.Map;
-using Robust.Shared.Map.Components;
 using Robust.Shared.Physics.Components;
 using Robust.Shared.Physics.Systems;
-using Robust.Shared.Spawners;
 
 namespace Content.Server.StationEvents.Events
 {
@@ -43,13 +42,9 @@ namespace Content.Server.StationEvents.Events
             Box2? playableArea = null;
             var mapId = GameTicker.DefaultMap;
 
-            var query = AllEntityQuery<MapGridComponent, TransformComponent>();
-            while (query.MoveNext(out var gridId, out _, out var xform))
+            foreach (var grid in MapManager.GetAllMapGrids(mapId))
             {
-                if (xform.MapID != mapId)
-                    continue;
-
-                var aabb = _physics.GetWorldAABB(gridId);
+                var aabb = _physics.GetWorldAABB(grid.Owner);
                 playableArea = playableArea?.Union(aabb) ?? aabb;
             }
 

@@ -1,8 +1,12 @@
 using Content.Server.Administration.Commands;
 using Content.Server.Communications;
 using Content.Server.Chat.Managers;
+using Content.Server.StationEvents.Components;
 using Content.Server.GameTicking;
+using Content.Server.GameTicking.Rules;
 using Content.Server.GameTicking.Rules.Components;
+using Content.Server.Ghost.Roles.Events;
+using Content.Server.Objectives;
 using Content.Server.Power.Components;
 using Content.Server.Power.EntitySystems;
 using Content.Server.PowerCell;
@@ -19,12 +23,16 @@ using Content.Shared.Mind.Components;
 using Content.Shared.Ninja.Components;
 using Content.Shared.Ninja.Systems;
 using Content.Shared.Popups;
+using Content.Shared.Roles;
+using Content.Shared.PowerCell.Components;
 using Content.Shared.Rounding;
 using Robust.Shared.Audio;
+using Robust.Shared.GameObjects;
+using Robust.Shared.Physics.Components;
 using Robust.Shared.Player;
 using Robust.Shared.Random;
 using System.Diagnostics.CodeAnalysis;
-using Content.Server.Objectives.Components;
+using System.Linq;
 
 namespace Content.Server.Ninja.Systems;
 
@@ -49,6 +57,8 @@ public sealed class SpaceNinjaSystem : SharedSpaceNinjaSystem
     [Dependency] private readonly RoleSystem _role = default!;
     [Dependency] private readonly SharedAudioSystem _audio = default!;
     [Dependency] private readonly SharedMindSystem _mind = default!;
+    [Dependency] private readonly SharedPopupSystem _popup = default!;
+    [Dependency] private readonly SharedTransformSystem _transform = default!;
     [Dependency] private readonly StealthClothingSystem _stealthClothing = default!;
 
     public override void Initialize()
@@ -75,12 +85,12 @@ public sealed class SpaceNinjaSystem : SharedSpaceNinjaSystem
     /// </summary>
     private int Download(EntityUid uid, List<string> ids)
     {
-        if (!_mind.TryGetObjectiveComp<StealResearchConditionComponent>(uid, out var obj))
+        if (!_mind.TryGetRole<NinjaRoleComponent>(uid, out var role))
             return 0;
 
-        var oldCount = obj.DownloadedNodes.Count;
-        obj.DownloadedNodes.UnionWith(ids);
-        var newCount = obj.DownloadedNodes.Count;
+        var oldCount = role.DownloadedNodes.Count;
+        role.DownloadedNodes.UnionWith(ids);
+        var newCount = role.DownloadedNodes.Count;
         return newCount - oldCount;
     }
 
@@ -114,7 +124,7 @@ public sealed class SpaceNinjaSystem : SharedSpaceNinjaSystem
 
         if (GetNinjaBattery(uid, out _, out var battery))
         {
-            var severity = ContentHelpers.RoundToLevels(MathF.Max(0f, battery.CurrentCharge), battery.MaxCharge, 8);
+             var severity = ContentHelpers.RoundToLevels(MathF.Max(0f, battery.CurrentCharge), battery.MaxCharge, 8);
             _alerts.ShowAlert(uid, AlertType.SuitPower, (short) severity);
         }
         else
@@ -170,10 +180,12 @@ public sealed class SpaceNinjaSystem : SharedSpaceNinjaSystem
 
         // choose spider charge detonation point
         var warps = new List<EntityUid>();
-        var query = EntityQueryEnumerator<BombingTargetComponent, WarpPointComponent>();
-        while (query.MoveNext(out var warpUid, out _, out var warp))
+        var query = EntityQueryEnumerator<BombingTargetComponent, WarpPointComponent, TransformComponent>();
+        var map = Transform(uid).MapID;
+        while (query.MoveNext(out var warpUid, out _, out var warp, out var xform))
         {
-            warps.Add(warpUid);
+            if (warp.Location != null)
+                warps.Add(warpUid);
         }
 
         if (warps.Count > 0)
@@ -193,7 +205,7 @@ public sealed class SpaceNinjaSystem : SharedSpaceNinjaSystem
         if (ninja.Suit == null)
             return;
 
-        float wattage = Suit.SuitWattage(ninja.Suit.Value);
+        float wattage = _suit.SuitWattage(ninja.Suit.Value);
 
         SetSuitPowerAlert(uid, ninja);
         if (!TryUseCharge(uid, wattage * frameTime))
@@ -213,11 +225,11 @@ public sealed class SpaceNinjaSystem : SharedSpaceNinjaSystem
             return;
 
         // this popup is serverside since door emag logic is serverside (power funnies)
-        Popup.PopupEntity(Loc.GetString("ninja-doorjack-success", ("target", Identity.Entity(args.Target, EntityManager))), uid, uid, PopupType.Medium);
+        _popup.PopupEntity(Loc.GetString("ninja-doorjack-success", ("target", Identity.Entity(args.Target, EntityManager))), uid, uid, PopupType.Medium);
 
         // handle greentext
-        if (_mind.TryGetObjectiveComp<DoorjackConditionComponent>(uid, out var obj))
-            obj.DoorsJacked++;
+        if (_mind.TryGetRole<NinjaRoleComponent>(uid, out var role))
+            role.DoorsJacked++;
     }
 
     /// <summary>
@@ -230,14 +242,14 @@ public sealed class SpaceNinjaSystem : SharedSpaceNinjaSystem
             ? Loc.GetString("ninja-research-steal-fail")
             : Loc.GetString("ninja-research-steal-success", ("count", gained), ("server", args.Target));
 
-        Popup.PopupEntity(str, uid, uid, PopupType.Medium);
+        _popup.PopupEntity(str, uid, uid, PopupType.Medium);
     }
 
     private void OnThreatCalledIn(EntityUid uid, SpaceNinjaComponent comp, ref ThreatCalledInEvent args)
     {
-        if (_mind.TryGetObjectiveComp<TerrorConditionComponent>(uid, out var obj))
+        if (_mind.TryGetRole<NinjaRoleComponent>(uid, out var role))
         {
-            obj.CalledInThreat = true;
+            role.CalledInThreat = true;
         }
     }
 }

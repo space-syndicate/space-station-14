@@ -1,12 +1,13 @@
-using System.Linq;
 using Content.Shared.Humanoid.Markings;
 using Content.Shared.Humanoid.Prototypes;
+using Robust.Shared.GameStates;
+using Robust.Shared.Prototypes;
+using System.Linq;
 using Content.Shared.Corvax.TTS;
 using Content.Shared.Decals;
 using Content.Shared.Preferences;
 using Robust.Shared.GameObjects.Components.Localization;
 using Robust.Shared.Network;
-using Robust.Shared.Prototypes;
 
 namespace Content.Shared.Humanoid;
 
@@ -41,6 +42,7 @@ public abstract class SharedHumanoidAppearanceSystem : EntitySystem
     {
         base.Initialize();
         SubscribeLocalEvent<HumanoidAppearanceComponent, ComponentInit>(OnInit);
+        SubscribeLocalEvent<HumanoidAppearanceComponent, ComponentGetState>(OnGetState);
     }
 
     private void OnInit(EntityUid uid, HumanoidAppearanceComponent humanoid, ComponentInit args)
@@ -64,6 +66,21 @@ public abstract class SharedHumanoidAppearanceSystem : EntitySystem
         }
 
         LoadProfile(uid, startingSet.Profile, humanoid);
+    }
+
+    private void OnGetState(EntityUid uid, HumanoidAppearanceComponent component, ref ComponentGetState args)
+    {
+        args.State = new HumanoidAppearanceState(component.MarkingSet,
+            component.PermanentlyHidden,
+            component.HiddenLayers,
+            component.CustomBaseLayers,
+            component.Sex,
+            component.Gender,
+            component.Age,
+            component.Species,
+            component.SkinColor,
+            component.EyeColor,
+            component.SpeakerColor); // Corvax-SpeakerColor
     }
 
     /// <summary>
@@ -206,7 +223,7 @@ public abstract class SharedHumanoidAppearanceSystem : EntitySystem
             return;
 
         if (humanoid.CustomBaseLayers.TryGetValue(layer, out var info))
-            humanoid.CustomBaseLayers[layer] = info with { Id = id };
+            humanoid.CustomBaseLayers[layer] = info with { ID = id };
         else
             humanoid.CustomBaseLayers[layer] = new(id);
 

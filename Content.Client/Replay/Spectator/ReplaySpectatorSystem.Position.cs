@@ -1,5 +1,6 @@
+using System.Linq;
 using Content.Shared.Movement.Components;
-using Robust.Client.Player;
+using Robust.Client.GameObjects;
 using Robust.Shared.Map;
 using Robust.Shared.Map.Components;
 using Robust.Shared.Network;
@@ -79,7 +80,7 @@ public sealed partial class ReplaySpectatorSystem
 
     public void SetSpectatorPosition(SpectatorData data)
     {
-        if (_player.LocalSession == null)
+        if (_player.LocalPlayer == null)
             return;
 
         if (data.Controller != null
@@ -87,13 +88,13 @@ public sealed partial class ReplaySpectatorSystem
             && Exists(session.AttachedEntity)
             && Transform(session.AttachedEntity.Value).MapID != MapId.Nullspace)
         {
-            _player.SetAttachedEntity(_player.LocalSession, session.AttachedEntity);
+            _player.LocalPlayer.AttachEntity(session.AttachedEntity.Value, EntityManager, _client);
             return;
         }
 
         if (Exists(data.Entity) && Transform(data.Entity).MapID != MapId.Nullspace)
         {
-            _player.SetAttachedEntity(_player.LocalSession, data.Entity);
+            _player.LocalPlayer.AttachEntity(data.Entity, EntityManager, _client);
             return;
         }
 
@@ -118,7 +119,7 @@ public sealed partial class ReplaySpectatorSystem
             return;
         }
 
-        if (data.Eye != null && TryComp(_player.LocalSession.AttachedEntity, out InputMoverComponent? newMover))
+        if (data.Eye != null && TryComp(_player.LocalPlayer.ControlledEntity, out InputMoverComponent? newMover))
         {
             newMover.RelativeEntity = data.Eye.Value.Ent;
             newMover.TargetRelativeRotation = newMover.RelativeRotation = data.Eye.Value.Rot;
@@ -133,22 +134,9 @@ public sealed partial class ReplaySpectatorSystem
             return true;
         }
 
-        Entity<MapGridComponent>? maxUid = null;
-        float? maxSize = null;
-        var gridQuery = EntityQueryEnumerator<MapGridComponent>();
-
-        while (gridQuery.MoveNext(out var uid, out var grid))
-        {
-            var size = grid.LocalAABB.Size.LengthSquared();
-            if (maxSize == null || size > maxSize)
-            {
-                maxUid = (uid, grid);
-                maxSize = size;
-            }
-        }
-
-        coords = new EntityCoordinates(maxUid ?? default, default);
-        return maxUid != null;
+        var uid = EntityQuery<MapGridComponent>().MaxBy(x => x.LocalAABB.Size.LengthSquared())?.Owner;
+        coords = new EntityCoordinates(uid ?? default, default);
+        return uid != null;
     }
 
     private void OnTerminating(EntityUid uid, ReplaySpectatorComponent component, ref EntityTerminatingEvent args)
@@ -177,7 +165,7 @@ public sealed partial class ReplaySpectatorSystem
         SetSpectatorPosition(default);
     }
 
-    private void OnDetached(EntityUid uid, ReplaySpectatorComponent component, LocalPlayerDetachedEvent args)
+    private void OnDetached(EntityUid uid, ReplaySpectatorComponent component, PlayerDetachedEvent args)
     {
         if (IsClientSide(uid))
             QueueDel(uid);

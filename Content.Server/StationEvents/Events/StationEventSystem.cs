@@ -1,4 +1,5 @@
 using System.Diagnostics.CodeAnalysis;
+using System.Linq;
 using Content.Server.Administration.Logs;
 using Content.Server.Atmos.EntitySystems;
 using Content.Server.Chat.Systems;
@@ -21,7 +22,7 @@ namespace Content.Server.StationEvents.Events;
 /// <summary>
 ///     An abstract entity system inherited by all station events for their behavior.
 /// </summary>
-public abstract partial class StationEventSystem<T> : GameRuleSystem<T> where T : IComponent
+public abstract partial class StationEventSystem<T> : GameRuleSystem<T> where T : Component
 {
     [Dependency] protected readonly IAdminLogManager AdminLogManager = default!;
     [Dependency] private readonly IGameTiming _timing = default!;
@@ -135,7 +136,12 @@ public abstract partial class StationEventSystem<T> : GameRuleSystem<T> where T 
 
     protected bool TryGetRandomStation([NotNullWhen(true)] out EntityUid? station, Func<EntityUid, bool>? filter = null)
     {
-        var stations = new ValueList<EntityUid>(Count<StationEventEligibleComponent>());
+        var stations = new ValueList<EntityUid>();
+
+        if (filter == null)
+        {
+            stations.EnsureCapacity(Count<StationEventEligibleComponent>());
+        }
 
         filter ??= _ => true;
         var query = AllEntityQuery<StationEventEligibleComponent>();

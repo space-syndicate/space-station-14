@@ -24,9 +24,8 @@ public sealed class RandomArtifactSpriteSystem : EntitySystem
     public override void Update(float frameTime)
     {
         base.Update(frameTime);
-
-        var query = EntityQueryEnumerator<RandomArtifactSpriteComponent, AppearanceComponent>();
-        while (query.MoveNext(out var uid, out var component, out var appearance))
+        var query = EntityManager.EntityQuery<RandomArtifactSpriteComponent, AppearanceComponent>();
+        foreach (var (component, appearance) in query)
         {
             if (component.ActivationStart == null)
                 continue;
@@ -34,7 +33,7 @@ public sealed class RandomArtifactSpriteSystem : EntitySystem
             var timeDif = _time.CurTime - component.ActivationStart.Value;
             if (timeDif.Seconds >= component.ActivationTime)
             {
-                _appearance.SetData(uid, SharedArtifactsVisuals.IsActivated, false, appearance);
+                _appearance.SetData(appearance.Owner, SharedArtifactsVisuals.IsActivated, false, appearance);
                 component.ActivationStart = null;
             }
         }

@@ -2,7 +2,6 @@ using Content.Shared.Damage;
 using Content.Shared.Spreader;
 using Robust.Shared.Random;
 using Robust.Shared.Timing;
-using Robust.Shared.Utility;
 
 namespace Content.Server.Spreader;
 
@@ -14,7 +13,7 @@ public sealed class KudzuSystem : EntitySystem
     [Dependency] private readonly DamageableSystem _damageable = default!;
 
     [ValidatePrototypeId<EdgeSpreaderPrototype>]
-    private const string KudzuGroup = "Kudzu";
+    private const string KudzuGroup = "kudzu";
 
     /// <inheritdoc/>
     public override void Initialize()
@@ -22,6 +21,7 @@ public sealed class KudzuSystem : EntitySystem
         SubscribeLocalEvent<KudzuComponent, ComponentStartup>(SetupKudzu);
         SubscribeLocalEvent<KudzuComponent, SpreadNeighborsEvent>(OnKudzuSpread);
         SubscribeLocalEvent<GrowingKudzuComponent, EntityUnpausedEvent>(OnKudzuUnpaused);
+        SubscribeLocalEvent<SpreadGroupUpdateRate>(OnKudzuUpdateRate);
         SubscribeLocalEvent<KudzuComponent, DamageChangedEvent>(OnDamageChanged);
     }
 
@@ -36,48 +36,57 @@ public sealed class KudzuSystem : EntitySystem
             if (!TryComp(uid, out growing))
             {
                 growing = AddComp<GrowingKudzuComponent>(uid);
-                component.GrowthLevel = 3;
+                growing.GrowthLevel = 3;
             }
-            component.GrowthLevel = Math.Max(1, component.GrowthLevel - growthDamage);
+            growing.GrowthLevel = Math.Max(1, growing.GrowthLevel - growthDamage);
             if (EntityManager.TryGetComponent<AppearanceComponent>(uid, out var appearance))
             {
-                _appearance.SetData(uid, KudzuVisuals.GrowthLevel, component.GrowthLevel, appearance);
+                _appearance.SetData(uid, KudzuVisuals.GrowthLevel, growing.GrowthLevel, appearance);
             }
         }
     }
 
     private void OnKudzuSpread(EntityUid uid, KudzuComponent component, ref SpreadNeighborsEvent args)
     {
-        if (component.GrowthLevel < 3)
+        if (TryComp<GrowingKudzuComponent>(uid, out var growing) && growing.GrowthLevel < 3)
+        {
             return;
+        }
 
         if (args.NeighborFreeTiles.Count == 0)
         {
-            RemCompDeferred<ActiveEdgeSpreaderComponent>(uid);
+            RemCompDeferred<EdgeSpreaderComponent>(uid);
+            return;
+        }
+
+        var prototype = MetaData(uid).EntityPrototype?.ID;
+
+        if (prototype == null)
+        {
+            RemCompDeferred<EdgeSpreaderComponent>(uid);
             return;
         }
 
         if (!_robustRandom.Prob(component.SpreadChance))
             return;
 
-        var prototype = MetaData(uid).EntityPrototype?.ID;
-
-        if (prototype == null)
-        {
-            RemCompDeferred<ActiveEdgeSpreaderComponent>(uid);
-            return;
-        }
-
         foreach (var neighbor in args.NeighborFreeTiles)
         {
             var neighborUid = Spawn(prototype, neighbor.Grid.GridTileToLocal(neighbor.Tile));
-            DebugTools.Assert(HasComp<EdgeSpreaderComponent>(neighborUid));
-            DebugTools.Assert(HasComp<ActiveEdgeSpreaderComponent>(neighborUid));
-            DebugTools.Assert(Comp<EdgeSpreaderComponent>(neighborUid).Id == KudzuGroup);
+            EnsureComp<EdgeSpreaderComponent>(neighborUid);
             args.Updates--;
+
             if (args.Updates <= 0)
                 return;
         }
+    }
+
+    private void OnKudzuUpdateRate(ref SpreadGroupUpdateRate args)
+    {
+        if (args.Name != KudzuGroup)
+            return;
+
+        args.UpdatesPerSecond = 1;
     }
 
     private void OnKudzuUnpaused(EntityUid uid, GrowingKudzuComponent component, ref EntityUnpausedEvent args)
@@ -100,30 +109,24 @@ public sealed class KudzuSystem : EntitySystem
     public override void Update(float frameTime)
     {
         var appearanceQuery = GetEntityQuery<AppearanceComponent>();
-        var query = EntityQueryEnumerator<GrowingKudzuComponent>();
-        var kudzuQuery = GetEntityQuery<KudzuComponent>();
-        var damageableQuery = GetEntityQuery<DamageableComponent>();
+        var query = EntityQueryEnumerator<GrowingKudzuComponent, KudzuComponent>();
         var curTime = _timing.CurTime;
 
-        while (query.MoveNext(out var uid, out var grow))
+        while (query.MoveNext(out var uid, out var grow, out var kudzu))
         {
             if (grow.NextTick > curTime)
-                continue;
-
-            grow.NextTick = curTime + TimeSpan.FromSeconds(0.5);
-
-            if (!kudzuQuery.TryGetComponent(uid, out var kudzu))
             {
-                RemCompDeferred(uid, grow);
                 continue;
             }
+
+            grow.NextTick = curTime + TimeSpan.FromSeconds(0.5);
 
             if (!_robustRandom.Prob(kudzu.GrowthTickChance))
             {
                 continue;
             }
 
-            if (damageableQuery.TryGetComponent(uid, out var damage))
+            if (TryComp<DamageableComponent>(uid, out var damage))
             {
                 if (damage.TotalDamage > 1.0)
                 {
@@ -143,17 +146,17 @@ public sealed class KudzuSystem : EntitySystem
                 }
             }
 
-            kudzu.GrowthLevel += 1;
+            grow.GrowthLevel += 1;
 
-            if (kudzu.GrowthLevel >= 3)
+            if (grow.GrowthLevel >= 3)
             {
                 // why cache when you can simply cease to be? Also saves a bit of memory/time.
-                RemCompDeferred(uid, grow);
+                RemCompDeferred<GrowingKudzuComponent>(uid);
             }
 
             if (appearanceQuery.TryGetComponent(uid, out var appearance))
             {
-                _appearance.SetData(uid, KudzuVisuals.GrowthLevel, kudzu.GrowthLevel, appearance);
+                _appearance.SetData(uid, KudzuVisuals.GrowthLevel, grow.GrowthLevel, appearance);
             }
         }
     }

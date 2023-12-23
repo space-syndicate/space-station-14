@@ -1,41 +1,53 @@
 using Robust.Shared.Audio;
 using Robust.Shared.GameStates;
+using Robust.Shared.Serialization;
 using Robust.Shared.Utility;
 
-namespace Content.Shared.Tools.Components;
-
-[RegisterComponent, NetworkedComponent, AutoGenerateComponentState(true)]
-public sealed partial class MultipleToolComponent : Component
+namespace Content.Shared.Tools.Components
 {
-    [DataDefinition]
-    public sealed partial class ToolEntry
+    [RegisterComponent, NetworkedComponent]
+    public sealed partial class MultipleToolComponent : Component
     {
-        [DataField(required: true)]
-        public PrototypeFlags<ToolQualityPrototype> Behavior = new();
+        [DataDefinition]
+        public sealed partial class ToolEntry
+        {
+            [DataField("behavior", required: true)]
+            public PrototypeFlags<ToolQualityPrototype> Behavior = new();
 
-        [DataField]
-        public SoundSpecifier? UseSound;
+            [DataField("useSound")]
+            public SoundSpecifier? Sound;
 
-        [DataField]
-        public SoundSpecifier? ChangeSound;
+            [DataField("changeSound")]
+            public SoundSpecifier? ChangeSound;
 
-        [DataField]
-        public SpriteSpecifier? Sprite;
+            [DataField("sprite")]
+            public SpriteSpecifier? Sprite;
+        }
+
+        [DataField("entries", required: true)]
+        public ToolEntry[] Entries { get; private set; } = Array.Empty<ToolEntry>();
+
+        [ViewVariables]
+        public uint CurrentEntry = 0;
+
+        [ViewVariables]
+        public string CurrentQualityName = string.Empty;
+
+        [ViewVariables(VVAccess.ReadWrite)]
+        public bool UiUpdateNeeded;
+
+        [DataField("statusShowBehavior")]
+        public bool StatusShowBehavior = true;
     }
 
-    [DataField(required: true)]
-    public ToolEntry[] Entries { get; private set; } = Array.Empty<ToolEntry>();
+    [NetSerializable, Serializable]
+    public sealed class MultipleToolComponentState : ComponentState
+    {
+        public readonly uint Selected;
 
-    [ViewVariables]
-    [AutoNetworkedField]
-    public uint CurrentEntry = 0;
-
-    [ViewVariables]
-    public string CurrentQualityName = string.Empty;
-
-    [ViewVariables(VVAccess.ReadWrite)]
-    public bool UiUpdateNeeded;
-
-    [DataField]
-    public bool StatusShowBehavior = true;
+        public MultipleToolComponentState(uint selected)
+        {
+            Selected = selected;
+        }
+    }
 }

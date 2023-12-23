@@ -103,6 +103,7 @@
     soundPerceivedByOthers: false # A 75% chance for a loud roar would get old fast.
   - type: MeleeWeapon
     altDisarm: false
+    hidden: true
     soundHit:
       path: /Audio/Weapons/Xeno/alien_claw_flesh3.ogg
     damage:
@@ -132,8 +133,6 @@
     spawnsLeft: 2
     spawnsProto: MobCarpDragon
     spawnRiftAction: ActionSpawnRift
-  - type: GenericAntag
-    rule: Dragon
   - type: GuideHelp
     guides:
     - MinorAntagonists

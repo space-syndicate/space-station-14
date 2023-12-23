@@ -5,9 +5,9 @@
   description: Useful for carrying items in your hands.
   components:
   - type: Item
-    size: Ginormous
+    size: 60
   - type: Storage
-    maxTotalWeight: 24
+    capacity: 60
   - type: Tag
     tags:
     - Briefcase
@@ -25,17 +25,15 @@
     sprite: Objects/Storage/Briefcases/briefcase_brown.rsi
 
 - type: entity
-  parent: BriefcaseBase
+  parent: BaseStorageItem
   abstract: true
   id: BriefcaseSyndieBase
-  suffix: Syndicate, Empty
   description: Useful for carrying items in your hands.
   components:
   - type: Item
-    size: Huge
+    size: 80
   - type: Storage
-    maxSlots: 6
-    maxTotalWeight: 24
+    capacity: 80
   - type: Tag
     tags:
     - Briefcase

@@ -65,7 +65,7 @@ public abstract class SharedRoleSystem : EntitySystem
     /// <exception cref="ArgumentException">
     ///     Thrown if we already have a role with this type.
     /// </exception>
-    public void MindAddRole<T>(EntityUid mindId, T component, MindComponent? mind = null, bool silent = false) where T : IComponent, new()
+    public void MindAddRole<T>(EntityUid mindId, T component, MindComponent? mind = null, bool silent = false) where T : Component, new()
     {
         if (!Resolve(mindId, ref mind))
             return;
@@ -99,7 +99,7 @@ public abstract class SharedRoleSystem : EntitySystem
     /// <exception cref="ArgumentException">
     ///     Thrown if we do not have this role.
     /// </exception>
-    public void MindRemoveRole<T>(EntityUid mindId) where T : IComponent
+    public void MindRemoveRole<T>(EntityUid mindId) where T : Component
     {
         if (!RemComp<T>(mindId))
         {
@@ -118,7 +118,7 @@ public abstract class SharedRoleSystem : EntitySystem
             $"'Role {typeof(T).Name}' removed from mind of {_minds.MindOwnerLoggingString(mind)}");
     }
 
-    public bool MindTryRemoveRole<T>(EntityUid mindId) where T : IComponent
+    public bool MindTryRemoveRole<T>(EntityUid mindId) where T : Component
     {
         if (!MindHasRole<T>(mindId))
             return false;
@@ -127,7 +127,7 @@ public abstract class SharedRoleSystem : EntitySystem
         return true;
     }
 
-    public bool MindHasRole<T>(EntityUid mindId) where T : IComponent
+    public bool MindHasRole<T>(EntityUid mindId) where T : Component
     {
         return HasComp<T>(mindId);
     }

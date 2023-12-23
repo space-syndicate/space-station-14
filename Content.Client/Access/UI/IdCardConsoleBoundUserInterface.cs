@@ -1,8 +1,8 @@
-using Content.Shared.Access;
 using Content.Shared.Access.Components;
 using Content.Shared.Access.Systems;
 using Content.Shared.Containers.ItemSlots;
 using Content.Shared.CrewManifest;
+using Robust.Client.GameObjects;
 using Robust.Shared.Prototypes;
 using static Content.Shared.Access.Components.IdCardConsoleComponent;
 
@@ -23,7 +23,7 @@ namespace Content.Client.Access.UI
         protected override void Open()
         {
             base.Open();
-            List<ProtoId<AccessLevelPrototype>> accessLevels;
+            List<string> accessLevels;
 
             if (EntMan.TryGetComponent<IdCardConsoleComponent>(Owner, out var idCard))
             {
@@ -32,7 +32,7 @@ namespace Content.Client.Access.UI
             }
             else
             {
-                accessLevels = new List<ProtoId<AccessLevelPrototype>>();
+                accessLevels = new List<string>();
                 _idCardConsoleSystem.Log.Error($"No IdCardConsole component found for {EntMan.ToPrettyString(Owner)}!");
             }
 

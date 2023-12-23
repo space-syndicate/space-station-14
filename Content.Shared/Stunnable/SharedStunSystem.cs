@@ -155,10 +155,6 @@ public abstract class SharedStunSystem : EntitySystem
 
         if (!_statusEffect.TryAddStatusEffect<StunnedComponent>(uid, "Stun", time, refresh))
             return false;
-
-        var ev = new StunnedEvent();
-        RaiseLocalEvent(uid, ref ev);
-
         _adminLogger.Add(LogType.Stamina, LogImpact.Medium, $"{ToPrettyString(uid):user} stunned for {time.Seconds} seconds");
         return true;
     }
@@ -175,13 +171,7 @@ public abstract class SharedStunSystem : EntitySystem
         if (!Resolve(uid, ref status, false))
             return false;
 
-        if (!_statusEffect.TryAddStatusEffect<KnockedDownComponent>(uid, "KnockedDown", time, refresh))
-            return false;
-
-        var ev = new KnockedDownEvent();
-        RaiseLocalEvent(uid, ref ev);
-
-        return true;
+        return _statusEffect.TryAddStatusEffect<KnockedDownComponent>(uid, "KnockedDown", time, refresh);
     }
 
     /// <summary>
@@ -281,16 +271,5 @@ public abstract class SharedStunSystem : EntitySystem
     }
 
     #endregion
+
 }
-
-/// <summary>
-///     Raised directed on an entity when it is stunned.
-/// </summary>
-[ByRefEvent]
-public record struct StunnedEvent;
-
-/// <summary>
-///     Raised directed on an entity when it is knocked down.
-/// </summary>
-[ByRefEvent]
-public record struct KnockedDownEvent;

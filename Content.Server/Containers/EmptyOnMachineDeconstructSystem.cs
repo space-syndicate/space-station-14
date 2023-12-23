@@ -11,8 +11,6 @@ namespace Content.Server.Containers
     [UsedImplicitly]
     public sealed class EmptyOnMachineDeconstructSystem : EntitySystem
     {
-        [Dependency] private readonly SharedContainerSystem _container = default!;
-
         public override void Initialize()
         {
             base.Initialize();
@@ -35,12 +33,12 @@ namespace Content.Server.Containers
         {
             if (!EntityManager.TryGetComponent<ContainerManagerComponent>(uid, out var mComp))
                 return;
-            var baseCoords = EntityManager.GetComponent<TransformComponent>(uid).Coordinates;
+            var baseCoords = EntityManager.GetComponent<TransformComponent>(component.Owner).Coordinates;
             foreach (var v in component.Containers)
             {
                 if (mComp.TryGetContainer(v, out var container))
                 {
-                    _container.EmptyContainer(container, true, baseCoords);
+                    container.EmptyContainer(true, baseCoords);
                 }
             }
         }

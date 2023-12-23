@@ -16,6 +16,7 @@ using Robust.Client.State;
 using Robust.Shared.Input;
 using Robust.Shared.Map;
 using Robust.Shared.Player;
+using Robust.Shared.Players;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Timing;
 
@@ -234,10 +235,9 @@ public sealed partial class MeleeWeaponSystem : SharedMeleeWeaponSystem
     private void OnMeleeLunge(MeleeLungeEvent ev)
     {
         var ent = GetEntity(ev.Entity);
-        var entWeapon = GetEntity(ev.Weapon);
 
         // Entity might not have been sent by PVS.
-        if (Exists(ent) && Exists(entWeapon))
-            DoLunge(ent, entWeapon, ev.Angle, ev.LocalPos, ev.Animation);
+        if (Exists(ent))
+            DoLunge(ent, ev.Angle, ev.LocalPos, ev.Animation);
     }
 }

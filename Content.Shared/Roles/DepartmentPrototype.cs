@@ -1,10 +1,11 @@
+using System.Linq;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Serialization.TypeSerializers.Implementations.Custom.Prototype.List;
 
 namespace Content.Shared.Roles;
 
 [Prototype("department")]
-public sealed partial class DepartmentPrototype : IPrototype
+public sealed class DepartmentPrototype : IPrototype
 {
     [IdDataField] public string ID { get; } = default!;
 

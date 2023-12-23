@@ -73,35 +73,35 @@ namespace Content.Server.Power.EntitySystems
             component.LinkedReceivers.Clear();
         }
 
-        private void OnProviderConnected(Entity<ApcPowerReceiverComponent> receiver, ref ExtensionCableSystem.ProviderConnectedEvent args)
+        private void OnProviderConnected(EntityUid uid, ApcPowerReceiverComponent receiver, ExtensionCableSystem.ProviderConnectedEvent args)
         {
             var providerUid = args.Provider.Owner;
             if (!EntityManager.TryGetComponent<ApcPowerProviderComponent>(providerUid, out var provider))
                 return;
 
-            receiver.Comp.Provider = provider;
+            receiver.Provider = provider;
 
             ProviderChanged(receiver);
         }
 
-        private void OnProviderDisconnected(Entity<ApcPowerReceiverComponent> receiver, ref ExtensionCableSystem.ProviderDisconnectedEvent args)
+        private void OnProviderDisconnected(EntityUid uid, ApcPowerReceiverComponent receiver, ExtensionCableSystem.ProviderDisconnectedEvent args)
         {
-            receiver.Comp.Provider = null;
+            receiver.Provider = null;
 
             ProviderChanged(receiver);
         }
 
-        private void OnReceiverConnected(Entity<ApcPowerProviderComponent> provider, ref ExtensionCableSystem.ReceiverConnectedEvent args)
+        private void OnReceiverConnected(EntityUid uid, ApcPowerProviderComponent provider, ExtensionCableSystem.ReceiverConnectedEvent args)
         {
-            if (EntityManager.TryGetComponent(args.Receiver, out ApcPowerReceiverComponent? receiver))
+            if (EntityManager.TryGetComponent(args.Receiver.Owner, out ApcPowerReceiverComponent? receiver))
             {
-                provider.Comp.AddReceiver(receiver);
+                provider.AddReceiver(receiver);
             }
         }
 
         private void OnReceiverDisconnected(EntityUid uid, ApcPowerProviderComponent provider, ExtensionCableSystem.ReceiverDisconnectedEvent args)
         {
-            if (EntityManager.TryGetComponent(args.Receiver, out ApcPowerReceiverComponent? receiver))
+            if (EntityManager.TryGetComponent(args.Receiver.Owner, out ApcPowerReceiverComponent? receiver))
             {
                 provider.RemoveReceiver(receiver);
             }
@@ -134,14 +134,13 @@ namespace Content.Server.Power.EntitySystems
             args.Verbs.Add(verb);
         }
 
-        private void ProviderChanged(Entity<ApcPowerReceiverComponent> receiver)
+        private void ProviderChanged(ApcPowerReceiverComponent receiver)
         {
-            var comp = receiver.Comp;
-            comp.NetworkLoad.LinkedNetwork = default;
-            var ev = new PowerChangedEvent(comp.Powered, comp.NetworkLoad.ReceivingPower);
+            receiver.NetworkLoad.LinkedNetwork = default;
+            var ev = new PowerChangedEvent(receiver.Powered, receiver.NetworkLoad.ReceivingPower);
 
-            RaiseLocalEvent(receiver, ref ev);
-            _appearance.SetData(receiver, PowerDeviceVisuals.Powered, comp.Powered);
+            RaiseLocalEvent(receiver.Owner, ref ev);
+            _appearance.SetData(receiver.Owner, PowerDeviceVisuals.Powered, receiver.Powered);
         }
 
         /// <summary>

@@ -24,7 +24,7 @@
   time: 10
   solids:
     FoodBreadBun: 1
-    FoodMeatBacon: 1
+    FoodMeatCutlet: 3 #replace with bacon
     FoodCheeseSlice: 2
 
 - type: microwaveMealRecipe
@@ -186,7 +186,7 @@
   time: 10
   solids:
     FoodBreadBun: 1
-    Ectoplasm: 1
+    ClothingOuterGhostSheet: 1 #replace with ectoplasm once added
 
 - type: microwaveMealRecipe
   id: RecipeHumanBurger
@@ -218,7 +218,7 @@
 
 - type: microwaveMealRecipe
   id: RecipeBurgerMcrib
-  name: BBQ rib sandwich recipe
+  name: McRib recipe
   result: FoodBurgerMcrib
   time: 10
   solids:
@@ -482,22 +482,14 @@
   solids:
     FoodBreadPlainSlice: 2
 
-- type: microwaveMealRecipe
-  id: RecipeOnionRings
-  name: onion rings recipe
-  result: FoodOnionRings
-  time: 15
-  solids:
-    FoodOnionSlice: 1
-
-#Pizzas TODO: contruction graph based pizza
+#Pizzas
 - type: microwaveMealRecipe
   id: RecipeMargheritaPizza
   name: margherita pizza recipe
   result: FoodPizzaMargherita
   time: 30
   solids:
-    FoodDoughFlat: 1
+    FoodDough: 1
     FoodCheeseSlice: 1
     FoodTomato: 4
 
@@ -507,7 +499,7 @@
   result: FoodPizzaMushroom
   time: 25
   solids:
-    FoodDoughFlat: 1
+    FoodDough: 1
     FoodMushroom: 5
 
 - type: microwaveMealRecipe
@@ -516,7 +508,7 @@
   result: FoodPizzaMeat
   time: 30
   solids:
-    FoodDoughFlat: 1
+    FoodDough: 1
     FoodMeat: 3
     FoodCheeseSlice: 1
     FoodTomato: 1
@@ -527,7 +519,7 @@
   result: FoodPizzaVegetable
   time: 30
   solids:
-    FoodDoughFlat: 1
+    FoodDough: 1
     FoodEggplant: 1
     FoodCarrot: 1
     FoodCorn: 1
@@ -539,7 +531,7 @@
   result: FoodPizzaPineapple
   time: 30
   solids:
-    FoodDoughFlat: 1
+    FoodDough: 1
     FoodMeatChickenCutlet: 3
     FoodPineappleSlice: 5
 
@@ -549,7 +541,7 @@
   result: FoodPizzaDank
   time: 30
   solids:
-    FoodDoughFlat: 1
+    FoodDough: 1
     FoodAmbrosiaVulgaris: 3
     FoodCheeseSlice: 1
     FoodTomato: 1
@@ -560,7 +552,7 @@
   result: FoodPizzaDonkpocket
   time: 30
   solids:
-    FoodDoughFlat: 1
+    FoodDough: 1
     FoodDonkpocketWarm: 3
     FoodCheeseSlice: 1
     FoodTomato: 1
@@ -1176,15 +1168,6 @@
     FoodCheeseSlice: 3
 
 - type: microwaveMealRecipe
-  id: RecipePumpkinCake
-  name: pumpkin cake recipe
-  result: FoodCakePumpkin
-  time: 5
-  solids:
-    FoodCakePlain: 1
-    FoodPumpkin: 1
-
-- type: microwaveMealRecipe
   id: RecipeClownCake
   name: clown cake recipe
   result: FoodCakeClown
@@ -1294,7 +1277,7 @@
     FoodButter: 2
     FoodSnackChocolateBar: 2
     FoodEgg: 3
-
+    
 #Donks i guess
 - type: microwaveMealRecipe
   id: RecipeWarmDonkpocket
@@ -1579,7 +1562,7 @@
   name: medicated suture recipe
   result: MedicatedSuture
   time: 10
-  solids:
+  solids: 
     FoodPoppy: 1
     Brutepack: 1
     MaterialCloth1: 1
@@ -1598,7 +1581,7 @@
     MaterialCloth1: 1
   reagents:
     Sigynate: 50
-    Dermaline: 50
+    Dermaline: 50 
 
 # Suppermatter
 - type: microwaveMealRecipe
@@ -1683,9 +1666,9 @@
     FoodKebabSkewer: 1
 
 - type: microwaveMealRecipe
-  id: RecipeFoodMealSoftTaco
-  name: soft taco recipe
-  result: FoodMealSoftTaco
+  id: RecipeFoodMealTaco
+  name: taco recipe
+  result: FoodMealTaco
   time: 10
   solids:
     FoodDoughSlice: 1
@@ -1742,90 +1725,3 @@
     FoodCorn: 1
     FoodPlate: 1
     FoodButter: 1
-
-- type: microwaveMealRecipe
-  id: RecipePeaSoup
-  name: pea soup recipe
-  result: FoodSoupPea
-  time: 10
-  solids:
-    FoodPeaPod: 2
-    FoodBowlBig: 1
-  reagents:
-    Water: 10
-
-- type: microwaveMealRecipe
-  id: RecipeTacoShell
-  name: taco shell recipe
-  result: FoodTacoShell
-  time: 5
-  solids:
-    FoodDoughTortillaFlat: 1 # one third of a standard bread dough recipe
-
-- type: microwaveMealRecipe
-  id: RecipeTacoBeef
-  name: beef taco recipe
-  result: FoodTacoBeef
-  time: 10
-  solids:
-    FoodTacoShell: 1
-    FoodMeatCutlet: 1
-    FoodCheeseSlice: 1
-
-- type: microwaveMealRecipe
-  id: RecipeTacoChicken
-  name: chicken taco recipe
-  result: FoodTacoChicken
-  time: 10
-  solids:
-    FoodTacoShell: 1
-    FoodMeatChickenCutlet: 1
-    FoodCheeseSlice: 1
-
-- type: microwaveMealRecipe
-  id: RecipeTacoFish
-  name: fish taco recipe
-  result: FoodTacoFish
-  time: 10
-  solids:
-    FoodTacoShell: 1
-    FoodMeatFish: 1
-    FoodOnionSlice: 2
-    FoodTomato: 1
-    FoodCabbage: 1
-
-- type: microwaveMealRecipe
-  id: RecipeTacoRat
-  name: rat taco recipe
-  result: FoodTacoRat
-  time: 10
-  solids:
-    FoodTacoShell: 1
-    FoodCheeseSlice: 1
-    FoodMeatRat: 1
-
-- type: microwaveMealRecipe
-  id: RecipeTacoBeefSupreme
-  name: beef taco supreme recipe
-  result: FoodTacoBeefSupreme
-  time: 10
-  solids:
-    FoodTacoShell: 1
-    FoodCheeseSlice: 1
-    FoodMeatCutlet: 1
-    FoodTomato: 1
-    FoodCabbage: 1
-    FoodOnionSlice: 2
-
-- type: microwaveMealRecipe
-  id: RecipeTacoChickenSupreme
-  name: beef taco supreme recipe
-  result: FoodTacoChickenSupreme
-  time: 10
-  solids:
-    FoodTacoShell: 1
-    FoodCheeseSlice: 1
-    FoodMeatChickenCutlet: 1
-    FoodTomato: 1
-    FoodCabbage: 1
-    FoodOnionSlice: 2

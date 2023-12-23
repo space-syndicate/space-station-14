@@ -2,6 +2,7 @@
 using Content.Client.Items;
 using Content.Shared.Implants;
 using Content.Shared.Implants.Components;
+using Robust.Shared.GameStates;
 
 namespace Content.Client.Implants;
 
@@ -11,12 +12,17 @@ public sealed class ImplanterSystem : SharedImplanterSystem
     {
         base.Initialize();
 
-        SubscribeLocalEvent<ImplanterComponent, AfterAutoHandleStateEvent>(OnHandleImplanterState);
+        SubscribeLocalEvent<ImplanterComponent, ComponentHandleState>(OnHandleImplanterState);
         SubscribeLocalEvent<ImplanterComponent, ItemStatusCollectMessage>(OnItemImplanterStatus);
     }
 
-    private void OnHandleImplanterState(EntityUid uid, ImplanterComponent component, ref AfterAutoHandleStateEvent args)
+    private void OnHandleImplanterState(EntityUid uid, ImplanterComponent component, ref ComponentHandleState args)
     {
+        if (args.Current is not ImplanterComponentState state)
+            return;
+
+        component.CurrentMode = state.CurrentMode;
+        component.ImplantOnly = state.ImplantOnly;
         component.UiUpdateNeeded = true;
     }
 

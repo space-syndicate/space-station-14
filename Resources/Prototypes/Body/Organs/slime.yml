@@ -4,9 +4,6 @@
   name: sentient slime core
   description: "The source of incredible, unending gooeyness."
   components:
-    - type: Sprite
-      sprite: Mobs/Species/Slime/organs.rsi
-      state: brain-slime
     - type: Stomach
     - type: Metabolizer
       maxReagents: 6
@@ -27,7 +24,7 @@
         food:
           maxVol: 5
           reagents:
-          - ReagentId: UncookedAnimalProteins
+          - ReagentId: Nutriment
             Quantity: 5
 
 
@@ -38,10 +35,9 @@
   description: "Collects nitrogen, which slime cells use for maintenance."
   components:
   - type: Sprite
-    sprite: Mobs/Species/Slime/organs.rsi
     layers:
-      - state: lung-l-slime
-      - state: lung-r-slime
+      - state: lung-l
+      - state: lung-r
   - type: Lung
   - type: Metabolizer
     removeEmpty: true
@@ -63,5 +59,5 @@
       food:
         maxVol: 5
         reagents:
-        - ReagentId: UncookedAnimalProteins
+        - ReagentId: Nutriment
           Quantity: 5

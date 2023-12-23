@@ -76,14 +76,12 @@ public sealed partial class ShuttleSystem
     protected override void UpdateIFFInterfaces(EntityUid gridUid, IFFComponent component)
     {
         base.UpdateIFFInterfaces(gridUid, component);
-
-        var query = AllEntityQuery<IFFConsoleComponent, TransformComponent>();
-        while (query.MoveNext(out var uid, out var comp, out var xform))
+        foreach (var (comp, xform) in EntityQuery<IFFConsoleComponent, TransformComponent>(true))
         {
             if (xform.GridUid != gridUid)
                 continue;
 
-            _uiSystem.TrySetUiState(uid, IFFConsoleUiKey.Key, new IFFConsoleBoundUserInterfaceState()
+            _uiSystem.TrySetUiState(comp.Owner, IFFConsoleUiKey.Key, new IFFConsoleBoundUserInterfaceState()
             {
                 AllowedFlags = comp.AllowedFlags,
                 Flags = component.Flags,

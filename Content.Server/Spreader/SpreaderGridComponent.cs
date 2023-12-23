@@ -1,8 +1,10 @@
+using Robust.Shared.Serialization.TypeSerializers.Implementations.Custom;
+
 namespace Content.Server.Spreader;
 
 [RegisterComponent]
 public sealed partial class SpreaderGridComponent : Component
 {
-    [DataField]
-    public float UpdateAccumulator = SpreaderSystem.SpreadCooldownSeconds;
+    [DataField("nextUpdate", customTypeSerializer:typeof(TimeOffsetSerializer))]
+    public TimeSpan NextUpdate = TimeSpan.Zero;
 }

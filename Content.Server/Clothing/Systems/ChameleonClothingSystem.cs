@@ -5,7 +5,7 @@ using Content.Shared.IdentityManagement.Components;
 using Content.Shared.Prototypes;
 using Content.Shared.Verbs;
 using Robust.Server.GameObjects;
-using Robust.Shared.Player;
+using Robust.Shared.GameStates;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Utility;
 
@@ -22,13 +22,22 @@ public sealed class ChameleonClothingSystem : SharedChameleonClothingSystem
     {
         base.Initialize();
         SubscribeLocalEvent<ChameleonClothingComponent, MapInitEvent>(OnMapInit);
+        SubscribeLocalEvent<ChameleonClothingComponent, ComponentGetState>(GetState);
         SubscribeLocalEvent<ChameleonClothingComponent, GetVerbsEvent<InteractionVerb>>(OnVerb);
         SubscribeLocalEvent<ChameleonClothingComponent, ChameleonPrototypeSelectedMessage>(OnSelected);
     }
 
     private void OnMapInit(EntityUid uid, ChameleonClothingComponent component, MapInitEvent args)
     {
-        SetSelectedPrototype(uid, component.Default, true, component);
+        SetSelectedPrototype(uid, component.SelectedId, true, component);
+    }
+
+    private void GetState(EntityUid uid, ChameleonClothingComponent component, ref ComponentGetState args)
+    {
+        args.State = new ChameleonClothingComponentState
+        {
+            SelectedId = component.SelectedId
+        };
     }
 
     private void OnVerb(EntityUid uid, ChameleonClothingComponent component, GetVerbsEvent<InteractionVerb> args)
@@ -63,7 +72,7 @@ public sealed class ChameleonClothingSystem : SharedChameleonClothingSystem
         if (!Resolve(uid, ref component))
             return;
 
-        var state = new ChameleonBoundUserInterfaceState(component.Slot, component.Default);
+        var state = new ChameleonBoundUserInterfaceState(component.Slot, component.SelectedId);
         _uiSystem.TrySetUiState(uid, ChameleonUiKey.Key, state);
     }
 
@@ -78,7 +87,7 @@ public sealed class ChameleonClothingSystem : SharedChameleonClothingSystem
 
         // check that wasn't already selected
         // forceUpdate on component init ignores this check
-        if (component.Default == protoId && !forceUpdate)
+        if (component.SelectedId == protoId && !forceUpdate)
             return;
 
         // make sure that it is valid change
@@ -86,7 +95,7 @@ public sealed class ChameleonClothingSystem : SharedChameleonClothingSystem
             return;
         if (!IsValidTarget(proto, component.Slot))
             return;
-        component.Default = protoId;
+        component.SelectedId = protoId;
 
         UpdateIdentityBlocker(uid, component, proto);
         UpdateVisuals(uid, component);

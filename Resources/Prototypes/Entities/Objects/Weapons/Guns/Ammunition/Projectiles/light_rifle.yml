@@ -39,6 +39,5 @@
   components:
   - type: Projectile
     damage:
-      types:
-        Blunt: 3
-        Heat: 16
+      groups:
+        Burn: 17

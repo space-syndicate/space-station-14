@@ -1,4 +1,5 @@
 using System.Diagnostics.CodeAnalysis;
+using Robust.Shared.GameStates;
 using Robust.Shared.Prototypes;
 
 namespace Content.Shared.Alert;
@@ -73,7 +74,7 @@ public abstract class AlertsSystem : EntitySystem
     ///     be erased if there is currently a cooldown for the alert)</param>
     public void ShowAlert(EntityUid euid, AlertType alertType, short? severity = null, (TimeSpan, TimeSpan)? cooldown = null)
     {
-        if (!TryComp(euid, out AlertsComponent? alertsComponent))
+        if (!EntityManager.TryGetComponent(euid, out AlertsComponent? alertsComponent))
             return;
 
         if (TryGet(alertType, out var alert))
@@ -94,9 +95,9 @@ public abstract class AlertsSystem : EntitySystem
             alertsComponent.Alerts[alert.AlertKey] = new AlertState
                 { Cooldown = cooldown, Severity = severity, Type = alertType };
 
-            AfterShowAlert((euid, alertsComponent));
+            AfterShowAlert(alertsComponent);
 
-            Dirty(euid, alertsComponent);
+            Dirty(alertsComponent);
         }
         else
         {
@@ -111,7 +112,7 @@ public abstract class AlertsSystem : EntitySystem
     /// </summary>
     public void ClearAlertCategory(EntityUid euid, AlertCategory category)
     {
-        if(!TryComp(euid, out AlertsComponent? alertsComponent))
+        if(!EntityManager.TryGetComponent(euid, out AlertsComponent? alertsComponent))
             return;
 
         var key = AlertKey.ForCategory(category);
@@ -120,9 +121,9 @@ public abstract class AlertsSystem : EntitySystem
             return;
         }
 
-        AfterClearAlert((euid, alertsComponent));
+        AfterClearAlert(alertsComponent);
 
-        Dirty(euid, alertsComponent);
+        Dirty(alertsComponent);
     }
 
     /// <summary>
@@ -140,9 +141,9 @@ public abstract class AlertsSystem : EntitySystem
                 return;
             }
 
-            AfterClearAlert((euid, alertsComponent));
+            AfterClearAlert(alertsComponent);
 
-            Dirty(euid, alertsComponent);
+            Dirty(alertsComponent);
         }
         else
         {
@@ -153,12 +154,14 @@ public abstract class AlertsSystem : EntitySystem
     /// <summary>
     /// Invoked after showing an alert prior to dirtying the component
     /// </summary>
-    protected virtual void AfterShowAlert(Entity<AlertsComponent> alerts) { }
+    /// <param name="alertsComponent"></param>
+    protected virtual void AfterShowAlert(AlertsComponent alertsComponent) { }
 
     /// <summary>
     /// Invoked after clearing an alert prior to dirtying the component
     /// </summary>
-    protected virtual void AfterClearAlert(Entity<AlertsComponent> alerts) { }
+    /// <param name="alertsComponent"></param>
+    protected virtual void AfterClearAlert(AlertsComponent alertsComponent) { }
 
     public override void Initialize()
     {
@@ -167,6 +170,7 @@ public abstract class AlertsSystem : EntitySystem
         SubscribeLocalEvent<AlertsComponent, ComponentStartup>(HandleComponentStartup);
         SubscribeLocalEvent<AlertsComponent, ComponentShutdown>(HandleComponentShutdown);
 
+        SubscribeLocalEvent<AlertsComponent, ComponentGetState>(ClientAlertsGetState);
         SubscribeNetworkEvent<ClickAlertEvent>(HandleClickAlert);
 
         LoadPrototypes();
@@ -238,5 +242,10 @@ public abstract class AlertsSystem : EntitySystem
         }
 
         alert.OnClick?.AlertClicked(player.Value);
+    }
+
+    private static void ClientAlertsGetState(EntityUid uid, AlertsComponent component, ref ComponentGetState args)
+    {
+        args.State = new AlertsComponentState(component.Alerts);
     }
 }

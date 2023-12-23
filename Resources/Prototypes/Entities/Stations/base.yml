@@ -71,7 +71,10 @@
   abstract: true
   components:
   - type: SiliconLawProvider
-    laws: Crewsimov
+    laws:
+    - Crewsimov1
+    - Crewsimov2
+    - Crewsimov3
 
 - type: entity
   id: BaseStationAllEventsEligible

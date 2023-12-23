@@ -1,6 +1,5 @@
 using Robust.Client.Animations;
 using Robust.Client.Graphics;
-using Robust.Shared.Serialization.TypeSerializers.Implementations.Custom;
 
 namespace Content.Client.Chemistry.Visualizers;
 
@@ -16,21 +15,18 @@ public sealed partial class FoamVisualsComponent : Component
     /// </summary>
     public const string AnimationKey = "foamdissolve_animation";
 
-    [DataField(customTypeSerializer: typeof(TimeOffsetSerializer))]
-    public TimeSpan StartTime;
-
     /// <summary>
     /// How long the foam visually dissolves for.
     /// </summary>
-    [DataField]
-    public float AnimationTime = 0.5f;
+    [DataField("animationTime")]
+    public float AnimationTime = 0.6f;
 
     /// <summary>
     /// The state of the entities base sprite RSI that is displayed when the foam dissolves.
     /// Cannot use <see cref="RSI.StateKey"/> because it does not have <see cref="DataDefinitionAttribute"/> and I am not making an engine PR at this time.
     /// </summary>
-    [DataField]
-    public string AnimationState = "foam-dissolve";
+    [DataField("animationState")]
+    public string State = "foam-dissolve";
 
     /// <summary>
     /// The animation used while the foam dissolves.

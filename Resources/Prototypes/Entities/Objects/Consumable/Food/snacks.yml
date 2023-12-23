@@ -21,7 +21,7 @@
   - type: Item
     sprite: Objects/Consumable/Food/snacks.rsi
     heldPrefix: packet
-    size: Tiny
+    size: 3
 # Snacks
 
 # "Snacks" means food in a packet. Down the line this stuff can have multiple
@@ -101,7 +101,7 @@
     state: chocolatebar
   - type: Item
     heldPrefix: chocolatebar
-    size: Tiny
+    size: 3
   - type: Tag
     tags:
       - FoodSnack
@@ -183,9 +183,6 @@
   - type: Item
   - type: Food
     trash: FoodPacketPistachioTrash
-  - type: Tag
-    tags:
-    - Fruit # Seed of a fruit, you can yell at me
 
 - type: entity
   name: popcorn
@@ -219,9 +216,6 @@
   - type: Item
   - type: Food
     trash: FoodPacketRaisinsTrash
-  - type: Tag
-    tags:
-    - Fruit
 
 - type: entity
   name: bob's semki sunflower seeds
@@ -252,9 +246,6 @@
   - type: Item
   - type: Food
     trash: FoodPacketSusTrash
-  - type: Tag
-    tags:
-    - Meat
 
 - type: entity
   name: syndi-cakes
@@ -346,7 +337,7 @@
   - type: Item
     sprite: Objects/Consumable/Food/snacks.rsi
     heldPrefix: packet
-    size: Tiny
+    size: 1
   - type: Food
     trash: FoodCookieFortune
 
@@ -357,7 +348,7 @@
   description: A carefully synthesized brick designed to contain the highest ratio of nutriment to volume. Tastes like shit.
   components:
   - type: Item
-    size: Small
+    size: 10
   - type: Tag
     tags:
       - FoodSnack
@@ -381,7 +372,7 @@
     flavors:
       - nutribrick
   - type: Item
-    size: Small
+    size: 10
   - type: Sprite
     state: nutribrick-open
   - type: Food

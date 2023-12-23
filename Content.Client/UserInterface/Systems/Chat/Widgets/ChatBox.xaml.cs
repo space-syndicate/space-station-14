@@ -1,3 +1,5 @@
+using Content.Client.Chat;
+using Content.Client.Chat.TypingIndicator;
 using Content.Client.UserInterface.Systems.Chat.Controls;
 using Content.Shared.Chat;
 using Content.Shared.Input;
@@ -54,12 +56,14 @@ public partial class ChatBox : UIWidget
             return;
         }
 
-        if (msg is { Read: false, AudioPath: not null })
+        if (msg is { Read: false, AudioPath: { } })
             SoundSystem.Play(msg.AudioPath, Filter.Local(), new AudioParams().WithVolume(msg.AudioVolume));
 
         msg.Read = true;
 
-        var color = msg.MessageColorOverride ?? msg.Channel.TextColor();
+        var color = msg.MessageColorOverride != null
+            ? msg.MessageColorOverride.Value
+            : msg.Channel.TextColor();
 
         AddLine(msg.WrappedMessage, color);
     }

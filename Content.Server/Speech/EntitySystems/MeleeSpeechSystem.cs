@@ -4,7 +4,6 @@ using Content.Shared.Database;
 using Content.Shared.Speech.Components;
 using Content.Shared.Speech.EntitySystems;
 using Robust.Server.GameObjects;
-using Robust.Shared.Player;
 
 namespace Content.Server.Speech.EntitySystems;
 

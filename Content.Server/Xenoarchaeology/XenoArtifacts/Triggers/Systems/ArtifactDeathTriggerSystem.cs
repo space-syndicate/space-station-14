@@ -20,9 +20,8 @@ public sealed class ArtifactDeathTriggerSystem : EntitySystem
 
         var deathXform = Transform(ev.Target);
 
-        var toActivate = new List<Entity<ArtifactDeathTriggerComponent>>();
-        var query = EntityQueryEnumerator<ArtifactDeathTriggerComponent, TransformComponent>();
-        while (query.MoveNext(out var uid, out var trigger, out var xform))
+        var toActivate = new List<ArtifactDeathTriggerComponent>();
+        foreach (var (trigger, xform) in EntityQuery<ArtifactDeathTriggerComponent, TransformComponent>())
         {
             if (!deathXform.Coordinates.TryDistance(EntityManager, xform.Coordinates, out var distance))
                 continue;
@@ -30,12 +29,12 @@ public sealed class ArtifactDeathTriggerSystem : EntitySystem
             if (distance > trigger.Range)
                 continue;
 
-            toActivate.Add((uid, trigger));
+            toActivate.Add(trigger);
         }
 
         foreach (var a in toActivate)
         {
-            _artifact.TryActivateArtifact(a);
+            _artifact.TryActivateArtifact(a.Owner);
         }
     }
 }

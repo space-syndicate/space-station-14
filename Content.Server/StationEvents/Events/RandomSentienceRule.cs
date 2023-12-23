@@ -1,6 +1,8 @@
 ﻿using System.Linq;
+using Content.Server.Chat.Systems;
 using Content.Server.GameTicking.Rules.Components;
 using Content.Server.Ghost.Roles.Components;
+using Content.Server.Station.Systems;
 using Content.Server.StationEvents.Components;
 
 namespace Content.Server.StationEvents.Events;
@@ -12,13 +14,7 @@ public sealed class RandomSentienceRule : StationEventSystem<RandomSentienceRule
         HashSet<EntityUid> stationsToNotify = new();
 
         var mod = GetSeverityModifier();
-        var targetList = new List<Entity<SentienceTargetComponent>>();
-        var query = EntityQueryEnumerator<SentienceTargetComponent>();
-        while (query.MoveNext(out var targetUid, out var target))
-        {
-            targetList.Add((targetUid, target));
-        }
-
+        var targetList = EntityQuery<SentienceTargetComponent>().ToList();
         RobustRandom.Shuffle(targetList);
 
         var toMakeSentient = (int) (RobustRandom.Next(2, 5) * Math.Sqrt(mod));
@@ -29,12 +25,12 @@ public sealed class RandomSentienceRule : StationEventSystem<RandomSentienceRule
             if (toMakeSentient-- == 0)
                 break;
 
-            RemComp<SentienceTargetComponent>(target);
-            var ghostRole = EnsureComp<GhostRoleComponent>(target);
-            EnsureComp<GhostTakeoverAvailableComponent>(target);
-            ghostRole.RoleName = MetaData(target).EntityName;
+            RemComp<SentienceTargetComponent>(target.Owner);
+            var ghostRole = EnsureComp<GhostRoleComponent>(target.Owner);
+            EnsureComp<GhostTakeoverAvailableComponent>(target.Owner);
+            ghostRole.RoleName = MetaData(target.Owner).EntityName;
             ghostRole.RoleDescription = Loc.GetString("station-event-random-sentience-role-description", ("name", ghostRole.RoleName));
-            groups.Add(Loc.GetString(target.Comp.FlavorKind));
+            groups.Add(Loc.GetString(target.FlavorKind));
         }
 
         if (groups.Count == 0)
@@ -47,9 +43,8 @@ public sealed class RandomSentienceRule : StationEventSystem<RandomSentienceRule
 
         foreach (var target in targetList)
         {
-            var station = StationSystem.GetOwningStation(target);
-            if(station == null)
-                continue;
+            var station = StationSystem.GetOwningStation(target.Owner);
+            if(station == null) continue;
             stationsToNotify.Add((EntityUid) station);
         }
         foreach (var station in stationsToNotify)

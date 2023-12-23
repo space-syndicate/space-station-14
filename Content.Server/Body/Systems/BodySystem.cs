@@ -111,19 +111,19 @@ public sealed class BodySystem : SharedBodySystem
         _humanoidSystem.SetLayersVisibility(bodyUid, layers, false, true, humanoid);
     }
 
-    public override HashSet<EntityUid> GibBody(EntityUid bodyId, bool gibOrgans = false, BodyComponent? body = null, bool deleteItems = false, bool deleteBrain = false)
+    public override HashSet<EntityUid> GibBody(EntityUid bodyId, bool gibOrgans = false, BodyComponent? body = null, bool deleteItems = false)
     {
         if (!Resolve(bodyId, ref body, false))
             return new HashSet<EntityUid>();
 
-        if (TerminatingOrDeleted(bodyId) || EntityManager.IsQueuedForDeletion(bodyId))
+        if (LifeStage(bodyId) >= EntityLifeStage.Terminating || EntityManager.IsQueuedForDeletion(bodyId))
             return new HashSet<EntityUid>();
 
         var xform = Transform(bodyId);
         if (xform.MapUid == null)
             return new HashSet<EntityUid>();
 
-        var gibs = base.GibBody(bodyId, gibOrgans, body, deleteItems, deleteBrain);
+        var gibs = base.GibBody(bodyId, gibOrgans, body, deleteItems);
 
         var coordinates = xform.Coordinates;
         var filter = Filter.Pvs(bodyId, entityManager: EntityManager);
@@ -135,10 +135,7 @@ public sealed class BodySystem : SharedBodySystem
         {
             if (deleteItems)
             {
-                if (!HasComp<BrainComponent>(entity) || deleteBrain)
-                {
-                    QueueDel(entity);
-                }
+                QueueDel(entity);
             }
             else
             {

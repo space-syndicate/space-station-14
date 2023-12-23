@@ -5,7 +5,6 @@ using Content.Shared.Tools;
 using Content.Shared.Tools.Components;
 using Robust.Client.GameObjects;
 using Robust.Shared.GameStates;
-using SharedToolSystem = Content.Shared.Tools.Systems.SharedToolSystem;
 
 namespace Content.Client.Tools
 {

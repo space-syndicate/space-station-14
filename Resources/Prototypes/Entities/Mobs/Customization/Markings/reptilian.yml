@@ -255,28 +255,10 @@
     state: horns_myrsore
 
 - type: marking
-  id: LizardHornsBighorn
+  id: LizardBighorn
   bodyPart: HeadTop
   markingCategory: HeadTop
   speciesRestriction: [Reptilian]
   sprites:
   - sprite: Mobs/Customization/reptilian_parts.rsi
     state: horns_bighorn
-
-- type: marking
-  id: LizardHornsKoboldEars
-  bodyPart: HeadTop
-  markingCategory: HeadTop
-  speciesRestriction: [Reptilian]
-  sprites:
-  - sprite: Mobs/Customization/reptilian_parts.rsi
-    state: horns_kobold_ears
-    
-- type: marking
-  id: LizardHornsFloppyKoboldEars
-  bodyPart: HeadSide
-  markingCategory: HeadSide
-  speciesRestriction: [Reptilian]
-  sprites:
-  - sprite: Mobs/Customization/reptilian_parts.rsi
-    state: horns_floppy_kobold_ears

@@ -1,30 +1,60 @@
-﻿namespace Content.Shared.Emoting;
+﻿using Robust.Shared.GameStates;
+using Robust.Shared.Serialization;
 
-public sealed class EmoteSystem : EntitySystem
+namespace Content.Shared.Emoting
 {
-    public override void Initialize()
+    public sealed class EmoteSystem : EntitySystem
     {
-        base.Initialize();
+        public override void Initialize()
+        {
+            base.Initialize();
 
-        SubscribeLocalEvent<EmoteAttemptEvent>(OnEmoteAttempt);
-    }
+            SubscribeLocalEvent<EmoteAttemptEvent>(OnEmoteAttempt);
+            SubscribeLocalEvent<EmotingComponent, ComponentGetState>(OnEmotingGetState);
+            SubscribeLocalEvent<EmotingComponent, ComponentHandleState>(OnEmotingHandleState);
+        }
 
-    public void SetEmoting(EntityUid uid, bool value, EmotingComponent? component = null)
-    {
-        if (value && !Resolve(uid, ref component))
-            return;
+        public void SetEmoting(EntityUid uid, bool value, EmotingComponent? component = null)
+        {
+            if (value && !Resolve(uid, ref component))
+                return;
 
-        component = EnsureComp<EmotingComponent>(uid);
+            component = EnsureComp<EmotingComponent>(uid);
 
-        if (component.Enabled == value)
-            return;
+            if (component.Enabled == value)
+                return;
 
-        Dirty(component);
-    }
+            Dirty(component);
+        }
 
-    private void OnEmoteAttempt(EmoteAttemptEvent args)
-    {
-        if (!TryComp(args.Uid, out EmotingComponent? emote) || !emote.Enabled)
-            args.Cancel();
+        private void OnEmotingHandleState(EntityUid uid, EmotingComponent component, ref ComponentHandleState args)
+        {
+            if (args.Current is not EmotingComponentState state)
+                return;
+
+            component.Enabled = state.Enabled;
+        }
+
+        private void OnEmotingGetState(EntityUid uid, EmotingComponent component, ref ComponentGetState args)
+        {
+            args.State = new EmotingComponentState(component.Enabled);
+        }
+
+        private void OnEmoteAttempt(EmoteAttemptEvent args)
+        {
+            if (!TryComp(args.Uid, out EmotingComponent? emote) || !emote.Enabled)
+                args.Cancel();
+        }
+
+        [Serializable, NetSerializable]
+        private sealed class EmotingComponentState : ComponentState
+        {
+            public bool Enabled { get; }
+
+            public EmotingComponentState(bool enabled)
+            {
+                Enabled = enabled;
+            }
+        }
     }
 }

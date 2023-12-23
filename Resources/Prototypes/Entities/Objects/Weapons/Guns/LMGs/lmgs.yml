@@ -7,7 +7,7 @@
   components:
   - type: Sprite
   - type: Item
-    size: Huge
+    size: 60
   - type: Clothing
     sprite: Objects/Weapons/Guns/LMGs/l6.rsi
     quickEquip: false
@@ -58,8 +58,6 @@
       gun_chamber: !type:ContainerSlot
   - type: StaticPrice
     price: 500
-  - type: UseDelay
-    delay: 1
 
 - type: entity
   name: L6 SAW

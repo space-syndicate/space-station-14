@@ -18,7 +18,7 @@ namespace Content.Server.Atmos.Reactions
     }
 
     [Prototype("gasReaction")]
-    public sealed partial class GasReactionPrototype : IPrototype
+    public sealed class GasReactionPrototype : IPrototype
     {
         [ViewVariables]
         [IdDataField]

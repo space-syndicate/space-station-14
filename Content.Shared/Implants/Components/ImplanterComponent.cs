@@ -1,8 +1,10 @@
-﻿using Content.Shared.Containers.ItemSlots;
-using Content.Shared.Whitelist;
+﻿using System.Threading;
+using Content.Shared.Containers.ItemSlots;
+using Content.Shared.DoAfter;
 using Robust.Shared.GameStates;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Serialization;
+using Robust.Shared.Serialization.TypeSerializers.Implementations.Custom.Prototype;
 
 namespace Content.Shared.Implants.Components;
 /// <summary>
@@ -10,36 +12,24 @@ namespace Content.Shared.Implants.Components;
 /// Some can be single use (implant only) or some can draw out an implant
 /// </summary>
 //TODO: Rework drawing to work with implant cases when surgery is in
-[RegisterComponent, NetworkedComponent, AutoGenerateComponentState(true)]
+[RegisterComponent, NetworkedComponent]
 public sealed partial class ImplanterComponent : Component
 {
     public const string ImplanterSlotId = "implanter_slot";
     public const string ImplantSlotId = "implant";
 
     /// <summary>
-    /// Whitelist to check entities against before implanting.
-    /// Implants get their own whitelist which is checked afterwards.
-    /// </summary>
-    [DataField, AutoNetworkedField]
-    public EntityWhitelist? Whitelist;
-
-    /// <summary>
-    /// Blacklist to check entities against before implanting.
-    /// </summary>
-    [DataField, AutoNetworkedField]
-    public EntityWhitelist? Blacklist;
-
-    /// <summary>
     /// Used for implanters that start with specific implants
     /// </summary>
-    [DataField]
-    public EntProtoId? Implant;
+    [ViewVariables]
+    [DataField("implant", customTypeSerializer: typeof(PrototypeIdSerializer<EntityPrototype>))]
+    public string? Implant;
 
     /// <summary>
     /// The time it takes to implant someone else
     /// </summary>
     [ViewVariables(VVAccess.ReadWrite)]
-    [DataField]
+    [DataField("implantTime")]
     public float ImplantTime = 5f;
 
     //TODO: Remove when surgery is a thing
@@ -48,35 +38,52 @@ public sealed partial class ImplanterComponent : Component
     /// It's excessively long to deter from implant checking any antag
     /// </summary>
     [ViewVariables(VVAccess.ReadWrite)]
-    [DataField]
+    [DataField("drawTime")]
     public float DrawTime = 60f;
 
     /// <summary>
     /// Good for single-use injectors
     /// </summary>
-    [DataField, AutoNetworkedField]
-    public bool ImplantOnly;
+    [ViewVariables]
+    [DataField("implantOnly")]
+    public bool ImplantOnly = false;
 
     /// <summary>
     /// The current mode of the implanter
     /// Mode is changed automatically depending if it implants or draws
     /// </summary>
-    [DataField, AutoNetworkedField]
+    [ViewVariables]
+    [DataField("currentMode")]
     public ImplanterToggleMode CurrentMode;
 
     /// <summary>
     /// The name and description of the implant to show on the implanter
     /// </summary>
-    [DataField]
+    [ViewVariables]
+    [DataField("implantData")]
     public (string, string) ImplantData;
 
     /// <summary>
     /// The <see cref="ItemSlot"/> for this implanter
     /// </summary>
-    [DataField(required: true)]
+    [ViewVariables]
+    [DataField("implanterSlot", required:true)]
     public ItemSlot ImplanterSlot = new();
 
     public bool UiUpdateNeeded;
+}
+
+[Serializable, NetSerializable]
+public sealed class ImplanterComponentState : ComponentState
+{
+    public ImplanterToggleMode CurrentMode;
+    public bool ImplantOnly;
+
+    public ImplanterComponentState(ImplanterToggleMode currentMode, bool implantOnly)
+    {
+        CurrentMode = currentMode;
+        ImplantOnly = implantOnly;
+    }
 }
 
 [Serializable, NetSerializable]

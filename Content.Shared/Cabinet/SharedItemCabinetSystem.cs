@@ -4,6 +4,7 @@ using Content.Shared.Lock;
 using Content.Shared.Verbs;
 using Robust.Shared.Audio;
 using Robust.Shared.Containers;
+using Robust.Shared.GameStates;
 using Robust.Shared.Timing;
 using Robust.Shared.Utility;
 
@@ -18,6 +19,9 @@ public abstract class SharedItemCabinetSystem : EntitySystem
     /// <inheritdoc/>
     public override void Initialize()
     {
+        SubscribeLocalEvent<ItemCabinetComponent, ComponentGetState>(OnGetState);
+        SubscribeLocalEvent<ItemCabinetComponent, ComponentHandleState>(OnHandleState);
+
         SubscribeLocalEvent<ItemCabinetComponent, ComponentInit>(OnComponentInit);
         SubscribeLocalEvent<ItemCabinetComponent, ComponentRemove>(OnComponentRemove);
         SubscribeLocalEvent<ItemCabinetComponent, ComponentStartup>(OnComponentStartup);
@@ -29,6 +33,24 @@ public abstract class SharedItemCabinetSystem : EntitySystem
         SubscribeLocalEvent<ItemCabinetComponent, EntRemovedFromContainerMessage>(OnContainerModified);
 
         SubscribeLocalEvent<ItemCabinetComponent, LockToggleAttemptEvent>(OnLockToggleAttempt);
+    }
+
+    private void OnGetState(EntityUid uid, ItemCabinetComponent component, ref ComponentGetState args)
+    {
+        args.State = new ItemCabinetComponentState(component.DoorSound,
+            component.Opened,
+            component.OpenState,
+            component.ClosedState);
+    }
+
+    private void OnHandleState(EntityUid uid, ItemCabinetComponent component, ref ComponentHandleState args)
+    {
+        if (args.Current is not ItemCabinetComponentState state)
+            return;
+        component.DoorSound = state.DoorSound;
+        component.Opened = state.Opened;
+        component.OpenState = state.OpenState;
+        component.ClosedState = state.ClosedState;
     }
 
     private void OnComponentInit(EntityUid uid, ItemCabinetComponent cabinet, ComponentInit args)

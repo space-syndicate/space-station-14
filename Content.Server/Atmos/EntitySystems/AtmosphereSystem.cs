@@ -76,16 +76,15 @@ public sealed partial class AtmosphereSystem : SharedAtmosphereSystem
         if (_exposedTimer < ExposedUpdateDelay)
             return;
 
-        var query = EntityQueryEnumerator<AtmosExposedComponent, TransformComponent>();
-        while (query.MoveNext(out var uid, out var exposed, out var transform))
+        foreach (var (exposed, transform) in EntityManager.EntityQuery<AtmosExposedComponent, TransformComponent>())
         {
-            var air = GetContainingMixture(uid, transform:transform);
+            var air = GetContainingMixture(exposed.Owner, transform:transform);
 
             if (air == null)
                 continue;
 
             var updateEvent = new AtmosExposedUpdateEvent(transform.Coordinates, air, transform);
-            RaiseLocalEvent(uid, ref updateEvent);
+            RaiseLocalEvent(exposed.Owner, ref updateEvent);
         }
 
         _exposedTimer -= ExposedUpdateDelay;

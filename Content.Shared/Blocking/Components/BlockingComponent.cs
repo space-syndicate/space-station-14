@@ -1,6 +1,5 @@
 using Content.Shared.Damage;
 using Robust.Shared.Audio;
-using Robust.Shared.GameStates;
 using Robust.Shared.Physics.Collision.Shapes;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Serialization.TypeSerializers.Implementations.Custom.Prototype;
@@ -10,19 +9,19 @@ namespace Content.Shared.Blocking;
 /// <summary>
 /// This component goes on an item that you want to use to block
 /// </summary>
-[RegisterComponent, NetworkedComponent, AutoGenerateComponentState]
+[RegisterComponent]
 public sealed partial class BlockingComponent : Component
 {
     /// <summary>
     /// The entity that's blocking
     /// </summary>
-    [ViewVariables, AutoNetworkedField]
+    [ViewVariables]
     public EntityUid? User;
 
     /// <summary>
     /// Is it currently blocking?
     /// </summary>
-    [ViewVariables, AutoNetworkedField]
+    [ViewVariables]
     public bool IsBlocking;
 
     /// <summary>
@@ -51,7 +50,7 @@ public sealed partial class BlockingComponent : Component
     [DataField("blockingToggleAction", customTypeSerializer: typeof(PrototypeIdSerializer<EntityPrototype>))]
     public string BlockingToggleAction = "ActionToggleBlock";
 
-    [DataField, AutoNetworkedField]
+    [DataField("blockingToggleActionEntity")]
     public EntityUid? BlockingToggleActionEntity;
 
     /// <summary>

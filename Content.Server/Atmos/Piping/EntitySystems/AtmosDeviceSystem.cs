@@ -11,10 +11,10 @@ namespace Content.Server.Atmos.Piping.EntitySystems
         [Dependency] private readonly IGameTiming _gameTiming = default!;
         [Dependency] private readonly AtmosphereSystem _atmosphereSystem = default!;
 
-        private float _timer;
+        private float _timer = 0f;
 
         // Set of atmos devices that are off-grid but have JoinSystem set.
-        private readonly HashSet<Entity<AtmosDeviceComponent>> _joinedDevices = new();
+        private readonly HashSet<AtmosDeviceComponent> _joinedDevices = new();
 
         public override void Initialize()
         {
@@ -27,10 +27,9 @@ namespace Content.Server.Atmos.Piping.EntitySystems
             SubscribeLocalEvent<AtmosDeviceComponent, AnchorStateChangedEvent>(OnDeviceAnchorChanged);
         }
 
-        public void JoinAtmosphere(Entity<AtmosDeviceComponent> ent)
+        public void JoinAtmosphere(AtmosDeviceComponent component)
         {
-            var component = ent.Comp;
-            var transform = Transform(ent);
+            var transform = Transform(component.Owner);
 
             if (component.RequireAnchored && !transform.Anchored)
                 return;
@@ -40,17 +39,16 @@ namespace Content.Server.Atmos.Piping.EntitySystems
 
             if (!onGrid && component.JoinSystem)
             {
-                _joinedDevices.Add(ent);
+                _joinedDevices.Add(component);
                 component.JoinedSystem = true;
             }
 
             component.LastProcess = _gameTiming.CurTime;
-            RaiseLocalEvent(ent, new AtmosDeviceEnabledEvent());
+            RaiseLocalEvent(component.Owner, new AtmosDeviceEnabledEvent(), false);
         }
 
-        public void LeaveAtmosphere(Entity<AtmosDeviceComponent> ent)
+        public void LeaveAtmosphere(AtmosDeviceComponent component)
         {
-            var component = ent.Comp;
             // Try to remove the component from an atmosphere, and if not
             if (component.JoinedGrid != null && !_atmosphereSystem.RemoveAtmosDevice(component.JoinedGrid.Value, component))
             {
@@ -61,45 +59,45 @@ namespace Content.Server.Atmos.Piping.EntitySystems
 
             if (component.JoinedSystem)
             {
-                _joinedDevices.Remove(ent);
+                _joinedDevices.Remove(component);
                 component.JoinedSystem = false;
             }
 
             component.LastProcess = TimeSpan.Zero;
-            RaiseLocalEvent(ent, new AtmosDeviceDisabledEvent());
+            RaiseLocalEvent(component.Owner, new AtmosDeviceDisabledEvent(), false);
         }
 
-        public void RejoinAtmosphere(Entity<AtmosDeviceComponent> component)
+        public void RejoinAtmosphere(AtmosDeviceComponent component)
         {
             LeaveAtmosphere(component);
             JoinAtmosphere(component);
         }
 
-        private void OnDeviceInitialize(Entity<AtmosDeviceComponent> ent, ref ComponentInit args)
+        private void OnDeviceInitialize(EntityUid uid, AtmosDeviceComponent component, ComponentInit args)
         {
-            JoinAtmosphere(ent);
+            JoinAtmosphere(component);
         }
 
-        private void OnDeviceShutdown(Entity<AtmosDeviceComponent> ent, ref ComponentShutdown args)
+        private void OnDeviceShutdown(EntityUid uid, AtmosDeviceComponent component, ComponentShutdown args)
         {
-            LeaveAtmosphere(ent);
+            LeaveAtmosphere(component);
         }
 
-        private void OnDeviceAnchorChanged(Entity<AtmosDeviceComponent> ent, ref AnchorStateChangedEvent args)
+        private void OnDeviceAnchorChanged(EntityUid uid, AtmosDeviceComponent component, ref AnchorStateChangedEvent args)
         {
             // Do nothing if the component doesn't require being anchored to function.
-            if (!ent.Comp.RequireAnchored)
+            if (!component.RequireAnchored)
                 return;
 
             if (args.Anchored)
-                JoinAtmosphere(ent);
+                JoinAtmosphere(component);
             else
-                LeaveAtmosphere(ent);
+                LeaveAtmosphere(component);
         }
 
-        private void OnDeviceParentChanged(Entity<AtmosDeviceComponent> ent, ref EntParentChangedMessage args)
+        private void OnDeviceParentChanged(EntityUid uid, AtmosDeviceComponent component, ref EntParentChangedMessage args)
         {
-            RejoinAtmosphere(ent);
+            RejoinAtmosphere(component);
         }
 
         /// <summary>
@@ -118,8 +116,8 @@ namespace Content.Server.Atmos.Piping.EntitySystems
             var time = _gameTiming.CurTime;
             foreach (var device in _joinedDevices)
             {
-                RaiseLocalEvent(device, new AtmosDeviceUpdateEvent(_atmosphereSystem.AtmosTime));
-                device.Comp.LastProcess = time;
+                RaiseLocalEvent(device.Owner, new AtmosDeviceUpdateEvent(_atmosphereSystem.AtmosTime), false);
+                device.LastProcess = time;
             }
         }
     }

@@ -1,5 +1,4 @@
 using Robust.Shared.Audio;
-using Robust.Shared.Prototypes;
 
 namespace Content.Server.Interaction.Components;
 
@@ -40,18 +39,6 @@ public sealed partial class InteractionPopupComponent : Component
     /// </summary>
     [DataField("interactFailureSound")]
     public SoundSpecifier? InteractFailureSound;
-
-    /// <summary>
-    /// a prototype that will spawn upon successful interaction (as planned only for special effects)
-    /// </summary>
-    [DataField, ViewVariables(VVAccess.ReadWrite)]
-    public EntProtoId? InteractSuccessSpawn;
-
-    /// <summary>
-    /// a prototype that will spawn upon failure interaction (as planned only for special effects)
-    /// </summary>
-    [DataField, ViewVariables(VVAccess.ReadWrite)]
-    public EntProtoId? InteractFailureSpawn;
 
     /// <summary>
     /// Chance that an interaction attempt will succeed.

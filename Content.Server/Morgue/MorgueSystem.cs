@@ -1,9 +1,10 @@
+using Content.Server.Morgue.Components;
 using Content.Server.Storage.Components;
 using Content.Shared.Body.Components;
 using Content.Shared.Examine;
 using Content.Shared.Morgue;
 using Content.Shared.Morgue.Components;
-using Robust.Shared.Player;
+using Robust.Server.GameObjects;
 
 namespace Content.Server.Morgue;
 
@@ -78,21 +79,20 @@ public sealed class MorgueSystem : EntitySystem
     {
         base.Update(frameTime);
 
-        var query = EntityQueryEnumerator<MorgueComponent, EntityStorageComponent, AppearanceComponent>();
-        while (query.MoveNext(out var uid, out var comp, out var storage, out var appearance))
+        foreach (var (comp, storage, appearance) in EntityQuery<MorgueComponent, EntityStorageComponent, AppearanceComponent>())
         {
             comp.AccumulatedFrameTime += frameTime;
 
-            CheckContents(uid, comp, storage);
+            CheckContents(comp.Owner, comp, storage);
 
             if (comp.AccumulatedFrameTime < comp.BeepTime)
                 continue;
 
             comp.AccumulatedFrameTime -= comp.BeepTime;
 
-            if (comp.DoSoulBeep && _appearance.TryGetData<MorgueContents>(uid, MorgueVisuals.Contents, out var contents, appearance) && contents == MorgueContents.HasSoul)
+            if (comp.DoSoulBeep && _appearance.TryGetData<MorgueContents>(appearance.Owner, MorgueVisuals.Contents, out var contents, appearance) && contents == MorgueContents.HasSoul)
             {
-                _audio.PlayPvs(comp.OccupantHasSoulAlarmSound, uid);
+                _audio.PlayPvs(comp.OccupantHasSoulAlarmSound, comp.Owner);
             }
         }
     }

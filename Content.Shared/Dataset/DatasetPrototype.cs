@@ -3,7 +3,7 @@
 namespace Content.Shared.Dataset
 {
     [Prototype("dataset")]
-    public sealed partial class DatasetPrototype : IPrototype
+    public sealed class DatasetPrototype : IPrototype
     {
         [ViewVariables]
         [IdDataField]

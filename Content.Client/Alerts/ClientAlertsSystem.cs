@@ -1,7 +1,10 @@
 using System.Linq;
 using Content.Shared.Alert;
+using Content.Shared.Mobs.Systems;
 using JetBrains.Annotations;
+using Robust.Client.GameObjects;
 using Robust.Client.Player;
+using Robust.Shared.GameStates;
 using Robust.Shared.Prototypes;
 
 namespace Content.Client.Alerts;
@@ -21,10 +24,10 @@ public sealed class ClientAlertsSystem : AlertsSystem
     {
         base.Initialize();
 
-        SubscribeLocalEvent<AlertsComponent, LocalPlayerAttachedEvent>(OnPlayerAttached);
-        SubscribeLocalEvent<AlertsComponent, LocalPlayerDetachedEvent>(OnPlayerDetached);
+        SubscribeLocalEvent<AlertsComponent, PlayerAttachedEvent>(OnPlayerAttached);
+        SubscribeLocalEvent<AlertsComponent, PlayerDetachedEvent>(OnPlayerDetached);
 
-        SubscribeLocalEvent<AlertsComponent, AfterAutoHandleStateEvent>(ClientAlertsHandleState);
+        SubscribeLocalEvent<AlertsComponent, ComponentHandleState>(ClientAlertsHandleState);
     }
     protected override void LoadPrototypes()
     {
@@ -46,29 +49,35 @@ public sealed class ClientAlertsSystem : AlertsSystem
         }
     }
 
-    protected override void AfterShowAlert(Entity<AlertsComponent> alerts)
-    {
-        if (_playerManager.LocalPlayer?.ControlledEntity != alerts.Owner)
-            return;
-
-        SyncAlerts?.Invoke(this, alerts.Comp.Alerts);
-    }
-
-    protected override void AfterClearAlert(Entity<AlertsComponent> alertsComponent)
+    protected override void AfterShowAlert(AlertsComponent alertsComponent)
     {
         if (_playerManager.LocalPlayer?.ControlledEntity != alertsComponent.Owner)
             return;
 
-        SyncAlerts?.Invoke(this, alertsComponent.Comp.Alerts);
+        SyncAlerts?.Invoke(this, alertsComponent.Alerts);
     }
 
-    private void ClientAlertsHandleState(EntityUid uid, AlertsComponent component, ref AfterAutoHandleStateEvent args)
+    protected override void AfterClearAlert(AlertsComponent alertsComponent)
     {
-        if (_playerManager.LocalPlayer?.ControlledEntity == uid)
-            SyncAlerts?.Invoke(this, component.Alerts);
+        if (_playerManager.LocalPlayer?.ControlledEntity != alertsComponent.Owner)
+            return;
+
+        SyncAlerts?.Invoke(this, alertsComponent.Alerts);
     }
 
-    private void OnPlayerAttached(EntityUid uid, AlertsComponent component, LocalPlayerAttachedEvent args)
+    private void ClientAlertsHandleState(EntityUid uid, AlertsComponent component, ref ComponentHandleState args)
+    {
+        var componentAlerts = (args.Current as AlertsComponentState)?.Alerts;
+        if (componentAlerts == null)
+            return;
+
+        component.Alerts = new Dictionary<AlertKey, AlertState>(componentAlerts);
+
+        if (_playerManager.LocalPlayer?.ControlledEntity == uid)
+            SyncAlerts?.Invoke(this, componentAlerts);
+    }
+
+    private void OnPlayerAttached(EntityUid uid, AlertsComponent component, PlayerAttachedEvent args)
     {
         if (_playerManager.LocalPlayer?.ControlledEntity != uid)
             return;
@@ -86,7 +95,7 @@ public sealed class ClientAlertsSystem : AlertsSystem
         ClearAlerts?.Invoke(this, EventArgs.Empty);
     }
 
-    private void OnPlayerDetached(EntityUid uid, AlertsComponent component, LocalPlayerDetachedEvent args)
+    private void OnPlayerDetached(EntityUid uid, AlertsComponent component, PlayerDetachedEvent args)
     {
         ClearAlerts?.Invoke(this, EventArgs.Empty);
     }

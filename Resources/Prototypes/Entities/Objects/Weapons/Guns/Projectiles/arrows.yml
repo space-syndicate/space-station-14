@@ -4,7 +4,7 @@
   abstract: true
   components:
   - type: Item
-    size: Small
+    size: 10
   - type: Sprite
     sprite: Objects/Weapons/Guns/Projectiles/arrows.rsi
   - type: Fixtures
@@ -35,7 +35,6 @@
   - type: Tag
     tags:
     - Arrow
-    - CannonRestrict
   - type: Projectile
     deleteOnCollide: false
     onlyCollideWhenShot: true
@@ -45,16 +44,16 @@
   - type: SolutionContainerManager
     solutions:
       ammo:
-        maxVol: 2
+        maxVol: 5
   - type: RefillableSolution
     solution: ammo
   - type: InjectableSolution
     solution: ammo
   - type: SolutionInjectOnCollide
-    transferAmount: 2
+    transferAmount: 5
     blockSlots: NONE
   - type: SolutionTransfer
-    maxTransferAmount: 2
+    maxTransferAmount: 5
   - type: Appearance
   - type: SolutionContainerVisuals
     maxFillLevels: 1

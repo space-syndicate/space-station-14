@@ -1,4 +1,3 @@
-using System.Linq;
 using Content.Server.Administration.Commands;
 using Content.Server.GameTicking.Rules.Components;
 using Content.Server.KillTracking;
@@ -96,7 +95,7 @@ public sealed class DeathMatchRuleSystem : GameRuleSystem<DeathMatchRuleComponen
             if (ev.Assist is KillPlayerSource assist && dm.Victor == null)
                 _point.AdjustPointValue(assist.PlayerId, 1, uid, point);
 
-            var spawns = EntitySpawnCollection.GetSpawns(dm.RewardSpawns).Cast<string?>().ToList();
+            var spawns = EntitySpawnCollection.GetSpawns(dm.RewardSpawns);
             EntityManager.SpawnEntities(Transform(ev.Entity).MapPosition, spawns);
         }
     }

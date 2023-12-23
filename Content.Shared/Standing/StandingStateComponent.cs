@@ -3,22 +3,22 @@ using Robust.Shared.GameStates;
 
 namespace Content.Shared.Standing
 {
-    [RegisterComponent, NetworkedComponent, AutoGenerateComponentState]
     [Access(typeof(StandingStateSystem))]
+    [RegisterComponent, NetworkedComponent]
     public sealed partial class StandingStateComponent : Component
     {
         [ViewVariables(VVAccess.ReadWrite)]
-        [DataField]
+        [DataField("downSound")]
         public SoundSpecifier DownSound { get; private set; } = new SoundCollectionSpecifier("BodyFall");
 
-        [DataField, AutoNetworkedField]
+        [DataField("standing")]
         public bool Standing { get; set; } = true;
 
         /// <summary>
         ///     List of fixtures that had their collision mask changed when the entity was downed.
         ///     Required for re-adding the collision mask.
         /// </summary>
-        [DataField, AutoNetworkedField]
+        [DataField("changedFixtures")]
         public List<string> ChangedFixtures = new();
     }
 }

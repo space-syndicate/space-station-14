@@ -14,18 +14,18 @@ public sealed partial class PickRandomComponent : Component
     /// <summary>
     /// Whitelist for potential picked items.
     /// </summary>
-    [DataField, ViewVariables(VVAccess.ReadWrite)]
+    [DataField("whitelist"), ViewVariables(VVAccess.ReadWrite)]
     public EntityWhitelist? Whitelist;
 
     /// <summary>
     /// Locale id for the pick verb text.
     /// </summary>
-    [DataField, ViewVariables(VVAccess.ReadWrite)]
-    public LocId VerbText = "comp-pick-random-verb-text";
+    [DataField("verbText"), ViewVariables(VVAccess.ReadWrite)]
+    public string VerbText = "comp-pick-random-verb-text";
 
     /// <summary>
     /// Locale id for the empty storage message.
     /// </summary>
-    [DataField, ViewVariables(VVAccess.ReadWrite)]
-    public LocId EmptyText = "comp-pick-random-empty";
+    [DataField("emptyText"), ViewVariables(VVAccess.ReadWrite)]
+    public string EmptyText = "comp-pick-random-empty";
 }

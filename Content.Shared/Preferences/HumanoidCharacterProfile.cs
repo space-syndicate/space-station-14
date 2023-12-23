@@ -370,7 +370,7 @@ namespace Content.Shared.Preferences
             return Appearance.MemberwiseEquals(other.Appearance);
         }
 
-        public void EnsureValid(string[] sponsorPrototypes)
+        public void EnsureValid(string[] sponsorMarkings)
         {
             var prototypeManager = IoCManager.Resolve<IPrototypeManager>();
 
@@ -379,14 +379,6 @@ namespace Content.Shared.Preferences
                 Species = SharedHumanoidAppearanceSystem.DefaultSpecies;
                 speciesPrototype = prototypeManager.Index<SpeciesPrototype>(Species);
             }
-
-            // Corvax-Sponsors-Start: Reset to human if player not sponsor
-            if (speciesPrototype.SponsorOnly && !sponsorPrototypes.Contains(Species))
-            {
-                Species = SharedHumanoidAppearanceSystem.DefaultSpecies;
-                speciesPrototype = prototypeManager.Index<SpeciesPrototype>(Species);
-            }
-            // Corvax-Sponsors-End
 
             var sex = Sex switch
             {
@@ -461,7 +453,7 @@ namespace Content.Shared.Preferences
                 flavortext = FormattedMessage.RemoveMarkup(FlavorText);
             }
 
-            var appearance = HumanoidCharacterAppearance.EnsureValid(Appearance, Species, Sex, sponsorPrototypes);
+            var appearance = HumanoidCharacterAppearance.EnsureValid(Appearance, Species, Sex, sponsorMarkings);
 
             var prefsUnavailableMode = PreferenceUnavailable switch
             {

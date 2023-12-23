@@ -1,10 +1,10 @@
+namespace Content.Shared.Chat.Prototypes;
+
 using Robust.Shared.Prototypes;
 using Robust.Shared.Serialization.TypeSerializers.Implementations.Custom.Prototype;
 
-namespace Content.Shared.Chat.Prototypes;
-
 [Prototype("autoEmote")]
-public sealed partial class AutoEmotePrototype : IPrototype
+public sealed class AutoEmotePrototype : IPrototype
 {
     /// <inheritdoc/>
     [IdDataField]

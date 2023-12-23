@@ -6,10 +6,14 @@
   components:
   - type: StorageFill
     contents:
+      - id: HandheldHealthAnalyzer
       - id: Brutepack
+        amount: 2
       - id: Ointment
+        amount: 2
       - id: Gauze
-      - id: PillCanisterTricordrazine
+      - id: PillTricordrazine
+        amount: 5
       # see https://github.com/tgstation/blob/master/code/game/objects/items/storage/firstaid.dm for example contents
 
 - type: entity
@@ -19,10 +23,15 @@
   components:
   - type: StorageFill
     contents:
+      - id: RegenerativeMesh
+        amount: 2
       - id: Ointment
         amount: 2
-      - id: PillCanisterKelotane
-      - id: PillCanisterDermaline
+      - id: SyringeSigynate
+      - id: PillKelotane
+        amount: 5
+      - id: PillDermaline
+        amount: 5
 
 - type: entity
   id: MedkitBruteFilled
@@ -31,10 +40,15 @@
   components:
   - type: StorageFill
     contents:
+      - id: MedicatedSuture
       - id: Brutepack
       - id: Gauze
-      - id: PillCanisterIron
-      - id: PillCanisterCopper
+      - id: Bloodpack
+      - id: SyringeTranexamicAcid
+      - id: PillIron
+        amount: 5
+      - id: PillBicaridine
+        amount: 5
 
 - type: entity
   id: MedkitToxinFilled
@@ -46,8 +60,10 @@
       - id: SyringeIpecac
       - id: SyringeEthylredoxrazine
       - id: AntiPoisonMedipen
-      - id: PillCanisterDylovene
-      - id: PillCanisterCharcoal
+      - id: PillDylovene
+        amount: 5
+      - id: PillCharcoal
+        amount: 3
 
 - type: entity
   id: MedkitOxygenFilled
@@ -60,7 +76,8 @@
       - id: EmergencyOxygenTankFilled
       - id: EmergencyMedipen
       - id: SyringeInaprovaline
-      - id: PillCanisterDexalin
+      - id: PillDexalin
+        amount: 7
 
 - type: entity
   id: MedkitRadiationFilled
@@ -69,10 +86,14 @@
   components:
   - type: StorageFill
     contents:
+      - id: GeigerCounter
       - id: SyringePhalanximine
       - id: RadAutoInjector
+        amount: 1
       - id: EmergencyMedipen
-      - id: PillCanisterHyronalin
+        amount: 1
+      - id: PillHyronalin
+        amount: 5
 
 - type: entity
   id: MedkitAdvancedFilled
@@ -82,7 +103,9 @@
   - type: StorageFill
     contents:
       - id: MedicatedSuture
+        amount: 2
       - id: RegenerativeMesh
+        amount: 2
       - id: Bloodpack
         amount: 2
 
@@ -93,11 +116,15 @@
   components:
   - type: StorageFill
     contents:
+      - id: HandheldHealthAnalyzer
       - id: MedicatedSuture
       - id: RegenerativeMesh
       - id: SyringeEphedrine
+      - id: SyringeSaline
       - id: BruteAutoInjector
       - id: BurnAutoInjector
+      - id: EmergencyMedipen
+      - id: Bloodpack
 
 - type: entity
   id: StimkitFilled

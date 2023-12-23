@@ -15,7 +15,7 @@
     sprite: Objects/Fun/Instruments/eguitar.rsi
     state: icon
   - type: Item
-    size: Normal
+    size: 24
     sprite: Objects/Fun/Instruments/eguitar.rsi
   - type: Clothing
     quickEquip: false
@@ -44,7 +44,7 @@
     sprite: Objects/Fun/Instruments/bassguitar.rsi
     state: icon
   - type: Item
-    size: Normal
+    size: 24
     sprite: Objects/Fun/Instruments/bassguitar.rsi
   - type: Clothing
     quickEquip: false
@@ -72,7 +72,7 @@
     sprite: Objects/Fun/Instruments/rockguitar.rsi
     state: icon
   - type: Item
-    size: Normal
+    size: 24
     sprite: Objects/Fun/Instruments/rockguitar.rsi
   - type: Clothing
     quickEquip: false
@@ -83,7 +83,6 @@
     tags:
     - StringInstrument
   - type: MeleeWeapon
-    wideAnimationRotation: 45
     damage:
       types:
         Blunt: 6
@@ -115,14 +114,14 @@
     - StringInstrument
   - type: Item
     sprite: Objects/Fun/Instruments/guitar.rsi
-    size: Normal
+    size: 24
   - type: Clothing
     quickEquip: false
     slots:
     - back
     sprite: Objects/Fun/Instruments/guitar.rsi
   - type: Wieldable
-  - type: Damageable # Smash it! Does 20 damage a hit, but breaks after 1 hit.
+  - type: Damageable # Smash it! Does 20 damage a hit, but breaks after 1 hit. 
     damageContainer: Inorganic
   - type: Destructible
     thresholds:
@@ -145,7 +144,6 @@
       types:
         Blunt: 20
   - type: MeleeWeapon
-    wideAnimationRotation: 45
     damage:
       types:
         Blunt: 5
@@ -178,7 +176,7 @@
     sprite: Objects/Fun/Instruments/banjo.rsi
     state: icon
   - type: Item
-    size: Normal
+    size: 24
     sprite: Objects/Fun/Instruments/banjo.rsi
   - type: Tag
     tags:
@@ -200,7 +198,7 @@
     sprite: Objects/Fun/Instruments/violin.rsi
     state: icon
   - type: Item
-    size: Normal
+    size: 24
     sprite: Objects/Fun/Instruments/violin.rsi
   - type: Tag
     tags:
@@ -218,7 +216,7 @@
     sprite: Objects/Fun/Instruments/viola.rsi
     state: icon
   - type: Item
-    size: Normal
+    size: 24
     sprite: Objects/Fun/Instruments/viola.rsi
   - type: Tag
     tags:
@@ -236,7 +234,7 @@
     sprite: Objects/Fun/Instruments/cello.rsi
     state: icon
   - type: Item
-    size: Normal
+    size: 48
     sprite: Objects/Fun/Instruments/cello.rsi
   - type: Tag
     tags:

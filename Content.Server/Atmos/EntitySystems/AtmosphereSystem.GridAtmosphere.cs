@@ -3,6 +3,7 @@ using Content.Server.Atmos.Components;
 using Content.Server.Atmos.Reactions;
 using Content.Shared.Atmos;
 using Content.Shared.Atmos.Components;
+using Robust.Shared.Map;
 using Robust.Shared.Map.Components;
 using Robust.Shared.Utility;
 
@@ -56,7 +57,7 @@ public sealed partial class AtmosphereSystem
             tile.GridIndex = uid;
         }
 
-        GridRepopulateTiles((uid, mapGrid, gridAtmosphere));
+        GridRepopulateTiles(mapGrid, gridAtmosphere);
     }
 
     private void OnGridSplit(EntityUid uid, GridAtmosphereComponent originalGridAtmos, ref GridSplitEvent args)
@@ -64,12 +65,14 @@ public sealed partial class AtmosphereSystem
         foreach (var newGrid in args.NewGrids)
         {
             // Make extra sure this is a valid grid.
-            if (!TryComp(newGrid, out MapGridComponent? mapGrid))
+            if (!_mapManager.TryGetGrid(newGrid, out var mapGrid))
                 continue;
 
+            var entity = mapGrid.Owner;
+
             // If the new split grid has an atmosphere already somehow, use that. Otherwise, add a new one.
-            if (!TryComp(newGrid, out GridAtmosphereComponent? newGridAtmos))
-                newGridAtmos = AddComp<GridAtmosphereComponent>(newGrid);
+            if (!TryComp(entity, out GridAtmosphereComponent? newGridAtmos))
+                newGridAtmos = AddComp<GridAtmosphereComponent>(entity);
 
             // We assume the tiles on the new grid have the same coordinates as they did on the old grid...
             var enumerator = mapGrid.GetAllTilesEnumerator();
@@ -502,15 +505,16 @@ public sealed partial class AtmosphereSystem
         args.Handled = component.PipeNets.Remove(args.PipeNet);
     }
 
-    private void GridAddAtmosDevice(Entity<GridAtmosphereComponent> grid, ref AddAtmosDeviceMethodEvent args)
+    private void GridAddAtmosDevice(EntityUid uid, GridAtmosphereComponent component,
+        ref AddAtmosDeviceMethodEvent args)
     {
         if (args.Handled)
             return;
 
-        if (!grid.Comp.AtmosDevices.Add((args.Device.Owner, args.Device)))
+        if (!component.AtmosDevices.Add(args.Device))
             return;
 
-        args.Device.JoinedGrid = grid;
+        args.Device.JoinedGrid = uid;
         args.Handled = true;
         args.Result = true;
     }
@@ -521,7 +525,7 @@ public sealed partial class AtmosphereSystem
         if (args.Handled)
             return;
 
-        if (!component.AtmosDevices.Remove((args.Device.Owner, args.Device)))
+        if (!component.AtmosDevices.Remove(args.Device))
             return;
 
         args.Device.JoinedGrid = null;
@@ -534,9 +538,8 @@ public sealed partial class AtmosphereSystem
     /// </summary>
     /// <param name="mapGrid">The grid where to get all valid tiles from.</param>
     /// <param name="gridAtmosphere">The grid atmosphere where the tiles will be repopulated.</param>
-    private void GridRepopulateTiles(Entity<MapGridComponent, GridAtmosphereComponent> grid)
+    private void GridRepopulateTiles(MapGridComponent mapGrid, GridAtmosphereComponent gridAtmosphere)
     {
-        var (uid, mapGrid, gridAtmosphere) = grid;
         var volume = GetVolumeForTiles(mapGrid, 1);
 
         foreach (var tile in mapGrid.GetAllTiles())
@@ -548,14 +551,16 @@ public sealed partial class AtmosphereSystem
             gridAtmosphere.InvalidatedCoords.Add(tile.GridIndices);
         }
 
-        TryComp(uid, out GasTileOverlayComponent? overlay);
+        var uid = gridAtmosphere.Owner;
+
+        TryComp(gridAtmosphere.Owner, out GasTileOverlayComponent? overlay);
 
         // Gotta do this afterwards so we can properly update adjacent tiles.
         foreach (var (position, _) in gridAtmosphere.Tiles.ToArray())
         {
             var ev = new UpdateAdjacentMethodEvent(uid, position);
             GridUpdateAdjacent(uid, gridAtmosphere, ref ev);
-            InvalidateVisuals(uid, position, overlay);
+            InvalidateVisuals(mapGrid.Owner, position, overlay);
         }
     }
 }

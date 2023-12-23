@@ -103,9 +103,6 @@
       color: red
   - type: Food
     trash: FoodFrozenPopsicleTrash
-  - type: Tag
-    tags:
-    - Fruit
 
 - type: entity
   name: jumbo ice-cream
@@ -187,9 +184,6 @@
     - state: berry
   - type: Food
     trash: FoodFrozenSnowconeTrash
-  - type: Tag
-    tags:
-    - Fruit
 
 - type: entity
   name: fruit salad snowcone
@@ -203,9 +197,6 @@
     - state: fruitsalad
   - type: Food
     trash: FoodFrozenSnowconeTrash
-  - type: Tag
-    tags:
-    - Fruit
 
 - type: entity
   name: clowncone

@@ -2,22 +2,25 @@ using System.Linq;
 using Content.Shared.Access.Components;
 using Content.Shared.Access.Systems;
 using Content.Shared.Damage;
+using Content.Shared.DoAfter;
 using Content.Shared.Doors.Components;
 using Content.Shared.Hands.Components;
 using Content.Shared.Interaction;
 using Content.Shared.Physics;
-using Content.Shared.Prying.Components;
 using Content.Shared.Stunnable;
 using Content.Shared.Tag;
 using Robust.Shared.Audio;
+using Robust.Shared.GameStates;
 using Robust.Shared.Physics.Components;
 using Robust.Shared.Physics.Events;
 using Robust.Shared.Physics.Systems;
+using Robust.Shared.Serialization;
 using Robust.Shared.Timing;
+using Content.Shared.Prying.Components;
 
 namespace Content.Shared.Doors.Systems;
 
-public abstract class SharedDoorSystem : EntitySystem
+public abstract partial class SharedDoorSystem : EntitySystem
 {
     [Dependency] protected readonly IGameTiming GameTiming = default!;
     [Dependency] protected readonly SharedPhysicsSystem PhysicsSystem = default!;
@@ -43,7 +46,7 @@ public abstract class SharedDoorSystem : EntitySystem
     /// <summary>
     ///     A set of doors that are currently opening, closing, or just queued to open/close after some delay.
     /// </summary>
-    private readonly HashSet<Entity<DoorComponent>> _activeDoors = new();
+    private readonly HashSet<DoorComponent> _activeDoors = new();
 
     public override void Initialize()
     {
@@ -52,7 +55,8 @@ public abstract class SharedDoorSystem : EntitySystem
         SubscribeLocalEvent<DoorComponent, ComponentInit>(OnComponentInit);
         SubscribeLocalEvent<DoorComponent, ComponentRemove>(OnRemove);
 
-        SubscribeLocalEvent<DoorComponent, AfterAutoHandleStateEvent>(OnHandleState);
+        SubscribeLocalEvent<DoorComponent, ComponentGetState>(OnGetState);
+        SubscribeLocalEvent<DoorComponent, ComponentHandleState>(OnHandleState);
 
         SubscribeLocalEvent<DoorComponent, ActivateInWorldEvent>(OnActivate);
 
@@ -62,11 +66,10 @@ public abstract class SharedDoorSystem : EntitySystem
 
     }
 
-    protected virtual void OnComponentInit(Entity<DoorComponent> ent, ref ComponentInit args)
+    protected virtual void OnComponentInit(EntityUid uid, DoorComponent door, ComponentInit args)
     {
-        var door = ent.Comp;
         if (door.NextStateChange != null)
-            _activeDoors.Add(ent);
+            _activeDoors.Add(door);
         else
         {
             // Make sure doors are not perpetually stuck opening or closing.
@@ -89,26 +92,40 @@ public abstract class SharedDoorSystem : EntitySystem
             || door.State == DoorState.Closing && door.Partial
             || door.State == DoorState.Opening && !door.Partial;
 
-        SetCollidable(ent, collidable, door);
-        AppearanceSystem.SetData(ent, DoorVisuals.State, door.State);
+        SetCollidable(uid, collidable, door);
+        AppearanceSystem.SetData(uid, DoorVisuals.State, door.State);
     }
 
-    private void OnRemove(Entity<DoorComponent> door, ref ComponentRemove args)
+    private void OnRemove(EntityUid uid, DoorComponent door, ComponentRemove args)
     {
         _activeDoors.Remove(door);
     }
 
     #region StateManagement
-    private void OnHandleState(Entity<DoorComponent> ent, ref AfterAutoHandleStateEvent args)
+    private void OnGetState(EntityUid uid, DoorComponent door, ref ComponentGetState args)
     {
-        var door = ent.Comp;
-        if (door.NextStateChange == null)
-            _activeDoors.Remove(ent);
-        else
-            _activeDoors.Add(ent);
+        args.State = new DoorComponentState(door, GetNetEntitySet(door.CurrentlyCrushing));
+    }
 
-        RaiseLocalEvent(ent, new DoorStateChangedEvent(door.State));
-        AppearanceSystem.SetData(ent, DoorVisuals.State, door.State);
+    private void OnHandleState(EntityUid uid, DoorComponent door, ref ComponentHandleState args)
+    {
+        if (args.Current is not DoorComponentState state)
+            return;
+
+        door.CurrentlyCrushing.Clear();
+        door.CurrentlyCrushing.UnionWith(EnsureEntitySet<DoorComponent>(state.CurrentlyCrushing, uid));
+
+        door.State = state.DoorState;
+        door.NextStateChange = state.NextStateChange;
+        door.Partial = state.Partial;
+
+        if (state.NextStateChange == null)
+            _activeDoors.Remove(door);
+        else
+            _activeDoors.Add(door);
+
+        RaiseLocalEvent(uid, new DoorStateChangedEvent(door.State), false);
+        AppearanceSystem.SetData(uid, DoorVisuals.State, door.State);
     }
 
     protected void SetState(EntityUid uid, DoorState state, DoorComponent? door = null)
@@ -123,29 +140,29 @@ public abstract class SharedDoorSystem : EntitySystem
         switch (state)
         {
             case DoorState.Opening:
-                _activeDoors.Add((uid, door));
+                _activeDoors.Add(door);
                 door.NextStateChange = GameTiming.CurTime + door.OpenTimeOne;
                 break;
 
             case DoorState.Closing:
-                _activeDoors.Add((uid, door));
+                _activeDoors.Add(door);
                 door.NextStateChange = GameTiming.CurTime + door.CloseTimeOne;
                 break;
 
             case DoorState.Denying:
-                _activeDoors.Add((uid, door));
+                _activeDoors.Add(door);
                 door.NextStateChange = GameTiming.CurTime + door.DenyDuration;
                 break;
 
             case DoorState.Emagging:
-                _activeDoors.Add((uid, door));
+                _activeDoors.Add(door);
                 door.NextStateChange = GameTiming.CurTime + door.EmagDuration;
                 break;
 
             case DoorState.Open:
                 door.Partial = false;
                 if (door.NextStateChange == null)
-                    _activeDoors.Remove((uid, door));
+                    _activeDoors.Remove(door);
                 break;
             case DoorState.Closed:
                 // May want to keep the door around to re-check for opening if we got a contact during closing.
@@ -154,8 +171,8 @@ public abstract class SharedDoorSystem : EntitySystem
         }
 
         door.State = state;
-        Dirty(uid, door);
-        RaiseLocalEvent(uid, new DoorStateChangedEvent(state));
+        Dirty(door);
+        RaiseLocalEvent(uid, new DoorStateChangedEvent(state), false);
         AppearanceSystem.SetData(uid, DoorVisuals.State, door.State);
     }
 
@@ -187,7 +204,7 @@ public abstract class SharedDoorSystem : EntitySystem
 
         // might not be able to deny without power or some other blocker.
         var ev = new BeforeDoorDeniedEvent();
-        RaiseLocalEvent(uid, ev);
+        RaiseLocalEvent(uid, ev, false);
         if (ev.Cancelled)
             return;
 
@@ -239,7 +256,7 @@ public abstract class SharedDoorSystem : EntitySystem
             return false;
 
         var ev = new BeforeDoorOpenedEvent() { User = user };
-        RaiseLocalEvent(uid, ev);
+        RaiseLocalEvent(uid, ev, false);
         if (ev.Cancelled)
             return false;
 
@@ -290,8 +307,8 @@ public abstract class SharedDoorSystem : EntitySystem
         SetCollidable(uid, false, door);
         door.Partial = true;
         door.NextStateChange = GameTiming.CurTime + door.CloseTimeTwo;
-        _activeDoors.Add((uid, door));
-        Dirty(uid, door);
+        _activeDoors.Add(door);
+        Dirty(door);
 
     }
     #endregion
@@ -359,7 +376,7 @@ public abstract class SharedDoorSystem : EntitySystem
             return false;
 
         door.Partial = true;
-        Dirty(uid, door);
+        Dirty(door);
 
         // Make sure no entity waled into the airlock when it started closing.
         if (!CanClose(uid, door))
@@ -372,7 +389,7 @@ public abstract class SharedDoorSystem : EntitySystem
 
         SetCollidable(uid, true, door, physics);
         door.NextStateChange = GameTiming.CurTime + door.CloseTimeTwo;
-        _activeDoors.Add((uid, door));
+        _activeDoors.Add(door);
 
         // Crush any entities. Note that we don't check airlock safety here. This should have been checked before
         // the door closed.
@@ -567,12 +584,12 @@ public abstract class SharedDoorSystem : EntitySystem
         if (delay == null || delay.Value <= TimeSpan.Zero)
         {
             door.NextStateChange = null;
-            _activeDoors.Remove((uid, door));
+            _activeDoors.Remove(door);
             return;
         }
 
         door.NextStateChange = GameTiming.CurTime + delay.Value;
-        _activeDoors.Add((uid, door));
+        _activeDoors.Add(door);
     }
 
     /// <summary>
@@ -582,78 +599,76 @@ public abstract class SharedDoorSystem : EntitySystem
     {
         var time = GameTiming.CurTime;
 
-        foreach (var ent in _activeDoors.ToList())
+        foreach (var door in _activeDoors.ToList())
         {
-            var door = ent.Comp;
             if (door.Deleted || door.NextStateChange == null)
             {
-                _activeDoors.Remove(ent);
+                _activeDoors.Remove(door);
                 continue;
             }
 
-            if (Paused(ent))
+            if (Paused(door.Owner))
                 continue;
 
             if (door.NextStateChange.Value < time)
-                NextState(ent, time);
+                NextState(door, time);
 
             if (door.State == DoorState.Closed &&
-                TryComp<PhysicsComponent>(ent, out var doorBody))
+                TryComp<PhysicsComponent>(door.Owner, out var doorBody))
             {
                 // If something bumped into us during closing then start to re-open, otherwise, remove it from active.
-                _activeDoors.Remove(ent);
-                CheckDoorBump((ent, door, doorBody));
+                _activeDoors.Remove(door);
+                CheckDoorBump(door, doorBody);
             }
         }
     }
 
-    protected virtual void CheckDoorBump(Entity<DoorComponent, PhysicsComponent> ent) { }
+    protected virtual void CheckDoorBump(DoorComponent component, PhysicsComponent body) { }
 
     /// <summary>
     ///     Makes a door proceed to the next state (if applicable).
     /// </summary>
-    private void NextState(Entity<DoorComponent> ent, TimeSpan time)
+    private void NextState(DoorComponent door, TimeSpan time)
     {
-        var door = ent.Comp;
         door.NextStateChange = null;
 
         if (door.CurrentlyCrushing.Count > 0)
             // This is a closed door that is crushing people and needs to auto-open. Note that we don't check "can open"
             // here. The door never actually finished closing and we don't want people to get stuck inside of doors.
-            StartOpening(ent, door, predicted: true);
+            StartOpening(door.Owner, door, predicted: true);
 
         switch (door.State)
         {
             case DoorState.Opening:
                 // Either fully or partially open this door.
                 if (door.Partial)
-                    SetState(ent, DoorState.Open, door);
+                    SetState(door.Owner, DoorState.Open, door);
                 else
-                    OnPartialOpen(ent, door);
+                    OnPartialOpen(door.Owner, door);
 
                 break;
 
             case DoorState.Closing:
                 // Either fully or partially close this door.
                 if (door.Partial)
-                    SetState(ent, DoorState.Closed, door);
+                    SetState(door.Owner, DoorState.Closed, door);
                 else
-                    OnPartialClose(ent, door);
+                    OnPartialClose(door.Owner, door);
 
                 break;
 
             case DoorState.Denying:
                 // Finish denying entry and return to the closed state.
-                SetState(ent, DoorState.Closed, door);
+                SetState(door.Owner, DoorState.Closed, door);
                 break;
 
             case DoorState.Emagging:
-                StartOpening(ent, door);
+                StartOpening(door.Owner, door);
                 break;
 
             case DoorState.Open:
                 // This door is open, and queued for an auto-close.
-                if (!TryClose(ent, door, predicted: true))
+                if (!TryClose(door.Owner, door, predicted: true))
                 {
                     // The door failed to close (blocked?). Try again in one second.
                     door.NextStateChange = time + TimeSpan.FromSeconds(1);
@@ -662,7 +677,7 @@ public abstract class SharedDoorSystem : EntitySystem
 
             case DoorState.Welded:
                 // A welded door? This should never have been active in the first place.
-                Log.Error($"Welded door was in the list of active doors. Door: {ToPrettyString(ent)}");
+                Log.Error($"Welded door was in the list of active doors. Door: {ToPrettyString(door.Owner)}");
                 break;
         }
     }

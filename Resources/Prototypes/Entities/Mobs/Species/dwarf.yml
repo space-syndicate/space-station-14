@@ -28,7 +28,6 @@
   - type: Body
     prototype: Dwarf
     requiredLegs: 2
-  - type: Perishable
   - type: Butcherable
     butcheringType: Spike
     spawned:
@@ -56,6 +55,7 @@
     accent: dwarf
   - type: Speech
     speechSounds: Bass
+  - type: Perishable
 
 - type: entity
   parent: BaseSpeciesDummy

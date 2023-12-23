@@ -23,7 +23,7 @@
   - type: WiresPanel
   - type: Wires
     alwaysRandomize: true
-    layoutId: SurveillanceCamera
+    LayoutId: SurveillanceCamera
   - type: Damageable
     damageContainer: Inorganic
     damageModifierSet: Metallic

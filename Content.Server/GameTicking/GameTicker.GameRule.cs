@@ -94,7 +94,7 @@ public sealed partial class GameTicker
             ruleData ??= EnsureComp<GameRuleComponent>(ruleEntity);
 
         // can't start an already active rule
-        if (HasComp<ActiveGameRuleComponent>(ruleEntity) || HasComp<EndedGameRuleComponent>(ruleEntity))
+        if (ruleData.Active || ruleData.Ended)
             return false;
 
         if (MetaData(ruleEntity).EntityPrototype?.ID is not { } id) // you really fucked up
@@ -103,9 +103,8 @@ public sealed partial class GameTicker
         _allPreviousGameRules.Add((RoundDuration(), id));
         _sawmill.Info($"Started game rule {ToPrettyString(ruleEntity)}");
 
-        EnsureComp<ActiveGameRuleComponent>(ruleEntity);
+        ruleData.Active = true;
         ruleData.ActivatedAt = _gameTiming.CurTime;
-
         var ev = new GameRuleStartedEvent(ruleEntity, id);
         RaiseLocalEvent(ruleEntity, ref ev, true);
         return true;
@@ -121,15 +120,14 @@ public sealed partial class GameTicker
             return false;
 
         // don't end it multiple times
-        if (HasComp<EndedGameRuleComponent>(ruleEntity))
+        if (ruleData.Ended)
             return false;
 
         if (MetaData(ruleEntity).EntityPrototype?.ID is not { } id) // you really fucked up
             return false;
 
-        RemComp<ActiveGameRuleComponent>(ruleEntity);
-        EnsureComp<EndedGameRuleComponent>(ruleEntity);
-
+        ruleData.Active = false;
+        ruleData.Ended = true;
         _sawmill.Info($"Ended game rule {ToPrettyString(ruleEntity)}");
 
         var ev = new GameRuleEndedEvent(ruleEntity, id);
@@ -139,7 +137,7 @@ public sealed partial class GameTicker
 
     public bool IsGameRuleAdded(EntityUid ruleEntity, GameRuleComponent? component = null)
     {
-        return Resolve(ruleEntity, ref component) && !HasComp<EndedGameRuleComponent>(ruleEntity);
+        return Resolve(ruleEntity, ref component) && !component.Ended;
     }
 
     public bool IsGameRuleAdded(string rule)
@@ -155,7 +153,7 @@ public sealed partial class GameTicker
 
     public bool IsGameRuleActive(EntityUid ruleEntity, GameRuleComponent? component = null)
     {
-        return Resolve(ruleEntity, ref component) && HasComp<ActiveGameRuleComponent>(ruleEntity);
+        return Resolve(ruleEntity, ref component) && component.Active;
     }
 
     public bool IsGameRuleActive(string rule)
@@ -195,10 +193,11 @@ public sealed partial class GameTicker
     /// </summary>
     public IEnumerable<EntityUid> GetActiveGameRules()
     {
-        var query = EntityQueryEnumerator<ActiveGameRuleComponent, GameRuleComponent>();
-        while (query.MoveNext(out var uid, out _, out _))
+        var query = EntityQueryEnumerator<GameRuleComponent>();
+        while (query.MoveNext(out var uid, out var ruleData))
         {
-            yield return uid;
+            if (ruleData.Active)
+                yield return uid;
         }
     }
 

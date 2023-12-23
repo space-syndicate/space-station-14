@@ -33,6 +33,12 @@ namespace Content.Server.Power.Components
 
         [DataField("node")] public string? NodeId { get; set; }
 
+        protected override void OnRemove()
+        {
+            ClearNet();
+            base.OnRemove();
+        }
+
         public void TryFindAndSetNet()
         {
             if (TryFindNet(out var net))

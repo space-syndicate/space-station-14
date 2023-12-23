@@ -24,10 +24,10 @@ public sealed class ArtifactHeatTriggerSystem : EntitySystem
     {
         base.Update(frameTime);
 
-        List<Entity<ArtifactComponent>> toUpdate = new();
-        var query = EntityQueryEnumerator<ArtifactHeatTriggerComponent, TransformComponent, ArtifactComponent>();
-        while (query.MoveNext(out var uid, out var trigger, out var transform, out var artifact))
+        List<ArtifactComponent> toUpdate = new();
+        foreach (var (trigger, transform, artifact) in EntityQuery<ArtifactHeatTriggerComponent, TransformComponent, ArtifactComponent>())
         {
+            var uid = trigger.Owner;
             var environment = _atmosphereSystem.GetTileMixture(transform.GridUid, transform.MapUid,
                 _transformSystem.GetGridOrMapTilePosition(uid, transform));
             if (environment == null)
@@ -36,12 +36,12 @@ public sealed class ArtifactHeatTriggerSystem : EntitySystem
             if (environment.Temperature < trigger.ActivationTemperature)
                 continue;
 
-            toUpdate.Add((uid, artifact));
+            toUpdate.Add(artifact);
         }
 
         foreach (var a in toUpdate)
         {
-            _artifactSystem.TryActivateArtifact(a, null, a);
+            _artifactSystem.TryActivateArtifact(a.Owner, null, a);
         }
     }
 

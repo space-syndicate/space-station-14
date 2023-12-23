@@ -1,10 +1,14 @@
+using System.Linq;
+using Content.Shared.Ghost;
 using Content.Shared.Humanoid;
 using Content.Shared.Humanoid.Markings;
 using Content.Shared.Humanoid.Prototypes;
 using Content.Shared.Preferences;
 using Robust.Client.GameObjects;
+using Robust.Shared.GameStates;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Utility;
+using static Content.Shared.Humanoid.HumanoidAppearanceState;
 
 namespace Content.Client.Humanoid;
 
@@ -17,20 +21,35 @@ public sealed class HumanoidAppearanceSystem : SharedHumanoidAppearanceSystem
     {
         base.Initialize();
 
-        SubscribeLocalEvent<HumanoidAppearanceComponent, AfterAutoHandleStateEvent>(OnHandleState);
+        SubscribeLocalEvent<HumanoidAppearanceComponent, ComponentHandleState>(OnHandleState);
     }
 
-    private void OnHandleState(EntityUid uid, HumanoidAppearanceComponent component, ref AfterAutoHandleStateEvent args)
+    private void OnHandleState(EntityUid uid, HumanoidAppearanceComponent component, ref ComponentHandleState args)
     {
-        UpdateSprite(component, Comp<SpriteComponent>(uid));
+        if (args.Current is not HumanoidAppearanceState state)
+            return;
+
+        ApplyState(uid, component, Comp<SpriteComponent>(uid), state);
     }
 
-    private void UpdateSprite(HumanoidAppearanceComponent component, SpriteComponent sprite)
+    private void ApplyState(EntityUid uid, HumanoidAppearanceComponent component, SpriteComponent sprite, HumanoidAppearanceState state)
     {
+        component.Sex = state.Sex;
+        component.Species = state.Species;
+        component.Age = state.Age;
+        component.SkinColor = state.SkinColor;
+        component.EyeColor = state.EyeColor;
+        component.SpeakerColor = state.SpeakerColor; // Corvax-SpeakerColor
+        component.HiddenLayers = new(state.HiddenLayers);
+        component.PermanentlyHidden = new(state.PermanentlyHidden);
+
+        component.CustomBaseLayers = state.CustomBaseLayers.ShallowClone();
+
         UpdateLayers(component, sprite);
-        ApplyMarkingSet(component, sprite);
 
-        sprite[sprite.LayerMapReserveBlank(HumanoidVisualLayers.Eyes)].Color = component.EyeColor;
+        ApplyMarkingSet(uid, state.Markings, component, sprite);
+
+        sprite[sprite.LayerMapReserveBlank(HumanoidVisualLayers.Eyes)].Color = state.EyeColor;
     }
 
     private static bool IsHidden(HumanoidAppearanceComponent humanoid, HumanoidVisualLayers layer)
@@ -42,7 +61,7 @@ public sealed class HumanoidAppearanceSystem : SharedHumanoidAppearanceSystem
         component.BaseLayers.Clear();
 
         // add default species layers
-        var speciesProto = _prototypeManager.Index(component.Species);
+        var speciesProto = _prototypeManager.Index<SpeciesPrototype>(component.Species);
         var baseSprites = _prototypeManager.Index<HumanoidSpeciesBaseSpritesPrototype>(speciesProto.SpriteSet);
         foreach (var (key, id) in baseSprites.Sprites)
         {
@@ -55,7 +74,7 @@ public sealed class HumanoidAppearanceSystem : SharedHumanoidAppearanceSystem
         foreach (var (key, info) in component.CustomBaseLayers)
         {
             oldLayers.Remove(key);
-            SetLayerData(component, sprite, key, info.Id, sexMorph: false, color: info.Color);
+            SetLayerData(component, sprite, key, info.ID, sexMorph: false, color: info.Color); ;
         }
 
         // hide old layers
@@ -143,14 +162,12 @@ public sealed class HumanoidAppearanceSystem : SharedHumanoidAppearanceSystem
 
         // We need to ensure hair before applying it or coloring can try depend on markings that can be invalid
         var hairColor = _markingManager.MustMatchSkin(profile.Species, HumanoidVisualLayers.Hair, out var hairAlpha, _prototypeManager)
-            ? profile.Appearance.SkinColor.WithAlpha(hairAlpha)
-            : profile.Appearance.HairColor;
+            ? profile.Appearance.SkinColor.WithAlpha(hairAlpha) : profile.Appearance.HairColor;
         var hair = new Marking(profile.Appearance.HairStyleId,
             new[] { hairColor });
 
         var facialHairColor = _markingManager.MustMatchSkin(profile.Species, HumanoidVisualLayers.FacialHair, out var facialHairAlpha, _prototypeManager)
-            ? profile.Appearance.SkinColor.WithAlpha(facialHairAlpha)
-            : profile.Appearance.FacialHairColor;
+            ? profile.Appearance.SkinColor.WithAlpha(facialHairAlpha) : profile.Appearance.FacialHairColor;
         var facialHair = new Marking(profile.Appearance.FacialHairStyleId,
             new[] { facialHairColor });
 
@@ -184,60 +201,70 @@ public sealed class HumanoidAppearanceSystem : SharedHumanoidAppearanceSystem
 
         DebugTools.Assert(IsClientSide(uid));
 
-        humanoid.MarkingSet = markings;
-        humanoid.PermanentlyHidden = new HashSet<HumanoidVisualLayers>();
-        humanoid.HiddenLayers = new HashSet<HumanoidVisualLayers>();
-        humanoid.CustomBaseLayers = customBaseLayers;
-        humanoid.Sex = profile.Sex;
-        humanoid.Gender = profile.Gender;
-        humanoid.Age = profile.Age;
-        humanoid.Species = profile.Species;
-        humanoid.SkinColor = profile.Appearance.SkinColor;
-        humanoid.EyeColor = profile.Appearance.EyeColor;
+        var state = new HumanoidAppearanceState(markings,
+            new(),
+            new(),
+            customBaseLayers,
+            profile.Sex,
+            profile.Gender,
+            profile.Age,
+            profile.Species,
+            profile.Appearance.SkinColor,
+            profile.Appearance.EyeColor,
+            humanoid.SpeakerColor); // Corvax-SpeakerColor
 
-        UpdateSprite(humanoid, Comp<SpriteComponent>(uid));
+        ApplyState(uid, humanoid, Comp<SpriteComponent>(uid), state);
     }
 
-    private void ApplyMarkingSet(HumanoidAppearanceComponent humanoid, SpriteComponent sprite)
+    private void ApplyMarkingSet(EntityUid uid,
+        MarkingSet newMarkings,
+        HumanoidAppearanceComponent humanoid,
+        SpriteComponent sprite)
     {
+        // skip this entire thing if both sets are empty
+        if (humanoid.MarkingSet.Markings.Count == 0 && newMarkings.Markings.Count == 0)
+            return;
+
         // I am lazy and I CBF resolving the previous mess, so I'm just going to nuke the markings.
         // Really, markings should probably be a separate component altogether.
-        ClearAllMarkings(humanoid, sprite);
+
+        ClearAllMarkings(uid, humanoid, sprite);
+
+        humanoid.MarkingSet = new(newMarkings);
 
         foreach (var markingList in humanoid.MarkingSet.Markings.Values)
         {
             foreach (var marking in markingList)
             {
                 if (_markingManager.TryGetMarking(marking, out var markingPrototype))
-                    ApplyMarking(markingPrototype, marking.MarkingColors, marking.Visible, humanoid, sprite);
+                    ApplyMarking(uid, markingPrototype, marking.MarkingColors, marking.Visible, humanoid, sprite);
             }
         }
-
-        humanoid.ClientOldMarkings = new MarkingSet(humanoid.MarkingSet);
     }
 
-    private void ClearAllMarkings(HumanoidAppearanceComponent humanoid, SpriteComponent sprite)
+    private void ClearAllMarkings(EntityUid uid, HumanoidAppearanceComponent humanoid,
+        SpriteComponent sprite)
     {
-        foreach (var markingList in humanoid.ClientOldMarkings.Markings.Values)
-        {
-            foreach (var marking in markingList)
-            {
-                RemoveMarking(marking, sprite);
-            }
-        }
-
-        humanoid.ClientOldMarkings.Clear();
-
         foreach (var markingList in humanoid.MarkingSet.Markings.Values)
         {
             foreach (var marking in markingList)
             {
-                RemoveMarking(marking, sprite);
+                RemoveMarking(uid, marking, sprite);
             }
         }
     }
 
-    private void RemoveMarking(Marking marking, SpriteComponent spriteComp)
+    private void ClearMarkings(EntityUid uid, List<Marking> markings, HumanoidAppearanceComponent humanoid,
+        SpriteComponent spriteComp)
+    {
+        foreach (var marking in markings)
+        {
+            RemoveMarking(uid, marking, spriteComp);
+        }
+    }
+
+    private void RemoveMarking(EntityUid uid, Marking marking,
+        SpriteComponent spriteComp)
     {
         if (!_markingManager.TryGetMarking(marking, out var prototype))
         {
@@ -261,7 +288,8 @@ public sealed class HumanoidAppearanceSystem : SharedHumanoidAppearanceSystem
             spriteComp.RemoveLayer(index);
         }
     }
-    private void ApplyMarking(MarkingPrototype markingPrototype,
+    private void ApplyMarking(EntityUid uid,
+        MarkingPrototype markingPrototype,
         IReadOnlyList<Color>? colors,
         bool visible,
         HumanoidAppearanceComponent humanoid,
@@ -367,7 +395,7 @@ public sealed class HumanoidAppearanceSystem : SharedHumanoidAppearanceSystem
             foreach (var marking in markingList)
             {
                 if (_markingManager.TryGetMarking(marking, out var markingPrototype) && markingPrototype.BodyPart == layer)
-                    ApplyMarking(markingPrototype, marking.MarkingColors, marking.Visible, humanoid, sprite);
+                    ApplyMarking(uid, markingPrototype, marking.MarkingColors, marking.Visible, humanoid, sprite);
             }
         }
     }

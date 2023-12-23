@@ -1,7 +1,5 @@
 ent-GasTankBase = { ent-BaseItem }
     .desc = { ent-BaseItem.desc }
-ent-GasTankRoundBase = { ent-GasTankBase }
-    .desc = { ent-GasTankBase.desc }
 ent-OxygenTank = oxygen tank
     .desc = A standard cylindrical gas tank for oxygen.
 ent-YellowOxygenTank = oxygen tank

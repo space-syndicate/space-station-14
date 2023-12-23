@@ -12,6 +12,7 @@ using Content.Shared.Preferences;
 using JetBrains.Annotations;
 using Prometheus;
 using Robust.Server.Maps;
+using Robust.Server.Player;
 using Robust.Shared.Asynchronous;
 using Robust.Shared.Audio;
 using Robust.Shared.Map;
@@ -21,9 +22,10 @@ using Robust.Shared.Random;
 using Robust.Shared.Utility;
 using System.Linq;
 using Content.Shared.Database;
-using Content.Shared.Light.Components;
+using Content.Shared.Light.Component;
 using Robust.Server.GameObjects;
 using Robust.Shared.Asynchronous;
+//using PlayerData = Content.Server.Players.PlayerData;
 
 
 namespace Content.Server.GameTicking
@@ -210,7 +212,7 @@ namespace Content.Server.GameTicking
 
             var startingEvent = new RoundStartingEvent(RoundId);
             RaiseLocalEvent(startingEvent);
-            var readyPlayers = new List<ICommonSession>();
+            var readyPlayers = new List<IPlayerSession>();
             var readyPlayerProfiles = new Dictionary<NetUserId, HumanoidCharacterProfile>();
 
             foreach (var (userId, status) in _playerGameStatuses)
@@ -355,7 +357,7 @@ namespace Content.Server.GameTicking
                 {
                     connected = true;
                 }
-                ContentPlayerData? contentPlayerData = null;
+                PlayerData? contentPlayerData = null;
                 if (userId != null && _playerManager.TryGetPlayerData(userId.Value, out var playerData))
                 {
                     contentPlayerData = playerData.ContentData();
@@ -371,8 +373,9 @@ namespace Content.Server.GameTicking
                 else if (mind.CurrentEntity != null && TryName(mind.CurrentEntity.Value, out var icName))
                     playerIcName = icName;
 
-                if (TryGetEntity(mind.OriginalOwnedEntity, out var entity))
-                    _pvsOverride.AddGlobalOverride(entity.Value, recursive: true);
+                var entity = mind.OriginalOwnedEntity;
+                if (Exists(entity))
+                    _pvsOverride.AddGlobalOverride(entity.Value);
 
                 var roles = _roles.MindGetAllRoles(mindId);
 
@@ -505,7 +508,7 @@ namespace Content.Server.GameTicking
         private void ResettingCleanup()
         {
             // Move everybody currently in the server to lobby.
-            foreach (var player in _playerManager.Sessions)
+            foreach (var player in _playerManager.ServerSessions)
             {
                 PlayerJoinLobby(player);
             }
@@ -553,7 +556,7 @@ namespace Content.Server.GameTicking
 
             DisallowLateJoin = false;
             _playerGameStatuses.Clear();
-            foreach (var session in _playerManager.Sessions)
+            foreach (var session in _playerManager.ServerSessions)
             {
                 _playerGameStatuses[session.UserId] = LobbyEnabled ?  PlayerGameStatus.NotReadyToPlay : PlayerGameStatus.ReadyToPlay;
             }
@@ -747,10 +750,10 @@ namespace Content.Server.GameTicking
     /// </summary>
     public sealed class RoundStartAttemptEvent : CancellableEntityEventArgs
     {
-        public ICommonSession[] Players { get; }
+        public IPlayerSession[] Players { get; }
         public bool Forced { get; }
 
-        public RoundStartAttemptEvent(ICommonSession[] players, bool forced)
+        public RoundStartAttemptEvent(IPlayerSession[] players, bool forced)
         {
             Players = players;
             Forced = forced;
@@ -769,11 +772,11 @@ namespace Content.Server.GameTicking
         ///     If you want to handle a specific player being spawned, remove it from this list and do what you need.
         /// </summary>
         /// <remarks>If you spawn a player by yourself from this event, don't forget to call <see cref="GameTicker.PlayerJoinGame"/> on them.</remarks>
-        public List<ICommonSession> PlayerPool { get; }
+        public List<IPlayerSession> PlayerPool { get; }
         public IReadOnlyDictionary<NetUserId, HumanoidCharacterProfile> Profiles { get; }
         public bool Forced { get; }
 
-        public RulePlayerSpawningEvent(List<ICommonSession> playerPool, IReadOnlyDictionary<NetUserId, HumanoidCharacterProfile> profiles, bool forced)
+        public RulePlayerSpawningEvent(List<IPlayerSession> playerPool, IReadOnlyDictionary<NetUserId, HumanoidCharacterProfile> profiles, bool forced)
         {
             PlayerPool = playerPool;
             Profiles = profiles;
@@ -787,11 +790,11 @@ namespace Content.Server.GameTicking
     /// </summary>
     public sealed class RulePlayerJobsAssignedEvent
     {
-        public ICommonSession[] Players { get; }
+        public IPlayerSession[] Players { get; }
         public IReadOnlyDictionary<NetUserId, HumanoidCharacterProfile> Profiles { get; }
         public bool Forced { get; }
 
-        public RulePlayerJobsAssignedEvent(ICommonSession[] players, IReadOnlyDictionary<NetUserId, HumanoidCharacterProfile> profiles, bool forced)
+        public RulePlayerJobsAssignedEvent(IPlayerSession[] players, IReadOnlyDictionary<NetUserId, HumanoidCharacterProfile> profiles, bool forced)
         {
             Players = players;
             Profiles = profiles;

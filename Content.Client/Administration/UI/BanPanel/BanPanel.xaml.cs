@@ -1,7 +1,10 @@
+using System.Globalization;
 using System.Linq;
 using System.Net;
 using System.Net.Sockets;
+using System.Text.RegularExpressions;
 using Content.Client.Administration.UI.CustomControls;
+using Content.Client.Stylesheets;
 using Content.Shared.Administration;
 using Content.Shared.Database;
 using Content.Shared.Roles;
@@ -20,7 +23,7 @@ namespace Content.Client.Administration.UI.BanPanel;
 [GenerateTypedNameReferences]
 public sealed partial class BanPanel : DefaultWindow
 {
-    public event Action<string?, (IPAddress, int)?, bool, byte[]?, bool, uint, string, NoteSeverity, string[]?, bool>? BanSubmitted;
+    public event Action<string?, (IPAddress, int)?, bool, byte[]?, bool, uint, string, NoteSeverity, string[]?>? BanSubmitted;
     public event Action<string>? PlayerChanged;
     private string? PlayerUsername { get; set; }
     private (IPAddress, int)? IpAddress { get; set; }
@@ -438,8 +441,7 @@ public sealed partial class BanPanel : DefaultWindow
         var useLastIp = IpCheckbox.Pressed && LastConnCheckbox.Pressed && IpAddress is null;
         var useLastHwid = HwidCheckbox.Pressed && LastConnCheckbox.Pressed && Hwid is null;
         var severity = (NoteSeverity) SeverityOption.SelectedId;
-        var erase = EraseCheckbox.Pressed;
-        BanSubmitted?.Invoke(player, IpAddress, useLastIp, Hwid, useLastHwid, (uint) (TimeEntered * Multiplier), reason, severity, roles, erase);
+        BanSubmitted?.Invoke(player, IpAddress, useLastIp, Hwid, useLastHwid, (uint) (TimeEntered * Multiplier), reason, severity, roles);
     }
 
     protected override void FrameUpdate(FrameEventArgs args)

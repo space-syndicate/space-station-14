@@ -6,13 +6,14 @@ namespace Content.Shared.Movement.Components
     /// <summary>
     /// Has additional movement data such as footsteps and weightless grab range for an entity.
     /// </summary>
-    [RegisterComponent, NetworkedComponent, AutoGenerateComponentState]
+    [RegisterComponent]
+    [NetworkedComponent()]
     public sealed partial class MobMoverComponent : Component
     {
         private float _stepSoundDistance;
-        [DataField] public float GrabRange = 1.0f;
+        [DataField("grabRange")] public float GrabRange = 1.0f;
 
-        [DataField] public float PushStrength = 600f;
+        [DataField("pushStrength")] public float PushStrength = 600f;
 
         [ViewVariables(VVAccess.ReadWrite)]
         public EntityCoordinates LastPosition { get; set; }
@@ -31,7 +32,7 @@ namespace Content.Shared.Movement.Components
             }
         }
 
-        [ViewVariables(VVAccess.ReadWrite), AutoNetworkedField]
+        [ViewVariables(VVAccess.ReadWrite)]
         public float GrabRangeVV
         {
             get => GrabRange;
@@ -43,7 +44,7 @@ namespace Content.Shared.Movement.Components
             }
         }
 
-        [ViewVariables(VVAccess.ReadWrite), AutoNetworkedField]
+        [ViewVariables(VVAccess.ReadWrite)]
         public float PushStrengthVV
         {
             get => PushStrength;

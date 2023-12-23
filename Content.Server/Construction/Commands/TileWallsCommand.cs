@@ -2,10 +2,9 @@ using Content.Server.Administration;
 using Content.Shared.Administration;
 using Content.Shared.Maps;
 using Content.Shared.Tag;
+using Robust.Server.Player;
 using Robust.Shared.Console;
 using Robust.Shared.Map;
-using Robust.Server.GameObjects;
-using Robust.Shared.Map.Components;
 
 namespace Content.Server.Construction.Commands
 {
@@ -13,6 +12,7 @@ namespace Content.Server.Construction.Commands
     sealed class TileWallsCommand : IConsoleCommand
     {
         [Dependency] private readonly IEntityManager _entManager = default!;
+        [Dependency] private readonly IMapManager _mapManager = default!;
         [Dependency] private readonly ITileDefinitionManager _tileDefManager = default!;
 
         // ReSharper disable once StringLiteralTypo
@@ -28,7 +28,7 @@ namespace Content.Server.Construction.Commands
 
         public void Execute(IConsoleShell shell, string argStr, string[] args)
         {
-            var player = shell.Player;
+            var player = shell.Player as IPlayerSession;
             EntityUid? gridId;
 
             switch (args.Length)
@@ -56,13 +56,13 @@ namespace Content.Server.Construction.Commands
                     return;
             }
 
-            if (!_entManager.TryGetComponent(gridId, out MapGridComponent? grid))
+            if (!_mapManager.TryGetGrid(gridId, out var grid))
             {
                 shell.WriteLine($"No grid exists with id {gridId}");
                 return;
             }
 
-            if (!_entManager.EntityExists(gridId))
+            if (!_entManager.EntityExists(grid.Owner))
             {
                 shell.WriteLine($"Grid {gridId} doesn't have an associated grid entity.");
                 return;
@@ -72,7 +72,7 @@ namespace Content.Server.Construction.Commands
             var underplating = _tileDefManager[TilePrototypeId];
             var underplatingTile = new Tile(underplating.TileId);
             var changed = 0;
-            foreach (var child in _entManager.GetComponent<TransformComponent>(gridId.Value).ChildEntities)
+            foreach (var child in _entManager.GetComponent<TransformComponent>(grid.Owner).ChildEntities)
             {
                 if (!_entManager.EntityExists(child))
                 {
@@ -91,8 +91,7 @@ namespace Content.Server.Construction.Commands
                     continue;
                 }
 
-                var mapSystem = _entManager.System<MapSystem>();
-                var tile = mapSystem.GetTileRef(gridId.Value, grid, childTransform.Coordinates);
+                var tile = grid.GetTileRef(childTransform.Coordinates);
                 var tileDef = (ContentTileDefinition) _tileDefManager[tile.Tile.TypeId];
 
                 if (tileDef.ID == TilePrototypeId)

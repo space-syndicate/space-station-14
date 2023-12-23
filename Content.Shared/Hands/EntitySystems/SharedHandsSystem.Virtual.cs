@@ -12,7 +12,7 @@ public abstract partial class SharedHandsSystem
     private void OnVirtualAfter(EntityUid uid, HandVirtualItemComponent component, ref AfterAutoHandleStateEvent args)
     {
         // update hands GUI with new entity.
-        if (ContainerSystem.IsEntityInContainer(uid))
+        if (_containerSystem.IsEntityInContainer(uid))
             _items.VisualsChanged(uid);
     }
 }

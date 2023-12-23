@@ -7,7 +7,7 @@
     sprite: Objects/Weapons/Guns/Basic/kinetic_accelerator.rsi
   - type: Item
     sprite: Objects/Weapons/Guns/Basic/kinetic_accelerator.rsi
-    size: Normal
+    size: 30
   - type: GunWieldBonus
     minAngle: -43
     maxAngle: -43
@@ -45,5 +45,3 @@
     slots:
     - suitStorage
     - Belt
-  - type: UseDelay
-    delay: 1

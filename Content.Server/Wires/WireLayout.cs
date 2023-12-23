@@ -1,4 +1,5 @@
 using Robust.Shared.Prototypes;
+using Robust.Shared.Serialization.TypeSerializers.Implementations.Custom.Prototype;
 using Robust.Shared.Serialization.TypeSerializers.Implementations.Custom.Prototype.Array;
 
 namespace Content.Server.Wires;
@@ -11,7 +12,7 @@ namespace Content.Server.Wires;
 ///     WiresSystem as a functional wire set.
 /// </summary>
 [Prototype("wireLayout")]
-public sealed partial class WireLayoutPrototype : IPrototype, IInheritingPrototype
+public sealed class WireLayoutPrototype : IPrototype, IInheritingPrototype
 {
     [IdDataField]
     public string ID { get; private set; } = default!;

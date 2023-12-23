@@ -23,45 +23,38 @@ public sealed partial class GameTicker
     /// </summary>
     private void ReplayStartRound()
     {
-        try
+        if (!_cfg.GetCVar(CCVars.ReplayAutoRecord))
+            return;
+
+        if (_replays.IsRecording)
         {
-            if (!_cfg.GetCVar(CCVars.ReplayAutoRecord))
-                return;
-
-            if (_replays.IsRecording)
-            {
-                _sawmillReplays.Warning("Already an active replay recording before the start of the round, not starting automatic recording.");
-                return;
-            }
-
-            _sawmillReplays.Debug($"Starting replay recording for round {RoundId}");
-
-            var finalPath = GetAutoReplayPath();
-            var recordPath = finalPath;
-            var tempDir = _cfg.GetCVar(CCVars.ReplayAutoRecordTempDir);
-            ResPath? moveToPath = null;
-
-            if (!string.IsNullOrEmpty(tempDir))
-            {
-                var baseReplayPath = new ResPath(_cfg.GetCVar(CVars.ReplayDirectory)).ToRootedPath();
-                moveToPath = baseReplayPath / finalPath;
-
-                var fileName = finalPath.Filename;
-                recordPath = new ResPath(tempDir) / fileName;
-
-                _sawmillReplays.Debug($"Replay will record in temporary position: {recordPath}");
-            }
-
-            var recordState = new ReplayRecordState(moveToPath);
-
-            if (!_replays.TryStartRecording(_resourceManager.UserData, recordPath.ToString(), state: recordState))
-            {
-                _sawmillReplays.Error("Can't start automatic replay recording!");
-            }
+            _sawmillReplays.Warning("Already an active replay recording before the start of the round, not starting automatic recording.");
+            return;
         }
-        catch (Exception e)
+
+        _sawmillReplays.Debug($"Starting replay recording for round {RoundId}");
+
+        var finalPath = GetAutoReplayPath();
+        var recordPath = finalPath;
+        var tempDir = _cfg.GetCVar(CCVars.ReplayAutoRecordTempDir);
+        ResPath? moveToPath = null;
+
+        if (!string.IsNullOrEmpty(tempDir))
         {
-            Log.Error($"Error while starting an automatic replay recording:\n{e}");
+            var baseReplayPath = new ResPath(_cfg.GetCVar(CVars.ReplayDirectory)).ToRootedPath();
+            moveToPath = baseReplayPath / finalPath;
+
+            var fileName = finalPath.Filename;
+            recordPath = new ResPath(tempDir) / fileName;
+
+            _sawmillReplays.Debug($"Replay will record in temporary position: {recordPath}");
+        }
+
+        var recordState = new ReplayRecordState(moveToPath);
+
+        if (!_replays.TryStartRecording(_resourceManager.UserData, recordPath.ToString(), state: recordState))
+        {
+            _sawmillReplays.Error("Can't start automatic replay recording!");
         }
     }
 
@@ -70,16 +63,9 @@ public sealed partial class GameTicker
     /// </summary>
     private void ReplayEndRound()
     {
-        try
+        if (_replays.ActiveRecordingState is ReplayRecordState)
         {
-            if (_replays.ActiveRecordingState is ReplayRecordState)
-            {
-                _replays.StopRecording();
-            }
-        }
-        catch (Exception e)
-        {
-            Log.Error($"Error while stopping replay recording:\n{e}");
+            _replays.StopRecording();
         }
     }
 
@@ -94,17 +80,7 @@ public sealed partial class GameTicker
         _sawmillReplays.Info($"Moving replay into final position: {state.MoveToPath}");
         _taskManager.BlockWaitOnTask(_replays.WaitWriteTasks());
         DebugTools.Assert(!_replays.IsWriting());
-
-        try
-        {
-            if (!data.Directory.Exists(state.MoveToPath.Value.Directory))
-                data.Directory.CreateDir(state.MoveToPath.Value.Directory);
-        }
-        catch (UnauthorizedAccessException e)
-        {
-            _sawmillReplays.Error($"Error creating replay directory {state.MoveToPath.Value.Directory}: {e}");
-        }
-
+        data.Directory.CreateDir(state.MoveToPath.Value.Directory);
         data.Directory.Rename(data.Path, state.MoveToPath.Value);
     }
 

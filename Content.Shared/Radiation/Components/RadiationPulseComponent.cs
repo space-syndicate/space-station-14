@@ -1,4 +1,5 @@
 using Content.Shared.Radiation.Systems;
+using Content.Shared.Spawners.Components;
 
 namespace Content.Shared.Radiation.Components;
 
@@ -17,7 +18,7 @@ public sealed partial class RadiationPulseComponent : Component
 
     /// <summary>
     ///     How long will animation play in seconds.
-    ///     Can be overridden by <see cref="Robust.Shared.Spawners.TimedDespawnComponent"/>.
+    ///     Can be overridden by <see cref="TimedDespawnComponent"/>.
     /// </summary>
     public float VisualDuration = 2f;
 

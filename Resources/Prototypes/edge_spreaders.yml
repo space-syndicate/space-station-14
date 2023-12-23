@@ -1,11 +1,8 @@
 - type: edgeSpreader
-  id: Kudzu
-  updatesPerSecond: 1
+  id: kudzu
 
 - type: edgeSpreader
-  id: Puddle
-  updatesPerSecond: 16
+  id: puddle
 
 - type: edgeSpreader
-  id: Smoke
-  updatesPerSecond: 8
+  id: smoke

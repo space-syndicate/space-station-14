@@ -36,7 +36,6 @@
   - type: UseDelay
     delay: 0.5
   - type: MeleeWeapon
-    wideAnimationRotation: 180
     soundHit:
       collection: DeskBell
       params:

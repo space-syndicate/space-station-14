@@ -6,4 +6,3 @@ ent-PinpointerUniversal = универсальный пинпоинтер
     .desc = Портативное устройство слежения, способное отслеживать любой физический объект в выключенном состоянии.
 ent-PinpointerStation = { ent-PinpointerBase }
     .desc = { ent-PinpointerBase.desc }
-    .suffix = Станция

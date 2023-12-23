@@ -2,6 +2,7 @@ using System.IO;
 using System.Linq;
 using Content.Shared.Actions;
 using JetBrains.Annotations;
+using Robust.Client.GameObjects;
 using Robust.Client.Player;
 using Robust.Shared.ContentPack;
 using Robust.Shared.GameStates;
@@ -28,6 +29,7 @@ namespace Content.Client.Actions
 
         public event Action<EntityUid>? OnActionAdded;
         public event Action<EntityUid>? OnActionRemoved;
+        public event OnActionReplaced? ActionReplaced;
         public event Action? ActionsUpdated;
         public event Action<ActionsComponent>? LinkActions;
         public event Action? UnlinkActions;
@@ -40,8 +42,8 @@ namespace Content.Client.Actions
         public override void Initialize()
         {
             base.Initialize();
-            SubscribeLocalEvent<ActionsComponent, LocalPlayerAttachedEvent>(OnPlayerAttached);
-            SubscribeLocalEvent<ActionsComponent, LocalPlayerDetachedEvent>(OnPlayerDetached);
+            SubscribeLocalEvent<ActionsComponent, PlayerAttachedEvent>(OnPlayerAttached);
+            SubscribeLocalEvent<ActionsComponent, PlayerDetachedEvent>(OnPlayerDetached);
             SubscribeLocalEvent<ActionsComponent, ComponentHandleState>(HandleComponentState);
 
             SubscribeLocalEvent<InstantActionComponent, ComponentHandleState>(OnInstantHandleState);
@@ -92,7 +94,6 @@ namespace Content.Client.Actions
             component.ClientExclusive = state.ClientExclusive;
             component.Priority = state.Priority;
             component.AttachedEntity = EnsureEntity<T>(state.AttachedEntity, uid);
-            component.RaiseOnUser = state.RaiseOnUser;
             component.AutoPopulate = state.AutoPopulate;
             component.Temporary = state.Temporary;
             component.ItemIconStyle = state.ItemIconStyle;
@@ -196,12 +197,12 @@ namespace Content.Client.Actions
             return GetActions(user);
         }
 
-        private void OnPlayerAttached(EntityUid uid, ActionsComponent component, LocalPlayerAttachedEvent args)
+        private void OnPlayerAttached(EntityUid uid, ActionsComponent component, PlayerAttachedEvent args)
         {
             LinkAllActions(component);
         }
 
-        private void OnPlayerDetached(EntityUid uid, ActionsComponent component, LocalPlayerDetachedEvent? args = null)
+        private void OnPlayerDetached(EntityUid uid, ActionsComponent component, PlayerDetachedEvent? args = null)
         {
             UnlinkAllActions();
         }

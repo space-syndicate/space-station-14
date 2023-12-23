@@ -6,7 +6,7 @@ using Content.Shared.Clothing;
 namespace Content.Server.Xenoarchaeology.XenoArtifacts.Triggers.Systems;
 
 /// <summary>
-/// This handles artifacts that are activated by magnets, both salvage and magboots.
+/// This handles...
 /// </summary>
 public sealed class ArtifactMagnetTriggerSystem : EntitySystem
 {
@@ -22,20 +22,21 @@ public sealed class ArtifactMagnetTriggerSystem : EntitySystem
     {
         base.Update(frameTime);
 
-        if (!EntityQuery<ArtifactMagnetTriggerComponent>().Any())
+        var artifactQuery = EntityQuery<ArtifactMagnetTriggerComponent, TransformComponent>().ToHashSet();
+        if (!artifactQuery.Any())
             return;
 
         List<EntityUid> toActivate = new();
 
         //assume that there's more instruments than artifacts
-        var query = EntityQueryEnumerator<MagbootsComponent, TransformComponent>();
-        while (query.MoveNext(out _, out var magboot, out var magXform))
+        foreach (var magboot in EntityQuery<MagbootsComponent>())
         {
             if (!magboot.On)
                 continue;
 
-            var artiQuery = EntityQueryEnumerator<ArtifactMagnetTriggerComponent, TransformComponent>();
-            while (artiQuery.MoveNext(out var artifactUid, out var trigger, out var xform))
+            var magXform = Transform(magboot.Owner);
+
+            foreach (var (trigger, xform) in artifactQuery)
             {
                 if (!magXform.Coordinates.TryDistance(EntityManager, xform.Coordinates, out var distance))
                     continue;
@@ -43,7 +44,7 @@ public sealed class ArtifactMagnetTriggerSystem : EntitySystem
                 if (distance > trigger.Range)
                     continue;
 
-                toActivate.Add(artifactUid);
+                toActivate.Add(trigger.Owner);
             }
         }
 
@@ -58,8 +59,7 @@ public sealed class ArtifactMagnetTriggerSystem : EntitySystem
         var magXform = Transform(ev.Magnet);
 
         var toActivate = new List<EntityUid>();
-        var query = EntityQueryEnumerator<ArtifactMagnetTriggerComponent, TransformComponent>();
-        while (query.MoveNext(out var uid, out var artifact, out var xform))
+        foreach (var (artifact, xform) in EntityQuery<ArtifactMagnetTriggerComponent, TransformComponent>())
         {
             if (!magXform.Coordinates.TryDistance(EntityManager, xform.Coordinates, out var distance))
                 continue;
@@ -67,7 +67,7 @@ public sealed class ArtifactMagnetTriggerSystem : EntitySystem
             if (distance > artifact.Range)
                 continue;
 
-            toActivate.Add(uid);
+            toActivate.Add(artifact.Owner);
         }
 
         foreach (var a in toActivate)

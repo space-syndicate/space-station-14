@@ -2,6 +2,7 @@ using Content.Server.Administration;
 using Content.Server.Body.Systems;
 using Content.Shared.Administration;
 using Content.Shared.Body.Components;
+using Robust.Server.Player;
 using Robust.Shared.Console;
 using Robust.Shared.Random;
 
@@ -16,7 +17,7 @@ namespace Content.Server.Body.Commands
 
         public void Execute(IConsoleShell shell, string argStr, string[] args)
         {
-            var player = shell.Player;
+            var player = shell.Player as IPlayerSession;
             if (player == null)
             {
                 shell.WriteLine("Only a player can run this command.");
@@ -50,7 +51,7 @@ namespace Content.Server.Body.Commands
             var mechanismName = string.Join(" ", args).ToLowerInvariant();
             var bodySystem = entityManager.System<BodySystem>();
 
-            foreach (var organ in bodySystem.GetBodyOrgans(attached, body))
+            foreach (var organ in bodySystem.GetBodyOrgans(body.Owner, body))
             {
                 if (fac.GetComponentName(organ.Component.GetType()).ToLowerInvariant() == mechanismName)
                 {

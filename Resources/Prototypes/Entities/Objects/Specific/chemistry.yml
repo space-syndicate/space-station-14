@@ -187,7 +187,7 @@
         map: ["enum.SolutionContainerLayers.Fill"]
         visible: false
   - type: Item
-    size: Small
+    size: 10
     sprite: Objects/Specific/Chemistry/beaker_large.rsi
   - type: SolutionContainerManager
     solutions:
@@ -234,7 +234,7 @@
   - type: SolutionContainerManager
     solutions:
       beaker:
-        maxVol: 1000
+        maxVol: 300
         canMix: true
 
 - type: entity
@@ -279,26 +279,6 @@
     price: 40
 
 - type: entity
-  name: borgdropper
-  parent: Dropper
-  description: Used to transfer small amounts of chemical solution between containers. Extended for use by medical borgs.
-  id: BorgDropper
-  components:
-  - type: Sprite
-    sprite: Objects/Specific/Chemistry/dropper.rsi
-    layers:
-      - state: borgdropper
-      - state: dropper1
-        map: ["enum.SolutionContainerLayers.Fill"]
-        visible: false
-  - type: SolutionContainerManager
-    solutions:
-      injector:
-        maxVol: 10
-  - type: Item
-    sprite: Objects/Specific/Chemistry/dropper.rsi
-
-- type: entity
   name: syringe
   parent: BaseItem
   description: Used to draw blood samples from mobs, or to inject them with reagents.
@@ -317,7 +297,7 @@
     sprite: Objects/Specific/Chemistry/syringe.rsi
     state: "syringe_base0"
   - type: Item
-    size: Tiny
+    size: 3
     sprite: Objects/Specific/Chemistry/syringe.rsi
     heldPrefix: 0
   - type: SolutionContainerManager
@@ -330,7 +310,7 @@
     solution: injector
   - type: Spillable
     solution: injector
-  - type: TrashOnSolutionEmpty
+  - type: TrashOnEmpty
     solution: injector
   - type: Appearance
   - type: SolutionContainerVisuals
@@ -393,7 +373,7 @@
     sprite: Objects/Specific/Chemistry/pills.rsi
     state: pill
   - type: Item
-    size: Tiny
+    size: 1
     sprite: Objects/Specific/Chemistry/pills.rsi
   - type: Pill
   - type: Food
@@ -428,30 +408,29 @@
         transferForensics: true
       - !type:DoActsBehavior
         acts: [ "Destruction" ]
-  - type: Tag
-    tags:
-    - Pill
 
 - type: entity
   name: pill canister
   id: PillCanister
   parent: BaseStorageItem
-  description: Holds up to 10 pills.
+  description: Holds up to 9 pills.
   components:
   - type: Sprite
     sprite: Objects/Specific/Chemistry/pills_canister.rsi
     state: pill_canister
   - type: Item
     sprite: Objects/Specific/Chemistry/pills_canister.rsi
-    size: Small
   - type: Tag
     tags:
       - PillCanister
   - type: Storage
-    maxTotalWeight: 10
+    capacity: 9
     quickInsert: true
     areaInsert: true
     areaInsertRadius: 1
     storageInsertSound: /Audio/Effects/pill_insert.ogg
     storageRemoveSound: /Audio/Effects/pill_remove.ogg
+    whitelist:
+      components:
+      - Pill
   - type: Dumpable

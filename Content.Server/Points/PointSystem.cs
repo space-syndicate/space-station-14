@@ -2,9 +2,10 @@
 using Content.Shared.FixedPoint;
 using Content.Shared.Points;
 using JetBrains.Annotations;
+using Robust.Server.GameObjects;
 using Robust.Server.GameStates;
 using Robust.Server.Player;
-using Robust.Shared.Player;
+using Robust.Shared.GameStates;
 using Robust.Shared.Utility;
 
 namespace Content.Server.Points;
@@ -21,11 +22,17 @@ public sealed class PointSystem : SharedPointSystem
         base.Initialize();
 
         SubscribeLocalEvent<PointManagerComponent, ComponentStartup>(OnStartup);
+        SubscribeLocalEvent<PointManagerComponent, ComponentGetState>(OnGetState);
     }
 
     private void OnStartup(EntityUid uid, PointManagerComponent component, ComponentStartup args)
     {
         _pvsOverride.AddGlobalOverride(uid);
+    }
+
+    private void OnGetState(EntityUid uid, PointManagerComponent component, ref ComponentGetState args)
+    {
+        args.State = new PointManagerComponentState(component.Points, component.Scoreboard);
     }
 
     /// <summary>

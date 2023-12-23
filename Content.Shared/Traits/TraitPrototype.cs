@@ -1,8 +1,7 @@
 using Content.Shared.Whitelist;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Serialization.TypeSerializers.Implementations.Custom.Prototype;
-
-// don't worry about it
+using static Robust.Shared.Prototypes.EntityPrototype; // don't worry about it
 
 namespace Content.Shared.Traits
 {
@@ -10,7 +9,7 @@ namespace Content.Shared.Traits
     ///     Describes a trait.
     /// </summary>
     [Prototype("trait")]
-    public sealed partial class TraitPrototype : IPrototype
+    public sealed class TraitPrototype : IPrototype
     {
         [ViewVariables]
         [IdDataField]

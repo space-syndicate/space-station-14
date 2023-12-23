@@ -3,9 +3,9 @@ using System.Numerics;
 using System.Runtime.InteropServices;
 using Content.Client.Actions;
 using Content.Client.Construction;
+using Content.Client.DragDrop;
 using Content.Client.Gameplay;
 using Content.Client.Hands;
-using Content.Client.Interaction;
 using Content.Client.Outline;
 using Content.Client.UserInterface.Controls;
 using Content.Client.UserInterface.Systems.Actions.Controls;
@@ -42,7 +42,6 @@ public sealed class ActionUIController : UIController, IOnStateChanged<GameplayS
     [Dependency] private readonly IOverlayManager _overlays = default!;
     [Dependency] private readonly IGameTiming _timing = default!;
     [Dependency] private readonly IPlayerManager _playerManager = default!;
-    [Dependency] private readonly IEntityManager _entMan = default!;
 
     [UISystemDependency] private readonly ActionsSystem? _actionsSystem = default;
     [UISystemDependency] private readonly InteractionOutlineSystem? _interactionOutline = default;
@@ -114,11 +113,12 @@ public sealed class ActionUIController : UIController, IOnStateChanged<GameplayS
         {
             _actionsSystem.OnActionAdded += OnActionAdded;
             _actionsSystem.OnActionRemoved += OnActionRemoved;
+            _actionsSystem.ActionReplaced += OnActionReplaced;
             _actionsSystem.ActionsUpdated += OnActionsUpdated;
         }
 
         UpdateFilterLabel();
-        QueueWindowUpdate();
+        SearchAndDisplay();
 
         _dragShadow.Orphan();
         UIManager.PopupRoot.AddChild(_dragShadow);
@@ -307,8 +307,6 @@ public sealed class ActionUIController : UIController, IOnStateChanged<GameplayS
     {
         if (ActionButton != null)
             ActionButton.Pressed = true;
-
-        SearchAndDisplay();
     }
 
     private void OnWindowClosed()
@@ -323,6 +321,7 @@ public sealed class ActionUIController : UIController, IOnStateChanged<GameplayS
         {
             _actionsSystem.OnActionAdded -= OnActionAdded;
             _actionsSystem.OnActionRemoved -= OnActionRemoved;
+            _actionsSystem.ActionReplaced -= OnActionReplaced;
             _actionsSystem.ActionsUpdated -= OnActionsUpdated;
         }
 
@@ -346,9 +345,6 @@ public sealed class ActionUIController : UIController, IOnStateChanged<GameplayS
 
     private void ChangePage(int index)
     {
-        if (_actionsSystem == null)
-            return;
-
         var lastPage = _pages.Count - 1;
         if (index < 0)
         {
@@ -361,7 +357,7 @@ public sealed class ActionUIController : UIController, IOnStateChanged<GameplayS
 
         _currentPageIndex = index;
         var page = _pages[_currentPageIndex];
-        _container?.SetActionData(_actionsSystem, page);
+        _container?.SetActionData(page);
 
         ActionsBar!.PageButtons.Label.Text = $"{_currentPageIndex + 1}";
     }
@@ -428,6 +424,7 @@ public sealed class ActionUIController : UIController, IOnStateChanged<GameplayS
         }
 
         AppendAction(actionId);
+        SearchAndDisplay();
     }
 
     private void OnActionRemoved(EntityUid actionId)
@@ -457,11 +454,24 @@ public sealed class ActionUIController : UIController, IOnStateChanged<GameplayS
                 }
             }
         }
+
+        SearchAndDisplay();
+    }
+
+    private void OnActionReplaced(EntityUid actionId)
+    {
+        if (_container == null)
+            return;
+
+        foreach (var button in _container.GetButtons())
+        {
+            if (button.ActionId == actionId)
+                button.UpdateData(actionId);
+        }
     }
 
     private void OnActionsUpdated()
     {
-        QueueWindowUpdate();
         if (_container == null)
             return;
 
@@ -528,56 +538,27 @@ public sealed class ActionUIController : UIController, IOnStateChanged<GameplayS
 
     private void PopulateActions(IEnumerable<(EntityUid Id, BaseActionComponent Comp)> actions)
     {
-        if (_window is not { Disposed: false, IsOpen: true })
+        if (_window == null)
             return;
 
-        if (_actionsSystem == null)
-            return;
+        ClearList();
 
-        _window.UpdateNeeded = false;
-
-        List<ActionButton> existing = new(_window.ResultsGrid.ChildCount);
-        foreach (var child in _window.ResultsGrid.Children)
-        {
-            if (child is ActionButton button)
-                existing.Add(button);
-        }
-
-        int i = 0;
         foreach (var action in actions)
         {
-            if (i < existing.Count)
-            {
-                existing[i++].UpdateData(action.Id, _actionsSystem);
-                continue;
-            }
+            var button = new ActionButton {Locked = true};
 
-            var button = new ActionButton(_entMan, _spriteSystem, this) {Locked = true};
+            button.UpdateData(action.Id);
             button.ActionPressed += OnWindowActionPressed;
             button.ActionUnpressed += OnWindowActionUnPressed;
             button.ActionFocusExited += OnWindowActionFocusExisted;
-            button.UpdateData(action.Id, _actionsSystem);
+
             _window.ResultsGrid.AddChild(button);
         }
-
-        for (; i < existing.Count; i++)
-        {
-            existing[i].Dispose();
-        }
-    }
-
-    public void QueueWindowUpdate()
-    {
-        if (_window != null)
-            _window.UpdateNeeded = true;
     }
 
     private void SearchAndDisplay()
     {
-        if (_window is not { Disposed: false, IsOpen: true })
-            return;
-
-        if (_actionsSystem == null)
+        if (_window is not { Disposed: false } || _actionsSystem == null)
             return;
 
         if (_playerManager.LocalPlayer?.ControlledEntity is not { } player)
@@ -617,9 +598,6 @@ public sealed class ActionUIController : UIController, IOnStateChanged<GameplayS
 
     private void SetAction(ActionButton button, EntityUid? actionId)
     {
-        if (_actionsSystem == null)
-            return;
-
         int position;
 
         if (actionId == null)
@@ -633,7 +611,7 @@ public sealed class ActionUIController : UIController, IOnStateChanged<GameplayS
             return;
         }
 
-        if (button.TryReplaceWith(actionId.Value, _actionsSystem) &&
+        if (button.TryReplaceWith(actionId.Value) &&
             _container != null &&
             _container.TryGetButtonIndex(button, out position))
         {
@@ -670,18 +648,18 @@ public sealed class ActionUIController : UIController, IOnStateChanged<GameplayS
         _window.SearchBar.Clear();
         _window.FilterButton.DeselectAll();
         UpdateFilterLabel();
-        QueueWindowUpdate();
+        SearchAndDisplay();
     }
 
     private void OnSearchChanged(LineEditEventArgs args)
     {
-        QueueWindowUpdate();
+        SearchAndDisplay();
     }
 
     private void OnFilterSelected(ItemPressedEventArgs args)
     {
         UpdateFilterLabel();
-        QueueWindowUpdate();
+        SearchAndDisplay();
     }
 
     private void OnWindowActionPressed(GUIBoundKeyEventArgs args, ActionButton action)
@@ -769,9 +747,10 @@ public sealed class ActionUIController : UIController, IOnStateChanged<GameplayS
     {
         if (_actionsSystem != null && _actionsSystem.TryGetActionData(_menuDragHelper.Dragged?.ActionId, out var action))
         {
-            if (EntityManager.TryGetComponent(action.EntityIcon, out SpriteComponent? sprite))
+            if (action.EntityIcon is {} entIcon)
             {
-                _dragShadow.Texture = sprite.Icon?.GetFrame(RsiDirection.South, 0);
+                _dragShadow.Texture = EntityManager.GetComponent<SpriteComponent>(entIcon).Icon?
+                    .GetFrame(RsiDirection.South, 0);
             }
             else if (action.Icon != null)
             {
@@ -870,15 +849,12 @@ public sealed class ActionUIController : UIController, IOnStateChanged<GameplayS
 
     private void AssignSlots(List<SlotAssignment> assignments)
     {
-        if (_actionsSystem == null)
-            return;
-
         foreach (ref var assignment in CollectionsMarshal.AsSpan(assignments))
         {
             _pages[assignment.Hotbar][assignment.Slot] = assignment.ActionId;
         }
 
-        _container?.SetActionData(_actionsSystem, _pages[_currentPageIndex]);
+        _container?.SetActionData(_pages[_currentPageIndex]);
     }
 
     public void RemoveActionContainer()
@@ -905,24 +881,19 @@ public sealed class ActionUIController : UIController, IOnStateChanged<GameplayS
     public override void FrameUpdate(FrameEventArgs args)
     {
         _menuDragHelper.Update(args.DeltaSeconds);
-        if (_window is {UpdateNeeded: true})
-            SearchAndDisplay();
     }
 
     private void OnComponentLinked(ActionsComponent component)
     {
-        if (_actionsSystem == null)
-            return;
-
         LoadDefaultActions(component);
-        _container?.SetActionData(_actionsSystem, _pages[DefaultPageIndex]);
-        QueueWindowUpdate();
+        _container?.SetActionData(_pages[DefaultPageIndex]);
+        SearchAndDisplay();
     }
 
     private void OnComponentUnlinked()
     {
         _container?.ClearActionData();
-        QueueWindowUpdate();
+        SearchAndDisplay();
         StopTargeting();
     }
 

@@ -1,45 +1,10 @@
 # Random humanoids
 
-## Death Squad
-
-- type: entity
-  id: RandomHumanoidSpawnerDeathSquad
-  name: Death Squad Agent
-  suffix: ERTRole, Death Squad
-  components:
-    - type: Sprite
-      sprite: Clothing/OuterClothing/Hardsuits/deathsquad.rsi
-      state: icon
-    - type: RandomMetadata
-      nameSegments:
-        - NamesFirstMilitaryLeader
-        - names_last
-    - type: RandomHumanoidSpawner
-      settings: DeathSquad
-
-- type: randomHumanoidSettings
-  id: DeathSquad
-  randomizeName: false
-  components:
-    - type: MindShield
-    - type: GhostRole
-      name: ghost-role-information-Death-Squad-name
-      description: ghost-role-information-Death-Squad-description
-    - type: GhostTakeoverAvailable
-    - type: Loadout
-      prototypes: [ DeathSquadGear ]
-    - type: RandomMetadata
-      nameSegments:
-        - NamesFirstMilitaryLeader
-        - names_last
-
-
 ## ERT Leader
 
 - type: entity
   id: RandomHumanoidSpawnerERTLeader
   name: ERT leader
-  suffix: ERTRole, Basic
   components:
     - type: Sprite
       sprite: Markers/jobs.rsi
@@ -55,7 +20,6 @@
   id: ERTLeader
   randomizeName: false
   components:
-    - type: MindShield
     - type: GhostRole
       name: ghost-role-information-ert-leader-name
       description: ghost-role-information-ert-leader-description
@@ -71,7 +35,7 @@
   id: RandomHumanoidSpawnerERTLeaderEVA
   parent: RandomHumanoidSpawnerERTLeader
   name: ERT leader
-  suffix: ERTRole, Armored EVA
+  suffix: EVA
   components:
     - type: Sprite
       sprite: Markers/jobs.rsi
@@ -83,7 +47,6 @@
   id: ERTLeaderEVA
   parent: ERTLeader
   components:
-    - type: MindShield
     - type: GhostRole
       name: ghost-role-information-ert-leader-name
       description: ghost-role-information-ert-leader-description
@@ -91,33 +54,12 @@
     - type: Loadout
       prototypes: [ ERTLeaderGearEVA ]
 
-- type: entity
-  id: RandomHumanoidSpawnerERTLeaderEVALecter
-  parent: RandomHumanoidSpawnerERTLeaderEVA
-  suffix: ERTRole, Lecter, EVA
-  components:
-    - type: RandomHumanoidSpawner
-      settings: ERTLeaderEVALecter
-
-- type: randomHumanoidSettings
-  id: ERTLeaderEVALecter
-  parent: ERTLeaderEVA
-  components:
-    - type: MindShield
-    - type: GhostRole
-      name: ghost-role-information-ert-leader-name
-      description: ghost-role-information-ert-leader-description
-    - type: GhostTakeoverAvailable
-    - type: Loadout
-      prototypes: [ ERTLeaderGearEVALecter ]
-
 ## ERT Janitor
 
 - type: entity
   id: RandomHumanoidSpawnerERTJanitor
   parent: RandomHumanoidSpawnerERTLeader
   name: ERT janitor
-  suffix: ERTRole, Basic
   components:
     - type: Sprite
       sprite: Markers/jobs.rsi
@@ -133,7 +75,6 @@
   id: ERTJanitor
   parent: ERTLeader
   components:
-    - type: MindShield
     - type: GhostRole
       name: ghost-role-information-ert-janitor-name
       description: ghost-role-information-ert-janitor-description
@@ -149,7 +90,7 @@
   id: RandomHumanoidSpawnerERTJanitorEVA
   parent: RandomHumanoidSpawnerERTJanitor
   name: ERT janitor
-  suffix: ERTRole, Enviro EVA
+  suffix: EVA
   components:
     - type: Sprite
       sprite: Markers/jobs.rsi
@@ -161,7 +102,6 @@
   id: ERTJanitorEVA
   parent: ERTJanitor
   components:
-    - type: MindShield
     - type: GhostRole
       name: ghost-role-information-ert-janitor-name
       description: ghost-role-information-ert-janitor-description
@@ -175,7 +115,6 @@
   id: RandomHumanoidSpawnerERTEngineer
   parent: RandomHumanoidSpawnerERTLeader
   name: ERT engineer
-  suffix: ERTRole, Basic
   components:
     - type: Sprite
       sprite: Markers/jobs.rsi
@@ -191,7 +130,6 @@
   id: ERTEngineer
   parent: ERTLeader
   components:
-    - type: MindShield
     - type: GhostRole
       name: ghost-role-information-ert-engineer-name
       description: ghost-role-information-ert-engineer-description
@@ -207,7 +145,7 @@
   id: RandomHumanoidSpawnerERTEngineerEVA
   parent: RandomHumanoidSpawnerERTEngineer
   name: ERT engineer
-  suffix: ERTRole, Enviro EVA
+  suffix: EVA
   components:
     - type: Sprite
       sprite: Markers/jobs.rsi
@@ -219,7 +157,6 @@
   id: ERTEngineerEVA
   parent: ERTEngineer
   components:
-    - type: MindShield
     - type: GhostRole
       name: ghost-role-information-ert-engineer-name
       description: ghost-role-information-ert-engineer-description
@@ -233,7 +170,6 @@
   id: RandomHumanoidSpawnerERTSecurity
   parent: RandomHumanoidSpawnerERTLeader
   name: ERT security
-  suffix: ERTRole, Basic
   components:
     - type: Sprite
       sprite: Markers/jobs.rsi
@@ -251,7 +187,6 @@
     - Diona
   parent: ERTLeader
   components:
-    - type: MindShield
     - type: GhostRole
       name: ghost-role-information-ert-security-name
       description: ghost-role-information-ert-security-description
@@ -267,7 +202,7 @@
   id: RandomHumanoidSpawnerERTSecurityEVA
   parent: RandomHumanoidSpawnerERTSecurity
   name: ERT security
-  suffix: ERTRole, Armored EVA
+  suffix: EVA
   components:
     - type: Sprite
       sprite: Markers/jobs.rsi
@@ -279,7 +214,6 @@
   id: ERTSecurityEVA
   parent: ERTSecurity
   components:
-    - type: MindShield
     - type: GhostRole
       name: ghost-role-information-ert-security-name
       description: ghost-role-information-ert-security-description
@@ -287,33 +221,12 @@
     - type: Loadout
       prototypes: [ ERTSecurityGearEVA ]
 
-- type: entity
-  id: RandomHumanoidSpawnerERTSecurityEVALecter
-  parent: RandomHumanoidSpawnerERTSecurityEVA
-  suffix: ERTRole, Lecter, EVA
-  components:
-    - type: RandomHumanoidSpawner
-      settings: ERTSecurityEVALecter
-
-- type: randomHumanoidSettings
-  id: ERTSecurityEVALecter
-  parent: ERTSecurityEVA
-  components:
-    - type: MindShield
-    - type: GhostRole
-      name: ghost-role-information-ert-security-name
-      description: ghost-role-information-ert-security-description
-    - type: GhostTakeoverAvailable
-    - type: Loadout
-      prototypes: [ ERTSecurityGearEVALecter ]
-
 ## ERT Medic
 
 - type: entity
   id: RandomHumanoidSpawnerERTMedical
   parent: RandomHumanoidSpawnerERTLeader
   name: ERT medic
-  suffix: ERTRole, Basic
   components:
     - type: Sprite
       sprite: Markers/jobs.rsi
@@ -329,7 +242,6 @@
   id: ERTMedical
   parent: ERTLeader
   components:
-    - type: MindShield
     - type: GhostRole
       name: ghost-role-information-ert-medical-name
       description: ghost-role-information-ert-medical-description
@@ -345,7 +257,7 @@
   id: RandomHumanoidSpawnerERTMedicalEVA
   parent: RandomHumanoidSpawnerERTMedical
   name: ERT medic
-  suffix: ERTRole, Armored EVA
+  suffix: EVA
   components:
     - type: Sprite
       sprite: Markers/jobs.rsi
@@ -357,7 +269,6 @@
   id: ERTMedicalEVA
   parent: ERTMedical
   components:
-    - type: MindShield
     - type: GhostRole
       name: ghost-role-information-ert-medical-name
       description: ghost-role-information-ert-medical-description
@@ -370,7 +281,6 @@
 - type: entity
   id: RandomHumanoidSpawnerCBURNUnit
   name: CBURN Agent
-  suffix: ERTRole
   components:
     - type: Sprite
       sprite: Markers/jobs.rsi
@@ -383,7 +293,6 @@
     - Diona
   id: CBURNAgent
   components:
-    - type: MindShield
     - type: Loadout
       prototypes: [CBURNGear]
     - type: GhostRole
@@ -409,7 +318,6 @@
 - type: randomHumanoidSettings
   id: CentcomOfficial
   components:
-    - type: MindShield
     - type: GhostRole
       name: ghost-role-information-centcom-official-name
       description: ghost-role-information-centcom-official-description

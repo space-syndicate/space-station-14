@@ -13,8 +13,6 @@
     state: icon
   - type: ItemCooldown
   - type: MeleeWeapon
-    wideAnimationRotation: 135
-    swingLeft: true
     damage:
       types:
         Slash: 10
@@ -35,7 +33,6 @@
     state: icon
   - type: ItemCooldown
   - type: MeleeWeapon
-    wideAnimationRotation: 90
     damage:
       types:
         Slash: 7
@@ -54,12 +51,11 @@
     state: icon
   - type: ItemCooldown
   - type: MeleeWeapon
-    wideAnimationRotation: 135
     damage:
       types:
         Slash: 10
   - type: Item
-    size: Normal
+    size: 20
   - type: Clothing
     sprite: Objects/Tools/Hydroponics/scythe.rsi
     slots:
@@ -82,8 +78,6 @@
     state: icon
   - type: ItemCooldown
   - type: MeleeWeapon
-    wideAnimationRotation: 135
-    swingLeft: true
     damage:
       types:
         Slash: 10
@@ -106,7 +100,6 @@
     state: icon
   - type: ItemCooldown
   - type: MeleeWeapon
-    wideAnimationRotation: 45
     damage:
       types:
         Blunt: 10
@@ -123,13 +116,13 @@
   - type: Sprite
     sprite: Objects/Specific/Hydroponics/Equipment/plant_bag.rsi
     state: icon
+  - type: Item
   - type: Clothing
     quickEquip: false
     slots:
     - belt
   - type: Storage
-    maxSlots: 40
-    maxItemSize: Small
+    capacity: 200
     quickInsert: true
     areaInsert: true
     whitelist:

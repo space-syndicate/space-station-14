@@ -24,21 +24,20 @@ public sealed class ArtifactTimerTriggerSystem : EntitySystem
     {
         base.Update(frameTime);
 
-        List<Entity<ArtifactComponent>> toUpdate = new();
-        var query = EntityQueryEnumerator<ArtifactTimerTriggerComponent, ArtifactComponent>();
-        while (query.MoveNext(out var uid, out var trigger, out var artifact))
+        List<ArtifactComponent> toUpdate = new();
+        foreach (var (trigger, artifact) in EntityQuery<ArtifactTimerTriggerComponent, ArtifactComponent>())
         {
             var timeDif = _time.CurTime - trigger.LastActivation;
             if (timeDif <= trigger.ActivationRate)
                 continue;
 
-            toUpdate.Add((uid, artifact));
+            toUpdate.Add(artifact);
             trigger.LastActivation = _time.CurTime;
         }
 
         foreach (var a in toUpdate)
         {
-            _artifactSystem.TryActivateArtifact(a, null, a);
+            _artifactSystem.TryActivateArtifact(a.Owner, null, a);
         }
     }
 }

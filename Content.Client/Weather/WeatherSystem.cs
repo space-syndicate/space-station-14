@@ -18,7 +18,6 @@ public sealed class WeatherSystem : SharedWeatherSystem
     [Dependency] private readonly IOverlayManager _overlayManager = default!;
     [Dependency] private readonly IPlayerManager _playerManager = default!;
     [Dependency] private readonly AudioSystem _audio = default!;
-    [Dependency] private readonly MapSystem _mapSystem = default!;
     [Dependency] private readonly SharedPhysicsSystem _physics = default!;
     [Dependency] private readonly SharedTransformSystem _transform = default!;
 
@@ -77,9 +76,8 @@ public sealed class WeatherSystem : SharedWeatherSystem
         // Work out tiles nearby to determine volume.
         if (TryComp<MapGridComponent>(entXform.GridUid, out var grid))
         {
-            var gridId = entXform.GridUid.Value;
             // Floodfill to the nearest tile and use that for audio.
-            var seed = _mapSystem.GetTileRef(gridId, grid, entXform.Coordinates);
+            var seed = grid.GetTileRef(entXform.Coordinates);
             var frontier = new Queue<TileRef>();
             frontier.Enqueue(seed);
             // If we don't have a nearest node don't play any sound.
@@ -109,7 +107,7 @@ public sealed class WeatherSystem : SharedWeatherSystem
                                 continue;
                             }
 
-                            frontier.Enqueue(_mapSystem.GetTileRef(gridId, grid, new Vector2i(x, y) + node.GridIndices));
+                            frontier.Enqueue(grid.GetTileRef(new Vector2i(x, y) + node.GridIndices));
                         }
                     }
 

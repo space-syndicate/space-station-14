@@ -7,6 +7,7 @@ using Content.Server.NodeContainer.Nodes;
 using Content.Shared.Atmos.Piping;
 using Content.Shared.Audio;
 using JetBrains.Annotations;
+using Robust.Server.GameObjects;
 
 namespace Content.Server.Atmos.Piping.Trinary.EntitySystems
 {
@@ -39,7 +40,7 @@ namespace Content.Server.Atmos.Piping.Trinary.EntitySystems
                 || !_nodeContainer.TryGetNode(nodeContainer, comp.ControlName, out PipeNode? controlNode)
                 || !_nodeContainer.TryGetNode(nodeContainer, comp.OutletName, out PipeNode? outletNode))
             {
-                _ambientSoundSystem.SetAmbience(uid, false);
+                _ambientSoundSystem.SetAmbience(comp.Owner, false);
                 comp.Enabled = false;
                 return;
             }
@@ -67,14 +68,14 @@ namespace Content.Server.Atmos.Piping.Trinary.EntitySystems
             UpdateAppearance(uid, comp);
 
             // We multiply the transfer rate in L/s by the seconds passed since the last process to get the liters.
-            var transferVolume = transferRate * args.dt;
+            var transferVolume = (float)(transferRate * args.dt);
             if (transferVolume <= 0)
             {
-                _ambientSoundSystem.SetAmbience(uid, false);
+                _ambientSoundSystem.SetAmbience(comp.Owner, false);
                 return;
             }
 
-            _ambientSoundSystem.SetAmbience(uid, true);
+            _ambientSoundSystem.SetAmbience(comp.Owner, true);
             var removed = inletNode.Air.RemoveVolume(transferVolume);
             _atmosphereSystem.Merge(outletNode.Air, removed);
         }
@@ -83,7 +84,7 @@ namespace Content.Server.Atmos.Piping.Trinary.EntitySystems
         {
             comp.Enabled = false;
             UpdateAppearance(uid, comp);
-            _ambientSoundSystem.SetAmbience(uid, false);
+            _ambientSoundSystem.SetAmbience(comp.Owner, false);
         }
 
         private void UpdateAppearance(EntityUid uid, PressureControlledValveComponent? comp = null, AppearanceComponent? appearance = null)

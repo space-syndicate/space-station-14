@@ -5,20 +5,19 @@ using Content.Server.Atmos.Piping.Components;
 using Content.Server.Atmos.Piping.Unary.EntitySystems;
 using Content.Server.Body.Components;
 using Content.Server.Body.Systems;
+using Content.Server.Chemistry.Components.SolutionManager;
+using Content.Server.Chemistry.EntitySystems;
+using Content.Server.Climbing;
 using Content.Server.Medical.Components;
 using Content.Server.NodeContainer;
 using Content.Server.NodeContainer.EntitySystems;
 using Content.Server.NodeContainer.NodeGroups;
 using Content.Server.NodeContainer.Nodes;
 using Content.Server.Power.Components;
-using Content.Server.Temperature.Components;
 using Content.Server.UserInterface;
 using Content.Shared.Chemistry;
 using Content.Shared.Chemistry.Components;
-using Content.Shared.Chemistry.Components.SolutionManager;
-using Content.Shared.Chemistry.EntitySystems;
 using Content.Shared.Chemistry.Reagent;
-using Content.Shared.Climbing.Systems;
 using Content.Shared.Containers.ItemSlots;
 using Content.Shared.Database;
 using Content.Shared.DoAfter;
@@ -32,7 +31,7 @@ using Content.Shared.Tools;
 using Content.Shared.Verbs;
 using Robust.Server.GameObjects;
 using Robust.Shared.Timing;
-using SharedToolSystem = Content.Shared.Tools.Systems.SharedToolSystem;
+using Content.Server.Temperature.Components;
 
 namespace Content.Server.Medical;
 
@@ -84,20 +83,18 @@ public sealed partial class CryoPodSystem: SharedCryoPodSystem
         var itemSlotsQuery = GetEntityQuery<ItemSlotsComponent>();
         var fitsInDispenserQuery = GetEntityQuery<FitsInDispenserComponent>();
         var solutionContainerManagerQuery = GetEntityQuery<SolutionContainerManagerComponent>();
-        var query = EntityQueryEnumerator<ActiveCryoPodComponent, CryoPodComponent>();
-
-        while (query.MoveNext(out var uid, out _, out var cryoPod))
+        foreach (var (_, cryoPod) in EntityQuery<ActiveCryoPodComponent, CryoPodComponent>())
         {
-            metaDataQuery.TryGetComponent(uid, out var metaDataComponent);
-            if (curTime < cryoPod.NextInjectionTime + _metaDataSystem.GetPauseTime(uid, metaDataComponent))
+            metaDataQuery.TryGetComponent(cryoPod.Owner, out var metaDataComponent);
+            if (curTime < cryoPod.NextInjectionTime + _metaDataSystem.GetPauseTime(cryoPod.Owner, metaDataComponent))
                 continue;
             cryoPod.NextInjectionTime = curTime + TimeSpan.FromSeconds(cryoPod.BeakerTransferTime);
 
-            if (!itemSlotsQuery.TryGetComponent(uid, out var itemSlotsComponent))
+            if (!itemSlotsQuery.TryGetComponent(cryoPod.Owner, out var itemSlotsComponent))
             {
                 continue;
             }
-            var container = _itemSlotsSystem.GetItemOrNull(uid, cryoPod.SolutionContainerName, itemSlotsComponent);
+            var container = _itemSlotsSystem.GetItemOrNull(cryoPod.Owner, cryoPod.SolutionContainerName, itemSlotsComponent);
             var patient = cryoPod.BodyContainer.ContainedEntity;
             if (container != null
                 && container.Value.Valid

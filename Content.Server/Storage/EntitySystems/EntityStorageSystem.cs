@@ -12,7 +12,6 @@ using Content.Shared.Storage.Components;
 using Content.Shared.Storage.EntitySystems;
 using Content.Shared.Tools.Systems;
 using Content.Shared.Verbs;
-using Robust.Server.GameObjects;
 using Robust.Shared.Containers;
 using Robust.Shared.GameStates;
 using Robust.Shared.Map;
@@ -24,7 +23,6 @@ public sealed class EntityStorageSystem : SharedEntityStorageSystem
     [Dependency] private readonly ConstructionSystem _construction = default!;
     [Dependency] private readonly AtmosphereSystem _atmos = default!;
     [Dependency] private readonly IMapManager _map = default!;
-    [Dependency] private readonly MapSystem _mapSystem = default!;
 
     public override void Initialize()
     {
@@ -130,11 +128,11 @@ public sealed class EntityStorageSystem : SharedEntityStorageSystem
 
     private TileRef? GetOffsetTileRef(EntityUid uid, EntityStorageComponent component)
     {
-        var targetCoordinates = new EntityCoordinates(uid, component.EnteringOffset).ToMap(EntityManager, TransformSystem);
+        var targetCoordinates = new EntityCoordinates(uid, component.EnteringOffset).ToMap(EntityManager);
 
-        if (_map.TryFindGridAt(targetCoordinates, out var gridId, out var grid))
+        if (_map.TryFindGridAt(targetCoordinates, out _, out var grid))
         {
-            return _mapSystem.GetTileRef(gridId, grid, targetCoordinates);
+            return grid.GetTileRef(targetCoordinates);
         }
 
         return null;

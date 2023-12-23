@@ -43,7 +43,6 @@ flavor-base-piquant = пикантно
 flavor-base-sharp = резко
 flavor-base-syrupy = сиропово
 flavor-base-spaceshroom = таинственно
-flavor-base-clean = чисто
 # lmao
 flavor-base-terrible = ужасно
 
@@ -96,7 +95,6 @@ flavor-complex-eggplant = как баклажан
 flavor-complex-carrot = как морковь
 flavor-complex-cabbage = как капуста
 flavor-complex-potatoes = как картофель
-flavor-complex-pumpkin = как тыква
 flavor-complex-mushroom = как грибы
 flavor-complex-tomato = как помидоры
 flavor-complex-corn = как кукуруза
@@ -222,4 +220,3 @@ flavor-complex-carpet = как горсть шерсти
 flavor-complex-bee = беспчеловечно
 flavor-complex-sax = как джаз
 flavor-complex-bottledlightning = как молния в бутылке
-flavor-complex-punishment = как наказание

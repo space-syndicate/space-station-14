@@ -1,6 +1,8 @@
-﻿using Content.Shared.Chemistry.Components;
+﻿using Content.Shared.Smoking;
+using Content.Shared.Spawners.Components;
 using Robust.Client.Animations;
 using Robust.Client.GameObjects;
+using Robust.Shared.Network;
 using Robust.Shared.Timing;
 
 namespace Content.Client.Chemistry.Visualizers;
@@ -16,7 +18,6 @@ public sealed class FoamVisualizerSystem : VisualizerSystem<FoamVisualsComponent
     {
         base.Initialize();
         SubscribeLocalEvent<FoamVisualsComponent, ComponentInit>(OnComponentInit);
-        SubscribeLocalEvent<FoamVisualsComponent, AnimationCompletedEvent>(OnAnimationComplete);
     }
 
     public override void Update(float frameTime)
@@ -26,11 +27,11 @@ public sealed class FoamVisualizerSystem : VisualizerSystem<FoamVisualsComponent
         if (!_timing.IsFirstTimePredicted)
             return;
 
-        var query = EntityQueryEnumerator<FoamVisualsComponent, SmokeComponent>();
+        var query = EntityQueryEnumerator<FoamVisualsComponent, TimedDespawnComponent>();
 
-        while (query.MoveNext(out var uid, out var comp, out var smoke))
+        while (query.MoveNext(out var uid, out var comp, out var despawn))
         {
-            if (_timing.CurTime < comp.StartTime + TimeSpan.FromSeconds(smoke.Duration) - TimeSpan.FromSeconds(comp.AnimationTime))
+            if (despawn.Lifetime > 1f)
                 continue;
 
             // Despawn animation.
@@ -47,7 +48,6 @@ public sealed class FoamVisualizerSystem : VisualizerSystem<FoamVisualsComponent
     /// </summary>
     private void OnComponentInit(EntityUid uid, FoamVisualsComponent comp, ComponentInit args)
     {
-        comp.StartTime = _timing.CurTime;
         comp.Animation = new Animation
         {
             Length = TimeSpan.FromSeconds(comp.AnimationTime),
@@ -58,20 +58,11 @@ public sealed class FoamVisualizerSystem : VisualizerSystem<FoamVisualsComponent
                     LayerKey = FoamVisualLayers.Base,
                     KeyFrames =
                     {
-                        new AnimationTrackSpriteFlick.KeyFrame(comp.AnimationState, 0f)
+                        new AnimationTrackSpriteFlick.KeyFrame(comp.State, 0f)
                     }
                 }
             }
         };
-    }
-
-    private void OnAnimationComplete(EntityUid uid, FoamVisualsComponent component, AnimationCompletedEvent args)
-    {
-        if (args.Key != FoamVisualsComponent.AnimationKey)
-            return;
-
-        if (TryComp<SpriteComponent>(uid, out var sprite))
-            sprite.Visible = false;
     }
 }
 

@@ -1,7 +1,9 @@
+using System.Linq;
 using Content.Client.Actions;
 using Content.Client.Items;
 using Content.Client.Message;
 using Content.Client.Stylesheets;
+using Content.Shared.Actions;
 using Content.Shared.DeviceNetwork.Components;
 using Content.Shared.DeviceNetwork.Systems;
 using Content.Shared.Input;
@@ -92,10 +94,9 @@ public sealed class NetworkConfiguratorSystem : SharedNetworkConfiguratorSystem
             return;
         }
 
-        var query = EntityQueryEnumerator<NetworkConfiguratorActiveLinkOverlayComponent>();
-        while (query.MoveNext(out var uid, out _))
+        foreach (var tracker in EntityQuery<NetworkConfiguratorActiveLinkOverlayComponent>())
         {
-            RemCompDeferred<NetworkConfiguratorActiveLinkOverlayComponent>(uid);
+            RemCompDeferred<NetworkConfiguratorActiveLinkOverlayComponent>(tracker.Owner);
         }
 
         _actions.RemoveAction(overlay.Action);

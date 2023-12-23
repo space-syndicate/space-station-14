@@ -1,5 +1,6 @@
 using System.Numerics;
 using Content.Shared.Examine;
+using Content.Shared.Hands;
 using Content.Shared.Hands.Components;
 using Content.Shared.Hands.EntitySystems;
 using Content.Shared.Interaction;
@@ -216,8 +217,8 @@ namespace Content.Shared.Stacks
 
             var map = xform.MapID;
             var bounds = _physics.GetWorldAABB(uid);
-            var intersecting = new HashSet<Entity<StackComponent>>();
-            _entityLookup.GetEntitiesIntersecting(map, bounds, intersecting, LookupFlags.Dynamic | LookupFlags.Sundries);
+            var intersecting = _entityLookup.GetComponentsIntersecting<StackComponent>(map, bounds,
+                LookupFlags.Dynamic | LookupFlags.Sundries);
 
             var merged = false;
             foreach (var otherStack in intersecting)
@@ -327,9 +328,6 @@ namespace Content.Shared.Stacks
         public bool TryAdd(EntityUid insertEnt, EntityUid targetEnt, int count, StackComponent? insertStack = null, StackComponent? targetStack = null)
         {
             if (!Resolve(insertEnt, ref insertStack) || !Resolve(targetEnt, ref targetStack))
-                return false;
-
-            if (insertStack.StackTypeId != targetStack.StackTypeId)
                 return false;
 
             var available = GetAvailableSpace(targetStack);

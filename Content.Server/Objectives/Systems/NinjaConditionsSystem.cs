@@ -2,6 +2,7 @@ using Content.Server.Roles;
 using Content.Server.Objectives.Components;
 using Content.Server.Warps;
 using Content.Shared.Objectives.Components;
+using Robust.Shared.GameObjects;
 
 namespace Content.Server.Objectives.Systems;
 
@@ -30,16 +31,22 @@ public sealed class NinjaConditionsSystem : EntitySystem
 
     private void OnDoorjackGetProgress(EntityUid uid, DoorjackConditionComponent comp, ref ObjectiveGetProgressEvent args)
     {
-        args.Progress = DoorjackProgress(comp, _number.GetTarget(uid));
+        args.Progress = DoorjackProgress(args.MindId, _number.GetTarget(uid));
     }
 
-    private float DoorjackProgress(DoorjackConditionComponent comp, int target)
+    private float DoorjackProgress(EntityUid mindId, int target)
     {
         // prevent divide-by-zero
         if (target == 0)
             return 1f;
 
-        return MathF.Min(comp.DoorsJacked / (float) target, 1f);
+        if (!TryComp<NinjaRoleComponent>(mindId, out var role))
+            return 0f;
+
+        if (role.DoorsJacked >= target)
+            return 1f;
+
+        return (float) role.DoorsJacked / (float) target;
     }
 
     // spider charge
@@ -51,40 +58,49 @@ public sealed class NinjaConditionsSystem : EntitySystem
 
     private void OnSpiderChargeGetProgress(EntityUid uid, SpiderChargeConditionComponent comp, ref ObjectiveGetProgressEvent args)
     {
-        args.Progress = comp.SpiderChargeDetonated ? 1f : 0f;
+        args.Progress = TryComp<NinjaRoleComponent>(args.MindId, out var role) && role.SpiderChargeDetonated ? 1f : 0f;
     }
 
     private string SpiderChargeTitle(EntityUid mindId)
     {
         if (!TryComp<NinjaRoleComponent>(mindId, out var role) ||
             role.SpiderChargeTarget == null ||
-            !TryComp<WarpPointComponent>(role.SpiderChargeTarget, out var warp))
+            !TryComp<WarpPointComponent>(role.SpiderChargeTarget, out var warp) ||
+            warp.Location == null)
         {
             // this should never really happen but eh
             return Loc.GetString("objective-condition-spider-charge-title-no-target");
         }
 
-        return Loc.GetString("objective-condition-spider-charge-title", ("location", warp.Location ?? Name(role.SpiderChargeTarget.Value)));
+        return Loc.GetString("objective-condition-spider-charge-title", ("location", warp.Location));
     }
 
     // steal research
 
     private void OnStealResearchGetProgress(EntityUid uid, StealResearchConditionComponent comp, ref ObjectiveGetProgressEvent args)
     {
-        args.Progress = StealResearchProgress(comp, _number.GetTarget(uid));
+        args.Progress = StealResearchProgress(args.MindId, _number.GetTarget(uid));
     }
 
-    private float StealResearchProgress(StealResearchConditionComponent comp, int target)
+    private float StealResearchProgress(EntityUid mindId, int target)
     {
         // prevent divide-by-zero
         if (target == 0)
             return 1f;
 
-        return MathF.Min(comp.DownloadedNodes.Count / (float) target, 1f);
+        if (!TryComp<NinjaRoleComponent>(mindId, out var role))
+            return 0f;
+
+        if (role.DownloadedNodes.Count >= target)
+            return 1f;
+
+        return (float) role.DownloadedNodes.Count / (float) target;
     }
+
+    // terror
 
     private void OnTerrorGetProgress(EntityUid uid, TerrorConditionComponent comp, ref ObjectiveGetProgressEvent args)
     {
-        args.Progress = comp.CalledInThreat ? 1f : 0f;
+        args.Progress = TryComp<NinjaRoleComponent>(args.MindId, out var role) && role.CalledInThreat ? 1f : 0f;
     }
 }

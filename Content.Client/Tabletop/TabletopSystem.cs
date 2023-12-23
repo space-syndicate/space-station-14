@@ -11,6 +11,7 @@ using Robust.Client.Input;
 using Robust.Client.Player;
 using Robust.Client.UserInterface;
 using Robust.Client.UserInterface.CustomControls;
+using Robust.Shared.GameStates;
 using Robust.Shared.Input;
 using Robust.Shared.Input.Binding;
 using Robust.Shared.Map;
@@ -48,6 +49,7 @@ namespace Content.Client.Tabletop
                 .Register<TabletopSystem>();
 
             SubscribeNetworkEvent<TabletopPlayEvent>(OnTabletopPlay);
+            SubscribeLocalEvent<TabletopDraggableComponent, ComponentHandleState>(HandleComponentState);
             SubscribeLocalEvent<TabletopDraggableComponent, ComponentRemove>(HandleDraggableRemoved);
             SubscribeLocalEvent<TabletopDraggableComponent, AppearanceChangeEvent>(OnAppearanceChange);
         }
@@ -144,6 +146,13 @@ namespace Content.Client.Tabletop
             };
 
             _window.OnClose += OnWindowClose;
+        }
+
+        private void HandleComponentState(EntityUid uid, TabletopDraggableComponent component, ref ComponentHandleState args)
+        {
+            if (args.Current is not TabletopDraggableComponentState state) return;
+
+            component.DraggingPlayer = state.DraggingPlayer;
         }
 
         private void OnWindowClose()

@@ -1,11 +1,12 @@
 ﻿using Robust.Shared.Prototypes;
+using Robust.Shared.Serialization;
 using Robust.Shared.Serialization.TypeSerializers.Implementations.Custom.Prototype;
 using Robust.Shared.Utility;
 
 namespace Content.Shared.Cargo.Prototypes
 {
     [Prototype("cargoProduct")]
-    public sealed partial class CargoProductPrototype : IPrototype
+    public sealed class CargoProductPrototype : IPrototype
     {
         [DataField("name")] private string _name = string.Empty;
 

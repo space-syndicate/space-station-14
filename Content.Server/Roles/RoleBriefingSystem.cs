@@ -11,6 +11,15 @@ public sealed class RoleBriefingSystem : EntitySystem
 
     private void OnGetBriefing(EntityUid uid, RoleBriefingComponent comp, ref GetBriefingEvent args)
     {
-        args.Append(comp.Briefing);
+        if (args.Briefing == null)
+        {
+            // no previous briefing so just set it
+            args.Briefing = comp.Briefing;
+        }
+        else
+        {
+            // there is a previous briefing so append to it
+            args.Briefing += "\n" + comp.Briefing;
+        }
     }
 }

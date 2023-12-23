@@ -1,4 +1,4 @@
-using System.Linq;
+﻿using System.Linq;
 using System.Numerics;
 using Content.Server.Maps;
 using Content.Shared.Anomaly.Components;
@@ -38,7 +38,7 @@ public sealed class TileAnomalySystem : EntitySystem
             new Box2(localpos + new Vector2(-radius, -radius), localpos + new Vector2(radius, radius)));
         foreach (var tileref in tilerefs)
         {
-            if (!_random.Prob(component.SpawnChance))
+            if (!_random.Prob(0.33f))
                 continue;
             _tile.ReplaceTile(tileref, fleshTile);
         }

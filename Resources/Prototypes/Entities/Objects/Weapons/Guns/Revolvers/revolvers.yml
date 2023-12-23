@@ -8,10 +8,7 @@
   - type: Sprite
     state: icon
   - type: Item
-    size: Small
-  - type: Tag
-    tags:
-    - Sidearm
+    size: 10
   - type: Clothing
     sprite: Objects/Weapons/Guns/Revolvers/deckard.rsi
     quickEquip: false
@@ -122,7 +119,7 @@
       params:
         volume: 2.25
 
-- type: entity
+- type: entity 
   name: Python
   parent: WeaponRevolverPython
   id: WeaponRevolverPythonAP # For the uplink.

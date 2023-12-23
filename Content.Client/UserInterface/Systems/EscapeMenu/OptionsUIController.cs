@@ -47,8 +47,6 @@ public sealed class OptionsUIController : UIController
     {
         EnsureWindow();
 
-        _optionsWindow.UpdateTabs();
-
         _optionsWindow.OpenCentered();
         _optionsWindow.MoveToFront();
     }

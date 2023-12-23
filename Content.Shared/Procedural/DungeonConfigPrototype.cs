@@ -5,7 +5,7 @@ using Robust.Shared.Prototypes;
 namespace Content.Shared.Procedural;
 
 [Prototype("dungeonConfig")]
-public sealed partial class DungeonConfigPrototype : IPrototype
+public sealed class DungeonConfigPrototype : IPrototype
 {
     [IdDataField]
     public string ID { get; private set; } = default!;

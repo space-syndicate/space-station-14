@@ -29,7 +29,6 @@
   - HotplateMachineCircuitboard
   - ChemicalPayload
   - ClothingEyesGlassesChemical
-  - Jug
 
 - type: technology
   id: SurgicalTools
@@ -114,7 +113,6 @@
   recipeUnlocks:
   - ChemMasterMachineCircuitboard
   - ChemDispenserMachineCircuitboard
-  - BorgModuleAdvancedTreatment
   technologyPrerequisites:
   - Chemistry
 

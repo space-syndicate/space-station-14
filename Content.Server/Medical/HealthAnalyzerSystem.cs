@@ -8,7 +8,6 @@ using Content.Shared.Mobs.Components;
 using Robust.Server.GameObjects;
 using Content.Server.Temperature.Components;
 using Content.Server.Body.Components;
-using Robust.Shared.Player;
 
 namespace Content.Server.Medical
 {
@@ -52,12 +51,12 @@ namespace Content.Server.Medical
             args.Handled = true;
         }
 
-        private void OpenUserInterface(EntityUid user, EntityUid analyzer)
+        private void OpenUserInterface(EntityUid user, HealthAnalyzerComponent healthAnalyzer)
         {
-            if (!TryComp<ActorComponent>(user, out var actor) || !_uiSystem.TryGetUi(analyzer, HealthAnalyzerUiKey.Key, out var ui))
+            if (!TryComp<ActorComponent>(user, out var actor) || healthAnalyzer.UserInterface == null)
                 return;
 
-            _uiSystem.OpenUi(ui ,actor.PlayerSession);
+            _uiSystem.OpenUi(healthAnalyzer.UserInterface ,actor.PlayerSession);
         }
 
         public void UpdateScannedUser(EntityUid uid, EntityUid user, EntityUid? target, HealthAnalyzerComponent? healthAnalyzer)
@@ -65,7 +64,7 @@ namespace Content.Server.Medical
             if (!Resolve(uid, ref healthAnalyzer))
                 return;
 
-            if (target == null || !_uiSystem.TryGetUi(uid, HealthAnalyzerUiKey.Key, out var ui))
+            if (target == null || healthAnalyzer.UserInterface == null)
                 return;
 
             if (!HasComp<DamageableComponent>(target))
@@ -74,9 +73,9 @@ namespace Content.Server.Medical
             TryComp<TemperatureComponent>(target, out var temp);
             TryComp<BloodstreamComponent>(target, out var bloodstream);
 
-            OpenUserInterface(user, uid);
+            OpenUserInterface(user, healthAnalyzer);
 
-            _uiSystem.SendUiMessage(ui, new HealthAnalyzerScannedUserMessage(GetNetEntity(target), temp != null ? temp.CurrentTemperature : float.NaN,
+            _uiSystem.SendUiMessage(healthAnalyzer.UserInterface, new HealthAnalyzerScannedUserMessage(GetNetEntity(target), temp != null ? temp.CurrentTemperature : float.NaN,
                 bloodstream != null ? bloodstream.BloodSolution.FillFraction : float.NaN));
         }
     }

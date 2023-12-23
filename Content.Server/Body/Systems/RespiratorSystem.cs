@@ -10,6 +10,7 @@ using Content.Shared.Damage;
 using Content.Shared.Database;
 using Content.Shared.Mobs.Systems;
 using JetBrains.Annotations;
+using Robust.Shared.Player;
 using Robust.Shared.Timing;
 
 namespace Content.Server.Body.Systems
@@ -40,9 +41,10 @@ namespace Content.Server.Body.Systems
         {
             base.Update(frameTime);
 
-            var query = EntityQueryEnumerator<RespiratorComponent, BodyComponent>();
-            while (query.MoveNext(out var uid, out var respirator, out var body))
+            foreach (var (respirator, body) in EntityManager.EntityQuery<RespiratorComponent, BodyComponent>())
             {
+                var uid = respirator.Owner;
+
                 if (_mobState.IsDead(uid))
                 {
                     continue;
@@ -53,7 +55,7 @@ namespace Content.Server.Body.Systems
                 if (respirator.AccumulatedFrametime < respirator.CycleDelay)
                     continue;
                 respirator.AccumulatedFrametime -= respirator.CycleDelay;
-                UpdateSaturation(uid, -respirator.CycleDelay, respirator);
+                UpdateSaturation(respirator.Owner, -respirator.CycleDelay, respirator);
 
                 if (!_mobState.IsIncapacitated(uid)) // cannot breathe in crit.
                 {
@@ -97,7 +99,7 @@ namespace Content.Server.Body.Systems
 
             // Inhale gas
             var ev = new InhaleLocationEvent();
-            RaiseLocalEvent(uid, ev);
+            RaiseLocalEvent(uid, ev, false);
 
             ev.Gas ??= _atmosSys.GetContainingMixture(uid, false, true);
 

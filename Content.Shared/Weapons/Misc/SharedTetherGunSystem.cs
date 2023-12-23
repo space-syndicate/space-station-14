@@ -259,7 +259,6 @@ public abstract partial class SharedTetherGunSystem : EntitySystem
             {
                 var thrown = EnsureComp<ThrownItemComponent>(component.Tethered.Value);
                 _thrown.LandComponent(component.Tethered.Value, thrown, targetPhysics, true);
-                _thrown.StopThrow(component.Tethered.Value, thrown);
             }
 
             _physics.SetBodyStatus(targetPhysics, BodyStatus.OnGround);

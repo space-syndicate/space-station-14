@@ -170,12 +170,11 @@ namespace Content.Client.Light
 
         public override void FrameUpdate(float frameTime)
         {
-            var lightQuery = EntityQueryEnumerator<RgbLightControllerComponent, PointLightComponent, SpriteComponent>();
-            while (lightQuery.MoveNext(out var uid, out var rgb, out var light, out var sprite))
+            foreach (var (rgb, light, sprite) in EntityManager.EntityQuery<RgbLightControllerComponent, PointLightComponent, SpriteComponent>())
             {
-                var color = GetCurrentRgbColor(_gameTiming.RealTime, rgb.CreationTick.Value * _gameTiming.TickPeriod, (uid, rgb));
+                var color = GetCurrentRgbColor(_gameTiming.RealTime, rgb.CreationTick.Value * _gameTiming.TickPeriod, rgb);
 
-                _lights.SetColor(uid, color, light);
+                _lights.SetColor(light.Owner, color, light);
 
                 if (rgb.Layers != null)
                 {
@@ -197,18 +196,17 @@ namespace Content.Client.Light
                 }
             }
 
-            var mapQuery = EntityQueryEnumerator<MapLightComponent, RgbLightControllerComponent>();
-            while (mapQuery.MoveNext(out var uid, out var map, out var rgb))
+            foreach (var (map, rgb) in EntityQuery<MapLightComponent, RgbLightControllerComponent>())
             {
-                var color = GetCurrentRgbColor(_gameTiming.RealTime, rgb.CreationTick.Value * _gameTiming.TickPeriod, (uid, rgb));
+                var color = GetCurrentRgbColor(_gameTiming.RealTime, rgb.CreationTick.Value * _gameTiming.TickPeriod, rgb);
                 map.AmbientLightColor = color;
             }
         }
 
-        public static Color GetCurrentRgbColor(TimeSpan curTime, TimeSpan offset, Entity<RgbLightControllerComponent> rgb)
+        public static Color GetCurrentRgbColor(TimeSpan curTime, TimeSpan offset, RgbLightControllerComponent rgb)
         {
             return Color.FromHsv(new Vector4(
-                (float) (((curTime.TotalSeconds - offset.TotalSeconds) * rgb.Comp.CycleRate + Math.Abs(rgb.Owner.Id * 0.1)) % 1),
+                (float) (((curTime.TotalSeconds - offset.TotalSeconds) * rgb.CycleRate + Math.Abs(rgb.Owner.Id * 0.1)) % 1),
                 1.0f,
                 1.0f,
                 1.0f

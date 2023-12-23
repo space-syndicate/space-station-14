@@ -38,10 +38,9 @@ public sealed class NPCSteeringSystem : SharedNPCSteeringSystem
                     Enabled = false
                 });
 
-                var query = AllEntityQuery<NPCSteeringComponent>();
-                while (query.MoveNext(out var uid, out var npc))
+                foreach (var comp in EntityQuery<NPCSteeringComponent>(true))
                 {
-                    RemCompDeferred<NPCSteeringComponent>(uid);
+                    RemCompDeferred<NPCSteeringComponent>(comp.Owner);
                 }
             }
         }

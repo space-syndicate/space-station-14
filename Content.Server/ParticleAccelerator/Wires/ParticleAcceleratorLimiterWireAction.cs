@@ -5,7 +5,7 @@ using Content.Server.Wires;
 using Content.Shared.Popups;
 using Content.Shared.Singularity.Components;
 using Content.Shared.Wires;
-using Robust.Shared.Player;
+using Robust.Server.GameObjects;
 
 namespace Content.Server.ParticleAccelerator.Wires;
 

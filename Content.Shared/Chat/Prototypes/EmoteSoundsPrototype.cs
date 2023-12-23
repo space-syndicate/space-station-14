@@ -9,7 +9,7 @@ namespace Content.Shared.Chat.Prototypes;
 ///     Different entities may use different sounds collections.
 /// </summary>
 [Prototype("emoteSounds")]
-public sealed partial class EmoteSoundsPrototype : IPrototype
+public sealed class EmoteSoundsPrototype : IPrototype
 {
     [IdDataField]
     public string ID { get; private set; } = default!;

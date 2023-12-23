@@ -3,8 +3,10 @@ using Content.Server.Station.Components;
 using Content.Shared.Chemistry.Components;
 using Content.Shared.Chemistry.Reagent;
 using JetBrains.Annotations;
+using Robust.Shared.Audio;
 using Robust.Shared.Random;
 using System.Linq;
+using Content.Server.Chemistry.Components;
 using Content.Server.Fluids.EntitySystems;
 using Content.Server.GameTicking.Rules.Components;
 using Content.Server.StationEvents.Components;
@@ -51,8 +53,9 @@ public sealed class VentClogRule : StationEventSystem<VentClogRuleComponent>
             solution.AddReagent(reagent, quantity);
 
             var foamEnt = Spawn("Foam", transform.Coordinates);
-            var spreadAmount = weak ? component.WeakSpread : component.Spread;
-            _smoke.StartSmoke(foamEnt, solution, component.Time, spreadAmount);
+            var smoke = EnsureComp<SmokeComponent>(foamEnt);
+            smoke.SpreadAmount = weak ? component.WeakSpread : component.Spread;
+            _smoke.Start(foamEnt, smoke, solution, component.Time);
             Audio.PlayPvs(component.Sound, transform.Coordinates);
         }
     }

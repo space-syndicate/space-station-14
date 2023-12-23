@@ -7,7 +7,6 @@ using JetBrains.Annotations;
 using Robust.Server.Containers;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Random;
-using SharedToolSystem = Content.Shared.Tools.Systems.SharedToolSystem;
 
 namespace Content.Server.Construction
 {
@@ -45,18 +44,17 @@ namespace Content.Server.Construction
             SubscribeLocalEvent<ConstructionComponent, ComponentStartup>(OnConstructionStartup);
         }
 
-        private void OnConstructionInit(Entity<ConstructionComponent> ent, ref ComponentInit args)
+        private void OnConstructionInit(EntityUid uid, ConstructionComponent construction, ComponentInit args)
         {
-            var construction = ent.Comp;
-            if (GetCurrentGraph(ent, construction) is not {} graph)
+            if (GetCurrentGraph(uid, construction) is not {} graph)
             {
-                _sawmill.Warning($"Prototype {EntityManager.GetComponent<MetaDataComponent>(ent).EntityPrototype?.ID}'s construction component has an invalid graph specified.");
+                _sawmill.Warning($"Prototype {EntityManager.GetComponent<MetaDataComponent>(construction.Owner).EntityPrototype?.ID}'s construction component has an invalid graph specified.");
                 return;
             }
 
             if (GetNodeFromGraph(graph, construction.Node) is not {} node)
             {
-                _sawmill.Warning($"Prototype {EntityManager.GetComponent<MetaDataComponent>(ent).EntityPrototype?.ID}'s construction component has an invalid node specified.");
+                _sawmill.Warning($"Prototype {EntityManager.GetComponent<MetaDataComponent>(construction.Owner).EntityPrototype?.ID}'s construction component has an invalid node specified.");
                 return;
             }
 
@@ -65,7 +63,7 @@ namespace Content.Server.Construction
             {
                 if (GetEdgeFromNode(node, edgeIndex) is not {} currentEdge)
                 {
-                    _sawmill.Warning($"Prototype {EntityManager.GetComponent<MetaDataComponent>(ent).EntityPrototype?.ID}'s construction component has an invalid edge index specified.");
+                    _sawmill.Warning($"Prototype {EntityManager.GetComponent<MetaDataComponent>(construction.Owner).EntityPrototype?.ID}'s construction component has an invalid edge index specified.");
                     return;
                 }
 
@@ -76,11 +74,11 @@ namespace Content.Server.Construction
             {
                 if (GetNodeFromGraph(graph, targetNodeId) is not { } targetNode)
                 {
-                    _sawmill.Warning($"Prototype {EntityManager.GetComponent<MetaDataComponent>(ent).EntityPrototype?.ID}'s construction component has an invalid target node specified.");
+                    _sawmill.Warning($"Prototype {EntityManager.GetComponent<MetaDataComponent>(construction.Owner).EntityPrototype?.ID}'s construction component has an invalid target node specified.");
                     return;
                 }
 
-                UpdatePathfinding(ent, graph, node, targetNode, edge, construction);
+                UpdatePathfinding(uid, graph, node, targetNode, edge, construction);
             }
         }
 

@@ -1,7 +1,5 @@
 ent-SpawnMobMouse = спавнер мышь
     .desc = { ent-MarkerBase.desc }
-ent-SpawnMobCockroach = спавнер таракан
-    .desc = { ent-MarkerBase.desc }
 ent-SpawnMobCat = спавнер кот
     .desc = { ent-MarkerBase.desc }
 ent-SpawnMobCorgi = спавнер корги
@@ -101,6 +99,4 @@ ent-SpawnMobCow = спавнер корова
 ent-SpawnMobGorilla = спавнер горилла
     .desc = { ent-MarkerBase.desc }
 ent-SpawnMobPenguin = спавнер пингвин
-    .desc = { ent-MarkerBase.desc }
-ent-SpawnMobOreCrab = спавнер рудный краб
     .desc = { ent-MarkerBase.desc }

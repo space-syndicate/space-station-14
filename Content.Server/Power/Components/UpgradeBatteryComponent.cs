@@ -11,7 +11,7 @@ namespace Content.Server.Power.Components
         ///     The machine part that affects the power capacity.
         /// </summary>
         [DataField("machinePartPowerCapacity", customTypeSerializer: typeof(PrototypeIdSerializer<MachinePartPrototype>))]
-        public string MachinePartPowerCapacity = "PowerCell";
+        public string MachinePartPowerCapacity = "Capacitor";
 
         /// <summary>
         ///     The machine part rating is raised to this power when calculating power gain

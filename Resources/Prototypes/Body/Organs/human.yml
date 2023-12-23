@@ -18,14 +18,11 @@
       food:
         maxVol: 5
         reagents:
-        - ReagentId: UncookedAnimalProteins
+        - ReagentId: Nutriment
           Quantity: 5
   - type: FlavorProfile
     flavors:
       - people
-  - type: Tag
-    tags:
-      - Meat
 
 - type: entity
   id: OrganHumanBrain
@@ -39,13 +36,7 @@
   - type: Input
     context: "ghost"
   - type: Brain
-  - type: InputMover
-  - type: Examiner
   - type: BlockMovement
-  - type: BadFood
-  - type: Tag
-    tags:
-      - Meat
 
 - type: entity
   id: OrganHumanEyes
@@ -118,7 +109,7 @@
       food:
         maxVol: 5
         reagents:
-        - ReagentId: UncookedAnimalProteins
+        - ReagentId: Nutriment
           Quantity: 5
 
 - type: entity
@@ -155,7 +146,7 @@
       food:
         maxVol: 5
         reagents:
-        - ReagentId: UncookedAnimalProteins
+        - ReagentId: Nutriment
           Quantity: 5
   - type: Stomach
   # The stomach metabolizes stuff like foods and drinks.

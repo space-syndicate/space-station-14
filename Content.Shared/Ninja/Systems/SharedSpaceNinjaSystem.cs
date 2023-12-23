@@ -11,15 +11,14 @@ namespace Content.Shared.Ninja.Systems;
 /// </summary>
 public abstract class SharedSpaceNinjaSystem : EntitySystem
 {
-    [Dependency] protected readonly SharedNinjaSuitSystem Suit = default!;
-    [Dependency] protected readonly SharedPopupSystem Popup = default!;
+    [Dependency] protected readonly SharedNinjaSuitSystem _suit = default!;
+    [Dependency] protected readonly SharedPopupSystem _popup = default!;
 
     public override void Initialize()
     {
         base.Initialize();
 
         SubscribeLocalEvent<SpaceNinjaComponent, AttackedEvent>(OnNinjaAttacked);
-        SubscribeLocalEvent<SpaceNinjaComponent, MeleeAttackEvent>(OnNinjaAttack);
         SubscribeLocalEvent<SpaceNinjaComponent, ShotAttemptedEvent>(OnShotAttempted);
     }
 
@@ -75,19 +74,7 @@ public abstract class SharedSpaceNinjaSystem : EntitySystem
     {
         if (comp.Suit != null && TryComp<StealthClothingComponent>(comp.Suit, out var stealthClothing) && stealthClothing.Enabled)
         {
-            Suit.RevealNinja(comp.Suit.Value, uid, true, null, stealthClothing);
-        }
-    }
-
-    /// <summary>
-    /// Handle revealing ninja if cloaked when attacking.
-    /// Only reveals, there is no cooldown.
-    /// </summary>
-    private void OnNinjaAttack(EntityUid uid, SpaceNinjaComponent comp, ref MeleeAttackEvent args)
-    {
-        if (comp.Suit != null && TryComp<StealthClothingComponent>(comp.Suit, out var stealthClothing) && stealthClothing.Enabled)
-        {
-            Suit.RevealNinja(comp.Suit.Value, uid, false, null, stealthClothing);
+            _suit.RevealNinja(comp.Suit.Value, uid, null, stealthClothing);
         }
     }
 
@@ -96,7 +83,7 @@ public abstract class SharedSpaceNinjaSystem : EntitySystem
     /// </summary>
     private void OnShotAttempted(EntityUid uid, SpaceNinjaComponent comp, ref ShotAttemptedEvent args)
     {
-        Popup.PopupClient(Loc.GetString("gun-disabled"), uid, uid);
+        _popup.PopupClient(Loc.GetString("gun-disabled"), uid, uid);
         args.Cancel();
     }
 }

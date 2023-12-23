@@ -19,7 +19,6 @@
     - state: cutters-cutty-thingy
   - type: ItemCooldown
   - type: MeleeWeapon
-    wideAnimationRotation: -90
     damage:
       types:
         Piercing: 2
@@ -66,7 +65,6 @@
     sprite: Objects/Tools/screwdriver.rsi
   - type: ItemCooldown
   - type: MeleeWeapon
-    wideAnimationRotation: -90
     attackRate: 1
     damage:
       types:
@@ -107,7 +105,6 @@
     sprite: Objects/Tools/wrench.rsi
   - type: ItemCooldown
   - type: MeleeWeapon
-    wideAnimationRotation: 135
     attackRate: 1.5
     damage:
       types:
@@ -140,10 +137,9 @@
     state: icon
   - type: Item
     sprite: Objects/Tools/crowbar.rsi
-    size: Small
+    size: 10
   - type: ItemCooldown
   - type: MeleeWeapon
-    wideAnimationRotation: -135
     damage:
       types:
         Blunt: 8
@@ -205,7 +201,7 @@
     - state: green-unlit
       shader: unshaded
   - type: Item
-    size: Small
+    size: 5
   - type: Clothing
     sprite: Objects/Tools/multitool.rsi
     quickEquip: false
@@ -254,7 +250,7 @@
           map: ["enum.NetworkConfiguratorLayers.ModeLight"]
           shader: unshaded
     - type: Item
-      size: Small
+      size: 5
     - type: Clothing
       sprite: Objects/Tools/network_configurator.rsi
       quickEquip: false
@@ -304,7 +300,7 @@
     state: drill_screw
   - type: Item
     sprite: Objects/Tools/drill.rsi
-    size: Small
+    size: 10
   - type: Tool
     qualities:
       - Screwing
@@ -336,7 +332,6 @@
   - type: StaticPrice
     price: 100
   - type: MeleeWeapon
-    wideAnimationRotation: -90
     attackRate: 1.5
     damage:
       types:
@@ -360,7 +355,7 @@
     sprite: Objects/Tools/rcd.rsi
     state: icon
   - type: Item
-    size: Normal
+    size: 20
   - type: Clothing
     sprite: Objects/Tools/rcd.rsi
     quickEquip: false
@@ -436,13 +431,11 @@
     state: omnitool-screwing
   - type: Item
     sprite: Objects/Tools/omnitool.rsi
-    size: Normal
+    size: 20
   - type: Tag
     tags:
     - Multitool
   - type: TilePrying
-  - type: Prying
-    enabled: false
   - type: Tool
     qualities:
       - Screwing
@@ -506,12 +499,11 @@
     state: icon
   - type: ItemCooldown
   - type: MeleeWeapon
-    wideAnimationRotation: -135
     damage:
       types:
         Blunt: 14
   - type: Item
-    size: Normal
+    size: 90
     sprite: Objects/Tools/shovel.rsi
   - type: PhysicalComposition
     materialComposition:
@@ -519,33 +511,3 @@
       Wood: 50
   - type: StaticPrice
     price: 25
-
-- type: entity
-  parent: BaseItem
-  id: RollingPin
-  name: rolling pin
-  description: A tool used to shape and flatten dough.
-  components:
-  - type: Sprite
-    sprite: Objects/Tools/rolling_pin.rsi
-    state: icon
-  - type: Item
-    sprite: Objects/Tools/rolling_pin.rsi
-    size: Small
-  - type: Clothing
-    sprite: Objects/Tools/rolling_pin.rsi
-    quickEquip: false
-    slots:
-    - Belt
-  - type: ItemCooldown
-  - type: MeleeWeapon
-    wideAnimationRotation: -135
-    damage:
-      types:
-        Blunt: 7
-  - type: Tool
-    qualities:
-    - Rolling
-  - type: PhysicalComposition
-    materialComposition:
-      Wood: 100

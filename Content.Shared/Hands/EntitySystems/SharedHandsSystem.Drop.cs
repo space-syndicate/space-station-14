@@ -6,8 +6,10 @@ using Robust.Shared.Map;
 
 namespace Content.Shared.Hands.EntitySystems;
 
-public abstract partial class SharedHandsSystem
+public abstract partial class SharedHandsSystem : EntitySystem
 {
+    [Dependency] private readonly SharedContainerSystem _container = default!;
+
     private void InitializeDrop()
     {
         SubscribeLocalEvent<HandsComponent, EntRemovedFromContainerMessage>(HandleEntityRemoved);
@@ -21,10 +23,10 @@ public abstract partial class SharedHandsSystem
         }
 
         var gotUnequipped = new GotUnequippedHandEvent(uid, args.Entity, hand);
-        RaiseLocalEvent(args.Entity, gotUnequipped);
+        RaiseLocalEvent(args.Entity, gotUnequipped, false);
 
         var didUnequip = new DidUnequipHandEvent(uid, args.Entity, hand);
-        RaiseLocalEvent(uid, didUnequip);
+        RaiseLocalEvent(uid, didUnequip, false);
     }
 
     /// <summary>
@@ -35,7 +37,7 @@ public abstract partial class SharedHandsSystem
         if (hand.Container?.ContainedEntity is not {} held)
             return false;
 
-        if (!ContainerSystem.CanRemove(held, hand.Container))
+        if (!_container.CanRemove(held, hand.Container))
             return false;
 
         if (checkActionBlocker && !_actionBlocker.CanDrop(uid))
@@ -88,7 +90,7 @@ public abstract partial class SharedHandsSystem
 
         var userXform = Transform(uid);
         var itemXform = Transform(entity);
-        var isInContainer = ContainerSystem.IsEntityInContainer(uid);
+        var isInContainer = _containerSystem.IsEntityInContainer(uid);
 
         if (targetDropLocation == null || isInContainer)
         {
@@ -96,14 +98,14 @@ public abstract partial class SharedHandsSystem
             // TODO recursively check upwards for containers
 
             if (!isInContainer
-                || !ContainerSystem.TryGetContainingContainer(userXform.ParentUid, uid, out var container, skipExistCheck: true)
+                || !_containerSystem.TryGetContainingContainer(userXform.ParentUid, uid, out var container, skipExistCheck: true)
                 || !container.Insert(entity, EntityManager, itemXform))
-                TransformSystem.AttachToGridOrMap(entity, itemXform);
+                itemXform.AttachToGridOrMap();
             return true;
         }
 
-        var target = targetDropLocation.Value.ToMap(EntityManager, TransformSystem);
-        TransformSystem.SetWorldPosition(itemXform, GetFinalDropCoordinates(uid, userXform.MapPosition, target));
+        var target = targetDropLocation.Value.ToMap(EntityManager);
+        itemXform.WorldPosition = GetFinalDropCoordinates(uid, userXform.MapPosition, target);
         return true;
     }
 
@@ -121,7 +123,7 @@ public abstract partial class SharedHandsSystem
         if (!CanDropHeld(uid, hand, checkActionBlocker))
             return false;
 
-        if (!ContainerSystem.CanInsert(entity, targetContainer))
+        if (!_container.CanInsert(entity, targetContainer))
             return false;
 
         DoDrop(uid, hand, false, handsComp);
@@ -169,12 +171,12 @@ public abstract partial class SharedHandsSystem
             return;
         }
 
-        Dirty(uid, handsComp);
+        Dirty(handsComp);
 
         if (doDropInteraction)
             _interactionSystem.DroppedInteraction(uid, entity);
 
         if (hand == handsComp.ActiveHand)
-            RaiseLocalEvent(entity, new HandDeselectedEvent(uid));
+            RaiseLocalEvent(entity, new HandDeselectedEvent(uid), false);
     }
 }

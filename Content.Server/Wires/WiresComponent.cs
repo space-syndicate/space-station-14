@@ -8,13 +8,13 @@ public sealed partial class WiresComponent : Component
     /// <summary>
     ///     The name of this entity's internal board.
     /// </summary>
-    [DataField]
-    public LocId BoardName { get; set; } = "wires-board-name-default";
+    [DataField("BoardName")]
+    public string BoardName { get; set; } = "wires-board-name-default";
 
     /// <summary>
     ///     The layout ID of this entity's wires.
     /// </summary>
-    [DataField(required: true)]
+    [DataField("LayoutId", required: true)]
     public string LayoutId { get; set; } = default!;
 
     /// <summary>
@@ -47,7 +47,7 @@ public sealed partial class WiresComponent : Component
     ///     If this should follow the layout saved the first time the layout dictated by the
     ///     layout ID is generated, or if a new wire order should be generated every time.
     /// </summary>
-    [DataField]
+    [DataField("alwaysRandomize")]
     public bool AlwaysRandomize { get; private set; }
 
     /// <summary>
@@ -64,6 +64,6 @@ public sealed partial class WiresComponent : Component
     [ViewVariables]
     public Dictionary<object, object> StateData { get; } = new();
 
-    [DataField]
+    [DataField("pulseSound")]
     public SoundSpecifier PulseSound = new SoundPathSpecifier("/Audio/Effects/multitool_pulse.ogg");
 }

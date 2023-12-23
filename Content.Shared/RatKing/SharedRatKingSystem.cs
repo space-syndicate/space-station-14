@@ -130,7 +130,7 @@ public abstract class SharedRatKingSystem : EntitySystem
 
         component.Looted = true;
         Dirty(uid, component);
-        _audio.PlayPredicted(component.Sound, uid, args.User);
+        _audio.PlayPvs(component.Sound, uid);
 
         var spawn = PrototypeManager.Index<WeightedRandomEntityPrototype>(component.RummageLoot).Pick(Random);
         if (_net.IsServer)

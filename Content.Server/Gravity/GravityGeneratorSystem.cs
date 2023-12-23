@@ -1,12 +1,13 @@
 using Content.Server.Administration.Logs;
 using Content.Server.Audio;
-using Content.Server.Construction;
 using Content.Server.Power.Components;
 using Content.Shared.Database;
 using Content.Shared.Gravity;
 using Content.Shared.Interaction;
 using Robust.Server.GameObjects;
-using Robust.Shared.Player;
+using Robust.Server.Player;
+using Robust.Shared.Players;
+using Content.Server.Construction;
 
 namespace Content.Server.Gravity
 {
@@ -55,10 +56,9 @@ namespace Content.Server.Gravity
         {
             base.Update(frameTime);
 
-            var query = EntityQueryEnumerator<GravityGeneratorComponent, ApcPowerReceiverComponent>();
-            while (query.MoveNext(out var uid, out var gravGen, out var powerReceiver))
+            foreach (var (gravGen, powerReceiver) in EntityManager
+                .EntityQuery<GravityGeneratorComponent, ApcPowerReceiverComponent>())
             {
-                var ent = (uid, gravGen, powerReceiver);
                 if (!gravGen.Intact)
                     continue;
 
@@ -108,15 +108,15 @@ namespace Content.Server.Gravity
                 var updateUI = gravGen.NeedUIUpdate;
                 if (!MathHelper.CloseTo(lastCharge, gravGen.Charge))
                 {
-                    UpdateState(ent);
+                    UpdateState(gravGen, powerReceiver);
                     updateUI = true;
                 }
 
                 if (updateUI)
-                    UpdateUI(ent, chargeRate);
+                    UpdateUI(gravGen, powerReceiver, chargeRate);
 
                 if (active != gravGen.GravityActive &&
-                    TryComp<TransformComponent>(uid, out var xform) &&
+                    TryComp<TransformComponent>(gravGen.Owner, out var xform) &&
                     TryComp<GravityComponent>(xform.ParentUid, out var gravity))
                 {
                     // Force it on in the faster path.
@@ -139,7 +139,7 @@ namespace Content.Server.Gravity
                 return;
 
             if (session is { AttachedEntity: { } })
-                _adminLogger.Add(LogType.Action, on ? LogImpact.Medium : LogImpact.High, $"{session:player} set ${ToPrettyString(uid):target} to {(on ? "on" : "off")}");
+                _adminLogger.Add(LogType.Action, on ? LogImpact.Medium : LogImpact.High, $"{ToPrettyString(session.AttachedEntity.Value):player} set ${ToPrettyString(uid):target} to {(on ? "on" : "off")}");
 
             component.SwitchedOn = on;
             UpdatePowerState(component, powerReceiver);
@@ -153,10 +153,12 @@ namespace Content.Server.Gravity
             powerReceiver.Load = component.SwitchedOn ? component.ActivePowerUse : component.IdlePowerUse;
         }
 
-        private void UpdateUI(Entity<GravityGeneratorComponent, ApcPowerReceiverComponent> ent, float chargeRate)
+        private void UpdateUI(
+            GravityGeneratorComponent component,
+            ApcPowerReceiverComponent powerReceiver,
+            float chargeRate)
         {
-            var (_, component, powerReceiver) = ent;
-            if (!_uiSystem.IsUiOpen(ent, SharedGravityGeneratorComponent.GravityGeneratorUiKey.Key))
+            if (!_uiSystem.IsUiOpen(component.Owner, SharedGravityGeneratorComponent.GravityGeneratorUiKey.Key))
                 return;
 
             var chargeTarget = chargeRate < 0 ? 0 : component.MaxCharge;
@@ -192,21 +194,21 @@ namespace Content.Server.Gravity
             );
 
             _uiSystem.TrySetUiState(
-                ent,
+                component.Owner,
                 SharedGravityGeneratorComponent.GravityGeneratorUiKey.Key,
                 state);
 
             component.NeedUIUpdate = false;
         }
 
-        private void OnCompInit(Entity<GravityGeneratorComponent> ent, ref ComponentInit args)
+        private void OnCompInit(EntityUid uid, GravityGeneratorComponent component, ComponentInit args)
         {
             ApcPowerReceiverComponent? powerReceiver = null;
-            if (!Resolve(ent, ref powerReceiver, false))
+            if (!Resolve(uid, ref powerReceiver, false))
                 return;
 
-            UpdatePowerState(ent, powerReceiver);
-            UpdateState((ent, ent.Comp, powerReceiver));
+            UpdatePowerState(component, powerReceiver);
+            UpdateState(component, powerReceiver);
         }
 
         private void OnInteractHand(EntityUid uid, GravityGeneratorComponent component, InteractHandEvent args)
@@ -226,9 +228,9 @@ namespace Content.Server.Gravity
             component.NeedUIUpdate = true;
         }
 
-        public void UpdateState(Entity<GravityGeneratorComponent, ApcPowerReceiverComponent> ent)
+        public void UpdateState(GravityGeneratorComponent grav, ApcPowerReceiverComponent powerReceiver)
         {
-            var (uid, grav, powerReceiver) = ent;
+            var uid = grav.Owner;
             var appearance = EntityManager.GetComponentOrNull<AppearanceComponent>(uid);
             _appearance.SetData(uid, GravityGeneratorVisuals.Charge, grav.Charge, appearance);
 
@@ -240,19 +242,19 @@ namespace Content.Server.Gravity
 
             if (!grav.Intact)
             {
-                MakeBroken((uid, grav), appearance);
+                MakeBroken(uid, grav, appearance);
             }
             else if (powerReceiver.PowerReceived < grav.IdlePowerUse)
             {
-                MakeUnpowered((uid, grav), appearance);
+                MakeUnpowered(uid, grav, appearance);
             }
             else if (!grav.SwitchedOn)
             {
-                MakeOff((uid, grav), appearance);
+                MakeOff(uid, grav, appearance);
             }
             else
             {
-                MakeOn((uid, grav), appearance);
+                MakeOn(uid, grav, appearance);
             }
         }
 
@@ -262,32 +264,32 @@ namespace Content.Server.Gravity
             component.MaxCharge = maxChargeMultipler * 1;
         }
 
-        private void MakeBroken(Entity<GravityGeneratorComponent> ent, AppearanceComponent? appearance)
+        private void MakeBroken(EntityUid uid, GravityGeneratorComponent component, AppearanceComponent? appearance)
         {
-            _ambientSoundSystem.SetAmbience(ent, false);
+            _ambientSoundSystem.SetAmbience(component.Owner, false);
 
-            _appearance.SetData(ent, GravityGeneratorVisuals.State, GravityGeneratorStatus.Broken);
+            _appearance.SetData(uid, GravityGeneratorVisuals.State, GravityGeneratorStatus.Broken);
         }
 
-        private void MakeUnpowered(Entity<GravityGeneratorComponent> ent, AppearanceComponent? appearance)
+        private void MakeUnpowered(EntityUid uid, GravityGeneratorComponent component, AppearanceComponent? appearance)
         {
-            _ambientSoundSystem.SetAmbience(ent, false);
+            _ambientSoundSystem.SetAmbience(component.Owner, false);
 
-            _appearance.SetData(ent, GravityGeneratorVisuals.State, GravityGeneratorStatus.Unpowered, appearance);
+            _appearance.SetData(uid, GravityGeneratorVisuals.State, GravityGeneratorStatus.Unpowered, appearance);
         }
 
-        private void MakeOff(Entity<GravityGeneratorComponent> ent, AppearanceComponent? appearance)
+        private void MakeOff(EntityUid uid, GravityGeneratorComponent component, AppearanceComponent? appearance)
         {
-            _ambientSoundSystem.SetAmbience(ent, false);
+            _ambientSoundSystem.SetAmbience(component.Owner, false);
 
-            _appearance.SetData(ent, GravityGeneratorVisuals.State, GravityGeneratorStatus.Off, appearance);
+            _appearance.SetData(uid, GravityGeneratorVisuals.State, GravityGeneratorStatus.Off, appearance);
         }
 
-        private void MakeOn(Entity<GravityGeneratorComponent> ent, AppearanceComponent? appearance)
+        private void MakeOn(EntityUid uid, GravityGeneratorComponent component, AppearanceComponent? appearance)
         {
-            _ambientSoundSystem.SetAmbience(ent, true);
+            _ambientSoundSystem.SetAmbience(component.Owner, true);
 
-            _appearance.SetData(ent, GravityGeneratorVisuals.State, GravityGeneratorStatus.On, appearance);
+            _appearance.SetData(uid, GravityGeneratorVisuals.State, GravityGeneratorStatus.On, appearance);
         }
 
         private void OnSwitchGenerator(

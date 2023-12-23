@@ -36,10 +36,7 @@ public sealed class PyroclasticAnomalySystem : EntitySystem
 
     public void IgniteNearby(EntityUid uid, EntityCoordinates coordinates, float severity, float radius)
     {
-        var flammables = new HashSet<Entity<FlammableComponent>>();
-        _lookup.GetEntitiesInRange(coordinates, radius, flammables);
-
-        foreach (var flammable in flammables)
+        foreach (var flammable in _lookup.GetComponentsInRange<FlammableComponent>(coordinates, radius))
         {
             var ent = flammable.Owner;
             var stackAmount = 1 + (int) (severity / 0.15f);

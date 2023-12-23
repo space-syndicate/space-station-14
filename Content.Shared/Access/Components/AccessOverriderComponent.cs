@@ -2,22 +2,22 @@ using Content.Shared.Access.Systems;
 using Content.Shared.Containers.ItemSlots;
 using Robust.Shared.Audio;
 using Robust.Shared.GameStates;
-using Robust.Shared.Prototypes;
 using Robust.Shared.Serialization;
+using Robust.Shared.Serialization.TypeSerializers.Implementations.Custom.Prototype.List;
 
 namespace Content.Shared.Access.Components;
 
-[RegisterComponent, NetworkedComponent, AutoGenerateComponentState]
+[RegisterComponent, NetworkedComponent]
 [Access(typeof(SharedAccessOverriderSystem))]
 public sealed partial class AccessOverriderComponent : Component
 {
     public static string PrivilegedIdCardSlotId = "AccessOverrider-privilegedId";
 
-    [DataField]
+    [DataField("privilegedIdSlot")]
     public ItemSlot PrivilegedIdSlot = new();
 
     [ViewVariables(VVAccess.ReadWrite)]
-    [DataField]
+    [DataField("denialSound")]
     public SoundSpecifier? DenialSound;
 
     public EntityUid TargetAccessReaderId = new();
@@ -33,12 +33,12 @@ public sealed partial class AccessOverriderComponent : Component
         }
     }
 
-    [DataField, AutoNetworkedField]
-    public List<ProtoId<AccessLevelPrototype>> AccessLevels = new();
+    [DataField("accessLevels", customTypeSerializer: typeof(PrototypeIdListSerializer<AccessLevelPrototype>))]
+    public List<string> AccessLevels = new();
 
     [ViewVariables(VVAccess.ReadWrite)]
-    [DataField]
-    public float DoAfter;
+    [DataField("doAfter")]
+    public float DoAfterTime = 0f;
 
     [Serializable, NetSerializable]
     public sealed class AccessOverriderBoundUserInterfaceState : BoundUserInterfaceState

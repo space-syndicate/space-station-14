@@ -29,11 +29,11 @@ public abstract class SharedStrippableSystem : EntitySystem
         if (args.Handled || args.Target != args.User)
             return;
 
-        StartOpeningStripper(args.User, (uid, component));
+        StartOpeningStripper(args.User, component);
         args.Handled = true;
     }
 
-    public virtual void StartOpeningStripper(EntityUid user, Entity<StrippableComponent> component, bool openInCombat = false)
+    public virtual void StartOpeningStripper(EntityUid user, StrippableComponent component, bool openInCombat = false)
     {
 
     }

@@ -35,7 +35,7 @@ public sealed partial class MarkingPoints
 }
 
 [Prototype("markingPoints")]
-public sealed partial class MarkingPointsPrototype : IPrototype
+public sealed class MarkingPointsPrototype : IPrototype
 {
     [IdDataField] public string ID { get; } = default!;
 

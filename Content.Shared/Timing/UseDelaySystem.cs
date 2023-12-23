@@ -1,4 +1,6 @@
+using System.Threading;
 using Content.Shared.Cooldown;
+using Robust.Shared.GameStates;
 using Robust.Shared.Timing;
 using Robust.Shared.Utility;
 
@@ -14,7 +16,8 @@ public sealed class UseDelaySystem : EntitySystem
     {
         base.Initialize();
 
-        SubscribeLocalEvent<UseDelayComponent, AfterAutoHandleStateEvent>(OnHandleState);
+        SubscribeLocalEvent<UseDelayComponent, ComponentGetState>(OnGetState);
+        SubscribeLocalEvent<UseDelayComponent, ComponentHandleState>(OnHandleState);
 
         SubscribeLocalEvent<UseDelayComponent, EntityPausedEvent>(OnPaused);
         SubscribeLocalEvent<UseDelayComponent, EntityUnpausedEvent>(OnUnpaused);
@@ -42,12 +45,24 @@ public sealed class UseDelaySystem : EntitySystem
         _activeDelays.Add(component);
     }
 
-    private void OnHandleState(EntityUid uid, UseDelayComponent component, ref AfterAutoHandleStateEvent args)
+    private void OnHandleState(EntityUid uid, UseDelayComponent component, ref ComponentHandleState args)
     {
+        if (args.Current is not UseDelayComponentState state)
+            return;
+
+        component.LastUseTime = state.LastUseTime;
+        component.Delay = state.Delay;
+        component.DelayEndTime = state.DelayEndTime;
+
         if (component.DelayEndTime == null)
             _activeDelays.Remove(component);
         else
             _activeDelays.Add(component);
+    }
+
+    private void OnGetState(EntityUid uid, UseDelayComponent component, ref ComponentGetState args)
+    {
+        args.State = new UseDelayComponentState(component.LastUseTime, component.Delay, component.DelayEndTime);
     }
 
     public override void Update(float frameTime)

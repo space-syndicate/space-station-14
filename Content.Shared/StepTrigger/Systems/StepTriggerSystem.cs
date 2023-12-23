@@ -1,5 +1,6 @@
 using Content.Shared.Gravity;
 using Content.Shared.StepTrigger.Components;
+using Robust.Shared.GameStates;
 using Robust.Shared.Map.Components;
 using Robust.Shared.Physics;
 using Robust.Shared.Physics.Components;
@@ -15,7 +16,8 @@ public sealed class StepTriggerSystem : EntitySystem
     public override void Initialize()
     {
         UpdatesOutsidePrediction = true;
-        SubscribeLocalEvent<StepTriggerComponent, AfterAutoHandleStateEvent>(TriggerHandleState);
+        SubscribeLocalEvent<StepTriggerComponent, ComponentGetState>(TriggerGetState);
+        SubscribeLocalEvent<StepTriggerComponent, ComponentHandleState>(TriggerHandleState);
 
         SubscribeLocalEvent<StepTriggerComponent, StartCollideEvent>(OnStartCollide);
         SubscribeLocalEvent<StepTriggerComponent, EndCollideEvent>(OnEndCollide);
@@ -101,7 +103,7 @@ public sealed class StepTriggerSystem : EntitySystem
         // this is hard to explain
         var intersect = Box2.Area(otherAabb.Intersect(ourAabb));
         var ratio = Math.Max(intersect / Box2.Area(otherAabb), intersect / Box2.Area(ourAabb));
-        if (otherPhysics.LinearVelocity.Length() < component.RequiredTriggeredSpeed
+        if (otherPhysics.LinearVelocity.Length() < component.RequiredTriggerSpeed
             || component.CurrentlySteppedOn.Contains(otherUid)
             || ratio < component.IntersectRatio
             || !CanTrigger(uid, otherUid, component))
@@ -169,8 +171,24 @@ public sealed class StepTriggerSystem : EntitySystem
         }
     }
 
-    private void TriggerHandleState(EntityUid uid, StepTriggerComponent component, ref AfterAutoHandleStateEvent args)
+
+    private void TriggerHandleState(EntityUid uid, StepTriggerComponent component, ref ComponentHandleState args)
     {
+        if (args.Current is not StepTriggerComponentState state)
+            return;
+
+        component.RequiredTriggerSpeed = state.RequiredTriggerSpeed;
+        component.IntersectRatio = state.IntersectRatio;
+        component.Active = state.Active;
+        var stepped = EnsureEntitySet<StepTriggerComponent>(state.CurrentlySteppedOn, uid);
+        var colliding = EnsureEntitySet<StepTriggerComponent>(state.CurrentlySteppedOn, uid);
+
+        component.CurrentlySteppedOn.Clear();
+        component.CurrentlySteppedOn.UnionWith(stepped);
+
+        component.Colliding.Clear();
+        component.Colliding.UnionWith(colliding);
+
         if (component.Colliding.Count > 0)
         {
             EnsureComp<StepTriggerActiveComponent>(uid);
@@ -179,6 +197,16 @@ public sealed class StepTriggerSystem : EntitySystem
         {
             RemCompDeferred<StepTriggerActiveComponent>(uid);
         }
+    }
+
+    private void TriggerGetState(EntityUid uid, StepTriggerComponent component, ref ComponentGetState args)
+    {
+        args.State = new StepTriggerComponentState(
+            component.IntersectRatio,
+            GetNetEntitySet(component.CurrentlySteppedOn),
+            GetNetEntitySet(component.Colliding),
+            component.RequiredTriggerSpeed,
+            component.Active);
     }
 
     public void SetIntersectRatio(EntityUid uid, float ratio, StepTriggerComponent? component = null)
@@ -198,10 +226,10 @@ public sealed class StepTriggerSystem : EntitySystem
         if (!Resolve(uid, ref component))
             return;
 
-        if (MathHelper.CloseToPercent(component.RequiredTriggeredSpeed, speed))
+        if (MathHelper.CloseToPercent(component.RequiredTriggerSpeed, speed))
             return;
 
-        component.RequiredTriggeredSpeed = speed;
+        component.RequiredTriggerSpeed = speed;
         Dirty(uid, component);
     }
 

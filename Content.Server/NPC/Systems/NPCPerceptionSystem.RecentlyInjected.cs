@@ -10,15 +10,14 @@ public sealed partial class NPCPerceptionSystem
     /// <param name="frameTime"></param>
     private void UpdateRecentlyInjected(float frameTime)
     {
-        var query = EntityQueryEnumerator<NPCRecentlyInjectedComponent>();
-        while (query.MoveNext(out var uid, out var entity))
+        foreach (var entity in EntityQuery<NPCRecentlyInjectedComponent>())
         {
             entity.Accumulator += frameTime;
             if (entity.Accumulator < entity.RemoveTime.TotalSeconds)
                 continue;
             entity.Accumulator = 0;
 
-            RemComp<NPCRecentlyInjectedComponent>(uid);
+            RemComp<NPCRecentlyInjectedComponent>(entity.Owner);
         }
     }
 }

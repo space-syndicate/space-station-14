@@ -3,7 +3,7 @@ using Robust.Shared.Prototypes;
 namespace Content.Shared.Procedural;
 
 [Prototype("dungeonPreset")]
-public sealed partial class DungeonPresetPrototype : IPrototype
+public sealed class DungeonPresetPrototype : IPrototype
 {
     [IdDataField] public string ID { get; } = default!;
 

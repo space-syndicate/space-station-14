@@ -17,21 +17,21 @@ public sealed partial class TechnologyDatabaseComponent : Component
     [DataField("mainDiscipline", customTypeSerializer: typeof(PrototypeIdSerializer<TechDisciplinePrototype>))]
     public string? MainDiscipline;
 
-    [AutoNetworkedField]
+    [AutoNetworkedField(true)]
     [DataField("currentTechnologyCards")]
     public List<string> CurrentTechnologyCards = new();
 
     /// <summary>
     /// Which research disciplines are able to be unlocked
     /// </summary>
-    [AutoNetworkedField]
+    [AutoNetworkedField(true)]
     [DataField("supportedDisciplines", customTypeSerializer: typeof(PrototypeIdListSerializer<TechDisciplinePrototype>))]
     public List<string> SupportedDisciplines = new();
 
     /// <summary>
     /// The ids of all the technologies which have been unlocked.
     /// </summary>
-    [AutoNetworkedField]
+    [AutoNetworkedField(true)]
     [DataField("unlockedTechnologies", customTypeSerializer: typeof(PrototypeIdListSerializer<TechnologyPrototype>))]
     public List<string> UnlockedTechnologies = new();
 
@@ -40,7 +40,7 @@ public sealed partial class TechnologyDatabaseComponent : Component
     /// This is maintained alongside the TechnologyIds
     /// </summary>
     /// todo: if you unlock all the recipes in a tech, it doesn't count as unlocking the tech. sadge
-    [AutoNetworkedField]
+    [AutoNetworkedField(true)]
     [DataField("unlockedRecipes", customTypeSerializer: typeof(PrototypeIdListSerializer<LatheRecipePrototype>))]
     public List<string> UnlockedRecipes = new();
 }

@@ -6,26 +6,31 @@ using Robust.Client.UserInterface.XAML;
 using Robust.Shared;
 using Robust.Shared.Configuration;
 
-namespace Content.Client.MainMenu.UI;
-
-[GenerateTypedNameReferences]
-public sealed partial class MainMenuControl : Control
+namespace Content.Client.MainMenu.UI
 {
-    public MainMenuControl(IResourceCache resCache, IConfigurationManager configMan)
-    {
-        RobustXamlLoader.Load(this);
+    [GenerateTypedNameReferences]
+    public sealed partial class MainMenuControl : Control
+        {
+            public MainMenuControl(IResourceCache resCache, IConfigurationManager configMan)
+            {
+                RobustXamlLoader.Load(this);
 
-        LayoutContainer.SetAnchorPreset(this, LayoutContainer.LayoutPreset.Wide);
+                LayoutContainer.SetAnchorPreset(this, LayoutContainer.LayoutPreset.Wide);
 
-        LayoutContainer.SetAnchorPreset(VBox, LayoutContainer.LayoutPreset.TopRight);
-        LayoutContainer.SetMarginRight(VBox, -25);
-        LayoutContainer.SetMarginTop(VBox, 30);
-        LayoutContainer.SetGrowHorizontal(VBox, LayoutContainer.GrowDirection.Begin);
+                LayoutContainer.SetAnchorPreset(VBox, LayoutContainer.LayoutPreset.TopRight);
+                LayoutContainer.SetMarginRight(VBox, -25);
+                LayoutContainer.SetMarginTop(VBox, 30);
+                LayoutContainer.SetGrowHorizontal(VBox, LayoutContainer.GrowDirection.Begin);
 
-        var logoTexture = resCache.GetResource<TextureResource>("/Textures/Logo/logo.png");
-        Logo.Texture = logoTexture;
+                var logoTexture = resCache.GetResource<TextureResource>("/Textures/Logo/logo.png");
+                Logo.Texture = logoTexture;
 
-        var currentUserName = configMan.GetCVar(CVars.PlayerName);
-        UsernameBox.Text = currentUserName;
-    }
+                var currentUserName = configMan.GetCVar(CVars.PlayerName);
+                UsernameBox.Text = currentUserName;
+
+                LayoutContainer.SetAnchorPreset(VersionLabel, LayoutContainer.LayoutPreset.BottomRight);
+                LayoutContainer.SetGrowHorizontal(VersionLabel, LayoutContainer.GrowDirection.Begin);
+                LayoutContainer.SetGrowVertical(VersionLabel, LayoutContainer.GrowDirection.Begin);
+            }
+        }
 }

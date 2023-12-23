@@ -13,7 +13,7 @@
     sprite: Objects/Consumable/Food/condiments.rsi
   - type: Icon
     sprite: Objects/Consumable/Food/condiments.rsi
-  - type: TrashOnSolutionEmpty
+  - type: TrashOnEmpty
     solution: food
   - type: SpaceGarbage
   - type: StaticPrice

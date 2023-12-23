@@ -5,6 +5,7 @@ using Content.Shared.Hands.EntitySystems;
 using Content.Shared.Interaction;
 using Content.Shared.Storage.Components;
 using Robust.Shared.Containers;
+using Robust.Shared.GameStates;
 using Robust.Shared.Network;
 using Robust.Shared.Timing;
 
@@ -26,11 +27,28 @@ public sealed class BinSystem : EntitySystem
     /// <inheritdoc/>
     public override void Initialize()
     {
+        SubscribeLocalEvent<BinComponent, ComponentGetState>(OnGetState);
+        SubscribeLocalEvent<BinComponent, ComponentHandleState>(OnHandleState);
         SubscribeLocalEvent<BinComponent, ComponentStartup>(OnStartup);
         SubscribeLocalEvent<BinComponent, MapInitEvent>(OnMapInit);
         SubscribeLocalEvent<BinComponent, EntRemovedFromContainerMessage>(OnEntRemoved);
         SubscribeLocalEvent<BinComponent, InteractHandEvent>(OnInteractHand);
         SubscribeLocalEvent<BinComponent, AfterInteractUsingEvent>(OnAfterInteractUsing);
+    }
+
+    private void OnGetState(EntityUid uid, BinComponent component, ref ComponentGetState args)
+    {
+        args.State = new BinComponentState(GetNetEntityList(component.Items), component.Whitelist, component.MaxItems);
+    }
+
+    private void OnHandleState(EntityUid uid, BinComponent component, ref ComponentHandleState args)
+    {
+        if (args.Current is not BinComponentState state)
+            return;
+
+        component.Items = EnsureEntityList<BinComponent>(state.Items, uid);
+        component.Whitelist = state.Whitelist;
+        component.MaxItems = state.MaxItems;
     }
 
     private void OnStartup(EntityUid uid, BinComponent component, ComponentStartup args)

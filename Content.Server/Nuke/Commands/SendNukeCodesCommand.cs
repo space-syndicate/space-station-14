@@ -1,5 +1,7 @@
-﻿using Content.Server.Administration;
+﻿using System.Linq;
+using Content.Server.Administration;
 using Content.Server.Station.Components;
+using Content.Server.Station.Systems;
 using Content.Shared.Administration;
 using JetBrains.Annotations;
 using Robust.Shared.Console;
@@ -40,14 +42,14 @@ namespace Content.Server.Nuke.Commands
                 return CompletionResult.Empty;
             }
 
-            var stations = new List<CompletionOption>();
-            var query = _entityManager.EntityQueryEnumerator<StationDataComponent>();
-            while (query.MoveNext(out var uid, out var stationData))
-            {
-                var meta = _entityManager.GetComponent<MetaDataComponent>(uid);
+            var stations = _entityManager
+                .EntityQuery<StationDataComponent>()
+                .Select(stationData =>
+                {
+                    var meta = _entityManager.GetComponent<MetaDataComponent>(stationData.Owner);
 
-                stations.Add(new CompletionOption(uid.ToString(), meta.EntityName));
-            }
+                    return new CompletionOption(stationData.Owner.ToString(), meta.EntityName);
+                });
 
             return CompletionResult.FromHintOptions(stations, null);
         }

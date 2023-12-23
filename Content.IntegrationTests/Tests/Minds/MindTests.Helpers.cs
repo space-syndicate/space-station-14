@@ -1,17 +1,14 @@
 ﻿using System.Linq;
 using Content.IntegrationTests.Pair;
-using Content.Server.Mind;
 using Content.Server.Players;
 using Content.Shared.Ghost;
 using Content.Shared.Mind;
-using Content.Shared.Players;
 using Robust.Server.GameObjects;
 using Robust.Server.Player;
 using Robust.Shared.Enums;
 using Robust.Shared.GameObjects;
 using Robust.Shared.Map;
 using Robust.Shared.Network;
-using Robust.Shared.Player;
 
 namespace Content.IntegrationTests.Tests.Minds;
 
@@ -39,7 +36,7 @@ public sealed partial class MindTests
         var playerMan = pair.Server.ResolveDependency<IPlayerManager>();
         var mindSys = entMan.System<SharedMindSystem>();
 
-        var player = playerMan.Sessions.Single();
+        var player = playerMan.ServerSessions.Single();
 
         EntityUid entity = default;
         EntityUid mindId = default!;
@@ -74,7 +71,7 @@ public sealed partial class MindTests
         EntityUid mindId = default!;
         MindComponent mind = default!;
 
-        var player = playerMan.Sessions.Single();
+        var player = playerMan.ServerSessions.Single();
         await pair.Server.WaitAssertion(() =>
         {
             var oldUid = player.AttachedEntity;
@@ -119,25 +116,20 @@ public sealed partial class MindTests
     /// </summary>
     private static (EntityUid Id, MindComponent Comp) GetMind(Pair.TestPair pair)
     {
-        var playerMan = pair.Server.PlayerMan;
-        var entMan = pair.Server.EntMan;
-        var player = playerMan.Sessions.SingleOrDefault();
+        var playerMan = pair.Server.ResolveDependency<IPlayerManager>();
+        var entMan = pair.Server.ResolveDependency<IEntityManager>();
+        var player = playerMan.ServerSessions.SingleOrDefault();
         Assert.That(player, Is.Not.Null);
 
         var mindId = player.ContentData()!.Mind!.Value;
         Assert.That(mindId, Is.Not.EqualTo(default(EntityUid)));
         var mind = entMan.GetComponent<MindComponent>(mindId);
-        ActorComponent actor = default!;
         Assert.Multiple(() =>
         {
-            Assert.That(player, Is.EqualTo(mind.Session), "Player session does not match mind session");
-            Assert.That(entMan.System<MindSystem>().GetMind(player.UserId), Is.EqualTo(mindId));
             Assert.That(player.AttachedEntity, Is.EqualTo(mind.CurrentEntity), "Player is not attached to the mind's current entity.");
             Assert.That(entMan.EntityExists(mind.OwnedEntity), "The mind's current entity does not exist");
             Assert.That(mind.VisitingEntity == null || entMan.EntityExists(mind.VisitingEntity), "The minds visited entity does not exist.");
-            Assert.That(entMan.TryGetComponent(mind.CurrentEntity, out actor));
         });
-        Assert.That(actor.PlayerSession, Is.EqualTo(mind.Session));
 
         return (mindId, mind);
     }
@@ -147,7 +139,7 @@ public sealed partial class MindTests
         var netManager = pair.Client.ResolveDependency<IClientNetManager>();
         var playerMan = pair.Server.ResolveDependency<IPlayerManager>();
         var entMan = pair.Server.ResolveDependency<IEntityManager>();
-        var player = playerMan.Sessions.Single();
+        var player = playerMan.ServerSessions.Single();
         var mindId = player.ContentData()!.Mind!.Value;
         var mind = entMan.GetComponent<MindComponent>(mindId);
 
@@ -169,21 +161,21 @@ public sealed partial class MindTests
     {
         var netManager = pair.Client.ResolveDependency<IClientNetManager>();
         var playerMan = pair.Server.ResolveDependency<IPlayerManager>();
-        Assert.That(!playerMan.Sessions.Any());
+        Assert.That(!playerMan.ServerSessions.Any());
 
         await Task.WhenAll(pair.Client.WaitIdleAsync(), pair.Client.WaitIdleAsync());
         pair.Client.SetConnectTarget(pair.Server);
         await pair.Client.WaitPost(() => netManager.ClientConnect(null!, 0, username));
         await pair.RunTicksSync(5);
 
-        var player = playerMan.Sessions.Single();
+        var player = playerMan.ServerSessions.Single();
         Assert.That(player.Status, Is.EqualTo(SessionStatus.InGame));
     }
 
-    private static async Task<ICommonSession> DisconnectReconnect(Pair.TestPair pair)
+    private static async Task<IPlayerSession> DisconnectReconnect(Pair.TestPair pair)
     {
         var playerMan = pair.Server.ResolveDependency<IPlayerManager>();
-        var player = playerMan.Sessions.Single();
+        var player = playerMan.ServerSessions.Single();
         var name = player.Name;
         var id = player.UserId;
 
@@ -191,7 +183,7 @@ public sealed partial class MindTests
         await Connect(pair, name);
 
         // Session has changed
-        var newSession = playerMan.Sessions.Single();
+        var newSession = playerMan.ServerSessions.Single();
         Assert.Multiple(() =>
         {
             Assert.That(newSession, Is.Not.EqualTo(player));

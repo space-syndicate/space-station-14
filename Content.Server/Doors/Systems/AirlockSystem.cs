@@ -6,9 +6,10 @@ using Content.Shared.Doors;
 using Content.Shared.Doors.Components;
 using Content.Shared.Doors.Systems;
 using Content.Shared.Interaction;
+using Robust.Server.GameObjects;
 using Content.Shared.Wires;
 using Content.Shared.Prying.Components;
-using Robust.Shared.Player;
+using Robust.Shared.Prototypes;
 
 namespace Content.Server.Doors.Systems;
 
@@ -17,6 +18,7 @@ public sealed class AirlockSystem : SharedAirlockSystem
     [Dependency] private readonly WiresSystem _wiresSystem = default!;
     [Dependency] private readonly PowerReceiverSystem _power = default!;
     [Dependency] private readonly DoorBoltSystem _bolts = default!;
+    [Dependency] private readonly IPrototypeManager _prototypeManager = default!;
 
     public override void Initialize()
     {
@@ -152,12 +154,10 @@ public sealed class AirlockSystem : SharedAirlockSystem
     {
         if (TryComp<WiresPanelComponent>(uid, out var panel) &&
             panel.Open &&
+            _prototypeManager.TryIndex<WiresPanelSecurityLevelPrototype>(panel.CurrentSecurityLevelID, out var securityLevelPrototype) &&
+            securityLevelPrototype.WiresAccessible &&
             TryComp<ActorComponent>(args.User, out var actor))
         {
-            if (TryComp<WiresPanelSecurityComponent>(uid, out var wiresPanelSecurity) &&
-                !wiresPanelSecurity.WiresAccessible)
-                return;
-
             _wiresSystem.OpenUserInterface(uid, actor.PlayerSession);
             args.Handled = true;
             return;
@@ -178,16 +178,11 @@ public sealed class AirlockSystem : SharedAirlockSystem
 
     private void OnBeforePry(EntityUid uid, AirlockComponent component, ref BeforePryEvent args)
     {
-        if (args.Cancelled)
-            return;
-
-        if (!this.IsPowered(uid, EntityManager) || args.PryPowered)
-            return;
-
-        args.Message = "airlock-component-cannot-pry-is-powered-message";
-
-        args.Cancelled = true;
-
+        if (this.IsPowered(uid, EntityManager) && !args.PryPowered)
+        {
+            Popup.PopupClient(Loc.GetString("airlock-component-cannot-pry-is-powered-message"), uid, args.User);
+            args.Cancelled = true;
+        }
     }
 
     public bool CanChangeState(EntityUid uid, AirlockComponent component)

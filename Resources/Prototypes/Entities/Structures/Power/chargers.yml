@@ -1,54 +1,57 @@
 - type: entity
-  abstract: true
-  parent: [BaseMachinePowered, ConstructibleMachine]
-  id: BaseRecharger
+  name: cell recharger
+  id: PowerCellRecharger
+  parent: ConstructibleMachine
   placement:
     mode: SnapgridCenter
   components:
   - type: Transform
     anchored: true
-    noRot: false
   - type: Sprite
-    snapCardinals: true
-  - type: Appearance
-  - type: Charger
-    slotId: charger_slot
-  - type: Anchorable
-    delay: 1
-  - type: Destructible
-    thresholds:
-    - trigger:
-        !type:DamageTrigger
-        damage: 80
-      behaviors:
-      - !type:DoActsBehavior
-        acts: ["Destruction"]
-    - trigger:
-        !type:DamageTrigger
-        damage: 40
-      behaviors:
-      - !type:EmptyAllContainersBehaviour
-      - !type:DoActsBehavior
-        acts: ["Destruction"]
-      - !type:PlaySoundBehavior
-        sound:
-          path: /Audio/Effects/metalbreak.ogg
-  - type: StaticPrice
-    price: 25
-
-- type: entity
-  abstract: true
-  parent: BaseRecharger
-  id: BaseItemRecharger
-  components:
-  - type: Sprite
+    sprite: Structures/Power/cell_recharger.rsi
     drawdepth: SmallObjects
+    snapCardinals: true
     layers:
     - map: ["enum.PowerChargerVisualLayers.Base"]
       state: "empty"
     - map: ["enum.PowerChargerVisualLayers.Light"]
       state: "light-off"
       shader: "unshaded"
+  - type: Charger
+    slotId: charger_slot
+  - type: ApcPowerReceiver
+  - type: ExtensionCableReceiver
+  - type: Machine
+    board: CellRechargerCircuitboard
+  - type: Appearance
+  - type: PowerChargerVisuals
+  - type: Anchorable
+  - type: Pullable
+  - type: Clickable
+  - type: InteractionOutline
+  - type: Damageable
+    damageContainer: Inorganic
+    damageModifierSet: Metallic
+  - type: Destructible
+    thresholds:
+      - trigger:
+          !type:DamageTrigger
+          damage: 80
+        behaviors:
+          - !type:DoActsBehavior
+            acts: [ "Destruction" ]
+      - trigger:
+          !type:DamageTrigger
+          damage: 40
+        behaviors:
+          - !type:EmptyAllContainersBehaviour
+          - !type:DoActsBehavior
+            acts: [ "Destruction" ]
+          - !type:PlaySoundBehavior
+            sound:
+              path: /Audio/Effects/metalbreak.ogg
+  - type: Physics
+    bodyType: Static
   - type: Fixtures
     fixtures:
       fix1:
@@ -57,26 +60,7 @@
           bounds: "-0.10,-0.10,0.10,0.10"
         density: 500
         mask:
-        - TabletopMachineMask
-  - type: PowerChargerVisuals
-  - type: ContainerContainer
-    containers:
-      charger_slot: !type:ContainerSlot
-      machine_board: !type:Container
-      machine_parts: !type:Container
-
-- type: entity
-  parent: BaseItemRecharger
-  id: PowerCellRecharger
-  name: cell recharger
-  components:
-  - type: Sprite
-    sprite: Structures/Power/cell_recharger.rsi
-  - type: Machine
-    board: CellRechargerCircuitboard
-  - type: PowerCellSlot
-    cellSlotId: charger_slot
-    # fitsInCharger is true i dont think this will ever affect anything negatively but it lets it function
+          - TabletopMachineMask
   - type: ItemSlots
     slots:
       charger_slot:
@@ -84,21 +68,26 @@
         name: Power cell
         whitelist:
           components:
-          - PowerCell
-        blacklist:
-          tags:
-          - PotatoBattery
+            - PowerCell
+  - type: ContainerContainer
+    containers:
+      charger_slot: !type:ContainerSlot
+      machine_board: !type:Container
+      machine_parts: !type:Container
+  - type: StaticPrice
+    price: 15
 
 - type: entity
-  parent: BaseItemRecharger
-  id: WeaponCapacitorRecharger
   name: recharger
+  id: WeaponCapacitorRecharger
+  parent: PowerCellRecharger
   components:
   - type: Sprite
     sprite: Structures/Power/recharger.rsi
   - type: Machine
     board: WeaponCapacitorRechargerCircuitboard
-  # no powercellslot since stun baton etc arent powercells
+  - type: Charger
+    slotId: charger_slot
   - type: ItemSlots
     slots:
       charger_slot:
@@ -108,14 +97,19 @@
           - HitscanBatteryAmmoProvider
           - ProjectileBatteryAmmoProvider
           - Stunbaton
+  - type: StaticPrice
+    price: 15
 
 - type: entity
-  parent: BaseItemRecharger
-  id: WallWeaponCapacitorRecharger
   name: wall recharger
+  id: WallWeaponCapacitorRecharger
+  placement:
+    mode: SnapgridCenter
   components:
   - type: Sprite
     sprite: Structures/Power/wall_recharger.rsi
+    drawdepth: SmallObjects
+    snapCardinals: true
     layers:
     - map: ["enum.PowerChargerVisualLayers.Base"]
       state: "empty"
@@ -125,6 +119,49 @@
   - type: WallMount
   - type: Charger
     chargeRate: 25
+    slotId: charger_slot
+  - type: Transform
+    anchored: true
+  - type: ApcPowerReceiver
+  - type: ExtensionCableReceiver
+  - type: Appearance
+  - type: PowerChargerVisuals
+  - type: Anchorable
+  - type: Pullable
+  - type: Clickable
+  - type: InteractionOutline
+  - type: Damageable
+    damageContainer: Inorganic
+    damageModifierSet: Metallic
+  - type: Destructible
+    thresholds:
+      - trigger:
+          !type:DamageTrigger
+          damage: 80
+        behaviors:
+          - !type:DoActsBehavior
+            acts: [ "Destruction" ]
+      - trigger:
+          !type:DamageTrigger
+          damage: 40
+        behaviors:
+          - !type:EmptyAllContainersBehaviour
+          - !type:DoActsBehavior
+            acts: [ "Destruction" ]
+          - !type:PlaySoundBehavior
+            sound:
+              path: /Audio/Effects/metalbreak.ogg
+  - type: Physics
+    bodyType: Static
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.10,-0.10,0.10,0.10"
+        density: 500
+        mask:
+          - TabletopMachineMask
   - type: ItemSlots
     slots:
       charger_slot:
@@ -134,15 +171,23 @@
           - HitscanBatteryAmmoProvider
           - ProjectileBatteryAmmoProvider
           - Stunbaton
+  - type: ContainerContainer
+    containers:
+      charger_slot: !type:ContainerSlot
+      machine_board: !type:Container
+      machine_parts: !type:Container
 
 - type: entity
-  parent: BaseRecharger
   id: BorgCharger
+  parent: [ BaseMachinePowered, ConstructibleMachine ]
   name: cyborg recharging station
   description: A stationary charger for various robotic and cyborg entities. Surprisingly spacious.
+  placement:
+    mode: SnapgridCenter
   components:
   - type: Sprite
     sprite: Structures/Power/borg_charger.rsi
+    snapCardinals: true
     layers:
       - state: borgcharger-u1
         map: ["base"]
@@ -168,11 +213,12 @@
     - machine_board
     - entity_storage
   - type: Wires
-    layoutId: borgcharger
+    LayoutId: borgcharger
   - type: WiresPanel
   - type: WiresVisuals
   - type: Machine
     board: BorgChargerCircuitboard
+  - type: Appearance
   - type: GenericVisualizer
     visuals:
       enum.StorageVisuals.Open:
@@ -202,6 +248,24 @@
           Charged:
             visible: true
             state: borgcharger1
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 80
+      behaviors:
+        - !type:DoActsBehavior
+          acts: [ "Destruction" ]
+    - trigger:
+        !type:DamageTrigger
+        damage: 40
+      behaviors:
+        - !type:EmptyAllContainersBehaviour
+        - !type:DoActsBehavior
+          acts: [ "Destruction" ]
+        - !type:PlaySoundBehavior
+          sound:
+            path: /Audio/Effects/metalbreak.ogg
   - type: EntityStorage
     capacity: 1
     whitelist:
@@ -212,3 +276,5 @@
       entity_storage: !type:Container
       machine_board: !type:Container
       machine_parts: !type:Container
+  - type: StaticPrice
+    price: 15

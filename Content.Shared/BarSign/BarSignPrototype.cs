@@ -3,7 +3,7 @@ using Robust.Shared.Prototypes;
 namespace Content.Shared.BarSign
 {
     [Prototype("barSign")]
-    public sealed partial class BarSignPrototype : IPrototype
+    public sealed class BarSignPrototype : IPrototype
     {
         [ViewVariables]
         [IdDataField]

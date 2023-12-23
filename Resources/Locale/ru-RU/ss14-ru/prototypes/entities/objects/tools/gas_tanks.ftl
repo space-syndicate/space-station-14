@@ -1,7 +1,5 @@
 ent-GasTankBase = { ent-BaseItem }
     .desc = { ent-BaseItem.desc }
-ent-GasTankRoundBase = { ent-GasTankBase }
-    .desc = { ent-GasTankBase.desc }
 ent-OxygenTank = кислородный баллон
     .desc = Стандартный цилиндрический газовый баллон для кислорода.
 ent-YellowOxygenTank = кислородный баллон

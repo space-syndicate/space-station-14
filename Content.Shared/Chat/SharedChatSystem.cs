@@ -133,7 +133,6 @@ public abstract class SharedChatSystem : EntitySystem
         }
 
         var channelKey = input[1];
-        channelKey = char.ToLower(channelKey);
         output = SanitizeMessageCapital(input[2..].TrimStart());
 
         if (channelKey == DefaultChannelKey)

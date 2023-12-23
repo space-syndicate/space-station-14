@@ -10,8 +10,6 @@
   - type: Sprite
     sprite: Objects/Tools/emag.rsi
     state: icon
-  - type: Item
-    sprite: Objects/Tools/emag.rsi
 
 - type: entity
   parent: BaseItem
@@ -24,5 +22,3 @@
   - type: Sprite
     sprite: Objects/Tools/emag.rsi
     state: icon
-  - type: Item
-    sprite: Objects/Tools/emag.rsi

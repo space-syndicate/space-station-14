@@ -48,9 +48,6 @@ public sealed partial class HandheldLightComponent : Component
     [DataField("toggleActionEntity")]
     public EntityUid? ToggleActionEntity;
 
-    [DataField]
-    public EntityUid? SelfToggleActionEntity;
-
     public const int StatusLevels = 6;
 
     /// <summary>

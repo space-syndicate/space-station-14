@@ -20,7 +20,6 @@
       - VendingMachineRestockRobustSoftdrinks
       - VendingMachineRestockHotDrinks
       - VendingMachineRestockHappyHonk
-      - VendingMachineRestockCondimentStation
 
 - type: entity
   id: SpawnVendingMachineRestockFood
@@ -42,7 +41,6 @@
       - VendingMachineRestockDonut
       - VendingMachineRestockGetmoreChocolateCorp
       - VendingMachineRestockHappyHonk
-      - VendingMachineRestockCondimentStation
 
 - type: entity
   id: SpawnVendingMachineRestockDrink

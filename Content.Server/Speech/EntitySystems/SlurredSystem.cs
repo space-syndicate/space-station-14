@@ -74,8 +74,7 @@ public sealed class SlurredSystem : SharedSlurredSystem
                     // Corvax-Localization Start
                     'о' => "а",
                     'к' => "кх",
-                    'щ' => "шч",
-                    'ц' => "тс",
+                    'ш' => "шч",
                     // Corvax-Localization End
                     _ => $"{character}",
                 };

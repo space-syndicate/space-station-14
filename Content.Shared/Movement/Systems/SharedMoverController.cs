@@ -1,12 +1,8 @@
-using System.Diagnostics.CodeAnalysis;
-using System.Numerics;
-using Content.Shared.Bed.Sleep;
 using Content.Shared.CCVar;
 using Content.Shared.Friction;
 using Content.Shared.Gravity;
 using Content.Shared.Inventory;
 using Content.Shared.Maps;
-using Content.Shared.Mobs.Systems;
 using Content.Shared.Movement.Components;
 using Content.Shared.Movement.Events;
 using Content.Shared.Pulling.Components;
@@ -16,11 +12,15 @@ using Robust.Shared.Configuration;
 using Robust.Shared.Containers;
 using Robust.Shared.Map;
 using Robust.Shared.Physics;
-using Robust.Shared.Physics.Components;
 using Robust.Shared.Physics.Controllers;
-using Robust.Shared.Physics.Systems;
 using Robust.Shared.Timing;
 using Robust.Shared.Utility;
+using System.Diagnostics.CodeAnalysis;
+using System.Numerics;
+using Content.Shared.Mobs.Systems;
+using Robust.Shared.Physics.Components;
+using Robust.Shared.Physics.Systems;
+using Content.Shared.Bed.Sleep;
 
 namespace Content.Shared.Movement.Systems
 {
@@ -88,7 +88,9 @@ namespace Content.Shared.Movement.Systems
             NoRotateQuery = GetEntityQuery<NoRotateOnMoveComponent>();
             CanMoveInAirQuery = GetEntityQuery<CanMoveInAirComponent>();
 
+            InitializeFootsteps();
             InitializeInput();
+            InitializeMob();
             InitializeRelay();
             _configManager.OnValueChanged(CCVars.RelativeMovement, SetRelativeMovement, true);
             _configManager.OnValueChanged(CCVars.StopSpeed, SetStopSpeed, true);
@@ -438,14 +440,14 @@ namespace Content.Shared.Movement.Systems
 
             if (TryComp<FootstepModifierComponent>(uid, out var moverModifier))
             {
-                sound = moverModifier.FootstepSoundCollection;
+                sound = moverModifier.Sound;
                 return true;
             }
 
             if (_inventory.TryGetSlotEntity(uid, "shoes", out var shoes) &&
                 TryComp<FootstepModifierComponent>(shoes, out var modifier))
             {
-                sound = modifier.FootstepSoundCollection;
+                sound = modifier.Sound;
                 return true;
             }
 
@@ -466,7 +468,7 @@ namespace Content.Shared.Movement.Systems
             {
                 if (TryComp<FootstepModifierComponent>(xform.MapUid, out var modifier))
                 {
-                    sound = modifier.FootstepSoundCollection;
+                    sound = modifier.Sound;
                     return true;
                 }
 
@@ -492,7 +494,7 @@ namespace Content.Shared.Movement.Systems
 
                 if (TryComp<FootstepModifierComponent>(maybeFootstep, out var footstep))
                 {
-                    sound = footstep.FootstepSoundCollection;
+                    sound = footstep.Sound;
                     return true;
                 }
             }

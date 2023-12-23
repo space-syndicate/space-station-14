@@ -76,13 +76,6 @@
   - type: TraitorRule
 
 - type: entity
-  id: Revolutionary
-  parent: BaseGameRule
-  noSpawn: true
-  components:
-  - type: RevolutionaryRule
-
-- type: entity
   id: Sandbox
   parent: BaseGameRule
   noSpawn: true

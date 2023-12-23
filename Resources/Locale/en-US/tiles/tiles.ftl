@@ -110,4 +110,3 @@ tiles-wood3 = wood broken floor
 tiles-hull = exterior hull plating
 tiles-hull-reinforced = exterior reinforced hull plating
 tiles-web = web tile
-tiles-chromite = chromite

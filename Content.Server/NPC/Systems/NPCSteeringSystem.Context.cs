@@ -10,7 +10,6 @@ using Content.Shared.NPC;
 using Content.Shared.Physics;
 using Robust.Shared.Map;
 using Robust.Shared.Physics.Components;
-using ClimbingComponent = Content.Shared.Climbing.Components.ClimbingComponent;
 
 namespace Content.Server.NPC.Systems;
 

@@ -14,10 +14,9 @@
     slots:
     - belt
   - type: Item
-    size: Ginormous
+    size: 176
   - type: Storage
-    maxSlots: 10
-    maxItemSize: Normal
+    capacity: 175
     quickInsert: true
     areaInsert: true
     whitelist:

@@ -5,6 +5,7 @@ using System.Numerics;
 using Content.Client.ContextMenu.UI;
 using Content.Client.Examine;
 using Content.Client.Guidebook.Richtext;
+using Content.Client.Verbs;
 using Content.Client.Verbs.UI;
 using Content.Shared.Input;
 using Content.Shared.Tag;
@@ -36,9 +37,7 @@ public sealed partial class GuideEntityEmbed : BoxContainer, IDocumentTag
 
     public bool Interactive;
 
-    public Entity<SpriteComponent>? Sprite => View.Entity == null || View.Sprite == null
-        ? null
-        : (View.Entity.Value, View.Sprite);
+    public SpriteComponent? Sprite => View.Sprite;
 
     public Vector2 Scale
     {
@@ -128,7 +127,7 @@ public sealed partial class GuideEntityEmbed : BoxContainer, IDocumentTag
         base.Dispose(disposing);
 
         if (Sprite is not null)
-            _entityManager.DeleteEntity(Sprite);
+            _entityManager.DeleteEntity(Sprite.Owner);
     }
 
     public bool TryParseTag(Dictionary<string, string> args, [NotNullWhen(true)] out Control? control)

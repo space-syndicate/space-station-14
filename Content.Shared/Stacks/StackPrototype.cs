@@ -5,7 +5,7 @@ using Robust.Shared.Utility;
 namespace Content.Shared.Stacks;
 
 [Prototype("stack")]
-public sealed partial class StackPrototype : IPrototype
+public sealed class StackPrototype : IPrototype
 {
     [ViewVariables]
     [IdDataField]

@@ -30,7 +30,7 @@
     sprayVelocity: 2
     spraySound:
       path: /Audio/Effects/spray2.ogg
-  - type: TrashOnSolutionEmpty
+  - type: TrashOnEmpty
     solution: spray
 
 - type: entity

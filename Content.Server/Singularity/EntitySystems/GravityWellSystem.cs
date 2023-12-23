@@ -1,12 +1,13 @@
-using Content.Server.Singularity.Components;
-using Content.Shared.Ghost;
-using Content.Shared.Singularity.EntitySystems;
 using Robust.Shared.Map;
 using Robust.Shared.Map.Components;
 using Robust.Shared.Physics;
 using Robust.Shared.Physics.Components;
 using Robust.Shared.Physics.Systems;
 using Robust.Shared.Timing;
+
+using Content.Shared.Singularity.EntitySystems;
+using Content.Server.Singularity.Components;
+using Content.Shared.Ghost;
 
 namespace Content.Server.Singularity.EntitySystems;
 
@@ -57,12 +58,11 @@ public sealed class GravityWellSystem : SharedGravityWellSystem
         if(!_timing.IsFirstTimePredicted)
             return;
 
-        var query = EntityQueryEnumerator<GravityWellComponent, TransformComponent>();
-        while (query.MoveNext(out var uid, out var gravWell, out var xform))
+        foreach(var (gravWell, xform) in EntityManager.EntityQuery<GravityWellComponent, TransformComponent>())
         {
             var curTime = _timing.CurTime;
             if (gravWell.NextPulseTime <= curTime)
-                Update(uid, curTime - gravWell.LastPulseTime, gravWell, xform);
+                Update(gravWell.Owner, curTime - gravWell.LastPulseTime, gravWell, xform);
         }
     }
 

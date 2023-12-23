@@ -4,8 +4,10 @@ using Content.Shared.Atmos;
 using Content.Shared.Atmos.EntitySystems;
 using Robust.Client.Graphics;
 using Robust.Shared.Enums;
+using Robust.Shared.GameObjects;
+using Robust.Shared.IoC;
 using Robust.Shared.Map;
-using Robust.Shared.Map.Components;
+using Robust.Shared.Maths;
 
 namespace Content.Client.Atmos.Overlays
 {
@@ -17,7 +19,6 @@ namespace Content.Client.Atmos.Overlays
         [Dependency] private readonly IMapManager _mapManager = default!;
 
         public override OverlaySpace Space => OverlaySpace.WorldSpace;
-        private List<Entity<MapGridComponent>> _grids = new();
 
         internal AtmosDebugOverlay(AtmosDebugOverlaySystem system)
         {
@@ -40,19 +41,10 @@ namespace Content.Client.Atmos.Overlays
             // 3. "Is this going to make it harder for atmos programmers to add data that may not be chunk-friendly into the atmos debugger?"
             // Nanotrasen needs YOU! to avoid premature optimization in critical debugging tools - 20kdc
 
-            _grids.Clear();
-
-            _mapManager.FindGridsIntersecting(mapId, worldBounds, ref _grids, (EntityUid uid, MapGridComponent grid,
-                ref List<Entity<MapGridComponent>> state) =>
+            foreach (var mapGrid in _mapManager.FindGridsIntersecting(mapId, worldBounds))
             {
-                state.Add((uid, grid));
-                return true;
-            });
-
-            foreach (var (uid, mapGrid) in _grids)
-            {
-                if (!_atmosDebugOverlaySystem.HasData(uid) ||
-                    !_entManager.TryGetComponent<TransformComponent>(uid, out var xform))
+                if (!_atmosDebugOverlaySystem.HasData(mapGrid.Owner) ||
+                    !_entManager.TryGetComponent<TransformComponent>(mapGrid.Owner, out var xform))
                     continue;
 
                 drawHandle.SetTransform(xform.WorldMatrix);
@@ -61,7 +53,7 @@ namespace Content.Client.Atmos.Overlays
                 {
                     foreach (var tile in mapGrid.GetTilesIntersecting(worldBounds))
                     {
-                        var dataMaybeNull = _atmosDebugOverlaySystem.GetData(uid, tile.GridIndices);
+                        var dataMaybeNull = _atmosDebugOverlaySystem.GetData(mapGrid.Owner, tile.GridIndices);
                         if (dataMaybeNull != null)
                         {
                             var data = (SharedAtmosDebugOverlaySystem.AtmosDebugOverlayData) dataMaybeNull;
@@ -69,10 +61,9 @@ namespace Content.Client.Atmos.Overlays
                             {
                                 // -- Mole Count --
                                 float total = 0;
-                                switch (_atmosDebugOverlaySystem.CfgMode)
-                                {
+                                switch (_atmosDebugOverlaySystem.CfgMode) {
                                     case AtmosDebugOverlayMode.TotalMoles:
-                                        foreach (var f in data.Moles)
+                                        foreach (float f in data.Moles)
                                         {
                                             total += f;
                                         }
@@ -84,7 +75,7 @@ namespace Content.Client.Atmos.Overlays
                                         total = data.Temperature;
                                         break;
                                 }
-                                var interp = (total - _atmosDebugOverlaySystem.CfgBase) / _atmosDebugOverlaySystem.CfgScale;
+                                var interp = ((total - _atmosDebugOverlaySystem.CfgBase) / _atmosDebugOverlaySystem.CfgScale);
                                 Color res;
                                 if (_atmosDebugOverlaySystem.CfgCBM)
                                 {

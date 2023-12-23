@@ -12,7 +12,7 @@
       map: [ "tank" ]
       visible: false
   - type: Item
-    size: Huge
+    size: 50
   - type: Clothing
     quickEquip: false
     slots:
@@ -32,12 +32,7 @@
     container: storagebase
   - type: PneumaticCannon
   - type: Storage
-    maxSlots: 8
-    maxItemSize: Normal
-    maxTotalWeight: 32
-    blacklist:
-      tags:
-        - CannonRestrict
+    capacity: 30
   - type: Appearance
   - type: ItemMapper
     containerWhitelist: [gas_tank]
@@ -77,12 +72,10 @@
     layers:
     - state: piecannon
   - type: Storage
-    maxSlots: 8
-    maxItemSize: Normal
-    maxTotalWeight: 32
     whitelist:
       components:
       - CreamPie
+    capacity: 40
   - type: Gun
     fireRate: 1
     selectedMode: SemiAuto
@@ -97,7 +90,7 @@
   - type: ContainerAmmoProvider
     container: storagebase
   - type: Item
-    size: Normal
+    size: 50
   - type: Clothing
     sprite: Objects/Weapons/Guns/Cannons/pie_cannon.rsi
     quickEquip: false
@@ -124,13 +117,9 @@
   suffix: Admeme
   components:
   - type: Item
-    size: Ginormous
+    size: 9999
   - type: Storage
-    maxSlots: 100
-    maxItemSize: Ginormous
-    maxTotalWeight: 1600
-    whitelist:
-      tags: [] #dodging a test fail like the IRS
+    capacity: 9999
   - type: PneumaticCannon
     gasUsage: 0
     throwItems: false

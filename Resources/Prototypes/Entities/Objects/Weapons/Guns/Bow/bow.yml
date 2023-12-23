@@ -8,16 +8,15 @@
   - type: Sprite
     sprite: Objects/Weapons/Guns/Bow/bow.rsi
   - type: Item
-    size: Normal
+    size: 60
   - type: Clothing
     quickEquip: false
     slots:
     - Back
   - type: Wieldable
+    wieldTime: 0.5
     wieldSound:
       path: /Audio/Items/bow_pull.ogg
-  - type: UseDelay
-    delay: 1
   - type: GunRequiresWield
   - type: Gun
     minAngle: 0

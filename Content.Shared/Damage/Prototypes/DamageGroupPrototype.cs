@@ -13,7 +13,7 @@ namespace Content.Shared.Damage.Prototypes
     /// </remarks>
     [Prototype("damageGroup", 2)]
     [Serializable, NetSerializable]
-    public sealed partial class DamageGroupPrototype : IPrototype
+    public sealed class DamageGroupPrototype : IPrototype
     {
         [IdDataField] public string ID { get; } = default!;
 

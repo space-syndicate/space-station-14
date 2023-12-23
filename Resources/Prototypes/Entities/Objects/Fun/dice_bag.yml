@@ -17,12 +17,11 @@
     sprite: Objects/Fun/dice.rsi
     state: dicebag
   - type: Item
-    size: Small
   - type: Storage
-    maxTotalWeight: 8
+    capacity: 18
     whitelist:
       tags:
-      - Dice
+        - Dice
 
 - type: entity
   parent: DiceBag
@@ -33,4 +32,4 @@
     sprite: Objects/Fun/dice.rsi
     state: magicdicebag
   - type: Storage
-    maxTotalWeight: 20
+    capacity: 30

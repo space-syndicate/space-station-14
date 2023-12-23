@@ -1,6 +1,6 @@
 using Content.Shared.Radio;
 using Robust.Shared.GameStates;
-using Robust.Shared.Prototypes;
+using Robust.Shared.Serialization.TypeSerializers.Implementations.Custom.Prototype;
 
 namespace Content.Shared.Implants.Components;
 
@@ -8,14 +8,14 @@ namespace Content.Shared.Implants.Components;
 public sealed partial class RattleComponent : Component
 {
     // The radio channel the message will be sent to
-    [DataField]
-    public ProtoId<RadioChannelPrototype> RadioChannel = "Syndicate";
+    [DataField("radioChannel", customTypeSerializer: typeof(PrototypeIdSerializer<RadioChannelPrototype>))]
+    public string RadioChannel = "Syndicate";
 
     // The message that the implant will send when crit
-    [DataField]
-    public LocId CritMessage = "deathrattle-implant-critical-message";
+    [DataField("critMessage")]
+    public string CritMessage = "deathrattle-implant-critical-message";
 
     // The message that the implant will send when dead
     [DataField("deathMessage")]
-    public LocId DeathMessage = "deathrattle-implant-dead-message";
+    public string DeathMessage = "deathrattle-implant-dead-message";
 }

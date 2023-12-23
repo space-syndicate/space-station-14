@@ -6,6 +6,7 @@ using Robust.Client.UserInterface.Controls;
 using Robust.Client.UserInterface.CustomControls;
 using Robust.Client.UserInterface.XAML;
 using Robust.Shared.Prototypes;
+using static Content.Shared.Humanoid.HumanoidAppearanceState;
 
 namespace Content.Client.Humanoid;
 
@@ -75,7 +76,7 @@ public sealed partial class HumanoidMarkingModifierWindow : DefaultWindow
                 continue;
             }
 
-            modifier.SetState(true, layerInfo.Id ?? string.Empty, layerInfo.Color ?? Color.White);
+            modifier.SetState(true, layerInfo.ID ?? string.Empty, layerInfo.Color ?? Color.White);
         }
 
         var eyesColor = Color.White;

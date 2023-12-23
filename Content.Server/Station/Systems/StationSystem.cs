@@ -239,7 +239,7 @@ public sealed class StationSystem : EntitySystem
 
         foreach (var gridUid in dataComponent.Grids)
         {
-            if (!TryComp(gridUid, out MapGridComponent? grid) ||
+            if (!_mapManager.TryGetGrid(gridUid, out var grid) ||
                 !xformQuery.TryGetComponent(gridUid, out var xform))
                 continue;
 
@@ -429,7 +429,7 @@ public sealed class StationSystem : EntitySystem
 
         if (xform.GridUid == EntityUid.Invalid)
         {
-            Log.Debug("A");
+            Logger.Debug("A");
             return null;
         }
 
@@ -438,26 +438,12 @@ public sealed class StationSystem : EntitySystem
 
     public List<EntityUid> GetStations()
     {
-        var stations = new List<EntityUid>();
-        var query = EntityQueryEnumerator<StationDataComponent>();
-        while (query.MoveNext(out var uid, out _))
-        {
-            stations.Add(uid);
-        }
-
-        return stations;
+        return EntityQuery<StationDataComponent>().Select(x => x.Owner).ToList();
     }
 
     public HashSet<EntityUid> GetStationsSet()
     {
-        var stations = new HashSet<EntityUid>();
-        var query = EntityQueryEnumerator<StationDataComponent>();
-        while (query.MoveNext(out var uid, out _))
-        {
-            stations.Add(uid);
-        }
-
-        return stations;
+        return EntityQuery<StationDataComponent>().Select(x => x.Owner).ToHashSet();
     }
 
     /// <summary>

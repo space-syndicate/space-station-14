@@ -7,6 +7,7 @@ using Content.Shared.Interaction;
 using Content.Shared.Storage;
 using Content.Shared.Verbs;
 using Robust.Shared.Containers;
+using Robust.Shared.GameStates;
 
 namespace Content.Shared.Buckle;
 
@@ -17,6 +18,9 @@ public abstract partial class SharedBuckleSystem
         SubscribeLocalEvent<StrapComponent, ComponentStartup>(OnStrapStartup);
         SubscribeLocalEvent<StrapComponent, ComponentShutdown>(OnStrapShutdown);
         SubscribeLocalEvent<StrapComponent, ComponentRemove>((_, c, _) => StrapRemoveAll(c));
+
+        SubscribeLocalEvent<StrapComponent, ComponentGetState>(OnStrapGetState);
+        SubscribeLocalEvent<StrapComponent, ComponentHandleState>(OnStrapHandleState);
 
         SubscribeLocalEvent<StrapComponent, EntInsertedIntoContainerMessage>(OnStrapEntModifiedFromContainer);
         SubscribeLocalEvent<StrapComponent, EntRemovedFromContainerMessage>(OnStrapEntModifiedFromContainer);
@@ -44,6 +48,24 @@ public abstract partial class SharedBuckleSystem
             return;
 
         StrapRemoveAll(component);
+    }
+
+    private void OnStrapGetState(EntityUid uid, StrapComponent component, ref ComponentGetState args)
+    {
+        args.State = new StrapComponentState(component.Position, component.BuckleOffset, GetNetEntitySet(component.BuckledEntities), component.MaxBuckleDistance, component.OccupiedSize);
+    }
+
+    private void OnStrapHandleState(EntityUid uid, StrapComponent component, ref ComponentHandleState args)
+    {
+        if (args.Current is not StrapComponentState state)
+            return;
+
+        component.Position = state.Position;
+        component.BuckleOffsetUnclamped = state.BuckleOffsetClamped;
+        component.BuckledEntities.Clear();
+        component.BuckledEntities.UnionWith(EnsureEntitySet<StrapComponent>(state.BuckledEntities, uid));
+        component.MaxBuckleDistance = state.MaxBuckleDistance;
+        component.OccupiedSize = state.OccupiedSize;
     }
 
     private void OnStrapEntModifiedFromContainer(EntityUid uid, StrapComponent component, ContainerModifiedMessage message)

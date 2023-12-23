@@ -1,10 +1,13 @@
 using System.Diagnostics.CodeAnalysis;
+using Content.Server.Atmos.Components;
 using Content.Server.Atmos.EntitySystems;
 using Content.Server.Atmos.Piping.Components;
 using Content.Server.Atmos.Piping.Other.Components;
 using Content.Shared.Atmos;
 using JetBrains.Annotations;
 using Robust.Server.GameObjects;
+using Robust.Shared.GameObjects;
+using Robust.Shared.IoC;
 
 namespace Content.Server.Atmos.Piping.Other.EntitySystems
 {
@@ -21,10 +24,9 @@ namespace Content.Server.Atmos.Piping.Other.EntitySystems
             SubscribeLocalEvent<GasMinerComponent, AtmosDeviceUpdateEvent>(OnMinerUpdated);
         }
 
-        private void OnMinerUpdated(Entity<GasMinerComponent> ent, ref AtmosDeviceUpdateEvent args)
+        private void OnMinerUpdated(EntityUid uid, GasMinerComponent miner, AtmosDeviceUpdateEvent args)
         {
-            var miner = ent.Comp;
-            if (!CheckMinerOperation(ent, out var environment) || !miner.Enabled || !miner.SpawnGas.HasValue || miner.SpawnAmount <= 0f)
+            if (!CheckMinerOperation(miner, out var environment) || !miner.Enabled || !miner.SpawnGas.HasValue || miner.SpawnAmount <= 0f)
                 return;
 
             // Time to mine some gas.
@@ -35,9 +37,9 @@ namespace Content.Server.Atmos.Piping.Other.EntitySystems
             _atmosphereSystem.Merge(environment, merger);
         }
 
-        private bool CheckMinerOperation(Entity<GasMinerComponent> ent, [NotNullWhen(true)] out GasMixture? environment)
+        private bool CheckMinerOperation(GasMinerComponent miner, [NotNullWhen(true)] out GasMixture? environment)
         {
-            var (uid, miner) = ent;
+            var uid = miner.Owner;
             environment = _atmosphereSystem.GetContainingMixture(uid, true, true);
 
             var transform = Transform(uid);

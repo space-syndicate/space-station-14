@@ -5,7 +5,7 @@ using Robust.Shared.Prototypes;
 namespace Content.Shared.Inventory;
 
 [Prototype("inventoryTemplate")]
-public sealed partial class InventoryTemplatePrototype : IPrototype
+public sealed class InventoryTemplatePrototype : IPrototype
 {
     [IdDataField] public string ID { get; } = string.Empty;
 

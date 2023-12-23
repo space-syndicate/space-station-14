@@ -7,7 +7,6 @@ using Content.Shared.Doors;
 using Content.Shared.Doors.Components;
 using Content.Shared.Shuttles.Events;
 using Robust.Shared.Map;
-using Robust.Shared.Map.Components;
 using Robust.Shared.Physics;
 using Robust.Shared.Physics.Collision.Shapes;
 using Robust.Shared.Physics.Components;
@@ -67,7 +66,7 @@ namespace Content.Server.Shuttles.Systems
                 args.Cancel();
         }
 
-        private Entity<DockingComponent>? GetDockable(EntityUid uid, TransformComponent dockingXform)
+        private DockingComponent? GetDockable(EntityUid uid, TransformComponent dockingXform)
         {
             // Did you know Saltern is the most dockable station?
 
@@ -97,14 +96,12 @@ namespace Content.Server.Shuttles.Systems
             var enlargedAABB = aabb.Value.Enlarged(DockingRadius * 1.5f);
 
             // Get any docking ports in range on other grids.
-            var grids = new List<Entity<MapGridComponent>>();
-            _mapManager.FindGridsIntersecting(dockingXform.MapID, enlargedAABB, ref grids);
-            foreach (var otherGrid in grids)
+            foreach (var otherGrid in _mapManager.FindGridsIntersecting(dockingXform.MapID, enlargedAABB))
             {
                 if (otherGrid.Owner == dockingXform.GridUid)
                     continue;
 
-                foreach (var ent in otherGrid.Comp.GetAnchoredEntities(enlargedAABB))
+                foreach (var ent in otherGrid.GetAnchoredEntities(enlargedAABB))
                 {
                     if (!TryComp(ent, out DockingComponent? otherDocking) ||
                         !otherDocking.Enabled ||
@@ -132,7 +129,7 @@ namespace Content.Server.Shuttles.Systems
 
                         // TODO: Need CollisionManager's GJK for accurate bounds
                         // Realistically I want 2 fixtures anyway but I'll deal with that later.
-                        return (ent, otherDocking);
+                        return otherDocking;
                     }
                 }
             }
@@ -446,12 +443,12 @@ namespace Content.Server.Shuttles.Systems
         /// <summary>
         /// Attempts to dock 2 ports together and will return early if it's not possible.
         /// </summary>
-        private void TryDock(EntityUid dockAUid, DockingComponent dockA, Entity<DockingComponent> dockB)
+        private void TryDock(EntityUid dockAUid, DockingComponent dockA, EntityUid dockBUid, DockingComponent dockB)
         {
-            if (!CanDock(dockAUid, dockB, dockA, dockB))
+            if (!CanDock(dockAUid, dockBUid, dockA, dockB))
                 return;
 
-            Dock(dockAUid, dockA, dockB, dockB);
+            Dock(dockAUid, dockA, dockBUid, dockB);
         }
 
         public void Undock(EntityUid dockUid, DockingComponent dock)

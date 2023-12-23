@@ -8,7 +8,7 @@ namespace Content.Shared.Roles;
 /// </summary>
 [Prototype("antag")]
 [Serializable, NetSerializable]
-public sealed partial class AntagPrototype : IPrototype
+public sealed class AntagPrototype : IPrototype
 {
     [ViewVariables]
     [IdDataField]

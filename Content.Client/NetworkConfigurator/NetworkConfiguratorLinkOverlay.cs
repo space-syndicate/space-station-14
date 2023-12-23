@@ -1,9 +1,10 @@
 using Content.Client.NetworkConfigurator.Systems;
+using Content.Shared.DeviceNetwork;
 using Content.Shared.DeviceNetwork.Components;
 using Robust.Client.Graphics;
 using Robust.Shared.Enums;
-using Robust.Shared.Map;
 using Robust.Shared.Random;
+using Robust.Shared.Map;
 
 namespace Content.Client.NetworkConfigurator;
 
@@ -27,25 +28,24 @@ public sealed class NetworkConfiguratorLinkOverlay : Overlay
 
     protected override void Draw(in OverlayDrawArgs args)
     {
-        var query = _entityManager.EntityQueryEnumerator<NetworkConfiguratorActiveLinkOverlayComponent>();
-        while (query.MoveNext(out var uid, out _))
+        foreach (var tracker in _entityManager.EntityQuery<NetworkConfiguratorActiveLinkOverlayComponent>())
         {
-            if (_entityManager.Deleted(uid) || !_entityManager.TryGetComponent(uid, out DeviceListComponent? deviceList))
+            if (_entityManager.Deleted(tracker.Owner) || !_entityManager.TryGetComponent(tracker.Owner, out DeviceListComponent? deviceList))
             {
-                _entityManager.RemoveComponentDeferred<NetworkConfiguratorActiveLinkOverlayComponent>(uid);
+                _entityManager.RemoveComponentDeferred<NetworkConfiguratorActiveLinkOverlayComponent>(tracker.Owner);
                 continue;
             }
 
-            if (!Colors.TryGetValue(uid, out var color))
+            if (!Colors.TryGetValue(tracker.Owner, out var color))
             {
                 color = new Color(
                     _random.Next(0, 255),
                     _random.Next(0, 255),
                     _random.Next(0, 255));
-                Colors.Add(uid, color);
+                Colors.Add(tracker.Owner, color);
             }
 
-            var sourceTransform = _entityManager.GetComponent<TransformComponent>(uid);
+            var sourceTransform = _entityManager.GetComponent<TransformComponent>(tracker.Owner);
             if (sourceTransform.MapID == MapId.Nullspace)
             {
                 // Can happen if the item is outside the client's view. In that case,
@@ -53,7 +53,7 @@ public sealed class NetworkConfiguratorLinkOverlay : Overlay
                 continue;
             }
 
-            foreach (var device in _deviceListSystem.GetAllDevices(uid, deviceList))
+            foreach (var device in _deviceListSystem.GetAllDevices(tracker.Owner, deviceList))
             {
                 if (_entityManager.Deleted(device))
                 {
@@ -66,7 +66,7 @@ public sealed class NetworkConfiguratorLinkOverlay : Overlay
                     continue;
                 }
 
-                args.WorldHandle.DrawLine(sourceTransform.WorldPosition, linkTransform.WorldPosition, Colors[uid]);
+                args.WorldHandle.DrawLine(sourceTransform.WorldPosition, linkTransform.WorldPosition, Colors[tracker.Owner]);
             }
         }
     }

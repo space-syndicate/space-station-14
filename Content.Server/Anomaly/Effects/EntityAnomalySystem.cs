@@ -1,12 +1,13 @@
-using System.Linq;
+﻿using System.Linq;
 using System.Numerics;
+using Content.Server.Maps;
 using Content.Shared.Anomaly.Components;
 using Content.Shared.Anomaly.Effects.Components;
+using Content.Shared.Maps;
 using Content.Shared.Physics;
 using Robust.Shared.Map;
 using Robust.Shared.Physics;
 using Robust.Shared.Physics.Components;
-using Robust.Shared.Prototypes;
 using Robust.Shared.Random;
 
 namespace Content.Server.Anomaly.Effects;
@@ -38,10 +39,11 @@ public sealed class EntityAnomalySystem : EntitySystem
         // A cluster of monsters
         SpawnMonstersOnOpenTiles(component, xform, component.MaxSpawnAmount, component.SpawnRange, component.Spawns);
         // And so much meat (for the meat anomaly at least)
-        SpawnMonstersOnOpenTiles(component, xform, component.MaxSpawnAmount, component.SpawnRange, component.SuperCriticalSpawns);
+        Spawn(component.SupercriticalSpawn, xform.Coordinates);
+        SpawnMonstersOnOpenTiles(component, xform, component.MaxSpawnAmount, component.SpawnRange, new List<string>(){component.SupercriticalSpawn});
     }
 
-    private void SpawnMonstersOnOpenTiles(EntitySpawnAnomalyComponent component, TransformComponent xform, int amount, float radius, List<EntProtoId> spawns)
+    private void SpawnMonstersOnOpenTiles(EntitySpawnAnomalyComponent component, TransformComponent xform, int amount, float radius, List<string> spawns)
     {
         if (!component.Spawns.Any())
             return;
@@ -66,12 +68,10 @@ public sealed class EntityAnomalySystem : EntitySystem
             {
                 if (!physQuery.TryGetComponent(ent, out var body))
                     continue;
-
                 if (body.BodyType != BodyType.Static ||
                     !body.Hard ||
                     (body.CollisionLayer & (int) CollisionGroup.Impassable) == 0)
                     continue;
-
                 valid = false;
                 break;
             }

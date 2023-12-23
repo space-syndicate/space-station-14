@@ -9,15 +9,15 @@ public sealed partial class ReactionMixerComponent : Component
     ///     A list of IDs for categories of reactions that can be mixed (i.e. HOLY for a bible, DRINK for a spoon)
     /// </summary>
     [ViewVariables]
-    [DataField]
+    [DataField("reactionTypes")]
     public List<string> ReactionTypes = default!;
 
     /// <summary>
     ///     A string which identifies the string to be sent when successfully mixing a solution
     /// </summary>
     [ViewVariables]
-    [DataField]
-    public LocId MixMessage = "default-mixing-success";
+    [DataField("mixMessage")]
+    public string MixMessage = "default-mixing-success";
 }
 
 [ByRefEvent]

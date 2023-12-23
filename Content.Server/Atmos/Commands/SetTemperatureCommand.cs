@@ -2,8 +2,11 @@ using Content.Server.Administration;
 using Content.Server.Atmos.EntitySystems;
 using Content.Shared.Administration;
 using Content.Shared.Atmos;
+using Robust.Server.GameObjects;
 using Robust.Shared.Console;
-using Robust.Shared.Map.Components;
+using Robust.Shared.GameObjects;
+using Robust.Shared.Map;
+using Robust.Shared.Maths;
 
 namespace Content.Server.Atmos.Commands
 {
@@ -11,6 +14,7 @@ namespace Content.Server.Atmos.Commands
     public sealed class SetTemperatureCommand : IConsoleCommand
     {
         [Dependency] private readonly IEntityManager _entities = default!;
+        [Dependency] private readonly IMapManager _mapManager = default!;
 
         public string Command => "settemp";
         public string Description => "Sets a tile's temperature (in kelvin).";
@@ -36,7 +40,7 @@ namespace Content.Server.Atmos.Commands
                 return;
             }
 
-            if (!_entities.HasComponent<MapGridComponent>(gridId))
+            if (!_mapManager.TryGetGrid(gridId, out var grid))
             {
                 shell.WriteError("Invalid grid.");
                 return;
@@ -45,7 +49,7 @@ namespace Content.Server.Atmos.Commands
             var atmospheres = _entities.EntitySysManager.GetEntitySystem<AtmosphereSystem>();
             var indices = new Vector2i(x, y);
 
-            var tile = atmospheres.GetTileMixture(gridId, null, indices, true);
+            var tile = atmospheres.GetTileMixture(grid.Owner, null, indices, true);
 
             if (tile == null)
             {

@@ -19,7 +19,7 @@ namespace Content.Server.Light.EntitySystems
         [Dependency] private readonly SharedPointLightSystem _lights = default!;
         [Dependency] private readonly TransformSystem _transformSystem = default!;
 
-        private readonly HashSet<Entity<MatchstickComponent>> _litMatches = new();
+        private HashSet<MatchstickComponent> _litMatches = new();
 
         public override void Initialize()
         {
@@ -29,43 +29,42 @@ namespace Content.Server.Light.EntitySystems
             SubscribeLocalEvent<MatchstickComponent, ComponentShutdown>(OnShutdown);
         }
 
-        private void OnShutdown(Entity<MatchstickComponent> ent, ref ComponentShutdown args)
+        private void OnShutdown(EntityUid uid, MatchstickComponent component, ComponentShutdown args)
         {
-            _litMatches.Remove(ent);
+            _litMatches.Remove(component);
         }
 
         public override void Update(float frameTime)
         {
             base.Update(frameTime);
-
             foreach (var match in _litMatches)
             {
-                if (match.Comp.CurrentState != SmokableState.Lit || Paused(match) || match.Comp.Deleted)
+                if (match.CurrentState != SmokableState.Lit || Paused(match.Owner) || match.Deleted)
                     continue;
 
-                var xform = Transform(match);
+                var xform = Transform(match.Owner);
 
                 if (xform.GridUid is not {} gridUid)
                     return;
 
-                var position = _transformSystem.GetGridOrMapTilePosition(match, xform);
+                var position = _transformSystem.GetGridOrMapTilePosition(match.Owner, xform);
 
-                _atmosphereSystem.HotspotExpose(gridUid, position, 400, 50, match, true);
+                _atmosphereSystem.HotspotExpose(gridUid, position, 400, 50, match.Owner, true);
             }
         }
 
-        private void OnInteractUsing(Entity<MatchstickComponent> ent, ref InteractUsingEvent args)
+        private void OnInteractUsing(EntityUid uid, MatchstickComponent component, InteractUsingEvent args)
         {
-            if (args.Handled || ent.Comp.CurrentState != SmokableState.Unlit)
+            if (args.Handled || component.CurrentState != SmokableState.Unlit)
                 return;
 
             var isHotEvent = new IsHotEvent();
-            RaiseLocalEvent(args.Used, isHotEvent);
+            RaiseLocalEvent(args.Used, isHotEvent, false);
 
             if (!isHotEvent.IsHot)
                 return;
 
-            Ignite(ent, args.User);
+            Ignite(uid, component, args.User);
             args.Handled = true;
         }
 
@@ -74,21 +73,19 @@ namespace Content.Server.Light.EntitySystems
             args.IsHot = component.CurrentState == SmokableState.Lit;
         }
 
-        public void Ignite(Entity<MatchstickComponent> matchstick, EntityUid user)
+        public void Ignite(EntityUid uid, MatchstickComponent component, EntityUid user)
         {
-            var component = matchstick.Comp;
-
             // Play Sound
-            SoundSystem.Play(component.IgniteSound.GetSound(), Filter.Pvs(matchstick),
-                matchstick, AudioHelpers.WithVariation(0.125f).WithVolume(-0.125f));
+            SoundSystem.Play(component.IgniteSound.GetSound(), Filter.Pvs(component.Owner),
+                component.Owner, AudioHelpers.WithVariation(0.125f).WithVolume(-0.125f));
 
             // Change state
-            SetState(matchstick, component, SmokableState.Lit);
-            _litMatches.Add(matchstick);
-            matchstick.Owner.SpawnTimer(component.Duration * 1000, delegate
+            SetState(uid, component, SmokableState.Lit);
+            _litMatches.Add(component);
+            component.Owner.SpawnTimer(component.Duration * 1000, delegate
             {
-                SetState(matchstick, component, SmokableState.Burnt);
-                _litMatches.Remove(matchstick);
+                SetState(uid, component, SmokableState.Burnt);
+                _litMatches.Remove(component);
             });
         }
 

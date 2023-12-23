@@ -8,29 +8,28 @@ using Robust.Shared.Serialization;
 
 namespace Content.Shared.Buckle.Components;
 
-[RegisterComponent, NetworkedComponent, AutoGenerateComponentState]
+[RegisterComponent, NetworkedComponent]
 [Access(typeof(SharedBuckleSystem), typeof(SharedVehicleSystem))]
 public sealed partial class StrapComponent : Component
 {
     /// <summary>
     /// The entities that are currently buckled
     /// </summary>
-    [AutoNetworkedField]
     [ViewVariables] // TODO serialization
-    public HashSet<EntityUid> BuckledEntities = new();
+    public readonly HashSet<EntityUid> BuckledEntities = new();
 
     /// <summary>
     /// Entities that this strap accepts and can buckle
     /// If null it accepts any entity
     /// </summary>
-    [DataField]
+    [DataField("allowedEntities")]
     [ViewVariables]
     public EntityWhitelist? AllowedEntities;
 
     /// <summary>
     /// The change in position to the strapped mob
     /// </summary>
-    [DataField, AutoNetworkedField]
+    [DataField("position")]
     [ViewVariables(VVAccess.ReadWrite)]
     public StrapPosition Position = StrapPosition.None;
 
@@ -44,7 +43,7 @@ public sealed partial class StrapComponent : Component
     /// whereas the server doesnt, thus the client tries to unbuckle like 15 times because it passes the strap null check
     /// This is why this needs to be above 0.1 to make the InRange check fail in both client and server.
     /// </remarks>
-    [DataField, AutoNetworkedField]
+    [DataField("maxBuckleDistance", required: false)]
     [ViewVariables(VVAccess.ReadWrite)]
     public float MaxBuckleDistance = 0.2f;
 
@@ -52,8 +51,8 @@ public sealed partial class StrapComponent : Component
     /// Gets and clamps the buckle offset to MaxBuckleDistance
     /// </summary>
     [ViewVariables]
-    public Vector2 BuckleOffsetClamped => Vector2.Clamp(
-        BuckleOffset,
+    public Vector2 BuckleOffset => Vector2.Clamp(
+        BuckleOffsetUnclamped,
         Vector2.One * -MaxBuckleDistance,
         Vector2.One * MaxBuckleDistance);
 
@@ -61,21 +60,21 @@ public sealed partial class StrapComponent : Component
     /// The buckled entity will be offset by this amount from the center of the strap object.
     /// If this offset it too big, it will be clamped to <see cref="MaxBuckleDistance"/>
     /// </summary>
-    [DataField, AutoNetworkedField]
+    [DataField("buckleOffset", required: false)]
     [ViewVariables(VVAccess.ReadWrite)]
-    public Vector2 BuckleOffset = Vector2.Zero;
+    public Vector2 BuckleOffsetUnclamped = Vector2.Zero;
 
     /// <summary>
     /// The angle in degrees to rotate the player by when they get strapped
     /// </summary>
-    [DataField]
+    [DataField("rotation")]
     [ViewVariables(VVAccess.ReadWrite)]
     public int Rotation;
 
     /// <summary>
     /// The size of the strap which is compared against when buckling entities
     /// </summary>
-    [DataField]
+    [DataField("size")]
     [ViewVariables(VVAccess.ReadWrite)]
     public int Size = 100;
 
@@ -88,37 +87,56 @@ public sealed partial class StrapComponent : Component
     /// <summary>
     /// You can specify the offset the entity will have after unbuckling.
     /// </summary>
-    [DataField]
+    [DataField("unbuckleOffset", required: false)]
     [ViewVariables(VVAccess.ReadWrite)]
     public Vector2 UnbuckleOffset = Vector2.Zero;
 
     /// <summary>
     /// The sound to be played when a mob is buckled
     /// </summary>
-    [DataField]
+    [DataField("buckleSound")]
     [ViewVariables(VVAccess.ReadWrite)]
     public SoundSpecifier BuckleSound  = new SoundPathSpecifier("/Audio/Effects/buckle.ogg");
 
     /// <summary>
     /// The sound to be played when a mob is unbuckled
     /// </summary>
-    [DataField]
+    [DataField("unbuckleSound")]
     [ViewVariables(VVAccess.ReadWrite)]
     public SoundSpecifier UnbuckleSound = new SoundPathSpecifier("/Audio/Effects/unbuckle.ogg");
 
     /// <summary>
     /// ID of the alert to show when buckled
     /// </summary>
-    [DataField]
+    [DataField("buckledAlertType")]
     [ViewVariables(VVAccess.ReadWrite)]
     public AlertType BuckledAlertType = AlertType.Buckled;
 
     /// <summary>
     /// The sum of the sizes of all the buckled entities in this strap
     /// </summary>
-    [AutoNetworkedField]
     [ViewVariables]
     public int OccupiedSize;
+}
+
+[Serializable, NetSerializable]
+public sealed class StrapComponentState : ComponentState
+{
+    public readonly StrapPosition Position;
+    public readonly float MaxBuckleDistance;
+    public readonly Vector2 BuckleOffsetClamped;
+    public readonly HashSet<NetEntity> BuckledEntities;
+    public readonly int OccupiedSize;
+
+    public StrapComponentState(StrapPosition position, Vector2 offset, HashSet<NetEntity> buckled,
+        float maxBuckleDistance, int occupiedSize)
+    {
+        Position = position;
+        BuckleOffsetClamped = offset;
+        BuckledEntities = buckled;
+        MaxBuckleDistance = maxBuckleDistance;
+        OccupiedSize = occupiedSize;
+    }
 }
 
 public enum StrapPosition

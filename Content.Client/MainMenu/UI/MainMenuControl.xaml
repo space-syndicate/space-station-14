@@ -41,5 +41,6 @@
                 Name="ChangelogButton"
                 Access="Public"/>
         </BoxContainer>
+        <Label Name="VersionLabel" Text="v0.1" />
     </LayoutContainer>
 </Control>

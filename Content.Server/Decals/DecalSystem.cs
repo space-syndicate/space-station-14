@@ -9,14 +9,11 @@ using Content.Shared.Database;
 using Content.Shared.Decals;
 using Content.Shared.Maps;
 using Microsoft.Extensions.ObjectPool;
-using Robust.Server.GameObjects;
 using Robust.Server.Player;
 using Robust.Shared;
 using Robust.Shared.Configuration;
 using Robust.Shared.Enums;
 using Robust.Shared.Map;
-using Robust.Shared.Map.Components;
-using Robust.Shared.Player;
 using Robust.Shared.Threading;
 using Robust.Shared.Timing;
 using Robust.Shared.Utility;
@@ -34,10 +31,9 @@ namespace Content.Server.Decals
         [Dependency] private readonly IConfigurationManager _conf = default!;
         [Dependency] private readonly IGameTiming _timing = default!;
         [Dependency] private readonly IAdminLogManager _adminLogger = default!;
-        [Dependency] private readonly MapSystem _mapSystem = default!;
 
         private readonly Dictionary<NetEntity, HashSet<Vector2i>> _dirtyChunks = new();
-        private readonly Dictionary<ICommonSession, Dictionary<NetEntity, HashSet<Vector2i>>> _previousSentChunks = new();
+        private readonly Dictionary<IPlayerSession, Dictionary<NetEntity, HashSet<Vector2i>>> _previousSentChunks = new();
         private static readonly Vector2 _boundsMinExpansion = new(0.01f, 0.01f);
         private static readonly Vector2 _boundsMaxExpansion = new(1.01f, 1.01f);
 
@@ -198,7 +194,7 @@ namespace Content.Server.Decals
 
         private void OnDecalPlacementRequest(RequestDecalPlacementEvent ev, EntitySessionEventArgs eventArgs)
         {
-            if (eventArgs.SenderSession is not { } session)
+            if (eventArgs.SenderSession is not IPlayerSession session)
                 return;
 
             // bad
@@ -227,7 +223,7 @@ namespace Content.Server.Decals
 
         private void OnDecalRemovalRequest(RequestDecalRemovalEvent ev, EntitySessionEventArgs eventArgs)
         {
-            if (eventArgs.SenderSession is not { } session)
+            if (eventArgs.SenderSession is not IPlayerSession session)
                 return;
 
             // bad
@@ -287,10 +283,10 @@ namespace Content.Server.Decals
                 return false;
 
             var gridId = coordinates.GetGridUid(EntityManager);
-            if (!TryComp(gridId, out MapGridComponent? grid))
+            if (!MapManager.TryGetGrid(gridId, out var grid))
                 return false;
 
-            if (_mapSystem.GetTileRef(gridId.Value, grid, coordinates).IsSpace(_tileDefMan))
+            if (grid.GetTileRef(coordinates).IsSpace(_tileDefMan))
                 return false;
 
             if (!TryComp(gridId, out DecalGridComponent? comp))
@@ -306,10 +302,10 @@ namespace Content.Server.Decals
             return true;
         }
 
-        public override bool RemoveDecal(EntityUid gridId, uint decalId, DecalGridComponent? component = null)
+        public bool RemoveDecal(EntityUid gridId, uint decalId, DecalGridComponent? component = null)
             => RemoveDecalInternal(gridId, decalId, out _, component);
 
-        public override HashSet<(uint Index, Decal Decal)> GetDecalsInRange(EntityUid gridId, Vector2 position, float distance = 0.75f, Func<Decal, bool>? validDelegate = null)
+        public HashSet<(uint Index, Decal Decal)> GetDecalsInRange(EntityUid gridId, Vector2 position, float distance = 0.75f, Func<Decal, bool>? validDelegate = null)
         {
             var decalIds = new HashSet<(uint, Decal)>();
             var chunkCollection = ChunkCollection(gridId);
@@ -428,7 +424,7 @@ namespace Content.Server.Decals
 
             if (PvsEnabled)
             {
-                var players = _playerManager.Sessions.Where(x => x.Status == SessionStatus.InGame).ToArray();
+                var players = _playerManager.ServerSessions.Where(x => x.Status == SessionStatus.InGame).ToArray();
                 var opts = new ParallelOptions { MaxDegreeOfParallelism = _parMan.ParallelProcessCount };
                 Parallel.ForEach(players, opts, UpdatePlayer);
             }
@@ -436,7 +432,7 @@ namespace Content.Server.Decals
             _dirtyChunks.Clear();
         }
 
-        public void UpdatePlayer(ICommonSession player)
+        public void UpdatePlayer(IPlayerSession player)
         {
             var chunksInRange = _chunking.GetChunksForSession(player, ChunkSize, _chunkIndexPool, _chunkViewerPool);
             var staleChunks = _chunkViewerPool.Get();
@@ -531,7 +527,7 @@ namespace Content.Server.Decals
         }
 
         private void SendChunkUpdates(
-            ICommonSession session,
+            IPlayerSession session,
             Dictionary<NetEntity, HashSet<Vector2i>> updatedChunks,
             Dictionary<NetEntity, HashSet<Vector2i>> staleChunks)
         {

@@ -5,7 +5,7 @@ using Robust.Shared.Serialization.TypeSerializers.Implementations.Custom.Prototy
 namespace Content.Shared.EntityList
 {
     [Prototype("entityList")]
-    public sealed partial class EntityListPrototype : IPrototype
+    public sealed class EntityListPrototype : IPrototype
     {
         [ViewVariables]
         [IdDataField]

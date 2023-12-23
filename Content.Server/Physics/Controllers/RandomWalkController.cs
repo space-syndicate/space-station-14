@@ -1,12 +1,12 @@
-using Content.Server.Physics.Components;
-using Content.Shared.Follower.Components;
-using Content.Shared.Throwing;
 using Robust.Server.GameObjects;
 using Robust.Shared.Physics.Components;
 using Robust.Shared.Physics.Controllers;
-using Robust.Shared.Player;
 using Robust.Shared.Random;
 using Robust.Shared.Timing;
+
+using Content.Server.Physics.Components;
+using Content.Shared.Follower.Components;
+using Content.Shared.Throwing;
 
 namespace Content.Server.Physics.Controllers;
 
@@ -39,17 +39,16 @@ internal sealed class RandomWalkController : VirtualController
     {
         base.UpdateBeforeSolve(prediction, frameTime);
 
-        var query = EntityQueryEnumerator<RandomWalkComponent, PhysicsComponent>();
-        while (query.MoveNext(out var uid, out var randomWalk, out var physics))
+        foreach(var (randomWalk, physics) in EntityManager.EntityQuery<RandomWalkComponent, PhysicsComponent>())
         {
-            if (EntityManager.HasComponent<ActorComponent>(uid)
-            ||  EntityManager.HasComponent<ThrownItemComponent>(uid)
-            ||  EntityManager.HasComponent<FollowerComponent>(uid))
+            if (EntityManager.HasComponent<ActorComponent>(randomWalk.Owner)
+            ||  EntityManager.HasComponent<ThrownItemComponent>(randomWalk.Owner)
+            ||  EntityManager.HasComponent<FollowerComponent>(randomWalk.Owner))
                 continue;
 
             var curTime = _timing.CurTime;
             if (randomWalk.NextStepTime <= curTime)
-                Update(uid, randomWalk, physics);
+                Update(randomWalk.Owner, randomWalk, physics);
         }
     }
 
@@ -66,7 +65,7 @@ internal sealed class RandomWalkController : VirtualController
 
         var curTime = _timing.CurTime;
         randomWalk.NextStepTime = curTime + TimeSpan.FromSeconds(_random.NextDouble(randomWalk.MinStepCooldown.TotalSeconds, randomWalk.MaxStepCooldown.TotalSeconds));
-        if(!Resolve(uid, ref physics))
+        if(!Resolve(randomWalk.Owner, ref physics))
             return;
 
         var pushAngle = _random.NextAngle();

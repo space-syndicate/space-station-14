@@ -1,18 +1,18 @@
-using Content.Server.DoAfter;
+using Content.Server.Chemistry.Components.SolutionManager;
 using Content.Server.Fluids.Components;
+using Content.Server.Chemistry.EntitySystems;
+using Content.Server.DoAfter;
 using Content.Server.Popups;
+using Content.Shared.FixedPoint;
 using Content.Shared.Audio;
-using Content.Shared.Chemistry.Components.SolutionManager;
-using Content.Shared.Chemistry.EntitySystems;
 using Content.Shared.Database;
 using Content.Shared.DoAfter;
 using Content.Shared.Examine;
-using Content.Shared.FixedPoint;
 using Content.Shared.Fluids;
-using Content.Shared.Fluids.Components;
 using Content.Shared.Interaction;
 using Content.Shared.Tag;
 using Content.Shared.Verbs;
+using Content.Shared.Fluids.Components;
 using Robust.Shared.Collections;
 using Robust.Shared.Random;
 using Robust.Shared.Utility;
@@ -95,7 +95,7 @@ public sealed class DrainSystem : SharedDrainSystem
 
         if (drainSolution.MaxVolume == drainSolution.Volume)
         {
-            _puddleSystem.TrySpillAt(Transform(target).Coordinates, containerSolution, out _);
+            _puddleSystem.TrySpillAt(Transform(target).Coordinates, containerSolution, out var puddle);
             _popupSystem.PopupEntity(
                 Loc.GetString("drain-component-empty-verb-target-is-full-message", ("object", target)),
                 container);
@@ -110,8 +110,7 @@ public sealed class DrainSystem : SharedDrainSystem
         var puddleQuery = GetEntityQuery<PuddleComponent>();
         var puddles = new ValueList<(EntityUid Entity, string Solution)>();
 
-        var query = EntityQueryEnumerator<DrainComponent>();
-        while (query.MoveNext(out var uid, out var drain))
+        foreach (var drain in EntityQuery<DrainComponent>())
         {
             drain.Accumulator += frameTime;
             if (drain.Accumulator < drain.DrainFrequency)
@@ -123,32 +122,32 @@ public sealed class DrainSystem : SharedDrainSystem
             // Disable ambient sound from emptying manually
             if (!drain.AutoDrain)
             {
-                _ambientSoundSystem.SetAmbience(uid, false);
+                _ambientSoundSystem.SetAmbience(drain.Owner, false);
                 continue;
             }
 
-            if (!managerQuery.TryGetComponent(uid, out var manager))
+            if (!managerQuery.TryGetComponent(drain.Owner, out var manager))
                 continue;
 
             // Best to do this one every second rather than once every tick...
-            _solutionSystem.TryGetSolution(uid, DrainComponent.SolutionName, out var drainSolution, manager);
+            _solutionSystem.TryGetSolution(drain.Owner, DrainComponent.SolutionName, out var drainSolution, manager);
 
             if (drainSolution is null)
                 continue;
 
             if (drainSolution.AvailableVolume <= 0)
             {
-                _ambientSoundSystem.SetAmbience(uid, false);
+                _ambientSoundSystem.SetAmbience(drain.Owner, false);
                 continue;
             }
 
             // Remove a bit from the buffer
-            _solutionSystem.SplitSolution(uid, drainSolution, (drain.UnitsDestroyedPerSecond * drain.DrainFrequency));
+            _solutionSystem.SplitSolution(drain.Owner, drainSolution, (drain.UnitsDestroyedPerSecond * drain.DrainFrequency));
 
             // This will ensure that UnitsPerSecond is per second...
             var amount = drain.UnitsPerSecond * drain.DrainFrequency;
 
-            if (!xformQuery.TryGetComponent(uid, out var xform))
+            if (!xformQuery.TryGetComponent(drain.Owner, out var xform))
                 continue;
 
             puddles.Clear();
@@ -165,11 +164,11 @@ public sealed class DrainSystem : SharedDrainSystem
 
             if (puddles.Count == 0)
             {
-                _ambientSoundSystem.SetAmbience(uid, false);
+                _ambientSoundSystem.SetAmbience(drain.Owner, false);
                 continue;
             }
 
-            _ambientSoundSystem.SetAmbience(uid, true);
+            _ambientSoundSystem.SetAmbience(drain.Owner, true);
 
             amount /= puddles.Count;
 
@@ -190,7 +189,7 @@ public sealed class DrainSystem : SharedDrainSystem
                 var transferSolution = _solutionSystem.SplitSolution(puddle, puddleSolution,
                     FixedPoint2.Min(FixedPoint2.New(amount), puddleSolution.Volume, drainSolution.AvailableVolume));
 
-                _solutionSystem.TryAddSolution(uid, drainSolution, transferSolution);
+                _solutionSystem.TryAddSolution(drain.Owner, drainSolution, transferSolution);
 
                 if (puddleSolution.Volume <= 0)
                 {
@@ -203,15 +202,13 @@ public sealed class DrainSystem : SharedDrainSystem
     private void OnExamined(EntityUid uid, DrainComponent component, ExaminedEvent args)
     {
         if (!args.IsInDetailsRange ||
-            !HasComp<SolutionContainerManagerComponent>(uid) ||
+            !TryComp(uid, out SolutionContainerManagerComponent? solutionComp) ||
             !_solutionSystem.TryGetSolution(uid, DrainComponent.SolutionName, out var drainSolution))
-        {
-            return;
-        }
+        { return; }
 
-        var text = drainSolution.AvailableVolume != 0
-            ? Loc.GetString("drain-component-examine-volume", ("volume", drainSolution.AvailableVolume))
-            : Loc.GetString("drain-component-examine-hint-full");
+        var text = drainSolution.AvailableVolume != 0 ?
+            Loc.GetString("drain-component-examine-volume", ("volume", drainSolution.AvailableVolume)) :
+            Loc.GetString("drain-component-examine-hint-full");
         args.Message.AddMarkup($"\n\n{text}");
     }
 
@@ -220,9 +217,7 @@ public sealed class DrainSystem : SharedDrainSystem
         if (!args.CanReach || args.Target == null ||
             !_tagSystem.HasTag(args.Used, DrainComponent.PlungerTag) ||
             !_solutionSystem.TryGetSolution(args.Target.Value, DrainComponent.SolutionName, out var drainSolution))
-        {
-            return;
-        }
+        { return; }
 
         if (drainSolution.AvailableVolume > 0)
         {

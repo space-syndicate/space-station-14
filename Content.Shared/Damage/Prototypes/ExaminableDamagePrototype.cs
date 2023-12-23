@@ -6,7 +6,7 @@ namespace Content.Shared.Damage.Prototypes;
 ///     Prototype for examinable damage messages.
 /// </summary>
 [Prototype("examinableDamage")]
-public sealed partial class ExaminableDamagePrototype : IPrototype
+public sealed class ExaminableDamagePrototype : IPrototype
 {
     [IdDataField]
     public string ID { get; private set; } = default!;

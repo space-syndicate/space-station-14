@@ -28,7 +28,7 @@ namespace Content.Client.Access.UI
         private string? _lastJobProto;
 
         public IdCardConsoleWindow(IdCardConsoleBoundUserInterface owner, IPrototypeManager prototypeManager,
-            List<ProtoId<AccessLevelPrototype>> accessLevels)
+            List<string> accessLevels)
         {
             RobustXamlLoader.Load(this);
             IoCManager.InjectDependencies(this);

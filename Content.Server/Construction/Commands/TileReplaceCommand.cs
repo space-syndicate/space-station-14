@@ -1,8 +1,8 @@
 using Content.Server.Administration;
 using Content.Shared.Administration;
+using Robust.Server.Player;
 using Robust.Shared.Console;
 using Robust.Shared.Map;
-using Robust.Shared.Map.Components;
 
 namespace Content.Server.Construction.Commands;
 
@@ -10,6 +10,7 @@ namespace Content.Server.Construction.Commands;
 sealed class TileReplaceCommand : IConsoleCommand
 {
     [Dependency] private readonly IEntityManager _entManager = default!;
+    [Dependency] private readonly IMapManager _mapManager = default!;
     [Dependency] private readonly ITileDefinitionManager _tileDef = default!;
 
     // ReSharper disable once StringLiteralTypo
@@ -19,7 +20,7 @@ sealed class TileReplaceCommand : IConsoleCommand
 
     public void Execute(IConsoleShell shell, string argStr, string[] args)
     {
-        var player = shell.Player;
+        var player = shell.Player as IPlayerSession;
         EntityUid? gridId;
         string tileIdA;
         string tileIdB;
@@ -57,13 +58,13 @@ sealed class TileReplaceCommand : IConsoleCommand
         var tileA = _tileDef[tileIdA];
         var tileB = _tileDef[tileIdB];
 
-        if (!_entManager.TryGetComponent(gridId, out MapGridComponent? grid))
+        if (!_mapManager.TryGetGrid(gridId, out var grid))
         {
             shell.WriteLine($"No grid exists with id {gridId}");
             return;
         }
 
-        if (!_entManager.EntityExists(gridId))
+        if (!_entManager.EntityExists(grid.Owner))
         {
             shell.WriteLine($"Grid {gridId} doesn't have an associated grid entity.");
             return;

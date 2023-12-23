@@ -1,5 +1,5 @@
 ﻿using Content.Server.Explosion.EntitySystems;
-using Robust.Shared.Player;
+using Robust.Server.GameObjects;
 
 namespace Content.Server.GhostKick;
 

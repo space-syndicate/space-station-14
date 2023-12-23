@@ -17,7 +17,6 @@ public sealed class RulesSystem : EntitySystem
 
     public bool IsTrue(EntityUid uid, RulesPrototype rules)
     {
-        var inRange = new HashSet<Entity<IComponent>>();
         foreach (var rule in rules.Rules)
         {
             switch (rule)
@@ -73,13 +72,12 @@ public sealed class RulesSystem : EntitySystem
                     var count = 0;
 
                     // TODO: Update this when we get the callback version
-                    var entities = new HashSet<Entity<AccessReaderComponent>>();
-                    _lookup.GetEntitiesInRange(xform.MapID, worldPos, access.Range, entities);
-                    foreach (var comp in entities)
+                    foreach (var comp in _lookup.GetComponentsInRange<AccessReaderComponent>(xform.MapID,
+                                 worldPos, access.Range))
                     {
                         if (!_reader.AreAccessTagsAllowed(access.Access, comp) ||
                             access.Anchored &&
-                            (!xformQuery.TryGetComponent(comp, out var compXform) ||
+                            (!xformQuery.TryGetComponent(comp.Owner, out var compXform) ||
                              !compXform.Anchored))
                         {
                             continue;
@@ -115,12 +113,12 @@ public sealed class RulesSystem : EntitySystem
 
                     foreach (var compType in nearbyComps.Components.Values)
                     {
-                        inRange.Clear();
-                        _lookup.GetEntitiesInRange(compType.Component.GetType(), xform.MapID, worldPos, nearbyComps.Range, inRange);
-                        foreach (var comp in inRange)
+                        // TODO: Update this when we get the callback version
+                        foreach (var comp in _lookup.GetComponentsInRange(compType.Component.GetType(), xform.MapID,
+                                     worldPos, nearbyComps.Range))
                         {
                             if (nearbyComps.Anchored &&
-                                (!xformQuery.TryGetComponent(comp, out var compXform) ||
+                                (!xformQuery.TryGetComponent(comp.Owner, out var compXform) ||
                                  !compXform.Anchored))
                             {
                                 continue;

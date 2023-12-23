@@ -3,8 +3,7 @@ using Robust.Shared.GameStates;
 
 namespace Content.Shared.Shuttles.Components;
 
-[RegisterComponent, NetworkedComponent, AutoGenerateComponentState]
-[Access(typeof(SharedRadarConsoleSystem))]
+[RegisterComponent, NetworkedComponent, Access(typeof(SharedRadarConsoleSystem))]
 public sealed partial class RadarConsoleComponent : Component
 {
     [ViewVariables(VVAccess.ReadWrite)]
@@ -17,6 +16,6 @@ public sealed partial class RadarConsoleComponent : Component
             .SetRange(Owner, value, this);
     }
 
-    [DataField, AutoNetworkedField]
+    [DataField("maxRange")]
     public float MaxRange = 256f;
 }

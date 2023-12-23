@@ -22,7 +22,7 @@ public sealed partial class AtmosphereSystem
 
         if (TryComp<InternalsComponent>(old, out var internalsComponent))
         {
-            _internals.DisconnectBreathTool((old.Value, internalsComponent));
+            _internals.DisconnectBreathTool(internalsComponent);
         }
 
         component.IsFunctional = false;

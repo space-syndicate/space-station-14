@@ -70,7 +70,7 @@ public sealed partial class GatherableSystem : EntitySystem
                     continue;
             }
             var getLoot = _prototypeManager.Index<EntityLootTablePrototype>(table);
-            var spawnLoot = getLoot.GetSpawns(_random);
+            var spawnLoot = getLoot.GetSpawns();
             var spawnPos = pos.Offset(_random.NextVector2(0.3f));
             Spawn(spawnLoot[0], spawnPos);
         }

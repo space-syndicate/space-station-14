@@ -4,6 +4,11 @@
   id: MonkeyCubeBox
   description: Drymate brand monkey cubes. Just add water!
   components:
+  - type: Storage
+    whitelist:
+      tags:
+      - MonkeyCube
+    capacity: 30
   - type: StorageFill
     contents:
       - id: MonkeyCubeWrapped
@@ -19,8 +24,6 @@
   id: MonkeyCubeWrapped
   description: Unwrap this to get a monkey cube.
   components:
-  - type: Item
-    size: Tiny
   - type: SpawnItemsOnUse
     items:
       - id: MonkeyCube
@@ -44,6 +47,7 @@
     whitelist:
       tags:
       - MonkeyCube
+    capacity: 30
   - type: StorageFill
     contents:
       - id: SyndicateSpongeWrapped
@@ -67,8 +71,6 @@
   - type: Sprite
     sprite: Objects/Misc/monkeycube.rsi
     state: wrapper
-  - type: Item
-    size: Tiny
   - type: Tag
     tags:
     - MonkeyCube

@@ -1,9 +1,10 @@
 using System.Linq;
 using Content.Shared.Interaction;
-using Content.Shared.Prying.Components;
 using Content.Shared.Tools.Components;
+using Robust.Shared.GameStates;
+using Content.Shared.Prying.Components;
 
-namespace Content.Shared.Tools.Systems;
+namespace Content.Shared.Tools;
 
 public abstract partial class SharedToolSystem : EntitySystem
 {
@@ -11,11 +12,16 @@ public abstract partial class SharedToolSystem : EntitySystem
     {
         SubscribeLocalEvent<MultipleToolComponent, ComponentStartup>(OnMultipleToolStartup);
         SubscribeLocalEvent<MultipleToolComponent, ActivateInWorldEvent>(OnMultipleToolActivated);
-        SubscribeLocalEvent<MultipleToolComponent, AfterAutoHandleStateEvent>(OnMultipleToolHandleState);
+        SubscribeLocalEvent<MultipleToolComponent, ComponentGetState>(OnMultipleToolGetState);
+        SubscribeLocalEvent<MultipleToolComponent, ComponentHandleState>(OnMultipleToolHandleState);
     }
 
-    private void OnMultipleToolHandleState(EntityUid uid, MultipleToolComponent component, ref AfterAutoHandleStateEvent args)
+    private void OnMultipleToolHandleState(EntityUid uid, MultipleToolComponent component, ref ComponentHandleState args)
     {
+        if (args.Current is not MultipleToolComponentState state)
+            return;
+
+        component.CurrentEntry = state.Selected;
         SetMultipleTool(uid, component);
     }
 
@@ -32,6 +38,11 @@ public abstract partial class SharedToolSystem : EntitySystem
             return;
 
         args.Handled = CycleMultipleTool(uid, multiple, args.User);
+    }
+
+    private void OnMultipleToolGetState(EntityUid uid, MultipleToolComponent multiple, ref ComponentGetState args)
+    {
+        args.State = new MultipleToolComponentState(multiple.CurrentEntry);
     }
 
     public bool CycleMultipleTool(EntityUid uid, MultipleToolComponent? multiple = null, EntityUid? user = null)
@@ -66,7 +77,7 @@ public abstract partial class SharedToolSystem : EntitySystem
         }
 
         var current = multiple.Entries[multiple.CurrentEntry];
-        tool.UseSound = current.UseSound;
+        tool.UseSound = current.Sound;
         tool.Qualities = current.Behavior;
 
         // TODO: Replace this with a better solution later

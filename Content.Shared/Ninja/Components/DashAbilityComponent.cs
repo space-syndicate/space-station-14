@@ -3,22 +3,21 @@ using Content.Shared.Ninja.Systems;
 using Robust.Shared.Audio;
 using Robust.Shared.GameStates;
 using Robust.Shared.Prototypes;
-
-namespace Content.Shared.Ninja.Components;
+using Robust.Shared.Serialization.TypeSerializers.Implementations.Custom.Prototype;
 
 /// <summary>
 /// Adds an action to dash, teleport to clicked position, when this item is held.
 /// </summary>
-[RegisterComponent, NetworkedComponent, Access(typeof(DashAbilitySystem)), AutoGenerateComponentState]
+[RegisterComponent, NetworkedComponent, Access(typeof(DashAbilitySystem))]
 public sealed partial class DashAbilityComponent : Component
 {
     /// <summary>
     /// The action id for dashing.
     /// </summary>
-    [DataField]
-    public EntProtoId DashAction = "ActionEnergyKatanaDash";
+    [DataField("dashAction", required: true, customTypeSerializer: typeof(PrototypeIdSerializer<EntityPrototype>)), ViewVariables(VVAccess.ReadWrite)]
+    public string DashAction = string.Empty;
 
-    [DataField, AutoNetworkedField]
+    [DataField("dashActionEntity")]
     public EntityUid? DashActionEntity;
 
     /// <summary>

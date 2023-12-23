@@ -12,6 +12,7 @@ using Content.Server.NPC;
 using Content.Server.NPC.Components;
 using Content.Server.NPC.HTN;
 using Content.Server.NPC.Systems;
+using Content.Server.Nutrition.Components;
 using Content.Server.Roles;
 using Content.Server.Speech.Components;
 using Content.Server.Temperature.Components;
@@ -115,7 +116,7 @@ namespace Content.Server.Zombies
             //This is the actual damage of the zombie. We assign the visual appearance
             //and range here because of stuff we'll find out later
             var melee = EnsureComp<MeleeWeaponComponent>(target);
-            melee.Animation = zombiecomp.AttackAnimation;
+            melee.ClickAnimation = zombiecomp.AttackAnimation;
             melee.WideAnimation = zombiecomp.AttackAnimation;
             melee.Range = 1.2f;
 

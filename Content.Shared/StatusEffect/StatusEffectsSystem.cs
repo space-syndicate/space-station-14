@@ -1,5 +1,8 @@
 using System.Diagnostics.CodeAnalysis;
 using Content.Shared.Alert;
+using Content.Shared.Mobs;
+using Content.Shared.Mobs.Components;
+using Content.Shared.Mobs.Systems;
 using Content.Shared.Rejuvenate;
 using Robust.Shared.GameStates;
 using Robust.Shared.Prototypes;
@@ -33,14 +36,14 @@ namespace Content.Shared.StatusEffect
             var curTime = _gameTiming.CurTime;
             var enumerator = EntityQueryEnumerator<ActiveStatusEffectsComponent, StatusEffectsComponent>();
 
-            while (enumerator.MoveNext(out var uid, out _, out var status))
+            while (enumerator.MoveNext(out _, out var status))
             {
                 foreach (var state in status.ActiveEffects.ToArray())
                 {
                     // if we're past the end point of the effect
                     if (curTime > state.Value.Cooldown.Item2)
                     {
-                        TryRemoveStatusEffect(uid, state.Key, status);
+                        TryRemoveStatusEffect(status.Owner, state.Key, status);
                     }
                 }
             }
@@ -104,7 +107,7 @@ namespace Content.Shared.StatusEffect
         /// <typeparam name="T">The component type to add and remove from the entity.</typeparam>
         public bool TryAddStatusEffect<T>(EntityUid uid, string key, TimeSpan time, bool refresh,
             StatusEffectsComponent? status = null)
-            where T : IComponent, new()
+            where T : Component, new()
         {
             if (!Resolve(uid, ref status, false))
                 return false;
@@ -134,7 +137,10 @@ namespace Content.Shared.StatusEffect
                 // If they already have the comp, we just won't bother updating anything.
                 if (!EntityManager.HasComponent(uid, _componentFactory.GetRegistration(component).Type))
                 {
+                    // Fuck this shit I hate it
                     var newComponent = (Component) _componentFactory.GetComponent(component);
+                    newComponent.Owner = uid;
+
                     EntityManager.AddComponent(uid, newComponent);
                     status.ActiveEffects[key].RelevantComponent = component;
                 }

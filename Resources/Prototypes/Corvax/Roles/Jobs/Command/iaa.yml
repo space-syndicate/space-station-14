@@ -19,9 +19,6 @@
     - Maintenance
     - Command
     - External
-  special:
-  - !type:AddImplantSpecial
-    implants: [ MindShieldImplant ]
 
 - type: startingGear
   id: IAAGear
@@ -33,8 +30,6 @@
     eyes: ClothingEyesGlassesSunglasses
     ears: ClothingHeadsetIAA
     neck: ClothingNeckLawyerbadge
-  inhand:
-    - BriefcaseIAAFilled
-  innerClothingSkirt: ClothingUniformJumpskirtLawyerBlack
+  innerclothingskirt: ClothingUniformJumpskirtLawyerBlack
   satchel: ClothingBackpackSatchelIAAFilled
   duffelbag: ClothingBackpackDuffelIAAFilled

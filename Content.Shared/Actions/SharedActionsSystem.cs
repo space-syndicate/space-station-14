@@ -7,7 +7,6 @@ using Content.Shared.Database;
 using Content.Shared.Hands;
 using Content.Shared.Interaction;
 using Content.Shared.Inventory.Events;
-using Content.Shared.Mind;
 using Robust.Shared.Containers;
 using Robust.Shared.GameStates;
 using Robust.Shared.Map;
@@ -37,8 +36,6 @@ public abstract class SharedActionsSystem : EntitySystem
         SubscribeLocalEvent<ActionsComponent, DidUnequipEvent>(OnDidUnequip);
         SubscribeLocalEvent<ActionsComponent, DidUnequipHandEvent>(OnHandUnequipped);
 
-        SubscribeLocalEvent<ActionsComponent, ComponentShutdown>(OnShutdown);
-
         SubscribeLocalEvent<ActionsComponent, ComponentGetState>(OnActionsGetState);
 
         SubscribeLocalEvent<InstantActionComponent, ComponentGetState>(OnInstantGetState);
@@ -50,14 +47,6 @@ public abstract class SharedActionsSystem : EntitySystem
         SubscribeLocalEvent<WorldTargetActionComponent, GetActionDataEvent>(OnGetActionData);
 
         SubscribeAllEvent<RequestPerformActionEvent>(OnActionRequest);
-    }
-
-    private void OnShutdown(EntityUid uid, ActionsComponent component, ComponentShutdown args)
-    {
-        foreach (var act in component.Actions)
-        {
-            RemoveAction(uid, act, component);
-        }
     }
 
     private void OnInstantGetState(EntityUid uid, InstantActionComponent component, ref ComponentGetState args)
@@ -107,7 +96,7 @@ public abstract class SharedActionsSystem : EntitySystem
     {
         if (result != null)
         {
-            DebugTools.AssertOwner(uid, result);
+            DebugTools.Assert(result.Owner == uid);
             return true;
         }
 
@@ -222,6 +211,7 @@ public abstract class SharedActionsSystem : EntitySystem
             return;
 
         DebugTools.Assert(action.AttachedEntity == user);
+
         if (!action.Enabled)
             return;
 
@@ -369,7 +359,7 @@ public abstract class SharedActionsSystem : EntitySystem
 
         var toggledBefore = action.Toggled;
 
-        // Note that attached entity and attached container are allowed to be null here.
+        // Note that attached entity is allowed to be null here.
         if (action.AttachedEntity != null && action.AttachedEntity != performer)
         {
             Log.Error($"{ToPrettyString(performer)} is attempting to perform an action {ToPrettyString(actionId)} that is attached to another entity {ToPrettyString(action.AttachedEntity.Value)}");
@@ -380,12 +370,7 @@ public abstract class SharedActionsSystem : EntitySystem
         {
             // This here is required because of client-side prediction (RaisePredictiveEvent results in event re-use).
             actionEvent.Handled = false;
-            var target = performer;
-
-            if (!action.RaiseOnUser && action.Container != null && !HasComp<MindComponent>(action.Container))
-                target = action.Container.Value;
-
-            RaiseLocalEvent(target, (object) actionEvent, broadcast: true);
+            RaiseLocalEvent(action.Container ?? performer, (object) actionEvent, broadcast: true);
             handled = actionEvent.Handled;
         }
 
@@ -509,10 +494,7 @@ public abstract class SharedActionsSystem : EntitySystem
                           (TryComp(action.Container, out ActionsContainerComponent? containerComp)
                            && containerComp.Container.Contains(actionId)));
 
-        if (action.AttachedEntity != null)
-            RemoveAction(action.AttachedEntity.Value, actionId, action: action);
-
-        DebugTools.AssertOwner(performer, comp);
+        DebugTools.Assert(comp == null || comp.Owner == performer);
         comp ??= EnsureComp<ActionsComponent>(performer);
         action.AttachedEntity = performer;
         comp.Actions.Add(actionId);
@@ -541,32 +523,12 @@ public abstract class SharedActionsSystem : EntitySystem
         if (!Resolve(container, ref containerComp))
             return;
 
-        DebugTools.AssertOwner(performer, comp);
+        DebugTools.Assert(comp == null || comp.Owner == performer);
         comp ??= EnsureComp<ActionsComponent>(performer);
 
         foreach (var actionId in actions)
         {
             AddAction(performer, actionId, container, comp, containerComp: containerComp);
-        }
-    }
-
-    /// <summary>
-    ///     Grants all actions currently contained in some action-container. If the target entity has no action
-    /// component, this will give them one.
-    /// </summary>
-    /// <param name="performer">Entity to receive the actions</param>
-    /// <param name="container">The entity that contains thee actions.</param>
-    public void GrantContainedActions(Entity<ActionsComponent?> performer, Entity<ActionsContainerComponent?> container)
-    {
-        if (!Resolve(container, ref container.Comp))
-            return;
-
-        performer.Comp ??= EnsureComp<ActionsComponent>(performer);
-
-        foreach (var actionId in container.Comp.Container.ContainedEntities)
-        {
-            if (TryGetActionData(actionId, out var action))
-                AddActionDirect(performer, actionId, performer.Comp, action);
         }
     }
 
@@ -624,19 +586,9 @@ public abstract class SharedActionsSystem : EntitySystem
         if (!ResolveActionData(actionId, ref action))
             return;
 
-        if (action.AttachedEntity != performer)
-        {
-            DebugTools.Assert(!Resolve(performer, ref comp, false) || !comp.Actions.Contains(actionId.Value));
-
-            if (!GameTiming.ApplyingState)
-                Log.Error($"Attempted to remove an action {ToPrettyString(actionId)} from an entity that it was never attached to: {ToPrettyString(performer)}");
-            return;
-        }
-
         if (!Resolve(performer, ref comp, false))
         {
-            DebugTools.Assert(action.AttachedEntity == null || TerminatingOrDeleted(action.AttachedEntity.Value));
-            action.AttachedEntity = null;
+            DebugTools.AssertNull(action.AttachedEntity);
             return;
         }
 
@@ -647,6 +599,7 @@ public abstract class SharedActionsSystem : EntitySystem
             return;
         }
 
+        DebugTools.Assert(action.AttachedEntity == performer);
         comp.Actions.Remove(actionId.Value);
         action.AttachedEntity = null;
         Dirty(actionId.Value, action);

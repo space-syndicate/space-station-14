@@ -1,7 +1,7 @@
 # Base
 
 - type: entity
-  parent: [FoodInjectableBase, ItemHeftyBase]
+  parent: FoodInjectableBase
   id: FoodEggBase
   description: An egg!
   abstract: true
@@ -9,14 +9,13 @@
   - type: Tag
     tags:
       - Egg
-      - Meat
   - type: Food
     trash: Eggshells
   - type: Sprite
     sprite: Objects/Consumable/Food/egg.rsi
   - type: Item
     sprite: Objects/Consumable/Food/egg.rsi
-    size: Tiny
+    size: 1
   - type: SolutionContainerManager
     solutions:
       food:
@@ -29,7 +28,15 @@
     ignoreEmpty: true
     popup: spike-solution-egg
   - type: DeleteOnTrigger
-  # egg fragile
+  - type: DamageOnLand
+    damage:
+      types:
+        Blunt: 1
+  - type: DamageOtherOnHit
+    damage:
+      types:
+        Blunt: 1
+       #Dignity: 25
   - type: DamageOnHighSpeedImpact
     minimumSpeed: 0.1
     damage:
@@ -69,7 +76,7 @@
     sprite: Objects/Consumable/Food/egg.rsi
     state: eggshells
   - type: Item
-    size: Tiny
+    size: 1
   - type: SolutionContainerManager
     solutions:
       food:

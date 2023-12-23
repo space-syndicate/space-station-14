@@ -15,8 +15,31 @@ namespace Content.Server.Shuttles.Components
         /// <summary>
         /// Whether the thruster has been force to be enabled / disabled (e.g. VV, interaction, etc.)
         /// </summary>
-        [DataField, ViewVariables(VVAccess.ReadWrite)]
-        public bool Enabled { get; set; } = true;
+        [ViewVariables(VVAccess.ReadWrite)]
+        public bool Enabled
+        {
+            get => _enabled;
+            [Obsolete("Use the system method")]
+            set
+            {
+                if (_enabled == value) return;
+                _enabled = value;
+
+                var system = EntitySystem.Get<ThrusterSystem>();
+
+                if (!_enabled)
+                {
+                    system.DisableThruster(Owner, this);
+                }
+                else if (system.CanEnable(Owner, this))
+                {
+                    system.EnableThruster(Owner, this);
+                }
+            }
+        }
+
+        [DataField("enabled")]
+        private bool _enabled = true;
 
         /// <summary>
         /// This determines whether the thruster is actually enabled for the purposes of thrust

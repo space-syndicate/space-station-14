@@ -38,7 +38,7 @@ public sealed partial class ParticleAcceleratorSystem
         }
 
         if (TryComp<ProjectileComponent>(emitted, out var proj))
-            _projectileSystem.SetShooter(emitted, proj, uid);
+            _projectileSystem.SetShooter(proj, uid);
 
         if (TryComp<SinguloFoodComponent>(emitted, out var food))
         {

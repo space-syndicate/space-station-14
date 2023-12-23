@@ -12,15 +12,14 @@ public sealed class ThermalRegulatorSystem : EntitySystem
 
     public override void Update(float frameTime)
     {
-        var query = EntityQueryEnumerator<ThermalRegulatorComponent>();
-        while (query.MoveNext(out var uid, out var regulator))
+        foreach (var regulator in EntityManager.EntityQuery<ThermalRegulatorComponent>())
         {
             regulator.AccumulatedFrametime += frameTime;
             if (regulator.AccumulatedFrametime < 1)
                 continue;
 
             regulator.AccumulatedFrametime -= 1;
-            ProcessThermalRegulation(uid, regulator);
+            ProcessThermalRegulation(regulator.Owner, regulator);
         }
     }
 
@@ -35,8 +34,7 @@ public sealed class ThermalRegulatorSystem : EntitySystem
 
         // implicit heat regulation
         var tempDiff = Math.Abs(temperatureComponent.CurrentTemperature - comp.NormalBodyTemperature);
-        var heatCapacity = _tempSys.GetHeatCapacity(uid, temperatureComponent);
-        var targetHeat = tempDiff * heatCapacity;
+        var targetHeat = tempDiff * temperatureComponent.HeatCapacity;
         if (temperatureComponent.CurrentTemperature > comp.NormalBodyTemperature)
         {
             totalMetabolismTempChange -= Math.Min(targetHeat, comp.ImplicitHeatRegulation);
@@ -50,7 +48,7 @@ public sealed class ThermalRegulatorSystem : EntitySystem
 
         // recalc difference and target heat
         tempDiff = Math.Abs(temperatureComponent.CurrentTemperature - comp.NormalBodyTemperature);
-        targetHeat = tempDiff * heatCapacity;
+        targetHeat = tempDiff * temperatureComponent.HeatCapacity;
 
         // if body temperature is not within comfortable, thermal regulation
         // processes starts

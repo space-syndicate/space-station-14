@@ -6,7 +6,6 @@ using Content.Shared.Inventory.Events;
 using Content.Shared.Preferences;
 using Content.Shared.VoiceMask;
 using Robust.Server.GameObjects;
-using Robust.Shared.Player;
 
 namespace Content.Server.VoiceMask;
 

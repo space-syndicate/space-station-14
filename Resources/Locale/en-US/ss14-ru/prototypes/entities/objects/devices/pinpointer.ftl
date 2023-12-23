@@ -5,5 +5,4 @@ ent-PinpointerNuclear = pinpointer
 ent-PinpointerUniversal = universal pinpointer
     .desc = A handheld tracking device that locks onto any physical entity while off.
 ent-PinpointerStation = { ent-PinpointerBase }
-    .suffix = Station
     .desc = { ent-PinpointerBase.desc }

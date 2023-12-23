@@ -26,15 +26,15 @@ public sealed class ContainmentFieldSystem : EntitySystem
     {
         var otherBody = args.OtherEntity;
 
-        if (HasComp<SpaceGarbageComponent>(otherBody))
+        if (TryComp<SpaceGarbageComponent>(otherBody, out var garbage))
         {
-            _popupSystem.PopupEntity(Loc.GetString("comp-field-vaporized", ("entity", otherBody)), uid, PopupType.LargeCaution);
-            QueueDel(otherBody);
+            _popupSystem.PopupEntity(Loc.GetString("comp-field-vaporized", ("entity", otherBody)), component.Owner, PopupType.LargeCaution);
+            QueueDel(garbage.Owner);
         }
 
         if (TryComp<PhysicsComponent>(otherBody, out var physics) && physics.Mass <= component.MaxMass && physics.Hard)
         {
-            var fieldDir = Transform(uid).WorldPosition;
+            var fieldDir = Transform(component.Owner).WorldPosition;
             var playerDir = Transform(otherBody).WorldPosition;
 
             _throwing.TryThrow(otherBody, playerDir-fieldDir, strength: component.ThrowForce);

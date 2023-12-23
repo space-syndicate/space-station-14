@@ -15,7 +15,7 @@
     ears: ClothingHeadsetGrey
     pocket1: VehicleSkeletonMotorcycle
     pocket2: VehicleKeySkeletonMotorcycle
-  innerClothingSkirt: ClothingUniformJumpskirtColorBlack
+  innerclothingskirt: ClothingUniformJumpskirtColorBlack
   satchel: ClothingBackpackSatchelFilled
   duffelbag: ClothingBackpackDuffelFilled
 
@@ -39,26 +39,27 @@
     belt: EnergyKatana
     suitstorage: YellowOxygenTankFilled
   inhand:
-    - JetpackBlackFilled
+    left hand: JetpackBlackFilled
 
 #Deathsquad Outfit
 - type: startingGear
   id: DeathSquadGear
   equipment:
     jumpsuit: ClothingUniformJumpsuitDeathSquad
-    back: ClothingBackpackDeathSquadFilled
+    back: ClothingBackpackDuffelSyndicateAmmo
     mask: ClothingMaskGasDeathSquad
     eyes: ClothingEyesGlassesSecurity
     ears: ClothingHeadsetAltCentCom
     gloves: ClothingHandsGlovesCombat
     outerClothing: ClothingOuterHardsuitDeathsquad
-    suitstorage: AirTankFilled
+    suitstorage: OxygenTankFilled
     shoes: ClothingShoesBootsMagAdv
     id: DeathsquadPDA
     pocket1: EnergySword
-    pocket2: EnergyShield
-    belt: ClothingBeltMilitaryWebbingMedFilled
-  innerClothingSkirt: ClothingUniformJumpskirtColorBlack
+    belt: ClothingBeltChiefEngineerFilled
+  innerclothingskirt: ClothingUniformJumpskirtColorBlack
+  satchel: ClothingBackpackDuffelSyndicateAmmo
+  duffelbag: ClothingBackpackDuffelSyndicateAmmo
 
 # Syndicate Operative Outfit - Monkey
 - type: startingGear
@@ -67,7 +68,7 @@
     head: ClothingHeadHatOutlawHat
     jumpsuit: ClothingUniformJumpsuitOperative
     mask: CigaretteSyndicate
-  innerClothingSkirt: ClothingUniformJumpsuitOperative
+  innerclothingskirt: ClothingUniformJumpsuitOperative
 
 # Syndicate Operative Outfit - Barratry
 - type: startingGear
@@ -77,7 +78,7 @@
     back: ClothingBackpackDuffelSyndicateOperative
     shoes: ClothingShoesBootsCombatFilled
     gloves: ClothingHandsGlovesColorBlack
-  innerClothingSkirt: ClothingUniformJumpsuitOperative
+  innerclothingskirt: ClothingUniformJumpsuitOperative
   satchel: ClothingBackpackDuffelSyndicateOperative
   duffelbag: ClothingBackpackDuffelSyndicateOperative
 
@@ -92,7 +93,7 @@
     shoes: ClothingShoesBootsCombatFilled
     pocket1: BaseUplinkRadio40TC
     id: AgentIDCard
-  innerClothingSkirt: ClothingUniformJumpsuitOperative
+  innerclothingskirt: ClothingUniformJumpsuitOperative
   satchel: ClothingBackpackDuffelSyndicateOperative
   duffelbag: ClothingBackpackDuffelSyndicateOperative
 
@@ -103,7 +104,7 @@
     jumpsuit: ClothingUniformJumpsuitOperative
     back: ClothingBackpackDuffelSyndicateOperative
     mask: ClothingMaskGasSyndicate
-    # eyes: Night Vision Goggles whenever they're made
+  # eyes: Night Vision Goggles whenever they're made
     eyes: ClothingEyesGlassesMeson
     ears: ClothingHeadsetAltSyndicate
     gloves: ClothingHandsGlovesCombat
@@ -113,7 +114,7 @@
     pocket1: DoubleEmergencyOxygenTankFilled
     pocket2: BaseUplinkRadio40TC
     belt: ClothingBeltMilitaryWebbing
-  innerClothingSkirt: ClothingUniformJumpskirtOperative
+  innerclothingskirt: ClothingUniformJumpskirtOperative
   satchel: ClothingBackpackDuffelSyndicateOperative
   duffelbag: ClothingBackpackDuffelSyndicateOperative
 
@@ -124,7 +125,7 @@
     jumpsuit: ClothingUniformJumpsuitOperative
     back: ClothingBackpackDuffelSyndicateOperative
     mask: ClothingMaskGasSyndicate
-    # eyes: Night Vision Goggles whenever they're made
+  # eyes: Night Vision Goggles whenever they're made
     eyes: ClothingEyesGlassesMeson
     ears: ClothingHeadsetAltSyndicate
     gloves: ClothingHandsGlovesCombat
@@ -135,8 +136,8 @@
     pocket2: BaseUplinkRadio40TC
     belt: ClothingBeltMilitaryWebbing
   inhand:
-    - NukeOpsDeclarationOfWar
-  innerClothingSkirt: ClothingUniformJumpskirtOperative
+    right hand: NukeOpsDeclarationOfWar
+  innerclothingskirt: ClothingUniformJumpskirtOperative
   satchel: ClothingBackpackDuffelSyndicateOperative
   duffelbag: ClothingBackpackDuffelSyndicateOperative
 
@@ -150,13 +151,13 @@
     eyes: ClothingEyesHudMedical
     ears: ClothingHeadsetAltSyndicate
     gloves: ClothingHandsGlovesCombat
-    outerClothing: ClothingOuterHardsuitMedic
+    outerClothing: ClothingOuterHardsuitSyndieElite
     shoes: ClothingShoesBootsMagSyndie
     id: SyndiPDA
     pocket1: DoubleEmergencyOxygenTankFilled
     pocket2: BaseUplinkRadio40TC
     belt: ClothingBeltMilitaryWebbingMedFilled
-  innerClothingSkirt: ClothingUniformJumpskirtOperative
+  innerclothingskirt: ClothingUniformJumpskirtOperative
   satchel: ClothingBackpackDuffelSyndicateOperativeMedic
   duffelbag: ClothingBackpackDuffelSyndicateOperativeMedic
 
@@ -173,7 +174,7 @@
     back: ClothingBackpackFilled
     shoes: ClothingShoesBootsCombat
     id: SyndiPDA #a subtype of this for footsoldiers would probably be good to have
-  innerClothingSkirt: ClothingUniformJumpsuitOperative
+  innerclothingskirt: ClothingUniformJumpsuitOperative
   satchel: ClothingBackpackDuffelSyndicateOperative
   duffelbag: ClothingBackpackDuffelSyndicateOperative
 
@@ -191,7 +192,7 @@
     shoes: ClothingShoesBootsCombat
     pocket1: CombatKnife
     id: SyndiPDA
-  innerClothingSkirt: ClothingUniformJumpsuitOperative
+  innerclothingskirt: ClothingUniformJumpsuitOperative
   satchel: ClothingBackpackDuffelSyndicateOperative
   duffelbag: ClothingBackpackDuffelSyndicateOperative
 
@@ -210,7 +211,7 @@
     pocket1: EnergySword
     pocket2: EnergyShield
     id: SyndiPDA
-  innerClothingSkirt: ClothingUniformJumpsuitOperative
+  innerclothingskirt: ClothingUniformJumpsuitOperative
   satchel: ClothingBackpackDuffelSyndicateOperative
   duffelbag: ClothingBackpackDuffelSyndicateOperative
 
@@ -228,7 +229,7 @@
     shoes: ClothingShoesBootsCombat
     pocket1: WeaponPistolViper
     id: SyndiPDA
-  innerClothingSkirt: ClothingUniformJumpsuitOperative
+  innerclothingskirt: ClothingUniformJumpsuitOperative
   satchel: ClothingBackpackDuffelSyndicateOperative
   duffelbag: ClothingBackpackDuffelSyndicateOperative
 
@@ -245,7 +246,7 @@
     outerClothing: ClothingOuterArmorBasicSlim
     ears: ClothingHeadsetSecurity
     gloves: ClothingHandsGlovesCombat
-  innerClothingSkirt: ClothingUniformJumpskirtSec
+  innerclothingskirt: ClothingUniformJumpskirtSec
   satchel: ClothingBackpackSatchelSecurityFilled
   duffelbag: ClothingBackpackDuffelSecurityFilled
 
@@ -254,8 +255,8 @@
   id: CBURNGear
   equipment:
     jumpsuit: ClothingUniformJumpsuitColorBrown
-    back: ClothingBackpackDuffelCBURNFilled
-    mask: ClothingMaskGasERT
+    back: ClothingBackpackDuffelCBURN
+    mask: ClothingMaskGasExplorer
     eyes: ClothingEyesGlassesSecurity
     ears: ClothingHeadsetAltCentCom
     gloves: ClothingHandsGlovesCombat
@@ -266,9 +267,9 @@
     pocket2: WeaponLaserGun
     suitstorage: YellowOxygenTankFilled
     belt: ClothingBeltBandolier
-  innerClothingSkirt: ClothingUniformJumpsuitColorBrown
-  satchel: ClothingBackpackDuffelCBURNFilled
-  duffelbag: ClothingBackpackDuffelCBURNFilled
+  innerclothingskirt: ClothingUniformJumpsuitColorBrown
+  satchel: ClothingBackpackDuffelCBURN
+  duffelbag: ClothingBackpackDuffelCBURN
 
 - type: startingGear
   id: BoxingKangarooGear
@@ -290,7 +291,7 @@
   equipment:
     jumpsuit: ClothingUniformJumpsuitColorGrey
     shoes: ClothingShoesColorBlack
-  innerClothingSkirt: ClothingUniformJumpskirtColorGrey
+  innerclothingskirt: ClothingUniformJumpskirtColorGrey
 
 # DeathMatch Gear
 
@@ -301,9 +302,9 @@
     shoes: ClothingShoesBootsJack
     ears: ClothingHeadsetGrey
     gloves: ClothingHandsGlovesFingerless
-  innerClothingSkirt: ClothingUniformJumpskirtColorWhite
+  innerclothingskirt: ClothingUniformJumpskirtColorWhite
   inhand:
-    - WeaponMeleeToolboxRobust
+    left hand: WeaponMeleeToolboxRobust
 
 #Brigmedic
 
@@ -321,31 +322,6 @@
     ears: ClothingHeadsetBrigmedic
     mask: ClothingMaskBreathMedicalSecurity
     belt: ClothingBeltMedicalFilled
-  innerClothingSkirt: ClothingUniformJumpskirtBrigmedic
+  innerclothingskirt: ClothingUniformJumpskirtBrigmedic
   satchel: ClothingBackpackSatchelBrigmedicFilled
   duffelbag: ClothingBackpackDuffelBrigmedicFilled
-
-#Head Rev Gear
-- type: startingGear
-  id: HeadRevGear
-  equipment:
-    pocket2: Flash
-
-#Gladiator with spear
-- type: startingGear
-  id: GladiatorGear
-  equipment:
-    jumpsuit: ClothingUniformJumpsuitGladiator
-    back: SpearBone
-    head: ClothingHeadHatGladiator
-    shoes: ClothingShoesCult
-
-#Ash Walker
-- type: startingGear
-  id: AshWalker
-  equipment:
-    jumpsuit: ClothingUniformJumpsuitGladiator
-    outerClothing: ClothingOuterArmorBone
-    back: SpearBone
-    head: ClothingHeadHelmetBone
-    shoes: ClothingShoesCult

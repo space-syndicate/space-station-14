@@ -145,7 +145,7 @@ namespace Content.Server.Connection
             }
 
             // Corvax-Queue-Start
-            var isQueueEnabled = IoCManager.Instance!.TryResolveType<IServerJoinQueueManager>(out var mgr) && mgr.IsEnabled;
+            var isQueueEnabled = _cfg.GetCVar(CCCVars.QueueEnabled);
             if (_plyMgr.PlayerCount >= _cfg.GetCVar(CCVars.SoftMaxPlayers) && !isPrivileged && !isQueueEnabled)
             // Corvax-Queue-End
             {
@@ -202,7 +202,7 @@ namespace Content.Server.Connection
         public async Task<bool> HavePrivilegedJoin(NetUserId userId)
         {
             var isAdmin = await _dbManager.GetAdminDataForAsync(userId) != null;
-            var havePriorityJoin = _sponsorsMgr != null && _sponsorsMgr.HavePriorityJoin(userId); // Corvax-Sponsors
+            var havePriorityJoin = _sponsorsMgr != null && _sponsorsMgr.TryGetInfo(userId, out var sponsor) && sponsor.HavePriorityJoin; // Corvax-Sponsors
             var wasInGame = EntitySystem.TryGet<GameTicker>(out var ticker) &&
                             ticker.PlayerGameStatuses.TryGetValue(userId, out var status) &&
                             status == PlayerGameStatus.JoinedGame;

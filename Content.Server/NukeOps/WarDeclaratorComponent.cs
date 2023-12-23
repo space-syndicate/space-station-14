@@ -12,37 +12,37 @@ public sealed partial class WarDeclaratorComponent : Component
     /// Custom war declaration message. If empty, use default.
     /// </summary>
     [ViewVariables(VVAccess.ReadWrite)]
-    [DataField]
+    [DataField("message")]
     public string Message;
 
     /// <summary>
     /// Permission to customize message text
     /// </summary>
     [ViewVariables(VVAccess.ReadWrite)]
-    [DataField]
+    [DataField("allowEditingMessage")]
     public bool AllowEditingMessage = true;
 
     [ViewVariables(VVAccess.ReadWrite)]
-    [DataField]
+    [DataField("maxMessageLength")]
     public int MaxMessageLength = 512;
 
     /// <summary>
     /// War declarement text color
     /// </summary>
     [ViewVariables(VVAccess.ReadWrite)]
-    [DataField]
-    public Color Color = Color.Red;
+    [DataField("color")]
+    public Color DeclarementColor = Color.Red;
 
     /// <summary>
     /// War declarement sound file path
     /// </summary>
-    [DataField]
-    public SoundSpecifier Sound = new SoundPathSpecifier("/Audio/Announcements/war.ogg");
+    [DataField("sound")]
+    public SoundSpecifier DeclarementSound = new SoundPathSpecifier("/Audio/Announcements/war.ogg");
 
     /// <summary>
     /// Fluent ID for the declarement title
     /// </summary>
     [ViewVariables(VVAccess.ReadWrite)]
-    [DataField]
-    public LocId Title = "comms-console-announcement-title-nukie";
+    [DataField("title")]
+    public string DeclarementTitle = "comms-console-announcement-title-nukie";
 }

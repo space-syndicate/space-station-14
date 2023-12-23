@@ -1,22 +1,23 @@
 using System.Linq;
+using Content.Server.Chemistry.EntitySystems;
 using Content.Server.Construction;
 using Content.Server.Kitchen.Components;
 using Content.Server.Power.Components;
 using Content.Server.Power.EntitySystems;
 using Content.Server.Stack;
 using Content.Shared.Chemistry.Components;
-using Content.Shared.Chemistry.EntitySystems;
 using Content.Shared.Containers.ItemSlots;
 using Content.Shared.FixedPoint;
 using Content.Shared.Interaction;
 using Content.Shared.Kitchen;
 using Content.Shared.Popups;
-using Content.Shared.Random;
+using Content.Shared.Random.Helpers;
 using Content.Shared.Stacks;
 using JetBrains.Annotations;
 using Robust.Server.GameObjects;
 using Robust.Shared.Audio;
 using Robust.Shared.Containers;
+using Robust.Shared.Player;
 using Robust.Shared.Timing;
 
 namespace Content.Server.Kitchen.EntitySystems
@@ -33,7 +34,6 @@ namespace Content.Server.Kitchen.EntitySystems
         [Dependency] private readonly SharedAudioSystem _audioSystem = default!;
         [Dependency] private readonly SharedAppearanceSystem _appearanceSystem = default!;
         [Dependency] private readonly SharedContainerSystem _containerSystem = default!;
-        [Dependency] private readonly RandomHelperSystem _randomHelper = default!;
 
         public override void Initialize()
         {
@@ -58,9 +58,10 @@ namespace Content.Server.Kitchen.EntitySystems
         {
             base.Update(frameTime);
 
-            var query = EntityQueryEnumerator<ActiveReagentGrinderComponent, ReagentGrinderComponent>();
-            while (query.MoveNext(out var uid, out var active, out var reagentGrinder))
+            foreach (var (active, reagentGrinder) in EntityQuery<ActiveReagentGrinderComponent, ReagentGrinderComponent>())
             {
+                var uid = reagentGrinder.Owner;
+
                 if (active.EndTime > _timing.CurTime)
                     continue;
 
@@ -230,7 +231,7 @@ namespace Content.Server.Kitchen.EntitySystems
             foreach (var entity in inputContainer.ContainedEntities.ToList())
             {
                 inputContainer.Remove(entity);
-                _randomHelper.RandomOffset(entity, 0.4f);
+                entity.RandomOffset(0.4f);
             }
             UpdateUiState(uid);
         }
@@ -245,7 +246,7 @@ namespace Content.Server.Kitchen.EntitySystems
 
             if (inputContainer.Remove(ent))
             {
-                _randomHelper.RandomOffset(ent, 0.4f);
+                ent.RandomOffset(0.4f);
                 ClickSound(uid, reagentGrinder);
                 UpdateUiState(uid);
             }

@@ -174,8 +174,7 @@
     graph: SupplyBot
     node: bot
   - type: Storage
-    maxItemSize: Huge
-    maxTotalWeight: 40
+    capacity: 250
   - type: UserInterface
     interfaces:
     - key: enum.StorageUiKey.Key

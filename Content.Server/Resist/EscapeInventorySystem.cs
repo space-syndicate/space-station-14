@@ -1,15 +1,15 @@
 using Content.Server.Contests;
+using Robust.Shared.Containers;
 using Content.Server.Popups;
-using Content.Server.Storage.Components;
+using Content.Shared.Storage;
+using Content.Shared.Inventory;
+using Content.Shared.Hands.EntitySystems;
 using Content.Shared.ActionBlocker;
 using Content.Shared.DoAfter;
-using Content.Shared.Hands.EntitySystems;
-using Content.Shared.Interaction.Events;
-using Content.Shared.Inventory;
 using Content.Shared.Movement.Events;
+using Content.Shared.Interaction.Events;
 using Content.Shared.Resist;
-using Content.Shared.Storage;
-using Robust.Shared.Containers;
+using Content.Server.Storage.Components;
 
 namespace Content.Server.Resist;
 
@@ -80,7 +80,7 @@ public sealed class EscapeInventorySystem : EntitySystem
         if (!_doAfterSystem.TryStartDoAfter(doAfterEventArgs, out component.DoAfter))
             return;
 
-        Dirty(user, component);
+        Dirty(component);
         _popupSystem.PopupEntity(Loc.GetString("escape-inventory-component-start-resisting"), user, user);
         _popupSystem.PopupEntity(Loc.GetString("escape-inventory-component-start-resisting-target"), container, container);
     }
@@ -88,12 +88,12 @@ public sealed class EscapeInventorySystem : EntitySystem
     private void OnEscape(EntityUid uid, CanEscapeInventoryComponent component, EscapeInventoryEvent args)
     {
         component.DoAfter = null;
-        Dirty(uid, component);
+        Dirty(component);
 
         if (args.Handled || args.Cancelled)
             return;
 
-        _containerSystem.AttachParentToContainerOrGrid((uid, Transform(uid)));
+        Transform(uid).AttachParentToContainerOrGrid(EntityManager);
         args.Handled = true;
     }
 

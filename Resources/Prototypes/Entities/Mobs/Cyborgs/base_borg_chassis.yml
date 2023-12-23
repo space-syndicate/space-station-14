@@ -71,8 +71,11 @@
   - type: SiliconLawBound
   - type: EmagSiliconLaw
     stunTime: 5
-    emagLaws: SyndicateStatic
-  - type: IonStormTarget
+    emagLaws:
+    - Syndicate1
+    - Syndicate2
+    - Syndicate3
+    - Syndicate4
   - type: Hands
     showInHands: false
   - type: IntrinsicRadioReceiver
@@ -91,7 +94,7 @@
   - type: WiresPanel
   - type: ActivatableUIRequiresPanel
   - type: Wires
-    layoutId: Borg
+    LayoutId: Borg
   - type: NameIdentifier
     group: Silicon
   - type: ContainerContainer

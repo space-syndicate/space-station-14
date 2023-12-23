@@ -167,8 +167,6 @@
     - state: icon
     - state: icon-unlit
       shader: unshaded
-  - type: Item
-    size: Ginormous
   - type: Storage
-    maxItemSize: Huge
-    maxTotalWeight: 200 #5 duffels worth of gear
+    capacity: 9999
+

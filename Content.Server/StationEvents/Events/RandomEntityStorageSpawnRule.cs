@@ -2,7 +2,6 @@ using Content.Server.GameTicking.Rules.Components;
 using Content.Server.StationEvents.Components;
 using Content.Server.Storage.Components;
 using Content.Server.Storage.EntitySystems;
-using Robust.Shared.Map;
 using Robust.Shared.Random;
 
 namespace Content.Server.StationEvents.Events;
@@ -18,8 +17,7 @@ public sealed class RandomEntityStorageSpawnRule : StationEventSystem<RandomEnti
         if (!TryGetRandomStation(out var station))
             return;
 
-        var validLockers = new List<(EntityUid, EntityStorageComponent)>();
-        var spawn = Spawn(comp.Prototype, MapCoordinates.Nullspace);
+        var validLockers = new List<(EntityUid, EntityStorageComponent, TransformComponent)>();
 
         var query = EntityQueryEnumerator<EntityStorageComponent, TransformComponent>();
         while (query.MoveNext(out var ent, out var storage, out var xform))
@@ -27,19 +25,17 @@ public sealed class RandomEntityStorageSpawnRule : StationEventSystem<RandomEnti
             if (StationSystem.GetOwningStation(ent, xform) != station)
                 continue;
 
-            if (!_entityStorage.CanInsert(spawn, ent, storage))
+            if (!_entityStorage.CanInsert(ent, storage) || storage.Open)
                 continue;
 
-            validLockers.Add((ent, storage));
+            validLockers.Add((ent, storage, xform));
         }
 
         if (validLockers.Count == 0)
-        {
-            Del(spawn);
             return;
-        }
 
-        var (locker, storageComp) = RobustRandom.Pick(validLockers);
+        var (locker, storageComp, xformComp) = RobustRandom.Pick(validLockers);
+        var spawn = Spawn(comp.Prototype, xformComp.Coordinates);
         if (!_entityStorage.Insert(spawn, locker, storageComp))
         {
             Del(spawn);

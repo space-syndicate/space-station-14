@@ -3,10 +3,15 @@
                     Title="{Loc 'changelog-window-title'}"
                     MinSize="500 400"
                     SetSize="500 400">
+
     <PanelContainer StyleClasses="AngleRect" />
     <BoxContainer Orientation="Vertical">
-        <TabContainer Name="Tabs" Access="Public" HorizontalExpand="True" VerticalExpand="True" />
+
+        <ScrollContainer Margin="5" VerticalExpand="True" HScrollEnabled="False">
+            <BoxContainer Orientation="Vertical" Name="ChangelogBody" />
+        </ScrollContainer>
+
         <PanelContainer StyleClasses="LowDivider" />
-        <Label Name="VersionLabel" Access="Public" HorizontalAlignment="Right" StyleClasses="LabelSubText" Margin="4 0" />
+        <Label Name="VersionLabel" HorizontalAlignment="Right" StyleClasses="LabelSubText" Margin="4 0" />
     </BoxContainer>
 </ui:ChangelogWindow>

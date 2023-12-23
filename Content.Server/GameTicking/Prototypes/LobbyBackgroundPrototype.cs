@@ -7,7 +7,7 @@ namespace Content.Server.GameTicking.Prototypes;
 /// Prototype for a lobby background the game can choose.
 /// </summary>
 [Prototype("lobbyBackground")]
-public sealed partial class LobbyBackgroundPrototype : IPrototype
+public sealed class LobbyBackgroundPrototype : IPrototype
 {
     /// <inheritdoc/>
     [IdDataField]

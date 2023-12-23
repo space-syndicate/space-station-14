@@ -4,10 +4,11 @@ using Content.Server.Weapons.Ranged.Systems;
 using Content.Shared.Camera;
 using Content.Shared.Damage;
 using Content.Shared.Database;
+using Content.Shared.FixedPoint;
 using Content.Shared.Projectiles;
 using Robust.Server.GameObjects;
-using Robust.Shared.Physics.Events;
 using Robust.Shared.Player;
+using Robust.Shared.Physics.Events;
 
 namespace Content.Server.Projectiles;
 
@@ -38,7 +39,7 @@ public sealed class ProjectileSystem : SharedProjectileSystem
         RaiseLocalEvent(target, ref attemptEv);
         if (attemptEv.Cancelled)
         {
-            SetShooter(uid, component, target);
+            SetShooter(component, target);
             return;
         }
 
@@ -52,7 +53,7 @@ public sealed class ProjectileSystem : SharedProjectileSystem
 
         if (modifiedDamage is not null && EntityManager.EntityExists(component.Shooter))
         {
-            if (modifiedDamage.Any() && !deleted)
+            if (modifiedDamage.Total > FixedPoint2.Zero && !deleted)
             {
                 _color.RaiseEffect(Color.Red, new List<EntityUid> { target }, Filter.Pvs(target, entityManager: EntityManager));
             }

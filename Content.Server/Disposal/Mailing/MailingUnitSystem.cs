@@ -7,7 +7,6 @@ using Content.Server.Power.Components;
 using Content.Shared.Disposal;
 using Content.Shared.Interaction;
 using Robust.Server.GameObjects;
-using Robust.Shared.Player;
 
 namespace Content.Server.Disposal.Mailing;
 

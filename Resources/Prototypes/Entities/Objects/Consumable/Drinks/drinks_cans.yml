@@ -48,13 +48,9 @@
     damage:
       types:
         Blunt: 0
-  - type: Tool
-    qualities:
-    - Rolling
-    speed: 0.25 # its small so takes longer to roll the entire dough flat
   - type: ItemCooldown
   - type: SpaceGarbage
-  - type: TrashOnSolutionEmpty
+  - type: TrashOnEmpty
     solution: drink
   - type: PhysicalComposition
     materialComposition:
@@ -370,9 +366,9 @@
         map: ["6pack6"]
         visible: false
   - type: Item
-    size: Normal
+    size: 6
   - type: Storage
-    maxSlots: 6
+    capacity: 30
     whitelist:
       tags:
         - Cola

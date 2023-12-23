@@ -14,7 +14,6 @@
 - type: artifactTrigger
   id: TriggerExamine
   targetDepth: 0
-  triggerHint: artifact-trigger-hint-examine
   components:
   - type: ArtifactExamineTrigger
 

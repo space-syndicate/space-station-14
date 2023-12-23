@@ -350,7 +350,7 @@
     walkModifier: 0.75
     sprintModifier: 0.75
   - type: Item
-    size: Normal
+    size: 50
   - type: Tag
     tags:
     - WhitelistChameleon
@@ -426,12 +426,10 @@
   parent: ClothingOuterHardsuitBase
   id: ClothingOuterHardsuitSyndie
   name: blood-red hardsuit
-  description: A heavily armored hardsuit designed for work in special operations. Property of Gorlex Marauders.
+  description: A heavily armored and agile advanced hardsuit designed for work in special operations.
   components:
   - type: Sprite
     sprite: Clothing/OuterClothing/Hardsuits/syndicate.rsi
-  - type: Item
-    size: Huge
   - type: Clothing
     sprite: Clothing/OuterClothing/Hardsuits/syndicate.rsi
   - type: PressureProtection
@@ -454,26 +452,43 @@
   - type: ToggleableClothing
     clothingPrototype: ClothingHeadHelmetHardsuitSyndie
 
-# Syndicate Medic Hardsuit
+#Cybersun Juggernaut Hardsuit
 - type: entity
-  parent: ClothingOuterHardsuitSyndie
-  id: ClothingOuterHardsuitMedic
-  name: blood-red medic hardsuit
-  description: A heavily armored and agile advanced hardsuit specifically designed for field medic operations.
+  parent: ClothingOuterHardsuitBase
+  id: ClothingOuterHardsuitJuggernaut
+  name: cybersun juggernaut suit
+  description: A suit made by the cutting edge R&D department at cybersun to be hyper resilient.
   components:
   - type: Sprite
-    sprite: Clothing/OuterClothing/Hardsuits/syndiemedic.rsi
+    sprite: Clothing/OuterClothing/Hardsuits/cybersun.rsi
   - type: Clothing
-    sprite: Clothing/OuterClothing/Hardsuits/syndiemedic.rsi
+    sprite: Clothing/OuterClothing/Hardsuits/cybersun.rsi
+  - type: PressureProtection
+    highPressureMultiplier: 0.2
+    lowPressureMultiplier: 1000
+  - type: ExplosionResistance
+    damageCoefficient: 0.3
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.2
+        Slash: 0.2
+        Piercing: 0.2
+        Heat: 0.2
+        Radiation: 0.2
+        Caustic: 0.2
+  - type: ClothingSpeedModifier
+    walkModifier: 0.9
+    sprintModifier: 0.65
   - type: ToggleableClothing
-    clothingPrototype: ClothingHeadHelmetHardsuitSyndieMedic
+    clothingPrototype: ClothingHeadHelmetHardsuitCybersun
 
 #Syndicate Elite Hardsuit
 - type: entity
   parent: ClothingOuterHardsuitBase
   id: ClothingOuterHardsuitSyndieElite
   name: syndicate elite hardsuit
-  description: An elite version of the blood-red hardsuit, with improved armor and fireproofing. Property of Gorlex Marauders.
+  description: An upgraded version of the blood red hardsuit that features enhanced fireproofing, pressure resist, and superior armor.
   components:
   - type: Sprite
     sprite: Clothing/OuterClothing/Hardsuits/syndieelite.rsi
@@ -506,7 +521,7 @@
   parent: ClothingOuterHardsuitBase
   id: ClothingOuterHardsuitSyndieCommander
   name: syndicate commander hardsuit
-  description: A bulked up version of the blood-red hardsuit, purpose-built for the commander of a syndicate operative squad. Has significantly improved armor for those deadly front-lines firefights.
+  description: A blood red hardsuit heavily modified for use by the commander of operative squads.
   components:
   - type: Sprite
     sprite: Clothing/OuterClothing/Hardsuits/syndiecommander.rsi
@@ -531,37 +546,6 @@
     sprintModifier: 1.0
   - type: ToggleableClothing
     clothingPrototype: ClothingHeadHelmetHardsuitSyndieCommander
-
-#Cybersun Juggernaut Hardsuit
-- type: entity
-  parent: ClothingOuterHardsuitBase
-  id: ClothingOuterHardsuitJuggernaut
-  name: cybersun juggernaut suit
-  description: A suit made by the cutting edge R&D department at cybersun to be hyper resilient.
-  components:
-  - type: Sprite
-    sprite: Clothing/OuterClothing/Hardsuits/cybersun.rsi
-  - type: Clothing
-    sprite: Clothing/OuterClothing/Hardsuits/cybersun.rsi
-  - type: PressureProtection
-    highPressureMultiplier: 0.2
-    lowPressureMultiplier: 1000
-  - type: ExplosionResistance
-    damageCoefficient: 0.3
-  - type: Armor
-    modifiers:
-      coefficients:
-        Blunt: 0.2
-        Slash: 0.2
-        Piercing: 0.2
-        Heat: 0.2
-        Radiation: 0.2
-        Caustic: 0.2
-  - type: ClothingSpeedModifier
-    walkModifier: 0.9
-    sprintModifier: 0.65
-  - type: ToggleableClothing
-    clothingPrototype: ClothingHeadHelmetHardsuitCybersun
 
 #Wizard Hardsuit
 - type: entity
@@ -689,7 +673,7 @@
   parent: ClothingOuterHardsuitSyndieCommander
   id: ClothingOuterHardsuitERTLeader
   name: ERT leader's hardsuit
-  description: A protective hardsuit worn by the leader of an emergency response team.
+  description: A protective hardsuit worn by members of an emergency response team.
   components:
   - type: Sprite
     sprite: Clothing/OuterClothing/Hardsuits/ERTSuits/ertleader.rsi
@@ -700,10 +684,9 @@
 
 #ERT Engineer Hardsuit
 - type: entity
-  parent: ClothingOuterHardsuitCBURN
+  parent: ClothingOuterHardsuitSyndie
   id: ClothingOuterHardsuitERTEngineer
   name: ERT engineer's hardsuit
-  description: A protective hardsuit worn by the engineers of an emergency response team.
   components:
   - type: Sprite
     sprite: Clothing/OuterClothing/Hardsuits/ERTSuits/ertengineer.rsi
@@ -714,10 +697,9 @@
 
 #ERT Medic Hardsuit
 - type: entity
-  parent: ClothingOuterHardsuitMedic
+  parent: ClothingOuterHardsuitSyndieElite
   id: ClothingOuterHardsuitERTMedical
   name: ERT medic's hardsuit
-  description: A protective hardsuit worn by the medics of an emergency response team.
   components:
   - type: Sprite
     sprite: Clothing/OuterClothing/Hardsuits/ERTSuits/ertmedical.rsi
@@ -731,7 +713,6 @@
   parent: ClothingOuterHardsuitSyndie
   id: ClothingOuterHardsuitERTSecurity
   name: ERT security's hardsuit
-  description: A protective hardsuit worn by the security officers of an emergency response team.
   components:
   - type: Sprite
     sprite: Clothing/OuterClothing/Hardsuits/ERTSuits/ertsecurity.rsi
@@ -742,10 +723,9 @@
 
 #ERT Janitor Hardsuit
 - type: entity
-  parent: ClothingOuterHardsuitCBURN
+  parent: ClothingOuterHardsuitSyndie
   id: ClothingOuterHardsuitERTJanitor
   name: ERT janitor's hardsuit
-  description: A protective hardsuit worn by the janitors of an emergency response team.
   components:
   - type: Sprite
     sprite: Clothing/OuterClothing/Hardsuits/ERTSuits/ertjanitor.rsi
@@ -758,7 +738,7 @@
 - type: entity
   parent: ClothingOuterHardsuitBase
   id: ClothingOuterHardsuitDeathsquad
-  name: death squad hardsuit
+  name: deathsquad hardsuit
   description: An advanced hardsuit favored by commandos for use in special operations.
   components:
   - type: Sprite
@@ -775,12 +755,12 @@
   - type: Armor
     modifiers:
       coefficients:
-        Blunt: 0.1 #best armor in the game
-        Slash: 0.1
-        Piercing: 0.1
+        Blunt: 0.2 #best armor in the game
+        Slash: 0.2
+        Piercing: 0.2
         Heat: 0.1
         Radiation: 0.1
-        Caustic: 0.1
+        Caustic: 0.2
   - type: ClothingSpeedModifier
     walkModifier: 1.0
     sprintModifier: 1.0

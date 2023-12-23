@@ -4,4 +4,7 @@ namespace Content.Shared.Climbing.Events;
 /// Raised on an entity when it ends climbing.
 /// </summary>
 [ByRefEvent]
-public readonly record struct EndClimbEvent;
+public readonly record struct EndClimbEvent
+{
+
+}

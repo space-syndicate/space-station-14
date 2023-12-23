@@ -29,15 +29,6 @@
         amount: 2
 
 - type: entity
-  id: CrateMindShieldImplants
-  parent: CrateMedical
-  components:
-  - type: StorageFill
-    contents:
-      - id: MindShieldImplanter
-        amount: 3
-
-- type: entity
   id: CrateMedicalSurgery
   parent: CrateSurgery
   components:

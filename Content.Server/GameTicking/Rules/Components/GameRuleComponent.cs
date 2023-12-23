@@ -10,16 +10,24 @@ namespace Content.Server.GameTicking.Rules.Components;
 public sealed partial class GameRuleComponent : Component
 {
     /// <summary>
+    /// Whether or not the rule is active.
+    /// Is enabled after <see cref="GameRuleStartedEvent"/> and disabled after <see cref="GameRuleEndedEvent"/>
+    /// </summary>
+    [DataField("active")]
+    public bool Active;
+
+    /// <summary>
     /// Game time when game rule was activated
     /// </summary>
-    [DataField(customTypeSerializer: typeof(TimeOffsetSerializer))]
+    [DataField("activatedAt", customTypeSerializer:typeof(TimeOffsetSerializer))]
     public TimeSpan ActivatedAt;
 
     /// <summary>
-    /// The minimum amount of players needed for this game rule.
+    /// Whether or not the gamerule finished.
+    /// Used for tracking whether a non-active gamerule has been started before.
     /// </summary>
-    [DataField]
-    public int MinPlayers;
+    [DataField("ended")]
+    public bool Ended;
 }
 
 /// <summary>

@@ -53,9 +53,8 @@
     state: buckshot-flare
   - type: Projectile
     damage:
-      types:
-        Blunt: 1
-        Heat: 7
+      groups:
+        Burn: 7
 
 - type: entity
   id: PelletShotgunPractice

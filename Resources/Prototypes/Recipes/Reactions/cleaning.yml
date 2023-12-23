@@ -21,16 +21,6 @@
     SpaceCleaner: 2
 
 - type: reaction
-  id: SoapyWater
-  reactants:
-    Water:
-      amount: 3
-    SoapReagent:
-      amount: 1
-  products:
-    SoapyWater: 4
-
-- type: reaction
   id: SpaceLube
   impact: Medium
   reactants:
@@ -41,4 +31,4 @@
     Oxygen:
       amount: 1
   products:
-    SpaceLube: 5
+    SpaceLube: 3

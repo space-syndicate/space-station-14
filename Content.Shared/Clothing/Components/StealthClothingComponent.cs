@@ -30,7 +30,7 @@ public sealed partial class StealthClothingComponent : Component
     /// <summary>
     /// The action for enabling and disabling stealth.
     /// </summary>
-    [DataField, AutoNetworkedField] public EntityUid? ToggleActionEntity;
+    [DataField("toggleActionEntity")] public EntityUid? ToggleActionEntity;
 }
 
 /// <summary>

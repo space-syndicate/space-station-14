@@ -27,7 +27,7 @@ public sealed partial class ConstructionSystem
         }
     }
 
-    private void OnCompMapInit(Entity<ComputerComponent> component, ref MapInitEvent args)
+    private void OnCompMapInit(EntityUid uid, ComputerComponent component, MapInitEvent args)
     {
         CreateComputerBoard(component);
     }
@@ -42,26 +42,25 @@ public sealed partial class ConstructionSystem
     ///     This exists so when you deconstruct computers that were serialized with the map,
     ///     you can retrieve the computer board.
     /// </summary>
-    private void CreateComputerBoard(Entity<ComputerComponent> ent)
+    private void CreateComputerBoard(ComputerComponent component)
     {
-        var component = ent.Comp;
         // Ensure that the construction component is aware of the board container.
-        if (TryComp<ConstructionComponent>(ent, out var construction))
-            AddContainer(ent, "board", construction);
+        if (TryComp<ConstructionComponent>(component.Owner, out var construction))
+            AddContainer(component.Owner, "board", construction);
 
         // We don't do anything if this is null or empty.
         if (string.IsNullOrEmpty(component.BoardPrototype))
             return;
 
-        var container = _container.EnsureContainer<Container>(ent, "board");
+        var container = _container.EnsureContainer<Container>(component.Owner, "board");
 
         // We already contain a board. Note: We don't check if it's the right one!
         if (container.ContainedEntities.Count != 0)
             return;
 
-        var board = EntityManager.SpawnEntity(component.BoardPrototype, Transform(ent).Coordinates);
+        var board = EntityManager.SpawnEntity(component.BoardPrototype, Transform(component.Owner).Coordinates);
 
-        if (!container.Insert(board))
-            Log.Warning($"Couldn't insert board {board} to computer {ent}!");
+        if(!container.Insert(board))
+            Logger.Warning($"Couldn't insert board {board} to computer {component.Owner}!");
     }
 }

@@ -11,14 +11,14 @@ public sealed partial class ResearchSystem
         SubscribeLocalEvent<ResearchPointSourceComponent, ResearchServerGetPointsPerSecondEvent>(OnGetPointsPerSecond);
     }
 
-    private void OnGetPointsPerSecond(Entity<ResearchPointSourceComponent> source, ref ResearchServerGetPointsPerSecondEvent args)
+    private void OnGetPointsPerSecond(EntityUid uid, ResearchPointSourceComponent component, ref ResearchServerGetPointsPerSecondEvent args)
     {
-        if (CanProduce(source))
-            args.Points += source.Comp.PointsPerSecond;
+        if (CanProduce(component))
+            args.Points += component.PointsPerSecond;
     }
 
-    public bool CanProduce(Entity<ResearchPointSourceComponent> source)
+    public bool CanProduce(ResearchPointSourceComponent component)
     {
-        return source.Comp.Active && this.IsPowered(source, EntityManager);
+        return component.Active && this.IsPowered(component.Owner, EntityManager);
     }
 }

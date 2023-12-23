@@ -12,10 +12,7 @@
       - state: mag-0
         map: ["enum.GunVisualLayers.Mag"]
   - type: Item
-    size: Small
-  - type: Tag
-    tags:
-    - Sidearm
+    size: 10
   - type: Clothing
     sprite: Objects/Weapons/Guns/Pistols/viper.rsi
     quickEquip: false

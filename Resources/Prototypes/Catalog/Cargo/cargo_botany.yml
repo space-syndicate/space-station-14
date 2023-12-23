@@ -34,10 +34,10 @@
     sprite: Objects/Specific/Hydroponics/apple.rsi
     state: seed
   product: CrateHydroponicsSeeds
-  cost: 550
+  cost: 500
   category: Hydroponics
   group: market
-
+  
 - type: cargoProduct
   id: BulkPlantBGone
   icon:

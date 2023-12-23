@@ -7,9 +7,9 @@ using Robust.Client.Graphics;
 using Robust.Client.ResourceManagement;
 using Robust.Client.Utility;
 using Robust.Shared.Enums;
+using Robust.Shared.Graphics;
 using Robust.Shared.Graphics.RSI;
 using Robust.Shared.Map;
-using Robust.Shared.Map.Components;
 using Robust.Shared.Physics.Components;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Timing;
@@ -99,17 +99,13 @@ public sealed class WeatherOverlay : Overlay
             var xformQuery = _entManager.GetEntityQuery<TransformComponent>();
             var weatherIgnoreQuery = _entManager.GetEntityQuery<IgnoreWeatherComponent>();
 
-            // idk if this is safe to cache in a field and clear sloth help
-            var grids = new List<Entity<MapGridComponent>>();
-            _mapManager.FindGridsIntersecting(mapId, worldAABB, ref grids);
-
-            foreach (var grid in grids)
+            foreach (var grid in _mapManager.FindGridsIntersecting(mapId, worldAABB))
             {
-                var matrix = _transform.GetWorldMatrix(grid, xformQuery);
+                var matrix = _transform.GetWorldMatrix(grid.Owner, xformQuery);
                 Matrix3.Multiply(in matrix, in invMatrix, out var matty);
                 worldHandle.SetTransform(matty);
 
-                foreach (var tile in grid.Comp.GetTilesIntersecting(worldAABB))
+                foreach (var tile in grid.GetTilesIntersecting(worldAABB))
                 {
                     // Ignored tiles for stencil
                     if (_weather.CanWeatherAffect(grid, tile, weatherIgnoreQuery, bodyQuery))
@@ -117,8 +113,8 @@ public sealed class WeatherOverlay : Overlay
                         continue;
                     }
 
-                    var gridTile = new Box2(tile.GridIndices * grid.Comp.TileSize,
-                        (tile.GridIndices + Vector2i.One) * grid.Comp.TileSize);
+                    var gridTile = new Box2(tile.GridIndices * grid.TileSize,
+                        (tile.GridIndices + Vector2i.One) * grid.TileSize);
 
                     worldHandle.DrawRect(gridTile, Color.White);
                 }

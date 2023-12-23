@@ -3,8 +3,8 @@ using Content.Server.NodeContainer.EntitySystems;
 using Content.Server.Power.Components;
 using Content.Server.Power.NodeGroups;
 using Content.Server.Power.Pow3r;
-using Content.Shared.Power;
 using JetBrains.Annotations;
+using Content.Shared.Power;
 using Robust.Server.GameObjects;
 using Robust.Shared.Threading;
 
@@ -34,7 +34,6 @@ namespace Content.Server.Power.EntitySystems
 
             SubscribeLocalEvent<ApcPowerReceiverComponent, ComponentInit>(ApcPowerReceiverInit);
             SubscribeLocalEvent<ApcPowerReceiverComponent, ComponentShutdown>(ApcPowerReceiverShutdown);
-            SubscribeLocalEvent<ApcPowerReceiverComponent, ComponentRemove>(ApcPowerReceiverRemove);
             SubscribeLocalEvent<ApcPowerReceiverComponent, EntityPausedEvent>(ApcPowerReceiverPaused);
             SubscribeLocalEvent<ApcPowerReceiverComponent, EntityUnpausedEvent>(ApcPowerReceiverUnpaused);
 
@@ -63,11 +62,6 @@ namespace Content.Server.Power.EntitySystems
             ComponentShutdown args)
         {
             _powerState.Loads.Free(component.NetworkLoad.Id);
-        }
-
-        private void ApcPowerReceiverRemove(EntityUid uid, ApcPowerReceiverComponent component, ComponentRemove args)
-        {
-            component.Provider?.RemoveReceiver(component);
         }
 
         private static void ApcPowerReceiverPaused(
@@ -312,7 +306,7 @@ namespace Content.Server.Power.EntitySystems
                 apcReceiver.PoweredLastUpdate = powered;
                 var ev = new PowerChangedEvent(apcReceiver.Powered, apcReceiver.NetworkLoad.ReceivingPower);
 
-                RaiseLocalEvent(uid, ref ev);
+                RaiseLocalEvent(apcReceiver.Owner, ref ev);
 
                 if (appearanceQuery.TryGetComponent(uid, out var appearance))
                     _appearance.SetData(uid, PowerDeviceVisuals.Powered, powered, appearance);
@@ -342,7 +336,7 @@ namespace Content.Server.Power.EntitySystems
         private void UpdateNetworkBattery()
         {
             var enumerator = EntityQueryEnumerator<PowerNetworkBatteryComponent>();
-            while (enumerator.MoveNext(out var uid, out var powerNetBattery))
+            while (enumerator.MoveNext(out var powerNetBattery))
             {
                 var lastSupply = powerNetBattery.LastSupply;
                 var currentSupply = powerNetBattery.CurrentSupply;
@@ -350,12 +344,12 @@ namespace Content.Server.Power.EntitySystems
                 if (lastSupply == 0f && currentSupply != 0f)
                 {
                     var ev = new PowerNetBatterySupplyEvent(true);
-                    RaiseLocalEvent(uid, ref ev);
+                    RaiseLocalEvent(powerNetBattery.Owner, ref ev);
                 }
                 else if (lastSupply > 0f && currentSupply == 0f)
                 {
                     var ev = new PowerNetBatterySupplyEvent(false);
-                    RaiseLocalEvent(uid, ref ev);
+                    RaiseLocalEvent(powerNetBattery.Owner, ref ev);
                 }
 
                 powerNetBattery.LastSupply = currentSupply;

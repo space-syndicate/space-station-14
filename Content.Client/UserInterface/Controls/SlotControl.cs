@@ -188,10 +188,10 @@ namespace Content.Client.UserInterface.Controls
             if (!EntityHover)
                 return;
 
-            var tempQualifier = HoverSpriteView.Ent;
+            var tempQualifier = HoverSpriteView.Sprite;
             if (tempQualifier != null)
             {
-                IoCManager.Resolve<IEntityManager>().QueueDeleteEntity(tempQualifier);
+                IoCManager.Resolve<IEntityManager>().QueueDeleteEntity(tempQualifier.Owner);
             }
 
             HoverSpriteView.SetEntity(null);

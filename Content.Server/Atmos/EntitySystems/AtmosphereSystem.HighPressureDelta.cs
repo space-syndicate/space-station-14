@@ -22,34 +22,32 @@ namespace Content.Server.Atmos.EntitySystems
         [ViewVariables(VVAccess.ReadWrite)]
         public string? SpaceWindSound { get; private set; } = "/Audio/Effects/space_wind.ogg";
 
-        private readonly HashSet<Entity<MovedByPressureComponent>> _activePressures = new(8);
+        private HashSet<MovedByPressureComponent> _activePressures = new(8);
 
         private void UpdateHighPressure(float frameTime)
         {
-            var toRemove = new RemQueue<Entity<MovedByPressureComponent>>();
+            var toRemove = new RemQueue<MovedByPressureComponent>();
 
-            foreach (var ent in _activePressures)
+            foreach (var comp in _activePressures)
             {
-                var (uid, comp) = ent;
+                var uid = comp.Owner;
                 MetaDataComponent? metadata = null;
 
                 if (Deleted(uid, metadata))
                 {
-                    toRemove.Add((uid, comp));
+                    toRemove.Add(comp);
                     continue;
                 }
 
-                if (Paused(uid, metadata))
-                    continue;
+                if (Paused(uid, metadata)) continue;
 
                 comp.Accumulator += frameTime;
 
-                if (comp.Accumulator < 2f)
-                    continue;
+                if (comp.Accumulator < 2f) continue;
 
                 // Reset it just for VV reasons even though it doesn't matter
                 comp.Accumulator = 0f;
-                toRemove.Add(ent);
+                toRemove.Add(comp);
 
                 if (HasComp<MobStateComponent>(uid) &&
                     TryComp<PhysicsComponent>(uid, out var body))
@@ -88,10 +86,10 @@ namespace Content.Server.Atmos.EntitySystems
             // idk it's hard.
 
             component.Accumulator = 0f;
-            _activePressures.Add((uid, component));
+            _activePressures.Add(component);
         }
 
-        private void HighPressureMovements(Entity<GridAtmosphereComponent> gridAtmosphere, TileAtmosphere tile, EntityQuery<PhysicsComponent> bodies, EntityQuery<TransformComponent> xforms, EntityQuery<MovedByPressureComponent> pressureQuery, EntityQuery<MetaDataComponent> metas)
+        private void HighPressureMovements(GridAtmosphereComponent gridAtmosphere, TileAtmosphere tile, EntityQuery<PhysicsComponent> bodies, EntityQuery<TransformComponent> xforms, EntityQuery<MovedByPressureComponent> pressureQuery, EntityQuery<MetaDataComponent> metas)
         {
             // TODO ATMOS finish this
 
@@ -120,7 +118,7 @@ namespace Content.Server.Atmos.EntitySystems
                 return;
 
             // Used by ExperiencePressureDifference to correct push/throw directions from tile-relative to physics world.
-            var gridWorldRotation = xforms.GetComponent(gridAtmosphere).WorldRotation;
+            var gridWorldRotation = xforms.GetComponent(gridAtmosphere.Owner).WorldRotation;
 
             // If we're using monstermos, smooth out the yeet direction to follow the flow
             if (MonstermosEqualization)
@@ -153,12 +151,12 @@ namespace Content.Server.Atmos.EntitySystems
                 if (_containers.IsEntityInContainer(entity, metas.GetComponent(entity))) continue;
 
                 var pressureMovements = EnsureComp<MovedByPressureComponent>(entity);
-                if (pressure.LastHighPressureMovementAirCycle < gridAtmosphere.Comp.UpdateCounter)
+                if (pressure.LastHighPressureMovementAirCycle < gridAtmosphere.UpdateCounter)
                 {
                     // tl;dr YEET
                     ExperiencePressureDifference(
-                        (entity, pressureMovements),
-                        gridAtmosphere.Comp.UpdateCounter,
+                        pressureMovements,
+                        gridAtmosphere.UpdateCounter,
                         tile.PressureDifference,
                         tile.PressureDirection, 0,
                         tile.PressureSpecificTarget?.GridIndices.ToEntityCoordinates(tile.GridIndex, _mapManager) ?? EntityCoordinates.Invalid,
@@ -182,7 +180,7 @@ namespace Content.Server.Atmos.EntitySystems
         }
 
         public void ExperiencePressureDifference(
-            Entity<MovedByPressureComponent> ent,
+            MovedByPressureComponent component,
             int cycle,
             float pressureDifference,
             AtmosDirection direction,
@@ -192,12 +190,12 @@ namespace Content.Server.Atmos.EntitySystems
             TransformComponent? xform = null,
             PhysicsComponent? physics = null)
         {
-            var (uid, component) = ent;
+            var uid = component.Owner;
+
             if (!Resolve(uid, ref physics, false))
                 return;
 
-            if (!Resolve(uid, ref xform))
-                return;
+            if (!Resolve(uid, ref xform)) return;
 
             // TODO ATMOS stuns?
 

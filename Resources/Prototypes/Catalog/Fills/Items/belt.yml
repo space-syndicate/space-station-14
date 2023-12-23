@@ -37,9 +37,7 @@
       - id: JawsOfLife
       - id: WelderExperimental
       - id: Multitool
-      - id: HolofanProjector
-      - id: GasAnalyzer
-      - id: trayScanner
+      - id: CableApcStack
 
 - type: entity
   id: ClothingBeltSecurityFilled
@@ -91,11 +89,14 @@
   - type: StorageFill
     contents:
       - id: Brutepack
+        amount: 1
       - id: Ointment
+        amount: 1
       - id: Bloodpack
+        amount: 1
       - id: Gauze
       - id: EmergencyMedipen #You never know what people are going to latejoin into
-        amount: 3
+        amount: 6
 
 - type: entity
   id: ClothingBeltPlantFilled
@@ -123,11 +124,6 @@
   name: grenadier chest rig
   suffix: Filled
   components:
-  - type: Item
-    size: Ginormous
-  - type: Storage
-    maxSlots: 8
-    maxItemSize: Normal
   - type: StorageFill
     contents:
       - id: ExGrenade
@@ -144,6 +140,7 @@
   components:
   - type: StorageFill
     contents:
+      - id: SyndiHypo
       - id: EpinephrineChemistryBottle
         amount: 2
       - id: EphedrineChemistryBottle
