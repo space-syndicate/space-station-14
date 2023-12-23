@@ -10,5 +10,5 @@ ent-CartridgeMagnumIncendiary = патрон (.45 магнум зажигате�
     .desc = { ent-BaseCartridgeMagnum.desc }
 ent-CartridgeMagnumAP = патрон (.45 магнум бронебойный)
     .desc = { ent-BaseCartridgeMagnum.desc }
-ent-CartridgeMagnumUranium = cartridge (.45 magnum uranium)
+ent-CartridgeMagnumUranium = патрон (.45 магнум урановый)
     .desc = { ent-BaseCartridgeMagnum.desc }

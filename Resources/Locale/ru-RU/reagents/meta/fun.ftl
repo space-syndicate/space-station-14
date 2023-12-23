@@ -12,5 +12,5 @@ reagent-name-licoxide = ликоксид
 reagent-desc-licoxide = Синтетическая аккумуляторная кислота. Выглядит... электризующе.
 reagent-name-razorium = бритвиум
 reagent-desc-razorium = Странное неньютоновское химическое вещество. Оно образуется при смешивании двух противоречивых по природе лекарств от механических повреждения. Под влиянием силы оно временно затвердевает, образуя миллионы крохотных острых граней. Весьма болезненно.
-reagent-name-fresium = Fresium
-reagent-desc-fresium = A mysterious compound that slows the vibration of atoms and molecules... somehow. In layman's terms, it makes things cold... REALLY cold. Can cause long-lasting movement issues if ingested.
+reagent-name-fresium = фризиум
+reagent-desc-fresium = Таинственное соединение, которое замедляет колебания атомов и молекул... каким-то образом. Проще говоря, оно делает вещи холодными... РЕАЛЬНО холодными. При попадании в организм респираторным путём может вызывать долговременные проблемы со способностью передвигаться.
