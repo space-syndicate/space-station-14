@@ -5,8 +5,8 @@ thief-backpack-window-description =
     Выберите до двух разных наборов из списка.
 thief-backpack-window-selected = Выбрано наборов: ({ $selectedCount }/{ $maxCount })
 thief-backpack-window-approve-button = Принять
-thief-backpack-button-select = Выбрать [  ]
-thief-backpack-button-deselect = Выбрать [X]
+thief-backpack-button-select = Выбрано [ ]
+thief-backpack-button-deselect = Выбрано [X]
 
 # Sets
 
