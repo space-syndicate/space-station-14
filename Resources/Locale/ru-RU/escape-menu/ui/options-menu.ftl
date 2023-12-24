@@ -13,7 +13,7 @@ ui-options-default = По-умолчанию
 # Misc/General menu
 
 ui-options-discordrich = Включить Discord Rich Presence
-ui-options-general-ui-style = UI Style
+ui-options-general-ui-style = Стиль UI
 ui-options-general-discord = Discord
 ui-options-general-cursor = Курсор
 ui-options-general-speech = Речь

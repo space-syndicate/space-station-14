@@ -1,16 +1,16 @@
 thief-role-greeting-human =
-    You are a criminal scum.
-    You want to add to your collection
-    some property of Nanotrasen station. 
-    You're not a murderer. 
-    You are forbidden to kill.
+    Вы - преступное отродье.
+    Вы хотите добавить в свою коллекцию
+    что-нибудь из собственности станции Nanotrasen. 
+    Вы не убийца. 
+    Убивать вам запрещено.
 thief-role-greeting-animal =
-    You are a kleptomaniaс animal.
-    Steal things you like.
+    Вы - клептоманящее животное.
+    Воруйте всё, что вам нравится.
 thief-role-greeting-equipment =
-    You have a toolbox of thief's 
-    tools and chameleon thief's gloves.
-    Choose your starting equipment,
-    and do your work stealthily.
-objective-issuer-thief = [color=#746694]Criminal[/color]
-thief-round-end-agent-name = thief
+    У вас есть ящик воровских инструментов
+    и воровские перчатки-хамелеоны.
+    Выберите стартовое снаряжение,
+    и незаметно делайте свою работу.
+objective-issuer-thief = [color=#746694]Преступник[/color]
+thief-round-end-agent-name = вор
