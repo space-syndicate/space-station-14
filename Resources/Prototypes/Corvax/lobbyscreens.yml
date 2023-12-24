@@ -125,3 +125,19 @@
 - type: lobbyBackground
   id: YouLookLonely
   background: /Textures/Corvax/LobbyScreens/you-look-lonely.png
+
+- type: lobbyBackground
+  id: NewYearBar
+  background: /Textures/Corvax/LobbyScreens/new-year-bar.png
+
+- type: lobbyBackground
+  id: NewYearSec
+  background: /Textures/Corvax/LobbyScreens/new-year-sec.png
+
+- type: lobbyBackground
+  id: NewYearSave
+  background: /Textures/Corvax/LobbyScreens/new-year-save.png
+  
+- type: lobbyBackground
+  id: NewYearComfort
+  background: /Textures/Corvax/LobbyScreens/new-year-comfort.png
