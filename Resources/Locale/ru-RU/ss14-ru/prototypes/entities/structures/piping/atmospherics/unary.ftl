@@ -20,3 +20,5 @@ ent-GasThermoMachineHeater = нагреватель
 ent-GasThermoMachineHeaterEnabled = { ent-GasThermoMachineHeater }
     .suffix = Включено
     .desc = { ent-GasThermoMachineHeater.desc }
+ent-BaseGasCondenser = конденсатор газа
+    .desc = Конденсирует газы в жидкости. Осталось только провести водопровод.

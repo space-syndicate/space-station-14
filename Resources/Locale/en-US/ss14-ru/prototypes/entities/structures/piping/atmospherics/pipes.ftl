@@ -15,3 +15,5 @@ ent-GasPipeTJunction = { ent-GasPipeBase }
 ent-GasPipeFourway = { ent-GasPipeBase }
     .suffix = Fourway
     .desc = { ent-GasPipeBase.desc }
+ent-GasPipeBroken = broken pipe
+    .desc = It used to hold gas.

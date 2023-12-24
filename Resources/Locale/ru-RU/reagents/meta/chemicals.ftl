@@ -8,3 +8,5 @@ reagent-name-artifexium = артифексиум
 reagent-desc-artifexium = Лавандовая смесь микроскопических фрагментов артефактов и сильной кислоты. Обладает способностью активировать артефакты.
 reagent-name-sodium-polyacrylate = полиакрилат натрия
 reagent-desc-sodium-polyacrylate = Суперпоглощающий полимер с широким спектром применения в промышленности.
+reagent-name-cellulose = целлюлозные волокна
+reagent-desc-cellulose = Кристаллический полимер полидекстрозы, растения дорожат этим веществом.

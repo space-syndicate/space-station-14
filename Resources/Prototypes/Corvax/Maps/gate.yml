@@ -33,13 +33,11 @@
             Reporter: [ 2, 2 ]
             #engineering
             ChiefEngineer: [ 1, 1 ]
-            SeniorEngineer: [ 1, 1 ]
             AtmosphericTechnician: [ 3, 3 ]
             StationEngineer: [ 4, 4 ]
             TechnicalAssistant: [ 4, 4 ]
             #medical
             ChiefMedicalOfficer: [ 1, 1 ]
-            SeniorPhysician: [ 1, 1 ]
             Chemist: [ 2, 2 ]
             MedicalDoctor: [ 3, 3 ]
             Paramedic: [ 2, 2 ]
@@ -47,14 +45,12 @@
             Psychologist: [ 1, 1 ]
             #science
             ResearchDirector: [ 1, 1 ]
-            SeniorResearcher: [ 1, 1 ]
             Scientist: [ 4, 4 ]
             ResearchAssistant: [ 4, 4 ]
             Borg: [ 2, 2 ]
             #security
             HeadOfSecurity: [ 1, 1 ]
             Warden: [ 1, 1 ]
-            SeniorOfficer: [ 1, 1 ]
             SecurityOfficer: [ 6, 6 ]
             Detective: [ 1, 1 ]
             SecurityCadet: [ 4, 4 ]

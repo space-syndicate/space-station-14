@@ -7,6 +7,7 @@ lathe-menu-search-filter = Фильтр
 lathe-menu-amount = Кол-во:
 lathe-menu-material-display = { $material } { $amount }
 lathe-menu-tooltip-display = { $amount } { $material }
+lathe-menu-description-display = { $description }
 lathe-menu-material-amount =
     { $amount ->
         [1] { NATURALFIXED($amount, 2) } ({ $unit })
