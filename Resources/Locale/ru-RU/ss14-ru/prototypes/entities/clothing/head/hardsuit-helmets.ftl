@@ -62,3 +62,5 @@ ent-ClothingHeadHelmetHardsuitERTJanitor = шлем скафандра убор�
     .desc = { ent-ClothingHeadHelmetHardsuitERTLeader.desc }
 ent-ClothingHeadHelmetHardsuitClown = шлем скафандра клоуна
     .desc = Шлем скафандра клоуна.
+ent-ClothingHeadHelmetHardsuitSanta = Santa's hardsuit helmet
+    .desc = A festive-looking hardsuit helmet that provides the jolly gift-giver protection from low-pressure environments.
