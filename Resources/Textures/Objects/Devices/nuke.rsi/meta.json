@@ -1,7 +1,7 @@
 {
   "version": 1,
   "license": "CC-BY-SA-3.0",
-  "copyright": "Taken from tgstation at https://github.com/tgstation/tgstation/commit/59f2a4e10e5ba36033c9734ddebfbbdc6157472d",
+  "copyright": "Taken from tgstation at https://github.com/tgstation/tgstation/commit/59f2a4e10e5ba36033c9734ddebfbbdc6157472d, nukefestive by Alekshhh (Github)",
   "size": {
     "x": 32,
     "y": 32
@@ -9,6 +9,15 @@
   "states": [
     {
       "name": "nuclearbomb_deployed"
+    },
+    {
+      "name": "nukefestive",
+      "delays": [
+        [
+          0.25,
+          0.25
+        ]
+      ]
     },
     {
       "name": "nuclearbomb_timing",
