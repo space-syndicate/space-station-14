@@ -15,6 +15,7 @@ public sealed partial class ThiefRuleComponent : Component
     /// <summary>
     /// Add a Pacified comp to thieves
     /// </summary>
+    [DataField] // Corvax-MRP
     public bool PacifistThieves = true;
 
     /// <summary>
