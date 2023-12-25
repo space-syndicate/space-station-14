@@ -20,3 +20,5 @@ roles-antag-space-ninja-name = Космический ниндзя
 roles-antag-space-ninja-objective = Используй свою скрытность, чтобы устроить диверсию на станции, питайтесь от электрических проводов.
 roles-antag-thief-name = Вор
 roles-antag-thief-objective = Пополните свою личную коллекцию имуществом Nanotrasen, не прибегая к насилию.
+roles-antag-terminator-name = Terminator
+roles-antag-terminator-objective = Kill the target at all costs, the future depends on it.

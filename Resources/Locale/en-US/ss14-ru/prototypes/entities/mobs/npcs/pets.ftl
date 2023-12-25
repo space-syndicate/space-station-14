@@ -45,3 +45,5 @@ ent-MobSlimesPet = Smile
     .desc = This masterpiece has gone through thousands of experiments. But it is the sweetest creature in the world. Smile Slime!
 ent-MobMonkeyPunpun = Pun Pun
     .desc = A prominent representative of monkeys with unlimited access to alcohol.
+ent-MobCrabAtmos = Tropico
+    .desc = The noble and stalwart defender of Atmosia. Viva!
