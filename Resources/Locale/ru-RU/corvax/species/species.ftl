@@ -1,1 +1,1 @@
-species-name-vulpkanin = Вульпканин
+species-name-vulpkanin = Вульпакин
