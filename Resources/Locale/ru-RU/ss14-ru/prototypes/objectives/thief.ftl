@@ -1,13 +1,13 @@
 ent-BaseThiefObjective = { ent-BaseObjective }
     .desc = { ent-BaseObjective.desc }
 ent-BaseThiefStealObjective = { ent-BaseThiefObjective }
-  .desc = { ent-BaseThiefObjective.desc }
+    .desc = { ent-BaseThiefObjective.desc }
 ent-BaseThiefStealCollectionObjective = { ent-BaseThiefObjective }
-  .desc = { ent-BaseThiefObjective.desc }
+    .desc = { ent-BaseThiefObjective.desc }
 ent-BaseThiefStealStructureObjective = { ent-BaseThiefObjective }
-  .desc = { ent-BaseThiefObjective.desc }
+    .desc = { ent-BaseThiefObjective.desc }
 ent-BaseThiefStealAnimalObjective = { ent-BaseThiefObjective }
-  .desc = { ent-BaseThiefObjective.desc }
+    .desc = { ent-BaseThiefObjective.desc }
 ent-FigurineStealCollectionObjective = { ent-BaseThiefStealCollectionObjective }
     .desc = { ent-BaseThiefStealCollectionObjective.desc }
 ent-HeadCloakStealCollectionObjective = { ent-BaseThiefStealCollectionObjective }
