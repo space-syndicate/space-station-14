@@ -1,0 +1,294 @@
+- type: storeCategory
+  id: MageAbilities
+  name: store-category-mage-abilities
+
+- type: currency
+  id: Spellpoints
+  displayName: store-currency-display-spell-points
+  canWithdraw: false
+
+- type: storePreset
+  id: StorePresetMage
+  storeName: Spellbook
+  categories:
+  - MageAbilities
+  currencyWhitelist:
+  - Spellpoints
+
+#spellbooks
+- type: entity
+  parent: BaseItem
+  id: BaseMageSpellbook
+  name: mage-spell-book-name
+  description: mage-spell-book-desc
+  suffix: Empty
+  components:
+  - type: Sprite
+    sprite: Objects/Magic/spellbooks.rsi
+    layers:
+    - state: spellbook
+  - type: Item
+    sprite: Objects/Magic/spellbooks.rsi
+  - type: UserInterface
+    interfaces:
+    - key: enum.StoreUiKey.Key
+      type: StoreBoundUserInterface
+  - type: ActivatableUI
+    key: enum.StoreUiKey.Key
+  - type: Store
+    preset: StorePresetMage
+    balance:
+      Spellpoints: 0
+
+- type: entity
+  parent: BaseMageSpellbook
+  id: BaseMageSpellbook5Spellpoints
+  suffix: 5 SP
+  components:
+  - type: Store
+    preset: StorePresetMage
+    balance:
+      Spellpoints: 5
+
+- type: entity
+  parent: BaseMageSpellbook
+  id: BaseMageSpellbook10Spellpoints
+  suffix: 10 SP
+  components:
+  - type: Store
+    preset: StorePresetMage
+    balance:
+      Spellpoints: 10
+
+- type: entity
+  parent: BaseMageSpellbook
+  id: BaseMageSpellbook20Spellpoints
+  suffix: 20 SP
+  components:
+  - type: Store
+    preset: StorePresetMage
+    balance:
+      Spellpoints: 20
+
+- type: entity
+  parent: BaseMageSpellbook
+  id: BaseMageSpellbookDebug
+  suffix: DEBUG
+  components:
+  - type: Store
+    preset: StorePresetMage
+    balance:
+      Spellpoints: 99999
+
+
+
+#abilities
+- type: listing
+  id: MageFireball
+  name: Fireball
+  description: Fires an explosive fireball towards the clicked location.
+  productAction: ActionFireball
+  cost:
+    Spellpoints: 1
+  categories:
+  - MageAbilities
+  conditions:
+  - !type:ListingLimitedStockCondition
+    stock: 1
+
+- type: listing
+  id: MageGreatForcewall
+  name: GreatForcewall
+  description: Creates a magical barrier.
+  productAction: ActionForceWall
+  cost:
+    Spellpoints: 2
+  categories:
+  - MageAbilities
+  conditions:
+  - !type:ListingLimitedStockCondition
+    stock: 1
+
+- type: listing
+  id: MageKnock
+  name: Knock
+  description: This spell opens nearby doors.
+  productAction: ActionKnock
+  cost:
+    Spellpoints: 2
+  categories:
+  - MageAbilities
+  conditions:
+  - !type:ListingLimitedStockCondition
+    stock: 1
+
+- type: listing
+  id: MageFlashRune
+  name: Flash Rune
+  description: Summons a rune that flashes if used.
+  productAction: ActionFlashRune
+  cost:
+    Spellpoints: 1
+  categories:
+  - MageAbilities
+  conditions:
+  - !type:ListingLimitedStockCondition
+    stock: 1
+
+- type: listing
+  id: MageExplosionRune
+  name: Expolsion Rune
+  description: Summons a rune that explodes if used.
+  productAction: ActionExplosionRune
+  cost:
+    Spellpoints: 1
+  categories:
+  - MageAbilities
+  conditions:
+  - !type:ListingLimitedStockCondition
+    stock: 1
+
+- type: listing
+  id: MageIgniteRune
+  name: Ignite Rune
+  description: Summons a rune that ignites if used.
+  productAction: ActionIgniteRune
+  cost:
+    Spellpoints: 1
+  categories:
+  - MageAbilities
+  conditions:
+  - !type:ListingLimitedStockCondition
+    stock: 1
+
+- type: listing
+  id: MageStunRune
+  name: Stun Rune
+  description: Summons a rune that stuns if used.
+  productAction: ActionStunRune
+  cost:
+    Spellpoints: 1
+  categories:
+  - MageAbilities
+  conditions:
+  - !type:ListingLimitedStockCondition
+    stock: 1
+
+- type: listing
+  id: MageSmite
+  name: Smite
+  description: Instantly gibs a target.
+  productAction: ActionSmite
+  cost:
+    Spellpoints: 2
+  categories:
+  - MageAbilities
+  conditions:
+  - !type:ListingLimitedStockCondition
+    stock: 1
+
+- type: listing
+  id: MageSpawnMagicarpSpell
+  name: Summon Magicarp
+  description: This spell summons three Magi-Carp to your aid! May or may not turn on user.
+  productAction: ActionSpawnMagicarpSpell
+  cost:
+    Spellpoints: 2
+  categories:
+  - MageAbilities
+  conditions:
+  - !type:ListingLimitedStockCondition
+    stock: 1
+
+- type: listing
+  id: MageRGB
+  name: RGB light
+  description: Useless spell. Elder mages used this to trick everyone.
+  productAction: ActionRgbLight
+  cost:
+    Spellpoints: 1
+  categories:
+  - MageAbilities
+  conditions:
+  - !type:ListingLimitedStockCondition
+    stock: 1
+
+- type: listing
+  id: MageBlink
+  name: Blink
+  description: Teleport to the clicked location.
+  productAction: ActionBlink
+  cost:
+    Spellpoints: 2
+  categories:
+  - MageAbilities
+  conditions:
+  - !type:ListingLimitedStockCondition
+    stock: 1
+
+- type: entity
+  id: ActionEMP
+  name: EMP
+  description: Disable all tech nearby.
+  noSpawn: true
+  components:
+  - type: InstantAction
+    useDelay: 60
+    itemIconStyle: BigAction
+    sound: !type:SoundPathSpecifier
+      path: /Audio/Magic/forcewall.ogg
+    icon:
+      sprite: Objects/Magic/magicactions.rsi
+      state: shield
+    event: !type:EMPSpellEvent
+      posData: !type:TargetInFront
+      range: 5
+      disableDuration: 10
+      energyConsumption: 50000
+      speech: action-speech-spell-forcewall
+
+- type: listing
+  id: MageEMP
+  name: EMP
+  description: Disable all nearby tech.
+  productAction: ActionEMP
+  cost:
+    Spellpoints: 1
+  categories:
+  - MageAbilities
+  conditions:
+  - !type:ListingLimitedStockCondition
+    stock: 1
+
+- type: entity
+  id: ActionSmoke
+  name: Smoke
+  description: Summons cloud of smoke.
+  noSpawn: true
+  components:
+  - type: InstantAction
+    useDelay: 10
+    itemIconStyle: BigAction
+    sound: !type:SoundPathSpecifier
+      path: /Audio/Magic/forcewall.ogg
+    icon:
+      sprite: Objects/Magic/magicactions.rsi
+      state: shield
+    event: !type:SmokeSpellEvent
+      posData: !type:TargetInFront
+      spreadAmount: 5
+      duration: 10
+      speech: action-speech-spell-forcewall
+
+- type: listing
+  id: MageSmoke
+  name: Smoke
+  description: Summons cloud of smoke.
+  productAction: ActionSmoke
+  cost:
+    Spellpoints: 1
+  categories:
+  - MageAbilities
+  conditions:
+  - !type:ListingLimitedStockCondition
+    stock: 1

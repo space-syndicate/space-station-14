@@ -5,6 +5,7 @@ using Content.Server.Chat.Systems;
 using Content.Server.Doors.Systems;
 using Content.Server.Magic.Components;
 using Content.Server.Weapons.Ranged.Systems;
+using Content.Server.Emp;
 using Content.Shared.Actions;
 using Content.Shared.Body.Components;
 using Content.Shared.Coordinates.Helpers;
@@ -24,6 +25,7 @@ using Robust.Shared.Map;
 using Robust.Shared.Random;
 using Robust.Shared.Serialization.Manager;
 using Robust.Shared.Spawners;
+using Content.Server.Fluids.EntitySystems;
 
 namespace Content.Server.Magic;
 
@@ -64,6 +66,8 @@ public sealed class MagicSystem : EntitySystem
         SubscribeLocalEvent<WorldSpawnSpellEvent>(OnWorldSpawn);
         SubscribeLocalEvent<ProjectileSpellEvent>(OnProjectileSpell);
         SubscribeLocalEvent<ChangeComponentsSpellEvent>(OnChangeComponentsSpell);
+        SubscribeLocalEvent<EMPSpellEvent>(OnEMP);
+        SubscribeLocalEvent<SmokeSpellEvent>(OnSmoke);
     }
 
     private void OnDoAfter(EntityUid uid, SpellbookComponent component, DoAfterEvent args)
@@ -155,6 +159,37 @@ public sealed class MagicSystem : EntitySystem
         args.Handled = true;
     }
 
+    [Obsolete]
+    private void OnEMP(EMPSpellEvent args)
+    {
+        if (args.Handled)
+            return;
+
+        var transform = Transform(args.Performer);
+        EntityManager.System<EmpSystem>().EmpPulse(
+            transform.MapPosition,
+            args.Range,
+            args.EnergyConsumption,
+            args.DisableDuration);
+
+        Speak(args);
+        args.Handled = true;
+    }
+
+    private void OnSmoke(SmokeSpellEvent args)
+    {
+        if (args.Handled)
+            return;
+
+        EntityManager.System<SmokeSystem>().StartSmoke(
+            Spawn("Smoke", Transform(args.Performer).Coordinates),
+            new Shared.Chemistry.Components.Solution(),
+            args.Duration,
+            args.SpreadAmount);
+
+        Speak(args);
+        args.Handled = true;
+    }
     private void OnProjectileSpell(ProjectileSpellEvent ev)
     {
         if (ev.Handled)
