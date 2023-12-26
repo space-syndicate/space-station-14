@@ -4,7 +4,7 @@
 
 - type: currency
   id: Spellpoints
-  displayName: store-currency-display-spell-points
+  displayName: store-currency-display-spellpoints
   canWithdraw: false
 
 - type: storePreset
@@ -19,16 +19,16 @@
 - type: entity
   parent: BaseItem
   id: BaseMageSpellbook
-  name: mage-spell-book-name
-  description: mage-spell-book-desc
+  name: Mage spell book
+  description: Elder mage spellbook. You really shouldn`t keep it in your hands.
   suffix: Empty
   components:
   - type: Sprite
-    sprite: Objects/Magic/spellbooks.rsi
+    sprite: Objects/Magic/magicactions.rsi
     layers:
-    - state: spellbook
+    - state: spell_default
   - type: Item
-    sprite: Objects/Magic/spellbooks.rsi
+    sprite: Objects/Magic/magicactions.rsi
   - type: UserInterface
     interfaces:
     - key: enum.StoreUiKey.Key
@@ -238,8 +238,8 @@
     sound: !type:SoundPathSpecifier
       path: /Audio/Magic/forcewall.ogg
     icon:
-      sprite: Objects/Magic/magicactions.rsi
-      state: shield
+      sprite: Effects/emp.rsi
+      state: emp_pulse
     event: !type:EMPSpellEvent
       posData: !type:TargetInFront
       range: 5
