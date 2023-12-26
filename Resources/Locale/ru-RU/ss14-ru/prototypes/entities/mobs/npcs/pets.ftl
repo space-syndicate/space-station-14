@@ -45,5 +45,5 @@ ent-MobSlimesPet = Смайл
     .desc = Этот экземпляр прошел через тысячи экспериментов. Но это самое милое создание в мире. Улыбайся, Смайл!
 ent-MobMonkeyPunpun = Пун Пун
     .desc = Видный представитель обезьян с неограниченным доступом к алкоголю.
-ent-MobCrabAtmos = Tropico
-    .desc = The noble and stalwart defender of Atmosia. Viva!
+ent-MobCrabAtmos = Тропико
+    .desc = Благородный и непоколебимый защитник Атмосии. Viva!
