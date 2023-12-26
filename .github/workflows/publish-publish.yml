@@ -42,11 +42,6 @@ jobs:
     - name: Package server
       run: dotnet run --project Content.Packaging server --hybrid-acz --platform win-x64 --platform linux-x64 --platform osx-x64 --platform linux-arm64
 
-    - name: Update Build Info
-      env:
-        FORK_ID: ${{ vars.FORK_ID }}
-      run: Tools/gen_build_info.py
-
     - name: Shuffle files around
       run: |
         mkdir "release/${{ github.sha }}"
