@@ -12,4 +12,4 @@ objectives-no-objectives = [bold][color=red]{ $custody }[/color]{ $title } – {
 objectives-with-objectives = [bold][color=red]{ $custody }[/color]{ $title } – { $agent } со следующими целями:
 objectives-objective-success = { $objective } | [color={ $markupColor }]Успех![/color]
 objectives-objective-fail = { $objective } | [color={ $markupColor }]Провал![/color] ({ $progress }%)
-objectives-in-custody = | ПОД АРЕСТОМ |
+objectives-in-custody = | АРЕСТОВАН |
