@@ -40,7 +40,8 @@ spellbook-ability-emp-name = EMP
 spellbook-ability-emp-desc = Отключает ближайшие технологии
 spellbook-ability-smoke-name = Дым
 spellbook-ability-smoke-desc = Создаёт облако дыма
-
+spellbook-ability-repulse-name = Отталкивание
+spellbook-ability-repulse-desc = Отбрасывает всё и вся от заклинателя
 
 store-currency-display-spellpoints = ОЗ
 store-category-mage-abilities = Способности

@@ -100,7 +100,7 @@
   id: MageGreatForcewall
   name: spellbook-ability-great-forcewall-name
   description: spellbook-ability-great-forcewall-desc
-  productAction: ActionForceWall
+  productAction: ActionGreatForceWall
   cost:
     Spellpoints: 2
   categories:
@@ -272,7 +272,7 @@
     sound: !type:SoundPathSpecifier
       path: /Audio/Magic/forcewall.ogg
     icon:
-      sprite: /smoke.rsi
+      sprite: Objects/Weapons/Grenades/smoke.rsi
       state: icon
     event: !type:SmokeSpellEvent
       posData: !type:TargetInFront
@@ -285,6 +285,38 @@
   name: spellbook-ability-smoke-name
   description: spellbook-ability-smoke-desc
   productAction: ActionSmoke
+  cost:
+    Spellpoints: 1
+  categories:
+  - MageAbilities
+  conditions:
+  - !type:ListingLimitedStockCondition
+    stock: 1
+
+- type: entity
+  id: ActionRepulse
+  name: spellbook-ability-repulse-name
+  description: spellbook-ability-repulse-desc
+  noSpawn: true
+  components:
+  - type: InstantAction
+    useDelay: 10
+    itemIconStyle: BigAction
+    sound: !type:SoundPathSpecifier
+      path: /Audio/Magic/forcewall.ogg
+    icon:
+      sprite: Objects/Weapons/Grenades/smoke.rsi
+      state: icon
+    event: !type:RepulseSpellEvent
+      range: 2
+      strength: 10
+      speech: action-speech-spell-forcewall
+
+- type: listing
+  id: MageRepulse
+  name: spellbook-ability-repulse-name
+  description: spellbook-ability-repulse-desc
+  productAction: ActionRepulse
   cost:
     Spellpoints: 1
   categories:

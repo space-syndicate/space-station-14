@@ -59,8 +59,8 @@
     - type: Explosive
       explosionType: Cryo
       totalIntensity: 20.0
-      intensitySlope: 5
-      maxIntensity: 4
+      intensitySlope: 20
+      maxIntensity: 20
     - type: Sprite
       sprite: Structures/Magic/Cult/trap.rsi
       layers:
@@ -109,8 +109,8 @@
     - type: Explosive
       explosionType: Cryo
       totalIntensity: 20.0
-      intensitySlope: 5
-      maxIntensity: 4
+      intensitySlope: 20
+      maxIntensity: 20
 
 - type: entity
   parent: ActivateRune
@@ -121,8 +121,8 @@
     - type: Explosive
       explosionType: Cryo
       totalIntensity: 20.0
-      intensitySlope: 5
-      maxIntensity: 4
+      intensitySlope: 20
+      maxIntensity: 20
 
 - type: entity
   parent: CollideRune

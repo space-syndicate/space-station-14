@@ -23,8 +23,8 @@
         ActionSpawnMagicarpSpell: -1
 
 - type: entity
-  id: ForceWallSpellbook
-  name: force wall spellbook
+  id: GreatForceWallSpellbook
+  name: great force wall spellbook
   parent: BaseSpellbook
   components:
     - type: Sprite
@@ -33,7 +33,7 @@
         - state: bookforcewall
     - type: Spellbook
       spells:
-        ActionForceWall: -1
+        ActionGreatForceWall: -1
 
 - type: entity
   id: BlinkBook

@@ -26,6 +26,9 @@ using Robust.Shared.Random;
 using Robust.Shared.Serialization.Manager;
 using Robust.Shared.Spawners;
 using Content.Server.Fluids.EntitySystems;
+using Content.Shared.Throwing;
+using Content.Shared.Physics;
+using Robust.Shared.Physics.Components;
 
 namespace Content.Server.Magic;
 
@@ -51,6 +54,9 @@ public sealed class MagicSystem : EntitySystem
     [Dependency] private readonly ChatSystem _chat = default!;
     [Dependency] private readonly ActionContainerSystem _actionContainer = default!;
 
+    [Dependency] private readonly ThrowingSystem _throwing = default!;
+    [Dependency] private readonly SharedTransformSystem _xform = default!;
+
     public override void Initialize()
     {
         base.Initialize();
@@ -68,6 +74,7 @@ public sealed class MagicSystem : EntitySystem
         SubscribeLocalEvent<ChangeComponentsSpellEvent>(OnChangeComponentsSpell);
         SubscribeLocalEvent<EMPSpellEvent>(OnEMP);
         SubscribeLocalEvent<SmokeSpellEvent>(OnSmoke);
+        SubscribeLocalEvent<RepulseSpellEvent>(OnRepulse);
     }
 
     private void OnDoAfter(EntityUid uid, SpellbookComponent component, DoAfterEvent args)
@@ -187,6 +194,32 @@ public sealed class MagicSystem : EntitySystem
             args.Duration,
             args.SpreadAmount);
 
+        Speak(args);
+        args.Handled = true;
+    }
+
+    private void OnRepulse(RepulseSpellEvent args)
+    {
+        if (args.Handled)
+            return;
+
+        var xform = Transform(args.Performer);
+        var range = args.Range;
+        var strength = args.Strength;
+        var lookup = _lookup.GetEntitiesInRange(args.Performer, range, LookupFlags.Dynamic | LookupFlags.Sundries);
+        var xformQuery = GetEntityQuery<TransformComponent>();
+        var worldPos = _xform.GetWorldPosition(xform, xformQuery);
+        var physQuery = GetEntityQuery<PhysicsComponent>();
+
+        foreach (var ent in lookup)
+        {
+            if (physQuery.TryGetComponent(ent, out var phys)
+                && (phys.CollisionMask & (int) CollisionGroup.GhostImpassable) != 0)
+                continue;
+
+            var foo = _xform.GetWorldPosition(ent, xformQuery) - worldPos;
+            _throwing.TryThrow(ent, foo * 10, strength, args.Performer, 0);
+        }
         Speak(args);
         args.Handled = true;
     }
