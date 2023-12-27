@@ -16,6 +16,8 @@ ent-BaseMageSpellbookDebug = { ent-BaseMageSpellbook }
 
 spellbook-ability-fireball-name = Огненный шар
 spellbook-ability-fireball-desc = Выстреливает взрывным огненным шаром в выбранном направлении
+spellbook-ability-forcewall-name = Силовая стена
+spellbook-ability-forcewall-desc = Создаёт магический барьер перед вами
 spellbook-ability-great-forcewall-name = Великая силовая стена
 spellbook-ability-great-forcewall-desc = Создаёт магический барьер 1 на 3 клетки перед вами
 spellbook-ability-knock-name = Стук

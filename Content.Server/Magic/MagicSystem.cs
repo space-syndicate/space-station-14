@@ -29,7 +29,7 @@ using Content.Server.Fluids.EntitySystems;
 using Content.Shared.Throwing;
 using Content.Shared.Physics;
 using Robust.Shared.Physics.Components;
-
+using static Content.Shared.Magic.TargetInFront;
 namespace Content.Server.Magic;
 
 /// <summary>
@@ -294,6 +294,12 @@ public sealed class MagicSystem : EntitySystem
 
                 var tileIndex = tileReference.Value.GridIndices;
                 var coords = mapGrid.GridTileToLocal(tileIndex);
+                if(((TargetInFront)data).Width==1){
+                    return new List<EntityCoordinates>(1)
+                        {
+                            coords
+                        };
+                }
                 EntityCoordinates coordsPlus;
                 EntityCoordinates coordsMinus;
 

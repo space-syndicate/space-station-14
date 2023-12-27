@@ -14,7 +14,10 @@ public sealed partial class TargetCasterPos : MagicSpawnData {}
 /// <summary>
 /// Targets the 3 tiles in front of the caster.
 /// </summary>
-public sealed partial class TargetInFront : MagicSpawnData
+///
+public partial class TargetInFront : MagicSpawnData
 {
-    [DataField("width")] public int Width = 3;
+    [DataField("width")] public int Width = 1;
 }
+
+
