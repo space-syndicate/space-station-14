@@ -125,11 +125,15 @@
       maxIntensity: 4
 
 - type: entity
-  parent: ActivateRune
+  parent: CollideRune
   id: FlashRune
   name: "flash rune"
   components:
+    - type: TriggerOnCollide
+      fixtureID: rune
     - type: FlashOnTrigger
+      range: 3
+      duration: 5
     - type: DeleteOnTrigger
 
 - type: entity

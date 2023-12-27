@@ -85,8 +85,8 @@
 #abilities
 - type: listing
   id: MageFireball
-  name: Fireball
-  description: Fires an explosive fireball towards the clicked location.
+  name: spellbook-ability-fireball-name
+  description: spellbook-ability-fireball-desc
   productAction: ActionFireball
   cost:
     Spellpoints: 1
@@ -98,8 +98,8 @@
 
 - type: listing
   id: MageGreatForcewall
-  name: GreatForcewall
-  description: Creates a magical barrier.
+  name: spellbook-ability-great-forcewall-name
+  description: spellbook-ability-great-forcewall-desc
   productAction: ActionForceWall
   cost:
     Spellpoints: 2
@@ -111,8 +111,8 @@
 
 - type: listing
   id: MageKnock
-  name: Knock
-  description: This spell opens nearby doors.
+  name: spellbook-ability-knock-name
+  description: spellbook-ability-knock-desc
   productAction: ActionKnock
   cost:
     Spellpoints: 2
@@ -124,8 +124,8 @@
 
 - type: listing
   id: MageFlashRune
-  name: Flash Rune
-  description: Summons a rune that flashes if used.
+  name: spellbook-ability-flash-rune-name
+  description: spellbook-ability-flash-rune-desc
   productAction: ActionFlashRune
   cost:
     Spellpoints: 1
@@ -137,8 +137,8 @@
 
 - type: listing
   id: MageExplosionRune
-  name: Expolsion Rune
-  description: Summons a rune that explodes if used.
+  name: spellbook-ability-explosion-rune-name
+  description: spellbook-ability-explosion-rune-desc
   productAction: ActionExplosionRune
   cost:
     Spellpoints: 1
@@ -150,8 +150,8 @@
 
 - type: listing
   id: MageIgniteRune
-  name: Ignite Rune
-  description: Summons a rune that ignites if used.
+  name: spellbook-ability-ignite-rune-name
+  description: spellbook-ability-ignite-rune-desc
   productAction: ActionIgniteRune
   cost:
     Spellpoints: 1
@@ -163,8 +163,8 @@
 
 - type: listing
   id: MageStunRune
-  name: Stun Rune
-  description: Summons a rune that stuns if used.
+  name: spellbook-ability-stun-rune-name
+  description: spellbook-ability-stun-rune-desc
   productAction: ActionStunRune
   cost:
     Spellpoints: 1
@@ -176,8 +176,8 @@
 
 - type: listing
   id: MageSmite
-  name: Smite
-  description: Instantly gibs a target.
+  name: spellbook-ability-smite-name
+  description: spellbook-ability-smite-desc
   productAction: ActionSmite
   cost:
     Spellpoints: 2
@@ -189,8 +189,8 @@
 
 - type: listing
   id: MageSpawnMagicarpSpell
-  name: Summon Magicarp
-  description: This spell summons three Magi-Carp to your aid! May or may not turn on user.
+  name: spellbook-ability-summon-magicarp-name
+  description: spellbook-ability-summon-magicarp-desc
   productAction: ActionSpawnMagicarpSpell
   cost:
     Spellpoints: 2
@@ -202,8 +202,8 @@
 
 - type: listing
   id: MageRGB
-  name: RGB light
-  description: Useless spell. Elder mages used this to trick everyone.
+  name: spellbook-ability-rgb-light-name
+  description: spellbook-ability-rgb-light-desc
   productAction: ActionRgbLight
   cost:
     Spellpoints: 1
@@ -215,8 +215,8 @@
 
 - type: listing
   id: MageBlink
-  name: Blink
-  description: Teleport to the clicked location.
+  name: spellbook-ability-blink-name
+  description: spellbook-ability-blink-desc
   productAction: ActionBlink
   cost:
     Spellpoints: 2
@@ -228,8 +228,8 @@
 
 - type: entity
   id: ActionEMP
-  name: EMP
-  description: Disable all tech nearby.
+  name: spellbook-ability-emp-name
+  description: spellbook-ability-emp-desc
   noSpawn: true
   components:
   - type: InstantAction
@@ -249,8 +249,8 @@
 
 - type: listing
   id: MageEMP
-  name: EMP
-  description: Disable all nearby tech.
+  name: spellbook-ability-emp-name
+  description: spellbook-ability-emp-desc
   productAction: ActionEMP
   cost:
     Spellpoints: 1
@@ -262,8 +262,8 @@
 
 - type: entity
   id: ActionSmoke
-  name: Smoke
-  description: Summons cloud of smoke.
+  name: spellbook-ability-smoke-name
+  description: spellbook-ability-smoke-desc
   noSpawn: true
   components:
   - type: InstantAction
@@ -272,8 +272,8 @@
     sound: !type:SoundPathSpecifier
       path: /Audio/Magic/forcewall.ogg
     icon:
-      sprite: Objects/Magic/magicactions.rsi
-      state: shield
+      sprite: /smoke.rsi
+      state: icon
     event: !type:SmokeSpellEvent
       posData: !type:TargetInFront
       spreadAmount: 5
@@ -282,8 +282,8 @@
 
 - type: listing
   id: MageSmoke
-  name: Smoke
-  description: Summons cloud of smoke.
+  name: spellbook-ability-smoke-name
+  description: spellbook-ability-smoke-desc
   productAction: ActionSmoke
   cost:
     Spellpoints: 1
