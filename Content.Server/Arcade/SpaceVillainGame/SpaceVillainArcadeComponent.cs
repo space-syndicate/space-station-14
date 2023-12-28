@@ -71,8 +71,8 @@ public sealed partial class SpaceVillainArcadeComponent : SharedSpaceVillainArca
     [ViewVariables(VVAccess.ReadWrite)]
     [DataField("possibleFirstEnemyNames")]
     public List<string> PossibleFirstEnemyNames = new(){
-        "Автоматический", "Фермер", "Лорд", "Профессор", "Кубинец", "Злой", "Грозный Король",
-        "Космический", "Лорд", "Могучий", "Герцог", "Генерал"
+        "Автоматического", "Фермера", "Лорда", "Профессора", "Кубинца", "Злого", "Грозного Короля",
+        "Космического", "Лорда", "Могучего", "Герцога", "Генерала"
     };
 
     /// <summary>
@@ -82,8 +82,8 @@ public sealed partial class SpaceVillainArcadeComponent : SharedSpaceVillainArca
     [DataField("possibleLastEnemyNames")]
     public List<string> PossibleLastEnemyNames = new()
     {
-        "Мелоноид", "Киллертрон", "Волшебник", "Руина", "Джефф", "Эктоплазма", "Крушелон", "Ухангоид",
-        "Вакоид", "Петеоид", "слайм", "Грифер", "ЕРПшер", "Человек-ящерица", "Единорог"
+        "Мелоноида", "Киллертрона", "Волшебника", "Руину", "Джеффа", "Эктоплазму", "Крушелона", "Ухангоида",
+        "Вакоида", "Петеоида", "слайма", "Грифера", "ЕРПшера", "Человека-ящерицу", "Единорога"
     };
 
     /// <summary>
