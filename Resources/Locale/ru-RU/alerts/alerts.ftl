@@ -64,3 +64,9 @@ alerts-pacified-name = [color=green]Пацифизм[/color]
 alerts-pacified-desc = Вы чувствуете себя умиротворенно и не можете атаковать кого-либо напрямую.
 alerts-suit-power-name = Заряд костюма
 alerts-suit-power-desc = Запас энергии вашего костюма космического ниндзя.
+alerts-magboots-name = Магнитные ботинки
+alerts-magboots-desc = Вы невосприимчивы к потокам ветра, но двигаетесь немного медленнее.
+alerts-revenant-essence-name = Эссенция
+alerts-revenant-essence-desc = Сила душ. Поддерживает вас и используется при использовании способностей. Медленно восстанавливается с течением времени.
+alerts-revenant-corporeal-name = Материальность
+alerts-revenant-corporeal-desc = Вы физически воплотились. Окружающие могут видеть и наносить вам вред.

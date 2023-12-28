@@ -13,6 +13,7 @@ ui-options-default = По-умолчанию
 # Misc/General menu
 
 ui-options-discordrich = Включить Discord Rich Presence
+ui-options-general-ui-style = Стиль UI
 ui-options-general-discord = Discord
 ui-options-general-cursor = Курсор
 ui-options-general-speech = Речь
@@ -37,7 +38,7 @@ ui-options-volume-percent = { TOSTRING($volume, "P0") }
 
 ui-options-show-held-item = Показать удерживаемый элемент рядом с курсором
 ui-options-show-combat-mode-indicators = Показать индикатор боевого режима рядом с курсором
-ui-options-opaque-storage-window = Включить непрозрачность окна хранилища
+ui-options-opaque-storage-window = Непрозрачность окна хранилища
 ui-options-show-looc-on-head = Показывать LOOC-чат над головами персонажей
 ui-options-fancy-speech = Показывать имена в облачках с текстом
 ui-options-fancy-name-background = Добавить фон облачкам с текстом
@@ -122,7 +123,7 @@ ui-options-function-examine-entity = Осмотреть
 ui-options-function-swap-hands = Поменять руки
 ui-options-function-move-stored-item = Переместить хранящийся объект
 ui-options-function-rotate-stored-item = Повернуть хранящийся объект
-ui-options-static-storage-ui = Статичный интерфейс хранилища
+ui-options-static-storage-ui = Закрепить интерфейс хранилища на хотбаре
 ui-options-function-smart-equip-backpack = Умная экипировка в рюкзак
 ui-options-function-smart-equip-belt = Умная экипировка на пояс
 ui-options-function-open-backpack = Открыть рюкзак

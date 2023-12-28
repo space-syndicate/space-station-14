@@ -85,3 +85,10 @@ accent-words-slimes-4 = Блааамп...
 accent-words-slimes-5 = Блабл бламп!
 # Mothroach
 accent-words-mothroach-1 = Чирик!
+# Crab
+accent-words-crab-1 = Чик.
+accent-words-crab-2 = Чик-клац!
+accent-words-crab-3 = Клац?
+accent-words-crab-4 = Типи-тап!
+accent-words-crab-5 = Чик-тап.
+accent-words-crab-6 = Чикичик.
