@@ -4,6 +4,7 @@
   mapPath: /Maps/barratry.yml
   minPlayers: 30
   maxPlayers: 60
+  fallback: true
   stations:
     Barratry:
       stationProto: StandardNanotrasenStation

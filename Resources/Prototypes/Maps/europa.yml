@@ -4,6 +4,7 @@
   mapPath: /Maps/europa.yml
   minPlayers: 0
   maxPlayers: 40
+  fallback: true
   stations:
     Europa:
       stationProto: StandardNanotrasenStation

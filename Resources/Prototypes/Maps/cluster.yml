@@ -4,6 +4,7 @@
   mapPath: /Maps/cluster.yml
   minPlayers: 0
   maxPlayers: 35
+  fallback: true
   stations:
     Cluster:
       stationProto: StandardNanotrasenStation
