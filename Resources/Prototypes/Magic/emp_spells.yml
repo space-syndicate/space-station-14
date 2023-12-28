@@ -1,0 +1,21 @@
+- type: entity
+  id: ActionEMP
+  name: spellbook-ability-emp-name
+  description: spellbook-ability-emp-desc
+  noSpawn: true
+  components:
+  - type: InstantAction
+    useDelay: 60
+    itemIconStyle: BigAction
+    sound: !type:SoundPathSpecifier
+      path: /Audio/Magic/forcewall.ogg
+    icon:
+      sprite: Effects/emp.rsi
+      state: emp_pulse
+    event: !type:EMPSpellEvent
+      posData: !type:TargetInFront
+      range: 5
+      disableDuration: 10
+      energyConsumption: 50000
+      speech: action-speech-spell-forcewall
+

@@ -1,0 +1,63 @@
+- type: entity
+  parent: BaseItem
+  id: BaseMageSpellbook
+  name: Mage spell book
+  description: Elder mage spellbook. You really shouldn`t keep it in your hands.
+  suffix: Empty
+  components:
+  - type: Sprite
+    sprite: Objects/Magic/magicactions.rsi
+    layers:
+    - state: spell_default
+  - type: Item
+    sprite: Objects/Magic/magicactions.rsi
+  - type: UserInterface
+    interfaces:
+    - key: enum.StoreUiKey.Key
+      type: StoreBoundUserInterface
+  - type: ActivatableUI
+    key: enum.StoreUiKey.Key
+  - type: Store
+    preset: StorePresetMage
+    balance:
+      Spellpoints: 0
+
+- type: entity
+  parent: BaseMageSpellbook
+  id: BaseMageSpellbook5Spellpoints
+  suffix: 5 SP
+  components:
+  - type: Store
+    preset: StorePresetMage
+    balance:
+      Spellpoints: 5
+
+- type: entity
+  parent: BaseMageSpellbook
+  id: BaseMageSpellbook10Spellpoints
+  suffix: 10 SP
+  components:
+  - type: Store
+    preset: StorePresetMage
+    balance:
+      Spellpoints: 10
+
+- type: entity
+  parent: BaseMageSpellbook
+  id: BaseMageSpellbook20Spellpoints
+  suffix: 20 SP
+  components:
+  - type: Store
+    preset: StorePresetMage
+    balance:
+      Spellpoints: 20
+
+- type: entity
+  parent: BaseMageSpellbook
+  id: BaseMageSpellbookDebug
+  suffix: DEBUG
+  components:
+  - type: Store
+    preset: StorePresetMage
+    balance:
+      Spellpoints: 99999

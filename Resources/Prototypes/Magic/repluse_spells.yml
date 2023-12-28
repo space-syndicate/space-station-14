@@ -1,0 +1,18 @@
+- type: entity
+  id: ActionRepulse
+  name: spellbook-ability-repulse-name
+  description: spellbook-ability-repulse-desc
+  noSpawn: true
+  components:
+  - type: InstantAction
+    useDelay: 10
+    itemIconStyle: BigAction
+    sound: !type:SoundPathSpecifier
+      path: /Audio/Magic/forcewall.ogg
+    icon:
+      sprite: Objects/Weapons/Grenades/smoke.rsi
+      state: icon
+    event: !type:RepulseSpellEvent
+      range: 2
+      strength: 10
+      speech: action-speech-spell-forcewall

@@ -1,0 +1,19 @@
+- type: entity
+  id: ActionSmoke
+  name: spellbook-ability-smoke-name
+  description: spellbook-ability-smoke-desc
+  noSpawn: true
+  components:
+  - type: InstantAction
+    useDelay: 10
+    itemIconStyle: BigAction
+    sound: !type:SoundPathSpecifier
+      path: /Audio/Magic/forcewall.ogg
+    icon:
+      sprite: Objects/Weapons/Grenades/smoke.rsi
+      state: icon
+    event: !type:SmokeSpellEvent
+      posData: !type:TargetInFront
+      spreadAmount: 5
+      duration: 10
+      speech: action-speech-spell-forcewall

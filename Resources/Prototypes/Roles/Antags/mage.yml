@@ -1,0 +1,9 @@
+- type: antag
+  id: Mage
+  name: roles-antag-mage-name
+  antagonist: true
+  setPreference: true
+  objective: roles-antag-mage-objective
+  requirements:
+  - !type:OverallPlaytimeRequirement
+    time: 108000

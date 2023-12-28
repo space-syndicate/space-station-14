@@ -1,0 +1,11 @@
+- type: entity
+  id: SpawnPointMage
+  parent: MarkerBase
+  name: mage
+  components:
+  - type: SpawnPoint
+  - type: Sprite
+    layers:
+    - state: green
+    - sprite: Clothing/Head/Hats/wizardhat.rsi
+      state: icon
