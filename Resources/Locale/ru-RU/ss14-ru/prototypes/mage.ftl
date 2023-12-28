@@ -47,3 +47,9 @@ spellbook-ability-repulse-desc = Отбрасывает всё и вся от з
 
 store-currency-display-spellpoints = ОЗ
 store-category-mage-abilities = Способности
+
+roles-antag-mage-name = Маг
+roles-antag-mage-objective = Ваша задача - устроить полный хаос на станции с помощью своих заклинаний. Действовать скрытно или открыто - ваш выбор.
+
+admin-verb-text-make-mage = Сделать магом
+admin-verb-text-make-mage = Сделать цель магом

@@ -7,10 +7,22 @@
     - PetsNT
     - Zombie
     - Revolutionary
+    - MageFederation
 
 - type: npcFaction
   id: NanoTrasen
   hostile:
+  - SimpleHostile
+  - Syndicate
+  - Xeno
+  - Zombie
+  - Revolutionary
+  - MageFederation
+
+- type: npcFaction
+  id: MageFederation
+  hostile:
+  - NanoTrasen
   - SimpleHostile
   - Syndicate
   - Xeno
@@ -42,6 +54,7 @@
   - PetsNT
   - Zombie
   - Revolutionary
+  - MageFederation
 
 - type: npcFaction
   id: SimpleNeutral
@@ -54,6 +67,7 @@
   - Xeno
   - PetsNT
   - Zombie
+  - MageFederation
 
 - type: npcFaction
   id: Xeno
@@ -64,6 +78,7 @@
   - PetsNT
   - Zombie
   - Revolutionary
+  - MageFederation
 
 - type: npcFaction
   id: Zombie
@@ -75,6 +90,7 @@
   - Passive
   - PetsNT
   - Revolutionary
+  - MageFederation
 
 - type: npcFaction
   id: Revolutionary
@@ -83,3 +99,4 @@
   - Zombie
   - SimpleHostile
   - Dragon
+  - MageFederation

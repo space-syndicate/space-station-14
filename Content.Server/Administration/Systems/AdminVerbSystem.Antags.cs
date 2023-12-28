@@ -17,6 +17,8 @@ public sealed partial class AdminVerbSystem
 {
     [Dependency] private readonly ZombieSystem _zombie = default!;
     [Dependency] private readonly ThiefRuleSystem _thief = default!;
+
+    [Dependency] private readonly MageRuleSystem _mageRule = default!;
     [Dependency] private readonly TraitorRuleSystem _traitorRule = default!;
     [Dependency] private readonly NukeopsRuleSystem _nukeopsRule = default!;
     [Dependency] private readonly PiratesRuleSystem _piratesRule = default!;
@@ -138,5 +140,22 @@ public sealed partial class AdminVerbSystem
             Message = Loc.GetString("admin-verb-make-thief"),
         };
         args.Verbs.Add(thief);
+
+        Verb mage = new()
+        {
+            Text = Loc.GetString("admin-verb-text-make-mage"),
+            Category = VerbCategory.Antag,
+            Icon = new SpriteSpecifier.Rsi(new("Clothing/Head/Hats/wizardhat.rsi"), "icon"),
+            Act = () =>
+            {
+                if (!_minds.TryGetMind(args.Target, out var mindId, out var mind))
+                    return;
+
+                _mageRule.MakeMage(mindId, mind);
+            },
+            Impact = LogImpact.High,
+            Message = Loc.GetString("admin-verb-make-mage"),
+        };
+        args.Verbs.Add(mage);
     }
 }

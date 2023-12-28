@@ -373,7 +373,7 @@ public sealed class NukeopsRuleSystem : GameRuleSystem<NukeopsRuleComponent>
             return;
 
         // If the win condition was set to operative/crew major win, ignore.
-        if (component.WinType == WinType.OpsMajor || component.WinType == WinType.CrewMajor)
+        if (component.Win == WinType.OpsMajor || component.Win == WinType.CrewMajor)
             return;
 
         var nukeQuery = AllEntityQuery<NukeComponent, TransformComponent>();
@@ -476,7 +476,7 @@ public sealed class NukeopsRuleSystem : GameRuleSystem<NukeopsRuleComponent>
         var mindQuery = GetEntityQuery<MindComponent>();
         foreach (var nukeops in EntityQuery<NukeopsRuleComponent>())
         {
-            var winText = Loc.GetString($"nukeops-{nukeops.WinType.ToString().ToLower()}");
+            var winText = Loc.GetString($"nukeops-{nukeops.Win.ToString().ToLower()}");
 
             ev.AddLine(winText);
 
@@ -507,7 +507,7 @@ public sealed class NukeopsRuleSystem : GameRuleSystem<NukeopsRuleComponent>
         if (!Resolve(uid, ref component))
             return;
 
-        component.WinType = type;
+        component.Win = type;
 
         if (endRound && (type == WinType.CrewMajor || type == WinType.OpsMajor))
             _roundEndSystem.EndRound();
@@ -521,7 +521,7 @@ public sealed class NukeopsRuleSystem : GameRuleSystem<NukeopsRuleComponent>
             if (!GameTicker.IsGameRuleAdded(uid, gameRule))
                 continue;
 
-            if (nukeops.RoundEndBehavior == RoundEndBehavior.Nothing || nukeops.WinType == WinType.CrewMajor || nukeops.WinType == WinType.OpsMajor)
+            if (nukeops.RoundEndBehavior == RoundEndBehavior.Nothing || nukeops.Win == WinType.CrewMajor || nukeops.Win == WinType.OpsMajor)
                 continue;
 
             // If there are any nuclear bombs that are active, immediately return. We're not over yet.

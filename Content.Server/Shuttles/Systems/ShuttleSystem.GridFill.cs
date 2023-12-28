@@ -153,4 +153,9 @@ public sealed partial class ShuttleSystem
 
         return null;
     }
+
+    internal void TryFTLDock(EntityUid shuttleId, ShuttleComponent shuttle, object value)
+    {
+        throw new NotImplementedException();
+    }
 }

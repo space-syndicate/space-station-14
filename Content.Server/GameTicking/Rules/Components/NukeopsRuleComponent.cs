@@ -150,10 +150,10 @@ public sealed partial class NukeopsRuleComponent : Component
     public ResPath ShuttleMap = new("/Maps/infiltrator.yml");
 
     [DataField]
-    public WinType WinType = WinType.Neutral;
+    public WinType Win = WinType.Neutral;
 
     [DataField]
-    public List<WinCondition> WinConditions = new ();
+    public List<WinCondition> WinConditions = new();
 
     public MapId? NukiePlanet;
 
@@ -167,7 +167,7 @@ public sealed partial class NukeopsRuleComponent : Component
     ///     Cached starting gear prototypes.
     /// </summary>
     [DataField]
-    public Dictionary<string, StartingGearPrototype> StartingGearPrototypes = new ();
+    public Dictionary<string, StartingGearPrototype> StartingGearPrototypes = new();
 
     /// <summary>
     ///     Cached operator name prototypes.
@@ -216,7 +216,9 @@ public enum WinType : byte
     ///     Crew major win. This means they either killed all nukies,
     ///     or the bomb exploded too far away from the station, or on the nukie moon.
     /// </summary>
-    CrewMajor
+    CrewMajor,
+    MageWin,
+    CrewWin
 }
 
 public enum WinCondition : byte
@@ -231,5 +233,8 @@ public enum WinCondition : byte
     NukiesAbandoned,
     AllNukiesDead,
     SomeNukiesAlive,
-    AllNukiesAlive
+    AllNukiesAlive,
+    MagesAlive,
+    SomeMagesAlive,
+    NoMagesAlive
 }
