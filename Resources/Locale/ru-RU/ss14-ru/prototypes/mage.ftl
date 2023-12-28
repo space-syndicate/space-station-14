@@ -52,4 +52,4 @@ roles-antag-mage-name = Маг
 roles-antag-mage-objective = Ваша задача - устроить полный хаос на станции с помощью своих заклинаний. Действовать скрытно или открыто - ваш выбор.
 
 admin-verb-text-make-mage = Сделать магом
-admin-verb-text-make-mage = Сделать цель магом
+admin-verb-make-mage = Сделать цель магом
