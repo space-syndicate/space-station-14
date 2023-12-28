@@ -62,3 +62,5 @@ ent-ClothingOuterHardsuitPirateEVA = скафандр EVA космических
     .suffix = Пират
 ent-ClothingOuterHardsuitClown = скафандр клоуна
     .desc = Самодельный клоунский скафандр.
+ent-ClothingOuterHardsuitSanta = скафандр Санты
+    .desc = Весёлый, праздничный скафандр, который защищает весёлого дарителя подарков во время полётов на космосанях. Предоставляет некоторую защиту от ударов астероидов.

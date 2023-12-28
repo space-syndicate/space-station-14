@@ -4103,3 +4103,39 @@
   name: tts-voice-name-en_Gortash
   sex: Male
   speaker: en_Gortash
+
+- type: ttsVoice
+  id: Brother
+  name: tts-voice-name-slovo_patsana_brother
+  sex: Male
+  speaker: slovo_patsana_brother
+
+- type: ttsVoice
+  id: Koschei
+  name: tts-voice-name-slovo_patsana_koschei
+  sex: Male
+  speaker: slovo_patsana_koschei
+
+- type: ttsVoice
+  id: Marat
+  name: tts-voice-name-slovo_patsana_marat
+  sex: Male
+  speaker: slovo_patsana_marat
+
+- type: ttsVoice
+  id: AngryCop
+  name: tts-voice-name-slovo_patsana_angry_cop
+  sex: Male
+  speaker: slovo_patsana_angry_cop
+
+- type: ttsVoice
+  id: Cop
+  name: tts-voice-name-slovo_patsana_cop
+  sex: Female
+  speaker: slovo_patsana_cop
+
+- type: ttsVoice
+  id: Main
+  name: tts-voice-name-slovo_patsana_main
+  sex: Male
+  speaker: slovo_patsana_main

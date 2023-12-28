@@ -18,3 +18,7 @@ roles-antag-subverted-silicon-name = Взломанный борг
 roles-antag-subverted-silicon-objective = Следуйте своим новым законам и творите зло на станции.
 roles-antag-space-ninja-name = Космический ниндзя
 roles-antag-space-ninja-objective = Используй свою скрытность, чтобы устроить диверсию на станции, питайтесь от электрических проводов.
+roles-antag-thief-name = Вор
+roles-antag-thief-objective = Пополните свою личную коллекцию имуществом Nanotrasen, не прибегая к насилию.
+roles-antag-terminator-name = Экстерминатор
+roles-antag-terminator-objective = Убейте цель любой ценой, от этого зависит будущее.
