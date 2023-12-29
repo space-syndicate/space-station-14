@@ -25,5 +25,5 @@ ent-CrateEngineeringTeslaGenerator = ящик с генератором тесл
     .desc = Генератор теслы. Храни вас Господь.
 ent-CrateEngineeringTeslaCoil = ящик с катушкой теслы
     .desc = Катушка теслы.  Притягивает молнии и вырабатывает из них энергию.
-ent-CrateEngineeringTeslaGroundingRod = ящик со заземляющим стержнем теслы
+ent-CrateEngineeringTeslaGroundingRod = ящик с заземляющим стержнем теслы
     .desc = Заземляющий стержень, идеально для защиты от молний.
