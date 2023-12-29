@@ -9,7 +9,7 @@
       stampedColor: "#33CC33"
       stampState: "paper_stamp-ok"
     - type: Sprite
-      sprite: Objects/Misc/bureaucracy.rsi
+      sprite: Corvax/Objects/Misc/stamps.rsi
       state: stamp-iaa
 
 - type: entity
@@ -23,5 +23,5 @@
     stampedColor: "#0082AE"
     stampState: "paper_stamp-psychologist"
   - type: Sprite
-    sprite: Objects/Misc/bureaucracy.rsi
+    sprite: Corvax/Objects/Misc/stamps.rsi
     state: stamp-psychologist
