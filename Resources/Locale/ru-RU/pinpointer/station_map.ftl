@@ -6,6 +6,6 @@ nav-beacon-text-label = Метка:
 nav-beacon-button-apply = Применить
 nav-beacon-examine-text =
     Он [color={ $enabled ->
-        [true] forestgreen]включено
-       *[false] crimson]выключено
+        [true] forestgreen]включён
+       *[false] crimson]выключен
     }[/color] и на дисплее отображается [color={ $color }]"{ $label }"[/color].
