@@ -60,13 +60,13 @@ public sealed class GrindRecipeEntry
             var solutionComp = (SolutionContainerManagerComponent) solutionCompRaw;
             foodSulitonName = extractable.GrindableSolution;
 
-            if (foodSulitonName != null && solutionComp.Solutions.ContainsKey(foodSulitonName))
-            {
-                foreach (ReagentQuantity reagent in solutionComp.Solutions[(string) foodSulitonName].Contents)
-                {
-                    Result[reagent.Reagent.Prototype] = reagent.Quantity.Int();
-                }
-            }
+            // if (foodSulitonName != null && solutionComp.Solutions.ContainsKey(foodSulitonName))
+            // {
+            //     foreach (ReagentQuantity reagent in solutionComp.Solutions[(string) foodSulitonName].Contents)
+            //     {
+            //         Result[reagent.Reagent.Prototype] = reagent.Quantity.Int();
+            //     }
+            // }
         }
     }
 }
