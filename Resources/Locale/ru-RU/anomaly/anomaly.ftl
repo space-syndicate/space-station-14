@@ -21,7 +21,7 @@ anomaly-scanner-particle-unstable = - [color=plum]Нестабильный ти�
 anomaly-scanner-particle-containment = - [color=goldenrod]Сдерживающий тип:[/color] { $type }
 anomaly-scanner-pulse-timer = Время до следующего импульса: [color=gray]{ $time }[/color]
 anomaly-gorilla-core-slot-name = Ядро аномалии
-anomaly-gorilla-charge-none = Внутри этого нет [bold]ядра аномалии[/bold].
+anomaly-gorilla-charge-none = Внутри нет [bold]ядра аномалии[/bold].
 anomaly-gorilla-charge-limit =
     { $count ->
     [one] Остался
