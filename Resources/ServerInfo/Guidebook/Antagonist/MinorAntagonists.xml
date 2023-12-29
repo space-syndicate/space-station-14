@@ -1,60 +1,60 @@
 <Document>
-  # Minor Antagonists
+  # Малые антагонисты
 
-  Most if not all Minor Antagonists are ghost-controlled roles that gives dead people new ways to cause chaos around the station. They are spawned by random events.
+  Большинство, если не все, второстепенные антагонисты - это управляемые призраками роли, которые дают мертвецам новые способы устроить хаос на станции. Они возникают в результате случайных событий.
 
-  # Revenant
+  # Ревенант
 
   <Box>
     <GuideEntityEmbed Entity="MobRevenant" Caption=""/>
     <GuideEntityEmbed Entity="Ectoplasm" Caption=""/>
   </Box>
 
-  A Revenant is given powers to haunt the crew and steal life essence from them.
+  Ревенант наделён способностью преследовать членов экипажа и красть у них жизненную энергию.
 
-  ## Essence
+  ## Эссенция
 
-  - Your [color=#a4885c]essence[/color] is your very own life force and a way to use abilities for a cost, don't let it drop to 0.
-  - To gain [color=#a4885c]essence[/color] you first inspect various souls for their worth. More worthy souls grant more essence.
-  However merely checking their worth isn't enough for collecting [color=#a4885c]essence[/color]. You must siphon it either when the victim is critical, dead, or sleeping.
-  - A good start is to go to medical or dorms but be weary, you are vulnerable to attacks when you siphon a soul. Taking damage reduces your [color=#a4885c]essence[/color]! So plan your attacks wisely.
+  - Ваша [color=#a4885c]эссенция[/color] - это ваша собственная жизненная сила и способ использовать способности за определенную плату, не позволяйте ей упасть до 0.
+  - Чтобы получить [color=#a4885c]эссенцию[/color], вы сначала проверяете различные души на предмет их ценности. Более достойные души дают больше эссенции.
+  Однако просто проверить их ценность недостаточно для сбора [color=#a4885c]эссенции[/color]. Вы должны поглотить её, когда жертва находится в критическом состоянии, мертва или спит.
+  - Хорошее начало - пойти в медпункт или жилые помещения, но будьте осторожны, вы уязвимы для атак, когда поглощаете душу. Получение урона уменьшает вашу [color=#a4885c]эссенцию[/color]! Поэтому планируйте свои атаки с умом.
 
-  ## Shop And Powers
+  ## Магазин и силы
 
-  - Using [color=#a4885c]stolen essence[/color] gotten from siphoning souls, you can gain skills for mischief such as environmental destruction, electrical disruption, and electrocution through the shop.
-  - Using powers leave you vulnerable to attacks for some time, plan ahead and prepare before attacking.
+  - Используя [color=#a4885c]украденную эссенцию[/color], полученную при поглощении душ, вы можете получить в магазине навыки для таких злоключений, как разрушение окружающей среды, отключение электричества и поражение током.
+  - Использование способностей на некоторое время делает вас уязвимым для атак, поэтому планируйте всё заранее и готовьтесь перед атакой.
 
-  # Rat King
-
-  <Box>
-    <GuideEntityEmbed Entity="MobRatKing" Scale="2.4" Caption="Normal Rat King"/>
-    <GuideEntityEmbed Entity="MobRatKingBuff" Caption="Buff Rat King"/>
-  </Box>
-
-  A Rat King is a giant rat capable of setting a nest and creating rats to do their bidding (usually to get food).
-
-  ## Abilities
-
-  Abilities come at a cost to the Rat King's hunger. Simply eating replenishes it.
+  # Крысиный король
 
   <Box>
-   <GuideEntityEmbed Entity="MobMouse" Caption="Normal Mouse"/>
-   <GuideEntityEmbed Entity="MobRatServant" Caption="Rat Servant"/>
+    <GuideEntityEmbed Entity="MobRatKing" Scale="2.4" Caption="Нормальный крысиный король"/>
+    <GuideEntityEmbed Entity="MobRatKingBuff" Caption="Прокачанный крысиный король"/>
   </Box>
-  - Raise an Army of [color=#a4885c]Rat Servants[/color].
-  - Conjure a cloud of ammonia.
 
-  # Space Dragon
+  Крысиный король - это гигантская крыса, способная устроить гнездо и создать крыс, которые будут выполнять её приказы (обычно для получения пищи).
+
+  ## Способности
+
+  За способности приходится расплачиваться голодом Крысиного короля. Простой приём пищи восполняет его.
+
+  <Box>
+   <GuideEntityEmbed Entity="MobMouse" Caption="Обычная мыша"/>
+   <GuideEntityEmbed Entity="MobRatServant" Caption="Крысиный слуга"/>
+  </Box>
+  - Вырастить армию [color=#a4885c]слуг-крыс[/color].
+  - Вызвать облако аммиака.
+
+  # Космический дракон
 
   <Box>
     <GuideEntityEmbed Entity="MobDragon" Caption=""/>
   </Box>
 
-  A Space Dragon is a giant dragon that creates space carp rifts and eat the crew.
+  Космический дракон - это гигантский дракон, который создаёт космические разломы и поедает экипаж.
 
-  ## Abilities
+  ## Способности
 
-  - Devour critical or dead victims.
+  - Пожирать мёртвых жертв, или в критическом состоянии.
 
   <Box>
     <GuideEntityEmbed Entity="MobCarp" Caption=""/>
@@ -62,6 +62,6 @@
     <GuideEntityEmbed Entity="MobCarp" Caption=""/>
   </Box>
 
-  - Summon a Carp Rift that periodically spawns [color=#a4885c]Space Carp[/color].
+  - Вызовите Карповый разлом, который периодически порождает [color=#a4885c]Космических карпов[/color].
 
 </Document>
