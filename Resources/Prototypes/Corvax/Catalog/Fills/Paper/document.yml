@@ -1,0 +1,432 @@
+- type: entity
+  parent: Paper
+  id: PrintedDocument
+  abstract: true
+  description: Боюрократическая единица. Документ, распечатанный на принтере.
+  components:
+    - type: Paper
+
+- type: entity
+  parent: PrintedDocument
+  id: PrintedDocumentReportStation
+  name: Отчет о ситуации на станции
+  components:
+    - type: Paper
+      content: doc-text-printer-ReportStation
+
+- type: entity
+  parent: PrintedDocument
+  id: PrintedDocumentReporDepartment
+  name: Отчёт о работе отдела
+  components:
+    - type: Paper
+      content: doc-text-printer-ReporDepartment
+
+- type: entity
+  parent: PrintedDocument
+  id: PrintedDocumentReportEmployeePerformance
+  name: Отчёт о работе сотрудника
+  components:
+    - type: Paper
+      content: doc-text-printer-ReportEmployeePerformance
+
+- type: entity
+  parent: PrintedDocument
+  id: PrintedDocumentReportOnTheChaptersMeeting
+  name: Отчёт о собрании глав
+  components:
+    - type: Paper
+      content: doc-text-printer-ReportOnTheChaptersMeeting
+
+- type: entity
+  parent: PrintedDocument
+  id: PrintedDocumentInternalAffairsAgentsReport
+  name: Отчёт Агента Внутренних Дел
+  components:
+    - type: Paper
+      content: doc-text-printer-InternalAffairsAgentsReport
+
+- type: entity
+  parent: PrintedDocument
+  id: PrintedDocumentConditionReport
+  name: Отчёт о техническом состоянии
+  components:
+    - type: Paper
+      content: doc-text-printer-ConditionReport
+
+
+- type: entity
+  parent: PrintedDocument
+  id: PrintedDocumentReportStudyObject
+  name: Отчёт об изучении объекта
+  components:
+    - type: Paper
+      content: doc-text-printer-ReportStudyObject
+
+- type: entity
+  parent: PrintedDocument
+  id: PrintedDocumentDisposalReport
+  name: Отчёт об утилизации
+  components:
+    - type: Paper
+      content: doc-text-printer-DisposalReport
+
+- type: entity
+  parent: PrintedDocument
+  id: PrintedDocumentApplicationAppointmentInterim
+  name: Заявление о назначении на ВрИО
+  components:
+    - type: Paper
+      content: doc-text-printer-ApplicationAppointmentInterim
+
+- type: entity
+  parent: PrintedDocument
+  id: PrintedDocumentApplicationEmployment
+  name: Заявление о трудоустройстве
+  components:
+    - type: Paper
+      content: doc-text-printer-ApplicationEmployment
+
+- type: entity
+  parent: PrintedDocument
+  id: PrintedDocumentLetterResignation
+  name: Заявление об увольнении
+  components:
+    - type: Paper
+      content: doc-text-printer-LetterResignation
+
+- type: entity
+  parent: PrintedDocument
+  id: PrintedDocumentApplicationAccess
+  name: Заявление на получение доступа
+  components:
+    - type: Paper
+      content: doc-text-printer-ApplicationAccess
+
+- type: entity
+  parent: PrintedDocument
+  id: PrintedDocumentApplicationEquipment
+  name: Заявление на получение снаряжения
+  components:
+    - type: Paper
+      content: doc-text-printer-ApplicationEquipment
+
+- type: entity
+  parent: PrintedDocument
+  id: PrintedDocumentEvacuationShuttleRequest
+  name: Запрос эвакуационного шаттла
+  components:
+    - type: Paper
+      content: doc-text-printer-EvacuationShuttleRequest
+
+- type: entity
+  parent: PrintedDocument
+  id: PrintedDocumentShuttleRegistrationRequest
+  name: Запрос регистрации шаттла
+  components:
+    - type: Paper
+      content: doc-text-printer-ShuttleRegistrationRequest
+
+- type: entity
+  parent: PrintedDocument
+  id: PrintedDocumentRequestCallMembersCentralCommitteeDSO
+  name: Запрос на вызов членов ЦК, ДСО
+  components:
+    - type: Paper
+      content: doc-text-printer-RequestCallMembersCentralCommitteeDSO
+
+- type: entity
+  parent: PrintedDocument
+  id: PrintedDocumentRequestChangeSalary
+  name: Запрос на изменение заработной платы
+  components:
+    - type: Paper
+      content: doc-text-printer-RequestChangeSalary
+
+- type: entity
+  parent: PrintedDocument
+  id: PrintedDocumentRequestNonListedEmployment
+  name: Запрос внеперечневого трудоустройства
+  components:
+    - type: Paper
+      content: doc-text-printer-RequestNonListedEmployment
+
+- type: entity
+  parent: PrintedDocument
+  id: PrintedDocumentRequestDocuments
+  name: Запрос предоставления документов
+  components:
+    - type: Paper
+      content: doc-text-printer-RequestDocuments
+
+- type: entity
+  parent: PrintedDocument
+  id: PrintedDocumentRequestEuthanasia
+  name: Запрос на проведение эвтаназии
+  components:
+    - type: Paper
+      content: doc-text-printer-RequestEuthanasia
+
+- type: entity
+  parent: PrintedDocument
+  id: PrintedDocumentRequestConstructionWork
+  name: Запрос на проведение строительных работ
+  components:
+    - type: Paper
+      content: doc-text-printer-RequestConstructionWork
+
+- type: entity
+  parent: PrintedDocument
+  id: PrintedDocumentRequestModernization
+  name: Запрос на проведение модернизации
+  components:
+    - type: Paper
+      content: doc-text-printer-RequestModernization
+
+- type: entity
+  parent: PrintedDocument
+  id: PrintedDocumentComplaintViolationLaborRules
+  name: Жалоба на нарушение трудового порядка
+  components:
+    - type: Paper
+      content: doc-text-printer-ComplaintViolationLaborRules
+
+- type: entity
+  parent: PrintedDocument
+  id: PrintedDocumentComplaintОffense
+  name: Жалоба на правонарушение
+  components:
+    - type: Paper
+      content: doc-text-printer-ComplaintОffense
+
+- type: entity
+  parent: PrintedDocument
+  id: PrintedDocumentPermissionEquipment
+  name: Разрешение на использование снаряжения
+  components:
+    - type: Paper
+      content: doc-text-printer-PermissionEquipment
+
+- type: entity
+  parent: PrintedDocument
+  id: PrintedDocumentSearchPermission
+  name: Разрешение на обыск
+  components:
+    - type: Paper
+      content: doc-text-printer-SearchPermission
+
+- type: entity
+  parent: PrintedDocument
+  id: PrintedDocumentPermissionWeapons
+  name: Разрешение на ношение оружия
+  components:
+    - type: Paper
+      content: doc-text-printer-SearchPermission
+
+- type: entity
+  parent: PrintedDocument
+  id: PrintedDocumentPrescriptionDrugAuthorization
+  name: Разрешение на рецептурный препарат
+  components:
+    - type: Paper
+      content: doc-text-printer-PrescriptionDrugAuthorization
+
+- type: entity
+  parent: PrintedDocument
+  id: PrintedDocumentPermissionDisposeBody
+  name: Разрешение на утилизацию тела
+  components:
+    - type: Paper
+      content: doc-text-printer-PermissionDisposeBody
+
+- type: entity
+  parent: PrintedDocument
+  id: PrintedDocumentConstructionPermit
+  name: Разрешение на строительство
+  components:
+    - type: Paper
+      content: doc-text-printer-ConstructionPermit
+
+- type: entity
+  parent: PrintedDocument
+  id: PrintedDocumentOrderDismissal
+  name: Приказ об увольнении
+  components:
+    - type: Paper
+      content: doc-text-printer-OrderDismissal
+
+- type: entity
+  parent: PrintedDocument
+  id: PrintedDocumentOrderDeprivationAccess
+  name: Приказ о лишении доступа
+  components:
+    - type: Paper
+      content: doc-text-printer-OrderDeprivationAccess
+
+- type: entity
+  parent: PrintedDocument
+  id: PrintedDocumentOrderEncouragement
+  name: Приказ о поощрении
+  components:
+    - type: Paper
+      content: doc-text-printer-OrderEncouragement
+
+- type: entity
+  parent: PrintedDocument
+  id: PrintedDocumentOrderParolePrisoner
+  name: Приказ об УДО заключенного
+  components:
+    - type: Paper
+      content: doc-text-printer-OrderParolePrisoner
+
+- type: entity
+  parent: PrintedDocument
+  id: PrintedDocumentOrderRecognizingSentienceCreature
+  name: Приказ о признании разумности существа
+  components:
+    - type: Paper
+      content: doc-text-printer-OrderRecognizingSentienceCreature
+
+- type: entity
+  parent: PrintedDocument
+  id: PrintedDocumentOrderMedicalIntervention
+  name: Распоряжение о медицинском вмешательстве
+  components:
+    - type: Paper
+      content: doc-text-printer-OrderMedicalIntervention
+
+- type: entity
+  parent: PrintedDocument
+  id: PrintedDocumentProductManufacturingOrder
+  name: Заказ на производство продукта
+  components:
+    - type: Paper
+      content: doc-text-printer-ProductManufacturingOrder
+
+- type: entity
+  parent: PrintedDocument
+  id: PrintedDocumentOrderPurchaseResourcesEquipment
+  name: Заказ на закупку ресурсов, снаряжения
+  components:
+    - type: Paper
+      content: doc-text-printer-OrderPurchaseResourcesEquipment
+
+- type: entity
+  parent: PrintedDocument
+  id: PrintedDocumentOrderingSpecialEquipment
+  name: Заказ специального снаряжения
+  components:
+    - type: Paper
+      content: doc-text-printer-OrderingSpecialEquipment
+
+- type: entity
+  parent: PrintedDocument
+  id: PrintedDocumentOrderPurchaseWeapons
+  name: Заказ на закупку вооружения
+  components:
+    - type: Paper
+      content: doc-text-printer-OrderPurchaseWeapons
+
+- type: entity
+  parent: PrintedDocument
+  id: PrintedDocumentCertificate
+  name: Грамота
+  components:
+    - type: Paper
+      content: doc-text-printer-Certificate
+
+- type: entity
+  parent: PrintedDocument
+  id: PrintedDocumentCertificateAdvancedTraining
+  name: Свидетельство о повышении квалификации
+  components:
+    - type: Paper
+      content: doc-text-printer-CertificateAdvancedTraining
+
+- type: entity
+  parent: PrintedDocument
+  id: PrintedDocumentCertificateOffense
+  name: Свидетельство о правонарушении
+  components:
+    - type: Paper
+      content: doc-text-printer-CertificateOffense
+
+- type: entity
+  parent: PrintedDocument
+  id: PrintedDocumentDeathCertificate
+  name: Свидетельство о смерти
+  components:
+    - type: Paper
+      content: doc-text-printer-DeathCertificate
+
+- type: entity
+  parent: PrintedDocument
+  id: PrintedDocumentMarriageCertificate
+  name: Свидетельство о заключении брака
+  components:
+    - type: Paper
+      content: doc-text-printer-MarriageCertificate
+
+- type: entity
+  parent: PrintedDocument
+  id: PrintedDocumentDivorceCertificate
+  name: Свидетельство о расторжении брака
+  components:
+    - type: Paper
+      content: doc-text-printer-DivorceCertificate
+
+- type: entity
+  parent: PrintedDocument
+  id: PrintedDocumentClosingIndictment
+  name: Обвинительное заключение
+  components:
+    - type: Paper
+      content: ClosingIndictment
+
+- type: entity
+  parent: PrintedDocument
+  id: PrintedDocumentSentence
+  name: Приговор
+  components:
+    - type: Paper
+      content: doc-text-printer-Sentence
+
+- type: entity
+  parent: PrintedDocument
+  id: PrintedDocumentStatementHealth
+  name: Заключение о состоянии здоровья
+  components:
+    - type: Paper
+      content: doc-text-printer-StatementHealth
+
+- type: entity
+  parent: PrintedDocument
+  id: PrintedDocumentNOTICEOFLIQUIDATION
+  name: УвЕдОмЛеНиЕ о ЛиКвИдАцИи
+  components:
+    - type: Paper
+      content: doc-text-printer-NOTICEOFLIQUIDATION
+
+- type: entity
+  parent: PrintedDocument
+  id: PrintedDocumentBUSINESSDEAL
+  name: ДеЛоВаЯ сДеЛкА
+  components:
+    - type: Paper
+      content: doc-text-printer-BUSINESSDEAL
+
+- type: entity
+  parent: PrintedDocument
+  id: PrintedDocumentNOTEBEGINNINGMILITARYACTIONS
+  name: НоТа О нАчАлЕ вОеНнЫх ДеЙсТвИй
+  components:
+    - type: Paper
+      content: doc-text-printer-NOTEBEGINNINGMILITARYACTIONS
+
+- type: entity
+  parent: PrintedDocument
+  id: PrintedDocumentREPORTACCOMPLISHMENTGOALS
+  name: ОтЧёТ о ВыПоЛнЕнИи ЦеЛеЙ
+  components:
+    - type: Paper
+      content: doc-text-printer-REPORTACCOMPLISHMENTGOALS

@@ -1,0 +1,40 @@
+- type: material
+  id: SheetPrinter
+  stackEntity: SheetPrinter
+  name: paper
+  icon: { sprite: Objects/Misc/bureaucracy.rsi, state: paper }
+  color: "#ffffff"
+  price: 0.05
+  
+- type: stack
+  id: SheetPrinter
+  name: paper
+  icon: { sprite: Objects/Misc/bureaucracy.rsi, state: paper }
+  spawn: SheetPrinter1
+  maxCount: 30
+  itemSize: 1
+
+- type: entity
+  parent: Paper
+  id: SheetPrinter
+  suffix: Full
+  components:
+  - type: Material
+  - type: PhysicalComposition
+    materialComposition:
+      SheetPrinter: 100
+  - type: Stack
+    stackType: SheetPrinter
+    baseLayer: base
+    layerStates:
+    - paper
+    - paper
+    - paper
+  - type: Sprite
+    state: paper
+    layers:
+    - state: paper
+      map: ["base"]
+  - type: Tag
+    tags:
+    - Document

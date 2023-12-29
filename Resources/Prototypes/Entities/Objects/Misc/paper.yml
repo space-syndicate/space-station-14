@@ -56,6 +56,12 @@
               max: 1
       - !type:DoActsBehavior
         acts: [ "Destruction" ]
+# Corvax-Printer-Start
+  - type: Material
+  - type: PhysicalComposition
+    materialComposition:
+      SheetPrinter: 100
+# Corvax-Printer-End
 
 - type: entity
   name: office paper

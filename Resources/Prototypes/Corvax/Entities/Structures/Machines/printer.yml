@@ -1,0 +1,98 @@
+- type: entity
+  parent: BaseLathe
+  id: PrinterDoc
+  name: принтер документов
+  description: Бюрократическое совершенство. Хранит базу данных всех документов Nanotrasen, и дает возможность печатать их, пока у вас есть бумага.
+  components:
+  - type: Sprite
+    sprite: Corvax/Structures/Machines/printer.rsi
+    snapCardinals: true
+    layers:
+    - state: icon
+      map: ["enum.LatheVisualLayers.IsRunning"]
+    - state: idle
+      shader: unshaded
+      map: ["enum.PowerDeviceVisualLayers.Powered"]
+    - state: inserting
+      map: ["enum.MaterialStorageVisualLayers.Inserting"]
+    - state: panel
+      map: ["enum.WiresVisualLayers.MaintenancePanel"]
+  - type: Transform
+    noRot: false
+  - type: Machine
+  - type: Lathe
+    producingSound: /Audio/Machines/scanning.ogg
+    idleState: icon
+    runningState: building
+    staticRecipes:
+      - PrintedDocumentReportStationRecipe
+      - PrintedDocumentReporDepartmentRecipe
+      - PrintedDocumentReportEmployeePerformanceRecipe
+      - PrintedDocumentReportOnTheChaptersMeetingRecipe
+      - PrintedDocumentInternalAffairsAgentsReportRecipe
+      - PrintedDocumentConditionReportRecipe
+      - PrintedDocumentReportStudyObjectRecipe
+      - PrintedDocumentDisposalReportRecipe
+      - PrintedDocumentApplicationAppointmentInterimRecipe
+      - PrintedDocumentApplicationEmploymentRecipe
+      - PrintedDocumentLetterResignationRecipe
+      - PrintedDocumentApplicationAccessRecipe
+      - PrintedDocumentApplicationEquipmentRecipe
+      - PrintedDocumentEvacuationShuttleRequestRecipe
+      - PrintedDocumentShuttleRegistrationRequestRecipe
+      - PrintedDocumentRequestCallMembersCentralCommitteeDSORecipe
+      - PrintedDocumentRequestChangeSalaryRecipe
+      - PrintedDocumentRequestNonListedEmploymentRecipe
+      - PrintedDocumentRequestDocumentsRecipe
+      - PrintedDocumentRequestEuthanasiaRecipe
+      - PrintedDocumentRequestConstructionWorkRecipe
+      - PrintedDocumentRequestModernizationRecipe
+      - PrintedDocumentComplaintViolationLaborRulesRecipe
+      - PrintedDocumentPermissionEquipmentRecipe
+      - PrintedDocumentSearchPermissionRecipe
+      - PrintedDocumentPermissionWeaponsRecipe
+      - PrintedDocumentPrescriptionDrugAuthorizationRecipe
+      - PrintedDocumentPermissionDisposeBodyRecipe
+      - PrintedDocumentConstructionPermitRecipe
+      - PrintedDocumentOrderDismissalRecipe
+      - PrintedDocumentOrderDeprivationAccessRecipe
+      - PrintedDocumentOrderEncouragementRecipe
+      - PrintedDocumentOrderParolePrisonerRecipe
+      - PrintedDocumentOrderRecognizingSentienceCreatureRecipe
+      - PrintedDocumentOrderMedicalInterventionRecipe
+      - PrintedDocumentProductManufacturingOrderRecipe
+      - PrintedDocumentOrderPurchaseResourcesEquipmentRecipe
+      - PrintedDocumentOrderingSpecialEquipmentRecipe
+      - PrintedDocumentOrderPurchaseWeaponsRecipe
+      - PrintedDocumentCertificateRecipe
+      - PrintedDocumentCertificateAdvancedTrainingRecipe
+      - PrintedDocumentCertificateOffenseRecipe
+      - PrintedDocumentDeathCertificateRecipe
+      - PrintedDocumentMarriageCertificateRecipe
+      - PrintedDocumentDivorceCertificateRecipe
+      - PrintedDocumentClosingIndictmentRecipe
+      - PrintedDocumentSentenceRecipe
+      - PrintedDocumentStatementHealtheRecipe
+  - type: EmagLatheRecipes
+    emagStaticRecipes:
+        - PrintedDocumentNOTICEOFLIQUIDATIONRecipe
+        - PrintedDocumentBUSINESSDEALRecipe
+        - PrintedDocumentNOTEBEGINNINGMILITARYACTIONSRecipe
+        - PrintedDocumentREPORTACCOMPLISHMENTGOALSRecipe
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.25,-0.25,0.25,0.25"
+        density: 25
+        mask:
+        - TabletopMachineMask
+        layer:
+        - TabletopMachineLayer
+  - type: MaterialStorage
+    whitelist:
+      tags:
+      - Document
+    storage:
+      SheetPrinter: 1000
