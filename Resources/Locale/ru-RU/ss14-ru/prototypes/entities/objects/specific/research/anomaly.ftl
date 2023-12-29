@@ -19,4 +19,5 @@ ent-AnomalyLocatorWideEmpty = { ent-AnomalyLocatorWide }
     .suffix = Пустой
     .desc = { ent-AnomalyLocatorWide.desc }
 ent-WeaponGauntletGorilla = перчатка Г.О.Р.И.Л.Л.А.
+    .suffix = Горилла
     .desc = Робастное исследовательское оборудование. При питании от ядра аномалии один удар может запустить аномальные объекты в воздух.

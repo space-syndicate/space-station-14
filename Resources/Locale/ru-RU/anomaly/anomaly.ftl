@@ -26,8 +26,7 @@ anomaly-gorilla-charge-limit =
     { $count ->
     [one] Остался
    *[other] Осталось
-    }
-    Осталось [color={ $count ->
+    } [color={ $count ->
         [3] green
         [2] yellow
         [1] orange
@@ -35,6 +34,7 @@ anomaly-gorilla-charge-limit =
        *[other] purple
     }]{ $count } { $count ->
         [one] заряд
+        [few] заряда
        *[other] зарядов
     }[/color].
 anomaly-gorilla-charge-infinite = Осталось [color=gold]бесконечно зарядов[/color]. [italic]Пока что...[/italic]
