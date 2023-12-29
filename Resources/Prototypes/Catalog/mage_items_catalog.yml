@@ -1,0 +1,29 @@
+- type: listing
+  id: MageWandBelt
+  name: mage-wand-belt-name
+  description: mage-wand-belt-desc
+  productEntity: ClothingBeltWandFilled
+  cost:
+    Spellpoints: 2
+  categories:
+  - MageItems
+
+- type: listing
+  id: MageWandOfDoreCreation
+  name: mage-wand-door-name
+  description: mage-wand-door-desc
+  productEntity: WeaponWandPolymorphDoor
+  cost:
+    Spellpoints: 1
+  categories:
+  - MageItems
+
+- type: listing
+  id: MageBattleMageArmor
+  name: mage-battlemage-armor-name
+  description: mage-battlemage-armor-desc
+  productEntity: ClothingOuterHardsuitWizard
+  cost:
+    Spellpoints: 2
+  categories:
+  - MageItems

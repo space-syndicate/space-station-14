@@ -70,5 +70,25 @@
 
 #mage
 - type: storeCategory
-  id: MageAbilities
-  name: store-category-mage-abilities
+  id: MageAbilitiesDefense
+  name: store-category-mage-abilities-defense
+
+- type: storeCategory
+  id: MageAbilitiesOffense
+  name: store-category-mage-abilities-offense
+
+- type: storeCategory
+  id: MageAbilitiesMobility
+  name: store-category-mage-abilities-mobility
+
+- type: storeCategory
+  id: MageAbilitiesAssist
+  name: store-category-mage-abilities-assist
+
+- type: storeCategory
+  id: MageAbilitiesRune
+  name: store-category-mage-abilities-rune
+
+- type: storeCategory
+  id: MageItems
+  name: store-category-mage-items

@@ -34,6 +34,8 @@
 
 - type: entity
   id: ActionRgbLight
+  name: RGB light
+  description: Useless spell. Elder mages used this to trick everyone.
   noSpawn: true
   components:
   - type: EntityTargetAction

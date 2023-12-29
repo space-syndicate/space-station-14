@@ -20,6 +20,11 @@
   id: StorePresetMage
   storeName: Spellbook
   categories:
-  - MageAbilities
+  - MageAbilitiesDefense
+  - MageAbilitiesOffense
+  - MageAbilitiesMobility
+  - MageAbilitiesAssist
+  - MageAbilitiesRune
+  - MageItems
   currencyWhitelist:
   - Spellpoints
