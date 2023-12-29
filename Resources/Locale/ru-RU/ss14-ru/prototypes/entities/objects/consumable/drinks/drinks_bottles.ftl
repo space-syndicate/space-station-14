@@ -1,5 +1,7 @@
-ent-DrinkBottleBaseFull = { ent-DrinkBase }
+ent-DrinkBottlePlasticBaseFull = { ent-DrinkBase }
     .desc = { ent-DrinkBase.desc }
+ent-DrinkBottleGlassBaseFull = { ent-DrinkBottlePlasticBaseFull }
+    .desc = { ent-DrinkBottlePlasticBaseFull.desc }
 ent-DrinkAbsintheBottleFull = Джейлбрейк Верте
     .desc = Всего один глоток этого напитка, и вы сразу понимаете, что хорошо проведете время.
 ent-DrinkBlueCuracaoBottleFull = Кюрасао Мисс Синева

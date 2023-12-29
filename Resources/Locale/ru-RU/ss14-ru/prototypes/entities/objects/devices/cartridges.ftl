@@ -6,3 +6,5 @@ ent-CrewManifestCartridge = картридж Манифест экипажа
     .desc = Программа для отображения списка членов экипажа
 ent-NetProbeCartridge = картридж NetProbe
     .desc = Программа для получения адресов и частот сетевых устройств
+ent-LogProbeCartridge = LogProbe cartridge
+    .desc = A program for getting access logs from devices

@@ -37,3 +37,4 @@ command-description-solution-get = Returns a solution stored in an entity's solu
 command-description-solution-adjreagent = Adjusts the given reagent on the given solution.
 command-description-mind-get = Grabs the mind from the entity, if any.
 command-description-mind-control = Assumes control of an entity with the given player.
+command-description-addaccesslog = Adds an access log to this entity. Do note that this bypasses the log's default limit and pause check.

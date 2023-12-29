@@ -29,3 +29,6 @@ ent-SpawnMobSpiderSalvage = Salvage Space Spider Spawner
     .desc = { ent-MarkerBase.desc }
 ent-SpawnMobCobraSalvage = Salvage Space Cobra Spawner
     .desc = { ent-MarkerBase.desc }
+ent-SalvageFleshSpawner = Salvage Flesh Spawner
+    .suffix = 100
+    .desc = { ent-SalvageMobSpawner.desc }
