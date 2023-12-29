@@ -401,7 +401,7 @@
 
 - type: entity
   parent: PrintedDocument
-  id: PrintedDocumentNOTICEOFLIQUIDATION
+  id: PrintedDocumentNoticeOfLiquidation
   name: УвЕдОмЛеНиЕ о ЛиКвИдАцИи
   components:
     - type: Paper
@@ -409,7 +409,7 @@
 
 - type: entity
   parent: PrintedDocument
-  id: PrintedDocumentBUSINESSDEAL
+  id: PrintedDocumentBusinessDeal
   name: ДеЛоВаЯ сДеЛкА
   components:
     - type: Paper
@@ -417,7 +417,7 @@
 
 - type: entity
   parent: PrintedDocument
-  id: PrintedDocumentNOTEBEGINNINGMILITARYACTIONS
+  id: PrintedDocumentNoteBeginningMilitaryActions
   name: НоТа О нАчАлЕ вОеНнЫх ДеЙсТвИй
   components:
     - type: Paper
@@ -425,7 +425,7 @@
 
 - type: entity
   parent: PrintedDocument
-  id: PrintedDocumentREPORTACCOMPLISHMENTGOALS
+  id: PrintedDocumentReportAccomplishmentGoals
   name: ОтЧёТ о ВыПоЛнЕнИи ЦеЛеЙ
   components:
     - type: Paper
