@@ -1,4 +1,4 @@
-marking-TattooHiveChest-tattoo_hive_chest = Татуировка, (Улей)
+marking-TattooHiveChest-tattoo_hive_chest = Татуировка, спина (Улей)
 marking-TattooNightlingChest-tattoo_nightling = Татуировка, грудь (Найтлинг)
 marking-TattooHiveChest = Татуировка, спина (Улей)
 marking-TattooSilverburghLeftLeg-tattoo_silverburgh_l_leg = Татуировка, левая нога (Силвербург)
