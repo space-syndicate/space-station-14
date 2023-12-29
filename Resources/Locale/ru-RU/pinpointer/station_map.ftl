@@ -5,7 +5,7 @@ nav-beacon-toggle-invisible = Невидимый
 nav-beacon-text-label = Метка:
 nav-beacon-button-apply = Применить
 nav-beacon-examine-text =
-    Это [color={ $enabled ->
+    Он [color={ $enabled ->
         [true] forestgreen]включено
        *[false] crimson]выключено
     }[/color] и на дисплее отображается [color={ $color }]"{ $label }"[/color].
