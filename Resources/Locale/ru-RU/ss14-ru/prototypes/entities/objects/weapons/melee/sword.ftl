@@ -10,3 +10,5 @@ ent-Claymore = клеймор
     .desc = Древний воинский меч.
 ent-Cutlass = абордажная сабля
     .desc = Хитро изогнутый клинок, который часто можно увидеть в руках и крюках космических пиратов.
+ent-Throngler = The Throngler
+    .desc = Why would you make this?

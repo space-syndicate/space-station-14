@@ -16,6 +16,7 @@ ent-IronRockMining = ironrock
     .desc = An asteroid.
     .suffix = higher ore yield
 ent-WallRock = rock
+    .suffix = planetmap
     .desc = { ent-BaseStructure.desc }
 ent-WallRockCoal = { ent-WallRock }
     .desc = An ore vein rich with coal.
