@@ -20,6 +20,7 @@
   - type: Transform
     noRot: false
   - type: Machine
+    board: PrinterDocMachineCircuitboard
   - type: Lathe
     producingSound: /Audio/Machines/scanning.ogg
     idleState: icon
@@ -95,4 +96,4 @@
       tags:
       - Document
     storage:
-      SheetPrinter: 1000
+      SheetPrinter: 0

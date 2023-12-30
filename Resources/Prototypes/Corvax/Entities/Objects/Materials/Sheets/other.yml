@@ -14,6 +14,14 @@
   maxCount: 30
   itemSize: 1
 
+- type: latheRecipe
+  id: PrinterDocMachineCircuitboard
+  result: PrinterDocMachineCircuitboard
+  completetime: 4
+  materials:
+     Steel: 100
+     Glass: 900
+
 - type: entity
   parent: Paper
   id: SheetPrinter
@@ -46,11 +54,3 @@
   components:
   - type: Stack
     count: 1
-    
-- type: entity
-  parent: SheetPrinter
-  id: SheetPrinterFull
-  suffix: Full
-  components:
-  - type: Stack
-    count: 30

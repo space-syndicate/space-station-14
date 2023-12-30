@@ -323,6 +323,9 @@
     - ElectrolysisUnitMachineCircuitboard
     - CentrifugeMachineCircuitboard
     - CondenserMachineCircuitBoard
+    # Corvax-Printer-Start
+    - PrinterDocMachineCircuitboard
+    # Corvax-Printer-End
     dynamicRecipes:
       - ThermomachineFreezerMachineCircuitBoard
       - PortableScrubberMachineCircuitBoard
