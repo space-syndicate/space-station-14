@@ -187,5 +187,5 @@ ent-DefaultStationBeaconToolRoom = { ent-DefaultStationBeacon }
     .suffix = Комната с инструментами
     .desc = { ent-DefaultStationBeacon.desc }
 ent-DefaultStationBeaconDisposals = { ent-DefaultStationBeacon }
-    .suffix = Утилизация
+    .suffix = Мусоросброс
     .desc = { ent-DefaultStationBeacon.desc }

@@ -37,7 +37,7 @@ anomaly-gorilla-charge-limit =
         [few] заряда
        *[other] зарядов
     }[/color].
-anomaly-gorilla-charge-infinite = Осталось [color=gold]бесконечно зарядов[/color]. [italic]Пока что...[/italic]
+anomaly-gorilla-charge-infinite = Осталось [color=gold]бесконечное количество зарядов[/color]. [italic]Пока что...[/italic]
 anomaly-sync-connected = Аномалия успешно привязана
 anomaly-sync-disconnected = Соединение с аномалией было потеряно!
 anomaly-sync-no-anomaly = Отсутствует аномалия в пределах диапазона.
