@@ -95,10 +95,10 @@ public sealed class AirlockSystem : SharedAirlockSystem
 
         if (_appearanceSystem.TryGetData<bool>(uid, DoorVisuals.Powered, out var powered, args.Component) && powered)
         {
-            // Corvax-Resprite-Airlocks start
+            
             boltedVisible = _appearanceSystem.TryGetData<bool>(uid, DoorVisuals.BoltLights, out var lights, args.Component)
-                            && lights && (state == DoorState.Closed || state == DoorState.Open || state == DoorState.Welded);
-            // Corvax-Resprite-Airlocks end
+                            && lights && (state == DoorState.Closed
+                                          || state == DoorState.Open || state == DoorState.Welded); // Corvax-Resprite-Airlocks
             emergencyLightsVisible = _appearanceSystem.TryGetData<bool>(uid, DoorVisuals.EmergencyLights, out var eaLights, args.Component) && eaLights;
             unlitVisible =
                     (state == DoorState.Closing
