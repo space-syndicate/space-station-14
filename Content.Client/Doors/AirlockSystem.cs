@@ -95,8 +95,10 @@ public sealed class AirlockSystem : SharedAirlockSystem
 
         if (_appearanceSystem.TryGetData<bool>(uid, DoorVisuals.Powered, out var powered, args.Component) && powered)
         {
+            // Corvax-Resprite-Airlocks start
             boltedVisible = _appearanceSystem.TryGetData<bool>(uid, DoorVisuals.BoltLights, out var lights, args.Component)
-                            && lights && (state == DoorState.Closed || state == DoorState.Open || state == DoorState.Welded) ;
+                            && lights && (state == DoorState.Closed || state == DoorState.Open || state == DoorState.Welded);
+            // Corvax-Resprite-Airlocks end
             emergencyLightsVisible = _appearanceSystem.TryGetData<bool>(uid, DoorVisuals.EmergencyLights, out var eaLights, args.Component) && eaLights;
             unlitVisible =
                     (state == DoorState.Closing
@@ -104,7 +106,7 @@ public sealed class AirlockSystem : SharedAirlockSystem
                 ||  state == DoorState.Denying
                 || (state == DoorState.Open && comp.OpenUnlitVisible)
                 || (_appearanceSystem.TryGetData<bool>(uid, DoorVisuals.ClosedLights, out var closedLights, args.Component) && closedLights)
-                ) && !boltedVisible && !emergencyLightsVisible;
+                ) && !boltedVisible && !emergencyLightsVisible;   // Corvax-Resprite-Airlock
         }
 
         args.Sprite.LayerSetVisible(DoorVisualLayers.BaseUnlit, unlitVisible);
@@ -117,7 +119,7 @@ public sealed class AirlockSystem : SharedAirlockSystem
                 &&  state != DoorState.Open
                 &&  state != DoorState.Opening
                 &&  state != DoorState.Closing
-                &&  !boltedVisible
+                &&  !boltedVisible  // Corvax-Resprite-Airlocks
             );
         }
     }
