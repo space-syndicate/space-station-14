@@ -42,6 +42,7 @@ public sealed class MealsRecipesJsonGenerator
                 .Where(x => x.Components.TryGetComponent("SolutionContainerManager", out var _))
                 .Where(x => (Regex.Match(x.ID.ToLower().Trim(), @".*[Ff]ood*").Success)) // we dont need some "organ" or "pills" prototypes.
                 .Select(x => new GrindRecipeEntry(x))
+                .Where(x => x.Result != null)
                 .ToDictionary(x => x.Id, x => x);
 
 
