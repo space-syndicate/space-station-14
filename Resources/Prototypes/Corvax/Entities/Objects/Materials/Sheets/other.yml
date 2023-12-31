@@ -1,27 +1,3 @@
-- type: material
-  id: SheetPrinter
-  stackEntity: SheetPrinter1
-  name: materials-paper
-  icon: { sprite: Objects/Misc/bureaucracy.rsi, state: paper }
-  color: "#ffffff"
-  price: 0.05
-  
-- type: stack
-  id: SheetPrinter
-  name: paper
-  icon: { sprite: Objects/Misc/bureaucracy.rsi, state: paper }
-  spawn: SheetPrinter1
-  maxCount: 30
-  itemSize: 1
-
-- type: latheRecipe
-  id: PrinterDocMachineCircuitboard
-  result: PrinterDocMachineCircuitboard
-  completetime: 4
-  materials:
-     Steel: 100
-     Glass: 900
-
 - type: entity
   parent: Paper
   id: SheetPrinter
