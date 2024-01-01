@@ -21,6 +21,9 @@
   special:
   - !type:AddImplantSpecial
     implants: [ MindShieldImplant ]
+  - !type:AddComponentSpecial # Corvax-MRP
+    components:
+      - type: NotPacifyAtRoundEnd
 
 - type: startingGear
   id: SecurityCadetGear

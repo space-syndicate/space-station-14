@@ -37,6 +37,7 @@
   - !type:AddComponentSpecial
     components:
       - type: CommandStaff
+      - type: NotPacifyAtRoundEnd # Corvax-MRP
 
 - type: startingGear
   id: HoSGear
