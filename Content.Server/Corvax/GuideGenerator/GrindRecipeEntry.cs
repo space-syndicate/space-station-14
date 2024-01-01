@@ -37,7 +37,7 @@ public sealed class GrindRecipeEntry
     ///     Dictionary of reagents that entity contains; aka "Recipe Result"
     /// </summary>
     [JsonPropertyName("result")]
-    public Dictionary<string, int> Result { get; } = new Dictionary<string, int>();
+    public Dictionary<string, int>? Result { get; } = new Dictionary<string, int>();
 
 
     public GrindRecipeEntry(EntityPrototype proto)
@@ -46,7 +46,7 @@ public sealed class GrindRecipeEntry
         Name = TextTools.TextTools.CapitalizeString(proto.Name);
         Type = "grindableRecipes";
         Input = proto.ID;
-        var foodSulitonName = "food"; // default to food because everything in prototypes defaults to "food"
+        var foodSolutionName = "food"; // default to food because everything in prototypes defaults to "food"
 
         // Now, to become a recipe, entity must:
         // A) Have "Extractable" component on it.
@@ -58,15 +58,17 @@ public sealed class GrindRecipeEntry
         {
             var extractable = (ExtractableComponent) extractableComp;
             var solutionComp = (SolutionContainerManagerComponent) solutionCompRaw;
-            foodSulitonName = extractable.GrindableSolution;
+            foodSolutionName = extractable.GrindableSolution;
 
-            // if (foodSulitonName != null && solutionComp.Solutions.ContainsKey(foodSulitonName))
-            // {
-            //     foreach (ReagentQuantity reagent in solutionComp.Solutions[(string) foodSulitonName].Contents)
-            //     {
-            //         Result[reagent.Reagent.Prototype] = reagent.Quantity.Int();
-            //     }
-            // }
+            if (solutionComp.Solutions != null && foodSolutionName != null)
+            {
+                foreach (ReagentQuantity reagent in solutionComp.Solutions[(string) foodSolutionName].Contents)
+                {
+                    Result[reagent.Reagent.Prototype] = reagent.Quantity.Int();
+                }
+            }
+            else
+                Result = null;
         }
     }
 }

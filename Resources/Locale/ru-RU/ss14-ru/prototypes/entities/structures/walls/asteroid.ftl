@@ -17,6 +17,7 @@ ent-IronRockMining = железный камень
     .suffix = Высокое содержание руды
 ent-WallRock = камень
     .desc = { ent-BaseStructure.desc }
+    .suffix = планета
 ent-WallRockCoal = { ent-WallRock }
     .desc = Рудная жила, богатая углём.
     .suffix = Уголь

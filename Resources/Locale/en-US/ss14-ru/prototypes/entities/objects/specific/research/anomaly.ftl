@@ -18,3 +18,5 @@ ent-AnomalyLocatorWide = { ent-AnomalyLocatorWideUnpowered }
 ent-AnomalyLocatorWideEmpty = { ent-AnomalyLocatorWide }
     .suffix = Empty
     .desc = { ent-AnomalyLocatorWide.desc }
+ent-WeaponGauntletGorilla = G.O.R.I.L.L.A. gauntlet
+    .desc = A robust piece of research equipment. When powered with an anomaly core, a single blow can launch anomalous objects through the air.
