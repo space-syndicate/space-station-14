@@ -1,11 +1,11 @@
 station-map-window-title = Карта станции
-nav-beacon-window-title = Station Beacon
-nav-beacon-toggle-visible = Visible
-nav-beacon-toggle-invisible = Invisible
-nav-beacon-text-label = Label:
-nav-beacon-button-apply = Apply
+nav-beacon-window-title = Станционный маяк
+nav-beacon-toggle-visible = Видимый
+nav-beacon-toggle-invisible = Невидимый
+nav-beacon-text-label = Метка:
+nav-beacon-button-apply = Применить
 nav-beacon-examine-text =
-    It is [color={ $enabled ->
-        [true] forestgreen]on
-       *[false] crimson]off
-    }[/color] and the display reads [color={ $color }]"{ $label }"[/color]
+    Он [color={ $enabled ->
+        [true] forestgreen]включён
+       *[false] crimson]выключен
+    }[/color] и на дисплее отображается [color={ $color }]"{ $label }"[/color].

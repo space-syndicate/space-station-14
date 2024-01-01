@@ -64,5 +64,5 @@ ent-BulletCannonBall = пушечное ядро
     .desc = { ent-BaseBulletTrigger.desc }
 ent-GrapplingHook = якорь
     .desc = { "" }
-ent-BulletDisablerSmg = disabler bolt smg
+ent-BulletDisablerSmg = заряд станнера-пулемёта
     .desc = { ent-BaseBullet.desc }
