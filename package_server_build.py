@@ -53,8 +53,8 @@ SHARED_IGNORED_RESOURCES = {
 
 SERVER_IGNORED_RESOURCES = {
     "Textures",
-    "Fonts",
     "Audio",
+    "Fonts",
     "Shaders",
 }
 

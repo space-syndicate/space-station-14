@@ -48,6 +48,8 @@
         - /Maps/Shuttles/cargo.yml
         - /Maps/Shuttles/corvax_mining.yml # Corvax-Mapping
 
+        #- /Maps/Shuttles/mining.yml # Synth-Mapping
+
 - type: entity
   id: BaseStationCentcomm
   abstract: true
