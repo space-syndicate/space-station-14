@@ -1,6 +1,7 @@
 ﻿using Content.Server.GameTicking;
 using Content.Shared.CombatMode.Pacification;
 using Content.Shared.Corvax.CCCVars;
+using Content.Shared.Mindshield.Components;
 using Robust.Server.Player;
 using Robust.Shared.Configuration;
 
@@ -28,7 +29,7 @@ public sealed class PeacefulRoundEndSystem : EntitySystem
             if (!session.AttachedEntity.HasValue) continue;
 
             var entityId = session.AttachedEntity.Value;
-            if (HasComp<NotPacifyAtRoundEndComponent>(entityId))
+            if (HasComp<MindShieldComponent>(entityId))
             {
                 continue;
             }
