@@ -25,6 +25,7 @@ research-technology-mechanized-treatment = Механизированная по
 research-technology-virology = Вирусология
 research-technology-cryogenics = Криогеника
 research-technology-chemical-dispensary = Химический раздатчик
+research-technology-biofabrication = Biofabrication
 research-technology-crew-monitoring = Мониторинг экипажа
 research-technology-bluespace-chemistry = Блюспейс-химия
 research-technology-cloning = Клонирование
