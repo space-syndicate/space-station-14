@@ -11,3 +11,23 @@
       borderColor: "#6f6192"
     - type: Icon
       state: pda-lawyer
+
+- type: entity
+  parent: BasePDA
+  id: JudgePDA
+  name: judge PDA
+  description: For judge to send clown into prison with comfort.
+  components:
+  - type: Pda
+    id: JudgeIDCard
+    state: pda-judge
+    penSlot:
+      startingItem: PenCentcom
+      priority: -1
+      whitelist:
+        tags:
+         - Write
+  - type: PdaBorderColor
+    borderColor: "#40496d"
+  - type: Icon
+    state: pda-judge

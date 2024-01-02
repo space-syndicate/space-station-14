@@ -1,0 +1,48 @@
+- type: job
+  id: Judge
+  name: job-name-judge 
+  description: job-description-judge
+  playTimeTracker: JobJudge
+  requirements:
+    - !type:RoleTimeRequirement
+      role: JobWarden
+      time: 72000 #20 hrs
+      
+    - !type:RoleTimeRequirement
+      role: JobIAA
+      time: 72000 #20 hrs
+  startingGear: JudgeGear
+  icon: "JobIconJudge"
+  supervisors: job-supervisors-centcom
+  canBeAntag: false 
+  access:
+  - Service
+  - Brig
+  - Maintenance
+  - Command
+  - External
+  - Lawyer
+  - Security
+  special:
+  - !type:AddImplantSpecial
+    implants: [ MindShieldImplant ]
+
+- type: startingGear
+  id: JudgeGear
+  equipment:
+    jumpsuit: ClothingUniformJumpsuitCentcomAgent
+    back: ClothingBackpackFilled
+    shoes: ClothingShoesBootsLaceup
+    eyes: ClothingEyesGlassesSunglasses
+    head: ClothingHeadJudge
+    id: JudgePDA
+    ears: ClothingHeadsetJudge
+    outerClothing: ClothingUniformMagistratBash
+    pocket1: RubberStampJudge
+    pocket2: Magistrat_Hammer
+    # TODO add copy of space law
+  inhand:
+    - BriefcaseBrownFilled
+  innerClothingSkirt: ClothingUniformJumpskirtLawyerBlack
+  satchel: ClothingBackpackSatchelFilled
+  duffelbag: ClothingBackpackDuffelFilled

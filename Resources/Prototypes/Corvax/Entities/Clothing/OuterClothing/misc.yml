@@ -1,0 +1,12 @@
+
+- type: entity
+  parent: ClothingOuterBase
+  id: ClothingUniformMagistrat
+  name: Magistrat mantle
+  description: Smells like justice
+  components:
+  - type: Sprite
+    sprite: Corvax/Clothing/OuterClothing/misc/magistrat.rsi
+  - type: Clothing
+    sprite: Corvax/Clothing/OuterClothing/misc/magistrat.rsi
+  - type: StorageFill

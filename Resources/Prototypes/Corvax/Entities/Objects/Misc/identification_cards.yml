@@ -9,3 +9,15 @@
         - state: idiaa
     - type: PresetIdCard
       job: IAA
+
+- type: entity
+  parent: IDCardStandard
+  id: JudgeIDCard
+  name: judge ID card
+  components:
+  - type: Sprite
+    layers:
+    - state: silver
+    - state: idjudge 
+  - type: PresetIdCard
+    job: Judge

@@ -1,0 +1,11 @@
+- type: entity
+  id: SpawnPointJudge
+  parent: SpawnPointJobBase
+  name: judge 
+  components:
+  - type: SpawnPoint
+    job_id: Judge
+  - type: Sprite
+    layers:
+    - state: green
+    - state: judge 

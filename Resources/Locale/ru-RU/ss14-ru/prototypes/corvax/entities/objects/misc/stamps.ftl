@@ -4,3 +4,6 @@ ent-RubberStampIAA = печать агента внутренних дел
 ent-RubberStampPsychologist = печать психолога
     .desc = { ent-RubberStampMime.desc }
     .suffix = НЕ МАППИТЬ
+ent-RubberStampJudge = печать магистрата
+    .desc = { ent-RubberStampMime.desc }
+    .suffix = НЕ МАППИТЬ

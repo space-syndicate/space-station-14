@@ -10,3 +10,20 @@
         - EncryptionKeyIAA
     - type: Sprite
       sprite: Clothing/Ears/Headsets/servicesecurity.rsi
+
+- type: entity
+  parent: ClothingHeadset
+  id: ClothingHeadsetJudge
+  name: judge headset
+  description: This is used by justice.
+  components:
+  - type: ContainerFill
+    containers:
+      key_slots:
+      - EncryptionKeySecurity
+      - EncryptionKeyCommon
+      - EncryptionKeyCommand
+  - type: Sprite
+    sprite: Corvax/Clothing/Ears/Headsets/judge.rsi
+  - type: Clothing
+    sprite: Corvax/Clothing/Ears/Headsets/judge.rsi

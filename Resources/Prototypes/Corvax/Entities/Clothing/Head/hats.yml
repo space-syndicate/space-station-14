@@ -1,4 +1,4 @@
-﻿- type: entity
+- type: entity
   parent: ClothingHeadBase
   id: ClothingHeadCapCentcomBlack
   name: special operations officer cap
@@ -85,3 +85,14 @@
     sprite: Corvax/Clothing/Head/Hats/caphat.rsi
   - type: Clothing
     sprite: Corvax/Clothing/Head/Hats/caphat.rsi
+
+- type: entity
+  parent: ClothingHeadBase
+  id: ClothingHeadJudge
+  name: Judge Hat
+  description: Old-fashioned hat... this is hat, right?
+  components:
+  - type: Sprite
+    sprite: Corvax/Clothing/Head/Hats/magr_hair.rsi
+  - type: Clothing
+    sprite: Corvax/Clothing/Head/Hats/magr_hair.rsi

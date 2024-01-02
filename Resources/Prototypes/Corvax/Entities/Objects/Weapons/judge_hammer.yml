@@ -1,0 +1,27 @@
+- type: entity
+  name: judge hammer
+  parent: BaseItem
+  id: MagistratHammer  
+  description: It has a symbolic of NT
+  components:
+  - type: Sprite
+    sprite: Objects/Weapons/Melee/judge_hammer.rsi
+    state: icon
+  - type: MeleeWeapon
+    soundHit:
+      path: /Audio/Weapons/molotochic.ogg
+    wideAnimationRotation: 135
+    damage:
+      types:
+        Blunt: 0
+  - type: StaminaDamageOnHit
+    damage: 15
+  - type: Item
+    size: Small
+  - type: Clothing
+    sprite: Objects/Weapons/Melee/judge_hammer.rsi
+    quickEquip: false
+    slots:
+    - Belt
+  - type: StaticPrice
+    price: 100
