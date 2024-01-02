@@ -20,6 +20,7 @@
           availableJobs:
             #service
             Captain: [ 1, 1 ]
+            Judge: [ 0, 1 ]
             IAA: [ 1, 1 ] # Corvax-IAA
             HeadOfPersonnel: [ 1, 1 ]
             Bartender: [ 2, 2 ]
