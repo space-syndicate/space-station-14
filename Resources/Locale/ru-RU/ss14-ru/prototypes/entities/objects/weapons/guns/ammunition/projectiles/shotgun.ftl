@@ -1,4 +1,4 @@
-ent-PelletShotgunSlug = дробина (.50 пуля)
+ent-PelletShotgunSlug = дробина (.50 картечь)
     .desc = { ent-BaseBullet.desc }
 ent-PelletShotgunBeanbag = дробина (.50)
     .desc = { ent-BaseBullet.desc }
