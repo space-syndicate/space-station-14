@@ -20,6 +20,8 @@
 - type: randomHumanoidSettings
   id: DeathSquad
   randomizeName: false
+  speciesBlacklist: # Corvax-Sponsors
+  - Vulpkanin
   components:
     - type: MindShield
     - type: GhostRole
@@ -54,6 +56,8 @@
 - type: randomHumanoidSettings
   id: ERTLeader
   randomizeName: false
+  speciesBlacklist: # Corvax-Sponsors
+  - Vulpkanin
   components:
     - type: MindShield
     - type: GhostRole
@@ -132,6 +136,8 @@
 - type: randomHumanoidSettings
   id: ERTJanitor
   parent: ERTLeader
+  speciesBlacklist: # Corvax-Sponsors
+  - Vulpkanin
   components:
     - type: MindShield
     - type: GhostRole
@@ -190,6 +196,8 @@
 - type: randomHumanoidSettings
   id: ERTEngineer
   parent: ERTLeader
+  speciesBlacklist: # Corvax-Sponsors
+  - Vulpkanin
   components:
     - type: MindShield
     - type: GhostRole
@@ -249,6 +257,7 @@
   id: ERTSecurity
   speciesBlacklist: # Corvax-MRP
     - Diona
+    - Vulpkanin # Corvax-Sponsors
   parent: ERTLeader
   components:
     - type: MindShield
@@ -328,6 +337,8 @@
 - type: randomHumanoidSettings
   id: ERTMedical
   parent: ERTLeader
+  speciesBlacklist: # Corvax-Sponsors
+  - Vulpkanin
   components:
     - type: MindShield
     - type: GhostRole
@@ -381,6 +392,7 @@
 - type: randomHumanoidSettings
   speciesBlacklist: # Corvax-MRP
     - Diona
+    - Vulpkanin # Corvax-Sponsors
   id: CBURNAgent
   components:
     - type: MindShield
@@ -408,6 +420,8 @@
 
 - type: randomHumanoidSettings
   id: CentcomOfficial
+  speciesBlacklist: # Corvax-Sponsors
+  - Vulpkanin
   components:
     - type: MindShield
     - type: GhostRole
@@ -433,6 +447,8 @@
 
 - type: randomHumanoidSettings
   id: SyndicateAgent
+  speciesBlacklist: # Corvax-Sponsors
+  - Vulpkanin
   components:
     - type: Loadout
       prototypes: [SyndicateOperativeGearExtremelyBasic]
@@ -449,6 +465,8 @@
 
 - type: randomHumanoidSettings
   id: NukeOp
+  speciesBlacklist: # Corvax-Sponsors
+  - Vulpkanin
   components:
     - type: NukeOperative
 
@@ -470,6 +488,8 @@
 - type: randomHumanoidSettings
   id: Cluwne
   randomizeName: false
+  speciesBlacklist: # Corvax-Sponsors
+  - Vulpkanin
   components:
     - type: GhostRole
       name: ghost-role-information-cluwne-name
