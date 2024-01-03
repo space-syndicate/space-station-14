@@ -7,6 +7,7 @@ research-discipline-civilian-services = Обслуживание персона�
 research-technology-fulton = Фултоны
 research-technology-salvage-equipment = Снаряжение для утилизации
 research-technology-advanced-powercells = Продвинутые батареи
+research-technology-mechanical-compression = Mechanical Compression
 research-technology-compact-power = Компактная энергогенерация
 research-technology-industrial-engineering = Промышленная инженерия
 research-technology-power-generation = Генерация электроэнергии

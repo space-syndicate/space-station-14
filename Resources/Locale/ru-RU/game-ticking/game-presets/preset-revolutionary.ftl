@@ -52,4 +52,14 @@ rev-headrev-player =
     } экипажа.
 rev-lost = Члены командного состава станции выжили и уничтожили всех глав революции.
 rev-stalemate = Главы революции и командный состав станции погибли. Это ничья.
+rev-headrev-name-user =
+    [color=#5e9cff]{ $name }[/color] ([color=gray]{ $username }[/color]) converted { $count } { $count ->
+        [one] person
+       *[other] people
+    }
+rev-headrev-name =
+    [color=#5e9cff]{ $name }[/color] converted { $count } { $count ->
+        [one] person
+       *[other] people
+    }
 rev-reverse-stalemate = Главы революции и командный состав станции выжили.

@@ -1,2 +1,2 @@
-ent-SolarAssemblyPart = solar assembly part
-    .desc = { ent-BaseItem.desc }
+ent-SolarAssemblyPart = solar assembly flatpack
+    .desc = A flatpack used for constructing a solar assembly.

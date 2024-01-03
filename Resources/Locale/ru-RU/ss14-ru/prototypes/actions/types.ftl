@@ -42,3 +42,5 @@ ent-ActionWake = Проснуться
     .desc = Перестать спать.
 ent-ActionActivateHonkImplant = Хонк!
     .desc = Активирует ваш хонк-имплант, который будет издавать фирменный звук клоуна.
+ent-ActionToggleEyes = Open/Close eyes
+    .desc = Close your eyes to protect your peepers, or open your eyes to enjoy the pretty lights.

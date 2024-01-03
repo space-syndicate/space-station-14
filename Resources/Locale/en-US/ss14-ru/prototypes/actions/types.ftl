@@ -42,3 +42,5 @@ ent-ActionWake = Wake up
     .desc = Stop sleeping.
 ent-ActionActivateHonkImplant = Honk
     .desc = Activates your honking implant, which will produce the signature sound of the clown.
+ent-ActionToggleEyes = Open/Close eyes
+    .desc = Close your eyes to protect your peepers, or open your eyes to enjoy the pretty lights.
