@@ -45652,56 +45652,64 @@ entities:
   entities:
   - uid: 69
     components:
+    - name: Хранилище
+      type: MetaData
     - pos: 5.5,23.5
       parent: 2
       type: Transform
   - uid: 91
     components:
-    - name: подстанция мостика
+    - name: Мостик
       type: MetaData
     - pos: -1.5,29.5
       parent: 2
       type: Transform
   - uid: 333
     components:
-    - name: подстанция инженерного отдела
+    - name: Иженерный
       type: MetaData
     - pos: -18.5,-14.5
       parent: 2
       type: Transform
   - uid: 1632
     components:
+    - name: Телекоммуникация
+      type: MetaData
     - pos: -31.5,-18.5
       parent: 2
       type: Transform
   - uid: 1757
     components:
-    - name: подстанция медицинского отдела
+    - name: Медицинский
       type: MetaData
     - pos: -9.5,-0.5
       parent: 2
       type: Transform
   - uid: 2214
     components:
+    - name: Генератор гравитации
+      type: MetaData
     - pos: -20.5,-32.5
       parent: 2
       type: Transform
   - uid: 2543
     components:
-    - name: подстанция брига
+    - name: Бриг
       type: MetaData
     - pos: 16.5,-32.5
       parent: 2
       type: Transform
   - uid: 2587
     components:
-    - name: подстанция прибытия
+    - name: Прибытие
       type: MetaData
     - pos: -11.5,-26.5
       parent: 2
       type: Transform
   - uid: 6377
     components:
+    - name: Снабжение
+      type: MetaData
     - pos: 19.5,1.5
       parent: 2
       type: Transform
