@@ -1,3 +1,4 @@
+
 ﻿- type: entity
   name: pelmeni
   parent: FoodBowlBase
@@ -7,10 +8,13 @@
     - type: FlavorProfile
       flavors:
         - meaty
+    - type: Food
+      trash: FoodBowlBig
+      utensil: Fork
     - type: Sprite
       sprite: Corvax/Objects/Consumable/Food/bowl.rsi
       layers:
-        - state: bowl
+#        - state: bowl
         - state: pelmeni
     - type: SolutionContainerManager
       solutions:
