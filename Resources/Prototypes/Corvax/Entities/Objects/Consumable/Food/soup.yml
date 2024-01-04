@@ -1,5 +1,4 @@
-
-﻿- type: entity
+- type: entity
   name: pelmeni
   parent: FoodBowlBase
   id: FoodPelmeniBowl
@@ -10,11 +9,13 @@
         - meaty
     - type: Food
       trash: FoodBowlBig
-      utensil: Fork
+      utensil: 
+        - Spoon
+        - Fork
     - type: Sprite
       sprite: Corvax/Objects/Consumable/Food/bowl.rsi
       layers:
-#        - state: bowl
+        - state: bowl
         - state: pelmeni
     - type: SolutionContainerManager
       solutions:
