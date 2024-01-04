@@ -35,11 +35,15 @@
                 <BoxContainer Orientation="Horizontal">
                     <RichTextLabel Name="StationNameLabel"
                                    Access="Public"
-                                   HorizontalExpand="True" />
+                                   HorizontalExpand="False" />
+                    <pda:PdaNavigationButton Name="CopyStationNameButton" Access="Public" SetWidth="32" HorizontalExpand="False"/>
                 </BoxContainer>
             </PanelContainer>
             <RichTextLabel Name="StationAlertLevelLabel" Access="Public" />
-            <RichTextLabel Name="StationTimeLabel" Access="Public" />
+            <BoxContainer Orientation="Horizontal">
+                <RichTextLabel Name="StationTimeLabel" Access="Public" />
+                <pda:PdaNavigationButton Name="CopyStationTimeButton" Access="Public" SetWidth="32" HorizontalExpand="False"/>
+            </BoxContainer>
             <RichTextLabel Name="StationAlertLevelInstructions" Access="Public" />
         </BoxContainer>
         <ScrollContainer HorizontalExpand="True" VerticalExpand="True" HScrollEnabled="True">
