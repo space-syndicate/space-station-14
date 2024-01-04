@@ -20,8 +20,9 @@
 - type: randomHumanoidSettings
   id: DeathSquad
   randomizeName: false
-  speciesBlacklist: # Corvax-Sponsors
-  - Vulpkanin
+  speciesBlacklist: # Corvax-MRP
+    - Diona
+    - Vulpkanin # Corvax-Sponsors
   components:
     - type: MindShield
     - type: GhostRole
