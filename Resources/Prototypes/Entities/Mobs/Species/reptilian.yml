@@ -23,7 +23,6 @@
     requiredLegs: 2
   - type: Inventory # Corvax-Digitigrade
     speciesId: digi
-  - type: Perishable
   - type: Butcherable
     butcheringType: Spike
     spawned:
@@ -59,7 +58,7 @@
         Cold : 0.1 #per second, scales with temperature & other constants
     heatDamage:
       types:
-        Heat : 0.1 #per second, scales with temperature & other constants
+        Heat : 1.5 #per second, scales with temperature & other constants
 
 - type: entity
   parent: BaseSpeciesDummy
