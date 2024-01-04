@@ -40,21 +40,20 @@ rev-no-one-ready = Нет готовых игроков! Нельзя запус
 rev-no-heads = Нет кандидатов на роль главы революции. Нельзя запустить пресет Революционеры.
 rev-all-heads-dead = Все главы мертвы, теперь разберитесь с оставшимися членами экипажа!
 rev-won = Главы революции выжили и уничтожили весь командный состав станции.
-rev-headrev-count = { $initialCount ->
+rev-headrev-count =
+    { $initialCount ->
         [one] Глава революции был один:
        *[other] Глав революции было { $initialCount }:
     }
-rev-headrev-player = { $title } конвертировал { $count } { $count ->
-        [one] члена
-       *[other] членов
-    } экипажа.
 rev-lost = Члены командного состава станции выжили и уничтожили всех глав революции.
 rev-stalemate = Главы революции и командный состав станции погибли. Это ничья.
-rev-headrev-name-user = [color=#5e9cff]{ $name }[/color] ([color=gray]{ $username }[/color]) converted { $count } { $count ->
+rev-headrev-name-user =
+    [color=#5e9cff]{ $name }[/color] ([color=gray]{ $username }[/color]) converted { $count } { $count ->
         [one] person
        *[other] people
     }
-rev-headrev-name = [color=#5e9cff]{ $name }[/color] converted { $count } { $count ->
+rev-headrev-name =
+    [color=#5e9cff]{ $name }[/color] converted { $count } { $count ->
         [one] person
        *[other] people
     }
