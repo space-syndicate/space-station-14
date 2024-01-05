@@ -9,6 +9,7 @@ on:
       - 'Content.Shared/Chemistry/**.cs'
       - 'Content.Server/Chemistry/**.cs'
       - 'Content.Server/GuideGenerator/**.cs'
+      - 'Content.Server/Corvax/GuideGenerator/**.cs'
       - 'Resources/Prototypes/Reagents/**.yml'
       - 'Resources/Prototypes/Chemistry/**.yml'
       - 'Resources/Prototypes/Recipes/Reactions/**.yml'
