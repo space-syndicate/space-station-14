@@ -1,9 +1,9 @@
-ent-AntiAnomalyZone = anti anomaly zone
-    .desc = Anomalies will not be able to appear within a 10 block radius of this point.
-    .suffix = range 10
+ent-AntiAnomalyZone = антианомальная зона
+    .desc = Аномалии не будут появляться в радиусе 10 блоков от этой точки.
+    .suffix = Радиус 10
 ent-AntiAnomalyZone20 = { ent-AntiAnomalyZone }
-    .desc = Anomalies will not be able to appear within a 20 block radius of this point.
-    .suffix = range 20
+    .desc = Аномалии не будут появляться в радиусе 20 блоков от этой точки.
+    .suffix = Радиус 20
 ent-AntiAnomalyZone50 = { ent-AntiAnomalyZone }
-    .desc = Anomalies will not be able to appear within a 50 block radius of this point.
-    .suffix = range 50
+    .desc = Аномалии не будут появляться в радиусе 50 блоков от этой точки.
+    .suffix = Радиус 50
