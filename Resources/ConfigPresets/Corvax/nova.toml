@@ -11,6 +11,7 @@ enabled = true
 show_reason = true
 min_account_age = 0
 min_overall_hours = 40
+custom_reason = "Для доступа на этот сервер вам необходимо отыграть на другом сервере Corvax как минимум 40 часов."
 
 [rules]
 time = 10.0

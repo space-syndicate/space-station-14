@@ -24,8 +24,8 @@ anomaly-gorilla-core-slot-name = Ядро аномалии
 anomaly-gorilla-charge-none = Внутри нет [bold]ядра аномалии[/bold].
 anomaly-gorilla-charge-limit =
     { $count ->
-    [one] Остался
-   *[other] Осталось
+        [one] Остался
+       *[other] Осталось
     } [color={ $count ->
         [3] green
         [2] yellow

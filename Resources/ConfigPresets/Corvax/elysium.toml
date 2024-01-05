@@ -6,6 +6,15 @@ maxplayers = 180
 soft_max_players = 100
 map_rotation = true
 
+[game.panic_bunker]
+enabled = true
+show_reason = true
+min_account_age = 0
+min_overall_hours = 0
+deny_vpn = true
+enable_without_admins = true
+disable_with_admins = true
+
 [rules]
 time = 180.0
 
