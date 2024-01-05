@@ -18,11 +18,11 @@ guidebook-reagent-recipes-mix-info =
     { $minTemp ->
         [0]
             { $hasMax ->
-                [true] { $verb } ниже { $maxTemp }K
-               *[false] { $verb }
+                [true] { CAPITALIZE($verb) } ниже { $maxTemp }K
+               *[false] { CAPITALIZE($verb) }
             }
        *[other]
-            { $verb } { $hasMax ->
+            { CAPITALIZE($verb) } { $hasMax ->
                 [true] между { $minTemp }K и { $maxTemp }K
                *[false] выше { $minTemp }K
             }
