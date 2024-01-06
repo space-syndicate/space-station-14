@@ -63401,9 +63401,6 @@ entities:
     - type: Transform
       pos: -73.5,5.5
       parent: 2
-    - type: BluespaceLocker
-      bluespaceLinks:
-      - invalid
 - proto: LockerBoozeFilled
   entities:
   - uid: 1109
