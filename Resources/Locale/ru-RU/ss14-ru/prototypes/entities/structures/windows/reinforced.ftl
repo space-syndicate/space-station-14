@@ -4,6 +4,6 @@ ent-TintedWindow = тонированное окно
     .desc = { ent-ReinforcedWindow.desc }
 ent-WindowReinforcedDirectional = направленное армированное окно
     .desc = Смотри не заляпай.
-ent-ReinforcedWindowDiagonal = диагональное армированное окно
+ent-ReinforcedWindowDiagonal = { ent-ReinforcedWindow }
     .suffix = Диагональ
     .desc = { ent-ReinforcedWindow.desc }

@@ -50,6 +50,7 @@ namespace Content.Server.GameTicking
                 jObject["round_id"] = _gameTicker.RoundId;
                 jObject["players"] = players; // Corvax-Queue
                 jObject["soft_max_players"] = _cfg.GetCVar(CCVars.SoftMaxPlayers);
+                jObject["panic_bunker"] = _cfg.GetCVar(CCVars.PanicBunkerEnabled);
                 jObject["run_level"] = (int) _runLevel;
                 if (_runLevel >= GameRunLevel.InRound)
                 {

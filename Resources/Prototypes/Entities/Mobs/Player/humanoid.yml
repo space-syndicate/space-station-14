@@ -20,6 +20,8 @@
 - type: randomHumanoidSettings
   id: DeathSquad
   randomizeName: false
+  speciesBlacklist: # Corvax-MRP
+    - Diona
   components:
     - type: MindShield
     - type: GhostRole

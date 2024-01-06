@@ -64,3 +64,5 @@ ent-BulletCannonBall = cannonball
     .desc = { ent-BaseBulletTrigger.desc }
 ent-GrapplingHook = grappling hook
     .desc = { "" }
+ent-BulletDisablerSmg = disabler bolt smg
+    .desc = { ent-BaseBullet.desc }

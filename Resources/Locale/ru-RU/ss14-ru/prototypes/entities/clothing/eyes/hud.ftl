@@ -23,3 +23,5 @@ ent-ClothingEyesHudOmni = omni hud
 ent-ClothingEyesHudSyndicate = визор оперативника
     .suffix = синди-визор
     .desc = Профессиональный визор со встроенной индикацией "свой-чужой", предназначен для обнаружения и индификации гуманоидных целей для их последующего уничтожения.
+ent-ClothingEyesGlassesHiddenSecurity = солнцезащитные очки
+    .desc = Пара чёрных солнцезащитных очков.

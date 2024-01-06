@@ -18,6 +18,7 @@ ui-options-general-discord = Discord
 ui-options-general-cursor = Курсор
 ui-options-general-speech = Речь
 ui-options-general-storage = Инвентарь
+ui-options-general-accessibility = Доступность
 
 ## Audio menu
 
@@ -26,6 +27,7 @@ ui-options-midi-volume = Громкость MIDI (Муз. инструменты
 ui-options-ambient-music-volume = Громкость музыки окружения:
 ui-options-ambience-volume = Громкость окружения:
 ui-options-lobby-volume = Громкость лобби и окончания раунда:
+ui-options-interface-volume = Громкость интерфейса:
 ui-options-ambience-max-sounds = Кол-во одновременных звуков окружения:
 ui-options-lobby-music = Музыка в лобби
 ui-options-restart-sounds = Звуки перезапуска раунда
@@ -42,6 +44,7 @@ ui-options-opaque-storage-window = Непрозрачность окна хра�
 ui-options-show-looc-on-head = Показывать LOOC-чат над головами персонажей
 ui-options-fancy-speech = Показывать имена в облачках с текстом
 ui-options-fancy-name-background = Добавить фон облачкам с текстом
+ui-options-reduced-motion = Снижение интенсивности визуальных эффектов
 ui-options-vsync = Вертикальная синхронизация
 ui-options-fullscreen = Полный экран
 ui-options-lighting-label = Качество освещения:
