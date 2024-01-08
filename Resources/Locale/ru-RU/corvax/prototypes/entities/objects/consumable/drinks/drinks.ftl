@@ -1,7 +1,7 @@
 ent-DrinkYorshGlass = стакан ёрша
     .desc = Вкус беззаботного детства.
 
-ent-DrinkAlexandrGlass = бокал алексадра
+ent-DrinkAlexanderGlass = бокал Александра
     .desc = В ходе производства ни один Александр не пострадал. Наверное...
 
 ent-DrinkCampariGlass = стакан кампари
@@ -37,5 +37,5 @@ ent-DrinkMoscowMuleGlass = стакан московского мула
 ent-DrinkPalomaGlass = стакан паломы
     .desc = Сверху ковбои. Снизу маракасы. Что же выбрать?
 
-ent-DrinkBoyarskyGlass = стакан боярского
+ent-DrinkBoyarskyGlass = стакан Боярского
     .desc = Что делать, если ты устал от жизни? СМЕШИВАТЬ ВОДКУ!

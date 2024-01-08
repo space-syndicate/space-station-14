@@ -19,15 +19,15 @@
         amount: 0.3
 
 - type: reagent
-  id: Alexandr
-  name: reagent-name-alexandr
+  id: Alexander
+  name: reagent-name-alexander
   parent: BaseAlcohol
-  desc: reagent-desc-alexandr
+  desc: reagent-desc-alexander
   physicalDesc: reagent-physical-desc-bubbly
   flavor: alcohol
   color: "#f7f3eb"
   metamorphicSprite:
-    sprite: Corvax/Objects/Consumable/Drinks/alexandr.rsi
+    sprite: Corvax/Objects/Consumable/Drinks/alexander.rsi
     state: icon
   metabolisms:
     Drink:

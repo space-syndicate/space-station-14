@@ -1,8 +1,8 @@
 reagent-name-yorsh = yorsh
 reagent-desc-yorsh = Taste of childhood.
 
-reagent-name-alexandr = alexandr
-reagent-desc-alexandr = No Alexander was harmed during production. Maybe...
+reagent-name-alexander = alexander
+reagent-desc-alexander = No Alexander was harmed during production. Maybe...
 
 reagent-name-daiquiri = daiquiri
 reagent-desc-daiquiri = Do you want to feel like a 19th century miner? The miner did not want to, and tried to forget himself in alcohol.

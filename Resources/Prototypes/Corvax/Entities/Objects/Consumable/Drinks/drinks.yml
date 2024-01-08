@@ -33,8 +33,8 @@
 
 - type: entity
   parent: DrinkGlassBase
-  id: DrinkAlexandrGlass
-  name: alexandr glass
+  id: DrinkAlexanderGlass
+  name: alexander glass
   description: No Alexander was harmed during production. Maybe...
   components:
   - type: SolutionContainerManager
@@ -42,11 +42,11 @@
       drink:
         maxVol: 30
         reagents:
-        - ReagentId: Alexandr
+        - ReagentId: Alexander
           Quantity: 30
   - type: Drink
   - type: Sprite
-    sprite: Corvax/Objects/Consumable/Drinks/alexandr.rsi
+    sprite: Corvax/Objects/Consumable/Drinks/alexander.rsi
 
 - type: entity
   parent: DrinkGlassBase

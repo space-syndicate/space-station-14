@@ -1,8 +1,8 @@
 reagent-name-yorsh = ёрш
 reagent-desc-yorsh = Вкус беззаботного детства.
 
-reagent-name-alexandr = алексадр
-reagent-desc-alexandr = В ходе производства ни один Александр не пострадал. Наверное...
+reagent-name-alexander = александр
+reagent-desc-alexander = В ходе производства ни один Александр не пострадал. Наверное...
 
 reagent-name-daiquiri = дайкири
 reagent-desc-daiquiri = Хотите почувствовать себя шахтёром из 19-го века? Шахтёр не хотел, поэтому предпочел забыться в алкоголе.
