@@ -57,6 +57,6 @@ ent-WeaponPistolCHIMP = излучатель М.А.Р.Т.Ы.Х.
     .suffix = Пистолет, мартых
 ent-WeaponPistolCHIMPUpgraded = { ent-WeaponPistolCHIMP }
     .desc = { ent-WeaponPistolCHIMP.desc } На корпусе видны следы вскрытия.
-    .suffix = Пистолет, улучшение Синдиката, экспериментальный М.А.Р.Т.Ы.Х.
+    .suffix = Пистолет, Синдикат, экспериментальный М.А.Р.Т.Ы.Х.
 ent-WeaponBehonkerLaser = око бехонкера
     .desc = Глаз бехонкера, при сжатии выстреливает лазером.
