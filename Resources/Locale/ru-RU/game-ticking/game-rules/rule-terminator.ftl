@@ -1,5 +1,5 @@
 terminator-round-end-agent-name = NT-800
-objective-issuer-susnet = [color=#d64119]Саснет[/color]
+objective-issuer-susnet = [color=#d64119]SusNet[/color]
 terminator-role-greeting =
     Вы - экстерминатор, неумолимый убийца, посланный в прошлое, чтобы защитить наше будущее.
     Нам необходимо, чтобы вы устранили { $target }, { $job }.
