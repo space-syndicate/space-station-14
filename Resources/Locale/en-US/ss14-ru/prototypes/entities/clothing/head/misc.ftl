@@ -30,3 +30,5 @@ ent-ClothingHeadHatDogEars = doggy ears
     .suffix = DO NOT MAP
 ent-ClothingHeadHatSquid = squiddy
     .desc = Scare your friends with this eldritch mask.
+ent-ClothingHeadHatRedRacoon = red racoon hat
+    .desc = Fluffy hat of red racoon!

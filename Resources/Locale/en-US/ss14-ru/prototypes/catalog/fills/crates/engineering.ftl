@@ -26,3 +26,5 @@ ent-CrateRCDAmmo = { ent-CrateEngineering }
     .desc = { ent-CrateEngineering.desc }
 ent-CrateRCD = { ent-CrateEngineeringSecure }
     .desc = { ent-CrateEngineeringSecure.desc }
+ent-CrateParticleDecelerators = { ent-CrateEngineeringSecure }
+    .desc = { ent-CrateEngineeringSecure.desc }

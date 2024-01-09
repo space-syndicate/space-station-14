@@ -10,3 +10,7 @@ advertisement-snack-9 = Выпейте еще немного Getmore!
 advertisement-snack-10 = Закуски лучшего качества прямо с Марса.
 advertisement-snack-11 = Мы любим шоколад!
 advertisement-snack-12 = Попробуйте наше новое вяленое мясо!
+thankyou-snack-1 = Eat up!
+thankyou-snack-2 = Enjoy your product!
+thankyou-snack-3 = Have a nice snack.
+thankyou-snack-4 = Yummy!
