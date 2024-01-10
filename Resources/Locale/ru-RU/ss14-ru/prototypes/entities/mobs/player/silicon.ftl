@@ -11,5 +11,5 @@ ent-PlayerBorgBattery = { ent-BorgChassisGeneric }
     .suffix = Батарея
     .desc = { ent-BorgChassisGeneric.desc }
 ent-PlayerBorgSyndicateAssaultBattery = { ent-BorgChassisSyndicateAssault }
-    .suffix = Battery, Module, Operative
+    .suffix = Батарея, Модуль, Оперативник
     .desc = { ent-BorgChassisSyndicateAssault.desc }
