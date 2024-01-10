@@ -21,13 +21,13 @@
   - type: Body
     prototype: Reptilian
     requiredLegs: 2
-  - type: Inventory # Corvax-Digitigrade
-    speciesId: digi
   - type: Butcherable
     butcheringType: Spike
     spawned:
     - id: FoodMeatLizard
       amount: 5
+  - type: Inventory
+    speciesId: reptilian
   - type: LizardAccent
   - type: Speech
     speechSounds: Lizard

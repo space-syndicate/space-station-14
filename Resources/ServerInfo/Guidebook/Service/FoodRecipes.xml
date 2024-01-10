@@ -61,6 +61,10 @@
 - Торт: 1 тесто для торта в микроволновку на 15 секунд
 - Яблочный пирог: 1 тесто для пирога, 3 яблока и 1 формочку для пирога на 15 секунд
 - Beef Taco: Microwave 1 Taco Shell, 1 Raw Meat Cutlet, 1 Cheese Wedge for 10 Seconds
+- Cuban Carp : Microwave 1 Dough, 1 Cheese Wedge, 1 Chili, 1 Carp Meat for 15 Seconds
+- Banana Cream Pie : Microwave 1 Pie Dough, 3 Bananas, and 1 Pie Tin for 15 Seconds
+- Carrot Fries : Microwave 1 Carrot, 15u Salt for 15 Seconds
+- Pancake : Microwave 5u Flour, 5u Milk, 1 Egg (6u) for 5 Seconds
 
 <Box>
 <GuideEntityEmbed Entity="FoodBreadPlain"/>
@@ -73,6 +77,12 @@
 <GuideEntityEmbed Entity="FoodCakePlain"/>
 <GuideEntityEmbed Entity="FoodPieApple"/>
 <GuideEntityEmbed Entity="FoodTacoBeef"/>
+</Box>
+<Box>
+<GuideEntityEmbed Entity="FoodMealCubancarp"/>
+<GuideEntityEmbed Entity="FoodPieBananaCream"/>
+<GuideEntityEmbed Entity="FoodMealFriesCarrot"/>
+<GuideEntityEmbed Entity="FoodBakedPancake"/>
 </Box>
 
 </Document>
