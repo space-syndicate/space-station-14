@@ -50,6 +50,7 @@ namespace Content.IntegrationTests.Tests
             "CorvaxGate",
             "CorvaxSilly",
             "CorvaxOutpost",
+            "CorvaxAstra",
             // Corvax-End
             "Dev",
             "TestTeg",
