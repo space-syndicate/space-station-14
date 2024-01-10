@@ -15,5 +15,5 @@ ent-WeaponPistolMk58Nonlethal = { ent-WeaponPistolMk58 }
 ent-WeaponPistolN1984 = N1984
     .desc = Запасное оружие любого уважающего себя офицера. Выпускается в калибре .45 магнум, самом богоугодном калибре.
 ent-WeaponPistolN1984Nonlethal = N1984
-    .suffix = Non-lethal
+    .suffix = Травматический
     .desc = { ent-WeaponPistolN1984.desc }
