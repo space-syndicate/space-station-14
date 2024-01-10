@@ -23,5 +23,5 @@ ent-ClothingEyesHudOmni = omni hud
 ent-ClothingEyesHudSyndicate = синди-визор
     .desc = Профессиональный визор Синдиката с индикатором на стекле, предназначенный для более точного обнаружения гуманоидов с их последующим уничтожением.
 ent-ClothingEyesGlassesHiddenSecurity = { ent-ClothingEyesGlassesSunglasses }
-    .suffix = Синдикат
     .desc = { ent-ClothingEyesGlassesSunglasses.desc }
+    .suffix = Синдикат
