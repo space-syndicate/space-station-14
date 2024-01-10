@@ -236,8 +236,8 @@ uplink-syndicate-sponge-box-name = Коробка губок Синдиката
 uplink-syndicate-sponge-box-desc = Коробка с 6 губками Синдиката, замаскированными под обезьяньи кубики, которые при контакте с водой превращаются в различных злобных диких животных.
 uplink-slipocalypse-clustersoap-name = Кластерное мыло Скользкопокалипсис
 uplink-slipocalypse-clustersoap-desc = После приземления разбрасывает вокруг себя маленькие кусочки мыла Синдиката, которые испарятся сами через 60 секунд.
-uplink-mobcat-microbomb-name = SyndiCat
-uplink-mobcat-microbomb-desc = A hand cat equipped with a microbomb implant. Explodes when seriously injured. Can bite painfully
+uplink-mobcat-microbomb-name = СиндиКот
+uplink-mobcat-microbomb-desc = Ручной кот, оснащённый имплантом Микробомба. Взрывается при серьёзном ранении. Может больно кусаться.
 # Pointless
 uplink-revolver-cap-gun-name = { ent-RevolverCapGun }
 uplink-revolver-cap-gun-desc = { ent-RevolverCapGun.desc }
