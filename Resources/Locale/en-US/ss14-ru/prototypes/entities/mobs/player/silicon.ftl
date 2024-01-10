@@ -10,3 +10,6 @@ ent-PlayerBorgGeneric = { ent-BorgChassisGeneric }
 ent-PlayerBorgBattery = { ent-BorgChassisGeneric }
     .suffix = Battery
     .desc = { ent-BorgChassisGeneric.desc }
+ent-PlayerBorgSyndicateAssaultBattery = { ent-BorgChassisSyndicateAssault }
+    .suffix = Battery, Module, Operative
+    .desc = { ent-BorgChassisSyndicateAssault.desc }

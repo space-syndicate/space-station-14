@@ -5,3 +5,6 @@ advertisement-cola-4 = Хочется пить? Почему бы не выпи�
 advertisement-cola-5 = Пожалуйста, пейте!
 advertisement-cola-6 = Выпьем!
 advertisement-cola-7 = Лучшие напитки в галактике!
+thankyou-cola-1 = Pop open that can and enjoy!
+thankyou-cola-2 = Pow! Take that, thirst!
+thankyou-cola-3 = I hope you like flavor!

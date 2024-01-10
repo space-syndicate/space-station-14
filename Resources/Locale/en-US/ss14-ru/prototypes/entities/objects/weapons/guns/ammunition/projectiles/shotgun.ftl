@@ -16,3 +16,7 @@ ent-PelletShotgunFlare = pellet (.50 flare)
     .desc = { "" }
 ent-PelletShotgunUranium = pellet (.50 uranium)
     .desc = { ent-BaseBullet.desc }
+ent-PelletGrapeshot = grapeshot pellet
+    .desc = { ent-BaseBullet.desc }
+ent-PelletGlass = glass shard
+    .desc = { ent-BaseBullet.desc }

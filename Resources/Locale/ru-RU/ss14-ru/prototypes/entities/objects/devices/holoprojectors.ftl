@@ -1,7 +1,12 @@
 ent-Holoprojector = проектор голографических знаков
     .desc = Удобный голографический проектор, отображающий табличку уборщика.
+ent-HoloprojectorBorg = { ent-Holoprojector }
+    .suffix = borg
+    .desc = { ent-Holoprojector.desc }
 ent-HolofanProjector = атмос голопроектор
     .desc = Останавливает суицидально настроеных пассажиров от убийства остальных во время разгерметизации.
+ent-HoloprojectorField = force field projector
+    .desc = Creates an impassable forcefield that won't let anything through. Close proximity may or may not cause cancer.
 ent-HoloprojectorSecurity = проектор голобарьера
     .desc = Создает твёрдый но хрупкий барьер.
 ent-HoloprojectorSecurityEmpty = { ent-HoloprojectorSecurity }

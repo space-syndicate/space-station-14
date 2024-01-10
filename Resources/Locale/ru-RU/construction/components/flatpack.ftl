@@ -7,4 +7,5 @@ flatpacker-ui-title = Упаковщик 1001
 flatpacker-ui-materials-label = Материалы
 flatpacker-ui-cost-label = Стоимость запаковки
 flatpacker-ui-no-board-label = Отсутствует машинная плата!
+flatpacker-ui-insert-board = Insert a board to begin.
 flatpacker-ui-pack-button = Упаковать
