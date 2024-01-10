@@ -22,3 +22,6 @@ ent-ClothingEyesHudOmni = omni hud
     .desc = Filler
 ent-ClothingEyesHudSyndicate = syndicate visor
     .desc = The syndicate's professional head-up display, designed for better detection of humanoids and their subsequent elimination.
+ent-ClothingEyesGlassesHiddenSecurity = { ent-ClothingEyesGlassesSunglasses }
+    .suffix = Syndicate
+    .desc = { ent-ClothingEyesGlassesSunglasses.desc }

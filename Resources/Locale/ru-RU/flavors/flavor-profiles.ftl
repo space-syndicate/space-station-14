@@ -191,6 +191,7 @@ flavor-complex-ice = как лёд
 
 ## Cocktails
 
+flavor-complex-mopwata = like stagnant, dirty water
 flavor-complex-long-island = подозрительно похож на холодный чай
 flavor-complex-three-mile-island = как чай, заваренный в ядерных отходах
 flavor-complex-whiskey-cola = как газированная патока

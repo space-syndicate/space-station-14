@@ -49,6 +49,15 @@
         - /Maps/Shuttles/corvax_mining.yml # Corvax-Mapping
 
 - type: entity
+  id: BaseStationShuttlesCore
+  abstract: true
+  components:
+    - type: GridSpawn
+      paths:
+        - /Maps/Shuttles/cargo_core.yml
+        - /Maps/Shuttles/mining.yml
+
+- type: entity
   id: BaseStationCentcomm
   abstract: true
   components:
@@ -73,6 +82,12 @@
   abstract: true
   components:
     - type: SalvageExpeditionData
+
+- type: entity
+  id: BaseStationMagnet
+  abstract: true
+  components:
+    - type: SalvageMagnetData
 
 - type: entity
   id: BaseStationSiliconLawCrewsimov
