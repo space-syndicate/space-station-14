@@ -20,7 +20,9 @@ salvage-magnet-resources-count =
     { $count ->
         [1] (Мало)
         [2] (Средне)
-        [3] (Много)
+        [3] (Средне)
+        [4] (Много)
+        [5] (Много)
        *[other] (Изобилие)
     }
 # Asteroids
