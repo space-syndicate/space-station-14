@@ -7,7 +7,7 @@ salvage-magnet-window-title = Магнит обломков
 salvage-expedition-window-progression = Прогресс
 salvage-magnet-resources =
     { $resource ->
-        [OreTin] Сталь
+        [OreIron] Железо
         [OreCoal] Уголь
         [OreQuartz] Кварц
         [OreGold] Золото
