@@ -16,6 +16,7 @@ maximum_width = 26
 
 [game]
 lobbyduration = 360
+secret_weight_prototype = "CorvaxSecretDefault"
 
 [server]
 rules_header = "ui-rules-header-corvax"

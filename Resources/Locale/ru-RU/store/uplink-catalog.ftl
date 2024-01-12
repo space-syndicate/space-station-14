@@ -84,6 +84,8 @@ uplink-reinforcement-radio-monkey-name = Телепорт обезьяньего
 uplink-reinforcement-radio-monkey-desc = Вызовите на подмогу специально обученную обезьяну. Обезьяны комплектуются одной сигаретой Синдиката.
 uplink-reinforcement-radio-name = Телепорт подкрепления
 uplink-reinforcement-radio-desc = Телепортирует агента крайне сомнительного качества. Не имеет кнопки отключения, покупайте его только если вы готовы к вечеринке. У агента есть пистолет без запасных патронов и нож. Это всё.
+uplink-reinforcement-radio-cyborg-assault-name = Syndicate Assault Cyborg Teleporter
+uplink-reinforcement-radio-cyborg-assault-desc = A lean, mean killing machine with access to an Energy Sword, LMG, Cryptographic Sequencer, and a Pinpointer.
 uplink-stealth-box-name = Стелс-коробка
 uplink-stealth-box-desc = Ящик, оснащенный технологией невидимости, проникните везде и не двигайтесь слишком быстро!
 uplink-headset-name = Полноразмерная гарнитура Синдиката
@@ -98,11 +100,17 @@ uplink-voice-mask-name = Голосовая маска
 uplink-voice-mask-desc = Противогаз, позволяющий подстраивать свой голос под кого угодно.
 uplink-radio-jammer-name = Глушитель связи
 uplink-radio-jammer-desc = При активации это устройство блокирует любую исходящую поблизости радиосвязь.
+uplink-syndicate-weapon-module-name = Weapon Cyborg Module
+uplink-syndicate-weapon-module-desc = This module will give a cyborg advanced laser and machete
+uplink-singularity-beacon-name = Singularity Beacon
+uplink-singularity-beacon-desc = A device that attracts singularities. Has to be anchored and powered. Causes singularities to grow when consumed.
 # Implants
 uplink-storage-implanter-name = Имплантер Хранилище
 uplink-storage-implanter-desc = Прячьте предметы внутри себя благодаря новой блюспейс-технологии!
 uplink-freedom-implanter-name = Имплантер Свобода
 uplink-freedom-implanter-desc = Сбегите от этих противных сотрудников СБ при помощи этого импланта, который можно использовать аж три раза!
+uplink-scram-implanter-name = Имплантер Побег
+uplink-scram-implanter-desc = Трехразовый имплант, который телепортирует вас в большом радиусе. Попытается телепортировать вас на незанятое место. Иногда сбоит. Страхование жизни не прилагается.
 uplink-dna-scrambler-implanter-name = Имплантер Миксер ДНК
 uplink-dna-scrambler-implanter-desc = Одноразовый имплант, который можно активировать для перемешивания ДНК и приобретения совершенно нового облика.
 uplink-emp-implanter-name = Имплантер ЭМИ
@@ -117,6 +125,9 @@ uplink-death-acidifier-implant-name = Имплантер Посмертный р
 uplink-death-acidifier-implant-desc = Полностью растворяет пользователя и его снаряжение при ручной активации или гибели носителя.
 uplink-micro-bomb-implanter-name = Имплантер Микробомба
 uplink-micro-bomb-implanter-desc = Взрывается при ручной активации или гибели носителя этого импланта. Уничтожает тело пользователя со всем снаряжением.
+# Bundles
+uplink-observation-kit-name = Набор наблюдателя
+uplink-observation-kit-desc = В комплект входят монитор экипажа Синдиката, большая батарея, и охранный визор, замаскированный под солнцезащитные очки.
 # Bundles
 uplink-emp-kit-name = Набор отключения электричества
 uplink-emp-kit-desc = Ультимативное противодействие энергетическому оружию: Выводит из строя станнеры, разряжает дубинки-шокеры, садит лазерное оружие! Содержит 3 ЭМИ гранаты и имплантер ЭМИ. Примечание: не выводит из строя настоящее огнестрельное оружие.
@@ -225,6 +236,8 @@ uplink-syndicate-sponge-box-name = Коробка губок Синдиката
 uplink-syndicate-sponge-box-desc = Коробка с 6 губками Синдиката, замаскированными под обезьяньи кубики, которые при контакте с водой превращаются в различных злобных диких животных.
 uplink-slipocalypse-clustersoap-name = Кластерное мыло Скользкопокалипсис
 uplink-slipocalypse-clustersoap-desc = После приземления разбрасывает вокруг себя маленькие кусочки мыла Синдиката, которые испарятся сами через 60 секунд.
+uplink-mobcat-microbomb-name = SyndiCat
+uplink-mobcat-microbomb-desc = A hand cat equipped with a microbomb implant. Explodes when seriously injured. Can bite painfully
 # Pointless
 uplink-revolver-cap-gun-name = { ent-RevolverCapGun }
 uplink-revolver-cap-gun-desc = { ent-RevolverCapGun.desc }
