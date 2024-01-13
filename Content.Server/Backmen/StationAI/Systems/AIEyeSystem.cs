@@ -45,7 +45,7 @@ public sealed class AIEyePowerSystem : EntitySystem
 
         SubscribeLocalEvent<AIEyeComponent, AIEyePowerReturnActionEvent>(OnPowerReturnUsed);
 
-        SubscribeLocalEvent<AIEyeComponent, ComponentStartup>(OnStartup);
+        SubscribeLocalEvent<AIEyeComponent, MapInitEvent>(OnStartup);
         SubscribeLocalEvent<AIEyeComponent, MindRemovedMessage>(OnMindRemoved);
         SubscribeLocalEvent<AIEyeComponent, MindUnvisitedMessage>(OnMindRemoved2);
 
@@ -168,7 +168,7 @@ public sealed class AIEyePowerSystem : EntitySystem
     }
 
 
-    private void OnStartup(EntityUid uid, AIEyeComponent component, ComponentStartup args)
+    private void OnStartup(EntityUid uid, AIEyeComponent component, MapInitEvent args)
     {
         if (!_entityManager.HasComponent<StationAIComponent>(uid) ||
             !_entityManager.TryGetComponent<VisibilityComponent>(uid, out var visibility) ||
@@ -179,7 +179,7 @@ public sealed class AIEyePowerSystem : EntitySystem
         _visibilitySystem.AddLayer(uid, visibility, (int) VisibilityFlags.AIEye);
         if (_actions.AddAction(uid, ref component.ReturnActionUid, out var action, component.ReturnAction))
         {
-            Dirty(component.ReturnActionUid.Value, action);
+            action.Enabled = true;
         }
     }
 

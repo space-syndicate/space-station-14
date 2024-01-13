@@ -120,6 +120,6 @@ public sealed class StationAISystem : EntitySystem
         //     comp.DamageContainers.Add("HalfSpirit");
         //     Dirty(args.Performer, comp);
         // }
-        // args.Handled = true;
+        args.Handled = true;
     }
 }
