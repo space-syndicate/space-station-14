@@ -204,19 +204,6 @@
 #      - state: green
 #      - state: miner
 
-- type: entity
-  id: SpawnPointPrisoner
-  parent: SpawnPointJobBase
-  name: prisoner
-  components:
-    - type: SpawnPoint
-      job_id: Prisoner
-    - type: Sprite
-      sprite: Backmen/Interface/Misc/job_icons.rsi
-      layers:
-        - state: green
-        - state: prisoner
-
 #- type: entity
 #  id: SpawnPointValet
 #  parent: SpawnPointJobBase

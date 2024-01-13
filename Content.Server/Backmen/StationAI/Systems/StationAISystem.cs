@@ -1,4 +1,3 @@
-using Content.Server.Backmen.Abilities.Psionics;
 using Content.Shared.Actions;
 using Robust.Shared.Prototypes;
 using Content.Shared.Backmen.StationAI.Events;
@@ -17,19 +16,8 @@ public sealed class StationAISystem : EntitySystem
 
         SubscribeLocalEvent<StationAIComponent, ComponentStartup>(OnStartup);
         SubscribeLocalEvent<StationAIComponent, ComponentShutdown>(OnShutdown);
-        SubscribeLocalEvent<StationAIComponent, EntityTerminatingEvent>(OnTerminated);
 
         SubscribeLocalEvent<AIHealthOverlayEvent>(OnHealthOverlayEvent);
-    }
-
-    private void OnTerminated(Entity<StationAIComponent> ent, ref EntityTerminatingEvent args)
-    {
-        if (!TryComp<MindSwappedComponent>(ent, out var mindSwappedComponent))
-            return;
-        if (mindSwappedComponent.OriginalEntity.Valid)
-        {
-            QueueDel(mindSwappedComponent.OriginalEntity);
-        }
     }
 
     private void OnStartup(EntityUid uid, StationAIComponent component, ComponentStartup args)
