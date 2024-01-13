@@ -177,7 +177,10 @@ public sealed class AIEyePowerSystem : EntitySystem
 
         _sharedEyeSystem.SetVisibilityMask(uid,  eye.VisibilityMask | (int) VisibilityFlags.AIEye, eye);
         _visibilitySystem.AddLayer(uid, visibility, (int) VisibilityFlags.AIEye);
-        _actions.AddAction(uid, ref component.ReturnActionUid, component.ReturnAction);
+        if (_actions.AddAction(uid, ref component.ReturnActionUid, out var action, component.ReturnAction))
+        {
+            Dirty(component.ReturnActionUid.Value, action);
+        }
     }
 
     private void OnMindRemoved(EntityUid uid, AIEyeComponent component, MindRemovedMessage args)

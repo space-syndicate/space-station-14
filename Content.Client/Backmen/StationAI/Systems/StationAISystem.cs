@@ -1,30 +1,55 @@
-using Content.Shared.Backmen.StationAI.Events;
-using Content.Shared.Overlays;
+using Content.Client.Storage.Components;
+using Content.Shared.Backmen.StationAI;
+using Content.Shared.Interaction.Events;
+using Content.Shared.Item;
 
 namespace Content.Client.Backmen.StationAI;
 
 public sealed class StationAISystem : EntitySystem
 {
-    [Dependency] private readonly IEntityManager _entityManager = default!;
-
     public override void Initialize()
     {
         base.Initialize();
-
-        SubscribeNetworkEvent<NetworkedAIHealthOverlayEvent>(OnHealthOverlayEvent);
+        SubscribeLocalEvent<StationAIComponent, InteractionAttemptEvent>(CanInteraction);
     }
 
-    private void OnHealthOverlayEvent(NetworkedAIHealthOverlayEvent args)
+    private void CanInteraction(Entity<StationAIComponent> ent, ref InteractionAttemptEvent args)
     {
-        var uid = GetEntity(args.Performer);
+        var core = ent;
+        if (TryComp<AIEyeComponent>(ent, out var eye))
+        {
+            if (eye.AiCore == null)
+            {
+                args.Cancel();
+                return;
+            }
 
-        if (!_entityManager.TryGetComponent<ShowHealthBarsComponent>(uid, out var health))
-        {
-            health = _entityManager.AddComponent<ShowHealthBarsComponent>(uid);
+            core = eye.AiCore.Value;
         }
-        else
+
+        if (!core.Owner.Valid)
         {
-            _entityManager.RemoveComponent<ShowHealthBarsComponent>(uid);
+            args.Cancel();
+            return;
+        }
+
+        if (args.Target != null && Transform(core).GridUid != Transform(args.Target.Value).GridUid)
+        {
+            args.Cancel();
+            return;
+        }
+
+
+        if (HasComp<ItemComponent>(args.Target))
+        {
+            args.Cancel();
+            return;
+        }
+
+        if (HasComp<EntityStorageComponent>(args.Target))
+        {
+            args.Cancel();
+            return;
         }
     }
 }

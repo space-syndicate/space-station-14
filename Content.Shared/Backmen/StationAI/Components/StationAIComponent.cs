@@ -18,5 +18,6 @@ public sealed partial class StationAIComponent : Component
     [DataField("lawsId")]
     public ProtoId<WeightedRandomPrototype> LawsId = "LawsStationAIDefault";
 
+    [ViewVariables(VVAccess.ReadWrite)]
     public SiliconLawsetPrototype? SelectedLaw;
 }
