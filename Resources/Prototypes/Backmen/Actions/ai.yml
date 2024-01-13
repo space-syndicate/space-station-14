@@ -12,6 +12,19 @@
     priority: 17
 
 - type: entity
+  id: AIEyeReturnAction
+  name: AI Eye Return
+  description: Return view to AI Core
+  noSpawn: true
+  components:
+  - type: InstantAction
+    icon: Interface/VerbIcons/sentient.svg.192dpi.png
+    event: !type:AIEyePowerReturnActionEvent
+    checkCanInteract: false
+    useDelay: 5
+    priority: 17
+
+- type: entity
   id: AIHealthOverlay
   name: Health Overlay
   description: Toggles the AI's health overlay.
