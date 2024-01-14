@@ -1,4 +1,6 @@
 station-map-window-title = Карта станции
+station-map-user-interface-flavor-left = Don't panic
+station-map-user-interface-flavor-right = v1.42
 nav-beacon-window-title = Станционный маяк
 nav-beacon-toggle-visible = Видимый
 nav-beacon-toggle-invisible = Невидимый

@@ -46,6 +46,7 @@ flavor-base-spaceshroom = таинственно
 flavor-base-clean = чисто
 flavor-base-alkaline = щёлочно
 flavor-base-holy = свято
+flavor-base-horrible = horrible
 # lmao
 flavor-base-terrible = ужасно
 
