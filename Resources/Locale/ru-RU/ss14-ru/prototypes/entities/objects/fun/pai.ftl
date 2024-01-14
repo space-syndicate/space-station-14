@@ -6,5 +6,5 @@ ent-PotatoAI = картофельный ИИ
     .desc = Это картофелина. Вы заставили её быть разумной, вы, монстр.
 ent-ActionPAIPlayMidi = Запустить MIDI
     .desc = Откройте портативный MIDI-интерфейс, чтобы развлечь своего владельца.
-ent-ActionPAIOpenMap = Open Map
-    .desc = Open your map interface and guide your owner.
+ent-ActionPAIOpenMap = Открыть карту
+    .desc = Откройте интерфейс карты и укажите путь своему владельцу.
