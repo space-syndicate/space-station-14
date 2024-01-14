@@ -1,10 +1,10 @@
 - type: gameMap
-  id: Kettle
+  id: Gemini
   mapName: 'Kettle'
   mapPath: /Maps/kettle.yml
   minPlayers: 35
   stations:
-    Kettle:
+    Gemini:
       stationProto: StandardNanotrasenStation
       components:
         - type: StationNameSetup
