@@ -36,7 +36,7 @@
       state: health0
     event: !type:AIHealthOverlayEvent
     checkCanInteract: false
-    useDelay: 2.5
+    useDelay: 5
     priority: 18
 
 - type: entity

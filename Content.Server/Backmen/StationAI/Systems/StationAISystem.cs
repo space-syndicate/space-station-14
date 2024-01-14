@@ -28,8 +28,6 @@ public sealed class StationAISystem : EntitySystem
         SubscribeLocalEvent<StationAIComponent, EntityTerminatingEvent>(OnTerminated);
 
         SubscribeLocalEvent<StationAIComponent, InteractionAttemptEvent>(CanInteraction);
-
-        SubscribeLocalEvent<AIHealthOverlayEvent>(OnHealthOverlayEvent);
     }
 
     private void CanInteraction(Entity<StationAIComponent> ent, ref InteractionAttemptEvent args)
@@ -106,38 +104,5 @@ public sealed class StationAISystem : EntitySystem
     private void OnShutdown(EntityUid uid, StationAIComponent component, ComponentShutdown args)
     {
         _actions.RemoveAction(uid, component.ActionId);
-    }
-
-    private void OnHealthOverlayEvent(AIHealthOverlayEvent args)
-    {
-        // if (HasComp<BkmShowHealthBarsComponent>(args.Performer))
-        // {
-        //     RemCompDeferred<BkmShowHealthBarsComponent>(args.Performer);
-        // }
-        // else
-        // {
-        //     var comp = EnsureComp<BkmShowHealthBarsComponent>(args.Performer);
-        //     comp.DamageContainers.Clear();
-        //     comp.DamageContainers.Add("Biological");
-        //     comp.DamageContainers.Add("HalfSpirit");
-        //     Dirty(args.Performer, comp);
-        // }
-
-        if (!HasComp<ShowHealthBarsComponent>(args.Performer))
-        {
-            var showHealthBarsComponent = new ShowHealthBarsComponent
-            {
-                DamageContainers = new List<string>(){ "Biological", "HalfSpirit" },
-                NetSyncEnabled = false
-            };
-
-            _entityManager.AddComponent(args.Performer, showHealthBarsComponent);
-        }
-        else
-        {
-            _entityManager.RemoveComponent<ShowHealthBarsComponent>(args.Performer);
-        }
-
-        args.Handled = true;
     }
 }
