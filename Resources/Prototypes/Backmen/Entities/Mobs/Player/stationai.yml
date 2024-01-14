@@ -301,7 +301,6 @@
     - type: AIEye
     # Only ghosts can see the eye
     - type: Visibility
-      layer: 4
     # Can't see through walls for now
     #- type: Eye
     #  drawFov: false
