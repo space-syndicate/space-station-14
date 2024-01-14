@@ -8,6 +8,7 @@ using Content.Shared.Hands.Components;
 using Content.Shared.Hands.EntitySystems;
 using Content.Shared.Interaction.Events;
 using Content.Shared.Item;
+using Content.Shared.Overlays;
 
 namespace Content.Server.Backmen.StationAI.Systems;
 
@@ -16,6 +17,7 @@ public sealed class StationAISystem : EntitySystem
     [Dependency] private readonly SharedActionsSystem _actions = default!;
     [Dependency] private readonly IPrototypeManager _prototypeManager = default!;
     [Dependency] private readonly SharedHandsSystem _hands = default!;
+    [Dependency] private readonly IEntityManager _entityManager = default!;
 
     public override void Initialize()
     {
@@ -120,6 +122,22 @@ public sealed class StationAISystem : EntitySystem
         //     comp.DamageContainers.Add("HalfSpirit");
         //     Dirty(args.Performer, comp);
         // }
+
+        if (!HasComp<ShowHealthBarsComponent>(args.Performer))
+        {
+            var showHealthBarsComponent = new ShowHealthBarsComponent
+            {
+                DamageContainers = new List<string>(){ "Biological", "HalfSpirit" },
+                NetSyncEnabled = false
+            };
+
+            _entityManager.AddComponent(args.Performer, showHealthBarsComponent);
+        }
+        else
+        {
+            _entityManager.RemoveComponent<ShowHealthBarsComponent>(args.Performer);
+        }
+
         args.Handled = true;
     }
 }
