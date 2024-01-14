@@ -79634,13 +79634,6 @@ entities:
     - type: Transform
       pos: -13.458921,-7.3873262
       parent: 2
-- proto: DrinkGoldschlagerBottleFull
-  entities:
-  - uid: 11508
-    components:
-    - type: Transform
-      pos: -13.768314,-7.567894
-      parent: 2
 - proto: DrinkHotCoco
   entities:
   - uid: 11509

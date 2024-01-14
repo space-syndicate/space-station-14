@@ -2473,18 +2473,6 @@ entities:
     - type: Transform
       pos: 6.5,-16.5
       parent: 1
-- proto: SalvagePartsT2Spawner
-  entities:
-  - uid: 134
-    components:
-    - type: Transform
-      pos: -4.5,-2.5
-      parent: 1
-  - uid: 226
-    components:
-    - type: Transform
-      pos: -4.5,-3.5
-      parent: 1
 - proto: SheetSteel1
   entities:
   - uid: 53

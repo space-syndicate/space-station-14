@@ -37066,13 +37066,6 @@ entities:
     - type: Transform
       pos: -5.608521,24.832329
       parent: 4812
-- proto: DrinkGoldschlagerBottleFull
-  entities:
-  - uid: 2714
-    components:
-    - type: Transform
-      pos: -5.405396,24.535454
-      parent: 4812
 - proto: DrinkHotCoffee
   entities:
   - uid: 6308

@@ -166,13 +166,6 @@ entities:
     - pos: 0.5,1.5
       parent: 13
       type: Transform
-- proto: SalvagePartsT2Spawner
-  entities:
-  - uid: 8
-    components:
-    - pos: -0.5,-0.5
-      parent: 13
-      type: Transform
 - proto: SpaceTickSpawner
   entities:
   - uid: 12

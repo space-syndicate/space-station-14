@@ -44148,13 +44148,6 @@ entities:
     - pos: -2.535605,49.650314
       parent: 1
       type: Transform
-- proto: DrinkGoldschlagerBottleFull
-  entities:
-  - uid: 2516
-    components:
-    - pos: 3.312889,-3.7543569
-      parent: 1
-      type: Transform
 - proto: DrinkShaker
   entities:
   - uid: 5648

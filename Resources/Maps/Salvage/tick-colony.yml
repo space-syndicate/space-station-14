@@ -1009,13 +1009,6 @@ entities:
     - type: Transform
       pos: -2.5,-5.5
       parent: 119
-- proto: SalvagePartsT2Spawner
-  entities:
-  - uid: 43
-    components:
-    - type: Transform
-      pos: 0.5,4.5
-      parent: 119
 - proto: SignSecureMed
   entities:
   - uid: 41

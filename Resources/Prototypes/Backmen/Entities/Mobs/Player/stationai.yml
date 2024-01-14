@@ -296,16 +296,15 @@
   id: AIEye
   parent: AIBase
   name: Invalid AI name
-  noSpawn: true
   save: false
   components:
     - type: AIEye
     # Only ghosts can see the eye
     - type: Visibility
       layer: 4
-    # Can see through walls for now
-    - type: Eye
-      drawFov: false
+    # Can't see through walls for now
+    #- type: Eye
+    #  drawFov: false
     - type: Input
       context: "human"
     - type: MobMover

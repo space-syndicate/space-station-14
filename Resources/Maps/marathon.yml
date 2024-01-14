@@ -62300,13 +62300,6 @@ entities:
     - type: Transform
       pos: 7.5231714,44.698692
       parent: 30
-- proto: DrinkGoldschlagerBottleFull
-  entities:
-  - uid: 22265
-    components:
-    - type: Transform
-      pos: 7.564439,42.814713
-      parent: 30
 - proto: DrinkGrapeCan
   entities:
   - uid: 19761
