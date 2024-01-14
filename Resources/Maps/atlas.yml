@@ -21925,15 +21925,6 @@ entities:
       type: Transform
     - canCollide: False
       type: Physics
-- proto: DrinkGoldschlagerBottleFull
-  entities:
-  - uid: 287
-    components:
-    - pos: 27.014406,8.908235
-      parent: 30
-      type: Transform
-    - canCollide: False
-      type: Physics
 - proto: DrinkLithiumFlask
   entities:
   - uid: 7066

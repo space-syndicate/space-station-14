@@ -8,3 +8,5 @@ ent-ClothingNeckLawyerbadge = lawyer badge
     .desc = A badge to show that the owner is a 'legitimate' lawyer who passed the NT bar exam required to practice law.
 ent-ActionStethoscope = Listen with stethoscope
     .desc = { "" }
+ent-ClothingNeckFlowerWreath = flower wreath
+    .desc = A wreath of colourful flowers.

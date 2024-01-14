@@ -3,6 +3,7 @@ using Robust.Shared.Prototypes;
 using Content.Shared.Construction;
 using Content.Shared.Construction.Prototypes;
 using Content.Shared.Construction.Steps;
+using Robust.Server.GameObjects;
 
 namespace Content.Server.GuideGenerator;
 
@@ -65,7 +66,7 @@ public sealed class HeatableRecipeEntry
                     {
                         var nodeStep = (TemperatureConstructionGraphStep)nodeStepRaw;
                         graphID = nodeEdge.Target; // required to check when we need to leave second loop; this is the best solution, because nodeEdge.Target is marked as required datafield and cannot be null
-                        EntityManager em = new();
+                        ServerEntityManager em = new();
                         MinTemp = nodeStep.MinTemperature.HasValue ? nodeStep.MinTemperature.Value : 0;
                         Result = nodeStep.MinTemperature.HasValue ? constructionProto.Nodes[nodeEdge.Target].Entity.GetId(null, null, new GraphNodeEntityArgs(em)) : null;
                         break;

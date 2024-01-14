@@ -3,6 +3,7 @@ salvage-system-announcement-spawn-debris-disintegrated = Обломок дези
 salvage-system-announcement-spawn-no-debris-available = Нет обломков, которые можно притянуть магнитом.
 salvage-system-announcement-arrived = Обломок был притянут для утилизации. Расчётное время удержания: { $timeLeft } секунд.
 salvage-asteroid-name = Астероид
+salvage-magnet-window-title = Salvage magnet
 salvage-expedition-window-progression = Прогресс
 salvage-magnet-resources =
     { $resource ->

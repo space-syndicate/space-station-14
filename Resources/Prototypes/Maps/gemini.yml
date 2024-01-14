@@ -1,14 +1,14 @@
 - type: gameMap
   id: Gemini
-  mapName: 'Gemini'
-  mapPath: /Maps/gemini.yml
+  mapName: 'Kettle'
+  mapPath: /Maps/kettle.yml
   minPlayers: 35
   stations:
     Gemini:
       stationProto: StandardNanotrasenStation
       components:
         - type: StationNameSetup
-          mapNameTemplate: '{0} Gemini {1}'
+          mapNameTemplate: '{0} Kettle {1}'
           nameGenerator:
             !type:NanotrasenNameGenerator
             prefixCreator: '14'
@@ -62,3 +62,5 @@
             Clown: [ 1, 2 ]
             Mime: [ 1, 2 ]
             Musician: [ 1, 2 ]
+            SAI: [1, 1] # backmen-SAI
+

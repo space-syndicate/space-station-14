@@ -2335,13 +2335,6 @@ entities:
     - pos: -2.5631022,13.532028
       parent: 670
       type: Transform
-- proto: DrinkGoldschlagerBottleFull
-  entities:
-  - uid: 68
-    components:
-    - pos: -2.5631022,13.969528
-      parent: 670
-      type: Transform
 - proto: EmergencyLight
   entities:
   - uid: 638

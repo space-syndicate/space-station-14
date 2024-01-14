@@ -67647,13 +67647,6 @@ entities:
     - type: Transform
       pos: 6.6877446,-6.3988457
       parent: 60
-- proto: DrinkGoldschlagerBottleFull
-  entities:
-  - uid: 13012
-    components:
-    - type: Transform
-      pos: 6.371938,-6.0707817
-      parent: 60
 - proto: DrinkHotCoffee
   entities:
   - uid: 16135
@@ -123761,13 +123754,6 @@ entities:
     - type: Transform
       rot: 1.5707963267948966 rad
       pos: 49.5,1.5
-      parent: 60
-- proto: SalvagePartsT2Spawner
-  entities:
-  - uid: 5030
-    components:
-    - type: Transform
-      pos: -64.5,9.5
       parent: 60
 - proto: Saw
   entities:

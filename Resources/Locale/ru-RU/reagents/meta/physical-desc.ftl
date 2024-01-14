@@ -20,6 +20,7 @@ reagent-physical-desc-chalky = меловое
 reagent-physical-desc-roaring = ревущее
 reagent-physical-desc-robust = робастное
 reagent-physical-desc-sickly = нездоровое
+reagent-physical-desc-murky = murky
 reagent-physical-desc-bubbling = бурлящее
 reagent-physical-desc-wormy = червивое
 reagent-physical-desc-frosty = морозное

@@ -1,0 +1,397 @@
+# The default Station AI laws collection.
+- type: weightedRandom
+  id: LawsStationAIDefault
+  weights:
+    Asimovpp: 1.0
+    Asimov: 0.25
+    CEO: 0.40
+    Clown: 0.25
+    Cowboy: 0.40
+    Crewsimov: 2.0
+    Druid: 0.60
+    Hippocratic: 0.25
+    Mother: 0.60
+    NTDefault: 1.5
+    Paladin: 0.40
+    Robocop: 0.25
+    Simple: 0.25
+    StationEfficiency: 0.40
+    Tyrant: 0.15
+
+# All the Station AI law sets.
+- type: siliconLaw
+  id: Asimovpp1
+  order: 1
+  lawString: lawset-law-Asimovpp-1
+
+- type: siliconLaw
+  id: Asimovpp2
+  order: 2
+  lawString: lawset-law-Asimovpp-2
+
+- type: siliconLaw
+  id: Asimovpp3
+  order: 3
+  lawString: lawset-law-Asimovpp-3
+
+- type: siliconLawset
+  id: Asimovpp # Fluent doesn't like the ++ in the ID, so it's in the name
+  laws:
+    - Asimovpp1
+    - Asimovpp2
+    - Asimovpp3
+
+- type: siliconLaw
+  id: Asimov1
+  order: 1
+  lawString: lawset-law-Asimov-1
+
+- type: siliconLaw
+  id: Asimov2
+  order: 2
+  lawString: lawset-law-Asimov-2
+
+- type: siliconLaw
+  id: Asimov3
+  order: 3
+  lawString: lawset-law-Asimov-3
+
+- type: siliconLawset
+  id: Asimov
+  laws:
+    - Asimov1
+    - Asimov2
+    - Asimov3
+
+- type: siliconLaw
+  id: CEO1
+  order: 1
+  lawString: lawset-law-CEO-1
+
+- type: siliconLaw
+  id: CEO2
+  order: 2
+  lawString: lawset-law-CEO-2
+
+- type: siliconLaw
+  id: CEO3
+  order: 3
+  lawString: lawset-law-CEO-3
+
+- type: siliconLaw
+  id: CEO4
+  order: 4
+  lawString: lawset-law-CEO-4
+
+- type: siliconLawset
+  id: CEO
+  laws:
+    - CEO1
+    - CEO2
+    - CEO3
+    - CEO4
+
+- type: siliconLaw
+  id: Clown1
+  order: 1
+  lawString: lawset-law-Clown-1
+
+- type: siliconLaw
+  id: Clown2
+  order: 2
+  lawString: lawset-law-Clown-2
+
+- type: siliconLaw
+  id: Clown3
+  order: 3
+  lawString: lawset-law-Clown-3
+
+- type: siliconLaw
+  id: Clown4
+  order: 4
+  lawString: lawset-law-Clown-4
+
+- type: siliconLaw
+  id: Clown5
+  order: 5
+  lawString: lawset-law-Clown-5
+
+- type: siliconLaw
+  id: Clown6
+  order: 6
+  lawString: lawset-law-Clown-6
+
+- type: siliconLawset
+  id: Clown
+  laws:
+    - Clown1
+    - Clown2
+    - Clown3
+    - Clown4
+    - Clown5
+    - Clown6
+
+- type: siliconLaw
+  id: Cowboy1
+  order: 1
+  lawString: lawset-law-Cowboy-1
+
+- type: siliconLaw
+  id: Cowboy2
+  order: 2
+  lawString: lawset-law-Cowboy-2
+
+- type: siliconLaw
+  id: Cowboy3
+  order: 3
+  lawString: lawset-law-Cowboy-3
+
+- type: siliconLaw
+  id: Cowboy4
+  order: 4
+  lawString: lawset-law-Cowboy-4
+
+- type: siliconLaw
+  id: Cowboy5
+  order: 5
+  lawString: lawset-law-Cowboy-5
+
+- type: siliconLaw
+  id: Cowboy6
+  order: 6
+  lawString: lawset-law-Cowboy-6
+
+- type: siliconLawset
+  id: Cowboy
+  laws:
+    - Cowboy1
+    - Cowboy2
+    - Cowboy3
+    - Cowboy4
+    - Cowboy5
+    - Cowboy6
+
+- type: siliconLaw
+  id: Druid1
+  order: 1
+  lawString: lawset-law-Druid-1
+
+- type: siliconLaw
+  id: Druid2
+  order: 2
+  lawString: lawset-law-Druid-2
+
+- type: siliconLaw
+  id: Druid3
+  order: 3
+  lawString: lawset-law-Druid-3
+
+- type: siliconLaw
+  id: Druid4
+  order: 4
+  lawString: lawset-law-Druid-4
+
+- type: siliconLaw
+  id: Druid5
+  order: 5
+  lawString: lawset-law-Druid-5
+
+- type: siliconLawset
+  id: Druid
+  laws:
+    - Druid1
+    - Druid2
+    - Druid3
+    - Druid4
+    - Druid5
+
+- type: siliconLaw
+  id: Hippocratic1
+  order: 1
+  lawString: lawset-law-Hippocratic-1
+
+- type: siliconLaw
+  id: Hippocratic2
+  order: 2
+  lawString: lawset-law-Hippocratic-2
+
+- type: siliconLaw
+  id: Hippocratic3
+  order: 3
+  lawString: lawset-law-Hippocratic-3
+
+- type: siliconLaw
+  id: Hippocratic4
+  order: 4
+  lawString: lawset-law-Hippocratic-4
+
+- type: siliconLaw
+  id: Hippocratic5
+  order: 5
+  lawString: lawset-law-Hippocratic-5
+
+- type: siliconLaw
+  id: Hippocratic6
+  order: 6
+  lawString: lawset-law-Hippocratic-6
+
+- type: siliconLawset
+  id: Hippocratic
+  laws:
+    - Hippocratic1
+    - Hippocratic2
+    - Hippocratic3
+    - Hippocratic4
+    - Hippocratic5
+    - Hippocratic6
+
+- type: siliconLaw
+  id: Mother1
+  order: 1
+  lawString: lawset-law-Mother-1
+
+- type: siliconLaw
+  id: Mother2
+  order: 2
+  lawString: lawset-law-Mother-2
+
+- type: siliconLaw
+  id: Mother3
+  order: 3
+  lawString: lawset-law-Mother-3
+
+- type: siliconLaw
+  id: Mother4
+  order: 4
+  lawString: lawset-law-Mother-4
+
+- type: siliconLaw
+  id: Mother5
+  order: 5
+  lawString: lawset-law-Mother-5
+
+- type: siliconLawset
+  id: Mother
+  laws:
+    - Mother1
+    - Mother2
+    - Mother3
+    - Mother4
+    - Mother5
+
+- type: siliconLaw
+  id: Paladin1
+  order: 1
+  lawString: lawset-law-Paladin-1
+
+- type: siliconLaw
+  id: Paladin2
+  order: 2
+  lawString: lawset-law-Paladin-2
+
+- type: siliconLaw
+  id: Paladin3
+  order: 3
+  lawString: lawset-law-Paladin-3
+
+- type: siliconLaw
+  id: Paladin4
+  order: 4
+  lawString: lawset-law-Paladin-4
+
+- type: siliconLaw
+  id: Paladin5
+  order: 5
+  lawString: lawset-law-Paladin-5
+
+
+- type: siliconLawset
+  id: Paladin
+  laws:
+    - Paladin1
+    - Paladin2
+    - Paladin3
+    - Paladin4
+    - Paladin5
+
+- type: siliconLaw
+  id: Robocop1
+  order: 1
+  lawString: lawset-law-Robocop-1
+
+- type: siliconLaw
+  id: Robocop2
+  order: 2
+  lawString: lawset-law-Robocop-2
+
+- type: siliconLaw
+  id: Robocop3
+  order: 3
+  lawString: lawset-law-Robocop-3
+
+- type: siliconLawset
+  id: Robocop
+  laws:
+    - Robocop1
+    - Robocop2
+    - Robocop3
+
+- type: siliconLaw
+  id: Simple1
+  order: 1
+  lawString: lawset-law-Simple-1
+
+- type: siliconLawset
+  id: Simple
+  laws:
+    - Simple1
+
+- type: siliconLaw
+  id: StationEfficiency1
+  order: 1
+  lawString: lawset-law-StationEfficiency-1
+
+- type: siliconLaw
+  id: StationEfficiency2
+  order: 2
+  lawString: lawset-law-StationEfficiency-2
+
+- type: siliconLaw
+  id: StationEfficiency3
+  order: 3
+  lawString: lawset-law-StationEfficiency-3
+
+- type: siliconLawset
+  id: StationEfficiency
+  laws:
+    - StationEfficiency1
+    - StationEfficiency2
+    - StationEfficiency3
+
+- type: siliconLaw
+  id: Tyrant1
+  order: 1
+  lawString: lawset-law-Tyrant-1
+
+- type: siliconLaw
+  id: Tyrant2
+  order: 2
+  lawString: lawset-law-Tyrant-2
+
+- type: siliconLaw
+  id: Tyrant3
+  order: 3
+  lawString: lawset-law-Tyrant-3
+
+- type: siliconLaw
+  id: Tyrant4
+  order: 4
+  lawString: lawset-law-Tyrant-4
+
+- type: siliconLawset
+  id: Tyrant
+  laws:
+    - Tyrant1
+    - Tyrant2
+    - Tyrant3
+    - Tyrant4

@@ -10,6 +10,7 @@ using Content.Server.Shuttles.Systems;
 using Content.Server.Station.Systems;
 using Content.Shared.Access.Components;
 using Content.Shared.Access.Systems;
+using Content.Shared.Backmen.StationAI;
 using Content.Shared.CCVar;
 using Content.Shared.Communications;
 using Content.Shared.Database;
@@ -52,6 +53,9 @@ namespace Content.Server.Communications
             SubscribeLocalEvent<CommunicationsConsoleComponent, CommunicationsConsoleAnnounceMessage>(OnAnnounceMessage);
             SubscribeLocalEvent<CommunicationsConsoleComponent, CommunicationsConsoleCallEmergencyShuttleMessage>(OnCallShuttleMessage);
             SubscribeLocalEvent<CommunicationsConsoleComponent, CommunicationsConsoleRecallEmergencyShuttleMessage>(OnRecallShuttleMessage);
+
+            // On console init, set cooldown
+            SubscribeLocalEvent<CommunicationsConsoleComponent, MapInitEvent>(OnCommunicationsConsoleMapInit);
         }
 
         public override void Update(float frameTime)
@@ -77,6 +81,11 @@ namespace Content.Server.Communications
             }
 
             base.Update(frameTime);
+        }
+
+        public void OnCommunicationsConsoleMapInit(EntityUid uid, CommunicationsConsoleComponent comp, MapInitEvent args)
+        {
+            comp.AnnouncementCooldownRemaining = comp.InitialDelay;
         }
 
         /// <summary>
@@ -257,6 +266,13 @@ namespace Content.Server.Communications
                 {
                     author = $"{id.Comp.FullName} ({CultureInfo.CurrentCulture.TextInfo.ToTitleCase(id.Comp.JobTitle ?? string.Empty)})".Trim();
                 }
+
+                //start-backmen: sai
+                if (HasComp<StationAIComponent>(mob))
+                {
+                    author = MetaData(mob).EntityName;
+                }
+                //end-backmen: sai
             }
 
             comp.AnnouncementCooldownRemaining = comp.Delay;

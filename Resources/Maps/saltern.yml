@@ -32015,13 +32015,6 @@ entities:
     - pos: -3.053735,18.815365
       parent: 31
       type: Transform
-- proto: DrinkGoldschlagerBottleFull
-  entities:
-  - uid: 9626
-    components:
-    - pos: -3.2734265,17.981327
-      parent: 31
-      type: Transform
 - proto: DrinkGreenTeaGlass
   entities:
   - uid: 10662
@@ -56440,13 +56433,6 @@ entities:
     components:
     - rot: 3.141592653589793 rad
       pos: 34.5,36.5
-      parent: 31
-      type: Transform
-- proto: SalvagePartsT2Spawner
-  entities:
-  - uid: 592
-    components:
-    - pos: -5.5,-28.5
       parent: 31
       type: Transform
 - proto: ScalpelLaser
