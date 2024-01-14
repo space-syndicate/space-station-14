@@ -151,7 +151,7 @@ public sealed class AIEyePowerSystem : EntitySystem
             return;
 
         var coords = Transform(uid).Coordinates;
-        var projection = Spawn(component.Prototype, coords);
+        var projection = EntityManager.CreateEntityUninitialized(component.Prototype, coords);
         ai.ActiveEye = projection;
         EnsureComp<AIEyeComponent>(projection).AiCore = (uid, ai);
         EnsureComp<StationAIComponent>(projection).SelectedLaw = ai.SelectedLaw;
@@ -159,9 +159,10 @@ public sealed class AIEyePowerSystem : EntitySystem
         var core = MetaData(uid);
         // Consistent name
         _metaDataSystem.SetEntityName(projection, core.EntityName != "" ? core.EntityName : "Invalid AI");
+        EntityManager.InitializeAndStartEntity(projection, coords.GetMapId(EntityManager));
 
         _transformSystem.AttachToGridOrMap(projection);
-        _mindSystem.Visit(mindId, projection, mind);
+        _mindSystem.Visit(mindId, projection, mind); // Mind swap
 
         args.Handled = true;
     }

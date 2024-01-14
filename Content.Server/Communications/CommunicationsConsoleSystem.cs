@@ -10,6 +10,7 @@ using Content.Server.Shuttles.Systems;
 using Content.Server.Station.Systems;
 using Content.Shared.Access.Components;
 using Content.Shared.Access.Systems;
+using Content.Shared.Backmen.StationAI;
 using Content.Shared.CCVar;
 using Content.Shared.Communications;
 using Content.Shared.Database;
@@ -257,6 +258,13 @@ namespace Content.Server.Communications
                 {
                     author = $"{id.Comp.FullName} ({CultureInfo.CurrentCulture.TextInfo.ToTitleCase(id.Comp.JobTitle ?? string.Empty)})".Trim();
                 }
+
+                //start-backmen: sai
+                if (HasComp<StationAIComponent>(mob))
+                {
+                    author = MetaData(mob).EntityName;
+                }
+                //end-backmen: sai
             }
 
             comp.AnnouncementCooldownRemaining = comp.Delay;
