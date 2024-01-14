@@ -1,4 +1,4 @@
-ent-AsteroidCrabSpawner = спавнер астероид рудный краб
+ent-AsteroidCrabSpawner = спавнер астероид рудокраб
     .desc = { ent-MarkerBase.desc }
-ent-RockAnomCrabSpawner = Rock Anom Crab Spawner
+ent-RockAnomCrabSpawner = спавнер каменная аномалия рудокраб
     .desc = { ent-MarkerBase.desc }
