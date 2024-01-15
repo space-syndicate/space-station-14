@@ -87,7 +87,8 @@ namespace Content.Shared.Roles
             [NotNullWhen(false)] out FormattedMessage? reason,
             IEntityManager entManager,
             IPrototypeManager prototypes,
-            bool canPlayAi = false)
+            bool canPlayBrokenAi = false,
+            bool canPlayLoyalAi = false)
         {
             reason = null;
             if (job.Requirements == null)
@@ -95,7 +96,7 @@ namespace Content.Shared.Roles
 
             foreach (var requirement in job.Requirements)
             {
-                if (!TryRequirementMet(requirement, playTimes, out reason, entManager, prototypes, canPlayAi))
+                if (!TryRequirementMet(requirement, playTimes, out reason, entManager, prototypes, canPlayBrokenAi, canPlayLoyalAi))
                     return false;
             }
 
@@ -111,7 +112,8 @@ namespace Content.Shared.Roles
             [NotNullWhen(false)] out FormattedMessage? reason,
             IEntityManager entManager,
             IPrototypeManager prototypes,
-            bool canPlayAi = false)
+            bool canPlayBrokenAi = false,
+            bool canPlayLoyalAi = false)
         {
             reason = null;
 
@@ -231,19 +233,28 @@ namespace Content.Shared.Roles
                         return true;
                     }
                 case AdminRoleRequirement roleRequirement:
-                    if (roleRequirement.Role.Equals("BrokenAi"))
+                    switch (roleRequirement.Role)
                     {
-                        if (canPlayAi)
-                        {
-                            return true;
-                        }
+                        case "BrokenAi":
+                            if (canPlayBrokenAi)
+                            {
+                                return true;
+                            }
 
-                        reason = FormattedMessage.FromMarkup(Loc.GetString("role-ai-block"));
-                        return false;
+                            reason = FormattedMessage.FromMarkup(Loc.GetString("role-ai-block"));
+                            return false;
+                        case "LoyalAi":
+                            if (canPlayLoyalAi)
+                            {
+                                return true;
+                            }
+
+                            reason = FormattedMessage.FromMarkup(Loc.GetString("role-ai-block"));
+                            return false;
+                        default:
+                            reason = FormattedMessage.FromMarkup("Unknown role id. Send report to developers.");
+                            return false;
                     }
-
-                    reason = FormattedMessage.FromMarkup("Unknown role id. Send report to developers.");
-                    return false;
                 default:
                     throw new NotImplementedException();
             }
