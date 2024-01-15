@@ -1,4 +1,5 @@
 using System.Linq;
+using Content.Server.Administration.Managers;
 using Content.Server.Antag;
 using Content.Server.Chat.Managers;
 using Content.Server.GameTicking.Rules.Components;
@@ -9,6 +10,7 @@ using Content.Server.PDA.Ringer;
 using Content.Server.Roles;
 using Content.Server.Shuttles.Components;
 using Content.Server.Traitor.Uplink;
+using Content.Shared.Administration;
 using Content.Shared.CCVar;
 using Content.Shared.Dataset;
 using Content.Shared.Mind;
@@ -45,129 +47,82 @@ public sealed class BrokenAiRuleSystem : GameRuleSystem<BrokenAiRuleComponent>
     [Dependency] private readonly SharedRoleSystem _roleSystem = default!;
     [Dependency] private readonly SharedJobSystem _jobs = default!;
     [Dependency] private readonly ObjectivesSystem _objectives = default!;
-
-    private int PlayersPerTraitor => _cfg.GetCVar(CCVars.TraitorPlayersPerTraitor);
-    private int MaxTraitors => _cfg.GetCVar(CCVars.TraitorMaxTraitors);
+    [Dependency] private readonly IAdminManager _adminManager = default!;
 
     public override void Initialize()
     {
         base.Initialize();
 
-        SubscribeLocalEvent<RulePlayerJobsAssignedEvent>(OnPlayersSpawned);
+        SubscribeLocalEvent<PlayerSpawnCompleteEvent>(HandleSpawn);
 
-        SubscribeLocalEvent<TraitorRuleComponent, ObjectivesTextGetInfoEvent>(OnObjectivesTextGetInfo);
-        SubscribeLocalEvent<TraitorRuleComponent, ObjectivesTextPrependEvent>(OnObjectivesTextPrepend);
+        SubscribeLocalEvent<BrokenAiRuleComponent, ObjectivesTextGetInfoEvent>(OnObjectivesTextGetInfo);
+        SubscribeLocalEvent<BrokenAiRuleComponent, ObjectivesTextPrependEvent>(OnObjectivesTextPrepend);
     }
 
-    private void OnPlayersSpawned(RulePlayerJobsAssignedEvent ev)
+    private void HandleSpawn(PlayerSpawnCompleteEvent ev)
     {
-        var query = EntityQueryEnumerator<TraitorRuleComponent, GameRuleComponent>();
-        while (query.MoveNext(out var uid, out var traitor, out var gameRule))
+        var query = EntityQueryEnumerator<BrokenAiRuleComponent, GameRuleComponent>();
+        while (query.MoveNext(out var uid, out var component, out var gameRule))
         {
             if (!GameTicker.IsGameRuleAdded(uid, gameRule))
                 continue;
-            foreach (var player in ev.Players)
+
+            if (component.BrokenAi != null)
+                return;
+            if (!ev.Profile.AntagPreferences.Contains(component.BrokenAiPrototypeId))
+                return;
+
+            if (ev.JobId is "SAI")
             {
-                if (!ev.Profiles.ContainsKey(player.UserId))
-                    continue;
+                BreakAi(ev.Player, component);
             }
         }
     }
 
-    public bool MakeTraitor(ICommonSession traitor, bool giveUplink = true, bool giveObjectives = true)
+    private void BreakAi(ICommonSession evPlayer, BrokenAiRuleComponent component)
     {
-        var traitorRule = EntityQuery<TraitorRuleComponent>().FirstOrDefault();
-        if (traitorRule == null)
-        {
-            //todo fuck me this shit is awful
-            //no i wont fuck you, erp is against rules
-            GameTicker.StartGameRule("Traitor", out var ruleEntity);
-            traitorRule = Comp<TraitorRuleComponent>(ruleEntity);
-        }
-
-        if (!_mindSystem.TryGetMind(traitor, out var mindId, out var mind))
+        if (!_mindSystem.TryGetMind(evPlayer, out var mindId, out var mind))
         {
             Log.Info("Failed getting mind for picked traitor.");
-            return false;
+            return;
         }
 
-        if (HasComp<TraitorRoleComponent>(mindId))
+        if (!_adminManager.HasAdminFlag(evPlayer, AdminFlags.BrokenAi))
+            return;
+
+        if (HasComp<BrokenAiRoleComponent>(mindId))
         {
-            Log.Error($"Player {traitor.Name} is already a traitor.");
-            return false;
+            Log.Error("AI mind already has broken ai component!");
+            return;
         }
 
         if (mind.OwnedEntity is not { } entity)
         {
             Log.Error("Mind picked for traitor did not have an attached entity.");
-            return false;
+            return;
         }
 
-        // Calculate the amount of currency on the uplink.
-        var startingBalance = _cfg.GetCVar(CCVars.TraitorStartingBalance);
-        if (_jobs.MindTryGetJob(mindId, out _, out var prototype))
-            startingBalance = Math.Max(startingBalance - prototype.AntagAdvantage, 0);
-
-        // Give traitors their codewords and uplink code to keep in their character info menu
-        var briefing = Loc.GetString("traitor-role-codewords-short", ("codewords", string.Join(", ", traitorRule.Codewords)));
-        Note[]? code = null;
-        if (giveUplink)
+        var brokenAiRole = new BrokenAiRoleComponent()
         {
-            // creadth: we need to create uplink for the antag.
-            // PDA should be in place already
-            var pda = _uplink.FindUplinkTarget(mind.OwnedEntity!.Value);
-            if (pda == null || !_uplink.AddUplink(mind.OwnedEntity.Value, startingBalance))
-                return false;
-
-            // Give traitors their codewords and uplink code to keep in their character info menu
-            code = EnsureComp<RingerUplinkComponent>(pda.Value).Code;
-            // If giveUplink is false the uplink code part is omitted
-            briefing = string.Format("{0}\n{1}", briefing,
-                Loc.GetString("traitor-role-uplink-code-short", ("code", string.Join("-", code).Replace("sharp","#"))));
-        }
-
-        // Prepare traitor role
-        var traitorRole = new TraitorRoleComponent
-        {
-            PrototypeId = traitorRule.TraitorPrototypeId,
+            PrototypeId = component.BrokenAiPrototypeId,
         };
 
-        // Assign traitor roles
-        _roleSystem.MindAddRole(mindId, new TraitorRoleComponent
-        {
-            PrototypeId = traitorRule.TraitorPrototypeId
-        }, mind);
-        // Assign briefing and greeting sound
-        _roleSystem.MindAddRole(mindId, new RoleBriefingComponent
-        {
-            Briefing = briefing
-        }, mind);
-        _roleSystem.MindPlaySound(mindId, traitorRule.GreetSoundNotification, mind);
-        SendTraitorBriefing(mindId, traitorRule.Codewords, code);
-        traitorRule.TraitorMinds.Add(mindId);
+        _roleSystem.MindAddRole(mindId, brokenAiRole, mind);
+        _roleSystem.MindPlaySound(mindId, component.GreetSoundNotification, mind);
 
-        // Change the faction
+        SendBrokenAiBriefing(mindId);
+
+        component.BrokenAi = entity;
+
         _npcFaction.RemoveFaction(entity, "NanoTrasen", false);
-        _npcFaction.AddFaction(entity, "Syndicate");
+    }
 
-        // Give traitors their objectives
-        if (giveObjectives)
-        {
-            var maxDifficulty = _cfg.GetCVar(CCVars.TraitorMaxDifficulty);
-            var maxPicks = _cfg.GetCVar(CCVars.TraitorMaxPicks);
-            var difficulty = 0f;
-            for (var pick = 0; pick < maxPicks && maxDifficulty > difficulty; pick++)
-            {
-                var objective = _objectives.GetRandomObjective(mindId, mind, "TraitorObjectiveGroups");
-                if (objective == null)
-                    continue;
+    private void SendBrokenAiBriefing(EntityUid mindId)
+    {
+        if (!_mindSystem.TryGetSession(mindId, out var session))
+            return;
 
-                _mindSystem.AddObjective(mindId, mind, objective.Value);
-                difficulty += Comp<ObjectiveComponent>(objective.Value).Difficulty;
-            }
-        }
-
-        return true;
+        _chatManager.DispatchServerMessage(session, Loc.GetString("broken-ai-role-greeting"));
     }
 
     /// <summary>
@@ -187,14 +142,18 @@ public sealed class BrokenAiRuleSystem : GameRuleSystem<BrokenAiRuleComponent>
             _chatManager.DispatchServerMessage(session, Loc.GetString("traitor-role-uplink-code", ("code", string.Join("-", code).Replace("sharp","#"))));
     }
 
-    private void OnObjectivesTextGetInfo(EntityUid uid, TraitorRuleComponent comp, ref ObjectivesTextGetInfoEvent args)
+    private void OnObjectivesTextGetInfo(EntityUid uid, BrokenAiRuleComponent comp, ref ObjectivesTextGetInfoEvent args)
     {
-        args.Minds = comp.TraitorMinds;
-        args.AgentName = Loc.GetString("traitor-round-end-agent-name");
+        //args.Minds = comp.TraitorMinds;
+        //args.AgentName = Loc.GetString("traitor-round-end-agent-name");
+
+        if (comp.BrokenAi != null)
+            args.Minds = new List<EntityUid>() { comp.BrokenAi.Value };
+        args.AgentName = Loc.GetString("broken-ai-round-end-agent-name");
     }
 
-    private void OnObjectivesTextPrepend(EntityUid uid, TraitorRuleComponent comp, ref ObjectivesTextPrependEvent args)
+    private void OnObjectivesTextPrepend(EntityUid uid, BrokenAiRuleComponent comp, ref ObjectivesTextPrependEvent args)
     {
-        args.Text += "\n" + Loc.GetString("traitor-round-end-codewords", ("codewords", string.Join(", ", comp.Codewords)));
+        //args.Text += "\n" + Loc.GetString("traitor-round-end-codewords", ("codewords", string.Join(", ", comp.Codewords)));
     }
 }

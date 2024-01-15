@@ -211,6 +211,8 @@ namespace Content.Server.GameTicking
 
             if (jobPrototype.AlwaysUseSpawner)
                 lateJoin = false;
+            if (jobId.Equals("SAI"))
+                AddGameRule("BrokenAi");
 
             var mobMaybe = _stationSpawning.SpawnPlayerCharacterOnStation(station, job, character);
             DebugTools.AssertNotNull(mobMaybe);

@@ -9,7 +9,7 @@ namespace Content.Server.GameTicking.Rules.Components;
 [RegisterComponent, Access(typeof(BrokenAiRuleSystem))]
 public sealed partial class BrokenAiRuleComponent : Component
 {
-    public readonly EntityUid? BrokenAi = null;
+    public EntityUid? BrokenAi = null;
 
     [DataField("brokenAiPrototypeId", customTypeSerializer: typeof(PrototypeIdSerializer<AntagPrototype>))]
     public string BrokenAiPrototypeId = "BrokenAi";
@@ -18,5 +18,5 @@ public sealed partial class BrokenAiRuleComponent : Component
     ///     Path to antagonist alert sound.
     /// </summary>
     [DataField("greetSoundNotification")]
-    public SoundSpecifier GreetSoundNotification = new SoundPathSpecifier("/Audio/Ambience/Antag/traitor_start.ogg");
+    public SoundSpecifier GreetSoundNotification = new SoundPathSpecifier("/Audio/Ambience/Antag/broken-ai.ogg");
 }
