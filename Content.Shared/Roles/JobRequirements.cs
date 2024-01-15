@@ -238,7 +238,7 @@ namespace Content.Shared.Roles
                             return true;
                         }
 
-                        reason = FormattedMessage.FromMarkup("YOU MUST PAY TO PLAY!");
+                        reason = FormattedMessage.FromMarkup(Loc.GetString("role-ai-block"));
                         return false;
                     }
 
