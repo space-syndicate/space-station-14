@@ -6,3 +6,5 @@ ent-MagazineRiflePractice = магазин (.20 винтовочные учеб�
     .desc = { ent-BaseMagazineRifle.desc }
 ent-MagazineRifleRubber = магазин (.20 винтовочные резиновые)
     .desc = { ent-BaseMagazineRifle.desc }
+ent-MagazineRifleUranium = magazine (.20 rifle uranium)
+    .desc = { ent-BaseMagazineRifle.desc }
