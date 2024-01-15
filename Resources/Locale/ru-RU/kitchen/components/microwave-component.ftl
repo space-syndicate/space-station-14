@@ -11,7 +11,7 @@ microwave-component-suicide-multi-head-message = Вы зажариваете с�
 microwave-component-suicide-message = Вы зажариваете свою голову!
 microwave-component-upgrade-cook-time = время готовки
 microwave-component-interact-full = Она заполнена.
-microwave-component-interact-item-too-big = { CAPITALIZE(THE($item)) } is too big to fit in the microwave!
+microwave-component-interact-item-too-big = { CAPITALIZE($item) } не может поместиться в микроволновой печи из-за размера!
 
 ## Bound UI
 
