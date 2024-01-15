@@ -12,7 +12,18 @@
     state: icon
   - type: Item
     sprite: Objects/Tools/emag.rsi
-
+  - type: HiddenDescription #Corvax MRP Hidden Description
+    mindWhitelistData:
+      emag-only-thief:
+        components:
+          - ThiefRole
+      emag-only-traitor:
+        components:
+          - TraitorRole
+    jobData:
+      emag-only-chaplain: 
+        - Chaplain
+    
 - type: entity
   parent: BaseItem
   id: EmagUnlimited
