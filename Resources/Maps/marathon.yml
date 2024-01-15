@@ -7663,13 +7663,6 @@ entities:
       parent: 5704
     - type: InstantAction
       container: 5704
-- proto: AdvancedCapacitorStockPart
-  entities:
-  - uid: 20974
-    components:
-    - type: Transform
-      pos: 2.2878256,21.230333
-      parent: 30
 - proto: AirAlarm
   entities:
   - uid: 6224

@@ -9545,18 +9545,6 @@ entities:
       parent: 19193
     - type: InstantAction
       container: 19193
-- proto: AdvancedCapacitorStockPart
-  entities:
-  - uid: 19183
-    components:
-    - type: Transform
-      pos: 23.618336,21.636284
-      parent: 60
-  - uid: 19184
-    components:
-    - type: Transform
-      pos: 23.743336,21.526909
-      parent: 60
 - proto: AirAlarm
   entities:
   - uid: 249

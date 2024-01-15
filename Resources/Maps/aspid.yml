@@ -8763,25 +8763,6 @@ entities:
     - type: Transform
       pos: 6.605979,-25.237396
       parent: 1
-- proto: AdvancedCapacitorStockPart
-  entities:
-  - uid: 6544
-    components:
-    - type: Transform
-      pos: 22.399736,-23.44135
-      parent: 1
-  - uid: 13453
-    components:
-    - type: Transform
-      pos: -46.782776,46.69757
-      parent: 1
-- proto: AdvancedMatterBinStockPart
-  entities:
-  - uid: 13454
-    components:
-    - type: Transform
-      pos: -46.41361,46.78272
-      parent: 1
 - proto: AirAlarm
   entities:
   - uid: 8754

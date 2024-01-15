@@ -4460,25 +4460,6 @@ entities:
       type: Transform
     - container: 12533
       type: InstantAction
-- proto: AdvancedCapacitorStockPart
-  entities:
-  - uid: 9498
-    components:
-    - pos: -2.8552828,-31.280602
-      parent: 1
-      type: Transform
-  - uid: 9500
-    components:
-    - pos: -3.7302828,-31.280602
-      parent: 1
-      type: Transform
-- proto: AdvancedMatterBinStockPart
-  entities:
-  - uid: 9499
-    components:
-    - pos: -3.3396578,-31.327477
-      parent: 1
-      type: Transform
 - proto: AirAlarm
   entities:
   - uid: 8049

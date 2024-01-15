@@ -4201,18 +4201,6 @@ entities:
     - type: Transform
       pos: -10.386757,8.623476
       parent: 4812
-- proto: AdvancedMatterBinStockPart
-  entities:
-  - uid: 6200
-    components:
-    - type: Transform
-      pos: 7.405039,-15.314831
-      parent: 4812
-  - uid: 6201
-    components:
-    - type: Transform
-      pos: 7.701914,-15.330456
-      parent: 4812
 - proto: AirAlarm
   entities:
   - uid: 4981

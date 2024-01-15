@@ -361,13 +361,6 @@ entities:
     - type: LoadedMap
     - type: GridTree
     - type: MovedGrids
-- proto: AdvancedCapacitorStockPart
-  entities:
-  - uid: 700
-    components:
-    - type: Transform
-      pos: -3.8324947,8.786524
-      parent: 179
 - proto: AirAlarm
   entities:
   - uid: 800
