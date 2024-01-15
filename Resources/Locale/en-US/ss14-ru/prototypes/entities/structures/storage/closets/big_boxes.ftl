@@ -7,5 +7,3 @@ ent-BigBox = { ent-BaseBigBox }
     .desc = { ent-BaseBigBox.desc }
 ent-GhostBox = ghost box
     .desc = Beware!
-ent-Exclamation = exclamation
-    .desc = { "" }
