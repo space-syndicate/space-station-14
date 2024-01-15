@@ -1,4 +1,4 @@
-ent-BaseWhistle = whistle
-    .desc = Someone forgot to turn off kettle?
+ent-BaseWhistle = свисток
+    .desc = Кто-то забыл выключить чайник?
 ent-SecurityWhistle = { ent-BaseWhistle }
-    .desc = Sound of it make you feel fear.
+    .desc = Его звук внушает вам ужас.
