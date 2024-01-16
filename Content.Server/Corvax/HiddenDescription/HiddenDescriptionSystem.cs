@@ -35,21 +35,28 @@ public sealed partial class HiddenDescriptionSystem : EntitySystem
             }
 
             //Check mind to whitelist
-            bool isWhitelistPassed = false;
+            bool isMindWhitelistPassed = false;
             if (item.WhitelistMind.IsValid(mindId))
             {
-                isWhitelistPassed = true;
+                isMindWhitelistPassed = true;
+            }
+
+            //Check body to whitelist
+            bool isBodyWhitelistPassed = false;
+            if (item.WhitelistMind.IsValid(args.Examiner))
+            {
+                isBodyWhitelistPassed = true;
             }
 
             //final check
-            if (item.NeedBoth)
+            if (item.NeedAllCheck)
             {
-                if (isWhitelistPassed && isJobAllow)
+                if (isMindWhitelistPassed && isBodyWhitelistPassed && isJobAllow)
                     args.PushMarkup(Loc.GetString(item.Label), hiddenDesc.Comp.PushPriority);
             }
             else
             {
-                if (isWhitelistPassed || isJobAllow)
+                if (isMindWhitelistPassed || isBodyWhitelistPassed || isJobAllow)
                     args.PushMarkup(Loc.GetString(item.Label), hiddenDesc.Comp.PushPriority);
             }
         }

@@ -37,6 +37,12 @@ public readonly partial record struct HiddenDescriptionEntry()
     public EntityWhitelist WhitelistMind { get; init; } = new();
 
     /// <summary>
+    /// A player's body must pass a whitelist check to receive hidden information
+    /// </summary>
+    [DataField]
+    public EntityWhitelist WhitelistBody { get; init; } = new();
+
+    /// <summary>
     /// The player's mind has to have some job role to access the hidden information
     /// </summary>
     [DataField]
@@ -46,5 +52,5 @@ public readonly partial record struct HiddenDescriptionEntry()
     /// If true, the player needs to go through and whitelist, and have some job. By default, one of two successful checks is sufficient.
     /// </summary>
     [DataField]
-    public bool NeedBoth { get; init; } = false;
+    public bool NeedAllCheck { get; init; } = false;
 }
