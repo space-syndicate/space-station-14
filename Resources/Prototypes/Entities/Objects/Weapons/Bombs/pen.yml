@@ -20,6 +20,19 @@
   - type: DeviceLinkSink
     ports:
       - Trigger
+  - type: HiddenDescription #Corvax MRP Hidden Description
+    entries:
+    - label: corvax-hidden-desc-PenExploding-syndicate
+      whitelistMind:
+        components:
+          - TraitorRole
+          - NukeOperative
+    - label: corvax-hidden-desc-PenExploding-research
+      jobRequired:
+        - ResearchAssistant
+        - ResearchDirector
+        - Scientist
+        - Borg
 
 - type: entity
   parent: BaseItem
