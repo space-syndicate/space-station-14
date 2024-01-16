@@ -233,6 +233,12 @@
     stripTimeReduction: 1
     stealthy: true
   - type: NinjaGloves
+  - type: HiddenDescription #Corvax MRP Hidden Description
+    entries:
+    - label: corvax-hidden-desc-ThievingGloves-thief
+      whitelistMind:
+        components:
+          - ThiefRole
 
 - type: entity
   parent: ClothingHandsGlovesColorBlack
@@ -337,6 +343,17 @@
   - type: Thieving
     stripTimeReduction: 1.5
     stealthy: true
+  - type: HiddenDescription #Corvax MRP Hidden Description
+    entries:
+    - label: corvax-hidden-desc-ThievingGloves-syndicate
+      whitelistMind:
+        components:
+          - TraitorRole
+          - NukeOperative
+    - label: corvax-hidden-desc-ThievingGloves-thief
+      whitelistMind:
+        components:
+          - ThiefRole
 
 - type: entity
   parent: ClothingHandsGlovesColorWhite

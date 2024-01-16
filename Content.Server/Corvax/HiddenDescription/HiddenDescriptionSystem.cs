@@ -1,9 +1,7 @@
-using Content.Server.Labels.Components;
 using Content.Server.Mind;
 using Content.Shared.Examine;
 using Content.Shared.Ghost;
 using Content.Shared.Roles.Jobs;
-using Content.Shared.Whitelist;
 
 namespace Content.Server.Corvax.HiddenDescription;
 
@@ -31,7 +29,7 @@ public sealed partial class HiddenDescriptionSystem : EntitySystem
             //Show all secrets to the ghosts
             if (isGhost)
             {
-                args.PushMarkup(Loc.GetString(item.Label));
+                args.PushMarkup(Loc.GetString(item.Label), hiddenDesc.Comp.PushPriority);
                 continue;
             }
 
@@ -56,12 +54,12 @@ public sealed partial class HiddenDescriptionSystem : EntitySystem
             if (item.NeedBoth)
             {
                 if (isWhitelistPassed && isJobAllow)
-                    args.PushMarkup(Loc.GetString(item.Label));
+                    args.PushMarkup(Loc.GetString(item.Label), hiddenDesc.Comp.PushPriority);
             }
             else
             {
                 if (isWhitelistPassed || isJobAllow)
-                    args.PushMarkup(Loc.GetString(item.Label));
+                    args.PushMarkup(Loc.GetString(item.Label), hiddenDesc.Comp.PushPriority);
             }
         }
     }

@@ -1,7 +1,6 @@
 using Content.Shared.Roles;
 using Content.Shared.Whitelist;
 using Robust.Shared.Prototypes;
-using Robust.Shared.Serialization;
 
 namespace Content.Server.Corvax.HiddenDescription;
 
@@ -14,6 +13,12 @@ public sealed partial class HiddenDescriptionComponent : Component
 {
     [DataField(required: true)]
     public List<HiddenDescriptionEntry> Entries = new();
+
+    /// <summary>
+    /// Prioritizing the location of classified information in an inspection
+    /// </summary>
+    [DataField]
+    public int PushPriority = 1;
 }
 
 [DataDefinition, Serializable]
