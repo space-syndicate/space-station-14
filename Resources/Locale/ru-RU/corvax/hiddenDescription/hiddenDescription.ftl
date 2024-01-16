@@ -36,6 +36,9 @@ corvax-hidden-desc-HolyHandGrenade-research = [color=#D381C9]Внутри это
 corvax-hidden-desc-SpiderCharge-ninja = [color=#14e397]Взрывы подобны солнцу. Это солнце ярко осветит гибель станции.[/color]
 corvax-hidden-desc-SpiderCharge-research = [color=#D381C9]Это грязная бомба. Не стоит ее активировать.[/color]
 
+corvax-hidden-desc-Gatfruit-syndicate = [color=#14e397]Гатфрукт и его плоды - прекрасный способ раздобыть летальный огнестрел.[/color]
+corvax-hidden-desc-Gatfruit-botanist = [color=#9be330]Из плодов этого растения можно вырастить огнестрельное оружие![/color]
+
 corvax-hidden-desc-Emag-syndicate = [color=#e31735]Универсальное хакерское устройство синдиката. Знаковый EMAG.[/color]
 corvax-hidden-desc-Emag-research = [color=#D381C9]Интересная модификация стандартной ID карты, работающая как электронная отмычка.[/color]
 corvax-hidden-desc-Emag-engineering = [color=#EFB341]Эту ID карту взломали и модифицировали таким образом, что техника ломается, пытаясь считать доступы владельца.[/color]

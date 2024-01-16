@@ -405,6 +405,17 @@
       seedId: gatfruit
     - type: Sprite
       sprite: Objects/Specific/Hydroponics/gatfruit.rsi
+    - type: HiddenDescription #Corvax MRP Hidden Description
+      entries:
+      - label: corvax-hidden-desc-Gatfruit-syndicate
+        whitelistMind:
+          components:
+            - TraitorRole
+            - NukeOperative
+      - label: corvax-hidden-desc-Gatfruit-botanist
+        jobRequired:
+          - Botanist
+          - Borg
 
 - type: entity
   parent: SeedBase
