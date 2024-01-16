@@ -129,6 +129,19 @@
     fixtureId: "throw-fixture"
   - type: SolutionTransfer
     maxTransferAmount: 7
+  - type: HiddenDescription #Corvax MRP Hidden Description
+    entries:
+    - label: corvax-hidden-desc-hypodart-syndicate
+      whitelistMind:
+        components:
+          - TraitorRole
+          - NukeOperative
+    - label: corvax-hidden-desc-hypodart-research
+      jobRequired:
+        - ResearchAssistant
+        - ResearchDirector
+        - Scientist
+        - Borg
 
 - type: entity
   name: dartboard
