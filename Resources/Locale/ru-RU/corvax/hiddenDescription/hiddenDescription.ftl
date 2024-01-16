@@ -1,2 +1,3 @@
-emag-only-thief = [color=yellow]Ого! Ценная находка для вора![/color]
-emag-only-traitor = [color=red] ЕМААГГАГАГ![/color]
+corvax-hidden-desc-emag-syndicate = [color=#78081b]Универсальное хакерское устройство синдиката. Знаковый EMAG.[/color]
+corvax-hidden-desc-emag-research = [color=#D381C9]Интересная модификация стандартной ID карты, работающая как электронная отмычка.[/color]
+corvax-hidden-desc-emag-engineering = [color=#EFB341]Эту ID карту взломали и модифицировали таким образом, что техника ломается, пытаясь считать доступы владельца.[/color]

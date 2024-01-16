@@ -14,16 +14,23 @@
     sprite: Objects/Tools/emag.rsi
   - type: HiddenDescription #Corvax MRP Hidden Description
     entries:
-    - label: emag-only-thief
-      whitelistMind:
-        components:
-          - ThiefRole
-    - label: emag-only-traitor
+    - label: corvax-hidden-desc-emag-syndicate
       whitelistMind:
         components:
           - TraitorRole
+          - NukeOperative
+    - label: corvax-hidden-desc-emag-research
       jobRequired:
-        - Captain
+        - ResearchAssistant
+        - ResearchDirector
+        - Scientist
+        - Borg
+    - label: corvax-hidden-desc-emag-engineering
+      jobRequired:
+        - ChiefEngineer
+        - AtmosphericTechnician
+        - StationEngineer
+        - TechnicalAssistant
     
 - type: entity
   parent: BaseItem
