@@ -1,8 +1,10 @@
 using Content.Server.Mind;
 using Content.Server.Power.Components;
+using Content.Server.Roles;
 using Content.Server.Speech.Components;
 using Content.Shared.Actions;
 using Content.Shared.Backmen.StationAI;
+using Content.Shared.Backmen.StationAI.Components;
 using Content.Shared.Eye;
 using Content.Shared.Mind;
 using Content.Shared.Mind.Components;
@@ -160,6 +162,11 @@ public sealed class AIEyePowerSystem : EntitySystem
         // Consistent name
         _metaDataSystem.SetEntityName(projection, core.EntityName != "" ? core.EntityName : "Invalid AI");
         EntityManager.InitializeAndStartEntity(projection, coords.GetMapId(EntityManager));
+
+        if (TryComp<BrokenAiComponent>(uid, out _))
+        {
+            _entityManager.AddComponent<BrokenAiComponent>(projection);
+        }
 
         _transformSystem.AttachToGridOrMap(projection);
         _mindSystem.Visit(mindId, projection, mind); // Mind swap

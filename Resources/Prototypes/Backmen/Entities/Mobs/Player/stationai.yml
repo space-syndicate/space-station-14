@@ -63,16 +63,6 @@
         - AllAccess
     # Wow, this is a lot of reoccurrances
     - type: IntrinsicRadioReceiver
-      channels:
-        - Binary
-        - Common
-        - Command
-        - CentCom
-        - Engineering
-        - Medical
-        - Science
-        - Security
-        - Service
     - type: IntrinsicRadioTransmitter
       channels:
         - Binary

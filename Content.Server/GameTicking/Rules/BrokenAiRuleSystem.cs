@@ -1,52 +1,28 @@
 using System.Linq;
 using Content.Server.Administration.Managers;
-using Content.Server.Antag;
 using Content.Server.Chat.Managers;
 using Content.Server.GameTicking.Rules.Components;
 using Content.Server.Mind;
 using Content.Server.NPC.Systems;
 using Content.Server.Objectives;
-using Content.Server.PDA.Ringer;
+using Content.Server.Radio.Components;
 using Content.Server.Roles;
-using Content.Server.Shuttles.Components;
-using Content.Server.Traitor.Uplink;
 using Content.Shared.Administration;
-using Content.Shared.CCVar;
-using Content.Shared.Dataset;
-using Content.Shared.Mind;
-using Content.Shared.Mobs.Systems;
-using Content.Shared.Objectives.Components;
+using Content.Shared.Backmen.StationAI.Components;
 using Content.Shared.PDA;
-using Content.Shared.Preferences;
 using Content.Shared.Roles;
-using Content.Shared.Roles.Jobs;
-using Robust.Server.Player;
-using Robust.Shared.Audio;
-using Robust.Shared.Audio.Systems;
-using Robust.Shared.Configuration;
 using Robust.Shared.Player;
 using Robust.Shared.Prototypes;
-using Robust.Shared.Random;
-using Robust.Shared.Timing;
 
 namespace Content.Server.GameTicking.Rules;
 
 public sealed class BrokenAiRuleSystem : GameRuleSystem<BrokenAiRuleComponent>
 {
-    [Dependency] private readonly AntagSelectionSystem _antagSelection = default!;
     [Dependency] private readonly IPrototypeManager _prototypeManager = default!;
-    [Dependency] private readonly IRobustRandom _random = default!;
-    [Dependency] private readonly IConfigurationManager _cfg = default!;
     [Dependency] private readonly IChatManager _chatManager = default!;
-    [Dependency] private readonly IGameTiming _gameTiming = default!;
     [Dependency] private readonly NpcFactionSystem _npcFaction = default!;
-    [Dependency] private readonly MobStateSystem _mobStateSystem = default!;
-    [Dependency] private readonly UplinkSystem _uplink = default!;
-    [Dependency] private readonly SharedAudioSystem _audioSystem = default!;
     [Dependency] private readonly MindSystem _mindSystem = default!;
     [Dependency] private readonly SharedRoleSystem _roleSystem = default!;
-    [Dependency] private readonly SharedJobSystem _jobs = default!;
-    [Dependency] private readonly ObjectivesSystem _objectives = default!;
     [Dependency] private readonly IAdminManager _adminManager = default!;
 
     public override void Initialize()
@@ -55,8 +31,27 @@ public sealed class BrokenAiRuleSystem : GameRuleSystem<BrokenAiRuleComponent>
 
         SubscribeLocalEvent<PlayerSpawnCompleteEvent>(HandleSpawn);
 
+        SubscribeLocalEvent<BrokenAiComponent, ComponentStartup>(OnRoleStart);
+
         SubscribeLocalEvent<BrokenAiRuleComponent, ObjectivesTextGetInfoEvent>(OnObjectivesTextGetInfo);
         SubscribeLocalEvent<BrokenAiRuleComponent, ObjectivesTextPrependEvent>(OnObjectivesTextPrepend);
+    }
+
+    private void OnRoleStart(EntityUid uid, BrokenAiComponent component, ComponentStartup args)
+    {
+        if (TryComp<IntrinsicRadioTransmitterComponent>(uid, out var transmitterComponent))
+        {
+            transmitterComponent.Channels.Add(component.BrokenAiSyndicateChannel);
+
+            Dirty(uid, transmitterComponent);
+        }
+
+        if (TryComp<ActiveRadioComponent>(uid, out var radio))
+        {
+            radio.Channels.Add(component.BrokenAiSyndicateChannel);
+
+            Dirty(uid, radio);
+        }
     }
 
     private void HandleSpawn(PlayerSpawnCompleteEvent ev)
@@ -74,12 +69,12 @@ public sealed class BrokenAiRuleSystem : GameRuleSystem<BrokenAiRuleComponent>
 
             if (ev.JobId is "SAI")
             {
-                BreakAi(ev.Player, component);
+                BreakAi(ev.Player, component, ev.Mob);
             }
         }
     }
 
-    private void BreakAi(ICommonSession evPlayer, BrokenAiRuleComponent component)
+    private void BreakAi(ICommonSession evPlayer, BrokenAiRuleComponent component, EntityUid aiEnt)
     {
         if (!_mindSystem.TryGetMind(evPlayer, out var mindId, out var mind))
         {
@@ -109,6 +104,8 @@ public sealed class BrokenAiRuleSystem : GameRuleSystem<BrokenAiRuleComponent>
 
         _roleSystem.MindAddRole(mindId, brokenAiRole, mind);
         _roleSystem.MindPlaySound(mindId, component.GreetSoundNotification, mind);
+
+        AddComp<BrokenAiComponent>(aiEnt);
 
         SendBrokenAiBriefing(mindId);
 
