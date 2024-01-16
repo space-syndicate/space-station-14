@@ -58325,18 +58325,6 @@ entities:
     - pos: -14.30331,-8.459229
       parent: 1
       type: Transform
-- proto: NanoManipulatorStockPart
-  entities:
-  - uid: 9501
-    components:
-    - pos: -3.015568,-31.493607
-      parent: 1
-      type: Transform
-  - uid: 9502
-    components:
-    - pos: -3.960114,-31.306107
-      parent: 1
-      type: Transform
 - proto: NetworkConfigurator
   entities:
   - uid: 5602

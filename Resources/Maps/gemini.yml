@@ -124973,28 +124973,6 @@ entities:
     - type: Transform
       pos: -16.538208,47.724583
       parent: 2
-- proto: NanoManipulatorStockPart
-  entities:
-  - uid: 17827
-    components:
-    - type: Transform
-      pos: 29.112154,8.763625
-      parent: 2
-  - uid: 17828
-    components:
-    - type: Transform
-      pos: 24.305136,6.5232573
-      parent: 2
-  - uid: 17829
-    components:
-    - type: Transform
-      pos: 24.585646,6.4595356
-      parent: 2
-  - uid: 17830
-    components:
-    - type: Transform
-      pos: 28.999851,8.529497
-      parent: 2
 - proto: NettleSeeds
   entities:
   - uid: 17832

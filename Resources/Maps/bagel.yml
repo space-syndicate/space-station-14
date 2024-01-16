@@ -110710,23 +110710,6 @@ entities:
     - type: Transform
       pos: -8.327919,25.771437
       parent: 60
-- proto: NanoManipulatorStockPart
-  entities:
-  - uid: 9474
-    components:
-    - type: Transform
-      pos: -66.53229,9.621169
-      parent: 60
-  - uid: 19181
-    components:
-    - type: Transform
-      pos: 23.305836,21.651909
-      parent: 60
-  - uid: 19182
-    components:
-    - type: Transform
-      pos: 23.430836,21.558159
-      parent: 60
 - proto: NitrogenCanister
   entities:
   - uid: 2736

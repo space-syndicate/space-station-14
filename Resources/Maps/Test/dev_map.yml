@@ -4433,13 +4433,6 @@ entities:
     - type: NetworkConfigurator
       devices:
         'UID: 31739': 801
-- proto: NanoManipulatorStockPart
-  entities:
-  - uid: 456
-    components:
-    - type: Transform
-      pos: -5.920577,8.817795
-      parent: 179
 - proto: NitrogenCanister
   entities:
   - uid: 459
@@ -5343,13 +5336,6 @@ entities:
     components:
     - type: Transform
       pos: -6.5,-13.5
-      parent: 179
-- proto: SuperCapacitorStockPart
-  entities:
-  - uid: 296
-    components:
-    - type: Transform
-      pos: -4.3012447,8.817795
       parent: 179
 - proto: SurveillanceCameraGeneral
   entities:
