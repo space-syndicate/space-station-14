@@ -448,7 +448,24 @@
                   max: 1
     - type: StaticPrice
       price: 350
-
+    - type: HiddenDescription #Corvax MRP Hidden Description
+      entries:
+      - label: corvax-hidden-desc-EnergyShield-syndicate
+        whitelistMind:
+          components:
+            - TraitorRole
+            - NukeOperative
+      - label: corvax-hidden-desc-EnergyShield-security
+        jobRequired:
+          - HeadOfSecurity
+          - Detective
+          - SecurityCadet
+          - SecurityOfficer
+          - Warden
+      - label: corvax-hidden-desc-EnergyShield-cargo
+        jobRequired:
+          - SalvageSpecialist
+        
 - type: entity
   name: broken energy shield
   parent: BaseItem
@@ -462,6 +479,23 @@
       sprite: Objects/Weapons/Melee/e_shield.rsi
       size: Small
       heldPrefix: eshield
+    - type: HiddenDescription #Corvax MRP Hidden Description
+      entries:
+      - label: corvax-hidden-desc-EnergyShield-syndicate
+        whitelistMind:
+          components:
+            - TraitorRole
+            - NukeOperative
+      - label: corvax-hidden-desc-EnergyShield-security
+        jobRequired:
+          - HeadOfSecurity
+          - Detective
+          - SecurityCadet
+          - SecurityOfficer
+          - Warden
+      - label: corvax-hidden-desc-EnergyShield-cargo
+        jobRequired:
+          - SalvageSpecialist
 
 - type: entity
   name: telescopic shield

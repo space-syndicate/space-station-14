@@ -36,8 +36,26 @@ corvax-hidden-desc-HolyHandGrenade-research = [color=#D381C9]Внутри это
 corvax-hidden-desc-SpiderCharge-ninja = [color=#14e397]Взрывы подобны солнцу. Это солнце ярко осветит гибель станции.[/color]
 corvax-hidden-desc-SpiderCharge-research = [color=#D381C9]Это грязная бомба. Не стоит ее активировать.[/color]
 
-corvax-hidden-desc-Gatfruit-syndicate = [color=#14e397]Гатфрукт и его плоды - прекрасный способ раздобыть летальный огнестрел.[/color]
+corvax-hidden-desc-Gatfruit-syndicate = [color=#e31735]Гатфрукт и его плоды - прекрасный способ раздобыть летальный огнестрел.[/color]
 corvax-hidden-desc-Gatfruit-botanist = [color=#9be330]Из плодов этого растения можно вырастить огнестрельное оружие![/color]
+
+corvax-hidden-desc-EnergySword-syndicate = [color=#e31735]Настоящий энергетический меч, с помощью которого можно отбивать пули и резать людей как масло.[/color]
+corvax-hidden-desc-EnergySword-security = [color=#DE3A3A]Это не игрушечный меч! Это настоящее вражеское энергетическое оружие![/color]
+corvax-hidden-desc-EnergySword-cargo = [color=#A46106]Рукоять слишком технологична и эргономична для игрушки. Это настоящее оружие.[/color]
+
+corvax-hidden-desc-EnergyCutlass-pirate = [color=#A46106]Это настоящий убийственный энергетический меч, в стилистике абордажной сабли. Идеально для абордажа![/color]
+corvax-hidden-desc-EnergyCutlass-security = [color=#DE3A3A]Это не игрушечная сабля! Это настоящее вражеское энергетическое оружие![/color]
+corvax-hidden-desc-EnergyCutlass-cargo = [color=#A46106]Рукоять слишком технологична и эргономична для игрушки. Это настоящее энергетическое оружие.[/color]
+
+corvax-hidden-desc-EnergyDagger-syndicate = [color=#e31735]Незаметный энергетический кинжал, не оставляющий крови. Они и не поймут, что это оружие.[/color]
+corvax-hidden-desc-EnergyDagger-research = [color=#D381C9]Внутри этой ручки хитро замаскировано энергетическое оружие. Что-то сродни кинжала.[/color]
+
+corvax-hidden-desc-FireAxeFlaming-syndicate = [color=#e31735]Высокотемпературное энергетическое лезвие, незаметно встроенное в лезвие, может быть активировано по нажатию кнопки. Время сеять хаос.[/color]
+corvax-hidden-desc-FireAxeFlaming-research = [color=#D381C9]В этот топор встроили энергетическое лезвие крайне высокой температуры.[/color]
+
+corvax-hidden-desc-EnergyShield-syndicate = [color=#e31735]Настоящий экзотический энергетический щит, в сложенном состоянии может поместиться даже в кармане.[/color]
+corvax-hidden-desc-EnergyShield-security = [color=#DE3A3A]Это настоящее вражеское энергетическое оружие! Перед вами энергощит![/color]
+corvax-hidden-desc-EnergyShield-cargo = [color=#A46106]Вам знакома эта технология. Это энергощит.[/color]
 
 corvax-hidden-desc-Emag-syndicate = [color=#e31735]Универсальное хакерское устройство синдиката. Знаковый EMAG.[/color]
 corvax-hidden-desc-Emag-research = [color=#D381C9]Интересная модификация стандартной ID карты, работающая как электронная отмычка.[/color]

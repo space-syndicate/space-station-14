@@ -65,3 +65,16 @@
     quickEquip: false
     slots:
     - back
+  - type: HiddenDescription #Corvax MRP Hidden Description
+    entries:
+    - label: corvax-hidden-desc-FireAxeFlaming-syndicate
+      whitelistMind:
+        components:
+          - TraitorRole
+          - NukeOperative
+    - label: corvax-hidden-desc-FireAxeFlaming-research
+      jobRequired:
+        - ResearchAssistant
+        - ResearchDirector
+        - Scientist
+        - Borg
