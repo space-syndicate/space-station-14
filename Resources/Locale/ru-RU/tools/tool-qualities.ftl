@@ -20,5 +20,5 @@ tool-quality-woodcutting-name = Рубка дерева
 tool-quality-woodcutting-tool-name = Топор
 tool-quality-rolling-name = Раскатывание
 tool-quality-rolling-tool-name = Скалка
-tool-quality-digging-name = Digging
-tool-quality-digging-tool-name = Shovel
+tool-quality-digging-name = Копание
+tool-quality-digging-tool-name = Лопата
