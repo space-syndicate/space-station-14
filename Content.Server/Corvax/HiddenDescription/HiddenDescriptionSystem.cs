@@ -28,12 +28,14 @@ public sealed partial class HiddenDescriptionSystem : EntitySystem
 
         foreach (var item in hiddenDesc.Comp.Entries)
         {
+            //Show all secrets to the ghosts
             if (isGhost)
             {
                 args.PushMarkup(Loc.GetString(item.Label));
                 continue;
             }
 
+            //Check job
             bool isJobAllow = false;
             if (job != null && job.Prototype != null)
             {
@@ -43,12 +45,14 @@ public sealed partial class HiddenDescriptionSystem : EntitySystem
                 }
             }
 
+            //Check mind to whitelist
             bool isWhitelistPassed = false;
             if (item.WhitelistMind.IsValid(mindId))
             {
                 isWhitelistPassed = true;
             }
 
+            //final check
             if (item.NeedBoth)
             {
                 if (isWhitelistPassed && isJobAllow)
