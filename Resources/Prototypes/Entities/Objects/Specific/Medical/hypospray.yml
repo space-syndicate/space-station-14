@@ -417,12 +417,12 @@
     price: 75
   - type: HiddenDescription #Corvax MRP Hidden Description
     entries:
-    - label: corvax-hidden-desc-hypopen-syndicate
+    - label: corvax-hidden-desc-Hypopen-syndicate
       whitelistMind:
         components:
           - TraitorRole
           - NukeOperative
-    - label: corvax-hidden-desc-hypopen-research
+    - label: corvax-hidden-desc-Hypopen-research
       jobRequired:
         - ResearchAssistant
         - ResearchDirector

@@ -663,12 +663,12 @@
         type: ChameleonBoundUserInterface
   - type: HiddenDescription #Corvax MRP Hidden Description
     entries:
-    - label: corvax-hidden-desc-agent-id-syndicate
+    - label: corvax-hidden-desc-AgentIDCard-syndicate
       whitelistMind:
         components:
           - TraitorRole
           - NukeOperative
-    - label: corvax-hidden-desc-agent-id-research
+    - label: corvax-hidden-desc-AgentIDCard-research
       jobRequired:
         - ResearchAssistant
         - ResearchDirector
