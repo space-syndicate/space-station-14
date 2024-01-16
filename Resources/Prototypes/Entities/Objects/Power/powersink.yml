@@ -47,3 +47,22 @@
       state: powersink
     - type: WarpPoint
       location: powersink
+    - type: HiddenDescription #Corvax MRP Hidden Description
+      entries:
+      - label: corvax-hidden-desc-PowerSink-syndicate
+        whitelistMind:
+          components:
+            - TraitorRole
+            - NukeOperative
+      - label: corvax-hidden-desc-PowerSink-engineering
+        jobRequired:
+          - ChiefEngineer
+          - AtmosphericTechnician
+          - StationEngineer
+          - TechnicalAssistant
+      - label: corvax-hidden-desc-PowerSink-research
+        jobRequired:
+          - ResearchAssistant
+          - ResearchDirector
+          - Scientist
+          - Borg

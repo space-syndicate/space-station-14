@@ -21,7 +21,23 @@
   - type: Currency
     price:
       Telecrystal: 1
-
+  - type: HiddenDescription #Corvax MRP Hidden Description
+    entries:
+    - label: corvax-hidden-desc-Telecrystal-syndicate
+      whitelistMind:
+        components:
+          - TraitorRole
+          - NukeOperative
+    - label: corvax-hidden-desc-Telecrystal-cargo
+      jobRequired:
+        - SalvageSpecialist
+    - label: corvax-hidden-desc-Telecrystal-research
+      jobRequired:
+        - ResearchAssistant
+        - ResearchDirector
+        - Scientist
+        - Borg
+        
 - type: entity
   parent: Telecrystal
   id: Telecrystal1
