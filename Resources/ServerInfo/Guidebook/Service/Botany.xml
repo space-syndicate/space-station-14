@@ -73,4 +73,31 @@
 <GuideEntityEmbed Entity="DiseaseSwab"/>
 </Box>
 
+## Химические вещества
+Оказывается, простые лекарства тоже могут помогать растениям.
+
+Диловен выводит [color=green]токсины[/color] из растения и восстанавливает его [color=red]здоровье.
+<GuideReagentEmbed Reagent="Dylovene"/>
+Криоксадон чуть хуже выводит [color=green]токсины[/color], но зато лучше восстанавливает [color=red]здоровье[/color] растения. Особое влияние криоксадона - [color=lightgreen]омолаживание растений[/color]. Не вливайте больше 5 единиц иначе растение может откатится в семечко.
+<GuideReagentEmbed Reagent="Cryoxadone"/>
+Некросол аналогичен Криоксадону. 
+<GuideReagentEmbed Reagent="Necrosol"/>
+Фалангимин [color=green]отравляет растение токсинами[/color], но взамен уничтожает [color=lightgreen]ген смерти[/color] при мутации. Требуется минимум 4 единицы.
+<GuideReagentEmbed Reagent="Phalanximine"/>
+Диэтиламин снабжает растение питательными веществами, уничтожает вредителей, восстанавливает [color=red]здоровье[/color] и c некоторой вероятностью ускоряет рост. 
+<GuideReagentEmbed Reagent="Diethylamine"/>
+Аммиак снабжает растения питательными веществами и восстанавливает [color=red]здоровье[/color]. 
+<GuideReagentEmbed Reagent="Ammonia"/>
+EZ-Нутриент лучше всего снабжает растение питательными веществами. 
+<GuideReagentEmbed Reagent="EZNutrient"/>
+Left-4-Zed снабжает растение питательными веществами, [color=red]наносит вред здоровью[/color] и с некоторой вероятностью может изменить модификатор мутации, который влияет на уровень мутации.
+<GuideReagentEmbed Reagent="Left4Zed"/>
+Пестициды (PestKiller) [color=green]отравляет растение токсинами[/color], но взамен уничтожает вредителей. 
+<GuideReagentEmbed Reagent="PestKiller"/>
+Plant-B-Gone [color=green]отравляет растение токсинами[/color], [color=red]наносит вред здоровью[/color], уничтожает сорняки и изменяет модификатор мутации.
+<GuideReagentEmbed Reagent="PlantBGone"/>
+Гербициды (Убийца Сорняков) [color=green]отравляет растение токсинами[/color] и уничтожает сорняки.
+<GuideReagentEmbed Reagent="WeedKiller"/>
+Robust Harvest незначительно снабжает растение питательными веществами, с некоторой вероятностью создаёт сорняки. Особое влияение робаста - [color=lightgreen]увеличение потенции у растения[/color] на 3 за 1 единицу. С 15 единиц имеет шанс уменьшить число плодов. Не может увеличить потенцию выше 50.
+<GuideReagentEmbed Reagent="RobustHarvest"/>
 </Document>
