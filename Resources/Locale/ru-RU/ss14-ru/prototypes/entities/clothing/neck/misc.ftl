@@ -8,5 +8,5 @@ ent-ClothingNeckLawyerbadge = значок адвоката
     .desc = Значок, свидетельствующий что владелец является "законным" юристом, сдавшим экзамен НТ, необходимый для занятия юридической практикой.
 ent-ActionStethoscope = Прослушать стетоскопом
     .desc = { "" }
-ent-ClothingNeckFlowerWreath = flower wreath
-    .desc = A wreath of colourful flowers.
+ent-ClothingNeckFlowerWreath = цветочный венок
+    .desc = Венок из разноцветных цветов.

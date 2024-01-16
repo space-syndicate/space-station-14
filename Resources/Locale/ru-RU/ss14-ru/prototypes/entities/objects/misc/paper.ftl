@@ -1,5 +1,7 @@
 ent-Paper = бумага
     .desc = Лист белой бумаги.
+ent-PaperScrap = обрывки бумаги
+    .desc = Скомканный лист белой бумаги.
 ent-PaperOffice = офисная бумага
     .desc = Лист белой офисной бумаги.
 ent-PaperArtifactAnalyzer = распечатка анализатора артефактов
