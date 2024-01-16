@@ -19,20 +19,11 @@ public sealed partial class HiddenDescriptionSystem : EntitySystem
 
     private void OnExamine(Entity<HiddenDescriptionComponent> hiddenDesc, ref ExaminedEvent args)
     {
-        var isGhost = TryComp<GhostComponent>(args.Examiner, out var _);
-
         _mind.TryGetMind(args.Examiner, out var mindId, out var mindComponent);
         TryComp<JobComponent>(mindId, out var job);
 
         foreach (var item in hiddenDesc.Comp.Entries)
         {
-            //Show all secrets to the ghosts
-            if (isGhost)
-            {
-                args.PushMarkup(Loc.GetString(item.Label), hiddenDesc.Comp.PushPriority);
-                continue;
-            }
-
             //Check job
             bool isJobAllow = false;
             if (job != null && job.Prototype != null)
