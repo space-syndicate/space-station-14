@@ -13,16 +13,17 @@
   - type: Item
     sprite: Objects/Tools/emag.rsi
   - type: HiddenDescription #Corvax MRP Hidden Description
-    mindWhitelistData:
-      emag-only-thief:
+    entries:
+    - label: emag-only-thief
+      whitelistMind:
         components:
           - ThiefRole
-      emag-only-traitor:
+    - label: emag-only-traitor
+      whitelistMind:
         components:
           - TraitorRole
-    jobData:
-      emag-only-traitor: 
-        - Chaplain
+      jobRequired:
+        - Captain
     
 - type: entity
   parent: BaseItem
