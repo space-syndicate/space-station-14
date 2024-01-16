@@ -7,7 +7,7 @@ rotting-rotting = [color=orange]{ CAPITALIZE(SUBJECT($target)) } { $gender ->
         [female] гниёт
         [epicene] гниют
        *[neuter] гниёт
-    } ![/color]
+    }![/color]
 rotting-bloated = [color=orangered]{ CAPITALIZE(SUBJECT($target)) } { $gender ->
         [male] вздулся
         [female] вздулась
