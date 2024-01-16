@@ -661,6 +661,19 @@
         type: AgentIDCardBoundUserInterface
       - key: enum.ChameleonUiKey.Key
         type: ChameleonBoundUserInterface
+  - type: HiddenDescription #Corvax MRP Hidden Description
+    entries:
+    - label: corvax-hidden-desc-agent-id-syndicate
+      whitelistMind:
+        components:
+          - TraitorRole
+          - NukeOperative
+    - label: corvax-hidden-desc-agent-id-research
+      jobRequired:
+        - ResearchAssistant
+        - ResearchDirector
+        - Scientist
+        - Borg
 
 - type: entity
   name: passenger ID card
