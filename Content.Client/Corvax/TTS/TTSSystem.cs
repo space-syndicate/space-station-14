@@ -63,7 +63,7 @@ public sealed class TTSSystem : EntitySystem
         var filePath = new ResPath($"{_fileIdx++}.ogg");
         _contentRoot.AddOrUpdateFile(filePath, ev.Data);
 
-        var audioParams = AudioParams.Default.WithVolume(volume);
+        var audioParams = AudioParams.Default.WithVolume(0);
         var soundPath = new SoundPathSpecifier(Prefix / filePath, audioParams);
         if (ev.SourceUid != null)
         {
