@@ -73,7 +73,7 @@ corvax-hidden-desc-TrackingImplanter-research = [color=#D381C9]Это треке
 corvax-hidden-desc-MindShieldImplanter-research = [color=#D381C9]Это имплант "Щит разума". Гарантирует лояльность корпорации Nanotrasen и предотвращает воздействие устройств контроля сознания.[/color]
 corvax-hidden-desc-StorageImplanter-research = [color=#D381C9]Это имплантер подкожного хранилища. Позволяет организовать скрытое хранилище внутри тела с использованием блюспейс-технологии.[/color]
 corvax-hidden-desc-FreedomImplanter-research = [color=#D381C9]Это имплантер свободы. Позволяет пользователю до трёх раз вырваться из наручников, прежде чем он перестанет функционировать.[/color]
-corvax-hidden-desc-UplinkImplanter-research = [color=#D381C9]Это имплантер черного рынка. Позволяет владельцу пользоваться черным рынком.[/color]
+corvax-hidden-desc-UplinkImplanter-research = [color=#D381C9]Это имплантер чёрного рынка. Позволяет владельцу пользоваться чёрным рынком.[/color]
 corvax-hidden-desc-EmpImplanter-research = [color=#D381C9]Это ЭМИ-имплантер. Позволяет владельцу испускать электромагнитные импульсы, нарушающие работу электроники.[/color]
 corvax-hidden-desc-ScramImplanter-research = [color=#D381C9]Это имплантер побега. Позволяет совершать экстренные неконтролируемые телепортации на большие расстояния.[/color]
 corvax-hidden-desc-DnaScramblerImplanter-research = [color=#D381C9]Это имплантер ДНК-миксера. Позволяет пользователю один раз произвольно изменить свою внешность и имя.[/color]
