@@ -56,19 +56,24 @@ public sealed class TTSSystem : EntitySystem
     {
         _sawmill.Debug($"Play TTS audio {ev.Data.Length} bytes from {ev.SourceUid} entity");
 
-        var volume = _volume;
-        if (ev.IsWhisper)
-            volume -= 4;
+        var sourceUid = GetEntity(ev.SourceUid);
+
+        if (sourceUid == null || !TryComp<TTSComponent>(sourceUid, out var ttsComponent))
+        {
+            return;
+        }
+
+        var volume = AdjustVolume(ttsComponent, ev.IsWhisper);
 
         var filePath = new ResPath($"{_fileIdx++}.ogg");
         _contentRoot.AddOrUpdateFile(filePath, ev.Data);
 
-        var audioParams = AudioParams.Default.WithVolume(0);
+        var audioParams = AudioParams.Default.WithVolume(volume);
         var soundPath = new SoundPathSpecifier(Prefix / filePath, audioParams);
         if (ev.SourceUid != null)
         {
-            var sourceUid = GetEntity(ev.SourceUid.Value);
-            _audio.PlayEntity(soundPath, new EntityUid(), sourceUid); // recipient arg ignored on client
+
+            _audio.PlayEntity(soundPath, new EntityUid(), sourceUid.Value); // recipient arg ignored on client
         }
         else
         {
@@ -76,5 +81,17 @@ public sealed class TTSSystem : EntitySystem
         }
 
         _contentRoot.RemoveFile(filePath);
+    }
+
+    private float AdjustVolume(TTSComponent ttsComponent, bool isWhisper)
+    {
+        var volume = ttsComponent.MinimalVolume + SharedAudioSystem.GainToVolume(_volume);
+
+        if (isWhisper)
+        {
+            volume -= SharedAudioSystem.GainToVolume(ttsComponent.WhisperFade);
+        }
+
+        return volume;
     }
 }
