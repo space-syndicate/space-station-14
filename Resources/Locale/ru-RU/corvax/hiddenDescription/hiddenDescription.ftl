@@ -109,7 +109,7 @@ corvax-hidden-desc-PowerSink-research = [color=#D381C9]Крайне неэффе
 corvax-hidden-desc-ReinforcementRadio-research = [color=#D381C9]Внутри скрыт маяк для блюспейс-телепортера. В любой момент он может активироваться, призвав кого-то с неизвестных координат.[/color]
 corvax-hidden-desc-ReinforcementRadio-engineering = [color=#EFB341]Внутри скрыт маяк для блюспейс-телепортера. В любой момент он может активироваться, призвав кого-то с неизвестных координат.[/color]
 
-corvax-hidden-desc-ReinforcementRadioSyndicate-syndicate = [color=#e31735]Это маяк-телепортер для агента подкрепления Синдиката. Еще одна пара рук для преступлений.[/color]
+corvax-hidden-desc-ReinforcementRadioSyndicate-syndicate = [color=#e31735]Это маяк-телепортер для агента подкрепления Синдиката. Ещё одна пара рук для преступлений.[/color]
 corvax-hidden-desc-ReinforcementRadioSyndicateMonkey-syndicate = [color=#e31735]Это маяк-телепортер для макаки подкрепления Синдиката. Еще одна лапа для преступлений.[/color]
 corvax-hidden-desc-ReinforcementRadioSyndicateCyborgAssault-syndicate = [color=#e31735]Это маяк-телепортер для штурмового борга Синдиката. Машина для убийств и диверсий к вашим услугам.[/color]
 
