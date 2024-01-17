@@ -1,3 +1,4 @@
+# Corvax-HiddenDesc-Start
 ent-HoloparasiteInjector = имплантер
     .suffix = инъектор голопаразита
     .desc = Одноразовый шприц, специально предназначенный для введения подкожных имплантов.
@@ -12,3 +13,4 @@ ent-BoxHoloparasite = коробка
 ent-BoxHoloclown = коробка
     .suffix = коробка с голоклоуном
     .desc = Розовая коробка с изображением клоуна.
+# Corvax-HiddenDesc-End
