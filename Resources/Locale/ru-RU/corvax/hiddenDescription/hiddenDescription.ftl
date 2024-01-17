@@ -57,7 +57,7 @@ corvax-hidden-desc-EnergyShield-syndicate = [color=#e31735]Настоящий э
 corvax-hidden-desc-EnergyShield-security = [color=#DE3A3A]Это настоящее вражеское энергетическое оружие! Перед вами энергощит![/color]
 corvax-hidden-desc-EnergyShield-cargo = [color=#A46106]Вам знакома эта технология. Это энергощит.[/color]
 
-corvax-hidden-desc-IllegalImplants-medical = [color=#52B4E9]Сверив серийные номера, вы понимаете что это несертифицированный имплантер.[/color]
+corvax-hidden-desc-IllegalImplants-medical = [color=#52B4E9]Сверив серийные номера, вы понимаете, что это несертифицированный имплантер.[/color]
 corvax-hidden-desc-LegalImplants-medical = [color=#52B4E9]Сверив серийные номера, вы понимаете что это легальный, сертифицированный имплантер.[/color]
 
 corvax-hidden-desc-HoloparasiteInjector-syndicate = [color=#e31735]Сложнейшее произведение искусства, основанное на наномашинах, позволяющее пользователю стать носителем опаснейшнего голопаразита.[/color]
