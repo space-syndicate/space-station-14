@@ -127,6 +127,14 @@
             - MachineMask
           layer:
             - MachineLayer
+    - type: Destructible
+      thresholds:
+      - trigger:
+          !type:DamageTrigger
+          damage: 1000
+        behaviors:
+        - !type:DoActsBehavior
+          acts: [ "Destruction" ]
     - type: Anchorable
       delay: 5
     - type: Transform
