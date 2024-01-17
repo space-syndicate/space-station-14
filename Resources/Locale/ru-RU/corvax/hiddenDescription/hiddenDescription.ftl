@@ -99,7 +99,7 @@ corvax-hidden-desc-DeathRattleImplanter-syndicate = [color=#e31735]Это имп
 corvax-hidden-desc-DeathAcidifierImplanter-syndicate = [color=#e31735]Это имплант предсмертного хрипа. Сообщит в радиоканал Синдиката, если носитель окажется в критическом состоянии или погибнет.[/color]
 
 corvax-hidden-desc-Emag-syndicate = [color=#e31735]Универсальное хакерское устройство синдиката. Знаковый EMAG.[/color]
-corvax-hidden-desc-Emag-research = [color=#D381C9]Интересная модификация стандартной ID карты, работающая как электронная отмычка.[/color]
+corvax-hidden-desc-Emag-research = [color=#D381C9]Интересная модификация стандартной ID карты, работающая, как электронная отмычка.[/color]
 corvax-hidden-desc-Emag-engineering = [color=#EFB341]Эту ID карту взломали и модифицировали таким образом, что техника ломается, пытаясь считать доступы владельца.[/color]
 
 corvax-hidden-desc-PowerSink-syndicate = [color=#e31735]Это поглотитель энергии. Крайне неэффективен как прибор, но крайне эффективно пожирает тонны энергии из электросети.[/color]
