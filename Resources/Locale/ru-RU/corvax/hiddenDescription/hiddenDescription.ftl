@@ -36,7 +36,7 @@ corvax-hidden-desc-HolyHandGrenade-research = [color=#D381C9]Внутри это
 corvax-hidden-desc-SpiderCharge-ninja = [color=#14e397]Взрывы подобны солнцу. Свет ярко озарит гибель станции.[/color]
 corvax-hidden-desc-SpiderCharge-research = [color=#D381C9]Это грязная бомба. Не стоит её активировать.[/color]
 
-corvax-hidden-desc-Gatfruit-syndicate = [color=#e31735]Гатфрукт и его плоды - прекрасный способ раздобыть летальный огнестрел.[/color]
+corvax-hidden-desc-Gatfruit-syndicate = [color=#e31735]Гатфрукт и его плоды - прекрасный способ раздобыть огнестрел.[/color]
 corvax-hidden-desc-Gatfruit-botanist = [color=#9be330]Из плодов этого растения можно вырастить огнестрельное оружие![/color]
 
 corvax-hidden-desc-EnergySword-syndicate = [color=#e31735]Настоящий энергетический меч, с помощью которого можно отбивать пули и резать людей как масло.[/color]
