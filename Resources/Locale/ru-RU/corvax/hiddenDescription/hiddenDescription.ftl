@@ -53,7 +53,7 @@ corvax-hidden-desc-EnergyDagger-research = [color=#D381C9]Внутри этой 
 corvax-hidden-desc-FireAxeFlaming-syndicate = [color=#e31735]Высокотемпературное энергетическое лезвие, незаметно встроенное в лезвие, может быть активировано по нажатию кнопки. Время сеять хаос.[/color]
 corvax-hidden-desc-FireAxeFlaming-research = [color=#D381C9]В этот топор встроили энергетическое лезвие крайне высокой температуры.[/color]
 
-corvax-hidden-desc-EnergyShield-syndicate = [color=#e31735]Настоящий экзотический энергетический щит, в сложенном состоянии может поместиться даже в кармане.[/color]
+corvax-hidden-desc-EnergyShield-syndicate = [color=#e31735]Настоящий экзотический энергетический щит. В сложенном состоянии может поместиться даже в кармане.[/color]
 corvax-hidden-desc-EnergyShield-security = [color=#DE3A3A]Это настоящее вражеское энергетическое оружие! Перед вами энергощит![/color]
 corvax-hidden-desc-EnergyShield-cargo = [color=#A46106]Вам знакома эта технология. Это энергощит.[/color]
 
