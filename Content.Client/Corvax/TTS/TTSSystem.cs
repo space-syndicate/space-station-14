@@ -70,16 +70,8 @@ public sealed class TTSSystem : EntitySystem
 
         var audioParams = AudioParams.Default.WithVolume(volume);
         var soundPath = new SoundPathSpecifier(Prefix / filePath, audioParams);
-        if (ev.SourceUid != null)
-        {
 
-            _audio.PlayEntity(soundPath, new EntityUid(), sourceUid.Value); // recipient arg ignored on client
-        }
-        else
-        {
-            _audio.PlayGlobal(soundPath, Filter.Local(), false);
-        }
-
+        _audio.PlayEntity(soundPath, new EntityUid(), sourceUid.Value); // recipient arg ignored on client
         _contentRoot.RemoveFile(filePath);
     }
 
