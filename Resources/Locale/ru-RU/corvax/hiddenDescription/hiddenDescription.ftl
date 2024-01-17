@@ -117,5 +117,5 @@ corvax-hidden-desc-BibleNecronomicon-syndicate = [color=#e31735]Проклята
 corvax-hidden-desc-BibleNecronomicon-service = [color=#9FED58]Этот древний фолиант пропитан проклятой энергией и однозначно не принесёт ничего хорошего. От него веет злобой.[/color]
 
 corvax-hidden-desc-Telecrystal-syndicate = [color=#e31735]Валюта чёрного рынка синдиката. Позволяет покупать через редспейс пространство посредством аплинка различное нелегальное вооружение.[/color]
-corvax-hidden-desc-Telecrystal-cargo = [color=#D381C9]Выглядят как необычные фрагменты артефактов.[/color]
+corvax-hidden-desc-Telecrystal-cargo = [color=#D381C9]Выглядят, как необычные фрагменты артефактов.[/color]
 corvax-hidden-desc-Telecrystal-research = [color=#A46106]Эти кристаллы изучают аномальное редспейс-излучение.[/color]
