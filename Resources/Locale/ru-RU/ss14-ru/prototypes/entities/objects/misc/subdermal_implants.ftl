@@ -1,6 +1,6 @@
 ent-BaseSubdermalImplant = имплант
     .desc = Микрочип, который вживляют под кожу.
-# Corvax anti-meta localization start
+# Corvax-HiddenDesc-Start
 ent-SadTromboneImplant = { ent-BaseSubdermalImplant }
     .desc = { ent-BaseSubdermalImplant.desc }
 ent-LightImplant = { ent-BaseSubdermalImplant }
@@ -31,4 +31,4 @@ ent-DeathRattleImplant = { ent-BaseSubdermalImplant }
     .desc = { ent-BaseSubdermalImplant.desc }
 ent-MindShieldImplant = { ent-BaseSubdermalImplant }
     .desc = { ent-BaseSubdermalImplant.desc }
-# Corvax anti-meta localization end
+# Corvax-HiddenDesc-End
