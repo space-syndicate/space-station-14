@@ -1,6 +1,7 @@
 using Robust.Shared.Prototypes;
 using Content.Shared.Random;
 using Content.Shared.Silicons.Laws;
+using Robust.Shared.Audio;
 
 namespace Content.Shared.Backmen.StationAI;
 
@@ -20,4 +21,7 @@ public sealed partial class StationAIComponent : Component
 
     [ViewVariables(VVAccess.ReadWrite)]
     public SiliconLawsetPrototype? SelectedLaw;
+
+    public readonly SoundSpecifier AiDeath =
+        new SoundPathSpecifier("/Audio/Machines/AI/borg_death.ogg");
 }

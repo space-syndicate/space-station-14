@@ -219,9 +219,6 @@ public sealed class AIEyePowerSystem : EntitySystem
         component.AiCore.Value.Comp.ActiveEye = EntityUid.Invalid;
     }
 
-    private static readonly SoundSpecifier AIDeath =
-        new SoundPathSpecifier("Audio/Machines/AI/borg_death.ogg");
-
     private void OnMobStateChanged(EntityUid uid, StationAIComponent component, MobStateChangedEvent args)
     {
         if (!_mobState.IsDead(uid))
@@ -232,6 +229,6 @@ public sealed class AIEyePowerSystem : EntitySystem
             ClearState(component.ActiveEye);
         }
 
-        _audioSystem.PlayPvs(AIDeath, uid);
+        _audioSystem.PlayPvs(component.AiDeath, uid);
     }
 }
