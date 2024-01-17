@@ -1,3 +1,4 @@
+# Corvax-HiddenDesc-Start
 ent-ReinforcementRadioSyndicate = старое радио
     .suffix = радио подкрепления Cиндиката
     .desc = Винтажное радио с незнакомыми частотами.
@@ -13,3 +14,4 @@ ent-ReinforcementRadioSyndicateMonkeyNukeops = { ent-ReinforcementRadioSyndicate
 ent-ReinforcementRadioSyndicateCyborgAssault = { ent-ReinforcementRadioSyndicate }
     .desc = { ent-ReinforcementRadioSyndicate.desc }
     .suffix = Ядерные оперативники
+# Corvax-HiddenDesc-End
