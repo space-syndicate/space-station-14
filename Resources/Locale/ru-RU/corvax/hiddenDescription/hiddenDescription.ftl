@@ -34,7 +34,7 @@ corvax-hidden-desc-HolyHandGrenade-syndicate = [color=#e31735]Святая гр�
 corvax-hidden-desc-HolyHandGrenade-research = [color=#D381C9]Внутри этой державы установлен очень сильный взрывной заряд.[/color]
 
 corvax-hidden-desc-SpiderCharge-ninja = [color=#14e397]Взрывы подобны солнцу. Свет ярко озарит гибель станции.[/color]
-corvax-hidden-desc-SpiderCharge-research = [color=#D381C9]Это грязная бомба. Не стоит ее активировать.[/color]
+corvax-hidden-desc-SpiderCharge-research = [color=#D381C9]Это грязная бомба. Не стоит её активировать.[/color]
 
 corvax-hidden-desc-Gatfruit-syndicate = [color=#e31735]Гатфрукт и его плоды - прекрасный способ раздобыть летальный огнестрел.[/color]
 corvax-hidden-desc-Gatfruit-botanist = [color=#9be330]Из плодов этого растения можно вырастить огнестрельное оружие![/color]
