@@ -49,7 +49,7 @@ public readonly partial record struct HiddenDescriptionEntry()
     public List<ProtoId<JobPrototype>> JobRequired { get; init; } = new();
 
     /// <summary>
-    /// If true, the player needs to go through and whitelist, and have some job. By default, one of two successful checks is sufficient.
+    /// If true, the player needs to go through and whitelist, and have some job. By default, at least one successful checks is sufficient.
     /// </summary>
     [DataField]
     public bool NeedAllCheck { get; init; } = false;
