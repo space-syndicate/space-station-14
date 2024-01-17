@@ -7,4 +7,4 @@ ent-BulletPistolRubber = пуля (.35 авто резиновая)
 ent-BulletPistolIncendiary = пуля (.35 авто зажигательная)
     .desc = { ent-BaseBulletIncendiary.desc }
 ent-BulletPistolUranium = пуля (.35 авто урановая)
-    .desc = { ent-BaseBullet.desc }
+    .desc = { ent-BaseBulletUranium.desc }

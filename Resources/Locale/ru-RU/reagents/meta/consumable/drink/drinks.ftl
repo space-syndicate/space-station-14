@@ -56,3 +56,5 @@ reagent-name-the-martinez = Мартинес
 reagent-desc-the-martinez = Легенда среди киберпанков. Вспоминается по напитку, забывается по пьяни.
 reagent-name-white-gilgamesh = белый Гильгамеш
 reagent-desc-white-gilgamesh = Тошнотворная смесь молока и пива. Вызывает ощущение одеревенелости.
+reagent-name-mopwata = швабода
+reagent-desc-mopwata = Грязная, застоявшаяся вода из-под швабры, швабровая вода.
