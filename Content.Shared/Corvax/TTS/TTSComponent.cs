@@ -16,14 +16,4 @@ public sealed partial class TTSComponent : Component
     [ViewVariables(VVAccess.ReadWrite)]
     [DataField("voice", customTypeSerializer: typeof(PrototypeIdSerializer<TTSVoicePrototype>))]
     public string? VoicePrototypeId { get; set; }
-
-    /// <summary>
-    /// Reducing the volume of the TTS when whispering. Will be converted to logarithm.
-    /// </summary>
-    public float WhisperFade = 4f;
-
-    /// <summary>
-    /// The volume at which the TTS sound will not be heard.
-    /// </summary>
-    public float MinimalVolume = -10f;
 }
