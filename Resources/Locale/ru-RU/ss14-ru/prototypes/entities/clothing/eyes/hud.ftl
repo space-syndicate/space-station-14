@@ -20,9 +20,11 @@ ent-ClothingEyesHudMultiversal = multiversal hud
     .desc = Filler
 ent-ClothingEyesHudOmni = omni hud
     .desc = Filler
+# Corvax-HiddenDesc-Start
 ent-ClothingEyesHudSyndicate = визор оперативника
     .suffix = синди-визор
     .desc = Профессиональный визор со встроенной индикацией "свой-чужой", предназначенный для обнаружения и идентификации гуманоидных целей для их последующего уничтожения.
+# Corvax-HiddenDesc-End
 ent-ClothingEyesGlassesHiddenSecurity = { ent-ClothingEyesGlassesSunglasses }
     .desc = { ent-ClothingEyesGlassesSunglasses.desc }
     .suffix = Синдикат
