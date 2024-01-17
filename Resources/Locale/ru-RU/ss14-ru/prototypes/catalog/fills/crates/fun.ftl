@@ -28,9 +28,11 @@ ent-CrateFunParty = набор для вечеринок
     .desc = Все участники вечеринки ждут, когда вы его откроете. Включает в себя подарки, напитки и даже торт.
 ent-CrateFunWaterGuns = ящик водяных пистолетов
     .desc = Специальное летнее предложение с набором ярких водяных пистолетов. Не содержит воды.
+# Corvax-HiddenDesc-Start
 ent-CrateFunSyndicateSegway = { ent-CrateLivestock }
     .suffix = ящик с сегвеем Синдиката
     .desc = { ent-CrateLivestock.desc } На дне виднеются следы от шин.
+# Corvax-HiddenDesc-End
 ent-CrateFunBoxing = ящик боксерского снаряжения
     .desc = Хотите организовать подпольный бойцовский клуб или провести турнир среди сотрудников станции? Этот ящик для вас!
 ent-CrateFunPirate = { ent-CratePirate }
