@@ -24,6 +24,16 @@ public sealed class TTSSystem : EntitySystem
     private readonly MemoryContentRoot _contentRoot = new();
     private static readonly ResPath Prefix = ResPath.Root / "TTS";
 
+    /// <summary>
+    /// Reducing the volume of the TTS when whispering. Will be converted to logarithm.
+    /// </summary>
+    public const float WhisperFade = 4f;
+
+    /// <summary>
+    /// The volume at which the TTS sound will not be heard.
+    /// </summary>
+    public const float MinimalVolume = -10f;
+
     private float _volume = 0.0f;
     private int _fileIdx = 0;
 
@@ -56,14 +66,7 @@ public sealed class TTSSystem : EntitySystem
     {
         _sawmill.Debug($"Play TTS audio {ev.Data.Length} bytes from {ev.SourceUid} entity");
 
-        var sourceUid = GetEntity(ev.SourceUid);
-
-        if (sourceUid == null || !TryComp<TTSComponent>(sourceUid, out var ttsComponent))
-        {
-            return;
-        }
-
-        var volume = AdjustVolume(ttsComponent, ev.IsWhisper);
+        var volume = AdjustVolume(ev.IsWhisper);
 
         var filePath = new ResPath($"{_fileIdx++}.ogg");
         _contentRoot.AddOrUpdateFile(filePath, ev.Data);
@@ -71,17 +74,26 @@ public sealed class TTSSystem : EntitySystem
         var audioParams = AudioParams.Default.WithVolume(volume);
         var soundPath = new SoundPathSpecifier(Prefix / filePath, audioParams);
 
-        _audio.PlayEntity(soundPath, new EntityUid(), sourceUid.Value); // recipient arg ignored on client
+        if (ev.SourceUid != null)
+        {
+            var sourceUid = GetEntity(ev.SourceUid.Value);
+            _audio.PlayEntity(soundPath, new EntityUid(), sourceUid); // recipient arg ignored on client
+        }
+        else
+        {
+            _audio.PlayGlobal(soundPath, Filter.Local(), false);
+        }
+
         _contentRoot.RemoveFile(filePath);
     }
 
-    private float AdjustVolume(TTSComponent ttsComponent, bool isWhisper)
+    private float AdjustVolume(bool isWhisper)
     {
-        var volume = ttsComponent.MinimalVolume + SharedAudioSystem.GainToVolume(_volume);
+        var volume = MinimalVolume + SharedAudioSystem.GainToVolume(_volume);
 
         if (isWhisper)
         {
-            volume -= SharedAudioSystem.GainToVolume(ttsComponent.WhisperFade);
+            volume -= SharedAudioSystem.GainToVolume(WhisperFade);
         }
 
         return volume;
