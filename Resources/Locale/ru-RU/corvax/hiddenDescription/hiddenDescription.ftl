@@ -39,7 +39,7 @@ corvax-hidden-desc-SpiderCharge-research = [color=#D381C9]Это грязная 
 corvax-hidden-desc-Gatfruit-syndicate = [color=#e31735]Гатфрукт и его плоды - прекрасный способ раздобыть огнестрел.[/color]
 corvax-hidden-desc-Gatfruit-botanist = [color=#9be330]Из плодов этого растения можно вырастить огнестрельное оружие![/color]
 
-corvax-hidden-desc-EnergySword-syndicate = [color=#e31735]Настоящий энергетический меч, с помощью которого можно отбивать пули и резать людей как масло.[/color]
+corvax-hidden-desc-EnergySword-syndicate = [color=#e31735]Настоящий энергетический меч, с помощью которого можно отбивать пули и резать людей, как масло.[/color]
 corvax-hidden-desc-EnergySword-security = [color=#DE3A3A]Это не игрушечный меч! Это настоящее вражеское энергетическое оружие![/color]
 corvax-hidden-desc-EnergySword-cargo = [color=#A46106]Рукоять слишком технологична и эргономична для игрушки. Это настоящее оружие.[/color]
 
