@@ -16,6 +16,7 @@ ent-CrateEngineeringParticleAccelerator = ящик с ускорителем ч�
     .desc = Сложная в настройке, но чертовски полезная.
 ent-CrateEngineeringGenerator = ящик с генератором
     .desc = { ent-CrateEngineering.desc }
+    .suffix = DEBUG
 ent-CrateEngineeringSolar = ящик сборных солнечных панелей
     .desc = { ent-CrateEngineering.desc }
 ent-CrateEngineeringShuttle = ящик электропитания шаттла

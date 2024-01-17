@@ -162,6 +162,7 @@ flavor-complex-plastic = как пластик
 flavor-complex-glue = как клей
 flavor-complex-spaceshroom-cooked = как космический умами
 flavor-complex-lost-friendship = как прошедшая дружба
+flavor-complex-light = like a light gone out
 
 ## Generic alcohol/soda taste. This should be replaced with an actual flavor profile.
 
