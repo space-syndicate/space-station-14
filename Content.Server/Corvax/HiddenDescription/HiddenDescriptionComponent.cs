@@ -25,7 +25,7 @@ public sealed partial class HiddenDescriptionComponent : Component
 public readonly partial record struct HiddenDescriptionEntry()
 {
     /// <summary>
-    /// loc string with secret description
+    /// Locale string with hidden description
     /// </summary>
     [DataField(required: true)]
     public LocId Label { get; init; } = default!;
