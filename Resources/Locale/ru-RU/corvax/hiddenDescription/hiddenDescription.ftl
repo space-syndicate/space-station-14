@@ -85,7 +85,7 @@ corvax-hidden-desc-DeathAcidifierImplanter-research = [color=#D381C9]Это им
 corvax-hidden-desc-SadTromboneImplanter-syndicate = [color=#e31735]Это имплантер грустного тромбона. Проиграет грустную мелодию при смерти.[/color]
 corvax-hidden-desc-LightImplanter-syndicate = [color=#e31735]Это имплантер света. Позволит коже слабо светиться по желанию.[/color]
 corvax-hidden-desc-BikeHornImplanter-syndicate = [color=#e31735]Это хонк-имплантер. Позволит издавать смешные звуки непонятно откуда.[/color]
-corvax-hidden-desc-TrackingImplanter-syndicate = [color=#e31735]Это трекер-имплантер. Будет транслировать местоположение и жизненные показатели на сервера Nanotraisen.[/color]
+corvax-hidden-desc-TrackingImplanter-syndicate = [color=#e31735]Это трекер-имплантер. Будет транслировать местоположение и жизненные показатели на сервера NanoTrasen.[/color]
 corvax-hidden-desc-MindShieldImplanter-syndicate = [color=#e31735]Это имплант "Щит разума". Гарантирует лояльность корпорации Nanotrasen и предотвращает воздействие устройств контроля сознания.[/color]
 corvax-hidden-desc-StorageImplanter-syndicate = [color=#e31735]Это имплантер подкожного хранилища. Позволит хранить контрабанду внутри тела.[/color]
 corvax-hidden-desc-FreedomImplanter-syndicate = [color=#e31735]Это имплантер свободы. Позволит до трёх раз вырваться из наручников, освободившись из плена.[/color]
