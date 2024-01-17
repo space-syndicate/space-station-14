@@ -33,7 +33,7 @@ corvax-hidden-desc-WetFloorSignMineExplosive-research = [color=#D381C9]Внут�
 corvax-hidden-desc-HolyHandGrenade-syndicate = [color=#e31735]Святая граната, сеющая смерть во имя бога![/color]
 corvax-hidden-desc-HolyHandGrenade-research = [color=#D381C9]Внутри этой державы установлен очень сильный взрывной заряд.[/color]
 
-corvax-hidden-desc-SpiderCharge-ninja = [color=#14e397]Взрывы подобны солнцу. Это солнце ярко осветит гибель станции.[/color]
+corvax-hidden-desc-SpiderCharge-ninja = [color=#14e397]Взрывы подобны солнцу. Свет ярко озарит гибель станции.[/color]
 corvax-hidden-desc-SpiderCharge-research = [color=#D381C9]Это грязная бомба. Не стоит ее активировать.[/color]
 
 corvax-hidden-desc-Gatfruit-syndicate = [color=#e31735]Гатфрукт и его плоды - прекрасный способ раздобыть летальный огнестрел.[/color]
