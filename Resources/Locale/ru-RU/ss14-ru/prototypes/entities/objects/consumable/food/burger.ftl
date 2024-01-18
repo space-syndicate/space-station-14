@@ -64,5 +64,5 @@ ent-FoodBurgerCheese = чизбургер
     .desc = Этот благородный бургер гордо стоит, одетый в золотистый сыр.
 ent-FoodBurgerCrazy = безумный гамбургер
     .desc = Это похоже на еду, которую мог бы приготовить сумасшедший клоун в плаще.
-ent-FoodBurgerMothRoach = mothroachburger
-    .desc = The last lamp it saw was the one inside the microwave.
+ent-FoodBurgerMothRoach = таракамольбургер
+    .desc = Последней лампой, которую она видела, была лампочка в микроволновке.
