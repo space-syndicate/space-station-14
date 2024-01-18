@@ -1,6 +1,6 @@
 ent-soda_dispenser = раздатчик безалкоголя
     .desc = Разливочный автомат с ассортиментом из газировки и ряда других популярных напитков. Имеет один слот для емкостей.
-    .suffix = Filled
+    .suffix = Заполненный
 ent-SodaDispenserEmpty = { ent-soda_dispenser }
-    .suffix = Empty
+    .suffix = Пустой
     .desc = { ent-soda_dispenser.desc }

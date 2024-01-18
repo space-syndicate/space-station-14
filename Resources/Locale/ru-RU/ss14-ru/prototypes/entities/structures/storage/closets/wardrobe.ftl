@@ -1,4 +1,4 @@
-ent-WardrobeBase = { ent-ClosetBase }
+ent-WardrobeBase = { ent-ClosetSteelBase }
     .desc = Стандартное хранилище Nanotrasen для одежды и снаряжения.
 ent-WardrobeBlue = синий гардероб
     .desc = { ent-WardrobeBase.desc }

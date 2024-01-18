@@ -1,2 +1,2 @@
-shuttle-timer-eta = ETA
-shuttle-timer-etd = ETD
+shuttle-timer-eta = ПРИБ
+shuttle-timer-etd = ОТБ
