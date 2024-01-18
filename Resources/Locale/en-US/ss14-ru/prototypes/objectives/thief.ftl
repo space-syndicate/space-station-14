@@ -96,5 +96,7 @@ ent-SmileStealObjective = { ent-BaseThiefStealAnimalObjective }
     .desc = { ent-BaseThiefStealAnimalObjective.desc }
 ent-PunPunStealObjective = { ent-BaseThiefStealAnimalObjective }
     .desc = { ent-BaseThiefStealAnimalObjective.desc }
+ent-TropicoStealObjective = { ent-BaseThiefStealAnimalObjective }
+    .desc = { ent-BaseThiefStealAnimalObjective.desc }
 ent-EscapeThiefShuttleObjective = Escape to centcom alive and unrestrained.
     .desc = You don't want your illegal activities to be discovered by anyone, do you?

@@ -30,7 +30,8 @@ guide-entry-medical = Медицинский отдел
 guide-entry-medicaldoctor = Врач
 guide-entry-chemist = Химик
 guide-entry-medicine = Медицина
-guide-entry-brute = Продвинутое лечение
+guide-entry-brute =
+    Продвинутое лечение
     механических повреждений
 guide-entry-botanicals = Ботаника
 guide-entry-cloning = Клонирование
