@@ -8546,7 +8546,8 @@ entities:
           -11,5:
             0: 65535
           -11,6:
-            0: 65535
+            0: 65471
+            4: 64
           -11,7:
             0: 65535
           -10,4:
@@ -10543,7 +10544,7 @@ entities:
       pos: -54.5,16.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -1531.9207
+      secondsUntilStateChange: -1647.5045
       state: Opening
   - uid: 9987
     components:
@@ -14693,6 +14694,15 @@ entities:
       parent: 2
 - proto: BoxInflatable
   entities:
+  - uid: 14903
+    components:
+    - type: MetaData
+      flags: InContainer
+    - type: Transform
+      parent: 12346
+    - type: Physics
+      canCollide: False
+    - type: InsideEntityStorage
   - uid: 14969
     components:
     - type: Transform
@@ -15591,6 +15601,11 @@ entities:
     components:
     - type: Transform
       pos: 32.5,46.5
+      parent: 2
+  - uid: 3549
+    components:
+    - type: Transform
+      pos: -49.5,21.5
       parent: 2
   - uid: 3806
     components:
@@ -23662,6 +23677,11 @@ entities:
     - type: Transform
       pos: -29.5,-57.5
       parent: 2
+  - uid: 14945
+    components:
+    - type: Transform
+      pos: -49.5,22.5
+      parent: 2
   - uid: 14952
     components:
     - type: Transform
@@ -24506,11 +24526,6 @@ entities:
     components:
     - type: Transform
       pos: -49.5,23.5
-      parent: 2
-  - uid: 17384
-    components:
-    - type: Transform
-      pos: -48.5,23.5
       parent: 2
   - uid: 17385
     components:
@@ -41051,6 +41066,38 @@ entities:
       parent: 2
     - type: Physics
       bodyType: Static
+    - type: EntityStorage
+      air:
+        volume: 200
+        immutable: False
+        temperature: 293.14673
+        moles:
+        - 1.7459903
+        - 6.568249
+        - 0
+        - 0
+        - 0
+        - 0
+        - 0
+        - 0
+        - 0
+        - 0
+        - 0
+        - 0
+    - type: ContainerContainer
+      containers:
+        entity_storage: !type:Container
+          showEnts: False
+          occludes: True
+          ents:
+          - 10141
+          - 12316
+          - 14902
+          - 14903
+        paper_label: !type:ContainerSlot
+          showEnts: False
+          occludes: True
+          ent: null
 - proto: CrateEmergencyInternals
   entities:
   - uid: 406
@@ -52538,6 +52585,17 @@ entities:
       rot: -1.5707963267948966 rad
       pos: 4.656951,19.170874
       parent: 2
+- proto: FoodBoxDonkpocket
+  entities:
+  - uid: 10141
+    components:
+    - type: MetaData
+      flags: InContainer
+    - type: Transform
+      parent: 12346
+    - type: Physics
+      canCollide: False
+    - type: InsideEntityStorage
 - proto: FoodBoxDonkpocketGondola
   entities:
   - uid: 9332
@@ -52545,6 +52603,17 @@ entities:
     - type: Transform
       pos: -46.515743,3.8969553
       parent: 2
+- proto: FoodBoxDonkpocketPizza
+  entities:
+  - uid: 12316
+    components:
+    - type: MetaData
+      flags: InContainer
+    - type: Transform
+      parent: 12346
+    - type: Physics
+      canCollide: False
+    - type: InsideEntityStorage
 - proto: FoodBoxDonkpocketSpicy
   entities:
   - uid: 5184
@@ -52797,6 +52866,17 @@ entities:
     - type: Transform
       pos: -22.493832,4.3930397
       parent: 2
+- proto: FoodTinPeaches
+  entities:
+  - uid: 14902
+    components:
+    - type: MetaData
+      flags: InContainer
+    - type: Transform
+      parent: 12346
+    - type: Physics
+      canCollide: False
+    - type: InsideEntityStorage
 - proto: FoodTinPeachesMaintTrash
   entities:
   - uid: 2979
@@ -69661,7 +69741,7 @@ entities:
       pos: 21.5,-12.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -86830.875
+      secondsUntilStateChange: -86946.46
       state: Closing
   - uid: 1457
     components:
@@ -70591,14 +70671,6 @@ entities:
     - type: Transform
       pos: 35.5,-48.5
       parent: 2
-  - uid: 10141
-    components:
-    - type: Transform
-      anchored: True
-      pos: -36.5,22.5
-      parent: 2
-    - type: Physics
-      bodyType: Static
   - uid: 11050
     components:
     - type: Transform
@@ -70964,14 +71036,6 @@ entities:
       parent: 2
 - proto: LockerWeldingSuppliesFilled
   entities:
-  - uid: 3549
-    components:
-    - type: Transform
-      anchored: True
-      pos: -36.5,23.5
-      parent: 2
-    - type: Physics
-      bodyType: Static
   - uid: 11060
     components:
     - type: Transform
@@ -71607,6 +71671,13 @@ entities:
       parent: 2
     - type: AtmosDevice
       joinedGrid: 2
+  - uid: 14924
+    components:
+    - type: Transform
+      pos: -36.5,23.5
+      parent: 2
+    - type: AtmosDevice
+      joinedGrid: 2
   - uid: 16321
     components:
     - type: Transform
@@ -71739,6 +71810,13 @@ entities:
     components:
     - type: Transform
       pos: -47.5,44.5
+      parent: 2
+    - type: AtmosDevice
+      joinedGrid: 2
+  - uid: 14925
+    components:
+    - type: Transform
+      pos: -36.5,22.5
       parent: 2
     - type: AtmosDevice
       joinedGrid: 2
