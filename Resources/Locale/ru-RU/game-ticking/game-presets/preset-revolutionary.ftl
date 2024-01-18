@@ -54,9 +54,9 @@ rev-headrev-name = [color=#5e9cff]{ $name }[/color] конвертировал {
        *[other] членов
     } экипажа
 rev-reverse-stalemate = Главы революции и командный состав станции выжили.
-rev-deconverted-title = Deconverted!
+rev-deconverted-title = Разконвертированы!
 rev-deconverted-text =
-    As the last headrev has died, the revolution is over.
+    Со смертью последнего главы революции, революция оканчивается.
 
-    You are no longer a revolutionary, so be nice.
-rev-deconverted-confirm = Confirm
+    Вы больше не революционер, так что ведите себя хорошо.
+rev-deconverted-confirm = Подтвердить
