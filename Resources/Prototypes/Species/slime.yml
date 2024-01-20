@@ -44,13 +44,13 @@
       points: 1 # Corvax Sponsors
       required: false
     Chest:
-      points: 2
+      points: 2 #Corvax-Changes
       required: false
     Legs:
-      points: 2
+      points: 2 #Corvax-Changes
       required: false
     Arms:
-      points: 4
+      points: 4 #Corvax-Changes
       required: false
 
 - type: humanoidBaseSprite
