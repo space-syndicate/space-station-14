@@ -96,9 +96,11 @@ public sealed class GeneratorSystem : SharedGeneratorSystem
             return;
 
         var totalAvailableReagents = solution.GetTotalPrototypeQuantity(entity.Comp.Reagents.Keys.Select(p => p.Id).ToArray()).Value;
+        if (totalAvailableReagents == 0) return; // Corvax-HOTFIX
         foreach (var (reagentId, multiplier) in entity.Comp.Reagents)
         {
             var availableReagent = solution.GetTotalPrototypeQuantity(reagentId).Value;
+            if (availableReagent == 0) return; // Corvax-HOTFIX
             var removalPercentage = availableReagent / totalAvailableReagents;
             var fractionalReagent = entity.Comp.FractionalReagents.GetValueOrDefault(reagentId);
             var toRemove = RemoveFractionalFuel(
