@@ -58,9 +58,9 @@ flavor-complex-honey = как мёд
 
 # Food-specific flavors.
 
-flavor-complex-ketchunaise = like tomatoes and mayonnaise
-flavor-complex-mayonnaise = like mayonnaise
-flavor-complex-mustard = like mustard
+flavor-complex-ketchunaise = как помидоры и майонез
+flavor-complex-mayonnaise = как майонез
+flavor-complex-mustard = как горчица
 
 ## Food chemicals. In case you get something that has this inside.
 
