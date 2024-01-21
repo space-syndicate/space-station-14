@@ -1,4 +1,9 @@
 - type: entity
+  id: AIEntry
+  components:
+  - type: AIEntry
+
+- type: entity
   abstract: true
   save: false
   id: AIBase

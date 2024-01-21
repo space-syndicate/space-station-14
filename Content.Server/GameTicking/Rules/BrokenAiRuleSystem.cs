@@ -122,23 +122,6 @@ public sealed class BrokenAiRuleSystem : GameRuleSystem<BrokenAiRuleComponent>
         _chatManager.DispatchServerMessage(session, Loc.GetString("broken-ai-role-greeting"));
     }
 
-    /// <summary>
-    ///     Send a codewords and uplink codes to traitor chat.
-    /// </summary>
-    /// <param name="mind">A mind (player)</param>
-    /// <param name="codewords">Codewords</param>
-    /// <param name="code">Uplink codes</param>
-    private void SendTraitorBriefing(EntityUid mind, string[] codewords, Note[]? code)
-    {
-        if (!_mindSystem.TryGetSession(mind, out var session))
-            return;
-
-        _chatManager.DispatchServerMessage(session, Loc.GetString("traitor-role-greeting"));
-        _chatManager.DispatchServerMessage(session, Loc.GetString("traitor-role-codewords", ("codewords", string.Join(", ", codewords))));
-        if (code != null)
-            _chatManager.DispatchServerMessage(session, Loc.GetString("traitor-role-uplink-code", ("code", string.Join("-", code).Replace("sharp","#"))));
-    }
-
     private void OnObjectivesTextGetInfo(EntityUid uid, BrokenAiRuleComponent comp, ref ObjectivesTextGetInfoEvent args)
     {
         //args.Minds = comp.TraitorMinds;

@@ -12,9 +12,8 @@
   accessGroups:
     - AllAccess
   canBeAntag: false
-  jobEntity: AICore
+  jobEntity: AIEntry
   startingGear: CentcomAdmiralGear # for char preview only
-  alwaysUseSpawner: true
   #canHaveTraits: false
   joinNotifyCrew: true
   whitelistRequired: true

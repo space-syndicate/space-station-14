@@ -212,8 +212,6 @@ namespace Content.Server.GameTicking
             var jobName = _jobs.MindTryGetJobName(newMind);
 
             _playTimeTrackings.PlayerRolesChanged(player);
-            if (jobId.Equals("SAI"))
-                AddGameRule("BrokenAi");
 
             var mobMaybe = _stationSpawning.SpawnPlayerCharacterOnStation(station, job, character);
             DebugTools.AssertNotNull(mobMaybe);
