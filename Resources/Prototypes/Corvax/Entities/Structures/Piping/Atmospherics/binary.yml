@@ -1,0 +1,7 @@
+- type: entity
+  parent: SignalControlledValve
+  id: SignalControlledValveClosed
+  suffix: Closed
+  components:
+  - type: GasValve
+    open: false
