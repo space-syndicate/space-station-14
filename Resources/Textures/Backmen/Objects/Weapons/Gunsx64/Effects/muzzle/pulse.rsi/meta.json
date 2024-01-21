@@ -1,0 +1,35 @@
+{
+    "version": 1,
+    "license": "CC-BY-SA-3.0",
+    "copyright": "Made by ME DIO(or no_mad#0260)",
+    "size": {
+        "x": 32,
+        "y": 32
+    },
+    "states": [
+          {
+            "name": "impact_pulse",
+            "delays": [
+              [
+                0.05,
+                0.05,
+                0.05,
+                0.05,
+                0.05
+            ]
+        ]
+          },
+          {
+            "name": "muzzle_pulse"
+          },
+          {
+            "name": "pulse",
+            "delays": [
+              [
+                0.05,
+                0.05
+              ]
+            ]
+          }
+        ]
+      }

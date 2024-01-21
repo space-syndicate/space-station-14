@@ -1,0 +1,462 @@
+# laser
+- type: entity
+  name: highTech heavy laser rifle
+  parent: BaseWeaponBattery
+  id: WeaponHighTechLaserSniper
+  suffix: Винтовка
+  description: A Earth Government heavy sniper rifle for a extended combat situation.
+  components:
+  - type: Sprite
+    sprite: Backmen/Objects/Weapons/Gunsx64/Battery/EG-S/big.rsi
+    layers:
+    - state: base
+      map: ["enum.GunVisualLayers.Base"]
+    - state: mag-unshaded-2
+      map: ["enum.GunVisualLayers.MagUnshaded"]
+      shader: unshaded
+  - type: Clothing
+    sprite: Backmen/Objects/Weapons/Gunsx64/Battery/EG-S/tiny.rsi
+  - type: Item
+    sprite: Backmen/Objects/Weapons/Gunsx64/Battery/EG-S/tiny.rsi
+  - type: GunRequiresWield
+  - type: GunWieldBonus
+    minAngle: -93
+    maxAngle: -94
+  - type: Gun
+    minAngle: 94
+    maxAngle: 95
+    fireRate: 1.5
+    selectedMode: SemiAuto
+    availableModes:
+    - SemiAuto
+    soundGunshot:
+      path: /Audio/Weapons/Guns64/EG-R/shot.ogg
+  - type: MagazineVisuals
+    magState: mag
+    steps: 3
+    zeroVisible: true
+  - type: Battery
+    maxCharge: 1500
+    startingCharge: 1500
+  - type: HitscanBatteryAmmoProvider
+    proto: RedHeavyLaser
+    fireCost: 100
+  - type: Wieldable
+  - type: UseDelay
+    delay: 2.5
+
+# firearm
+# ammo start
+- type: entity
+  id: MagazineAntiMaterielRifleSR
+  name: rifle magazine (.60 anti-material)
+  description: Standart EarthGov type of heavy magazines.
+  parent: BaseItem
+  components:
+  - type: Tag
+    tags:
+    - MagazineAntiMaterielRifle
+  - type: BallisticAmmoProvider
+    mayTransfer: true
+    capacity: 10
+    proto: CartridgeAntiMateriel
+    whitelist:
+      tags:
+      - CartridgeAntiMateriel
+  - type: ContainerContainer
+    containers:
+      ballistic-ammo: !type:Container
+  - type: Item
+    size: Small
+    sprite: Backmen/Objects/Weapons/Gunsx64/Magazines/Rifle/sr127_mag.rsi
+  - type: Sprite
+    netsync: false
+    sprite: Backmen/Objects/Weapons/Gunsx64/Magazines/Rifle/sr127_mag.rsi
+    layers:
+    - state: base
+      map: ["enum.GunVisualLayers.Base"]
+    - state: mag-1
+      map: ["enum.GunVisualLayers.Mag"]
+  - type: MagazineVisuals
+    magState: mag
+    steps: 2
+    zeroVisible: false
+  - type: Appearance
+# ammo end
+- type: entity
+  name: AKMS
+  parent: BaseWeaponRifle
+  id: WeaponAKMSRifle
+  suffix: Автомат
+  description: An iconic weapon of war. Uses 7.62x39 ammo.
+  components:
+  - type: Sprite
+    sprite: Backmen/Objects/Weapons/Gunsx64/Rifles/akms/big.rsi
+    layers:
+    - state: base
+      map: ["enum.GunVisualLayers.Base"]
+    - state: mag-0
+      map: ["enum.GunVisualLayers.Mag"]
+  - type: Clothing
+    sprite: Backmen/Objects/Weapons/Gunsx64/Rifles/akms/tiny.rsi
+  - type: Item
+    sprite: Backmen/Objects/Weapons/Gunsx64/Rifles/akms/tiny.rsi
+  - type: GunWieldBonus
+    minAngle: -23
+    maxAngle: -43
+  - type: Gun
+    minAngle: 24
+    maxAngle: 45
+    fireRate: 5
+    soundGunshot:
+      path: /Audio/Weapons/Guns64/Rifles/ak47.ogg
+  - type: ChamberMagazineAmmoProvider
+  - type: ItemSlots
+    slots:
+      gun_magazine:
+        name: Magazine
+        startingItem: MagazineLightRifle
+        insertSound: /Audio/Weapons/Guns64/Rifles/ak47_reload.ogg
+        ejectSound: /Audio/Weapons/Guns64/Rifles/ak47_unload.ogg
+        priority: 2
+        whitelist:
+          tags:
+          - MagazineLightRifle
+      gun_chamber:
+        name: Chamber
+        startingItem: CartridgeLightRifle
+        priority: 1
+        whitelist:
+          tags:
+          - CartridgeLightRifle
+  - type: ContainerContainer
+    containers:
+      gun_magazine: !type:ContainerSlot
+      gun_chamber: !type:ContainerSlot
+  - type: MagazineVisuals
+    magState: mag
+    steps: 1
+    zeroVisible: true
+  - type: Appearance
+  - type: Wieldable
+  - type: UseDelay
+    delay: 1.3
+
+- type: entity
+  name: AR-18
+  parent: BaseWeaponRifle
+  id: WeaponRifleAR18
+  suffix: Автомат
+  description: The H&K AR-18 carbine is one of the standard rifles used by EarthGov army. It's commonly used by people who prefer greater mobility in combat, like scouts and other light infantry.
+  components:
+  - type: Sprite
+    sprite: Backmen/Objects/Weapons/Gunsx64/Rifles/ar18/big.rsi
+    layers:
+    - state: base
+      map: ["enum.GunVisualLayers.Base"]
+    - state: mag-0
+      map: ["enum.GunVisualLayers.Mag"]
+  - type: Clothing
+    sprite: Backmen/Objects/Weapons/Gunsx64/Rifles/ar18/tiny.rsi
+  - type: Item
+    sprite: Backmen/Objects/Weapons/Gunsx64/Rifles/ar18/tiny.rsi
+  - type: GunWieldBonus
+    minAngle: -23
+    maxAngle: -43
+  - type: Gun
+    minAngle: 24
+    maxAngle: 45
+    soundGunshot:
+      path: /Audio/Weapons/Guns64/Rifles/ar18.ogg
+    soundEmpty:
+      path: /Audio/Weapons/Guns64/Rifles/m41a_empty.ogg
+  - type: ItemSlots
+    slots:
+      gun_magazine:
+        name: Magazine
+        startingItem: MagazineRifle
+        insertSound: /Audio/Weapons/Guns64/Rifles/ar18_reload.ogg
+        ejectSound: /Audio/Weapons/Guns64/Rifles/ar18_unload.ogg
+        priority: 2
+        whitelist:
+          tags:
+          - MagazineRifle
+      gun_chamber:
+        name: Chamber
+        startingItem: CartridgeRifle
+        priority: 1
+        whitelist:
+          tags:
+          - CartridgeRifle
+  - type: ContainerContainer
+    containers:
+      gun_magazine: !type:ContainerSlot
+      gun_chamber: !type:ContainerSlot
+  - type: MagazineVisuals
+    magState: mag
+    steps: 1
+    zeroVisible: true
+  - type: Appearance
+  - type: Wieldable
+  - type: UseDelay
+    delay: 1.3
+
+- type: entity
+  name: G-36
+  parent: BaseWeaponRifle
+  id: WeaponRifleG36
+  suffix: Автомат
+  description: The H&K G-36 assault rifle used to be the EarthGov army standard issue rifle.
+  components:
+  - type: Sprite
+    sprite: Backmen/Objects/Weapons/Gunsx64/Rifles/g36/big.rsi
+    layers:
+    - state: base
+      map: ["enum.GunVisualLayers.Base"]
+    - state: mag-0
+      map: ["enum.GunVisualLayers.Mag"]
+  - type: Clothing
+    sprite: Backmen/Objects/Weapons/Gunsx64/Rifles/g36/tiny.rsi
+  - type: Item
+    sprite: Backmen/Objects/Weapons/Gunsx64/Rifles/g36/tiny.rsi
+  - type: GunWieldBonus
+    minAngle: -23
+    maxAngle: -43
+  - type: Gun
+    minAngle: 24
+    maxAngle: 45
+    soundGunshot:
+      path: /Audio/Weapons/Guns64/Rifles/g36.ogg
+    soundEmpty:
+      path: /Audio/Weapons/Guns64/Rifles/m41a_empty.ogg
+  - type: ItemSlots
+    slots:
+      gun_magazine:
+        name: Magazine
+        startingItem: MagazineRifle
+        insertSound: /Audio/Weapons/Guns64/Rifles/ar18_reload.ogg
+        ejectSound: /Audio/Weapons/Guns64/Rifles/ar18_unload.ogg
+        priority: 2
+        whitelist:
+          tags:
+          - MagazineRifle
+      gun_chamber:
+        name: Chamber
+        startingItem: CartridgeRifle
+        priority: 1
+        whitelist:
+          tags:
+          - CartridgeRifle
+  - type: ContainerContainer
+    containers:
+      gun_magazine: !type:ContainerSlot
+      gun_chamber: !type:ContainerSlot
+  - type: MagazineVisuals
+    magState: mag
+    steps: 1
+    zeroVisible: true
+  - type: Appearance
+  - type: Wieldable
+  - type: UseDelay
+    delay: 1.3
+
+- type: entity
+  name: STG 44
+  parent: BaseWeaponRifle
+  id: WeaponRifleSTG44
+  suffix: Автомат
+  description: A certified classic, this design was hailed as the first successful assault rifle concept, generally termed a 'storm rifle'. Has a higher than usual firerate for it's class.
+  components:
+  - type: Sprite
+    sprite: Backmen/Objects/Weapons/Gunsx64/Rifles/stg44/big.rsi
+    layers:
+    - state: base
+      map: ["enum.GunVisualLayers.Base"]
+    - state: mag-0
+      map: ["enum.GunVisualLayers.Mag"]
+  - type: Clothing
+    sprite: Backmen/Objects/Weapons/Gunsx64/Rifles/stg44/tiny.rsi
+  - type: Item
+    sprite: Backmen/Objects/Weapons/Gunsx64/Rifles/stg44/tiny.rsi
+  - type: GunWieldBonus
+    minAngle: -23
+    maxAngle: -43
+  - type: Gun
+    minAngle: 24
+    maxAngle: 45
+    fireRate: 8
+    soundGunshot:
+      path: /Audio/Weapons/Guns64/Rifles/ak47.ogg
+  - type: ChamberMagazineAmmoProvider
+  - type: ItemSlots
+    slots:
+      gun_magazine:
+        name: Magazine
+        startingItem: MagazineLightRifle
+        insertSound: /Audio/Weapons/Guns64/Rifles/ak47_reload.ogg
+        ejectSound: /Audio/Weapons/Guns64/Rifles/ak47_unload.ogg
+        priority: 2
+        whitelist:
+          tags:
+          - MagazineLightRifle
+      gun_chamber:
+        name: Chamber
+        startingItem: CartridgeLightRifle
+        priority: 1
+        whitelist:
+          tags:
+          - CartridgeLightRifle
+  - type: ContainerContainer
+    containers:
+      gun_magazine: !type:ContainerSlot
+      gun_chamber: !type:ContainerSlot
+  - type: MagazineVisuals
+    magState: mag
+    steps: 1
+    zeroVisible: true
+  - type: Appearance
+  - type: Wieldable
+  - type: UseDelay
+    delay: 1.3
+
+- type: entity
+  name: M16A4
+  parent: BaseWeaponRifle
+  id: WeaponRifleM16A4
+  suffix: Автомат
+  description: A light, versatile assault rifle. The 4th generation in the M16 platform, this FN variant has added automatic fire selection and retains relevance among mercenaries and militias thanks to its high customizability. it is incredibly good at rapid burst fire, but must be paced correctly."
+  components:
+  - type: Sprite
+    sprite: Backmen/Objects/Weapons/Gunsx64/Rifles/m16/big.rsi
+    layers:
+    - state: base
+      map: ["enum.GunVisualLayers.Base"]
+    - state: mag-0
+      map: ["enum.GunVisualLayers.Mag"]
+  - type: Clothing
+    sprite: Backmen/Objects/Weapons/Gunsx64/Rifles/m16/tiny.rsi
+  - type: Item
+    sprite: Backmen/Objects/Weapons/Gunsx64/Rifles/m16/tiny.rsi
+  - type: GunWieldBonus
+    minAngle: -23
+    maxAngle: -43
+  - type: Gun
+    minAngle: 24
+    maxAngle: 45
+    soundGunshot:
+      path: /Audio/Weapons/Guns64/Rifles/m16.ogg
+  - type: ItemSlots
+    slots:
+      gun_magazine:
+        name: Magazine
+        startingItem: MagazineRifle
+        insertSound: /Audio/Weapons/Guns64/Rifles/m16_reload.ogg
+        ejectSound: /Audio/Weapons/Guns64/Rifles/m16_unload.ogg
+        priority: 2
+        whitelist:
+          tags:
+          - MagazineRifle
+      gun_chamber:
+        name: Chamber
+        startingItem: CartridgeRifle
+        priority: 1
+        whitelist:
+          tags:
+          - CartridgeRifle
+  - type: ContainerContainer
+    containers:
+      gun_magazine: !type:ContainerSlot
+      gun_chamber: !type:ContainerSlot
+  - type: MagazineVisuals
+    magState: mag
+    steps: 1
+    zeroVisible: true
+  - type: Appearance
+  - type: Wieldable
+  - type: UseDelay
+    delay: 1.5
+
+- type: entity
+  name: SR-127 Bauer bolt action rifle
+  parent: BaseWeaponRifle
+  id: WeaponRifleSR127
+  suffix: Винтовка
+  description: The Bauer SR-127 is the standard issue bolt action rifle used by the United Earth Gov. Known for its long range accuracy and use by marksmen despite its age and lack of IFF. It has an irremoveable scope. Uses .60 anti-material magazines."
+  components:
+  - type: Sprite
+    sprite: Backmen/Objects/Weapons/Gunsx64/Snipers/snl177/big.rsi
+    layers:
+    - state: base
+      map: ["enum.GunVisualLayers.Base"]
+    - state: mag-0
+      map: ["enum.GunVisualLayers.Mag"]
+  - type: Clothing
+    sprite: Backmen/Objects/Weapons/Gunsx64/Snipers/snl177/tiny.rsi
+  - type: Item
+    sprite: Backmen/Objects/Weapons/Gunsx64/Snipers/snl177/tiny.rsi
+  - type: GunWieldBonus
+    minAngle: -23
+    maxAngle: -43
+  - type: Gun
+    fireRate: 1
+    minAngle: 24
+    maxAngle: 45
+    soundGunshot:
+      path: /Audio/Weapons/Guns64/Snipers/tl127.ogg
+      params:
+        volume: -5
+    soundEmpty:
+      path: /Audio/Weapons/Guns64/Rifles/m41a_empty.ogg
+  - type: ChamberMagazineAmmoProvider
+  - type: BallisticAmmoProvider
+    soundRack:
+      path: /Audio/Weapons/Guns64/Snipers/tl-127_bolt.ogg
+  - type: ItemSlots
+    slots:
+      gun_magazine:
+        name: Magazine
+        startingItem: MagazineAntiMaterielRifleSR
+        insertSound: /Audio/Weapons/Guns64/Rifles/m41a_reload.ogg
+        ejectSound: /Audio/Weapons/Guns64/Rifles/m41a_unload.ogg
+        priority: 2
+        whitelist:
+          tags:
+          - MagazineAntiMaterielRifle
+  - type: ContainerContainer
+    containers:
+      gun_magazine: !type:ContainerSlot
+      gun_chamber: !type:ContainerSlot
+      ballistic-ammo: !type:Container
+  - type: MagazineVisuals
+    magState: mag
+    steps: 1
+    zeroVisible: true
+  - type: Appearance
+  - type: GunRequiresWield
+  - type: Wieldable
+  - type: UseDelay
+    delay: 1.3
+
+- type: entity
+  name: M1 Garand
+  parent: BaseWeaponSniper
+  id: WeaponSniperM1Garand
+  suffix: Винтовка
+  description: The Carlford-1 is a remastered classic made by Carlford Armories, made to fit in the modern day. Most of the noticeable differences are minor rail modifications, other than that. It is a faithful recreation with the trademark ping sound and all.
+  components:
+  - type: Sprite
+    sprite: Backmen/Objects/Weapons/Gunsx64/Snipers/garand/big.rsi
+  - type: Clothing
+    sprite: Backmen/Objects/Weapons/Gunsx64/Snipers/garand/tiny.rsi
+  - type: Item
+    sprite: Backmen/Objects/Weapons/Gunsx64/Snipers/garand/tiny.rsi
+  - type: Gun
+    fireRate: 0.8
+    soundGunshot:
+      path: /Audio/Weapons/Guns64/Snipers/garand.ogg
+    soundEmpty:
+      path: /Audio/Weapons/Guns64/Snipers/sniper_empty.ogg
+  - type: Wieldable
+  - type: UseDelay
+    delay: 0.8
+  - type: GunRequiresWield

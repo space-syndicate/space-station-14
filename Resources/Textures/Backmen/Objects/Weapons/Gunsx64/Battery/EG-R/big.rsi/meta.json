@@ -1,0 +1,29 @@
+{
+    "version": 1,
+    "license": "CC-BY-SA-3.0",
+    "copyright": "NOMMMMMADDDD",
+    "size": {
+        "x": 64,
+        "y": 32
+    },
+    "states": [
+        {
+            "name": "base"
+        },
+        {
+            "name": "mag-unshaded-2"
+        },
+        {
+            "name": "mag-unshaded-1"
+        },
+        {
+            "name": "mag-unshaded-0",
+            "delays": [
+                [
+                    0.6,
+                    0.6
+                ]
+            ]
+        }
+    ]
+}

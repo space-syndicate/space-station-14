@@ -3514,13 +3514,6 @@ entities:
     - type: Transform
       pos: 13.5,12.5
       parent: 179
-- proto: FemtoManipulatorStockPart
-  entities:
-  - uid: 712
-    components:
-    - type: Transform
-      pos: -6.7434506,8.817795
-      parent: 179
 - proto: FireExtinguisher
   entities:
   - uid: 323
@@ -4489,13 +4482,6 @@ entities:
     - type: Transform
       pos: 10.862433,12.602201
       parent: 179
-- proto: PicoManipulatorStockPart
-  entities:
-  - uid: 455
-    components:
-    - type: Transform
-      pos: -6.337244,8.838643
-      parent: 179
 - proto: PlasmaCanister
   entities:
   - uid: 461
@@ -4821,13 +4807,6 @@ entities:
     components:
     - type: Transform
       pos: -6.5,6.5
-      parent: 179
-- proto: QuadraticCapacitorStockPart
-  entities:
-  - uid: 704
-    components:
-    - type: Transform
-      pos: -4.8741612,8.817795
       parent: 179
 - proto: Railing
   entities:

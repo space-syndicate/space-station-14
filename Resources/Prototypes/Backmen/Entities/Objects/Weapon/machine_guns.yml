@@ -1,0 +1,107 @@
+# laser
+- type: entity
+  name: highTech laser machine gun
+  parent: BaseWeaponBattery
+  id: WeaponHighTechLaserMG
+  suffix: Пулемёт
+  description: A Earth Government standard issue laser machine gun, use by army. Heavy and deadly.
+  components:
+  - type: Sprite
+    sprite: Backmen/Objects/Weapons/Gunsx64/Battery/EG-MG/big.rsi
+    layers:
+    - state: base
+      map: ["enum.GunVisualLayers.Base"]
+    - state: mag-unshaded-2
+      map: ["enum.GunVisualLayers.MagUnshaded"]
+      shader: unshaded
+  - type: Clothing
+    sprite: Backmen/Objects/Weapons/Gunsx64/Battery/EG-MG/tiny.rsi
+  - type: Item
+    sprite: Backmen/Objects/Weapons/Gunsx64/Battery/EG-MG/tiny.rsi
+    size: Huge
+  - type: GunWieldBonus
+    minAngle: -40
+    maxAngle: -40
+  - type: Gun
+    maxAngle: 60
+    minAngle: 60
+    fireRate: 8
+    selectedMode: FullAuto
+    availableModes:
+    - FullAuto
+    soundGunshot:
+      path: /Audio/Weapons/Guns64/EG-R/shot.ogg
+  - type: MagazineVisuals
+    magState: mag
+    steps: 3
+    zeroVisible: true
+  - type: Battery
+    maxCharge: 7500
+    startingCharge: 7500
+  - type: HitscanBatteryAmmoProvider
+    proto: RedLaser
+    fireCost: 50
+  - type: Wieldable
+  - type: UseDelay
+    delay: 2.5
+
+# firearm
+- type: entity
+  name: RPD
+  parent: BaseWeaponLightMachineGun
+  id: WeaponLightMachineGunRPD
+  suffix: Пулемёт
+  description: A cheap and robust machinegun, sometimes better known as an 'RPD'. Despite lacking attachment points beyond its underbarrel, remains a popular product on the black market with its cheap cost, high capacity and higher than usual caliber rounds.
+  components:
+  - type: Sprite
+    sprite: Backmen/Objects/Weapons/Gunsx64/LMGs/rpd/big.rsi
+    layers:
+    - state: base
+      map: ["enum.GunVisualLayers.Base"]
+    - state: mag-0
+      map: ["enum.GunVisualLayers.Mag"]
+  - type: Clothing
+    sprite: Backmen/Objects/Weapons/Gunsx64/LMGs/rpd/tiny.rsi
+  - type: Item
+    sprite: Backmen/Objects/Weapons/Gunsx64/LMGs/rpd/tiny.rsi
+  - type: GunWieldBonus
+    minAngle: -30
+    maxAngle: -50
+  - type: Gun
+    minAngle: 34
+    maxAngle: 55
+    fireRate: 5
+    soundGunshot:
+      path: /Audio/Weapons/Guns64/Rifles/ak47.ogg
+  - type: ChamberMagazineAmmoProvider
+  - type: ItemSlots
+    slots:
+      gun_magazine:
+        name: Magazine
+        startingItem: MagazineLightRiflePkBox
+        insertSound: /Audio/Weapons/Guns64/Rifles/ak47_reload.ogg
+        ejectSound: /Audio/Weapons/Guns64/Rifles/ak47_unload.ogg
+        priority: 2
+        whitelist:
+          tags:
+          - MagazineLightRifleBox
+      gun_chamber:
+        name: Chamber
+        startingItem: CartridgeLightRifle
+        priority: 1
+        whitelist:
+          tags:
+          - CartridgeLightRifle
+  - type: ContainerContainer
+    containers:
+      gun_magazine: !type:ContainerSlot
+      gun_chamber: !type:ContainerSlot
+  - type: MagazineVisuals
+    magState: mag
+    steps: 2
+    zeroVisible: true
+  - type: Appearance
+  - type: Wieldable
+  - type: UseDelay
+    delay: 1.9
+

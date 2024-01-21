@@ -1,0 +1,196 @@
+# firearm
+# ammo start
+- type: entity
+  id: MagazinePistolBoxSubMachineGun
+  name: SMG box magazine (.9×19mm parabellum)
+  parent: BaseItem
+  components:
+  - type: Tag
+    tags:
+    - MagazinePistolBoxSubMachineGun
+  - type: BallisticAmmoProvider
+    mayTransfer: true
+    proto: CartridgePistol
+    whitelist:
+      tags:
+      - CartridgePistol
+    capacity: 45
+  - type: Item
+    size: Small
+  - type: ContainerContainer
+    containers:
+      ballistic-ammo: !type:Container
+  - type: Sprite
+    sprite: Backmen/Objects/Weapons/Gunsx64/Magazines/Pistol/submachinegun_boxmag.rsi
+    layers:
+    - state: base
+      map: ["enum.GunVisualLayers.Base"]
+    - state: mag-1
+      map: ["enum.GunVisualLayers.Mag"]
+  - type: MagazineVisuals
+    magState: mag
+    steps: 2
+    zeroVisible: false
+  - type: Appearance
+# ammo end
+- type: entity
+  name: MP5
+  parent: BaseWeaponSubMachineGun
+  id: WeaponSubMachineGunMP5
+  suffix: Пистолет-пулемёт
+  description: The RivArms SMG-5 submachinegun, an update to a classic design. A light firearm capable of effective one-handed use that is ideal for close to medium range engagements.
+  components:
+  - type: Sprite
+    sprite: Backmen/Objects/Weapons/Gunsx64/SMGs/mp5/big.rsi
+    layers:
+    - state: base
+      map: ["enum.GunVisualLayers.Base"]
+    - state: mag-0
+      map: ["enum.GunVisualLayers.Mag"]
+  - type: Clothing
+    sprite: Backmen/Objects/Weapons/Gunsx64/SMGs/mp5/tiny.rsi
+  - type: Item
+    sprite: Backmen/Objects/Weapons/Gunsx64/SMGs/mp5/tiny.rsi
+  - type: GunWieldBonus
+    minAngle: -22
+    maxAngle: -28
+  - type: Gun
+    minAngle: 24
+    maxAngle: 45
+    fireRate: 6
+    soundGunshot:
+      path: /Audio/Weapons/Guns64/SMGs/mp5.ogg
+  - type: ItemSlots
+    slots:
+      gun_magazine:
+        name: Magazine
+        startingItem: MagazinePistolSubMachineGun
+        insertSound: /Audio/Weapons/Guns64/SMGs/mp5_reload.ogg
+        ejectSound: /Audio/Weapons/Guns64/SMGs/mp5_unload.ogg
+        priority: 2
+        whitelist:
+          tags:
+          - MagazinePistolSubMachineGun
+      gun_chamber:
+        name: Chamber
+        startingItem: CartridgePistol
+        priority: 1
+        whitelist:
+          tags:
+          - CartridgePistol
+  - type: MagazineVisuals
+    magState: mag
+    steps: 1
+    zeroVisible: true
+  - type: Appearance
+  - type: Wieldable
+  - type: UseDelay
+    delay: 0.5
+
+- type: entity
+  name: MP7
+  parent: BaseWeaponSubMachineGun
+  id: WeaponSubMachineGunMP7
+  suffix: Пистолет-пулемёт
+  description: An archaic design going back hundreds of years, the SMG-7 was common in its day. Today it sees limited use as cheap computer-printed replicas or family heirlooms, though it somehow got into the hands of colonial rebels.
+  components:
+  - type: Sprite
+    sprite: Backmen/Objects/Weapons/Gunsx64/SMGs/mp7/big.rsi
+    layers:
+    - state: base
+      map: ["enum.GunVisualLayers.Base"]
+    - state: mag-0
+      map: ["enum.GunVisualLayers.Mag"]
+  - type: Clothing
+    sprite: Backmen/Objects/Weapons/Gunsx64/SMGs/mp7/tiny.rsi
+  - type: Item
+    sprite: Backmen/Objects/Weapons/Gunsx64/SMGs/mp7/tiny.rsi
+  - type: GunWieldBonus
+    minAngle: -22
+    maxAngle: -28
+  - type: Gun
+    minAngle: 24
+    maxAngle: 45
+    fireRate: 8
+    soundGunshot:
+      path: /Audio/Weapons/Guns64/SMGs/mp7.ogg
+  - type: ItemSlots
+    slots:
+      gun_magazine:
+        name: Magazine
+        startingItem: MagazinePistolSubMachineGun
+        insertSound: /Audio/Weapons/Guns64/SMGs/smg_reload.ogg
+        ejectSound: /Audio/Weapons/Guns64/SMGs/smg_unload.ogg
+        priority: 2
+        whitelist:
+          tags:
+          - MagazinePistolSubMachineGun
+      gun_chamber:
+        name: Chamber
+        startingItem: CartridgePistol
+        priority: 1
+        whitelist:
+          tags:
+          - CartridgePistol
+  - type: MagazineVisuals
+    magState: mag
+    steps: 1
+    zeroVisible: true
+  - type: Appearance
+  - type: Wieldable
+  - type: UseDelay
+    delay: 0.5
+
+- type: entity
+  name: MP-38
+  parent: BaseWeaponSubMachineGun
+  id: WeaponSubMachineGunMP38
+  suffix: Пистолет-пулемёт
+  description: The MP-38 is a old and cheap machinepistol used by rebels, it presents solid performance at longer ranges in a compact package, although suffers due to a slow rate of fire for its class.
+  components:
+  - type: Sprite
+    sprite: Backmen/Objects/Weapons/Gunsx64/SMGs/mp38/big.rsi
+    layers:
+    - state: base
+      map: ["enum.GunVisualLayers.Base"]
+    - state: mag-0
+      map: ["enum.GunVisualLayers.Mag"]
+  - type: Clothing
+    sprite: Backmen/Objects/Weapons/Gunsx64/SMGs/mp38/tiny.rsi
+  - type: Item
+    sprite: Backmen/Objects/Weapons/Gunsx64/SMGs/mp38/tiny.rsi
+  - type: GunWieldBonus
+    minAngle: -22
+    maxAngle: -28
+  - type: Gun
+    minAngle: 24
+    maxAngle: 45
+    fireRate: 5
+    soundGunshot:
+      path: /Audio/Weapons/Guns64/SMGs/mp38.ogg
+  - type: ItemSlots
+    slots:
+      gun_magazine:
+        name: Magazine
+        startingItem: MagazinePistolBoxSubMachineGun
+        insertSound: /Audio/Weapons/Guns64/SMGs/mp38_reload.ogg
+        ejectSound: /Audio/Weapons/Guns64/SMGs/mp38_unload.ogg
+        priority: 2
+        whitelist:
+          tags:
+          - MagazinePistolBoxSubMachineGun
+      gun_chamber:
+        name: Chamber
+        startingItem: CartridgePistol
+        priority: 1
+        whitelist:
+          tags:
+          - CartridgePistol
+  - type: MagazineVisuals
+    magState: mag
+    steps: 1
+    zeroVisible: true
+  - type: Appearance
+  - type: Wieldable
+  - type: UseDelay
+    delay: 0.8
