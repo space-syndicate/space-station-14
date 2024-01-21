@@ -1,5 +1,4 @@
-ent-BaseMobArgocyte = { ent-['BaseSimpleMob', 'MobCombat'] }
-
+ent-BaseMobArgocyte = { ent-BaseSimpleMob }
   .desc = A dangerous alien found on the wrong side of planets, known for their propensity for munching on ruins.
   .suffix = AI
 ent-MobArgocyteSlurva = slurva
