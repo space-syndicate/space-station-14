@@ -1,15 +1,15 @@
 <Document>
-  # Forensics
+  # Криминалистика
 
-  There are a lot of tools to help you gather and examine the evidence at your disposal
+  В вашем распоряжении множество инструментов, которые помогут вам собрать и изучить доказательства.
 
-  # Log probe
+  # Зонд логов
 
-  This little add-on to your PDA is incredibly useful, just install the cartridge and your PDA will acquire the ability to scan anything with access (like airlocks) and see who has used them recently.
+  Это маленькое дополнение к вашему КПК невероятно полезно: просто установите картридж, и ваш КПК получит возможность сканировать всё, что имеет доступ (например, шлюзы), и видеть, кто пользовался ими в последнее время.
 
-  You can normally find it inside the detective locker. After inserting it on your PDA, go to the programs tab and the log probe application should be there, to use the application you just have to interact with anything that requires access with your PDA while the application is open and the information will be instantly displayed in it.
+  Обычно вы можете найти его в шкафчике детектива. После того как вы вставите его в КПК, перейдите во вкладку "Программы", где должно появиться приложение "Зонд логов". Чтобы воспользоваться приложением, вам нужно просто взаимодействовать со всем, что требует доступа с помощью вашего КПК, пока приложение открыто, и информация будет мгновенно отображена в нем.
 
-  It should be noted that the name shown in the application is not to be trusted 100% of the time since it gets the name from the identification card of whoever used the thing we are scanning, so if for example someone opened an airlock with no card the application would display "Unknown" as the name.
+  Следует отметить, что имени, отображаемому в приложении, нельзя доверять в 100% случаев, поскольку оно берет имя из ID-карты того, кто использовал сканируемую вещь, поэтому, если, например, кто-то открыл шлюз без карты, приложение отобразит "Неизвестно" в качестве имени.
 
   <Box>
     <GuideEntityEmbed Entity="LockerDetective"/>

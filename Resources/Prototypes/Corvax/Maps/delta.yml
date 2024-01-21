@@ -1,4 +1,4 @@
-﻿- type: gameMap
+- type: gameMap
   id: CorvaxDelta
   mapName: 'Delta Station'
   mapPath: /Maps/corvax_delta.yml
@@ -26,6 +26,7 @@
             Clown: [ 1, 1 ]
             Janitor: [ 1, 2 ]
             Mime: [ 1, 1 ]
+            Zookeeper: [ 1, 1 ]
             Captain: [ 1, 1 ]
             IAA: [ 1, 1 ]
             HeadOfPersonnel: [ 1, 1 ]

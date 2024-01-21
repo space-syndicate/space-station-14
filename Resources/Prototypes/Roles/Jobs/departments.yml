@@ -44,7 +44,7 @@
   - HeadOfSecurity
   - ResearchDirector
   - Quartermaster
-  - SAI
+  primary: false
 
 - type: department
   id: Engineering
@@ -97,3 +97,4 @@
   - Reporter
   - Zookeeper
   - Psychologist
+  primary: false
