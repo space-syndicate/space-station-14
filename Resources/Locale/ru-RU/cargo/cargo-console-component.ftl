@@ -28,6 +28,8 @@ cargo-console-invalid-product = Неверный ID продукта
 cargo-console-too-many = Слишком много одобренных заказов
 cargo-console-snip-snip = Заказ урезан до вместимости
 cargo-console-insufficient-funds = Недостаточно средств (требуется { $cost })
+cargo-console-unfulfilled = No room to fulfill order
+cargo-console-trade-station = Sent to { $destination }
 cargo-console-paper-print-name = Заказ #{ $orderNumber }
 cargo-console-paper-print-text =
     Заказ #{ $orderNumber }

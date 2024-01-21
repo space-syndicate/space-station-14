@@ -16,3 +16,5 @@ ent-FoodMeatRatdoubleKebab = двойной крысиный шашлык
     .desc = Двойная порция не особо вкусного крысиного мяса на палочке.
 ent-FoodMeatFiestaKebab = праздничный шашлык
     .desc = Где-то в мире всегда есть вечеринка на круизном лайнере, верно?
+ent-FoodMeatSnakeKebab = snake kebab
+    .desc = Snake meat on a stick. It's a little tough.
