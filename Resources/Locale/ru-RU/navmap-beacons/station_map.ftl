@@ -1,13 +1,13 @@
-station-map-window-title = Station map
-station-map-user-interface-flavor-left = Don't panic
+station-map-window-title = Карта станции
+station-map-user-interface-flavor-left = Не паникуй
 station-map-user-interface-flavor-right = v1.42
-nav-beacon-window-title = Station Beacon
-nav-beacon-toggle-visible = Visible
-nav-beacon-toggle-invisible = Invisible
-nav-beacon-text-label = Label:
-nav-beacon-button-apply = Apply
+nav-beacon-window-title = Станционный маяк
+nav-beacon-toggle-visible = Видимый
+nav-beacon-toggle-invisible = Невидимый
+nav-beacon-text-label = Метка:
+nav-beacon-button-apply = Применить
 nav-beacon-examine-text =
-    It is [color={ $enabled ->
-        [true] forestgreen]on
-       *[false] crimson]off
-    }[/color] and the display reads [color={ $color }]"{ $label }"[/color]
+    Маяк [color={ $enabled ->
+        [true] forestgreen]включён
+       *[false] crimson]выключен
+    }[/color], а на дисплее написано [color={ $color }]"{ $label }"[/color]
