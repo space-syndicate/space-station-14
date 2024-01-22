@@ -9,7 +9,6 @@ using Content.Server.Radio.Components;
 using Content.Server.Roles;
 using Content.Shared.Administration;
 using Content.Shared.Backmen.StationAI.Components;
-using Content.Shared.PDA;
 using Content.Shared.Roles;
 using Robust.Shared.Player;
 using Robust.Shared.Prototypes;
@@ -102,7 +101,13 @@ public sealed class BrokenAiRuleSystem : GameRuleSystem<BrokenAiRuleComponent>
             PrototypeId = component.BrokenAiPrototypeId,
         };
 
+        var brokenAiBriefing = new RoleBriefingComponent()
+        {
+            Briefing = Loc.GetString("broken-ai-briefing")
+        };
+
         _roleSystem.MindAddRole(mindId, brokenAiRole, mind);
+        _roleSystem.MindAddRole(mindId, brokenAiBriefing, mind);
         _roleSystem.MindPlaySound(mindId, component.GreetSoundNotification, mind);
 
         AddComp<BrokenAiComponent>(aiEnt);
