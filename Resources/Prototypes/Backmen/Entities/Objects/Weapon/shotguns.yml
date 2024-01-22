@@ -25,6 +25,15 @@
     fireRate: 1
 
 - type: entity
+  name: L-4034 trenchgun
+  parent: WeaponShotguntrenchgunL4034
+  id: WeaponShotguntrenchgunL4034NonLethal
+  suffix: Non-Lethal
+  components:
+  - type: BallisticAmmoProvider
+    proto: ShellShotgunBeanbag
+
+- type: entity
   name: Spas-12
   parent: BaseWeaponShotgun
   id: WeaponShotgunSpas12
@@ -70,3 +79,15 @@
   - type: Gun
     soundGunshot:
       path: /Audio/Weapons/Guns64/Shotguns/sh39.ogg
+  - type: Tag
+    tags:
+    - WeaponShotgunKammerer
+
+- type: entity
+  name: XM1014
+  parent: WeaponShotgunXM1014
+  id: WeaponShotgunXM1014NonLethal
+  suffix: Non-Lethal
+  components:
+  - type: BallisticAmmoProvider
+    proto: ShellShotgunBeanbag
