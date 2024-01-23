@@ -1028,6 +1028,7 @@ entities:
           decals:
             367: -68,-53
             379: 8,-23
+            380: 12,-20
             381: 15,-16
             382: 15,-18
             383: 15,-6
@@ -4255,6 +4256,7 @@ entities:
       pos: -53.5,-53.5
       parent: 2
     - type: DeviceList
+      configurators:
     - type: AtmosDevice
       joinedGrid: 2
   - uid: 6299
@@ -4263,6 +4265,7 @@ entities:
       pos: -60.5,-10.5
       parent: 2
     - type: DeviceList
+      configurators:
       devices:
       - 6117
       - 6123
@@ -4279,6 +4282,7 @@ entities:
       pos: -42.5,-44.5
       parent: 2
     - type: DeviceList
+      configurators:
       devices:
       - 13181
       - 1526
@@ -4292,6 +4296,7 @@ entities:
       pos: -35.5,-31.5
       parent: 2
     - type: DeviceList
+      configurators:
       devices:
       - 6887
       - 13095
@@ -4316,6 +4321,7 @@ entities:
       pos: 6.5,-20.5
       parent: 2
     - type: DeviceList
+      configurators:
       devices:
       - 13161
       - 13162
@@ -4364,6 +4370,7 @@ entities:
       pos: -16.5,-13.5
       parent: 2
     - type: DeviceList
+      configurators:
       devices:
       - 13330
       - 7376
@@ -4406,6 +4413,7 @@ entities:
       pos: -28.5,-53.5
       parent: 2
     - type: DeviceList
+      configurators:
       devices:
       - 7438
       - 6954
@@ -4427,6 +4435,7 @@ entities:
       pos: -23.5,-28.5
       parent: 2
     - type: DeviceList
+      configurators:
       devices:
       - 7441
       - 13097
@@ -4446,6 +4455,7 @@ entities:
       pos: -56.5,-30.5
       parent: 2
     - type: DeviceList
+      configurators:
       devices:
       - 13077
       - 13085
@@ -4471,6 +4481,7 @@ entities:
       pos: -20.5,-45.5
       parent: 2
     - type: DeviceList
+      configurators:
       devices:
       - 13183
       - 5598
@@ -5846,7 +5857,7 @@ entities:
       pos: -60.5,-4.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -38102.902
+      secondsUntilStateChange: -38247.586
       state: Opening
   - uid: 6337
     components:
@@ -5857,7 +5868,7 @@ entities:
       pos: -64.5,-4.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -38102.043
+      secondsUntilStateChange: -38246.727
       state: Opening
 - proto: AirlockMaintEngiLocked
   entities:
@@ -59301,14 +59312,6 @@ entities:
       rot: -1.5707963267948966 rad
       pos: -30.5,-2.5
       parent: 2
-  - uid: 11641
-    components:
-    - type: MetaData
-      flags: PvsPriority
-    - type: Transform
-      rot: 3.141592653589793 rad
-      pos: -32.5,-14.5
-      parent: 2
   - uid: 11644
     components:
     - type: MetaData
@@ -68724,6 +68727,18 @@ entities:
     components:
     - type: Transform
       pos: -4.5,-5.5
+      parent: 2
+- proto: SpawnPointLatejoin
+  entities:
+  - uid: 11641
+    components:
+    - type: Transform
+      pos: 0.5,-8.5
+      parent: 2
+  - uid: 14274
+    components:
+    - type: Transform
+      pos: 12.5,-8.5
       parent: 2
 - proto: SpawnPointLawyer
   entities:
