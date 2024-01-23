@@ -22,6 +22,20 @@ public sealed partial class StationAIComponent : Component
     [ViewVariables(VVAccess.ReadWrite)]
     public SiliconLawsetPrototype? SelectedLaw;
 
+    [DataField("aiDronePrototype")]
+    [ViewVariables(VVAccess.ReadOnly)]
+    public EntProtoId AiDronePrototype = "SAIDrone";
+
+    [DataField("aiDroneChangeActionPrototype")]
+    [ViewVariables(VVAccess.ReadOnly)]
+    public EntProtoId AiDroneChangeActionPrototype = "ActionAIDroneChange";
+
+    public EntityUid? AiDroneChangeAction = null;
+
+    [DataField("aiDrone")]
+    [ViewVariables(VVAccess.ReadOnly)]
+    public EntityUid? AiDrone = null;
+
     public readonly SoundSpecifier AiDeath =
         new SoundPathSpecifier("/Audio/Machines/AI/borg_death.ogg");
 }

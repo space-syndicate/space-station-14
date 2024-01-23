@@ -36,7 +36,7 @@ public sealed class StationAISystem : EntitySystem
 
     private void OnUpdateCanMove(EntityUid uid, StationAIComponent component, CancellableEntityEventArgs args)
     {
-        if(!HasComp<AIEyeComponent>(uid))
+        if(!HasComp<AIEyeComponent>(uid) && !HasComp<StationAiDroneComponent>(uid))
             args.Cancel();
     }
 

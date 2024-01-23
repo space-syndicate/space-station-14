@@ -169,6 +169,7 @@ public sealed class AIEyePowerSystem : EntitySystem
         }
 
         _transformSystem.AttachToGridOrMap(projection);
+        _mindSystem.UnVisit(mindId, mind);
         _mindSystem.Visit(mindId, projection, mind); // Mind swap
 
         args.Handled = true;
