@@ -16,7 +16,7 @@
 - type: trait
   id: Narcolepsy
   name: trait-narcolepsy-name
-  description: trait-narcolepsy-decs
+  description: trait-narcolepsy-desc
   blacklist:
     components:
       - BSSDrone #backmen: bssdrone
@@ -29,6 +29,7 @@
 - type: trait
   id: Pacifist
   name: trait-pacifist-name
+  description: trait-pacifist-desc
   blacklist:
     components:
       - BSSDrone #backmen: bssdrone
@@ -53,6 +54,13 @@
         collection: Paracusia
 
 - type: trait
+  id: Unrevivable
+  name: trait-unrevivable-name
+  description: trait-unrevivable-desc
+  components:
+    - type: Unrevivable
+
+- type: trait
   id: Muted
   name: trait-muted-name
   description: trait-muted-desc
@@ -64,17 +72,6 @@
     - type: Muted
 
 - type: trait
-  id: Uncloneable
-  name: trait-uncloneable-name
-  description: trait-uncloneable-desc
-  blacklist:
-    components:
-      - BSSDrone #backmen: bssdrone
-      - StationAI # backmen: AI
-  components:
-    - type: Uncloneable
-
-- type: trait
   id: WheelchairBound
   name: trait-wheelchair-bound-name
   description: trait-wheelchair-bound-desc
@@ -84,7 +81,8 @@
       - BSSDrone #backmen: bssdrone
       - StationAI # backmen: AI
   components:
-    - type: WheelchairBound
+    - type: BuckleOnMapInit
+      prototype: VehicleWheelchair
     - type: LegsParalyzed
 
 - type: trait
