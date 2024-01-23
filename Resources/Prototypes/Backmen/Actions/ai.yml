@@ -95,3 +95,16 @@
     checkCanInteract: false
     priority: -1
     range: 25
+
+- type: entity
+  id: ActionAIDroneChange
+  name: AI drone control change
+  description: Change drone control mode.
+  noSpawn: true
+  components:
+  - type: InstantAction
+    icon: Interface/VerbIcons/sentient.svg.192dpi.png
+    event: !type:AIDroneChangeEvent
+    checkCanInteract: false
+    useDelay: 5
+    priority: 17

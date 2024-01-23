@@ -365,6 +365,8 @@
       Acidic: [ Touch ]
   - type: Input
     context: "human"
+  - type: MobMover
+  - type: InputMover
   - type: DamageOnHighSpeedImpact
     damage:
       types:
@@ -385,12 +387,6 @@
         Bloodloss:
           -1
   - type: InteractionOutline
-  - type: MovementSpeedModifier
-    baseWalkSpeed: 4
-    baseSprintSpeed: 3
-  - type: Sprite
-    noRot: true
-    drawdepth: Mobs
   - type: Physics
     bodyType: KinematicController
   - type: Hands
@@ -485,6 +481,5 @@
     autoRot: true
   - type: Tag
     tags:
-    - ShoesRequiredStepTriggerImmune
     - ShoesRequiredStepTriggerImmune
     - CannotSuicide
