@@ -23,7 +23,8 @@ public abstract class SharedSiliconLawSystem : EntitySystem
     {
         if (component.RequireOpenPanel &&
             TryComp<WiresPanelComponent>(uid, out var panel) &&
-            !panel.Open)
+            !panel.Open &&
+            !args.wiresImmune)
         {
             _popup.PopupClient(Loc.GetString("law-emag-require-panel"), uid, args.UserUid);
             args.Handled = true;

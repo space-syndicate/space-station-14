@@ -182,7 +182,7 @@ public sealed class SiliconLawSystem : SharedSiliconLawSystem
 
     protected override void OnGotEmagged(EntityUid uid, EmagSiliconLawComponent component, ref GotEmaggedEvent args)
     {
-        if (component.RequireOpenPanel && TryComp<WiresPanelComponent>(uid, out var panel) && !panel.Open)
+        if (component.RequireOpenPanel && TryComp<WiresPanelComponent>(uid, out var panel) && !panel.Open && !args.WiresImmune)
             return;
 
         base.OnGotEmagged(uid, component, ref args);

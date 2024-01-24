@@ -5,6 +5,7 @@ using Content.Shared.Database;
 using Content.Shared.Emag.Components;
 using Content.Shared.IdentityManagement;
 using Content.Shared.Interaction;
+using Content.Shared.Physics;
 using Content.Shared.Popups;
 using Content.Shared.Silicons.Laws.Components;
 using Content.Shared.Tag;
@@ -23,12 +24,29 @@ public sealed class EmagSystem : EntitySystem
     [Dependency] private readonly SharedChargesSystem _charges = default!;
     [Dependency] private readonly SharedPopupSystem _popup = default!;
     [Dependency] private readonly TagSystem _tag = default!;
+    [Dependency] private readonly SharedInteractionSystem _interactionSystem = default!;
 
     public override void Initialize()
     {
         base.Initialize();
 
         SubscribeLocalEvent<EmagComponent, AfterInteractEvent>(OnAfterInteract);
+        SubscribeLocalEvent<EmagComponent, BeforeRangedInteractEvent>(OnBeforeInteract);
+    }
+
+    private void OnBeforeInteract(EntityUid uid, EmagComponent component, BeforeRangedInteractEvent args)
+    {
+        if (args.Handled
+            || args.Target == null
+            || !_interactionSystem.InRangeUnobstructed(args.User, args.Target.Value,
+                SharedInteractionSystem.MaxRaycastRange, CollisionGroup.Opaque))
+        {
+            return;
+        }
+
+        args.Handled = true;
+
+        TryUseEmag(uid, args.User, args.Target.Value, component);
     }
 
     private void OnAfterInteract(EntityUid uid, EmagComponent comp, AfterInteractEvent args)
@@ -57,7 +75,7 @@ public sealed class EmagSystem : EntitySystem
             return false;
         }
 
-        var handled = DoEmagEffect(user, target);
+        var handled = DoEmagEffect(user, target, comp.WiresImmune);
         if (!handled)
             return false;
 
@@ -74,20 +92,20 @@ public sealed class EmagSystem : EntitySystem
     /// <summary>
     /// Does the emag effect on a specified entity
     /// </summary>
-    public bool DoEmagEffect(EntityUid user, EntityUid target)
+    public bool DoEmagEffect(EntityUid user, EntityUid target, bool wiresImmune = false)
     {
         // prevent emagging twice
         if (HasComp<EmaggedComponent>(target))
             return false;
 
-        var onAttemptEmagEvent = new OnAttemptEmagEvent(user);
+        var onAttemptEmagEvent = new OnAttemptEmagEvent(user, wiresImmune);
         RaiseLocalEvent(target, ref onAttemptEmagEvent);
 
         // prevent emagging if attempt fails
         if (onAttemptEmagEvent.Handled)
             return false;
 
-        var emaggedEvent = new GotEmaggedEvent(user);
+        var emaggedEvent = new GotEmaggedEvent(user, wiresImmune);
         RaiseLocalEvent(target, ref emaggedEvent);
 
         if (emaggedEvent.Handled && !emaggedEvent.Repeatable)
@@ -97,7 +115,7 @@ public sealed class EmagSystem : EntitySystem
 }
 
 [ByRefEvent]
-public record struct GotEmaggedEvent(EntityUid UserUid, bool Handled = false, bool Repeatable = false);
+public record struct GotEmaggedEvent(EntityUid UserUid, bool WiresImmune = false, bool Handled = false, bool Repeatable = false);
 
 [ByRefEvent]
-public record struct OnAttemptEmagEvent(EntityUid UserUid, bool Handled = false);
+public record struct OnAttemptEmagEvent(EntityUid UserUid, bool wiresImmune = false, bool Handled = false);
