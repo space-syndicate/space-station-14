@@ -31,6 +31,8 @@ public sealed class StationAISystem : EntitySystem
 
     private void OnAttempt(EntityUid uid, StationAIComponent component, CancellableEntityEventArgs args)
     {
+        if (HasComp<StationAiDroneComponent>(uid))
+            return;
         args.Cancel();
     }
 

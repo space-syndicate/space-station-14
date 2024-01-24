@@ -6,4 +6,5 @@ namespace Content.Shared.Backmen.StationAI;
 [RegisterComponent]
 public sealed partial class StationAiDroneComponent : Component
 {
+    public EntityUid? AiCore;
 }

@@ -21,6 +21,8 @@ public sealed class StationAISystem : EntitySystem
 
     private void CanInteraction(Entity<StationAIComponent> ent, ref InteractionAttemptEvent args)
     {
+        if (HasComp<StationAiDroneComponent>(ent))
+            return;
         var core = ent;
         if (TryComp<AIEyeComponent>(ent, out var eye))
         {
