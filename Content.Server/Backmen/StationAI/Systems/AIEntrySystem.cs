@@ -2,6 +2,7 @@ using Content.Server.Chat.Managers;
 using Content.Server.GameTicking;
 using Content.Server.Mind;
 using Content.Shared.Backmen.StationAI;
+using Content.Shared.Backmen.StationAI.Components;
 using Content.Shared.Mind.Components;
 using Robust.Shared.Player;
 using Robust.Shared.Timing;
@@ -33,9 +34,11 @@ public sealed class AIEntrySystem : EntitySystem
 
         var queue = EntityQueryEnumerator<StationAIComponent>();
 
-        if (queue.MoveNext(out var core, out _))
+        if (queue.MoveNext(out var core, out var stationComp))
         {
             _mindSystem.ControlMob(playerSession.UserId, core);
+            component.Core = core;
+            stationComp.Core = core;
             _gameTicker.AddGameRule("BrokenAi");
         }
         else

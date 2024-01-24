@@ -1,5 +1,6 @@
 using System.Linq;
 using Content.Server.Administration.Managers;
+using Content.Server.Backmen.StationAI;
 using Content.Server.Chat.Managers;
 using Content.Server.GameTicking.Rules.Components;
 using Content.Server.Mind;
@@ -10,6 +11,7 @@ using Content.Server.Roles;
 using Content.Shared.Administration;
 using Content.Shared.Backmen.StationAI.Components;
 using Content.Shared.Roles;
+using Microsoft.CodeAnalysis.CSharp.Syntax;
 using Robust.Shared.Player;
 using Robust.Shared.Prototypes;
 
@@ -23,6 +25,7 @@ public sealed class BrokenAiRuleSystem : GameRuleSystem<BrokenAiRuleComponent>
     [Dependency] private readonly MindSystem _mindSystem = default!;
     [Dependency] private readonly SharedRoleSystem _roleSystem = default!;
     [Dependency] private readonly IAdminManager _adminManager = default!;
+    [Dependency] private readonly InnateItemSystem _innateItemSystem = default!;
 
     public override void Initialize()
     {
@@ -41,16 +44,16 @@ public sealed class BrokenAiRuleSystem : GameRuleSystem<BrokenAiRuleComponent>
         if (TryComp<IntrinsicRadioTransmitterComponent>(uid, out var transmitterComponent))
         {
             transmitterComponent.Channels.Add(component.BrokenAiSyndicateChannel);
-
-            Dirty(uid, transmitterComponent);
         }
 
         if (TryComp<ActiveRadioComponent>(uid, out var radio))
         {
             radio.Channels.Add(component.BrokenAiSyndicateChannel);
-
-            Dirty(uid, radio);
         }
+
+        var innateComponent = EnsureComp<InnateItemComponent>(uid);
+        innateComponent.Slots.Add("emag", new EntProtoId("ActionEmagRemote"));
+        _innateItemSystem.RefreshItems(uid, innateComponent);
     }
 
     private void HandleSpawn(PlayerSpawnCompleteEvent ev)
@@ -110,13 +113,19 @@ public sealed class BrokenAiRuleSystem : GameRuleSystem<BrokenAiRuleComponent>
         _roleSystem.MindAddRole(mindId, brokenAiBriefing, mind);
         _roleSystem.MindPlaySound(mindId, component.GreetSoundNotification, mind);
 
-        AddComp<BrokenAiComponent>(aiEnt);
+        if (TryComp<AIEntryComponent>(aiEnt, out var comp) && comp.Core != null)
+        {
+            AddComp<BrokenAiComponent>(comp.Core.Value);
+            _npcFaction.RemoveFaction(entity, "NanoTrasen", false);
+        }
+        else
+        {
+            AddComp<BrokenAiComponent>(aiEnt);
+        }
 
         SendBrokenAiBriefing(mindId);
 
         component.BrokenAi = entity;
-
-        _npcFaction.RemoveFaction(entity, "NanoTrasen", false);
     }
 
     private void SendBrokenAiBriefing(EntityUid mindId)
