@@ -53,6 +53,19 @@
     event: !type:ToggleIntrinsicUIEvent { key: enum.CommunicationsConsoleUiKey.Key }
     checkCanInteract: false
 
+- type: entity
+  id: ActionEmagRemote
+  name: Emag
+  noSpawn: true
+  components:
+  - type: EntityTargetAction
+    icon:
+      entity: BrokenAIEmag
+    event: !type:InnateBeforeInteractActionEvent
+      item: BrokenAIEmag
+    checkCanInteract: false
+    priority: -1
+    range: 25
 
 - type: entity
   id: ActionOpenCloseRemote
@@ -103,7 +116,7 @@
   noSpawn: true
   components:
   - type: InstantAction
-    icon: Interface/VerbIcons/sentient.svg.192dpi.png
+    icon: Mobs/Silicon/drone.rsi/shell.png
     event: !type:AIDroneChangeEvent
     checkCanInteract: false
     useDelay: 5

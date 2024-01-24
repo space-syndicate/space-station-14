@@ -76,6 +76,8 @@
   parent: PlayerSiliconBase
   components:
   - type: Drone
+  - type: Body
+    prototype: Drone
   - type: InnateTool
     tools:
       - id: ClothingBackpackSatchelDrone
