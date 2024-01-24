@@ -147,7 +147,14 @@ public sealed class AIEyePowerSystem : EntitySystem
     private void OnPowerUsed(EntityUid uid, AIEyePowerComponent component, AIEyePowerActionEvent args)
     {
         if (!_mindSystem.TryGetMind(args.Performer, out var mindId, out var mind))
-            return;
+        {
+            if (!TryComp<VisitingMindComponent>(args.Performer, out var mindVId) ||
+                mindVId!.MindId == null ||
+                !TryComp(mindVId.MindId.Value, out mind))
+                return;
+
+            mindId = mindVId.MindId.Value;
+        }
 
         if (!TryComp<StationAIComponent>(uid, out var ai))
             return;
@@ -156,7 +163,11 @@ public sealed class AIEyePowerSystem : EntitySystem
         var projection = EntityManager.CreateEntityUninitialized(component.Prototype, coords);
         ai.ActiveEye = projection;
         EnsureComp<AIEyeComponent>(projection).AiCore = (uid, ai);
-        EnsureComp<StationAIComponent>(projection).SelectedLaw = ai.SelectedLaw;
+        var stationAi = EnsureComp<StationAIComponent>(projection);
+        stationAi.SelectedLaw = ai.SelectedLaw;
+        stationAi.AiDrone = ai.AiDrone;
+        stationAi.LastDroneSpawn = ai.LastDroneSpawn;
+        stationAi.Core = ai.Core;
         EnsureComp<SiliconLawBoundComponent>(projection);
         var core = MetaData(uid);
         // Consistent name
