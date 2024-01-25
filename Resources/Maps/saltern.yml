@@ -74054,7 +74054,7 @@ entities:
     - type: Transform
       pos: -14.594447,16.787762
       parent: 31
-- proto: WeaponPistolMk58
+- proto: WeaponPistolG22
   entities:
   - uid: 4096
     components:
@@ -74066,7 +74066,7 @@ entities:
     - type: Transform
       pos: -14.625454,20.707024
       parent: 31
-- proto: WeaponShotgunKammerer
+- proto: WeaponShotgunXM1014
   entities:
   - uid: 8072
     components:

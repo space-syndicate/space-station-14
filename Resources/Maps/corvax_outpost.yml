@@ -121383,7 +121383,7 @@ entities:
     - type: Transform
       pos: -51.434956,-24.461514
       parent: 2
-- proto: WeaponRifleAk
+- proto: WeaponAKMSRifle
   entities:
   - uid: 14157
     components:
@@ -121395,7 +121395,7 @@ entities:
     - type: Transform
       pos: -53.511593,-19.636038
       parent: 2
-- proto: WeaponRifleLecter
+- proto: WeaponRifleAR18
   entities:
   - uid: 1570
     components:
@@ -121419,7 +121419,7 @@ entities:
     - type: Transform
       pos: -54.505894,-17.502272
       parent: 2
-- proto: WeaponShotgunKammerer
+- proto: WeaponShotgunXM1014
   entities:
   - uid: 1524
     components:
@@ -121441,7 +121441,7 @@ entities:
       rot: -1.5707963267948966 rad
       pos: -62.941372,-22.251493
       parent: 2
-- proto: WeaponSubMachineGunDrozd
+- proto: WeaponSubMachineGunMP5
   entities:
   - uid: 1623
     components:

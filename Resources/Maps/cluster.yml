@@ -84972,7 +84972,7 @@ entities:
     - type: Transform
       pos: 38.375,13.58497
       parent: 1
-- proto: WeaponPistolMk58
+- proto: WeaponPistolG22
   entities:
   - uid: 5396
     components:
@@ -84989,14 +84989,14 @@ entities:
     - type: Transform
       pos: 37.546875,13.55372
       parent: 1
-- proto: WeaponRifleLecter
+- proto: WeaponRifleAR18
   entities:
   - uid: 5431
     components:
     - type: Transform
       pos: 38.533405,11.484736
       parent: 1
-- proto: WeaponShotgunKammerer
+- proto: WeaponShotgunXM1014
   entities:
   - uid: 5426
     components:
@@ -85008,14 +85008,14 @@ entities:
     - type: Transform
       pos: 38.54903,12.330601
       parent: 1
-- proto: WeaponSubMachineGunDrozd
+- proto: WeaponSubMachineGunMP5
   entities:
   - uid: 5418
     components:
     - type: Transform
       pos: 36.546875,13.694345
       parent: 1
-- proto: WeaponSubMachineGunDrozdRubber
+- proto: WeaponSubMachineGunMP5NonLethal
   entities:
   - uid: 5310
     components:

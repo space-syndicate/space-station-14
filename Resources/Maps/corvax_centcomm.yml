@@ -57319,7 +57319,7 @@ entities:
       rot: -1.5707963267948966 rad
       pos: -20.274944,14.650303
       parent: 2
-- proto: WeaponPistolMk58Nonlethal
+- proto: WeaponPistolG22NonLethal
   entities:
   - uid: 4848
     components:
@@ -57457,7 +57457,7 @@ entities:
     - type: Transform
       pos: 19.403492,-21.33892
       parent: 2
-- proto: WeaponSubMachineGunDrozd
+- proto: WeaponSubMachineGunMP5
   entities:
   - uid: 4731
     components:

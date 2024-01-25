@@ -101809,11 +101809,11 @@ entities:
 
         --------------------------------------------------------------------------------------
 
-        [bold]1.[/bold] Limited external forces from the containments power. 
+        [bold]1.[/bold] Limited external forces from the containments power.
 
-        [bold]2.[/bold] An "early warning" system, if you see JUST the PA room run out of power, you know there is an issue. 
+        [bold]2.[/bold] An "early warning" system, if you see JUST the PA room run out of power, you know there is an issue.
 
-        [bold]3.[/bold] Due to being on its own small loop, its much easier to spot faults in the system. 
+        [bold]3.[/bold] Due to being on its own small loop, its much easier to spot faults in the system.
 
 
         While we have listed the upsides we also acknowledge the downside, for it being on its own loop you will need an external force if the system "runs out of juice". Our recommendation for this is simply attaching a generator to said SMES and letting it get to full charge before continuing operations but as said from another of our technicians... "just attach it to the main grid for like, a hot moment, and kickstart the thing!"
@@ -101888,7 +101888,7 @@ entities:
         Dear [bold]engineering team[/bold],
 
 
-        During the production of this station we have overlooked this substation, and as a result does not power any APCs. Please pretend that this was not an oversight, but instead an intended decision. 
+        During the production of this station we have overlooked this substation, and as a result does not power any APCs. Please pretend that this was not an oversight, but instead an intended decision.
 
 
         [italics]It is now a spare substation for any case where a substation or APC becomes damaged or wears out over time.[/italics]
@@ -146770,7 +146770,7 @@ entities:
     - type: Transform
       pos: 3.53751,33.53506
       parent: 2
-- proto: WeaponShotgunKammerer
+- proto: WeaponShotgunXM1014
   entities:
   - uid: 5091
     components:

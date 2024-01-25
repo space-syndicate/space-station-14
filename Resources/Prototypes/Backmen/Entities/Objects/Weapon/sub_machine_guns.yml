@@ -88,6 +88,31 @@
     delay: 0.5
 
 - type: entity
+  mame: MP 5
+  parent: WeaponSubMachineGunMP5
+  id: WeaponSubMachineGunMP5NonLethal
+  suffix: Non-lethal
+  components:
+  - type: ItemSlots
+    slots:
+      gun_magazine:
+        name: Magazine
+        startingItem: MagazinePistolSubMachineGunRubber
+        insertSound: /Audio/Weapons/Guns64/SMGs/mp5_reload.ogg
+        ejectSound: /Audio/Weapons/Guns64/SMGs/mp5_unload.ogg
+        priority: 2
+        whitelist:
+          tags:
+          - MagazinePistolSubMachineGun
+      gun_chamber:
+        name: Chamber
+        startingItem: CartridgePistol
+        priority: 1
+        whitelist:
+          tags:
+          - CartridgePistol
+
+- type: entity
   name: MP7
   parent: BaseWeaponSubMachineGun
   id: WeaponSubMachineGunMP7

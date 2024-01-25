@@ -165,6 +165,32 @@
       gun_chamber: !type:ContainerSlot
 
 - type: entity
+  name: G-22
+  parent: WeaponPistolG22
+  id: WeaponPistolG22NonLethal
+  suffix: Non-lethal
+  components:
+  - type: ItemSlots
+    slots:
+      gun_magazine:
+        name: Magazine
+        startingItem: MagazinePistolRubber
+        insertSound: /Audio/Weapons/Guns64/Pistols/beretta_reload.ogg
+        ejectSound: /Audio/Weapons/Guns64/Pistols/beretta_unload.ogg
+        priority: 2
+        whitelist:
+          tags:
+          - MagazinePistol
+          - MagazinePistolHighCapacity
+      gun_chamber:
+        name: Chamber
+        startingItem: CartridgePistol
+        priority: 1
+        whitelist:
+          tags:
+          - CartridgePistol
+
+- type: entity
   name: HI Browning-88 M4
   parent: BaseWeaponPistol
   id: WeaponPistolHIB88M4

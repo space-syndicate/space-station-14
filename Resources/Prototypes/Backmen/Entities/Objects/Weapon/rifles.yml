@@ -202,6 +202,31 @@
     delay: 1.3
 
 - type: entity
+  name: AR-18
+  parent: WeaponRifleAR18
+  id: WeaponRifleAR18NonLethal
+  suffix: Non-lethal
+  components:
+  - type: ItemSlots
+    slots:
+      gun_magazine:
+        name: Magazine
+        startingItem: MagazineRifleRubber
+        insertSound: /Audio/Weapons/Guns64/Rifles/ar18_reload.ogg
+        ejectSound: /Audio/Weapons/Guns64/Rifles/ar18_unload.ogg
+        priority: 2
+        whitelist:
+          tags:
+          - MagazineRifle
+      gun_chamber:
+        name: Chamber
+        startingItem: CartridgeRifle
+        priority: 1
+        whitelist:
+          tags:
+          - CartridgeRifle
+
+- type: entity
   name: G-36
   parent: BaseWeaponRifle
   id: WeaponRifleG36
