@@ -1,6 +1,6 @@
 # Weapons
-uplink-pistol-viper-name = { ent-WeaponPistolViper }
-uplink-pistol-viper-desc = { ent-WeaponPistolViper.desc }
+uplink-pistol-viper-name = { ent-WeaponPistolHIB88M4 }
+uplink-pistol-viper-desc = { ent-WeaponPistolHIB88M4.desc }
 uplink-revolver-python-name = Питон
 uplink-revolver-python-desc = Брутально простой, эффективный и громкий револьвер Синдиката. Поставляется с бронебойными патронами. Использует патроны калибра .45 магнум.
 uplink-pistol-cobra-name = { ent-WeaponPistolCobra }
