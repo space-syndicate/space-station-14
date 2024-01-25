@@ -228,3 +228,7 @@ ent-WeaponShotgunXM1014 = XM1014
 ent-WeaponShotgunXM1014NonLethal = { ent-WeaponShotgunXM1014 }
     .desc = { ent-WeaponShotgunXM1014.desc }
     .suffix = Нелетальное
+ent-WeaponPistolG22NonLethal = { ent-WeaponPistolG22NonLethal }
+    .desc = { ent-WeaponPistolG22NonLethal.desc }
+ent-WeaponRifleAR18NonLethal = { ent-WeaponRifleAR18 }
+    .desc = { ent-WeaponRifleAR18 }
