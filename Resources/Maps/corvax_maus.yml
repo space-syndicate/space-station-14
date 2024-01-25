@@ -4257,6 +4257,7 @@ entities:
       parent: 2
     - type: DeviceList
       configurators:
+      - invalid
     - type: AtmosDevice
       joinedGrid: 2
   - uid: 6299
@@ -4266,6 +4267,7 @@ entities:
       parent: 2
     - type: DeviceList
       configurators:
+      - invalid
       devices:
       - 6117
       - 6123
@@ -4283,6 +4285,7 @@ entities:
       parent: 2
     - type: DeviceList
       configurators:
+      - invalid
       devices:
       - 13181
       - 1526
@@ -4297,6 +4300,7 @@ entities:
       parent: 2
     - type: DeviceList
       configurators:
+      - invalid
       devices:
       - 6887
       - 13095
@@ -4322,6 +4326,7 @@ entities:
       parent: 2
     - type: DeviceList
       configurators:
+      - invalid
       devices:
       - 13161
       - 13162
@@ -4371,6 +4376,7 @@ entities:
       parent: 2
     - type: DeviceList
       configurators:
+      - invalid
       devices:
       - 13330
       - 7376
@@ -4414,6 +4420,7 @@ entities:
       parent: 2
     - type: DeviceList
       configurators:
+      - invalid
       devices:
       - 7438
       - 6954
@@ -4436,6 +4443,7 @@ entities:
       parent: 2
     - type: DeviceList
       configurators:
+      - invalid
       devices:
       - 7441
       - 13097
@@ -4456,6 +4464,7 @@ entities:
       parent: 2
     - type: DeviceList
       configurators:
+      - invalid
       devices:
       - 13077
       - 13085
@@ -4482,6 +4491,7 @@ entities:
       parent: 2
     - type: DeviceList
       configurators:
+      - invalid
       devices:
       - 13183
       - 5598
