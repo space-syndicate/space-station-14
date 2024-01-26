@@ -192,3 +192,6 @@ ent-DefaultStationBeaconToolRoom = { ent-DefaultStationBeacon }
 ent-DefaultStationBeaconDisposals = { ent-DefaultStationBeacon }
     .suffix = Мусоросброс
     .desc = { ent-DefaultStationBeacon.desc }
+ent-DefaultStationBeaconCryosleep = { ent-DefaultStationBeacon }
+    .suffix = Cryosleep
+    .desc = { ent-DefaultStationBeacon.desc }
