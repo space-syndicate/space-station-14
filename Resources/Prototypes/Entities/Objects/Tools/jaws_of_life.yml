@@ -59,6 +59,11 @@
     state: syn_jaws_pry
   - type: Item
     size: Normal
+    inhandVisuals:
+      left:
+      - state: syn_inhand-left
+      right:
+      - state: syn_inhand-right
   - type: Tool
     qualities:
       - Prying
