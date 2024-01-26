@@ -22,7 +22,7 @@ public sealed class TTSSystem : EntitySystem
 
     private ISawmill _sawmill = default!;
     private readonly MemoryContentRoot _contentRoot = new();
-    private static readonly ResPath Prefix = ResPath.Root / "TTS";
+    private readonly ResPath _prefix = ResPath.Root / "TTS" / _resPathIndex.ToString();
 
     /// <summary>
     /// Reducing the volume of the TTS when whispering. Will be converted to logarithm.
@@ -34,22 +34,28 @@ public sealed class TTSSystem : EntitySystem
     /// </summary>
     private const float MinimalVolume = -10f;
 
+    /// <summary>
+    /// To change the resource folder after reconnection
+    /// </summary>
+    private static int _resPathIndex = 0;
+
     private float _volume = 0.0f;
     private int _fileIdx = 0;
 
     public override void Initialize()
     {
         _sawmill = Logger.GetSawmill("tts");
-        _resourceCache.AddRoot(Prefix, _contentRoot);
+        _resourceCache.AddRoot(_prefix, _contentRoot);
         _cfg.OnValueChanged(CCCVars.TTSVolume, OnTtsVolumeChanged, true);
         SubscribeNetworkEvent<PlayTTSEvent>(OnPlayTTS);
+
+        _resPathIndex++;
     }
 
     public override void Shutdown()
     {
         base.Shutdown();
         _cfg.UnsubValueChanged(CCCVars.TTSVolume, OnTtsVolumeChanged);
-        _contentRoot.Dispose();
     }
 
     public void RequestGlobalTTS(string text, string voiceId)
@@ -67,12 +73,13 @@ public sealed class TTSSystem : EntitySystem
         _sawmill.Debug($"Play TTS audio {ev.Data.Length} bytes from {ev.SourceUid} entity");
 
         var volume = AdjustVolume(ev.IsWhisper);
-
         var filePath = new ResPath($"{_fileIdx++}.ogg");
+
+        _contentRoot.RemoveFile(filePath);
         _contentRoot.AddOrUpdateFile(filePath, ev.Data);
 
         var audioParams = AudioParams.Default.WithVolume(volume);
-        var soundPath = new SoundPathSpecifier(Prefix / filePath, audioParams);
+        var soundPath = new SoundPathSpecifier(_prefix / filePath, audioParams);
 
         if (ev.SourceUid != null)
         {
