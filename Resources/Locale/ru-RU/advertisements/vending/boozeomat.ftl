@@ -18,3 +18,5 @@ advertisement-boozeomat-17 = Максимум алкоголя!
 advertisement-boozeomat-18 = Мужчины любят пиво.
 advertisement-boozeomat-19 = Тост за прогресс!
 thankyou-boozeomat-1 = Пожалуйста, пейте ответственно!
+thankyou-boozeomat-2 = Please drink un-responsibly!
+thankyou-boozeomat-3 = Please enjoy your drink!
