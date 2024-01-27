@@ -87,3 +87,7 @@ ent-DrinkRootBeerJug = root beer jug
     .desc = this drink makes Australians giggle
 ent-DrinkWaterMelonJuiceJug = watermelon juice jug
     .desc = May include leftover seeds
+ent-DrinkEnergyDrinkJug = red bool jug
+    .desc = A jug of Red Bool, with enough caffine to kill a whole station.
+ent-CustomDrinkJug = beverage jug
+    .desc = A jug for storing custom made drinks.

@@ -87,3 +87,7 @@ ent-DrinkRootBeerJug = кувшин рутбира
     .desc = Напиток, заставляющий австралийцев хихикать.
 ent-DrinkWaterMelonJuiceJug = кувшин арбузного сока
     .desc = Может содержать остатки семян.
+ent-DrinkEnergyDrinkJug = red bool jug
+    .desc = A jug of Red Bool, with enough caffine to kill a whole station.
+ent-CustomDrinkJug = beverage jug
+    .desc = A jug for storing custom made drinks.

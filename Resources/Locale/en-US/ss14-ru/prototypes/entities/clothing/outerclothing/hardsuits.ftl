@@ -63,5 +63,7 @@ ent-ClothingOuterHardsuitCBURN = CBURN exosuit
     .desc = A lightweight yet strong exosuit used for special cleanup operations.
 ent-ClothingOuterHardsuitClown = clown hardsuit
     .desc = A custom-made clown hardsuit.
+ent-ClothingOuterHardsuitMime = mime hardsuit
+    .desc = A custom-made mime hardsuit.
 ent-ClothingOuterHardsuitSanta = Santa's hardsuit
     .desc = A festive, cheerful hardsuit that protects the jolly gift-giver while on sleighrides in space. Offers some resistance against asteroid strikes.

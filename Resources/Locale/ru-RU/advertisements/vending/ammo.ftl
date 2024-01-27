@@ -6,3 +6,5 @@ advertisement-ammo-5 = Парите как астронавт, жалите ка
 advertisement-ammo-6 = Выразите свою вторую поправку сегодня!
 advertisement-ammo-7 = Оружие не убивает людей, но вы можете!
 advertisement-ammo-8 = Кому нужны обязанности, когда есть оружие?
+advertisement-ammo-9 = Murdering people is fun!
+advertisement-ammo-10 = Go shoot 'em up!
