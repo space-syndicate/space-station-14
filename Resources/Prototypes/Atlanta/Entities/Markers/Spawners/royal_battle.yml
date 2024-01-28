@@ -1,0 +1,11 @@
+- type: entity
+  name: Default Battle Royal Crate Spawner
+  id: SpawnDefaultRoyalBattleCrate
+  parent: MarkerBase
+  components:
+  - type: Sprite
+    layers:
+    - state: green
+  - type: ConditionalSpawner
+    prototypes:
+    - CrateRoyalBattle
