@@ -79,6 +79,8 @@ entities:
     - type: LoadedMap
   - uid: 2
     components:
+    - type: MetaData
+      name: NT14 Maus
     - type: Transform
       pos: 0.82806325,5.420883
       parent: 1
@@ -4253,7 +4255,6 @@ entities:
     - type: Transform
       pos: -53.5,-53.5
       parent: 2
-    - type: DeviceList
     - type: AtmosDevice
       joinedGrid: 2
   - uid: 6299
@@ -5845,7 +5846,7 @@ entities:
       pos: -60.5,-4.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -38247.586
+      secondsUntilStateChange: -38536.023
       state: Opening
   - uid: 6337
     components:
@@ -5856,7 +5857,7 @@ entities:
       pos: -64.5,-4.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -38246.727
+      secondsUntilStateChange: -38535.164
       state: Opening
 - proto: AirlockMaintEngiLocked
   entities:
@@ -68662,6 +68663,11 @@ entities:
     - type: Transform
       pos: -52.5,-26.5
       parent: 2
+  - uid: 14282
+    components:
+    - type: Transform
+      pos: -56.5,-27.5
+      parent: 2
 - proto: SpawnPointChiefEngineer
   entities:
   - uid: 10386
@@ -68735,6 +68741,13 @@ entities:
     - type: Transform
       pos: -31.5,-13.5
       parent: 2
+- proto: SpawnPointLibrarian
+  entities:
+  - uid: 14281
+    components:
+    - type: Transform
+      pos: -55.5,-49.5
+      parent: 2
 - proto: SpawnPointMedicalDoctor
   entities:
   - uid: 12236
@@ -68742,15 +68755,47 @@ entities:
     - type: Transform
       pos: -50.5,-37.5
       parent: 2
+  - uid: 12238
+    components:
+    - type: Transform
+      pos: -57.5,-39.5
+      parent: 2
+  - uid: 14275
+    components:
+    - type: Transform
+      pos: -64.5,-28.5
+      parent: 2
+  - uid: 14276
+    components:
+    - type: Transform
+      pos: -60.5,-28.5
+      parent: 2
+  - uid: 14277
+    components:
+    - type: Transform
+      pos: -68.5,-32.5
+      parent: 2
+- proto: SpawnPointMedicalIntern
+  entities:
   - uid: 12237
     components:
     - type: Transform
       pos: -49.5,-37.5
       parent: 2
-  - uid: 12238
+  - uid: 14278
     components:
     - type: Transform
-      pos: -57.5,-39.5
+      pos: -57.5,-41.5
+      parent: 2
+  - uid: 14279
+    components:
+    - type: Transform
+      pos: -57.5,-43.5
+      parent: 2
+  - uid: 14280
+    components:
+    - type: Transform
+      pos: -64.5,-32.5
       parent: 2
 - proto: SpawnPointMime
   entities:
