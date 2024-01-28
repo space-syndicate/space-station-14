@@ -8,4 +8,4 @@ advertisement-magivend-7 = EI NATH
 advertisement-magivend-8 = Уничтожить станцию!
 advertisement-magivend-9 = Оборудование для сгибания пространства и времени!
 advertisement-magivend-10 = 1234 LOONIES ЛОЛ!
-advertisement-magivend-11 = NAR'SIE, RISE!!!
+advertisement-magivend-11 = НАР'СИ, ПРОБУДИСЬ!!!
