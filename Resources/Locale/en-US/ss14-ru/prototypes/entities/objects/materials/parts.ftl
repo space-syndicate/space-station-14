@@ -1,6 +1,6 @@
 ent-PartBase = { ent-BaseItem }
     .desc = { ent-BaseItem.desc }
-ent-PartRodMetal = metal rods
+ent-PartRodMetal = metal rod
     .suffix = Full
     .desc = { ent-PartBase.desc }
 ent-PartRodMetal10 = metal rod
@@ -12,3 +12,6 @@ ent-PartRodMetal1 = metal rod
 ent-PartRodMetalLingering0 = { ent-PartRodMetal }
     .suffix = Lingering, 0
     .desc = { ent-PartRodMetal.desc }
+ent-FloorTileItemSteelLingering0 = { ent-FloorTileItemSteel }
+    .suffix = Lingering, 0
+    .desc = { ent-FloorTileItemSteel.desc }

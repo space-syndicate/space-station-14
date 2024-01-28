@@ -4,3 +4,5 @@ ent-PortalRed = { ent-BasePortal }
     .desc = This one looks more like a redspace portal.
 ent-PortalBlue = { ent-BasePortal }
     .desc = { ent-BasePortal.desc }
+ent-PortalArtifact = { ent-BasePortal }
+    .desc = { ent-BasePortal.desc }

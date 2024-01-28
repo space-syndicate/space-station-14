@@ -24,3 +24,5 @@ ent-MagazinePistolSubMachineGunPractice = магазин ПП (.35 авто уч
     .desc = { ent-BaseMagazinePistolSubMachineGun.desc }
 ent-MagazinePistolSubMachineGunRubber = магазин ПП (.35 авто резиновые)
     .desc = { ent-BaseMagazinePistolSubMachineGun.desc }
+ent-MagazinePistolSubMachineGunUranium = магазин ПП (.35 авто урановые)
+    .desc = { ent-BaseMagazinePistolSubMachineGun.desc }

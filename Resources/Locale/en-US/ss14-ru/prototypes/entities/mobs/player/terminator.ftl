@@ -1,3 +1,5 @@
+ent-MobTerminatorBase = { "" }
+    .desc = { "" }
 ent-MobHumanTerminator = exterminator
     .desc = { ent-MobHuman.desc }
 ent-MobTerminatorEndoskeleton = nt-800 "exterminator" endoskeleton
