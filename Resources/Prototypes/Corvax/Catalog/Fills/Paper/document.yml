@@ -2,14 +2,14 @@
   parent: Paper
   id: PrintedDocument
   abstract: true
-  description: Боюрократическая единица. Документ, распечатанный на принтере.
+  description: Bureaucratic unit. A document printed on a printer.
   components:
     - type: Paper
 
 - type: entity
   parent: PrintedDocument
   id: PrintedDocumentReportStation
-  name: Отчет о ситуации на станции
+  name: Report on the situation at the station
   components:
     - type: Paper
       content: doc-text-printer-ReportStation
@@ -17,7 +17,7 @@
 - type: entity
   parent: PrintedDocument
   id: PrintedDocumentReporDepartment
-  name: Отчёт о работе отдела
+  name: Report on the work of the department
   components:
     - type: Paper
       content: doc-text-printer-ReporDepartment
@@ -25,7 +25,7 @@
 - type: entity
   parent: PrintedDocument
   id: PrintedDocumentReportEmployeePerformance
-  name: Отчёт о работе сотрудника
+  name: Report on employee performance
   components:
     - type: Paper
       content: doc-text-printer-ReportEmployeePerformance
@@ -33,7 +33,7 @@
 - type: entity
   parent: PrintedDocument
   id: PrintedDocumentReportOnTheChaptersMeeting
-  name: Отчёт о собрании глав
+  name: Report on chapter meeting
   components:
     - type: Paper
       content: doc-text-printer-ReportOnTheChaptersMeeting
@@ -41,7 +41,7 @@
 - type: entity
   parent: PrintedDocument
   id: PrintedDocumentInternalAffairsAgentsReport
-  name: Отчёт Агента Внутренних Дел
+  name: Report of Internal Affairs Agent
   components:
     - type: Paper
       content: doc-text-printer-InternalAffairsAgentsReport
@@ -49,7 +49,7 @@
 - type: entity
   parent: PrintedDocument
   id: PrintedDocumentConditionReport
-  name: Отчёт о техническом состоянии
+  name: Report on technical condition
   components:
     - type: Paper
       content: doc-text-printer-ConditionReport
@@ -58,7 +58,7 @@
 - type: entity
   parent: PrintedDocument
   id: PrintedDocumentReportStudyObject
-  name: Отчёт об изучении объекта
+  name: Report on object Investigation
   components:
     - type: Paper
       content: doc-text-printer-ReportStudyObject
@@ -66,7 +66,7 @@
 - type: entity
   parent: PrintedDocument
   id: PrintedDocumentDisposalReport
-  name: Отчёт об утилизации
+  name: Report on Disposal
   components:
     - type: Paper
       content: doc-text-printer-DisposalReport
@@ -74,7 +74,7 @@
 - type: entity
   parent: PrintedDocument
   id: PrintedDocumentApplicationAppointmentInterim
-  name: Заявление о назначении на ВрИО
+  name: Statement of Appointment to the Temporary Acting Authority
   components:
     - type: Paper
       content: doc-text-printer-ApplicationAppointmentInterim
@@ -82,7 +82,7 @@
 - type: entity
   parent: PrintedDocument
   id: PrintedDocumentApplicationEmployment
-  name: Заявление о трудоустройстве
+  name: Statement of Employment
   components:
     - type: Paper
       content: doc-text-printer-ApplicationEmployment
@@ -90,7 +90,7 @@
 - type: entity
   parent: PrintedDocument
   id: PrintedDocumentLetterResignation
-  name: Заявление об увольнении
+  name: Statement of Dismissal
   components:
     - type: Paper
       content: doc-text-printer-LetterResignation
@@ -98,7 +98,7 @@
 - type: entity
   parent: PrintedDocument
   id: PrintedDocumentApplicationAccess
-  name: Заявление на получение доступа
+  name: Statement of access
   components:
     - type: Paper
       content: doc-text-printer-ApplicationAccess
@@ -106,7 +106,7 @@
 - type: entity
   parent: PrintedDocument
   id: PrintedDocumentApplicationEquipment
-  name: Заявление на получение снаряжения
+  name: Statement for equipment
   components:
     - type: Paper
       content: doc-text-printer-ApplicationEquipment
@@ -114,7 +114,7 @@
 - type: entity
   parent: PrintedDocument
   id: PrintedDocumentEvacuationShuttleRequest
-  name: Запрос эвакуационного шаттла
+  name: Evacuation Shuttle Request
   components:
     - type: Paper
       content: doc-text-printer-EvacuationShuttleRequest
@@ -122,7 +122,7 @@
 - type: entity
   parent: PrintedDocument
   id: PrintedDocumentShuttleRegistrationRequest
-  name: Запрос регистрации шаттла
+  name: Shuttle registration request
   components:
     - type: Paper
       content: doc-text-printer-ShuttleRegistrationRequest
@@ -130,7 +130,7 @@
 - type: entity
   parent: PrintedDocument
   id: PrintedDocumentRequestCallMembersCentralCommitteeDSO
-  name: Запрос на вызов членов ЦК, ДСО
+  name: Request to call members of CC, DSO
   components:
     - type: Paper
       content: doc-text-printer-RequestCallMembersCentralCommitteeDSO
@@ -138,7 +138,7 @@
 - type: entity
   parent: PrintedDocument
   id: PrintedDocumentRequestChangeSalary
-  name: Запрос на изменение заработной платы
+  name: Request for salary change
   components:
     - type: Paper
       content: doc-text-printer-RequestChangeSalary
@@ -146,7 +146,7 @@
 - type: entity
   parent: PrintedDocument
   id: PrintedDocumentRequestNonListedEmployment
-  name: Запрос внеперечневого трудоустройства
+  name: Request for non-listed employment
   components:
     - type: Paper
       content: doc-text-printer-RequestNonListedEmployment
@@ -154,7 +154,7 @@
 - type: entity
   parent: PrintedDocument
   id: PrintedDocumentRequestDocuments
-  name: Запрос предоставления документов
+  name: Request for the provision of documents
   components:
     - type: Paper
       content: doc-text-printer-RequestDocuments
@@ -162,7 +162,7 @@
 - type: entity
   parent: PrintedDocument
   id: PrintedDocumentRequestEuthanasia
-  name: Запрос на проведение эвтаназии
+  name: Request for euthanasia
   components:
     - type: Paper
       content: doc-text-printer-RequestEuthanasia
@@ -170,7 +170,7 @@
 - type: entity
   parent: PrintedDocument
   id: PrintedDocumentRequestConstructionWork
-  name: Запрос на проведение строительных работ
+  name: Request for construction works
   components:
     - type: Paper
       content: doc-text-printer-RequestConstructionWork
@@ -178,7 +178,7 @@
 - type: entity
   parent: PrintedDocument
   id: PrintedDocumentRequestModernization
-  name: Запрос на проведение модернизации
+  name: Request for modernization
   components:
     - type: Paper
       content: doc-text-printer-RequestModernization
@@ -186,7 +186,7 @@
 - type: entity
   parent: PrintedDocument
   id: PrintedDocumentComplaintViolationLaborRules
-  name: Жалоба на нарушение трудового порядка
+  name: Complaint for violation of labor order
   components:
     - type: Paper
       content: doc-text-printer-ComplaintViolationLaborRules
@@ -194,7 +194,7 @@
 - type: entity
   parent: PrintedDocument
   id: PrintedDocumentComplaintОffense
-  name: Жалоба на правонарушение
+  name: Complaint about an offense
   components:
     - type: Paper
       content: doc-text-printer-ComplaintОffense
@@ -202,7 +202,7 @@
 - type: entity
   parent: PrintedDocument
   id: PrintedDocumentPermissionEquipment
-  name: Разрешение на использование снаряжения
+  name: Authorization to use equipment
   components:
     - type: Paper
       content: doc-text-printer-PermissionEquipment
@@ -210,7 +210,7 @@
 - type: entity
   parent: PrintedDocument
   id: PrintedDocumentSearchPermission
-  name: Разрешение на обыск
+  name: Authorization to search
   components:
     - type: Paper
       content: doc-text-printer-SearchPermission
@@ -218,7 +218,7 @@
 - type: entity
   parent: PrintedDocument
   id: PrintedDocumentPermissionWeapons
-  name: Разрешение на ношение оружия
+  name: Authorization to carry weapons
   components:
     - type: Paper
       content: doc-text-printer-SearchPermission
@@ -226,7 +226,7 @@
 - type: entity
   parent: PrintedDocument
   id: PrintedDocumentPrescriptionDrugAuthorization
-  name: Разрешение на рецептурный препарат
+  name: Prescription Drug Authorization
   components:
     - type: Paper
       content: doc-text-printer-PrescriptionDrugAuthorization
@@ -234,7 +234,7 @@
 - type: entity
   parent: PrintedDocument
   id: PrintedDocumentPermissionDisposeBody
-  name: Разрешение на утилизацию тела
+  name: Authorization to dispose of the body
   components:
     - type: Paper
       content: doc-text-printer-PermissionDisposeBody
@@ -242,7 +242,7 @@
 - type: entity
   parent: PrintedDocument
   id: PrintedDocumentConstructionPermit
-  name: Разрешение на строительство
+  name: Building permit
   components:
     - type: Paper
       content: doc-text-printer-ConstructionPermit
@@ -250,7 +250,7 @@
 - type: entity
   parent: PrintedDocument
   id: PrintedDocumentOrderDismissal
-  name: Приказ об увольнении
+  name: Dismissal order
   components:
     - type: Paper
       content: doc-text-printer-OrderDismissal
@@ -258,7 +258,7 @@
 - type: entity
   parent: PrintedDocument
   id: PrintedDocumentOrderDeprivationAccess
-  name: Приказ о лишении доступа
+  name: Denial of access order
   components:
     - type: Paper
       content: doc-text-printer-OrderDeprivationAccess
@@ -266,7 +266,7 @@
 - type: entity
   parent: PrintedDocument
   id: PrintedDocumentOrderEncouragement
-  name: Приказ о поощрении
+  name: Incentive order
   components:
     - type: Paper
       content: doc-text-printer-OrderEncouragement
@@ -274,7 +274,7 @@
 - type: entity
   parent: PrintedDocument
   id: PrintedDocumentOrderParolePrisoner
-  name: Приказ об УДО заключенного
+  name: Prisoner parole order
   components:
     - type: Paper
       content: doc-text-printer-OrderParolePrisoner
@@ -282,7 +282,7 @@
 - type: entity
   parent: PrintedDocument
   id: PrintedDocumentOrderRecognizingSentienceCreature
-  name: Приказ о признании разумности существа
+  name: An order recognizing the reasonableness of the substance
   components:
     - type: Paper
       content: doc-text-printer-OrderRecognizingSentienceCreature
@@ -290,7 +290,7 @@
 - type: entity
   parent: PrintedDocument
   id: PrintedDocumentOrderMedicalIntervention
-  name: Распоряжение о медицинском вмешательстве
+  name: Order for medical intervention
   components:
     - type: Paper
       content: doc-text-printer-OrderMedicalIntervention
@@ -298,7 +298,7 @@
 - type: entity
   parent: PrintedDocument
   id: PrintedDocumentProductManufacturingOrder
-  name: Заказ на производство продукта
+  name: Order for the production of a product
   components:
     - type: Paper
       content: doc-text-printer-ProductManufacturingOrder
@@ -306,7 +306,7 @@
 - type: entity
   parent: PrintedDocument
   id: PrintedDocumentOrderPurchaseResourcesEquipment
-  name: Заказ на закупку ресурсов, снаряжения
+  name: Purchase order for resources, equipment
   components:
     - type: Paper
       content: doc-text-printer-OrderPurchaseResourcesEquipment
@@ -314,7 +314,7 @@
 - type: entity
   parent: PrintedDocument
   id: PrintedDocumentOrderingSpecialEquipment
-  name: Заказ специального снаряжения
+  name: Ordering special equipment
   components:
     - type: Paper
       content: doc-text-printer-OrderingSpecialEquipment
@@ -322,7 +322,7 @@
 - type: entity
   parent: PrintedDocument
   id: PrintedDocumentOrderPurchaseWeapons
-  name: Заказ на закупку вооружения
+  name: Purchase order for armaments
   components:
     - type: Paper
       content: doc-text-printer-OrderPurchaseWeapons
@@ -330,7 +330,7 @@
 - type: entity
   parent: PrintedDocument
   id: PrintedDocumentCertificate
-  name: Грамота
+  name: Certificate
   components:
     - type: Paper
       content: doc-text-printer-Certificate
@@ -338,7 +338,7 @@
 - type: entity
   parent: PrintedDocument
   id: PrintedDocumentCertificateAdvancedTraining
-  name: Свидетельство о повышении квалификации
+  name: Certificate of advanced training
   components:
     - type: Paper
       content: doc-text-printer-CertificateAdvancedTraining
@@ -346,7 +346,7 @@
 - type: entity
   parent: PrintedDocument
   id: PrintedDocumentCertificateOffense
-  name: Свидетельство о правонарушении
+  name: Certificate of Offense
   components:
     - type: Paper
       content: doc-text-printer-CertificateOffense
@@ -354,7 +354,7 @@
 - type: entity
   parent: PrintedDocument
   id: PrintedDocumentDeathCertificate
-  name: Свидетельство о смерти
+  name: 
   components:
     - type: Paper
       content: doc-text-printer-DeathCertificate
@@ -362,7 +362,7 @@
 - type: entity
   parent: PrintedDocument
   id: PrintedDocumentMarriageCertificate
-  name: Свидетельство о заключении брака
+  name: Marriage certificate
   components:
     - type: Paper
       content: doc-text-printer-MarriageCertificate
@@ -370,7 +370,7 @@
 - type: entity
   parent: PrintedDocument
   id: PrintedDocumentDivorceCertificate
-  name: Свидетельство о расторжении брака
+  name: Certificate of divorce
   components:
     - type: Paper
       content: doc-text-printer-DivorceCertificate
@@ -378,7 +378,7 @@
 - type: entity
   parent: PrintedDocument
   id: PrintedDocumentClosingIndictment
-  name: Обвинительное заключение
+  name: Indictment
   components:
     - type: Paper
       content: ClosingIndictment
@@ -386,7 +386,7 @@
 - type: entity
   parent: PrintedDocument
   id: PrintedDocumentSentence
-  name: Приговор
+  name: Sentence
   components:
     - type: Paper
       content: doc-text-printer-Sentence
@@ -394,7 +394,7 @@
 - type: entity
   parent: PrintedDocument
   id: PrintedDocumentStatementHealth
-  name: Заключение о состоянии здоровья
+  name: Health report
   components:
     - type: Paper
       content: doc-text-printer-StatementHealth
@@ -402,7 +402,7 @@
 - type: entity
   parent: PrintedDocument
   id: PrintedDocumentNoticeOfLiquidation
-  name: УвЕдОмЛеНиЕ о ЛиКвИдАцИи
+  name: NOTICE OF LIQUIDIZATION
   components:
     - type: Paper
       content: doc-text-printer-NOTICEOFLIQUIDATION
@@ -410,7 +410,7 @@
 - type: entity
   parent: PrintedDocument
   id: PrintedDocumentBusinessDeal
-  name: ДеЛоВаЯ сДеЛкА
+  name: BUSINESS DEAL
   components:
     - type: Paper
       content: doc-text-printer-BUSINESSDEAL
@@ -418,7 +418,7 @@
 - type: entity
   parent: PrintedDocument
   id: PrintedDocumentNoteBeginningMilitaryActions
-  name: НоТа О нАчАлЕ вОеНнЫх ДеЙсТвИй
+  name: NOTE BEGINNING MILITARY ACTIONS
   components:
     - type: Paper
       content: doc-text-printer-NOTEBEGINNINGMILITARYACTIONS
@@ -426,7 +426,7 @@
 - type: entity
   parent: PrintedDocument
   id: PrintedDocumentReportAccomplishmentGoals
-  name: ОтЧёТ о ВыПоЛнЕнИи ЦеЛеЙ
+  name: REPORT ACCOMPLISHMENT GOALS
   components:
     - type: Paper
       content: doc-text-printer-REPORTACCOMPLISHMENTGOALS
