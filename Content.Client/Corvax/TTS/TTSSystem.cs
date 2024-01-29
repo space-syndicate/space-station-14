@@ -77,7 +77,7 @@ public sealed class TTSSystem : EntitySystem
         if (ev.SourceUid != null)
         {
             var sourceUid = GetEntity(ev.SourceUid.Value);
-            _audio.PlayEntity(soundPath, Filter.Local(), sourceUid, false, AudioParams.Default);
+            _audio.PlayEntity(soundPath, Filter.Local(), sourceUid, false, audioParams);
         }
         else
         {
