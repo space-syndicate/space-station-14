@@ -1,0 +1,32 @@
+{
+    "version": 1,
+    "license": "CC-BY-SA-3.0",
+    "copyright": "NOMMMMMADDDD",
+    "size": {
+        "x": 64,
+        "y": 32
+    },
+    "states": [
+        {
+            "name": "base"
+        },
+        {
+            "name": "bolt-open"
+        },
+        {
+            "name": "icon"
+        },
+        {
+            "name": "mag-0"
+        },
+        {
+            "name": "mag-unshaded-0"
+	},
+	{
+		"name": "mag-1"
+	},
+	{
+		"name": "mag-unshaded-1"
+        }
+    ]
+}

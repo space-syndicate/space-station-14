@@ -6,3 +6,4 @@ role-timer-role-insufficient = Требуется ещё [color=yellow]{ TOSTRIN
 role-timer-role-too-high = Требуется на [color=yellow]{ TOSTRING($time, "0") }[/color] меньше минут игры в качестве [color={ $departmentColor }]{ $job }[/color] для этой роли. (Вы пытаетесь играть за роль для новичков?)
 role-timer-locked = Закрыто (наведите курсор для подробностей)
 role-ban = Эта должность для вас заблокирована.
+role-ai-block = Приобретите эту должность или проверьте, что у вас есть права бустера.

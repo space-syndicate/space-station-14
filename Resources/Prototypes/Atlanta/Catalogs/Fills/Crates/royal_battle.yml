@@ -1,0 +1,7 @@
+- type: entity
+  parent: CratePlastic
+  id: CrateRoyalBattle
+  name: royal battle crate
+  components:
+  - type: RbCrateRandom
+    content: DefaultPacksPool

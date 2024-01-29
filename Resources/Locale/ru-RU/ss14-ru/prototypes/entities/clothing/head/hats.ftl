@@ -132,3 +132,7 @@ ent-ClothingHeadHatPartyGreen = зелёный праздничный колпа
     .desc = { ent-ClothingHeadHatPartyRed.desc }
 ent-ClothingHeadHatPartyBlue = синий праздничный колпак
     .desc = { ent-ClothingHeadHatPartyRed.desc }
+ent-ClothingHeadHatGreyFlatcap = серая плоская кепка
+    .desc = В моде как у рабочего класса, так и у стариков навроде Дженкинса.
+ent-ClothingHeadHatBrownFlatcap = коричневая плоская кепка
+    .desc = Тупой клоун! Ты выставил меня в плохом свете!

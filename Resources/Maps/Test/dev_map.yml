@@ -361,13 +361,6 @@ entities:
     - type: LoadedMap
     - type: GridTree
     - type: MovedGrids
-- proto: AdvancedCapacitorStockPart
-  entities:
-  - uid: 700
-    components:
-    - type: Transform
-      pos: -3.8324947,8.786524
-      parent: 179
 - proto: AirAlarm
   entities:
   - uid: 800
@@ -616,7 +609,7 @@ entities:
       rot: 3.141592653589793 rad
       pos: 1.5,-3.5
       parent: 179
-- proto: AlwaysPoweredLightLED
+- proto: AlwaysPoweredWallLight
   entities:
   - uid: 59
     components:
@@ -3521,13 +3514,6 @@ entities:
     - type: Transform
       pos: 13.5,12.5
       parent: 179
-- proto: FemtoManipulatorStockPart
-  entities:
-  - uid: 712
-    components:
-    - type: Transform
-      pos: -6.7434506,8.817795
-      parent: 179
 - proto: FireExtinguisher
   entities:
   - uid: 323
@@ -4440,13 +4426,6 @@ entities:
     - type: NetworkConfigurator
       devices:
         'UID: 31739': 801
-- proto: NanoManipulatorStockPart
-  entities:
-  - uid: 456
-    components:
-    - type: Transform
-      pos: -5.920577,8.817795
-      parent: 179
 - proto: NitrogenCanister
   entities:
   - uid: 459
@@ -4502,13 +4481,6 @@ entities:
     components:
     - type: Transform
       pos: 10.862433,12.602201
-      parent: 179
-- proto: PicoManipulatorStockPart
-  entities:
-  - uid: 455
-    components:
-    - type: Transform
-      pos: -6.337244,8.838643
       parent: 179
 - proto: PlasmaCanister
   entities:
@@ -4835,13 +4807,6 @@ entities:
     components:
     - type: Transform
       pos: -6.5,6.5
-      parent: 179
-- proto: QuadraticCapacitorStockPart
-  entities:
-  - uid: 704
-    components:
-    - type: Transform
-      pos: -4.8741612,8.817795
       parent: 179
 - proto: Railing
   entities:
@@ -5350,13 +5315,6 @@ entities:
     components:
     - type: Transform
       pos: -6.5,-13.5
-      parent: 179
-- proto: SuperCapacitorStockPart
-  entities:
-  - uid: 296
-    components:
-    - type: Transform
-      pos: -4.3012447,8.817795
       parent: 179
 - proto: SurveillanceCameraGeneral
   entities:
@@ -8480,7 +8438,7 @@ entities:
     - type: Transform
       pos: -3.478273,-1.1611286
       parent: 179
-- proto: WeaponRifleAk
+- proto: WeaponAKMSRifle
   entities:
   - uid: 437
     components:

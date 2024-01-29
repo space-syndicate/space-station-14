@@ -24,3 +24,5 @@ ent-MagazinePistolSubMachineGunPractice = SMG magazine (.35 auto practice)
     .desc = { ent-BaseMagazinePistolSubMachineGun.desc }
 ent-MagazinePistolSubMachineGunRubber = SMG magazine (.35 auto rubber)
     .desc = { ent-BaseMagazinePistolSubMachineGun.desc }
+ent-MagazinePistolSubMachineGunUranium = SMG magazine (.35 auto rubber)
+    .desc = { ent-BaseMagazinePistolSubMachineGun.desc }

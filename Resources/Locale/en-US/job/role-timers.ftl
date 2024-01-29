@@ -8,3 +8,5 @@ role-timer-role-too-high = You require[color=yellow] {TOSTRING($time, "0")}[/col
 role-timer-locked = Locked (hover for details)
 
 role-ban = You have been banned from this role.
+
+role-ai-block = Purchase this position or check that you have booster rights.

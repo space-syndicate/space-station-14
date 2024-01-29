@@ -1,0 +1,17 @@
+- type: rbCratePool
+  id: DefaultPacksPool
+  weights:
+    Mk58Pack: 0.4
+    G22Pack: 0.6
+
+- type: rbCratePack
+  id: Mk58Pack
+  pack:
+  - WeaponPistolMk58
+  - BoxMagazinePistol
+
+- type: rbCratePack
+  id: G22Pack
+  pack:
+  - WeaponPistolG22
+  - BoxMagazinePistol

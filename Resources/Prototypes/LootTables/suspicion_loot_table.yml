@@ -2,22 +2,22 @@
 - type: entityLootTable
   id: SuspicionRule
   entries:
-  - id: WeaponRifleAk
+  - id: WeaponAKMSRifle
     amount: 0
     maxAmount: 5
   - id: WeaponRifleM90GrenadeLauncher
     amount: 0
     maxAmount: 5
-  - id: WeaponRifleLecter
+  - id: WeaponRifleAR18
     amount: 0
     maxAmount: 5
-  - id: WeaponPistolViper
+  - id: WeaponPistolHIB88M4
     amount: 0
     maxAmount: 5
   - id: WeaponPistolCobra
     amount: 0
     maxAmount: 5
-  - id: WeaponPistolMk58
+  - id: WeaponPistolG22
     amount: 0
     maxAmount: 5
   - id: ButchCleaver
@@ -49,10 +49,10 @@
   - id: WeaponShotgunDoubleBarreled
     amount: 0
     maxAmount: 5
-  - id: WeaponShotgunEnforcer
+  - id: WeaponShotguntrenchgunL4034
     amount: 0
     maxAmount: 5
-  - id: WeaponShotgunKammerer
+  - id: WeaponShotgunXM1014
     amount: 0
     maxAmount: 5
   - id: WeaponShotgunSawn
@@ -65,7 +65,7 @@
   - id: WeaponSubMachineGunAtreides
     amount: 0
     maxAmount: 5
-  - id: WeaponSubMachineGunC20r
+  - id: WeaponSubMachineGunMP7
     amount: 0
     maxAmount: 5
   - id: WeaponSubMachineGunVector

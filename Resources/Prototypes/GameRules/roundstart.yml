@@ -81,6 +81,13 @@
     pacifistThieves: false # Corvax-MRP
 
 - type: entity
+  id: BrokenAi
+  parent: BaseGameRule
+  noSpawn: true
+  components:
+  - type: BrokenAiRule
+
+- type: entity
   id: Revolutionary
   parent: BaseGameRule
   noSpawn: true

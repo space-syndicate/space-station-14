@@ -4,6 +4,7 @@ using Content.Server.Ghost.Roles.Components;
 using Content.Server.Popups;
 using Content.Server.Tools.Innate;
 using Content.Server.UserInterface;
+using Content.Shared.Backmen.StationAI;
 using Content.Shared.Body.Components;
 using Content.Shared.Drone;
 using Content.Shared.Emoting;
@@ -126,6 +127,9 @@ namespace Content.Server.Drone
 
         private bool NonDronesInRange(EntityUid uid, DroneComponent component)
         {
+            if (HasComp<StationAiDroneComponent>(uid))
+                return false;
+
             var xform = Comp<TransformComponent>(uid);
             foreach (var entity in _lookup.GetEntitiesInRange(xform.MapPosition, component.InteractionBlockRange))
             {

@@ -40,7 +40,7 @@ public sealed partial class InnateItemSystem : EntitySystem
         component.AlreadyInitialized = true;
     }
 
-    private void RefreshItems(EntityUid uid, InnateItemComponent component)
+    public void RefreshItems(EntityUid uid, InnateItemComponent component)
     {
         int priority = component.StartingPriority ?? 0;
         foreach (var (key, sourceItem) in component.Slots)

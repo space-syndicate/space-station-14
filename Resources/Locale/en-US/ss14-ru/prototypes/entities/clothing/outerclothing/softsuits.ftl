@@ -8,5 +8,5 @@ ent-ClothingOuterHardsuitEVAPrisoner = prisoner EVA suit
     .desc = A lightweight space suit for prisoners to protect them from the vacuum of space during emergencies.
 ent-ClothingOuterHardsuitAncientEVA = NTSRA voidsuit
     .desc = An ancient space suit, designed by the NTSRA branch of CentCom. It is very finely crafted, allowing for greater mobility than most modern space suits.
-ent-ClothingOuterHardsuitVoidParamed = Paramedic Void Suit
+ent-ClothingOuterHardsuitVoidParamed = paramedic void suit
     .desc = A void suit made for paramedics.

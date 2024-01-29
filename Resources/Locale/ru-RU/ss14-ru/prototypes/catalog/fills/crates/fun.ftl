@@ -1,5 +1,7 @@
 ent-CrateFunPlushie = ящик плюшевых игрушек
     .desc = Куча мягких плюшевых игрушек. Разложите их повсюду, а потом подумайте, как вы объясните эту покупку NT.
+ent-CrateFunLizardPlushieBulk = оптовый ящик плюшевых унатхов
+    .desc = Куча мягких плюшевых унатхов. Разложите их повсюду, а потом подумайте, как вы объясните эту покупку NT.
 ent-CrateFunInstrumentsVariety = набор различных музыкальных инструментов
     .desc = Развеселите и расшевелите станцию с этой разнообразной коллекцией! Содержит семь музыкальных инструментов.
 ent-CrateFunInstrumentsBrass = набор духовых инструментов
@@ -32,6 +34,7 @@ ent-CrateFunBoxing = ящик боксерского снаряжения
     .desc = Хотите организовать подпольный бойцовский клуб или провести турнир среди сотрудников станции? Этот ящик для вас!
 ent-CrateFunPirate = { ent-CratePirate }
     .desc = { ent-CratePirate.desc }
+    .suffix = Заполненный
 ent-CrateFunToyBox = { ent-CrateToyBox }
     .suffix = Заполненный
     .desc = { ent-CrateToyBox.desc }

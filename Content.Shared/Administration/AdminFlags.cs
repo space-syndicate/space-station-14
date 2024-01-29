@@ -90,6 +90,15 @@
         EditNotes = 1 << 14,
 
         /// <summary>
+        ///     Lets you play broken AI.
+        /// </summary>
+        BrokenAi = 1 << 15,
+        /// <summary>
+        ///     Lets you play loyal AI.
+        /// </summary>
+        LoyalAi = 1 << 16,
+
+        /// <summary>
         ///     Dangerous host permissions like scsi.
         /// </summary>
         Host = 1u << 31,

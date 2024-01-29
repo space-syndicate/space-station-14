@@ -1,0 +1,93 @@
+- type: entity
+  name: L-4034 trenchgun
+  parent: BaseWeaponShotgun
+  id: WeaponShotguntrenchgunL4034
+  suffix: Дробовик
+  description: A six-round pump action shotgun. A shotgun used for hunting, home defence and police work, many versions of it exist and are used by just about anyone.
+  components:
+  - type: Sprite
+    sprite: Backmen/Objects/Weapons/Gunsx64/Shotguns/l-4034/big.rsi
+  - type: Item
+    sprite: Backmen/Objects/Weapons/Gunsx64/Shotguns/l-4034/tiny.rsi
+  - type: Clothing
+    sprite: Backmen/Objects/Weapons/Gunsx64/Shotguns/l-4034/tiny.rsi
+  - type: BallisticAmmoProvider
+    capacity: 6
+    soundRack:
+      path: /Audio/Weapons/Guns64/Shotguns/trenchgun_pump.ogg
+    soundInsert:
+      path: /Audio/Weapons/Guns64/Shotguns/shotgun_cmb_insert.ogg
+  - type: Wieldable
+  - type: UseDelay
+    delay: 0.8
+  - type: GunRequiresWield
+  - type: Gun
+    fireRate: 1
+
+- type: entity
+  name: L-4034 trenchgun
+  parent: WeaponShotguntrenchgunL4034
+  id: WeaponShotguntrenchgunL4034NonLethal
+  suffix: Non-Lethal
+  components:
+  - type: BallisticAmmoProvider
+    proto: ShellShotgunBeanbag
+
+- type: entity
+  name: Spas-12
+  parent: BaseWeaponShotgun
+  id: WeaponShotgunSpas12
+  suffix: Дробовик
+  description: The Earth Armories Spas-12 is the shotgun used by the EarthGov Marine Corps. It's used as a close quarters tool when someone wants something more suited for close range than most people, or as an odd sidearm on your back for emergencies. Uses 50 gauge shells.
+  components:
+  - type: Sprite
+    sprite: Backmen/Objects/Weapons/Gunsx64/Shotguns/spas-16/big.rsi
+  - type: Item
+    sprite: Backmen/Objects/Weapons/Gunsx64/Shotguns/spas-16/tiny.rsi
+  - type: Clothing
+    sprite: Backmen/Objects/Weapons/Gunsx64/Shotguns/spas-16/tiny.rsi
+  - type: BallisticAmmoProvider
+    capacity: 13
+  - type: Wieldable
+  - type: UseDelay
+    delay: 1.3
+  - type: GunRequiresWield
+  - type: Gun
+    fireRate: 1
+    soundGunshot:
+      path: /Audio/Weapons/Guns64/Shotguns/t35.ogg
+
+- type: entity
+  name: XM1014
+  parent: BaseWeaponShotgun
+  id: WeaponShotgunXM1014
+  suffix: Дробовик
+  description: The Earth Armories XM1014 combat shotgun is a semi automatic shotgun used by breachers and pointmen within the Earth Army squads. Uses .50 shotgun shells.
+  components:
+  - type: Sprite
+    sprite: Backmen/Objects/Weapons/Gunsx64/Shotguns/sh-39/big.rsi
+  - type: Item
+    sprite: Backmen/Objects/Weapons/Gunsx64/Shotguns/sh-39/tiny.rsi
+  - type: Clothing
+    sprite: Backmen/Objects/Weapons/Gunsx64/Shotguns/sh-39/tiny.rsi
+  - type: BallisticAmmoProvider
+    capacity: 10
+  - type: Wieldable
+  - type: UseDelay
+    delay: 1.3
+  - type: GunRequiresWield
+  - type: Gun
+    soundGunshot:
+      path: /Audio/Weapons/Guns64/Shotguns/sh39.ogg
+  - type: Tag
+    tags:
+    - WeaponShotgunKammerer
+
+- type: entity
+  name: XM1014
+  parent: WeaponShotgunXM1014
+  id: WeaponShotgunXM1014NonLethal
+  suffix: Non-Lethal
+  components:
+  - type: BallisticAmmoProvider
+    proto: ShellShotgunBeanbag

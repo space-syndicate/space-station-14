@@ -1,0 +1,9 @@
+- type: antag
+  id: BrokenAi
+  name: roles-antag-broken-ai-name
+  antagonist: true
+  setPreference: true
+  objective: roles-antag-broken-ai-objective
+  requirements:
+  - !type:AdminRoleRequirement
+    role: BrokenAi
