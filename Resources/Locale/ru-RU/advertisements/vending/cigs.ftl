@@ -12,4 +12,4 @@ advertisement-cigs-11 = Сигареты с множеством наград.
 advertisement-cigs-12 = Here to take an edge off work!
 thankyou-cigs-1 = Сделал дело - кури смело!
 thankyou-cigs-2 = Скорее всего, вы не пожалеете!
-thankyou-cigs-3 = You'll become an addict in no time!
+thankyou-cigs-3 = И глазом моргнуть не успеете, как станете зависимым!
