@@ -12517,13 +12517,6 @@ entities:
     - type: Transform
       pos: 33.777195,19.791845
       parent: 2
-- proto: AntiAnomalyZone20
-  entities:
-  - uid: 17296
-    components:
-    - type: Transform
-      pos: -66.5,-1.5
-      parent: 2
 - proto: APCBasic
   entities:
   - uid: 888
