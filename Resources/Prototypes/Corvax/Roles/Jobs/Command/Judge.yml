@@ -37,9 +37,9 @@
     head: ClothingHeadJudge
     id: JudgePDA
     ears: ClothingHeadsetJudge
-    outerClothing: ClothingUniformMagistratBash
+    outerClothing: ClothingUniformMagistrat
     pocket1: RubberStampJudge
-    pocket2: Magistrat_Hammer
+    pocket2: MagistratHammer
     # TODO add copy of space law
   inhand:
     - BriefcaseBrownFilled
