@@ -1,8 +1,8 @@
 - type: entity
   parent: BaseLathe
   id: PrinterDoc
-  name: принтер документов
-  description: Бюрократическое совершенство. Хранит базу данных всех документов Nanotrasen, и дает возможность печатать их, пока у вас есть бумага.
+  name: document printer
+  description: Bureaucratic perfection. Stores a database of all Nanotrasen documents, and lets you print them as long as you have paper.
   components:
   - type: Sprite
     sprite: Corvax/Structures/Machines/printer.rsi
