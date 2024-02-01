@@ -83,3 +83,6 @@ chat-speech-verb-ghost-4 = бормочет
 chat-speech-verb-cluwne-1 = хихикает
 chat-speech-verb-cluwne-2 = хехекает
 chat-speech-verb-cluwne-3 = смеётся
+chat-speech-verb-electricity-1 = трещит
+chat-speech-verb-electricity-2 = гудит
+chat-speech-verb-electricity-3 = скрипит

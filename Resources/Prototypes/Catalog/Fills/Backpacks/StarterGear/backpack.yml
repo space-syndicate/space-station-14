@@ -31,13 +31,12 @@
 
 - type: entity
   noSpawn: true
-  parent: ClothingBackpackSecurity
-  id: ClothingBackpackSecurityFilledDetective
+  parent: ClothingBackpack
+  id: ClothingBackpackFilledDetective
   components:
   - type: StorageFill
     contents:
       - id: BoxSurvivalSecurity
-      - id: Flash
       - id: ForensicPad
       - id: ForensicScanner
 
@@ -253,7 +252,7 @@
         - id: RegenerativeMesh
         - id: BoxZiptie
         - id: CrowbarRed
-        - id: MagazinePistol
+        - id: MagazineMagnum
 
 - type: entity
   noSpawn: true

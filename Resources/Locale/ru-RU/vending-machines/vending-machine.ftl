@@ -1,1 +1,1 @@
-vending-machine-thanks = Thanks for using { $name }!
+vending-machine-thanks = Спасибо что воспользовались { $name }!

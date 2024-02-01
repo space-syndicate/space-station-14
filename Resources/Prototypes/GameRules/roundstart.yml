@@ -62,6 +62,7 @@
     faction: Syndicate
   - type: ThiefRule #the thieves come as an extension of another gamemode
     ruleChance: 0.5
+    pacifistThieves: false # Corvax-MRP
 
 - type: entity
   id: Pirates

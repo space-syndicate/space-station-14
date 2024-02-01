@@ -1,16 +1,10 @@
 ﻿[game]
 hostname = "🛰️ Corvax — Солярис 🌕 [TTS]"
-desc = "[Требуется 40 часов на другом сервере Corvax!]\nКорвакс первый русскоязычный проект в Space Station 14.\nНа Солярисе средние требования к RP.\nИмеется интеграция TTS (Text-To-Speech)."
+desc = "Корвакс первый русскоязычный проект в Space Station 14.\nНа Солярисе средние требования к RP.\nИмеется интеграция TTS (Text-To-Speech)."
 map_pool = "CorvaxDefaultMapPool"
 maxplayers = 160
 soft_max_players = 80
 map_rotation = true
-
-[game.panic_bunker]
-enabled = true
-show_reason = true
-min_account_age = 0
-min_overall_hours = 40
 
 [rules]
 time = 10.0

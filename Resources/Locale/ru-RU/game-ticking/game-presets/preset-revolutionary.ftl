@@ -45,12 +45,18 @@ rev-headrev-count = { $initialCount ->
     }
 rev-lost = Члены командного состава станции выжили и уничтожили всех глав революции.
 rev-stalemate = Главы революции и командный состав станции погибли. Это ничья.
-rev-headrev-name-user = [color=#5e9cff]{ $name }[/color] ([color=gray]{ $username }[/color]) converted { $count } { $count ->
-        [one] person
-       *[other] people
-    }
-rev-headrev-name = [color=#5e9cff]{ $name }[/color] converted { $count } { $count ->
-        [one] person
-       *[other] people
-    }
+rev-headrev-name-user = [color=#5e9cff]{ $name }[/color] ([color=gray]{ $username }[/color]) конвертировал { $count } { $count ->
+        [one] члена
+       *[other] членов
+    } экипажа
+rev-headrev-name = [color=#5e9cff]{ $name }[/color] конвертировал { $count } { $count ->
+        [one] члена
+       *[other] членов
+    } экипажа
 rev-reverse-stalemate = Главы революции и командный состав станции выжили.
+rev-deconverted-title = Разконвертированы!
+rev-deconverted-text =
+    Со смертью последнего главы революции, революция оканчивается.
+
+    Вы больше не революционер, так что ведите себя хорошо.
+rev-deconverted-confirm = Подтвердить

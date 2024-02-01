@@ -59,6 +59,7 @@ marking-HumanHairC = Подстриженная
 marking-HumanHairDandypompadour = Денди Помпадур
 marking-HumanHairDevilock = Дьявольский замок
 marking-HumanHairDoublebun = Двойной пучок
+marking-HumanHairDoublebunLong = Двойной пучок (Длинные)
 marking-HumanHairDreads = Дреды
 marking-HumanHairDrillruru = Дрели
 marking-HumanHairDrillhairextended = Дрели (Распущенные)
