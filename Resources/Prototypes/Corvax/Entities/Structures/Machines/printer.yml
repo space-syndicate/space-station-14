@@ -27,34 +27,41 @@
     runningState: building
     staticRecipes:
       - PrintedDocumentReportStationRecipe
+      - PrintedDocumentReportOnEliminationOfViolationsRecipe
       - PrintedDocumentReporDepartmentRecipe
       - PrintedDocumentReportEmployeePerformanceRecipe
       - PrintedDocumentReportOnTheChaptersMeetingRecipe
       - PrintedDocumentInternalAffairsAgentsReportRecipe
       - PrintedDocumentConditionReportRecipe
       - PrintedDocumentReportStudyObjectRecipe
+      - PrintedDocumentExperimentReportRecipe
       - PrintedDocumentDisposalReportRecipe
       - PrintedDocumentApplicationAppointmentInterimRecipe
       - PrintedDocumentApplicationEmploymentRecipe
       - PrintedDocumentLetterResignationRecipe
       - PrintedDocumentApplicationAccessRecipe
       - PrintedDocumentApplicationEquipmentRecipe
+      - PrintedDocumentAppealRecipe
       - PrintedDocumentEvacuationShuttleRequestRecipe
       - PrintedDocumentShuttleRegistrationRequestRecipe
       - PrintedDocumentRequestCallMembersCentralCommitteeDSORecipe
+      - PrintedDocumentRequestRequestToEstablishThreatLevelRecipe
       - PrintedDocumentRequestChangeSalaryRecipe
-      - PrintedDocumentRequestNonListedEmploymentRecipe
+      - PrintedDocumentRequestForNonlistedEmploymentRecipe
+      - PrintedDocumentRequestForPromotionRecipe
       - PrintedDocumentRequestDocumentsRecipe
       - PrintedDocumentRequestEuthanasiaRecipe
       - PrintedDocumentRequestConstructionWorkRecipe
       - PrintedDocumentRequestModernizationRecipe
       - PrintedDocumentComplaintViolationLaborRulesRecipe
       - PrintedDocumentPermissionEquipmentRecipe
+      - PrintedDocumentPermissionToTravelInCaseOfThreatRecipe
       - PrintedDocumentSearchPermissionRecipe
-      - PrintedDocumentPermissionWeaponsRecipe
+      - PrintedDocumentPermissionToCarryWeaponsRecipe
       - PrintedDocumentPrescriptionDrugAuthorizationRecipe
       - PrintedDocumentPermissionDisposeBodyRecipe
       - PrintedDocumentConstructionPermitRecipe
+      - PrintedDocumentPermissionToExtendMarriageRecipe
       - PrintedDocumentOrderDismissalRecipe
       - PrintedDocumentOrderDeprivationAccessRecipe
       - PrintedDocumentOrderEncouragementRecipe
@@ -73,9 +80,12 @@
       - PrintedDocumentDivorceCertificateRecipe
       - PrintedDocumentClosingIndictmentRecipe
       - PrintedDocumentSentenceRecipe
+      - PrintedDocumentJudgmentRecipe
       - PrintedDocumentStatementHealtheRecipe
+      - PrintedDocumentDecisionToStartTrialRecipe
   - type: EmagLatheRecipes
     emagStaticRecipes:
+        - PrintedDocumentErrorLoadingFormHeaderRecipe
         - PrintedDocumentNoticeOfLiquidationRecipe
         - PrintedDocumentBusinessDealRecipe
         - PrintedDocumentNoteBeginningMilitaryActionsRecipe

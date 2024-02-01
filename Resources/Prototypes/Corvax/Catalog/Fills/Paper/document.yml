@@ -16,6 +16,14 @@
 
 - type: entity
   parent: PrintedDocument
+  id: PrintedDocumentReportOnEliminationOfViolations
+  name: Report on elimination of violations
+  components:
+    - type: Paper
+      content: doc-text-printer-ReportOnEliminationOfViolations
+
+- type: entity
+  parent: PrintedDocument
   id: PrintedDocumentReporDepartment
   name: Report on the work of the department
   components:
@@ -41,7 +49,7 @@
 - type: entity
   parent: PrintedDocument
   id: PrintedDocumentInternalAffairsAgentsReport
-  name: Report of Internal Affairs Agent
+  name: Internal Investigation Report
   components:
     - type: Paper
       content: doc-text-printer-InternalAffairsAgentsReport
@@ -65,8 +73,16 @@
 
 - type: entity
   parent: PrintedDocument
+  id: PrintedDocumentExperimentReport
+  name: Experiment report
+  components:
+    - type: Paper
+      content: doc-text-printer-ExperimentReport
+
+- type: entity
+  parent: PrintedDocument
   id: PrintedDocumentDisposalReport
-  name: Report on Disposal
+  name: Disposal report
   components:
     - type: Paper
       content: doc-text-printer-DisposalReport
@@ -113,6 +129,14 @@
 
 - type: entity
   parent: PrintedDocument
+  id: PrintedDocumentAppeal
+  name: Appeal
+  components:
+    - type: Paper
+      content: doc-text-printer-Appeal
+
+- type: entity
+  parent: PrintedDocument
   id: PrintedDocumentEvacuationShuttleRequest
   name: Evacuation Shuttle Request
   components:
@@ -137,6 +161,14 @@
 
 - type: entity
   parent: PrintedDocument
+  id: PrintedDocumentRequestRequestToEstablishThreatLevel
+  name: Request to establish threat level
+  components:
+    - type: Paper
+      content: doc-text-printer-RequestToEstablishThreatLevel
+
+- type: entity
+  parent: PrintedDocument
   id: PrintedDocumentRequestChangeSalary
   name: Request for salary change
   components:
@@ -145,11 +177,19 @@
 
 - type: entity
   parent: PrintedDocument
-  id: PrintedDocumentRequestNonListedEmployment
+  id: PrintedDocumentRequestForNonlistedEmployment
   name: Request for non-listed employment
   components:
     - type: Paper
-      content: doc-text-printer-RequestNonListedEmployment
+      content: doc-text-printer-RequestForNonlistedEmployment
+
+- type: entity
+  parent: PrintedDocument
+  id: PrintedDocumentRequestForPromotion
+  name: Request for promotion
+  components:
+    - type: Paper
+      content: doc-text-printer-RequestForPromotion
 
 - type: entity
   parent: PrintedDocument
@@ -209,6 +249,14 @@
 
 - type: entity
   parent: PrintedDocument
+  id: PrintedDocumentPermissionToTravelInCaseOfThreat
+  name: Permission to travel in case of threat
+  components:
+    - type: Paper
+      content: doc-text-printer-PermissionToTravelInCaseOfThreat
+
+- type: entity
+  parent: PrintedDocument
   id: PrintedDocumentSearchPermission
   name: Authorization to search
   components:
@@ -217,11 +265,11 @@
 
 - type: entity
   parent: PrintedDocument
-  id: PrintedDocumentPermissionWeapons
-  name: Authorization to carry weapons
+  id: PrintedDocumentPermissionToCarryWeapons
+  name: Permission to carry weapons
   components:
     - type: Paper
-      content: doc-text-printer-SearchPermission
+      content: doc-text-printer-PermissionToCarryWeapons
 
 - type: entity
   parent: PrintedDocument
@@ -246,6 +294,14 @@
   components:
     - type: Paper
       content: doc-text-printer-ConstructionPermit
+
+- type: entity
+  parent: PrintedDocument
+  id: PrintedDocumentPermissionToExtendMarriage
+  name: Permission to extend marriage
+  components:
+    - type: Paper
+      content: doc-text-printer-PermissionToExtendMarriage
 
 - type: entity
   parent: PrintedDocument
@@ -381,7 +437,7 @@
   name: Indictment
   components:
     - type: Paper
-      content: ClosingIndictment
+      content: doc-text-printer-ClosingIndictment
 
 - type: entity
   parent: PrintedDocument
@@ -393,11 +449,35 @@
 
 - type: entity
   parent: PrintedDocument
+  id: PrintedDocumentJudgment
+  name: Judgment
+  components:
+    - type: Paper
+      content: doc-text-printer-Judgment
+
+- type: entity
+  parent: PrintedDocument
   id: PrintedDocumentStatementHealth
   name: Health report
   components:
     - type: Paper
       content: doc-text-printer-StatementHealth
+
+- type: entity
+  parent: PrintedDocument
+  id: PrintedDocumentDecisionToStartTrial
+  name: Decision to start a trial
+  components:
+    - type: Paper
+      content: doc-text-printer-DecisionToStartTrial
+
+- type: entity
+  parent: PrintedDocument
+  id: PrintedDocumentErrorLoadingFormHeader
+  name: ERROR loading form header
+  components:
+    - type: Paper
+      content: doc-text-printer-ErrorLoadingFormHeader
 
 - type: entity
   parent: PrintedDocument
