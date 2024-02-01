@@ -354,7 +354,7 @@
 - type: entity
   parent: PrintedDocument
   id: PrintedDocumentDeathCertificate
-  name: 
+  name: Death certificate
   components:
     - type: Paper
       content: doc-text-printer-DeathCertificate
