@@ -10,6 +10,7 @@ lathe-category-weapons = Weapons
 lathe-category-Reports = Reports
 lathe-category-Statements = Statements
 lathe-category-InquiriesAndAppeals = Inquiries and appeals
+lathe-category-Complaints = Complaints
 lathe-category-Permissions = Permissions
 lathe-category-OrdersAndInstructions = Orders and instructions
 lathe-category-Orders = Orders
