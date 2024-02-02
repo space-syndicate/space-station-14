@@ -1,0 +1,10 @@
+lathe-category-reports = Reports
+lathe-category-statements = Statements
+lathe-category-inquiriesandappeals = Inquiries and appeals
+lathe-category-complaints = Complaints
+lathe-category-permissions = Permissions
+lathe-category-ordersandinstructions = Orders and instructions
+lathe-category-orders = Orders
+lathe-category-evidence = Evidence
+lathe-category-conclusionsanddecisions = Conclusions and decisions
+lathe-category-error = Error
