@@ -4,6 +4,8 @@
   description: job-description-technical-assistant
   playTimeTracker: JobTechnicalAssistant
   requirements:
+    - !type:OverallPlaytimeRequirement
+      time: 18000 #5 hrs # Corvax-RoleTime
     - !type:DepartmentTimeRequirement
       department: Engineering
       time: 36000 #10 hrs # Corvax-RoleTime
