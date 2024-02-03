@@ -1,0 +1,409 @@
+meta:
+  format: 6
+  postmapinit: false
+tilemap:
+  0: Space
+  28: FloorConcreteSmooth
+entities:
+- proto: ""
+  entities:
+  - uid: 1
+    components:
+    - type: MetaData
+      name: map 100
+    - type: Transform
+    - type: Map
+    - type: PhysicsMap
+    - type: GridTree
+    - type: MovedGrids
+    - type: Broadphase
+    - type: OccluderTree
+    - type: LoadedMap
+    - type: RbZone
+      range: 0
+      damage: null
+  - uid: 2
+    components:
+    - type: MetaData
+      name: grid
+    - type: Transform
+      pos: -4.0657005,2.2904525
+      parent: 1
+    - type: MapGrid
+      chunks:
+        0,0:
+          ind: 0,0
+          tiles: HAAAAAAAHAAAAAAAHAAAAAAAHAAAAAAAHAAAAAAAHAAAAAAAHAAAAAAAHAAAAAAAHAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+          version: 6
+        0,-1:
+          ind: 0,-1
+          tiles: AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAHAAAAAAAHAAAAAAAHAAAAAAAHAAAAAAAHAAAAAAAHAAAAAAAHAAAAAAAHAAAAAAAHAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAHAAAAAAAHAAAAAAAHAAAAAAAHAAAAAAAHAAAAAAAHAAAAAAAHAAAAAAAHAAAAAAAHAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAHAAAAAAAHAAAAAAAHAAAAAAAHAAAAAAAHAAAAAAAHAAAAAAAHAAAAAAAHAAAAAAAHAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAHAAAAAAAHAAAAAAAHAAAAAAAHAAAAAAAHAAAAAAAHAAAAAAAHAAAAAAAHAAAAAAAHAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAHAAAAAAAHAAAAAAAHAAAAAAAHAAAAAAAHAAAAAAAHAAAAAAAHAAAAAAAHAAAAAAAHAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAHAAAAAAAHAAAAAAAHAAAAAAAHAAAAAAAHAAAAAAAHAAAAAAAHAAAAAAAHAAAAAAAHAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAHAAAAAAAHAAAAAAAHAAAAAAAHAAAAAAAHAAAAAAAHAAAAAAAHAAAAAAAHAAAAAAAHAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAHAAAAAAAHAAAAAAAHAAAAAAAHAAAAAAAHAAAAAAAHAAAAAAAHAAAAAAAHAAAAAAAHAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+          version: 6
+    - type: Broadphase
+    - type: Physics
+      bodyStatus: InAir
+      angularDamping: 0.05
+      linearDamping: 0.05
+      fixedRotation: False
+      bodyType: Dynamic
+    - type: Fixtures
+      fixtures: {}
+    - type: OccluderTree
+    - type: SpreaderGrid
+    - type: Shuttle
+    - type: GridPathfinding
+    - type: Gravity
+      gravityShakeSound: !type:SoundPathSpecifier
+        path: /Audio/Effects/alert.ogg
+    - type: DecalGrid
+      chunkCollection:
+        version: 2
+        nodes: []
+    - type: GridAtmosphere
+      version: 2
+      data:
+        tiles:
+          0,0:
+            0: 1
+            1: 14
+          1,0:
+            0: 4
+            1: 11
+          1,-2:
+            0: 17410
+            1: 48125
+          1,-1:
+            0: 17476
+            1: 48059
+          2,0:
+            1: 1
+          0,-2:
+            1: 65535
+          0,-1:
+            1: 65535
+          2,-2:
+            1: 4369
+          2,-1:
+            1: 4369
+        uniqueMixes:
+        - volume: 2500
+          temperature: 293.15
+          moles:
+          - 21.824879
+          - 82.10312
+          - 0
+          - 0
+          - 0
+          - 0
+          - 0
+          - 0
+          - 0
+          - 0
+          - 0
+          - 0
+        - volume: 2500
+          temperature: 293.15
+          moles:
+          - 0
+          - 0
+          - 0
+          - 0
+          - 0
+          - 0
+          - 0
+          - 0
+          - 0
+          - 0
+          - 0
+          - 0
+        chunkSize: 4
+    - type: GasTileOverlay
+    - type: RadiationGridResistance
+- proto: SpawnDefaultRoyalBattleCrate
+  entities:
+  - uid: 35
+    components:
+    - type: Transform
+      pos: 1.5,-0.5
+      parent: 2
+  - uid: 36
+    components:
+    - type: Transform
+      pos: 2.5,-0.5
+      parent: 2
+  - uid: 37
+    components:
+    - type: Transform
+      pos: 3.5,-0.5
+      parent: 2
+  - uid: 38
+    components:
+    - type: Transform
+      pos: 4.5,-0.5
+      parent: 2
+  - uid: 39
+    components:
+    - type: Transform
+      pos: 5.5,-0.5
+      parent: 2
+  - uid: 40
+    components:
+    - type: Transform
+      pos: 6.5,-0.5
+      parent: 2
+  - uid: 41
+    components:
+    - type: Transform
+      pos: 7.5,-0.5
+      parent: 2
+- proto: SpawnMobHuman
+  entities:
+  - uid: 45
+    components:
+    - type: Transform
+      pos: 1.5,-6.5
+      parent: 2
+- proto: TargetSyndicate
+  entities:
+  - uid: 42
+    components:
+    - type: Transform
+      pos: 7.5,-4.5
+      parent: 2
+  - uid: 43
+    components:
+    - type: Transform
+      pos: 7.5,-5.5
+      parent: 2
+  - uid: 44
+    components:
+    - type: Transform
+      pos: 7.5,-6.5
+      parent: 2
+- proto: WallRiveted
+  entities:
+  - uid: 3
+    components:
+    - type: MetaData
+      flags: PvsPriority
+    - type: Transform
+      pos: 0.5,0.5
+      parent: 2
+  - uid: 4
+    components:
+    - type: MetaData
+      flags: PvsPriority
+    - type: Transform
+      pos: 0.5,-0.5
+      parent: 2
+  - uid: 5
+    components:
+    - type: MetaData
+      flags: PvsPriority
+    - type: Transform
+      pos: 0.5,-1.5
+      parent: 2
+  - uid: 6
+    components:
+    - type: MetaData
+      flags: PvsPriority
+    - type: Transform
+      pos: 0.5,-2.5
+      parent: 2
+  - uid: 7
+    components:
+    - type: MetaData
+      flags: PvsPriority
+    - type: Transform
+      pos: 0.5,-3.5
+      parent: 2
+  - uid: 8
+    components:
+    - type: MetaData
+      flags: PvsPriority
+    - type: Transform
+      pos: 0.5,-4.5
+      parent: 2
+  - uid: 9
+    components:
+    - type: MetaData
+      flags: PvsPriority
+    - type: Transform
+      pos: 0.5,-5.5
+      parent: 2
+  - uid: 10
+    components:
+    - type: MetaData
+      flags: PvsPriority
+    - type: Transform
+      pos: 0.5,-6.5
+      parent: 2
+  - uid: 11
+    components:
+    - type: MetaData
+      flags: PvsPriority
+    - type: Transform
+      pos: 0.5,-7.5
+      parent: 2
+  - uid: 12
+    components:
+    - type: MetaData
+      flags: PvsPriority
+    - type: Transform
+      pos: 1.5,-7.5
+      parent: 2
+  - uid: 13
+    components:
+    - type: MetaData
+      flags: PvsPriority
+    - type: Transform
+      pos: 2.5,-7.5
+      parent: 2
+  - uid: 14
+    components:
+    - type: MetaData
+      flags: PvsPriority
+    - type: Transform
+      pos: 3.5,-7.5
+      parent: 2
+  - uid: 15
+    components:
+    - type: MetaData
+      flags: PvsPriority
+    - type: Transform
+      pos: 4.5,-7.5
+      parent: 2
+  - uid: 16
+    components:
+    - type: MetaData
+      flags: PvsPriority
+    - type: Transform
+      pos: 5.5,-7.5
+      parent: 2
+  - uid: 17
+    components:
+    - type: MetaData
+      flags: PvsPriority
+    - type: Transform
+      pos: 6.5,-7.5
+      parent: 2
+  - uid: 18
+    components:
+    - type: MetaData
+      flags: PvsPriority
+    - type: Transform
+      pos: 7.5,-7.5
+      parent: 2
+  - uid: 19
+    components:
+    - type: MetaData
+      flags: PvsPriority
+    - type: Transform
+      pos: 8.5,-7.5
+      parent: 2
+  - uid: 20
+    components:
+    - type: MetaData
+      flags: PvsPriority
+    - type: Transform
+      pos: 8.5,-6.5
+      parent: 2
+  - uid: 21
+    components:
+    - type: MetaData
+      flags: PvsPriority
+    - type: Transform
+      pos: 8.5,-5.5
+      parent: 2
+  - uid: 22
+    components:
+    - type: MetaData
+      flags: PvsPriority
+    - type: Transform
+      pos: 8.5,-4.5
+      parent: 2
+  - uid: 23
+    components:
+    - type: MetaData
+      flags: PvsPriority
+    - type: Transform
+      pos: 8.5,-3.5
+      parent: 2
+  - uid: 24
+    components:
+    - type: MetaData
+      flags: PvsPriority
+    - type: Transform
+      pos: 8.5,-2.5
+      parent: 2
+  - uid: 25
+    components:
+    - type: MetaData
+      flags: PvsPriority
+    - type: Transform
+      pos: 8.5,-1.5
+      parent: 2
+  - uid: 26
+    components:
+    - type: MetaData
+      flags: PvsPriority
+    - type: Transform
+      pos: 8.5,-0.5
+      parent: 2
+  - uid: 27
+    components:
+    - type: MetaData
+      flags: PvsPriority
+    - type: Transform
+      pos: 8.5,0.5
+      parent: 2
+  - uid: 28
+    components:
+    - type: MetaData
+      flags: PvsPriority
+    - type: Transform
+      pos: 7.5,0.5
+      parent: 2
+  - uid: 29
+    components:
+    - type: MetaData
+      flags: PvsPriority
+    - type: Transform
+      pos: 6.5,0.5
+      parent: 2
+  - uid: 30
+    components:
+    - type: MetaData
+      flags: PvsPriority
+    - type: Transform
+      pos: 5.5,0.5
+      parent: 2
+  - uid: 31
+    components:
+    - type: MetaData
+      flags: PvsPriority
+    - type: Transform
+      pos: 4.5,0.5
+      parent: 2
+  - uid: 32
+    components:
+    - type: MetaData
+      flags: PvsPriority
+    - type: Transform
+      pos: 3.5,0.5
+      parent: 2
+  - uid: 33
+    components:
+    - type: MetaData
+      flags: PvsPriority
+    - type: Transform
+      pos: 2.5,0.5
+      parent: 2
+  - uid: 34
+    components:
+    - type: MetaData
+      flags: PvsPriority
+    - type: Transform
+      pos: 1.5,0.5
+      parent: 2
+...
