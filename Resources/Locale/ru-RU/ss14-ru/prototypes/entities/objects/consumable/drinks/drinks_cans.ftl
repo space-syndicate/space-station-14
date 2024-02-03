@@ -39,3 +39,7 @@ ent-DrinkShamblersJuiceCan = банка сока Shambler
     .desc = ~Встряхните мне немного этого сока Shambler!~
 ent-DrinkPwrGameCan = банка pwr game
     .desc = Единственный напиток, обладающий СИЛОЙ, которую жаждут настоящие геймеры. Когда геймеры говорят о геймерском топливе, они имеют в виду именно это.
+ent-DrinkBeerCan = beer can
+    .desc = Small joy, big taste, no worries!
+ent-DrinkWineCan = wine can
+    .desc = Your way to forgetting all worries and having fun!

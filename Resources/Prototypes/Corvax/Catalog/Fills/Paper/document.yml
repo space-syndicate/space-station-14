@@ -233,7 +233,7 @@
 
 - type: entity
   parent: PrintedDocument
-  id: PrintedDocumentComplaintОffense
+  id: PrintedDocumentComplaintOffense
   name: Complaint about an offense
   components:
     - type: Paper
