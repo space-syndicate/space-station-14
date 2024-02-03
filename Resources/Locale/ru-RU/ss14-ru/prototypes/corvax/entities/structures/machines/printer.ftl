@@ -1,2 +1,2 @@
-ent-PrinterDoc = document printer
-    .desc = Bureaucratic perfection. Stores a database of all Nanotrasen documents, and lets you print them as long as you have paper.
+ent-PrinterDoc = принтер документов
+    .desc = Бюрократическое совершенство. Хранит базу данных всех документов Nanotrasen и позволяет печатать их, пока хватает бумаги.
