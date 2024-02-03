@@ -7,4 +7,4 @@ verb-start-detonation = Запустить детонацию
 verb-toggle-start-on-stick = Переключить автоактивацию
 popup-start-on-stick-off = Устройство НЕ будет автоматически активировано после установки
 popup-start-on-stick-on = Устройство будет автоматически активировано после установки
-trigger-activated = You activate { THE($device) }.
+trigger-activated = Вы активировали { $device }.
