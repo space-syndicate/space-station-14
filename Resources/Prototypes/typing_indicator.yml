@@ -43,6 +43,12 @@
   offset: 0, 0.125
 
 - type: typingIndicator
+  id: lizard
+  typingState: lizard0
+  idleState: lizard3 # Corvax-TypingIndicator
+  offset: 0, 0.0625
+
+- type: typingIndicator
   id: slime
   typingState: slime0
   idleState: slime3 # Corvax-TypingIndicator

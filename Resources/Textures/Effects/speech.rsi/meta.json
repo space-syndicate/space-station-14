@@ -1,7 +1,7 @@
 {
     "version": 1,
     "license": "CC-BY-SA-3.0",
-    "copyright": "https://github.com/tgstation/tgstation/commit/e1d7836b6044a327530082cc43a55cc01a4d04bb | Moth sprites made by PuroSlavKing (Github) | Spider sprites made by PixelTheKermit (Github), resprited by mishutka09 (1152277579206774854) on discord | Slime sprites resprited by netwy (583844759429316618) on discord.",
+    "copyright": "https://github.com/tgstation/tgstation/commit/e1d7836b6044a327530082cc43a55cc01a4d04bb | Moth sprites made by PuroSlavKing (Github) | Spider sprites made by PixelTheKermit (Github), resprited by mishutka09 (1152277579206774854) on discord | Slime sprites resprited by netwy (583844759429316618) on discord.  | Lizard sprites made by AmalgoMyte (Github)",
     "size": {
         "x": 32,
         "y": 32
@@ -222,6 +222,34 @@
                     0.1,
                     0.1,
                     0.1
+                ]
+            ]
+        },
+        {
+            "name": "lizard0",
+            "delays": [
+                [
+                    0.3,
+                    0.3,
+                    0.3,
+                    0.4
+                ]
+            ]
+        },
+        {
+            "name": "lizard1"
+        },
+        {
+            "name": "lizard2"
+        },
+        {
+            "name": "lizard3",
+            "delays": [
+                [
+                    0.3,
+                    0.3,
+                    0.3,
+                    0.4
                 ]
             ]
         },
