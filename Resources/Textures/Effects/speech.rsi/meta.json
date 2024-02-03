@@ -243,6 +243,17 @@
             "name": "lizard2"
         },
         {
+            "name": "lizard3",
+            "delays": [
+                [
+                    0.3,
+                    0.3,
+                    0.3,
+                    0.4
+                ]
+            ]
+        },
+        {
             "name": "moth0",
             "delays": [
                 [
