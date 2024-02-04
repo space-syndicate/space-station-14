@@ -21,7 +21,9 @@ entities:
     - type: LoadedMap
     - type: RbZone
       range: 0
-      damage: null
+      damage:
+        types:
+          Blunt: 1
   - uid: 2
     components:
     - type: MetaData

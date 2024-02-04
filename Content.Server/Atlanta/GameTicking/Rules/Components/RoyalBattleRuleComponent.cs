@@ -10,11 +10,17 @@ namespace Content.Server.Atlanta.GameTicking.Rules.Components;
 [RegisterComponent, Access(typeof(RoyalBattleRuleSystem))]
 public sealed partial class RoyalBattleRuleComponent : Component
 {
-    [DataField("players")]
-    public List<EntityUid> Players = new();
+    [DataField("playersMinds")]
+    public List<EntityUid> PlayersMinds = new();
 
-    [DataField("playersCount")]
-    public int PlayersCount = 0;
+    [DataField("alivePlayers")]
+    public List<EntityUid> AlivePlayers = new();
+
+    [DataField("deadPlayers")]
+    public List<string> DeadPlayers = new();
+
+    [DataField("availableSpawners")]
+    public List<EntityUid> AvailableSpawners = new();
 
     [DataField("zone")]
     public RbZoneComponent? ZoneComponent;
@@ -23,4 +29,7 @@ public sealed partial class RoyalBattleRuleComponent : Component
     /// </summary>
     [DataField("gear", customTypeSerializer: typeof(PrototypeIdSerializer<StartingGearPrototype>)), ViewVariables(VVAccess.ReadWrite)]
     public string Gear = "DeathMatchGear";
+
+    public readonly string RoyalBattlePrototypeId = "RoyalBattle";
+    public readonly string RoyalBattleSpawnerPrototypeId = "RoyalBattlePlayerPoint";
 }

@@ -28,7 +28,7 @@ public sealed partial class StencilOverlay
         _shader.SetParameter("maxRange", pixelMaxRange);
         _shader.SetParameter("minRange", pixelMinRange);
         _shader.SetParameter("bufferRange", pixelBufferRange);
-        _shader.SetParameter("gradient", 0.80f);
+        _shader.SetParameter("gradient", 0.8f);
 
         var worldAABB = args.WorldAABB;
         var worldBounds = args.WorldBounds;
@@ -45,7 +45,7 @@ public sealed partial class StencilOverlay
         worldHandle.UseShader(_protoManager.Index<ShaderPrototype>("StencilMask").Instance());
         worldHandle.DrawTextureRect(_blep!.Texture, worldBounds);
         var curTime = _timing.RealTime;
-        var sprite = _sprite.GetFrame(new SpriteSpecifier.Texture(new ResPath("/Textures/Clothing/Mask/clown.rsi/icon.png")), curTime);
+        var sprite = _sprite.GetFrame(rbZoneComponent.ZoneTexture, curTime);
 
         // Draw the rain
         worldHandle.UseShader(_protoManager.Index<ShaderPrototype>("StencilDraw").Instance());

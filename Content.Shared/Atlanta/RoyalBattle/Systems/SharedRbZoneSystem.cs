@@ -32,7 +32,13 @@ public abstract partial class SharedRbZoneSystem : EntitySystem
             {
                 TimingZone(uid, zone, frameTime);
             }
+
+            ProcessUpdate(uid, zone, frameTime);
         }
+    }
+
+    protected virtual void ProcessUpdate(EntityUid uid, RbZoneComponent zone, float frameTime)
+    {
     }
 
     protected virtual void MoveZone(EntityUid uid, RbZoneComponent zone, float delta)
