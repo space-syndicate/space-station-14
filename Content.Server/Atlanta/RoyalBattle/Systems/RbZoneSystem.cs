@@ -4,6 +4,7 @@ using Content.Server.Chat.Managers;
 using Content.Shared.Atlanta.RoyalBattle.Components;
 using Content.Shared.Atlanta.RoyalBattle.Systems;
 using Content.Shared.Damage;
+using Robust.Shared.Player;
 using Robust.Shared.Timing;
 
 namespace Content.Server.Atlanta.RoyalBattle.Systems;
@@ -32,25 +33,27 @@ public sealed class RbZoneSystem : SharedRbZoneSystem
             return;
         zone.LastDamageTime = currentTime;
 
-        var query = EntityQueryEnumerator<RoyalBattleRuleComponent>();
-
-        while (query.MoveNext(out var ruleUid, out var rule))
+        var zoneCoords = _transform.GetMapCoordinates(uid);
+        var players =
+            Filter.BroadcastMap(zoneCoords.MapId).Recipients;
+        foreach (var session in players)
         {
-            var zoneCoords = _transform.GetMapCoordinates(uid);
-            foreach (var player in rule.AlivePlayers)
+            var player = session.AttachedEntity;
+
+            if (player == null)
+                continue;
+
+            var playerCoords = _transform.GetMapCoordinates(player.Value);
+
+            if (playerCoords.MapId == zoneCoords.MapId)
             {
-                var playerCoords = _transform.GetMapCoordinates(player);
+                var distance = Vector2.Distance(
+                    playerCoords.Position, zoneCoords.Position);
 
-                if (playerCoords.MapId == zoneCoords.MapId)
+                if (distance >= zone.RangeLerp)
                 {
-                    var distance = Vector2.Distance(
-                        playerCoords.Position, zoneCoords.Position);
-
-                    if (distance >= zone.RangeLerp)
-                    {
-                        Sawmill.Debug($"Damage {player.Id} by {zone.Damage}.");
-                        _damageable.TryChangeDamage(player, zone.Damage!, true);
-                    }
+                    Sawmill.Debug($"Damage {player.Value.Id} by {zone.Damage}.");
+                    _damageable.TryChangeDamage(player, zone.Damage!, true);
                 }
             }
         }
