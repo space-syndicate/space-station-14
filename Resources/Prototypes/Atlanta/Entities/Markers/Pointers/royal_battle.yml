@@ -2,28 +2,14 @@
   id: RoyalBattlePlayerPoint
   placement:
     mode: SnapgridCenter
+  parent: MarkerBase
   components:
-  - type: Transform
-    anchored: true
-  - type: Clickable
-  - type: InteractionOutline
-  - type: Sprite
-    drawdepth: Overdoors
-    sprite: Markers/cross.rsi
-    layers:
-    - state: green
   - type: RbPlayerSpawner
 
 - type: entity
   id: RoyalBattleCenterPoint
   placement:
     mode: SnapgridCenter
+  parent: MarkerBase
   components:
-  - type: Transform
-    anchored: true
-  - type: Sprite
-    drawdepth: Overdoors
-    sprite: Markers/cross.rsi
-    layers:
-    - state: green
   - type: RbZoneCenter
