@@ -4,6 +4,9 @@
     mode: SnapgridCenter
   parent: MarkerBase
   components:
+  - type: Sprite
+    layers:
+    - state: green
   - type: RbPlayerSpawner
 
 - type: entity
@@ -12,4 +15,7 @@
     mode: SnapgridCenter
   parent: MarkerBase
   components:
+  - type: Sprite
+    layers:
+    - state: green
   - type: RbZoneCenter

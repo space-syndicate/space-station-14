@@ -24,6 +24,12 @@ public sealed partial class RoyalBattleRuleComponent : Component
 
     [DataField("zone")]
     public RbZoneComponent? ZoneComponent;
+
+    [DataField("cratesCount")]
+    public int CratesCount;
+
+    [DataField("initializedCrates")]
+    public int InitializedCratesCount;
     /// <summary>
     /// The gear all players spawn with.
     /// </summary>
@@ -31,5 +37,4 @@ public sealed partial class RoyalBattleRuleComponent : Component
     public string Gear = "DeathMatchGear";
 
     public readonly string RoyalBattlePrototypeId = "RoyalBattle";
-    public readonly string RoyalBattleSpawnerPrototypeId = "RoyalBattlePlayerPoint";
 }

@@ -4,6 +4,8 @@ using Content.Server.Chat.Managers;
 using Content.Shared.Atlanta.RoyalBattle.Components;
 using Content.Shared.Atlanta.RoyalBattle.Systems;
 using Content.Shared.Damage;
+using Content.Shared.Mobs;
+using Content.Shared.Mobs.Components;
 using Robust.Shared.Player;
 using Robust.Shared.Timing;
 
@@ -34,16 +36,13 @@ public sealed class RbZoneSystem : SharedRbZoneSystem
         zone.LastDamageTime = currentTime;
 
         var zoneCoords = _transform.GetMapCoordinates(uid);
-        var players =
-            Filter.BroadcastMap(zoneCoords.MapId).Recipients;
-        foreach (var session in players)
+        var playersQuery = EntityQueryEnumerator<MobStateComponent>();
+        while (playersQuery.MoveNext(out var player, out var state))
         {
-            var player = session.AttachedEntity;
-
-            if (player == null)
+            if (state.CurrentState != MobState.Alive)
                 continue;
 
-            var playerCoords = _transform.GetMapCoordinates(player.Value);
+            var playerCoords = _transform.GetMapCoordinates(player);
 
             if (playerCoords.MapId == zoneCoords.MapId)
             {
@@ -52,7 +51,7 @@ public sealed class RbZoneSystem : SharedRbZoneSystem
 
                 if (distance >= zone.RangeLerp)
                 {
-                    Sawmill.Debug($"Damage {player.Value.Id} by {zone.Damage}.");
+                    Sawmill.Debug($"Damage {player.Id} by {zone.Damage}.");
                     _damageable.TryChangeDamage(player, zone.Damage!, true);
                 }
             }

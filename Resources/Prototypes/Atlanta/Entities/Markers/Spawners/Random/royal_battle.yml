@@ -1,0 +1,57 @@
+- type: entity
+  parent: MarkerBase
+  id: RandomCrateRoyalBattle
+  name: random royal battle crate
+  components:
+  - type: Sprite
+    layers:
+    - state: green
+  - type: RandomRbCrateSpawner
+    proto: CrateRoyalBattle
+
+- type: entity
+  parent: MarkerBase
+  id: RandomPistolCrateRoyalBattle
+  name: random pistol royal battle crate
+  components:
+  - type: Sprite
+    layers:
+    - state: green
+  - type: RandomRbCrateSpawner
+    proto: PistolCrateRoyalBattle
+
+
+- type: entity
+  parent: MarkerBase
+  id: RandomMgCrateRoyalBattle
+  name: random machine gun royal battle crate
+  components:
+  - type: Sprite
+    layers:
+    - state: green
+  - type: RandomRbCrateSpawner
+    proto: MgCrateRoyalBattle
+
+
+- type: entity
+  parent: MarkerBase
+  id: RandomRifleCrateRoyalBattle
+  name: random rifle royal battle crate
+  components:
+  - type: Sprite
+    layers:
+    - state: green
+  - type: RandomRbCrateSpawner
+    proto: RifleCrateRoyalBattle
+
+
+- type: entity
+  parent: MarkerBase
+  id: RandomShotgunCrateRoyalBattle
+  name: random shotgun royal battle crate
+  components:
+  - type: Sprite
+    layers:
+    - state: green
+  - type: RandomRbCrateSpawner
+    proto: ShotgunCrateRoyalBattle

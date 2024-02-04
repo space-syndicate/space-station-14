@@ -9,3 +9,51 @@
   - type: ConditionalSpawner
     prototypes:
     - CrateRoyalBattle
+
+- type: entity
+  name: Pistol Battle Royal Crate Spawner
+  id: SpawnPistolRoyalBattleCrate
+  parent: MarkerBase
+  components:
+  - type: Sprite
+    layers:
+    - state: green
+  - type: ConditionalSpawner
+    prototypes:
+    - PistolCrateRoyalBattle
+
+- type: entity
+  name: Machine Gun Battle Royal Crate Spawner
+  id: SpawnMgRoyalBattleCrate
+  parent: MarkerBase
+  components:
+  - type: Sprite
+    layers:
+    - state: green
+  - type: ConditionalSpawner
+    prototypes:
+    - MgCrateRoyalBattle
+
+- type: entity
+  name: Rifle Battle Royal Crate Spawner
+  id: SpawnRifleRoyalBattleCrate
+  parent: MarkerBase
+  components:
+  - type: Sprite
+    layers:
+    - state: green
+  - type: ConditionalSpawner
+    prototypes:
+    - RifleCrateRoyalBattle
+
+- type: entity
+  name: Shotgun Battle Royal Crate Spawner
+  id: SpawnShotgunRoyalBattleCrate
+  parent: MarkerBase
+  components:
+  - type: Sprite
+    layers:
+    - state: green
+  - type: ConditionalSpawner
+    prototypes:
+    - ShotgunCrateRoyalBattle

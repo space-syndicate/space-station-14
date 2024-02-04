@@ -13,9 +13,13 @@ using Content.Server.Objectives;
 using Content.Server.Station.Systems;
 using Content.Shared.Damage;
 using Content.Shared.Damage.Components;
+using Content.Shared.Damage.Prototypes;
+using Content.Shared.FixedPoint;
+using Content.Shared.Random.Helpers;
 using Content.Shared.Roles;
 using Robust.Server.Player;
 using Robust.Shared.Player;
+using Robust.Shared.Prototypes;
 using Robust.Shared.Random;
 using Robust.Shared.Utility;
 
@@ -32,6 +36,7 @@ public sealed class RoyalBattleRuleSystem : GameRuleSystem<RoyalBattleRuleCompon
     [Dependency] private readonly SharedRoleSystem _roleSystem = default!;
     [Dependency] private readonly IRobustRandom _random = default!;
     [Dependency] private readonly SharedTransformSystem _transform = default!;
+    [Dependency] private readonly IPrototypeManager _prototypeManager = default!;
     private ISawmill _sawmill = default!;
 
     public override void Initialize()
@@ -41,24 +46,17 @@ public sealed class RoyalBattleRuleSystem : GameRuleSystem<RoyalBattleRuleCompon
         SubscribeLocalEvent<PlayerBeforeSpawnEvent>(OnBeforeSpawn);
         SubscribeLocalEvent<KillReportedEvent>(OnKillReport);
 
-        SubscribeLocalEvent<RoyalBattleRuleComponent, MapInitEvent>(OnMapInit);
-
-
         SubscribeLocalEvent<RoyalBattleRuleComponent, ObjectivesTextGetInfoEvent>(OnObjectivesTextGetInfo);
         SubscribeLocalEvent<RoyalBattleRuleComponent, ObjectivesTextPrependEvent>(OnObjectivesTextPrepend);
 
         _sawmill = Logger.GetSawmill("Royal Battle Rule");
     }
 
-    private void OnMapInit(EntityUid uid, RoyalBattleRuleComponent component, MapInitEvent args)
+    public static void AddSpawner(RoyalBattleRuleComponent rule, EntityUid spawner)
     {
-        var query = EntityQueryEnumerator<RbPlayerSpawnerComponent>();
-
-        while (query.MoveNext(out var spawner, out _))
-        {
-            component.AvailableSpawners.Add(spawner);
-        }
+        rule.AvailableSpawners.Add(spawner);
     }
+
 
     private void OnKillReport(ref KillReportedEvent ev)
     {
@@ -69,6 +67,11 @@ public sealed class RoyalBattleRuleSystem : GameRuleSystem<RoyalBattleRuleCompon
 
             if (rb.AlivePlayers.Remove(player))
             {
+                _damageable.TryChangeDamage(player,
+                    new DamageSpecifier(new DamageSpecifier(
+                        _prototypeManager.Index<DamageGroupPrototype>("Airloss"),
+                        FixedPoint2.New(200))));
+
                 var deadPlayerName = TryComp<MetaDataComponent>(player, out var meta) ? meta.EntityName : player.ToString();
                 rb.DeadPlayers.Add(deadPlayerName);
             }
