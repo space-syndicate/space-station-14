@@ -15,6 +15,7 @@ using Content.Shared.Damage;
 using Content.Shared.Damage.Components;
 using Content.Shared.Roles;
 using Robust.Server.Player;
+using Robust.Shared.Player;
 using Robust.Shared.Random;
 using Robust.Shared.Utility;
 
