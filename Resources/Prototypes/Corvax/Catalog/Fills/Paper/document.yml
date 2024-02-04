@@ -1,0 +1,512 @@
+- type: entity
+  parent: Paper
+  id: PrintedDocument
+  abstract: true
+  description: Bureaucratic unit. A document printed on a printer.
+  components:
+    - type: Paper
+
+- type: entity
+  parent: PrintedDocument
+  id: PrintedDocumentReportStation
+  name: Report on the situation at the station
+  components:
+    - type: Paper
+      content: doc-text-printer-ReportStation
+
+- type: entity
+  parent: PrintedDocument
+  id: PrintedDocumentReportOnEliminationOfViolations
+  name: Report on elimination of violations
+  components:
+    - type: Paper
+      content: doc-text-printer-ReportOnEliminationOfViolations
+
+- type: entity
+  parent: PrintedDocument
+  id: PrintedDocumentReporDepartment
+  name: Report on the work of the department
+  components:
+    - type: Paper
+      content: doc-text-printer-ReporDepartment
+
+- type: entity
+  parent: PrintedDocument
+  id: PrintedDocumentReportEmployeePerformance
+  name: Report on employee performance
+  components:
+    - type: Paper
+      content: doc-text-printer-ReportEmployeePerformance
+
+- type: entity
+  parent: PrintedDocument
+  id: PrintedDocumentReportOnTheChaptersMeeting
+  name: Report on chapter meeting
+  components:
+    - type: Paper
+      content: doc-text-printer-ReportOnTheChaptersMeeting
+
+- type: entity
+  parent: PrintedDocument
+  id: PrintedDocumentInternalAffairsAgentsReport
+  name: Internal Investigation Report
+  components:
+    - type: Paper
+      content: doc-text-printer-InternalAffairsAgentsReport
+
+- type: entity
+  parent: PrintedDocument
+  id: PrintedDocumentConditionReport
+  name: Report on technical condition
+  components:
+    - type: Paper
+      content: doc-text-printer-ConditionReport
+
+
+- type: entity
+  parent: PrintedDocument
+  id: PrintedDocumentReportStudyObject
+  name: Report on object Investigation
+  components:
+    - type: Paper
+      content: doc-text-printer-ReportStudyObject
+
+- type: entity
+  parent: PrintedDocument
+  id: PrintedDocumentExperimentReport
+  name: Experiment report
+  components:
+    - type: Paper
+      content: doc-text-printer-ExperimentReport
+
+- type: entity
+  parent: PrintedDocument
+  id: PrintedDocumentDisposalReport
+  name: Disposal report
+  components:
+    - type: Paper
+      content: doc-text-printer-DisposalReport
+
+- type: entity
+  parent: PrintedDocument
+  id: PrintedDocumentApplicationAppointmentInterim
+  name: Statement of Appointment to the Temporary Acting Authority
+  components:
+    - type: Paper
+      content: doc-text-printer-ApplicationAppointmentInterim
+
+- type: entity
+  parent: PrintedDocument
+  id: PrintedDocumentApplicationEmployment
+  name: Statement of Employment
+  components:
+    - type: Paper
+      content: doc-text-printer-ApplicationEmployment
+
+- type: entity
+  parent: PrintedDocument
+  id: PrintedDocumentLetterResignation
+  name: Statement of Dismissal
+  components:
+    - type: Paper
+      content: doc-text-printer-LetterResignation
+
+- type: entity
+  parent: PrintedDocument
+  id: PrintedDocumentApplicationAccess
+  name: Statement of access
+  components:
+    - type: Paper
+      content: doc-text-printer-ApplicationAccess
+
+- type: entity
+  parent: PrintedDocument
+  id: PrintedDocumentApplicationEquipment
+  name: Statement for equipment
+  components:
+    - type: Paper
+      content: doc-text-printer-ApplicationEquipment
+
+- type: entity
+  parent: PrintedDocument
+  id: PrintedDocumentAppeal
+  name: Appeal
+  components:
+    - type: Paper
+      content: doc-text-printer-Appeal
+
+- type: entity
+  parent: PrintedDocument
+  id: PrintedDocumentEvacuationShuttleRequest
+  name: Evacuation Shuttle Request
+  components:
+    - type: Paper
+      content: doc-text-printer-EvacuationShuttleRequest
+
+- type: entity
+  parent: PrintedDocument
+  id: PrintedDocumentShuttleRegistrationRequest
+  name: Shuttle registration request
+  components:
+    - type: Paper
+      content: doc-text-printer-ShuttleRegistrationRequest
+
+- type: entity
+  parent: PrintedDocument
+  id: PrintedDocumentRequestCallMembersCentralCommitteeDSO
+  name: Request to call members of CC, DSO
+  components:
+    - type: Paper
+      content: doc-text-printer-RequestCallMembersCentralCommitteeDSO
+
+- type: entity
+  parent: PrintedDocument
+  id: PrintedDocumentRequestRequestToEstablishThreatLevel
+  name: Request to establish threat level
+  components:
+    - type: Paper
+      content: doc-text-printer-RequestToEstablishThreatLevel
+
+- type: entity
+  parent: PrintedDocument
+  id: PrintedDocumentRequestChangeSalary
+  name: Request for salary change
+  components:
+    - type: Paper
+      content: doc-text-printer-RequestChangeSalary
+
+- type: entity
+  parent: PrintedDocument
+  id: PrintedDocumentRequestForNonlistedEmployment
+  name: Request for non-listed employment
+  components:
+    - type: Paper
+      content: doc-text-printer-RequestForNonlistedEmployment
+
+- type: entity
+  parent: PrintedDocument
+  id: PrintedDocumentRequestForPromotion
+  name: Request for promotion
+  components:
+    - type: Paper
+      content: doc-text-printer-RequestForPromotion
+
+- type: entity
+  parent: PrintedDocument
+  id: PrintedDocumentRequestDocuments
+  name: Request for the provision of documents
+  components:
+    - type: Paper
+      content: doc-text-printer-RequestDocuments
+
+- type: entity
+  parent: PrintedDocument
+  id: PrintedDocumentRequestEuthanasia
+  name: Request for euthanasia
+  components:
+    - type: Paper
+      content: doc-text-printer-RequestEuthanasia
+
+- type: entity
+  parent: PrintedDocument
+  id: PrintedDocumentRequestConstructionWork
+  name: Request for construction works
+  components:
+    - type: Paper
+      content: doc-text-printer-RequestConstructionWork
+
+- type: entity
+  parent: PrintedDocument
+  id: PrintedDocumentRequestModernization
+  name: Request for modernization
+  components:
+    - type: Paper
+      content: doc-text-printer-RequestModernization
+
+- type: entity
+  parent: PrintedDocument
+  id: PrintedDocumentComplaintViolationLaborRules
+  name: Complaint for violation of labor order
+  components:
+    - type: Paper
+      content: doc-text-printer-ComplaintViolationLaborRules
+
+- type: entity
+  parent: PrintedDocument
+  id: PrintedDocumentComplaintOffense
+  name: Complaint about an offense
+  components:
+    - type: Paper
+      content: doc-text-printer-ComplaintОffense
+
+- type: entity
+  parent: PrintedDocument
+  id: PrintedDocumentPermissionEquipment
+  name: Authorization to use equipment
+  components:
+    - type: Paper
+      content: doc-text-printer-PermissionEquipment
+
+- type: entity
+  parent: PrintedDocument
+  id: PrintedDocumentPermissionToTravelInCaseOfThreat
+  name: Permission to travel in case of threat
+  components:
+    - type: Paper
+      content: doc-text-printer-PermissionToTravelInCaseOfThreat
+
+- type: entity
+  parent: PrintedDocument
+  id: PrintedDocumentSearchPermission
+  name: Authorization to search
+  components:
+    - type: Paper
+      content: doc-text-printer-SearchPermission
+
+- type: entity
+  parent: PrintedDocument
+  id: PrintedDocumentPermissionToCarryWeapons
+  name: Permission to carry weapons
+  components:
+    - type: Paper
+      content: doc-text-printer-PermissionToCarryWeapons
+
+- type: entity
+  parent: PrintedDocument
+  id: PrintedDocumentPrescriptionDrugAuthorization
+  name: Prescription Drug Authorization
+  components:
+    - type: Paper
+      content: doc-text-printer-PrescriptionDrugAuthorization
+
+- type: entity
+  parent: PrintedDocument
+  id: PrintedDocumentPermissionDisposeBody
+  name: Authorization to dispose of the body
+  components:
+    - type: Paper
+      content: doc-text-printer-PermissionDisposeBody
+
+- type: entity
+  parent: PrintedDocument
+  id: PrintedDocumentConstructionPermit
+  name: Building permit
+  components:
+    - type: Paper
+      content: doc-text-printer-ConstructionPermit
+
+- type: entity
+  parent: PrintedDocument
+  id: PrintedDocumentPermissionToExtendMarriage
+  name: Permission to extend marriage
+  components:
+    - type: Paper
+      content: doc-text-printer-PermissionToExtendMarriage
+
+- type: entity
+  parent: PrintedDocument
+  id: PrintedDocumentOrderDismissal
+  name: Dismissal order
+  components:
+    - type: Paper
+      content: doc-text-printer-OrderDismissal
+
+- type: entity
+  parent: PrintedDocument
+  id: PrintedDocumentOrderDeprivationAccess
+  name: Denial of access order
+  components:
+    - type: Paper
+      content: doc-text-printer-OrderDeprivationAccess
+
+- type: entity
+  parent: PrintedDocument
+  id: PrintedDocumentOrderEncouragement
+  name: Incentive order
+  components:
+    - type: Paper
+      content: doc-text-printer-OrderEncouragement
+
+- type: entity
+  parent: PrintedDocument
+  id: PrintedDocumentOrderParolePrisoner
+  name: Prisoner parole order
+  components:
+    - type: Paper
+      content: doc-text-printer-OrderParolePrisoner
+
+- type: entity
+  parent: PrintedDocument
+  id: PrintedDocumentOrderRecognizingSentienceCreature
+  name: An order recognizing the reasonableness of the substance
+  components:
+    - type: Paper
+      content: doc-text-printer-OrderRecognizingSentienceCreature
+
+- type: entity
+  parent: PrintedDocument
+  id: PrintedDocumentOrderMedicalIntervention
+  name: Order for medical intervention
+  components:
+    - type: Paper
+      content: doc-text-printer-OrderMedicalIntervention
+
+- type: entity
+  parent: PrintedDocument
+  id: PrintedDocumentProductManufacturingOrder
+  name: Order for the production of a product
+  components:
+    - type: Paper
+      content: doc-text-printer-ProductManufacturingOrder
+
+- type: entity
+  parent: PrintedDocument
+  id: PrintedDocumentOrderPurchaseResourcesEquipment
+  name: Purchase order for resources, equipment
+  components:
+    - type: Paper
+      content: doc-text-printer-OrderPurchaseResourcesEquipment
+
+- type: entity
+  parent: PrintedDocument
+  id: PrintedDocumentOrderingSpecialEquipment
+  name: Ordering special equipment
+  components:
+    - type: Paper
+      content: doc-text-printer-OrderingSpecialEquipment
+
+- type: entity
+  parent: PrintedDocument
+  id: PrintedDocumentOrderPurchaseWeapons
+  name: Purchase order for armaments
+  components:
+    - type: Paper
+      content: doc-text-printer-OrderPurchaseWeapons
+
+- type: entity
+  parent: PrintedDocument
+  id: PrintedDocumentCertificate
+  name: Certificate
+  components:
+    - type: Paper
+      content: doc-text-printer-Certificate
+
+- type: entity
+  parent: PrintedDocument
+  id: PrintedDocumentCertificateAdvancedTraining
+  name: Certificate of advanced training
+  components:
+    - type: Paper
+      content: doc-text-printer-CertificateAdvancedTraining
+
+- type: entity
+  parent: PrintedDocument
+  id: PrintedDocumentCertificateOffense
+  name: Certificate of Offense
+  components:
+    - type: Paper
+      content: doc-text-printer-CertificateOffense
+
+- type: entity
+  parent: PrintedDocument
+  id: PrintedDocumentDeathCertificate
+  name: Death certificate
+  components:
+    - type: Paper
+      content: doc-text-printer-DeathCertificate
+
+- type: entity
+  parent: PrintedDocument
+  id: PrintedDocumentMarriageCertificate
+  name: Marriage certificate
+  components:
+    - type: Paper
+      content: doc-text-printer-MarriageCertificate
+
+- type: entity
+  parent: PrintedDocument
+  id: PrintedDocumentDivorceCertificate
+  name: Certificate of divorce
+  components:
+    - type: Paper
+      content: doc-text-printer-DivorceCertificate
+
+- type: entity
+  parent: PrintedDocument
+  id: PrintedDocumentClosingIndictment
+  name: Indictment
+  components:
+    - type: Paper
+      content: doc-text-printer-ClosingIndictment
+
+- type: entity
+  parent: PrintedDocument
+  id: PrintedDocumentSentence
+  name: Sentence
+  components:
+    - type: Paper
+      content: doc-text-printer-Sentence
+
+- type: entity
+  parent: PrintedDocument
+  id: PrintedDocumentJudgment
+  name: Judgment
+  components:
+    - type: Paper
+      content: doc-text-printer-Judgment
+
+- type: entity
+  parent: PrintedDocument
+  id: PrintedDocumentStatementHealth
+  name: Health report
+  components:
+    - type: Paper
+      content: doc-text-printer-StatementHealth
+
+- type: entity
+  parent: PrintedDocument
+  id: PrintedDocumentDecisionToStartTrial
+  name: Decision to start a trial
+  components:
+    - type: Paper
+      content: doc-text-printer-DecisionToStartTrial
+
+- type: entity
+  parent: PrintedDocument
+  id: PrintedDocumentErrorLoadingFormHeader
+  name: ERROR loading form header
+  components:
+    - type: Paper
+      content: doc-text-printer-ErrorLoadingFormHeader
+
+- type: entity
+  parent: PrintedDocument
+  id: PrintedDocumentNoticeOfLiquidation
+  name: NOTICE OF LIQUIDIZATION
+  components:
+    - type: Paper
+      content: doc-text-printer-NOTICEOFLIQUIDATION
+
+- type: entity
+  parent: PrintedDocument
+  id: PrintedDocumentBusinessDeal
+  name: BUSINESS DEAL
+  components:
+    - type: Paper
+      content: doc-text-printer-BUSINESSDEAL
+
+- type: entity
+  parent: PrintedDocument
+  id: PrintedDocumentNoteBeginningMilitaryActions
+  name: NOTE BEGINNING MILITARY ACTIONS
+  components:
+    - type: Paper
+      content: doc-text-printer-NOTEBEGINNINGMILITARYACTIONS
+
+- type: entity
+  parent: PrintedDocument
+  id: PrintedDocumentReportAccomplishmentGoals
+  name: REPORT ACCOMPLISHMENT GOALS
+  components:
+    - type: Paper
+      content: doc-text-printer-REPORTACCOMPLISHMENTGOALS

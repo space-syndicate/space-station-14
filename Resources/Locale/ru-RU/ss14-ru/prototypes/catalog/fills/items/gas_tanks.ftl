@@ -1,9 +1,6 @@
 ent-OxygenTankFilled = { ent-OxygenTank }
     .desc = { ent-OxygenTank.desc }
     .suffix = Заполненный
-ent-YellowOxygenTankFilled = { ent-YellowOxygenTank }
-    .desc = { ent-YellowOxygenTank.desc }
-    .suffix = Заполненный
 ent-EmergencyOxygenTankFilled = { ent-EmergencyOxygenTank }
     .desc = { ent-EmergencyOxygenTank.desc }
     .suffix = Заполненный
