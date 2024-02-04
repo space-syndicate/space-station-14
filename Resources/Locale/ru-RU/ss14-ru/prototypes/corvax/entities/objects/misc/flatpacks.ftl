@@ -1,2 +1,2 @@
-ent-PrinterDocFlatpack = document printer flatpack
-    .desc = A flatpack used for constructing a document printer.
+ent-PrinterDocFlatpack = упакованный принтер документов
+    .desc = Упаковка, при помощи которой можно создать принтер документов.

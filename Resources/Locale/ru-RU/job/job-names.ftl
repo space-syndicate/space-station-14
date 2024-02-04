@@ -44,7 +44,7 @@ job-name-ertmedic = медик ОБР
 job-name-ertjanitor = уборщик ОБР
 job-name-boxer = боксёр
 job-name-zookeeper = зоотехник
-job-name-visitor = Visitor
+job-name-visitor = посетитель
 # Role timers - Make these alphabetical or I cut you
 JobAtmosphericTechnician = атмосферный техник
 JobBartender = бармен
@@ -90,6 +90,6 @@ JobServiceWorker = сервисный работник
 JobStationEngineer = инженер
 JobTechnicalAssistant = технический ассистент
 JobWarden = смотритель
-JobVisitor = Visitor
+JobVisitor = посетитель
 JobBoxer = боксёр
 JobZookeeper = зоотехник
