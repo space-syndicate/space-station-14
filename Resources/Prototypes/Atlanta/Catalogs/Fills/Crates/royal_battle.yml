@@ -5,3 +5,35 @@
   components:
   - type: RbCrateRandom
     content: DefaultPacksPool
+
+- type: entity
+  parent: CrateWeaponSecure
+  id: PistolCrateRoyalBattle
+  name: royal battle pistol crate
+  components:
+  - type: RbCrateRandom
+    content: PistolPacksPool
+
+- type: entity
+  parent: CrateWeaponSecure
+  id: MgCrateRoyalBattle
+  name: royal battle machine guns crate
+  components:
+  - type: RbCrateRandom
+    content: MgPacksPool
+
+- type: entity
+  parent: CrateWeaponSecure
+  id: RifleCrateRoyalBattle
+  name: royal battle rifles crate
+  components:
+  - type: RbCrateRandom
+    content: RiflePacksPool
+
+- type: entity
+  parent: CrateWeaponSecure
+  id: ShotgunCrateRoyalBattle
+  name: royal battle shotguns crate
+  components:
+  - type: RbCrateRandom
+    content: ShotgunsPacksPool

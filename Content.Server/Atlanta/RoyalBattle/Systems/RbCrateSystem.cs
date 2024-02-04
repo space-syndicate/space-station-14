@@ -1,4 +1,6 @@
 using System.Linq;
+using Content.Server.Atlanta.GameTicking.Rules.Components;
+using Content.Server.Atlanta.RoyalBattle.Components;
 using Content.Server.Storage.EntitySystems;
 using Content.Shared.Atlanta.RoyalBattle.Components;
 using Content.Shared.Atlanta.RoyalBattle.Prototypes;
@@ -17,6 +19,7 @@ public sealed class RbCrateSystem : EntitySystem
     [Dependency] private readonly IRobustRandom _random = default!;
     [Dependency] private readonly IEntityManager _entityManager = default!;
     [Dependency] private readonly EntityStorageSystem _entityStorage = default!;
+    [Dependency] private readonly SharedTransformSystem _transform = default!;
 
     private ISawmill _sawmill = default!;
 
@@ -25,7 +28,37 @@ public sealed class RbCrateSystem : EntitySystem
     {
         SubscribeLocalEvent<RbCrateRandomComponent, MapInitEvent>(OnMapInit);
 
+        SubscribeLocalEvent<RandomRbCrateSpawnerComponent, ComponentInit>(OnComponentInit);
+        SubscribeLocalEvent<RandomRbCrateSpawnerComponent, MapInitEvent>(OnRandomCrateMapInit);
+
         _sawmill = Logger.GetSawmill("Royal Battle");
+    }
+
+    private void OnComponentInit(EntityUid uid, RandomRbCrateSpawnerComponent component, ComponentInit args)
+    {
+
+        var query = EntityQueryEnumerator<RoyalBattleRuleComponent>();
+
+        while (query.MoveNext(out var rule))
+        {
+            rule.CratesCount++;
+        }
+    }
+
+    private void OnRandomCrateMapInit(EntityUid uid, RandomRbCrateSpawnerComponent component, MapInitEvent args)
+    {
+        var query = EntityQueryEnumerator<RoyalBattleRuleComponent>();
+
+        while (query.MoveNext(out var rule))
+        {
+            if (_random.Prob(0.5f))
+            {
+                _sawmill.Debug($"Spawn {component.PrototypeId} at {_transform.GetMoverCoordinates(uid)}");
+                Spawn(component.PrototypeId, _transform.GetMoverCoordinates(uid));
+
+                rule.InitializedCratesCount++;
+            }
+        }
     }
 
     private void OnMapInit(EntityUid uid, RbCrateRandomComponent component, MapInitEvent args)

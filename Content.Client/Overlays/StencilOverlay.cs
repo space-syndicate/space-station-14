@@ -1,5 +1,6 @@
 using Content.Client.Parallax;
 using Content.Client.Weather;
+using Content.Shared.Atlanta.RoyalBattle.Components;
 using Content.Shared.Salvage;
 using Content.Shared.Weather;
 using Robust.Client.GameObjects;
@@ -69,6 +70,11 @@ public sealed partial class StencilOverlay : Overlay
         if (_entManager.TryGetComponent<RestrictedRangeComponent>(mapUid, out var restrictedRangeComponent))
         {
             DrawRestrictedRange(args, restrictedRangeComponent, invMatrix);
+        }
+
+        if (_entManager.TryGetComponent<RbZoneComponent>(mapUid, out var rbZoneComponent))
+        {
+            DrawRoyalBattleZone(args, rbZoneComponent, invMatrix);
         }
 
         args.WorldHandle.UseShader(null);

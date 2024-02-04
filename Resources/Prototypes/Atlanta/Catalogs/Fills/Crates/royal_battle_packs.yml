@@ -14,4 +14,166 @@
   id: G22Pack
   pack:
   - WeaponPistolG22
-  - BoxMagazinePistol
+  - MagazinePistol
+
+# pistol
+- type: rbCratePool
+  id: PistolPacksPool
+  weights:
+    HandMadeShotgun: 0.25
+    G22Pack: 0.2
+    HIB88M4Pack: 0.2
+    SvalinnPack: 0.15
+    DeaglePack: 0.13
+    HighTechLaserPistolPack: 0.07
+
+
+- type: rbCratePack
+  id: DeaglePack
+  pack:
+  - WeaponPistolDesertEagle
+  - MagazineMagnum
+
+- type: rbCratePack
+  id: HighTechLaserPistolPack
+  pack:
+  - WeaponHighTechLaserPistol
+
+- type: rbCratePack
+  id: HIB88M4Pack
+  pack:
+  - WeaponPistolHIB88M4
+  - MagazinePistol
+
+- type: rbCratePack
+  id: SvalinnPack
+  pack:
+  - WeaponLaserSvalinn
+  - PowerCellSmall
+
+- type: rbCratePack
+  id: HandMadeShotgun
+  pack:
+  - WeaponShotgunHandmade
+  - ShellShotgun
+  - ShellShotgun
+  - ShellShotgun
+  - ShellShotgun
+
+# mg
+- type: rbCratePool
+  id: MgPacksPool
+  weights:
+    MP5Pack: 0.3
+    MP7Pack: 0.3
+    MP38Pack: 0.25
+    AtreidesPack: 0.15
+
+- type: rbCratePack
+  id: MP38Pack
+  pack:
+  - WeaponSubMachineGunMP38
+  - MagazinePistolBoxSubMachineGun
+
+- type: rbCratePack
+  id: MP5Pack
+  pack:
+  - WeaponSubMachineGunMP5
+  - MagazinePistolSubMachineGun
+
+- type: rbCratePack
+  id: MP7Pack
+  pack:
+  - WeaponSubMachineGunMP7
+  - MagazinePistolSubMachineGun
+
+- type: rbCratePack
+  id: AtreidesPack
+  pack:
+  - WeaponSubMachineGunAtreides
+  - MagazinePistolSubMachineGun
+
+# rifles
+- type: rbCratePool
+  id: RiflePacksPool
+  weights:
+    AKMSPack: 0.15
+    STG44Pack: 0.15
+    AR18Pack: 0.3
+    G36Pack: 0.2
+    M16A4Pack: 0.2
+
+- type: rbCratePack
+  id: AKMSPack
+  pack:
+  - WeaponAKMSRifle
+  - MagazineLightRifle
+
+- type: rbCratePack
+  id: STG44Pack
+  pack:
+  - WeaponRifleSTG44
+  - MagazineLightRifle
+
+- type: rbCratePack
+  id: AR18Pack
+  pack:
+  - WeaponRifleAR18
+  - MagazineRifle
+
+- type: rbCratePack
+  id: G36Pack
+  pack:
+  - WeaponRifleG36
+  - MagazineRifle
+
+- type: rbCratePack
+  id: M16A4Pack
+  pack:
+  - WeaponRifleM16A4
+  - MagazineRifle
+
+# shotgun
+- type: rbCratePool
+  id: ShotgunsPacksPool
+  weights:
+    ShotgunImprovisedPack: 0.3
+    L4034Pack: 0.1
+    XM1014Pack: 0.1
+    Spas12Pack: 0.1
+
+- type: rbCratePack
+  id: ShotgunImprovisedPack
+  pack:
+  - WeaponShotgunImprovisedLoaded
+  - ShellShotgunImprovised
+  - ShellShotgunImprovised
+  - ShellShotgunImprovised
+  - ShellShotgunImprovised
+
+- type: rbCratePack
+  id: L4034Pack
+  pack:
+  - WeaponShotguntrenchgunL4034
+  - ShellShotgun
+  - ShellShotgun
+  - ShellShotgun
+  - ShellShotgun
+
+- type: rbCratePack
+  id: XM1014Pack
+  pack:
+  - WeaponShotgunXM1014
+  - ShellShotgun
+  - ShellShotgun
+  - ShellShotgun
+  - ShellShotgun
+
+- type: rbCratePack
+  id: Spas12Pack
+  pack:
+  - WeaponShotgunSpas12
+  - ShellShotgun
+  - ShellShotgun
+  - ShellShotgun
+  - ShellShotgun

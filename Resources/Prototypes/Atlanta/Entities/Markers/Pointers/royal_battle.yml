@@ -1,0 +1,21 @@
+- type: entity
+  id: RoyalBattlePlayerPoint
+  placement:
+    mode: SnapgridCenter
+  parent: MarkerBase
+  components:
+  - type: Sprite
+    layers:
+    - state: green
+  - type: RbPlayerSpawner
+
+- type: entity
+  id: RoyalBattleCenterPoint
+  placement:
+    mode: SnapgridCenter
+  parent: MarkerBase
+  components:
+  - type: Sprite
+    layers:
+    - state: green
+  - type: RbZoneCenter

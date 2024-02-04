@@ -117,10 +117,10 @@ public sealed class StationSystem : EntitySystem
         if (_gameTicker.RunLevel == GameRunLevel.InRound)
             return;
 
-        if (_randomStationOffset)
+        if (_randomStationOffset && !ev.IgnoreOffset)
             ev.Options.Offset += _random.NextVector2(_maxRandomStationOffset);
 
-        if (_randomStationRotation)
+        if (_randomStationRotation && !ev.IgnoreOffset)
             ev.Options.Rotation = _random.NextAngle();
     }
 
