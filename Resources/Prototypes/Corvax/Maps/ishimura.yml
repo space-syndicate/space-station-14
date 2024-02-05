@@ -5,7 +5,10 @@
   minPlayers: 30
   stations:
     Ishimura:
-      mapNameTemplate: 'USG Ишимура {1}'
+      stationProto: StandardNanotrasenStation
+      components:
+        - type: StationNameSetup
+      mapNameTemplate: '{0} USG Ishimura {1}'
       nameGenerator:
         !type:NanotrasenNameGenerator
         prefixCreator: 'SY'
