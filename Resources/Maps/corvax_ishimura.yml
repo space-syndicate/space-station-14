@@ -9450,6 +9450,9 @@ entities:
     - type: LoadedMap
     - type: GridTree
     - type: MovedGrids
+    - type: BecomesStation
+      id: Ishimura
+    - type: StationMember
   - uid: 18153
     components:
     - type: MetaData
