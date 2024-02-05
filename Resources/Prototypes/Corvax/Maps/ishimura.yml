@@ -2,13 +2,13 @@
   id: CorvaxIshimura
   mapName: 'USG Ishimura'
   mapPath: /Maps/corvax_ishimura.yml
-  minPlayers: 0
+  minPlayers: 30
   stations:
     Ishimura:
       mapNameTemplate: 'USG Ишимура {1}'
       nameGenerator:
         !type:NanotrasenNameGenerator
-        prefixCreator: 'DS'
+        prefixCreator: 'SY'
       overflowJobs:
         - Passenger
       availableJobs:
