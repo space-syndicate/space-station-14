@@ -455,8 +455,6 @@ entities:
       bodyType: Dynamic
     - type: Fixtures
       fixtures: {}
-    - type: BecomesStation
-      id: Ishimura
     - type: OccluderTree
     - type: Shuttle
     - type: GridPathfinding
