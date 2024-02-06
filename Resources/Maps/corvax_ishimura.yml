@@ -9437,6 +9437,8 @@ entities:
           damping: 346.33075
           stiffness: 3108.6577
     - type: NavMap
+    - type: BecomesStation
+      id: Ishimura
   - uid: 6561
     components:
     - type: MetaData
@@ -9450,7 +9452,7 @@ entities:
     - type: MovedGrids
     - type: BecomesStation
       id: Ishimura
-    - type: StationMember
+    - type: NavMap
   - uid: 18153
     components:
     - type: MetaData
@@ -62659,10 +62661,10 @@ entities:
     - type: Transform
       pos: 20.5,-5.5
       parent: 89
-  - uid: 15042
+  - uid: 10575
     components:
     - type: Transform
-      pos: -10.5,-25.5
+      pos: -21.5,-23.5
       parent: 89
   - uid: 16771
     components:
@@ -118617,25 +118619,20 @@ entities:
     - type: Transform
       pos: -6.5,45.5
       parent: 89
-  - uid: 14991
+  - uid: 14995
     components:
     - type: Transform
-      pos: -36.5,22.5
+      pos: -88.5,18.5
       parent: 89
   - uid: 15011
     components:
     - type: Transform
-      pos: -114.5,18.5
-      parent: 89
-  - uid: 15012
-    components:
-    - type: Transform
-      pos: -98.5,22.5
+      pos: -108.5,26.5
       parent: 89
   - uid: 15030
     components:
     - type: Transform
-      pos: -34.5,-16.5
+      pos: -33.5,23.5
       parent: 89
   - uid: 16912
     components:
@@ -136525,15 +136522,15 @@ entities:
     - type: Transform
       pos: 31.5,15.5
       parent: 89
-  - uid: 10575
-    components:
-    - type: Transform
-      pos: -100.5,19.5
-      parent: 89
   - uid: 14730
     components:
     - type: Transform
       pos: -69.5,-16.5
+      parent: 89
+  - uid: 14992
+    components:
+    - type: Transform
+      pos: -88.5,21.5
       parent: 89
   - uid: 15041
     components:
@@ -136645,25 +136642,20 @@ entities:
     - type: Transform
       pos: 0.5,44.5
       parent: 89
-  - uid: 14992
+  - uid: 14991
     components:
     - type: Transform
-      pos: -41.5,21.5
+      pos: -30.5,32.5
       parent: 89
   - uid: 14993
     components:
     - type: Transform
-      pos: -51.5,21.5
+      pos: -57.5,29.5
       parent: 89
   - uid: 14994
     components:
     - type: Transform
       pos: -77.5,20.5
-      parent: 89
-  - uid: 14995
-    components:
-    - type: Transform
-      pos: -89.5,18.5
       parent: 89
   - uid: 15003
     components:
@@ -136680,6 +136672,11 @@ entities:
     - type: Transform
       pos: -116.5,20.5
       parent: 89
+  - uid: 15012
+    components:
+    - type: Transform
+      pos: -37.5,-5.5
+      parent: 89
   - uid: 15027
     components:
     - type: Transform
@@ -136688,17 +136685,7 @@ entities:
   - uid: 15028
     components:
     - type: Transform
-      pos: -1.5,25.5
-      parent: 89
-  - uid: 15031
-    components:
-    - type: Transform
-      pos: -44.5,-13.5
-      parent: 89
-  - uid: 15032
-    components:
-    - type: Transform
-      pos: -25.5,-22.5
+      pos: 2.5,23.5
       parent: 89
   - uid: 16135
     components:
@@ -136709,11 +136696,6 @@ entities:
     components:
     - type: Transform
       pos: -33.5,32.5
-      parent: 89
-  - uid: 18160
-    components:
-    - type: Transform
-      pos: -38.5,28.5
       parent: 89
   - uid: 24853
     components:
