@@ -6234,7 +6234,7 @@ entities:
       pos: -14.5,-44.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -16120.644
+      secondsUntilStateChange: -16303.71
       state: Opening
 - proto: AirlockMaintCommonLocked
   entities:
@@ -6309,7 +6309,7 @@ entities:
       pos: -60.5,-4.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -71529.71
+      secondsUntilStateChange: -71712.78
       state: Opening
   - uid: 6337
     components:
@@ -6318,7 +6318,7 @@ entities:
       pos: -64.5,-4.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -71528.85
+      secondsUntilStateChange: -71711.92
       state: Opening
 - proto: AirlockMaintEngiLocked
   entities:
@@ -23685,42 +23685,37 @@ entities:
   - uid: 14315
     components:
     - type: Transform
-      pos: -62.5,-9.5
+      pos: -57.5,-6.5
       parent: 2
   - uid: 14316
     components:
     - type: Transform
-      pos: -62.5,-10.5
+      pos: -57.5,-5.5
       parent: 2
   - uid: 14317
     components:
     - type: Transform
-      pos: -62.5,-11.5
+      pos: -57.5,-9.5
       parent: 2
   - uid: 14318
     components:
     - type: Transform
-      pos: -61.5,-9.5
+      pos: -57.5,-7.5
       parent: 2
   - uid: 14319
     components:
     - type: Transform
-      pos: -60.5,-9.5
+      pos: -57.5,-3.5
       parent: 2
   - uid: 14320
     components:
     - type: Transform
-      pos: -58.5,-9.5
+      pos: -57.5,-2.5
       parent: 2
   - uid: 14321
     components:
     - type: Transform
-      pos: -59.5,-9.5
-      parent: 2
-  - uid: 14322
-    components:
-    - type: Transform
-      pos: -57.5,-9.5
+      pos: -57.5,-8.5
       parent: 2
   - uid: 14323
     components:
@@ -23736,11 +23731,6 @@ entities:
     components:
     - type: Transform
       pos: -54.5,-9.5
-      parent: 2
-  - uid: 14415
-    components:
-    - type: Transform
-      pos: -56.5,-3.5
       parent: 2
   - uid: 14442
     components:
@@ -32469,6 +32459,8 @@ entities:
     - type: ItemPlacer
       placedEntities:
       - 2576
+    - type: PlaceableSurface
+      isPlaceable: False
 - proto: ChessBoard
   entities:
   - uid: 8843
