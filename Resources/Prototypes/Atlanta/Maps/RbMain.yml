@@ -1,8 +1,8 @@
 - type: gameMap
   id: RbMain
   mapName: Royal Battle Main
-  mapPath: /Maps/rb_zone_test.yml
-  minPlayers: 0
+  mapPath: /Maps/Atlanta/cluster_royal_battle.yml
+  minPlayers: 10
   stations:
     RbMain:
       stationProto: StandardStationArena

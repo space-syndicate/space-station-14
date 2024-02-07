@@ -34,7 +34,7 @@ public sealed partial class RoyalBattleRuleComponent : Component
     /// The gear all players spawn with.
     /// </summary>
     [DataField("gear", customTypeSerializer: typeof(PrototypeIdSerializer<StartingGearPrototype>)), ViewVariables(VVAccess.ReadWrite)]
-    public string Gear = "DeathMatchGear";
+    public string Gear = "RbFighterGear";
 
     public readonly string RoyalBattlePrototypeId = "RoyalBattle";
 }

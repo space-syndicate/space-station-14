@@ -51,7 +51,7 @@ public sealed class RbCrateSystem : EntitySystem
 
         while (query.MoveNext(out var rule))
         {
-            if (_random.Prob(0.5f))
+            if (_random.Prob(0.35f))
             {
                 _sawmill.Debug($"Spawn {component.PrototypeId} at {_transform.GetMoverCoordinates(uid)}");
                 Spawn(component.PrototypeId, _transform.GetMoverCoordinates(uid));
