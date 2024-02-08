@@ -84,6 +84,7 @@
   - type: ContainerFill
     containers:
       key_slots:
+      - EncryptionKeyNanotrasenPrison
       - EncryptionKeyCentCom
       - EncryptionKeyStationMaster
   - type: Sprite
