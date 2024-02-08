@@ -128,7 +128,7 @@ public sealed class RoyalBattleRuleSystem : GameRuleSystem<RoyalBattleRuleCompon
 
             if (!_mind.TryGetMind(mob, out var mindId, out var mind))
             {
-                Log.Info("Failed getting mind for picked rb player.");
+                _sawmill.Info("Failed getting mind for picked rb player.");
             }
             else
             {
@@ -139,6 +139,7 @@ public sealed class RoyalBattleRuleSystem : GameRuleSystem<RoyalBattleRuleCompon
                 };
 
                 _roleSystem.MindAddRole(mindId, rbPlayerRole, mind);
+                _sawmill.Debug($"Added new player {mind.CharacterName}/{mind}");
             }
 
             rb.AlivePlayers.Add(mob);
