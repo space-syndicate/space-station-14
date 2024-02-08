@@ -10,6 +10,7 @@ using Content.Server.GameTicking.Rules.Components;
 using Content.Server.KillTracking;
 using Content.Server.Mind;
 using Content.Server.Objectives;
+using Content.Server.RoundEnd;
 using Content.Server.Station.Systems;
 using Content.Shared.Damage;
 using Content.Shared.Damage.Components;
@@ -97,7 +98,9 @@ public sealed class RoyalBattleRuleSystem : GameRuleSystem<RoyalBattleRuleCompon
                 }
 
                 _chatManager.DispatchServerAnnouncement("Всем спасибо за участие! Поздравим победителей!", Color.Aquamarine);
-                GameTicker.EndRound();
+
+                var roundEnd = EntityManager.EntitySysManager.GetEntitySystem<RoundEndSystem>();
+                roundEnd.EndRound();
             }
             else
             {

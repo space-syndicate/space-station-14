@@ -2,7 +2,7 @@
   id: RbMain
   mapName: Royal Battle Main
   mapPath: /Maps/Atlanta/cluster_royal_battle.yml
-  minPlayers: 10
+  minPlayers: 1
   stations:
     RbMain:
       stationProto: StandardStationArena
