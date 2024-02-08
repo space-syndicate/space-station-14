@@ -139,7 +139,10 @@ public sealed class RoyalBattleRuleSystem : GameRuleSystem<RoyalBattleRuleCompon
                 };
 
                 _roleSystem.MindAddRole(mindId, rbPlayerRole, mind);
-                _sawmill.Debug($"Added new player {mind.CharacterName}/{mind}");
+
+                _chatManager.DispatchServerMessage(ev.Player, Loc.GetString("rb-rules"));
+
+                _sawmill.Info($"Added new player {mind.CharacterName}/{mind}");
             }
 
             rb.AlivePlayers.Add(mob);
