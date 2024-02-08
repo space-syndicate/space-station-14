@@ -1,0 +1,41 @@
+- type: job
+  id: Warden
+  name: job-name-warden
+  description: job-description-warden
+  playTimeTracker: JobWarden
+  requirements:
+    - !type:DepartmentTimeRequirement
+      department: Security
+      time: 43200 #12 hrs
+  startingGear: WardenGear
+  icon: "JobIconWarden"
+  supervisors: job-supervisors-hos
+  canBeAntag: false
+  access:
+  - Security
+  - Brig
+  - Armory
+  - Maintenance
+  - Service
+  - External
+  - Detective
+  special:
+  - !type:AddImplantSpecial
+    implants: [ MindShieldImplant ]
+
+- type: startingGear
+  id: WardenGear
+  equipment:
+    head: ClothingHeadHatWarden
+    jumpsuit: ClothingUniformJumpsuitWarden
+    back: ClothingBackpackSecurityFilled
+    shoes: ClothingShoesBootsJackSecFilled # Corvax-Resprite
+    eyes: ClothingEyesGlassesSunglasses
+    outerClothing: ClothingOuterCoatWarden
+    id: WardenPDA
+    ears: ClothingHeadsetSecurity
+    belt: ClothingBeltSecurityFilled
+    pocket1: WeaponPistolMk58Nonlethal
+  innerClothingSkirt: ClothingUniformJumpskirtWarden
+  satchel: ClothingBackpackSatchelSecurityFilled
+  duffelbag: ClothingBackpackDuffelSecurityFilled

@@ -1,0 +1,40 @@
+- type: job
+  id: Lawyer
+  name: job-name-lawyer
+  description: job-description-lawyer
+  playTimeTracker: JobLawyer
+  requirements:
+    - !type:OverallPlaytimeRequirement
+      time: 36000 # 10 hrs
+    - !type:DepartmentTimeRequirement
+      department: Security
+      time: 18000 #5 hrs
+  startingGear: LawyerGear
+  setPreference: false # Corvax-IAA
+  icon: "JobIconLawyer"
+  supervisors: магистрату
+  access:
+  - Centcom
+  - Service
+  - Lawyer
+  - Brig
+  - Maintenance
+  canBeAntag: false
+  special:
+  - !type:AddImplantSpecial
+    implants: [ MindShieldImplant ]
+
+- type: startingGear
+  id: LawyerGear
+  equipment:
+    jumpsuit: ClothingUniformJumpsuitLawyerBlack  # TODO change jumpsuit to randomiser of the 4 variants
+    back: ClothingBackpackFilled
+    shoes: ClothingShoesBootsLaceup
+    id: LawyerPDA
+    ears: ClothingHeadsetSecurity
+    # TODO add copy of space law
+  inhand:
+    - BriefcaseBrownFilled
+  innerClothingSkirt: ClothingUniformJumpskirtLawyerBlack
+  satchel: ClothingBackpackSatchelFilled
+  duffelbag: ClothingBackpackDuffelFilled

@@ -1,0 +1,28 @@
+- type: job
+  id: Roboticist
+  name: Робототехник
+  description: Конструируйте боргов! Обновляйте их, экспериментируйте.
+  playTimeTracker: JobRoboticist
+  requirements:
+    - !type:DepartmentTimeRequirement
+      department: Science
+      time: 18000 #5 hrs
+  startingGear: RoboticistGear
+  icon: "JobIconRoboticist"
+  supervisors: job-supervisors-rd
+  access:
+  - Research
+  - Maintenance
+
+- type: startingGear
+  id: RoboticistGear
+  equipment:
+    jumpsuit: ClothingUniformJumpsuitRoboticist
+    back: ClothingBackpackScienceFilled
+    shoes: ClothingShoesColorBlack
+    outerClothing: ClothingOuterCoatRobo
+    id: RoboticistPDA
+    ears: ClothingHeadsetRobotics
+  innerClothingSkirt: ClothingUniformJumpskirtRoboticist
+  satchel: ClothingBackpackSatchelScienceFilled
+  duffelbag: ClothingBackpackDuffelScienceFilled

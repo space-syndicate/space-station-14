@@ -1,0 +1,29 @@
+- type: job
+  id: Bombodel
+  name: Специалист по взрывчатке
+  description: Создавайте и экспериментируйте над взрывчаткой!
+  playTimeTracker: JobBombodel
+  requirements:
+    - !type:DepartmentTimeRequirement
+      department: Science
+      time: 10800 #3 hrs
+  startingGear: BombodelGear
+  icon: "JobIconBombodel"
+  supervisors: job-supervisors-rd
+  access:
+  - Research
+  - Maintenance
+
+- type: startingGear
+  id: BombodelGear
+  equipment:
+    jumpsuit: ClothingUniformJumpsuitScientist
+    back: ClothingBackpackScienceFilled
+    shoes: ClothingShoesBootsJack
+    outerClothing: ClothingOuterCoatRnd
+    belt: ClothingBeltUtilityEngineering
+    id: BombodelPDA
+    ears: ClothingHeadsetScience
+  innerClothingSkirt: ClothingUniformJumpskirtScientist
+  satchel: ClothingBackpackSatchelScienceFilled
+  duffelbag: ClothingBackpackDuffelScienceFilled

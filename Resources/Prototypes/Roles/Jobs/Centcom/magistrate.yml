@@ -1,0 +1,42 @@
+- type: job
+  id: Magistrate
+  name: Магистрат
+  description: Проводите "не подкупные" суды и приговаривайте людей к заключению!
+  playTimeTracker: JobMagistrate
+  requirements:
+    - !type:OverallPlaytimeRequirement
+      time: 54000 # 15 hrs
+    - !type:DepartmentTimeRequirement
+      department: Security
+      time: 36000 #10 hrs
+    - !type:RoleTimeRequirement
+      role: JobLawyer
+      time: 18000 #5 hrs
+  startingGear: MagistrateGear
+  icon: "JobIconMagistrate"
+  supervisors: job-supervisors-centcom
+  accessGroups:
+  - AllAccess
+  access:
+  - Centcom
+  canBeAntag: false
+  special:
+  - !type:AddImplantSpecial
+    implants: [ MindShieldImplant ]
+
+- type: startingGear
+  id: MagistrateGear
+  equipment:
+    jumpsuit: ClothingUniformJumpsuitLawyerBlack
+    back: ClothingBackpackFilled
+    shoes: ClothingShoesBootsLaceup
+    id: MagistratePDA
+    ears: ClothingHeadsetCentCom
+    outerClothing: ClothingOuterRobesJudge
+    head: ClothingHeadHatPwig
+    pocket1: BoxFolderCentComClipboard
+    pocket2: RubberStampMagistrate
+    neck: ClothingNeckLawyerbadge
+  innerClothingSkirt: ClothingUniformJumpskirtLawyerBlack
+  satchel: ClothingBackpackSatchelFilled
+  duffelbag: ClothingBackpackDuffelFilled

@@ -1,0 +1,30 @@
+- type: job
+  id: Anomalist
+  name: Аномалист
+  description: Работайте с аномалиями! Зарабатывайте очки для рнд и не потеряйте аномалию...
+  playTimeTracker: JobAnomalist
+  requirements:
+    - !type:DepartmentTimeRequirement
+      department: Science
+      time: 10800 #3 hrs
+  startingGear: AnomalistGear
+  icon: "JobIconAnomalist"
+  supervisors: job-supervisors-rd
+  access:
+  - Research
+  - Maintenance
+
+- type: startingGear
+  id: AnomalistGear
+  equipment:
+    jumpsuit: ClothingUniformJumpsuitScientist
+    back: ClothingBackpackScienceFilled
+    shoes: ClothingShoesColorWhite
+    outerClothing: ClothingOuterCoatRnd
+    id: AnomalistPDA
+    ears: ClothingHeadsetScience
+    pocket1: AnomalyScanner
+    pocket2: AnomalyLocator
+  innerClothingSkirt: ClothingUniformJumpskirtScientist
+  satchel: ClothingBackpackSatchelScienceFilled
+  duffelbag: ClothingBackpackDuffelScienceFilled

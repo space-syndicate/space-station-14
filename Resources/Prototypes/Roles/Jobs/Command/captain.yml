@@ -1,0 +1,51 @@
+﻿- type: job
+  id: Captain
+  name: job-name-captain
+  description: job-description-captain
+  playTimeTracker: JobCaptain
+  requirements:
+    - !type:DepartmentTimeRequirement
+      department: Engineering
+      time: 72000 #20 hrs # Corvax-RoleTime
+    - !type:DepartmentTimeRequirement
+      department: Medical
+      time: 72000 #20 hrs # Corvax-RoleTime
+    - !type:DepartmentTimeRequirement
+      department: Security
+      time: 72000 #20 hrs # Corvax-RoleTime
+    - !type:DepartmentTimeRequirement
+      department: Command
+      time: 54000 # 15 hours
+    - !type:OverallPlaytimeRequirement
+      time: 504000 #140 hrs # Corvax-RoleTime
+  weight: 20
+  startingGear: CaptainGear
+  icon: "JobIconCaptain"
+  requireAdminNotify: true
+  joinNotifyCrew: true
+  supervisors: job-supervisors-centcom
+  canBeAntag: false
+  accessGroups:
+  - AllAccess
+  special:
+  - !type:AddImplantSpecial
+    implants: [ MindShieldImplant ]
+  - !type:AddComponentSpecial
+    components:
+      - type: CommandStaff
+
+- type: startingGear
+  id: CaptainGear
+  equipment:
+    jumpsuit: ClothingUniformJumpsuitCaptain
+    back: ClothingBackpackCaptainFilled
+    shoes: ClothingShoesBootsLaceup
+    head: ClothingHeadHatCaptain
+    eyes: ClothingEyesGlassesSunglasses
+    gloves: ClothingHandsGlovesCaptain
+    outerClothing: ClothingOuterArmorCaptainCarapace
+    id: CaptainPDA
+    ears: ClothingHeadsetAltCommand
+  innerClothingSkirt: ClothingUniformJumpskirtCaptain
+  satchel: ClothingBackpackSatchelCaptainFilled
+  duffelbag: ClothingBackpackDuffelCaptainFilled

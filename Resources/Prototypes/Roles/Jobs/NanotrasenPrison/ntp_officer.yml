@@ -1,0 +1,41 @@
+- type: job
+  id: NTPOfficer
+  name: Офицер NTP
+  description: Бейте заключённых по попе! Унижайте их! Или будьте хорошим надзирателем в космической тюрьме Nanotrasen!
+  playTimeTracker: JobNTPOfficer
+  requirements:
+    - !type:DepartmentTimeRequirement
+      department: Security
+      time: 10800 #3 hrs
+  startingGear: NTPOfficerGear
+  icon: "JobIconNTP"
+  supervisors: Главе тюрьмы Nanotrasen
+  canBeAntag: false
+  access:
+  - NanotrasenPrison
+  - Medical
+  - Engineering
+  - Security
+  - Brig
+  - Maintenance
+  - Service
+  - External
+  special:
+  - !type:AddImplantSpecial
+    implants: [ MindShieldImplant ]
+
+- type: startingGear
+  id: NTPOfficerGear
+  equipment:
+    jumpsuit: ClothingUniformJumpsuitNTP
+    back: ClothingBackpackSecurityFilled
+    shoes: ClothingShoesBootsJack
+    eyes: ClothingEyesGlassesSunglasses
+    outerClothing: ClothingOuterArmorBasic
+    id: NTPPDA
+    ears: ClothingHeadsetNanotrasenPrison
+    belt: ClothingBeltSecurityFilled
+    pocket1: WeaponPistolMk58Nonlethal
+  innerClothingSkirt: ClothingUniformJumpskirtSec
+  satchel: ClothingBackpackSatchelSecurityFilled
+  duffelbag: ClothingBackpackDuffelSecurityFilled

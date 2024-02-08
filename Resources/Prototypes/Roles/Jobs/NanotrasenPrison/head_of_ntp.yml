@@ -1,0 +1,52 @@
+- type: job
+  id: HeadOfNanotrasenPrison
+  name: Глава NTP
+  description: Управляйте специальной тюрьмой Nanotrasen для самых опасных преступников!
+  playTimeTracker: JobHeadOfNanotrasenPrison
+  requirements:
+    - !type:RoleTimeRequirement
+      role: JobWarden
+      time: 18000 #5 hrs
+    - !type:DepartmentTimeRequirement
+      department: NanotrasenPrison
+      time: 36000 #10 hrs
+  weight: 10
+  startingGear: HoNTPGear
+  icon: "JobIconHoNTP"
+  requireAdminNotify: true
+  supervisors: job-supervisors-centcom
+  canBeAntag: false
+  access:
+  - HoNTP
+  - NanotrasenPrison
+  - Centcom
+  - Medical
+  - Engineering
+  - Command
+  - Brig
+  - Security
+  - Armory
+  - Maintenance
+  - Service
+  - External
+  special:
+  - !type:AddImplantSpecial
+    implants: [ MindShieldImplant ]
+
+- type: startingGear
+  id: HoNTPGear
+  equipment:
+    jumpsuit: ClothingUniformJumpsuitHoNTP
+    back: ClothingBackpackHOSFilled
+    shoes: ClothingShoesBootsJack
+    outerClothing: ClothingOuterCoatGentle
+    eyes: ClothingEyesGlassesSunglasses
+    head: ClothingHeadHatBeretHoS
+    id: HoNTPPDA
+    gloves: ClothingHandsGlovesCombat
+    ears: ClothingHeadsetAltNanotrasenPrison
+    belt: ClothingBeltSecurityFilled
+    pocket1: WeaponPistolMk58Nonlethal
+  innerClothingSkirt: ClothingUniformJumpskirtHoS
+  satchel: ClothingBackpackSatchelHOSFilled
+  duffelbag: ClothingBackpackDuffelHOSFilled

@@ -1,0 +1,38 @@
+- type: job
+  id: NTPEngineer
+  name: Инженер NTP
+  description: Ремонтируйте и заботьтесь о тюрьме Nanotrasen!
+  playTimeTracker: JobNTPEngineer
+  requirements:
+    - !type:DepartmentTimeRequirement
+      department: Engineering
+      time: 10800 #3 hrs
+    - !type:DepartmentTimeRequirement
+      department: Security
+      time: 10800 #3 hrs
+  startingGear: NTPEngineerGear
+  icon: "JobIconNTP_engineer"
+  supervisors: Главе тюрьмы Nanotrasen
+  access:
+  - Security
+  - Brig
+  - NanotrasenPrison
+  - Maintenance
+  - Engineering
+  - External
+  - Atmospherics
+
+- type: startingGear
+  id: NTPEngineerGear
+  equipment:
+    jumpsuit: ClothingUniformJumpsuitNTP_engineer
+    back: ClothingBackpackEngineeringFilled
+    shoes: ClothingShoesBootsWork
+    outerClothing: ClothingOuterVestHazard
+    id: NTPPDA
+    eyes: ClothingEyesGlassesMeson
+    belt: ClothingBeltUtilityEngineering
+    ears: ClothingHeadsetNanotrasenPrison
+  innerClothingSkirt: ClothingUniformJumpskirtEngineering
+  satchel: ClothingBackpackSatchelEngineeringFilled
+  duffelbag: ClothingBackpackDuffelEngineeringFilled
