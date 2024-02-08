@@ -5,7 +5,7 @@
   - rb
   name: rb-title
   description: rb-description
-  showInVote: false
+  showInVote: true
   supportedMaps: RoyalBattleMapPool
   rules:
   - RoyalBattleRule
