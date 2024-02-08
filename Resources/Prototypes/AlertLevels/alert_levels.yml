@@ -28,6 +28,17 @@
       sound: /Audio/Misc/redalert.ogg
       color: Red
       shuttleTime: 600 #No reduction in time as we don't have swiping for red alert like in /tg/. Shuttle times are intended to create friction, so having a way to brainlessly bypass that would be dumb.
+    omega:
+      announcement: alert-level-omega-announcement
+      selectable: false
+      sound:
+        path: /Audio/Corvax/Adminbuse/outbreak5.ogg
+        params:
+          volume: -2
+      disableSelection: true
+      color: Orange
+      emergencyLightColor: Orange
+      forceEnableEmergencyLights: true
     gamma:
       announcement: alert-level-gamma-announcement
       selectable: false
