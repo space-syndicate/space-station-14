@@ -1,0 +1,77 @@
+# Default
+
+- type: entity
+  parent: Airlock
+  id: AirlockNTP
+  name: Шлюз NTP
+  description: Умеет открываться и закрываться.
+  suffix: NTP
+  components:
+  - type: Sprite
+    sprite: FacetsUniverse\Structures\Doors\Airlocks\NTP.rsi
+
+- type: entity
+  parent: Airlock
+  id: AirlockHoNTP
+  name: Шлюз главы NTP
+  description: Умеет открываться и закрываться.
+  suffix: HoNTP
+  components:
+  - type: Sprite
+    sprite: Structures/Doors/Airlocks/Standard/command.rsi
+  - type: WiresPanelSecurity
+    securityLevel: medSecurity
+
+- type: entity
+  parent: Airlock
+  id: AirlockOBS
+  name: Шлюз офицера "Синий  Щит"
+  description: Умеет открываться и закрываться.
+  suffix: OBS
+  components:
+  - type: Sprite
+    sprite: Structures/Doors/Airlocks/Standard/command.rsi
+  - type: WiresPanelSecurity
+    securityLevel: medSecurity
+
+# Glass
+
+- type: entity
+  parent: AirlockGlass
+  id: AirlockNTPGlass
+  name: Стеклянный шлюз NTP
+  description: Умеет открываться и закрываться, стеклянный ещё.
+  suffix: NTP
+  components:
+  - type: Sprite
+    sprite: FacetsUniverse\Structures\Doors\Glass\NTP.rsi
+  - type: PaintableAirlock
+    group: Glass
+
+- type: entity
+  parent: AirlockGlass
+  id: AirlockHoNTPGlass
+  name: Стеклянный шлюз главы NTP
+  description: Умеет открываться и закрываться, стеклянный ещё.
+  suffix: HoNTP
+  components:
+  - type: Sprite
+    sprite: Structures/Doors/Airlocks/Glass/command.rsi
+  - type: PaintableAirlock
+    group: Glass
+  - type: WiresPanelSecurity
+    securityLevel: medSecurity
+
+- type: entity
+  parent: AirlockGlass
+  id: AirlockOBSGlass
+  name: Стеклянный шлюз офицера "Синий Щит"
+  description: Умеет открываться и закрываться, стеклянный ещё.
+  suffix: OBS
+  components:
+  - type: Sprite
+    sprite: Structures/Doors/Airlocks/Glass/command.rsi
+  - type: PaintableAirlock
+    group: Glass
+  - type: WiresPanelSecurity
+    securityLevel: medSecurity

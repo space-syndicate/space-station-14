@@ -1,0 +1,84 @@
+# Default
+
+- type: entity
+  parent: Airlock
+  id: AirlockNTPLocked
+  name: Шлюз NTP
+  description: Умеет открываться и закрываться.
+  suffix: NTP, Locked
+  components:
+  - type: AccessReader
+    access: [["NanotrasenPrison"]]
+  - type: Sprite
+    sprite: FacetsUniverse\Structures\Doors\Airlocks\NTP.rsi
+
+
+- type: entity
+  parent: Airlock
+  id: AirlockHoNTPLocked
+  name: Шлюз NTP
+  description: Умеет открываться и закрываться.
+  suffix: HoNTP, Locked
+  components:
+  - type: AccessReader
+    access: [["HoNTP"]]
+  - type: Sprite
+    sprite: Structures/Doors/Airlocks/Standard/command.rsi
+  - type: WiresPanelSecurity
+    securityLevel: medSecurity
+
+- type: entity
+  parent: Airlock
+  id: AirlockOBSLocked
+  name: Шлюз офицера "Синий Щит"
+  description: Умеет открываться и закрываться.
+  suffix: OBS, Locked
+  components:
+  - type: AccessReader
+    access: [["OfficerBlueShield"]]
+  - type: Sprite
+    sprite: Structures/Doors/Airlocks/Standard/command.rsi
+  - type: WiresPanelSecurity
+    securityLevel: medSecurity
+
+# Glass
+
+- type: entity
+  parent: AirlockGlass
+  id: AirlockNTPGlassLocked
+  name: Стеклянный шлюз NTP
+  description: Умеет открываться и закрываться, стеклянный ещё.
+  suffix: NTP, Locked
+  components:
+  - type: AccessReader
+    access: [["NanotrasenPrison"]]
+  - type: Sprite
+    sprite: FacetsUniverse\Structures\Doors\Glass\NTP.rsi
+
+- type: entity
+  parent: AirlockGlass
+  id: AirlockHoNTPGlassLocked
+  name: Стеклянный шлюз NTP
+  description: Умеет открываться и закрываться, стеклянный ещё.
+  suffix: HoNTP, Locked
+  components:
+  - type: AccessReader
+    access: [["HoNTP"]]
+  - type: Sprite
+    sprite: Structures/Doors/Airlocks/Glass/command.rsi
+  - type: WiresPanelSecurity
+    securityLevel: medSecurity
+
+- type: entity
+  parent: AirlockGlass
+  id: AirlockOBSGlassLocked
+  name: Стеклянный шлюз офицера "Синий Щит"
+  description: Умеет открываться и закрываться, стеклянный ещё.
+  suffix: OBS, Locked
+  components:
+  - type: AccessReader
+    access: [["OfficerBlueShield"]]
+  - type: Sprite
+    sprite: Structures/Doors/Airlocks/Glass/command.rsi
+  - type: WiresPanelSecurity
+    securityLevel: medSecurity

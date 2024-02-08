@@ -1,0 +1,143 @@
+- type: entity
+  id: SpawnPointHeadOfNTP
+  parent: SpawnPointJobBase
+  name: Спавнпоинт Глава NTP
+  components:
+  - type: SpawnPoint
+    job_id: HeadOfNanotrasenPrison
+  - type: Sprite
+    layers:
+      - state: green
+      - state: hos
+
+- type: entity
+  id: SpawnPointSecurityNTP
+  parent: SpawnPointJobBase
+  name: Спавнпоинт Офицер NTP
+  components:
+  - type: SpawnPoint
+    job_id: NTPOfficer
+  - type: Sprite
+    layers:
+      - state: green
+      - state: security_officer
+
+- type: entity
+  id: SpawnPointNTPDoctor
+  parent: SpawnPointJobBase
+  name: Спавнпоинт Доктор NTP
+  components:
+  - type: SpawnPoint
+    job_id: NTPDoctor
+  - type: Sprite
+    layers:
+      - state: green
+      - state: doctor
+
+- type: entity
+  id: SpawnPointNTPEngineer
+  parent: SpawnPointJobBase
+  name: Спавнпоинт Инженер NTP
+  components:
+  - type: SpawnPoint
+    job_id: NTPEngineer
+  - type: Sprite
+    layers:
+      - state: green
+      - state: engineer
+
+- type: entity
+  id: SpawnPointOfficerBlueShield
+  parent: SpawnPointJobBase
+  name: Спавнпоинт Офицер "Синий Щит"
+  components:
+  - type: SpawnPoint
+    job_id: OfficerBlueShield
+  - type: Sprite
+    layers:
+      - state: green
+      - state: security_officer
+
+- type: entity
+  id: SpawnPointSecurityPilot
+  parent: SpawnPointJobBase
+  name: Спавнпоинт Пилот СБ
+  components:
+  - type: SpawnPoint
+    job_id: SecurityPilot
+  - type: Sprite
+    layers:
+      - state: green
+      - state: security_officer
+
+- type: entity
+  id: SpawnPointRoboticist
+  parent: SpawnPointJobBase
+  name: Спавнпоинт Робототехник
+  components:
+  - type: SpawnPoint
+    job_id: Roboticist
+  - type: Sprite
+    layers:
+      - state: green
+      - state: scientist
+
+- type: entity
+  id: SpawnPointBombodel
+  parent: SpawnPointJobBase
+  name: Спавнопоинт Специалист по взрывчатке
+  components:
+  - type: SpawnPoint
+    job_id: Bombodel
+  - type: Sprite
+    layers:
+      - state: green
+      - state: scientist
+
+- type: entity
+  id: SpawnPointXenoarchaeolog
+  parent: SpawnPointJobBase
+  name: Спавнпоинт Ксеноархеолог
+  components:
+  - type: SpawnPoint
+    job_id: Xenoarchaeolog
+  - type: Sprite
+    layers:
+      - state: green
+      - state: scientist
+
+- type: entity
+  id: SpawnPointSeniorResearcher
+  parent: SpawnPointJobBase
+  name: Спавнпоинт Ведущий учёный
+  components:
+  - type: SpawnPoint
+    job_id: SeniorResearcher
+  - type: Sprite
+    layers:
+      - state: green
+      - state: scientist
+
+- type: entity
+  id: SpawnPointAnomalist
+  parent: SpawnPointJobBase
+  name: Спавнпоинт Аномалист
+  components:
+  - type: SpawnPoint
+    job_id: Anomalist
+  - type: Sprite
+    layers:
+      - state: green
+      - state: scientist
+
+- type: entity
+  id: SpawnPointMagistrate
+  parent: SpawnPointJobBase
+  name: Спавнпоинт Магистрат
+  components:
+  - type: SpawnPoint
+    job_id: Magistrate
+  - type: Sprite
+    layers:
+      - state: green
+      - state: lawyer
