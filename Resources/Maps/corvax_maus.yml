@@ -3793,7 +3793,8 @@ entities:
           -8,-6:
             0: 65535
           -8,-5:
-            0: 65535
+            0: 65503
+            1: 32
           -7,-8:
             0: 65535
           -7,-7:
@@ -5210,6 +5211,13 @@ entities:
       parent: 2
     - type: AtmosDevice
       joinedGrid: 2
+  - uid: 12931
+    components:
+    - type: Transform
+      pos: -60.5,7.5
+      parent: 2
+    - type: AtmosDevice
+      joinedGrid: 2
   - uid: 13383
     components:
     - type: Transform
@@ -6234,7 +6242,7 @@ entities:
       pos: -14.5,-44.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -16303.71
+      secondsUntilStateChange: -17442.25
       state: Opening
 - proto: AirlockMaintCommonLocked
   entities:
@@ -6309,7 +6317,7 @@ entities:
       pos: -60.5,-4.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -71712.78
+      secondsUntilStateChange: -72851.32
       state: Opening
   - uid: 6337
     components:
@@ -6318,7 +6326,7 @@ entities:
       pos: -64.5,-4.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -71711.92
+      secondsUntilStateChange: -72850.46
       state: Opening
 - proto: AirlockMaintEngiLocked
   entities:
@@ -33589,6 +33597,10 @@ entities:
   entities:
   - uid: 8527
     components:
+    - type: MetaData
+      desc: На плаще были видны высохшие капли слизи, едва заметные на её ткани. По легендам, носитель этого плаща, хоть и проявлял излишнюю нервозность в общении, но обладал добротой, которая неизменно демонстрировалась сквозь его поступки.
+      name: >
+        Плащ молодого слаймолюда
     - type: Transform
       pos: -91.422874,-36.520172
       parent: 2
@@ -35456,13 +35468,6 @@ entities:
     components:
     - type: Transform
       pos: -64.5,-27.5
-      parent: 2
-- proto: DefaultStationBeaconTEG
-  entities:
-  - uid: 13921
-    components:
-    - type: Transform
-      pos: -61.5,11.5
       parent: 2
 - proto: DefaultStationBeaconTelecoms
   entities:
@@ -49553,6 +49558,24 @@ entities:
       parent: 2
     - type: AtmosPipeColor
       color: '#0000FFFF'
+  - uid: 12892
+    components:
+    - type: Transform
+      rot: -1.5707963267948966 rad
+      pos: -61.5,8.5
+      parent: 2
+  - uid: 12897
+    components:
+    - type: Transform
+      rot: -1.5707963267948966 rad
+      pos: -61.5,10.5
+      parent: 2
+  - uid: 12902
+    components:
+    - type: Transform
+      rot: -1.5707963267948966 rad
+      pos: -61.5,12.5
+      parent: 2
   - uid: 12941
     components:
     - type: Transform
@@ -52172,6 +52195,14 @@ entities:
       color: '#0000FFFF'
 - proto: GasPort
   entities:
+  - uid: 1836
+    components:
+    - type: Transform
+      rot: 1.5707963267948966 rad
+      pos: -62.5,8.5
+      parent: 2
+    - type: AtmosDevice
+      joinedGrid: 2
   - uid: 7935
     components:
     - type: Transform
@@ -52185,6 +52216,46 @@ entities:
     - type: Transform
       rot: 3.141592653589793 rad
       pos: -59.5,-28.5
+      parent: 2
+    - type: AtmosDevice
+      joinedGrid: 2
+  - uid: 12845
+    components:
+    - type: Transform
+      rot: -1.5707963267948966 rad
+      pos: -59.5,8.5
+      parent: 2
+    - type: AtmosDevice
+      joinedGrid: 2
+  - uid: 12848
+    components:
+    - type: Transform
+      rot: -1.5707963267948966 rad
+      pos: -59.5,10.5
+      parent: 2
+    - type: AtmosDevice
+      joinedGrid: 2
+  - uid: 12880
+    components:
+    - type: Transform
+      rot: -1.5707963267948966 rad
+      pos: -59.5,12.5
+      parent: 2
+    - type: AtmosDevice
+      joinedGrid: 2
+  - uid: 12906
+    components:
+    - type: Transform
+      rot: 1.5707963267948966 rad
+      pos: -62.5,10.5
+      parent: 2
+    - type: AtmosDevice
+      joinedGrid: 2
+  - uid: 12908
+    components:
+    - type: Transform
+      rot: 1.5707963267948966 rad
+      pos: -62.5,12.5
       parent: 2
     - type: AtmosDevice
       joinedGrid: 2
@@ -52399,6 +52470,30 @@ entities:
     components:
     - type: Transform
       pos: -61.5,14.5
+      parent: 2
+    - type: AtmosDevice
+      joinedGrid: 2
+  - uid: 12882
+    components:
+    - type: Transform
+      rot: -1.5707963267948966 rad
+      pos: -60.5,12.5
+      parent: 2
+    - type: AtmosDevice
+      joinedGrid: 2
+  - uid: 12888
+    components:
+    - type: Transform
+      rot: -1.5707963267948966 rad
+      pos: -60.5,10.5
+      parent: 2
+    - type: AtmosDevice
+      joinedGrid: 2
+  - uid: 12889
+    components:
+    - type: Transform
+      rot: -1.5707963267948966 rad
+      pos: -60.5,8.5
       parent: 2
     - type: AtmosDevice
       joinedGrid: 2
@@ -58157,6 +58252,24 @@ entities:
     - type: Transform
       pos: -30.5,-18.5
       parent: 2
+    - type: EntityStorage
+      air:
+        volume: 200
+        immutable: False
+        temperature: 293.14673
+        moles:
+        - 1.7459903
+        - 6.568249
+        - 0
+        - 0
+        - 0
+        - 0
+        - 0
+        - 0
+        - 0
+        - 0
+        - 0
+        - 0
 - proto: LockerHeadOfSecurityFilledHardsuit
   entities:
   - uid: 14258
@@ -58596,6 +58709,21 @@ entities:
     components:
     - type: Transform
       pos: -12.538996,-5.717942
+      parent: 2
+- proto: MaterialCloth
+  entities:
+  - uid: 12841
+    components:
+    - type: Transform
+      pos: -29.747696,-18.247948
+      parent: 2
+- proto: MaterialDurathread
+  entities:
+  - uid: 12844
+    components:
+    - type: Transform
+      rot: -1.5707963267948966 rad
+      pos: -29.310196,-18.294872
       parent: 2
 - proto: MaterialWoodPlank
   entities:
@@ -59812,6 +59940,13 @@ entities:
       parent: 2
     - type: AtmosDevice
       joinedGrid: 2
+  - uid: 12932
+    components:
+    - type: Transform
+      pos: -60.5,6.5
+      parent: 2
+    - type: AtmosDevice
+      joinedGrid: 2
 - proto: PlasticBanana
   entities:
   - uid: 2434
@@ -60205,6 +60340,21 @@ entities:
     components:
     - type: Transform
       pos: -55.5,-20.5
+      parent: 2
+  - uid: 12911
+    components:
+    - type: Transform
+      pos: -59.5,12.5
+      parent: 2
+  - uid: 12912
+    components:
+    - type: Transform
+      pos: -59.5,10.5
+      parent: 2
+  - uid: 12916
+    components:
+    - type: Transform
+      pos: -59.5,8.5
       parent: 2
 - proto: PosterContrabandAtmosiaDeclarationIndependence
   entities:
@@ -70031,11 +70181,6 @@ entities:
     - type: Transform
       pos: -52.5,-26.5
       parent: 2
-  - uid: 14282
-    components:
-    - type: Transform
-      pos: -56.5,-27.5
-      parent: 2
 - proto: SpawnPointChiefEngineer
   entities:
   - uid: 10386
@@ -70689,6 +70834,41 @@ entities:
     components:
     - type: Transform
       pos: -65.5,-72.5
+      parent: 2
+    - type: AtmosDevice
+      joinedGrid: 2
+  - uid: 12919
+    components:
+    - type: Transform
+      pos: -62.5,8.5
+      parent: 2
+    - type: AtmosDevice
+      joinedGrid: 2
+  - uid: 12920
+    components:
+    - type: Transform
+      pos: -62.5,10.5
+      parent: 2
+    - type: AtmosDevice
+      joinedGrid: 2
+  - uid: 12922
+    components:
+    - type: Transform
+      pos: -59.5,7.5
+      parent: 2
+    - type: AtmosDevice
+      joinedGrid: 2
+  - uid: 12926
+    components:
+    - type: Transform
+      pos: -62.5,12.5
+      parent: 2
+    - type: AtmosDevice
+      joinedGrid: 2
+  - uid: 12927
+    components:
+    - type: Transform
+      pos: -59.5,6.5
       parent: 2
     - type: AtmosDevice
       joinedGrid: 2
@@ -87528,14 +87708,6 @@ entities:
       parent: 2
 - proto: WarpPoint
   entities:
-  - uid: 1836
-    components:
-    - type: MetaData
-      name: Склад дронов
-    - type: Transform
-      rot: 1.5707963267948966 rad
-      pos: -78.5,-35.5
-      parent: 2
   - uid: 12816
     components:
     - type: MetaData
@@ -87543,52 +87715,6 @@ entities:
     - type: Transform
       rot: 1.5707963267948966 rad
       pos: -64.5,-53.5
-      parent: 2
-  - uid: 12841
-    components:
-    - type: MetaData
-      name: Инженерный отдел
-    - type: Transform
-      pos: -65.5,-13.5
-      parent: 2
-  - uid: 12844
-    components:
-    - type: MetaData
-      name: Хранилище
-    - type: Transform
-      pos: -51.5,-8.5
-      parent: 2
-  - uid: 12845
-    components:
-    - type: MetaData
-      name: Гравитация
-    - type: Transform
-      pos: -56.5,-9.5
-      parent: 2
-  - uid: 12848
-    components:
-    - type: MetaData
-      name: Мастерская
-    - type: Transform
-      pos: -45.5,-2.5
-      parent: 2
-    - type: WarpPoint
-      location: мастерская
-  - uid: 12880
-    components:
-    - type: MetaData
-      name: Атмосферный отдел
-    - type: Transform
-      rot: 1.5707963267948966 rad
-      pos: -63.5,6.5
-      parent: 2
-  - uid: 12882
-    components:
-    - type: MetaData
-      name: Медицинский отдел
-    - type: Transform
-      rot: 1.5707963267948966 rad
-      pos: -52.5,-32.5
       parent: 2
   - uid: 12885
     components:
@@ -87598,29 +87724,6 @@ entities:
       rot: 1.5707963267948966 rad
       pos: -50.5,-50.5
       parent: 2
-  - uid: 12888
-    components:
-    - type: MetaData
-      name: Жилой блок
-    - type: Transform
-      rot: 1.5707963267948966 rad
-      pos: -74.5,-53.5
-      parent: 2
-  - uid: 12889
-    components:
-    - type: MetaData
-      name: Хим лаборатория
-    - type: Transform
-      pos: -54.5,-26.5
-      parent: 2
-  - uid: 12892
-    components:
-    - type: MetaData
-      name: Телекоммуникация
-    - type: Transform
-      rot: 1.5707963267948966 rad
-      pos: -85.5,-57.5
-      parent: 2
   - uid: 12895
     components:
     - type: MetaData
@@ -87629,134 +87732,12 @@ entities:
       rot: 1.5707963267948966 rad
       pos: -71.5,-63.5
       parent: 2
-  - uid: 12897
-    components:
-    - type: MetaData
-      name: Церковь
-    - type: Transform
-      rot: 1.5707963267948966 rad
-      pos: -65.5,-65.5
-      parent: 2
-  - uid: 12902
-    components:
-    - type: MetaData
-      name: Комната детектива
-    - type: Transform
-      rot: 1.5707963267948966 rad
-      pos: -80.5,-62.5
-      parent: 2
-  - uid: 12906
-    components:
-    - type: MetaData
-      name: Отдел снабжения
-    - type: Transform
-      rot: 1.5707963267948966 rad
-      pos: -15.5,-47.5
-      parent: 2
-  - uid: 12908
-    components:
-    - type: MetaData
-      name: Театр
-    - type: Transform
-      pos: -14.5,-38.5
-      parent: 2
-  - uid: 12911
-    components:
-    - type: MetaData
-      name: Гидропоника
-    - type: Transform
-      pos: -41.5,-28.5
-      parent: 2
-  - uid: 12912
-    components:
-    - type: MetaData
-      name: кухня
-    - type: Transform
-      pos: -37.5,-35.5
-      parent: 2
-    - type: WarpPoint
-      location: Кухня
   - uid: 12915
     components:
     - type: MetaData
       name: Морг
     - type: Transform
       pos: -60.5,-36.5
-      parent: 2
-  - uid: 12916
-    components:
-    - type: MetaData
-      name: Пляж
-    - type: Transform
-      pos: -36.5,-43.5
-      parent: 2
-  - uid: 12919
-    components:
-    - type: MetaData
-      name: Суд
-    - type: Transform
-      pos: -15.5,-27.5
-      parent: 2
-  - uid: 12920
-    components:
-    - type: MetaData
-      name: Отдел службы безопасности
-    - type: Transform
-      pos: -17.5,-15.5
-      parent: 2
-  - uid: 12922
-    components:
-    - type: MetaData
-      name: Оружейная
-    - type: Transform
-      pos: -13.5,-4.5
-      parent: 2
-  - uid: 12926
-    components:
-    - type: MetaData
-      name: Пожизненная камера
-    - type: Transform
-      rot: -1.5707963267948966 rad
-      pos: -17.5,8.5
-      parent: 2
-  - uid: 12927
-    components:
-    - type: MetaData
-      name: Солнечные панели 1
-    - type: Transform
-      pos: -44.5,10.5
-      parent: 2
-  - uid: 12931
-    components:
-    - type: MetaData
-      name: Комната уборщика
-    - type: Transform
-      rot: -1.5707963267948966 rad
-      pos: -3.5,-6.5
-      parent: 2
-  - uid: 12932
-    components:
-    - type: MetaData
-      name: Аркадная комната
-    - type: Transform
-      rot: -1.5707963267948966 rad
-      pos: -3.5,-17.5
-      parent: 2
-  - uid: 12971
-    components:
-    - type: MetaData
-      name: Искуственный интеллект
-    - type: Transform
-      rot: 1.5707963267948966 rad
-      pos: -111.5,-57.5
-      parent: 2
-  - uid: 12995
-    components:
-    - type: MetaData
-      name: Мостик
-    - type: Transform
-      rot: 1.5707963267948966 rad
-      pos: -35.5,-1.5
       parent: 2
   - uid: 12996
     components:
@@ -87765,14 +87746,6 @@ entities:
     - type: Transform
       rot: 1.5707963267948966 rad
       pos: -32.5,-12.5
-      parent: 2
-  - uid: 12998
-    components:
-    - type: MetaData
-      name: Глава персонала
-    - type: Transform
-      rot: 1.5707963267948966 rad
-      pos: -33.5,-17.5
       parent: 2
   - uid: 14115
     components:
