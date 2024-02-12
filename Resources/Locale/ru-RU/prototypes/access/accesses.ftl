@@ -1,4 +1,4 @@
-id-card-access-level-command = Командование
+id-card-access-level-command = Особый экипаж
 id-card-access-level-captain = Капитан
 id-card-access-level-head-of-personnel = Глава персонала
 id-card-access-level-cryogenics = Криогеника

@@ -1,5 +1,5 @@
 station-beacon-general = Общий
-station-beacon-command = Командование
+station-beacon-command = Особый экипаж
 station-beacon-bridge = Мостик
 station-beacon-vault = Хранилище
 station-beacon-captain = Капитан
