@@ -359,7 +359,7 @@ namespace Content.Server.Administration.Systems
                     if (TryComp(item, out PdaComponent? pda) &&
                         TryComp(pda.ContainedId, out StationRecordKeyStorageComponent? keyStorage) &&
                         keyStorage.Key is { } key &&
-                        _stationRecords.TryGetRecord(key.OriginStation, key, out GeneralStationRecord? record))
+                        _stationRecords.TryGetRecord(key, out GeneralStationRecord? record))
                     {
                         if (TryComp(entity, out DnaComponent? dna) &&
                             dna.DNA != record.DNA)
@@ -373,7 +373,7 @@ namespace Content.Server.Administration.Systems
                             continue;
                         }
 
-                        _stationRecords.RemoveRecord(key.OriginStation, key);
+                        _stationRecords.RemoveRecord(key);
                         Del(item);
                     }
                 }
