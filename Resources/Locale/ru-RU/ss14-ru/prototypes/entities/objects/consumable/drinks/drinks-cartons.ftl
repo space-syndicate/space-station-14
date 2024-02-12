@@ -1,5 +1,7 @@
 ent-DrinkCartonBaseFull = { ent-DrinkBase }
     .desc = { ent-DrinkBase.desc }
+ent-DrinkCartonVisualsOpenable = { "" }
+    .desc = { "" }
 ent-DrinkJuiceLimeCarton = лаймовый сок
     .desc = Кисло-сладкое удовольствие.
 ent-DrinkJuiceOrangeCarton = апельсиновый сок

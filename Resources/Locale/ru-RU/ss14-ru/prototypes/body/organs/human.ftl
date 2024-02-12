@@ -1,3 +1,5 @@
+ent-BaseHumanOrganUnGibbable = { ent-BaseItem }
+    .desc = { ent-BaseItem.desc }
 ent-BaseHumanOrgan = { ent-BaseItem }
     .desc = { ent-BaseItem.desc }
 ent-OrganHumanBrain = мозг

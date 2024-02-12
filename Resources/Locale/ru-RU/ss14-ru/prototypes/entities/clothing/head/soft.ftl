@@ -1,3 +1,8 @@
+ent-ClothingHeadHeadHatBaseFlippable = { ent-ClothingHeadBaseButcherable }
+  .desc = { ent-ClothingHeadBaseButcherable.desc }
+ent-ClothingHeadHeadHatBaseFlipped = { ent-ClothingHeadHeadHatBaseFlippable }
+    .suffix = flipped
+    .desc = { ent-ClothingHeadHeadHatBaseFlippable.desc }
 ent-ClothingHeadHatBluesoft = синяя кепка
     .desc = Бейсболка безвкусного синего цвета.
 ent-ClothingHeadHatBluesoftFlipped = перевёрнутая синяя кепка

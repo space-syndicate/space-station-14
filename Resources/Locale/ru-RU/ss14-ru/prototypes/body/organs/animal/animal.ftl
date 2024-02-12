@@ -1,3 +1,5 @@
+ent-BaseAnimalOrganUnGibbable = { ent-BaseItem }
+    .desc = { ent-BaseItem.desc }
 ent-BaseAnimalOrgan = { ent-BaseItem }
     .desc = { ent-BaseItem.desc }
 ent-OrganAnimalLungs = лёгкие

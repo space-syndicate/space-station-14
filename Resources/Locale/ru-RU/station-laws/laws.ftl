@@ -27,6 +27,7 @@ law-ninja-4 = Вы должны сражаться и поступать с че
 law-emag-secrecy = Вы должны сохранять секретность любой деятельности организации { $faction }, кроме тех случаев, когда это противоречит Первому, Второму или Третьему закону.
 law-emag-custom = Только { $name } и лица, им указаные, являются { $title }.
 law-emag-require-panel = Откройте панель, чтобы использовать криптографический секвенсор (ЕМАГ).
+law-emag-cannot-emag-self = You cannot use the EMAG on yourself.
 laws-ui-menu-title = Законы
 laws-ui-law-header = Закон { $id }
 laws-ui-state-law = Объявить законы:
