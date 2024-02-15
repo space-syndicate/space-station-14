@@ -1,8 +1,6 @@
-using System.Linq;
 using Content.Server.Administration.Commands;
 using Content.Server.Atlanta.GameTicking.Rules.Components;
 using Content.Server.Atlanta.Roles;
-using Content.Server.Atlanta.RoyalBattle.Components;
 using Content.Server.Chat.Managers;
 using Content.Server.GameTicking;
 using Content.Server.GameTicking.Rules;
@@ -16,11 +14,8 @@ using Content.Shared.Damage;
 using Content.Shared.Damage.Components;
 using Content.Shared.Damage.Prototypes;
 using Content.Shared.FixedPoint;
-using Content.Shared.Mind;
-using Content.Shared.Random.Helpers;
 using Content.Shared.Roles;
 using Robust.Server.Player;
-using Robust.Shared.Player;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Random;
 using Robust.Shared.Utility;
@@ -91,22 +86,22 @@ public sealed class RoyalBattleRuleSystem : GameRuleSystem<RoyalBattleRuleCompon
                     var winnerName = TryComp<MetaDataComponent>(winner, out var meta)
                         ? meta.EntityName
                         : winner.ToString();
-                    _chatManager.DispatchServerAnnouncement($"И у нас есть победитель! Это {winnerName}!", Color.Aqua);
+                    _chatManager.DispatchServerAnnouncement(Loc.GetString("rb-winner", ("winner", winnerName)), Color.Aqua);
                 }
                 else
                 {
-                    _chatManager.DispatchServerAnnouncement("Опс! Видимо все погибли. Чтож, мы и не надеялись!", Color.Coral);
+                    _chatManager.DispatchServerAnnouncement(Loc.GetString("rb-draw"), Color.Coral);
                 }
 
-                _chatManager.DispatchServerAnnouncement("Всем спасибо за участие! Поздравим победителей!", Color.Aquamarine);
+                _chatManager.DispatchServerAnnouncement(Loc.GetString("rb-ending-announce"), Color.Aquamarine);
 
                 var roundEnd = EntityManager.EntitySysManager.GetEntitySystem<RoundEndSystem>();
                 roundEnd.EndRound(TimeSpan.FromMinutes(2));
             }
             else
             {
-                _chatManager.DispatchServerAnnouncement($"Осталось {rb.AlivePlayers.Count} претендентов на приз!",
-                    Color.Red);
+                _chatManager.DispatchServerAnnouncement(Loc.GetString("rb-death-announce",
+                        ("count", rb.AlivePlayers.Count)), Color.Red);
             }
         }
     }
@@ -174,7 +169,7 @@ public sealed class RoyalBattleRuleSystem : GameRuleSystem<RoyalBattleRuleCompon
     private void OnObjectivesTextGetInfo(EntityUid uid, RoyalBattleRuleComponent component, ref ObjectivesTextGetInfoEvent args)
     {
         args.Minds = component.PlayersMinds;
-        args.AgentName = "пубгер";
+        args.AgentName = Loc.GetString("rb-agent-name");
     }
 
     private void OnObjectivesTextPrepend(EntityUid uid, RoyalBattleRuleComponent component, ref ObjectivesTextPrependEvent args)
@@ -184,17 +179,20 @@ public sealed class RoyalBattleRuleSystem : GameRuleSystem<RoyalBattleRuleCompon
 
         if (component.AlivePlayers.Count == 0)
         {
-            args.Text += "Фактически все погибли";
+            args.Text += Loc.GetString("rb-results-everyone-dead");
         }
         else
         {
-            component.DeadPlayers.Add(EnsureComp<MindComponent>(component.AlivePlayers[0]).CharacterName ?? "Страник");
+            component.DeadPlayers.Add(EnsureComp<MetaDataComponent>(component.AlivePlayers[0]).EntityName);
         }
+
+        args.Text += "\n";
 
         while (component.DeadPlayers.Count > 0)
         {
             var player = component.DeadPlayers[^1];
-            args.Text += $";\n{place++} место- {player}";
+            args.Text += Loc.GetString("rb-results-place",
+                ("place", place++), ("player", player)) + "\n";
             component.DeadPlayers.Remove(player);
         }
 

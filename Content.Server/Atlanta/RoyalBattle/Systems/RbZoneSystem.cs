@@ -68,7 +68,6 @@ public sealed class RbZoneSystem : SharedRbZoneSystem
             zone.WaveTiming *= zone.WaveTimingMultiplier;
             zone.NextWave = zone.WaveTiming;
 
-            // TODO: damage specify
             foreach (var damage in zone.Damage!.DamageDict)
             {
                 zone.Damage.DamageDict[damage.Key]
@@ -106,7 +105,7 @@ public sealed class RbZoneSystem : SharedRbZoneSystem
 
         var query = EntityQueryEnumerator<RbZoneCenterComponent>();
 
-        while (query.MoveNext(out var ent, out var comp))
+        while (query.MoveNext(out var ent, out _))
         {
             // I think, pointer count is one.
 
