@@ -1,13 +1,12 @@
 using System.Numerics;
-using Content.Server.Atlanta.GameTicking.Rules.Components;
 using Content.Server.Chat.Managers;
 using Content.Shared.Atlanta.RoyalBattle.Components;
 using Content.Shared.Atlanta.RoyalBattle.Systems;
 using Content.Shared.Damage;
 using Content.Shared.Mobs;
 using Content.Shared.Mobs.Components;
-using Robust.Shared.Player;
 using Robust.Shared.Timing;
+using Robust.Shared.Utility;
 
 namespace Content.Server.Atlanta.RoyalBattle.Systems;
 
@@ -46,12 +45,11 @@ public sealed class RbZoneSystem : SharedRbZoneSystem
 
             if (playerCoords.MapId == zoneCoords.MapId)
             {
-                var distance = Vector2.Distance(
-                    playerCoords.Position, zoneCoords.Position);
+                var distance = Vector2.Distance(playerCoords.Position, zone.Center);
 
                 if (distance >= zone.RangeLerp)
                 {
-                    Sawmill.Debug($"Damage {player.Id} by {zone.Damage}.");
+                    Sawmill.Debug($"Damage {player.Id}.");
                     _damageable.TryChangeDamage(player, zone.Damage!, true);
                 }
             }
