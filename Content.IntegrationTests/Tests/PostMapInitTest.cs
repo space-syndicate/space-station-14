@@ -52,13 +52,14 @@ namespace Content.IntegrationTests.Tests
             "CorvaxOutpost",
             "CorvaxAstra",
             "CorvaxGelta",
+			"CorvaxMaus",
+			"CorvaxIshimura",
             // Corvax-End
             "Dev",
             "TestTeg",
             "Fland",
             "Meta",
             "Packed",
-            "Aspid",
             "Cluster",
             "Omega",
             "Bagel",
@@ -69,7 +70,6 @@ namespace Content.IntegrationTests.Tests
             "Saltern",
             "Core",
             "Marathon",
-            "Gemini",
             "MeteorArena",
             "Atlas",
             "Reach"    

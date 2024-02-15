@@ -68,6 +68,7 @@
     components:
       - BSSDrone #backmen: bssdrone
       - StationAI # backmen: AI
+      - BorgChassis
   components:
     - type: Muted
 
@@ -81,9 +82,7 @@
       - BSSDrone #backmen: bssdrone
       - StationAI # backmen: AI
   components:
-    - type: BuckleOnMapInit
-      prototype: VehicleWheelchair
-    - type: LegsParalyzed
+    - type: Muted
 
 - type: trait
   id: FrontalLisp
