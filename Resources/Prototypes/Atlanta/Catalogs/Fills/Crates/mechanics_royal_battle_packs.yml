@@ -1,0 +1,23 @@
+- type: rbCratePool
+  id: MechanicsPacksPool
+  weights:
+    MechanicsPack: 0.2
+    MaterialsPack: 0.3
+
+- type: rbCratePack
+  id: MechanicsPack
+  pack:
+  - CrowbarRed
+  - ClothingBeltChiefEngineer
+  - Multitool
+  - RemoteSignaller
+  - ClothingHandsGlovesColorYellow
+  - Screwdriver
+  - Wrench
+
+- type: rbCratePack
+  id: MaterialsPack
+  pack:
+  - SheetSteel10
+  - SheetGlass10
+  - PartRodMetal10

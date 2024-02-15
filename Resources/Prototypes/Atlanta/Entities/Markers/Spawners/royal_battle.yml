@@ -57,3 +57,39 @@
   - type: ConditionalSpawner
     prototypes:
     - ShotgunCrateRoyalBattle
+
+- type: entity
+  name: Mechanic Battle Royal Crate Spawner
+  id: SpawnMechanicRoyalBattleCrate
+  parent: MarkerBase
+  components:
+  - type: Sprite
+    layers:
+    - state: green
+  - type: ConditionalSpawner
+    prototypes:
+    - MechanicCrateRoyalBattle
+
+- type: entity
+  name: Science Battle Royal Crate Spawner
+  id: SpawnScienceRoyalBattleCrate
+  parent: MarkerBase
+  components:
+  - type: Sprite
+    layers:
+    - state: green
+  - type: ConditionalSpawner
+    prototypes:
+    - ScienceCrateRoyalBattle
+
+- type: entity
+  name: Medical Battle Royal Crate Spawner
+  id: SpawnMedicalRoyalBattleCrate
+  parent: MarkerBase
+  components:
+  - type: Sprite
+    layers:
+    - state: green
+  - type: ConditionalSpawner
+    prototypes:
+    - MedicalCrateRoyalBattle

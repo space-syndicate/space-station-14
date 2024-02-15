@@ -37,3 +37,27 @@
   components:
   - type: RbCrateRandom
     content: ShotgunsPacksPool
+
+- type: entity
+  parent: CrateEngineeringSecure
+  id: MechanicCrateRoyalBattle
+  name: royal battle mechanic crate
+  components:
+  - type: RbCrateRandom
+    content: MechanicsPacksPool
+
+- type: entity
+  parent: CrateScienceSecure
+  id: ScienceCrateRoyalBattle
+  name: royal battle science crate
+  components:
+  - type: RbCrateRandom
+    content: SciencePacksPool
+
+- type: entity
+  parent: CrateMedicalSecure
+  id: MedicalCrateRoyalBattle
+  name: royal battle medical crate
+  components:
+  - type: RbCrateRandom
+    content: MedicalPacksPool

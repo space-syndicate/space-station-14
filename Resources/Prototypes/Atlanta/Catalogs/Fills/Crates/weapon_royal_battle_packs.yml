@@ -26,7 +26,8 @@
     SvalinnPack: 0.15
     DeaglePack: 0.13
     HighTechLaserPistolPack: 0.07
-
+    PodWarsArmorPack: 0.05
+    SlimArmorPack: 0.08
 
 - type: rbCratePack
   id: DeaglePack
@@ -68,6 +69,9 @@
     MP7Pack: 0.3
     MP38Pack: 0.25
     AtreidesPack: 0.15
+    MedSecArmorPack: 0.08
+    RiotArmorPack: 0.11
+
 
 - type: rbCratePack
   id: MP38Pack
@@ -102,6 +106,8 @@
     AR18Pack: 0.3
     G36Pack: 0.2
     M16A4Pack: 0.2
+    VestArmorPack: 0.2
+    CaptainCarapaceArmorPack: 0.15
 
 - type: rbCratePack
   id: AKMSPack
@@ -137,10 +143,11 @@
 - type: rbCratePool
   id: ShotgunsPacksPool
   weights:
-    ShotgunImprovisedPack: 0.3
-    L4034Pack: 0.1
-    XM1014Pack: 0.1
-    Spas12Pack: 0.1
+    ShotgunImprovisedPack: 0.25
+    L4034Pack: 0.2
+    XM1014Pack: 0.2
+    Spas12Pack: 0.2
+    ScafArmorPack: 0.2
 
 - type: rbCratePack
   id: ShotgunImprovisedPack
@@ -177,3 +184,44 @@
   - ShellShotgun
   - ShellShotgun
   - ShellShotgun
+
+# armor
+- type: rbCratePack
+  id: PodWarsArmorPack
+  pack:
+  - ClothingOuterArmorPodWars
+  - ClothingHeadHelmetPodWars
+
+- type: rbCratePack
+  id: ScafArmorPack
+  pack:
+  - ClothingOuterArmorScaf
+  - ClothingHeadHelmetScaf
+
+- type: rbCratePack
+  id: MedSecArmorPack
+  pack:
+  - ClothingOuterVestArmorMedSec
+  - ClothingHeadHelmetSecurityMedic
+
+- type: rbCratePack
+  id: SlimArmorPack
+  pack:
+  - ClothingOuterArmorBasicSlim
+
+- type: rbCratePack
+  id: CaptainCarapaceArmorPack
+  pack:
+  - ClothingOuterArmorCaptainCarapace
+
+- type: rbCratePack
+  id: VestArmorPack
+  pack:
+  - ClothingHeadHelmetBasic
+  - ClothingOuterVestArmorSec
+
+- type: rbCratePack
+  id: RiotArmorPack
+  pack:
+  - ClothingHeadHelmetRiot
+  - ClothingOuterArmorRiot
