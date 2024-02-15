@@ -75,7 +75,7 @@ public sealed class RbZoneSystem : SharedRbZoneSystem
                     = zone.Damage[damage.Key] * zone.DamageMultiplier;
             }
 
-            _chatManager.DispatchServerAnnouncement($"Следующее смещение зоны будет через {(int) zone.NextWave.TotalSeconds}с!", Color.Green);
+            _chatManager.DispatchServerAnnouncement(Loc.GetString("rb-next-wave-announce", ("seconds", (int) zone.NextWave.TotalSeconds)), Color.Green);
         }
 
         Dirty(uid, zone);
@@ -95,7 +95,7 @@ public sealed class RbZoneSystem : SharedRbZoneSystem
 
             Dirty(uid, zone);
 
-            _chatManager.DispatchServerAnnouncement($"Внимание! Зона вновь нестабильна: она начала сужаться!", Color.DarkRed);
+            _chatManager.DispatchServerAnnouncement(Loc.GetString("rb-zone-unstable"), Color.DarkRed);
         }
     }
 
@@ -114,7 +114,7 @@ public sealed class RbZoneSystem : SharedRbZoneSystem
             Sawmill.Debug($"Setup the center of zone on {component.Center} coords.");
         }
 
-        _chatManager.DispatchServerAnnouncement($"Зона перейдёт в нестабильное состоние через {(int) component.NextWave.TotalSeconds}с! Приготовьтесь!", Color.Green);
+        _chatManager.DispatchServerAnnouncement(Loc.GetString("rb-zone-startup", ("seconds", (int) component.NextWave.TotalSeconds)), Color.Green);
         component.LastDamageTime = _timing.CurTime;
 
         Dirty(uid, component);
