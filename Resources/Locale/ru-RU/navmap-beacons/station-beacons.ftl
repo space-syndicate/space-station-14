@@ -64,4 +64,4 @@ station-beacon-theater = Театр
 station-beacon-tools = Хранилище инструментов
 station-beacon-disposals = Мусоросброс
 station-beacon-cryosleep = Криосон
-station-beacon-escape-pod = Escape Pod
+station-beacon-escape-pod = Спасательная капсула
