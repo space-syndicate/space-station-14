@@ -16,6 +16,7 @@ using Content.Shared.Damage;
 using Content.Shared.Damage.Components;
 using Content.Shared.Damage.Prototypes;
 using Content.Shared.FixedPoint;
+using Content.Shared.Mind;
 using Content.Shared.Random.Helpers;
 using Content.Shared.Roles;
 using Robust.Server.Player;
@@ -100,7 +101,7 @@ public sealed class RoyalBattleRuleSystem : GameRuleSystem<RoyalBattleRuleCompon
                 _chatManager.DispatchServerAnnouncement("Всем спасибо за участие! Поздравим победителей!", Color.Aquamarine);
 
                 var roundEnd = EntityManager.EntitySysManager.GetEntitySystem<RoundEndSystem>();
-                roundEnd.EndRound();
+                roundEnd.EndRound(TimeSpan.FromMinutes(2));
             }
             else
             {
@@ -184,6 +185,10 @@ public sealed class RoyalBattleRuleSystem : GameRuleSystem<RoyalBattleRuleCompon
         if (component.AlivePlayers.Count == 0)
         {
             args.Text += "Фактически все погибли";
+        }
+        else
+        {
+            component.DeadPlayers.Add(EnsureComp<MindComponent>(component.AlivePlayers[0]).CharacterName ?? "Страник");
         }
 
         while (component.DeadPlayers.Count > 0)
