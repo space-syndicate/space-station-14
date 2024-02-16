@@ -74,7 +74,7 @@ public sealed class TTSSystem : EntitySystem
         audioResource.Load(IoCManager.Instance!, Prefix / filePath);
 
         var audioParams = AudioParams.Default
-            .WithVolume(AdjustVolume(ev.IsWhisper, 1f))
+            .WithVolume(AdjustVolume(ev.IsWhisper))
             .WithMaxDistance(AdjustDistance(ev.IsWhisper));
 
         if (ev.SourceUid != null)
@@ -90,7 +90,7 @@ public sealed class TTSSystem : EntitySystem
         _contentRoot.RemoveFile(filePath);
     }
 
-    private float AdjustVolume(bool isWhisper, float distance)
+    private float AdjustVolume(bool isWhisper)
     {
         var volume = MinimalVolume + SharedAudioSystem.GainToVolume(_volume);
 
