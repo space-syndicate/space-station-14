@@ -10,6 +10,21 @@ namespace Content.Server.Atlanta.GameTicking.Rules.Components;
 [RegisterComponent, Access(typeof(RoyalBattleRuleSystem))]
 public sealed partial class RoyalBattleRuleComponent : Component
 {
+    [DataField("gameState")]
+    public RoyalBattleGameState GameState = RoyalBattleGameState.InLobby;
+
+    [DataField("lobbyMapName")]
+    public string LobbyMapPath = "Maps/Atlanta/lobby.yml";
+
+    [DataField("lobbyMapId")]
+    public EntityUid LobbyMapId;
+
+    [DataField("battleMapId")]
+    public EntityUid MapId;
+
+    [DataField("startupTime")]
+    public TimeSpan StartupTime = TimeSpan.FromMinutes(1);
+
     [DataField("playersMinds")]
     public List<EntityUid> PlayersMinds = new();
 
@@ -37,4 +52,10 @@ public sealed partial class RoyalBattleRuleComponent : Component
     public string Gear = "RbFighterGear";
 
     public readonly string RoyalBattlePrototypeId = "RoyalBattle";
+}
+
+public enum RoyalBattleGameState
+{
+    InLobby,
+    InGame,
 }
