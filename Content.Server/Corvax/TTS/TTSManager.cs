@@ -68,11 +68,11 @@ public sealed class TTSManager
         if (_cache.TryGetValue(cacheKey, out var data))
         {
             ReusedCount.Inc();
-            _sawmill.Debug($"Use cached sound for '{text}' speech by '{speaker}' speaker");
+            _sawmill.Verbose($"Use cached sound for '{text}' speech by '{speaker}' speaker");
             return data;
         }
 
-        _sawmill.Debug($"Generate new audio for '{text}' speech by '{speaker}' speaker");
+        _sawmill.Verbose($"Generate new audio for '{text}' speech by '{speaker}' speaker");
 
         var body = new GenerateVoiceRequest
         {

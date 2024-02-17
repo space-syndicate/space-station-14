@@ -95,6 +95,13 @@
     soundsId: DionaBodyEmotes
   - type: Pacified # Corvax-DionaPacifist
   - type: IgnoreKudzu
+  - type: IgniteOnHeatDamage
+    fireStacks: 1
+    threshold: 12
+  - type: GibAction
+    actionPrototype: DionaGibAction
+    allowedStates:
+    - Dead
 
 - type: entity
   parent: BaseSpeciesDummy
