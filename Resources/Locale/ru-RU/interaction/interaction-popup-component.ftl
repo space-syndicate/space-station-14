@@ -31,6 +31,7 @@ petting-success-bear = Вы нерешительно гладите { $target } 
 petting-success-slimes = Вы гладите { $target } по { POSS-ADJ($target) } студенистой поверхности.
 petting-success-snake = Вы гладите { $target } по { POSS-ADJ($target) } большой чешуйчатой голове.
 petting-success-monkey = Вы гладите { $target } по { POSS-ADJ($target) } озорной маленькой голове.
+petting-success-nymph = You pet { THE($target) } on { POSS-ADJ($target) } wooden little head.
 petting-failure-generic = Вы тянетесь погладить { $target }, но { $target } настороженно уклоняется от вас.
 petting-failure-bat = Вы тянетесь погладить { $target }, но { $target } очень трудно поймать!
 petting-failure-carp = Вы тянетесь погладить { $target }, но { POSS-ADJ($target) } острые зубки заставляют вас передумать.
@@ -51,6 +52,8 @@ petting-failure-bear = Вы думаете погладить { $target }, но 
 ## Knocking on windows
 
 petting-failure-monkey = Вы тянетесь погладить { $target }, но { SUBJECT($target) } едва не кусает вас за пальцы!
+petting-failure-nymph = You reach out to pet { THE($target) }, but { POSS-ADJ($target) } moves their branches away.
+petting-failure-shadow = You're trying to pet { THE($target) }, but your hand passes through the cold darkness of his body.
 petting-success-honkbot = Вы гладите { $target } по его скользкой металлической голове.
 petting-success-mimebot = Вы гладите { $target } по { POSS-ADJ($target) } холодной металлической голове..
 petting-success-cleanbot = Вы гладите { $target } по его влажной металлической голове.

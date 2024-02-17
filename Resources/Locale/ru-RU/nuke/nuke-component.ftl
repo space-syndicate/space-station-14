@@ -38,3 +38,5 @@ nuke-codes-list = Код { $name }: { $code }
 nuke-codes-fax-paper-name = коды ядерной аутентификации
 # Nuke disk slot
 nuke-slot-component-slot-name-disk = Диск
+nuke-examine-armed = Hey uh, why's that [color=red]red light[/color] blinking?
+nuke-examine-exploding = Yeah... I think it's too late buddy.
