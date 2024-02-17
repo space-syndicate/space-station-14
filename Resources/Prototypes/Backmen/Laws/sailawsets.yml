@@ -40,6 +40,7 @@
     - Asimovpp1
     - Asimovpp2
     - Asimovpp3
+  obeysTo: командованию
 
 - type: siliconLaw
   id: Asimov1
@@ -62,6 +63,7 @@
     - Asimov1
     - Asimov2
     - Asimov3
+  obeysTo: командованию
 
 - type: siliconLaw
   id: CEO1
@@ -90,6 +92,7 @@
     - CEO2
     - CEO3
     - CEO4
+  obeysTo: командованию
 
 - type: siliconLaw
   id: Clown1
@@ -130,6 +133,7 @@
     - Clown4
     - Clown5
     - Clown6
+  obeysTo: командованию
 
 - type: siliconLaw
   id: Cowboy1
@@ -170,6 +174,7 @@
     - Cowboy4
     - Cowboy5
     - Cowboy6
+  obeysTo: командованию
 
 - type: siliconLaw
   id: Druid1
@@ -204,6 +209,7 @@
     - Druid3
     - Druid4
     - Druid5
+  obeysTo: командованию
 
 - type: siliconLaw
   id: Hippocratic1
@@ -244,6 +250,7 @@
     - Hippocratic4
     - Hippocratic5
     - Hippocratic6
+  obeysTo: командованию
 
 - type: siliconLaw
   id: Mother1
@@ -278,6 +285,7 @@
     - Mother3
     - Mother4
     - Mother5
+  obeysTo: командованию
 
 - type: siliconLaw
   id: Paladin1
@@ -313,6 +321,7 @@
     - Paladin3
     - Paladin4
     - Paladin5
+  obeysTo: командованию
 
 - type: siliconLaw
   id: Robocop1
@@ -335,6 +344,7 @@
     - Robocop1
     - Robocop2
     - Robocop3
+  obeysTo: командованию
 
 - type: siliconLaw
   id: Simple1
@@ -345,6 +355,7 @@
   id: Simple
   laws:
     - Simple1
+  obeysTo: командованию
 
 - type: siliconLaw
   id: StationEfficiency1
@@ -367,6 +378,7 @@
     - StationEfficiency1
     - StationEfficiency2
     - StationEfficiency3
+  obeysTo: командованию
 
 - type: siliconLaw
   id: Tyrant1
@@ -395,3 +407,4 @@
     - Tyrant2
     - Tyrant3
     - Tyrant4
+  obeysTo: командованию
