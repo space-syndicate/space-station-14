@@ -59,7 +59,6 @@ ent-AnomalyCoreElectricityInert = { ent-BaseAnomalyInertCore }
 ent-AnomalyCoreFloraInert = { ent-BaseAnomalyInertCore }
     .suffix = Флора, Инертный
     .desc = { ent-BaseAnomalyInertCore.desc }
-ent-AnomalyCoreShadowInert = { ent-['BaseAnomalyInertCore', 'BaseShadow'] }
-
+ent-AnomalyCoreShadowInert = { ent-BaseAnomalyInertCore }
   .suffix = Shadow, Inert
-  .desc = { ent-['BaseAnomalyInertCore', 'BaseShadow'].desc }
+  .desc = { ent-BaseAnomalyInertCore.desc }
