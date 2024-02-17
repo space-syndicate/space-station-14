@@ -131,3 +131,5 @@ ent-MobHamster = хомяк
     .desc = Милый, пушистый, робастный хомяк.
 ent-MobPig = свинья
     .desc = Хрю.
+ent-MobDionaNymph = diona nymph
+    .desc = It's like a cat, only.... branch-ier.

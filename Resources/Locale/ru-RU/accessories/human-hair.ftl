@@ -163,6 +163,7 @@ marking-HumanHairSpiky = Колючая 2
 marking-HumanHairSpiky2 = Колючая 3
 marking-HumanHairSwept = Зачёс назад
 marking-HumanHairSwept2 = Зачёс назад 2
+marking-HumanHairTailed = Tailed
 marking-HumanHairThinning = Редеющая
 marking-HumanHairThinningfront = Редеющая (Спереди)
 marking-HumanHairThinningrear = Редеющая (Сзади)

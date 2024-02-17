@@ -1,5 +1,5 @@
 ent-ClothingHeadHeadHatBaseFlippable = { ent-ClothingHeadBaseButcherable }
-  .desc = { ent-ClothingHeadBaseButcherable.desc }
+    .desc = { ent-ClothingHeadBaseButcherable.desc }
 ent-ClothingHeadHeadHatBaseFlipped = { ent-ClothingHeadHeadHatBaseFlippable }
     .suffix = Перевёрнутый
     .desc = { ent-ClothingHeadHeadHatBaseFlippable.desc }
