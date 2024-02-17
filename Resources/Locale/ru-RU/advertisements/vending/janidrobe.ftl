@@ -1,3 +1,3 @@
 advertisement-janidrobe-1 = Подходите и получите свою форму уборщика, одобренную унатхами-уборщиками всей корпорации!
-advertisement-janidrobe-2 = Here to keep you clean as you clean up non-clean things!
-advertisement-janidrobe-3 = Stylishly yellow!
+advertisement-janidrobe-2 = Мы поможем сохранить вашу чистоту, пока вы наводите чистоту в нечистотах!
+advertisement-janidrobe-3 = Стильный жёлтый!
