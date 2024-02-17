@@ -1,4 +1,5 @@
 using System.Numerics;
+using Content.Server.Atlanta.GameTicking.Rules.Components;
 using Content.Server.Chat.Managers;
 using Content.Shared.Atlanta.RoyalBattle.Components;
 using Content.Shared.Atlanta.RoyalBattle.Systems;
@@ -23,6 +24,19 @@ public sealed class RbZoneSystem : SharedRbZoneSystem
         base.Initialize();
 
         SubscribeLocalEvent<RbZoneComponent, ComponentStartup>(OnComponentStartup);
+        SubscribeLocalEvent<RoyalBattleStartEvent>(OnGameStartup);
+    }
+
+    private void OnGameStartup(RoyalBattleStartEvent args)
+    {
+        var query = EntityQueryEnumerator<RbZoneComponent>();
+        while (query.MoveNext(out _, out var zone))
+        {
+            _chatManager.DispatchServerAnnouncement(
+                Loc.GetString("rb-zone-startup", ("seconds", (int) zone.NextWave.TotalSeconds)), Color.Green);
+            zone.LastDamageTime = _timing.CurTime;
+            zone.IsEnabled = true;
+        }
     }
 
     protected override void ProcessUpdate(EntityUid uid, RbZoneComponent zone, float frameTime)
@@ -112,9 +126,6 @@ public sealed class RbZoneSystem : SharedRbZoneSystem
             component.Center = _transform.GetWorldPosition(ent);
             Sawmill.Debug($"Setup the center of zone on {component.Center} coords.");
         }
-
-        _chatManager.DispatchServerAnnouncement(Loc.GetString("rb-zone-startup", ("seconds", (int) component.NextWave.TotalSeconds)), Color.Green);
-        component.LastDamageTime = _timing.CurTime;
 
         Dirty(uid, component);
     }

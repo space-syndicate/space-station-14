@@ -18,6 +18,7 @@ entities:
     - type: MovedGrids
     - type: Broadphase
     - type: OccluderTree
+    - type: LoadedMap
   - uid: 2
     components:
     - type: MetaData
@@ -68,11 +69,45 @@ entities:
       data:
         tiles:
           0,0:
-            0: 3
+            0: 65535
           0,-2:
-            0: 4352
+            0: 65280
           0,-1:
-            0: 12561
+            0: 65535
+          0,1:
+            0: 65535
+          1,0:
+            0: 30583
+          1,1:
+            0: 30583
+          1,-2:
+            0: 30464
+          1,-1:
+            0: 30583
+          -3,0:
+            0: 61166
+          -2,0:
+            0: 65535
+          -2,1:
+            0: 61166
+          -2,2:
+            0: 238
+          -1,0:
+            0: 65535
+          -1,1:
+            0: 65535
+          -1,2:
+            0: 51
+          -3,-1:
+            0: 60928
+          -2,-1:
+            0: 65518
+          -2,-2:
+            0: 60928
+          -1,-2:
+            0: 65280
+          -1,-1:
+            0: 65535
         uniqueMixes:
         - volume: 2500
           temperature: 293.15
@@ -611,6 +646,20 @@ entities:
       parent: 2
     - type: PointLight
       energy: 0.2
+- proto: SpawnPointLatejoin
+  entities:
+  - uid: 340
+    components:
+    - type: Transform
+      pos: -0.5,1.5
+      parent: 2
+- proto: SpawnPointObserver
+  entities:
+  - uid: 339
+    components:
+    - type: Transform
+      pos: 0.5,1.5
+      parent: 2
 - proto: SpawnPointPassenger
   entities:
   - uid: 167

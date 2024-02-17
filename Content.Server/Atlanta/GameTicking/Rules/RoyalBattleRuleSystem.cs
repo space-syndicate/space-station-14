@@ -9,13 +9,19 @@ using Content.Server.KillTracking;
 using Content.Server.Mind;
 using Content.Server.Objectives;
 using Content.Server.RoundEnd;
+using Content.Server.Station.Components;
 using Content.Server.Station.Systems;
+using Content.Shared.Atlanta.RoyalBattle.Components;
+using Content.Shared.CombatMode.Pacification;
 using Content.Shared.Damage;
 using Content.Shared.Damage.Components;
 using Content.Shared.Damage.Prototypes;
 using Content.Shared.FixedPoint;
 using Content.Shared.Roles;
+using Robust.Server.GameObjects;
+using Robust.Server.Maps;
 using Robust.Server.Player;
+using Robust.Shared.Map;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Random;
 using Robust.Shared.Utility;
@@ -34,11 +40,16 @@ public sealed class RoyalBattleRuleSystem : GameRuleSystem<RoyalBattleRuleCompon
     [Dependency] private readonly IRobustRandom _random = default!;
     [Dependency] private readonly SharedTransformSystem _transform = default!;
     [Dependency] private readonly IPrototypeManager _prototypeManager = default!;
+    [Dependency] private readonly MapLoaderSystem _mapLoaderSystem = default!;
+    [Dependency] private readonly IMapManager _mapManager = default!;
+    [Dependency] private readonly StationJobsSystem _jobsSystem = default!;
     private ISawmill _sawmill = default!;
 
     public override void Initialize()
     {
         base.Initialize();
+
+        SubscribeLocalEvent<RbZoneComponent, MapInitEvent>(OnMapInit);
 
         SubscribeLocalEvent<PlayerBeforeSpawnEvent>(OnBeforeSpawn);
         SubscribeLocalEvent<KillReportedEvent>(OnKillReport);
@@ -47,6 +58,110 @@ public sealed class RoyalBattleRuleSystem : GameRuleSystem<RoyalBattleRuleCompon
         SubscribeLocalEvent<RoyalBattleRuleComponent, ObjectivesTextPrependEvent>(OnObjectivesTextPrepend);
 
         _sawmill = Logger.GetSawmill("Royal Battle Rule");
+    }
+
+    public override void Update(float frameTime)
+    {
+        base.Update(frameTime);
+
+        var query = EntityQueryEnumerator<RoyalBattleRuleComponent>();
+        while (query.MoveNext(out _, out var rb))
+        {
+            if (rb.GameState == RoyalBattleGameState.InLobby)
+            {
+                var time = rb.StartupTime - TimeSpan.FromSeconds(frameTime);
+
+                if (time <= TimeSpan.Zero)
+                {
+                    _chatManager.DispatchServerAnnouncement(Loc.GetString("rb-lobby-end"));
+                    _mapManager.SetMapPaused(rb.MapId!.Value, false);
+
+                    if (TryGetRandomStation(out var chosenStation, HasComp<StationJobsComponent>))
+                    {
+                        var jobs = _jobsSystem.GetJobs(chosenStation.Value).Keys;
+
+                        foreach (var job in jobs)
+                        {
+                            _jobsSystem.MakeUnavailableJob(chosenStation.Value, job);
+                        }
+                    }
+
+                    foreach (var mob in rb.AlivePlayers)
+                    {
+
+                        RemComp<GodmodeComponent>(mob);
+                        RemComp<PacifiedComponent>(mob);
+
+                        if (rb.AvailableSpawners.Count > 0)
+                        {
+                            var spawner = _random.Pick(rb.AvailableSpawners);
+                            var spawnerPosition = _transform.GetMoverCoordinates(spawner);
+                            _transform.SetCoordinates(mob, spawnerPosition);
+                            _transform.AttachToGridOrMap(mob);
+
+                            rb.AvailableSpawners.Remove(spawner);
+                        }
+                        else
+                        {
+                            _sawmill.Error("No spawners! Player will be spawned on default position, but it doesn't well!");
+                        }
+                    }
+
+                    RaiseLocalEvent(new RoyalBattleStartEvent());
+                    rb.GameState = RoyalBattleGameState.InGame;
+
+                    _chatManager.DispatchServerAnnouncement(Loc.GetString("rb-start-battle-player-count", ("count", rb.AlivePlayers.Count)), Color.Cyan);
+                }
+                else
+                {
+                    if (time < TimeSpan.FromSeconds(10))
+                    {
+                        if ((int) time.TotalSeconds < (int) rb.StartupTime.TotalSeconds)
+                        {
+                            _chatManager.DispatchServerAnnouncement(Loc.GetString("rb-lobby-wait-time-remain", ("seconds", (int) time.TotalSeconds + 1)));
+                        }
+                    }
+
+                    rb.StartupTime = time;
+                }
+            }
+        }
+    }
+
+    private void OnMapInit(EntityUid uid, RbZoneComponent component, MapInitEvent args)
+    {
+        _sawmill.Debug("Start process map with zone stratup.");
+        var query = EntityQueryEnumerator<RoyalBattleRuleComponent>();
+        while (query.MoveNext(out _, out var rb))
+        {
+            rb.MapId = _transform.GetMapCoordinates(uid).MapId;
+
+            // load lobby
+            var lobbyMapOptions = new MapLoadOptions()
+            {
+            };
+
+            rb.LobbyMapId = _mapManager.CreateMap();
+
+            if (!_mapLoaderSystem.TryLoad(rb.LobbyMapId.Value, rb.LobbyMapPath, out _, lobbyMapOptions))
+            {
+                _sawmill.Error("Couldn't load lobby map.");
+                _chatManager.DispatchServerAnnouncement(Loc.GetString("rb-lobby-cant-spawn"), Color.Red);
+
+                var roundEnd = EntityManager.EntitySysManager.GetEntitySystem<RoundEndSystem>();
+                roundEnd.EndRound(TimeSpan.FromSeconds(10));
+
+                continue;
+            }
+
+            if (!_mapManager.IsMapInitialized(rb.LobbyMapId.Value))
+            {
+                _mapManager.DoMapInitialize(rb.LobbyMapId.Value);
+            }
+            _mapManager.SetMapPaused(rb.MapId.Value, true);
+
+            _chatManager.DispatchServerAnnouncement(Loc.GetString("rb-lobby-remain", ("seconds", (int) rb.StartupTime.TotalSeconds)));
+        }
     }
 
     public static void AddSpawner(RoyalBattleRuleComponent rule, EntityUid spawner)
@@ -144,22 +259,11 @@ public sealed class RoyalBattleRuleSystem : GameRuleSystem<RoyalBattleRuleCompon
                 _sawmill.Info($"Added new player {mind.CharacterName}/{mind}");
             }
 
+            EnsureComp<GodmodeComponent>(mob);
+            EnsureComp<PacifiedComponent>(mob);
+
             rb.AlivePlayers.Add(mob);
             rb.PlayersMinds.Add(mindId);
-
-            if (rb.AvailableSpawners.Count > 0)
-            {
-                var spawner = _random.Pick<EntityUid>(rb.AvailableSpawners);
-                var spawnerPosition = _transform.GetWorldPosition(spawner);
-                _transform.SetWorldPosition(mob, spawnerPosition);
-                _transform.AttachToGridOrMap(mob);
-
-                rb.AvailableSpawners.Remove(spawner);
-            }
-            else
-            {
-                _sawmill.Error("No spawners! Player will be spawned on default position, but it doesn't well!");
-            }
 
             ev.Handled = true;
             break;

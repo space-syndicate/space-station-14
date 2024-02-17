@@ -1,5 +1,6 @@
 using Content.Shared.Atlanta.RoyalBattle.Components;
 using Content.Shared.Roles;
+using Robust.Shared.Map;
 using Robust.Shared.Serialization.TypeSerializers.Implementations.Custom.Prototype;
 
 namespace Content.Server.Atlanta.GameTicking.Rules.Components;
@@ -17,10 +18,13 @@ public sealed partial class RoyalBattleRuleComponent : Component
     public string LobbyMapPath = "Maps/Atlanta/lobby.yml";
 
     [DataField("lobbyMapId")]
-    public EntityUid LobbyMapId;
+    public MapId? LobbyMapId;
 
     [DataField("battleMapId")]
-    public EntityUid MapId;
+    public MapId? MapId;
+
+    [DataField("battleMap")]
+    public EntityUid? BattleMap;
 
     [DataField("startupTime")]
     public TimeSpan StartupTime = TimeSpan.FromMinutes(1);
@@ -36,15 +40,6 @@ public sealed partial class RoyalBattleRuleComponent : Component
 
     [DataField("availableSpawners")]
     public List<EntityUid> AvailableSpawners = new();
-
-    [DataField("zone")]
-    public RbZoneComponent? ZoneComponent;
-
-    [DataField("cratesCount")]
-    public int CratesCount;
-
-    [DataField("initializedCrates")]
-    public int InitializedCratesCount;
     /// <summary>
     /// The gear all players spawn with.
     /// </summary>
@@ -52,6 +47,10 @@ public sealed partial class RoyalBattleRuleComponent : Component
     public string Gear = "RbFighterGear";
 
     public readonly string RoyalBattlePrototypeId = "RoyalBattle";
+}
+
+public sealed class RoyalBattleStartEvent : EntityEventArgs
+{
 }
 
 public enum RoyalBattleGameState
