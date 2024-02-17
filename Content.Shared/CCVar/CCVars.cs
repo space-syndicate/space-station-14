@@ -1564,6 +1564,9 @@ namespace Content.Shared.CCVar
         public static readonly CVarDef<bool> ReducedMotion =
             CVarDef.Create("accessibility.reduced_motion", false, CVar.CLIENTONLY | CVar.ARCHIVE);
 
+        public static readonly CVarDef<bool> ChatEnableColorName =
+            CVarDef.Create("accessibility.enable_color_name", true, CVar.CLIENTONLY | CVar.ARCHIVE, "Toggles displaying names with individual colors.");
+
         /// <summary>
         /// Screen shake intensity slider, controlling the intensity of the CameraRecoilSystem.
         /// Goes from 0 (no recoil at all) to 1 (regular amounts of recoil)
@@ -1833,7 +1836,7 @@ namespace Content.Shared.CCVar
         /// The time you must spend reading the rules, before the "Request" button is enabled
         /// </summary>
         public static readonly CVarDef<float> GhostRoleTime =
-            CVarDef.Create("ghost.role_time", 3f, CVar.REPLICATED);
+            CVarDef.Create("ghost.role_time", 3f, CVar.REPLICATED | CVar.SERVER);
 
         /*
          * Fire alarm

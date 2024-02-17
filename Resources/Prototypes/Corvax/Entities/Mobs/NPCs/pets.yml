@@ -37,6 +37,7 @@
     - type: Bloodstream
       bloodMaxVolume: 300
     - type: Puller
+      needsHands: false
     - type: InteractionPopup
       successChance: 1
       interactSuccessString: petting-success-gorilla

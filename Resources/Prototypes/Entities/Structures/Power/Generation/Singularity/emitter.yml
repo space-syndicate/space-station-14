@@ -31,10 +31,10 @@
       shader: unshaded
       visible: false
       map: ["enum.EmitterVisualLayers.Lights"]
-    - state: unlock # Corvax-Resprite
+    - state: unlocked # Corvax-Resprite
       shader: unshaded
-#      visible: false # Corvax-Resprite
-      map: ["enum.StorageVisualLayers.Lock"]
+      # visible: false # Corvax-Resprite
+      map: ["enum.LockVisualLayers.Lock"]
   - type: Emitter
   - type: Gun
     showExamineText: false
@@ -83,6 +83,7 @@
   - type: Appearance
   - type: Lock
     locked: false
+  - type: LockVisuals
   - type: AccessReader
     access: [[ "Engineering" ]]
   - type: Machine

@@ -22,6 +22,11 @@ public abstract class SharedChatSystem : EntitySystem
     public const char AdminPrefix = ']';
     public const char WhisperPrefix = ',';
     public const char DefaultChannelKey = 'р'; // Corvax-Localization
+    // Corvax-TTS-Start: Moved from Server to Shared
+    public const int VoiceRange = 10; // how far voice goes in world units
+    public const int WhisperClearRange = 2; // how far whisper goes while still being understandable, in world units
+    public const int WhisperMuffledRange = 5; // how far whisper goes at all, in world units
+    // Corvax-TTS-End
 
     [ValidatePrototypeId<RadioChannelPrototype>]
     public const string CommonChannel = "Common";
@@ -213,5 +218,32 @@ public abstract class SharedChatSystem : EntitySystem
         }
 
         return trimmed;
+    }
+
+    public static string InjectTagInsideTag(ChatMessage message, string outerTag, string innerTag, string? tagParameter)
+    {
+        var rawmsg = message.WrappedMessage;
+        var tagStart = rawmsg.IndexOf($"[{outerTag}]");
+        var tagEnd = rawmsg.IndexOf($"[/{outerTag}]");
+        if (tagStart < 0 || tagEnd < 0) //If the outer tag is not found, the injection is not performed
+            return rawmsg;
+        tagStart += outerTag.Length + 2;
+
+        string innerTagProcessed = tagParameter != null ? $"[{innerTag}={tagParameter}]" : $"[{innerTag}]";
+
+        rawmsg = rawmsg.Insert(tagEnd, $"[/{innerTag}]");
+        rawmsg = rawmsg.Insert(tagStart, innerTagProcessed);
+
+        return rawmsg;
+    }
+    public static string GetStringInsideTag(ChatMessage message, string tag)
+    {
+        var rawmsg = message.WrappedMessage;
+        var tagStart = rawmsg.IndexOf($"[{tag}]");
+        var tagEnd = rawmsg.IndexOf($"[/{tag}]");
+        if (tagStart < 0 || tagEnd < 0)
+            return "";
+        tagStart += tag.Length + 2;
+        return rawmsg.Substring(tagStart, tagEnd - tagStart);
     }
 }
