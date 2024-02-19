@@ -5,7 +5,7 @@
   minPlayers: 14
   maxPlayers: 65
   stations:
-    PaperStation:
+    CorvaxPaper:
       stationProto: StandardNanotrasenStation
       components:
         - type: StationNameSetup
