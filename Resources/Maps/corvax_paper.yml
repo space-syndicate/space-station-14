@@ -9244,7 +9244,7 @@ entities:
       pos: 59.5,48.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -49737.363
+      secondsUntilStateChange: -52625.312
       state: Opening
   - uid: 28123
     components:
@@ -79677,7 +79677,7 @@ entities:
   - uid: 9885
     components:
     - type: Transform
-      pos: 48.5,49.5
+      pos: 48.5,48.5
       parent: 2
   - uid: 9886
     components:
@@ -79722,17 +79722,17 @@ entities:
   - uid: 9938
     components:
     - type: Transform
-      pos: 24.5,42.5
+      pos: 24.5,41.5
       parent: 2
   - uid: 9944
     components:
     - type: Transform
-      pos: 10.5,19.5
+      pos: 10.5,25.5
       parent: 2
   - uid: 9949
     components:
     - type: Transform
-      pos: 10.5,29.5
+      pos: 80.5,40.5
       parent: 2
   - uid: 9952
     components:
@@ -79782,7 +79782,7 @@ entities:
   - uid: 9969
     components:
     - type: Transform
-      pos: 80.5,39.5
+      pos: 42.5,46.5
       parent: 2
   - uid: 9970
     components:
@@ -79817,12 +79817,7 @@ entities:
   - uid: 12039
     components:
     - type: Transform
-      pos: 43.5,46.5
-      parent: 2
-  - uid: 13594
-    components:
-    - type: Transform
-      pos: 47.5,62.5
+      pos: 51.5,63.5
       parent: 2
   - uid: 13595
     components:
