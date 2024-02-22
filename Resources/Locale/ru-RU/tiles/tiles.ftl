@@ -1,6 +1,7 @@
 tiles-space = космос
 tiles-plating = покрытие
 tiles-lattice = решётка
+tiles-lattice-train = train lattice
 tiles-steel-floor = стальной пол
 tiles-steel-floor-mini = стальные мини-плиты
 tiles-steel-floor-pavement = стальное покрытие
