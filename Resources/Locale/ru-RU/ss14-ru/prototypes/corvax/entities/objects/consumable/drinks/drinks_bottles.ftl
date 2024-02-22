@@ -1,2 +1,2 @@
-ent-DrinkCampariBottleFull = campari bottle
-    .desc = Tincture based on aromatic herbs and citrus fruits. Non-GMO!
+ent-DrinkCampariBottleFull = бутылка кампари
+    .desc = Настойка на основе ароматических трав и цитрусовых. Без ГМО!
