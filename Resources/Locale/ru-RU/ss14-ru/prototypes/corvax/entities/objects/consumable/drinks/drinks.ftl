@@ -1,6 +1,6 @@
 ent-DrinkKvassGlass = кружка кваса
     .desc = Холодненький освежающий напиток с привкусом социализма.
-ent-DrinkYorshGlass = стакан ёрша
+ent-DrinkYorshGlass = стакан ерша
     .desc = Вкус беззаботного детства.
 ent-DrinkAlexanderGlass = бокал Александра
     .desc = В ходе производства ни один Александр не пострадал. Наверное...
