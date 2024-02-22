@@ -103,7 +103,7 @@ accent-words-kobold-7 = Хисс!
 accent-words-kobold-8 = Йии!
 accent-words-kobold-9 = Йип.
 # Nymph
-accent-words-nymph-1 = Chirp!
-accent-words-nymph-2 = Churr...
-accent-words-nymph-3 = Cheep?
-accent-words-nymph-4 = Chrrup!
+accent-words-nymph-1 = Чирик!
+accent-words-nymph-2 = Чурр...
+accent-words-nymph-3 = Чипи?
+accent-words-nymph-4 = Шрруп!
