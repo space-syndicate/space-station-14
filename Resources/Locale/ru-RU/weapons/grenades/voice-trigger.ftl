@@ -7,4 +7,4 @@ popup-trigger-voice-start-recording = Начало записи
 popup-trigger-voice-stop-recording = Конец записи
 popup-trigger-voice-record-failed-too-long = Слишком длинное сообщение, попробуйте ещё раз
 popup-trigger-voice-record-failed-too-short = Слишком короткое сообщение, попробуйте ещё раз
-popup-trigger-voice-recorded = Записано
+popup-trigger-voice-recorded = Успешно записано
