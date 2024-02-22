@@ -31,3 +31,5 @@ ent-ClothingEyesEyepatchHudSecurity = security hud eyepatch
     .desc = A heads-up display that scans the humanoids in view and provides accurate data about their ID status and security records. For true patriots.
 ent-ClothingEyesEyepatchHudBeer = beer hud eyepatch
     .desc = A pair of sunHud outfitted with apparatus to scan reagents, as well as providing an innate understanding of liquid viscosity while in motion. For true patriots.
+ent-ClothingEyesEyepatchHudDiag = diagnostic hud eyepatch
+    .desc = A heads-up display capable of analyzing the integrity and status of robotics and exosuits. Made out of see-borg-ium.

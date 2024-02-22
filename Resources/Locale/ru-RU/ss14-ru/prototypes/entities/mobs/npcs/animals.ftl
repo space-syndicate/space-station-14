@@ -133,3 +133,6 @@ ent-MobPig = свинья
     .desc = Хрю.
 ent-MobDionaNymph = нимфа дионы
     .desc = Похожа на кошку, только.... ветвистее.
+ent-MobDionaNymphAccent = { ent-MobDionaNymph }
+    .suffix = Accent
+    .desc = { ent-MobDionaNymph.desc }

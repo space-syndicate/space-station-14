@@ -24,3 +24,6 @@ ent-ClothingHandsGlovesColorYellow = изолированные перчатки
     .desc = Эти перчатки защищают пользователя от поражения электрическим током.
 ent-ClothingHandsGlovesColorYellowBudget = дешевые изолированные перчатки
     .desc = Всего лишь дешевая подделка заветных перчаток - не может быть, чтобы это плохо кончилось.
+ent-ClothingHandsGlovesConducting = { ent-ClothingHandsGlovesColorYellow }
+    .suffix = Conducting
+    .desc = { ent-ClothingHandsGlovesColorYellow.desc }

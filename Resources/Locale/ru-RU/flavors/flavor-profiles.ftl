@@ -171,6 +171,7 @@ flavor-complex-light = как угасший свет
 
 flavor-complex-profits = как прибыль
 flavor-complex-fishops = как страшная рыбья операция
+flavor-complex-violets = like violets
 flavor-complex-alcohol = как алкоголь
 flavor-complex-soda = как газировка
 flavor-complex-juice = как сок

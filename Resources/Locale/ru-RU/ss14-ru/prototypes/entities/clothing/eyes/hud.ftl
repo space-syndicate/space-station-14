@@ -31,3 +31,5 @@ ent-ClothingEyesEyepatchHudSecurity = визор охраны на глаз
     .desc = Окуляр с индикатором на стекле, который сканирует гуманоидов в поле зрения и предоставляет точные данные об их идентификационном статусе и записях в системе безопасности. Для настоящих патриотов.
 ent-ClothingEyesEyepatchHudBeer = пивные очки на глаз
     .desc = Пара солнцезащитных очков, оснащенных сканером реагентов, а также дающих понимание вязкости жидкости во время движения. Для настоящих патриотов.
+ent-ClothingEyesEyepatchHudDiag = diagnostic hud eyepatch
+    .desc = A heads-up display capable of analyzing the integrity and status of robotics and exosuits. Made out of see-borg-ium.
