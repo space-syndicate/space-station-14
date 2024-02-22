@@ -1,3 +1,5 @@
+ent-BaseKudzu = { "" }
+    .desc = { "" }
 ent-Kudzu = kudzu
     .desc = A rapidly growing, dangerous plant. WHY ARE YOU STOPPING TO LOOK AT IT?!
 ent-WeakKudzu = { ent-Kudzu }
@@ -11,3 +13,7 @@ ent-KudzuFlowerAngry = { ent-KudzuFlowerFriendly }
     .desc = { ent-KudzuFlowerFriendly.desc }
 ent-FleshKudzu = tendons
     .desc = A rapidly growing cluster of meaty tendons. WHY ARE YOU STOPPING TO LOOK AT IT?!
+ent-ShadowKudzu = dark haze
+  .desc = { ent-BaseKudzu.desc }
+ent-ShadowKudzuWeak = Haze
+    .desc = { ent-ShadowKudzu.desc }

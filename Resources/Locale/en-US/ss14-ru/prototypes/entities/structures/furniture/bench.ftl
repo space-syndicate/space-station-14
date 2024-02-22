@@ -6,3 +6,6 @@ ent-BenchColorfulComfy = { ent-BenchComfy }
 ent-BenchRedComfy = { ent-BenchComfy }
     .suffix = Solo. Red
     .desc = { ent-BenchComfy.desc }
+ent-BenchBlueComfy = { ent-BenchComfy }
+    .suffix = Solo. Blue
+    .desc = { ent-BenchComfy.desc }

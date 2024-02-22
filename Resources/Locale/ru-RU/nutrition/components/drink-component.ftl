@@ -1,6 +1,8 @@
 drink-component-on-use-is-empty = { $owner } пуст!
 drink-component-on-examine-is-empty = [color=gray]Пусто[/color]
 drink-component-on-examine-is-opened = [color=yellow]Открыто[/color]
+drink-component-on-examine-is-sealed = Пломба не повреждена.
+drink-component-on-examine-is-unsealed = Пломба разорвана.
 drink-component-on-examine-is-full = Полон
 drink-component-on-examine-is-mostly-full = Почти полон
 drink-component-on-examine-is-half-full = Наполовину полон

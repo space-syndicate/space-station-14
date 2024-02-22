@@ -39,3 +39,7 @@ ent-DrinkShamblersJuiceCan = shamblers juice can
     .desc = ~Shake me up some of that Shambler's Juice!~
 ent-DrinkPwrGameCan = pwr game can
     .desc = The only drink with the PWR that true gamers crave. When a gamer talks about gamerfuel, this is what they're literally referring to.
+ent-DrinkBeerCan = beer can
+    .desc = Small joy, big taste, no worries!
+ent-DrinkWineCan = wine can
+    .desc = Your way to forgetting all worries and having fun!

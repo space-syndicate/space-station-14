@@ -1,6 +1,7 @@
 tiles-space = космос
 tiles-plating = покрытие
 tiles-lattice = решётка
+tiles-lattice-train = train lattice
 tiles-steel-floor = стальной пол
 tiles-steel-floor-mini = стальные мини-плиты
 tiles-steel-floor-pavement = стальное покрытие
@@ -77,6 +78,8 @@ tiles-blue-shuttle-floor = синий пол шаттла
 tiles-orange-shuttle-floor = оранжевый пол шаттла
 tiles-purple-shuttle-floor = фиолетовый пол шаттла
 tiles-red-shuttle-floor = красный пол шаттла
+tiles-grey-shuttle-floor = серый пол шаттла
+tiles-black-shuttle-floor = чёрный пол шаттла
 tiles-gold-tile = золотой пол
 tiles-silver-tile = серебряный пол
 tiles-glass-floor = стеклянный пол

@@ -17,6 +17,7 @@
       - id: RubberStampQm
       - id: ClothingHeadsetAltCargo
       - id: BoxEncryptionKeyCargo
+      - id: PrinterDocFlatpack # Corvax-Printer
 
 - type: entity
   id: LockerCaptainFilledHardsuit
@@ -48,7 +49,7 @@
 
 - type: entity
   id: LockerCaptainFilled
-  suffix: Filled
+  suffix: Filled, AntiqueLaser
   parent: LockerCaptain
   components:
   - type: StorageFill
@@ -77,6 +78,31 @@
       # Corvax-Resprite-End
 
 - type: entity
+  id: LockerCaptainFilledNoLaser
+  suffix: Filled
+  parent: LockerCaptain
+  components:
+  - type: StorageFill
+    contents:
+      - id: ClothingOuterArmorCaptainCarapace
+      - id: NukeDisk
+      - id: PinpointerNuclear
+      - id: CaptainIDCard
+      - id: WeaponDisabler
+      - id: CommsComputerCircuitboard
+      - id: ClothingHeadsetAltCommand
+      - id: SpaceCash1000
+      - id: PlushieNuke
+        prob: 0.1
+      - id: CigarGoldCase
+        prob: 0.25
+      - id: ClothingBeltSheathFilled
+      - id: DoorRemoteCommand
+      - id: RubberStampCaptain
+      - id: JetpackCaptainFilled
+      - id: MedalCase
+
+- type: entity
   id: LockerHeadOfPersonnelFilled
   suffix: Filled
   parent: LockerHeadOfPersonnel
@@ -103,6 +129,7 @@
         prob: 0.5
       - id: ClothingOuterCoatHOP # Corvax-Resprite
       - id: AccessConfigurator
+      - id: PrinterDocFlatpack # Corvax-Printer
 
 - type: entity
   id: LockerChiefEngineerFilledHardsuit
@@ -163,7 +190,6 @@
       - id: ClothingHeadsetAltMedical
       - id: ClothingCloakCmo
       - id: ClothingBackpackDuffelSurgeryFilled
-      - id: ClothingOuterCoatLabCmo
       - id: ClothingMaskSterile
       - id: ClothingHeadHatBeretCmo
       - id: ClothingOuterHardsuitMedical
@@ -204,13 +230,14 @@
       - id: ResearchComputerCircuitboard
       - id: ProtolatheMachineCircuitboard
       - id: CircuitImprinterMachineCircuitboard
-      - id: ClothingHeadsetMedicalScience
       - id: ClothingOuterHardsuitRd
       - id: HandTeleporter
       - id: DoorRemoteResearch
       - id: ClothingBeltUtilityFilled
       - id: RubberStampRd
       - id: BoxEncryptionKeyScience
+      - id: ClothingHeadsetAltScience
+      - id: EncryptionKeyBinary
 
 - type: entity
   id: LockerResearchDirectorFilled
@@ -222,12 +249,13 @@
       - id: ResearchComputerCircuitboard
       - id: ProtolatheMachineCircuitboard
       - id: CircuitImprinterMachineCircuitboard
-      - id: ClothingHeadsetMedicalScience
       - id: HandTeleporter
       - id: DoorRemoteResearch
       - id: ClothingBeltUtilityFilled
       - id: RubberStampRd
       - id: BoxEncryptionKeyScience
+      - id: ClothingHeadsetAltScience
+      - id: EncryptionKeyBinary
 
 - type: entity
   id: LockerHeadOfSecurityFilledHardsuit
@@ -241,6 +269,7 @@
       - id: ClothingHeadHatCapHoS # Corvax-SecFashion
         prob: 0.5
       - id: ClothingOuterCoatHoSTrench
+      - id: ClothingMaskNeckGaiter
       - id: ClothingOuterCoatHoSGreatcoat # Corvax-Resprite
       - id: ClothingOuterHardsuitSecurityRed
       - id: ClothingMaskGasSwat
@@ -275,6 +304,7 @@
       - id: ClothingHeadHatCapHoS # Corvax-SecFashion
         prob: 0.5
       - id: ClothingOuterCoatHoSTrench
+      - id: ClothingMaskNeckGaiter
       - id: ClothingOuterCoatHoSGreatcoat # Corvax-Resprite
       - id: ClothingBeltSecurityFilled
       - id: ClothingHeadsetAltSecurity

@@ -32,3 +32,4 @@ plant-holder-component-light-improper-warning = Мигает [color=yellow]пр�
 plant-holder-component-heat-improper-warning = Мигает [color=orange]предупреждение о неподходящем уровне температуры[/color].
 plant-holder-component-pressure-improper-warning = Мигает [color=lightblue]предупреждение о неподходящем атмосферном давлении[/color].
 plant-holder-component-gas-missing-warning = Мигает [color=cyan]предупреждение о неподходящем атмосферном составе[/color].
+plant-holder-component-early-sample-message = Растение еще не выросло настолько, чтобы извлечь семена.
