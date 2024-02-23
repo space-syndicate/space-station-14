@@ -71,7 +71,7 @@ accent-words-chicken-4 = Кудах тах-тах!
 accent-words-pig-1 = Хрю.
 accent-words-pig-2 = Хрю?
 accent-words-pig-3 = Хрю!
-accent-words-pig-4 = Хрю Хрю!
+accent-words-pig-4 = Хрю хрю!
 # Kangaroo
 accent-words-kangaroo-1 = Грр!
 accent-words-kangaroo-2 = Ххссс!
