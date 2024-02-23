@@ -28,7 +28,7 @@
       behaviors:
       - !type:PlaySoundBehavior
         sound:
-          collection: GlassBreak
+          collection: WindowShatter
       - !type:SpawnEntitiesBehavior
         spawn:
           ShardGlassReinforced:
@@ -66,7 +66,7 @@
     state: state0
   - type: IconSmooth
     mode: Diagonal
-    key: windows
+    key: walls #corvax smooth
     base: state
   - type: Icon
     sprite: Structures/Windows/mining_diagonal.rsi

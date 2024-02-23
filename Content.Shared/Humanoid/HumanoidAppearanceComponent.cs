@@ -80,11 +80,6 @@ public sealed partial class HumanoidAppearanceComponent : Component
     [DataField, AutoNetworkedField]
     public Color EyeColor = Color.Brown;
 
-    // Corvax-ChatColor-Start
-    [DataField("speakerColor")]
-    public Color SpeakerColor = Color.White;
-    // Corvax-ChatColor-End
-
     /// <summary>
     ///     Hair color of this humanoid. Used to avoid looping through all markings
     /// </summary>

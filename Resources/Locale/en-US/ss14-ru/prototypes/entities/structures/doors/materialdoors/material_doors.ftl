@@ -1,7 +1,9 @@
 ent-BaseMaterialDoor = door
     .desc = A door, where will it lead?
-ent-MetalDoor = metal door
+ent-BaseMaterialDoorNavMap = { ent-BaseMaterialDoor }
     .desc = { ent-BaseMaterialDoor.desc }
+ent-MetalDoor = metal door
+    .desc = { ent-BaseMaterialDoorNavMap.desc }
 ent-WoodDoor = wooden door
     .desc = A door, where will it lead?
 ent-PaperDoor = paper door

@@ -1,0 +1,69 @@
+- type: entity
+  parent: BaseItem
+  id: BaseFlatpack
+  name: base flatpack
+  description: A flatpack used for constructing something.
+  categories:
+  - hideSpawnMenu
+  components:
+  - type: Item
+    size: Large
+  - type: Sprite
+    sprite: Objects/Devices/flatpack.rsi
+    layers:
+    - state: base
+    - state: overlay
+      color: "#cec8ac"
+      map: ["enum.FlatpackVisualLayers.Overlay"]
+    - state: icon-default
+  - type: Appearance
+  - type: Flatpack
+    boardColors:
+      command: "#334E6D"
+      medical: "#52B4E9"
+      service: "#9FED58"
+      engineering: "#EFB341"
+      security: "#DE3A3A"
+      science: "#D381C9"
+      supply: "#A46106"
+      cpu_command: "#334E6D"
+      cpu_medical: "#52B4E9"
+      cpu_service: "#9FED58"
+      cpu_engineering: "#EFB341"
+      cpu_security: "#DE3A3A"
+      cpu_science: "#D381C9"
+      cpu_supply: "#A46106"
+  - type: StaticPrice
+    price: 250
+
+- type: entity
+  parent: BaseFlatpack
+  id: SolarAssemblyFlatpack
+  name: solar assembly flatpack
+  description: A flatpack used for constructing a solar assembly.
+  components:
+  - type: Flatpack
+    entity: SolarAssembly
+  - type: Sprite
+    layers:
+    - state: solar-assembly-part
+  - type: StaticPrice
+    price: 75
+
+- type: entity
+  parent: BaseFlatpack
+  id: AmePartFlatpack
+  name: AME flatpack
+  description: A flatpack used for constructing an antimatter engine reactor.
+  components:
+  - type: Sprite
+    layers:
+    - state: ame-part
+  - type: Flatpack
+    entity: AmeShielding
+  - type: StaticPrice
+    price: 500
+  - type: GuideHelp
+    guides: [ AME, Power ]
+  - type: StealTarget
+    stealGroup: AmePartFlatpack

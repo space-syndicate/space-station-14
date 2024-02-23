@@ -6,3 +6,5 @@ marking-ScarTopSurgeryLong-scar_top_surgery_long = Хирургический ш
 marking-ScarEyeLeft = Шрам на глазу (Левый)
 marking-ScarTopSurgeryShort = Хирургический шрам (Короткий)
 marking-ScarTopSurgeryLong = Хирургический шрам (Длинный)
+marking-ScarChest-scar_chest = Шрам на груди
+marking-ScarChest = Шрам на груди

@@ -1,0 +1,14 @@
+ent-GlassBoxLaser = стеклянный короб
+    .desc = Прочная витрина для дорогостоящего экспоната.
+ent-GlassBoxLaserOpen = { ent-GlassBoxLaser }
+    .suffix = Открытый
+    .desc = { ent-GlassBoxLaser.desc }
+ent-GlassBoxLaserFilled = { ent-GlassBoxLaser }
+    .suffix = Заполненный
+    .desc = { ent-GlassBoxLaser.desc }
+ent-GlassBoxLaserFilledOpen = { ent-GlassBoxLaserFilled }
+    .suffix = Заполненный, Открытый
+    .desc = { ent-GlassBoxLaserFilled.desc }
+ent-GlassBoxLaserBroken = разбитый стеклянный короб
+    .desc = Разбитая витрина для украденного дорогостоящего экспоната.
+    .suffix = Разбитый
