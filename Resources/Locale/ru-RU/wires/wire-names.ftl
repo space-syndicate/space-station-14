@@ -29,6 +29,7 @@ wires-board-name-hydroponicstray = Гидропонный лоток
 wires-board-name-telecomserver = Телекоммуникационный сервер
 wires-board-name-medicalscanner = Медицинский сканер
 wires-board-name-reclaimer = Переработчик
+wires-board-name-recharger = Зарядник
 wires-board-name-minigravitygenerator = Мини-генератор гравитации
 wires-board-name-dawinstrument = Цифровая звуковая рабочая станция
 wires-board-name-airlock = Управление шлюзом
@@ -36,6 +37,7 @@ wires-board-name-firelock = Управление пожарным шлюзом
 wires-board-name-windoor = Управление раздвижным окном
 wires-board-name-mech = Мех
 wires-board-name-fatextractor = Экстрактор жира
+wires-board-name-flatpacker = Упаковщик
 
 # names that get displayed in the wire hacking hud & admin logs.
 
@@ -61,3 +63,5 @@ wire-name-bomb-delay = ЗДРЖ
 wire-name-bomb-proceed = ПРДЛ
 wire-name-bomb-boom = БУУМ
 wire-name-bomb-bolt = БОЛТ
+wire-name-speech = ДНМК
+wire-name-listen = МИКР

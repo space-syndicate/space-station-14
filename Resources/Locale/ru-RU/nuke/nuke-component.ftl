@@ -36,3 +36,7 @@ nuke-label-syndicate = SYN-{ $serial }
 nuke-codes-message = [color=red]СОВЕРШЕННО СЕКРЕТНО![/color]
 nuke-codes-list = Код { $name }: { $code }
 nuke-codes-fax-paper-name = коды ядерной аутентификации
+# Nuke disk slot
+nuke-slot-component-slot-name-disk = Диск
+nuke-examine-armed = Эй, а почему эта [color=red]красная лампочка[/color] мигает?
+nuke-examine-exploding = Ага... Похоже, уже слишком поздно, приятель.

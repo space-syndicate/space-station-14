@@ -1,4 +1,5 @@
 using Content.Shared.Roles;
+using Robust.Shared.Network;
 using Robust.Shared.Replays;
 using Robust.Shared.Serialization;
 using Robust.Shared.Serialization.Markdown.Mapping;
@@ -63,6 +64,15 @@ namespace Content.Shared.GameTicking
         }
     }
 
+    [Serializable, NetSerializable]
+    public sealed class TickerConnectionStatusEvent : EntityEventArgs
+    {
+        public TimeSpan RoundStartTimeSpan { get; }
+        public TickerConnectionStatusEvent(TimeSpan roundStartTimeSpan)
+        {
+            RoundStartTimeSpan = roundStartTimeSpan;
+        }
+    }
 
     [Serializable, NetSerializable]
     public sealed class TickerLobbyStatusEvent : EntityEventArgs
@@ -135,18 +145,37 @@ namespace Content.Shared.GameTicking
         }
     }
 
-    [Serializable, NetSerializable]
-    public sealed class RoundEndMessageEvent : EntityEventArgs
+    [Serializable, NetSerializable, DataDefinition]
+    public sealed partial class RoundEndMessageEvent : EntityEventArgs
     {
-        [Serializable, NetSerializable]
-        public struct RoundEndPlayerInfo
+        [Serializable, NetSerializable, DataDefinition]
+        public partial struct RoundEndPlayerInfo
         {
+            [DataField]
             public string PlayerOOCName;
+
+            [DataField]
             public string? PlayerICName;
+
+            [DataField, NonSerialized]
+            public NetUserId? PlayerGuid;
+
             public string Role;
+
+            [DataField, NonSerialized]
+            public string[] JobPrototypes;
+
+            [DataField, NonSerialized]
+            public string[] AntagPrototypes;
+
             public NetEntity? PlayerNetEntity;
+
+            [DataField]
             public bool Antag;
+
+            [DataField]
             public bool Observer;
+
             public bool Connected;
         }
 
@@ -157,6 +186,10 @@ namespace Content.Shared.GameTicking
         public int PlayerCount { get; }
         public RoundEndPlayerInfo[] AllPlayersEndInfo { get; }
         public string? LobbySong;
+
+        /// <summary>
+        /// Sound gets networked due to how entity lifecycle works between client / server and to avoid clipping.
+        /// </summary>
         public string? RestartSound;
 
         public RoundEndMessageEvent(
@@ -179,7 +212,6 @@ namespace Content.Shared.GameTicking
             RestartSound = restartSound;
         }
     }
-
 
     [Serializable, NetSerializable]
     public enum PlayerGameStatus : sbyte

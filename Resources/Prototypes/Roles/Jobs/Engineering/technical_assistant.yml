@@ -4,6 +4,8 @@
   description: job-description-technical-assistant
   playTimeTracker: JobTechnicalAssistant
   requirements:
+    - !type:OverallPlaytimeRequirement
+      time: 3600 #1 hr
     - !type:DepartmentTimeRequirement
       department: Engineering
       time: 3600000 #1000 hrs # Corvax-RoleTime
@@ -25,6 +27,7 @@
     id: TechnicalAssistantPDA
     belt: ClothingBeltUtilityEngineering
     ears: ClothingHeadsetEngineering
+    pocket2: BookEngineersHandbook
   innerClothingSkirt: ClothingUniformJumpskirtColorYellow
   satchel: ClothingBackpackSatchelEngineeringFilled
   duffelbag: ClothingBackpackDuffelEngineeringFilled

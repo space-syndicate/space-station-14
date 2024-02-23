@@ -7,6 +7,7 @@ main-menu-failed-to-connect =
     { $reason }
 main-menu-username-label = Имя пользователя:
 main-menu-username-text = Имя пользователя
+main-menu-address-label = Адрес сервера:
 main-menu-join-public-server-button = Публичный сервер
 main-menu-join-public-server-button-tooltip = Нельзя подключаться к публичным серверам с отладочной сборкой.
 main-menu-direct-connect-button = Прямое подключение

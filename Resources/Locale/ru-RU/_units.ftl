@@ -70,16 +70,16 @@ units-g-watt-long = гигаватт
 
 ## Joule (Energy)
 
-units-u--joule = µДж
+units-u--joule = мкДж
 units-m--joule = мДж
 units-joule = Дж
 units-k-joule = кДж
 units-m-joule = МДж
-units-u--joule-long = Микроджоуль
-units-m--joule-long = Миллиджоуль
-units-joule-long = Джоуль
-units-k-joule-long = Килоджоуль
-units-m-joule-long = Мегаджоуль
+units-u--joule-long = микроджоуль
+units-m--joule-long = миллиджоуль
+units-joule-long = джоуль
+units-k-joule-long = килоджоуль
+units-m-joule-long = мегаджоуль
 
 ## Kelvin (Temperature)
 

@@ -1,5 +1,5 @@
-ent-ClothingHandsGlovesSyntheticBase = { ent-ClothingHandsBase }
-    .desc = { ent-ClothingHandsBase.desc }
+ent-ClothingHandsGlovesSyntheticBase = { ent-ClothingHandsButcherable }
+    .desc = { ent-ClothingHandsButcherable.desc }
 ent-ClothingHandsGlovesColorPurple = purple gloves
     .desc = Regular purple gloves that do not keep you from frying.
 ent-ClothingHandsGlovesColorRed = red gloves
@@ -24,3 +24,6 @@ ent-ClothingHandsGlovesColorYellow = insulated gloves
     .desc = These gloves will protect the wearer from electric shocks.
 ent-ClothingHandsGlovesColorYellowBudget = budget insulated gloves
     .desc = These gloves are cheap knockoffs of the coveted ones - no way this can end badly.
+ent-ClothingHandsGlovesConducting = { ent-ClothingHandsGlovesColorYellow }
+    .suffix = Conducting
+    .desc = { ent-ClothingHandsGlovesColorYellow.desc }

@@ -1,3 +1,4 @@
+device-pda-slot-component-slot-name-cartridge = Картридж
 default-program-name = Программа
 notekeeper-program-name = Заметки
 news-read-program-name = Новости станции
@@ -13,4 +14,4 @@ log-probe-program-name = Зонд логов
 log-probe-scan = Загружены логи устройства { $device }!
 log-probe-label-time = Время
 log-probe-label-accessor = Использовано:
-log-probe-label-number = Номер
+log-probe-label-number = #

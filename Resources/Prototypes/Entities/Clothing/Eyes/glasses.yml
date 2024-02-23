@@ -79,7 +79,7 @@
     tags:
     - HamsterWearable
     - WhitelistChameleon
-    
+
 - type: entity
   parent: ClothingEyesBase
   id: ClothingEyesGlassesJensen
@@ -125,7 +125,7 @@
 
 - type: entity
   parent: ClothingEyesBase
-  id: ClothingEyesGlassesCosmeticSunglasses
+  id: ClothingEyesGlassesSunglasses
   name: sun glasses
   description: A pair of black sunglasses.
   components:
@@ -135,18 +135,13 @@
     sprite: Clothing/Eyes/Glasses/sunglasses.rsi
   - type: FlashImmunity
   - type: EyeProtection
+    protectionTime: 5
   - type: Tag
     tags:
     - HamsterWearable
     - WhitelistChameleon
-
-- type: entity
-  parent: ClothingEyesGlassesCosmeticSunglasses
-  id: ClothingEyesGlassesSunglasses
-  components:
-  - type: FlashImmunity
-  - type: EyeProtection
-    protectionTime: 5
+  - type: IdentityBlocker
+    coverage: EYES
 
 - type: entity
   parent: ClothingEyesBase
@@ -160,6 +155,7 @@
     sprite: Clothing/Eyes/Glasses/secglasses.rsi
   - type: FlashImmunity
   - type: EyeProtection
+    protectionTime: 5
   - type: Tag
     tags:
     - HamsterWearable
@@ -168,6 +164,8 @@
     guides:
     - Security
   - type: ShowSecurityIcons
+  - type: IdentityBlocker
+    coverage: EYES
 
 - type: entity
   parent: ClothingEyesBase
@@ -181,6 +179,7 @@
     sprite: Clothing/Eyes/Glasses/mercglasses.rsi
   - type: FlashImmunity
   - type: EyeProtection
+    protectionTime: 5
 
 #Make a scanner category when these actually function and we get the trayson
 - type: entity
