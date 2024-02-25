@@ -1,5 +1,6 @@
 using Content.Shared.Atlanta.RoyalBattle.Components;
 using Content.Shared.Roles;
+using Robust.Shared.Map;
 using Robust.Shared.Serialization.TypeSerializers.Implementations.Custom.Prototype;
 
 namespace Content.Server.Atlanta.GameTicking.Rules.Components;
@@ -10,6 +11,24 @@ namespace Content.Server.Atlanta.GameTicking.Rules.Components;
 [RegisterComponent, Access(typeof(RoyalBattleRuleSystem))]
 public sealed partial class RoyalBattleRuleComponent : Component
 {
+    [DataField("gameState")]
+    public RoyalBattleGameState GameState = RoyalBattleGameState.InLobby;
+
+    [DataField("lobbyMapName")]
+    public string LobbyMapPath = "Maps/Atlanta/lobby.yml";
+
+    [DataField("lobbyMapId")]
+    public MapId? LobbyMapId;
+
+    [DataField("battleMapId")]
+    public MapId? MapId;
+
+    [DataField("battleMap")]
+    public EntityUid? BattleMap;
+
+    [DataField("startupTime")]
+    public TimeSpan StartupTime = TimeSpan.FromMinutes(1);
+
     [DataField("playersMinds")]
     public List<EntityUid> PlayersMinds = new();
 
@@ -21,20 +40,21 @@ public sealed partial class RoyalBattleRuleComponent : Component
 
     [DataField("availableSpawners")]
     public List<EntityUid> AvailableSpawners = new();
-
-    [DataField("zone")]
-    public RbZoneComponent? ZoneComponent;
-
-    [DataField("cratesCount")]
-    public int CratesCount;
-
-    [DataField("initializedCrates")]
-    public int InitializedCratesCount;
     /// <summary>
     /// The gear all players spawn with.
     /// </summary>
     [DataField("gear", customTypeSerializer: typeof(PrototypeIdSerializer<StartingGearPrototype>)), ViewVariables(VVAccess.ReadWrite)]
-    public string Gear = "DeathMatchGear";
+    public string Gear = "RbFighterGear";
 
     public readonly string RoyalBattlePrototypeId = "RoyalBattle";
+}
+
+public sealed class RoyalBattleStartEvent : EntityEventArgs
+{
+}
+
+public enum RoyalBattleGameState
+{
+    InLobby,
+    InGame,
 }

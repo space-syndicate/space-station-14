@@ -1,0 +1,21 @@
+- type: rbCratePool
+  id: MedicalPacksPool
+  weights:
+    StimkitPack: 0.2
+    MedkitPack: 0.3
+    MedkitCombatPack: 0.2
+
+- type: rbCratePack
+  id: StimkitPack
+  pack:
+  - StimkitFilled
+
+- type: rbCratePack
+  id: MedkitPack
+  pack:
+  - MedkitFilled
+
+- type: rbCratePack
+  id: MedkitCombatPack
+  pack:
+  - MedkitCombatFilled

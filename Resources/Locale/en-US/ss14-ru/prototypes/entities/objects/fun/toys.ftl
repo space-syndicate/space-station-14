@@ -113,3 +113,5 @@ ent-PlushiePenguin = penguin plushie
     .desc = I use arch btw!
 ent-PlushieHuman = human plushie
     .desc = This is a felt plush of a human. All craftsmanship is of the lowest quality. The human is naked. The human is crying. The human is screaming.
+ent-NewtonCradle = newton cradle
+    .desc = A device bored paper pushers use to remind themselves that time did not stop yet. Contains gravity.

@@ -24,6 +24,9 @@ public abstract partial class SharedRbZoneSystem : EntitySystem
 
         while (query.MoveNext(out var uid, out var zone))
         {
+            if (!zone.IsEnabled)
+                continue;
+
             if (zone.IsMoving)
             {
                 MoveZone(uid, zone, frameTime);

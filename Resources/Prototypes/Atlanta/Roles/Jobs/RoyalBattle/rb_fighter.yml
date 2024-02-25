@@ -6,3 +6,16 @@
   startingGear: PassengerGear
   icon: "JobIconPassenger"
   supervisors: You don't have something as a boss.
+
+- type: startingGear
+  id: RbFighterGear
+  equipment:
+    jumpsuit: ClothingUniformJumpsuitMercenary
+    back: ClothingBackpackFilled
+    shoes: ClothingShoesBootsMercFilled
+    id: CaptainIDCard
+    ears: ClothingHeadsetGrey
+    gloves: ClothingHandsGlovesMercFingerless
+  innerClothingSkirt: ClothingUniformJumpsuitMercenary
+  satchel: ClothingBackpackFilled
+  duffelbag: ClothingBackpackFilled

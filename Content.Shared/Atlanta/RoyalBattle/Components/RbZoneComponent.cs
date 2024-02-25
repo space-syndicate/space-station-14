@@ -12,6 +12,9 @@ namespace Content.Shared.Atlanta.RoyalBattle.Components;
 [RegisterComponent, NetworkedComponent, AutoGenerateComponentState]
 public sealed partial class RbZoneComponent : Component
 {
+    [DataField("enabled")]
+    public bool IsEnabled = false;
+
     [DataField("damage", required: true)]
     public DamageSpecifier? Damage = new();
 

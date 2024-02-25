@@ -6,8 +6,8 @@ using Content.Shared.Atlanta.RoyalBattle.Systems;
 using Content.Shared.Damage;
 using Content.Shared.Mobs;
 using Content.Shared.Mobs.Components;
-using Robust.Shared.Player;
 using Robust.Shared.Timing;
+using Robust.Shared.Utility;
 
 namespace Content.Server.Atlanta.RoyalBattle.Systems;
 
@@ -24,6 +24,19 @@ public sealed class RbZoneSystem : SharedRbZoneSystem
         base.Initialize();
 
         SubscribeLocalEvent<RbZoneComponent, ComponentStartup>(OnComponentStartup);
+        SubscribeLocalEvent<RoyalBattleStartEvent>(OnGameStartup);
+    }
+
+    private void OnGameStartup(RoyalBattleStartEvent args)
+    {
+        var query = EntityQueryEnumerator<RbZoneComponent>();
+        while (query.MoveNext(out _, out var zone))
+        {
+            _chatManager.DispatchServerAnnouncement(
+                Loc.GetString("rb-zone-startup", ("seconds", (int) zone.NextWave.TotalSeconds)), Color.Green);
+            zone.LastDamageTime = _timing.CurTime;
+            zone.IsEnabled = true;
+        }
     }
 
     protected override void ProcessUpdate(EntityUid uid, RbZoneComponent zone, float frameTime)
@@ -46,12 +59,11 @@ public sealed class RbZoneSystem : SharedRbZoneSystem
 
             if (playerCoords.MapId == zoneCoords.MapId)
             {
-                var distance = Vector2.Distance(
-                    playerCoords.Position, zoneCoords.Position);
+                var distance = Vector2.Distance(playerCoords.Position, zone.Center);
 
                 if (distance >= zone.RangeLerp)
                 {
-                    Sawmill.Debug($"Damage {player.Id} by {zone.Damage}.");
+                    Sawmill.Debug($"Damage {player.Id}.");
                     _damageable.TryChangeDamage(player, zone.Damage!, true);
                 }
             }
@@ -70,14 +82,13 @@ public sealed class RbZoneSystem : SharedRbZoneSystem
             zone.WaveTiming *= zone.WaveTimingMultiplier;
             zone.NextWave = zone.WaveTiming;
 
-            // TODO: damage specify
             foreach (var damage in zone.Damage!.DamageDict)
             {
                 zone.Damage.DamageDict[damage.Key]
                     = zone.Damage[damage.Key] * zone.DamageMultiplier;
             }
 
-            _chatManager.DispatchServerAnnouncement($"Следующее смещение зоны будет через {(int) zone.NextWave.TotalSeconds}с!", Color.Green);
+            _chatManager.DispatchServerAnnouncement(Loc.GetString("rb-next-wave-announce", ("seconds", (int) zone.NextWave.TotalSeconds)), Color.Green);
         }
 
         Dirty(uid, zone);
@@ -97,7 +108,7 @@ public sealed class RbZoneSystem : SharedRbZoneSystem
 
             Dirty(uid, zone);
 
-            _chatManager.DispatchServerAnnouncement($"Внимание! Зона вновь нестабильна: она начала сужаться!", Color.DarkRed);
+            _chatManager.DispatchServerAnnouncement(Loc.GetString("rb-zone-unstable"), Color.DarkRed);
         }
     }
 
@@ -108,16 +119,13 @@ public sealed class RbZoneSystem : SharedRbZoneSystem
 
         var query = EntityQueryEnumerator<RbZoneCenterComponent>();
 
-        while (query.MoveNext(out var ent, out var comp))
+        while (query.MoveNext(out var ent, out _))
         {
             // I think, pointer count is one.
 
             component.Center = _transform.GetWorldPosition(ent);
             Sawmill.Debug($"Setup the center of zone on {component.Center} coords.");
         }
-
-        _chatManager.DispatchServerAnnouncement($"Зона перейдёт в нестабильное состоние через {(int) component.NextWave.TotalSeconds}с! Приготовьтесь!", Color.Green);
-        component.LastDamageTime = _timing.CurTime;
 
         Dirty(uid, component);
     }
