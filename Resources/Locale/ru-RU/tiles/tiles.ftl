@@ -120,3 +120,4 @@ tiles-web = паутинный пол
 tiles-chromite = хромитовый пол
 tiles-astro-grass = астро-трава
 tiles-astro-ice = астро-лёд
+tiles-wood-large = large wood
