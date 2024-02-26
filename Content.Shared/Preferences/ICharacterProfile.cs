@@ -20,6 +20,6 @@ namespace Content.Shared.Preferences
         /// <summary>
         /// Gets a copy of this profile that has <see cref="EnsureValid"/> applied, i.e. no invalid data.
         /// </summary>
-        ICharacterProfile Validated(IConfigurationManager configManager, IPrototypeManager prototypeManager);
+        ICharacterProfile Validated(IConfigurationManager configManager, IPrototypeManager prototypeManager, string[] sponsorPrototypes);
     }
 }
