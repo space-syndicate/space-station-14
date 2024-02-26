@@ -46,6 +46,9 @@ public sealed partial class RoyalBattleRuleComponent : Component
     [DataField("gear", customTypeSerializer: typeof(PrototypeIdSerializer<StartingGearPrototype>)), ViewVariables(VVAccess.ReadWrite)]
     public string Gear = "RbFighterGear";
 
+    [DataField("restartTime")]
+    public TimeSpan RestartTime = TimeSpan.FromSeconds(20);
+
     public readonly string RoyalBattlePrototypeId = "RoyalBattle";
 }
 

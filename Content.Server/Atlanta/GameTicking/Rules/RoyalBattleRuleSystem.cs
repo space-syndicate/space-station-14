@@ -211,7 +211,7 @@ public sealed class RoyalBattleRuleSystem : GameRuleSystem<RoyalBattleRuleCompon
                 _chatManager.DispatchServerAnnouncement(Loc.GetString("rb-ending-announce"), Color.Aquamarine);
 
                 var roundEnd = EntityManager.EntitySysManager.GetEntitySystem<RoundEndSystem>();
-                roundEnd.EndRound(TimeSpan.FromMinutes(2));
+                roundEnd.EndRound(rb.RestartTime);
             }
             else
             {
