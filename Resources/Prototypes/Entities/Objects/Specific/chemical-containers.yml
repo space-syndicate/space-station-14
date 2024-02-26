@@ -76,7 +76,7 @@
         - !type:DoActsBehavior
           acts: [ "Destruction" ]
     - type: Label
-      originalName: jug
+      originalName: кувшин # Corvax-Localization
     - type: Tag
       tags:
       - ChemDispensable
