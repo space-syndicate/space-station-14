@@ -107,7 +107,7 @@ namespace Content.Server.Preferences.Managers
             var sponsorPrototypes = _sponsors != null && _sponsors.TryGetPrototypes(message.MsgChannel.UserId, out var prototypes)
                 ? prototypes.ToArray()
                 : new string[]{};
-            profile.EnsureValid(sponsorPrototypes);
+            profile.EnsureValid(_cfg, _protos, sponsorPrototypes);
             // Corvax-Sponsors-End
             var profiles = new Dictionary<int, ICharacterProfile>(curPrefs.Characters)
             {
@@ -295,34 +295,7 @@ namespace Content.Server.Preferences.Managers
 
             return new PlayerPreferences(prefs.Characters.Select(p =>
             {
-                ICharacterProfile newProf;
-                switch (p.Value)
-                {
-                    case HumanoidCharacterProfile hp:
-                    {
-                        var prototypeManager = IoCManager.Resolve<IPrototypeManager>();
-                        var selectedSpecies = HumanoidAppearanceSystem.DefaultSpecies;
-
-                        if (prototypeManager.TryIndex<SpeciesPrototype>(hp.Species, out var species) && species.RoundStart)
-                        {
-                            selectedSpecies = hp.Species;
-                        }
-
-                        newProf = hp
-                            .WithJobPriorities(
-                                hp.JobPriorities.Where(job =>
-                                    _protos.HasIndex<JobPrototype>(job.Key)))
-                            .WithAntagPreferences(
-                                hp.AntagPreferences.Where(antag =>
-                                    _protos.HasIndex<AntagPrototype>(antag)))
-                            .WithSpecies(selectedSpecies);
-                        break;
-                    }
-                    default:
-                        throw new NotSupportedException();
-                }
-
-                return new KeyValuePair<int, ICharacterProfile>(p.Key, newProf);
+                return new KeyValuePair<int, ICharacterProfile>(p.Key, p.Value.Validated(_cfg, _protos));
             }), prefs.SelectedCharacterIndex, prefs.AdminOOCColor);
         }
 
