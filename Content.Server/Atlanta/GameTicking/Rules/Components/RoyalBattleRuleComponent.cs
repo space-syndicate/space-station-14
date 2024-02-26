@@ -47,7 +47,7 @@ public sealed partial class RoyalBattleRuleComponent : Component
     public string Gear = "RbFighterGear";
 
     [DataField("restartTime")]
-    public TimeSpan RestartTime = TimeSpan.FromMinutes(2);
+    public TimeSpan RestartTime = TimeSpan.FromSeconds(30);
 
     public readonly string RoyalBattlePrototypeId = "RoyalBattle";
 }
