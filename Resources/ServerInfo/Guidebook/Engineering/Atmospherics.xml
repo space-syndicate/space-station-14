@@ -27,12 +27,12 @@
 <Box>
 <GuideEntityEmbed Entity="PortableScrubber"/>
 </Box>
-# Gas mixes and Burn chambers
-In the event you finish all the tasks at hand, you can make some extra power or money by creating new chemical gasses.
+# Смешивание газов и камеры сгорания
+В случае, если вы выполнили все поставленные задачи, вы можете получить дополнительную энергию или деньги, создавая новые химические газы.
 
-##Tritium
-Tritium is a clear, green gas that is highly flammable, radioactive, and combusts when in contact with oxygen making it very helpful when running the [color=#a4885c]TEG.[/color]
-It can be made by burning 1% Plasma and 96% or more Oxygen in the Burn Chamber. You can extract this gas through scrubbers.
+## Тритий
+Тритий - это прозрачный зелёный газ, который легко воспламеняется, радиоактивен и сгорает при контакте с кислородом, что делает его очень полезным при работе с [color=#a4885c]ТЭГ-ом[/color].
+Его можно получить, сжигая 1% плазмы и 96% или более кислорода в камере сгорания. Вы можете извлечь этот газ с помощью скрубберов.
 
 <Box>
 <GuideEntityEmbed Entity="PlasmaCanister" />
@@ -41,20 +41,20 @@ It can be made by burning 1% Plasma and 96% or more Oxygen in the Burn Chamber. 
 <GuideEntityEmbed Entity="TritiumCanister" />
 </Box>
 
-##Frezon
-Frezon is a bluish-green gas that is very complex and very dangerous. To obtain frezon, you must mix Tritium, Oxygen, and Nitrogen in a 70K room to start the reaction, as well as prevent the Tritium from combusting with the oxygen.
+## Фрезон
+Фрезон - это голубовато-зелёный газ, очень сложный и очень опасный. Для получения фрезона необходимо смешать тритий, кислород и азот в помещении с температурой -203.15°C, чтобы запустить реакцию, а также предотвратить сгорание трития с кислородом.
 
 <Box>
 <GuideEntityEmbed Entity="TritiumCanister" />
 <GuideEntityEmbed Entity="AirCanister" />
 <GuideEntityEmbed Entity="GasVentScrubber"/>
-<GuideEntityEmbed Entity="StorageCanister" Caption="Frezon Canister"/>
+<GuideEntityEmbed Entity="StorageCanister" Caption="Канистра Фрезона"/>
 </Box>
 
-It is critical to understand that a frezon leak can devastate the station, causing a wintery hell filled with itchy sweaters and cold burns. Frezon is very cold, and can freeze the station to death if even a few moles get out, so make sure that you lock your canisters or just move your Frezon straight into a storage room.
+Важно понимать, что утечка фрезона может погубить станцию, превратив её в зимний ад с зудящими свитерами и обморожениями. Фрезон очень холодный и может заморозить станцию до смерти, если хотя бы несколько молей выберутся наружу, так что убедитесь, что вы заперли свои канистры или просто переместили фрезон прямо в хранилище.
 
-## Reference Sheet
-- Standard atmospheric mix is [color=#a4885c]78% N2 and 22% O2 at 101.24kPa.[/color]
-- Gas obeys real math. You can use the equation PV = nRT (Pressure kPa * Volume L = Moles * R * Temperature K) to derive information you might need to know about a gas. R is approximately 8.31446
+## Справочный лист
+- Стандартная атмосферная смесь - это [color=#a4885c]78% N2 и 22% O2 при давлении 101,24 кПа.[/color]
+- Газ подчиняется реальной математике. Вы можете использовать уравнение PV = nRT (P - давление кПа * V - объем л = моли * R * температура К), чтобы получить информацию, которую вам нужно знать о газе. R - константа, приблизительно равна 8,31446.
 
 </Document>
