@@ -1,5 +1,5 @@
 - type: entity
-  parent: DrinkBottleGlassBaseFull
+  parent: [DrinkBottleVisualsAll, DrinkBottleGlassBaseFull]
   id: DrinkCampariBottleFull
   name: campari bottle
   description: Tincture based on aromatic herbs and citrus fruits. Non-GMO!
@@ -12,3 +12,7 @@
           Quantity: 100
   - type: Sprite
     sprite: Corvax/Objects/Consumable/Drinks/campari.rsi
+  - type: SolutionContainerVisuals
+    maxFillLevels: 10
+    fillBaseName: fill-
+  - type: Sealable
