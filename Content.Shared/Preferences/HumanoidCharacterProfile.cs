@@ -391,11 +391,9 @@ namespace Content.Shared.Preferences
             return Appearance.MemberwiseEquals(other.Appearance);
         }
 
-        public void EnsureValid(string[] sponsorPrototypes)
+        public void EnsureValid(IConfigurationManager configManager, IPrototypeManager prototypeManager, string[] sponsorPrototypes)
         {
-            var prototypeManager = IoCManager.Resolve<IPrototypeManager>();
-
-            if (!prototypeManager.TryIndex<SpeciesPrototype>(Species, out var speciesPrototype))
+            if (!prototypeManager.TryIndex<SpeciesPrototype>(Species, out var speciesPrototype) || speciesPrototype.RoundStart == false)
             {
                 Species = SharedHumanoidAppearanceSystem.DefaultSpecies;
                 speciesPrototype = prototypeManager.Index<SpeciesPrototype>(Species);
@@ -418,15 +416,10 @@ namespace Content.Shared.Preferences
             };
 
             // ensure the species can be that sex and their age fits the founds
-            var age = Age;
-            if (speciesPrototype != null)
-            {
-                if (!speciesPrototype.Sexes.Contains(sex))
-                {
-                    sex = speciesPrototype.Sexes[0];
-                }
-                age = Math.Clamp(Age, speciesPrototype.MinAge, speciesPrototype.MaxAge);
-            }
+            if (!speciesPrototype.Sexes.Contains(sex))
+                sex = speciesPrototype.Sexes[0];
+
+            var age = Math.Clamp(Age, speciesPrototype.MinAge, speciesPrototype.MaxAge);
 
             var gender = Gender switch
             {
@@ -453,7 +446,6 @@ namespace Content.Shared.Preferences
 
             name = name.Trim();
 
-            var configManager = IoCManager.Resolve<IConfigurationManager>();
             if (configManager.GetCVar(CCVars.RestrictedNames))
             {
                 name = Regex.Replace(name, @"[^А-Яа-яёЁ0-9' -]", string.Empty); // Corvax: Only cyrillic names
@@ -515,7 +507,7 @@ namespace Content.Shared.Preferences
             };
 
             var priorities = new Dictionary<string, JobPriority>(JobPriorities
-                .Where(p => prototypeManager.HasIndex<JobPrototype>(p.Key) && p.Value switch
+                .Where(p => prototypeManager.TryIndex<JobPrototype>(p.Key, out var job) && job.SetPreference && p.Value switch
                 {
                     JobPriority.Never => false, // Drop never since that's assumed default.
                     JobPriority.Low => true,
@@ -525,7 +517,7 @@ namespace Content.Shared.Preferences
                 }));
 
             var antags = AntagPreferences
-                .Where(prototypeManager.HasIndex<AntagPrototype>)
+                .Where(id => prototypeManager.TryIndex<AntagPrototype>(id, out var antag) && antag.SetPreference)
                 .ToList();
 
             var traits = TraitPreferences
@@ -571,6 +563,13 @@ namespace Content.Shared.Preferences
             return voice.RoundStart && sex == Sex.Unsexed || (voice.Sex == sex || voice.Sex == Sex.Unsexed);
         }
         // Corvax-TTS-End
+
+        public ICharacterProfile Validated(IConfigurationManager configManager, IPrototypeManager prototypeManager, string[] sponsorPrototypes)
+        {
+            var profile = new HumanoidCharacterProfile(this);
+            profile.EnsureValid(configManager, prototypeManager, sponsorPrototypes); // Corvax-Sponsors
+            return profile;
+        }
 
         // sorry this is kind of weird and duplicated,
         /// working inside these non entity systems is a bit wack
