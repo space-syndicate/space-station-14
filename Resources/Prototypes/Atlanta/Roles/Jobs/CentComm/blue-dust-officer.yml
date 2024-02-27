@@ -1,0 +1,21 @@
+- type: job
+  id: BlueDustOfficer
+  name: job-name-blue-dust-officer
+  description: job-description-blue-dust-officer
+  playTimeTracker: JobBlueDustOfficer
+  startingGear: BlueDustOfficerGear
+  icon: "JobIconBlueDustOfficer"
+  supervisors: job-supervisors-blue-dust-officer
+
+- type: startingGear
+  id: BlueDustOfficerGear
+  equipment:
+    jumpsuit: ClothingUniformJumpsuitMercenary
+    back: ClothingBackpackFilled
+    shoes: ClothingShoesBootsMercFilled
+    id: CaptainIDCard
+    ears: ClothingHeadsetGrey
+    gloves: ClothingHandsGlovesMercFingerless
+  innerClothingSkirt: ClothingUniformJumpsuitMercenary
+  satchel: ClothingBackpackFilled
+  duffelbag: ClothingBackpackFilled
