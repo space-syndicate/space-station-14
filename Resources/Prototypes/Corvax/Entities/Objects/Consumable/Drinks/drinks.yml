@@ -120,8 +120,7 @@
 - type: entity
   parent: DrinkGlassBase
   id: DrinkKvassGlass
-  name: kvass glass
-  description: A cool refreshing drink with a taste of socialism.
+  suffix: kvass
   components:
     - type: SolutionContainerManager
       solutions:
