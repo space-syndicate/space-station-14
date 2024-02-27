@@ -1,4 +1,9 @@
 - type: entity
+  id: AIEntry
+  components:
+  - type: AIEntry
+
+- type: entity
   abstract: true
   save: false
   id: AIBase
@@ -24,12 +29,12 @@
       containers:
         tools: !type:Container
           ents: [ ]
+        hand 1: !type:Container
     - type: CommunicationsConsole
       title: ai-station-console
       color: "#93e2ff"
       delay: 5
       global: false
-      showAuthor: false
     # Innate door remotes (bolting, emergency access, etc)
     - type: InnateItem
       afterInteract: false
@@ -64,16 +69,6 @@
         - AllAccess
     # Wow, this is a lot of reoccurrances
     - type: IntrinsicRadioReceiver
-      channels:
-        - Binary
-        - Common
-        - Command
-        - CentCom
-        - Engineering
-        - Medical
-        - Science
-        - Security
-        - Service
     - type: IntrinsicRadioTransmitter
       channels:
         - Binary
@@ -110,6 +105,17 @@
   name: AI Core
   description: Host for an AI. Likely more A than I.
   components:
+    - type: GenericVisualizer
+      visuals:
+        enum.PowerDeviceVisuals.Powered:
+          enum.PowerDeviceVisualLayers.Powered:
+            True: { visible: true }
+            False: { visible: false }
+    - type: ExtensionCableReceiver
+    - type: LitOnPowered
+    - type: ApcPowerReceiver
+      powerLoad: 10000
+    - type: ActivatableUIRequiresPower
     - type: AIEyePower
     # Can't move
     - type: MovementSpeedModifier
@@ -127,6 +133,14 @@
             - MachineMask
           layer:
             - MachineLayer
+    - type: Destructible
+      thresholds:
+      - trigger:
+          !type:DamageTrigger
+          damage: 1000
+        behaviors:
+        - !type:DoActsBehavior
+          acts: [ "Destruction" ]
     - type: Anchorable
       delay: 5
     - type: Transform
@@ -147,14 +161,6 @@
       radius: 3
       energy: 1.25
       color: "#9dc5c9"
-    - type: PowerConsumer
-      voltage: Medium
-      drawRate: 1000
-    - type: NodeContainer
-      examinable: true
-      nodes:
-        input: !type:CableDeviceNode
-          nodeGroupID: MVPower
     - type: PowerNetworkBattery
       maxChargeRate: 1000
       canCharge: true
@@ -178,8 +184,7 @@
       drawdepth: Mobs
       noRot: true
       layers:
-        - map: ["enum.DamageStateVisualLayers.Base"]
-          state: 4
+        - state: 4
         - map: ["enum.PowerDeviceVisualLayers.Powered"]
           state: blue
           shader: unshaded
@@ -295,16 +300,14 @@
   id: AIEye
   parent: AIBase
   name: Invalid AI name
-  noSpawn: true
   save: false
   components:
     - type: AIEye
     # Only ghosts can see the eye
     - type: Visibility
-      layer: 4
-    # Can see through walls for now
-    - type: Eye
-      drawFov: false
+    # Can't see through walls for now
+    #- type: Eye
+    #  drawFov: false
     - type: Input
       context: "human"
     - type: MobMover
@@ -351,3 +354,69 @@
         #     priority: -3
         #     event: !type:ToggleIntrinsicUIEvent
 
+
+- type: entity
+  parent: Drone
+  id: SAIDrone
+  name: AI Drone
+  description: The unit of station AI. You not ought to break it, because AI can close you. Maybe. Just don't touch, okay?
+  components:
+  - type: StationAI
+    lawsId: LawsStationAIDefault
+  - type: UserInterface
+    interfaces:
+    - key: enum.CommunicationsConsoleUiKey.Key
+      type: CommunicationsConsoleBoundUserInterface
+    - key: enum.AICameraListUiKey.Key
+      type: AICameraListBoundUserInterface
+    - key: enum.SiliconLawsUiKey.Key
+      type: SiliconLawBoundUserInterface
+    - key: enum.StrippingUiKey.Key
+      type: StrippableBoundUserInterface
+  - type: IntrinsicUI
+    uis:
+    - key: enum.CommunicationsConsoleUiKey.Key
+      toggleAction: ActionAGhostShowCommunications
+  - type: CommunicationsConsole
+    title: ai-station-console
+    color: "#93e2ff"
+    delay: 5
+    global: false
+  - type: InnateItem
+    afterInteract: false
+    startingPriority: 25
+    slots:
+      opencloseremote: ActionOpenCloseRemote
+      boltremote: ActionToggleBolts
+      emergencyaccessremote: ActionToggleEmergencyAccess
+  - type: IntrinsicRadioReceiver
+  - type: IntrinsicRadioTransmitter
+    channels:
+    - Binary
+    - Common
+    - Command
+    - CentCom
+    - Engineering
+    - Medical
+    - Science
+    - Security
+    - Service
+  - type: ActiveRadio
+    channels:
+    - Binary
+    - Common
+    - Command
+    - CentCom
+    - Engineering
+    - Medical
+    - Science
+    - Security
+    - Service
+  - type: StationAiDrone
+  - type: InputMover
+  - type: AIEyePower
+  - type: ContainerContainer
+    containers:
+      tools: !type:Container
+        ents: [ ]
+      hand 1: !type:Container

@@ -1,6 +1,6 @@
 ent-BaseArachnidOrgan = { ent-BaseItem }
     .desc = { ent-BaseItem.desc }
-ent-OrganArachnidStomach = Stomach
+ent-OrganArachnidStomach = stomach
     .desc = Gross. This is hard to stomach.
 ent-OrganArachnidLungs = lungs
     .desc = Filters oxygen from an atmosphere... just more greedily.

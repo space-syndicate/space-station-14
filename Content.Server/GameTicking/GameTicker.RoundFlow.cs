@@ -135,7 +135,7 @@ namespace Content.Server.GameTicking
                     _mapManager.AddUninitializedMap(toLoad);
                 }
 
-                LoadGameMap(map, toLoad, null);
+                LoadGameMap(map, toLoad, null, ignoreOffset: map.ID.StartsWith("Rb"));
             }
         }
 
@@ -149,13 +149,13 @@ namespace Content.Server.GameTicking
         /// <param name="loadOptions">Map loading options, includes offset.</param>
         /// <param name="stationName">Name to assign to the loaded station.</param>
         /// <returns>All loaded entities and grids.</returns>
-        public IReadOnlyList<EntityUid> LoadGameMap(GameMapPrototype map, MapId targetMapId, MapLoadOptions? loadOptions, string? stationName = null)
+        public IReadOnlyList<EntityUid> LoadGameMap(GameMapPrototype map, MapId targetMapId, MapLoadOptions? loadOptions, string? stationName = null, bool ignoreOffset = false)
         {
             // Okay I specifically didn't set LoadMap here because this is typically called onto a new map.
             // whereas the command can also be used on an existing map.
             var loadOpts = loadOptions ?? new MapLoadOptions();
 
-            var ev = new PreGameMapLoad(targetMapId, map, loadOpts);
+            var ev = new PreGameMapLoad(targetMapId, map, loadOpts, ignoreOffset);
             RaiseLocalEvent(ev);
 
             var gridIds = _map.LoadMap(targetMapId, ev.GameMap.MapPath.ToString(), ev.Options);
@@ -386,10 +386,10 @@ namespace Content.Server.GameTicking
 
             // This ordering mechanism isn't great (no ordering of minds) but functions
             var listOfPlayerInfoFinal = listOfPlayerInfo.OrderBy(pi => pi.PlayerOOCName).ToArray();
+            var sound = _audio.GetSound(new SoundCollectionSpecifier("RoundEnd"));
 
             RaiseNetworkEvent(new RoundEndMessageEvent(gamemodeTitle, roundEndText, roundDuration, RoundId,
-                listOfPlayerInfoFinal.Length, listOfPlayerInfoFinal, LobbySong,
-                new SoundCollectionSpecifier("RoundEnd").GetSound()));
+                listOfPlayerInfoFinal.Length, listOfPlayerInfoFinal, LobbySong, sound));
             RaiseLocalEvent(new RoundEndedEvent(RoundId, roundDuration)); // Corvax
         }
 
@@ -525,7 +525,7 @@ namespace Content.Server.GameTicking
             _playerGameStatuses.Clear();
             foreach (var session in _playerManager.Sessions)
             {
-                _playerGameStatuses[session.UserId] = LobbyEnabled ?  PlayerGameStatus.NotReadyToPlay : PlayerGameStatus.ReadyToPlay;
+                _playerGameStatuses[session.UserId] = LobbyEnabled ? PlayerGameStatus.NotReadyToPlay : PlayerGameStatus.ReadyToPlay;
             }
         }
 
@@ -540,7 +540,7 @@ namespace Content.Server.GameTicking
 
             RaiseNetworkEvent(new TickerLobbyCountdownEvent(_roundStartTime, Paused));
 
-            _chatManager.DispatchServerAnnouncement(Loc.GetString("game-ticker-delay-start", ("seconds",time.TotalSeconds)));
+            _chatManager.DispatchServerAnnouncement(Loc.GetString("game-ticker-delay-start", ("seconds", time.TotalSeconds)));
 
             return true;
         }
@@ -664,12 +664,15 @@ namespace Content.Server.GameTicking
         public readonly MapId Map;
         public GameMapPrototype GameMap;
         public MapLoadOptions Options;
+        // Atlanta moment
+        public readonly bool IgnoreOffset;
 
-        public PreGameMapLoad(MapId map, GameMapPrototype gameMap, MapLoadOptions options)
+        public PreGameMapLoad(MapId map, GameMapPrototype gameMap, MapLoadOptions options, bool ignoreOffset)
         {
             Map = map;
             GameMap = gameMap;
             Options = options;
+            IgnoreOffset = ignoreOffset;
         }
     }
 

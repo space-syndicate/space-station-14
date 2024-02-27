@@ -21,7 +21,8 @@ public sealed class TypingIndicatorSystem : SharedTypingIndicatorSystem
     public override void Initialize()
     {
         base.Initialize();
-        _cfg.OnValueChanged(CCVars.ChatShowTypingIndicator, OnShowTypingChanged);
+
+        Subs.CVar(_cfg, CCVars.ChatShowTypingIndicator, OnShowTypingChanged);
     }
 
     public void ClientChangedChatText()
@@ -93,7 +94,7 @@ public sealed class TypingIndicatorSystem : SharedTypingIndicatorSystem
         // Corvax-TypingIndicator-End
 
         // check if player controls any pawn
-        if (_playerManager.LocalPlayer?.ControlledEntity == null)
+        if (_playerManager.LocalEntity == null)
             return;
 
         // Corvax-TypingIndicator-Start

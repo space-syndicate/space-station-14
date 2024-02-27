@@ -21,7 +21,7 @@
   - type: StorageFill
     contents:
     - id: BoxSurvivalEngineering
-    - id: WeaponShotgunDoubleBarreled
+    - id: WeaponShotgunSpas12
     - id: BoxShotgunIncendiary
       amount: 2
     - id: GrenadeFlashBang
@@ -69,7 +69,7 @@
   components:
   - type: StorageFill
     contents:
-      - id: WeaponSubMachineGunC20r
+      - id: WeaponSubMachineGunMP7
       - id: MagazinePistolSubMachineGun
         amount: 2
 #     - id: SMGSuppressor
@@ -297,7 +297,7 @@
   - type: StorageFill
     contents:
       - id: BoxSurvivalSyndicate
-      - id: WeaponPistolViper
+      - id: WeaponPistolHIB88M4
       - id: PinpointerSyndicateNuclear
       - id: DeathAcidifierImplanter
 
@@ -315,7 +315,7 @@
       - id: SawAdvanced
       - id: Cautery
       - id: CombatKnife
-      - id: WeaponPistolViper
+      - id: WeaponPistolHIB88M4
       - id: PinpointerSyndicateNuclear
       - id: HandheldHealthAnalyzer
       - id: CombatMedipen

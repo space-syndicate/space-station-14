@@ -1,7 +1,10 @@
 using System.Diagnostics.CodeAnalysis;
+using Content.Shared.Administration;
+using Content.Shared.Administration.Managers;
 using Content.Shared.Players.PlayTimeTracking;
 using Content.Shared.Roles.Jobs;
 using JetBrains.Annotations;
+using Robust.Shared.Player;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Serialization;
 using Robust.Shared.Serialization.TypeSerializers.Implementations.Custom.Prototype;
@@ -69,6 +72,13 @@ namespace Content.Shared.Roles
         [DataField("inverted")] public bool Inverted;
     }
 
+    [UsedImplicitly]
+    [Serializable, NetSerializable]
+    public sealed partial class AdminRoleRequirement : JobRequirement
+    {
+        [DataField("role")] public string Role = "";
+    }
+
     public static class JobRequirements
     {
         public static bool TryRequirementsMet(
@@ -76,7 +86,9 @@ namespace Content.Shared.Roles
             Dictionary<string, TimeSpan> playTimes,
             [NotNullWhen(false)] out FormattedMessage? reason,
             IEntityManager entManager,
-            IPrototypeManager prototypes)
+            IPrototypeManager prototypes,
+            bool canPlayBrokenAi = false,
+            bool canPlayLoyalAi = false)
         {
             reason = null;
             if (job.Requirements == null)
@@ -84,7 +96,7 @@ namespace Content.Shared.Roles
 
             foreach (var requirement in job.Requirements)
             {
-                if (!TryRequirementMet(requirement, playTimes, out reason, entManager, prototypes))
+                if (!TryRequirementMet(requirement, playTimes, out reason, entManager, prototypes, canPlayBrokenAi, canPlayLoyalAi))
                     return false;
             }
 
@@ -99,7 +111,9 @@ namespace Content.Shared.Roles
             Dictionary<string, TimeSpan> playTimes,
             [NotNullWhen(false)] out FormattedMessage? reason,
             IEntityManager entManager,
-            IPrototypeManager prototypes)
+            IPrototypeManager prototypes,
+            bool canPlayBrokenAi = false,
+            bool canPlayLoyalAi = false)
         {
             reason = null;
 
@@ -162,7 +176,7 @@ namespace Content.Shared.Roles
                             return true;
 
                         reason = FormattedMessage.FromMarkup(Loc.GetString(
-                              "role-timer-overall-insufficient", 
+                              "role-timer-overall-insufficient",
                               ("time", Math.Ceiling(overallDiff))));
                         return false;
                     }
@@ -217,6 +231,29 @@ namespace Content.Shared.Roles
                         }
 
                         return true;
+                    }
+                case AdminRoleRequirement roleRequirement:
+                    switch (roleRequirement.Role)
+                    {
+                        case "BrokenAi":
+                            if (canPlayBrokenAi)
+                            {
+                                return true;
+                            }
+
+                            reason = FormattedMessage.FromMarkup(Loc.GetString("role-ai-block"));
+                            return false;
+                        case "LoyalAi":
+                            if (canPlayLoyalAi)
+                            {
+                                return true;
+                            }
+
+                            reason = FormattedMessage.FromMarkup(Loc.GetString("role-ai-block"));
+                            return false;
+                        default:
+                            reason = FormattedMessage.FromMarkup("Unknown role id. Send report to developers.");
+                            return false;
                     }
                 default:
                     throw new NotImplementedException();

@@ -20,7 +20,7 @@ void fragment() {
 		COLOR = color;
 	}
 	else {
-		
+
         	highp float ratio = 1.0 - pow((distance - minRange) / bufferRange, gradient);
 		COLOR = vec4(color.x, color.y, color.z, ratio);
 	}

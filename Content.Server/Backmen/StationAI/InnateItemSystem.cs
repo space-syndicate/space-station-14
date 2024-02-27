@@ -3,6 +3,7 @@ using Content.Shared.Backmen.StationAI.Events;
 using Content.Shared.Interaction;
 using Content.Shared.Mind.Components;
 using Content.Shared.Tag;
+using Robust.Shared.Player;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Utility;
 
@@ -18,8 +19,17 @@ public sealed partial class InnateItemSystem : EntitySystem
         base.Initialize();
 
         SubscribeLocalEvent<InnateItemComponent, MindAddedMessage>(OnMindAdded);
+        SubscribeLocalEvent<InnateItemComponent, PlayerAttachedEvent>(OnPlayerAttached);
         SubscribeLocalEvent<InnateItemComponent, InnateAfterInteractActionEvent>(StartAfterInteract);
         SubscribeLocalEvent<InnateItemComponent, InnateBeforeInteractActionEvent>(StartBeforeInteract);
+    }
+
+    private void OnPlayerAttached(Entity<InnateItemComponent> ent, ref PlayerAttachedEvent args)
+    {
+        if (!ent.Comp.AlreadyInitialized)
+            RefreshItems(ent, ent);
+
+        ent.Comp.AlreadyInitialized = true;
     }
 
     private void OnMindAdded(EntityUid uid, InnateItemComponent component, MindAddedMessage args)
@@ -30,7 +40,7 @@ public sealed partial class InnateItemSystem : EntitySystem
         component.AlreadyInitialized = true;
     }
 
-    private void RefreshItems(EntityUid uid, InnateItemComponent component)
+    public void RefreshItems(EntityUid uid, InnateItemComponent component)
     {
         int priority = component.StartingPriority ?? 0;
         foreach (var (key, sourceItem) in component.Slots)

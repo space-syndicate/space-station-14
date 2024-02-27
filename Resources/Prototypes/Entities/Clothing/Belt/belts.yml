@@ -30,6 +30,7 @@
         - Multitool
         - AppraisalTool
         - JawsOfLife
+        - GPS
       components:
         - SprayPainter
         - NetworkConfigurator
@@ -178,7 +179,7 @@
         - SmokeOnTrigger
         - Flash
         - Handcuff
-        - RangedMagazine
+        - BallisticAmmoProvider
         - Ammo
   - type: ItemMapper
     mapLayers:
@@ -220,8 +221,6 @@
         - WetFloorSign
         - HolosignProjector
         - Plunger
-        - LightReplacer
-        - JanicartKeys
       components:
         - LightReplacer
   - type: ItemMapper
@@ -305,6 +304,17 @@
   - type: Appearance
 
 - type: entity
+  parent: ClothingBeltMedical
+  id: ClothingBeltMedicalEMT
+  name: EMT belt
+  description: Perfect for holding various equipment for medical emergencies.
+  components:
+  - type: Sprite
+    sprite: Clothing/Belt/emt.rsi
+  - type: Clothing
+    sprite: Clothing/Belt/emt.rsi
+
+- type: entity
   parent: ClothingBeltStorageBase
   id: ClothingBeltPlant
   name: botanical belt
@@ -386,6 +396,7 @@
         - Packet
         - Skewer
         - MonkeyCube
+        - Mayo
       components:
         - Mousetrap
         - Smokable
@@ -454,6 +465,7 @@
         - Radio
         - Sidearm
         - MagazinePistol
+        - MagazineMagnum
       components:
         - Stunbaton
         - FlashOnTrigger

@@ -1,0 +1,38 @@
+- type: entity
+  id: RoyalBattlePlayerPoint
+  name: player royal battle spawner
+  placement:
+    mode: SnapgridCenter
+  parent: MarkerBase
+  components:
+  - type: Sprite
+    layers:
+    - state: green
+  - type: RbPlayerSpawner
+
+- type: entity
+  id: RoyalBattleCenterPoint
+  placement:
+    mode: SnapgridCenter
+  parent: MarkerBase
+  components:
+  - type: Sprite
+    layers:
+    - state: pink
+  - type: RbZoneCenter
+
+- type: entity
+  id: RoyalBattleRandomCratePoint
+  name: random crate point
+  description: Randomly here spawns some crate.
+  suffix: point
+  placement:
+    mode: SnapgridCenter
+  parent: MarkerBase
+  components:
+  - type: Sprite
+    layers:
+    - state: red
+      opacity: 0.5
+  - type: RandomRbCrateSpawner
+    proto: RandomCrateRoyalBattle

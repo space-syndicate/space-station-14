@@ -22,13 +22,16 @@
       behaviors:
       - !type:DoActsBehavior
         acts: [ "Destruction" ]
+      - !type:PlaySoundBehavior
+        sound:
+          collection: WindowShatter
     - trigger:
         !type:DamageTrigger
         damage: 75
       behaviors:
       - !type:PlaySoundBehavior
         sound:
-          collection: GlassBreak
+          collection: WindowShatter
       - !type:SpawnEntitiesBehavior
         spawn:
           ShardGlassReinforced:
@@ -104,12 +107,12 @@
       behaviors:
       - !type:PlaySoundBehavior
         sound:
-          collection: GlassBreak
+          collection: WindowShatter
       - !type:SpawnEntitiesBehavior
         spawn:
           ShardGlassReinforced:
             min: 1
-            max: 2
+            max: 1
       - !type:DoActsBehavior
         acts: [ "Destruction" ]
   - type: StaticPrice

@@ -778,8 +778,8 @@
   - type: ConditionalSpawner
     prototypes:
     - MobPenguin
-    
-    
+
+
 - type: entity
   name: Hellspawn Spawner
   id: SpawnMobHellspawn
@@ -793,7 +793,7 @@
   - type: ConditionalSpawner
     prototypes:
       - MobHellspawn
-      
+
 - type: entity
   name: ore crab spawner
   id: SpawnMobOreCrab
@@ -806,10 +806,10 @@
       sprite: Mobs/Elemental/orecrab.rsi
   - type: RandomSpawner
     prototypes:
-      - MobUraniumCrab
-      - MobIronCrab
-      - MobQuartzCrab
-      - MobSilverCrab
+      - MobSpawnCrabUranium
+      - MobSpawnCrabIron
+      - MobSpawnCrabQuartz
+      - MobSpawnCrabSilver
 
 - type: entity
   name: luminous person spawner
@@ -852,3 +852,19 @@
   - type: ConditionalSpawner
     prototypes:
     - MobLuminousEntity
+
+# Atlanta
+- type: entity
+  name: AI Core spawner
+  id: SpawnStationAI
+  parent: MarkerBase
+  components:
+  - type: Sprite
+    layers:
+    - state: green
+    - state: ai
+    - state: jobicon
+      sprite: Backmen/Markers/jobs.rsi
+  - type: ConditionalSpawner
+    prototypes:
+    - AICore

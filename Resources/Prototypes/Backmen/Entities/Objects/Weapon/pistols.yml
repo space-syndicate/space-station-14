@@ -1,0 +1,235 @@
+# laser
+- type: entity
+  name: highTech laser pistol
+  parent: BaseWeaponBatterySmall
+  id: WeaponHighTechLaserPistol
+  suffix: Пистолет
+  description: A Earth Government standard issue laser pistol, use by army and police.
+  components:
+  - type: Gun
+    soundGunshot:
+      path: /Audio/Weapons/Guns64/EG-P/shot.ogg
+  - type: Sprite
+    sprite: Backmen/Objects/Weapons/Gunsx64/Battery/EG-P.rsi
+    layers:
+    - state: base
+      map: ["enum.GunVisualLayers.Base"]
+    - state: mag-unshaded-2
+      map: ["enum.GunVisualLayers.MagUnshaded"]
+      shader: unshaded
+  - type: HitscanBatteryAmmoProvider
+    proto: RedLaser
+    fireCost: 62.5
+  - type: MagazineVisuals
+    magState: mag
+    steps: 3
+    zeroVisible: true
+  - type: Appearance
+
+# firearm
+# magazines start
+- type: entity
+  id: MagazineMagnumPistol
+  name: pistol magazine (.50AE)
+  parent: BaseItem
+  components:
+  - type: Tag
+    tags:
+    - MagazineMagnumPistol
+  - type: BallisticAmmoProvider
+    mayTransfer: true
+    proto: CartridgeMagnum
+    whitelist:
+      tags:
+      - CartridgeMagnum
+    capacity: 9
+  - type: Item
+    size: Small
+  - type: ContainerContainer
+    containers:
+      ballistic-ammo: !type:Container
+  - type: Sprite
+    sprite: Backmen/Objects/Weapons/Gunsx64/Magazines/Magnum/magnum_pistol_mag.rsi
+    layers:
+    - state: base
+      map: ["enum.GunVisualLayers.Base"]
+    - state: mag-1
+      map: ["enum.GunVisualLayers.Mag"]
+  - type: MagazineVisuals
+    magState: mag
+    steps: 6
+    zeroVisible: false
+  - type: Appearance
+
+- type: entity
+  id: MagazineMagnumPistolAP
+  name: pistol magazine (.50AE AP)
+  parent: MagazineMagnumPistol
+  components:
+  - type: BallisticAmmoProvider
+    mayTransfer: true
+    proto: CartridgeMagnumAP
+    whitelist:
+      tags:
+      - CartridgeMagnum
+# magazines end
+- type: entity
+  name: desert eagle
+  parent: BaseWeaponPistol
+  id: WeaponPistolDesertEagle
+  suffix: Пистолет
+  description: A magnum chambered in .50AE that comes with a serious kick. This one is engraved, "Peace through superior firepower".
+  components:
+  - type: Sprite
+    sprite: Backmen/Objects/Weapons/Gunsx64/Pistols/deagle/big.rsi
+  - type: Item
+    sprite: Backmen/Objects/Weapons/Gunsx64/Pistols/deagle/tiny.rsi
+  - type: Gun
+    fireRate: 1
+    selectedMode: SemiAuto
+    availableModes:
+    - SemiAuto
+    soundGunshot:
+      path: /Audio/Weapons/Guns64/Pistols/deagle.ogg
+    soundEmpty:
+      path: /Audio/Weapons/Guns64/Pistols/deagle_empty.ogg
+  - type: ItemSlots
+    slots:
+      gun_magazine:
+        name: Magazine
+        startingItem: MagazineMagnumPistol
+        insertSound: /Audio/Weapons/Guns64/Pistols/deagle_reload.ogg
+        ejectSound: /Audio/Weapons/Guns64/Pistols/deagle_unload.ogg
+        priority: 2
+        whitelist:
+          tags:
+          - MagazineMagnumPistol
+      gun_chamber:
+        name: Chamber
+        startingItem: CartridgeMagnum
+        priority: 1
+        whitelist:
+          tags:
+          - CartridgeMagnum
+  - type: MagazineVisuals
+    magState: mag
+    steps: 1
+    zeroVisible: true
+  - type: ContainerContainer
+    containers:
+      gun_magazine: !type:ContainerSlot
+      gun_chamber: !type:ContainerSlot
+
+- type: entity
+  name: G-22
+  parent: BaseWeaponPistol
+  id: WeaponPistolG22
+  suffix: Пистолет
+  description: A popular police firearm in the modern day. Chambered in 9x19mm.
+  components:
+  - type: Sprite
+    sprite: Backmen/Objects/Weapons/Gunsx64/Pistols/glock22/big.rsi
+  - type: Item
+    sprite: Backmen/Objects/Weapons/Gunsx64/Pistols/glock22/tiny.rsi
+  - type: Gun
+    soundGunshot:
+      path: /Audio/Weapons/Guns64/Pistols/beretta_shot.ogg
+    soundEmpty:
+      path: /Audio/Weapons/Guns64/Pistols/beretta_empty.ogg
+  - type: ItemSlots
+    slots:
+      gun_magazine:
+        name: Magazine
+        startingItem: MagazinePistol
+        insertSound: /Audio/Weapons/Guns64/Pistols/beretta_reload.ogg
+        ejectSound: /Audio/Weapons/Guns64/Pistols/beretta_unload.ogg
+        priority: 2
+        whitelist:
+          tags:
+          - MagazinePistol
+          - MagazinePistolHighCapacity
+      gun_chamber:
+        name: Chamber
+        startingItem: CartridgePistol
+        priority: 1
+        whitelist:
+          tags:
+          - CartridgePistol
+  - type: MagazineVisuals
+    magState: mag
+    steps: 1
+    zeroVisible: true
+  - type: ContainerContainer
+    containers:
+      gun_magazine: !type:ContainerSlot
+      gun_chamber: !type:ContainerSlot
+
+- type: entity
+  name: G-22
+  parent: WeaponPistolG22
+  id: WeaponPistolG22NonLethal
+  suffix: Non-lethal
+  components:
+  - type: ItemSlots
+    slots:
+      gun_magazine:
+        name: Magazine
+        startingItem: MagazinePistolRubber
+        insertSound: /Audio/Weapons/Guns64/Pistols/beretta_reload.ogg
+        ejectSound: /Audio/Weapons/Guns64/Pistols/beretta_unload.ogg
+        priority: 2
+        whitelist:
+          tags:
+          - MagazinePistol
+          - MagazinePistolHighCapacity
+      gun_chamber:
+        name: Chamber
+        startingItem: CartridgePistol
+        priority: 1
+        whitelist:
+          tags:
+          - CartridgePistol
+
+- type: entity
+  name: HI Browning-88 M4
+  parent: BaseWeaponPistol
+  id: WeaponPistolHIB88M4
+  suffix: Пистолет
+  description: An uncommon handgun used for self-defense but it is often used by terrorist organizations.
+  components:
+  - type: Sprite
+    sprite: Backmen/Objects/Weapons/Gunsx64/Pistols/hi_power_br/big.rsi
+  - type: Item
+    sprite: Backmen/Objects/Weapons/Gunsx64/Pistols/hi_power_br/tiny.rsi
+  - type: Gun
+    soundGunshot:
+      path: /Audio/Weapons/Guns64/Pistols/vp70_shot.ogg
+    soundEmpty:
+      path: /Audio/Weapons/Guns64/Pistols/vp70_empty.ogg
+  - type: ItemSlots
+    slots:
+      gun_magazine:
+        name: Magazine
+        startingItem: MagazinePistol
+        insertSound: /Audio/Weapons/Guns64/Pistols/vp70_reload.ogg
+        ejectSound: /Audio/Weapons/Guns64/Pistols/vp70_unload.ogg
+        priority: 2
+        whitelist:
+          tags:
+          - MagazinePistol
+          - MagazinePistolHighCapacity
+      gun_chamber:
+        name: Chamber
+        startingItem: CartridgePistol
+        priority: 1
+        whitelist:
+          tags:
+          - CartridgePistol
+  - type: MagazineVisuals
+    magState: mag
+    steps: 1
+    zeroVisible: true
+  - type: ContainerContainer
+    containers:
+      gun_magazine: !type:ContainerSlot
+      gun_chamber: !type:ContainerSlot

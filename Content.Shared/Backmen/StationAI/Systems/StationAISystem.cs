@@ -25,25 +25,21 @@ public sealed class StationAISystem : EntitySystem
         SubscribeLocalEvent<StationAIComponent, IsUnequippingAttemptEvent>(OnAttempt);
         SubscribeLocalEvent<StationAIComponent, UpdateCanMoveEvent>(OnUpdateCanMove);
         SubscribeLocalEvent<StationAIComponent, ChangeDirectionAttemptEvent>(OnUpdateCanMove);
-        SubscribeLocalEvent<StationAIComponent, PullAttemptEvent>(OnPullAttempt);
 
         SubscribeLocalEvent<StationAIComponent, StrippingSlotButtonPressed>(OnStripEvent);
     }
 
     private void OnAttempt(EntityUid uid, StationAIComponent component, CancellableEntityEventArgs args)
     {
+        if (HasComp<StationAiDroneComponent>(uid))
+            return;
         args.Cancel();
     }
 
     private void OnUpdateCanMove(EntityUid uid, StationAIComponent component, CancellableEntityEventArgs args)
     {
-        if(!HasComp<AIEyeComponent>(uid))
+        if(!HasComp<AIEyeComponent>(uid) && !HasComp<StationAiDroneComponent>(uid))
             args.Cancel();
-    }
-
-    private void OnPullAttempt(EntityUid uid, StationAIComponent component, PullAttemptEvent args)
-    {
-        args.Cancelled = true;
     }
 
     private void OnStripEvent(EntityUid uid, Component component, StrippingSlotButtonPressed args)

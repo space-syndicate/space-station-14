@@ -1,0 +1,63 @@
+- type: entity
+  parent: CratePlastic
+  id: CrateRoyalBattle
+  name: royal battle crate
+  components:
+  - type: RbCrateRandom
+    content: DefaultPacksPool
+
+- type: entity
+  parent: CrateWeaponSecure
+  id: PistolCrateRoyalBattle
+  name: royal battle pistol crate
+  components:
+  - type: RbCrateRandom
+    content: PistolPacksPool
+
+- type: entity
+  parent: CrateWeaponSecure
+  id: MgCrateRoyalBattle
+  name: royal battle machine guns crate
+  components:
+  - type: RbCrateRandom
+    content: MgPacksPool
+
+- type: entity
+  parent: CrateWeaponSecure
+  id: RifleCrateRoyalBattle
+  name: royal battle rifles crate
+  components:
+  - type: RbCrateRandom
+    content: RiflePacksPool
+
+- type: entity
+  parent: CrateWeaponSecure
+  id: ShotgunCrateRoyalBattle
+  name: royal battle shotguns crate
+  components:
+  - type: RbCrateRandom
+    content: ShotgunsPacksPool
+
+- type: entity
+  parent: CrateEngineeringSecure
+  id: MechanicCrateRoyalBattle
+  name: royal battle mechanic crate
+  components:
+  - type: RbCrateRandom
+    content: MechanicsPacksPool
+
+- type: entity
+  parent: CrateScienceSecure
+  id: ScienceCrateRoyalBattle
+  name: royal battle science crate
+  components:
+  - type: RbCrateRandom
+    content: SciencePacksPool
+
+- type: entity
+  parent: CrateMedicalSecure
+  id: MedicalCrateRoyalBattle
+  name: royal battle medical crate
+  components:
+  - type: RbCrateRandom
+    content: MedicalPacksPool

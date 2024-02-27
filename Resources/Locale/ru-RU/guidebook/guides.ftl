@@ -30,7 +30,9 @@ guide-entry-medical = Медицинский отдел
 guide-entry-medicaldoctor = Врач
 guide-entry-chemist = Химик
 guide-entry-medicine = Медицина
-guide-entry-brute = Продвинутое лечение механических повреждений
+guide-entry-brute =
+    Продвинутое лечение
+    механических повреждений
 guide-entry-botanicals = Ботаника
 guide-entry-cloning = Клонирование
 guide-entry-cryogenics = Криогеника
@@ -48,6 +50,7 @@ guide-entry-cyborgs = Киборги
 guide-entry-security = Безопасность станции
 guide-entry-forensics = Криминалистика
 guide-entry-defusal = Обезвреживание крупной бомбы
+guide-entry-criminal-records = Криминальные записи
 guide-entry-antagonists = Антагонисты
 guide-entry-nuclear-operatives = Ядерные оперативники
 guide-entry-traitors = Предатели

@@ -1,3 +1,4 @@
+using Content.Server.Body.Systems;
 using Content.Shared.Destructible;
 using Content.Shared.Hands.Components;
 using Content.Shared.Hands.EntitySystems;
@@ -20,12 +21,12 @@ namespace Content.Server.Tools.Innate
         public override void Initialize()
         {
             base.Initialize();
-            SubscribeLocalEvent<InnateToolComponent, ComponentStartup>(OnStartup);
+            SubscribeLocalEvent<InnateToolComponent, MapInitEvent>(OnStartup, after: new []{ typeof(BodySystem) });
             SubscribeLocalEvent<InnateToolComponent, ComponentShutdown>(OnShutdown);
             SubscribeLocalEvent<InnateToolComponent, DestructionEventArgs>(OnDestroyed);
         }
 
-        private void OnStartup(EntityUid uid, InnateToolComponent component, ComponentStartup args)
+        private void OnStartup(EntityUid uid, InnateToolComponent component, MapInitEvent args)
         {
             if (component.Tools.Count == 0)
                 return;

@@ -12,3 +12,10 @@ ent-ActionToggleEmergencyAccess = Включить/выключить авари
     .desc = { "" }
 ai-station-console = ИИ станции
 job-name-sai = ИИ станции
+
+drone-wait-delay = Дрон был воспроизведён совсем недавно. Подождите, пока соберётся слежующий юнит.
+
+ent-ActionAIDroneChange = Переключает управление дроном.
+    .desc = { "Если дрон не был собран ещё, то у ядра появит" }
+ent-AIEyeReturnAction = Возвращает Вас к Ядру.
+    .desc = { "" }

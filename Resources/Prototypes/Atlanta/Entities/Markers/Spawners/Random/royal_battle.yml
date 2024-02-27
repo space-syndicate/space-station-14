@@ -1,0 +1,65 @@
+- type: entity
+  parent: MarkerBase
+  id: RandomPistolCrateRoyalBattle
+  name: random pistol royal battle crate
+  components:
+  - type: Sprite
+    layers:
+    - state: blue
+  - type: RandomRbCrateSpawner
+    proto: PistolCrateRoyalBattle
+
+
+- type: entity
+  parent: MarkerBase
+  id: RandomMgCrateRoyalBattle
+  name: random machine gun royal battle crate
+  components:
+  - type: Sprite
+    layers:
+    - state: blue
+  - type: RandomRbCrateSpawner
+    proto: MgCrateRoyalBattle
+
+
+- type: entity
+  parent: MarkerBase
+  id: RandomRifleCrateRoyalBattle
+  name: random rifle royal battle crate
+  components:
+  - type: Sprite
+    layers:
+    - state: blue
+  - type: RandomRbCrateSpawner
+    proto: RifleCrateRoyalBattle
+
+
+- type: entity
+  parent: MarkerBase
+  id: RandomShotgunCrateRoyalBattle
+  name: random shotgun royal battle crate
+  components:
+  - type: Sprite
+    layers:
+    - state: blue
+  - type: RandomRbCrateSpawner
+    proto: ShotgunCrateRoyalBattle
+
+
+- type: entity
+  parent: MarkerBase
+  id: RandomCrateRoyalBattle
+  name: random royal battle crate
+  suffix: Spawner
+  description: Spawns some random crate. 100% SPAWNS EVERYTHING!
+  components:
+  - type: RandomSpawner
+    prototypes:
+    - SpawnPistolRoyalBattleCrate
+    - SpawnMgRoyalBattleCrate
+    - SpawnRifleRoyalBattleCrate
+    - SpawnShotgunRoyalBattleCrate
+    - SpawnMechanicRoyalBattleCrate
+    - SpawnScienceRoyalBattleCrate
+    - SpawnMedicalRoyalBattleCrate
+    offset: 0.0

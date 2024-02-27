@@ -1,0 +1,11 @@
+- type: gamePreset
+  id: RoyalBattle
+  alias:
+  - RoyalBattle
+  - rb
+  name: rb-title
+  description: rb-description
+  showInVote: true
+  supportedMaps: RoyalBattleMapPool
+  rules:
+  - RoyalBattleRule

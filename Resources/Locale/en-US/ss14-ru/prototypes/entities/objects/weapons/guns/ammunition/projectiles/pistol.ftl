@@ -7,4 +7,4 @@ ent-BulletPistolRubber = bullet (.35 auto rubber)
 ent-BulletPistolIncendiary = bullet (.35 auto incendiary)
     .desc = { ent-BaseBulletIncendiary.desc }
 ent-BulletPistolUranium = bullet (.35 auto uranium)
-    .desc = { ent-BaseBullet.desc }
+    .desc = { ent-BaseBulletUranium.desc }

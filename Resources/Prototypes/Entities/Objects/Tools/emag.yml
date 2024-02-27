@@ -26,3 +26,22 @@
     state: icon
   - type: Item
     sprite: Objects/Tools/emag.rsi
+
+# ai innate item
+- type: entity
+  id: BrokenAIEmag
+  name: ai emag
+  description: Emags target.
+  noSpawn: true
+  components:
+  - type: Emag
+    wiresImmune: true
+  - type: LimitedCharges
+    maxCharges: 1
+    charges: 1
+  - type: AutoRecharge
+  - type: Sprite
+    sprite: Objects/Tools/emag.rsi
+    state: icon
+  - type: Item
+    sprite: Objects/Tools/emag.rsi

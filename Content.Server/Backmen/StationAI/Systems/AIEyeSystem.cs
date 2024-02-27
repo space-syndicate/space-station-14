@@ -1,27 +1,19 @@
 using Content.Server.Mind;
 using Content.Server.Power.Components;
+using Content.Server.Roles;
 using Content.Server.Speech.Components;
-using Content.Server.Storage.Components;
 using Content.Shared.Actions;
 using Content.Shared.Backmen.StationAI;
+using Content.Shared.Backmen.StationAI.Components;
 using Content.Shared.Eye;
-using Content.Shared.Hands;
-using Content.Shared.Hands.EntitySystems;
-using Content.Shared.Interaction.Events;
-using Content.Shared.Inventory.Events;
-using Content.Shared.Item;
 using Content.Shared.Mind;
 using Content.Shared.Mind.Components;
 using Robust.Shared.Prototypes;
 using Content.Shared.Mobs;
 using Content.Shared.Mobs.Systems;
-using Content.Shared.Movement.Events;
-using Content.Shared.Physics.Pull;
-using Content.Shared.Random;
 using Content.Shared.Random.Helpers;
 using Content.Shared.Silicons.Laws;
 using Content.Shared.Silicons.Laws.Components;
-using Content.Shared.Throwing;
 using Robust.Shared.Audio;
 using Robust.Server.GameObjects;
 using Robust.Shared.Audio.Systems;
@@ -155,7 +147,14 @@ public sealed class AIEyePowerSystem : EntitySystem
     private void OnPowerUsed(EntityUid uid, AIEyePowerComponent component, AIEyePowerActionEvent args)
     {
         if (!_mindSystem.TryGetMind(args.Performer, out var mindId, out var mind))
-            return;
+        {
+            if (!TryComp<VisitingMindComponent>(args.Performer, out var mindVId) ||
+                mindVId!.MindId == null ||
+                !TryComp(mindVId.MindId.Value, out mind))
+                return;
+
+            mindId = mindVId.MindId.Value;
+        }
 
         if (!TryComp<StationAIComponent>(uid, out var ai))
             return;
@@ -164,14 +163,24 @@ public sealed class AIEyePowerSystem : EntitySystem
         var projection = EntityManager.CreateEntityUninitialized(component.Prototype, coords);
         ai.ActiveEye = projection;
         EnsureComp<AIEyeComponent>(projection).AiCore = (uid, ai);
-        EnsureComp<StationAIComponent>(projection).SelectedLaw = ai.SelectedLaw;
+        var stationAi = EnsureComp<StationAIComponent>(projection);
+        stationAi.SelectedLaw = ai.SelectedLaw;
+        stationAi.AiDrone = ai.AiDrone;
+        stationAi.LastDroneSpawn = ai.LastDroneSpawn;
+        stationAi.Core = ai.Core;
         EnsureComp<SiliconLawBoundComponent>(projection);
         var core = MetaData(uid);
         // Consistent name
         _metaDataSystem.SetEntityName(projection, core.EntityName != "" ? core.EntityName : "Invalid AI");
         EntityManager.InitializeAndStartEntity(projection, coords.GetMapId(EntityManager));
 
+        if (TryComp<BrokenAiComponent>(uid, out _))
+        {
+            _entityManager.AddComponent<BrokenAiComponent>(projection);
+        }
+
         _transformSystem.AttachToGridOrMap(projection);
+        _mindSystem.UnVisit(mindId, mind);
         _mindSystem.Visit(mindId, projection, mind); // Mind swap
 
         args.Handled = true;
@@ -222,9 +231,6 @@ public sealed class AIEyePowerSystem : EntitySystem
         component.AiCore.Value.Comp.ActiveEye = EntityUid.Invalid;
     }
 
-    private static readonly SoundSpecifier AIDeath =
-        new SoundPathSpecifier("/Audio/Backmen/Machines/AI/borg_death.ogg");
-
     private void OnMobStateChanged(EntityUid uid, StationAIComponent component, MobStateChangedEvent args)
     {
         if (!_mobState.IsDead(uid))
@@ -235,6 +241,6 @@ public sealed class AIEyePowerSystem : EntitySystem
             ClearState(component.ActiveEye);
         }
 
-        _audioSystem.PlayPvs(AIDeath, uid);
+        _audioSystem.PlayPvs(component.AiDeath, uid);
     }
 }

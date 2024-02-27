@@ -32,4 +32,5 @@ roles-antag-thief-name = Thief
 roles-antag-thief-objective = Add some NT property to your personal collection without using violence.
 
 roles-antag-terminator-name = Terminator
-roles-antag-terminator-objective = Kill the target at all costs, the future depends on it.
+roles-antag-terminator-objective = Kill the target at all costs, the future depends on it.roles-antag-broken-ai-name = Broken AI
+roles-antag-broken-ai-objective = Kill every meat bag of bones, do anarhy!

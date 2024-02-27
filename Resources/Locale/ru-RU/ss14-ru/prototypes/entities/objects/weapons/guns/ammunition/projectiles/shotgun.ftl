@@ -16,3 +16,7 @@ ent-PelletShotgunFlare = дробина (.50 фальшфейер)
     .desc = { ent-BaseBullet.desc }
 ent-PelletShotgunUranium = дробина (.50 урановая)
     .desc = { ent-BaseBullet.desc }
+ent-PelletGrapeshot = картечина
+    .desc = { ent-BaseBullet.desc }
+ent-PelletGlass = стеклянный осколок
+    .desc = { ent-BaseBullet.desc }

@@ -1,0 +1,16 @@
+- type: gameMap
+  id: RbMain
+  mapName: Royal Battle Main
+  mapPath: /Maps/Atlanta/cluster_royal_battle.yml
+  minPlayers: 1
+  stations:
+    RbMain:
+      stationProto: StandardNanotrasenStation
+      components:
+      - type: StationNameSetup
+        mapNameTemplate: "Royal Battle Main"
+      - type: StationJobs
+        overflowJobs:
+        - Passenger
+        availableJobs:
+          Passenger: [-1, -1]

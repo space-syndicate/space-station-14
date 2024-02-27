@@ -1,0 +1,31 @@
+- type: rbCratePool
+  id: SciencePacksPool
+  weights:
+    ScienceModularGrenadeFlashPack: 0.3
+    ScienceSmokePack: 0.2
+    ScienceGasPack: 0.2
+    ScienceGrenadePack: 0.2
+
+- type: rbCratePack
+  id: ScienceModularGrenadeFlashPack
+  pack:
+  - ModularGrenade
+  - VoiceTrigger
+  - SignalTrigger
+  - TimerTrigger
+  - CableApcStack10
+
+- type: rbCratePack
+  id: ScienceSmokePack
+  pack:
+  - SmokeGrenade
+
+- type: rbCratePack
+  id: ScienceGasPack
+  pack:
+  - TearGasGrenade
+
+- type: rbCratePack
+  id: ScienceGrenadePack
+  pack:
+  - GrenadeStinger

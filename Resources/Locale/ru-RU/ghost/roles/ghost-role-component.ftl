@@ -1,21 +1,23 @@
 # also used in MakeGhostRuleWindow and MakeGhostRoleCommand
 ghost-role-component-default-rules =
     Вы не помните ничего из своей предыдущей жизни, если администратор не сказал вам обратное.
-    Вам разрешается помнить знания об игре в целом, например, как готовить, как использовать предметы и т.д.
-    Вам [color=red]НЕ[/color] разрешается помнить, имя, внешность и т.д. вашего предыдущего персонажа.
+                                     Вы не помните ничего из своей предыдущей жизни и не помните ничего из того, что узнали, будучи призраком.
+                                     Вам разрешается помнить знания об игре в целом, например, как готовить, как использовать предметы и т.д.
+                                     Вам [color=red]НЕ[/color] разрешается помнить, имя, внешность и т.д. вашего предыдущего персонажа.
 ghost-role-information-mouse-name = Мышь
 ghost-role-information-mouse-description = Голодная и озорная мышь.
 ghost-role-information-mothroach-name = Таракамоль
 ghost-role-information-mothroach-description = Милая озорная таракамоль.
 ghost-role-information-giant-spider-name = Гигантский паук
-ghost-role-information-giant-spider-description = Устройте хаос обитателям станции!
+ghost-role-information-giant-spider-description = Обитатели этой станции выглядят очень аппетитно, а ваша липкая паутина идеально подходит для их ловли!
 ghost-role-information-cognizine-description = Приобрело сознание с помощью магии когнизина.
 ghost-role-information-hamster-name = Хомяк
 ghost-role-information-hamster-description = Маленький ворчливый пушистик.
 ghost-role-information-hamlet-name = Хомяк Гамлет
 ghost-role-information-hamlet-description = Живёт на капитанском мостике, немного вспыльчив и всегда голоден.
 ghost-role-information-slimes-name = Слайм
-ghost-role-information-slimes-description = Обычный слайм, без особых нужд и интересов. Он просто существует.
+ghost-role-information-slimes-description = Обычный слайм, без особых нужд и интересов. Вы дружелюбны к окружающим.
+ghost-role-information-angry-slimes-name = Слайм
 ghost-role-information-angry-slimes-description = Всё вокруг раздражает ваши чувства, начинайте крушить!
 ghost-role-information-smile-name = Слайм Смайл
 ghost-role-information-smile-description = Самое милое создание в мире. Улыбайся, Смайл!
@@ -58,13 +60,13 @@ ghost-role-information-jonkbot-description = Искусственное вопл
 ghost-role-information-mimebot-name = Мимбот
 ghost-role-information-mimebot-description = Мимбот, ведёт себя как мим и не ведёт себя как грейтайдер.
 ghost-role-information-space-bear-name = Космический медведь
-ghost-role-information-space-bear-description = Вы медведь! Ведите себя соответствующе.
+ghost-role-information-space-bear-description = У вас урчит в животе, а эти люди выглядят очень аппетитно... Вот это пир!
 ghost-role-information-supplybot-name = Грузобот
 ghost-role-information-supplybot-description = Развозите грузы по станции.
 ghost-role-information-salvage-bear-name = Космический медведь на обломке в космосе
 ghost-role-information-salvage-bear-description = Защищайте сокровища космического обломка!
 ghost-role-information-space-kangaroo-name = Космический кенгуру
-ghost-role-information-space-kangaroo-description = Вы кенгуру! Делайте всё, что делают кенгуру.
+ghost-role-information-space-kangaroo-description = Заставьте экипаж отведать ваши острые когти!
 ghost-role-information-salvage-kangaroo-name = Космический кенгуру на обломке в космосе
 ghost-role-information-salvage-kangaroo-description = Защищайте сокровища космического обломка!
 ghost-role-information-space-spider-name = Космический паук
@@ -133,6 +135,9 @@ ghost-role-information-hellspawn-name = Адское отродье
 ghost-role-information-hellspawn-description = Вы - антагонист, несите смерть всем, кто не повинуется великой богине Нар'Си.
 ghost-role-information-Death-Squad-name = Оперативник Эскадрона смерти
 ghost-role-information-Death-Squad-description = Приготовьтесь к массированному наступлению на станцию. Ваша задача как тяжеловооружённого оперативника - уничтожить всё живое на своём пути. И никаких свидетелей.
+ghost-role-information-SyndiCat-name = СиндиКот
+ghost-role-information-SyndiCat-description = Вы - верный дрессированный питомец ядерных оперативников с микробомбой. Служите своему хозяину до самой смерти!
+ghost-role-information-SyndiCat-rules = Вы - верный дрессированный питомец ядерных оперативников с микробомбой. Служите своему хозяину до самой смерти!
 ghost-role-information-Cak-name = Корт
 ghost-role-information-Cak-description = Вы - любимое дитя шеф-повара. Вы - живой торт-кот.
 ghost-role-information-Cak-rules = Вы - живой съедобный сладкий кот. Ваша задача - найти своё место в этом мире, где всё хочет вас съесть.
@@ -142,3 +147,12 @@ ghost-role-information-BreadDog-rules = Вы - съедобная собака, 
 ghost-role-information-exterminator-name = Экстерминатор
 ghost-role-information-exterminator-description = Вас отправили в прошлое, чтобы уничтожить цель, имеющую огромную важность для будущего.
 ghost-role-information-exterminator-rules = Вы - антагонист и можете убивать всех, кто пытается вам помешать, но убийство цели - всегда ваш наивысший приоритет.
+ghost-role-information-space-ninja-name = Космический ниндзя
+ghost-role-information-space-ninja-description = Используйте хитрость и скрытность, чтобы устроить диверсию на станции.
+ghost-role-information-space-ninja-rules = Вы элитный наёмник Клана паука. От вас не требуется следовать поставленным целям, но ваша ЧЕСТЬ НИНДЗЯ требует хотя бы попытаться.
+ghost-role-information-syndicate-reinforcement-name = Агент Синдиката
+ghost-role-information-syndicate-reinforcement-description = Кому-то нужно подкрепление. Вы первый, кого Синдикат смог найти и послать на помощь.
+ghost-role-information-syndicate-reinforcement-rules = Действуют обычные правила антагонистов Синдиката. Работайте с тем, кто вас вызвал, и не причиняйте ему вреда.
+ghost-role-information-syndicate-monkey-reinforcement-name = Агент-обезьяна Синдиката
+ghost-role-information-syndicate-monkey-reinforcement-description = Кому-то нужно подкрепление. Вы, специально обученная обезьяна, поможете им.
+ghost-role-information-syndicate-monkey-reinforcement-rules = Действуют обычные правила антагонистов Синдиката. Работайте с тем, кто вас вызвал, и не причиняйте ему вреда.

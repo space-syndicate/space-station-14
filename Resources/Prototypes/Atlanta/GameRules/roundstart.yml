@@ -1,0 +1,6 @@
+- type: entity
+  id: RoyalBattleRule
+  parent: BaseGameRule
+  noSpawn: true
+  components:
+  - type: RoyalBattleRule

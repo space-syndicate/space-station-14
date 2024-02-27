@@ -12,17 +12,10 @@ public sealed partial class AIHealthOverlayEvent : InstantActionEvent
     }
 }
 
-[Serializable, NetSerializable]
-public sealed class NetworkedAIHealthOverlayEvent : EntityEventArgs
+public sealed partial class AIDroneChangeEvent : InstantActionEvent
 {
-    public NetEntity Performer = NetEntity.Invalid;
 
-    public NetworkedAIHealthOverlayEvent(NetEntity performer)
-    {
-        Performer = performer;
-    }
 }
-
 
 [Serializable, NetSerializable]
 public sealed class AICameraListMessage : BoundUserInterfaceMessage
