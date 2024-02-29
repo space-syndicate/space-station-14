@@ -12,4 +12,4 @@ comp-space-heater-ui-Low-power-consumption = Низкий
 comp-space-heater-ui-Medium-power-consumption = Средний
 comp-space-heater-ui-High-power-consumption = Высокий
 comp-space-heater-device-name = Термостат
-comp-space-heater-unanchored = { $device } не закреплён.
+comp-space-heater-unanchored = { CAPITALIZE($device) } не закреплён.
