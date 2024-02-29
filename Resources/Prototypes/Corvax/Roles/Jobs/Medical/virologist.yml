@@ -1,0 +1,10 @@
+- type: job
+  id: Virologist
+  name: job-name-virologist
+  playTimeTracker: JobVirologist
+  icon: "JobIconVirologist"
+  setPreference: false
+  overrideConsoleVisibility: true
+  access:
+  - Medical
+  - Maintenance

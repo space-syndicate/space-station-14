@@ -1,0 +1,12 @@
+- type: job
+  id: Brigmedic
+  name: job-name-brigmedic
+  playTimeTracker: JobBrigmedic
+  icon: "JobIconBrigmedic"
+  setPreference: false
+  overrideConsoleVisibility: true
+  access:
+  - Service
+  - Brig
+  - Medical
+  - Maintenance

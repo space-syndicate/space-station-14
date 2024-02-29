@@ -1,0 +1,13 @@
+- type: job
+  id: Pilot
+  name: job-name-pilot
+  playTimeTracker: JobPilot
+  icon: "JobIconPilot"
+  setPreference: false
+  overrideConsoleVisibility: true
+  access:
+  - Security
+  - Brig
+  - Maintenance
+  - Service
+  - External
