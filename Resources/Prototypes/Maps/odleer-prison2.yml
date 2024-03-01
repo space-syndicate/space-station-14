@@ -1,0 +1,46 @@
+- type: gameMap
+  id: OdleerPrison
+  mapName: 'Setras'
+  mapPath: /Uploaded/Odleer/Maps/odleer-prison.yml
+  minPlayers: 10
+  maxPlayers: 35
+  stations:
+    Oreol:
+      stationProto: StandardNanotrasenStation
+      components:
+        - type: StationNameSetup
+          mapNameTemplate: '{0} Setras Station {1}'
+          nameGenerator:
+            !type:NanotrasenNameGenerator
+            prefixCreator: 'TG'
+        - type: StationEmergencyShuttle
+          emergencyShuttlePath: /Maps/Shuttles/emergency_omega.yml
+        - type: StationJobs
+          overflowJobs:
+            - Passenger
+          availableJobs:
+            # service
+            HeadOfPersonnel: [ 1, 1 ] # первая цифра - количество раундстарт мест для данной роли, вторая цифра - количество мест для позднего присоединения.
+            Passenger: [ -1, -1 ]
+            ServiceWorker: [ 2, 2 ]
+            Botanist: [ 2, 2 ]
+            Chef: [ 2, 2 ]
+            Janitor: [ 1, 1 ]
+            Chaplain: [ 1, 1 ]
+            Reporter: [ 2, 2 ]
+            # engineering
+            ChiefEngineer: [ 1, 1 ]
+            AtmosphericTechnician: [ 1, 1 ]
+            StationEngineer: [ 2, 2 ]
+            TechnicalAssistant: [ 1, 1 ]
+            # medical
+            ChiefMedicalOfficer: [ 1, 1 ]
+            Paramedic: [ 1, 1 ]
+            Chemist: [ 1, 1 ]
+            MedicalDoctor: [ 2, 2 ]
+            MedicalIntern: [ 1, 1 ]
+            # security
+            HeadOfSecurity: [ 1, 1 ]
+            Warden: [ 2, 2 ]
+            SecurityOfficer: [ 12, 12 ]
+            SecurityCadet: [ 6, 6 ]
