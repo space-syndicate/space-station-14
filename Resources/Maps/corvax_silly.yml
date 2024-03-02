@@ -28256,6 +28256,28 @@ entities:
     - type: Transform
       pos: -19.5,2.5
       parent: 2
+- proto: SpawnPointLatejoin
+  entities:
+  - uid: 6143
+    components:
+    - type: Transform
+      pos: 0.5,-11.5
+      parent: 2
+  - uid: 6144
+    components:
+    - type: Transform
+      pos: 0.5,-12.5
+      parent: 2
+  - uid: 6145
+    components:
+    - type: Transform
+      pos: 0.5,-14.5
+      parent: 2
+  - uid: 6146
+    components:
+    - type: Transform
+      pos: 0.5,-15.5
+      parent: 2
 - proto: SpawnPointLawyer
   entities:
   - uid: 3431
