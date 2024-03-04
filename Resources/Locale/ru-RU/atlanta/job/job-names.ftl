@@ -1,1 +1,1 @@
-job-name-blue-dust-officer = Офицер Синей Пыли
+job-name-star-dust-officer = офицер звёздной пыли
