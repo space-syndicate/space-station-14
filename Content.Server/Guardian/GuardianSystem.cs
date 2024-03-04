@@ -200,7 +200,7 @@ namespace Content.Server.Guardian
             });
         }
 
-        private void OnDoAfter(EntityUid uid, GuardianCreatorComponent component, DoAfterEvent args)
+        public void OnDoAfter(EntityUid uid, GuardianCreatorComponent component, DoAfterEvent args)
         {
             if (args.Handled || args.Args.Target == null)
                 return;
