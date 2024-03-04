@@ -4,9 +4,9 @@
   description: job-description-star-dust-officer
   playTimeTracker: JobStarDustOfficer
   requirements:
-  - !type:DepartmentTimeRequirement
-    department: Security
-    time: 54000 #25 hrs # Corvax-RoleTime
+  - !type:RoleTimeRequirement
+    role: JobWarden
+    time: 18000 #10 hrs
   startingGear: StarDustOfficerGear
   icon: "JobIconStarDustOfficer"
   supervisors: job-supervisors-star-dust-officer
@@ -18,9 +18,16 @@
   - Service
   - External
   - Detective
+  - Command
+  - Service
+  extendedAccess:
+  - Armory
   special:
   - !type:AddImplantSpecial
     implants: [ MindShieldImplant ]
+  - !type:AddHoloSpecial
+    holo: MobHoloparasiteGuardian
+  # HoloparasiteInjector
 
 - type: startingGear
   id: StarDustOfficerGear
