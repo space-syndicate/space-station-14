@@ -17,7 +17,7 @@ namespace Content.Server.Atlanta.Jobs;
 public sealed partial class AddHoloSpecial : JobSpecial
 {
     [DataField("holo")]
-    public EntProtoId Holo;
+    public EntProtoId Holo = "MobHoloparasiteGuardian";
 
     public override void AfterEquip(EntityUid mob)
     {

@@ -40,8 +40,8 @@
   - type: Examiner
   - type: NoSlip
   - type: Actions
-  - type: TTS # Corvax-TTS
-    voice: Kelthuzad
+  # - type: TTS # Corvax-TTS
+  #   voice: Kelthuzad
   - type: Eye
     drawFov: false
     visMask:

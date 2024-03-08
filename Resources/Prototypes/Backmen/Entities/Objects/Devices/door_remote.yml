@@ -13,7 +13,7 @@
           color: "#22871a"
     - type: Access
       groups:
-        - CentCom
+        - AllAccess
 
 - type: entity
   parent: DoorRemoteDefault
@@ -31,7 +31,6 @@
     - type: Access
       groups:
         - AllAccess
-        - CentCom
 
 # AI door remotes
 # All access door remote
