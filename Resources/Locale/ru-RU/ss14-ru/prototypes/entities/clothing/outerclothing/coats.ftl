@@ -52,3 +52,5 @@ ent-ClothingOuterCoatLabSeniorPhysician = лабораторный халат в
     .desc = Халат, защищающий от небольших разливов химикатов. Имеет светло-голубые рукава и оранжевую отделку на талии.
 ent-ClothingOuterCoatSpaceAsshole = куртка космического мудака
     .desc = And there he was...
+ent-ClothingOuterCoatExpensive = expensive coat
+    .desc = Very fluffy pink coat, made out of very expensive fur (clearly).

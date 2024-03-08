@@ -52,3 +52,5 @@ ent-ClothingOuterCoatLabSeniorPhysician = senior physician lab coat
     .desc = A suit that protects against minor chemical spills. Has light blue sleeves and an orange waist trim.
 ent-ClothingOuterCoatSpaceAsshole = the coat of space asshole
     .desc = And there he was...
+ent-ClothingOuterCoatExpensive = expensive coat
+    .desc = Very fluffy pink coat, made out of very expensive fur (clearly).
