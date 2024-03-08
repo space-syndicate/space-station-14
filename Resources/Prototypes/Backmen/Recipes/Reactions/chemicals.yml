@@ -1,0 +1,11 @@
+﻿#- type: reaction
+#  id: MotorOil
+#  reactants:
+#    WeldingFuel:
+#      amount: 1
+#    Carbon:
+#      amount: 1
+#    Hydrogen:
+#      amount: 1
+#  products:
+#    MotorOil: 3

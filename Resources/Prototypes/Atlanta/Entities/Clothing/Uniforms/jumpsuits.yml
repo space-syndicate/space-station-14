@@ -1,0 +1,13 @@
+- type: entity
+  parent: ClothingUniformBase
+  id: ClothingUniformJumpsuitStarDustOfficer
+  name: blue dust officer's jumpsuit
+  description: This suit is not in the dust.
+  components:
+  - type: Sprite
+    sprite: Atlanta/Clothing/Uniforms/Jumpsuit/star_dust_officer.rsi
+  - type: Clothing
+    sprite: Atlanta/Clothing/Uniforms/Jumpsuit/star_dust_officer.rsi
+
+
+

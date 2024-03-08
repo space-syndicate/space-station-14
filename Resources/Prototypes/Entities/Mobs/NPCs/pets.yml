@@ -760,8 +760,8 @@
       gender: female
   - type: StealTarget
     stealGroup: AnimalSmile
-  - type: TTS # Corvax-TTS
-    voice: Dryad
+  # - type: TTS # Corvax-TTS
+  #   voice: Dryad
 
 - type: entity
   name: Pun Pun

@@ -209,8 +209,8 @@
   - type: GuideHelp
     guides:
       - Cyborgs
-  - type: TTS # Corvax-TTS
-    voice: TrainingRobot
+  # - type: TTS # Corvax-TTS
+  #   voice: TrainingRobot
 
 - type: entity
   id: BaseBorgChassisNT

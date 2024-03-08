@@ -4447,7 +4447,7 @@ entities:
       waveTiming: 90
       nextWave: 90
       waveTimingMultiplier: 0.6
-      zoneSpeed: 0.15
+      zoneSpeed: 0.5
       center: 1.015625,10
       lastDamageTime: 13.6880491
 - proto: AcousticGuitarInstrument
@@ -67411,13 +67411,6 @@ entities:
     - type: Transform
       pos: 15.5,14.5
       parent: 1
-- proto: SpawnMobMouse
-  entities:
-  - uid: 11913
-    components:
-    - type: Transform
-      pos: 8.5,-12.5
-      parent: 1
   - uid: 11914
     components:
     - type: Transform
@@ -67543,27 +67536,6 @@ entities:
     components:
     - type: Transform
       pos: 5.5,22.5
-      parent: 1
-- proto: SpawnPointBorg
-  entities:
-  - uid: 5913
-    components:
-    - type: Transform
-      pos: -7.5,-12.5
-      parent: 1
-- proto: SpawnPointPassenger
-  entities:
-  - uid: 7498
-    components:
-    - type: Transform
-      pos: -7.5,-25.5
-      parent: 1
-- proto: SpawnStationAI
-  entities:
-  - uid: 3616
-    components:
-    - type: Transform
-      pos: -6.5,52.5
       parent: 1
 - proto: SpawnVendingMachineRestockDrink
   entities:

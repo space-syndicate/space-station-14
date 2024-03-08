@@ -123,8 +123,8 @@
     speechSounds: Slime
   - type: TypingIndicator
     proto: slime
-  - type: TTS # Corvax-TTS
-    voice: Chen
+  # - type: TTS # Corvax-TTS
+  #   voice: Chen
 
 - type: entity
   name: blue slime

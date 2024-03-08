@@ -6,5 +6,5 @@ namespace Content.Server.Atlanta.RoyalBattle.Components;
 public sealed partial class RandomRbCrateSpawnerComponent : Component
 {
     [DataField("proto")]
-    public EntProtoId PrototypeId = "";
+    public EntProtoId PrototypeId = "RandomCrateRoyalBattle";
 }

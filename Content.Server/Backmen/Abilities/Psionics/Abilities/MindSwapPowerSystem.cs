@@ -30,9 +30,6 @@ public sealed class MindSwapPowerSystem : EntitySystem
         _logger = Logger.GetSawmill("mindswap");
     }
 
-    [ValidatePrototypeId<EntityPrototype>] private const string ActionMindSwap = "ActionMindSwap";
-    [ValidatePrototypeId<EntityPrototype>] private const string ActionMindSwapReturn = "ActionMindSwapReturn";
-
     public bool Swap(EntityUid performer, EntityUid target, bool end = false)
     {
         if (performer == target)

@@ -1,0 +1,6 @@
+- type: statusIcon
+  parent: JobIcon
+  id: JobIconStarDustOfficer
+  icon:
+    sprite: Interface/Misc/job_icons.rsi
+    state: StarDustOfficer

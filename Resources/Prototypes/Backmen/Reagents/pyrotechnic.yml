@@ -1,0 +1,20 @@
+﻿#- type: reagent
+#  id: MotorOil
+#  name: reagent-name-motor-oil
+#  parent: BasePyrotechnic
+#  desc: reagent-desc-motor-oil
+#  physicalDesc: reagent-physical-desc-oily
+#  flavor: bitter
+#  color: "#b67823"
+#  tileReactions:
+#  - !type:FlammableTileReaction {}
+#  metabolisms:
+#    Poison:
+#      effects:
+#      - !type:HealthChange
+#        damage:
+#          types:
+#            Poison: 1
+#      - !type:FlammableReaction
+#        multiplier: 0.4
+#
