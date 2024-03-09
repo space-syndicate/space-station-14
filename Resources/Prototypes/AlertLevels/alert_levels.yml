@@ -39,6 +39,17 @@
       color: PaleVioletRed
       emergencyLightColor: PaleVioletRed
       forceEnableEmergencyLights: true
+    omega:
+      announcement: alert-level-omega-announcement
+      selectable: false
+      sound:
+        path: /Audio/Corvax/Adminbuse/outbreak5.ogg
+        params:
+          volume: -2
+      disableSelection: true
+      color: Orange
+      emergencyLightColor: Orange
+      forceEnableEmergencyLights: true
     delta:
       announcement: alert-level-delta-announcement
       selectable: false
