@@ -30,7 +30,6 @@
   - Reporter
   - Visitor
   - Zookeeper
-  - Detective
   - ServiceWorker
 
 - type: department
@@ -47,8 +46,18 @@
   - HeadOfSecurity
   - ResearchDirector
   - Quartermaster
+  - HeadOfNanotrasenPrison
   primary: false
   weight: 100
+
+- type: department
+  id: Centcom
+  description: Здесь собраны представители центрального командования.
+  color: "#334E6D"
+  roles:
+  - Magistrate
+  - IAA
+  - OfficerBlueShield
 
 - type: department
   id: Engineering
@@ -57,6 +66,7 @@
   roles:
   - AtmosphericTechnician
   - ChiefEngineer
+  - SeniorEngineer
   - StationEngineer
   - TechnicalAssistant
 
@@ -67,10 +77,21 @@
   roles:
   - Chemist
   - ChiefMedicalOfficer
+  - SeniorDoctor
   - MedicalDoctor
   - MedicalIntern
   - Psychologist
   - Paramedic
+
+- type: department
+  id: NanotrasenPrison
+  description: department-NanotrasenPrison-description
+  color: "#0300a6"
+  roles:
+  - HeadOfNanotrasenPrison
+  - NTPOfficer
+  - NTPDoctor
+  - NTPEngineer
 
 - type: department
   id: Security
@@ -79,9 +100,13 @@
   weight: 20
   roles:
   - HeadOfSecurity
+  - SecuritySenior
+  - Detective
   - SecurityCadet
   - SecurityOfficer
   - Warden
+  - SecurityPilot
+  - Brigmedic
 
 - type: department
   id: Science
@@ -89,17 +114,6 @@
   color: "#D381C9"
   roles:
   - ResearchDirector
+  - SeniorResearcher
   - Scientist
   - ResearchAssistant
-
-- type: department
-  id: Specific
-  description: department-Specific-description
-  color: "#9FED58"
-  weight: 10
-  roles:
-  - Boxer
-  - Reporter
-  - Zookeeper
-  - Psychologist
-  primary: false
