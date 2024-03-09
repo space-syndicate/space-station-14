@@ -34,8 +34,10 @@ public sealed partial class ContentAudioSystem : SharedContentAudioSystem
     public override void Initialize()
     {
         base.Initialize();
+
         UpdatesOutsidePrediction = true;
         InitializeAmbientMusic();
+        InitializeLobbyMusic();
         SubscribeNetworkEvent<RoundRestartCleanupEvent>(OnRoundCleanup);
     }
 
@@ -44,11 +46,11 @@ public sealed partial class ContentAudioSystem : SharedContentAudioSystem
         _fadingOut.Clear();
 
         // Preserve lobby music but everything else should get dumped.
-        var lobbyMusic = EntityManager.System<BackgroundAudioSystem>().LobbyMusicStream;
+        var lobbyMusic = _lobbySoundtrackInfo?.MusicStreamEntityUid;
         TryComp(lobbyMusic, out AudioComponent? lobbyMusicComp);
         var oldMusicGain = lobbyMusicComp?.Gain;
 
-        var restartAudio = EntityManager.System<BackgroundAudioSystem>().LobbyRoundRestartAudioStream;
+        var restartAudio = _lobbyRoundRestartAudioStream;
         TryComp(restartAudio, out AudioComponent? restartComp);
         var oldAudioGain = restartComp?.Gain;
 
@@ -63,12 +65,14 @@ public sealed partial class ContentAudioSystem : SharedContentAudioSystem
         {
             Audio.SetGain(restartAudio, oldAudioGain.Value, restartComp);
         }
+        PlayRestartSound(ev);
     }
 
     public override void Shutdown()
     {
         base.Shutdown();
         ShutdownAmbientMusic();
+        ShutdownLobbyMusic();
     }
 
     public override void Update(float frameTime)
@@ -79,6 +83,7 @@ public sealed partial class ContentAudioSystem : SharedContentAudioSystem
             return;
 
         UpdateAmbientMusic();
+        UpdateLobbyMusic();
         UpdateFades(frameTime);
     }
 

@@ -18,8 +18,12 @@ injector-component-transfer-success-message = Вы перемещаете { $amo
 injector-component-draw-success-message = Вы набираете { $amount }ед. из { $target }.
 injector-component-target-already-full-message = { $target } полон!
 injector-component-target-is-empty-message = { $target } пуст!
+injector-component-cannot-toggle-draw-message = Too full to draw!
+injector-component-cannot-toggle-inject-message = Nothing to inject!
 
 ## mob-inject doafter messages
 
+injector-component-drawing-user = You start drawing the needle.
 injector-component-injecting-user = Вы начинаете вводить иглу.
+injector-component-drawing-target = { CAPITALIZE(THE($user)) } is trying to use a needle to draw from you!
 injector-component-injecting-target = { CAPITALIZE($user) } пытается ввести вам иглу!

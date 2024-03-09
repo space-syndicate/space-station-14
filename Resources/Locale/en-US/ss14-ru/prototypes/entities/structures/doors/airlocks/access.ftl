@@ -388,3 +388,6 @@ ent-HighSecCaptainLocked = { ent-HighSecDoor }
 ent-HighSecArmoryLocked = { ent-HighSecDoor }
     .suffix = Armory, Locked
     .desc = { ent-HighSecDoor.desc }
+ent-AirlockHatchSyndicate = { ent-AirlockHatch }
+    .suffix = Syndicate, Locked
+    .desc = { ent-AirlockHatch.desc }
