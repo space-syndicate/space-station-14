@@ -1,0 +1,39 @@
+- type: job
+  id: SecurityPilot
+  name: Пилот СБ
+  description: Патрулируйте станцию в космосе! Управляйте своим шатлом и перевозите заключённых в тюрьму строгого режима!
+  playTimeTracker: JobSecurityPilot
+  requirements:
+    - !type:DepartmentTimeRequirement
+      department: Security
+      time: 28800 #8 hrs
+  startingGear: SecurityPilotGear
+  icon: "JobIconSecurityPilot"
+  supervisors: job-supervisors-hos
+  canBeAntag: false
+  access:
+  - Security
+  - Brig
+  - Maintenance
+  - Service
+  - External
+  special:
+  - !type:AddImplantSpecial
+    implants: [ MindShieldImplant ]
+
+- type: startingGear
+  id: SecurityPilotGear
+  equipment:
+    jumpsuit: ClothingUniformJumpsuitSec
+    back: ClothingBackpackSecurityFilled
+    shoes: ClothingShoesBootsJackSec # Corvax-Resprite-MRP
+    eyes: ClothingEyesGlassesSecurity
+    gloves: ClothingHandsGlovesFingerless
+    outerClothing: ClothingOuterCoatGentle
+    id: SecurityPilotPDA
+    ears: ClothingHeadsetSecurity
+    belt: ClothingBeltSecurityFilled
+    pocket1: WeaponPistolMk58Nonlethal
+  innerClothingSkirt: ClothingUniformJumpskirtSec
+  satchel: ClothingBackpackSatchelSecurityFilled
+  duffelbag: ClothingBackpackDuffelSecurityFilled
