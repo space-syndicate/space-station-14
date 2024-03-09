@@ -2,7 +2,7 @@ shuttle-pilot-start = Пилотирование начато
 shuttle-pilot-end = Пилотирование прекращено
 
 shuttle-console-in-ftl = Уже в БСС
-shuttle-console-mass = Большой для БСС
+shuttle-console-mass = Слишком большой для БСС
 shuttle-console-prevent = Вы не можете пилотировать этот корабль
 
 # NAV
