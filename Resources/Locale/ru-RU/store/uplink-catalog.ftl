@@ -279,5 +279,5 @@ uplink-bribe-name = Набор лоббиста
 uplink-bribe-desc = Сердечный подарок, который может помочь вам изменить чьё-то мнение. Настоящие или фальшивые? Да.
 uplink-hypodart-name = Гиподротик
 uplink-hypodart-desc = Неприметный на первый взгляд дротик с увеличенным резервуаром для химических веществ. Он вмещает в себя до 7 ед. реагентов и мгновенно впрыскивает их при попадании в цель. Изначально пуст.
-uplink-barber-scissors-name = Barber Scissors
-uplink-barber-scissors-desc = A good tool to give your fellow agent a nice haircut, unless you want to give it to yourself.
+uplink-barber-scissors-name = Парикмахерские ножницы
+uplink-barber-scissors-desc = Хороший инструмент для того, чтобы подарить своему коллеге-агенту красивую стрижку, если, конечно, вы не хотите сделать её себе.

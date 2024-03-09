@@ -1,5 +1,5 @@
-ent-PlastitaniumWindow = plastitanium window
+ent-PlastitaniumWindow = пластитановое стекло
     .desc = { ent-Window.desc }
 ent-PlastitaniumWindowDiagonal = { ent-ShuttleWindow }
-    .suffix = diagonal
+    .suffix = Дигональ
     .desc = { ent-ShuttleWindow.desc }
