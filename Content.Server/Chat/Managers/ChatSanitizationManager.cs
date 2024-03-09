@@ -20,6 +20,7 @@ public sealed class ChatSanitizationManager : IChatSanitizationManager
         { "о7", "chatsan-salutes" }, // cyrillic о
         { "0_o", "chatsan-wide-eyed" },
         { "лмао", "chatsan-laughs" },
+        { "лол", "chatsan-laughs" },
         { "рофл", "chatsan-laughs" },
         { "яхз", "chatsan-shrugs" },
         { ":0", "chatsan-surprised" },
