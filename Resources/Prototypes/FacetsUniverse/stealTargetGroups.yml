@@ -1,0 +1,13 @@
+- type: stealTargetGroup
+  id: SecretDocumentsGT
+  name: Секретные документы ГТ
+  sprite: 
+    sprite: FacetsUniverse\bureaucracy.rsi
+    state: folder-ntp-doc
+
+- type: stealTargetGroup
+  id: WeaponPulsePistol
+  name: Импульсный пистолет
+  sprite: 
+    sprite: Objects\Weapons\Guns\Battery\pulse_pistol.rsi
+    state: icon

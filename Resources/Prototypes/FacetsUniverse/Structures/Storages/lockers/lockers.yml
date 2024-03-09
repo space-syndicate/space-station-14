@@ -1,0 +1,45 @@
+
+# NTP
+- type: entity
+  id: LockerHoNTP
+  parent: LockerBaseSecure
+  name: шкаф главы тюрьмы Nanotrasen!
+  description: Шкафчик главного в тюрьме!
+  components:
+  - type: Appearance
+  - type: EntityStorageVisuals
+    stateBaseClosed: NTP
+    stateDoorOpen: NTP_open
+    stateDoorClosed: HoNTP_door
+  - type: AccessReader
+    access: [["HoNTP"]]
+
+- type: entity
+  id: LockerNTP
+  parent: LockerBaseSecure
+  name: шкаф тюрьмы Nanotrasen!
+  description: Шкафчик космической тюрьмы!
+  components:
+  - type: Appearance
+  - type: EntityStorageVisuals
+    stateBaseClosed: NTP
+    stateDoorOpen: NTP_open
+    stateDoorClosed: NTP_door
+  - type: AccessReader
+    access: [["NanotrasenPrison"]]
+
+# OBS
+
+- type: entity
+  id: LockerOBS
+  parent: LockerBaseSecure
+  name: шкаф офицера "Синий Щит"
+  description: Шкафчик телохранителя глав!
+  components:
+  - type: Appearance
+  - type: EntityStorageVisuals
+    stateBaseClosed: OBS
+    stateDoorOpen: OBS_open
+    stateDoorClosed: OBS_door
+  - type: AccessReader
+    access: [["OfficerBlueShield"]]

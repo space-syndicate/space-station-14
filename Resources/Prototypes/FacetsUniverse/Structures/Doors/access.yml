@@ -1,0 +1,126 @@
+# Default
+
+- type: entity
+  parent: Airlock
+  id: AirlockNTPLocked
+  name: шлюз
+  description: Умеет открываться и закрываться.
+  suffix: NTP, Locked
+  components:
+  - type: AccessReader
+    access: [["NanotrasenPrison"]]
+  - type: Sprite
+    sprite: FacetsUniverse\Structures\Doors\Airlocks\NTP.rsi
+
+
+- type: entity
+  parent: Airlock
+  id: AirlockHoNTPLocked
+  name: шлюз
+  description: Умеет открываться и закрываться.
+  suffix: HoNTP, Locked
+  components:
+  - type: AccessReader
+    access: [["HoNTP"]]
+  - type: Sprite
+    sprite: Structures/Doors/Airlocks/Standard/command.rsi
+  - type: WiresPanelSecurity
+    securityLevel: medSecurity
+
+- type: entity
+  parent: Airlock
+  id: AirlockOBSLocked
+  name: шлюз
+  description: Умеет открываться и закрываться.
+  suffix: ОСЩ, Locked
+  components:
+  - type: AccessReader
+    access: [["OfficerBlueShield"]]
+  - type: Sprite
+    sprite: Structures/Doors/Airlocks/Standard/command.rsi
+  - type: WiresPanelSecurity
+    securityLevel: medSecurity
+
+# Glass
+
+- type: entity
+  parent: AirlockGlass
+  id: AirlockNTPGlassLocked
+  name: стеклянный шлюз
+  description: Умеет открываться и закрываться, стеклянный ещё.
+  suffix: NTP, Locked
+  components:
+  - type: AccessReader
+    access: [["NanotrasenPrison"]]
+  - type: Sprite
+    sprite: FacetsUniverse\Structures\Doors\Glass\NTP.rsi
+
+- type: entity
+  parent: AirlockGlass
+  id: AirlockHoNTPGlassLocked
+  name: стеклянный шлюз
+  description: Умеет открываться и закрываться, стеклянный ещё.
+  suffix: HoNTP, Locked
+  components:
+  - type: AccessReader
+    access: [["HoNTP"]]
+  - type: Sprite
+    sprite: Structures/Doors/Airlocks/Glass/command.rsi
+  - type: WiresPanelSecurity
+    securityLevel: medSecurity
+
+- type: entity
+  parent: AirlockGlass
+  id: AirlockOBSGlassLocked
+  name: стеклянный шлюз
+  description: Умеет открываться и закрываться, стеклянный ещё.
+  suffix: ОСЩ, Locked
+  components:
+  - type: AccessReader
+    access: [["OfficerBlueShield"]]
+  - type: Sprite
+    sprite: Structures/Doors/Airlocks/Glass/command.rsi
+  - type: WiresPanelSecurity
+    securityLevel: medSecurity
+
+# maint
+
+- type: entity
+  parent: Airlock
+  id: AirlockNTPmaintLocked
+  name: шлюз
+  description: Умеет открываться и закрываться.
+  suffix: NTP, Locked
+  components:
+  - type: AccessReader
+    access: [["NanotrasenPrison"]]
+  - type: Sprite
+    sprite: Structures\Doors\Airlocks\Standard\maint.rsi
+
+- type: entity
+  parent: Airlock
+  id: AirlockHoNTPmaintLocked
+  name: шлюз
+  description: Умеет открываться и закрываться.
+  suffix: HoNTP, Locked
+  components:
+  - type: AccessReader
+    access: [["HoNTP"]]
+  - type: Sprite
+    sprite: Structures\Doors\Airlocks\Standard\maint.rsi
+  - type: WiresPanelSecurity
+    securityLevel: medSecurity
+
+- type: entity
+  parent: Airlock
+  id: AirlockOBSmaintLocked
+  name: шлюз
+  description: Умеет открываться и закрываться.
+  suffix: ОСЩ, Locked
+  components:
+  - type: AccessReader
+    access: [["OfficerBlueShield"]]
+  - type: Sprite
+    sprite: Structures\Doors\Airlocks\Standard\maint.rsi
+  - type: WiresPanelSecurity
+    securityLevel: medSecurity

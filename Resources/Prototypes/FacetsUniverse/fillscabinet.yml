@@ -1,0 +1,67 @@
+- type: entity
+  id: LockerHoNTPFilled
+  suffix: Заполнен
+  parent: LockerHoNTP
+  components:
+  - type: StorageFill
+    contents:
+      - id: FlashlightSeclite
+      - id: ClothingUniformJumpsuitHoNTP
+      - id: WeaponDisabler
+        prob: 0.3
+      - id: ClothingBeltSecurityFilled
+      - id: Flash
+      - id: ClothingEyesGlassesSunglasses
+      - id: ClothingHeadsetAltNanotrasenPrison
+      - id: ClothingHandsGlovesCombat
+      - id: ClothingShoesBootsJack
+      - id: RubberStampHoNTP
+      - id: HoloprojectorSecurity
+      - id: SecretDocumentsGT
+      - id: DoorRemoteNTP
+      - id: ClothingEyesHudSecurity
+
+- type: entity
+  id: LockerNTPFilled
+  suffix: Заполнен
+  parent: LockerNTP
+  components:
+  - type: StorageFill
+    contents:
+      - id: FlashlightSeclite
+      - id: ClothingUniformJumpsuitNTP
+      - id: WeaponDisabler
+        prob: 0.3
+      - id: ClothingBeltSecurityFilled
+      - id: Flash
+      - id: ClothingEyesGlassesSunglasses
+      - id: ClothingHeadsetNanotrasenPrison
+      - id: ClothingShoesBootsJack
+      - id: ClothingEyesHudSecurity
+
+- type: entity
+  id: LockerOBSFilled
+  suffix: Заполнен
+  parent: LockerOBS
+  components:
+  - type: StorageFill
+    contents:
+      - id: FlashlightSeclite
+      - id: ClothingUniformJumpsuitOBS
+      - id: ClothingOuterArmorBasic
+      - id: ClothingEyesHudSecurity
+      - id: CombatKnife
+      - id: WeaponPulsePistol
+      - id: TrackingImplanter
+      - id: TrackingImplanter
+      - id: TrackingImplanter
+      - id: TrackingImplanter
+      - id: TrackingImplanter
+      - id: WeaponDisabler
+        prob: 0.3
+      - id: ClothingBeltSecurityFilled
+      - id: Flash
+      - id: ClothingEyesGlassesSunglasses
+      - id: ClothingHeadsetOBS
+      - id: ClothingShoesBootsJack
+      - id: ClothingEyesHudSecurity

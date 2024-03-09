@@ -1,0 +1,43 @@
+- type: entity
+  parent: ClothingUniformBase
+  id: ClothingUniformJumpsuitHoNTP
+  name: Комбинезон главы тюрьмы Nanotrasen
+  description: Только для главных!
+  components:
+  - type: Sprite
+    sprite: Clothing/Uniforms/Jumpsuit/ert_leader.rsi
+  - type: Clothing
+    sprite: Clothing/Uniforms/Jumpsuit/ert_leader.rsi
+
+- type: entity
+  parent: ClothingUniformBase
+  id: ClothingUniformJumpsuitNTP
+  name: Комбинезон офицера тюрьмы Nanotrasen
+  description: Только для работников космической тюрьмы!
+  components:
+  - type: Sprite
+    sprite: Clothing/Uniforms/Jumpsuit/ert_security.rsi
+  - type: Clothing
+    sprite: Clothing/Uniforms/Jumpsuit/ert_security.rsi
+
+- type: entity
+  parent: ClothingUniformBase
+  id: ClothingUniformJumpsuitNTPMedic
+  name: Комбинезон доктора тюрьмы Nanotrasen
+  description: Только для работников космической тюрьмы!
+  components:
+  - type: Sprite
+    sprite: Clothing/Uniforms/Jumpsuit/ert_medic.rsi
+  - type: Clothing
+    sprite: Clothing/Uniforms/Jumpsuit/ert_medic.rsi
+
+- type: entity
+  parent: ClothingUniformBase
+  id: ClothingUniformJumpsuitNTP_engineer
+  name: Комбинезон инженера тюрьмы Nanotrasen
+  description: Только для работников космической тюрьмы!
+  components:
+  - type: Sprite
+    sprite: Clothing/Uniforms/Jumpsuit/ert_engineer.rsi
+  - type: Clothing
+    sprite: Clothing/Uniforms/Jumpsuit/ert_engineer.rsi

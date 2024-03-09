@@ -1,0 +1,14 @@
+- type: entity
+  parent: EncryptionKey
+  id: EncryptionKeyNanotrasenPrison
+  name: Ключ шифрования тюрьмы Nanotrasen
+  description: Ключ шифрования для чательного вставления в вашу гарнитуру!
+  components:
+  - type: EncryptionKey
+    channels:
+    - NanotrasenPrison
+    defaultChannel: NanotrasenPrison
+  - type: Sprite
+    layers:
+    - state: crypt_blue
+    - state: nano_label

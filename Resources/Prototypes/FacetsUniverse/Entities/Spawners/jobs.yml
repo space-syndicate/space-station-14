@@ -1,0 +1,131 @@
+- type: entity
+  id: SpawnPointHeadOfNTP
+  parent: SpawnPointJobBase
+  name: спавнер Глава NTP
+  components:
+  - type: SpawnPoint
+    job_id: HeadOfNanotrasenPrison
+  - type: Sprite
+    layers:
+      - state: green
+      - state: hos
+
+- type: entity
+  id: SpawnPointSecurityNTP
+  parent: SpawnPointJobBase
+  name: спавнер Офицер NTP
+  components:
+  - type: SpawnPoint
+    job_id: NTPOfficer
+  - type: Sprite
+    layers:
+      - state: green
+      - state: security_officer
+
+- type: entity
+  id: SpawnPointNTPDoctor
+  parent: SpawnPointJobBase
+  name: спавнер Доктор NTP
+  components:
+  - type: SpawnPoint
+    job_id: NTPDoctor
+  - type: Sprite
+    layers:
+      - state: green
+      - state: doctor
+
+- type: entity
+  id: SpawnPointSeniorDoctor
+  parent: SpawnPointJobBase
+  name: спавнер ведущий врач
+  components:
+  - type: SpawnPoint
+    job_id: SeniorDoctor
+  - type: Sprite
+    layers:
+      - state: green
+      - state: doctor
+
+- type: entity
+  id: SpawnPointNTPEngineer
+  parent: SpawnPointJobBase
+  name: спавнер Инженер NTP
+  components:
+  - type: SpawnPoint
+    job_id: NTPEngineer
+  - type: Sprite
+    layers:
+      - state: green
+      - state: engineer
+
+- type: entity
+  id: SpawnPointSeniorEngineer
+  parent: SpawnPointJobBase
+  name: спавнер ведущий инженер
+  components:
+  - type: SpawnPoint
+    job_id: SeniorEngineer
+  - type: Sprite
+    layers:
+      - state: green
+      - state: engineer
+
+- type: entity
+  id: SpawnPointOfficerBlueShield
+  parent: SpawnPointJobBase
+  name: спавнер Офицер "Синий Щит"
+  components:
+  - type: SpawnPoint
+    job_id: OfficerBlueShield
+  - type: Sprite
+    layers:
+      - state: green
+      - state: security_officer
+
+- type: entity
+  id: SpawnPointSecurityPilot
+  parent: SpawnPointJobBase
+  name: спавнер Пилот СБ
+  components:
+  - type: SpawnPoint
+    job_id: SecurityPilot
+  - type: Sprite
+    layers:
+      - state: green
+      - state: security_officer
+
+- type: entity
+  id: SpawnPointSecuritySenior
+  parent: SpawnPointJobBase
+  name: спавнер инструктор СБ
+  components:
+  - type: SpawnPoint
+    job_id: SecuritySenior
+  - type: Sprite
+    layers:
+      - state: green
+      - state: security_officer
+
+- type: entity
+  id: SpawnPointSeniorResearcher
+  parent: SpawnPointJobBase
+  name: спавнер Ведущий учёный
+  components:
+  - type: SpawnPoint
+    job_id: SeniorResearcher
+  - type: Sprite
+    layers:
+      - state: green
+      - state: scientist
+
+- type: entity
+  id: SpawnPointMagistrate
+  parent: SpawnPointJobBase
+  name: спавнер Магистрат
+  components:
+  - type: SpawnPoint
+    job_id: Magistrate
+  - type: Sprite
+    layers:
+      - state: green
+      - state: lawyer
