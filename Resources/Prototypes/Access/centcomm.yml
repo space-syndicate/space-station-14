@@ -1,3 +1,15 @@
 - type: accessLevel
   id: CentralCommand
   name: id-card-access-level-central-command
+
+- type: accessLevel
+  id: NanotrasenPrison
+  name: Тюрьма Nanotrasen
+
+- type: accessLevel
+  id: HoNTP
+  name: Глава тюрьмы Nanotrasen
+
+- type: accessLevel
+  id: OfficerBlueShield
+  name: Офицер "Синий Щит"
