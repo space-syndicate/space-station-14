@@ -4,12 +4,6 @@
   antagonist: true
   setPreference: true
   objective: roles-antag-nuclear-operative-objective
-  requirements:
-  - !type:OverallPlaytimeRequirement
-    time: 54000 # 15h # Corvax-RoleTime
-  - !type:DepartmentTimeRequirement
-    department: Security
-    time: 18000 # 5h # Corvax-RoleTime
     
 - type: antag
   id: NukeopsMedic
@@ -17,15 +11,6 @@
   antagonist: true
   setPreference: true
   objective: roles-antag-nuclear-operative-agent-objective
-  requirements:
-  - !type:OverallPlaytimeRequirement
-    time: 54000 # 15h # Corvax-RoleTime
-  - !type:RoleTimeRequirement
-    role: JobChemist
-    time: 36000 # 10h # Corvax-RoleTime
-  - !type:DepartmentTimeRequirement
-    department: Security
-    time: 36000 # 10h # Corvax-RoleTime
 
 - type: antag
   id: NukeopsCommander
@@ -33,10 +18,3 @@
   antagonist: true
   setPreference: true
   objective: roles-antag-nuclear-operative-commander-objective
-  requirements:
-  - !type:OverallPlaytimeRequirement
-    time: 108000 # 30h # Corvax-RoleTime
-  - !type:DepartmentTimeRequirement
-    department: Security
-    time: 54000 # 15h # Corvax-RoleTime
-  # should be changed to nukie playtime when thats tracked (wyci)
