@@ -1,0 +1,36 @@
+- type: job
+  id: NTPDoctor
+  name: Доктор NTP
+  description: Лечите работников космической тюрьмы, а так же и заключённых!
+  playTimeTracker: JobNTPDoctor
+  requirements:
+    - !type:DepartmentTimeRequirement
+      department: Medical
+      time: 10800 #3 hrs
+    - !type:DepartmentTimeRequirement
+      department: Security
+      time: 10800 #3 hrs
+  startingGear: DoctorNTPGear
+  icon: "JobIconNTP_doctor"
+  supervisors: Главе тюрьмы Nanotrasen
+  access:
+  - Security
+  - Brig
+  - NanotrasenPrison
+  - Medical
+  - Maintenance
+  - Chemistry
+
+- type: startingGear
+  id: DoctorNTPGear
+  equipment:
+    jumpsuit: ClothingUniformJumpsuitNTPMedic
+    back: ClothingBackpackMedicalFilled
+    shoes: ClothingShoesColorWhite
+    outerClothing: ClothingOuterCoatLab
+    id: NTPPDA
+    ears: ClothingHeadsetNanotrasenPrison
+    belt: ClothingBeltMedicalFilled
+  innerClothingSkirt: ClothingUniformJumpskirtMedicalDoctor
+  satchel: ClothingBackpackSatchelMedicalFilled
+  duffelbag: ClothingBackpackDuffelMedicalFilled
