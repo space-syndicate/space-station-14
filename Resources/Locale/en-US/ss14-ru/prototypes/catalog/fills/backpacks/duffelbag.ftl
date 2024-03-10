@@ -50,3 +50,5 @@ ent-ClothingBackpackDuffelSyndicateOperativeMedic = operative medic duffelbag
     .desc = A large duffel bag for holding extra medical supplies.
 ent-ClothingBackpackDuffelSyndicateMedicalBundleFilled = medical bundle
     .desc = All you need to get your comrades back in the fight.
+ent-ClothingBackpackDuffelSyndicateDecoyKitFilled = decoy bundle
+    .desc = Contains distractions, both auditory and visual. Smell coming soon.

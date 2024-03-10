@@ -1,24 +1,4 @@
 - type: reagent
-  id: Yorsh
-  name: reagent-name-yorsh
-  parent: BaseAlcohol
-  desc: reagent-desc-yorsh
-  physicalDesc: reagent-physical-desc-bubbly
-  flavor: alcohol
-  color: "#b05b3c"
-  metamorphicSprite:
-    sprite: Corvax/Objects/Consumable/Drinks/yorsh.rsi
-    state: icon
-  metabolisms:
-    Drink:
-      effects:
-      - !type:SatiateThirst
-        factor: 2
-      - !type:AdjustReagent
-        reagent: Ethanol
-        amount: 0.3
-
-- type: reagent
   id: Alexander
   name: reagent-name-alexander
   parent: BaseAlcohol
@@ -28,7 +8,10 @@
   color: "#f7f3eb"
   metamorphicSprite:
     sprite: Corvax/Objects/Consumable/Drinks/alexander.rsi
-    state: icon
+    state: icon_empty
+  metamorphicMaxFillLevels: 5
+  metamorphicFillBaseName: fill-
+  metamorphicChangeColor: false
   metabolisms:
     Drink:
       effects:
@@ -37,103 +20,6 @@
       - !type:AdjustReagent
         reagent: Ethanol
         amount: 0.07
-
-- type: reagent
-  id: Daiquiri
-  name: reagent-name-daiquiri
-  parent: BaseAlcohol
-  desc: reagent-desc-daiquiri
-  physicalDesc: reagent-physical-desc-bubbly
-  flavor: alcohol
-  color: "#f7f3eb"
-  metamorphicSprite:
-    sprite: Corvax/Objects/Consumable/Drinks/daiquiri.rsi
-    state: icon
-  metabolisms:
-    Drink:
-      effects:
-      - !type:SatiateThirst
-        factor: 2
-      - !type:AdjustReagent
-        reagent: Ethanol
-        amount: 0.07
-
-- type: reagent
-  id: Campari
-  name: reagent-name-campari
-  parent: BaseAlcohol
-  desc: reagent-desc-campari
-  physicalDesc: reagent-physical-desc-bubbly
-  flavor: alcohol
-  color: "#c9144a"
-  metabolisms:
-    Drink:
-      effects:
-      - !type:SatiateThirst
-        factor: 2
-      - !type:AdjustReagent
-        reagent: Ethanol
-        amount: 0.1
-
-- type: reagent
-  id: Negroni
-  name: reagent-name-negroni
-  parent: BaseAlcohol
-  desc: reagent-desc-negroni
-  physicalDesc: reagent-physical-desc-bubbly
-  flavor: alcohol
-  color: "#af1700"
-  metamorphicSprite:
-    sprite: Corvax/Objects/Consumable/Drinks/negroni.rsi
-    state: icon
-  metabolisms:
-    Drink:
-      effects:
-      - !type:SatiateThirst
-        factor: 2
-      - !type:AdjustReagent
-        reagent: Ethanol
-        amount: 0.12
-
-- type: reagent
-  id: EspressoMartini
-  name: reagent-name-espressoMartini
-  parent: BaseAlcohol
-  desc: reagent-desc-espressoMartini
-  physicalDesc: reagent-physical-desc-bubbly
-  flavor: alcohol
-  color: "#4c2f11"
-  metamorphicSprite:
-    sprite: Corvax/Objects/Consumable/Drinks/espressoMartini.rsi
-    state: icon
-  metabolisms:
-    Drink:
-      effects:
-      - !type:SatiateThirst
-        factor: 2
-      - !type:AdjustReagent
-        reagent: Ethanol
-        amount: 0.12
-
-- type: reagent
-  id: OldFashioned
-  name: reagent-name-oldFashioned
-  parent: BaseAlcohol
-  desc: reagent-desc-oldFashioned
-  physicalDesc: reagent-physical-desc-bubbly
-  flavor: alcohol
-  color: "#f49c18"
-  metamorphicSprite:
-    sprite: Corvax/Objects/Consumable/Drinks/oldFashioned.rsi
-    state: icon
-  metabolisms:
-    Drink:
-      effects:
-      - !type:SatiateThirst
-        factor: 2
-      - !type:AdjustReagent
-        reagent: Ethanol
-        amount: 0.15
 
 - type: reagent
   id: BadTouch
@@ -145,7 +31,10 @@
   color: "#3cc44a"
   metamorphicSprite:
     sprite: Corvax/Objects/Consumable/Drinks/badTouch.rsi
-    state: icon
+    state: icon_empty
+  metamorphicMaxFillLevels: 6
+  metamorphicFillBaseName: fill-
+  metamorphicChangeColor: false
   metabolisms:
     Drink:
       effects:
@@ -156,16 +45,19 @@
         amount: 0.15
 
 - type: reagent
-  id: DarkAndStormy
-  name: reagent-name-darkAndStormy
+  id: Boyarsky
+  name: reagent-name-boyarsky
   parent: BaseAlcohol
-  desc: reagent-desc-darkAndStormy
+  desc: reagent-desc-boyarsky
   physicalDesc: reagent-physical-desc-bubbly
   flavor: alcohol
-  color: "#d9b09e"
+  color: "#ea394a"
   metamorphicSprite:
-    sprite: Corvax/Objects/Consumable/Drinks/darkAndStormy.rsi
-    state: icon
+    sprite: Corvax/Objects/Consumable/Drinks/boyarsky.rsi
+    state: icon_empty
+  metamorphicMaxFillLevels: 6
+  metamorphicFillBaseName: fill-
+  metamorphicChangeColor: false
   metabolisms:
     Drink:
       effects:
@@ -173,7 +65,7 @@
         factor: 2
       - !type:AdjustReagent
         reagent: Ethanol
-        amount: 0.11
+        amount: 0.1
 
 - type: reagent
   id: Bramble
@@ -185,7 +77,10 @@
   color: "#dbb7b2"
   metamorphicSprite:
     sprite: Corvax/Objects/Consumable/Drinks/bramble.rsi
-    state: icon
+    state: icon_empty
+  metamorphicMaxFillLevels: 6
+  metamorphicFillBaseName: fill-
+  metamorphicChangeColor: false
   metabolisms:
     Drink:
       effects:
@@ -194,6 +89,92 @@
       - !type:AdjustReagent
         reagent: Ethanol
         amount: 0.1
+
+- type: reagent
+  id: Campari
+  name: reagent-name-campari
+  parent: BaseAlcohol
+  desc: reagent-desc-campari
+  physicalDesc: reagent-physical-desc-bubbly
+  flavor: alcohol
+  color: "#da2059"
+  metabolisms:
+    Drink:
+      effects:
+      - !type:SatiateThirst
+        factor: 2
+      - !type:AdjustReagent
+        reagent: Ethanol
+        amount: 0.1
+
+- type: reagent
+  id: Daiquiri
+  name: reagent-name-daiquiri
+  parent: BaseAlcohol
+  desc: reagent-desc-daiquiri
+  physicalDesc: reagent-physical-desc-bubbly
+  flavor: alcohol
+  color: "#f7f3eb"
+  metamorphicSprite:
+    sprite: Corvax/Objects/Consumable/Drinks/daiquiri.rsi
+    state: icon_empty
+  metamorphicMaxFillLevels: 5
+  metamorphicFillBaseName: fill-
+  metamorphicChangeColor: false
+  metabolisms:
+    Drink:
+      effects:
+      - !type:SatiateThirst
+        factor: 2
+      - !type:AdjustReagent
+        reagent: Ethanol
+        amount: 0.07
+
+- type: reagent
+  id: DarkAndStormy
+  name: reagent-name-darkAndStormy
+  parent: BaseAlcohol
+  desc: reagent-desc-darkAndStormy
+  physicalDesc: reagent-physical-desc-bubbly
+  flavor: alcohol
+  color: "#d9b09e"
+  metamorphicSprite:
+    sprite: Corvax/Objects/Consumable/Drinks/darkAndStormy.rsi
+    state: icon_empty
+  metamorphicMaxFillLevels: 6
+  metamorphicFillBaseName: fill-
+  metamorphicChangeColor: false
+  metabolisms:
+    Drink:
+      effects:
+      - !type:SatiateThirst
+        factor: 2
+      - !type:AdjustReagent
+        reagent: Ethanol
+        amount: 0.11
+
+- type: reagent
+  id: EspressoMartini
+  name: reagent-name-espressoMartini
+  parent: BaseAlcohol
+  desc: reagent-desc-espressoMartini
+  physicalDesc: reagent-physical-desc-bubbly
+  flavor: alcohol
+  color: "#4c2f11"
+  metamorphicSprite:
+    sprite: Corvax/Objects/Consumable/Drinks/espressoMartini.rsi
+    state: icon_empty
+  metamorphicMaxFillLevels: 5
+  metamorphicFillBaseName: fill-
+  metamorphicChangeColor: false
+  metabolisms:
+    Drink:
+      effects:
+      - !type:SatiateThirst
+        factor: 2
+      - !type:AdjustReagent
+        reagent: Ethanol
+        amount: 0.12
 
 - type: reagent
   id: MaiTai
@@ -205,7 +186,10 @@
   color: "#e9c886"
   metamorphicSprite:
     sprite: Corvax/Objects/Consumable/Drinks/maiTai.rsi
-    state: icon
+    state: icon_empty
+  metamorphicMaxFillLevels: 6
+  metamorphicFillBaseName: fill-
+  metamorphicChangeColor: false
   metabolisms:
     Drink:
       effects:
@@ -225,7 +209,10 @@
   color: "#d5dcd3"
   metamorphicSprite:
     sprite: Corvax/Objects/Consumable/Drinks/moscowMule.rsi
-    state: icon
+    state: icon_empty
+  metamorphicMaxFillLevels: 6
+  metamorphicFillBaseName: fill-
+  metamorphicChangeColor: false
   metabolisms:
     Drink:
       effects:
@@ -234,6 +221,52 @@
       - !type:AdjustReagent
         reagent: Ethanol
         amount: 0.07
+
+- type: reagent
+  id: Negroni
+  name: reagent-name-negroni
+  parent: BaseAlcohol
+  desc: reagent-desc-negroni
+  physicalDesc: reagent-physical-desc-bubbly
+  flavor: alcohol
+  color: "#af1700"
+  metamorphicSprite:
+    sprite: Corvax/Objects/Consumable/Drinks/negroni.rsi
+    state: icon_empty
+  metamorphicMaxFillLevels: 5
+  metamorphicFillBaseName: fill-
+  metamorphicChangeColor: false
+  metabolisms:
+    Drink:
+      effects:
+      - !type:SatiateThirst
+        factor: 2
+      - !type:AdjustReagent
+        reagent: Ethanol
+        amount: 0.12
+
+- type: reagent
+  id: OldFashioned
+  name: reagent-name-oldFashioned
+  parent: BaseAlcohol
+  desc: reagent-desc-oldFashioned
+  physicalDesc: reagent-physical-desc-bubbly
+  flavor: alcohol
+  color: "#f49c18"
+  metamorphicSprite:
+    sprite: Corvax/Objects/Consumable/Drinks/oldFashioned.rsi
+    state: icon_empty
+  metamorphicMaxFillLevels: 6
+  metamorphicFillBaseName: fill-
+  metamorphicChangeColor: false
+  metabolisms:
+    Drink:
+      effects:
+      - !type:SatiateThirst
+        factor: 2
+      - !type:AdjustReagent
+        reagent: Ethanol
+        amount: 0.15
 
 - type: reagent
   id: Paloma
@@ -245,7 +278,10 @@
   color: "#d5dcd3"
   metamorphicSprite:
     sprite: Corvax/Objects/Consumable/Drinks/paloma.rsi
-    state: icon
+    state: icon_empty
+  metamorphicMaxFillLevels: 6
+  metamorphicFillBaseName: fill-
+  metamorphicChangeColor: false
   metabolisms:
     Drink:
       effects:
@@ -256,16 +292,19 @@
         amount: 0.07
 
 - type: reagent
-  id: Boyarsky
-  name: reagent-name-boyarsky
+  id: Yorsh
+  name: reagent-name-yorsh
   parent: BaseAlcohol
-  desc: reagent-desc-boyarsky
+  desc: reagent-desc-yorsh
   physicalDesc: reagent-physical-desc-bubbly
   flavor: alcohol
-  color: "#ea394a"
+  color: "#b05b3c"
   metamorphicSprite:
-    sprite: Corvax/Objects/Consumable/Drinks/boyarsky.rsi
-    state: icon
+    sprite: Corvax/Objects/Consumable/Drinks/yorsh.rsi
+    state: icon_empty
+  metamorphicMaxFillLevels: 6
+  metamorphicFillBaseName: fill-
+  metamorphicChangeColor: false
   metabolisms:
     Drink:
       effects:
@@ -273,4 +312,4 @@
         factor: 2
       - !type:AdjustReagent
         reagent: Ethanol
-        amount: 0.1
+        amount: 0.3

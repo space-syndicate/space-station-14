@@ -24,6 +24,7 @@ hud-chatbox-channel-Whisper = Шёпот
 hud-chatbox-channel-LOOC = LOOC
 hud-chatbox-channel-OOC = OOC
 hud-chatbox-channel-Radio = Рация
+hud-chatbox-channel-Notifications = Уведомления
 hud-chatbox-channel-Server = Сервер
 hud-chatbox-channel-Visual = Визуальный
 hud-chatbox-channel-Damage = Повреждения

@@ -1,5 +1,7 @@
 ent-BaseGameRule = { "" }
     .desc = { "" }
+ent-SubGamemodesRule = { ent-BaseGameRule }
+    .desc = { ent-BaseGameRule.desc }
 ent-DeathMatch31 = { ent-BaseGameRule }
     .desc = { ent-BaseGameRule.desc }
 ent-InactivityTimeRestart = { ent-BaseGameRule }
