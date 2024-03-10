@@ -377,7 +377,7 @@ namespace Content.Shared.CCVar
         /// URL of the Discord webhook which will relay all ahelp messages.
         /// </summary>
         public static readonly CVarDef<string> DiscordAHelpWebhook =
-            CVarDef.Create("discord.ahelp_webhook", "https://discord.com/api/webhooks/1213825272630214676/in5gFdJ3c5zy0zz4EwyRTYkekG7hgW9ATsbnsqGwqPaOPyrnR0F8HjLVySlBmN0SDkZH", CVar.SERVERONLY | CVar.CONFIDENTIAL);
+            CVarDef.Create("discord.ahelp_webhook", string.Empty, CVar.SERVERONLY | CVar.CONFIDENTIAL);
 
         /// <summary>
         /// The server icon to use in the Discord ahelp embed footer.
@@ -396,18 +396,18 @@ namespace Content.Shared.CCVar
         /// URL of the Discord webhook which will relay all custom votes. If left empty, disables the webhook.
         /// </summary>
         public static readonly CVarDef<string> DiscordVoteWebhook =
-            CVarDef.Create("discord.vote_webhook", "https://discord.com/api/webhooks/1213826812719661056/L5Ooi_C47Rfrj1k5V02qmDL3wmF57O8N4M5_vuvndz3rB2KXbcw3BbYGzvRie9kPZfFj", CVar.SERVERONLY);
+            CVarDef.Create("discord.vote_webhook", string.Empty, CVar.SERVERONLY);
 
         /// URL of the Discord webhook which will relay round restart messages.
         /// </summary>
         public static readonly CVarDef<string> DiscordRoundUpdateWebhook =
-            CVarDef.Create("discord.round_update_webhook", "https://discord.com/api/webhooks/1213815574153396225/rdzRioGqDddNrKrHXPqaE684SjBOVUhYduXGoQQ8-PPxVGddBHjHaAMU5DcZktgX-Zlg", CVar.SERVERONLY | CVar.CONFIDENTIAL);
+            CVarDef.Create("discord.round_update_webhook", string.Empty, CVar.SERVERONLY | CVar.CONFIDENTIAL);
 
         /// <summary>
         /// Role id for the Discord webhook to ping when the round ends.
         /// </summary>
         public static readonly CVarDef<string> DiscordRoundEndRoleWebhook =
-            CVarDef.Create("discord.round_end_role", "1213831493315600424", CVar.SERVERONLY);
+            CVarDef.Create("discord.round_end_role", string.Empty, CVar.SERVERONLY);
 
 
         /*
@@ -818,7 +818,7 @@ namespace Content.Shared.CCVar
         /// de-admin them.
         /// </summary>
         public static readonly CVarDef<bool> AdminDeadminOnJoin =
-            CVarDef.Create("admin.deadmin_on_join", false, CVar.SERVERONLY);
+            CVarDef.Create("admin.deadmin_on_join", true, CVar.SERVERONLY);
 
         /// <summary>
         ///     Overrides the name the client sees in ahelps. Set empty to disable.
