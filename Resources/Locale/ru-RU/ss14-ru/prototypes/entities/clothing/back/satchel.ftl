@@ -32,5 +32,5 @@ ent-ClothingBackpackSatchelCargo = сумка грузчика
     .desc = Прочная сумка для воровства добычи.
 ent-ClothingBackpackSatchelSalvage = сумка утилизатора
     .desc = Прочная сумка для хранения добычи.
-ent-ClothingBackpackSatchelHolding = сумка хранения
+ent-ClothingBackpackSatchelHolding = бездонная сумка
     .desc = Сумка, открывающаяся в локальный карман блюспейса.

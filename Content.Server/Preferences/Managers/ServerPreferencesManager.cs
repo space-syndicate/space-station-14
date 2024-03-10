@@ -106,8 +106,8 @@ namespace Content.Server.Preferences.Managers
             // WARN! It's not removing markings from DB!
             var sponsorPrototypes = _sponsors != null && _sponsors.TryGetPrototypes(message.MsgChannel.UserId, out var prototypes)
                 ? prototypes.ToArray()
-                : new string[]{};
-            profile.EnsureValid(sponsorPrototypes);
+                : [];
+            profile.EnsureValid(_cfg, _protos, sponsorPrototypes);
             // Corvax-Sponsors-End
             var profiles = new Dictionary<int, ICharacterProfile>(curPrefs.Characters)
             {
@@ -206,8 +206,8 @@ namespace Content.Server.Preferences.Managers
                     {
                         var sponsorPrototypes = _sponsors != null && _sponsors.TryGetPrototypes(session.UserId, out var prototypes)
                             ? prototypes.ToArray()
-                            : new string[]{};
-                        profile.EnsureValid(sponsorPrototypes);
+                            : [];
+                        profile.EnsureValid(_cfg, _protos, sponsorPrototypes);
                     }
                     // Corvax-Sponsors-End
                     prefsData.Prefs = prefs;
@@ -285,44 +285,20 @@ namespace Content.Server.Preferences.Managers
                 return await _db.InitPrefsAsync(userId, HumanoidCharacterProfile.Random());
             }
 
-            return SanitizePreferences(prefs);
+            // Corvax-Sponsors-Start
+            var sponsorPrototypes = _sponsors != null && _sponsors.TryGetPrototypes(userId, out var prototypes) ? prototypes.ToArray() : []; // Corvax-Sponsors
+            return SanitizePreferences(prefs, sponsorPrototypes);
+            // Corvax-Sponsors-End
         }
 
-        private PlayerPreferences SanitizePreferences(PlayerPreferences prefs)
+        private PlayerPreferences SanitizePreferences(PlayerPreferences prefs, string[] sponsorPrototypes)
         {
             // Clean up preferences in case of changes to the game,
             // such as removed jobs still being selected.
 
             return new PlayerPreferences(prefs.Characters.Select(p =>
             {
-                ICharacterProfile newProf;
-                switch (p.Value)
-                {
-                    case HumanoidCharacterProfile hp:
-                    {
-                        var prototypeManager = IoCManager.Resolve<IPrototypeManager>();
-                        var selectedSpecies = HumanoidAppearanceSystem.DefaultSpecies;
-
-                        if (prototypeManager.TryIndex<SpeciesPrototype>(hp.Species, out var species) && species.RoundStart)
-                        {
-                            selectedSpecies = hp.Species;
-                        }
-
-                        newProf = hp
-                            .WithJobPriorities(
-                                hp.JobPriorities.Where(job =>
-                                    _protos.HasIndex<JobPrototype>(job.Key)))
-                            .WithAntagPreferences(
-                                hp.AntagPreferences.Where(antag =>
-                                    _protos.HasIndex<AntagPrototype>(antag)))
-                            .WithSpecies(selectedSpecies);
-                        break;
-                    }
-                    default:
-                        throw new NotSupportedException();
-                }
-
-                return new KeyValuePair<int, ICharacterProfile>(p.Key, newProf);
+                return new KeyValuePair<int, ICharacterProfile>(p.Key, p.Value.Validated(_cfg, _protos, sponsorPrototypes));
             }), prefs.SelectedCharacterIndex, prefs.AdminOOCColor);
         }
 

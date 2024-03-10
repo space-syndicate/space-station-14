@@ -47,3 +47,6 @@ ent-RubberStampApproved = печать ОДОБРЕНО
     .desc = { ent-RubberStampBaseAlt.desc }
 ent-RubberStampDenied = печать ОТКАЗАНО
     .desc = { ent-RubberStampBaseAlt.desc }
+ent-RubberStampDetective = печать детектива
+    .suffix = НЕ МАППИТЬ
+    .desc = { ent-RubberStampBase.desc }

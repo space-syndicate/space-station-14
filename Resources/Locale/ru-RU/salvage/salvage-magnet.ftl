@@ -58,6 +58,7 @@ salvage-map-proto-MediumShuttleWreck = Разбившийся эвакуацио
 salvage-map-proto-MediumPetHospital = Медвежий госпиталь
 salvage-map-proto-MediumCrashedShuttle = Разбившийся шаттл
 salvage-map-proto-Meatball = Фрикаделька
+salvage-map-proto-VeganMeatball = Веганская фрикаделька
 salvage-map-proto-StationStation = Станция станция
 salvage-map-proto-AsteroidBase = База на астероиде
 salvage-map-proto-RuinCargoBase = Разрушенный склад снабжения
