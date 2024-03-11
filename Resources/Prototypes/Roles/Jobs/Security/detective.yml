@@ -7,33 +7,32 @@
   - !type:DepartmentTimeRequirement
     department: Security
     time: 72000 #20 hrs # Corvax-RoleTime
-  - !type:DepartmentTimeRequirement
-    department: Civilian
-    time: 18000 # 5 hours
   startingGear: DetectiveGear
   icon: "JobIconDetective"
-  supervisors: job-supervisors-hop
-  canBeAntag: true
+  supervisors: job-supervisors-hos
+  canBeAntag: false
   access:
+  - Security
   - Brig
   - Maintenance
   - Service
   - Detective
-  extendedAccess:
-  - Security
+  special:
+  - !type:AddImplantSpecial
+    implants: [ MindShieldImplant ]
 
 - type: startingGear
   id: DetectiveGear
   equipment:
     jumpsuit: ClothingUniformJumpsuitDetective
-    outerClothing: ClothingOuterVestDetective
-    back: ClothingBackpackFilledDetective
-    shoes: ClothingShoesBootsJack
+    back: ClothingBackpackSecurityFilledDetective
+    shoes: ClothingShoesBootsCombatFilled
     eyes: ClothingEyesGlassesSunglasses
     head: ClothingHeadHatFedoraBrown
+    outerClothing: ClothingOuterVestDetective
     id: DetectivePDA
     ears: ClothingHeadsetSecurity
     belt: ClothingBeltHolsterFilled
   innerClothingSkirt: ClothingUniformJumpskirtDetective
-  satchel: ClothingBackpackSatchelFilledDetective
-  duffelbag: ClothingBackpackDuffelFilledDetective
+  satchel: ClothingBackpackSatchelSecurityFilledDetective
+  duffelbag: ClothingBackpackDuffelSecurityFilledDetective
