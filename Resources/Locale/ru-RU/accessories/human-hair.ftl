@@ -55,6 +55,7 @@ marking-HumanHairCornrowbun = Корнроу (Пучок)
 marking-HumanHairCornrowbraid = Корнроу (Косичка)
 marking-HumanHairCornrowtail = Корнроу (Хвостик)
 marking-HumanHairCrewcut = Крю-кат
+marking-HumanHairCrewcut2 = Crewcut 2
 marking-HumanHairCurls = Завитки
 marking-HumanHairC = Подстриженная
 marking-HumanHairDandypompadour = Денди Помпадур
