@@ -15,6 +15,6 @@ ent-ShellShotgunPractice = shell (.50 practice)
 ent-ShellTranquilizer = shell (.50 tranquilizer)
     .desc = { ent-BaseShellShotgun.desc }
 ent-ShellShotgunImprovised = improvised shotgun shell
-    .desc = A homemade shotgun shell that shoots painful metal shrapnel. The spread is so wide that it couldn't hit the broad side of a barn.
+    .desc = A homemade shotgun shell that shoots painful glass shrapnel. The spread is so wide that it couldn't hit the broad side of a barn.
 ent-ShellShotgunUranium = uranium shotgun shell
     .desc = { ent-BaseShellShotgun.desc }
