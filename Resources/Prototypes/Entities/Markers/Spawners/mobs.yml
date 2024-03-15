@@ -386,7 +386,7 @@
     layers:
       - state: green
       - state: shiva
-        sprite: Mobs/Pets/shiva.rsi
+        sprite: Mobs/Pets/kasta.rsi
   - type: ConditionalSpawner
     prototypes:
       - MobKasta
