@@ -378,6 +378,20 @@
       - MobSpiderShiva
 
 - type: entity
+  name: Kasta Spawner
+  id: SpawnMobKasta
+  parent: MarkerBase
+  components:
+  - type: Sprite
+    layers:
+      - state: green
+      - state: shiva
+        sprite: Mobs/Pets/shiva.rsi
+  - type: ConditionalSpawner
+    prototypes:
+      - MobKasta
+
+- type: entity
   name: Willow Spawner
   id: SpawnMobKangarooWillow
   parent: MarkerBase

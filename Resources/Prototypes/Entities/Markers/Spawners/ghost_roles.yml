@@ -18,6 +18,25 @@
         state: icon
 
 - type: entity
+  id: SpawnPointGhostKastaDog
+  name: ghost role spawn point
+  suffix: kasta dog
+  parent: MarkerBase
+  components:
+  - type: GhostRole
+    name: ghost-role-information-kasta-dog-name
+    description: ghost-role-information-kasta-dog-description
+    rules: ghost-role-information-kasta-dog-rules
+  - type: GhostRoleMobSpawner
+    prototype: MobKasta
+  - type: Sprite
+    sprite: Markers/jobs.rsi
+    layers:
+      - state: green
+      - sprite: Mobs/Animals/regalrat.rsi
+        state: icon
+
+- type: entity
   id: SpawnPointGhostRemilia
   name: ghost role spawn point
   suffix: Remilia
