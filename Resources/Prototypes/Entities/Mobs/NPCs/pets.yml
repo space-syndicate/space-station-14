@@ -731,7 +731,6 @@
     allowMovement: true
     name: ghost-role-information-kasta-dog-name
     description: ghost-role-information-rat-king-description
-    rules: ghost-role-information-rat-king-rules
   - type: GhostTakeoverAvailable
   - type: HTN
     rootTask:

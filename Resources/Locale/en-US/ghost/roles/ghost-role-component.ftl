@@ -182,6 +182,9 @@ ghost-role-information-cburn-agent-description = A highly trained CentCom agent,
 ghost-role-information-centcom-official-name = CentComm official
 ghost-role-information-centcom-official-description = Perform CentComm related duties such as inspect the station, jotting down performance reviews for heads of staff, and managing the fax machine.
 
+ghost-role-information-kasta-dog-name = Kasta 
+ghost-role-information-kasta-dog-description = Kasta, a dog which got to station because some Matiz has hit it
+
 ghost-role-information-nukeop-rules = You are a syndicate operative tasked with the destruction of the station. As an antagonist, do whatever is required to complete this task.
 
 ghost-role-information-loneop-name = Lone Operative
