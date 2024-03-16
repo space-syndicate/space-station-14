@@ -136,7 +136,7 @@ namespace Content.Server.Administration.Systems
             return value ?? null;
         }
 
-        private void OnIdentityChanged(IdentityChangedEvent ev)
+        private void OnIdentityChanged(ref IdentityChangedEvent ev)
         {
             if (!TryComp<ActorComponent>(ev.CharacterEntity, out var actor))
                 return;

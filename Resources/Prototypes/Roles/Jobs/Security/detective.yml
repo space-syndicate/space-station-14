@@ -15,6 +15,7 @@
   supervisors: job-supervisors-hos
   canBeAntag: false
   access:
+  - Security
   - Brig
   - Maintenance
   - Service
@@ -29,15 +30,15 @@
   id: DetectiveGear
   equipment:
     jumpsuit: ClothingUniformJumpsuitDetective
-    outerClothing: ClothingOuterVestDetective
-    back: ClothingBackpackFilledDetective
-    shoes: ClothingShoesBootsJack
+    back: ClothingBackpackSecurityFilledDetective
+    shoes: ClothingShoesBootsCombatFilled
     eyes: ClothingEyesGlassesSunglasses
     head: ClothingHeadHatFedoraBrown
+    outerClothing: ClothingOuterVestDetective
     id: DetectivePDA
     ears: ClothingHeadsetSecurity
     belt: ClothingBeltHolsterFilled
-  innerClothingSkirt: ClothingUniformJumpskirtDetective
-  satchel: ClothingBackpackSatchelFilledDetective
-  duffelbag: ClothingBackpackDuffelFilledDetective
+    innerClothingSkirt: ClothingUniformJumpskirtDetective
+    satchel: ClothingBackpackSatchelSecurityFilledDetective
+    duffelbag: ClothingBackpackDuffelSecurityFilledDetective
 
