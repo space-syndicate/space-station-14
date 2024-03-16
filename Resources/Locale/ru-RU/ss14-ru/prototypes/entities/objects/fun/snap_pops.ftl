@@ -1,4 +1,4 @@
-ent-SnapPop = snap pop
-    .desc = Throw it at the floor and listen to it POP!
-ent-SnapPopBox = snap pop box
-    .desc = Contains twenty snap pops for a few minutes of popping fun!
+ent-SnapPop = петарда
+    .desc = Бросьте её на пол и услышите, как она взрывается!
+ent-SnapPopBox = коробка петард
+    .desc = Содержит двадцать петард на несколько минут веселья!
