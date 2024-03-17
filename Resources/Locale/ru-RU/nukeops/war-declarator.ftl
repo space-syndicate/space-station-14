@@ -11,7 +11,7 @@ war-declarator-boost-possible = Возможно объявить войну
 war-declarator-boost-impossible = Невозможно объявить войну
 war-declarator-boost-declared = Война объявлена! Шаттл может быть отключен на...
 war-declarator-boost-timer =
-    Оставшееся время: { $minutes } { $minutes ->
+    Оставшееся время: { $time } { $time ->
         [one] минута
         [few] минуты
        *[other] минут
