@@ -651,7 +651,7 @@
   - type: Clothing
     sprite: Clothing/Uniforms/Jumpskirt/janimaid.rsi
     
-    - type: entity
+- type: entity
   parent: ClothingUniformSkirtBase
   id: ClothingUniformJumpskirtBlueShield
   name: blueshield jumpskirt
