@@ -110,6 +110,7 @@ ent-ZookeeperIDCard = ID карта зоотехника
 ent-DetectiveIDCard = ID карта детектива
     .desc = { ent-IDCardStandard.desc }
 ent-BlueShieldIDCard = ID карта офицера "Синий Щит"
+    .desc = { ent-IDCardStandard.desc }
 ent-CBURNIDcard = ID карта РХБЗЗ
     .desc = { ent-CentcomIDCard.desc }
     .suffix = РХБЗЗ
