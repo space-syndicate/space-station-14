@@ -3,6 +3,7 @@ job-name-security = офицер СБ
 job-name-cadet = кадет СБ
 job-name-hos = глава службы безопасности
 job-name-detective = детектив
+job-name-blueshield = офицер "Синий Щит"
 job-name-brigmedic = бригмедик
 job-name-borg = киборг
 job-name-scientist = учёный
@@ -48,6 +49,7 @@ job-name-visitor = посетитель
 # Role timers - Make these alphabetical or I cut you
 JobAtmosphericTechnician = атмосферный техник
 JobBartender = бармен
+JobBlueShieldOfficer = офицер "Синий Щит"
 JobBorg = киборг
 JobBotanist = ботаник
 JobCaptain = капитан
