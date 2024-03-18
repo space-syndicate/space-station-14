@@ -650,6 +650,17 @@
     sprite: Clothing/Uniforms/Jumpskirt/janimaid.rsi
   - type: Clothing
     sprite: Clothing/Uniforms/Jumpskirt/janimaid.rsi
+    
+    - type: entity
+  parent: ClothingUniformSkirtBase
+  id: ClothingUniformJumpskirtBlueShield
+  name: blueshield jumpskirt
+  description: Although it is comfortable and emphasizes you, but it is better not to wave your legs when fighting.
+  components:
+  - type: Sprite
+    sprite: Clothing/Uniforms/Jumpskirt/blueshield.rsi
+  - type: Clothing
+    sprite: Clothing/Uniforms/Jumpskirt/blueshield.rsi
 
 - type: entity
   parent: ClothingUniformSkirtBase
