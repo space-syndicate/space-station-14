@@ -316,6 +316,25 @@
       - id: BoxEncryptionKeySecurity
       - id: HoloprojectorSecurity
       - id: BookSecretDocuments
+      
+- type: entity
+  id: LockerBlueShieldFilled
+  suffix: Filled
+  parent: LockerBlueShield
+  components:
+  - type: StorageFill
+    contents:
+      - id: WeaponDisabler
+      - id: ClothingUniformJumpskirtBlueShield
+      - id: ClothingUniformJumpsuitBlueShield
+      - id: ClothingEyesGlassesSunglasses
+      - id: ClothingHeadsetCommand
+      - id: ClothingHandsGlovesCombat
+      - id: ClothingShoesBlueShieldShoes
+      - id: ClothingOuterBlueShieldVest
+      - id: ClothingHeadBeretBlueShield
+      - id: MedkitCombatFilled
+      - id: MedkitFilled
 
 - type: entity
   id: LockerFreezerVaultFilled
