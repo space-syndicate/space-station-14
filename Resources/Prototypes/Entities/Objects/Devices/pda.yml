@@ -925,6 +925,20 @@
     state: pda-detective
 
 - type: entity
+  parent: BasePDA
+  id: BlueShieldPDA
+  name: BlueShield PDA
+  description: The shield on this PDA means safety for the life of the heads, hmm, in my opinion there are not enough strips here.
+  components:
+  - type: Pda
+    id: BlueShieldIDCard
+    state: pda-blueshield
+  - type: PdaBorderColor
+    borderColor: "#1F1F1F"
+  - type: Icon
+    state: pda-blueshield
+
+- type: entity
   parent: BaseMedicalPDA
   id: BrigmedicPDA
   name: brigmedic PDA
