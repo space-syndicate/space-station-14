@@ -11,7 +11,12 @@
           mapNameTemplate: '{0} Avrite {1}'
           nameGenerator:
             !type:NanotrasenNameGenerator
-            prefixCreator: 'TG'
+            prefixCreator: 'SY'
+        - type: GridSpawn
+          groups:
+            mining:
+              paths:
+              - /Maps/Shuttles/mining_corvaxavrit.yml
         - type: StationEmergencyShuttle
           emergencyShuttlePath: /Maps/Shuttles/emergency_corvaxavrit.yml
         - type: StationJobs
