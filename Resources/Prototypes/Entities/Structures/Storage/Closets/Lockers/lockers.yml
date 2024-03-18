@@ -72,6 +72,19 @@
     stateDoorClosed: hop_door
   - type: AccessReader
     access: [["HeadOfPersonnel"]]
+    
+    - type: entity
+  id: LockerBlueShield
+  parent: LockerBaseSecure
+  name: blue shield's locker
+  components:
+  - type: Appearance
+  - type: EntityStorageVisuals
+    stateBaseClosed: bs
+    stateDoorOpen: bs_open
+    stateDoorClosed: bs_door
+  - type: AccessReader
+    access: [["BlueShield"]]
 
 # CE
 - type: entity
