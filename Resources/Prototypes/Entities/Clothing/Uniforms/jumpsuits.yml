@@ -1081,6 +1081,17 @@
       sprite: Clothing/Uniforms/Jumpsuit/monastic_robe_light.rsi
     - type: Clothing
       sprite: Clothing/Uniforms/Jumpsuit/monastic_robe_light.rsi
+      
+- type: entity
+  parent: ClothingUniformBase
+  id: ClothingUniformJumpsuitBlueShield
+  name: blue shield jumpsuit
+  description: Like the jumpsuit, be a shield on the hearts of the heads, they hope for you!
+  components:
+  - type: Sprite
+    sprite: Clothing/Uniforms/Jumpsuit/blueshield.rsi
+  - type: Clothing
+    sprite: Clothing/Uniforms/Jumpsuit/blueshield.rsi
 
 - type: entity
   parent: ClothingUniformBase
