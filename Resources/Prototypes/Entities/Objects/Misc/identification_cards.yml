@@ -772,6 +772,20 @@
     - state: iddetective
   - type: PresetIdCard
     job: Detective
+    
+- type: entity
+  parent: IDCardStandard
+  id: BlueShieldIDCard
+  name: Blue Shield ID card
+  components:
+  - type: Sprite
+    layers:
+    - state: idblueshield
+    - state: silver
+  - type: Item
+    heldPrefix: silver
+  - type: PresetIdCard
+    job: Blueshield
 
 - type: entity
   parent: CentcomIDCard
