@@ -780,8 +780,8 @@
   components:
   - type: Sprite
     layers:
-    - state: idblueshield
     - state: silver
+    - state: idblueshield
   - type: Item
     heldPrefix: silver
   - type: PresetIdCard
