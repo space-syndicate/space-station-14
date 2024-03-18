@@ -25,6 +25,17 @@
       collection: FootstepBoots
 
 - type: entity
+  parent: ClothingShoesBase
+  id: ClothingShoesBlueShieldShoes
+  name: blue shield boots
+  description: ...
+  components:
+  - type: Sprite
+    sprite: Clothing/Shoes/Boots/blueshield.rsi
+  - type: Clothing
+    sprite: Clothing/Shoes/Boots/blueshield.rsi
+    
+- type: entity
   parent: ClothingShoesBaseButcherable
   id: ClothingShoesBootsSalvage
   name: salvage boots
