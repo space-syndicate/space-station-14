@@ -3,6 +3,10 @@
   name: id-card-access-level-command
 
 - type: accessLevel
+  id: BlueShield
+  name: id-card-access-level-blueshield
+
+- type: accessLevel
   id: Captain
   name: id-card-access-level-captain
 
