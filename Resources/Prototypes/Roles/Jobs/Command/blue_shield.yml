@@ -1,0 +1,58 @@
+- type: job
+  id: Blueshield
+  name: blueshield
+  description: job-description-blueshield
+  playTimeTracker: JobBlueShieldOfficer
+  requirements:
+    - !type:DepartmentTimeRequirement
+      department: Engineering
+      time: 72000 #20 hrs # Corvax-RoleTime
+    - !type:DepartmentTimeRequirement
+      department: Medical
+      time: 72000 #20 hrs # Corvax-RoleTime
+    - !type:DepartmentTimeRequirement
+      department: Security
+      time: 72000 #20 hrs # Corvax-RoleTime
+#    - !type:DepartmentTimeRequirement
+#      department: Command
+#      time: 54000 # 15 hours
+    - !type:OverallPlaytimeRequirement
+      time: 504000 #140 hrs # Corvax-RoleTime
+  weight: 20
+  startingGear: BlueshieldGear
+  icon: "JobIconBlueShield"
+  requireAdminNotify: true
+  joinNotifyCrew: true
+  supervisors: job-supervisors-centcom
+  canBeAntag: false
+  access:
+  - BlueShield
+  - Cargo
+  - Salvage
+  - Command
+  - Engineering
+  - Atmospherics
+  - External
+  - Maintenance
+  - Medical
+  - Research
+  - Security
+  - Brig
+  - Service
+
+- type: startingGear
+  id: BlueshieldGear
+  equipment:
+    jumpsuit: ClothingUniformJumpsuitBlueShield
+    head: ClothingHeadBeretBlueShield
+    back: ClothingBackpackFilled
+    shoes: ClothingShoesBlueShieldShoes
+    eyes: ClothingEyesGlassesSunglasses
+    gloves: ClothingHandsGlovesColorBlack
+    outerClothing: ClothingOuterBlueShieldVest
+    id: BlueShieldPDA
+    ears: ClothingHeadsetAltCommand
+    belt: ClothingBeltSecurityFilled
+  innerclothingskirt: ClothingUniformJumpskirtBlueShield
+  satchel: ClothingBackpackSatchel
+  duffelbag: ClothingBackpackDuffel
