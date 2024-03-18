@@ -1,5 +1,6 @@
 id-card-access-level-command = Командование
 id-card-access-level-captain = Капитан
+id-card-access-level-blueshield = Синий Щит
 id-card-access-level-head-of-personnel = Глава персонала
 id-card-access-level-cryogenics = Криогеника
 id-card-access-level-head-of-security = Глава службы безопасности
