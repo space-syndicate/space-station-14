@@ -73,7 +73,7 @@
   - type: AccessReader
     access: [["HeadOfPersonnel"]]
     
-    - type: entity
+- type: entity
   id: LockerBlueShield
   parent: LockerBaseSecure
   name: blue shield's locker
