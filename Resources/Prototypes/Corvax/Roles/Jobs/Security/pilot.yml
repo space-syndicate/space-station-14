@@ -1,7 +1,6 @@
 - type: job
   id: Pilot
   name: job-name-pilot
-  description: job-description-pilot
   playTimeTracker: JobPilot
   requirements:
   - !type:DepartmentTimeRequirement
