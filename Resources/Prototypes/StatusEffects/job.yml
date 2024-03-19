@@ -181,6 +181,13 @@
 
 - type: statusIcon
   parent: JobIcon
+  id: JobIconBlueShield
+  icon:
+    sprite: /Textures/Interface/Misc/job_icons.rsi
+    state: BlueShield
+
+- type: statusIcon
+  parent: JobIcon
   id: JobIconHeadOfPersonnel
   icon:
     sprite: /Textures/Interface/Misc/job_icons.rsi
