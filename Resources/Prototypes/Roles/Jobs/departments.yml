@@ -38,7 +38,7 @@
   color: "#334E6D"
   roles:
   - Captain
-  - IAA # Corvax-IAA
+  - Blueshield
   - CentralCommandOfficial
   - ChiefEngineer
   - ChiefMedicalOfficer
@@ -48,6 +48,13 @@
   - Quartermaster
   primary: false
   weight: 100
+
+- type: department
+  id: Legal
+  description: department-Legal0-description
+  color: "#332f2c"
+  roles:
+  - IAA # Corvax-IAA
 
 - type: department
   id: Engineering
