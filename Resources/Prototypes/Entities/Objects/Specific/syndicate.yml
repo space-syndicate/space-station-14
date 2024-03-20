@@ -21,7 +21,8 @@
   - type: Currency
     price:
       Telecrystal: 1
-  - type: HiddenDescription #Corvax MRP Hidden Description
+# Corvax-HiddenDesc-Start
+  - type: HiddenDescription
     entries:
     - label: corvax-hidden-desc-Telecrystal-syndicate
       whitelistMind:
@@ -37,6 +38,7 @@
         - ResearchDirector
         - Scientist
         - Borg
+# Corvax-HiddenDesc-End
         
 - type: entity
   parent: Telecrystal
