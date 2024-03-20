@@ -1,6 +1,5 @@
 using Content.Server.Mind;
 using Content.Shared.Examine;
-using Content.Shared.Ghost;
 using Content.Shared.Roles.Jobs;
 
 namespace Content.Server.Corvax.HiddenDescription;
@@ -24,41 +23,15 @@ public sealed partial class HiddenDescriptionSystem : EntitySystem
 
         foreach (var item in hiddenDesc.Comp.Entries)
         {
-            //Check job
-            bool isJobAllow = false;
-            if (job != null && job.Prototype != null)
-            {
-                if (item.JobRequired.Contains(job.Prototype.Value))
-                {
-                    isJobAllow = true;
-                }
-            }
+            var isJobAllow = job?.Prototype != null && item.JobRequired.Contains(job.Prototype.Value);
+            var isMindWhitelistPassed = item.WhitelistMind.IsValid(mindId);
+            var isBodyWhitelistPassed = item.WhitelistMind.IsValid(args.Examiner);
+            var passed = item.NeedAllCheck
+                ? isMindWhitelistPassed && isBodyWhitelistPassed && isJobAllow
+                : isMindWhitelistPassed || isBodyWhitelistPassed || isJobAllow;
 
-            //Check mind to whitelist
-            bool isMindWhitelistPassed = false;
-            if (item.WhitelistMind.IsValid(mindId))
-            {
-                isMindWhitelistPassed = true;
-            }
-
-            //Check body to whitelist
-            bool isBodyWhitelistPassed = false;
-            if (item.WhitelistMind.IsValid(args.Examiner))
-            {
-                isBodyWhitelistPassed = true;
-            }
-
-            //final check
-            if (item.NeedAllCheck)
-            {
-                if (isMindWhitelistPassed && isBodyWhitelistPassed && isJobAllow)
-                    args.PushMarkup(Loc.GetString(item.Label), hiddenDesc.Comp.PushPriority);
-            }
-            else
-            {
-                if (isMindWhitelistPassed || isBodyWhitelistPassed || isJobAllow)
-                    args.PushMarkup(Loc.GetString(item.Label), hiddenDesc.Comp.PushPriority);
-            }
+            if (passed)
+                args.PushMarkup(Loc.GetString(item.Label), hiddenDesc.Comp.PushPriority);
         }
     }
 }
