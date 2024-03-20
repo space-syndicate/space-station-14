@@ -18,7 +18,8 @@
     sound: /Audio/Effects/Emotes/parp1.ogg
   - type: UseDelay
     delay: 300
-  - type: HiddenDescription #Corvax MRP Hidden Description
+# Corvax-HiddenDesc-Start
+  - type: HiddenDescription
     entries:
     - label: corvax-hidden-desc-ReinforcementRadioSyndicate-syndicate
       whitelistMind:
@@ -37,6 +38,7 @@
         - ResearchDirector
         - Scientist
         - Borg
+# Corvax-HiddenDesc-End
           
 - type: entity
   parent: ReinforcementRadioSyndicate
@@ -58,7 +60,8 @@
     rules: ghost-role-information-syndicate-monkey-reinforcement-rules
   - type: GhostRoleMobSpawner
     prototype: MobMonkeySyndicateAgent
-  - type: HiddenDescription #Corvax MRP Hidden Description
+# Corvax-HiddenDesc-Start
+  - type: HiddenDescription
     entries:
     - label: corvax-hidden-desc-ReinforcementRadioSyndicateMonkey-syndicate
       whitelistMind:
@@ -77,6 +80,7 @@
         - ResearchDirector
         - Scientist
         - Borg
+# Corvax-HiddenDesc-End
 
 
 - type: entity
@@ -100,7 +104,8 @@
       rules: Normal syndicate antagonist rules apply. Work with whoever called you in, and don't harm them.
     - type: GhostRoleMobSpawner
       prototype: PlayerBorgSyndicateAssaultBattery
-    - type: HiddenDescription #Corvax MRP Hidden Description
+# Corvax-HiddenDesc-Start
+    - type: HiddenDescription
       entries:
       - label: corvax-hidden-desc-ReinforcementRadioSyndicateCyborgAssault-syndicate
         whitelistMind:
@@ -119,3 +124,4 @@
           - ResearchDirector
           - Scientist
           - Borg
+# Corvax-HiddenDesc-End
