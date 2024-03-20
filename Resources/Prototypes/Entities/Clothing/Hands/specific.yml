@@ -45,7 +45,8 @@
   - type: Thieving
     stripTimeReduction: 2
     stealthy: true
-  - type: HiddenDescription #Corvax MRP Hidden Description
+# Corvax-HiddenDesc-Start
+  - type: HiddenDescription
     entries:
     - label: corvax-hidden-desc-Chameleon-syndicate
       whitelistMind:
@@ -71,3 +72,4 @@
         - ResearchDirector
         - Scientist
         - Borg
+# Corvax-HiddenDesc-End
