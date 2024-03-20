@@ -64,7 +64,8 @@
     quickEquip: false
     slots:
     - back
-  - type: HiddenDescription #Corvax MRP Hidden Description
+# Corvax-HiddenDesc-Start
+  - type: HiddenDescription
     entries:
     - label: corvax-hidden-desc-FireAxeFlaming-syndicate
       whitelistMind:
@@ -77,3 +78,4 @@
         - ResearchDirector
         - Scientist
         - Borg
+# Corvax-HiddenDesc-End
