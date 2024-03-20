@@ -12,7 +12,8 @@
   - type: Item
     sprite: Objects/Tools/emag.rsi
     storedRotation: -90
-  - type: HiddenDescription #Corvax MRP Hidden Description
+# Corvax-HiddenDesc-Start
+  - type: HiddenDescription
     entries:
     - label: corvax-hidden-desc-Emag-syndicate
       whitelistMind:
@@ -31,6 +32,7 @@
         - AtmosphericTechnician
         - StationEngineer
         - TechnicalAssistant
+# Corvax-HiddenDesc-End
 
 - type: entity
   parent: EmagUnlimited
