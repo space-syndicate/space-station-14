@@ -345,7 +345,8 @@
   - type: TimerTriggerVisuals
     primingSound:
       path: /Audio/Effects/hallelujah.ogg
-  - type: HiddenDescription #Corvax MRP Hidden Description
+# Corvax-HiddenDesc-Start
+  - type: HiddenDescription
     entries:
     - label: corvax-hidden-desc-HolyHandGrenade-syndicate
       whitelistMind:
@@ -358,6 +359,7 @@
         - ResearchDirector
         - Scientist
         - Borg
+# Corvax-HiddenDesc-End
           
 - type: entity
   parent: GrenadeBase
