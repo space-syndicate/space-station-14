@@ -1,6 +1,6 @@
 ent-CargoPallet = грузовой поддон
     .desc = Определяет предметы для продажи Центкому при отзыве шаттла.
-ent-CargoPalletSell = cargo selling pallet
-    .desc = Designates valid items to sell with a selling computer, or to CentCom when a shuttle is recalled.
-ent-CargoPalletBuy = cargo buying pallet
-    .desc = Designates where orders will appear when purchased.
+ent-CargoPalletSell = продающий грузовой поддон
+    .desc = Определяет допустимые предметы для продажи через консоль продажи товаров, или Центкому, при отзыве шаттла.
+ent-CargoPalletBuy = покупающий грузовой поддон
+    .desc = Определяет, где будут появляться заказанные товары после покупки.
