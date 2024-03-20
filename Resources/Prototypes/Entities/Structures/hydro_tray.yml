@@ -94,6 +94,9 @@
   - type: GuideHelp
     guides:
     - Botany
+  - type: Tag
+    tags:
+      - NoPaint
 
 - type: entity
   parent: hydroponicsTray
