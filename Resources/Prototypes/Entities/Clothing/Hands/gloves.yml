@@ -343,7 +343,8 @@
   - type: Thieving
     stripTimeReduction: 1.5
     stealthy: true
-  - type: HiddenDescription #Corvax MRP Hidden Description
+# Corvax-HiddenDesc-Start
+  - type: HiddenDescription 
     entries:
     - label: corvax-hidden-desc-ThievingGloves-syndicate
       whitelistMind:
@@ -354,6 +355,7 @@
       whitelistMind:
         components:
           - ThiefRole
+# Corvax-HiddenDesc-End
 
 - type: entity
   parent: ClothingHandsGlovesColorWhite
