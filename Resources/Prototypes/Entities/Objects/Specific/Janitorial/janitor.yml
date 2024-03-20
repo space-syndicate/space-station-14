@@ -269,7 +269,8 @@
   - type: Tag
     tags: # ignore "WhitelistChameleon" tag
       - WetFloorSign
-  - type: HiddenDescription #Corvax MRP Hidden Description
+# Corvax-HiddenDesc-Start
+  - type: HiddenDescription
     entries:
     - label: corvax-hidden-desc-WetFloorSignMineExplosive-syndicate
       whitelistMind:
@@ -282,6 +283,7 @@
         - ResearchDirector
         - Scientist
         - Borg
+# Corvax-HiddenDesc-End
         
 - type: entity
   name: janitorial trolley
