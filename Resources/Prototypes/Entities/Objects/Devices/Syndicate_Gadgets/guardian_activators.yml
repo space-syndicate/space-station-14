@@ -9,7 +9,8 @@
     state: combat_hypo
   - type: GuardianCreator
     guardianProto: MobHoloparasiteGuardian
-  - type: HiddenDescription #Corvax MRP Hidden Description
+# Corvax-HiddenDesc-Start
+  - type: HiddenDescription
     entries:
     - label: corvax-hidden-desc-HoloparasiteInjector-syndicate
       whitelistMind:
@@ -27,6 +28,7 @@
         - Paramedic
         - MedicalDoctor
         - ChiefMedicalOfficer
+# Corvax-HiddenDesc-End
 
 - type: entity
   name: holoclown injector
@@ -36,7 +38,8 @@
   components:
   - type: GuardianCreator
     guardianProto: MobHoloClownGuardian
-  - type: HiddenDescription #Corvax MRP Hidden Description
+# Corvax-HiddenDesc-Start
+  - type: HiddenDescription 
     entries:
     - label: corvax-hidden-desc-HoloClownInjector-syndicate
       whitelistMind:
@@ -54,6 +57,7 @@
         - Paramedic
         - MedicalDoctor
         - ChiefMedicalOfficer
+# Corvax-HiddenDesc-End
 
 - type: entity
   name: magical lamp
