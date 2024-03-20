@@ -28,14 +28,14 @@ ent-ClothingBackpackDuffelSyndicateFilledCarbine = { ent-ClothingBackpackDuffelS
 ent-ClothingBackpackDuffelSyndicateAmmoFilled = { ent-ClothingBackpackDuffelSyndicate }
     .suffix = набор боеприпасов, Синдикат
     .desc = { ent-ClothingBackpackDuffelSyndicate.desc }
-ent-ClothingBackpackDuffelSyndicateCostumeClown = { ent-ClothingBackpackDuffelClown }
-    .desc = { ent-ClothingBackpackDuffelClown.desc }
-    .suffix = Синдикат
 # Corvax-HiddenDesc-End
 
 ent-ClothingBackpackDuffelSyndicateCostumeCentcom = вещмешок с костюмом представителя Центкома
     .desc = Содержит полный комплект униформы представителя Центкома, гарнитуру и планшет. Гарнитура поставляется без ключа шифрования.
     .suffix = НЕ МАППИТЬ
+ent-ClothingBackpackDuffelSyndicateCostumeClown = { ent-ClothingBackpackDuffelClown }
+    .desc = { ent-ClothingBackpackDuffelClown.desc }
+    .suffix = Синдикат
 
 # Corvax-HiddenDesc-Start
 ent-ClothingBackpackDuffelSyndicateCarpSuit = { ent-ClothingBackpackDuffelSyndicate }
