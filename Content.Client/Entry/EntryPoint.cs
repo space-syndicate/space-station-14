@@ -23,7 +23,7 @@ using Content.Client.Singularity;
 using Content.Client.Stylesheets;
 using Content.Client.Viewport;
 using Content.Client.Voting;
-using Content.Shared.Ame;
+using Content.Shared.Ame.Components;
 using Content.Shared.Gravity;
 using Content.Shared.Localizations;
 using Robust.Client;
@@ -123,7 +123,6 @@ namespace Content.Client.Entry
             _prototypeManager.RegisterIgnore("alertLevels");
             _prototypeManager.RegisterIgnore("nukeopsRole");
             _prototypeManager.RegisterIgnore("stationGoal"); // Corvax-StationGoal
-            _prototypeManager.RegisterIgnore("loadout"); // Corvax-Loadout
 
             _componentFactory.GenerateNetIds();
             _adminManager.Initialize();

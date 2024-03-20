@@ -37,10 +37,14 @@
     - type: Bloodstream
       bloodMaxVolume: 300
     - type: Puller
+      needsHands: false
     - type: InteractionPopup
       successChance: 1
       interactSuccessString: petting-success-gorilla
       interactFailureString: petting-failure-gorilla
+      interactSuccessSpawn: EffectHearts
+      interactSuccessSound:
+        path: /Audio/Animals/ferret_happy.ogg
     - type: Tag
       tags:
         - CannotSuicide

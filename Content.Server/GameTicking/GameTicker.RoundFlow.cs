@@ -46,6 +46,10 @@ namespace Content.Server.GameTicking
         [ViewVariables]
         private GameRunLevel _runLevel;
 
+        private RoundEndMessageEvent.RoundEndPlayerInfo[]? _replayRoundPlayerInfo;
+
+        private string? _replayRoundText;
+
         [ViewVariables]
         public GameRunLevel RunLevel
         {
@@ -298,12 +302,6 @@ namespace Content.Server.GameTicking
 
             RunLevel = GameRunLevel.PostRound;
 
-            // The lobby song is set here instead of in RestartRound,
-            // because ShowRoundEndScoreboard triggers the start of the music playing
-            // at the end of a round, and this needs to be set before RestartRound
-            // in order for the lobby song status display to be accurate.
-            LobbySong = _robustRandom.Pick(_lobbyMusicCollection.PickFiles).ToString();
-
             ShowRoundEndScoreboard(text);
             SendRoundEndDiscordMessage();
         }
@@ -373,11 +371,14 @@ namespace Content.Server.GameTicking
                     PlayerOOCName = contentPlayerData?.Name ?? "(IMPOSSIBLE: REGISTERED MIND WITH NO OWNER)",
                     // Character name takes precedence over current entity name
                     PlayerICName = playerIcName,
+                    PlayerGuid = userId,
                     PlayerNetEntity = GetNetEntity(entity),
                     Role = antag
                         ? roles.First(role => role.Antagonist).Name
                         : roles.FirstOrDefault().Name ?? Loc.GetString("game-ticker-unknown-role"),
                     Antag = antag,
+                    JobPrototypes = roles.Where(role => !role.Antagonist).Select(role => role.Prototype).ToArray(),
+                    AntagPrototypes = roles.Where(role => role.Antagonist).Select(role => role.Prototype).ToArray(),
                     Observer = observer,
                     Connected = connected
                 };
@@ -386,10 +387,23 @@ namespace Content.Server.GameTicking
 
             // This ordering mechanism isn't great (no ordering of minds) but functions
             var listOfPlayerInfoFinal = listOfPlayerInfo.OrderBy(pi => pi.PlayerOOCName).ToArray();
+            var sound = RoundEndSoundCollection == null ? null : _audio.GetSound(new SoundCollectionSpecifier(RoundEndSoundCollection));
 
-            RaiseNetworkEvent(new RoundEndMessageEvent(gamemodeTitle, roundEndText, roundDuration, RoundId,
-                listOfPlayerInfoFinal.Length, listOfPlayerInfoFinal, LobbySong));
+            var roundEndMessageEvent = new RoundEndMessageEvent(
+                gamemodeTitle,
+                roundEndText,
+                roundDuration,
+                RoundId,
+                listOfPlayerInfoFinal.Length,
+                listOfPlayerInfoFinal,
+                sound
+            );
+            RaiseNetworkEvent(roundEndMessageEvent);
+            RaiseLocalEvent(roundEndMessageEvent);
             RaiseLocalEvent(new RoundEndedEvent(RoundId, roundDuration)); // Corvax
+
+            _replayRoundPlayerInfo = listOfPlayerInfoFinal;
+            _replayRoundText = roundEndText;
         }
 
         private async void SendRoundEndDiscordMessage()
@@ -526,9 +540,6 @@ namespace Content.Server.GameTicking
             {
                 _playerGameStatuses[session.UserId] = LobbyEnabled ? PlayerGameStatus.NotReadyToPlay : PlayerGameStatus.ReadyToPlay;
             }
-
-            // Put a bangin' donk on it.
-            _audio.PlayGlobal(_audio.GetSound(new SoundCollectionSpecifier("RoundEnd")), Filter.Broadcast(), true);
         }
 
         public bool DelayStart(TimeSpan time)

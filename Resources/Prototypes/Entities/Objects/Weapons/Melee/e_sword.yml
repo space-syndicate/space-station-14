@@ -78,6 +78,8 @@
     malus: 0
   - type: Reflect
     enabled: false
+  - type: IgnitionSource
+    temperature: 700
   - type: HiddenDescription #Corvax MRP Hidden Description
     entries:
     - label: corvax-hidden-desc-EnergySword-syndicate

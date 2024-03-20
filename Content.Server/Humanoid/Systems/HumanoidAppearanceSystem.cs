@@ -58,7 +58,6 @@ public sealed partial class HumanoidAppearanceSystem : SharedHumanoidAppearanceS
         targetHumanoid.CustomBaseLayers = new(sourceHumanoid.CustomBaseLayers);
         targetHumanoid.MarkingSet = new(sourceHumanoid.MarkingSet);
         SetTTSVoice(target, sourceHumanoid.Voice, targetHumanoid); // Corvax-TTS
-        targetHumanoid.SpeakerColor = sourceHumanoid.SpeakerColor; // Corvax-SpeakerColor
 
         targetHumanoid.Gender = sourceHumanoid.Gender;
         if (TryComp<GrammarComponent>(target, out var grammar))
@@ -188,7 +187,7 @@ public sealed partial class HumanoidAppearanceSystem : SharedHumanoidAppearanceS
 
         if (speciesPrototype == null)
         {
-            Logger.Error("Tried to get age representation of species that couldn't be indexed: " + species);
+            Log.Error("Tried to get age representation of species that couldn't be indexed: " + species);
             return Loc.GetString("identity-age-young");
         }
 

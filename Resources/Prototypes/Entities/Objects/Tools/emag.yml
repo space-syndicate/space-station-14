@@ -1,17 +1,17 @@
 - type: entity
   parent: BaseItem
-  id: Emag
+  id: EmagUnlimited
+  suffix: Unlimited
   name: cryptographic sequencer
   description: The all-in-one hacking solution. The thinking man's lockpick. The iconic EMAG.
   components:
   - type: Emag
-  - type: LimitedCharges
-  - type: AutoRecharge
   - type: Sprite
     sprite: Objects/Tools/emag.rsi
     state: icon
   - type: Item
     sprite: Objects/Tools/emag.rsi
+    storedRotation: -90
   - type: HiddenDescription #Corvax MRP Hidden Description
     entries:
     - label: corvax-hidden-desc-Emag-syndicate
@@ -31,17 +31,11 @@
         - AtmosphericTechnician
         - StationEngineer
         - TechnicalAssistant
-    
+
 - type: entity
-  parent: BaseItem
-  id: EmagUnlimited
-  suffix: Unlimited
-  name: cryptographic sequencer
-  description: The all-in-one hacking solution. The thinking man's lockpick. The iconic EMAG.
+  parent: EmagUnlimited
+  id: Emag
+  suffix: Limited
   components:
-  - type: Emag
-  - type: Sprite
-    sprite: Objects/Tools/emag.rsi
-    state: icon
-  - type: Item
-    sprite: Objects/Tools/emag.rsi
+  - type: LimitedCharges
+  - type: AutoRecharge

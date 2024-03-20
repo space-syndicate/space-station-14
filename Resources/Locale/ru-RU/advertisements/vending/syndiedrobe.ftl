@@ -32,3 +32,5 @@ advertisement-syndiedrobe-31 = Вы можете оставить отзыв о 
 thankyou-syndiedrobe-1 = Найдите этому достойное применение!
 thankyou-syndiedrobe-2 = Смерть NT!
 thankyou-syndiedrobe-3 = Продемонстрируйте им силу стиля.
+thankyou-syndiedrobe-4 = Счастливых убийств!
+thankyou-syndiedrobe-5 = Наслаждайтесь резнёй!

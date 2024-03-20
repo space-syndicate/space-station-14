@@ -30,7 +30,6 @@
     delay: 1
   - type: Tag
     tags:
-      - DroneUsable #No bucket because it holds chems, they can drag the cart or use a drain
       - Mop
       - MopBasic
   - type: GuideHelp
@@ -81,7 +80,6 @@
           maxVol: 100
     - type: Tag
       tags:
-        - DroneUsable #No bucket because it holds chems, they can drag the cart or use a drain
         - Mop
         - MopAdv
 
@@ -172,6 +170,16 @@
   - type: GuideHelp
     guides:
     - Janitorial
+  - type: Damageable
+    damageContainer: Inorganic
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 70
+      behaviors:
+      - !type:DoActsBehavior
+        acts: ["Destruction"]
 
 - type: entity
   name: mop bucket
@@ -253,9 +261,10 @@
   - type: OnUseTimerTrigger
     useVerbInstead: true
     beepInterval: .25
-    beepSound: /Audio/Items/Janitor/floor_sign_beep.ogg
-    params:
-      volume: 1
+    beepSound:
+      path: /Audio/Items/Janitor/floor_sign_beep.ogg
+      params:
+        volume: 1
     examinable: false
   - type: Tag
     tags: # ignore "WhitelistChameleon" tag
@@ -341,7 +350,7 @@
         lightreplacer_slot:
           name: janitorial-trolley-slot-component-slot-name-lightreplacer
           whitelist:
-            tags:
+            components:
               - LightReplacer
           priority: 6
         spraybottle_slot:
@@ -414,7 +423,7 @@
               acts: ["Destruction"]
             - !type:PlaySoundBehavior
               sound:
-                path: /Audio/Effects/metalbreak.ogg
+                collection: MetalBreak
     - type: ItemMapper
       mapLayers:
         cart_plunger:
@@ -557,7 +566,7 @@
               acts: [ "Destruction" ]
             - !type:PlaySoundBehavior
               sound:
-                path: /Audio/Effects/metalbreak.ogg
+                collection: MetalBreak
 
 - type: entity
   name: plunger
@@ -651,7 +660,6 @@
       delay: 1.5
     - type: Tag
       tags:
-        - DroneUsable
         - Mop
     - type: CleansForensics
     - type: Fiber

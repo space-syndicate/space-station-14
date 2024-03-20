@@ -13,6 +13,7 @@ guide-entry-portable-generator = Портативные генераторы
 guide-entry-ame = Двигатель антиматерии (ДАМ)
 guide-entry-singularity = Сингулярный двигатель
 guide-entry-teg = Термоэлектрический генератор (ТЭГ)
+guide-entry-rtg = РИТЭГ
 guide-entry-science = Научный отдел
 guide-entry-radio = Радиосвязь
 guide-entry-machine-upgrading = Улучшение оборудования
@@ -30,7 +31,8 @@ guide-entry-medical = Медицинский отдел
 guide-entry-medicaldoctor = Врач
 guide-entry-chemist = Химик
 guide-entry-medicine = Медицина
-guide-entry-brute = Продвинутое лечение
+guide-entry-brute =
+    Продвинутое лечение
     механических повреждений
 guide-entry-botanicals = Ботаника
 guide-entry-cloning = Клонирование
@@ -49,6 +51,8 @@ guide-entry-cyborgs = Киборги
 guide-entry-security = Безопасность станции
 guide-entry-forensics = Криминалистика
 guide-entry-defusal = Обезвреживание крупной бомбы
+guide-entry-criminal-records = Криминальные записи
+guide-entry-species = Расы
 guide-entry-antagonists = Антагонисты
 guide-entry-nuclear-operatives = Ядерные оперативники
 guide-entry-traitors = Предатели

@@ -76,3 +76,5 @@ ent-MaterialBones = кости
 ent-MaterialBones1 = { ent-MaterialBones }
     .suffix = 1
     .desc = { ent-MaterialBones.desc }
+ent-MaterialGunpowder = чёрный порох
+    .desc = Взрывчатое вещество.

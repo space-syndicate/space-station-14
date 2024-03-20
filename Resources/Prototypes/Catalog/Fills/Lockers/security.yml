@@ -72,6 +72,8 @@
       - id: ClothingOuterCoatSecurityOvercoat # Corvax-SecFashion
         prob: 0.2
       - id: ClothingEyesHudSecurity
+      - id: HoloprojectorSecurity
+        prob: 0.6
 
 - type: entity
   id: LockerBrigmedicFilled
@@ -132,7 +134,10 @@
       - id: BoxForensicPad
       - id: DrinkDetFlask
       - id: ClothingHandsGlovesForensic
+      - id: RubberStampDetective
       - id: BookBusido # Corvax-Books
+      - id: HoloprojectorSecurity
+      - id: BoxEvidenceMarkers
 
 - type: entity
   id: ClosetBombFilled

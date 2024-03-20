@@ -1,15 +1,6 @@
 ent-HandheldCrewMonitor = handheld crew monitor
     .desc = A hand-held crew monitor displaying the status of suit sensors.
+    .suffix = DO NOT MAP
 ent-HandheldCrewMonitorEmpty = { ent-HandheldCrewMonitor }
     .suffix = Empty
     .desc = { ent-HandheldCrewMonitor.desc }
-ent-SpyCrewMonitor = spy monitor
-    .desc = A spy device capable of connecting to crew monitoring servers.
-ent-SpyCrewMonitorEmpty = { ent-SpyCrewMonitor }
-    .suffix = Empty
-    .desc = { ent-SpyCrewMonitor.desc }
-ent-SyndiCrewMonitor = syndicate crew monitor
-    .desc = The syndicated version of crew monitor, intercepts information from the server.
-ent-SyndiCrewMonitorEmpty = { ent-SyndiCrewMonitor }
-    .suffix = Empty
-    .desc = { ent-SyndiCrewMonitor.desc }
