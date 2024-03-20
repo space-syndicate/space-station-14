@@ -45,7 +45,8 @@
         base:
           Primed: { state: primed }
           Unprimed: { state: complete }
-  - type: HiddenDescription #Corvax MRP Hidden Description
+# Corvax-HiddenDesc-Start
+  - type: HiddenDescription
     entries:
     - label: corvax-hidden-desc-SpiderCharge-ninja
       whitelistMind:
@@ -57,3 +58,4 @@
         - ResearchDirector
         - Scientist
         - Borg
+# Corvax-HiddenDesc-End
