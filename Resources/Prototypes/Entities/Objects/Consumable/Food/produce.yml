@@ -1419,6 +1419,19 @@
   - type: Tag
     tags:
     - Fruit # It's in the name
+# Corvax-HiddenDesc-Start
+  - type: HiddenDescription
+    entries:
+    - label: corvax-hidden-desc-Gatfruit-syndicate
+      whitelistMind:
+        components:
+          - TraitorRole
+          - NukeOperative
+    - label: corvax-hidden-desc-Gatfruit-botanist
+      jobRequired:
+        - Botanist
+        - Borg
+# Corvax-HiddenDesc-End
 
 - type: entity
   name: rice bushel

@@ -18,7 +18,28 @@
     sound: /Audio/Effects/Emotes/parp1.ogg
   - type: UseDelay
     delay: 300
-
+# Corvax-HiddenDesc-Start
+  - type: HiddenDescription
+    entries:
+    - label: corvax-hidden-desc-ReinforcementRadioSyndicate-syndicate
+      whitelistMind:
+        components:
+          - TraitorRole
+          - NukeOperative
+    - label: corvax-hidden-desc-ReinforcementRadio-engineering
+      jobRequired:
+        - ChiefEngineer
+        - AtmosphericTechnician
+        - StationEngineer
+        - TechnicalAssistant
+    - label: corvax-hidden-desc-ReinforcementRadio-research
+      jobRequired:
+        - ResearchAssistant
+        - ResearchDirector
+        - Scientist
+        - Borg
+# Corvax-HiddenDesc-End
+          
 - type: entity
   parent: ReinforcementRadioSyndicate
   id: ReinforcementRadioSyndicateNukeops # Reinforcement radio exclusive to nukeops uplink
@@ -39,6 +60,28 @@
     rules: ghost-role-information-syndicate-monkey-reinforcement-rules
   - type: GhostRoleMobSpawner
     prototype: MobMonkeySyndicateAgent
+# Corvax-HiddenDesc-Start
+  - type: HiddenDescription
+    entries:
+    - label: corvax-hidden-desc-ReinforcementRadioSyndicateMonkey-syndicate
+      whitelistMind:
+        components:
+          - TraitorRole
+          - NukeOperative
+    - label: corvax-hidden-desc-ReinforcementRadio-engineering
+      jobRequired:
+        - ChiefEngineer
+        - AtmosphericTechnician
+        - StationEngineer
+        - TechnicalAssistant
+    - label: corvax-hidden-desc-ReinforcementRadio-research
+      jobRequired:
+        - ResearchAssistant
+        - ResearchDirector
+        - Scientist
+        - Borg
+# Corvax-HiddenDesc-End
+
 
 - type: entity
   parent: ReinforcementRadioSyndicateMonkey
@@ -61,3 +104,24 @@
       rules: Normal syndicate antagonist rules apply. Work with whoever called you in, and don't harm them.
     - type: GhostRoleMobSpawner
       prototype: PlayerBorgSyndicateAssaultBattery
+# Corvax-HiddenDesc-Start
+    - type: HiddenDescription
+      entries:
+      - label: corvax-hidden-desc-ReinforcementRadioSyndicateCyborgAssault-syndicate
+        whitelistMind:
+          components:
+            - TraitorRole
+            - NukeOperative
+      - label: corvax-hidden-desc-ReinforcementRadio-engineering
+        jobRequired:
+          - ChiefEngineer
+          - AtmosphericTechnician
+          - StationEngineer
+          - TechnicalAssistant
+      - label: corvax-hidden-desc-ReinforcementRadio-research
+        jobRequired:
+          - ResearchAssistant
+          - ResearchDirector
+          - Scientist
+          - Borg
+# Corvax-HiddenDesc-End

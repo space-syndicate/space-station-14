@@ -1,2 +1,5 @@
-ent-RadioJammer = глушитель связи
-    .desc = При активации это устройство блокирует любую исходящую поблизости радиосвязь и скрывает датчики комбинезонов с мониторов.
+# Corvax-HiddenDesc-Start
+ent-RadioJammer = { ent-AppraisalTool }
+    .suffix = глушитель связи Синдиката
+    .desc = { ent-AppraisalTool.desc } Устройство имеет огромную антенну и сменный аккумулятор.
+# Corvax-HiddenDesc-End
