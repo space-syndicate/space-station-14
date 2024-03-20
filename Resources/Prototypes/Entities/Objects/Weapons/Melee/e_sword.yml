@@ -80,7 +80,8 @@
     enabled: false
   - type: IgnitionSource
     temperature: 700
-  - type: HiddenDescription #Corvax MRP Hidden Description
+# Corvax-HiddenDesc-Start
+  - type: HiddenDescription
     entries:
     - label: corvax-hidden-desc-EnergySword-syndicate
       whitelistMind:
@@ -97,6 +98,7 @@
     - label: corvax-hidden-desc-EnergySword-cargo
       jobRequired:
         - SalvageSpecialist
+# Corvax-HiddenDesc-End
         
 - type: entity
   name: pen
@@ -175,7 +177,8 @@
     - Write
   - type: DisarmMalus
     malus: 0
-  - type: HiddenDescription #Corvax MRP Hidden Description
+# Corvax-HiddenDesc-Start
+  - type: HiddenDescription
     entries:
     - label: corvax-hidden-desc-EnergyDagger-syndicate
       whitelistMind:
@@ -188,6 +191,7 @@
         - ResearchDirector
         - Scientist
         - Borg
+# Corvax-HiddenDesc-End
           
 - type: entity
   parent: BaseItem
@@ -243,7 +247,8 @@
       right:
       - state: inhand-right-blade
         shader: unshaded
-  - type: HiddenDescription #Corvax MRP Hidden Description
+# Corvax-HiddenDesc-Start
+  - type: HiddenDescription
     entries:
     #- label: corvax-hidden-desc-EnergyCutlass-pirate #У нас нету в игре PirateRole, грусть
     - label: corvax-hidden-desc-EnergyCutlass-security
@@ -256,6 +261,7 @@
     - label: corvax-hidden-desc-EnergyCutlass-cargo
       jobRequired:
         - SalvageSpecialist
+# Corvax-HiddenDesc-End
         
 - type: entity
   name: double-bladed energy sword
@@ -325,7 +331,8 @@
       right:
       - state: inhand-right-blade
         shader: unshaded
-  - type: HiddenDescription #Corvax MRP Hidden Description
+# Corvax-HiddenDesc-Start
+  - type: HiddenDescription
     entries:
     - label: corvax-hidden-desc-EnergySword-syndicate
       whitelistMind:
@@ -342,3 +349,4 @@
     - label: corvax-hidden-desc-EnergySword-cargo
       jobRequired:
         - SalvageSpecialist
+# Corvax-HiddenDesc-End
