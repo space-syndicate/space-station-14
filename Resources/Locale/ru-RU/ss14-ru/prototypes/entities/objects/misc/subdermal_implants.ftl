@@ -17,9 +17,9 @@ ent-StorageImplant = { ent-BaseSubdermalImplant }
     .suffix = Хранилище
     .desc = { ent-BaseSubdermalImplant.desc }
 ent-FreedomImplant = { ent-BaseSubdermalImplant }
-    .suffix =  Свобода
+    .suffix = Свобода
     .desc = { ent-BaseSubdermalImplant.desc }
-ent-UplinkImplant =  { ent-BaseSubdermalImplant }
+ent-UplinkImplant = { ent-BaseSubdermalImplant }
     .suffix = Аплинк
     .desc = { ent-BaseSubdermalImplant.desc }
 ent-EmpImplant = { ent-BaseSubdermalImplant }
@@ -46,4 +46,6 @@ ent-DeathRattleImplant = { ent-BaseSubdermalImplant }
 ent-MindShieldImplant = { ent-BaseSubdermalImplant }
     .suffix = Щит разума
     .desc = { ent-BaseSubdermalImplant.desc }
+
 # Corvax-HiddenDesc-End
+

@@ -58,3 +58,5 @@ ent-BookJourney = a journey of music, mountains, and self-discovery
     .desc = The book is in excellent condition, with crisp pages and a glossy cover. The cover features a striking image of a mountain range, with a silhouette of a climber with a guitar on their back in the foreground. The title is bold and eye-catching, with the subtitle "A Journey of Music, Mountains, and Self-Discovery."
 ent-BookInspiration = finding inspiration - a writer's journey through the woods
     .desc = The book is in a new condition with a cover depicting a serene forest scene with a waterfall and colorful wildflowers. The title of the book "Finding Inspiration - A Writer's Journey Through the Woods" and the author's name are prominently displayed at the bottom.
+ent-BookJanitorTale = the tales of a tired janitor
+    .desc = A clean looking book, smelling vaguely of soap and bleach.
