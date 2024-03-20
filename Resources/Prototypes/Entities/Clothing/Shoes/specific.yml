@@ -127,7 +127,8 @@
     # ninja are masters of sneaking around relatively quickly, won't break cloak
     walkModifier: 1.1
     sprintModifier: 1.3
-  - type: HiddenDescription #Corvax MRP Hidden Description
+# Corvax-HiddenDesc-Start
+  - type: HiddenDescription
     entries:
     - label: corvax-hidden-desc-NoSlip-ninja
       whitelistMind:
@@ -139,6 +140,7 @@
         - ResearchDirector
         - Scientist
         - Borg
+# Corvax-HiddenDesc-End
 
 - type: entity
   parent: ClothingShoesBaseButcherable
@@ -182,7 +184,8 @@
       interfaces:
         - key: enum.ChameleonUiKey.Key
           type: ChameleonBoundUserInterface
-    - type: HiddenDescription #Corvax MRP Hidden Description
+# Corvax-HiddenDesc-Start
+    - type: HiddenDescription
       entries:
       - label: corvax-hidden-desc-Chameleon-syndicate
         whitelistMind:
@@ -195,6 +198,7 @@
           - ResearchDirector
           - Scientist
           - Borg
+# Corvax-HiddenDesc-End
 
 - type: entity
   parent: ClothingShoesChameleon
@@ -204,7 +208,8 @@
   description: Stylish black shoes.
   components:
   - type: NoSlip
-  - type: HiddenDescription #Corvax MRP Hidden Description
+# Corvax-HiddenDesc-Start
+  - type: HiddenDescription
     entries:
     - label: corvax-hidden-desc-Chameleon-syndicate
       whitelistMind:
@@ -228,6 +233,7 @@
         - ResearchDirector
         - Scientist
         - Borg
+# Corvax-HiddenDesc-End
           
 - type: entity
   parent: ClothingShoesClown
