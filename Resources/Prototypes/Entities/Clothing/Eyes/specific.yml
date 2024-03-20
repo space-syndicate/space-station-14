@@ -18,7 +18,8 @@
       interfaces:
         - key: enum.ChameleonUiKey.Key
           type: ChameleonBoundUserInterface
-    - type: HiddenDescription #Corvax MRP Hidden Description
+# Corvax-HiddenDesc-Start
+    - type: HiddenDescription 
       entries:
       - label: corvax-hidden-desc-Chameleon-syndicate
         whitelistMind:
@@ -31,4 +32,5 @@
           - ResearchDirector
           - Scientist
           - Borg
+# Corvax-HiddenDesc-End
 
