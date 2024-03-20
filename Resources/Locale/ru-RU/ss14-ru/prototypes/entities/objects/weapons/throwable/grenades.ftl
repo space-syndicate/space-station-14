@@ -6,6 +6,8 @@ ent-GrenadeFlashBang = светошумовая граната
     .desc = Пиииииииииииииииииииии
 ent-GrenadeFlashEffect = { "" }
     .desc = { "" }
+ent-SyndieMiniBomb = syndicate minibomb
+    .desc = A syndicate-manufactured explosive used to stow destruction and cause chaos.
 ent-SupermatterGrenade = граната суперматерии
     .desc = Граната, имитирующая расслоение сверхматерии двигателя, притягивает всё в кучу и через некоторое время взрывается.
 ent-WhiteholeGrenade = граната белой дыры
@@ -17,7 +19,7 @@ ent-ModularGrenade = модульная граната
 ent-EmpGrenade = ЭМИ граната
     .desc = Граната, предназначенная для поражения электрических систем.
 # Corvax-HiddenDesc-Start
-ent-HolyHandGrenade =  благословлённая держава
+ent-HolyHandGrenade = благословлённая держава
     .suffix = святая граната Синдиката
     .desc = «Благослови, Господи, сию ручную державу, да помоги мне исполнить мечты мои!».
 # Corvax-HiddenDesc-End
@@ -30,4 +32,6 @@ ent-GrenadeDummy = граната-обманка
 # Corvax-HiddenDesc-Start
 ent-SyndieTrickyBomb = хитроумная бомба
     .desc = Взрывное устройство, больше отвлекающее внимание, чем наносящее реальный вред.
+
 # Corvax-HiddenDesc-End
+

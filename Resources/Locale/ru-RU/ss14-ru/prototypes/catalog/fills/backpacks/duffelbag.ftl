@@ -3,7 +3,6 @@ ent-ClothingBackpackDuffelSurgeryFilled = хирургический вещме�
 ent-ClothingBackpackDuffelCBURNFilled = { ent-ClothingBackpackDuffelCBURN }
     .suffix = Заполненный
     .desc = { ent-ClothingBackpackDuffelCBURN.desc }
-    
 # Corvax-HiddenDesc-Start
 ent-ClothingBackpackDuffelSyndicateFilledMedical = { ent-ClothingBackpackDuffelSyndicate }
     .desc = { ent-ClothingBackpackDuffelSyndicate.desc }
@@ -28,6 +27,7 @@ ent-ClothingBackpackDuffelSyndicateFilledCarbine = { ent-ClothingBackpackDuffelS
 ent-ClothingBackpackDuffelSyndicateAmmoFilled = { ent-ClothingBackpackDuffelSyndicate }
     .suffix = набор боеприпасов, Синдикат
     .desc = { ent-ClothingBackpackDuffelSyndicate.desc }
+
 # Corvax-HiddenDesc-End
 
 ent-ClothingBackpackDuffelSyndicateCostumeCentcom = вещмешок с костюмом представителя Центкома
@@ -36,7 +36,6 @@ ent-ClothingBackpackDuffelSyndicateCostumeCentcom = вещмешок с кост
 ent-ClothingBackpackDuffelSyndicateCostumeClown = { ent-ClothingBackpackDuffelClown }
     .desc = { ent-ClothingBackpackDuffelClown.desc }
     .suffix = Синдикат
-
 # Corvax-HiddenDesc-Start
 ent-ClothingBackpackDuffelSyndicateCarpSuit = { ent-ClothingBackpackDuffelSyndicate }
     .suffix = вещмешок костюма карпа
@@ -77,4 +76,6 @@ ent-ClothingBackpackDuffelSyndicateMedicalBundleFilled = { ent-ClothingBackpackD
 ent-ClothingBackpackDuffelSyndicateDecoyKitFilled = { ent-ClothingBackpackDuffelSyndicate }
     .suffix = набор обманок
     .desc = { ent-ClothingBackpackDuffelSyndicate.desc }
+
 # Corvax-HiddenDesc-End
+

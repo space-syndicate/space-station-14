@@ -9,6 +9,7 @@ replay-loading-starting = Запуск сущностей
 replay-loading-failed =
     Не удалось загрузить повтор:
     { $reason }
+replay-loading-retry = Try load with more exception tolerance - MAY CAUSE BUGS!
 # Main Menu
 replay-menu-subtext = Повторы
 replay-menu-load = Загрузить выбранный повтор

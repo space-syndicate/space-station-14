@@ -1,7 +1,7 @@
 # Corvax-HiddenDesc-Start
 ent-Telecrystal = красный кристалл
     .desc = Необычные, мерцающие красным кристаллы.
-    .suffix =  20 ТК, телекристалл Синдиката
+    .suffix = 20 ТК, телекристалл Синдиката
 ent-Telecrystal1 = { ent-Telecrystal }
     .suffix = 1 ТК, телекристалл Синдиката
     .desc = { ent-Telecrystal.desc }
@@ -23,7 +23,12 @@ ent-BaseUplinkRadio25TC = { ent-BaseUplinkRadio }
 ent-BaseUplinkRadio40TC = { ent-BaseUplinkRadio }
     .suffix = 40 ТК, аплинк синдиката, Ядерный Оперативник
     .desc = { ent-BaseUplinkRadio.desc }
+ent-BaseUplinkRadio60TC = { ent-BaseUplinkRadio }
+    .suffix = 60 TC, LoneOps
+    .desc = { ent-BaseUplinkRadio.desc }
 ent-BaseUplinkRadioDebug = радио аплинк Синдиката
     .suffix = DEBUG
     .desc = { ent-BaseUplinkRadio.desc }
+
 # Corvax-HiddenDesc-End
+

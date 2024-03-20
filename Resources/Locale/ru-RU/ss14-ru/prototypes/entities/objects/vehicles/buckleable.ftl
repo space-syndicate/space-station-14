@@ -15,6 +15,8 @@ ent-VehicleSyndicateSegway = стильный алый сегвей
     .suffix = сегвей синдиката
     .desc = Алый цвет, брутальный узор протекторов, стильные диски... Вы знаете, на чём хотите уезжать от ядерного взрыва!
     .desc = Плохой до мозга костей.
+ent-VehicleSkeletonMotorcycle = skeleton motorcycle
+    .desc = Bad to the Bone.
 # Corvax-HiddenDesc-End
 ent-VehicleUnicycle = уницикл
     .desc = У него всего одно колесо!
