@@ -269,7 +269,22 @@
   - type: Tag
     tags: # ignore "WhitelistChameleon" tag
       - WetFloorSign
-
+# Corvax-HiddenDesc-Start
+  - type: HiddenDescription
+    entries:
+    - label: corvax-hidden-desc-WetFloorSignMineExplosive-syndicate
+      whitelistMind:
+        components:
+          - TraitorRole
+          - NukeOperative
+    - label: corvax-hidden-desc-WetFloorSignMineExplosive-research
+      jobRequired:
+        - ResearchAssistant
+        - ResearchDirector
+        - Scientist
+        - Borg
+# Corvax-HiddenDesc-End
+        
 - type: entity
   name: janitorial trolley
   id: JanitorialTrolley

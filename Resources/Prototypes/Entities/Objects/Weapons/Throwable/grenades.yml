@@ -345,7 +345,22 @@
   - type: TimerTriggerVisuals
     primingSound:
       path: /Audio/Effects/hallelujah.ogg
-
+# Corvax-HiddenDesc-Start
+  - type: HiddenDescription
+    entries:
+    - label: corvax-hidden-desc-HolyHandGrenade-syndicate
+      whitelistMind:
+        components:
+          - TraitorRole
+          - NukeOperative
+    - label: corvax-hidden-desc-HolyHandGrenade-research
+      jobRequired:
+        - ResearchAssistant
+        - ResearchDirector
+        - Scientist
+        - Borg
+# Corvax-HiddenDesc-End
+          
 - type: entity
   parent: GrenadeBase
   id: SmokeGrenade

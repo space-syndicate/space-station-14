@@ -407,14 +407,31 @@
         maxVol: 10
   - type: RefillableSolution
     solution: hypospray
-  - type: ExaminableSolution
-    solution: hypospray
+# Corvax-HiddenDesc-Start
+  #- type: ExaminableSolution
+  #  solution: hypospray
+# Corvax-HiddenDesc-End
   - type: Hypospray
     onlyMobs: false
   - type: UseDelay
     delay: 0.5
   - type: StaticPrice # A new shitcurity meta
     price: 75
+# Corvax-HiddenDesc-Start
+  - type: HiddenDescription
+    entries:
+    - label: corvax-hidden-desc-Hypopen-syndicate
+      whitelistMind:
+        components:
+          - TraitorRole
+          - NukeOperative
+    - label: corvax-hidden-desc-Hypopen-research
+      jobRequired:
+        - ResearchAssistant
+        - ResearchDirector
+        - Scientist
+        - Borg
+# Corvax-HiddenDesc-End
 
 - type: entity
   parent: BaseItem

@@ -76,6 +76,19 @@
     sprite: Objects/Specific/Chapel/necronomicon.rsi
   - type: Item
     sprite: Objects/Specific/Chapel/necronomicon.rsi
+# Corvax-HiddenDesc-Start
+  - type: HiddenDescription
+    entries:
+    - label: corvax-hidden-desc-BibleNecronomicon-syndicate
+      whitelistMind:
+        components:
+          - TraitorRole
+          - NukeOperative
+    - label: corvax-hidden-desc-BibleNecronomicon-service
+      jobRequired:
+        - Chaplain
+        - Librarian
+# Corvax-HiddenDesc-End
 
 - type: entity
   id: ActionBibleSummon

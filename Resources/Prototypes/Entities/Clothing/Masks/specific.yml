@@ -21,6 +21,21 @@
       interfaces:
         - key: enum.ChameleonUiKey.Key
           type: ChameleonBoundUserInterface
+# Corvax-HiddenDesc-Start
+    - type: HiddenDescription
+      entries:
+      - label: corvax-hidden-desc-Chameleon-syndicate
+        whitelistMind:
+          components:
+            - TraitorRole
+            - NukeOperative
+      - label: corvax-hidden-desc-Chameleon-research
+        jobRequired:
+          - ResearchAssistant
+          - ResearchDirector
+          - Scientist
+          - Borg
+# Corvax-HiddenDesc-End
 
 - type: entity
   parent: ClothingMaskGasChameleon
@@ -29,3 +44,29 @@
   components:
     - type: VoiceMasker
       default: ClothingMaskGas
+# Corvax-HiddenDesc-Start
+    - type: HiddenDescription
+      entries:
+      - label: corvax-hidden-desc-Chameleon-syndicate
+        whitelistMind:
+          components:
+            - TraitorRole
+            - NukeOperative
+      - label: corvax-hidden-desc-VoiceMasker-syndicate
+        whitelistMind:
+          components:
+            - TraitorRole
+            - NukeOperative
+      - label: corvax-hidden-desc-Chameleon-research
+        jobRequired:
+          - ResearchAssistant
+          - ResearchDirector
+          - Scientist
+          - Borg
+      - label: corvax-hidden-desc-VoiceMasker-research
+        jobRequired:
+          - ResearchAssistant
+          - ResearchDirector
+          - Scientist
+          - Borg
+# Corvax-HiddenDesc-End

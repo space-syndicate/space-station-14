@@ -44,3 +44,5 @@ ent-ChairFoldingSpawnFolded = { ent-ChairFolding }
     .desc = { ent-ChairFolding.desc }
 ent-SteelBench = стальная скамейка
     .desc = Длинная скамья, созданная для метро. Реально стандартный дизайн.
+ent-WoodenBench = wooden bench
+    .desc = Did you get a splinter? Well, at least it’s eco friendly.
