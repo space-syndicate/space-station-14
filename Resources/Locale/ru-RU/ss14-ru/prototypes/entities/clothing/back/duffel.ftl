@@ -36,7 +36,7 @@ ent-ClothingBackpackDuffelSyndicate = черно-красный вещмешок
     .desc = Вместительный и удобный вещмешок цвета эбонита и крови, в который влезут «игрушки» для любых возрастов.
 ent-ClothingBackpackDuffelSyndicateBundle = { ent-ClothingBackpackDuffelSyndicate }
     .desc = { ent-ClothingBackpackDuffelSyndicate.desc }
-ent-ClothingBackpackDuffelSyndicateAmmo = syndicate duffel bag
+ent-ClothingBackpackDuffelSyndicateAmmo = вещмешок Синдиката
     .desc = { ent-ClothingBackpackDuffelSyndicate.desc }
 ent-ClothingBackpackDuffelSyndicate = черно-красный вещмешок
     .suffix = вещмешок Синдиката
@@ -44,7 +44,7 @@ ent-ClothingBackpackDuffelSyndicate = черно-красный вещмешок
 ent-ClothingBackpackDuffelSyndicateAmmoBundle = { ent-ClothingBackpackDuffelSyndicateAmmo }
     .suffix = набор аммуниции Синдиката
     .desc = { ent-ClothingBackpackDuffelSyndicateAmmo.desc }
-ent-ClothingBackpackDuffelSyndicateMedical = медицинский { ent-ClothingBackpackDuffelSyndicate }
+ent-ClothingBackpackDuffelSyndicateMedical = { ent-ClothingBackpackDuffelSyndicate }
     .suffix = медицинский вещмешок Синдиката
     .desc = Вместительный и удобный вещмешок с красной эмблемой "Звезды жизни" цвета эбонита и крови. Интересно, его хозяин соблюдает клятву Гиппократа?
 # Corvax-HiddenDesc-End
