@@ -14386,18 +14386,6 @@ entities:
     - type: Transform
       pos: -14.5,-59.5
       parent: 2
-  - uid: 15965
-    components:
-    - type: Transform
-      rot: -1.5707963267948966 rad
-      pos: -92.5,-26.5
-      parent: 2
-  - uid: 15966
-    components:
-    - type: Transform
-      rot: -1.5707963267948966 rad
-      pos: -92.5,-19.5
-      parent: 2
 - proto: AirlockExternalLocked
   entities:
   - uid: 18167
@@ -14663,6 +14651,20 @@ entities:
     - type: Docking
       dockJointId: docking787554
       dockedWith: 6297
+- proto: AirlockGlassShuttleEasyPryLocked
+  entities:
+  - uid: 15965
+    components:
+    - type: Transform
+      rot: -1.5707963267948966 rad
+      pos: -92.5,-26.5
+      parent: 2
+  - uid: 15966
+    components:
+    - type: Transform
+      rot: -1.5707963267948966 rad
+      pos: -92.5,-19.5
+      parent: 2
 - proto: AirlockHeadOfPersonnelGlassLocked
   entities:
   - uid: 1036
@@ -137325,7 +137327,7 @@ entities:
     - type: Transform
       pos: 30.481918,27.513378
       parent: 2
-  - uid: 20266
+  - uid: 20266 
     components:
     - type: Transform
       pos: -57.63923,-36.36264
