@@ -1675,7 +1675,7 @@ entities:
           decals:
             505: 8.5266285,22.341934
             545: 0.9276402,25.11112
-            887: 28.858246,-18.983908
+            886: 28.858246,-18.983908
         - node:
             color: '#FFFFFFFF'
             id: Rock07
@@ -2089,8 +2089,10 @@ entities:
             0: 65535
           7,-4:
             0: 29491
+            2: 35908
           7,-3:
             0: 30583
+            2: 34952
           7,-2:
             0: 65535
           7,-1:
@@ -2218,6 +2220,7 @@ entities:
             0: 4369
           8,0:
             0: 30579
+            2: 34956
           0,-7:
             0: 12288
           -4,-7:
@@ -2282,8 +2285,10 @@ entities:
             0: 65535
           7,-6:
             0: 4352
+            2: 8192
           7,-5:
             0: 13073
+            2: 17506
           -8,7:
             0: 65535
           -6,6:
@@ -2403,11 +2408,17 @@ entities:
           7,3:
             2: 65535
           8,1:
-            2: 4096
+            2: 4479
           8,2:
             2: 13105
           8,3:
             2: 307
+          8,-3:
+            2: 13073
+          8,-2:
+            2: 30583
+          8,-1:
+            2: 30583
         uniqueMixes:
         - volume: 2500
           temperature: 293.15
@@ -5265,13 +5276,6 @@ entities:
     - type: Transform
       pos: 7.5,40.5
       parent: 2
-- proto: AtmosFixBlockerMarker
-  entities:
-  - uid: 2935
-    components:
-    - type: Transform
-      pos: 27.5,-6.5
-      parent: 2
 - proto: AtmosFixFreezerMarker
   entities:
   - uid: 153
@@ -5858,6 +5862,13 @@ entities:
     - type: Transform
       rot: 3.141592653589793 rad
       pos: 3.5,-14.5
+      parent: 2
+- proto: BorgCharger
+  entities:
+  - uid: 1501
+    components:
+    - type: Transform
+      pos: 20.5,-4.5
       parent: 2
 - proto: BoxBeaker
   entities:
@@ -21491,16 +21502,6 @@ entities:
       joinedGrid: 2
     - type: AtmosPipeColor
       color: '#0000FFFF'
-  - uid: 2120
-    components:
-    - type: Transform
-      rot: 3.141592653589793 rad
-      pos: 27.5,-6.5
-      parent: 2
-    - type: AtmosDevice
-      joinedGrid: 2
-    - type: AtmosPipeColor
-      color: '#FF0000FF'
   - uid: 2973
     components:
     - type: Transform
@@ -21509,6 +21510,16 @@ entities:
       parent: 2
     - type: AtmosDevice
       joinedGrid: 2
+  - uid: 3460
+    components:
+    - type: Transform
+      rot: 3.141592653589793 rad
+      pos: 34.5,-7.5
+      parent: 2
+    - type: AtmosDevice
+      joinedGrid: 2
+    - type: AtmosPipeColor
+      color: '#FF0000FF'
   - uid: 3469
     components:
     - type: Transform
@@ -21746,6 +21757,14 @@ entities:
       parent: 2
     - type: AtmosPipeColor
       color: '#FF0000FF'
+  - uid: 2418
+    components:
+    - type: Transform
+      rot: 3.141592653589793 rad
+      pos: 27.5,-5.5
+      parent: 2
+    - type: AtmosPipeColor
+      color: '#FF0000FF'
   - uid: 2500
     components:
     - type: Transform
@@ -21759,6 +21778,13 @@ entities:
     - type: Transform
       rot: 3.141592653589793 rad
       pos: -8.5,16.5
+      parent: 2
+    - type: AtmosPipeColor
+      color: '#FF0000FF'
+  - uid: 3427
+    components:
+    - type: Transform
+      pos: 34.5,-5.5
       parent: 2
     - type: AtmosPipeColor
       color: '#FF0000FF'
@@ -21954,6 +21980,14 @@ entities:
     - type: Transform
       rot: 1.5707963267948966 rad
       pos: -7.5,-0.5
+      parent: 2
+    - type: AtmosPipeColor
+      color: '#FF0000FF'
+  - uid: 2120
+    components:
+    - type: Transform
+      rot: 3.141592653589793 rad
+      pos: 34.5,-6.5
       parent: 2
     - type: AtmosPipeColor
       color: '#FF0000FF'
@@ -23934,13 +23968,6 @@ entities:
       parent: 2
     - type: AtmosPipeColor
       color: '#FF0000FF'
-  - uid: 2418
-    components:
-    - type: Transform
-      pos: 27.5,-5.5
-      parent: 2
-    - type: AtmosPipeColor
-      color: '#FF0000FF'
   - uid: 2419
     components:
     - type: Transform
@@ -24767,6 +24794,30 @@ entities:
       parent: 2
     - type: AtmosPipeColor
       color: '#FF0000FF'
+  - uid: 3426
+    components:
+    - type: Transform
+      rot: -1.5707963267948966 rad
+      pos: 30.5,-5.5
+      parent: 2
+    - type: AtmosPipeColor
+      color: '#FF0000FF'
+  - uid: 3458
+    components:
+    - type: Transform
+      rot: -1.5707963267948966 rad
+      pos: 32.5,-5.5
+      parent: 2
+    - type: AtmosPipeColor
+      color: '#FF0000FF'
+  - uid: 3459
+    components:
+    - type: Transform
+      rot: -1.5707963267948966 rad
+      pos: 33.5,-5.5
+      parent: 2
+    - type: AtmosPipeColor
+      color: '#FF0000FF'
   - uid: 3550
     components:
     - type: Transform
@@ -24775,6 +24826,14 @@ entities:
       parent: 2
     - type: AtmosPipeColor
       color: '#0000FFFF'
+  - uid: 3720
+    components:
+    - type: Transform
+      rot: -1.5707963267948966 rad
+      pos: 31.5,-5.5
+      parent: 2
+    - type: AtmosPipeColor
+      color: '#FF0000FF'
   - uid: 4199
     components:
     - type: Transform
@@ -24809,6 +24868,22 @@ entities:
     - type: Transform
       rot: -1.5707963267948966 rad
       pos: 0.5,10.5
+      parent: 2
+    - type: AtmosPipeColor
+      color: '#FF0000FF'
+  - uid: 6365
+    components:
+    - type: Transform
+      rot: -1.5707963267948966 rad
+      pos: 29.5,-5.5
+      parent: 2
+    - type: AtmosPipeColor
+      color: '#FF0000FF'
+  - uid: 6408
+    components:
+    - type: Transform
+      rot: -1.5707963267948966 rad
+      pos: 28.5,-5.5
       parent: 2
     - type: AtmosPipeColor
       color: '#FF0000FF'
@@ -33758,6 +33833,13 @@ entities:
     - type: Transform
       pos: 3.5,-13.5
       parent: 2
+- proto: SpawnPointBorg
+  entities:
+  - uid: 6536
+    components:
+    - type: Transform
+      pos: 20.5,-5.5
+      parent: 2
 - proto: SpawnPointBotanist
   entities:
   - uid: 3423
@@ -33779,15 +33861,20 @@ entities:
     - type: Transform
       pos: 19.5,9.5
       parent: 2
-  - uid: 3426
+  - uid: 6537
     components:
     - type: Transform
-      pos: 24.5,8.5
+      pos: 29.5,16.5
       parent: 2
-  - uid: 3427
+  - uid: 6538
     components:
     - type: Transform
-      pos: 24.5,11.5
+      pos: 30.5,11.5
+      parent: 2
+  - uid: 6539
+    components:
+    - type: Transform
+      pos: 29.5,6.5
       parent: 2
 - proto: SpawnPointChaplain
   entities:
@@ -33990,20 +34077,20 @@ entities:
       parent: 2
 - proto: SpawnPointSalvageSpecialist
   entities:
-  - uid: 3458
+  - uid: 2935
     components:
     - type: Transform
-      pos: 21.5,12.5
+      pos: 16.5,16.5
       parent: 2
-  - uid: 3459
+  - uid: 6333
     components:
     - type: Transform
-      pos: 22.5,12.5
+      pos: 21.5,26.5
       parent: 2
-  - uid: 3460
+  - uid: 6540
     components:
     - type: Transform
-      pos: 20.5,12.5
+      pos: 23.5,15.5
       parent: 2
 - proto: SpawnPointScientist
   entities:
@@ -36939,11 +37026,6 @@ entities:
     - type: Transform
       pos: 23.5,-3.5
       parent: 2
-  - uid: 1501
-    components:
-    - type: Transform
-      pos: 28.5,-6.5
-      parent: 2
   - uid: 1611
     components:
     - type: Transform
@@ -37073,11 +37155,6 @@ entities:
     components:
     - type: Transform
       pos: 30.5,-5.5
-      parent: 2
-  - uid: 3720
-    components:
-    - type: Transform
-      pos: 27.5,-5.5
       parent: 2
   - uid: 3722
     components:
@@ -38134,6 +38211,11 @@ entities:
     - type: Transform
       rot: 3.141592653589793 rad
       pos: 26.5,-8.5
+      parent: 2
+  - uid: 6535
+    components:
+    - type: Transform
+      pos: 27.5,-5.5
       parent: 2
 - proto: WallReinforcedRust
   entities:
@@ -43862,47 +43944,6 @@ entities:
     - type: Transform
       pos: 10.5,15.5
       parent: 2
-- proto: WindowClockworkDirectional
-  entities:
-  - uid: 6333
-    components:
-    - type: Transform
-      pos: 27.5,-6.5
-      parent: 2
-    - type: Godmode
-      oldDamage: {}
-    missingComponents:
-    - Destructible
-  - uid: 6365
-    components:
-    - type: Transform
-      rot: -1.5707963267948966 rad
-      pos: 27.5,-6.5
-      parent: 2
-    - type: Godmode
-      oldDamage: {}
-    missingComponents:
-    - Destructible
-  - uid: 6408
-    components:
-    - type: Transform
-      rot: 3.141592653589793 rad
-      pos: 27.5,-6.5
-      parent: 2
-    - type: Godmode
-      oldDamage: {}
-    missingComponents:
-    - Destructible
-  - uid: 6414
-    components:
-    - type: Transform
-      rot: 1.5707963267948966 rad
-      pos: 27.5,-6.5
-      parent: 2
-    - type: Godmode
-      oldDamage: {}
-    missingComponents:
-    - Destructible
 - proto: WindowDirectional
   entities:
   - uid: 4563
@@ -44545,6 +44586,12 @@ entities:
       rot: 1.5707963267948966 rad
       pos: 11.5,43.5
       parent: 2
+  - uid: 6414
+    components:
+    - type: Transform
+      rot: 1.5707963267948966 rad
+      pos: 33.5,-7.5
+      parent: 2
   - uid: 6419
     components:
     - type: Transform
@@ -44568,6 +44615,11 @@ entities:
       rot: 1.5707963267948966 rad
       pos: 9.5,10.5
       parent: 5016
+  - uid: 6534
+    components:
+    - type: Transform
+      pos: 34.5,-6.5
+      parent: 2
 - proto: WoodDoor
   entities:
   - uid: 177
