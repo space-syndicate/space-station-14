@@ -1,0 +1,87 @@
+- type: gameMap
+  id: CorvaxKilly
+  mapName: 'Killy Island'
+  mapPath: /Maps/corvax_killy.yml
+  minPlayers: 0
+  maxPlayers: 40
+  stations:
+    Killy:
+      stationProto: StandardNanotrasenStation
+      components:
+        - type: StationNameSetup
+          mapNameTemplate: '{0} Killy island {1}'
+          nameGenerator:
+            !type:NanotrasenNameGenerator
+            prefixCreator: 'KRN'
+        - type: StationEmergencyShuttle
+          emergencyShuttlePath: /Maps/Shuttles/emergency_corvaxkilly.yml
+        - type: StationCargoShuttle
+          path: /Maps/Shuttles/cargo_corvaxkilly.yml
+        - type: StationArrivals
+          shuttlePath: /Maps/Shuttles/arrivals_corvaxkilly.yml
+        - type: GridSpawn
+          groups:
+            trade:
+              addComponents:
+                - type: ProtectedGrid
+                - type: TradeStation
+              paths:
+                - /Maps/Shuttles/trading_outpostcorvaxkilly.yml
+            mining:
+              paths:
+              - /Maps/Shuttles/mining_corvaxkilly.yml
+            # Spawn last
+            ruins:
+              hide: true
+              nameGrid: true
+              minCount: 0
+              maxCount: 5
+              stationGrid: false
+              paths:
+              - /Maps/Ruins/biodome_satellite.yml
+              - /Maps/Ruins/derelict.yml
+              - /Maps/Ruins/djstation.yml
+              - /Maps/Ruins/old_ai_sat.yml
+              - /Maps/Ruins/relaystation.yml
+              - /Maps/Ruins/syndicate_dropship.yml
+              - /Maps/Ruins/whiteship_ancient.yml
+              - /Maps/Ruins/whiteship_bluespacejumper.yml
+        - type: StationJobs
+          overflowJobs:
+            - Passenger
+          availableJobs:
+            CargoTechnician: [ 3, 3 ]
+            Passenger: [ -1, -1 ]
+            Bartender: [ 1, 1 ]
+            Botanist: [ 1, 1 ]
+            Chef: [ 1, 1 ]
+            Clown: [ 1, 1 ]
+            Janitor: [ 1, 2 ]
+            Mime: [ 1, 1 ]
+            Captain: [ 1, 1 ]
+            IAA: [ 1, 1 ]
+            HeadOfPersonnel: [ 1, 1 ]
+            ChiefEngineer: [ 1, 1 ]
+            StationEngineer: [ 2, 2 ]
+            ChiefMedicalOfficer: [ 1, 1 ]
+            MedicalDoctor: [ 2, 2 ]
+            Chemist: [ 1, 1 ]
+            ResearchDirector: [ 1, 1 ]
+            Scientist: [ 2, 2 ]
+            HeadOfSecurity: [ 1, 1 ]
+            SecurityOfficer: [ 2, 2 ]
+            Chaplain: [ 1, 1 ]
+            Warden: [ 1, 1 ]
+            Quartermaster: [ 1, 1 ]
+            SalvageSpecialist: [ 3, 3 ]
+            Musician: [ 1, 1 ]
+            AtmosphericTechnician: [ 1, 1 ]
+            TechnicalAssistant: [ 2, 2 ]
+            ResearchAssistant: [ 2, 2 ]
+            Reporter: [ 1, 1 ]
+            MedicalIntern: [ 2, 2 ]
+            ServiceWorker: [ 2, 2 ]
+            SecurityCadet: [ 2, 2 ]
+            Psychologist: [ 0, 0 ]
+            Detective: [ 1, 1 ]
+            Paramedic: [ 1, 1 ]
