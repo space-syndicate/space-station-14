@@ -81,7 +81,7 @@
             # science
             ResearchDirector: [ 1, 1 ]
             Scientist: [ 2, 2 ]
-            Borg [ 1, 1 ]
+            Borg: [ 1, 1 ]
             ResearchAssistant: [ 2, 2 ]
             # security
             HeadOfSecurity: [ 1, 1 ]
@@ -92,4 +92,4 @@
             # cargo
             Quartermaster: [ 1, 1 ]
             SalvageSpecialist: [ 3, 3 ]
-            CargoTechnician [ 3, 3 ]
+            CargoTechnician: [ 3, 3 ]
