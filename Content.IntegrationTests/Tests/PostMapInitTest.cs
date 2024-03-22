@@ -48,7 +48,7 @@ namespace Content.IntegrationTests.Tests
             "CorvaxAvrite",
             "CorvaxDelta",
             "CorvaxGate",
-            "CorvaxKilly",
+            "CorvaxSilly",
             "CorvaxOutpost",
             "CorvaxAstra",
             "CorvaxGelta",
