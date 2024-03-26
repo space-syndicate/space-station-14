@@ -19,3 +19,5 @@ comp-climbable-cant-reach = Вы не можете туда достать!
 comp-climbable-cant-interact = Вы не можете этого сделать!
 # Shown to you when your character can't climb
 comp-climbable-cant-climb = Вы не способны взбираться!
+# Shown to you when your character tries to force someone else who can't climb onto a climbable
+comp-climbable-target-cant-climb = { CAPITALIZE(THE($moved-user)) } can't go there!
