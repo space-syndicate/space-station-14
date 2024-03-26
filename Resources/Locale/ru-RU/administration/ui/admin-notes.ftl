@@ -23,7 +23,10 @@ admin-notes-hide = Скрыть
 admin-notes-delete-confirm = Вы уверены?
 admin-notes-edited = Последнее изменение от { $author } в { $date }
 admin-notes-unbanned = Разбанил { $admin } в { $date }
-admin-notes-message-window-title = Внимание!
+admin-notes-message-desc = [color=white]You have received { $count ->
+        [1] an administrative message
+       *[other] administrative messages
+    } since the last time you played on this server.[/color]
 admin-notes-message-admin = Новое сообщение от { $admin }, добавлено в { $date }
 admin-notes-message-wait = Кнопки будут доступны через { $time } секунд.
 admin-notes-message-accept = Скрыть навсегда
@@ -64,6 +67,7 @@ admin-note-editor-submit-confirm = Вы уверены?
 # Watchlist and message login
 admin-notes-watchlist = Наблюдение над { $player }: { $message }
 admin-notes-new-message = Вы получили админ сообщение от { $admin }: { $message }
+admin-notes-fallback-admin-name = [System]
 # Admin remarks
 admin-remarks-command-description = Открыть страницу админ замечаний
 admin-remarks-command-error = Админ замечания были отключены

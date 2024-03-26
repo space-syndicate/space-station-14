@@ -4,6 +4,7 @@ implanter-component-implanting-target = { $user } пытается что-то �
 implanter-component-implant-failed = { $implant } нельзя имплантировать в { $target }!
 implanter-draw-failed-permanent = { $implant } вросся в { $target } и не может быть удалён!
 implanter-draw-failed = Вы пытаетесь удалить имплант, но ничего не находите.
+implanter-component-implant-already = { $target } already has the { $implant }!
 
 ## UI
 

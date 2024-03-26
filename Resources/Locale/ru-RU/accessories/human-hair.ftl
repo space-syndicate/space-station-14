@@ -7,6 +7,7 @@ marking-HumanHairBedhead = Небрежная
 marking-HumanHairBedheadv2 = Небрежная 2
 marking-HumanHairBedheadv3 = Небрежная 3
 marking-HumanHairLongBedhead = Небрежная (Длинная)
+marking-HumanHairLongBedhead2 = Long Bedhead 2
 marking-HumanHairFloorlengthBedhead = Небрежная (До пола)
 marking-HumanHairBeehive = Улей
 marking-HumanHairBeehivev2 = Улей 2

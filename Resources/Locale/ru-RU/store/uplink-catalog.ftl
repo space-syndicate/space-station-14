@@ -76,6 +76,8 @@ uplink-holoclown-kit-desc =
     Голоклоун имеет карманы, в которых может хранить вещи, руку, которой он может взаимодействовать с миром, невосприимчив к опасностям атмосферы и устойчив к механическу урону, но разделяет получаемые повреждения с хозяином.
 uplink-holster-name = Плечевая кобура
 uplink-holster-desc = Глубокая плечевая кобура, способная вместить множество различных видов оружия.
+uplink-chest-rig-name = Chest Rig
+uplink-chest-rig-desc = Explosion-resistant tactical webbing used for holding traitor goods.
 uplink-emag-name = Криптографический секвенсор
 uplink-emag-desc = Визитная карточка Синдиката, этот ЕМАГ способен открывать шлюзы и взламывать различные станционные устройства. Перезаряжается автоматически.
 uplink-agent-id-card-name = ID карта Агента
@@ -139,6 +141,8 @@ uplink-decoy-kit-name = Набор обманок
 uplink-decoy-kit-desc = Суперсовременная технология отвлечения внимания прямиком из отдела исследований. В комплект входят пять реалистичных воздушных шаров, четыре гранаты-обманки и несколько петард!
 uplink-chemistry-kit-name = Набор химического синтеза
 uplink-chemistry-kit-desc = Стартовый набор начинающего химика, включающий токсин и вестин для всех ваших преступных нужд!
+uplink-knives-kit-name = Throwing Knives Kit
+uplink-knives-kit-desc = A set of 4 syndicate branded throwing knives, perfect for embedding into the body of your victims.
 # Bundles
 uplink-meds-bundle-name = Медицинский набор
 uplink-meds-bundle-desc = Все, что нужно для возвращения в строй ваших товарищей: главным образом, боевая аптечка, дефибриллятор и три боевых медипена.
