@@ -5,7 +5,7 @@
   playTimeTracker: JobTechnicalAssistant
   requirements:
     - !type:OverallPlaytimeRequirement
-      time: 3600 #1 hr
+      time: 18000 #5 hrs # Corvax-RoleTime
     - !type:DepartmentTimeRequirement
       department: Engineering
       time: 36000 #10 hrs # Corvax-RoleTime
