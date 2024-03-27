@@ -27,7 +27,7 @@ admin-notes-message-desc = [color=white]Вы получили { $count ->
         [1] новое сообщение от администрации
        *[other] новых сообщений от администрации
     } с момента последней игры на сервере.[/color]
-admin-notes-message-admin = Новое сообщение от { $admin }, добавлено в { $date }
+admin-notes-message-admin = От [bold]{ $admin }[/bold], датировано { TOSTRING($date, "f") }:
 admin-notes-message-wait = Кнопки будут доступны через { $time } секунд.
 admin-notes-message-accept = Скрыть навсегда
 admin-notes-message-dismiss = Скрыть временно
