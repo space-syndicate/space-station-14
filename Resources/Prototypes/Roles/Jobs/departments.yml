@@ -70,6 +70,10 @@
   - MedicalIntern
   - Psychologist
   - Paramedic
+  # Corvax-MRP-start
+  - Brigmedic
+  - Virologist
+  # Corvax-MRP-end
 
 - type: department
   id: Security
@@ -82,6 +86,7 @@
   - SecurityOfficer
   - Detective
   - Warden
+  - Brigmedic # Corvax-MRP
 
 - type: department
   id: Science
@@ -91,6 +96,7 @@
   - ResearchDirector
   - Scientist
   - ResearchAssistant
+  - Roboticist # Corvax-MRP
 
 - type: department
   id: Specific
