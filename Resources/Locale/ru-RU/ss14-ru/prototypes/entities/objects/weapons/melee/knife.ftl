@@ -24,5 +24,5 @@ ent-SurvivalKnife = нож для выживания
     .desc = Оружие первого и последнего шанса в схватке с космическим карпом.
 ent-KukriKnife = нож-кукри
     .desc = У профессионалов есть правила. Будь вежлив. Работай эффективно. Убивай каждого встречного.
-ent-ThrowingKnife = throwing knife
-    .desc = This bloodred knife is very aerodynamic and easy to throw, but good luck trying to fight someone hand-to-hand.
+ent-ThrowingKnife = метательный нож
+    .desc = Этот кроваво-красный нож очень аэродинамичен и удобен для метания, но удачи вам, если вы попытаетесь сразиться с кем-то врукопашную.
