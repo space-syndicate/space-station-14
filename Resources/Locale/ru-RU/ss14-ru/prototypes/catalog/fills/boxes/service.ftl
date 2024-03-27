@@ -1,2 +1,2 @@
-ent-BoxCleanerGrenades = cleanades box
-    .desc = A box full of cleanades.
+ent-BoxCleanerGrenades = коробка
+    .desc = Коробка чистящих гранат.
