@@ -1,9 +1,9 @@
 ent-DrinkBottleBaseEmpty = base empty bottle
-    .desc = Это пустая бутылка.
+    .desc = Пустая бутылка.
 ent-DrinkBottleBaseSmallEmpty = base empty bottle
     .desc = { ent-DrinkBottleBaseEmpty.desc }
 ent-DrinkCartonBaseEmpty = base empty carton
-    .desc = An empty carton.
+    .desc = Пустая упаковка.
 ent-DrinkCartonBaseLargeEmpty = base empty bottle
     .desc = { ent-DrinkCartonBaseEmpty.desc }
 ent-DrinkBottleAbsinthe = бутылка от Джейлбрейк Верте
