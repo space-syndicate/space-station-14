@@ -1,4 +1,4 @@
-﻿using Content.Server.Station.Systems;
+using Content.Server.Station.Systems;
 using Content.Shared.Roles;
 using JetBrains.Annotations;
 using Robust.Shared.Network;
@@ -42,7 +42,7 @@ public sealed partial class StationJobsComponent : Component
     /// Set to -1 to disable extended access.
     /// </remarks>
     [DataField("extendedAccessThreshold")]
-    public int ExtendedAccessThreshold { get; set; } = 15;
+    public int ExtendedAccessThreshold { get; set; } = 10; //Corvax-rules
 
     /// <summary>
     /// The percentage of jobs remaining.
