@@ -156,3 +156,7 @@ ghost-role-information-syndicate-reinforcement-rules = Действуют обы
 ghost-role-information-syndicate-monkey-reinforcement-name = Агент-обезьяна Синдиката
 ghost-role-information-syndicate-monkey-reinforcement-description = Кому-то нужно подкрепление. Вы, специально обученная обезьяна, поможете им.
 ghost-role-information-syndicate-monkey-reinforcement-rules = Действуют обычные правила антагонистов Синдиката. Работайте с тем, кто вас вызвал, и не причиняйте ему вреда.
+ghost-role-information-artifact-name = Sentient Artifact
+ghost-role-information-artifact-description =
+    Enact your eldritch whims.
+    Forcibly activate your nodes for good or for evil.
