@@ -17,7 +17,8 @@ chat-manager-no-radio-key = Не задан ключ канала!
 chat-manager-no-such-channel = Нет канала с ключём '{ $key }'!
 chat-manager-whisper-headset-on-message = Вы не можете шептать в радио!
 chat-manager-server-wrap-message = [bold]{ $message }[/bold]
-chat-manager-sender-announcement-wrap-message = [font size=14][bold]Объявление { $sender }:[/font][font size=12]
+chat-manager-sender-announcement-wrap-message =
+    [font size=14][bold]Объявление { $sender }:[/font][font size=12]
     { $message }[/bold][/font]
 chat-manager-entity-say-wrap-message = [BubbleHeader][bold][Name]{ $entityName }[/Name][/bold][/BubbleHeader] { $verb }, [font={ $fontType } size={ $fontSize } ]"[BubbleContent]{ $message }[/BubbleContent]"[/font]
 chat-manager-entity-say-bold-wrap-message = [BubbleHeader][bold][Name]{ $entityName }[/Name][/bold][/BubbleHeader] { $verb }, [font={ $fontType } size={ $fontSize }]"[BubbleContent][bold]{ $message }[/bold][/BubbleContent]"[/font]
@@ -68,6 +69,9 @@ chat-speech-verb-skeleton-1 = гремит
 chat-speech-verb-skeleton-2 = клацает
 chat-speech-verb-skeleton-3 = скрежещет
 chat-speech-verb-canine-1 = гавкает
+chat-speech-verb-vox-1 = скрипит
+chat-speech-verb-vox-2 = визжит
+chat-speech-verb-vox-3 = каркает
 chat-speech-verb-canine-2 = лает
 chat-speech-verb-canine-3 = воет
 chat-speech-verb-small-mob-1 = скрипит
@@ -77,6 +81,9 @@ chat-speech-verb-large-mob-2 = рычит
 chat-speech-verb-monkey-1 = обезьяничает
 chat-speech-verb-monkey-2 = визжит
 chat-speech-verb-ghost-1 = жалуется
+chat-speech-verb-parrot-1 = кричит
+chat-speech-verb-parrot-2 = чирикает
+chat-speech-verb-parrot-3 = щебечет
 chat-speech-verb-ghost-2 = дышит
 chat-speech-verb-ghost-3 = воет
 chat-speech-verb-ghost-4 = бормочет
