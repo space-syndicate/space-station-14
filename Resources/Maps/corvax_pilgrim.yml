@@ -108790,6 +108790,13 @@ entities:
     - type: Transform
       pos: -14.5,10.5
       parent: 2
+- proto: SpawnPointLatejoin
+  entities:
+  - uid: 19525
+    components:
+    - type: Transform
+      pos: -61.5,-9.5
+      parent: 2
 - proto: SpawnPointLawyer
   entities:
   - uid: 19124
