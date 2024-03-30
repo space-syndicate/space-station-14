@@ -48,6 +48,7 @@ bounty-item-labeler = Ручной этикетировщик
 bounty-item-warm-cloth = Тёплая одежда
 bounty-item-battery = Батарея
 bounty-item-lasergun = Лазерное оружие
+bounty-item-food = Мясная еда
 bounty-food = Мясное блюдо
 bounty-item-fruit = Фрукты
 bounty-item-vegetable = Овощи
