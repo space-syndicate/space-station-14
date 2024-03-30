@@ -49,6 +49,7 @@ bounty-item-warm-cloth = Warm clothes
 bounty-item-battery = Battery
 bounty-item-lasergun = Laser gun
 bounty-item-food = Meat food
+bounty-food = Meat Dish
 bounty-item-fruit = Fruit
 bounty-item-vegetable = Vegetable
 bounty-item-chili = Bowl of chili
