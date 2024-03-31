@@ -45,7 +45,7 @@
 - type: entity
   parent: ClothingBackpackDuffel
   id: ClothingBackpackDuffelCaptain
-  name: captain's duffel bag
+  name: head of station's duffel bag
   description: A large duffel bag for holding extra captainly goods.
   components:
   - type: Sprite
@@ -167,6 +167,9 @@
     sprite: Clothing/Back/Duffels/syndicate.rsi
   - type: ExplosionResistance
     damageCoefficient: 0.1
+  - type: Storage
+    grid:
+    - 0,0,8,4
 
 - type: entity
   parent: ClothingBackpackDuffelSyndicate

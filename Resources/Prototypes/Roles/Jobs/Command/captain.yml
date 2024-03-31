@@ -24,12 +24,12 @@
   requireAdminNotify: true
   joinNotifyCrew: true
   supervisors: job-supervisors-centcom
-  canBeAntag: false
+  canBeAntag: true
   accessGroups:
   - AllAccess
   special:
   - !type:AddImplantSpecial
-    implants: [ MindShieldImplant ]
+    implants: [ MindShieldImplant, SadTromboneImplant ]
   - !type:AddComponentSpecial
     components:
       - type: CommandStaff

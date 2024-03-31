@@ -20,7 +20,7 @@
   icon: "JobIconHeadOfSecurity"
   requireAdminNotify: true
   supervisors: job-supervisors-captain
-  canBeAntag: false
+  canBeAntag: true
   access:
   - HeadOfSecurity
   - Command
@@ -34,7 +34,7 @@
   - Cryogenics
   special:
   - !type:AddImplantSpecial
-    implants: [ MindShieldImplant ]
+    implants: [ MindShieldImplant, SadTromboneImplant ]
   - !type:AddComponentSpecial
     components:
       - type: CommandStaff
@@ -46,7 +46,7 @@
     back: ClothingBackpackHOSFilled
     shoes: ClothingShoesBootsJackSecFilled # Corvax-Resprite
     outerClothing: ClothingOuterCoatHoSTrench
-    eyes: ClothingEyesGlassesSunglasses
+    eyes: ClothingEyesGlassesSecurity
     head: ClothingHeadHatBeretHoS
     id: HoSPDA
     gloves: ClothingHandsGlovesCombat

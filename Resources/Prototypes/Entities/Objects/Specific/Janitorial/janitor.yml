@@ -37,6 +37,8 @@
   - type: GuideHelp
     guides:
     - Janitorial
+  - type: ReplaceOnSpawn
+    prototype: AdvMopItem
 
 - type: entity
   parent: BaseItem
@@ -637,6 +639,15 @@
     damage:
       types:
         Blunt: 3
+  - type: Plunger
+
+- type: weightedRandomEntity
+  id: PlungerLoot
+  weights:
+    RandomSpawner100: 56
+    SpacemenFigureSpawner: 28
+    SpawnMobCockroach: 5
+    MaintenanceToolSpawner: 5
 
 - type: entity
   parent: BaseItem

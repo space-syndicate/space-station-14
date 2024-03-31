@@ -258,6 +258,9 @@
       reagents:
       - ReagentId: JuiceBanana
         Quantity: 10
+  - type: ReplaceOnSpawn
+    prototype: ClusterBananaPeel
+    chance: 0.001
   - type: Tag
     tags:
     - Fruit
@@ -349,6 +352,8 @@
   - type: Extractable
     grindableSolutionName: food
   - type: SpaceGarbage
+  - type: ReplaceOnSpawn
+    prototype: TrashBananaPeelExplosive
 
 - type: entity
   name: baked banana peel
@@ -666,6 +671,9 @@
       reagents:
       - ReagentId: JuicePotato
         Quantity: 10
+  - type: ReplaceOnSpawn
+    prototype: HotPotato
+    chance: 0.001
   - type: Tag
     tags:
     - Potato
@@ -1220,6 +1228,10 @@
   id: FoodPoppy
   description: A flower with extracts often used in the production of medicine
   components:
+  - type: Clothing
+    slots:
+    - HEAD
+    quickEquip: false
   - type: FlavorProfile
     flavors:
       - medicine

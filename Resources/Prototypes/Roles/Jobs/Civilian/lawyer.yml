@@ -15,6 +15,9 @@
   - Lawyer
   - Brig
   - Maintenance
+  special:
+  - !type:AddImplantSpecial
+    implants: [ SadTromboneImplant ]
 
 - type: startingGear
   id: LawyerGear

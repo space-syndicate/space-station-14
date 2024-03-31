@@ -9,18 +9,21 @@ using Content.Server.Power.EntitySystems;
 using Content.Shared.Access.Components;
 using Content.Shared.Access.Systems;
 using Content.Shared.Actions;
+using Content.Shared.Cargo.Components;
 using Content.Shared.Damage;
 using Content.Shared.Destructible;
 using Content.Shared.DoAfter;
 using Content.Shared.Emag.Components;
 using Content.Shared.Emag.Systems;
 using Content.Shared.Emp;
+using Content.Shared.Interaction;
 using Content.Shared.Popups;
 using Content.Shared.Throwing;
 using Content.Shared.UserInterface;
 using Content.Shared.VendingMachines;
 using Robust.Server.GameObjects;
 using Robust.Shared.Audio;
+using Robust.Shared.Audio.Systems;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Random;
 using Robust.Shared.Timing;
@@ -37,6 +40,7 @@ namespace Content.Server.VendingMachines
         [Dependency] private readonly ThrowingSystem _throwingSystem = default!;
         [Dependency] private readonly UserInterfaceSystem _userInterfaceSystem = default!;
         [Dependency] private readonly IGameTiming _timing = default!;
+        [Dependency] private readonly SharedAudioSystem _audio = default!;
         [Dependency] private readonly SpeakOnUIClosedSystem _speakOnUIClosed = default!;
 
         public override void Initialize()
@@ -64,11 +68,18 @@ namespace Content.Server.VendingMachines
             SubscribeLocalEvent<VendingMachineComponent, RestockDoAfterEvent>(OnDoAfter);
 
             SubscribeLocalEvent<VendingMachineRestockComponent, PriceCalculationEvent>(OnPriceCalculation);
+
+            SubscribeLocalEvent<VendingMachineComponent, InteractUsingEvent>(OnInteractUsing);
         }
 
         private void OnComponentMapInit(EntityUid uid, VendingMachineComponent component, MapInitEvent args)
         {
             _action.AddAction(uid, ref component.ActionEntity, component.Action, uid);
+            RestockInventoryFromPrototype(uid, component);
+            if (HasComp<ApcPowerReceiverComponent>(uid))
+            {
+                TryUpdateVisualState(uid, component);
+            }
             Dirty(uid, component);
         }
 
@@ -90,16 +101,6 @@ namespace Content.Server.VendingMachines
             args.Price += price;
         }
 
-        protected override void OnComponentInit(EntityUid uid, VendingMachineComponent component, ComponentInit args)
-        {
-            base.OnComponentInit(uid, component, args);
-
-            if (HasComp<ApcPowerReceiverComponent>(uid))
-            {
-                TryUpdateVisualState(uid, component);
-            }
-        }
-
         private void OnActivatableUIOpenAttempt(EntityUid uid, VendingMachineComponent component, ActivatableUIOpenAttemptEvent args)
         {
             if (component.Broken)
@@ -113,7 +114,7 @@ namespace Content.Server.VendingMachines
 
         private void UpdateVendingMachineInterfaceState(EntityUid uid, VendingMachineComponent component)
         {
-            var state = new VendingMachineInterfaceState(GetAllInventory(uid, component));
+            var state = new VendingMachineInterfaceState(GetAllInventory(uid, component), component.Balance);
 
             _userInterfaceSystem.TrySetUiState(uid, VendingMachineUiKey.Key, state);
         }
@@ -276,8 +277,15 @@ namespace Content.Server.VendingMachines
             if (string.IsNullOrEmpty(entry.ID))
                 return;
 
+            if (vendComponent.Balance < entry.Cost)
+            {
+                Popup.PopupEntity(Loc.GetString("vending-machine-component-try-eject-not-enough-money"), uid);
+                Deny(uid, vendComponent);
+                return;
+            }
 
             // Start Ejecting, and prevent users from ordering while anim playing
+            vendComponent.Balance = Math.Max(0, vendComponent.Balance - entry.Cost);
             vendComponent.Ejecting = true;
             vendComponent.NextItemToEject = entry.ID;
             vendComponent.ThrowNextItem = throwItem;
@@ -505,6 +513,86 @@ namespace Content.Server.VendingMachines
                 args.Disabled = true;
                 component.NextEmpEject = _timing.CurTime;
             }
+        }
+
+        public void RestockInventoryFromPrototype(EntityUid uid,
+            VendingMachineComponent? component = null)
+        {
+            if (!Resolve(uid, ref component))
+            {
+                return;
+            }
+
+            if (!PrototypeManager.TryIndex(component.PackPrototypeId, out VendingMachineInventoryPrototype? packPrototype))
+                return;
+
+            AddInventoryFromPrototype(uid, packPrototype.StartingInventory, InventoryType.Regular, component);
+            AddInventoryFromPrototype(uid, packPrototype.EmaggedInventory, InventoryType.Emagged, component);
+            AddInventoryFromPrototype(uid, packPrototype.ContrabandInventory, InventoryType.Contraband, component);
+
+            UpdateVendingMachineInterfaceState(uid, component);
+        }
+
+        private void AddInventoryFromPrototype(EntityUid uid, Dictionary<string, uint>? entries,
+            InventoryType type,
+            VendingMachineComponent? component = null)
+        {
+            if (!Resolve(uid, ref component) || entries == null)
+            {
+                return;
+            }
+
+            Dictionary<string, VendingMachineInventoryEntry> inventory;
+            switch (type)
+            {
+                case InventoryType.Regular:
+                    inventory = component.Inventory;
+                    break;
+                case InventoryType.Emagged:
+                    inventory = component.EmaggedInventory;
+                    break;
+                case InventoryType.Contraband:
+                    inventory = component.ContrabandInventory;
+                    break;
+                default:
+                    return;
+            }
+
+            foreach (var (id, amount) in entries)
+            {
+                if (PrototypeManager.TryIndex<EntityPrototype>(id, out var proto))
+                {
+                    if (inventory.TryGetValue(id, out var entry))
+                        // Prevent a machine's stock from going over three times
+                        // the prototype's normal amount. This is an arbitrary
+                        // number and meant to be a convenience for someone
+                        // restocking a machine who doesn't want to force vend out
+                        // all the items just to restock one empty slot without
+                        // losing the rest of the restock.
+                        entry.Amount = Math.Min(entry.Amount + amount, 3 * amount);
+                    else
+                    {
+                        var minCost = Math.Max(1, (int) _pricing.GetEstimatedPrice(proto));
+                        inventory.Add(id, new VendingMachineInventoryEntry(type, id, amount, _random.Next(minCost, 2 * minCost)));
+                    }
+                }
+            }
+        }
+
+        private void OnInteractUsing(EntityUid uid, VendingMachineComponent component, ref InteractUsingEvent args)
+        {
+            if (!HasComp<CashComponent>(args.Used))
+                return;
+
+            var price = _pricing.GetPrice(args.Used);
+
+            if (price == 0)
+                return;
+
+            _audio.PlayPvs(component.SoundConfirm, uid);
+            component.Balance += (int) price;
+            UpdateVendingMachineInterfaceState(uid, component);
+            QueueDel(args.Used);
         }
     }
 }
