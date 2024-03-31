@@ -617,6 +617,13 @@
     Cloth: 300
 
 - type: latheRecipe
+  id: ClothingHeadHatBeretSecurityMedic
+  result: ClothingHeadHatBeretSecurityMedic
+  completetime: 4
+  materials:
+    Cloth: 300
+
+- type: latheRecipe
   id: ClothingUniformJumpsuitSyndieFormal
   result: ClothingUniformJumpsuitSyndieFormal
   completetime: 4
@@ -981,6 +988,14 @@
     Durathread: 50
 
 - type: latheRecipe
+  id: ClothingHeadCaptainHat
+  result: ClothingHeadCaptainHat
+  completetime: 2
+  materials:
+    Cloth: 100
+    Durathread: 50
+
+- type: latheRecipe
   id: ClothingHeadHatCapcap
   result: ClothingHeadHatCapcap
   completetime: 2
@@ -1005,8 +1020,24 @@
     Durathread: 50
 
 - type: latheRecipe
+  id: ClothingHeadHatCapHoS
+  result: ClothingHeadHatCapHoS
+  completetime: 2
+  materials:
+    Cloth: 100
+    Durathread: 50
+
+- type: latheRecipe
   id: ClothingHeadHatWarden
   result: ClothingHeadHatWarden
+  completetime: 2
+  materials:
+    Cloth: 100
+    Durathread: 50
+
+- type: latheRecipe
+  id: ClothingHeadHatCapWardenAlt
+  result: ClothingHeadHatCapWardenAlt
   completetime: 2
   materials:
     Cloth: 100
