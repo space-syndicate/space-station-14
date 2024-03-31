@@ -7,3 +7,5 @@ ent-SpaceVillainArcadeFilled = { ent-SpaceVillainArcade }
     .desc = { ent-SpaceVillainArcade.desc }
 ent-BlockGameArcade = NT block game
     .desc = An arcade cabinet with a strangely familiar game.
+ent-ParadiseArcade = paradise arcade
+    .desc = An dusty old arcade cabinet, it emits a faint strange, yet familiar, glow. Should you play it?

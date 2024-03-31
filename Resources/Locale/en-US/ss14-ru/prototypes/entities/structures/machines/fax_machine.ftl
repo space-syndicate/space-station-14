@@ -6,6 +6,6 @@ ent-FaxMachineCentcom = CentCom long range fax machine
 ent-FaxMachineSyndie = syndicate long range fax machine
     .suffix = Syndicate
     .desc = { ent-FaxMachineBase.desc }
-ent-FaxMachineCaptain = captain long range fax machine
+ent-FaxMachineCaptain = head of station long range fax machine
     .suffix = NukeCodes
     .desc = { ent-FaxMachineBase.desc }

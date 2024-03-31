@@ -1,11 +1,11 @@
-ent-WeldingFuelTank = fuel tank
-    .desc = A fuel tank. It's used to store high amounts of fuel.
+ent-WeldingFuelTank = blood tank
+    .desc = A blood tank. It's used to store high amounts of blood. Blood is fuel.
     .suffix = Empty
 ent-WeldingFuelTankFull = { ent-WeldingFuelTank }
     .suffix = Full
     .desc = { ent-WeldingFuelTank.desc }
-ent-WeldingFuelTankHighCapacity = high-capacity fuel tank
-    .desc = A highly pressurized fuel tank made to hold gargantuan amounts of welding fuel.
+ent-WeldingFuelTankHighCapacity = high-capacity blood tank
+    .desc = A highly pressurized blood tank made to hold gargantuan amounts of blood. Blood is fuel.
     .suffix = Full
 ent-WaterTank = water tank
     .desc = A water tank. It's used to store high amounts of water.

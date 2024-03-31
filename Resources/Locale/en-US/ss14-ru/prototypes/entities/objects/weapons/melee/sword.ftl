@@ -1,5 +1,5 @@
-ent-CaptainSabre = captain's sabre
-    .desc = A ceremonial weapon belonging to the captain of the station.
+ent-CaptainSabre = head of station's sabre
+    .desc = A ceremonial weapon belonging to the head of station.
 ent-Katana = katana
     .desc = Ancient craftwork made with not so ancient plasteel.
 ent-EnergyKatana = energy katana

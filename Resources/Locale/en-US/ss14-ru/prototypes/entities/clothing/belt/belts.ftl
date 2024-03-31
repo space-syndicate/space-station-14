@@ -1,6 +1,6 @@
 ent-ClothingBeltUtility = utility belt
     .desc = Can hold various things.
-ent-ClothingBeltChiefEngineer = chief engineer's toolbelt
+ent-ClothingBeltChiefEngineer = head of singularity's toolbelt
     .desc = Holds tools, looks snazzy.
 ent-ClothingBeltAssault = assault belt
     .desc = A tactical assault belt.
