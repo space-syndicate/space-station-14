@@ -9,7 +9,7 @@
       - id: WeaponDisabler
       - id: ClothingBeltSecurityFilled
       - id: Flash
-      - id: ClothingEyesGlassesSunglasses
+      - id: ClothingEyesGlassesSecurity
       - id: ClothingHeadsetAltSecurity
       - id: ClothingHandsGlovesCombat
       - id: ClothingShoesBootsJack
@@ -19,7 +19,6 @@
       - id: DoorRemoteArmory
       - id: ClothingOuterHardsuitWarden
       - id: HoloprojectorSecurity
-      - id: ClothingEyesHudSecurity
 
 - type: entity
   id: LockerWardenFilled
@@ -33,7 +32,7 @@
       - id: ClothingHeadHatCapWardenAlt # Corvax-SecFashion
       - id: ClothingBeltSecurityFilled
       - id: Flash
-      - id: ClothingEyesGlassesSunglasses
+      - id: ClothingEyesGlassesSecurity
       - id: ClothingHeadsetAltSecurity
       - id: ClothingHandsGlovesCombat
       - id: ClothingShoesBootsJack
@@ -43,7 +42,6 @@
       - id: RubberStampWarden
       - id: DoorRemoteArmory
       - id: HoloprojectorSecurity
-      - id: ClothingEyesHudSecurity
 
 - type: entity
   id: LockerSecurityFilled
@@ -62,7 +60,7 @@
       - id: ClothingBeltSecurityFilled
       - id: Flash
         prob: 0.5
-      - id: ClothingEyesGlassesSunglasses
+      - id: ClothingEyesGlassesSecurity
       - id: ClothingHeadsetSecurity
       - id: ClothingHandsGlovesColorBlack
       - id: ClothingShoesBootsJack
@@ -70,7 +68,6 @@
         prob: 0.1
       - id: ClothingOuterCoatSecurityOvercoat # Corvax-SecFashion
         prob: 0.2
-      - id: ClothingEyesHudSecurity
       - id: HoloprojectorSecurity
         prob: 0.6
 
@@ -81,7 +78,7 @@
   components:
   - type: StorageFill
     contents:
-      - id: ClothingEyesHudSecurity
+      - id: ClothingEyesGlassesSecurity
       - id: WeaponDisabler
       - id: TrackingImplanter
         amount: 2
@@ -121,7 +118,7 @@
   components:
   - type: StorageFill
     contents:
-      - id: ClothingEyesHudSecurity
+      - id: ClothingEyesGlassesSecurity
         prob: 0.3
       - id: ClothingHeadHatFedoraBrown
       - id: ClothingNeckTieDet
