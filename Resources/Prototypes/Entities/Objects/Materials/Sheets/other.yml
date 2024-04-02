@@ -85,18 +85,16 @@
       Plasma: 100
   - type: Stack
     stackType: Plasma
-# Corvax-Resprite-Start
-#    baseLayer: base
-#    layerStates:
-#    - plasma
-#    - plasma_2
-#    - plasma_3
+    baseLayer: base
+    layerStates:
+    - plasma
+    - plasma_2
+    - plasma_3
   - type: Sprite
-    state: plasma
-#    layers:
-#    - state: plasma_3
-#      map: ["base"]
-# Corvax-Resprite-End
+    state: plasma_3
+    layers:
+    - state: plasma_3
+      map: ["base"]
   - type: Item
     heldPrefix: plasma
   - type: Appearance
