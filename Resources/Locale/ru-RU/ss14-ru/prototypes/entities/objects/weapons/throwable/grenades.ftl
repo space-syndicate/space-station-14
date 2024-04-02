@@ -37,5 +37,6 @@ ent-GrenadeDummy = граната-обманка
 # Corvax-HiddenDesc-Start
 ent-SyndieTrickyBomb = хитроумная бомба
     .desc = Взрывное устройство, больше отвлекающее внимание, чем наносящее реальный вред.
+
 # Corvax-HiddenDesc-End
 
