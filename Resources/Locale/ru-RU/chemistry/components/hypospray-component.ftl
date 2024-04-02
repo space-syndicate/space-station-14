@@ -1,6 +1,10 @@
 ## UI
 
-hypospray-volume-text = Объем: [color=white]{ $currentVolume }/{ $totalVolume }[/color]
+hypospray-all-mode-text = Only Injects
+hypospray-mobs-only-mode-text = Draws and Injects
+hypospray-invalid-text = Invalid
+hypospray-volume-label = Volume: [color=white]{ $currentVolume }/{ $totalVolume }u[/color]
+    Mode: [color=white]{ $modeString }[/color]
 
 ## Entity
 
@@ -10,4 +14,7 @@ hypospray-component-inject-self-clumsy-message = Ой! Вы сделали се�
 hypospray-component-empty-message = Он пустой!
 hypospray-component-feel-prick-message = Вы чувствуете слабый укольчик!
 hypospray-component-transfer-already-full-message = { $owner } уже заполнен!
+hypospray-verb-mode-label = Toggle Container Draw
+hypospray-verb-mode-inject-all = You cannot draw from containers anymore.
+hypospray-verb-mode-inject-mobs-only = You can now draw from containers.
 hypospray-cant-inject = Нельзя сделать инъекцию в { $target }!
