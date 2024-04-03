@@ -10,10 +10,10 @@ using Robust.Server.Player;
 using Robust.Shared.Console;
 
 namespace Content.Server.Administration.Commands;
-
-[AdminCommand(AdminFlags.Admin)]
-public sealed class AGhost : LocalizedCommands
 {
+    [AdminCommand(AdminFlags.Aghost)] // Corvax-Changes
+    internal sealed class AdminChatCommand : IConsoleCommand
+    {
     [Dependency] private readonly IEntityManager _entities = default!;
     [Dependency] private readonly IPlayerManager _playerManager = default!;
 
