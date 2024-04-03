@@ -100,6 +100,13 @@
         Stealth = 1 << 16,
 
         /// <summary>
+        ///     Basic mentor verbs.
+        /// </summary>
+        Aghost = 1 << 17, // Corvax-Changes
+
+        Asay = 1 << 18, // Corvax-Changes
+
+        /// <summary>
         ///     Dangerous host permissions like scsi.
         /// </summary>
         Host = 1u << 31,
