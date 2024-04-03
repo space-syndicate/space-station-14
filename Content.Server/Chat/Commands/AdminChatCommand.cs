@@ -5,7 +5,7 @@ using Robust.Shared.Console;
 
 namespace Content.Server.Chat.Commands
 {
-    [AdminCommand(AdminFlags.Admin)]
+    [AdminCommand(AdminFlags.Asay)] // Corvax-Changes
     internal sealed class AdminChatCommand : IConsoleCommand
     {
         public string Command => "asay";
