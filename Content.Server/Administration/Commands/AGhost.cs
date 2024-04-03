@@ -12,7 +12,7 @@ using Robust.Shared.Console;
 namespace Content.Server.Administration.Commands;
 {
     [AdminCommand(AdminFlags.Aghost)] // Corvax-Changes
-    internal sealed class AdminChatCommand : IConsoleCommand
+    public sealed class AGhost : IConsoleCommand
     {
     [Dependency] private readonly IEntityManager _entities = default!;
     [Dependency] private readonly IPlayerManager _playerManager = default!;
