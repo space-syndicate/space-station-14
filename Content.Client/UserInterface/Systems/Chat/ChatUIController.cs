@@ -545,7 +545,6 @@ public sealed class ChatUIController : UIController
             FilterableChannels |= ChatChannel.AdminAlert;
             FilterableChannels |= ChatChannel.AdminChat;
             CanSendChannels |= ChatSelectChannel.Admin;
-            _sawmill.Debug("Channels got");
         }
 
         // only admins can see / filter asay
