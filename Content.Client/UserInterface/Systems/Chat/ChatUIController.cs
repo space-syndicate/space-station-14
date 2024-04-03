@@ -539,10 +539,13 @@ public sealed class ChatUIController : UIController
         }
 
         // Only ghosts and admins can send / see deadchat.
-        if (_admin.HasFlag(AdminFlags.Admin) || _ghost is {IsGhost: true})
+        if (_admin.HasFlag(AdminFlags.Asay)) // Corvax-Changes
         {
-            FilterableChannels |= ChatChannel.Dead;
-            CanSendChannels |= ChatSelectChannel.Dead;
+            FilterableChannels |= ChatChannel.Admin;
+            FilterableChannels |= ChatChannel.AdminAlert;
+            FilterableChannels |= ChatChannel.AdminChat;
+            CanSendChannels |= ChatSelectChannel.Admin;
+            _sawmill.Debug("Channels got");
         }
 
         // only admins can see / filter asay
