@@ -425,29 +425,29 @@
   components:
   - type: PaperRandomStory
     storySegments:
-    - "This is a "
+    - "Это "
     - book_genre
-    - " about a "
+    - ", где главными героями являются "
     - book_character_trait
     - " "
     - book_character
-    - " and "
+    - " и "
     - book_character_trait
     - " "
     - book_character
-    - ". Due to "
+    - ". Вследствие "
     - book_event
-    - ", they "
+    - ", они "
     - book_action_trait
     - " "
     - book_action
     - " "
     - book_character
-    - " "
+    - ", "
     - book_location
     - ". \n\n"
     - book_story_element
-    - " is "
+    - " "
     - book_story_element_trait
     - "."
     storySeparator: ""

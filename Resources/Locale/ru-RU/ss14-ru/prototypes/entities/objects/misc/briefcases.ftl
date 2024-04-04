@@ -1,7 +1,7 @@
-ent-BriefcaseBase = { ent-BaseItem }
+ent-BriefcaseBase = { ent-BaseStorageItem }
     .desc = Пригодится для переноски предметов в руках.
 ent-BriefcaseBrown = коричневый чемодан
-    .desc = Удобный чемоданчик.
-ent-BriefcaseSyndie = коричневый чемодан
-    .desc = Удобный чемоданчик.
-    .suffix = Syndicate, Empty
+    .desc = { ent-BriefcaseBase.desc }
+ent-BriefcaseSyndie = { ent-BriefcaseBrown }
+    .suffix = Синдикат, Пустой
+    .desc = { ent-BriefcaseBrown.desc }
