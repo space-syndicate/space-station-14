@@ -122,3 +122,35 @@
         Blunt: 0.9
         Slash: 0.9
         Piercing: 0.8
+
+- type: entity
+  parent: ClothingOuterStorageFoldableBase
+  id: ClothingOuterCoatScientistAlt
+  name: scientist's coupled labcoat
+  description: Labcoat for smart anime spacemans.
+  components:
+  - type: Sprite
+    sprite: Corvax/Clothing/OuterClothing/Coats/formal_labcoat_scientist.rsi
+  - type: Clothing
+    sprite: Corvax/Clothing/OuterClothing/Coats/formal_labcoat_scientist.rsi
+
+- type: entity
+  parent: [ClothingOuterStorageFoldableBaseOpened, ClothingOuterCoatScientistAlt]
+  id: ClothingOuterCoatScientistAltOpened
+  name: scientist's coupled labcoat
+
+- type: entity
+  parent: ClothingOuterStorageFoldableBase
+  id: ClothingOuterCoatRobotechAlt
+  name: robotech's coupled labcoat
+  description: Metal Gear, buddy?
+  components:
+  - type: Sprite
+    sprite: Corvax/Clothing/OuterClothing/Coats/formal_labcoat_robotech.rsi
+  - type: Clothing
+    sprite: Corvax/Clothing/OuterClothing/Coats/formal_labcoat_robotech.rsi
+
+- type: entity
+  parent: [ClothingOuterStorageFoldableBaseOpened, ClothingOuterCoatRobotechAlt]
+  id: ClothingOuterCoatRobotechAltOpened
+  name: robotech's coupled labcoat
