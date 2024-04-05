@@ -210,10 +210,10 @@ story-gen-book-location34 = находясь между шаром Теслы и
 story-gen-book-element1 = Сюжет
 story-gen-book-element2 = Сюжетный поворот
 story-gen-book-element3 = Апогей истории
-story-gen-book-element4 = Момент завершения
+story-gen-book-element4 = Эпилог
 story-gen-book-element5 = Финал
 story-gen-book-element6 = Вывод из этой истории
-story-gen-book-element7 = Лейтмотив этого произведения
+story-gen-book-element7 = Момент кульминации
 story-gen-book-element8 = Литературный стиль
 story-gen-book-element9 = Стиль иллюстраций
 
