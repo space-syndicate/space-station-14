@@ -4,7 +4,7 @@
   mapPath: /Maps/corvax_split.yml
   minPlayers: 70
   stations:
-    Mayhen: # 40 / 47
+    Mayhen:
       stationProto: NanotrasenStationNoArrivals
       components:
         - type: StationNameSetup
@@ -45,7 +45,7 @@
             Captain: [ 1, 1 ]
             IAA: [ 1, 1 ]
             # engineering
-            AtmosphericTechnician: [ 1, 2 ]
+            AtmosphericTechnician: [ 1, 1 ]
             # medical
             ChiefMedicalOfficer: [ 1, 1 ]
             Paramedic: [ 2, 2 ]
@@ -63,7 +63,7 @@
             # cargo
             SalvageSpecialist: [ 1, 1 ]
             CargoTechnician: [ 3, 3 ]
-    Payback: # 29 / 30
+    Payback:
       stationProto: NanotrasenStationNoArrivals
       components:
         - type: StationNameSetup
@@ -117,7 +117,7 @@
             # cargo
             SalvageSpecialist: [ 1, 1 ]
             CargoTechnician: [ 2, 3 ]
-    Lumber: # 33 / 39
+    Lumber:
       stationProto: NanotrasenStationNoArrivals
       components:
         - type: StationNameSetup
