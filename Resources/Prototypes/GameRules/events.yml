@@ -7,10 +7,6 @@
     weight: 10
     startDelay: 30
     duration: 35
-    startAudio: # Corvax-Announcements
-      path: /Audio/Corvax/Announcements/flux.ogg
-      params:
-        volume: -4
   - type: AnomalySpawnRule
 
 - type: entity
@@ -22,10 +18,6 @@
     weight: 5
     startDelay: 30
     duration: 35
-    startAudio: # Corvax-Announcements
-      path: /Audio/Corvax/Announcements/blusp_anomalies.ogg
-      params:
-        volume: -4
   - type: BluespaceArtifactRule
 
 - type: entity
