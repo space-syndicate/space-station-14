@@ -12,6 +12,27 @@
   - type: Item
     sprite: Objects/Tools/emag.rsi
     storedRotation: -90
+# Corvax-HiddenDesc-Start
+  - type: HiddenDescription
+    entries:
+    - label: corvax-hidden-desc-Emag-syndicate
+      whitelistMind:
+        components:
+          - TraitorRole
+          - NukeOperative
+    - label: corvax-hidden-desc-Emag-research
+      jobRequired:
+        - ResearchAssistant
+        - ResearchDirector
+        - Scientist
+        - Borg
+    - label: corvax-hidden-desc-Emag-engineering
+      jobRequired:
+        - ChiefEngineer
+        - AtmosphericTechnician
+        - StationEngineer
+        - TechnicalAssistant
+# Corvax-HiddenDesc-End
 
 - type: entity
   parent: EmagUnlimited

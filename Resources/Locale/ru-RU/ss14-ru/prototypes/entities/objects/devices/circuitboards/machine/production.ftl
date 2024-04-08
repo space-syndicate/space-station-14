@@ -158,3 +158,5 @@ ent-ShuttleGunDusterCircuitboard = EXP-2100g "Дастер" (машинная п
     .desc = Печатная плата EXP-2100g "Дастер".
 ent-ShuttleGunKineticCircuitboard = PTK-800 "Дематериализатор материи" (машинная плата)
     .desc = Печатная плата PTK-800 "Дематериализатор материи".
+ent-ReagentGrinderIndustrialMachineCircuitboard = промышленный измельчитель реагентов (машинная плата)
+    .desc = { ent-BaseMachineCircuitboard.desc }

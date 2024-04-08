@@ -4,3 +4,10 @@
   icon:
     sprite: Interface/Misc/job_icons.rsi
     state: IAA
+
+- type: statusIcon
+  parent: JobIcon
+  id: JobIconPilot
+  icon:
+    sprite: /Textures/Interface/Misc/job_icons.rsi
+    state: Pilot
