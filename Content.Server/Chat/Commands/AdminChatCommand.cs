@@ -7,6 +7,7 @@ using Robust.Shared.Console;
 namespace Content.Server.Chat.Commands
 {
     [AdminCommand(AdminFlags.Admin)]
+    [AdminCommand(AdminFlags.Adminhelp)] // Corvax Флаг Adminhelp получает доступ к команде Asay
     internal sealed class AdminChatCommand : IConsoleCommand
     {
         public string Command => "asay";
