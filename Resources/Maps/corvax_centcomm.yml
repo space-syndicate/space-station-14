@@ -25272,54 +25272,36 @@ entities:
       rot: 3.141592653589793 rad
       pos: -1.5,-15.5
       parent: 2
-    - type: DeviceNetwork
-      configurators:
-      - invalid
   - uid: 6422
     components:
     - type: Transform
       rot: 3.141592653589793 rad
       pos: -0.5,-15.5
       parent: 2
-    - type: DeviceNetwork
-      configurators:
-      - invalid
   - uid: 6423
     components:
     - type: Transform
       rot: 3.141592653589793 rad
       pos: 0.5,-15.5
       parent: 2
-    - type: DeviceNetwork
-      configurators:
-      - invalid
   - uid: 6424
     components:
     - type: Transform
       rot: 3.141592653589793 rad
       pos: -1.5,-6.5
       parent: 2
-    - type: DeviceNetwork
-      configurators:
-      - invalid
   - uid: 6425
     components:
     - type: Transform
       rot: 3.141592653589793 rad
       pos: -0.5,-6.5
       parent: 2
-    - type: DeviceNetwork
-      configurators:
-      - invalid
   - uid: 6426
     components:
     - type: Transform
       rot: 3.141592653589793 rad
       pos: 0.5,-6.5
       parent: 2
-    - type: DeviceNetwork
-      configurators:
-      - invalid
   - uid: 6433
     components:
     - type: Transform
@@ -35134,9 +35116,6 @@ entities:
     - type: Transform
       pos: 9.5,-8.5
       parent: 2
-    - type: DeviceNetwork
-      configurators:
-      - invalid
     - type: AtmosPipeColor
       color: '#0000FFFF'
   - uid: 5930
@@ -35145,9 +35124,6 @@ entities:
       rot: 1.5707963267948966 rad
       pos: -0.5,-9.5
       parent: 2
-    - type: DeviceNetwork
-      configurators:
-      - invalid
     - type: AtmosPipeColor
       color: '#0000FFFF'
   - uid: 5965
@@ -35689,9 +35665,6 @@ entities:
       rot: -1.5707963267948966 rad
       pos: -0.5,-12.5
       parent: 2
-    - type: DeviceNetwork
-      configurators:
-      - invalid
     - type: AtmosPipeColor
       color: '#FF0000FF'
   - uid: 6324
@@ -35880,9 +35853,6 @@ entities:
     - type: Transform
       pos: 8.5,-8.5
       parent: 2
-    - type: DeviceNetwork
-      configurators:
-      - invalid
     - type: AtmosPipeColor
       color: '#FF0000FF'
   - uid: 6618
