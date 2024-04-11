@@ -26,3 +26,5 @@ reagent-name-soysauce = соевый соус
 reagent-desc-soysauce = Соленая приправа на основе сои.
 reagent-name-table-salt = столовая соль
 reagent-desc-table-salt = Хлорид натрия, широко известный как соль, часто используется в качестве пищевой приправы или для мгновенного уничтожения мозговых червей.
+reagent-name-syrup = syrup
+reagent-desc-syrup = Delicious syrup made from tree sap, somehow stickier than glue.
