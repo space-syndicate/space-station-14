@@ -5,4 +5,4 @@ ent-Firelock = { ent-BaseFirelock }
 ent-FirelockGlass = стеклянный пожарный шлюз
     .desc = { ent-Firelock.desc }
 ent-FirelockEdge = пожарный шлюз
-    .desc = { ent-BaseFirelock.desc }
+    .desc = { ent-Firelock.desc }
