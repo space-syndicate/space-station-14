@@ -16,8 +16,8 @@ lathe-menu-material-amount =
     }
 lathe-menu-material-amount-missing =
     { $amount ->
-        [1] { NATURALFIXED($amount, 2) } { $unit } of { $material } ([color=red]{ NATURALFIXED($missingAmount, 2) } { $unit } missing[/color])
-       *[other] { NATURALFIXED($amount, 2) } { MAKEPLURAL($unit) } of { $material } ([color=red]{ NATURALFIXED($missingAmount, 2) } { MAKEPLURAL($unit) } missing[/color])
+        [1] { NATURALFIXED($amount, 2) } { $unit } { $material } ([color=red]{ NATURALFIXED($missingAmount, 2) } { $unit } не хватает[/color])
+       *[other] { NATURALFIXED($amount, 2) } { $unit } { $material } ([color=red]{ NATURALFIXED($missingAmount, 2) } { $unit } не хватает[/color])
     }
 lathe-menu-no-materials-message = Материалы не загружены
 lathe-menu-fabricating-message = Производится...
