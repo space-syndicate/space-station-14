@@ -1,4 +1,5 @@
 using System.Collections.Immutable;
+using System.Runtime.InteropServices;
 using System.Text.Json.Nodes;
 using System.Threading.Tasks;
 using Content.Corvax.Interfaces.Server;
@@ -12,6 +13,7 @@ using Content.Shared.Players.PlayTimeTracking;
 using Robust.Server.Player;
 using Robust.Shared.Configuration;
 using Robust.Shared.Network;
+using Robust.Shared.Timing;
 
 
 namespace Content.Server.Connection
@@ -20,6 +22,18 @@ namespace Content.Server.Connection
     {
         void Initialize();
         Task<bool> HavePrivilegedJoin(NetUserId userId); // Corvax-Queue
+
+        /// <summary>
+        /// Temporarily allow a user to bypass regular connection requirements.
+        /// </summary>
+        /// <remarks>
+        /// The specified user will be allowed to bypass regular player cap,
+        /// whitelist and panic bunker restrictions for <paramref name="duration"/>.
+        /// Bans are not bypassed.
+        /// </remarks>
+        /// <param name="user">The user to give a temporary bypass.</param>
+        /// <param name="duration">How long the bypass should last for.</param>
+        void AddTemporaryConnectBypass(NetUserId user, TimeSpan duration);
     }
 
     /// <summary>
@@ -34,16 +48,32 @@ namespace Content.Server.Connection
         [Dependency] private readonly IConfigurationManager _cfg = default!;
         [Dependency] private readonly ILocalizationManager _loc = default!;
         [Dependency] private readonly ServerDbEntryManager _serverDbEntry = default!;
+        [Dependency] private readonly IGameTiming _gameTiming = default!;
+        [Dependency] private readonly ILogManager _logManager = default!;
         private IServerSponsorsManager? _sponsorsMgr; // Corvax-Sponsors
         private IServerVPNGuardManager? _vpnGuardMgr; // Corvax-VPNGuard
 
+        private readonly Dictionary<NetUserId, TimeSpan> _temporaryBypasses = [];
+        private ISawmill _sawmill = default!;
+
         public void Initialize()
         {
+            _sawmill = _logManager.GetSawmill("connections");
+
             IoCManager.Instance!.TryResolveType(out _sponsorsMgr); // Corvax-Sponsors
             _netMgr.Connecting += NetMgrOnConnecting;
             _netMgr.AssignUserIdCallback = AssignUserIdCallback;
             // Approval-based IP bans disabled because they don't play well with Happy Eyeballs.
             // _netMgr.HandleApprovalCallback = HandleApproval;
+        }
+
+        public void AddTemporaryConnectBypass(NetUserId user, TimeSpan duration)
+        {
+            ref var time = ref CollectionsMarshal.GetValueRefOrAddDefault(_temporaryBypasses, user, out _);
+            var newTime = _gameTiming.RealTime + duration;
+            // Make sure we only update the time if we wouldn't shrink it.
+            if (newTime > time)
+                time = newTime;
         }
 
         /*
@@ -113,6 +143,20 @@ namespace Content.Server.Connection
                 // HWId not available for user's platform, don't look it up.
                 // Or hardware ID checks disabled.
                 hwId = null;
+            }
+
+            var bans = await _db.GetServerBansAsync(addr, userId, hwId, includeUnbanned: false);
+            if (bans.Count > 0)
+            {
+                var firstBan = bans[0];
+                var message = firstBan.FormatBanMessage(_cfg, _loc);
+                return (ConnectionDenyReason.Ban, message, bans);
+            }
+
+            if (HasTemporaryBypass(userId))
+            {
+                _sawmill.Verbose("User {UserId} has temporary bypass, skipping further connection checks", userId);
+                return null;
             }
 
             var adminData = await _dbManager.GetAdminDataForAsync(e.UserId);
@@ -192,14 +236,6 @@ namespace Content.Server.Connection
                 return (ConnectionDenyReason.Full, Loc.GetString("soft-player-cap-full"), null);
             }
 
-            var bans = await _db.GetServerBansAsync(addr, userId, hwId, includeUnbanned: false);
-            if (bans.Count > 0)
-            {
-                var firstBan = bans[0];
-                var message = firstBan.FormatBanMessage(_cfg, _loc);
-                return (ConnectionDenyReason.Ban, message, bans);
-            }
-
             if (_cfg.GetCVar(CCVars.WhitelistEnabled))
             {
                 var min = _cfg.GetCVar(CCVars.WhitelistMinPlayers);
@@ -218,6 +254,11 @@ namespace Content.Server.Connection
             }
 
             return null;
+        }
+
+        private bool HasTemporaryBypass(NetUserId user)
+        {
+            return _temporaryBypasses.TryGetValue(user, out var time) && time > _gameTiming.RealTime;
         }
 
         private async Task<NetUserId?> AssignUserIdCallback(string name)
