@@ -6674,7 +6674,7 @@ entities:
       pos: -21.5,-7.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -22795.033
+      secondsUntilStateChange: -22959.22
       state: Opening
 - proto: AirlockSecurityLawyerGlassLocked
   entities:
@@ -8848,7 +8848,7 @@ entities:
       parent: 2
     - type: DeviceLinkSink
       links:
-      - 13563
+      - 11087
   - uid: 202
     components:
     - type: Transform
@@ -8856,7 +8856,7 @@ entities:
       parent: 2
     - type: DeviceLinkSink
       links:
-      - 13562
+      - 11963
   - uid: 288
     components:
     - type: Transform
@@ -8938,7 +8938,7 @@ entities:
       parent: 2
     - type: DeviceLinkSink
       links:
-      - 13562
+      - 11963
   - uid: 1092
     components:
     - type: Transform
@@ -8946,7 +8946,7 @@ entities:
       parent: 2
     - type: DeviceLinkSink
       links:
-      - 13563
+      - 11087
   - uid: 3010
     components:
     - type: Transform
@@ -35653,8 +35653,8 @@ entities:
   - uid: 1096
     components:
     - type: Transform
-      rot: -1.5707963267948966 rad
-      pos: -9.5,-49.5
+      rot: 1.5707963267948966 rad
+      pos: -7.5,-49.5
       parent: 2
     - type: DeviceLinkSink
       links:
@@ -35662,7 +35662,7 @@ entities:
   - uid: 1097
     components:
     - type: Transform
-      rot: -1.5707963267948966 rad
+      rot: 1.5707963267948966 rad
       pos: -8.5,-49.5
       parent: 2
     - type: DeviceLinkSink
@@ -35671,18 +35671,17 @@ entities:
   - uid: 1098
     components:
     - type: Transform
-      rot: -1.5707963267948966 rad
-      pos: -9.5,-45.5
+      rot: 1.5707963267948966 rad
+      pos: -10.5,-49.5
       parent: 2
     - type: DeviceLinkSink
       links:
-      - 13563
       - 13584
   - uid: 1099
     components:
     - type: Transform
-      rot: -1.5707963267948966 rad
-      pos: -8.5,-45.5
+      rot: 1.5707963267948966 rad
+      pos: -9.5,-49.5
       parent: 2
     - type: DeviceLinkSink
       links:
@@ -35691,7 +35690,7 @@ entities:
     components:
     - type: Transform
       rot: -1.5707963267948966 rad
-      pos: -11.5,-49.5
+      pos: -7.5,-45.5
       parent: 2
     - type: DeviceLinkSink
       links:
@@ -35699,8 +35698,8 @@ entities:
   - uid: 1101
     components:
     - type: Transform
-      rot: -1.5707963267948966 rad
-      pos: -11.5,-45.5
+      rot: 1.5707963267948966 rad
+      pos: -11.5,-49.5
       parent: 2
     - type: DeviceLinkSink
       links:
@@ -35709,7 +35708,7 @@ entities:
     components:
     - type: Transform
       rot: -1.5707963267948966 rad
-      pos: -7.5,-49.5
+      pos: -10.5,-45.5
       parent: 2
     - type: DeviceLinkSink
       links:
@@ -35808,25 +35807,25 @@ entities:
     components:
     - type: Transform
       rot: -1.5707963267948966 rad
-      pos: -7.5,-45.5
+      pos: -9.5,-45.5
       parent: 2
     - type: DeviceLinkSink
       links:
       - 13584
-  - uid: 11963
+  - uid: 10990
     components:
     - type: Transform
-      rot: 1.5707963267948966 rad
-      pos: -10.5,-49.5
+      rot: -1.5707963267948966 rad
+      pos: -11.5,-45.5
       parent: 2
     - type: DeviceLinkSink
       links:
       - 13584
-  - uid: 11964
+  - uid: 10991
     components:
     - type: Transform
-      rot: 1.5707963267948966 rad
-      pos: -10.5,-45.5
+      rot: -1.5707963267948966 rad
+      pos: -8.5,-45.5
       parent: 2
     - type: DeviceLinkSink
       links:
@@ -70359,34 +70358,6 @@ entities:
       linkedPorts:
         12250:
         - Pressed: Toggle
-  - uid: 13562
-    components:
-    - type: Transform
-      rot: -1.5707963267948966 rad
-      pos: -10.439823,-47.71755
-      parent: 2
-    - type: DeviceLinkSource
-      linkedPorts:
-        202:
-        - Pressed: Toggle
-        1091:
-        - Pressed: Toggle
-  - uid: 13563
-    components:
-    - type: Transform
-      rot: -1.5707963267948966 rad
-      pos: -10.455448,-47.295673
-      parent: 2
-    - type: DeviceLinkSource
-      linkedPorts:
-        200:
-        - Pressed: Toggle
-        1092:
-        - Pressed: Toggle
-        1098:
-        - Pressed: Forward
-        - Pressed: Reverse
-        - Pressed: Off
   - uid: 14921
     components:
     - type: Transform
@@ -70403,6 +70374,36 @@ entities:
         - Pressed: Toggle
         14920:
         - Pressed: Toggle
+- proto: SignalSwitch
+  entities:
+  - uid: 11087
+    components:
+    - type: Transform
+      rot: -1.5707963267948966 rad
+      pos: -10.506509,-47.33077
+      parent: 2
+    - type: DeviceLinkSource
+      linkedPorts:
+        200:
+        - Off: Close
+        - On: Open
+        1092:
+        - Off: Close
+        - On: Open
+  - uid: 11963
+    components:
+    - type: Transform
+      rot: -1.5707963267948966 rad
+      pos: -10.463,-47.678596
+      parent: 2
+    - type: DeviceLinkSource
+      linkedPorts:
+        202:
+        - On: Open
+        - Off: Close
+        1091:
+        - On: Open
+        - Off: Close
 - proto: SignAnomaly
   entities:
   - uid: 2919
@@ -76250,27 +76251,11 @@ entities:
         - Left: Forward
         - Right: Reverse
         - Middle: Off
-        1096:
+        9418:
         - Left: Forward
         - Right: Reverse
         - Middle: Off
-        1097:
-        - Left: Forward
-        - Right: Reverse
-        - Middle: Off
-        1099:
-        - Left: Forward
-        - Right: Reverse
-        - Middle: Off
-        11964:
-        - Left: Forward
-        - Right: Reverse
-        - Middle: Off
-        11963:
-        - Left: Forward
-        - Right: Reverse
-        - Middle: Off
-        1101:
+        3326:
         - Left: Forward
         - Right: Reverse
         - Middle: Off
@@ -76278,11 +76263,27 @@ entities:
         - Left: Forward
         - Right: Reverse
         - Middle: Off
-        9418:
+        1097:
         - Left: Forward
         - Right: Reverse
         - Middle: Off
-        3326:
+        10991:
+        - Left: Forward
+        - Right: Reverse
+        - Middle: Off
+        1096:
+        - Left: Forward
+        - Right: Reverse
+        - Middle: Off
+        1099:
+        - Left: Forward
+        - Right: Reverse
+        - Middle: Off
+        1101:
+        - Left: Forward
+        - Right: Reverse
+        - Middle: Off
+        10990:
         - Left: Forward
         - Right: Reverse
         - Middle: Off
