@@ -53,7 +53,7 @@ namespace Content.Server.Corvax.StationGoal
                     "paper_stamp-centcom",
                     new List<StampDisplayInfo>
                     {
-                        new() { StampedName = Loc.GetString("stamp-component-stamped-name-centcom"), StampedColor = Color.FromHex("#BB3232") },
+                        new() { StampedName = Loc.GetString("stamp-component-stamped-name-centcom"), StampedColor = Color.FromHex("#006600") },
                     });
                 _faxSystem.Receive(fax.Owner, printout, null, fax);
 
