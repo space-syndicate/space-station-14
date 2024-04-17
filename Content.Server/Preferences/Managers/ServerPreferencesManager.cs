@@ -106,7 +106,12 @@ namespace Content.Server.Preferences.Managers
             var session = _playerManager.GetSessionById(userId);
             var collection = IoCManager.Instance!;
 
-            profile.EnsureValid(session, collection);
+            // Corvax-Sponsors-Start
+            var sponsorPrototypes = _sponsors != null && _sponsors.TryGetPrototypes(session.UserId, out var prototypes)
+                ? prototypes.ToArray()
+                : [];
+            profile.EnsureValid(session, collection, sponsorPrototypes);
+            // Corvax-Sponsors-End
 
             var profiles = new Dictionary<int, ICharacterProfile>(curPrefs.Characters)
             {
@@ -201,12 +206,13 @@ namespace Content.Server.Preferences.Managers
                 {
                     var prefs = await GetOrCreatePreferencesAsync(session.UserId);
                     // Corvax-Sponsors-Start: Remove sponsor markings from expired sponsors
+                    var collection = IoCManager.Instance!;
                     foreach (var (_, profile) in prefs.Characters)
                     {
                         var sponsorPrototypes = _sponsors != null && _sponsors.TryGetPrototypes(session.UserId, out var prototypes)
                             ? prototypes.ToArray()
                             : [];
-                        profile.EnsureValid(_cfg, _protos, sponsorPrototypes);
+                        profile.EnsureValid(session, collection, sponsorPrototypes);
                     }
                     // Corvax-Sponsors-End
                     prefsData.Prefs = prefs;
@@ -295,9 +301,10 @@ namespace Content.Server.Preferences.Managers
             // Clean up preferences in case of changes to the game,
             // such as removed jobs still being selected.
 
+            var sponsorPrototypes = _sponsors != null && _sponsors.TryGetPrototypes(session.UserId, out var prototypes) ? prototypes.ToArray() : []; // Corvax-Sponsors
             return new PlayerPreferences(prefs.Characters.Select(p =>
             {
-                return new KeyValuePair<int, ICharacterProfile>(p.Key, p.Value.Validated(session, collection));
+                return new KeyValuePair<int, ICharacterProfile>(p.Key, p.Value.Validated(session, collection, sponsorPrototypes));
             }), prefs.SelectedCharacterIndex, prefs.AdminOOCColor);
         }
 

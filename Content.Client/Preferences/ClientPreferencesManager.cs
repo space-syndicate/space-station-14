@@ -1,4 +1,5 @@
 using System.Linq;
+using Content.Corvax.Interfaces.Client;
 using Content.Shared.Preferences;
 using Robust.Client;
 using Robust.Client.Player;
@@ -14,11 +15,12 @@ namespace Content.Client.Preferences
     ///     connection.
     ///     Stores preferences on the server through <see cref="SelectCharacter" /> and <see cref="UpdateCharacter" />.
     /// </summary>
-    public sealed class ClientPreferencesManager : IClientPreferencesManager
+    public partial class ClientPreferencesManager : IClientPreferencesManager
     {
         [Dependency] private readonly IClientNetManager _netManager = default!;
         [Dependency] private readonly IBaseClient _baseClient = default!;
         [Dependency] private readonly IPlayerManager _playerManager = default!;
+        private IClientSponsorsManager? _sponsorsManager; // Corvax-Sponsors
 
         public event Action? OnServerDataLoaded;
 
@@ -27,6 +29,7 @@ namespace Content.Client.Preferences
 
         public void Initialize()
         {
+            IoCManager.Instance!.TryResolveType(out _sponsorsManager); // Corvax-Sponsors
             _netManager.RegisterNetMessage<MsgPreferencesAndSettings>(HandlePreferencesAndSettings);
             _netManager.RegisterNetMessage<MsgUpdateCharacter>();
             _netManager.RegisterNetMessage<MsgSelectCharacter>();
@@ -62,7 +65,10 @@ namespace Content.Client.Preferences
         public void UpdateCharacter(ICharacterProfile profile, int slot)
         {
             var collection = IoCManager.Instance!;
-            profile.EnsureValid(_playerManager.LocalSession!, collection);
+            // Corvax-Sponsors-Start
+            var sponsorPrototypes = _sponsorsManager?.Prototypes.ToArray() ?? [];
+            profile.EnsureValid(_playerManager.LocalSession!, collection, sponsorPrototypes);
+            // Corvax-Sponsors-End
             var characters = new Dictionary<int, ICharacterProfile>(Preferences.Characters) {[slot] = profile};
             Preferences = new PlayerPreferences(characters, Preferences.SelectedCharacterIndex, Preferences.AdminOOCColor);
             var msg = new MsgUpdateCharacter

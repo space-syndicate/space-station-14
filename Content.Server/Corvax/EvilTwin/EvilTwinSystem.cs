@@ -222,7 +222,7 @@ public sealed class EvilTwinSystem : EntitySystem
         {
             if (_prototype.TryIndex<StartingGearPrototype>(jobProto.StartingGear, out var gear))
             {
-                _stationSpawning.EquipStartingGear(twinUid, gear, pref);
+                _stationSpawning.EquipStartingGear(twinUid, gear);
                 _stationSpawning.EquipIdCard(twinUid, pref.Name, jobProto, _stationSystem.GetOwningStation(target));
             }
 
