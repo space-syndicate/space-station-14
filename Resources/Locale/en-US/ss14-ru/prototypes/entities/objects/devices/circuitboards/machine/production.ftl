@@ -160,3 +160,5 @@ ent-ShuttleGunKineticCircuitboard = PTK-800 "Matter Dematerializer" machine boar
     .desc = A machine printed circuit board for an PTK-800 "Matter Dematerializer"
 ent-ReagentGrinderIndustrialMachineCircuitboard = industrial reagent grinder machine board
     .desc = { ent-BaseMachineCircuitboard.desc }
+ent-JukeboxCircuitBoard = jukebox machine board
+    .desc = A machine printed circuit board for a jukebox.

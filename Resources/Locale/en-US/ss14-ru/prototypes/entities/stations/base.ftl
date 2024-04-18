@@ -1,5 +1,7 @@
 ent-BaseStation = { "" }
     .desc = { "" }
+ent-BaseRandomStation = { "" }
+    .desc = { "" }
 ent-BaseStationCargo = { "" }
     .desc = { "" }
 ent-BaseStationJobsSpawning = { "" }
