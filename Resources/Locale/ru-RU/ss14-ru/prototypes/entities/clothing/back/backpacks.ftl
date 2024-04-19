@@ -1,5 +1,5 @@
 ent-ClothingBackpack = рюкзак
-    .desc = Вы носите это на спине и кладете в него предметы.
+    .desc = Вы носите это на спине и кладёте в него предметы.
 ent-ClothingBackpackClown = хихишкин фон хонкертон
     .desc = Это рюкзак, изготовленный компанией «Honk! Co».
 ent-ClothingBackpackIan = рюкзак Иана
@@ -33,7 +33,7 @@ ent-ClothingBackpackCargo = рюкзак грузчика
 ent-ClothingBackpackSalvage = рюкзак утилизатора
     .desc = Прочный рюкзак для хранения добычи.
 ent-ClothingBackpackMerc = рюкзак наёмника
-    .desc = Надежный боевой рюкзак, побывавший во многих опасных местах.
+    .desc = Надёжный боевой рюкзак, побывавший во многих опасных местах.
 ent-ClothingBackpackERTLeader = рюкзак командира ОБР
     .desc = Вместительный рюкзак с множеством карманов, который носит командир отряда быстрого реагирования.
 ent-ClothingBackpackERTSecurity = рюкзак офицера безопасности ОБР
