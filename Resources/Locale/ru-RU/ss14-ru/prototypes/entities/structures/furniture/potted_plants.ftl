@@ -1,5 +1,5 @@
 ent-PottedPlantBase = комнатное растение
-    .desc = Чудесный кусочек природы, заключенный в горшке.
+    .desc = Чудесный кусочек природы, заключённый в горшке.
 ent-PottedPlant0 = { ent-PottedPlantBase }
     .desc = { ent-PottedPlantBase.desc }
 ent-PottedPlant1 = { ent-PottedPlantBase }
@@ -21,7 +21,7 @@ ent-PottedPlant8 = { ent-PottedPlantBase }
 ent-PottedPlantBioluminscent = биолюминесцентное комнатное растение
     .desc = Оно светится!
 ent-PottedPlant10 = { ent-PottedPlantBase }
-    .desc = Чудесный кусочек природы, заключенный в горшке.
+    .desc = Чудесный кусочек природы, заключённый в горшке.
 ent-PottedPlant11 = { ent-PottedPlantBase }
     .desc = { ent-PottedPlantBase.desc }
 ent-PottedPlant12 = { ent-PottedPlantBase }
