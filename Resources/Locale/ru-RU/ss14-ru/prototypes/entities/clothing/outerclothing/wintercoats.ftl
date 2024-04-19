@@ -1,5 +1,5 @@
 ent-ClothingOuterWinterCoat = зимняя куртка
-    .desc = Тяжелая куртка из 'синтетического' меха животных.
+    .desc = Тяжёлая куртка из 'синтетического' меха животных.
 ent-ClothingOuterWinterCoatToggleable = зимняя куртка с капюшоном
     .desc = { ent-ClothingOuterWinterCoat.desc }
 ent-ClothingOuterWinterAtmos = зимняя куртка атмос-техника
@@ -61,7 +61,7 @@ ent-ClothingOuterWinterSyndieCap = зимняя куртка Синдиката
 ent-ClothingOuterWinterSyndieCapArmored = зимняя бронекуртка Синдиката
     .desc = Зимняя бронекуртка Синдиката изготовлено из прочной ткани с позолоченными узорами и грубой шерсти.
 ent-ClothingOuterWinterSyndie = зимняя куртка Синдиката
-    .desc = Утепленная зимняя куртка, похожая на товар из "Синдиленда".
+    .desc = Утеплённая зимняя куртка, похожая на товар из "Синдиленда".
 ent-ClothingOuterWinterMusician = зимняя куртка музыканта
     .desc = Безразмерный пластилиновый космический фрак, который заставит людей спрашивать: "Вы меня знаете?".
 ent-ClothingOuterWinterWeb = паутинная зимняя куртка
