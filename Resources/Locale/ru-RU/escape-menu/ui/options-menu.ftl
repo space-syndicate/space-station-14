@@ -85,7 +85,7 @@ ui-options-vp-integer-scaling-tooltip =
     чёрные полосы или что часть окна не будет видна.
 ui-options-vp-low-res = Изображение низкого разрешения
 ui-options-parallax-low-quality = Низкокачественный параллакс (фон)
-ui-options-fps-counter = Показать счетчик FPS
+ui-options-fps-counter = Показать счётчик FPS
 ui-options-vp-width = Ширина окна игры: { $width }
 ui-options-hud-layout = Тип HUD:
 
@@ -152,7 +152,7 @@ ui-options-function-focus-radio-window = Писать в чат (Радио)
 ui-options-function-focus-looc-window = Писать в чат (LOOC)
 ui-options-function-focus-ooc-window = Писать в чат (OOC)
 ui-options-function-focus-admin-chat-window = Писать в чат (Админ)
-ui-options-function-focus-dead-chat-window = Писать в чат (Мертвые)
+ui-options-function-focus-dead-chat-window = Писать в чат (Мёртвые)
 ui-options-function-focus-console-chat-window = Писать в чат (Консоль)
 ui-options-function-cycle-chat-channel-forward = Переключение каналов чата (Вперёд)
 ui-options-function-cycle-chat-channel-backward = Переключение каналов чата (Назад)
@@ -230,18 +230,18 @@ ui-options-net-predict-tick-bias-tooltip =
 ui-options-net-pvs-spawn = Лимит появление PVS сущностей
 ui-options-net-pvs-spawn-tooltip =
     Ограничение частоты отправки новых появившихся сущностей сервером на клиент.
-    Снижение этого параметра может помочь уменьшить "захлебывания",
+    Снижение этого параметра может помочь уменьшить "захлёбывания",
     вызываемые спавном сущностей, но может привести к их резкому появлению.
 ui-options-net-pvs-entry = Лимит PVS сущностей
 ui-options-net-pvs-entry-tooltip =
     Ограничение частоты отправки новых видимых сущностей сервером на клиент.
-    Снижение этого параметра может помочь уменьшить "захлебывания",
+    Снижение этого параметра может помочь уменьшить "захлёбывания",
     вызываемые спавном сущностей, но может привести к их резкому появлению.
 ui-options-net-pvs-leave = Частота удаления PVS
 ui-options-net-pvs-leave-tooltip =
     Ограничение частоты, с которой клиент будет удалять
     сущности вне поля зрения. Снижение этого параметра может помочь
-    уменьшить "захлебывания" при ходьбе, но иногда может
+    уменьшить "захлёбывания" при ходьбе, но иногда может
     привести к неправильным предугадываниям и другим проблемам.
 cmd-options-desc = Открывает меню опций, опционально с конкретно выбранной вкладкой.
 cmd-options-help = Использование: options [tab]
