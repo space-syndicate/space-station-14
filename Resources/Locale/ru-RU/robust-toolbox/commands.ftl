@@ -120,7 +120,7 @@ cmd-exec-arg-filename = <fileName>
 
 cmd-dump_net_comps-desc = Выводит таблицу сетевых компонентов.
 cmd-dump_net_comps-help = Использование: dump_net-comps
-cmd-dump_net_comps-error-writeable = Регистрация все ещё доступна для записи, сетевые идентификаторы не были сгенерированы.
+cmd-dump_net_comps-error-writeable = Регистрация всё ещё доступна для записи, сетевые идентификаторы не были сгенерированы.
 cmd-dump_net_comps-header = Регистрации сетевых компонентов:
 
 ## 'dump_event_tables' command

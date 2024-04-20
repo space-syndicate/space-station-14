@@ -10,7 +10,7 @@ flavor-profile-unknown = Вкус неописуем.
 
 flavor-base-savory = жгуче
 flavor-base-sweet = сладко
-flavor-base-salty = солено
+flavor-base-salty = солёно
 flavor-base-sour = кисло
 flavor-base-bitter = горько
 flavor-base-spicy = остро

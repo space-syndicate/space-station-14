@@ -77,7 +77,7 @@ ent-DeathsquadPDA = { ent-CentcomPDA }
 ent-MusicianPDA = КПК музыканта
     .desc = Он наполняет вас вдохновением.
 ent-AtmosPDA = КПК атмос-техника
-    .desc = Все ещё пахнет плазмой.
+    .desc = Всё ещё пахнет плазмой.
 ent-ClearPDA = прозрачный КПК
     .desc = На 99,44% из прозрачного пластика.
 # Corvax-HiddenDesc-Start

@@ -5,7 +5,7 @@ alerts-low-nitrogen-desc = В воздухе, которым вы дышите, 
 alerts-high-toxin-name = [color=red]Высокий уровень токсинов[/color]
 alerts-high-toxin-desc = В воздухе, которым вы дышите, [color=red]слишком много токсинов[/color]. Используйте [color=green]дыхательную маску и баллон[/color] или покиньте отсек.
 alerts-low-pressure-name = [color=red]Низкий уровень давления[/color]
-alerts-low-pressure-desc = Воздух вокруг вас [color=red]опасно разрежен[/color]. [color=green]Космический скафандр[/color] защитит вас.
+alerts-low-pressure-desc = Воздух вокруг вас [color=red]опасно разрежён[/color]. [color=green]Космический скафандр[/color] защитит вас.
 alerts-high-pressure-name = [color=red]Высокий уровень давления[/color]
 alerts-high-pressure-desc = Воздух вокруг вас [color=red]опасно плотный[/color]. [color=green]Герметичный костюм[/color] будет достаточной защитой.
 alerts-on-fire-name = [color=red]В огне[/color]

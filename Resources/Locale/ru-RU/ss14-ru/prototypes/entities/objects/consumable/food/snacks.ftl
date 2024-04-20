@@ -74,6 +74,6 @@ ent-FoodPacketChowMeinTrash = пустая коробочка чоу мейн
 ent-FoodPacketDanDanTrash = пустая коробочка лапши дань-дань
     .desc = { ent-FoodPacketTrash.desc }
 ent-FoodCookieFortune = печенье с предсказанием
-    .desc = Предсказание гласит: Конец близок... и это все ваша вина.
+    .desc = Предсказание гласит: Конец близок... и это всё ваша вина.
 ent-FoodPacketMRETrash = обёртка от ИРП
     .desc = Обёртка широкого назначения для различных военных продуктов питания.
