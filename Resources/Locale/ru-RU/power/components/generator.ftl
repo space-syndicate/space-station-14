@@ -23,9 +23,9 @@ portable-generator-ui-unanchored = Не закреплено
 portable-generator-ui-current-output = Текущая мощность: { $voltage }
 portable-generator-ui-network-stats = Электросеть:
 portable-generator-ui-network-stats-value = { POWERWATTS($supply) } / { POWERWATTS($load) }
-portable-generator-ui-network-stats-not-connected = Не подключен
+portable-generator-ui-network-stats-not-connected = Не подключён
 power-switchable-generator-examine = Выработанная энергия направлена на { $voltage }.
-power-switchable-generator-switched = Выход переключен на { $voltage }!
+power-switchable-generator-switched = Выход переключён на { $voltage }!
 power-switchable-voltage =
     { $voltage ->
         [HV] [color=orange]ВВ[/color]
