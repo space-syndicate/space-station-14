@@ -93,7 +93,25 @@
 - type: emote
   id: Honk
   category: Vocal
-  chatMessages: [honks]
+  chatMessages: [издаёт хонк.] # Corvax-Localization
+  chatTriggers:
+    - honk
+    - honk.
+    - honk!
+    - honks
+    - honks.
+    - honks!
+    - honked
+    - honked.
+    - honked!
+    - honking
+    - honking.
+    - honking!
+    # Corvax-Localization-Start
+    - хонк
+    - хонк.
+    - хонк!
+    # Corvax-Localization-End
 
 - type: emote
   id: Sigh
@@ -353,7 +371,7 @@
 - type: emote
   id: Buzz
   category: Vocal
-  chatMessages: [buzz!]
+  chatMessages: [жужжит!] # Corvax-Localization
   chatTriggers:
     - buzzing
     - buzzing!
@@ -405,4 +423,130 @@
     - чирикает
     - чирикает.
     - чирикает!
+    # Corvax-Localization-End
+
+# Machine Emotes
+- type: emote
+  id: Beep
+  category: Vocal
+  chatMessages: [делает бип.] # Corvax-Localization
+  chatTriggers:
+    - beep
+    - beep!
+    - beep.
+    - beeps
+    - beeps.
+    - beeps!
+    - beeped
+    - beeped.
+    - beeped!
+    - beeping
+    - beeping.
+    - beeping!
+    # Corvax-Localization-Start
+    - бип
+    - бип.
+    - бип!
+    # Corvax-Localization-End
+
+- type: emote
+  id: Chime
+  category: Vocal
+  chatMessages: [издаёт трель.] # Corvax-Localization
+  chatTriggers:
+    - chime
+    - chime.
+    - chime!
+    - chimes
+    - chimes.
+    - chimes!
+    - chimed
+    - chimed.
+    - chimed!
+    - chiming
+    - chiming,
+    - chiming!
+    # Corvax-Localization-Start
+    - дзынь
+    - дзынь.
+    - дзынь!
+    # Corvax-Localization-End
+
+- type: emote
+  id: Buzz-Two
+  category: Vocal
+  chatMessages: [издаёт бип-буп.] # Corvax-Localization
+  chatTriggers:
+    - buzztwice
+    - buzztwice.
+    - buzztwice!
+    - buzzstwice
+    - buzzstwice.
+    - buzzstwice!
+    - buzzestwice
+    - buzzestwice.
+    - buzzestwice!
+    - buzzingtwice
+    - buzzingtwice.
+    - buzzingtwice!
+    - buzzedtwice
+    - buzzedtwice.
+    - buzzedtwice!
+    - buzz twice
+    - buzz twice.
+    - buzz twice!
+    - buzzs twice
+    - buzzs twice.
+    - buzzs twice!
+    - buzzes twice
+    - buzzes twice.
+    - buzzes twice!
+    - buzzing twice
+    - buzzing twice.
+    - buzzing twice!
+    - buzzed twice
+    - buzzed twice.
+    - buzzed twice!
+    # Corvax-Localization-Start
+    - бипбуп
+    - бипбуп.
+    - бипбуп!
+    - бип буп
+    - бип буп.
+    - бип буп!
+    - бип-буп
+    - бип-буп.
+    - бип-буп!
+    - бипбип
+    - бипбип.
+    - бипбип!
+    - бип бип
+    - бип бип.
+    - бип бип!
+    - бип-бип
+    - бип-бип.
+    - бип-бип!
+    # Corvax-Localization-End
+
+- type: emote
+  id: Ping
+  category: Vocal
+  chatMessages: [издаёт пинг.] # Corvax-Localization
+  chatTriggers:
+    - ping
+    - ping.
+    - ping!
+    - pings
+    - pings.
+    - pings!
+    - pinged
+    - pinged.
+    - pinged!
+    - pinging
+    - pinging.
+    - pinging!
+    # Corvax-Localization-Start
+    - пинг
+    - пинг.
+    - пинг!
     # Corvax-Localization-End

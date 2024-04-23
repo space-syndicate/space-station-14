@@ -21,7 +21,25 @@
   - type: Currency
     price:
       Telecrystal: 1
-
+# Corvax-HiddenDesc-Start
+  - type: HiddenDescription
+    entries:
+    - label: corvax-hidden-desc-Telecrystal-syndicate
+      whitelistMind:
+        components:
+          - TraitorRole
+          - NukeOperative
+    - label: corvax-hidden-desc-Telecrystal-cargo
+      jobRequired:
+        - SalvageSpecialist
+    - label: corvax-hidden-desc-Telecrystal-research
+      jobRequired:
+        - ResearchAssistant
+        - ResearchDirector
+        - Scientist
+        - Borg
+# Corvax-HiddenDesc-End
+        
 - type: entity
   parent: Telecrystal
   id: Telecrystal1
@@ -102,6 +120,19 @@
     preset: StorePresetUplink
     balance:
       Telecrystal: 40
+  - type: Tag
+    tags:
+    - NukeOpsUplink
+
+- type: entity
+  parent: BaseUplinkRadio
+  id: BaseUplinkRadio60TC
+  suffix: 60 TC, LoneOps
+  components:
+  - type: Store
+    preset: StorePresetUplink
+    balance:
+      Telecrystal: 60
   - type: Tag
     tags:
     - NukeOpsUplink

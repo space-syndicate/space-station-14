@@ -1,12 +1,12 @@
-ent-BriefcaseBrownFilled = brown briefcase
+ent-BriefcaseBrownFilled = { ent-BriefcaseBrown }
     .suffix = Filled, Paper
     .desc = { ent-BriefcaseBrown.desc }
-ent-BriefcaseSyndieSniperBundleFilled = brown briefcase
-    .suffix = SniperBundle
+ent-BriefcaseSyndieSniperBundleFilled = { ent-BriefcaseSyndie }
+    .suffix = Syndicate, Sniper Bundle
     .desc = { ent-BriefcaseSyndie.desc }
-ent-BriefcaseSyndieLobbyingBundleFilled = brown briefcase
+ent-BriefcaseSyndieLobbyingBundleFilled = { ent-BriefcaseSyndie }
     .suffix = Syndicate, Spesos
     .desc = { ent-BriefcaseSyndie.desc }
-ent-BriefcaseThiefBribingBundleFilled = brown briefcase
+ent-BriefcaseThiefBribingBundleFilled = { ent-BriefcaseSyndie }
     .suffix = Thief, Spesos
     .desc = { ent-BriefcaseSyndie.desc }

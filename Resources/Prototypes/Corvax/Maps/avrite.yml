@@ -11,7 +11,34 @@
           mapNameTemplate: '{0} Avrite {1}'
           nameGenerator:
             !type:NanotrasenNameGenerator
-            prefixCreator: 'TG'
+            prefixCreator: 'SY'
+        - type: GridSpawn
+          groups:
+            trade:
+              addComponents:
+                - type: ProtectedGrid
+                - type: TradeStation
+              paths:
+                - /Maps/Shuttles/trading_outpost.yml
+            mining:
+              paths:
+              - /Maps/Shuttles/mining_corvaxavrit.yml
+            # Spawn last
+            ruins:
+              hide: true
+              nameGrid: true
+              minCount: 2
+              maxCount: 2
+              stationGrid: false
+              paths:
+              - /Maps/Ruins/biodome_satellite.yml
+              - /Maps/Ruins/derelict.yml
+              - /Maps/Ruins/djstation.yml
+              - /Maps/Ruins/old_ai_sat.yml
+              - /Maps/Ruins/relaystation.yml
+              - /Maps/Ruins/syndicate_dropship.yml
+              - /Maps/Ruins/whiteship_ancient.yml
+              - /Maps/Ruins/whiteship_bluespacejumper.yml
         - type: StationEmergencyShuttle
           emergencyShuttlePath: /Maps/Shuttles/emergency_corvaxavrit.yml
         - type: StationJobs
@@ -28,7 +55,7 @@
             Mime: [ 1, 1 ]
             Captain: [ 1, 1 ]
             IAA: [ 1, 1 ]
-            Reporter: [ 2, 2 ]
+            Reporter: [ 1, 2 ]
             HeadOfPersonnel: [ 1, 1 ]
             ChiefEngineer: [ 1, 1 ]
             StationEngineer: [ 4, 4 ]

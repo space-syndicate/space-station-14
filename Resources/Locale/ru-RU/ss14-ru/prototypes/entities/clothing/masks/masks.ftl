@@ -2,8 +2,11 @@ ent-ClothingMaskGas = противогаз
     .desc = Закрывающая лицо маска, которую можно подключить к дыхательному баллону.
 ent-ClothingMaskGasSecurity = противогаз СБ
     .desc = Стандартный противогаз Службы безопасности.
-ent-ClothingMaskGasSyndicate = противогаз синдиката
-    .desc = Плотно прилегающая тактическая маска, которую можно подключить к дыхательному баллону.
+# Corvax-HiddenDesc-Start
+ent-ClothingMaskGasSyndicate = черный боевой противогаз
+    .suffix = Синдикат
+    .desc = Высокотехнологичный противогаз с возможностью подключить его к баллону, разработанный специально для борьбы в тяжелых условиях. Теперь – с функцией защиты для глаз!
+# Corvax-HiddenDesc-End
 ent-ClothingMaskGasAtmos = атмос-противогаз
     .desc = Улучшенный противогаз, используемый атмосферными техниками. Огнеупорный!
 ent-ClothingMaskGasCaptain = противогаз капитана
@@ -61,7 +64,7 @@ ent-ClothingMaskBat = маска летучей мыши
     .desc = Кровопийца ночью, и милый, слепой зверёк днём..
 ent-ClothingMaskNeckGaiter = шейный гетр
     .desc = Стильный гетр, способный защитить от космического ветра?...
-ent-ClothingMaskNeckGaiterRed = red neck gaiter
+ent-ClothingMaskNeckGaiterRed = красный шейный гетр
     .desc = { ent-ClothingMaskNeckGaiter.desc }
 ent-ClothingMaskSexyClown = сексуальная маска клоуна
     .desc = Некоторые шаловливые клоуны уверены, что именно так выглядит Хонкоматерь.

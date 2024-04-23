@@ -21,6 +21,8 @@
         Blunt: 5
         Slash: 10
         Structural: 10
+    soundHit:
+      collection: MetalThud
   - type: Wieldable
   - type: IncreaseDamageOnWield
     damage:
@@ -64,3 +66,18 @@
     quickEquip: false
     slots:
     - back
+# Corvax-HiddenDesc-Start
+  - type: HiddenDescription
+    entries:
+    - label: corvax-hidden-desc-FireAxeFlaming-syndicate
+      whitelistMind:
+        components:
+          - TraitorRole
+          - NukeOperative
+    - label: corvax-hidden-desc-FireAxeFlaming-research
+      jobRequired:
+        - ResearchAssistant
+        - ResearchDirector
+        - Scientist
+        - Borg
+# Corvax-HiddenDesc-End
