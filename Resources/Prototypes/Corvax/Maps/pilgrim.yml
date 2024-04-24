@@ -4,7 +4,7 @@
   mapPath: /Maps/corvax_pilgrim.yml
   minPlayers: 40
   stations:
-    Delta:
+    Pilgrim:
       stationProto: StandardNanotrasenStation
       components:
         - type: StationNameSetup
