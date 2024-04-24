@@ -10,6 +10,7 @@
     - Moth
     - Reptilian
     - SlimePerson
+    - Vulpkanin
 
 - type: guideEntry
   id: Arachnid
@@ -45,3 +46,8 @@
   id: SlimePerson
   name: species-name-slime
   text: "/ServerInfo/Guidebook/Mobs/SlimePerson.xml"
+
+- type: guideEntry
+  id: Vulpkanin
+  name: species-name-vulpkanin
+  text: "/ServerInfo/Guidebook/Mobs/Vulpkanin.xml"
