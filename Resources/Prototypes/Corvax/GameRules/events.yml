@@ -8,7 +8,7 @@
     weight: 5
     duration: 1
     reoccurrenceDelay: 40
-  - type: VentCrittersRule
+  - type: EvilTwinSpawnRule
     specialEntries:
       - id: SpawnPointEvilTwin
         prob: 0.0
