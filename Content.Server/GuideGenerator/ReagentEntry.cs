@@ -51,7 +51,7 @@ public sealed class ReagentEntry
         TextColor = (0.2126f * r + 0.7152f * g + 0.0722f * b > 0.5
             ? Color.Black
             : Color.White).ToHex();
-        
+
         Metabolisms = proto.Metabolisms?.ToDictionary(x => x.Key.Id, x => new ReagentEffectsEntry(x.Value));
     }
 }
@@ -65,7 +65,7 @@ public sealed class ReactionEntry
     public string Name { get; }
 
     [JsonPropertyName("reactants")]
-    public Dictionary<string, ReactantEntry> Reactants { get; } = new();
+    public Dictionary<string, ReactantEntry> Reactants { get; }
 
     [JsonPropertyName("products")]
     public Dictionary<string, float> Products { get; }
