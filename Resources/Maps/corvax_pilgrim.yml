@@ -49861,7 +49861,7 @@ entities:
       parent: 2
 - proto: ClothingHeadHatCatEars
   entities:
-  - uid: 19114
+  - uid: 19115
     components:
     - type: MetaData
       desc: Вавк, мяукни!
@@ -50317,7 +50317,7 @@ entities:
     - type: Transform
       pos: -15.4836645,12.56637
       parent: 2
-  - uid: 19113
+  - uid: 19114
     components:
     - type: Transform
       rot: 1.3439035240356338 rad
@@ -107933,12 +107933,12 @@ entities:
     - type: Transform
       pos: -3.5,45.5
       parent: 2
-  - uid: 19102
+  - uid: 19103
     components:
     - type: Transform
       pos: -3.5,46.5
       parent: 2
-  - uid: 19103
+  - uid: 19104
     components:
     - type: Transform
       pos: -3.5,47.5
@@ -107952,7 +107952,7 @@ entities:
       parent: 2
 - proto: SpawnPointBorg
   entities:
-  - uid: 19127
+  - uid: 19128
     components:
     - type: Transform
       pos: 1.5,28.5
@@ -107964,24 +107964,24 @@ entities:
     - type: Transform
       pos: -19.5,-7.5
       parent: 2
-  - uid: 16821
+  - uid: 16822
     components:
     - type: Transform
       pos: -21.5,-7.5
       parent: 2
-  - uid: 16822
+  - uid: 16823
     components:
     - type: Transform
       pos: -21.5,-9.5
       parent: 2
 - proto: SpawnPointBoxer
   entities:
-  - uid: 16823
+  - uid: 16824
     components:
     - type: Transform
       pos: -9.5,9.5
       parent: 2
-  - uid: 16824
+  - uid: 16825
     components:
     - type: Transform
       pos: -7.5,11.5
@@ -107995,27 +107995,27 @@ entities:
       parent: 2
 - proto: SpawnPointCargoTechnician
   entities:
-  - uid: 19533
+  - uid: 19534
     components:
     - type: Transform
       pos: -12.5,-46.5
       parent: 2
-  - uid: 19534
+  - uid: 19536
     components:
     - type: Transform
       pos: -13.5,-47.5
       parent: 2
-  - uid: 19536
+  - uid: 19738
     components:
     - type: Transform
       pos: -13.5,-45.5
       parent: 2
-  - uid: 19738
+  - uid: 19740
     components:
     - type: Transform
       pos: -11.5,-47.5
       parent: 2
-  - uid: 19740
+  - uid: 19741
     components:
     - type: Transform
       pos: -11.5,-45.5
@@ -108034,7 +108034,7 @@ entities:
     - type: Transform
       pos: -21.5,-3.5
       parent: 2
-  - uid: 16825
+  - uid: 19100
     components:
     - type: Transform
       pos: -19.5,-1.5
@@ -108046,7 +108046,7 @@ entities:
     - type: Transform
       pos: -33.5,-20.5
       parent: 2
-  - uid: 19112
+  - uid: 19113
     components:
     - type: Transform
       pos: -33.5,-18.5
@@ -108074,7 +108074,7 @@ entities:
       parent: 2
 - proto: SpawnPointDetective
   entities:
-  - uid: 12932
+  - uid: 12933
     components:
     - type: Transform
       pos: -41.5,-7.5
@@ -108100,14 +108100,14 @@ entities:
     - type: Transform
       pos: -16.5,9.5
       parent: 2
-  - uid: 19100
+  - uid: 19101
     components:
     - type: Transform
       pos: -14.5,11.5
       parent: 2
 - proto: SpawnPointLatejoin
   entities:
-  - uid: 13805
+  - uid: 16625
     components:
     - type: Transform
       pos: -61.5,-9.5
@@ -108121,7 +108121,7 @@ entities:
       parent: 2
 - proto: SpawnPointLibrarian
   entities:
-  - uid: 19101
+  - uid: 19102
     components:
     - type: Transform
       pos: -20.5,-22.5
@@ -108133,34 +108133,34 @@ entities:
     - type: Transform
       pos: -56.5,-16.5
       parent: 2
-  - uid: 19115
+  - uid: 19116
     components:
     - type: Transform
       pos: -56.5,-14.5
       parent: 2
-  - uid: 19116
+  - uid: 19117
     components:
     - type: Transform
       pos: -41.5,-16.5
       parent: 2
-  - uid: 19117
+  - uid: 19118
     components:
     - type: Transform
       pos: -39.5,-16.5
       parent: 2
 - proto: SpawnPointMedicalIntern
   entities:
-  - uid: 19118
+  - uid: 19119
     components:
     - type: Transform
       pos: -41.5,-17.5
       parent: 2
-  - uid: 19119
+  - uid: 19120
     components:
     - type: Transform
       pos: -40.5,-16.5
       parent: 2
-  - uid: 19120
+  - uid: 19121
     components:
     - type: Transform
       pos: -39.5,-17.5
@@ -108179,9 +108179,16 @@ entities:
     - type: Transform
       pos: -33.5,-44.5
       parent: 2
+- proto: SpawnPointObserver
+  entities:
+  - uid: 10564
+    components:
+    - type: Transform
+      pos: -4.5,-4.5
+      parent: 2
 - proto: SpawnPointParamedic
   entities:
-  - uid: 12933
+  - uid: 12977
     components:
     - type: Transform
       pos: -61.5,-14.5
@@ -108193,39 +108200,39 @@ entities:
     - type: Transform
       pos: -62.5,-9.5
       parent: 2
-  - uid: 12977
+  - uid: 13805
     components:
     - type: Transform
       pos: -60.5,-9.5
       parent: 2
-  - uid: 16625
+  - uid: 16626
     components:
     - type: Transform
       pos: -5.5,-3.5
       parent: 2
-  - uid: 16626
+  - uid: 16636
     components:
     - type: Transform
       pos: -5.5,-5.5
       parent: 2
-  - uid: 16636
+  - uid: 16654
     components:
     - type: Transform
       pos: -7.5,17.5
       parent: 2
-  - uid: 16654
+  - uid: 16818
     components:
     - type: Transform
       pos: -15.5,17.5
       parent: 2
-  - uid: 16818
+  - uid: 16819
     components:
     - type: Transform
       pos: 24.5,-26.5
       parent: 2
 - proto: SpawnPointPsychologist
   entities:
-  - uid: 12931
+  - uid: 12932
     components:
     - type: Transform
       pos: -46.5,-10.5
@@ -108244,19 +108251,19 @@ entities:
     - type: Transform
       pos: 4.5,24.5
       parent: 2
-  - uid: 10564
+  - uid: 11311
     components:
     - type: Transform
       pos: 4.5,22.5
       parent: 2
 - proto: SpawnPointResearchAssistant
   entities:
-  - uid: 19124
+  - uid: 19126
     components:
     - type: Transform
       pos: 40.5,7.5
       parent: 2
-  - uid: 19126
+  - uid: 19127
     components:
     - type: Transform
       pos: 40.5,10.5
@@ -108270,17 +108277,17 @@ entities:
       parent: 2
 - proto: SpawnPointSalvageSpecialist
   entities:
-  - uid: 12880
+  - uid: 12931
     components:
     - type: Transform
       pos: -10.5,-52.5
       parent: 2
-  - uid: 19531
+  - uid: 19532
     components:
     - type: Transform
       pos: -8.5,-52.5
       parent: 2
-  - uid: 19532
+  - uid: 19533
     components:
     - type: Transform
       pos: -6.5,-52.5
@@ -108292,34 +108299,34 @@ entities:
     - type: Transform
       pos: 40.5,8.5
       parent: 2
-  - uid: 11311
+  - uid: 11312
     components:
     - type: Transform
       pos: 40.5,9.5
       parent: 2
-  - uid: 19121
+  - uid: 19123
     components:
     - type: Transform
       pos: 40.5,6.5
       parent: 2
-  - uid: 19123
+  - uid: 19124
     components:
     - type: Transform
       pos: 40.5,11.5
       parent: 2
 - proto: SpawnPointSecurityCadet
   entities:
-  - uid: 19528
+  - uid: 19529
     components:
     - type: Transform
       pos: -62.5,0.5
       parent: 2
-  - uid: 19529
+  - uid: 19530
     components:
     - type: Transform
       pos: -60.5,0.5
       parent: 2
-  - uid: 19530
+  - uid: 19531
     components:
     - type: Transform
       pos: -59.5,0.5
@@ -108331,49 +108338,49 @@ entities:
     - type: Transform
       pos: -62.5,-0.5
       parent: 2
-  - uid: 19128
+  - uid: 19522
     components:
     - type: Transform
       pos: -62.5,1.5
       parent: 2
-  - uid: 19522
+  - uid: 19524
     components:
     - type: Transform
       pos: -58.5,-0.5
       parent: 2
-  - uid: 19524
+  - uid: 19525
     components:
     - type: Transform
       pos: -53.5,-0.5
       parent: 2
-  - uid: 19525
+  - uid: 19526
     components:
     - type: Transform
       pos: -51.5,-0.5
       parent: 2
-  - uid: 19526
+  - uid: 19527
     components:
     - type: Transform
       pos: -59.5,1.5
       parent: 2
-  - uid: 19527
+  - uid: 19528
     components:
     - type: Transform
       pos: -57.5,1.5
       parent: 2
 - proto: SpawnPointServiceWorker
   entities:
-  - uid: 11312
+  - uid: 12880
     components:
     - type: Transform
       pos: 2.5,9.5
       parent: 2
-  - uid: 16819
+  - uid: 16820
     components:
     - type: Transform
       pos: -3.5,-5.5
       parent: 2
-  - uid: 16820
+  - uid: 16821
     components:
     - type: Transform
       pos: -3.5,-3.5
@@ -108385,22 +108392,22 @@ entities:
     - type: Transform
       pos: -15.5,31.5
       parent: 2
-  - uid: 19104
+  - uid: 19105
     components:
     - type: Transform
       pos: -16.5,31.5
       parent: 2
-  - uid: 19105
+  - uid: 19106
     components:
     - type: Transform
       pos: -15.5,33.5
       parent: 2
-  - uid: 19106
+  - uid: 19107
     components:
     - type: Transform
       pos: -16.5,33.5
       parent: 2
-  - uid: 19107
+  - uid: 19108
     components:
     - type: Transform
       pos: -19.5,35.5
@@ -108412,12 +108419,12 @@ entities:
     - type: Transform
       pos: -14.5,31.5
       parent: 2
-  - uid: 19108
+  - uid: 19109
     components:
     - type: Transform
       pos: -14.5,32.5
       parent: 2
-  - uid: 19109
+  - uid: 19112
     components:
     - type: Transform
       pos: -14.5,33.5
