@@ -49780,6 +49780,9 @@ entities:
   entities:
   - uid: 16005
     components:
+    - type: MetaData
+      desc: На одной из них выгравирована надпись "Майк Браун". ВАТАФАК!
+      name: силовые перчатки известного боксёра
     - type: Transform
       pos: 22.70768,43.017372
       parent: 2
@@ -108095,15 +108098,15 @@ entities:
       parent: 2
 - proto: SpawnPointJanitor
   entities:
-  - uid: 6259
-    components:
-    - type: Transform
-      pos: -16.5,9.5
-      parent: 2
   - uid: 19101
     components:
     - type: Transform
       pos: -14.5,11.5
+      parent: 2
+  - uid: 19742
+    components:
+    - type: Transform
+      pos: -15.5,11.5
       parent: 2
 - proto: SpawnPointLatejoin
   entities:
@@ -134129,6 +134132,11 @@ entities:
     components:
     - type: Transform
       pos: -22.5,-10.5
+      parent: 2
+  - uid: 6259
+    components:
+    - type: Transform
+      pos: -16.5,9.5
       parent: 2
   - uid: 6411
     components:
