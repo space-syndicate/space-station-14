@@ -1,9 +1,8 @@
 using System.Linq;
 using System.Text.Json.Serialization;
-using Content.Server.Body.Components;
-using Content.Shared.Body.Prototypes;
 using Content.Shared.Chemistry.Reaction;
 using Content.Shared.Chemistry.Reagent;
+using Content.Shared.FixedPoint;
 using Robust.Shared.Prototypes;
 
 namespace Content.Server.GuideGenerator;
@@ -35,7 +34,7 @@ public sealed class ReagentEntry
     public List<string> Recipes { get; } = new();
 
     [JsonPropertyName("metabolisms")]
-    public Dictionary<string, List<ReagentEffectEntry>>? Metabolisms { get; }
+    public Dictionary<string, ReagentEffectsEntry>? Metabolisms { get; }
 
     public ReagentEntry(ReagentPrototype proto)
     {
@@ -53,7 +52,7 @@ public sealed class ReagentEntry
             ? Color.Black
             : Color.White).ToHex();
         
-        Metabolisms = proto.Metabolisms?.ToDictionary(x => x.Key.Id, x => x.Value.Effects.Select(x => new ReagentEffectEntry(x)).ToList());
+        Metabolisms = proto.Metabolisms?.ToDictionary(x => x.Key.Id, x => new ReagentEffectsEntry(x.Value));
     }
 }
 
@@ -66,7 +65,7 @@ public sealed class ReactionEntry
     public string Name { get; }
 
     [JsonPropertyName("reactants")]
-    public Dictionary<string, ReactantEntry> Reactants { get; }
+    public Dictionary<string, ReactantEntry> Reactants { get; } = new();
 
     [JsonPropertyName("products")]
     public Dictionary<string, float> Products { get; }
@@ -84,15 +83,13 @@ public sealed class ReactionEntry
     public bool HasMax { get; }
 
     [JsonPropertyName("effects")]
-    public List<ReagentEffectEntry> ExportEffects { get; }
+    public List<ReagentEffectEntry> ExportEffects { get; } = new();
 
     [JsonIgnore]
     public List<ReagentEffect> Effects { get; }
 
     public ReactionEntry(ReactionPrototype proto)
     {
-        var protoMan = IoCManager.Resolve<IPrototypeManager>();
-
         Id = proto.ID;
         Name = TextTools.TextTools.CapitalizeString(proto.Name); // Corvax-Wiki
         Reactants =
@@ -126,7 +123,6 @@ public sealed class ReactantEntry
         Catalyst = cata;
     }
 }
-
 public sealed class MixingCategoryEntry
 {
     [JsonPropertyName("name")]
@@ -141,7 +137,21 @@ public sealed class MixingCategoryEntry
         Id = proto.ID;
     }
 }
+public sealed class ReagentEffectsEntry
+{
+    [JsonPropertyName("rate")]
+    public FixedPoint2 MetabolismRate { get; } = FixedPoint2.New(0.5f);
 
+    [JsonPropertyName("effects")]
+    public List<ReagentEffectEntry> Effects { get; } = new();
+
+    public ReagentEffectsEntry(Content.Shared.Chemistry.Reagent.ReagentEffectsEntry proto)
+    {
+        MetabolismRate = proto.MetabolismRate;
+        Effects = proto.Effects.Select(x => new ReagentEffectEntry(x)).ToList();
+    }
+
+}
 public sealed class ReagentEffectEntry
 {
     [JsonPropertyName("id")]
@@ -156,6 +166,24 @@ public sealed class ReagentEffectEntry
         var entSys = IoCManager.Resolve<IEntitySystemManager>();
 
         Id = proto.GetType().Name;
-        Description = proto.GuidebookEffectDescription(prototype, entSys) ?? "";
+        Description = GuidebookEffectDescriptionToWeb(proto.GuidebookEffectDescription(prototype, entSys) ?? "");
+    }
+
+    private string GuidebookEffectDescriptionToWeb(string guideBookText)
+    {
+        guideBookText = guideBookText.Replace("[", "<");
+        guideBookText = guideBookText.Replace("]", ">");
+        guideBookText = guideBookText.Replace("color", "span");
+
+        while (guideBookText.IndexOf("<span=") != -1)
+        {
+            var first = guideBookText.IndexOf("<span=") + "<span=".Length - 1;
+            var last = guideBookText.IndexOf(">", first);
+            var replacementString = guideBookText.Substring(first, last - first);
+            var color = replacementString.Substring(1);
+            guideBookText = guideBookText.Replace(replacementString, String.Format(" style=\"color: {0};\"", color));
+        }
+
+        return guideBookText;
     }
 }
