@@ -487,7 +487,7 @@ public sealed class NukeopsRuleSystem : GameRuleSystem<NukeopsRuleComponent>
         }
 
         args.Entity = Spawn(species.Prototype);
-        RemComp<PacifiedComponent>(args.Entity); // Corvax-DionaPacifist: Allow dionas nukes to harm
+        RemComp<PacifiedComponent>(args.Entity.Value); // Corvax-DionaPacifist: Allow dionas nukes to harm
         _humanoid.LoadProfile(args.Entity.Value, profile);
     }
 
