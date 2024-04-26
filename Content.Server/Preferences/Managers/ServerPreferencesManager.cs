@@ -206,13 +206,14 @@ namespace Content.Server.Preferences.Managers
                 async Task LoadPrefs()
                 {
                     var prefs = await GetOrCreatePreferencesAsync(session.UserId);
+                    var collection = IoCManager.Instance!;
                     // Corvax-Sponsors-Start: Remove sponsor markings from expired sponsors
                     foreach (var (_, profile) in prefs.Characters)
                     {
                         var sponsorPrototypes = _sponsors != null && _sponsors.TryGetPrototypes(session.UserId, out var prototypes)
                             ? prototypes.ToArray()
                             : [];
-                        profile.EnsureValid(_cfg, _protos, sponsorPrototypes);
+                        profile.EnsureValid(session, collection, sponsorPrototypes);
                     }
                     // Corvax-Sponsors-End
                     prefsData.Prefs = prefs;

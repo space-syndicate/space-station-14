@@ -6,6 +6,7 @@ using Content.Client.Info.PlaytimeStats;
 using Content.Client.Lobby;
 using Content.Client.Resources;
 using Content.Client.Stylesheets;
+using Content.Corvax.Interfaces.Client;
 using Content.Shared.Clothing;
 using Content.Shared.Humanoid;
 using Content.Shared.Humanoid.Prototypes;

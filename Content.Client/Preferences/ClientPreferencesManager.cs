@@ -67,7 +67,7 @@ namespace Content.Client.Preferences
             // Corvax-Sponsors-Start
             var sponsorPrototypes = _sponsorsManager?.Prototypes.ToArray() ?? [];
             var collection = IoCManager.Instance!;
-            profile.EnsureValid(_playerManager.LocalSession!, collection);
+            profile.EnsureValid(_playerManager.LocalSession!, collection, sponsorPrototypes);
             // Corvax-Sponsors-End
             var characters = new Dictionary<int, ICharacterProfile>(Preferences.Characters) {[slot] = profile};
             Preferences = new PlayerPreferences(characters, Preferences.SelectedCharacterIndex, Preferences.AdminOOCColor);
