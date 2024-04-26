@@ -1,4 +1,4 @@
-﻿using System.Collections.Frozen;
+using System.Collections.Frozen;
 using System.Linq;
 using System.Text.Json.Serialization;
 using Content.Shared.Administration.Logs;
