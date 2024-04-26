@@ -252,6 +252,8 @@ uplink-slipocalypse-clustersoap-name = Кластерное мыло Сколь�
 uplink-slipocalypse-clustersoap-desc = После приземления разбрасывает вокруг себя маленькие кусочки мыла Синдиката, которые испарятся сами через 60 секунд.
 uplink-mobcat-microbomb-name = СиндиКот
 uplink-mobcat-microbomb-desc = Ручной кот, оснащённый имплантом Микробомба. Взрывается при серьёзном ранении. Может больно кусаться.
+uplink-chameleon-projector-name = Chameleon Projector
+uplink-chameleon-projector-desc = Disappear in plain sight by creating a hologram of an item around you. Do not use this to play the game "Object Search".
 # Pointless
 uplink-revolver-cap-gun-name = Игрушечный пистолет
 uplink-revolver-cap-gun-desc = Выглядит почти как настоящий! От 8 лет и старше.

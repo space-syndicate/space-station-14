@@ -26,3 +26,5 @@ reagent-name-norepinephric-acid = норэпинефриновая кислот�
 reagent-desc-norepinephric-acid = Мягкое химическое вещество, которое блокирует оптические рецепторы, делая употребившего слепым пока усваивается организмом.
 reagent-name-tear-gas = слезоточивый газ
 reagent-desc-tear-gas = Химическое вещество, вызывающее слёзы и сильное раздражение, обычно используется для подавления массовых беспорядков.
+reagent-name-happiness = happiness
+reagent-desc-happiness = Fills you with ecstatic numbness and causes minor brain damage. Highly addictive. If overdosed causes sudden mood swings.

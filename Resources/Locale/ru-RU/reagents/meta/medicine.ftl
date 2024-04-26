@@ -88,3 +88,7 @@ reagent-name-necrosol = некрозол
 reagent-desc-necrosol = Некротическое вещество, которое, похоже, способно излечивать обмороженные трупы. В небольших дозах он способен лечить и оживлять растения.
 reagent-name-aloxadone = алоксадон
 reagent-desc-aloxadone = Криогенное химическое вещество. Используется для лечения тяжёлых ожогов третьей степени путём регенерации обожжённых тканей. Работает независимо от того, жив пациент или мертв.
+reagent-name-mannitol = mannitol
+reagent-desc-mannitol = Efficiently restores brain damage.
+reagent-name-psicodine = psicodine
+reagent-desc-psicodine = Suppresses anxiety and other various forms of mental distress. Overdose causes hallucinations and minor toxin damage.
