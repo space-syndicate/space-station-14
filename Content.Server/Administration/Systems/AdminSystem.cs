@@ -290,7 +290,7 @@ namespace Content.Server.Administration.Systems
         // Corvax-VPNGuard-Start
         private void OnPanicBunkerDenyVpnChanged(bool deny)
         {
-            _panicBunker.DenyVpn = deny;
+            PanicBunker.DenyVpn = deny;
             SendPanicBunkerStatusAll();
         }
         // Corvax-VPNGuard-End
