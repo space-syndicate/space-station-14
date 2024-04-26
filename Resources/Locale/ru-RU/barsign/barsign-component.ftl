@@ -106,7 +106,7 @@ barsign-prototype-description-goose = Пей до рвоты и/или нару�
 ## The Engine Change
 
 barsign-prototype-name-enginechange = Замена двигателя
-barsign-prototype-description-enginechange = Все еще ожидаем.
+barsign-prototype-description-enginechange = Всё ещё ожидаем.
 
 ## 4 The Emprah
 
@@ -121,4 +121,4 @@ barsign-prototype-description-empbarsign = Что-то пошло совсем �
 
 ## SignOff
 
-barsign-prototype-description-sign-off = Этот знак, похоже, не включен.
+barsign-prototype-description-sign-off = Этот знак, похоже, не включён.

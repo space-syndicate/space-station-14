@@ -7,5 +7,5 @@ ent-SpaceHeaterAnchored = { ent-SpaceHeater }
     .suffix = Закреплённый
     .desc = { ent-SpaceHeater.desc }
 ent-SpaceHeaterEnabled = { ent-SpaceHeaterAnchored }
-    .suffix = Закреплённый, Включен
+    .suffix = Закреплённый, Включён
     .desc = { ent-SpaceHeaterAnchored.desc }

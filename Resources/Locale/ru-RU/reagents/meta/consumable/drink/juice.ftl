@@ -21,6 +21,6 @@ reagent-desc-juice-pineapple = Вкусный сок ананаса.
 reagent-name-juice-potato = картофельный сок
 reagent-desc-juice-potato = Сок картофеля. Фу.
 reagent-name-juice-tomato = томатный сок
-reagent-desc-juice-tomato = Томаты превращенные в сок. Какая трата хороших помидоров, а?
+reagent-desc-juice-tomato = Томаты превращённые в сок. Какая трата хороших помидоров, а?
 reagent-name-juice-watermelon = арбузный сок
 reagent-desc-juice-watermelon = Вкусный сок арбуза.
