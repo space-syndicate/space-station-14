@@ -158,6 +158,9 @@ ghost-role-information-syndicate-reinforcement-rules = Действуют обы
 ghost-role-information-syndicate-monkey-reinforcement-name = Агент-обезьяна Синдиката
 ghost-role-information-syndicate-monkey-reinforcement-description = Кому-то нужно подкрепление. Вы, специально обученная обезьяна, поможете им.
 ghost-role-information-syndicate-monkey-reinforcement-rules = Действуют обычные правила антагонистов Синдиката. Работайте с тем, кто вас вызвал, и не причиняйте ему вреда.
+ghost-role-information-syndicate-kobold-reinforcement-name = Syndicate Kobold Agent
+ghost-role-information-syndicate-kobold-reinforcement-description = Someone needs reinforcements. You, a trained kobold, will help them.
+ghost-role-information-syndicate-kobold-reinforcement-rules = Normal syndicate antagonist rules apply. Work with whoever called you in, and don't harm them.
 ghost-role-information-artifact-name = Разумный артефакт
 ghost-role-information-artifact-description =
     Осуществляйте свои инопланетные прихоти.
