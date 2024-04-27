@@ -29,6 +29,9 @@ analysis-console-progress-text =
         [few] T-{ $seconds } секунды
        *[other] T-{ $seconds } секунд
     }
+analysis-console-no-server-connected = Cannot extract. No server connected.
+analysis-console-no-artifact-placed = No artifact on scanner.
+analysis-console-no-points-to-extract = No points to extract.
 analyzer-artifact-component-upgrade-analysis = длительность анализа
 analysis-console-print-popup = Консоль печатает отчёт.
 analyzer-artifact-extract-popup = Поверхность артефакта мерцает энергией!
