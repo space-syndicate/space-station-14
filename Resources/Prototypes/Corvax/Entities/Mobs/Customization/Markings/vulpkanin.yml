@@ -65,3 +65,12 @@
   sprites:
     - sprite: Corvax/Mobs/Customization/vulpkanin.rsi
       state: tail_fox_waggin
+
+- type: marking
+  id: WolfTailAnimated
+  bodyPart: Tail
+  markingCategory: Tail
+  speciesRestriction: []
+  sprites:
+    - sprite: Corvax/Mobs/Customization/vulpkanin.rsi
+      state: tail_wolf_waggin
