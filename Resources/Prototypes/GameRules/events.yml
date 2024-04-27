@@ -217,6 +217,8 @@
       prob: 0.02
     - id: MobMouse2
       prob: 0.02
+    - id: MobMouseCancer
+      prob: 0.001
     specialEntries:
     - id: SpawnPointGhostRatKing
       prob: 0.005
@@ -356,6 +358,8 @@
       prob: 0.02
     - id: MobMouse2
       prob: 0.02
+    - id: MobMouseCancer
+      prob: 0.001
 
 - type: entity
   id: SlimesSpawn
