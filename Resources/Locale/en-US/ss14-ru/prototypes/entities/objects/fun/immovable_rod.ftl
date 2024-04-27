@@ -1,6 +1,7 @@
 ent-ImmovableRod = immovable rod
     .desc = You can sense that it's hungry. That's usually a bad sign.
 ent-ImmovableRodDespawn = { ent-ImmovableRod }
+    .suffix = Despawn
     .desc = { ent-ImmovableRod.desc }
 ent-ImmovableRodSlow = { ent-ImmovableRodDespawn }
     .suffix = Slow

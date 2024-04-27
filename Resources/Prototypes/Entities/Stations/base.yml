@@ -5,6 +5,12 @@
     - type: StationData
 
 - type: entity
+  id: BaseRandomStation
+  abstract: true
+  components:
+    - type: StationRandomTransform
+
+- type: entity
   id: BaseStationCargo
   abstract: true
   components:
@@ -77,7 +83,7 @@
   abstract: true
   components:
     - type: StationCentcomm
-      map: "/Maps/corvax_centcomm.yml" # Corvax-Mapping
+#      map: "/Maps/corvax_centcomm.yml" # Corvax-Mapping
 
 - type: entity
   id: BaseStationEvacuation

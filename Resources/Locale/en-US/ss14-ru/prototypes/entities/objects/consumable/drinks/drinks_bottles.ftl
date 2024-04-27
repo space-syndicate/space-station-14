@@ -1,4 +1,5 @@
 ent-DrinkBottlePlasticBaseFull = { ent-DrinkBase }
+    .suffix = Full
     .desc = { ent-DrinkBase.desc }
 ent-DrinkBottleGlassBaseFull = { ent-DrinkBottlePlasticBaseFull }
     .desc = { ent-DrinkBottlePlasticBaseFull.desc }
@@ -72,7 +73,7 @@ ent-DrinkCreamCartonXL = Milk Cream XL
     .desc = It's cream. Made from milk. What else did you think you'd find in there?
 ent-DrinkSugarJug = sugar jug
     .desc = some people put this in their coffee...
-    .suffix = for drinks
+    .suffix = For Drinks, Full
 ent-DrinkLemonLimeJug = lemon lime jug
     .desc = a dual citrus sensation.
 ent-DrinkMeadJug = mead jug

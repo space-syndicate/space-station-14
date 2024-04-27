@@ -18,3 +18,7 @@ ent-ClothingNeckPansexualPin = pansexual pin
     .desc = be pan do crime
 ent-ClothingNeckTransPin = transgender pin
     .desc = be trans do crime
+ent-ClothingNeckAutismPin = autism pin
+    .desc = be autism do crime
+ent-ClothingNeckGoldAutismPin = golden autism pin
+    .desc = be autism do warcrime
