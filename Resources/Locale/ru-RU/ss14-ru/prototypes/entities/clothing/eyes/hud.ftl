@@ -1,3 +1,5 @@
+ent-ShowSecurityIcons = { "" }
+    .desc = { "" }
 ent-ClothingEyesHudDiagnostic = диагностический визор
     .desc = Окуляр с индикатором на стекле, способный анализировать целостность и состояние роботов и экзокостюмов. Сделан из си-боргия.
 ent-ClothingEyesHudMedical = медицинский визор
@@ -24,6 +26,8 @@ ent-ClothingEyesHudOmni = omni hud
 ent-ClothingEyesHudSyndicate = визор оперативника
     .suffix = синди-визор
     .desc = Профессиональный визор со встроенной индикацией "свой-чужой", предназначенный для обнаружения и идентификации гуманоидных целей для их последующего уничтожения.
+ent-ClothingEyesHudSyndicateAgent = syndicate agent visor
+    .desc = The Syndicate Agent's professional heads-up display, designed for quick diagnosis of their team's status.
 # Corvax-HiddenDesc-End
 ent-ClothingEyesGlassesHiddenSecurity = { ent-ClothingEyesGlassesSunglasses }
     .desc = { ent-ClothingEyesGlassesSunglasses.desc }

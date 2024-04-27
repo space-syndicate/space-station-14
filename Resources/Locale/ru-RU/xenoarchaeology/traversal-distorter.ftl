@@ -1,4 +1,4 @@
-traversal-distorter-set-in = Искажение обхода узлов настроено "к поверхности"
-traversal-distorter-set-out = Искажение обхода узлов настроено "в глубину"
-traversal-distorter-desc-in = Активация артефакта с большей вероятностью заставит его продвинуться к поверхности, к начальному эффекту.
-traversal-distorter-desc-out = Активация артефакта с большей вероятностью заставит его продвинуться в глубину, к поздним и более опасным эффектам.
+traversal-distorter-set-up = Traversal bias set to up, toward safer nodes
+traversal-distorter-set-down = Traversal bias set to down, toward more dangerous nodes
+traversal-distorter-desc-up = The affected artifact's traversal now favors moving up the node tree toward safer nodes.
+traversal-distorter-desc-down = The affected artifact's traversal now favors moving down the node tree towards more dangerous nodes.

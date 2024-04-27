@@ -28,8 +28,6 @@
 - type: startingGear
   id: SecurityCadetGear
   equipment:
-    jumpsuit: ClothingUniformJumpsuitSecGrey # Corvax-Resprite
-    back: ClothingBackpackSecurityFilled
     shoes: ClothingShoesBootsJackSec # Corvax-Resprite-MRP
     outerClothing: ClothingOuterArmorBasic
     id: SecurityCadetPDA
@@ -37,6 +35,3 @@
     belt: ClothingBeltSecurityFilled
     pocket1: WeaponPistolMk58
     pocket2: BookSecurity
-  innerClothingSkirt: ClothingUniformJumpskirtSecGrey # Corvax-Resprite
-  satchel: ClothingBackpackSatchelSecurityFilled
-  duffelbag: ClothingBackpackDuffelSecurityFilled
