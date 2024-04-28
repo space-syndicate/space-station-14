@@ -39,6 +39,9 @@
               - /Maps/Ruins/syndicate_dropship.yml
               - /Maps/Ruins/whiteship_ancient.yml
               - /Maps/Ruins/whiteship_bluespacejumper.yml
+        - type: StationRandomTransform
+          enableStationRotation: false
+          maxStationOffset: null
         - type: StationEmergencyShuttle
           emergencyShuttlePath: /Maps/Shuttles/emergency_corvaxavrit.yml
         - type: StationJobs
