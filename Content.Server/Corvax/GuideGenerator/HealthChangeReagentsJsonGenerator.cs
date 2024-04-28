@@ -13,7 +13,7 @@ public sealed class HealthChangeReagentsJsonGenerator
     {
         var prototype = IoCManager.Resolve<IPrototypeManager>();
 
-        Dictionary<string, Dictionary<string, List<string>>> healthChangeReagents = new();
+        Dictionary<string, Dictionary<string, HashSet<string>>> healthChangeReagents = new();
 
         foreach (var reagent in prototype.EnumeratePrototypes<ReagentPrototype>())
         {
