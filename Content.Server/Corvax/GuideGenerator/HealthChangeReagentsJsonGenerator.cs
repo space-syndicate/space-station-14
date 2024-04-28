@@ -13,8 +13,9 @@ public sealed class HealthChangeReagentsJsonGenerator
     {
         var prototype = IoCManager.Resolve<IPrototypeManager>();
 
-        Dictionary<string, Dictionary<string, HashSet<string>>> healthChangeReagents = new();
+        Dictionary<string, Dictionary<string, Dictionary<string, float>>> healthChangeReagents = new();
 
+        // Сбор данных
         foreach (var reagent in prototype.EnumeratePrototypes<ReagentPrototype>())
         {
             if (reagent.Metabolisms is null) continue;
@@ -38,11 +39,47 @@ public sealed class HealthChangeReagentsJsonGenerator
                             healthChangeReagents[damageType].Add(damageChangeType, new());
                         }
 
-                        healthChangeReagents[damageType][damageChangeType].Add(reagent.ID);
+                        // Берем максимальный показатель (один реагент может наносить разный урон при разных условиях)
+                        var damageChangeValueAbs = Math.Abs(damage.Value.Float());
+                        if (healthChangeReagents[damageType][damageChangeType].TryGetValue(reagent.ID, out var previousValue))
+                        {
+                            healthChangeReagents[damageType][damageChangeType][reagent.ID] = Math.Max(previousValue, damageChangeValueAbs);
+                        }
+                        else healthChangeReagents[damageType][damageChangeType].Add(reagent.ID, damageChangeValueAbs);
                     }
                 }
             }
         }
+
+        // Сортировка
+        Dictionary<string, Dictionary<string, List<string>>> healthChangeReagentsSorted = new();
+
+        foreach (var damageType in healthChangeReagents)
+        {
+            foreach (var damageChangeType in damageType.Value)
+            {
+                foreach (var reagent in damageChangeType.Value)
+                {
+                    if (!healthChangeReagentsSorted.ContainsKey(damageType.Key))
+                    {
+                        healthChangeReagentsSorted.Add(damageType.Key, new());
+                    }
+
+                    if (!healthChangeReagentsSorted[damageType.Key].ContainsKey(damageChangeType.Key))
+                    {
+                        healthChangeReagentsSorted[damageType.Key].Add(damageChangeType.Key, new());
+                    }
+
+                    healthChangeReagentsSorted[damageType.Key][damageChangeType.Key].Add(reagent.Key);
+
+                }
+
+                healthChangeReagentsSorted[damageType.Key][damageChangeType.Key].Sort(Comparer<string>.Create((s1, s2) =>
+                    -healthChangeReagents[damageType.Key][damageChangeType.Key][s1].CompareTo(healthChangeReagents[damageType.Key][damageChangeType.Key][s2])));
+            }
+        }
+
+
 
         var serializeOptions = new JsonSerializerOptions
         {
@@ -50,7 +87,7 @@ public sealed class HealthChangeReagentsJsonGenerator
             NumberHandling = System.Text.Json.Serialization.JsonNumberHandling.AllowNamedFloatingPointLiterals
         };
 
-        file.Write(JsonSerializer.Serialize(healthChangeReagents, serializeOptions));
+        file.Write(JsonSerializer.Serialize(healthChangeReagentsSorted, serializeOptions));
     }
 }
 
