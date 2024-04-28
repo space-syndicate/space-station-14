@@ -1,1 +1,1 @@
-item-status-not-held = No held item
+item-status-not-held = Ничего не удерживается

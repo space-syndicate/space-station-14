@@ -50,5 +50,5 @@ reagent-name-vestine = вестин
 reagent-desc-vestine = Оказывает негативное воздействие на организм, вызывая сильную дрожь. Хотя сам по себе он не особенно полезен, его можно использовать для производства ряда других химических веществ.
 reagent-name-tazinide = тазинид
 reagent-desc-tazinide = Очень опасная металлическая смесь, которая может нарушить возможность передвигаться благодаря электризующему воздействию.
-reagent-name-lipolicide = lipolicide
-reagent-desc-lipolicide = A powerful toxin that will destroy fat cells, massively reducing body weight in a short time. Deadly to those without nutriment in their body.
+reagent-name-lipolicide = липолицид
+reagent-desc-lipolicide = Мощный токсин, разрушающий жировые клетки и способствующий снижению массы тела в сжатые сроки. Смертельно опасен для тех, у кого в организме нет питательных веществ.
