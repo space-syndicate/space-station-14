@@ -40,7 +40,7 @@ public sealed class HealthChangeReagentsJsonGenerator
                         }
 
                         // Берем максимальный показатель (один реагент может наносить разный урон при разных условиях)
-                        var damageChangeValueAbs = Math.Abs(damage.Value.Float());
+                        var damageChangeValueAbs = Math.Abs(damage.Value.Float() / metabolism.Value.MetabolismRate.Float()); // вычисляем показатель за 1 ед. вещества, а не 1 сек. нахождения я в организме.
                         if (healthChangeReagents[damageType][damageChangeType].TryGetValue(reagent.ID, out var previousValue))
                         {
                             healthChangeReagents[damageType][damageChangeType][reagent.ID] = Math.Max(previousValue, damageChangeValueAbs);
