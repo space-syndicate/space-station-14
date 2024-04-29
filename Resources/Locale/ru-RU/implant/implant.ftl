@@ -11,8 +11,8 @@ implanter-component-implant-already = { $target } уже имеет { $implant }
 implanter-draw-text = Извлечение
 implanter-inject-text = Установка
 implanter-empty-text = Пусто
-implanter-label = [color=green]{$implantName}[/color]
-    Режим: [color=white]{$modeString}[/color]
+implanter-label = [color=green]{ $implantName  }[/color]
+    Режим: [color=white]{ $modeString }[/color]
 implanter-contained-implant-text = [color=green]{ $desc }[/color]
 
 ## Implanter Actions
