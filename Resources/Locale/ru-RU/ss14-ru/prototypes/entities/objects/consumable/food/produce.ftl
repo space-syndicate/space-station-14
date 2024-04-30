@@ -126,5 +126,5 @@ ent-FoodPumpkin = тыква
     .desc = Большой, оранжевый... ягода. Серьёзно.
 ent-CottonBol = хлопковый шарик
     .desc = Любимая закуска ниан, такая же пушистая, как и они.
-ent-PyrottonBol = pyrotton boll
-    .desc = This will probably set you on fire.
+ent-PyrottonBol = пирохлопковый шарик
+    .desc = Скорее всего, оно подожжёт вас.
