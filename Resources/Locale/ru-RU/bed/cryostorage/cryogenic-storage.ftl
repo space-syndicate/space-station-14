@@ -1,6 +1,6 @@
 ### Announcement
 
-earlyleave-cryo-job-unknown = Unknown
+earlyleave-cryo-job-unknown = Должность неизвестна
 earlyleave-cryo-announcement =
     { $character } ({ $job }) { $gender ->
         [male] был перемещён

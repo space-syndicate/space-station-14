@@ -43,5 +43,5 @@ network-configurator-examine-current-mode = Текущий режим: { $mode }
 network-configurator-examine-switch-modes = Нажмите { $key } чтобы переключить режим
 # item status
 network-configurator-item-status-label =
-    Текущий режим: { $mode }
-    { $keybinding } чтобы переключить
+    Режим: { $mode }
+    Переключить: { $keybinding }
