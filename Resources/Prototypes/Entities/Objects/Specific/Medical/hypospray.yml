@@ -18,7 +18,7 @@
   - type: ExaminableSolution
     solution: hypospray
   - type: Hypospray
-    onlyMobs: false
+    onlyAffectsMobs: false
   - type: UseDelay
     delay: 0.5
   - type: StaticPrice
@@ -49,7 +49,7 @@
   - type: ExaminableSolution
     solution: hypospray
   - type: Hypospray
-    onlyMobs: false
+    onlyAffectsMobs: false
   - type: UseDelay
     delay: 0.5
 
@@ -73,6 +73,7 @@
   - type: ExaminableSolution
     solution: hypospray
   - type: Hypospray
+    onlyAffectsMobs: false
   - type: UseDelay
     delay: 0.5
 
@@ -113,6 +114,8 @@
   - type: Hypospray
     solutionName: pen
     transferAmount: 15
+    onlyAffectsMobs: false
+    injectOnly: true
   - type: Appearance
   - type: SolutionContainerVisuals
     maxFillLevels: 1
@@ -202,6 +205,8 @@
   - type: Hypospray
     solutionName: pen
     transferAmount: 20
+    onlyAffectsMobs: false
+    injectOnly: true
   - type: SolutionContainerManager
     solutions:
       pen:
@@ -232,6 +237,8 @@
   - type: Hypospray
     solutionName: pen
     transferAmount: 20
+    onlyAffectsMobs: false
+    injectOnly: true
   - type: SolutionContainerManager
     solutions:
       pen:
@@ -262,6 +269,9 @@
   - type: Hypospray
     solutionName: pen
     transferAmount: 20
+    onlyAffectsMobs: false
+    injectOnly: true
+
   - type: SolutionContainerManager
     solutions:
       pen:
@@ -293,6 +303,8 @@
   - type: Hypospray
     solutionName: pen
     transferAmount: 30
+    onlyAffectsMobs: false
+    injectOnly: true
   - type: SolutionContainerManager
     solutions:
       pen:
@@ -330,6 +342,8 @@
   - type: Hypospray
     solutionName: pen
     transferAmount: 30
+    onlyAffectsMobs: false
+    injectOnly: true
   - type: StaticPrice
     price: 500
   - type: Tag
@@ -389,6 +403,8 @@
   - type: Hypospray
     solutionName: pen
     transferAmount: 30
+    onlyAffectsMobs: false
+    injectOnly: true
   - type: StaticPrice
     price: 500
   - type: Tag
@@ -407,14 +423,32 @@
         maxVol: 10
   - type: RefillableSolution
     solution: hypospray
-  - type: ExaminableSolution
-    solution: hypospray
+# Corvax-HiddenDesc-Start
+  #- type: ExaminableSolution
+  #  solution: hypospray
+  #  heldOnly: true # Allow examination only when held in hand.
+# Corvax-HiddenDesc-End
   - type: Hypospray
-    onlyMobs: false
+    onlyAffectsMobs: false
   - type: UseDelay
     delay: 0.5
   - type: StaticPrice # A new shitcurity meta
     price: 75
+# Corvax-HiddenDesc-Start
+  - type: HiddenDescription
+    entries:
+    - label: corvax-hidden-desc-Hypopen-syndicate
+      whitelistMind:
+        components:
+          - TraitorRole
+          - NukeOperative
+    - label: corvax-hidden-desc-Hypopen-research
+      jobRequired:
+        - ResearchAssistant
+        - ResearchDirector
+        - Scientist
+        - Borg
+# Corvax-HiddenDesc-End
 
 - type: entity
   parent: BaseItem

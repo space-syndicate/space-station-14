@@ -32,8 +32,8 @@
   - type: ActivatableUIRequiresPower
   - type: UserInterface
     interfaces:
-    - key: enum.FaxUiKey.Key
-      type: FaxBoundUi
+      enum.FaxUiKey.Key:
+        type: FaxBoundUi
   - type: ApcPowerReceiver
     powerLoad: 250
   - type: FaxMachine
@@ -78,6 +78,7 @@
   - type: FaxMachine
     name: "Central Command"
     notifyAdmins: true
+    receiveStationGoal: true # Corvax-StationGoal
 
 - type: entity
   parent: FaxMachineBase

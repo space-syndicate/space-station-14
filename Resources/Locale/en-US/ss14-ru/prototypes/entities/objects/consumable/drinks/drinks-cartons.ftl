@@ -1,5 +1,8 @@
 ent-DrinkCartonBaseFull = { ent-DrinkBase }
+    .suffix = Full
     .desc = { ent-DrinkBase.desc }
+ent-DrinkCartonBaseLargeFull = { ent-DrinkCartonBaseFull }
+    .desc = { ent-DrinkCartonBaseFull.desc }
 ent-DrinkCartonVisualsOpenable = { "" }
     .desc = { "" }
 ent-DrinkJuiceLimeCarton = lime juice
@@ -8,6 +11,8 @@ ent-DrinkJuiceOrangeCarton = orange juice
     .desc = Full of vitamins and deliciousness!
 ent-DrinkJuiceTomatoCarton = tomato juice
     .desc = Well, at least it LOOKS like tomato juice. You can't tell with all that redness.
+ent-DrinkCoconutWaterCarton = coconut water
+    .desc = It's the inside of the coconut that counts.
 ent-DrinkCreamCarton = milk cream
     .desc = It's cream. Made from milk. What else did you think you'd find in there?
 ent-DrinkMilkCarton = milk

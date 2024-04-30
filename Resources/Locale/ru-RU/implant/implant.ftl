@@ -4,6 +4,7 @@ implanter-component-implanting-target = { $user } пытается что-то �
 implanter-component-implant-failed = { $implant } нельзя имплантировать в { $target }!
 implanter-draw-failed-permanent = { $implant } вросся в { $target } и не может быть удалён!
 implanter-draw-failed = Вы пытаетесь удалить имплант, но ничего не находите.
+implanter-component-implant-already = { $target } уже имеет { $implant }!
 
 ## UI
 
@@ -16,5 +17,5 @@ implanter-contained-implant-text = [color=green]{ $desc }[/color]
 ## Implanter Actions
 
 scramble-implant-activated-popup = Вы превратились в { $identity }
-deathrattle-implant-dead-message = Зафиксирована смерть { $user } по координатам { $position }.
-deathrattle-implant-critical-message = Жизненные показатели { $user } критические, требуется немедленная помощь по координатам { $position }.
+deathrattle-implant-dead-message = Зафиксирована смерть { $user } { $position }.
+deathrattle-implant-critical-message = Жизненные показатели { $user } критические, требуется немедленная помощь { $position }.

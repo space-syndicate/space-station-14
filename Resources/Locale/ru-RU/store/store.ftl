@@ -5,3 +5,5 @@ store-ui-price-display = { $amount } { $currency }
 store-ui-traitor-flavor = Копирайт (C) NT -30643
 store-ui-traitor-warning = Оперативники должны блокировать свои аплинки после использования во избежание обнаружения.
 store-withdraw-button-ui = Вывести { $currency }
+store-ui-button-out-of-stock = { "" } (Out of Stock)
+store-not-account-owner = Этот { $store } не привязан к вам!

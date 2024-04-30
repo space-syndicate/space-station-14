@@ -1,7 +1,7 @@
 ent-BaseFenceMetal = сетка-рабица
     .desc = Металлическое ограждение, отгораживающее что-то, вероятно, очень важное.
 ent-FenceMetalBroken = сломанная сетка-рабица
-    .desc = Кто-то очень разозлился на неодушевленный предмет.
+    .desc = Кто-то очень разозлился на неодушевлённый предмет.
 ent-FenceMetalStraight = { ent-BaseFenceMetal }
     .suffix = Прямой
     .desc = { ent-BaseFenceMetal.desc }

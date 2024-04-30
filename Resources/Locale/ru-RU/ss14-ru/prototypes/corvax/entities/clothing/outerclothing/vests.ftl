@@ -3,4 +3,4 @@ ent-ClothingOuterVestArmorSec = бронежилет
 ent-ClothingOuterVestArmorMedSec = бронежилет бригмедика
     .desc = Бронированный жилет бригмедика, с карманами для мелочёвки.
 ent-ClothingOuterVestSecurityMedic = жилет бригмедика
-    .desc = Легкий жилет, который носят бригмедики.
+    .desc = Лёгкий жилет, который носят бригмедики.

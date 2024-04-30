@@ -27,15 +27,9 @@
 - type: startingGear
   id: IAAGear
   equipment:
-    jumpsuit: ClothingUniformJumpsuitLawyerBlack  # TODO change jumpsuit to randomiser of the 4 variants
-    back: ClothingBackpackIAAFilled
     shoes: ClothingShoesColorBlack
     id: IAAPDA
     eyes: ClothingEyesGlassesSunglasses
     ears: ClothingHeadsetIAA
-    neck: ClothingNeckLawyerbadge
   inhand:
     - BriefcaseIAAFilled
-  innerClothingSkirt: ClothingUniformJumpskirtLawyerBlack
-  satchel: ClothingBackpackSatchelIAAFilled
-  duffelbag: ClothingBackpackDuffelIAAFilled

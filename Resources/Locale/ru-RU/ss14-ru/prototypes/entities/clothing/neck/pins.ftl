@@ -18,3 +18,7 @@ ent-ClothingNeckPansexualPin = { ent-ClothingNeckLGBTPin }
     .desc = { ent-ClothingNeckLGBTPin.desc }
 ent-ClothingNeckTransPin = { ent-ClothingNeckLGBTPin }
     .desc = { ent-ClothingNeckLGBTPin.desc }
+ent-ClothingNeckAutismPin = autism pin
+    .desc = be autism do crime
+ent-ClothingNeckGoldAutismPin = golden autism pin
+    .desc = be autism do warcrime

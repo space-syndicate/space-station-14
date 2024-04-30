@@ -14,10 +14,25 @@
       default: ClothingBackpack
     - type: UserInterface
       interfaces:
-        - key: enum.StorageUiKey.Key
+        enum.StorageUiKey.Key:
           type: StorageBoundUserInterface
-        - key: enum.ChameleonUiKey.Key
+        enum.ChameleonUiKey.Key:
           type: ChameleonBoundUserInterface
+# Corvax-HiddenDesc-Start
+    - type: HiddenDescription 
+      entries:
+      - label: corvax-hidden-desc-Chameleon-syndicate
+        whitelistMind:
+          components:
+            - TraitorRole
+            - NukeOperative
+      - label: corvax-hidden-desc-Chameleon-research
+        jobRequired:
+          - ResearchAssistant
+          - ResearchDirector
+          - Scientist
+          - Borg
+# Corvax-HiddenDesc-End
 
 - type: entity
   parent: Clothing
@@ -51,8 +66,8 @@
     canChangeTransferAmount: true
   - type: UserInterface
     interfaces:
-    - key: enum.TransferAmountUiKey.Key
-      type: TransferAmountBoundUserInterface
+      enum.TransferAmountUiKey.Key:
+        type: TransferAmountBoundUserInterface
   - type: DrawableSolution
     solution: tank
   - type: RefillableSolution

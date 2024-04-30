@@ -9,6 +9,8 @@
     Barratry:
       stationProto: StandardNanotrasenStation
       components:
+        - type: StationRandomTransform
+          enableStationRotation: false
         - type: StationNameSetup
           mapNameTemplate: '{0} Barratry {1}'
           nameGenerator:
