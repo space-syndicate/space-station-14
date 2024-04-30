@@ -2,29 +2,40 @@
   name: Плюшевый Бойкиссер
   parent: BaseItem
   id: PlushieBoykisser
-  description: Плюшевая игрушка. Пропаганда нетрадиционных взаимоотношений людей. Мы желаем уничтожить эту вещь, а лучше сжечь
+  description: Плюшевая игрушка. Мы советуем уничтожить это
   components:
+    - type: Item
+      size: Small
     - type: Sprite
       sprite: Objects/Misc/plushie_boykisser.rsi
       state: icon
     - type: StaticPrice
       price: 1
     - type: Storage
-      capacity: 20
+      grid:
+      - 0,0,1,1
+      maxItemSize: Huge
     - type: ContainerContainer
       containers:
         storagebase: !type:Container
-          ents: [ ]
+          ents: []
+    - type: Damageable
+      damageContainer: Inorganic
+      damageModifierSet: Metallic
     - type: UserInterface
       interfaces:
-        - key: enum.StorageUiKey.Key
+        enum.StorageUiKey.Key:
           type: StorageBoundUserInterface
-    - type: Damageable
     - type: Destructible
       thresholds:
       - trigger:
           !type:DamageTrigger
-          damage: 10
+          damage: 4
         behaviors:
         - !type:DoActsBehavior
-          acts: [ "Destruction" ]
+            acts: [ "Destruction" ]
+        - !type:SpawnEntitiesBehavior
+          spawn:
+            MaterialCloth1:
+              min: 1
+              max: 1

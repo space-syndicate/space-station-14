@@ -513,7 +513,7 @@ namespace Content.Server.Administration.Systems
             if(roundTime != string.Empty && roundState == GameRunLevel.InRound)
                 stringbuilder.Append($" **{roundTime}**");
             if (!playedSound)
-                stringbuilder.Append(" **(Sound)**");
+                stringbuilder.Append(" **(S)**");
             stringbuilder.Append($" **{username}:** ");
             stringbuilder.Append(message);
             return stringbuilder.ToString();

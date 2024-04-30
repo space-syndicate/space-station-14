@@ -14,13 +14,6 @@
     Steel: 350
 
 - type: latheRecipe
-  id: MagazinePistol
-  result: MagazinePistol
-  completetime: 2
-  materials:
-    Steel: 130
-
-- type: latheRecipe
   id: MagazinePistolHighCapacity
   result: MagazinePistolHighCapacity
   completetime: 2
@@ -35,25 +28,11 @@
     Steel: 350
 
 - type: latheRecipe
-  id: SpeedLoaderMagnum
-  result: SpeedLoaderMagnum
-  completetime: 2
-  materials:
-    Steel: 100
-
-- type: latheRecipe
   id: MagazineLightRifle
   result: MagazineLightRifle
   completetime: 2
   materials:
     Steel: 1000
-
-- type: latheRecipe
-  id: MagazineRifle
-  result: MagazineRifle
-  completetime: 2
-  materials:
-    Steel: 425
 
 - type: latheRecipe
   id: MagazineShotgun
@@ -358,28 +337,12 @@
     Steel: 30
 
 - type: latheRecipe
-  id: MagazinePistolSubMachineGun
-  result: MagazinePistolSubMachineGun
-  category: Ammo
-  completetime: 5
-  materials:
-    Steel: 300
-
-- type: latheRecipe
   id: MagazinePistolSubMachineGunTopMountedEmpty
   result: MagazinePistolSubMachineGunTopMountedEmpty
   category: Ammo
   completetime: 5
   materials:
     Steel: 30
-
-- type: latheRecipe
-  id: MagazinePistolSubMachineGunTopMounted
-  result: MagazinePistolSubMachineGunTopMounted
-  category: Ammo
-  completetime: 5
-  materials:
-    Steel: 300
 
 - type: latheRecipe
   id: MagazineBoxPistol
@@ -448,14 +411,6 @@
   completetime: 5
   materials:
     Steel: 25
-
-- type: latheRecipe
-  id: MagazineLightRifle
-  result: MagazineLightRifle
-  category: Ammo
-  completetime: 5
-  materials:
-    Steel: 565
 
 - type: latheRecipe
   id: MagazineLightRiflePractice
@@ -577,14 +532,6 @@
   completetime: 5
   materials:
     Steel: 50
-
-- type: latheRecipe
-  id: MagazineShotgun
-  result: MagazineShotgun
-  category: Ammo
-  completetime: 5
-  materials:
-    Steel: 240
 
 - type: latheRecipe
   id: MagazineShotgunBeanbag
