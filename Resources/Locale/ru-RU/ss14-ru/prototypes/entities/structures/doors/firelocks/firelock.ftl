@@ -1,5 +1,5 @@
 ent-BaseFirelock = пожарный шлюз
-    .desc = Примените лом.
+    .desc = Примените монтировку.
 ent-Firelock = { ent-BaseFirelock }
     .desc = { ent-BaseFirelock.desc }
 ent-FirelockGlass = стеклянный пожарный шлюз
