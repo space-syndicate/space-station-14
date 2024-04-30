@@ -54,3 +54,4 @@ reagent-effect-condition-guidebook-has-tag =
         [true] не имеет
        *[false] имеет
     } метку { $tag }
+reagent-effect-condition-guidebook-this-reagent = this reagent

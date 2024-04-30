@@ -6,3 +6,6 @@ ent-SmokingPipeFilledTobacco = pipe
 ent-SmokingPipeFilledCannabis = pipe
     .desc = Just like grandpappy used to smoke.
     .suffix = Cannabis
+ent-SmokingPipeFilledCannabisRainbow = pipe
+    .desc = Just like grandpappy used to smoke.
+    .suffix = Rainbow Cannabis

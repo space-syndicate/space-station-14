@@ -6,3 +6,6 @@ ent-SmokingPipeFilledTobacco = курительная трубка
 ent-SmokingPipeFilledCannabis = курительная трубка
     .desc = { ent-SmokingPipe.desc }
     .suffix = Конопля
+ent-SmokingPipeFilledCannabisRainbow = pipe
+    .desc = Just like grandpappy used to smoke.
+    .suffix = Rainbow Cannabis

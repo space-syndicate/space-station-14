@@ -108,6 +108,8 @@ uplink-radio-jammer-name = Глушитель связи
 uplink-radio-jammer-desc = При активации это устройство блокирует любую исходящую поблизости радиосвязь и скрывает датчики комбинезонов с мониторов. (Замаскирован под оценочный инструмент.)
 uplink-syndicate-weapon-module-name = Оружейный модуль киборга
 uplink-syndicate-weapon-module-desc = Этот модуль даст киборгу продвинутый лазерный пистолет и мачете.
+uplink-syndicate-martyr-module-name = Martyr Cyborg Module
+uplink-syndicate-martyr-module-desc = Turn your emagged borg friend into a walking bomb with just this module. Make sure they're loyal to your cause, results may vary.
 uplink-singularity-beacon-name = Маяк сингулярности
 uplink-singularity-beacon-desc = Устройство, притягивающее сингулярность. Должно быть закреплено и запитано. Будучи поглощённым, заставляет сингулярность расти.
 # Implants

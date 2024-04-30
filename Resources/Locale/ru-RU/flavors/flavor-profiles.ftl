@@ -173,6 +173,7 @@ flavor-complex-light = как угасший свет
 flavor-complex-profits = как прибыль
 flavor-complex-fishops = как страшная рыбья операция
 flavor-complex-violets = как фиалки
+flavor-complex-pyrotton = like a burning mouth
 flavor-complex-mothballs = like mothballs
 flavor-complex-paint-thinner = like paint thinner
 flavor-complex-alcohol = как алкоголь
