@@ -1,0 +1,25 @@
+- type: constructionGraph
+  id: WoodenCrateGraph
+  start: start
+  graph:
+    - node: start
+      actions:
+        - !type:DestroyEntity {}
+      edges:
+        - to: crate
+          steps:
+            - material: WoodPlank
+              amount: 5
+              doAfter: 5
+    - node: crate
+      entity: CrateWoodenCrate
+      edges:
+        - to: start
+          completed:
+            - !type:SpawnPrototype
+              prototype: WoodPlank
+              amount: 5
+            - !type:DeleteEntity {}
+          steps:
+            - tool: Screwing
+              doAfter: 2

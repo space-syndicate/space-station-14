@@ -1,0 +1,47 @@
+- type: construction
+  name: wooden crate
+  id: CrateWoodenCrate
+  graph: WoodenCrateGraph
+  startNode: start
+  targetNode: crate
+  category: construction-category-storage
+  description: A wooden crate for storing things.
+  icon: { sprite: Honk_Station/Sctructures/Storage/Crates/wooden_crate.rsi, state: icon }
+  objectType: Structure
+
+# - type: construction
+ # id: Gorn
+ # name: gorn
+ # description: Mostly filled with books.
+ # graph: GornGraph
+ # startNode: start
+ # targetNode: gornend
+ # category: construction-category-structures
+ # icon:
+   # sprite: Structures/Decoration/fireplace.rsi # Structures/Honk_Station/Machines/gornicon.rsi
+   # state: fireplace
+ # objectType: Structure
+ # placementMode: SnapgridCenter
+ # canRotate: false
+ # canBuildInImpassable: false
+ # conditions:
+   # - !type:TileNotBlocked
+    
+# - type: construction
+ # id: Soil
+ # name: soil
+  # description: You can plant seed's on this.
+  # graph: SoilGraph
+  # startNode: start
+  # targetNode: soilend
+  # category: construction-category-structures
+  # icon:
+    # sprite: Structures/Hydroponics/misc.rsi
+    # state: soil
+  # objectType: Structure
+  # placementMode: SnapgridCenter
+  # canRotate: false
+  # canBuildInImpassable: false
+  # conditions:
+    # - !type:TileNotBlocked
+    

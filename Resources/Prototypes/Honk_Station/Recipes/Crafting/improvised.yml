@@ -1,0 +1,28 @@
+﻿#- type: construction
+#  name: makeshift hatchet
+#  id: MakedhiftHatchet
+#  graph: MakedhiftHatchet
+#  startNode: start
+#  targetNode: MHatchetEnd
+#  category: construction-category-weapons
+#  description: "Самодельный топор. Он немного туповат, но с задачей в принципе справляется."
+#  icon:
+#    sprite: Objects\Tools\Hydroponics\hatchet.rsi
+#    sprite: Objects/Tools/makeshift/makeshift_hatchet.rsi
+#    state: icon
+#  objectType: Item
+#
+#- type: constructionGraph
+#  id: MakedhiftHatchet
+#  start: start
+#  graph:
+#    - node: start
+#      edges:
+#        - to: MHatchetEnd
+#          steps:
+#            - material: WoodPlank
+#              amount: 8
+#            - material: Steel
+#              amount: 5
+#              doAfter: 10
+#    - node: MHatchetEnd

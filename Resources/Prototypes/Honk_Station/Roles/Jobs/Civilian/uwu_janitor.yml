@@ -1,0 +1,30 @@
+- type: job
+  id: MaidJanitor
+  name: "Горничная" #job-name-janitor-uwu
+  description: "uwu" #job-description-janitor-uwu
+  playTimeTracker: JobMaidJanitor
+  startingGear: JanitorMaidGear
+  icon: "JobIconJanitor"
+  supervisors: job-supervisors-hop
+  access:
+  - Service
+  - Janitor
+  - Maintenance
+  special:
+  - !type:GiveItemOnHolidaySpecial
+    holiday: GarbageDay
+    prototype: Stunbaton
+
+# - type: startingGear
+  # id: JanitorMaidGear
+  # equipment:
+    # jumpsuit: ClothingUniformJumpskirtJanimaid
+    # back: ClothingBackpackFilled
+    # id: JanitorPDA
+    # gloves: ClothingHandsGlovesJanitor
+    # head: ClothingHeadHatCatEars
+    # ears: ClothingHeadsetService
+    # belt: ClothingBeltJanitorFilled
+  # innerClothingSkirt: ClothingUniformJumpskirtJanimaid
+  # satchel: ClothingBackpackSatchelFilled
+  # duffelbag: ClothingBackpackDuffelFilled

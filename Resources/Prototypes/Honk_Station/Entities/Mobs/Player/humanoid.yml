@@ -1,0 +1,24 @@
+## Planet Survivor
+
+- type: entity
+  name: "Выживший" # Planet Survivor
+  id: RandomHumanoidSpawnerPlanetSurvivor
+  suffix: "Планета" #Planet
+  components:
+    - type: Sprite
+      sprite: Markers/jobs.rsi
+      state: passenger
+    - type: RandomHumanoidSpawner
+      settings: PlanetSurvivor
+    - type: InitialInfectedExempt
+
+- type: randomHumanoidSettings
+  id: PlanetSurvivor
+  components:
+    - type: GhostRole
+      name: "Выживший" # ghost-role-information-planet-survivor-name
+      description: "Вы остались на необитаемой планете. Возможно одни. Сможете ли вы выжить?" # ghost-role-information-planet-survivor-description
+    - type: GhostTakeoverAvailable
+    - type: Loadout
+      prototypes: [ PlanetSurvivorGear ]
+    - type: InitialInfectedExempt

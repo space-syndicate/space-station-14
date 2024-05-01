@@ -1,0 +1,13 @@
+- type: gamePreset
+  id: RimWorld
+  alias:
+    - RimWorld
+    - RW
+  name: "Планета"
+  description: "Ваш шаттл потерпел крушение на этой планете. Как долго вы сможете продержаться? NOT WORK"
+  maxPlayers: 25
+  showInVote: true
+  supportedMaps: DeathMatchMapPool
+  rules:
+    - RampingStationEventScheduler
+    - BasicRoundstartVariation

@@ -1,0 +1,26 @@
+- type: entity
+  parent: ClothingOuterBaseMedium
+  id: ClothingOuterArmorMakeshift
+  name: "Самодельный бронежилет"
+  description: "Самодельный бронежилет. Не следует надеятся на приемлемый уровень защиты, но лучше чем ничего, хоть и тяжёлый."
+  suffix: "Самодельный"
+  components:
+  - type: Sprite
+    sprite: Honk_Station/Clothing/OuterClothing/Armor/makeshift.rsi
+  - type: Clothing
+    sprite: Honk_Station/Clothing/OuterClothing/Armor/makeshift.rsi
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.70
+        Slash: 0.60
+        Piercing: 0.80 #Can save you, but bullets will still hurt. Will take about 10 shots from a Viper before critting, as opposed to 7 while unarmored and 16~ with a bulletproof vest.
+        Heat: 0.90
+  - type: ExplosionResistance
+    damageCoefficient: 0.90
+  - type: ClothingSpeedModifier
+    walkModifier: 0.95
+    sprintModifier: 0.90
+  # - type: Construction
+    # graph: MakeshiftOuterArmorGraph
+    # node: armor

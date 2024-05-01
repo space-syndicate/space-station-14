@@ -1,0 +1,26 @@
+- type: constructionGraph
+  id: SoilGraph
+  start: start
+  graph:
+    - node: start
+      actions:
+        - !type:DestroyEntity {}
+      edges:
+        - to: soilend
+          completed:
+            - !type:SnapToGrid { }
+          steps:
+            - material: WoodPlank
+              amount: 5
+              doAfter: 20
+    - node: soilend
+      entity: hydroponicsSoil
+      edges:
+        - to: start
+          completed:
+            - !type:SpawnPrototype
+              prototype: SheetSteel
+              amount: 0
+          steps:
+            - tool: Prying
+              doAfter: 10

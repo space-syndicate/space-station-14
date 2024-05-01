@@ -1,0 +1,36 @@
+- type: constructionGraph
+  id: MakeshiftLaserGraph
+  start: start
+  graph:
+  - node: start
+    edges:
+    - to: laser
+      steps:
+        - material: Cable
+          amount: 10
+        - material: Plastic
+          amount: 10
+        - material: Steel
+          amount: 5
+        - material: MetalRod
+          amount: 1
+        - material: Gold
+          amount: 5
+        - tag: CapacitorStockPart
+          name: Capacitor Stock Part
+          icon:
+            sprite: Objects/Misc/stock_parts.rsi
+            state: capacitor
+        - tag: MicroManipulatorStockPart
+          name: Micro Manipulator
+          icon:
+            sprite: Objects/Misc/stock_parts.rsi
+            state: micro_mani
+        - tag: MatterBinStockPart
+          name: Matter Bin
+          icon:
+            sprite: Objects/Misc/stock_parts.rsi
+            state: matter_bin
+          doAfter: 10
+  - node: laser
+    entity: WeaponMakeshiftLaser

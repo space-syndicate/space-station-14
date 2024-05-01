@@ -1,0 +1,29 @@
+- type: constructionGraph
+  id: GornGraph
+  start: start
+  graph:
+    - node: start
+      actions:
+        - !type:DestroyEntity {}
+      edges:
+        - to: gornend
+          completed:
+            - !type:SnapToGrid { }
+          steps:
+            - material: Steel
+              amount: 15
+            - material: WoodPlank
+              amount: 5
+              doAfter: 10
+    - node: gornend
+      entity: Gorn
+      edges:
+        - to: start
+          completed:
+            - !type:SpawnPrototype
+              prototype: SheetSteel
+              amount: 10
+            - !type:DeleteEntity {}
+          steps:
+            - tool: Prying
+              doAfter: 5

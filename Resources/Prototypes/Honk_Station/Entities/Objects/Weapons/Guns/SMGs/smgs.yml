@@ -1,0 +1,25 @@
+- type: entity
+  name: "Самодельный ПП"
+  parent: BaseWeaponSubMachineGun
+  id: WeaponSubMachineGunMakeshiftSMG
+  description: "Выглядит ненадёжным. Использует патроны авто .35"
+  components:
+  - type: Sprite
+    sprite: Honk_Station/Objects/Weapons/Guns/SMGs/pirate_smg.rsi # Honk_Station/Objects/Weapons/Guns/SMGs/makeshift.rsi
+    layers:
+    - state: base
+      map: ["enum.GunVisualLayers.Base"]
+    - state: mag-0
+      map: ["enum.GunVisualLayers.Mag"]
+  - type: Gun
+    fireRate: 5
+    soundGunshot:
+      path: /Audio/Weapons/Guns/Gunshots/pistol.ogg #mk58
+  - type: MagazineVisuals
+    magState: mag
+    steps: 1
+    zeroVisible: true
+  - type: Appearance
+  - type: Construction
+    graph: MakeshiftSMGGraph
+    node: smg

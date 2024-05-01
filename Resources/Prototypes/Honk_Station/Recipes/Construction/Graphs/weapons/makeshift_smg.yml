@@ -1,0 +1,34 @@
+- type: constructionGraph
+  id: MakeshiftSMGGraph
+  start: start
+  graph:
+  - node: start
+    edges:
+    - to: smg
+      steps:
+      - tag: Pipe
+        icon:
+          sprite: Structures/Piping/Atmospherics/pipe.rsi
+          state: pipeStraight
+        name: pipe
+      - tag: ModularReceiver
+        icon:
+          sprite: Objects/Misc/modular_receiver.rsi
+          state: icon
+        name: modular receiver
+      - tag: RifleStock
+        icon:
+          sprite: Objects/Misc/rifle_stock.rsi
+          state: icon
+        name: rifle stock
+      - material: Steel
+        amount: 5
+      - material: WoodPlank
+        amount: 4
+      - material: Cloth
+        amount: 3
+      - material: Cable
+        amount: 10
+        doAfter: 15
+  - node: smg
+    entity: WeaponSubMachineGunMakeshiftSMG

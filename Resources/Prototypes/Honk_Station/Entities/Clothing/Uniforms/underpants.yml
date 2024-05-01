@@ -1,0 +1,10 @@
+- type: entity
+  parent: ClothingUniformBase
+  id: ClothingUniformUnderpants
+  name: "трусы"
+  description: "Трусы. Самые обычные, немного грязные трусы."
+  components:
+  - type: Sprite
+    sprite: Honk_Station/Clothing/Uniforms/Underpants/underpants.rsi
+  - type: Clothing
+    sprite: Honk_Station/Clothing/Uniforms/Underpants/underpants.rsi

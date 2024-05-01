@@ -1,0 +1,15 @@
+﻿- type: constructionGraph
+  id: WoodenBucketGraph
+  start: start
+  graph:
+    - node: start
+      edges:
+        - to: bucket
+          steps:
+            - material: WoodPlank
+              amount: 10
+              doAfter: 5
+            - material: Cable
+              amount: 2
+    - node: bucket
+      entity: WoodenBucket

@@ -28,6 +28,12 @@
       emergencyLightColor: Goldenrod
       forceEnableEmergencyLights: true
       shuttleTime: 600
+    orange: #Honk_Station
+      announcement: alert-level-orange-announcement
+      sound: /Audio/Misc/delta_alt.ogg
+      color: Orange
+      emergencyLightColor: Goldenrod
+      shuttleTime: 600
     red:
       announcement: alert-level-red-announcement
       sound: /Audio/Misc/redalert.ogg
@@ -69,4 +75,4 @@
       color: DarkViolet
       emergencyLightColor: DarkViolet
       forceEnableEmergencyLights: true
-      shuttleTime: 1200
+      shuttleTime: 1800

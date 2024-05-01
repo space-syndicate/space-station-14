@@ -1,0 +1,12 @@
+- type: construction
+  name: wooden bucket
+  id: WoodenBucket
+  graph: WoodenBucketGraph
+  startNode: start
+  targetNode: bucket
+  category: construction-category-tools
+  description: You can fill this!
+  icon:
+    sprite: Honk_Station/Objects/Tools/wooden_bucket.rsi
+    state: icon
+  objectType: Item

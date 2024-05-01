@@ -1,0 +1,25 @@
+# - type: construction
+  # name: makeshift laser pistol
+  # id: MakeshiftLaser
+  # graph: MakeshiftLaserGraph
+  # startNode: start
+  # targetNode: laser
+  # category: construction-category-weapons
+  # description: Better pray it won't burn your hands off.
+  # icon:
+    # sprite: Objects/Weapons/Guns/Battery/makeshift.rsi
+    # state: icon
+  # objectType: Item
+  
+- type: construction
+  name: makeshift smg
+  id: WeaponSubMachineGunMakeshiftSMG
+  graph: MakeshiftSMGGraph
+  startNode: start
+  targetNode: smg
+  category: construction-category-weapons
+  description: It looks unreliable. Uses auto .35 cartridges
+  icon:
+    sprite: Honk_Station/Objects/Weapons/Guns/SMGs/pirate_smg.rsi
+    state: icon
+  objectType: Item
