@@ -1,48 +1,4 @@
 ﻿Entries:
-- author: liltenhead
-  changes:
-  - message: Changed emergency welder's fuel count from 25 -> 50
-    type: Tweak
-  id: 6011
-  time: '2024-02-23T06:53:39.0000000+00:00'
-  url: https://github.com/space-wizards/space-station-14/pull/25483
-- author: Vasilis
-  changes:
-  - message: Fixed a bug where the centcom official/any job that is not supposed to
-      have a preference option appeared anyway.
-    type: Fix
-  id: 6012
-  time: '2024-02-23T13:19:52.0000000+00:00'
-  url: https://github.com/space-wizards/space-station-14/pull/25496
-- author: Erisfiregamer1
-  changes:
-  - message: Fixed a typo when forcefeeding someone.
-    type: Fix
-  id: 6013
-  time: '2024-02-24T01:45:02.0000000+00:00'
-  url: https://github.com/space-wizards/space-station-14/pull/25512
-- author: Beck Thompson
-  changes:
-  - message: The Fire Extinguishers safety can now only be toggled when in range.
-    type: Fix
-  id: 6014
-  time: '2024-02-25T02:29:16.0000000+00:00'
-  url: https://github.com/space-wizards/space-station-14/pull/25534
-- author: ArchPigeon
-  changes:
-  - message: Removed the ability for command or any antag-safe role to be initial
-      infected in zombie mode
-    type: Remove
-  id: 6015
-  time: '2024-02-25T02:40:49.0000000+00:00'
-  url: https://github.com/space-wizards/space-station-14/pull/25529
-- author: PolterTzi
-  changes:
-  - message: Cargo ordering multiple crates in one order should work now.
-    type: Fix
-  id: 6016
-  time: '2024-02-25T07:36:22.0000000+00:00'
-  url: https://github.com/space-wizards/space-station-14/pull/25518
 - author: metalgearsloth
   changes:
   - message: Remove executions pending code rewrite.
@@ -3861,3 +3817,46 @@
   id: 6510
   time: '2024-05-02T06:00:01.0000000+00:00'
   url: https://github.com/space-wizards/space-station-14/pull/27610
+- author: Plykiya
+  changes:
+  - message: Disarming a player now causes them to throw the disarmed item away from
+      them.
+    type: Tweak
+  id: 6511
+  time: '2024-05-02T12:32:47.0000000+00:00'
+  url: https://github.com/space-wizards/space-station-14/pull/27589
+- author: fujiwaranao
+  changes:
+  - message: Renault now has additional fox noises.
+    type: Add
+  id: 6512
+  time: '2024-05-02T12:35:11.0000000+00:00'
+  url: https://github.com/space-wizards/space-station-14/pull/27578
+- author: Doc-Michael
+  changes:
+  - message: CMO's Lab coat is now more resistant to chemical spills and minor cuts
+    type: Tweak
+  id: 6513
+  time: '2024-05-02T12:37:12.0000000+00:00'
+  url: https://github.com/space-wizards/space-station-14/pull/27551
+- author: Vasilis
+  changes:
+  - message: Removed airtight flaps from the construction menu.
+    type: Remove
+  id: 6514
+  time: '2024-05-02T14:49:54.0000000+00:00'
+  url: https://github.com/space-wizards/space-station-14/pull/27619
+- author: Lamrr
+  changes:
+  - message: Wine and beer bottles can now be inserted into the booze dispenser.
+    type: Fix
+  id: 6515
+  time: '2024-05-02T16:17:36.0000000+00:00'
+  url: https://github.com/space-wizards/space-station-14/pull/27626
+- author: deltanedas
+  changes:
+  - message: "Ducky slippers now make you waddle. \U0001F986\U0001F986"
+    type: Tweak
+  id: 6516
+  time: '2024-05-02T17:09:38.0000000+00:00'
+  url: https://github.com/space-wizards/space-station-14/pull/27628
