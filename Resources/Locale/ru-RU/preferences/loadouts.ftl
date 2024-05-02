@@ -1,6 +1,6 @@
 # Restrictions
-loadout-restrictions = Restrictions
-loadouts-min-limit = Min count: { $count }
-loadouts-max-limit = Max count: { $count }
-loadouts-points-limit = Points: { $count } / { $max }
-loadouts-points-restriction = Insufficient points
+loadout-restrictions = Ограничения
+loadouts-min-limit = Мин. кол-во: { $count }
+loadouts-max-limit = Макс. кол-во: { $count }
+loadouts-points-limit = Очки: { $count } / { $max }
+loadouts-points-restriction = Не хватает очков

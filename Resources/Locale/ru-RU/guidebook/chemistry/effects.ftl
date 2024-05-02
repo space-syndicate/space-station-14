@@ -38,11 +38,6 @@ reagent-effect-guidebook-foam-area-reaction-effect =
     } большое количество пены
 reagent-effect-guidebook-smoke-area-reaction-effect =
     { $chance ->
-        [1] Creates
-       *[other] create
-    } large quantities of smoke
-reagent-effect-guidebook-foam-area-reaction-effect =
-    { $chance ->
         [1] Создаёт
        *[other] создают
     } большое количество дыма
