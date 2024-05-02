@@ -6,3 +6,12 @@
   - PsychologistSatchel
   - PsychologistDuffel
 
+- type: loadoutGroup
+  id: IAAHead
+  name: loadout-group-iaa-head
+  minLimit: 0
+  loadouts:
+  - ClothingHeadHatBowlerHat
+  - ClothingHeadHatOutlawHat
+  - ClothingHeadHatTophat
+
