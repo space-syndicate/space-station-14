@@ -55,6 +55,5 @@ chat-emote-msg-cough = coughs
 chat-emote-msg-catmeow = meows
 chat-emote-msg-cathisses = hisses
 chat-emote-msg-monkeyscreeches = screeches
-chat-emote-msg-robotbeep = beeps
 chat-emote-msg-yawn = yawns
 chat-emote-msg-snore = snores
