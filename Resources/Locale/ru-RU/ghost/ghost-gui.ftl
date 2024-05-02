@@ -8,6 +8,7 @@ ghost-gui-toggle-hearing-popup-on = Теперь вы слышите все фр
 ghost-gui-toggle-hearing-popup-off = Теперь вы слышите только радиосвязь и фразы поблизости.
 ghost-target-window-title = Телепорт призрака
 ghost-target-window-current-button = Телепорт в: { $name }
+ghost-target-window-warp-to-most-followed = Warp to Most Followed
 ghost-roles-window-title = Роли призраков
 ghost-roles-window-request-role-button = Запросить
 ghost-roles-window-request-role-button-timer = Запросить ({ $time }сек.)

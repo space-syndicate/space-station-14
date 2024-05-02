@@ -1,3 +1,5 @@
+ent-PlasticFlapsBase = { ent-BaseStructureDynamic }
+    .desc = { ent-BaseStructureDynamic.desc }
 ent-PlasticFlapsClear = plastic flaps
     .desc = Heavy duty, plastic flaps. Definitely can't get past those. No way.
     .suffix = Clear
