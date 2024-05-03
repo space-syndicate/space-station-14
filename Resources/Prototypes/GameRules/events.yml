@@ -501,8 +501,8 @@
   components:
   - type: StationEvent
     endAnnouncement: station-event-immovable-rod-start-announcement
-    endAudio:
-      path: /Audio/Announcements/attention.ogg
+    endAudio: # Corvax-Announcements
+      path: /Audio/Corvax/Announcements/irod.ogg
     weight: 5
     duration: 25
     earliestStart: 45
