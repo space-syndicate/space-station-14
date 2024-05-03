@@ -6,8 +6,6 @@
   startingGear: PassengerGear
   icon: "JobIconPassenger"
   supervisors: job-supervisors-everyone
-#  access: # Corvax-MRP
-#  - Maintenance
 
 - type: startingGear
   id: PassengerGear
