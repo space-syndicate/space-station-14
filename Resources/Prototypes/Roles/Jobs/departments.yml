@@ -50,6 +50,15 @@
   weight: 100
 
 - type: department
+  id: Centcom
+  description: Здесь собраны представители центрального командования.
+  color: "#334E6D"
+  roles:
+  - Magistrate
+  - IAA
+  - OfficerBlueShield
+
+- type: department
   id: Engineering
   description: department-Engineering-description
   color: "#EFB341"
