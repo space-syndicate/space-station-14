@@ -11,3 +11,18 @@
       borderColor: "#6f6192"
     - type: Icon
       state: pda-lawyer
+
+- type: entity
+  parent: BasePDA
+  id: PilotPDA
+  name: pilot PDA
+  description: Нas protection from cosmic radiation.
+  components:
+    - type: Pda
+      id: PilotIDCard
+      state: pda-seniorofficer
+    - type: PdaBorderColor
+      borderColor: "#A32D26"
+      accentVColor: "#DFDFDF"
+    - type: Icon
+      state: pda-seniorofficer

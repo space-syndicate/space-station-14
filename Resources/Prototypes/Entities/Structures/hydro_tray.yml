@@ -83,9 +83,6 @@
   - type: TTS # Corvax-TTS
     voice: TrainingRobot
   - type: WiresPanel
-  - type: Wires
-    boardName: wires-board-name-hydroponicstray
-    layoutId: HydroponicsTray
   - type: AmbientSound
     volume: -9
     range: 5

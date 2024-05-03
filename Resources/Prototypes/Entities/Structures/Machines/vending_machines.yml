@@ -60,10 +60,10 @@
   - type: ActivatableUIRequiresPower
   - type: UserInterface
     interfaces:
-    - key: enum.VendingMachineUiKey.Key
-      type: VendingMachineBoundUserInterface
-    - key: enum.WiresUiKey.Key
-      type: WiresBoundUserInterface
+      enum.VendingMachineUiKey.Key:
+        type: VendingMachineBoundUserInterface
+      enum.WiresUiKey.Key:
+        type: WiresBoundUserInterface
   - type: WiresPanel
   - type: Wires
     boardName: wires-board-name-vendingmachine
@@ -95,7 +95,6 @@
   - type: LitOnPowered
   - type: ApcPowerReceiver
     powerLoad: 200
-    priority: Low
   - type: Actions
   - type: SentienceTarget
     flavorKind: station-event-random-sentience-flavor-mechanical
@@ -132,6 +131,8 @@
         density: 190
   - type: Advertise
     pack: CondimentVendAds
+  - type: SpeakOnUIClosed
+    pack: GenericVendGoodbyes
   - type: Speech
   - type: Transform
     noRot: false
@@ -149,6 +150,8 @@
     normalState: normal-unshaded
   - type: Advertise
     pack: AmmoVendAds
+  - type: SpeakOnUIClosed
+    pack: GenericVendGoodbyes
   - type: Speech
   - type: Sprite
     sprite: Corvax/Structures/Machines/VendingMachines/ammo.rsi
@@ -176,6 +179,8 @@
     loopDeny: false
   - type: Advertise
     pack: BoozeOMatAds
+  - type: SpeakOnUIClosed
+    pack: BoozeOMatGoodbyes
   - type: Speech
   - type: Sprite
     sprite: Structures/Machines/VendingMachines/boozeomat.rsi
@@ -237,6 +242,8 @@
     ejectState: eject-unshaded
   - type: Advertise
     pack: ChefvendAds
+  - type: SpeakOnUIClosed
+    pack: ChefvendGoodbyes
   - type: Sprite
     sprite: Structures/Machines/VendingMachines/chefvend.rsi
     layers:
@@ -271,6 +278,8 @@
     denyState: deny-unshaded
   - type: Advertise
     pack: CigaretteMachineAds
+  - type: SpeakOnUIClosed
+    pack: CigaretteMachineGoodbyes
   - type: Speech
   - type: Sprite
     sprite: Structures/Machines/VendingMachines/cigs.rsi
@@ -297,6 +306,8 @@
     denyState: deny-unshaded
   - type: Advertise
     pack: ClothesMateAds
+  - type: SpeakOnUIClosed
+    pack: GenericVendGoodbyes
   - type: Speech
   - type: Sprite
     sprite: Structures/Machines/VendingMachines/clothing.rsi
@@ -327,6 +338,8 @@
     denyState: deny-unshaded
   - type: Advertise
     pack: ClothesMateAds
+  - type: SpeakOnUIClosed
+    pack: GenericVendGoodbyes
   - type: Speech
   - type: Sprite
     sprite: Structures/Machines/VendingMachines/winterdrobe.rsi
@@ -361,8 +374,11 @@
     screenState: screen
     ejectDelay: 5
     soundVend: /Audio/Machines/machine_vend_hot_drink.ogg
+    initialStockQuality: 0.33
   - type: Advertise
     pack: HotDrinksMachineAds
+  - type: SpeakOnUIClosed
+    pack: HotDrinksMachineGoodbyes
   - type: Speech
   - type: Sprite
     sprite: Structures/Machines/VendingMachines/coffee.rsi
@@ -398,8 +414,11 @@
     ejectState: eject-unshaded
     denyState: deny-unshaded
     ejectDelay: 1.9
+    initialStockQuality: 0.33
   - type: Advertise
     pack: RobustSoftdrinksAds
+  - type: SpeakOnUIClosed
+    pack: RobustSoftdrinksGoodbyes
   - type: Speech
   - type: Sprite
     sprite: Structures/Machines/VendingMachines/cola.rsi
@@ -541,6 +560,7 @@
     ejectState: eject-unshaded
     denyState: deny-unshaded
     ejectDelay: 1.9
+    initialStockQuality: 0.33
   - type: Advertise
     pack: RobustSoftdrinksAds
   - type: Speech
@@ -575,8 +595,11 @@
     ejectState: eject-unshaded
     denyState: deny-unshaded
     ejectDelay: 1.9
+    initialStockQuality: 0.33
   - type: Advertise
     pack: RobustSoftdrinksAds
+  - type: SpeakOnUIClosed
+    pack: GenericVendGoodbyes
   - type: Speech
   - type: Sprite
     sprite: Structures/Machines/VendingMachines/pwrgame.rsi
@@ -609,8 +632,11 @@
     ejectState: eject-unshaded
     denyState: deny-unshaded
     ejectDelay: 1.9
+    initialStockQuality: 0.33
   - type: Advertise
     pack: RobustSoftdrinksAds
+  - type: SpeakOnUIClosed
+    pack: GenericVendGoodbyes
   - type: Speech
   - type: Sprite
     sprite: Structures/Machines/VendingMachines/gib.rsi
@@ -641,6 +667,8 @@
     ejectState: eject-unshaded
   - type: Advertise
     pack: DinnerwareAds
+  - type: SpeakOnUIClosed
+    pack: GenericVendGoodbyes
   - type: Sprite
     sprite: Structures/Machines/VendingMachines/dinnerware.rsi
     layers:
@@ -671,6 +699,8 @@
     normalState: normal-unshaded
   - type: Advertise
     pack: MagiVendAds
+  - type: SpeakOnUIClosed
+    pack: GenericVendGoodbyes
   - type: Sprite
     sprite: Structures/Machines/VendingMachines/magivend.rsi
     layers:
@@ -699,8 +729,11 @@
     offState: off
     brokenState: broken
     normalState: normal-unshaded
+    initialStockQuality: 0.33
   - type: Advertise
     pack: DiscountDansAds
+  - type: SpeakOnUIClosed
+    pack: DiscountDansGoodbyes
   - type: Speech
   - type: Sprite
     sprite: Structures/Machines/VendingMachines/discount.rsi
@@ -763,6 +796,8 @@
     ejectDelay: 0.6
   - type: Advertise
     pack: NanoMedAds
+  - type: SpeakOnUIClosed
+    pack: GenericVendGoodbyes
   - type: Sprite
     sprite: Structures/Machines/VendingMachines/medical.rsi
     layers:
@@ -798,6 +833,8 @@
     denyState: deny-unshaded
   - type: Advertise
     pack: NutriMaxAds
+  - type: SpeakOnUIClosed
+    pack: NutriMaxGoodbyes
   - type: Sprite
     sprite: Structures/Machines/VendingMachines/nutri.rsi
     layers:
@@ -830,6 +867,8 @@
     denyState: deny-unshaded
   - type: Advertise
     pack: SecTechAds
+  - type: SpeakOnUIClosed
+    pack: SecTechGoodbyes
   - type: Sprite
     sprite: Structures/Machines/VendingMachines/sec.rsi
     layers:
@@ -866,6 +905,8 @@
     denyState: deny-unshaded
   - type: Advertise
     pack: MegaSeedAds
+  - type: SpeakOnUIClosed
+    pack: GenericVendGoodbyes
   - type: Sprite
     sprite: Structures/Machines/VendingMachines/seeds.rsi
     layers:
@@ -904,8 +945,11 @@
     normalState: normal-unshaded
     ejectState: eject-unshaded
     denyState: deny-unshaded
+    initialStockQuality: 0.33
   - type: Advertise
     pack: GetmoreChocolateCorpAds
+  - type: SpeakOnUIClosed
+    pack: GetmoreChocolateCorpGoodbyes
   - type: Speech
   - type: Sprite
     sprite: Structures/Machines/VendingMachines/snack.rsi
@@ -1047,8 +1091,11 @@
     normalState: normal-unshaded
     ejectState: eject-unshaded
     denyState: deny-unshaded
+    initialStockQuality: 0.33
   - type: Advertise
     pack: BodaAds
+  - type: SpeakOnUIClosed
+    pack: BodaGoodbyes
   - type: Speech
   - type: Sprite
     sprite: Structures/Machines/VendingMachines/sovietsoda.rsi
@@ -1081,6 +1128,8 @@
     screenState: screen
   - type: Advertise
     pack: AutoDrobeAds
+  - type: SpeakOnUIClosed
+    pack: GenericVendGoodbyes
   - type: Speech
   - type: Sprite
     sprite: Structures/Machines/VendingMachines/theater.rsi
@@ -1115,6 +1164,8 @@
     denyState: deny-unshaded
   - type: Advertise
     pack: VendomatAds
+  - type: SpeakOnUIClosed
+    pack: GenericVendGoodbyes
   - type: Speech
   - type: Sprite
     sprite: Structures/Machines/VendingMachines/vendomat.rsi
@@ -1146,6 +1197,8 @@
     denyState: deny-unshaded
   - type: Advertise
     pack: VendomatAds
+  - type: SpeakOnUIClosed
+    pack: GenericVendGoodbyes
   - type: Speech
   - type: Sprite
     sprite: Structures/Machines/VendingMachines/robotics.rsi
@@ -1210,6 +1263,8 @@
     ejectDelay: 1.8
   - type: Advertise
     pack: GoodCleanFunAds
+  - type: SpeakOnUIClosed
+    pack: GoodCleanFunGoodbyes
   - type: Sprite
     sprite: Structures/Machines/VendingMachines/games.rsi
     layers:
@@ -1238,8 +1293,11 @@
     offState: off
     brokenState: broken
     normalState: normal-unshaded
+    initialStockQuality: 0.33
   - type: Advertise
     pack: ChangAds
+  - type: SpeakOnUIClosed
+    pack: ChangGoodbyes
   - type: Speech
   - type: Sprite
     sprite: Structures/Machines/VendingMachines/changs.rsi
@@ -1260,7 +1318,7 @@
   parent: VendingMachine
   id: VendingMachineSalvage
   name: Salvage Vendor
-  description: A dwarves best friend!
+  description: A dwarf's best friend!
   components:
   - type: VendingMachine
     pack: SalvageEquipmentInventory
@@ -1301,8 +1359,11 @@
     offState: off
     brokenState: broken
     normalState: normal-unshaded
+    initialStockQuality: 0.33
   - type: Advertise
     pack: DonutAds
+  - type: SpeakOnUIClosed
+    pack: DonutGoodbyes
   - type: Speech
   - type: Sprite
     sprite: Structures/Machines/VendingMachines/donut.rsi
@@ -1331,9 +1392,6 @@
     snap:
     - Wallmount
   components:
-  - type: Physics
-    canCollide: false
-  - type: Fixtures
   - type: Sprite
     drawdepth: WallMountedItems
     snapCardinals: false
@@ -1386,6 +1444,8 @@
     normalState: normal-unshaded
   - type: Advertise
     pack: HyDrobeAds
+  - type: SpeakOnUIClosed
+    pack: GenericVendGoodbyes
   - type: Sprite
     sprite: Structures/Machines/VendingMachines/hydrobe.rsi
     layers:
@@ -1412,6 +1472,8 @@
     normalState: normal-unshaded
   - type: Advertise
     pack: LawDrobeAds
+  - type: SpeakOnUIClosed
+    pack: LawDrobeGoodbyes
   - type: Sprite
     sprite: Structures/Machines/VendingMachines/lawdrobe.rsi
     layers:
@@ -1438,6 +1500,8 @@
     normalState: normal-unshaded
   - type: Advertise
     pack: SecDrobeAds
+  - type: SpeakOnUIClosed
+    pack: GenericVendGoodbyes
   - type: Sprite
     sprite: Structures/Machines/VendingMachines/secdrobe.rsi
     layers:
@@ -1464,6 +1528,8 @@
     normalState: normal-unshaded
   - type: Advertise
     pack: BarDrobeAds
+  - type: SpeakOnUIClosed
+    pack: GenericVendGoodbyes
   - type: Sprite
     sprite: Structures/Machines/VendingMachines/bardrobe.rsi
     layers:
@@ -1518,6 +1584,8 @@
     normalState: normal-unshaded
   - type: Advertise
     pack: CargoDrobeAds
+  - type: SpeakOnUIClosed
+    pack: GenericVendGoodbyes
   - type: Sprite
     sprite: Structures/Machines/VendingMachines/cargodrobe.rsi
     layers:
@@ -1544,6 +1612,8 @@
     normalState: normal-unshaded
   - type: Advertise
     pack: MediDrobeAds
+  - type: SpeakOnUIClosed
+    pack: GenericVendGoodbyes
   - type: Sprite
     sprite: Structures/Machines/VendingMachines/medidrobe.rsi
     layers:
@@ -1570,6 +1640,8 @@
     normalState: normal-unshaded
   - type: Advertise
     pack: ChemDrobeAds
+  - type: SpeakOnUIClosed
+    pack: GenericVendGoodbyes
   - type: Sprite
     sprite: Structures/Machines/VendingMachines/chemdrobe.rsi
     layers:
@@ -1596,6 +1668,8 @@
     normalState: normal-unshaded
   - type: Advertise
     pack: CuraDrobeAds
+  - type: SpeakOnUIClosed
+    pack: GenericVendGoodbyes
   - type: Sprite
     sprite: Structures/Machines/VendingMachines/curadrobe.rsi
     layers:
@@ -1622,6 +1696,8 @@
     normalState: normal-unshaded
   - type: Advertise
     pack: AtmosDrobeAds
+  - type: SpeakOnUIClosed
+    pack: GenericVendGoodbyes
   - type: Sprite
     sprite: Structures/Machines/VendingMachines/atmosdrobe.rsi
     layers:
@@ -1648,6 +1724,8 @@
     normalState: normal-unshaded
   - type: Advertise
     pack: EngiDrobeAds
+  - type: SpeakOnUIClosed
+    pack: GenericVendGoodbyes
   - type: Sprite
     sprite: Structures/Machines/VendingMachines/engidrobe.rsi
     layers:
@@ -1674,6 +1752,8 @@
     normalState: normal-unshaded
   - type: Advertise
     pack: ChefDrobeAds
+  - type: SpeakOnUIClosed
+    pack: GenericVendGoodbyes
   - type: Sprite
     sprite: Structures/Machines/VendingMachines/chefdrobe.rsi
     layers:
@@ -1700,6 +1780,8 @@
     normalState: normal-unshaded
   - type: Advertise
     pack: DetDrobeAds
+  - type: SpeakOnUIClosed
+    pack: GenericVendGoodbyes
   - type: Sprite
     sprite: Structures/Machines/VendingMachines/detdrobe.rsi
     layers:
@@ -1726,6 +1808,8 @@
     normalState: normal-unshaded
   - type: Advertise
     pack: JaniDrobeAds
+  - type: SpeakOnUIClosed
+    pack: GenericVendGoodbyes
   - type: Sprite
     sprite: Structures/Machines/VendingMachines/janidrobe.rsi
     layers:
@@ -1752,6 +1836,8 @@
     normalState: normal-unshaded
   - type: Advertise
     pack: SciDrobeAds
+  - type: SpeakOnUIClosed
+    pack: GenericVendGoodbyes
   - type: Sprite
     sprite: Structures/Machines/VendingMachines/scidrobe.rsi
     layers:
@@ -1778,6 +1864,8 @@
     normalState: normal-unshaded
   - type: Advertise
     pack: SyndieDrobeAds
+  - type: SpeakOnUIClosed
+    pack: SyndieDrobeGoodbyes
   - type: Sprite
     sprite: Structures/Machines/VendingMachines/syndiedrobe.rsi
     layers:
@@ -1804,6 +1892,8 @@
     normalState: normal-unshaded
   - type: Advertise
     pack: RoboDrobeAds
+  - type: SpeakOnUIClosed
+    pack: GenericVendGoodbyes
   - type: Sprite
     sprite: Structures/Machines/VendingMachines/robodrobe.rsi
     layers:
@@ -1830,6 +1920,8 @@
     normalState: normal-unshaded
   - type: Advertise
     pack: GeneDrobeAds
+  - type: SpeakOnUIClosed
+    pack: GenericVendGoodbyes
   - type: Sprite
     sprite: Structures/Machines/VendingMachines/genedrobe.rsi
     layers:
@@ -1856,6 +1948,8 @@
     normalState: normal-unshaded
   - type: Advertise
     pack: ViroDrobeAds
+  - type: SpeakOnUIClosed
+    pack: GenericVendGoodbyes
   - type: Sprite
     sprite: Structures/Machines/VendingMachines/virodrobe.rsi
     layers:
@@ -1913,6 +2007,7 @@
     denyState: deny-unshaded
     ejectDelay: 1.9
     soundVend: /Audio/Items/bikehorn.ogg
+    initialStockQuality: 1.0 # Nobody knows how Honk does it, but their vending machines always seem well-stocked...
   - type: Sprite
     sprite: Structures/Machines/VendingMachines/happyhonk.rsi
     layers:
@@ -1929,6 +2024,8 @@
     color: "#3c5eb5"
   - type: Advertise
     pack: HappyHonkAds
+  - type: SpeakOnUIClosed
+    pack: HappyHonkGoodbyes
   - type: AccessReader
     access: [["Kitchen"], ["Theatre"]]
 

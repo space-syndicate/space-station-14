@@ -9,6 +9,26 @@
     state: combat_hypo
   - type: GuardianCreator
     guardianProto: MobHoloparasiteGuardian
+# Corvax-HiddenDesc-Start
+  - type: HiddenDescription
+    entries:
+    - label: corvax-hidden-desc-HoloparasiteInjector-syndicate
+      whitelistMind:
+        components:
+          - TraitorRole
+          - NukeOperative
+    - label: corvax-hidden-desc-HoloparasiteInjector-research
+      jobRequired:
+        - ResearchAssistant
+        - ResearchDirector
+        - Scientist
+        - Borg
+    - label: corvax-hidden-desc-IllegalImplants-medical
+      jobRequired:
+        - Paramedic
+        - MedicalDoctor
+        - ChiefMedicalOfficer
+# Corvax-HiddenDesc-End
 
 - type: entity
   name: holoclown injector
@@ -18,6 +38,26 @@
   components:
   - type: GuardianCreator
     guardianProto: MobHoloClownGuardian
+# Corvax-HiddenDesc-Start
+  - type: HiddenDescription 
+    entries:
+    - label: corvax-hidden-desc-HoloClownInjector-syndicate
+      whitelistMind:
+        components:
+          - TraitorRole
+          - NukeOperative
+    - label: corvax-hidden-desc-HoloClownInjector-research
+      jobRequired:
+        - ResearchAssistant
+        - ResearchDirector
+        - Scientist
+        - Borg
+    - label: corvax-hidden-desc-IllegalImplants-medical
+      jobRequired:
+        - Paramedic
+        - MedicalDoctor
+        - ChiefMedicalOfficer
+# Corvax-HiddenDesc-End
 
 - type: entity
   name: magical lamp

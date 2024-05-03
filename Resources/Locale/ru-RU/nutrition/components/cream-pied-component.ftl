@@ -1,2 +1,14 @@
-cream-pied-component-on-hit-by-message = { $thrower } КРЕМировал вас!
-cream-pied-component-on-hit-by-message-others = { $owner } был КРЕМирован { $thrower }!
+cream-pied-component-on-hit-by-message =
+    { GENDER($thrower) ->
+        [male] КРЕМировал
+        [female] КРЕМировала
+        [epicene] КРЕМировали
+       *[neuter] КРЕМировало
+    } вас!
+cream-pied-component-on-hit-by-message-others =
+    { GENDER($thrower) ->
+        [male] КРЕМировал
+        [female] КРЕМировала
+        [epicene] КРЕМировали
+       *[neuter] КРЕМировало
+    } { $owner }!

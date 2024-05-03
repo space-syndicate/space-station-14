@@ -28,6 +28,7 @@
     sprite: Objects/Fun/Darts/dart_red.rsi
     state: icon
   - type: MeleeWeapon
+    wideAnimationRotation: -45
     damage:
       types:
         Piercing: 2
@@ -52,10 +53,10 @@
     solution: melee
   - type: InjectableSolution
     solution: melee
-  - type: SolutionInjectOnCollide
+  - type: SolutionInjectOnEmbed
     transferAmount: 2
+    solution: melee
     blockSlots: OUTERCLOTHING
-    fixtureId: "throw-fixture"
   - type: SolutionTransfer
     maxTransferAmount: 2
   - type: Damageable
@@ -123,12 +124,26 @@
     solutions:
       melee:
         maxVol: 7
-  - type: SolutionInjectOnCollide
+  - type: SolutionInjectOnEmbed
     transferAmount: 7
-    blockSlots: NONE
-    fixtureId: "throw-fixture"
+    solution: melee
   - type: SolutionTransfer
     maxTransferAmount: 7
+# Corvax-HiddenDesc-Start
+  - type: HiddenDescription
+    entries:
+    - label: corvax-hidden-desc-HypoDart-syndicate
+      whitelistMind:
+        components:
+          - TraitorRole
+          - NukeOperative
+    - label: corvax-hidden-desc-HypoDart-research
+      jobRequired:
+        - ResearchAssistant
+        - ResearchDirector
+        - Scientist
+        - Borg
+# Corvax-HiddenDesc-End
 
 - type: entity
   name: dartboard

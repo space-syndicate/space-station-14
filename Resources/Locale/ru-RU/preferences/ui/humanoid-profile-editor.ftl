@@ -19,8 +19,6 @@ humanoid-profile-editor-pronouns-neuter-text = Оно / Его
 humanoid-profile-editor-import-button = Импорт
 humanoid-profile-editor-export-button = Экспорт
 humanoid-profile-editor-save-button = Сохранить
-humanoid-profile-editor-clothing-label = Одежда:
-humanoid-profile-editor-backpack-label = Сумка:
 humanoid-profile-editor-spawn-priority-label = Приоритет спавна:
 humanoid-profile-editor-eyes-label = Цвет глаз:
 humanoid-profile-editor-jobs-tab = Должности
@@ -31,6 +29,7 @@ humanoid-profile-editor-preference-jumpskirt = Юбка-комбинезон
 humanoid-profile-editor-preference-backpack = Рюкзак
 humanoid-profile-editor-preference-satchel = Сумка
 humanoid-profile-editor-preference-duffelbag = Вещмешок
+humanoid-profile-editor-guidebook-button-tooltip = Кликните для получения дополнительной информации
 # Spawn priority
 humanoid-profile-editor-preference-spawn-priority-none = Нет
 humanoid-profile-editor-preference-spawn-priority-arrivals = Зал прибытия

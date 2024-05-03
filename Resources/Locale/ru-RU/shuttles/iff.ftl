@@ -1,5 +1,5 @@
-iff-console-window-title = Система распознавания
-iff-console-show-iff-label = Показать "свой-чужой"
-iff-console-show-vessel-label = Показать судно
+iff-console-window-title = Консоль системы опознавания
+iff-console-show-iff-label = Показ системы опознавания
+iff-console-show-vessel-label = Показ корабля
 iff-console-on = Вкл
 iff-console-off = Выкл

@@ -6,5 +6,5 @@ ent-DefibrillatorEmpty = { ent-Defibrillator }
     .suffix = Пустой
     .desc = { ent-Defibrillator.desc }
 ent-DefibrillatorOneHandedUnpowered = { ent-BaseDefibrillator }
-    .suffix = Одноручный, Разряженный
+    .suffix = Одноручный, Не требует питания
     .desc = { ent-BaseDefibrillator.desc }

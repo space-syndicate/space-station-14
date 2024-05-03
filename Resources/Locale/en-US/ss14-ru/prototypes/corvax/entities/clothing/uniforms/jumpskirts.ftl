@@ -6,3 +6,5 @@ ent-ClothingUniformColorJumpskirtRainbow = rainbow jumpskirt
     .desc = A multi-colored jumpskirt!
 ent-ClothingUniformJumpskirtPsychologist = psychologist suitskirt
     .desc = I don't lose things. I place things in locations which later elude me.
+ent-ClothingUniformJumpskirtSchool = school skirt
+    .desc = Stylish and comfortable school skirt.

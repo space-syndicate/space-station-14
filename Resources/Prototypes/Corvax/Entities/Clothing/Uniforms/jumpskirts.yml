@@ -42,3 +42,14 @@
       sprite: Corvax/Clothing/Uniforms/Jumpskirt/psychologist.rsi
     - type: Clothing
       sprite: Corvax/Clothing/Uniforms/Jumpskirt/psychologist.rsi
+
+- type: entity
+  parent: ClothingUniformSkirtBase
+  id: ClothingUniformJumpskirtSchool
+  name: school skirt
+  description: Stylish and comfortable school skirt.
+  components:
+  - type: Sprite
+    sprite: Corvax/Clothing/Uniforms/Jumpskirt/schoolskirt.rsi
+  - type: Clothing
+    sprite: Corvax/Clothing/Uniforms/Jumpskirt/schoolskirt.rsi

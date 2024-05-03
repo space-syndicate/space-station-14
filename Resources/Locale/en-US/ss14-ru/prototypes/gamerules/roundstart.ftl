@@ -1,5 +1,7 @@
 ent-BaseGameRule = { "" }
     .desc = { "" }
+ent-SubGamemodesRule = { ent-BaseGameRule }
+    .desc = { ent-BaseGameRule.desc }
 ent-DeathMatch31 = { ent-BaseGameRule }
     .desc = { ent-BaseGameRule.desc }
 ent-InactivityTimeRestart = { ent-BaseGameRule }
@@ -7,8 +9,6 @@ ent-InactivityTimeRestart = { ent-BaseGameRule }
 ent-MaxTimeRestart = { ent-BaseGameRule }
     .desc = { ent-BaseGameRule.desc }
 ent-Nukeops = { ent-BaseGameRule }
-    .desc = { ent-BaseGameRule.desc }
-ent-Pirates = { ent-BaseGameRule }
     .desc = { ent-BaseGameRule.desc }
 ent-Traitor = { ent-BaseGameRule }
     .desc = { ent-BaseGameRule.desc }
