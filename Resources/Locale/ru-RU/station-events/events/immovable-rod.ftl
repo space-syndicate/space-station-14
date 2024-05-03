@@ -1,1 +1,1 @@
-station-event-immovable-rod-start-announcement = Что это было, мать вашу?!?
+station-event-immovable-rod-start-announcement = Какого хрена это было?!?
