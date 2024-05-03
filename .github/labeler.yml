@@ -1,4 +1,4 @@
-﻿"Changes: Sprites":
+"Changes: Sprites":
 - '**/*.rsi/*.png'
 
 "Changes: Map":
@@ -9,7 +9,7 @@
 - '**/*.xaml*'
 
 "Changes: Localization":
-- 'Resources/Locale/**/*.ftl'
+- 'Resources/Locale/ru-RU/corvax/preferences/loadout-groups.ftl'
 
 "No C#":
 - all: ["!**/*.cs"]
