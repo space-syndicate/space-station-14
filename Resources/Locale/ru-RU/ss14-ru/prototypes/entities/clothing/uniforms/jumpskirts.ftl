@@ -120,5 +120,5 @@ ent-ClothingUniformJumpskirtCasualPurple = повседневная фиолет
     .desc = Свободная потёртая фиолетовая рубашка с серой юбкой - идеальный вариант для тех, кто хочет расслабиться.
 ent-ClothingUniformJumpskirtCasualRed = повседневная красная юбка-комбинезон
     .desc = Свободная потёртая красная рубашка с серой юбкой - идеальный вариант для тех, кто хочет расслабиться.
-ent-ClothingUniformJumpskirtOldDress = old dress
-    .desc = A worn-looking dress from a very long time ago.
+ent-ClothingUniformJumpskirtOldDress = старое платье
+    .desc = Очень старое поношенное платье.

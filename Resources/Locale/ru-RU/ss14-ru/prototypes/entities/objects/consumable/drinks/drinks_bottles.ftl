@@ -1,6 +1,6 @@
 ent-DrinkBottlePlasticBaseFull = { ent-DrinkBase }
     .desc = { ent-DrinkBase.desc }
-    .suffix = Full
+    .suffix = Полный
 ent-DrinkBottleGlassBaseFull = { ent-DrinkBottlePlasticBaseFull }
     .desc = { ent-DrinkBottlePlasticBaseFull.desc }
 ent-DrinkBottleVisualsOpenable = { "" }
@@ -73,7 +73,7 @@ ent-DrinkCreamCartonXL = молочные сливки XL
     .desc = Это сливки. Сделанные из молока. Что ещё вы ожидали здесь найти?
 ent-DrinkSugarJug = кувшин сахара
     .desc = Некоторые добавляют его в кофе...
-    .suffix = Для напитков
+    .suffix = Полный, Для напитков
 ent-DrinkLemonLimeJug = кувшин лимон-лайма
     .desc = Двойное цитрусовое удовольствие.
 ent-DrinkMeadJug = кувшин медовухи
