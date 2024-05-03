@@ -11,7 +11,25 @@
   name: loadout-group-iaa-head
   minLimit: 0
   loadouts:
-  - ClothingHeadHatBowlerHat
-  - ClothingHeadHatOutlawHat
-  - ClothingHeadHatTophat
+  - IAAHeadHatBowlerHat
+  - IAAHeadHatOutlawHat
+  - IAAHeadHatTophat
 
+- type: loadoutGroup
+  id: IAAHands
+  name: loadout-group-iaa-hands
+  minLimit: 0
+  loadouts:
+  - IAAHandsGlovesColorWhite
+  - IAAHandsGlovesColorGray
+  - IAAHandsGlovesColorBlack
+  - IAAHandsGlovesColorRed
+  - IAAHandsGlovesColorBlue
+
+- type: loadoutGroup
+  id: IAAShoes
+  name: loadout-group-iaa-shoes
+  minLimit: 1
+  loadouts:
+  - IAAShoesBootsLaceup
+  - IAAShoesColorBlack

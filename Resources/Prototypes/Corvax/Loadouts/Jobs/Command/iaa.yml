@@ -1,0 +1,92 @@
+# Head
+- type: loadout
+  id: IAAHeadHatBowlerHat
+  equipment: IAAHeadHatBowlerHat
+
+- type: startingGear
+  id: IAAHeadHatBowlerHat
+  equipment:
+    head: ClothingHeadHatBowlerHat
+
+- type: loadout
+  id: IAAHeadHatOutlawHat
+  equipment: IAAHeadHatOutlawHat
+
+- type: startingGear
+  id: IAAHeadHatOutlawHat
+  equipment:
+    head: ClothingHeadHatOutlawHat
+
+- type: loadout
+  id: IAAHeadHatTophat
+  equipment: IAAHeadHatTophat
+
+- type: startingGear
+  id: IAAHeadHatTophat
+  equipment:
+    head: ClothingHeadHatTophat
+
+#Hands
+- type: loadout
+  id: IAAHandsGlovesColorWhite
+  equipment: IAAHandsGlovesColorWhite
+
+- type: startingGear
+  id: IAAHandsGlovesColorWhite
+  equipment:
+    gloves: ClothingHandsGlovesColorWhite
+
+- type: loadout
+  id: IAAHandsGlovesColorGray
+  equipment: IAAHandsGlovesColorGray
+
+- type: startingGear
+  id: IAAHandsGlovesColorGray
+  equipment:
+    gloves: ClothingHandsGlovesColorGray
+
+- type: loadout
+  id: IAAHandsGlovesColorBlack
+  equipment: IAAHandsGlovesColorBlack
+
+- type: startingGear
+  id: IAAHandsGlovesColorBlack
+  equipment:
+    gloves: ClothingHandsGlovesColorBlack
+
+- type: loadout
+  id: IAAHandsGlovesColorRed
+  equipment: IAAHandsGlovesColorRed
+
+- type: startingGear
+  id: IAAHandsGlovesColorRed
+  equipment:
+    gloves: ClothingHandsGlovesColorRed
+
+- type: loadout
+  id: IAAHandsGlovesColorBlue
+  equipment: IAAHandsGlovesColorBlue
+
+- type: startingGear
+  id: IAAHandsGlovesColorBlue
+  equipment:
+    gloves: ClothingHandsGlovesColorBlue
+
+#Shoes
+- type: loadout
+  id: IAAShoesBootsLaceup
+  equipment: IAAShoesBootsLaceup
+
+- type: startingGear
+  id: IAAShoesBootsLaceup
+  equipment:
+    shoes: ClothingShoesBootsLaceup
+
+- type: loadout
+  id: IAAShoesColorBlack
+  equipment: IAAShoesColorBlack
+
+- type: startingGear
+  id: IAAShoesColorBlack
+  equipment:
+    shoes: ClothingShoesColorBlack

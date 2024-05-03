@@ -25,3 +25,13 @@
   id: PsychologistDuffel
   equipment:
     back: ClothingBackpackDuffelPsychologistFilled
+
+#Shoes
+- type: loadout
+  id: PsychologistDuffel
+  equipment: PsychologistDuffel
+
+- type: startingGear
+  id: PsychologistDuffel
+  equipment:
+    back: ClothingBackpackDuffelPsychologistFilled
