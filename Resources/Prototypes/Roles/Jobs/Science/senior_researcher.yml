@@ -1,0 +1,28 @@
+- type: job
+  id: SeniorResearcher
+  name: Ведущий учёный
+  description: Обучайте новичков новыми знаниями в этом непростом мире!
+  playTimeTracker: JobSeniorResearcher
+  requirements:
+    - !type:DepartmentTimeRequirement
+      department: Science
+      time: 36000 #10 hrs
+  startingGear: SeniorResearcherGear
+  icon: "JobIconSeniorResearcher"
+  supervisors: job-supervisors-rd
+  access:
+  - Research
+  - Maintenance
+
+- type: startingGear
+  id: SeniorResearcherGear
+  equipment:
+    jumpsuit: ClothingUniformJumpsuitSeniorResearcher
+    back: ClothingBackpackScienceFilled
+    shoes: ClothingShoesColorWhite
+    outerClothing: ClothingOuterCoatLabSeniorResearcher
+    id: SeniorResearcherPDA
+    ears: ClothingHeadsetScience
+  innerClothingSkirt: ClothingUniformJumpskirtSeniorResearcher
+  satchel: ClothingBackpackSatchelScienceFilled
+  duffelbag: ClothingBackpackDuffelScienceFilled
