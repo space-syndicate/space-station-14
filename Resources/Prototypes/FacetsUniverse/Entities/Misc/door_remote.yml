@@ -1,0 +1,16 @@
+- type: entity
+  parent: DoorRemoteDefault
+  id: DoorRemoteDSP
+  name: Пульт управления тюрьмы "Далёкий космос"
+  description: Пульт управления.
+  components:
+  - type: Sprite
+    layers:
+    - state: door_remotebase
+    - state: door_remotelightscolour
+      color: "#cb0000"
+    - state: door_remotescreencolour
+      color: "#830000"
+  - type: Access
+    groups:
+    - DeepSpacePrison

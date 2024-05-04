@@ -1,0 +1,138 @@
+- type: entity
+  parent: BasePDA
+  id: SecurityPilotPDA
+  name: КПК Пилота СБ
+  description: КПК лучшего охранника космоса!
+  components:
+  - type: Pda
+    id: SecurityPilotIDCard
+    state: pda-security
+  - type: PdaBorderColor
+    borderColor: "#A32D26"
+  - type: Icon
+    state: pda-security
+
+- type: entity
+  parent: BasePDA
+  id: OfficerBlueShieldPDA
+  name: КПК Офицера "Синий Щит"
+  description: КПК живого щита...
+  components:
+  - type: Pda
+    id: OfficerBlueShieldIDCard
+    state: pda-obs
+  - type: PdaBorderColor
+    borderColor: "#4099ff"
+  - type: Icon
+    sprite: FacetsUniverse/PDA.rsi
+    state: pda-obs
+
+- type: entity
+  parent: BasePDA
+  id: RoboticistPDA
+  name: КПК Робототехника
+  description: Создание боргов и усовершенствование их, это его забота!
+  components:
+  - type: Pda
+    id: RoboticistIDCard
+    state: pda-science
+  - type: PdaBorderColor
+    borderColor: "#d7d7d0"
+    accentVColor: "#8900c9"
+  - type: Icon
+    state: pda-science
+
+- type: entity
+  parent: BasePDA
+  id: DSPPDA
+  name: КПК Сотрудника тюрьмы "Далёкий космос"
+  description: Синий КПК!
+  components:
+  - type: Pda
+    id: DSPIDCard
+    state: pda-DSP
+  - type: PdaBorderColor
+    borderColor: "#0300a6"
+  - type: Icon
+    sprite: FacetsUniverse/PDA.rsi
+    state: pda-DSP
+
+- type: entity
+  parent: BasePDA
+  id: HoDSPPDA
+  name: КПК Главы тюрьмы "Далёкий космос"
+  description: Синий, а главное главный КПК!
+  components:
+  - type: Pda
+    id: HoDSPIDCard
+    state: pda-HoDSP
+  - type: PdaBorderColor
+    borderColor: "#0300a6"
+  - type: Icon
+    sprite: FacetsUniverse/PDA.rsi
+    state: pda-HoDSP
+
+- type: entity
+  parent: BasePDA
+  id: AnomalistPDA
+  name: КПК Аномалиста
+  description: Этот КПК пережил много аномалий...
+  components:
+  - type: Pda
+    id: AnomalistIDCard
+    state: pda-science
+  - type: PdaBorderColor
+    borderColor: "#d7d7d0"
+    accentVColor: "#8900c9"
+  - type: Icon
+    state: pda-science
+
+- type: entity
+  parent: BasePDA
+  id: BombodelPDA
+  name: КПК Специалиста по взрывчатке
+  description: Новенький КПК для разрушительного гения!
+  components:
+  - type: Pda
+    id: BombodelIDCard
+    state: pda-science
+  - type: PdaBorderColor
+    borderColor: "#d7d7d0"
+    accentVColor: "#8900c9"
+  - type: Icon
+    state: pda-science
+
+- type: entity
+  parent: BasePDA
+  id: XenoarchaeologPDA
+  name: КПК Ксеноархеолога
+  description: КПК умного, с первого взгляда человека :)
+  components:
+  - type: Pda
+    id: XenoarchaeologIDCard
+    state: pda-science
+  - type: PdaBorderColor
+    borderColor: "#d7d7d0"
+    accentVColor: "#8900c9"
+  - type: Icon
+    state: pda-science
+
+- type: entity
+  parent: BasePDA
+  id: MagistratePDA
+  name: КПК Магистрата
+  description: Для самого честного судьи!
+  components:
+  - type: Pda
+    id: MagistrateIDCard
+    state: pda-lawyer
+    penSlot:
+      startingItem: LuxuryPen
+      priority: -1
+      whitelist:
+        tags:
+        - Write
+  - type: PdaBorderColor
+    borderColor: "#6f6192"
+  - type: Icon
+    state: pda-lawyer

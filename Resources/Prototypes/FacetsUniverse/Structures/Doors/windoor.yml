@@ -1,0 +1,19 @@
+- type: entity
+  parent: WindoorSecure
+  id: WindoorSecureNTPLocked
+  name: Раздвижное окно тюрьмы Nanotrasen!
+  description: Супер пупер раздвижное окно!
+  suffix: NTP, Locked
+  components:
+  - type: AccessReader
+    access: [["NanotrasenPrison"]]
+
+- type: entity
+  parent: WindoorSecure
+  id: WindoorSecureHoNTPLocked
+  name: Раздвижное окно главы тюрьмы Nanotrasen!
+  description: Супер пупер раздвижное окно!
+  suffix: HoNTP, Locked
+  components:
+  - type: AccessReader
+    access: [["HoNTP"]]
