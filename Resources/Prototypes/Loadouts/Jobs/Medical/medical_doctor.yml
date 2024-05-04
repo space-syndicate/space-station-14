@@ -1,36 +1,4 @@
-# Senior Time
-- type: loadoutEffectGroup
-  id: SeniorPhysician
-  effects:
-  - !type:JobRequirementLoadoutEffect
-    requirement:
-      !type:RoleTimeRequirement
-      role: JobChemist
-      time: 72000 #20 hrs # Corvax-RoleTime
-  - !type:JobRequirementLoadoutEffect
-    requirement:
-      !type:RoleTimeRequirement
-      role: JobMedicalDoctor
-      time: 72000 #20 hrs # Corvax-RoleTime
-  - !type:JobRequirementLoadoutEffect
-    requirement:
-      !type:DepartmentTimeRequirement
-      department: Medical
-      time: 216000 # 60 hrs
-
 # Head
-
-- type: loadout
-  id: SeniorPhysicianBeret
-  equipment: SeniorPhysicianBeret
-  effects:
-  - !type:GroupLoadoutEffect
-    proto: SeniorPhysician
-
-- type: startingGear
-  id: SeniorPhysicianBeret
-  equipment:
-    head: ClothingHeadHatBeretSeniorPhysician
 
 - type: loadout
   id: MedicalBeret
@@ -97,30 +65,6 @@
     jumpsuit: ClothingUniformJumpskirtMedicalDoctor
 
 - type: loadout
-  id: SeniorPhysicianJumpsuit
-  equipment: SeniorPhysicianJumpsuit
-  effects:
-  - !type:GroupLoadoutEffect
-    proto: SeniorPhysician
-
-- type: startingGear
-  id: SeniorPhysicianJumpsuit
-  equipment:
-    jumpsuit: ClothingUniformJumpsuitSeniorPhysician
-
-- type: loadout
-  id: SeniorPhysicianJumpskirt
-  equipment: SeniorPhysicianJumpskirt
-  effects:
-  - !type:GroupLoadoutEffect
-    proto: SeniorPhysician
-
-- type: startingGear
-  id: SeniorPhysicianJumpskirt
-  equipment:
-    jumpsuit: ClothingUniformJumpskirtSeniorPhysician
-
-- type: loadout
   id: MedicalBlueScrubs
   equipment: MedicalBlueScrubs
 
@@ -185,18 +129,6 @@
   equipment:
     outerClothing: ClothingOuterWinterMed
 
-- type: loadout
-  id: SeniorPhysicianLabCoat
-  equipment: SeniorPhysicianLabCoat
-  effects:
-  - !type:GroupLoadoutEffect
-    proto: SeniorPhysician
-
-- type: startingGear
-  id: SeniorPhysicianLabCoat
-  equipment:
-    outerClothing: ClothingOuterCoatLabSeniorPhysician
-
 # Shoes
 - type: loadout
   id: MedicalWinterBoots
@@ -216,18 +148,6 @@
   id: MedicalDoctorPDA
   equipment:
     id: MedicalPDA
-
-- type: loadout
-  id: SeniorPhysicianPDA
-  equipment: SeniorPhysicianPDA
-  effects:
-  - !type:GroupLoadoutEffect
-    proto: SeniorPhysician
-
-- type: startingGear
-  id: SeniorPhysicianPDA
-  equipment:
-    id: SeniorPhysicianPDA
 
 # Gloves
 - type: loadout
