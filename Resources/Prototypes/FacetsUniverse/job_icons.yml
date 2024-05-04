@@ -1,0 +1,76 @@
+- type: statusIcon
+  parent: JobIcon
+  id: JobIconDetectivered
+  icon:
+    sprite: FacetsUniverse\Job_icons.rsi
+    state: Detectivered
+
+- type: statusIcon
+  parent: JobIcon
+  id: JobIconSecurityPilot
+  icon:
+    sprite: FacetsUniverse\Job_icons.rsi
+    state: PilotSB
+
+- type: statusIcon
+  parent: JobIcon
+  id: JobIconOfficerBlueShield
+  icon:
+    sprite: FacetsUniverse\Job_icons.rsi
+    state: OfficerBlueShield
+
+- type: statusIcon
+  parent: JobIcon
+  id: JobIconHoDSP
+  icon:
+    sprite: FacetsUniverse\Job_icons.rsi
+    state: HoDSP
+
+- type: statusIcon
+  parent: JobIcon
+  id: JobIconDSP
+  icon:
+    sprite: FacetsUniverse\Job_icons.rsi
+    state: DSP
+
+- type: statusIcon
+  parent: JobIcon
+  id: JobIconDSP_doctor
+  icon:
+    sprite: FacetsUniverse\Job_icons.rsi
+    state: DSP_doctor
+
+- type: statusIcon
+  parent: JobIcon
+  id: JobIconDSP_engineer
+  icon:
+    sprite: FacetsUniverse\Job_icons.rsi
+    state: DSP_engineer
+
+- type: statusIcon
+  parent: JobIcon
+  id: JobIconAnomalist
+  icon:
+    sprite: FacetsUniverse\Job_icons.rsi
+    state: Anomalist
+
+- type: statusIcon
+  parent: JobIcon
+  id: JobIconXenoarchaeolog
+  icon:
+    sprite: FacetsUniverse\Job_icons.rsi
+    state: Xenoarchaeolog
+
+- type: statusIcon
+  parent: JobIcon
+  id: JobIconBombodel
+  icon:
+    sprite: FacetsUniverse\Job_icons.rsi
+    state: Bombodel
+
+- type: statusIcon
+  parent: JobIcon
+  id: JobIconMagistrate
+  icon:
+    sprite: FacetsUniverse\Job_icons.rsi
+    state: Magistrate

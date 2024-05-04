@@ -1,0 +1,53 @@
+- type: entity
+  parent: ClothingHeadset
+  id: ClothingHeadsetDeepSpacePrison
+  name: гарнитура тюрьмы "Далёкий космос"
+  description: Гарнитура используемая работниками тюрьмы.
+  components:
+  - type: ContainerFill
+    containers:
+      key_slots:
+      - EncryptionKeyEngineering
+      - EncryptionKeyDeepSpacePrison
+      - EncryptionKeySecurity
+      - EncryptionKeyMedical
+  - type: Sprite
+    sprite: FacetsUniverse\Clothing\headsets\DeepSpacePrison.rsi
+  - type: Clothing
+    sprite: FacetsUniverse\Clothing\headsets\DeepSpacePrison.rsi
+
+- type: entity
+  parent: ClothingHeadsetAlt
+  id: ClothingHeadsetAltDeepSpacePrison
+  name: Полноразмерная гарнитура главы тюрьмы "Далёкий космос"
+  description: Гарнитура властелина коле... тюрьмы Нанотразен.
+  components:
+  - type: ContainerFill
+    containers:
+      key_slots:
+      - EncryptionKeyCentCom
+      - EncryptionKeyEngineering
+      - EncryptionKeyMedical
+      - EncryptionKeySecurity
+      - EncryptionKeyDeepSpacePrison
+  - type: Sprite
+    sprite: FacetsUniverse\Clothing\headsets\DeepSpacePrison.rsi
+  - type: Clothing
+    sprite: FacetsUniverse\Clothing\headsets\DeepSpacePrison.rsi
+
+- type: entity
+  parent: ClothingHeadset
+  id: ClothingHeadsetOBS
+  name: Гарнитура Офицера "Синий Щит"
+  description: Гарнитура защитника глав станции.
+  components:
+  - type: ContainerFill
+    containers:
+      key_slots:
+      - EncryptionKeyCentCom
+      - EncryptionKeyCommon
+      - EncryptionKeyCommand
+  - type: Sprite
+    sprite: Clothing/Ears/Headsets/command.rsi
+  - type: Clothing
+    sprite: Clothing/Ears/Headsets/command.rsi

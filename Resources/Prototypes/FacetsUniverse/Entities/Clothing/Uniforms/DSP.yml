@@ -1,0 +1,43 @@
+- type: entity
+  parent: ClothingUniformBase
+  id: ClothingUniformJumpsuitHoDSP
+  name: комбинезон главы тюрьмы "Далёкий космос"
+  description: Только для главных!
+  components:
+  - type: Sprite
+    sprite: Clothing/Uniforms/Jumpsuit/ert_leader.rsi
+  - type: Clothing
+    sprite: Clothing/Uniforms/Jumpsuit/ert_leader.rsi
+
+- type: entity
+  parent: ClothingUniformBase
+  id: ClothingUniformJumpsuitDSP
+  name: комбинезон офицера тюрьмы "Далёкий космос"
+  description: Только для работников космической тюрьмы!
+  components:
+  - type: Sprite
+    sprite: Clothing/Uniforms/Jumpsuit/ert_security.rsi
+  - type: Clothing
+    sprite: Clothing/Uniforms/Jumpsuit/ert_security.rsi
+
+- type: entity
+  parent: ClothingUniformBase
+  id: ClothingUniformJumpsuitDSPMedic
+  name: комбинезон доктора тюрьмы "Далёкий космос"
+  description: Только для работников космической тюрьмы!
+  components:
+  - type: Sprite
+    sprite: Clothing/Uniforms/Jumpsuit/ert_medic.rsi
+  - type: Clothing
+    sprite: Clothing/Uniforms/Jumpsuit/ert_medic.rsi
+
+- type: entity
+  parent: ClothingUniformBase
+  id: ClothingUniformJumpsuitDSP_engineer
+  name: комбинезон инженера тюрьмы "Далёкий космос"
+  description: Только для работников космической тюрьмы!
+  components:
+  - type: Sprite
+    sprite: Clothing/Uniforms/Jumpsuit/ert_engineer.rsi
+  - type: Clothing
+    sprite: Clothing/Uniforms/Jumpsuit/ert_engineer.rsi

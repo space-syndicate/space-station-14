@@ -1,0 +1,27 @@
+- type: entity
+  name: Печать магистрата
+  parent: RubberStampBase
+  id: RubberStampMagistrate
+  suffix: НЕ МАППИТЬ
+  components:
+    - type: Stamp
+      stampedName: Магистрат
+      stampedColor: "#292929"
+      stampState: "paper_stamp-ok"
+    - type: Sprite
+      sprite: FacetsUniverse\stamps.rsi
+      state: stamp-magistrate
+
+- type: entity
+  name: печать главы космической тюрьмы
+  parent: RubberStampBase
+  id: RubberStampHoDSP
+  suffix: НЕ МАППИТЬ
+  components:
+    - type: Stamp
+      stampedName: Глава космической тюрьмы
+      stampedColor: "#0300A6"
+      stampState: "paper_stamp-cap"
+    - type: Sprite
+      sprite: FacetsUniverse\stamps.rsi
+      state: stamp-hodsp

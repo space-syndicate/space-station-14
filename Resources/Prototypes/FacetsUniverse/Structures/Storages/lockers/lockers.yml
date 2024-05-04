@@ -1,0 +1,60 @@
+# DSP
+- type: entity
+  id: LockerHoDSP
+  parent: LockerBaseSecure
+  name: шкаф главы тюрьмы "Далёкий космос"
+  description: Шкафчик главного в тюрьме!
+  components:
+  - type: Appearance
+  - type: EntityStorageVisuals
+    stateBaseClosed: DSP
+    stateDoorOpen: DSP_open
+    stateDoorClosed: HoDSP_door
+  - type: AccessReader
+    access: [["HoDSP"]]
+
+- type: entity
+  id: LockerDSP
+  parent: LockerBaseSecure
+  name: шкаф тюрьмы "Далёкий космос"
+  description: Шкафчик космической тюрьмы!
+  components:
+  - type: Appearance
+  - type: EntityStorageVisuals
+    stateBaseClosed: DSP
+    stateDoorOpen: DSP_open
+    stateDoorClosed: DSP_door
+  - type: AccessReader
+    access: [["DeepSpacePrison"]]
+
+# OBS
+
+- type: entity
+  id: LockerOBS
+  parent: LockerBaseSecure
+  name: шкаф офицера "Синий Щит"
+  description: Шкафчик телохранителя глав!
+  components:
+  - type: Appearance
+  - type: EntityStorageVisuals
+    stateBaseClosed: OBS
+    stateDoorOpen: OBS_open
+    stateDoorClosed: OBS_door
+  - type: AccessReader
+    access: [["OfficerBlueShield"]]
+
+# Pilot
+
+- type: entity
+  id: LockerSecurityPilot
+  parent: LockerBaseSecure
+  name: шкаф пилота
+  description: Шкаф любителя покорять космос!
+  components:
+  - type: Appearance
+  - type: EntityStorageVisuals
+    stateBaseClosed: sec
+    stateDoorOpen: sec_open
+    stateDoorClosed: sec_door
+  - type: AccessReader
+    access: [["Security"]]

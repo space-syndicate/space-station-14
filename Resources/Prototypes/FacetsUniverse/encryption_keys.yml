@@ -1,0 +1,14 @@
+- type: entity
+  parent: EncryptionKey
+  id: EncryptionKeyDeepSpacePrison
+  name: ключ шифрования тюрьмы "Далёкий космос"
+  description: Ключ шифрования для чательного вставления в вашу гарнитуру!
+  components:
+  - type: EncryptionKey
+    channels:
+    - DeepSpacePrison
+    defaultChannel: DeepSpacePrison
+  - type: Sprite
+    layers:
+    - state: crypt_blue
+    - state: nano_label

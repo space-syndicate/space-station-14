@@ -1,0 +1,33 @@
+- type: entity
+  id: FaceitUniverseNanotrasenStation
+  parent:
+    - BaseStation
+    - StationMiniDSP
+    - BaseStationNews
+    - BaseStationCargo
+    - BaseStationJobsSpawning
+    - BaseStationRecords
+    - BaseStationArrivals
+    - BaseStationGateway
+    - BaseStationShuttles
+    - BaseStationCentcomm
+    - BaseStationEvacuation
+    - BaseStationAlertLevels
+    - BaseStationMagnet
+    - BaseStationExpeditions
+    - BaseStationSiliconLawCrewsimov
+    - BaseStationAllEventsEligible
+    - BaseStationNanotrasen
+  noSpawn: true
+  components:
+    - type: Transform
+
+- type: entity
+  id: StationMiniDSP
+  abstract: true
+  components:
+    - type: GridSpawn
+      groups:
+        deepspaceprison:
+          paths:
+          - /Maps/FaceitUniverse\Prisons\NTPdeepspace_Kotya.yml

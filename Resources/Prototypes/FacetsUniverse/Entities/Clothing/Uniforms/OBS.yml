@@ -1,0 +1,10 @@
+- type: entity
+  parent: ClothingUniformBase
+  id: ClothingUniformJumpsuitOBS
+  name: комбинезон Офицера "Синий Щит"
+  description: Комбинезон живого щита для глав...
+  components:
+  - type: Sprite
+    sprite: Clothing/Uniforms/Jumpsuit/security_blue.rsi
+  - type: Clothing
+    sprite: Clothing/Uniforms/Jumpsuit/security_blue.rsi

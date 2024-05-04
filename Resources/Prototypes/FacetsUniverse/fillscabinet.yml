@@ -1,0 +1,92 @@
+- type: entity
+  id: LockerHoDSPFilled
+  suffix: Заполнен
+  parent: LockerHoDSP
+  components:
+  - type: StorageFill
+    contents:
+      - id: FlashlightSeclite
+      - id: ClothingUniformJumpsuitHoDSP
+      - id: WeaponDisabler
+        prob: 0.3
+      - id: ClothingBeltSecurityFilled
+      - id: Flash
+      - id: ClothingEyesGlassesSunglasses
+      - id: ClothingHeadsetAltNanotrasenPrison
+      - id: ClothingHandsGlovesCombat
+      - id: ClothingShoesBootsJack
+      - id: RubberStampHoDSP
+      - id: HoloprojectorSecurity
+      - id: SecretDocumentsDSP
+      - id: DoorRemoteDSP
+      - id: ClothingEyesHudSecurity
+
+- type: entity
+  id: LockerDSPFilled
+  suffix: Заполнен
+  parent: LockerDSP
+  components:
+  - type: StorageFill
+    contents:
+      - id: FlashlightSeclite
+      - id: ClothingUniformJumpsuitDSP
+      - id: WeaponDisabler
+        prob: 0.3
+      - id: ClothingBeltSecurityFilled
+      - id: Flash
+      - id: ClothingEyesGlassesSunglasses
+      - id: ClothingHeadsetNanotrasenPrison
+      - id: ClothingShoesBootsJack
+      - id: ClothingEyesHudSecurity
+
+- type: entity
+  id: LockerOBSFilled
+  suffix: Заполнен
+  parent: LockerOBS
+  components:
+  - type: StorageFill
+    contents:
+      - id: FlashlightSeclite
+      - id: ClothingUniformJumpsuitOBS
+      - id: ClothingOuterArmorBasic
+      - id: ClothingEyesHudSecurity
+      - id: CombatKnife
+      - id: WeaponPulsePistol
+      - id: TrackingImplanter
+      - id: TrackingImplanter
+      - id: TrackingImplanter
+      - id: TrackingImplanter
+      - id: TrackingImplanter
+      - id: WeaponDisabler
+        prob: 0.3
+      - id: ClothingBeltSecurityFilled
+      - id: Flash
+      - id: ClothingEyesGlassesSunglasses
+      - id: ClothingHeadsetOBS
+      - id: ClothingShoesBootsJack
+      - id: ClothingEyesHudSecurity
+
+- type: entity
+  id: LockerSecurityPilotFilled
+  suffix: Заполнен
+  parent: LockerSecurityPilot
+  components:
+  - type: StorageFill
+    contents:
+      - id: FlashlightSeclite
+        prob: 0.8
+      - id: ClothingBeltSecurityFilled
+      - id: Flash
+        prob: 0.5
+      - id: ClothingEyesGlassesSunglasses
+      - id: OxygenTankFilled
+      - id: WeaponLaserCarbine
+      - id: ClothingHeadsetSecurity
+      - id: ClothingHandsGlovesCombat
+      - id: ClothingShoesBootsJack
+      - id: ClothingOuterCoatJensen
+      - id: ClothingOuterHardsuitSecurity
+      - id: ClothingEyesHudSecurity
+      - id: HandHeldMassScanner
+      - id: HoloprojectorSecurity
+        prob: 0.6

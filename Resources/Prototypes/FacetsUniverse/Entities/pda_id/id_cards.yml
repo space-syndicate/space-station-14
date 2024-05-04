@@ -1,0 +1,158 @@
+- type: entity
+  parent: IDCardStandard
+  id: SecurityPilotIDCard
+  name: ID Карта Пилота СБ
+  description: ID Карта.
+  components:
+  - type: Sprite
+    sprite: FacetsUniverse\id_cards.rsi
+    layers:
+    - state: default
+    - state: idpilotsb
+  - type: PresetIdCard
+    job: SecurityPilot
+  - type: IdCard
+    jobIcon: JobIconSecurityPilot
+
+- type: entity
+  parent: IDCardStandard
+  id: OfficerBlueShieldIDCard
+  name: ID Карта Офицера "Синий Щит"
+  description: ID Карта.
+  components:
+  - type: Sprite
+    sprite: FacetsUniverse\id_cards.rsi
+    layers:
+    - state: centcom
+    - state: idobs
+  - type: Item
+    heldPrefix: blue
+  - type: IdCard
+    jobTitle: Офицер "Синий Щит"
+    jobIcon: JobIconOfficerBlueShield
+
+- type: entity
+  parent: IDCardStandard
+  id: RoboticistIDCard
+  name: ID Карта робототехника
+  description: ID Карта.
+  components:
+  - type: Sprite
+    sprite: Objects\Misc\id_cards.rsi
+    layers:
+    - state: default
+    - state: idroboticist
+  - type: PresetIdCard
+    job: Roboticist
+
+- type: entity
+  parent: IDCardStandard
+  id: DSPIDCard
+  name: ID Карта офицера тюрьмы "Дальний космос"
+  description: ID Карта.
+  components:
+  - type: Sprite
+    sprite: FacetsUniverse\id_cards.rsi
+    layers:
+    - state: default
+    - state: iddsp
+  - type: PresetIdCard
+    job: DSPOfficer
+
+- type: entity
+  parent: IDCardStandard
+  id: HoDSPIDCard
+  name: ID Карта главы тюрьмы "Дальний космос"
+  description: ID Карта.
+  components:
+  - type: Sprite
+    sprite: FacetsUniverse\id_cards.rsi
+    layers:
+    - state: default
+    - state: idhodsp
+  - type: PresetIdCard
+    job: HeadOfDeepSpacePrison
+
+- type: entity
+  parent: IDCardStandard
+  id: DSP_engineerIDCard
+  name: ID Карта инженера тюрьмы "Дальний космос"
+  description: ID Карта.
+  components:
+  - type: Sprite
+    sprite: FacetsUniverse\id_cards.rsi
+    layers:
+    - state: default
+    - state: iddsp_engineer
+  - type: PresetIdCard
+    job: DSPEngineer
+
+- type: entity
+  parent: IDCardStandard
+  id: DSP_doctorIDCard
+  name: ID Карта доктора тюрьмы "Дальний космос"
+  description: ID Карта.
+  components:
+  - type: Sprite
+    sprite: FacetsUniverse\id_cards.rsi
+    layers:
+    - state: default
+    - state: iddsp_doctor
+  - type: PresetIdCard
+    job: DSPDoctor
+
+- type: entity
+  parent: IDCardStandard
+  id: AnomalistIDCard
+  name: ID Карта аномалиста
+  description: ID Карта.
+  components:
+  - type: Sprite
+    sprite: FacetsUniverse\id_cards.rsi
+    layers:
+    - state: default
+    - state: idanomalist
+  - type: PresetIdCard
+    job: Anomalist
+
+- type: entity
+  parent: IDCardStandard
+  id: BombodelIDCard
+  name: ID Карта специалиста по взрывчатке
+  description: ID Карта.
+  components:
+  - type: Sprite
+    sprite: FacetsUniverse\id_cards.rsi
+    layers:
+    - state: default
+    - state: idbombodel
+  - type: PresetIdCard
+    job: Bombodel
+
+- type: entity
+  parent: IDCardStandard
+  id: XenoarchaeologIDCard
+  name: ID Карта ксеноархеологиста
+  description: ID Карта.
+  components:
+  - type: Sprite
+    sprite: FacetsUniverse\id_cards.rsi
+    layers:
+    - state: default
+    - state: idxenoarchaeologist
+  - type: PresetIdCard
+    job: Xenoarchaeolog
+
+- type: entity
+  parent: IDCardStandard
+  id: MagistrateIDCard
+  name: ID Карта Магистрата
+  description: ID Карта.
+  components:
+  - type: Sprite
+    sprite: FacetsUniverse\id_cards.rsi
+    layers:
+    - state: centcom
+    - state: idmagistrate
+  - type: PresetIdCard
+    job: Magistrate
