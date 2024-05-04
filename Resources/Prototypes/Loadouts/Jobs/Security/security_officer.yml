@@ -1,18 +1,3 @@
-# Senior Time
-- type: loadoutEffectGroup
-  id: SeniorOfficer
-  effects:
-  - !type:JobRequirementLoadoutEffect
-    requirement:
-      !type:RoleTimeRequirement
-      role: JobWarden
-      time: 72000 #20 hrs # Corvax-RoleTime
-  - !type:JobRequirementLoadoutEffect
-    requirement:
-      !type:DepartmentTimeRequirement
-      department: Security
-      time: 216000 # 60 hrs
-
 # Head
 - type: loadout
   id: SecurityHelmet
@@ -77,30 +62,6 @@
   id: SecurityJumpskirtGrey
   equipment:
     jumpsuit: ClothingUniformJumpskirtSecGrey
-
-- type: loadout
-  id: SeniorOfficerJumpsuit
-  equipment: SeniorOfficerJumpsuit
-  effects:
-  - !type:GroupLoadoutEffect
-    proto: SeniorOfficer
-
-- type: startingGear
-  id: SeniorOfficerJumpsuit
-  equipment:
-    jumpsuit: ClothingUniformJumpsuitSeniorOfficer
-
-- type: loadout
-  id: SeniorOfficerJumpskirt
-  equipment: SeniorOfficerJumpskirt
-  effects:
-  - !type:GroupLoadoutEffect
-    proto: SeniorOfficer
-
-- type: startingGear
-  id: SeniorOfficerJumpskirt
-  equipment:
-    jumpsuit: ClothingUniformJumpskirtSeniorOfficer
 
 # Back
 - type: loadout
@@ -205,15 +166,3 @@
   id: SecurityPDA
   equipment:
     id: SecurityPDA
-
-- type: loadout
-  id: SeniorOfficerPDA
-  equipment: SeniorOfficerPDA
-  effects:
-  - !type:GroupLoadoutEffect
-    proto: SeniorOfficer
-
-- type: startingGear
-  id: SeniorOfficerPDA
-  equipment:
-    id: SeniorOfficerPDA
