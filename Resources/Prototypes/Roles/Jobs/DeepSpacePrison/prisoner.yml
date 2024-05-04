@@ -1,0 +1,15 @@
+- type: job
+  id: Prisoner
+  name: Заключённый
+  description: Станьте заключённым и сбегите со станции или тюрьмы! Или будьте послушным заключённым.
+  playTimeTracker: JobPrisoner
+  startingGear: PrisonerGear
+  icon: "JobIconPrisoner"
+  supervisors: job-supervisors-everyone
+
+- type: startingGear
+  id: PrisonerGear
+  equipment:
+    jumpsuit: ClothingUniformJumpsuitPrisoner
+    shoes: ClothingShoesColorBlack
+  innerClothingSkirt: ClothingUniformJumpskirtPrisoner

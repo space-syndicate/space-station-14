@@ -1,0 +1,36 @@
+- type: job
+  id: OfficerBlueShield
+  name: Офицер "Синий Щит"
+  description: Делайте всё что угодно, чтобы защитить глав, ведь вы "Живой щит"
+  playTimeTracker: JobOfficerBlueShield
+  requirements:
+    - !type:DepartmentTimeRequirement
+      department: Security
+      time: 54000 #15 hrs
+  startingGear: OfficerBlueShieldGear
+  icon: "JobIconOfficerBlueShield"
+  supervisors: job-supervisors-centcom
+  canBeAntag: false
+  accessGroups:
+  - AllAccess
+  access:
+  - Centcom
+  special:
+  - !type:AddImplantSpecial
+    implants: [ MindShieldImplant ]
+
+- type: startingGear
+  id: OfficerBlueShieldGear
+  equipment:
+    jumpsuit: ClothingUniformJumpsuitOBS
+    back: ClothingBackpackSecurityFilled
+    shoes: ClothingShoesSwat
+    eyes: ClothingEyesGlassesSunglasses
+    head: ClothingHeadHatBeretOBS
+    outerClothing: ClothingOuterArmorBasic
+    id: OfficerBlueShieldPDA
+    ears: ClothingHeadsetOBS
+    belt: ClothingBeltSecurityFilled
+  innerClothingSkirt: ClothingUniformJumpskirtSec
+  satchel: ClothingBackpackSatchelSecurityFilled
+  duffelbag: ClothingBackpackDuffelSecurityFilled

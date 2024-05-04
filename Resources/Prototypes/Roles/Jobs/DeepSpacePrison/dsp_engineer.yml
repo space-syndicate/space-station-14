@@ -1,0 +1,38 @@
+- type: job
+  id: DSPEngineer
+  name: Инженер NTP
+  description: Ремонтируйте и заботьтесь о тюрьме корпорации Нанотразен!
+  playTimeTracker: JobDSPEngineer
+  requirements:
+    - !type:DepartmentTimeRequirement
+      department: Engineering
+      time: 10800 #3 hrs
+    - !type:DepartmentTimeRequirement
+      department: Security
+      time: 10800 #3 hrs
+  startingGear: DSPEngineerGear
+  icon: "JobIconDSP_engineer"
+  supervisors: главе тюрьмы
+  access:
+  - Security
+  - Brig
+  - DeepSpacePrison
+  - Maintenance
+  - Engineering
+  - External
+  - Atmospherics
+
+- type: startingGear
+  id: DSPEngineerGear
+  equipment:
+    jumpsuit: ClothingUniformJumpsuitDSP_engineer
+    back: ClothingBackpackEngineeringFilled
+    shoes: ClothingShoesBootsWork
+    outerClothing: ClothingOuterVestHazard
+    id: DSPPDA
+    eyes: ClothingEyesGlassesMeson
+    belt: ClothingBeltUtilityEngineering
+    ears: ClothingHeadsetDeepSpacePrison
+  innerClothingSkirt: ClothingUniformJumpskirtEngineering
+  satchel: ClothingBackpackSatchelEngineeringFilled
+  duffelbag: ClothingBackpackDuffelEngineeringFilled

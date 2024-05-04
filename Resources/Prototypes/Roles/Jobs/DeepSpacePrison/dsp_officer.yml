@@ -1,0 +1,41 @@
+- type: job
+  id: DSPOfficer
+  name: Офицер тюрьмы "Далёкий космос"
+  description: Бейте заключённых по попе! Унижайте их! Или будьте хорошим надзирателем в космической тюрьме!
+  playTimeTracker: JobDSPOfficer
+  requirements:
+    - !type:DepartmentTimeRequirement
+      department: Security
+      time: 10800 #3 hrs
+  startingGear: DSPOfficerGear
+  icon: "JobIconDSP"
+  supervisors: главе тюрьмы
+  canBeAntag: false
+  access:
+  - DeepSpacePrison
+  - Medical
+  - Engineering
+  - Security
+  - Brig
+  - Maintenance
+  - Service
+  - External
+  special:
+  - !type:AddImplantSpecial
+    implants: [ MindShieldImplant ]
+
+- type: startingGear
+  id: DSPOfficerGear
+  equipment:
+    jumpsuit: ClothingUniformJumpsuitDSP
+    back: ClothingBackpackSecurityFilled
+    shoes: ClothingShoesBootsJack
+    eyes: ClothingEyesGlassesSunglasses
+    outerClothing: ClothingOuterArmorBasic
+    id: DSPPDA
+    ears: ClothingHeadsetDeepSpacePrison
+    belt: ClothingBeltSecurityFilled
+    pocket1: WeaponPistolMk58Nonlethal
+  innerClothingSkirt: ClothingUniformJumpskirtSec
+  satchel: ClothingBackpackSatchelSecurityFilled
+  duffelbag: ClothingBackpackDuffelSecurityFilled

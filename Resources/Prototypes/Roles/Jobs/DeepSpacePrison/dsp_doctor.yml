@@ -1,0 +1,36 @@
+- type: job
+  id: DSPDoctor
+  name: Доктор тюрьмы "Далёкий космос"
+  description: Лечите сотрудников и заключённых в космической тюрьме!
+  playTimeTracker: JobDSPDoctor
+  requirements:
+    - !type:DepartmentTimeRequirement
+      department: Medical
+      time: 10800 #3 hrs
+    - !type:DepartmentTimeRequirement
+      department: Security
+      time: 10800 #3 hrs
+  startingGear: DoctorDSPGear
+  icon: "JobIconDSP_doctor"
+  supervisors: главе тюрьмы
+  access:
+  - Security
+  - Brig
+  - DeepSpacePrison
+  - Medical
+  - Maintenance
+  - Chemistry
+
+- type: startingGear
+  id: DoctorDSPGear
+  equipment:
+    jumpsuit: ClothingUniformJumpsuitDSPMedic
+    back: ClothingBackpackMedicalFilled
+    shoes: ClothingShoesColorWhite
+    outerClothing: ClothingOuterCoatLab
+    id: DSPPDA
+    ears: ClothingHeadsetDeepSpacePrison
+    belt: ClothingBeltMedicalFilled
+  innerClothingSkirt: ClothingUniformJumpskirtMedicalDoctor
+  satchel: ClothingBackpackSatchelMedicalFilled
+  duffelbag: ClothingBackpackDuffelMedicalFilled

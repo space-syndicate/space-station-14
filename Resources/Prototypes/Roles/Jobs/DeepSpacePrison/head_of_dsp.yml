@@ -1,0 +1,52 @@
+- type: job
+  id: HeadOfDeepSpacePrison
+  name: Глава тюрьмы "Далёкий космос"
+  description: Управляйте специальной тюрьмой корпорации Нанотразен для самых опасных преступников!
+  playTimeTracker: JobHeadOfDeepSpacePrison
+  requirements:
+    - !type:RoleTimeRequirement
+      role: JobWarden
+      time: 18000 #5 hrs
+    - !type:DepartmentTimeRequirement
+      department: DeepSpacePrison
+      time: 36000 #10 hrs
+  weight: 10
+  startingGear: HoDSPGear
+  icon: "JobIconHoDSP"
+  requireAdminNotify: true
+  supervisors: job-supervisors-centcom
+  canBeAntag: false
+  access:
+  - HoDSP
+  - DeepSpacePrison
+  - Centcom
+  - Medical
+  - Engineering
+  - Command
+  - Brig
+  - Security
+  - Armory
+  - Maintenance
+  - Service
+  - External
+  special:
+  - !type:AddImplantSpecial
+    implants: [ MindShieldImplant ]
+
+- type: startingGear
+  id: HoDSPGear
+  equipment:
+    jumpsuit: ClothingUniformJumpsuitHoDSP
+    back: ClothingBackpackHOSFilled
+    shoes: ClothingShoesBootsJack
+    outerClothing: ClothingOuterCoatGentle
+    eyes: ClothingEyesGlassesSunglasses
+    head: ClothingHeadHatBeretHoS
+    id: HoDSPPDA
+    gloves: ClothingHandsGlovesCombat
+    ears: ClothingHeadsetAltDeepSpacePrison
+    belt: ClothingBeltSecurityFilled
+    pocket1: WeaponPistolMk58Nonlethal
+  innerClothingSkirt: ClothingUniformJumpskirtHoS
+  satchel: ClothingBackpackSatchelHOSFilled
+  duffelbag: ClothingBackpackDuffelHOSFilled
