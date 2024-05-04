@@ -1,13 +1,3 @@
-# Senior Time
-- type: loadoutEffectGroup
-  id: SeniorResearcher
-  effects:
-  - !type:JobRequirementLoadoutEffect
-    requirement:
-      !type:DepartmentTimeRequirement
-      department: Science
-      time: 216000 #60 hrs
-
 # Head
 
 - type: loadout
@@ -88,30 +78,6 @@
   equipment:
     jumpsuit: ClothingUniformJumpskirtRoboticist
 
-- type: loadout
-  id: SeniorResearcherJumpsuit
-  equipment: SeniorResearcherJumpsuit
-  effects:
-  - !type:GroupLoadoutEffect
-    proto: SeniorResearcher
-
-- type: startingGear
-  id: SeniorResearcherJumpsuit
-  equipment:
-    jumpsuit: ClothingUniformJumpsuitSeniorResearcher
-
-- type: loadout
-  id: SeniorResearcherJumpskirt
-  equipment: SeniorResearcherJumpskirt
-  effects:
-  - !type:GroupLoadoutEffect
-    proto: SeniorResearcher
-
-- type: startingGear
-  id: SeniorResearcherJumpskirt
-  equipment:
-    jumpsuit: ClothingUniformJumpskirtSeniorResearcher
-
 # Back
 - type: loadout
   id: ScientistBackpack
@@ -186,18 +152,6 @@
   equipment:
     outerClothing: ClothingOuterWinterRobo
 
-- type: loadout
-  id: SeniorResearcherLabCoat
-  equipment: SeniorResearcherLabCoat
-  effects:
-  - !type:GroupLoadoutEffect
-    proto: SeniorResearcher
-
-- type: startingGear
-  id: SeniorResearcherLabCoat
-  equipment:
-    outerClothing: ClothingOuterCoatLabSeniorResearcher
-
 # Gloves
 - type: loadout
   id: LatexGloves
@@ -236,15 +190,3 @@
   id: ScientistPDA
   equipment:
     id: SciencePDA
-
-- type: loadout
-  id: SeniorResearcherPDA
-  equipment: SeniorResearcherPDA
-  effects:
-  - !type:GroupLoadoutEffect
-    proto: SeniorResearcher
-
-- type: startingGear
-  id: SeniorResearcherPDA
-  equipment:
-    id: SeniorResearcherPDA
