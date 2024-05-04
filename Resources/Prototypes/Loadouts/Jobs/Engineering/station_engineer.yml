@@ -1,23 +1,3 @@
-# Senior times
-- type: loadoutEffectGroup
-  id: SeniorEngineering
-  effects:
-  - !type:JobRequirementLoadoutEffect
-    requirement:
-      !type:RoleTimeRequirement
-      role: JobAtmosphericTechnician
-      time: 72000 #20 hrs # Corvax-RoleTime
-  - !type:JobRequirementLoadoutEffect
-    requirement:
-      !type:RoleTimeRequirement
-      role: JobStationEngineer
-      time: 72000 #20 hrs # Corvax-RoleTime
-  - !type:JobRequirementLoadoutEffect
-    requirement:
-      !type:DepartmentTimeRequirement
-      department: Engineering
-      time: 216000 # 60 hrs
-
 # Head
 - type: loadout
   id: StationEngineerHardhatYellow
@@ -46,18 +26,6 @@
   equipment:
     head: ClothingHeadHatHardhatRed
 
-- type: loadout
-  id: SeniorEngineerBeret
-  equipment: EngineeringBeret
-  effects:
-  - !type:GroupLoadoutEffect
-    proto: SeniorEngineering
-
-- type: startingGear
-  id: EngineeringBeret
-  equipment:
-    head: ClothingHeadHatBeretEngineering
-
 # Jumpsuit
 - type: loadout
   id: StationEngineerJumpsuit
@@ -85,30 +53,6 @@
   id: StationEngineerHazardsuit
   equipment:
     jumpsuit: ClothingUniformJumpsuitEngineeringHazard
-
-- type: loadout
-  id: SeniorEngineerJumpsuit
-  equipment: SeniorEngineerJumpsuit
-  effects:
-  - !type:GroupLoadoutEffect
-    proto: SeniorEngineering
-
-- type: startingGear
-  id: SeniorEngineerJumpsuit
-  equipment:
-    jumpsuit: ClothingUniformJumpsuitSeniorEngineer
-
-- type: loadout
-  id: SeniorEngineerJumpskirt
-  equipment: SeniorEngineerJumpskirt
-  effects:
-  - !type:GroupLoadoutEffect
-    proto: SeniorEngineering
-
-- type: startingGear
-  id: SeniorEngineerJumpskirt
-  equipment:
-    jumpsuit: ClothingUniformJumpskirtSeniorEngineer
 
 # Back
 - type: loadout
@@ -185,15 +129,3 @@
   id: StationEngineerPDA
   equipment:
     id: EngineerPDA
-
-- type: loadout
-  id: SeniorEngineerPDA
-  equipment: SeniorEngineerPDA
-  effects:
-  - !type:GroupLoadoutEffect
-    proto: SeniorEngineering
-
-- type: startingGear
-  id: SeniorEngineerPDA
-  equipment:
-    id: SeniorEngineerPDA
