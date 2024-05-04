@@ -7,9 +7,9 @@
   components:
   - type: Appearance
   - type: EntityStorageVisuals
-    stateBaseClosed: DSP
-    stateDoorOpen: DSP_open
-    stateDoorClosed: HoDSP_door
+    stateBaseClosed: hos
+    stateDoorOpen: hos_open
+    stateDoorClosed: hos_door
   - type: AccessReader
     access: [["HoDSP"]]
 
@@ -21,9 +21,9 @@
   components:
   - type: Appearance
   - type: EntityStorageVisuals
-    stateBaseClosed: DSP
-    stateDoorOpen: DSP_open
-    stateDoorClosed: DSP_door
+    stateBaseClosed: sec
+    stateDoorOpen: sec_open
+    stateDoorClosed: sec_door
   - type: AccessReader
     access: [["DeepSpacePrison"]]
 
@@ -37,9 +37,9 @@
   components:
   - type: Appearance
   - type: EntityStorageVisuals
-    stateBaseClosed: OBS
-    stateDoorOpen: OBS_open
-    stateDoorClosed: OBS_door
+    stateBaseClosed: obs
+    stateDoorOpen: obs_open
+    stateDoorClosed: obs_door
   - type: AccessReader
     access: [["OfficerBlueShield"]]
 
