@@ -5,10 +5,10 @@
   requirements:
   - !type:DepartmentTimeRequirement
     department: Command
-    time: 72000
+    time: 18000
   - !type:DepartmentTimeRequirement
     department: Security
-    time: 36000
+    time: 18000
   startingGear: IAAGear
   icon: "JobIconIAA"
   supervisors: job-supervisors-centcom
