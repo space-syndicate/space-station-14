@@ -1,4 +1,4 @@
 ent-RadioHandheld = портативная рация
     .desc = Удобная портативная рация.
-ent-RadioHandheldSecurity = security radio
-    .desc = A handy security radio.
+ent-RadioHandheldSecurity = рация охраны
+    .desc = Удобная рация охраны.

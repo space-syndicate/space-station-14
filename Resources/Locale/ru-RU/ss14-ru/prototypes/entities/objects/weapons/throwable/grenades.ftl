@@ -10,8 +10,8 @@ ent-GrenadeFlashEffect = { "" }
 ent-SyndieMiniBomb = минибомба с таймером
     .suffix = Синдикат
     .desc = Аккуратное, стильное взрывное устройство с приятно-потрескивающим таймером, предназначенное сеять хаос и разрушение.
-ent-SelfDestructSeq = Self Destruct
-    .desc = Go out on your own terms!
+ent-SelfDestructSeq = Самоуничтожение
+    .desc = Уйти на своих условиях!
 # Corvax-HiddenDesc-End
 ent-SupermatterGrenade = граната суперматерии
     .desc = Граната, имитирующая расслоение сверхматерии двигателя, притягивает всё в кучу и через некоторое время взрывается.

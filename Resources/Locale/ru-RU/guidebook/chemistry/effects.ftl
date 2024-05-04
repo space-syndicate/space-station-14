@@ -308,9 +308,9 @@ reagent-effect-guidebook-cause-zombie-infection =
     } человека зомби-вирусом
 reagent-effect-guidebook-reduce-rotting =
     { $chance ->
-        [1] Regenerates
-       *[other] regenerate
-    } { NATURALFIXED($time, 3) } { MANY("second", $time) } of rotting
+        [1] Регенерирует
+       *[other] регенерируют
+    } { NATURALFIXED($time, 3) } { MANY("second", $time) } гниения
 reagent-effect-guidebook-innoculate-zombie-infection =
     { $chance ->
         [1] Лечит

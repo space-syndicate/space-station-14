@@ -1,7 +1,7 @@
-metabolism-group-poison = Poison
-metabolism-group-medicine = Medicine
-metabolism-group-narcotic = Narcotic
-metabolism-group-alcohol = Alcohol
-metabolism-group-food = Food
-metabolism-group-drink = Drink
-metabolism-group-gas = Gas
+metabolism-group-poison = Яды
+metabolism-group-medicine = Лекарства
+metabolism-group-narcotic = Наркотики
+metabolism-group-alcohol = Алкоголь
+metabolism-group-food = Пища
+metabolism-group-drink = Напитки
+metabolism-group-gas = Газы
