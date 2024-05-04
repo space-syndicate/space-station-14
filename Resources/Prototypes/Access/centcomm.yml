@@ -1,3 +1,15 @@
 - type: accessLevel
   id: CentralCommand
   name: id-card-access-level-central-command
+
+- type: accessLevel
+  id: DeepSpacePrison
+  name: Тюрьма "Далёкий космос"
+
+- type: accessLevel
+  id: HoDSP
+  name: Глава тюрьмы "Далёкий космос"
+
+- type: accessLevel
+  id: OfficerBlueShield
+  name: Офицер "Синий Щит"
