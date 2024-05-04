@@ -1,0 +1,42 @@
+- type: job
+  id: SecuritySenior
+  name: Инструктор СБ
+  description: Обучайте новичков проведению задержания, ареста и другим механикам СБ!
+  playTimeTracker: JobSecuritySenior
+  requirements:
+    - !type:RoleTimeRequirement
+      role: JobWarden
+      time: 18000 #5 hrs
+    - !type:DepartmentTimeRequirement
+      department: Security
+      time: 72000 #20 hrs
+  startingGear: SecuritySeniorGear
+  icon: "JobIconSeniorOfficer"
+  supervisors: job-supervisors-hos
+  canBeAntag: false
+  access:
+  - Security
+  - Brig
+  - Maintenance
+  - Service
+  - External
+  special:
+  - !type:AddImplantSpecial
+    implants: [ MindShieldImplant ]
+
+- type: startingGear
+  id: SecuritySeniorGear
+  equipment:
+    jumpsuit: ClothingUniformJumpsuitSeniorOfficer
+    back: ClothingBackpackSecurityFilled
+    shoes: ClothingShoesBootsJackSec # Corvax-Resprite-MRP
+    eyes: ClothingEyesGlassesSunglasses
+    head: ClothingHeadHatBeretSecurity
+    outerClothing: ClothingOuterVestArmorSec # Corvax-Resprite
+    id: SeniorOfficerPDA
+    ears: ClothingHeadsetSecurity
+    belt: ClothingBeltSecurityFilled
+    pocket1: WeaponPistolMk58Nonlethal
+  innerClothingSkirt: ClothingUniformJumpskirtSeniorOfficer
+  satchel: ClothingBackpackSatchelSecurityFilled
+  duffelbag: ClothingBackpackDuffelSecurityFilled
