@@ -64,11 +64,11 @@
   components:
   - type: Pda
     id: HoDSPIDCard
-    state: pda-hodsp
+    state: pda-dsp
   - type: PdaBorderColor
     borderColor: "#0300a6"
   - type: Icon
-    state: pda-hodsp
+    state: pda-dsp
 
 - type: entity
   parent: BasePDA
