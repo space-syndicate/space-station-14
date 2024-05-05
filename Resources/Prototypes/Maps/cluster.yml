@@ -2,8 +2,7 @@
   id: Cluster
   mapName: 'Cluster'
   mapPath: /Maps/cluster.yml
-  minPlayers: 10
-  maxPlayers: 35
+  minPlayers: 1
   stations:
     Cluster:
       stationProto: FaceitUniverseNanotrasenStation
