@@ -54,8 +54,7 @@
   - type: PdaBorderColor
     borderColor: "#0300a6"
   - type: Icon
-    sprite: FacetsUniverse/PDA.rsi
-    state: pda-DSP
+    state: pda-dsp
 
 - type: entity
   parent: BasePDA
@@ -69,8 +68,7 @@
   - type: PdaBorderColor
     borderColor: "#0300a6"
   - type: Icon
-    sprite: FacetsUniverse/PDA.rsi
-    state: pda-HoDSP
+    state: pda-hodsp
 
 - type: entity
   parent: BasePDA
