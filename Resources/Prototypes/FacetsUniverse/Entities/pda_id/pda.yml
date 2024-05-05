@@ -50,7 +50,7 @@
   components:
   - type: Pda
     id: DSPIDCard
-    state: pda-DSP
+    state: pda-dsp
   - type: PdaBorderColor
     borderColor: "#0300a6"
   - type: Icon
@@ -64,7 +64,7 @@
   components:
   - type: Pda
     id: HoDSPIDCard
-    state: pda-HoDSP
+    state: pda-hodsp
   - type: PdaBorderColor
     borderColor: "#0300a6"
   - type: Icon
