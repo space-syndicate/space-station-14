@@ -1,0 +1,77 @@
+# Default
+
+- type: entity
+  parent: Airlock
+  id: AirlockDSP
+  name: шлюз
+  description: Умеет открываться и закрываться.
+  suffix: DSP
+  components:
+  - type: Sprite
+    sprite: Structures/Doors/Airlocks/Standard/security.rsi
+
+- type: entity
+  parent: Airlock
+  id: AirlockHoDSP
+  name: шлюз
+  description: Умеет открываться и закрываться.
+  suffix: HoDSP
+  components:
+  - type: Sprite
+    sprite: Structures/Doors/Airlocks/Standard/command.rsi
+  - type: WiresPanelSecurity
+    securityLevel: medSecurity
+
+- type: entity
+  parent: Airlock
+  id: AirlockOBS
+  name: шлюз
+  description: Умеет открываться и закрываться.
+  suffix: ОСЩ
+  components:
+  - type: Sprite
+    sprite: Structures/Doors/Airlocks/Standard/command.rsi
+  - type: WiresPanelSecurity
+    securityLevel: medSecurity
+
+# Glass
+
+- type: entity
+  parent: AirlockGlass
+  id: AirlockDSPGlass
+  name: стеклянный шлюз
+  description: Умеет открываться и закрываться, стеклянный ещё.
+  suffix: DSP
+  components:
+  - type: Sprite
+    sprite: Structures/Doors/Airlocks/Glass/security.rsi
+  - type: PaintableAirlock
+    group: Glass
+
+- type: entity
+  parent: AirlockGlass
+  id: AirlockHoDSPGlass
+  name: стеклянный шлюз
+  description: Умеет открываться и закрываться, стеклянный ещё.
+  suffix: HoDSP
+  components:
+  - type: Sprite
+    sprite: Structures/Doors/Airlocks/Glass/command.rsi
+  - type: PaintableAirlock
+    group: Glass
+  - type: WiresPanelSecurity
+    securityLevel: medSecurity
+
+- type: entity
+  parent: AirlockGlass
+  id: AirlockOBSGlass
+  name: стеклянный шлюз
+  description: Умеет открываться и закрываться, стеклянный ещё.
+  suffix: ОСЩ
+  components:
+  - type: Sprite
+    sprite: Structures/Doors/Airlocks/Glass/command.rsi
+  - type: PaintableAirlock
+    group: Glass
+  - type: WiresPanelSecurity
+    securityLevel: medSecurity

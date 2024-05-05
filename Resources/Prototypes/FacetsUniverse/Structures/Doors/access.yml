@@ -1,0 +1,126 @@
+# Default
+
+- type: entity
+  parent: Airlock
+  id: AirlockDSPLocked
+  name: шлюз
+  description: Умеет открываться и закрываться.
+  suffix: DSP, Locked
+  components:
+  - type: AccessReader
+    access: [["NanotrasenPrison"]]
+  - type: Sprite
+    sprite: Structures/Doors/Airlocks/Standard/security.rsi
+
+
+- type: entity
+  parent: Airlock
+  id: AirlockHoDSPLocked
+  name: шлюз
+  description: Умеет открываться и закрываться.
+  suffix: HoDSP, Locked
+  components:
+  - type: AccessReader
+    access: [["HoDSP"]]
+  - type: Sprite
+    sprite: Structures/Doors/Airlocks/Standard/command.rsi
+  - type: WiresPanelSecurity
+    securityLevel: medSecurity
+
+- type: entity
+  parent: Airlock
+  id: AirlockOBSLocked
+  name: шлюз
+  description: Умеет открываться и закрываться.
+  suffix: ОСЩ, Locked
+  components:
+  - type: AccessReader
+    access: [["OfficerBlueShield"]]
+  - type: Sprite
+    sprite: Structures/Doors/Airlocks/Standard/command.rsi
+  - type: WiresPanelSecurity
+    securityLevel: medSecurity
+
+# Glass
+
+- type: entity
+  parent: AirlockGlass
+  id: AirlockDSPGlassLocked
+  name: стеклянный шлюз
+  description: Умеет открываться и закрываться, стеклянный ещё.
+  suffix: DSP, Locked
+  components:
+  - type: AccessReader
+    access: [["DeepSpacePrison"]]
+  - type: Sprite
+    sprite: Structures/Doors/Airlocks/Glass/security.rsi
+
+- type: entity
+  parent: AirlockGlass
+  id: AirlockHoDSPGlassLocked
+  name: стеклянный шлюз
+  description: Умеет открываться и закрываться, стеклянный ещё.
+  suffix: HoDSP, Locked
+  components:
+  - type: AccessReader
+    access: [["HoDSP"]]
+  - type: Sprite
+    sprite: Structures/Doors/Airlocks/Glass/command.rsi
+  - type: WiresPanelSecurity
+    securityLevel: medSecurity
+
+- type: entity
+  parent: AirlockGlass
+  id: AirlockOBSGlassLocked
+  name: стеклянный шлюз
+  description: Умеет открываться и закрываться, стеклянный ещё.
+  suffix: ОСЩ, Locked
+  components:
+  - type: AccessReader
+    access: [["OfficerBlueShield"]]
+  - type: Sprite
+    sprite: Structures/Doors/Airlocks/Glass/command.rsi
+  - type: WiresPanelSecurity
+    securityLevel: medSecurity
+
+# maint
+
+- type: entity
+  parent: Airlock
+  id: AirlockDSPmaintLocked
+  name: шлюз
+  description: Умеет открываться и закрываться.
+  suffix: DSP, Locked
+  components:
+  - type: AccessReader
+    access: [["DeepSpacePrison"]]
+  - type: Sprite
+    sprite: Structures/Doors/Airlocks/Standard/maint.rsi
+
+- type: entity
+  parent: Airlock
+  id: AirlockHoDSPmaintLocked
+  name: шлюз
+  description: Умеет открываться и закрываться.
+  suffix: HoDSP, Locked
+  components:
+  - type: AccessReader
+    access: [["HoDSP"]]
+  - type: Sprite
+    sprite: Structures/Doors/Airlocks/Standard/maint.rsi
+  - type: WiresPanelSecurity
+    securityLevel: medSecurity
+
+- type: entity
+  parent: Airlock
+  id: AirlockOBSmaintLocked
+  name: шлюз
+  description: Умеет открываться и закрываться.
+  suffix: ОСЩ, Locked
+  components:
+  - type: AccessReader
+    access: [["OfficerBlueShield"]]
+  - type: Sprite
+    sprite: Structures/Doors/Airlocks/Standard/maint.rsi
+  - type: WiresPanelSecurity
+    securityLevel: medSecurity
