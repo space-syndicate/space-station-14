@@ -5,7 +5,7 @@
   minPlayers: 55
   stations:
     Delta:
-      stationProto: FaceitUniverseNanotrasenStation
+      stationProto: StandardNanotrasenStation
       components:
         - type: StationNameSetup
           mapNameTemplate: '{0} Дельта {1}'
