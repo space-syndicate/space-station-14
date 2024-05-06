@@ -248,6 +248,12 @@ flavor-complex-gin-tonic = как крепкая газировка с лимо�
 flavor-complex-screwdriver = как крепкий апельсиновый сок
 flavor-complex-cogchamp = как латунь
 flavor-complex-themartinez = как фиалки и лимонная водка
+flavor-complex-vodka-red-bool = like a heart attack
+flavor-complex-irish-bool = caffine and Ireland
+flavor-complex-xeno-basher = like killing bugs
+flavor-complex-budget-insuls-drink = like door hacking
+flavor-complex-watermelon-wakeup = like a sweet wakeup call
+flavor-complex-rubberneck = like synthetics
 flavor-complex-irish-car-bomb = как шипучая пенка колы
 
 ### This is exactly what pilk tastes like. I'm not even joking. I might've been a little drunk though
