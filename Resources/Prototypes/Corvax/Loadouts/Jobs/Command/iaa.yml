@@ -1,74 +1,74 @@
 # Head
 - type: loadout
-  id: IAAHeadHatBowlerHat
-  equipment: IAAHeadHatBowlerHat
+  id: IAAHatBowlerHat
+  equipment: IAAHatBowlerHat
 
 - type: startingGear
-  id: IAAHeadHatBowlerHat
+  id: IAAHatBowlerHat
   equipment:
     head: ClothingHeadHatBowlerHat
 
 - type: loadout
-  id: IAAHeadHatOutlawHat
-  equipment: IAAHeadHatOutlawHat
+  id: IAAHatOutlawHat
+  equipment: IAAHatOutlawHat
 
 - type: startingGear
-  id: IAAHeadHatOutlawHat
+  id: IAAHatOutlawHat
   equipment:
     head: ClothingHeadHatOutlawHat
 
 - type: loadout
-  id: IAAHeadHatTophat
-  equipment: IAAHeadHatTophat
+  id: IAAHatTophat
+  equipment: IAAHatTophat
 
 - type: startingGear
-  id: IAAHeadHatTophat
+  id: IAAHatTophat
   equipment:
     head: ClothingHeadHatTophat
 
 #Hands
 - type: loadout
-  id: IAAHandsGlovesColorWhite
-  equipment: IAAHandsGlovesColorWhite
+  id: IAAGlovesColorWhite
+  equipment: IAAGlovesColorWhite
 
 - type: startingGear
-  id: IAAHandsGlovesColorWhite
+  id: IAAGlovesColorWhite
   equipment:
     gloves: ClothingHandsGlovesColorWhite
 
 - type: loadout
-  id: IAAHandsGlovesColorGray
-  equipment: IAAHandsGlovesColorGray
+  id: IAAGlovesColorGray
+  equipment: IAAGlovesColorGray
 
 - type: startingGear
-  id: IAAHandsGlovesColorGray
+  id: IAAGlovesColorGray
   equipment:
     gloves: ClothingHandsGlovesColorGray
 
 - type: loadout
-  id: IAAHandsGlovesColorBlack
-  equipment: IAAHandsGlovesColorBlack
+  id: IAAGlovesColorBlack
+  equipment: IAAGlovesColorBlack
 
 - type: startingGear
-  id: IAAHandsGlovesColorBlack
+  id: IAAGlovesColorBlack
   equipment:
     gloves: ClothingHandsGlovesColorBlack
 
 - type: loadout
-  id: IAAHandsGlovesColorRed
-  equipment: IAAHandsGlovesColorRed
+  id: IAAGlovesColorRed
+  equipment: IAAGlovesColorRed
 
 - type: startingGear
-  id: IAAHandsGlovesColorRed
+  id: IAAGlovesColorRed
   equipment:
     gloves: ClothingHandsGlovesColorRed
 
 - type: loadout
-  id: IAAHandsGlovesColorBlue
-  equipment: IAAHandsGlovesColorBlue
+  id: IAAGlovesColorBlue
+  equipment: IAAGlovesColorBlue
 
 - type: startingGear
-  id: IAAHandsGlovesColorBlue
+  id: IAAGlovesColorBlue
   equipment:
     gloves: ClothingHandsGlovesColorBlue
 

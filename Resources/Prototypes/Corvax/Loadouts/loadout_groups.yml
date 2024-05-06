@@ -6,25 +6,26 @@
   - PsychologistSatchel
   - PsychologistDuffel
 
+#IAA
 - type: loadoutGroup
   id: IAAHead
   name: loadout-group-iaa-head
   minLimit: 0
   loadouts:
-  - IAAHeadHatBowlerHat
-  - IAAHeadHatOutlawHat
-  - IAAHeadHatTophat
+  - IAAHatBowlerHat
+  - IAAHatOutlawHat
+  - IAAHatTophat
 
 - type: loadoutGroup
   id: IAAHands
   name: loadout-group-iaa-hands
   minLimit: 0
   loadouts:
-  - IAAHandsGlovesColorWhite
-  - IAAHandsGlovesColorGray
-  - IAAHandsGlovesColorBlack
-  - IAAHandsGlovesColorRed
-  - IAAHandsGlovesColorBlue
+  - IAAGlovesColorWhite
+  - IAAGlovesColorGray
+  - IAAGlovesColorBlack
+  - IAAGlovesColorRed
+  - IAAGlovesColorBlue
 
 - type: loadoutGroup
   id: IAAShoes
