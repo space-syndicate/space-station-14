@@ -8,13 +8,16 @@
     Ishimura:
       stationProto: StandardNanotrasenStation
       components:
+        - type: StationRandomTransform
+          enableStationRotation: false
+          maxStationOffset: null
         - type: StationNameSetup
           mapNameTemplate: '{0} USG Ishimura {1}'
           nameGenerator:
             !type:NanotrasenNameGenerator
             prefixCreator: 'SY'
         - type: StationEmergencyShuttle
-          emergencyShuttlePath: /Maps/Shuttles/corvax_emergency.yml
+          emergencyShuttlePath: /Maps/Shuttles/emergency_omega.yml
         - type: StationJobs
           overflowJobs:
             - Passenger
@@ -25,11 +28,11 @@
             Botanist: [ 3, 3 ]
             Chef: [ 2, 2 ]
             Clown: [ 1, 1 ]
-            Janitor: [ 1, 1 ]
+            Janitor: [ 2, 2 ]
             Mime: [ 1, 1 ]
             Captain: [ 1, 1 ]
             IAA: [ 1, 1 ]
-            Reporter: [ 2, 2 ]
+            Reporter: [ 1, 1 ]
             HeadOfPersonnel: [ 1, 1 ]
             ChiefEngineer: [ 1, 1 ]
             StationEngineer: [ 4, 4 ]
@@ -48,7 +51,7 @@
             Musician: [ 1, 1 ]
             AtmosphericTechnician: [ 3, 3 ]
             TechnicalAssistant: [ 2, 2 ]
-            ResearchAssistant: [ 1, 2 ]
+            ResearchAssistant: [ 2, 2 ]
             MedicalIntern: [ 2, 2 ]
             ServiceWorker: [ 2, 2 ]
             SecurityCadet: [ 2, 2 ]
