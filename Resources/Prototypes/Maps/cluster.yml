@@ -5,7 +5,7 @@
   minPlayers: 0
   stations:
     Cluster:
-      stationProto: FaceitUniverseNanotrasenStation
+      stationProto: StandardNanotrasenStation
       components:
         - type: StationEmergencyShuttle
           emergencyShuttlePath: /Maps/Shuttles/emergency_transit.yml
