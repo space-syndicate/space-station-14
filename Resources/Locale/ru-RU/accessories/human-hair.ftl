@@ -55,6 +55,7 @@ marking-HumanHairCornrows2 = Корнроу 2
 marking-HumanHairCornrowbun = Корнроу (Пучок)
 marking-HumanHairCornrowbraid = Корнроу (Косичка)
 marking-HumanHairCornrowtail = Корнроу (Хвостик)
+marking-HumanHairSpookyLong = Длинная (Зловещая)
 marking-HumanHairCrewcut = Крю-кат
 marking-HumanHairCrewcut2 = Крю-кат 2
 marking-HumanHairCurls = Завитки

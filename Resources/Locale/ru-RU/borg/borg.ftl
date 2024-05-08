@@ -1,5 +1,5 @@
 borg-player-not-allowed = Мозг не помещается!
-borg-player-not-allowed-eject = Мозг был извлечен из корпуса!
+borg-player-not-allowed-eject = Мозг был извлечён из корпуса!
 borg-panel-not-open = Панель киборга не открыта...
 borg-mind-added = { CAPITALIZE($name) } включается!
 borg-mind-removed = { CAPITALIZE($name) } выключается!

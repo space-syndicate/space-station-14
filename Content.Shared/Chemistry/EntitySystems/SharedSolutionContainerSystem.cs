@@ -57,6 +57,7 @@ public abstract partial class SharedSolutionContainerSystem : EntitySystem
     [Dependency] protected readonly SharedAppearanceSystem AppearanceSystem = default!;
     [Dependency] protected readonly SharedHandsSystem Hands = default!;
     [Dependency] protected readonly SharedContainerSystem ContainerSystem = default!;
+    [Dependency] protected readonly MetaDataSystem MetaData = default!;
 
     public override void Initialize()
     {
@@ -732,7 +733,7 @@ public abstract partial class SharedSolutionContainerSystem : EntitySystem
             return;
         }
 
-        if (!CanSeeHiddenSolution(entity,args.Examiner))
+        if (!CanSeeHiddenSolution(entity, args.Examiner))
             return;
 
         var primaryReagent = solution.GetPrimaryReagentId();
@@ -831,7 +832,7 @@ public abstract partial class SharedSolutionContainerSystem : EntitySystem
             return;
         }
 
-        if (!CanSeeHiddenSolution(entity,args.User))
+        if (!CanSeeHiddenSolution(entity, args.User))
             return;
 
         var target = args.Target;
@@ -879,6 +880,9 @@ public abstract partial class SharedSolutionContainerSystem : EntitySystem
                 , ("color", proto.SubstanceColor.ToHexNoAlpha())
                 , ("amount", quantity)));
         }
+
+        msg.PushNewline();
+        msg.AddMarkup(Loc.GetString("scannable-solution-temperature", ("temperature", Math.Round(solution.Temperature))));
 
         return msg;
     }

@@ -12,7 +12,7 @@ ent-ToolboxElectricalTurret = электротехнический ящик дл
 ent-ToolboxArtistic = художественный ящик для инструментов
     .desc = Ящик для инструментов, в котором обычно хранятся художественные принадлежности.
 # Corvax-HiddenDesc-Start
-ent-ToolboxSyndicate = черный ящик для инструментов
+ent-ToolboxSyndicate = чёрный ящик для инструментов
     .suffix = Синдикат
     .desc = Зловеще выглядящий ящик для инструментов. Кто знает, что может храниться в нем..?
 # Corvax-HiddenDesc-End

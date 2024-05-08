@@ -8,4 +8,4 @@ traitor-death-match-redemption-component-interact-using-no-pda-in-pocket-message
 traitor-death-match-redemption-component-interact-using-tampering-detected = "ОБНАРУЖЕНО НЕСАНКЦИОНИРОВАННОЕ ПРОНИКНОВЕНИЕ (0101)"
 traitor-death-match-redemption-component-interact-using-user-no-uplink-account-message = "КПК ПОЛЬЗОВАТЕЛЯ НЕ ИМЕЕТ АККАУНТА АПЛИНКА (0102)"
 traitor-death-match-redemption-component-interact-using-victim-no-uplink-account-message = "КПК ПОЛЬЗОВАТЕЛЯ НЕ ИМЕЕТ АККАУНТА АПЛИНКА (0108)"
-traitor-death-match-redemption-component-interact-using-success-message = Машина играет веселую мелодию и выводит сообщение: "УСПЕХ: { $tcAmount } ТК ПЕРЕДАНО"
+traitor-death-match-redemption-component-interact-using-success-message = Машина играет весёлую мелодию и выводит сообщение: "УСПЕХ: { $tcAmount } ТК ПЕРЕДАНО"
