@@ -64,3 +64,5 @@ ent-ComputerMassMedia = news manager console
 ent-ComputerSensorMonitoring = sensor monitoring computer
     .desc = A flexible console for monitoring all kinds of sensors.
     .suffix = TESTING, DO NOT MAP
+ent-ComputerRoboticsControl = robotics control console
+    .desc = Used to remotely monitor, disable and destroy the station's cyborgs.
