@@ -1,0 +1,49 @@
+{
+  "version": 1,
+  "size": {
+    "x": 32,
+    "y": 32
+  },
+  "states": [
+    {
+      "name": "torso_male",
+      "directions": 4
+    },
+    {
+      "name": "torso_female",
+      "directions": 4
+    },
+    {
+      "name": "left_arm",
+      "directions": 4
+    },
+    {
+      "name": "left_hand",
+      "directions": 4
+    },
+    {
+      "name": "right_arm",
+      "directions": 4
+    },
+    {
+      "name": "right_hand",
+      "directions": 4
+    },
+    {
+      "name": "left_leg",
+      "directions": 4
+    },
+    {
+      "name": "left_foot",
+      "directions": 4
+    },
+    {
+      "name": "right_foot",
+      "directions": 4
+    },
+    {
+      "name": "right_leg",
+      "directions": 4
+   }
+  ]
+}

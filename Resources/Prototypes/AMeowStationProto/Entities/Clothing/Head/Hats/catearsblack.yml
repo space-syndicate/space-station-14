@@ -1,0 +1,15 @@
+- type: entity
+  parent: ClothingHeadBase
+  id: ClothingHeadHatCatEarsBlack
+  name: Чёрные Кошачьи Ушки
+  description: "НЯЯ!"
+  components:
+  - type: Tag
+    tags: # ignore "WhitelistChameleon" tag
+      - DroneUsable
+  - type: Sprite
+    sprite: AMeowStat/Clothing/Head/Hats/catearsblack.rsi
+  - type: Clothing
+    sprite: AMeowStat/Clothing/Head/Hats/catearsblack.rsi
+  - type: AddAccentClothing
+    accent: OwOAccent

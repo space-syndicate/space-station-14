@@ -1,0 +1,55 @@
+- type: entity
+  name: Фурри Мясо
+  parent: FoodMeatRawBase
+  id: FoodMeatFurry
+  description: Мясо из представителей Фурри!
+  components:
+  - type: Sprite
+    sprite: AMeowStat/Object/Consumable/Food/furrymeat.rsi
+    state: furry_meat
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        reagents:
+        - ReagentId: UncookedAnimalProteins
+          Quantity: 9
+        - ReagentId: Fat
+          Quantity: 9
+  - type: SliceableFood
+    count: 3
+    slice: FoodMeatCutlet
+  - type: InternalTemperature
+    conductivity: 0.41
+  - type: Construction
+    graph: FurrySteak
+    node: start
+    defaultTarget: cooked furry
+
+- type: entity
+  name: Приготовленное Фурри мясо.
+  parent: FoodMeatBase
+  id: FoodMeatFurryCooked
+  description: Стейк из вкуснейших Фурри.
+  components:
+  - type: Tag
+    tags:
+    - Cooked
+    - Meat
+  - type: Sprite
+    sprite: AMeowStat/Object/Consumable/Food/furrymeat.rsi
+    layers:
+    - state: furry_meat_cooked
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        reagents:
+        - ReagentId: Nutriment
+          Quantity: 5
+        - ReagentId: Protein
+          Quantity: 5
+  - type: SliceableFood
+    count: 3
+    slice: FoodMeatChickenCutletCooked
+  - type: Construction
+    graph: FurrySteak
+    node: cooked furry

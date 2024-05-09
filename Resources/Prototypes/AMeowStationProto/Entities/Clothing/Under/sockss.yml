@@ -1,0 +1,43 @@
+- type: entity
+  parent: ClothingShoesBase
+  id: ClothingUnderSocksBlueFurry
+  name: Синие Чулочки
+  description: Чулочки для настоящих фурри UwU
+  components:
+  - type: Sprite
+    sprite: AMeowStat/Clothing/Under/stockingsblue.rsi
+  - type: Clothing
+    sprite: AMeowStat/Clothing/Under/stockingsblue.rsi
+
+- type: entity
+  parent: ClothingShoesBase
+  id: ClothingUnderSocksGreenFurry
+  name: Чёрные Чулочки
+  description: Чулочки для настоящих фурри UwU
+  components:
+  - type: Sprite
+    sprite: AMeowStat/Clothing/Under/stockingsblack.rsi
+  - type: Clothing
+    sprite: AMeowStat/Clothing/Under/stockingsblack.rsi
+
+- type: entity
+  parent: ClothingShoesBase
+  id: ClothingUnderSocksRedFurry
+  name: Белые Чулочки
+  description: Чулочки для настоящих фурри UwU
+  components:
+  - type: Sprite
+    sprite: AMeowStat/Clothing/Under/stockingswhite.rsi
+  - type: Clothing
+    sprite: AMeowStat/Clothing/Under/stockingswhite.rsi
+
+- type: entity
+  parent: ClothingShoesBase
+  id: ClothingUnderSocksPurpleFurry
+  name: Розовенькие Чулочки
+  description: Чулочки для настоящих фурри UwU
+  components:
+  - type: Sprite
+    sprite: AMeowStat/Clothing/Under/stockingspink.rsi
+  - type: Clothing
+    sprite: AMeowStat/Clothing/Under/stockingspink.rsi

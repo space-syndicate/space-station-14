@@ -1,0 +1,34 @@
+#Скафандр ЦК
+- type: entity
+  parent: ClothingOuterHardsuitSyndie
+  id: ClothingOuterHardsuitCentCom
+  name: Скафандр Центрального Командования
+  description: Его носят высокопоставленные члены Центрального Командования.
+  components:
+  - type: Sprite
+    sprite: AMeowStat/Clothing/OuterClothing/Hardsuits/centcomsuit.rsi
+  - type: Clothing
+    sprite: AMeowStat/Clothing/OuterClothing/Hardsuits/centcomsuit.rsi
+  - type: ToggleableClothing
+    clothingPrototype: ClothingHeadHelmetHardsuitCentCom
+
+- type: entity
+  parent: ClothingHeadHelmetHardsuitSyndie
+  id: ClothingHeadHelmetHardsuitCentCom
+  name: Шлем Скафандра Центрального Командования
+  description: Шлем Скафандра Центрального Командования.
+  components:
+  - type: BreathMask
+  - type: Sprite
+    sprite: AMeowStat/Clothing/Head/Hardsuits-helmet/centcomhelmet.rsi
+  - type: Clothing
+    sprite: AMeowStat/Clothing/Head/Hardsuits-helmet/centcomhelmet.rsi
+  - type: PointLight
+    color: yellow # Corvax-Resprite
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.8
+        Slash: 0.9
+        Piercing: 0.8
+        Heat: 0.9

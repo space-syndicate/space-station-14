@@ -1,0 +1,77 @@
+- type: entity
+  name: Печать доработать документ
+  parent: RubberStampBase
+  id: RubberStampUpdateDocument
+  suffix: Адмемы
+  components:
+  - type: Stamp
+    stampedName: Хуйня, переделывай
+    stampedColor: "#006600"
+    stampState: "paper_stamp-centcom"
+  - type: Sprite
+    state: stamp-ok
+
+- type: entity
+  name: Печать не по форме
+  parent: RubberStampBase
+  id: RubberStampNotShape
+  suffix: Адмемы
+  components:
+  - type: Stamp
+    stampedName: Не по форме
+    stampedColor: "#008000"
+    stampState: "paper_stamp-centcom"
+  - type: Sprite
+    state: stamp-ok
+
+- type: entity
+  name: Печать слава НТ
+  parent: RubberStampBase
+  id: RubberStampSlavaNT
+  suffix: Адмемы
+  components:
+  - type: Stamp
+    stampedName: Слава НТ!
+    stampedColor: "#3681bb"
+    stampState: "paper_stamp-cap"
+  - type: Sprite
+    state: stamp-cap
+
+- type: entity
+  name: Печать иди далеко
+  parent: RubberStampBase
+  id: RubberStampPoshelDaleko
+  suffix: Адмемы
+  components:
+  - type: Stamp
+    stampedName: Пошёл нахуй
+    stampedColor: "#850000"
+    stampState: "paper_stamp-syndicate"
+  - type: Sprite
+    state: stamp-syndicate
+
+- type: entity
+  name: Печать Social Credit
+  parent: RubberStampBase
+  id: RubberStampSocialCredit
+  suffix: Адмемы
+  components:
+  - type: Stamp
+    stampedName: -100 Social Credit!
+    stampedColor: "#DC143C"
+    stampState: "paper_stamp-syndicate"
+  - type: Sprite
+    state: stamp-syndicate
+
+- type: entity
+  name: Печать Social Credit 2
+  parent: RubberStampBase
+  id: RubberStampSocialCreditTwo
+  suffix: Адмемы
+  components:
+  - type: Stamp
+    stampedName: ЦК забирать ваша феленидка жена и миска унатх!
+    stampedColor: "#DC143C"
+    stampState: "paper_stamp-syndicate"
+  - type: Sprite
+    state: stamp-syndicate

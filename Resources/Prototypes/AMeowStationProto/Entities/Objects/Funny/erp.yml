@@ -1,0 +1,116 @@
+- type: entity
+  parent: BaseItem
+  id: BaseFunny
+  abstract: true
+  components:
+  - type: Item
+    size: Small
+  - type: Sprite
+    sprite: /AMeowStat/Objects/Funy/erp.rsi
+  - type: UseDelay
+    delay: 1.0
+  - type: MeleeWeapon
+    wideAnimationRotation: 180
+    damage:
+      types:
+        Blunt: 0
+  - type: StaticPrice
+    price: 5
+#knot
+- type: entity
+  parent: BaseFunny
+  id: DildoKnotted1
+  components:
+  - type: Sprite
+    state: DildoKnotted1
+
+- type: entity
+  parent: BaseFunny
+  id: DildoKnotted2
+  components:
+  - type: Sprite
+    state: DildoKnotted2
+
+- type: entity
+  parent: BaseFunny
+  id: DildoKnotted3
+  components:
+  - type: Sprite
+    state: DildoKnotted3
+#human
+- type: entity
+  parent: BaseFunny
+  id: DildoHuman1
+  components:
+  - type: Sprite
+    state: DildoHuman1
+
+- type: entity
+  parent: BaseFunny
+  id: DildoHuman2
+  components:
+  - type: Sprite
+    state: DildoHuman2
+
+- type: entity
+  parent: BaseFunny
+  id: DildoHuman3
+  components:
+  - type: Sprite
+    state: DildoHuman3
+#plain
+- type: entity
+  parent: BaseFunny
+  id: DildoPlain1
+  components:
+  - type: Sprite
+    state: DildoPlain1
+
+- type: entity
+  parent: BaseFunny
+  id: DildoPlain2
+  components:
+  - type: Sprite
+    state: DildoPlain2
+
+- type: entity
+  parent: BaseFunny
+  id: DildoPlain3
+  components:
+  - type: Sprite
+    state: DildoPlain3
+#flared
+- type: entity
+  parent: BaseFunny
+  id: DildoFlared1
+  components:
+  - type: Sprite
+    state: DildoFlared1
+
+- type: entity
+  parent: BaseFunny
+  id: DildoFlared2
+  components:
+  - type: Sprite
+    state: DildoFlared2
+
+- type: entity
+  parent: BaseFunny
+  id: DildoFlared3
+  components:
+  - type: Sprite
+    state: DildoFlared3
+
+- type: entity
+  parent: BaseFunny
+  id: DildoFlared4
+  components:
+  - type: Sprite
+    state: DildoFlared4
+
+- type: entity
+  parent: BaseFunny
+  id: DildoFlared5
+  components:
+  - type: Sprite
+    state: DildoFlared5
