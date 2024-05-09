@@ -1,0 +1,10 @@
+- type: entity
+  parent: BaseItem
+  id: SuspiciousBikeHorn
+  name: sus bike horn
+  description: A horn off of a bicycle.
+  components:
+  - type: ChangeSkinColor
+  - type: Sprite
+    sprite: Objects/Fun/bikehorn.rsi
+    state: icon
