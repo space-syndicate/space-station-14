@@ -250,10 +250,12 @@
   name: combat gloves
   description: These tactical gloves are fireproof and shock resistant.
   components:
-  - type: Sprite # Corvax-Resprite
+  - type: Sprite
     sprite: Clothing/Hands/Gloves/combat.rsi
-  - type: Clothing # Corvax-Resprite
+  - type: Clothing
     sprite: Clothing/Hands/Gloves/combat.rsi
+  - type: GloveHeatResistance
+    heatResistance: 1400
   - type: Insulated
   - type: Fiber
     fiberMaterial: fibers-insulative
@@ -348,7 +350,7 @@
     stripTimeReduction: 1.5
     stealthy: true
 # Corvax-HiddenDesc-Start
-  - type: HiddenDescription 
+  - type: HiddenDescription
     entries:
     - label: corvax-hidden-desc-ThievingGloves-syndicate
       whitelistMind:
