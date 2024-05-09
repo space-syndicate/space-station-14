@@ -18,7 +18,7 @@ ghost-roles-window-raffle-in-progress-button =
        *[other] { $players } игроков
     })
 ghost-roles-window-leave-raffle-button =
-    Покинуть лотерею (Осталось { $time }, { $players ->
+    Покинуть (Осталось { $time }, { $players ->
         [one] { $players } игрок
         [few] { $players } игрока
        *[other] { $players } игроков
