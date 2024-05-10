@@ -10,6 +10,17 @@ ghost-target-window-title = Телепорт призрака
 ghost-target-window-current-button = Телепорт в: { $name }
 ghost-target-window-warp-to-most-followed = Warp to Most Followed
 ghost-roles-window-title = Роли призраков
+ghost-roles-window-join-raffle-button = Join raffle
+ghost-roles-window-raffle-in-progress-button =
+    Join raffle ({ $time } left, { $players ->
+        [one] { $players } player
+       *[other] { $players } players
+    })
+ghost-roles-window-leave-raffle-button =
+    Leave raffle ({ $time } left, { $players ->
+        [one] { $players } player
+       *[other] { $players } players
+    })
 ghost-roles-window-request-role-button = Запросить
 ghost-roles-window-request-role-button-timer = Запросить ({ $time }сек.)
 ghost-roles-window-follow-role-button = Следовать

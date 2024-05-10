@@ -1,5 +1,7 @@
 ent-ProjectileFireball = огненный шар
     .desc = По мнению волшебников явлется средством от всех проблем.
+ent-ProjectileDragonsBreath = dragon's breath
+    .desc = Try not to get toasted.
 ent-ProjectileAnomalyFireball = огненный шар
     .desc = Парящий сгусток пламени.
 ent-ProjectilePolyboltBase = { ent-BaseBullet }
