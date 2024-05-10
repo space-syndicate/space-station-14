@@ -22,7 +22,7 @@ traitor-death-match-end-round-description-entry = КПК { $originalName }, с {
 
 # TraitorRole
 traitor-role-greeting =
-    Вы - агент, направленный { $corporation } по заданию Синдиката.
+    Вы - агент { $corporation } на задании Синдиката.
     Ваши цели и кодовые слова перечислены в меню персонажа.
     Воспользуйтесь аплинком, встроенным в ваш КПК, чтобы приобрести всё необходимое для выполнения работы.
     Смерть Nanotrasen!
