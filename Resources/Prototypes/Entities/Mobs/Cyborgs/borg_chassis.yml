@@ -248,8 +248,6 @@
   - type: FootstepModifier
     footstepSoundCollection:
       collection: FootstepHoverBorg
-      params:
-        volume: -6
   - type: TTS # Corvax-TTS
     voice: TrainingRobot
 
