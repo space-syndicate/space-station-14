@@ -7,6 +7,8 @@ device-frequency-prototype-name-mailing-units = Почтовый блок
 device-frequency-prototype-name-pdas = КПК
 device-frequency-prototype-name-fax = Факс
 device-frequency-prototype-name-basic-device = Базовые устройства
+device-frequency-prototype-name-cyborg-control = Cyborg Control
+device-frequency-prototype-name-robotics-console = Robotics Console
 # prefixes for randomly generated device addresses
 device-address-prefix-vent = Вент-
 device-address-prefix-scrubber = Скр-
