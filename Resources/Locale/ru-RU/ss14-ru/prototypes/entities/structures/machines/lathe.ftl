@@ -1,5 +1,9 @@
 ent-BaseLathe = лат
     .desc = { ent-BaseMachinePowered.desc }
+ent-BaseLatheLube = { ent-BaseLathe }
+    .desc = { ent-BaseLathe.desc }
+ent-BaseHyperlathe = { "" }
+    .desc = { "" }
 ent-Autolathe = автолат
     .desc = Он производит изделия из металла и стекла.
 ent-AutolatheHyperConvection = гиперконвекционный автолат
