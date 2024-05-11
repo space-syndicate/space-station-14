@@ -854,12 +854,12 @@
   - type: Clothing
     sprite: Clothing/OuterClothing/Hardsuits/deathsquad.rsi
   - type: PressureProtection
-    highPressureMultiplier: 0.02
+    highPressureMultiplier: 0.002
     lowPressureMultiplier: 1000
   - type: TemperatureProtection
     coefficient: 0.001
   - type: ExplosionResistance
-    damageCoefficient: 0.2
+    damageCoefficient: 0.1
   - type: Armor
     modifiers:
       coefficients:
@@ -869,10 +869,20 @@
         Heat: 0.1
         Radiation: 0.1
         Caustic: 0.1
-  - type: ClothingSpeedModifier
-    walkModifier: 1.0
-    sprintModifier: 1.0
+  - type: ClothingSpeedModifier #power armor
+    walkModifier: 1.1
+    sprintModifier: 1.1
   - type: HeldSpeedModifier
+  - type: Reflect
+    reflectProb: 0.05
+    innate: true
+    minReflectProb: 0.25
+  - type: PointLight
+    enabled: false
+    radius: 1.5
+    energy: 1.5
+    color: blue
+    netsync: false
   - type: ToggleableClothing
     clothingPrototype: ClothingHeadHelmetHardsuitDeathsquad
 
