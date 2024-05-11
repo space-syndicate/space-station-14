@@ -2,7 +2,7 @@
   id: CorvaxPilgrim
   mapName: 'Pilgrim'
   mapPath: /Maps/corvax_pilgrim.yml
-  minPlayers: 40
+  minPlayers: 0
   stations:
     Pilgrim:
       stationProto: StandardNanotrasenStation
