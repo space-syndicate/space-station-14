@@ -35,7 +35,7 @@
 
 - type: entity
   id: ImmovableRodDespawn
-  suffix: Despawn
+  suffix: Деспавнится
   parent: ImmovableRod
   components:
   - type: TimedDespawn
@@ -44,7 +44,7 @@
 - type: entity
   id: ImmovableRodSlow
   parent: ImmovableRodDespawn
-  suffix: Slow
+  suffix: Медленный
   components:
   - type: ImmovableRod
     minSpeed: 1
@@ -53,7 +53,7 @@
 - type: entity
   parent: ImmovableRodDespawn
   id: ImmovableRodKeepTiles
-  suffix: Keep Tiles
+  suffix: Не ломает пол
   components:
   - type: ImmovableRod
     destroyTiles: false
@@ -89,7 +89,7 @@
 - type: entity
   parent: ImmovableRodKeepTiles
   id: ImmovableRodKeepTilesStill
-  suffix: Keep Tiles, Still
+  suffix: Не ломает пол
   components:
   - type: ImmovableRod
     randomizeVelocity: false
@@ -97,6 +97,7 @@
 - type: entity
   parent: ImmovableRodKeepTilesStill
   id: ImmovableRodMop
+  suffix: Не ломает пол
   name: immovable mop
   description: Hurled like a javelin, with the power of a thousand furious janitors.
   components:
@@ -109,6 +110,7 @@
 - type: entity
   parent: ImmovableRodKeepTilesStill
   id: ImmovableRodShark
+  suffix: Не ломает пол
   name: immovable shark
   description: SHARK TORNADO!
   components:
@@ -121,6 +123,7 @@
 - type: entity
   parent: ImmovableRodKeepTilesStill
   id: ImmovableRodClown
+  suffix: Не ломает пол
   name: immovable clown
   description: Ejected from the neighbouring station one solar system over. HONK!
   components:
@@ -133,6 +136,7 @@
 - type: entity
   parent: ImmovableRodKeepTilesStill
   id: ImmovableRodBanana
+  suffix: Не ломает пол
   name: immovable banana
   description: At least you won't slip on it.
   components:
@@ -144,6 +148,7 @@
 - type: entity
   parent: ImmovableRodKeepTilesStill
   id: ImmovableRodHammer
+  suffix: Не ломает пол
   name: immovable hammer
   description: Bwoink.
   components:
@@ -156,6 +161,7 @@
 - type: entity
   parent: ImmovableRodKeepTilesStill
   id: ImmovableRodThrongler
+  suffix: Не ломает пол
   name: immovable throngler
   description: If you catch it, you can keep it.
   components:
@@ -168,6 +174,7 @@
 - type: entity
   parent: ImmovableRodKeepTilesStill
   id: ImmovableRodGibstick
+  suffix: Не ломает пол
   name: immovable gibstick
   description: What did you expect?
   components:
