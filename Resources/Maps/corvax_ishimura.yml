@@ -18140,7 +18140,7 @@ entities:
       pos: -90.5,16.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -10693.309
+      secondsUntilStateChange: -10832.973
       state: Opening
     - type: DeviceLinkSource
       lastSignals:
@@ -129642,7 +129642,7 @@ entities:
       pos: -34.5,-3.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -6467.778
+      secondsUntilStateChange: -6607.442
       state: Closing
   - uid: 15778
     components:
@@ -153222,6 +153222,18 @@ entities:
     components:
     - type: Transform
       pos: -29.5,-1.5
+      parent: 2
+- proto: SpawnPointBorg
+  entities:
+  - uid: 28292
+    components:
+    - type: Transform
+      pos: -20.5,-16.5
+      parent: 2
+  - uid: 28293
+    components:
+    - type: Transform
+      pos: -18.5,-16.5
       parent: 2
 - proto: SpawnPointBotanist
   entities:
