@@ -2,13 +2,10 @@ using System.Diagnostics.CodeAnalysis;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-using Content.Corvax.Interfaces.Server;
+using Content.Corvax.Interfaces.Shared;
 using Content.Server.Database;
-using Content.Server.Humanoid;
 using Content.Shared.CCVar;
-using Content.Shared.Humanoid.Prototypes;
 using Content.Shared.Preferences;
-using Content.Shared.Roles;
 using Robust.Server.Player;
 using Robust.Shared.Configuration;
 using Robust.Shared.Network;
@@ -31,7 +28,7 @@ namespace Content.Server.Preferences.Managers
         [Dependency] private readonly IPlayerManager _playerManager = default!;
         [Dependency] private readonly IDependencyCollection _dependencies = default!;
         [Dependency] private readonly IPrototypeManager _protos = default!;
-        private IServerSponsorsManager? _sponsors;
+        private ISharedSponsorsManager? _sponsors;
 
         // Cache player prefs on the server so we don't need as much async hell related to them.
         private readonly Dictionary<NetUserId, PlayerPrefData> _cachedPlayerPrefs =
@@ -108,7 +105,7 @@ namespace Content.Server.Preferences.Managers
             var session = _playerManager.GetSessionById(userId);
 
             // Corvax-Sponsors-Start
-            var sponsorPrototypes = _sponsors != null && _sponsors.TryGetPrototypes(session.UserId, out var prototypes)
+            var sponsorPrototypes = _sponsors != null && _sponsors.TryGetServerPrototypes(session.UserId, out var prototypes)
                 ? prototypes.ToArray()
                 : [];
             profile.EnsureValid(session, _dependencies, sponsorPrototypes);
@@ -210,7 +207,7 @@ namespace Content.Server.Preferences.Managers
                     var collection = IoCManager.Instance!;
                     foreach (var (_, profile) in prefs.Characters)
                     {
-                        var sponsorPrototypes = _sponsors != null && _sponsors.TryGetPrototypes(session.UserId, out var prototypes)
+                        var sponsorPrototypes = _sponsors != null && _sponsors.TryGetServerPrototypes(session.UserId, out var prototypes)
                             ? prototypes.ToArray()
                             : [];
                         profile.EnsureValid(session, collection, sponsorPrototypes);
@@ -255,7 +252,7 @@ namespace Content.Server.Preferences.Managers
         private int GetMaxUserCharacterSlots(NetUserId userId)
         {
             var maxSlots = _cfg.GetCVar(CCVars.GameMaxCharacterSlots);
-            var extraSlots = _sponsors?.GetExtraCharSlots(userId) ?? 0;
+            var extraSlots = _sponsors?.GetServerExtraCharSlots(userId) ?? 0;
             return maxSlots + extraSlots;
         }
         // Corvax-Sponsors-End
@@ -324,7 +321,7 @@ namespace Content.Server.Preferences.Managers
             // Clean up preferences in case of changes to the game,
             // such as removed jobs still being selected.
 
-            var sponsorPrototypes = _sponsors != null && _sponsors.TryGetPrototypes(session.UserId, out var prototypes) ? prototypes.ToArray() : []; // Corvax-Sponsors
+            var sponsorPrototypes = _sponsors != null && _sponsors.TryGetServerPrototypes(session.UserId, out var prototypes) ? prototypes.ToArray() : []; // Corvax-Sponsors
             return new PlayerPreferences(prefs.Characters.Select(p =>
             {
                 return new KeyValuePair<int, ICharacterProfile>(p.Key, p.Value.Validated(session, collection, sponsorPrototypes));
