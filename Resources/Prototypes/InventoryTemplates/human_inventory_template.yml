@@ -31,8 +31,8 @@
     - name: socks
       slotTexture: socks
       slotFlags: SOCKS
-      uiWindowPos: 2,2
-      strippingWindowPos: 2,3
+      uiWindowPos: 2,0
+      strippingWindowPos: 2,1
       displayName: Socks
     - name: neck
       slotTexture: neck
