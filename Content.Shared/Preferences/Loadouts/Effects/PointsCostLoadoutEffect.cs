@@ -12,6 +12,7 @@ public sealed partial class PointsCostLoadoutEffect : LoadoutEffect
 
     public override bool Validate(
         RoleLoadout loadout,
+        LoadoutPrototype proto, // Corvax-Sponsors
         ICommonSession session,
         IDependencyCollection collection,
         [NotNullWhen(false)] out FormattedMessage? reason)
