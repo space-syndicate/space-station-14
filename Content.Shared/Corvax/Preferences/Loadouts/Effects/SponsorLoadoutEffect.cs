@@ -31,7 +31,9 @@ public sealed partial class SponsorLoadoutEffect : LoadoutEffect
 
     public List<string> GetPrototypes(ICommonSession session, IDependencyCollection collection)
     {
-        var sponsorsManager = collection.Resolve<ISharedSponsorsManager>();
+        if (!collection.TryResolveType<ISharedSponsorsManager>(out var sponsorsManager))
+            return new List<string>();
+
         var net = collection.Resolve<INetManager>();
 
         if (net.IsClient)
