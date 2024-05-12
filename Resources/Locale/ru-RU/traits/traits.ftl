@@ -1,6 +1,8 @@
 trait-blindness-name = Слепота
 trait-blindness-desc = Вы совершенно слепы и не можете видеть дальше нескольких метров перед собой.
 trait-narcolepsy-name = Нарколепсия
+trait-poor-vision-name = Близорукость
+trait-poor-vision-desc = Ваши глаза уже не те, что раньше, и вы с трудом видите предметы вдали без корректирующих очков.
 trait-narcolepsy-desc = Вас одолевают приступы сонливости
 trait-pacifist-name = Пацифист
 trait-pacifist-desc = Вы не можете нападать и причинять вред живым существам.

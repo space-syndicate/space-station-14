@@ -13,6 +13,6 @@ borg-ui-remove-battery = Извлечь
 borg-ui-modules-label = Модули:
 borg-ui-module-counter = { $actual }/{ $max }
 # Transponder
-borg-transponder-disabled-popup = A brain shoots out the top of { $name }!
-borg-transponder-emagged-disabled-popup = Your transponder's lights go out!
-borg-transponder-emagged-destroyed-popup = Your transponder's fuse blows!
+borg-transponder-disabled-popup = Мозг вылетает из верхушки { $name }!
+borg-transponder-emagged-disabled-popup = Огни вашего транспондера погасли!
+borg-transponder-emagged-destroyed-popup = Предохранитель вашего транспондера перегорел!
