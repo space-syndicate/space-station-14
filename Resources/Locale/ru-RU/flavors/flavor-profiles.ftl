@@ -173,6 +173,7 @@ flavor-complex-light = как угасший свет
 flavor-complex-profits = как прибыль
 flavor-complex-fishops = как страшная рыбья операция
 flavor-complex-violets = как фиалки
+flavor-complex-pyrotton = как горящий рот
 flavor-complex-mothballs = как нафталиновые шарики
 flavor-complex-paint-thinner = как растворитель для краски
 flavor-complex-alcohol = как алкоголь
@@ -247,6 +248,12 @@ flavor-complex-gin-tonic = как крепкая газировка с лимо�
 flavor-complex-screwdriver = как крепкий апельсиновый сок
 flavor-complex-cogchamp = как латунь
 flavor-complex-themartinez = как фиалки и лимонная водка
+flavor-complex-vodka-red-bool = как инфаркт
+flavor-complex-irish-bool = как кофеин и Ирландия
+flavor-complex-xeno-basher = как уничтожение жуков
+flavor-complex-budget-insuls-drink = как взлом шлюза
+flavor-complex-watermelon-wakeup = как сладкое пробуждение
+flavor-complex-rubberneck = как синтетика
 flavor-complex-irish-car-bomb = как шипучая пенка колы
 
 ### This is exactly what pilk tastes like. I'm not even joking. I might've been a little drunk though

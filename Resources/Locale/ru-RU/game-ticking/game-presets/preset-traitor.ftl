@@ -3,6 +3,7 @@
 # Shown at the end of a round of Traitor
 traitor-round-end-agent-name = предатель
 objective-issuer-syndicate = [color=crimson]Синдикат[/color]
+objective-issuer-unknown = Неизвестно
 traitor-round-end-codewords = Кодовыми словами были: [color=White]{ $codewords }[/color].
 traitor-title = Предатели
 traitor-description = Среди нас есть предатели...
@@ -21,7 +22,7 @@ traitor-death-match-end-round-description-entry = КПК { $originalName }, с {
 
 # TraitorRole
 traitor-role-greeting =
-    Вы - агент Синдиката.
+    Вы - агент организации { $corporation } на задании Синдиката.
     Ваши цели и кодовые слова перечислены в меню персонажа.
     Воспользуйтесь аплинком, встроенным в ваш КПК, чтобы приобрести всё необходимое для выполнения работы.
     Смерть Nanotrasen!

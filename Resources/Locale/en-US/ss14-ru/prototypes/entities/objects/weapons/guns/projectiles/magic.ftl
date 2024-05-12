@@ -1,5 +1,7 @@
 ent-ProjectileFireball = fireball
     .desc = You better GITTAH WEIGH.
+ent-ProjectileDragonsBreath = dragon's breath
+    .desc = Try not to get toasted.
 ent-ProjectileAnomalyFireball = fireball
     .desc = Hovering blob of flame.
 ent-ProjectilePolyboltBase = { ent-BaseBullet }
