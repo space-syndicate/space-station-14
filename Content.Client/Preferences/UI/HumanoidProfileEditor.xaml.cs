@@ -10,6 +10,7 @@ using Content.Client.UserInterface.Controls;
 using Content.Client.UserInterface.Systems.Guidebook;
 using Content.Shared.CCVar;
 using Content.Shared.Clothing;
+using Content.Shared.Corvax.CCCVars;
 using Content.Shared.GameTicking;
 using Content.Shared.Humanoid;
 using Content.Shared.Humanoid.Markings;
@@ -152,7 +153,11 @@ namespace Content.Client.Preferences.UI
             // Corvax-TTS-Start
             #region Voice
 
-            InitializeVoice();
+            if (configurationManager.GetCVar(CCCVars.TTSEnabled))
+            {
+                TTSContainer.Visible = true;
+                InitializeVoice();
+            }
 
             #endregion
             // Corvax-TTS-End

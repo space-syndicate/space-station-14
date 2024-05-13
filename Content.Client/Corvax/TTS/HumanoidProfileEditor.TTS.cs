@@ -9,7 +9,7 @@ namespace Content.Client.Preferences.UI;
 public sealed partial class HumanoidProfileEditor
 {
     private ISharedSponsorsManager? _sponsorsMgr;
-    private List<TTSVoicePrototype> _voiceList = default!;
+    private List<TTSVoicePrototype> _voiceList = new();
 
     private void InitializeVoice()
     {
