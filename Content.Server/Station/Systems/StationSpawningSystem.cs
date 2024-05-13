@@ -200,6 +200,7 @@ public sealed class StationSpawningSystem : SharedStationSpawningSystem
                 loadout.SetDefault(_prototypeManager);
             }
 
+<<<<<<< HEAD
             // Order loadout selections by the order they appear on the prototype.
             foreach (var group in loadout.SelectedLoadouts.OrderBy(x => roleProto.Groups.FindIndex(e => e == x.Key)))
             {
@@ -221,6 +222,9 @@ public sealed class StationSpawningSystem : SharedStationSpawningSystem
                     EquipStartingGear(entity.Value, startingGear, raiseEvent: false);
                 }
             }
+=======
+            EquipRoleLoadout(entity.Value, loadout, roleProto);
+>>>>>>> dc6f667e1817af3b05dbfae1f77d31365a34e564
         }
 
         var gearEquippedEv = new StartingGearEquippedEvent(entity.Value);

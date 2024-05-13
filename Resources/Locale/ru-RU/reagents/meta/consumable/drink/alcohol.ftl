@@ -174,6 +174,7 @@ reagent-name-whiskey-soda = виски-содовая
 reagent-desc-whiskey-soda = Невероятно освежающе!
 reagent-name-white-russian = белый русский
 reagent-desc-white-russian = Но это только твоё мнение, чувак.
+<<<<<<< HEAD
 reagent-name-vodka-red-bool = vodka red bool
 reagent-desc-vodka-red-bool = Because heart failure and liver failure go hand in hand.
 reagent-name-xeno-basher = xeno basher
@@ -186,3 +187,17 @@ reagent-name-watermelon-wakeup = watermelon wakeup
 reagent-desc-watermelon-wakeup = If you want to be awake, this will do it... Also sweet.
 reagent-name-rubberneck = rubberneck
 reagent-desc-rubberneck = A popular drink amongst those adhering to an all synthetic diet.
+=======
+reagent-name-vodka-red-bool = водка-ред булеан
+reagent-desc-vodka-red-bool = Потому что сердечная и печёночная недостаточность идут рука об руку.
+reagent-name-xeno-basher = ксенодав
+reagent-desc-xeno-basher = Идеальный напиток перед началом экспедиции.
+reagent-name-irish-bool = ирландский булеан
+reagent-desc-irish-bool = Непереводимая математическая шутка про булеан. Посмейтесь.
+reagent-name-budget-insuls = бюджетные изольки
+reagent-desc-budget-insuls = Любимый напиток тайдера.
+reagent-name-watermelon-wakeup = арбузное пробуждение
+reagent-desc-watermelon-wakeup = Если вы хотите взбодриться, это поможет... Ещё и сладкое.
+reagent-name-rubberneck = раббернек
+reagent-desc-rubberneck = Популярный напиток среди тех, кто придерживается полностью синтетической диеты.
+>>>>>>> dc6f667e1817af3b05dbfae1f77d31365a34e564
