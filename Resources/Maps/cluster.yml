@@ -14605,6 +14605,31 @@ entities:
       rot: -1.5707963267948966 rad
       pos: 3.5,19.5
       parent: 12736
+  - uid: 16793
+    components:
+    - type: Transform
+      pos: 37.5,46.5
+      parent: 1
+  - uid: 16794
+    components:
+    - type: Transform
+      pos: 34.5,46.5
+      parent: 1
+  - uid: 16795
+    components:
+    - type: Transform
+      pos: 32.5,46.5
+      parent: 1
+  - uid: 16796
+    components:
+    - type: Transform
+      pos: 26.5,46.5
+      parent: 1
+  - uid: 16797
+    components:
+    - type: Transform
+      pos: 24.5,46.5
+      parent: 1
 - proto: AtmosFixBlockerMarker
   entities:
   - uid: 7260
