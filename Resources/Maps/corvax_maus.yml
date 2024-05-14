@@ -24934,6 +24934,11 @@ entities:
     - type: Transform
       pos: -12.5,-51.5
       parent: 2
+  - uid: 8111
+    components:
+    - type: Transform
+      pos: -23.5,-0.5
+      parent: 2
   - uid: 8391
     components:
     - type: Transform
@@ -25788,6 +25793,11 @@ entities:
     components:
     - type: Transform
       pos: -73.5,-31.5
+      parent: 2
+  - uid: 11982
+    components:
+    - type: Transform
+      pos: -23.5,0.5
       parent: 2
   - uid: 12296
     components:
@@ -27024,6 +27034,111 @@ entities:
     - type: Transform
       pos: -1.5,-11.5
       parent: 15400
+  - uid: 16437
+    components:
+    - type: Transform
+      pos: -22.5,0.5
+      parent: 2
+  - uid: 16438
+    components:
+    - type: Transform
+      pos: -21.5,0.5
+      parent: 2
+  - uid: 16439
+    components:
+    - type: Transform
+      pos: -20.5,0.5
+      parent: 2
+  - uid: 16440
+    components:
+    - type: Transform
+      pos: -19.5,0.5
+      parent: 2
+  - uid: 16441
+    components:
+    - type: Transform
+      pos: -18.5,0.5
+      parent: 2
+  - uid: 16442
+    components:
+    - type: Transform
+      pos: -17.5,0.5
+      parent: 2
+  - uid: 16443
+    components:
+    - type: Transform
+      pos: -16.5,0.5
+      parent: 2
+  - uid: 16444
+    components:
+    - type: Transform
+      pos: -15.5,0.5
+      parent: 2
+  - uid: 16445
+    components:
+    - type: Transform
+      pos: -14.5,0.5
+      parent: 2
+  - uid: 16446
+    components:
+    - type: Transform
+      pos: -13.5,0.5
+      parent: 2
+  - uid: 16447
+    components:
+    - type: Transform
+      pos: -12.5,0.5
+      parent: 2
+  - uid: 16448
+    components:
+    - type: Transform
+      pos: -11.5,0.5
+      parent: 2
+  - uid: 16449
+    components:
+    - type: Transform
+      pos: -10.5,0.5
+      parent: 2
+  - uid: 16450
+    components:
+    - type: Transform
+      pos: -10.5,-0.5
+      parent: 2
+  - uid: 16451
+    components:
+    - type: Transform
+      pos: -9.5,-0.5
+      parent: 2
+  - uid: 16452
+    components:
+    - type: Transform
+      pos: -8.5,-0.5
+      parent: 2
+  - uid: 16453
+    components:
+    - type: Transform
+      pos: -7.5,-0.5
+      parent: 2
+  - uid: 16454
+    components:
+    - type: Transform
+      pos: -6.5,-0.5
+      parent: 2
+  - uid: 16455
+    components:
+    - type: Transform
+      pos: -3.5,-0.5
+      parent: 2
+  - uid: 16456
+    components:
+    - type: Transform
+      pos: -4.5,-0.5
+      parent: 2
+  - uid: 16457
+    components:
+    - type: Transform
+      pos: -5.5,-0.5
+      parent: 2
 - proto: CableHVStack
   entities:
   - uid: 7685
@@ -77868,14 +77983,6 @@ entities:
       rot: -1.5707963267948966 rad
       pos: -44.5,-28.5
       parent: 2
-- proto: SignInterrogation
-  entities:
-  - uid: 8111
-    components:
-    - type: Transform
-      rot: 1.5707963267948966 rad
-      pos: -20.5,2.5
-      parent: 2
 - proto: SignJanitor
   entities:
   - uid: 12792
@@ -77941,15 +78048,6 @@ entities:
     - type: Transform
       rot: 3.141592653589793 rad
       pos: -15.5,2.5
-      parent: 2
-  - uid: 11982
-    components:
-    - type: MetaData
-      desc: Знак, указывающий на карцеры
-      name: Знак "Карцеры"
-    - type: Transform
-      rot: 1.5707963267948966 rad
-      pos: -12.5,2.5
       parent: 2
 - proto: SignPsychology
   entities:
