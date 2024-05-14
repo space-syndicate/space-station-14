@@ -12,6 +12,7 @@ public abstract partial class LoadoutEffect
     /// </summary>
     public abstract bool Validate(
         RoleLoadout loadout,
+        LoadoutPrototype proto, // Corvax-Sponsors
         ICommonSession session,
         IDependencyCollection collection,
         [NotNullWhen(false)] out FormattedMessage? reason);

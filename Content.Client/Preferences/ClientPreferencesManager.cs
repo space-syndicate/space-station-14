@@ -1,11 +1,9 @@
 using System.Linq;
-using Content.Corvax.Interfaces.Client;
+using Content.Corvax.Interfaces.Shared;
 using Content.Shared.Preferences;
 using Robust.Client;
 using Robust.Client.Player;
-using Robust.Shared.Configuration;
 using Robust.Shared.Network;
-using Robust.Shared.Prototypes;
 using Robust.Shared.Utility;
 
 namespace Content.Client.Preferences
@@ -20,7 +18,7 @@ namespace Content.Client.Preferences
         [Dependency] private readonly IClientNetManager _netManager = default!;
         [Dependency] private readonly IBaseClient _baseClient = default!;
         [Dependency] private readonly IPlayerManager _playerManager = default!;
-        private IClientSponsorsManager? _sponsorsManager; // Corvax-Sponsors
+        private ISharedSponsorsManager? _sponsorsManager; // Corvax-Sponsors
 
         public event Action? OnServerDataLoaded;
 
@@ -66,7 +64,7 @@ namespace Content.Client.Preferences
         {
             var collection = IoCManager.Instance!;
             // Corvax-Sponsors-Start
-            var sponsorPrototypes = _sponsorsManager?.Prototypes.ToArray() ?? [];
+            var sponsorPrototypes = _sponsorsManager?.GetClientPrototypes().ToArray() ?? [];
             profile.EnsureValid(_playerManager.LocalSession!, collection, sponsorPrototypes);
             // Corvax-Sponsors-End
             var characters = new Dictionary<int, ICharacterProfile>(Preferences.Characters) {[slot] = profile};

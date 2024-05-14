@@ -190,7 +190,7 @@ public sealed class RoleLoadout
 
         foreach (var effect in loadoutProto.Effects)
         {
-            valid = valid && effect.Validate(this, session, collection, out reason);
+            valid = valid && effect.Validate(this, loadoutProto, session, collection, out reason);
         }
 
         return valid;

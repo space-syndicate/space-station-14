@@ -8,5 +8,6 @@ mech-ui-open-verb = Открыть панель управления
 mech-menu-title = Панель управления меха
 mech-integrity-display = Целостность: { $amount }%
 mech-energy-display = Энергия: { $amount }%
+mech-energy-missing = Энергия: ОТСУТСТВУЕТ
 mech-slot-display = Доступно слотов: { $amount }
 mech-no-enter = Вы не можете пилотировать это.

@@ -94,7 +94,7 @@
                                     <OptionButton Name="CSpawnPriorityButton" HorizontalAlignment="Right" />
                                 </BoxContainer>
                                 <!-- Corvax-TTS-Start -->
-                                <BoxContainer HorizontalExpand="True">
+                                <BoxContainer HorizontalExpand="True" Visible="False" Name="TTSContainer">
                                     <Label Text="{Loc 'humanoid-profile-editor-voice-label'}" />
                                     <Control HorizontalExpand="True"/>
                                     <OptionButton Name="CVoiceButton" HorizontalAlignment="Right" />

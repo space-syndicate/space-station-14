@@ -1,16 +1,15 @@
 ﻿using System.Linq;
-using Content.Client.Corvax.TTS;
 using Content.Client.Lobby;
+using Content.Corvax.Interfaces.Shared;
 using Content.Shared.Corvax.TTS;
 using Content.Shared.Preferences;
-using Content.Corvax.Interfaces.Client;
 
 namespace Content.Client.Preferences.UI;
 
 public sealed partial class HumanoidProfileEditor
 {
-    private IClientSponsorsManager? _sponsorsMgr;
-    private List<TTSVoicePrototype> _voiceList = default!;
+    private ISharedSponsorsManager? _sponsorsMgr;
+    private List<TTSVoicePrototype> _voiceList = new();
 
     private void InitializeVoice()
     {
@@ -53,7 +52,7 @@ public sealed partial class HumanoidProfileEditor
             if (_sponsorsMgr is null)
                 continue;
             if (voice.SponsorOnly && _sponsorsMgr != null &&
-                !_sponsorsMgr.Prototypes.Contains(voice.ID))
+                !_sponsorsMgr.GetClientPrototypes().Contains(voice.ID))
             {
                 _voiceButton.SetItemDisabled(_voiceButton.GetIdx(i), true);
             }
