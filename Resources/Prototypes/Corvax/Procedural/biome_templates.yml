@@ -50,7 +50,6 @@
     - !type:BiomeDecalLayer
       allowedTiles:
         - FloorPlanetGrass
-      divisions: 2
       threshold: -0.50
       noise:
         seed: 0
@@ -63,7 +62,6 @@
     - !type:BiomeDecalLayer
       allowedTiles:
       - FloorPlanetGrass
-      divisions: 1
       threshold: -0.35
       noise:
         seed: 0
@@ -107,7 +105,6 @@
         seed: 183
         noiseType: OpenSimplex2
         frequency: 1
-      divisions: 1
       threshold: 0.8
       entities:
         - Spaceshroom
