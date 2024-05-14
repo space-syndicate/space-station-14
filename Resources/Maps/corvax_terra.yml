@@ -69,6 +69,7 @@ tilemap:
   19: FloorWood
   17: FloorWoodLarge
   18: FloorWoodTile
+  67: Lattice
   129: Plating
   62: PlatingBrass
 entities:
@@ -97,7 +98,7 @@ entities:
       chunks:
         0,0:
           ind: 0,0
-          tiles: gQAAAAAAgQAAAAAAgQAAAAAAgQAAAAAAAgAAAAAAAwAAAAAAAgAAAAAAgQAAAAAAKgAAAAAADAAAAAAATgAAAAAATgAAAAAATgAAAAAATgAAAAAADAAAAAAAMAAAAAAAAQAAAAAAAgAAAAAAAwAAAAAAAwAAAAAAAwAAAAAAAwAAAAAAAgAAAAAAgQAAAAAAKgAAAAAADAAAAAAATgAAAAAATgAAAAAATgAAAAAATgAAAAAADAAAAAAAMAAAAAAAAQAAAAAAgQAAAAAAAgAAAAAAAwAAAAAAAgAAAAAAAgAAAAAAAgAAAAAAgQAAAAAAKgAAAAAAKgAAAAAADAAAAAAATgAAAAAATgAAAAAATgAAAAAADAAAAAAAKgAAAAAAAQAAAAAAgQAAAAAAAgAAAAAAAwAAAAAAAwAAAAAAAwAAAAAAAwAAAAAAgQAAAAAAKgAAAAAAKgAAAAAADAAAAAAATgAAAAAATgAAAAAADAAAAAAADAAAAAAAKgAAAAAAgQAAAAAAgQAAAAAAgQAAAAAAgQAAAAAAgQAAAAAAgQAAAAAAgQAAAAAAgQAAAAAAKgAAAAAAKgAAAAAATgAAAAAATgAAAAAATgAAAAAADAAAAAAAKgAAAAAAKgAAAAAADAAAAAAADAAAAAAADAAAAAAADAAAAAAADAAAAAAAKgAAAAAAKgAAAAAAKgAAAAAAKgAAAAAATgAAAAAATgAAAAAATgAAAAAADAAAAAAADAAAAAAADAAAAAAAKgAAAAAADAAAAAAATgAAAAAATgAAAAAATgAAAAAATgAAAAAAKgAAAAAAKgAAAAAAKgAAAAAAKgAAAAAATgAAAAAATgAAAAAATgAAAAAATgAAAAAATgAAAAAATgAAAAAADAAAAAAATgAAAAAATgAAAAAATgAAAAAATgAAAAAATgAAAAAATgAAAAAADAAAAAAAKgAAAAAATgAAAAAATgAAAAAANgAAAAAAIwAAAAAANgAAAAAATgAAAAAATgAAAAAADAAAAAAATgAAAAAATgAAAAAATgAAAAAATgAAAAAATgAAAAAATgAAAAAATgAAAAAATgAAAAAATgAAAAAATgAAAAAAIwAAAAAAJAAAAAAAIwAAAAAATgAAAAAATgAAAAAATgAAAAAADAAAAAAADAAAAAAADAAAAAAAIgAAAAAATgAAAAAATgAAAAAATgAAAAAATgAAAAAATgAAAAAATgAAAAAANgAAAAAAIwAAAAAANgAAAAAATgAAAAAATgAAAAAATgAAAAAATgAAAAAADAAAAAAADAAAAAAADAAAAAAADAAAAAAADAAAAAAADAAAAAAADAAAAAAADAAAAAAATgAAAAAATgAAAAAATgAAAAAATgAAAAAATgAAAAAADAAAAAAAIgAAAAAAgQAAAAAAgQAAAAAAgQAAAAAAgQAAAAAAMAAAAAAAgQAAAAAAgQAAAAAAgQAAAAAATgAAAAAATgAAAAAADAAAAAAATgAAAAAATgAAAAAATgAAAAAADAAAAAAADAAAAAAAIwAAAAAAIwAAAAAAIwAAAAAAIwAAAAAAMQAAAAAAIwAAAAAAMgAAAAAAIwAAAAAATgAAAAAADAAAAAAADAAAAAAACQAAAAAACQAAAAAADAAAAAAADAAAAAAAgQAAAAAAgQAAAAAAgQAAAAAAgQAAAAAAgQAAAAAAMQAAAAAAMgAAAAAAMgAAAAAAgQAAAAAAgQAAAAAADAAAAAAATgAAAAAATgAAAAAATgAAAAAADAAAAAAADAAAAAAAgQAAAAAAHQAAAAAAgQAAAAAAHQAAAAAAgQAAAAAAIwAAAAAAMQAAAAAAMgAAAAAAMQAAAAAAMAAAAAAADAAAAAAATgAAAAAATgAAAAAATgAAAAAADAAAAAAAgQAAAAAAgQAAAAAAIAAAAAAABAAAAAAAIAAAAAAABAAAAAAAgQAAAAAAIwAAAAAAIwAAAAAAMgAAAAAAMAAAAAAADAAAAAAATgAAAAAATgAAAAAATgAAAAAATgAAAAAAJQAAAAAAAwAAAAAA
+          tiles: gQAAAAAAgQAAAAAAgQAAAAAAgQAAAAAAAgAAAAAAAwAAAAAAAgAAAAAAgQAAAAAAKgAAAAAADAAAAAAATgAAAAAATgAAAAAATgAAAAAATgAAAAAADAAAAAAAMAAAAAAAAQAAAAAAAgAAAAAAAwAAAAAAAwAAAAAAAwAAAAAAAwAAAAAAAgAAAAAAgQAAAAAAKgAAAAAADAAAAAAATgAAAAAATgAAAAAATgAAAAAATgAAAAAADAAAAAAAMAAAAAAAAQAAAAAAgQAAAAAAAgAAAAAAAwAAAAAAAgAAAAAAAgAAAAAAAgAAAAAAgQAAAAAAKgAAAAAAKgAAAAAADAAAAAAATgAAAAAATgAAAAAATgAAAAAADAAAAAAAKgAAAAAAAQAAAAAAgQAAAAAAAgAAAAAAAwAAAAAAAwAAAAAAAwAAAAAAAwAAAAAAgQAAAAAAKgAAAAAAKgAAAAAADAAAAAAATgAAAAAATgAAAAAADAAAAAAADAAAAAAAKgAAAAAAgQAAAAAAgQAAAAAAgQAAAAAAgQAAAAAAgQAAAAAAgQAAAAAAgQAAAAAAgQAAAAAAKgAAAAAAKgAAAAAATgAAAAAATgAAAAAATgAAAAAADAAAAAAAKgAAAAAAKgAAAAAADAAAAAAADAAAAAAADAAAAAAADAAAAAAADAAAAAAAKgAAAAAAKgAAAAAAKgAAAAAAKgAAAAAATgAAAAAATgAAAAAATgAAAAAADAAAAAAADAAAAAAADAAAAAAAKgAAAAAADAAAAAAATgAAAAAATgAAAAAATgAAAAAATgAAAAAAKgAAAAAAKgAAAAAAKgAAAAAAKgAAAAAATgAAAAAATgAAAAAATgAAAAAATgAAAAAATgAAAAAATgAAAAAADAAAAAAATgAAAAAATgAAAAAATgAAAAAATgAAAAAATgAAAAAATgAAAAAADAAAAAAAKgAAAAAATgAAAAAATgAAAAAANgAAAAAAQwAAAAAANgAAAAAATgAAAAAATgAAAAAADAAAAAAATgAAAAAATgAAAAAATgAAAAAATgAAAAAATgAAAAAATgAAAAAATgAAAAAATgAAAAAATgAAAAAATgAAAAAAQwAAAAAAJAAAAAAAQwAAAAAATgAAAAAATgAAAAAATgAAAAAADAAAAAAADAAAAAAADAAAAAAAIgAAAAAATgAAAAAATgAAAAAATgAAAAAATgAAAAAATgAAAAAATgAAAAAANgAAAAAAQwAAAAAANgAAAAAATgAAAAAATgAAAAAATgAAAAAATgAAAAAADAAAAAAADAAAAAAADAAAAAAADAAAAAAADAAAAAAADAAAAAAADAAAAAAADAAAAAAATgAAAAAATgAAAAAATgAAAAAATgAAAAAATgAAAAAADAAAAAAAIgAAAAAAgQAAAAAAgQAAAAAAgQAAAAAAgQAAAAAAMAAAAAAAgQAAAAAAgQAAAAAAgQAAAAAATgAAAAAATgAAAAAADAAAAAAATgAAAAAATgAAAAAATgAAAAAADAAAAAAADAAAAAAAIwAAAAAAIwAAAAAAIwAAAAAAIwAAAAAAMQAAAAAAIwAAAAAAMgAAAAAAIwAAAAAATgAAAAAADAAAAAAADAAAAAAACQAAAAAACQAAAAAADAAAAAAADAAAAAAAgQAAAAAAgQAAAAAAgQAAAAAAgQAAAAAAgQAAAAAAMQAAAAAAMgAAAAAAMgAAAAAAgQAAAAAAgQAAAAAADAAAAAAATgAAAAAATgAAAAAATgAAAAAADAAAAAAADAAAAAAAgQAAAAAAHQAAAAAAgQAAAAAAHQAAAAAAgQAAAAAAIwAAAAAAMQAAAAAAMgAAAAAAMQAAAAAAMAAAAAAADAAAAAAATgAAAAAATgAAAAAATgAAAAAADAAAAAAAgQAAAAAAgQAAAAAAIAAAAAAABAAAAAAAIAAAAAAABAAAAAAAgQAAAAAAIwAAAAAAIwAAAAAAMgAAAAAAMAAAAAAADAAAAAAATgAAAAAATgAAAAAATgAAAAAATgAAAAAAJQAAAAAAAwAAAAAA
           version: 6
         0,-1:
           ind: 0,-1
@@ -2775,8 +2776,6 @@ entities:
             392: -17,2
             418: -13,-10
             419: -11,-11
-            673: 10,8
-            686: 12,8
             690: 9,8
             701: 26,7
             718: 24,6
@@ -2852,8 +2851,6 @@ entities:
             399: -15,1
             441: -20,-2
             442: -19,-2
-            676: 11,7
-            684: 11,9
             691: 11,6
             702: 26,6
             703: 25,6
@@ -2923,7 +2920,6 @@ entities:
             439: -19,-2
             440: -20,-2
             490: 48,23
-            674: 11,9
             689: 11,10
             706: 32,8
             707: 31,8
@@ -3003,8 +2999,6 @@ entities:
             416: -13,-10
             417: -13,-11
             491: 51,21
-            675: 12,8
-            682: 10,8
             688: 13,8
             700: 31,7
             724: 33,6
@@ -7977,7 +7971,8 @@ entities:
           0,-1:
             0: 28512
           1,0:
-            0: 30583
+            0: 30327
+            1: 256
           1,1:
             0: 65520
           1,2:
@@ -8129,7 +8124,7 @@ entities:
           -5,3:
             0: 65535
           -4,4:
-            1: 65534
+            2: 65534
           -3,1:
             0: 65523
           -3,2:
@@ -8138,7 +8133,7 @@ entities:
             0: 61439
           -3,4:
             0: 60652
-            1: 4368
+            2: 4368
           -2,1:
             0: 65520
           -2,2:
@@ -8231,12 +8226,12 @@ entities:
             0: 22515
           -1,5:
             0: 34957
-            1: 13072
+            2: 13072
           0,6:
             0: 58885
           -1,6:
             0: 52360
-            1: 19
+            2: 19
           0,7:
             0: 6
           -1,7:
@@ -8270,7 +8265,7 @@ entities:
           4,7:
             0: 65535
           -4,5:
-            1: 14
+            2: 14
           -5,5:
             0: 4565
           -4,6:
@@ -8295,10 +8290,10 @@ entities:
             0: 65520
           -2,5:
             0: 5
-            1: 61120
+            2: 61120
           -2,6:
             0: 256
-            1: 206
+            2: 206
           -8,-4:
             0: 32755
           -8,-5:
@@ -8387,7 +8382,7 @@ entities:
             0: 48059
           7,6:
             0: 2595
-            2: 128
+            1: 128
           8,4:
             0: 7163
           8,5:
@@ -8498,10 +8493,10 @@ entities:
             0: 61262
           9,2:
             0: 4367
-            1: 52224
+            2: 52224
           9,3:
             0: 53009
-            1: 12
+            2: 12
           9,-1:
             0: 65535
           9,4:
@@ -8699,10 +8694,10 @@ entities:
           - 0
           - 0
         - volume: 2500
-          temperature: 235
+          temperature: 293.14975
           moles:
-          - 21.824879
-          - 82.10312
+          - 20.078888
+          - 75.53487
           - 0
           - 0
           - 0
@@ -8714,10 +8709,10 @@ entities:
           - 0
           - 0
         - volume: 2500
-          temperature: 293.14975
+          temperature: 235
           moles:
-          - 20.078888
-          - 75.53487
+          - 21.824879
+          - 82.10312
           - 0
           - 0
           - 0
@@ -12189,6 +12184,13 @@ entities:
     - type: RadiationGridResistance
     - type: IFF
       flags: HideLabel
+- proto: AcousticGuitarInstrument
+  entities:
+  - uid: 8450
+    components:
+    - type: Transform
+      pos: 22.101942,-37.35556
+      parent: 2
 - proto: AirAlarm
   entities:
   - uid: 3775
@@ -14554,6 +14556,31 @@ entities:
       rot: -1.5707963267948966 rad
       pos: 4.5,0.5
       parent: 7097
+  - uid: 8454
+    components:
+    - type: Transform
+      pos: -4.5,14.5
+      parent: 6342
+  - uid: 8455
+    components:
+    - type: Transform
+      pos: -3.5,15.5
+      parent: 6342
+  - uid: 8456
+    components:
+    - type: Transform
+      pos: -10.5,15.5
+      parent: 6342
+  - uid: 8457
+    components:
+    - type: Transform
+      pos: -11.5,16.5
+      parent: 6342
+  - uid: 8458
+    components:
+    - type: Transform
+      pos: -11.5,17.5
+      parent: 6342
 - proto: BarricadeBlock
   entities:
   - uid: 4705
@@ -15308,6 +15335,13 @@ entities:
     components:
     - type: Transform
       parent: 7124
+    - type: Physics
+      canCollide: False
+    - type: InsideEntityStorage
+  - uid: 8452
+    components:
+    - type: Transform
+      parent: 97
     - type: Physics
       canCollide: False
     - type: InsideEntityStorage
@@ -26292,6 +26326,13 @@ entities:
     - type: Transform
       pos: 9.342317,18.425007
       parent: 6342
+- proto: ClothingHeadHatUshanka
+  entities:
+  - uid: 8451
+    components:
+    - type: Transform
+      pos: 22.60194,-37.26181
+      parent: 2
 - proto: ClothingHeadHatVioletwizard
   entities:
   - uid: 6414
@@ -27655,12 +27696,32 @@ entities:
     - type: Transform
       pos: 4.489978,2.6043751
       parent: 2
+    - type: EntityStorage
+      air:
+        volume: 200
+        immutable: False
+        temperature: 293.14673
+        moles:
+        - 1.7459903
+        - 6.568249
+        - 0
+        - 0
+        - 0
+        - 0
+        - 0
+        - 0
+        - 0
+        - 0
+        - 0
+        - 0
     - type: ContainerContainer
       containers:
         entity_storage: !type:Container
           showEnts: False
           occludes: True
           ents:
+          - 8452
+          - 8453
           - 100
           - 101
           - 99
@@ -62794,6 +62855,13 @@ entities:
     - type: Transform
       pos: -1.4284358,-11.183028
       parent: 7097
+  - uid: 8453
+    components:
+    - type: Transform
+      parent: 97
+    - type: Physics
+      canCollide: False
+    - type: InsideEntityStorage
 - proto: WeaponSubMachineGunWt550
   entities:
   - uid: 103
