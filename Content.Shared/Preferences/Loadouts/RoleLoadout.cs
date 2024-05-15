@@ -1,6 +1,9 @@
 using System.Diagnostics.CodeAnalysis;
+using System.Linq;
+using Content.Corvax.Interfaces.Shared;
 using Content.Shared.Random;
 using Robust.Shared.Collections;
+using Robust.Shared.Network;
 using Robust.Shared.Player;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Serialization;
@@ -48,6 +51,7 @@ public sealed class RoleLoadout
     {
         var groupRemove = new ValueList<string>();
         var protoManager = collection.Resolve<IPrototypeManager>();
+        var netManager = collection.Resolve<INetManager>(); // Corvax-Loadouts
 
         if (!protoManager.TryIndex(Role, out var roleProto))
         {
@@ -67,6 +71,24 @@ public sealed class RoleLoadout
                 continue;
             }
 
+            // Corvax-Loadouts-Start
+            var groupProtoLoadouts = groupProto.Loadouts;
+            if (collection.TryResolveType<ISharedLoadoutsManager>(out var loadoutsManager) && group.Id == "Inventory")
+            {
+                var prototypes = new List<string>();
+                if (netManager.IsClient)
+                {
+                    prototypes = loadoutsManager.GetClientPrototypes();
+                }
+                else if (loadoutsManager.TryGetServerPrototypes(session.UserId, out var protos))
+                {
+                    prototypes = protos;
+                }
+
+                groupProtoLoadouts = prototypes.Select(id => (ProtoId<LoadoutPrototype>)id).ToList();
+            }
+            // Corvax-Loadouts-End
+
             var loadouts = groupLoadouts[..Math.Min(groupLoadouts.Count, groupProto.MaxLimit)];
 
             // Validate first
@@ -79,6 +101,14 @@ public sealed class RoleLoadout
                     loadouts.RemoveAt(i);
                     continue;
                 }
+
+                // Corvax-Loadouts-Start: Validate if loadout exist in group. It's can't be f real
+                if (!groupProtoLoadouts.Contains(loadout.Prototype))
+                {
+                    loadouts.RemoveAt(i);
+                    continue;
+                }
+                // Corvax-Loadouts-End
 
                 // Validate the loadout can be applied (e.g. points).
                 if (!IsValid(session, loadout.Prototype, collection, out _))
@@ -95,9 +125,9 @@ public sealed class RoleLoadout
             // If you put invalid ones first but that's your fault for not using sensible defaults
             if (loadouts.Count < groupProto.MinLimit)
             {
-                for (var i = 0; i < Math.Min(groupProto.MinLimit, groupProto.Loadouts.Count); i++)
+                for (var i = 0; i < Math.Min(groupProto.MinLimit, groupProtoLoadouts.Count); i++) // Corvax-Loadout: Use groupProtoLoadouts instead of groupProto.Loadouts
                 {
-                    if (!protoManager.TryIndex(groupProto.Loadouts[i], out var loadoutProto))
+                    if (!protoManager.TryIndex(groupProtoLoadouts[i], out var loadoutProto)) // Corvax-Loadout
                         continue;
 
                     var defaultLoadout = new Loadout()
