@@ -11,7 +11,8 @@ namespace Content.Shared.Preferences.Loadouts.Effects;
 /// </summary>
 public sealed partial class SponsorLoadoutEffect : LoadoutEffect
 {
-    public override bool Validate(RoleLoadout loadout,
+    public override bool Validate(HumanoidCharacterProfile profile,
+        RoleLoadout loadout,
         LoadoutPrototype proto, // Corvax-Sponsors
         ICommonSession session,
         IDependencyCollection collection,

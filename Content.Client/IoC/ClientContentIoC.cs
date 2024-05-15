@@ -17,7 +17,6 @@ using Content.Client.Voting;
 using Content.Shared.Administration.Logs;
 using Content.Client.Guidebook;
 using Content.Client.Lobby;
-using Content.Client.Preferences;
 using Content.Client.Replay;
 using Content.Shared.Administration.Managers;
 using Content.Shared.Players.PlayTimeTracking;

@@ -93,8 +93,8 @@
                                 <BoxContainer HorizontalExpand="True" Visible="False" Name="TTSContainer">
                                     <Label Text="{Loc 'humanoid-profile-editor-voice-label'}" />
                                     <Control HorizontalExpand="True"/>
-                                    <OptionButton Name="CVoiceButton" HorizontalAlignment="Right" />
-									<Button Name="CVoicePlayButton" Text="{Loc 'humanoid-profile-editor-voice-play'}" MaxWidth="80" />
+                                    <OptionButton Name="VoiceButton" HorizontalAlignment="Right" />
+									<Button Name="VoicePlayButton" Text="{Loc 'humanoid-profile-editor-voice-play'}" MaxWidth="80" />
                                 </BoxContainer>
                                 <!-- Corvax-TTS-End -->
                             </BoxContainer>
