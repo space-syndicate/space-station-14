@@ -6,7 +6,7 @@ using Robust.Client.Player;
 using Robust.Shared.Network;
 using Robust.Shared.Utility;
 
-namespace Content.Client.Preferences
+namespace Content.Client.Lobby
 {
     /// <summary>
     ///     Receives <see cref="PlayerPreferences" /> and <see cref="GameSettings" /> from the server during the initial
