@@ -7,3 +7,5 @@ suicide-command-help-text =
 suicide-command-default-text-others = { $name } пытается прикусить свой собственный язык!
 suicide-command-default-text-self = Вы пытаетесь прикусить свой собственный язык!
 suicide-command-already-dead = Вы не можете совершить самоубийство. Вы мертвы.
+suicide-command-no-mind = You have no mind!
+suicide-command-denied = You cannot suicide right now.
