@@ -15,8 +15,8 @@ store-category-pointless = Безделушки
 # Revenant
 store-category-abilities = Способности
 # Wizard
-store-caregory-spellbook-offensive = Offensive Spells
-store-caregory-spellbook-defensive = Defensive Spells
-store-caregory-spellbook-utility = Utility Spells
-store-caregory-spellbook-equipment = Wizard Equipment
-store-caregory-spellbook-events = Event Spells
+store-caregory-spellbook-offensive = Атакующие заклинания
+store-caregory-spellbook-defensive = Защитные заклинания
+store-caregory-spellbook-utility = Вспомогательные заклинания
+store-caregory-spellbook-equipment = Волшебное снаряжение
+store-caregory-spellbook-events = Заклинания событий
