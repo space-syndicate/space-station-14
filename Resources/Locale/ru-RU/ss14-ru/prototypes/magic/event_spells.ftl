@@ -1,2 +1,2 @@
-ent-ActionSummonGhosts = Summon Ghosts
-    .desc = Makes all current ghosts permanently invisible
+ent-ActionSummonGhosts = Призвать призраков
+    .desc = Делает всех существующих призраков навсегда видимыми.
