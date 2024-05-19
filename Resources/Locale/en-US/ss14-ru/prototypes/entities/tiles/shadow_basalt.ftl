@@ -1,5 +1,5 @@
 ent-ShadowBasaltOne = shadowstone
-    .desc = Cold rock
+    .desc = Glowing cracks in reality. It's probably fine.
 ent-ShadowBasaltTwo = { ent-ShadowBasaltOne }
     .desc = { ent-ShadowBasaltOne.desc }
 ent-ShadowBasaltThree = { ent-ShadowBasaltOne }

@@ -9,7 +9,7 @@
         - meaty
     - type: Food
       trash: FoodBowlBig
-      utensil: 
+      utensil:
         - Spoon
         - Fork
     - type: Sprite
@@ -26,3 +26,6 @@
               Quantity: 10
             - ReagentId: Protein
               Quantity: 20
+    - type: Tag
+      tags:
+      - Meat
