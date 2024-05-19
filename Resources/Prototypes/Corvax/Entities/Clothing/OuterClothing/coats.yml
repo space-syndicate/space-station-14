@@ -128,11 +128,12 @@
   id: ClothingOuterCoatScientistAlt
   name: scientist's coupled labcoat
   description: Labcoat for smart anime spacemans.
+  abstract: true
   components:
-  - type: Sprite
-    sprite: Corvax/Clothing/OuterClothing/Coats/formal_labcoat_scientist.rsi
-  - type: Clothing
-    sprite: Corvax/Clothing/OuterClothing/Coats/formal_labcoat_scientist.rsi
+  #- type: Sprite
+  #  sprite: Corvax/Clothing/OuterClothing/Coats/formal_labcoat_scientist.rsi
+  #- type: Clothing
+  #  sprite: Corvax/Clothing/OuterClothing/Coats/formal_labcoat_scientist.rsi
 
 - type: entity
   parent: [ClothingOuterStorageFoldableBaseOpened, ClothingOuterCoatScientistAlt]
@@ -144,11 +145,12 @@
   id: ClothingOuterCoatRobotechAlt
   name: robotech's coupled labcoat
   description: Metal Gear, buddy?
+  abstract: true
   components:
-  - type: Sprite
-    sprite: Corvax/Clothing/OuterClothing/Coats/formal_labcoat_robotech.rsi
-  - type: Clothing
-    sprite: Corvax/Clothing/OuterClothing/Coats/formal_labcoat_robotech.rsi
+  #- type: Sprite
+  #  sprite: Corvax/Clothing/OuterClothing/Coats/formal_labcoat_robotech.rsi
+  #- type: Clothing
+  #  sprite: Corvax/Clothing/OuterClothing/Coats/formal_labcoat_robotech.rsi
 
 - type: entity
   parent: [ClothingOuterStorageFoldableBaseOpened, ClothingOuterCoatRobotechAlt]
