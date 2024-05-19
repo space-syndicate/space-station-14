@@ -2,6 +2,9 @@
   id: JobIAA
 
 - type: playTimeTracker
+  id: JobPilot
+
+- type: playTimeTracker
   id: JobEvent1
   
 - type: playTimeTracker
@@ -15,3 +18,18 @@
   
 - type: playTimeTracker
   id: JobEvent5
+
+- type: playTimeTracker
+  id: JobEvent6
+  
+- type: playTimeTracker
+  id: JobEvent7
+  
+- type: playTimeTracker
+  id: JobEvent8
+  
+- type: playTimeTracker
+  id: JobEvent9
+  
+- type: playTimeTracker
+  id: JobEvent10

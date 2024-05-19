@@ -2,17 +2,16 @@ using System.Diagnostics.CodeAnalysis;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-using Content.Corvax.Interfaces.Server;
+using Content.Corvax.Interfaces.Shared;
 using Content.Server.Database;
-using Content.Server.Humanoid;
 using Content.Shared.CCVar;
-using Content.Shared.Humanoid.Prototypes;
 using Content.Shared.Preferences;
-using Content.Shared.Roles;
+using Robust.Server.Player;
 using Robust.Shared.Configuration;
 using Robust.Shared.Network;
 using Robust.Shared.Player;
 using Robust.Shared.Prototypes;
+using Robust.Shared.Utility;
 
 
 namespace Content.Server.Preferences.Managers
@@ -26,8 +25,9 @@ namespace Content.Server.Preferences.Managers
         [Dependency] private readonly IServerNetManager _netManager = default!;
         [Dependency] private readonly IConfigurationManager _cfg = default!;
         [Dependency] private readonly IServerDbManager _db = default!;
-        [Dependency] private readonly IPrototypeManager _protos = default!;
-        private IServerSponsorsManager? _sponsors;
+        [Dependency] private readonly IPlayerManager _playerManager = default!;
+        [Dependency] private readonly IDependencyCollection _dependencies = default!;
+        private ISharedSponsorsManager? _sponsors;
 
         // Cache player prefs on the server so we don't need as much async hell related to them.
         private readonly Dictionary<NetUserId, PlayerPrefData> _cachedPlayerPrefs =
@@ -101,14 +101,15 @@ namespace Content.Server.Preferences.Managers
             }
 
             var curPrefs = prefsData.Prefs!;
+            var session = _playerManager.GetSessionById(userId);
 
-            // Corvax-Sponsors-Start: Ensure removing sponsor markings if client somehow bypassed client filtering
-            // WARN! It's not removing markings from DB!
-            var sponsorPrototypes = _sponsors != null && _sponsors.TryGetPrototypes(message.MsgChannel.UserId, out var prototypes)
+            // Corvax-Sponsors-Start
+            var sponsorPrototypes = _sponsors != null && _sponsors.TryGetServerPrototypes(session.UserId, out var prototypes)
                 ? prototypes.ToArray()
                 : [];
-            profile.EnsureValid(_cfg, _protos, sponsorPrototypes);
+            profile.EnsureValid(session, _dependencies, sponsorPrototypes);
             // Corvax-Sponsors-End
+
             var profiles = new Dictionary<int, ICharacterProfile>(curPrefs.Characters)
             {
                 [slot] = profile
@@ -200,28 +201,40 @@ namespace Content.Server.Preferences.Managers
 
                 async Task LoadPrefs()
                 {
-                    var prefs = await GetOrCreatePreferencesAsync(session.UserId);
+                    var prefs = await GetOrCreatePreferencesAsync(session.UserId, cancel);
                     // Corvax-Sponsors-Start: Remove sponsor markings from expired sponsors
+                    var collection = IoCManager.Instance!;
                     foreach (var (_, profile) in prefs.Characters)
                     {
-                        var sponsorPrototypes = _sponsors != null && _sponsors.TryGetPrototypes(session.UserId, out var prototypes)
+                        var sponsorPrototypes = _sponsors != null && _sponsors.TryGetServerPrototypes(session.UserId, out var prototypes)
                             ? prototypes.ToArray()
                             : [];
-                        profile.EnsureValid(_cfg, _protos, sponsorPrototypes);
+                        profile.EnsureValid(session, collection, sponsorPrototypes);
                     }
                     // Corvax-Sponsors-End
                     prefsData.Prefs = prefs;
-                    prefsData.PrefsLoaded = true;
-
-                    var msg = new MsgPreferencesAndSettings();
-                    msg.Preferences = prefs;
-                    msg.Settings = new GameSettings
-                    {
-                        MaxCharacterSlots = GetMaxUserCharacterSlots(session.UserId),  // Corvax-Sponsors
-                    };
-                    _netManager.ServerSendMessage(msg, session.Channel);
                 }
             }
+        }
+
+        public void FinishLoad(ICommonSession session)
+        {
+            // This is a separate step from the actual database load.
+            // Sanitizing preferences requires play time info due to loadouts.
+            // And play time info is loaded concurrently from the DB with preferences.
+            var prefsData = _cachedPlayerPrefs[session.UserId];
+            DebugTools.Assert(prefsData.Prefs != null);
+            prefsData.Prefs = SanitizePreferences(session, prefsData.Prefs, _dependencies);
+
+            prefsData.PrefsLoaded = true;
+
+            var msg = new MsgPreferencesAndSettings();
+            msg.Preferences = prefsData.Prefs;
+            msg.Settings = new GameSettings
+            {
+                MaxCharacterSlots = GetMaxUserCharacterSlots(session.UserId) // Corvax-Sponsors
+            };
+            _netManager.ServerSendMessage(msg, session.Channel);
         }
 
         public void OnClientDisconnected(ICommonSession session)
@@ -238,7 +251,7 @@ namespace Content.Server.Preferences.Managers
         private int GetMaxUserCharacterSlots(NetUserId userId)
         {
             var maxSlots = _cfg.GetCVar(CCVars.GameMaxCharacterSlots);
-            var extraSlots = _sponsors?.GetExtraCharSlots(userId) ?? 0;
+            var extraSlots = _sponsors?.GetServerExtraCharSlots(userId) ?? 0;
             return maxSlots + extraSlots;
         }
         // Corvax-Sponsors-End
@@ -277,28 +290,40 @@ namespace Content.Server.Preferences.Managers
             return prefs;
         }
 
-        private async Task<PlayerPreferences> GetOrCreatePreferencesAsync(NetUserId userId)
+        /// <summary>
+        /// Retrieves preferences for the given username from storage or returns null.
+        /// Creates and saves default preferences if they are not found, then returns them.
+        /// </summary>
+        public PlayerPreferences? GetPreferencesOrNull(NetUserId? userId)
         {
-            var prefs = await _db.GetPlayerPreferencesAsync(userId);
-            if (prefs is null)
-            {
-                return await _db.InitPrefsAsync(userId, HumanoidCharacterProfile.Random());
-            }
+            if (userId == null)
+                return null;
 
-            // Corvax-Sponsors-Start
-            var sponsorPrototypes = _sponsors != null && _sponsors.TryGetPrototypes(userId, out var prototypes) ? prototypes.ToArray() : []; // Corvax-Sponsors
-            return SanitizePreferences(prefs, sponsorPrototypes);
-            // Corvax-Sponsors-End
+            if (_cachedPlayerPrefs.TryGetValue(userId.Value, out var pref))
+                return pref.Prefs;
+            return null;
         }
 
-        private PlayerPreferences SanitizePreferences(PlayerPreferences prefs, string[] sponsorPrototypes)
+        private async Task<PlayerPreferences> GetOrCreatePreferencesAsync(NetUserId userId, CancellationToken cancel)
+        {
+            var prefs = await _db.GetPlayerPreferencesAsync(userId, cancel);
+            if (prefs is null)
+            {
+                return await _db.InitPrefsAsync(userId, HumanoidCharacterProfile.Random(), cancel);
+            }
+
+            return prefs;
+        }
+
+        private PlayerPreferences SanitizePreferences(ICommonSession session, PlayerPreferences prefs, IDependencyCollection collection)
         {
             // Clean up preferences in case of changes to the game,
             // such as removed jobs still being selected.
 
+            var sponsorPrototypes = _sponsors != null && _sponsors.TryGetServerPrototypes(session.UserId, out var prototypes) ? prototypes.ToArray() : []; // Corvax-Sponsors
             return new PlayerPreferences(prefs.Characters.Select(p =>
             {
-                return new KeyValuePair<int, ICharacterProfile>(p.Key, p.Value.Validated(_cfg, _protos, sponsorPrototypes));
+                return new KeyValuePair<int, ICharacterProfile>(p.Key, p.Value.Validated(session, collection, sponsorPrototypes));
             }), prefs.SelectedCharacterIndex, prefs.AdminOOCColor);
         }
 

@@ -7,7 +7,7 @@ ui-vote-create-title = Голосование
 ui-vote-create-button = Запустить
 ui-vote-type-timeout = Это голосование было недавно запущено ({ $remaining })
 # Unavailable text if a vote type has been disabled manually.
-ui-vote-type-not-available = Этот тип голосования был отключен
+ui-vote-type-not-available = Этот тип голосования был отключён
 ui-vote-fluff = На основе Robust™ СЗИ-НСД
 
 ## Vote menu command

@@ -19,5 +19,3 @@ ent-SpawnPointGhostDragon = ghost role spawn point
 ent-SpawnPointGhostSpaceNinja = ghost role spawn point
     .suffix = space ninja
     .desc = { ent-MarkerBase.desc }
-ent-SpawnPointGhostTerminator = terminator spawn point
-    .desc = { ent-MarkerBase.desc }

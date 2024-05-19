@@ -1,15 +1,15 @@
 ### UI
 
 chat-manager-max-message-length = Ваше сообщение превышает лимит в { $maxMessageLength } символов
-chat-manager-ooc-chat-enabled-message = OOC чат был включен.
-chat-manager-ooc-chat-disabled-message = OOC чат был отключен.
-chat-manager-looc-chat-enabled-message = LOOC чат был включен.
-chat-manager-looc-chat-disabled-message = LOOC чат был отключен.
+chat-manager-ooc-chat-enabled-message = OOC чат был включён.
+chat-manager-ooc-chat-disabled-message = OOC чат был отключён.
+chat-manager-looc-chat-enabled-message = LOOC чат был включён.
+chat-manager-looc-chat-disabled-message = LOOC чат был отключён.
 chat-manager-dead-looc-chat-enabled-message = Мёртвые игроки теперь могут говорить в LOOC.
 chat-manager-dead-looc-chat-disabled-message = Мёртвые игроки больше не могут говорить в LOOC.
 chat-manager-crit-looc-chat-enabled-message = Игроки в критическом состоянии теперь могут говорить в LOOC.
 chat-manager-crit-looc-chat-disabled-message = Игроки в критическом состоянии больше не могут говорить в LOOC.
-chat-manager-admin-ooc-chat-enabled-message = Админ OOC чат был включен.
+chat-manager-admin-ooc-chat-enabled-message = Админ OOC чат был включён.
 chat-manager-admin-ooc-chat-disabled-message = Админ OOC чат был выключен.
 chat-manager-max-message-length-exceeded-message = Ваше сообщение превышает лимит в { $limit } символов
 chat-manager-no-headset-on-message = У вас нет гарнитуры!

@@ -3,6 +3,7 @@
   abstract: true
   priority: 1
   locationPreference: Left # Corvax-TypingIndicator
+  isShaded: true
 
 - type: statusIcon
   parent: JobIcon

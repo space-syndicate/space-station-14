@@ -6,6 +6,7 @@ using Content.Shared.GameTicking;
 using Robust.Shared.Configuration;
 using Robust.Shared.Player;
 using Robust.Shared.Prototypes;
+using Robust.Shared.Random;
 
 namespace Content.Server.Corvax.TTS;
 
@@ -16,6 +17,24 @@ public sealed partial class TTSSystem : EntitySystem
     [Dependency] private readonly IPrototypeManager _prototypeManager = default!;
     [Dependency] private readonly TTSManager _ttsManager = default!;
     [Dependency] private readonly SharedTransformSystem _xforms = default!;
+    [Dependency] private readonly IRobustRandom _rng = default!;
+
+    private readonly List<string> _sampleText =
+        new()
+        {
+            "Съешь же ещё этих мягких французских булок, да выпей чаю.",
+            "Клоун, прекрати разбрасывать банановые кожурки офицерам под ноги!",
+            "Капитан, вы уверены что хотите назначить клоуна на должность главы персонала?",
+            "Эс Бэ! Тут человек в сером костюме, с тулбоксом и в маске! Помогите!!",
+            "Учёные, тут странная аномалия в баре! Она уже съела мима!",
+            "Я надеюсь что инженеры внимательно следят за сингулярностью...",
+            "Вы слышали эти странные крики в техах? Мне кажется туда ходить небезопасно.",
+            "Вы не видели Гамлета? Мне кажется он забегал к вам на кухню.",
+            "Здесь есть доктор? Человек умирает от отравленного пончика! Нужна помощь!",
+            "Вам нужно согласие и печать квартирмейстера, если вы хотите сделать заказ на партию дробовиков.",
+            "Возле эвакуационного шаттла разгерметизация! Инженеры, нам срочно нужна ваша помощь!",
+            "Бармен, налей мне самого крепкого вина, которое есть в твоих запасах!"
+        };
 
     private const int MaxMessageChars = 100 * 2; // same as SingleBubbleCharLimit * 2
     private bool _isEnabled = false;
@@ -28,7 +47,7 @@ public sealed partial class TTSSystem : EntitySystem
         SubscribeLocalEvent<TTSComponent, EntitySpokeEvent>(OnEntitySpoke);
         SubscribeLocalEvent<RoundRestartCleanupEvent>(OnRoundRestartCleanup);
 
-        SubscribeNetworkEvent<RequestGlobalTTSEvent>(OnRequestGlobalTTS);
+        SubscribeNetworkEvent<RequestPreviewTTSEvent>(OnRequestPreviewTTS);
     }
 
     private void OnRoundRestartCleanup(RoundRestartCleanupEvent ev)
@@ -36,14 +55,14 @@ public sealed partial class TTSSystem : EntitySystem
         _ttsManager.ResetCache();
     }
 
-    private async void OnRequestGlobalTTS(RequestGlobalTTSEvent ev, EntitySessionEventArgs args)
+    private async void OnRequestPreviewTTS(RequestPreviewTTSEvent ev, EntitySessionEventArgs args)
     {
         if (!_isEnabled ||
-            ev.Text.Length > MaxMessageChars ||
             !_prototypeManager.TryIndex<TTSVoicePrototype>(ev.VoiceId, out var protoVoice))
             return;
 
-        var soundData = await GenerateTTS(ev.Text, protoVoice.Speaker);
+        var previewText = _rng.Pick(_sampleText);
+        var soundData = await GenerateTTS(previewText, protoVoice.Speaker);
         if (soundData is null)
             return;
 

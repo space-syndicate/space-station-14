@@ -2,7 +2,7 @@
   id: CorvaxAvrite
   mapName: 'Avrite Station'
   mapPath: /Maps/corvax_avrit.yml
-  minPlayers: 40
+  minPlayers: 55
   stations:
     Avrit:
       stationProto: StandardNanotrasenStation
@@ -39,48 +39,58 @@
               - /Maps/Ruins/syndicate_dropship.yml
               - /Maps/Ruins/whiteship_ancient.yml
               - /Maps/Ruins/whiteship_bluespacejumper.yml
+        - type: StationRandomTransform
+          enableStationRotation: false
+          maxStationOffset: null
         - type: StationEmergencyShuttle
           emergencyShuttlePath: /Maps/Shuttles/emergency_corvaxavrit.yml
         - type: StationJobs
           overflowJobs:
             - Passenger
           availableJobs:
-            CargoTechnician: [ 4, 4 ]
+            # service
+            HeadOfPersonnel: [ 1, 1 ]
             Passenger: [ -1, -1 ]
+            ServiceWorker: [ 3, 4 ]
             Bartender: [ 2, 2 ]
             Botanist: [ 3, 4 ]
             Chef: [ 2, 2 ]
             Clown: [ 1, 1 ]
             Janitor: [ 3, 3 ]
             Mime: [ 1, 1 ]
+            Chaplain: [ 1, 1 ]
+            Librarian: [ 1, 1 ]
+            Musician: [ 1, 1 ]
+            Reporter: [ 1, 2 ]
+            Zookeeper: [ 1, 1 ]
+            # command
             Captain: [ 1, 1 ]
             IAA: [ 1, 1 ]
-            Reporter: [ 1, 2 ]
-            HeadOfPersonnel: [ 1, 1 ]
+            # engineering
             ChiefEngineer: [ 1, 1 ]
-            StationEngineer: [ 4, 4 ]
+            AtmosphericTechnician: [ 3, 3 ]
+            StationEngineer: [ 4, 5 ]
+            TechnicalAssistant: [ 2, 3 ]
+            # medical
             ChiefMedicalOfficer: [ 1, 1 ]
-            MedicalDoctor: [ 4, 5 ]
+            Paramedic: [ 1, 1 ]
             Chemist: [ 3, 3 ]
-            Zookeeper: [ 1, 1 ]
+            MedicalDoctor: [ 4, 5 ]
+            MedicalIntern: [ 3, 4 ]
+            Psychologist: [ 1, 1 ]
+            # science
             ResearchDirector: [ 1, 1 ]
-            Scientist: [ 6, 6 ]
+            Scientist: [ 5, 6 ]
+            ResearchAssistant: [ 3, 4 ]
+            Borg: [ 2, 3 ]
+            # security
             HeadOfSecurity: [ 1, 1 ]
-            SecurityOfficer: [ 7, 8 ]
-            Chaplain: [ 1, 1 ]
             Warden: [ 1, 1 ]
-            Librarian: [ 1, 1 ]
+            Detective: [ 1, 1 ]
+            SecurityOfficer: [ 7, 8 ]
+            SecurityCadet: [ 4, 6 ]
+            Pilot: [ 1, 1]
+            # cargo
             Quartermaster: [ 1, 1 ]
             SalvageSpecialist: [ 4, 4 ]
-            Musician: [ 1, 1 ]
-            AtmosphericTechnician: [ 3, 3 ]
-            TechnicalAssistant: [ 4, 4 ]
-            ResearchAssistant: [ 4, 5 ]
-            MedicalIntern: [ 4, 4 ]
-            ServiceWorker: [ 3, 4 ]
-            SecurityCadet: [ 4, 5 ]
-            Psychologist: [ 1, 1 ]
-            Detective: [ 1, 1 ]
-            Boxer: [ 2, 2 ]
-            Paramedic: [ 1, 1 ]
-            Borg: [ 2, 3 ]
+            CargoTechnician: [ 4, 5 ]

@@ -79,3 +79,5 @@ chatsan-word-42 = wyd
 chatsan-replacement-42 = what you doing
 chatsan-word-43 = ig
 chatsan-replacement-43 = i guess
+chatsan-word-44 = tbf
+chatsan-replacement-44 = to be fair

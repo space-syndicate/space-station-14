@@ -22,6 +22,8 @@ ent-ActionActivateScramImplant = УДРАТЬ!
     .desc = Случайным образом телепортирует вас на большое расстояние.
 ent-ActionActivateDnaScramblerImplant = Перемешать ДНК
     .desc = Меняет ваше имя и внешность случайным образом.
+ent-ActionMorphGeras = Превратиться в Герас
+    .desc = Превращает вас в герас - уменьшенную версию вас, позволяющую быстро передвигаться ценой потери инвентаря.
 ent-ActionToggleSuitPiece = Переключить элементы костюма
     .desc = Не забудьте экипировать важные части костюма, прежде чем приступать к действиям.
 ent-ActionCombatModeToggle = [color=red]Боевой режим[/color]

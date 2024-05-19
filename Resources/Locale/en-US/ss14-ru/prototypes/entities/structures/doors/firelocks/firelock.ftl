@@ -5,4 +5,4 @@ ent-Firelock = { ent-BaseFirelock }
 ent-FirelockGlass = glass firelock
     .desc = { ent-Firelock.desc }
 ent-FirelockEdge = firelock
-    .desc = { ent-BaseFirelock.desc }
+    .desc = { ent-Firelock.desc }

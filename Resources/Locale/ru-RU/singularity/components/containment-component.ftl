@@ -5,5 +5,5 @@ comp-containment-off = Переключатель в положении [color=r
 comp-containment-connected = Генератор сдерживающего поля начинает светиться, устананавливая барьер!
 comp-containment-disconnected = Генератора сдерживающего поля перестаёт светиться, разрывая барьер.
 comp-containment-anchor-warning = Вы не можете открепить генератор сдерживающего поля пока установлен барьер!
-comp-containment-toggle-warning = Вы не можете переключить генератор, пока он подсоединен.
+comp-containment-toggle-warning = Вы не можете переключить генератор, пока он подсоединён.
 comp-field-vaporized = { CAPITALIZE($entity) } врезается в поле и мгновенно испаряется!

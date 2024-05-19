@@ -18,3 +18,7 @@ ent-ClothingNeckPansexualPin = { ent-ClothingNeckLGBTPin }
     .desc = { ent-ClothingNeckLGBTPin.desc }
 ent-ClothingNeckTransPin = { ent-ClothingNeckLGBTPin }
     .desc = { ent-ClothingNeckLGBTPin.desc }
+ent-ClothingNeckAutismPin = значок "аутизм"
+    .desc = Значок в честь дня распространения информации о проблеме аутизма.
+ent-ClothingNeckGoldAutismPin = золотой значок "аутизм"
+    .desc = { ent-ClothingNeckAutismPin.desc }
