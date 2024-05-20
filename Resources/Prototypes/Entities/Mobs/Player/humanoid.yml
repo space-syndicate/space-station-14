@@ -580,9 +580,9 @@
     - type: RandomHumanoidSpawner
       settings: Cluwne
     - type: RandomMetadata
-      nameSegments:
-      - names_first
-      - names_last
+      nameSegments: # Corvax-MRP
+      - names_first_male
+      - names_last_male
 
 - type: randomHumanoidSettings
   id: Cluwne
@@ -637,9 +637,9 @@
     - type: Loadout
       prototypes: [ LostCargoTechGearSuit, LostCargoTechGearCoat ]
     - type: RandomMetadata
-      nameSegments:
-      - names_first
-      - names_last
+      nameSegments: # Corvax-MRP
+      - names_first_male
+      - names_last_male
 
 # Clown troupe
 
@@ -750,9 +750,9 @@
     - type: Loadout
       prototypes: [ TravelingChef ]
     - type: RandomMetadata
-      nameSegments:
-      - names_first
-      - names_last
+      nameSegments: # Corvax-MRP
+      - names_first_male
+      - names_last_male
 
 # Disaster victim
 
@@ -813,9 +813,9 @@
     - type: Loadout
       prototypes: [ DisasterVictimRD, DisasterVictimRDAlt ]
     - type: RandomMetadata
-      nameSegments:
-      - names_first
-      - names_last
+      nameSegments: # Corvax-MRP
+      - names_first_male
+      - names_last_male
 
 - type: randomHumanoidSettings
   id: DisasterVictimCMO
@@ -831,9 +831,9 @@
     - type: Loadout
       prototypes: [ DisasterVictimCMO, DisasterVictimCMOAlt ]
     - type: RandomMetadata
-      nameSegments:
-      - names_first
-      - names_last
+      nameSegments: # Corvax-MRP
+      - names_first_male
+      - names_last_male
 
 - type: randomHumanoidSettings
   id: DisasterVictimCaptain
@@ -849,9 +849,9 @@
     - type: Loadout
       prototypes: [ DisasterVictimCaptain, DisasterVictimCaptainAlt ]
     - type: RandomMetadata
-      nameSegments:
-      - names_first
-      - names_last
+      nameSegments: # Corvax-MRP
+      - names_first_male
+      - names_last_male
 
 # Syndie Disaster Victim
 
@@ -895,7 +895,7 @@
     - type: GhostTakeoverAvailable
     - type: Loadout
       prototypes: [ SyndicateOperativeGearDisasterVictim ]
-    - type: RandomMetadata
-      nameSegments:
-      - names_first
-      - names_last
+    - type: RandomMetadata 
+      nameSegments: # Corvax-MRP
+      - names_first_male
+      - names_last_male
