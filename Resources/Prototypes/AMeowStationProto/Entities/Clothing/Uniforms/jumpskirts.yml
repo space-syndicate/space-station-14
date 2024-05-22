@@ -1,0 +1,21 @@
+- type: entity
+  parent: ClothingUniformSkirtBase
+  id: ClothingUniformJumpskirtVictorianBlack
+  name: викторианское платье
+  description: Чёрное платье из давних времен
+  components:
+  - type: Sprite
+    sprite: AMeowStat/Clothing/Uniforms/Jumpskirt/victriano.rsi
+  - type: Clothing
+    sprite: AMeowStat/Clothing/Uniforms/Jumpskirt/victriano.rsi
+
+- type: entity
+  parent: ClothingUniformSkirtBase
+  id: ClothingUniformJumpskirtVictorianRed
+  name: викторианское платье
+  description: Чёрное платье из давних времен
+  components:
+  - type: Sprite
+    sprite: AMeowStat/Clothing/Uniforms/Jumpskirt/victrianored.rsi
+  - type: Clothing
+    sprite: AMeowStat/Clothing/Uniforms/Jumpskirt/victrianored.rsi
