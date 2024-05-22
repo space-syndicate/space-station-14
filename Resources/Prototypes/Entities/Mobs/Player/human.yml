@@ -14,7 +14,9 @@
     - type: Loadout
       prototypes: [SyndicateOperativeGearExtremelyBasic]
     - type: RandomMetadata
-      nameSegments: [corvax_names_death_commando] # Corvax-Localization
+      nameSegments: # Corvax-MRP
+      - names_first_male
+      - names_last_male
     - type: NpcFactionMember
       factions:
       - Syndicate
