@@ -1,4 +1,4 @@
-- type: gameMap
+﻿- type: gameMap
   id: CorvaxMaus
   mapName: 'Maus Station'
   mapPath: /Maps/corvax_maus.yml 
@@ -15,6 +15,9 @@
             prefixCreator: "Z"
         - type: StationEmergencyShuttle
           emergencyShuttlePath: /Maps/Shuttles/emergency.yml
+        - type: StationRandomTransform
+          enableStationRotation: false
+          maxStationOffset: null
         - type: StationJobs
           overflowJobs:
             - Passenger
@@ -28,6 +31,7 @@
             Janitor: [ 1, 1 ]
             Mime: [ 1, 1 ]
             Captain: [ 1, 1 ]
+            IAA: [1, 1]
             HeadOfPersonnel: [ 1, 1 ]
             ChiefEngineer: [ 1, 1 ]
             StationEngineer: [ 2, 3 ]

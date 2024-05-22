@@ -31,12 +31,33 @@
 
   Кроме сказанного выше, существует множество способов чтобы нагреть (или охладить) газы; здесь мы рассмотрим 2 основных метода, используемые при настройке горячего контура ТЭГа: [color=red]Газодобытчик[/color], и [color=red]Камера сгорания[/color].
 
-  ## Газодобытчик
+  ## The Pipe Burn
 
-  Относительно самый простой из способов, на который у вас уйдёт меньше всего усилий, но при этом обеспечит скорость и стабильную выработку электроэнергии.
+  Also known as the naive method, this is generally discouraged when working for efficiency. However, if all you need is a smidge of power to run the station, and you don't feel like setting up the burn chamber, this method will do.
 
-  Используя газодобытчик (на примере Водяного пара), вы можете добиться качественного потока в Горячем контуре, который, при необходимости, можно разогреть нагревателем. Однако, в большинстве случаев газ можно использовать и [color=#a4885c]комнатной температуры[/color] (в таком случае, важно, чтобы температура Холодного контура была значительно ниже).
-  Уже использованный газ можно пустить обратно в цикл, предварительно повторно разогрев, либо же выпустить в космос.
+  [color=#444444]TODO: Remove this section when atmos pipes are updated to have pressure/temperature limits in a future atmos refactor.[/color]
+
+  Most (if not all) pipe burns follow this general layout:
+  <Box>
+    Gas input -> High-pressure pump -> Pipe segment (with heater) -> Low-pressure pump -> Circulator
+  </Box>
+  <Box>
+    <GuideEntityEmbed Entity="GasMixer" Rotation="90" Caption="" Margin="-1"/>
+    <GuideEntityEmbed Entity="GasPressurePump" Rotation="90" Caption="" Margin="-1"/>
+    <GuideEntityEmbed Entity="GasPipeTJunction" Rotation="0" Caption="" Margin="-1"/>
+    <GuideEntityEmbed Entity="GasPressurePump" Rotation="90" Caption="" Margin="-1"/>
+    <GuideEntityEmbed Entity="TegCirculator" Rotation="90" Caption="" Margin="-3"/>
+  </Box>
+  <Box>
+    <GuideEntityEmbed Entity="GasThermoMachineHeaterEnabled" Caption="" Rotation="180" Margin="0"/>
+  </Box>
+  - The Gas input is pretty self-explanatory; this is where you will input the O2-Plasma mix to be burnt. A 2:1 (67/33) ratio of Oxygen to Plasma is recommended for the hottest burn.
+  - The High-pressure pump serves 2 purposes; first, it prevents the burn from backwashing into the supply pipe, which would be.. bad, for many reasons. Second, it maintains a positive pressure in the following pipe segment, which is important to allow the burn to continue, especially since hot gases expand.
+  - The Pipe segment is where the burn actually occurs; to start it off, one can use a heater to increase the temperature up to the ignition temperature of Plasma. Afterwards, the reaction should be self-sustaining, so long as the Pressure and Moles supplied remains high enough. [color=#a4885c]Be warned[/color]; if you wish to remove the heater, it will carry some of this superheated gas with it, transferring it to the next pipenet you connect it to. Best to space the gas through a space vent, if you must.
+  - The Low-pressure pump (whose pressure should be [italic]slightly lower[/italic] than the input pump) prevents [italic]all[/italic] the gas from passing through the circulator, which could result in the loss of the Moles required to sustain a burn.
+  - The Circulator is where this generated heat will flow to the cold loop; afterwards, feel free to space the waste gases.
+
+  Note: Pressure pumps are used here as, while they pump on pressure (not flow-rate, which is comparatively faster), they are a bit easier to control when it comes to the limited Plasma supply on-station. However, the steps shown can be followed with volumetric pumps too.
 
   ## Камера сгорания
 
@@ -47,6 +68,7 @@
   - Отвод в космос
   - Массив скрубберов
 
+  Here is one layer of an example setup: (pipes can and do need to be layered under the scrubbers below to connect them!)
   <Box>
     <GuideEntityEmbed Entity="WallReinforced" Rotation="0" Caption="" Margin="0"/>
     <GuideEntityEmbed Entity="WallReinforced" Rotation="0" Caption="" Margin="0"/>

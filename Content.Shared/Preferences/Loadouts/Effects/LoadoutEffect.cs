@@ -11,7 +11,9 @@ public abstract partial class LoadoutEffect
     /// Tries to validate the effect.
     /// </summary>
     public abstract bool Validate(
+        HumanoidCharacterProfile profile,
         RoleLoadout loadout,
+        LoadoutPrototype proto, // Corvax-Sponsors
         ICommonSession session,
         IDependencyCollection collection,
         [NotNullWhen(false)] out FormattedMessage? reason);
