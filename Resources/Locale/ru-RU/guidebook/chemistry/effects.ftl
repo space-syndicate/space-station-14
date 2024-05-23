@@ -323,26 +323,26 @@ reagent-effect-guidebook-missing =
     } неизвестный эффект, так как никто ещё не написал об этом эффекте
 reagent-effect-guidebook-plant-attribute =
     { $chance ->
-        [1] Adjusts
-       *[other] adjust
-    } { $attribute } by [color={ $colorName }]{ $amount }[/color]
+        [1] Изменяет
+       *[other] изменяют
+    } { $attribute } за [color={ $colorName }]{ $amount }[/color]
 reagent-effect-guidebook-plant-cryoxadone =
     { $chance ->
-        [1] Ages back
-       *[other] age back
-    } the plant, depending on the plant's age and time to grow
+        [1] Омолаживает
+       *[other] омолаживают
+    } растение, в зависимости от возраста растения и времени его роста
 reagent-effect-guidebook-plant-phalanximine =
     { $chance ->
-        [1] Makes
-       *[other] make
-    } a plant not viable due to mutation viable again
+        [1] Делает
+       *[other] делают
+    } растение, утратившее жизнеспособность в результате мутации, вновь жизнеспособным
 reagent-effect-guidebook-plant-diethylamine =
     { $chance ->
-        [1] Increases
-       *[other] increase
-    } the plant's lifespan and/or base health with 10% chance for each.
+        [1] Повышает
+       *[other] повышают
+    } продолжительность жизни растения и/или его базовое здоровье с шансом 10% на единицу.
 reagent-effect-guidebook-plant-robust-harvest =
     { $chance ->
-        [1] Increases
-       *[other] increase
-    } the plant's potency by { $increase } up to a maximum of { $limit }. Causes the plant to lose its seeds once the potency reaches { $seedlesstreshold }. Trying to add potency over { $limit } may cause decrease in yield at a 10% chance.
+        [1] Повышает
+       *[other] повышают
+    } потенцию растения путём { $increase } до максимума в { $limit }. Приводит к тому, что растение теряет свои семена, когда потенция достигает { $seedlesstreshold }. Попытка повысить потенцию свыше { $limit } может вызвать снижение урожайности с вероятностью 10%.
