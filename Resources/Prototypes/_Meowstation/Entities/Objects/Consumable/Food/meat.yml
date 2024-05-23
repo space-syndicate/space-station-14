@@ -36,7 +36,7 @@
     - Cooked
     - Meat
   - type: Sprite
-    sprite: _Meowstation/Object/Consumable/Food/furrymeat.rsi
+    sprite: _Meowstation/Object/Consumable/Food/Furry/meat.rsi
     layers:
     - state: furry_meat_cooked
   - type: SolutionContainerManager
