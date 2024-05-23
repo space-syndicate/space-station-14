@@ -29,5 +29,3 @@ ent-CrateJanitorBiosuit = janitor bio suit crate
 ent-CrateTrashCartFilled = { ent-CrateTrashCart }
     .suffix = Filled
     .desc = { ent-CrateTrashCart.desc }
-ent-CrateJanitorExplosive = janitorial bomb suit crate
-    .desc = Supplies a bomb suit for cleaning up any explosive compounds, buy one today!

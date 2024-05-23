@@ -479,6 +479,14 @@
     corvax-accent-cowboy-words-48: corvax-accent-cowboy-replacement-48
     corvax-accent-cowboy-words-49: corvax-accent-cowboy-replacement-49
     corvax-accent-cowboy-words-50: corvax-accent-cowboy-replacement-50
+    corvax-accent-cowboy-words-51: corvax-accent-cowboy-replacement-51
+    corvax-accent-cowboy-words-52: corvax-accent-cowboy-replacement-52
+    corvax-accent-cowboy-words-53: corvax-accent-cowboy-replacement-53
+    corvax-accent-cowboy-words-54: corvax-accent-cowboy-replacement-54
+    corvax-accent-cowboy-words-5501: corvax-accent-cowboy-replacement-55
+    corvax-accent-cowboy-words-5502: corvax-accent-cowboy-replacement-55
+    corvax-accent-cowboy-words-56: corvax-accent-cowboy-replacement-56
+    corvax-accent-cowboy-words-57: corvax-accent-cowboy-replacement-57
     # Corvax-accent-end
 
 - type: accent
@@ -669,6 +677,7 @@
 
 - type: accent
   id: liar
+  replacementChance: 0.15
   wordReplacements:
     liar-word-1: liar-word-replacement-1
     liar-word-2: liar-word-replacement-2
