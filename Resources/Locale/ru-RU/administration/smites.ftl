@@ -13,7 +13,9 @@ admin-smite-stomach-removal-self = Вы ощущаете пустоту в же�
 admin-smite-run-walk-swap-prompt = Для бега вы должны нажать Shift!
 admin-smite-super-speed-prompt = Вы двигаетесь почти со скоростью звука!
 admin-smite-lung-removal-self = Вы не можете вдохнуть!
+
 ## Smite names
+
 admin-smite-explode-name = Взрыв
 admin-smite-chess-dimension-name = Шахматное измерение
 admin-smite-set-alight-name = Воспламенить
@@ -54,7 +56,9 @@ admin-smite-super-bonk-name = СуперБонк
 admin-smite-super-bonk-lite-name = СуперБонк-Лайт
 admin-smite-terminate-name = Экстерминировать
 admin-smite-super-slip-name = Суперскольжение
+
 ## Smite descriptions
+
 admin-smite-explode-description = Взрывает цель.
 admin-smite-chess-dimension-description = Изгоняет цель в шахматное измерение.
 admin-smite-set-alight-description = Поджигает цель.
@@ -96,7 +100,9 @@ admin-smite-super-bonk-description = Заставляет цель ударит�
 admin-smite-terminate-description = Создаёт экстерминатора с ролью призрака, с единственной задачей - убить выбранную цель.
 admin-smite-super-slip-description = Очень сильно поскальзывает цель.
 admin-smite-super-bonk-lite-description = Заставляет цель удариться о каждый стол на станции и за её пределами. Прекращает действовать после смерти цели.
+
 ## Tricks descriptions
+
 admin-trick-bolt-description = Болтирует целевой шлюз.
 admin-trick-emergency-access-on-description = Включает аварийный доступ к целевому шлюзу.
 admin-trick-emergency-access-off-description = Выключает аварийный доступ к целевому шлюзу.
