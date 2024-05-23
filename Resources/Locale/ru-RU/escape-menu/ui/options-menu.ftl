@@ -83,11 +83,11 @@ ui-options-vp-integer-scaling-tooltip =
     используя целочисленное значение при определённых разрешениях. Хотя это и
     приводит к чётким текстурам, это часто означает, что сверху/снизу экрана будут
     чёрные полосы или что часть окна не будет видна.
-ui-options-vp-vertical-fit = Vertical viewport fitting
+ui-options-vp-vertical-fit = Подгон окна просмотра по вертикали
 ui-options-vp-vertical-fit-tooltip =
-    When enabled, the main viewport will ignore the horizontal axis entirely when
-    fitting to your screen. If your screen is smaller than the viewport, then this
-    will cause the viewport to be cut off on the horizontal axis.
+    Когда функция включена, основное окно просмотра не будет учитывать горизонтальную ось
+    при подгонке под ваш экран. Если ваш экран меньше, чем окно просмотра,
+    то это приведёт к его обрезанию по горизонтальной оси.
 ui-options-vp-low-res = Изображение низкого разрешения
 ui-options-parallax-low-quality = Низкокачественный параллакс (фон)
 ui-options-fps-counter = Показать счётчик FPS
@@ -167,6 +167,7 @@ ui-options-function-open-crafting-menu = Открыть меню строите�
 ui-options-function-open-inventory-menu = Открыть снаряжение
 ui-options-function-open-a-help = Открыть админ помощь
 ui-options-function-open-abilities-menu = Открыть меню действий
+ui-options-function-open-emotes-menu = Open emotes menu
 ui-options-function-toggle-round-end-summary-window = Переключить окно итогов раунда
 ui-options-function-open-entity-spawn-window = Открыть меню спавна сущностей
 ui-options-function-open-sandbox-window = Открыть меню песочницы
