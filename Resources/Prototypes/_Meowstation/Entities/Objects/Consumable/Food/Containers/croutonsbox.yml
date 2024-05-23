@@ -1,0 +1,27 @@
+- type: entity
+  parent: [ BoxCardboard, BaseBagOpenClose ]
+  id: FoodBoxCroutons
+  name: пачка Сухариков
+  description: Пачка из восьми хрустящих сухариков! Сделано из гамлета...
+  components:
+  - type: Sprite
+    sprite: _Meowstation/Object/Consumable/Food/Baked/croutons.rsi
+    state: box
+  - type: Storage
+    capacity: 8
+    whitelist:
+      tags:
+      - Croutons
+  - type: Item
+    sprite: _Meowstation/Object/Consumable/Food/Baked/croutons.rsi
+    size: Small
+    heldPrefix: box
+  - type: StorageFill
+    contents:
+    - id: FoodCroutons
+      amount: 8
+  - type: ItemCounter
+    count:
+      tags: [Croutons]
+    composite: true
+  - type: Appearance
