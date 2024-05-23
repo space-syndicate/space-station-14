@@ -2,7 +2,7 @@
   id: PokerCard
 
 - type: entity
-  name: playable card
+  name: игральная карта
   suffix: Игральная 
   parent: BaseItem
   id: BasePokerCard
@@ -25,7 +25,7 @@
     - state: cover
 
 - type: entity
-  name: playable card
+  name: игральная карта
   suffix: Игральная 
   parent: BasePokerCard
   id: BasePokerCardFlipped
@@ -43,8 +43,8 @@
     - state: logo
 
 - type: entity
-  name: playable card
-  suffix:  ,Club ,Two
+  name: игральная карта
+  suffix: Трефы, Двойка
   parent: BasePokerCard
   id: PokerCardTwoClub
   description: A poker card with you can play. Its two of clubs
@@ -62,7 +62,7 @@
     - state: black_two
 
 - type: entity
-  name: playable card
+  name: игральная карта
   suffix: Игральная 
   parent: BasePokerCard
   id: PokerCardTwoClubFlipped
@@ -80,8 +80,8 @@
     - state: logo
 
 - type: entity
-  name: playable card
-  suffix:  ,Club ,Three
+  name: игральная карта
+  suffix: Трефы, Тройка
   parent: BasePokerCard
   id: PokerCardThreeClub
   description: A poker card with you can play. Its three of clubs
@@ -99,7 +99,7 @@
     - state: black_three
 
 - type: entity
-  name: playable card
+  name: игральная карта
   suffix: Игральная 
   parent: BasePokerCard
   id: PokerCardThreeClubFlipped
@@ -117,8 +117,8 @@
     - state: logo
 
 - type: entity
-  name: playable card
-  suffix:  ,Club ,Four
+  name: игральная карта
+  suffix: Трефы, Четвёрка
   parent: BasePokerCard
   id: PokerCardFourClub
   description: A poker card with you can play. Its four of clubs
@@ -136,7 +136,7 @@
     - state: black_four
 
 - type: entity
-  name: playable card
+  name: игральная карта
   suffix: Игральная 
   parent: BasePokerCard
   id: PokerCardFourClubFlipped
@@ -154,8 +154,8 @@
     - state: logo
 
 - type: entity
-  name: playable card
-  suffix:  ,Club ,Five
+  name: игральная карта
+  suffix: Трефы, Пятёрка
   parent: BasePokerCard
   id: PokerCardFiveClub
   description: A poker card with you can play. Its five of clubs
@@ -173,7 +173,7 @@
     - state: black_five
 
 - type: entity
-  name: playable card
+  name: игральная карта
   suffix: Игральная 
   parent: BasePokerCard
   id: PokerCardFiveClubFlipped
@@ -191,8 +191,8 @@
     - state: logo
 
 - type: entity
-  name: playable card
-  suffix:  ,Club ,Six
+  name: игральная карта
+  suffix: Трефы, Шестёрка
   parent: BasePokerCard
   id: PokerCardSixClub
   description: A poker card with you can play. Its six of clubs
@@ -210,7 +210,7 @@
     - state: black_six
 
 - type: entity
-  name: playable card
+  name: игральная карта
   suffix: Игральная 
   parent: BasePokerCard
   id: PokerCardSixClubFlipped
@@ -228,8 +228,8 @@
     - state: logo
 
 - type: entity
-  name: playable card
-  suffix:  ,Club ,Seven
+  name: игральная карта
+  suffix: Трефы, Семёрка
   parent: BasePokerCard
   id: PokerCardSevenClub
   description: A poker card with you can play. Its seven of clubs
@@ -247,7 +247,7 @@
     - state: black_seven
 
 - type: entity
-  name: playable card
+  name: игральная карта
   suffix: Игральная 
   parent: BasePokerCard
   id: PokerCardSevenClubFlipped
@@ -265,8 +265,8 @@
     - state: logo
 
 - type: entity
-  name: playable card
-  suffix:  ,Club ,Eight
+  name: игральная карта
+  suffix: Трефы, Восьмёрка
   parent: BasePokerCard
   id: PokerCardEightClub
   description: A poker card with you can play. Its eight of clubs
@@ -284,7 +284,7 @@
     - state: black_eight
 
 - type: entity
-  name: playable card
+  name: игральная карта
   suffix: Игральная 
   parent: BasePokerCard
   id: PokerCardEightClubFlipped
@@ -302,8 +302,8 @@
     - state: logo
 
 - type: entity
-  name: playable card
-  suffix:  ,Club ,Nine
+  name: игральная карта
+  suffix: Трефы, Девятка
   parent: BasePokerCard
   id: PokerCardNineClub
   description: A poker card with you can play. Its nine of clubs
@@ -321,7 +321,7 @@
     - state: black_nine
 
 - type: entity
-  name: playable card
+  name: игральная карта
   suffix: Игральная 
   parent: BasePokerCard
   id: PokerCardNineClubFlipped
@@ -339,8 +339,8 @@
     - state: logo
 
 - type: entity
-  name: playable card
-  suffix:  ,Club ,Ten
+  name: игральная карта
+  suffix: Трефы, Десятка
   parent: BasePokerCard
   id: PokerCardTenClub
   description: A poker card with you can play. Its ten of clubs
@@ -358,7 +358,7 @@
     - state: black_ten
 
 - type: entity
-  name: playable card
+  name: игральная карта
   suffix: Игральная 
   parent: BasePokerCard
   id: PokerCardTenClubFlipped
@@ -376,8 +376,8 @@
     - state: logo
 
 - type: entity
-  name: playable card
-  suffix:  ,Club ,Jack
+  name: игральная карта
+  suffix: Трефы, Валет
   parent: BasePokerCard
   id: PokerCardJackClub
   description: A poker card with you can play. Its jack of clubs
@@ -395,7 +395,7 @@
     - state: black_jack
 
 - type: entity
-  name: playable card
+  name: игральная карта
   suffix: Игральная 
   parent: BasePokerCard
   id: PokerCardJackClubFlipped
@@ -413,8 +413,8 @@
     - state: logo
 
 - type: entity
-  name: playable card
-  suffix:  ,Club ,Queen
+  name: игральная карта
+  suffix: Трефы, Дама
   parent: BasePokerCard
   id: PokerCardQueenClub
   description: A poker card with you can play. Its queen of clubs
@@ -432,7 +432,7 @@
     - state: black_queen
 
 - type: entity
-  name: playable card
+  name: игральная карта
   suffix: Игральная 
   parent: BasePokerCard
   id: PokerCardQueenClubFlipped
@@ -450,8 +450,8 @@
     - state: logo
 
 - type: entity
-  name: playable card
-  suffix:  ,Club ,King
+  name: игральная карта
+  suffix: Трефы, Король
   parent: BasePokerCard
   id: PokerCardKingClub
   description: A poker card with you can play. Its king of clubs
@@ -469,7 +469,7 @@
     - state: black_king
 
 - type: entity
-  name: playable card
+  name: игральная карта
   suffix: Игральная 
   parent: BasePokerCard
   id: PokerCardKingClubFlipped
@@ -487,8 +487,8 @@
     - state: logo
 
 - type: entity
-  name: playable card
-  suffix:  ,Club ,Ace
+  name: игральная карта
+  suffix: Трефы, , Туз
   parent: BasePokerCard
   id: PokerCardAceClub
   description: A poker card with you can play. Its ace of clubs
@@ -506,7 +506,7 @@
     - state: black_ace
 
 - type: entity
-  name: playable card
+  name: игральная карта
   suffix: Игральная 
   parent: BasePokerCard
   id: PokerCardAceClubFlipped
@@ -524,8 +524,8 @@
     - state: logo
 
 - type: entity
-  name: playable card
-  suffix:  Spade, Two
+  name: игральная карта
+  suffix: Пики, , Двойка
   parent: BasePokerCard
   id: PokerCardTwoSpade
   description: A poker card with you can play. Its two of spades
@@ -543,7 +543,7 @@
     - state: black_two
 
 - type: entity
-  name: playable card
+  name: игральная карта
   suffix: Игральная 
   parent: BasePokerCard
   id: PokerCardTwoSpadeFlipped
@@ -561,8 +561,8 @@
     - state: logo
 
 - type: entity
-  name: playable card
-  suffix:  Spade, Three
+  name: игральная карта
+  suffix: Пики, , Тройка
   parent: BasePokerCard
   id: PokerCardThreeSpade
   description: A poker card with you can play. Its three of spades
@@ -580,7 +580,7 @@
     - state: black_three
 
 - type: entity
-  name: playable card
+  name: игральная карта
   suffix: Игральная 
   parent: BasePokerCard
   id: PokerCardThreeSpadeFlipped
@@ -598,8 +598,8 @@
     - state: logo
 
 - type: entity
-  name: playable card
-  suffix:  Spade, Four
+  name: игральная карта
+  suffix: Пики, , Четвёрка
   parent: BasePokerCard
   id: PokerCardFourSpade
   description: A poker card with you can play. Its four of spades
@@ -617,7 +617,7 @@
     - state: black_four
 
 - type: entity
-  name: playable card
+  name: игральная карта
   suffix: Игральная 
   parent: BasePokerCard
   id: PokerCardFourSpadeFlipped
@@ -635,8 +635,8 @@
     - state: logo
 
 - type: entity
-  name: playable card
-  suffix:  Spade, Five
+  name: игральная карта
+  suffix: Пики, , Пятёрка
   parent: BasePokerCard
   id: PokerCardFiveSpade
   description: A poker card with you can play. Its five of spades
@@ -654,7 +654,7 @@
     - state: black_five
 
 - type: entity
-  name: playable card
+  name: игральная карта
   suffix: Игральная 
   parent: BasePokerCard
   id: PokerCardFiveSpadeFlipped
@@ -672,8 +672,8 @@
     - state: logo
 
 - type: entity
-  name: playable card
-  suffix:  Spade, Six
+  name: игральная карта
+  suffix: Пики, , Шестёрка
   parent: BasePokerCard
   id: PokerCardSixSpade
   description: A poker card with you can play. Its six of spades
@@ -691,7 +691,7 @@
     - state: black_six
 
 - type: entity
-  name: playable card
+  name: игральная карта
   suffix: Игральная 
   parent: BasePokerCard
   id: PokerCardSixSpadeFlipped
@@ -709,8 +709,8 @@
     - state: logo
 
 - type: entity
-  name: playable card
-  suffix:  Spade, Seven
+  name: игральная карта
+  suffix: Пики, , Семёрка
   parent: BasePokerCard
   id: PokerCardSevenSpade
   description: A poker card with you can play. Its seven of spades
@@ -728,7 +728,7 @@
     - state: black_seven
 
 - type: entity
-  name: playable card
+  name: игральная карта
   suffix: Игральная 
   parent: BasePokerCard
   id: PokerCardSevenSpadeFlipped
@@ -746,8 +746,8 @@
     - state: logo
 
 - type: entity
-  name: playable card
-  suffix:  Spade, Eight
+  name: игральная карта
+  suffix: Пики, , Восьмёрка
   parent: BasePokerCard
   id: PokerCardEightSpade
   description: A poker card with you can play. Its eight of spades
@@ -765,7 +765,7 @@
     - state: black_eight
 
 - type: entity
-  name: playable card
+  name: игральная карта
   suffix: Игральная 
   parent: BasePokerCard
   id: PokerCardEightSpadeFlipped
@@ -783,8 +783,8 @@
     - state: logo
 
 - type: entity
-  name: playable card
-  suffix:  Spade,  Nine
+  name: игральная карта
+  suffix: Пики, ,  Nine
   parent: BasePokerCard
   id: PokerCardNineSpade
   description: A poker card with you can play. Its nine of spades
@@ -802,7 +802,7 @@
     - state: black_nine
 
 - type: entity
-  name: playable card
+  name: игральная карта
   suffix: Игральная 
   parent: BasePokerCard
   id: PokerCardNineSpadeFlipped
@@ -820,8 +820,8 @@
     - state: logo
 
 - type: entity
-  name: playable card
-  suffix:  Spade, Ten
+  name: игральная карта
+  suffix: Пики, , Десятка
   parent: BasePokerCard
   id: PokerCardTenSpade
   description: A poker card with you can play. Its ten of spades
@@ -839,7 +839,7 @@
     - state: black_ten
 
 - type: entity
-  name: playable card
+  name: игральная карта
   suffix: Игральная 
   parent: BasePokerCard
   id: PokerCardTenSpadeFlipped
@@ -857,8 +857,8 @@
     - state: logo
 
 - type: entity
-  name: playable card
-  suffix:  Spade, Jack
+  name: игральная карта
+  suffix: Пики, , Валет
   parent: BasePokerCard
   id: PokerCardJackSpade
   description: A poker card with you can play. Its jack of spades
@@ -876,7 +876,7 @@
     - state: black_jack
 
 - type: entity
-  name: playable card
+  name: игральная карта
   suffix: Игральная 
   parent: BasePokerCard
   id: PokerCardJackSpadeFlipped
@@ -894,8 +894,8 @@
     - state: logo
 
 - type: entity
-  name: playable card
-  suffix:  Spade, Queen
+  name: игральная карта
+  suffix: Пики, , Дама
   parent: BasePokerCard
   id: PokerCardQueenSpade
   description: A poker card with you can play. Its queen of spades
@@ -913,7 +913,7 @@
     - state: black_queen
 
 - type: entity
-  name: playable card
+  name: игральная карта
   suffix: Игральная 
   parent: BasePokerCard
   id: PokerCardQueenSpadeFlipped
@@ -931,8 +931,8 @@
     - state: logo
 
 - type: entity
-  name: playable card
-  suffix:  Spade, King
+  name: игральная карта
+  suffix: Пики, , Король
   parent: BasePokerCard
   id: PokerCardKingSpade
   description: A poker card with you can play. Its king of spades
@@ -950,7 +950,7 @@
     - state: black_king
 
 - type: entity
-  name: playable card
+  name: игральная карта
   suffix: Игральная 
   parent: BasePokerCard
   id: PokerCardKingSpadeFlipped
@@ -968,8 +968,8 @@
     - state: logo
 
 - type: entity
-  name: playable card
-  suffix:  Spade, Ace
+  name: игральная карта
+  suffix: Пики, , Туз
   parent: BasePokerCard
   id: PokerCardAceSpade
   description: A poker card with you can play. Its ace of spades
@@ -987,7 +987,7 @@
     - state: black_ace
 
 - type: entity
-  name: playable card
+  name: игральная карта
   suffix: Игральная 
   parent: BasePokerCard
   id: PokerCardAceSpadeFlipped
@@ -1005,8 +1005,8 @@
     - state: logo
 
 - type: entity
-  name: playable card
-  suffix:  ,Heart ,Two
+  name: игральная карта
+  suffix: Червы, Двойка
   parent: BasePokerCard
   id: PokerCardTwoHeart
   description: A poker card with you can play. Its two of hearts
@@ -1024,7 +1024,7 @@
     - state: red_two
 
 - type: entity
-  name: playable card
+  name: игральная карта
   suffix: Игральная 
   parent: BasePokerCard
   id: PokerCardTwoHeartFlipped
@@ -1042,8 +1042,8 @@
     - state: logo
 
 - type: entity
-  name: playable card
-  suffix:  ,Heart ,Three
+  name: игральная карта
+  suffix: Червы, Тройка
   parent: BasePokerCard
   id: PokerCardThreeHeart
   description: A poker card with you can play. Its three of hearts
@@ -1061,7 +1061,7 @@
     - state: red_three
 
 - type: entity
-  name: playable card
+  name: игральная карта
   suffix: Игральная 
   parent: BasePokerCard
   id: PokerCardThreeHeartFlipped
@@ -1079,8 +1079,8 @@
     - state: logo
 
 - type: entity
-  name: playable card
-  suffix:  ,Heart ,Four
+  name: игральная карта
+  suffix: Червы, Четвёрка
   parent: BasePokerCard
   id: PokerCardFourHeart
   description: A poker card with you can play. Its four of hearts
@@ -1098,7 +1098,7 @@
     - state: red_four
 
 - type: entity
-  name: playable card
+  name: игральная карта
   suffix: Игральная 
   parent: BasePokerCard
   id: PokerCardFourHeartFlipped
@@ -1116,8 +1116,8 @@
     - state: logo
 
 - type: entity
-  name: playable card
-  suffix:  ,Heart ,Five
+  name: игральная карта
+  suffix: Червы, Пятёрка
   parent: BasePokerCard
   id: PokerCardFiveHeart
   description: A poker card with you can play. Its five of hearts
@@ -1135,7 +1135,7 @@
     - state: red_five
 
 - type: entity
-  name: playable card
+  name: игральная карта
   suffix: Игральная 
   parent: BasePokerCard
   id: PokerCardFiveHeartFlipped
@@ -1153,8 +1153,8 @@
     - state: logo
 
 - type: entity
-  name: playable card
-  suffix:  ,Heart ,Six
+  name: игральная карта
+  suffix: Червы, Шестёрка
   parent: BasePokerCard
   id: PokerCardSixHeart
   description: A poker card with you can play. Its six of hearts
@@ -1172,7 +1172,7 @@
     - state: red_six
 
 - type: entity
-  name: playable card
+  name: игральная карта
   suffix: Игральная 
   parent: BasePokerCard
   id: PokerCardSixHeartFlipped
@@ -1190,8 +1190,8 @@
     - state: logo
 
 - type: entity
-  name: playable card
-  suffix:  ,Heart ,Seven
+  name: игральная карта
+  suffix: Червы, Семёрка
   parent: BasePokerCard
   id: PokerCardSevenHeart
   description: A poker card with you can play. Its seven of hearts
@@ -1209,7 +1209,7 @@
     - state: red_seven
 
 - type: entity
-  name: playable card
+  name: игральная карта
   suffix: Игральная 
   parent: BasePokerCard
   id: PokerCardSevenHeartFlipped
@@ -1227,8 +1227,8 @@
     - state: logo
 
 - type: entity
-  name: playable card
-  suffix:  ,Heart ,Eight
+  name: игральная карта
+  suffix: Червы, Восьмёрка
   parent: BasePokerCard
   id: PokerCardEightHeart
   description: A poker card with you can play. Its eight of hearts
@@ -1246,7 +1246,7 @@
     - state: red_eight
 
 - type: entity
-  name: playable card
+  name: игральная карта
   suffix: Игральная 
   parent: BasePokerCard
   id: PokerCardEightHeartFlipped
@@ -1264,8 +1264,8 @@
     - state: logo
 
 - type: entity
-  name: playable card
-  suffix:  ,Heart ,Nine
+  name: игральная карта
+  suffix: Червы, Девятка
   parent: BasePokerCard
   id: PokerCardNineHeart
   description: A poker card with you can play. Its nine of hearts
@@ -1283,7 +1283,7 @@
     - state: red_nine
 
 - type: entity
-  name: playable card
+  name: игральная карта
   suffix: Игральная 
   parent: BasePokerCard
   id: PokerCardNineHeartFlipped
@@ -1301,8 +1301,8 @@
     - state: logo
 
 - type: entity
-  name: playable card
-  suffix:  ,Heart ,Ten
+  name: игральная карта
+  suffix: Червы, Десятка
   parent: BasePokerCard
   id: PokerCardTenHeart
   description: A poker card with you can play. Its ten of hearts
@@ -1320,7 +1320,7 @@
     - state: red_ten
 
 - type: entity
-  name: playable card
+  name: игральная карта
   suffix: Игральная 
   parent: BasePokerCard
   id: PokerCardTenHeartFlipped
@@ -1338,8 +1338,8 @@
     - state: logo
  
 - type: entity
-  name: playable card
-  suffix:  ,Heart ,Jack
+  name: игральная карта
+  suffix: Червы, Валет
   parent: BasePokerCard
   id: PokerCardJackHeart
   description: A poker card with you can play. Its jack of hearts
@@ -1357,7 +1357,7 @@
     - state: red_jack
 
 - type: entity
-  name: playable card
+  name: игральная карта
   suffix: Игральная 
   parent: BasePokerCard
   id: PokerCardJackHeartFlipped
@@ -1375,8 +1375,8 @@
     - state: logo
 
 - type: entity
-  name: playable card
-  suffix:  ,Heart ,Queen
+  name: игральная карта
+  suffix: Червы, Дама
   parent: BasePokerCard
   id: PokerCardQueenHeart
   description: A poker card with you can play. Its queen of hearts
@@ -1394,7 +1394,7 @@
     - state: red_queen
 
 - type: entity
-  name: playable card
+  name: игральная карта
   suffix: Игральная 
   parent: BasePokerCard
   id: PokerCardQueenHeartFlipped
@@ -1412,8 +1412,8 @@
     - state: logo
 
 - type: entity
-  name: playable card
-  suffix:  ,Heart ,King
+  name: игральная карта
+  suffix: Червы, Король
   parent: BasePokerCard
   id: PokerCardKingHeart
   description: A poker card with you can play. Its king of hearts
@@ -1431,7 +1431,7 @@
     - state: red_king
 
 - type: entity
-  name: playable card
+  name: игральная карта
   suffix: Игральная 
   parent: BasePokerCard
   id: PokerCardKingHeartFlipped
@@ -1449,8 +1449,8 @@
     - state: logo
 
 - type: entity
-  name: playable card
-  suffix:  ,Heart ,Ace
+  name: игральная карта
+  suffix: Червы, Туз
   parent: BasePokerCard
   id: PokerCardAceHeart
   description: A poker card with you can play. Its ace of hearts
@@ -1468,7 +1468,7 @@
     - state: red_ace
 
 - type: entity
-  name: playable card
+  name: игральная карта
   suffix: Игральная 
   parent: BasePokerCard
   id: PokerCardAceHeartFlipped
@@ -1486,8 +1486,8 @@
     - state: logo
 
 - type: entity
-  name: playable card
-  suffix:  ,Diamond ,Two
+  name: игральная карта
+  suffix: Бубны, Двойка
   parent: BasePokerCard
   id: PokerCardTwoDiamond
   description: A poker card with you can play. Its two of diamonds
@@ -1505,7 +1505,7 @@
     - state: red_two
 
 - type: entity
-  name: playable card
+  name: игральная карта
   suffix: Игральная 
   parent: BasePokerCard
   id: PokerCardTwoDiamondFlipped
@@ -1523,8 +1523,8 @@
     - state: logo
 
 - type: entity
-  name: playable card
-  suffix:  ,Diamond ,Three
+  name: игральная карта
+  suffix: Бубны, Тройка
   parent: BasePokerCard
   id: PokerCardThreeDiamond
   description: A poker card with you can play. Its three of diamonds
@@ -1542,7 +1542,7 @@
     - state: red_three
 
 - type: entity
-  name: playable card
+  name: игральная карта
   suffix: Игральная 
   parent: BasePokerCard
   id: PokerCardThreeDiamondFlipped
@@ -1560,8 +1560,8 @@
     - state: logo
 
 - type: entity
-  name: playable card
-  suffix:  ,Diamond ,Four
+  name: игральная карта
+  suffix: Бубны, Четвёрка
   parent: BasePokerCard
   id: PokerCardFourDiamond
   description: A poker card with you can play. Its four of diamonds
@@ -1579,7 +1579,7 @@
     - state: red_four
 
 - type: entity
-  name: playable card
+  name: игральная карта
   suffix: Игральная 
   parent: BasePokerCard
   id: PokerCardFourDiamondFlipped
@@ -1597,8 +1597,8 @@
     - state: logo
 
 - type: entity
-  name: playable card
-  suffix:  ,Diamond ,Five
+  name: игральная карта
+  suffix: Бубны, Пятёрка
   parent: BasePokerCard
   id: PokerCardFiveDiamond
   description: A poker card with you can play. Its five of diamonds
@@ -1616,7 +1616,7 @@
     - state: red_five
 
 - type: entity
-  name: playable card
+  name: игральная карта
   suffix: Игральная 
   parent: BasePokerCard
   id: PokerCardFiveDiamondFlipped
@@ -1634,8 +1634,8 @@
     - state: logo
 
 - type: entity
-  name: playable card
-  suffix:  ,Diamond ,Six
+  name: игральная карта
+  suffix: Бубны, Шестёрка
   parent: BasePokerCard
   id: PokerCardSixDiamond
   description: A poker card with you can play. Its six of diamonds
@@ -1653,7 +1653,7 @@
     - state: red_six
 
 - type: entity
-  name: playable card
+  name: игральная карта
   suffix: Игральная 
   parent: BasePokerCard
   id: PokerCardSixDiamondFlipped
@@ -1671,8 +1671,8 @@
     - state: logo
 
 - type: entity
-  name: playable card
-  suffix:  ,Diamond ,Seven
+  name: игральная карта
+  suffix: Бубны, Семёрка
   parent: BasePokerCard
   id: PokerCardSevenDiamond
   description: A poker card with you can play. Its seven of diamonds
@@ -1690,7 +1690,7 @@
     - state: red_seven
 
 - type: entity
-  name: playable card
+  name: игральная карта
   suffix: Игральная 
   parent: BasePokerCard
   id: PokerCardSevenDiamondFlipped
@@ -1708,8 +1708,8 @@
     - state: logo
 
 - type: entity
-  name: playable card
-  suffix:  ,Diamond ,Eight
+  name: игральная карта
+  suffix: Бубны, Восьмёрка
   parent: BasePokerCard
   id: PokerCardEightDiamond
   description: A poker card with you can play. Its eight of diamonds
@@ -1727,7 +1727,7 @@
     - state: red_eight
 
 - type: entity
-  name: playable card
+  name: игральная карта
   suffix: Игральная 
   parent: BasePokerCard
   id: PokerCardEightDiamondFlipped
@@ -1745,8 +1745,8 @@
     - state: logo
 
 - type: entity
-  name: playable card
-  suffix:  ,Diamond ,Nine
+  name: игральная карта
+  suffix: Бубны, Девятка
   parent: BasePokerCard
   id: PokerCardNineDiamond
   description: A poker card with you can play. Its nine of diamonds
@@ -1764,7 +1764,7 @@
     - state: red_nine
 
 - type: entity
-  name: playable card
+  name: игральная карта
   suffix: Игральная 
   parent: BasePokerCard
   id: PokerCardNineDiamondFlipped
@@ -1782,8 +1782,8 @@
     - state: logo
 
 - type: entity
-  name: playable card
-  suffix:  ,Diamond ,Ten
+  name: игральная карта
+  suffix: Бубны, Десятка
   parent: BasePokerCard
   id: PokerCardTenDiamond
   description: A poker card with you can play. Its ten of diamonds
@@ -1801,7 +1801,7 @@
     - state: red_ten
 
 - type: entity
-  name: playable card
+  name: игральная карта
   suffix: Игральная 
   parent: BasePokerCard
   id: PokerCardTenDiamondFlipped
@@ -1819,8 +1819,8 @@
     - state: logo
 
 - type: entity
-  name: playable card
-  suffix:  ,Diamond ,Jack
+  name: игральная карта
+  suffix: Бубны, Валет
   parent: BasePokerCard
   id: PokerCardJackDiamond
   description: A poker card with you can play. Its jack of diamonds
@@ -1838,7 +1838,7 @@
     - state: red_jack
 
 - type: entity
-  name: playable card
+  name: игральная карта
   suffix: Игральная 
   parent: BasePokerCard
   id: PokerCardJackDiamondFlipped
@@ -1856,8 +1856,8 @@
     - state: logo
 
 - type: entity
-  name: playable card
-  suffix:  ,Diamond ,Queen
+  name: игральная карта
+  suffix: Бубны, Дама
   parent: BasePokerCard
   id: PokerCardQueenDiamond
   description: A poker card with you can play. Its queen of diamonds
@@ -1875,7 +1875,7 @@
     - state: red_queen
 
 - type: entity
-  name: playable card
+  name: игральная карта
   suffix: Игральная 
   parent: BasePokerCard
   id: PokerCardQueenDiamondFlipped
@@ -1893,8 +1893,8 @@
     - state: logo
 
 - type: entity
-  name: playable card
-  suffix:  ,Diamond ,King
+  name: игральная карта
+  suffix: Бубны, Король
   parent: BasePokerCard
   id: PokerCardKingDiamond
   description: A poker card with you can play. Its king of diamonds
@@ -1912,7 +1912,7 @@
     - state: red_king
 
 - type: entity
-  name: playable card
+  name: игральная карта
   suffix: Игральная 
   parent: BasePokerCard
   id: PokerCardKingDiamondFlipped
@@ -1930,8 +1930,8 @@
     - state: logo
 
 - type: entity
-  name: playable card
-  suffix:  ,Diamond ,Ace
+  name: игральная карта
+  suffix: Бубны, Туз
   parent: BasePokerCard
   id: PokerCardAceDiamond
   description: A poker card with you can play. Its ace of diamonds
@@ -1949,7 +1949,7 @@
     - state: red_ace
 
 - type: entity
-  name: playable card
+  name: игральная карта
   suffix: Игральная 
   parent: BasePokerCard
   id: PokerCardAceDiamondFlipped
@@ -1967,8 +1967,8 @@
     - state: logo
 
 - type: entity
-  name: playable card
-  suffix:  ,Red Joker
+  name: игральная карта
+  suffix: красный джокер
   parent: BasePokerCard
   id: PokerCardRedJoker
   description: A poker card with you can play. Its red joker
@@ -1985,7 +1985,7 @@
     - state: joker_red
 
 - type: entity
-  name: playable card
+  name: игральная карта
   suffix: Игральная 
   parent: BasePokerCard
   id: PokerCardRedJokerFlipped
@@ -2003,8 +2003,8 @@
     - state: logo
 
 - type: entity
-  name: playable card
-  suffix:  ,Black Joker
+  name: игральная карта
+  suffix: чёрный джокер
   parent: BasePokerCard
   id: PokerCardBlackJoker
   description: A poker card with you can play. Its black joker
@@ -2021,7 +2021,7 @@
     - state: joker_black
 
 - type: entity
-  name: playable card
+  name: игральная карта
   suffix: Игральная 
   parent: BasePokerCard
   id: PokerCardBlackJokerFlipped
@@ -2096,7 +2096,7 @@
 - type: entity
   id: PokerCardBoxFilled
   parent: PokerCardBox
-  suffix:  ,CardBox ,Filled ,54
+  suffix: CardBoxFilled54
   components:
   - type: StorageFill
     contents:

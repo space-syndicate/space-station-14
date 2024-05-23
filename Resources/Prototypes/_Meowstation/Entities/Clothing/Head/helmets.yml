@@ -1,0 +1,10 @@
+- type: entity
+  parent: ClothingHeadHelmetBasic
+  id: ClothingHeadHelmetSSSP
+  name: шлем СССП
+  description: Советский шлем.
+  components:
+  - type: Sprite
+    sprite: _Meowstation/Clothing/Head/Helmet/sssphelmet.rsi
+  - type: Clothing
+    sprite: _Meowstation/Clothing/Head/Helmet/sssphelmet.rsi

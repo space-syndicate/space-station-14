@@ -1,0 +1,154 @@
+- type: species
+  id: Furry
+  name: Фурри
+  roundStart: true
+  prototype: MobFurry
+  sprites: MobFurrySprites
+  defaultSkinTone: "#FFFFFF"
+  markingLimits: MobFurryMarkingLimits
+  dollPrototype: MobFurryDummy
+  skinColoration: Hues
+
+- type: speciesBaseSprites
+  id: MobFurrySprites
+  sprites:
+    Head: MobFurryHead
+    Hair: MobHumanoidAnyMarking
+    Snout: MobHumanoidAnyMarking
+    Chest: MobFurryTorso
+    HeadTop: MobHumanoidAnyMarking
+    Tail: MobHumanoidAnyMarking
+    Eyes: MobFurryEyes
+    LArm: MobFurryLArm
+    RArm: MobFurryRArm
+    LHand: MobFurryLHand
+    RHand: MobFurryRHand
+    LLeg: MobFurryLLeg
+    RLeg: MobFurryRLeg
+    LFoot: MobFurryLFoot
+    RFoot: MobFurryRFoot
+
+- type: markingPoints
+  id: MobFurryMarkingLimits
+  points:
+    Hair:
+      points: 1
+      required: false
+    Tail:
+      points: 1
+      required: true
+      defaultMarkings: [ FoxTailFurry ]
+    Snout:
+      points: 1
+      required: true
+      defaultMarkings: [ SnoutToothyFurry ]
+    HeadTop: 
+      points: 1
+      required: true
+      defaultMarkings: [ CatEarsFurry ]
+    Chest:
+      points: 4
+      required: false
+    Legs:
+      points: 6
+      required: false
+    Arms:
+      points: 6
+      required: false
+
+- type: humanoidBaseSprite
+  id: MobFurryEyes
+  baseSprite:
+    sprite: Mobs/Customization/eyes.rsi
+    state: eyes
+
+- type: humanoidBaseSprite
+  id: MobFurryAnyMarking
+
+- type: humanoidBaseSprite
+  id: MobFurryMarkingMatchSkin
+  markingsMatchSkin: true
+
+- type: humanoidBaseSprite
+  id: MobFurryHead
+  baseSprite:
+    sprite: _Meowstation/FurrySpecies/furry.rsi
+    state: head_m
+
+- type: humanoidBaseSprite
+  id: MobFurryHeadMale
+  baseSprite:
+    sprite: _Meowstation/FurrySpecies/furry.rsi
+    state: head_m
+
+- type: humanoidBaseSprite
+  id: MobFurryHeadFemale
+  baseSprite:
+    sprite: _Meowstation/FurrySpecies/furry.rsi
+    state: head_f
+
+- type: humanoidBaseSprite
+  id: MobFurryTorso
+  baseSprite:
+    sprite: _Meowstation/FurrySpecies/furry.rsi
+    state: torso_m
+
+- type: humanoidBaseSprite
+  id: MobFurryTorsoMale
+  baseSprite:
+    sprite: _Meowstation/FurrySpecies/furry.rsi
+    state: torso_m
+
+- type: humanoidBaseSprite
+  id: MobFurryTorsoFemale
+  baseSprite:
+    sprite: _Meowstation/FurrySpecies/furry.rsi
+    state: torso_f
+
+- type: humanoidBaseSprite
+  id: MobFurryLLeg
+  baseSprite:
+    sprite: _Meowstation/FurrySpecies/furry.rsi
+    state: l_leg
+
+- type: humanoidBaseSprite
+  id: MobFurryLArm
+  baseSprite:
+    sprite: _Meowstation/FurrySpecies/furry.rsi
+    state: l_arm
+
+- type: humanoidBaseSprite
+  id: MobFurryLHand
+  baseSprite:
+    sprite: _Meowstation/FurrySpecies/furry.rsi
+    state: l_hand
+
+- type: humanoidBaseSprite
+  id: MobFurryLFoot
+  baseSprite:
+    sprite: _Meowstation/FurrySpecies/furry.rsi
+    state: l_foot
+
+- type: humanoidBaseSprite
+  id: MobFurryRLeg
+  baseSprite:
+    sprite: _Meowstation/FurrySpecies/furry.rsi
+    state: r_leg
+
+- type: humanoidBaseSprite
+  id: MobFurryRArm
+  baseSprite:
+    sprite: _Meowstation/FurrySpecies/furry.rsi
+    state: r_arm
+
+- type: humanoidBaseSprite
+  id: MobFurryRHand
+  baseSprite:
+    sprite: _Meowstation/FurrySpecies/furry.rsi
+    state: r_hand
+
+- type: humanoidBaseSprite
+  id: MobFurryRFoot
+  baseSprite:
+    sprite: _Meowstation/FurrySpecies/furry.rsi
+    state: r_foot

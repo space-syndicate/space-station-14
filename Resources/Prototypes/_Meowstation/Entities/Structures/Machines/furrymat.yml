@@ -1,0 +1,29 @@
+- type: entity
+  parent: VendingMachine
+  id: FurryVendingMachine
+  name: ФурриМат
+  description: Одежда для истинных фурри!
+  components:
+  - type: VendingMachine
+    pack: FurryMatItem
+    dispenseOnHitChance: 0.25
+    dispenseOnHitThreshold: 2
+    offState: off
+    brokenState: broken
+    normalState: normal-unshaded
+    denyState: deny-unshaded
+    ejectDelay: 1.5
+  - type: Sprite
+    sprite: _Meowstation/Structures/Machines/furrymat.rsi
+    layers:
+    - state: "off"
+      map: ["enum.VendingMachineVisualLayers.Base"]
+    - state: "off"
+      map: ["enum.VendingMachineVisualLayers.BaseUnshaded"]
+      shader: unshaded
+    - state: panel
+      map: ["enum.WiresVisualLayers.MaintenancePanel"]
+  - type: PointLight
+    radius: 1.5
+    energy: 1.6
+    color: "#3c5eb5"

@@ -1,0 +1,15 @@
+- type: entity
+  parent: ClothingHeadBase
+  id: ClothingHeadHatBeretVDV
+  name: берет ВДВ
+  suffix: СССП
+  description: Берет Воздушно Десантных Войск. На нём изображена красная звезда.
+  components:
+  - type: Sprite
+    sprite: _Meowstation/Clothing/Head/Hats/beret_vdv.rsi
+  - type: Clothing
+    sprite: _Meowstation/Clothing/Head/Hats/beret_vdv.rsi
+  - type: Tag
+    tags:
+    - ClothMade
+    - HamsterWearable
