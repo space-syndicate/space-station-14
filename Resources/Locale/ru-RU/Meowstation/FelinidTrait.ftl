@@ -1,3 +1,3 @@
-trait-felinid-accent-name = Фелинидский акцент
+trait-felinid-accent-name = Увушный акцент
 
 trait-felinid-accent-desc = UwU OwO?
