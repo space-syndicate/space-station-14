@@ -4,32 +4,50 @@ using Content.Shared.Humanoid.Markings;
 using Content.Shared.Interaction;
 using Content.Shared.UserInterface;
 using Robust.Shared.Serialization;
+using Robust.Shared.Utility;
 
 namespace Content.Shared.MagicMirror;
 
 public abstract class SharedMagicMirrorSystem : EntitySystem
 {
     [Dependency] private readonly SharedInteractionSystem _interaction = default!;
-    [Dependency] protected readonly SharedUserInterfaceSystem _uiSystem = default!;
+    [Dependency] protected readonly SharedUserInterfaceSystem UISystem = default!;
 
     public override void Initialize()
     {
         base.Initialize();
+        SubscribeLocalEvent<MagicMirrorComponent, AfterInteractEvent>(OnMagicMirrorInteract);
         SubscribeLocalEvent<MagicMirrorComponent, BeforeActivatableUIOpenEvent>(OnBeforeUIOpen);
         SubscribeLocalEvent<MagicMirrorComponent, BoundUserInterfaceCheckRangeEvent>(OnMirrorRangeCheck);
     }
 
+    private void OnMagicMirrorInteract(Entity<MagicMirrorComponent> mirror, ref AfterInteractEvent args)
+    {
+        if (!args.CanReach || args.Target == null)
+            return;
+
+        if (!UISystem.TryOpenUi(mirror.Owner, MagicMirrorUiKey.Key, args.User))
+            return;
+
+        UpdateInterface(mirror, args.Target.Value, mirror);
+    }
+
     private void OnMirrorRangeCheck(EntityUid uid, MagicMirrorComponent component, ref BoundUserInterfaceCheckRangeEvent args)
     {
-        if (!Exists(component.Target) || !_interaction.InRangeUnobstructed(uid, component.Target.Value))
-        {
+        if (args.Result == BoundUserInterfaceRangeResult.Fail)
+            return;
+
+        DebugTools.Assert(component.Target != null && Exists(component.Target));
+
+        if (!_interaction.InRangeUnobstructed(uid, component.Target.Value))
             args.Result = BoundUserInterfaceRangeResult.Fail;
-        }
     }
 
     private void OnBeforeUIOpen(Entity<MagicMirrorComponent> ent, ref BeforeActivatableUIOpenEvent args)
     {
-        ent.Comp.Target ??= args.User;
+        if (args.User != ent.Comp.Target && ent.Comp.Target != null)
+            return;
+
         UpdateInterface(ent, args.User, ent);
     }
 
@@ -37,6 +55,7 @@ public abstract class SharedMagicMirrorSystem : EntitySystem
     {
         if (!TryComp<HumanoidAppearanceComponent>(targetUid, out var humanoid))
             return;
+        component.Target ??= targetUid;
 
         var hair = humanoid.MarkingSet.TryGetCategory(MarkingCategories.Hair, out var hairMarkings)
             ? new List<Marking>(hairMarkings)
@@ -55,7 +74,7 @@ public abstract class SharedMagicMirrorSystem : EntitySystem
 
         // TODO: Component states
         component.Target = targetUid;
-        _uiSystem.SetUiState(mirrorUid, MagicMirrorUiKey.Key, state);
+        UISystem.SetUiState(mirrorUid, MagicMirrorUiKey.Key, state);
         Dirty(mirrorUid, component);
     }
 }

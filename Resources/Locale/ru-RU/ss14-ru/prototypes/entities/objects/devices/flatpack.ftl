@@ -22,3 +22,5 @@ ent-GyroscopeFlatpack = упаковка гироскопа
     .desc = Универсально-сборная упаковка, используемая для сборки гироскопа.
 ent-ThrusterFlatpack = упаковка ракетного двигателя
     .desc = Универсально-сборная упаковка, используемая для сборки ракетного двигателя.
+ent-SpaceHeaterFlatpack = space heater flatpack
+    .desc = A flatpack used for constructing a space heater.
