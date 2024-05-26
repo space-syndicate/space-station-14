@@ -28,3 +28,5 @@ ent-CrateRCD = RCD crate
     .desc = A crate containing a single rapid construction device.
 ent-CrateParticleDecelerators = particle decelerators crate
     .desc = A crate containing 3 Particle Decelerators.
+ent-CrateEngineeringSpaceHeater = space heater crate
+    .desc = Contains a space heater for climate control.

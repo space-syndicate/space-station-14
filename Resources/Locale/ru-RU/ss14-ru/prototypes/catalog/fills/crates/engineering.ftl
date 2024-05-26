@@ -28,3 +28,5 @@ ent-CrateRCD = ящик РСУ
     .desc = Ящик, содержащий одно ручное строительное устройство.
 ent-CrateParticleDecelerators = ящик с замедлителями частиц
     .desc = Ящик, содержащий три замедлителя частиц.
+ent-CrateEngineeringSpaceHeater = space heater crate
+    .desc = Contains a space heater for climate control.
