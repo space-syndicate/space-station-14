@@ -1,6 +1,6 @@
 // Inspired by Nyanotrasen
 
-using Content.Shared.HyperLinkBooks;
+using Content.Shared.HyperLinkBook;
 using Robust.Client.UserInterface;
 
 namespace Content.Client.HyperLinkBook;
