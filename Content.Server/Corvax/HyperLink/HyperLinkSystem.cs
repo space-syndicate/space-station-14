@@ -3,20 +3,20 @@
 using Robust.Shared.Player;
 using Content.Shared.Interaction;
 using Content.Shared.Verbs;
-using Content.Shared.HyperLinkBook;
+using Content.Shared.HyperLink;
 
-namespace Content.Server.HyperLinkBook;
+namespace Content.Server.HyperLink;
 
-public sealed class HyperLinkBookSystem : EntitySystem
+public sealed class HyperLinkSystem : EntitySystem
 {
     public override void Initialize()
     {
         base.Initialize();
-        SubscribeLocalEvent<HyperLinkBookComponent, ActivateInWorldEvent>(OnActivate);
-        SubscribeLocalEvent<HyperLinkBookComponent, GetVerbsEvent<AlternativeVerb>>(AddAltVerb);
+        SubscribeLocalEvent<HyperLinkComponent, ActivateInWorldEvent>(OnActivate);
+        SubscribeLocalEvent<HyperLinkComponent, GetVerbsEvent<AlternativeVerb>>(AddAltVerb);
     }
 
-    private void OnActivate(EntityUid uid, HyperLinkBookComponent component, ActivateInWorldEvent args)
+    private void OnActivate(EntityUid uid, HyperLinkComponent component, ActivateInWorldEvent args)
     {
         if (!TryComp<ActorComponent>(args.User, out var actor))
             return;
@@ -24,7 +24,7 @@ public sealed class HyperLinkBookSystem : EntitySystem
         OpenURL(actor.PlayerSession, component.URL);
     }
 
-    private void AddAltVerb(EntityUid uid, HyperLinkBookComponent component, GetVerbsEvent<AlternativeVerb> args)
+    private void AddAltVerb(EntityUid uid, HyperLinkComponent component, GetVerbsEvent<AlternativeVerb> args)
     {
         if (!args.CanAccess || !args.CanInteract)
             return;

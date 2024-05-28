@@ -1,9 +1,9 @@
 // Inspired by Nyanotrasen
 
-namespace Content.Server.HyperLinkBook;
+namespace Content.Server.HyperLink;
 
 [RegisterComponent]
-public sealed partial class HyperLinkBookComponent : Component
+public sealed partial class HyperLinkComponent : Component
 {
     [DataField("url")]
     [ViewVariables(VVAccess.ReadWrite)]

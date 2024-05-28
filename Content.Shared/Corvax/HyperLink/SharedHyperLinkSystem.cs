@@ -2,7 +2,7 @@
 
 using Robust.Shared.Serialization;
 
-namespace Content.Shared.HyperLinkBook;
+namespace Content.Shared.HyperLink;
 
 [Serializable, NetSerializable]
 public sealed class OpenURLEvent : EntityEventArgs

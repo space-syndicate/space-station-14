@@ -1,11 +1,11 @@
 // Inspired by Nyanotrasen
 
-using Content.Shared.HyperLinkBook;
+using Content.Shared.HyperLink;
 using Robust.Client.UserInterface;
 
-namespace Content.Client.HyperLinkBook;
+namespace Content.Client.HyperLink;
 
-public sealed class HyperLinkBookSystem : EntitySystem
+public sealed class HyperLinkSystem : EntitySystem
 {
     public override void Initialize() 
     {
