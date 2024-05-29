@@ -120,6 +120,8 @@
   - type: Grammar
     attributes:
       gender: male
+  - type: TTS # Corvax-TTS
+    voice: Rat
 
 - type: entity
   id: MobRatKingBuff
