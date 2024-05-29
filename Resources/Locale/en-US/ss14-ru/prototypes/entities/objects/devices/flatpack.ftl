@@ -22,3 +22,5 @@ ent-GyroscopeFlatpack = gyroscope flatpack
     .desc = A flatpack used for constructing a gyroscope.
 ent-ThrusterFlatpack = thruster flatpack
     .desc = A flatpack used for constructing a thruster.
+ent-SpaceHeaterFlatpack = space heater flatpack
+    .desc = A flatpack used for constructing a space heater.
