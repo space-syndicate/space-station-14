@@ -247,6 +247,14 @@
       - type: InitialInfectedRole
         prototype: InitialInfected
 
+- type: entity
+  id: Greenshift # Corvax
+  parent: BaseGameRule
+  noSpawn: true
+  components:
+  - type: GreenshiftRule
+    enableAnnouncement: true
+
 # event schedulers
 - type: entity
   id: BasicStationEventScheduler
@@ -261,14 +269,6 @@
   noSpawn: true
   components:
   - type: RampingStationEventScheduler
-
-- type: entity
-  id: Greenshift # Corvax
-  parent: BaseGameRule
-  noSpawn: true
-  components:
-  - type: GreenshiftRule
-    enableAnnouncement: true
 
 # variation passes
 - type: entity
