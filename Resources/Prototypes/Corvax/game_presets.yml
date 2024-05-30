@@ -1,0 +1,11 @@
+- type: gamePreset
+  id: Event
+  alias:
+  - event
+  - ivent
+  - SilentGreenshift
+  name: event-title
+  showInVote: false
+  description: event-description
+  rules:
+  - BasicRoundstartVariation
