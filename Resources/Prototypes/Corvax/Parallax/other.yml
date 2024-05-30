@@ -1,0 +1,26 @@
+- type: parallax
+  id: Water
+  layers:
+    - texture:
+        !type:ImageParallaxTextureSource
+        path: "/Textures/Tiles/Planet/water.rsi/shoreline_water.png"
+      slowness: 0.5
+      scrolling: "0.1, 0"
+      tiled: true
+      shader: ""
+    - texture:
+        !type:ImageParallaxTextureSource
+        path: "/Textures/Tiles/Planet/water.rsi/shoreline_water.png"
+      slowness: 0
+      scrolling: "-0.1, 0"
+      tiled: true
+      shader: ""
+  layersLQ:
+    - texture:
+        !type:ImageParallaxTextureSource
+        path: "/Textures/Tiles/Planet/water.rsi/shoreline_water.png"
+      slowness: 0
+      scrolling: "-0.1, 0"
+      tiled: true
+      shader: ""
+  layersLQUseHQ: false
