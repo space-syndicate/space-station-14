@@ -262,6 +262,14 @@
   components:
   - type: RampingStationEventScheduler
 
+- type: entity
+  id: Greenshift # Corvax
+  parent: BaseGameRule
+  noSpawn: true
+  components:
+  - type: GreenshiftRule
+    enableAnnouncement: true
+
 # variation passes
 - type: entity
   id: BasicRoundstartVariation
