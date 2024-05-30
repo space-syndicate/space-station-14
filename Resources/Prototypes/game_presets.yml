@@ -42,7 +42,8 @@
   showInVote: false #4boring4vote
   description: greenshift-description
   rules:
-  - Greenshift
+  - BasicRoundstartVariation
+  - Greenshift # Corvax-Greenshift
 
 - type: gamePreset
   id: Secret
