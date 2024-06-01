@@ -5,9 +5,6 @@
   description: Сухарик изготовленный из гамлета.
   components:
   - type: Food
-  - type: Tag
-    tags:
-    - Croutons
   - type: Sprite
     sprite: _Meowstation/Objects/Consumable/Food/Baked/croutons.rsi
   - type: SolutionContainerManager
