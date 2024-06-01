@@ -13,7 +13,7 @@
     tags:
     - Knife
   - type: Sprite
-    sprite: _Meowstation/Object/Weapons/Melee/knife_eviscerator.rsi
+    sprite: _Meowstation/Objects/Weapons/Melee/knife_eviscerator.rsi
     size: 2
     state: icon
   - type: MeleeWeapon
@@ -29,4 +29,4 @@
   - type: Damageable
   - type: Item
     size: Small
-    sprite: _Meowstation/Object/Weapons/Melee/knife_eviscerator.rsi
+    sprite: _Meowstation/Objects/Weapons/Melee/knife_eviscerator.rsi

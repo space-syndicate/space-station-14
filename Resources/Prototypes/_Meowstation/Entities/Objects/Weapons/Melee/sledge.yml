@@ -5,7 +5,7 @@
   description: Крушит стены и переламывает кости надоедливым клоунам.
   components:
   - type: Sprite
-    sprite: _Meowstation/Object/Weapons/Melee/sledge.rsi
+    sprite: _Meowstation/Objects/Weapons/Melee/sledge.rsi
     state: icon
   - type: MeleeWeapon
     wideAnimationRotation: -135
@@ -24,7 +24,7 @@
   - type: Item
     size: Large
   - type: Clothing
-    sprite: _Meowstation/Object/Weapons/Melee/sledge.rsi
+    sprite: _Meowstation/Objects/Weapons/Melee/sledge.rsi
     quickEquip: false
     slots:
     - back

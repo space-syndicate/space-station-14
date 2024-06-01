@@ -5,7 +5,7 @@
   description: Пачка из восьми хрустящих сухариков! Сделано из гамлета...
   components:
   - type: Sprite
-    sprite: _Meowstation/Object/Consumable/Food/Baked/croutons.rsi
+    sprite: _Meowstation/Objects/Consumable/Food/Baked/croutons.rsi
     state: box
   - type: Storage
     capacity: 8
@@ -13,7 +13,7 @@
       tags:
       - Croutons
   - type: Item
-    sprite: _Meowstation/Object/Consumable/Food/Baked/croutons.rsi
+    sprite: _Meowstation/Objects/Consumable/Food/Baked/croutons.rsi
     size: Small
     heldPrefix: box
   - type: StorageFill

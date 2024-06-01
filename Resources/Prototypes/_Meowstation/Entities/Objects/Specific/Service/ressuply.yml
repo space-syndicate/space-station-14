@@ -8,7 +8,7 @@
     canRestock:
     - FurryMatItem
   - type: Sprite
-    sprite: _Meowstation/Object/Specific/Service/resupply.rsi
+    sprite: _Meowstation/Objects/Specific/Service/resupply.rsi
     layers:
     - state: base
     - state: inhand-left
@@ -28,7 +28,7 @@
 - type: cargoProduct
   id: CrateVendingMachineRestockFurry
   icon:
-    sprite: _Meowstation/Object/Specific/Service/resupply.rsi
+    sprite: _Meowstation/Objects/Specific/Service/resupply.rsi
     state: base
   product: CrateVendingMachineRestockFurryFilled
   cost: 1200
