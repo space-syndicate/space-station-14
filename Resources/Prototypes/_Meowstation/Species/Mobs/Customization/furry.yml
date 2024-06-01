@@ -1,0 +1,321 @@
+####################################Ушки/Рога##################################################
+
+- type: marking
+  id: CatEarsFurry
+  bodyPart: HeadTop
+  markingCategory: HeadTop
+  speciesRestriction: [Furry]
+  coloring:
+    default:
+      type:
+        !type:CategoryColoring
+          category: Hair
+      fallbackTypes:
+        - !type:SkinColoring
+    layers:
+      ears_cat_inner:
+        type:
+          !type:SimpleColoring
+            color: "#FFFFFF"
+  sprites:
+  - sprite: _Meowstation/FurrySpecies/Customization/cat_parts.rsi
+    state: ears_cat_outer
+  - sprite: _Meowstation/FurrySpecies/Customization/cat_parts.rsi
+    state: ears_cat_inner
+
+- type: marking
+  id: FoxEarsFurry
+  bodyPart: HeadTop
+  markingCategory: HeadTop
+  speciesRestriction: [Furry]
+  coloring:
+    default:
+      type:
+        !type:CategoryColoring
+          category: Hair
+      fallbackTypes:
+        - !type:SkinColoring
+    layers:
+      fox_dop:
+        type:
+          !type:SimpleColoring
+            color: "#FFFFFF"
+  sprites:
+  - sprite: _Meowstation/FurrySpecies/Customization/Earsfurry/foxears.rsi
+    state: fox_ears
+  - sprite: _Meowstation/FurrySpecies/Customization/Earsfurry/foxears.rsi
+    state: fox_dop
+
+- type: marking
+  id: BunnyEarsFurry
+  bodyPart: HeadTop
+  markingCategory: HeadTop
+  speciesRestriction: [Furry]
+  sprites:
+  - sprite: _Meowstation/FurrySpecies/Customization/Earsfurry/bunnyears.rsi
+    state: bunny_ears
+
+- type: marking
+  id: DogEarsFurry
+  bodyPart: HeadTop
+  markingCategory: HeadTop
+  speciesRestriction: [Furry]
+  sprites:
+  - sprite: _Meowstation/FurrySpecies/Customization/Earsfurry/dogears.rsi
+    state: dog_ears
+
+- type: marking
+  id: GoatEarsFurry
+  bodyPart: HeadTop
+  markingCategory: HeadTop
+  speciesRestriction: [Furry]
+  sprites:
+  - sprite: _Meowstation/FurrySpecies/Customization/Earsfurry/horns.rsi
+    state: goatears
+
+- type: marking
+  id: GoatHornsFurry
+  bodyPart: HeadTop
+  markingCategory: HeadTop
+  speciesRestriction: [Furry]
+  sprites:
+  - sprite: _Meowstation/FurrySpecies/Customization/Earsfurry/horns.rsi
+    state: goat
+
+- type: marking
+  id: DeerHornsFurry
+  bodyPart: HeadTop
+  markingCategory: HeadTop
+  speciesRestriction: [Furry]
+  sprites:
+  - sprite: _Meowstation/FurrySpecies/Customization/Earsfurry/horns.rsi
+    state: deer
+
+- type: marking
+  id: DeerSmallHornsFurry
+  bodyPart: HeadTop
+  markingCategory: HeadTop
+  speciesRestriction: [Furry]
+  sprites:
+  - sprite: _Meowstation/FurrySpecies/Customization/Earsfurry/horns.rsi
+    state: deer_small
+
+- type: marking
+  id: RamHornsFurry
+  bodyPart: HeadTop
+  markingCategory: HeadTop
+  speciesRestriction: [Furry]
+  sprites:
+  - sprite: _Meowstation/FurrySpecies/Customization/Earsfurry/horns.rsi
+    state: ram
+
+
+####################################Хвосты##################################################
+
+
+- type: marking
+  id: CatTailFurry
+  bodyPart: Tail
+  markingCategory: Tail
+  speciesRestriction: [Furry]
+  coloring:
+    default:
+      type:
+        !type:CategoryColoring
+        category: Hair
+      fallbackTypes:
+        - !type:CategoryColoring
+          category: FacialHair
+        - !type:SkinColoring
+  sprites:
+  - sprite: _Meowstation/FurrySpecies/Customization/cat_parts.rsi
+    state: tail_cat_wag
+  - sprite: _Meowstation/FurrySpecies/Customization/cat_parts.rsi
+    state: tail_cat_wag2
+
+- type: marking
+  id: FoxTailFurry
+  bodyPart: Tail
+  markingCategory: Tail
+  speciesRestriction: [Furry, Human]
+  coloring:
+    default:
+      type:
+        !type:CategoryColoring
+          category: Hair
+      fallbackTypes:
+        - !type:SkinColoring
+    layers:
+      tail_fox_dop:
+        type:
+          !type:SimpleColoring
+            color: "#FFFFFF"
+  sprites:
+  - sprite: _Meowstation/FurrySpecies/Customization/foxtail.rsi
+    state: tail_fox
+  - sprite: _Meowstation/FurrySpecies/Customization/foxtail.rsi
+    state: tail_fox_dop
+
+- type: marking
+  id: SharkTailFurry
+  bodyPart: Tail
+  markingCategory: Tail
+  speciesRestriction: [Furry]
+  sprites:
+  - sprite: _Meowstation/FurrySpecies/Customization/sharktail.rsi
+    state: tail_shark
+
+- type: marking
+  id: DogTailFurry
+  bodyPart: Tail
+  markingCategory: Tail
+  speciesRestriction: [Furry]
+  sprites:
+  - sprite: _Meowstation/FurrySpecies/Customization/dogtail.rsi
+    state: tail_dog
+
+- type: marking
+  id: BunnyTailFurry
+  bodyPart: Tail
+  markingCategory: Tail
+  speciesRestriction: [Furry]
+  sprites:
+  - sprite: _Meowstation/FurrySpecies/Customization/bunnytail.rsi
+    state: tail_bunny
+
+- type: marking
+  id: ShortTailFurry
+  bodyPart: Tail
+  markingCategory: Tail
+  speciesRestriction: [Furry]
+  sprites:
+  - sprite: _Meowstation/FurrySpecies/Customization/shorttail.rsi
+    state: tail_short
+
+- type: marking
+  id: GoatTailFurry
+  bodyPart: Tail
+  markingCategory: Tail
+  speciesRestriction: [Furry]
+  sprites:
+  - sprite: _Meowstation/FurrySpecies/Customization/Earsfurry/horns.rsi
+    state: tail_goat
+
+
+################################Мордочки##########################################
+
+
+- type: marking
+  id: SnoutFurryBase
+  bodyPart: Snout
+  markingCategory: Snout
+  speciesRestriction: [Furry]
+  sprites:
+  - sprite: _Meowstation/FurrySpecies/Customization/SnoutFurry/snoutmaw.rsi
+    state: maw
+
+- type: marking
+  id: SnoutFoxFurry
+  bodyPart: Snout
+  markingCategory: Snout
+  speciesRestriction: [Furry]
+  sprites:
+  - sprite: _Meowstation/FurrySpecies/Customization/SnoutFurry/snoutfox.rsi
+    state: fox
+
+- type: marking
+  id: SnoutToothyFurry
+  bodyPart: Snout
+  markingCategory: Snout
+  speciesRestriction: [Furry]
+  sprites:
+  - sprite: _Meowstation/FurrySpecies/Customization/SnoutFurry/snouttoothy.rsi
+    state: toothy
+
+- type: marking
+  id: SnoutProtogenFurry
+  bodyPart: Snout
+  markingCategory: Snout
+  speciesRestriction: [Furry]
+  coloring:
+    default:
+      type:
+        !type:CategoryColoring
+          category: Hair
+      fallbackTypes:
+        - !type:SkinColoring
+    layers:
+      protogen_1:
+        type:
+          !type:SimpleColoring
+            color: "#FFFFFF"
+      protogen_2:
+        type:
+          !type:SimpleColoring
+            color: "#FFFFFF"
+  sprites:
+  - sprite: _Meowstation/FurrySpecies/Customization/SnoutFurry/snoutprotogen.rsi
+    state: protogen
+  - sprite: _Meowstation/FurrySpecies/Customization/SnoutFurry/snoutprotogen.rsi
+    state: protogen_1
+  - sprite: _Meowstation/FurrySpecies/Customization/SnoutFurry/snoutprotogen.rsi
+    state: protogen_2
+
+
+####################################Глазки######################################
+
+- type: marking
+  id: TattooEyeRightFurry
+  bodyPart: Eyes
+  markingCategory: Head
+  speciesRestriction: [Furry]
+  coloring:
+    default:
+      type:
+        !type:EyeColoring
+          negative: true
+  sprites:
+  - sprite: Mobs/Customization/tattoos.rsi
+    state: tattoo_eye_r
+
+- type: marking
+  id: TattooEyeLeftFurry
+  bodyPart: Eyes
+  markingCategory: Head
+  speciesRestriction: [Furry]
+  coloring:
+    default:
+      type:
+        !type:EyeColoring
+          negative: true
+  sprites:
+  - sprite: Mobs/Customization/tattoos.rsi
+    state: tattoo_eye_l
+
+
+##############################Не относится к фурри######################################
+
+- type: marking
+  id: ElfEars
+  bodyPart: HeadTop
+  markingCategory: HeadTop
+  speciesRestriction: [Human, Dwarf]
+  followSkinColor: true
+  forcedColoring: true
+  sprites:
+  - sprite: _Meowstation/FurrySpecies/Customization/Earsfurry/elfears.rsi
+    state: elf_ears
+
+- type: marking
+  id: HornsImp
+  bodyPart: HeadTop
+  markingCategory: HeadTop
+  speciesRestriction: [Human, Dwarf]
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+          color: "#8B0000"
+  sprites:
+  - sprite: _Meowstation/FurrySpecies/Customization/Earsfurry/horns.rsi
+    state: imp

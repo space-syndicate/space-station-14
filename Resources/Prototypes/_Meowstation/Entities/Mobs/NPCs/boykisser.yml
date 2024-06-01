@@ -1,0 +1,90 @@
+﻿- type: entity
+  name: бойкиссер
+  id: MobBoykisser
+  parent: [ SimpleMobBase, MobCombat ]
+  description: Мягкий и пушистый...
+  components:
+  - type: NpcFactionMember
+    factions:
+    - SimpleNeutral
+  - type: HTN
+    rootTask:
+      task: SimpleHostileCompound
+  - type: Sprite
+    drawdepth: Mobs
+    sprite: _Meowstation/Mobs/boykisser.rsi
+    layers:
+    - map: [ "enum.DamageStateVisualLayers.Base" ]
+      state: boykisser_adult
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeCircle
+          radius: 0.30
+        density: 80
+        mask:
+        - MobMask
+        layer:
+        - MobLayer
+  - type: MobThresholds
+    thresholds:
+      0: Alive
+      100: Dead
+  - type: MovementSpeedModifier
+    baseWalkSpeed: 2
+    baseSprintSpeed: 4
+  - type: Tag
+    tags:
+    - FootstepSound
+  - type: Butcherable
+    butcheringType: Knife
+    spawned:
+    - id: FoodMeatFurry
+      amount: 2
+  - type: Respirator
+    damage:
+      types:
+        Asphyxiation: 0.2
+    damageRecovery:
+      types:
+        Asphyxiation: -1.0
+    maxSaturation: 15
+  - type: Bloodstream
+    bloodReagent: Slime
+    bloodlossDamage:
+      types:
+        Bloodloss:
+          0.5
+    bloodlossHealDamage:
+      types:
+        Bloodloss:
+          -0.25
+  - type: Barotrauma
+    damage:
+      types:
+        Blunt: 0.5
+  - type: Body
+    prototype: Slimes
+    requiredLegs: 1
+  - type: MeleeWeapon
+    soundHit:
+        path: /Audio/Weapons/punch3.ogg
+    angle: 0
+    animation: WeaponArcPunch
+    damage:
+      types:
+        Blunt: 1
+  - type: InteractionPopup
+    successChance: 1
+    interactSuccessString: petting-success-soft-floofy
+    interactFailureString: petting-failure-generic
+    interactSuccessSpawn: EffectHearts
+    interactSuccessSound:
+      path: /Audio/Animals/fox_squeak.ogg
+  - type: DamageStateVisuals
+    states:
+      Alive:
+        Base: boykisser_adult
+      Dead:
+        Base: boykisser_adult_dead

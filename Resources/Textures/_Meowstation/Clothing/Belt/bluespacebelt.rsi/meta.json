@@ -1,0 +1,18 @@
+{
+  "version": 1,
+  "license": "CC-BY-SA-3.0",
+  "copyright": "taken from Paradise station at commit 25f19dff0d01a0dd4a80ffa84e3dbfc1d163d856",
+  "size": {
+    "x": 32,
+    "y": 32
+  },
+  "states": [
+    {
+      "name": "icon"
+    },
+    {
+      "name": "equipped-BELT",
+      "directions": 4
+    }
+  ]
+}

@@ -1,0 +1,225 @@
+- type: entity
+  name: фурри мясо
+  parent: FoodMeatBase
+  id: FoodMeatFurry
+  description: Мясо. Выглядит странно...
+  components:
+  - type: Tag
+    tags:
+    - Cooked
+    - Meat
+  - type: Sprite
+    sprite: _Meowstation/Objects/Consumable/Food/Furry/meat.rsi
+    state: furry_meat
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        reagents:
+        - ReagentId: Nutriment
+          Quantity: 5
+        - ReagentId: Protein
+          Quantity: 5
+  - type: SliceableFood
+    count: 5
+    slice: FoodMeatFurryCutlet
+
+- type: entity
+  name: фурри тако
+  parent: FoodTacoBase
+  id: FoodMealFurryTaco
+  description: Тако. Выглядит странно...
+  components:
+  - type: Food
+  - type: Sprite
+    sprite: _Meowstation/Objects/Consumable/Food/Furry/taco.rsi
+    state: furry
+    
+- type: entity
+  name: фурри шашлык
+  parent: FoodSkewerBase
+  id: FoodMeatFurryKebab
+  description: Шашлык. Выглядит странно...
+  components:
+  - type: Sprite
+    sprite: _Meowstation/Objects/Consumable/Food/Furry/kebab.rsi
+    state: furry
+  - type: Tag
+    tags:
+    - Meat
+    
+- type: entity
+  name: фурри стейк
+  parent: FoodMeatBase
+  id: FoodMeatFurrySteak
+  description: Стейк. Выглядит странно...
+  components:
+  - type: Tag
+    tags:
+    - Cooked
+    - Meat
+  - type: Sprite
+    sprite: _Meowstation/Objects/Consumable/Food/Furry/meat.rsi
+    state: furry_meat-cooked
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        reagents:
+        - ReagentId: Nutriment
+          Quantity: 5
+        - ReagentId: Protein
+          Quantity: 5
+  - type: SliceableFood
+    count: 5
+    slice: FoodMeatFurryCutletCooked
+    
+- type: entity
+  name: фурри сырая котлета
+  parent: FoodMeatBase
+  id: FoodMeatFurryCutlet
+  description: Котлета из сырого мяса. выглядит странно...
+  components:
+  - type: Tag
+    tags:
+    - Raw
+    - Cutlet
+    - Meat
+  - type: Sprite
+    sprite: _Meowstation/Objects/Consumable/Food/Furry/meat.rsi
+    state: furry_cutlet
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        reagents:
+        - ReagentId: UncookedAnimalProteins
+          Quantity: 3
+        - ReagentId: Fat
+          Quantity: 2
+          
+- type: entity
+  name: фурри котлета
+  parent: FoodMeatBase
+  id: FoodMeatFurryCutletCooked
+  description: Готовая котлета. Выглядит странно...
+  components:
+  - type: Tag
+    tags:
+    - Cooked
+    - Cutlet
+    - Meat
+  - type: Sprite
+    sprite: _Meowstation/Objects/Consumable/Food/Furry/meat.rsi
+    state: furry_cutlet-cooked
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        reagents:
+        - ReagentId: Nutriment
+          Quantity: 2
+        - ReagentId: Protein
+          Quantity: 2
+          
+- type: entity
+  name: фурри бургер
+  parent: FoodBurgerBase
+  id: FoodBurgerFurry
+  description: Бургер. Выглялдит странно...
+  components:
+  - type: Sprite
+    sprite: _Meowstation/Objects/Consumable/Food/Furry/burger.rsi
+    state: furry
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 20
+        reagents:
+        - ReagentId: Nutriment
+          Quantity: 2
+        - ReagentId: Protein
+          Quantity: 6
+        - ReagentId: Vitamin
+          Quantity: 6
+  - type: Tag
+    tags:
+    - Meat
+    
+- type: entity
+  name: фурри хотдог
+  parent: FoodBurgerBase
+  id: FoodHotdogFurry
+  description: Хотдог. Выглялдит странно...
+  components:
+  - type: Sprite
+    sprite: _Meowstation/Objects/Consumable/Food/Furry/hotdog.rsi
+    state: furry
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 20
+        reagents:
+        - ReagentId: Nutriment
+          Quantity: 2
+        - ReagentId: Protein
+          Quantity: 6
+        - ReagentId: Vitamin
+          Quantity: 6
+  - type: Tag
+    tags:
+    - Meat
+    
+- type: entity
+  name: гнилое фурри мясо
+  parent: FoodMeatBase
+  id: FoodMeatFurryRotten
+  description: Гнилое мясо. выглядит странно...
+  components:
+  - type: Tag
+    tags:
+    - Raw
+    - Meat
+  - type: Sprite
+    sprite: _Meowstation/Objects/Consumable/Food/Furry/meat.rsi
+    state: furry_meat-rotten
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        reagents:
+        - ReagentId: UncookedAnimalProteins
+          Quantity: 5
+        - ReagentId: GastroToxin
+          Quantity: 5
+    
+- type: microwaveMealRecipe
+  id: RecipeFurryBurger
+  name: furry burger recipe
+  result: FoodBurgerFurry
+  time: 10
+  solids:
+    FoodBreadBun: 1
+    FoodMeatFurry: 1
+    
+- type: microwaveMealRecipe
+  id: RecipeMeatKebabFurry
+  name: furry meat kebab recipe
+  result: FoodMeatFurryKebab
+  time: 5
+  solids:
+    FoodMeatFurryCutlet: 3
+    FoodKebabSkewer: 1
+    
+- type: microwaveMealRecipe
+  id: RecipeFoodMealFurryTaco
+  name: furry taco recipe
+  result: FoodMealFurryTaco
+  time: 10
+  solids:
+    FoodDoughSlice: 1
+    FoodMeatFurryCutlet: 1
+    
+- type: microwaveMealRecipe
+  id: RecipeFurryHotdog
+  name: furry hotdog recipe
+  result: FoodHotdogFurry
+  time: 15
+  solids:
+    FoodMeatFurryCutlet: 1
+    FoodBreadBun: 1

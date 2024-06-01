@@ -1,0 +1,51 @@
+{
+  "version": 1,
+  "license": "CC-BY-SA-3.0",
+  "copyright": "By @mr.kotick(431695500937265160) discord, for Space Station 14",
+  "size": {
+    "x": 32,
+    "y": 32
+  },
+  "states": [
+    {
+      "name": "torso_male",
+      "directions": 4
+    },
+    {
+      "name": "torso_female",
+      "directions": 4
+    },
+    {
+      "name": "left_arm",
+      "directions": 4
+    },
+    {
+      "name": "left_hand",
+      "directions": 4
+    },
+    {
+      "name": "right_arm",
+      "directions": 4
+    },
+    {
+      "name": "right_hand",
+      "directions": 4
+    },
+    {
+      "name": "left_leg",
+      "directions": 4
+    },
+    {
+      "name": "left_foot",
+      "directions": 4
+    },
+    {
+      "name": "right_foot",
+      "directions": 4
+    },
+    {
+      "name": "right_leg",
+      "directions": 4
+   }
+  ]
+}

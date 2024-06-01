@@ -1,0 +1,104 @@
+- type: entity
+  parent: ClothingMaskBase
+  id: ClothingMaskBalaclava
+  name: балаклава
+  description: Такое носят чтобы скрыть личность
+  components:
+  - type: Sprite
+    sprite: _Meowstation/Clothing/Mask/Balaclava/balaclava.rsi
+  - type: Clothing
+    sprite: _Meowstation/Clothing/Mask/Balaclava/balaclava.rsi
+  - type: Item
+    size: Tiny
+  - type: EyeProtection
+  - type: BreathMask
+  - type: IdentityBlocker
+  - type: FlashImmunity
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.95
+        Slash: 0.95
+        Piercing: 0.95
+        Heat: 0.95
+  - type: HideLayerClothing
+    slots:
+    - Hair
+    - Snout
+
+- type: entity
+  parent: ClothingMaskBalaclava
+  id: ClothingMaskBalaclavaGreen
+  name: зелёная балаклава
+  description: Такое носят чтобы скрыть личность
+  components:
+  - type: Sprite
+    sprite: _Meowstation/Clothing/Mask/Balaclava/balaclavagreen.rsi
+  - type: Clothing
+    sprite: _Meowstation/Clothing/Mask/Balaclava/balaclavagreen.rsi
+
+- type: entity
+  parent: ClothingMaskBalaclava
+  id: ClothingMaskBalaclavaWhite
+  name: белая балаклава
+  description: Такое носят чтобы скрыть личность
+  components:
+  - type: Sprite
+    sprite: _Meowstation/Clothing/Mask/Balaclava/balaclavawhite.rsi
+  - type: Clothing
+    sprite: _Meowstation/Clothing/Mask/Balaclava/balaclavawhite.rsi
+
+- type: entity
+  parent: ClothingMaskBalaclava
+  id: ClothingMaskBalaclavaPink
+  name: розовая балаклава
+  description: Такое носят чтобы скрыть личность
+  components:
+  - type: Sprite
+    sprite: _Meowstation/Clothing/Mask/Balaclava/balaclavapink.rsi
+  - type: Clothing
+    sprite: _Meowstation/Clothing/Mask/Balaclava/balaclavapink.rsi
+
+- type: entity
+  parent: ClothingMaskBalaclava
+  id: ClothingMaskBalaclavaRed
+  name: красная балаклава
+  description: Такое носят чтобы скрыть личность
+  components:
+  - type: Sprite
+    sprite: _Meowstation/Clothing/Mask/Balaclava/balaclavared.rsi
+  - type: Clothing
+    sprite: _Meowstation/Clothing/Mask/Balaclava/balaclavared.rsi
+
+- type: entity
+  parent: ClothingMaskBalaclava
+  id: ClothingMaskBalaclavaScarlet
+  name: ярко-красная балаклава
+  description: Такое носят чтобы скрыть личность
+  components:
+  - type: Sprite
+    sprite: _Meowstation/Clothing/Mask/Balaclava/balaclavascarlet.rsi
+  - type: Clothing
+    sprite: _Meowstation/Clothing/Mask/Balaclava/balaclavascarlet.rsi
+
+- type: entity
+  parent: ClothingMaskBalaclava
+  id: ClothingMaskBalaclavaBlue
+  name: синяя балаклава
+  description: Такое носят чтобы скрыть личность
+  components:
+  - type: Sprite
+    sprite: _Meowstation/Clothing/Mask/Balaclava/balaclavablue.rsi
+  - type: Clothing
+    sprite: _Meowstation/Clothing/Mask/Balaclava/balaclavablue.rsi
+
+- type: entity
+  parent: ClothingMaskBalaclava
+  id: ClothingMaskBalaclavaCyan
+  name: голубая балаклава
+  description: Такое носят чтобы скрыть личность
+  components:
+  - type: Sprite
+    sprite: _Meowstation/Clothing/Mask/Balaclava/balaclavacyan.rsi
+  - type: Clothing
+    sprite: _Meowstation/Clothing/Mask/Balaclava/balaclavacyan.rsi

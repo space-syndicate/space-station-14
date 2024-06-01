@@ -1,0 +1,384 @@
+
+#####Базовые доп. цвета.#####
+
+- type: marking
+  id: FurryChestDopMale
+  bodyPart: Chest
+  markingCategory: Chest
+  speciesRestriction: [Furry]
+  sexRestriction: Male
+  sprites:
+  - sprite: _Meowstation/FurrySpecies/Customization/DopColors/basicdop.rsi
+    state: torso_male
+
+- type: marking
+  id: FurryChestDopFem
+  bodyPart: Chest
+  markingCategory: Chest
+  speciesRestriction: [Furry]
+  sexRestriction: Female
+  sprites:
+  - sprite: _Meowstation/FurrySpecies/Customization/DopColors/basicdop.rsi
+    state: torso_female
+
+- type: marking
+  id: FurryLArmDop
+  bodyPart: LArm
+  markingCategory: Arms
+  speciesRestriction: [Furry]
+  sprites:
+  - sprite: _Meowstation/FurrySpecies/Customization/DopColors/basicdop.rsi
+    state: left_arm
+
+- type: marking
+  id: FurryRArmDop
+  bodyPart: RArm
+  markingCategory: Arms
+  speciesRestriction: [Furry]
+  sprites:
+  - sprite: _Meowstation/FurrySpecies/Customization/DopColors/basicdop.rsi
+    state: right_arm
+
+- type: marking
+  id: FurryLHandDop
+  bodyPart: LHand
+  markingCategory: Arms
+  speciesRestriction: [Furry]
+  sprites:
+  - sprite: _Meowstation/FurrySpecies/Customization/DopColors/basicdop.rsi
+    state: left_hand
+
+- type: marking
+  id: FurryRHandDop
+  bodyPart: RHand
+  markingCategory: Arms
+  speciesRestriction: [Furry]
+  sprites:
+  - sprite: _Meowstation/FurrySpecies/Customization/DopColors/basicdop.rsi
+    state: right_hand
+
+- type: marking
+  id: FurryLLegDop
+  bodyPart: LLeg
+  markingCategory: Legs
+  speciesRestriction: [Furry]
+  sprites:
+  - sprite: _Meowstation/FurrySpecies/Customization/DopColors/basicdop.rsi
+    state: left_leg
+
+- type: marking
+  id: FurryRLegDop
+  bodyPart: RLeg
+  markingCategory: Legs
+  speciesRestriction: [Furry]
+  sprites:
+  - sprite: _Meowstation/FurrySpecies/Customization/DopColors/basicdop.rsi
+    state: right_leg
+
+- type: marking
+  id: FurryLFootDop
+  bodyPart: LFoot
+  markingCategory: Legs
+  speciesRestriction: [Furry]
+  sprites:
+  - sprite: _Meowstation/FurrySpecies/Customization/DopColors/basicdop.rsi
+    state: left_foot
+
+- type: marking
+  id: FurryRFootDop
+  bodyPart: RFoot
+  markingCategory: Legs
+  speciesRestriction: [Furry]
+  sprites:
+  - sprite: _Meowstation/FurrySpecies/Customization/DopColors/basicdop.rsi
+    state: right_foot
+
+
+
+#####Леопардовые доп. цвета.#####
+
+
+- type: marking
+  id: FurryLeopardChestDopMale
+  bodyPart: Chest
+  markingCategory: Chest
+  speciesRestriction: [Furry]
+  sexRestriction: Male
+  sprites:
+  - sprite: _Meowstation/FurrySpecies/Customization/DopColors/leoparddop.rsi
+    state: torso_male
+
+- type: marking
+  id: FurryLeopardChestDopFem
+  bodyPart: Chest
+  markingCategory: Chest
+  speciesRestriction: [Furry]
+  sexRestriction: Female
+  sprites:
+  - sprite: _Meowstation/FurrySpecies/Customization/DopColors/leoparddop.rsi
+    state: torso_female
+
+- type: marking
+  id: FurryLeopardLArmDop
+  bodyPart: LArm
+  markingCategory: Arms
+  speciesRestriction: [Furry]
+  sprites:
+  - sprite: _Meowstation/FurrySpecies/Customization/DopColors/leoparddop.rsi
+    state: left_arm
+
+- type: marking
+  id: FurryLeopardRArmDop
+  bodyPart: RArm
+  markingCategory: Arms
+  speciesRestriction: [Furry]
+  sprites:
+  - sprite: _Meowstation/FurrySpecies/Customization/DopColors/leoparddop.rsi
+    state: right_arm
+
+- type: marking
+  id: FurryLeopardLHandDop
+  bodyPart: LHand
+  markingCategory: Arms
+  speciesRestriction: [Furry]
+  sprites:
+  - sprite: _Meowstation/FurrySpecies/Customization/DopColors/leoparddop.rsi
+    state: left_hand
+
+- type: marking
+  id: FurryLeopardRHandDop
+  bodyPart: RHand
+  markingCategory: Arms
+  speciesRestriction: [Furry]
+  sprites:
+  - sprite: _Meowstation/FurrySpecies/Customization/DopColors/leoparddop.rsi
+    state: right_hand
+
+- type: marking
+  id: FurryLeopardLLegDop
+  bodyPart: LLeg
+  markingCategory: Legs
+  speciesRestriction: [Furry]
+  sprites:
+  - sprite: _Meowstation/FurrySpecies/Customization/DopColors/leoparddop.rsi
+    state: left_leg
+
+- type: marking
+  id: FurryLeopardRLegDop
+  bodyPart: RLeg
+  markingCategory: Legs
+  speciesRestriction: [Furry]
+  sprites:
+  - sprite: _Meowstation/FurrySpecies/Customization/DopColors/leoparddop.rsi
+    state: right_leg
+
+- type: marking
+  id: FurryLeopardLFootDop
+  bodyPart: LFoot
+  markingCategory: Legs
+  speciesRestriction: [Furry]
+  sprites:
+  - sprite: _Meowstation/FurrySpecies/Customization/DopColors/leoparddop.rsi
+    state: left_foot
+
+- type: marking
+  id: FurryLeopardRFootDop
+  bodyPart: RFoot
+  markingCategory: Legs
+  speciesRestriction: [Furry]
+  sprites:
+  - sprite: _Meowstation/FurrySpecies/Customization/DopColors/leoparddop.rsi
+    state: right_foot
+
+
+
+#####Пятнистые Доп.Цвета.#####
+
+- type: marking
+  id: FurrySpotsChestDopMale
+  bodyPart: Chest
+  markingCategory: Chest
+  speciesRestriction: [Furry]
+  sexRestriction: Male
+  sprites:
+  - sprite: _Meowstation/FurrySpecies/Customization/DopColors/spotsdop.rsi
+    state: torso_male
+
+- type: marking
+  id: FurrySpotsChestDopFem
+  bodyPart: Chest
+  markingCategory: Chest
+  speciesRestriction: [Furry]
+  sexRestriction: Female
+  sprites:
+  - sprite: _Meowstation/FurrySpecies/Customization/DopColors/spotsdop.rsi
+    state: torso_female
+
+- type: marking
+  id: FurrySpotsLArmDop
+  bodyPart: LArm
+  markingCategory: Arms
+  speciesRestriction: [Furry]
+  sprites:
+  - sprite: _Meowstation/FurrySpecies/Customization/DopColors/spotsdop.rsi
+    state: left_arm
+
+- type: marking
+  id: FurrySpotsRArmDop
+  bodyPart: RArm
+  markingCategory: Arms
+  speciesRestriction: [Furry]
+  sprites:
+  - sprite: _Meowstation/FurrySpecies/Customization/DopColors/spotsdop.rsi
+    state: right_arm
+
+- type: marking
+  id: FurrySpotsLHandDop
+  bodyPart: LHand
+  markingCategory: Arms
+  speciesRestriction: [Furry]
+  sprites:
+  - sprite: _Meowstation/FurrySpecies/Customization/DopColors/spotsdop.rsi
+    state: left_hand
+
+- type: marking
+  id: FurrySpotsRHandDop
+  bodyPart: RHand
+  markingCategory: Arms
+  speciesRestriction: [Furry]
+  sprites:
+  - sprite: _Meowstation/FurrySpecies/Customization/DopColors/spotsdop.rsi
+    state: right_hand
+
+- type: marking
+  id: FurrySpotsLLegDop
+  bodyPart: LLeg
+  markingCategory: Legs
+  speciesRestriction: [Furry]
+  sprites:
+  - sprite: _Meowstation/FurrySpecies/Customization/DopColors/spotsdop.rsi
+    state: left_leg
+
+- type: marking
+  id: FurrySpotsRLegDop
+  bodyPart: RLeg
+  markingCategory: Legs
+  speciesRestriction: [Furry]
+  sprites:
+  - sprite: _Meowstation/FurrySpecies/Customization/DopColors/spotsdop.rsi
+    state: right_leg
+
+- type: marking
+  id: FurrySpotsLFootDop
+  bodyPart: LFoot
+  markingCategory: Legs
+  speciesRestriction: [Furry]
+  sprites:
+  - sprite: _Meowstation/FurrySpecies/Customization/DopColors/spotsdop.rsi
+    state: left_foot
+
+- type: marking
+  id: FurrySpotsRFootDop
+  bodyPart: RFoot
+  markingCategory: Legs
+  speciesRestriction: [Furry]
+  sprites:
+  - sprite: _Meowstation/FurrySpecies/Customization/DopColors/spotsdop.rsi
+    state: right_foot
+
+
+
+
+#####Тигринные Доп.Цвета.#####
+
+- type: marking
+  id: FurryTigerChestDopMale
+  bodyPart: Chest
+  markingCategory: Chest
+  speciesRestriction: [Furry]
+  sexRestriction: Male
+  sprites:
+  - sprite: _Meowstation/FurrySpecies/Customization/DopColors/tigerdop.rsi
+    state: torso_male
+
+- type: marking
+  id: FurryTigerChestDopFem
+  bodyPart: Chest
+  markingCategory: Chest
+  speciesRestriction: [Furry]
+  sexRestriction: Female
+  sprites:
+  - sprite: _Meowstation/FurrySpecies/Customization/DopColors/tigerdop.rsi
+    state: torso_female
+
+- type: marking
+  id: FurryTigerLArmDop
+  bodyPart: LArm
+  markingCategory: Arms
+  speciesRestriction: [Furry]
+  sprites:
+  - sprite: _Meowstation/FurrySpecies/Customization/DopColors/tigerdop.rsi
+    state: left_arm
+
+- type: marking
+  id: FurryTigerRArmDop
+  bodyPart: RArm
+  markingCategory: Arms
+  speciesRestriction: [Furry]
+  sprites:
+  - sprite: _Meowstation/FurrySpecies/Customization/DopColors/tigerdop.rsi
+    state: right_arm
+
+- type: marking
+  id: FurryTigerLHandDop
+  bodyPart: LHand
+  markingCategory: Arms
+  speciesRestriction: [Furry]
+  sprites:
+  - sprite: _Meowstation/FurrySpecies/Customization/DopColors/tigerdop.rsi
+    state: left_hand
+
+- type: marking
+  id: FurryTigerRHandDop
+  bodyPart: RHand
+  markingCategory: Arms
+  speciesRestriction: [Furry]
+  sprites:
+  - sprite: _Meowstation/FurrySpecies/Customization/DopColors/tigerdop.rsi
+    state: right_hand
+
+- type: marking
+  id: FurryTigerLLegDop
+  bodyPart: LLeg
+  markingCategory: Legs
+  speciesRestriction: [Furry]
+  sprites:
+  - sprite: _Meowstation/FurrySpecies/Customization/DopColors/tigerdop.rsi
+    state: left_leg
+
+- type: marking
+  id: FurryTigerRLegDop
+  bodyPart: RLeg
+  markingCategory: Legs
+  speciesRestriction: [Furry]
+  sprites:
+  - sprite: _Meowstation/FurrySpecies/Customization/DopColors/tigerdop.rsi
+    state: right_leg
+
+- type: marking
+  id: FurryTigerLFootDop
+  bodyPart: LFoot
+  markingCategory: Legs
+  speciesRestriction: [Furry]
+  sprites:
+  - sprite: _Meowstation/FurrySpecies/Customization/DopColors/tigerdop.rsi
+    state: left_foot
+
+- type: marking
+  id: FurryTigerRFootDop
+  bodyPart: RFoot
+  markingCategory: Legs
+  speciesRestriction: [Furry]
+  sprites:
+  - sprite: _Meowstation/FurrySpecies/Customization/DopColors/tigerdop.rsi
+    state: right_foot

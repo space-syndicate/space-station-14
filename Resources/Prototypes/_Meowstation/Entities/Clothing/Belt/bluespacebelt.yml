@@ -1,0 +1,26 @@
+- type: entity
+  parent: ClothingBeltStorageBase
+  id: ClothingBeltBlueSpace
+  name: блюспейс пояс
+  description: Бездонный пояс.
+  components:
+  - type: Sprite
+    sprite: _Meowstation/Clothing/Belt/bluespacebelt.rsi
+  - type: Clothing
+    sprite: _Meowstaiton/Clothing/Belt/bluespacebelt.rsi
+  - type: Item
+    size: Ginormous
+  - type: Storage
+    maxItemSize: Huge
+    grid:
+    - 0,0,19,9
+
+- type: latheRecipe
+  id: ClothingBeltBlueSpace
+  result: ClothingBeltBlueSpace
+  completetime: 5
+  materials:
+    Steel: 2000
+    Silver: 750
+    Plasma: 1500
+    Uranium: 150

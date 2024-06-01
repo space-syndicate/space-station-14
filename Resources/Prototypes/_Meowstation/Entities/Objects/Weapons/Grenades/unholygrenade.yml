@@ -1,0 +1,31 @@
+- type: entity
+  name: Нечестивая граната
+  description: Конец раунда
+  parent: GrenadeBase
+  id: UnholyGrenade
+  suffix: Адмем
+  components:
+  - type: Sprite
+    sprite: _Meowstation/Objects/Weapons/Grenades/unholygrenade.rsi
+  - type: OnUseTimerTrigger
+    delay: 5
+  - type: ExplodeOnTrigger
+  - type: Explosive
+    explosionType: Default
+    totalIntensity: 10000000
+    intensitySlope: 5
+    maxIntensity: 50
+    maxTileBreak: 99999999
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 100000
+      behaviors:
+      - !type:TriggerBehavior
+      - !type:DoActsBehavior
+        acts: ["Destruction"]
+  - type: Appearance
+  - type: TimerTriggerVisuals
+    primingSound:
+      path: /Audio/Effects/countdown.ogg

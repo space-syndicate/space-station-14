@@ -1,0 +1,19 @@
+- type: entity
+  parent: ClothingOuterStorageBase
+  id: ClothingOuterVestWebSSSP
+  name: бронежилет СССП
+  description: Бронежилет
+  components:
+  - type: Sprite
+    sprite: _Meowstation/Clothing/OuterClothing/Vests/vestsssp.rsi
+  - type: Clothing
+    sprite: _Meowstation/Clothing/OuterClothing/Vests/vestsssp.rsi
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.7
+        Slash: 0.7
+        Piercing: 0.5
+        Heat: 0.9
+  - type: ExplosionResistance
+    damageCoefficient: 0.9

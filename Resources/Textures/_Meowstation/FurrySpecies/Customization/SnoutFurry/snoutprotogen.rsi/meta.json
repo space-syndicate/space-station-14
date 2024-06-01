@@ -1,0 +1,23 @@
+{
+  "version": 1,
+  "license": "CC-BY-SA-3.0",
+  "copyright": "By @mr.kotick(431695500937265160) discord, for Space Station 14",
+  "size": {
+    "x": 32,
+    "y": 32
+  },
+  "states": [
+    {
+      "name": "protogen",
+      "directions": 4
+    },
+    {
+      "name": "protogen_1",
+      "directions": 4
+    },
+    {
+      "name": "protogen_2",
+      "directions": 4
+    }
+  ]
+}

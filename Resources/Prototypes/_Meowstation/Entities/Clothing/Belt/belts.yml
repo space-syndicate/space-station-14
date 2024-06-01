@@ -1,0 +1,10 @@
+- type: entity
+  parent: ClothingBeltStorageBase
+  id: ClothingBeltWebbingSSSP
+  name: РПС СССП
+  description: Ideal for storing everything from ammo to weapons and combat essentials.
+  components:
+  - type: Sprite
+    sprite: _Meowstation/Clothing/Belt/webbingsssp.rsi
+  - type: Clothing
+    sprite: _Meowstation/Clothing/Belt/webbingsssp.rsi
