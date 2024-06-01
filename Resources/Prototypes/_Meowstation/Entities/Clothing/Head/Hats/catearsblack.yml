@@ -4,9 +4,6 @@
   name: чёрные Кошачьи Ушки
   description: "НЯЯ!"
   components:
-  - type: Tag
-    tags: # ignore "WhitelistChameleon" tag
-      - DroneUsable
   - type: Sprite
     sprite: _Meowstation/Clothing/Head/Hats/catearsblack.rsi
   - type: Clothing

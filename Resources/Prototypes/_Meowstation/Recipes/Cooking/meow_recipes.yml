@@ -5,7 +5,7 @@
   time: 10
   solids:
     MobHamsterHamlet: 1
-    FoodBread: 1
+    FoodBreadBase: 1
 
 - type: constructionGraph
   id: FurrySteak
@@ -21,4 +21,4 @@
       - minTemperature: 345
 
   - node: cooked furry
-    entity: FoodMeatFurryCooked
+    entity: FoodMeatFurrySteak

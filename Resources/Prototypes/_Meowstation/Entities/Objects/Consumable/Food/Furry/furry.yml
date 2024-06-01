@@ -1,5 +1,5 @@
 - type: entity
-  name: фурри стейк
+  name: фурри мясо
   parent: FoodMeatBase
   id: FoodMeatFurry
   description: Мясо. Выглядит странно...
@@ -22,7 +22,6 @@
   - type: SliceableFood
     count: 5
     slice: FoodMeatFurryCutlet
-
 
 - type: entity
   name: фурри тако
@@ -226,4 +225,4 @@
   time: 15
   solids:
     FoodMeatFurryCutlet: 1
-    OrganBreadBun: 1
+    FoodBreadBun: 1
