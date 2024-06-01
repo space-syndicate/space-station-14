@@ -9,3 +9,15 @@
     layers:
       - state: green
       - state: seniorofficer
+
+- type: entity
+  id: SpawnPointBrigmedic
+  parent: SpawnPointJobBase
+  name: brigmedic
+  components:
+  - type: SpawnPoint
+    job_id: Brigmedic
+  - type: Sprite
+    layers:
+      - state: green
+      - state: brigmedic
