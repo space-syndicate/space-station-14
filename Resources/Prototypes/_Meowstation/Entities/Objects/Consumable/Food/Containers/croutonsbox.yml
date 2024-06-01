@@ -15,8 +15,5 @@
     contents:
     - id: FoodCroutons
       amount: 8
-  - type: ItemCounter
-    count:
-      tags: [Croutons]
     composite: true
   - type: Appearance
