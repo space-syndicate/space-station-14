@@ -5,9 +5,9 @@
   description: Бездонный пояс.
   components:
   - type: Sprite
-    sprite: AMeowStat/Clothing/Belt/bluespacebelt.rsi
+    sprite: _Meowstation/Clothing/Belt/bluespacebelt.rsi
   - type: Clothing
-    sprite: AMeowStat/Clothing/Belt/bluespacebelt.rsi
+    sprite: _Meowstaiton/Clothing/Belt/bluespacebelt.rsi
   - type: Item
     size: Ginormous
   - type: Storage

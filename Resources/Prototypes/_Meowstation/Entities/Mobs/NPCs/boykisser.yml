@@ -12,7 +12,7 @@
       task: SimpleHostileCompound
   - type: Sprite
     drawdepth: Mobs
-    sprite: AMeowStat/Mobs/boykisser.rsi
+    sprite: _Meowstation/Mobs/boykisser.rsi
     layers:
     - map: [ "enum.DamageStateVisualLayers.Base" ]
       state: boykisser_adult
