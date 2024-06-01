@@ -1,4 +1,30 @@
 - type: entity
+  name: фурри стейк
+  parent: FoodMeatBase
+  id: FoodMeatFurry
+  description: Мясо. Выглядит странно...
+  components:
+  - type: Tag
+    tags:
+    - Cooked
+    - Meat
+  - type: Sprite
+    sprite: _Meowstation/Objects/Consumable/Food/Furry/meat.rsi
+    state: furry_meat
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        reagents:
+        - ReagentId: Nutriment
+          Quantity: 5
+        - ReagentId: Protein
+          Quantity: 5
+  - type: SliceableFood
+    count: 5
+    slice: FoodMeatFurryCutlet
+
+
+- type: entity
   name: фурри тако
   parent: FoodTacoBase
   id: FoodMealFurryTaco
