@@ -2,7 +2,7 @@
   id: CorvaxAstra
   mapName: 'Astra Station'
   mapPath: /Maps/corvax_astra.yml 
-  minPlayers: 30
+  minPlayers: 40
   stations:
     Astra:
       stationProto: StandardNanotrasenStation
@@ -14,6 +14,9 @@
             prefixCreator: 'MT'
         - type: StationEmergencyShuttle
           emergencyShuttlePath: /Maps/Shuttles/corvax_emergency.yml
+        - type: StationRandomTransform
+          enableStationRotation: false
+          maxStationOffset: null
         - type: StationJobs
           overflowJobs:
             - Passenger
@@ -57,6 +60,7 @@
             HeadOfSecurity: [ 1, 1 ]
             Warden: [ 1, 1 ]
             Detective: [ 1, 1 ]
+            Pilot: [ 1, 1 ]
             SecurityOfficer: [ 6, 6 ]
             SecurityCadet: [ 3, 4 ]
             # cargo

@@ -1,5 +1,5 @@
 using System.Linq;
-using Content.Corvax.Interfaces.Client;
+using Content.Corvax.Interfaces.Shared;
 using Content.Shared.Humanoid;
 using Content.Shared.Humanoid.Markings;
 using Content.Shared.Humanoid.Prototypes;
@@ -19,7 +19,7 @@ public sealed partial class MarkingPicker : Control
 {
     [Dependency] private readonly MarkingManager _markingManager = default!;
     [Dependency] private readonly IPrototypeManager _prototypeManager = default!;
-    private IClientSponsorsManager? _sponsorsManager; // Corvax-Sponsors
+    private ISharedSponsorsManager? _sponsorsManager; // Corvax-Sponsors
 
     public Action<MarkingSet>? OnMarkingAdded;
     public Action<MarkingSet>? OnMarkingRemoved;
@@ -127,17 +127,16 @@ public sealed partial class MarkingPicker : Control
         IoCManager.InjectDependencies(this);
         IoCManager.Instance!.TryResolveType(out _sponsorsManager); // Corvax-Sponsors
 
-        SetupCategoryButtons();
         CMarkingCategoryButton.OnItemSelected +=  OnCategoryChange;
         CMarkingsUnused.OnItemSelected += item =>
             _selectedUnusedMarking = CMarkingsUnused[item.ItemIndex];
 
-        CMarkingAdd.OnPressed += args =>
+        CMarkingAdd.OnPressed += _ =>
             MarkingAdd();
 
         CMarkingsUsed.OnItemSelected += OnUsedMarkingSelected;
 
-        CMarkingRemove.OnPressed += args =>
+        CMarkingRemove.OnPressed += _ =>
             MarkingRemove();
 
         CMarkingRankUp.OnPressed += _ => SwapMarkingUp();
@@ -149,16 +148,34 @@ public sealed partial class MarkingPicker : Control
     private void SetupCategoryButtons()
     {
         CMarkingCategoryButton.Clear();
+
+        var validCategories = new List<MarkingCategories>();
         for (var i = 0; i < _markingCategories.Count; i++)
         {
-            if (_ignoreCategories.Contains(_markingCategories[i]))
+            var category = _markingCategories[i];
+            var markings = GetMarkings(category);
+            if (_ignoreCategories.Contains(category) ||
+                markings.Count == 0)
             {
                 continue;
             }
 
-            CMarkingCategoryButton.AddItem(Loc.GetString($"markings-category-{_markingCategories[i].ToString()}"), i);
+            validCategories.Add(category);
+            CMarkingCategoryButton.AddItem(Loc.GetString($"markings-category-{category.ToString()}"), i);
         }
-        CMarkingCategoryButton.SelectId(_markingCategories.IndexOf(_selectedMarkingCategory));
+
+        if (validCategories.Contains(_selectedMarkingCategory))
+        {
+            CMarkingCategoryButton.SelectId(_markingCategories.IndexOf(_selectedMarkingCategory));
+        }
+        else if (validCategories.Count > 0)
+        {
+            _selectedMarkingCategory = validCategories[0];
+        }
+        else
+        {
+            _selectedMarkingCategory = MarkingCategories.Chest;
+        }
     }
 
     private string GetMarkingName(MarkingPrototype marking) => Loc.GetString($"marking-{marking.ID}");
@@ -182,16 +199,21 @@ public sealed partial class MarkingPicker : Control
         return result;
     }
 
+    private IReadOnlyDictionary<string, MarkingPrototype> GetMarkings(MarkingCategories category)
+    {
+        return IgnoreSpecies
+            ? _markingManager.MarkingsByCategoryAndSex(category, _currentSex)
+            : _markingManager.MarkingsByCategoryAndSpeciesAndSex(category, _currentSpecies, _currentSex);
+    }
+
     public void Populate(string filter)
     {
+        SetupCategoryButtons();
+
         CMarkingsUnused.Clear();
         _selectedUnusedMarking = null;
 
-        var markings = IgnoreSpecies
-            ? _markingManager.MarkingsByCategoryAndSex(_selectedMarkingCategory, _currentSex)
-            : _markingManager.MarkingsByCategoryAndSpeciesAndSex(_selectedMarkingCategory, _currentSpecies, _currentSex);
-
-        var sortedMarkings = markings.Values.Where(m =>
+        var sortedMarkings = GetMarkings(_selectedMarkingCategory).Values.Where(m =>
             m.ID.ToLower().Contains(filter.ToLower()) ||
             GetMarkingName(m).ToLower().Contains(filter.ToLower())
         ).OrderBy(p => Loc.GetString(GetMarkingName(p)));
@@ -207,7 +229,7 @@ public sealed partial class MarkingPicker : Control
             item.Metadata = marking;
             // Corvax-Sponsors-Start
             if (marking.SponsorOnly && _sponsorsManager != null)
-                item.Disabled = !_sponsorsManager.Prototypes.Contains(marking.ID);
+                item.Disabled = !_sponsorsManager.GetClientPrototypes().Contains(marking.ID);
             // Corvax-Sponsors-End
         }
 

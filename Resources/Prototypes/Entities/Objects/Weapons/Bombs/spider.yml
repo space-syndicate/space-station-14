@@ -45,3 +45,17 @@
         base:
           Primed: { state: primed }
           Unprimed: { state: complete }
+# Corvax-HiddenDesc-Start
+  - type: HiddenDescription
+    entries:
+    - label: corvax-hidden-desc-SpiderCharge-ninja
+      whitelistMind:
+        components:
+          - NinjaRole
+    - label: corvax-hidden-desc-SpiderCharge-research
+      jobRequired:
+        - ResearchAssistant
+        - ResearchDirector
+        - Scientist
+        - Borg
+# Corvax-HiddenDesc-End

@@ -1,0 +1,35 @@
+- type: job
+  id: Pilot
+  name: job-name-pilot
+  playTimeTracker: JobPilot
+  requirements:
+  - !type:DepartmentTimeRequirement
+    department: Security
+    time: 72000 #20 hrs
+  startingGear: PilotGear
+  icon: "JobIconPilot"
+  supervisors: job-supervisors-hos
+  canBeAntag: false
+  access:
+  - Security
+  - Brig
+  - Maintenance
+  - Service
+  - External
+  - Cryogenics
+  special:
+  - !type:AddImplantSpecial
+    implants: [ MindShieldImplant ]
+
+- type: startingGear
+  id: PilotGear
+  equipment:
+    jumpsuit: ClothingUniformJumpsuitSeniorOfficer
+    shoes: ClothingShoesBootsCombatFilled
+    eyes: ClothingEyesGlassesSecurity
+    head: ClothingHeadHatBeretSecurity
+    outerClothing: ClothingOuterVestArmorSec
+    id: PilotPDA
+    ears: ClothingHeadsetSecurity
+    neck: ClothingNeckTieRed
+    pocket1: WeaponPistolMk58

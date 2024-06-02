@@ -36,7 +36,7 @@ reagent-effect-guidebook-foam-area-reaction-effect =
         [1] Создаёт
        *[other] создают
     } большое количество пены
-reagent-effect-guidebook-foam-area-reaction-effect =
+reagent-effect-guidebook-smoke-area-reaction-effect =
     { $chance ->
         [1] Создаёт
        *[other] создают
@@ -306,6 +306,11 @@ reagent-effect-guidebook-cause-zombie-infection =
         [1] Заражает
        *[other] заражают
     } человека зомби-вирусом
+reagent-effect-guidebook-reduce-rotting =
+    { $chance ->
+        [1] Регенерирует
+       *[other] регенерируют
+    } { NATURALFIXED($time, 3) } { MANY("second", $time) } гниения
 reagent-effect-guidebook-innoculate-zombie-infection =
     { $chance ->
         [1] Лечит
@@ -315,4 +320,29 @@ reagent-effect-guidebook-missing =
     { $chance ->
         [1] Вызывает
        *[other] вызывают
-    } неизвестный эффект, так как никто еще не написал об этом эффекте
+    } неизвестный эффект, так как никто ещё не написал об этом эффекте
+reagent-effect-guidebook-plant-attribute =
+    { $chance ->
+        [1] Изменяет
+       *[other] изменяют
+    } { $attribute } за [color={ $colorName }]{ $amount }[/color]
+reagent-effect-guidebook-plant-cryoxadone =
+    { $chance ->
+        [1] Омолаживает
+       *[other] омолаживают
+    } растение, в зависимости от возраста растения и времени его роста
+reagent-effect-guidebook-plant-phalanximine =
+    { $chance ->
+        [1] Восстанавливает
+       *[other] восстанавливают
+    } жизнеспособность растения, ставшего нежизнеспособным в результате мутации
+reagent-effect-guidebook-plant-diethylamine =
+    { $chance ->
+        [1] Повышает
+       *[other] повышают
+    } продолжительность жизни растения и/или его базовое здоровье с шансом 10% на единицу.
+reagent-effect-guidebook-plant-robust-harvest =
+    { $chance ->
+        [1] Повышает
+       *[other] повышают
+    } потенцию растения путём { $increase } до максимума в { $limit }. Приводит к тому, что растение теряет свои семена, когда потенция достигает { $seedlesstreshold }. Попытка повысить потенцию свыше { $limit } может вызвать снижение урожайности с вероятностью 10%.

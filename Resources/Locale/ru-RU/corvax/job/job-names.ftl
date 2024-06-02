@@ -1,5 +1,7 @@
 job-name-iaa = агент внутренних дел
 JobIAA = агент внутренних дел
+job-name-pilot = пилот
+JobPilot = пилот
 job-name-brigmedic = бригмедик
 JobBrigmedic = бригмедик
 job-name-roboticist = робототехник

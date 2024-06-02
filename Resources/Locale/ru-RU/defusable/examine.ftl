@@ -6,7 +6,7 @@ defusable-examine-live =
        *[other] секунд
     }.
 defusable-examine-live-display-off = { CAPITALIZE($name) } [color=red]тикает[/color] и таймер, похоже, выключен.
-defusable-examine-inactive = { CAPITALIZE($name) } [color=lime]неактивна[/color], но всё еще может взорваться.
+defusable-examine-inactive = { CAPITALIZE($name) } [color=lime]неактивна[/color], но всё ещё может взорваться.
 defusable-examine-bolts =
     Болты { $down ->
         [true] [color=red]опущены[/color]

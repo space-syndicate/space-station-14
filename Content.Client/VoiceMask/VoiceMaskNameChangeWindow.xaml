@@ -1,17 +1,22 @@
-<DefaultWindow xmlns="https://spacestation14.io"
+<controls:FancyWindow xmlns="https://spacestation14.io"
+               xmlns:controls="clr-namespace:Content.Client.UserInterface.Controls"
                Title="{Loc 'voice-mask-name-change-window'}"
-               MinSize="5 20">
-    <BoxContainer Orientation="Vertical">
+               MinSize="5 30">
+    <BoxContainer Orientation="Vertical" Margin="5">
         <Label Text="{Loc 'voice-mask-name-change-info'}" />
-        <BoxContainer Orientation="Horizontal">
+        <BoxContainer Orientation="Horizontal" Margin="5">
             <LineEdit Name="NameSelector" HorizontalExpand="True" />
             <Button Name="NameSelectorSet" Text="{Loc 'voice-mask-name-change-set'}" />
         </BoxContainer>
+        <BoxContainer Orientation="Horizontal" Margin="5">
+            <Label Text="{Loc 'voice-mask-name-change-speech-style'}" />
+            <OptionButton Name="SpeechVerbSelector" /> <!-- Populated in LoadVerbs -->
+        </BoxContainer>
         <!-- Corvax-TTS-Start -->
-        <Label Text="{Loc 'voice-mask-voice-change-info'}" />
-        <BoxContainer Orientation="Horizontal">
-            <OptionButton Name="VoiceSelector" HorizontalExpand="True" />
+        <BoxContainer Orientation="Horizontal" Margin="5" Visible="False" Name="TTSContainer">
+            <Label Text="{Loc 'voice-mask-voice-change-info'}" />
+            <OptionButton Name="VoiceSelector" /> <!-- Populated in LoadVerbs -->
         </BoxContainer>
         <!-- Corvax-TTS-End -->
     </BoxContainer>
-</DefaultWindow>
+</controls:FancyWindow>

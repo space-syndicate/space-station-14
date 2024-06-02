@@ -12,7 +12,7 @@
 <GuideEntityEmbed Entity="GasPipeStraight" Rotation="90"/>
 <GuideEntityEmbed Entity="GasPipeStraight" Rotation="90"/>
 <GuideEntityEmbed Entity="GasPipeBend" Rotation="0"/>
-<GuideEntityEmbed Entity="CloningPod" Caption="cryo pod" Rotation="0"/>
+<GuideEntityEmbed Entity="CryoPod" Caption="cryo pod" Rotation="0"/>
 <GuideEntityEmbed Entity="GasThermoMachineFreezerEnabled" Rotation="0"/>
 </Box>
 <Box>
@@ -41,10 +41,14 @@
 
 ## Дополнительная информация:
 
-Стандартное давление газового насоса 1.325 кПа. Криоксадон работает при температуре ниже 150К, но обычно параметры охладителя ставят на 100К для ускорения процесса охлаждения.
+Стандартное давление газового насоса 100.325 кПа. Криоксадон работает при температуре ниже 150К, но обычно параметры охладителя ставят на 100К для ускорения процесса охлаждения.
 
+<GuideReagentEmbed Reagent="Aloxadone"/>
 <GuideReagentEmbed Reagent="Cryoxadone"/>
 <GuideReagentEmbed Reagent="Doxarubixadone"/>
 <GuideReagentEmbed Reagent="Dexalin"/>
+<GuideReagentEmbed Reagent="Leporazine"/>
+<GuideReagentEmbed Reagent="Necrosol"/>
+<GuideReagentEmbed Reagent="Opporozidone"/>
 
 </Document>

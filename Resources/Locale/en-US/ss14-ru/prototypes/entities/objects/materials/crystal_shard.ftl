@@ -12,3 +12,5 @@ ent-ShardCrystalGreen = green crystal shard
     .desc = { ent-ShardCrystalBase.desc }
 ent-ShardCrystalRed = red crystal shard
     .desc = { ent-ShardCrystalBase.desc }
+ent-ShardCrystalRandom = random crystal shard
+    .desc = { ent-ShardCrystalBase.desc }

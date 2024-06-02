@@ -313,7 +313,7 @@
   name: mirror shield
   parent: BaseShield
   id: MirrorShield
-  description: Eerily glows red... you hear the geometer whispering
+  description: Glows an eerie red. You hear the Geometer whispering...
   components:
     - type: Sprite
       state: mirror-icon
@@ -321,6 +321,7 @@
       heldPrefix: mirror
     - type: Reflect
       reflectProb: 0.95
+      innate: true
       reflects:
         - Energy
     - type: Blocking #Mirror shield reflects heat/laser, but is relatively weak to everything else.
@@ -408,6 +409,7 @@
     - type: Reflect
       enabled: false
       reflectProb: 0.95
+      innate: true
       reflects:
         - Energy
     - type: Blocking
@@ -453,7 +455,27 @@
                   max: 1
     - type: StaticPrice
       price: 350
-
+# Corvax-HiddenDesc-Start
+    - type: HiddenDescription
+      entries:
+      - label: corvax-hidden-desc-EnergyShield-syndicate
+        whitelistMind:
+          components:
+            - TraitorRole
+            - NukeOperative
+      - label: corvax-hidden-desc-EnergyShield-security
+        jobRequired:
+          - HeadOfSecurity
+          - Detective
+          - SecurityCadet
+          - SecurityOfficer
+          - Warden
+          - Captain
+      - label: corvax-hidden-desc-EnergyShield-cargo
+        jobRequired:
+          - SalvageSpecialist
+# Corvax-HiddenDesc-End
+        
 - type: entity
   name: broken energy shield
   parent: BaseItem
@@ -467,6 +489,25 @@
       sprite: Objects/Weapons/Melee/e_shield.rsi
       size: Small
       heldPrefix: eshield
+# Corvax-HiddenDesc-Start
+    - type: HiddenDescription
+      entries:
+      - label: corvax-hidden-desc-EnergyShield-syndicate
+        whitelistMind:
+          components:
+            - TraitorRole
+            - NukeOperative
+      - label: corvax-hidden-desc-EnergyShield-security
+        jobRequired:
+          - HeadOfSecurity
+          - Detective
+          - SecurityCadet
+          - SecurityOfficer
+          - Warden
+      - label: corvax-hidden-desc-EnergyShield-cargo
+        jobRequired:
+          - SalvageSpecialist
+# Corvax-HiddenDesc-End
 
 - type: entity
   name: telescopic shield
