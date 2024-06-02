@@ -39,13 +39,11 @@
   - type: StationEvent
     startAnnouncementColor: "#18abf5"
     startAudio:
-      path: /Audio/Announcements/announce.ogg
-    weight: 8
-    duration: 35
-    startAudio: # Corvax-Announcements
-      path: /Audio/Corvax/Announcements/flux.ogg
+      path: /Audio/Corvax/Announcements/flux.ogg # Corvax-Announcements
       params:
         volume: -4
+    weight: 8
+    duration: 35
   - type: AnomalySpawnRule
 
 - type: entity
@@ -60,13 +58,11 @@
   - type: StationEvent
     startAnnouncementColor: "#18abf5"
     startAudio:
-      path: /Audio/Announcements/announce.ogg
-    weight: 8
-    duration: 35
-    startAudio: # Corvax-Announcements
-      path: /Audio/Corvax/Announcements/blusp_anomalies.ogg
+      path: /Audio/Corvax/Announcements/blusp_anomalies.ogg # Corvax-Announcements
       params:
         volume: -4
+    weight: 8
+    duration: 35
   - type: BluespaceArtifactRule
 
 - type: entity
