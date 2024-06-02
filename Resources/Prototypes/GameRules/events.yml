@@ -1,11 +1,46 @@
 - type: entity
-  id: AnomalySpawn
+  id: BaseStationEvent
   parent: BaseGameRule
+  abstract: true
+  noSpawn: true
+  components:
+    - type: GameRule
+      delay:
+        min:  10
+        max:  20
+
+- type: entity
+  id: BaseStationEventShortDelay
+  parent: BaseGameRule
+  abstract: true
+  noSpawn: true
+  components:
+    - type: GameRule
+      delay:
+        min:  10
+        max:  20
+
+- type: entity
+  id: BaseStationEventLongDelay
+  parent: BaseGameRule
+  abstract: true
+  noSpawn: true
+  components:
+    - type: GameRule
+      delay:
+        min:  40
+        max:  60
+
+- type: entity
+  id: AnomalySpawn
+  parent: BaseStationEventShortDelay
   noSpawn: true
   components:
   - type: StationEvent
+    startAnnouncementColor: "#18abf5"
+    startAudio:
+      path: /Audio/Announcements/announce.ogg
     weight: 8
-    startDelay: 30
     duration: 35
     startAudio: # Corvax-Announcements
       path: /Audio/Corvax/Announcements/flux.ogg
@@ -15,12 +50,18 @@
 
 - type: entity
   id: BluespaceArtifact
-  parent: BaseGameRule
+  parent: BaseStationEventShortDelay
   noSpawn: true
   components:
+  - type: GameRule
+    delay:
+      min:  30
+      max:  30
   - type: StationEvent
+    startAnnouncementColor: "#18abf5"
+    startAudio:
+      path: /Audio/Announcements/announce.ogg
     weight: 8
-    startDelay: 30
     duration: 35
     startAudio: # Corvax-Announcements
       path: /Audio/Corvax/Announcements/blusp_anomalies.ogg
@@ -156,7 +197,7 @@
 
 - type: entity
   id: GasLeak
-  parent: BaseGameRule
+  parent: BaseStationEventShortDelay
   noSpawn: true
   components:
   - type: StationEvent
@@ -171,25 +212,23 @@
       path: /Audio/Announcements/gasleak_end.ogg # Corvax-Announcements
       params:
         volume: -4
-    startDelay: 20
   - type: GasLeakRule
 
 - type: entity
   id: KudzuGrowth
-  parent: BaseGameRule
+  parent: BaseStationEventLongDelay
   noSpawn: true
   components:
   - type: StationEvent
     earliestStart: 15
     minimumPlayers: 15
     weight: 7
-    startDelay: 50
     duration: 240
   - type: KudzuGrowthRule
 
 - type: entity
   id: MeteorSwarm
-  parent: BaseGameRule
+  parent: BaseStationEventLongDelay
   noSpawn: true
   components:
   - type: StationEvent
@@ -207,19 +246,17 @@
       params:
         volume: -4
     duration: null #ending is handled by MeteorSwarmRule
-    startDelay: 30
   - type: MeteorSwarmRule
 
 - type: entity
   id: MouseMigration
-  parent: BaseGameRule
+  parent: BaseStationEventShortDelay
   noSpawn: true
   components:
   - type: StationEvent
     startAnnouncement: station-event-vent-creatures-start-announcement
     startAudio:
       path: /Audio/Announcements/attention.ogg
-    startDelay: 10
     earliestStart: 15
     weight: 6
     duration: 50
@@ -239,14 +276,13 @@
 
 - type: entity
   id: CockroachMigration
-  parent: BaseGameRule
+  parent: BaseStationEventShortDelay
   noSpawn: true
   components:
   - type: StationEvent
     startAnnouncement: station-event-vent-creatures-start-announcement
     startAudio:
       path: /Audio/Announcements/attention.ogg
-    startDelay: 10
     weight: 6
     duration: 50
   - type: VentCrittersRule
@@ -258,7 +294,7 @@
 
 - type: entity
   id: PowerGridCheck
-  parent: BaseGameRule
+  parent: BaseStationEventShortDelay
   noSpawn: true
   components:
   - type: StationEvent
@@ -269,7 +305,6 @@
       path: /Audio/Announcements/power_off.ogg
       params:
        volume: -4
-    startDelay: 24
     duration: 60
     maxDuration: 120
   - type: PowerGridCheckRule
@@ -322,7 +357,7 @@
 
 - type: entity
   id: VentClog
-  parent: BaseGameRule
+  parent: BaseStationEventLongDelay
   noSpawn: true
   components:
   - type: StationEvent
@@ -334,20 +369,18 @@
     earliestStart: 15
     minimumPlayers: 15
     weight: 5
-    startDelay: 50
     duration: 60
   - type: VentClogRule
 
 - type: entity
   id: SlimesSpawn
-  parent: BaseGameRule
+  parent: BaseStationEventShortDelay
   noSpawn: true
   components:
   - type: StationEvent
     startAnnouncement: station-event-vent-creatures-start-announcement
     startAudio:
       path: /Audio/Announcements/attention.ogg
-    startDelay: 10
     earliestStart: 20
     minimumPlayers: 15
     weight: 5
@@ -363,14 +396,13 @@
 
 - type: entity
   id: SpiderSpawn
-  parent: BaseGameRule
+  parent: BaseStationEventShortDelay
   noSpawn: true
   components:
   - type: StationEvent
     startAnnouncement: station-event-vent-creatures-start-announcement
     startAudio:
       path: /Audio/Announcements/attention.ogg
-    startDelay: 10
     earliestStart: 20
     minimumPlayers: 15
     weight: 5
@@ -382,14 +414,13 @@
 
 - type: entity
   id: SpiderClownSpawn
-  parent: BaseGameRule
+  parent: BaseStationEventShortDelay
   noSpawn: true
   components:
   - type: StationEvent
     startAnnouncement: station-event-vent-creatures-start-announcement
     startAudio:
       path: /Audio/Announcements/attention.ogg
-    startDelay: 10
     earliestStart: 20
     minimumPlayers: 20
     weight: 1.5
