@@ -1,5 +1,7 @@
 ent-ShowSecurityIcons = { "" }
     .desc = { "" }
+ent-ShowMedicalIcons = { "" }
+    .desc = { "" }
 ent-ClothingEyesHudDiagnostic = diagnostic hud
     .desc = A heads-up display capable of analyzing the integrity and status of robotics and exosuits. Made out of see-borg-ium.
 ent-ClothingEyesHudMedical = medical hud
