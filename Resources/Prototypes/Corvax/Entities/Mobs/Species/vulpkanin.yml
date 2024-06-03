@@ -34,6 +34,13 @@
   - type: ContentEye
     targetZoom: "1.125, 1.125"
     maxZoom: "1.125, 1.125"
+  - type: Speech
+    allowedEmotes: ['Howl', 'Growl']
+  - type: Vocal
+    sounds:
+      Male: MaleVulpkanin
+      Female: FemaleVulpkanin
+      Unsexed: MaleVulpkanin
   - type: GrowlingAccent
   - type: MeleeWeapon
     animation: WeaponArcClaw
