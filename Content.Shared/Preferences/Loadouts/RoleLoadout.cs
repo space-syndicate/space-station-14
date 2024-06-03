@@ -99,19 +99,19 @@ public sealed partial class RoleLoadout : IEquatable<RoleLoadout>
             {
                 var loadout = loadouts[i];
 
+                // Old prototype or otherwise invalid.
                 if (!protoManager.TryIndex(loadout.Prototype, out var loadoutProto))
                 {
                     loadouts.RemoveAt(i);
                     continue;
                 }
 
-                // Corvax-Loadouts-Start: Validate if loadout exist in group. It's can't be f real
-                if (!groupProtoLoadouts.Contains(loadout.Prototype))
+                // Malicious client maybe, check the group even has it.
+                if (!groupProto.Loadouts.Contains(loadout.Prototype))
                 {
                     loadouts.RemoveAt(i);
                     continue;
                 }
-                // Corvax-Loadouts-End
 
                 // Validate the loadout can be applied (e.g. points).
                 if (!IsValid(profile, session, loadout.Prototype, collection, out _))

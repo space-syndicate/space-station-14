@@ -28,5 +28,5 @@ ent-DeathAcidifierImplant = death-acidifier implant
     .desc = This implant melts the user and their equipment upon death.
 ent-DeathRattleImplant = death rattle implant
     .desc = This implant will inform the Syndicate radio channel should the user fall into critical condition or die.
-ent-MindShieldImplant = mind-shield implant
+ent-MindShieldImplant = mindshield implant
     .desc = This implant will ensure loyalty to Nanotrasen and prevent mind control devices.
