@@ -303,7 +303,6 @@
   id: ActionRatKingRaiseArmy
   name: Raise Army
   description: Spend some hunger to summon an allied rat to help defend you.
-  noSpawn: true
   components:
   - type: InstantAction
     useDelay: 4
@@ -316,7 +315,6 @@
   id: ActionRatKingDomain
   name: Rat King's Domain
   description: Spend some hunger to release a cloud of ammonia into the air.
-  noSpawn: true
   components:
   - type: InstantAction
     useDelay: 6
@@ -329,7 +327,6 @@
   id: ActionRatKingOrderStay
   name: Stay
   description: Command your army to stand in place.
-  noSpawn: true
   components:
   - type: InstantAction
     useDelay: 1
@@ -348,7 +345,6 @@
   id: ActionRatKingOrderFollow
   name: Follow
   description: Command your army to follow you around.
-  noSpawn: true
   components:
   - type: InstantAction
     useDelay: 1
@@ -367,7 +363,6 @@
   id: ActionRatKingOrderCheeseEm
   name: Cheese 'Em
   description: Command your army to attack whoever you point at.
-  noSpawn: true
   components:
   - type: InstantAction
     useDelay: 1
@@ -386,7 +381,6 @@
   id: ActionRatKingOrderLoose
   name: Loose
   description: Command your army to act at their own will.
-  noSpawn: true
   components:
   - type: InstantAction
     useDelay: 1
