@@ -11,7 +11,8 @@
       - id: EmergencyOxygenTankFilled
       - id: EmergencyMedipen
       - id: EmergencyMedipen
-      - id: FoodTinMRE
+      - id: FoodSnackNutribrick
+      - id: DrinkWaterBottleFull
   - type: Sprite
     layers:
       - state: internals
