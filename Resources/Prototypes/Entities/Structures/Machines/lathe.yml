@@ -901,7 +901,6 @@
       - ClothingUniformJumpskirtHoP
       - ClothingHeadHatBeretHoS
       - ClothingHeadHatHoshat
-      - ClothingHeadHatCapHoS
       - ClothingUniformJumpsuitHoS
       - ClothingUniformJumpskirtHoS
       - ClothingUniformJumpsuitHosFormal
@@ -953,10 +952,8 @@
       - ClothingHeadHatBeretBrigmedic
       - ClothingUniformJumpsuitBrigmedic
       - ClothingUniformJumpskirtBrigmedic
-      - ClothingHeadHatBeretSecurityMedic
       - ClothingHeadHatBeretWarden
       - ClothingHeadHatWarden
-      - ClothingHeadHatCapWardenAlt
       - ClothingUniformJumpsuitWarden
       - ClothingUniformJumpskirtWarden
       - ClothingHeadHatParamedicsoft
@@ -1019,6 +1016,11 @@
       - CarpetPurple
       - CarpetCyan
       - CarpetWhite
+      # Corvax-Clothing-Start
+      - ClothingHeadHatCapHoS
+      - ClothingHeadHatBeretSecurityMedic
+      - ClothingHeadHatCapWardenAlt
+      # Corvax-Clothing-End
   - type: EmagLatheRecipes
     emagStaticRecipes:
       - ClothingHeadHatCentcomcap
