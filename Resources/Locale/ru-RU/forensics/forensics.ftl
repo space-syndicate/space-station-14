@@ -23,5 +23,5 @@ forensic-pad-fingerprint-name = владелец отпечатков: { $entity
 forensic-pad-gloves-name = источник волокон: { $entity }
 forensics-verb-text = Счистить улики
 forensics-verb-message = Счистить отпечатки пальцев и остатки ДНК с объекта!
-forensics-cleaning = Вы начинаете счищать улики с { $target}...
+forensics-cleaning = Вы начинаете счищать улики с { $target }...
 forensics-cleaning-cannot-clean = Ничего нельзя счистить с { $target }!
