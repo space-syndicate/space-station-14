@@ -3,26 +3,24 @@
   layers:
     - texture:
         !type:ImageParallaxTextureSource
-        path: "/Textures/Corvax/Parallax/PilgrimAiur.png"
-      slowness: 0.5
-      scale: "1, 1"
-      scrolling: "0, -0.05"
+        path: "/Textures/Corvax/Tiles/Planet/azure_water.rsi/shoreline_azure_water.png"
+      slowness: 0.1
+      scrolling: "-0.05, -0.05"
+      tiled: true
+      shader: ""
     - texture:
         !type:ImageParallaxTextureSource
-        path: "/Textures/Corvax/Parallax/PilgrimAiur_Overlay2.png"
-      slowness: 0.3
-      scale: "0.5, 0.5"
-      scrolling: "0.08, 0.08"
-    - texture:
-        !type:ImageParallaxTextureSource
-        path: "/Textures/Corvax/Parallax/PilgrimAiur_Overlay.png"
-      slowness: 0.05
-      scale: "0.4, 0.4"
-      scrolling: "-0.1, -0.1"
+        path: "/Textures/Corvax/Tiles/Planet/azure_water.rsi/shoreline_azure_water.png"
+      slowness: 0
+      scrolling: "-0.08, 0"
+      tiled: true
+      shader: ""
   layersLQ:
     - texture:
-        !type:GeneratedParallaxTextureSource
-        id: ""
-        configPath: "/Prototypes/Parallaxes/parallax_config.toml"
-        slowness: 0.875
+        !type:ImageParallaxTextureSource
+        path: "/Textures/Corvax/Tiles/Planet/azure_water.rsi/shoreline_azure_water.png"
+      slowness: 0
+      scrolling: "-0.1, 0"
+      tiled: true
+      shader: ""
   layersLQUseHQ: false
