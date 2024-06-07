@@ -42704,11 +42704,6 @@ entities:
     - type: Transform
       pos: 2.5,-4.5
       parent: 23909
-  - uid: 23989
-    components:
-    - type: Transform
-      pos: 1.5,-8.5
-      parent: 23909
   - uid: 23990
     components:
     - type: Transform
@@ -150816,26 +150811,12 @@ entities:
         - Pressed: Toggle
         1051:
         - Pressed: Toggle
-  - uid: 24226
-    components:
-    - type: Transform
-      rot: 1.5707963267948966 rad
-      pos: 0.5,3.5
-      parent: 23909
-    - type: DeviceLinkSource
-      linkedPorts:
-        24214:
-        - Pressed: Toggle
   - uid: 24227
     components:
     - type: Transform
       rot: -1.5707963267948966 rad
       pos: 8.5,3.5
       parent: 23909
-    - type: DeviceLinkSource
-      linkedPorts:
-        24215:
-        - Pressed: Toggle
 - proto: SignalTimer
   entities:
   - uid: 27854
