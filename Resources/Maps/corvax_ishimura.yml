@@ -138186,13 +138186,6 @@ entities:
       parent: 23909
     - type: PointLight
       enabled: False
-- proto: PowerCellMicroreactor
-  entities:
-  - uid: 16754
-    components:
-    - type: Transform
-      pos: -22.450647,-22.528088
-      parent: 2
 - proto: PowerCellPotato
   entities:
   - uid: 16755
@@ -138340,13 +138333,6 @@ entities:
     components:
     - type: Transform
       pos: -103.65402,-10.274773
-      parent: 2
-- proto: PowerDrill
-  entities:
-  - uid: 16768
-    components:
-    - type: Transform
-      pos: 3.5,-27.5
       parent: 2
 - proto: Poweredlight
   entities:
@@ -148633,28 +148619,6 @@ entities:
     - type: Transform
       pos: -11.394216,7.4131637
       parent: 24440
-- proto: ShuttleGunDuster
-  entities:
-  - uid: 24214
-    components:
-    - type: Transform
-      rot: 3.141592653589793 rad
-      pos: 1.5,4.5
-      parent: 23909
-    - type: DeviceLinkSink
-      links:
-      - 24226
-- proto: ShuttleGunPerforator
-  entities:
-  - uid: 24215
-    components:
-    - type: Transform
-      rot: 3.141592653589793 rad
-      pos: 7.5,4.5
-      parent: 23909
-    - type: DeviceLinkSink
-      links:
-      - 24227
 - proto: ShuttleWindow
   entities:
   - uid: 725
