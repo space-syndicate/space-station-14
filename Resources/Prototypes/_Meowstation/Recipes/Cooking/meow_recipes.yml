@@ -1,0 +1,24 @@
+- type: microwaveMealRecipe
+  id: RecipeCroutonsHamlet
+  name: Рецепт сухариков из гамлета
+  result: FoodBurgerAppendix
+  time: 10
+  solids:
+    MobHamsterHamlet: 1
+    FoodBreadPlain: 1
+
+- type: constructionGraph
+  id: FurrySteak
+  start: start
+  graph:
+  - node: start
+    edges:
+    - to: cooked furry
+      completed:
+      - !type:PlaySound
+        sound: /Audio/Effects/sizzle.ogg
+      steps:
+      - minTemperature: 345
+
+  - node: cooked furry
+    entity: FoodMeatFurrySteak

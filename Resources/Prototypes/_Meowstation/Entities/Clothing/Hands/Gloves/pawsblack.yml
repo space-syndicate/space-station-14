@@ -1,0 +1,16 @@
+- type: entity
+  parent: ClothingHandsGlovesSyntheticBase
+  id: ClothingHandsBlackMeowGloves
+  name: Чёрные перчатки котика
+  description: Почувствуй себя котиком UwU
+  components:
+  - type: Sprite
+    sprite: _Meowstation/Clothing/Hands/Gloves/pawsblack.rsi
+  - type: Clothing
+    sprite: _Meowstation/Clothing/Hands/Gloves/pawsblack.rsi
+  - type: Fiber
+    fiberColor: fibers-white
+  - type: MeleeWeapon
+    damage:
+      types:
+       Blunt: 0

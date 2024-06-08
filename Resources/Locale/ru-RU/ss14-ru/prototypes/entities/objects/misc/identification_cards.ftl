@@ -123,3 +123,6 @@ ent-SeniorPhysicianIDCard = ID карта ведущего врача
     .desc = { ent-MedicalIDCard.desc }
 ent-SeniorOfficerIDCard = ID карта инструктора СБ
     .desc = { ent-SecurityIDCard.desc }
+ent-UniversalIDCard = универсальная ID карта
+    .desc = ID карта, которая позволит вам осуществить свои самые сокровенные желания.
+    .suffix = Админ

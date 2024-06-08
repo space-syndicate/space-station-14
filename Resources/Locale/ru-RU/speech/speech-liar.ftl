@@ -87,7 +87,6 @@ liar-word-43 = want
 liar-word-replacement-43 = "don't want"
 liar-word-44 = not
 liar-word-replacement-44 = ""
-
 liar-word-1 = да
 liar-word-replacement-1 = нет
 liar-word-2 = нет

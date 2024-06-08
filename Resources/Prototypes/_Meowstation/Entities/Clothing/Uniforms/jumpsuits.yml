@@ -1,0 +1,10 @@
+- type: entity
+  parent: ClothingUniformBase
+  id: ClothingUniformJumpsuitSSSP
+  name: униформа СССП
+  description: Советская, родная...
+  components:
+  - type: Sprite
+    sprite: _Meowstation/Clothing/Uniforms/Jumpsuit/uniformsssp.rsi
+  - type: Clothing
+    sprite: _Meowstation/Clothing/Uniforms/Jumpsuit/uniformsssp.rsi

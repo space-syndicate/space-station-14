@@ -1,0 +1,36 @@
+- type: entity
+  parent: BaseVendingMachineRestock
+  id: VendingMachineRefillFurry
+  name: Набор пополнения ФурриМата
+  description: Нужно больше милых вещей!
+  components:
+  - type: VendingMachineRestock
+    canRestock:
+    - FurryMatItem
+  - type: Sprite
+    sprite: _Meowstation/Objects/Specific/Service/resupply.rsi
+    layers:
+    - state: base
+    - state: inhand-left
+    - state: inhand-right
+    - state: refill_furry
+
+- type: entity
+  id: CrateVendingMachineRestockFurryFilled
+  parent: CratePlastic
+  name: Набор пополнения Фурримата
+  description: Нужно больше милых вещей!
+  components:
+  - type: StorageFill
+    contents:
+      - id: VendingMachineRefillFurry
+
+- type: cargoProduct
+  id: CrateVendingMachineRestockFurry
+  icon:
+    sprite: _Meowstation/Objects/Specific/Service/resupply.rsi
+    state: base
+  product: CrateVendingMachineRestockFurryFilled
+  cost: 1200
+  category: cargoproduct-category-name-service
+  group: market

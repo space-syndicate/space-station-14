@@ -1,0 +1,9 @@
+- type: loadout
+  id: CorporateLaw
+  equipment: CorporateLaw
+
+- type: startingGear
+  id: CorporateLaw
+  storage:
+    pocket2:
+    - HyperLinkBookCorporateLaw

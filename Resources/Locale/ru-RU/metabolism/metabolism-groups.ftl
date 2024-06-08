@@ -5,3 +5,4 @@ metabolism-group-alcohol = Алкоголь
 metabolism-group-food = Пища
 metabolism-group-drink = Напитки
 metabolism-group-gas = Газы
+metabolism-group-plant-metabolisms = Метаболизм растений
