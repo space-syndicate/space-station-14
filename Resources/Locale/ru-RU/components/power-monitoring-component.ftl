@@ -19,4 +19,5 @@ power-monitoring-window-flavor-right = v1.3ru
 power-monitoring-window-rogue-power-consumer = [color=white][font size=14][bold]! ВНИМАНИЕ - ОБНАРУЖЕН НЕСАНКЦИОНИРОВАННЫЙ ЭНЕРГОПОТРЕБИТЕЛЬ ![/bold][/font][/color]
 power-monitoring-window-power-net-abnormalities = [color=white][font size=14][bold]ОСТОРОЖНО - АНОМАЛЬНАЯ АКТИВНОСТЬ В ЭЛЕКТРОСЕТИ[/bold][/font][/color]
 power-monitoring-window-value = { POWERWATTS($value) }
+power-monitoring-window-button-value = {$value} Вт
 power-monitoring-window-show-inactive-consumers = Показать неактивные потребители тока

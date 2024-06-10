@@ -1,0 +1,22 @@
+- type: latheRecipe
+  id: ClothingHeadHatBeretSecurityMedic
+  result: ClothingHeadHatBeretSecurityMedic
+  completetime: 4
+  materials:
+    Cloth: 300
+
+- type: latheRecipe
+  id: ClothingHeadHatCapHoS
+  result: ClothingHeadHatCapHoS
+  completetime: 2
+  materials:
+    Cloth: 100
+    Durathread: 50
+
+- type: latheRecipe
+  id: ClothingHeadHatCapWardenAlt
+  result: ClothingHeadHatCapWardenAlt
+  completetime: 2
+  materials:
+    Cloth: 100
+    Durathread: 50
