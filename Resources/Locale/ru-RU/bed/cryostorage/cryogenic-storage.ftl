@@ -1,4 +1,11 @@
 ### Announcement
 
-earlyleave-cryo-announcement = { $character } ({ $job }) has entered cryogenic storage!
-earlyleave-cryo-sender = Station
+earlyleave-cryo-job-unknown = Должность неизвестна
+earlyleave-cryo-announcement =
+    { $character } ({ $job }) { $gender ->
+        [male] был перемещён
+        [female] была перемещена
+        [epicene] были перемещены
+       *[neuter] был перемещён
+    } в криогенное хранилище!
+earlyleave-cryo-sender = Станция

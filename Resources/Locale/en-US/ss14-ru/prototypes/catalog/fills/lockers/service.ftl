@@ -17,5 +17,5 @@ ent-LockerBotanistLoot = { ent-LockerBotanist }
     .suffix = Loot
     .desc = { ent-LockerBotanist.desc }
 ent-ClosetJanitorBombFilled = { ent-ClosetJanitorBomb }
-    .suffix = Filled
+    .suffix = DO NOT MAP, Filled
     .desc = { ent-ClosetJanitorBomb.desc }

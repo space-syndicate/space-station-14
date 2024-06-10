@@ -16,11 +16,11 @@ cmd-failure-no-attached-entity = К этой оболочке не привяз�
 
 ## 'help' command
 
-cmd-help-desc = Выводит общую справку или справку по определенной команде
+cmd-help-desc = Выводит общую справку или справку по определённой команде
 cmd-help-help =
     Использование: help [имя команды]
     Если имя команды не будет указано, будет выведена общая справка. Если имя команды будет указано, будет выведена справка по этой команде.
-cmd-help-no-args = Чтобы получить справку по определенной команде, используйте 'help <command>'. Для получения списка всех доступных команд используйте 'list'. Для поиска по командам используйте 'list <filter>'.
+cmd-help-no-args = Чтобы получить справку по определённой команде, используйте 'help <command>'. Для получения списка всех доступных команд используйте 'list'. Для поиска по командам используйте 'list <filter>'.
 cmd-help-unknown = Неизвестная команда: { $command }
 cmd-help-top = { $command } - { $description }
 cmd-help-invalid-args = Недопустимое количество аргументов.
@@ -74,7 +74,7 @@ cmd-gcf-desc = Запускает GC, полную, со сжатием 'куч�
 cmd-gcf-help =
     Использование: gcf
     Выполняет полный GC.Collect(2, GCCollectionMode.Forced, true, true) одновременно сжимая 'кучу больших объектов' LOH.
-    Скорее всего, это приведет к зависанию на сотни миллисекунд, имейте в виду.
+    Скорее всего, это приведёт к зависанию на сотни миллисекунд, имейте в виду.
 
 ## 'gc_mode' command
 
@@ -120,7 +120,7 @@ cmd-exec-arg-filename = <fileName>
 
 cmd-dump_net_comps-desc = Выводит таблицу сетевых компонентов.
 cmd-dump_net_comps-help = Использование: dump_net-comps
-cmd-dump_net_comps-error-writeable = Регистрация все еще доступна для записи, сетевые идентификаторы не были сгенерированы.
+cmd-dump_net_comps-error-writeable = Регистрация всё ещё доступна для записи, сетевые идентификаторы не были сгенерированы.
 cmd-dump_net_comps-header = Регистрации сетевых компонентов:
 
 ## 'dump_event_tables' command
@@ -179,254 +179,254 @@ cmd-flushcookies-desc = Сброс хранилища CEF-cookie на диск
 cmd-flushcookies-help =
     Это гарантирует правильное сохранение файлов cookie на диске в случае неаккуратного выключения.
     Имейте в виду, что фактическая операция является асинхронной.
-cmd-ldrsc-desc = Pre-caches a resource.
-cmd-ldrsc-help = Usage: ldrsc <path> <type>
-cmd-rldrsc-desc = Reloads a resource.
-cmd-rldrsc-help = Usage: rldrsc <path> <type>
-cmd-gridtc-desc = Gets the tile count of a grid.
-cmd-gridtc-help = Usage: gridtc <gridId>
+cmd-ldrsc-desc = Предварительно кэширует ресурс.
+cmd-ldrsc-help = Использование: ldrsc <path> <type>
+cmd-rldrsc-desc = Перезагружает ресурсы.
+cmd-rldrsc-help = Использование: rldrsc <path> <type>
+cmd-gridtc-desc = Получить количество плиток в гриде.
+cmd-gridtc-help = Использование: gridtc <gridId>
 # Client-side commands
-cmd-guidump-desc = Dump GUI tree to /guidump.txt in user data.
-cmd-guidump-help = Usage: guidump
-cmd-uitest-desc = Open a dummy UI testing window
-cmd-uitest-help = Usage: uitest
-cmd-uitest2-desc = Opens a UI control testing OS window
-cmd-uitest2-help = Usage: uitest2 <tab>
+cmd-guidump-desc = Дамп дерева интерфейса в /guidump.txt в данные пользователя.
+cmd-guidump-help = Использование: guidump
+cmd-uitest-desc = Открыть UI окно для тестирования
+cmd-uitest-help = Использование: uitest
+cmd-uitest2-desc = Открывает UI контрольного тестирования ОС
+cmd-uitest2-help = Использование: uitest2 <tab>
 cmd-uitest2-arg-tab = <tab>
-cmd-uitest2-error-args = Expected at most one argument
-cmd-uitest2-error-tab = Invalid tab: '{ $value }'
+cmd-uitest2-error-args = Ожидается не более одного аргумента
+cmd-uitest2-error-tab = Недопустимая вкладка: '{ $value }'
 cmd-uitest2-title = UITest2
-cmd-setclipboard-desc = Sets the system clipboard
-cmd-setclipboard-help = Usage: setclipboard <text>
-cmd-getclipboard-desc = Gets the system clipboard
-cmd-getclipboard-help = Usage: Getclipboard
-cmd-togglelight-desc = Toggles light rendering.
-cmd-togglelight-help = Usage: togglelight
-cmd-togglefov-desc = Toggles fov for client.
-cmd-togglefov-help = Usage: togglefov
-cmd-togglehardfov-desc = Toggles hard fov for client. (for debugging space-station-14#2353)
-cmd-togglehardfov-help = Usage: togglehardfov
-cmd-toggleshadows-desc = Toggles shadow rendering.
-cmd-toggleshadows-help = Usage: toggleshadows
-cmd-togglelightbuf-desc = Toggles lighting rendering. This includes shadows but not FOV.
-cmd-togglelightbuf-help = Usage: togglelightbuf
-cmd-chunkinfo-desc = Gets info about a chunk under your mouse cursor.
-cmd-chunkinfo-help = Usage: chunkinfo
-cmd-rldshader-desc = Reloads all shaders.
-cmd-rldshader-help = Usage: rldshader
-cmd-cldbglyr-desc = Toggle fov and light debug layers.
+cmd-setclipboard-desc = Устанавливает системный буфер обмена
+cmd-setclipboard-help = Использование: setclipboard <text>
+cmd-getclipboard-desc = Получает системный буфер обмена
+cmd-getclipboard-help = Использование: Getclipboard
+cmd-togglelight-desc = Переключает рендеринг света.
+cmd-togglelight-help = Использование: togglelight
+cmd-togglefov-desc = Переключает поле зрения клиента.
+cmd-togglefov-help = Использование: togglefov
+cmd-togglehardfov-desc = Включает жёсткое поле зрения клиента. (для отладки space-station-14#2353)
+cmd-togglehardfov-help = Использование: togglehardfov
+cmd-toggleshadows-desc = Переключение рендеринга теней.
+cmd-toggleshadows-help = Использование: toggleshadows
+cmd-togglelightbuf-desc = Переключение рендеринга освещения. Сюда входят тени, но не поле зрения.
+cmd-togglelightbuf-help = Использование: togglelightbuf
+cmd-chunkinfo-desc = Получает информацию о чанке под курсором мыши.
+cmd-chunkinfo-help = Использование: chunkinfo
+cmd-rldshader-desc = Перезагружает все шейдеры.
+cmd-rldshader-help = Использование: rldshader
+cmd-cldbglyr-desc = Переключение слоёв отладки поле зрения и освещения.
 cmd-cldbglyr-help =
-    Usage: cldbglyr <layer>: Toggle <layer>
-    cldbglyr: Turn all Layers off
-cmd-key-info-desc = Keys key info for a key.
-cmd-key-info-help = Usage: keyinfo <Key>
-cmd-bind-desc = Binds an input key combination to an input command.
+    Использование: cldbglyr <layer>: Toggle <layer>
+    cldbglyr: Отключить все слои
+cmd-key-info-desc = Информация о ключе для клавиши.
+cmd-key-info-help = Использование: keyinfo <Кнопка>
+cmd-bind-desc = Привязывает комбинацию клавиш ввода с командой ввода.
 cmd-bind-help =
-    Usage: bind { cmd-bind-arg-key } { cmd-bind-arg-mode } { cmd-bind-arg-command }
-    Note that this DOES NOT automatically save bindings.
-    Use the 'svbind' command to save binding configuration.
+    Использование: bind { cmd-bind-arg-key } { cmd-bind-arg-mode } { cmd-bind-arg-command }
+    Обратите внимание, что это НЕ сохраняет привязки автоматически.
+    Используйте команду 'svbind', чтобы сохранить конфигурацию привязки.
 cmd-bind-arg-key = <KeyName>
 cmd-bind-arg-mode = <BindMode>
 cmd-bind-arg-command = <InputCommand>
-cmd-net-draw-interp-desc = Toggles the debug drawing of the network interpolation.
-cmd-net-draw-interp-help = Usage: net_draw_interp
-cmd-net-watch-ent-desc = Dumps all network updates for an EntityId to the console.
-cmd-net-watch-ent-help = Usage: net_watchent <0|EntityUid>
-cmd-net-refresh-desc = Requests a full server state.
-cmd-net-refresh-help = Usage: net_refresh
-cmd-net-entity-report-desc = Toggles the net entity report panel.
-cmd-net-entity-report-help = Usage: net_entityreport
-cmd-fill-desc = Fill up the console for debugging.
-cmd-fill-help = Fills the console with some nonsense for debugging.
-cmd-cls-desc = Clears the console.
-cmd-cls-help = Clears the debug console of all messages.
-cmd-sendgarbage-desc = Sends garbage to the server.
-cmd-sendgarbage-help = The server will reply with 'no u'
-cmd-loadgrid-desc = Loads a grid from a file into an existing map.
-cmd-loadgrid-help = loadgrid <MapID> <Path> [x y] [rotation] [storeUids]
-cmd-loc-desc = Prints the absolute location of the player's entity to console.
+cmd-net-draw-interp-desc = Переключает отладочный рисунок сетевой интерполяции.
+cmd-net-draw-interp-help = Использование: net_draw_interp
+cmd-net-watch-ent-desc = Выводит на консоль все сетевые обновления для EntityId.
+cmd-net-watch-ent-help = Использование: net_watchent <0|EntityUid>
+cmd-net-refresh-desc = Запрашивает полное состояние сервера.
+cmd-net-refresh-help = Использование: net_refresh
+cmd-net-entity-report-desc = Переключает панель отчета о сетевых сущностях.
+cmd-net-entity-report-help = Использование: net_entityreport
+cmd-fill-desc = Заполнить консоль для отладки.
+cmd-fill-help = Заполняет консоль всякой чепухой для отладки.
+cmd-cls-desc = Очищает консоль.
+cmd-cls-help = Очищает консоль отладки от всех сообщений.
+cmd-sendgarbage-desc = Отправляет мусор на сервер.
+cmd-sendgarbage-help = Сервер ответит 'нет ты'.
+cmd-loadgrid-desc = Загружает грид из файла на существующую карту.
+cmd-loadgrid-help = loadgrid <MapID> <Path> [x y] [вращение] [storeUids]
+cmd-loc-desc = Выводит абсолютное местоположение сущности игрока в консоль.
 cmd-loc-help = loc
-cmd-tpgrid-desc = Teleports a grid to a new location.
+cmd-tpgrid-desc = Телепортирует грид в новое место.
 cmd-tpgrid-help = tpgrid <gridId> <X> <Y> [<MapId>]
-cmd-rmgrid-desc = Removes a grid from a map. You cannot remove the default grid.
+cmd-rmgrid-desc = Удаляет грид с карты. Вы не можете удалить стандартный грид.
 cmd-rmgrid-help = rmgrid <gridId>
-cmd-mapinit-desc = Runs map init on a map.
+cmd-mapinit-desc = Запускает инициализацию карты на карте.
 cmd-mapinit-help = mapinit <mapID>
-cmd-lsmap-desc = Lists maps.
+cmd-lsmap-desc = Перечисляет карты.
 cmd-lsmap-help = lsmap
-cmd-lsgrid-desc = Lists grids.
+cmd-lsgrid-desc = Перечисляет гриды.
 cmd-lsgrid-help = lsgrid
-cmd-addmap-desc = Adds a new empty map to the round. If the mapID already exists, this command does nothing.
+cmd-addmap-desc = Добавляет в раунд новую пустую карту. Если mapID уже существует, эта команда ничего не сделает.
 cmd-addmap-help = addmap <mapID> [initialize]
-cmd-rmmap-desc = Removes a map from the world. You cannot remove nullspace.
+cmd-rmmap-desc = Удаляет карту из мира. Вы не можете удалить nullspace.
 cmd-rmmap-help = rmmap <mapId>
-cmd-savegrid-desc = Serializes a grid to disk.
+cmd-savegrid-desc = Сериализует грид на диск.
 cmd-savegrid-help = savegrid <gridID> <Path>
-cmd-testbed-desc = Loads a physics testbed on the specified map.
+cmd-testbed-desc = Загружает физический испытательный стенд на указаной карте.
 cmd-testbed-help = testbed <mapid> <test>
-cmd-saveconfig-desc = Saves the client configuration to the config file.
+cmd-saveconfig-desc = Сохраняет конфигурацию клиента в файл конфигурации.
 cmd-saveconfig-help = saveconfig
-cmd-addcomp-desc = Adds a component to an entity.
+cmd-addcomp-desc = Добавляет компонент сущности.
 cmd-addcomp-help = addcomp <uid> <componentName>
-cmd-addcompc-desc = Adds a component to an entity on the client.
+cmd-addcompc-desc = Добавляет компонент сущности на клиенте.
 cmd-addcompc-help = addcompc <uid> <componentName>
-cmd-rmcomp-desc = Removes a component from an entity.
+cmd-rmcomp-desc = Удаляет компонент у сущности.
 cmd-rmcomp-help = rmcomp <uid> <componentName>
-cmd-rmcompc-desc = Removes a component from an entity on the client.
+cmd-rmcompc-desc = Удаляет компонент у сущности на клиенте.
 cmd-rmcompc-help = rmcomp <uid> <componentName>
-cmd-addview-desc = Allows you to subscribe to an entity's view for debugging purposes.
+cmd-addview-desc = Позволяет подписаться на просмотр сущности в целях отладки.
 cmd-addview-help = addview <entityUid>
-cmd-addviewc-desc = Allows you to subscribe to an entity's view for debugging purposes.
+cmd-addviewc-desc = Позволяет подписаться на просмотр сущности в целях отладки.
 cmd-addviewc-help = addview <entityUid>
-cmd-removeview-desc = Allows you to unsubscribe to an entity's view for debugging purposes.
+cmd-removeview-desc = Позволяет отписаться от просмотра сущности в целях отладки.
 cmd-removeview-help = removeview <entityUid>
-cmd-loglevel-desc = Changes the log level for a provided sawmill.
+cmd-loglevel-desc = Изменяет уровень логирования для предоставленного sawmill.
 cmd-loglevel-help =
-    Usage: loglevel <sawmill> <level>
-    sawmill: A label prefixing log messages. This is the one you're setting the level for.
-    level: The log level. Must match one of the values of the LogLevel enum.
-cmd-testlog-desc = Writes a test log to a sawmill.
+    Использование: loglevel <sawmill> <level>
+    sawmill: Метка, которая префиксирует сообщения логов. Именно для него вы устанавливаете уровень.
+    level: Уровень логирования. Должно соответствовать одному из значений перечисления LogLevel.
+cmd-testlog-desc = Записывает протокол тестов в sawmill.
 cmd-testlog-help =
-    Usage: testlog <sawmill> <level> <message>
-    sawmill: A label prefixing the logged message.
-    level: The log level. Must match one of the values of the LogLevel enum.
-    message: The message to be logged. Wrap this in double quotes if you want to use spaces.
-cmd-vv-desc = Opens View Variables.
-cmd-vv-help = Usage: vv <entity ID|IoC interface name|SIoC interface name>
-cmd-showvelocities-desc = Displays your angular and linear velocities.
-cmd-showvelocities-help = Usage: showvelocities
-cmd-setinputcontext-desc = Sets the active input context.
-cmd-setinputcontext-help = Usage: setinputcontext <context>
-cmd-forall-desc = Runs a command over all entities with a given component.
-cmd-forall-help = Usage: forall <bql query> do <command...>
-cmd-delete-desc = Deletes the entity with the specified ID.
+    Использование: testlog <sawmill> <level> <message>
+    sawmill: Метка, префиксируемая логированному сообщению.
+    level: Уровень логирования. Должно соответствовать одному из значений перечисления LogLevel.
+    message: Логируемое сообщение. Заключите в двойные кавычки, если хотите использовать пробелы.
+cmd-vv-desc = Открывает просмотр переменных.
+cmd-vv-help = Использование: vv <сущность ID|IoC имя интерфейса|SIoC имя интерфейса>
+cmd-showvelocities-desc = Отображает угловую и линейную скорости.
+cmd-showvelocities-help = Использование: showvelocities
+cmd-setinputcontext-desc = Устанавливает активный контекст ввода.
+cmd-setinputcontext-help = Использование: setinputcontext <context>
+cmd-forall-desc = Запускает команду для всех сущностей с данным компонентом.
+cmd-forall-help = Использование: forall <bql query> do <command...>
+cmd-delete-desc = Удаляет сущность с указанным ID.
 cmd-delete-help = delete <entity UID>
 # System commands
-cmd-showtime-desc = Shows the server time.
+cmd-showtime-desc = Показывает время сервера.
 cmd-showtime-help = showtime
-cmd-restart-desc = Gracefully restarts the server (not just the round).
+cmd-restart-desc = Корректно перезапускает сервер (не только раунд).
 cmd-restart-help = restart
-cmd-shutdown-desc = Gracefully shuts down the server.
+cmd-shutdown-desc = Корректно выключает сервер.
 cmd-shutdown-help = shutdown
-cmd-netaudit-desc = Prints into about NetMsg security.
+cmd-netaudit-desc = Выводит информацию о безопасности NetMsg.
 cmd-netaudit-help = netaudit
 # Player commands
-cmd-tp-desc = Teleports a player to any location in the round.
+cmd-tp-desc = Телепортирует игрока в любую точку в раунде.
 cmd-tp-help = tp <x> <y> [<mapID>]
-cmd-tpto-desc = Teleports the current player or the specified players/entities to the location of the first player/entity.
+cmd-tpto-desc = Телепортирует текущего игрока или указанных игроков/сущностей к местоположению первого игрока/сущности.
 cmd-tpto-help = tpto <username|uid> [username|uid]...
-cmd-tpto-destination-hint = destination (uid or username)
-cmd-tpto-victim-hint = entity to teleport (uid or username)
-cmd-tpto-parse-error = Cant resolve entity or player: { $str }
-cmd-listplayers-desc = Lists all players currently connected.
+cmd-tpto-destination-hint = место назначения (uid или имя пользователя)
+cmd-tpto-victim-hint = сущность для телепортации (uid или имя пользователя)
+cmd-tpto-parse-error = Не удаётся распознать сущность или игрока: { $str }
+cmd-listplayers-desc = Перечисляет всех игроков, подключённых в данный момент.
 cmd-listplayers-help = listplayers
-cmd-kick-desc = Kicks a connected player out of the server, disconnecting them.
+cmd-kick-desc = Кикает подключённого игрока с сервера, отключая его от сети.
 cmd-kick-help = kick <PlayerIndex> [<Reason>]
 # Spin command
-cmd-spin-desc = Causes an entity to spin. Default entity is the attached player's parent.
+cmd-spin-desc = Заставляет сущность вращаться. Сущность по умолчанию является надклассом прикреплённого игрока.
 cmd-spin-help = spin velocity [drag] [entityUid]
 # Localization command
-cmd-rldloc-desc = Reloads localization (client & server).
-cmd-rldloc-help = Usage: rldloc
+cmd-rldloc-desc = Перезагружает локализацию (клиент и сервер).
+cmd-rldloc-help = Использование: rldloc
 # Debug entity controls
-cmd-spawn-desc = Spawns an entity with specific type.
-cmd-spawn-help = spawn <prototype> OR spawn <prototype> <relative entity ID> OR spawn <prototype> <x> <y>
-cmd-cspawn-desc = Spawns a client-side entity with specific type at your feet.
+cmd-spawn-desc = Создаёт сущность определенного типа.
+cmd-spawn-help = spawn <прототип> ИЛИ spawn <прототип> <относительная сущность ID> ИЛИ spawn <прототип> <x> <y>
+cmd-cspawn-desc = Спавнит на стороне клиента сущность определенного типа у ваших ног.
 cmd-cspawn-help = cspawn <entity type>
-cmd-scale-desc = Increases or decreases an entity's size naively.
+cmd-scale-desc = Увеличивает или уменьшает размер сущности.
 cmd-scale-help = scale <entityUid> <float>
-cmd-dumpentities-desc = Dump entity list.
-cmd-dumpentities-help = Dumps entity list of UIDs and prototype.
-cmd-getcomponentregistration-desc = Gets component registration information.
-cmd-getcomponentregistration-help = Usage: getcomponentregistration <componentName>
-cmd-showrays-desc = Toggles debug drawing of physics rays. An integer for <raylifetime> must be provided.
-cmd-showrays-help = Usage: showrays <raylifetime>
-cmd-disconnect-desc = Immediately disconnect from the server and go back to the main menu.
-cmd-disconnect-help = Usage: disconnect
-cmd-entfo-desc = Displays verbose diagnostics for an entity.
+cmd-dumpentities-desc = Дамп списка объектов.
+cmd-dumpentities-help = Выводит список объектов с UID и прототипом.
+cmd-getcomponentregistration-desc = Получает информацию о регистрации компонента.
+cmd-getcomponentregistration-help = Использование: getcomponentregistration <имя компонента>
+cmd-showrays-desc = Переключает отладку отображения физических лучей. Необходимо указать целое число для <raylifetime>.
+cmd-showrays-help = Использование: showrays <raylifetime>
+cmd-disconnect-desc = Немедленно отключиться от сервера и вернуться в главное меню.
+cmd-disconnect-help = Использование: disconnect
+cmd-entfo-desc = Отображает подробную диагностику сущности.
 cmd-entfo-help =
-    Usage: entfo <entityuid>
-    The entity UID can be prefixed with 'c' to convert it to a client entity UID.
-cmd-fuck-desc = Throws an exception
-cmd-fuck-help = Throws an exception
-cmd-showpos-desc = Enables debug drawing over all entity positions in the game.
-cmd-showpos-help = Usage: showpos
-cmd-sggcell-desc = Lists entities on a snap grid cell.
-cmd-sggcell-help = Usage: sggcell <gridID> <vector2i>\nThat vector2i param is in the form x<int>,y<int>.
-cmd-overrideplayername-desc = Changes the name used when attempting to connect to the server.
-cmd-overrideplayername-help = Usage: overrideplayername <name>
-cmd-showanchored-desc = Shows anchored entities on a particular tile
-cmd-showanchored-help = Usage: showanchored
-cmd-dmetamem-desc = Dumps a type's members in a format suitable for the sandbox configuration file.
-cmd-dmetamem-help = Usage: dmetamem <type>
-cmd-launchauth-desc = Load authentication tokens from launcher data to aid in testing of live servers.
-cmd-launchauth-help = Usage: launchauth <account name>
-cmd-lightbb-desc = Toggles whether to show light bounding boxes.
-cmd-lightbb-help = Usage: lightbb
-cmd-monitorinfo-desc = Monitors info
-cmd-monitorinfo-help = Usage: monitorinfo <id>
-cmd-setmonitor-desc = Set monitor
-cmd-setmonitor-help = Usage: setmonitor <id>
-cmd-physics-desc = Shows a debug physics overlay. The arg supplied specifies the overlay.
-cmd-physics-help = Usage: physics <aabbs / com / contactnormals / contactpoints / distance / joints / shapeinfo / shapes>
-cmd-hardquit-desc = Kills the game client instantly.
-cmd-hardquit-help = Kills the game client instantly, leaving no traces. No telling the server goodbye.
-cmd-quit-desc = Shuts down the game client gracefully.
-cmd-quit-help = Properly shuts down the game client, notifying the connected server and such.
-cmd-csi-desc = Opens a C# interactive console.
-cmd-csi-help = Usage: csi
-cmd-scsi-desc = Opens a C# interactive console on the server.
-cmd-scsi-help = Usage: scsi
-cmd-watch-desc = Opens a variable watch window.
-cmd-watch-help = Usage: watch
-cmd-showspritebb-desc = Toggle whether sprite bounds are shown
-cmd-showspritebb-help = Usage: showspritebb
-cmd-togglelookup-desc = Shows / hides entitylookup bounds via an overlay.
-cmd-togglelookup-help = Usage: togglelookup
-cmd-net_entityreport-desc = Toggles the net entity report panel.
-cmd-net_entityreport-help = Usage: net_entityreport
-cmd-net_refresh-desc = Requests a full server state.
-cmd-net_refresh-help = Usage: net_refresh
-cmd-net_graph-desc = Toggles the net statistics pannel.
-cmd-net_graph-help = Usage: net_graph
-cmd-net_watchent-desc = Dumps all network updates for an EntityId to the console.
-cmd-net_watchent-help = Usage: net_watchent <0|EntityUid>
-cmd-net_draw_interp-desc = Toggles the debug drawing of the network interpolation.
-cmd-net_draw_interp-help = Usage: net_draw_interp <0|EntityUid>
-cmd-vram-desc = Displays video memory usage statics by the game.
-cmd-vram-help = Usage: vram
-cmd-showislands-desc = Shows the current physics bodies involved in each physics island.
-cmd-showislands-help = Usage: showislands
-cmd-showgridnodes-desc = Shows the nodes for grid split purposes.
-cmd-showgridnodes-help = Usage: showgridnodes
-cmd-profsnap-desc = Make a profiling snapshot.
-cmd-profsnap-help = Usage: profsnap
-cmd-devwindow-desc = Dev Window
-cmd-devwindow-help = Usage: devwindow
-cmd-scene-desc = Immediately changes the UI scene/state.
-cmd-scene-help = Usage: scene <className>
-cmd-szr_stats-desc = Report serializer statistics.
-cmd-szr_stats-help = Usage: szr_stats
-cmd-hwid-desc = Returns the current HWID (HardWare ID).
-cmd-hwid-help = Usage: hwid
-cmd-vvread-desc = Retrieve a path's value using VV (View Variables).
-cmd-vvwrite-desc = Modify a path's value using VV (View Variables).
-cmd-vvwrite-help = Usage: vvwrite <path>
-cmd-vvinvoke-desc = Invoke/Call a path with arguments using VV.
-cmd-vvinvoke-help = Usage: vvinvoke <path> [arguments...]
-cmd-dump_dependency_injectors-desc = Dump IoCManager's dependency injector cache.
-cmd-dump_dependency_injectors-help = Usage: dump_dependency_injectors
-cmd-dump_dependency_injectors-total-count = Total count: { $total }
-cmd-dump_netserializer_type_map-desc = Dump NetSerializer's type map and serializer hash.
-cmd-dump_netserializer_type_map-help = Usage: dump_netserializer_type_map
-cmd-hub_advertise_now-desc = Immediately advertise to the master hub server
-cmd-hub_advertise_now-help = Usage: hub_advertise_now
-cmd-echo-desc = Echo arguments back to the console
-cmd-echo-help = Usage: echo "<message>"
-cmd-vfs_ls-desc = List directory contents in the VFS.
+    Использование: entfo <entityuid>
+    UID сущности может иметь префикс 'c', чтобы быть преобразованной в UID клиентской сущности.
+cmd-fuck-desc = Вызывает исключение
+cmd-fuck-help = Вызывает исключение
+cmd-showpos-desc = Включает отрисовку для всех позиций сущностей в игре.
+cmd-showpos-help = Использование: showpos
+cmd-sggcell-desc = Перечисляет сущности в ячейке сетки привязки.
+cmd-sggcell-help = Использование: sggcell <gridID> <vector2i>\nЭтот vector2i параметр в форме x<int>,y<int>.
+cmd-overrideplayername-desc = Изменяет имя, используемое при попытке подключения к серверу.
+cmd-overrideplayername-help = Использование: overrideplayername <name>
+cmd-showanchored-desc = Показывает закреплённые объекты на определенной плитке.
+cmd-showanchored-help = Использование: showanchored
+cmd-dmetamem-desc = Выводит члены типа в формате, подходящем для файла конфигурации песочницы.
+cmd-dmetamem-help = Использование: dmetamem <type>
+cmd-launchauth-desc = Загрузить токены аутентификации из данных лаунчера, чтобы облегчить тестирование работающих серверов.
+cmd-launchauth-help = Использование: launchauth <account name>
+cmd-lightbb-desc = Переключить отображение световой ограничительной рамки.
+cmd-lightbb-help = Использование: lightbb
+cmd-monitorinfo-desc = Информация о мониторах
+cmd-monitorinfo-help = Использование: monitorinfo <id>
+cmd-setmonitor-desc = Установить монитор
+cmd-setmonitor-help = Использование: setmonitor <id>
+cmd-physics-desc = Показывает наложение отладочной физики. Аргумент определяет наложение.
+cmd-physics-help = Использование: physics <aabbs / com / contactnormals / contactpoints / distance / joints / shapeinfo / shapes>
+cmd-hardquit-desc = Мгновенно убивает игровой клиент.
+cmd-hardquit-help = Убивает игровой клиент мгновенно, не оставляя следов. Не говорит серверу пока.
+cmd-quit-desc = Корректное завершение работы клиента игры.
+cmd-quit-help = Правильно завершает работу игрового клиента, уведомляя об этом подключенный сервер и т.д.
+cmd-csi-desc = Открывает интерактивную консоль C#.
+cmd-csi-help = Использование: csi
+cmd-scsi-desc = Открывает интерактивную консоль C# на сервере.
+cmd-scsi-help = Использование: scsi
+cmd-watch-desc = Открывает окно просмотра переменных.
+cmd-watch-help = Использование: watch
+cmd-showspritebb-desc = Переключить отображение границ спрайта
+cmd-showspritebb-help = Использование: showspritebb
+cmd-togglelookup-desc = Показывает/скрывает границы списка сущностей с помощью наложения.
+cmd-togglelookup-help = Использование: togglelookup
+cmd-net_entityreport-desc = Переключает панель отчета о сетевых сущностях.
+cmd-net_entityreport-help = Использование: net_entityreport
+cmd-net_refresh-desc = Запрашивает полное состояние сервера.
+cmd-net_refresh-help = Использование: net_refresh
+cmd-net_graph-desc = Переключает панель статистики сети.
+cmd-net_graph-help = Использование: net_graph
+cmd-net_watchent-desc = Выводит в консоль все сетевые обновления для EntityId.
+cmd-net_watchent-help = Использование: net_watchent <0|EntityUid>
+cmd-net_draw_interp-desc = Включает отладочную отрисовку сетевой интерполяции.
+cmd-net_draw_interp-help = Использование: net_draw_interp <0|EntityUid>
+cmd-vram-desc = Отображает статистику использования видеопамяти игрой.
+cmd-vram-help = Использование: vram
+cmd-showislands-desc = Показывает текущие физические тела, задействованные в каждом physics island.
+cmd-showislands-help = Использование: showislands
+cmd-showgridnodes-desc = Показывает узлы для разделения сетки.
+cmd-showgridnodes-help = Использование: showgridnodes
+cmd-profsnap-desc = Сделать снимок профилирования.
+cmd-profsnap-help = Использование: profsnap
+cmd-devwindow-desc = Окно разработки
+cmd-devwindow-help = Использование: devwindow
+cmd-scene-desc = Немедленно сменяет UI сцены/состояния.
+cmd-scene-help = Использование: scene <className>
+cmd-szr_stats-desc = Сообщить статистику сериализатора.
+cmd-szr_stats-help = Использование: szr_stats
+cmd-hwid-desc = Возвращает текущий HWID (HardWare ID).
+cmd-hwid-help = Использование: hwid
+cmd-vvread-desc = Получить значение пути с помощью VV (View Variables).
+cmd-vvwrite-desc = Изменить значение пути с помощью VV (View Variables).
+cmd-vvwrite-help = Использование: vvwrite <path>
+cmd-vvinvoke-desc = Вызов/запуск пути с аргументами с помощью VV.
+cmd-vvinvoke-help = Использование: vvinvoke <path> [arguments...]
+cmd-dump_dependency_injectors-desc = Дамп кэша инжектора зависимостей IoCManager.
+cmd-dump_dependency_injectors-help = Использование: dump_dependency_injectors
+cmd-dump_dependency_injectors-total-count = Общее количество: { $total }
+cmd-dump_netserializer_type_map-desc = Дамп карты типов NetSerializer и хеша сериализатора.
+cmd-dump_netserializer_type_map-help = Использование: dump_netserializer_type_map
+cmd-hub_advertise_now-desc = Немедленно разместить сервер в хабе
+cmd-hub_advertise_now-help = Использование: hub_advertise_now
+cmd-echo-desc = Вывести аргументы в консоль
+cmd-echo-help = Использование: echo "<сообщение>"
+cmd-vfs_ls-desc = Перечислить содержимое каталогов в VFS.
 cmd-vfs_ls-help =
-    Usage: vfs_list <path>
-    Example:
+    Использование: vfs_list <path>
+    Пример:
     vfs_list /Assemblies
-cmd-vfs_ls-err-args = Need exactly 1 argument.
+cmd-vfs_ls-err-args = Нужен ровно 1 аргумент.
 cmd-vfs_ls-hint-path = <path>

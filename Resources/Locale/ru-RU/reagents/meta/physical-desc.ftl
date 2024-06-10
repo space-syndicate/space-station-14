@@ -1,4 +1,3 @@
-reagent-physical-desc-skunky = вонючее
 reagent-physical-desc-soapy = мыльное
 reagent-physical-desc-ferrous = чёрнометаллическое
 reagent-physical-desc-nothing = никакое
@@ -34,7 +33,7 @@ reagent-physical-desc-milky = молочное
 reagent-physical-desc-refreshing = освежающее
 reagent-physical-desc-soothing = смягчающее
 reagent-physical-desc-starchy = крахмалистое
-reagent-physical-desc-starry = звездное
+reagent-physical-desc-starry = звёздное
 reagent-physical-desc-tart = терпкое
 reagent-physical-desc-aromatic = ароматическое
 reagent-physical-desc-thick = густое

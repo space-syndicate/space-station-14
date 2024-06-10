@@ -12,6 +12,8 @@
     name: ghost-role-information-syndicate-reinforcement-name
     description: ghost-role-information-syndicate-reinforcement-description
     rules: ghost-role-information-syndicate-reinforcement-rules
+    raffle:
+      settings: default
   - type: GhostRoleMobSpawner
     prototype: MobHumanSyndicateAgent
   - type: EmitSoundOnUse
@@ -39,7 +41,7 @@
         - Scientist
         - Borg
 # Corvax-HiddenDesc-End
-          
+
 - type: entity
   parent: ReinforcementRadioSyndicate
   id: ReinforcementRadioSyndicateNukeops # Reinforcement radio exclusive to nukeops uplink
@@ -50,16 +52,19 @@
 
 - type: entity
   parent: ReinforcementRadioSyndicate
-  id: ReinforcementRadioSyndicateMonkey
-  name: syndicate monkey reinforcement radio
-  description: Calls in a specially trained monkey to assist you.
+  id: ReinforcementRadioSyndicateAncestor
+  name: syndicate genetic ancestor reinforcement radio
+  description: Calls in a specially trained ancestor of your choosing to assist you.
   components:
   - type: GhostRole
     name: ghost-role-information-syndicate-monkey-reinforcement-name
     description: ghost-role-information-syndicate-monkey-reinforcement-description
     rules: ghost-role-information-syndicate-monkey-reinforcement-rules
+    raffle:
+      settings: default
   - type: GhostRoleMobSpawner
     prototype: MobMonkeySyndicateAgent
+    selectablePrototypes: ["SyndicateMonkey", "SyndicateKobold"]
 # Corvax-HiddenDesc-Start
   - type: HiddenDescription
     entries:
@@ -84,12 +89,13 @@
 
 
 - type: entity
-  parent: ReinforcementRadioSyndicateMonkey
-  id: ReinforcementRadioSyndicateMonkeyNukeops # Reinforcement radio exclusive to nukeops uplink
+  parent: ReinforcementRadioSyndicateAncestor
+  id: ReinforcementRadioSyndicateAncestorNukeops # Reinforcement radio exclusive to nukeops uplink
   suffix: NukeOps
   components:
   - type: GhostRoleMobSpawner
     prototype: MobMonkeySyndicateAgentNukeops
+    selectablePrototypes: ["SyndicateMonkeyNukeops", "SyndicateKoboldNukeops"]
 
 - type: entity
   parent: ReinforcementRadioSyndicate
@@ -102,6 +108,8 @@
       name: Syndicate Assault Cyborg
       description: Nuclear operatives needs reinforcements. You, a cold silicon killing machine, will help them.
       rules: Normal syndicate antagonist rules apply. Work with whoever called you in, and don't harm them.
+      raffle:
+        settings: default
     - type: GhostRoleMobSpawner
       prototype: PlayerBorgSyndicateAssaultBattery
 # Corvax-HiddenDesc-Start

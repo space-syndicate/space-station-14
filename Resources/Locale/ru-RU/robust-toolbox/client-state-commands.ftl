@@ -7,6 +7,6 @@ cmd-reset-all-ents-desc = Сбрасывает все сущности до по
 cmd-detach-ent-help = Использование: detachent <Entity UID>
 cmd-detach-ent-desc = Удаляет сущность в null-space, как если бы он покинул зону действия PVS.
 cmd-local-delete-help = Использование: localdelete <Entity UID>
-cmd-local-delete-desc = Удаляет сущность. В отличие от обычной команды delete, эта команда работает на стороне клиента (CLIENT-SIDE). Если сущность не является клиентской, это, скорее всего, приведет к ошибкам.
+cmd-local-delete-desc = Удаляет сущность. В отличие от обычной команды delete, эта команда работает на стороне клиента (CLIENT-SIDE). Если сущность не является клиентской, это, скорее всего, приведёт к ошибкам.
 cmd-full-state-reset-help = Использование: fullstatereset
 cmd-full-state-reset-desc = Сбрасывает всю информацию о состоянии сущности и запрашивает полное состояние у сервера.

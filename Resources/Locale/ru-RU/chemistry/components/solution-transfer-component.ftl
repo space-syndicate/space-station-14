@@ -6,8 +6,8 @@ comp-solution-transfer-transfer-solution = Вы перемещаете { $amount
 
 ## Displayed when trying to transfer to a solution, but either the giver is empty or the taker is full
 
-comp-solution-transfer-is-empty = { $target } пуст!
-comp-solution-transfer-is-full = { $target } полон!
+comp-solution-transfer-is-empty = { CAPITALIZE($target) } пуст!
+comp-solution-transfer-is-full = { CAPITALIZE($target) } полон!
 
 ## Displayed in change transfer amount verb's name
 
