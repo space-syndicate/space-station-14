@@ -13,3 +13,9 @@
   - PsychologistSatchel
   - PsychologistDuffel
 
+- type: loadoutGroup
+  id: MusicianJumpsuit
+  name: loadout-group-musician-jumpsuit
+  loadouts:
+  - MusicianJumpsuit
+  - MusicianJumpskirt
