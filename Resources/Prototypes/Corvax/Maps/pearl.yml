@@ -16,7 +16,7 @@
         - type: StationEmergencyShuttle
           emergencyShuttlePath: /Maps/Shuttles/corvax_emergency.yml
         - type: StationArrivals
-          ShuttlePath: /Maps/Shuttles/arrivals_corvaxsilly.yml
+          shuttlePath: /Maps/Shuttles/arrivals_corvaxsilly.yml
         - type: StationJobs
           overflowJobs: 
             - Passenger
