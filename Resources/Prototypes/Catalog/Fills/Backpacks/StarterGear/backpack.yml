@@ -372,16 +372,16 @@
   components:
     - type: Storage
       grid:
-      - 0,0,7,6
+      - 0,0,8,7
     - type: StorageFill
       contents:
-        - id: BoxSurvivalEngineering
         - id: WeaponPulseRifle
+        - id: WeaponSubMachineGunVector
+        - id: BoxMagazineMagnumSubMachineGunAP
         - id: WeaponPulsePistol
         - id: WeaponRevolverMateba
         - id: SpeedLoaderMagnumAP
         - id: SpeedLoaderMagnumAP
-        - id: BoxFlashbang
         - id: ToolDebug # spanish army knife
         - id: WelderExperimental
         - id: Hypospray

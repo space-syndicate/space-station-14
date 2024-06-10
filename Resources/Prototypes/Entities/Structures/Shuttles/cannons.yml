@@ -57,6 +57,53 @@
 # example: LSE-100e "Clown destroyer" (powered by the wiring, very weak)
 
 - type: entity
+  id: ShuttleGunBluespace
+  parent: [ ShuttleGunBase, ConstructibleMachine]
+  name: LSE-900e "Crystal"
+  description: boom boom boom boom
+  components:
+  - type: Sprite
+    sprite: Objects/Weapons/Guns/Shuttles/bluespace.rsi
+    layers:
+    - state: cannon
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-1,-1,1,1"
+        density: 450
+        mask:
+        - MachineMask
+        layer:
+        - MachineLayer
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 1500
+      behaviors:
+        - !type:DoActsBehavior
+          acts: ["Destruction"]
+  - type: Gun
+    fireRate: 0.001
+    useKey: false
+    soundGunshot:
+      path: /Audio/Weapons/Guns/Gunshots/ship_svalinn.ogg
+      params:
+        variation: 0.05
+  - type: ItemSlots
+    slots:
+      gun_magazine:
+        name: Magazine
+        insertSound: /Audio/Weapons/Guns/MagIn/batrifle_magin.ogg
+        ejectSound: /Audio/Weapons/Guns/MagOut/batrifle_magout.ogg
+        whitelist:
+          tags:
+            - PowerCell
+            - PowerCellSmall
+
+- type: entity
   id: ShuttleGunSvalinnMachineGun
   parent: [ ShuttleGunBase, ConstructibleMachine]
   name: LSE-400c "Svalinn machine gun"

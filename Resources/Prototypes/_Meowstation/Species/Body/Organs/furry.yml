@@ -1,0 +1,38 @@
+- type: entity
+  id: OrganFurryHeart
+  parent: OrganHumanHeart
+  name: Сердце Фурри
+  components:
+  - type: Metabolizer
+    metabolizerTypes: [Human]
+
+- type: entity
+  id: OrganFurryLiver
+  parent: OrganHumanLiver
+  name: Печень Фурри
+  components:
+  - type: Metabolizer
+    metabolizerTypes: [Human]
+
+- type: entity
+  id: OrganFurryStomach
+  parent: OrganHumanStomach
+  name: Желудок Фурри
+  components:
+  - type: Sprite
+    state: stomach
+  - type: Organ
+  - type: SolutionContainerManager
+    solutions:
+      stomach:
+        maxVol: 75
+      food:
+        maxVol: 5
+        reagents:
+        - ReagentId: UncookedAnimalProteins
+          Quantity: 5
+  - type: Stomach
+  - type: Metabolizer
+    # mm very yummy
+    maxReagents: 5
+    metabolizerTypes: [Human]

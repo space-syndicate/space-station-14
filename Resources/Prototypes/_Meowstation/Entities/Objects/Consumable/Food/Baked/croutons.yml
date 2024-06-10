@@ -1,0 +1,31 @@
+- type: entity
+  parent: FoodInjectableBase
+  id: FoodCroutonsBase
+  abstract: true
+  description: Сухарик изготовленный из гамлета.
+  components:
+  - type: Food
+  - type: Sprite
+    sprite: _Meowstation/Objects/Consumable/Food/Baked/croutons.rsi
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 5
+        reagents:
+        - ReagentId: Nutriment
+          Quantity: 3
+  - type: Item
+    sprite: _Meowstation/Objects/Consumable/Food/Baked/croutons.rsi
+    size: Tiny
+
+- type: entity
+  name: Сухарик из Гамлета
+  parent: FoodCroutonsBase
+  id: FoodCroutons
+  components:
+  - type: FlavorProfile
+    flavors:
+      - bun
+  - type: Sprite
+    state: croutons
+    scale: 0.5, 0.5

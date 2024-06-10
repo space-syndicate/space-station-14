@@ -1,0 +1,49 @@
+- type: body
+  name: "Furry"
+  id: Furry
+  root: torso
+  slots:
+    head:
+      part: HeadFurry
+      connections:
+      - torso
+      organs:
+        brain: OrganHumanBrain
+        eyes: OrganHumanEyes
+    torso:
+      part: TorsoFurry
+      organs:
+        heart: OrganAnimalHeart
+        lungs: OrganHumanLungs
+        stomach: OrganHumanStomach
+        liver: OrganAnimalLiver
+        kidneys: OrganHumanKidneys
+      connections:
+      - left arm
+      - right arm
+      - left leg
+      - right leg
+    right arm:
+      part: RightArmFurry
+      connections:
+      - right hand
+    left arm:
+      part: LeftArmFurry
+      connections:
+      - left hand
+    right hand:
+      part: RightHandFurry
+    left hand:
+      part: LeftHandFurry
+    right leg:
+      part: RightLegFurry
+      connections:
+      - right foot
+    left leg:
+      part: LeftLegFurry
+      connections:
+      - left foot
+    right foot:
+      part: RightFootFurry
+    left foot:
+      part: LeftFootFurry

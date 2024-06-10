@@ -68,6 +68,17 @@
         amount: 3
 
 - type: entity
+  name: коробка магазинов Вектор (пробивные)
+  parent: BoxMagazine
+  id: BoxMagazineMagnumSubMachineGunAP
+  description: A box full of Vector magazines.
+  components:
+  - type: StorageFill
+    contents:
+      - id: MagazineMagnumSubMachineGunPiercing
+        amount: 3
+
+- type: entity
   name: box of Vector (practice) magazines
   parent: BoxMagazine
   id: BoxMagazineMagnumSubMachineGunPractice

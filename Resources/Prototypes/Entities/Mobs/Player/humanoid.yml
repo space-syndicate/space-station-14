@@ -31,13 +31,24 @@
     - type: RandomHumanoidSpawner
       settings: DeathSquad
     - type: InitialInfectedExempt
+    - type: MobThresholds
+      thresholds:
+        0: Alive
+        300: Dead
+    - type: Stamina
+      critThreshold: 300 #pathetic
 
 - type: randomHumanoidSettings
   id: DeathSquad
   parent: EventHumanoidMindShielded
   randomizeName: false
   speciesBlacklist: # Corvax-MRP
+    - Arachnid
     - Diona
+    - Dwarf
+    - Moth
+    - Reptilian
+    - Slime
   components:
     - type: GhostRole
       name: ghost-role-information-Death-Squad-name

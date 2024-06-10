@@ -1,0 +1,12 @@
+- type: entity
+  parent: ClothingHeadBase
+  id: ClothingHeadHatCatEarsBlack
+  name: чёрные Кошачьи Ушки
+  description: "НЯЯ!"
+  components:
+  - type: Sprite
+    sprite: _Meowstation/Clothing/Head/Hats/catearsblack.rsi
+  - type: Clothing
+    sprite: _Meowstation/Clothing/Head/Hats/catearsblack.rsi
+  - type: AddAccentClothing
+    accent: OwOAccent

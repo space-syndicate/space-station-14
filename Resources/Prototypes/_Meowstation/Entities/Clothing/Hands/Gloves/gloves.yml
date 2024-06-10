@@ -1,0 +1,10 @@
+- type: entity
+  parent: ClothingHandsGlovesCombat
+  id: ClothingHandsSSSPGlovesCombat
+  name: боевые перчатки СССП
+  description: Пахнут берёзами...
+  components:
+  - type: Sprite
+    sprite: _Meowstation/Clothing/Hands/Gloves/glovesssp.rsi
+  - type: Clothing
+    sprite: _Meowstation/Clothing/Hands/Gloves/glovesssp.rsi

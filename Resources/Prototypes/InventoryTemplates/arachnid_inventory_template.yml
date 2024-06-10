@@ -21,6 +21,12 @@
       uiWindowPos: 2,1
       strippingWindowPos: 2,2
       displayName: Gloves
+    - name: socks
+      slotTexture: socks
+      slotFlags: SOCKS
+      uiWindowPos: 2,0
+      strippingWindowPos: 2,1
+      displayName: Socks
     - name: neck
       slotTexture: neck
       slotFlags: NECK

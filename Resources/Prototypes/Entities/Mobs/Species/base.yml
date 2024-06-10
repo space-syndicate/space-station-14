@@ -33,6 +33,7 @@
     - map: ["enum.HumanoidVisualLayers.LHand"]
     - map: ["enum.HumanoidVisualLayers.RHand"]
     - map: [ "gloves" ]
+    - map: [ "socks" ]
     - map: [ "shoes" ]
     - map: [ "ears" ]
     - map: [ "outerClothing" ]
@@ -333,6 +334,7 @@
       visible: false
     - map: [ "gloves" ]
     - map: [ "shoes" ]
+    - map: [ "socks" ]
     - map: [ "ears" ]
     - map: [ "outerClothing" ]
     - map: [ "eyes" ]

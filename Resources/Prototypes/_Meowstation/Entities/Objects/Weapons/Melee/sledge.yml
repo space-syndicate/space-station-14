@@ -1,0 +1,30 @@
+- type: entity
+  name: Кувалда
+  parent: BaseItem
+  id: Sledge
+  description: Крушит стены и переламывает кости надоедливым клоунам.
+  components:
+  - type: Sprite
+    sprite: _Meowstation/Objects/Weapons/Melee/sledge.rsi
+    state: icon
+  - type: MeleeWeapon
+    wideAnimationRotation: -135
+    damage:
+      types:
+        Blunt: 4
+        Structural: 10
+    soundHit:
+      collection: MetalThud
+  - type: Wieldable
+  - type: IncreaseDamageOnWield
+    damage:
+      types:
+        Blunt: 20
+        Structural: 80
+  - type: Item
+    size: Large
+  - type: Clothing
+    sprite: _Meowstation/Objects/Weapons/Melee/sledge.rsi
+    quickEquip: false
+    slots:
+    - back

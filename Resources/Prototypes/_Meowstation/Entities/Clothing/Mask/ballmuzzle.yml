@@ -1,0 +1,19 @@
+- type: entity
+  parent: ClothingMaskBase
+  id: ClothingMaskBallMuzzle
+  name: Кляп с шариком
+  description: Кляп для любителей ролевых игр
+  components:
+  - type: Item
+    size: Tiny
+  - type: Sprite
+    sprite: _Meowstation/Clothing/Mask/ballmuzzle.rsi
+  - type: Clothing
+    sprite: _Meowstation/Clothing/Mask/ballmuzzle.rsi
+  - type: IngestionBlocker
+  - type: AddAccentClothing
+    accent: ReplacementAccent
+    replacement: mumble
+  - type: Construction
+    graph: Muzzle
+    node: muzzle

@@ -1,0 +1,17 @@
+- type: entity
+  parent: ClothingNeckBase
+  id: ClothingNeckCloakProgrammer
+  name: Плащ программиста
+  description: От джуниор кодеров для джуниор кодеров
+  components:
+  - type: Sprite
+    sprite: _Meowstation/Clothing/Necks/Cloaks/programmer_neck.rsi
+
+- type: entity
+  parent: ClothingNeckBase
+  id: ClothingNeckCloakSyndieOfficer
+  name: Плащ офицера синдиката
+  description: Для элиты рядов синдиката
+  components:
+  - type: Sprite
+    sprite: _Meowstation/Clothing/Necks/Cloaks/syndie_neck.rsi

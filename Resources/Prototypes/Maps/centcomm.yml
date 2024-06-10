@@ -2,7 +2,7 @@
   id: CentComm
   mapName: 'Central Command'
   mapPath: /Maps/centcomm.yml
-  minPlayers: 10
+  minPlayers: 0
   stations:
     centcomm:
       stationProto: NanotrasenCentralCommand

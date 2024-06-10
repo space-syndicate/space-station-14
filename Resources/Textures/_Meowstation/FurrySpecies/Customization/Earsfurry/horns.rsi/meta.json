@@ -1,0 +1,39 @@
+{
+  "version": 1,
+  "license": "CC-BY-SA-3.0",
+  "copyright": "By @mr.kotick(431695500937265160) discord, for Space Station 14",
+  "size": {
+    "x": 32,
+    "y": 32
+  },
+  "states": [
+    {
+      "name": "deer",
+      "directions": 4
+    },
+    {
+      "name": "imp",
+      "directions": 4
+    },
+    {
+      "name": "goat",
+      "directions": 4
+    },
+    {
+      "name": "tail_goat",
+      "directions": 4
+    },
+    {
+      "name": "goatears",
+      "directions": 4
+    },
+    {
+      "name": "ram",
+      "directions": 4
+    },
+    {
+      "name": "deer_small",
+      "directions": 4
+    }
+  ]
+}

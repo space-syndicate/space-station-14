@@ -2,8 +2,8 @@
   id: CorvaxOutpost
   mapName: 'Outpost'
   mapPath: /Maps/corvax_outpost.yml
-  minPlayers: 20
-  maxPlayers: 50
+  minPlayers: 0
+  maxPlayers: 200
   stations:
     Outpost:
       stationProto: StandardNanotrasenStation

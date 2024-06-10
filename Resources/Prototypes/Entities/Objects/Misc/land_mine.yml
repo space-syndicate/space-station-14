@@ -44,14 +44,6 @@
     stepOn: true
 
 - type: entity
-  name: kick mine
-  parent: BaseLandMine
-  id: LandMineKick
-  components:
-  - type: GhostKickUserOnTrigger
-  - type: DeleteOnTrigger
-
-- type: entity
   name: modular mine
   description: This bad boy could be packing any number of dangers. Or a bike horn.
   parent: BaseLandMine
