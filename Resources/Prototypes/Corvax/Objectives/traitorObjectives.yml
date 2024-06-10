@@ -32,6 +32,7 @@
       - SurviveCondition
       - HelpProgressCondition
       - KeepAliveCondition
+      - TargetObjective
   - type: NotCommandRequirement
   - type: StealCondition
     stealGroup: NukeDisk
