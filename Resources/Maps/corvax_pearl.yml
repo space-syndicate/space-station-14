@@ -65933,10 +65933,6 @@ entities:
     - type: Transform
       pos: 5.5,42.5
       parent: 2
-    - type: DeviceLinkSink
-      links:
-      - 12905
-      - invalid
   - uid: 3910
     components:
     - type: Transform
