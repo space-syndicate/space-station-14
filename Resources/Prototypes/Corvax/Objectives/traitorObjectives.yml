@@ -27,11 +27,8 @@
       components:
       - DieCondition
       - StealCondition
-      - KillPersonCondition
       - SocialObjective
       - SurviveCondition
-      - HelpProgressCondition
-      - KeepAliveCondition
       - TargetObjective
   - type: NotCommandRequirement
   - type: StealCondition
