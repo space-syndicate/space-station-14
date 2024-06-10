@@ -171,8 +171,8 @@ ghost-role-information-disaster-victim-name = Жертва катастрофы
 ghost-role-information-disaster-victim-description = Вы спаслись на спасательной капсуле с другой станции, которую постигла ужасная участь. Возможно, вас найдут и спасут.
 ghost-role-information-disaster-victim-rules = Действуют обычные правила для экипажа станции.
 ghost-role-information-syndie-disaster-victim-name = Жертва катастрофы из Синдиката
-ghost-role-information-syndie-disaster-victim-description = Вы - обычный пассажир со станции Синдиката. К несчастью, спасательная капсула закинула вас во вражеский сектор...
-ghost-role-information-syndie-disaster-victim-rules = Действуют обычные правила для экипажа станции. Вы НЕ антагонист!
+ghost-role-information-syndie-disaster-victim-description = Вы - новобранец Синдиката. К несчастью, вы случайно попали во вражеский сектор...
+ghost-role-information-syndie-disaster-victim-rules = Действуют правила антагониста неизвестного шаттла.
 ghost-role-information-artifact-name = Разумный артефакт
 ghost-role-information-artifact-description =
     Осуществляйте свои инопланетные прихоти.
