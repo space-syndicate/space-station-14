@@ -15,7 +15,7 @@
             prefixCreator: 'SS'
         - type: StationEmergencyShuttle
           emergencyShuttlePath: /Maps/Shuttles/corvax_emergency.yml
-        - type: StationArrivalsShuttle 
+        - type: StationArrivals
           ShuttlePath: /Maps/Shuttles/arrivals_corvaxsilly.yml
         - type: StationJobs
           overflowJobs: 
