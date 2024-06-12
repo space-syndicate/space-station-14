@@ -21,9 +21,9 @@
   copyright: "TauCetiStation commit 4cd533cf0a4243050364023af9a4fcaca209dce7"
   source: "https://github.com/TauCetiStation/TauCetiClassic/"
 
-- files: ["blue_circuit.png", "cropped_parallax.png", "eighties.png", "gold.png", "grass.png", "ironsand1.png", "ironsand2.png", "ironsand3.png", "ironsand4.png", "junglegrass.png", "lattice.png", "plating.png", "reinforced.png", "silver.png", "snow.png", "wood.png"]
+- files: ["blue_circuit.png", "cropped_parallax.png", "eighties.png", "gold.png", "grass.png", "ironsand1.png", "ironsand2.png", "ironsand3.png", "ironsand4.png", "junglegrass.png", "lattice.png", "plating.png", "reinforced.png", "silver.png", "snow.png", "wood.png", "wood_tile.png", "wood_broken.png", "wood_large.png"]
   license: "CC-BY-SA-3.0"
-  copyright: "tgstation commit 8abb19545828230d92ba18827feeb42a67a55d49, cropped_parallax modified from parallax, reinforced modified by Ko4erga (discord)"
+  copyright: "tgstation commit 8abb19545828230d92ba18827feeb42a67a55d49, cropped_parallax modified from parallax, reinforced modified by Ko4erga (discord). Wood tiles are new tg tiles, repaletted by TheArturZh using colors of old wood tiles."
   source: "https://github.com/tgstation/tgstation/"
 
 - files: ["super_reinforced.png"]
@@ -96,7 +96,7 @@
   copyright: "Fortuna commit 2a9408a47e2f83d945335e4feeeeafb552173e6f, grasslight and dirt by Peptide based on grassdark.png and dirt."
   source: "https://github.com/FortunaSS13/Fortuna"
 
-- files: ["steel_maint.png", "grating_maint.png", "wood_tile.png"]
+- files: ["steel_maint.png", "grating_maint.png"]
   license: "CC-BY-SA-3.0"
   copyright: "by brainfood for space-station-14, ."
   source: "https://github.com/space-wizards/space-station-14/pull/12193"
@@ -105,11 +105,6 @@
   license: "CC0-1.0"
   copyright: "Created by EmoGarbage404 (github) for space-station-14."
   source: "https://github.com/space-wizards/space-station-14/pull/13766"
-
-- files: ["wood_broken.png"]
-  license: "CC-BY-SA-3.0"
-  copyright: "taken at https://github.com/ParadiseSS13/Paradise/blob/8b7f4c8b69c74c6de5a755272eb8d3520f3d87c7/icons/turf/floors.dmi"
-  source: "https://github.com/ParadiseSS13/Paradise"
 
 - files: ["chromite.png"]
   license: "CC-BY-NC-SA-3.0"
@@ -125,8 +120,3 @@
   license: "CC0-1.0"
   copyright: "Created by TheShuEd (github) for space-station-14."
   source: "https://github.com/space-wizards/space-station-14/pull/24927"
-
-- files: ["wood_large.png"]
-  license: "CC0-1.0"
-  copyright: "Created by ps3moira (github) for space-station-14."
-  source: "https://github.com/space-wizards/space-station-14/"
