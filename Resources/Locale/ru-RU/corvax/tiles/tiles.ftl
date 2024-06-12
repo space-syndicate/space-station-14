@@ -1,0 +1,17 @@
+tiles-wood-parquet = деревянный паркет
+tiles-wood-black = деревянный чёрный пол
+tiles-wood-large-black = большой деревянный чёрный пол
+tiles-wood-parquet-black = чёрный деревянный паркет
+tiles-wood-tile-black = чёрный деревянный узорчатый пол
+tiles-wood-dark = деревянный тёмный пол
+tiles-wood-large-dark = большой деревянный тёмный пол
+tiles-wood-parquet-dark = тёмный деревянный паркет
+tiles-wood-tile-dark = тёмный деревянный узорчатый пол
+tiles-wood-light = деревянный светлый пол
+tiles-wood-large-light = большой деревянный светлый пол
+tiles-wood-parquet-light = светлый деревянный паркет
+tiles-wood-tile-light = светлый деревянный узорчатый пол
+tiles-wood-red = деревянный красный пол
+tiles-wood-large-red = большой деревянный красный пол
+tiles-wood-parquet-red = красный деревянный паркет
+tiles-wood-tile-red = красный деревянный узорчатый пол
