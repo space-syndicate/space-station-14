@@ -15,8 +15,6 @@
           Slash: 0.7
           Piercing: 0.4
           Heat: 0.7
-    - type: ExplosionResistance
-      damageCoefficient: 1.0
 
 - type: entity
   parent: ClothingOuterCoatDetectiveLoadout
@@ -53,8 +51,6 @@
           Slash: 0.8
           Piercing: 0.4
           Heat: 0.8
-    - type: ExplosionResistance
-      damageCoefficient: 1.0
 
 - type: entity
   parent: ClothingOuterStorageBase
