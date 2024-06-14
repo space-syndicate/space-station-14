@@ -495,10 +495,10 @@ namespace Content.Shared.Preferences
             }
 
             // Corvax-Sponsors-Start: Reset to human if player not sponsor
-            if (speciesPrototype.SponsorOnly && !sponsorPrototypes.Contains(Species))
+            if (speciesPrototype.SponsorOnly && !sponsorPrototypes.Contains(Species.Id))
             {
                 Species = SharedHumanoidAppearanceSystem.DefaultSpecies;
-                speciesPrototype = prototypeManager.Index<SpeciesPrototype>(Species);
+                speciesPrototype = prototypeManager.Index(Species);
             }
             // Corvax-Sponsors-End
 
