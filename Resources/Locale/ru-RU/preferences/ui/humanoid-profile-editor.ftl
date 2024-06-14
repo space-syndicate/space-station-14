@@ -48,3 +48,7 @@ humanoid-profile-editor-job-priority-never-button = Никогда
 humanoid-profile-editor-naming-rules-warning = Внимание: Оскорбительные или странные имена и описания могут повлечь за собой беседу с администрацией. Прочитайте \[Правила\].
 humanoid-profile-editor-markings-tab = Черты внешности
 humanoid-profile-editor-flavortext-tab = Описание
+humanoid-profile-editor-no-traits = No traits available
+humanoid-profile-editor-trait-count-hint = Points available: [{ $current }/{ $max }]
+trait-category-disabilities = Disabilities
+trait-category-speech = Speech traits

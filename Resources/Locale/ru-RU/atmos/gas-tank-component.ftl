@@ -14,7 +14,6 @@ control-verb-open-control-panel-text = Открыть панель управл�
 
 ## UI
 
-gas-tank-window-label = Газовый баллон
 gas-tank-window-internals-toggle-button = Переключить
 gas-tank-window-output-pressure-label = Выходное давление
 gas-tank-window-tank-pressure-text = Давление: { $tankPressure } кПа
