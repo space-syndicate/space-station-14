@@ -23,6 +23,7 @@
   components:
   - type: GameRule
   - type: MeteorSwarm
+    announcementSound: /Audio/Announcements/meteors_start.ogg # Corvax-Announcements
 
 - type: entity
   parent: GameRuleMeteorSwarm
