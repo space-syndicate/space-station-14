@@ -1,2 +1,2 @@
-ent-AnimalRandomSpawner = random animal spawner
+ent-AnimalRandomSpawner = спавнер случайное животное
     .desc = { ent-MarkerBase.desc }
