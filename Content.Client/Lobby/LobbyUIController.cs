@@ -295,7 +295,7 @@ public sealed partial class LobbyUIController : UIController, IOnStateEntered<Lo
 
         if (_prototypeManager.HasIndex<RoleLoadoutPrototype>(LoadoutSystem.GetJobPrototype(job.ID)))
         {
-            var loadout = profile.GetLoadoutOrDefault(LoadoutSystem.GetJobPrototype(job.ID), profile.Species, EntityManager, _prototypeManager);
+            var loadout = profile.GetLoadoutOrDefault(LoadoutSystem.GetJobPrototype(job.ID), _playerManager.LocalSession, profile.Species, EntityManager, _prototypeManager);
             GiveDummyLoadout(dummy, loadout);
         }
     }
@@ -415,7 +415,7 @@ public sealed partial class LobbyUIController : UIController, IOnStateEntered<Lo
 
             if (_prototypeManager.HasIndex<RoleLoadoutPrototype>(LoadoutSystem.GetJobPrototype(job.ID)))
             {
-                var loadout = humanoid.GetLoadoutOrDefault(LoadoutSystem.GetJobPrototype(job.ID), humanoid.Species, EntityManager, _prototypeManager);
+                var loadout = humanoid.GetLoadoutOrDefault(LoadoutSystem.GetJobPrototype(job.ID), _playerManager.LocalSession, humanoid.Species, EntityManager, _prototypeManager);
                 GiveDummyLoadout(dummyEnt, loadout);
             }
         }
