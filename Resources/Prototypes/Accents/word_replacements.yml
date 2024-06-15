@@ -503,7 +503,7 @@
 - type: accent
   id: chatsanitize
   wordReplacements:
-   # Corvax-ChatSanitize-Start
+# Corvax-ChatSanitize-Start
 #    chatsan-word-1: chatsan-replacement-1
 #    chatsan-word-2: chatsan-replacement-2
 #    chatsan-word-3: chatsan-replacement-3
@@ -548,6 +548,11 @@
 #    chatsan-word-42: chatsan-replacement-42
 #    chatsan-word-43: chatsan-replacement-43
 #    chatsan-word-44: chatsan-replacement-44
+#    chatsan-word-45: chatsan-replacement-45
+#    chatsan-word-46: chatsan-replacement-46
+#    chatsan-word-47: chatsan-replacement-47
+#    chatsan-word-48: chatsan-replacement-48
+#    chatsan-word-49: chatsan-replacement-49
     corvax-chatsan-word-1: corvax-chatsan-replacement-1
     corvax-chatsan-word-2: corvax-chatsan-replacement-2
     corvax-chatsan-word-3: corvax-chatsan-replacement-3
@@ -673,7 +678,7 @@
     corvax-chatsan-word-123: corvax-chatsan-replacement-123
     corvax-chatsan-word-124: corvax-chatsan-replacement-124
     corvax-chatsan-word-125: corvax-chatsan-replacement-125
-    # Corvax-ChatSanitize-End
+# Corvax-ChatSanitize-End
 
 - type: accent
   id: liar

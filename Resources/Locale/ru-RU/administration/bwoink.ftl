@@ -7,5 +7,4 @@ bwoink-system-typing-indicator =
        *[other] печатают
     }...
 admin-bwoink-play-sound = Бвоинк?
-
 bwoink-title-none-selected = Ничего не выбрано

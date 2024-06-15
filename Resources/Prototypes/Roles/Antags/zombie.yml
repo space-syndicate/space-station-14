@@ -4,6 +4,7 @@
   antagonist: true
   setPreference: true
   objective: roles-antag-initial-infected-objective
+  guides: [ Zombies ]
   requirements:
   - !type:OverallPlaytimeRequirement
     time: 108000 # 30h # Corvax-RoleTime
@@ -14,3 +15,4 @@
   antagonist: true
   setPreference: false
   objective: roles-antag-zombie-objective
+  guides: [ Zombies ]
