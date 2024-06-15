@@ -14,16 +14,19 @@ public sealed partial class SponsorLoadoutEffect : LoadoutEffect
     public override bool Validate(HumanoidCharacterProfile profile,
         RoleLoadout loadout,
         LoadoutPrototype proto, // Corvax-Sponsors
-        ICommonSession session,
+        ICommonSession? session,
         IDependencyCollection collection,
         [NotNullWhen(false)] out FormattedMessage? reason)
     {
         reason = null;
 
+        if (session == null)
+            return true;
+
         var sponsorProtos = GetPrototypes(session, collection);
         if (!sponsorProtos.Contains(proto.ID))
         {
-            reason = FormattedMessage.FromMarkup(Loc.GetString("loadout-sponsor-only"));
+            reason = FormattedMessage.FromMarkupOrThrow(Loc.GetString("loadout-sponsor-only"));
             return false;
         }
 
