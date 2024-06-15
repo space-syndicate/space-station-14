@@ -24,10 +24,8 @@
 - type: startingGear
   id: PilotGear
   equipment:
-    jumpsuit: ClothingUniformJumpsuitSeniorOfficer
     eyes: ClothingEyesGlassesSecurity
     head: ClothingHeadHatBeretSecurity
-    outerClothing: ClothingOuterVestArmorSec
     id: PilotPDA
     ears: ClothingHeadsetSecurity
     neck: ClothingNeckTieRed

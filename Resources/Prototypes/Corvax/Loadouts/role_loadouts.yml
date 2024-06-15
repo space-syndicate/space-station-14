@@ -10,7 +10,9 @@
 - type: roleLoadout
   id: JobPilot
   groups:
+  - SecurityJumpsuit
   - SecurityBackpack
+  - SecurityOuterClothing
   - SecurityBelt
   - SecurityShoes
   - Trinkets
