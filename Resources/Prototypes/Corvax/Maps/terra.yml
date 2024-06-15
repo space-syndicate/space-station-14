@@ -1,7 +1,7 @@
 - type: gameMap
   id: CorvaxTerra
   mapName: 'Terra Colony'
-  mapPath: /Maps/corvax_terra.yml 
+  mapPath: /Maps/corvax_terra.yml
   minPlayers: 0
   maxPlayers: 30
   stations:
@@ -32,8 +32,6 @@
         - type: StationCargoShuttle
           path: /Maps/Test/empty.yml
         - type: StationJobs
-          overflowJobs:
-            - Passenger
           availableJobs:
             # service
             HeadOfPersonnel: [ 1, 1 ]

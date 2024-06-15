@@ -18,8 +18,5 @@ maximum_width = 26
 lobbyduration = 360
 secret_weight_prototype = "CorvaxSecretDefault"
 
-[server]
-rules_header = "ui-rules-header-corvax"
-
 [discord]
 rich_main_icon_id = "corvax"

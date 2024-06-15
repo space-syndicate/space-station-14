@@ -14,7 +14,7 @@ public sealed partial class PointsCostLoadoutEffect : LoadoutEffect
         HumanoidCharacterProfile profile,
         RoleLoadout loadout,
         LoadoutPrototype proto, // Corvax-Sponsors
-        ICommonSession session,
+        ICommonSession? session,
         IDependencyCollection collection,
         [NotNullWhen(false)] out FormattedMessage? reason)
     {

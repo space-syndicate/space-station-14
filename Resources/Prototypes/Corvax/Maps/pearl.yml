@@ -18,11 +18,9 @@
         - type: StationArrivals
           shuttlePath: /Maps/Shuttles/arrivals_corvaxsilly.yml
         - type: StationJobs
-          overflowJobs: 
-            - Passenger
           availableJobs:
             # service
-            HeadOfPersonnel: [ 1, 1 ] 
+            HeadOfPersonnel: [ 1, 1 ]
             Passenger: [ -1, -1 ]
             ServiceWorker: [ 2, 2 ]
             Bartender: [ 2, 2 ]

@@ -42,13 +42,10 @@
               - /Maps/Ruins/derelict.yml
               - /Maps/Ruins/djstation.yml
               - /Maps/Ruins/old_ai_sat.yml
-              - /Maps/Ruins/relaystation.yml
               - /Maps/Ruins/syndicate_dropship.yml
               - /Maps/Ruins/whiteship_ancient.yml
               - /Maps/Ruins/whiteship_bluespacejumper.yml
         - type: StationJobs
-          overflowJobs:
-            - Passenger
           availableJobs:
             # service
             HeadOfPersonnel: [ 1, 1 ]
@@ -76,7 +73,6 @@
             MedicalDoctor: [ 2, 2 ]
             Chemist: [ 1, 1 ]
             Paramedic: [ 1, 1 ]
-            Psychologist: [ 0, 0 ]
             MedicalIntern: [ 2, 2 ]
             # science
             ResearchDirector: [ 1, 1 ]
