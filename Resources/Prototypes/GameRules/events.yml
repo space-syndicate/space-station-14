@@ -2,7 +2,6 @@
   id: BaseStationEvent
   parent: BaseGameRule
   abstract: true
-  noSpawn: true
   components:
     - type: GameRule
       delay:
@@ -13,7 +12,6 @@
   id: BaseStationEventShortDelay
   parent: BaseGameRule
   abstract: true
-  noSpawn: true
   components:
     - type: GameRule
       delay:
@@ -24,7 +22,6 @@
   id: BaseStationEventLongDelay
   parent: BaseGameRule
   abstract: true
-  noSpawn: true
   components:
     - type: GameRule
       delay:
@@ -34,7 +31,6 @@
 - type: entity
   id: AnomalySpawn
   parent: BaseStationEventShortDelay
-  noSpawn: true
   components:
   - type: StationEvent
     startAnnouncementColor: "#18abf5"
@@ -49,7 +45,6 @@
 - type: entity
   id: BluespaceArtifact
   parent: BaseStationEventShortDelay
-  noSpawn: true
   components:
   - type: GameRule
     delay:
@@ -68,7 +63,6 @@
 - type: entity
   id: BluespaceLocker
   parent: BaseGameRule
-  noSpawn: true
   components:
   - type: StationEvent
     weight: 2
@@ -80,7 +74,6 @@
 - type: entity
   id: BreakerFlip
   parent: BaseGameRule
-  noSpawn: true
   components:
   - type: StationEvent
     weight: 7
@@ -91,7 +84,6 @@
 - type: entity
   id: BureaucraticError
   parent: BaseGameRule
-  noSpawn: true
   components:
   - type: StationEvent
     startAnnouncement: station-event-bureaucratic-error-announcement
@@ -103,7 +95,6 @@
 - type: entity
   id: ClericalError
   parent: BaseGameRule
-  noSpawn: true
   components:
   - type: StationEvent
     startAnnouncement: station-event-clerical-error-announcement
@@ -115,7 +106,6 @@
 - type: entity
   parent: BaseGameRule
   id: ClosetSkeleton
-  noSpawn: true
   components:
   - type: StationEvent
     weight: 5
@@ -127,7 +117,6 @@
 - type: entity
   parent: BaseGameRule
   id: DragonSpawn
-  noSpawn: true
   components:
   - type: StationEvent
     weight: 6.5
@@ -157,7 +146,6 @@
 - type: entity
   parent: BaseGameRule
   id: NinjaSpawn
-  noSpawn: true
   components:
   - type: StationEvent
     weight: 6
@@ -170,7 +158,6 @@
 - type: entity
   parent: BaseGameRule
   id: RevenantSpawn
-  noSpawn: true
   components:
   - type: StationEvent
     weight: 7.5
@@ -184,7 +171,6 @@
 #- type: entity
 #  id: FalseAlarm
 #  parent: BaseGameRule
-#  noSpawn: true
 #  components:
 #  - type: StationEvent
 #    weight: 15
@@ -194,7 +180,6 @@
 - type: entity
   id: GasLeak
   parent: BaseStationEventShortDelay
-  noSpawn: true
   components:
   - type: StationEvent
     startAnnouncement: station-event-gas-leak-start-announcement
@@ -213,7 +198,6 @@
 - type: entity
   id: KudzuGrowth
   parent: BaseStationEventLongDelay
-  noSpawn: true
   components:
   - type: StationEvent
     earliestStart: 15
@@ -223,31 +207,8 @@
   - type: KudzuGrowthRule
 
 - type: entity
-  id: MeteorSwarm
-  parent: BaseStationEventLongDelay
-  noSpawn: true
-  components:
-  - type: StationEvent
-    earliestStart: 30
-    weight: 7.5
-    minimumPlayers: 10 #Enough to hopefully have at least one engineering guy
-    startAnnouncement: station-event-meteor-swarm-start-announcement
-    endAnnouncement: station-event-meteor-swarm-end-announcement
-    startAudio:
-      path: /Audio/Announcements/meteors_start.ogg
-      params:
-        volume: -4
-    endAudio:
-      path: /Audio/Announcements/meteors_end.ogg # Corvax-Announcements
-      params:
-        volume: -4
-    duration: null #ending is handled by MeteorSwarmRule
-  - type: MeteorSwarmRule
-
-- type: entity
   id: MouseMigration
   parent: BaseStationEventShortDelay
-  noSpawn: true
   components:
   - type: StationEvent
     startAnnouncement: station-event-vent-creatures-start-announcement
@@ -266,6 +227,30 @@
       prob: 0.02
     - id: MobMouseCancer
       prob: 0.001
+# Events always spawn a critter regardless of Probability https://github.com/space-wizards/space-station-14/issues/28480 I added the Rat King to their own event with a player cap.
+
+- type: entity
+  id: KingRatMigration
+  parent: BaseStationEventShortDelay
+  components:
+  - type: StationEvent
+    startAnnouncement: station-event-vent-creatures-start-announcement
+    startAudio:
+      path: /Audio/Announcements/attention.ogg
+    earliestStart: 15
+    weight: 6
+    duration: 50
+    minimumPlayers: 15 # Hopefully this is enough for the Rat King's potential Army
+  - type: VentCrittersRule
+    entries:
+    - id: MobMouse
+      prob: 0.02
+    - id: MobMouse1
+      prob: 0.02
+    - id: MobMouse2
+      prob: 0.02
+    - id: MobMouseCancer
+      prob: 0.001
     specialEntries:
     - id: SpawnPointGhostRatKing
       prob: 0.001
@@ -273,7 +258,6 @@
 - type: entity
   id: CockroachMigration
   parent: BaseStationEventShortDelay
-  noSpawn: true
   components:
   - type: StationEvent
     startAnnouncement: station-event-vent-creatures-start-announcement
@@ -291,7 +275,6 @@
 - type: entity
   id: PowerGridCheck
   parent: BaseStationEventShortDelay
-  noSpawn: true
   components:
   - type: StationEvent
     weight: 5
@@ -308,7 +291,6 @@
 - type: entity
   id: RandomSentience
   parent: BaseGameRule
-  noSpawn: true
   components:
   - type: StationEvent
     weight: 6
@@ -323,7 +305,6 @@
 - type: entity
   parent: BaseGameRule
   id: SolarFlare
-  noSpawn: true
   components:
   - type: StationEvent
     weight: 8
@@ -354,7 +335,6 @@
 - type: entity
   id: VentClog
   parent: BaseStationEventLongDelay
-  noSpawn: true
   components:
   - type: StationEvent
     startAnnouncement: station-event-vent-clog-start-announcement
@@ -371,7 +351,6 @@
 - type: entity
   id: SlimesSpawn
   parent: BaseStationEventShortDelay
-  noSpawn: true
   components:
   - type: StationEvent
     startAnnouncement: station-event-vent-creatures-start-announcement
@@ -393,7 +372,6 @@
 - type: entity
   id: SpiderSpawn
   parent: BaseStationEventShortDelay
-  noSpawn: true
   components:
   - type: StationEvent
     startAnnouncement: station-event-vent-creatures-start-announcement
@@ -411,7 +389,6 @@
 - type: entity
   id: SpiderClownSpawn
   parent: BaseStationEventShortDelay
-  noSpawn: true
   components:
   - type: StationEvent
     startAnnouncement: station-event-vent-creatures-start-announcement
@@ -429,7 +406,6 @@
 - type: entity
   id: ZombieOutbreak
   parent: BaseGameRule
-  noSpawn: true
   components:
   - type: StationEvent
     earliestStart: 50
@@ -461,7 +437,6 @@
         prototype: InitialInfected
 
 - type: entity
-  noSpawn: true
   parent: BaseNukeopsRule
   id: LoneOpsSpawn
   components:
@@ -470,6 +445,7 @@
     weight: 5.5
     minimumPlayers: 20
     duration: 1
+  - type: RuleGrids
   - type: LoadMapRule
     preloadedGrid: ShuttleStriker
   - type: NukeopsRule
@@ -495,7 +471,6 @@
         prototype: Nukeops
 
 - type: entity
-  noSpawn: true
   parent: BaseTraitorRule
   id: SleeperAgentsRule
   components:
@@ -521,7 +496,6 @@
 - type: entity
   id: MassHallucinations
   parent: BaseGameRule
-  noSpawn: true
   components:
   - type: StationEvent
     weight: 7
@@ -538,7 +512,6 @@
 - type: entity
   id: ImmovableRodSpawn
   parent: BaseGameRule
-  noSpawn: true
   components:
   - type: StationEvent
     startAnnouncement: station-event-immovable-rod-start-announcement
@@ -576,7 +549,6 @@
       orGroup: rodProto
 
 - type: entity
-  noSpawn: true
   parent: BaseGameRule
   id: IonStorm
   components:
@@ -589,7 +561,6 @@
 - type: entity
   id: MimicVendorRule
   parent: BaseGameRule
-  noSpawn: true
   components:
     - type: StationEvent
       earliestStart: 0

@@ -52,8 +52,6 @@ ent-BoxEncryptionKeySyndie = коробка ключей шифрования
     .suffix = коробка ключей шифрования Синдиката
     .desc = { ent-BoxEncryptionKeyPassenger.desc }
 # Corvax-HiddenDesc-End
-ent-BoxDeathRattleImplants = коробка имплантов Предсмертный хрип
-    .desc = Шесть имплантов Предсмертный хрип и портативные GPS-навигаторы для всего отряда.
 ent-BoxLeadLined = освинцованная коробка
     .desc = Эта коробка препятствует распространению радиации.
     .suffix = DEBUG

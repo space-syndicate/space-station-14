@@ -1,7 +1,7 @@
 - type: gameMap
   id: CorvaxAstra
   mapName: 'Astra Station'
-  mapPath: /Maps/corvax_astra.yml 
+  mapPath: /Maps/corvax_astra.yml
   minPlayers: 40
   stations:
     Astra:
@@ -18,8 +18,6 @@
           enableStationRotation: false
           maxStationOffset: null
         - type: StationJobs
-          overflowJobs:
-            - Passenger
           availableJobs:
             # service
             HeadOfPersonnel: [ 1, 1 ]

@@ -6,8 +6,7 @@
   components:
     - type: MachineBoard
       prototype: PrinterDoc
-      requirements:
+      stackRequirements:
         MatterBin: 3
         Manipulator: 1
-      materialRequirements:
         Glass: 1

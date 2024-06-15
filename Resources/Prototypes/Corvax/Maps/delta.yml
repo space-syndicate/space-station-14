@@ -18,8 +18,6 @@
           enableStationRotation: false
           maxStationOffset: null
         - type: StationJobs
-          overflowJobs:
-            - Passenger
           availableJobs:
             Borg: [ 2, 3 ]
             Boxer: [ 2, 2 ]
