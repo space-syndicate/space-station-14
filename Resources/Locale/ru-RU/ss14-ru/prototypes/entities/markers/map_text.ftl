@@ -1,2 +1,2 @@
-ent-MapText = текст карты
+ent-MapText = map text
     .desc = { ent-MarkerBase.desc }
