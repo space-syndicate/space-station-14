@@ -1,8 +1,12 @@
+#IAA
 - type: roleLoadout
   id: JobIAA
   groups:
+  - IAAHead
   - LawyerNeck
   - LawyerJumpsuit
   - CommonBackpack
+  - IAAHands
+  - IAAShoes
   - Trinkets
   - Inventory # Corvax-Loadouts

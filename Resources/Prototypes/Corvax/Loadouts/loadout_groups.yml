@@ -13,3 +13,31 @@
   - PsychologistSatchel
   - PsychologistDuffel
 
+#IAA
+- type: loadoutGroup
+  id: IAAHead
+  name: loadout-group-iaa-head
+  minLimit: 0
+  loadouts:
+  - IAAHatBowlerHat
+  - IAAHatOutlawHat
+  - IAAHatTophat
+
+- type: loadoutGroup
+  id: IAAHands
+  name: loadout-group-iaa-hands
+  minLimit: 0
+  loadouts:
+  - IAAGlovesColorWhite
+  - IAAGlovesColorGray
+  - IAAGlovesColorBlack
+  - IAAGlovesColorRed
+  - IAAGlovesColorBlue
+
+- type: loadoutGroup
+  id: IAAShoes
+  name: loadout-group-iaa-shoes
+  minLimit: 1
+  loadouts:
+  - IAAShoesBootsLaceup
+  - IAAShoesColorBlack
