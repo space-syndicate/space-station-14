@@ -1,2 +1,2 @@
-object-tab-entity-id = Entity ID
-object-tab-object-name = Object name
+object-tab-entity-id = ID сущности
+object-tab-object-name = Имя объекта
