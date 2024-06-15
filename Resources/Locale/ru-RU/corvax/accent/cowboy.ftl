@@ -61,7 +61,6 @@ corvax-accent-cowboy-words-2401 = нюкеры
 corvax-accent-cowboy-words-2402 = оперы
 corvax-accent-cowboy-words-2403 = опера
 corvax-accent-cowboy-words-2404 = предатели
-corvax-accent-cowboy-replacement-24 = разбойники
 corvax-accent-cowboy-words-2501 = нюкер
 corvax-accent-cowboy-words-2502 = опер
 corvax-accent-cowboy-words-2503 = предатель

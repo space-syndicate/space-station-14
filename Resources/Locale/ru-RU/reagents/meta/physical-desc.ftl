@@ -74,7 +74,6 @@ reagent-physical-desc-overpowering = очень мощное
 reagent-physical-desc-sour = кислое
 reagent-physical-desc-pungent = жгучее
 reagent-physical-desc-clumpy = комковатое
-reagent-physical-desc-strong-smelling = сильно пахнущее
 reagent-physical-desc-odorless = не имеющее запаха
 reagent-physical-desc-gloopy = вязкое
 reagent-physical-desc-cloudy = облачное
