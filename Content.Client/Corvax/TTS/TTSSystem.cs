@@ -53,9 +53,9 @@ public sealed class TTSSystem : EntitySystem
         _contentRoot.Dispose();
     }
 
-    public void RequestGlobalTTS(string text, string voiceId)
+    public void RequestPreviewTTS(string voiceId)
     {
-        RaiseNetworkEvent(new RequestGlobalTTSEvent(text, voiceId));
+        RaiseNetworkEvent(new RequestPreviewTTSEvent(voiceId));
     }
 
     private void OnTtsVolumeChanged(float volume)

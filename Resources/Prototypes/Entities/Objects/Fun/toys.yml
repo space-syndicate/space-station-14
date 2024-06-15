@@ -1198,7 +1198,7 @@
           map: [ "blade" ]
     - type: Item
       size: Small
-      sprite: Objects/Fun/toy_sword.rsi
+      sprite: Objects/Weapons/Melee/e_sword-inhands.rsi # Corvax-Anti-Meta
     - type: UseDelay
       delay: 1.0
     - type: PointLight
@@ -1222,6 +1222,7 @@
     - type: StaminaDamageOnHit
       damage: 8
     - type: MeleeWeapon
+      wideAnimationRotation: -135
       damage:
         types:
           Blunt: 0

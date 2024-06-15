@@ -4139,3 +4139,243 @@
   name: tts-voice-name-slovo_patsana_main
   sex: Male
   speaker: slovo_patsana_main
+
+- type: ttsVoice
+  id: Poppy_sweeting
+  name: tts-voice-name-hogwarts_poppy_sweeting
+  sex: Female
+  speaker: hogwarts_poppy_sweeting
+
+- type: ttsVoice
+  id: Sebastian_sallow
+  name: tts-voice-name-hogwarts_sebastian_sallow
+  sex: Male
+  speaker: hogwarts_sebastian_sallow
+
+- type: ttsVoice
+  id: Player_female
+  name: tts-voice-name-hogwarts_player_female
+  sex: Female
+  speaker: hogwarts_player_female
+
+- type: ttsVoice
+  id: Goblin_generic_a
+  name: tts-voice-name-hogwarts_goblin_generic_a
+  sex: Male
+  speaker: hogwarts_goblin_generic_a
+
+- type: ttsVoice
+  id: Player_male
+  name: tts-voice-name-hogwarts_player_male
+  sex: Male
+  speaker: hogwarts_player_male
+
+- type: ttsVoice
+  id: Natsai_onai
+  name: tts-voice-name-hogwarts_natsai_onai
+  sex: Female
+  speaker: hogwarts_natsai_onai
+
+- type: ttsVoice
+  id: Eleazar_fig
+  name: tts-voice-name-hogwarts_eleazar_fig
+  sex: Male
+  speaker: hogwarts_eleazar_fig
+
+- type: ttsVoice
+  id: Aesop_sharp
+  name: tts-voice-name-hogwarts_aesop_sharp
+  sex: Male
+  speaker: hogwarts_aesop_sharp
+
+- type: ttsVoice
+  id: Ominis_gaunt
+  name: tts-voice-name-hogwarts_ominis_gaunt
+  sex: Male
+  speaker: hogwarts_ominis_gaunt
+
+- type: ttsVoice
+  id: Sophronia_franklin
+  name: tts-voice-name-hogwarts_sophronia_franklin
+  sex: Female
+  speaker: hogwarts_sophronia_franklin
+
+- type: ttsVoice
+  id: Abraham_ronen
+  name: tts-voice-name-hogwarts_abraham_ronen
+  sex: Male
+  speaker: hogwarts_abraham_ronen
+
+- type: ttsVoice
+  id: Cuthbert_binns
+  name: tts-voice-name-hogwarts_cuthbert_binns
+  sex: Male
+  speaker: hogwarts_cuthbert_binns
+
+- type: ttsVoice
+  id: Lodgok
+  name: tts-voice-name-hogwarts_lodgok
+  sex: Male
+  speaker: hogwarts_lodgok
+
+- type: ttsVoice
+  id: Matilda_weasley
+  name: tts-voice-name-hogwarts_matilda_weasley
+  sex: Female
+  speaker: hogwarts_matilda_weasley
+
+- type: ttsVoice
+  id: Mirabel_garlick
+  name: tts-voice-name-hogwarts_mirabel_garlick
+  sex: Female
+  speaker: hogwarts_mirabel_garlick
+
+- type: ttsVoice
+  id: Dinah_hecat
+  name: tts-voice-name-hogwarts_dinah_hecat
+  sex: Female
+  speaker: hogwarts_dinah_hecat
+
+- type: ttsVoice
+  id: Gman_Alyx
+  name: tts-voice-name-halflife_gman
+  sex: Male
+  speaker: halflife_gman
+
+- type: ttsVoice
+  id: Vortigaunt
+  name: tts-voice-name-halflife_vortigaunt
+  sex: Male
+  speaker: halflife_vortigaunt
+
+- type: ttsVoice
+  id: Larry
+  name: tts-voice-name-halflife_larry
+  sex: Male
+  speaker: halflife_larry
+
+- type: ttsVoice
+  id: Olga
+  name: tts-voice-name-halflife_olga
+  sex: Female
+  speaker: halflife_olga
+
+- type: ttsVoice
+  id: Alyx_Alyx
+  name: tts-voice-name-halflife_alyx
+  sex: Female
+  speaker: halflife_alyx
+
+- type: ttsVoice
+  id: Richard
+  name: tts-voice-name-stronghold_richard
+  sex: Male
+  speaker: stronghold_richard
+
+- type: ttsVoice
+  id: Sultan
+  name: tts-voice-name-stronghold_sultan
+  sex: Male
+  speaker: stronghold_sultan
+
+- type: ttsVoice
+  id: Emir
+  name: tts-voice-name-stronghold_emir
+  sex: Male
+  speaker: stronghold_emir
+
+- type: ttsVoice
+  id: Saladin
+  name: tts-voice-name-stronghold_saladin
+  sex: Male
+  speaker: stronghold_saladin
+
+- type: ttsVoice
+  id: Abbot
+  name: tts-voice-name-stronghold_abbot
+  sex: Male
+  speaker: stronghold_abbot
+
+- type: ttsVoice
+  id: Rat
+  name: tts-voice-name-stronghold_rat
+  sex: Male
+  speaker: stronghold_rat
+
+- type: ttsVoice
+  id: Halif
+  name: tts-voice-name-stronghold_halif
+  sex: Male
+  speaker: stronghold_halif
+
+- type: ttsVoice
+  id: Snake
+  name: tts-voice-name-stronghold_snake
+  sex: Male
+  speaker: stronghold_snake
+
+- type: ttsVoice
+  id: Friedrich
+  name: tts-voice-name-stronghold_friedrich
+  sex: Male
+  speaker: stronghold_friedrich
+
+- type: ttsVoice
+  id: Boar
+  name: tts-voice-name-stronghold_boar
+  sex: Male
+  speaker: stronghold_boar
+
+- type: ttsVoice
+  id: Bandit02
+  name: tts-voice-name-stalker_metro_bandit02
+  sex: Male
+  speaker: stalker_metro_bandit02
+
+- type: ttsVoice
+  id: Degtyarev
+  name: tts-voice-name-stalker_metro_degtyarev
+  sex: Male
+  speaker: stalker_metro_degtyarev
+
+- type: ttsVoice
+  id: Novice02
+  name: tts-voice-name-stalker_metro_novice02
+  sex: Male
+  speaker: stalker_metro_novice02
+
+- type: ttsVoice
+  id: Pavel
+  name: tts-voice-name-stalker_metro_pavel
+  sex: Male
+  speaker: stalker_metro_pavel
+
+- type: ttsVoice
+  id: Saharov
+  name: tts-voice-name-stalker_metro_saharov
+  sex: Male
+  speaker: stalker_metro_saharov
+
+- type: ttsVoice
+  id: Soldier_Metro
+  name: tts-voice-name-stalker_metro_soldier
+  sex: Male
+  speaker: stalker_metro_soldier
+
+- type: ttsVoice
+  id: Stalker01
+  name: tts-voice-name-stalker_metro_stalker01
+  sex: Male
+  speaker: stalker_metro_stalker01
+
+- type: ttsVoice
+  id: Newbie01
+  name: tts-voice-name-stalker_metro_newbie01
+  sex: Male
+  speaker: stalker_metro_newbie01
+
+- type: ttsVoice
+  id: Garrosh
+  name: tts-voice-name-warcraft_garrosh
+  sex: Male
+  speaker: warcraft_garrosh

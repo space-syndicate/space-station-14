@@ -27,8 +27,7 @@
   # Крысиный король
 
   <Box>
-    <GuideEntityEmbed Entity="MobRatKing" Scale="2.4" Caption="Нормальный крысиный король"/>
-    <GuideEntityEmbed Entity="MobRatKingBuff" Caption="Прокачанный крысиный король"/>
+    <GuideEntityEmbed Entity="MobRatKing" Scale="2.4" Caption="The Rat King"/>
   </Box>
 
   Крысиный король - это гигантская крыса, способная устроить гнездо и создать крыс, которые будут выполнять её приказы (обычно для получения пищи).
@@ -63,5 +62,14 @@
   </Box>
 
   - Вызовите Карповый разлом, который периодически порождает [color=#a4885c]Космических карпов[/color].
+
+  ## Carp Rifts
+
+  - Space Dragons may have up to three Carp Rifts active at any given time.
+  - Carp Rifts spawn a [color=#a4885c]Space Carp[/color] every thirty seconds while active.
+  - Rifts charge with extradimensional energy over a period of five minutes and are vulnerable during this time. Protect them! The space dragon will suffer a temporary debilitating feedback effect in the event that its rifts are destroyed before they are done charging.
+  - You may only charge one rift at any given time.
+  - After the rifts are done charging, they are invulnerable and will continue to spawn [color=#a4885c]Space Carp[/color] so long as the Dragon lives.
+  - If a period of five minutes passes since the appearance of the Space Dragon or the last time a Carp Rift was charging and unless the Space Dragon already controls the maximum of three Carp Rifts, the Space Dragon will disappear.
 
 </Document>

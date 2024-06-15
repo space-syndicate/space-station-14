@@ -1,13 +1,13 @@
 - type: entity
-  parent: ClothingOuterStorageBase
+  parent: ClothingOuterCoatHoSTrench
   id: ClothingOuterCoatHoSGreatcoat
   name: armored greatcoat
   description: A greatcoat enhanced with a special alloy for some extra protection and style for those with a commanding presence.
   components:
     - type: Sprite
-      sprite: Clothing/OuterClothing/Coats/hos_greatcoat.rsi
+      sprite: Corvax/Clothing/OuterClothing/Coats/hos_greatcoat.rsi
     - type: Clothing
-      sprite: Clothing/OuterClothing/Coats/hos_greatcoat.rsi
+      sprite: Corvax/Clothing/OuterClothing/Coats/hos_greatcoat.rsi
     - type: Armor
       modifiers:
         coefficients:
@@ -17,7 +17,7 @@
           Heat: 0.7
 
 - type: entity
-  parent: ClothingOuterStorageBase
+  parent: ClothingOuterCoatDetectiveLoadout
   id: ClothingOuterCoatDetectiveDark
   name: noir trenchcoat
   description: A hard-boiled private investigator's dark trenchcoat.
@@ -26,9 +26,6 @@
       sprite: Corvax/Clothing/OuterClothing/Coats/noirdet.rsi
     - type: Clothing
       sprite: Corvax/Clothing/OuterClothing/Coats/noirdet.rsi
-    - type: StorageFill
-      contents:
-        - id: SmokingPipeFilledTobacco
     - type: Armor
       modifiers:
         coefficients:
@@ -38,7 +35,7 @@
           Heat: 0.9
 
 - type: entity
-  parent: ClothingOuterStorageBase
+  parent: ClothingOuterCoatWarden
   id: ClothingOuterCoatWardenAlt
   name: warden's jacket
   description: A navy-blue armored jacket with blue shoulder designations and '/Warden/' stitched into one of the chest pockets.
