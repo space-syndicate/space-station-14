@@ -6,11 +6,11 @@
 
 ## Перемещение
 Вы можете перемещаться по игровому миру с помощью [color=yellow][bold][keybind="MoveUp"][keybind="MoveLeft"][keybind="MoveDown"][keybind="MoveRight"][/bold][/color].
-Если удерживать [color=yellow][bold][keybind="Walk"][/bold][/color], вы будете ходить, не позволяя себе поскользнуться на земле.
+Если удерживать [color=yellow][bold][keybind="Walk"][/bold][/color], вы будете ходить шагом, что не даст вам поскользнуться и упасть.
 
 Вы можете включить ходьбу на [color=cyan]переключение[/color] в меню управления.
 
-[color=cyan] Перетаскивание[/color] объектов осуществляется с помощью [color=yellow][bold][keybind="TryPullObject"][/bold][/color].
+[color=cyan]Перетаскивание[/color] объектов осуществляется с помощью [color=yellow][bold][keybind="TryPullObject"][/bold][/color].
 Во время перетаскивания вы можете перетащить объект к курсору мыши с помощью [color=yellow][bold][keybind="MovePulledObject"][/bold][/color].
 Нажав [color=yellow][bold][keybind="ReleasePulledObject"][/bold][/color], вы отпустите объект, который вы в данный момент перетаскиваете.
 
@@ -57,6 +57,6 @@
 ## Камера
 Камеру можно [color=cyan]масштабировать[/color] с помощью [color=yellow][bold][keybind="ZoomIn"][/bold][/color] и [color=yellow][bold][keybind="ZoomOut"][/bold][/color] и сбрасывать с помощью [color=yellow][bold][keybind="ResetZoom"][/bold][/color].
 Аналогично, вы можете [color=cyan]вращать[/color] её влево и вправо с помощью [color=yellow][bold][keybind="CameraRotateLeft"][/bold][/color] и [color=yellow][bold][keybind="CameraRotateRight"][/bold][/color].
-Вы можете выровнять его в соответствии с поворотом грида с помощью [color=yellow][bold][keybind="CameraReset"][/bold][/color].
+Вы можете выровнять её в соответствии с поворотом грида с помощью [color=yellow][bold][keybind="CameraReset"][/bold][/color].
 
 </Document>
