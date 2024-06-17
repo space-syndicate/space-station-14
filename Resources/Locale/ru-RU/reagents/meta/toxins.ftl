@@ -52,5 +52,5 @@ reagent-name-tazinide = тазинид
 reagent-desc-tazinide = Очень опасная металлическая смесь, которая может нарушить возможность передвигаться благодаря электризующему воздействию.
 reagent-name-lipolicide = липолицид
 reagent-desc-lipolicide = Мощный токсин, разрушающий жировые клетки и способствующий снижению массы тела в сжатые сроки. Смертельно опасен для тех, у кого в организме нет питательных веществ.
-reagent-name-mechanotoxin = mechanotoxin
-reagent-desc-mechanotoxin = A neurotoxin used as venom by some species of spider. Degrades movement when built up.
+reagent-name-mechanotoxin = механотоксин
+reagent-desc-mechanotoxin = Нейротоксин, используемый в качестве яда некоторыми видами пауков. При накоплении в организме затрудняет передвижение.

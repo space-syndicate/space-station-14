@@ -3,5 +3,5 @@ ent-ClothingEyesBase = { ent-Clothing }
 ent-ClothingHeadEyeBaseFlippable = { ent-ClothingEyesBase }
   .desc = { ent-ClothingEyesBase.desc }
 ent-ClothingHeadEyeBaseFlipped = { ent-ClothingHeadEyeBaseFlippable }
-    .suffix = flipped
+    .suffix = Перевернутый
     .desc = { ent-ClothingHeadEyeBaseFlippable.desc }
