@@ -24,5 +24,5 @@ ent-ThrusterFlatpack = упаковка ракетного двигателя
     .desc = Универсально-сборная упаковка, используемая для сборки ракетного двигателя.
 ent-SpaceHeaterFlatpack = упаковка термостата
     .desc = Универсально-сборная упаковка, используемая для сборки термостата.
-ent-FaxMachineFlatpack = fax machine flatpack
-    .desc = A flatpack used for constructing a fax machine.
+ent-FaxMachineFlatpack = упаковка факса
+    .desc = Универсально-сборная упаковка, используемая для сборки факса.

@@ -1,3 +1,3 @@
 entity-category-name-actions = Действия
-entity-category-name-game-rules = Game Rules
-entity-category-name-objectives = Objectives
+entity-category-name-game-rules = Игровые режимы
+entity-category-name-objectives = Цели

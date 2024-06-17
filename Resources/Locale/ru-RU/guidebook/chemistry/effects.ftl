@@ -318,14 +318,14 @@ reagent-effect-guidebook-innoculate-zombie-infection =
     } зомби-вирус и обеспечивает иммунитет к нему в будущем
 reagent-effect-guidebook-area-reaction =
     { $chance ->
-        [1] Causes
-       *[other] cause
-    } a smoke or foam reaction for { NATURALFIXED($duration, 3) } { MANY("second", $duration) }
+        [1] Вызывает
+        *[other] вызывают
+    } дымовую или пенную реакцию на {NATURALFIXED($duration, 3)} {MANY("second", $duration)}
 reagent-effect-guidebook-add-to-solution-reaction =
     { $chance ->
-        [1] Causes
-       *[other] cause
-    } chemicals applied to an object to be added to its internal solution container
+        [1] Заставляет
+        *[other] заставляют
+    } химикаты, применённые к объекту, добавиться во внутренний контейнер для растворов этого объекта
 reagent-effect-guidebook-plant-attribute =
     { $chance ->
         [1] Изменяет

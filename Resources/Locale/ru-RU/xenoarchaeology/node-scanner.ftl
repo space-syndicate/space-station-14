@@ -1,2 +1,2 @@
 node-scan-popup = ID узла: { $id }
-node-scan-tooltip = Scan artifact
+node-scan-tooltip = Сканирование артефакта
