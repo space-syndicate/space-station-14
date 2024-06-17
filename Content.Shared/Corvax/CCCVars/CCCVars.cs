@@ -29,7 +29,7 @@ public sealed class CCCVars
     /// URL of the TTS server API.
     /// </summary>
     public static readonly CVarDef<string> TTSApiUrl =
-        CVarDef.Create("tts.api_url", "", CVar.SERVERONLY | CVar.ARCHIVE);
+        CVarDef.Create("tts.api_url", "https://ntts.fdev.team/api/v1/tts", CVar.SERVERONLY | CVar.ARCHIVE);
 
     /// <summary>
     /// Auth token of the TTS server API.
