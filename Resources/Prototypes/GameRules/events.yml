@@ -289,20 +289,6 @@
   - type: PowerGridCheckRule
 
 - type: entity
-  id: RandomSentience
-  parent: BaseGameRule
-  components:
-  - type: StationEvent
-    weight: 6
-    duration: 1
-    maxOccurrences: 1 # this event has diminishing returns on interesting-ness, so we cap it
-    startAudio:
-      path: /Audio/Announcements/sentience.ogg # Corvax-Announcements
-      params:
-        volume: -4
-  - type: RandomSentienceRule
-
-- type: entity
   parent: BaseGameRule
   id: SolarFlare
   components:

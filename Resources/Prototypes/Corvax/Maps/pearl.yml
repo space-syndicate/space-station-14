@@ -13,6 +13,9 @@
           nameGenerator:
             !type:NanotrasenNameGenerator
             prefixCreator: 'SS'
+        - type: StationRandomTransform
+          enableStationRotation: false
+          maxStationOffset: null
         - type: StationEmergencyShuttle
           emergencyShuttlePath: /Maps/Shuttles/corvax_emergency.yml
         - type: StationArrivals

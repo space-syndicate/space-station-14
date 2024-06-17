@@ -1,6 +1,7 @@
 - type: job
   id: IAA
   name: job-name-iaa
+  description: job-description-iaa
   playTimeTracker: JobIAA
   requirements:
   - !type:DepartmentTimeRequirement
@@ -34,3 +35,6 @@
     pocket2: HyperLinkBookCorporateLaw
   inhand:
     - BriefcaseIAAFilled
+  storage:
+    back:
+    - BoxSurvival

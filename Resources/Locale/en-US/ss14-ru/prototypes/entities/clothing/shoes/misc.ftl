@@ -16,3 +16,5 @@ ent-ClothingShoesBootsSpeed = speed boots
     .desc = High-tech boots woven with quantum fibers, able to convert electricity into pure speed!
 ent-ActionToggleSpeedBoots = Toggle Speed Boots
     .desc = Toggles the speed boots on and off.
+ent-ClothingShoesBootsMoon = moon boots
+    .desc = Special anti-gravity boots developed with a speciality blend of lunar rock gel. Shipped from the Netherlands.

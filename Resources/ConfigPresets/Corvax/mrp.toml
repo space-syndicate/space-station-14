@@ -1,6 +1,3 @@
-﻿[server]
-rules_file = "RulesCorvax.txt"
-
 [game]
 fallbackpreset = "extended"
 lobbyenabled = true
@@ -26,6 +23,5 @@ auto_call_time = 150
 restart_required_ratio = 0.85
 same_type_timeout = 300.0
 timerrestart = 30
-map_enabled = true
 preset_enabled = false
 restart_enabled = false

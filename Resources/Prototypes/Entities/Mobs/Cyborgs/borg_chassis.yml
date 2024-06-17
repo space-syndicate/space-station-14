@@ -249,7 +249,7 @@
     footstepSoundCollection:
       collection: FootstepHoverBorg
   - type: TTS # Corvax-TTS
-    voice: TrainingRobot
+    voice: fact_core
 
 - type: entity
   id: BorgChassisService

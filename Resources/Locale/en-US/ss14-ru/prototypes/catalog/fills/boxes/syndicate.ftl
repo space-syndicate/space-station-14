@@ -6,4 +6,4 @@ ent-ChemicalSynthesisKit = chemical synthesis kit
 ent-ThrowingKnivesKit = throwing knives kit
     .desc = A set of 4 syndicate branded throwing knives, perfect for embedding into the body of your victims.
 ent-BoxDeathRattleImplants = deathrattle implant box
-    .desc = Six deathrattle implants and handheld GPS devices for the whole squad.
+    .desc = Six deathrattle implants for the whole squad.

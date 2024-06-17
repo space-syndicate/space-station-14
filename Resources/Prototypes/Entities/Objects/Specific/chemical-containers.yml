@@ -79,7 +79,6 @@
         - !type:DoActsBehavior
           acts: [ "Destruction" ]
     - type: Label
-      originalName: кувшин # Corvax-Localization
     - type: Tag
       tags:
       - ChemDispensable
