@@ -23,57 +23,23 @@
       "name": "panel"
     },
     {
-      "name": "lock0-unlocked"
-    },
-    {
       "name": "lock0-locked"
-    },
-    {
-      "name": "lock1-unlocked"
     },
     {
       "name": "lock1-locked"
     },
     {
-      "name": "channel0-auto_off"
-    },
-    {
-      "name": "channel0-manual_off"
-    },
-    {
-      "name": "channel0-auto_on"
-    },
-    {
-      "name": "channel0-manual_on"
-    },
-    {
-      "name": "channel1-auto_off"
-    },
-    {
-      "name": "channel1-manual_off"
-    },
-    {
-      "name": "channel1-auto_on"
-    },
-    {
-      "name": "channel1-manual_on"
-    },
-    {
-      "name": "channel2-auto_off"
-    },
-    {
-      "name": "channel2-manual_off"
-    },
-    {
-      "name": "channel2-auto_on"
-    },
-    {
-      "name": "channel2-manual_on"
-    },
-    {
       "name": "display-lack",
       "delays": [
         [
+          0.25,
+          0.25,
+          1,
+          3
+        ],
+        [
+          0.25,
+          0.25,
           1,
           2
         ]
@@ -104,6 +70,27 @@
     {
       "name": "display-remote",
       "delays": [
+        [
+          0.1,
+          0.1,
+          0.1,
+          0.1,
+          0.1
+        ],
+        [
+          0.1,
+          0.1,
+          0.1,
+          0.1,
+          0.1
+        ],
+        [
+          0.1,
+          0.1,
+          0.1,
+          0.1,
+          0.1
+        ],
         [
           0.1,
           0.1,
