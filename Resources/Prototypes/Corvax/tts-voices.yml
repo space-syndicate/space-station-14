@@ -123,6 +123,7 @@
   sex: Male
   speaker: gman
   id: gman
+  roundStart: false
 
 - type: ttsVoice
   name: tts-voice-name-barni
@@ -341,24 +342,28 @@
   sex: Male
   speaker: adventure_core
   id: adventure_core
+  roundStart: false
 
 - type: ttsVoice
   name: tts-voice-name-fact_core
   sex: Male
   speaker: fact_core
   id: fact_core
+  roundStart: false
 
 - type: ttsVoice
   name: tts-voice-name-space_core
   sex: Male
   speaker: space_core
   id: space_core
+  roundStart: false
 
 - type: ttsVoice
   name: tts-voice-name-turret_floor
   sex: Female
   speaker: turret_floor
   id: turret_floor
+  roundStart: false
 
 - type: ttsVoice
   name: tts-voice-name-geralt
@@ -557,6 +562,7 @@
   sex: Male
   speaker: skippy
   id: skippy
+  roundStart: false
 
 - type: ttsVoice
   name: tts-voice-name-jackie
@@ -569,6 +575,7 @@
   sex: Male
   speaker: dornan
   id: dornan
+  roundStart: false
 
 - type: ttsVoice
   name: tts-voice-name-officer_enclave
@@ -665,6 +672,7 @@
   sex: Female
   speaker: adjutant
   id: adjutant
+  roundStart: false
 
 - type: ttsVoice
   name: tts-voice-name-hanson
