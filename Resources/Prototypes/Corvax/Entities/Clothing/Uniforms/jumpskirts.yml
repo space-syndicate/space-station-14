@@ -79,8 +79,8 @@
 - type: entity
   parent: ClothingUniformBase
   id: ClothingUniformJumpskirtHoPTurtleneck
-  name: head's of personal turtleneck.
-  description: Turtleneck of papers god
+  name: head's of personal turtleneck
+  description: Turtleneck of papers god.
   components:
     - type: Sprite
       sprite: Corvax/Clothing/Uniforms/Jumpskirt/hop_turtleneck.rsi
