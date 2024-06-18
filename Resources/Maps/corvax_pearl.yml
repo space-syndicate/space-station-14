@@ -99,8 +99,6 @@ entities:
     - type: LoadedMap
     - type: Parallax
       parallax: Water
-    - type: BecomesStation
-      id: NTTA Pearl island
     - type: MapAtmosphere
       space: False
       mixture:
