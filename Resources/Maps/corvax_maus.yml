@@ -5602,20 +5602,20 @@ entities:
       id: Maus
     - type: Joint
       joints:
-        docking363394: !type:WeldJoint
+        docking280634: !type:WeldJoint
           bodyB: 17019
           bodyA: 2
-          id: docking363394
+          id: docking280634
           localAnchorB: -2,-4.5
           localAnchorA: -28,-83.5
           damping: 1141.0292
           stiffness: 10241.8545
-        docking363391: !type:WeldJoint
-          bodyB: 2
-          bodyA: 17019
-          id: docking363391
-          localAnchorB: -28,-85.5
-          localAnchorA: -2,-6.5
+        docking280633: !type:WeldJoint
+          bodyB: 17019
+          bodyA: 2
+          id: docking280633
+          localAnchorB: -2,-6.5
+          localAnchorA: -28,-85.5
           damping: 1141.0292
           stiffness: 10241.8545
         docking363337: !type:WeldJoint
@@ -6833,7 +6833,7 @@ entities:
     - type: MetaData
       name: NT-RND-R42 "Передвижной Артефакт"
     - type: Transform
-      pos: -27.19783,-73.57084
+      pos: -27.01033,-73.58126
       parent: 1
     - type: MapGrid
       chunks:
@@ -7003,20 +7003,20 @@ entities:
     - type: RadiationGridResistance
     - type: Joint
       joints:
-        docking363391: !type:WeldJoint
-          bodyB: 2
-          bodyA: 17019
-          id: docking363391
-          localAnchorB: -28,-85.5
-          localAnchorA: -2,-6.5
-          damping: 1141.0292
-          stiffness: 10241.8545
-        docking363394: !type:WeldJoint
+        docking280634: !type:WeldJoint
           bodyB: 17019
           bodyA: 2
-          id: docking363394
+          id: docking280634
           localAnchorB: -2,-4.5
           localAnchorA: -28,-83.5
+          damping: 1141.0292
+          stiffness: 10241.8545
+        docking280633: !type:WeldJoint
+          bodyB: 17019
+          bodyA: 2
+          id: docking280633
+          localAnchorB: -2,-6.5
+          localAnchorA: -28,-85.5
           damping: 1141.0292
           stiffness: 10241.8545
   - uid: 17247
@@ -8851,6 +8851,11 @@ entities:
       parent: 2
 - proto: AirlockCaptainLocked
   entities:
+  - uid: 298
+    components:
+    - type: Transform
+      pos: -38.5,-14.5
+      parent: 2
   - uid: 4627
     components:
     - type: Transform
@@ -9411,19 +9416,6 @@ entities:
       parent: 2
 - proto: AirlockExternalGlassShuttleLocked
   entities:
-  - uid: 78
-    components:
-    - type: Transform
-      rot: 1.5707963267948966 rad
-      pos: -28.5,-85.5
-      parent: 2
-    - type: Docking
-      dockJointId: docking363391
-      dockedWith: 17021
-    - type: DeviceLinkSource
-      lastSignals:
-        DoorStatus: False
-        DockStatus: True
   - uid: 157
     components:
     - type: Transform
@@ -9436,19 +9428,6 @@ entities:
       rot: 1.5707963267948966 rad
       pos: 18.5,-16.5
       parent: 2
-  - uid: 159
-    components:
-    - type: Transform
-      rot: 1.5707963267948966 rad
-      pos: -28.5,-83.5
-      parent: 2
-    - type: Docking
-      dockJointId: docking363394
-      dockedWith: 17020
-    - type: DeviceLinkSource
-      lastSignals:
-        DoorStatus: False
-        DockStatus: True
   - uid: 10326
     components:
     - type: Transform
@@ -9495,32 +9474,6 @@ entities:
     - type: Docking
       dockJointId: docking363334
       dockedWith: 16773
-    - type: DeviceLinkSource
-      lastSignals:
-        DoorStatus: False
-        DockStatus: True
-  - uid: 17020
-    components:
-    - type: Transform
-      rot: -1.5707963267948966 rad
-      pos: -1.5,-4.5
-      parent: 17019
-    - type: Docking
-      dockJointId: docking363394
-      dockedWith: 159
-    - type: DeviceLinkSource
-      lastSignals:
-        DoorStatus: False
-        DockStatus: True
-  - uid: 17021
-    components:
-    - type: Transform
-      rot: -1.5707963267948966 rad
-      pos: -1.5,-6.5
-      parent: 17019
-    - type: Docking
-      dockJointId: docking363391
-      dockedWith: 78
     - type: DeviceLinkSource
       lastSignals:
         DoorStatus: False
@@ -9753,6 +9706,32 @@ entities:
       parent: 17247
 - proto: AirlockGlassShuttle
   entities:
+  - uid: 78
+    components:
+    - type: Transform
+      rot: 1.5707963267948966 rad
+      pos: -28.5,-83.5
+      parent: 2
+    - type: Docking
+      dockJointId: docking280634
+      dockedWith: 17021
+    - type: DeviceLinkSource
+      lastSignals:
+        DoorStatus: False
+        DockStatus: True
+  - uid: 159
+    components:
+    - type: Transform
+      rot: 1.5707963267948966 rad
+      pos: -28.5,-85.5
+      parent: 2
+    - type: Docking
+      dockJointId: docking280633
+      dockedWith: 17020
+    - type: DeviceLinkSource
+      lastSignals:
+        DoorStatus: False
+        DockStatus: True
   - uid: 14514
     components:
     - type: Transform
@@ -9765,6 +9744,32 @@ entities:
       rot: 1.5707963267948966 rad
       pos: 1.5,-46.5
       parent: 2
+  - uid: 17020
+    components:
+    - type: Transform
+      rot: -1.5707963267948966 rad
+      pos: -1.5,-6.5
+      parent: 17019
+    - type: Docking
+      dockJointId: docking280633
+      dockedWith: 159
+    - type: DeviceLinkSource
+      lastSignals:
+        DoorStatus: False
+        DockStatus: True
+  - uid: 17021
+    components:
+    - type: Transform
+      rot: -1.5707963267948966 rad
+      pos: -1.5,-4.5
+      parent: 17019
+    - type: Docking
+      dockJointId: docking280634
+      dockedWith: 78
+    - type: DeviceLinkSource
+      lastSignals:
+        DoorStatus: False
+        DockStatus: True
 - proto: AirlockHeadOfPersonnelGlassLocked
   entities:
   - uid: 189
@@ -10443,13 +10448,6 @@ entities:
     - type: Transform
       pos: 2.5,-2.5
       parent: 17247
-- proto: AirlockServiceCaptainLocked
-  entities:
-  - uid: 298
-    components:
-    - type: Transform
-      pos: -38.5,-14.5
-      parent: 2
 - proto: AirlockServiceGlassLocked
   entities:
   - uid: 299
