@@ -135,12 +135,23 @@ public sealed partial class TTSSystem : EntitySystem
         if (char.IsLetter(textSanitized[^1]))
             textSanitized += ".";
 
-        return await _ttsManager.ConvertTextToSpeech(speaker, textSanitized);
+        var ssmlTraits = SoundTraits.RateFast;
+        if (isWhisper)
+            ssmlTraits = SoundTraits.PitchVerylow;
+        var textSsml = ToSsmlText(textSanitized, ssmlTraits);
+
+        return await _ttsManager.ConvertTextToSpeech(speaker, textSsml);
     }
 }
 
-public sealed class TransformSpeakerVoiceEvent(EntityUid sender, string voiceId) : EntityEventArgs
+public sealed class TransformSpeakerVoiceEvent : EntityEventArgs
 {
-    public EntityUid Sender = sender;
-    public string VoiceId = voiceId;
+    public EntityUid Sender;
+    public string VoiceId;
+
+    public TransformSpeakerVoiceEvent(EntityUid sender, string voiceId)
+    {
+        Sender = sender;
+        VoiceId = voiceId;
+    }
 }
