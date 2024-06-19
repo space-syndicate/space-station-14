@@ -8,14 +8,14 @@ namespace Content.Server.Corvax.StationGoal
         [IdDataFieldAttribute]
         public string ID { get; } = default!;
 
-        [DataField("text")]
+        [DataField]
         public string Text { get; set; } = string.Empty;
 
-        [DataField("minPlayers")]
-        public int? MinPlayers = null;
+        [DataField]
+        public int? MinPlayers;
 
-        [DataField("maxPlayers")]
-        public int? MaxPlayers = null;
+        [DataField]
+        public int? MaxPlayers;
 
     }
 }
