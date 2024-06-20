@@ -79,8 +79,8 @@
 - type: entity
   parent: ClothingUniformBase
   id: ClothingUniformJumpskirtHoPTurtleneck
-  name: head of personal's turtleneck
-  description: It's Head of Personal's turtleneck.
+  name: head's of personal turtleneck
+  description: Turtleneck of papers god.
   components:
     - type: Sprite
       sprite: Corvax/Clothing/Uniforms/Jumpskirt/hop_turtleneck.rsi
@@ -90,8 +90,8 @@
 - type: entity
   parent: ClothingUniformBase
   id: ClothingUniformJumpskirtHoSBlack
-  name: head of security's black skirt
-  description: It's Head of Security's black skirt.
+  name: head's of security black skirt
+  description: Main villain's skirt.
   components:
     - type: Sprite
       sprite: Corvax/Clothing/Uniforms/Jumpskirt/hos_black.rsi
@@ -100,11 +100,11 @@
 
 - type: entity
   parent: ClothingUniformBase
-  id: ClothingUniformJumpskirtRDСlassical
-  name: research director's classical skirt
-  description: It's Research Director's classical skirt.
+  id: ClothingUniformJumpskirtRDFormal
+  name: research director's formal skirt
+  description: Evil genius skirt.
   components:
     - type: Sprite
-      sprite: Corvax/Clothing/Uniforms/Jumpskirt/rd_classical.rsi
+      sprite: Corvax/Clothing/Uniforms/Jumpskirt/rd_formal.rsi
     - type: Clothing
-      sprite: Corvax/Clothing/Uniforms/Jumpskirt/rd_classical.rsi
+      sprite: Corvax/Clothing/Uniforms/Jumpskirt/rd_formal.rsi
