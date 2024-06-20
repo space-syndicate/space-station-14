@@ -64,7 +64,8 @@
     sprite: Corvax/Clothing/Uniforms/Jumpskirt/schoolskirt.rsi
   - type: Clothing
     sprite: Corvax/Clothing/Uniforms/Jumpskirt/schoolskirt.rsi
-
+    
+- type: entity
 parent: ClothingUniformBase
   id: ClothingUniformJumpskirtCapTurtleneck
   name: captain's turtleneck
