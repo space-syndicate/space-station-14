@@ -20,6 +20,7 @@ using Robust.Shared.Network;
 using Robust.Shared.Player;
 using Robust.Shared.Random;
 using Robust.Shared.Utility;
+using Robust.Shared.Configuration; // Corvax
 
 namespace Content.Server.GameTicking
 {
@@ -336,6 +337,8 @@ namespace Content.Server.GameTicking
 
             ShowRoundEndScoreboard(text);
             SendRoundEndDiscordMessage();
+			
+			ResetForcedMap(); // Corvax - Resets forced map, duh.
         }
 
         public void ShowRoundEndScoreboard(string text = "")
@@ -659,6 +662,13 @@ namespace Content.Server.GameTicking
                 Log.Error($"Error while sending discord round start message:\n{e}");
             }
         }
+        //  Corvax-start
+        public void ResetForcedMap()
+        {
+            var configurationManager = IoCManager.Resolve<IConfigurationManager>();
+            configurationManager.SetCVar(CCVars.GameMap, string.Empty);
+        }
+		// Corvax-end
     }
 
     public enum GameRunLevel
