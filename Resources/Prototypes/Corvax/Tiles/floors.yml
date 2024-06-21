@@ -19,6 +19,26 @@
   heatCapacity: 10000
 
 - type: tile
+  id: FloorWoodChess
+  name: tiles-wood-chess
+  sprite: /Textures/Corvax/Tiles/wood_chess.png
+  variants: 4
+  placementVariants:
+  - 1.0
+  - 1.0
+  - 1.0
+  - 1.0
+  baseTurf: Plating
+  isSubfloor: false
+  deconstructTools: [ Prying ]
+  footstepSounds:
+    collection: FootstepWood
+  barestepSounds:
+    collection: BarestepWood
+  itemDrop: FloorTileItemWood
+  heatCapacity: 10000
+
+- type: tile
   id: FloorWoodBlack
   name: tiles-wood-black
   sprite: /Textures/Corvax/Tiles/wood_black.png
@@ -79,9 +99,9 @@
   heatCapacity: 10000
 
 - type: tile
-  id: FloorWoodTileBlack
-  name: tiles-wood-tile-black
-  sprite: /Textures/Corvax/Tiles/wood_tile_black.png
+  id: FloorWoodChessBlack
+  name: tiles-wood-chess-black
+  sprite: /Textures/Corvax/Tiles/wood_chess_black.png
   variants: 4
   placementVariants:
   - 1.0
@@ -159,9 +179,9 @@
   heatCapacity: 10000
 
 - type: tile
-  id: FloorWoodTileDark
-  name: tiles-wood-tile-dark
-  sprite: /Textures/Corvax/Tiles/wood_tile_dark.png
+  id: FloorWoodChessDark
+  name: tiles-wood-chess-dark
+  sprite: /Textures/Corvax/Tiles/wood_chess_dark.png
   variants: 4
   placementVariants:
   - 1.0
@@ -239,9 +259,9 @@
   heatCapacity: 10000
 
 - type: tile
-  id: FloorWoodTileLight
-  name: tiles-wood-tile-light
-  sprite: /Textures/Corvax/Tiles/wood_tile_light.png
+  id: FloorWoodChessLight
+  name: tiles-wood-chess-light
+  sprite: /Textures/Corvax/Tiles/wood_chess_light.png
   variants: 4
   placementVariants:
   - 1.0
@@ -319,9 +339,9 @@
   heatCapacity: 10000
 
 - type: tile
-  id: FloorWoodTileRed
-  name: tiles-wood-tile-red
-  sprite: /Textures/Corvax/Tiles/wood_tile_red.png
+  id: FloorWoodChessRed
+  name: tiles-wood-chess-red
+  sprite: /Textures/Corvax/Tiles/wood_chess_red.png
   variants: 4
   placementVariants:
   - 1.0

@@ -233,73 +233,91 @@
     stackType: FloorTileItemWoodParquetRed
 
 - type: entity
-  name: tile black wood floor
+  name: chess wood floor
   parent: FloorTileItemBase
-  id: FloorTileItemWoodTileBlack
+  id: FloorTileItemWoodChess
   components:
   - type: Sprite
     sprite: Corvax/Objects/Tiles/wood.rsi
-    state: wood_tile_black
+    state: wood_chess
+  - type: Item
+    sprite: Corvax/Objects/Tiles/wood.rsi
+    heldPrefix: wood
+  - type: FloorTile
+    outputs:
+      - Plating
+      - FloorWoodChess
+  - type: Stack
+    stackType: FloorTileItemWoodChess
+
+- type: entity
+  name: chess black wood floor
+  parent: FloorTileItemBase
+  id: FloorTileItemWoodChessBlack
+  components:
+  - type: Sprite
+    sprite: Corvax/Objects/Tiles/wood.rsi
+    state: wood_chess_black
   - type: Item
     sprite: Corvax/Objects/Tiles/wood.rsi
     heldPrefix: wood-black
   - type: FloorTile
     outputs:
       - Plating
-      - FloorWoodTileBlack
+      - FloorWoodChessBlack
   - type: Stack
-    stackType: FloorTileItemWoodTileBlack
+    stackType: FloorTileItemWoodChessBlack
 
 - type: entity
-  name: tile dark wood floor
+  name: chess dark wood floor
   parent: FloorTileItemBase
-  id: FloorTileItemWoodTileDark
+  id: FloorTileItemWoodChessDark
   components:
   - type: Sprite
     sprite: Corvax/Objects/Tiles/wood.rsi
-    state: wood_tile_dark
+    state: wood_chess_dark
   - type: Item
     sprite: Corvax/Objects/Tiles/wood.rsi
     heldPrefix: wood-dark
   - type: FloorTile
     outputs:
       - Plating
-      - FloorWoodTileDark
+      - FloorWoodChessDark
   - type: Stack
-    stackType: FloorTileItemWoodTileDark
+    stackType: FloorTileItemWoodChessDark
 
 - type: entity
-  name: tile light wood floor
+  name: chess light wood floor
   parent: FloorTileItemBase
-  id: FloorTileItemWoodTileLight
+  id: FloorTileItemWoodChessLight
   components:
   - type: Sprite
     sprite: Corvax/Objects/Tiles/wood.rsi
-    state: wood_tile_light
+    state: wood_chess_light
   - type: Item
     sprite: Corvax/Objects/Tiles/wood.rsi
     heldPrefix: wood-light
   - type: FloorTile
     outputs:
       - Plating
-      - FloorWoodTileLight
+      - FloorWoodChessLight
   - type: Stack
-    stackType: FloorTileItemWoodTileLight
+    stackType: FloorTileItemWoodChessLight
 
 - type: entity
-  name: tile red wood floor
+  name: chess red wood floor
   parent: FloorTileItemBase
-  id: FloorTileItemWoodTileRed
+  id: FloorTileItemWoodChessRed
   components:
   - type: Sprite
     sprite: Corvax/Objects/Tiles/wood.rsi
-    state: wood_tile_red
+    state: wood_chess_red
   - type: Item
     sprite: Corvax/Objects/Tiles/wood.rsi
     heldPrefix: wood-red
   - type: FloorTile
     outputs:
       - Plating
-      - FloorWoodTileRed
+      - FloorWoodChessRed
   - type: Stack
-    stackType: FloorTileItemWoodTileRed
+    stackType: FloorTileItemWoodChessRed
