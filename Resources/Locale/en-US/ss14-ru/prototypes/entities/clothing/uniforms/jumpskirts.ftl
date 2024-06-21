@@ -122,3 +122,5 @@ ent-ClothingUniformJumpskirtCasualRed = casual red jumpskirt
     .desc = A loose worn red shirt with a grey skirt, perfect for someone looking to relax.
 ent-ClothingUniformJumpskirtOldDress = old dress
     .desc = A worn-looking dress from a very long time ago.
+ent-ClothingUniformJumpskirtMusician = musician's skirt
+    .desc = A fancy skirt for the musically inclined. Perfect for any lounge act!
