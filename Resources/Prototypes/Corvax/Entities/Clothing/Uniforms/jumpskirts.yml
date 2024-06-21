@@ -108,3 +108,14 @@
       sprite: Corvax/Clothing/Uniforms/Jumpskirt/rd_classical.rsi
     - type: Clothing
       sprite: Corvax/Clothing/Uniforms/Jumpskirt/rd_classical.rsi
+
+- type: entity
+  parent: ClothingUniformSkirtBase
+  id: ClothingUniformJumpskirtMusician
+  name: carpskin skirt # Corvax-Resprite
+  description: An luxurious skirt made with only the finest scales, perfect for any lounge act! # Corvax-Resprite
+  components:
+  - type: Sprite
+    sprite: Corvax/Clothing/Uniforms/Jumpskirt/musician.rsi
+  - type: Clothing
+    sprite: Corvax/Clothing/Uniforms/Jumpskirt/musician.rsi
