@@ -12,9 +12,6 @@
           nameGenerator:
             !type:NanotrasenNameGenerator
             prefixCreator: 'TA'
-        - type: StationRandomTransform
-          enableStationRotation: false
-          maxStationOffset: null
         - type: StationEmergencyShuttle
           emergencyShuttlePath: /Maps/Shuttles/emergency_pilgrim.yml
         - type: StationJobs

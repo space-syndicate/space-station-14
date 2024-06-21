@@ -15,9 +15,6 @@
             prefixCreator: 'MT'
         - type: StationEmergencyShuttle
           emergencyShuttlePath: /Maps/Shuttles/corvax_emergency.yml
-        - type: StationRandomTransform
-          enableStationRotation: false
-          maxStationOffset: null
         - type: StationBiome
           biome: TerraPlanet
           mapLightColor: "#090303FF"

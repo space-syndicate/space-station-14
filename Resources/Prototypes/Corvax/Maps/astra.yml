@@ -14,9 +14,6 @@
             prefixCreator: 'MT'
         - type: StationEmergencyShuttle
           emergencyShuttlePath: /Maps/Shuttles/corvax_emergency.yml
-        - type: StationRandomTransform
-          enableStationRotation: false
-          maxStationOffset: null
         - type: StationJobs
           availableJobs:
             # service
