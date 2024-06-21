@@ -319,12 +319,12 @@ reagent-effect-guidebook-innoculate-zombie-infection =
 reagent-effect-guidebook-area-reaction =
     { $chance ->
         [1] Вызывает
-        *[other] вызывают
-    } дымовую или пенную реакцию на {NATURALFIXED($duration, 3)} {MANY("second", $duration)}
+       *[other] вызывают
+    } дымовую или пенную реакцию на { NATURALFIXED($duration, 3) } { MANY("second", $duration) }
 reagent-effect-guidebook-add-to-solution-reaction =
     { $chance ->
         [1] Заставляет
-        *[other] заставляют
+       *[other] заставляют
     } химикаты, применённые к объекту, добавиться во внутренний контейнер для растворов этого объекта
 reagent-effect-guidebook-plant-attribute =
     { $chance ->
