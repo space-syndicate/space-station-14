@@ -20,6 +20,7 @@
   - type: ExtensionCableReceiver
   - type: ActivatableUIRequiresPower
   - type: Sprite
+    drawdepth: SmallObjects
     sprite: Structures/Machines/computers.rsi
     layers:
     - map: ["computerLayerBody"]
