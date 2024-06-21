@@ -93892,7 +93892,11 @@ entities:
       pos: -15.5,15.5
       parent: 2
     - type: Door
+<<<<<<< HEAD
       secondsUntilStateChange: -33395.496
+=======
+      secondsUntilStateChange: -33445.777
+>>>>>>> fd7c530fae8cbee40c5ae5f3dcc68f2f67e373ba
       state: Closing
   - uid: 11389
     components:
@@ -133167,7 +133171,11 @@ entities:
       pos: -34.5,-3.5
       parent: 2
     - type: Door
+<<<<<<< HEAD
       secondsUntilStateChange: -55494.887
+=======
+      secondsUntilStateChange: -55545.168
+>>>>>>> fd7c530fae8cbee40c5ae5f3dcc68f2f67e373ba
       state: Closing
   - uid: 15845
     components:
@@ -137054,6 +137062,14 @@ entities:
       parent: 2
 - proto: MaintenanceToolSpawner
   entities:
+<<<<<<< HEAD
+=======
+  - uid: 11123
+    components:
+    - type: Transform
+      pos: 20.5,25.5
+      parent: 2
+>>>>>>> fd7c530fae8cbee40c5ae5f3dcc68f2f67e373ba
   - uid: 11175
     components:
     - type: Transform
@@ -137114,6 +137130,19 @@ entities:
     - type: Transform
       pos: -78.5,-6.5
       parent: 2
+<<<<<<< HEAD
+=======
+  - uid: 29420
+    components:
+    - type: Transform
+      pos: -6.5,27.5
+      parent: 2
+  - uid: 29421
+    components:
+    - type: Transform
+      pos: 1.5,27.5
+      parent: 2
+>>>>>>> fd7c530fae8cbee40c5ae5f3dcc68f2f67e373ba
 - proto: MaintenanceWeaponSpawner
   entities:
   - uid: 16209

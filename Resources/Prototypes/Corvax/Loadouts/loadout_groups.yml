@@ -4,3 +4,11 @@
   minLimit: 0
   maxLimit: 5
   loadouts: []
+
+- type: loadoutGroup
+  id: ChiefEngineerBackpack
+  name: loadout-group-chief-engineer-backpack
+  loadouts:
+  - ChiefEngineerBackpack
+  - ChiefEngineerSatchel
+  - ChiefEngineerDuffel

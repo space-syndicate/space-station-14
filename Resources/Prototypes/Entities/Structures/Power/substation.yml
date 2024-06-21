@@ -24,7 +24,7 @@
   - type: PointLight
     radius: 1.5
     energy: 1
-    color: "#ff6900"
+    color: "#34e06d" # Corvax-Resprite
     castShadows: false
   - type: NodeContainer
     examinable: true
@@ -127,7 +127,7 @@
   - type: PointLight
     radius: 1.5
     energy: 1
-    color: "#ff6900"
+    color: "#34e06d" # Corvax-Resprite
     netsync: false
     castShadows: false
     offset: 0, -0.2

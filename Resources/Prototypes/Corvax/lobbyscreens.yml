@@ -126,6 +126,10 @@
   id: YouLookLonely
   background: /Textures/Corvax/LobbyScreens/you-look-lonely.png
 
+- type: lobbyBackground
+  id: GrayTide
+  background: /Textures/Corvax/LobbyScreens/gray-tide.png
+
 #- type: lobbyBackground
 #  id: NewYearBar
 #  background: /Textures/Corvax/LobbyScreens/new-year-bar.png
