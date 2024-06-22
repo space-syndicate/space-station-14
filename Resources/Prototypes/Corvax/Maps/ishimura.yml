@@ -8,9 +8,6 @@
     Ishimura:
       stationProto: StandardNanotrasenStation
       components:
-        - type: StationRandomTransform
-          enableStationRotation: false
-          maxStationOffset: null
         - type: StationNameSetup
           mapNameTemplate: '{0} USG Ishimura {1}'
           nameGenerator:

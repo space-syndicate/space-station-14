@@ -8,6 +8,7 @@
   - CaptainBackpack
   - CaptainOuterClothing
   - Trinkets
+  - Survival
   - Inventory # Corvax-Loadouts
 
 - type: roleLoadout
@@ -20,6 +21,7 @@
   - HoPOuterClothing
   - Glasses
   - Trinkets
+  - Survival
   - Inventory # Corvax-Loadouts
 
 # Civilian
@@ -34,6 +36,7 @@
   - PassengerShoes
   - Glasses
   - Trinkets
+  - Survival
   - Inventory # Corvax-Loadouts
 
 - type: roleLoadout
@@ -45,6 +48,7 @@
   - BartenderOuterClothing
   - Glasses
   - Trinkets
+  - Survival
   - Inventory # Corvax-Loadouts
 
 - type: roleLoadout
@@ -54,6 +58,7 @@
   - CommonBackpack
   - Glasses
   - Trinkets
+  - Survival
   - Inventory # Corvax-Loadouts
 
 - type: roleLoadout
@@ -66,6 +71,7 @@
   - ChefOuterClothing
   - Glasses
   - Trinkets
+  - Survival
   - Inventory # Corvax-Loadouts
 
 - type: roleLoadout
@@ -75,6 +81,7 @@
   - CommonBackpack
   - Glasses
   - Trinkets
+  - Survival
   - Inventory # Corvax-Loadouts
 
 - type: roleLoadout
@@ -85,6 +92,7 @@
   - CommonBackpack
   - Glasses
   - Trinkets
+  - Survival
   - Inventory # Corvax-Loadouts
 
 - type: roleLoadout
@@ -98,6 +106,7 @@
   - ChaplainOuterClothing
   - Glasses
   - Trinkets
+  - Survival
   - Inventory # Corvax-Loadouts
 
 - type: roleLoadout
@@ -110,6 +119,8 @@
   - JanitorOuterClothing
   - Glasses
   - Trinkets
+  - JanitorPlunger
+  - Survival
   - Inventory # Corvax-Loadouts
 
 - type: roleLoadout
@@ -121,6 +132,7 @@
   - BotanistOuterClothing
   - Glasses
   - Trinkets
+  - Survival
   - Inventory # Corvax-Loadouts
 
 - type: roleLoadout
@@ -133,6 +145,7 @@
   - ClownShoes
   - Glasses
   - Trinkets
+  - SurvivalClown
   - Inventory # Corvax-Loadouts
 
 - type: roleLoadout
@@ -145,16 +158,19 @@
   - MimeOuterClothing
   - Glasses
   - Trinkets
+  - Survival
   - Inventory # Corvax-Loadouts
 
 - type: roleLoadout
   id: JobMusician
   groups:
+  - MusicianJumpsuit
   - CommonBackpack
   - MusicianOuterClothing
   - Glasses
   - Trinkets
   - Instruments
+  - Survival
   - Inventory # Corvax-Loadouts
 
 # Cargo
@@ -169,6 +185,7 @@
   - QuartermasterShoes
   - Glasses
   - Trinkets
+  - Survival
   - Inventory # Corvax-Loadouts
 
 - type: roleLoadout
@@ -181,6 +198,7 @@
   - CargoTechnicianShoes
   - Glasses
   - Trinkets
+  - Survival
   - Inventory # Corvax-Loadouts
 
 - type: roleLoadout
@@ -191,6 +209,7 @@
   - SalvageSpecialistShoes
   - Glasses
   - Trinkets
+  - Survival
   - Inventory # Corvax-Loadouts
 
 # Engineering
@@ -204,6 +223,7 @@
   - ChiefEngineerOuterClothing
   - ChiefEngineerShoes
   - Trinkets
+  - SurvivalExtended
   - Inventory # Corvax-Loadouts
 
 - type: roleLoadout
@@ -212,6 +232,7 @@
   - TechnicalAssistantJumpsuit
   - StationEngineerBackpack
   - Trinkets
+  - SurvivalExtended
   - Inventory # Corvax-Loadouts
 
 - type: roleLoadout
@@ -224,6 +245,7 @@
   - StationEngineerShoes
   - StationEngineerID
   - Trinkets
+  - SurvivalExtended
   - Inventory # Corvax-Loadouts
 
 - type: roleLoadout
@@ -234,6 +256,7 @@
   - AtmosphericTechnicianOuterClothing
   - AtmosphericTechnicianShoes
   - Trinkets
+  - SurvivalExtended
   - Inventory # Corvax-Loadouts
 
 # Science
@@ -249,6 +272,7 @@
   - ResearchDirectorShoes
   - Glasses
   - Trinkets
+  - Survival
   - Inventory # Corvax-Loadouts
 
 - type: roleLoadout
@@ -264,6 +288,7 @@
   - ScientistPDA
   - Glasses
   - Trinkets
+  - Survival
   - Inventory # Corvax-Loadouts
 
 - type: roleLoadout
@@ -273,6 +298,7 @@
   - ScientistBackpack
   - Glasses
   - Trinkets
+  - Survival
   - Inventory # Corvax-Loadouts
 
 # Security
@@ -287,6 +313,7 @@
   - HeadofSecurityOuterClothing
   - SecurityShoes
   - Trinkets
+  - SurvivalSecurity
   - Inventory # Corvax-Loadouts
 
 - type: roleLoadout
@@ -299,6 +326,7 @@
   - WardenOuterClothing
   - SecurityShoes
   - Trinkets
+  - SurvivalSecurity
   - Inventory # Corvax-Loadouts
 
 - type: roleLoadout
@@ -312,6 +340,7 @@
   - SecurityPDA
   - SecurityBelt
   - Trinkets
+  - SurvivalSecurity
   - Inventory # Corvax-Loadouts
 
 - type: roleLoadout
@@ -324,6 +353,7 @@
   - DetectiveOuterClothing
   - SecurityShoes
   - Trinkets
+  - SurvivalSecurity
   - Inventory # Corvax-Loadouts
 
 - type: roleLoadout
@@ -332,6 +362,7 @@
   - SecurityCadetJumpsuit
   - SecurityBackpack
   - Trinkets
+  - SurvivalSecurity
   - Inventory # Corvax-Loadouts
 
 # Medical
@@ -348,6 +379,7 @@
   - ChiefMedicalOfficerShoes
   - Glasses
   - Trinkets
+  - SurvivalMedical
   - Inventory # Corvax-Loadouts
 
 - type: roleLoadout
@@ -363,6 +395,7 @@
   - MedicalDoctorPDA
   - Glasses
   - Trinkets
+  - SurvivalMedical
   - Inventory # Corvax-Loadouts
 
 - type: roleLoadout
@@ -372,6 +405,7 @@
   - MedicalBackpack
   - Glasses
   - Trinkets
+  - SurvivalMedical
   - Inventory # Corvax-Loadouts
 
 - type: roleLoadout
@@ -384,6 +418,7 @@
   - ChemistOuterClothing
   - MedicalShoes
   - Trinkets
+  - SurvivalMedical
   - Inventory # Corvax-Loadouts
 
 - type: roleLoadout
@@ -398,6 +433,7 @@
   - ParamedicShoes
   - Glasses
   - Trinkets
+  - SurvivalMedical
   - Inventory # Corvax-Loadouts
 
 # Wildcards
@@ -407,6 +443,7 @@
   - CommonBackpack
   - Glasses
   - Trinkets
+  - Survival
   - Inventory # Corvax-Loadouts
 
 - type: roleLoadout
@@ -416,6 +453,7 @@
   - CommonBackpack
   - Glasses
   - Trinkets
+  - Survival
   - Inventory # Corvax-Loadouts
 
 - type: roleLoadout
@@ -424,6 +462,7 @@
   - MedicalBackpack
   - Glasses
   - Trinkets
+  - Survival
   - Inventory # Corvax-Loadouts
 
 - type: roleLoadout
@@ -434,4 +473,37 @@
   - CommonBackpack
   - Glasses
   - Trinkets
+  - Survival
   - Inventory # Corvax-Loadouts
+
+# These loadouts will be used without player configuration, thus they must be designed to work without manual selection
+
+- type: roleLoadout
+  id: LoadoutSurvivalStandard
+  groups:
+  - Survival
+
+- type: roleLoadout
+  id: LoadoutSurvivalClown
+  groups:
+  - SurvivalClown
+
+- type: roleLoadout
+  id: LoadoutSurvivalExtended
+  groups:
+  - SurvivalExtended
+
+- type: roleLoadout
+  id: LoadoutSurvivalMedical
+  groups:
+  - SurvivalMedical
+
+- type: roleLoadout
+  id: LoadoutSurvivalSecurity
+  groups:
+  - SurvivalSecurity
+
+- type: roleLoadout
+  id: LoadoutSurvivalSyndicate
+  groups:
+  - SurvivalSyndicate

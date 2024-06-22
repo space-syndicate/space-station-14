@@ -1,18 +1,18 @@
 # Jumpsuit
 - type: loadout
-  id: ResearchDirectorJumpsuitFormal
-  equipment: ResearchDirectorJumpsuitFormal
+  id: ResearchDirectorJumpsuitClassical
+  equipment: ResearchDirectorJumpsuitClassical
 
 - type: startingGear
-  id: ResearchDirectorJumpsuitFormal
+  id: ResearchDirectorJumpsuitClassical
   equipment:
-    jumpsuit: ClothingUniformJumpsuitRDFormal
+    jumpsuit: ClothingUniformJumpsuitRDClassical
 
 - type: loadout
-  id: ResearchDirectorJumpskirtFormal
-  equipment: ResearchDirectorJumpskirtFormal
+  id: ResearchDirectorJumpskirtClassical
+  equipment: ResearchDirectorJumpskirtClassical
 
 - type: startingGear
-  id: ResearchDirectorJumpskirtFormal
+  id: ResearchDirectorJumpskirtClassical
   equipment:
-    jumpsuit: ClothingUniformJumpskirtRDFormal
+    jumpsuit: ClothingUniformJumpskirtRDClassical
