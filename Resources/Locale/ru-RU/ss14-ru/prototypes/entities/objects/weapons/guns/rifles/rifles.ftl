@@ -9,5 +9,5 @@ ent-WeaponRifleM90GrenadeLauncher = М-90gl
 ent-WeaponRifleLecter = Лектер
     .desc = Первоклассная армейская штурмовая винтовка. Использует патроны калибра .20 винтовочный.
     .suffix = Автомат
-ent-WeaponRifleFoam = Foam Force Astro Ace
-    .desc = A premium foam rifle of the highest quality. Its plastic feels rugged, and its mechanisms sturdy.
+ent-WeaponRifleFoam = Астро-Ас Сила Пенопласта
+    .desc = Первоклассная пенопластовая винтовка высочайшего качества. Её пластик прочен на ощупь, а механизмы надёжены.
