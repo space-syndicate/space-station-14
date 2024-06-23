@@ -124,5 +124,5 @@ ent-ClothingUniformJumpskirtCasualRed = повседневная красная 
     .desc = Свободная потёртая красная рубашка с серой юбкой - идеальный вариант для тех, кто хочет расслабиться.
 ent-ClothingUniformJumpskirtOldDress = старое платье
     .desc = Очень старое поношенное платье.
-ent-ClothingUniformJumpskirtMusician = musician's skirt
-    .desc = A fancy skirt for the musically inclined. Perfect for any lounge act!
+ent-ClothingUniformJumpskirtMusician = юбка музыканта
+    .desc = Модная юбка для музыкально настроенных людей. Идеально подойдёт для любого выступления в стиле лаунж!
