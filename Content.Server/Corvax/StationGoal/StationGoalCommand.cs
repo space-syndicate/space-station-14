@@ -46,15 +46,18 @@ namespace Content.Server.Corvax.StationGoal
 
         public CompletionResult GetCompletion(IConsoleShell shell, string[] args)
         {
-            if (args.Length == 1)
+            switch (args.Length)
             {
-                var options = IoCManager.Resolve<IPrototypeManager>()
-                    .EnumeratePrototypes<StationGoalPrototype>()
-                    .Select(p => new CompletionOption(p.ID));
+                case 1:
+                    return CompletionResult.FromHint("[StationId]");
+                    break;
+                case 2:
+                    var options = IoCManager.Resolve<IPrototypeManager>()
+                        .EnumeratePrototypes<StationGoalPrototype>()
+                        .Select(p => new CompletionOption(p.ID));
 
-                return CompletionResult.FromHintOptions(options, Loc.GetString("send-station-goal-command-arg-id"));
+                    return CompletionResult.FromHintOptions(options, Loc.GetString("send-station-goal-command-arg-id"));
             }
-
             return CompletionResult.Empty;
         }
     }

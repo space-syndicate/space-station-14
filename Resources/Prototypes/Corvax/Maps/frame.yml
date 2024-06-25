@@ -64,6 +64,4 @@
             CargoTechnician: [ 2, 2 ]
         - type: StationGoal
           goals:
-          - Shuttle
-          - SolarPanels
           - FrameRepair
