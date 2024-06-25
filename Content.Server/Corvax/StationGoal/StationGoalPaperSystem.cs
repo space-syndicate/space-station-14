@@ -93,16 +93,20 @@ namespace Content.Server.Corvax.StationGoal
 
             var wasSent = false;
             var query = EntityQueryEnumerator<FaxMachineComponent>();
-            while (query.MoveNext(out var uid, out var fax))
+            while (query.MoveNext(out var faxUid, out var fax))
             {
                 if (!fax.ReceiveStationGoal)
                     continue;
 
                 var largestGrid = _station.GetLargestGrid(stationData);
-                var grid = Transform(uid).GridUid;
+                var grid = Transform(faxUid).GridUid;
                 if (grid is not null && largestGrid == grid.Value)
                 {
-                    _fax.Receive(uid, printout, null, fax);
+                    _fax.Receive(faxUid, printout, null, fax);
+                    foreach (var spawnEnt in goal.Spawns)
+                    {
+                        SpawnAtPosition(spawnEnt, Transform(faxUid).Coordinates);
+                    }
                     wasSent = true;
                 }
             }
