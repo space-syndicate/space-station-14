@@ -14,14 +14,14 @@
       - id: Scalpel
 
 - type: entity
-  id: ClothingBackpackDuffelCBURNFilled
-  parent: ClothingBackpackDuffelCBURN
+  id: ClothingBackpackDuffelMilitaryFilled
+  parent: ClothingBackpackDuffelMilitary
   suffix: Filled
   components:
   - type: StorageFill
     contents:
     - id: BoxSurvivalEngineering
-    - id: WeaponShotgunDoubleBarreled
+    - id: WeaponShotgunEnforcer
     - id: BoxShotgunIncendiary
       amount: 2
     - id: GrenadeFlashBang
