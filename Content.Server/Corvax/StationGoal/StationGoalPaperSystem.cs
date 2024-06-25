@@ -26,35 +26,40 @@ namespace Content.Server.Corvax.StationGoal
         public override void Initialize()
         {
             base.Initialize();
-            SubscribeLocalEvent<StationGoalComponent ,MapInitEvent>(OnMapInit);
+            SubscribeLocalEvent<RoundStartingEvent>(OnRoundStarting);
         }
 
-        private void OnMapInit(Entity<StationGoalComponent> station, ref MapInitEvent args)
+        private void OnRoundStarting(RoundStartingEvent ev)
         {
             var playerCount = _playerManager.PlayerCount;
 
-            StationGoalPrototype? selGoal = null;
-            while (station.Comp.Goals.Count > 0)
+            var query = EntityQueryEnumerator<StationGoalComponent>();
+            while (query.MoveNext(out var uid, out var station))
             {
-                var goalId = _random.Pick(station.Comp.Goals);
-                var goalProto = _proto.Index(goalId);
-
-                if (playerCount > goalProto.MaxPlayers ||
-                    playerCount < goalProto.MinPlayers)
+                StationGoalPrototype? selGoal = null;
+                while (station.Goals.Count > 0)
                 {
-                    station.Comp.Goals.Remove(goalId);
-                    continue;
+                    var goalId = _random.Pick(station.Goals);
+                    var goalProto = _proto.Index(goalId);
+
+                    if (playerCount > goalProto.MaxPlayers ||
+                        playerCount < goalProto.MinPlayers)
+                    {
+                        station.Goals.Remove(goalId);
+                        continue;
+                    }
+
+                    selGoal = goalProto;
+                    break;
                 }
 
-                selGoal = goalProto;
-            }
+                if (selGoal is null)
+                    return;
 
-            if (selGoal is null)
-                return;
-
-            if (SendStationGoal(station, selGoal))
-            {
-                Log.Info($"Goal {selGoal.ID} has been sent to station {MetaData(station).EntityName}");
+                if (SendStationGoal(uid, selGoal))
+                {
+                    Log.Info($"Goal {selGoal.ID} has been sent to station {MetaData(uid).EntityName}");
+                }
             }
         }
 
