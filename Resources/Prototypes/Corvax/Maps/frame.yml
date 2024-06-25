@@ -62,3 +62,14 @@
             # cargo
             SalvageSpecialist: [ 3, 3 ]
             CargoTechnician: [ 2, 2 ]
+        - type: StationGoal
+          goals:
+          #- Shuttle
+          #- Singularity
+          #- SolarPanels
+          #- Artifacts
+          #- Bank
+          #- Zoo
+          #- MiningOutpost
+          - Tesla
+          - Frame_Repair
