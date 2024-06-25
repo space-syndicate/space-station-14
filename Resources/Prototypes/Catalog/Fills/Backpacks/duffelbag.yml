@@ -14,8 +14,8 @@
       - id: Scalpel
 
 - type: entity
-  id: ClothingBackpackDuffelMilitaryFilled
-  parent: ClothingBackpackDuffelMilitary
+  id: ClothingBackpackDuffelCBURNFilled
+  parent: ClothingBackpackDuffelCBURN
   suffix: Filled
   components:
   - type: StorageFill
