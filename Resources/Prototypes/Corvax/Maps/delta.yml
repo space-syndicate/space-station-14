@@ -2,6 +2,8 @@
   id: CorvaxDelta
   mapName: 'Delta Station'
   mapPath: /Maps/corvax_delta.yml
+  maxRandomOffset: 0
+  randomRotation: false
   minPlayers: 55
   stations:
     Delta:
