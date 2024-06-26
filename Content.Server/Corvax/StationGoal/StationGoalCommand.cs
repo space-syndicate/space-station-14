@@ -1,5 +1,6 @@
 using System.Linq;
 using Content.Server.Administration;
+using Content.Server.Commands;
 using Content.Shared.Administration;
 using Robust.Shared.Console;
 using Robust.Shared.Prototypes;
@@ -10,6 +11,7 @@ namespace Content.Server.Corvax.StationGoal
     public sealed class StationGoalCommand : IConsoleCommand
     {
         [Dependency] private readonly IEntityManager _entManager = default!;
+
         public string Command => "sendstationgoal";
         public string Description => Loc.GetString("send-station-goal-command-description");
         public string Help => Loc.GetString("send-station-goal-command-help-text", ("command", Command));
@@ -49,8 +51,8 @@ namespace Content.Server.Corvax.StationGoal
             switch (args.Length)
             {
                 case 1:
-                    return CompletionResult.FromHint("[StationId]");
-                    break;
+                    var stations = ContentCompletionHelper.StationIds(_entManager);
+                    return CompletionResult.FromHintOptions(stations, "[StationId]");
                 case 2:
                     var options = IoCManager.Resolve<IPrototypeManager>()
                         .EnumeratePrototypes<StationGoalPrototype>()
