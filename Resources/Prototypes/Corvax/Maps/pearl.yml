@@ -2,6 +2,8 @@
   id: CorvaxPearl
   mapName: 'Pearl Island'
   mapPath: /Maps/corvax_pearl.yml
+  maxRandomOffset: 0
+  randomRotation: false
   minPlayers: 20
   maxPlayers: 50
   stations:

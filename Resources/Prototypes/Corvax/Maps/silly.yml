@@ -2,6 +2,8 @@
   id: CorvaxSilly
   mapName: 'Silly Island'
   mapPath: /Maps/corvax_silly.yml
+  maxRandomOffset: 0
+  randomRotation: false
   minPlayers: 0
   maxPlayers: 30
   stations:
