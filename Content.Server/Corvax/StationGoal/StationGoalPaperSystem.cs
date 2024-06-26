@@ -69,7 +69,7 @@ namespace Content.Server.Corvax.StationGoal
         }
 
         /// <summary>
-        ///     Send a station goal to all faxes which are authorized to receive it.
+        ///     Send a station goal on selected station to all faxes which are authorized to receive it.
         /// </summary>
         /// <returns>True if at least one fax received paper</returns>
         public bool SendStationGoal(EntityUid? ent, StationGoalPrototype goal)
