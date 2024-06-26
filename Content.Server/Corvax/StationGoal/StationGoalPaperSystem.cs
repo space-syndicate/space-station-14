@@ -36,16 +36,17 @@ namespace Content.Server.Corvax.StationGoal
             var query = EntityQueryEnumerator<StationGoalComponent>();
             while (query.MoveNext(out var uid, out var station))
             {
+                var tempGoals = new List<ProtoId<StationGoalPrototype>>(station.Goals);
                 StationGoalPrototype? selGoal = null;
-                while (station.Goals.Count > 0)
+                while (tempGoals.Count > 0)
                 {
-                    var goalId = _random.Pick(station.Goals);
+                    var goalId = _random.Pick(tempGoals);
                     var goalProto = _proto.Index(goalId);
 
                     if (playerCount > goalProto.MaxPlayers ||
                         playerCount < goalProto.MinPlayers)
                     {
-                        station.Goals.Remove(goalId);
+                        tempGoals.Remove(goalId);
                         continue;
                     }
 
