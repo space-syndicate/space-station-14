@@ -97,6 +97,15 @@
         visualType: Large
         messages: [ "slime-hurt-by-water-popup" ]
         probability: 0.25
+  - type: FootstepModifier
+    footstepSoundCollection:
+      path: /Audio/Effects/Footsteps/slime1.ogg
+      params:
+        volume: 3
+  - type: Tag
+    tags:
+    - FootstepSound
+    - DoorBumpOpener
   - type: Butcherable
     butcheringType: Spike
     spawned:
