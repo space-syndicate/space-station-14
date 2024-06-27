@@ -1,1 +1,1 @@
-station-event-immovable-rod-start-announcement = Что это за хуйня?!
+station-event-immovable-rod-start-announcement = Цитирую вопрос из центкома: Какого хрена это было?1
