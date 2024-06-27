@@ -13,6 +13,7 @@
       - id: ClothingHeadsetAltSecurity
       - id: ClothingHandsGlovesCombat
       - id: ClothingShoesBootsJack
+      - id: ClothingShoesBootsJackSec # Corvax-Clothing
       - id: ClothingOuterCoatWarden
       - id: ClothingOuterWinterWarden
       - id: RubberStampWarden
@@ -36,6 +37,7 @@
       - id: ClothingHeadsetAltSecurity
       - id: ClothingHandsGlovesCombat
       - id: ClothingShoesBootsJack
+      - id: ClothingShoesBootsJackSec # Corvax-Clothing
       - id: ClothingOuterCoatWarden
       - id: ClothingOuterWinterWarden
       - id: ClothingOuterCoatWardenAlt # Corvax-SecFashion
@@ -56,6 +58,7 @@
       - id: ClothingUniformJumpsuitSecGrey
         prob: 0.3
       - id: ClothingHeadHelmetBasic
+      - id: ClothingOuterVestArmorSec # Corvax-Clothing
       - id: ClothingOuterArmorBasic
       - id: ClothingBeltSecurityFilled
       - id: Flash
@@ -64,6 +67,7 @@
       - id: ClothingHeadsetSecurity
       - id: ClothingHandsGlovesColorBlack
       - id: ClothingShoesBootsJack
+      - id: ClothingShoesBootsJackSec # Corvax-Clothing
       - id: WeaponMeleeNeedle
         prob: 0.1
       - id: ClothingOuterCoatSecurityOvercoat # Corvax-SecFashion
