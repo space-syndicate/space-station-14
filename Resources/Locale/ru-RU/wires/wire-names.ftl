@@ -66,3 +66,4 @@ wire-name-bomb-boom = БУУМ
 wire-name-bomb-bolt = БОЛТ
 wire-name-speech = ДНМК
 wire-name-listen = МИКР
+wire-name-log = LOG
