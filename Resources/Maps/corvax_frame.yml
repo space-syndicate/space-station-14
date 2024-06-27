@@ -2195,8 +2195,6 @@ entities:
       parent: 183
     - type: DeviceLinkSink
       invokeCounter: 1
-      links:
-      - 480
     - type: DeviceLinkSource
       linkedPorts:
         480:
@@ -2208,8 +2206,6 @@ entities:
       parent: 183
     - type: DeviceLinkSink
       invokeCounter: 1
-      links:
-      - 479
     - type: DeviceLinkSource
       linkedPorts:
         479:
@@ -2292,8 +2288,6 @@ entities:
       parent: 183
     - type: DeviceLinkSink
       invokeCounter: 1
-      links:
-      - 481
     - type: DeviceLinkSource
       linkedPorts:
         481:
@@ -2307,8 +2301,6 @@ entities:
       parent: 183
     - type: DeviceLinkSink
       invokeCounter: 1
-      links:
-      - 473
     - type: DeviceLinkSource
       linkedPorts:
         473:
@@ -3021,27 +3013,18 @@ entities:
       rot: 1.5707963267948966 rad
       pos: -1.5,9.5
       parent: 183
-    - type: DeviceLinkSink
-      links:
-      - 657
   - uid: 468
     components:
     - type: Transform
       rot: 1.5707963267948966 rad
       pos: -0.5,9.5
       parent: 183
-    - type: DeviceLinkSink
-      links:
-      - 657
   - uid: 469
     components:
     - type: Transform
       rot: 1.5707963267948966 rad
       pos: 0.5,9.5
       parent: 183
-    - type: DeviceLinkSink
-      links:
-      - 657
 - proto: BorgCharger
   entities:
   - uid: 905
@@ -6235,14 +6218,6 @@ entities:
       parent: 183
 - proto: ComputerComms
   entities:
-  - uid: 672
-    components:
-    - type: Transform
-      rot: -1.5707963267948966 rad
-      pos: 9.5,12.5
-      parent: 183
-- proto: ComputerId
-  entities:
   - uid: 679
     components:
     - type: Transform
@@ -7348,9 +7323,6 @@ entities:
       parent: 183
     - type: SpawnOnTrigger
       proto: FrameStationRandomSpawner
-    - type: DeviceLinkSink
-      links:
-      - 637
     - type: ExplodeOnTrigger
     - type: Explosive
       repeatable: True
@@ -7368,9 +7340,6 @@ entities:
       parent: 183
     - type: SpawnOnTrigger
       proto: FrameStationRandomSpawner
-    - type: DeviceLinkSink
-      links:
-      - 637
     missingComponents:
     - DeleteOnTrigger
 - proto: ExtendedEmergencyNitrogenTankFilled
@@ -7454,6 +7423,13 @@ entities:
     components:
     - type: Transform
       pos: 5.5,13.5
+      parent: 183
+- proto: FaxMachineCaptain
+  entities:
+  - uid: 672
+    components:
+    - type: Transform
+      pos: 9.5,12.5
       parent: 183
 - proto: FireAlarm
   entities:
@@ -10117,6 +10093,15 @@ entities:
     - type: Physics
       canCollide: False
     - type: InsideEntityStorage
+- proto: IDComputerCircuitboard
+  entities:
+  - uid: 1258
+    components:
+    - type: Transform
+      parent: 1100
+    - type: Physics
+      canCollide: False
+    - type: InsideEntityStorage
 - proto: InflatableDoor
   entities:
   - uid: 217
@@ -10369,6 +10354,7 @@ entities:
           occludes: True
           ents:
           - 2077
+          - 1258
         paper_label: !type:ContainerSlot
           showEnts: False
           occludes: True
@@ -10867,25 +10853,6 @@ entities:
     - type: Transform
       pos: 15.5,34.5
       parent: 183
-- proto: Paper
-  entities:
-  - uid: 2061
-    components:
-    - type: Transform
-      pos: 9.392816,11.551641
-      parent: 183
-    - type: Paper
-      stampState: paper_stamp-centcom
-      stampedBy:
-      - stampedColor: '#006600FF'
-        stampedName: stamp-component-stamped-name-centcom
-      content: >
-        Цель вашей смены - завершить строительство станции типа Frame, достроив каждому отделу помещения, необходимые для успешной работы. Также вам необходимо построить кухню и гидропонику для сервисного отдела, оружейную и место содержания заключенных для отдела Службы безопасности и обеспечить свободный проход пассажиров станции до отбытия, без необходимости выхода в открытый космос.
-
-
-        Для помощи в выполнении цели мы будет каждые 5 минут высылать вам припасы на специальной посадочной площадке в центре станции.
-
-        Слава НТ!
 - proto: PartRodMetal
   entities:
   - uid: 778
@@ -11349,9 +11316,6 @@ entities:
     - type: ApcPowerReceiver
       powerLoad: 0
       needsPower: False
-    - type: DeviceLinkSink
-      links:
-      - 637
   - uid: 2071
     components:
     - type: Transform
@@ -11367,9 +11331,6 @@ entities:
     - type: ApcPowerReceiver
       powerLoad: 0
       needsPower: False
-    - type: DeviceLinkSink
-      links:
-      - 637
 - proto: Protolathe
   entities:
   - uid: 739
@@ -11735,6 +11696,13 @@ entities:
     - type: Transform
       pos: 9.5,6.5
       parent: 183
+- proto: SalvageExpeditionsComputerCircuitboard
+  entities:
+  - uid: 2104
+    components:
+    - type: Transform
+      pos: 12.720777,1.4060018
+      parent: 183
 - proto: SalvageMagnet
   entities:
   - uid: 992
@@ -11749,6 +11717,18 @@ entities:
     components:
     - type: Transform
       pos: 8.5,7.5
+      parent: 183
+- proto: ShardGlass
+  entities:
+  - uid: 2106
+    components:
+    - type: Transform
+      pos: 12.855494,1.9927481
+      parent: 183
+  - uid: 2107
+    components:
+    - type: Transform
+      pos: 13.730494,1.5969146
       parent: 183
 - proto: SheetPlasma1
   entities:
@@ -11818,6 +11798,11 @@ entities:
     - type: Transform
       pos: -9.995162,21.40628
       parent: 183
+  - uid: 2105
+    components:
+    - type: Transform
+      pos: 12.38617,1.3851688
+      parent: 183
 - proto: ShuttersNormalOpen
   entities:
   - uid: 108
@@ -11826,9 +11811,6 @@ entities:
       rot: -1.5707963267948966 rad
       pos: 4.5,-0.5
       parent: 2
-    - type: DeviceLinkSink
-      links:
-      - 114
 - proto: ShuttleWindow
   entities:
   - uid: 109
@@ -11930,9 +11912,6 @@ entities:
         - Timer: Toggle
         2060:
         - Timer: Trigger
-    - type: DeviceLinkSink
-      links:
-      - 638
     - type: ApcPowerReceiver
       needsPower: False
     - type: Stealth
@@ -11954,9 +11933,6 @@ entities:
       linkedPorts:
         637:
         - Timer: Trigger
-    - type: DeviceLinkSink
-      links:
-      - 637
     - type: ApcPowerReceiver
       needsPower: False
     - type: ActiveSignalTimer
@@ -12786,21 +12762,23 @@ entities:
       parent: 183
 - proto: SteelBench
   entities:
-  - uid: 1258
-    components:
-    - type: Transform
-      pos: -2.5,7.5
-      parent: 183
-  - uid: 1261
-    components:
-    - type: Transform
-      pos: -3.5,7.5
-      parent: 183
   - uid: 1562
     components:
     - type: Transform
       rot: -1.5707963267948966 rad
       pos: 0.5,5.5
+      parent: 183
+  - uid: 2061
+    components:
+    - type: Transform
+      rot: 3.141592653589793 rad
+      pos: -2.5,7.5
+      parent: 183
+  - uid: 2103
+    components:
+    - type: Transform
+      rot: 3.141592653589793 rad
+      pos: -3.5,7.5
       parent: 183
 - proto: StoolBar
   entities:
@@ -13016,6 +12994,12 @@ entities:
     components:
     - type: Transform
       pos: 9.5,19.5
+      parent: 183
+  - uid: 1261
+    components:
+    - type: Transform
+      rot: -1.5707963267948966 rad
+      pos: 9.5,12.5
       parent: 183
 - proto: TegCenter
   entities:
@@ -15284,9 +15268,6 @@ entities:
       rot: 1.5707963267948966 rad
       pos: 1.5,-3.5
       parent: 2
-    - type: DeviceLinkSink
-      links:
-      - 13
 - proto: WindoorServiceLocked
   entities:
   - uid: 418
