@@ -64,3 +64,6 @@
             # cargo
             SalvageSpecialist: [ 3, 3 ]
             CargoTechnician: [ 2, 2 ]
+        - type: StationGoal
+          goals:
+          - FrameRepair
