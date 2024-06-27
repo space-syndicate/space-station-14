@@ -1,1 +1,1 @@
-station-event-immovable-rod-start-announcement = Цитирую вопрос из центкома: Какого хрена это было?1
+station-event-immovable-rod-start-announcement = Цитирую вопрос из центкома: Какого хрена это было?!
