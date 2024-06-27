@@ -11,4 +11,4 @@ ent-Claymore = claymore
 ent-Cutlass = cutlass
     .desc = A wickedly curved blade, often seen in the hands of space pirates.
 ent-Throngler = The Throngler
-    .desc = Why would someone make this?
+    .desc = Why would you make this?

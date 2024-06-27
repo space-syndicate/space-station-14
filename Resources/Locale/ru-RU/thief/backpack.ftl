@@ -4,7 +4,7 @@ thief-backpack-window-description =
     Теперь вам необходимо вспомнить, что вы в него положили.
     Выберите { $maxCount } { $maxCount ->
         [1] набор
-        *[other] разных набора
+       *[other] разных набора
     } из списка.
 thief-backpack-window-selected = Выбрано наборов: ({ $selectedCount }/{ $maxCount })
 thief-backpack-window-approve-button = Принять
