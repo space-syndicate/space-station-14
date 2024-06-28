@@ -15,7 +15,7 @@ ent-WebShield = паутинный щит
 ent-ClockworkShield = заводной щит
     .desc = Ratvar oyrffrf lbh jvgu uvf cebgrpgvba. Ратвар благословляет вас Своей защитой.
 ent-MirrorShield = зеркальный щит
-    .desc = Светится пугающим красным светом. Вы слышите, как Геометр шепчет...
+    .desc = Жутко светится красным... Вы слышите, как геометр шепчет...
 # Corvax-HiddenDesc-Start
 ent-EnergyShield = подозрительное устройство
     .suffix = энергощит
