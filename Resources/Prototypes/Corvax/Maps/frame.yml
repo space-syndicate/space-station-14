@@ -2,6 +2,8 @@
   id: CorvaxFrame
   mapName: 'Frame Station'
   mapPath: /Maps/corvax_frame.yml
+  maxRandomOffset: 0
+  randomRotation: false
   minPlayers: 0
   maxPlayers: 15
   stations:
@@ -40,16 +42,10 @@
               - /Maps/Ruins/derelict.yml
               - /Maps/Ruins/djstation.yml
               - /Maps/Ruins/old_ai_sat.yml
-              - /Maps/Ruins/relaystation.yml
               - /Maps/Ruins/syndicate_dropship.yml
               - /Maps/Ruins/whiteship_ancient.yml
               - /Maps/Ruins/whiteship_bluespacejumper.yml
-        - type: StationRandomTransform
-          enableStationRotation: false
-          maxStationOffset: null
         - type: StationJobs
-          overflowJobs:
-            - Passenger
           availableJobs:
             # service
             Passenger: [ -1, -1 ]
@@ -68,3 +64,6 @@
             # cargo
             SalvageSpecialist: [ 3, 3 ]
             CargoTechnician: [ 2, 2 ]
+        - type: StationGoal
+          goals:
+          - FrameRepair

@@ -35,8 +35,12 @@ panic-bunker-account-denied = Этот сервер находится в реж
 panic-bunker-account-denied-reason = Этот сервер находится в режиме "Бункер", часто используемом в качестве меры предосторожности против рейдов. Новые подключения от аккаунтов, не соответствующих определённым требованиям, временно не принимаются. Повторите попытку позже Причина: "{ $reason }"
 panic-bunker-account-reason-account = Ваш аккаунт Space Station 14 слишком новый. Он должен быть старше { $minutes } минут
 panic-bunker-account-reason-overall =
-    Необходимо минимальное отыгранное Вами время на сервере — { $hours } { $hours ->
-        [one] час
-        [few] часа
-       *[other] часов
+    Необходимо минимальное отыгранное Вами время на сервере — { $minutes } { $minutes ->
+        [one] минута
+        [few] минуты
+       *[other] минут
     }.
+baby-jail-account-denied = This server is a newbie server, intended for new players and those who want to help them. New connections by accounts that are too old or are not on a whitelist are not accepted. Check out some other servers and see everything Space Station 14 has to offer. Have fun!
+baby-jail-account-denied-reason = This server is a newbie server, intended for new players and those who want to help them. New connections by accounts that are too old or are not on a whitelist are not accepted. Check out some other servers and see everything Space Station 14 has to offer. Have fun! Reason: "{ $reason }"
+baby-jail-account-reason-account = Your Space Station 14 account is too old. It must be younger than { $minutes } minutes
+baby-jail-account-reason-overall = Your overall playtime on the server must be younger than { $minutes } $minutes

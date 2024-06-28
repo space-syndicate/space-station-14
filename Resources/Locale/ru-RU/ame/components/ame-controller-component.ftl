@@ -8,7 +8,6 @@ ame-window-title = Блок управления антиматерией
 ame-window-engine-status-label = Состояние двигателя:
 ame-window-engine-injection-status-not-injecting-label = Не впрыскивает
 ame-window-engine-injection-status-injecting-label = Впрыскивание...
-ame-window-toggle-injection-button = Переключение впрыска
 ame-window-fuel-status-label = Количество топлива:
 ame-window-fuel-not-inserted-text = Топливо не вставлено
 ame-window-injection-amount-label = Количество впрыска:

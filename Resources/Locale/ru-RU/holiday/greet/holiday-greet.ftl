@@ -69,6 +69,7 @@ holiday-name-festive-season = наступающего Нового года
 holiday-name-boxing-day = Дня подарков
 holiday-name-friday-thirteenth = Дня неприятностей
 holiday-name-national-coming-out-day = Национального дня каминг-аута
+holiday-name-pride-month = Месяца гордости
 
 ## Custom congrats
 

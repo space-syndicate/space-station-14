@@ -1,0 +1,18 @@
+# Jumpsuit
+- type: loadout
+  id: HoPJumpsuitTurtleneck
+  equipment: HoPJumpsuitTurtleneck
+
+- type: startingGear
+  id: HoPJumpsuitTurtleneck
+  equipment:
+    jumpsuit: ClothingUniformJumpsuitHoPTurtleneck
+
+- type: loadout
+  id: HoPJumpskirtTurtleneck
+  equipment: HoPJumpskirtTurtleneck
+
+- type: startingGear
+  id: HoPJumpskirtTurtleneck
+  equipment:
+    jumpsuit: ClothingUniformJumpskirtHoPTurtleneck

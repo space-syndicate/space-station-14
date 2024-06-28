@@ -1,5 +1,5 @@
 - type: entity
-  parent: MobObserver
+  parent: [MobObserver, InventoryBase]
   id: AdminObserver
   name: admin observer
   noSpawn: true
@@ -84,11 +84,9 @@
   - type: Stripping
   - type: SolutionScanner
   - type: IgnoreUIRange
-  - type: ShowRevIcons
-  - type: ShowZombieIcons
+  - type: ShowAntagIcons
   - type: Inventory
     templateId: aghost
-  - type: InventorySlots
   - type: Loadout
     prototypes: [ MobAghostGear ]
   - type: BypassInteractionChecks

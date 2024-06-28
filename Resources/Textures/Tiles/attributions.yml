@@ -21,14 +21,19 @@
   copyright: "TauCetiStation commit 4cd533cf0a4243050364023af9a4fcaca209dce7"
   source: "https://github.com/TauCetiStation/TauCetiClassic/"
 
-- files: ["blue_circuit.png", "cropped_parallax.png", "eighties.png", "gold.png", "grass.png", "ironsand1.png", "ironsand2.png", "ironsand3.png", "ironsand4.png", "junglegrass.png", "lattice.png", "plating.png", "reinforced.png", "silver.png", "snow.png", "wood.png"]
+- files: ["blue_circuit.png", "cropped_parallax.png", "eighties.png", "gold.png", "ironsand1.png", "ironsand2.png", "ironsand3.png", "ironsand4.png", "lattice.png", "plating.png", "reinforced.png", "silver.png", "snow.png", "wood.png"]
   license: "CC-BY-SA-3.0"
-  copyright: "tgstation commit 8abb19545828230d92ba18827feeb42a67a55d49, cropped_parallax modified from parallax."
+  copyright: "tgstation commit 8abb19545828230d92ba18827feeb42a67a55d49, cropped_parallax modified from parallax, reinforced modified by Ko4erga (discord), wood resprited by Meowstushka and modified by Ko4erga (discord)"
   source: "https://github.com/tgstation/tgstation/"
+
+- files: ["grass.png", "junglegrass.png", "grassdark.png", "grassjungle.png", "grasslight.png"] #Corvax
+  license: "CC-BY-SA-3.0"
+  copyright: "Created by Ko4erga (discord)"
+  source: "https://github.com/space-wizards/space-station-14/pull/29134"
 
 - files: ["super_reinforced.png"]
   license: "CC-BY-SA-3.0"
-  copyright: "Modified from reinforced.png by github user @Flareguy"
+  copyright: "Modified from reinforced.png by github user @Flareguy, modified by Ko4erga (discord)"
   source: "https://github.com/space-wizards/space-station-14/pull/18676"
 
 - files: ["asteroid_plating.png, snow_plating.png"]
@@ -91,14 +96,14 @@
   copyright: "Mojave-Sun, taken at commit 0587dd16e28108bdf0b0a28e2caae4319845e861"
   source: "https://github.com/Mojave-Sun/mojave-sun-13"
 
-- files: ["grassdark.png", "grasslight.png", "dirt.png"]
+- files: ["dirt.png"]
   license: "CC-BY-SA-3.0"
-  copyright: "Fortuna commit 2a9408a47e2f83d945335e4feeeeafb552173e6f, grasslight and dirt by Peptide based on grassdark.png and dirt."
+  copyright: "Fortuna commit 2a9408a47e2f83d945335e4feeeeafb552173e6f, dirt by Peptide based on grassdark.png and dirt."
   source: "https://github.com/FortunaSS13/Fortuna"
 
 - files: ["steel_maint.png", "grating_maint.png", "wood_tile.png"]
   license: "CC-BY-SA-3.0"
-  copyright: "by brainfood for space-station-14, ."
+  copyright: "by brainfood for space-station-14; wood tile resprited by Dezzzix and modified by Ko4erga (discord)"
   source: "https://github.com/space-wizards/space-station-14/pull/12193"
 
 - files: ["meat.png"]
@@ -108,7 +113,7 @@
 
 - files: ["wood_broken.png"]
   license: "CC-BY-SA-3.0"
-  copyright: "taken at https://github.com/ParadiseSS13/Paradise/blob/8b7f4c8b69c74c6de5a755272eb8d3520f3d87c7/icons/turf/floors.dmi"
+  copyright: "taken at https://github.com/ParadiseSS13/Paradise/blob/8b7f4c8b69c74c6de5a755272eb8d3520f3d87c7/icons/turf/floors.dmi; resprited by Meowstushka and modified by Ko4erga (discord)"
   source: "https://github.com/ParadiseSS13/Paradise"
 
 - files: ["chromite.png"]
@@ -128,5 +133,5 @@
 
 - files: ["wood_large.png"]
   license: "CC0-1.0"
-  copyright: "Created by ps3moira (github) for space-station-14."
+  copyright: "Created by ps3moira (github) for space-station-14; resprited by Meowstushka and modified by Ko4erga (discord)"
   source: "https://github.com/space-wizards/space-station-14/"
