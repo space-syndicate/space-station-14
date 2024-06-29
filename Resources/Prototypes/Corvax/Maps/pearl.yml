@@ -2,6 +2,8 @@
   id: CorvaxPearl
   mapName: 'Pearl Island'
   mapPath: /Maps/corvax_pearl.yml
+  maxRandomOffset: 0
+  randomRotation: false
   minPlayers: 20
   maxPlayers: 50
   stations:
@@ -64,3 +66,11 @@
             Quartermaster: [ 1, 1 ]
             SalvageSpecialist: [ 3, 3 ]
             CargoTechnician: [ 3, 3 ]
+        - type: StationGoal
+          goals:
+          - SolarPanels
+          - Artifacts
+          - Bank
+          - Zoo
+          - MiningOutpost
+          - Tesla

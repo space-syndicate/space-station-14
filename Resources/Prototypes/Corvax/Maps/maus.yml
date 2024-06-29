@@ -2,6 +2,8 @@
   id: CorvaxMaus
   mapName: 'Maus Station'
   mapPath: /Maps/corvax_maus.yml
+  maxRandomOffset: 0
+  randomRotation: false
   minPlayers: 0
   maxPlayers: 30
   stations:

@@ -2,6 +2,8 @@
   id: CorvaxAstra
   mapName: 'Astra Station'
   mapPath: /Maps/corvax_astra.yml
+  maxRandomOffset: 0
+  randomRotation: false
   minPlayers: 40
   stations:
     Astra:
@@ -62,7 +64,14 @@
             Quartermaster: [ 1, 1 ]
             SalvageSpecialist: [ 3, 3 ]
             CargoTechnician: [ 4, 5 ]
-
-
-
-
+        - type: StationGoal
+          goals:
+          - Shuttle
+          - Singularity
+          - SolarPanels
+          - Artifacts
+          - Bank
+          - Zoo
+          - MiningOutpost
+          - Tesla
+          - VirusologyAmbusol

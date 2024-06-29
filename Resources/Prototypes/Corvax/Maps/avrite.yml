@@ -2,6 +2,8 @@
   id: CorvaxAvrite
   mapName: 'Avrite Station'
   mapPath: /Maps/corvax_avrit.yml
+  maxRandomOffset: 0
+  randomRotation: false
   minPlayers: 40
   stations:
     Avrit:
