@@ -35,7 +35,7 @@
   components:
   - type: Sprite
     state: syndie_flag
-    
+
 - type: entity
   parent: BaseFlag
   id: LGBTQFlag
@@ -44,7 +44,7 @@
   components:
   - type: Sprite
     state: lgbtq_flag
-    
+
 - type: entity
   parent: BaseFlag
   id: PirateFlag
@@ -53,3 +53,15 @@
   components:
   - type: Sprite
     state: pirate_flag
+
+    ### наше
+
+- type: entity
+  parent: BaseFlag
+  id: CCTotenkopfFlag
+  suffix: skibidistation
+  name: CC Мертвая голова
+  description: "Невер луз ёр смайл"
+  components:
+  - type: Sprite
+    state: totenkopf_flag
