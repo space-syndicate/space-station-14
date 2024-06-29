@@ -288,3 +288,29 @@
   - type: ClothingRequiredStepTriggerImmune
     slots: WITHOUT_POCKET
 
+
+    ### наше
+
+- type: entity
+  parent: ClothingOuterArmorBasic
+  id: SvoArmor
+  suffix: Svo, skibidistation
+  name: Броня сво
+  description: Общевойсковой бронежилет вооруженных сил Российской федерации, 5А класса защиты.
+  components:
+  - type: Sprite
+    sprite: Clothing/OuterClothing/Armor/bronyacbo.rsi
+  - type: Clothing
+    sprite: Clothing/OuterClothing/Armor/bronyacbo.rsi
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.7
+        Slash: 0.6
+        Piercing: 0.4
+        Heat: 0.8
+  - type: ExplosionResistance
+    damageCoefficient: 0.90
+  - type: ClothingSpeedModifier
+    walkModifier: 0.80
+    sprintModifier: 0.80

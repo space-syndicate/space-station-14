@@ -1,0 +1,170 @@
+- type: entity
+  name: Огнемёт "Выжигатель Толчков"
+  id: WeaponFlamethrower
+  parent: BaseWeaponHeavyMachineGun
+  description: Ходят слухи, что топливом для огнемет служит говно вирмира.
+  suffix: skibidistation
+  components:
+  - type: Sprite
+    sprite: SG/flamethrower.rsi
+    layers:
+    - state: base
+      map: ["enum.GunVisualLayers.Base"]
+    - state: mag-0
+      map: ["enum.GunVisualLayers.Mag"]
+  - type: Item
+    sprite: SG/flamethrower.rsi
+    size: Large
+  - type: Wieldable
+  - type: GunWieldBonus
+    minAngle: -20
+    maxAngle: -30
+  - type: Gun
+    projectileSpeed: 9
+    minAngle: 24
+    maxAngle: 45
+    angleIncrease: 4
+    angleDecay: 16
+    fireRate: 8
+    soundGunshot:
+      path: /Audio/Effects/extinguish.ogg
+  - type: ChamberMagazineAmmoProvider
+  - type: AmmoCounter
+  - type: Appearance
+  - type: ItemSlots
+    slots:
+      gun_magazine:
+        name: Magazine
+        startingItem: FuelTankFlamethrower
+        insertSound: /Audio/Weapons/Guns/MagIn/batrifle_magin.ogg
+        ejectSound: /Audio/Weapons/Guns/MagOut/batrifle_magout.ogg
+        priority: 2
+        whitelist:
+          tags:
+            - TankFlamethrower
+      gun_chamber:
+        name: Chamber
+        priority: 1
+        whitelist:
+          tags:
+            - CartridgeFlamethrower
+  - type: ContainerContainer
+    containers:
+      gun_magazine: !type:ContainerSlot
+      gun_chamber: !type:ContainerSlot
+  - type: MagazineVisuals
+    magState: mag
+    steps: 1
+    zeroVisible: true
+
+
+- type: Tag
+  id: CartridgeFlamethrower
+
+- type: Tag
+  id: TankFlamethrower
+
+- type: Tag
+  id: Napalm
+
+- type: entity
+  id: FuelTankFlamethrower
+  name: Топливо для огнемёта
+  parent: BaseItem
+  suffix: MarinesGear
+  components:
+  - type: Tag
+    tags:
+      - TankFlamethrower
+  - type: Item
+    size: Normal
+  - type: BallisticAmmoProvider
+    mayTransfer: true
+    capacity: 150
+    proto: CartridgeFlamethrower
+    whitelist:
+      tags:
+        - Napalm
+  - type: ContainerContainer
+    containers:
+      ballistic-ammo: !type:Container
+  - type: Sprite
+    sprite: SG/flamethrower-magazine.rsi
+    state: base
+
+- type: entity
+  parent: BaseCartridge
+  id: CartridgeFlamethrower
+  suffix: MarinesGear
+  name: понос вирмира
+  components:
+  - type: Tag
+    tags:
+    - Cartridge
+    - Napalm
+  - type: Sprite
+    noRot: false
+    sprite: Objects/Weapons/Guns/Ammunition/Casings/ammo_casing.rsi
+    layers:
+    - state: base
+      map: ["enum.AmmoVisualLayers.Base"]
+  - type: CartridgeAmmo
+    proto: FlamethrowerProjectile
+    deleteOnSpawn: true
+
+
+- type: entity
+  id: FlamethrowerProjectile
+  name: ОГОНЬ, ЕБАТЬ
+  description: уэээ
+  noSpawn: true
+  components:
+  - type: FlyBySound
+  - type: Clickable
+  - type: Sprite
+    netsync: false
+    noRot: false
+    sprite: SG/magic.rsi
+    layers:
+    - state: fireball
+      shader: unshaded
+  - type: Physics
+    bodyType: Dynamic
+    linearDamping: 0
+    angularDamping: 0
+  - type: Fixtures
+    fixtures:
+      projectile:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.1,-0.1,0.1,0.1"
+        hard: false
+        mask:
+        - Impassable
+        - BulletImpassable
+      fly-by: &flybyfixture
+        shape: !type:PhysShapeCircle
+          radius: 1.5
+        layer:
+        - Impassable
+        - MidImpassable
+        - HighImpassable
+        - LowImpassable
+        hard: False
+  - type: PointLight
+    enabled: true
+    color: "#FF8080"
+    radius: 5.0
+    energy: 5.0
+  - type: Projectile
+    impactEffect: BulletImpactEffect
+    damage:
+      types:
+        Heat: 15
+        Structural: 25
+    soundHit:
+      path: "/Audio/Weapons/Guns/Hits/energy_meat1.ogg"
+  - type: TimedDespawn
+    lifetime: 2
+  - type: IgniteOnCollide
+    fireStacks: 1

@@ -36,9 +36,9 @@
       revolver-ammo: !type:Container
   - type: RevolverAmmoProvider
     whitelist:
-      tags:
-        - CartridgeMagnum
-        - SpeedLoaderMagnum
+    tags:
+      - CartridgeMagnum
+      - SpeedLoaderMagnum
     proto: CartridgeMagnum
     capacity: 6
     chambers: [ True, True, True, True, True, True ]
@@ -89,6 +89,7 @@
   - type: Clothing
     sprite: Objects/Weapons/Guns/Revolvers/inspector.rsi
   - type: RevolverAmmoProvider
+    whitelist:
     capacity: 6
     chambers: [ True, True, True, True, True, True ]
     ammoSlots: [ null, null, null, null, null, null ]
@@ -103,6 +104,7 @@
     sprite: Objects/Weapons/Guns/Revolvers/mateba.rsi
   - type: Clothing
     sprite: Objects/Weapons/Guns/Revolvers/mateba.rsi
+  - type: RevolverAmmoProvider
   - type: Gun
     fireRate: 3
     soundGunshot:
@@ -118,6 +120,7 @@
     sprite: Objects/Weapons/Guns/Revolvers/python.rsi
   - type: Clothing
     sprite: Objects/Weapons/Guns/Revolvers/python.rsi
+  - type: RevolverAmmoProvider
   - type: Gun
     selectedMode: SemiAuto
     fireRate: 2
@@ -136,10 +139,6 @@
   description: A robust revolver favoured by Syndicate agents. Uses .45 magnum ammo.
   components:
   - type: RevolverAmmoProvider
-    whitelist:
-      tags:
-        - CartridgeMagnum
-        - SpeedLoaderMagnum
     proto: CartridgeMagnumAP
 
 
@@ -162,3 +161,28 @@
     capacity: 5
     chambers: [ True, True, True, True, True ]
     ammoSlots: [ null, null, null, null, null ]
+
+- type: entity
+  name: Гипер Ястреб
+  parent: BaseWeaponRevolver
+  id: WeaponRevolverHyperIastreb
+  description: хохлобойник номер 1 с бс системой подачи патрон.
+  suffix: skibidistation
+  components:
+  - type: Sprite
+    sprite: Objects/Weapons/Guns/Revolvers/hyper_iastreb.rsi
+  - type: Clothing
+    sprite: Objects/Weapons/Guns/Revolvers/hyper_iastreb.rsi
+  - type: Gun
+    selectedMode: FullAuto
+    fireRate: 5
+    availableModes:
+      - FullAuto
+    soundGunshot:
+      path: /Audio/Weapons/Guns/Gunshots/mateba.ogg
+  - type: RevolverAmmoProvider
+    proto: CartridgeMagnumUranium
+    whitelist:
+    capacity: 10
+    chambers: [ True, True, True, True, True, True, True, True, True, True]
+    ammoSlots: [ null, null, null, null, null, null, null, null, null, null,]

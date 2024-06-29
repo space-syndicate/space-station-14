@@ -75,6 +75,26 @@
       map: ["enum.GunVisualLayers.Mag"]
 
 - type: entity
+  id: MagazineModMagnum
+  name: модифицированный пистолетный магазин (.45 магнум)
+  parent: BaseMagazineMagnum
+  components:
+  - type: BallisticAmmoProvider
+    proto: CartridgeMagnum
+  - type: Sprite
+    layers:
+    - state: red
+      map: ["enum.GunVisualLayers.Base"]
+    - state: mag-1
+      map: ["enum.GunVisualLayers.Mag"]
+    - type: BallisticAmmoProvider
+      mayTransfer: true
+      whitelist:
+        tags:
+          - CartridgeMagnum
+      capacity: 12
+
+- type: entity
   id: MagazineMagnumPractice
   name: pistol magazine (.45 magnum practice)
   parent: BaseMagazineMagnum

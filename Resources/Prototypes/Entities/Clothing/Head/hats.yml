@@ -1102,3 +1102,19 @@
     sprite: Clothing/Head/Hats/beret_medic.rsi
   - type: Clothing
     sprite: Clothing/Head/Hats/beret_medic.rsi
+
+
+    ### наше
+
+
+- type: entity
+  parent: ClothingHeadBase
+  id: ClothingHeadHatCC
+  name: Фуражка СС
+  description: в ней воевал мой дед
+  suffix: skibidistation
+  components:
+  - type: Sprite
+    sprite: Clothing/Head/Hats/cc_cap.rsi
+  - type: Clothing
+    sprite: Clothing/Head/Hats/cc_cap.rsi

@@ -382,3 +382,27 @@
     sprite: Clothing/Head/Helmets/podwars_helmet.rsi
   - type: Clothing
     sprite: Clothing/Head/Helmets/podwars_helmet.rsi
+
+
+
+  ### наше
+
+
+- type: entity
+  parent: ClothingHeadBase
+  suffix: Svo, skibidistation
+  id: ClothingHeadHelmetSvo
+  name: Шлем сво
+  description: Сразу видно шлем армии.
+  components:
+  - type: Sprite
+    sprite: Clothing/Head/Helmets/shlemsvo.rsi
+  - type: Clothing
+    sprite: Clothing/Head/Helmets/shlemsvo.rsi
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.9
+        Slash: 0.9
+        Piercing: 0.8
+        Heat: 0.9

@@ -119,3 +119,25 @@
     steps: 7
     zeroVisible: false
   - type: Appearance
+
+- type: entity
+  id: SpeedLoaderMagnumHyperIastreb
+  name: Спидлоадер Гипер Ястреб (.45 magnum)
+  parent: BaseSpeedLoaderMagnum
+  suffix: skibidistation
+  components:
+  - type: BallisticAmmoProvider
+    capacity: 10
+    proto: CartridgeMagnumUranium
+  - type: Sprite
+    sprite: Objects/Weapons/Guns/Ammunition/SpeedLoaders/Magnum/hyper_iastreb_speed_loader.rsi
+    layers:
+      - state: base
+        map: [ "enum.GunVisualLayers.Base" ]
+      - state: uranium-6
+        map: [ "enum.GunVisualLayers.Mag" ]
+  - type: MagazineVisuals
+    magState: uranium
+    steps: 7
+    zeroVisible: false
+  - type: Appearance

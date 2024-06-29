@@ -100,7 +100,7 @@
     maxAngle: -16
   - type: Gun
     minAngle: 21
-    maxAngle: 32 
+    maxAngle: 32
     shotsPerBurst: 5
     availableModes:
     - SemiAuto
@@ -272,5 +272,31 @@
   - type: MagazineVisuals
     magState: mag
     steps: 6
+    zeroVisible: true
+  - type: Appearance
+
+- type: entity
+  name: ВОВОКС
+  parent: BaseWeaponSubMachineGun
+  id: WeaponSubMachineGunVovox
+  description: ANOTHER BLUESPACE CLASSIC. используется 0.35
+  suffix: skibidistation
+  components:
+  - type: Sprite
+    sprite: Objects/Weapons/Guns/SMGs/vovox.rsi
+    layers:
+    - state: base
+      map: ["enum.GunVisualLayers.Base"]
+    - state: mag-0
+      map: ["enum.GunVisualLayers.Mag"]
+  - type: Clothing
+    sprite: Objects/Weapons/Guns/SMGs/vovox.rsi
+  - type: Gun
+    fireRate: 14
+    soundGunshot:
+      path: /Audio/Weapons/Guns/Gunshots/atreides.ogg
+  - type: MagazineVisuals
+    magState: mag
+    steps: 1
     zeroVisible: true
   - type: Appearance

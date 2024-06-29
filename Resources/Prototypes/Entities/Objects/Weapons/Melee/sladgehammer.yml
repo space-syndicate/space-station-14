@@ -1,0 +1,26 @@
+- type: entity
+  name: Superfors DB 2020 Dead Blow Hammer
+  parent: BaseItem
+  id: SledgehammerTarkov
+  suffix: Svo, skibidistation
+  description: Молот покрыт уретаном что обеспечивает "глухой удар" с использованием стальных шариков для амортизации удара и уменьшения вибрации отдачи в рукоять.
+  components:
+  - type: Sprite
+    sprite: Objects/Weapons/Melee/sledgehammertarkov.rsi
+    state: icon
+  - type: MeleeWeapon
+    wideAnimationRotation: -135
+    damage:
+      types:
+        Blunt: 15
+        Structural: 10
+    soundHit:
+      collection: MetalThud
+  - type: Wieldable
+  - type: IncreaseDamageOnWield
+    damage:
+      types:
+        Blunt: 25
+        Structural: 25
+  - type: Item
+    size: Large

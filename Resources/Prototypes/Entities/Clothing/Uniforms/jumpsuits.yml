@@ -1347,3 +1347,32 @@
     sprite: Clothing/Uniforms/Jumpsuit/familiar_garbs.rsi
   - type: Clothing
     sprite: Clothing/Uniforms/Jumpsuit/familiar_garbs.rsi
+
+
+
+    ### наше
+
+- type: entity
+  parent: ClothingUniformBase
+  id: SVOuniform
+  suffix: Svo, skibidistation
+  name: Комбинезон ВС РФ (Цифра)
+  description: Общевойсковая униформа ВС РФ в камуфляже Цифры.
+  components:
+  - type: Sprite
+    sprite: Clothing/Uniforms/Jumpsuit/uniformsvo.rsi
+  - type: Clothing
+    sprite: Clothing/Uniforms/Jumpsuit/uniformsvo.rsi
+
+- type: entity
+  parent: ClothingUniformBase
+  id: ClothingUniformJumpsuitCC
+  name: Форма СС
+  description: в ней воевал мой дед
+  suffix: skibidistation
+  components:
+    - type: Sprite
+      sprite: Clothing/Uniforms/Jumpsuit/cc_jumsuit.rsi
+    - type: Clothing
+      sprite: Clothing/Uniforms/Jumpsuit/cc_jumsuit.rsi
+
