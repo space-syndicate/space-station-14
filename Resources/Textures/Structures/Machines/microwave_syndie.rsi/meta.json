@@ -16,8 +16,18 @@
         {
             "name": "mw0"
         },
-        {
-            "name": "mw_running_unlit"
+        { 
+            "name": "mw_running_unlit",
+            "delays": [
+                [
+                    1.0,
+                    1.0,
+                    1.0,
+                    1.0,
+                    1.0,
+                    1.0
+                ]
+            ]
         },
         {
             "name": "mwb"
