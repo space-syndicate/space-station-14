@@ -1685,17 +1685,17 @@
 
 - type: entity
   parent: VendingMachine
-  id: VendingMachineAtmosDrobe
-  name: AtmosDrobe
-  description: This relatively unknown vending machine delivers clothing for Atmospherics Technicians, an equally unknown job.
+  id: VendingMachineAtmosDrobe2
+  name: Раздатчик Вещей Для Арийца
+  description: Для настоящего арийца
   components:
   - type: VendingMachine
-    pack: AtmosDrobeInventory
+    pack: AtmosDrobeInventory2
     offState: off
     brokenState: broken
     normalState: normal-unshaded
   - type: Advertise
-    pack: AtmosDrobeAds
+    pack: CigaretteMachineAds
   - type: SpeakOnUIClosed
     pack: GenericVendGoodbyes
   - type: Sprite
