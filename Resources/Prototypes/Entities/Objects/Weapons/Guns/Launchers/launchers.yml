@@ -375,3 +375,41 @@
       tags:
         - CartridgeRocket
     proto: ImmovableRodSlow
+
+
+
+
+- type: entity
+  name: РГМ-40 "Кастет"
+  parent: [BaseWeaponLauncher, BaseGunWieldable]
+  id: RGM40
+  description: Российский ручной гранатомет, под гранаты 40 мм, однозарядный
+  suffix: skibidistation
+  components:
+  - type: Sprite
+    sprite: Objects\Weapons\Guns\Launchers\rgm.rsi
+    layers:
+      - state: icon
+        map: ["enum.GunVisualLayers.Base"]
+  - type: Clothing
+    sprite: Objects\Weapons\Guns\Launchers\rgm.rsi
+    slots:
+    - Back
+    - suitStorage
+  - type: AmmoCounter
+  - type: Gun
+    fireRate: 1
+    selectedMode: SemiAuto
+    availableModes:
+      - SemiAuto
+    soundGunshot:
+      path: /Audio/Weapons/Guns/Gunshots/grenade_launcher.ogg
+  - type: BallisticAmmoProvider
+    whitelist:
+      tags:
+        - Grenade
+    capacity: 1
+    proto: GrenadeFrag
+    soundInsert:
+      path: /Audio/Weapons/Guns/MagIn/batrifle_magin.ogg
+

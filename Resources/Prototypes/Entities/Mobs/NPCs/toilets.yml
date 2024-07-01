@@ -947,7 +947,7 @@
   - type: MobThresholds
     thresholds:
       0: Alive
-      400: Dead
+      500: Dead
   - type: SlowOnDamage
   - type: HTN
     rootTask:
@@ -985,7 +985,7 @@
     thresholds:
       - trigger:
           !type:DamageTrigger
-          damage: 420
+          damage: 520
         behaviors:
           - !type:DoActsBehavior
             acts: [ "Destruction" ]
@@ -995,5 +995,60 @@
           - !type:SpawnEntitiesBehavior
             spawn:
               Telecrystal:
-                min: 300
-                max: 300
+                min: 400
+                max: 400
+
+- type: entity
+  name: Скибиди АЛЛАХ ЕБАТЬ НОУ ВЕЙ
+  parent: MobSkibidiToilet
+  id: MobSkibidiToiletAllah
+  description: АЛЛАХУ АКБАР
+  suffix: skibidistation
+  components:
+  - type: Sprite
+    drawdepth: Mobs
+    sprite: Mobs/Toilets/toilet_allah.rsi
+    layers:
+    - map: ["enum.DamageStateVisualLayers.Base"]
+      state: toilet
+  - type: MobThresholds
+    thresholds:
+      0: Alive
+      500: Dead
+  - type: SlowOnDamage
+    speedModifierThresholds:
+      40: 0.7
+  - type: MeleeWeapon
+    altDisarm: false
+    angle: 0
+    soundHit: /Audio/Toilets/brrr_skibidi.ogg
+    animation: WeaponArcBite
+    damage:
+      groups:
+        Brute: 30
+  - type: MovementSpeedModifier
+    baseSprintSpeed: 5
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeCircle
+          radius: 0.45
+        density: 450
+        mask:
+        - MobMask
+        layer:
+        - MobLayer
+  - type: Explosive
+    explosionType: Default
+    maxIntensity: 10
+    intensitySlope: 10
+    totalIntensity: 225
+  - type: ExplodeOnTrigger
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 200
+      behaviors:
+      - !type:ExplodeBehavior
