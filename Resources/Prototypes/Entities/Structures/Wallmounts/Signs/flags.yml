@@ -65,3 +65,33 @@
   components:
   - type: Sprite
     state: totenkopf_flag
+
+- type: entity
+  parent: BaseFlag
+  id: SvoFlag
+  suffix: Svo, skibidistation
+  name: Zzz
+  description: "Сво"
+  components:
+  - type: Sprite
+    state: z_flag
+
+- type: entity
+  parent: BaseFlag
+  id: NaziFlag
+  suffix: skibidistation
+  name: Свастика
+  description: "Обычная свастика"
+  components:
+  - type: Sprite
+    state: nazi_flag
+
+- type: entity
+  parent: BaseFlag
+  id: EmrireFlag
+  suffix: skibidistation
+  name: Империя
+  description: "Империя"
+  components:
+  - type: Sprite
+    state: emrire_flag
