@@ -248,3 +248,57 @@
       interactFailureString: petting-failure-generic
       interactSuccessSound:
         path: /Audio/Animals/snake_hiss.ogg
+
+- type: entity
+  name: Скибиди Туррель Казачок
+  description: Наш казачок!!!
+  parent: BaseWeaponTurret
+  id: WeaponTurretSkibidiToilet
+  suffix: Xeno
+  components:
+    - type: NpcFactionMember
+      factions:
+        - Xeno
+    - type: Sprite
+      sprite: Mobs/Toilets/toilet_turrel.rsi
+      noRot: true
+      layers:
+        - state: toilet
+    - type: BallisticAmmoProvider
+      proto: AntiParticlesProjectile
+      capacity: 500
+    - type: Gun
+      fireRate: 1
+      selectedMode: FullAuto
+      soundGunshot: /Audio/Toilets/shtibidi_dop_dop_dop.ogg
+    - type: HTN
+      rootTask:
+        task: TurretCompound
+      blackboard:
+        SoundTargetInLOS: !type:SoundPathSpecifier
+          path: /Audio/Toilets/brrr_skibidi.ogg
+    - type: Damageable
+      damageContainer: Biological
+    - type: Destructible
+      thresholds:
+        - trigger:
+            !type:DamageTrigger
+            damage: 100
+          behaviors:
+            - !type:DoActsBehavior
+              acts: [ "Destruction" ]
+            - !type:PlaySoundBehavior
+              sound:
+                path: /Audio/Effects/gib1.ogg
+            - !type:SpawnEntitiesBehavior
+              spawn:
+                Telecrystal:
+                  min: 50
+                  max: 50
+    - type: InteractionPopup
+      interactDelay: 1.0
+      successChance: 0.8
+      interactSuccessString: petting-success-generic
+      interactFailureString: petting-failure-generic
+      interactSuccessSound:
+        path: /Audio/Toilets/brrr_skibidi.ogg
