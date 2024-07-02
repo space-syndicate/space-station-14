@@ -1,5 +1,5 @@
 ent-CrystalGreen = кристалл
-    .desc = Блестящий зелёный кристалл.
+    .desc = Твёрдое кристаллическое образование.
     .suffix = Зелёный
 ent-CrystalPink = { ent-CrystalGreen }
     .desc = { ent-CrystalGreen.desc }
