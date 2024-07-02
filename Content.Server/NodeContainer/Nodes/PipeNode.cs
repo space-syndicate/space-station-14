@@ -20,7 +20,7 @@ namespace Content.Server.NodeContainer.Nodes
         ///     The directions in which this pipe can connect to other pipes around it.
         /// </summary>
         [DataField("pipeDirection")]
-        public PipeDirection OriginalPipeDirection;
+        private PipeDirection _originalPipeDirection;
 
         /// <summary>
         ///     The *current* pipe directions (accounting for rotation)
@@ -110,26 +110,26 @@ namespace Content.Server.NodeContainer.Nodes
                 return;
 
             var xform = entMan.GetComponent<TransformComponent>(owner);
-            CurrentPipeDirection = OriginalPipeDirection.RotatePipeDirection(xform.LocalRotation);
+            CurrentPipeDirection = _originalPipeDirection.RotatePipeDirection(xform.LocalRotation);
         }
 
         bool IRotatableNode.RotateNode(in MoveEvent ev)
         {
-            if (OriginalPipeDirection == PipeDirection.Fourway)
+            if (_originalPipeDirection == PipeDirection.Fourway)
                 return false;
 
             // update valid pipe direction
             if (!RotationsEnabled)
             {
-                if (CurrentPipeDirection == OriginalPipeDirection)
+                if (CurrentPipeDirection == _originalPipeDirection)
                     return false;
 
-                CurrentPipeDirection = OriginalPipeDirection;
+                CurrentPipeDirection = _originalPipeDirection;
                 return true;
             }
 
             var oldDirection = CurrentPipeDirection;
-            CurrentPipeDirection = OriginalPipeDirection.RotatePipeDirection(ev.NewRotation);
+            CurrentPipeDirection = _originalPipeDirection.RotatePipeDirection(ev.NewRotation);
             return oldDirection != CurrentPipeDirection;
         }
 
@@ -142,12 +142,12 @@ namespace Content.Server.NodeContainer.Nodes
 
             if (!RotationsEnabled)
             {
-                CurrentPipeDirection = OriginalPipeDirection;
+                CurrentPipeDirection = _originalPipeDirection;
                 return;
             }
 
             var xform = entityManager.GetComponent<TransformComponent>(Owner);
-            CurrentPipeDirection = OriginalPipeDirection.RotatePipeDirection(xform.LocalRotation);
+            CurrentPipeDirection = _originalPipeDirection.RotatePipeDirection(xform.LocalRotation);
         }
 
         public override IEnumerable<Node> GetReachableNodes(TransformComponent xform,

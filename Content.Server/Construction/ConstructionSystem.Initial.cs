@@ -16,7 +16,6 @@ using Content.Shared.Inventory;
 using Content.Shared.Storage;
 using Content.Shared.Whitelist;
 using Robust.Shared.Containers;
-using Robust.Shared.Map;
 using Robust.Shared.Player;
 using Robust.Shared.Timing;
 
@@ -94,14 +93,7 @@ namespace Content.Server.Construction
         }
 
         // LEGACY CODE. See warning at the top of the file!
-        private async Task<EntityUid?> Construct(
-            EntityUid user,
-            string materialContainer,
-            ConstructionGraphPrototype graph,
-            ConstructionGraphEdge edge,
-            ConstructionGraphNode targetNode,
-            EntityCoordinates coords,
-            Angle angle = default)
+        private async Task<EntityUid?> Construct(EntityUid user, string materialContainer, ConstructionGraphPrototype graph, ConstructionGraphEdge edge, ConstructionGraphNode targetNode)
         {
             // We need a place to hold our construction items!
             var container = _container.EnsureContainer<Container>(user, materialContainer, out var existed);
@@ -271,7 +263,11 @@ namespace Content.Server.Construction
             }
 
             var newEntityProto = graph.Nodes[edge.Target].Entity.GetId(null, user, new(EntityManager));
+<<<<<<< HEAD
             var newEntity = EntityManager.SpawnAttachedTo(newEntityProto, coords, rotation: angle);
+=======
+            var newEntity = EntityManager.SpawnEntity(newEntityProto, EntityManager.GetComponent<TransformComponent>(user).Coordinates);
+>>>>>>> parent of 44b93e68ee (Prevent stacking pipes (#28308))
 
             if (!TryComp(newEntity, out ConstructionComponent? construction))
             {
@@ -386,13 +382,7 @@ namespace Content.Server.Construction
                 }
             }
 
-            if (await Construct(
-                    user,
-                    "item_construction",
-                    constructionGraph,
-                    edge,
-                    targetNode,
-                    Transform(user).Coordinates) is not { Valid: true } item)
+            if (await Construct(user, "item_construction", constructionGraph, edge, targetNode) is not { Valid: true } item)
                 return false;
 
             // Just in case this is a stack, attempt to merge it. If it isn't a stack, this will just normally pick up
@@ -527,17 +517,22 @@ namespace Content.Server.Construction
                 return;
             }
 
-            if (await Construct(user,
-                    (ev.Ack + constructionPrototype.GetHashCode()).ToString(),
-                    constructionGraph,
-                    edge,
-                    targetNode,
-                    GetCoordinates(ev.Location),
-                    constructionPrototype.CanRotate ? ev.Angle : Angle.Zero) is not {Valid: true} structure)
+            if (await Construct(user, (ev.Ack + constructionPrototype.GetHashCode()).ToString(), constructionGraph,
+                    edge, targetNode) is not {Valid: true} structure)
             {
                 Cleanup();
                 return;
             }
+
+            // We do this to be able to move the construction to its proper position in case it's anchored...
+            // Oh wow transform anchoring is amazing wow I love it!!!!
+            // ikr
+            var xform = Transform(structure);
+            var wasAnchored = xform.Anchored;
+            xform.Anchored = false;
+            xform.Coordinates = GetCoordinates(ev.Location);
+            xform.LocalRotation = constructionPrototype.CanRotate ? ev.Angle : Angle.Zero;
+            xform.Anchored = wasAnchored;
 
             RaiseNetworkEvent(new AckStructureConstructionMessage(ev.Ack, GetNetEntity(structure)));
             _adminLogger.Add(LogType.Construction, LogImpact.Low, $"{ToPrettyString(user):player} has turned a {ev.PrototypeName} construction ghost into {ToPrettyString(structure)} at {Transform(structure).Coordinates}");
