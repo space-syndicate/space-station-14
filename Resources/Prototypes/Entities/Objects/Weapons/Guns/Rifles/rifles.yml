@@ -220,12 +220,11 @@
 
      ### наше
 
-
 - type: entity
   name: LR-300
   parent: BaseWeaponRifle
   id: lr300
-  suffix: Svo, skibidistation
+  suffix: skibidistation
   description: Long Rifle 300, попытка замены AR-15 которая не прижилась.
   components:
   - type: Sprite
@@ -239,8 +238,7 @@
     sprite: Objects/Weapons/Guns/Rifles/lr.rsi
   - type: Gun
     fireRate: 9
-    soundGunshot:
-      path: /Audio/Weapons/Guns/Gunshots/rifle2.ogg
+    soundGunshot: /Audio/Weapons/Guns/Gunshots/lrsound.ogg
   - type: ItemSlots
     slots:
       gun_magazine:

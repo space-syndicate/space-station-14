@@ -1,3 +1,19 @@
 - type: lobbyBackground
-  id: TheThing
+  id: sigma
   background: /Textures/LobbyScreens/thething.png
+
+- type: lobbyBackground
+  id: zovgoida
+  background: /Textures/LobbyScreens/skibidihitler.png
+
+- type: lobbyBackground
+  id: toolbox
+  background: /Textures/LobbyScreens/robusttoolbox.png
+
+- type: lobbyBackground
+  id: bestbuild
+  background: /Textures/LobbyScreens/bestbuild.png
+
+- type: lobbyBackground
+  id: wthsigma
+  background: /Textures/LobbyScreens/ermwhatthesigma.png
