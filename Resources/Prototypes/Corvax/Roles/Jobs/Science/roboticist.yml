@@ -1,0 +1,10 @@
+- type: job
+  id: Roboticist
+  name: job-name-roboticist
+  playTimeTracker: JobRoboticist
+  icon: "JobIconRoboticist"
+  setPreference: false
+  overrideConsoleVisibility: true
+  access:
+  - Research
+  - Maintenance
