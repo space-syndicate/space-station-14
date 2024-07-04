@@ -2788,7 +2788,6 @@ entities:
             color: '#DE3A3A96'
             id: HalfTileOverlayGreyscale90
           decals:
-            503: 52,18
             525: 43,31
             1078: 15,9
         - node:
@@ -8271,7 +8270,6 @@ entities:
       - 499
       - 9394
       - 9526
-      - 503
   - uid: 76
     components:
     - type: Transform
@@ -49206,7 +49204,6 @@ entities:
       - 7421
       - 7422
       - 7418
-      - 503
   - uid: 7133
     components:
     - type: Transform
