@@ -95,3 +95,14 @@
   components:
   - type: Sprite
     state: emrire_flag
+
+- type: entity
+  parent: BaseFlag
+  id: RightSectorFlag
+  suffix: skibidistation
+  name: Правый сектор
+  description: "..."
+  components:
+  - type: Sprite
+    state: right_sector
+
