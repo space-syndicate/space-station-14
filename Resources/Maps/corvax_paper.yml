@@ -11462,18 +11462,6 @@ entities:
     - type: DeviceNetwork
       deviceLists:
       - 78
-  - uid: 503
-    components:
-    - type: Transform
-      pos: 28.5,42.5
-      parent: 2
-    - type: DeviceNetwork
-      configurators:
-      - invalid
-      deviceLists:
-      - 78
-      - 7132
-      - 75
   - uid: 504
     components:
     - type: Transform
