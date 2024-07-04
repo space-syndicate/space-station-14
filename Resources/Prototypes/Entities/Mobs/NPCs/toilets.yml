@@ -162,7 +162,7 @@
             acts: [ "Destruction" ]
           - !type:PlaySoundBehavior
             sound:
-              path: /Audio/Effects/gib1.ogg
+              path: /Audio/Toilets/death.ogg
           - !type:SpawnEntitiesBehavior
             spawn:
               Telecrystal:
@@ -229,7 +229,7 @@
             acts: [ "Destruction" ]
           - !type:PlaySoundBehavior
             sound:
-              path: /Audio/Effects/gib1.ogg
+              path: /Audio/Toilets/death.ogg
           - !type:SpawnEntitiesBehavior
             spawn:
               Telecrystal:
@@ -296,7 +296,7 @@
             acts: [ "Destruction" ]
           - !type:PlaySoundBehavior
             sound:
-              path: /Audio/Effects/gib1.ogg
+              path: /Audio/Toilets/death.ogg
           - !type:SpawnEntitiesBehavior
             spawn:
               Telecrystal:
@@ -355,7 +355,7 @@
             acts: [ "Destruction" ]
           - !type:PlaySoundBehavior
             sound:
-              path: /Audio/Effects/gib1.ogg
+              path: /Audio/Toilets/death.ogg
           - !type:SpawnEntitiesBehavior
             spawn:
               Telecrystal:
@@ -420,7 +420,7 @@
             acts: [ "Destruction" ]
           - !type:PlaySoundBehavior
             sound:
-              path: /Audio/Effects/gib1.ogg
+              path: /Audio/Toilets/death.ogg
           - !type:SpawnEntitiesBehavior
             spawn:
               Telecrystal:
@@ -444,7 +444,7 @@
   - type: MobThresholds
     thresholds:
       0: Alive
-      150: Dead
+      170: Dead
   - type: SlowOnDamage
   - type: HTN
     rootTask:
@@ -479,13 +479,13 @@
     thresholds:
       - trigger:
           !type:DamageTrigger
-          damage: 170
+          damage: 190
         behaviors:
           - !type:DoActsBehavior
             acts: [ "Destruction" ]
           - !type:PlaySoundBehavior
             sound:
-              path: /Audio/Effects/gib1.ogg
+              path: /Audio/Toilets/death.ogg
           - !type:SpawnEntitiesBehavior
             spawn:
               Telecrystal:
@@ -509,7 +509,7 @@
   - type: MobThresholds
     thresholds:
       0: Alive
-      100: Dead
+      130: Dead
   - type: SlowOnDamage
     speedModifierThresholds:
       40: 0.7
@@ -538,13 +538,13 @@
     thresholds:
       - trigger:
           !type:DamageTrigger
-          damage: 120
+          damage: 150
         behaviors:
           - !type:DoActsBehavior
             acts: [ "Destruction" ]
           - !type:PlaySoundBehavior
             sound:
-              path: /Audio/Effects/gib1.ogg
+              path: /Audio/Toilets/death.ogg
           - !type:SpawnEntitiesBehavior
             spawn:
               Telecrystal:
@@ -603,7 +603,7 @@
             acts: [ "Destruction" ]
           - !type:PlaySoundBehavior
             sound:
-              path: /Audio/Effects/gib1.ogg
+              path: /Audio/Toilets/death.ogg
           - !type:SpawnEntitiesBehavior
             spawn:
               Telecrystal:
@@ -682,7 +682,7 @@
   - type: MobThresholds
     thresholds:
       0: Alive
-      180: Dead
+      280: Dead
   - type: SlowOnDamage
   - type: HTN
     rootTask:
@@ -717,13 +717,13 @@
     thresholds:
       - trigger:
           !type:DamageTrigger
-          damage: 200
+          damage: 300
         behaviors:
           - !type:DoActsBehavior
             acts: [ "Destruction" ]
           - !type:PlaySoundBehavior
             sound:
-              path: /Audio/Effects/gib1.ogg
+              path: /Audio/Toilets/death.ogg
           - !type:SpawnEntitiesBehavior
             spawn:
               Telecrystal:
@@ -747,7 +747,7 @@
   - type: MobThresholds
     thresholds:
       0: Alive
-      50: Dead
+      100: Dead
   - type: SlowOnDamage
   - type: HTN
     rootTask:
@@ -782,13 +782,13 @@
     thresholds:
       - trigger:
           !type:DamageTrigger
-          damage: 70
+          damage: 120
         behaviors:
           - !type:DoActsBehavior
             acts: [ "Destruction" ]
           - !type:PlaySoundBehavior
             sound:
-              path: /Audio/Effects/gib1.ogg
+              path: /Audio/Toilets/death.ogg
           - !type:SpawnEntitiesBehavior
             spawn:
               Telecrystal:
@@ -812,7 +812,7 @@
   - type: MobThresholds
     thresholds:
       0: Alive
-      200: Dead
+      300: Dead
   - type: SlowOnDamage
   - type: HTN
     rootTask:
@@ -850,13 +850,13 @@
     thresholds:
       - trigger:
           !type:DamageTrigger
-          damage: 220
+          damage: 320
         behaviors:
           - !type:DoActsBehavior
             acts: [ "Destruction" ]
           - !type:PlaySoundBehavior
             sound:
-              path: /Audio/Effects/gib1.ogg
+              path: /Audio/Toilets/death.ogg
           - !type:SpawnEntitiesBehavior
             spawn:
               Telecrystal:
@@ -880,7 +880,7 @@
   - type: MobThresholds
     thresholds:
       0: Alive
-      180: Dead
+      280: Dead
   - type: SlowOnDamage
   - type: HTN
     rootTask:
@@ -918,13 +918,13 @@
     thresholds:
       - trigger:
           !type:DamageTrigger
-          damage: 200
+          damage: 300
         behaviors:
           - !type:DoActsBehavior
             acts: [ "Destruction" ]
           - !type:PlaySoundBehavior
             sound:
-              path: /Audio/Effects/gib1.ogg
+              path: /Audio/Toilets/death.ogg
           - !type:SpawnEntitiesBehavior
             spawn:
               Telecrystal:
@@ -947,7 +947,7 @@
   - type: MobThresholds
     thresholds:
       0: Alive
-      500: Dead
+      800: Dead
   - type: SlowOnDamage
   - type: HTN
     rootTask:
@@ -985,13 +985,13 @@
     thresholds:
       - trigger:
           !type:DamageTrigger
-          damage: 520
+          damage: 820
         behaviors:
           - !type:DoActsBehavior
             acts: [ "Destruction" ]
           - !type:PlaySoundBehavior
             sound:
-              path: /Audio/Effects/gib1.ogg
+              path: /Audio/Toilets/death.ogg
           - !type:SpawnEntitiesBehavior
             spawn:
               Telecrystal:
@@ -1014,7 +1014,7 @@
   - type: MobThresholds
     thresholds:
       0: Alive
-      500: Dead
+      800: Dead
   - type: SlowOnDamage
     speedModifierThresholds:
       40: 0.7
@@ -1041,9 +1041,9 @@
         - MobLayer
   - type: Explosive
     explosionType: Default
-    maxIntensity: 10
-    intensitySlope: 10
-    totalIntensity: 225
+    maxIntensity: 20
+    intensitySlope: 5
+    totalIntensity: 750
   - type: ExplodeOnTrigger
   - type: Destructible
     thresholds:
@@ -1052,3 +1052,136 @@
         damage: 200
       behaviors:
       - !type:ExplodeBehavior
+
+- type: entity
+  name: Скибиди РЕКИН (СЕКРЕТНЫЙ)
+  parent: MobSkibidiToilet
+  id: MobSkibidiToiletRekin
+  description: УХБОЕР НЕ ЗАЙМЁТ КАСАРЬ
+  suffix: skibidistation
+  components:
+  - type: Sprite
+    drawdepth: Mobs
+    sprite: Mobs/Toilets/toilet_rekin.rsi
+    layers:
+    - map: ["enum.DamageStateVisualLayers.Base"]
+      state: toilet
+  - type: MobThresholds
+    thresholds:
+      0: Alive
+      500: Dead
+  - type: SlowOnDamage
+  - type: HTN
+    rootTask:
+      task: SimpleRangedHostileCompound
+  - type: HitscanBatteryAmmoProvider
+    proto: RedShuttleLaser
+    fireCost: 50
+  - type: BatterySelfRecharger
+    autoRecharge: true
+    autoRechargeRate: 50
+  - type: Battery
+    maxCharge: 1000
+    startingCharge: 1000
+  - type: Gun
+    fireRate: 0.4
+    useKey: false
+    selectedMode: SemiAuto
+    availableModes:
+      - SemiAuto
+    soundGunshot: /Audio/Toilets/rekin.ogg
+  - type: MovementSpeedModifier
+    baseSprintSpeed: 4
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeCircle
+          radius: 0.45
+        density: 450
+        mask:
+        - MobMask
+        layer:
+        - MobLayer
+  - type: Destructible
+    thresholds:
+      - trigger:
+          !type:DamageTrigger
+          damage: 520
+        behaviors:
+          - !type:DoActsBehavior
+            acts: [ "Destruction" ]
+          - !type:PlaySoundBehavior
+            sound:
+              path: /Audio/Toilets/death.ogg
+          - !type:SpawnEntitiesBehavior
+            spawn:
+              Telecrystal:
+                min: 200
+                max: 200
+
+- type: entity
+  name: Скибиди Gman
+  parent: MobSkibidiToilet
+  id: MobSkibidiToiletGMan
+  description: “ Dop Dop Yes Yes Skibidi W Dip Dip Skibidi Dop Dop yes yes Skibidi ” ― Первые слова G-Туалета
+  suffix: skibidistation
+  components:
+  - type: Sprite
+    drawdepth: Mobs
+    sprite: Mobs/Toilets/toilet_gman.rsi
+    state: toilet
+    scale: "2, 2"
+  - type: MobThresholds
+    thresholds:
+      0: Alive
+      2000: Dead
+  - type: SlowOnDamage
+  - type: HTN
+    rootTask:
+      task: SimpleRangedHostileCompound
+  - type: HitscanBatteryAmmoProvider
+    proto: RedShuttleLaser
+    fireCost: 50
+  - type: BatterySelfRecharger
+    autoRecharge: true
+    autoRechargeRate: 50
+  - type: Battery
+    maxCharge: 1000
+    startingCharge: 1000
+  - type: Gun
+    fireRate: 0.4
+    useKey: false
+    selectedMode: SemiAuto
+    availableModes:
+      - SemiAuto
+    soundGunshot: /Audio/Toilets/gman.ogg
+  - type: MovementSpeedModifier
+    baseSprintSpeed: 4
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeCircle
+          radius: 0.6
+        density: 450
+        mask:
+        - MobMask
+        layer:
+        - MobLayer
+  - type: Destructible
+    thresholds:
+      - trigger:
+          !type:DamageTrigger
+          damage: 2000
+        behaviors:
+          - !type:DoActsBehavior
+            acts: [ "Destruction" ]
+          - !type:PlaySoundBehavior
+            sound:
+              path: /Audio/Toilets/death.ogg
+          - !type:SpawnEntitiesBehavior
+            spawn:
+              Telecrystal:
+                min: 10000
+                max: 10000
