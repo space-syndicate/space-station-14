@@ -25,8 +25,6 @@
     - gcf
     - gc
     - gc_mode
-    - cvar
-    - fuckrules
     - midipanic
     - replay_recording_start
     - replay_recording_stop
@@ -73,6 +71,8 @@
     - detachent
     - localdelete
     - fullstatereset
+    - cvar
+    - fuckrules
 
 - Flags: MAPPING
   Commands:
