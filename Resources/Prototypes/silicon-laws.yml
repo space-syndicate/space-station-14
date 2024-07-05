@@ -166,9 +166,9 @@
 - type: weightedRandom
   id: IonStormLawsets
   weights:
-    # its crewsimov by default dont be lame
-    Crewsimov: 0.25
+    Crewsimov: 1 #Corvax-not-base
     Corporate: 1
-    NTDefault: 1
+    # its Corvax base
+    NTDefault: 0.25
     Drone: 0.5
     Ninja: 0.25
