@@ -106,11 +106,11 @@
     - type: SalvageMagnetData
 
 - type: entity
-  id: BaseStationSiliconLawCrewsimov
+  id: BaseStationSiliconNTDefault #Corvax-NTDefault
   abstract: true
   components:
   - type: SiliconLawProvider
-    laws: Crewsimov
+    laws: NTDefault #Corvax-NTDefault
 
 - type: entity
   id: BaseStationNews
