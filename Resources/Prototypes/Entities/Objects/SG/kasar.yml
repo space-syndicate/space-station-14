@@ -1,0 +1,21 @@
+- type: entity
+  parent: BaseItem
+  id: ReinforcementUhboer
+  name: КАСАРЬ
+  description: данный касарь может призвать союзного шкебеде туалета. Ходят слухи, что ухбоер его не займёт.
+  suffix: skibidistation
+  components:
+  - type: Sprite
+    sprite: Mobs/Toilets/kasar.rsi
+    layers:
+    - state: icon
+  - type: GhostRole
+    name: АРИЙСКИЙ СКИБИДИ ТУАЛЕТ
+    description: Вы должны помогать арийцам убивать других скибиди туалетов
+    rules: Вы должны помогать арийцам убивать других скибиди туалетов. По арийцам не хуярить.
+  - type: GhostRoleMobSpawner
+    prototype: MobSkibidiToiletUhboer
+  - type: EmitSoundOnUse
+    sound: /Audio/Toilets/rekin.ogg
+  - type: UseDelay
+    delay: 300

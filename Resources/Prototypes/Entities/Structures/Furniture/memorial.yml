@@ -44,3 +44,14 @@
       drawdepth: Mobs
       noRot: true
       offset: "0.0,0.5"
+
+- type: entity
+  id: Herobrin
+  parent: BaseStructure
+  name: ХИРОБРИН
+  description: NO WAY
+  components:
+    - type: Sprite
+      sprite: Mobs/Toilets/toilet_herobrin.rsi
+      state: toilet
+      noRot: true
