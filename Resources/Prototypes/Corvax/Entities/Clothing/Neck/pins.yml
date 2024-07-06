@@ -1,5 +1,21 @@
 - type: entity
   parent: ClothingNeckPinBase
+  id: ClothingNeckAtharaPin
+  name: starry sky pin
+  description: The pin of starry sky.
+  components:
+  - type: Sprite
+    sprite: Corvax/Clothing/Neck/Misc/pins.rsi
+    layers:
+    - state: ath
+  - type: Clothing
+    sprite: Corvax/Clothing/Neck/Misc/pins.rsi
+    clothingVisuals:
+      neck:
+      - state: ath-equipped
+      
+- type: entity
+  parent: ClothingNeckPinBase
   id: ClothingNeckUSSPPin
   name: USSP pin
   description: The pin of United Soviet Socialist Planet.
@@ -13,7 +29,23 @@
     clothingVisuals:
       neck:
       - state: comm-equipped
-
+      
+- type: entity
+  parent: ClothingNeckPinBase
+  id: ClothingNeckClusterPin
+  name: Cluster pin
+  description: The pin of cluster.
+  components:
+  - type: Sprite
+    sprite: Corvax/Clothing/Neck/Misc/pins.rsi
+    layers:
+    - state: cor
+  - type: Clothing
+    sprite: Corvax/Clothing/Neck/Misc/pins.rsi
+    clothingVisuals:
+      neck:
+      - state: cor-equipped
+      
 - type: entity
   parent: ClothingNeckPinBase
   id: ClothingNeckDonkPin
@@ -45,6 +77,38 @@
     clothingVisuals:
       neck:
       - state: earth-equipped
+      
+- type: entity    
+  parent: ClothingNeckPinBase
+  id: ClothingNeckEchoPin
+  name: Comet pin
+  description: The pin of comet Echoo-98UT.
+  components:
+  - type: Sprite
+    sprite: Corvax/Clothing/Neck/Misc/pins.rsi
+    layers:
+    - state: echo
+  - type: Clothing
+    sprite: Corvax/Clothing/Neck/Misc/pins.rsi
+    clothingVisuals:
+      neck:
+      - state: echo-equipped
+
+- type: entity
+  parent: ClothingNeckPinBase
+  id: ClothingNeckElysiumPin
+  name: Dark planet pin
+  description: The pin of dark planet Elysiumim-2S.
+  components:
+  - type: Sprite
+    sprite: Corvax/Clothing/Neck/Misc/pins.rsi
+    layers:
+    - state: ely
+  - type: Clothing
+    sprite: Corvax/Clothing/Neck/Misc/pins.rsi
+    clothingVisuals:
+      neck:
+      - state: ely-equipped
 
 - type: entity
   parent: ClothingNeckPinBase
@@ -61,7 +125,23 @@
     clothingVisuals:
       neck:
       - state: logistika-equipped
-
+      
+- type: entity
+  parent: ClothingNeckPinBase
+  id: ClothingNeckMainPin
+  name: Rocket pin
+  description: The pin of main rocket.
+  components:
+  - type: Sprite
+    sprite: Corvax/Clothing/Neck/Misc/pins.rsi
+    layers:
+    - state: main
+  - type: Clothing
+    sprite: Corvax/Clothing/Neck/Misc/pins.rsi
+    clothingVisuals:
+      neck:
+      - state: main-equipped
+      
 - type: entity
   parent: ClothingNeckPinBase
   id: ClothingNeckDeForestPin
@@ -112,6 +192,38 @@
 
 - type: entity
   parent: ClothingNeckPinBase
+  id: ClothingNeckNebulaPin
+  name: Nebula pin
+  description: The pin of nebula Nebulas-23T5.
+  components:
+  - type: Sprite
+    sprite: Corvax/Clothing/Neck/Misc/pins.rsi
+    layers:
+    - state: neb
+  - type: Clothing
+    sprite: Corvax/Clothing/Neck/Misc/pins.rsi
+    clothingVisuals:
+      neck:
+      - state: neb-equipped
+
+- type: entity
+  parent: ClothingNeckPinBase
+  id: ClothingNeckNovaPin
+  name: Ring planet pin
+  description: The pin of ring planet Novas-1S.
+  components:
+  - type: Sprite
+    sprite: Corvax/Clothing/Neck/Misc/pins.rsi
+    layers:
+    - state: nova
+  - type: Clothing
+    sprite: Corvax/Clothing/Neck/Misc/pins.rsi
+    clothingVisuals:
+      neck:
+      - state: nova-equipped
+
+- type: entity
+  parent: ClothingNeckPinBase
   id: ClothingNeckSyndicakePin
   name: Syndicake pin
   description: The pin of Syndicakes, on backside have a little numbers "2559".
@@ -128,6 +240,22 @@
 
 - type: entity
   parent: ClothingNeckPinBase
+  id: ClothingNeckSolarisPin
+  name: Space cheese pin
+  description: The pin of space cheese Solariss-9IT.
+  components:
+  - type: Sprite
+    sprite: Corvax/Clothing/Neck/Misc/pins.rsi
+    layers:
+    - state: sol
+  - type: Clothing
+    sprite: Corvax/Clothing/Neck/Misc/pins.rsi
+    clothingVisuals:
+      neck:
+      - state: sol-equipped
+
+- type: entity
+  parent: ClothingNeckPinBase
   id: ClothingNeckVitezstviPin
   name: Vitezstvi pin
   description: The pin of corporation Vitezstvi.
@@ -141,3 +269,20 @@
     clothingVisuals:
       neck:
       - state: vit-equipped
+
+- type: entity
+  parent: ClothingNeckPinBase
+  id: ClothingNeckWhiteListPin
+  name: Quasar pin
+  description: The pin of white quasar.
+  components:
+  - type: Sprite
+    sprite: Corvax/Clothing/Neck/Misc/pins.rsi
+    layers:
+    - state: wl
+  - type: Clothing
+    sprite: Corvax/Clothing/Neck/Misc/pins.rsi
+    clothingVisuals:
+      neck:
+      - state: wl-equipped
+      
