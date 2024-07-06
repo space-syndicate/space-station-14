@@ -7,7 +7,7 @@
   description: Лонг Райфл 300, попытка замены  АР-15, в США не прижилось, но отлично подходит для уничтожения шкебеде туалетов.
   productEntity: lr300
   cost:
-    Telecrystal: 30
+    Telecrystal: 60
   categories:
   - UplinkWeaponry
 
@@ -17,7 +17,7 @@
   description: Коробчатый магазин под LR-300 на 100 патрон.
   productEntity: MagazineRifleLR
   cost:
-    Telecrystal: 20
+    Telecrystal: 40
   categories:
   - UplinkAmmo
 
@@ -27,7 +27,7 @@
   description: BOBOKC настолько ахуенен, что им пользуется огромное количество солдат анти шкебеде коалиции, обладает огромной скорострельностью.
   productEntity: WeaponSubMachineGunVovox
   cost:
-    Telecrystal: 30
+    Telecrystal: 60
   categories:
   - UplinkWeaponry
 
@@ -37,7 +37,7 @@
   description: Стандартный магазин под оружие .35
   productEntity: MagazinePistolSubMachineGun
   cost:
-    Telecrystal: 6
+    Telecrystal: 10
   categories:
   - UplinkAmmo
 
@@ -47,7 +47,7 @@
   description: Магазин LR-300 на 25 патрон.
   productEntity: MagazineRifle
   cost:
-    Telecrystal: 4
+    Telecrystal: 8
   categories:
   - UplinkAmmo
 
@@ -57,7 +57,7 @@
   description: Отличный выбор для настоящего гигачада, жгет толчков прямо как е...
   productEntity: WeaponFlamethrower
   cost:
-    Telecrystal: 70
+    Telecrystal: 140
   categories:
   - UplinkWeaponry
 
@@ -67,7 +67,7 @@
   description: Топливо для огнемета, ну или проще - Понос Вирмира
   productEntity: FuelTankFlamethrower
   cost:
-    Telecrystal: 30
+    Telecrystal: 60
   categories:
   - UplinkAmmo
 
@@ -77,7 +77,7 @@
   description: Лазерная винтовка, взять в одну руку нельзя. 20 Выстрелов.
   productEntity: WeaponAEK107
   cost:
-    Telecrystal: 20
+    Telecrystal: 40
   categories:
   - UplinkWeaponry
 
@@ -87,7 +87,7 @@
   description: Модифицированный НТшный пистолет МК-58 заточеный под 45 магнум.
   productEntity: WeaponModPistolMk58
   cost:
-    Telecrystal: 10
+    Telecrystal: 20
   categories:
   - UplinkWeaponry
 
@@ -97,7 +97,7 @@
   description: 45 магнум в комплекте, 7 штучек.
   productEntity: MagazineModMagnum
   cost:
-    Telecrystal: 2
+    Telecrystal: 5
   categories:
   - UplinkAmmo
 
@@ -107,7 +107,7 @@
   description: Модифицированный Силовик, умещается в 2 слота, под дробь .50
   productEntity: WeaponSigmaShotgunMod
   cost:
-    Telecrystal: 25
+    Telecrystal: 50
   categories:
   - UplinkWeaponry
 
@@ -117,7 +117,7 @@
   description: Сайга С-12К, почему она так названа не ебу, когда калибр дробь .50
   productEntity: WeaponShotgunSaiga12
   cost:
-    Telecrystal: 20
+    Telecrystal: 40
   categories:
   - UplinkWeaponry
 
@@ -127,7 +127,7 @@
   description: дефолт магазин на 5 патрон
   productEntity: MagazineShotgunSaigaSb5
   cost:
-    Telecrystal: 5
+    Telecrystal: 10
   categories:
   - UplinkAmmo
 
@@ -137,7 +137,7 @@
   description: дефолт магазин на 5 патрон
   productEntity: MagazineShotgunSaigaSb10
   cost:
-    Telecrystal: 10
+    Telecrystal: 20
   categories:
   - UplinkAmmo
 
@@ -147,7 +147,7 @@
   description: Как эта хуйня работает?
   productEntity: MagazineShotgunSaigaDrum
   cost:
-    Telecrystal: 20
+    Telecrystal: 40
   categories:
   - UplinkAmmo
 
@@ -157,7 +157,7 @@
   description: дефолт раздатчик дроби на 16 патрон, подходит для мод. силовика.
   productEntity: BoxLethalshot
   cost:
-    Telecrystal: 10
+    Telecrystal: 20
   categories:
   - UplinkAmmo
 
@@ -167,7 +167,7 @@
   description: дефолт раздатчик дроби на 16 патрон, подходит для мод. силовика. зажиги
   productEntity: BoxShotgunIncendiary
   cost:
-    Telecrystal: 10
+    Telecrystal: 20
   categories:
   - UplinkAmmo
 
@@ -177,7 +177,7 @@
   description: Хохлобойник номер 1 с 10 патронами в барабане, время подачи убер низкое.
   productEntity: WeaponRevolverHyperIastreb
   cost:
-    Telecrystal: 15
+    Telecrystal: 30
   categories:
   - UplinkWeaponry
 
@@ -187,7 +187,7 @@
   description: Спидлоадер для гиперястреба, 45 магнум, 10 патрон.
   productEntity: SpeedLoaderMagnumHyperIastreb
   cost:
-    Telecrystal: 3
+    Telecrystal: 6
   categories:
   - UplinkAmmo
 
@@ -197,7 +197,7 @@
   description: Кувалда Тагилы, такой только и бить толчков и фурриебов.
   productEntity: SledgehammerTarkov
   cost:
-    Telecrystal: 15
+    Telecrystal: 30
   categories:
   - UplinkWeaponry
 
@@ -207,7 +207,7 @@
   description: Ручной Гранатомет 40-го калибра. Под осколочные и фугасные гранаты, более эффективен против скопления толчков.
   productEntity: RGM40
   cost:
-    Telecrystal: 17
+    Telecrystal: 24
   categories:
   - UplinkWeaponry
 
@@ -217,7 +217,7 @@
   description: Взрывоопасно. (наверное)
   productEntity: GrenadeFrag
   cost:
-    Telecrystal: 4
+    Telecrystal: 20
   categories:
   - UplinkAmmo
 
@@ -227,7 +227,7 @@
   description: Медипен на основе омнизина, помогает от всего.
   productEntity: CombatMedipen
   cost:
-    Telecrystal: 10
+    Telecrystal: 25
   categories:
   - UplinkChemicals
 
@@ -237,7 +237,7 @@
   description: Против удушья и прочей хуйни, поможет вывести кента из крита.
   productEntity: EmergencyMedipen
   cost:
-    Telecrystal: 3
+    Telecrystal: 6
   categories:
   - UplinkChemicals
 
@@ -247,7 +247,7 @@
   description: Помогает от ядов
   productEntity: AntiPoisonMedipen
   cost:
-    Telecrystal: 5
+    Telecrystal: 10
   categories:
   - UplinkChemicals
 
@@ -257,7 +257,7 @@
   description: Помогает от механических повреждений.
   productEntity: BruteAutoInjector
   cost:
-    Telecrystal: 5
+    Telecrystal: 10
   categories:
   - UplinkChemicals
 
@@ -267,7 +267,7 @@
   description: Помогает от физических повреждений.
   productEntity: BurnAutoInjector
   cost:
-    Telecrystal: 5
+    Telecrystal: 10
   categories:
   - UplinkChemicals
 
@@ -277,7 +277,7 @@
   description: Против механа
   productEntity: MedicatedSuture
   cost:
-    Telecrystal: 5
+    Telecrystal: 10
   categories:
   - UplinkChemicals
 
@@ -287,7 +287,7 @@
   description: Против физ. повреждений.
   productEntity: RegenerativeMesh
   cost:
-    Telecrystal: 5
+    Telecrystal: 10
   categories:
   - UplinkChemicals
 
@@ -297,7 +297,7 @@
   description: Против механа.
   productEntity: Brutepack
   cost:
-    Telecrystal: 3
+    Telecrystal: 6
   categories:
   - UplinkChemicals
 
@@ -307,7 +307,7 @@
   description: Против физических.
   productEntity: Ointment
   cost:
-    Telecrystal: 3
+    Telecrystal: 6
   categories:
   - UplinkChemicals
 
@@ -317,7 +317,7 @@
   description: Поможет от кровотека
   productEntity: Gauze
   cost:
-    Telecrystal: 1
+    Telecrystal: 5
   categories:
   - UplinkChemicals
 
@@ -327,7 +327,7 @@
   description: Не ебет какая у тебя группа, он поможет.
   productEntity: Bloodpack
   cost:
-    Telecrystal: 3
+    Telecrystal: 6
   categories:
   - UplinkChemicals
 
@@ -337,7 +337,7 @@
   description: Ускоряет тебя, коли в вену.
   productEntity: Stimpack
   cost:
-    Telecrystal: 5
+    Telecrystal: 20
   categories:
   - UplinkChemicals
 
@@ -347,7 +347,7 @@
   description: сколько-то там стимпаков, ускоряют.
   productEntity: StimkitFilled
   cost:
-    Telecrystal: 10
+    Telecrystal: 60
   categories:
   - UplinkChemicals
 
@@ -357,7 +357,7 @@
   description: Чето там короче мазь, дефолт кит
   productEntity: MedkitFilled
   cost:
-    Telecrystal: 7
+    Telecrystal: 15
   categories:
   - UplinkChemicals
 
@@ -367,7 +367,7 @@
   description: Короче аптечка первой помощи, но там уже регенеративная сеть и прочее.
   productEntity: MedkitAdvancedFilled
   cost:
-    Telecrystal: 10
+    Telecrystal: 30
   categories:
   - UplinkChemicals
 
@@ -377,7 +377,7 @@
   description: Короче тоже самое что и продвинутая аптечка, но там есть инъекторы.
   productEntity: MedkitCombatFilled
   cost:
-    Telecrystal: 14
+    Telecrystal: 50
   categories:
   - UplinkChemicals
 
@@ -387,7 +387,7 @@
   description: Дефиб, держать можно одной рукой, батарейки не требуются.
   productEntity: DefibrillatorOneHandedUnpowered
   cost:
-    Telecrystal: 20
+    Telecrystal: 100
   categories:
   - UplinkChemicals
 
@@ -397,7 +397,7 @@
   description: 6Б45 с хорошей защитой от пуль, но не очень хорошей от высокотемпературного.
   productEntity: SvoArmor
   cost:
-    Telecrystal: 5
+    Telecrystal: 55
   categories:
   - UplinkWearables
 
@@ -407,7 +407,7 @@
   description: Шлем от того же комплекта с 6Б45, с защитой ориентированной на защиту от пуль.
   productEntity: ClothingHeadHelmetSvo
   cost:
-    Telecrystal: 5
+    Telecrystal: 50
   categories:
   - UplinkWearables
 
@@ -417,7 +417,7 @@
   description: Ахуенная защита от лазера, это просто ахуй.
   productEntity: ClothingOuterArmorReflective
   cost:
-    Telecrystal: 20
+    Telecrystal: 80
   categories:
   - UplinkWearables
 
@@ -427,6 +427,6 @@
   description: Самые обычные нескользящие ботинки.
   productEntity: ClothingShoesChameleonNoSlips
   cost:
-    Telecrystal: 6
+    Telecrystal: 15
   categories:
   - UplinkWearables

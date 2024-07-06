@@ -156,10 +156,12 @@
       map: ["enum.GunVisualLayers.Mag"]
 
 - type: entity
-  id: MagazineShotgunSaiga12Drum
+  id: MagazineShotgunSaigaDrum
   name: "Кустарный барабан под сайгу - 12"
   parent: MagazineShotgunSaigaSb5
   components:
+  - type: Item
+    size: Large
   - type: BallisticAmmoProvider
     whitelist:
       tags:
