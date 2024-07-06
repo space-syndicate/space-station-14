@@ -1,17 +1,31 @@
 {
   "version": 1,
   "license": "CC-BY-SA-3.0",
-  "copyright": "This pixels made by @no_mad#0260",
+  "copyright": "Lore's pixels made by @no_mad#0260, servers pins made by @mishutka09",
   "size": {
     "x": 32,
     "y": 32
   },
   "states": [
     {
+      "name": "ath"
+    },
+    {
+      "name": "ath-equipped",
+      "directions": 4
+    },
+    {
       "name": "comm"
     },
     {
       "name": "comm-equipped",
+      "directions": 4
+    },
+    {
+      "name": "cor"
+    },
+    {
+      "name": "cor-equipped",
       "directions": 4
     },
 	{
@@ -28,11 +42,32 @@
       "name": "earth-equipped",
       "directions": 4
     },
+    {
+      "name": "echo"
+    },
+    {
+      "name": "echo-equipped",
+      "directions": 4
+    },
+    {
+      "name": "ely"
+    },
+    {
+      "name": "ely-equipped",
+      "directions": 4
+    },
 	{
       "name": "logistika"
     },
     {
       "name": "logistika-equipped",
+      "directions": 4
+    },
+    {
+      "name": "main"
+    },
+    {
+      "name": "main-equipped",
       "directions": 4
     },
 	{
@@ -56,6 +91,20 @@
       "name": "nano-equipped",
       "directions": 4
     },
+    {
+      "name": "neb"
+    },
+    {
+      "name": "neb-equipped",
+      "directions": 4
+    },
+    {
+      "name": "nova"
+    },
+    {
+      "name": "nova-equipped",
+      "directions": 4
+    },
 	{
       "name": "sind"
     },
@@ -63,11 +112,25 @@
       "name": "sind-equipped",
       "directions": 4
     },
+    {
+      "name": "sol"
+    },
+    {
+      "name": "sol-equipped",
+      "directions": 4
+    },
 	{
       "name": "vit"
     },
     {
       "name": "vit-equipped",
+      "directions": 4
+    },
+    {
+      "name": "wl"
+    },
+    {
+      "name": "wl-equipped",
       "directions": 4
     }
   ]
