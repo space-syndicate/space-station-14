@@ -12314,7 +12314,6 @@ entities:
       pos: -36.5,-66.5
       parent: 2
     - type: DeviceNetwork
-      configurators:
       deviceLists:
       - 19
   - uid: 359
@@ -12398,7 +12397,6 @@ entities:
       pos: -27.5,-2.5
       parent: 2
     - type: DeviceNetwork
-      configurators:
       deviceLists:
       - 16
   - uid: 10035
@@ -12407,7 +12405,6 @@ entities:
       pos: -40.5,-80.5
       parent: 2
     - type: DeviceNetwork
-      configurators:
       deviceLists:
       - 17112
   - uid: 12651
@@ -12416,7 +12413,6 @@ entities:
       pos: -46.5,-76.5
       parent: 2
     - type: DeviceNetwork
-      configurators:
       deviceLists:
       - 17112
   - uid: 12683
@@ -12425,7 +12421,6 @@ entities:
       pos: -44.5,-80.5
       parent: 2
     - type: DeviceNetwork
-      configurators:
       deviceLists:
       - 17112
   - uid: 15682
@@ -60350,7 +60345,6 @@ entities:
       pos: -43.5,-60.5
       parent: 2
     - type: DeviceNetwork
-      configurators:
       deviceLists:
       - 9
       - 19
@@ -60361,7 +60355,6 @@ entities:
       pos: -36.5,-68.5
       parent: 2
     - type: DeviceNetwork
-      configurators:
       deviceLists:
       - 19
   - uid: 6923
@@ -60383,7 +60376,6 @@ entities:
       pos: -37.5,-84.5
       parent: 2
     - type: DeviceNetwork
-      configurators:
   - uid: 6930
     components:
     - type: Transform
@@ -60731,7 +60723,6 @@ entities:
       pos: -32.5,-66.5
       parent: 2
     - type: DeviceNetwork
-      configurators:
       deviceLists:
       - 19
   - uid: 6989
@@ -60881,7 +60872,6 @@ entities:
       pos: -37.5,-68.5
       parent: 2
     - type: DeviceNetwork
-      configurators:
       deviceLists:
       - 19
   - uid: 7010
@@ -60890,7 +60880,6 @@ entities:
       pos: -45.5,-63.5
       parent: 2
     - type: DeviceNetwork
-      configurators:
       deviceLists:
       - 19
   - uid: 7011
@@ -60899,7 +60888,6 @@ entities:
       pos: -45.5,-64.5
       parent: 2
     - type: DeviceNetwork
-      configurators:
       deviceLists:
       - 19
   - uid: 7012
@@ -61589,7 +61577,6 @@ entities:
       pos: -18.5,-1.5
       parent: 2
     - type: DeviceNetwork
-      configurators:
       deviceLists:
       - 8
   - uid: 7101
@@ -61999,7 +61986,6 @@ entities:
       pos: -39.5,-94.5
       parent: 2
     - type: DeviceNetwork
-      configurators:
       deviceLists:
       - 17
   - uid: 12195
@@ -62008,7 +61994,6 @@ entities:
       pos: -33.5,-65.5
       parent: 2
     - type: DeviceNetwork
-      configurators:
       deviceLists:
       - 19
       - 17112
@@ -62018,7 +62003,6 @@ entities:
       pos: -40.5,-92.5
       parent: 2
     - type: DeviceNetwork
-      configurators:
       deviceLists:
       - 17
   - uid: 12446
@@ -62027,7 +62011,6 @@ entities:
       pos: -26.5,-0.5
       parent: 2
     - type: DeviceNetwork
-      configurators:
       deviceLists:
       - 16
   - uid: 15791
@@ -62123,7 +62106,6 @@ entities:
       pos: -44.5,-77.5
       parent: 2
     - type: DeviceNetwork
-      configurators:
       deviceLists:
       - 17112
   - uid: 17110
@@ -62132,7 +62114,6 @@ entities:
       pos: -42.5,-79.5
       parent: 2
     - type: DeviceNetwork
-      configurators:
       deviceLists:
       - 17112
   - uid: 17111
@@ -62141,7 +62122,6 @@ entities:
       pos: -39.5,-77.5
       parent: 2
     - type: DeviceNetwork
-      configurators:
       deviceLists:
       - 17112
   - uid: 17220
@@ -62150,7 +62130,6 @@ entities:
       pos: -73.5,-13.5
       parent: 2
     - type: DeviceNetwork
-      configurators:
       deviceLists:
       - 42
   - uid: 17221
@@ -62159,7 +62138,6 @@ entities:
       pos: -73.5,-12.5
       parent: 2
     - type: DeviceNetwork
-      configurators:
       deviceLists:
       - 42
   - uid: 17222
@@ -62168,7 +62146,6 @@ entities:
       pos: -72.5,-14.5
       parent: 2
     - type: DeviceNetwork
-      configurators:
       deviceLists:
       - 42
   - uid: 17252
@@ -62416,7 +62393,6 @@ entities:
       pos: -66.5,-18.5
       parent: 2
     - type: DeviceNetwork
-      configurators:
       deviceLists:
       - 43
       - 42
@@ -78801,7 +78777,6 @@ entities:
       pos: -26.5,-2.5
       parent: 2
     - type: DeviceNetwork
-      configurators:
       deviceLists:
       - 16
     - type: AtmosPipeColor
@@ -78813,7 +78788,6 @@ entities:
       pos: -48.5,-79.5
       parent: 2
     - type: DeviceNetwork
-      configurators:
       deviceLists:
       - 17112
     - type: AtmosPipeColor
@@ -79490,7 +79464,6 @@ entities:
       pos: -44.5,-63.5
       parent: 2
     - type: DeviceNetwork
-      configurators:
       deviceLists:
       - 19
     - type: AtmosPipeColor
@@ -79792,7 +79765,6 @@ entities:
       pos: -44.5,-74.5
       parent: 2
     - type: DeviceNetwork
-      configurators:
       deviceLists:
       - 17112
     - type: AtmosPipeColor
@@ -80021,7 +79993,6 @@ entities:
       pos: -25.5,-2.5
       parent: 2
     - type: DeviceNetwork
-      configurators:
       deviceLists:
       - 16
     - type: AtmosPipeColor
@@ -80033,7 +80004,6 @@ entities:
       pos: -48.5,-80.5
       parent: 2
     - type: DeviceNetwork
-      configurators:
       deviceLists:
       - 17112
     - type: AtmosPipeColor
@@ -80697,7 +80667,6 @@ entities:
       pos: -41.5,-63.5
       parent: 2
     - type: DeviceNetwork
-      configurators:
       deviceLists:
       - 19
     - type: AtmosPipeColor
@@ -81062,7 +81031,6 @@ entities:
       pos: -43.5,-74.5
       parent: 2
     - type: DeviceNetwork
-      configurators:
       deviceLists:
       - 17112
     - type: AtmosPipeColor
@@ -87944,7 +87912,7 @@ entities:
     - type: LogicGate
       gate: And
     - type: DeviceLinkSink
-      invokeCounter: 4
+      okeCounter: 4
     - type: Physics
       canCollide: False
       bodyType: Static
