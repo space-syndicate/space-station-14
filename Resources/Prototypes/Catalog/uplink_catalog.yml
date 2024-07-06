@@ -2,20 +2,20 @@
 # Guns
 
 - type: listing
-  id: UplinkPistolViper
-  name: uplink-pistol-viper-name
-  description: uplink-pistol-viper-desc
-  productEntity: WeaponPistolViper
+  id: UplinkShotgunSaiga12
+  name: Сайга-12
+  description: Гражданская версия Сайги-12
+  productEntity: WeaponShotgunSaiga12
   cost:
     Telecrystal: 3
   categories:
   - UplinkWeaponry
 
 - type: listing
-  id: UplinkRevolverPython
-  name: uplink-revolver-python-name
-  description: uplink-revolver-python-desc
-  productEntity: WeaponRevolverPythonAP
+  id: UplinkLr300
+  name: LR-300
+  description: Long Rifle 300, попытка замены AR-15 которая не прижилась.
+  productEntity: lr300
   cost:
     Telecrystal: 8 # Originally was 13 TC but was not used due to high cost
   categories:
@@ -23,10 +23,10 @@
 
 # Inbuilt suppressor so it's sneaky + more expensive.
 - type: listing
-  id: UplinkPistolCobra
-  name: uplink-pistol-cobra-name
-  description: uplink-pistol-cobra-desc
-  productEntity: WeaponPistolCobra
+  id: UplinkFlamethrower
+  name: Огнемёт "Выжигатель Толчков"
+  description: Ходят слухи, что топливом для огнемет служит говно вирмира.
+  productEntity: WeaponFlamethrower
   cost:
     Telecrystal: 4
   categories:
@@ -34,95 +34,81 @@
 
 # Poor accuracy, slow to fire, cheap option
 - type: listing
-  id: UplinkRifleMosin
-  name: uplink-rifle-mosin-name
-  description: uplink-rifle-mosin-desc
-  productEntity: WeaponSniperMosin
+  id: UplinkSubMachineGunVovox
+  name: ВОВОКС
+  description: ANOTHER BLUESPACE CLASSIC. используется 0.35
+  productEntity: WeaponSubMachineGunVovox
   cost:
     Telecrystal: 1
   categories:
   - UplinkWeaponry
 
 - type: listing
-  id: UplinkEsword
-  name: uplink-esword-name
-  description: uplink-esword-desc
-  icon: { sprite: /Textures/Objects/Weapons/Melee/e_sword.rsi, state: icon }
-  productEntity: EnergySword
+  id: UplinkRevolverHyperIastreb
+  name: Гипер Ястреб
+  description: хохлобойник номер 1 с бс системой подачи патрон.
+  productEntity: WeaponRevolverHyperIastreb
   cost:
     Telecrystal: 8
   categories:
   - UplinkWeaponry
 
 - type: listing
-  id: UplinkEnergyDagger
-  name: uplink-edagger-name
-  description: uplink-edagger-desc
-  icon: { sprite: /Textures/Objects/Weapons/Melee/e_dagger.rsi, state: icon }
-  productEntity: EnergyDaggerBox
+  id: UplinkPistolPM
+  name: Пистолет Макарова
+  description: Пистолет, который использовали при царе-горохе. Использует патроны .35.uplink-edagger-desc
+  productEntity: WeaponPistolPM
   cost:
     Telecrystal: 2
   categories:
   - UplinkWeaponry
 
 - type: listing
-  id: UplinkThrowingKnivesKit
-  name: uplink-knives-kit-name
-  description: uplink-knives-kit-desc
-  icon: { sprite: /Textures/Objects/Storage/boxicons.rsi, state: throwing_knives }
-  productEntity: ThrowingKnivesKit
+  id: UplinkPistolLuger
+  name: Люгер
+  description: Им застрелился мой дед
+  productEntity: WeaponPistolLuger
   cost:
     Telecrystal: 6
   categories:
     - UplinkWeaponry
 
 - type: listing
-  id: UplinkGlovesNorthStar
-  name: uplink-gloves-north-star-name
-  description: uplink-gloves-north-star-desc
-  productEntity: ClothingHandsGlovesNorthStar
+  id: UplinkLaserMinigun
+  name: УБИЙЦА ОЛЕГОВ 2.0
+  description: МЕГА ЛАЗЕР УБИВАЛКА
+  productEntity: WeaponLaserMinigun
   cost:
     Telecrystal: 8
   categories:
   - UplinkWeaponry
 
 - type: listing
-  id: UplinkDisposableTurret
-  name: uplink-disposable-turret-name
-  description: uplink-disposable-turret-desc
-  productEntity: ToolboxElectricalTurretFilled
+  id: UplinkAEK107
+  name: АЕК-107
+  description: Мега супер жесткая пушка уэээ.
+  productEntity: WeaponAEK107
   cost:
     Telecrystal: 6
   categories:
   - UplinkWeaponry
-  conditions:
-    - !type:StoreWhitelistCondition
-      blacklist:
-        tags:
-          - NukeOpsUplink
 
 - type: listing
-  id: UplinkEshield
-  name: uplink-eshield-name
-  description: uplink-eshield-desc
-  icon: { sprite: /Textures/Objects/Weapons/Melee/e_shield.rsi, state: eshield-on }
+  id: UplinkRGM40
+  name: РГМ-40 "Кастет"
+  description: Российский ручной гранатомет, под гранаты 40 мм, однозарядный
   productEntity: EnergyShield
   cost:
     Telecrystal: 8
   categories:
   - UplinkWeaponry
-  conditions:
-  - !type:StoreWhitelistCondition
-    whitelist:
-      tags:
-      - NukeOpsUplink
 
 - type: listing
   id: UplinkSniperBundle
   name: uplink-sniper-bundle-name
   description: uplink-sniper-bundle-desc
   icon: { sprite: /Textures/Objects/Weapons/Guns/Snipers/heavy_sniper.rsi, state: base }
-  productEntity: BriefcaseSyndieSniperBundleFilled  
+  productEntity: BriefcaseSyndieSniperBundleFilled
   cost:
     Telecrystal: 12
   categories:
@@ -379,11 +365,11 @@
 # Ammo
 
 - type: listing
-  id: UplinkPistol9mmMagazine
-  name: uplink-pistol-magazine-name
-  description: uplink-pistol-magazine-desc
-  icon: { sprite: /Textures/Objects/Weapons/Guns/Ammunition/Magazine/Pistol/pistol_mag.rsi, state: red-icon }
-  productEntity: MagazinePistol
+  id: UplinkMagazineShotgunSb5
+  name: Магазин Сб.5
+  description: Магазин Сб.5 под 12К для СОК-12
+  icon: { sprite: /Textures/Objects/Weapons/Guns/Ammunition/Magazine/Shotgun/pistol_mag.rsi, state: red-icon }
+  productEntity: MagazineShotgunSb5
   cost:
     Telecrystal: 1
   categories:
@@ -1004,7 +990,7 @@
     Telecrystal: 6
   categories:
     - UplinkAllies
-  
+
 - type: listing
   id: UplinkSyndicatePersonalAI
   name: uplink-syndicate-pai-name

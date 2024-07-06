@@ -98,8 +98,10 @@
     - state: mag-1
       map: ["enum.GunVisualLayers.Mag"]
 
+#skibidi station
+
 - type: entity
-  id: MagazineShotgunSb5
+  id: MagazineShotgunSaigaSb5
   name: "Sb.5 magazine"
   parent: MagazineRifle
   components:
@@ -119,14 +121,54 @@
       map: ["enum.GunVisualLayers.Mag"]
 
 - type: entity
-  id: MagazineShotgunSb5Empty
+  id: MagazineShotgunSaigaSb5Empty
   name: "Sb.5 magazine"
   suffix: empty
-  parent: MagazineShotgunSb5
+  parent: MagazineShotgunSaigaSb5
   components:
   - type: BallisticAmmoProvider
     proto: null
   - type: Sprite
+    layers:
+    - state: base
+      map: ["enum.GunVisualLayers.Base"]
+    - state: mag-1
+      map: ["enum.GunVisualLayers.Mag"]
+
+- type: entity
+  id: MagazineShotgunSaigaSb10
+  name: "Магазин Сб.10"
+  parent: MagazineShotgunSaigaSb5
+  components:
+  - type: BallisticAmmoProvider
+    whitelist:
+      tags:
+        - ShellShotgun
+    proto: ShellShotgun
+    mayTransfer: true
+    capacity: 10
+  - type: Sprite
+    sprite: Objects/Weapons/Guns/Ammunition/Magazine/Shotgun/10.rsi
+    layers:
+    - state: base
+      map: ["enum.GunVisualLayers.Base"]
+    - state: mag-1
+      map: ["enum.GunVisualLayers.Mag"]
+
+- type: entity
+  id: MagazineShotgunSaiga12Drum
+  name: "Кустарный барабан под сайгу - 12"
+  parent: MagazineShotgunSaigaSb5
+  components:
+  - type: BallisticAmmoProvider
+    whitelist:
+      tags:
+        - ShellShotgun
+    proto: ShellShotgun
+    mayTransfer: true
+    capacity: 20
+  - type: Sprite
+    sprite: Objects/Weapons/Guns/Ammunition/Magazine/Shotgun/drum.rsi
     layers:
     - state: base
       map: ["enum.GunVisualLayers.Base"]
