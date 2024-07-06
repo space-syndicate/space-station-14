@@ -103,6 +103,7 @@
 - type: entity
   id: MagazineShotgunSaigaSb5
   name: "Sb.5 magazine"
+  suffix: skibidistation
   parent: MagazineRifle
   components:
   - type: BallisticAmmoProvider
