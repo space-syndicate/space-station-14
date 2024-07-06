@@ -1685,7 +1685,7 @@
 
 - type: entity
   parent: VendingMachine
-  id: VendingMachineAtmosDrobe2
+  id: AryanVendor
   name: Раздатчик вещей арийца
   description: Для настоящего арийца
   components:
@@ -1708,8 +1708,6 @@
       shader: unshaded
     - state: panel
       map: ["enum.WiresVisualLayers.MaintenancePanel"]
-  - type: AccessReader
-    access: [["Engineering"]]
 
 - type: entity
   parent: VendingMachine

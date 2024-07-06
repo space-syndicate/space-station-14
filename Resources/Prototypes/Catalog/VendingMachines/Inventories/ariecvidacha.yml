@@ -1,9 +1,12 @@
 - type: vendingMachineInventory
   id: AtmosDrobeInventory2
   startingInventory:
+    ClothingHeadHatCC: 5
     ClothingUniformJumpsuitCC: 5
     ClothingShoesBootsCowboyBlack: 5
     WeaponPistolLuger: 5
+    WeaponPistolPM: 5
+    KnifeClaimer: 10
     MagazinePistol: 10
-    BaseMagazinePistolPm: 5
+    MagazinePistolPm: 10
 
