@@ -739,6 +739,9 @@
   - type: Battery
     maxCharge: 2000
     startingCharge: 2000
+  - type: BatterySelfRecharger
+    autoRecharge: true
+    autoRechargeRate: 40
   - type: MultiHandedItem
 
 
