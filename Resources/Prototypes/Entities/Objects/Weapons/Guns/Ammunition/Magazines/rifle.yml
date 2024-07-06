@@ -32,6 +32,39 @@
     zeroVisible: false
   - type: Appearance
 
+- type: entity
+  id: BaseMagazineRifle1
+  name: "mag rifle (.20)"
+  parent: BaseItem
+  abstract: true
+  components:
+  - type: Tag
+    tags:
+      - MagazineRifle
+  - type: Item
+    size: Small
+  - type: BallisticAmmoProvider
+    mayTransfer: true
+    whitelist:
+      tags:
+        - CartridgeRifle
+    capacity: 100
+  - type: ContainerContainer
+    containers:
+      ballistic-ammo: !type:Container
+  - type: Sprite
+    sprite: Objects/Weapons/Guns/Ammunition/Magazine/lrr/lrmag.rsi
+    layers:
+    - state: base
+      map: ["enum.GunVisualLayers.Base"]
+    - state: mag-1
+      map: ["enum.GunVisualLayers.Mag"]
+  - type: MagazineVisuals
+    magState: mag
+    steps: 2
+    zeroVisible: false
+  - type: Appearance
+
 # Magazines
 - type: entity
   id: MagazineRifle
@@ -92,6 +125,20 @@
   - type: Sprite
     layers:
     - state: uranium
+      map: ["enum.GunVisualLayers.Base"]
+    - state: mag-1
+      map: ["enum.GunVisualLayers.Mag"]
+
+- type: entity
+  id: MagazineRifleLR
+  name: "Коробчатый магазин (.20)"
+  parent: BaseMagazineRifle1
+  components:
+  - type: BallisticAmmoProvider
+    proto: CartridgeRifle
+  - type: Sprite
+    layers:
+    - state: red
       map: ["enum.GunVisualLayers.Base"]
     - state: mag-1
       map: ["enum.GunVisualLayers.Mag"]
