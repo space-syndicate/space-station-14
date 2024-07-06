@@ -123,11 +123,31 @@
 
 - type: listing
   id: UplinkWeaponSaigaMag
-  name:  Магазин под сайгу
-  description: дефолт магазин на 6 патрон
-  productEntity: MagazineShotgunSb5
+  name: Магазин Сб.5
+  description: дефолт магазин на 5 патрон
+  productEntity: MagazineShotgunSaigaSb5
   cost:
     Telecrystal: 5
+  categories:
+  - UplinkAmmo
+
+- type: listing
+  id: UplinkWeaponSaigaMag10
+  name: Магазин Сб.10
+  description: дефолт магазин на 5 патрон
+  productEntity: MagazineShotgunSaigaSb10
+  cost:
+    Telecrystal: 10
+  categories:
+  - UplinkAmmo
+
+- type: listing
+  id: UplinkWeaponSaigaMag10
+  name: Барабан на сайгу - 12
+  description: Как эта хуйня работает?
+  productEntity: MagazineShotgunSaigaDrum
+  cost:
+    Telecrystal: 20
   categories:
   - UplinkAmmo
 
