@@ -301,10 +301,10 @@
 
 
 - type: entity
-  name: Saiga-12
+  name: Сайга-12
   parent: BaseWeaponRifle
   id: WeaponShotgunSaiga12
-  description: A high end military grade assault rifle. Uses .20 rifle ammo.
+  description: Гражданская версия Сайги-12К
   suffix: skibidistation
   components:
   - type: Sprite
@@ -317,7 +317,7 @@
   - type: Clothing
     sprite: Objects/Weapons/Guns/Shotguns/saiga12.rsi
   - type: Gun
-    fireRate: 2
+    fireRate: 4
     selectedMode: SemiAuto
     availableModes:
     - SemiAuto
