@@ -42,6 +42,26 @@
   - UplinkAmmo
 
 - type: listing
+  id: UplinkWeaponSvinorez
+  name: С.В.И.Н.О.Р.Е.З.
+  description: легендарный свинорез снайпера чвк "Вагнер". Однозарядная болтовка, 100 пирсинга с пули
+  productEntity: WeaponSniperSvinorez
+  cost:
+    Telecrystal: 69
+  categories:
+  - UplinkWeaponry
+
+- type: listing
+  id: UplinkWeaponSvinorezCartridge
+  name: патрон для свинореза
+  description: наносит 100 пирсинга. Для свинореза.
+  productEntity: CartridgeSvinorez
+  cost:
+    Telecrystal: 10
+  categories:
+  - UplinkAmmo
+
+- type: listing
   id: UplinkWeaponLRMAG30
   name:  магазин LR-300
   description: Магазин LR-300 на 25 патрон.
@@ -74,7 +94,7 @@
 - type: listing
   id: UplinkWeaponAEK107
   name: AEK-107
-  description: Лазерная винтовка, взять в одну руку нельзя. 20 Выстрелов.
+  description: Лазерная винтовка, взять в одну руку нельзя. 20 Выстрелов с автоперезарядкой.
   productEntity: WeaponAEK107
   cost:
     Telecrystal: 50
@@ -438,5 +458,15 @@
   productEntity: ClothingShoesChameleonNoSlips
   cost:
     Telecrystal: 15
+  categories:
+  - UplinkWearables
+
+- type: listing
+  id: UplinkKasar
+  name: КАСАРЬ
+  description: с его помощью можно призвать скибиди ухбоера, который будет помогать вам. (гост роль онли)
+  productEntity: ReinforcementUhboer
+  cost:
+    Telecrystal: 100
   categories:
   - UplinkWearables
