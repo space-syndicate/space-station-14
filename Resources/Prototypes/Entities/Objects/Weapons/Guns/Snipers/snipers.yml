@@ -130,3 +130,20 @@
   - type: StaticPrice
     price: 0
 
+- type: entity
+  name: С.В.И.Н.О.Р.Е.З.
+  parent: [BaseWeaponSniper, BaseGunWieldable]
+  id: WeaponSniperSvinorez
+  description: Я достану свинорез. Ты откуда вылез, хлопчик. Ты зачем сюда полез?
+  suffix: skibidistation
+  components:
+  - type: Sprite
+    sprite: Objects/Weapons/Guns/Snipers/svinorez.rsi
+  - type: Clothing
+    sprite: Objects/Weapons/Guns/Snipers/svinorez.rsi
+  - type: BallisticAmmoProvider
+    whitelist:
+      tags:
+      - CartridgeAntiMateriel
+    capacity: 1
+    proto: CartridgeSvinorez

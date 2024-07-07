@@ -11,3 +11,16 @@
         Structural: 30
   - type: StaminaDamageOnCollide
     damage: 35
+
+- type: entity
+  noSpawn: true
+  parent: BaseBullet
+  id: BulletSvinorez
+  name: свниорез пулька
+  components:
+  - type: Projectile
+    damage:
+      types:
+        Piercing: 100
+  - type: StaminaDamageOnCollide
+    damage: 35
