@@ -7,7 +7,7 @@
   - type: Projectile
     damage:
       types:
-        Piercing: 17
+        Piercing: 21
 
 - type: entity
   id: BulletRiflePractice
@@ -43,4 +43,19 @@
       types:
         Radiation: 7
         Piercing: 8
+
+
+### наше
+
+- type: entity
+  id: BulletRifleAk
+  parent: BaseBullet
+  name: Патрон 7.62 калибра
+  noSpawn: true
+  components:
+  - type: Projectile
+    damage:
+      types:
+        Blunt: 2
+        Piercing: 16
 

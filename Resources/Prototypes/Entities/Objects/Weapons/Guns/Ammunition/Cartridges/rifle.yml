@@ -70,3 +70,14 @@
       - state: tip
         map: [ "enum.AmmoVisualLayers.Tip" ]
         color: "#65fe08"
+
+
+### наше
+
+- type: entity
+  id: CartridgeRifleAk
+  name: Патрон 7.62 калибра
+  parent: BaseCartridgeRifle
+  components:
+  - type: CartridgeAmmo
+    proto: BulletRifleAk

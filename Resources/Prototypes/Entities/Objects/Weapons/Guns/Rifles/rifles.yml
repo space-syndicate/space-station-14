@@ -267,3 +267,51 @@
     zeroVisible: true
   - type: Appearance
 
+
+- type: entity
+  name: Дешевый калаш
+  parent: BaseWeaponRifle
+  id: akpalestina
+  suffix: skibidistation
+  description: На вид ужасно
+  components:
+  - type: Sprite
+    sprite: Objects/Weapons/Guns/Rifles/akpalestina.rsi
+    layers:
+      - state: base
+        map: ["enum.GunVisualLayers.Base"]
+      - state: mag-0
+        map: ["enum.GunVisualLayers.Mag"]
+  - type: Clothing
+    sprite: Objects/Weapons/Guns/Rifles/akpalestina.rsi
+  - type: Gun
+    fireRate: 9
+    soundGunshot: /Audio/Weapons/Guns/Gunshots/lrsound.ogg
+  - type: ItemSlots
+    slots:
+      gun_magazine:
+        name: Magazine
+        startingItem: MagazineRifleAk
+        insertSound: /Audio/Weapons/Guns/MagIn/ltrifle_magin.ogg
+        ejectSound: /Audio/Weapons/Guns/MagOut/ltrifle_magout.ogg
+        priority: 2
+        whitelist:
+          tags:
+            - MagazineRifleAk
+      gun_chamber:
+        name: Chamber
+        startingItem: CartridgeRifleAk
+        priority: 1
+        whitelist:
+          tags:
+            - CartridgeRifleAk
+  - type: ContainerContainer
+    containers:
+      gun_magazine: !type:ContainerSlot
+      gun_chamber: !type:ContainerSlot
+  - type: MagazineVisuals
+    magState: mag
+    steps: 1
+    zeroVisible: true
+  - type: Appearance
+

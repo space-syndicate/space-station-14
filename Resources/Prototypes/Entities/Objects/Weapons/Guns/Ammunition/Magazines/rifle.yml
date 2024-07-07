@@ -142,3 +142,16 @@
       map: ["enum.GunVisualLayers.Base"]
     - state: mag-1
       map: ["enum.GunVisualLayers.Mag"]
+
+
+### наше
+- type: entity
+  id: MagazineRifleAk
+  name: "Магазин 7.62 калибра"
+  parent: BaseMagazineRifle
+  components:
+  - type: BallisticAmmoProvider
+    proto: CartridgeRifleAk
+  - type: Tag
+    tags:
+      - MagazineRifleAk
