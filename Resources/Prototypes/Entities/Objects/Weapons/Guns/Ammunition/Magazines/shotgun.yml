@@ -101,18 +101,25 @@
 #skibidi station
 
 - type: entity
-  id: MagazineShotgunSaigaSb5
-  name: "Sb.5 magazine"
-  suffix: skibidistation
-  parent: MagazineRifle
+  id: BaseMagazineShotgunSaiga
+  name: Sb.5 magazine
+  parent: BaseItem
+  abstract: true
   components:
+  - type: Tag
+    tags:
+      - MagazineShotgunSaiga
   - type: BallisticAmmoProvider
+    mayTransfer: true
     whitelist:
       tags:
         - ShellShotgun
-    proto: ShellShotgun
-    mayTransfer: true
     capacity: 5
+  - type: Item
+    size: Small
+  - type: ContainerContainer
+    containers:
+      ballistic-ammo: !type:Container
   - type: Sprite
     sprite: Objects/Weapons/Guns/Ammunition/Magazine/Shotgun/Sb-5.rsi
     layers:
@@ -120,34 +127,28 @@
       map: ["enum.GunVisualLayers.Base"]
     - state: mag-1
       map: ["enum.GunVisualLayers.Mag"]
+  - type: MagazineVisuals
+    magState: mag
+    steps: 2
+    zeroVisible: false
+  - type: Appearance
 
 - type: entity
-  id: MagazineShotgunSaigaSb5Empty
-  name: "Sb.5 magazine"
-  suffix: empty
-  parent: MagazineShotgunSaigaSb5
+  id: MagazineShotgunSaigaSb5
+  name: Магазин Сб.5
+  parent: BaseMagazineShotgunSaiga
+  suffix: full, skibidistation
   components:
   - type: BallisticAmmoProvider
-    proto: null
-  - type: Sprite
-    layers:
-    - state: base
-      map: ["enum.GunVisualLayers.Base"]
-    - state: mag-1
-      map: ["enum.GunVisualLayers.Mag"]
+    capacity: 5
+    proto: ShellShotgun
 
 - type: entity
   id: MagazineShotgunSaigaSb10
-  name: "Магазин Сб.10"
-  parent: MagazineShotgunSaigaSb5
+  name: Магазин Сб.10
+  parent: BaseMagazineShotgunSaiga
+  suffix: full, skibidistation
   components:
-  - type: BallisticAmmoProvider
-    whitelist:
-      tags:
-        - ShellShotgun
-    proto: ShellShotgun
-    mayTransfer: true
-    capacity: 10
   - type: Sprite
     sprite: Objects/Weapons/Guns/Ammunition/Magazine/Shotgun/10.rsi
     layers:
@@ -155,21 +156,16 @@
       map: ["enum.GunVisualLayers.Base"]
     - state: mag-1
       map: ["enum.GunVisualLayers.Mag"]
+  - type: BallisticAmmoProvider
+    capacity: 10
+    proto: ShellShotgun
 
 - type: entity
   id: MagazineShotgunSaigaDrum
   name: "Барабан на сайгу - 12"
-  parent: MagazineShotgunSaigaSb5
+  parent: BaseMagazineShotgunSaiga
+  suffix: full, skibidistation
   components:
-  - type: Item
-    size: Large
-  - type: BallisticAmmoProvider
-    whitelist:
-      tags:
-        - ShellShotgun
-    proto: ShellShotgun
-    mayTransfer: true
-    capacity: 20
   - type: Sprite
     sprite: Objects/Weapons/Guns/Ammunition/Magazine/Shotgun/drum.rsi
     layers:
@@ -177,3 +173,7 @@
       map: ["enum.GunVisualLayers.Base"]
     - state: mag-1
       map: ["enum.GunVisualLayers.Mag"]
+  - type: BallisticAmmoProvider
+    capacity: 20
+    proto: ShellShotgun
+
