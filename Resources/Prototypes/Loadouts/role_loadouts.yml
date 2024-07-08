@@ -2,12 +2,11 @@
 - type: roleLoadout
   id: JobCaptain
   groups:
-  - Inventory # Corvax-Loadouts
-  - CaptainHead
-  - CaptainNeck
-  - CaptainJumpsuit
-  - CaptainBackpack
-  - CaptainOuterClothing
+  - AryanHead
+  - AryanGloves
+  - AryanJumpsuit
+  - AryanBackpack
+  - AryanShoes
   - Survival
   - Trinkets
 

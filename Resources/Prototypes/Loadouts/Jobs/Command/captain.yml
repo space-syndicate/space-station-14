@@ -1,130 +1,49 @@
 # Jumpsuit
 - type: loadout
-  id: CaptainJumpsuit
-  equipment: CaptainJumpsuit
+  id: AryanJumpsuit
+  equipment: AryanJumpsuit
 
 - type: startingGear
-  id: CaptainJumpsuit
+  id: AryanJumpsuit
   equipment:
-    jumpsuit: ClothingUniformJumpsuitCaptain
+    jumpsuit: ClothingUniformJumpsuitCC
 
+#shoes
 - type: loadout
-  id: CaptainJumpskirt
-  equipment: CaptainJumpskirt
+  id: AryanShoes
+  equipment: AryanShoes
 
 - type: startingGear
-  id: CaptainJumpskirt
+  id: AryanShoes
   equipment:
-    jumpsuit: ClothingUniformJumpskirtCaptain
+    shoes: ClothingShoesBootsCowboyBlack
 
+# Gloves
 - type: loadout
-  id: CaptainFormalSuit
-  equipment: CaptainFormalSuit
+  id: AryanGloves
+  equipment: AryanGloves
 
 - type: startingGear
-  id: CaptainFormalSuit
+  id: AryanGloves
   equipment:
-    jumpsuit: ClothingUniformJumpsuitCapFormal
-
-- type: loadout
-  id: CaptainFormalSkirt
-  equipment: CaptainFormalSkirt
-
-- type: startingGear
-  id: CaptainFormalSkirt
-  equipment:
-    jumpsuit: ClothingUniformJumpskirtCapFormalDress
+    gloves: ClothingHandsGlovesCombat
 
 # Head
 - type: loadout
-  id: CaptainHead
-  equipment: CaptainHead
+  id: AryanHead
+  equipment: AryanHead
 
 - type: startingGear
-  id: CaptainHead
+  id: AryanHead
   equipment:
-    head: ClothingHeadHatCaptain
-
-- type: loadout
-  id: CaptainCap
-  equipment: CaptainCap
-
-- type: startingGear
-  id: CaptainCap
-  equipment:
-    head: ClothingHeadHatCapcap
-
-# Neck
-- type: loadout
-  id: CaptainCloak
-  equipment: CaptainCloak
-
-- type: startingGear
-  id: CaptainCloak
-  equipment:
-    neck: ClothingNeckCloakCap
-  
-- type: loadout
-  id: CaptainCloakFormal
-  equipment: CaptainCloakFormal
-
-- type: startingGear
-  id: CaptainCloakFormal
-  equipment:
-    neck: ClothingNeckCloakCapFormal
-
-- type: loadout
-  id: CaptainMantle
-  equipment: CaptainMantle
-
-- type: startingGear
-  id: CaptainMantle
-  equipment:
-    neck: ClothingNeckMantleCap
+    head: ClothingHeadHatCC
 
 # Back
 - type: loadout
-  id: CaptainBackpack
-  equipment: CaptainBackpack
+  id: AryanBackpack
+  equipment: AryanBackpack
 
 - type: startingGear
-  id: CaptainBackpack
+  id: AryanBackpack
   equipment:
-    back: ClothingBackpackCaptain
-
-- type: loadout
-  id: CaptainSatchel
-  equipment: CaptainSatchel
-
-- type: startingGear
-  id: CaptainSatchel
-  equipment:
-    back: ClothingBackpackSatchelCaptain
-
-- type: loadout
-  id: CaptainDuffel
-  equipment: CaptainDuffel
-
-- type: startingGear
-  id: CaptainDuffel
-  equipment:
-    back: ClothingBackpackDuffelCaptain
-
-# Outer clothing
-- type: loadout
-  id: CaptainOuterClothing
-  equipment: CaptainOuterClothing
-
-- type: startingGear
-  id: CaptainOuterClothing
-  equipment:
-    outerClothing: ClothingOuterArmorCaptainCarapace
-
-- type: loadout
-  id: CaptainWintercoat
-  equipment: CaptainWintercoat
-
-- type: startingGear
-  id: CaptainWintercoat
-  equipment:
-    outerClothing: ClothingOuterWinterCap
+    back: ClothingBackpack

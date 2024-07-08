@@ -1,48 +1,23 @@
 ﻿- type: job
   id: Captain
-  name: job-name-captain
-  description: job-description-captain
+  name: Ариец
+  description: ЗИГ ХАЙЛЬ СЛАВА ГИТЛЕРУ СМЕРТЬ ЖИДАМ
   playTimeTracker: JobCaptain
-  requirements:
-    - !type:DepartmentTimeRequirement
-      department: Engineering
-      time: 72000 #20 hrs # Corvax-RoleTime
-    - !type:DepartmentTimeRequirement
-      department: Medical
-      time: 72000 #20 hrs # Corvax-RoleTime
-    - !type:DepartmentTimeRequirement
-      department: Security
-      time: 72000 #20 hrs # Corvax-RoleTime
-#    - !type:DepartmentTimeRequirement
-#      department: Command
-#      time: 54000 # 15 hours
-    - !type:OverallPlaytimeRequirement
-      time: 504000 #140 hrs # Corvax-RoleTime
   weight: 20
   startingGear: CaptainGear
   icon: "JobIconCaptain"
-  requireAdminNotify: true
-  joinNotifyCrew: true
   supervisors: job-supervisors-centcom
   canBeAntag: false
   accessGroups:
   - AllAccess
   special:
-  - !type:AddImplantSpecial
-    implants: [ MindShieldImplant ]
   - !type:AddComponentSpecial
     components:
       - type: CommandStaff
 
 - type: startingGear
   id: CaptainGear
-  equipment:
-    shoes: ClothingShoesBootsLaceup
-    eyes: ClothingEyesGlassesSunglasses
-    gloves: ClothingHandsGlovesCaptain
-    id: CaptainPDA
-    ears: ClothingHeadsetAltCommand
   storage:
     back:
-    - Flash
+    - BaseUplinkRadio
     # - StationCharter
