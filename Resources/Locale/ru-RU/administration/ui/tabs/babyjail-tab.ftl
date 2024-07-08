@@ -7,5 +7,5 @@ admin-ui-baby-jail-show-reason-tooltip = Показывать пользоват
 admin-ui-baby-jail-max-account-age = Макс. возраст аккаунта
 admin-ui-baby-jail-max-overall-minutes = Макс. общее время игры
 admin-ui-baby-jail-is-enabled = [font size=20][bold]Детсад в настоящее время включен.[/bold][/font]
-admin-ui-baby-jail-enabled-admin-alert = Детсад был включен.
+admin-ui-baby-jail-enabled-admin-alert = Детсад был включён.
 admin-ui-baby-jail-disabled-admin-alert = Детсад был выключён.
