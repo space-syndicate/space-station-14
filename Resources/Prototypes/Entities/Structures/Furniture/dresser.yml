@@ -56,6 +56,7 @@
       - id: ClothingNeckLGBTPin
         prob: 0.06
         orGroup: dressermainloot
+        # Corvax-Pins-Start
       - id: ClothingNeckAtharaPin
         prob: 0.06       
         orGroup: dressermainloot
@@ -82,6 +83,7 @@
         orGroup: dressermainloot
       - id: ClothingNeckWhiteListPin
         prob: 0.06
+        # Corvax-Pins-End
         orGroup: dressermainloot
       - id: ClothingUniformJumpsuitColorGrey
         prob: 0.06
