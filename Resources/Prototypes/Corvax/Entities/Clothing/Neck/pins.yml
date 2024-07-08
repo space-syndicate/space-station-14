@@ -27,7 +27,7 @@
 - type: entity
   parent: ClothingNeckPinBase
   id: ClothingNeckCorvaxPin
-  name: Cluster pin
+  name: cluster pin
   description: The pin of cluster.
   components:
   - type: Sprite
@@ -66,7 +66,7 @@
 - type: entity    
   parent: ClothingNeckPinBase
   id: ClothingNeckEchoPin
-  name: Comet pin
+  name: comet pin
   description: The pin of comet.
   components:
   - type: Sprite
@@ -79,7 +79,7 @@
 - type: entity
   parent: ClothingNeckPinBase
   id: ClothingNeckElysiumPin
-  name: Dark planet pin
+  name: dark planet pin
   description: The pin of dark planet.
   components:
   - type: Sprite
@@ -105,7 +105,7 @@
 - type: entity
   parent: ClothingNeckPinBase
   id: ClothingNeckMainPin
-  name: Rocket pin
+  name: rocket pin
   description: The pin of rocket.
   components:
   - type: Sprite
@@ -157,7 +157,7 @@
 - type: entity
   parent: ClothingNeckPinBase
   id: ClothingNeckNebulaPin
-  name: Nebula pin
+  name: nebula pin
   description: The pin of nebula.
   components:
   - type: Sprite
@@ -170,7 +170,7 @@
 - type: entity
   parent: ClothingNeckPinBase
   id: ClothingNeckNovaPin
-  name: Ring planet pin
+  name: ring planet pin
   description: The pin of ring planet.
   components:
   - type: Sprite
@@ -196,7 +196,7 @@
 - type: entity
   parent: ClothingNeckPinBase
   id: ClothingNeckSolarisPin
-  name: Space cheese pin
+  name: space cheese pin
   description: The pin of space cheese.
   components:
   - type: Sprite
@@ -222,7 +222,7 @@
 - type: entity
   parent: ClothingNeckPinBase
   id: ClothingNeckWhiteListPin
-  name: Quasar pin
+  name: quasar pin
   description: The pin of white quasar.
   components:
   - type: Sprite
