@@ -540,3 +540,19 @@
           Quantity: 20
   - type: ToggleableClothing
     clothingPrototype: ClothingHeadHatHoodWinterWeb
+
+- type: entity
+  parent: ClothingOuterWinterCoatToggleable
+  id: KamizUniform
+  suffix: skibidistation
+  name: Палестинский камиз
+  description: Сколько тротилла он переносит? Защищает на 100 проц от взрывов.
+  components:
+  - type: Sprite
+    sprite: Clothing/Uniforms/Jumpsuit/kamiz.rsi
+  - type: Clothing
+    sprite: Clothing/Uniforms/Jumpsuit/kamiz.rsi
+  - type: ToggleableClothing
+    clothingPrototype: ClothingHeadHatHoodKufia
+  - type: ExplosionResistance
+    damageCoefficient: 0

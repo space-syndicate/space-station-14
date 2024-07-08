@@ -627,3 +627,46 @@
   - type: Sprite
     sprite: Objects/Decoration/Flora/flora_treeslight.rsi
     state: tree06
+
+- type: entity
+  parent: BaseTree
+  id: Kaktus
+  name: Кактус
+  description: ебать, колится!
+  suffix: skibidistation
+  components:
+  - type: Sprite
+    sprite: Objects/Decoration/Flora/kaktus.rsi
+    state: kaktus
+    offset: 0,0
+  - type: MeleeSound
+    soundGroups:
+      Brute:
+        path: /Audio/Effects/chopstickbreak.ogg
+        params:
+          variation: 0.05
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 400
+      behaviors:
+        - !type:DoActsBehavior
+          acts: [ "Destruction" ]
+    - trigger:
+        !type:DamageTrigger
+        damage: 50
+      behaviors:
+      - !type:PlaySoundBehavior
+        sound:
+          path: /Audio/Effects/tree_fell.ogg
+          params:
+            volume: 5
+            variation: 0.05
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+      - !type:SpawnEntitiesBehavior
+        spawn:
+          Log:
+            min: 2
+            max: 2

@@ -2,6 +2,26 @@
 # https://github.com/NeverMind92/skibidi-station-14/blob/235e4b4f0640540472dff58d8adfaa4aa16fc81e/Resources/Prototypes/Store/presets.yml#L6 пригодится
 
 - type: listing
+  id: UplinkWeaponAK
+  name: Дешевый Калащ (Пакистан)
+  description: Пакистанский дешевый калашик. Не особо мощный
+  productEntity: akpalestina
+  cost:
+    Telecrystal: 20
+  categories:
+  - UplinkWeaponry
+
+- type: listing
+  id: UplinkWeaponAkMag
+  name: Магазин под дешевый калаш 7.62
+  description: Магазина 7.62 для дешевого калаша.
+  productEntity: MagazineRifleAk
+  cost:
+    Telecrystal: 5
+  categories:
+  - UplinkAmmo
+
+- type: listing
   id: UplinkWeaponLR
   name: LR-300
   description: Лонг Райфл 300, попытка замены  АР-15, в США не прижилось, но отлично подходит для уничтожения шкебеде туалетов.
@@ -107,7 +127,7 @@
   description: Модифицированный НТшный пистолет МК-58 заточеный под 45 магнум.
   productEntity: WeaponModPistolMk58
   cost:
-    Telecrystal: 35
+    Telecrystal: 45
   categories:
   - UplinkWeaponry
 
@@ -117,7 +137,7 @@
   description: 45 магнум в комплекте, 7 штучек.
   productEntity: MagazineModMagnum
   cost:
-    Telecrystal: 20
+    Telecrystal: 15
   categories:
   - UplinkAmmo
 
@@ -237,7 +257,7 @@
   description: Ручной Гранатомет 40-го калибра. Под осколочные и фугасные гранаты, более эффективен против скопления толчков.
   productEntity: RGM40
   cost:
-    Telecrystal: 175
+    Telecrystal: 40
   categories:
   - UplinkWeaponry
 
@@ -447,7 +467,7 @@
   description: Ахуенная защита от лазера, это просто ахуй.
   productEntity: ClothingOuterArmorReflective
   cost:
-    Telecrystal: 80
+    Telecrystal: 120
   categories:
   - UplinkWearables
 
@@ -468,5 +488,15 @@
   productEntity: ReinforcementUhboer
   cost:
     Telecrystal: 100
+  categories:
+  - UplinkWearables
+
+- type: listing
+  id: UplinkArmourKamiz
+  name: Палестинский Камиз
+  description: Защищает от взрывов на 100 процентов. Аллах одобрил.
+  productEntity: KamizUniform
+  cost:
+    Telecrystal: 90
   categories:
   - UplinkWearables

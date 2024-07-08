@@ -524,3 +524,21 @@
     sprite: Clothing/Head/Hoods/Coat/hoodweb.rsi
   - type: Clothing
     sprite: Clothing/Head/Hoods/Coat/hoodweb.rsi
+
+# НАШЕЕЕ!11!!!!!111
+
+- type: entity
+  parent: ClothingHeadHatHoodWinterBase
+  id: ClothingHeadHatHoodKufia
+  noSpawn: true
+  name: Куфия
+  description: арабский платочек на голову
+  components:
+  - type: Sprite
+    sprite: Clothing/Head/Hoods/Coat/hoodkufia.rsi
+  - type: Clothing
+    sprite: Clothing/Head/Hoods/Coat/hoodkufia.rsi
+  - type: Armor
+    modifiers:
+      coefficients:
+        Heat: 0.90
