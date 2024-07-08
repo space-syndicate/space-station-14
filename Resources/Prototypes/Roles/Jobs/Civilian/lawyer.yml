@@ -22,9 +22,9 @@
     shoes: ClothingShoesBootsLaceup
     id: LawyerPDA
     ears: ClothingHeadsetSecurity
-    # TODO add copy of space law
   inhand:
     - BriefcaseBrownFilled
   storage:
     back:
     - RubberStampLawyer
+    - BookSpaceLaw
