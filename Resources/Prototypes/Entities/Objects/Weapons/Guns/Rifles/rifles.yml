@@ -285,8 +285,8 @@
   - type: Clothing
     sprite: Objects/Weapons/Guns/Rifles/akpalestina.rsi
   - type: Gun
-    fireRate: 9
-    soundGunshot: /Audio/Weapons/Guns/Gunshots/lrsound.ogg
+    fireRate: 4
+    soundGunshot: /Audio/Weapons/Guns/Gunshots/akpalestina.ogg
   - type: ItemSlots
     slots:
       gun_magazine:
