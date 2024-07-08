@@ -9,7 +9,7 @@
     state: ath
   - type: Clothing
     sprite: Corvax/Clothing/Neck/Misc/pins.rsi
-    equippedPrefix: ath-equipped-NECK
+    equippedPrefix: ath
       
 - type: entity
   parent: ClothingNeckPinBase
@@ -22,7 +22,7 @@
     state: comm
   - type: Clothing
     sprite: Corvax/Clothing/Neck/Misc/pins.rsi
-    equippedPrefix: comm-equipped-NECK
+    equippedPrefix: comm
       
 - type: entity
   parent: ClothingNeckPinBase
@@ -35,7 +35,7 @@
     state: cor
   - type: Clothing
     sprite: Corvax/Clothing/Neck/Misc/pins.rsi
-    equippedPrefix: cor-equipped-NECK
+    equippedPrefix: cor
       
 - type: entity
   parent: ClothingNeckPinBase
@@ -48,7 +48,7 @@
     state: donk
   - type: Clothing
     sprite: Corvax/Clothing/Neck/Misc/pins.rsi
-    equippedPrefix: donk-equipped-NECK
+    equippedPrefix: donk
 
 - type: entity
   parent: ClothingNeckPinBase
@@ -61,7 +61,7 @@
     state: earth
   - type: Clothing
     sprite: Corvax/Clothing/Neck/Misc/pins.rsi
-    equippedPrefix: earth-equipped-NECK
+    equippedPrefix: earth
       
 - type: entity    
   parent: ClothingNeckPinBase
@@ -74,7 +74,7 @@
     state: echo
   - type: Clothing
     sprite: Corvax/Clothing/Neck/Misc/pins.rsi
-    equippedPrefix: echo-equipped-NECK
+    equippedPrefix: echo
 
 - type: entity
   parent: ClothingNeckPinBase
@@ -87,7 +87,7 @@
     state: ely
   - type: Clothing
     sprite: Corvax/Clothing/Neck/Misc/pins.rsi
-    equippedPrefix: ely-equipped-NECK
+    equippedPrefix: ely
 
 - type: entity
   parent: ClothingNeckPinBase
@@ -100,7 +100,7 @@
     state: logistika
   - type: Clothing
     sprite: Corvax/Clothing/Neck/Misc/pins.rsi
-    equippedPrefix: logistika-equipped-NECK
+    equippedPrefix: logistika
       
 - type: entity
   parent: ClothingNeckPinBase
@@ -113,7 +113,7 @@
     state: main
   - type: Clothing
     sprite: Corvax/Clothing/Neck/Misc/pins.rsi
-    equippedPrefix: main-equipped-NECK
+    equippedPrefix: main
       
 - type: entity
   parent: ClothingNeckPinBase
@@ -126,7 +126,7 @@
     state: med
   - type: Clothing
     sprite: Corvax/Clothing/Neck/Misc/pins.rsi
-    equippedPrefix: med-equipped-NECK
+    equippedPrefix: med
 
 - type: entity
   parent: ClothingNeckPinBase
@@ -139,7 +139,7 @@
     state: nakamura
   - type: Clothing
     sprite: Corvax/Clothing/Neck/Misc/pins.rsi
-    equippedPrefix: nakamura-equipped-NECK
+    equippedPrefix: nakamura
 
 - type: entity
   parent: ClothingNeckPinBase
@@ -152,7 +152,7 @@
     state: nano
   - type: Clothing
     sprite: Corvax/Clothing/Neck/Misc/pins.rsi
-    equippedPrefix: nano-equipped-NECK
+    equippedPrefix: nano
 
 - type: entity
   parent: ClothingNeckPinBase
@@ -165,7 +165,7 @@
     state: neb
   - type: Clothing
     sprite: Corvax/Clothing/Neck/Misc/pins.rsi
-    equippedPrefix: neb-equipped-NECK
+    equippedPrefix: neb
     
 - type: entity
   parent: ClothingNeckPinBase
@@ -178,7 +178,7 @@
     state: nova
   - type: Clothing
     sprite: Corvax/Clothing/Neck/Misc/pins.rsi
-    equippedPrefix: nova-equipped-NECK
+    equippedPrefix: nova
 
 - type: entity
   parent: ClothingNeckPinBase
@@ -191,7 +191,7 @@
     state: sind
   - type: Clothing
     sprite: Corvax/Clothing/Neck/Misc/pins.rsi
-    equippedPrefix: sind-equipped-NECK
+    equippedPrefix: sind
 
 - type: entity
   parent: ClothingNeckPinBase
@@ -204,7 +204,7 @@
     state: sol
   - type: Clothing
     sprite: Corvax/Clothing/Neck/Misc/pins.rsi
-    equippedPrefix: sol-equipped-NECK
+    equippedPrefix: sol
 
 - type: entity
   parent: ClothingNeckPinBase
@@ -217,17 +217,17 @@
     state: vit
   - type: Clothing
     sprite: Corvax/Clothing/Neck/Misc/pins.rsi
-    equippedPrefix: vit-equipped-NECK
+    equippedPrefix: vit
 
 - type: entity
   parent: ClothingNeckPinBase
   id: ClothingNeckWhiteListPin
   name: quasar pin
-  description: The pin of white quasar.
+  description: The pin of quasar.
   components:
   - type: Sprite
     sprite: Corvax/Clothing/Neck/Misc/pins.rsi
     state: wl
   - type: Clothing
     sprite: Corvax/Clothing/Neck/Misc/pins.rsi
-    equippedPrefix: wl-equipped-NECK
+    equippedPrefix: wl
