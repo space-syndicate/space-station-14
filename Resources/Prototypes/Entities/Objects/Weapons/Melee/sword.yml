@@ -191,3 +191,34 @@
       size: Ginormous
       sprite: Objects/Weapons/Melee/Throngler-in-hand.rsi
     - type: DisarmMalus
+
+- type: entity
+  name: Гипер Катана
+  parent: BaseItem
+  id: HyperKatana
+  description: Отражает большинство аттак толчков. Мощная.
+  suffix: skibidistation
+  components:
+  - type: Sharp
+  - type: Sprite
+    sprite: Objects/Weapons/Melee/hyper_katana.rsi
+    state: icon
+  - type: MeleeWeapon
+    wideAnimationRotation: -135
+    attackRate: 2
+    damage:
+      types:
+        Slash: 30
+    soundHit:
+        path: /Audio/Weapons/bladeslice.ogg
+  - type: Reflect
+    enabled: true
+    reflectProb: .75
+    spread: 50
+  - type: Item
+    size: Normal
+    sprite: Objects/Weapons/Melee/hyper_katana.rsi
+  - type: Tag
+    tags:
+    - HyperKatana
+  - type: DisarmMalus

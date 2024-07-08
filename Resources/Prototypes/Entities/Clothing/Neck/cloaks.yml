@@ -272,3 +272,16 @@
   - type: Sprite
     sprite: Clothing/Neck/Cloaks/pan.rsi
 
+- type: entity
+  parent: ClothingNeckBase
+  id: ClothingNeckCloakRMR
+  name: Реактивный мини-ранец
+  description: Ускоряет вас в передвижении.
+  suffix: skibidistation
+  components:
+  - type: Sprite
+    sprite: Clothing/Neck/Cloaks/reaktive_minpack.rsi
+    state: icon
+  - type: ClothingSpeedModifier
+    walkModifier: 1.30
+    sprintModifier: 1.30

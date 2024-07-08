@@ -199,3 +199,13 @@
     contents:
     - id: FoodShakerSalt
     - id: FoodShakerPepper
+
+- type: entity
+  id: ClothingBeltSheathHKFilled
+  parent: ClothingBeltSheathHK
+  suffix: Filled, skibidistation
+  components:
+  - type: ContainerFill
+    containers:
+      item:
+      - HyperKatana

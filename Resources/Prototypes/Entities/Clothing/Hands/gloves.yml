@@ -438,3 +438,33 @@
     fiberMaterial: fibers-rubber
     fiberColor: fibers-yellow
   - type: FingerprintMask
+
+# наше (и кака беттера)
+
+- type: entity
+  parent: ClothingHandsButcherable
+  id: ClothingHandsGlovesKrav-Maga
+  name: Перчатки крав-мага
+  description: Перчатки, помогающие использовать специальную технику боя Крав-мага.
+  suffix: skibidistation
+  components:
+  - type: Sprite
+    sprite: Clothing/Hands/Gloves/kravmags.rsi
+  - type: Clothing
+    sprite: Clothing/Hands/Gloves/kravmags.rsi
+  - type: StaminaDamageOnHit
+    damage: 25
+  - type: MeleeWeapon
+    autoAttack: false
+    attackRate: 1.7
+    damage:
+      types:
+       Blunt: 10
+    soundHit:
+      collection: Punch
+    animation: WeaponArcFist
+    mustBeEquippedToUse: true
+  - type: Insulated
+  - type: Fiber
+    fiberMaterial: fibers-leather
+    fiberColor: fibers-blue

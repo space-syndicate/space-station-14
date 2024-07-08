@@ -700,3 +700,36 @@
     whitelist:
       tags:
       - WizardWand
+
+- type: entity
+  parent: [ClothingBeltBase, ClothingSlotBase]
+  id: ClothingBeltSheathHK
+  name: Ножны Гипер Катаны
+  description: Выглядит поистене робастно...
+  suffix: skibidistation
+  components:
+  - type: Sprite
+    sprite: Clothing/Belt/hk_sheath.rsi
+    state: sheath
+  - type: Clothing
+    sprite: Clothing/Belt/hk_sheath.rsi
+  - type: Item
+    size: Ginormous
+  - type: ItemSlots
+    slots:
+      item:
+        name: Sabre
+        insertVerbText: sheath-insert-verb
+        ejectVerbText: sheath-eject-verb
+        insertSound: /Audio/Items/sheath.ogg
+        ejectSound: /Audio/Items/unsheath.ogg
+        whitelist:
+          tags:
+          - HyperKatana
+  - type: ItemMapper
+    mapLayers:
+      sheath-sabre:
+        whitelist:
+          tags:
+          - HyperKatana
+  - type: Appearance

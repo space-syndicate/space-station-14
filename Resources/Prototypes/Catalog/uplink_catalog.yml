@@ -82,6 +82,16 @@
   - UplinkAmmo
 
 - type: listing
+  id: UplinkWeaponHK
+  name: Гипер Катана
+  description: Поистене робастно выглядит... Чехол в комплекте.
+  productEntity: ClothingBeltSheathHKFilled
+  cost:
+    Telecrystal: 200
+  categories:
+  - UplinkWeaponry
+
+- type: listing
   id: UplinkWeaponLRMAG30
   name:  магазин LR-300
   description: Магазин LR-300 на 25 патрон.
@@ -498,5 +508,25 @@
   productEntity: KamizUniform
   cost:
     Telecrystal: 90
+  categories:
+  - UplinkWearables
+
+- type: listing
+  id: UplinkArmourRMR
+  name: РМР (Реактивный Мини-Ранец)
+  description: ускоряет вас на 30 процентов
+  productEntity: ClothingNeckCloakRMR
+  cost:
+    Telecrystal: 180
+  categories:
+  - UplinkWearables
+
+- type: listing
+  id: UplinkArmourKM
+  name: Крав-Маги
+  description: Робуст перчи. Бьют быстро, пкм - размашистый удар. 10 бланта и урон по стамине.
+  productEntity: ClothingHandsGlovesKrav-Maga
+  cost:
+    Telecrystal: 30
   categories:
   - UplinkWearables
