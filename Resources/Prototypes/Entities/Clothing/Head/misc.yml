@@ -185,6 +185,26 @@
 
 - type: entity
   parent: ClothingHeadBase
+  id: ClothingHeadHatCAMERAMEN
+  name: CAMERAMEN
+  description: "CAMERAMEN"
+  suffix: skibidi station, DO NOT MAP
+  components:
+  - type: Armor
+    modifiers:
+      coefficients:
+        Slash: 0.70
+        Heat: 0.70
+  - type: Tag
+    tags: [] # ignore "WhitelistChameleon" tag
+  - type: Sprite
+    sprite: Clothing/Head/Hats/cameramen.rsi
+  - type: Clothing
+    sprite: Clothing/Head/Hats/cameramen.rsi
+  - type: Unremoveable
+
+- type: entity
+  parent: ClothingHeadBase
   id: ClothingHeadHatDogEars
   name: doggy ears
   description: Only for good boys.
