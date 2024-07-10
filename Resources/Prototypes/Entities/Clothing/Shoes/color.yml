@@ -30,6 +30,11 @@
       - state: equipped-FEET
         color: "#1d1d1d"
       - state: soles-equipped-FEET
+      #start corvax modifit
+      - state: equipped-FEET-reptilian
+        color: "#1d1d1d"
+      - state: soles-equipped-FEET-reptilian
+      #end corvax modifit
 
 # White Shoes
 - type: entity
@@ -59,6 +64,11 @@
       - state: equipped-FEET
         color: "#EAE8E8"
       - state: contrastedsoles-equipped-FEET
+      #start corvax modifit
+      - state: equipped-FEET-reptilian
+        color: "#EAE8E8"
+      - state: soles-equipped-FEET-reptilian
+      #end corvax modifit
 
 # Blue Shoes
 - type: entity
@@ -71,7 +81,7 @@
     sprite: Clothing/Shoes/color.rsi
     layers:
     - state: icon
-      color: "#0089EF"    
+      color: "#0089EF"
     - state: soles-icon
   - type: Item
     inhandVisuals:
@@ -90,6 +100,11 @@
       - state: equipped-FEET
         color: "#0089EF"
       - state: soles-equipped-FEET
+      #start corvax modifit
+      - state: equipped-FEET-reptilian
+        color: "#0089EF"
+      - state: soles-equipped-FEET-reptilian
+      #end corvax modifit
 
 # Brown Shoes
 - type: entity
@@ -102,7 +117,7 @@
     sprite: Clothing/Shoes/color.rsi
     layers:
     - state: icon
-      color: "#723A02"    
+      color: "#723A02"
     - state: soles-icon
   - type: Item
     inhandVisuals:
@@ -121,6 +136,11 @@
       - state: equipped-FEET
         color: "#592D01"
       - state: soles-equipped-FEET
+      #start corvax modifit
+      - state: equipped-FEET-reptilian
+        color: "#592D01"
+      - state: soles-equipped-FEET-reptilian
+      #end corvax modifit
 
 # Green Shoes
 - type: entity
@@ -133,7 +153,7 @@
     sprite: Clothing/Shoes/color.rsi
     layers:
     - state: icon
-      color: "#5ABF2F"    
+      color: "#5ABF2F"
     - state: soles-icon
   - type: Item
     inhandVisuals:
@@ -152,6 +172,11 @@
       - state: equipped-FEET
         color: "#5ABF2F"
       - state: soles-equipped-FEET
+      #start corvax modifit
+      - state: equipped-FEET-reptilian
+        color: "#5ABF2F"
+      - state: soles-equipped-FEET-reptilian
+      #end corvax modifit
 
 # Orange Shoes
 - type: entity
@@ -164,7 +189,7 @@
     sprite: Clothing/Shoes/color.rsi
     layers:
     - state: icon
-      color: "#EF8100"    
+      color: "#EF8100"
     - state: soles-icon
   - type: Item
     inhandVisuals:
@@ -183,6 +208,11 @@
       - state: equipped-FEET
         color: "#EF8100"
       - state: soles-equipped-FEET
+      #start corvax modifit
+      - state: equipped-FEET-reptilian
+        color: "#EF8100"
+      - state: soles-equipped-FEET-reptilian
+      #end corvax modifit
 
 # Red Shoes
 - type: entity
@@ -195,7 +225,7 @@
     sprite: Clothing/Shoes/color.rsi
     layers:
     - state: icon
-      color: "#940000"    
+      color: "#940000"
     - state: soles-icon
   - type: Item
     inhandVisuals:
@@ -214,6 +244,11 @@
       - state: equipped-FEET
         color: "#940000"
       - state: soles-equipped-FEET
+      #start corvax modifit
+      - state: equipped-FEET-reptilian
+        color: "#940000"
+      - state: soles-equipped-FEET-reptilian
+      #end corvax modifit
 
 # Yellow Shoes
 - type: entity
@@ -226,7 +261,7 @@
     sprite: Clothing/Shoes/color.rsi
     layers:
     - state: icon
-      color: "#EBE216"    
+      color: "#EBE216"
     - state: soles-icon
   - type: Item
     inhandVisuals:
@@ -245,6 +280,11 @@
       - state: equipped-FEET
         color: "#EBE216"
       - state: soles-equipped-FEET
+      #start corvax modifit
+      - state: equipped-FEET-reptilian
+        color: "#EBE216"
+      - state: soles-equipped-FEET-reptilian
+      #end corvax modifit
 
 # Purple Shoes
 - type: entity
@@ -257,7 +297,7 @@
     sprite: Clothing/Shoes/color.rsi
     layers:
     - state: icon
-      color: "#9C0DE1"    
+      color: "#9C0DE1"
     - state: soles-icon
   - type: Item
     inhandVisuals:
@@ -276,3 +316,8 @@
       - state: equipped-FEET
         color: "#9C0DE1"
       - state: soles-equipped-FEET
+      #start corvax modifit
+      - state: equipped-FEET-reptilian
+        color: "#9C0DE1"
+      - state: soles-equipped-FEET-reptilian
+      #end corvax modifit
