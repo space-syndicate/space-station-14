@@ -18,4 +18,4 @@ stat-item-price = Размер
 # Draw Rate
 stat-drawrate-values = Уровень потребления ЛКП
 stat-drawrate-id = ID
-stat-drawrate-rate = Уровень потребления (W)
+stat-drawrate-rate = Уровень потребления (Вт)
