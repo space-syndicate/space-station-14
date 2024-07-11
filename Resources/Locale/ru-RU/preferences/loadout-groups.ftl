@@ -1,5 +1,5 @@
 # Errors
-loadout-group-species-restriction = This item is not available for your current species.
+loadout-group-species-restriction = Этот предмет недоступен для вашей текущей расы.
 # Miscellaneous
 loadout-group-trinkets = Безделушки
 loadout-group-glasses = Очки
@@ -11,8 +11,8 @@ loadout-group-survival-clown = Клоунский аварийный запас
 loadout-group-survival-medical = Медицинский аварийный запас
 loadout-group-survival-security = Аварийный запас охраны
 loadout-group-survival-syndicate = Github заставил меня перевести текст, который игрок вообще никогда не сможет увидеть, спасите
-loadout-group-breath-tool = Species-dependent breath tools
-loadout-group-tank-harness = Species-specific survival equipment
+loadout-group-breath-tool = Расозависимое дыхательное снаряжение
+loadout-group-tank-harness = Расозависимое снаряжение для выживания
 # Command
 loadout-group-captain-head = Капитан, голова
 loadout-group-captain-jumpsuit = Капитан, комбинезон

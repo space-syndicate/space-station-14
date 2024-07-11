@@ -34,13 +34,11 @@ ent-CleanerGrenade = чистящая граната
     .desc = Специальная граната для уборщиков, выпускающая большое облако пены для чистки помещений.
 ent-TearGasGrenade = слезоточивая граната
     .desc = Граната со слезоточивым газом для борьбы с беспорядками. Вызывает раздражение, боль и заставляет вас выплакать глаза.
-ent-MetalFoamGrenade = metal foam grenade
-    .desc = An emergency tool used for patching up holes. Almost as good as real walls.
+ent-MetalFoamGrenade = металопенная граната
+    .desc = Аварийное приспособление, используемое для заделывания пробоин. Почти так же надёжно, как настоящие стены.
 ent-GrenadeDummy = граната-обманка
     .desc = Граната есть - взрыва нет.
 # Corvax-HiddenDesc-Start
 ent-SyndieTrickyBomb = хитроумная бомба
     .desc = Взрывное устройство, больше отвлекающее внимание, чем наносящее реальный вред.
-
 # Corvax-HiddenDesc-End
-
