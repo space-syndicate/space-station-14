@@ -1259,3 +1259,67 @@
               Telecrystal:
                 min: 1
                 max: 60
+
+- type: entity
+  name: Скибиди Брендан Террант
+  parent: MobSkibidiToilet
+  id: MobSkibidiToiletBT
+  description: АЛЛАХ НЕ СПАС
+  suffix: skibidistation
+  components:
+  - type: Sprite
+    drawdepth: Mobs
+    sprite: Mobs/Toilets/toilet_tarrant.rsi
+    layers:
+    - map: ["enum.DamageStateVisualLayers.Base"]
+      state: toilet
+  - type: MobThresholds
+    thresholds:
+      0: Alive
+      150: Dead
+  - type: SlowOnDamage
+  - type: HTN
+    rootTask:
+      task: SimpleRangedHostileCompound
+  - type: RechargeBasicEntityAmmo
+    rechargeCooldown: 5
+  - type: BasicEntityAmmoProvider
+    proto: ShellShotgun
+    capacity: 1
+    count: 1
+  - type: Gun
+    fireRate: 8
+    useKey: false
+    selectedMode: FullAuto
+    availableModes:
+      - FullAuto
+    soundGunshot: /Audio/Toilets/skibidi_dop.ogg
+  - type: MovementSpeedModifier
+    baseSprintSpeed: 4
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeCircle
+          radius: 0.45
+        density: 450
+        mask:
+        - MobMask
+        layer:
+        - MobLayer
+  - type: Destructible
+    thresholds:
+      - trigger:
+          !type:DamageTrigger
+          damage: 170
+        behaviors:
+          - !type:DoActsBehavior
+            acts: [ "Destruction" ]
+          - !type:PlaySoundBehavior
+            sound:
+              path: /Audio/Toilets/death.ogg
+          - !type:SpawnEntitiesBehavior
+            spawn:
+              Telecrystal:
+                min: 30
+                max: 30
