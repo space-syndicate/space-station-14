@@ -23,8 +23,6 @@
         orGroup: BookPool
       - id: BookScientistsGuidebook
         orGroup: BookPool
-      - id: HyperLinkBookCorporateLaw # Corvax-HyperLink
-        orGroup: BookPool
       - id: BookSecurity
         orGroup: BookPool
       - id: BookHowToKeepStationClean
@@ -36,6 +34,8 @@
       - id: BookHowToSurvive
         orGroup: BookPool
       - id: BookChemicalCompendium
+        orGroup: BookPool
+      - id: BookSpaceLaw
         orGroup: BookPool
       - id: BookNarsieLegend
         prob: 0.1

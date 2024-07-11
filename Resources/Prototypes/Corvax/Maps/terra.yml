@@ -22,7 +22,7 @@
           mapLightColor: "#090303FF"
         - type: GridSpawn
           groups:
-            trade:
+            trade: !type:GridSpawnGroup
               addComponents:
                 - type: ProtectedGrid
                 - type: TradeStation
