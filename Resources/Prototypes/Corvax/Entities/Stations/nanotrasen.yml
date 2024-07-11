@@ -23,7 +23,7 @@
     - type: GridSpawn
       groups:
         # Spawn last
-        ruins:
+        ruins: !type:GridSpawnGroup
           hide: true
           nameGrid: true
           minCount: 2
