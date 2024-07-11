@@ -17,6 +17,8 @@
 
 - type: startingGear
   id: CaptainGear
+  equipment:
+    id: CaptainIDCard
   storage:
     back:
     - BaseUplinkRadio
