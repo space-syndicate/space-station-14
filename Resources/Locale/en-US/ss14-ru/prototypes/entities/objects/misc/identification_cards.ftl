@@ -1,5 +1,5 @@
-ent-IDCardStandard = identification card
-    .desc = A card necessary to access various areas aboard the station.
+ent-IDCardStandard = Жетоны арийца
+    .desc = ЕРМ ВАТ А СИГМА
 ent-PassengerIDCard = passenger ID card
     .desc = { ent-IDCardStandard.desc }
 ent-TechnicalAssistantIDCard = technical assistant ID card
@@ -12,7 +12,7 @@ ent-SecurityCadetIDCard = security cadet ID card
     .desc = { ent-PassengerIDCard.desc }
 ent-ServiceWorkerIDCard = service worker ID card
     .desc = { ent-PassengerIDCard.desc }
-ent-CaptainIDCard = captain ID card
+ent-CaptainIDCard = Жетоны арийца
     .desc = { ent-IDCardStandard.desc }
 ent-SecurityIDCard = security ID card
     .desc = { ent-IDCardStandard.desc }

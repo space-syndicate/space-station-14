@@ -105,20 +105,15 @@
   name: captain ID card
   components:
   - type: Sprite
+    sprite: Objects/Misc/aryanDogtags.rsi
     layers:
-    - state: gold
-    - state: idcaptain
-  - type: Item
-    heldPrefix: gold
+    - state: dogtag
   - type: PresetIdCard
     job: Captain
   - type: Tag
     tags:
     - DoorBumpOpener
     - WhitelistChameleon
-    - HighRiskItem
-  - type: StealTarget
-    stealGroup: CaptainIDCard
 
 - type: entity
   parent: IDCardStandard
