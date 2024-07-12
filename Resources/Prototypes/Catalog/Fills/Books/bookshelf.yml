@@ -130,7 +130,7 @@
       - id: BookInspiration
         prob: 0.1
         orGroup: BookAuthor
-        # Corvax lore books
+        # Corvax-Lore-Start
       - id: BookExpensiveCrystal
         prob: 0.1
         orGroup: BookLore
@@ -221,3 +221,4 @@
       - id: BookImplants
         prob: 0.1
         orGroup: BookLore
+        # Corvax-Lore-End
