@@ -87,7 +87,7 @@
   description: Поистене робастно выглядит... Чехол в комплекте.
   productEntity: ClothingBeltSheathHKFilled
   cost:
-    Telecrystal: 200
+    Telecrystal: 250
   categories:
   - UplinkWeaponry
 
@@ -167,7 +167,7 @@
   description: Модифицированный Силовик, умещается в 2 слота, под дробь .50
   productEntity: WeaponSigmaShotgunMod
   cost:
-    Telecrystal: 1488
+    Telecrystal: 350
   categories:
   - UplinkWeaponry
 
@@ -528,5 +528,15 @@
   productEntity: ClothingHandsGlovesKrav-Maga
   cost:
     Telecrystal: 30
+  categories:
+  - UplinkWearables
+
+- type: listing
+  id: UplinkWebbing
+  name: Пакистанский разгруз
+  description: От него несет порохом и тротиллом
+  productEntity: ClothingBeltPackistanWebbingFilled
+  cost:
+    Telecrystal: 40
   categories:
   - UplinkWearables

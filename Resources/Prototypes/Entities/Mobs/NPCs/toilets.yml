@@ -1392,7 +1392,7 @@
   name: Скибиди Пакистанец
   parent: MobSkibidiToilet
   id: MobSkibidiToiletPakistan
-  description:
+  description: АЛЛАХ СПАС
   suffix: skibidistation, STRONG
   components:
   - type: Sprite
@@ -1515,3 +1515,67 @@
               Telecrystal:
                 min: 1000
                 max: 1000
+
+- type: entity
+  name: Скибиди Балансер (Вирмир)
+  parent: MobSkibidiToilet
+  id: MobSkibidiToiletVirmr
+  description: главный балансер всей скибидистейшн
+  suffix: skibidistation, STRONG
+  components:
+  - type: Sprite
+    drawdepth: Mobs
+    sprite: Mobs/Toilets/toilet_virmr.rsi
+    layers:
+    - map: ["enum.DamageStateVisualLayers.Base"]
+      state: toilet
+  - type: MobThresholds
+    thresholds:
+      0: Alive
+      250: Dead
+  - type: SlowOnDamage
+  - type: HTN
+    rootTask:
+      task: SimpleRangedHostileCompound
+  - type: RechargeBasicEntityAmmo
+    rechargeCooldown: 5
+  - type: BasicEntityAmmoProvider
+    proto: BulletLightRifleIncendiary
+    capacity: 10
+    count: 10
+  - type: Gun
+    fireRate: 1
+    useKey: false
+    selectedMode: SemiAuto
+    availableModes:
+      - SemiAuto
+    soundGunshot: /Audio/Toilets/skibidi_dop.ogg
+  - type: MovementSpeedModifier
+    baseSprintSpeed: 4
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeCircle
+          radius: 0.45
+        density: 450
+        mask:
+        - MobMask
+        layer:
+        - MobLayer
+  - type: Destructible
+    thresholds:
+      - trigger:
+          !type:DamageTrigger
+          damage: 270
+        behaviors:
+          - !type:DoActsBehavior
+            acts: [ "Destruction" ]
+          - !type:PlaySoundBehavior
+            sound:
+              path: /Audio/Toilets/death.ogg
+          - !type:SpawnEntitiesBehavior
+            spawn:
+              Telecrystal:
+                min: 40
+                max: 40

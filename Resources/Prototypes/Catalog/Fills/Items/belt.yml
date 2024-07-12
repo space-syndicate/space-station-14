@@ -209,3 +209,20 @@
     containers:
       item:
       - HyperKatana
+
+- type: entity
+  id: ClothingBeltPackistanWebbingFilled
+  parent: ClothingBeltPackistanWebbing
+  name: Пакистанский разгруз
+  suffix: Filled, skibidistation
+  components:
+  - type: Item
+    size: Ginormous
+  - type: Storage
+    maxItemSize: Normal
+    grid:
+    - 0,0,7,1
+  - type: StorageFill
+    contents:
+      - id: BombAEG
+        amount: 8

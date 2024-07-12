@@ -556,3 +556,8 @@
     clothingPrototype: ClothingHeadHatHoodKufia
   - type: ExplosionResistance
     damageCoefficient: 0
+  - type: Armor
+    modifiers:
+      coefficients:
+        Slash: 0.90
+        Heat: 0.30
