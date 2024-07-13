@@ -763,15 +763,6 @@ entities:
     - type: Physics
       canCollide: False
     - type: InsideEntityStorage
-- proto: FoodMeatCorgi
-  entities:
-  - uid: 27
-    components:
-    - type: Transform
-      parent: 10
-    - type: Physics
-      canCollide: False
-    - type: InsideEntityStorage
 - proto: FoodMeatDragon
   entities:
   - uid: 96
