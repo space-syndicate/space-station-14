@@ -38,11 +38,6 @@ reagent-effect-guidebook-foam-area-reaction-effect =
     } большое количество пены
 reagent-effect-guidebook-smoke-area-reaction-effect =
     { $chance ->
-        [1] Creates
-       *[other] create
-    } large quantities of smoke
-reagent-effect-guidebook-foam-area-reaction-effect =
-    { $chance ->
         [1] Создаёт
        *[other] создают
     } большое количество дыма
@@ -311,13 +306,48 @@ reagent-effect-guidebook-cause-zombie-infection =
         [1] Заражает
        *[other] заражают
     } человека зомби-вирусом
+reagent-effect-guidebook-reduce-rotting =
+    { $chance ->
+        [1] Регенерирует
+       *[other] регенерируют
+    } { NATURALFIXED($time, 3) } { MANY("second", $time) } гниения
 reagent-effect-guidebook-innoculate-zombie-infection =
     { $chance ->
         [1] Лечит
        *[other] лечат
     } зомби-вирус и обеспечивает иммунитет к нему в будущем
-reagent-effect-guidebook-missing =
+reagent-effect-guidebook-area-reaction =
     { $chance ->
         [1] Вызывает
        *[other] вызывают
-    } неизвестный эффект, так как никто ещё не написал об этом эффекте
+    } дымовую или пенную реакцию на { NATURALFIXED($duration, 3) } { MANY("second", $duration) }
+reagent-effect-guidebook-add-to-solution-reaction =
+    { $chance ->
+        [1] Заставляет
+       *[other] заставляют
+    } химикаты, применённые к объекту, добавиться во внутренний контейнер для растворов этого объекта
+reagent-effect-guidebook-plant-attribute =
+    { $chance ->
+        [1] Изменяет
+       *[other] изменяют
+    } { $attribute } за [color={ $colorName }]{ $amount }[/color]
+reagent-effect-guidebook-plant-cryoxadone =
+    { $chance ->
+        [1] Омолаживает
+       *[other] омолаживают
+    } растение, в зависимости от возраста растения и времени его роста
+reagent-effect-guidebook-plant-phalanximine =
+    { $chance ->
+        [1] Восстанавливает
+       *[other] восстанавливают
+    } жизнеспособность растения, ставшего нежизнеспособным в результате мутации
+reagent-effect-guidebook-plant-diethylamine =
+    { $chance ->
+        [1] Повышает
+       *[other] повышают
+    } продолжительность жизни растения и/или его базовое здоровье с шансом 10% на единицу
+reagent-effect-guidebook-plant-robust-harvest =
+    { $chance ->
+        [1] Повышает
+       *[other] повышают
+    } потенцию растения путём { $increase } до максимума в { $limit }. Приводит к тому, что растение теряет свои семена, когда потенция достигает { $seedlesstreshold }. Попытка повысить потенцию свыше { $limit } может вызвать снижение урожайности с вероятностью 10%

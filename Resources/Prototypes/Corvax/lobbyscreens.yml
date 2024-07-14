@@ -126,6 +126,10 @@
   id: YouLookLonely
   background: /Textures/Corvax/LobbyScreens/you-look-lonely.png
 
+- type: lobbyBackground
+  id: GrayTide
+  background: /Textures/Corvax/LobbyScreens/gray-tide.png
+
 #- type: lobbyBackground
 #  id: NewYearBar
 #  background: /Textures/Corvax/LobbyScreens/new-year-bar.png
@@ -177,3 +181,7 @@
 - type: lobbyBackground
   id: NukieWar
   background: /Textures/Corvax/LobbyScreens/nukie-war.png
+
+- type: lobbyBackground
+  id: EngineersVsZombies
+  background: /Textures/Corvax/LobbyScreens/engineers-vs-zombies.png

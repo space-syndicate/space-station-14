@@ -19,31 +19,31 @@
         liver: OrganAnimalLiver
         kidneys: OrganHumanKidneys
       connections:
-      - left arm
-      - right arm
-      - left leg
-      - right leg
-    right arm:
+      - right_arm
+      - left_arm
+      - right_leg
+      - left_leg
+    right_arm:
       part: RightArmVulpkanin
       connections:
-      - right hand
-    left arm:
+      - right_hand
+    left_arm:
       part: LeftArmVulpkanin
       connections:
-      - left hand
-    right hand:
+      - left_hand
+    right_hand:
       part: RightHandVulpkanin
-    left hand:
+    left_hand:
       part: LeftHandVulpkanin
-    right leg:
+    right_leg:
       part: RightLegVulpkanin
       connections:
-      - right foot
-    left leg:
+      - right_foot
+    left_leg:
       part: LeftLegVulpkanin
       connections:
-      - left foot
-    right foot:
+      - left_foot
+    right_foot:
       part: RightFootVulpkanin
-    left foot:
+    left_foot:
       part: LeftFootVulpkanin

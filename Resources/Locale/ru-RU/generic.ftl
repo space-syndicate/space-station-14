@@ -8,5 +8,6 @@ generic-unknown-title = Неизвестно
 generic-error = ошибка
 generic-invalid = недействительно
 generic-hours = часов
+generic-minutes = минут
 generic-playtime-title = Игровое время
 generic-confirm = Подтвердить

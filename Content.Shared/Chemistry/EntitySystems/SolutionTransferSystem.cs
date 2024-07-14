@@ -17,7 +17,6 @@ namespace Content.Shared.Chemistry.EntitySystems;
 /// </summary>
 public sealed class SolutionTransferSystem : EntitySystem
 {
-    [Dependency] private readonly INetManager _net = default!;
     [Dependency] private readonly ISharedAdminLogManager _adminLogger = default!;
     [Dependency] private readonly SharedPopupSystem _popup = default!;
     [Dependency] private readonly SharedSolutionContainerSystem _solution = default!;
@@ -39,11 +38,15 @@ public sealed class SolutionTransferSystem : EntitySystem
 
     private void OnTransferAmountSetValueMessage(Entity<SolutionTransferComponent> ent, ref TransferAmountSetValueMessage message)
     {
-        var newTransferAmount = FixedPoint2.Clamp(message.Value, ent.Comp.MinimumTransferAmount, ent.Comp.MaximumTransferAmount);
-        ent.Comp.TransferAmount = newTransferAmount;
+        var (uid, comp) = ent;
+
+        var newTransferAmount = FixedPoint2.Clamp(message.Value, comp.MinimumTransferAmount, comp.MaximumTransferAmount);
+        comp.TransferAmount = newTransferAmount;
 
         if (message.Actor is { Valid: true } user)
-            _popup.PopupClient(Loc.GetString("comp-solution-transfer-set-amount", ("amount", newTransferAmount)), ent, user);
+            _popup.PopupEntity(Loc.GetString("comp-solution-transfer-set-amount", ("amount", newTransferAmount)), uid, user);
+
+        Dirty(uid, comp);
     }
 
     private void AddSetTransferVerbs(Entity<SolutionTransferComponent> ent, ref GetVerbsEvent<AlternativeVerb> args)
@@ -79,7 +82,10 @@ public sealed class SolutionTransferSystem : EntitySystem
             verb.Act = () =>
             {
                 comp.TransferAmount = amount;
+
                 _popup.PopupClient(Loc.GetString("comp-solution-transfer-set-amount", ("amount", amount)), uid, user);
+
+                Dirty(uid, comp);
             };
 
             // we want to sort by size, not alphabetically by the verb text.
@@ -194,7 +200,7 @@ public sealed class SolutionTransferSystem : EntitySystem
         var actualAmount = FixedPoint2.Min(amount, FixedPoint2.Min(sourceSolution.Volume, targetSolution.AvailableVolume));
 
         var solution = _solution.SplitSolution(source, actualAmount);
-        _solution.Refill(targetEntity, target, solution);
+        _solution.AddSolution(target, solution);
 
         _adminLogger.Add(LogType.Action, LogImpact.Medium,
             $"{ToPrettyString(user):player} transferred {SharedSolutionContainerSystem.ToPrettyString(solution)} to {ToPrettyString(targetEntity):target}, which now contains {SharedSolutionContainerSystem.ToPrettyString(targetSolution)}");

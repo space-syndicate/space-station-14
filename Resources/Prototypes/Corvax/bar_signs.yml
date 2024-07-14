@@ -1,5 +1,15 @@
+<<<<<<< HEAD
 - type: barSign
   id: AlcoholicSign
   name: barsign-prototype-name-alcoholic
   icon: "corvax_alcoholic"
   description: barsign-prototype-description-alcoholic
+=======
+- type: barSign
+  id: AlcoholicSign
+  name: barsign-prototype-name-alcoholic
+  icon:
+    sprite: Structures/Wallmounts/barsign.rsi
+    state: corvax_alcoholic
+  description: barsign-prototype-description-alcoholic
+>>>>>>> 913d1e3e87b1f04ad87940d1f90db1b045be01b4

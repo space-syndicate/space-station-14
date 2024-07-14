@@ -1,16 +1,24 @@
 - type: gameMap
+<<<<<<< HEAD
   id: Barratry
   mapName: 'Barratry'
   mapPath: /Maps/barratry.yml
   minPlayers: 30
   maxPlayers: 60
   fallback: true
+=======
+  id: Train
+  mapName: 'Train'
+  mapPath: /Maps/train.yml
+  maxRandomOffset: 0
+  randomRotation: false
+  minPlayers: 10
+  maxPlayers: 50
+>>>>>>> 913d1e3e87b1f04ad87940d1f90db1b045be01b4
   stations:
     Barratry:
       stationProto: StandardNanotrasenStation
       components:
-        - type: StationRandomTransform
-          enableStationRotation: false
         - type: StationNameSetup
           mapNameTemplate: '{0} Barratry {1}'
           nameGenerator:
@@ -19,8 +27,6 @@
         - type: StationEmergencyShuttle
           emergencyShuttlePath: /Maps/Shuttles/emergency_raven.yml
         - type: StationJobs
-          overflowJobs:
-            - Passenger
           availableJobs:
             #service
             Captain: [ 1, 1 ]
@@ -52,9 +58,15 @@
             #security
             HeadOfSecurity: [ 1, 1 ]
             Warden: [ 1, 1 ]
+<<<<<<< HEAD
             Detective: [ 1, 1 ]
             SecurityOfficer: [ 5, 5 ]
             SecurityCadet: [ 2, 4 ]
+=======
+            SecurityOfficer: [ 6, 6 ]
+            SecurityCadet: [ 3, 3 ]
+            #Lawyer: [ 1, 2 ] # Corvax-IAA
+>>>>>>> 913d1e3e87b1f04ad87940d1f90db1b045be01b4
             #supply
             Quartermaster: [ 1, 1 ]
             SalvageSpecialist: [ 3, 3 ]

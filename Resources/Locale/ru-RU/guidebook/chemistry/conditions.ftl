@@ -9,11 +9,11 @@ reagent-effect-condition-guidebook-total-damage =
     }
 reagent-effect-condition-guidebook-total-hunger =
     { $max ->
-        [2147483648] the target has at least { NATURALFIXED($min, 2) } total hunger
+        [2147483648] цель имеет по крайней мере { NATURALFIXED($min, 2) } общего голода
        *[other]
             { $min ->
-                [0] the target has at most { NATURALFIXED($max, 2) } total hunger
-               *[other] the target has between { NATURALFIXED($min, 2) } and { NATURALFIXED($max, 2) } total hunger
+                [0] цель имеет не более { NATURALFIXED($max, 2) } общего голода
+               *[other] цель имеет между  { NATURALFIXED($min, 2) } и { NATURALFIXED($max, 2) } общего голода
             }
     }
 reagent-effect-condition-guidebook-reagent-threshold =
@@ -26,6 +26,7 @@ reagent-effect-condition-guidebook-reagent-threshold =
             }
     }
 reagent-effect-condition-guidebook-mob-state-condition = пациент в { $state }
+reagent-effect-condition-guidebook-job-condition = должность цели - { $job }
 reagent-effect-condition-guidebook-solution-temperature =
     температура раствора составляет { $max ->
         [2147483648] не менее { NATURALFIXED($min, 2) }k
@@ -54,3 +55,4 @@ reagent-effect-condition-guidebook-has-tag =
         [true] не имеет
        *[false] имеет
     } метку { $tag }
+reagent-effect-condition-guidebook-this-reagent = этот реагент

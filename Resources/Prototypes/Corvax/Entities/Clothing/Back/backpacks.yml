@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 - type: entity
   parent: ClothingBackpack
   id: ClothingMilitaryBackpack
@@ -32,3 +33,38 @@
   components:
   - type: Sprite
     sprite: Corvax/Back/Backpacks/ce.rsi
+=======
+- type: entity
+  parent: ClothingBackpack
+  id: ClothingMilitaryBackpack
+  name: army backpack
+  description: A spacious backpack with lots of pockets, worn by military structures.
+  components:
+  - type: Sprite
+    sprite: Corvax/Back/Backpacks/military.rsi
+  - type: Storage
+    grid:
+    - 0,0,8,4
+
+- type: entity
+  parent: ClothingBackpack
+  id: ClothingDeathSquadronBackpack
+  name: death squadron backpack
+  description: A spacious backpack using bluespace technology.
+  components:
+  - type: Sprite
+    sprite: Corvax/Back/Backpacks/deathsquad-backpack.rsi
+  - type: Storage
+    grid:
+    - 0,0,13,7
+    maxItemSize: Huge
+
+- type: entity
+  parent: ClothingBackpack
+  id: ClothingBackpackCE
+  name: chief engineer backpack
+  description: Technicially progressive backpack.
+  components:
+  - type: Sprite
+    sprite: Corvax/Back/Backpacks/ce.rsi
+>>>>>>> 913d1e3e87b1f04ad87940d1f90db1b045be01b4

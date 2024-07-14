@@ -1,4 +1,4 @@
-drink-component-on-use-is-empty = { $owner } пуст!
+drink-component-on-use-is-empty = { CAPITALIZE($owner) } пуст!
 drink-component-on-examine-is-empty = [color=gray]Пусто[/color]
 drink-component-on-examine-is-opened = [color=yellow]Открыто[/color]
 drink-component-on-examine-is-sealed = Пломба не повреждена.
@@ -10,7 +10,7 @@ drink-component-on-examine-is-half-empty = Наполовину пуст
 drink-component-on-examine-is-mostly-empty = Почти пуст
 drink-component-on-examine-exact-volume = Полон на { $amount }ед.
 drink-component-try-use-drink-not-open = Сначала откройте { $owner }!
-drink-component-try-use-drink-is-empty = { $entity } пуст!
+drink-component-try-use-drink-is-empty = { CAPITALIZE($entity) } пуст!
 drink-component-try-use-drink-cannot-drink = Вы не можете ничего пить!
 drink-component-try-use-drink-had-enough = Вы не можете выпить больше!
 drink-component-try-use-drink-cannot-drink-other = Они не могут ничего пить!
