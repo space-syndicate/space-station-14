@@ -1,0 +1,9 @@
+- type: loadout
+  id: SpaceLaw
+  equipment: SpaceLaw
+
+- type: startingGear
+  id: SpaceLaw
+  storage:
+    pocket2:
+    - BookSpaceLaw

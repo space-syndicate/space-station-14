@@ -6,6 +6,7 @@ admin-verbs-admin-logs-entity = Логи сущности
 admin-verbs-teleport-to = Телепортироваться к
 admin-verbs-teleport-here = Телепортировать сюда
 admin-verbs-freeze = Заморозить
+admin-verbs-freeze-and-mute = Заморозить и заглушить
 admin-verbs-unfreeze = Разморозить
 admin-verbs-erase = Стереть
 admin-verbs-erase-description =

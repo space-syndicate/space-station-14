@@ -146,7 +146,7 @@
     sprite: Clothing/Shoes/Boots/winterbootssci.rsi
 
 - type: entity
-  parent: ClothingShoesBaseWinterBoots
+  parent: [ClothingShoesBaseWinterBoots, ClothingShoesMilitaryBase]
   id: ClothingShoesBootsWinterSec
   name: security winter boots
   components:

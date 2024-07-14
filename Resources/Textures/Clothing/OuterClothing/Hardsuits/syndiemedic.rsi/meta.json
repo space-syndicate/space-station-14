@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 {
   "version": 1,
   "license": "CC-BY-SA-3.0",
@@ -25,3 +26,35 @@
     }
   ]
 }
+=======
+{
+  "version": 1,
+  "license": "CC-BY-SA-3.0",
+  "copyright": "Made by Hqlle (github). Vox state made by Flareguy for SS14",
+  "size": {
+    "x": 32,
+    "y": 32
+  },
+  "states": [
+    {
+      "name": "icon"
+    },
+    {
+      "name": "equipped-OUTERCLOTHING",
+      "directions": 4
+    },
+    {
+      "name": "equipped-OUTERCLOTHING-vox",
+      "directions": 4
+    },
+    {
+      "name": "inhand-left",
+      "directions": 4
+    },
+    {
+      "name": "inhand-right",
+      "directions": 4
+    }
+  ]
+}
+>>>>>>> 913d1e3e87b1f04ad87940d1f90db1b045be01b4

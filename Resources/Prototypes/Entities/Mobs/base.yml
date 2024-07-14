@@ -44,6 +44,8 @@
   - type: Polymorphable
   - type: StatusIcon
   - type: TTS # Corvax-TTS
+  - type: RequireProjectileTarget
+    active: False
 
 # Used for mobs that have health and can take damage.
 - type: entity

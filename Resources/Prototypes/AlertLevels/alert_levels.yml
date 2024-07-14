@@ -39,7 +39,7 @@
       announcement: alert-level-gamma-announcement
       selectable: false
       sound:
-        path: /Audio/Misc/siren.ogg
+        path: /Audio/Corvax/Misc/siren.ogg # Corvax: Return of the old siren sound
         params:
           volume: -2
       disableSelection: true

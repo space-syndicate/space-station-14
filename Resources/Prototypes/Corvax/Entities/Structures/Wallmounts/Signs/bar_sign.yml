@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 - type: entity
   parent: BaseBarSign
   id: BarSignAlcoholic
@@ -9,3 +10,13 @@
     sprite: Structures/Wallmounts/barsign.rsi
   - type: BarSign
     current: AlcoholicSign
+=======
+- type: entity
+  parent: BaseBarSign
+  id: BarSignAlcoholic
+  name: Pour and that's it
+  description: Pour it on, that's all. Hard times have come...
+  components:
+  - type: BarSign
+    current: AlcoholicSign
+>>>>>>> 913d1e3e87b1f04ad87940d1f90db1b045be01b4
