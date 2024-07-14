@@ -130,3 +130,95 @@
       - id: BookInspiration
         prob: 0.1
         orGroup: BookAuthor
+        # Corvax-Lore-Start
+      - id: BookExpensiveCrystal
+        prob: 0.1
+        orGroup: BookLore
+      - id: BookClones
+        prob: 0.1
+        orGroup: BookLore
+      - id: BookDAM
+        prob: 0.1
+        orGroup: BookLore
+      - id: BookFaks
+        prob: 0.1
+        orGroup: BookLore
+      - id: BookFamalis
+        prob: 0.1
+        orGroup: BookLore
+      - id: BookGrav
+        prob: 0.1
+        orGroup: BookLore
+      - id: BookHalifat
+        prob: 0.1
+        orGroup: BookLore
+      - id: BookRedspace
+        prob: 0.1
+        orGroup: BookLore
+      - id: BookShips
+        prob: 0.1
+        orGroup: BookLore
+      - id: BookZP
+        prob: 0.1
+        orGroup: BookLore
+      - id: BookUSSP
+        prob: 0.1
+        orGroup: BookLore
+      - id: BookMirt
+        prob: 0.1
+        orGroup: BookLore
+      - id: BookGior
+        prob: 0.1
+        orGroup: BookLore
+      - id: BookSNK
+        prob: 0.1
+        orGroup: BookLore
+      - id: BookUmpor
+        prob: 0.1
+        orGroup: BookLore
+      - id: BookNooc
+        prob: 0.1
+        orGroup: BookLore
+      - id: BookNakamura
+        prob: 0.1
+        orGroup: BookLore
+      - id: BookVitz
+        prob: 0.1
+        orGroup: BookLore
+      - id: BookGefest
+        prob: 0.1
+        orGroup: BookLore
+      - id: BookConarex
+        prob: 0.1
+        orGroup: BookLore
+      - id: BookPetr
+        prob: 0.1
+        orGroup: BookLore
+      - id: BookSaibasan
+        prob: 0.1
+        orGroup: BookLore
+      - id: BookUnath1
+        prob: 0.1
+        orGroup: BookLore
+      - id: BookUnath2
+        prob: 0.1
+        orGroup: BookLore
+      - id: BookDione
+        prob: 0.1
+        orGroup: BookLore
+      - id: BookBSS
+        prob: 0.1
+        orGroup: BookLore
+      - id: BookScaf
+        prob: 0.1
+        orGroup: BookLore
+      - id: BookMBS1
+        prob: 0.1
+        orGroup: BookLore
+      - id: BookMBS2
+        prob: 0.1
+        orGroup: BookLore
+      - id: BookImplants
+        prob: 0.1
+        orGroup: BookLore
+        # Corvax-Lore-End
