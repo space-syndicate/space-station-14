@@ -9886,14 +9886,6 @@ entities:
       parent: 5995
     - type: InstantAction
       container: 5995
-- proto: ActionToggleMagbootsAdvanced
-  entities:
-  - uid: 12164
-    components:
-    - type: Transform
-      parent: 12163
-    - type: InstantAction
-      container: 12163
 - proto: AirAlarm
   entities:
   - uid: 6
@@ -54123,16 +54115,8 @@ entities:
     components:
     - type: Transform
       parent: 11189
-    - type: Magboots
-      toggleActionEntity: 12164
     - type: Physics
       canCollide: False
-    - type: ActionsContainer
-    - type: ContainerContainer
-      containers:
-        actions: !type:Container
-          ents:
-          - 12164
     - type: InsideEntityStorage
 - proto: ClothingShoesBootsMercFilled
   entities:
@@ -91101,7 +91085,7 @@ entities:
       - stampedColor: '#FF33CCFF'
         stampedName: stamp-component-stamped-name-clown
       content: >-
-        Здраствуйте, это клоун. Я вернул вам ТЭГ потому что молитвы хонкоматери помогли мне! И я богатейший клоун из Хонкландии! у меня целых 228 триллионов спесо!!!! Но вам ег онужно собрать патамушта я иго спрятыл!! МВААХАХАХАХ 
+        Здраствуйте, это клоун. Я вернул вам ТЭГ потому что молитвы хонкоматери помогли мне! И я богатейший клоун из Хонкландии! у меня целых 228 триллионов спесо!!!! Но вам ег онужно собрать патамушта я иго спрятыл!! МВААХАХАХАХ
 
         -Honk honkovich
   - uid: 10182
