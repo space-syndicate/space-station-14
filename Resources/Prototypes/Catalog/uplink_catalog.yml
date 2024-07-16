@@ -1,4 +1,4 @@
-# НАШЕЕЕЕЕЕЕЕЕЕЕЕЕЕЕЕЕЕЕЕЕ
+# Наше. SG Team copyright
 # https://github.com/NeverMind92/skibidi-station-14/blob/235e4b4f0640540472dff58d8adfaa4aa16fc81e/Resources/Prototypes/Store/presets.yml#L6 пригодится
 
 - type: listing
@@ -118,6 +118,26 @@
   productEntity: FuelTankFlamethrower
   cost:
     Telecrystal: 110
+  categories:
+  - UplinkAmmo
+
+- type: listing
+  id: UplinkWeaponGauss
+  name: Гаусс Пушка
+  description: Гаусс Пушка прямо из сталкера!!! Какого-то хуя 300 пирсинг урона с одной пульки, 7 патрон в обойме
+  productEntity: GaussPushka
+  cost:
+    Telecrystal: 300
+  categories:
+  - UplinkWeaponry
+
+- type: listing
+  id: UplinkWeaponGaussBullets
+  name:  Батарея Гаусс Пушки
+  description: Как не странно - позволит стрелять, 7 выстрелов
+  productEntity: MagazineGauss
+  cost:
+    Telecrystal: 130
   categories:
   - UplinkAmmo
 

@@ -147,3 +147,102 @@
       - CartridgeAntiMateriel
     capacity: 1
     proto: CartridgeSvinorez
+
+- type: entity
+  name: BaseWeaponGauss
+  parent: [BaseItem, BaseGunWieldable]
+  id: BaseWeaponGauss
+  description: Гаусс Пушка, убойная сила для толчков.
+  abstract: true
+  components:
+  - type: Sprite
+  - type: Item
+    size: Huge
+  - type: Clothing
+    sprite: Objects/Weapons/Guns/Rifles/ak.rsi
+    quickEquip: false
+    slots:
+    - Back
+    - suitStorage
+  - type: AmmoCounter
+  - type: Gun
+    fireRate: 0.5
+    selectedMode: SemiAuto
+    availableModes:
+      - SemiAuto
+    soundGunshot:
+      path: /Audio/Weapons/Guns/Gunshots/batrifle.ogg
+  - type: ChamberMagazineAmmoProvider
+    soundRack:
+      path: /Audio/Weapons/Guns/Cock/sf_rifle_cock.ogg
+  - type: ItemSlots
+    slots:
+      gun_magazine:
+        name: Magazine
+        startingItem: MagazineLightRifle
+        insertSound: /Audio/Weapons/Guns/MagIn/batrifle_magin.ogg
+        ejectSound: /Audio/Weapons/Guns/MagOut/batrifle_magout.ogg
+        priority: 2
+        whitelist:
+          tags:
+            - MagazineGauss
+      gun_chamber:
+        name: Chamber
+        startingItem: CartridgeGauss
+        priority: 1
+        whitelist:
+          tags:
+            - CartridgeGauss
+  - type: ContainerContainer
+    containers:
+      gun_magazine: !type:ContainerSlot
+      gun_chamber: !type:ContainerSlot
+  - type: StaticPrice
+    price: 500
+
+- type: entity
+  name: Гаусс Пушка
+  parent: BaseWeaponGauss
+  id: GaussPushka
+  description: Это уже не хохлобойник, а настоящая хохлобойка!!! 
+  suffix: skibidistation
+  components:
+  - type: Sprite
+    sprite: Objects/Weapons/Guns/Rifles/gauss.rsi
+    layers:
+      - state: base
+        map: ["enum.GunVisualLayers.Base"]
+      - state: mag-0
+        map: ["enum.GunVisualLayers.Mag"]
+  - type: Clothing
+    sprite: Objects/Weapons/Guns/Rifles/gauss.rsi
+  - type: Gun
+    fireRate: 0.5
+    soundGunshot: /Audio/Weapons/Guns/Miss/gausssound.ogg
+  - type: ItemSlots
+    slots:
+      gun_magazine:
+        name: Magazine
+        startingItem: MagazineGauss
+        insertSound: /Audio/Weapons/Guns/MagIn/ltrifle_magin.ogg
+        ejectSound: /Audio/Weapons/Guns/MagOut/ltrifle_magout.ogg
+        priority: 2
+        whitelist:
+          tags:
+            - MagazineGauss
+      gun_chamber:
+        name: Chamber
+        startingItem: CartridgeGauss
+        priority: 1
+        whitelist:
+          tags:
+            - CartridgeGauss
+  - type: ContainerContainer
+    containers:
+      gun_magazine: !type:ContainerSlot
+      gun_chamber: !type:ContainerSlot
+  - type: MagazineVisuals
+    magState: mag
+    steps: 1
+    zeroVisible: true
+  - type: Appearance

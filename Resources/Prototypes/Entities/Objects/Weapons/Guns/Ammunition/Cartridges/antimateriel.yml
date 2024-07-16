@@ -22,7 +22,7 @@
 - type: entity
   parent: BaseCartridge
   id: CartridgeSvinorez
-  name: свинорез картидж
+  name: свинорез картридж
   suffix: skibidistation
   components:
   - type: Tag
@@ -40,3 +40,87 @@
   - type: SpentAmmoVisuals
   - type: StaticPrice
     price: 100
+
+- type: entity
+  parent: BaseCartridge
+  id: CartridgeGauss
+  name: Картридж от Гаусс Пушки
+  suffix: skibidistation
+  components:
+  - type: Tag
+    tags:
+    - Cartridge
+    - CartridgeGauss
+  - type: CartridgeAmmo
+    proto: BulletGauss
+  - type: Sprite
+    sprite: Objects/Weapons/Guns/Ammunition/Casings/large_casing.rsi
+    layers:
+    - state: base
+      map: ["enum.AmmoVisualLayers.Base"]
+  - type: Appearance
+  - type: SpentAmmoVisuals
+  - type: StaticPrice
+    price: 100
+
+
+- type: entity
+  id: BaseMagazineGauss
+  name: "Магазин Гаусса"
+  parent: BaseItem
+  abstract: true
+  components:
+  - type: Tag
+    tags:
+      - MagazineGauss
+  - type: Item
+    size: Small
+  - type: BallisticAmmoProvider
+    mayTransfer: true
+    whitelist:
+      tags:
+        - CartridgeGauss
+    capacity: 7
+  - type: ContainerContainer
+    containers:
+      ballistic-ammo: !type:Container
+  - type: Sprite
+    sprite: Objects/Weapons/Guns/Ammunition/Magazine/Gauss/gaussmag.rsi
+    layers:
+    - state: base
+      map: ["enum.GunVisualLayers.Base"]
+    - state: mag-1
+      map: ["enum.GunVisualLayers.Mag"]
+  - type: MagazineVisuals
+    magState: mag
+    steps: 2
+    zeroVisible: false
+  - type: Appearance
+
+- type: entity
+  id: MagazineGauss
+  name: "Батарея Гаусса"
+  suffix: skibidistation
+  parent: BaseMagazineGauss
+  components:
+  - type: BallisticAmmoProvider
+    proto: CartridgeGauss
+  - type: Sprite
+    layers:
+    - state: yellow 
+      map: ["enum.GunVisualLayers.Base"]
+    - state: mag-1
+      map: ["enum.GunVisualLayers.Mag"]
+
+- type: entity
+  id: BulletGauss
+  name: Пуля Гаусса
+  parent: BaseBullet
+  noSpawn: true
+  components:
+  - type: Projectile
+    damage:
+      types:
+        Piercing: 300
+        Blunt: 30
+        Heat: 30
