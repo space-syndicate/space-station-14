@@ -733,3 +733,18 @@
           tags:
           - HyperKatana
   - type: Appearance
+
+- type: entity
+  parent: [ClothingBeltStorageBase, ContentsExplosionResistanceBase]
+  id: ClothingBeltPackistanWebbing
+  name: Пакистанский разргур
+  description: Пропах тратилом и черным порохом.
+  suffix: skibidistation
+  components:
+  - type: Sprite
+    sprite: Clothing/Belt/pakistanwebbing.rsi
+  - type: Clothing
+    sprite: Clothing/Belt/pakistanwebbing.rsi
+  - type: ExplosionResistance
+    damageCoefficient: 0.5
+

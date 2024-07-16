@@ -385,7 +385,7 @@
         - Scientist
         - Borg
 # Corvax-HiddenDesc-End
-          
+
 - type: entity
   parent: GrenadeBase
   id: SmokeGrenade
@@ -475,3 +475,28 @@
       path: /Audio/Effects/minibombcountdown.ogg
       params:
         volume: 12
+
+- type: entity
+  name: Самодельная пакистанская бомбочка
+  description: Сегодня мы с позволения Аллах будем учиться изготовлению взрывчатого вещества в домашних условиях...
+  parent: GrenadeBase
+  id: BombAEG
+  suffix: skibidistation
+  components:
+  - type: Sprite
+    sprite: Objects/Weapons/Grenades/aeg.rsi
+  - type: OnUseTimerTrigger
+    delay: 0.8
+  - type: ExplodeOnTrigger
+  - type: Explosive
+    explosionType: Default
+    totalIntensity: 225
+    intensitySlope: 10
+    maxIntensity: 20
+  - type: Appearance
+  - type: TimerTriggerVisuals
+    primingSound:
+      path: /Audio/Effects/allah.ogg
+      params:
+        volume: 13
+

@@ -116,7 +116,7 @@
   parent: MobSkibidiToilet
   id: MobSkibidiToiletBase
   description: Брр скибиди че то там
-  suffix: skibidistation
+  suffix: skibidistation, WEAK
   components:
   - type: Sprite
     drawdepth: Mobs
@@ -174,7 +174,7 @@
   parent: MobSkibidiToilet
   id: MobSkibidiToiletLaser
   description: you see my face going skibidi Hitler
-  suffix: skibidistation
+  suffix: skibidistation, WEAK
   components:
   - type: Sprite
     drawdepth: Mobs
@@ -241,7 +241,7 @@
   parent: MobSkibidiToilet
   id: MobSkibidiToiletZazichka
   description: знай, что ангелы не спят, они смотрят на тебя
-  suffix: skibidistation
+  suffix: skibidistation, WEAK
   components:
   - type: Sprite
     drawdepth: Mobs
@@ -309,7 +309,7 @@
   parent: MobSkibidiToilet
   id: MobSkibidiToiletRunner
   description: бррр скибиди доп доп доп ес ес
-  suffix: skibidistation
+  suffix: skibidistation, WEAK
   components:
   - type: Sprite
     drawdepth: Mobs
@@ -368,7 +368,7 @@
   parent: MobSkibidiToilet
   id: MobSkibidiToiletSpider
   description: оу ноу, спуки спайдер туалет
-  suffix: skibidistation
+  suffix: skibidistation, WEAK
   components:
   - type: Sprite
     drawdepth: Mobs
@@ -433,7 +433,7 @@
   parent: MobSkibidiToilet
   id: MobSkibidiToiletMage
   description: ДЭХАБ!
-  suffix: skibidistation
+  suffix: skibidistation, NORMAL
   components:
   - type: Sprite
     drawdepth: Mobs
@@ -498,7 +498,7 @@
   parent: MobSkibidiToilet
   id: MobSkibidiToiletGreyTide
   description: Главный манчер мэинтов инжи
-  suffix: skibidistation
+  suffix: skibidistation, NORMAL
   components:
   - type: Sprite
     drawdepth: Mobs
@@ -557,7 +557,7 @@
   parent: MobSkibidiToilet
   id: MobSkibidiToiletShitSec
   description: ; shitsec arest me for no reason!
-  suffix: skibidistation
+  suffix: skibidistation, WEAK
   components:
   - type: Sprite
     drawdepth: Mobs
@@ -616,7 +616,7 @@
   parent: MobSkibidiToilet
   id: MobSkibidiToiletShahid
   description: Аллаху акабр
-  suffix: skibidistation
+  suffix: skibidistation, NORMAL
   components:
   - type: Sprite
     drawdepth: Mobs
@@ -671,7 +671,7 @@
   parent: MobSkibidiToilet
   id: MobSkibidiToiletHOS
   description: ХОС хуесос
-  suffix: skibidistation
+  suffix: skibidistation, STRONG
   components:
   - type: Sprite
     drawdepth: Mobs
@@ -736,7 +736,7 @@
   parent: MobSkibidiToilet
   id: MobSkibidiToiletSniper
   description: пам пам пам мы стреляем по...
-  suffix: skibidistation
+  suffix: skibidistation, NORMAL
   components:
   - type: Sprite
     drawdepth: Mobs
@@ -801,7 +801,7 @@
   parent: MobSkibidiToilet
   id: MobSkibidiToiletCyborg
   description: GIVE ME YOUR CLOTH!
-  suffix: skibidistation
+  suffix: skibidistation, STRONG
   components:
   - type: Sprite
     drawdepth: Mobs
@@ -869,7 +869,7 @@
   parent: MobSkibidiToilet
   id: MobSkibidiToiletCK
   description: пЦК повысили
-  suffix: skibidistation
+  suffix: skibidistation, STRONG
   components:
   - type: Sprite
     drawdepth: Mobs
@@ -936,7 +936,7 @@
   parent: MobSkibidiToilet
   id: MobSkibidiToiletMega
   description: ебать это че нахуй
-  suffix: skibidistation
+  suffix: skibidistation, BOSS
   components:
   - type: Sprite
     drawdepth: Mobs
@@ -1003,7 +1003,7 @@
   parent: MobSkibidiToilet
   id: MobSkibidiToiletAllah
   description: АЛЛАХУ АКБАР
-  suffix: skibidistation
+  suffix: skibidistation, BOSS
   components:
   - type: Sprite
     drawdepth: Mobs
@@ -1058,7 +1058,7 @@
   parent: MobSkibidiToilet
   id: MobSkibidiToiletRekin
   description: УХБОЕР НЕ ЗАЙМЁТ КАСАРЬ
-  suffix: skibidistation
+  suffix: skibidistation, STRONG
   components:
   - type: Sprite
     drawdepth: Mobs
@@ -1117,8 +1117,8 @@
           - !type:SpawnEntitiesBehavior
             spawn:
               Telecrystal:
-                min: 200
-                max: 200
+                min: 60
+                max: 60
               ReinforcementUhboer:
                 min: 1
                 max: 1
@@ -1128,7 +1128,7 @@
   parent: MobSkibidiToilet
   id: MobSkibidiToiletGMan
   description: “ Dop Dop Yes Yes Skibidi W Dip Dip Skibidi Dop Dop yes yes Skibidi ” ― Первые слова G-Туалета
-  suffix: skibidistation
+  suffix: skibidistation, BOSS
   components:
   - type: Sprite
     drawdepth: Mobs
@@ -1138,7 +1138,7 @@
   - type: MobThresholds
     thresholds:
       0: Alive
-      5000: Dead
+      10000: Dead
   - type: SlowOnDamage
   - type: HTN
     rootTask:
@@ -1159,6 +1159,7 @@
     availableModes:
       - SemiAuto
     soundGunshot: /Audio/Toilets/gman.ogg
+  - type: Firestarter
   - type: MovementSpeedModifier
     baseSprintSpeed: 4
   - type: Fixtures
@@ -1176,7 +1177,7 @@
     thresholds:
       - trigger:
           !type:DamageTrigger
-          damage: 5000
+          damage: 10000
         behaviors:
           - !type:DoActsBehavior
             acts: [ "Destruction" ]
@@ -1188,13 +1189,18 @@
               Telecrystal:
                 min: 100000
                 max: 100000
+  - type: PointLight
+    radius: 3
+    energy: 4.5
+    color: "#fff700"
+    castShadows: false
 
 - type: entity
   name: Скибиди Ухбоер (Арийский)
   parent: MobSkibidiToilet
   id: MobSkibidiToiletUhboer
   description: ОН НЕ ЗАЙМЕТ КАСАРЬ!!! Он за арийцев
-  suffix: skibidistation
+  suffix: skibidistation, FRIENDLY
   components:
   - type: NpcFactionMember
     factions:
@@ -1258,4 +1264,324 @@
             spawn:
               Telecrystal:
                 min: 1
-                max: 60
+                max: 30
+
+- type: entity
+  name: Скибиди Брендан Террант
+  parent: MobSkibidiToilet
+  id: MobSkibidiToiletBT
+  description: АЛЛАХ НЕ СПАС
+  suffix: skibidistation, NORMAL
+  components:
+  - type: Sprite
+    drawdepth: Mobs
+    sprite: Mobs/Toilets/toilet_tarrant.rsi
+    layers:
+    - map: ["enum.DamageStateVisualLayers.Base"]
+      state: toilet
+  - type: MobThresholds
+    thresholds:
+      0: Alive
+      150: Dead
+  - type: SlowOnDamage
+  - type: HTN
+    rootTask:
+      task: SimpleRangedHostileCompound
+  - type: RechargeBasicEntityAmmo
+    rechargeCooldown: 5
+  - type: BasicEntityAmmoProvider
+    proto: ShellShotgun
+    capacity: 1
+    count: 1
+  - type: Gun
+    fireRate: 8
+    useKey: false
+    selectedMode: FullAuto
+    availableModes:
+      - FullAuto
+    soundGunshot: /Audio/Toilets/skibidi_dop.ogg
+  - type: MovementSpeedModifier
+    baseSprintSpeed: 4
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeCircle
+          radius: 0.45
+        density: 450
+        mask:
+        - MobMask
+        layer:
+        - MobLayer
+  - type: Destructible
+    thresholds:
+      - trigger:
+          !type:DamageTrigger
+          damage: 170
+        behaviors:
+          - !type:DoActsBehavior
+            acts: [ "Destruction" ]
+          - !type:PlaySoundBehavior
+            sound:
+              path: /Audio/Toilets/death.ogg
+          - !type:SpawnEntitiesBehavior
+            spawn:
+              Telecrystal:
+                min: 30
+                max: 30
+
+- type: entity
+  name: Скибиди КУКУМБЕР (лучший спрайтер шс14)
+  parent: MobSkibidiToilet
+  id: MobSkibidiToiletKukumber
+  description:
+  suffix: skibidistation, STRONG
+  components:
+  - type: Sprite
+    drawdepth: Mobs
+    sprite: Mobs/Toilets/toilet_kukumber.rsi
+    layers:
+    - map: ["enum.DamageStateVisualLayers.Base"]
+      state: toilet
+  - type: MobThresholds
+    thresholds:
+      0: Alive
+      350: Dead
+  - type: SlowOnDamage
+  - type: HTN
+    rootTask:
+      task: SimpleRangedHostileCompound
+  - type: RechargeBasicEntityAmmo
+    rechargeCooldown: .3
+  - type: BasicEntityAmmoProvider
+    proto: BulletMinigun
+    capacity: 100
+    count: 100
+  - type: Gun
+    fireRate: 15
+    useKey: false
+    selectedMode: FullAuto
+    availableModes:
+      - FullAuto
+    soundGunshot: /Audio/Toilets/skibidi_dop.ogg
+  - type: MovementSpeedModifier
+    baseSprintSpeed: 4
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeCircle
+          radius: 0.45
+        density: 450
+        mask:
+        - MobMask
+        layer:
+        - MobLayer
+  - type: Destructible
+    thresholds:
+      - trigger:
+          !type:DamageTrigger
+          damage: 370
+        behaviors:
+          - !type:DoActsBehavior
+            acts: [ "Destruction" ]
+          - !type:PlaySoundBehavior
+            sound:
+              path: /Audio/Toilets/death.ogg
+          - !type:SpawnEntitiesBehavior
+            spawn:
+              Telecrystal:
+                min: 50
+                max: 50
+
+- type: entity
+  name: Скибиди Пакистанец
+  parent: MobSkibidiToilet
+  id: MobSkibidiToiletPakistan
+  description: АЛЛАХ СПАС
+  suffix: skibidistation, STRONG
+  components:
+  - type: Sprite
+    drawdepth: Mobs
+    sprite: Mobs/Toilets/toilet_pakistanec.rsi
+    layers:
+    - map: ["enum.DamageStateVisualLayers.Base"]
+      state: toilet
+  - type: MobThresholds
+    thresholds:
+      0: Alive
+      350: Dead
+  - type: SlowOnDamage
+  - type: HTN
+    rootTask:
+      task: SimpleRangedHostileCompound
+  - type: RechargeBasicEntityAmmo
+    rechargeCooldown: 3
+  - type: BasicEntityAmmoProvider
+    proto: BulletRifleAk
+    capacity: 30
+    count: 30
+  - type: Gun
+    fireRate: 3
+    useKey: false
+    selectedMode: FullAuto
+    availableModes:
+      - FullAuto
+    soundGunshot: /Audio/Toilets/skibidi_dop.ogg
+  - type: MovementSpeedModifier
+    baseSprintSpeed: 4
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeCircle
+          radius: 0.45
+        density: 450
+        mask:
+        - MobMask
+        layer:
+        - MobLayer
+  - type: Destructible
+    thresholds:
+      - trigger:
+          !type:DamageTrigger
+          damage: 370
+        behaviors:
+          - !type:DoActsBehavior
+            acts: [ "Destruction" ]
+          - !type:PlaySoundBehavior
+            sound:
+              path: /Audio/Toilets/death.ogg
+          - !type:SpawnEntitiesBehavior
+            spawn:
+              Telecrystal:
+                min: 40
+                max: 40
+
+- type: entity
+  name: СКИБИДИ БОГ СВО
+  parent: MobSkibidiToilet
+  id: MobSkibidiToiletSVO
+  description: ЛУЧШЕ ЧЕМ В ПОДПОЛЕ (НЕТ)
+  suffix: skibidistation, BOSS
+  components:
+  - type: Sprite
+    drawdepth: Mobs
+    sprite: Mobs/Toilets/toilet_god_of_svo.rsi
+    layers:
+    - map: ["enum.DamageStateVisualLayers.Base"]
+      state: toilet
+  - type: MobThresholds
+    thresholds:
+      0: Alive
+      2000: Dead
+  - type: SlowOnDamage
+  - type: HTN
+    rootTask:
+      task: SimpleRangedHostileCompound
+  - type: RechargeBasicEntityAmmo
+    rechargeCooldown: .1
+  - type: BasicEntityAmmoProvider
+    proto: BulletMinigun
+    capacity: 1000000
+    count: 1000000
+  - type: Gun
+    fireRate: 13
+    useKey: false
+    selectedMode: FullAuto
+    availableModes:
+      - FullAuto
+    soundGunshot: /Audio/Toilets/skibidi_dop.ogg
+  - type: MovementSpeedModifier
+    baseSprintSpeed: 3
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeCircle
+          radius: 0.45
+        density: 450
+        mask:
+        - MobMask
+        layer:
+        - MobLayer
+  - type: Destructible
+    thresholds:
+      - trigger:
+          !type:DamageTrigger
+          damage: 2000
+        behaviors:
+          - !type:DoActsBehavior
+            acts: [ "Destruction" ]
+          - !type:PlaySoundBehavior
+            sound:
+              path: /Audio/Toilets/death.ogg
+          - !type:SpawnEntitiesBehavior
+            spawn:
+              Telecrystal:
+                min: 1000
+                max: 1000
+
+- type: entity
+  name: Скибиди Балансер (Вирмир)
+  parent: MobSkibidiToilet
+  id: MobSkibidiToiletVirmr
+  description: главный балансер всей скибидистейшн
+  suffix: skibidistation, STRONG
+  components:
+  - type: Sprite
+    drawdepth: Mobs
+    sprite: Mobs/Toilets/toilet_virmr.rsi
+    layers:
+    - map: ["enum.DamageStateVisualLayers.Base"]
+      state: toilet
+  - type: MobThresholds
+    thresholds:
+      0: Alive
+      250: Dead
+  - type: SlowOnDamage
+  - type: HTN
+    rootTask:
+      task: SimpleRangedHostileCompound
+  - type: RechargeBasicEntityAmmo
+    rechargeCooldown: 5
+  - type: BasicEntityAmmoProvider
+    proto: BulletLightRifleIncendiary
+    capacity: 10
+    count: 10
+  - type: Gun
+    fireRate: 1
+    useKey: false
+    selectedMode: SemiAuto
+    availableModes:
+      - SemiAuto
+    soundGunshot: /Audio/Toilets/skibidi_dop.ogg
+  - type: MovementSpeedModifier
+    baseSprintSpeed: 4
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeCircle
+          radius: 0.45
+        density: 450
+        mask:
+        - MobMask
+        layer:
+        - MobLayer
+  - type: Destructible
+    thresholds:
+      - trigger:
+          !type:DamageTrigger
+          damage: 270
+        behaviors:
+          - !type:DoActsBehavior
+            acts: [ "Destruction" ]
+          - !type:PlaySoundBehavior
+            sound:
+              path: /Audio/Toilets/death.ogg
+          - !type:SpawnEntitiesBehavior
+            spawn:
+              Telecrystal:
+                min: 40
+                max: 40
