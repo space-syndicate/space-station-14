@@ -1159,6 +1159,7 @@
     availableModes:
       - SemiAuto
     soundGunshot: /Audio/Toilets/gman.ogg
+  - type: Firestarter
   - type: MovementSpeedModifier
     baseSprintSpeed: 4
   - type: Fixtures
@@ -1188,6 +1189,11 @@
               Telecrystal:
                 min: 100000
                 max: 100000
+  - type: PointLight
+    radius: 3
+    energy: 4.5
+    color: "#fff700"
+    castShadows: false
 
 - type: entity
   name: Скибиди Ухбоер (Арийский)
