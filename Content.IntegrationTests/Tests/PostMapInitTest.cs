@@ -80,7 +80,10 @@ namespace Content.IntegrationTests.Tests
             "Atlas",
             "Reach",
             "Train",
-            "Oasis"
+            "Oasis",
+            // Skibidi-Start
+            "Skibidi"
+            // Skibidi-End
         };
 
         /// <summary>
