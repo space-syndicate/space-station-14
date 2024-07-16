@@ -258,7 +258,7 @@
     rootTask:
       task: SimpleRangedHostileCompound
   - type: HitscanBatteryAmmoProvider
-    proto: /Audio/Toilets/rekin.ogg
+    proto: RedLaser
     fireCost: 50
   - type: BatterySelfRecharger
     autoRecharge: true

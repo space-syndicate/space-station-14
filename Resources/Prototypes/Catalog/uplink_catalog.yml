@@ -64,7 +64,7 @@
 - type: listing
   id: UplinkWeaponSvinorez
   name: С.В.И.Н.О.Р.Е.З.
-  description: легендарный свинорез снайпера чвк "Вагнер". Однозарядная болтовка, 100 пирсинга с пули
+  description: легендарный свинорез снайпера чвк "Вагнер". Однозарядная болтовка, 300 пирсинга с пули
   productEntity: WeaponSniperSvinorez
   cost:
     Telecrystal: 69
@@ -277,7 +277,7 @@
   description: Взрывоопасно. (наверное)
   productEntity: GrenadeFrag
   cost:
-    Telecrystal: 80
+    Telecrystal: 10
   categories:
   - UplinkAmmo
 
