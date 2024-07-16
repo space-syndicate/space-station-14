@@ -6,7 +6,7 @@
   name: ШКЕБЕДЕ
   showInVote: True
   description: ГАНС, ЧЕ ЗА ХУЙНЯ, КАКИЕ ЕЩЕ ШКЕБЕДЕ ТУАЛЕТЫ?
-  # supportedMaps: DeathMatchMapPool
+  supportedMaps: SkibidiMapPool
   rules:
   - BasicStationEventScheduler
   - BasicRoundstartVariation
