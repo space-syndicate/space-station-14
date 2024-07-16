@@ -1,19 +1,42 @@
 - type: entity
   parent: ClothingNeckPinBase
+  id: ClothingNeckAtharaPin
+  name: starry sky pin
+  description: The pin of starry sky.
+  components:
+  - type: Sprite
+    sprite: Corvax/Clothing/Neck/Misc/pins.rsi
+    state: ath
+  - type: Clothing
+    sprite: Corvax/Clothing/Neck/Misc/pins.rsi
+    equippedPrefix: ath
+      
+- type: entity
+  parent: ClothingNeckPinBase
   id: ClothingNeckUSSPPin
   name: USSP pin
   description: The pin of United Soviet Socialist Planet.
   components:
   - type: Sprite
     sprite: Corvax/Clothing/Neck/Misc/pins.rsi
-    layers:
-    - state: comm
+    state: comm
   - type: Clothing
     sprite: Corvax/Clothing/Neck/Misc/pins.rsi
-    clothingVisuals:
-      neck:
-      - state: comm-equipped
-
+    equippedPrefix: comm
+      
+- type: entity
+  parent: ClothingNeckPinBase
+  id: ClothingNeckCorvaxPin
+  name: cluster pin
+  description: The pin of cluster.
+  components:
+  - type: Sprite
+    sprite: Corvax/Clothing/Neck/Misc/pins.rsi
+    state: cor
+  - type: Clothing
+    sprite: Corvax/Clothing/Neck/Misc/pins.rsi
+    equippedPrefix: cor
+      
 - type: entity
   parent: ClothingNeckPinBase
   id: ClothingNeckDonkPin
@@ -22,13 +45,10 @@
   components:
   - type: Sprite
     sprite: Corvax/Clothing/Neck/Misc/pins.rsi
-    layers:
-    - state: donk
+    state: donk
   - type: Clothing
     sprite: Corvax/Clothing/Neck/Misc/pins.rsi
-    clothingVisuals:
-      neck:
-      - state: donk-equipped
+    equippedPrefix: donk
 
 - type: entity
   parent: ClothingNeckPinBase
@@ -38,13 +58,36 @@
   components:
   - type: Sprite
     sprite: Corvax/Clothing/Neck/Misc/pins.rsi
-    layers:
-    - state: earth
+    state: earth
   - type: Clothing
     sprite: Corvax/Clothing/Neck/Misc/pins.rsi
-    clothingVisuals:
-      neck:
-      - state: earth-equipped
+    equippedPrefix: earth
+      
+- type: entity    
+  parent: ClothingNeckPinBase
+  id: ClothingNeckEchoPin
+  name: comet pin
+  description: The pin of comet.
+  components:
+  - type: Sprite
+    sprite: Corvax/Clothing/Neck/Misc/pins.rsi
+    state: echo
+  - type: Clothing
+    sprite: Corvax/Clothing/Neck/Misc/pins.rsi
+    equippedPrefix: echo
+
+- type: entity
+  parent: ClothingNeckPinBase
+  id: ClothingNeckElysiumPin
+  name: dark planet pin
+  description: The pin of dark planet.
+  components:
+  - type: Sprite
+    sprite: Corvax/Clothing/Neck/Misc/pins.rsi
+    state: ely
+  - type: Clothing
+    sprite: Corvax/Clothing/Neck/Misc/pins.rsi
+    equippedPrefix: ely
 
 - type: entity
   parent: ClothingNeckPinBase
@@ -54,14 +97,24 @@
   components:
   - type: Sprite
     sprite: Corvax/Clothing/Neck/Misc/pins.rsi
-    layers:
-    - state: logistika
+    state: logistika
   - type: Clothing
     sprite: Corvax/Clothing/Neck/Misc/pins.rsi
-    clothingVisuals:
-      neck:
-      - state: logistika-equipped
-
+    equippedPrefix: logistika
+      
+- type: entity
+  parent: ClothingNeckPinBase
+  id: ClothingNeckMainPin
+  name: rocket pin
+  description: The pin of rocket.
+  components:
+  - type: Sprite
+    sprite: Corvax/Clothing/Neck/Misc/pins.rsi
+    state: main
+  - type: Clothing
+    sprite: Corvax/Clothing/Neck/Misc/pins.rsi
+    equippedPrefix: main
+      
 - type: entity
   parent: ClothingNeckPinBase
   id: ClothingNeckDeForestPin
@@ -70,13 +123,10 @@
   components:
   - type: Sprite
     sprite: Corvax/Clothing/Neck/Misc/pins.rsi
-    layers:
-    - state: med
+    state: med
   - type: Clothing
     sprite: Corvax/Clothing/Neck/Misc/pins.rsi
-    clothingVisuals:
-      neck:
-      - state: med-equipped
+    equippedPrefix: med
 
 - type: entity
   parent: ClothingNeckPinBase
@@ -86,13 +136,10 @@
   components:
   - type: Sprite
     sprite: Corvax/Clothing/Neck/Misc/pins.rsi
-    layers:
-    - state: nakamura
+    state: nakamura
   - type: Clothing
     sprite: Corvax/Clothing/Neck/Misc/pins.rsi
-    clothingVisuals:
-      neck:
-      - state: nakamura-equipped
+    equippedPrefix: nakamura
 
 - type: entity
   parent: ClothingNeckPinBase
@@ -102,13 +149,36 @@
   components:
   - type: Sprite
     sprite: Corvax/Clothing/Neck/Misc/pins.rsi
-    layers:
-    - state: nano
+    state: nano
   - type: Clothing
     sprite: Corvax/Clothing/Neck/Misc/pins.rsi
-    clothingVisuals:
-      neck:
-      - state: nano-equipped
+    equippedPrefix: nano
+
+- type: entity
+  parent: ClothingNeckPinBase
+  id: ClothingNeckNebulaPin
+  name: nebula pin
+  description: The pin of nebula.
+  components:
+  - type: Sprite
+    sprite: Corvax/Clothing/Neck/Misc/pins.rsi
+    state: neb
+  - type: Clothing
+    sprite: Corvax/Clothing/Neck/Misc/pins.rsi
+    equippedPrefix: neb
+    
+- type: entity
+  parent: ClothingNeckPinBase
+  id: ClothingNeckNovaPin
+  name: ring planet pin
+  description: The pin of ring planet.
+  components:
+  - type: Sprite
+    sprite: Corvax/Clothing/Neck/Misc/pins.rsi
+    state: nova
+  - type: Clothing
+    sprite: Corvax/Clothing/Neck/Misc/pins.rsi
+    equippedPrefix: nova
 
 - type: entity
   parent: ClothingNeckPinBase
@@ -118,13 +188,23 @@
   components:
   - type: Sprite
     sprite: Corvax/Clothing/Neck/Misc/pins.rsi
-    layers:
-    - state: sind
+    state: sind
   - type: Clothing
     sprite: Corvax/Clothing/Neck/Misc/pins.rsi
-    clothingVisuals:
-      neck:
-      - state: sind-equipped
+    equippedPrefix: sind
+
+- type: entity
+  parent: ClothingNeckPinBase
+  id: ClothingNeckSolarisPin
+  name: space cheese pin
+  description: The pin of space cheese.
+  components:
+  - type: Sprite
+    sprite: Corvax/Clothing/Neck/Misc/pins.rsi
+    state: sol
+  - type: Clothing
+    sprite: Corvax/Clothing/Neck/Misc/pins.rsi
+    equippedPrefix: sol
 
 - type: entity
   parent: ClothingNeckPinBase
@@ -134,10 +214,20 @@
   components:
   - type: Sprite
     sprite: Corvax/Clothing/Neck/Misc/pins.rsi
-    layers:
-    - state: vit
+    state: vit
   - type: Clothing
     sprite: Corvax/Clothing/Neck/Misc/pins.rsi
-    clothingVisuals:
-      neck:
-      - state: vit-equipped
+    equippedPrefix: vit
+
+- type: entity
+  parent: ClothingNeckPinBase
+  id: ClothingNeckWhiteListPin
+  name: quasar pin
+  description: The pin of quasar.
+  components:
+  - type: Sprite
+    sprite: Corvax/Clothing/Neck/Misc/pins.rsi
+    state: wl
+  - type: Clothing
+    sprite: Corvax/Clothing/Neck/Misc/pins.rsi
+    equippedPrefix: wl

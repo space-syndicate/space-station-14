@@ -1,0 +1,90 @@
+# pins
+- type: loadout
+  id: ClothingNeckAtharaPin
+  equipment: ClothingNeckAtharaPin
+
+- type: startingGear
+  id: ClothingNeckAtharaPin
+  storage:
+    back:
+    - ClothingNeckAtharaPin
+
+- type: loadout
+  id: ClothingNeckCorvaxPin
+  equipment: ClothingNeckCorvaxPin
+
+- type: startingGear
+  id: ClothingNeckCorvaxPin
+  storage:
+    back:
+    - ClothingNeckCorvaxPin
+
+- type: loadout
+  id: ClothingNeckEchoPin
+  equipment: ClothingNeckEchoPin
+
+- type: startingGear
+  id: ClothingNeckEchoPin
+  storage:
+    back:
+    - ClothingNeckEchoPin
+
+- type: loadout
+  id: ClothingNeckElysiumPin
+  equipment: ClothingNeckElysiumPin
+
+- type: startingGear
+  id: ClothingNeckElysiumPin
+  storage:
+    back:
+    - ClothingNeckElysiumPin
+
+- type: loadout
+  id: ClothingNeckMainPin
+  equipment: ClothingNeckMainPin
+
+- type: startingGear
+  id: ClothingNeckMainPin
+  storage:
+    back:
+    - ClothingNeckMainPin
+
+- type: loadout
+  id: ClothingNeckNebulaPin
+  equipment: ClothingNeckNebulaPin
+
+- type: startingGear
+  id: ClothingNeckNebulaPin
+  storage:
+    back:
+    - ClothingNeckNebulaPin
+
+- type: loadout
+  id: ClothingNeckNovaPin
+  equipment: ClothingNeckNovaPin
+
+- type: startingGear
+  id: ClothingNeckNovaPin
+  storage:
+    back:
+    - ClothingNeckNovaPin
+
+- type: loadout
+  id: ClothingNeckSolarisPin
+  equipment: ClothingNeckSolarisPin
+
+- type: startingGear
+  id: ClothingNeckSolarisPin
+  storage:
+    back:
+    - ClothingNeckSolarisPin
+
+- type: loadout
+  id: ClothingNeckWhiteListPin
+  equipment: ClothingNeckWhiteListPin
+
+- type: startingGear
+  id: ClothingNeckWhiteListPin
+  storage:
+    back:
+    - ClothingNeckWhiteListPin
