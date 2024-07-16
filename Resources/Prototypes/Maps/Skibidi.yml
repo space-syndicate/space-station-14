@@ -1,14 +1,14 @@
 - type: gameMap
   id: Skibidi
   mapName: Skibidi Planet 
-  mapPath: /Maps/.yml
+  mapPath: /Maps/skibidi_Station_14_2.yml
   minPlayers: 0
   stations:
     Arena:
       stationProto: StandardStationArena
       components:
         - type: StationNameSetup
-          mapNameTemplate: ПЛАНЕТА ШКЕБЕДЕ
+          mapNameTemplate: Планета Скибиди
         - type: StationJobs
           availableJobs:
             Captain: [ -1, -1 ]
