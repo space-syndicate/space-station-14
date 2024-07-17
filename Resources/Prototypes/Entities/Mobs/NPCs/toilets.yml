@@ -1652,3 +1652,19 @@
               Telecrystal:
                 min: 40
                 max: 40
+
+- type: entity
+  id: SkibidiTurrelSpawner
+  name: SkibidiTurrelSpawner
+  suffix: skibidistation
+  parent: MarkerBase
+  components:
+  - type: Sprite
+    layers:
+      - state: red
+      - sprite: Mobs/Toilets/toilet_turrel.rsi
+        state: toilet
+  - type: RandomSpawner
+    prototypes:
+      - WeaponTurretSkibidiToilet
+    chance: 1

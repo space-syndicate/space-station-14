@@ -348,3 +348,18 @@
     back: ClothingBackpackSatchelScience
     ears: ClothingHeadsetRD
     outerClothing: ClothingOuterCoatRD
+
+- type: startingGear
+  id: AryanGear
+  equipment:
+    jumpsuit: ClothingUniformJumpsuitCC
+    back: ClothingBackpackSatchel
+    shoes: ClothingShoesBootsCowboyBlack
+    head: ClothingHeadHatCC
+    gloves: ClothingHandsGlovesCombat
+    id: CaptainIDCard
+    pocket1: BaseUplinkRadio
+    pocket2: WeaponPistolLuger
+  storage:
+    back:
+    - BoxSurvival

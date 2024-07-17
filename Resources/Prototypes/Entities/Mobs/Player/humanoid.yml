@@ -843,3 +843,53 @@
         settings: short
     - type: Loadout
       prototypes: [ SyndicateOperativeGearCivilian ]
+
+#НАШЕ
+
+- type: entity
+  id: RandomHumanoidSpawnerAryan
+  parent: RandomHumanoidSpawnerERTLeader
+  name: Ариец
+  suffix: skibidistation
+  components:
+    - type: Sprite
+      sprite: Markers/jobs.rsi
+      state: passenger
+    - type: RandomMetadata
+      nameSegments:
+      - NamesFirstAryan
+      - NamesLastAryan
+    - type: RandomHumanoidSpawner
+      settings: Aryan
+
+- type: randomHumanoidSettings
+  id: Aryan
+  parent: EventHumanoidMindShielded
+  randomizeName: false
+  speciesBlacklist: ['Diona'] # skibidistation HRP
+  components:
+    - type: GhostRole
+      name: Ариец
+      description: ебашь по толчкам во славу Ги...
+      rules: по своим не хуярь
+    - type: Loadout
+      prototypes: [ AryanGear ]
+    - type: RandomMetadata
+      nameSegments:
+        - NamesFirstAryan
+        - NamesLastAryan
+
+- type: entity
+  name: AryanSpawner
+  id: AryanSpawner
+  parent: MarkerBase
+  suffix: skibidistation
+  components:
+  - type: Sprite
+    layers:
+      - state: red
+      - sprite: Markers/jobs.rsi
+        state: passenger
+  - type: RandomSpawner
+    prototypes:
+    - RandomHumanoidSpawnerAryan
