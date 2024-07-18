@@ -310,7 +310,31 @@
         Piercing: 0.4
         Heat: 0.8
   - type: ExplosionResistance
-    damageCoefficient: 0.90
+    damageCoefficient: 0.40
   - type: ClothingSpeedModifier
     walkModifier: 0.80
     sprintModifier: 0.80
+
+- type: entity
+  parent: ClothingOuterArmorBasic
+  id: ModifiedExosceleton
+  suffix: skibidistation
+  name: Модифицированный Экзоскелет
+  description: Экзоскелет повышающий скорость, имеет хорошую защиту, когда надет вес не чувствуется.
+  components:
+  - type: Sprite
+    sprite: Clothing/OuterClothing/Armor/modka.rsi
+  - type: Clothing
+    sprite: Clothing/OuterClothing/Armor/modka.rsi
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.5
+        Slash: 0.5
+        Piercing: 0.3
+        Heat: 0.4
+  - type: ExplosionResistance
+    damageCoefficient: 0.40
+  - type: ClothingSpeedModifier
+    walkModifier: 1.10
+    sprintModifier: 1.10

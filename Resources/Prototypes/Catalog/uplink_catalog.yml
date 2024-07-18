@@ -187,7 +187,7 @@
   description: Модифицированный Силовик, умещается в 2 слота, под дробь .50
   productEntity: WeaponSigmaShotgunMod
   cost:
-    Telecrystal: 350
+    Telecrystal: 45
   categories:
   - UplinkWeaponry
 
@@ -560,3 +560,14 @@
     Telecrystal: 40
   categories:
   - UplinkWearables
+
+- type: listing
+  id: UplinkModka
+  name: Модифицированный Экзоскелет
+  description: Модифицированный Экзоскелет, когда-то используемый в зоне, однако щас используется для того-что-бы пиздить толчков! Помимо этого немного ускоряет вас.
+  productEntity: ClothingBackpackDuffelSyndicateFilledModka
+  cost:
+    Telecrystal: 270
+  categories:
+  - UplinkWearables
+

@@ -393,7 +393,7 @@
   suffix: Svo, skibidistation
   id: ClothingHeadHelmetSvo
   name: Шлем сво
-  description: Сразу видно шлем армии.
+  description: Для настоящих СВОшников.
   components:
   - type: Sprite
     sprite: Clothing/Head/Helmets/shlemsvo.rsi
@@ -406,3 +406,34 @@
         Slash: 0.9
         Piercing: 0.8
         Heat: 0.9
+
+
+- type: entity
+  parent: ClothingHeadBase
+  suffix: skibidistation
+  id: ClothingHeadHelmetModified
+  name: Шлем Модифицированного Экзоскелета
+  description: Отлично схож с модкой, впрочем не удивительно.
+  components:
+  - type: Sprite
+    sprite: Clothing/Head/Helmets/helmetmodka.rsi
+  - type: Clothing
+    sprite: Clothing/Head/Helmets/helmetmodka.rsi
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.9
+        Slash: 0.9
+        Piercing: 0.8
+        Heat: 0.8
+
+- type: entity
+  parent: ClothingBackpackDuffelSyndicateBundle
+  id: ClothingBackpackDuffelSyndicateFilledModka
+  name: Вещмешок с Модифицированным Экзоскелетом
+  description: Модифицированный Экзоскелет, когда-то используемый в зоне, однако щас используется для того-что-бы пиздить толчков!
+  components:
+  - type: StorageFill
+    contents:
+      - id: ModifiedExosceleton
+      - id: ClothingHeadHelmetModified

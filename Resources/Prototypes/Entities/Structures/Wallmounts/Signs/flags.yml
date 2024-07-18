@@ -106,3 +106,15 @@
   - type: Sprite
     state: right_sector
 
+- type: entity
+  parent: PosterBaZe
+  id: PrigozhinPoster
+  suffix: skibidistation
+  name: "Пригожин"
+  description: "Контролировал группу «Вагнер» — поддерживаемую российским правительством структуру наёмников, которые участвовали в военных конфликтах на Украине, в Сирии и Африке; также контролировал компании, обвиняемые во вмешательстве в выборы в США в 2016 и 2018 годах ."
+  components:
+  - type: Sprite
+    sprite: Structures/Wallmounts/wellwellwell/prigozhin.rsi
+    state: prigozhin
+    scale: "0.1, 0.1"
+
