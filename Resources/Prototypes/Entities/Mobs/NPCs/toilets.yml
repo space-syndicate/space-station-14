@@ -1541,7 +1541,7 @@
   - type: MobThresholds
     thresholds:
       0: Alive
-      2000: Dead
+      1500: Dead
   - type: SlowOnDamage
   - type: HTN
     rootTask:
@@ -1576,7 +1576,7 @@
     thresholds:
       - trigger:
           !type:DamageTrigger
-          damage: 2000
+          damage: 1500
         behaviors:
           - !type:DoActsBehavior
             acts: [ "Destruction" ]
