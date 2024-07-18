@@ -437,3 +437,33 @@
     contents:
       - id: ModifiedExosceleton
       - id: ClothingHeadHelmetModified
+
+- type: entity
+  parent: ClothingHeadBase
+  suffix: skibidistation
+  id: ClothingHeadHelmetShturma
+  name: Шлем Альбатроса-Штурмовика
+  description: Отлично схож с штурмой, впрочем не удивительно. Дает защиту
+  components:
+  - type: Sprite
+    sprite: Clothing/Head/Helmets/shturmovikhelm.rsi
+  - type: Clothing
+    sprite: Clothing/Head/Helmets/shturmovikhelm.rsi
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.80
+        Slash: 0.95
+        Piercing: 0.95
+        Heat: 0.95
+
+- type: entity
+  parent: ClothingBackpackDuffelSyndicateBundle
+  id: ClothingBackpackDuffelSyndicateFilledShturma
+  name: Вещмешок с бронекостюмом "Альбатрос-Штурмовик"
+  description: Альбатрос-Штурмовик, когда-то используемый в зоне, ходят легенды о Zиве который отправился на СВО в нём. Лучший броник.
+  components:
+  - type: StorageFill
+    contents:
+      - id: AlbatrosShturmovik
+      - id: ClothingHeadHelmetShturma

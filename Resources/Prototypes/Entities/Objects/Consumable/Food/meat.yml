@@ -1482,3 +1482,22 @@
           Quantity: 1
         - ReagentId: Protein
           Quantity: 1
+
+- type: entity
+  name: Туалет-Медийка
+  parent: FoodMeatBase
+  id: FoodMediika
+  description: Хилка на базе толчков. Хилит по 10 униций омнизина с 1 штуки.
+  suffix: skibidistation
+  components:
+  - type: Sprite
+    sprite: Objects/Specific/Medical/mediika.rsi
+    state: icon
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        reagents:
+        - ReagentId: Omnizine
+          Quantity: 10
+  - type: Item
+    size: Ginormous

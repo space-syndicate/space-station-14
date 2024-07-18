@@ -79,3 +79,106 @@
     - type: TimedSpawner
       prototypes:
         - MobCockroach
+
+- type: entity
+  name: MobSkibidiToilet AI Timed Spawner Weak
+  id: MobSkibidiToiletAITimedSpawnerWeak
+  parent: MarkerBase
+  suffix: skibidistaion
+  components:
+    - type: Sprite
+      layers:
+      - state: blue
+      - sprite: Mobs/Toilets/toilet_base.rsi
+        state: toilet
+      - state: ai
+    - type: Timer
+    - type: TimedSpawner
+      prototypes:
+      - MobSkibidiToiletBase
+      - MobSkibidiToiletLaser
+      - MobSkibidiToiletZazichka
+      - MobSkibidiToiletRunner
+      - MobSkibidiToiletSpider
+      - MobSkibidiToiletShitSec
+      chance: 0.85
+      intervalSeconds: 60
+      minimumEntitiesSpawned: 3
+      maximumEntitiesSpawned: 8
+
+- type: entity
+  name: MobSkibidiToilet AI Timed Spawner Medium
+  id: MobSkibidiToiletAITimedSpawnerMedium
+  parent: MarkerBase
+  suffix: skibidistaion
+  components:
+    - type: Sprite
+      layers:
+      - state: blue
+      - sprite: Mobs/Toilets/toilet_greytide.rsi
+        state: toilet
+      - state: ai
+    - type: Timer
+    - type: TimedSpawner
+      prototypes:
+      - MobSkibidiToiletCiklop
+      - MobSkibidiToiletMage
+      - MobSkibidiToiletGreyTide
+      - MobSkibidiToiletShahid
+      - MobSkibidiToiletSniper
+      - MobSkibidiToiletBT
+      chance: 0.50
+      intervalSeconds: 120
+      minimumEntitiesSpawned: 3
+      maximumEntitiesSpawned: 8
+
+- type: entity
+  name: MobSkibidiToilet AI Timed Spawner Strong
+  id: MobSkibidiToiletAITimedSpawnerStrong
+  parent: MarkerBase
+  suffix: skibidistaion
+  components:
+    - type: Sprite
+      layers:
+      - state: blue
+      - sprite: Mobs/Toilets/toilet_HOS.rsi
+        state: toilet
+      - state: ai
+    - type: Timer
+    - type: TimedSpawner
+      prototypes:
+      - MobSkibidiToiletHOS
+      - MobSkibidiToiletCyborg
+      - MobSkibidiToiletCK
+      - MobSkibidiToiletRekin
+      - MobSkibidiToiletKukumber
+      - MobSkibidiToiletPakistan
+      - MobSkibidiToiletVirmr
+      chance: 0.50
+      intervalSeconds: 180
+      minimumEntitiesSpawned: 2
+      maximumEntitiesSpawned: 5
+
+- type: entity
+  name: MobSkibidiToilet AI Timed Spawner Boss
+  id: MobSkibidiToiletAITimedSpawnerBoss
+  parent: MarkerBase
+  suffix: skibidistaion
+  components:
+    - type: Sprite
+      layers:
+      - state: blue
+      - sprite: Mobs/Toilets/toilet_mega.rsi
+        state: toilet
+      - state: ai
+    - type: Timer
+    - type: TimedSpawner
+      prototypes:
+      - MobSkibidiToiletMega
+      - MobSkibidiToiletAllah
+      - MobSkibidiToiletSVO
+      chance: 0.25
+      intervalSeconds: 350
+      minimumEntitiesSpawned: 1
+      maximumEntitiesSpawned: 1
+

@@ -258,7 +258,7 @@
     rootTask:
       task: SimpleRangedHostileCompound
   - type: HitscanBatteryAmmoProvider
-    proto: /Audio/Toilets/rekin.ogg
+    proto: RedLaser
     fireCost: 50
   - type: BatterySelfRecharger
     autoRecharge: true
@@ -268,6 +268,73 @@
     startingCharge: 1000
   - type: Gun
     fireRate: 1
+    useKey: false
+    selectedMode: SemiAuto
+    availableModes:
+      - SemiAuto
+    soundGunshot: /Audio/Toilets/skibidi_dop.ogg
+  - type: MovementSpeedModifier
+    baseSprintSpeed: 3
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeCircle
+          radius: 0.45
+        density: 450
+        mask:
+        - MobMask
+        layer:
+        - MobLayer
+  - type: Destructible
+    thresholds:
+      - trigger:
+          !type:DamageTrigger
+          damage: 170
+        behaviors:
+          - !type:DoActsBehavior
+            acts: [ "Destruction" ]
+          - !type:PlaySoundBehavior
+            sound:
+              path: /Audio/Toilets/death.ogg
+          - !type:SpawnEntitiesBehavior
+            spawn:
+              Telecrystal:
+                min: 15
+                max: 15
+
+- type: entity
+  name: Скибиди сортир циклоп
+  parent: MobSkibidiToilet
+  id: MobSkibidiToiletCiklop
+  description: я скибиди толчок, называй меня качок
+  suffix: skibidistation, MEDIUM
+  components:
+  - type: Sprite
+    drawdepth: Mobs
+    sprite: Mobs/Toilets/toilet_ciklop.rsi
+    layers:
+    - map: ["enum.DamageStateVisualLayers.Base"]
+      state: toilet
+  - type: MobThresholds
+    thresholds:
+      0: Alive
+      150: Dead
+  - type: SlowOnDamage
+  - type: HTN
+    rootTask:
+      task: SimpleRangedHostileCompound
+  - type: HitscanBatteryAmmoProvider
+    proto: RedLaser
+    fireCost: 40
+  - type: BatterySelfRecharger
+    autoRecharge: true
+    autoRechargeRate: 50
+  - type: Battery
+    maxCharge: 1000
+    startingCharge: 1000
+  - type: Gun
+    fireRate: 3
     useKey: false
     selectedMode: SemiAuto
     availableModes:
@@ -1585,3 +1652,19 @@
               Telecrystal:
                 min: 40
                 max: 40
+
+- type: entity
+  id: SkibidiTurrelSpawner
+  name: SkibidiTurrelSpawner
+  suffix: skibidistation
+  parent: MarkerBase
+  components:
+  - type: Sprite
+    layers:
+      - state: red
+      - sprite: Mobs/Toilets/toilet_turrel.rsi
+        state: toilet
+  - type: RandomSpawner
+    prototypes:
+      - WeaponTurretSkibidiToilet
+    chance: 1

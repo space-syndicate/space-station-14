@@ -64,7 +64,7 @@
 - type: listing
   id: UplinkWeaponSvinorez
   name: С.В.И.Н.О.Р.Е.З.
-  description: легендарный свинорез снайпера чвк "Вагнер". Однозарядная болтовка, 100 пирсинга с пули
+  description: легендарный свинорез снайпера чвк "Вагнер". Однозарядная болтовка, 300 пирсинга с пули
   productEntity: WeaponSniperSvinorez
   cost:
     Telecrystal: 69
@@ -87,7 +87,7 @@
   description: Поистене робастно выглядит... Чехол в комплекте.
   productEntity: ClothingBeltSheathHKFilled
   cost:
-    Telecrystal: 250
+    Telecrystal: 200
   categories:
   - UplinkWeaponry
 
@@ -117,7 +117,7 @@
   description: Топливо для огнемета, ну или проще - Понос Вирмира
   productEntity: FuelTankFlamethrower
   cost:
-    Telecrystal: 110
+    Telecrystal: 100
   categories:
   - UplinkAmmo
 
@@ -297,7 +297,7 @@
   description: Взрывоопасно. (наверное)
   productEntity: GrenadeFrag
   cost:
-    Telecrystal: 80
+    Telecrystal: 10
   categories:
   - UplinkAmmo
 
@@ -571,3 +571,12 @@
   categories:
   - UplinkWearables
 
+- type: listing
+  id: UplinkShturma
+  name: Альбатрос-Штурмовик
+  description:  Альбатрос-Штурмовик, когда-то используемый в зоне, ходят легенды о Zиве который отправился на СВО в нём. Лучший броник.
+  productEntity: ClothingBackpackDuffelSyndicateFilledShturma
+  cost:
+    Telecrystal: 370
+  categories:
+  - UplinkWearables
