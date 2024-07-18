@@ -102,7 +102,7 @@
       - MobSkibidiToiletSpider
       - MobSkibidiToiletShitSec
       chance: 0.85
-      intervalSeconds: 60
+      intervalSeconds: 100
       minimumEntitiesSpawned: 3
       maximumEntitiesSpawned: 8
 
@@ -128,9 +128,9 @@
       - MobSkibidiToiletSniper
       - MobSkibidiToiletBT
       chance: 0.50
-      intervalSeconds: 120
+      intervalSeconds: 200
       minimumEntitiesSpawned: 3
-      maximumEntitiesSpawned: 8
+      maximumEntitiesSpawned: 6
 
 - type: entity
   name: MobSkibidiToilet AI Timed Spawner Strong
@@ -154,10 +154,10 @@
       - MobSkibidiToiletKukumber
       - MobSkibidiToiletPakistan
       - MobSkibidiToiletVirmr
-      chance: 0.50
-      intervalSeconds: 180
+      chance: 0.35
+      intervalSeconds: 280
       minimumEntitiesSpawned: 2
-      maximumEntitiesSpawned: 5
+      maximumEntitiesSpawned: 3
 
 - type: entity
   name: MobSkibidiToilet AI Timed Spawner Boss
@@ -178,7 +178,7 @@
       - MobSkibidiToiletAllah
       - MobSkibidiToiletSVO
       chance: 0.25
-      intervalSeconds: 350
+      intervalSeconds: 500
       minimumEntitiesSpawned: 1
       maximumEntitiesSpawned: 1
 
