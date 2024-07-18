@@ -287,3 +287,40 @@
     containers:
       mech-battery-slot:
       - PowerCellHigh
+
+# НАШЕ
+- type: entity
+  parent: BaseMech
+  id: MechTank
+  name: Немецкий Танк
+  description: СЛЫШАЛ ЗВОН? ЕБАТЬ РОДДОМ!
+  suffix: skibidistation
+  components:
+  - type: Sprite
+    scale: "1.5, 1.5"
+    drawdepth: Mobs
+    noRot: true
+    sprite: Objects/Specific/Mech/mecha.rsi
+    layers:
+    - map: [ "enum.MechVisualLayers.Base" ]
+      state: tank
+  - type: FootstepModifier
+    footstepSoundCollection:
+      path: /Audio/Effects/Vehicle/vehicleengineidle.ogg
+  - type: Mech
+    baseState: tank
+    openState: tank-open
+    brokenState: tank-broken
+    mechToPilotDamageMultiplier: 0.1
+    pilotWhitelist:
+      components:
+      - HumanoidAppearance
+  - type: MovementSpeedModifier
+    baseWalkSpeed: 5
+    baseSprintSpeed: 5
+  - type: MeleeWeapon
+    hidden: true
+    attackRate: 5
+    damage:
+      types:
+        Blunt: 25
