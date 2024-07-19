@@ -472,6 +472,26 @@
   - UplinkChemicals
 
 - type: listing
+  id: UplinkSurgeryKit
+  name: Хирургический Вещмешок
+  description: Набор, что позволяет провести серьезные операции, только для тех, у кого есть мед. образование.
+  productEntity: ClothingBackpackDuffelSurgeryFilled
+  cost:
+    Telecrystal: 120
+  categories:
+  - UplinkChemicals
+
+- type: listing
+  id: UplinkSurgeryTable
+  name: Операционный стол
+  description: что? тебе действительно нравится насилие?.
+  productEntity: OperatingTable
+  cost:
+    Telecrystal: 75
+  categories:
+  - UplinkChemicals
+
+- type: listing
   id: UplinkArmourCBO1
   name: 6Б45
   description: 6Б45 с хорошей защитой от пуль, но не очень хорошей от высокотемпературного.
