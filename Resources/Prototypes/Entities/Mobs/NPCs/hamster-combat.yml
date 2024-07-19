@@ -1,0 +1,57 @@
+- type: entity
+  name: ХАМСТЕР КОМБАТ
+  parent: MobSkibidiToilet
+  id: MobHamsterCombat
+  description: ТАПАЕМ
+  suffix: skibidistation
+  components:
+  - type: Sprite
+    drawdepth: Mobs
+    sprite: Mobs/Animals/hamster.rsi
+    layers:
+    - map: ["enum.DamageStateVisualLayers.Base"]
+      state: hamster-0
+  - type: MobThresholds
+    thresholds:
+      0: Alive
+      500: Dead
+  - type: SlowOnDamage
+    speedModifierThresholds:
+      40: 0.7
+  - type: MeleeWeapon
+    altDisarm: false
+    angle: 0
+    soundHit: /Audio/Toilets/brrr_skibidi.ogg
+    animation: WeaponArcBite
+    damage:
+      groups:
+        Brute: 8
+  - type: MovementSpeedModifier
+    baseSprintSpeed: 4
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeCircle
+          radius: 0.45
+        density: 450
+        mask:
+        - MobMask
+        layer:
+        - MobLayer
+  - type: Destructible
+    thresholds:
+      - trigger:
+          !type:DamageTrigger
+          damage: 500
+        behaviors:
+          - !type:DoActsBehavior
+            acts: [ "Destruction" ]
+          - !type:PlaySoundBehavior
+            sound:
+              path: /Audio/Toilets/death.ogg
+          - !type:SpawnEntitiesBehavior
+            spawn:
+              Telecrystal:
+                min: 1488
+                max: 1488
