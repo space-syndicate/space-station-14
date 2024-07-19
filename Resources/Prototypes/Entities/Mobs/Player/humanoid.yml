@@ -866,7 +866,7 @@
   id: Aryan
   parent: EventHumanoidMindShielded
   randomizeName: false
-  speciesBlacklist: ['Diona'] # skibidistation HRP
+  speciesBlacklist: ['Diona', 'Moth', 'Reptilian', 'Arachnid', 'Vulpkanin'] # skibidistation HRP
   components:
     - type: GhostRole
       name: Ариец
