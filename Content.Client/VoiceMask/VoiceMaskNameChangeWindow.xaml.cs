@@ -41,7 +41,7 @@ public sealed partial class VoiceMaskNameChangeWindow : FancyWindow
         if (IoCManager.Resolve<IConfigurationManager>().GetCVar(CCCVars.TTSEnabled))
         {
             TTSContainer.Visible = true;
-            ReloadVoices(proto);
+            ReloadVoices(IoCManager.Resolve<IPrototypeManager>());
         }
         // Corvax-TTS-End
 
