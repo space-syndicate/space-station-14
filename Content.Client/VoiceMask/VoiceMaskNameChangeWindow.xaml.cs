@@ -22,7 +22,7 @@ public sealed partial class VoiceMaskNameChangeWindow : FancyWindow
 
     private string? _verb;
 
-    public VoiceMaskNameChangeWindow(IPrototypeManager proto)
+    public VoiceMaskNameChangeWindow()
     {
         RobustXamlLoader.Load(this);
 
@@ -37,8 +37,6 @@ public sealed partial class VoiceMaskNameChangeWindow : FancyWindow
             SpeechVerbSelector.SelectId(args.Id);
         };
 
-        ReloadVerbs(proto);
-
         // Corvax-TTS-Start
         if (IoCManager.Resolve<IConfigurationManager>().GetCVar(CCCVars.TTSEnabled))
         {
@@ -50,7 +48,7 @@ public sealed partial class VoiceMaskNameChangeWindow : FancyWindow
         AddVerbs();
     }
 
-    private void ReloadVerbs(IPrototypeManager proto)
+    public void ReloadVerbs(IPrototypeManager proto)
     {
         foreach (var verb in proto.EnumeratePrototypes<SpeechVerbPrototype>())
         {
