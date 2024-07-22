@@ -2,8 +2,8 @@
 ent-EnergySword = игрушечный меч
     .suffix = энергетический меч
     .desc = Новый пластиковый меч от Sandy-Cat! Имеет реалистичный звук и насыщенный цвет! Почти как настоящий!
-ent-EnergyDaggerLoud = energy dagger
-    .desc = A not as loud and dangerous dagger with a beam made of pure, concentrated plasma. This one is completely undisguised.
+ent-EnergyDaggerLoud = энергокинжал
+    .desc = Не такой громкий и опасный кинжал с лучом из чистой, концентрированной плазмы. Совершенно лишён возможности маскироваться.
 
 # Corvax-HiddenDesc-End
 
