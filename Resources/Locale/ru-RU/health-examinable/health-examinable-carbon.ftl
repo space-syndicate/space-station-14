@@ -7,7 +7,7 @@ health-examinable-carbon-Blunt-75 = [color=crimson]{ CAPITALIZE(POSS-ADJ($target
 health-examinable-carbon-Slash-10 = [color=red]{ CAPITALIZE(SUBJECT($target)) } { CONJUGATE-HAVE($target) } несколько лёгких порезов.[/color]
 health-examinable-carbon-Slash-25 = [color=red]{ CAPITALIZE(SUBJECT($target)) } { CONJUGATE-HAVE($target) } серьёзные порезы на теле.[/color]
 health-examinable-carbon-Slash-50 = [color=crimson]{ CAPITALIZE(SUBJECT($target)) } { CONJUGATE-HAVE($target) } множество сильных порезов![/color]
-health-examinable-carbon-Slash-75 = [color=crimson]{ CAPITALIZE(POSS-ADJ($target)) } тело полностью полностью изувечено![/color]
+health-examinable-carbon-Slash-75 = [color=crimson]{ CAPITALIZE(POSS-ADJ($target)) } тело полностью изувечено![/color]
 
 health-examinable-carbon-Piercing-50 = [color=crimson]{ CAPITALIZE(SUBJECT($target)) } { CONJUGATE-HAVE($target) } проникающие ранения на теле![/color]
 
