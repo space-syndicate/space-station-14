@@ -4,7 +4,6 @@
   completetime: 2
   materials:
     Steel: 300
-#Славянский зажим магазинами
 
 - type: latheRecipe
   id: MagazinePistolSubMachineGunTopMounted
@@ -40,8 +39,7 @@
   completetime: 2
   materials:
     Steel: 360
-#Славянский ОТжим магазинами
-#славянский зажим оружием
+
 - type: latheRecipe
   id: WeaponRifleAk
   result: WeaponRifleAk
@@ -50,7 +48,7 @@
     Steel: 10000
     Plastic: 5000
     Wood: 2500
-#славянский отжим оружием
+    
 - type: latheRecipe
   id: Zipties
   result: Zipties
