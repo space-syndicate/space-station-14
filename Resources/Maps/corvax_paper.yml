@@ -90640,7 +90640,7 @@ entities:
     - type: Transform
       pos: 1.5,11.5
       parent: 2
-- proto: SurveillanceCameraWirelessRouterBase
+- proto: SurveillanceCameraWirelessRouterConstructed
   entities:
   - uid: 12826
     components:

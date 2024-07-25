@@ -13,5 +13,3 @@ ent-MobHumanNukeOp = Nuclear Operative
     .desc = { ent-MobHuman.desc }
 ent-MobHumanLoneNuclearOperative = Lone Operative
     .desc = { ent-MobHuman.desc }
-ent-MobHumanSpaceNinja = Space Ninja
-    .desc = { ent-MobHuman.desc }
