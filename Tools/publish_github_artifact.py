@@ -15,7 +15,7 @@ FORK_ID = os.environ['FORK_ID']
 # CONFIGURATION PARAMETERS
 # Forks should change these to publish to their own infrastructure.
 #
-ROBUST_CDN_URL = "https://ncdn.station14.ru/"
+ROBUST_CDN_URL = "https://cdn.station14.ru/"
 
 def main():
     print("Fetching artifact URL from API...")
