@@ -40,3 +40,7 @@ ent-FoodPizzaArnoldSlice = кусок пиццы Арнольда
     .desc = Я приду и, может быть, угощу тебя пиццей, а может быть, отломаю тебе руку.
 ent-FoodPizzaMoldySlice = кусок заплесневелой пиццы
     .desc = Когда-то это был отличный кусок пиццы, но теперь он лежит здесь, прогорклый и пронизанный спорами.
+ent-FoodPizzaUranium = spicy rock pizza
+    .desc = Spicy pizza covered in peppers and uranium.
+ent-FoodPizzaUraniumSlice = slice of spicy rock pizza
+    .desc = A glowing slice of spicy rock pizza.

@@ -53,3 +53,5 @@ ent-BoxFolderCentComClipboard = планшет Центком
     .desc = Роскошный планшет, обитый зелёным бархатом. Представители Центком часто носят его с собой, но редко используют.
 ent-BoxFolderQmClipboard = цифровой планшет заявок
     .desc = Громоздкий цифровой планшет, содержащий информацию о поставках и финансовых операциях. При таком количестве компрометирующих документов его следует беречь.
+ent-Envelope = envelope
+    .desc = A small envelope for keeping prying eyes off of your sensitive documents.

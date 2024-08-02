@@ -53,3 +53,5 @@ ent-BoxFolderCentComClipboard = CentCom clipboard
     .desc = A luxurious clipboard upholstered with green velvet. Often seen carried by CentCom officials, seldom seen actually used.
 ent-BoxFolderQmClipboard = requisition digi-board
     .desc = A bulky electric clipboard, filled with shipping orders and financing details. With so many compromising documents, you ought to keep this safe.
+ent-Envelope = envelope
+    .desc = A small envelope for keeping prying eyes off of your sensitive documents.
