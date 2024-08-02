@@ -1,7 +1,7 @@
 {
   "version": 1,
   "license": "CC-BY-SA-3.0",
-  "copyright": "Resprited by https://github.com/GamaYouNow",
+  "copyright": "Resprited by https://github.com/GamaYouNow. vox states by Flareguy",
   "size": {
     "x": 32,
     "y": 32
@@ -22,6 +22,14 @@
     },
     {
       "name": "on-equipped-HELMET",
+      "directions": 4
+    },
+    {
+      "name": "off-equipped-HELMET-vox",
+      "directions": 4
+    },
+    {
+      "name": "on-equipped-HELMET-vox",
       "directions": 4
     },
     {
