@@ -1,8 +1,8 @@
-ent-BaseScrapDebris = Scrap Debris
+ent-BaseScrapDebris = scrap debris
     .desc = { ent-BaseDebris.desc }
-ent-ScrapDebrisSmall = Scrap Debris Small
+ent-ScrapDebrisSmall = scrap debris small
     .desc = { ent-BaseScrapDebris.desc }
-ent-ScrapDebrisMedium = Scrap Debris Medium
+ent-ScrapDebrisMedium = scrap debris medium
     .desc = { ent-BaseScrapDebris.desc }
-ent-ScrapDebrisLarge = Scrap Debris Large
+ent-ScrapDebrisLarge = scrap debris large
     .desc = { ent-BaseScrapDebris.desc }

@@ -154,3 +154,5 @@ ent-JukeboxCircuitBoard = музыкальный автомат (машинна�
     .desc = Печатная плата для музыкального автомата.
 ent-ReagentGrinderIndustrialMachineCircuitboard = промышленный измельчитель реагентов (машинная плата)
     .desc = { ent-BaseMachineCircuitboard.desc }
+ent-CutterMachineCircuitboard = cutter machine board
+    .desc = { ent-BaseMachineCircuitboard.desc }

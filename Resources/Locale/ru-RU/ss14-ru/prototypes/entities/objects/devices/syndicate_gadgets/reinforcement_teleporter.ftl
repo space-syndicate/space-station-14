@@ -1,3 +1,5 @@
+ent-ReinforcementRadio = syndicate reinforcement radio
+    .desc = Call in a syndicate agent of questionable quality, instantly! Only basic equipment provided.
 # Corvax-HiddenDesc-Start
 ent-ReinforcementRadioSyndicate = старое радио
     .suffix = радио подкрепления Cиндиката

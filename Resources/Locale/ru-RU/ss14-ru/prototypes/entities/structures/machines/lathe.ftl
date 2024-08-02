@@ -34,3 +34,5 @@ ent-OreProcessorIndustrial = промышленный переработчик �
     .desc = Переработчик руды, разработанный специально для производства металлов в промышленных масштабах.
 ent-Sheetifier = лист-мастер 2000
     .desc = Довольно мяссивное устройство.
+ent-CutterMachine = cutter machine
+    .desc = This is a cutter. It cuts. Add variety to your station floor with eye-pleasing patterns! Don't stick your fingers in.

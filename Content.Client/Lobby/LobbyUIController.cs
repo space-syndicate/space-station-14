@@ -273,6 +273,7 @@ public sealed partial class LobbyUIController : UIController, IOnStateEntered<Lo
             _logManager,
             _playerManager,
             _prototypeManager,
+            _resourceCache,
             _requirements,
             _markings);
 
