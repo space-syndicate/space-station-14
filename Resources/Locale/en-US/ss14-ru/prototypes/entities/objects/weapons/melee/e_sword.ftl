@@ -1,5 +1,7 @@
 ent-EnergySword = energy sword
     .desc = A very loud & dangerous sword with a beam made of pure, concentrated plasma. Cuts through unarmored targets like butter.
+ent-EnergyDaggerLoud = energy dagger
+    .desc = A not as loud and dangerous dagger with a beam made of pure, concentrated plasma. This one is completely undisguised.
 ent-EnergyDagger = pen
     .desc = A dark ink pen.
     .suffix = E-Dagger

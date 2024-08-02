@@ -82,9 +82,13 @@
   components:
   - type: HumanoidAppearance
     species: Reptilian
-  # start corvax displacement
+    hideLayersOnEquip:
+    - Snout
+    - HeadTop
+    - HeadSide
   - type: Inventory
     speciesId: reptilian
+  # start corvax displacement
     displacements:
       jumpsuit:
         layer:
@@ -94,6 +98,7 @@
             layerKey: dummy
             parameterTexture: displacementMap
             parameterUV: displacementUV
-  # end corvax displacement
+   # end corvax displacement
+
 
 #Weh
