@@ -31,6 +31,15 @@
     requiredLegs: 2
   - type: Inventory
     speciesId: reptilian # whyyy
+    displacements:
+      jumpsuit:
+        layer:
+          sprite: Corvax/Mobs/Species/displacement.rsi
+          state: jumpsuit
+          copyToShaderParameters:
+            layerKey: dummy
+            parameterTexture: displacementMap
+            parameterUV: displacementUV
   - type: ContentEye
     targetZoom: "1.125, 1.125"
     maxZoom: "1.125, 1.125"
@@ -72,3 +81,14 @@
   components:
   - type: HumanoidAppearance
     species: Vulpkanin
+  - type: Inventory
+    speciesId: reptilian
+    displacements:
+      jumpsuit:
+        layer:
+          sprite: Corvax/Mobs/Species/displacement.rsi
+          state: jumpsuit
+          copyToShaderParameters:
+            layerKey: dummy
+            parameterTexture: displacementMap
+            parameterUV: displacementUV

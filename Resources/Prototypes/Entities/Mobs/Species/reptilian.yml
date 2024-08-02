@@ -28,6 +28,17 @@
       amount: 5
   - type: Inventory
     speciesId: reptilian
+  # start corvax displacement
+    displacements:
+      jumpsuit:
+        layer:
+          sprite: Corvax/Mobs/Species/displacement.rsi
+          state: jumpsuit
+          copyToShaderParameters:
+            layerKey: dummy
+            parameterTexture: displacementMap
+            parameterUV: displacementUV
+  # end corvax displacement
   - type: LizardAccent
   - type: Speech
     speechSounds: Lizard
@@ -71,5 +82,18 @@
   components:
   - type: HumanoidAppearance
     species: Reptilian
+  # start corvax displacement
+  - type: Inventory
+    speciesId: reptilian
+    displacements:
+      jumpsuit:
+        layer:
+          sprite: Corvax/Mobs/Species/displacement.rsi
+          state: jumpsuit
+          copyToShaderParameters:
+            layerKey: dummy
+            parameterTexture: displacementMap
+            parameterUV: displacementUV
+  # end corvax displacement
 
 #Weh
