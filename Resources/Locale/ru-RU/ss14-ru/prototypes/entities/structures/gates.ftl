@@ -1,7 +1,7 @@
 ent-BaseLogicItem = { ent-BaseItem }
     .desc = { ent-BaseItem.desc }
 ent-LogicGateOr = логический элемент
-    .desc = Логический элемент с двумя портами на вход и одним на выход, можно изменить логическую операцию с помощью отвёртки.
+    .desc = Логический элемент с двумя портами на вход и одним на выход. Можно изменить логическую операцию с помощью отвёртки.
     .suffix = Or, ИЛИ
 ent-LogicGateAnd = { ent-LogicGateOr }
     .suffix = And, И

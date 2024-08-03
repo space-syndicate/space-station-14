@@ -9,4 +9,4 @@ magic-mirror-remove-slot-target = { $user } удаляет часть ваших
 magic-mirror-change-slot-target = { $user } меняет вашу причёску.
 magic-mirror-change-color-target = { $user } меняет цвет ваших волос.
 magic-mirror-blocked-by-hat-self = Прежде чем менять причёску, вам необходимо снять шляпу.
-magic-mirror-blocked-by-hat-self-target = Вы пытаетесь изменить причёску, но одежда вам мешает.
+magic-mirror-blocked-by-hat-self-target = Вы пытаетесь изменить причёску, но одежда цели вам мешает.
