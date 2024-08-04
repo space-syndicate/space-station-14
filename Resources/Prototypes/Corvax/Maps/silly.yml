@@ -2,6 +2,8 @@
   id: CorvaxSilly
   mapName: 'Silly Island'
   mapPath: /Maps/corvax_silly.yml
+  maxRandomOffset: 0
+  randomRotation: false
   minPlayers: 0
   maxPlayers: 30
   stations:
@@ -21,17 +23,17 @@
           shuttlePath: /Maps/Shuttles/arrivals_corvaxsilly.yml
         - type: GridSpawn
           groups:
-            trade:
+            trade: !type:GridSpawnGroup
               addComponents:
                 - type: ProtectedGrid
                 - type: TradeStation
               paths:
                 - /Maps/Shuttles/trading_outpostcorvaxsilly.yml
-            mining:
+            mining: !type:GridSpawnGroup
               paths:
               - /Maps/Shuttles/mining_corvaxsilly.yml
             # Spawn last
-            ruins:
+            ruins: !type:GridSpawnGroup
               hide: true
               nameGrid: true
               minCount: 0
@@ -54,12 +56,13 @@
             Botanist: [ 1, 1 ]
             Chef: [ 1, 1 ]
             Clown: [ 1, 1 ]
-            Janitor: [ 1, 2 ]
+            Janitor: [ 1, 1 ]
             Mime: [ 1, 1 ]
             Chaplain: [ 1, 1 ]
             Musician: [ 1, 1 ]
             Reporter: [ 1, 1 ]
             ServiceWorker: [ 2, 2 ]
+            Librarian: [ 1, 1 ]
             # command
             Captain: [ 1, 1 ]
             IAA: [ 1, 1 ]
@@ -73,6 +76,7 @@
             MedicalDoctor: [ 2, 2 ]
             Chemist: [ 1, 1 ]
             Paramedic: [ 1, 1 ]
+            Psychologist: [ 1, 1 ]
             MedicalIntern: [ 2, 2 ]
             # science
             ResearchDirector: [ 1, 1 ]
@@ -89,3 +93,11 @@
             Quartermaster: [ 1, 1 ]
             SalvageSpecialist: [ 3, 3 ]
             CargoTechnician: [ 3, 3 ]
+        - type: StationGoal
+          goals:
+          - SolarPanels
+          - Artifacts
+          - Bank
+          - Zoo
+          - MiningOutpost
+          - Tesla

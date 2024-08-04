@@ -2,6 +2,8 @@
   id: CorvaxPilgrim
   mapName: 'Pilgrim'
   mapPath: /Maps/corvax_pilgrim.yml
+  maxRandomOffset: 0
+  randomRotation: false
   minPlayers: 40
   stations:
     Pilgrim:
@@ -12,9 +14,6 @@
           nameGenerator:
             !type:NanotrasenNameGenerator
             prefixCreator: 'TA'
-        - type: StationRandomTransform
-          enableStationRotation: false
-          maxStationOffset: null
         - type: StationEmergencyShuttle
           emergencyShuttlePath: /Maps/Shuttles/emergency_pilgrim.yml
         - type: StationJobs

@@ -8,3 +8,4 @@ paper-component-examine-detail-stamped-by = На { CAPITALIZE($paper) } имею
 paper-component-action-stamp-paper-other = { CAPITALIZE($user) } ставит печать на { $target } с помощью { $stamp }.
 paper-component-action-stamp-paper-self = Вы ставите печать на { $target } с помощью { $stamp }.
 paper-ui-save-button = Сохранить ({ $keybind })
+paper-tamper-proof-modified-message = Текст на странице был написан с использованием нефальсицицируемых чернил.

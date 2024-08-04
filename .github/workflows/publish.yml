@@ -1,12 +1,12 @@
 name: Publish
 
-concurrency:
-  group: publish
+#concurrency:
+#  group: publish
 
 on:
   workflow_dispatch:
   schedule:
-    - cron: '0 6 * * *'
+  - cron: '0 1 * * *'
 
 jobs:
   build:
@@ -31,7 +31,7 @@ jobs:
         chmod 600 ~/.ssh/id_rsa
         echo "HOST *" > ~/.ssh/config
         echo "StrictHostKeyChecking no" >> ~/.ssh/config
-        git -c submodule.Secrets.update=checkout submodule update --init
+        git clone git@github.com:corvax-nexus/secrets.git Secrets
         cp -R Secrets/Resources/Prototypes Resources/Prototypes/CorvaxSecrets
         cp -R Secrets/Resources/ServerPrototypes Resources/Prototypes/CorvaxSecretsServer
         cp -R Secrets/Resources/Locale Resources/Locale/ru-RU/corvax-secrets
@@ -60,42 +60,36 @@ jobs:
     - name: Package client
       run: dotnet run --project Content.Packaging client --no-wipe-release
 
-    - name: Update Build Info
+    - name: Upload build artifact
+      id: artifact-upload-step
+      uses: actions/upload-artifact@v4
+      with:
+        name: build
+        path: release/*.zip
+        compression-level: 0
+        retention-days: 0
+
+    - name: Publish version
+      run: Tools/publish_github_artifact.py
       env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        PUBLISH_TOKEN: ${{ secrets.PUBLISH_TOKEN }}
+        ARTIFACT_ID: ${{ steps.artifact-upload-step.outputs.artifact-id }}
+        GITHUB_REPOSITORY: ${{ vars.GITHUB_REPOSITORY }}
         FORK_ID: ${{ vars.FORK_ID }}
-      run: Tools/gen_build_info.py
 
-    - name: Shuffle files around
-      run: |
-        mkdir "release/${{ github.sha }}"
-        mv release/*.zip "release/${{ github.sha }}"
+    #    - name: Publish changelog (Discord)
+    #      run: Tools/actions_changelogs_since_last_run.py
+    #      env:
+    #        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+    #        DISCORD_WEBHOOK_URL: ${{ secrets.CHANGELOG_DISCORD_WEBHOOK }}
 
-    - name: Upload files to mothership
-      uses: burnett01/rsync-deployments@5.2
+    #    - name: Publish changelog (RSS)
+    #      run: Tools/actions_changelog_rss.py
+    #      env:
+    #        CHANGELOG_RSS_KEY: ${{ secrets.CHANGELOG_RSS_KEY }}
+
+    - uses: geekyeggo/delete-artifact@v5
+      if: always()
       with:
-        switches: -avzr --ignore-existing
-        path: "release/${{ github.sha }}"
-        remote_path: ${{ secrets.BUILDS_PATH }}
-        remote_host: ${{ secrets.BUILDS_HOST }}
-        remote_user: ${{ secrets.BUILDS_USERNAME }}
-        remote_key: ${{ secrets.BUILDS_SSH_KEY }}
-
-    - name: Update manifest JSON
-      uses: appleboy/ssh-action@master
-      with:
-        host: ${{ secrets.BUILDS_HOST }}
-        username: ${{ secrets.BUILDS_USERNAME }}
-        key: ${{ secrets.BUILDS_SSH_KEY }}
-        script: node ~/scripts/push_to_manifest.js -fork ${{ vars.FORK_ID }} -id ${{ github.sha }}
-
-#    - name: Publish changelog (Discord)
-#      run: Tools/actions_changelogs_since_last_run.py
-#      env:
-#        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-#        DISCORD_WEBHOOK_URL: ${{ secrets.CHANGELOG_DISCORD_WEBHOOK }}
-#        TRANSLATION_API_URL: ${{ secrets.CHANGELOG_TRANSLATION_API_URL }}
-
-#    - name: Publish changelog (RSS)
-#      run: Tools/actions_changelog_rss.py
-#      env:
-#        CHANGELOG_RSS_KEY: ${{ secrets.CHANGELOG_RSS_KEY }}
+        name: build

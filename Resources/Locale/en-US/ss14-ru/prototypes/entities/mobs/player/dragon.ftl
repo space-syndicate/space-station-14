@@ -1,7 +1,6 @@
 ent-BaseMobDragon = space dragon
     .desc = A flying leviathan, loosely related to space carps.
 ent-MobDragon = { ent-BaseMobDragon }
-    .suffix = No role or objectives
     .desc = { ent-BaseMobDragon.desc }
 ent-DragonsBreathGun = dragon's lung
     .desc = For dragon's breathing

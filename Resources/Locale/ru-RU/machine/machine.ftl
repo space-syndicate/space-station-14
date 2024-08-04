@@ -1,4 +1,4 @@
-machine-insert-item = { $user } помещает { $item } в { $machine }.
+machine-insert-item = { CAPITALIZE($user) } помещает { $item } в { $machine }.
 machine-upgrade-examinable-verb-text = Улучшения
 machine-upgrade-examinable-verb-message = Узнайте, какие параметры устройства были улучшены.
 machine-upgrade-increased-by-percentage = Параметр [color=yellow]{ $upgraded }[/color] увеличен на { $percent }%.

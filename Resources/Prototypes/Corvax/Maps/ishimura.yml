@@ -2,15 +2,14 @@
   id: CorvaxIshimura
   mapName: 'USG Ishimura'
   mapPath: /Maps/corvax_ishimura.yml
+  maxRandomOffset: 0
+  randomRotation: false
   minPlayers: 20
   maxPlayers: 50
   stations:
     Ishimura:
       stationProto: StandardNanotrasenStation
       components:
-        - type: StationRandomTransform
-          enableStationRotation: false
-          maxStationOffset: null
         - type: StationNameSetup
           mapNameTemplate: '{0} USG Ishimura {1}'
           nameGenerator:

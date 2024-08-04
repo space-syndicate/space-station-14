@@ -8,8 +8,7 @@
     sprite: Corvax/Back/Satchels/military.rsi
   - type: Storage
     grid:
-    - 0,0,6,3 # TODO: Change this
-    maxItemSize: Huge
+    - 0,0,8,4
 
 - type: entity
   parent: ClothingBackpackSatchel

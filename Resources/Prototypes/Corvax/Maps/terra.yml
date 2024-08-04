@@ -2,6 +2,8 @@
   id: CorvaxTerra
   mapName: 'Terra Colony'
   mapPath: /Maps/corvax_terra.yml
+  maxRandomOffset: 0
+  randomRotation: false
   minPlayers: 0
   maxPlayers: 30
   stations:
@@ -15,15 +17,12 @@
             prefixCreator: 'MT'
         - type: StationEmergencyShuttle
           emergencyShuttlePath: /Maps/Shuttles/corvax_emergency.yml
-        - type: StationRandomTransform
-          enableStationRotation: false
-          maxStationOffset: null
         - type: StationBiome
           biome: TerraPlanet
           mapLightColor: "#090303FF"
         - type: GridSpawn
           groups:
-            trade:
+            trade: !type:GridSpawnGroup
               addComponents:
                 - type: ProtectedGrid
                 - type: TradeStation
@@ -77,7 +76,11 @@
             Quartermaster: [ 1, 1 ]
             SalvageSpecialist: [ 2, 3 ]
             CargoTechnician: [ 2, 2 ]
-
-
-
-
+        - type: StationGoal
+          goals:
+          - SolarPanels
+          - Artifacts
+          - Bank
+          - Zoo
+          - MiningOutpost
+          - Tesla

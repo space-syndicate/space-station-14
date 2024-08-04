@@ -2,7 +2,7 @@ using System.IO;
 using System.Linq;
 using System.Text.Json;
 using Content.Shared.Chemistry.Reaction;
-using Content.Shared.Chemistry.Reagent;
+using Content.Shared.EntityEffects;
 using Robust.Shared.Prototypes;
 
 namespace Content.Server.GuideGenerator;
@@ -29,7 +29,7 @@ public sealed partial class ReactionJsonGenerator
             NumberHandling = System.Text.Json.Serialization.JsonNumberHandling.AllowNamedFloatingPointLiterals, // Corvax-Wiki
             Converters =
             {
-                new UniversalJsonConverter<ReagentEffect>(),
+                new UniversalJsonConverter<EntityEffect>(),
             }
         };
 

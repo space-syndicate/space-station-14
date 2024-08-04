@@ -1,8 +1,18 @@
+# Errors
+loadout-group-species-restriction = Этот предмет недоступен для вашей текущей расы.
 # Miscellaneous
 loadout-group-trinkets = Безделушки
 loadout-group-glasses = Очки
 loadout-group-backpack = Рюкзак
-loadout-group-instruments = Instruments
+loadout-group-instruments = Инструменты
+loadout-group-survival-basic = Аварийный запас
+loadout-group-survival-extended = Расширенный аварийный запас
+loadout-group-survival-clown = Клоунский аварийный запас
+loadout-group-survival-medical = Медицинский аварийный запас
+loadout-group-survival-security = Аварийный запас охраны
+loadout-group-survival-syndicate = Github заставил меня перевести текст, который игрок вообще никогда не сможет увидеть, спасите
+loadout-group-breath-tool = Расозависимое дыхательное снаряжение
+loadout-group-tank-harness = Расозависимое снаряжение для выживания
 # Command
 loadout-group-captain-head = Капитан, голова
 loadout-group-captain-jumpsuit = Капитан, комбинезон
@@ -39,6 +49,7 @@ loadout-group-janitor-head = Уборщик, голова
 loadout-group-janitor-jumpsuit = Уборщик, комбинезон
 loadout-group-janitor-gloves = Уборщик, перчатки
 loadout-group-janitor-outerclothing = Уборщик, верхняя одежда
+loadout-group-janitor-plunger = Уборщик, вантуз
 loadout-group-botanist-head = Ботаник, голова
 loadout-group-botanist-jumpsuit = Ботаник, комбинезон
 loadout-group-botanist-backpack = Ботаник, рюкзак
@@ -53,6 +64,7 @@ loadout-group-mime-mask = Мим, маска
 loadout-group-mime-jumpsuit = Мим, комбинезон
 loadout-group-mime-backpack = Мим, рюкзак
 loadout-group-mime-outerclothing = Мим, верхняя одежда
+loadout-group-musician-jumpsuit = Музыкант, комбинезон
 loadout-group-musician-outerclothing = Музыкант, верхняя одежда
 # Cargo
 loadout-group-quartermaster-head = Квартирмейстер, голова

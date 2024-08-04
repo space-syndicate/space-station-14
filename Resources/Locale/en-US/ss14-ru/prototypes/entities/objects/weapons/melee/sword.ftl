@@ -1,3 +1,5 @@
+ent-BaseSword = { ent-BaseItem }
+    .desc = { ent-BaseItem.desc }
 ent-CaptainSabre = captain's sabre
     .desc = A ceremonial weapon belonging to the captain of the station.
 ent-Katana = katana
@@ -11,4 +13,4 @@ ent-Claymore = claymore
 ent-Cutlass = cutlass
     .desc = A wickedly curved blade, often seen in the hands of space pirates.
 ent-Throngler = The Throngler
-    .desc = Why would someone make this?
+    .desc = Why would you make this?

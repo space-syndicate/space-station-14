@@ -12,3 +12,4 @@ health-analyzer-window-scan-mode-text = Режим сканирования:
 health-analyzer-window-scan-mode-active = АКТИВЕН
 health-analyzer-window-scan-mode-inactive = НЕАКТИВЕН
 health-analyzer-window-malnutrition = Тяжёлое недоедание
+health-analyzer-popup-scan-target = { CAPITALIZE($user) } пытается просканировать вас!

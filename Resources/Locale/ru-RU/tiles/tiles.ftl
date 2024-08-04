@@ -87,6 +87,7 @@ tiles-gold-tile = золотой пол
 tiles-silver-tile = серебряный пол
 tiles-glass-floor = стеклянный пол
 tiles-reinforced-glass-floor = бронестеклянный пол
+tiles-metal-foam = пенометаллический пол
 tiles-green-circuit-floor = зелёный микросхемный пол
 tiles-blue-circuit-floor = синий микросхемный пол
 tiles-snow = снег

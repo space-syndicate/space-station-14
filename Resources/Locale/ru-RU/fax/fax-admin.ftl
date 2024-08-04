@@ -11,3 +11,5 @@ admin-fax-message-placeholder = Текст документа...
 admin-fax-stamp = Печать:
 admin-fax-stamp-color = Цвет печати:
 admin-fax-send = Отправить
+admin-fax-lock-page = Защитить страницу
+admin-fax-lock-page-tooltip = Защитить бумагу от редактирования, чтобы её нельзя было изменить даже такими вещами, как ручка cybersun.

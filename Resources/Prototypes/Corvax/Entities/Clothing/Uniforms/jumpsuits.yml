@@ -41,3 +41,47 @@
       sprite: Corvax/Clothing/Uniforms/Jumpsuit/centcom_admiral.rsi
     - type: Clothing
       sprite: Corvax/Clothing/Uniforms/Jumpsuit/centcom_admiral.rsi
+
+- type: entity
+  parent: ClothingUniformBase
+  id: ClothingUniformJumpsuitCapTurtleneck
+  name: captain's turtleneck
+  description: True captain's turtleneck.
+  components:
+    - type: Sprite
+      sprite: Corvax/Clothing/Uniforms/Jumpsuit/cap_turtleneck.rsi
+    - type: Clothing
+      sprite: Corvax/Clothing/Uniforms/Jumpsuit/cap_turtleneck.rsi
+
+- type: entity
+  parent: ClothingUniformBase
+  id: ClothingUniformJumpsuitHoPTurtleneck
+  name: head of personal's turtleneck
+  description: It's Head of Personal's turtleneck.
+  components:
+    - type: Sprite
+      sprite: Corvax/Clothing/Uniforms/Jumpsuit/hop_turtleneck.rsi
+    - type: Clothing
+      sprite: Corvax/Clothing/Uniforms/Jumpsuit/hop_turtleneck.rsi
+
+- type: entity
+  parent: ClothingUniformBase
+  id: ClothingUniformJumpsuitHoSBlack
+  name: head of security's black suit
+  description: It's Head of Security's black suit.
+  components:
+    - type: Sprite
+      sprite: Corvax/Clothing/Uniforms/Jumpsuit/hos_black.rsi
+    - type: Clothing
+      sprite: Corvax/Clothing/Uniforms/Jumpsuit/hos_black.rsi
+
+- type: entity
+  parent: ClothingUniformBase
+  id: ClothingUniformJumpsuitRDClassical
+  name: research director's classical suit
+  description: It's Research Director's сlassical suit.
+  components:
+    - type: Sprite
+      sprite: Corvax/Clothing/Uniforms/Jumpsuit/rd_classical.rsi
+    - type: Clothing
+      sprite: Corvax/Clothing/Uniforms/Jumpsuit/rd_classical.rsi

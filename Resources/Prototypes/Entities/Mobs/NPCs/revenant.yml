@@ -41,7 +41,7 @@
   - type: NoSlip
   - type: Actions
   - type: TTS # Corvax-TTS
-    voice: illidan
+    voice: Kelthuzad
   - type: Eye
     drawFov: false
     visMask:
@@ -57,7 +57,7 @@
     makeSentient: true
     name: ghost-role-information-revenant-name
     description: ghost-role-information-revenant-description
-    rules: ghost-role-information-revenant-rules
+    rules: ghost-role-information-antagonist-rules
     raffle:
       settings: default
   - type: GhostTakeoverAvailable

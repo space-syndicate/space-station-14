@@ -16,5 +16,5 @@ ent-ClothingShoesBootsSpeed = скороходы
     .desc = Высокотехнологичные ботинки, сотканные из квантовых волокон, способные преобразовывать электричество в чистую скорость!
 ent-ActionToggleSpeedBoots = Переключить скороходы
     .desc = Включает или выключает скороходы.
-ent-ClothingShoesBootsMoon = moon boots
-    .desc = Special anti-gravity boots developed with a speciality blend of lunar rock gel. Shipped from the Netherlands.
+ent-ClothingShoesBootsMoon = луноходы
+    .desc = Специальные антигравитационные ботинки, разработанные с применением особой смеси геля лунной породы. Доставляются из Нидерландов.

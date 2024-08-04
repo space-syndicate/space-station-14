@@ -2,6 +2,8 @@
   id: CorvaxFrame
   mapName: 'Frame Station'
   mapPath: /Maps/corvax_frame.yml
+  maxRandomOffset: 0
+  randomRotation: false
   minPlayers: 0
   maxPlayers: 15
   stations:
@@ -19,17 +21,17 @@
           path: /Maps/Shuttles/cargo_mayhen.yml
         - type: GridSpawn
           groups:
-            trade:
+            trade: !type:GridSpawnGroup
               addComponents:
                 - type: ProtectedGrid
                 - type: TradeStation
               paths:
                 - /Maps/Shuttles/trading_outpost.yml
-            mining:
+            mining: !type:GridSpawnGroup
               paths:
               - /Maps/Shuttles/corvax_mining.yml
             # Spawn last
-            ruins:
+            ruins: !type:GridSpawnGroup
               hide: true
               nameGrid: true
               minCount: 10
@@ -43,20 +45,18 @@
               - /Maps/Ruins/syndicate_dropship.yml
               - /Maps/Ruins/whiteship_ancient.yml
               - /Maps/Ruins/whiteship_bluespacejumper.yml
-        - type: StationRandomTransform
-          enableStationRotation: false
-          maxStationOffset: null
         - type: StationJobs
           availableJobs:
             # service
-            Passenger: [ -1, -1 ]
             Clown: [ 1, 1 ]
             # engineering
             ChiefEngineer: [ 1, 1 ]
             AtmosphericTechnician: [ 1, 1 ]
-            StationEngineer: [ 3, 3 ]
+            StationEngineer: [ 3, 6 ]
+            TechnicalAssistant: [ -1, -1 ]
             # medical
             Paramedic: [ 1, 1 ]
+            MedicalIntern: [ 0, 1 ]
             # science
             Scientist: [ 1, 2 ]
             Borg: [ 1, 1 ]
@@ -65,3 +65,6 @@
             # cargo
             SalvageSpecialist: [ 3, 3 ]
             CargoTechnician: [ 2, 2 ]
+        - type: StationGoal
+          goals:
+          - FrameRepair

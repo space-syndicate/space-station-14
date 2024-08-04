@@ -5,7 +5,7 @@
   minLimit: 0
   maxLimit: 3
   loadouts:
-  - CorporateLaw # Corvax-HyperLink
+  - SpaceLaw # Corvax-HyperLink
   - PlushieLizard
   - PlushieSpaceLizard
   - Lighter
@@ -26,7 +26,17 @@
   - ClothingNeckTransPin
   - ClothingNeckAutismPin
   - ClothingNeckGoldAutismPin
-
+   # Corvax-Loadouts-Start
+  - ClothingNeckAtharaPin
+  - ClothingNeckCorvaxPin
+  - ClothingNeckEchoPin
+  - ClothingNeckElysiumPin
+  - ClothingNeckMainPin
+  - ClothingNeckNebulaPin
+  - ClothingNeckNovaPin
+  - ClothingNeckSolarisPin
+  - ClothingNeckWhiteListPin
+  # Corvax-Loadouts-End
 - type: loadoutGroup
   id: Glasses
   name: loadout-group-glasses
@@ -35,6 +45,24 @@
   - Glasses
   - GlassesJamjar
   - GlassesJensen
+
+- type: loadoutGroup
+  id: GroupTankHarness
+  name: loadout-group-tank-harness
+  minLimit: 1
+  hidden: true
+  loadouts:
+  - LoadoutTankHarness
+
+- type: loadoutGroup
+  id: Survival
+  name: loadout-group-survival-basic
+  minLimit: 3
+  hidden: true
+  loadouts:
+  - EmergencyNitrogen
+  - EmergencyOxygen
+  - LoadoutSpeciesEVANitrogen
 
 # Command
 - type: loadoutGroup
@@ -53,6 +81,10 @@
   - CaptainJumpskirt
   - CaptainFormalSuit
   - CaptainFormalSkirt
+  # Corvax-Loadouts-Start
+  - CaptainJumpsuitTurtleneck
+  - CaptainJumpskirtTurtleneck
+  # Corvax-Loadouts-End
 
 - type: loadoutGroup
   id: CaptainNeck
@@ -91,6 +123,10 @@
   loadouts:
   - HoPJumpsuit
   - HoPJumpskirt
+  # Corvax-Loadouts-Start
+  - HoPJumpsuitTurtleneck
+  - HoPJumpskirtTurtleneck
+  # Corvax-Loadouts-End
 
 - type: loadoutGroup
   id: HoPNeck
@@ -323,6 +359,13 @@
   - JanitorWintercoat
 
 - type: loadoutGroup
+  id: JanitorPlunger
+  name: loadout-group-janitor-plunger
+  minLimit: 0
+  loadouts:
+  - JanitorGoldenPlunger
+
+- type: loadoutGroup
   id: BotanistHead
   name: loadout-group-botanist-head
   minLimit: 0
@@ -392,6 +435,16 @@
   - JesterShoes
 
 - type: loadoutGroup
+  id: SurvivalClown
+  name: loadout-group-survival-clown
+  minLimit: 2
+  hidden: true
+  loadouts:
+  - EmergencyNitrogenClown
+  - EmergencyOxygenClown
+  - LoadoutSpeciesEVANitrogen
+
+- type: loadoutGroup
   id: MimeHead
   name: loadout-group-mime-head
   minLimit: 0
@@ -429,6 +482,13 @@
   minLimit: 0
   loadouts:
   - MimeWintercoat
+
+- type: loadoutGroup
+  id: MusicianJumpsuit
+  name: loadout-group-musician-jumpsuit
+  loadouts:
+  - MusicianJumpsuit
+  - MusicianJumpskirt
 
 - type: loadoutGroup
   id: MusicianOuterClothing
@@ -697,6 +757,16 @@
   - WhiteShoes
   - EngineeringWinterBoots
 
+- type: loadoutGroup
+  id: SurvivalExtended
+  name: loadout-group-survival-extended
+  minLimit: 2
+  hidden: true
+  loadouts:
+  - EmergencyNitrogenExtended
+  - EmergencyOxygenExtended
+  - LoadoutSpeciesEVANitrogen
+
 # Science
 - type: loadoutGroup
   id: ResearchDirectorHead
@@ -719,6 +789,10 @@
   loadouts:
   - ResearchDirectorJumpsuit
   - ResearchDirectorJumpskirt
+  # Corvax-Loadouts-Start
+  - ResearchDirectorJumpsuitClassical
+  - ResearchDirectorJumpskirtClassical
+  # Corvax-Loadouts-End
 
 - type: loadoutGroup
   id: ResearchDirectorOuterClothing
@@ -832,6 +906,10 @@
   - HeadofSecurityTurtleneckSkirt
   - HeadofSecurityFormalSuit
   - HeadofSecurityFormalSkirt
+  # Corvax-Loadouts-Start
+  - HeadofSecurityJumpsuitBlack
+  - HeadofSecurityJumpskirtBlack
+  # Corvax-Loadouts-End
 
 - type: loadoutGroup
   id: HeadofSecurityNeck
@@ -967,6 +1045,16 @@
   loadouts:
   - RedJumpsuit
   - RedJumpskirt
+
+- type: loadoutGroup
+  id: SurvivalSecurity
+  name: loadout-group-survival-security
+  minLimit: 2
+  hidden: true
+  loadouts:
+  - EmergencyNitrogenSecurity
+  - EmergencyOxygenSecurity
+  - LoadoutSpeciesEVANitrogen
 
 # Medical
 - type: loadoutGroup
@@ -1140,6 +1228,16 @@
   - BlueShoes
   - MedicalWinterBoots
 
+- type: loadoutGroup
+  id: SurvivalMedical
+  name: loadout-group-survival-medical
+  minLimit: 2
+  hidden: true
+  loadouts:
+  - EmergencyNitrogenMedical
+  - EmergencyOxygenMedical
+  - LoadoutSpeciesEVANitrogen
+
 # Wildcards
 - type: loadoutGroup
   id: ReporterJumpsuit
@@ -1163,3 +1261,41 @@
   - BlueBoxingGloves
   - GreenBoxingGloves
   - YellowBoxingGloves
+
+# Other
+- type: loadoutGroup
+  id: SurvivalSyndicate
+  name: loadout-group-survival-syndicate
+  minLimit: 2
+  hidden: true
+  loadouts:
+  - EmergencyNitrogenSyndicate
+  - EmergencyOxygenSyndicate
+  - LoadoutSpeciesEVANitrogen
+
+- type: loadoutGroup
+  id: GroupSpeciesBreathTool
+  name: loadout-group-breath-tool
+  minLimit: 1
+  maxLimit: 1
+  hidden: true
+  loadouts:
+  - LoadoutSpeciesBreathTool
+
+- type: loadoutGroup
+  id: GroupSpeciesBreathToolMedical
+  name: loadout-group-breath-tool
+  minLimit: 1
+  maxLimit: 1
+  hidden: true
+  loadouts:
+  - LoadoutSpeciesBreathToolMedical
+
+- type: loadoutGroup
+  id: GroupSpeciesBreathToolSecurity
+  name: loadout-group-breath-tool
+  minLimit: 1
+  maxLimit: 1
+  hidden: true
+  loadouts:
+  - LoadoutSpeciesBreathToolSecurity

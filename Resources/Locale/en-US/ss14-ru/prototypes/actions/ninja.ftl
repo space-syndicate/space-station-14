@@ -1,5 +1,5 @@
 ent-ActionToggleNinjaGloves = Toggle ninja gloves
-    .desc = Toggles all glove actions on left click. Includes your doorjack, draining power, stunning enemies, downloading research and calling in a threat.
+    .desc = Toggles all glove actions on left click. Includes your doorjack, draining power, stunning enemies and hacking certain computers.
 ent-ActionCreateThrowingStar = Create throwing star
     .desc = Channels suit power into creating a throwing star that deals extra stamina damage.
 ent-ActionRecallKatana = Recall katana
