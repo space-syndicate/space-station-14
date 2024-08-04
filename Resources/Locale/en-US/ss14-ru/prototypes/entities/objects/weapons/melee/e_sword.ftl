@@ -12,3 +12,6 @@ ent-EnergyCutlass = energy cutlass
     .desc = An exotic energy weapon.
 ent-EnergySwordDouble = double-bladed energy sword
     .desc = Syndicate Command Interns thought that having one blade on the energy sword was not enough. This can be stored in pockets.
+ent-CyborgEnergySwordDouble = { ent-EnergySwordDouble }
+    .desc = Syndicate Command Interns thought that having one blade on the energy sword was not enough. Specially designed for syndicate cyborgs.
+    .suffix = One-Handed, For Borgs

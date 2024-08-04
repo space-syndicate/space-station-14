@@ -40,3 +40,7 @@ ent-FoodPizzaArnoldSlice = slice of Arnold's pizza
     .desc = I come over, maybe I give you a pizza, maybe I break off your arm.
 ent-FoodPizzaMoldySlice = slice of moldy pizza
     .desc = Once a perfectly good slice of pizza pie, but now it lies here, rancid and bursting with spores.
+ent-FoodPizzaUranium = spicy rock pizza
+    .desc = Spicy pizza covered in peppers and uranium.
+ent-FoodPizzaUraniumSlice = slice of spicy rock pizza
+    .desc = A glowing slice of spicy rock pizza.
