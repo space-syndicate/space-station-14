@@ -43,24 +43,12 @@ tilemap:
 entities:
 - proto: ""
   entities:
-  - uid: 1
-    components:
-    - type: MetaData
-      name: Map Entity
-    - type: Transform
-    - type: Map
-      mapPaused: True
-    - type: PhysicsMap
-    - type: GridTree
-    - type: MovedGrids
-    - type: Broadphase
-    - type: OccluderTree
   - uid: 2
     components:
     - type: MetaData
       name: NT-EM Terminal
     - type: Transform
-      parent: 1
+      parent: invalid
     - type: MapGrid
       chunks:
         -1,-1:
@@ -7267,7 +7255,7 @@ entities:
       parent: 2
     - type: AtmosPipeColor
       color: '#FF0000FF'
-  - uid: 818
+  - uid: 2000
     components:
     - type: Transform
       rot: 1.5707963267948966 rad
@@ -8274,8 +8262,8 @@ entities:
   - uid: 1563
     components:
     - type: MetaData
-      desc: Доревьювился.
-      name: EmoGarbage
+      desc: Доревьювился. 
+      name: неизвестный мейнтейнер
     - type: Transform
       pos: -8.528828,-15.495922
       parent: 2
