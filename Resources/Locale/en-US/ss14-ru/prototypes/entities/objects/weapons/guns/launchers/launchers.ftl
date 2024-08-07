@@ -1,7 +1,7 @@
 ent-BaseWeaponLauncher = BaseWeaponLauncher
     .desc = A rooty tooty point and shooty.
 ent-WeaponLauncherChinaLake = china lake
-    .desc = PLOOP
+    .desc = PLOOP.
 ent-WeaponLauncherRocket = RPG-7
     .desc = A modified ancient rocket-propelled grenade launcher.
 ent-WeaponLauncherMultipleRocket = multiple rocket launcher
@@ -21,7 +21,7 @@ ent-WeaponForceGunAdmin = force gun
     .desc = Manipulates gravity around objects to fling them at high velocities.
     .suffix = Admeme
 ent-WeaponLauncherAdmemeMeteorLarge = meteor launcher
-    .desc = It fires large meteors
+    .desc = It fires large meteors.
     .suffix = Admeme
 ent-WeaponLauncherAdmemeImmovableRodSlow = immovable rod launcher
     .desc = It fires slow immovable rods.
