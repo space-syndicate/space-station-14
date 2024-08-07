@@ -155,7 +155,7 @@
 - type: entity
   id: ActionAGhostShowStationRecords
   name: Station Records Interface
-  description: View a station records Interface
+  description: View a station records Interface.
   components:
   - type: InstantAction
     icon: Corvax/Interface/AdminActions/records.png # Corvax-Resprite
