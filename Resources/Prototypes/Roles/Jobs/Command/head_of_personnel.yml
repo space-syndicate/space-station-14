@@ -21,7 +21,7 @@
 #   - !type:AgeRequirement
 #     requiredAge: 20
     - !type:AgeRequirement
-      requiredAge: 30
+      requiredAge: 30 # Corvax-MRP
   weight: 20
   startingGear: HoPGear
   icon: "JobIconHeadOfPersonnel"
