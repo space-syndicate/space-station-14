@@ -9,6 +9,6 @@ ent-MobCleanBot = cleanbot
 ent-MobMedibot = medibot
     .desc = No substitute for a doctor, but better than nothing.
 ent-MobMimeBot = mimebot
-    .desc = Why not give mimebot a friendly wave.
+    .desc = Why not give the mimebot a friendly wave?
 ent-MobSupplyBot = supplybot
     .desc = Delivers cargo!
