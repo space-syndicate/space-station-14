@@ -16,7 +16,7 @@ space_wind_max_velocity = 22.0
 
 [shuttle]
 emergency_early_launch_allowed = true
-#arrivals_map = "/Maps/Misc/corvax_terminal.yml"
+arrivals_map = "/Maps/Misc/corvax_terminal.yml"
 auto_call_time = 150
 
 [vote]
