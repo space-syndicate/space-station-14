@@ -124,6 +124,13 @@
     laws: Crewsimov
 
 - type: entity
+  id: BaseStationSiliconLawNTDefault #Corvax-NTDefault
+  abstract: true
+  components:
+  - type: SiliconLawProvider
+    laws: NTDefault #Corvax-NTDefault
+
+- type: entity
   id: BaseStationNews
   abstract: true
   components:
