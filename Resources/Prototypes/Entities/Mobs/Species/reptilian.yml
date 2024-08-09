@@ -73,7 +73,17 @@
           32:
             sprite: Mobs/Species/Human/displacement.rsi
             state: jumpsuit-female
-
+    # Corvax-Digitigrade-Start
+    displacements:
+      jumpsuit:
+        layer:
+          sprite: Corvax/Mobs/Species/displacement.rsi
+          state: jumpsuit
+          copyToShaderParameters:
+            layerKey: dummy
+            parameterTexture: displacementMap
+            parameterUV: displacementUV
+    # Corvax-Digitigrade-End
 
 - type: entity
   parent: BaseSpeciesDummy
@@ -95,5 +105,16 @@
           32:
             sprite: Mobs/Species/Human/displacement.rsi
             state: jumpsuit-female
+    # Corvax-Digitigrade-Start
+    displacements:
+      jumpsuit:
+        layer:
+          sprite: Corvax/Mobs/Species/displacement.rsi
+          state: jumpsuit
+          copyToShaderParameters:
+            layerKey: dummy
+            parameterTexture: displacementMap
+            parameterUV: displacementUV
+    # Corvax-Digitigrade-End
 
 #Weh
