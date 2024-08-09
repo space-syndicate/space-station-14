@@ -6,6 +6,7 @@
     TraitorObjectiveGroupKill: 1
     TraitorObjectiveGroupState: 1 #As in, something about your character. Alive, dead, arrested, gained an ability...
     TraitorObjectiveGroupSocial: 1 #Involves helping/harming others without killing them or stealing their stuff
+    TraitorObjectiveGroupNukieDisk: 1  #Corvax
 
 - type: weightedRandom
   id: TraitorObjectiveGroupSteal
@@ -13,8 +14,8 @@
     CaptainIDStealObjective: 1
     CMOHyposprayStealObjective: 1
     CMOCrewMonitorStealObjective: 1
+    #NukeDiskStealObjective: 1 #Corvax
     RDHardsuitStealObjective: 1
-    NukeDiskStealObjective: 1
     MagbootsStealObjective: 1
     CorgiMeatStealObjective: 1
     ClipboardStealObjective: 1
