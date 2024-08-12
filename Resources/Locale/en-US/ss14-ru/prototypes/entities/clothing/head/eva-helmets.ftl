@@ -9,4 +9,4 @@ ent-ClothingHeadHelmetCosmonaut = cosmonaut helmet
 ent-ClothingHeadHelmetVoidParamed = paramedic void helmet
     .desc = A void helmet made for paramedics.
 ent-ClothingHeadHelmetAncient = NTSRA void helmet
-    .desc = An ancient space helmet, designed by the NTSRA branch of CentCom.
+    .desc = An ancient space helmet, designed by the NTSRA branch of CentComm.

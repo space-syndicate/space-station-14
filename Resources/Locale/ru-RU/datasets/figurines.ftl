@@ -24,7 +24,6 @@ figurines-musician-2 = Never gonna let you down!
 # figurines-boxer-
 
 figurines-captain-1 = Crew, the Nuke Disk is safely up my ass.
-figurines-captain-2 = Glory to NT!
 figurines-hos-1 = Space law? What?
 figurines-hos-2 = Shot the clown.
 figurines-warden-1 = Execute him for breaking in!
