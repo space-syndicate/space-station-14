@@ -116,6 +116,14 @@
   - FauxTileJungleAstroGrass
   - FauxTileAstroIce
   - FauxTileAstroSnow
+  # Corvax-Start
+  - FauxTileConcrete
+  - FauxTileConcreteSlab
+  - FauxTileGrayConcrete
+  - FauxTileGrayConcreteSlab
+  - FauxTileOldConcrete
+  - FauxTileOldConcreteSlab
+  # Corvax-End
 
 - type: technology
   id: BiochemicalStasis

@@ -338,6 +338,14 @@
       - FauxTileAstroSnow
       - OreBagOfHolding
       - DeviceQuantumSpinInverter
+      # Corvax-Start
+      - FauxTileConcrete
+      - FauxTileConcreteSlab
+      - FauxTileGrayConcrete
+      - FauxTileGrayConcreteSlab
+      - FauxTileOldConcrete
+      - FauxTileOldConcreteSlab
+      # Corvax-End
   - type: EmagLatheRecipes
     emagDynamicRecipes:
       - BoxBeanbag
