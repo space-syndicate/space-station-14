@@ -357,3 +357,93 @@
     collection: BarestepWood
   itemDrop: FloorTileItemWoodRed
   heatCapacity: 10000
+
+- type: tile
+  id: FloorConcreteInside
+  name: tiles-concrete-inside
+  parent: FloorConcrete
+  baseTurf: Plating
+  isSubfloor: false
+  deconstructTools: [ Prying ]
+  itemDrop: FloorTileItemConcrete
+  weather: false
+
+- type: tile
+  id: FloorConcreteInsideMono
+  name: tiles-concrete-inside-slab
+  parent: FloorConcreteMono
+  baseTurf: Plating
+  isSubfloor: false
+  deconstructTools: [ Prying ]
+  itemDrop: FloorTileItemConcrete
+  weather: false
+
+- type: tile
+  id: FloorConcreteInsideSmooth
+  name: tiles-concrete-inside-smooth
+  parent: FloorConcreteSmooth
+  baseTurf: Plating
+  isSubfloor: false
+  deconstructTools: [ Prying ]
+  itemDrop: FloorTileItemConcrete
+  weather: false
+
+- type: tile
+  id: FloorGrayConcreteInside
+  name: tiles-gray-concrete-inside
+  parent: FloorGrayConcrete
+  baseTurf: Plating
+  isSubfloor: false
+  deconstructTools: [ Prying ]
+  itemDrop: FloorTileItemGrayConcrete
+  weather: false
+
+- type: tile
+  id: FloorGrayConcreteInsideMono
+  name: tiles-gray-concrete-inside-slab
+  parent: FloorGrayConcreteMono
+  baseTurf: Plating
+  isSubfloor: false
+  deconstructTools: [ Prying ]
+  itemDrop: FloorTileItemGrayConcrete
+  weather: false
+
+- type: tile
+  id: FloorGrayConcreteInsideSmooth
+  name: tiles-gray-concrete-inside-smooth
+  parent: FloorGrayConcreteSmooth
+  baseTurf: Plating
+  isSubfloor: false
+  deconstructTools: [ Prying ]
+  itemDrop: FloorTileItemGrayConcrete
+  weather: false
+
+- type: tile
+  id: FloorOldConcreteInside
+  name: tiles-old-concrete-inside
+  parent: FloorOldConcrete
+  baseTurf: Plating
+  isSubfloor: false
+  deconstructTools: [ Prying ]
+  itemDrop: FloorTileItemOldConcrete
+  weather: false
+
+- type: tile
+  id: FloorOldConcreteInsideMono
+  name: tiles-old-concrete-inside-slab
+  parent: FloorOldConcreteMono
+  baseTurf: Plating
+  isSubfloor: false
+  deconstructTools: [ Prying ]
+  itemDrop: FloorTileItemOldConcrete
+  weather: false
+
+- type: tile
+  id: FloorOldConcreteInsideSmooth
+  name: tiles-old-concrete-inside-smooth
+  parent: FloorOldConcreteSmooth
+  baseTurf: Plating
+  isSubfloor: false
+  deconstructTools: [ Prying ]
+  itemDrop: FloorTileItemOldConcrete
+  weather: false
