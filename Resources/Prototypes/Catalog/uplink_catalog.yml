@@ -124,6 +124,16 @@
       blacklist:
         tags:
           - NukeOpsUplink
+- type: listing
+  id: UplinkMiniatureEnergyCrossbow
+  name: uplink-miniature-energy-crossbow-name
+  description: uplink-miniature-energy-crossbow-desc
+  productEntity: MiniatureEnergyCrossbow
+  cost:
+    Telecrystal: 10
+  categories:
+  - UplinkWeaponry
+
 
 - type: listing
   id: UplinkEshield
