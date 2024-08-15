@@ -77,7 +77,7 @@ figurines-atmostech-5 = Слава Атмосии!
 figurines-rd-1 = Взорвать всех боргов!
 figurines-rd-2 = Арсенал третьего уровня? Ни за что.
 
-figurines-scientist-1= Должно быть, эти бомбы сделал кто-то другой!
+figurines-scientist-1= Кто-то другой сделал эти бомбы!
 figurines-scientist-2 = Он попросил, чтобы его боргировали!
 figurines-scientist-3 = Карп в нио!
 figurines-scientist-4 = Взрыв в нио.
@@ -124,7 +124,7 @@ figurines-nukie-elite-3 = Ребят, вы живы?
 
 figurines-nukie-commander-1 = ДОСТАНЬТЕ ЭТОТ ЧЁРТОВ ДИСК!
 
-figurines-footsoldier-1 = Я злой мальчик. С каждым днем все меньше мальчик, с каждым днем всё больше злой.
+figurines-footsoldier-1 = Я злой мальчик. С каждым днём всё меньше мальчик, с каждым днем всё больше злой.
 figurines-footsoldier-2 = Кого ты выберешь? Их или нас? Нас или их?
 
 figurines-wizard-1 = Ei Nath!

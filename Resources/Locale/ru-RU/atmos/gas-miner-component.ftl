@@ -1,5 +1,5 @@
-gas-miner-mines-text = Оно добывает [color=lightgray]{ $gas }[/color] когда активно.
-gas-miner-amount-text = Оно добывает { $moles } молей газа в секунду когда активно.
+gas-miner-mines-text = Он добывает [color=lightgray]{ $gas }[/color] когда активен.
+gas-miner-amount-text = Он добывает { $moles } молей газа в секунду когда активен.
 gas-miner-temperature-text = Темп. добываемого газа: { $tempK }K ({ $tempC }°C).
 gas-miner-moles-cutoff-text = Ограничение окружающих молей: { $moles } молей.
 gas-miner-pressure-cutoff-text = Ограничение окружающего давления: { $pressure } кПа.
