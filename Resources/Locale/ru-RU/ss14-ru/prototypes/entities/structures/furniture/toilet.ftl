@@ -1,6 +1,14 @@
+ent-BaseToilet = toilet
+    .desc = The HT-451, a torque rotation-based, waste disposal unit for small matter. This one seems remarkably clean.
 ent-ToiletEmpty = туалет
     .desc = HT-451, устройство для удаления мелких отходов, основанное на вращательном моменте. Этот выглядит удивительно чистым.
     .suffix = Пустой
 ent-ToiletDirtyWater = { ent-ToiletEmpty }
     .desc = { ent-ToiletEmpty.desc }
     .suffix = Грязная вода
+ent-ToiletGoldenEmpty = golden toilet
+    .desc = The HT-451G is the gold version of the device. It says on the side that it is made of the purest Mercurian gold and a real leather seat.
+    .suffix = Empty
+ent-ToiletGoldenDirtyWater = { ent-ToiletGoldenEmpty }
+    .suffix = Dirty Water, StealTarget
+    .desc = { ent-ToiletGoldenEmpty.desc }

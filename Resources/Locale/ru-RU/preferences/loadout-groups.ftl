@@ -31,6 +31,7 @@ loadout-group-passenger-mask = Пассажир, маска
 loadout-group-passenger-gloves = Пассажир, перчатки
 loadout-group-passenger-outerclothing = Пассажир, верхняя одежда
 loadout-group-passenger-shoes = Пассажир, обувь
+loadout-group-passenger-neck = Passenger neck
 loadout-group-bartender-head = Бармен, голова
 loadout-group-bartender-jumpsuit = Бармен, комбинезон
 loadout-group-bartender-outerclothing = Бармен, верхняя одежда
@@ -133,6 +134,7 @@ loadout-group-detective-neck = Детектив, шея
 loadout-group-detective-jumpsuit = Детектив, комбинезон
 loadout-group-detective-outerclothing = Детектив, верхняя одежда
 loadout-group-security-cadet-jumpsuit = Кадет СБ, комбинезон
+loadout-group-security-star = Security Star
 # Medical
 loadout-group-medical-gloves = Медицинский отдел, перчатки
 loadout-group-medical-mask = Медицинский отдел, маска
@@ -157,6 +159,6 @@ loadout-group-paramedic-outerclothing = Парамедик, верхняя од�
 loadout-group-paramedic-shoes = Парамедик, обувь
 # Wildcards
 loadout-group-reporter-jumpsuit = Репортёр, комбинезон
-loadout-group-psychologist-jumpsuit = Psychologist jumpsuit
+loadout-group-psychologist-jumpsuit = Психолог, комбинезон
 loadout-group-boxer-jumpsuit = Боксёр, комбинезон
 loadout-group-boxer-gloves = Боксёр, перчатки
