@@ -11,13 +11,13 @@ whitelist-playercount-invalid =
     }
 whitelist-not-whitelisted-rp = Вас нет в вайтлисте. Чтобы попасть в вайтлист, посетите наш Discord (ссылку можно найти по адресу https://discord.station14.ru).
 cmd-whitelistadd-desc = Добавить игрока в вайтлист сервера.
-cmd-whitelistadd-help = Использование: whitelistadd <username>
+cmd-whitelistadd-help = Использование: whitelistadd <username или  User ID>
 cmd-whitelistadd-existing = { $username } уже находится в вайтлисте!
 cmd-whitelistadd-added = { $username } добавлен в вайтлист
 cmd-whitelistadd-not-found = Не удалось найти игрока '{ $username }'
 cmd-whitelistadd-arg-player = [player]
 cmd-whitelistremove-desc = Удалить игрока с вайтлиста сервера.
-cmd-whitelistremove-help = Использование: whitelistremove <username>
+cmd-whitelistremove-help = Использование: whitelistremove <username или  User ID>
 cmd-whitelistremove-existing = { $username } не находится в вайтлисте!
 cmd-whitelistremove-removed = { $username } удалён с вайтлиста
 cmd-whitelistremove-not-found = Не удалось найти игрока '{ $username }'
