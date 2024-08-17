@@ -71,13 +71,10 @@
     # Corvax-Digitigrade-Start
     displacements:
       jumpsuit:
-        layer:
-          sprite: Corvax/Mobs/Species/displacement.rsi
-          state: jumpsuit
-          copyToShaderParameters:
-            layerKey: dummy
-            parameterTexture: displacementMap
-            parameterUV: displacementUV
+        sizeMaps:
+          32:
+            sprite: Corvax/Mobs/Species/displacement.rsi
+            state: jumpsuit
     # Corvax-Digitigrade-End
 
 - type: entity
@@ -103,13 +100,10 @@
     # Corvax-Digitigrade-Start
     displacements:
       jumpsuit:
-        layer:
-          sprite: Corvax/Mobs/Species/displacement.rsi
-          state: jumpsuit
-          copyToShaderParameters:
-            layerKey: dummy
-            parameterTexture: displacementMap
-            parameterUV: displacementUV
+        sizeMaps:
+          32:
+            sprite: Corvax/Mobs/Species/displacement.rsi
+            state: jumpsuit
     # Corvax-Digitigrade-End
 
 #Weh
