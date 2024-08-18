@@ -24,19 +24,19 @@ figurines-musician-2 = Never gonna let you down!
 # figurines-boxer-
 
 figurines-captain-1 = Слава НТ!
-figurines-captain-2 = How did I get hired? Yes.
-figurines-captain-3 = The nuclear disk is secure. Where? Somewhere.
+figurines-captain-2 = Как я устроился? Да.
+figurines-captain-3 = Ядерный диск в безопасности. Где? Где-то.
 figurines-hos-1 = Корпоративный закон? Что?
 figurines-hos-2 = Застрелить клоуна.
-figurines-hos-3 = Yes, I shot the clown. No, I don't regret it.
+figurines-hos-3 = Да, я застрелил клоуна. Нет, я не жалею об этом.
 figurines-warden-1 = Казните его за проникновение!
-figurines-warden-2 = Perma the fucker for insulting me!
-figurines-warden-3 = We totally treat everyone fairly and do NOT mistreat our prisoners.
+figurines-warden-2 = В перму ублюдка за оскорбление!
+figurines-warden-3 = Мы абсолютно справедливо относимся ко всем и НЕ допускаем грубого обращения с заключенными.
 figurines-detective-1 = Убийца был дворецкий.
-figurines-detective-2 = I need some whiskey after this.
+figurines-detective-2 = Мне нужно немного виски после этого.
 figurines-security-1 = Я тут закон!
 figurines-security-2 = Вы нарушили статью 1984.
-figurines-security-3 = Whenever I get bored I use the clown as target practice.
+figurines-security-3 = Когда мне скучно, я использую клоуна в качестве мишени.
 figurines-lawyer-1 = Лучше звоните солу!
 figurines-lawyer-2 = Objection!
 figurines-cargotech-1 = ДРАКОН НА ТОРГОВОМ ПОСТУ!
