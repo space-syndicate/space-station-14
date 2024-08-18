@@ -24,7 +24,7 @@ figurines-musician-2 = Never gonna let you down!
 # figurines-boxer-
 
 figurines-captain-1 = Слава НТ!
-figurines-captain-2 = Как я устроился? Да.
+figurines-captain-2 = Как я получил эту должность? Да.
 figurines-captain-3 = Ядерный диск в безопасности. Где? Где-то.
 figurines-hos-1 = Корпоративный закон? Что?
 figurines-hos-2 = Застрелить клоуна.
