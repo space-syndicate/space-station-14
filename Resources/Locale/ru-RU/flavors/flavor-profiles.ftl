@@ -172,6 +172,7 @@ flavor-complex-light = как угасший свет
 
 flavor-complex-profits = как прибыль
 flavor-complex-fishops = как страшная рыбья операция
+flavor-complex-blue-pumpkin = like a mouthful of pool water
 flavor-complex-violets = как фиалки
 flavor-complex-pyrotton = как горящий рот
 flavor-complex-mothballs = как нафталиновые шарики

@@ -18,3 +18,5 @@ ent-DrinkLithiumFlask = lithium flask
     .desc = A flask with a Lithium Atom symbol on it.
 ent-DrinkVacuumFlask = vacuum flask
     .desc = Keeping your drinks at the perfect temperature since 1892.
+ent-Pitcher = Metal Pitcher
+    .desc = A stainless steel insulated pitcher. Everyone's best friend in the morning.

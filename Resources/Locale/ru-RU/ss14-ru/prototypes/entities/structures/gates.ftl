@@ -1,3 +1,5 @@
+ent-LogicEmptyCircuit = empty circuit
+    .desc = Something seems to be missing.
 ent-BaseLogicItem = { ent-BaseItem }
     .desc = { ent-BaseItem.desc }
 ent-LogicGateOr = логический элемент
@@ -22,3 +24,5 @@ ent-EdgeDetector = детектор сигнала
     .desc = Определяет уровень сигнала и разделяет его. Устройство игнорирует импульсные сигналы.
 ent-PowerSensor = датчик питания
     .desc = Генерирует сигналы в ответ на изменение напряжения в сети. Может циклически переключаться между напряжениями кабеля.
+ent-MemoryCell = memory cell
+    .desc = A D-Latch circuit that stores a signal which can be changed depending on input and enable ports.
