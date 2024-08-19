@@ -76,3 +76,5 @@ ent-FoodBadRecipe = горелое месиво
     .desc = За это кого-то следует понизить с должности повара.
 ent-FoodCocoaBeans = какао-бобы
     .desc = Шоколада много не бывает!
+ent-FoodCroissantRaw = raw croissant
+    .desc = Buttery, flaky goodness waiting to happen.
