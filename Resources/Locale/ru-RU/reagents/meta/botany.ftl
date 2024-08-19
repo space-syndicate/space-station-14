@@ -14,3 +14,5 @@ reagent-name-ammonia = аммиак
 reagent-desc-ammonia = Эффективное удобрение, дающее растениям питательные вещества.
 reagent-name-diethylamine = диэтиламин
 reagent-desc-diethylamine = Очень мощное удобрение, насыщает растения питательными веществами, уничтожает вредителей, а иногда даже ускоряет рост.
+reagent-name-sedin = sedin
+reagent-desc-sedin = A modified version of diethylamine that can restore seeds on plants at the cost of potency.

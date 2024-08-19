@@ -1,3 +1,5 @@
+ent-BaseMeleeWeaponEnergy = { ent-BaseItem }
+    .desc = { ent-BaseItem.desc }
 ent-EnergySword = energy sword
     .desc = A very loud & dangerous sword with a beam made of pure, concentrated plasma. Cuts through unarmored targets like butter.
 ent-EnergyDaggerLoud = energy dagger

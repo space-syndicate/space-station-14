@@ -16,10 +16,15 @@
   copyright: "Modified by github user @Flareguy from plating.png, using damaged plating sprites from /tg/station at commit https://github.com/tgstation/tgstation/blob/6665eec76c98a4f3f89bebcd10b34b47dcc0b8ae/icons/turf/floors.dmi"
   source: "https://github.com/space-wizards/space-station-14/pull/21711"
 
-- files: [ "asteroid_red.png", "asteroid_tile.png", "elevator_shaft.png", "freezer.png", "foammetal.png", "green_circuit.png", "lino.png", "mono.png", "rock_vault.png", "showroom.png"]
+- files: [ "asteroid_red.png", "asteroid_tile.png", "freezer.png", "foammetal.png", "green_circuit.png", "lino.png", "mono.png", "rock_vault.png", "showroom.png"]
   license: "CC-BY-SA-3.0"
   copyright: "vgstation13 at roughly commit e4d3ea7f69d21c3667be12b114fa935c4640cb05, asteroid_red and asteroid_tile taken from commit /vg/station at commit 02b9f6894af4419c9f7e699a22c402b086d8067e."
   source: "https://github.com/vgstation-coders/vgstation13"
+
+- files: [ "elevator_shaft.png"]
+  license: "CC-BY-SA-3.0"
+  copyright: "Taken from vgstation13 at roughly commit e4d3ea7f69d21c3667be12b114fa935c4640cb05. Modified by Ko4erga (discord)"
+  source: "https://github.com/vgstation-coders/vgstation13/"
 
 - files: [ "asteroid.png", "asteroid_dug.png", "asteroid0.png"]
   license: "CC-BY-SA-3.0"
@@ -133,7 +138,7 @@
 
 - files: ["mining_floor.png", "mining_floor_dark.png", "mining_floor_light.png"]
   license: "CC-BY-SA-3.0"
-  copyright: "taken at https://github.com/ParadiseSS13/Paradise/commit/43889a89d5a9378fd120d627f74613edb1841a66"
+  copyright: "Taken at https://github.com/ParadiseSS13/Paradise/commit/43889a89d5a9378fd120d627f74613edb1841a66. Modified by Ko4erga (discord)"
   source: "https://github.com/ParadiseSS13/Paradise"
 
 - files: ["latticeTrain.png"]

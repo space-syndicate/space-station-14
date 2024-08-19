@@ -24,6 +24,14 @@
   - CorvaxRule8
   - CorvaxRule9
   - CorvaxRule10
+  - CorvaxPunishmentTypes
+
+- type: guideEntry
+  id: CorvaxPunishmentTypes
+  name: Игровые наказания
+  priority: 20
+  ruleEntry: true
+  text: "/ServerInfo/Corvax/Guidebook/ServerRules/PunishmentTypes.xml"
 
 - type: guideEntry
   id: CorvaxRule0

@@ -22,8 +22,6 @@ ent-ActionActivateScramImplant = SCRAM!
     .desc = Randomly teleports you within a large distance.
 ent-ActionActivateDnaScramblerImplant = Scramble DNA
     .desc = Randomly changes your name and appearance.
-ent-ActionMorphGeras = Morph into Geras
-    .desc = Morphs you into a Geras - a miniature version of you which allows you to move fast, at the cost of your inventory.
 ent-ActionToggleSuitPiece = Toggle Suit Piece
     .desc = Remember to equip the important pieces of your suit before going into action.
 ent-ActionCombatModeToggle = [color=red]Combat Mode[/color]
