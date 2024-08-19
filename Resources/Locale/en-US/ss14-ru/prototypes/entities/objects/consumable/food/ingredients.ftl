@@ -76,3 +76,5 @@ ent-FoodBadRecipe = burned mess
     .desc = Someone should be demoted from cook for this.
 ent-FoodCocoaBeans = cocoa beans
     .desc = You can never have too much chocolate!
+ent-FoodCroissantRaw = raw croissant
+    .desc = Buttery, flaky goodness waiting to happen.

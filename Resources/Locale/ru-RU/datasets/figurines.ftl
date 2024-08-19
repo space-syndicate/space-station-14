@@ -20,6 +20,7 @@ figurines-mime-4 = .......
 figurines-mime-5 = ................
 figurines-musician-1 = Never gonna give you up!
 figurines-musician-2 = Never gonna let you down!
+figurines-boxer-1 = The first rule of Fight Club is...
 
 # figurines-boxer-
 
@@ -31,11 +32,13 @@ figurines-hos-2 = Застрелить клоуна.
 figurines-hos-3 = Yes, I shot the clown. No, I don't regret it.
 figurines-warden-1 = Казните его за проникновение!
 figurines-warden-2 = Perma the fucker for insulting me!
+figurines-warden-4 = Brig is my home. My home is brig. My brig is home. Stop, what?
 figurines-warden-3 = We totally treat everyone fairly and do NOT mistreat our prisoners.
 figurines-detective-1 = Убийца был дворецкий.
 figurines-detective-2 = I need some whiskey after this.
 figurines-security-1 = Я тут закон!
 figurines-security-2 = Вы нарушили статью 1984.
+figurines-security-4 = You have two rights: to remain silent and to cry about it.
 figurines-security-3 = Whenever I get bored I use the clown as target practice.
 figurines-lawyer-1 = Лучше звоните солу!
 figurines-lawyer-2 = Objection!

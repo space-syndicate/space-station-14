@@ -57,3 +57,5 @@ ent-FoodBakedCannabisBrownie = special brownie
     .desc = A "special" brownie.
 ent-FoodOnionRings = onion rings
     .desc = You can eat it or propose to your loved ones.
+ent-FoodBakedCroissant = croissant
+    .desc = Buttery, flaky goodness.
