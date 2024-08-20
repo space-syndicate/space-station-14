@@ -280,6 +280,7 @@
     stealGroup: WeaponAntiqueLaser
     owner: job-name-captain
 
+# Corvax-MRP-Start: Make nuke disk objective separate
 # - type: entity
   # noSpawn: true
   # parent: BaseCaptainObjective
@@ -294,3 +295,4 @@
   # - type: StealCondition
     # stealGroup: NukeDisk
     # owner: objective-condition-steal-station
+# Corvax-MRP-End
