@@ -37,6 +37,11 @@
           32:
             sprite: Corvax/Mobs/Species/displacement.rsi
             state: jumpsuit
+      shoes: # DM only for colored shoes!
+        sizeMaps:
+          32:
+            sprite: Corvax/Mobs/Species/displacement.rsi
+            state: shoes
   - type: ContentEye
     targetZoom: "1.125, 1.125"
     maxZoom: "1.125, 1.125"
@@ -86,3 +91,8 @@
           32:
             sprite: Corvax/Mobs/Species/displacement.rsi
             state: jumpsuit
+      shoes: # DM only for colored shoes!
+        sizeMaps:
+          32:
+            sprite: Corvax/Mobs/Species/displacement.rsi
+            state: shoes

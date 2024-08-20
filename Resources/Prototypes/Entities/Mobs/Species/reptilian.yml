@@ -75,6 +75,12 @@
           32:
             sprite: Corvax/Mobs/Species/displacement.rsi
             state: jumpsuit
+      shoes: # DM only for colored shoes!
+        sizeMaps:
+          32:
+            sprite: Corvax/Mobs/Species/displacement.rsi
+            state: shoes
+
     # Corvax-Digitigrade-End
 
 - type: entity
@@ -104,6 +110,11 @@
           32:
             sprite: Corvax/Mobs/Species/displacement.rsi
             state: jumpsuit
+      shoes: # DM only for colored shoes!
+        sizeMaps:
+          32:
+            sprite: Corvax/Mobs/Species/displacement.rsi
+            state: shoes
     # Corvax-Digitigrade-End
 
 #Weh
