@@ -21,9 +21,6 @@ figurines-mime-5 = ................
 figurines-musician-1 = Never gonna give you up!
 figurines-musician-2 = Never gonna let you down!
 figurines-boxer-1 = The first rule of Fight Club is...
-
-# figurines-boxer-
-
 figurines-captain-1 = Слава НТ!
 figurines-captain-2 = Как я получил эту должность? Да.
 figurines-captain-3 = Ядерный диск в безопасности. Где? Где-то.
@@ -71,8 +68,8 @@ figurines-rd-2 = Арсенал третьего уровня? Ни за что.
 figurines-scientist-1 = Кто-то другой сделал эти бомбы!
 figurines-scientist-2 = Он попросил, чтобы его боргировали!
 figurines-scientist-3 = Карп в нио!
-figurines-scientist-4 = Взрыв в нио.
-figurines-scientist-5 = Аномалия взорвалась.
+figurines-scientist-4 = Взрыв в нио!
+figurines-scientist-5 = Аномалия взорвалась!
 figurines-cmo-1 = Датчики костюмов!
 figurines-cmo-2 = Почему у нас есть мет?
 figurines-chemist-1 = Получите свои таблетки!
