@@ -20,3 +20,5 @@ marking-VoxHairTielQuills = Вокс, Тилские перья
 marking-VoxHairYasu = Вокс, Ясухиро
 marking-VoxHairMange = Вокс, Лишай
 marking-VoxHairPony = Вокс, Пони
+marking-VoxHairWiseBraid = Vox Wise Braids
+marking-VoxHairSpotty = Vox Spotty Hair

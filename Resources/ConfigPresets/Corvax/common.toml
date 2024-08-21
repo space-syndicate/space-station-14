@@ -16,10 +16,6 @@ website = "https://ss14.ru"
 [viewport]
 maximum_width = 26
 
-[events]
-meteor_swarm_min_time = 30
-meteor_swarm_max_time = 45
-
 [game]
 lobbyduration = 360
 secret_weight_prototype = "CorvaxSecretDefault"

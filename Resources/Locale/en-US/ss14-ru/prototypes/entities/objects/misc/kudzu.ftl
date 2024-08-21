@@ -15,5 +15,5 @@ ent-FleshKudzu = tendons
     .desc = A rapidly growing cluster of meaty tendons. WHY ARE YOU STOPPING TO LOOK AT IT?!
 ent-ShadowKudzu = dark haze
   .desc = { ent-BaseKudzu.desc }
-ent-ShadowKudzuWeak = Haze
+ent-ShadowKudzuWeak = haze
     .desc = { ent-ShadowKudzu.desc }
