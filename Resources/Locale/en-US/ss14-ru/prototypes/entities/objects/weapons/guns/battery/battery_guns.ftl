@@ -48,3 +48,5 @@ ent-WeaponPistolCHIMPUpgraded = experimental C.H.I.M.P. handcannon
     .desc = This C.H.I.M.P. seems to have a greater punch than is usual...
 ent-WeaponBehonkerLaser = eye of a behonker
     .desc = The eye of a behonker, it fires a laser when squeezed.
+ent-WeaponEnergyShotgun = energy shotgun
+    .desc = A one-of-a-kind prototype energy weapon that uses various shotgun configurations. It offers the possibility of both lethal and non-lethal shots, making it a versatile weapon.

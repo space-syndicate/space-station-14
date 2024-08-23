@@ -63,3 +63,5 @@ ent-WeaponPistolCHIMPUpgraded = экспериментальный излуча�
     .suffix = Пистолет
 ent-WeaponBehonkerLaser = око бехонкера
     .desc = Глаз бехонкера, при сжатии выстреливает лазером.
+ent-WeaponEnergyShotgun = energy shotgun
+    .desc = A one-of-a-kind prototype energy weapon that uses various shotgun configurations. It offers the possibility of both lethal and non-lethal shots, making it a versatile weapon.
