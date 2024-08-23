@@ -36787,6 +36787,11 @@ entities:
     - type: Transform
       pos: 49.5,81.5
       parent: 2
+  - uid: 9237
+    components:
+    - type: Transform
+      pos: 82.5,17.5
+      parent: 2
   - uid: 9485
     components:
     - type: Transform
@@ -36891,6 +36896,11 @@ entities:
     components:
     - type: Transform
       pos: 61.5,22.5
+      parent: 2
+  - uid: 12700
+    components:
+    - type: Transform
+      pos: 83.5,17.5
       parent: 2
   - uid: 12745
     components:
@@ -40132,6 +40142,146 @@ entities:
     - type: Transform
       pos: 21.5,21.5
       parent: 16795
+  - uid: 21478
+    components:
+    - type: Transform
+      pos: 84.5,17.5
+      parent: 2
+  - uid: 21479
+    components:
+    - type: Transform
+      pos: 85.5,17.5
+      parent: 2
+  - uid: 21480
+    components:
+    - type: Transform
+      pos: 80.5,16.5
+      parent: 2
+  - uid: 21481
+    components:
+    - type: Transform
+      pos: 80.5,15.5
+      parent: 2
+  - uid: 21482
+    components:
+    - type: Transform
+      pos: 80.5,18.5
+      parent: 2
+  - uid: 21483
+    components:
+    - type: Transform
+      pos: 80.5,19.5
+      parent: 2
+  - uid: 21484
+    components:
+    - type: Transform
+      pos: 83.5,18.5
+      parent: 2
+  - uid: 21485
+    components:
+    - type: Transform
+      pos: 83.5,19.5
+      parent: 2
+  - uid: 21486
+    components:
+    - type: Transform
+      pos: 83.5,16.5
+      parent: 2
+  - uid: 21487
+    components:
+    - type: Transform
+      pos: 83.5,15.5
+      parent: 2
+  - uid: 21489
+    components:
+    - type: Transform
+      pos: 36.5,84.5
+      parent: 2
+  - uid: 21490
+    components:
+    - type: Transform
+      pos: 36.5,85.5
+      parent: 2
+  - uid: 21491
+    components:
+    - type: Transform
+      pos: 36.5,86.5
+      parent: 2
+  - uid: 21492
+    components:
+    - type: Transform
+      pos: 35.5,86.5
+      parent: 2
+  - uid: 21493
+    components:
+    - type: Transform
+      pos: 35.5,87.5
+      parent: 2
+  - uid: 21494
+    components:
+    - type: Transform
+      pos: 35.5,88.5
+      parent: 2
+  - uid: 21495
+    components:
+    - type: Transform
+      pos: 35.5,89.5
+      parent: 2
+  - uid: 21496
+    components:
+    - type: Transform
+      pos: 36.5,89.5
+      parent: 2
+  - uid: 21497
+    components:
+    - type: Transform
+      pos: 37.5,89.5
+      parent: 2
+  - uid: 21498
+    components:
+    - type: Transform
+      pos: 37.5,90.5
+      parent: 2
+  - uid: 21499
+    components:
+    - type: Transform
+      pos: 38.5,90.5
+      parent: 2
+  - uid: 21500
+    components:
+    - type: Transform
+      pos: 39.5,90.5
+      parent: 2
+  - uid: 21501
+    components:
+    - type: Transform
+      pos: 40.5,90.5
+      parent: 2
+  - uid: 21502
+    components:
+    - type: Transform
+      pos: 40.5,89.5
+      parent: 2
+  - uid: 21503
+    components:
+    - type: Transform
+      pos: 40.5,88.5
+      parent: 2
+  - uid: 21504
+    components:
+    - type: Transform
+      pos: 39.5,88.5
+      parent: 2
+  - uid: 21505
+    components:
+    - type: Transform
+      pos: 38.5,88.5
+      parent: 2
+  - uid: 21506
+    components:
+    - type: Transform
+      pos: 37.5,88.5
+      parent: 2
 - proto: CableApcStack
   entities:
   - uid: 3431
@@ -59328,7 +59478,7 @@ entities:
       parent: 2
 - proto: CrewMonitoringServer
   entities:
-  - uid: 9237
+  - uid: 21488
     components:
     - type: Transform
       pos: 80.5,15.5
@@ -115350,10 +115500,10 @@ entities:
       parent: 2
 - proto: SpawnPointChiefMedicalOfficer
   entities:
-  - uid: 12682
+  - uid: 21511
     components:
     - type: Transform
-      pos: 46.5,9.5
+      pos: 44.5,2.5
       parent: 2
 - proto: SpawnPointClown
   entities:
@@ -115414,6 +115564,50 @@ entities:
     - type: Transform
       pos: 60.5,64.5
       parent: 2
+- proto: SpawnPointMedicalDoctor
+  entities:
+  - uid: 21507
+    components:
+    - type: Transform
+      pos: 47.5,4.5
+      parent: 2
+  - uid: 21508
+    components:
+    - type: Transform
+      pos: 46.5,4.5
+      parent: 2
+  - uid: 21509
+    components:
+    - type: Transform
+      pos: 48.5,4.5
+      parent: 2
+  - uid: 21510
+    components:
+    - type: Transform
+      pos: 45.5,4.5
+      parent: 2
+- proto: SpawnPointMedicalIntern
+  entities:
+  - uid: 21512
+    components:
+    - type: Transform
+      pos: 44.5,4.5
+      parent: 2
+  - uid: 21513
+    components:
+    - type: Transform
+      pos: 43.5,4.5
+      parent: 2
+  - uid: 21514
+    components:
+    - type: Transform
+      pos: 42.5,4.5
+      parent: 2
+  - uid: 21515
+    components:
+    - type: Transform
+      pos: 41.5,4.5
+      parent: 2
 - proto: SpawnPointMime
   entities:
   - uid: 5703
@@ -115442,10 +115636,10 @@ entities:
       parent: 2
 - proto: SpawnPointParamedic
   entities:
-  - uid: 12700
+  - uid: 21516
     components:
     - type: Transform
-      pos: 36.5,9.5
+      pos: 42.5,3.5
       parent: 2
 - proto: SpawnPointPassenger
   entities:
@@ -142295,6 +142489,11 @@ entities:
     components:
     - type: Transform
       pos: 48.29904,-2.2969708
+      parent: 2
+  - uid: 12682
+    components:
+    - type: Transform
+      pos: 79.711914,16.655937
       parent: 2
   - uid: 16625
     components:
