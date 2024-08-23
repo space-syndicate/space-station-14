@@ -126,5 +126,5 @@ seeds-cotton-name = хлопок
 seeds-cotton-display-name = куст хлопка
 seeds-pyrotton-name = пирохлопок
 seeds-pyrotton-display-name = куст пирохлопка
-seeds-capfruit-name = capfruit
-seeds-capfruit-display-name = capfruit tree
+seeds-capfruit-name = пистофрукт
+seeds-capfruit-display-name = пистофруктовое дерево

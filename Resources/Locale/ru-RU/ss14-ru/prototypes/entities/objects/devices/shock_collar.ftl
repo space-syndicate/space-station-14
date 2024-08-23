@@ -1,3 +1,3 @@
-ent-ClothingNeckShockCollar = shock collar
-    .desc = An electric collar that shocks on the signal.
-    .suffix = SelfUnremovable
+ent-ClothingNeckShockCollar = шоковый ошейник
+    .desc = Электрический ошейник, который бьёт током по сигналу.
+    .suffix = СамостоятельноНеснимаемый
