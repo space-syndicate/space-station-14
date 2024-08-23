@@ -34,7 +34,7 @@ dungeon-config-proto-ClusterAsteroid = Астероидный кластер
 dungeon-config-proto-SpindlyAsteroid = Астероидная спираль
 dungeon-config-proto-SwissCheeseAsteroid = Фрагменты астероидов
 # Wrecks
-salvage-map-wreck = Обломок корабля
+salvage-map-wreck = Обломок для утилизации
 salvage-map-wreck-desc-size = Размер:
 salvage-map-wreck-size-small = [color=lime]Малый[/color]
 salvage-map-wreck-size-medium = [color=cornflowerblue]Средний[/color]
