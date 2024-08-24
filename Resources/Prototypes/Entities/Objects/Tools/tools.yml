@@ -188,7 +188,7 @@
 - type: entity
   parent: Crowbar
   id: CrowbarSyndicate
-  name: Лом
+  name: Подозрительная Монтировка
   description: Многофункциональное средство для открытия дверей и борьбы с захватчиками
   components:
   - type: Tag
@@ -198,6 +198,11 @@
     state: syndc-icon
   - type: Item
     heldPrefix: syndc
+  - type: MeleeWeapon
+    wideAnimationRotation: -135
+    damage:
+      types:
+        Blunt: 18
 
 - type: entity
   name: multitool

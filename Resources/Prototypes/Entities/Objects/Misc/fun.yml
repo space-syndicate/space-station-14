@@ -1,11 +1,14 @@
 - type: entity
   name: Плюшевый Бойкиссер
-  parent: BaseItem
+  parent: BaseStorageItem
   id: PlushieBoykisser
   description: Плюшевая игрушка. Мы советуем уничтожить это
   components:
     - type: Item
+      sprite: Objects/Misc/plushie_boykisser.rsi
       size: Small
+      shape:
+      - 0,0,2,2
     - type: Sprite
       sprite: Objects/Misc/plushie_boykisser.rsi
       state: icon
@@ -14,18 +17,10 @@
     - type: Storage
       grid:
       - 0,0,1,1
-      maxItemSize: Huge
-    - type: ContainerContainer
-      containers:
-        storagebase: !type:Container
-          ents: []
+      maxItemSize: Small
     - type: Damageable
       damageContainer: Inorganic
       damageModifierSet: Metallic
-    - type: UserInterface
-      interfaces:
-        enum.StorageUiKey.Key:
-          type: StorageBoundUserInterface
     - type: Destructible
       thresholds:
       - trigger:
