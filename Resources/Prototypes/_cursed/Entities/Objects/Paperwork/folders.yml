@@ -1,0 +1,37 @@
+- type: entity
+  id: BoxFolderOneSlot
+  parent: BoxFolderBase
+  name: маленькая папка
+  description: Содержит один, но очень важный документ!
+  components:
+  - type: Storage
+    maxItemSize: Small
+    grid:
+    - 0,0,1,1
+    whitelist:
+      tags:
+        - Document
+  - type: StorageFill
+    contents:
+      - id: Paper
+        prob: 0
+
+- type: entity
+  id: BoxFolderOneSlotBlue
+  parent: BoxFolderOneSlot
+  components:
+  - type: Sprite
+    layers:
+    - state: folder-colormap
+      color: "#355d99"
+    - state: folder-base
+
+- type: entity
+  id: BoxFolderOneSlotRed
+  parent: BoxFolderOneSlot
+  components:
+  - type: Sprite
+    layers:
+    - state: folder-colormap
+      color: "#cc2323"
+    - state: folder-base

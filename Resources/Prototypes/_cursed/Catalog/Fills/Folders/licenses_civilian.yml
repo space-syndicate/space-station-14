@@ -1,0 +1,72 @@
+- type: entity
+  id: LicensePaperFoldered
+  parent: BoxFolderOneSlotBlue
+  name: папка с лицензией
+  description: Выглядит солидно.
+  components:
+  - type: StorageFill
+    contents:
+      - id: LicensePaper
+
+- type: entity
+  id: LicensePaperShuttleBuildingCivilianFoldered
+  name: лицензия на гражданские суда
+  parent: LicensePaperFoldered
+  components:
+  - type: StorageFill
+    contents:
+      - id: LicensePaperShuttleBuildingCivilian
+
+- type: entity
+  id: LicensePaperShuttleBuildingMedicalFoldered
+  parent: LicensePaperFoldered
+  name: лицензия на медицинские суда
+  components:
+  - type: StorageFill
+    contents:
+      - id: LicensePaperShuttleBuildingMedical
+
+- type: entity
+  id: LicensePaperShuttleBuildingCargoFoldered
+  parent: LicensePaperFoldered
+  name: лицензия на грузовые суда
+  components:
+  - type: StorageFill
+    contents:
+      - id: LicensePaperShuttleBuildingCargo
+
+- type: entity
+  id: LicensePaperShuttleBuildingSalvageFoldered
+  parent: LicensePaperFoldered
+  name: лицензия на суда утилизаторов
+  components:
+  - type: StorageFill
+    contents:
+      - id: LicensePaperShuttleBuildingSalvage
+
+- type: entity
+  id: LicensePaperShuttleBuildingStarExplorerFoldered
+  parent: LicensePaperFoldered
+  name: лицензия на суда длительных перелётов
+  components:
+  - type: StorageFill
+    contents:
+      - id: LicensePaperShuttleBuildingStarExplorer
+
+- type: entity
+  id: LicensePaperShuttleBuildingSecurityFoldered
+  parent: LicensePaperFoldered
+  name: лицензия на охранные суда
+  components:
+  - type: StorageFill
+    contents:
+      - id: LicensePaperShuttleBuildingSecurity
+
+- type: entity
+  id: LicensePaperShuttleBuildingSecurityArmedFoldered
+  parent: LicensePaperFoldered
+  name: лицензия на вооруженные охранные суда
+  components:
+  - type: StorageFill
+    contents:
+      - id: LicensePaperShuttleBuildingSecurityArmed

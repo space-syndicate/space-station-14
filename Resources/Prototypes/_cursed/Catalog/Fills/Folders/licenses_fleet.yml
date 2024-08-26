@@ -1,0 +1,17 @@
+- type: entity
+  id: LicensePaperFleetFoldered
+  parent: BoxFolderOneSlotRed
+  name: папка с лицензией
+  description: Выглядит солидно. Почему она красная?
+  components:
+  - type: StorageFill
+    contents:
+      - id: LicensePaperFleet
+
+- type: entity
+  id: LicensePaperCorvetteShuttleBuildingFoldered
+  parent: BoxFolderOneSlotRed
+  components:
+  - type: StorageFill
+    contents:
+      - id: LicensePaperCorvette
