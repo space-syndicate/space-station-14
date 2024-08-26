@@ -1,11 +1,11 @@
 - type: gameMap
   id: Construct # айди прототипа вашей карты
   mapName: 'Construct' # название карты
-  mapPath: _cursed/Maps/curse220_main.yml # путь до файла карты
+  mapPath: Maps/curse220_main.yml # путь до файла карты
   minPlayers: 0 # минимальное количество игроков для появления карты в голосовании
   maxPlayers: 30 # максимально количество игроков для карты
   stations:
-    testmap-engi: # айди карты, которое вы прописывали в BecomeStationComponent
+    Construct: # айди карты, которое вы прописывали в BecomeStationComponent
       stationProto: EngineerStation
       components:
         - type: StationNameSetup
