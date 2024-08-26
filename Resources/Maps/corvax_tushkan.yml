@@ -64445,15 +64445,6 @@ entities:
     - type: Transform
       pos: 5.5,26.5
       parent: 2
-- proto: SignKiddiePlaque
-  entities:
-  - uid: 2597
-    components:
-    - type: MetaData
-      desc: ОООЧЕНЬ милая табличка, агитирующая упомянать в отзыве Игральные карты. Быть может, тогда НТ раскошелится на нормальные.
-    - type: Transform
-      pos: 29.5,-9.5
-      parent: 2
 - proto: SignLawyer
   entities:
   - uid: 6125
@@ -64495,36 +64486,6 @@ entities:
     components:
     - type: Transform
       pos: 8.5,14.5
-      parent: 2
-- proto: SignPlaque
-  entities:
-  - uid: 9195
-    components:
-    - type: MetaData
-      desc: Табличка, агитирующая писать отзыв на станцию, с упоминанием некоего бригадира с позывным "Ko4erga".
-    - type: Transform
-      pos: -14.5,-6.5
-      parent: 2
-  - uid: 9761
-    components:
-    - type: MetaData
-      desc: Табличка, агитирующая писать отзыв на станцию, с упоминанием некоего бригадира с позывным "Ko4erga".
-    - type: Transform
-      pos: -9.5,30.5
-      parent: 2
-  - uid: 9762
-    components:
-    - type: MetaData
-      desc: Табличка, агитирующая писать отзыв на станцию, с упоминанием некоего бригадира с позывным "Ko4erga".
-    - type: Transform
-      pos: 20.5,30.5
-      parent: 2
-  - uid: 9763
-    components:
-    - type: MetaData
-      desc: Табличка, агитирующая писать отзыв на станцию, с упоминанием некоего бригадира с позывным "Ko4erga".
-    - type: Transform
-      pos: 32.5,-10.5
       parent: 2
 - proto: SignPrison
   entities:
@@ -67055,11 +67016,6 @@ entities:
     - type: Transform
       rot: 3.141592653589793 rad
       pos: -12.5,-25.5
-      parent: 2
-  - uid: 9837
-    components:
-    - type: Transform
-      pos: 29.5,-9.5
       parent: 2
   - uid: 10482
     components:
