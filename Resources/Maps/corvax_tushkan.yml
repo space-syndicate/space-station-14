@@ -28496,6 +28496,12 @@ entities:
       parent: 2
 - proto: ComputerCrewMonitoring
   entities:
+  - uid: 469
+    components:
+    - type: Transform
+      rot: 1.5707963267948966 rad
+      pos: -10.5,-2.5
+      parent: 2
   - uid: 2225
     components:
     - type: Transform
@@ -68755,11 +68761,6 @@ entities:
       parent: 2
 - proto: VendingMachineCoffee
   entities:
-  - uid: 469
-    components:
-    - type: Transform
-      pos: -10.5,-2.5
-      parent: 2
   - uid: 2459
     components:
     - type: Transform
@@ -77713,6 +77714,44 @@ entities:
         - 0
         - 0
         - 0
+- proto: WarningAir
+  entities:
+  - uid: 9195
+    components:
+    - type: MetaData
+      desc: ВНИМАНИЕ! Труба для транспортировки водяного пара. Перед работой убедитесь, что поток газа через неё отключён.
+      name: 'знак "внимание: Водяного пара"'
+    - type: Transform
+      pos: 9.5,-34.5
+      parent: 2
+- proto: WarningCO2
+  entities:
+  - uid: 9762
+    components:
+    - type: Transform
+      pos: 5.5,-34.5
+      parent: 2
+- proto: WarningN2
+  entities:
+  - uid: 9761
+    components:
+    - type: Transform
+      pos: 11.5,-34.5
+      parent: 2
+- proto: WarningO2
+  entities:
+  - uid: 2597
+    components:
+    - type: Transform
+      pos: 13.5,-34.5
+      parent: 2
+- proto: WarningPlasma
+  entities:
+  - uid: 9763
+    components:
+    - type: Transform
+      pos: 7.5,-34.5
+      parent: 2
 - proto: WarpPointBombing
   entities:
   - uid: 10328
