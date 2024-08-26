@@ -1,5 +1,6 @@
 ﻿using System.Threading.Tasks;
 using Content.Server.Chat.Systems;
+using Content.Server.Players.RateLimiting;
 using Content.Shared.Corvax.CCCVars;
 using Content.Shared.Corvax.TTS;
 using Content.Shared.GameTicking;
@@ -48,6 +49,8 @@ public sealed partial class TTSSystem : EntitySystem
         SubscribeLocalEvent<RoundRestartCleanupEvent>(OnRoundRestartCleanup);
 
         SubscribeNetworkEvent<RequestPreviewTTSEvent>(OnRequestPreviewTTS);
+
+        RegisterRateLimits();
     }
 
     private void OnRoundRestartCleanup(RoundRestartCleanupEvent ev)
@@ -59,6 +62,9 @@ public sealed partial class TTSSystem : EntitySystem
     {
         if (!_isEnabled ||
             !_prototypeManager.TryIndex<TTSVoicePrototype>(ev.VoiceId, out var protoVoice))
+            return;
+
+        if (HandleRateLimit(args.SenderSession) != RateLimitStatus.Allowed)
             return;
 
         var previewText = _rng.Pick(_sampleText);
