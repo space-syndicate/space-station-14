@@ -1,0 +1,90 @@
+- type: entity
+  parent: Paper
+  id: LicensePaper
+  name: Лицензия
+  description: Мне нужна лицензия!
+  components:
+    - type: Paper
+      stampState: paper_stamp-cmo
+      stampedBy:
+      - stampedName: stamp-component-stamped-name-license
+        stampedColor: "#2874a6"
+
+- type: entity
+  parent: LicensePaper
+  id: LicensePaperShuttleBuildingCivilian
+  components:
+    - type: Paper
+      content: license-shuttle-building-civilian
+
+- type: entity
+  parent: LicensePaper
+  id: LicensePaperShuttleBuildingStarExplorer
+  components:
+    - type: Paper
+      content: license-shuttle-building-star-explorer
+
+- type: entity
+  parent: LicensePaper
+  id: LicensePaperShuttleBuildingEngineer
+  components:
+    - type: Paper
+      content: license-shuttle-building-engineer
+
+- type: entity
+  parent: LicensePaper
+  id: LicensePaperShuttleBuildingMedical
+  components:
+    - type: Paper
+      content: license-shuttle-building-medical
+
+- type: entity
+  parent: LicensePaper
+  id: LicensePaperShuttleBuildingCargo
+  components:
+    - type: Paper
+      content: license-shuttle-building-cargo
+
+- type: entity
+  parent: LicensePaper
+  id: LicensePaperShuttleBuildingSalvage
+  components:
+    - type: Paper
+      content: license-shuttle-building-salvage
+
+- type: entity
+  parent: LicensePaper
+  id: LicensePaperShuttleBuildingSecurity
+  components:
+    - type: Paper
+      content: license-shuttle-building-security
+
+- type: entity
+  parent: LicensePaper
+  id: LicensePaperShuttleBuildingSecurityArmed
+  components:
+    - type: Paper
+      content: license-shuttle-building-security-armed
+
+#########################
+### NT FLEET LICENSES ###
+#########################
+
+- type: entity
+  parent: Paper
+  id: LicensePaperFleet
+  name: Лицензия
+  description: Эта красная печать выглядит угрожающе...
+  components:
+    - type: Paper
+      stampState: paper_stamp-hos
+      stampedBy:
+      - stampedName: stamp-component-stamped-name-fleet-command
+        stampedColor: "#7b241c"
+
+- type: entity
+  parent: LicensePaper
+  id: LicensePaperShuttleBuildingCorvette
+  components:
+    - type: Paper
+      content: license-shuttle-building-war-corvette

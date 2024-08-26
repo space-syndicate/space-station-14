@@ -1,0 +1,53 @@
+- type: gameMap
+  id: Construct # айди прототипа вашей карты
+  mapName: 'Construct' # название карты
+  mapPath: _cursed/Maps/curse220_main.yml # путь до файла карты
+  minPlayers: 0 # минимальное количество игроков для появления карты в голосовании
+  maxPlayers: 30 # максимально количество игроков для карты
+  stations:
+    testmap-engi: # айди карты, которое вы прописывали в BecomeStationComponent
+      stationProto: EngineerStation
+      components:
+        - type: StationNameSetup
+          mapNameTemplate: '{0} Construct {1}' # шаблон для названия станции в раунде
+          nameGenerator:
+            !type:NanotrasenNameGenerator
+            prefixCreator: 'SC' # префикс автора для карты
+        - type: StationEmergencyShuttle
+          emergencyShuttlePath: /Maps/Shuttles/corvax_emergency.yml # путь до шаттла эвакуации, который будет использоваться на этой карте
+        - type: GridSpawn
+          groups:
+            mining: !type:GridSpawnGroup
+              paths:
+              - /Maps/Shuttles/corvax_mining.yml
+            ruins: !type:GridSpawnGroup
+              hide: true
+              nameGrid: true
+              minCount: 5
+              maxCount: 5
+              stationGrid: false
+              paths:
+              - /Maps/Ruins/biodome_satellite.yml
+              - /Maps/Ruins/derelict.yml
+              - /Maps/Ruins/djstation.yml
+              - /Maps/Ruins/old_ai_sat.yml
+              - /Maps/Ruins/syndicate_dropship.yml
+              - /Maps/Ruins/whiteship_ancient.yml
+              - /Maps/Ruins/whiteship_bluespacejumper.yml
+        - type: StationJobs
+          overflowJobs: # роли, на которое не будет ограничения по количеству
+            - Passenger
+          availableJobs:
+            # engineering
+            AtmosphericTechnician: [ 1, 1 ]
+            StationEngineer: [ 4, 4 ]
+            TechnicalAssistant: [ 2, 2 ]
+            # medical
+            Chemist: [ 1, 1 ]
+            MedicalDoctor: [ 1, 1 ]
+            MedicalIntern: [ 1, 1 ]
+            # security
+            SecurityOfficer: [ 2, 2 ]
+            SecurityCadet: [ 1, 1 ]
+            # cargo
+            SalvageSpecialist: [ 2, 2 ]

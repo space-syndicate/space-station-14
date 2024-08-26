@@ -1,0 +1,9 @@
+- type: cargoProduct
+  id: ShuttleConsoleCircuit
+  icon:
+    sprite: Objects/Misc/module.rsi
+    state: cpuboard
+  product: CrateShuttleConsoleCircuitboard
+  cost: 2000
+  category: cargoproduct-category-name-shuttle
+  group: market

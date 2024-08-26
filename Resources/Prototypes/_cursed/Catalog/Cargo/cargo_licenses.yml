@@ -1,0 +1,80 @@
+- type: cargoProduct
+  id: LicensePaperShuttleBuildingCivilianProduct
+  icon:
+    sprite: Objects/Misc/bureaucracy.rsi
+    state: folder-white
+  product: LicensePaperShuttleBuildingCivilianFoldered
+  cost: 100000
+  category: cargoproduct-category-name-licenses
+  group: market
+
+- type: cargoProduct
+  id: LicensePaperShuttleBuildingMedicalProduct
+  icon:
+    sprite: Objects/Misc/bureaucracy.rsi
+    state: folder-white
+  product: LicensePaperShuttleBuildingMedicalFoldered
+  cost: 100000
+  category: cargoproduct-category-name-licenses
+  group: market
+
+- type: cargoProduct
+  id: LicensePaperShuttleBuildingCargoProduct
+  icon:
+    sprite: Objects/Misc/bureaucracy.rsi
+    state: folder-white
+  product: LicensePaperShuttleBuildingCargoFoldered
+  cost: 100000
+  category: cargoproduct-category-name-licenses
+  group: market
+
+- type: cargoProduct
+  id: LicensePaperShuttleBuildingSalvageProduct
+  icon:
+    sprite: Objects/Misc/bureaucracy.rsi
+    state: folder-white
+  product: LicensePaperShuttleBuildingSalvageFoldered
+  cost: 100000
+  category: cargoproduct-category-name-licenses
+  group: market
+
+- type: cargoProduct
+  id: LicensePaperShuttleBuildingStarExplorerProduct
+  icon:
+    sprite: Objects/Misc/bureaucracy.rsi
+    state: folder-white
+  product: LicensePaperShuttleBuildingStarExplorerFoldered
+  cost: 100000
+  category: cargoproduct-category-name-licenses
+  group: market
+
+- type: cargoProduct
+  id: LicensePaperShuttleBuildingSecurityProduct
+  icon:
+    sprite: Objects/Misc/bureaucracy.rsi
+    state: folder-white
+  product: LicensePaperShuttleBuildingSecurityFoldered
+  cost: 100000
+  category: cargoproduct-category-name-licenses
+  group: market
+
+- type: cargoProduct
+  id: LicensePaperShuttleBuildingSecurityArmedProduct
+  icon:
+    sprite: Objects/Misc/bureaucracy.rsi
+    state: folder-white
+  product: LicensePaperShuttleBuildingSecurityArmedFoldered
+  cost: 150000
+  category: cargoproduct-category-name-licenses
+  group: market
+
+- type: cargoProduct
+  id: LicensePaperShuttleBuildingCorvetteProduct
+  icon:
+    sprite: Objects/Misc/bureaucracy.rsi
+    state: folder-white
+  product: LicensePaperShuttleBuildingCorvetteFoldered
+  cost: 200000
+  category: cargoproduct-category-name-licenses
+  group: market
+

@@ -1,0 +1,9 @@
+- type: entity
+  parent: CrateEngineeringSecure
+  id: CrateShuttleConsoleCircuitboard
+  name: ящик с платой консоли управления шаттлом
+  description: Содержит плату консоли управления шаттлом.
+  components:
+  - type: StorageFill
+    contents:
+    - id: ShuttleConsoleCircuitboard
