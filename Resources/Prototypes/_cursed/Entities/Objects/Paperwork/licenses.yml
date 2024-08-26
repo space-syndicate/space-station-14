@@ -4,7 +4,7 @@
   name: Лицензия
   description: Мне нужна лицензия!
   components:
-    - type: Papers
+    - type: Paper
       stampState: paper_stamp-cmo
       stampedBy:
       - stampedName: stamp-component-stamped-name-license
@@ -76,7 +76,7 @@
   name: Лицензия
   description: Эта красная печать выглядит угрожающе...
   components:
-    - type: Papers
+    - type: Paper
       stampState: paper_stamp-hos
       stampedBy:
       - stampedName: stamp-component-stamped-name-fleet-command

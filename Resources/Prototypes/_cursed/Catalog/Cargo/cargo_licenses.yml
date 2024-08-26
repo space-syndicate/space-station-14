@@ -2,10 +2,7 @@
   id: LicensePaperShuttleBuildingCivilianProduct
   icon:
     sprite: Objects/Misc/bureaucracy.rsi
-    layers:
-    - state: folder-colormap
-      color: "#355d99"
-    - state: folder-base
+    state: folder-white
   product: LicensePaperShuttleBuildingCivilianFoldered
   cost: 100000
   category: cargoproduct-category-name-licenses
@@ -15,10 +12,7 @@
   id: LicensePaperShuttleBuildingMedicalProduct
   icon:
     sprite: Objects/Misc/bureaucracy.rsi
-    layers:
-    - state: folder-colormap
-      color: "#355d99"
-    - state: folder-base
+    state: folder-white
   product: LicensePaperShuttleBuildingMedicalFoldered
   cost: 100000
   category: cargoproduct-category-name-licenses
@@ -28,10 +22,7 @@
   id: LicensePaperShuttleBuildingCargoProduct
   icon:
     sprite: Objects/Misc/bureaucracy.rsi
-    layers:
-    - state: folder-colormap
-      color: "#355d99"
-    - state: folder-base
+    state: folder-white
   product: LicensePaperShuttleBuildingCargoFoldered
   cost: 100000
   category: cargoproduct-category-name-licenses
@@ -41,10 +32,7 @@
   id: LicensePaperShuttleBuildingSalvageProduct
   icon:
     sprite: Objects/Misc/bureaucracy.rsi
-    layers:
-    - state: folder-colormap
-      color: "#355d99"
-    - state: folder-base
+    state: folder-white
   product: LicensePaperShuttleBuildingSalvageFoldered
   cost: 100000
   category: cargoproduct-category-name-licenses
@@ -54,10 +42,7 @@
   id: LicensePaperShuttleBuildingStarExplorerProduct
   icon:
     sprite: Objects/Misc/bureaucracy.rsi
-    layers:
-    - state: folder-colormap
-      color: "#355d99"
-    - state: folder-base
+    state: folder-white
   product: LicensePaperShuttleBuildingStarExplorerFoldered
   cost: 100000
   category: cargoproduct-category-name-licenses
@@ -67,10 +52,7 @@
   id: LicensePaperShuttleBuildingSecurityProduct
   icon:
     sprite: Objects/Misc/bureaucracy.rsi
-    layers:
-    - state: folder-colormap
-      color: "#355d99"
-    - state: folder-base
+    state: folder-white
   product: LicensePaperShuttleBuildingSecurityFoldered
   cost: 100000
   category: cargoproduct-category-name-licenses
@@ -80,10 +62,7 @@
   id: LicensePaperShuttleBuildingSecurityArmedProduct
   icon:
     sprite: Objects/Misc/bureaucracy.rsi
-    layers:
-    - state: folder-colormap
-      color: "#355d99"
-    - state: folder-base
+    state: folder-white
   product: LicensePaperShuttleBuildingSecurityArmedFoldered
   cost: 150000
   category: cargoproduct-category-name-licenses
@@ -93,10 +72,7 @@
   id: LicensePaperShuttleBuildingCorvetteProduct
   icon:
     sprite: Objects/Misc/bureaucracy.rsi
-    layers:
-    - state: folder-colormap
-      color: "#cc2323"
-    - state: folder-base
+    state: folder-white
   product: LicensePaperShuttleBuildingCorvetteFoldered
   cost: 200000
   category: cargoproduct-category-name-licenses
