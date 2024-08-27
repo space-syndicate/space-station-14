@@ -118,7 +118,7 @@ barsign-prototype-description-emprah = Нравится и фанатикам, �
 ## Spacebucks
 
 barsign-prototype-name-spacebucks = Спейсбакс
-barsign-prototype-description-spacebucks = От них нельзя скрыться, даже в космосе.
+barsign-prototype-description-spacebucks = От них нельзя скрыться, даже в космосе, и даже после того, как некоторые стали называть их "срубли".
 
 ## EmpBarSign
 
