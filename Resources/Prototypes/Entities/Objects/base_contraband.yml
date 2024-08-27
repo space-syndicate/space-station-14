@@ -1,10 +1,10 @@
-﻿### ALL COMPONENTS COMMENTED DUE TO CORVAX HiddenDescriptionSystem
+﻿### All components commented due to corvax HiddenDescriptionSystem
 
 # non-stealth syndicate stuff
 - type: entity
   id: BaseSyndicateContraband
   abstract: true
-  components:
+  # components:
   # - type: Contraband
   #   severity: Syndicate
   #   # no one should be carrying this around visibly!
@@ -14,7 +14,7 @@
 - type: entity
   id: BaseMinorContraband
   abstract: true
-  components:
+  # components:
   # - type: Contraband
   #   severity: Minor
   #   # according to space law no dept is authorized to have
@@ -24,7 +24,7 @@
 - type: entity
   id: BaseMajorContraband
   abstract: true
-  components:
+  # components:
   # - type: Contraband
   #   severity: Major
   #   allowedDepartments: null
@@ -33,7 +33,7 @@
 - type: entity
   id: BaseRestrictedContraband
   abstract: true
-  components:
+  # components:
   # - type: Contraband
   #   severity: Restricted
 
@@ -42,7 +42,7 @@
   id: BaseCommandContraband
   parent: BaseRestrictedContraband
   abstract: true
-  components:
+  # components:
   # - type: Contraband
   #   allowedDepartments: [ Command ]
 
@@ -50,7 +50,7 @@
   id: BaseSecurityCommandContraband
   parent: BaseRestrictedContraband
   abstract: true
-  components:
+  # components:
   # - type: Contraband
   #   allowedDepartments: [ Security, Command ]
 
@@ -58,7 +58,7 @@
   id: BaseSecurityScienceCommandContraband
   parent: BaseRestrictedContraband
   abstract: true
-  components:
+  # components:
   # - type: Contraband
   #   allowedDepartments: [ Security, Science, Command ]
 
@@ -66,7 +66,7 @@
   id: BaseSecurityEngineeringContraband
   parent: BaseRestrictedContraband
   abstract: true
-  components:
+  # components:
   # - type: Contraband
   #   allowedDepartments: [ Security, Engineering ]
 
@@ -74,7 +74,7 @@
   id: BaseEngineeringContraband
   parent: BaseRestrictedContraband
   abstract: true
-  components:
+  # components:
   # - type: Contraband
   #   allowedDepartments: [ Engineering ]
 
@@ -82,7 +82,7 @@
   id: BaseScienceContraband
   parent: BaseRestrictedContraband
   abstract: true
-  components:
+  # components:
   # - type: Contraband
   #   allowedDepartments: [ Science ]
 
@@ -90,7 +90,7 @@
   id: BaseSecurityCargoContraband
   parent: BaseRestrictedContraband
   abstract: true
-  components:
+  # components:
   # - type: Contraband
   #   allowedDepartments: [ Security, Cargo ]
 
@@ -98,7 +98,7 @@
   id: BaseCargoContraband
   parent: BaseRestrictedContraband
   abstract: true
-  components:
+  # components:
   # - type: Contraband
   #   allowedDepartments: [ Cargo ]
 
@@ -106,7 +106,7 @@
 - type: entity
   id: BaseGrandTheftContraband
   abstract: true
-  components:
+  # components:
   # - type: Contraband
   #   severity: GrandTheft
   #   allowedDepartments: [ Command ]
