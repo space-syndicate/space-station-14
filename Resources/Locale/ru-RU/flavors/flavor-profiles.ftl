@@ -112,7 +112,7 @@ flavor-complex-corn = как кукуруза
 flavor-complex-banana = как бананы
 flavor-complex-apple = как яблоки
 flavor-complex-cotton = как хлопок
-flavor-complex-bungo = как бунго
+flavor-complex-bungo = как тропическая сладость
 flavor-complex-raisins = как сушёный виноград
 flavor-complex-orange = как апельсины
 flavor-complex-watermelon = как арбуз
@@ -172,7 +172,7 @@ flavor-complex-light = как угасший свет
 
 flavor-complex-profits = как прибыль
 flavor-complex-fishops = как страшная рыбья операция
-flavor-complex-blue-pumpkin = like a mouthful of pool water
+flavor-complex-blue-pumpkin = как вода в бассейне
 flavor-complex-violets = как фиалки
 flavor-complex-pyrotton = как горящий рот
 flavor-complex-mothballs = как нафталиновые шарики

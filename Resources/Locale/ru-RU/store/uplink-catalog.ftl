@@ -301,5 +301,5 @@ uplink-barber-scissors-name = Парикмахерские ножницы
 uplink-barber-scissors-desc = Хороший инструмент для того, чтобы подарить своему коллеге-агенту красивую стрижку, если, конечно, вы не хотите сделать её себе.
 uplink-backpack-syndicate-name = Рюкзак Синдиката
 uplink-backpack-syndicate-desc = Лёгкий взрывоустойчивый рюкзак для хранения различных предательских штучек.
-uplink-combat-bakery-name = Combat Bakery Kit
-uplink-combat-bakery-desc = A kit of clandestine baked weapons. Contains a baguette which a skilled mime could use as a sword and a pair of throwing croissants. Once the job is done, eat the evidence.
+uplink-combat-bakery-name = Набор боевой выпечки
+uplink-combat-bakery-desc = Набор подпольного печёного оружия. Содержит багет, который опытный мим может использовать в качестве меча, и пару метательных круассанов. Когда дело сделано, съешьте улики.
