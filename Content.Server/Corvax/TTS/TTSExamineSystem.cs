@@ -25,9 +25,8 @@ namespace Content.Server.Corvax.TTS
 
         private void OnGetExamineVerbs(EntityUid uid, TTSComponent component, GetVerbsEvent<ExamineVerb> args)
         {
-            // Don't show verb if no TTS enabled OR if user's name is hidden
-            if (!_configManager.GetCVar(CCCVars.TTSEnabled) ||
-                Identity.Name(args.Target, EntityManager) != MetaData(args.Target).EntityName)
+            // Don't show verb if no TTS enabled
+            if (!_configManager.GetCVar(CCCVars.TTSEnabled))
                 return;
 
             string? voiceId = string.Empty;
