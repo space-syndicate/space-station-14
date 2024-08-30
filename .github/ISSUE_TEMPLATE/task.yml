@@ -1,0 +1,20 @@
+name: "Выписать задание"
+description: "Если необходимо что-либо добавить."
+labels: ["task"]
+body:
+  - type: textarea
+    id: description
+    validations:
+      required: true
+    attributes:
+      label: "Описание"
+      description: "Что нужно сделать"
+
+  - type: checkboxes
+    id: additional
+    attributes:
+      label: Это срочно?
+      description: Выберите одно
+      options:
+        - label: Да
+        - label: Нет

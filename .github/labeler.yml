@@ -1,27 +1,34 @@
-﻿"Changes: Sprites":
-- changed-files:
-  - any-glob-to-any-file: '**/*.rsi/*.png'
+﻿"File: Video":
+- '**/*.mp4'
+- '**/*.mov'
 
-"Changes: Map":
-- changed-files:
-  - any-glob-to-any-file:
-    - 'Resources/Maps/**/*.yml'
-    - 'Resources/Prototypes/Maps/**/*.yml'
-    - 'Resources/Prototypes/Corvax/Maps/**/*.yml'
+"File: Audio":
+- '**/*.mp3'
+- '**/*.ogg'
+- '**/Resources/Audio/**'
 
-"Changes: UI":
-- changed-files:
-  - any-glob-to-any-file: '**/*.xaml*'
+"File: Text":
+- '**/*.txt'
 
-"Changes: Shaders":
-- changed-files:
-  - any-glob-to-any-file: '**/*.swsl'
+"File: Textures":
+- '**/Resources/Textures/**'
+- '**/meta.json'
 
-"Changes: Localization":
-- changed-files:
-  - any-glob-to-any-file: '**/*.ftl'
+"File: github":
+- '.github/**'
 
-"No C#":
-- changed-files:
-  # Equiv to any-glob-to-all as long as this has one matcher. If ALL changed files are not C# files, then apply label.
-  - all-globs-to-all-files: "!**/*.cs"
+"File: Role":
+- '**/Resources/Prototypes/Roles/**'
+
+"File: Localization":
+- '**/*.ftl'
+
+"File: Entity":
+- '**/Resources/Prototypes/Entities/**'
+
+"NOT TO MERGE":
+- '**/SECURITY.md'
+- '**/LICENSE.txt'
+
+"File: passport":
+- '**/passports.*'

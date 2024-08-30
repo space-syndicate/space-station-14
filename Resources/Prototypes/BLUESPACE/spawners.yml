@@ -1,0 +1,29 @@
+- type: entity
+  id: RandomHumanoidSpawnerCentcommOfficer
+  parent: RandomHumanoidSpawnerERTSecurity
+  name: CentComm Officer
+  components:
+    - type: Sprite
+      sprite: Markers/jobs.rsi
+      state: ertsecurity
+    - type: RandomMetadata
+      nameSegments:
+      - NamesFirstMilitaryCorvax
+      - NamesLastERTCallsign
+    - type: RandomHumanoidSpawner
+      settings: ERTSecurity
+
+- type: entity
+  id: RandomHumanoidSpawnerAdmiralNT
+  parent: RandomHumanoidSpawnerERTSecurity
+  name: NT admiral
+  components:
+    - type: Sprite
+      sprite: Markers/jobs.rsi
+      state: ertsecurity
+    - type: RandomMetadata
+      nameSegments:
+      - NamesFirstMilitaryCorvax
+      - NamesLastERTCallsign
+    - type: RandomHumanoidSpawner
+      settings: ERTSecurity
