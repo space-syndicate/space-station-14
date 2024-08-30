@@ -28,3 +28,5 @@ reagent-name-juice-tomato = томатный сок
 reagent-desc-juice-tomato = Томаты превращённые в сок. Какая трата хороших помидоров, а?
 reagent-name-juice-watermelon = арбузный сок
 reagent-desc-juice-watermelon = Вкусный сок арбуза.
+reagent-name-juice-cherry = cherry juice
+reagent-desc-juice-cherry = Tasty cherry juice, sweet and tangy.

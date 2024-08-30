@@ -126,6 +126,7 @@ flavor-complex-vegetables = как овощи
 
 ## Complex foodstuffs (cooked foods, joke flavors, etc)
 
+flavor-complex-cherry = like cherries
 flavor-complex-pink = как розовый
 flavor-complex-curry = как карри
 flavor-complex-borsch-1 = как борщ

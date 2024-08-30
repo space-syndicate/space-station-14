@@ -8,6 +8,8 @@ ent-ClothingEyesHudMedical = medical hud
     .desc = A heads-up display that scans the humanoids in view and provides accurate data about their health status.
 ent-ClothingEyesHudSecurity = security hud
     .desc = A heads-up display that scans the humanoids in view and provides accurate data about their ID status and security records.
+ent-ClothingEyesHudCommand = administration hud
+    .desc = A heads-up display that scans the humanoids in view and provides accurate data about their ID status.
 ent-ClothingEyesHudBeer = beer goggles
     .desc = A pair of sunHud outfitted with apparatus to scan reagents, as well as providing an innate understanding of liquid viscosity while in motion.
 ent-ClothingEyesHudFriedOnion = fried onion goggles
@@ -28,22 +30,27 @@ ent-ClothingEyesHudSyndicate = syndicate visor
     .desc = The syndicate's professional head-up display, designed for better detection of humanoids and their subsequent elimination.
 ent-ClothingEyesHudSyndicateAgent = syndicate agent visor
     .desc = The Syndicate Agent's professional heads-up display, designed for quick diagnosis of their team's status.
-ent-ClothingEyesGlassesHiddenSecurity = { ent-ClothingEyesGlassesSunglasses }
+ent-ClothingEyesGlassesHiddenSecurity = { ent-['ClothingEyesGlassesSunglasses', 'ShowSecurityIcons'] }
+
   .suffix = Syndicate
-  .desc = { ent-ClothingEyesGlassesSunglasses.desc }
+  .desc = { ent-['ClothingEyesGlassesSunglasses', 'ShowSecurityIcons'].desc }
 ent-ClothingEyesEyepatchHudMedical = medical hud eyepatch
     .desc = A heads-up display that scans the humanoids in view and provides accurate data about their health status. For true patriots.
 ent-ClothingEyesEyepatchHudMedicalFlipped = medical hud eyepatch
-  .desc = { ent-ClothingEyesEyepatchHudMedical.desc }
+
+  .desc = { ent-['ClothingEyesEyepatchHudMedical', 'ClothingHeadEyeBaseFlipped'].desc }
 ent-ClothingEyesEyepatchHudSecurity = security hud eyepatch
     .desc = A heads-up display that scans the humanoids in view and provides accurate data about their ID status and security records. For true patriots.
 ent-ClothingEyesEyepatchHudSecurityFlipped = security hud eyepatch
-  .desc = { ent-ClothingEyesEyepatchHudSecurity.desc }
+
+  .desc = { ent-['ClothingEyesEyepatchHudSecurity', 'ClothingHeadEyeBaseFlipped'].desc }
 ent-ClothingEyesEyepatchHudBeer = beer hud eyepatch
     .desc = A pair of sunHud outfitted with apparatus to scan reagents, as well as providing an innate understanding of liquid viscosity while in motion. For true patriots.
 ent-ClothingEyesEyepatchHudBeerFlipped = beer hud eyepatch
-  .desc = { ent-ClothingEyesEyepatchHudBeer.desc }
+
+  .desc = { ent-['ClothingEyesEyepatchHudBeer', 'ClothingHeadEyeBaseFlipped'].desc }
 ent-ClothingEyesEyepatchHudDiag = diagnostic hud eyepatch
     .desc = A heads-up display capable of analyzing the integrity and status of robotics and exosuits. Made out of see-borg-ium.
 ent-ClothingEyesEyepatchHudDiagFlipped = diagnostic hud eyepatch
-  .desc = { ent-ClothingEyesEyepatchHudDiag.desc }
+
+  .desc = { ent-['ClothingEyesEyepatchHudDiag', 'ClothingHeadEyeBaseFlipped'].desc }
