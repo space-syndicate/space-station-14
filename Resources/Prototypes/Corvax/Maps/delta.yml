@@ -18,7 +18,6 @@
           emergencyShuttlePath: /Maps/Shuttles/emergency_corvaxdelta.yml
         - type: StationJobs
           availableJobs:
-            Borg: [ 2, 3 ]
             Boxer: [ 2, 2 ]
             Pilot: [ 1, 1 ]
             CargoTechnician: [ 4, 4 ]
@@ -58,6 +57,8 @@
             Psychologist: [ 1, 1 ]
             Detective: [ 1, 1 ]
             Paramedic: [ 1, 1 ]
+            #silicon
+            Borg: [ 2, 3 ]
         - type: StationGoal
           goals:
           - Shuttle
