@@ -1,11 +1,11 @@
 # General
-ai-wire-snipped = Wire has been cut at { $coords }.
-wire-name-ai-vision-light = AIV
-wire-name-ai-act-light = AIA
-station-ai-takeover = AI takeover
+ai-wire-snipped = Был перерезан провод, координаты { $coords }.
+wire-name-ai-vision-light = ИИВ
+wire-name-ai-act-light = ИИС
+station-ai-takeover = ИИ захват
 # Radial actions
-ai-open = Open actions
-ai-close = Close actions
-bolt-close = Close bolt
-bolt-open = Open bolt
-toggle-light = Toggle light
+ai-open = Открыть действия
+ai-close = Закрыть действия
+bolt-close = Заболтировать
+bolt-open = Разболтировать
+toggle-light = Переключить свет

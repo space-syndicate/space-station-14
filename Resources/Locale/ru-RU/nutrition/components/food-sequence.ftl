@@ -72,7 +72,7 @@ food-sequence-content-suppermatter = суперматерией
 food-sequence-content-capfruit = пистофруктом
 food-sequence-content-berries = ягодами
 food-sequence-content-spacemans-trumpet = космической трубкой
-food-sequence-content-cherry = cherry
+food-sequence-content-cherry = вишней
 
 # BURGERS
 

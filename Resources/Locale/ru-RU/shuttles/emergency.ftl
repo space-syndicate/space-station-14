@@ -48,5 +48,5 @@ emergency-shuttle-ui-repeal = ПОВТОРИТЬ
 emergency-shuttle-ui-authorizations = Авторизации
 emergency-shuttle-ui-remaining = Осталось: { $remaining }
 # Map Misc.
-map-name-centcomm = Central Command
-map-name-terminal = Arrivals Terminal
+map-name-centcomm = Центральное командование
+map-name-terminal = Терминал прибытия
