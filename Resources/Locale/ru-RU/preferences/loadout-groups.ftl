@@ -67,6 +67,7 @@ loadout-group-mime-mask = Мим, маска
 loadout-group-mime-jumpsuit = Мим, комбинезон
 loadout-group-mime-backpack = Мим, рюкзак
 loadout-group-mime-outerclothing = Мим, верхняя одежда
+loadout-group-mime-belt = Mime belt
 loadout-group-musician-jumpsuit = Музыкант, комбинезон
 loadout-group-musician-outerclothing = Музыкант, верхняя одежда
 # Cargo
