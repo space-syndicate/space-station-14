@@ -16,7 +16,7 @@
 #    - !type:OverallPlaytimeRequirement
 #      time: 144000 #40 hrs
     - !type:AgeRequirement
-      requiredAge: 38 # Corvax-AgeLimit
+      requiredAge: 35 # Corvax-AgeLimit
   weight: 10
   startingGear: HoSGear
   icon: "JobIconHeadOfSecurity"
