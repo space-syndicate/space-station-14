@@ -44,3 +44,7 @@ ent-FoodPizzaUranium = острокаменная пицца
     .desc = Острая пицца с перчиками и ураном.
 ent-FoodPizzaUraniumSlice = ломтик острокаменной пиццы
     .desc = Светящийся кусочек острокаменной пиццы.
+ent-FoodPizzaCotton = cotton pizza
+    .desc = Flat fabric cotton dough with cotton topping. Incredible.
+ent-FoodPizzaCottonSlice = slice of cotton pizza
+    .desc = A slice of cotton pizza. Cotton included.

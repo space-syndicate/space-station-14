@@ -27,6 +27,11 @@
   - Trinkets
   - GroupSpeciesBreathTool
 
+# Silicons
+- type: roleLoadout
+  id: JobStationAi
+  nameDataset: names_ai
+
 # Civilian
 - type: roleLoadout
   id: JobPassenger
@@ -181,6 +186,7 @@
   - MimeJumpsuit
   - MimeBackpack
   - MimeOuterClothing
+  - MimeBelt
   - Glasses
   - SurvivalMime
   - Trinkets

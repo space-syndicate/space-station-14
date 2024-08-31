@@ -1,12 +1,12 @@
 ent-PartSilicon = { ent-BaseItem }
     .desc = { ent-BaseItem.desc }
-ent-BaseBorgArmLeft = left cyborg arm
+ent-BaseBorgArmLeft = cyborg left arm
     .desc = { ent-PartSilicon.desc }
-ent-BaseBorgArmRight = right cyborg arm
+ent-BaseBorgArmRight = cyborg right arm
     .desc = { ent-PartSilicon.desc }
-ent-BaseBorgLegLeft = left cyborg leg
+ent-BaseBorgLegLeft = cyborg left leg
     .desc = { ent-PartSilicon.desc }
-ent-BaseBorgLegRight = right cyborg leg
+ent-BaseBorgLegRight = cyborg right leg
     .desc = { ent-PartSilicon.desc }
 ent-BaseBorgHead = cyborg head
     .desc = { ent-PartSilicon.desc }
