@@ -18149,8 +18149,6 @@ entities:
       lastSignals:
         DoorStatus: False
         DockStatus: True
-    - type: Door
-      changeAirtight: False
   - uid: 266
     components:
     - type: Transform
@@ -18164,8 +18162,6 @@ entities:
       lastSignals:
         DoorStatus: False
         DockStatus: True
-    - type: Door
-      changeAirtight: False
   - uid: 267
     components:
     - type: Transform
@@ -18179,8 +18175,6 @@ entities:
       lastSignals:
         DoorStatus: False
         DockStatus: True
-    - type: Door
-      changeAirtight: False
   - uid: 24386
     components:
     - type: Transform
@@ -18193,8 +18187,6 @@ entities:
       lastSignals:
         DoorStatus: False
         DockStatus: True
-    - type: Door
-      changeAirtight: False
   - uid: 24387
     components:
     - type: Transform
@@ -18207,8 +18199,6 @@ entities:
       lastSignals:
         DoorStatus: False
         DockStatus: True
-    - type: Door
-      changeAirtight: False
   - uid: 24795
     components:
     - type: Transform
@@ -18221,8 +18211,6 @@ entities:
       lastSignals:
         DoorStatus: False
         DockStatus: True
-    - type: Door
-      changeAirtight: False
   - uid: 24933
     components:
     - type: Transform
@@ -18256,8 +18244,6 @@ entities:
       lastSignals:
         DoorStatus: False
         DockStatus: True
-    - type: Door
-      changeAirtight: False
   - uid: 27724
     components:
     - type: Transform
@@ -18271,8 +18257,6 @@ entities:
       lastSignals:
         DoorStatus: False
         DockStatus: True
-    - type: Door
-      changeAirtight: False
 - proto: AirlockFreezerKitchenHydroLocked
   entities:
   - uid: 268
@@ -19577,8 +19561,6 @@ entities:
       lastSignals:
         DoorStatus: False
         DockStatus: True
-    - type: Door
-      changeAirtight: False
   - uid: 24181
     components:
     - type: Transform
@@ -19592,8 +19574,6 @@ entities:
       lastSignals:
         DoorStatus: False
         DockStatus: True
-    - type: Door
-      changeAirtight: False
   - uid: 24952
     components:
     - type: Transform
@@ -20409,6 +20389,8 @@ entities:
       parent: 2
     - type: Apc
       hasAccess: True
+      lastExternalState: Good
+      lastChargeState: Full
   - uid: 584
     components:
     - type: MetaData
@@ -20785,6 +20767,8 @@ entities:
       parent: 2
     - type: Apc
       hasAccess: True
+      lastExternalState: Good
+      lastChargeState: Full
   - uid: 639
     components:
     - type: Transform
@@ -20819,6 +20803,8 @@ entities:
       parent: 2
     - type: Apc
       hasAccess: True
+      lastExternalState: Good
+      lastChargeState: Full
   - uid: 644
     components:
     - type: Transform
@@ -76665,7 +76651,7 @@ entities:
     - type: Transform
       pos: -46.598465,-10.565041
       parent: 2
-- proto: ClothingBeltSuspendersRed
+- proto: ClothingBeltSuspenders
   entities:
   - uid: 9166
     components:
@@ -78480,6 +78466,8 @@ entities:
     - type: Transform
       pos: 24.469347,-18.35476
       parent: 2
+    - type: Magboots
+      toggleActionEntity: 6
     - type: ActionsContainer
     - type: ContainerContainer
       containers:
@@ -94358,7 +94346,7 @@ entities:
       pos: -15.5,15.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -66013.23
+      secondsUntilStateChange: -65956.09
       state: Closing
   - uid: 11389
     components:
@@ -96586,13 +96574,34 @@ entities:
     - type: Physics
       canCollide: False
     - type: InsideEntityStorage
-- proto: FoodKebabSkewer
+- proto: FoodMeatClown
+  entities:
+  - uid: 11598
+    components:
+    - type: Transform
+      pos: -16.534744,-4.0452023
+      parent: 2
+- proto: FoodMeatFiestaKebab
   entities:
   - uid: 11599
     components:
     - type: Transform
       pos: -0.5881367,-28.311087
       parent: 2
+- proto: FoodMeatKebab
+  entities:
+  - uid: 19084
+    components:
+    - type: Transform
+      pos: 34.55114,14.407778
+      parent: 2
+  - uid: 23840
+    components:
+    - type: Transform
+      pos: 34.336266,14.622622
+      parent: 2
+- proto: FoodMeatRatdoubleKebab
+  entities:
   - uid: 11600
     components:
     - type: Transform
@@ -96607,23 +96616,6 @@ entities:
     components:
     - type: Transform
       pos: -93.517395,-4.3078394
-      parent: 2
-  - uid: 19084
-    components:
-    - type: Transform
-      pos: 34.55114,14.407778
-      parent: 2
-  - uid: 23840
-    components:
-    - type: Transform
-      pos: 34.336266,14.622622
-      parent: 2
-- proto: FoodMeatClown
-  entities:
-  - uid: 11598
-    components:
-    - type: Transform
-      pos: -16.534744,-4.0452023
       parent: 2
 - proto: FoodMeatSpiderLeg
   entities:
@@ -133054,7 +133046,7 @@ entities:
       pos: -34.5,-3.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -88112.62
+      secondsUntilStateChange: -88055.484
       state: Closing
   - uid: 15845
     components:
@@ -136495,7 +136487,7 @@ entities:
     - type: Transform
       pos: 7.2006645,-26.447071
       parent: 2
-- proto: LogicGateOr
+- proto: LogicGate
   entities:
   - uid: 28254
     components:
@@ -140851,13 +140843,6 @@ entities:
     components:
     - type: Transform
       pos: -66.5,-3.5
-      parent: 2
-- proto: PlayerStationAi
-  entities:
-  - uid: 18617
-    components:
-    - type: Transform
-      pos: 56.5,4.5
       parent: 2
 - proto: PlushieAtmosian
   entities:
@@ -154971,6 +154956,8 @@ entities:
     - type: Transform
       pos: -96.5,-3.5
       parent: 2
+- proto: SignAtmosMinsky
+  entities:
   - uid: 18459
     components:
     - type: Transform
@@ -155062,16 +155049,18 @@ entities:
     - type: Transform
       pos: -8.5,10.5
       parent: 2
-  - uid: 18475
-    components:
-    - type: Transform
-      pos: -4.5,5.5
-      parent: 2
   - uid: 28318
     components:
     - type: Transform
       pos: -2.5,-8.5
       parent: 27712
+- proto: SignChemistry2
+  entities:
+  - uid: 18475
+    components:
+    - type: Transform
+      pos: -4.5,5.5
+      parent: 2
 - proto: SignCloning
   entities:
   - uid: 18476
@@ -155091,6 +155080,13 @@ entities:
     - type: Transform
       rot: 3.141592653589793 rad
       pos: 1.5,-37.5
+      parent: 2
+- proto: SignCourt
+  entities:
+  - uid: 18479
+    components:
+    - type: Transform
+      pos: -72.5,1.5
       parent: 2
 - proto: SignCryogenicsMed
   entities:
@@ -155589,6 +155585,13 @@ entities:
       rot: -1.5707963267948966 rad
       pos: -11.25161,0.7494161
       parent: 2
+- proto: SignDrones
+  entities:
+  - uid: 18559
+    components:
+    - type: Transform
+      pos: 19.5,0.5
+      parent: 2
 - proto: SignElectricalMed
   entities:
   - uid: 18560
@@ -155753,7 +155756,7 @@ entities:
     - type: Transform
       pos: -2.5,-4.5
       parent: 27712
-- proto: SignHydro1
+- proto: SignHydro2
   entities:
   - uid: 18585
     components:
@@ -155780,26 +155783,12 @@ entities:
       rot: 1.5707963267948966 rad
       pos: -15.5,5.5
       parent: 2
-- proto: SignLawyer
-  entities:
-  - uid: 18479
-    components:
-    - type: Transform
-      pos: -72.5,1.5
-      parent: 2
 - proto: SignLibrary
   entities:
   - uid: 18589
     components:
     - type: Transform
       pos: -47.5,6.5
-      parent: 2
-- proto: SignMaterials
-  entities:
-  - uid: 18559
-    components:
-    - type: Transform
-      pos: 19.5,0.5
       parent: 2
 - proto: SignMedical
   entities:
@@ -156090,6 +156079,13 @@ entities:
       rot: 1.5707963267948966 rad
       pos: 2.5,-1.5
       parent: 27712
+- proto: SignShield
+  entities:
+  - uid: 18617
+    components:
+    - type: Transform
+      pos: 2.5,-7.5
+      parent: 2
 - proto: SignShipDock
   entities:
   - uid: 28332
@@ -166679,6 +166675,15 @@ entities:
     components:
     - type: Transform
       pos: 56.95538,7.533473
+      parent: 2
+- proto: ToyAi
+  entities:
+  - uid: 19318
+    components:
+    - type: MetaData
+      name: Интерфейс ИИ
+    - type: Transform
+      pos: 55.46093,5.7198486
       parent: 2
 - proto: ToyAmongPequeno
   entities:
