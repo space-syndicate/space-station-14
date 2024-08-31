@@ -53,7 +53,6 @@
             ResearchDirector: [ 1, 1 ]
             Scientist: [ 5, 5 ]
             ResearchAssistant: [ 2, 2 ]
-            Borg: [ 1, 1 ]
             # security
             HeadOfSecurity: [ 1, 1 ]
             Warden: [ 1, 1 ]
@@ -65,3 +64,6 @@
             Quartermaster: [ 1, 1 ]
             SalvageSpecialist: [ 4, 4 ]
             CargoTechnician: [ 5, 5 ]
+            #silicon
+            StationAi: [ 1, 1 ]
+            Borg: [ 1, 1 ]
