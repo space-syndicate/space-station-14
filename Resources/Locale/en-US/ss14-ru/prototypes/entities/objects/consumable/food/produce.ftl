@@ -141,3 +141,7 @@ ent-CottonBol = cotton boll
     .desc = Moth people's favorite snack, and just as fluffy as them.
 ent-PyrottonBol = pyrotton boll
     .desc = This will probably set you on fire.
+ent-FoodCherry = cherry
+    .desc = Juicy red cherry with a pit inside.
+ent-TrashCherryPit = cherry pit
+    .desc = { ent-FoodInjectableBase.desc }

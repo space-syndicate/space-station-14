@@ -141,3 +141,7 @@ ent-CottonBol = хлопковый шарик
     .desc = Любимая закуска ниан, такая же пушистая, как и они.
 ent-PyrottonBol = пирохлопковый шарик
     .desc = Скорее всего, оно подожжёт вас.
+ent-FoodCherry = cherry
+    .desc = Juicy red cherry with a pit inside.
+ent-TrashCherryPit = cherry pit
+    .desc = { ent-FoodInjectableBase.desc }

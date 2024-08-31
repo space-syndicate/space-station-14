@@ -109,9 +109,11 @@
   - type: Clothing
     sprite: Clothing/Shoes/Specific/galoshes.rsi
   - type: NoSlip
-  - type: ClothingSpeedModifier # Corvax-MRP
-    walkModifier: 0.9
-    sprintModifier: 0.9
+  - type: SlowedOverSlippery
+    slowdownModifier: 0.7
+  - type: SpeedModifierContactCapClothing # Corvax-MRP
+    maxContactSprintSlowdown: 0.9
+    maxContactWalkSlowdown: 0.9
 
 - type: entity
   parent: [ClothingShoesBaseButcherable, BaseMajorContraband]
@@ -255,7 +257,7 @@
         - Scientist
         - Borg
 # Corvax-HiddenDesc-End
-          
+
 - type: entity
   parent: ClothingShoesClown
   id: ClothingShoesJester

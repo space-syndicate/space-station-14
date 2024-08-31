@@ -28,6 +28,8 @@ salvage-magnet-resources-count =
         [5] (Много)
        *[other] (Изобилие)
     }
+# Debris
+salvage-magnet-debris-ChunkDebris = Space Debris
 # Asteroids
 dungeon-config-proto-BlobAsteroid = Астероидный массив
 dungeon-config-proto-ClusterAsteroid = Астероидный кластер
