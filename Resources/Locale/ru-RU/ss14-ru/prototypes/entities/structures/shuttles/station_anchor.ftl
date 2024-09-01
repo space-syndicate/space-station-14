@@ -1,7 +1,7 @@
-ent-StationAnchorBase = station anchor
-    .desc = Prevents stations from moving
+ent-StationAnchorBase = станционный якорь
+    .desc = Предотвращает смещение станций.
 ent-StationAnchorIndestructible = { ent-StationAnchorBase }
-    .suffix = Indestructible, Unpowered
+    .suffix = Неразрушимый, Не требует питания
     .desc = { ent-StationAnchorBase.desc }
-ent-StationAnchor = station anchor
-    .desc = Prevents stations from moving
+ent-StationAnchor = станционный якорь
+    .desc = Предотвращает смещение станций.
