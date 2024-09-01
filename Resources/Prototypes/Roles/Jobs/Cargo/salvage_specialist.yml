@@ -9,6 +9,8 @@
       time: 10800 # 3 hrs
 #    - !type:OverallPlaytimeRequirement
 #      time: 36000 #10 hrs
+    - !type:AgeRequirement # Corvax-AgeLimit
+      requiredAge: 22
   icon: "JobIconShaftMiner"
   startingGear: SalvageSpecialistGear
   supervisors: job-supervisors-qm

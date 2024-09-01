@@ -7,6 +7,8 @@
   - !type:DepartmentTimeRequirement
     department: Security
     time: 72000 #20 hrs
+  - !type:AgeRequirement
+    requiredAge: 22
   startingGear: PilotGear
   icon: "JobIconPilot"
   supervisors: job-supervisors-hos
