@@ -1,0 +1,60 @@
+### CentComm Chief
+
+- type: entity
+  name: Centcom chief
+  id: RandomHumanoidSpawnerCentcomChief
+  components:
+    - type: Sprite
+      sprite: Markers/jobs.rsi
+      state: centcom
+    - type: RandomHumanoidSpawner
+      settings: CentcomChief
+
+- type: randomHumanoidSettings
+  id: CentcomChief
+  parent: EventHumanoidMindShielded
+  components:
+    - type: GhostRole
+      name: ghost-role-information-centcom-chief-name
+      description: ghost-role-information-centcom-chief-description
+      rules: ghost-role-information-nonantagonist-rules
+      raffle:
+        settings: default
+      requirements:
+      - !type:RoleTimeRequirement
+        role: JobCentcomOperator
+        time: 36000 # 10h
+    - type: Loadout
+      prototypes: [ CentcomChiefGear ]
+      roleLoadout: [ RoleSurvivalStandard ]
+
+
+### CentComm Operator
+
+- type: entity
+  name: Centcom operator 
+  id: RandomHumanoidSpawnerCentcomOperator
+  components:
+    - type: Sprite
+      sprite: Markers/jobs.rsi
+      state: centcom
+    - type: RandomHumanoidSpawner
+      settings: CentcomOperator
+
+- type: randomHumanoidSettings
+  id: CentcomOperator
+  parent: EventHumanoidMindShielded
+  components:
+    - type: GhostRole
+      name: ghost-role-information-centcom-opertor-name
+      description: ghost-role-information-centcom-opertor-description
+      rules: ghost-role-information-nonantagonist-rules
+      raffle:
+        settings: default
+      requirements:
+      - !type:RoleTimeRequirement # For whitelist
+        role: JobCentcomOperator
+        time: 600 # 10m
+    - type: Loadout
+      prototypes: [ CentcomOperatorGear ]
+      roleLoadout: [ RoleSurvivalStandard ]

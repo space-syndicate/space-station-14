@@ -1,0 +1,80 @@
+# Just equipment preset, no custom role
+
+- type: startingGear
+  id: CentcomAdmiralGear
+  equipment:
+    jumpsuit: ClothingUniformJumpsuitCentcomAdmiral
+    shoes: ClothingShoesBootsJack
+    head: ClothingHeadCapCentcomNaval
+    eyes: ClothingEyesGlassesSunglasses
+    gloves: ClothingHandsGlovesCentcomNaval
+    outerClothing: ClothingOuterArmorCentcomCarapace
+    neck: ClothingNeckCloakCentcomAdmiral
+    id: CentcomPDA
+    ears: ClothingHeadsetCentCom
+    pocket1: RubberStampCentcom
+
+
+# Centcom Chief
+
+- type: job
+  id: CentcomChief
+  name: job-name-centcom-chief
+  playTimeTracker: JobCentcomChief
+  setPreference: false
+  startingGear: CentcomChiefGear
+  icon: "JobIconNanotrasen"
+  supervisors: job-supervisors-centcom
+  canBeAntag: false
+  accessGroups:
+  - AllAccess
+  access:
+  - CentralCommand
+
+- type: startingGear
+  id: CentcomChiefGear
+  equipment:
+    jumpsuit: ClothingUniformJumpsuitCentcomAdmiral
+    back: ClothingBackpackSatchelLeather
+    shoes: ClothingShoesBootsCombatFilled
+    head: ClothingHeadHatBeretCentcomNaval
+    eyes: ClothingEyesGlassesSunglasses
+    gloves: ClothingHandsGlovesCentcomNaval
+    outerClothing: ClothingOuterArmorCentcomCarapace
+    neck: ClothingNeckCloakCentcom
+    id: CentcomPDA
+    ears: ClothingHeadsetAltCentCom
+    pocket1: RubberStampCentcom
+    pocket2: WeaponDisabler
+
+
+### CentComm Operator
+
+- type: job
+  id: CentcomOperator
+  name: job-name-centcom-operator
+  playTimeTracker: JobCentcomOperator
+  setPreference: false
+  startingGear: CentcomOperatorGear
+  icon: "JobIconNanotrasen"
+  supervisors: job-supervisors-centcom
+  canBeAntag: false
+  accessGroups:
+  - AllAccess
+  access:
+  - CentralCommand
+
+- type: startingGear
+  id: CentcomOperatorGear
+  equipment:
+    jumpsuit: ClothingUniformJumpsuitCentcomOfficial
+    back: ClothingBackpackSatchelLeather
+    shoes: ClothingShoesBootsJack
+    head: ClothingHeadHatBeretCentcomNaval
+    eyes: ClothingEyesGlassesSunglasses
+    gloves: ClothingHandsGlovesColorBlack
+    neck: ClothingNeckNanoTrasenPin
+    id: CentcomPDA
+    ears: ClothingHeadsetCentCom
+    pocket1: RubberStampCentcom
+    pocket2: BoxFolderCentCom
