@@ -54211,8 +54211,11 @@ entities:
     - type: Transform
       pos: -86.5,-66.5
       parent: 2
+    - type: SingletonDeviceNetServer
+      active: False
+      available: False
 - proto: Crowbar
-  entities:
+  entities: 
   - uid: 9403
     components:
     - type: Transform
