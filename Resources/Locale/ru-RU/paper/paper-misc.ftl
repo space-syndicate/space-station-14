@@ -27,3 +27,21 @@ book-text-ame-scribbles =
     Золотое правило - 2 впрыска на 1 ядро. В целях экономии топлива можно поставить меньше.
     Поставите больше - и это приведёт к перегреву ДАМ, что в конечном итоге вызовет взрыв. Давайте без этого.
     Не забывайте заправлять ДАМ, так как топливо имеет тенденцию заканчиваться в самый неподходящий момент.
+book-text-combat-bakery-kit =
+    Thank you for choosing our combat bakery kit!
+    Enclosed are two (2) CyberSun patented Throwing Croissants, and one (1) patent-pending Baguette Sword.
+    The included Donk Co. microwave board can construct a microwave capable of baking more weapons.
+    Just like the baked weapons, be sure to eat this note after use. Good luck, agent.
+    
+    Baguette Sword Recipe:
+    Dough x 1
+    Salt 5u
+    Pepper 5u
+    Metal Rod x 1
+    Cook Time: 15 seconds
+    
+    Throwing Croissant Recipe:
+    Raw Croissant x 1
+    Butter Slice x 1
+    Glass Shard x 1
+    Cook Time: 5 seconds
