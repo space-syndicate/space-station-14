@@ -33,6 +33,12 @@ ghost-role-information-mouse-name = Мышь
 ghost-role-information-mouse-description = Голодная и озорная мышь.
 ghost-role-information-mothroach-name = Таракамоль
 ghost-role-information-mothroach-description = Милая озорная таракамоль.
+ghost-role-information-snail-name = Snail
+ghost-role-information-snail-description = A little snail who doesn't mind a bit of space. Just stay on grid!
+ghost-role-information-snailspeed-name = Snail
+ghost-role-information-snailspeed-description = A little snail with snailborn thrusters.
+ghost-role-information-snoth-name = Snoth
+ghost-role-information-snoth-description = A little snoth who doesn't mind a bit of space. Just stay on grid!
 ghost-role-information-giant-spider-name = Гигантский паук
 ghost-role-information-giant-spider-description = Обитатели этой станции выглядят очень аппетитно, а ваша липкая паутина идеально подходит для их ловли!
 ghost-role-information-giant-spider-rules = Вы [color=red][bold]Командный антагонист[/bold][/color], в команде с другими гигантскими пауками.
