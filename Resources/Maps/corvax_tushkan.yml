@@ -8695,8 +8695,8 @@ entities:
           localAnchorB: 0.49999997,-4
           localAnchorA: -30,33.5
           referenceAngle: 1.5707964
-          damping: 471.44043
-          stiffness: 4231.64
+          damping: 471.4399
+          stiffness: 4231.635
     - type: BecomesStation
       id: Tushkan
   - uid: 7863
@@ -59370,6 +59370,14 @@ entities:
     - type: Transform
       pos: -28.569365,27.603226
       parent: 2
+  - uid: 10703
+    components:
+    - type: Transform
+      pos: 0.5,41.5
+      parent: 2
+    - type: Paper
+      content: >
+        Для перевода шаттла в режим пилотирования отключите станционный якорь в инженерном отделе.
 - proto: PaperBin
   entities:
   - uid: 1391
