@@ -129,3 +129,5 @@ ent-RealCapfruitSeeds = packet of capfruit seeds
 ent-FakeCapfruitSeeds = { ent-RealCapfruitSeeds }
     .suffix = Fake
     .desc = { ent-RealCapfruitSeeds.desc }
+ent-CherrySeeds = packet of cherry seeds
+    .desc = { ent-SeedBase.desc }

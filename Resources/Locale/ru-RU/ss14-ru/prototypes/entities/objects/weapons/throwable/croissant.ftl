@@ -1,3 +1,3 @@
-ent-WeaponCroissant = croissant
-    .desc = Buttery, flaky goodness.
-    .suffix = Weapon
+ent-WeaponCroissant = { ent-FoodBakedCroissant }
+    .suffix = Оружие
+    .desc = { ent-FoodBakedCroissant.desc }

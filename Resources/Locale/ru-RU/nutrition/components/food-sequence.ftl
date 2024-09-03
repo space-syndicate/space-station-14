@@ -72,11 +72,11 @@ food-sequence-content-suppermatter = суперматерией
 food-sequence-content-capfruit = пистофруктом
 food-sequence-content-berries = ягодами
 food-sequence-content-spacemans-trumpet = космической трубкой
+food-sequence-content-cherry = вишней
 
 # BURGERS
 
-food-sequence-burger-gen = {$content}бургер
-
+food-sequence-burger-gen = { $content }бургер
 food-sequence-burger-content-raw-meat = сыро
 food-sequence-burger-content-meat = мясо
 food-sequence-burger-content-carp = карпо
@@ -113,8 +113,8 @@ food-sequence-burger-content-spacemans-trumpet = космотруб
 
 # TACO
 
-food-sequence-taco-gen = тако с {$content}
+food-sequence-taco-gen = тако с { $content }
 
 # SKEWER
 
-food-sequence-skewer-gen = шашлык с {$content}
+food-sequence-skewer-gen = шашлык с { $content }

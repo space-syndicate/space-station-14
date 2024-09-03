@@ -5,4 +5,5 @@ department-Engineering = Инженерный отдел
 department-Medical = Медицинский отдел
 department-Security = Служба безопасности
 department-Science = Научный отдел
+department-Silicon = Синтетики
 department-Specific = На определённых станциях
