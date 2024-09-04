@@ -38,7 +38,7 @@ ghost-role-information-snail-description = Маленькая улитка, ко
 ghost-role-information-snailspeed-name = Улитка
 ghost-role-information-snailspeed-description = Маленькая улитка с турбоулиточными ускорителями.
 ghost-role-information-snoth-name = Молитка
-ghost-role-information-snoth-description = Маленькая уля, которая не против немного побыть на свободе. Только не убегай за пределы клетки!
+ghost-role-information-snoth-description = Маленькая молитка, которая не против немного побыть на свободе. Только не убегай за пределы клетки!
 ghost-role-information-giant-spider-name = Гигантский паук
 ghost-role-information-giant-spider-description = Обитатели этой станции выглядят очень аппетитно, а ваша липкая паутина идеально подходит для их ловли!
 ghost-role-information-giant-spider-rules = Вы [color=red][bold]Командный антагонист[/bold][/color], в команде с другими гигантскими пауками.
