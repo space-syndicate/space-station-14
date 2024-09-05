@@ -21,7 +21,7 @@
             # service
             HeadOfPersonnel: [ 1, 1 ]
             Passenger: [ -1, -1 ]
-            ServiceWorker: [ 3, 3 ]
+            ServiceWorker: [ 3, 4 ]
             Bartender: [ 1, 1 ]
             Botanist: [ 2, 3 ]
             Chef: [ 1, 1 ]
@@ -75,5 +75,4 @@
           - Bank
           - Zoo
           - MiningOutpost
-          - Tesla
           - VirusologyAmbusol
