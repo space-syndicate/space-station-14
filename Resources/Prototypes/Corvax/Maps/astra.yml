@@ -52,7 +52,6 @@
             ResearchDirector: [ 1, 1 ]
             Scientist: [ 5, 6 ]
             ResearchAssistant: [ 3, 4 ]
-            Borg: [ 2, 2 ]
             # security
             HeadOfSecurity: [ 1, 1 ]
             Warden: [ 1, 1 ]
@@ -64,6 +63,9 @@
             Quartermaster: [ 1, 1 ]
             SalvageSpecialist: [ 3, 3 ]
             CargoTechnician: [ 4, 5 ]
+            #silicon
+            StationAi: [ 1, 1 ]
+            Borg: [ 2, 2 ]
         - type: StationGoal
           goals:
           - Shuttle

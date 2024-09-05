@@ -11,5 +11,5 @@ reagent-effect-status-effect-PressureImmunity = невосприимчивост
 reagent-effect-status-effect-Pacified = принудительный пацифизм
 reagent-effect-status-effect-RatvarianLanguage = паттерны ратварского языка
 reagent-effect-status-effect-StaminaModifier = модифицированная выносливость
-reagent-effect-status-effect-RadiationProtection = radiation protection
-reagent-effect-status-effect-Drowsiness = drowsiness
+reagent-effect-status-effect-RadiationProtection = защита от радиации
+reagent-effect-status-effect-Drowsiness = сонливость

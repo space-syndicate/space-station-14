@@ -124,3 +124,7 @@ ent-ClothingUniformJumpskirtOldDress = old dress
     .desc = A worn-looking dress from a very long time ago.
 ent-ClothingUniformJumpskirtMusician = musician's skirt
     .desc = A fancy skirt for the musically inclined. Perfect for any lounge act!
+ent-ClothingUniformJumpskirtPsychologist = psychologist suitskirt
+    .desc = I don't lose things. I place things in locations which later elude me.
+ent-ClothingUniformJumpskirtClown = clown skirt
+    .desc = HONK!

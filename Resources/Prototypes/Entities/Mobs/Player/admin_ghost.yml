@@ -91,6 +91,10 @@
   - type: Loadout
     prototypes: [ MobAghostGear ]
   - type: BypassInteractionChecks
+  # Corvax-Start
+  - type: MovementSpeedModifier
+    baseWalkSpeed: 30
+  # Corvax-End
 
 - type: entity
   id: ActionAGhostShowSolar
