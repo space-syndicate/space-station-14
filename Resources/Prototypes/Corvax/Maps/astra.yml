@@ -4,7 +4,7 @@
   mapPath: /Maps/corvax_astra.yml
   maxRandomOffset: 0
   randomRotation: false
-  minPlayers: 40
+  minPlayers: 55
   stations:
     Astra:
       stationProto: StandardNanotrasenStation
@@ -21,7 +21,7 @@
             # service
             HeadOfPersonnel: [ 1, 1 ]
             Passenger: [ -1, -1 ]
-            ServiceWorker: [ 3, 3 ]
+            ServiceWorker: [ 3, 4 ]
             Bartender: [ 1, 1 ]
             Botanist: [ 2, 3 ]
             Chef: [ 1, 1 ]
@@ -52,7 +52,6 @@
             ResearchDirector: [ 1, 1 ]
             Scientist: [ 5, 6 ]
             ResearchAssistant: [ 3, 4 ]
-            Borg: [ 2, 2 ]
             # security
             HeadOfSecurity: [ 1, 1 ]
             Warden: [ 1, 1 ]
@@ -64,6 +63,9 @@
             Quartermaster: [ 1, 1 ]
             SalvageSpecialist: [ 3, 3 ]
             CargoTechnician: [ 4, 5 ]
+            #silicon
+            StationAi: [ 1, 1 ]
+            Borg: [ 2, 2 ]
         - type: StationGoal
           goals:
           - Shuttle
@@ -73,5 +75,4 @@
           - Bank
           - Zoo
           - MiningOutpost
-          - Tesla
           - VirusologyAmbusol

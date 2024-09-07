@@ -1,2 +1,2 @@
 ent-BarberScissors = barber scissors
-    .desc = is able to reshape the hairstyle of any crew cut to your liking.
+    .desc = Is able to reshape the hairstyle of any crew cut to your liking.

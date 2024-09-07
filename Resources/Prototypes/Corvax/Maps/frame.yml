@@ -48,14 +48,15 @@
         - type: StationJobs
           availableJobs:
             # service
-            Passenger: [ -1, -1 ]
             Clown: [ 1, 1 ]
             # engineering
             ChiefEngineer: [ 1, 1 ]
             AtmosphericTechnician: [ 1, 1 ]
-            StationEngineer: [ 3, 3 ]
+            StationEngineer: [ 3, 6 ]
+            TechnicalAssistant: [ -1, -1 ]
             # medical
             Paramedic: [ 1, 1 ]
+            MedicalIntern: [ 0, 1 ]
             # science
             Scientist: [ 1, 2 ]
             Borg: [ 1, 1 ]

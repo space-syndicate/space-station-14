@@ -12,4 +12,4 @@ ent-SubstationWallBasic = { ent-BaseSubstationWall }
     .suffix = Basic, 2MJ
     .desc = { ent-BaseSubstationWall.desc }
 ent-BaseSubstationWallFrame = wallmount substation frame
-    .desc = A substation frame for construction
+    .desc = A substation frame for construction.

@@ -1,8 +1,10 @@
-ent-ReinforcementRadioSyndicate = syndicate reinforcement radio
+ent-ReinforcementRadio = syndicate reinforcement radio
     .desc = Call in a syndicate agent of questionable quality, instantly! Only basic equipment provided.
-ent-ReinforcementRadioSyndicateNukeops = { ent-ReinforcementRadioSyndicate }
+ent-ReinforcementRadioSyndicate = syndicate reinforcement radio
+    .desc = Call in a syndicate agent of questionable quality, instantly!
+ent-ReinforcementRadioSyndicateNukeops = nuclear operative radio
+    .desc = Call in a nuclear operative of questionable quality, instantly! Basic nukeop equipment provided.
     .suffix = NukeOps
-    .desc = { ent-ReinforcementRadioSyndicate.desc }
 ent-ReinforcementRadioSyndicateAncestor = syndicate genetic ancestor reinforcement radio
     .desc = Calls in a specially trained ancestor of your choosing to assist you.
 ent-ReinforcementRadioSyndicateAncestorNukeops = { ent-ReinforcementRadioSyndicateAncestor }

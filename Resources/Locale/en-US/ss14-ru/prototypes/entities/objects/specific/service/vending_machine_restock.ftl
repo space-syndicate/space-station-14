@@ -49,6 +49,6 @@ ent-VendingMachineRestockVendomat = Vendomat restock box
 ent-VendingMachineRestockRobotics = Robotech Deluxe restock box
     .desc = A box full of tools for creating borgs. Load it into a Robotech Deluxe to begin.
 ent-VendingMachineRestockHappyHonk = Happy Honk restock box
-    .desc = place this box full of fun into the restock slot on the Happy Honk Dispenser to begin.
+    .desc = Place this box full of fun into the restock slot on the Happy Honk Dispenser to begin.
 ent-VendingMachineRestockChemVend = ChemVend restock box
     .desc = A box filled with chemicals and covered in dangerous-looking NFPA diamonds. Load it into a ChemVend to begin.

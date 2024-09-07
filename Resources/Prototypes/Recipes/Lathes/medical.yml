@@ -134,6 +134,7 @@
 - type: latheRecipe
   id: Medkit
   result: Medkit
+  name: lathe-recipe-Medkit-name
   completetime: 2
   materials:
     Plastic: 300
@@ -141,6 +142,7 @@
 - type: latheRecipe
   id: MedkitBurn
   result: MedkitBurn
+  name: lathe-recipe-MedkitBurn-name
   completetime: 2
   materials:
     Plastic: 300
@@ -148,6 +150,7 @@
 - type: latheRecipe
   id: MedkitToxin
   result: MedkitToxin
+  name: lathe-recipe-MedkitToxin-name
   completetime: 2
   materials:
     Plastic: 300
@@ -155,6 +158,7 @@
 - type: latheRecipe
   id: MedkitO2
   result: MedkitO2
+  name: lathe-recipe-MedkitO2-name
   completetime: 2
   materials:
     Plastic: 300
@@ -162,6 +166,7 @@
 - type: latheRecipe
   id: MedkitBrute
   result: MedkitBrute
+  name: lathe-recipe-MedkitBrute-name
   completetime: 2
   materials:
     Plastic: 300
@@ -169,6 +174,7 @@
 - type: latheRecipe
   id: MedkitAdvanced
   result: MedkitAdvanced
+  name: lathe-recipe-MedkitAdvanced-name
   completetime: 2
   materials:
     Plastic: 300
@@ -176,6 +182,7 @@
 - type: latheRecipe
   id: MedkitRadiation
   result: MedkitRadiation
+  name: lathe-recipe-MedkitRadiation-name
   completetime: 2
   materials:
     Plastic: 300
@@ -183,6 +190,7 @@
 - type: latheRecipe
   id: MedkitCombat
   result: MedkitCombat
+  name: lathe-recipe-MedkitCombat-name
   completetime: 2
   materials:
     Plastic: 300

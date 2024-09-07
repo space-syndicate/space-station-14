@@ -11,4 +11,4 @@ ent-ActionAGhostShowCargo = Cargo Ordering Interface
 ent-ActionAGhostShowCrewMonitoring = Crew Monitoring Interface
     .desc = View a crew monitoring interface.
 ent-ActionAGhostShowStationRecords = Station Records Interface
-    .desc = View a station records Interface
+    .desc = View a station records Interface.

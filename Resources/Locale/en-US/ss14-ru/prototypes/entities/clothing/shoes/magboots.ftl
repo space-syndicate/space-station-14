@@ -7,6 +7,6 @@ ent-ClothingShoesBootsMagSci = { ent-ClothingShoesBootsMag }
 ent-ClothingShoesBootsMagBlinding = magboots of blinding speed
     .desc = These would look fetching on a fetcher like you.
 ent-ClothingShoesBootsMagSyndie = blood-red magboots
-    .desc = Reverse-engineered magnetic boots that have a heavy magnetic pull and integrated thrusters.
+    .desc = Reverse-engineered magnetic boots that have a heavy magnetic pull and integrated thrusters. It can hold 0.75 L of gas.
 ent-ActionToggleMagboots = Toggle Magboots
     .desc = Toggles the magboots on and off.

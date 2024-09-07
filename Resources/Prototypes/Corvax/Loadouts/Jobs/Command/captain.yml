@@ -1,18 +1,10 @@
 # Jumpsuit
 - type: loadout
   id: CaptainJumpsuitTurtleneck
-  equipment: CaptainJumpsuitTurtleneck
-
-- type: startingGear
-  id: CaptainJumpsuitTurtleneck
   equipment:
     jumpsuit: ClothingUniformJumpsuitCapTurtleneck
 
 - type: loadout
-  id: CaptainJumpskirtTurtleneck
-  equipment: CaptainJumpskirtTurtleneck
-
-- type: startingGear
   id: CaptainJumpskirtTurtleneck
   equipment:
     jumpsuit: ClothingUniformJumpskirtCapTurtleneck

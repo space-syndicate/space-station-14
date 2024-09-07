@@ -14,3 +14,5 @@ ent-ClothingNeckMantleRD = research director's mantle
     .desc = A terribly comfortable shoulder draping for the discerning scientist of fashion.
 ent-ClothingNeckMantleQM = quartermaster's mantle
     .desc = For the master of goods and materials to rule over the department, a befitting mantle to show off superiority!
+ent-ClothingNeckMantle = mantle
+    .desc = A soft mantle, made with the same 'synthetic' animal furs of the iconic winter coat.
