@@ -361,5 +361,5 @@ public sealed class SuicideCommandTests
         });
 
         await pair.CleanReturnAsync();
-    } Corvax-Disabled-test end */
+    } Corvax-Disabled-Test end */
 }
