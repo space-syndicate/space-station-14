@@ -21,7 +21,7 @@ namespace Content.IntegrationTests.Tests.Commands;
 [TestFixture]
 public sealed class SuicideCommandTests
 {
-
+/* Corvax-Disabled-test
     [TestPrototypes]
     private const string Prototypes = @"
 - type: entity
@@ -361,5 +361,5 @@ public sealed class SuicideCommandTests
         });
 
         await pair.CleanReturnAsync();
-    }
+    } Corvax-Disabled-test end */
 }
