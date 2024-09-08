@@ -20,6 +20,7 @@
       rules: ghost-role-information-nonantagonist-rules
       raffle:
         settings: default
+      job: CentcomChief
       requirements:
       - !type:RoleTimeRequirement
         role: JobCentcomOperator
@@ -51,6 +52,7 @@
       rules: ghost-role-information-nonantagonist-rules
       raffle:
         settings: default
+      job: CentcomOperator
       requirements:
       - !type:RoleTimeRequirement # For whitelist
         role: JobCentcomOperator
