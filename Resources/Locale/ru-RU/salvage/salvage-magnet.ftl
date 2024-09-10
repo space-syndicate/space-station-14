@@ -28,14 +28,16 @@ salvage-magnet-resources-count =
         [5] (Много)
        *[other] (Изобилие)
     }
+# Debris
+salvage-magnet-debris-ChunkDebris = Космический обломок
 # Asteroids
 dungeon-config-proto-BlobAsteroid = Астероидный массив
 dungeon-config-proto-ClusterAsteroid = Астероидный кластер
 dungeon-config-proto-SpindlyAsteroid = Астероидная спираль
 dungeon-config-proto-SwissCheeseAsteroid = Фрагменты астероидов
 # Wrecks
-salvage-map-wreck = Salvage wreck
-salvage-map-wreck-desc-size = Size:
-salvage-map-wreck-size-small = [color=lime]Small[/color]
-salvage-map-wreck-size-medium = [color=cornflowerblue]Medium[/color]
-salvage-map-wreck-size-large = [color=orchid]Large[/color]
+salvage-map-wreck = Обломок для утилизации
+salvage-map-wreck-desc-size = Размер:
+salvage-map-wreck-size-small = [color=lime]Малый[/color]
+salvage-map-wreck-size-medium = [color=cornflowerblue]Средний[/color]
+salvage-map-wreck-size-large = [color=orchid]Большой[/color]

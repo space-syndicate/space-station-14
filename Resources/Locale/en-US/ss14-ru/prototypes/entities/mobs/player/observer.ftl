@@ -1,3 +1,5 @@
+ent-Incorporeal = { "" }
+    .desc = Mobs without physical bodies
 ent-MobObserver = observer
     .desc = Boo!
 ent-ActionGhostBoo = Boo!
