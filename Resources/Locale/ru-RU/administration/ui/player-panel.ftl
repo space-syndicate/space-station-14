@@ -19,4 +19,4 @@ player-panel-logs = Логи
 player-panel-delete = Удалить
 player-panel-rejuvenate = Вылечить
 player-panel-false = Нет
-player-panel-true = True
+player-panel-true = Да

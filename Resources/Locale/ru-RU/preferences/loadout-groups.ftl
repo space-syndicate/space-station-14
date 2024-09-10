@@ -14,6 +14,7 @@ loadout-group-survival-syndicate = Github заставил меня переве
 loadout-group-breath-tool = Расозависимое дыхательное снаряжение
 loadout-group-tank-harness = Расозависимое снаряжение для выживания
 loadout-group-EVA-tank = Расозависимый газовый баллон
+loadout-group-survival-mime = Мимский аварийный запас
 # Command
 loadout-group-captain-head = Капитан, голова
 loadout-group-captain-jumpsuit = Капитан, комбинезон
@@ -31,7 +32,7 @@ loadout-group-passenger-mask = Пассажир, маска
 loadout-group-passenger-gloves = Пассажир, перчатки
 loadout-group-passenger-outerclothing = Пассажир, верхняя одежда
 loadout-group-passenger-shoes = Пассажир, обувь
-loadout-group-passenger-neck = Passenger neck
+loadout-group-passenger-neck = Пассажир, шея
 loadout-group-bartender-head = Бармен, голова
 loadout-group-bartender-jumpsuit = Бармен, комбинезон
 loadout-group-bartender-outerclothing = Бармен, верхняя одежда
@@ -66,6 +67,7 @@ loadout-group-mime-mask = Мим, маска
 loadout-group-mime-jumpsuit = Мим, комбинезон
 loadout-group-mime-backpack = Мим, рюкзак
 loadout-group-mime-outerclothing = Мим, верхняя одежда
+loadout-group-mime-belt = Мим, пояс
 loadout-group-musician-jumpsuit = Музыкант, комбинезон
 loadout-group-musician-outerclothing = Музыкант, верхняя одежда
 # Cargo
@@ -134,7 +136,7 @@ loadout-group-detective-neck = Детектив, шея
 loadout-group-detective-jumpsuit = Детектив, комбинезон
 loadout-group-detective-outerclothing = Детектив, верхняя одежда
 loadout-group-security-cadet-jumpsuit = Кадет СБ, комбинезон
-loadout-group-security-star = Security Star
+loadout-group-security-star = СБ, Звёздочка
 # Medical
 loadout-group-medical-gloves = Медицинский отдел, перчатки
 loadout-group-medical-mask = Медицинский отдел, маска
