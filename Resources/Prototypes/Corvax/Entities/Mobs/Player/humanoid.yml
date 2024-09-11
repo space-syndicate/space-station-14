@@ -58,10 +58,10 @@
       requirements:
       - !type:RoleTimeRequirement
         role: JobCaptain
-        time: 18000 # 5h
+        time: 36000 # 10h
       - !type:RoleTimeRequirement
         role: JobIAA
-        time: 18000 # 5h
+        time: 36000 # 10h
     - type: Loadout
       prototypes: [ CentcomOperatorGear ]
       roleLoadout: [ RoleSurvivalStandard ]
