@@ -1,0 +1,28 @@
+- type: job
+  id: ConstructionEngineer
+  name: job-name-construction-engineer
+  description: job-description-construction-engineer
+  playTimeTracker: JobConstructionEngineer
+  requirements:
+    - !type:DepartmentTimeRequirement
+      department: Construction
+      time: 18000 #5 hrs # Corvax-RoleTime
+  startingGear: ConstructionEngineerGear
+  icon: "JobIconStationEngineer"
+  supervisors: job-supervisors-construction-engineer
+  access:
+  - Maintenance
+  - Engineering
+  - External
+  extendedAccess:
+  - Atmospherics
+
+- type: startingGear
+  id: ConstructionEngineerGear
+  equipment:
+    eyes: ClothingEyesGlassesMeson
+    belt: ClothingBeltUtilityEngineering
+    ears: ClothingHeadsetEngineering
+  #storage:
+    #back:
+    #- Stuff

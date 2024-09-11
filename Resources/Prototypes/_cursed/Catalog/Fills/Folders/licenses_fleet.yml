@@ -10,7 +10,7 @@
 
 - type: entity
   id: LicensePaperShuttleBuildingCorvetteFoldered
-  parent: BoxFolderOneSlotRed
+  parent: LicensePaperFleetFoldered
   components:
   - type: StorageFill
     contents:

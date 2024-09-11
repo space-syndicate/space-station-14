@@ -38,6 +38,9 @@
           overflowJobs: # роли, на которое не будет ограничения по количеству
             - Passenger
           availableJobs:
+            # Construction
+            ConstructionEngineer: [ 4, 4 ]
+            ConstructionAssistant: [ 3, 3 ]
             # engineering
             AtmosphericTechnician: [ 1, 1 ]
             StationEngineer: [ 4, 4 ]

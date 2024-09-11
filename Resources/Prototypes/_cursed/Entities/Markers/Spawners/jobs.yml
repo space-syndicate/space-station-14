@@ -1,0 +1,26 @@
+# Construction
+- type: entity
+  id: SpawnPointConstructionAssistant
+  parent: SpawnPointJobBase
+  name: job-name-construction-assistant
+  suffix: CursedJobs
+  components:
+  - type: SpawnPoint
+    job_id: ConstructionAssistant
+  - type: Sprite
+    layers:
+      - state: green
+      - state: engineer
+
+- type: entity
+  id: SpawnPointConstructionEngineer
+  parent: SpawnPointJobBase
+  name: job-name-construction-engineer
+  suffix: CursedJobs
+  components:
+  - type: SpawnPoint
+    job_id: ConstructionEngineer
+  - type: Sprite
+    layers:
+      - state: green
+      - state: engineer

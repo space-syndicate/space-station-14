@@ -1,0 +1,9 @@
+- type: department
+  id: Construction
+  name: department-Construction
+  description: department-Construction-description
+  color: "#EFB341"
+  roles:
+  - ConstructionAssistant
+  - ConstructionEngineer
+  primary: false

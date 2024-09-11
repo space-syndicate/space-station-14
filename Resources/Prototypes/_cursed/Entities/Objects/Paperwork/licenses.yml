@@ -83,7 +83,7 @@
         stampedColor: "#7b241c"
 
 - type: entity
-  parent: LicensePaper
+  parent: LicensePaperFleet
   id: LicensePaperShuttleBuildingCorvette
   components:
     - type: Paper

@@ -1,0 +1,30 @@
+- type: job
+  id: ConstructionAssistant
+  name: job-name-construction-assistant
+  description: job-description-construction-assistant
+  playTimeTracker: JobConstructionAssistant
+  requirements:
+    - !type:DepartmentTimeRequirement
+      department: Construction
+      time: 36000 #10 hrs # Corvax-RoleTime
+      inverted: true # stop playing intern if you're good at engineering!
+  startingGear: ConstructionAssistantGear
+  icon: "JobIconTechnicalAssistant"
+  supervisors: job-supervisors-construction-engineer
+  canBeAntag: false
+  access:
+  - Maintenance
+  - Engineering
+  - External
+
+- type: startingGear
+  id: ConstructionAssistantGear
+  equipment:
+    shoes: ClothingShoesBootsWork
+    id: TechnicalAssistantPDA
+    belt: ClothingBeltUtilityEngineering
+    ears: ClothingHeadsetEngineering
+    pocket2: BookEngineersHandbook
+  #storage:
+    #back:
+    #- Stuff
