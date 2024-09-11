@@ -3,8 +3,8 @@ atmos-alerts-window-station-name = [color=white][font size=14]{ $stationName }[/
 atmos-alerts-window-unknown-location = Неизвестное место
 atmos-alerts-window-tab-no-alerts = Предупреждения
 atmos-alerts-window-tab-alerts = Предупреждения ({ $value })
-atmos-alerts-window-tab-air-alarms = Воздушные сигнализации
-atmos-alerts-window-tab-fire-alarms = Пожарные сигнализации
+atmos-alerts-window-tab-air-alarms = Возд. сигн.
+atmos-alerts-window-tab-fire-alarms = Пож. сигн.
 atmos-alerts-window-alarm-label = { CAPITALIZE($name) } ({ $address })
 atmos-alerts-window-temperature-label = Температура
 atmos-alerts-window-temperature-value = { $valueInC } °C ({ $valueInK } K)
@@ -21,7 +21,9 @@ atmos-alerts-window-normal-state = Нормальный
 atmos-alerts-window-warning-state = Внимание
 atmos-alerts-window-danger-state = Опасность!
 atmos-alerts-window-invalid-state = Неактивно
-atmos-alerts-window-no-active-alerts = [font size=16][color=white]Нет активных предупреждений -[/color] [color={ $color }]ситуация нормальная[/color][/font]
+atmos-alerts-window-no-active-alerts =
+    [font size=16][color=white]Нет активных предупреждений[/color]
+    [color={ $color }]ситуация нормальная[/color][/font]
 atmos-alerts-window-no-data-available = Данные отсутствуют
 atmos-alerts-window-alerts-being-silenced = Отключение предупреждений...
 atmos-alerts-window-toggle-overlays = Переключение отображения сигнализации
