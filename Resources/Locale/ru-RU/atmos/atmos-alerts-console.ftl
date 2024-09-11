@@ -17,13 +17,11 @@ atmos-alerts-window-other-gases-value = { $shorthand } ({ $value }%)
 atmos-alerts-window-other-gases-value-nil = Нет
 atmos-alerts-window-silence-alerts = Заглушить предупреждения этой сигнализации
 atmos-alerts-window-label-alert-types = Уровни тревоги:
-atmos-alerts-window-normal-state = Нормальный
+atmos-alerts-window-normal-state = Нормально
 atmos-alerts-window-warning-state = Внимание
 atmos-alerts-window-danger-state = Опасность!
-atmos-alerts-window-invalid-state = Неактивно
-atmos-alerts-window-no-active-alerts =
-    [font size=16][color=white]Нет активных предупреждений[/color]
-    [color={ $color }]ситуация нормальная[/color][/font]
+atmos-alerts-window-invalid-state = Неактив
+atmos-alerts-window-no-active-alerts = [font size=16][color=white]Нет активных предупреждений -[/color] [color={ $color }]ситуация нормальная[/color][/font]
 atmos-alerts-window-no-data-available = Данные отсутствуют
 atmos-alerts-window-alerts-being-silenced = Отключение предупреждений...
 atmos-alerts-window-toggle-overlays = Переключение отображения сигнализации
