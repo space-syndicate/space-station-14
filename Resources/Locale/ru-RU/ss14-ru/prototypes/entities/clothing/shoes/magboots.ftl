@@ -1,3 +1,5 @@
+ent-ClothingShoesBootsMagBase = magboots
+    .desc = Magnetic boots, often used during extravehicular activity to ensure the user remains safely attached to the vehicle.
 ent-ClothingShoesBootsMag = магнитные сапоги
     .desc = Магнитные сапоги, используемые во время работы вне корабля, чтобы оставаться надёжно прикреплённым к поверхности.
 ent-ClothingShoesBootsMagAdv = продвинутые магнитные сапоги

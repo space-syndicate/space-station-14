@@ -70,3 +70,5 @@ ent-SensorConsoleCircuitboard = консоль мониторинга датчи
     .desc = Консольная плата для консоли мониторинга датчиков.
 ent-RoboticsConsoleCircuitboard = консоль управления робототехникой (консольная плата)
     .desc = Консольная плата для консоли управления робототехникой.
+ent-StationAiUploadCircuitboard = AI upload console board
+    .desc = A computer printed circuit board for a AI upload console.

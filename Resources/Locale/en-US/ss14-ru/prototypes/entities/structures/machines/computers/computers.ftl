@@ -1,5 +1,5 @@
-ent-ComputerAlert = alerts computer
-    .desc = Used to access the station's automated alert system.
+ent-ComputerAlert = atmospheric alerts computer
+    .desc = Used to access the station's atmospheric automated alert system.
 ent-ComputerEmergencyShuttle = emergency shuttle console
     .desc = Handles authorization to early launch the shuttle.
 ent-BaseComputerShuttle = shuttle console
