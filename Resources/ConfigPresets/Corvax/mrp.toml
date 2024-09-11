@@ -4,9 +4,6 @@ lobbyenabled = true
 role_timers = true
 contraband_examine = false
 
-[server]
-rules_file = "CorvaxLRPRuleset"
-
 [ic]
 flavor_text = true
 punctuation = false
