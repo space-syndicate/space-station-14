@@ -17,8 +17,6 @@
             prefixCreator: "Z"
         - type: StationEmergencyShuttle
           emergencyShuttlePath: /Maps/Shuttles/emergency_maus.yml
-        - type: StationCargoShuttle
-          path: /Maps/Shuttles/cargo_maus.yml
         - type: StationJobs
           availableJobs:
             CargoTechnician: [ 2, 2 ]
