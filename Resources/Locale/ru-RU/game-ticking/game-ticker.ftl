@@ -37,7 +37,7 @@ latejoin-arrival-announcement =
         [male] прибыл
         [female] прибыла
         [epicene] прибыли
-       *[neuter] прибыл
+       *[neuter] прибыло
     } на станцию!
 latejoin-arrival-announcement-special = { $job } { $character } on deck!
 latejoin-arrival-sender = Станции
