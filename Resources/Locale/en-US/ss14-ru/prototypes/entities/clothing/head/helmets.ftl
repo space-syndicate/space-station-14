@@ -1,3 +1,5 @@
+ent-ClothingHeadHelmetBase = { ent-ClothingHeadBase }
+  .desc = { ent-ClothingHeadBase.desc }
 ent-ClothingHeadHelmetBasic = helmet
     .desc = Standard security gear. Protects the head from impacts.
 ent-ClothingHeadHelmetMerc = mercenary helmet
@@ -46,3 +48,10 @@ ent-ClothingHeadHelmetBone = bone helmet
     .desc = Cool-looking helmet made of skull of your enemies.
 ent-ClothingHeadHelmetPodWars = ironclad II helmet
     .desc = An ironclad II helmet, a relic of the pod wars.
+ent-ClothingHeadHelmetJustice = justice helm
+    .desc = Advanced security gear. Protects the station from ne'er-do-wells.
+ent-ClothingHeadHelmetJusticeEmpty = { ent-ClothingHeadHelmetJustice }
+    .suffix = Empty
+    .desc = { ent-ClothingHeadHelmetJustice.desc }
+ent-ActionToggleJusticeHelm = Toggle Justice Helm
+    .desc = Toggles the justice helm on and off.
