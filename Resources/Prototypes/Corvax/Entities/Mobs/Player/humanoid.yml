@@ -13,6 +13,7 @@
 - type: randomHumanoidSettings
   id: CentcomChief
   parent: EventHumanoidMindShielded
+  speciesBlacklist: ['Diona', 'Vox']
   components:
     - type: GhostRole
       name: ghost-role-information-centcom-chief-name
@@ -45,6 +46,7 @@
 - type: randomHumanoidSettings
   id: CentcomOperator
   parent: EventHumanoidMindShielded
+  speciesBlacklist: ['Diona', 'Vox']
   components:
     - type: GhostRole
       name: ghost-role-information-centcom-opertor-name
@@ -54,9 +56,12 @@
         settings: default
       job: CentcomOperator
       requirements:
-      - !type:RoleTimeRequirement # For whitelist
-        role: JobCentcomOperator
-        time: 600 # 10m
+      - !type:RoleTimeRequirement
+        role: JobCaptain
+        time: 18000 # 5h
+      - !type:RoleTimeRequirement
+        role: JobIAA
+        time: 18000 # 5h
     - type: Loadout
       prototypes: [ CentcomOperatorGear ]
       roleLoadout: [ RoleSurvivalStandard ]

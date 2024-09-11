@@ -21,3 +21,17 @@
         - state: idpilot
     - type: PresetIdCard
       job: Pilot
+
+- type: entity
+  parent: CentcomIDCard
+  id: CentcomOperatorIDCard
+  components:
+    - type: PresetIdCard
+      job: CentcomOperator
+
+- type: entity
+  parent: CentcomIDCard
+  id: CentcomChiefIDCard
+  components:
+    - type: PresetIdCard
+      job: CentcomChief

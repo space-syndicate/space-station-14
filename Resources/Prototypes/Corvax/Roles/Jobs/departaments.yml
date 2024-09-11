@@ -1,0 +1,9 @@
+- type: department
+  id: Centcom
+  name: department-Centcom
+  description: department-Centcom-description
+  color: "#228B22"
+  editorHidden: true
+  roles:
+  - CentcomChief
+  - CentcomOperator

@@ -24,8 +24,12 @@
   setPreference: false
   startingGear: CentcomChiefGear
   icon: "JobIconNanotrasen"
-  supervisors: job-supervisors-centcom
+  supervisors: job-supervisors-nanotrasen
   canBeAntag: false
+  requirements:
+  - !type:RoleTimeRequirement
+    role: JobCentcomOperator
+    time: 36000 # 10h
   accessGroups:
   - AllAccess
   access:
@@ -42,7 +46,7 @@
     gloves: ClothingHandsGlovesCentcomNaval
     outerClothing: ClothingOuterArmorCentcomCarapace
     neck: ClothingNeckCloakCentcom
-    id: CentcomPDA
+    id: CentcomChiefPDA
     ears: ClothingHeadsetAltCentCom
     pocket1: RubberStampCentcom
     pocket2: WeaponDisabler
@@ -57,8 +61,15 @@
   setPreference: false
   startingGear: CentcomOperatorGear
   icon: "JobIconNanotrasen"
-  supervisors: job-supervisors-centcom
+  supervisors: job-supervisors-centcom-cheif
   canBeAntag: false
+  requirements:
+  - !type:RoleTimeRequirement
+    role: JobCaptain
+    time: 18000 # 5h
+  - !type:RoleTimeRequirement
+    role: JobIAA
+    time: 18000 # 5h
   accessGroups:
   - AllAccess
   access:
@@ -74,7 +85,7 @@
     eyes: ClothingEyesGlassesSunglasses
     gloves: ClothingHandsGlovesColorBlack
     neck: ClothingNeckNanoTrasenPin
-    id: CentcomPDA
+    id: CentcomOperatorPDA
     ears: ClothingHeadsetCentCom
     pocket1: RubberStampCentcom
     pocket2: BoxFolderCentCom
