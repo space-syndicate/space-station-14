@@ -6,6 +6,6 @@ lathe-category-parts = Компоненты
 lathe-category-robotics = Робототехника
 lathe-category-tools = Инструменты
 lathe-category-weapons = Вооружение
-lathe-category-food = Продукты
+lathe-category-food = Пища
 lathe-category-chemicals = Химикаты
 lathe-category-materials = Материалы
