@@ -399,6 +399,9 @@ public abstract partial class SharedGunSystem : EntitySystem
             if (_gravity.IsWeightless(user, userPhysics))
                 CauseImpulse(fromCoordinates, toCoordinates.Value, user, userPhysics);
         }
+
+        Dirty(gunUid, gun);
+        UpdateAmmoCount(gunUid); //GoobStation - Multishot
     }
 
     public void Shoot(

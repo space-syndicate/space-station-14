@@ -51,6 +51,8 @@
       gun_chamber: !type:ContainerSlot
   - type: StaticPrice
     price: 500
+  - type: Multishot # Goobstation
+    spreadMultiplier: 1.6
 
 - type: entity
   name: AKMS
