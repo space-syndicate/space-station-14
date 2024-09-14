@@ -1,6 +1,6 @@
 ent-BasePlushie = { ent-BaseItem }
     .desc = { ent-BaseItem.desc }
-ent-PlushieThrongler = The Throngler plushie
+ent-PlushieThrongler = throngler plushie
     .desc = A stuffed toy to remind cargo techs of what they can no longer have.
 ent-PlushieGhost = ghost soft toy
     .desc = The start of your personal GHOST GANG!

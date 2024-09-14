@@ -1,5 +1,8 @@
 ent-BookBase = book
     .desc = A hardcover book.
+ent-BaseGuidebook = { ent-BaseItem }
+    .suffix = guidebook
+    .desc = { ent-BaseItem.desc }
 ent-BookSpaceEncyclopedia = space encyclopedia
     .desc = An encyclopedia containing all the knowledge. The author of this encyclopedia is unknown.
 ent-BookTheBookOfControl = the book of control

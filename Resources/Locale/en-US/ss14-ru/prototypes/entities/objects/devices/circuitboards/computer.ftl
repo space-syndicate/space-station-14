@@ -1,7 +1,7 @@
 ent-BaseComputerCircuitboard = computer board
     .desc = { ent-BaseItem.desc }
-ent-AlertsComputerCircuitboard = alerts computer board
-    .desc = A computer printed circuit board for an alerts computer.
+ent-AlertsComputerCircuitboard = atmospheric alerts computer board
+    .desc = A computer printed circuit board for an atmospheric alerts computer.
 ent-PowerComputerCircuitboard = power monitoring computer board
     .desc = A computer printed circuit board for a power monitoring computer.
 ent-MedicalRecordsComputerCircuitboard = medical records computer board
@@ -70,3 +70,5 @@ ent-SensorConsoleCircuitboard = sensor monitoring console board
     .desc = A computer printed circuit board for a sensor monitoring console.
 ent-RoboticsConsoleCircuitboard = robotics control console board
     .desc = A computer printed circuit board for a robotics control console.
+ent-StationAiUploadCircuitboard = AI upload console board
+    .desc = A computer printed circuit board for a AI upload console.
