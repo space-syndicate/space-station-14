@@ -3304,6 +3304,11 @@
   - type: NpcFactionMember
     factions:
     - Passive
+  - type: HTN
+    rootTask:
+      task: RuminantCompound
+  - type: Body
+    prototype: AnimalHemocyanin
 
 - type: entity
   name: diona nymph
