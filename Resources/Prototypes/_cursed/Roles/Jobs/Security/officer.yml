@@ -1,0 +1,38 @@
+- type: job
+  id: SecurityOfficerShipyard
+  name: job-name-security-shipyard
+  description: job-description-security-shipyard
+  playTimeTracker: JobSecurityOfficerShipyard
+  requirements:
+    - !type:OverallPlaytimeRequirement
+      time: 3600 #1 hr
+  startingGear: SecurityOfficerShipyardGear
+  icon: "JobIconSecurityOfficer"
+  supervisors: job-supervisors-
+  canBeAntag: false
+  access:
+  - Security
+  - Brig
+  - Maintenance
+  - Service
+  - External
+  - Cryogenics
+  - Engineering
+  - Cargo
+  - Salvage
+  - Maintenance
+  - External
+  special:
+  - !type:AddImplantSpecial
+    implants: [ MindShieldImplant ]
+
+- type: startingGear
+  id: SecurityOfficerShipyardGear
+  equipment:
+    eyes: ClothingEyesGlassesSecurity
+    ears: ClothingHeadsetSecurity
+    pocket1: WeaponPistolMk58
+  storage:
+    back:
+    - Flash
+    - MagazinePistol

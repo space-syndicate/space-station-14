@@ -9,7 +9,7 @@
       time: 18000 #5 hrs # Corvax-RoleTime
   startingGear: ConstructionEngineerGear
   icon: "JobIconStationEngineer"
-  supervisors: job-supervisors-construction-engineer
+  supervisors: job-supervisors-shipyard-common
   access:
   - Maintenance
   - Engineering

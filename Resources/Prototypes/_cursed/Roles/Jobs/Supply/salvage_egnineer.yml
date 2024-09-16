@@ -1,0 +1,26 @@
+- type: job
+  id: SalvageEngineer
+  name: job-name-salvage-engineer
+  description: job-description-salvage-engineer
+  playTimeTracker: JobSalvageEngineer
+  requirements:
+    - !type:OverallPlaytimeRequirement
+      time: 3600 #1 hr
+  icon: "JobIconShaftMiner"
+  startingGear: SalvageEngineerGear
+  supervisors: job-supervisors-shipyard-common
+  access:
+  - Cargo
+  - Salvage
+  - Maintenance
+  - External
+
+- type: startingGear
+  id: SalvageEngineerGear
+  equipment:
+    jumpsuit: ClothingUniformJumpsuitSalvageSpecialist
+    id: SalvagePDA
+    ears: ClothingHeadsetCargo
+  #storage:
+    #back:
+    #- Stuff

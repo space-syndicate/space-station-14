@@ -36,21 +36,21 @@
               - /Maps/Ruins/whiteship_bluespacejumper.yml
         - type: StationJobs
           overflowJobs: # роли, на которое не будет ограничения по количеству
-            - Passenger
+            - ConstructionAssistant
           availableJobs:
             # Construction
             ConstructionEngineer: [ 4, 4 ]
-            ConstructionAssistant: [ 3, 3 ]
+            ConstructionAssistant: [ -1, -1 ]
             # engineering
-            AtmosphericTechnician: [ 1, 1 ]
-            StationEngineer: [ 4, 4 ]
-            TechnicalAssistant: [ 2, 2 ]
+            # AtmosphericTechnician: [ 1, 1 ]
+            # StationEngineer: [ 4, 4 ]
+            # TechnicalAssistant: [ 2, 2 ]
             # medical
-            Chemist: [ 1, 1 ]
-            MedicalDoctor: [ 1, 1 ]
-            MedicalIntern: [ 1, 1 ]
+            # Chemist: [ 1, 1 ]
+            FieldDoctor: [ 2, 2 ]
+            # MedicalIntern: [ 1, 1 ]
             # security
-            SecurityOfficer: [ 2, 2 ]
-            SecurityCadet: [ 1, 1 ]
+            SecurityOfficerShipyard: [ 3, 3 ]
+            # SecurityCadet: [ 1, 1 ]
             # cargo
-            SalvageSpecialist: [ 2, 2 ]
+            SalvageEngineer: [ 2, 2 ]

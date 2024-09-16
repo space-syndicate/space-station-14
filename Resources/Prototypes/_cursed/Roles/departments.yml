@@ -1,0 +1,40 @@
+- type: department
+  id: Construction
+  name: department-Construction
+  description: department-Construction-description
+  color: "#EFB341"
+  roles:
+  - ConstructionAssistant
+  - ConstructionEngineer
+  primary: false
+  weight: 104
+
+- type: department
+  id: ShipyardSupply
+  name: department-ShipyardSupply
+  description: department-ShipyardSupply-description
+  color: "#A46106"
+  roles:
+  - SalvageEngineer
+  primary: false
+  weight: 101
+
+- type: department
+  id: Paramedical
+  name: department-Paramedical
+  description: department-Paramedical-description
+  color: "#52B4E9"
+  roles:
+  - FieldDoctor
+  primary: false
+  weight: 103
+
+- type: department
+  id: SecurityShipyard
+  name: department-SecurityShipyard
+  description: department-SecurityShipyard-description
+  color: "#DE3A3A"
+  roles:
+  - SecurityOfficerShipyard
+  primary: false
+  weight: 102

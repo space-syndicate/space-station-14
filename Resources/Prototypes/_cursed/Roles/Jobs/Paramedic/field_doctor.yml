@@ -1,0 +1,25 @@
+- type: job
+  id: FieldDoctor
+  name: job-name-field-doctor
+  description: job-description-field-doctor
+  playTimeTracker: JobFieldDoctor
+  requirements:
+    - !type:OverallPlaytimeRequirement
+      time: 7200 #2 hr
+  startingGear: FieldDoctorGear
+  icon: "JobIconMedicalDoctor"
+  supervisors: job-supervisors-shipyard-common
+  access:
+  - Medical
+  - Maintenance
+  extendedAccess:
+  - Chemistry
+
+- type: startingGear
+  id: FieldDoctorGear
+  equipment:
+    ears: ClothingHeadsetMedical
+    belt: ClothingBeltMedicalFilled
+  #storage:
+    #back:
+    #- Stuff
