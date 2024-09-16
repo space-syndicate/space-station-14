@@ -70586,7 +70586,6 @@ entities:
       pos: 22.5,-34.5
       parent: 2
     - type: DeviceNetwork
-      configurators:
       deviceLists:
       - 10698
   - uid: 14489
@@ -70595,7 +70594,6 @@ entities:
       pos: 22.5,-33.5
       parent: 2
     - type: DeviceNetwork
-      configurators:
       deviceLists:
       - 10698
   - uid: 14490
@@ -70604,7 +70602,6 @@ entities:
       pos: 24.5,-35.5
       parent: 2
     - type: DeviceNetwork
-      configurators:
       deviceLists:
       - 10698
   - uid: 15636
@@ -89674,7 +89671,6 @@ entities:
       pos: 20.5,-36.5
       parent: 2
     - type: DeviceNetwork
-      configurators:
       deviceLists:
       - 10698
     - type: AtmosPipeColor
@@ -89704,7 +89700,6 @@ entities:
       pos: 22.5,-38.5
       parent: 2
     - type: DeviceNetwork
-      configurators:
       deviceLists:
       - 10698
     - type: AtmosPipeColor
@@ -90934,7 +90929,6 @@ entities:
       pos: 22.5,-36.5
       parent: 2
     - type: DeviceNetwork
-      configurators:
       deviceLists:
       - 10698
     - type: AtmosPipeColor
@@ -91046,7 +91040,6 @@ entities:
       pos: 20.5,-38.5
       parent: 2
     - type: DeviceNetwork
-      configurators:
       deviceLists:
       - 10698
     - type: AtmosPipeColor
