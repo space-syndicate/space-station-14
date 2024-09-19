@@ -2,6 +2,7 @@ station-beacon-general = Общий
 station-beacon-command = Командование
 station-beacon-bridge = Мостик
 station-beacon-vault = Хранилище
+station-beacon-gateway = Gateway
 station-beacon-captain = Капитан
 station-beacon-hop = Кабинет ГП
 station-beacon-security = Служба безопасности
