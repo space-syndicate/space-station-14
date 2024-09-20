@@ -160,7 +160,7 @@ def send_to_discord(entries: Iterable[ChangelogEntry]) -> None:
                     message = resp.json()['data']
                 # Corvax-Localization-End
                 if url and url.strip():
-                    group_content.write(f"{emoji} [-]({url}) {message}\n")
+                    group_content.write(f"{emoji} - {message} [PR]({url}) \n")
                 else:
                     group_content.write(f"{emoji} - {message}\n")
         group_content.write(f"\n") # Corvax: Better formatting

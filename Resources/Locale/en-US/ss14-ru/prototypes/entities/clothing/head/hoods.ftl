@@ -106,3 +106,5 @@ ent-ClothingHeadHatHoodWinterColorWhite = white winter coat hood
     .desc = { ent-ClothingHeadHatHoodWinterBase.desc }
 ent-ClothingHeadHatHoodWinterColorYellow = yellow winter coat hood
     .desc = { ent-ClothingHeadHatHoodWinterBase.desc }
+ent-ClothingHeadHatHoodVoidCloak = void cloak hood
+    .desc = The hood of a void cloak. For those who have gone to the dark side of the force.

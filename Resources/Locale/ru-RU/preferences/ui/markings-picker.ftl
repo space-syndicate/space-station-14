@@ -14,7 +14,7 @@ marking-slot = Слот { $number }
 
 # Categories
 
-markings-category-Special = Special
+markings-category-Special = Специальное
 markings-category-Hair = Причёска
 markings-category-FacialHair = Лицевая растительность
 markings-category-Head = Голова
