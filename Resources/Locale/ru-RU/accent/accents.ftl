@@ -110,6 +110,6 @@ accent-words-nymph-4 = Шрруп!
 # TomatoKiller
 accent-words-tomato-1 = Тотат!
 accent-words-tomato-2 = Тощита
-accent-words-tomato-3 = Хомат?
+accent-words-tomato-3 = Мастет?
 accent-words-tomato-4 = Готат!
 accent-words-tomato-5 = Вада...
