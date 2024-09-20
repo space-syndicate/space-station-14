@@ -4,8 +4,8 @@ seeds-noun-spores = спор
 # Seeds
 seeds-wheat-name = пшеница
 seeds-wheat-display-name = стебли пшеницы
-seeds-meatwheat-name = пшемясо
-seeds-meatwheat-display-name = стебли пшемяса
+seeds-meatwheat-name = мясница
+seeds-meatwheat-display-name = стебли мясницы
 seeds-oat-name = овёс
 seeds-oat-display-name = стебли овса
 seeds-banana-name = банан
