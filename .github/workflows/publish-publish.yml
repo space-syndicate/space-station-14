@@ -1,12 +1,12 @@
 name: Publish Public
 
-#concurrency:
-#  group: publish
+concurrency:
+  group: publish
 
 on:
   workflow_dispatch:
   schedule:
-  - cron: '0 1 * * *'
+  - cron: '0 2 * * *'
 
 jobs:
   build:
@@ -19,6 +19,7 @@ jobs:
     - uses: actions/checkout@v3.6.0
       with:
         submodules: 'recursive'
+
     - name: Setup .NET Core
       uses: actions/setup-dotnet@v3.2.0
       with:
@@ -41,21 +42,10 @@ jobs:
     - name: Package client
       run: dotnet run --project Content.Packaging client --no-wipe-release
 
-    - name: Upload build artifact
-      id: artifact-upload-step
-      uses: actions/upload-artifact@v4
-      with:
-        name: build
-        path: release/*.zip
-        compression-level: 0
-        retention-days: 0
-
     - name: Publish version
-      run: Tools/publish_github_artifact.py
+      run: Tools/publish_multi_request.py
       env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         PUBLISH_TOKEN: ${{ secrets.PUBLISH_TOKEN_PUBLIC }}
-        ARTIFACT_ID: ${{ steps.artifact-upload-step.outputs.artifact-id }}
         GITHUB_REPOSITORY: ${{ vars.GITHUB_REPOSITORY }}
         FORK_ID: ${{ vars.FORK_ID_PUBLIC }}
 
@@ -69,8 +59,3 @@ jobs:
 #      run: Tools/actions_changelog_rss.py
 #      env:
 #        CHANGELOG_RSS_KEY: ${{ secrets.CHANGELOG_RSS_KEY }}
-
-    - uses: geekyeggo/delete-artifact@v5
-      if: always()
-      with:
-        name: build
