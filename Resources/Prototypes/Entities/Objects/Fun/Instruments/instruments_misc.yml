@@ -161,7 +161,7 @@
   - type: EmitSoundOnLand
     sound:
        path: /Audio/Items/bikehorn.ogg
-  - type: Slippery
+  # - type: Slippery # No more slipping! *Cursed mod
   - type: StepTrigger
   - type: CollisionWake
     enabled: false

@@ -112,7 +112,7 @@
     mode: SnapgridCenter
   components:
   - type: Clickable
-  - type: Slippery
+  # - type: Slippery # No more slipping! *Cursed mod
   - type: Transform
     noRot: true
     anchored: true

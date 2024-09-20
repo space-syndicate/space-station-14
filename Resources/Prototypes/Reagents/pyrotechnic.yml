@@ -149,7 +149,7 @@
   parent: BasePyrotechnic
   desc: reagent-desc-welding-fuel
   physicalDesc: reagent-physical-desc-oily
-  slippery: true
+  slippery: false # No more slipping! *Cursed mod
   flavor: bitter
   flavorMinimum: 0.01
   color: "#a76b1c"

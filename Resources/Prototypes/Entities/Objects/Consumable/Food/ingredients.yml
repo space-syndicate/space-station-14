@@ -485,7 +485,7 @@
   components:
   - type: Sprite
     state: butter
-  - type: Slippery
+  # - type: Slippery # No more slipping! *Cursed mod
   - type: StepTrigger
     intersectRatio: 0.2
   - type: CollisionWake
@@ -604,7 +604,7 @@
     entries:
       burger:
         name: food-sequence-content-cheese
-      taco: 
+      taco:
         name: food-sequence-content-cheese
 
 - type: entity
@@ -663,7 +663,7 @@
     entries:
       burger:
         name: food-sequence-content-chevre
-      taco: 
+      taco:
         name: food-sequence-content-chevre
 
 - type: entity
@@ -720,7 +720,7 @@
     entries:
       burger:
         name: food-sequence-content-tofu
-      taco: 
+      taco:
         name: food-sequence-content-tofu
 
 - type: entity
@@ -785,7 +785,7 @@
     entries:
       burger:
         name: food-sequence-content-cocoa
-      taco: 
+      taco:
         name: food-sequence-content-cocoa
 
 - type: entity

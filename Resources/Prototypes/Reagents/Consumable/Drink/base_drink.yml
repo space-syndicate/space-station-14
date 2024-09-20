@@ -2,7 +2,7 @@
   id: BaseDrink
   group: Drinks
   abstract: true
-  slippery: true
+  slippery: false # No more slipping! *Cursed mod
   metabolisms:
     Drink:
       effects:
