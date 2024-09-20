@@ -39,6 +39,7 @@ corvax-hidden-desc-FireAxeFlaming-research = [color=#D381C9]В этот топо
 corvax-hidden-desc-EnergyShield-syndicate = [color=#e31735]Настоящий экзотический энергетический щит. В сложенном состоянии может поместиться даже в кармане.[/color]
 corvax-hidden-desc-EnergyShield-security = [color=#DE3A3A]Это настоящее вражеское энергетическое оружие! Перед вами энергощит![/color]
 corvax-hidden-desc-EnergyShield-cargo = [color=#A46106]Вам знакома эта технология. Это энергощит.[/color]
+corvax-hidden-desc-IllegalImplants-medical = [color=#52B4E9]Сверив серийные номера, вы понимаете, что это несертифицированный имплантер.[/color]
 corvax-hidden-desc-HoloparasiteInjector-syndicate = [color=#e31735]Сложнейшее произведение искусства, основанное на наномашинах, позволяющее пользователю стать носителем опаснейшего голопаразита.[/color]
 corvax-hidden-desc-HoloparasiteInjector-research = [color=#D381C9]Перед вами крайне сложная технология, основанная на наномашинах. Она позволяет создать голопаразита и связать его с носителем.[/color]
 corvax-hidden-desc-HoloClownInjector-syndicate = [color=#e31735]Смешнейшее произведение искусства, основанное на наномашинах, позволяющее пользователю стать носителем голоклоуна.[/color]
