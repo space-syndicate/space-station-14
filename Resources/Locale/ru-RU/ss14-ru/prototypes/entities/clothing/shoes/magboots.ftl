@@ -1,5 +1,7 @@
-ent-ClothingShoesBootsMag = магнитные сапоги
+ent-ClothingShoesBootsMagBase = магнитные сапоги
     .desc = Магнитные сапоги, используемые во время работы вне корабля, чтобы оставаться надёжно прикреплённым к поверхности.
+ent-ClothingShoesBootsMag = { ent-ClothingShoesBootsMagBase }
+  .desc = { ent-ClothingShoesBootsMagBase.desc }
 ent-ClothingShoesBootsMagAdv = продвинутые магнитные сапоги
     .desc = Новейшие магнитные ботинки, которые не замедляют движения своего владельца.
 ent-ClothingShoesBootsMagSci = { ent-ClothingShoesBootsMag }

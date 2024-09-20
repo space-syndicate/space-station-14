@@ -1,7 +1,7 @@
 - type: entity
   id: FrameStationRandomSpawner
   parent: MarkerBase
-  noSpawn: true # Used only for CorvaxFrame
+  categories: [ HideSpawnMenu, Spawner ] # Used only for CorvaxFrame
   components:
     - type: RandomSpawner
       rarePrototypes:
