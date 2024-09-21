@@ -55,17 +55,6 @@
 
 - type: entity
   parent: ClothingHeadBase
-  id: ClothingHeadHatCapWardenAlt
-  name: warden's police hat
-  description: It's a special blue hat issued to the Warden of a security force.
-  components:
-    - type: Sprite
-      sprite: Corvax/Clothing/Head/Hats/warden_alt.rsi
-    - type: Clothing
-      sprite: Corvax/Clothing/Head/Hats/warden_alt.rsi
-
-- type: entity
-  parent: ClothingHeadBase
   id: ClothingHeadHatBeretSecurityMedic
   name: security medic beret
   description: A robust beret with the medical insignia emblazoned on it. Uses reinforced fabric to offer sufficient protection.

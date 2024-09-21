@@ -20,8 +20,6 @@
       - id: ClothingOuterHardsuitWarden
       - id: HoloprojectorSecurity
       - id: BookSpaceLaw
-      - id: ClothingHeadHatCapWardenAlt # Corvax-SecFashion
-      - id: ClothingOuterCoatWardenAlt # Corvax-SecFashion
       - id: ClothingBackpackElectropack
         amount: 2
       - id: RemoteSignaller
@@ -36,7 +34,6 @@
     contents:
       - id: FlashlightSeclite
       - id: WeaponDisabler
-      - id: ClothingHeadHatCapWardenAlt # Corvax-SecFashion
       - id: ClothingBeltSecurityFilled
       - id: Flash
       - id: ClothingEyesGlassesSecurity
@@ -45,7 +42,6 @@
       - id: ClothingShoesBootsJack
       - id: ClothingOuterCoatWarden
       - id: ClothingOuterWinterWarden
-      - id: ClothingOuterCoatWardenAlt # Corvax-SecFashion
       - id: RubberStampWarden
       - id: DoorRemoteArmory
       - id: HoloprojectorSecurity
