@@ -11,4 +11,4 @@ mech-energy-display = Энергия: { $amount }%
 mech-energy-missing = Энергия: ОТСУТСТВУЕТ
 mech-slot-display = Доступно слотов: { $amount }
 mech-no-enter = Вы не можете пилотировать это.
-mech-eject-pilot-alert = { $user } is pulling the pilot out of the { $item }!
+mech-eject-pilot-alert = { $user } вытаскивает пилота из { $item }!
