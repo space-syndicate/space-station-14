@@ -108,8 +108,8 @@ accent-words-nymph-2 = Чурр...
 accent-words-nymph-3 = Чипи?
 accent-words-nymph-4 = Шрруп!
 # TomatoKiller
-accent-words-tomato-1 = Totato!
-accent-words-tomato-2 = Trotect
-accent-words-tomato-3 = Mastet?
-accent-words-tomato-4 = Reaty!
-accent-words-tomato-5 = Water...
+accent-words-tomato-1 = Тотат!
+accent-words-tomato-2 = Тощита
+accent-words-tomato-3 = Мастет?
+accent-words-tomato-4 = Готат!
+accent-words-tomato-5 = Вада...
