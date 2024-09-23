@@ -18,3 +18,12 @@
   components:
   - type: Sprite
     sprite: Corvax/Back/Duffels/ce.rsi
+
+- type: entity
+  parent: ClothingBackpackDuffel
+  id: ClothingBackpackDuffelPathologist
+  name: pathologist duffel bag
+  description: A large duffel bag for someone's heart.
+  components:
+  - type: Sprite
+    sprite: Corvax/Back/Duffels/pathologist.rsi

@@ -23,6 +23,17 @@
 
 - type: entity
   parent: ClothingUniformSkirtBase
+  id: ClothingUniformJumpskirtPathologist
+  name: pathologist's jumpskirt
+  description: A nice sterile jumpskirt for dead-silent moments.
+  components:
+  - type: Sprite
+    sprite: Corvax/Clothing/Uniforms/Jumpskirt/pathologist.rsi
+  - type: Clothing
+    sprite: Corvax/Clothing/Uniforms/Jumpskirt/pathologist.rsi
+
+- type: entity
+  parent: ClothingUniformSkirtBase
   id: ClothingUniformJumpskirtElegantMaid
   name: elegant maid uniform
   description: Call me master and bring me some beer.

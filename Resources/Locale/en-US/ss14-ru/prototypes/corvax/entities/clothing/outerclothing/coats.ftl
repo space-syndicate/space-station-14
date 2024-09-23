@@ -12,3 +12,7 @@ ent-ClothingOuterCoatCaptain = captain's jacket
     .desc = Captain's formal jacket, inlaid with gold.
 ent-ClothingOuterCoatHOP = head of personnel's jacket
     .desc = Business jacket of the HOP for a professional look.
+ent-ClothingOuterCoatLabPathologist = pathologist's lab coat
+    .desc = Lab coat for dark side. Has white stripes on the shoulders.
+ent-ClothingOuterCoatLabPathologistOpend = { ent-ClothingOuterCoatLabPathologist }
+    .desc = { ent-ClothingOuterCoatLabPathologist.desc }

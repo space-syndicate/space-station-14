@@ -1,0 +1,21 @@
+- type: entity
+  parent: ClothingOuterWinterCoat
+  id: ClothingOuterWinterPathologist
+  name: pathologist's winter coat
+  description: A coat specifically designed for work in cold and sterile places.
+  components:
+  - type: Sprite
+    sprite: Corvax/Clothing/OuterClothing/WinterCoats/coat.rsi
+    layers:
+    - state: icon
+  - type: Clothing
+    sprite: Corvax/Clothing/OuterClothing/WinterCoats/coat.rsi
+    clothingVisuals:
+      outerClothing:
+      - state: equipped-OUTERCLOTHING
+  - type: Item
+    inhandVisuals:
+      left:
+      - state: inhand-left
+      right:
+      - state: inhand-right

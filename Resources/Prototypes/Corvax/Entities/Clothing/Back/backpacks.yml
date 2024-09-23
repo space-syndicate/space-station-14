@@ -25,6 +25,15 @@
 
 - type: entity
   parent: ClothingBackpack
+  id: ClothingBackpackPathologist
+  name: pathologist backpack
+  description: A backpack for keeping itmes clean.
+  components:
+  - type: Sprite
+    sprite: Corvax/Back/Backpacks/pathologist.rsi
+
+- type: entity
+  parent: ClothingBackpack
   id: ClothingBackpackCE
   name: chief engineer backpack
   description: Technicially progressive backpack.

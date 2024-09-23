@@ -86,6 +86,21 @@
           Caustic: 0.75
 
 - type: entity
+  parent: ClothingOuterStorageFoldableBase
+  id: ClothingOuterCoatLabPathologist
+  name: pathologist lab coat
+  description: A suit for dark side of med.
+  components:
+  - type: Sprite
+    sprite:  Corvax/Clothing/OuterClothing/Coats/labcoat_pathologist.rsi
+  - type: Clothing
+    sprite:  Corvax/Clothing/OuterClothing/Coats/labcoat_pathologist.rsi
+  - type: Armor
+    modifiers:
+      coefficients:
+        Caustic: 0.75
+
+- type: entity
   parent: ClothingOuterStorageBase
   id: ClothingOuterCoatCaptain
   name: captain's jacket

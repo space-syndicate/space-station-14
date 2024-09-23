@@ -18,3 +18,12 @@
   components:
   - type: Sprite
     sprite: Corvax/Back/Satchels/ce.rsi
+
+- type: entity
+  parent: ClothingBackpackSatchel
+  id: ClothingBackpackSatchelPathologist
+  name: pathologist satchel
+  description: A sterile satchel for medical related needs.
+  components:
+  - type: Sprite
+    sprite: Corvax/Back/Satchels/pathologist.rsi

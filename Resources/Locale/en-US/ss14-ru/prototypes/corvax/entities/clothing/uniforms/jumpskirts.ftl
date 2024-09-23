@@ -16,3 +16,5 @@ ent-ClothingUniformJumpskirtHoSBlack = head of security's black skirt
     .desc = It's Head of Security's black skirt.
 ent-ClothingUniformJumpskirtRDClassical = research director's classical skirt
     .desc = It's Research Director's classical skirt.
+ent-ClothingUniformJumpskirtPathologist = pathologist's skirt
+    .desc = Looks elegantly clean.

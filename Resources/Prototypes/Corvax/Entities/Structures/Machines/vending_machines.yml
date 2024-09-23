@@ -1,0 +1,27 @@
+- type: entity
+  parent: VendingMachine
+  id: VendingMachinePatholoDrobe
+  name: PatholoDrobe
+  description: A vending machine rumoured to be capable of dispensing clothing for morgue personal.
+  components:
+  - type: VendingMachine
+    pack: PatholoDrobeInventory
+    offState: off
+    brokenState: broken
+    normalState: normal-unshaded
+  - type: Advertise
+    pack: PatholoDrobeAds
+  - type: SpeakOnUIClosed
+    pack: GenericVendGoodbyes
+  - type: Sprite
+    sprite: Corvax/Structures/Machines/VendingMachines/patholodrobe.rsi
+    layers:
+    - state: "off"
+      map: ["enum.VendingMachineVisualLayers.Base"]
+    - state: "off"
+      map: ["enum.VendingMachineVisualLayers.BaseUnshaded"]
+      shader: unshaded
+    - state: panel
+      map: ["enum.WiresVisualLayers.MaintenancePanel"]
+  - type: AccessReader
+    access: [["Medical"]]
