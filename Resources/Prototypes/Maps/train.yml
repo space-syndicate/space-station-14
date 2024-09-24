@@ -4,8 +4,10 @@
   mapPath: /Maps/train.yml
   maxRandomOffset: 0
   randomRotation: false
-  minPlayers: 35
-  maxPlayers: 70
+  # Corvax-start
+  minPlayers: 20
+  maxPlayers: 50
+  # Corvax-end
   stations:
     Train:
       stationProto: StandardNanotrasenStation
