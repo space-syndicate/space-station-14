@@ -28,31 +28,31 @@ book-text-ame-scribbles =
     Поставите больше - и это приведёт к перегреву ДАМ, что в конечном итоге вызовет взрыв. Давайте без этого.
     Не забывайте заправлять ДАМ, так как топливо имеет тенденцию заканчиваться в самый неподходящий момент.
 book-text-agrichemkit-manual =
-    Thank you for choosing the safe-for-all-ages NanoTrasen Agri-Chem is Fun! chemistry kit, the best learning-adjacent toy of 2468! Be prepared to discover all about the biggest innovations in agriculture since people buried fish with their corn seeds.
+    Спасибо, что выбрали безопасный для любого возраста набор химика от Nanotrasen "АгроХимия это весело" - лучшую обучающую игру 2468 года! Приготовьтесь узнать всё о крупнейших инновациях сельского хозяйства с поры, как люди закапывали рыбу вместе с семенами кукурузы.
     
-    Contents:
-    5 handily labeled 30u bottles, 1 each of nitrogen, phosphorus, hydrogen, potassium, and ethanol
-    2 Safe-T-Fun(TM) sized 5u vials, 1 each of chlorine and radium
-    1 30u empty bottle, ready for your experiments.
+    Содержание:
+    5 удобно промаркированных бутылочек по 30 ед., содержащих азот, фосфор, водород, калий и этанол
+    2 пробирки Безопасно-Весело(TM), содержащих по 5 ед. хлора и радия
+    1 пустая бутылочка объёмом 30ед., готовая к проведению экспериментов.
     
-    First Experiment: EZ Nutrient
-    To create EZ Nutrient, a fertilizer densely packed with nutrients required for healthy plants, mix equal parts nitrogen, phosphorus, and potassium. To make a full bottle, thats 10u of each.
-    A little bottle of EZ Nutrient replaces a big stack of produce you'd otherwise compost to keep your plants growing strong. And crops you compost are crops you didn't make a profit on, so keep that EZ Nutrient flowing.
+    Первый эксперимент: EZ-нутриенты
+    Чтобы создать EZ-нутриенты, насыщенное питательными веществами удобрение, необходимое для здоровых растений, смешайте равные доли азота, фосфора и калия. Чтобы сделать полную бутылочку, добавьте каждого по 10 единиц.
+    Маленькая бутылочка EZ-нутриентов заменяет большую кучу фруктов и овощей, которые пришлось бы закомпостировать, чтобы ваши растения росли сильными. А урожай, который вы закомпостировали - это урожай, на котором вы не заработали, так что продолжайте использовать EZ-нутриенты.
     
-    Second Experiment: Ammonia and Diethylamine
-    Mix 3 parts hydrogen to 1 part nitrogen to make ammonia. It's a healthy, nutritious treat for your crops that aren't at their best. 
-    But if you want to impress the judges at your local NanoTrasen-sponsored County Fair, you'll need to add an equal amount of ethanol to your ammonia.
-    This will mix into Diethylamine, a miracle fertilizer that can make plants grow faster AND live longer! Keep the crops you love with you longer thanks to Diethylamine.
+    Второй эксперимент: Аммиак и диэтиламин
+    Смешайте 3 доли водорода с 1 долей азота, чтобы получить аммиак. Это полезное и питательное средство для ваших культур, находящихся не в лучшем состоянии.
+    Но если вы хотите произвести впечатление на судей местной окружной ярмарке, организованной компанией Nanotrasen, вам нужно добавить к аммиаку такое же количество этанола.
+    В результате смешивания получится диэтиламин - чудо-удобрение, способное заставить растения расти быстрее и жить дольше! Благодаря диэтиламину любимые вами растения будут жить дольше.
+
+    Третий эксперимент: Нестабильный мутаген
+    Когда вы будете готовы показать всем, что вы лучший ботаник на станции, вам нужно будет смешать немного нестабильного мутагена и надеяться на лучшее. Несмотря на пугающее название, нестабильный мутаген совершенно безопасен, если использовать его на растениях, но сами привлекательно-зелёный химикат не пейте.
+
+    Смешайте равные доли радия, фосфора и хлора, чтобы получить ярко-зелёную партию нестабильного мутагена - безопасного и веселого способа извлечь максимум пользы из своей фермы. 15 ед., которые вы получите с помощью этого набора, могут стать вашим знакомством с агрохимией!
+    Нестабильный мутаген может оказывать самые разные эффекты на растения, включая резкое изменение всех параметров роста, получение продуктов, насыщенных полезными лекарственными веществами, растений, светящихся в темноте, или создание совершенно новых видов.
     
-    Third Experiment: Unstable Mutagen
-    When you're ready to show everyone you're the greatest botanist on the station, you'll need to mix up some unstable mutagen and hope for the best. Despite the scary name, unstable mutagen is entirely safe when applied to plants, but do not drink the appealingly green chemical yourself.
-    
-    Mix equal parts radium, phosphorus, and chlorine together to get a bright green batch of unstable mutagen, the safe and fun way to get the most of your farm. The 15u this kit lets you make could be your introduction to agrichemical stardom!
-    Unstable mutagen can have a wide variety of effects on plant life, including drastic changes to all sorts of growth parameters, produce full of helpful pharmaceuticals, plants that glow in the dark, or creating entirely new species.
-    
-    Each individual plant responds to unstable mutagen differently, so you may want to use small doses on multiple crops and try to crossbreed the best traits from each of those. Applying multiple doses to one plant can stack multiple changes and make it harder to single out desirable traits.
-    Unstable mutagen is entirely safe when used as a fertilizer, and NanoTrasen takes no responsibility for dead crops, excessive water bills, newly sentient plants asking existential questions, or flora-strangled farmhands that may coincidentally occur while using it.
-    Do not drink unstable mutagen. Wash your hands thoroughly after handing. Wash your eyes if you have looked at unstable mutagen for over 30 minutes in a 24 hour period. Store in a dark room between 293–295K. Do not use on corporate holidays. If you begin hearing voices telling you to drink unstable mutagen, please contact your doctor, head of personnel, or exorcist.
+    Каждое отдельное растение по-разному реагирует на нестабильный мутаген, поэтому вы можете использовать небольшие дозы на нескольких культурах и попытаться скрестить лучшие черты с каждой из них. Применение нескольких доз на одном растении может вызвать множество изменений и затруднить выделение желаемых признаков.
+    Нестабильный мутаген абсолютно безопасен при использовании в качестве удобрения, и Nanotrasen не несёт ответственности за погибшие посевы, чрезмерные счета за воду, новые разумные растения, задающие экзистенциальные вопросы, а также обвитые флорой руки фермеров, что может случайно произойти при его использовании.
+    Не пейте нестабильный мутаген. Тщательно мойте руки после работы с ним. Промойте глаза, если вы смотрели на нестабильный мутаген более 30 минут в течение 24 часов. Храните в тёмном помещении при температуре 293-295K. Не используйте в дни корпоративных праздников. Если вы начнёте слышать голоса, уговаривающие вас выпить нестабильный мутаген, обратитесь к врачу, главе персонала или экзорцисту.
 book-text-combat-bakery-kit =
     Спасибо, что выбрали наш набор боевой выпечки!
     В набор входят два (2) запатентованных CyberSun метательных круассана и один (1) патентованный меч-багет.
