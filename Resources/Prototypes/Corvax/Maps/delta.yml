@@ -59,6 +59,7 @@
             Paramedic: [ 1, 1 ]
             #silicon
             Borg: [ 2, 3 ]
+            StationAi: [ 1, 1 ]
         - type: StationGoal
           goals:
           - Shuttle
