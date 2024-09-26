@@ -51,10 +51,12 @@
   parent: BaseGameRule
   abstract: true
   components:
-  - type: GameRule
-    delay:
-      min:  10
-      max:  20
+    - type: GameRule
+      delay:
+# Corvax-MRP-Start
+        min:  610 # 10 min
+        max:  900 # 15 min
+# Corvax-MRP-End
 
 - type: entity
   id: BaseStationEventLongDelay
@@ -159,8 +161,10 @@
   id: DragonSpawn
   components:
   - type: StationEvent
-    weight: 6.5
-    earliestStart: 40
+  #Corvax-MRP
+    weight: 4.5
+    earliestStart: 80
+  #Corvax-MRP
     reoccurrenceDelay: 20
     minimumPlayers: 20
     duration: null
@@ -467,8 +471,10 @@
   id: LoneOpsSpawn
   components:
   - type: StationEvent
+  #Corvax-MRP-Start
     earliestStart: 35
-    weight: 5.5
+    weight: 4.5
+  #Corvax-MRP-End
     minimumPlayers: 20
     duration: 1
   - type: RuleGrids
