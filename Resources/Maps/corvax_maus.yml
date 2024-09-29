@@ -8861,6 +8861,42 @@ entities:
             5694: -6.3272142,-50.126728
         - node:
             cleanable: True
+            color: '#FFFFFFFF'
+            id: burnt1
+          decals:
+            5705: -77,-10
+            5706: -73,-9
+            5707: -66,8
+        - node:
+            cleanable: True
+            color: '#FFFFFFFF'
+            id: burnt2
+          decals:
+            5708: -62,18
+            5709: -57,18
+            5710: -64,19
+            5711: -65,18
+            5712: -66,11
+        - node:
+            cleanable: True
+            color: '#FFFFFFFF'
+            id: burnt3
+          decals:
+            5699: -65,-48
+            5700: -65,-48
+            5701: -65,-48
+        - node:
+            cleanable: True
+            color: '#FFFFFFFF'
+            id: burnt4
+          decals:
+            5702: -65,-49
+            5703: -64,-46
+            5704: -60,-49
+            5713: -62,1
+            5714: -51,7
+        - node:
+            cleanable: True
             color: '#E900005D'
             id: bushsnowa1
           decals:
@@ -10542,7 +10578,8 @@ entities:
           -15,-13:
             0: 47283
           -14,-16:
-            0: 61536
+            0: 61504
+            7: 32
           -14,-15:
             0: 65520
           -14,-14:
@@ -11000,6 +11037,21 @@ entities:
           moles:
           - 21.824879
           - 82.10312
+          - 0
+          - 0
+          - 0
+          - 0
+          - 0
+          - 0
+          - 0
+          - 0
+          - 0
+          - 0
+        - volume: 2500
+          temperature: 293.15
+          moles:
+          - 23.57087
+          - 88.67137
           - 0
           - 0
           - 0
@@ -20051,6 +20103,14 @@ entities:
     components:
     - type: Transform
       pos: -76.5,-7.5
+      parent: 2
+- proto: BarSignMaidCafe
+  entities:
+  - uid: 2524
+    components:
+    - type: Transform
+      rot: 1.5707963267948966 rad
+      pos: -32.5,-30.5
       parent: 2
 - proto: BaseAdvancedPen
   entities:
@@ -33835,10 +33895,8 @@ entities:
   - uid: 6305
     components:
     - type: Transform
-      parent: 5562
-    - type: Physics
-      canCollide: False
-    - type: InsideEntityStorage
+      pos: -54.5,-62.5
+      parent: 2
 - proto: CableHV
   entities:
   - uid: 495
@@ -51680,10 +51738,8 @@ entities:
   - uid: 5879
     components:
     - type: Transform
-      parent: 5562
-    - type: Physics
-      canCollide: False
-    - type: InsideEntityStorage
+      pos: -54.5,-62.5
+      parent: 2
 - proto: ClothingHeadHatHardhatArmored
   entities:
   - uid: 5933
@@ -51939,10 +51995,8 @@ entities:
   - uid: 6163
     components:
     - type: Transform
-      parent: 5562
-    - type: Physics
-      canCollide: False
-    - type: InsideEntityStorage
+      pos: -54.5,-62.5
+      parent: 2
 - proto: ClothingMaskBat
   entities:
   - uid: 5947
@@ -52333,10 +52387,8 @@ entities:
   - uid: 5563
     components:
     - type: Transform
-      parent: 5562
-    - type: Physics
-      canCollide: False
-    - type: InsideEntityStorage
+      pos: -54.5,-62.5
+      parent: 2
 - proto: ClothingNeckScarfStripedSyndieRed
   entities:
   - uid: 10219
@@ -52904,6 +52956,13 @@ entities:
     - type: Physics
       canCollide: False
     - type: InsideEntityStorage
+- proto: ClothingShoesColorGreen
+  entities:
+  - uid: 19129
+    components:
+    - type: Transform
+      pos: -54.5,-62.5
+      parent: 2
 - proto: ClothingShoesColorOrange
   entities:
   - uid: 20356
@@ -53153,6 +53212,13 @@ entities:
       parent: 19921
     - type: Physics
       canCollide: False
+- proto: ClothingUniformJumpsuitColorDarkGreen
+  entities:
+  - uid: 19130
+    components:
+    - type: Transform
+      pos: -54.5,-62.5
+      parent: 2
 - proto: ClothingUniformJumpsuitColorPink
   entities:
   - uid: 18872
@@ -54635,14 +54701,33 @@ entities:
     - type: Transform
       pos: -54.5,-62.5
       parent: 2
+    - type: Fixtures
+      fixtures:
+        fix1:
+          shape: !type:PolygonShape
+            radius: 0.01
+            vertices:
+            - -0.4,-0.4
+            - 0.4,-0.4
+            - 0.4,0.29
+            - -0.4,0.29
+          mask:
+          - Impassable
+          - HighImpassable
+          - LowImpassable
+          layer:
+          - BulletImpassable
+          - Opaque
+          density: 50
+          hard: True
+          restitution: 0
+          friction: 0.4
     - type: EntityStorage
       air:
         volume: 200
         immutable: False
         temperature: 293.14673
         moles:
-        - 1.7459903
-        - 6.568249
         - 0
         - 0
         - 0
@@ -54653,20 +54738,12 @@ entities:
         - 0
         - 0
         - 0
-    - type: ContainerContainer
-      containers:
-        entity_storage: !type:Container
-          showEnts: False
-          occludes: True
-          ents:
-          - 5563
-          - 5879
-          - 6163
-          - 6305
-        paper_label: !type:ContainerSlot
-          showEnts: False
-          occludes: True
-          ent: null
+        - 0
+        - 0
+      open: True
+      removedMasks: 20
+    - type: PlaceableSurface
+      isPlaceable: True
   - uid: 7198
     components:
     - type: Transform
@@ -91761,6 +91838,21 @@ entities:
     - type: Transform
       pos: -70.5,-34.5
       parent: 2
+  - uid: 19124
+    components:
+    - type: Transform
+      pos: -63.5,-94.5
+      parent: 2
+  - uid: 19125
+    components:
+    - type: Transform
+      pos: -111.5,-27.5
+      parent: 2
+  - uid: 19126
+    components:
+    - type: Transform
+      pos: -52.5,26.5
+      parent: 2
   - uid: 20453
     components:
     - type: Transform
@@ -91840,6 +91932,21 @@ entities:
     - type: Transform
       pos: -90.5,-45.5
       parent: 2
+  - uid: 19122
+    components:
+    - type: Transform
+      pos: 15.5,-31.5
+      parent: 2
+  - uid: 19123
+    components:
+    - type: Transform
+      pos: 4.5,-27.5
+      parent: 2
+  - uid: 19128
+    components:
+    - type: Transform
+      pos: -36.5,12.5
+      parent: 2
   - uid: 20837
     components:
     - type: Transform
@@ -91887,6 +91994,11 @@ entities:
     components:
     - type: Transform
       pos: -90.5,-43.5
+      parent: 2
+  - uid: 19127
+    components:
+    - type: Transform
+      pos: -33.5,22.5
       parent: 2
 - proto: Mannequin
   entities:
@@ -100962,12 +101074,6 @@ entities:
       parent: 2
 - proto: RandomSpawner
   entities:
-  - uid: 2524
-    components:
-    - type: Transform
-      rot: 3.141592653589793 rad
-      pos: 12.5,-5.5
-      parent: 2
   - uid: 5476
     components:
     - type: Transform
@@ -101126,12 +101232,6 @@ entities:
       rot: 3.141592653589793 rad
       pos: -60.5,-37.5
       parent: 2
-  - uid: 20847
-    components:
-    - type: Transform
-      rot: 3.141592653589793 rad
-      pos: -46.5,-27.5
-      parent: 2
   - uid: 20848
     components:
     - type: Transform
@@ -101162,29 +101262,11 @@ entities:
       rot: 3.141592653589793 rad
       pos: -14.5,-28.5
       parent: 2
-  - uid: 20853
-    components:
-    - type: Transform
-      rot: 3.141592653589793 rad
-      pos: -12.5,-22.5
-      parent: 2
-  - uid: 20854
-    components:
-    - type: Transform
-      rot: 3.141592653589793 rad
-      pos: 4.5,-22.5
-      parent: 2
   - uid: 20855
     components:
     - type: Transform
       rot: 3.141592653589793 rad
       pos: 16.5,-16.5
-      parent: 2
-  - uid: 20856
-    components:
-    - type: Transform
-      rot: 3.141592653589793 rad
-      pos: 15.5,-7.5
       parent: 2
   - uid: 20857
     components:
@@ -101221,24 +101303,6 @@ entities:
     - type: Transform
       rot: 1.5707963267948966 rad
       pos: -58.5,-55.5
-      parent: 2
-  - uid: 20867
-    components:
-    - type: Transform
-      rot: 1.5707963267948966 rad
-      pos: -46.5,-56.5
-      parent: 2
-  - uid: 20868
-    components:
-    - type: Transform
-      rot: 1.5707963267948966 rad
-      pos: -39.5,-59.5
-      parent: 2
-  - uid: 20869
-    components:
-    - type: Transform
-      rot: 1.5707963267948966 rad
-      pos: -49.5,-22.5
       parent: 2
   - uid: 20870
     components:
@@ -104437,6 +104501,13 @@ entities:
       color: '#8B008BFF'
       radius: 2.5
       offset: -0.625,0
+- proto: ShardCrystalGreen
+  entities:
+  - uid: 19131
+    components:
+    - type: Transform
+      pos: -54.5,-62.5
+      parent: 2
 - proto: ShardGlass
   entities:
   - uid: 9242
