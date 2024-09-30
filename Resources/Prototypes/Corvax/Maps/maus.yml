@@ -14,7 +14,7 @@
           mapNameTemplate: '{0} Маус {1}'
           nameGenerator:
            !type:NanotrasenNameGenerator
-            prefixCreator: "Z"
+            prefixCreator: "MG"
         - type: StationEmergencyShuttle
           emergencyShuttlePath: /Maps/Shuttles/emergency_maus.yml
         - type: StationJobs
