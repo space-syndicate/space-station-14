@@ -11805,6 +11805,11 @@ entities:
     - type: Transform
       pos: -32.5,-28.5
       parent: 2
+  - uid: 10934
+    components:
+    - type: Transform
+      pos: 33.5,-28.5
+      parent: 2
 - proto: AtmosFixBlockerMarker
   entities:
   - uid: 10223
