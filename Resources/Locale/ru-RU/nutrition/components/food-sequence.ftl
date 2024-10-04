@@ -76,6 +76,7 @@ food-sequence-content-berries = ягодами
 food-sequence-content-spacemans-trumpet = космической трубкой
 food-sequence-content-cherry = вишней
 food-sequence-content-snail = улиткой
+food-sequence-content-anomaly-berry = anomaly berry
 
 # BURGERS
 
@@ -115,6 +116,7 @@ food-sequence-burger-content-suppermatter = супер
 food-sequence-burger-content-hamster = хомяко
 food-sequence-burger-content-berries = ягод
 food-sequence-burger-content-spacemans-trumpet = космотруб
+food-sequence-burger-content-anomaly-berry = anom
 food-sequence-burger-content-extradimensional-orange = 3d
 food-sequence-burger-content-world-pea = peace
 

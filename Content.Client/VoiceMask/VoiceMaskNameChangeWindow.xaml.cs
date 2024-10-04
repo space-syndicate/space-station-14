@@ -44,8 +44,6 @@ public sealed partial class VoiceMaskNameChangeWindow : FancyWindow
             ReloadVoices(IoCManager.Resolve<IPrototypeManager>());
         }
         // Corvax-TTS-End
-
-        AddVerbs();
     }
 
     public void ReloadVerbs(IPrototypeManager proto)
@@ -57,7 +55,7 @@ public sealed partial class VoiceMaskNameChangeWindow : FancyWindow
         _verbs.Sort((a, b) => a.Item1.CompareTo(b.Item1));
     }
 
-    private void AddVerbs()
+    public void AddVerbs()
     {
         SpeechVerbSelector.Clear();
 
