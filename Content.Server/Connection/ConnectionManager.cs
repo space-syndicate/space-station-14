@@ -425,7 +425,7 @@ namespace Content.Server.Connection
         // Corvax-Queue-Start: Make these conditions in one place, for checks in the connection and in the queue
         public async Task<bool> HavePrivilegedJoin(NetUserId userId)
         {
-            var adminBypass = _cfg.GetCVar(CCVars.AdminBypassMaxPlayers) && await _dbManager.GetAdminDataForAsync(userId) != null;
+            var adminBypass = _cfg.GetCVar(CCVars.AdminBypassMaxPlayers) && await _db.GetAdminDataForAsync(userId) != null;
             var havePriorityJoin = _sponsorsMgr != null && _sponsorsMgr.HaveServerPriorityJoin(userId); // Corvax-Sponsors
             var wasInGame = EntitySystem.TryGet<GameTicker>(out var ticker) &&
                             ticker.PlayerGameStatuses.TryGetValue(userId, out var status) &&
