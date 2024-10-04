@@ -18,4 +18,4 @@ stamp-component-stamped-name-trader = Торговец
 stamp-component-stamped-name-syndicate = Синдикат
 stamp-component-stamped-name-ce = Старший инженер
 stamp-component-stamped-name-greytide = Грейтайд
-stamp-component-stamped-name-psychologist = Psychologist
+stamp-component-stamped-name-psychologist = Психолог

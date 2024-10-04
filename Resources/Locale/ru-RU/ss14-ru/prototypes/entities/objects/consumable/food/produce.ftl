@@ -155,5 +155,5 @@ ent-FoodCherry = вишня
     .desc = Сочная красная вишня с косточкой внутри.
 ent-TrashCherryPit = вишнёвая косточка
     .desc = { ent-FoodInjectableBase.desc }
-ent-FoodAnomalyBerry = anomaly berry
-    .desc = A strange blue fruit. Something about it doesn't seem right.
+ent-FoodAnomalyBerry = аномальная ягода
+    .desc = Странная синяя ягода. Что-то в ней не так.
