@@ -17,3 +17,14 @@ ui-vote-map-tie = Ничья при голосовании за карту! Вы
 ui-vote-map-win = { $winner } выиграла голосование о выборе карты!
 ui-vote-map-notlobby = Голосование о выборе карты действует только в предраундовом лобби!
 ui-vote-map-notlobby-time = Голосование о выборе карты действует только в предраундовом лобби, когда осталось { $time }!
+# Votekick votes
+ui-vote-votekick-unknown-initiator = A player
+ui-vote-votekick-unknown-target = Unknown Player
+ui-vote-votekick-title = { $initiator } has called a votekick for user: { $targetEntity }. Reason: { $reason }
+ui-vote-votekick-yes = Yes
+ui-vote-votekick-no = No
+ui-vote-votekick-abstain = Abstain
+ui-vote-votekick-success = Votekick for { $target } succeeded. Votekick reason: { $reason }
+ui-vote-votekick-failure = Votekick for { $target } failed. Votekick reason: { $reason }
+ui-vote-votekick-not-enough-eligible = Not enough eligible voters online to start a votekick: { $voters }/{ $requirement }
+ui-vote-votekick-server-cancelled = Votekick for { $target } was cancelled by the server.

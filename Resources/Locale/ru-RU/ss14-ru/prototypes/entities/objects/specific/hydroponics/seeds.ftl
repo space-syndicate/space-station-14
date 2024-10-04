@@ -139,3 +139,5 @@ ent-FakeCapfruitSeeds = { ent-RealCapfruitSeeds }
     .desc = { ent-RealCapfruitSeeds.desc }
 ent-CherrySeeds = пакет семян (вишня)
     .desc = { ent-SeedBase.desc }
+ent-AnomalyBerrySeeds = packet of anomaly berry seeds
+    .desc = { ent-SeedBase.desc }
