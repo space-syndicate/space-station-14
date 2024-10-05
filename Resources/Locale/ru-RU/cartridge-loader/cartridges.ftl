@@ -34,7 +34,7 @@ wanted-list-status-label = [color=darkgray]статус:[/color] { $status ->
         [wanted] [color=red]разыскивается[/color]
         [detained] [color=#b18644]под арестом[/color]
         [paroled] [color=green]освобождён по УДО[/color]
-        [discharged] [color=green]Подозревается[/color]
+        [discharged] [color=green]освобождён[/color]
        *[other] нет
     }
 wanted-list-history-table-time-col = Время
