@@ -40,7 +40,7 @@ wires-board-name-fatextractor = Экстрактор жира
 wires-board-name-flatpacker = Упаковщик
 wires-board-name-spaceheater = Термостат
 wires-board-name-jukebox = Музыкальный автомат
-wires-board-name-computer = Computer
+wires-board-name-computer = Компьютер
 
 # names that get displayed in the wire hacking hud & admin logs.
 

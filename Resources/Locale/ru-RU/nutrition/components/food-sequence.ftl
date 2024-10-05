@@ -76,7 +76,7 @@ food-sequence-content-berries = ягодами
 food-sequence-content-spacemans-trumpet = космической трубкой
 food-sequence-content-cherry = вишней
 food-sequence-content-snail = улиткой
-food-sequence-content-anomaly-berry = anomaly berry
+food-sequence-content-anomaly-berry = аномальной ягодой
 
 # BURGERS
 
@@ -88,37 +88,37 @@ food-sequence-burger-content-bear = медве
 food-sequence-burger-content-crab = крабо
 food-sequence-burger-content-penguin = пингви
 food-sequence-burger-content-corgi = корги
-food-sequence-burger-content-goliath = голи
+food-sequence-burger-content-goliath = голиафо
 food-sequence-burger-content-rat = крысо
 food-sequence-burger-content-lizard = ящеро
 food-sequence-burger-content-plant = растене
 food-sequence-burger-content-rotten = мусоро
 food-sequence-burger-content-spider = паутино
 food-sequence-burger-content-carrot = моркво
-food-sequence-burger-content-cabbage = капуст
+food-sequence-burger-content-cabbage = капусто
 food-sequence-burger-content-garlic = чесно
 food-sequence-burger-content-pineapple = ананасо
 food-sequence-burger-content-onion = луко
 food-sequence-burger-content-ambrosia = амбро
-food-sequence-burger-content-galaxy = галакси
+food-sequence-burger-content-galaxy = галакто
 food-sequence-burger-content-glasstle = стекло
 food-sequence-burger-content-gatfruit = гат
 food-sequence-burger-content-capfruit = писто
-food-sequence-burger-content-rice = рис
+food-sequence-burger-content-rice = рисо
 food-sequence-burger-content-soy = сой
 food-sequence-burger-content-koibean = кои
-food-sequence-burger-content-watermelon = арбуз
-food-sequence-burger-content-holymelon = holy
-food-sequence-burger-content-cannabis = смех
-food-sequence-burger-content-rainbow-cannabis = СМЕХ
+food-sequence-burger-content-watermelon = арбузо
+food-sequence-burger-content-holymelon = свято
+food-sequence-burger-content-cannabis = смехо
+food-sequence-burger-content-rainbow-cannabis = СМЕХО
 food-sequence-burger-content-tobacco = табако
 food-sequence-burger-content-suppermatter = супер
 food-sequence-burger-content-hamster = хомяко
 food-sequence-burger-content-berries = ягод
-food-sequence-burger-content-spacemans-trumpet = космотруб
-food-sequence-burger-content-anomaly-berry = anom
-food-sequence-burger-content-extradimensional-orange = 3d
-food-sequence-burger-content-world-pea = peace
+food-sequence-burger-content-spacemans-trumpet = космотрубо
+food-sequence-burger-content-anomaly-berry = аномо
+food-sequence-burger-content-extradimensional-orange = три-дэ
+food-sequence-burger-content-world-pea = миро
 
 # TACO
 

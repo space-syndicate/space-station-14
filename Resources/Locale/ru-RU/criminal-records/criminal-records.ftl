@@ -37,7 +37,7 @@ criminal-records-console-released = { $name } отпустили, ответст
 criminal-records-console-not-wanted = { $name } больше не находится в розыске, ответственный: { $officer }.
 criminal-records-console-paroled = { $name } освободили по УДО, ответственный: { $officer }.
 criminal-records-console-not-parole = { $name } лишили права на УДО, ответственный: { $officer }.
-criminal-records-console-unknown-officer = <неизвестный офицер>
+criminal-records-console-unknown-officer = <неизвестный>
 
 ## Filters
 

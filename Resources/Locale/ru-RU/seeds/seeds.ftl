@@ -138,5 +138,5 @@ seeds-capfruit-name = пистофрукт
 seeds-capfruit-display-name = пистофруктовое дерево
 seeds-cherry-name = вишня
 seeds-cherry-display-name = вишнёвое дерево
-seeds-anomaly-berry-name = anomaly berry
-seeds-anomaly-berry-display-name = anomaly berries
+seeds-anomaly-berry-name = аномальные ягоды
+seeds-anomaly-berry-display-name = куст аномальных ягод
