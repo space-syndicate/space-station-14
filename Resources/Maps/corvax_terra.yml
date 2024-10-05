@@ -52633,7 +52633,7 @@ entities:
     - type: Physics
       canCollide: False
     - type: InsideEntityStorage
-- proto: SheetPaper
+- proto: SheetPrinter
   entities:
   - uid: 5038
     components:
@@ -52646,7 +52646,7 @@ entities:
     - type: Transform
       pos: 32.596504,31.189148
       parent: 2
-- proto: SheetPaper1
+- proto: SheetPrinter1
   entities:
   - uid: 5040
     components:

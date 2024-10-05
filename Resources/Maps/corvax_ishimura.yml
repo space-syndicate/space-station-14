@@ -151680,7 +151680,7 @@ entities:
     - type: Transform
       pos: -65.719406,-17.505688
       parent: 2
-- proto: SheetPaper
+- proto: SheetPrinter
   entities:
   - uid: 18067
     components:
@@ -151724,7 +151724,7 @@ entities:
         ===================================================
                       Подпись: Оператор ЦК, Доулсон-Младший
                             [italic]место для печатей:[/italic]
-- proto: SheetPaper1
+- proto: SheetPrinter1
   entities:
   - uid: 18068
     components:
