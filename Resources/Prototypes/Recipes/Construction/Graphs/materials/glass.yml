@@ -102,6 +102,33 @@
             - material: Uranium
               amount: 1
 
+        - to: SheetSRPGlass # cursed
+          completed:
+            - !type:SetStackCount
+              amount: 1
+          steps:
+            - material: ReinforcedPlasmaGlass
+              amount: 2
+            - material: Plasma
+              amount: 1
+            - material: Gold
+              amount: 10
+            - material: Plasteel
+              amount: 2
+        - to: SheetSRPGlass1 # cursed
+          completed:
+            - !type:SetStackCount
+              amount: 1
+          steps:
+            - material: ReinforcedGlass
+              amount: 1
+            - material: Plasma
+              amount: 2
+            - material: Gold
+              amount: 10
+            - material: Plasteel
+              amount: 2
+
     - node: SheetGlass
       entity: SheetGlass
 
@@ -120,12 +147,18 @@
     - node: SheetRPGlass1
       entity: SheetRPGlass
 
+    - node: SheetSRPGlass
+      entity: SheetSRPGlass
+
+    - node: SheetSRPGlass1
+      entity: SheetSRPGlass
+
     - node: SheetUGlass
       entity: SheetUGlass
 
     - node: SheetRUGlass
       entity: SheetRUGlass
-      
+
     - node: SheetClockworkGlass
       entity: SheetClockworkGlass
 

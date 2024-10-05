@@ -1,6 +1,6 @@
 - type: material
   id: SuperReinforcedPlasmaGlass
-  stackEntity: MaterialSuperReinforcedPlasmaGlass1
+  stackEntity: SheetSRPGlass1
   name: сверхпрочное плазменное стекло
   unit: materials-unit-sheet
   icon: { sprite: Objects/Materials/Sheets/glass.rsi, state: rpglass }
@@ -24,19 +24,29 @@
   category: construction-category-materials
   icon: { sprite: Objects/Materials/Sheets/glass.rsi, state: rpglass }
   objectType: Item
+- type: construction
+  name: сверхпрочное плазменное стекло
+  description: Лист сверхпрочной плазмы (гори в аду тот огузок, который поставит это окно не туда)
+  id: SheetSRPGlass1
+  graph: Glass
+  startNode: start
+  targetNode: SheetSRPGlass1
+  category: construction-category-materials
+  icon: { sprite: Objects/Materials/Sheets/glass.rsi, state: rpglass }
+  objectType: Item
 
 - type: entity
-  parent: SheetSRPGlass
+  parent: SheetRPGlass
   id: SheetSRPGlass
-  name: reinforced plasma glass
-  description: A reinforced sheet of translucent plasma.
+  name: сверхпрочное плазменное стекло
+  description: Плазменное стекло. Сверхпрочное.
   suffix: Full
   components:
   - type: PhysicalComposition
     materialComposition:
       SuperReinforcedPlasmaGlass: 100
   - type: Stack
-    stackType: ReinforcedPlasmaGlass
+    stackType: SuperReinforcedPlasmaGlass
     baseLayer: base
     layerStates:
     - rpglass
@@ -62,7 +72,7 @@
 - type: entity
   parent: SheetSRPGlass
   id: SheetSRPGlass1
-  name: reinforced plasma glass
+  name: сверхпрочное плазменное стекло
   suffix: Single
   components:
   - type: Sprite
@@ -72,8 +82,8 @@
     count: 1
 - type: entity
   parent: SheetSRPGlass
-  id: SheetSRPGlass1
-  name: reinforced plasma glass
+  id: SheetSRPGlass30
+  name: сверхпрочное плазменное стекло
   suffix: Full
   components:
   - type: Sprite

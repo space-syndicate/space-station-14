@@ -641,7 +641,7 @@
   - type: Tag
     tags:
     - Slice
-  - type: FoodSequenceElement
+  # - type: FoodSequenceElement
     entries:
       burger:
         name: food-sequence-content-cheese
@@ -700,7 +700,7 @@
   - type: Tag
     tags:
     - Slice
-  - type: FoodSequenceElement
+  # - type: FoodSequenceElement
     sprite:
       sprite: Objects/Consumable/Food/ingredients.rsi
       state: chevredisk
@@ -757,7 +757,7 @@
   - type: Tag
     tags:
     - Slice
-  - type: FoodSequenceElement
+  # - type: FoodSequenceElement
     sprite:
       sprite: Objects/Consumable/Food/ingredients.rsi
       state: tofu
@@ -822,7 +822,7 @@
   - type: Tag
     tags:
       - Ingredient
-  - type: FoodSequenceElement
+  # - type: FoodSequenceElement
     sprite:
       sprite: Objects/Specific/Hydroponics/cocoa.rsi
       state: produce-beans

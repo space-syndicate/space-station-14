@@ -5,9 +5,9 @@
   components:
   - type: Sprite
     drawdepth: WallTops
-    sprite: _Cursed/Structures/Windows/plasma_sr.rsi
+    sprite: _cursed/Structures/Windows/plasma_sr.rsi
   - type: Icon
-    sprite: _Cursed/Structures/Windows/plasma_sr.rsi
+    sprite: _cursed/Structures/Windows/plasma_sr.rsi
   - type: Repairable
     fuelCost: 50
     doAfterDelay: 6
@@ -18,6 +18,9 @@
     cost: 60
     delay: 6
     fx: EffectRCDDeconstruct6
+  - type: ExplosionResistance
+    damageCoefficient: 0.005
+    worn: false
   - type: Destructible
     thresholds:
     - trigger:
@@ -45,13 +48,34 @@
         acts: [ "Destruction" ]
   - type: IconSmooth
     base: psrwindow
-  # - type: Construction
-  #   graph: Window
-  #   node: plasmaSRWindow
+  - type: Construction
+    graph: Window
+    node: plasmaSRWindow
   - type: Appearance
   - type: DamageVisuals
-    thresholds: [50, 100, 200]
+    thresholds: [5, 10, 20]
     damageDivisor: 3
     trackAllDamage: true
     damageOverlay:
       sprite: Structures/Windows/cracks.rsi
+
+
+- type: construction
+  name: сверхпрочное плазменное окно
+  description: Что вы собрались этим изолировать? Ядерную боеголовку?
+  id: plasmaSRWindow
+  graph: Window
+  startNode: start
+  targetNode: plasmaSRWindow
+  category: construction-category-structures
+  canBuildInImpassable: true
+  conditions:
+    - !type:EmptyOrWindowValidInTile
+    - !type:NoWindowsInTile
+  icon:
+    sprite: _cursed/Structures/Windows/plasma_sr.rsi
+    state: full
+  objectType: Structure
+  placementMode: SnapgridCenter
+  canRotate: false
+

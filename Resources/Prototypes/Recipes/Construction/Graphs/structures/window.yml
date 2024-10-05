@@ -323,10 +323,10 @@
       edges:
         - to: start
           completed:
-          - !type:SpawnPrototype
-            prototype: SheetSRPGlass1
-            amount: 2
-          - !type:DeleteEntity {}
+            - !type:SpawnPrototype
+              prototype: SheetSRPGlass1
+              amount: 2
+            - !type:DeleteEntity {}
           steps:
             - tool: Welding
               doAfter: 10
