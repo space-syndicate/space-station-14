@@ -62,6 +62,12 @@
               amount: 2
               doAfter: 6
 
+        - to: plasmaSRWindow # 1500 hp reinforced damage mod. cursed mod
+          steps:
+            - material: SuperReinforcedPlasmaGlass
+              amount: 2
+              doAfter: 8
+
     - node: window
       entity: Window
       edges:
@@ -99,6 +105,11 @@
         - to: reinforcedWindow
           steps:
             - material: MetalRod
+              amount: 2
+              doAfter: 2
+        - to: plasmaSRWindow
+          steps:
+            - material: SuperReinforcedPlasmaGlass
               amount: 2
               doAfter: 2
 
@@ -274,7 +285,7 @@
               doAfter: 2
             - tool: Anchoring
               doAfter: 3
-    
+
     - node: shuttleWindow
       entity: ShuttleWindow
       edges:
@@ -305,3 +316,37 @@
               doAfter: 4
             - tool: Anchoring
               doAfter: 1
+
+    # cursed mods below
+    - node: plasmaSRWindow
+      entity: SuperReinforcedPlasmaWindow
+      edges:
+        - to: start
+          completed:
+          - !type:SpawnPrototype
+            prototype: SheetSRPGlass1
+            amount: 2
+          - !type:DeleteEntity {}
+          steps:
+            - tool: Welding
+              doAfter: 10
+            - tool: Screwing
+              doAfter: 4
+            - tool: Prying
+              doAfter: 6
+            - tool: Welding
+              doAfter: 10
+            - tool: Screwing
+              doAfter: 4
+            - tool: Welding
+              doAfter: 10
+            - tool: Screwing
+              doAfter: 4
+            - tool: Prying
+              doAfter: 6
+            - tool: Welding
+              doAfter: 10
+            - tool: Screwing
+              doAfter: 4
+            - tool: Anchoring
+              doAfter: 6

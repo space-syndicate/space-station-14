@@ -1,0 +1,57 @@
+- type: entity
+  id: SuperReinforcedPlasmaWindow
+  name: сверхпрочное плазменное окно
+  parent: Window
+  components:
+  - type: Sprite
+    drawdepth: WallTops
+    sprite: _Cursed/Structures/Windows/plasma_sr.rsi
+  - type: Icon
+    sprite: _Cursed/Structures/Windows/plasma_sr.rsi
+  - type: Repairable
+    fuelCost: 50
+    doAfterDelay: 6
+  - type: Damageable
+    damageContainer: StructuralInorganic
+    damageModifierSet: SRGlass
+  - type: RCDDeconstructable
+    cost: 60
+    delay: 6
+    fx: EffectRCDDeconstruct6
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 1500 #more than plastitanium now
+      behaviors:
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+      - !type:PlaySoundBehavior
+        sound:
+          collection: WindowShatter
+    - trigger:
+        !type:DamageTrigger
+        damage: 750
+      behaviors:
+      - !type:PlaySoundBehavior
+        sound:
+          collection: WindowShatter
+      - !type:SpawnEntitiesBehavior
+        spawn:
+          ShardGlassPlasma:
+            min: 4
+            max: 6
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+  - type: IconSmooth
+    base: psrwindow
+  # - type: Construction
+  #   graph: Window
+  #   node: plasmaSRWindow
+  - type: Appearance
+  - type: DamageVisuals
+    thresholds: [50, 100, 200]
+    damageDivisor: 3
+    trackAllDamage: true
+    damageOverlay:
+      sprite: Structures/Windows/cracks.rsi

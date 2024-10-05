@@ -1,0 +1,83 @@
+- type: material
+  id: SuperReinforcedPlasmaGlass
+  stackEntity: MaterialSuperReinforcedPlasmaGlass1
+  name: сверхпрочное плазменное стекло
+  unit: materials-unit-sheet
+  icon: { sprite: Objects/Materials/Sheets/glass.rsi, state: rpglass }
+  color: "#8A9A5B"
+  price: 10
+
+- type: stack
+  id: SuperReinforcedPlasmaGlass
+  name: сверхпрочное плазменное стекло
+  icon: { sprite: /Textures/Objects/Materials/Sheets/glass.rsi, state: rpglass }
+  spawn: SheetSRPGlass1
+  maxCount: 30
+
+- type: construction
+  name: сверхпрочное плазменное стекло
+  description: Лист сверхпрочной плазмы (гори в аду тот огузок, который поставит это окно не туда)
+  id: SheetSRPGlass
+  graph: Glass
+  startNode: start
+  targetNode: SheetSRPGlass
+  category: construction-category-materials
+  icon: { sprite: Objects/Materials/Sheets/glass.rsi, state: rpglass }
+  objectType: Item
+
+- type: entity
+  parent: SheetSRPGlass
+  id: SheetSRPGlass
+  name: reinforced plasma glass
+  description: A reinforced sheet of translucent plasma.
+  suffix: Full
+  components:
+  - type: PhysicalComposition
+    materialComposition:
+      SuperReinforcedPlasmaGlass: 100
+  - type: Stack
+    stackType: ReinforcedPlasmaGlass
+    baseLayer: base
+    layerStates:
+    - rpglass
+    - rpglass_2
+    - rpglass_3
+  - type: Sprite
+    state: rpglass_3
+    layers:
+    - state: rpglass_3
+      map: ["base"]
+  - type: Item
+    heldPrefix: rpglass
+  - type: Construction
+    graph: Glass
+    node: SheetSRPGlass
+  - type: Extractable
+    grindableSolutionName: rpglass
+  - type: SolutionContainerManager
+    solutions:
+      rpglass:
+        canReact: false
+
+- type: entity
+  parent: SheetSRPGlass
+  id: SheetSRPGlass1
+  name: reinforced plasma glass
+  suffix: Single
+  components:
+  - type: Sprite
+    state: rpglass
+  - type: Stack
+    stackType: SuperReinforcedPlasmaGlass
+    count: 1
+- type: entity
+  parent: SheetSRPGlass
+  id: SheetSRPGlass1
+  name: reinforced plasma glass
+  suffix: Full
+  components:
+  - type: Sprite
+    state: rpglass
+  - type: Stack
+    stackType: SuperReinforcedPlasmaGlass
+    count: 30
