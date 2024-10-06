@@ -14,6 +14,7 @@ def find_top_level_dir(start_dir):
             print(f"Не удалось найти {marker_file} начиная с {start_dir}")
             exit(-1)
         current_dir = parent_dir
+        
 def find_ftl_files(root_dir):
     ftl_files = []
     for root, dirs, files in os.walk(root_dir):
