@@ -1,0 +1,16 @@
+- type: flavor
+  id: money
+  flavorType: Base
+  description: как богатство
+
+- type: reagent
+  id: Platinum
+  group: Elements
+  name: платина
+  desc: Какой-то дорогущий металл.
+  physicalDesc: reagent-physical-desc-metallic
+  flavor: money
+  color: "#E5E4E2"
+  pricePerUnit: 5
+  boilingPoint: 4098.0
+  meltingPoint: 2041.0

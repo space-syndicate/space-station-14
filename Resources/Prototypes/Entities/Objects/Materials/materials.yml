@@ -248,8 +248,8 @@
     solutions:
       wood:
         reagents:
-        - ReagentId: Cellulose
-          Quantity: 10
+        - ReagentId: Sawdust # cursed mod
+          Quantity: 15
 
 - type: entity
   parent: MaterialWoodPlank

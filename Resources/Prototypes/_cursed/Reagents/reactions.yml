@@ -1,0 +1,33 @@
+- type: reaction
+  id: SawdustCellulose
+  reactants:
+    Sawdust:
+      amount: 5
+    NitricAcid:
+      amount: 1
+  products:
+    Cellulose: 5
+
+- type: reaction # ill count that we get oxygen from air
+  id: NitrogenDioxide
+  minTemp: 500.15
+  reactants:
+    Ammonia:
+      amount: 4
+    Platinum:
+      amount: 1
+      catalyst: true
+  products:
+    NitrogenDioxide: 4
+    Water: 6
+
+- type: reaction
+  id: NitricAcid
+  reactants:
+    NitrogenDioxide:
+      amount: 3
+    Water:
+      amount: 1
+  products:
+    NitricAcid: 2
+    NitrousOxide: 1

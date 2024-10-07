@@ -1,0 +1,34 @@
+- type: microwaveMealRecipe
+  id: RecipeSawdustSoup
+  name: рецепт супа из опилок
+  result: FoodSoupSawdust
+  time: 10
+  solids:
+    FoodBowlBig: 1
+  reagents:
+    Water: 10
+    Sawdust: 10
+
+- type: entity
+  parent: FoodBowlBase
+  id: FoodSoupSawdust
+  name: суп из опилок
+  description: ЗДЕСЬ НИКОМУ НИЧЕГО НЕЛЬЗЯ ЗДЕСЬ ОДНА ТЫСЯЧА ДЕВЯТЬСОТ ВОСЕМЬДЕСЯТ ЧЕТЫРЕ
+  components:
+  - type: FlavorProfile
+    flavors:
+      - sawdust
+  - type: Sprite
+    sprite: Objects/Consumable/Food/bowl.rsi
+    layers:
+    - state: bowl
+    - state: sawdust
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 15
+        reagents:
+        - ReagentId: Sawdust
+          Quantity: 10
+        - ReagentId: Water
+          Quantity: 5

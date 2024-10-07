@@ -1,0 +1,57 @@
+- type: reagent
+  id: NitrogenDioxide
+  name: диоксид азота
+  desc: NO2
+  physicalDesc: reagent-physical-desc-gaseous
+  flavor: bitter
+  color: "#5d88c9"
+  boilingPoint: 261.95
+  meltingPoint: 294.25
+  metabolisms:
+    Gas:
+      effects:
+      - !type:Emote
+        conditions:
+        - !type:ReagentThreshold
+          reagent: NitrousOxide
+          min: 0.1
+        - !type:OrganType
+          type: Slime
+          shouldHave: false
+        emote: Cough
+        showInChat: true
+        probability: 0.9
+      - !type:PopupMessage
+        conditions:
+        - !type:ReagentThreshold
+          reagent: NitrousOxide
+          min: 0.5
+        - !type:OrganType
+          type: Slime
+          shouldHave: false
+        type: Local
+        visualType: Medium
+        messages: [ "что-то щекочет ваши лёгкие" ]
+        probability: 0.7
+      - !type:MovespeedModifier
+        conditions:
+        - !type:ReagentThreshold
+          reagent: NitrousOxide
+          min: 0.15
+        - !type:OrganType
+          type: Slime
+          shouldHave: false
+        walkSpeedModifier: 0.45
+        sprintSpeedModifier: 0.45
+      - !type:HealthChange
+        conditions:
+        - !type:ReagentThreshold
+          reagent: NitrousOxide
+          min: 0.2
+        - !type:OrganType
+          type: Slime
+          shouldHave: false
+        ignoreResistances: true
+        damage:
+          types:
+            Poison: 0.4

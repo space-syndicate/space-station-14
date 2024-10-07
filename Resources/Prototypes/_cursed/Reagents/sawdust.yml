@@ -1,0 +1,18 @@
+- type: flavor
+  id: sawdust
+  flavorType: Base
+  description: как опилки
+
+- type: reagent
+  id: Sawdust
+  group: Biological
+  name: опилки
+  desc: Измельчённое дерево.
+  physicalDesc: reagent-physical-desc-powdery
+  flavor: sawdust
+  color: "#A1662F"
+  metabolisms:
+    Food:
+      effects:
+      - !type:SatiateHunger
+  pricePerUnit: 0.10

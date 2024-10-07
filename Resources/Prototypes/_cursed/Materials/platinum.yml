@@ -1,0 +1,66 @@
+- type: material
+  id: Platinum
+  stackEntity: SheetPlatinum1
+  name: платина
+  unit: materials-unit-sheet
+  icon: { sprite: Objects/Materials/Sheets/metal.rsi, state: platinum }
+  color: "#8A9A5B"
+  price: 1.0
+
+- type: stack
+  id: Platinum
+  name: платина
+  icon: { sprite: Objects/Materials/Sheets/metal.rsi, state: platinum }
+  spawn: SheetPlatinum1
+  maxCount: 30
+
+# no construction
+
+- type: entity
+  parent: SheetMetalBase
+  id: SheetPlatinum
+  name: платина
+  description: Мама, я богат!
+  suffix: Full
+  components:
+  - type: Material
+  - type: StaticPrice
+    price: 0
+  - type: PhysicalComposition
+    materialComposition:
+      Platinum: 100
+  - type: Stack
+    stackType: Platinum
+    baseLayer: base
+    layerStates:
+    - platinum
+    - platinum_2
+    - platinum_3
+  - type: Sprite
+    state: platinum_3
+    layers:
+    - state: platinum_3
+      map: ["base"]
+  - type: Item
+    heldPrefix: platinum
+  - type: Extractable
+    grindableSolutionName: platinum
+  - type: SolutionContainerManager
+    solutions:
+      platinum:
+        reagents:
+        - ReagentId: Platinum
+          Quantity: 10
+
+
+- type: entity
+  parent: SheetPlatinum
+  id: SheetPlatinum1
+  name: платина
+  suffix: Single
+  components:
+  - type: Sprite
+    state: platinum
+  - type: Stack
+    stackType: Platinum
+    count: 1

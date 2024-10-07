@@ -1,0 +1,26 @@
+- type: entity
+  parent: BaseStructureDynamic
+  id: HybtoniteChunk
+  name: кусок гибтонита
+  description: Кусок гибтонита внушительных размеров. Если вы дочитали до сюда, то на вас костюм радиационной защиты.
+  components:
+    - type: Sprite
+      sprite: _cursed/Structures/hybtonite_chunk.rsi
+      noRot: true
+      state: icon
+    - type: Pullable
+    - type: Fixtures
+      fixtures:
+        fix1:
+          shape:
+            !type:PhysShapeCircle
+            radius: .4
+          density: 190
+          mask:
+            - MachineMask
+    - type: RadiationSource
+      intensity: 12
+      slope: 4.0
+    - type: Transform
+    - type: TempAffecting
+      tempChangePerSecond: 50
