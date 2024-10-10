@@ -117,6 +117,9 @@
       - id: BalloonCorgi
       - id: MysteryFigureBox
       - id: RubberChicken
+       # Corvax-Toys-Start
+      - id: RubberPig
+      # Corvax-Toys-End
       # Cult
       - !type:AllSelector
         children:
