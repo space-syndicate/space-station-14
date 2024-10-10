@@ -62347,6 +62347,9 @@ entities:
     - type: Transform
       pos: 80.5,15.5
       parent: 2
+    - type: SingletonDeviceNetServer
+      active: False
+      available: False
 - proto: Crowbar
   entities:
   - uid: 6602
