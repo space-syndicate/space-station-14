@@ -1,4 +1,4 @@
-from fluent.syntax import ast
+﻿from fluent.syntax import ast
 
 from fluentast import FluentAstMessage
 from fluentastcomparer import FluentAstComparer
