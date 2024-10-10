@@ -4,6 +4,15 @@
   components:
   - type: GameRule
 
+#Corvax-MRP-Start
+- type: entity
+  parent: BaseGameRule
+  id: SurvivalGameRule
+  components:
+  - type: GameRule
+    minPlayers: 20
+#Corvax-MRP-End
+
 - type: entity
   parent: BaseGameRule
   id: RespawnDeadRule
@@ -282,7 +291,7 @@
         tableId: CalmPestEventsTable
       - !type:NestedSelector
         tableId: SpicyPestEventsTable
-        
+
 
 - type: entityTable
   id: SpaceTrafficControlTable
@@ -302,6 +311,12 @@
   - type: BasicStationEventScheduler
     scheduledGameRules: !type:NestedSelector
       tableId: BasicGameRulesTable
+    #Corvax-MRP-Start
+    minimumTimeUntilFirstEvent: 600 # 10 mins
+    minMaxEventTiming:
+      min: 610 # 7 mins
+      max: 900 # 15 mins
+    #Corvax-MRP-End
 
 - type: entity
   id: RampingStationEventScheduler
