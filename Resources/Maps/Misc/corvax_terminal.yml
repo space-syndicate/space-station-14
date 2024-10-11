@@ -2114,172 +2114,75 @@ entities:
       rot: 1.5707963267948966 rad
       pos: -4.5,4.5
       parent: 2
-- proto: AirlockExternalGlassAtmosphericsLocked
+- proto: AirlockExternalGlass
   entities:
-  - uid: 23
-    components:
-    - type: Transform
-      pos: 15.5,-14.5
-      parent: 2
-    - type: ContainerFill
-      containers:
-        board: [ DoorElectronicsCentralCommand ]
-    missingComponents:
-    - RCDDeconstructable
-    - Damageable
-    - Destructible
-  - uid: 24
-    components:
-    - type: Transform
-      rot: 1.5707963267948966 rad
-      pos: 15.5,2.5
-      parent: 2
-    - type: ContainerFill
-      containers:
-        board: [ DoorElectronicsCentralCommand ]    
-    missingComponents:
-    - RCDDeconstructable
-    - Damageable
-    - Destructible
-  - uid: 25
-    components:
-    - type: Transform
-      pos: 15.5,-8.5
-      parent: 2
-    - type: ContainerFill
-      containers:
-        board: [ DoorElectronicsCentralCommand ]
-    missingComponents:
-    - RCDDeconstructable
-    - Damageable
-    - Destructible
-  - uid: 26
+  - uid: 1
     components:
     - type: Transform
       pos: 15.5,-1.5
       parent: 2
-    - type: ContainerFill
-      containers:
-        board: [ DoorElectronicsCentralCommand ]
-    missingComponents:
-    - RCDDeconstructable
-    - Damageable
-    - Destructible
-  - uid: 27
-    components:
-    - type: Transform
-      pos: 11.5,-26.5
-      parent: 2
-    - type: ContainerFill
-      containers:
-        board: [ DoorElectronicsCentralCommand ]
-    missingComponents:
-    - RCDDeconstructable
-    - Damageable
-    - Destructible
-  - uid: 28
+  - uid: 23
     components:
     - type: Transform
       pos: 15.5,-22.5
       parent: 2
-    - type: ContainerFill
-      containers:
-        board: [ DoorElectronicsCentralCommand ]
-    missingComponents:
-    - RCDDeconstructable
-    - Damageable
-    - Destructible
-- proto: AirlockExternalShuttleLocked
+  - uid: 24
+    components:
+    - type: Transform
+      pos: 15.5,-8.5
+      parent: 2
+  - uid: 25
+    components:
+    - type: Transform
+      pos: 15.5,-14.5
+      parent: 2
+  - uid: 26
+    components:
+    - type: Transform
+      pos: 11.5,-26.5
+      parent: 2
+  - uid: 27
+    components:
+    - type: Transform
+      pos: 15.5,2.5
+      parent: 2
+- proto: AirlockExternalGlassShuttleLocked
   entities:
-  - uid: 29
+  - uid: 33
     components:
     - type: Transform
       rot: 1.5707963267948966 rad
       pos: 16.5,-22.5
       parent: 2
-    - type: DeviceLinkSource
-      linkedPorts:
-        28:
-        - DockStatus: AutoClose
-        1050:
-        - DoorStatus: Trigger
-    missingComponents:
-    - RCDDeconstructable
-    - Damageable
-    - Destructible
-  - uid: 30
-    components:
-    - type: Transform
-      rot: 1.5707963267948966 rad
-      pos: 16.5,-14.5
-      parent: 2
-    - type: DeviceLinkSource
-      linkedPorts:
-        23:
-        - DockStatus: AutoClose
-        1049:
-        - DoorStatus: Trigger
-    missingComponents:
-    - RCDDeconstructable
-    - Damageable
-    - Destructible
-  - uid: 31
+  - uid: 54
     components:
     - type: Transform
       rot: 1.5707963267948966 rad
       pos: 16.5,-1.5
       parent: 2
-    - type: DeviceLinkSource
-      linkedPorts:
-        26:
-        - DockStatus: AutoClose
-        1047:
-        - DoorStatus: Trigger
-    missingComponents:
-    - RCDDeconstructable
-    - Damageable
-    - Destructible
-  - uid: 32
+  - uid: 55
     components:
     - type: Transform
       rot: 1.5707963267948966 rad
       pos: 16.5,-8.5
       parent: 2
-    - type: DeviceLinkSource
-      linkedPorts:
-        25:
-        - DockStatus: AutoClose
-        1048:
-        - DoorStatus: Trigger
-    missingComponents:
-    - RCDDeconstructable
-    - Damageable
-    - Destructible
-  - uid: 33
+  - uid: 56
     components:
     - type: Transform
       rot: 1.5707963267948966 rad
       pos: 16.5,2.5
       parent: 2
-    - type: DeviceLinkSource
-      linkedPorts:
-        24:
-        - DockStatus: AutoClose
-        1046:
-        - DoorStatus: Trigger
-    missingComponents:
-    - RCDDeconstructable
-    - Damageable
-    - Destructible
-  - uid: 34
+  - uid: 57
+    components:
+    - type: Transform
+      rot: 1.5707963267948966 rad
+      pos: 16.5,-14.5
+      parent: 2
+  - uid: 58
     components:
     - type: Transform
       pos: 11.5,-30.5
       parent: 2
-    missingComponents:
-    - RCDDeconstructable
-    - Damageable
-    - Destructible
 - proto: AirlockGlass
   entities:
   - uid: 35
@@ -2409,37 +2312,42 @@ entities:
     - type: Transform
       pos: -1.596785,12.459861
       parent: 2
-- proto: AtmosDeviceFanTiny
+- proto: AtmosDeviceFanDirectional
   entities:
-  - uid: 54
+  - uid: 28
     components:
     - type: Transform
+      rot: 1.5707963267948966 rad
       pos: 16.5,2.5
       parent: 2
-  - uid: 55
+  - uid: 29
     components:
     - type: Transform
-      pos: 16.5,-8.5
-      parent: 2
-  - uid: 56
-    components:
-    - type: Transform
-      pos: 16.5,-14.5
-      parent: 2
-  - uid: 57
-    components:
-    - type: Transform
+      rot: 1.5707963267948966 rad
       pos: 16.5,-1.5
       parent: 2
-  - uid: 58
+  - uid: 30
     components:
     - type: Transform
-      pos: 16.5,-22.5
+      rot: 1.5707963267948966 rad
+      pos: 16.5,-14.5
       parent: 2
-  - uid: 59
+  - uid: 31
+    components:
+    - type: Transform
+      rot: 1.5707963267948966 rad
+      pos: 16.5,-8.5
+      parent: 2
+  - uid: 32
     components:
     - type: Transform
       pos: 11.5,-30.5
+      parent: 2
+  - uid: 34
+    components:
+    - type: Transform
+      rot: 1.5707963267948966 rad
+      pos: 16.5,-22.5
       parent: 2
 - proto: BarSign
   entities:
@@ -7255,14 +7163,6 @@ entities:
       parent: 2
     - type: AtmosPipeColor
       color: '#FF0000FF'
-  - uid: 2000
-    components:
-    - type: Transform
-      rot: 1.5707963267948966 rad
-      pos: 2.5,-15.5
-      parent: 2
-    - type: AtmosPipeColor
-      color: '#FF0000FF'
   - uid: 819
     components:
     - type: Transform
@@ -7372,6 +7272,14 @@ entities:
       parent: 2
     - type: AtmosPipeColor
       color: '#0000FFFF'
+  - uid: 2000
+    components:
+    - type: Transform
+      rot: 1.5707963267948966 rad
+      pos: 2.5,-15.5
+      parent: 2
+    - type: AtmosPipeColor
+      color: '#FF0000FF'
 - proto: GasPipeTJunction
   entities:
   - uid: 833
@@ -8262,7 +8170,7 @@ entities:
   - uid: 1563
     components:
     - type: MetaData
-      desc: Доревьювился. 
+      desc: Доревьювился.
       name: неизвестный мейнтейнер
     - type: Transform
       pos: -8.528828,-15.495922
@@ -9082,10 +8990,6 @@ entities:
       parent: 2
     - type: SignalTimer
       delay: 1
-    - type: DeviceLinkSource
-      linkedPorts:
-        24:
-        - Timer: Toggle
     - type: DeviceLinkSink
       invokeCounter: 1
     - type: ApcPowerReceiver
@@ -9101,10 +9005,6 @@ entities:
       parent: 2
     - type: SignalTimer
       delay: 1
-    - type: DeviceLinkSource
-      linkedPorts:
-        26:
-        - Timer: Toggle
     - type: DeviceLinkSink
       invokeCounter: 1
     - type: ApcPowerReceiver
@@ -9120,10 +9020,6 @@ entities:
       parent: 2
     - type: SignalTimer
       delay: 1
-    - type: DeviceLinkSource
-      linkedPorts:
-        25:
-        - Timer: Toggle
     - type: DeviceLinkSink
       invokeCounter: 1
     - type: ApcPowerReceiver
@@ -9139,10 +9035,6 @@ entities:
       parent: 2
     - type: SignalTimer
       delay: 1
-    - type: DeviceLinkSource
-      linkedPorts:
-        23:
-        - Timer: Toggle
     - type: DeviceLinkSink
       invokeCounter: 1
     - type: ApcPowerReceiver
@@ -9158,10 +9050,6 @@ entities:
       parent: 2
     - type: SignalTimer
       delay: 1
-    - type: DeviceLinkSource
-      linkedPorts:
-        28:
-        - Timer: Toggle
     - type: DeviceLinkSink
       invokeCounter: 1
     - type: ApcPowerReceiver
