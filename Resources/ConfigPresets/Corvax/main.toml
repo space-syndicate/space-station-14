@@ -5,6 +5,10 @@ map_pool = "CorvaxDefaultMapPool"
 maxplayers = 190
 soft_max_players = 105
 map_rotation = true
+peaceful_end = false
+
+[server]
+rules_file = "CorvaxLRPRuleset"
 
 [game.panic_bunker]
 enabled = true

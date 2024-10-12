@@ -7,7 +7,7 @@ welder-component-on-examine-welder-not-lit-message = Не горит
 welder-component-on-examine-detailed-message = Топливо: [color={ $colorName }]{ $fuelLeft }/{ $fuelCapacity }[/color]
     { $status }
 welder-component-suicide-lit-others-message = { $victim } заваривает все свои отверстия! Похоже, что они пытаются совершить самоубийство!
-welder-component-suicide-lit-message = Ты завариваешь все свои отверстия!
+welder-component-suicide-lit-message = Вы завариваете все свои отверстия!
 welder-component-suicide-unlit-others-message = { $victim } бьёт себя незажженной сварочной горелкой!
 welder-component-suicide-unlit-message = Вы ударили себя незажженной сварочной горелкой!
 welder-component-after-interact-refueled-message = Заправлено!
