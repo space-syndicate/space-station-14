@@ -68,11 +68,22 @@
             Borg: [ 2, 2 ]
         - type: StationGoal
           goals:
-          - Shuttle
           - Singularity
           - SolarPanels
           - Artifacts
           - Bank
           - Zoo
           - MiningOutpost
+          - Tesla
+          - SecurityTraining
+          - ShuttleMed
+          - ShuttleSec
+          - ShuttleRnd
+          - ShuttleSrv
+          - ShuttleEmergency
+          - Theatre
+          - CellAI
+          - Botany
+          - Bunker
           - VirusologyAmbusol
+          - AstraRepair
