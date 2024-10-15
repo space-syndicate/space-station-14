@@ -3,5 +3,5 @@ ent-ClothingEyesBlindfold = blindfold
 ent-ClothingEyesEyepatch = eyepatch
     .desc = Yarr.
 ent-ClothingEyesEyepatchFlipped = { ent-ClothingEyesEyepatch }
-  .suffix = flipped
-  .desc = { ent-ClothingEyesEyepatch.desc }
+    .suffix = flipped
+    .desc = { ent-ClothingEyesEyepatch.desc }
