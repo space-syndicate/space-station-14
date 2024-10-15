@@ -15854,11 +15854,23 @@ entities:
     - type: Transform
       pos: -54.5,-72.5
       parent: 2
+    - type: DeviceLinkSink
+      invokeCounter: 1
+    - type: DeviceLinkSource
+      linkedPorts:
+        145:
+        - DoorStatus: DoorBolt
   - uid: 145
     components:
     - type: Transform
       pos: -54.5,-77.5
       parent: 2
+    - type: DeviceLinkSink
+      invokeCounter: 1
+    - type: DeviceLinkSource
+      linkedPorts:
+        144:
+        - DoorStatus: DoorBolt
   - uid: 148
     components:
     - type: Transform
