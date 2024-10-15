@@ -451,13 +451,13 @@
       - type: ZombifyOnDeath
       - type: IncurableZombie
       - type: InitialInfected
-      mindRoles:
-      - MindRoleInitialInfected
       # Corvax-MRP
       - type: NpcFactionMember
         addFriendlyFactions:
         - Zombie
       # Corvax
+      mindRoles:
+      - MindRoleInitialInfected
 
 - type: entity
   parent: BaseNukeopsRule
