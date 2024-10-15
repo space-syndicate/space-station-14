@@ -1,11 +1,11 @@
 ent-ClothingShoesBootsMagBase = magboots
     .desc = Magnetic boots, often used during extravehicular activity to ensure the user remains safely attached to the vehicle.
 ent-ClothingShoesBootsMag = { ent-ClothingShoesBootsMagBase }
-  .desc = { ent-ClothingShoesBootsMagBase.desc }
+    .desc = { ent-ClothingShoesBootsMagBase.desc }
 ent-ClothingShoesBootsMagAdv = advanced magboots
     .desc = State-of-the-art magnetic boots that do not slow down their wearer.
-ent-ClothingShoesBootsMagSci = { ent-ClothingShoesBootsMag }
-    .desc = { ent-ClothingShoesBootsMag.desc }
+ent-ClothingShoesBootsMagSci = { ent-ClothingShoesBootsMagBase }
+    .desc = { ent-ClothingShoesBootsMagBase.desc }
 ent-ClothingShoesBootsMagBlinding = magboots of blinding speed
     .desc = These would look fetching on a fetcher like you.
 ent-ClothingShoesBootsMagSyndie = blood-red magboots

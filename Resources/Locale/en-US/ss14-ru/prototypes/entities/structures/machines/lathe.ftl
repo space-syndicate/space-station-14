@@ -1,5 +1,5 @@
 ent-BaseLathe = lathe
-  .desc = { ent-BaseMachinePowered.desc }
+    .desc = { ent-BaseMachinePowered.desc }
 ent-BaseLatheLube = { ent-BaseLathe }
     .desc = { ent-BaseLathe.desc }
 ent-BaseHyperlathe = { "" }
