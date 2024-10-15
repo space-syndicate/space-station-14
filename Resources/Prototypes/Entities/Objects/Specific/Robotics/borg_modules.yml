@@ -511,6 +511,21 @@
     items:
     - WeaponPistolEchis
     - EnergyDaggerLoud
+# Corvax-HiddenDesc-Start
+  - type: HiddenDescription
+    entries:
+    - label: corvax-hidden-desc-BorgModuleSyndicateWeapon-syndicate
+      whitelistMind:
+        components:
+          - TraitorRole
+          - NukeOperative
+    - label: corvax-hidden-desc-BorgModuleSyndicateWeapon-research
+      jobRequired:
+        - ResearchAssistant
+        - ResearchDirector
+        - Scientist
+        - Borg
+# Corvax-HiddenDesc-End
 
 - type: entity
   id: BorgModuleOperative
@@ -527,6 +542,21 @@
       - Crowbar
       - Emag
       - PinpointerSyndicateNuclear
+# Corvax-HiddenDesc-Start
+    - type: HiddenDescription
+      entries:
+      - label: corvax-hidden-desc-BorgModuleOperative-syndicate
+        whitelistMind:
+          components:
+            - TraitorRole
+            - NukeOperative
+      - label: corvax-hidden-desc-BorgModuleOperative-research
+        jobRequired:
+          - ResearchAssistant
+          - ResearchDirector
+          - Scientist
+          - Borg
+# Corvax-HiddenDesc-End
 
 - type: entity
   id: BorgModuleEsword
@@ -542,6 +572,21 @@
       items:
       - CyborgEnergySwordDouble
       - PinpointerSyndicateNuclear
+# Corvax-HiddenDesc-Start
+    - type: HiddenDescription
+      entries:
+      - label: corvax-hidden-desc-BorgModuleEsword-syndicate
+        whitelistMind:
+          components:
+            - TraitorRole
+            - NukeOperative
+      - label: corvax-hidden-desc-BorgModuleSyndicateWeapon-research
+        jobRequired:
+          - ResearchAssistant
+          - ResearchDirector
+          - Scientist
+          - Borg
+# Corvax-HiddenDesc-End
 
 - type: entity
   id: BorgModuleL6C
@@ -557,6 +602,21 @@
       items:
         - WeaponLightMachineGunL6C
         - PinpointerSyndicateNuclear
+# Corvax-HiddenDesc-Start
+    - type: HiddenDescription
+      entries:
+      - label: corvax-hidden-desc-BorgModuleL6C-syndicate
+        whitelistMind:
+          components:
+          - TraitorRole
+          - NukeOperative
+      - label: corvax-hidden-desc-BorgModuleSyndicateWeapon-research
+        jobRequired:
+          - ResearchAssistant
+          - ResearchDirector
+          - Scientist
+          - Borg
+# Corvax-HiddenDesc-End
 
 - type: entity
   id: BorgModuleMartyr
@@ -571,3 +631,18 @@
     - type: ItemBorgModule
       items:
         - SelfDestructSeq
+# Corvax-HiddenDesc-Start
+    - type: HiddenDescription
+      entries:
+      - label: corvax-hidden-desc-BorgModuleMartyr-syndicate
+        whitelistMind:
+          components:
+            - TraitorRole
+            - NukeOperative
+      - label: corvax-hidden-desc-BorgModuleMartyr-research
+        jobRequired:
+          - ResearchAssistant
+          - ResearchDirector
+          - Scientist
+          - Borg
+# Corvax-HiddenDesc-End
