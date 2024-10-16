@@ -59,8 +59,8 @@
   - type: BasicStationEventScheduler
     minimumTimeUntilFirstEvent: 300 # 5 min
     minMaxEventTiming:
-      min: 750 # 12.5 min
-      max: 930 # 17.5 min
+      min: 1800 # 30 min # Corvax-MRP
+      max: 2700 # 45 min # Corvax-MRP
     scheduledGameRules: !type:NestedSelector
       tableId: BasicMeteorSwarmEventsTable
 
