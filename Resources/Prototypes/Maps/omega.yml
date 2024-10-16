@@ -2,8 +2,10 @@
   id: Omega
   mapName: 'Omega'
   mapPath: /Maps/omega.yml
-  minPlayers: 10
-  maxPlayers: 35
+  # Corvax-start
+  minPlayers: 0
+  maxPlayers: 30
+  # Corvax-end
   stations:
     Omega:
       stationProto: StandardNanotrasenStation
@@ -37,6 +39,7 @@
             ChiefMedicalOfficer: [ 1, 1 ]
             Chemist: [ 2, 2 ]
             MedicalDoctor: [ 3, 3 ]
+            Paramedic: [ 1, 1 ]
             MedicalIntern: [ 2, 2 ]
             #science
             ResearchDirector: [ 1, 1 ]
@@ -58,4 +61,6 @@
             Clown: [ 1, 1 ]
             Mime: [ 1, 1 ]
             Musician: [ 1, 1 ]
+            #silicon
+            StationAi: [ 1, 1 ]
             Borg: [ 2, 2 ]

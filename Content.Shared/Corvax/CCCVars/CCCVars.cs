@@ -55,6 +55,19 @@ public sealed class CCCVars
     public static readonly CVarDef<int> TTSMaxCache =
         CVarDef.Create("tts.max_cache", 250, CVar.SERVERONLY | CVar.ARCHIVE);
 
+    /// <summary>
+    /// Tts rate limit values are accounted in periods of this size (seconds).
+    /// After the period has passed, the count resets.
+    /// </summary>
+    public static readonly CVarDef<float> TTSRateLimitPeriod =
+        CVarDef.Create("tts.rate_limit_period", 2f, CVar.SERVERONLY);
+
+    /// <summary>
+    /// How many tts preview messages are allowed in a single rate limit period.
+    /// </summary>
+    public static readonly CVarDef<int> TTSRateLimitCount =
+        CVarDef.Create("tts.rate_limit_count", 3, CVar.SERVERONLY);
+
     /*
      * Peaceful Round End
      */

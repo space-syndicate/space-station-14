@@ -1,5 +1,4 @@
 - type: entity
-  noSpawn: true
   parent: [BaseTraitorObjective, BaseLivingObjective]
   id: HijackShuttleObjective
   name: Hijack emergency shuttle
@@ -11,3 +10,28 @@
         sprite: Objects/Tools/emag.rsi
         state: icon
     - type: HijackShuttleCondition
+
+- type: entity
+  parent: BaseCaptainObjective
+  id: NukeDiskStealObjective
+  components:
+  - type: Objective
+    # high difficulty since the hardest item both to steal, and to not get caught down the road,
+    # since anyone with a pinpointer can track you down and kill you
+    # it's close to being a stealth loneop
+    difficulty: 3.7
+  - type: ObjectiveBlacklistRequirement
+    blacklist:
+      components:
+      - HijackShuttleCondition
+      - KillPersonCondition
+      - RandomTraitorAlive
+      - RandomTraitorProgress
+      - DieCondition
+      - StealCondition
+      - SocialObjective
+      - SurviveCondition
+  - type: NotCommandRequirement
+  - type: StealCondition
+    stealGroup: NukeDisk
+    owner: objective-condition-steal-station

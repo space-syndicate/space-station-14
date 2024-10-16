@@ -15,7 +15,6 @@
   parent: [ClothingShoesBaseButcherable, ClothingSlotBase]
   id: ClothingShoesClownBase
   components:
-  - type: WaddleWhenWorn
   - type: ItemSlots
     slots:
       item:
@@ -109,12 +108,14 @@
   - type: Clothing
     sprite: Clothing/Shoes/Specific/galoshes.rsi
   - type: NoSlip
-  - type: ClothingSpeedModifier # Corvax-MRP
-    walkModifier: 0.9
-    sprintModifier: 0.9
+  - type: SlowedOverSlippery
+    slowdownModifier: 0.7
+  - type: SpeedModifierContactCapClothing # Corvax-MRP
+    maxContactSprintSlowdown: 0.9
+    maxContactWalkSlowdown: 0.9
 
 - type: entity
-  parent: ClothingShoesBaseButcherable
+  parent: [ClothingShoesBaseButcherable, BaseMajorContraband]
   id: ClothingShoesSpaceNinja
   name: space ninja shoes
   description: A pair of nano-enhanced boots with built-in magnetic suction cups.
@@ -255,7 +256,7 @@
         - Scientist
         - Borg
 # Corvax-HiddenDesc-End
-          
+
 - type: entity
   parent: ClothingShoesClown
   id: ClothingShoesJester

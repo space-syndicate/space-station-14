@@ -1,3 +1,5 @@
+ent-BaseMeleeWeaponEnergy = { ent-BaseItem }
+    .desc = { ent-BaseItem.desc }
 # Corvax-HiddenDesc-Start
 ent-EnergySword = игрушечный меч
     .suffix = энергетический меч

@@ -10,6 +10,8 @@
   - !type:DepartmentTimeRequirement
     department: Security
     time: 36000
+  - !type:AgeRequirement
+    requiredAge: 21
   startingGear: IAAGear
   icon: "JobIconIAA"
   supervisors: job-supervisors-centcom

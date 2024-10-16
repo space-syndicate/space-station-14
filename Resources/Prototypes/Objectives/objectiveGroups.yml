@@ -6,6 +6,7 @@
     TraitorObjectiveGroupKill: 1
     TraitorObjectiveGroupState: 1 #As in, something about your character. Alive, dead, arrested, gained an ability...
     TraitorObjectiveGroupSocial: 1 #Involves helping/harming others without killing them or stealing their stuff
+    TraitorObjectiveGroupNukieDisk: 1  #Corvax
 
 - type: weightedRandom
   id: TraitorObjectiveGroupSteal
@@ -13,15 +14,15 @@
     CaptainIDStealObjective: 1
     CMOHyposprayStealObjective: 1
     CMOCrewMonitorStealObjective: 1
+    #NukeDiskStealObjective: 1 #Corvax
     RDHardsuitStealObjective: 1
-    NukeDiskStealObjective: 1
     MagbootsStealObjective: 1
     CorgiMeatStealObjective: 1
     ClipboardStealObjective: 1
     CaptainGunStealObjective: 0.5
     CaptainJetpackStealObjective: 0.5
     HandTeleporterStealObjective: 0.5
-    SecretDocumentsStealObjective: 0.5
+    EnergyShotgunStealObjective: 0.5
 
 - type: weightedRandom
   id: TraitorObjectiveGroupKill
@@ -52,8 +53,8 @@
 - type: weightedRandom
   id: ThiefBigObjectiveGroups
   weights:
-    ThiefObjectiveGroupStructure: 0 #Temporarily disabled until obvious ways to steal structures are added
-    ThiefObjectiveGroupAnimal: 2
+    ThiefObjectiveGroupStructure: 1
+    ThiefObjectiveGroupAnimal: 1
 
 - type: weightedRandom
   id: ThiefObjectiveGroupCollection
@@ -63,7 +64,6 @@
     StampStealCollectionObjective: 1
     DoorRemoteStealCollectionObjective: 1
     TechnologyDiskStealCollectionObjective: 1        #rnd
-    FigurineStealCollectionObjective: 0.3          #service
     IDCardsStealCollectionObjective: 1
     LAMPStealCollectionObjective: 2 #only for moth
 
@@ -73,6 +73,7 @@
     ForensicScannerStealObjective: 1                    #sec
     FlippoEngravedLighterStealObjective: 0.5
     ClothingHeadHatWardenStealObjective: 1
+    WantedListCartridgeStealObjective: 1
     ClothingOuterHardsuitVoidParamedStealObjective: 1   #med
     MedicalTechFabCircuitboardStealObjective: 1
     ClothingHeadsetAltMedicalStealObjective: 1
@@ -91,7 +92,6 @@
   weights:
     NuclearBombStealObjective: 0.5
     FaxMachineCaptainStealObjective: 1
-    VehicleSecwayStealObjective: 1
     ChemDispenserStealObjective: 1
     XenoArtifactStealObjective: 1
     FreezerHeaterStealObjective: 1
@@ -99,6 +99,7 @@
     BoozeDispenserStealObjective: 1
     AltarNanotrasenStealObjective: 1
     PlantRDStealObjective: 1
+    ToiletGoldenStealObjective: 1
 
 - type: weightedRandom
   id: ThiefObjectiveGroupAnimal

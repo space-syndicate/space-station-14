@@ -1,5 +1,5 @@
 ent-ShelfBase = shelf
-    .desc = A strange place to place, well, anything really. You feel like you shouldn't be seeing this.'
+    .desc = A strange place to place, well, anything really. You feel like you shouldn't be seeing this.
 ent-ShelfBaseReinforced = reinforced shelf
     .desc = It looks as strong as reality itself.
 ent-ShelfWood = wooden shelf
@@ -16,7 +16,7 @@ ent-ShelfRGlass = sturdy glass shelf
     .desc = Crystal clear reinforced glass doors to show off all your fancy bottles you definitely didn't sell a co-worker's favorite mothroach for.
 ent-ShelfBar = bar shelf
     .desc = Made out of the finest synthetic wood for all alcohol holding needs.
-ent-ShelfKitchen = cooking shelf
+ent-ShelfKitchen = kitchen shelf
     .desc = Holds knifes, spice, and everything nice!
 ent-ShelfChemistry = chemical shelf
     .desc = Keeps all your chemicals safe and out of the clow- er, public hands!
