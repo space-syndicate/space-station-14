@@ -39,3 +39,5 @@ ent-ClothingHeadHatRedRacoon = шапка рыжего енота
     .desc = Пушистая шапка рыжего енота!
 ent-WaterDropletHat = капелька воды
     .desc = Делает 8-глазых друзей в 8 раз очаровательнее!
+ent-ClothingHeadHatHairflower = hairflower
+    .desc = A beautiful hairflower that can be inserted between locks of hair.
