@@ -29,3 +29,5 @@ ent-ImmovableRodThrongler = immovable throngler
     .desc = If you catch it, you can keep it.
 ent-ImmovableRodGibstick = immovable gibstick
     .desc = What did you expect?
+ent-ImmovableRodWeh = immovable weh
+    .desc = WEH!

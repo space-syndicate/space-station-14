@@ -115,6 +115,10 @@
   background: /Textures/Corvax/LobbyScreens/clownspider.png
 
 - type: lobbyBackground
+  id: AIMia
+  background: /Textures/Corvax/LobbyScreens/ai-mia.png
+
+- type: lobbyBackground
   id: XenoAttack
   background: /Textures/Corvax/LobbyScreens/xenosattack.png
 
@@ -189,3 +193,7 @@
 - type: lobbyBackground
   id: SillyIsland
   background: /Textures/Corvax/LobbyScreens/silly-island.png
+
+- type: lobbyBackground
+  id: EchoTeam
+  background: /Textures/Corvax/LobbyScreens/echo-team.png
