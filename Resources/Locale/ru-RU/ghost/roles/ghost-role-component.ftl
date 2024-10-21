@@ -231,3 +231,7 @@ ghost-role-information-artifact-name = Разумный артефакт
 ghost-role-information-artifact-description = Осуществляйте свои инопланетные прихоти. Принудительно активируйте свои узлы во благо или во зло.
 ghost-role-information-tomatokiller-name = Томат-убийца
 ghost-role-information-tomatokiller-description = Этот маленький помидор будет служить ботанику до конца своей жизни... то есть пару минут.
+# Corvax-start
+ghost-role-information-syndicate-smuggler-name = Контрабандист Синдиката
+ghost-role-information-syndicate-smuggler-description = Вы - специально обученный контрабандист синдиката. Отправляйтесь на поиски выданной вам цели и отыщите её любыми средствами.
+# Corvax-end
