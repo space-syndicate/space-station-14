@@ -61,9 +61,9 @@ job-name-unknown = неизвестно
 job-name-virologist = вирусолог
 job-name-zombie = зомби
 # Job titles
-job-title-visitor = Visitor
-job-title-cluwne = Cluwne
-job-title-universal = Universal
+job-title-visitor = посетитель
+job-title-cluwne = клувень
+job-title-universal = универсальная
 # Role timers - Make these alphabetical or I cut you
 JobAtmosphericTechnician = атмосферный техник
 JobBartender = бармен
