@@ -26,3 +26,17 @@
       accentVColor: "#DFDFDF"
     - type: Icon
       state: pda-seniorofficer
+
+- type: entity
+  parent: CentcomPDA
+  id: CentcomOperatorPDA
+  components:
+    - type: Pda
+      id: CentcomOperatorIDCard
+
+- type: entity
+  parent: CentcomPDA
+  id: CentcomChiefPDA
+  components:
+    - type: Pda
+      id: CentcomChiefIDCard
