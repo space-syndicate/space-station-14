@@ -151,9 +151,9 @@
           - Borg
       - label: corvax-hidden-desc-SadTromboneImplanter-syndicate
         whitelistMind:
-          components:
-            - TraitorRole
-            - NukeOperative
+          mindRoles:
+          - TraitorRole
+          - NukeopsRole
 
 - type: entity
   id: LightImplanter
@@ -177,9 +177,9 @@
           - Borg
       - label: corvax-hidden-desc-LightImplanter-syndicate
         whitelistMind:
-          components:
-            - TraitorRole
-            - NukeOperative
+          mindRoles:
+          - TraitorRole
+          - NukeopsRole
 
 - type: entity
   id: BikeHornImplanter
@@ -203,9 +203,9 @@
           - Borg
       - label: corvax-hidden-desc-BikeHornImplanter-syndicate
         whitelistMind:
-          components:
-            - TraitorRole
-            - NukeOperative
+          mindRoles:
+          - TraitorRole
+          - NukeopsRole
 
 #Security implanters
 
@@ -231,9 +231,9 @@
           - Borg
       - label: corvax-hidden-desc-TrackingImplanter-syndicate
         whitelistMind:
-          components:
-            - TraitorRole
-            - NukeOperative
+          mindRoles:
+          - TraitorRole
+          - NukeopsRole
 
 #Traitor implanters
 
@@ -259,9 +259,9 @@
           - Borg
       - label: corvax-hidden-desc-FreedomImplanter-syndicate
         whitelistMind:
-          components:
-            - TraitorRole
-            - NukeOperative
+          mindRoles:
+          - TraitorRole
+          - NukeopsRole
 
 - type: entity
   id: FreedomImplanter
@@ -285,9 +285,9 @@
           - Borg
       - label: corvax-hidden-desc-FreedomImplanter-syndicate
         whitelistMind:
-          components:
-            - TraitorRole
-            - NukeOperative
+          mindRoles:
+          - TraitorRole
+          - NukeopsRole
 
 - type: entity
   id: UplinkImplanter
@@ -311,9 +311,9 @@
         - Borg
     - label: corvax-hidden-desc-UplinkImplanter-syndicate
       whitelistMind:
-        components:
-          - TraitorRole
-          - NukeOperative
+        mindRoles:
+        - TraitorRole
+        - NukeopsRole
 
 - type: entity
   id: EmpImplanter
@@ -337,9 +337,9 @@
           - Borg
       - label: corvax-hidden-desc-EmpImplanter-syndicate
         whitelistMind:
-          components:
-            - TraitorRole
-            - NukeOperative
+          mindRoles:
+          - TraitorRole
+          - NukeopsRole
 
 - type: entity
   id: ScramImplanter
@@ -363,9 +363,9 @@
           - Borg
       - label: corvax-hidden-desc-ScramImplanter-syndicate
         whitelistMind:
-          components:
-            - TraitorRole
-            - NukeOperative
+          mindRoles:
+          - TraitorRole
+          - NukeopsRole
 
 - type: entity
   id: DnaScramblerImplanter
@@ -389,9 +389,9 @@
           - Borg
       - label: corvax-hidden-desc-DnaScramblerImplanter-syndicate
         whitelistMind:
-          components:
-            - TraitorRole
-            - NukeOperative
+          mindRoles:
+          - TraitorRole
+          - NukeopsRole
 
 #Nuclear Operative/Special implanters
 
@@ -417,9 +417,9 @@
           - Borg
       - label: corvax-hidden-desc-MicroBombImplanter-syndicate
         whitelistMind:
-          components:
-            - TraitorRole
-            - NukeOperative
+          mindRoles:
+          - TraitorRole
+          - NukeopsRole
 
 - type: entity
   id: MacroBombImplanter
@@ -443,9 +443,9 @@
           - Borg
       - label: corvax-hidden-desc-MacroBombImplanter-syndicate
         whitelistMind:
-          components:
-            - TraitorRole
-            - NukeOperative
+          mindRoles:
+          - TraitorRole
+          - NukeopsRole
 
 - type: entity
   id: DeathRattleImplanter
@@ -469,9 +469,9 @@
           - Borg
       - label: corvax-hidden-desc-DeathRattleImplanter-syndicate
         whitelistMind:
-          components:
-            - TraitorRole
-            - NukeOperative
+          mindRoles:
+          - TraitorRole
+          - NukeopsRole
 
 - type: entity
   id: DeathAcidifierImplanter
@@ -495,9 +495,9 @@
         - Borg
     - label: corvax-hidden-desc-DeathAcidifierImplanter-syndicate
       whitelistMind:
-        components:
-          - TraitorRole
-          - NukeOperative
+        mindRoles:
+        - TraitorRole
+        - NukeopsRole
 
 # Security and Command implanters
 
@@ -523,6 +523,6 @@
           - Borg
       - label: corvax-hidden-desc-MindShieldImplanter-syndicate
         whitelistMind:
-          components:
-            - TraitorRole
-            - NukeOperative
+          mindRoles:
+          - TraitorRole
+          - NukeopsRole
