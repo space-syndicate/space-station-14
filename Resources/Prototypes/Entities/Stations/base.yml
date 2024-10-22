@@ -73,7 +73,8 @@
           - /Maps/Ruins/corvax_rnd_debris.yml
           - /Maps/Ruins/corvax_sanctus.yml
           - /Maps/Ruins/corvax_syndi_base.yml
-          - /Maps/Ruins/corvax_ussp.yml
+          - /Maps/Ruins/corvax_ussp_debris.yml
+          - /Maps/Ruins/corvax_ussp_asteroid.yml
         vgroid: !type:DungeonSpawnGroup
           minimumDistance: 300
           maximumDistance: 350
