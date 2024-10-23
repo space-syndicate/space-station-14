@@ -133,9 +133,9 @@
     entries:
     - label: corvax-hidden-desc-HypoDart-syndicate
       whitelistMind:
-        components:
-          - TraitorRole
-          - NukeOperative
+        mindRoles:
+        - TraitorRole
+        - NukeopsRole
     - label: corvax-hidden-desc-HypoDart-research
       jobRequired:
         - ResearchAssistant

@@ -441,9 +441,9 @@
     entries:
     - label: corvax-hidden-desc-Hypopen-syndicate
       whitelistMind:
-        components:
-          - TraitorRole
-          - NukeOperative
+        mindRoles:
+        - TraitorRole
+        - NukeopsRole
     - label: corvax-hidden-desc-Hypopen-research
       jobRequired:
         - ResearchAssistant

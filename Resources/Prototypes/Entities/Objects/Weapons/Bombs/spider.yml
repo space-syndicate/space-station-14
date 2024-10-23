@@ -50,8 +50,8 @@
     entries:
     - label: corvax-hidden-desc-SpiderCharge-ninja
       whitelistMind:
-        components:
-          - NinjaRole
+        mindRoles:
+        - NinjaRole
     - label: corvax-hidden-desc-SpiderCharge-research
       jobRequired:
         - ResearchAssistant

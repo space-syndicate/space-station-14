@@ -14,9 +14,9 @@
     entries:
     - label: corvax-hidden-desc-HoloparasiteInjector-syndicate
       whitelistMind:
-        components:
-          - TraitorRole
-          - NukeOperative
+        mindRoles:
+        - TraitorRole
+        - NukeopsRole
     - label: corvax-hidden-desc-HoloparasiteInjector-research
       jobRequired:
         - ResearchAssistant
@@ -43,9 +43,9 @@
     entries:
     - label: corvax-hidden-desc-HoloClownInjector-syndicate
       whitelistMind:
-        components:
-          - TraitorRole
-          - NukeOperative
+        mindRoles:
+        - TraitorRole
+        - NukeopsRole
     - label: corvax-hidden-desc-HoloClownInjector-research
       jobRequired:
         - ResearchAssistant

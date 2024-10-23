@@ -80,9 +80,9 @@
     entries:
     - label: corvax-hidden-desc-BibleNecronomicon-syndicate
       whitelistMind:
-        components:
-          - TraitorRole
-          - NukeOperative
+        mindRoles:
+        - TraitorRole
+        - NukeopsRole
     - label: corvax-hidden-desc-BibleNecronomicon-service
       jobRequired:
         - Chaplain
