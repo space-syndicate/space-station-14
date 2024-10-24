@@ -1,0 +1,2049 @@
+#---------------------------униформа----------------------------------------------------------------------
+#------------------------------------ефрейтор---------- 
+- type: entity
+  parent: ClothingUniformSkirtBase
+  id: VitzUniformEfreitor
+  name: Форма пехотного ефрейтора Витезтви
+  suffix: Витезтви
+  description: Стандартная пехотная униформа пехотинца корпорации Витезтви. Бойцы хорошо отзываются от курток из прочной кожи и широких штанах.
+  components:
+  - type: Sprite
+    sprite: Corvax/Lore/Viteztvi/Equipment/vitz_uniform_e.rsi
+  - type: Clothing
+    sprite: Corvax/Lore/Viteztvi/Equipment/vitz_uniform_e.rsi
+  - type: Armor
+    modifiers:
+      coefficients:
+        Heat: 0.9
+#------------------------------------старшина----------     
+- type: entity
+  parent: ClothingUniformSkirtBase
+  id: VitzUniformStarshina
+  name: Форма пехотного старшины Витезтви
+  suffix: Витезтви
+  description: Стандартная пехотная униформа старшины корпорации Витезтви. Бойцы хорошо отзываются от курток из прочной кожи и широких штанах.
+  components:
+  - type: Sprite
+    sprite: Corvax/Lore/Viteztvi/Equipment/vitz_uniform_s.rsi
+  - type: Clothing
+    sprite: Corvax/Lore/Viteztvi/Equipment/vitz_uniform_s.rsi
+  - type: Armor
+    modifiers:
+      coefficients:
+        Heat: 0.9
+#------------------------------------старший----------     
+- type: entity
+  parent: ClothingUniformSkirtBase
+  id: VitzUniformStarshiy
+  name: Форма флотского пилота Витезтви
+  suffix: Витезтви
+  description: Стандартная униформа флотского пилота корпорации Витезтви. На ней есть удобные карманы для мелких вещей.
+  components:
+  - type: Sprite
+    sprite: Corvax/Lore/Viteztvi/Equipment/vitz_uniform_p.rsi
+  - type: Clothing
+    sprite: Corvax/Lore/Viteztvi/Equipment/vitz_uniform_p.rsi
+  - type: UseDelay
+    delay: 0.5
+#------------------------------------звеньевой---------- 
+- type: entity
+  parent: ClothingUniformSkirtBase
+  id: VitzUniformZvenievoi
+  name: Форма командира звена Витезтви
+  suffix: Витезтви
+  description: Стандартная униформа флотского командира звена корпорации Витезтви. На ней есть удобные карманы для мелких вещей.
+  components:
+  - type: Sprite
+    sprite: Corvax/Lore/Viteztvi/Equipment/vitz_uniform_z.rsi
+  - type: Clothing
+    sprite: Corvax/Lore/Viteztvi/Equipment/vitz_uniform_z.rsi
+  - type: UseDelay
+    delay: 0.5
+#-------------------------------одежда и снаряга----------------------------------------------------------------------
+#------------------------------------рюкзак---------- 
+- type: entity
+  parent: ClothingBackpack
+  id: VitzBackpack
+  name: Армейский рюкзак корпорации Витезтви
+  suffix: Витезтви
+  description: Стандартный армейский рюкзак бойцов корпорации Витезтви. Чуть более вместительный... лишние патроны и бинты ещё никому не мешали!
+  components:
+  - type: Sprite
+    sprite: Corvax/Lore/Viteztvi/Equipment/vitz_back.rsi
+  - type: Storage
+    grid:
+    - 0,0,7,4
+#------------------------------------сапоги---------- 
+- type: entity
+  parent: ClothingShoesMilitaryBase
+  id: VitzBoots
+  name: Армейские сапоги корпорации Витезтви
+  suffix: Витезтви
+  description: Удобные армейские сапоги. В таких можно топтать как пол космической станции. так и землю, грязь, бошки ксеноморфов и шеи врагов корпорации!
+  components:
+  - type: Sprite
+    sprite: Corvax/Lore/Viteztvi/Equipment/vitz_boots.rsi
+  - type: Clothing
+    sprite: Corvax/Lore/Viteztvi/Equipment/vitz_boots.rsi
+#------------------------------------беретка ефрейтора---------- 
+- type: entity
+  parent: ClothingHeadBase
+  id: VitzBeretEfreitor
+  name: Берет ефрейтора Витезтви
+  suffix: Витезтви
+  description: Армейский берет рядового состава корпорации Витезтви. Многие считают, что камуфляж вышел неудачным. Но на нём очену удобно спать!
+  components:
+  - type: Sprite
+    sprite: Corvax/Lore/Viteztvi/Equipment/vitz_beret_e.rsi
+  - type: Clothing
+    sprite: Corvax/Lore/Viteztvi/Equipment/vitz_beret_e.rsi
+  - type: Tag
+    tags:
+    - ClothMade
+    - WhitelistChameleon
+#------------------------------------беретка старшины---------- 
+- type: entity
+  parent: ClothingHeadBase
+  id: VitzBeretStarshina
+  name: Берет старшины корпорации Витезтви
+  suffix: Витезтви
+  description: Армейский берет рядового состава корпорации Витезтви. Камуфляж може и не самый лучший, но из-за железного значка его очень хорошо метать в спящих на посту солдат!
+  components:
+  - type: Sprite
+    sprite: Corvax/Lore/Viteztvi/Equipment/vitz_beret_s.rsi
+  - type: Clothing
+    sprite: Corvax/Lore/Viteztvi/Equipment/vitz_beret_s.rsi
+  - type: Tag
+    tags:
+    - ClothMade
+    - WhitelistChameleon
+#------------------------------------пилотка пилота----------     
+- type: entity
+  parent: ClothingHeadBase
+  id: VitzCapStarsiy
+  name: Пилотка собственно пилота корпорации Витезтви
+  suffix: Витезтви
+  description: Пилотка из плотной ткани. И все вокруг понимают, что вы хороший пилот...
+  components:
+  - type: Sprite
+    sprite: Corvax/Lore/Viteztvi/Equipment/vitz_cap_p.rsi
+  - type: Clothing
+    sprite: Corvax/Lore/Viteztvi/Equipment/vitz_cap_p.rsi
+  - type: Tag
+    tags:
+    - ClothMade
+    - HamsterWearable
+    - WhitelistChameleon
+#------------------------------------пилотка звеньевого----------     
+- type: entity
+  parent: ClothingHeadBase
+  id: VitzCapZvenievoi
+  name: Пилотка командира звена корпорации Витезтви
+  suffix: Витезтви
+  description: Пилотка из плотной ткани. Её вечно забывают на штурвале истребителя...
+  components:
+  - type: Sprite
+    sprite: Corvax/Lore/Viteztvi/Equipment/vitz_cap_z.rsi
+  - type: Clothing
+    sprite: Corvax/Lore/Viteztvi/Equipment/vitz_cap_z.rsi
+  - type: Tag
+    tags:
+    - ClothMade
+    - HamsterWearable
+    - WhitelistChameleon
+#------------------------------------армейские перчатки---------- 
+- type: entity
+  parent: ClothingHandsBase
+  id: VitzGlovesFingerless
+  name: Армейские перчатки Витезтви
+  suffix: Витезтви
+  description: Предотвращают образование мозолей от долгой работы с оружием, но при этом не мешают подвижности пальцев. Но в них на морозе мёрзнут руки у пехоты. А вот танкисты и пилоты не жалуются! Суки...
+  components:
+  - type: Sprite
+    sprite: Corvax/Lore/Viteztvi/Equipment/vitz_gloves.rsi
+  - type: Clothing
+    sprite: Corvax/Lore/Viteztvi/Equipment/vitz_gloves.rsi
+  - type: Fiber
+    fiberMaterial: fibers-synthetic
+    fiberColor: fibers-black
+#------------------------------------шлем ефрейтора---------- 
+- type: entity
+  parent: ClothingHeadHelmetBasic
+  id: VitzHelmetEfreitor
+  name: Пехотный соладтский шлем Витезтви
+  suffix: Витезтви
+  description: Крепкий и крупный армейский шлем корпорации Витезтви. Версия для рядового состава. Рядовой состав ненавидит протирать линзы шлема...
+  components:
+  - type: Sprite
+    sprite: Corvax/Lore/Viteztvi/Armor/vitz_helmet_e.rsi
+  - type: Clothing
+    sprite: Corvax/Lore/Viteztvi/Armor/vitz_helmet_e.rsi
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.8
+        Slash: 0.8
+        Piercing: 0.8
+        Heat: 0.8
+#------------------------------------шлем старшины---------- 
+- type: entity
+  parent: ClothingHeadHelmetBasic
+  id: VitzHelmetStarshina
+  name: Пехотный офицерский шлем Витезтви
+  suffix: Витезтви
+  description: Крепкий и крупный армейский шлем корпорации Витезтви. Версия для офицерского состава. Имеет встроенный визор определения целей.
+  components:
+  - type: Sprite
+    sprite: Corvax/Lore/Viteztvi/Armor/vitz_helmet_s.rsi
+  - type: Clothing
+    sprite: Corvax/Lore/Viteztvi/Armor/vitz_helmet_s.rsi
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.75
+        Slash: 0.75
+        Piercing: 0.75
+        Heat: 0.8
+  - type: ShowJobIcons
+#------------------------------------шлем флота---------- 
+- type: entity
+  parent: ClothingHeadHelmetBasic
+  id: VitzHelmetPilots
+  name: Пехотный флотской шлем Витезтви
+  suffix: Витезтви
+  description: Небольшой, но прочный шлем корпорации Витезтви. Версия для пилотов. Неплохо защищает, если что-то в кабине треснет и прилетит в голову.
+  components:
+  - type: Sprite
+    sprite: Corvax/Lore/Viteztvi/Armor/vitz_helmet_pz.rsi
+  - type: Clothing
+    sprite: Corvax/Lore/Viteztvi/Armor/vitz_helmet_pz.rsi
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.8
+        Slash: 0.85
+        Piercing: 0.85
+#------------------------------------патрульный броник----------     
+- type: entity
+  parent: ClothingOuterBaseMedium
+  id: VitzArmorBasic
+  name: Лёгкий бронежилет Витезтви
+  suffix: Витезтви
+  description: Лёгкий армейский бронежилет корпорации Витезтви, которые носят поатрульные в зоне, где вероятность попасть под удар минимальна.
+  components:
+  - type: Sprite
+    sprite: Corvax/Lore/Viteztvi/Armor/vitz_armor_light.rsi
+  - type: Clothing
+    sprite: Corvax/Lore/Viteztvi/Armor/vitz_armor_light.rsi
+  - type: Armor 
+    modifiers:
+      coefficients:
+        Blunt: 0.65
+        Slash: 0.65
+        Piercing: 0.65 
+        Heat: 0.70
+  - type: ExplosionResistance
+    damageCoefficient: 0.80
+#------------------------------------броник мистера Хилла----------     
+- type: entity
+  parent: ClothingOuterBaseMedium
+  id: VitzArmorMrHill
+  name: Фирменный бронежилет Мистера или Мисс Хилл
+  suffix: Витезтви
+  description: Вербовщики и продавцы услуг являются визитной карточной корпорации Витезтви. И все эти мужчикы и женщины, что вне зависимости от расы и возраста, носящие именя Мистер и Мисс Хилл, используют такие бронежилеты.
+  components:
+  - type: Sprite
+    sprite: Corvax/Lore/Viteztvi/Armor/vitz_armor_verb.rsi
+  - type: Clothing
+    sprite: Corvax/Lore/Viteztvi/Armor/vitz_armor_verb.rsi
+  - type: Armor 
+    modifiers:
+      coefficients:
+        Blunt: 0.55
+        Slash: 0.55
+        Piercing: 0.55 
+        Heat: 0.60
+  - type: ExplosionResistance
+    damageCoefficient: 0.75
+#------------------------------------пехотный скафандр----------      
+- type: entity
+  parent: ClothingOuterHardsuitBase
+  id: VitzHardsuitPehot
+  name: Пехотный бронескафандр Витезтви
+  suffix: Витезтви
+  description: Здоровая дура, которая успешно защищает солдат корпорации Витезтви от пуль, ножей, ударов, взрывов, активных сред, яда ксеноморфов, зубов дьявола и чёртовых рогов.
+  components:
+  - type: Sprite
+    sprite: Corvax/Lore/Viteztvi/Armor/vitz_hardsuits_es.rsi
+  - type: Clothing
+    sprite: Corvax/Lore/Viteztvi/Armor/vitz_hardsuits_es.rsi
+  - type: ExplosionResistance
+    damageCoefficient: 0.55
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.4
+        Slash: 0.5
+        Piercing: 0.4
+        Heat: 0.5
+        Radiation: 0.4
+        Caustic: 0.6
+  - type: ClothingSpeedModifier
+    walkModifier: 0.85
+    sprintModifier: 0.85
+  - type: HeldSpeedModifier
+  - type: ToggleableClothing
+    clothingPrototype: VitzHelmetHardsuitPehot
+#------------------------------------шлем пехотного скафандра----------  
+- type: entity
+  parent: ClothingHeadHardsuitWithLightBase
+  id: VitzHelmetHardsuitPehot
+  name: Шлем пехотного бронескафандра Витезтви
+  suffix: Витезтви
+  description: Укреплённый шлем бронескафандра корпорации Витезтви. Бойцам нравится его визор. Они называют его "матёрым" и "малясь устрашающим".
+  noSpawn: true
+  components:
+  - type: BreathMask
+  - type: Sprite
+    sprite: Corvax/Lore/Viteztvi/Armor/vitz_hardsuits_es_helmet.rsi
+  - type: Clothing
+    sprite: Corvax/Lore/Viteztvi/Armor/vitz_hardsuits_es_helmet.rsi
+  - type: PointLight
+    color: "#ffdbad"
+  - type: PressureProtection
+    highPressureMultiplier: 0.1
+    lowPressureMultiplier: 1000
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.8
+        Slash: 0.8
+        Piercing: 0.8
+        Caustic: 0.9
+        Heat: 0.9
+  - type: ExplosionResistance
+    damageCoefficient: 0.8
+#------------------------------------флотской скафандр----------      
+- type: entity
+  parent: ClothingOuterHardsuitBase
+  id: VitzHardsuitPilot
+  name: Флотской скафандр Витезтви
+  suffix: Витезтви
+  description: Даёт некоторую защиту и спасает от декомпрессии. Впрочем, порой пилоты жалуются, что он недостаточно мобильный.
+  components:
+  - type: Sprite
+    sprite: Corvax/Lore/Viteztvi/Armor/vitz_hardsuits_pz.rsi
+  - type: Clothing
+    sprite: Corvax/Lore/Viteztvi/Armor/vitz_hardsuits_pz.rsi
+  - type: ExplosionResistance
+    damageCoefficient: 0.9
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.7
+        Slash: 0.7
+        Piercing: 0.6
+        Radiation: 0.5
+        Caustic: 0.5
+  - type: ClothingSpeedModifier
+    walkModifier: 0.9
+    sprintModifier: 0.9
+  - type: HeldSpeedModifier
+  - type: ToggleableClothing
+    clothingPrototype: VitzHelmetHardsuitPilot
+#------------------------------------шлем флотского скафандра----------  
+- type: entity
+  parent: ClothingHeadHardsuitWithLightBase
+  id: VitzHelmetHardsuitPilot
+  name: Шлем флотского скафандра Витезтви
+  suffix: Витезтви
+  description: Облегчённая версия пехотного шлема скфандра. Меньше механической брони, но больше защитных покрытий от агрессивных сред. В дополнение - визор опредления целей.
+  noSpawn: true
+  components:
+  - type: BreathMask
+  - type: Sprite
+    sprite: Corvax/Lore/Viteztvi/Armor/vitz_hardsuits_pz_helmet.rsi
+  - type: Clothing
+    sprite: Corvax/Lore/Viteztvi/Armor/vitz_hardsuits_pz_helmet.rsi
+  - type: PointLight
+    color: "#ffdbad"
+  - type: PressureProtection
+    highPressureMultiplier: 0.1
+    lowPressureMultiplier: 1000
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.9
+        Slash: 0.9
+        Piercing: 0.9
+        Caustic: 0.75
+        Radiation: 0.65
+        Heat: 0.8
+  - type: ExplosionResistance
+    damageCoefficient: 0.8
+  - type: ShowJobIcons
+#---------------------------------------------------пояс и снаряжение---------------------------------------
+#-------------------------------------печать-----------------      
+- type: entity
+  name: Печать корпорации Витезтви
+  suffix: Витезтви
+  parent: RubberStampBaseAlt
+  id: VitzRubberStamp
+  components:
+  - type: Stamp
+    stampedName: Корпорация Витезтви
+    stampedColor: "#86821d"
+    stampState: "paper_stamp-generic"
+  - type: Sprite
+    sprite: Corvax/Lore/Viteztvi/Equipment/vitz_stamp.rsi
+    state: stamp
+#-------------------------------------джетпак---------------------------------------   
+- type: entity
+  id: VitzJetpack
+  parent: BaseJetpack
+  name: Реактивный канец Витезтви
+  description: Взял, включил и лети себе рассекать космос!
+  suffix: Витезтви, Пустой
+  components:
+  - type: Sprite
+    sprite: Corvax/Lore/Viteztvi/Equipment/vitz_jetpack.rsi
+  - type: Clothing
+    sprite: Corvax/Lore/Viteztvi/Equipment/vitz_jetpack.rsi
+    slots:
+      - Back
+  - type: Item
+    sprite: Corvax/Lore/Viteztvi/Equipment/vitz_jetpack.rsi
+    size: Huge
+
+- type: entity
+  id: VitzJetpackFilled
+  parent: VitzJetpack
+  name: jetpack
+  suffix: Витезтви, Заполненый
+  components:
+  - type: GasTank
+    outputPressure: 42.6
+    air:
+      # 13 minutes of thrust
+      volume: 5
+      temperature: 293.15
+      moles:
+        - 1.025689525 # oxygen
+        - 1.025689525 # nitrogen
+#-------------------------------------пояс--------------------------------------- 
+- type: entity
+  parent: ClothingBeltStorageBase
+  id: VitzeBelt
+  name: Армейский пояс Витезтви
+  suffix: Витезтви
+  description: Этот пояс используют военные корпорации Витезтви для ношения амуниции, гранат и прочего боевого снаряжения
+  components:
+  - type: Sprite
+    sprite: Corvax/Lore/Viteztvi/Equipment/vitz_belt.rsi
+  - type: Clothing
+    sprite: Corvax/Lore/Viteztvi/Equipment/vitz_belt.rsi
+  - type: Storage
+    whitelist:
+      tags:
+        - CigPack
+        - Taser
+        - Powerdrill
+        - Wirecutter
+        - Crowbar
+        - Screwdriver
+        - Flashlight
+        - Wrench
+        - GeigerCounter
+        - Flare
+        - CableCoil
+        - CigPack
+        - Radio
+        - HolofanProjector
+        - Multitool
+        - AppraisalTool
+        - JawsOfLife
+        - GPS
+        - MagazinePistolHighCapacity
+        - CombatKnife
+        - Sidearm
+      components:
+        - Stunbaton
+        - FlashOnTrigger
+        - SmokeOnTrigger
+        - Flash
+        - Handcuff
+        - RangedMagazine
+        - Ammo
+        - SprayPainter
+        - NetworkConfigurator
+        - RCD
+        - RCDAmmo
+        - Welder
+        - PowerCell
+        - Geiger
+        - TrayScanner
+        - GasAnalyzer
+  - type: Appearance
+
+- type: entity
+  id: VitzeBeltFilled
+  parent: VitzeBelt
+  suffix: Filled, Витезтви
+  components:
+  - type: StorageFill
+    contents:
+      - id: WeaponPistolMk58
+      - id: CombatKnife
+      - id: MagazinePistolHighCapacity
+      - id: MagazinePistolHighCapacity
+#-------------------------------------оружие-------------------------------------------------------------------------------
+#-------------------------------------магазины---------------------------------------------------------------------------------
+#------------------------------------к пистолет-пулемёту----------   
+- type: Tag
+  id: MagazineSMGViteztvi
+
+- type: entity
+  id: BaseMagazineSMGViteztvi
+  name: SMG magazine (.35 auto)
+  parent: BaseItem
+  abstract: true
+  components:
+  - type: Tag
+    tags:
+      - MagazineSMGViteztvi
+  - type: BallisticAmmoProvider
+    mayTransfer: true
+    whitelist:
+      tags:
+        - CartridgePistol
+    capacity: 25
+  - type: Item
+    size: Small
+  - type: ContainerContainer
+    containers:
+      ballistic-ammo: !type:Container
+  - type: Sprite
+    sprite: Corvax/Lore/Viteztvi/Weapon/vitz_smg_magazine.rsi
+    layers:
+    - state: base
+      map: ["enum.GunVisualLayers.Base"]
+    - state: mag-1
+      map: ["enum.GunVisualLayers.Mag"]
+  - type: MagazineVisuals
+    magState: mag
+    steps: 1
+    zeroVisible: false
+  - type: Appearance
+
+- type: entity
+  id: MagazineSMGViteztvi
+  name: Магазин к пистолету-пулемёту "Орлик" (.35 auto боевые)
+  suffix: Витезтви
+  parent: BaseMagazineSMGViteztvi
+  components:
+  - type: BallisticAmmoProvider
+    capacity: 30
+    proto: CartridgePistol
+    whitelist:
+      tags:
+        - CartridgePistol
+    soundInsert:
+      path: /Audio/Weapons/Guns/MagIn/bullet_insert.ogg
+  - type: Sprite
+    layers:
+    - state: base
+      map: ["enum.GunVisualLayers.Base"]
+
+- type: entity
+  id: MagazineSMGViteztviRubber
+  name: Магазин к пистолету-пулемёту "Орлик" (.35 auto резиновые)
+  suffix: Витезтви
+  parent: BaseMagazineSMGViteztvi
+  components:
+  - type: BallisticAmmoProvider
+    proto: CartridgePistolRubber
+  - type: Sprite
+    layers:
+    - state: rubber
+      map: ["enum.GunVisualLayers.Base"]
+#-------------------------------------стволы---------------------------------------------------------------------------------
+#------------------------------------пистолет-пулемёт----------     
+- type: entity
+  name: Пистолет-пулемёт "Орлик"
+  suffix: Витезтви
+  parent: BaseWeaponSubMachineGun
+  id: SMGViteztvi
+  description: Небольшой, но удобный пистолет-пулемёт корпорации Витезтви, который выдаётся пилотам и экипажу флота для ведения боя в тесных помещениях. Заряжается стандартными пистолетными патронами .35
+  components:
+    - type: Sprite
+      sprite: Corvax/Lore/Viteztvi/Weapon/vitz_smg.rsi
+      layers:
+        - state: base
+          map: ["enum.GunVisualLayers.Base"]
+        - state: mag-0
+          map: ["enum.GunVisualLayers.Mag"]
+    - type: Clothing
+      sprite: Corvax/Lore/Viteztvi/Weapon/vitz_smg.rsi
+    - type: Gun
+      fireRate: 6
+      selectedMode: FullAuto
+      soundGunshot:
+        path: /Audio/Weapons/Guns/Gunshots/atreides.ogg
+      availableModes:
+        - FullAuto
+    - type: ItemSlots
+      slots:
+        gun_magazine:
+          name: Magazine
+          startingItem: MagazineSMGViteztvi
+          insertSound: /Audio/Weapons/Guns/MagIn/smg_magin.ogg
+          ejectSound: /Audio/Weapons/Guns/MagOut/smg_magout.ogg
+          priority: 2
+          whitelist:
+            tags:
+              - MagazineSMGViteztvi
+        gun_chamber:
+          name: Chamber
+          startingItem: CartridgePistol
+          priority: 1
+          whitelist:
+            tags:
+              - CartridgePistol
+    - type: MagazineVisuals
+      magState: mag
+      steps: 1
+      zeroVisible: true
+    - type: Appearance
+#------------------------------------------КПК, карты, доступы и шлюзы----------------------------------------    
+#------------------------------------------доступы и шлюзы---------------------------------------- 
+#------------------------------------доступ----------  
+- type: accessLevel
+  id: VitzAccessSolder
+  name: access-vitz-solder
+#-----------------------------------------  
+- type: accessLevel
+  id: VitzAccessPilot
+  name: access-vitz-pilot
+#-----------------------------------------   
+- type: accessLevel
+  id: VitzAccessOfficer
+  name: access-vitz-officer
+#-----------------------------------------   
+- type: accessLevel
+  id: VitzAccessZven
+  name: access-vitz-zven
+#------------------------------------закрытый шлюз солдат---------- 
+- type: entity
+  parent: DoorElectronics
+  id: DoorElectronicsVitzSoldAccess
+  suffix: Витезтви, Солдат, Locked
+  components:
+  - type: AccessReader
+    access: [["VitzAccessSolder"], ["VitzAccessPilot"], ["VitzAccessOfficer"]]
+
+- type: entity
+  parent: Airlock
+  id: VitzAirlockSolderLocked
+  suffix: Витезтви, Locked
+  components:
+  - type: ContainerFill
+    containers:
+      board: [ DoorElectronicsVitzSoldAccess ]
+  - type: Sprite
+    sprite: Corvax/Lore/Viteztvi/vitz_airlock_s.rsi
+#------------------------------------закрытый шлюз пилотов---------- 
+- type: entity
+  parent: DoorElectronics
+  id: DoorElectronicsVitzPilotAccess
+  suffix: Витезтви, Пилот , Locked
+  components:
+  - type: AccessReader
+    access: [["VitzAccessPilot"], ["VitzAccessZven"]]
+
+- type: entity
+  parent: Airlock
+  id: VitzAirlockPilotLocked
+  suffix: Витезтви, Пилот, Locked
+  components:
+  - type: ContainerFill
+    containers:
+      board: [ DoorElectronicsVitzPilotAccess ]
+  - type: Sprite
+    sprite: Corvax/Lore/Viteztvi/vitz_airlock_p.rsi
+#------------------------------------закрытый шлюз офицеров---------- 
+- type: entity
+  parent: DoorElectronics
+  id: DoorElectronicsVitzOffiAccess
+  suffix: Витезтви, Офицер, Locked
+  components:
+  - type: AccessReader
+    access: [["VitzAccessOfficer"]]
+
+- type: entity
+  parent: Airlock
+  id: VitzAirlockOfficerLocked
+  suffix: Витезтви, Офицер, Locked
+  components:
+  - type: ContainerFill
+    containers:
+      board: [ DoorElectronicsVitzOffiAccess ]
+  - type: Sprite
+    sprite: Corvax/Lore/Viteztvi/vitz_airlock_o.rsi
+#------------------------------------закрытый шлюз командиров звена---------- 
+- type: entity
+  parent: DoorElectronics
+  id: DoorElectronicsVitzZvenAccess
+  suffix: Витезтви, Ком.Звена, Locked
+  components:
+  - type: AccessReader
+    access: [["VitzAccessZven"]]
+
+- type: entity
+  parent: Airlock
+  id: VitzAirlockPiloOffiLocked
+  suffix: Витезтви, Пилот, Офицер, Locked
+  components:
+  - type: ContainerFill
+    containers:
+      board: [ DoorElectronicsVitzZvenAccess ]
+  - type: Sprite
+    sprite: Corvax/Lore/Viteztvi/vitz_airlock_po.rsi
+#------------------------------------свободный шлюз солдат---------- 
+- type: entity
+  parent: Airlock
+  id: VitzAirlockSolder
+  suffix: Витезтви
+  components:
+  - type: Sprite
+    sprite: Corvax/Lore/Viteztvi/vitz_airlock_s.rsi
+#------------------------------------закрытый стеклянный шлюз солдат---------- 
+- type: entity
+  parent: AirlockGlass
+  id: VitzAirlockSolderLockedGlass
+  suffix: Витезтви, Locked
+  components:
+  - type: AccessReader
+    access: [["VitzAccessSolder"], ["VitzAccessOfficer"]]
+  - type: Sprite
+    sprite: Corvax/Lore/Viteztvi/vitz_airlock_glass_s.rsi
+  - type: PaintableAirlock
+    group: Glass
+#------------------------------------закрытый стеклянный шлюз пилот---------- 
+- type: entity
+  parent: AirlockGlass
+  id: VitzAirlockPilotLockedGlass
+  suffix: Витезтви, Пилот, Locked
+  components:
+  - type: AccessReader
+    access: [["VitzAccessPilot"], ["VitzAccessZven"]]
+  - type: Sprite
+    sprite: Corvax/Lore/Viteztvi/vitz_airlock_glass_p.rsi
+  - type: PaintableAirlock
+    group: Glass
+#------------------------------------закрытый стеклянный шлюз офицер---------- 
+- type: entity
+  parent: AirlockGlass
+  id: VitzAirlockOfficerLockedGlass
+  suffix: Витезтви, Офицер, Locked
+  components:
+  - type: AccessReader
+    access: [["VitzAccessOfficer"]]
+  - type: Sprite
+    sprite: Corvax/Lore/Viteztvi/vitz_airlock_glass_o.rsi
+  - type: PaintableAirlock
+    group: Glass
+#------------------------------------закрытый стеклянный шлюз командира звена---------- 
+- type: entity
+  parent: AirlockGlass
+  id: VitzAirlockPiloOffiLockedGlass
+  suffix: Витезтви, Пилот, Офицер, Locked
+  components:
+  - type: AccessReader
+    access: [["VitzAccessZven"]]
+  - type: Sprite
+    sprite: Corvax/Lore/Viteztvi/vitz_airlock_glass_po.rsi
+  - type: PaintableAirlock
+    group: Glass    
+#------------------------------------свободный стеклянный шлюз солдат----------
+- type: entity
+  parent: AirlockGlass
+  id: VitzAirlockGlass
+  suffix: Витезтви
+  components:
+  - type: Sprite
+    sprite: Corvax/Lore/Viteztvi/vitz_airlock_glass_s.rsi
+  - type: PaintableAirlock
+    group: Glass  
+#------------------------------------стыковочный---------- 
+- type: entity
+  parent: AirlockExternalShuttleLocked
+  name: Стыковочный шлюз
+  id: VitzAirlockShuttleEasyPryLocked
+  suffix: Витезтви
+  description: Чтобы успешно прилепиться к космическим объектам.
+  components:
+  - type: PryUnpowered
+  - type: AccessReader
+    access: [["VitzAccessPilot"]]
+#------------------------------------------КПК, карты----------------------------------------  
+#------------------------------------стандарт карты---------- 
+- type: entity
+  parent: Clothing
+  id: VitzIDCard
+  suffix: Витезтви
+  name: Карта итендификации личности бойца корпорации Витезтви
+  description: Данная карта служит в роли электронного пропуска на военных объектах корпорации Витезтви
+  abstract: true
+  components:
+  - type: Sprite
+    sprite: Corvax/Lore/Viteztvi/Equipment/vitz_id_cards.rsi
+  - type: Clothing
+    slots:
+    - idcard
+    sprite: Corvax/Lore/Viteztvi/Equipment/vitz_id_cards.rsi
+  - type: Item
+    size: Small
+    heldPrefix: default
+    storedRotation: -90
+  - type: Access
+  - type: IdCard
+  - type: StationRecordKeyStorage
+  - type: Tag
+    tags:
+    - DoorBumpOpener
+    - WhitelistChameleon
+  - type: StealTarget
+    stealGroup: IDCard    
+#------------------------------------карта ефрейтор---------- 
+- type: entity
+  parent: VitzIDCard
+  id: VitzIDCardEfreitor
+  name: ID-карта ефрейтора Витезтви
+  components:
+  - type: Sprite
+    layers:
+    - state: default
+    - state: efr
+  - type: PresetIdCard
+    job: VitzEfreitor
+#------------------------------------карта старшина----------    
+- type: entity
+  parent: VitzIDCard
+  id: VitzIDCardStarshina
+  name: ID-карта старшины Витезтви
+  components:
+  - type: Sprite
+    layers:
+    - state: default
+    - state: str
+  - type: PresetIdCard
+    job: VitzStarshina
+#------------------------------------карта пилот----------     
+- type: entity
+  parent: VitzIDCard
+  id: VitzIDCardPilot
+  name: ID-карта пилота Витезтви
+  components:
+  - type: Sprite
+    layers:
+    - state: default
+    - state: sta
+  - type: PresetIdCard
+    job: VitzPilot
+#------------------------------------карта звеньевой----------     
+- type: entity
+  parent: VitzIDCard
+  id: VitzIDCardZvenievoi
+  name: ID-карта командира звена Витезтви
+  components:
+  - type: Sprite
+    layers:
+    - state: default
+    - state: zvn
+  - type: PresetIdCard
+    job: VitzZven
+#------------------------------------мистер хилл----------     
+- type: entity
+  parent: VitzIDCard
+  id: VitzIDCardMrHill
+  name: ID-карта Мистера Хилла Витезтви
+  components:
+  - type: Sprite
+    layers:
+    - state: default
+    - state: hill
+  - type: PresetIdCard
+    job: VitzMrHill   
+#------------------------------------стандарт КПК---------- 
+- type: entity
+  abstract: true
+  parent: BasePDA
+  id: VitzPDA
+  name: КПК корпорации Витезтви
+  description: Прочный, красивый, для настоящих классных вояк.
+  components:
+  - type: Appearance
+  - type: Sprite
+    sprite: Corvax/Lore/Viteztvi/Equipment/vitz_pda.rsi
+    layers:
+    - map: [ "enum.PdaVisualLayers.Base" ]
+    - state: "light_overlay"
+      map: [ "enum.PdaVisualLayers.Flashlight" ]
+      shader: "unshaded"
+      visible: false
+    - state: "id_overlay"
+      map: [ "enum.PdaVisualLayers.IdLight" ]
+      shader: "unshaded"
+      visible: false
+  - type: Icon
+    sprite: Corvax/Lore/Viteztvi/Equipment/vitz_pda.rsi
+    state: pda
+#------------------------------------КПК ефрейтора----------    
+- type: entity
+  parent: VitzPDA
+  id: VitzPDAEfreitor
+  name: КПК военослужащего Витезтви
+  suffix: Витезтви, Ефрейтор
+  description: КПК военных корпорации Витезтви
+  components:
+    - type: Pda
+      id: VitzIDCardEfreitor
+      state: pda
+    - type: Icon
+      sprite: Corvax/Lore/Viteztvi/Equipment/vitz_pda.rsi
+      state: pda
+#------------------------------------КПК пилота----------       
+- type: entity
+  parent: VitzPDA
+  id: VitzPDAPilot
+  name: КПК военослужащего Витезтви
+  suffix: Витезтви, Пилот
+  description: КПК военных корпорации Витезтви
+  components:
+    - type: Pda
+      id: VitzIDCardPilot
+      state: pda
+    - type: Icon
+      sprite: Corvax/Lore/Viteztvi/Equipment/vitz_pda.rsi
+      state: pda
+#------------------------------------КПК старшина----------       
+- type: entity
+  parent: VitzPDA
+  id: VitzPDAStarshina
+  name: КПК военослужащего Витезтви
+  suffix: Витезтви, Старшина
+  description: КПК военных корпорации Витезтви
+  components:
+    - type: Pda
+      id: VitzIDCardStarshina
+      state: pda
+    - type: Icon
+      sprite: Corvax/Lore/Viteztvi/Equipment/vitz_pda.rsi
+      state: pda
+#------------------------------------КПК звеньевой----------       
+- type: entity
+  parent: VitzPDA
+  id: VitzPDAZvenievoi
+  name: КПК военослужащего Витезтви
+  suffix: Витезтви, Звеньевой
+  description: КПК военных корпорации Витезтви
+  components:
+    - type: Pda
+      id: VitzIDCardZvenievoi
+      state: pda
+    - type: Icon
+      sprite: Corvax/Lore/Viteztvi/Equipment/vitz_pda.rsi
+      state: pda
+#------------------------------------КПК мистер Хилл----------       
+- type: entity
+  parent: VitzPDA
+  id: VitzPDAMrHill
+  name: КПК военослужащего Витезтви
+  suffix: Витезтви, Мистер хилл
+  description: КПК военных корпорации Витезтви
+  components:
+    - type: Pda
+      id: VitzIDCardMrHill
+      state: pda
+    - type: Icon
+      sprite: Corvax/Lore/Viteztvi/Equipment/vitz_pda.rsi
+      state: pda            
+#------------------------------------------связь----------------------------------------  
+#-----------------------------канал----------------------------------------  
+- type: radioChannel
+  id: VitzRadioPeh
+  name: ВитезтвиАрм
+  keycode: 'й' 
+  frequency: 8855
+  color: "#FFFDD0"
+  longRange: true
+  
+- type: radioChannel
+  id: VitzRadioFlot
+  name: ВитезтвиФлот
+  keycode: 'ю' 
+  frequency: 8856
+  color: "#86821d"
+  longRange: true
+  
+- type: radioChannel
+  id: VitzRadioComm
+  name: ВитезтвиКом
+  keycode: 'я' 
+  frequency: 8857
+  color: "#b3ae4b"
+  longRange: true
+#-------------------------------------------------------------------ключи---------------------------------------------------------------------
+#-----------------------------стандарт ключа----------------------------------------   
+- type: entity
+  abstract: true
+  parent: BaseItem
+  id: VitzBaseEncryptionKey
+  name: encryption key
+  description: A small cypher chip for headsets.
+  components:
+  - type: EncryptionKey
+    channels:
+    - VitzRadioPeh
+    defaultChannel: VitzRadioPeh
+  - type: Item
+    sprite: Corvax/Lore/Viteztvi/Equipment/vitz_encryption_keys.rsi
+  - type: Sprite
+    sprite: Corvax/Lore/Viteztvi/Equipment/vitz_encryption_keys.rsi
+  - type: StealTarget
+    stealGroup: EncryptionKey   
+#-----------------------------ключ пехотный----------------------------------------      
+- type: entity
+  parent: VitzBaseEncryptionKey
+  id: VitzEncryptionKeyPeh
+  suffix: Витезтви
+  name: Пехотный ключ шифрования Витезтви
+  description: Используется для шифрования и дешифровки общего армейского канала связи корпорации Витезтви
+  components:
+  - type: EncryptionKey
+    channels:
+    - VitzRadioPeh
+    defaultChannel: VitzRadioPeh
+  - type: Sprite
+    layers:
+    - state: crypt_gray
+    - state: label_sold 
+#-----------------------------ключ пилотов----------------------------------------      
+- type: entity
+  parent: VitzBaseEncryptionKey
+  id: VitzEncryptionKeyPil
+  suffix: Витезтви
+  name: Флотской ключ шифрования Витезтви
+  description: Используется для шифрования и дешифровки общего канала связи флота корпорации Витезтви
+  components:
+  - type: EncryptionKey
+    channels:
+    - VitzRadioFlot
+    defaultChannel: VitzRadioFlot
+  - type: Sprite
+    layers:
+    - state: crypt_gray
+    - state: label_pil 
+#-----------------------------ключ офицеров----------------------------------------      
+- type: entity
+  parent: VitzBaseEncryptionKey
+  id: VitzEncryptionKeyCom
+  suffix: Витезтви
+  name: Офицерский ключ шифрования Витезтви
+  description: Используется для шифрования и дешифровки армейского канала связи офицеров корпорации Витезтви
+  components:
+  - type: EncryptionKey
+    channels:
+    - VitzRadioComm
+    defaultChannel: VitzRadioComm
+  - type: Sprite
+    layers:
+    - state: crypt_gray
+    - state: label_com 
+#-----------------------------------------------------------------гарнитуры-----------------------------------------------
+#-----------------------------гарнитура пехоты----------------------------------------  
+- type: entity
+  parent: ClothingHeadset
+  id: VitzHeadsetPeh
+  name: Гарнитура бойца корпорации Витезтви
+  suffix: Витезтви, Пехотный
+  components:
+  - type: ContainerFill
+    containers:
+      key_slots:
+      - VitzEncryptionKeyPeh
+  - type: Sprite
+    sprite: Corvax/Lore/Viteztvi/Equipment/vitz_garniture.rsi
+  - type: Clothing
+    sprite: Corvax/Lore/Viteztvi/Equipment/vitz_garniture.rsi
+#-----------------------------гарнитура флота----------------------------------------  
+- type: entity
+  parent: ClothingHeadset
+  id: VitzHeadsetFlt
+  name: Гарнитура бойца корпорации Витезтви
+  suffix: Витезтви, Флот
+  components:
+  - type: ContainerFill
+    containers:
+      key_slots:
+      - VitzEncryptionKeyPil
+  - type: Sprite
+    sprite: Corvax/Lore/Viteztvi/Equipment/vitz_garniture.rsi
+  - type: Clothing
+    sprite: Corvax/Lore/Viteztvi/Equipment/vitz_garniture.rsi
+#-----------------------------гарнитура старшины----------------------------------------  
+- type: entity
+  parent: ClothingHeadset
+  id: VitzHeadsetStr
+  name: Гарнитура бойца корпорации Витезтви
+  suffix: Витезтви, Старшина
+  components:
+  - type: ContainerFill
+    containers:
+      key_slots:
+      - VitzEncryptionKeyCom
+      - VitzEncryptionKeyPeh
+  - type: Sprite
+    sprite: Corvax/Lore/Viteztvi/Equipment/vitz_garniture.rsi
+  - type: Clothing
+    sprite: Corvax/Lore/Viteztvi/Equipment/vitz_garniture.rsi   
+#-----------------------------гарнитура звеньевого----------------------------------------  
+- type: entity
+  parent: ClothingHeadset
+  id: VitzHeadsetZvn
+  name: Гарнитура бойца корпорации Витезтви
+  suffix: Витезтви, Звеньевой
+  components:
+  - type: ContainerFill
+    containers:
+      key_slots:
+      - VitzEncryptionKeyCom
+      - VitzEncryptionKeyPil
+  - type: Sprite
+    sprite: Corvax/Lore/Viteztvi/Equipment/vitz_garniture.rsi
+  - type: Clothing
+    sprite: Corvax/Lore/Viteztvi/Equipment/vitz_garniture.rsi 
+#-----------------------------гарнитура Мистера Хилла----------------------------------------  
+- type: entity
+  parent: ClothingHeadset
+  id: VitzHeadsetMHl
+  name: Гарнитура бойца корпорации Витезтви
+  suffix: Витезтви, Мистер Хилл
+  components:
+  - type: ContainerFill
+    containers:
+      key_slots:
+      - VitzEncryptionKeyCom
+      - VitzEncryptionKeyPeh
+      - VitzEncryptionKeyPil
+  - type: Sprite
+    sprite: Corvax/Lore/Viteztvi/Equipment/vitz_garniture.rsi
+  - type: Clothing
+    sprite: Corvax/Lore/Viteztvi/Equipment/vitz_garniture.rsi 
+#-----------------------------------------------------роли, полные сумки и гиры------------------------------------------------------  
+#--------------------------------------------роли------------------------------------  
+#------------------------------------ефрейтор--------------------- 
+- type: playTimeTracker
+  id: JobEventVitzEfreitor
+
+- type: job
+  id: VitzEfreitor
+  name: Ефрейтор Витезтви
+  description: job-vitz-efreitor
+  playTimeTracker: JobEventVitzEfreitor
+  startingGear: VitzEfreitorGear
+  supervisors: job-supervisors-everyone
+  canBeAntag: false
+  access:
+  - VitzAccessSolder
+  - External
+#------------------------------------пилот--------------------- 
+- type: playTimeTracker
+  id: JobEventVitzPilot
+
+- type: job
+  id: VitzPilot
+  name: Пилот Витезтви
+  description: job-vitz-solder
+  playTimeTracker: JobEventVitzPilot
+  startingGear: VitzPilotGear
+  supervisors: job-supervisors-everyone
+  canBeAntag: false
+  access:
+  - VitzAccessSolder
+  - VitzAccessPilot
+  - External
+#------------------------------------старшина--------------------- 
+- type: playTimeTracker
+  id: JobEventVitzStarshina
+
+- type: job
+  id: VitzStarshina
+  name: Старшина Витезтви
+  description: job-vitz-starshina
+  playTimeTracker: JobEventVitzStarshina
+  startingGear: VitzStarshinaGear
+  supervisors: job-supervisors-everyone
+  canBeAntag: false
+  access:
+  - VitzAccessSolder
+  - VitzAccessOfficer
+  - External
+#------------------------------------звеньевой--------------------- 
+- type: playTimeTracker
+  id: JobEventVitzZven
+
+- type: job
+  id: VitzZven
+  name: Командир звена Витезтви
+  description: job-vitz-zven
+  playTimeTracker: JobEventVitzZven
+  startingGear: VitzZvenGear
+  supervisors: job-supervisors-everyone
+  canBeAntag: false
+  access:
+  - VitzAccessSolder
+  - VitzAccessPilot
+  - VitzAccessZven
+  - External
+#------------------------------------Мистер Хилл---------------------   
+- type: playTimeTracker
+  id: JobEventVitzMrHill
+
+- type: job
+  id: VitzMrHill
+  name: Хилл
+  description: job-vitz-hill
+  playTimeTracker: JobEventVitzMrHill
+  startingGear: VitzMrHillGear
+  supervisors: job-supervisors-everyone
+  canBeAntag: false
+  access:
+  - VitzAccessSolder
+  - VitzAccessPilot
+  - VitzAccessOfficer
+  - External
+#--------------------------------------------сумки------------------------------------  
+#------------------------------------ефрейтор--------------------- 
+- type: entity
+  parent: VitzBackpack
+  id: VitzBackpackFilledEfreitor
+  suffix: Витезтви, Ефрейтор
+  components:
+  - type: StorageFill
+    contents:
+      - id: VitzHelmetEfreitor
+      - id: MagazineRifle
+      - id: MagazineRifle
+      - id: WeaponRifleLecter
+      - id: ClothingMaskGas
+      - id: FoodTinMRE
+      - id: DrinkWaterBottleFull
+      - id: Gauze
+      - id: OxygenTankFilled
+#------------------------------------пилот---------------------       
+- type: entity
+  parent: VitzBackpack
+  id: VitzBackpackFilledPilot
+  suffix: Витезтви, Пилот
+  components:
+  - type: StorageFill
+    contents:
+      - id: VitzHelmetPilots
+      - id: MagazineSMGViteztvi
+      - id: MagazineSMGViteztvi
+      - id: SMGViteztvi
+      - id: ClothingMaskGas
+      - id: FoodTinMRE
+      - id: DrinkWaterBottleFull
+      - id: Gauze
+      - id: OxygenTankFilled
+#------------------------------------старшина--------------------- 
+- type: entity
+  parent: VitzBackpack
+  id: VitzBackpackFilledStarshina
+  suffix: Витезтви, Старшина
+  components:
+  - type: StorageFill
+    contents:
+      - id: VitzHelmetStarshina
+      - id: MagazineRifle
+      - id: MagazineRifle
+      - id: WeaponRifleLecter
+      - id: MagazineBoxMagnum
+      - id: SpeedLoaderMagnum
+      - id: WeaponRevolverInspector
+      - id: ClothingMaskGas
+      - id: FoodTinMRE
+      - id: DrinkWaterBottleFull
+      - id: Gauze
+      - id: OxygenTankFilled
+#------------------------------------звеньевой---------------------       
+- type: entity
+  parent: VitzBackpack
+  id: VitzBackpackFilledZvenievoi
+  suffix: Витезтви, Звеньевой
+  components:
+  - type: StorageFill
+    contents:
+      - id: VitzHelmetPilots
+      - id: MagazineSMGViteztvi
+      - id: MagazineSMGViteztvi
+      - id: SMGViteztvi
+      - id: MagazineBoxMagnum
+      - id: SpeedLoaderMagnum
+      - id: WeaponRevolverInspector
+      - id: ClothingMaskGas
+      - id: FoodTinMRE
+      - id: DrinkWaterBottleFull
+      - id: Gauze
+      - id: OxygenTankFilled
+#------------------------------------мистер хилл---------------------       
+- type: entity
+  parent: VitzBackpack
+  id: VitzBackpackFilledMrHill
+  suffix: Витезтви, Мистер Хилл
+  components:
+  - type: StorageFill
+    contents:
+      - id: MagazineBoxMagnum
+      - id: SpeedLoaderMagnum
+      - id: WeaponRevolverMateba
+      - id: ClothingMaskGas
+      - id: FoodTinMRE
+      - id: DrinkWaterBottleFull
+      - id: Gauze
+      - id: OxygenTankFilled
+#-----------------------------------------------гиры---------------------------------------
+#------------------------------------ефрейтор----------  
+- type: startingGear
+  id: VitzEfreitorGear
+  equipment:
+    jumpsuit: VitzUniformEfreitor
+    back: VitzBackpackFilledEfreitor
+    shoes: VitzBoots
+    head: VitzBeretEfreitor
+    outerClothing: VitzArmorBasic
+    id: VitzPDAEfreitor
+    ears: VitzHeadsetPeh
+    belt: VitzeBeltFilled
+    gloves: VitzGlovesFingerless
+    pocket1: VitzPaperEfreitor
+#------------------------------------пилот---------- 
+- type: startingGear
+  id: VitzPilotGear
+  equipment:
+    jumpsuit: VitzUniformStarshiy
+    back: VitzBackpackFilledPilot
+    shoes: VitzBoots
+    head: VitzCapStarsiy
+    outerClothing: VitzArmorBasic
+    id: VitzPDAPilot
+    ears: VitzHeadsetFlt
+    belt: VitzeBeltFilled
+    gloves: VitzGlovesFingerless
+    pocket1: VitzPaperPilot
+#------------------------------------старшина---------- 
+- type: startingGear
+  id: VitzStarshinaGear
+  equipment:
+    jumpsuit: VitzUniformStarshina
+    back: VitzBackpackFilledStarshina
+    shoes: VitzBoots
+    head: VitzBeretStarshina
+    outerClothing: VitzArmorBasic
+    id: VitzPDAStarshina
+    ears: VitzHeadsetStr
+    belt: VitzeBeltFilled
+    gloves: VitzGlovesFingerless
+    pocket1: VitzPaperStarshina
+    pocket2: VitzRubberStamp
+#------------------------------------звеньевой---------- 
+- type: startingGear
+  id: VitzZvenGear
+  equipment:
+    jumpsuit: VitzUniformZvenievoi
+    back: VitzBackpackFilledZvenievoi
+    shoes: VitzBoots
+    head: VitzCapStarsiy
+    outerClothing: VitzArmorBasic
+    id: VitzPDAZvenievoi
+    ears: VitzHeadsetZvn
+    belt: VitzeBeltFilled
+    gloves: VitzGlovesFingerless
+    pocket1: VitzPaperZven
+    pocket2: VitzRubberStamp
+#------------------------------------мистер хилл----------
+- type: startingGear
+  id: VitzMrHillGear
+  equipment:
+    jumpsuit: VitzUniformStarshina
+    back: VitzBackpackFilledMrHill
+    shoes: VitzBoots
+    outerClothing: VitzArmorMrHill
+    id: VitzPDAMrHill
+    ears: VitzHeadsetMHl
+    gloves: VitzGlovesFingerless
+    pocket1: VitzPaperMrHill
+    pocket2: VitzRubberStamp
+#---------------------------------------------------спавнеры------------------------------------------------
+#-------------------------------------------Имена-------------------------------------
+#---------------------------------звания рядовых----------
+- type: dataset
+  id: VitzName-ef
+  values:
+  - Новобранец
+  - Ефрейтор
+#---------------------------------звания старшина----------
+- type: dataset
+  id: VitzName-st
+  values:
+  - Старшина
+#---------------------------------звания пилоты----------
+- type: dataset
+  id: VitzName-pi
+  values:
+  - Пилот
+  - Старший Пилот
+#---------------------------------звеньевой----------
+- type: dataset
+  id: VitzName-zv
+  values:
+  - Звеньевой
+#---------------------------------Мистер----------
+- type: dataset
+  id: VitzName-mr
+  values:
+  - Мистер
+#---------------------------------фамилии----------
+- type: dataset
+  id: VitzNameTwo
+  values:
+  - Мечников
+  - Кинжалов
+  - Топорин
+  - Пушкин
+  - Тачанкин
+  - Ружьин
+  - Ганзель
+  - Сворд
+  - Пикель
+  - Спир
+  - Мейс
+  - Палкат
+  - Мек
+  - Остеп
+  - Спуд
+  - Окс
+  - Швертен
+  - Акстер
+  - Койле
+#---------------------------------фамилии----------
+- type: dataset
+  id: VitzNameTwoHill
+  values:
+  - Хилл
+#-------------------------------------хуй знает что это, но вот оно работает и ладно---------------------------
+#---------------------------------ефрейтор----------
+- type: randomHumanoidSettings
+  speciesBlacklist: 
+    - Diona
+    - Arachnid
+  id: VitzEfreitor
+  randomizeName: false
+  components:
+    - type: GhostRole
+      name: Гост-роль пехотинца Витезтви
+      description: "Вы боец рядового состава корпорации Витезтви. исполняйте приказы своего командира и воюте на совесть, ибо чем лучше вы работаете, тем больше вам платят."
+    - type: GhostTakeoverAvailable
+    - type: Loadout
+      prototypes: [ VitzEfreitorGear ]
+    - type: RandomMetadata
+      nameSegments:
+      - VitzName-ef
+      - VitzNameTwo
+
+- type: randomHumanoidSettings
+  id: VitzEfreitorReady
+  parent: VitzEfreitor
+  components:
+    - type: GhostRole
+      allowMovement: true
+      allowSpeech: true
+      makeSentient: true
+      name: Пехотинец Витезтви
+      description: "Вы боец рядового состава корпорации Витезтви. исполняйте приказы своего командира и воюте на совесть, ибо чем лучше вы работаете, тем больше вам платят."
+    - type: GhostTakeoverAvailable
+    - type: MobThresholds
+      thresholds:
+        0: Alive
+        110: Critical
+        205: Dead
+    - type: Stamina
+      excess: 380
+    - type: Loadout
+      prototypes: [ VitzEfreitorGear ]
+  
+- type: entity
+  name: Спавнер солдата Витезтви
+  suffix: GOST, Витезтви
+  id: VitzMobHumanEfreitor
+  components:
+  - type: Sprite
+    sprite: Markers/jobs.rsi
+    state: security_cadet
+  - type: RandomHumanoidAppearance
+    randomizeName: false
+  - type: RandomMetadata
+    nameSegments:
+    - VitzName-ef
+    - VitzNameTwo
+  - type: RandomHumanoidSpawner
+    settings: VitzEfreitor
+#---------------------------------пилот----------
+- type: randomHumanoidSettings
+  speciesBlacklist: 
+    - Diona
+    - Arachnid
+  id: VitzPilot
+  randomizeName: false
+  components:
+    - type: GhostRole
+      name: Гост-роль пилота Витезтви
+      description: "Вы пилот флота корпорации Витезтви. Выполняйте приказы командира звена. И помните: чем лучше вы работаете, тем больше вам платят"
+    - type: GhostTakeoverAvailable
+    - type: Loadout
+      prototypes: [ VitzPilotGear ]
+    - type: RandomMetadata
+      nameSegments:
+      - VitzName-pi
+      - VitzNameTwo
+
+- type: randomHumanoidSettings
+  id: VitzPilotReady
+  parent: VitzPilot
+  components:
+    - type: GhostRole
+      allowMovement: true
+      allowSpeech: true
+      makeSentient: true
+      name: Пилот Витезтви
+      description: "Вы пилот флота корпорации Витезтви. Выполняйте приказы командира звена. И помните: чем лучше вы работаете, тем больше вам платят"
+    - type: GhostTakeoverAvailable
+    - type: MobThresholds
+      thresholds:
+        0: Alive
+        100: Critical
+        200: Dead
+    - type: Stamina
+      excess: 380
+    - type: Loadout
+      prototypes: [ VitzPilotGear ]
+  
+- type: entity
+  name: Спавнер пилота Витезтви
+  id: VitzMobHumanPilot
+  suffix: GOST, Витезтви
+  components:
+  - type: Sprite
+    sprite: Markers/jobs.rsi
+    state: security_officer
+  - type: RandomHumanoidAppearance
+    randomizeName: false
+  - type: RandomMetadata
+    nameSegments:
+    - VitzName-pi
+    - VitzNameTwo
+  - type: RandomHumanoidSpawner
+    settings: VitzPilot
+#---------------------------------старшина----------
+- type: randomHumanoidSettings
+  speciesBlacklist: 
+    - Diona
+    - Arachnid
+  id: VitzStarshina
+  randomizeName: false
+  components:
+    - type: GhostRole
+      name: Гост-роль Старшины Витезтви
+      description: "Старшина армии корпорации Витезтви. Командуйте своими подчинёнными с умом. Помните: чем эффективней ваша работа, тем больше вам платят"
+    - type: GhostTakeoverAvailable
+    - type: Loadout
+      prototypes: [ VitzStarshinaGear ]
+    - type: RandomMetadata
+      nameSegments:
+      - VitzName-st
+      - VitzNameTwo
+
+- type: randomHumanoidSettings
+  id: VitzStarshinaReady
+  parent: VitzStarshina
+  components:
+    - type: GhostRole
+      allowMovement: true
+      allowSpeech: true
+      makeSentient: true
+      name: Старшина Витезтви
+      description: "Старшина армии корпорации Витезтви. Командуйте своими подчинёнными с умом. Помните: чем эффективней ваша работа, тем больше вам платят"
+    - type: GhostTakeoverAvailable
+    - type: MobThresholds
+      thresholds:
+        0: Alive
+        115: Critical
+        210: Dead
+    - type: Stamina
+      excess: 380
+    - type: Loadout
+      prototypes: [ VitzStarshinaGear ]
+  
+- type: entity
+  name: Спавнер старшины Витезтви
+  id: VitzMobHumanStarshina
+  suffix: GOST, Витезтви
+  components:
+  - type: Sprite
+    sprite: Markers/jobs.rsi
+    state: warden
+  - type: RandomHumanoidAppearance
+    randomizeName: false
+  - type: RandomMetadata
+    nameSegments:
+    - VitzName-st
+    - VitzNameTwo
+  - type: RandomHumanoidSpawner
+    settings: VitzStarshina
+#---------------------------------звеньевой----------
+- type: randomHumanoidSettings
+  speciesBlacklist: 
+    - Diona
+    - Arachnid
+  id: VitzZven
+  randomizeName: false
+  components:
+    - type: GhostRole
+      name: Гост-роль Звеньевого Витезтви
+      description: "Вы командир звена корпорации Витезтви. Командуйте пилотами своего звена с умом. Помните: чем эффективный ваше звено, тем больше вам платят!"
+    - type: GhostTakeoverAvailable
+    - type: Loadout
+      prototypes: [ VitzZvenGear ]
+    - type: RandomMetadata
+      nameSegments:
+      - VitzName-zv
+      - VitzNameTwo
+
+- type: randomHumanoidSettings
+  id: VitzZvenReady
+  parent: VitzZven
+  components:
+    - type: GhostRole
+      allowMovement: true
+      allowSpeech: true
+      makeSentient: true
+      name: Звеньевой Витезтви
+      description: "Вы командир звена корпорации Витезтви. Командуйте пилотами своего звена с умом. Помните: чем эффективный ваше звено, тем больше вам платят!"
+    - type: GhostTakeoverAvailable
+    - type: MobThresholds
+      thresholds:
+        0: Alive
+        105: Critical
+        205: Dead
+    - type: Stamina
+      excess: 380
+    - type: Loadout
+      prototypes: [ VitzZvenGear ]
+  
+- type: entity
+  name: Звеньевой Витезтви
+  id: VitzMobHumanZven
+  suffix: GOST, Витезтви
+  components:
+  - type: Sprite
+    sprite: Markers/jobs.rsi
+    state: warden
+  - type: RandomHumanoidAppearance
+    randomizeName: false
+  - type: RandomMetadata
+    nameSegments:
+    - VitzName-zv
+    - VitzNameTwo
+  - type: RandomHumanoidSpawner
+    settings: VitzZven
+#---------------------------------мистер Хилл----------
+- type: randomHumanoidSettings
+  speciesBlacklist: 
+    - Diona
+    - Arachnid
+  id: VitzMrHill
+  randomizeName: false
+  components:
+    - type: GhostRole
+      name: Гост-роль Мистера Хилла Витезтви
+      description: "Вы вербовщик и продавец услуг корпорации Витезтви. Вежливо пейте дорогой алкоголь и общайтесь самыми важными людьми для продажи услуг и оружия. Вы получаете процент с продажи каждой единицы товара или услуг"
+    - type: GhostTakeoverAvailable
+    - type: Loadout
+      prototypes: [ VitzMrHillGear ]
+    - type: RandomMetadata
+      nameSegments:
+      - VitzName-mr
+      - VitzNameTwoHill
+
+- type: randomHumanoidSettings
+  id: VitzMrHillReady
+  parent: VitzMrHill
+  components:
+    - type: GhostRole
+      allowMovement: true
+      allowSpeech: true
+      makeSentient: true
+      name: Мистер Хилл Витезтви
+      description: "Вы вербовщик и продавец услуг корпорации Витезтви. Вежливо пейте дорогой алкоголь и общайтесь самыми важными людьми для продажи услуг и оружия. Вы получаете процент с продажи каждой единицы товара или услуг"
+    - type: GhostTakeoverAvailable
+    - type: MobThresholds
+      thresholds:
+        0: Alive
+        100: Critical
+        200: Dead
+    - type: Stamina
+      excess: 380
+    - type: Loadout
+      prototypes: [ VitzMrHillGear]
+  
+- type: entity
+  name: Спавнер Мистера Хилла Витезтви
+  id: VitzMobHumanMrHill
+  suffix: GOST, Витезтви
+  components:
+  - type: Sprite
+    sprite: Markers/jobs.rsi
+    state: reporter
+  - type: RandomHumanoidAppearance
+    randomizeName: false
+  - type: RandomMetadata
+    nameSegments:
+    - VitzName-mr
+    - VitzNameTwoHill
+  - type: RandomHumanoidSpawner
+    settings: VitzMrHill
+#---------------------------------------------------------------Бумаги------------------------------------------------------------
+#-----------------------------------ефрейтор-----------------------------
+- type: entity
+  noSpawn: true
+  id: VitzPaperEfreitor
+  name: Памятка пехотинца Втезтви
+  suffix: Витезтви
+  parent: Paper
+  components:
+  - type: TimedDespawn
+    lifetime: 1200
+  - type: Paper
+    content: |
+      Форма: VTZ-ARM-EFR-251
+      Кому: Пехотинцу 251-й пехотной дивизии
+      Вы: Подготовленный пехотинец корпорации Витезтви. Профессиональный вояка, славный парниша и вообще приятный и лихой чувак.
+      Ваши навыки: Базовые навыки, Владение оружием, Разделка туш, Готовка
+      Руководство к отыгрышу: Будьте смелым, храбрым, громким, весёлым. Но при этом дисциплинированным и умелым бойцом. По первому слову начинайте выполнять приказ своего старшины. Можете напоминать остальным, что вы им не подчиняетесь и приказы их не исполняете, если не хотите. Если старшина разрешил вольничать, то убивайте время, как настоящий слодат: пейте в баре, вкусно жрите, попробуйте найти лёгкой дури, пофлиртуйте с красотками, почитайте в библиотеке книги, выхзовите на бой боксёра, предложите любому партейку в шашки.
+      Краткий лор корпорации: Уже более 350 лет корпорация Витезтви предлагает всем желающим услуги найми боевых подразделений. Но сдаёт в аренду не группы и отряды спецназа, как многие их конкуренты, а роты, дивизии, полки и армии хорошо обученных пехотинцев, а также эскадрильи, авиаполки и целые флоты космолётов. Кроме того Витезтви является крупным производителем и поставщиком самого разного пехотного вооружения, снаряжения, а так же оружия для бронетехники и космических кораблей. Подавляющее большинство оружия СБ НТ аышло с конвейров заводов корпорации Витезтви.
+#-----------------------------------пилот-----------------------------
+- type: entity
+  noSpawn: true
+  id: VitzPaperPilot
+  name: Памятка пилота Витезтви
+  suffix: Витезтви
+  parent: Paper
+  components:
+  - type: TimedDespawn
+    lifetime: 1200
+  - type: Paper
+    content: |
+      Форма: VTZ-FLT-STA-145
+      Кому: Пилоту 145-й авиаэскадрильи
+      Вы: Хорошо обученый пилот корпорации Витезтви. Профессиональный вояка, славный парниша и вообще приятный и лихой чувак, которому не усидеть на одном месте и он всегдя тянется к штурвалу своей боевой машины, дабы лететь к звёздам.
+      Ваши навыки: Базовые навыки, Владение оружием, Управление шаттлом
+      Руководство к отыгрышу: Будьте смелым, храбрым, громким, весёлым. Но при этом дисциплинированным и умелым бойцом. По первому слову начинайте выполнять приказ своего старшины. Можете напоминать остальным, что вы им не подчиняетесь и приказы их не исполняете, если не хотите. Если старшина разрешил вольничать, то убивайте время, как настоящий слодат: пейте в баре, вкусно жрите, попробуйте найти лёгкой дури, пофлиртуйте с красотками, почитайте в библиотеке книги, выхзовите на бой боксёра, предложите любому партейку в шашки.
+      Краткий лор корпорации: Уже более 350 лет корпорация Витезтви предлагает всем желающим услуги найми боевых подразделений. Но сдаёт в аренду не группы и отряды спецназа, как многие их конкуренты, а роты, дивизии, полки и армии хорошо обученных пехотинцев, а также эскадрильи, авиаполки и целые флоты космолётов. Кроме того Витезтви является крупным производителем и поставщиком самого разного пехотного вооружения, снаряжения, а так же оружия для бронетехники и космических кораблей. Подавляющее большинство оружия СБ НТ аышло с конвейров заводов корпорации Витезтви.
+#-----------------------------------старшина-----------------------------
+- type: entity
+  noSpawn: true
+  id: VitzPaperStarshina
+  name: Памятка старшины Витезтви
+  suffix: Витезтви
+  parent: Paper
+  components:
+  - type: TimedDespawn
+    lifetime: 1200
+  - type: Paper
+    content: |
+      Форма: VTZ-ARM-STR-251
+      Кому: Старшине 251-й пехотной дивизии
+      Вы: Опытный боец и командир корпорации Витезтви. Профессиональный вояка, грозный и громогласный батяня своего подразделения
+      Ваши навыки: Базовые навыки, Владение оружием, Разделка туш, Готовка, Смешивание напитков
+      Руководство к отыгрышу: Будьте смелым, храбрым, умным и хитрым. А ещё строгим и дисциплинирующим командиром. Быстро выполняйте приказы командования. Станьте лицом своей организации. Стройте своих бойцов, не давайте им слишком много страдать хернёй! Но при этом будьте готовы защищать их, как своих сыновей и дочерей, и не забывайте давать им хоть немного воли.
+      Краткий лор корпорации: Уже более 350 лет корпорация Витезтви предлагает всем желающим услуги найми боевых подразделений. Но сдаёт в аренду не группы и отряды спецназа, как многие их конкуренты, а роты, дивизии, полки и армии хорошо обученных пехотинцев, а также эскадрильи, авиаполки и целые флоты космолётов. Кроме того Витезтви является крупным производителем и поставщиком самого разного пехотного вооружения, снаряжения, а так же оружия для бронетехники и космических кораблей. Подавляющее большинство оружия СБ НТ аышло с конвейров заводов корпорации Витезтви.
+#-----------------------------------Звеньевой-----------------------------
+- type: entity
+  noSpawn: true
+  id: VitzPaperZven
+  name: Памятка звеньевого Витезтви
+  suffix: Витезтви
+  parent: Paper
+  components:
+  - type: TimedDespawn
+    lifetime: 1200
+  - type: Paper
+    content: |
+      Форма: VTZ-FLT-ZVN-145
+      Кому: Звеньевому 145-й авиаэскадрильи
+      Вы: Опытный пилот и командир корпорации Витезтви. Профессиональный вояка, расчётливый, хитрый, с быстрой реакцией.
+      Ваши навыки: Базовые навыки, Владение оружием, Управление шаттлом, Готовка
+      Руководство к отыгрышу: Будьте смелым, храбрым, умным и хитрым. А ещё дисциплинирующим командиром. Быстро выполняйте приказы командования. Вы должны быть лучшим, а потому общайтесь не теря своего достоинства. Командуйте своими пилотами, не давайте им слишком много морально разлагаться! Но при этом будьте готовы защищать их, как своих сыновей и дочерей, и не забывайте давать им хоть немного воли.
+      Краткий лор корпорации: Уже более 350 лет корпорация Витезтви предлагает всем желающим услуги найми боевых подразделений. Но сдаёт в аренду не группы и отряды спецназа, как многие их конкуренты, а роты, дивизии, полки и армии хорошо обученных пехотинцев, а также эскадрильи, авиаполки и целые флоты космолётов. Кроме того Витезтви является крупным производителем и поставщиком самого разного пехотного вооружения, снаряжения, а так же оружия для бронетехники и космических кораблей. Подавляющее большинство оружия СБ НТ аышло с конвейров заводов корпорации Витезтви.
+#-----------------------------------Мистер Хилл-----------------------------
+- type: entity
+  noSpawn: true
+  id: VitzPaperMrHill
+  name: Памятка Мистера Хилла
+  suffix: Витезтви
+  parent: Paper
+  components:
+  - type: TimedDespawn
+    lifetime: 1200
+  - type: Paper
+    content: |
+      Форма: VTZ-CCM-MHL-057
+      Кому: Агенту Хилл №-057
+      Вы: Маркетолог, Психолог, Вербовщик. Вы много кто. Вы вербуете новых бойцов витезтви, а так же продаёте оружие, боеприпасы и заключаете контракты на найм единиц флота или армии любому, кто имеет достаточно денег. Вы всегда появляетесь там, где готовится битва, и пропадаете, когда всё закончилось.
+      Ваши навыки: Базовые навыки, Владение оружием, Готовка, Смешивание напитков, Управление шаттлом, Психолог
+      Руководство к отыгрышу: Будьте спокойным, сдержанным, вежливым. Говорите о делах со всеми, но продаватйте лишь тем, кто может заплатить. Вы тут самый ктурой парень, но пусть об этом говорит не бравада и бурная возня, а ваше хладнокровное спокойствие и крутость. Вы имеете право командовать рядовым и младшим офицерским составом бойцов корпорации.
+      Краткий лор корпорации: Уже более 350 лет корпорация Витезтви предлагает всем желающим услуги найми боевых подразделений. Но сдаёт в аренду не группы и отряды спецназа, как многие их конкуренты, а роты, дивизии, полки и армии хорошо обученных пехотинцев, а также эскадрильи, авиаполки и целые флоты космолётов. Кроме того Витезтви является крупным производителем и поставщиком самого разного пехотного вооружения, снаряжения, а так же оружия для бронетехники и космических кораблей. Подавляющее большинство оружия СБ НТ аышло с конвейров заводов корпорации Витезтви.
+#---------------------------------------------------------------Ящики со снарягой------------------------------------------------------------        
+#-----------------------------Базовый ящик------------------ 
+- type: entity
+  parent: CrateBaseSecure
+  id: VitzCrate
+  name: Ящик снаряжения Витезтви
+  suffix: Витезтви
+  components:
+  - type: Icon
+    sprite: Corvax/Lore/Viteztvi/vitz_crates.rsi
+  - type: Sprite
+    sprite: Corvax/Lore/Viteztvi/vitz_crates.rsi
+  - type: AccessReader
+    access: [["VitzAccessSolder"]]
+#-----------------------------Ящик строевого пехотного оружия------------------    
+- type: entity
+  id: VitzCrateWeaponsBase
+  parent: VitzCrate
+  name: Ящик стандартного пехотного оружия корпорации Витезтви
+  suffix: Витезтви
+  description: Простые и надёжные стволы корпорации Витезтви скрываются тут под замком
+  components:
+  - type: StorageFill
+    contents:
+      - id: WeaponRifleLecter
+      - id: WeaponRifleLecter
+      - id: WeaponRifleLecter
+      - id: WeaponRifleLecter
+      - id: WeaponShotgunEnforcer
+      - id: WeaponShotgunEnforcer
+      - id: WeaponShotgunEnforcer
+      - id: WeaponShotgunEnforcer
+      - id: WeaponLaserCarbine
+      - id: WeaponLaserCarbine
+      - id: WeaponLaserCarbine
+      - id: WeaponLaserCarbine
+#-----------------------------Ящик вспомогательного пехотного оружия------------------    
+- type: entity
+  id: VitzCrateWeaponsHelp
+  parent: VitzCrate
+  name: Ящик вспомогательного пехотного оружия корпорации Витезтви
+  suffix: Витезтви
+  description: Простые и надёжные стволы корпорации Витезтви скрываются тут под замком
+  components:
+  - type: StorageFill
+    contents:
+      - id: WeaponSniperHristov
+      - id: WeaponSniperHristov
+      - id: WeaponSniperHristov
+      - id: WeaponLightMachineGunL6
+      - id: WeaponLightMachineGunL6
+      - id: WeaponLightMachineGunL6   
+#-----------------------------Ящик лёгкого и флотского оружия------------------    
+- type: entity
+  id: VitzCrateWeaponsLight
+  parent: VitzCrate
+  name: Ящик лёгкого оружия корпорации Витезтви
+  suffix: Витезтви
+  description: Простые и надёжные стволы корпорации Витезтви скрываются тут под замком
+  components:
+  - type: StorageFill
+    contents:
+      - id: WeaponPistolMk58
+      - id: WeaponPistolMk58
+      - id: WeaponPistolMk58
+      - id: WeaponPistolMk58
+      - id: SMGViteztvi
+      - id: SMGViteztvi
+      - id: SMGViteztvi
+      - id: WeaponRevolverInspector
+      - id: WeaponRevolverInspector
+      - id: WeaponRevolverMateba
+#-----------------------------Ящик основных боеприпасов------------------ 
+- type: entity
+  id: VitzCrateAmmoBase
+  parent: VitzCrate
+  name: Ящик боеприпасов основного пехотного оружия корпорации Витезтви
+  suffix: Витезтви
+  description: Большой ящик патронов к оружию корпорации Витезтви
+  components:
+  - type: StorageFill
+    contents:
+      - id: MagazineBoxRifle
+      - id: MagazineBoxRifle
+      - id: MagazineBoxRifle
+      - id: MagazineBoxRifle
+      - id: MagazineBoxRifle
+      - id: BoxLethalshot
+      - id: BoxLethalshot
+      - id: BoxLethalshot
+      - id: BoxLethalshot
+      - id: WeaponCapacitorRechargerCircuitboard
+#-----------------------------Ящик вспомогательных боеприпасов------------------ 
+- type: entity
+  id: VitzCrateAmmoHelp
+  parent: VitzCrate
+# Код написал Crazzy_pingvin
+  name: Ящик боеприпасов вспомогательного пехотного оружия корпорации Витезтви
+  suffix: Витезтви
+  description: Большой ящик патронов к оружию корпорации Витезтви
+  components:
+  - type: StorageFill
+    contents:
+      - id: MagazineBoxLightRifleBig
+      - id: MagazineBoxLightRifleBig
+      - id: MagazineBoxAntiMaterielBig
+      - id: MagazineBoxAntiMaterielBig
+#-----------------------------Ящик дополнительных боеприпасов------------------ 
+- type: entity
+  id: VitzCrateAmmoLight
+  parent: VitzCrate
+  name: Ящик боеприпасов лёгкого оружия корпорации Витезтви
+  suffix: Витезтви
+  description: Большой ящик патронов к оружию корпорации Витезтви
+  components:
+  - type: StorageFill
+    contents:
+      - id: MagazineBoxPistol
+      - id: MagazineBoxPistol
+      - id: MagazineBoxPistol
+      - id: MagazineBoxPistol
+      - id: MagazineBoxPistol
+      - id: MagazineBoxPistol
+      - id: MagazineBoxMagnum
+      - id: MagazineBoxMagnum
+      - id: MagazineBoxMagnum
+#-----------------------------Ящик пехотной военной формы------------------ 
+- type: entity
+  id: VitzCrateFormPeh
+  parent: VitzCrate
+  name: Ящик пехотной формы корпорации Витезтви
+  suffix: Витезтви
+  description: Содержит в себе стандартные наборы экипировки для бойцов пехоты корпорации Витезтви
+  components:
+  - type: StorageFill
+    contents:
+      - id: VitzUniformEfreitor
+      - id: VitzUniformEfreitor
+      - id: VitzUniformStarshina
+      - id: VitzBackpack
+      - id: VitzBackpack
+      - id: VitzBackpack
+      - id: VitzBoots
+      - id: VitzBoots
+      - id: VitzBoots
+      - id: VitzBeretEfreitor
+      - id: VitzBeretEfreitor
+      - id: VitzBeretStarshina
+      - id: VitzGlovesFingerless
+      - id: VitzGlovesFingerless
+      - id: VitzGlovesFingerless
+      - id: VitzeBelt
+      - id: VitzeBelt
+      - id: VitzeBelt
+#-----------------------------Ящик флотской военной формы------------------ 
+- type: entity
+  id: VitzCrateFormFlt
+  parent: VitzCrate
+  name: Ящик флотской формы корпорации Витезтви
+  suffix: Витезтви
+  description: Содержит в себе стандартные наборы экипировки для бойцов флота корпорации Витезтви
+  components:
+  - type: StorageFill
+    contents:
+      - id: VitzUniformStarshiy
+      - id: VitzUniformStarshiy
+      - id: VitzUniformZvenievoi
+      - id: VitzBackpack
+      - id: VitzBackpack
+      - id: VitzBackpack
+      - id: VitzBoots
+      - id: VitzBoots
+      - id: VitzBoots
+      - id: VitzCapStarsiy
+      - id: VitzCapStarsiy
+      - id: VitzCapZvenievoi
+      - id: VitzGlovesFingerless
+      - id: VitzGlovesFingerless
+      - id: VitzGlovesFingerless
+      - id: VitzeBelt
+      - id: VitzeBelt
+      - id: VitzeBelt
+#-----------------------------Ящик брони------------------ 
+- type: entity
+  id: VitzCrateArmor
+  parent: VitzCrate
+  name: Ящик брони корпорации Витезтви
+  suffix: Витезтви
+  description: Содержит в себе элементы защиты и скафандры бойцов корпорации Витезтви
+  components:
+  - type: StorageFill
+    contents:
+      - id: VitzHelmetEfreitor
+      - id: VitzHelmetEfreitor
+      - id: VitzHelmetStarshina
+      - id: VitzHelmetPilots
+      - id: VitzHelmetPilots
+      - id: VitzHelmetPilots
+      - id: VitzArmorBasic
+      - id: VitzArmorBasic
+      - id: VitzArmorBasic
+      - id: VitzHardsuitPehot
+      - id: VitzHardsuitPehot
+      - id: VitzHardsuitPehot
+      - id: VitzHardsuitPilot
+      - id: VitzHardsuitPilot
+      - id: VitzHardsuitPilot
+#-----------------------------Ящик связи------------------ 
+- type: entity
+  id: VitzCrateRadio
+  parent: VitzCrate
+  name: Ящик систем связи корпорации Витезтви
+  suffix: Витезтви
+  description: Содержит в себе гарнитуры и ключи шифрования радиочастот корпорации Витезтви
+  components:
+  - type: StorageFill
+    contents:
+      - id: VitzHeadsetPeh
+      - id: VitzHeadsetPeh
+      - id: VitzHeadsetPeh
+      - id: VitzHeadsetPeh
+      - id: VitzHeadsetPeh
+      - id: VitzHeadsetPeh
+      - id: VitzEncryptionKeyPeh
+      - id: VitzEncryptionKeyPeh
+      - id: VitzEncryptionKeyPeh
+      - id: VitzEncryptionKeyPil
+      - id: VitzEncryptionKeyPil
+      - id: VitzEncryptionKeyCom
+      - id: VitzEncryptionKeyPil
+      - id: VitzEncryptionKeyPil
+      - id: VitzEncryptionKeyCom

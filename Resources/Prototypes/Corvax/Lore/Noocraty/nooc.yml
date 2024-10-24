@@ -1,0 +1,3724 @@
+#---------------------------униформа----------------------------------------------------------------------
+#------------------------------------низкий класс---------- 
+- type: entity
+  parent: ClothingUniformSkirtBase
+  id: NoocUniformNiz
+  name: Ноократская форма низкого класса
+  suffix: Ноократия
+  description: Стандартная униформа большей части военных Ноократии эранта. Не самая комфортная, но хоть защищает от дождя и тёпла. И на том спасибо.
+  components:
+  - type: Sprite
+    sprite: Corvax/Lore/Noocraty/Equipment/nooc_uniform_niz.rsi
+  - type: Clothing
+    sprite: Corvax/Lore/Noocraty/Equipment/nooc_uniform_niz.rsi
+#------------------------------------высокий класс----------     
+- type: entity
+  parent: ClothingUniformSkirtBase
+  id: NoocUniformVis
+  name: Ноократская форма высокого класса
+  suffix: Ноократия
+  description: Стандартная удобная униформа офицера высокого класса Ноократии эранта. Красивая, дорогая, комфортная, сшитая по мерке.
+  components:
+  - type: Sprite
+    sprite: Corvax/Lore/Noocraty/Equipment/nooc_uniform_vis.rsi
+  - type: Clothing
+    sprite: Corvax/Lore/Noocraty/Equipment/nooc_uniform_vis.rsi
+#------------------------------------средний класс----------     
+- type: entity
+  parent: ClothingUniformSkirtBase
+  id: NoocUniformSr
+  name: Ноократская форма среднего класса
+  suffix: Ноократия
+  description: Стандартная добротная форма военных среднего класса Ноократии Эрана. Качественная и удобная.
+  components:
+  - type: Sprite
+    sprite: Corvax/Lore/Noocraty/Equipment/nooc_uniform_sr.rsi
+  - type: Clothing
+    sprite: Corvax/Lore/Noocraty/Equipment/nooc_uniform_sr.rsi
+#-------------------------------одежда и снаряга----------------------------------------------------------------------
+#------------------------------------рюкзак---------- 
+- type: entity
+  parent: ClothingBackpack
+  id: NoocBackpack
+  name: Ноократский армейский рюкзак
+  suffix: Ноократия
+  description: Стандартный армейский рюкзак Ноократии Эранта для бойцов низкого и среднего классов.
+  components:
+  - type: Sprite
+    sprite: Corvax/Lore/Noocraty/Equipment/nooc_back.rsi
+#------------------------------------плечевая сумка---------- 
+- type: entity
+  parent: ClothingBackpack
+  id: NoocSatchels
+  name: Ноократская армейская плечевая сумка
+  suffix: Ноократия
+  description: Стандартный армейская плечевая сумка Ноократии Эранта для офицеров высокого класса
+  components:
+  - type: Sprite
+    sprite: Corvax/Lore/Noocraty/Equipment/nooc_satchels.rsi
+#------------------------------------сапоги---------- 
+- type: entity
+  parent: ClothingShoesMilitaryBase
+  id: NoocBoots
+  name: Ноократские пехотные сапоги
+  suffix: Ноократия
+  description: Удобные армейские сапоги Ноократии Эранта. Достаточно прочные и комфортные
+  components:
+  - type: Sprite
+    sprite: Corvax/Lore/Noocraty/Equipment/nooc_boots.rsi
+  - type: Clothing
+    sprite: Corvax/Lore/Noocraty/Equipment/nooc_boots.rsi
+#------------------------------------шлем---------- 
+- type: entity
+  parent: ClothingHeadHelmetBasic
+  id: NoocHelmet
+  name: Ноократский шлем
+  suffix: Ноократия
+  description: Крепкий, но несколько не удобный армейский шлем Ноократии Эранта с втроенным простеньким визором для помощи в прицеливании
+  components:
+  - type: Sprite
+    sprite: Corvax/Lore/Noocraty/Armor/nooc_helmet.rsi
+  - type: Clothing
+    sprite: Corvax/Lore/Noocraty/Armor/nooc_helmet.rsi
+  - type: ShowJobIcons
+#------------------------------------беретка---------- 
+- type: entity
+  parent: ClothingHeadBase
+  id: NoocBeret
+  name: Ноократский берет
+  suffix: Ноократия
+  description: Армейский берет Ноократии Эранта. Мягкий, но прочный и тёплый.
+  components:
+  - type: Sprite
+    sprite: Corvax/Lore/Noocraty/Equipment/nooc_beret.rsi
+  - type: Clothing
+    sprite: Corvax/Lore/Noocraty/Equipment/nooc_beret.rsi
+  - type: Tag
+    tags:
+    - ClothMade
+    - HamsterWearable
+    - WhitelistChameleon
+#------------------------------------фуражка---------- 
+- type: entity
+  parent: ClothingHeadBase
+  id: NoocCap
+  name: Ноократская фуражка офицера
+  suffix: Ноократия
+  description: Фуражка офицера высокого класса Ноократии Эранта, оснащённая хорошим визором для определения боевых целей
+  components:
+  - type: Sprite
+    sprite: Corvax/Lore/Noocraty/Equipment/nooc_cap.rsi
+  - type: Clothing
+    sprite: Corvax/Lore/Noocraty/Equipment/nooc_cap.rsi
+  - type: Tag
+    tags:
+    - ClothMade
+    - WhitelistChameleon
+  - type: ShowJobIcons
+  - type: ShowCriminalRecordIcons
+#------------------------------------Офицерский плащ---------- 
+- type: entity
+  parent: ClothingNeckBase
+  id: NoocCloak
+  name: Ноократский офицерский плащ 
+  suffix: Ноократия
+  description: Плащ, который носят офицеры высокого класса Ноократии Эрана. Просто пижонской кусок ткани. Ничего больше.
+  components:
+  - type: Sprite
+    sprite: Corvax/Lore/Noocraty/Equipment/nooc_cloak.rsi
+#------------------------------------Маскировочный плащ----------     
+- type: entity
+  parent: [ClothingOuterBaseLarge, AllowSuitStorageClothing, BaseToggleClothing, BaseMajorContraband]
+  id: NoocCloakStelth
+  name: Ноократский маскировочный плащ
+  suffix: Ноократия
+  description: Плащ, который носят заслуженные бойцы среднего класса Ноократии Эрана. Тёплый, отражает свет и радиацию. А ещё может становиться невидимым...
+  components:
+  - type: Sprite
+    sprite: Corvax/Lore/Noocraty/Equipment/nooc_cloak_inviz.rsi
+  - type: Clothing
+    sprite: Corvax/Lore/Noocraty/Equipment/nooc_cloak_inviz.rsi
+    quickEquip: true
+    slots:
+    - neck
+  - type: Armor
+    modifiers:
+      coefficients:
+        Heat: 0.8
+        Radiation: 0.5
+        Cold: 0.6
+  - type: ToggleClothing
+    action: ActionTogglePhaseCloak
+  - type: ComponentToggler
+    parent: true
+    components:
+    - type: Stealth
+      minVisibility: 0.1
+      lastVisibility: 0.1
+  - type: PowerCellDraw
+    drawRate: 0
+  - type: ToggleCellDraw
+  - type: UseDelay
+    delay: 5 
+  - type: PowerCellSlot
+    cellSlotId: cell_slot
+    fitsInCharger: false
+  - type: ContainerContainer
+    containers:
+      cell_slot: !type:ContainerSlot
+  - type: ItemSlots
+    slots:
+      cell_slot:
+        name: power-cell-slot-component-slot-name-default
+        startingItem: PowerCellSmall
+        disableEject: true
+#------------------------------------армейские перчатки---------- 
+- type: entity
+  parent: ClothingHandsBase
+  id: NoocGlovesFingerless
+  name: Ноократские армейские перчатки
+  suffix: Ноократия
+  description: Учёные расчитали, что с такими перчатками низкие классы воюют эффективнее. Иначе бы никто не тратил на их производство денег.
+  components:
+  - type: Sprite
+    sprite: Corvax/Lore/Noocraty/Equipment/nooc_gloves_niz.rsi
+  - type: Clothing
+    sprite: Corvax/Lore/Noocraty/Equipment/nooc_gloves_niz.rsi
+  - type: Fiber
+    fiberMaterial: fibers-synthetic
+    fiberColor: fibers-black
+#------------------------------------перчатки высокого класса----------     
+- type: entity
+  parent: ClothingHandsGlovesColorYellow
+  id: NoocGlovesVis
+  name: Ноократские перчатки высокого класса
+  suffix: Ноократия
+  description: Перчатки выдаваемые военным высоких классов Ноократии Эранта. Внутри прокладка из диэлектрического материала, от чего перчатки не самые удобные. Один в один походи на перчатки для высоких классов
+  components:
+  - type: FingerprintMask
+  - type: Sprite
+    sprite: Corvax/Lore/Noocraty/Equipment/nooc_gloves_vis.rsi
+  - type: Clothing
+    sprite: Corvax/Lore/Noocraty/Equipment/nooc_gloves_vis.rsi
+  - type: Fiber
+    fiberMaterial: fibers-durathread
+    fiberColor: fibers-regal-blue
+#------------------------------------перчатки среднего класса----------     
+- type: entity
+  parent: ClothingHandsGlovesColorYellow
+  id: NoocGlovesSr
+  name: Ноократские перчатки среднего класса
+  suffix: Ноократия
+  description: Перчатки выдаваемые военным средних классов Ноократии Эранта. Внутри прокладка из мягкого материала, от чего перчатки чоень удобные. Один в один походи на перчатки для средних классов
+  components:
+  - type: FingerprintMask
+  - type: Sprite
+    sprite: Corvax/Lore/Noocraty/Equipment/nooc_gloves_vis.rsi
+  - type: Clothing
+    sprite: Corvax/Lore/Noocraty/Equipment/nooc_gloves_vis.rsi
+  - type: Fiber
+    fiberMaterial: fibers-durathread
+    fiberColor: fibers-blue
+#------------------------------------лёгкий броник----------     
+- type: entity
+  parent: ClothingOuterBaseMedium
+  id: NoocArmorBasic
+  name: Ноократский бронежилет
+  suffix: Ноократия
+  description: Лёгкий армейский бронежилет используемый патрульными военными и полицией мирных районов Ноократии Эранта
+  components:
+  - type: Sprite
+    sprite: Corvax/Lore/Noocraty/Armor/nooc_armor.rsi
+  - type: Clothing
+    sprite: Corvax/Lore/Noocraty/Armor/nooc_armor.rsi
+  - type: Armor 
+    modifiers:
+      coefficients:
+        Blunt: 0.65
+        Slash: 0.65
+        Piercing: 0.65 
+        Heat: 0.65
+  - type: ExplosionResistance
+    damageCoefficient: 0.90
+#------------------------------------броня----------     
+- type: entity
+  parent: ClothingOuterBaseMedium
+  id: NoocArmorMiddle
+  name: Ноократский защитный комплект
+  suffix: Ноократия
+  description: Защитный комплект, состоящий из стандартного бронежилета, наплечников и защиты голеней выдаётся штурмовым подразделениям низкого класса Ноократии Эранта
+  components:
+  - type: Sprite
+    sprite: Corvax/Lore/Noocraty/Armor/nooc_armor_niz.rsi
+  - type: Clothing
+    sprite: Corvax/Lore/Noocraty/Armor/nooc_armor_niz.rsi
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.45
+        Slash: 0.45
+        Piercing: 0.45
+        Heat: 0.5
+        Radiation: 0.6
+        Caustic: 0.6
+  - type: ExplosionResistance
+    damageCoefficient: 0.80
+#------------------------------------скафандр среднего класса----------      
+- type: entity
+  parent: ClothingOuterHardsuitBase
+  id: NoocHardsuit
+  name: Ноократский Скафандр
+  suffix: Ноократия
+  description: Стандартный скафандр для военных средних классов Ноократии Эранта
+  components:
+  - type: Sprite
+    sprite: Corvax/Lore/Noocraty/Armor/nooc_hardsuits.rsi
+  - type: Clothing
+    sprite: Corvax/Lore/Noocraty/Armor/nooc_hardsuits.rsi
+  - type: ExplosionResistance
+    damageCoefficient: 0.9
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.6
+        Slash: 0.6
+        Piercing: 0.6
+        Heat: 0.5
+        Caustic: 0.5
+        Radiation: 0.7
+  - type: ClothingSpeedModifier
+    walkModifier: 0.90
+    sprintModifier: 0.90
+  - type: HeldSpeedModifier
+  - type: ToggleableClothing
+    clothingPrototype: NoocHelmetHardsuit
+#------------------------------------шлем скафандра среднего класса----------  
+- type: entity
+  parent: ClothingHeadHardsuitWithLightBase
+  id: NoocHelmetHardsuit
+  name: Ноократский шлем Скафандра
+  description: Стандартный шлем скафандра для военных средних классов Ноократии Эранта
+  components:
+  - type: BreathMask
+  - type: Sprite
+    sprite: Corvax/Lore/Noocraty/Armor/nooc_hardsuits_helmet.rsi
+  - type: Clothing
+    sprite: Corvax/Lore/Noocraty/Armor/nooc_hardsuits_helmet.rsi
+  - type: PointLight
+    radius: 5
+    color: "#ffdbad"
+  - type: PressureProtection
+    highPressureMultiplier: 0.1
+    lowPressureMultiplier: 1000
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.7
+        Slash: 0.8
+        Piercing: 0.8
+        Caustic: 0.9
+  - type: ExplosionResistance
+    damageCoefficient: 0.8
+#------------------------------------скафандровый экран----------      
+- type: entity
+  parent: ClothingOuterHardsuitBase
+  id: NoocHardsuitField
+  name: Ноократский личный атмосферный щит
+  suffix: Ноократия
+  description: Простая замена скафандру, когда нужно выйти в космос в безопасном районе. очень хорошо защищает от радиации
+  components:
+  - type: Item
+    size: Small
+  - type: Sprite
+    sprite: Corvax/Lore/Noocraty/Armor/nooc_hardsuits_field.rsi
+  - type: Clothing
+    sprite: Corvax/Lore/Noocraty/Armor/nooc_hardsuits_field.rsi
+  - type: ExplosionResistance
+    damageCoefficient: 0.9
+  - type: Armor
+    modifiers:
+      coefficients:
+        Heat: 0.2
+        Radiation: 0.9
+  - type: ClothingSpeedModifier
+    walkModifier: 0.90
+    sprintModifier: 0.90
+  - type: HeldSpeedModifier
+  - type: ToggleableClothing
+    clothingPrototype: NoocHelmetHardsuitField
+  - type: PointLight
+    color: "#00f0fb"
+    radius: 1.5
+#------------------------------------шлем скафандрового экрана----------  
+- type: entity
+  parent: ClothingHeadHardsuitBase
+  id: NoocHelmetHardsuitField
+  name: Ноократский шлем личного атмосферного щита
+  description: Стандартный шлем скафандра для военных средних классов Ноократии Эранта
+  components:
+  - type: BreathMask
+  - type: Sprite
+    sprite: Corvax/Lore/Noocraty/Armor/nooc_hardsuits_helmet_field.rsi
+  - type: Clothing
+    sprite: Corvax/Lore/Noocraty/Armor/nooc_hardsuits_helmet_field.rsi
+  - type: PressureProtection
+    highPressureMultiplier: 0.1
+    lowPressureMultiplier: 1000
+  - type: Armor
+    modifiers:
+      coefficients:
+        Heat: 0.1
+        Radiation: 0.1
+  - type: ExplosionResistance
+    damageCoefficient: 0.8  
+#------------------------------------мед-хим визор----------
+- type: entity
+  parent: ClothingEyesBase
+  id: NoocGlassesMed
+  name: Визор ноократского армейского медика
+  suffix: Ноократия
+  description: Удобный визор способный показать состояние бойцов и анализировать смеси реагентов
+  components:
+  - type: Sprite
+    sprite: Corvax/Lore/Noocraty/Equipment/nooc_glasses_med.rsi
+  - type: Clothing
+    sprite: Corvax/Lore/Noocraty/Equipment/nooc_glasses_med.rsi
+  - type: SolutionScanner
+  - type: ShowHealthBars
+    damageContainers:
+    - Biological
+  - type: ShowHealthIcons
+    damageContainers:
+    - Biological    
+#------------------------------------пояса---------- 
+#-----------------------боевой---------- 
+- type: entity
+  parent: ClothingBeltStorageBase
+  id: NoocBelt
+  name: Ноократский армейский пояс
+  suffix: Ноократия
+  description: Такие пояса используют военослужащие Ноократии Эранта
+  components:
+  - type: Sprite
+    sprite: Corvax/Lore/Noocraty/Equipment/nooc_belt.rsi
+  - type: Clothing
+    sprite: Corvax/Lore/Noocraty/Equipment/nooc_belt.rsi
+  - type: Storage
+    maxItemSize: Normal
+    whitelist:
+      tags:
+        - Powerdrill
+        - Wirecutter
+        - Crowbar
+        - Screwdriver
+        - Flashlight
+        - Wrench
+        - GeigerCounter
+        - Flare
+        - CableCoil
+        - CigPack
+        - Radio
+        - HolofanProjector
+        - Multitool
+        - AppraisalTool
+        - JawsOfLife
+        - GPS
+        - CigPack
+        - Taser
+      components:
+        - SprayPainter
+        - NetworkConfigurator
+        - RCD
+        - RCDAmmo
+        - Welder
+        - PowerCell
+        - Geiger
+        - TrayScanner
+        - GasAnalyzer
+        - Stunbaton
+        - FlashOnTrigger
+        - SmokeOnTrigger
+        - Flash
+        - Handcuff
+        - RangedMagazine
+        - Ammo
+  - type: Appearance
+
+- type: entity
+  id: NoocBeltEngFilled
+  parent: NoocBelt
+  suffix: Заполненный, Ноократия, Инж
+  components:
+  - type: StorageFill
+    contents:
+      - id: Crowbar
+      - id: Wrench
+      - id: GeigerCounter
+      - id: Wirecutter
+      - id: Welder
+      - id: Multitool
+#-----------------------медицинский---------- 
+- type: entity
+  parent: ClothingBeltStorageBase
+  id: NoocBeltMed
+  name: Ноократский медицинский пояс
+  suffix: Ноократия
+  description: Такие пояса используют военослужащие-медики Ноократии Эранта
+  components:
+  - type: Sprite
+    sprite: Corvax/Lore/Noocraty/Equipment/nooc_belt.rsi
+  - type: Clothing
+    sprite: Corvax/Lore/Noocraty/Equipment/nooc_belt.rsi
+  - type: Storage
+    maxItemSize: Normal
+    whitelist:
+      tags:
+        - Powerdrill
+        - Bottle
+        - Spray
+        - Brutepack
+        - Bloodpack
+        - Gauze
+        - Ointment
+        - Wirecutter
+        - Crowbar
+        - Screwdriver
+        - Flashlight
+        - Wrench
+        - GeigerCounter
+        - Flare
+        - CableCoil
+        - CigPack
+        - Radio
+        - HolofanProjector
+        - Multitool
+        - AppraisalTool
+        - JawsOfLife
+        - GPS
+        - CigPack
+        - Taser
+      components:
+        - Hypospray
+        - Injector
+        - Pill
+        - HandLabeler
+        - SprayPainter
+        - NetworkConfigurator
+        - RCD
+        - RCDAmmo
+        - Welder
+        - PowerCell
+        - Geiger
+        - TrayScanner
+        - GasAnalyzer
+        - Stunbaton
+        - FlashOnTrigger
+        - SmokeOnTrigger
+        - Flash
+        - Handcuff
+        - RangedMagazine
+        - Ammo
+  - type: Appearance
+
+- type: entity
+  id: NoocBeltMedFilled
+  parent: NoocBeltMed
+  suffix: Заполненный, Ноократия, Мед
+  components:
+  - type: StorageFill
+    contents:
+      - id: Gauze
+      - id: Gauze
+      - id: Ointment
+      - id: Ointment
+      - id: Brutepack
+      - id: Brutepack
+#-------------------------------------оружее-------------------------------------------------------------------------------
+#-------------------------------------лазер--------------------------------------------------------------
+#------------------------------------винтовка---------- 
+- type: hitscan
+  id: NoocRedLaserRifle
+  damage:
+    types:
+      Heat: 27
+  muzzleFlash:
+    sprite: Objects/Weapons/Guns/Projectiles/projectiles.rsi
+    state: muzzle_beam_heavy
+  travelFlash:
+    sprite: Objects/Weapons/Guns/Projectiles/projectiles.rsi
+    state: beam_heavy
+  impactFlash:
+    sprite: Objects/Weapons/Guns/Projectiles/projectiles.rsi
+    state: impact_beam_heavy
+#------------------------------------автомат----------         
+- type: hitscan
+  id: NoocRedLaserGan
+  damage:
+    types:
+      Heat: 17
+  muzzleFlash:
+    sprite: Objects/Weapons/Guns/Projectiles/projectiles.rsi
+    state: muzzle_laser 
+  travelFlash:
+    sprite: Objects/Weapons/Guns/Projectiles/projectiles.rsi
+    state: beam
+  impactFlash:
+    sprite: Objects/Weapons/Guns/Projectiles/projectiles.rsi
+    state: impact_laser 
+#------------------------------------пистолет---------- 
+- type: hitscan
+  id: NoocRedLaserPistol
+  damage:
+    types:
+      Heat: 10
+  muzzleFlash:
+    sprite: Objects/Weapons/Guns/Projectiles/projectiles.rsi
+    state: impact_beam_heavy
+  travelFlash:
+    sprite: Objects/Weapons/Guns/Projectiles/projectiles.rsi
+    state: bolt 
+  impactFlash:
+    sprite: Objects/Weapons/Guns/Projectiles/projectiles.rsi
+    state: impact_laser    
+#------------------------------------пулемёт---------- 
+- type: hitscan
+  id: NoocRedLaserMG
+  damage:
+    types:
+      Heat: 6
+  muzzleFlash:
+    sprite: Objects/Weapons/Guns/Projectiles/projectiles.rsi
+    state: impact_laser
+  travelFlash:
+    sprite: Objects/Weapons/Guns/Projectiles/projectiles.rsi
+    state: bolt  
+  impactFlash:
+    sprite: Objects/Weapons/Guns/Projectiles/projectiles.rsi
+    state: impact_laser    
+#------------------------------------холод---------- 
+- type: hitscan
+  id: NoocColdLaser
+  damage:
+    types:
+      Cold: 5
+      Stamina: 15
+  muzzleFlash:
+    sprite: Objects/Weapons/Guns/Projectiles/projectiles.rsi
+    state: muzzle_omni
+  travelFlash:
+    sprite: Objects/Weapons/Guns/Projectiles/projectiles.rsi
+    state: beam_omni
+  impactFlash:
+    sprite: Objects/Weapons/Guns/Projectiles/projectiles.rsi
+    state: impact_omni 
+#-----------------пули-инъекторы------------
+#-----------------механ------------
+- type: entity
+  id: NoocBulletHilMech
+  name: Инжектор заживитель
+  suffix: Ноократия
+  parent: BaseBullet
+  noSpawn: true
+  components:
+  - type: Sprite
+    noRot: false
+    sprite: Corvax/Lore/Noocraty/Weapon/nooc_projectiles.rsi
+    layers:
+    - state: bullet
+      shader: unshaded
+  - type: Projectile
+    damage:
+      types:
+        Piercing: -10
+        Blunt: -10
+        Slash: -10
+#-----------------тепло------------        
+- type: entity
+  id: NoocBulletHilHeat
+  name: Инжектор противовоспалитель
+  suffix: Ноократия
+  parent: BaseBullet
+  noSpawn: true
+  components:
+  - type: Sprite
+    noRot: false
+    sprite: Corvax/Lore/Noocraty/Weapon/nooc_projectiles.rsi
+    layers:
+    - state: piercing
+      shader: unshaded
+  - type: Projectile
+    damage:
+      types:
+        Heat: -10
+        Cold: -10
+#-----------------рад------------        
+- type: entity
+  id: NoocBulletHilRadi
+  name: Инжектор антирад
+  suffix: Ноократия
+  parent: BaseBullet
+  noSpawn: true
+  components:
+  - type: Sprite
+    noRot: false
+    sprite: Corvax/Lore/Noocraty/Weapon/nooc_projectiles.rsi
+    layers:
+    - state: uranium
+      shader: unshaded
+  - type: Projectile
+    damage:
+      types:
+        Radiation: -10
+        Cellular: -10
+#-----------------картриджи лечилки-----------------
+#-----------------механ------------
+- type: Tag
+  id: NoocCartridgeHilMech
+
+- type: entity
+  id: NoocCartridgeHilMech
+  name: Инжектор заживитель
+  suffix: Ноократия
+  parent: BaseCartridgeRifle
+  components:
+  - type: Sprite
+    sprite: Corvax/Lore/Noocraty/Weapon/nooc_projectiles.rsi
+    layers:
+    - state: bullet
+      map: ["enum.AmmoVisualLayers.Base"]
+  - type: CartridgeAmmo
+    proto: NoocBulletHilMech
+  - type: Tag
+    tags:
+      - NoocCartridgeHilMech
+#-----------------тепло------------      
+- type: Tag
+  id: NoocCartridgeHilHeat
+
+- type: entity
+  id: NoocCartridgeHilHeat
+  name: Инжектор противовоспалитель
+  suffix: Ноократия
+  parent: BaseCartridgeRifle
+  components:
+  - type: Sprite
+    sprite: Corvax/Lore/Noocraty/Weapon/nooc_projectiles.rsi
+    layers:
+    - state: piercing
+      map: ["enum.AmmoVisualLayers.Base"]
+  - type: CartridgeAmmo
+    proto: NoocBulletHilHeat
+  - type: Tag
+    tags:
+      - NoocCartridgeHilHeat
+#-----------------рад------------      
+- type: Tag
+  id: NoocCartridgeHilRadi
+
+- type: entity
+  id: NoocCartridgeHilRadi
+  name: Инжектор антирад
+  suffix: Ноократия
+  parent: BaseCartridgeRifle
+  components:
+  - type: Sprite
+    sprite: Corvax/Lore/Noocraty/Weapon/nooc_projectiles.rsi
+    layers:
+    - state: uranium
+      map: ["enum.AmmoVisualLayers.Base"]
+  - type: CartridgeAmmo
+    proto: NoocBulletHilRadi
+  - type: Tag
+    tags:
+      - NoocCartridgeHilRadi
+#-----------------наполняемый------------      
+- type: Tag
+  id: NoocCartridgeHilEmpty
+
+- type: entity
+  parent: BaseArrow
+  id: NoocCartridgeHilEmpty
+  name: Инжектор наполняемый
+  suffix: Ноократия
+  description: Наполняемый инжектор, в который можно залить 10u чего угодно
+  components:
+  - type: Sprite
+    sprite: Corvax/Lore/Noocraty/Weapon/nooc_projectiles.rsi
+    layers:
+    - state: base
+      map: ["enum.AmmoVisualLayers.Base"]
+  - type: Projectile
+    damage:
+      types:
+        Piercing: 2
+  - type: SolutionContainerManager
+    solutions:
+      ammo:
+        maxVol: 10
+  - type: RefillableSolution
+    solution: ammo
+  - type: InjectableSolution
+    solution: ammo
+  - type: SolutionInjectOnEmbed
+    transferAmount: 10
+    solution: ammo
+  - type: SolutionTransfer
+    maxTransferAmount: 10
+  - type: Item
+    size: Tiny 
+  - type: Tag
+    tags:
+      - NoocCartridgeHilEmpty
+#-----------------------------Коробка инжекторов------------------
+- type: entity
+  name: Коробка лечащих инжекторов
+  suffix: Ноократия
+  parent: BoxCardboard
+  id: BoxNoocMagazineCureRifle
+  description: A box full of syringes.
+  components:
+  - type: Storage
+    maxItemSize: Small
+    grid:
+    - 0,0,3,3
+  - type: StorageFill
+    contents:
+      - id: NoocCartridgeHilMech
+        amount: 4
+      - id: NoocCartridgeHilHeat
+        amount: 4
+      - id: NoocCartridgeHilRadi
+        amount: 4
+      - id: NoocCartridgeHilEmpty
+        amount: 4
+  - type: Sprite
+    layers:
+      - state: box_medical # Corvax-Resprite
+      - state: syringe  
+#-------------------------------------Оружейные батареи---------------------------------------------------------------------------------
+#-----------------------------------стандарт--------- 
+- type: entity
+  id: NoocBasePowerCell
+  abstract: true
+  parent: BaseItem
+  components:
+  - type: Battery
+    pricePerJoule: 0.15
+  - type: PowerCell
+  - type: Explosive
+    explosionType: Default
+    maxIntensity: 200
+    intensitySlope: 1.5
+  - type: Sprite
+    sprite: Corvax/Lore/Noocraty/Weapon/nooc_magazine.rsi
+  - type: SolutionContainerManager
+    solutions:
+      battery:
+        maxVol: 5
+  - type: InjectableSolution
+    solution: battery
+  - type: DrawableSolution
+    solution: battery
+  - type: Extractable
+    juiceSolution:
+      reagents:
+        - ReagentId: Zinc
+          Quantity: 5
+  - type: Tag
+    tags:
+      - PowerCell
+  - type: Appearance
+  - type: PowerCellVisuals
+  - type: Riggable
+  - type: HitscanBatteryAmmoProvider
+    proto: NoocRedLaserRifle
+    fireCost: 1
+#-----------------------------------винтовочная---------     
+- type: Tag
+  id: NoocPowerCellOne  
+
+- type: entity
+  name: Батарея первого уровня (Винт)
+  suffix: Ноократия, Full
+  description: Стандартная оруженийя батарея Ноократии Эранта расчитанная на 10 выстрелов
+  id: NoocPowerCellOne
+  parent: NoocBasePowerCell
+  components:
+  - type: Sprite
+    layers:
+    - map: [ "enum.PowerCellVisualLayers.Base" ]
+      state: rifle
+    - map: [ "enum.PowerCellVisualLayers.Unshaded" ]
+      state: mag-0
+      shader: unshaded
+  - type: Battery
+    maxCharge: 10
+    startingCharge: 10
+  - type: Tag
+    tags:
+      - NoocPowerCellOne  
+  - type: HitscanBatteryAmmoProvider
+    proto: NoocRedLaserRifle      
+#-----------------------------------автоматная--------- 
+- type: Tag
+  id: NoocPowerCellThree 
+
+- type: entity
+  name: Батарея третьего уровня (Авт)
+  suffix: Ноократия, Full
+  description: Стандартная оруженийя батарея Ноократии Эранта расчитанная на 30 выстрелов
+  id: NoocPowerCellThree
+  parent: NoocBasePowerCell
+  components:
+  - type: Sprite
+    layers:
+    - map: [ "enum.PowerCellVisualLayers.Base" ]
+      state: gan
+    - map: [ "enum.PowerCellVisualLayers.Unshaded" ]
+      state: mag-0
+      shader: unshaded
+  - type: Battery
+    maxCharge: 30
+    startingCharge: 30
+  - type: Tag
+    tags:
+      - NoocPowerCellThree 
+  - type: HitscanBatteryAmmoProvider
+    proto: NoocRedLaserGan
+#-----------------------------------пистолетная--------- 
+- type: Tag
+  id: NoocPowerCellTwo 
+
+- type: entity
+  name: Батарея второго уровня (Пист)
+  suffix: Ноократия, Full
+  description: Стандартная оруженийя батарея Ноократии Эранта расчитанная на 20 выстрелов
+  id: NoocPowerCellTwo
+  parent: NoocBasePowerCell
+  components:
+  - type: Sprite
+    layers:
+    - map: [ "enum.PowerCellVisualLayers.Base" ]
+      state: pistol
+    - map: [ "enum.PowerCellVisualLayers.Unshaded" ]
+      state: mag-0
+      shader: unshaded
+  - type: Battery
+    maxCharge: 10
+    startingCharge: 10
+  - type: Tag
+    tags:
+      - NoocPowerCellTwo
+  - type: HitscanBatteryAmmoProvider
+    proto: NoocRedLaserPistol
+#-----------------------------------пулемётная---------     
+- type: Tag
+  id: NoocPowerCellFour  
+
+- type: entity
+  name: Батарея четвёртого уровня (Пул)
+  suffix: Ноократия, Full
+  description: Стандартная оруженийя батарея Ноократии Эранта расчитанная на 80 выстрелов
+  id: NoocPowerCellFour
+  parent: NoocBasePowerCell
+  components:
+  - type: Sprite
+    layers:
+    - map: [ "enum.PowerCellVisualLayers.Base" ]
+      state: mg
+    - map: [ "enum.PowerCellVisualLayers.Unshaded" ]
+      state: mag-0
+      shader: unshaded
+  - type: Battery
+    maxCharge: 80
+    startingCharge: 80
+  - type: Tag
+    tags:
+      - NoocPowerCellFour  
+  - type: HitscanBatteryAmmoProvider
+    proto: NoocRedLaserMG
+#-----------------магазины лечилки------------------
+#--------механ---------
+- type: Tag
+  id: NoocMagazineCureRifleMech 
+
+- type: entity
+  id: NoocMagazineCureRifleMech
+  name: Магазин к инжекторной винтовке
+  suffix: Ноократия
+  parent: BaseMagazineLightRifle
+  components:
+  - type: BallisticAmmoProvider
+    mayTransfer: true
+    whitelist:
+      tags:
+        - NoocCartridgeHilMech
+        - NoocCartridgeHilHeat
+        - NoocCartridgeHilRadi
+        - NoocCartridgeHilEmpty
+    proto: NoocCartridgeHilMech
+    capacity: 5
+  - type: Sprite
+    sprite: Corvax/Lore/Noocraty/Weapon/nooc_cure_rifle_magazine.rsi
+    layers:
+    - state: mech
+      map: ["enum.GunVisualLayers.Base"]
+  - type: Tag
+    tags:
+      - NoocMagazineCureRifleMech
+#--------тепло---------      
+- type: Tag
+  id: NoocMagazineCureRifleHeat
+
+- type: entity
+  id: NoocMagazineCureRifleHeat
+  name: Магазин к инжекторной винтовке
+  suffix: Ноократия
+  parent: BaseMagazineLightRifle
+  components:
+  - type: BallisticAmmoProvider
+    mayTransfer: true
+    whitelist:
+      tags:
+        - NoocCartridgeHilMech
+        - NoocCartridgeHilHeat
+        - NoocCartridgeHilRadi
+        - NoocCartridgeHilEmpty
+    proto: NoocCartridgeHilHeat
+    capacity: 5
+  - type: Sprite
+    sprite: Corvax/Lore/Noocraty/Weapon/nooc_cure_rifle_magazine.rsi
+    layers:
+    - state: heat
+      map: ["enum.GunVisualLayers.Base"]
+  - type: Tag
+    tags:
+      - NoocMagazineCureRifleHeat
+#--------рад---------      
+- type: Tag
+  id: NoocMagazineCureRifleRadi
+
+- type: entity
+  id: NoocMagazineCureRifleRadi
+  name: Магазин к инжекторной винтовке
+  suffix: Ноократия
+  parent: BaseMagazineLightRifle
+  components:
+  - type: BallisticAmmoProvider
+    mayTransfer: true
+    whitelist:
+      tags:
+        - NoocCartridgeHilMech
+        - NoocCartridgeHilHeat
+        - NoocCartridgeHilRadi
+        - NoocCartridgeHilEmpty
+    proto: NoocCartridgeHilRadi
+    capacity: 5
+  - type: Sprite
+    sprite: Corvax/Lore/Noocraty/Weapon/nooc_cure_rifle_magazine.rsi
+    layers:
+    - state: radi
+      map: ["enum.GunVisualLayers.Base"]
+  - type: Tag
+    tags:
+      - NoocMagazineCureRifleRadi
+#--------пуст---------
+- type: Tag
+  id: NoocMagazineCureRifleEmpty
+
+- type: entity
+  id: NoocMagazineCureRifleEmpty
+  name: Магазин к инжекторной винтовке
+  suffix: Ноократия
+  parent: BaseMagazineLightRifle
+  components:
+  - type: BallisticAmmoProvider
+    mayTransfer: true
+    whitelist:
+      tags:
+        - NoocCartridgeHilMech
+        - NoocCartridgeHilHeat
+        - NoocCartridgeHilRadi
+        - NoocCartridgeHilEmpty
+    proto: NoocCartridgeHilEmpty
+    capacity: 5
+  - type: Sprite
+    sprite: Corvax/Lore/Noocraty/Weapon/nooc_cure_rifle_magazine.rsi
+    layers:
+    - state: mech
+      map: ["enum.GunVisualLayers.Base"]
+  - type: Tag
+    tags:
+      - NoocMagazineCureRifleEmpty     
+#-----------------------------------хладопушковая--------- 
+- type: Tag
+  id: NoocPowerCellCold
+
+- type: entity
+  name: Батарея холода
+  suffix: Ноократия, Full
+  description: Сложная оруженийя батарея Ноократии Эранта расчитанная на 40 выстрелов, создающая области уменьшенной энергии
+  id: NoocPowerCellCold
+  parent: NoocBasePowerCell
+  components:
+  - type: Sprite
+    layers:
+    - map: [ "enum.PowerCellVisualLayers.Base" ]
+      state: cold
+    - map: [ "enum.PowerCellVisualLayers.Unshaded" ]
+      state: mag-0
+      shader: unshaded
+  - type: Battery
+    maxCharge: 40
+    startingCharge: 40
+  - type: Tag
+    tags:
+      - NoocPowerCellCold
+  - type: HitscanBatteryAmmoProvider
+    proto: NoocColdLaser
+#-------------------------------------стволы---------------------------------------------------------------------------------
+#-----------------------винтовки-----------------------
+- type: entity
+  id: NoocPowerRifle
+  parent: BaseItem
+  abstract: true
+  components:
+  - type: Item
+    size: Large
+  - type: Sprite
+  - type: AmmoCounter
+  - type: Gun
+    fireRate: 0.8
+    selectedMode: SemiAuto
+    availableModes:
+    - SemiAuto
+    soundGunshot:
+      path: /Audio/Weapons/Guns/Gunshots/laser.ogg
+  - type: MagazineAmmoProvider
+  - type: ItemSlots
+    slots:
+      gun_magazine:
+        name: Magazine
+        startingItem: NoocPowerCellOne
+        insertSound: /Audio/Weapons/Guns/MagIn/batrifle_magin.ogg
+        ejectSound: /Audio/Weapons/Guns/MagOut/batrifle_magout.ogg
+        whitelist:
+          tags:
+            - NoocPowerCellOne
+            - NoocPowerCellTwo
+            - NoocPowerCellThree
+            - NoocPowerCellFour 
+  - type: Appearance
+  - type: StaticPrice
+    price: 500
+  - type: ContainerContainer
+    containers:
+      gun_magazine: !type:ContainerSlot
+  - type: Clothing
+    sprite: Corvax/Lore/Noocraty/Weapon/nooc_laser_rifle.rsi
+    quickEquip: false
+    slots:
+    - Back
+
+- type: entity
+  name: Ноократская винтовка "Господин"
+  suffix: Ноократия
+  parent: NoocPowerRifle
+  id: NoocRifle
+  description: Опасное и дольнобойное оружие Ноократии Эранта для ликвидации защитников важных точек обороны и убийства ключевых бойцов противника
+  components:
+  - type: Sprite
+    sprite: Corvax/Lore/Noocraty/Weapon/nooc_laser_rifle.rsi
+    layers:
+    - state: base
+      map: ["enum.GunVisualLayers.Base"]
+    - state: mag-0
+      map: ["enum.GunVisualLayers.Mag"]
+      shader: unshaded
+  - type: Item
+    sprite: Corvax/Lore/Noocraty/Weapon/nooc_laser_rifle.rsi
+  - type: MagazineVisuals
+    magState: mag
+    steps: 1
+    zeroVisible: true
+  - type: Clothing
+    sprite: Corvax/Lore/Noocraty/Weapon/nooc_laser_rifle.rsi
+  - type: StaticPrice
+    price: 500
+#------------------------------------автомат----------     
+- type: entity
+  id: NoocPowerGan
+  parent: BaseItem
+  abstract: true
+  components:
+  - type: Item
+    size: Large
+  - type: Sprite
+  - type: AmmoCounter
+  - type: Gun
+    fireRate: 4.5
+    selectedMode: FullAuto
+    availableModes:
+    - FullAuto
+    soundGunshot:
+      path: /Audio/Weapons/Guns/Gunshots/laser.ogg
+  - type: MagazineAmmoProvider
+  - type: ItemSlots
+    slots:
+      gun_magazine:
+        name: Magazine
+        startingItem: NoocPowerCellThree
+        insertSound: /Audio/Weapons/Guns/MagIn/batrifle_magin.ogg
+        ejectSound: /Audio/Weapons/Guns/MagOut/batrifle_magout.ogg
+        whitelist:
+          tags:
+            - NoocPowerCellOne
+            - NoocPowerCellTwo
+            - NoocPowerCellThree
+            - NoocPowerCellFour 
+  - type: Appearance
+  - type: StaticPrice
+    price: 500
+  - type: ContainerContainer
+    containers:
+      gun_magazine: !type:ContainerSlot
+  - type: Clothing
+    sprite: Corvax/Lore/Noocraty/Weapon/nooc_laser_gun.rsi
+    quickEquip: false
+    slots:
+    - Back
+
+- type: entity
+  name: Ноократский автомат "Покоритель"
+  suffix: Ноократия
+  parent: NoocPowerGan
+  id: NoocGan
+  description: Лёгкий и дешёвый лазерный автомат Ноократии Эранта для пехотных боёв
+  components:
+  - type: Sprite
+    sprite: Corvax/Lore/Noocraty/Weapon/nooc_laser_gun.rsi
+    layers:
+    - state: base
+      map: ["enum.GunVisualLayers.Base"]
+    - state: mag-0
+      map: ["enum.GunVisualLayers.Mag"]
+      shader: unshaded
+  - type: Item
+    sprite: Corvax/Lore/Noocraty/Weapon/nooc_laser_gun.rsi
+  - type: MagazineVisuals
+    magState: mag
+    steps: 1
+    zeroVisible: true
+  - type: Clothing
+    sprite: Corvax/Lore/Noocraty/Weapon/nooc_laser_gun.rsi
+  - type: StaticPrice
+    price: 500
+#------------------------------------пистолет----------   
+- type: entity
+  id: NoocPowerPistol
+  parent: BaseItem
+  abstract: true
+  components:
+  - type: Item
+  - type: Sprite
+  - type: AmmoCounter
+  - type: Gun
+    fireRate: 3.5
+    selectedMode: SemiAuto
+    availableModes:
+    - SemiAuto
+    soundGunshot:
+      path: /Audio/Weapons/Guns/Gunshots/laser.ogg
+  - type: MagazineAmmoProvider
+  - type: ItemSlots
+    slots:
+      gun_magazine:
+        name: Magazine
+        startingItem: NoocPowerCellTwo
+        insertSound: /Audio/Weapons/Guns/MagIn/batrifle_magin.ogg
+        ejectSound: /Audio/Weapons/Guns/MagOut/batrifle_magout.ogg
+        whitelist:
+          tags:
+            - NoocPowerCellOne
+            - NoocPowerCellTwo
+            - NoocPowerCellThree
+            - NoocPowerCellFour 
+  - type: Appearance
+  - type: StaticPrice
+    price: 250
+  - type: ContainerContainer
+    containers:
+      gun_magazine: !type:ContainerSlot
+  - type: Clothing
+    sprite: Corvax/Lore/Noocraty/Weapon/nooc_laser_pistol.rsi
+    quickEquip: false
+    slots:
+    - Belt
+
+- type: entity
+  name: Ноократский пистолет "Власть"
+  suffix: Ноократия
+  parent: NoocPowerPistol
+  id: NoocPistol
+  description: Небольшой и крайне удобный пистолет офицеров Ноократии Эранта
+  components:
+  - type: Sprite
+    sprite: Corvax/Lore/Noocraty/Weapon/nooc_laser_pistol.rsi
+    layers:
+    - state: base
+      map: ["enum.GunVisualLayers.Base"]
+    - state: mag-0
+      map: ["enum.GunVisualLayers.Mag"]
+      shader: unshaded
+  - type: Item
+    sprite: Corvax/Lore/Noocraty/Weapon/nooc_laser_pistol.rsi
+  - type: MagazineVisuals
+    magState: mag
+    steps: 1
+    zeroVisible: true
+  - type: Clothing
+    sprite: Corvax/Lore/Noocraty/Weapon/nooc_laser_pistol.rsi
+  - type: StaticPrice
+    price: 250
+#------------------------------------пулемёт----------   
+- type: entity
+  id: NoocPowerMG
+  parent: BaseItem
+  abstract: true
+  components:
+  - type: Item
+    size: Large
+  - type: Sprite
+  - type: AmmoCounter
+  - type: Gun
+    minAngle: 5
+    maxAngle: 15
+    angleIncrease: 5
+    angleDecay: 16
+    fireRate: 7
+    selectedMode: FullAuto
+    availableModes:
+    - FullAuto
+    soundGunshot:
+      path: /Audio/Weapons/Guns/Gunshots/laser.ogg
+  - type: MagazineAmmoProvider
+  - type: ItemSlots
+    slots:
+      gun_magazine:
+        name: Magazine
+        startingItem: NoocPowerCellFour 
+        insertSound: /Audio/Weapons/Guns/MagIn/batrifle_magin.ogg
+        ejectSound: /Audio/Weapons/Guns/MagOut/batrifle_magout.ogg
+        whitelist:
+          tags:
+            - NoocPowerCellOne
+            - NoocPowerCellTwo
+            - NoocPowerCellThree
+            - NoocPowerCellFour
+            - NoocPowerCellFive
+  - type: Appearance
+  - type: StaticPrice
+    price: 750
+  - type: ContainerContainer
+    containers:
+      gun_magazine: !type:ContainerSlot
+
+- type: entity
+  name: Ноократский скорострельный лазер "Подавитель"
+  suffix: Ноократия
+  parent: NoocPowerMG
+  id: NoocMG
+  description: Крупный, но не очень тяжёлый ручной скорострельный лазер Ноократии Эранта. Обладает не сильным уроном, но хорош для подавления противника
+  components:
+  - type: Sprite
+    sprite: Corvax/Lore/Noocraty/Weapon/nooc_laser_mg.rsi
+    layers:
+    - state: base
+      map: ["enum.GunVisualLayers.Base"]
+    - state: mag-0
+      map: ["enum.GunVisualLayers.Mag"]
+      shader: unshaded
+  - type: Item
+    sprite: Corvax/Lore/Noocraty/Weapon/nooc_laser_mg.rsi
+  - type: MagazineVisuals
+    magState: mag
+    steps: 1
+    zeroVisible: true
+  - type: StaticPrice
+    price: 750
+#-----------------лечилко-ствол---------------------
+- type: Tag
+  id: NoocCureRifle 
+
+- type: entity
+  name: Ноократская винтовка "Боготворец"
+  suffix: Ноократия
+  parent: BaseWeaponRifle
+  id: NoocCureRifle
+  description: Это оружие служит не для убийства. В неё заряжаются одноразовые инжекторы для оперативного лечения.
+  components:
+  - type: Sprite
+    sprite: Corvax/Lore/Noocraty/Weapon/nooc_cure_rifle.rsi
+    layers:
+      - state: base
+        map: ["enum.GunVisualLayers.Base"]
+      - state: mag-0
+        map: ["enum.GunVisualLayers.Mag"]
+  - type: Item
+    size: Large
+  - type: Clothing
+    sprite: Corvax/Lore/Noocraty/Weapon/nooc_cure_rifle.rsi
+  - type: Gun
+    fireRate: 1
+    soundGunshot:
+      path: /Audio/Weapons/Guns/Gunshots/rifle2.ogg
+  - type: ChamberMagazineAmmoProvider
+    soundRack:
+      path: /Audio/Weapons/Guns/Cock/ltrifle_cock.ogg
+  - type: ItemSlots
+    slots:
+      gun_magazine:
+        name: Magazine
+        startingItem: NoocMagazineCureRifleMech
+        insertSound: /Audio/Weapons/Guns/MagIn/ltrifle_magin.ogg
+        ejectSound: /Audio/Weapons/Guns/MagOut/ltrifle_magout.ogg
+        priority: 2
+        whitelist:
+          tags:
+            - NoocMagazineCureRifleMech
+            - NoocMagazineCureRifleHeat
+            - NoocMagazineCureRifleRadi
+      gun_chamber:
+        name: Chamber
+        startingItem: NoocCartridgeHilMech
+        priority: 1
+        whitelist:
+          tags:
+            - NoocCartridgeHilMech
+            - NoocCartridgeHilHeat
+            - NoocCartridgeHilRadi
+  - type: ContainerContainer
+    containers:
+      gun_magazine: !type:ContainerSlot
+      gun_chamber: !type:ContainerSlot
+  - type: MagazineVisuals
+    magState: mag
+    steps: 1
+    zeroVisible: true
+  - type: Appearance
+  - type: StaticPrice
+    price: 750
+  - type: Tag
+    tags:
+      - NoocCureRifle 
+#------------------------------------хладопушка----------     
+- type: entity
+  id: NoocPowerGanCold
+  parent: BaseItem
+  abstract: true
+  components:
+  - type: Item
+    size: Large
+  - type: Sprite
+  - type: AmmoCounter
+  - type: Gun
+    fireRate: 6
+    selectedMode: FullAuto
+    availableModes:
+    - FullAuto
+    soundGunshot:
+      path: /Audio/Weapons/Guns/Gunshots/laser.ogg
+  - type: MagazineAmmoProvider
+  - type: ItemSlots
+    slots:
+      gun_magazine:
+        name: Magazine
+        startingItem: NoocPowerCellCold
+        insertSound: /Audio/Weapons/Guns/MagIn/batrifle_magin.ogg
+        ejectSound: /Audio/Weapons/Guns/MagOut/batrifle_magout.ogg
+        whitelist:
+          tags:
+            - NoocPowerCellCold
+  - type: Appearance
+  - type: StaticPrice
+    price: 500
+  - type: ContainerContainer
+    containers:
+      gun_magazine: !type:ContainerSlot
+  - type: Clothing
+    sprite: Corvax/Lore/Noocraty/Weapon/nooc_laser_gun.rsi
+    quickEquip: false
+    slots:
+    - Back
+
+- type: entity
+  name: Ноократский автомат "Изморозь"
+  suffix: Ноократия
+  parent: NoocPowerGanCold
+  id: NoocGanCold
+  description: Лёгкий и дорогой автомат Ноократии Эранта, вызывающий у противника переохлождение
+  components:
+  - type: Sprite
+    sprite: Corvax/Lore/Noocraty/Weapon/nooc_cold_gun.rsi
+    layers:
+    - state: base
+      map: ["enum.GunVisualLayers.Base"]
+    - state: mag-0
+      map: ["enum.GunVisualLayers.Mag"]
+      shader: unshaded
+  - type: Item
+    sprite: Corvax/Lore/Noocraty/Weapon/nooc_cold_gun.rsi
+  - type: MagazineVisuals
+    magState: mag
+    steps: 1
+    zeroVisible: true
+  - type: Clothing
+    sprite: Corvax/Lore/Noocraty/Weapon/nooc_cold_gun.rsi
+  - type: StaticPrice
+    price: 500           
+#-----------------------------------------------------роли------------------------------------------------------      
+#------------------------------------высокий класс---------- 
+- type: playTimeTracker
+  id: JobEventNoocVis
+
+- type: job
+  id: NoocVis
+  name: Ноократский офицер
+  description: job-nooc-officer
+  playTimeTracker: JobEventNoocVis
+  startingGear: NoocVisGear
+  supervisors: job-supervisors-everyone
+  canBeAntag: false
+  access:
+  - NoocAccess
+  - External
+
+- type: entity
+  parent: NoocSatchels
+  id: NoocSatchelsFilledPistol
+  suffix: Пистолет
+  components:
+  - type: StorageFill
+    contents:
+      - id: NoocPowerCellTwo
+      - id: NoocPowerCellTwo
+      - id: NoocPistol
+      - id: ClothingMaskGas
+      - id: FoodTinMRE
+      - id: FoodTinMRE
+      - id: DrinkWaterBottleFull
+      - id: Gauze
+      - id: OxygenTankFilled
+      - id: NitrogenTankFilled
+
+- type: startingGear
+  id: NoocVisGear
+  equipment:
+    jumpsuit: NoocUniformVis
+    back: NoocSatchelsFilledPistol
+    shoes: NoocBoots
+    head: NoocCap
+    outerClothing: NoocArmorMiddle
+    id: NoocPDAVis
+    ears: NoocHeadset
+    belt: NoocBelt
+    gloves: NoocGlovesVis
+    neck: NoocCloak
+    pocket1: NoocPaperVis
+    pocket2: NoocRubberStamp
+#------------------------------------средний класс---------- 
+- type: playTimeTracker
+  id: JobEventNoocSr
+
+- type: job
+  id: NoocSr
+  name: Ноократский солдат
+  description: job-nooc-solder
+  playTimeTracker: JobEventNoocSr
+  startingGear: NoocSrGear
+  supervisors: job-supervisors-everyone
+  canBeAntag: false
+  access:
+  - NoocAccess
+  - External
+
+- type: entity
+  parent: ClothingBackpack
+  id: NoocBackpackPassengerFilled
+  suffix: Ноократия, Пассажира, Без оружия
+  components:
+  - type: StorageFill
+    contents:
+      - id: ClothingMaskGas
+      - id: FoodTinMRE
+      - id: FoodTinMRE
+      - id: DrinkWaterBottleFull
+      - id: Gauze
+      - id: OxygenTankFilled
+      - id: NitrogenTankFilled
+      - id: NoocEncryptionKey
+
+- type: entity
+  parent: NoocBackpack
+  id: NoocBackpackFilled
+  suffix: Ноократия, Без оружия
+  components:
+  - type: StorageFill
+    contents:
+      - id: ClothingMaskGas
+      - id: FoodTinMRE
+      - id: FoodTinMRE
+      - id: DrinkWaterBottleFull
+      - id: Gauze
+      - id: OxygenTankFilled
+      - id: NitrogenTankFilled
+      
+- type: entity
+  parent: NoocBackpack
+  id: NoocBackpackFilledRifle
+  suffix: Ноократия, Винтовка
+  components:
+  - type: StorageFill
+    contents:
+      - id: NoocPowerCellOne
+      - id: NoocPowerCellOne
+      - id: NoocRifle
+      - id: ClothingMaskGas
+      - id: FoodTinMRE
+      - id: FoodTinMRE
+      - id: DrinkWaterBottleFull
+      - id: Gauze
+      - id: OxygenTankFilled
+      - id: NitrogenTankFilled
+      
+- type: entity
+  parent: NoocBackpack
+  id: NoocBackpackFilledMG
+  suffix: Ноократия, Скорострельный лазер
+  components:
+  - type: StorageFill
+    contents:
+      - id: NoocPowerCellFour
+      - id: NoocPowerCellFour
+      - id: NoocMG
+      - id: ClothingMaskGas
+      - id: FoodTinMRE
+      - id: FoodTinMRE
+      - id: DrinkWaterBottleFull
+      - id: Gauze
+      - id: OxygenTankFilled
+      - id: NitrogenTankFilled
+
+- type: entity
+  parent: NoocBackpack
+  id: NoocBackpackFilledCold
+  suffix: Ноократия, Хладопушка
+  components:
+  - type: StorageFill
+    contents:
+      - id: NoocPowerCellCold
+      - id: NoocPowerCellCold
+      - id: NoocGanCold
+      - id: ClothingMaskGas
+      - id: FoodTinMRE
+      - id: FoodTinMRE
+      - id: DrinkWaterBottleFull
+      - id: Gauze
+      - id: OxygenTankFilled
+      - id: NitrogenTankFilled
+
+- type: entity
+  parent: NoocBackpack
+  id: NoocBackpackFilledCure
+  suffix: Ноократия, Инжекторная винтовка
+  components:
+  - type: StorageFill
+    contents:
+      - id: NoocMagazineCureRifleMech
+      - id: NoocMagazineCureRifleHeat
+      - id: NoocMagazineCureRifleEmpty
+      - id: NoocCureRifle
+      - id: ClothingMaskGas
+      - id: FoodTinMRE
+      - id: FoodTinMRE
+      - id: DrinkWaterBottleFull
+      - id: Gauze
+      - id: OxygenTankFilled
+      - id: NitrogenTankFilled
+
+- type: startingGear
+  id: NoocSrGear
+  equipment:
+    jumpsuit: NoocUniformSr
+    back: NoocBackpackFilledRifle
+    shoes: NoocBoots
+    outerClothing: NoocArmorMiddle
+    id: NoocPDASr
+    head: NoocHelmet
+    ears: NoocHeadset
+    belt: NoocBelt
+    gloves: NoocGlovesSr
+    pocket1: NoocPaperSr
+    
+- type: startingGear
+  id: NoocSrMedGear
+  equipment:
+    jumpsuit: NoocUniformSr
+    back: NoocBackpackFilledRifle
+    shoes: NoocBoots
+    outerClothing: NoocArmorMiddle
+    id: NoocPDASr
+    head: NoocBeret
+    ears: NoocHeadset
+    eyes: NoocGlassesMed
+    belt: NoocBeltMed
+    gloves: NoocGlovesSr
+    pocket1: NoocPaperSr
+#------------------------------------низкий класс---------- 
+- type: playTimeTracker
+  id: JobEventNoocNiz
+
+- type: job
+  id: NoocNiz
+  name: Ноократский боец
+  description: job-nooc-medic
+  playTimeTracker: JobEventNoocNiz
+  startingGear: NoocNizGear
+  supervisors: job-supervisors-everyone
+  canBeAntag: false
+  access:
+  - NoocAccess
+  - External
+
+- type: entity
+  parent: NoocBackpack
+  id: NoocBackpackFilledGan
+  suffix: Ноократия, Автомат
+  components:
+  - type: StorageFill
+    contents:
+      - id: NoocPowerCellThree
+      - id: NoocPowerCellThree
+      - id: NoocGan
+      - id: ClothingMaskGas
+      - id: ExtendedEmergencyOxygenTankFilled
+      - id: FoodTinMRE
+      - id: FoodTinMRE
+      - id: DrinkWaterBottleFull
+      - id: Gauze
+      - id: OxygenTankFilled
+      - id: NitrogenTankFilled
+
+- type: startingGear
+  id: NoocNizGear
+  equipment:
+    jumpsuit: NoocUniformNiz
+    back: NoocBackpackFilledGan
+    shoes: NoocBoots
+    outerClothing: NoocArmorBasic
+    head: NoocHelmet
+    id: NoocPDANiz
+    ears: NoocHeadset
+    belt: NoocBelt
+    gloves: NoocGlovesFingerless
+    pocket1: NoocPaperNiz
+#---------------------------------------------------спавнеры------------------------------------------------
+#-------------------------------------------Имена-------------------------------------
+#---------------------------------низкие классы----------
+- type: dataset
+  id: NoocName-niz
+  values:
+  - 12 класс
+  - 11 класс
+  - 10 класс
+#---------------------------------средний класс----------
+- type: dataset
+  id: NoocName-sr
+  values:
+  - 9 класс
+  - 8 класс
+  - 7 класс
+#---------------------------------высокий класс----------
+- type: dataset
+  id: NoocName-vis
+  values:
+  - 6 класс
+  - 5 класс
+#---------------------------------фамилии высокого----------
+- type: dataset
+  id: NoocNameTwo-vis
+  values:
+  - Баронов
+  - Повеленский
+  - Умнов
+  - Господский
+  - Граф
+  - Владенко
+  - Брейн
+  - Кинг
+  - Квинти
+  - Кюрфюст
+  - Габсбург
+  - Людо
+  - Домин
+  - Помпаду
+  - Романов
+  - Королёв
+  - Царицин
+  - Барбаросса
+#---------------------------------фамилии среднего----------
+- type: dataset
+  id: NoocNameTwo-sr
+  values:
+  - Баринов
+  - Среднёв
+  - Умнов
+  - Бумажников
+  - Копиров
+  - Владенко
+  - Кворедж
+  - Компасси
+  - Квинти
+  - Ричи
+  - Бронин
+  - Людо
+  - Домин
+  - Леонхарт
+  - Романов
+  - Княжев
+  - Виторник
+  - Вашир
+  - Мечебой
+  - Щитохват
+  - Униса
+  - Пашир
+  - Гирсиш
+#---------------------------------фамилии низкого----------
+- type: dataset
+  id: NoocNameTwo-niz
+  values:
+  - Штольницкий
+  - Кравчик
+  - Возняк
+  - Шевчик
+  - Седлак
+  - Ворач
+  - Млинарж
+  - Фишер
+  - Кук
+  - Смит
+  - Груббер
+  - Миллер
+  - Шмидт
+  - Фурнье
+  - Мейнье
+  - Шарпенье
+  - Контадино
+  - Феррари
+  - Коломбо
+  - Каса
+  - Варис
+  - Уриши
+  - Перроси
+  - Скалоус
+  - Киркабород
+  - Молоторук
+  - Топоробород
+  - Серпоус
+  - Хамербрад
+  - Аксовал
+  - Вириши
+  - Сарвари
+  - Уриси
+#---------------------------------имена диверсантов----------
+- type: dataset
+  id: NoocName-div
+  values:
+  - Алекс
+  - Пол
+  - Лалли
+  - Джон
+  - Генрих
+  - Владислав
+  - Йорген
+  - Джонатан
+  - Андрей
+  - Питер
+  - Пётр
+  - Карл
+  - Вейч
+  - Вадиссон
+  - Август
+  - Марк
+  - Гай
+  - Максим
+  - Максимилиан
+  - Макс
+  - Эмиль
+  - Фредеррик
+  - Франсис
+  - Уейд
+  - Холден
+  - Ван
+  - Иван
+#-------------------------------------хуй знает что это, но вот оно работает и ладно---------------------------
+#---------------------------------высокий класс----------
+- type: randomHumanoidSettings
+  speciesBlacklist: 
+    - Diona
+    - Arachnid
+  id: NoocVisR
+  randomizeName: false
+  components:
+    - type: NpcFactionMember
+      factions:
+        - Noocraty
+    - type: GhostRole
+      name: Гост-роль Ноократского высокого класса
+      description: "Вы представитель всокого класса ноократии Эранта. Вы один из важнейших людей в армии. Правьте своии подчинёнными. Покажите свою власть и величие разума"
+    - type: GhostTakeoverAvailable
+    - type: Loadout
+      prototypes: [ NoocVisGear ]
+    - type: RandomMetadata
+      nameSegments:
+      - NoocName-vis
+      - NoocNameTwo-vis
+
+- type: randomHumanoidSettings
+  id: NoocVisReady
+  parent: NoocVisR
+  components:
+    - type: GhostRole
+      allowMovement: true
+      allowSpeech: true
+      makeSentient: true
+      name: Ноократской высокий класс
+      description: "Вы представитель всокого класса ноократии Эранта. Вы один из важнейших людей в армии. Правьте своии подчинёнными. Покажите свою власть и величие разума"
+    - type: GhostTakeoverAvailable
+    - type: MobThresholds
+      thresholds:
+        0: Alive
+        100: Critical
+        200: Dead
+    - type: Stamina
+      excess: 380
+    - type: Loadout
+      prototypes: [ NoocVisGear ]
+    - type: NpcFactionMember
+      factions:
+        - Noocraty
+  
+- type: entity
+  name: ноократский высокий класс Спавнер
+  id: NoocMobHumanVis
+# Код написал Crazzy_pingvin
+  suffix: GOST, Ноократия
+  components:
+  - type: NpcFactionMember
+    factions:
+      - Noocraty
+  - type: Sprite
+    sprite: Markers/jobs.rsi
+    state: captain
+  - type: RandomHumanoidAppearance
+    randomizeName: false
+  - type: RandomMetadata
+    nameSegments:
+    - NoocName-vis
+    - NoocNameTwo-vis
+  - type: RandomHumanoidSpawner
+    settings: NoocVisR
+#---------------------------------средний класс----------
+- type: randomHumanoidSettings
+  speciesBlacklist: 
+    - Diona
+    - Arachnid
+  id: NoocSrR
+  randomizeName: false
+  components:
+    - type: NpcFactionMember
+      factions:
+        - Noocraty
+    - type: GhostRole
+      name: Гост-роль Ноократского среднего класса
+      description: "Вы представитель средних классов Ноократии Эранта. Хороший боец, профессионал. Можете помыкать низкими классами и подчиняйтесь высоким классам"
+    - type: GhostTakeoverAvailable
+    - type: Loadout
+      prototypes: [ NoocSrGear ]
+    - type: RandomMetadata
+      nameSegments:
+      - NoocName-sr
+      - NoocNameTwo-sr
+
+- type: randomHumanoidSettings
+  id: NoocSrReady
+  parent: NoocSrR
+  components:
+    - type: GhostRole
+      allowMovement: true
+      allowSpeech: true
+      makeSentient: true
+      name: Солдат среднего класса
+      description: "Вы представитель средних классов Ноократии Эранта. Хороший боец, профессионал. Можете помыкать низкими классами и подчиняйтесь высоким классам"
+    - type: GhostTakeoverAvailable
+    - type: MobThresholds
+      thresholds:
+        0: Alive
+        105: Critical
+        200: Dead
+    - type: Stamina
+      excess: 380
+    - type: Loadout
+      prototypes: [ NoocSrGear ]
+    - type: NpcFactionMember
+      factions:
+        - Noocraty
+  
+- type: entity
+  name: Ноократской средний класс Спавнер
+  id: NoocMobHumanSr
+  suffix: GOST, Ноократия
+  components:
+  - type: NpcFactionMember
+    factions:
+      - Noocraty
+  - type: Sprite
+    sprite: Markers/jobs.rsi
+    state: ertleader
+  - type: RandomHumanoidAppearance
+    randomizeName: false
+  - type: RandomMetadata
+    nameSegments:
+    - NoocName-sr
+    - NoocNameTwo-sr
+  - type: RandomHumanoidSpawner
+    settings: NoocSrR
+#---------------------------------средний класс медик----------
+- type: randomHumanoidSettings
+  speciesBlacklist: 
+    - Diona
+    - Arachnid
+  id: NoocSrMedR
+  randomizeName: false
+  components:
+    - type: NpcFactionMember
+      factions:
+        - Noocraty
+    - type: GhostRole
+      name: Гост-роль Ноократского медика среднего класса
+      description: "Вы представитель средних классов Ноократии Эранта. Хороший боец, профессионал. Можете помыкать низкими классами и подчиняйтесь высоким классам"
+    - type: GhostTakeoverAvailable
+    - type: Loadout
+      prototypes: [ NoocSrMedGear ]
+    - type: RandomMetadata
+      nameSegments:
+      - NoocName-sr
+      - NoocNameTwo-sr
+
+- type: randomHumanoidSettings
+  id: NoocSrMedReady
+  parent: NoocSrMedR
+  components:
+    - type: GhostRole
+      allowMovement: true
+      allowSpeech: true
+      makeSentient: true
+      name: Медик среднего класса
+      description: "Вы представитель средних классов Ноократии Эранта. Хороший боец, профессионал. Можете помыкать низкими классами и подчиняйтесь высоким классам"
+    - type: GhostTakeoverAvailable
+    - type: MobThresholds
+      thresholds:
+        0: Alive
+        105: Critical
+        200: Dead
+    - type: Stamina
+      excess: 380
+    - type: Loadout
+      prototypes: [ NoocSrMedGear ]
+    - type: NpcFactionMember
+      factions:
+        - Noocraty
+  
+- type: entity
+  name: Ноократской медик средний класс Спавнер
+  id: NoocMobHumanSrMed
+  suffix: GOST, Ноократия
+  components:
+  - type: Sprite
+    sprite: Markers/jobs.rsi
+    state: ertmedical
+  - type: RandomHumanoidAppearance
+    randomizeName: false
+  - type: RandomMetadata
+    nameSegments:
+    - NoocName-sr
+    - NoocNameTwo-sr
+  - type: RandomHumanoidSpawner
+    settings: NoocSrMedR    
+  - type: NpcFactionMember
+    factions:
+      - Noocraty
+ 
+#---------------------------------низкий класс----------
+- type: randomHumanoidSettings
+  speciesBlacklist: 
+    - Diona
+    - Arachnid
+  id: NoocNizR
+  randomizeName: false
+  components:
+    - type: NpcFactionMember
+      factions:
+        - Noocraty
+    - type: GhostRole
+      name: Гост-роль ноократского низкого класса
+      description: "Вы боец низкого класса Ноократии Эранта. Вы подчиняетесь всем. Вы самое низкое звено. Идите и погибните за страну, если потребуется"
+    - type: GhostTakeoverAvailable
+    - type: Loadout
+      prototypes: [ NoocNizGear ]
+    - type: RandomMetadata
+      nameSegments:
+      - NoocName-niz
+      - NoocNameTwo-niz
+
+- type: randomHumanoidSettings
+  id: NoocNizReady
+  parent: NoocNizR
+  components:
+    - type: GhostRole
+      allowMovement: true
+      allowSpeech: true
+      makeSentient: true
+      name: ноократский боец низкого класса
+      description: "Вы боец низкого класса Ноократии Эранта. Вы подчиняетесь всем. Вы самое низкое звено. Идите и погибните за страну, если потребуется"
+    - type: GhostTakeoverAvailable
+    - type: MobThresholds
+      thresholds:
+        0: Alive
+        100: Critical
+        200: Dead
+    - type: Stamina
+      excess: 380
+    - type: Loadout
+      prototypes: [ NoocNizGear ]
+    - type: NpcFactionMember
+      factions:
+        - Noocraty
+  
+- type: entity
+  name: Ноократский низкий класс Спавнер
+  id: NoocMobHumanNiz
+  suffix: GOST, Ноократия
+  components:
+  - type: Sprite
+    sprite: Markers/jobs.rsi
+    state: security_cadet
+  - type: RandomHumanoidAppearance
+    randomizeName: false
+  - type: RandomMetadata
+    nameSegments:
+    - NoocName-niz
+    - NoocNameTwo-niz
+  - type: RandomHumanoidSpawner
+    settings: NoocNizR
+  - type: NpcFactionMember
+    factions:
+      - Noocraty
+#---------------------------------------------------------------Бумаги------------------------------------------------------------
+#-----------------------------------Высокий класс-----------------------------
+- type: entity
+  noSpawn: true
+  id: NoocPaperVis
+  name: Памятка ноократского военного высокого класса
+  suffix: Ноократия
+  parent: Paper
+  components:
+  - type: TimedDespawn
+    lifetime: 1200
+  - type: Paper
+    content: |
+      Форма: NOERT-PLVIS-016
+      Кому: Военному высокого класса 16-й армии
+      Вы: Командир небольшого отряда или отделения. Вашей задачей является командование своими подчинёнными. Вы тут самый важный и самый умный. Ваши подчинённые не обладают столь выдающимся интеллектом, как вы.
+      Ваши навыки: Базовые навыки, Владение оружием, Управление шаттлом
+      Руководство к отыгрышу: У эрантийцев развита культура правильного академического языка. Стоит строить полные предложения, без сокращений, жаргона или упрощённых слов. Допускаются перегруженные формулировки. В Ноократии граждане делятся на 15 классов по уровную интеллекта. 15 классов делятся на 5 категорий по три: высшие, высокие, средние, низкие, низшие. Более низкие классы подчиняются более высоким. Более высокие обычно пренебрежительно относятся к более низким. Граждан других госудраств эрантийцы так же делят на условные внешние классы. Командование и учёные - внешний высокий класс. Инженеры, Квалифицированные сотрудники - внешний средний класс. Младшие сотрудники и сервис - низкий класс.
+      Краткий лор государства: Ноократия Эранта бескровно отделилась от ОПЗ на условиях договоров союза, научного сотрудничества и совместной обороны. Она построила классовое общество на основе теста, проверяющего талант, интеллектуальные  способности, обучаемость, способность действовать и применять знания в критических ситуациях и так далее. Экзамен Эранта. Впоследствии высшие классы стали купающимися в роскоши богачами и правителями. Высокие стали руководителями, командирами и иного рода управленцами. Средние стали хорошим квалифицированным персоналом. Низкие были пригодны для выполнения простой не требущей особых навыков рутинной и скучной или опасной работы. Низшие стали бедными пригодными лишь для самой непотребной и грязной работы. Развился культ почетания и раболепствия перед теми, кто классом выше или презрения по отношению к тем, кто ниже. Именно из-за этого Умпорская Федерация подняла кровавое восстание и отделилась. Ноократия презирает умпорцев, считая их неотёсанными дикарями и всячески старается их покорять, порабощать, ослаблять, уничтожать, желая вернуть их сектора под свои знамёна.
+#-----------------------------------Средний класс-----------------------------
+- type: entity
+  noSpawn: true
+  id: NoocPaperSr
+  name: Памятка ноократского военного среднего класса
+  suffix: Ноократия
+  parent: Paper
+  components:
+  - type: TimedDespawn
+    lifetime: 1200
+  - type: Paper
+    content: |
+      Форма: NOERT-PLSRE-016
+      Кому: Военному среднего класса 16-й армии
+      Вы: Солдат среднего класса Ноократии Эранта. Вы обладаете средним интеллектом. Вы хороший военный, достойный специалист своего дела. Подчиняйтесь высокому классуи можете помыкать низким классом.
+      Ваши навыки: Базовые навыки, Владение оружием, Разборка сложных объектов, Постройка сложных объектов, Медицинское оборудование, Продвинутое лечение, Бар
+      Руководство к отыгрышу: У эрантийцев развита культура правильного академического языка. Стоит строить полные предложения, без сокращений, жаргона или упрощённых слов. Допускаются перегруженные формулировки. В Ноократии граждане делятся на 15 классов по уровную интеллекта. 15 классов делятся на 5 категорий по три: высшие, высокие, средние, низкие, низшие. Более низкие классы подчиняются более высоким. Более высокие обычно пренебрежительно относятся к более низким. Граждан других госудраств эрантийцы так же делят на условные внешние классы. Командование и учёные - внешний высокий класс. Инженеры, Квалифицированные сотрудники - внешний средний класс. Младшие сотрудники и сервис - низкий класс.
+      Краткий лор государства: Ноократия Эранта бескровно отделилась от ОПЗ на условиях договоров союза, научного сотрудничества и совместной обороны. Она построила классовое общество на основе теста, проверяющего талант, интеллектуальные  способности, обучаемость, способность действовать и применять знания в критических ситуациях и так далее. Экзамен Эранта. Впоследствии высшие классы стали купающимися в роскоши богачами и правителями. Высокие стали руководителями, командирами и иного рода управленцами. Средние стали хорошим квалифицированным персоналом. Низкие были пригодны для выполнения простой не требущей особых навыков рутинной и скучной или опасной работы. Низшие стали бедными пригодными лишь для самой непотребной и грязной работы. Развился культ почетания и раболепствия перед теми, кто классом выше или презрения по отношению к тем, кто ниже. Именно из-за этого Умпорская Федерация подняла кровавое восстание и отделилась. Ноократия презирает умпорцев, считая их неотёсанными дикарями и всячески старается их покорять, порабощать, ослаблять, уничтожать, желая вернуть их сектора под свои знамёна.
+#-----------------------------------Низкий класс-----------------------------
+- type: entity
+  noSpawn: true
+  id: NoocPaperNiz
+  name: Памятка ноократского военного низкого класса
+  suffix: Ноократия
+  parent: Paper
+  components:
+  - type: TimedDespawn
+    lifetime: 1200
+  - type: Paper
+    content: |
+      Форма: NOERT-PLNIZ-016
+      Кому: Военному низкого класса 16-й армии
+      Вы: Солдат низкого класса Ноократии Эранта. Экзамен Эранта показал, что ваши умственные способности и таланты ниже среднего. Вас считают не больше, чем бугаём способным только воевать и всё.
+      Ваши навыки: Базовые навыки, Владение оружием, Готовка, Разделка туш
+      Руководство к отыгрышу: У эрантийцев развита культура правильного академического языка. Стоит строить полные предложения, без сокращений, жаргона или упрощённых слов. Допускаются перегруженные формулировки. В Ноократии граждане делятся на 15 классов по уровную интеллекта. 15 классов делятся на 5 категорий по три: высшие, высокие, средние, низкие, низшие. Более низкие классы подчиняются более высоким. Более высокие обычно пренебрежительно относятся к более низким. Граждан других госудраств эрантийцы так же делят на условные внешние классы. Командование и учёные - внешний высокий класс. Инженеры, Квалифицированные сотрудники - внешний средний класс. Младшие сотрудники и сервис - низкий класс.
+      Краткий лор государства: Ноократия Эранта бескровно отделилась от ОПЗ на условиях договоров союза, научного сотрудничества и совместной обороны. Она построила классовое общество на основе теста, проверяющего талант, интеллектуальные  способности, обучаемость, способность действовать и применять знания в критических ситуациях и так далее. Экзамен Эранта. Впоследствии высшие классы стали купающимися в роскоши богачами и правителями. Высокие стали руководителями, командирами и иного рода управленцами. Средние стали хорошим квалифицированным персоналом. Низкие были пригодны для выполнения простой не требущей особых навыков рутинной и скучной или опасной работы. Низшие стали бедными пригодными лишь для самой непотребной и грязной работы. Развился культ почетания и раболепствия перед теми, кто классом выше или презрения по отношению к тем, кто ниже. Именно из-за этого Умпорская Федерация подняла кровавое восстание и отделилась. Ноократия презирает умпорцев, считая их неотёсанными дикарями и всячески старается их покорять, порабощать, ослаблять, уничтожать, желая вернуть их сектора под свои знамёна.
+#------------------------------------------КПК, карты, доступы и шлюзы----------------------------------------    
+#------------------------------------------доступы и шлюзы---------------------------------------- 
+#------------------------------------доступ----------  
+- type: accessLevel
+  id: NoocAccess
+  name: access-nooc
+#------------------------------------закрытый шлюз---------- 
+- type: entity
+  parent: DoorElectronics
+  id: DoorElectronicsNoocAccess
+  suffix: Ноократия
+  components:
+  - type: AccessReader
+    access: [["NoocAccess"]]
+
+- type: entity
+  parent: Airlock
+  id: NoocAirlockLocked
+  name: Шлюз
+  suffix: Ноократия, Locked
+  components:
+  - type: ContainerFill
+    containers:
+      board: [ DoorElectronicsNoocAccess ]
+  - type: Sprite
+    sprite: Corvax/Lore/Noocraty/nooc_airlock.rsi
+#------------------------------------свободный шлюз---------- 
+- type: entity
+  parent: Airlock
+  id: NoocAirlock
+  name: Шлюз
+  suffix: Ноократия
+  components:
+  - type: Sprite
+    sprite: Corvax/Lore/Noocraty/nooc_airlock.rsi
+#------------------------------------закрытый стеклянный шлюз---------- 
+- type: entity
+  parent: AirlockGlass
+  id: NoocAirlockLockedGlass
+  name: Стеклянный шлюз
+  suffix: Ноократия, Locked
+  components:
+  - type: ContainerFill
+    containers:
+      board: [ DoorElectronicsNoocAccess ]
+  - type: Sprite
+    sprite: Corvax/Lore/Noocraty/nooc_airlock_glass.rsi
+  - type: PaintableAirlock
+    group: Glass     
+#------------------------------------свободный стеклянный шлюз----------
+- type: entity
+  parent: AirlockGlass
+  id: NoocAirlockGlass
+  name: Стеклянный шлюз
+  suffix: Ноократия
+  components:
+  - type: Sprite
+    sprite: Corvax/Lore/Noocraty/nooc_airlock_glass.rsi
+  - type: PaintableAirlock
+    group: Glass    
+#------------------------------------------КПК, карты----------------------------------------  
+#------------------------------------стандарт карты---------- 
+- type: entity
+  parent: Clothing
+  id: NoocIDCard
+  name: Карта итендификации личности Ноократии Эранта
+  description: Данная карта служит в роли электронного пропуска на объектах Ноократии Эранта
+  abstract: true
+  components:
+  - type: Sprite
+    sprite: Corvax/Lore/Noocraty/Equipment/nooc_id_cards.rsi
+  - type: Clothing
+    slots:
+    - idcard
+    sprite: Corvax/Lore/Noocraty/Equipment/nooc_id_cards.rsi
+  - type: Item
+    size: Small
+    heldPrefix: default
+    storedRotation: -90
+  - type: Access
+  - type: IdCard
+  - type: StationRecordKeyStorage
+  - type: Tag
+    tags:
+    - DoorBumpOpener
+    - WhitelistChameleon
+  - type: StealTarget
+    stealGroup: IDCard
+#------------------------------------карта высокого класса---------- 
+- type: entity
+  parent: NoocIDCard
+  id: NoocIDCardVis
+  name: ID-карты ноократского военного высокого класса
+  suffix: Ноократия
+  components:
+  - type: Sprite
+    layers:
+    - state: default
+    - state: vis
+  - type: PresetIdCard
+    job: NoocVis
+#------------------------------------карта среднего класса----------    
+- type: entity
+  parent: NoocIDCard
+  id: NoocIDCardSr
+  name: ID-карты ноократского военного среднего класса
+  suffix: Ноократия
+  components:
+  - type: Sprite
+    layers:
+    - state: default
+    - state: sr
+  - type: PresetIdCard
+    job: NoocSr
+#------------------------------------карта низкого класса----------     
+- type: entity
+  parent: NoocIDCard
+  id: NoocIDCardNiz
+  name: ID-карты ноократского военного низкого класса
+  suffix: Ноократия
+  components:
+  - type: Sprite
+    layers:
+    - state: default
+    - state: niz
+  - type: PresetIdCard
+    job: NoocNiz
+#------------------------------------стандарт КПК---------- 
+- type: entity
+  abstract: true
+  parent: BasePDA
+  id: NoocPDA
+  name: Ноократский КПК
+  description: КПК военных Ноократии Эранта
+  components:
+  - type: Appearance
+  - type: Sprite
+    sprite: Corvax/Lore/Noocraty/Equipment/nooc_pda.rsi
+    layers:
+    - map: [ "enum.PdaVisualLayers.Base" ]
+    - state: "light_overlay"
+      map: [ "enum.PdaVisualLayers.Flashlight" ]
+      shader: "unshaded"
+      visible: false
+    - state: "id_overlay"
+      map: [ "enum.PdaVisualLayers.IdLight" ]
+      shader: "unshaded"
+      visible: false
+  - type: Icon
+    sprite: Corvax/Lore/Noocraty/Equipment/nooc_pda.rsi
+    state: pda
+#------------------------------------КПК высокого класса----------    
+- type: entity
+  parent: NoocPDA
+  id: NoocPDAVis
+  name: Ноократский КПК
+  suffix: Высокий класс, Ноократия
+  description: КПК военных Ноократии Эранта
+  components:
+    - type: Pda
+      id: NoocIDCardVis
+      state: pda
+    - type: Icon
+      sprite: Corvax/Lore/Noocraty/Equipment/nooc_pda.rsi
+      state: pda
+#------------------------------------КПК среднего класса----------       
+- type: entity
+  parent: NoocPDA
+  id: NoocPDASr
+  name: Ноократский КПК
+  suffix: Средний класс, Ноократия
+  description: КПК военных Ноократии Эранта
+  components:
+    - type: Pda
+      id: NoocIDCardSr
+      state: pda
+    - type: Icon
+      sprite: Corvax/Lore/Noocraty/Equipment/nooc_pda.rsi
+      state: pda
+#------------------------------------КПК низкого класса----------       
+- type: entity
+  parent: NoocPDA
+  id: NoocPDANiz
+  name: Ноократский КПК
+  suffix: Низкий класс, Ноократия
+  description: КПК военных Ноократии Эранта
+  components:
+    - type: Pda
+      id: NoocIDCardNiz
+      state: pda
+    - type: Icon
+      sprite: Corvax/Lore/Noocraty/Equipment/nooc_pda.rsi
+      state: pda
+#------------------------------------------связь----------------------------------------  
+#-----------------------------канал----------------------------------------  
+- type: radioChannel
+  id: NoocRadio
+  name: Ноократский
+  keycode: 'э' 
+  frequency: 1551
+  color: "#44b69d"
+  longRange: true
+#-----------------------------стандарт ключа----------------------------------------   
+- type: entity
+  abstract: true
+  parent: BaseItem
+  id: NoocBaseEncryptionKey
+  name: encryption key
+  description: A small cypher chip for headsets.
+  components:
+  - type: EncryptionKey
+    channels:
+    - NoocRadio
+    defaultChannel: NoocRadio
+  - type: Item
+    sprite: Corvax/Lore/Noocraty/Equipment/nooc_encryption_keys.rsi
+  - type: Sprite
+    sprite: Corvax/Lore/Noocraty/Equipment/nooc_encryption_keys.rsi
+  - type: StealTarget
+    stealGroup: EncryptionKey
+#-----------------------------ключ----------------------------------------      
+- type: entity
+  parent: NoocBaseEncryptionKey
+  id: NoocEncryptionKey
+  name: Ноократский ключ шифрования
+  suffix: Ноократия
+  description: Используется для шифрования и дешифровки общего армейского канала связи Ноократии Эранта
+  components:
+  - type: EncryptionKey
+    channels:
+    - NoocRadio
+    defaultChannel: NoocRadio
+  - type: Sprite
+    layers:
+    - state: crypt_gray
+    - state: label 
+#-----------------------------гарнитура----------------------------------------  
+- type: entity
+  parent: ClothingHeadset
+  id: NoocHeadset
+  name: Гарнитура военный Ноократии Эранта
+  suffix: Ноократия
+  components:
+  - type: ContainerFill
+    containers:
+      key_slots:
+      - NoocEncryptionKey
+  - type: Sprite
+    sprite: Corvax/Lore/Noocraty/Equipment/nooc_garniture.rsi
+  - type: Clothing
+    sprite: Corvax/Lore/Noocraty/Equipment/nooc_garniture.rsi
+#------------------------------------------Зарядники оружейных батарей----------------------------------------  
+#-----------------------------плата----------------------
+- type: entity
+  id: NoocCellRechargerCircuitboard
+  parent: BaseMachineCircuitboard
+  name: Плата зарядника батарей
+  suffix: Ноократия
+  description: A machine printed circuit board for a cell recharger.
+  components:
+    - type: Sprite
+      sprite: Corvax/Lore/Noocraty/nooc_module.rsi
+      state: charger_APC
+    - type: MachineBoard
+      prototype: NoocPowerCellRecharger
+      requirements:
+        Capacitor: 3
+      materialRequirements:
+        Cable: 5
+    - type: PhysicalComposition
+      materialComposition:
+        Steel: 10
+        Plastic: 40
+    - type: StaticPrice
+      price: 45
+#-----------------------------стационарный зарядник----------------------
+- type: entity
+  parent: PowerCellRecharger
+  id: NoocPowerCellRecharger
+  name: Станционарный зарядник оружейных батарей
+  suffix: Ноократия
+  components:
+    - type: Item
+      size: Normal
+    - type: Sprite
+      sprite: Corvax/Lore/Noocraty/nooc_cell_recharger.rsi
+      layers:
+      - map: ["enum.PowerChargerVisualLayers.Base"]
+        state: "empty"
+      - map: ["enum.PowerChargerVisualLayers.Light"]
+        state: "light-off"
+      - state: open
+        map: ["enum.WiresVisualLayers.MaintenancePanel"]
+        visible: false
+    - type: Machine
+      board: NoocCellRechargerCircuitboard
+    - type: Charger
+      chargeRate: 1
+    - type: ItemSlots
+      slots:
+        charger_slot:
+          ejectOnInteract: true
+          name: power-cell-slot-component-slot-name-default
+          whitelist:
+            components:
+            - NoocPowerCellOne
+            - NoocPowerCellTwo
+            - NoocPowerCellThree
+            - NoocPowerCellFour
+            - NoocPowerCellFive
+            - NoocPowerCellCold
+            - PowerCell
+          blacklist:
+            tags:
+            - PotatoBattery
+#-----------------------------Гигабатарея----------------------
+- type: Tag
+  id: NoocPowerCellFive 
+
+- type: entity
+  name: Батарея пятого уровня
+  suffix: Ноократия, Full
+  description: Стандартная оруженийя батарея Ноократии Эранта расчитанная на 250 выстрелов и способная заряжать другие батареи
+  id: NoocPowerCellFive
+  parent: NoocBasePowerCell
+  components:
+  - type: Item
+    size: Normal
+  - type: Sprite
+    layers:
+    - map: [ "enum.PowerCellVisualLayers.Base" ]
+      state: giga
+    - map: [ "enum.PowerCellVisualLayers.Unshaded" ]
+      state: mag-0
+      shader: unshaded
+  - type: Battery
+    maxCharge: 250
+    startingCharge: 250
+  - type: Tag
+    tags:
+      - NoocPowerCellFive
+  - type: HitscanBatteryAmmoProvider
+    proto: NoocRedLaserMG   
+#---------------------------------------------------------------Печать------------------------------------------------------------      
+- type: entity
+  name: Печать Ноократии Эранта
+  suffix: Ноократия
+  parent: RubberStampBaseAlt
+  id: NoocRubberStamp
+  components:
+  - type: Stamp
+    stampedName: Ноократия Эранта
+    stampedColor: "#0090cf"
+    stampState: "paper_stamp-generic"
+  - type: Sprite
+    sprite: Corvax/Lore/Noocraty/Equipment/nooc_stamp.rsi
+    state: stamp
+#---------------------------------------------------------------Ящики со снарягой------------------------------------------------------------        
+#-----------------------------Базовый ящик------------------ 
+- type: entity
+  parent: CrateBaseSecure
+  id: NoocCrate
+  name: Ящик снаряжения Ноократии Эранта
+  suffix: Ноократия
+  components:
+  - type: Icon
+    sprite: Corvax/Lore/Noocraty/nooc_crates.rsi
+  - type: Sprite
+    sprite: Corvax/Lore/Noocraty/nooc_crates.rsi
+  - type: AccessReader
+    access: [["NoocAccess"]]
+#-----------------------------Ящик оружия------------------    
+- type: entity
+  id: NoocCrateWeapons
+  parent: NoocCrate
+  name: Ящик оружия Ноократии Эранта
+  suffix: Ноократия
+  description: Мощные и сложные образцы оружия Ноократии Эранта заперты в ящике
+  components:
+  - type: StorageFill
+    contents:
+      - id: NoocRifle
+      - id: NoocRifle
+      - id: NoocRifle
+      - id: NoocGan
+      - id: NoocGan
+      - id: NoocGan
+      - id: NoocPistol
+      - id: NoocPistol
+      - id: NoocRifle
+      - id: NoocRifle
+      - id: NoocRifle
+      - id: NoocGan
+      - id: NoocGan
+      - id: NoocGan
+      - id: NoocPistol
+      - id: NoocPistol
+#-----------------------------Ящик пулемётов------------------    
+- type: entity
+  id: NoocCrateWeaponsMG
+  parent: NoocCrate
+  name: Ящик скорострельных лазеров Ноократии Эранта
+  suffix: Ноократия
+  description: Не сильные, но подавляющие стволы Ноократии Эранта
+  components:
+  - type: StorageFill
+    contents:
+      - id: NoocMG
+      - id: NoocMG   
+      - id: NoocMG
+      - id: NoocMG
+      - id: NoocMG
+      - id: NoocMG   
+#-----------------------------Ящик лечаших винтовок------------------    
+- type: entity
+  id: NoocCrateWeaponsCure
+  parent: NoocCrate
+  name: Ящик винтовок поддерхки Ноократии Эранта
+  suffix: Ноократия
+  description: Лечащие Ноократии Эранта
+  components:
+  - type: StorageFill
+    contents:
+      - id: NoocCureRifle
+      - id: NoocCureRifle   
+      - id: BoxNoocMagazineCureRifle
+      - id: BoxNoocMagazineCureRifle   
+      - id: NoocMagazineCureRifleHeat
+      - id: NoocMagazineCureRifleHeat  
+      - id: NoocMagazineCureRifleRadi
+      - id: NoocMagazineCureRifleRadi       
+#-----------------------------Ящик боеприпасов------------------ 
+- type: entity
+  id: NoocCrateAmmo
+  parent: NoocCrate
+  name: Ящик батарей Ноократии Эранта
+  suffix: Ноократия
+  description: Большой ящик батарей к оружию Ноократии Эранта
+  components:
+  - type: StorageFill
+    contents:
+      - id: NoocPowerCellOne
+      - id: NoocPowerCellOne
+      - id: NoocPowerCellOne
+      - id: NoocPowerCellThree
+      - id: NoocPowerCellThree
+      - id: NoocPowerCellThree
+      - id: NoocPowerCellTwo
+      - id: NoocPowerCellTwo
+      - id: NoocPowerCellFour
+      - id: NoocPowerCellFive
+      - id: NoocPowerCellOne
+      - id: NoocPowerCellOne
+      - id: NoocPowerCellOne
+      - id: NoocPowerCellThree
+      - id: NoocPowerCellThree
+      - id: NoocPowerCellThree
+      - id: NoocPowerCellTwo
+      - id: NoocPowerCellTwo
+      - id: NoocPowerCellFour
+      - id: NoocPowerCellFive
+#-----------------------------Ящик военной формы------------------ 
+- type: entity
+  id: NoocCrateForm
+  parent: NoocCrate
+  name: Ящик формы Ноократии Эранта
+  suffix: Ноократия
+  description: Содержит в себе стандартные наборы экипировки для бойцов Ноократии Эранта
+  components:
+  - type: StorageFill
+    contents:
+      - id: NoocUniformNiz
+      - id: NoocUniformNiz
+      - id: NoocUniformNiz
+      - id: NoocUniformSr
+      - id: NoocBoots
+      - id: NoocBoots
+      - id: NoocBoots
+      - id: NoocBoots
+      - id: NoocGlovesSr
+      - id: NoocGlovesSr
+      - id: NoocGlovesSr
+      - id: NoocGlovesSr
+      - id: NoocGlovesFingerless
+      - id: NoocGlovesFingerless
+      - id: NoocGlovesFingerless
+      - id: NoocGlovesFingerless
+      - id: NoocBelt
+      - id: NoocBelt
+      - id: NoocBelt
+      - id: NoocBelt
+      - id: NoocBackpack
+      - id: NoocBackpack
+      - id: NoocBackpack
+      - id: NoocBackpack
+      - id: NoocBeret
+      - id: NoocBeret
+      - id: NoocBeret
+      - id: NoocBeret
+#-----------------------------Ящик офицерской формы------------------ 
+- type: entity
+  id: NoocCrateOffiForm
+  parent: NoocCrate
+  name: Ящик офицерской формы Ноократии Эранта
+  suffix: Ноократия
+  description: Содержит в себе набор экипировки офицера Ноократии Эранта
+  components:
+  - type: StorageFill
+    contents:
+      - id: NoocUniformVis
+      - id: NoocUniformVis
+      - id: NoocBoots
+      - id: NoocBoots
+      - id: NoocCap
+      - id: NoocCap
+      - id: NoocGlovesVis
+      - id: NoocGlovesVis
+      - id: NooceBelt
+      - id: NooceBelt
+      - id: NoocSatchels
+      - id: NoocSatchels
+      - id: NoocCloak
+      - id: NoocCloak
+#-----------------------------Ящик брони------------------ 
+- type: entity
+  id: NoocCrateArmor
+  parent: NoocCrate
+  name: Ящик защитных комплектов Ноократии Эранта
+  suffix: Ноократия
+  description: Содержит в себе набор защитной экипировки Ноократии Эранта
+  components:
+  - type: StorageFill
+    contents:
+      - id: NoocHelmet
+      - id: NoocHelmet
+      - id: NoocHelmet
+      - id: NoocArmorMiddle
+      - id: NoocArmorMiddle
+      - id: NoocArmorMiddle
+      - id: NoocArmorMiddle
+      - id: NoocHardsuitField
+      - id: NoocHardsuitField
+      - id: NoocHardsuitField
+      - id: NoocHardsuitField
+      - id: NoocHardsuit
+      - id: NoocHardsuit
+      - id: NoocArmorBasic
+      - id: NoocArmorBasic
+      - id: NoocArmorBasic
+      - id: NoocArmorBasic
+#----------------------------------------Техфаб и Портного автомата----------------------------- 
+#-----------------------------Рецепты техфаба---------------------------
+#-------------------Батареи-------------
+- type: latheRecipe
+  id: NoocPowerCellOne
+  result: NoocPowerCellOne
+  category: Ammo
+  completetime: 2
+  materials:
+    Steel: 300
+    Plastic: 100
+    
+- type: latheRecipe
+  id: NoocPowerCellThree
+  result: NoocPowerCellThree
+  category: Ammo
+  completetime: 2
+  materials:
+    Steel: 200
+    Plastic: 100
+    
+- type: latheRecipe
+  id: NoocPowerCellTwo
+  result: NoocPowerCellTwo
+  category: Ammo
+  completetime: 2
+  materials:
+    Steel: 100
+    Plastic: 100
+    
+- type: latheRecipe
+  id: NoocPowerCellFour
+  result: NoocPowerCellFour
+  category: Ammo
+  completetime: 2
+  materials:
+    Steel: 400
+    Plastic: 100
+    
+- type: latheRecipe
+  id: NoocPowerCellFive
+  result: NoocPowerCellFive
+  category: Ammo
+  completetime: 2
+  materials:
+    Steel: 500
+    Plastic: 100
+#-------------------Плата зарядника------------- 
+- type: latheRecipe
+  id: NoocCellRechargerCircuitboard
+  result: NoocCellRechargerCircuitboard
+  completetime: 2
+  materials:
+    Steel: 50
+    Plastic: 100
+    Gold: 50
+#-------------------мед-хим визор------------- 
+- type: latheRecipe
+  id: NoocGlassesMed
+  result: NoocGlassesMed
+  completetime: 2
+  materials:
+    Steel: 150
+    Gold: 50    
+#-------------------ID-карты-------------    
+- type: latheRecipe
+  id: NoocIDCardVis
+  result: NoocIDCardVis
+  completetime: 4
+  materials:
+    Gold: 50
+    Plastic: 100      
+
+- type: latheRecipe
+  id: NoocIDCardSr
+  result: NoocIDCardSr
+  completetime: 4
+  materials:
+    Gold: 50
+    Plastic: 100 
+    
+- type: latheRecipe
+  id: NoocIDCardNiz
+  result: NoocIDCardNiz
+  completetime: 4
+  materials:
+    Gold: 50
+    Plastic: 100 
+#-------------------КПК-------------    
+- type: latheRecipe
+  id: NoocPDAVis
+  result: NoocPDAVis
+  completetime: 6
+  materials:
+    Gold: 50
+    Steel: 200
+    Plastic: 200 
+
+- type: latheRecipe
+  id: NoocPDASr
+  result: NoocPDASr
+  completetime: 6
+  materials:
+    Gold: 50
+    Steel: 200
+    Plastic: 200 
+    
+- type: latheRecipe
+  id: NoocPDANiz
+  result: NoocPDANiz
+  completetime: 6
+  materials:
+    Gold: 50
+    Steel: 200
+    Plastic: 200     
+#-------------------Радиосвязь-------------  
+- type: latheRecipe
+  id: NoocEncryptionKey
+  result: NoocEncryptionKey
+  completetime: 4
+  materials:
+    Gold: 50
+    Plastic: 50  
+
+- type: latheRecipe
+  id: NoocHeadset
+  result: NoocHeadset
+  completetime: 6
+  materials:
+    Steel: 100
+    Plastic: 100  
+#-------------------Оружие-------------  
+- type: latheRecipe
+  id: NoocRifle
+  result: NoocRifle
+  category: Weapons
+  completetime: 6
+  materials:
+    Steel: 400
+    Plastic: 500 
+    
+- type: latheRecipe
+  id: NoocGan
+  result: NoocGan
+  category: Weapons
+  completetime: 6
+  materials:
+    Steel: 500
+    Plastic: 500 
+    
+- type: latheRecipe
+  id: NoocPistol
+  result: NoocPistol
+  category: Weapons
+  completetime: 3
+  materials:
+    Steel: 300
+    Plastic: 200 
+    
+- type: latheRecipe
+  id: NoocMG
+  result: NoocMG
+  category: Weapons
+  completetime: 8
+  materials:
+    Steel: 800
+    Plastic: 600 
+#-----------------------------Рецепты Портного автомата---------------------------
+#-------------------Форма------------- 
+- type: latheRecipe
+  id: NoocUniformNiz
+  result: NoocUniformNiz
+  completetime: 3
+  materials:
+    Cloth: 300
+
+- type: latheRecipe
+  id: NoocUniformVis
+  result: NoocUniformVis
+  completetime: 3
+  materials:
+    Durathread: 300
+
+- type: latheRecipe
+  id: NoocUniformSr
+  result: NoocUniformSr
+  completetime: 3
+  materials:
+    Cloth: 300
+#-------------------Рюкзак------------- 
+- type: latheRecipe
+  id: NoocBackpack
+  result: NoocBackpack
+  completetime: 2
+  materials:
+    Cloth: 200
+    
+- type: latheRecipe
+  id: NoocSatchels
+  result: NoocSatchels
+  completetime: 2
+  materials:
+    Cloth: 100 
+    Durathread: 100    
+#-------------------Шапка и плащ------------- 
+- type: latheRecipe
+  id: NoocCap
+  result: NoocCap
+  completetime: 1
+  materials:
+    Durathread: 100
+
+- type: latheRecipe
+  id: NoocBeret
+  result: NoocBeret
+  completetime: 1
+  materials:
+    Cloth: 100
+
+- type: latheRecipe
+  id: NoocCloak
+  result: NoocCloak
+  completetime: 1
+  materials:
+    Durathread: 100
+    Cloth: 300 
+    
+- type: latheRecipe
+  id: NoocCloakStelth
+  result: NoocCloakStelth
+  completetime: 3
+  materials:
+    Durathread: 100
+    Cloth: 300  
+    Gold: 100
+#-------------------Пояса------------- 
+- type: latheRecipe
+  id: NoocBelt
+  result: NoocBelt
+  completetime: 2
+  materials:
+    Cloth: 100
+    Durathread: 100
+#-------------------Броня------------- 
+- type: latheRecipe
+  id: NoocArmorBasic
+  result: NoocArmorBasic
+  completetime: 8
+  materials:
+    Cloth: 100
+    Durathread: 200
+    Steel: 400
+
+- type: latheRecipe
+  id: NoocArmorMiddle
+  result: NoocArmorMiddle
+  completetime: 8
+  materials:
+    Cloth: 100
+    Durathread: 300
+    Steel: 600
+
+- type: latheRecipe
+  id: NoocHelmet
+  result: NoocHelmet
+  completetime: 4
+  materials:
+    Durathread: 100
+    Steel: 300
+    
+- type: latheRecipe
+  id: NoocHardsuitField
+  result: NoocHardsuitField
+  completetime: 4
+  materials:
+    Durathread: 200
+    Steel: 100
+    Gold: 100
+#-----------------------------Техфаб------------------ 
+- type: entity
+  id: NoocTechFab
+  parent: BaseLathe
+  name: Ноократский ТехФаб
+  suffix: Ноократия
+  description: Позволяет в автоматическом режиме производить ноократскую военную амуницию.
+  components:
+  - type: Sprite
+    sprite: Corvax/Lore/Noocraty/nooc_techfab.rsi
+    layers:
+    - state: icon
+      map: ["enum.LatheVisualLayers.IsRunning"]
+    - state: sci
+    - state: unlit
+      shader: unshaded
+      map: ["enum.PowerDeviceVisualLayers.Powered"]
+    - state: inserting
+      map: ["enum.MaterialStorageVisualLayers.Inserting"]
+    - state: panel
+      map: ["enum.WiresVisualLayers.MaintenancePanel"]
+  - type: Machine
+    board: SecurityTechFabCircuitboard
+  - type: Lathe
+    idleState: icon
+    runningState: icon
+    staticRecipes:
+      - NoocPowerCellOne
+      - NoocPowerCellThree
+      - NoocPowerCellTwo
+      - NoocPowerCellFour
+      - NoocPowerCellFive
+      - NoocCellRechargerCircuitboard
+      - NoocIDCardVis
+      - NoocIDCardSr
+      - NoocIDCardNiz
+      - NoocPDAVis
+      - NoocPDASr
+      - NoocPDANiz
+      - NoocEncryptionKey
+      - NoocHeadset
+      - NoocRifle
+      - NoocGan
+      - NoocPistol
+      - NoocMG
+      - NoocGlassesMed
+  - type: MaterialStorage
+    whitelist:
+      tags:
+        - Sheet
+        - RawMaterial
+        - Ingot
+#-----------------------------Швейник------------------        
+- type: entity
+  parent: BaseLathe
+  id: NoocmUniformPrinter
+  name: Ноократский портной автомат
+  suffix: Ноократия
+  description: Автоматическое устройство для пошива униформы.
+  components:
+  - type: Transform
+    noRot: false
+  - type: Sprite
+    sprite: Structures/Machines/uniform_printer.rsi
+    snapCardinals: false
+    layers:
+    - state: icon
+      map: ["enum.LatheVisualLayers.IsRunning"]
+  - type: Machine
+    board: UniformPrinterMachineCircuitboard
+  - type: Lathe
+    producingSound: /Audio/Machines/uniformprinter.ogg
+    idleState: icon
+    runningState: building
+    staticRecipes:
+      - NoocUniformNiz
+      - NoocUniformVis
+      - NoocUniformSr
+      - NoocBackpack
+      - NoocSatchels
+      - NoocCap
+      - NoocCloak
+      - NoocCloakStelth
+      - NoocBelt
+      - NoocArmorMiddle
+      - NoocHelmet
+      - NoocHardsuitField
+      - NoocArmorBasic
+      - NoocBeret
+  - type: MaterialStorage
+    whitelist:
+      tags:
+        - Sheet
+        - RawMaterial
+        - Ingot
+#---------------------------------Стандартная форма---------------------
+- type: entity
+  id: NoocPaperForm
+  name: Форма запроса
+  suffix: Ноократия
+  parent: Paper
+  components:
+  - type: Paper
+    content: |
+      Форма: PLVIS-NOERT-016
+#-------------------------------------Кто является противником-----------------------------------
+- type: npcFaction
+  id: NoocratyBot
+  hostile:
+  - SimpleHostile
+  - Xeno
+  - Zombie
+  - Umpor
+  - UmporBot
+  
+- type: npcFaction
+  id: Noocraty
+  hostile:
+  - SimpleHostile
+  - Xeno
+  - Zombie
+  - Umpor
+  - UmporBot
+#-----------------------------------аплинк--------------------------------
+#-----------------категории в аплинке------------
+- type: storeCategory
+  id: NoocUplinkArmor
+  name: Броня
+  priority: 0
+
+- type: storeCategory
+  id: NoocUplinkWeaponry
+  name: Вооружение
+  priority: 1
+
+- type: storeCategory
+  id: NoocUplinkAmmo
+  name: Боезапас
+  priority: 2
+ 
+- type: storeCategory
+  id: NoocUplinkElectronic
+  name: Электроника
+  priority: 3 
+  
+- type: storeCategory
+  id: NoocUplinkSpec
+  name: Специалистам
+  priority: 4 
+  
+- type: storeCategory
+  id: NoocUplinkBack
+  name: Рюкзаки
+  priority: 5 
+  
+- type: storeCategory
+  id: NoocUplinkMed
+  name: Мед.средства
+  priority: 6 
+#-----------------листинг покупок------------
+#------категория броня----------
+#---бронь и шмот---
+- type: listing
+  id: NoocCap
+  name: Фуражка офицера
+  description: Фуражка офицера высокого класса Ноократии Эранта, оснащённая хорошим визором для определения боевых целей
+  productEntity: NoocCap
+  cost:
+    Telecrystal: 4
+  categories:
+  - NoocUplinkArmor
+
+- type: listing
+  id: NoocCloakStelth
+  name: Маскировочный плащ
+  description: Плащ, который носят заслуженные бойцы среднего класса Ноократии Эрана. Тёплый, отражает свет и радиацию. А ещё может становиться невидимым...
+  productEntity: NoocCloakStelth
+  cost:
+    Telecrystal: 10
+  categories:
+  - NoocUplinkArmor
+
+- type: listing
+  id: NoocHelmet
+  name: Боевой шлем
+  description: Крепкий, но несколько не удобный армейский шлем Ноократии Эранта с втроенным простеньким визором для помощи в прицеливании
+  productEntity: NoocHelmet
+  cost:
+    Telecrystal: 2
+  categories:
+  - NoocUplinkArmor
+
+- type: listing
+  id: NoocGlovesSr
+  name: Перчатки среднего класса
+  description: Перчатки выдаваемые военным средних классов Ноократии Эранта. Внутри прокладка из мягкого материала, от чего перчатки чоень удобные. Один в один походи на перчатки для средних классов
+  productEntity: NoocGlovesSr
+  cost:
+    Telecrystal: 2
+  categories:
+  - NoocUplinkArmor
+
+- type: listing
+  id: NoocArmorBasic
+  name: Лёгкий бронежилет
+  description: Лёгкий армейский бронежилет используемый патрульными военными и полицией мирных районов Ноократии Эранта
+  productEntity: NoocArmorBasic
+  cost:
+    Telecrystal: 4
+  categories:
+  - NoocUplinkArmor
+
+- type: listing
+  id: NoocArmorMiddle
+  name: Защитный комплект
+  description: Защитный комплект, состоящий из стандартного бронежилета, наплечников и защиты голеней выдаётся штурмовым подразделениям низкого класса Ноократии Эранта
+  productEntity: NoocArmorMiddle
+  cost:
+    Telecrystal: 6
+  categories:
+  - NoocUplinkArmor
+#---скафы--- 
+- type: listing
+  id: NoocHardsuitField
+  name: Личный атмосферный щит
+  description: Простая замена скафандру, когда нужно выйти в космос в безопасном районе. очень хорошо защищает от радиации
+  productEntity: NoocHardsuitField
+  cost:
+    Telecrystal: 6
+  categories:
+  - NoocUplinkArmor
+  
+- type: listing
+  id: NoocHardsuit
+  name: Скафандр
+  description: Стандартный скафандр для военных средних классов Ноократии Эранта
+  productEntity: NoocHardsuit
+  cost:
+    Telecrystal: 12
+  categories:
+  - NoocUplinkArmor  
+#------категория вооружение----------
+- type: listing
+  id: NoocPistol
+  name: Лазерный пистолет "Власть"
+  description: Небольшой и крайне удобный пистолет офицеров Ноократии Эранта
+  productEntity: NoocPistol
+  cost:
+    Telecrystal: 4
+  categories:
+  - NoocUplinkWeaponry
+
+- type: listing
+  id: NoocGan
+  name: Лазерный автомат "Покоритель"
+  description: Лёгкий и дешёвый лазерный автомат Ноократии Эранта для пехотных боёв
+  productEntity: NoocGan
+  cost:
+    Telecrystal: 6
+  categories:
+  - NoocUplinkWeaponry
+
+- type: listing
+  id: NoocRifle
+  name: Лазерная винтовка "Господин"
+  description: Опасное и дольнобойное оружие Ноократии Эранта для ликвидации защитников важных точек обороны и убийства ключевых бойцов противника
+  productEntity: NoocRifle
+  cost:
+    Telecrystal: 8
+  categories:
+  - NoocUplinkWeaponry
+
+- type: listing
+  id: NoocMG
+  name: Скорострельный лазер "Подавитель"
+  description: Крупный, но не очень тяжёлый ручной скорострельный лазер Ноократии Эранта. Обладает не сильным уроном, но хорош для подавления противника
+  productEntity: NoocMG
+  cost:
+    Telecrystal: 20
+  categories:
+  - NoocUplinkWeaponry
+
+- type: listing
+  id: NoocGanCold
+  name: Лучевой автомат "Изморозь"
+  description: Лёгкий и дорогой автомат Ноократии Эранта, вызывающий у противника переохлождение
+  productEntity: NoocGanCold
+  cost:
+    Telecrystal: 10
+  categories:
+  - NoocUplinkWeaponry
+
+- type: listing
+  id: NoocCureRifle
+  name: Инжекторная винтовка "Боготворец"
+  description: Это оружие служит не для убийства. В неё заряжаются одноразовые инжекторы для оперативного лечения.
+  productEntity: NoocCureRifle
+  cost:
+    Telecrystal: 12
+  categories:
+  - NoocUplinkWeaponry
+#------категория боезапас----------
+#---магазины---
+- type: listing
+  id: NoocPowerCellOne
+  name: Батарея первого уровня
+  description: Создавалась для винтовок. Спосбна создать 10 мощных выстрелов. Подходит к пистолету "Власть", автомату "Покоритель", винтовке "Господин" и к скорострельному лазеру "Подавитель".
+  productEntity: NoocPowerCellOne
+  cost:
+    Telecrystal: 4
+  categories:
+  - NoocUplinkAmmo
+
+- type: listing
+  id: NoocPowerCellTwo
+  name: Батарея второго уровня
+  description: Создавалась для пистолетов. Спосбна создать 10 маломощных выстрелов. Подходит к пистолету "Власть", автомату "Покоритель", винтовке "Господин" и к скорострельному лазеру "Подавитель".
+  productEntity: NoocPowerCellTwo
+  cost:
+    Telecrystal: 2
+  categories:
+  - NoocUplinkAmmo
+
+- type: listing
+  id: NoocPowerCellThree
+  name: Батарея третьего уровня
+  description: Создавалась для автоматов. Спосбна создать 27 выстрелов средней мощности. Подходит к пистолету "Власть", автомату "Покоритель", винтовке "Господин" и к скорострельному лазеру "Подавитель".
+  productEntity: NoocPowerCellThree
+  cost:
+    Telecrystal: 3
+  categories:
+  - NoocUplinkAmmo
+
+- type: listing
+  id: NoocPowerCellFour
+  name: Батарея четвёртого уровня
+  description: Создавалась для скорострельных лазеров. Спосбна создать 80 выстрелов крайне слабой мощности. Подходит к скорострельному лазеру "Подавитель".
+  productEntity: NoocPowerCellFour
+  cost:
+    Telecrystal: 5
+  categories:
+  - NoocUplinkAmmo
+
+- type: listing
+  id: NoocPowerCellFive
+  name: Батарея пятого уровня
+  description: Создавалась для скорострельных лазеров. Спосбна создать 250 выстрелов крайне слабой мощности. Подходит к скорострельному лазеру "Подавитель".
+  productEntity: NoocPowerCellFive
+  cost:
+    Telecrystal: 16
+  categories:
+  - NoocUplinkAmmo
+
+- type: listing
+  id: NoocMagazineCureRifleMech
+  name: Магазин к инжекторной винтовке (механика)
+  description: Магазин к инжекторной винтовке "Боготворец" с инжекторами наполненными лекарсвом от механических травм
+  productEntity: NoocMagazineCureRifleMech
+  cost:
+    Telecrystal: 2
+  categories:
+  - NoocUplinkAmmo
+  
+- type: listing
+  id: NoocMagazineCureRifleHeat
+  name: Магазин к инжекторной винтовке (тепло и холод)
+  description: Магазин к инжекторной винтовке "Боготворец" с инжекторами наполненными лекарсвом от ожогов и переохлаждений
+  productEntity: NoocMagazineCureRifleHeat
+  cost:
+    Telecrystal: 2
+  categories:
+  - NoocUplinkAmmo
+  
+- type: listing
+  id: NoocMagazineCureRifleRadi
+  name: Магазин к инжекторной винтовке (радиация)
+  description: Магазин к инжекторной винтовке "Боготворец" с инжекторами наполненными лекарсвом от повреждений радиационного характера
+  productEntity: NoocMagazineCureRifleRadi
+  cost:
+    Telecrystal: 2
+  categories:
+  - NoocUplinkAmmo
+  
+- type: listing
+  id: NoocMagazineCureRifleEmpty
+  name: Магазин к инжекторной винтовке (наполняемые)
+  description: Магазин к инжекторной винтовке "Боготворец" с инжекторами, которые можно самостоятельно напролнить любым жидким веществом
+  productEntity: NoocMagazineCureRifleEmpty
+  cost:
+    Telecrystal: 3
+  categories:
+  - NoocUplinkAmmo
+  
+- type: listing
+  id: NoocPowerCellCold
+  name: Батарея холода
+  description: Сложная оруженийя батарея Ноократии Эранта расчитанная на 40 выстрелов, создающая области уменьшенной энергии
+  productEntity: NoocPowerCellCold
+  cost:
+    Telecrystal: 4
+  categories:
+  - NoocUplinkAmmo
+#---коробки---
+- type: listing
+  id: BoxNoocMagazineCureRifle
+  name: Коробка лечащих инжекторов
+  description: Коробка с четырьмя инжекторами каждого вида (всего 16) для инжекторной винтовки "Боготворец".
+  productEntity: BoxNoocMagazineCureRifle
+  cost:
+    Telecrystal: 8
+  categories:
+  - NoocUplinkAmmo
+#------категория электроника----------
+- type: listing
+  id: NoocCellRechargerCircuitboard
+  name: Плата зарядника батарей
+  description: Плата для создания зарядника, способно перезаряжать оружейные батареи
+  productEntity: NoocCellRechargerCircuitboard
+  cost:
+    Telecrystal: 3
+  categories:
+  - NoocUplinkElectronic
+  
+- type: listing
+  id: NoocIDCardSr
+  name: ID-карта ноократского военного среднего класса
+  description: Карта с доступами военных Ноократии Эранта.
+  productEntity: NoocIDCardSr
+  cost:
+    Telecrystal: 3
+  categories:
+  - NoocUplinkElectronic
+  
+- type: listing
+  id: NoocEncryptionKey
+  name: Ноократский ключ шифрования
+  description: Используется для шифрования и дешифровки общего армейского канала связи Ноократии Эранта
+  productEntity: NoocEncryptionKey
+  cost:
+    Telecrystal: 3
+  categories:
+  - NoocUplinkElectronic
+  
+- type: listing
+  id: Emag
+  name: Криптографический секвенсор
+  description: Используется для дешифровки и перепрошивки систем доступа НТ.
+  productEntity: Emag
+  cost:
+    Telecrystal: 6
+  categories:
+  - NoocUplinkElectronic  
+
+- type: listing
+  id: NoocGlassesMed
+  name: Визор ноократского армейского медика
+  description: Удобный визор способный показать состояние бойцов и анализировать смеси реагентов
+  productEntity: NoocGlassesMed
+  cost:
+    Telecrystal: 6
+  categories:
+  - NoocUplinkElectronic  
+  
+- type: listing
+  id: HandheldStationMapUnpowered
+  name: Карта станции
+  description: Поможет ориентироваться на месте операции
+  productEntity: HandheldStationMapUnpowered
+  cost:
+    Telecrystal: 5
+  categories:
+  - NoocUplinkElectronic 
+#------категория специалистам----------
+#---вещички---
+- type: listing
+  id: NoocRubberStamp
+  name: Печать Ноократии Эранта
+  description: Печать с форменным штамом военных Ноократии Эранта.
+  productEntity: NoocRubberStamp
+  cost:
+    Telecrystal: 1
+  categories:
+  - NoocUplinkSpec
+
+- type: listing
+  id: NoocBeltEngFilled
+  name: Пояс инженера
+  description: Такие пояса используют военослужащие инженеры Ноократии Эранта. Заполнен базовыми инструментами
+  productEntity: NoocBeltEngFilled
+  cost:
+    Telecrystal: 7
+  categories:
+  - NoocUplinkSpec
+  
+- type: listing
+  id: NoocBeltMedFilled
+  name: Пояс специалиста-подрывника
+  description: Такие пояса используют военослужащие-медики Ноократии Эранта. Заполнен базовыми предметами первой помощи
+  productEntity: NoocBeltMedFilled
+  cost:
+    Telecrystal: 10
+  categories:
+  - NoocUplinkSpec
+#------категория рюкзаки----------
+- type: listing
+  id: NoocBackpackFilled
+  name: Рюкзак с пайком 
+  description: Базовое жизнеобеспечение
+  productEntity: NoocBackpackFilled
+  cost:
+    Telecrystal: 2
+  categories:
+  - NoocUplinkBack
+  
+- type: listing
+  id: NoocBackpackPassengerFilled
+  name: Рюкзак НТ с пайком 
+  description: Базовое жизнеобеспечение в стандартном рюкзаке НТ, но с ключём шифрования Ноократии
+  productEntity: NoocBackpackPassengerFilled
+  cost:
+    Telecrystal: 3
+  categories:
+  - NoocUplinkBack
+
+- type: listing
+  id: NoocSatchelsFilledPistol
+  name: Плечевая сумка с пистолетом
+  description: Базовое жизнеобеспечение, пистолет и три батареи.
+  productEntity: NoocSatchelsFilledPistol
+  cost:
+    Telecrystal: 12
+  categories:
+  - NoocUplinkBack
+
+- type: listing
+  id: NoocBackpackFilledGan
+  name: Боевой рюкзак с лазерным автоматом
+  description: Базовое жизнеобеспечение, автомат и две батареи.
+  productEntity: NoocBackpackFilledGan
+  cost:
+    Telecrystal: 14
+  categories:
+  - NoocUplinkBack
+  
+- type: listing
+  id: NoocBackpackFilledRifle
+  name: Боевой рюкзак с лазерной винтовкой
+  description: Базовое жизнеобеспечение, винтовка и две батареи.
+  productEntity: NoocBackpackFilledRifle
+  cost:
+    Telecrystal: 18
+  categories:
+  - NoocUplinkBack  
+
+- type: listing
+  id: NoocBackpackFilledMG
+  name: Боевой рюкзак с скорострельным лазером
+  description: Базовое жизнеобеспечение, "пулемёт" и две батареи.
+  productEntity: NoocBackpackFilledMG
+  cost:
+    Telecrystal: 30
+  categories:
+  - NoocUplinkBack
+
+- type: listing
+  id: NoocBackpackFilledCold
+  name: Боевой рюкзак с лучевым (охлаждающим) автоматом
+  description: Базовое жизнеобеспечение, автомат и две батареи.
+  productEntity: NoocBackpackFilledCold
+  cost:
+    Telecrystal: 20
+  categories:
+  - NoocUplinkBack
+
+- type: listing
+  id: NoocBackpackFilledCure
+  name: Боевой рюкзак с инжекторной винтовкой
+  description: Базовое жизнеобеспечение, инжекторная винтовка и три разных магазина.
+  productEntity: NoocBackpackFilledCure
+  cost:
+    Telecrystal: 20
+  categories:
+  - NoocUplinkBack
+#------категория мед.средства
+- type: listing
+  id: Stimpack
+  name: Боевой стимулятор
+  description: Ускорься! Но победи пока не наступили побочные эффекты
+  productEntity: Stimpack
+  cost:
+    Telecrystal: 3
+  categories:
+  - NoocUplinkMed
+  
+- type: listing
+  id: EmergencyMedipen
+  name: Экстренный медипен
+  description: Какое средство экстренной помощи есть, такое и используем...
+  productEntity: EmergencyMedipen
+  cost:
+    Telecrystal: 3
+  categories:
+  - NoocUplinkMed
+  
+- type: listing
+  id: Brutepack
+  name: Набор для лечения травм
+  description: Помогает от травм механического характера
+  productEntity: Brutepack
+  cost:
+    Telecrystal: 1
+  categories:
+  - NoocUplinkMed
+  
+- type: listing
+  id: Ointment
+  name: Лечебная мазь
+  description: Хороша от ожёгов и переохлаждения
+  productEntity: Ointment
+  cost:
+    Telecrystal: 1
+  categories:
+  - NoocUplinkMed
+  
+- type: listing
+  id: NocturineChemistryBottle
+  name: Бутылочка ноктюрина
+  description: 30u быстродействующего усыпляющего средства
+  productEntity: NocturineChemistryBottle
+  cost:
+    Telecrystal: 4
+  categories:
+  - NoocUplinkMed
+  
+- type: listing
+  id: ClothingBackpackDuffelSyndicateMedicalBundleFilled
+  name: Медицинский набор
+  description: Набор полезных химических средств
+  productEntity: ClothingBackpackDuffelSyndicateMedicalBundleFilled
+  cost:
+    Telecrystal: 16
+  categories:
+  - NoocUplinkMed
+#-----------------пресет категорий в аплинке------------
+- type: entity
+  id: StorePresetNoocUplink
+  abstract: true
+  components:
+  - type: Store
+    name: Категории
+    categories:
+    - NoocUplinkArmor
+    - NoocUplinkWeaponry
+    - NoocUplinkAmmo
+    - NoocUplinkElectronic
+    - NoocUplinkSpec
+    - NoocUplinkBack
+    - NoocUplinkMed
+    currencyWhitelist:
+    - Telecrystal
+    balance:
+      Telecrystal: 0
+#------------------------базовый аплинк-------------
+- type: entity
+  parent: [ BaseItem, StorePresetNoocUplink ]
+  id: NoocBaseUplinkRadio
+  name: Аплинк Ноократии
+  description: Такой же, как у синдиката, но с отдельным складом и товарами
+  suffix: Пустой, Ноократия
+  components:
+  - type: Sprite
+    sprite: Objects/Devices/communication.rsi
+    layers:
+    - state: old-radio
+  - type: Item
+    sprite: Objects/Devices/communication.rsi
+    heldPrefix: old-radio
+  - type: UserInterface
+    interfaces:
+      enum.StoreUiKey.Key:
+        type: StoreBoundUserInterface
+  - type: ActivatableUI
+    key: enum.StoreUiKey.Key
+  - type: Store
+    balance:
+      Telecrystal: 0
+#-----------------аплинк с бабками------------
+- type: entity
+  parent: NoocBaseUplinkRadio
+  id: NoocBaseUplinkRadio40TC
+  suffix: 40 TC, Ноократия
+  components:
+  - type: Store
+    balance:
+      Telecrystal: 40
+  - type: Tag
+    tags:
+    - NukeOpsUplink
+#-----------------имплант аплинк с бабками------------    
+- type: entity
+  parent: [ BaseSubdermalImplant, NoocBaseUplinkRadio40TC ]
+  id: NoocUplinkImplant
+  name: Имплант-аплинк Ноократии
+  description: Имплант с встроенным аплинком, закупленным у Киберсан и переделанным под нужды Ноократии
+  noSpawn: true
+  components:
+  - type: SubdermalImplant
+    implantAction: ActionOpenUplinkImplant
+    whitelist:
+      components:
+      - Hands # prevent mouse buying grenade penguin since its not telepathic
+  - type: UserInterface
+    interfaces:
+      enum.StoreUiKey.Key:
+        type: StoreBoundUserInterface

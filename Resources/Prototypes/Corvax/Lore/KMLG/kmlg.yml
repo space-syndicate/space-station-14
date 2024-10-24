@@ -1,0 +1,1925 @@
+#---------------------------униформа----------------------------------------------------------------------
+#------------------------------------грузчик---------- 
+- type: entity
+  parent: ClothingUniformSkirtBase
+  id: KMLGUniformCargotech
+  name: Форма грузчика
+  suffix: KMLG
+  description: Стандартная корпоративная форма рядовых грузчиков корпорации Космологистика. Удобная, комфортная, массового пошива. Достаточно дешёвая, а потому без изысков и быстро изнашивается.
+  components:
+  - type: Sprite
+    sprite: Corvax/Lore/KMLG/Equipment/kmlg_uniform_cargotech.rsi
+  - type: Clothing
+    sprite: Corvax/Lore/KMLG/Equipment/kmlg_uniform_cargotech.rsi
+  - type: ClothingSpeedModifier
+    walkModifier: 1.20
+    sprintModifier: 1.20
+#------------------------------------старший снабженец---------- 
+- type: entity
+  parent: ClothingUniformSkirtBase
+  id: KMLGUniformCc
+  name: Форма старшего снабженца
+  suffix: KMLG
+  description: Стандартная корпоративная форма старших снабженцев корпорации Космологистика. Такая же удобная и комфортная, как и у грузчиков и тоже массового пошива, но куда более качественная и дорогая.
+  components:
+  - type: Sprite
+    sprite: Corvax/Lore/KMLG/Equipment/kmlg_uniform_qm.rsi
+  - type: Clothing
+    sprite: Corvax/Lore/KMLG/Equipment/kmlg_uniform_qm.rsi
+#------------------------------------ремонтник---------- 
+- type: entity
+  parent: ClothingUniformSkirtBase
+  id: KMLGUniformRepairman
+  name: Форма ремонтника
+  suffix: KMLG
+  description: Стардатная рубашка Космологистики не слишком удобна для ремонта машин, агрегатов и шаттлов. Ремонтники всё время её рвут на тряпки дл потирания масла, а работают в простых майках.
+  components:
+  - type: Sprite
+    sprite: Corvax/Lore/KMLG/Equipment/kmlg_uniform_repairman.rsi
+  - type: Clothing
+    sprite: Corvax/Lore/KMLG/Equipment/kmlg_uniform_repairman.rsi
+#------------------------------------инженер---------- 
+- type: entity
+  parent: ClothingUniformSkirtBase
+  id: KMLGUniformEngineer
+  name: Форма инженера
+  suffix: KMLG
+  description: Если штаны этой формы являются стандартными штанами чуть ли не самого массового пошива в Галактике, то куртки. которые на вид очень напоминают самые обычные корпоративные куртки Космологистики. Но на деле она более плотная и лучше защищает от всякой гадости.
+  components:
+  - type: Sprite
+    sprite: Corvax/Lore/KMLG/Equipment/kmlg_uniform_engineering.rsi
+  - type: Clothing
+    sprite: Corvax/Lore/KMLG/Equipment/kmlg_uniform_engineering.rsi
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.95
+        Shock: 0.9 
+        Сaustic: 0.9
+        Heat: 0.95
+        Cold: 0.95
+#------------------------------------старший инженер---------- 
+- type: entity
+  parent: ClothingUniformSkirtBase
+  id: KMLGUniformCE
+  name: Форма старшего инженера
+  suffix: KMLG
+  description: В этой версии формы создатели хотели не только сохранить все преймущества куртки обычного инеженера, но и усовершенствовать её. Они ведь понимали, что старший инженер никогда не сможет усидеть в кресле руководителя, а сам полезет на стройку или в ремонт.
+  components:
+  - type: Sprite
+    sprite: Corvax/Lore/KMLG/Equipment/kmlg_uniform_ce.rsi
+  - type: Clothing
+    sprite: Corvax/Lore/KMLG/Equipment/kmlg_uniform_ce.rsi
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.9
+        Shock: 0.9 
+        Сaustic: 0.9
+        Heat: 0.9
+        Cold: 0.9
+#------------------------------------пилот---------- 
+- type: entity
+  parent: ClothingUniformSkirtBase
+  id: KMLGUniformPilot
+  name: Форма пилота
+  suffix: KMLG
+  description: Говорят, что в своё время пилоты Космологистики устравивали крупную забостовку. Они утверждали, что являются самыми важными сотрудники компании, а потому имею право требовать форму по желанию. Желанием были штаны под старину и утеплённая подкладка, ибо пилоты в космосе всегда боятся замёрзнуть.
+  components:
+  - type: Sprite
+    sprite: Corvax/Lore/KMLG/Equipment/kmlg_uniform_pilot.rsi
+  - type: Clothing
+    sprite: Corvax/Lore/KMLG/Equipment/kmlg_uniform_pilot.rsi
+  - type: Armor
+    modifiers:
+      coefficients:
+        Cold: 0.9
+  - type: TemperatureProtection
+    heatingCoefficient: 1.1
+    coolingCoefficient: 0.1        
+#------------------------------------сервисник---------- 
+- type: entity
+  parent: ClothingUniformSkirtBase
+  id: KMLGUniformServise
+  name: Форма сотрудника сервиса
+  suffix: KMLG
+  description: Нет ничего более обычного, чем форма сервисного сотрудника корпорации Космологистика. Простые чёрные блюки и простая зелёная рубашка.
+  components:
+  - type: Sprite
+    sprite: Corvax/Lore/KMLG/Equipment/kmlg_uniform_servise.rsi
+  - type: Clothing
+    sprite: Corvax/Lore/KMLG/Equipment/kmlg_uniform_servise.rsi
+#------------------------------------охранник---------- 
+- type: entity
+  parent: ClothingUniformSkirtBase
+  id: KMLGUniformSecurity
+  name: Форма охраны
+  suffix: KMLG
+  description: К форме охраны корпорация Космологистика подошла ответсвенно. Она выполнена из плотных и прочных нетканных материалов, способных погасить слабые удары, выдерживать небольшие порезы, уколы, а так же согреть в прохладной атмосфере.
+  components:
+  - type: Sprite
+    sprite: Corvax/Lore/KMLG/Equipment/kmlg_uniform_security.rsi
+  - type: Clothing
+    sprite: Corvax/Lore/KMLG/Equipment/kmlg_uniform_security.rsi
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.9
+        Slash: 0.9
+        Piercing: 0.9
+        Cold: 0.9
+  - type: TemperatureProtection
+    heatingCoefficient: 1.1
+    coolingCoefficient: 0.1
+#--------------------------------------------обувка---------------------------------------------
+#----------------------------------ботинки------------------------
+- type: entity
+  parent: ClothingShoesMilitaryBase
+  id: KMLGBoots
+  name: Обычные ботинки
+  suffix: KMLG
+  description: Ботинки и ботинки. Ничего такого. Никаких секретов. Просто корпоративные ботинки массового производства корпорации Космологистика.
+  components:
+  - type: Sprite
+    sprite: Corvax/Lore/KMLG/Equipment/kmlg_boots.rsi
+  - type: Clothing
+    sprite: Corvax/Lore/KMLG/Equipment/kmlg_boots.rsi
+#----------------------------------рабоочие боты------------------------
+- type: entity
+  parent: ClothingShoesMilitaryBase
+  id: KMLGBootsWork
+  name: Рабочие боты
+  suffix: KMLG
+  description: Крепкие рабочие боты. Хороший друг всех инженеров, охранников и других сотрудников, которым приходится бывать в какой-то грязи по указу корпорации Космологистика.
+  components:
+  - type: Sprite
+    sprite: Corvax/Lore/KMLG/Equipment/kmlg_boots_work.rsi
+  - type: Clothing
+    sprite: Corvax/Lore/KMLG/Equipment/kmlg_boots_work.rsi
+#---------------------------------------------перчатки------------------------------    
+#------------------------------------перчатки охраны---------- 
+- type: entity
+  parent: ClothingHandsBase
+  id: KMLGGlovesSec
+  name: Перчатки охраны
+  suffix: KMLG
+  description: Предотвращают образование мозолей от долгой работы с оружием или инструментами. Но в них на морозе мёрзнут руки.
+  components:
+  - type: Sprite
+    sprite: Corvax/Lore/KMLG/Equipment/kmlg_gloves_battle.rsi
+  - type: Clothing
+    sprite: Corvax/Lore/KMLG/Equipment/kmlg_gloves_battle.rsi
+  - type: Fiber
+    fiberMaterial: fibers-synthetic
+    fiberColor: fibers-green
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.9
+        Slash: 0.9
+        Piercing: 0.9
+#---------------------------------------------------головняк--------------------------------------------       
+#------------------------------------пилотка----------     
+- type: entity
+  parent: ClothingHeadBase
+  id: KMLGCapP
+  name: Пилотка Космологистики
+  suffix: KMLG
+  description: Пилотка из плотной ткани активно используется сотрудниками корпорации Космологистика для создания официального и респектабельного вида.
+  components:
+  - type: Sprite
+    sprite: Corvax/Lore/KMLG/Equipment/kmlg_cap_p.rsi
+  - type: Clothing
+    sprite: Corvax/Lore/KMLG/Equipment/kmlg_cap_p.rsi
+  - type: Tag
+    tags:
+    - ClothMade
+    - HamsterWearable
+    - WhitelistChameleon
+#------------------------------------беретка---------- 
+- type: entity
+  parent: ClothingHeadBase
+  id: KMLGBeret
+  name: Берет Космологистики
+  suffix: KMLG
+  description: Удобный берет сотрудников корпорации Космологистика, который все вечно всюду забывают...
+  components:
+  - type: Sprite
+    sprite: Corvax/Lore/KMLG/Equipment/kmlg_beret.rsi
+  - type: Clothing
+    sprite: Corvax/Lore/KMLG/Equipment/kmlg_beret.rsi
+  - type: Tag
+    tags:
+    - ClothMade
+    - HamsterWearable
+    - WhitelistChameleon
+#------------------------------------фуражка---------- 
+- type: entity
+  parent: ClothingHeadBase
+  id: KMLGCap
+  name: Фуражка Космологистики
+  suffix: KMLG
+  description: Простенькая фуражка сержанта охраны корпорации Космологистики. Никакого изыска.
+  components:
+  - type: Sprite
+    sprite: Corvax/Lore/KMLG/Equipment/kmlg_cap.rsi
+  - type: Clothing
+    sprite: Corvax/Lore/KMLG/Equipment/kmlg_cap.rsi
+  - type: Tag
+    tags:
+    - ClothMade
+    - HamsterWearable
+    - WhitelistChameleon
+#--------------------------------------кепка-----------
+- type: entity
+  parent: ClothingHeadBase
+  id: KMLGCepka
+  name: Кепка Космологистики
+  suffix: KMLG
+  description: Корпоративня плотная жёсткая кепка корпорации Космологистика. Не очень удобная, массового пошива, дешёвая и простая. Не самый удачный продукт.
+  components:
+  - type: Sprite
+    sprite: Corvax/Lore/KMLG/Equipment/kmlg_cepka.rsi
+  - type: Clothing
+    sprite: Corvax/Lore/KMLG/Equipment/kmlg_cepka.rsi
+  - type: Tag
+    tags:
+    - ClothMade
+    - WhitelistChameleon
+#--------------------------------------бандана-----------
+- type: entity
+  parent: ClothingHeadBase
+  id: KMLGBandana
+  name: Бандана Космологистики
+  suffix: KMLG
+  description: Корпорация Космологистика не планировала создавать банданы... Но многие сотрудники начали носить их сами, ибо так было удобней. Боссы решили, что если они не могут что-то сотановить, то надо возглавить.
+  components:
+  - type: Sprite
+    sprite: Corvax/Lore/KMLG/Equipment/kmlg_bandans.rsi
+  - type: Clothing
+    sprite: Corvax/Lore/KMLG/Equipment/kmlg_bandans.rsi
+  - type: Tag
+    tags:
+    - ClothMade
+    - WhitelistChameleon
+#---------------------------------------------------------рюкзаки----------------------------------
+#------------------------------------стандартный рюкзак---------- 
+- type: entity
+  parent: ClothingBackpack
+  id: KMLGBackpackStd
+  name: Стандартный рюкзак
+  suffix: KMLG
+  description: Проще чем ботинки только корпоративный стандартный рюкзак Космологистики. Буквально мешок с карманами, что кое-как держит форму и имеет лямки.
+  components:
+  - type: Sprite
+    sprite: Corvax/Lore/KMLG/Equipment/kmlg_backpack_std.rsi
+  - type: Storage
+    grid:
+    - 0,0,6,4
+#------------------------------------радиорюкзак---------- 
+- type: entity
+  parent: ClothingBackpack
+  id: KMLGBackpackRad
+  name: Радиорюкзак
+  suffix: KMLG
+  description: Охранникам космологистики приходится бывать много где. И местами нужно поддерживать связь. Но не заставишь же весь мир вставить свои ключи шифрования в сервера? Потому офицерам и стали выдавать акие радиорюкзаки.
+  components:
+  - type: Sprite
+    sprite: Corvax/Lore/KMLG/Equipment/kmlg_backpack_rad.rsi
+  - type: EncryptionKeyHolder
+    keysExtractionMethod: Prying
+    keySlots: 10
+  - type: ContainerContainer
+    containers:
+      storagebase: !type:Container
+        ents: []
+      key_slots: !type:Container
+  - type: TelecomServer
+  - type: ApcPowerReceiver
+    needsPower: false
+  - type: LightningTarget
+    priority: 1
+  - type: Storage
+    grid:
+    - 0,0,6,3
+#-----------------------------------------------------------------------эполеты--------------------------
+#------------------------------------10---------- 
+- type: entity
+  parent: ClothingNeckBase
+  id: KMLGEpolets10
+  name: Десятилетние эполеты
+  suffix: KMLG
+  description: Эполеты, обозначающие десять лет службы в корпорации Космологистика.
+  components:
+  - type: Sprite
+    sprite: Corvax/Lore/KMLG/Equipment/kmlg_epaulet_10.rsi
+#------------------------------------20---------- 
+- type: entity
+  parent: ClothingNeckBase
+  id: KMLGEpolets20
+  name: Двадцатилетние эполеты
+  suffix: KMLG
+  description: Эполеты, обозначающие двадцать лет службы в корпорации Космологистика.
+  components:
+  - type: Sprite
+    sprite: Corvax/Lore/KMLG/Equipment/kmlg_epaulet_20.rsi
+#------------------------------------30---------- 
+- type: entity
+  parent: ClothingNeckBase
+  id: KMLGEpolets30
+  name: Тридцатилетние эполеты
+  suffix: KMLG
+  description: Эполеты, обозначающие тридцать лет службы в корпорации Космологистика.
+  components:
+  - type: Sprite
+    sprite: Corvax/Lore/KMLG/Equipment/kmlg_epaulet_30.rsi
+#---------------------------------------------------------------------------жилеты-куртки----------------------
+#------------------------------------------рабочий жилет---------------------------------
+- type: entity
+  parent: ClothingOuterStorageBase
+  id: KMLGVest
+  name: Сигнальный жилет
+  suffix: KMLG
+  description: Стоительный жилет с карманами и светоотражающими элементами производства корпорации Гефест
+  components:
+  - type: Sprite
+    sprite: Clothing/OuterClothing/Vests/hazard.rsi
+  - type: Clothing
+    sprite: Clothing/OuterClothing/Vests/hazard.rsi
+  - type: Storage
+    grid:
+    - 0,0,3,3
+#------------------------------------------бронежилет---------------------------------
+- type: entity
+  parent: ClothingOuterBaseMedium
+  id: KMLGArmor
+  name: Бронижилет Космологистики
+  suffix: KMLG
+  description: Лёгкий охранный бронежилет используемый сотрудниками безопасности корпорации Космологистика. Немного утеплён.
+  components:
+  - type: Sprite
+    sprite: Corvax/Lore/KMLG/Armor/kmlg_armor.rsi
+  - type: Clothing
+    sprite: Corvax/Lore/KMLG/Armor/kmlg_armor.rsi
+  - type: Armor 
+    modifiers:
+      coefficients:
+        Blunt: 0.55
+        Slash: 0.65
+        Piercing: 0.65 
+        Heat: 0.65
+        Cold: 0.8
+  - type: ExplosionResistance
+    damageCoefficient: 0.90
+  - type: TemperatureProtection
+    heatingCoefficient: 1.1
+    coolingCoefficient: 0.1
+#------------------------------------------куртка---------------------------------
+- type: entity
+  parent: ClothingOuterWinterCoat
+  id: KMLGCoat
+  name: Корпоративная куртка
+  suffix: KMLG
+  description: Корпоративная тёплая куртка, которая выдаётся всем без исключения сотрудникам, которым приходится лететь на планеты с холодным климатом. особенно сильно её любят пилоты и ремонтники.
+  components:
+  - type: Sprite
+    sprite: Corvax/Lore/KMLG/Equipment/kmlg_coat.rsi
+  - type: Clothing
+    sprite: Corvax/Lore/KMLG/Equipment/kmlg_coat.rsi
+  - type: ToggleableClothing
+    clothingPrototype: KMLGCoatHood
+    slot: head
+  - type: ContainerContainer
+    containers:
+      toggleable-clothing: !type:ContainerSlot {}
+      storagebase: !type:Container
+        ents: []
+  - type: Armor 
+    modifiers:
+      coefficients:
+        Blunt: 0.9
+        Cold: 0.7
+#-----------------------------------------капюшон куртки-------------------------------
+- type: entity
+  parent: ClothingHeadHatHoodWinterDefault
+  id: KMLGCoatHood
+  name: Капюшон корпоративной куртки
+  suffix: KMLG
+  description: Закрывает голову от холода и стужи.
+  noSpawn: true
+  components:
+  - type: Sprite
+    sprite: Corvax/Lore/KMLG/Equipment/kmlg_coat_hood.rsi
+  - type: Clothing
+    sprite: Corvax/Lore/KMLG/Equipment/kmlg_coat_hood.rsi
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.95
+        Cold: 0.85
+  - type: TemperatureProtection
+    heatingCoefficient: 1.1
+    coolingCoefficient: 0.1
+#-------------------------------------------------------------скафандры----------------------------    
+#------------------------------------атмосферный щит----------      
+- type: entity
+  parent: ClothingOuterHardsuitBase
+  id: KMLGNoocHardsuitField
+  name: Ноократский личный атмосферный щит
+  suffix: KMLG, Ноократия
+  description: Простая замена скафандру, когда нужно выйти в космос в безопасном районе. Очень хорошо защищает от радиации. Произведён в Ноократии Эранта, но запуется Космологистикой.
+  components:
+  - type: Item
+    size: Small
+  - type: Sprite
+    sprite: Corvax/Lore/KMLG/Armor/kmlg_nooc_hardsuits_field.rsi
+  - type: Clothing
+    sprite: Corvax/Lore/KMLG/Armor/kmlg_nooc_hardsuits_field.rsi
+  - type: ExplosionResistance
+    damageCoefficient: 0.9
+  - type: Armor
+    modifiers:
+      coefficients:
+        Heat: 0.2
+        Radiation: 0.9
+  - type: ClothingSpeedModifier
+    walkModifier: 0.90
+    sprintModifier: 0.90
+  - type: HeldSpeedModifier
+  - type: ToggleableClothing
+    clothingPrototype: KMLGNoocHelmetHardsuitField
+  - type: PointLight
+    color: "#00f0fb"
+    radius: 1.5
+#------------------------------------голова атмосферного щита----------  
+- type: entity
+  parent: ClothingHeadHardsuitBase
+  id: KMLGNoocHelmetHardsuitField
+  name: Ноократский шлем личного атмосферного щита
+  components:
+  - type: BreathMask
+  - type: Sprite
+    sprite: Corvax/Lore/KMLG/Armor/kmlg_nooc_hardsuits_helmet_field.rsi
+  - type: Clothing
+    sprite: Corvax/Lore/KMLG/Armor/kmlg_nooc_hardsuits_helmet_field.rsi
+  - type: PressureProtection
+    highPressureMultiplier: 0.1
+    lowPressureMultiplier: 1000
+  - type: Armor
+    modifiers:
+      coefficients:
+        Heat: 0.1
+        Radiation: 0.1
+  - type: ExplosionResistance
+    damageCoefficient: 0.8
+#------------------------------------скафандр----------      
+- type: entity
+  parent: ClothingOuterHardsuitBase
+  id: KMLGHardsuit
+  name: Скафандр Космологистики
+  suffix: KMLG
+  description: Стандартный простой скафандр для сотрудников корпорации Космологистика
+  components:
+  - type: Sprite
+    sprite: Corvax/Lore/KMLG/Armor/kmlg_hardsuits.rsi
+  - type: Clothing
+    sprite: Corvax/Lore/KMLG/Armor/kmlg_hardsuits.rsi
+  - type: ExplosionResistance
+    damageCoefficient: 0.9
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.6
+        Slash: 0.6
+        Piercing: 0.6
+        Radiation: 0.4
+        Caustic: 0.3
+        Cold: 0.85
+        Heat: 0.85
+  - type: ClothingSpeedModifier
+    walkModifier: 0.80
+    sprintModifier: 0.80
+  - type: HeldSpeedModifier
+  - type: ToggleableClothing
+    clothingPrototype: KMLGHelmetHardsuit
+#------------------------------------шлем скафандра----------  
+- type: entity
+  parent: ClothingHeadHardsuitWithLightBase
+  id: KMLGHelmetHardsuit
+  name: Шлем скафандра Космологистики
+  description: Стандартный простой шлем скафандра корпорации Космологистика
+  components:
+  - type: BreathMask
+  - type: Sprite
+    sprite: Corvax/Lore/KMLG/Armor/kmlg_hardsuits_helmet.rsi
+  - type: Clothing
+    sprite: Corvax/Lore/KMLG/Armor/kmlg_hardsuits_helmet.rsi
+  - type: PointLight
+    color: "#ffdbad"
+  - type: PressureProtection
+    highPressureMultiplier: 0.1
+    lowPressureMultiplier: 1000
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.9
+        Slash: 0.9
+        Piercing: 0.8
+        Caustic: 0.9
+  - type: ExplosionResistance
+    damageCoefficient: 0.8
+#-----------------------------------------снаряга и пояса------------------------------------------
+#-------------------------------------печать-----------------    
+- type: entity
+  name: Печать Космологистики
+  suffix: KMLG
+  parent: RubberStampBaseAlt
+  id: KMLGRubberStamp
+  components:
+  - type: Stamp
+    stampedName: Космологистика
+    stampedColor: "#394e35"
+    stampState: "paper_stamp-generic"
+  - type: Sprite
+    sprite: Corvax/Lore/KMLG/Equipment/kmlg_stamp.rsi
+    state: stamp
+#---------------------------------Стандартная форма---------------------
+- type: entity
+  id: KMLGPaperForm
+  name: Документ Космологистики
+  suffix: KMLG
+  parent: Paper
+  components:
+  - type: Paper
+    content: |
+      [color=#394e35]░░█░░██░░░██░░█░░[/color]
+      [color=#394e35]░██░░██░░██░░░██░[/color]      [head=3]Бланк документа[/head]
+      [color=#394e35]███░░█████░░░░███[/color]               [head=3]KMLG[/head]
+      [color=#394e35]░██░░██░░██░░░██░[/color]
+      [color=#394e35]░░█░░██░░░██░░█░░[/color]
+      =============================================
+                          НАИМЕНОВАНИЕ ДОКУМЕНТА
+      =============================================
+      Дата:
+      Составитель документа:
+      Должность составителя:
+      
+      Полное содержание документа со всей необходимой информацией и описанием
+      =============================================
+                                  [italic]Место для печатей[/italic]
+
+#-----------------------------------------------------пояса----------------------------------------------
+- type: entity
+  parent: ClothingBeltStorageBase
+  id: KMLGBelt
+  name: Пояс Космологистики
+  suffix: KMLG
+  description: Такие пояса используют инженеры, охрана и техники корпорации Космологистика.
+  components:
+  - type: Sprite
+    sprite: Corvax/Lore/KMLG/Equipment/kmlg_belt.rsi
+  - type: Clothing
+    sprite: Corvax/Lore/KMLG/Equipment/kmlg_belt.rsi
+  - type: Storage
+    maxItemSize: Normal
+  - type: Appearance
+  
+- type: entity
+  id: KMLGBeltFilledEng
+  parent: KMLGBelt
+  suffix: Заполненный, Инструменты, Космологистика
+  components:    
+  - type: StorageFill
+    contents:
+      - id: CrowbarYellow
+      - id: Wrench
+      - id: Screwdriver
+      - id: Wirecutter
+      - id: Welder
+      - id: Multitool
+      
+- type: entity
+  id: KMLGBeltFilledSec
+  parent: KMLGBelt
+  suffix: Заполненный, Охрана, Космологистика
+  components:    
+  - type: StorageFill
+    contents:
+      - id: WeaponPistolMk58
+      - id: MagazinePistol
+      - id: MagazinePistol
+      - id: MagazinePistol
+#------------------------------------------КПК, карты, доступы и шлюзы----------------------------------------    
+#------------------------------------------доступы и шлюзы---------------------------------------- 
+#------------------------------------доступ----------  
+- type: accessLevel
+  id: KMLGAccess
+  name: access-kmlg
+#------------------------------------закрытый шлюз---------- 
+- type: entity
+  parent: DoorElectronics
+  id: DoorElectronicsKMLGAccess
+  suffix: KMLG, Locked
+  components:
+  - type: AccessReader
+    access: [["KMLGAccess"]]
+
+- type: entity
+  parent: Airlock
+  id: KMLGAirlockLocked
+  suffix: KMLG, Locked
+  components:
+  - type: ContainerFill
+    containers:
+      board: [ DoorElectronicsKMLGAccess ]
+  - type: Sprite
+    sprite: Corvax/Lore/KMLG/kmlg_airlock.rsi
+#------------------------------------свободный шлюз---------- 
+- type: entity
+  parent: Airlock
+  id: KMLGAirlock
+  suffix: KMLG
+  components:
+  - type: Sprite
+    sprite: Corvax/Lore/KMLG/kmlg_airlock.rsi
+#------------------------------------закрытый стеклянный шлюз---------- 
+- type: entity
+  parent: AirlockGlass
+  id: KMLGAirlockLockedGlass
+  suffix: KMLG, Locked
+  components:
+  - type: ContainerFill
+    containers:
+      board: [ DoorElectronicsKMLGAccess ]
+  - type: Sprite
+    sprite: Corvax/Lore/KMLG/kmlg_airlock_glass.rsi
+  - type: PaintableAirlock
+    group: Glass     
+#------------------------------------свободный стеклянный шлюз----------
+- type: entity
+  parent: AirlockGlass
+  id: KMLGAirlockGlass
+  suffix: KMLG
+  components:
+  - type: Sprite
+    sprite: Corvax/Lore/KMLG/kmlg_airlock_glass.rsi
+  - type: PaintableAirlock
+    group: Glass  
+#------------------------------------стыковочный---------- 
+- type: entity
+  parent: AirlockExternalShuttleLocked
+  name: Стыковочный шлюз
+  id: KMLGAirlockShuttleEasyPryLocked
+  suffix: KMLG
+  description: Чтобы успешно прилепиться к космическим объектам.
+  components:
+  - type: PryUnpowered
+  - type: ContainerFill
+    containers:
+      board: [ DoorElectronicsKMLGAccess ]
+#-----------------------------------роль--------------------------------------
+- type: playTimeTracker
+  id: JobEventKMLG
+
+- type: job
+  id: KMLGMen
+  name: Сотрудник Космологистики
+  description: job-kmlg
+  playTimeTracker: JobEventKMLG
+  startingGear: KMLGSoldGear
+  supervisors: job-supervisors-everyone
+  canBeAntag: false
+  access:
+  - KMLGAccess
+  - External
+#------------------------------------стандарт карты---------- 
+- type: entity
+  parent: Clothing
+  id: KMLGIDCard
+  suffix: KMLG
+  name: Карта итендификации личности бойца Космологистики
+  description: Данная карта служит в роли электронного пропуска на объектах Космологистики
+  abstract: true
+  components:
+  - type: Sprite
+    sprite: Corvax/Lore/KMLG/Equipment/kmlg_id_cards.rsi
+  - type: Clothing
+    slots:
+    - idcard
+    sprite: Corvax/Lore/KMLG/Equipment/kmlg_id_cards.rsi
+  - type: Item
+    size: Small
+    heldPrefix: default
+    storedRotation: -90
+  - type: Access
+  - type: IdCard
+  - type: StationRecordKeyStorage
+  - type: Tag
+    tags:
+    - DoorBumpOpener
+    - WhitelistChameleon
+  - type: StealTarget
+    stealGroup: IDCard    
+#------------------------------------карта грузчика---------- 
+- type: entity
+  parent: KMLGIDCard
+  id: KMLGIDCardCt
+  name: ID-карта грузчика
+  suffix: KMLG
+  components:
+  - type: Sprite
+    layers:
+    - state: default
+    - state: cargotech
+  - type: PresetIdCard
+    job: KMLGMen
+#------------------------------------карта старшего снабженца---------- 
+- type: entity
+  parent: KMLGIDCard
+  id: KMLGIDCardCc
+  name: ID-карта старшего снабженца
+  suffix: KMLG
+  components:
+  - type: Sprite
+    layers:
+    - state: default
+    - state: qm
+  - type: PresetIdCard
+    job: KMLGMen
+#------------------------------------карта ремонтника---------- 
+- type: entity
+  parent: KMLGIDCard
+  id: KMLGIDCardRm
+  name: ID-карта ремонтника
+  suffix: KMLG
+  components:
+  - type: Sprite
+    layers:
+    - state: default
+    - state: repairman
+  - type: PresetIdCard
+    job: KMLGMen
+#------------------------------------карта инженера---------- 
+- type: entity
+  parent: KMLGIDCard
+  id: KMLGIDCardE
+  name: ID-карта инженера
+  suffix: KMLG
+  components:
+  - type: Sprite
+    layers:
+    - state: default
+    - state: engineering
+  - type: PresetIdCard
+    job: KMLGMen
+#------------------------------------карта старшего инженера---------- 
+- type: entity
+  parent: KMLGIDCard
+  id: KMLGIDCardCe
+  name: ID-карта старшего инженера
+  suffix: KMLG
+  components:
+  - type: Sprite
+    layers:
+    - state: default
+    - state: ce
+  - type: PresetIdCard
+    job: KMLGMen
+#------------------------------------карта охранника---------- 
+- type: entity
+  parent: KMLGIDCard
+  id: KMLGIDCardS
+  name: ID-карта охранника
+  suffix: KMLG
+  components:
+  - type: Sprite
+    layers:
+    - state: default
+    - state: security
+  - type: PresetIdCard
+    job: KMLGMen
+#------------------------------------карта сержанта-охранника---------- 
+- type: entity
+  parent: KMLGIDCard
+  id: KMLGIDCardCs
+  name: ID-карта сержанта-охранника
+  suffix: KMLG
+  components:
+  - type: Sprite
+    layers:
+    - state: default
+    - state: cs
+  - type: PresetIdCard
+    job: KMLGMen
+#------------------------------------карта сервисника---------- 
+- type: entity
+  parent: KMLGIDCard
+  id: KMLGIDCardSw
+  name: ID-карта сервисника
+  suffix: KMLG
+  components:
+  - type: Sprite
+    layers:
+    - state: default
+    - state: servise
+  - type: PresetIdCard
+    job: KMLGMen
+#------------------------------------карта пилота---------- 
+- type: entity
+  parent: KMLGIDCard
+  id: KMLGIDCardP
+  name: ID-карта пилота
+  suffix: KMLG
+  components:
+  - type: Sprite
+    layers:
+    - state: default
+    - state: pilot
+  - type: PresetIdCard
+    job: KMLGMen
+#------------------------------------стандарт КПК---------- 
+- type: entity
+  abstract: true
+  parent: BasePDA
+  id: KMLGPDA
+  name: КПК сотрудника Космологистики
+  description: Простенький крепкий КПК массового производства сотрудников корпорации Космологистики.
+  components:
+  - type: Appearance
+  - type: Sprite
+    sprite: Corvax/Lore/KMLG/Equipment/kmlg_pda.rsi
+    layers:
+    - map: [ "enum.PdaVisualLayers.Base" ]
+    - state: "light_overlay"
+      map: [ "enum.PdaVisualLayers.Flashlight" ]
+      shader: "unshaded"
+      visible: false
+    - state: "id_overlay"
+      map: [ "enum.PdaVisualLayers.IdLight" ]
+      shader: "unshaded"
+      visible: false
+  - type: Icon
+    sprite: Corvax/Lore/KMLG/Equipment/kmlg_pda.rsi
+    state: pda
+#------------------------------------КПК грузчика----------    
+- type: entity
+  parent: KMLGPDA
+  id: KMLGPDACt
+  suffix: KMLG, грузчик
+  components:
+    - type: Pda
+      id: KMLGIDCardCt
+      state: pda
+#------------------------------------КПК старшего снабженца----------    
+- type: entity
+  parent: KMLGPDA
+  id: KMLGPDACc
+  suffix: KMLG, старший снабженец
+  components:
+    - type: Pda
+      id: KMLGIDCardCc
+      state: pda
+#------------------------------------КПК ремонтника----------    
+- type: entity
+  parent: KMLGPDA
+  id: KMLGPDARm
+  suffix: KMLG, ремонтник
+  components:
+    - type: Pda
+      id: KMLGIDCardRm
+      state: pda
+#------------------------------------КПК инженер----------    
+- type: entity
+  parent: KMLGPDA
+  id: KMLGPDAE
+  suffix: KMLG, инженер
+  components:
+    - type: Pda
+      id: KMLGIDCardE
+      state: pda
+#------------------------------------КПК старшего инженера----------    
+- type: entity
+  parent: KMLGPDA
+  id: KMLGPDACe
+  suffix: KMLG, старший инженер
+  components:
+    - type: Pda
+      id: KMLGIDCardCe
+      state: pda
+#------------------------------------КПК охранникаа----------    
+- type: entity
+  parent: KMLGPDA
+  id: KMLGPDAS
+  suffix: KMLG, охранник
+  components:
+    - type: Pda
+      id: KMLGIDCardS
+      state: pda
+#------------------------------------КПК сержанта----------    
+- type: entity
+  parent: KMLGPDA
+  id: KMLGPDACs
+  suffix: KMLG, сержант
+  components:
+    - type: Pda
+      id: KMLGIDCardCs
+      state: pda
+#------------------------------------КПК сервисника----------    
+- type: entity
+  parent: KMLGPDA
+  id: KMLGPDASw
+  suffix: KMLG, старший снабженец
+  components:
+    - type: Pda
+      id: KMLGIDCardSw
+      state: pda
+#------------------------------------КПК пилота----------    
+- type: entity
+  parent: KMLGPDA
+  id: KMLGPDAP
+  suffix: KMLG, старший снабженец
+  components:
+    - type: Pda
+      id: KMLGIDCardP
+      state: pda
+#------------------------------------------связь----------------------------------------  
+#-----------------------------канал----------------------------------------  
+- type: radioChannel
+  id: KMLGRadio
+  name: Космологистика
+  keycode: 'г' 
+  frequency: 3456
+  color: "#394e35"
+  longRange: false
+#-------------------------------------------------------------------ключи---------------------------------------------------------------------
+#-----------------------------стандарт ключа----------------------------------------   
+- type: entity
+  abstract: true
+  parent: BaseItem
+  id: KMLGBaseEncryptionKey
+  name: encryption key
+  description: Небольшой чип для шифрования и дешифровки связи.
+  components:
+  - type: EncryptionKey
+    channels:
+    - KMLGRadio
+    defaultChannel: KMLGRadio
+  - type: Item
+    sprite: Corvax/Lore/KMLG/Equipment/kmlg_encryption_keys.rsi
+  - type: Sprite
+    sprite: Corvax/Lore/KMLG/Equipment/kmlg_encryption_keys.rsi
+  - type: StealTarget
+    stealGroup: EncryptionKey   
+#-----------------------------ключ шифрования----------------------------------------      
+- type: entity
+  parent: KMLGBaseEncryptionKey
+  id: KMLGEncryptionKey
+  suffix: KMLG
+  name: Ключ шифрования корпорации Космологистика
+  description: Используется для шифрования и дешифровки общего канала связи сотрудников корпорации Космологистика
+  components:
+  - type: EncryptionKey
+    channels:
+    - KMLGRadio
+    defaultChannel: KMLGRadio
+  - type: Sprite
+    layers:
+    - state: crypt_gray
+    - state: label
+#-----------------------------гарнитура----------------------------------------  
+- type: entity
+  parent: ClothingHeadset
+  id: KMLGHeadset
+  name: Гарнитура Космологистики
+  suffix: KMLG
+  components:
+  - type: ContainerFill
+    containers:
+      key_slots:
+      - KMLGEncryptionKey
+  - type: Sprite
+    sprite: Corvax/Lore/KMLG/Equipment/kmlg_garniture.rsi
+  - type: Clothing
+    sprite: Corvax/Lore/KMLG/Equipment/kmlg_garniture.rsi
+#--------------------------------------------сумки------------------------------------ 
+#------------------------------------гражданские-------
+- type: entity
+  parent: KMLGBackpackStd
+  id: KMLGBackpackStdFilled
+  suffix: KMLG, Заполненный, Мирный
+  components:
+  - type: StorageFill
+    contents:
+      - id: ClothingMaskGas
+      - id: FoodTinMRE
+      - id: DrinkWaterBottleFull
+      - id: EmergencyNitrogenTankFilled
+      - id: EmergencyOxygenTankFilled
+      - id: FlashlightLantern
+#------------------------------------глава-------
+- type: entity
+  parent: KMLGBackpackStd
+  id: KMLGBackpackStdFilledHead
+  suffix: KMLG, Заполненный, Мирный
+  components:
+  - type: StorageFill
+    contents:
+      - id: ClothingMaskGas
+      - id: FoodTinMRE
+      - id: DrinkWaterBottleFull
+      - id: EmergencyNitrogenTankFilled
+      - id: EmergencyOxygenTankFilled
+      - id: FlashlightLantern
+      - id: KMLGRubberStamp
+      - id: KMLGPaperForm
+      - id: KMLGPaperForm
+#------------------------------------охранник-------
+- type: entity
+  parent: KMLGBackpackStd
+  id: KMLGBackpackStdFilledSec
+  suffix: KMLG, Заполненный, Охрана
+  components:
+  - type: StorageFill
+    contents:
+      - id: ClothingMaskGas
+      - id: FoodTinMRE
+      - id: DrinkWaterBottleFull
+      - id: EmergencyNitrogenTankFilled
+      - id: EmergencyOxygenTankFilled
+      - id: FlashlightLantern
+      - id: WeaponRifleLecter
+      - id: MagazineRifle
+      - id: MagazineRifle
+#------------------------------------сержант-------
+- type: entity
+  parent: KMLGBackpackRad
+  id: KMLGBackpackRadFilled
+  suffix: KMLG, Заполненный, Сержант
+  components:
+  - type: StorageFill
+    contents:
+      - id: ClothingMaskGas
+      - id: FoodTinMRE
+      - id: DrinkWaterBottleFull
+      - id: EmergencyNitrogenTankFilled
+      - id: EmergencyOxygenTankFilled
+      - id: FlashlightLantern
+      - id: WeaponSubMachineGunDrozd
+      - id: MagazinePistolSubMachineGun
+      - id: MagazinePistolSubMachineGun
+      - id: KMLGRubberStamp
+      - id: KMLGPaperForm
+      - id: KMLGPaperForm
+#---------------------------------------------------------------Бумаги------------------------------------------------------------
+#-----------------------------------грузчик-----------------------------
+- type: entity
+  id: KMLGPaperCt
+  name: Памятка грузчика Космологистики
+  suffix: KMLG
+  parent: Paper
+  components:
+  - type: TimedDespawn
+    lifetime: 1200
+  - type: Paper
+    content: |
+      Вы: Грузчик с большой буквы. Профессионал. Отличный и преданный работкик. Быстрый и исполнительный.
+      ------------------------------------------------------------------------
+      Ваши навыки: Базовые навыки
+      ------------------------------------------------------------------------
+      Руководство к отыгрышу: Подчиняйтесь командам старшего снабженца или пилота. Вы профессиональный грузчик. Быстрый, расторопный, немногословный с посторонними людьми. Вы крепкий и исполнительный парень. Но в перерывах вы всегда охочи поболтать с коллегами, выкурить по сигаретке или накатить по стаканчику пенного. Хороший рабочий парень. Девиз компании: «Грузи и вези!»
+      ------------------------------------------------------------------------
+      Краткий лор организации: Корпорация Большой Пятёрки, что решила занять нишу транспорта во всех возможных областях. Крупнейший грузовой и пассажирский перевозчик в Галактике. Также это корпорация прокладчик магистралей, большой спонсор колонизации, строитель инфраструктуры транспорта, крупный производитель самого разного транспорта и деталей для него же, разработчик всего перечисленного и самая богатая корпорация в изведанном Космосе.
+#-----------------------------------старший снабженец-----------------------------
+- type: entity
+  id: KMLGPaperCc
+  name: Памятка старшего снабженца Космологистики
+  suffix: KMLG
+  parent: Paper
+  components:
+  - type: TimedDespawn
+    lifetime: 1200
+  - type: Paper
+    content: |
+      Вы: Старший снабженец. Ветеран погрузочных станций и логистических работ. Грозный и матёрый волк.
+      ------------------------------------------------------------------------
+      Ваши навыки: Базовые навыки, Управление шаттлом
+      ------------------------------------------------------------------------
+      Руководство к отыгрышу: Если бы за каждую оплеуху, что вы давали грузчикам, вам давали бы десятку, то вы бы было очень богатым! А грузчиков постоянно приходится строить, чтобы они не лодырничали. Вы не шепчите, чаще вы громогласно вещаете. Вы не просто снабженец, вы как пиратский капитан среди этих флибустьеров-грузчиков. При этом со сторонними людьми вы строгий и суровый шеф снабжения Космологистики. Девиз компании: «Грузи и вези!»
+      ------------------------------------------------------------------------
+      Краткий лор организации: Корпорация Большой Пятёрки, что решила занять нишу транспорта во всех возможных областях. Крупнейший грузовой и пассажирский перевозчик в Галактике. Также это корпорация прокладчик магистралей, большой спонсор колонизации, строитель инфраструктуры транспорта, крупный производитель самого разного транспорта и деталей для него же, разработчик всего перечисленного и самая богатая корпорация в изведанном Космосе.
+#-----------------------------------ремонтник-----------------------------
+- type: entity
+  id: KMLGPaperRm
+  name: Памятка ремонтника Космологистики
+  suffix: KMLG
+  parent: Paper
+  components:
+  - type: TimedDespawn
+    lifetime: 1200
+  - type: Paper
+    content: |
+      Вы: Ремонтник. Потный, грязный, масляный и вонючий. Ваша задача ремонтировать транспорт.
+      ------------------------------------------------------------------------
+      Ваши навыки: Базовые навыки, Разборска сложных объектов, Атмос, Постройка сложных объектов
+      ------------------------------------------------------------------------
+      Руководство к отыгрышу: Потный, грязный, масляный и вонючий. Вы мужлан, и вы этому довольны. Вы можете быть хамоватым, грубоватым... с разумными существамию. Возможно, вы любите животных. И очень любите машины и шаттлы. Заботьтесь о них. Девиз компании: «Грузи и вези!»
+      ------------------------------------------------------------------------
+      Краткий лор организации: Корпорация Большой Пятёрки, что решила занять нишу транспорта во всех возможных областях. Крупнейший грузовой и пассажирский перевозчик в Галактике. Также это корпорация прокладчик магистралей, большой спонсор колонизации, строитель инфраструктуры транспорта, крупный производитель самого разного транспорта и деталей для него же, разработчик всего перечисленного и самая богатая корпорация в изведанном Космосе.
+#-----------------------------------инженер-----------------------------
+- type: entity
+  id: KMLGPaperE
+  name: Памятка инженера Космологистики
+  suffix: KMLG
+  parent: Paper
+  components:
+  - type: TimedDespawn
+    lifetime: 1200
+  - type: Paper
+    content: |
+      Вы: Инженер. Ваше дело - строить. Отделы, станции. аван-посты, закусочные, ремонтных цеха и всё прочее. Хотя вы можете построить и шаттл.
+      ------------------------------------------------------------------------
+      Ваши навыки: Базовые навыки, Разборска сложных объектов, Атмос, Постройка сложных объектов, Постройка приборов, Соляры и ДАМ
+      ------------------------------------------------------------------------
+      Руководство к отыгрышу: Подчиняйтесь старшему инженеру. Вы очень ответственный. Вы много учились, заратывали себе репутацию. Вы отличный специалист и честный сотрудник. Может быть самую малось самодовольный. Но и серьёзный. Девиз компании: «Грузи и вези!»
+      ------------------------------------------------------------------------
+      Краткий лор организации: Корпорация Большой Пятёрки, что решила занять нишу транспорта во всех возможных областях. Крупнейший грузовой и пассажирский перевозчик в Галактике. Также это корпорация прокладчик магистралей, большой спонсор колонизации, строитель инфраструктуры транспорта, крупный производитель самого разного транспорта и деталей для него же, разработчик всего перечисленного и самая богатая корпорация в изведанном Космосе.
+#-----------------------------------старший инженер-----------------------------
+- type: entity
+  id: KMLGPaperCe
+  name: Памятка старшего инженера Космологистики
+  suffix: KMLG
+  parent: Paper
+  components:
+  - type: TimedDespawn
+    lifetime: 1200
+  - type: Paper
+    content: |
+      Вы: Вы старший инженер - начальник над всеми инженерами.
+      ------------------------------------------------------------------------
+      Ваши навыки: Базовые навыки, Разборска сложных объектов, Атмос, Постройка сложных объектов, Постройка приборов, Соляры и ДАМ, Постройка боргов и ботов
+      ------------------------------------------------------------------------
+      Руководство к отыгрышу: Вы не уверены, что инженерам вообще нужны ваши слуги руководителя. Но корпорации нужно, чтобы был ответсвенный за документы. Это вы. Не самый главный, а скорей первый среди равных. Девиз компании: «Грузи и вези!»
+      ------------------------------------------------------------------------
+      Краткий лор организации: Корпорация Большой Пятёрки, что решила занять нишу транспорта во всех возможных областях. Крупнейший грузовой и пассажирский перевозчик в Галактике. Также это корпорация прокладчик магистралей, большой спонсор колонизации, строитель инфраструктуры транспорта, крупный производитель самого разного транспорта и деталей для него же, разработчик всего перечисленного и самая богатая корпорация в изведанном Космосе.
+#-----------------------------------сервисный работник-----------------------------
+- type: entity
+  id: KMLGPaperSw
+  name: Памятка сервисного работника Космологистики
+  suffix: KMLG
+  parent: Paper
+  components:
+  - type: TimedDespawn
+    lifetime: 1200
+  - type: Paper
+    content: |
+      Вы: Услужливый и вежливый сервисный работник.
+      ------------------------------------------------------------------------
+      Ваши навыки: Базовые навыки, Готовка, Бар, Работа с животными
+      ------------------------------------------------------------------------
+      Руководство к отыгрышу: Ваша задача - обслуживать гостей корпорации. Бармен, музыкант, повар, официант, уборщик. Вы очень услужливый, очень вежливый, этакий чистюля и добряк. Нужно, чтобы все посетители были очень довольны. Девиз компании: «Грузи и вези!»
+      ------------------------------------------------------------------------
+      Краткий лор организации: Корпорация Большой Пятёрки, что решила занять нишу транспорта во всех возможных областях. Крупнейший грузовой и пассажирский перевозчик в Галактике. Также это корпорация прокладчик магистралей, большой спонсор колонизации, строитель инфраструктуры транспорта, крупный производитель самого разного транспорта и деталей для него же, разработчик всего перечисленного и самая богатая корпорация в изведанном Космосе.
+#-----------------------------------пилот-----------------------------
+- type: entity
+  id: KMLGPaperP
+  name: Памятка пилота Космологистики
+  suffix: KMLG
+  parent: Paper
+  components:
+  - type: TimedDespawn
+    lifetime: 1200
+  - type: Paper
+    content: |
+      Вы: Считаете себя самым важным во всей корпорации! Вы пилот.
+      ------------------------------------------------------------------------
+      Ваши навыки: Базовые навыки, Управление шаттлом, Готовка, Постройка приборов
+      ------------------------------------------------------------------------
+      Руководство к отыгрышу: Вы водите транспорт. А вся корпорация занимается транспортом и логистикой! Выходит, вы тут самый важный! Так и думайте о себе. то есть вы как бы подчиняетесь боссам депортамента, охране и так далее, но вы то знаете, кто на самом деле самыйглавный! Девиз компании: «Грузи и вези!»
+      ------------------------------------------------------------------------
+      Краткий лор организации: Корпорация Большой Пятёрки, что решила занять нишу транспорта во всех возможных областях. Крупнейший грузовой и пассажирский перевозчик в Галактике. Также это корпорация прокладчик магистралей, большой спонсор колонизации, строитель инфраструктуры транспорта, крупный производитель самого разного транспорта и деталей для него же, разработчик всего перечисленного и самая богатая корпорация в изведанном Космосе.
+#-----------------------------------охрана-----------------------------
+- type: entity
+  id: KMLGPaperS
+  name: Памятка охранника Космологистики
+  suffix: KMLG
+  parent: Paper
+  components:
+  - type: TimedDespawn
+    lifetime: 1200
+  - type: Paper
+    content: |
+      Вы: Не только страж порядка и блюститель корпоративного закона. Вы защитниг иммущества корпорации и перевозимых грузов, а значит и репутации Космологистики.
+      ------------------------------------------------------------------------
+      Ваши навыки: Базовые навыки, Владение оружием
+      ------------------------------------------------------------------------
+      Руководство к отыгрышу: Подчиняйтесь своему сержанту. Вы не вахтёр-душила, вроде Сбшников НаноТрейзен. Вы настоящий защитник активов и репутации. Положите жизнь ради пассажиров, развалите всех пиратов ради груза. Всё или ничего. Девиз компании: «Грузи и вези!»
+      ------------------------------------------------------------------------
+      Краткий лор организации: Корпорация Большой Пятёрки, что решила занять нишу транспорта во всех возможных областях. Крупнейший грузовой и пассажирский перевозчик в Галактике. Также это корпорация прокладчик магистралей, большой спонсор колонизации, строитель инфраструктуры транспорта, крупный производитель самого разного транспорта и деталей для него же, разработчик всего перечисленного и самая богатая корпорация в изведанном Космосе.
+#-----------------------------------сержант-----------------------------
+- type: entity
+  id: KMLGPaperCs
+  name: Памятка сержанта Космологистики
+  suffix: KMLG
+  parent: Paper
+  components:
+  - type: TimedDespawn
+    lifetime: 1200
+  - type: Paper
+    content: |
+      Вы: Не только страж порядка и блюститель корпоративного закона. Вы защитниг иммущества корпорации и перевозимых грузов, а значит и репутации Космологистики.
+      ------------------------------------------------------------------------
+      Ваши навыки: Базовые навыки, Владение оружием, Управление шаттлом
+      ------------------------------------------------------------------------
+      Руководство к отыгрышу: Вы не вахтёр-душила, вроде Сбшников НаноТрейзен. Вы настоящий защитник активов и репутации. При этом уверенный командир. Положите жизнь ради пассажиров, развалите всех пиратов ради груза. Всё или ничего. Девиз компании: «Грузи и вези!»
+      ------------------------------------------------------------------------
+      Краткий лор организации: Корпорация Большой Пятёрки, что решила занять нишу транспорта во всех возможных областях. Крупнейший грузовой и пассажирский перевозчик в Галактике. Также это корпорация прокладчик магистралей, большой спонсор колонизации, строитель инфраструктуры транспорта, крупный производитель самого разного транспорта и деталей для него же, разработчик всего перечисленного и самая богатая корпорация в изведанном Космосе.
+#-----------------------------------------------гиры---------------------------------------
+#------------------------------------грузчик---------- 
+- type: startingGear
+  id: KMLGGearCt
+  equipment:
+    jumpsuit: KMLGUniformCargotech
+    back: KMLGBackpackStdFilled
+    shoes: KMLGBootsWork
+    head: KMLGBeret
+    id: KMLGPDACt
+    ears: KMLGHeadset
+    gloves: ClothingHandsGlovesFingerless
+    pocket1: KMLGPaperCt
+#------------------------------------старший снабженец---------- 
+- type: startingGear
+  id: KMLGGearCc
+  equipment:
+    jumpsuit: KMLGUniformCc
+    back: KMLGBackpackStdFilledHead
+    shoes: KMLGBoots
+    head: KMLGBeret
+    id: KMLGPDACc
+    ears: KMLGHeadset
+    neck: KMLGEpolets10
+    pocket1: KMLGPaperCc
+#------------------------------------ремонтник---------- 
+- type: startingGear
+  id: KMLGGearRm
+  equipment:
+    jumpsuit: KMLGUniformRepairman
+    back: KMLGBackpackStdFilled
+    shoes: KMLGBootsWork
+    head: KMLGBandana
+    id: KMLGPDARm
+    ears: KMLGHeadset
+    gloves: ClothingHandsGlovesColorYellow
+    belt: KMLGBeltFilledEng
+    outerClothing: KMLGCoat
+    eyes: ClothingEyesGlassesMeson
+    pocket1: KMLGPaperRm
+#------------------------------------инженер---------- 
+- type: startingGear
+  id: KMLGGearE
+  equipment:
+    jumpsuit: KMLGUniformEngineer
+    back: KMLGBackpackStdFilled
+    shoes: KMLGBootsWork
+    head: KMLGCepka
+    id: KMLGPDAE
+    ears: KMLGHeadset
+    gloves: ClothingHandsGlovesColorYellow
+    belt: KMLGBeltFilledEng
+    eyes: ClothingEyesGlassesMeson
+    pocket1: KMLGPaperE
+#------------------------------------старший инженер---------- 
+- type: startingGear
+  id: KMLGGearCe
+  equipment:
+    jumpsuit: KMLGUniformCE
+    back: KMLGBackpackStdFilledHead
+    shoes: KMLGBoots
+    head: KMLGCepka
+    id: KMLGPDACe
+    ears: KMLGHeadset
+    gloves: ClothingHandsGlovesColorYellow
+    belt: KMLGBeltFilledEng
+    eyes: ClothingEyesGlassesMeson
+    neck: KMLGEpolets10
+    pocket1: KMLGPaperCe
+#------------------------------------охрана---------- 
+- type: startingGear
+  id: KMLGGearS
+  equipment:
+    jumpsuit: KMLGUniformSecurity
+    back: KMLGBackpackStdFilledSec
+    shoes: KMLGBootsWork
+    head: KMLGCepka
+    id: KMLGPDAS
+    ears: KMLGHeadset
+    gloves: KMLGGlovesSec
+    belt: KMLGBeltFilledSec
+    outerClothing: KMLGArmor
+    eyes: ClothingEyesGlassesSecurity
+    pocket1: KMLGPaperS
+#------------------------------------сержант---------- 
+- type: startingGear
+  id: KMLGGearCs
+  equipment:
+    jumpsuit: KMLGUniformSecurity
+    back: KMLGBackpackRadFilled
+    shoes: KMLGBootsWork
+    head: KMLGCap
+    id: KMLGPDACs
+    ears: KMLGHeadset
+    gloves: KMLGGlovesSec
+    belt: KMLGBeltFilledSec
+    outerClothing: KMLGArmor
+    eyes: ClothingEyesGlassesSecurity
+    neck: KMLGEpolets10
+    pocket1: KMLGPaperCs
+#------------------------------------сервисник---------- 
+- type: startingGear
+  id: KMLGGearSw
+  equipment:
+    jumpsuit: KMLGUniformServise
+    back: KMLGBackpackStdFilled
+    shoes: KMLGBoots
+    head: KMLGCapP
+    id: KMLGPDASw
+    ears: KMLGHeadset
+    pocket1: KMLGPaperSw
+#------------------------------------пилот---------- 
+- type: startingGear
+  id: KMLGGearP
+  equipment:
+    jumpsuit: KMLGUniformPilot
+    back: KMLGBackpackStdFilled
+    shoes: KMLGBoots
+    head: KMLGCapP
+    id: KMLGPDAP
+    ears: KMLGHeadset
+    pocket1: KMLGPaperP
+#---------------------------------------------------спавнеры------------------------------------------------
+#-------------------------------------------Имена-------------------------------------
+#---------------------------------звания пацанов----------
+- type: dataset
+  id: KMLGName
+  values:
+  - Шон
+  - Йен
+  - Билл
+  - Виго
+  - Питер
+  - Орландо
+  - Энди
+  - Джон
+  - Мартин  
+  - Ричард
+  - Кен
+  - Грем
+  - Уильям
+  - Джеймс
+  - Стивен
+  - Дин
+  - Эйдан
+  - Джед
+  - Марк
+  - Адам
+  - Бенедикт
+  - Ли
+  - Сильвестр
+  - Люк
+  - Доминик
+  - Энди
+  - Дэвид
+  - Крейг
+  - Говард
+  - Карл
+#---------------------------------фамилии----------
+- type: dataset
+  id: KMLGNameTwo
+  values:
+  - Вуд
+  - Мак'Келен
+  - Бин
+  - Мортенсон
+  - Блум
+  - Джексон
+  - Ривс
+  - Дэвис
+  - Фримен
+  - Холл
+  - Оукен
+  - Скотт
+  - Мактавиш
+  - Кирхер
+  - Хантер
+  - Горман
+  - Тёрнер
+  - Каллин
+  - Хемблтон
+  - Броффи
+  - Хедлоу
+  - Браун
+  - Бланшет
+  - Тайлер
+  - Мак'Кой
+  - Эванс
+  - Фрай
+  - Эстин
+  - Ноубл
+  - паркер
+  - Шор
+  - Урбан
+#-------------------------------------хуй знает что это, но вот оно работает и ладно---------------------------
+#---------------------------------грузчик----------
+- type: randomHumanoidSettings
+  speciesBlacklist: 
+    - Vox
+  id: KMLGCtR
+  randomizeName: false
+  components:
+    - type: GhostRole
+      name: Гост-роль грузчика Космологистики
+      description: "Вы грузчик корпорации Космологистика. Подчиняйтесь старшему снабженцу или пилоту. Таскайте грузы. Будьте быстрым, исполнительным и профессиональным."
+    - type: GhostTakeoverAvailable
+    - type: Loadout
+      prototypes: [ KMLGGearCt ]
+    - type: RandomMetadata
+      nameSegments:
+      - KMLGName
+      - KMLGNameTwo
+
+- type: randomHumanoidSettings
+  id: KMLGCtReady
+  parent: KMLGCtR
+  components:
+    - type: GhostRole
+      allowMovement: true
+      allowSpeech: true
+      makeSentient: true
+      name: Грузчик Космологистики
+      description: "Вы грузчик корпорации Космологистика. Подчиняйтесь старшему снабженцу или пилоту. Таскайте грузы. Будьте быстрым, исполнительным и профессиональным."
+    - type: GhostTakeoverAvailable
+    - type: MobThresholds
+      thresholds:
+        0: Alive
+        100: Critical
+        200: Dead
+    - type: Stamina
+      excess: 380
+    - type: Loadout
+      prototypes: [ KMLGGearCt ]
+  
+- type: entity
+  name: Грузчик Космологистики Спавнер
+  id: KMLGMobCt
+  suffix: GOST, Космологистика
+  components:
+  - type: Sprite
+    sprite: Markers/jobs.rsi
+    state: cargo_tech
+  - type: RandomHumanoidAppearance
+    randomizeName: false
+  - type: RandomMetadata
+    nameSegments:
+    - KMLGName
+    - KMLGNameTwo
+  - type: RandomHumanoidSpawner
+    settings: KMLGCtR
+#---------------------------------старший снабженец----------
+- type: randomHumanoidSettings
+  speciesBlacklist: 
+    - Vox
+  id: KMLGCcR
+  randomizeName: false
+  components:
+    - type: GhostRole
+      name: Гост-роль старшего снабженца Космологистики
+      description: "Вы старший снабженец корпорации Космологистика. Руководите грузчиками. Будьте строгим, грозным, представительным."
+    - type: GhostTakeoverAvailable
+    - type: Loadout
+      prototypes: [ KMLGGearCc ]
+    - type: RandomMetadata
+      nameSegments:
+      - KMLGName
+      - KMLGNameTwo
+
+- type: randomHumanoidSettings
+  id: KMLGCcReady
+  parent: KMLGCcR
+  components:
+    - type: GhostRole
+      allowMovement: true
+      allowSpeech: true
+      makeSentient: true
+      name: Старший снабженец Космологистики
+      description: "Вы старший снабженец корпорации Космологистика. Руководите грузчиками. Будьте строгим, грозным, представительным"
+    - type: GhostTakeoverAvailable
+    - type: MobThresholds
+      thresholds:
+        0: Alive
+        100: Critical
+        200: Dead
+    - type: Stamina
+      excess: 380
+    - type: Loadout
+      prototypes: [ KMLGGearCc ]
+  
+- type: entity
+  name: Старший снабженец Космологистики Спавнер
+  id: KMLGMobCc
+  suffix: GOST, Космологистика
+  components:
+  - type: Sprite
+    sprite: Markers/jobs.rsi
+    state: qm
+  - type: RandomHumanoidAppearance
+    randomizeName: false
+  - type: RandomMetadata
+    nameSegments:
+    - KMLGName
+    - KMLGNameTwo
+  - type: RandomHumanoidSpawner
+    settings: KMLGCcR
+#---------------------------------ремонтник----------
+- type: randomHumanoidSettings
+  speciesBlacklist: 
+    - Vox
+  id: KMLGRmR
+  randomizeName: false
+  components:
+    - type: GhostRole
+      name: Гост-роль ремонтника Космологистики
+      description: "Вы ремонтник корпорации Космологистика. Чините транспорт. Подчиняйтесь старшему инженеру или пилоту. будьте хамоватым, грязным, но весёлым."
+    - type: GhostTakeoverAvailable
+    - type: Loadout
+      prototypes: [ KMLGGearRm ]
+    - type: RandomMetadata
+      nameSegments:
+      - KMLGName
+      - KMLGNameTwo
+
+- type: randomHumanoidSettings
+  id: KMLGRmReady
+  parent: KMLGRmR
+  components:
+    - type: GhostRole
+      allowMovement: true
+      allowSpeech: true
+      makeSentient: true
+      name: Ремонтник Космологистики
+      description: "Вы ремонтник корпорации Космологистика. Чините транспорт. Подчиняйтесь старшему инженеру или пилоту. будьте хамоватым, грязным, но весёлым."
+    - type: GhostTakeoverAvailable
+    - type: MobThresholds
+      thresholds:
+        0: Alive
+        100: Critical
+        200: Dead
+    - type: Stamina
+      excess: 380
+    - type: Loadout
+      prototypes: [ KMLGGearRm ]
+  
+- type: entity
+  name: Ремонтник Космологистики Спавнер
+  id: KMLGMobRm
+  suffix: GOST, Космологистика
+  components:
+  - type: Sprite
+    sprite: Markers/jobs.rsi
+    state: technicalassistant
+  - type: RandomHumanoidAppearance
+    randomizeName: false
+  - type: RandomMetadata
+    nameSegments:
+    - KMLGName
+    - KMLGNameTwo
+  - type: RandomHumanoidSpawner
+    settings: KMLGRmR
+#---------------------------------инженер----------
+- type: randomHumanoidSettings
+  speciesBlacklist: 
+    - Vox
+  id: KMLGER
+  randomizeName: false
+  components:
+    - type: GhostRole
+      name: Гост-роль инженера Космологистики
+      description: "Вы инженер корпорации Космологистика. Стройте всё и вся. Подчиняйтесь старшему инженеру. Будьте профессиональным, образованым, серьёзным, уверенным."
+    - type: GhostTakeoverAvailable
+    - type: Loadout
+      prototypes: [ KMLGGearE ]
+    - type: RandomMetadata
+      nameSegments:
+      - KMLGName
+      - KMLGNameTwo
+
+- type: randomHumanoidSettings
+  id: KMLGEReady
+  parent: KMLGER
+  components:
+    - type: GhostRole
+      allowMovement: true
+      allowSpeech: true
+      makeSentient: true
+      name: Инженер Космологистики
+      description: "Вы инженер корпорации Космологистика. Стройте всё и вся. Подчиняйтесь старшему инженеру. Будьте профессиональным, образованым, серьёзным, уверенным."
+    - type: GhostTakeoverAvailable
+    - type: MobThresholds
+      thresholds:
+        0: Alive
+        100: Critical
+        200: Dead
+    - type: Stamina
+      excess: 380
+    - type: Loadout
+      prototypes: [ KMLGGearE ]
+  
+- type: entity
+  name: Инженер Космологистики Спавнер
+  id: KMLGMobE
+  suffix: GOST, Космологистика
+  components:
+  - type: Sprite
+    sprite: Markers/jobs.rsi
+    state: engineer
+  - type: RandomHumanoidAppearance
+    randomizeName: false
+  - type: RandomMetadata
+    nameSegments:
+    - KMLGName
+    - KMLGNameTwo
+  - type: RandomHumanoidSpawner
+    settings: KMLGER
+#---------------------------------старший инженер----------
+- type: randomHumanoidSettings
+  speciesBlacklist: 
+    - Vox
+  id: KMLGCeR
+  randomizeName: false
+  components:
+    - type: GhostRole
+      name: Гост-роль старшего инженера Космологистики
+      description: "Вы старший инженер корпорации Космологистика. Руководите инженерами. Дайте им план, распределите по работам. Будьте профессиональным, образованым, серьёзным, уверенным."
+    - type: GhostTakeoverAvailable
+    - type: Loadout
+      prototypes: [ KMLGGearCe ]
+    - type: RandomMetadata
+      nameSegments:
+      - KMLGName
+      - KMLGNameTwo
+
+- type: randomHumanoidSettings
+  id: KMLGCeReady
+  parent: KMLGCeR
+  components:
+    - type: GhostRole
+      allowMovement: true
+      allowSpeech: true
+      makeSentient: true
+      name: Старший инженер Космологистики
+      description: "Вы старший инженер корпорации Космологистика. Руководите инженерами. Дайте им план, распределите по работам. Будьте профессиональным, образованым, серьёзным, уверенным."
+    - type: GhostTakeoverAvailable
+    - type: MobThresholds
+      thresholds:
+        0: Alive
+        100: Critical
+        200: Dead
+    - type: Stamina
+      excess: 380
+    - type: Loadout
+      prototypes: [ KMLGGearCe ]
+  
+- type: entity
+  name: Старший инженер Космологистики Спавнер
+  id: KMLGMobCe
+  suffix: GOST, Космологистика
+  components:
+  - type: Sprite
+    sprite: Markers/jobs.rsi
+    state: seniorengineer
+  - type: RandomHumanoidAppearance
+    randomizeName: false
+  - type: RandomMetadata
+    nameSegments:
+    - KMLGName
+    - KMLGNameTwo
+  - type: RandomHumanoidSpawner
+    settings: KMLGCeR
+#---------------------------------охранник----------
+- type: randomHumanoidSettings
+  speciesBlacklist: 
+    - Vox
+  id: KMLGSR
+  randomizeName: false
+  components:
+    - type: GhostRole
+      name: Гост-роль охранника Космологистики
+      description: "Вы охранник корпорации Космологистика. Подчиняйтесь сержанту. Оберегайте пассажиров, поситителей, грузы и транспорт. будьте готовы положить за них жизнь. Защищайте, а не душите во имя закона."
+    - type: GhostTakeoverAvailable
+    - type: Loadout
+      prototypes: [ KMLGGearS ]
+    - type: RandomMetadata
+      nameSegments:
+      - KMLGName
+      - KMLGNameTwo
+
+- type: randomHumanoidSettings
+  id: KMLGSReady
+  parent: KMLGSR
+  components:
+    - type: GhostRole
+      allowMovement: true
+      allowSpeech: true
+      makeSentient: true
+      name: Охранник Космологистики
+      description: "Вы охранник корпорации Космологистика. Подчиняйтесь сержанту. Оберегайте пассажиров, поситителей, грузы и транспорт. будьте готовы положить за них жизнь. Защищайте, а не душите во имя закона."
+    - type: GhostTakeoverAvailable
+    - type: MobThresholds
+      thresholds:
+        0: Alive
+        100: Critical
+        200: Dead
+    - type: Stamina
+      excess: 380
+    - type: Loadout
+      prototypes: [ KMLGGearS ]
+  
+- type: entity
+  name: Охранник Космологистики Спавнер
+  id: KMLGMobS
+  suffix: GOST, Космологистика
+  components:
+  - type: Sprite
+    sprite: Markers/jobs.rsi
+    state: security_officer
+  - type: RandomHumanoidAppearance
+    randomizeName: false
+  - type: RandomMetadata
+    nameSegments:
+    - KMLGName
+    - KMLGNameTwo
+  - type: RandomHumanoidSpawner
+    settings: KMLGSR
+#---------------------------------сержант----------
+- type: randomHumanoidSettings
+  speciesBlacklist: 
+    - Vox
+  id: KMLGCsR
+  randomizeName: false
+  components:
+    - type: GhostRole
+      name: Гост-роль сержанта Космологистики
+      description: "Вы сержант охраны корпорации Космологистика. Командуйте охранниками. Оберегайте пассажиров, поситителей, грузы и транспорт. Будьте готовы положить за них жизнь. Защищайте, а не душите во имя закона."
+    - type: GhostTakeoverAvailable
+    - type: Loadout
+      prototypes: [ KMLGGearCs ]
+    - type: RandomMetadata
+      nameSegments:
+      - KMLGName
+      - KMLGNameTwo
+
+- type: randomHumanoidSettings
+  id: KMLGCsReady
+  parent: KMLGCsR
+  components:
+    - type: GhostRole
+      allowMovement: true
+      allowSpeech: true
+      makeSentient: true
+      name: Сержант Космологистики
+      description: "Вы сержант охраны корпорации Космологистика. Командуйте охранниками. Оберегайте пассажиров, поситителей, грузы и транспорт. Будьте готовы положить за них жизнь. Защищайте, а не душите во имя закона."
+    - type: GhostTakeoverAvailable
+    - type: MobThresholds
+      thresholds:
+        0: Alive
+        100: Critical
+        200: Dead
+    - type: Stamina
+      excess: 380
+    - type: Loadout
+      prototypes: [ KMLGGearCs ]
+  
+- type: entity
+  name: Сержант Космологистики Спавнер
+  id: KMLGMobCs
+  suffix: GOST, Космологистика
+  components:
+  - type: Sprite
+    sprite: Markers/jobs.rsi
+    state: warden
+  - type: RandomHumanoidAppearance
+    randomizeName: false
+  - type: RandomMetadata
+    nameSegments:
+    - KMLGName
+    - KMLGNameTwo
+  - type: RandomHumanoidSpawner
+    settings: KMLGCsR
+#---------------------------------сервисник----------
+- type: randomHumanoidSettings
+  speciesBlacklist: 
+    - Vox
+  id: KMLGSwR
+  randomizeName: false
+  components:
+    - type: GhostRole
+      name: Гост-роль сервисного работника Космологистики
+      description: "Вы сервисный работник корпорации Космологистика. Будьте услужливы, любезны, вежливы, приятны. Сделайте всё ради посетителей или покупателей услуг. Готовьте, смешивайте напитки, убирайтесь."
+    - type: GhostTakeoverAvailable
+    - type: Loadout
+      prototypes: [ KMLGGearSw ]
+    - type: RandomMetadata
+      nameSegments:
+      - KMLGName
+      - KMLGNameTwo
+
+- type: randomHumanoidSettings
+  id: KMLGSwReady
+  parent: KMLGSwR
+  components:
+    - type: GhostRole
+      allowMovement: true
+      allowSpeech: true
+      makeSentient: true
+      name: Сервисный работник Космологистики
+      description: "Вы сервисный работник корпорации Космологистика. Будьте услужливы, любезны, вежливы, приятны. Сделайте всё ради посетителей или покупателей услуг. Готовьте, смешивайте напитки, убирайтесь."
+    - type: GhostTakeoverAvailable
+    - type: MobThresholds
+      thresholds:
+        0: Alive
+        100: Critical
+        200: Dead
+    - type: Stamina
+      excess: 380
+    - type: Loadout
+      prototypes: [ KMLGGearSw ]
+  
+- type: entity
+  name: Сервисный работник Космологистики Спавнер
+  id: KMLGMobSw
+  suffix: GOST, Космологистика
+  components:
+  - type: Sprite
+    sprite: Markers/jobs.rsi
+    state: serviceworker
+  - type: RandomHumanoidAppearance
+    randomizeName: false
+  - type: RandomMetadata
+    nameSegments:
+    - KMLGName
+    - KMLGNameTwo
+  - type: RandomHumanoidSpawner
+    settings: KMLGSwR
+#---------------------------------пилот----------
+- type: randomHumanoidSettings
+  speciesBlacklist: 
+    - Vox
+  id: KMLGPR
+  randomizeName: false
+  components:
+    - type: GhostRole
+      name: Гост-роль пилот Космологистики
+      description: "Вы пилот корпорации Космологистика. Будьте быстрым и умелым. Водите шаттлы! Возите грузы. Считайте, что вы тут самый важный (хотя это не так)."
+    - type: GhostTakeoverAvailable
+    - type: Loadout
+      prototypes: [ KMLGGearP ]
+    - type: RandomMetadata
+      nameSegments:
+      - KMLGName
+      - KMLGNameTwo
+
+- type: randomHumanoidSettings
+  id: KMLGPReady
+  parent: KMLGPR
+  components:
+    - type: GhostRole
+      allowMovement: true
+      allowSpeech: true
+      makeSentient: true
+      name: Пилот Космологистики
+      description: "Вы пилот корпорации Космологистика. Будьте быстрым и умелым. Водите шаттлы! Возите грузы. Считайте, что вы тут самый важный (хотя это не так)."
+    - type: GhostTakeoverAvailable
+    - type: MobThresholds
+      thresholds:
+        0: Alive
+        100: Critical
+        200: Dead
+    - type: Stamina
+      excess: 380
+    - type: Loadout
+      prototypes: [ KMLGGearP ]
+  
+- type: entity
+  name: Пилот Космологистики Спавнер
+  id: KMLGMobP
+  suffix: GOST, Космологистика
+  components:
+  - type: Sprite
+    sprite: Markers/jobs.rsi
+    state: serviceworker
+  - type: RandomHumanoidAppearance
+    randomizeName: false
+  - type: RandomMetadata
+    nameSegments:
+    - KMLGName
+    - KMLGNameTwo
+  - type: RandomHumanoidSpawner
+    settings: KMLGPR

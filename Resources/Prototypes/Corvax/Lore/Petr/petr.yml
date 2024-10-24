@@ -1,0 +1,3156 @@
+#---------------------------униформа----------------------------------------------------------------------
+- type: entity
+  parent: ClothingUniformSkirtBase
+  id: PetrUniform
+  name: Одежда боевика Петрищевцев
+  suffix: Петрищев
+  description: Стандартная униформа пехотинца Петрищевцев. Одна и для рядовых боевиков, и для командиров. Ибо все должны быть равны... Согласно легенде, что командиры рассказывают новичкам, рукава выкрашены в тёмные красные цвета, дабы показать, как глубоко готовы Петрищевцы окунуться в кровь, дабы добиться равенства для всех пролетариев всех народов. И куртки их будут чёрными, пока не возвысится над всеми странами красные флаги! 
+  components:
+  - type: Sprite
+    sprite: Corvax/Lore/Petr/Equipment/petr_uniform.rsi
+  - type: Clothing
+    sprite: Corvax/Lore/Petr/Equipment/petr_uniform.rsi
+#-------------------------------одежда и снаряга----------------------------------------------------------------------
+#------------------------------------рюкзак---------- 
+- type: entity
+  parent: ClothingBackpack
+  id: PetrBackpack
+  name: Рюкзак Петрищевцев
+  suffix: Петрищев
+  description: Тяжеловат. Но очень вместительный! Подходит, как для переноса предметов, так и для хранения крупной армейской рации.
+  components:
+  - type: Sprite
+    sprite: Corvax/Lore/Petr/Equipment/petr_back.rsi
+  - type: Storage
+    grid:
+    - 0,0,7,5
+#------------------------------------сапоги---------- 
+- type: entity
+  parent: ClothingShoesMilitaryBase
+  id: PetrBoots
+  name: Боевые сапоги Петрищевцев
+  suffix: Петрищев
+  description: Удобные армейские сапоги из плотных материалов. В таких хорошо оставлять грязные отпечатки на мордах капиталистических наймитов.
+  components:
+  - type: Sprite
+    sprite: Corvax/Lore/Petr/Equipment/petr_boots.rsi
+  - type: Clothing
+    sprite: Corvax/Lore/Petr/Equipment/petr_boots.rsi
+#------------------------------------пилотка----------     
+- type: entity
+  parent: ClothingHeadBase
+  id: PetrCapP
+  name: Пилотка Петрищевцев
+  suffix: Петрищев
+  description: Пилотка из плотной ткани. Универсальный внебоевой головной убор для всех боевиков от новичка до командира.
+  components:
+  - type: Sprite
+    sprite: Corvax/Lore/Petr/Equipment/petr_cap_p.rsi
+  - type: Clothing
+    sprite: Corvax/Lore/Petr/Equipment/petr_cap_p.rsi
+  - type: Tag
+    tags:
+    - ClothMade
+    - HamsterWearable
+    - WhitelistChameleon
+#------------------------------------плащ---------- 
+- type: entity
+  parent: ClothingNeckBase
+  id: PetrCloak
+  name: Плащ ветерана Петрищевцев
+  suffix: Петрищев
+  description: Плащ, который носят ветераны и командиры боевиков Петрищевцев. Будто обёрнутые красным знаменем, ветераны демонстрируют свою ярую преданность идеалам комунизма и товарища Петрищева!
+  components:
+  - type: Sprite
+    sprite: Corvax/Lore/Petr/Equipment/petr_cloak.rsi
+#------------------------------------шлем---------- 
+- type: entity
+  parent: ClothingHeadHelmetBasic
+  id: PetrHelmet
+  name: Боевой шлем Петрищевцев
+  suffix: Петрищев
+  description: Крепкий и крупный шлем Петрищевцев. Не имеет защитных линз, но имеет маску, для сокрытия лица. Ведь каждый боевик на задании - не личность, а гнев... Гнев угнетённого пролеториата! Пролеториата безликого и забытого угнетателями.
+  components:
+  - type: Sprite
+    sprite: Corvax/Lore/Petr/Armor/petr_helmet.rsi
+  - type: Clothing
+    sprite: Corvax/Lore/Petr/Armor/petr_helmet.rsi
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.8
+        Slash: 0.8
+        Piercing: 0.8
+        Heat: 0.8
+#------------------------------------броник----------     
+- type: entity
+  parent: ClothingOuterBaseMedium
+  id: PetrArmorBasic
+  name: Лёгкий бронежилет Петрищевцев
+  suffix: Петрищев
+  description: Выдаётся начинающим боевикам, которые охраняют базы и разные объекты революционеров.
+  components:
+  - type: Sprite
+    sprite: Corvax/Lore/Petr/Armor/petr_armor_light.rsi
+  - type: Clothing
+    sprite: Corvax/Lore/Petr/Armor/petr_armor_light.rsi
+  - type: Armor 
+    modifiers:
+      coefficients:
+        Blunt: 0.75
+        Slash: 0.75
+        Piercing: 0.75 
+        Heat: 0.9
+  - type: ExplosionResistance
+    damageCoefficient: 0.8
+#------------------------------------бронекомплект----------     
+- type: entity
+  parent: ClothingOuterBaseMedium
+  id: PetrArmorMid
+  name: Тяжёлый бронекомплект Петрищевцев
+  suffix: Петрищев
+  description: В лобовом столкновении с противником революционеры используют эту броню, чтобы защитить свои тела чем-то кроме веры в идеалы коммунизма!
+  components:
+  - type: Sprite
+    sprite: Corvax/Lore/Petr/Armor/petr_armor_mid.rsi
+  - type: Clothing
+    sprite: Corvax/Lore/Petr/Armor/petr_armor_mid.rsi
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.65
+        Slash: 0.65
+        Piercing: 0.65
+        Heat: 0.6
+        Radiation: 0.8
+        Caustic: 0.8
+  - type: ExplosionResistance
+    damageCoefficient: 0.70
+  - type: ClothingSpeedModifier
+    walkModifier: 0.90
+    sprintModifier: 0.90
+#------------------------------------Скафандр "Звезда"----------      
+- type: entity
+  parent: ClothingOuterHardsuitBase
+  id: PetrHardsuitZvezda
+  name: Скафандр "Звезда"
+  suffix: Петрищев
+  description: Стандартный боевой скафандр боевиков Петрищевцев
+  components:
+  - type: Sprite
+    sprite: Corvax/Lore/Petr/Armor/petr_hardsuits.rsi
+  - type: Clothing
+    sprite: Corvax/Lore/Petr/Armor/petr_hardsuits.rsi
+  - type: ExplosionResistance
+    damageCoefficient: 0.7
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.6
+        Slash: 0.6
+        Piercing: 0.6
+        Heat: 0.65
+        Radiation: 0.65
+        Caustic: 0.65
+  - type: ClothingSpeedModifier
+    walkModifier: 0.9
+    sprintModifier: 0.9
+  - type: HeldSpeedModifier
+  - type: ToggleableClothing
+    clothingPrototype: PetrHelmetHardsuitZvezda
+#------------------------------------шлем скафандра "Звезда"----------  
+- type: entity
+  parent: ClothingHeadHardsuitBase
+  id: PetrHelmetHardsuitZvezda
+  name: Шлем скафандра "Звезда"
+  suffix: Петрищев
+  description: Шлем от стандартного скафандра Петрищевцев.
+  noSpawn: true
+  components:
+  - type: BreathMask
+  - type: Sprite
+    sprite: Corvax/Lore/Petr/Armor/petr_hardsuits_helmet.rsi
+  - type: Clothing
+    sprite: Corvax/Lore/Petr/Armor/petr_hardsuits_helmet.rsi
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.9
+        Slash: 0.9
+        Piercing: 0.9
+        Caustic: 0.9
+        Heat: 0.9
+  - type: ExplosionResistance
+    damageCoefficient: 0.9
+#------------------------------------Скафандр "Серп"----------      
+- type: entity
+  parent: ClothingOuterHardsuitBase
+  id: PetrHardsuitSerp
+  name: Скафандр "Серп"
+  suffix: Петрищев
+  description: По защитным качетвам он едва ли лучше бронижилета. Но зато он лёгкий и позволяет оператору ускоряться! Используется длы быстрых пехотных налётов боевиками Петрищевцев.
+  components:
+  - type: Sprite
+    sprite: Corvax/Lore/Petr/Armor/petr_hardsuits_light.rsi
+  - type: Clothing
+    sprite: Corvax/Lore/Petr/Armor/petr_hardsuits_light.rsi
+  - type: ExplosionResistance
+    damageCoefficient: 0.8
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.7
+        Slash: 0.7
+        Piercing: 0.7
+        Heat: 0.7
+        Radiation: 0.6
+        Caustic: 0.6
+  - type: ClothingSpeedModifier
+    walkModifier: 1.2
+    sprintModifier: 1.25
+  - type: HeldSpeedModifier
+  - type: ToggleableClothing
+    clothingPrototype: PetrHelmetHardsuitSerp
+#------------------------------------шлем скафандра "Серп"----------  
+- type: entity
+  parent: ClothingHeadHardsuitBase
+  id: PetrHelmetHardsuitSerp
+  name: Шлем скафандра "Серп"
+  suffix: Петрищев
+  description: Уникальный по своему прифилю. Серповидный рог придаёт ургозы его внешнему виду.
+  noSpawn: true
+  components:
+  - type: BreathMask
+  - type: Sprite
+    sprite: Corvax/Lore/Petr/Armor/petr_hardsuits_light_helmet.rsi
+  - type: Clothing
+    sprite: Corvax/Lore/Petr/Armor/petr_hardsuits_light_helmet.rsi
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.8
+        Slash: 0.8
+        Piercing: 0.8
+        Caustic: 0.9
+        Heat: 0.9
+  - type: ExplosionResistance
+    damageCoefficient: 0.8
+#------------------------------------скафандр "Молот"----------      
+- type: entity
+  parent: ClothingOuterHardsuitBase
+  id: PetrHardsuitMolot
+  name: Скафандр "Молот"
+  suffix: Петрищев
+  description: Большой, крепкий, бронированный. Используется боевиками Петрищевцев для создания живой стены. Боец в таком скафандре хоть и не слишком быстрый, но способен прикрыть товарищей за собой  цузких местах.
+  components:
+  - type: Sprite
+    sprite: Corvax/Lore/Petr/Armor/petr_hardsuits_strong.rsi
+  - type: Clothing
+    sprite: Corvax/Lore/Petr/Armor/petr_hardsuits_strong.rsi
+  - type: ExplosionResistance
+    damageCoefficient: 0.9
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.45
+        Slash: 0.45
+        Piercing: 0.45
+        Caustic: 0.65
+        Radiation: 0.65
+        Heat: 0.5
+  - type: ClothingSpeedModifier
+    walkModifier: 0.5
+    sprintModifier: 0.6
+  - type: HeldSpeedModifier
+  - type: ToggleableClothing
+    clothingPrototype: PetrHelmetHardsuitMolot
+#------------------------------------шлем скафандра "Молот"----------  
+- type: entity
+  parent: ClothingHeadHardsuitWithLightBase
+  id: PetrHelmetHardsuitMolot
+  name: Шлем скафандра "Молот"
+  suffix: Петрищев
+  description: Крупный и тяжёлый. В таком не повертишь головой, зато система амортизации и защита позволяет выдерживать попадания пуль в лоб!
+  noSpawn: true
+  components:
+  - type: BreathMask
+  - type: Sprite
+    sprite: Corvax/Lore/Petr/Armor/petr_hardsuits_strong_helmet.rsi
+  - type: Clothing
+    sprite: Corvax/Lore/Petr/Armor/petr_hardsuits_strong_helmet.rsi
+  - type: PointLight
+    color: "#ffdbad"
+    radius: 6
+  - type: PressureProtection
+    highPressureMultiplier: 0.1
+    lowPressureMultiplier: 1000
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.7
+        Slash: 0.7
+        Piercing: 0.65
+        Caustic: 0.8
+        Radiation: 0.8
+        Heat: 0.7
+  - type: ExplosionResistance
+    damageCoefficient: 0.75
+  - type: ShowJobIcons
+  - type: ShowCriminalRecordIcons
+#---------------------------------------------------пояс и снаряжение---------------------------------------
+#-------------------------------------печать-----------------      
+- type: entity
+  name: Печать Петрищевцев
+  suffix: Петрищев
+  parent: RubberStampBaseAlt
+  id: PetrRubberStamp
+  components:
+  - type: Stamp
+    stampedName: Призрак Коммунизма
+    stampedColor: "#670c0c"
+    stampState: "paper_stamp-generic"
+  - type: Sprite
+    sprite: Corvax/Lore/Petr/Equipment/petr_stamp.rsi
+    state: stamp
+#-------------------------------------знамя-----------------     
+- type: entity
+  id: PetrBanner
+  parent: BannerBase
+  name: Знамя Петрищевцев
+  suffix: Петрищев
+  description: Символ борьбы, труда и всеобщего равенства!
+  components:
+  - type: Sprite
+    sprite: Corvax/Lore/Petr/petr_banner.rsi
+    state: banner_petr 
+#------------------------------------консоль связи-----------------------
+#-----------------плата----------------
+- type: entity
+  parent: BaseComputerCircuitboard
+  id: PetrCommsComputerCircuitboard
+  name: Плата консоли связи Петрищевцев
+  suffix: Петрищев
+  description: Компьютерная плата для перехвата чужих данных, их расшифровки и встраивания своих сообщений.
+  components:
+    - type: ComputerBoard
+      prototype: PetrComputerComms
+#-----------------сама консоль----------------
+- type: entity
+  parent: ComputerComms
+  id: PetrComputerComms
+  name: Консоль связи Петрищевцев
+  suffix: Петрищев
+  description: Эта консоль оборудована отличной системой расшифровки связи, и встраивания сообщений в стандартный поток данных. Дух коммунизма может гордиться тем техником Петрищевцев, что воплотил это в жизнь.
+  components:
+  - type: Sprite
+    sprite: Corvax/Lore/Petr/petr_computers.rsi
+    layers:
+    - map: ["computerLayerBody"]
+      state: computer
+    - map: ["computerLayerKeyboard"]
+      state: generic_keyboard
+    - map: ["computerLayerScreen"]
+      state: comm_syndie
+    - map: ["computerLayerKeys"]
+      state: syndie_key
+  - type: AccessReader
+    access: [[ "PetrAccess" ]]
+  - type: CommunicationsConsole
+    title: "Призрак Коммунизма"
+    color: "#670c0c"
+    canShuttle: false
+    global: true #announce to everyone they're about to fuck shit up
+    sound: /Audio/Announcements/war.ogg
+  - type: Computer
+    board: PetrCommsComputerCircuitboard
+  - type: PointLight
+    radius: 1.5
+    energy: 1.6
+    color: "#f71713"    
+#-------------------------------------пояс стрелка--------------------------------------- 
+- type: entity
+  parent: ClothingBeltStorageBase
+  id: PetrBeltSold
+  name: Пояс боевика Петрищевца
+  suffix: Петрищев
+  description: Этот пояс используют боевики Петрищевцев для ношения амуниции, гранат и прочего боевого снаряжения
+  components:
+  - type: Sprite
+    sprite: Corvax/Lore/Petr/Equipment/petr_belt_s.rsi
+  - type: Clothing
+    sprite: Corvax/Lore/Petr/Equipment/petr_belt_s.rsi
+  - type: Storage
+    whitelist:
+      tags:
+        - CigPack
+        - Taser
+        - Powerdrill
+        - Wirecutter
+        - Crowbar
+        - Screwdriver
+        - Flashlight
+        - Wrench
+        - GeigerCounter
+        - Flare
+        - CableCoil
+        - CigPack
+        - Radio
+        - HolofanProjector
+        - Multitool
+        - AppraisalTool
+        - JawsOfLife
+        - GPS
+        - MagazinePistolHighCapacity
+        - CombatKnife
+        - Sidearm
+        - PetrExGrenade
+        - PetrSmokeGrenade
+        - PetrWeaponRevolver
+        - PetrPistol
+        - PetrSMG
+        - PetrMagazineShotgun
+        - PetrMagazineRifle
+        - PetrMagazineSMG
+        - PetrSpeedLoader
+        - PetrMagazinePistol
+      components:
+        - Stunbaton
+        - FlashOnTrigger
+        - SmokeOnTrigger
+        - Flash
+        - Handcuff
+        - RangedMagazine
+        - Ammo
+        - SprayPainter
+        - NetworkConfigurator
+        - RCD
+        - RCDAmmo
+        - Welder
+        - PowerCell
+        - Geiger
+        - TrayScanner
+        - GasAnalyzer
+  - type: Appearance
+
+- type: entity
+  id: PetrBeltSoldFilled
+  parent: PetrBeltSold
+  suffix: Filled, Петрищев
+  components:
+  - type: StorageFill
+    contents:
+      - id: PetrPistol
+      - id: CombatKnife
+      - id: PetrMagazinePistol
+      - id: PetrMagazinePistol
+      - id: PetrExGrenade
+#-------------------------------------пояс специалиста--------------------------------------- 
+- type: entity
+  parent: ClothingBeltStorageBase
+  id: PetrBeltSpec
+  name: Пояс боевика-специалиста Петрищевца
+  suffix: Петрищев
+  description: Этот пояс используют бойцы-специалисты Петрищевцев для ношения амуниции, кучи гранат и прочего боевого снаряжения
+  components:
+  - type: Sprite
+    sprite: Corvax/Lore/Petr/Equipment/petr_belt_e.rsi
+  - type: Clothing
+    sprite: Corvax/Lore/Petr/Equipment/petr_belt_e.rsi
+  - type: Storage
+    grid:
+    - 0,0,8,2
+    whitelist:
+      tags:
+        - CigPack
+        - Taser
+        - Powerdrill
+        - Wirecutter
+        - Crowbar
+        - Screwdriver
+        - Flashlight
+        - Wrench
+        - GeigerCounter
+        - Flare
+        - CableCoil
+        - CigPack
+        - Radio
+        - HolofanProjector
+        - Multitool
+        - AppraisalTool
+        - JawsOfLife
+        - GPS
+        - MagazinePistolHighCapacity
+        - CombatKnife
+        - Sidearm
+        - PetrExGrenade
+        - PetrSmokeGrenade
+        - PetrWeaponRevolver
+        - PetrPistol
+        - PetrSMG
+        - PetrMagazineShotgun
+        - PetrMagazineRifle
+        - PetrMagazineSMG
+        - PetrSpeedLoader
+        - PetrMagazinePistol
+      components:
+        - Stunbaton
+        - FlashOnTrigger
+        - SmokeOnTrigger
+        - Flash
+        - Handcuff
+        - RangedMagazine
+        - Ammo
+        - SprayPainter
+        - NetworkConfigurator
+        - RCD
+        - RCDAmmo
+        - Welder
+        - PowerCell
+        - Geiger
+        - TrayScanner
+        - GasAnalyzer
+  - type: Appearance
+
+- type: entity
+  id: PetrBeltSpecFilledEng
+  parent: PetrBeltSpec
+  suffix: Filled, Инструменты, Петрищев
+  components:
+  - type: StorageFill
+    contents:
+      - id: CombatKnife
+      - id: Crowbar
+      - id: Wrench
+      - id: Screwdriver
+      - id: Wirecutter
+      - id: Welder
+      
+- type: entity      
+  id: PetrBeltSpecFilledExp
+  parent: PetrBeltSpec
+  suffix: Filled, Взрывчатка, Петрищев
+  components:
+  - type: StorageFill
+    contents:
+      - id: CombatKnife
+      - id: PetrExGrenade
+      - id: PetrExGrenade
+      - id: PetrSmokeGrenade
+      - id: PetrSmokeGrenade
+#-------------------------------------оружие-------------------------------------------------------------------------------
+#-------------------------------------пули--------------------------------------------------------------
+#------------------------------------винтовка---------- 
+- type: entity
+  id: PetrBulletRifle
+  name: Винтовочная пуля (.27 rifle)
+  suffix: Петрищев
+  parent: BaseBullet
+  noSpawn: true
+  components:
+  - type: Projectile
+    damage:
+      types:
+        Piercing: 24
+#------------------------------------пистолет---------- 
+- type: entity
+  id: PetrBulletPistol
+  name: Пистолетная пуля (.32 rifle)
+  suffix: Петрищев
+  parent: BaseBullet
+  noSpawn: true
+  components:
+  - type: Projectile
+    damage:
+      types:
+        Piercing: 15
+#------------------------------------револьвер----------         
+- type: entity
+  id: PetrBulletRevolver
+  name: Револьверная пуля (.40 rifle)
+  suffix: Петрищев
+  parent: BaseBullet
+  noSpawn: true
+  components:
+  - type: Projectile
+    damage:
+      types:
+        Piercing: 25 
+        Heat: 5
+#-------------------------------------картриджи---------------------------------------------------------------------------------
+#------------------------------------винтовка---------- 
+- type: Tag
+  id: PetrCartridgeRifle
+
+- type: entity
+  id: PetrCartridgeRifle
+  name: Винтовочная пуля (.27 rifle)
+  suffix: Петрищев
+  parent: BaseCartridgeRifle
+  components:
+  - type: CartridgeAmmo
+    proto: PetrBulletRifle
+  - type: Tag
+    tags:
+      - PetrCartridgeRifle
+#------------------------------------пистолет---------- 
+- type: Tag
+  id: PetrCartridgePistol
+
+- type: entity
+  id: PetrCartridgePistol
+  name: Пистолетная пуля (.32 rifle)
+  suffix: Петрищев
+  parent: BaseCartridgePistol
+  components:
+  - type: CartridgeAmmo
+    proto: PetrBulletPistol
+  - type: Tag
+    tags:
+      - PetrCartridgePistol
+#------------------------------------револьвер---------- 
+- type: Tag
+  id: PetrCartridgeRevolver
+
+- type: entity
+  id: PetrCartridgeRevolver
+  name: Револьверная пуля (.40 rifle)
+  suffix: Петрищев
+  parent: BaseCartridgePistol
+  components:
+  - type: CartridgeAmmo
+    proto: PetrBulletRevolver
+  - type: Tag
+    tags:
+      - PetrCartridgeRevolver
+#-------------------------------------магазины---------------------------------------------------------------------------------
+#------------------------------------пистолетный---------- 
+- type: Tag
+  id: PetrMagazinePistol
+
+- type: entity
+  id: PetrMagazinePistol
+  name: Магазин к пистолету "Горький" (.32 rifle)
+  suffix: Петрищев
+  parent: BaseMagazinePistol
+  components:
+  - type: BallisticAmmoProvider
+    mayTransfer: true
+    whitelist:
+      tags:
+        - PetrCartridgePistol
+    proto: PetrCartridgePistol
+    capacity: 8
+  - type: Sprite
+    sprite: Corvax/Lore/Petr/Weapon/petr_pistol_magazine.rsi
+    layers:
+    - state: base
+      map: ["enum.GunVisualLayers.Base"]
+  - type: Tag
+    tags:
+      - PetrMagazinePistol
+#------------------------------------спидлодер револьвера-----------------------------
+- type: Tag
+  id: PetrSpeedLoader
+
+- type: entity
+  id: PetrSpeedLoader
+  name: Спидлоадер револьвера (.40)
+  parent: BaseSpeedLoaderMagnum
+  components:
+  - type: BallisticAmmoProvider
+    proto: PetrCartridgeRevolver
+  - type: Sprite
+    sprite: Objects/Weapons/Guns/Ammunition/SpeedLoaders/Magnum/magnum_speed_loader.rsi
+    layers:
+      - state: base
+        map: [ "enum.GunVisualLayers.Base" ]
+      - state: base-6
+        map: [ "enum.GunVisualLayers.Mag" ]
+  - type: MagazineVisuals
+    magState: base
+    steps: 7
+    zeroVisible: false
+  - type: Appearance
+  - type: Tag
+    tags:
+      - PetrSpeedLoader
+#------------------------------------к пистолет-пулемёту----------   
+- type: Tag
+  id: PetrMagazineSMG
+
+- type: entity
+  id: PetrMagazineSMG
+  name: Магазин к пистолету-пулемёту "Коллективист" (.32 auto боевые)
+  suffix: Петрищев
+  parent: BaseMagazinePistolSubMachineGun
+  components:
+  - type: Tag
+    tags:
+      - PetrMagazineSMG
+  - type: BallisticAmmoProvider
+    capacity: 23
+    proto: PetrCartridgePistol
+    whitelist:
+      tags:
+        - PetrCartridgePistol
+    soundInsert:
+      path: /Audio/Weapons/Guns/MagIn/bullet_insert.ogg
+  - type: Sprite
+    sprite: Corvax/Lore/Petr/Weapon/petr_smg_magazine.rsi
+    layers:
+    - state: base
+      map: ["enum.GunVisualLayers.Base"]
+#------------------------------------к автомату----------   
+- type: Tag
+  id: PetrMagazineRifle
+
+- type: entity
+  id: PetrMagazineRifle
+  name: Магазин к автомату "Повстанец" (.27 rifle)
+  suffix: Петрищев
+  parent: BaseMagazineLightRifle
+  components:
+  - type: BallisticAmmoProvider
+    mayTransfer: true
+    whitelist:
+      tags:
+        - PetrCartridgeRifle
+    proto: PetrCartridgeRifle
+    capacity: 30
+  - type: Sprite
+    sprite: Corvax/Lore/Petr/Weapon/petr_automat_magazine.rsi
+    layers:
+    - state: base
+      map: ["enum.GunVisualLayers.Base"]
+  - type: Tag
+    tags:
+      - PetrMagazineRifle
+#------------------------------------к пулемёту----------   
+- type: Tag
+  id: PetrMagazineRifleBox
+
+- type: entity
+  id: PetrMagazineRifleBox
+  name: Цинк к пулемёту "Товарищ Петрищев" (.27 rifle)
+  suffix: Петрищев
+  parent: BaseMagazineLightRifle
+  components:
+  - type: Tag
+    tags:
+      - PetrMagazineRifleBox
+  - type: BallisticAmmoProvider
+    mayTransfer: true
+    whitelist:
+      tags:
+        - PetrCartridgeRifle
+    proto: PetrCartridgeRifle
+    capacity: 120
+  - type: Item
+  - type: Sprite
+    sprite: Corvax/Lore/Petr/Weapon/petr_lmg_magazine.rsi
+  - type: MagazineVisuals
+    magState: mag
+    steps: 8
+    zeroVisible: false
+  - type: Appearance
+#---------------------------------------------к дробовику------------------------------------------
+- type: Tag
+  id: PetrMagazineShotgun
+
+- type: entity
+  id: PetrMagazineShotgun
+  name: Магазин к дробовику "Старатель" (.50 pellet)
+  suffix: Петрищев
+  parent: BaseMagazineShotgun
+  components:
+  - type: Tag
+    tags:
+    - PetrMagazineShotgun
+  - type: BallisticAmmoProvider
+    mayTransfer: true
+    whitelist:
+      tags:
+        - ShellShotgun
+    proto: ShellShotgun
+    capacity: 7
+  - type: Sprite
+    sprite: Corvax/Lore/Petr/Weapon/petr_shotgun_magazine.rsi
+    layers:
+    - state: base
+      map: ["enum.GunVisualLayers.Base"]
+    - state: mag-1
+      map: ["enum.GunVisualLayers.Mag"]
+#-------------------------------------стволы---------------------------------------------------------------------------------
+#------------------------------------пистолет----------   
+- type: Tag
+  id: PetrPistol
+
+- type: entity
+  name: Петрищевский пистолет "Горький"
+  suffix: Петрищев
+  parent: BaseWeaponPistol
+  id: PetrPistol
+  description: Короткий и очень дешёвый, но мощный пистолет. Использует собственные петрищевские патроны .32
+  components:
+  - type: Sprite
+    sprite: Corvax/Lore/Petr/Weapon/petr_pistol.rsi
+    layers:
+     - state: base
+       map: ["enum.GunVisualLayers.Base"]
+     - state: mag-0
+       map: ["enum.GunVisualLayers.Mag"]
+  - type: Gun
+    fireRate: 3
+    soundGunshot:
+      path: /Audio/Weapons/Guns/Gunshots/mk58.ogg 
+  - type: ChamberMagazineAmmoProvider
+    soundRack:
+      path: /Audio/Weapons/Guns/Cock/ltrifle_cock.ogg      
+  - type: ItemSlots
+    slots:
+      gun_magazine:
+        name: Magazine
+        startingItem: PetrMagazinePistol
+        insertSound: /Audio/Weapons/Guns/MagIn/pistol_magin.ogg
+        ejectSound: /Audio/Weapons/Guns/MagOut/pistol_magout.ogg
+        priority: 2
+        whitelist:
+          tags:
+            - PetrMagazinePistol
+      gun_chamber:
+        name: Chamber
+        startingItem: PetrCartridgePistol
+        priority: 1
+        whitelist:
+          tags:
+            - PetrCartridgePistol
+  - type: ContainerContainer
+    containers:
+      gun_magazine: !type:ContainerSlot
+      gun_chamber: !type:ContainerSlot
+  - type: MagazineVisuals
+    magState: mag
+    steps: 1
+    zeroVisible: true
+  - type: Appearance
+  - type: StaticPrice
+    price: 250
+  - type: Tag
+    tags:
+      - PetrPistol
+#----------------------------------------револьвер------------------------------------
+- type: Tag
+  id: PetrWeaponRevolver
+
+- type: entity
+  name: Петрищевский револьвер "Троцкий"
+  parent: BaseWeaponRevolver
+  id: PetrWeaponRevolver
+  description: Тяжёлый и суровый револьвер калибра .40, что несёт волю Петрищевцев через космос!
+  components:
+  - type: Sprite
+    sprite: Corvax/Lore/Petr/Weapon/petr_revolver.rsi
+  - type: Clothing
+    sprite: Corvax/Lore/Petr/Weapon/petr_revolver.rsi
+  - type: Gun
+    fireRate: 3
+    soundGunshot:
+      path: /Audio/Weapons/Guns/Gunshots/mateba.ogg
+  - type: RevolverAmmoProvider
+    whitelist:
+      tags:
+        - PetrCartridgeRevolver
+        - PetrSpeedLoader
+    proto: PetrCartridgeRevolver
+    capacity: 6
+    chambers: [ True, True, True, True, True, True ]
+    ammoSlots: [ null, null, null, null, null, null ]
+  - type: Tag
+    tags:
+      - PetrWeaponRevolver
+#------------------------------------пистолет-пулемёт----------     
+- type: Tag
+  id: PetrSMG
+
+- type: entity
+  name: Петрищевский пистолет-пулемёт "Коллективист"
+  suffix: Петрищев
+  parent: BaseWeaponSubMachineGun
+  id: PetrSMG
+  description: Маленький и удобный пистолет-пулемёт Петрищевцев, который легко пронести под одеждой. Прекрасно подходит для наведения шороха! Использует патроны .32
+  components:
+    - type: Sprite
+      sprite: Corvax/Lore/Petr/Weapon/petr_smg.rsi
+      layers:
+        - state: base
+          map: ["enum.GunVisualLayers.Base"]
+        - state: mag-0
+          map: ["enum.GunVisualLayers.Mag"]
+    - type: Clothing
+      sprite: Corvax/Lore/Petr/Weapon/petr_smg.rsi
+    - type: Gun
+      fireRate: 6
+      selectedMode: FullAuto
+      soundGunshot:
+        path: /Audio/Weapons/Guns/Gunshots/atreides.ogg
+      availableModes:
+        - FullAuto
+    - type: ItemSlots
+      slots:
+        gun_magazine:
+          name: Magazine
+          startingItem: PetrMagazineSMG
+          insertSound: /Audio/Weapons/Guns/MagIn/smg_magin.ogg
+          ejectSound: /Audio/Weapons/Guns/MagOut/smg_magout.ogg
+          priority: 2
+          whitelist:
+            tags:
+              - PetrMagazineSMG
+        gun_chamber:
+          name: Chamber
+          startingItem: PetrCartridgePistol
+          priority: 1
+          whitelist:
+            tags:
+              - PetrCartridgePistol
+    - type: MagazineVisuals
+      magState: mag
+      steps: 1
+      zeroVisible: true
+    - type: Appearance
+    - type: Tag
+      tags:
+        - PetrSMG
+#------------------------------------автомат----------     
+- type: Tag
+  id: PetrLightRifle
+
+- type: entity
+  name: Петрищевский автомат "Повстанец"
+  suffix: Петрищев
+  parent: BaseWeaponRifle
+  id: PetrLightRifle
+  description: Маленький и лёгкий. Очень удобный и надёжный. Использует петрищевские патроны .27
+  components:
+  - type: Sprite
+    sprite: Corvax/Lore/Petr/Weapon/petr_automat.rsi
+    layers:
+      - state: base
+        map: ["enum.GunVisualLayers.Base"]
+      - state: mag-0
+        map: ["enum.GunVisualLayers.Mag"]
+  - type: Item
+    size: Large
+  - type: Clothing
+    sprite: Corvax/Lore/Petr/Weapon/petr_automat.rsi
+  - type: Gun
+    fireRate: 5
+    soundGunshot:
+      path: /Audio/Weapons/Guns/Gunshots/rifle2.ogg
+  - type: ChamberMagazineAmmoProvider
+    soundRack:
+      path: /Audio/Weapons/Guns/Cock/ltrifle_cock.ogg
+  - type: ItemSlots
+    slots:
+      gun_magazine:
+        name: Magazine
+        startingItem: PetrMagazineRifle
+        insertSound: /Audio/Weapons/Guns/MagIn/ltrifle_magin.ogg
+        ejectSound: /Audio/Weapons/Guns/MagOut/ltrifle_magout.ogg
+        priority: 2
+        whitelist:
+          tags:
+            - PetrMagazineRifle
+      gun_chamber:
+        name: Chamber
+        startingItem: PetrCartridgeRifle
+        priority: 1
+        whitelist:
+          tags:
+            - PetrCartridgeRifle
+  - type: ContainerContainer
+    containers:
+      gun_magazine: !type:ContainerSlot
+      gun_chamber: !type:ContainerSlot
+  - type: MagazineVisuals
+    magState: mag
+    steps: 1
+    zeroVisible: true
+  - type: Appearance
+  - type: StaticPrice
+    price: 750
+  - type: Tag
+    tags:
+      - PetrLightRifle
+#-----------------------------------пулемёт------------------------------------
+- type: Tag
+  id: PetrWeaponLMG
+
+- type: entity
+  name: Пулемёт "Товарищ Петрищев"
+  suffix: Петрищев
+  id: PetrWeaponLMG
+  parent: BaseWeaponLightMachineGun
+  description: Здоровый и мощный пулемёт, что несёт смерть в узких проходах и гремит, как речи самого товарища Петрищева! Питается патронами .27
+  components:
+  - type: Sprite
+    sprite: Corvax/Lore/Petr/Weapon/petr_lmg.rsi
+    layers:
+    - state: base
+      map: ["enum.GunVisualLayers.Base"]
+    - state: mag-3
+      map: ["enum.GunVisualLayers.Mag"]
+  - type: MagazineVisuals
+    magState: mag
+    steps: 4
+    zeroVisible: true
+  - type: Appearance   
+  - type: ItemSlots
+    slots:
+      gun_magazine:
+        name: Magazine
+        startingItem: PetrMagazineRifleBox
+        insertSound: /Audio/Weapons/Guns/MagIn/batrifle_magin.ogg
+        ejectSound: /Audio/Weapons/Guns/MagOut/batrifle_magout.ogg
+        priority: 2
+        whitelist:
+          tags:
+            - PetrMagazineRifleBox
+      gun_chamber:
+        name: Chamber
+        startingItem: PetrCartridgeRifle
+        priority: 1
+        whitelist:
+          tags:
+            - PetrCartridgeRifle  
+  - type: Tag
+    tags:
+      - PetrWeaponLMG
+#----------------------- дробовик----------------------  
+- type: Tag
+  id: PetrWeaponShotgun
+
+- type: entity
+  name: Петрищевский дробовик "Старатель"
+  suffix: Петрищев
+  parent: BaseWeaponRifle
+  id: PetrWeaponShotgun
+  description: Небольшой и скорострельный дробовик, который можно перевозить большими партиями и быстро (и дёшево) производить. Использует заряды .50 калибра.
+  components:
+  - type: Sprite
+    sprite: Corvax/Lore/Petr/Weapon/petr_shotgun.rsi
+    layers:
+      - state: base
+        map: ["enum.GunVisualLayers.Base"]
+      - state: mag-0
+        map: ["enum.GunVisualLayers.Mag"]
+  - type: Item
+    size: Large
+  - type: Clothing
+    sprite: Corvax/Lore/Petr/Weapon/petr_shotgun.rsi
+  - type: Gun
+    fireRate: 3
+    soundGunshot:
+      path: /Audio/Corvax/Weapons/Guns/Gunshots/shotgun_auto.ogg
+  - type: ChamberMagazineAmmoProvider
+    soundRack:
+      path: /Audio/Weapons/Guns/Cock/ltrifle_cock.ogg
+  - type: ItemSlots
+    slots:
+      gun_magazine:
+        name: Magazine
+        startingItem: PetrMagazineShotgun
+        insertSound: /Audio/Weapons/Guns/MagIn/smg_magin.ogg
+        ejectSound: /Audio/Weapons/Guns/MagOut/smg_magout.ogg
+        priority: 2
+        whitelist:
+          tags:
+            - PetrMagazineShotgun
+      gun_chamber:
+        name: Chamber
+        startingItem: ShellShotgun
+        priority: 1
+        whitelist:
+          tags:
+            - ShellShotgun
+  - type: ContainerContainer
+    containers:
+      gun_magazine: !type:ContainerSlot
+      gun_chamber: !type:ContainerSlot
+  - type: MagazineVisuals
+    magState: mag
+    steps: 1
+    zeroVisible: true
+  - type: Appearance
+  - type: StaticPrice
+    price: 750
+  - type: Tag
+    tags:
+      - PetrWeaponShotgun
+#--------------------------------------------коробки с патронами------------------------------------
+#------------------------------базовая коробка----------------
+- type: entity
+  abstract: true
+  parent: BaseItem
+  id: BasePetrBox
+  components:
+  - type: BallisticAmmoProvider
+    mayTransfer: true
+    whitelist:
+      tags:
+        - PetrCartridgeRifle
+        - PetrCartridgePistol
+        - PetrCartridgeRevolver
+    proto: PetrCartridgeRifle
+    capacity: 100
+  - type: Item
+    size: Small
+  - type: ContainerContainer
+    containers:
+      ballistic-ammo: !type:Container
+  - type: Sprite
+    sprite: Corvax/Lore/Petr/Weapon/petr_box_ammo.rsi
+  - type: Appearance
+#------------------------------винтовочные----------------
+- type: Tag
+  id: PetrBoxRifle
+
+- type: entity
+  parent: BasePetrBox
+  id: PetrBoxRifle
+  name: Коробка винтовочных патронов .27
+  suffix: Петрищев
+  description: Коробка на 60 патронов .27 к петрищевскому автомату "Повстанец" и пулемёту "Товарищ Петрищев"
+  components:
+  - type: BallisticAmmoProvider
+    capacity: 60
+    proto: PetrCartridgeRifle
+  - type: Sprite
+    layers:
+    - state: rifle
+      map: ["enum.GunVisualLayers.Base"]
+    - state: mag-1
+      map: ["enum.GunVisualLayers.Mag"]
+    zeroVisible: false
+  - type: Tag
+    tags:
+      - PetrBoxRifle
+#------------------------------револьверные----------------
+- type: Tag
+  id: PetrBoxRevolver
+
+
+- type: entity
+  parent: BasePetrBox
+  id: PetrBoxRevolver
+  name: Коробка револьверных патронов .40 
+  suffix: Петрищев
+  description: Коробка на 49 патронов к револьверу петрищевцев "Троцкий" калибра .40
+  components:
+  - type: BallisticAmmoProvider
+    capacity: 49
+    proto: PetrCartridgeRevolver
+  - type: Sprite
+    layers:
+    - state: revolver
+      map: ["enum.GunVisualLayers.Base"]
+    - state: mag-0
+      map: ["enum.GunVisualLayers.Mag"]
+    zeroVisible: false
+  - type: Tag
+    tags:
+      - PetrBoxRevolver
+#------------------------------пистолетные----------------      
+- type: Tag
+  id: PetrBoxPistol
+
+
+- type: entity
+  parent: BasePetrBox
+  id: PetrBoxPistol
+  name: Коробка пистолетных патронов .32
+  suffix: Петрищев
+  description: Коробка на 92 патронов .32 к петрищевскому пистолету "Горький" и пистолет-пулемёту "Коллективист"
+  components:
+  - type: BallisticAmmoProvider
+    capacity: 92
+    proto: PetrCartridgePistol
+  - type: Sprite
+    layers:
+    - state: pistol
+      map: ["enum.GunVisualLayers.Base"]
+    - state: mag-1
+      map: ["enum.GunVisualLayers.Mag"]
+    zeroVisible: false  
+  - type: Tag
+    tags:
+      - PetrBoxPistol   
+#------------------------------------------КПК, карты, доступы и шлюзы----------------------------------------    
+#------------------------------------------доступы и шлюзы---------------------------------------- 
+#------------------------------------доступ----------  
+- type: accessLevel
+  id: PetrAccess
+  name: accessl-petr
+#------------------------------------закрытый шлюз солдат---------- 
+- type: entity
+  parent: DoorElectronics
+  id: DoorElectronicsPetrAccess
+  suffix: Петрищев, Locked
+  components:
+  - type: AccessReader
+    access: [["PetrAccess"]]
+
+- type: entity
+  parent: Airlock
+  id: PetrAirlockSolderLocked
+  name: Шлюз
+  suffix: Петрищев, Locked
+  description: Он открывается, он закрывается, он может вас раздавить
+  components:
+  - type: ContainerFill
+    containers:
+      board: [ DoorElectronicsPetrAccess ]
+  - type: Sprite
+    sprite: Corvax/Lore/Petr/petr_airlock.rsi
+#------------------------------------свободный шлюз солдат---------- 
+- type: entity
+  parent: Airlock
+  id: PetrAirlockSolder
+  name: Шлюз
+  suffix: Петрищев
+  description: Он открывается, он закрывается, он может вас раздавить
+  components:
+  - type: Sprite
+    sprite: Corvax/Lore/Petr/petr_airlock.rsi
+#------------------------------------закрытый стеклянный шлюз солдат---------- 
+- type: entity
+  parent: AirlockGlass
+  id: PetrAirlockSolderLockedGlass
+  name: Стеклянный шлюз
+  suffix: Петрищев, Locked
+  description: Он открывается, он закрывается, он может вас раздавить
+  components:
+  - type: ContainerFill
+    containers:
+      board: [ DoorElectronicsPetrAccess ]
+  - type: Sprite
+    sprite: Corvax/Lore/Petr/petr_airlock_glass.rsi
+  - type: PaintableAirlock
+    group: Glass
+#------------------------------------свободный стеклянный шлюз солдат----------
+- type: entity
+  parent: AirlockGlass
+  id: PetrAirlockGlass
+  name: Стеклянный шлюз
+  suffix: Петрищев
+  description: Он открывается, он закрывается, он может вас раздавить
+  components:
+  - type: Sprite
+    sprite: Corvax/Lore/Petr/petr_airlock_glass.rsi
+  - type: PaintableAirlock
+    group: Glass  
+#------------------------------------стыковочный---------- 
+- type: entity
+  parent: AirlockExternalShuttleLocked
+  name: Стыковочный шлюз
+  id: PetrAirlockShuttleEasyPryLocked
+  suffix: Петрищев
+  description: Чтобы успешно прилепиться к космическим объектам.
+  components:
+  - type: PryUnpowered
+  - type: AccessReader
+    access: [["PetrAccess"]]
+#------------------------------------------КПК, карты----------------------------------------  
+#------------------------------------стандарт карты---------- 
+- type: entity
+  parent: Clothing
+  id: PetrIDCard
+  suffix: Петрищев
+  name: Карта итендификации личности боевика Петрищевцев
+  description: Данная карта служит в роли электронного пропуска на объектах Петрищевцев
+  abstract: true
+  components:
+  - type: Sprite
+    sprite: Corvax/Lore/Petr/Equipment/petr_id_cards.rsi
+  - type: Clothing
+    slots:
+    - idcard
+    sprite: Corvax/Lore/Petr/Equipment/petr_id_cards.rsi
+  - type: Item
+    size: Small
+    heldPrefix: default
+    storedRotation: -90
+  - type: Access
+  - type: IdCard
+  - type: StationRecordKeyStorage
+  - type: Tag
+    tags:
+    - DoorBumpOpener
+    - WhitelistChameleon
+  - type: StealTarget
+    stealGroup: IDCard    
+#------------------------------------карта рядового---------- 
+- type: entity
+  parent: PetrIDCard
+  id: PetrIDCardSold
+  name: ID-карта рядового боевика Петрищевцев
+  suffix: Петрищев
+  components:
+  - type: Sprite
+    layers:
+    - state: default
+    - state: sol
+  - type: PresetIdCard
+    job: PetrMen
+#------------------------------------карта командира----------    
+- type: entity
+  parent: PetrIDCard
+  id: PetrIDCardOffi
+  name: ID-карта командира Петрищевцев
+  suffix: Петрищев
+  components:
+  - type: Sprite
+    layers:
+    - state: default
+    - state: ofi
+  - type: PresetIdCard
+    job: PetrMen
+#------------------------------------стандарт КПК---------- 
+- type: entity
+  abstract: true
+  parent: BasePDA
+  id: PetrPDA
+  name: КПК Петрищевцев
+  description: Простой, революционный, со смыслом...
+  components:
+  - type: Appearance
+  - type: Sprite
+    sprite: Corvax/Lore/Petr/Equipment/petr_pda.rsi
+    layers:
+    - map: [ "enum.PdaVisualLayers.Base" ]
+    - state: "light_overlay"
+      map: [ "enum.PdaVisualLayers.Flashlight" ]
+      shader: "unshaded"
+      visible: false
+    - state: "id_overlay"
+      map: [ "enum.PdaVisualLayers.IdLight" ]
+      shader: "unshaded"
+      visible: false
+  - type: Icon
+    sprite: Corvax/Lore/Petr/Equipment/petr_pda.rsi
+    state: pda
+#------------------------------------КПК солдата----------    
+- type: entity
+  parent: PetrPDA
+  id: PetrPDASold
+  suffix: Петрищев, рядовой
+  components:
+    - type: Pda
+      id: PetrIDCardSold
+      state: pda
+    - type: Icon
+      sprite: Corvax/Lore/Petr/Equipment/petr_pda.rsi
+      state: pda
+#------------------------------------КПК командир----------       
+- type: entity
+  parent: PetrPDA
+  id: PetrPDAOffi
+  suffix: Петрищев, Командир
+  components:
+    - type: Pda
+      id: PetrIDCardOffi
+      state: pda
+    - type: Icon
+      sprite: Corvax/Lore/Petr/Equipment/petr_pda.rsi
+      state: pda      
+#------------------------------------------связь----------------------------------------  
+#-----------------------------канал----------------------------------------  
+- type: radioChannel
+  id: PetrRadio
+  name: Петрищев
+  keycode: 'в' 
+  frequency: 1917
+  color: "#d20000"
+  longRange: true
+#-------------------------------------------------------------------ключи---------------------------------------------------------------------
+#-----------------------------стандарт ключа----------------------------------------   
+- type: entity
+  abstract: true
+  parent: BaseItem
+  id: PetrBaseEncryptionKey
+  name: encryption key
+  description: Небольшой чип для шифрования и дешифровки связи.
+  components:
+  - type: EncryptionKey
+    channels:
+    - PetrRadio
+    defaultChannel: PetrRadio
+  - type: Item
+    sprite: Corvax/Lore/Petr/Equipment/petr_encryption_keys.rsi
+  - type: Sprite
+    sprite: Corvax/Lore/Petr/Equipment/petr_encryption_keys.rsi
+  - type: StealTarget
+    stealGroup: EncryptionKey   
+#-----------------------------ключ шифрования----------------------------------------      
+- type: entity
+  parent: PetrBaseEncryptionKey
+  id: PetrEncryptionKey
+  suffix: Петрищев
+  name: Ключ шифрования боевиков-Петрищевцев
+  description: Используется для шифрования и дешифровки общего армейского канала связи Петрищевцев
+  components:
+  - type: EncryptionKey
+    channels:
+    - PetrRadio
+    defaultChannel: PetrRadio
+  - type: Sprite
+    layers:
+    - state: crypt_gray
+    - state: label_com 
+#-----------------------------гарнитура----------------------------------------  
+- type: entity
+  parent: ClothingHeadset
+  id: PetrHeadset
+  name: Гарнитура боевика Петрищевцев
+  suffix: Петрищев
+  components:
+  - type: ContainerFill
+    containers:
+      key_slots:
+      - PetrEncryptionKey
+  - type: Sprite
+    sprite: Corvax/Lore/Petr/Equipment/petr_garniture.rsi
+  - type: Clothing
+    sprite: Corvax/Lore/Petr/Equipment/petr_garniture.rsi
+#-----------------------------------------------------роли, полные сумки и гиры------------------------------------------------------  
+#--------------------------------------------роли------------------------------------  
+#------------------------------------боевик--------------------- 
+- type: playTimeTracker
+  id: JobEventPetr
+
+- type: job
+  id: PetrMen
+  name: Боевик Петрищевцев
+  description: job-petr
+  playTimeTracker: JobEventPetr
+  startingGear: PetrEfreitorGear
+  supervisors: job-supervisors-everyone
+  canBeAntag: false
+  access:
+  - PetrAccess
+  - External
+#--------------------------------------------сумки------------------------------------  
+#------------------------------------без оружия--------------------- 
+- type: entity
+  parent: PetrBackpack
+  id: PetrBackpackFilledEmpty
+  suffix: Петрищев, Без оружия
+  components:
+  - type: StorageFill
+    contents:
+      - id: PetrHelmet
+      - id: ClothingMaskGas
+      - id: FoodTinMRE
+      - id: DrinkWaterBottleFull
+      - id: Gauze
+      - id: OxygenTankFilled
+      - id: NitrogenTankFilled
+#------------------------------------пистолет--------------------- 
+- type: entity
+  parent: PetrBackpack
+  id: PetrBackpackFilledPistol
+  suffix: Петрищев, Пистолет
+  components:
+  - type: StorageFill
+    contents:
+      - id: PetrHelmet
+      - id: PetrMagazinePistol
+      - id: PetrMagazinePistol
+      - id: PetrMagazinePistol
+      - id: PetrPistol
+      - id: ClothingMaskGas
+      - id: FoodTinMRE
+      - id: DrinkWaterBottleFull
+      - id: Gauze
+      - id: OxygenTankFilled
+      - id: NitrogenTankFilled
+#------------------------------------револьвер--------------------- 
+- type: entity
+  parent: PetrBackpack
+  id: PetrBackpackFilledRevolver
+  suffix: Петрищев, Револьвер
+  components:
+  - type: StorageFill
+    contents:
+      - id: PetrHelmet
+      - id: PetrBoxRevolver
+      - id: PetrWeaponRevolver
+      - id: PetrSpeedLoader
+      - id: ClothingMaskGas
+      - id: FoodTinMRE
+      - id: DrinkWaterBottleFull
+      - id: Gauze
+      - id: OxygenTankFilled
+      - id: NitrogenTankFilled
+#------------------------------------ПП--------------------- 
+- type: entity
+  parent: PetrBackpack
+  id: PetrBackpackFilledSMG
+  suffix: Петрищев, ПП
+  components:
+  - type: StorageFill
+    contents:
+      - id: PetrHelmet
+      - id: PetrSMG
+      - id: PetrMagazineSMG
+      - id: PetrMagazineSMG
+      - id: PetrMagazineSMG
+      - id: ClothingMaskGas
+      - id: FoodTinMRE
+      - id: DrinkWaterBottleFull
+      - id: Gauze
+      - id: OxygenTankFilled
+      - id: NitrogenTankFilled
+#------------------------------------автомат--------------------- 
+- type: entity
+  parent: PetrBackpack
+  id: PetrBackpackFilledRifle
+  suffix: Петрищев, Автомат
+  components:
+  - type: StorageFill
+    contents:
+      - id: PetrHelmet
+      - id: PetrLightRifle
+      - id: PetrMagazineRifle
+      - id: PetrMagazineRifle
+      - id: PetrMagazineRifle
+      - id: ClothingMaskGas
+      - id: FoodTinMRE
+      - id: DrinkWaterBottleFull
+      - id: Gauze
+      - id: OxygenTankFilled
+      - id: NitrogenTankFilled
+#------------------------------------пулемёт--------------------- 
+- type: entity
+  parent: PetrBackpack
+  id: PetrBackpackFilledLMG
+  suffix: Петрищев, Пулемёт
+  components:
+  - type: StorageFill
+    contents:
+      - id: PetrHelmet
+      - id: PetrWeaponLMG
+      - id: PetrMagazineRifleBox
+      - id: ClothingMaskGas
+      - id: FoodTinMRE
+      - id: DrinkWaterBottleFull
+      - id: Gauze
+      - id: OxygenTankFilled
+      - id: NitrogenTankFilled
+#------------------------------------дробовик--------------------- 
+- type: entity
+  parent: PetrBackpack
+  id: PetrBackpackFilledShotgun
+  suffix: Петрищев, Дробовик
+  components:
+  - type: StorageFill
+    contents:
+      - id: PetrHelmet
+      - id: PetrWeaponShotgun
+      - id: PetrMagazineShotgun
+      - id: PetrMagazineShotgun
+      - id: PetrMagazineShotgun
+      - id: ClothingMaskGas
+      - id: FoodTinMRE
+      - id: DrinkWaterBottleFull
+      - id: Gauze
+      - id: OxygenTankFilled
+      - id: NitrogenTankFilled
+#------------------------------------подрывник--------------------- 
+- type: entity
+  parent: PetrBackpack
+  id: PetrBackpackFilledBomb
+  suffix: Петрищев, Подрывник
+  components:
+  - type: StorageFill
+    contents:
+      - id: PetrHelmet
+      - id: PetrExGrenade
+      - id: PetrExGrenade
+      - id: PetrSmokeGrenade
+      - id: PetrSmokeGrenade
+      - id: PetrSmokeGrenade
+      - id: C4
+      - id: C4
+      - id: ClothingMaskGas
+      - id: FoodTinMRE
+      - id: DrinkWaterBottleFull
+      - id: Gauze
+      - id: OxygenTankFilled
+      - id: NitrogenTankFilled
+#-----------------------------------------------гиры---------------------------------------
+#------------------------------------новичёк----------  
+- type: startingGear
+  id: PetrNovGear
+  equipment:
+    jumpsuit: PetrUniform
+    back: PetrBackpackFilledSMG
+    shoes: PetrBoots
+    head: PetrCapP
+    outerClothing: PetrArmorBasic
+    id: PetrPDASold
+    ears: PetrHeadset
+    belt: PetrBeltSoldFilled
+    pocket1: PetrPaperNov
+#------------------------------------боевик---------- 
+- type: startingGear
+  id: PetrSoldGear
+  equipment:
+    jumpsuit: PetrUniform
+    back: PetrBackpackFilledRifle
+    shoes: PetrBoots
+    head: PetrCapP
+    outerClothing: PetrArmorMid
+    id: PetrPDASold
+    ears: PetrHeadset
+    belt: PetrBeltSoldFilled
+    pocket1: PetrPaperSold
+#------------------------------------специалист-инженер---------- 
+- type: startingGear
+  id: PetrSpecGear
+  equipment:
+    jumpsuit: PetrUniform
+    back: PetrBackpackFilledShotgun
+    shoes: PetrBoots
+    head: PetrCapP
+    outerClothing: PetrArmorBasic
+    id: PetrPDASold
+    ears: PetrHeadset
+    belt: PetrBeltSpecFilledEng
+    pocket1: PetrPaperSpecEng
+#------------------------------------специалист-подрывник---------- 
+- type: startingGear
+  id: PetrSaperGear
+  equipment:
+    jumpsuit: PetrUniform
+    back: PetrBackpackFilledBomb
+    shoes: PetrBoots
+    head: PetrCapP
+    outerClothing: PetrArmorMid
+    id: PetrPDASold
+    ears: PetrHeadset
+    belt: PetrBeltSpecFilledExp
+    pocket1: PetrPaperSpecSap
+#------------------------------------командир----------  
+- type: startingGear
+  id: PetrOffiGear
+  equipment:
+    jumpsuit: PetrUniform
+    back: PetrBackpackFilledRevolver
+    shoes: PetrBoots
+    head: PetrCapP
+    neck: PetrCloak
+    outerClothing: PetrArmorBasic
+    id: PetrPDAOffi
+    ears: PetrHeadset
+    belt: PetrBeltSoldFilled
+    pocket1: PetrPaperOffi
+    pocket2: PetrRubberStamp
+#------------------------------------Серп----------  
+- type: startingGear
+  id: PetrSerpGear
+  equipment:
+    jumpsuit: PetrUniform
+    back: PetrBackpackFilledRifle
+    shoes: PetrBoots
+    head: PetrCapP
+    outerClothing: PetrHardsuitSerp
+    id: PetrPDASold
+    ears: PetrHeadset
+    belt: PetrBeltSpecFilled
+    pocket1: PetrPaperSerp
+#------------------------------------Молот----------  
+- type: startingGear
+  id: PetrMolotGear
+  equipment:
+    jumpsuit: PetrUniform
+    back: PetrBackpackFilledLMG
+    shoes: PetrBoots
+    head: PetrCapP
+    outerClothing: PetrHardsuitMolot
+    id: PetrPDASold
+    ears: PetrHeadset
+    belt: PetrBeltSoldFilled
+    pocket1: PetrPaperMolot
+#---------------------------------------------------спавнеры------------------------------------------------
+#-------------------------------------------Имена-------------------------------------
+#---------------------------------Новобранец----------
+- type: dataset
+  id: PetrName-nov
+  values:
+  - Пионер
+#---------------------------------Товарищ----------
+- type: dataset
+  id: PetrName-tov
+  values:
+  - Товарищ
+#---------------------------------Ветеран----------
+- type: dataset
+  id: PetrName-vet
+  values:
+  - Старший Товарищ
+#---------------------------------Командир----------
+- type: dataset
+  id: PetrName-com
+  values:
+  - Командир
+#---------------------------------фамилии----------
+- type: dataset
+  id: PetrNameTwo
+  values:
+  - Киров
+  - Железин
+  - Левин
+  - Гевара
+  - Молотов
+  - Серпов
+  - Ежов
+  - Ягода
+  - Марксненко
+  - Либерти
+  - Комрадин
+  - Союзнов
+  - Правдин
+  - Горячев
+  - Огнесердцен
+#-------------------------------------хуй знает что это, но вот оно работает и ладно---------------------------
+#---------------------------------новобранец----------
+- type: randomHumanoidSettings
+  speciesBlacklist: 
+    - Diona
+    - Arachnid
+  id: PetrNovob
+  randomizeName: false
+  components:
+    - type: GhostRole
+      name: Гост-роль новобранца Петрищевцев
+      description: "Вы боевик-новобранец Петрищевцев. Исполняйте приказы своего командира и воюте, как последний раз. Мировая Коммунистическая революция в ВАШИХ руках!"
+    - type: GhostTakeoverAvailable
+    - type: Loadout
+      prototypes: [ PetrNovGear ]
+    - type: RandomMetadata
+      nameSegments:
+      - PetrName-nov
+      - PetrNameTwo
+
+- type: randomHumanoidSettings
+  id: PetrNovobReady
+  parent: PetrNovob
+  components:
+    - type: GhostRole
+      allowMovement: true
+      allowSpeech: true
+      makeSentient: true
+      name: Новобранец Петрищевцев
+      description: "Вы боевик-новобранец Петрищевцев. Исполняйте приказы своего командира и воюте, как последний раз. Мировая Коммунистическая революция в ВАШИХ руках!"
+    - type: GhostTakeoverAvailable
+    - type: MobThresholds
+      thresholds:
+        0: Alive
+        100: Critical
+        200: Dead
+    - type: Stamina
+      excess: 380
+    - type: Loadout
+      prototypes: [ PetrNovGear ]
+  
+- type: entity
+  name: Спавнер новобранца Петрищевцев
+  suffix: GOST, Петрищев
+  id: PetrMobHumanNovob
+  components:
+  - type: Sprite
+    sprite: Markers/jobs.rsi
+    state: security_cadet
+  - type: RandomHumanoidAppearance
+    randomizeName: false
+  - type: RandomMetadata
+    nameSegments:
+    - PetrName-nov
+    - PetrNameTwo
+  - type: RandomHumanoidSpawner
+    settings: PetrNovob
+#---------------------------------боевик----------
+- type: randomHumanoidSettings
+  speciesBlacklist: 
+    - Diona
+    - Arachnid
+  id: PetrBoevi
+  randomizeName: false
+  components:
+    - type: GhostRole
+      name: Гост-роль боевика Петрищевцев
+      description: "Вы боевик Петрищевцев. Исполняйте приказы своего командира и воюте лучше всех! От ваших действий зависит близость Общегалактической свободы пролеториата от угнетателей!"
+    - type: GhostTakeoverAvailable
+    - type: Loadout
+      prototypes: [ PetrSoldGear ]
+    - type: RandomMetadata
+      nameSegments:
+      - PetrName-tov
+      - PetrNameTwo
+
+- type: randomHumanoidSettings
+  id: PetrBoeviReady
+  parent: PetrBoevi
+  components:
+    - type: GhostRole
+      allowMovement: true
+      allowSpeech: true
+      makeSentient: true
+      name: Боевик Петрищевцев
+      description: "Вы боевик Петрищевцев. Исполняйте приказы своего командира и воюте лучше всех! От ваших действий зависит близость Общегалактической свободы пролеториата от угнетателей!"
+    - type: GhostTakeoverAvailable
+    - type: MobThresholds
+      thresholds:
+        0: Alive
+        105: Critical
+        200: Dead
+    - type: Stamina
+      excess: 380
+    - type: Loadout
+      prototypes: [ PetrSoldGear ]
+  
+- type: entity
+  name: Спавнер боевика Петрищевцев
+  suffix: GOST, Петрищев
+  id: PetrMobHumanBoevi
+  components:
+  - type: Sprite
+    sprite: Markers/jobs.rsi
+    state: security_officer
+  - type: RandomHumanoidAppearance
+    randomizeName: false
+  - type: RandomMetadata
+    nameSegments:
+    - PetrName-tov
+    - PetrNameTwo
+  - type: RandomHumanoidSpawner
+    settings: PetrBoevi
+#---------------------------------специалист-инженер----------
+- type: randomHumanoidSettings
+  speciesBlacklist: 
+    - Diona
+    - Arachnid
+  id: PetrCpeci
+  randomizeName: false
+  components:
+    - type: GhostRole
+      name: Гост-роль инженера Петрищевцев
+      description: "Вы боевик-инженер Петрищевцев. Исполняйте приказы своего командира и будьте самым умным! От ваших действий зависит созранение жизни ваших товарищей, что несут идеалы Коммунизма с оружием в руках!"
+    - type: GhostTakeoverAvailable
+    - type: Loadout
+      prototypes: [ PetrSpecGear ]
+    - type: RandomMetadata
+      nameSegments:
+      - PetrName-tov
+      - PetrNameTwo
+
+- type: randomHumanoidSettings
+  id: PetrSpeciReady
+  parent: PetrCpeci
+  components:
+    - type: GhostRole
+      allowMovement: true
+      allowSpeech: true
+      makeSentient: true
+      name: Инженер Петрищевцев
+      description: "Вы боевик-инженер Петрищевцев. Исполняйте приказы своего командира и будьте самым умным! От ваших действий зависит созранение жизни ваших товарищей, что несут идеалы Коммунизма с оружием в руках!"
+    - type: GhostTakeoverAvailable
+    - type: MobThresholds
+      thresholds:
+        0: Alive
+        100: Critical
+        210: Dead
+    - type: Stamina
+      excess: 380
+    - type: Loadout
+      prototypes: [ PetrSpecGear ]
+  
+- type: entity
+  name: Спавнер инженер Петрищевцев
+  suffix: GOST, Петрищев
+  id: PetrMobHumanSpeci
+  components:
+  - type: Sprite
+    sprite: Markers/jobs.rsi
+    state: engineer
+  - type: RandomHumanoidAppearance
+    randomizeName: false
+  - type: RandomMetadata
+    nameSegments:
+    - PetrName-tov
+    - PetrNameTwo
+  - type: RandomHumanoidSpawner
+    settings: PetrCpeci
+#---------------------------------специалист-подрывник----------
+- type: randomHumanoidSettings
+  speciesBlacklist: 
+    - Diona
+    - Arachnid
+  id: PetrSaper
+  randomizeName: false
+  components:
+    - type: GhostRole
+      name: Гост-роль подрывника Петрищевцев
+      description: "Вы боевик-подрывник Петрищевцев. Исполняйте приказы своего командира и будьте самым уничтожающим! От ваших действий зависит как долго капиталистические наймиты будут портить галактику своим присутствием!"
+    - type: GhostTakeoverAvailable
+    - type: Loadout
+      prototypes: [ PetrSaperGear ]
+    - type: RandomMetadata
+      nameSegments:
+      - PetrName-tov
+      - PetrNameTwo
+
+# Код написал Crazzy_pingvin
+- type: randomHumanoidSettings
+  id: PetrSaperReady
+  parent: PetrSaper
+  components:
+    - type: GhostRole
+      allowMovement: true
+      allowSpeech: true
+      makeSentient: true
+      name: Подрывник Петрищевцев
+      description: "Вы боевик-подрывник Петрищевцев. Исполняйте приказы своего командира и будьте самым уничтожающим! От ваших действий зависит как долго капиталистические наймиты будут портить галактику своим присутствием!"
+    - type: GhostTakeoverAvailable
+    - type: MobThresholds
+      thresholds:
+        0: Alive
+        100: Critical
+        210: Dead
+    - type: Stamina
+      excess: 380
+    - type: Loadout
+      prototypes: [ PetrSaperGear ]
+  
+- type: entity
+  name: Спавнер подрывник Петрищевцев
+  suffix: GOST, Петрищев
+  id: PetrMobHumanSaper
+  components:
+  - type: Sprite
+    sprite: Markers/jobs.rsi
+    state: cburn
+  - type: RandomHumanoidAppearance
+    randomizeName: false
+  - type: RandomMetadata
+    nameSegments:
+    - PetrName-tov
+    - PetrNameTwo
+  - type: RandomHumanoidSpawner
+    settings: PetrSaper
+#---------------------------------командир----------
+- type: randomHumanoidSettings
+  speciesBlacklist: 
+    - Diona
+    - Arachnid
+  id: PetrOffi
+  randomizeName: false
+  components:
+    - type: GhostRole
+      name: Гост-роль командира Петрищевцев
+      description: "Вы командир Петрищевцев. Будьте лидером! Несите коммунистические идеалы, координируйте работу своих людей. Совершите самый хитрый налёт или самый опасный терракт в этой Галактике! Всё что угодно во славу Коммунизма!"
+    - type: GhostTakeoverAvailable
+    - type: Loadout
+      prototypes: [ PetrOffiGear ]
+    - type: RandomMetadata
+      nameSegments:
+      - PetrName-com
+      - PetrNameTwo
+
+- type: randomHumanoidSettings
+  id: PetrOffiReady
+  parent: PetrOffi
+  components:
+    - type: GhostRole
+      allowMovement: true
+      allowSpeech: true
+      makeSentient: true
+      name: Командир Петрищевцев
+      description: "Вы командир Петрищевцев. Будьте лидером! Несите коммунистические идеалы, координируйте работу своих людей. Совершите самый хитрый налёт или самый опасный терракт в этой Галактике! Всё что угодно во славу Коммунизма!"
+    - type: GhostTakeoverAvailable
+    - type: MobThresholds
+      thresholds:
+        0: Alive
+        105: Critical
+        210: Dead
+    - type: Stamina
+      excess: 380
+    - type: Loadout
+      prototypes: [ PetrOffiGear ]
+  
+- type: entity
+  name: Спавнер командира Петрищевцев
+  suffix: GOST, Петрищев
+  id: PetrMobHumanOffi
+  components:
+  - type: Sprite
+    sprite: Markers/jobs.rsi
+    state: hos
+  - type: RandomHumanoidAppearance
+    randomizeName: false
+  - type: RandomMetadata
+    nameSegments:
+    - PetrName-com
+    - PetrNameTwo
+  - type: RandomHumanoidSpawner
+    settings: PetrOffi
+#---------------------------------Серп----------
+- type: randomHumanoidSettings
+  speciesBlacklist: 
+    - Diona
+    - Arachnid
+  id: PetrSerp
+  randomizeName: false
+  components:
+    - type: GhostRole
+      name: Гост-роль оператора "Серп" Петрищевцев
+      description: "Вы оператор Серп Петрищевцев. Исполняйте приказы своего командира и будьте самым быстрым! От ваших действий зависит как скоро ваши силы прорвут оборону противника! Станьте настоящими призраками коммунизма!"
+    - type: GhostTakeoverAvailable
+    - type: Loadout
+      prototypes: [ PetrSerpGear ]
+    - type: RandomMetadata
+      nameSegments:
+      - PetrName-vet
+      - PetrNameTwo
+
+- type: randomHumanoidSettings
+  id: PetrSerpReady
+  parent: PetrSerp
+  components:
+    - type: GhostRole
+      allowMovement: true
+      allowSpeech: true
+      makeSentient: true
+      name: Оператор "Серп" Петрищевцев
+      description: "Вы оператор Серп Петрищевцев. Исполняйте приказы своего командира и будьте самым быстрым! От ваших действий зависит как скоро ваши силы прорвут оборону противника! Станьте настоящими призраками коммунизма!"
+    - type: GhostTakeoverAvailable
+    - type: MobThresholds
+      thresholds:
+        0: Alive
+        110: Critical
+        210: Dead
+    - type: Stamina
+      excess: 380
+    - type: Loadout
+      prototypes: [ PetrSerpGear ]
+  
+- type: entity
+  name: Спавнер оператора "Серп" Петрищевцев
+  suffix: GOST, Петрищев
+  id: PetrMobHumanSerp
+  components:
+  - type: Sprite
+    sprite: Markers/jobs.rsi
+    state: ertsecurity
+  - type: RandomHumanoidAppearance
+    randomizeName: false
+  - type: RandomMetadata
+    nameSegments:
+    - PetrName-vet
+    - PetrNameTwo
+  - type: RandomHumanoidSpawner
+    settings: PetrSerp
+#---------------------------------Молот----------
+- type: randomHumanoidSettings
+  speciesBlacklist: 
+    - Diona
+    - Arachnid
+  id: PetrMolot
+  randomizeName: false
+  components:
+    - type: GhostRole
+      name: Гост-роль оператора "Молот" Петрищевцев
+      description: "Вы оператор Молот Петрищевцев. Исполняйте приказы своего командира и будьте самым несокрушимым! От ваших действий зависит как скоро жалкие денежные рабы потеряют волю к сопротивлению и как много ваших товарищей выживет за спиной!"
+    - type: GhostTakeoverAvailable
+    - type: Loadout
+      prototypes: [ PetrMolotGear ]
+    - type: RandomMetadata
+      nameSegments:
+      - PetrName-vet
+      - PetrNameTwo
+
+- type: randomHumanoidSettings
+  id: PetrMolotReady
+  parent: PetrMolot
+  components:
+    - type: GhostRole
+      allowMovement: true
+      allowSpeech: true
+      makeSentient: true
+      name: Оператор "Молот" Петрищевцев
+      description: "Вы оператор Молот Петрищевцев. Исполняйте приказы своего командира и будьте самым несокрушимым! От ваших действий зависит как скоро жалкие денежные рабы потеряют волю к сопротивлению и как много ваших товарищей выживет за спиной!"
+    - type: GhostTakeoverAvailable
+    - type: MobThresholds
+      thresholds:
+        0: Alive
+        110: Critical
+        210: Dead
+    - type: Stamina
+      excess: 380
+    - type: Loadout
+      prototypes: [ PetrMolotGear ]
+  
+- type: entity
+  name: Спавнер оператора "Молот" Петрищевцев
+  suffix: GOST, Петрищев
+  id: PetrMobHumanMolot
+  components:
+  - type: Sprite
+    sprite: Markers/jobs.rsi
+    state: ertsecurity
+  - type: RandomHumanoidAppearance
+    randomizeName: false
+  - type: RandomMetadata
+    nameSegments:
+    - PetrName-vet
+    - PetrNameTwo
+  - type: RandomHumanoidSpawner
+    settings: PetrMolot
+#---------------------------------------------------------------Бумаги------------------------------------------------------------
+#-----------------------------------новобранец-----------------------------
+- type: entity
+  noSpawn: true
+  id: PetrPaperNov
+  name: Памятка новобранца Петрищевца
+  suffix: Петрищев
+  parent: Paper
+  components:
+  - type: TimedDespawn
+    lifetime: 1200
+  - type: Paper
+    content: |
+      Вы: Недавно завербованный боец Петрищевцев. Вы ещё не самый умелый боец и не идеально идеалогически образованы, но уже стремитесь сделать всё возможное для дела Революции.
+      Ваши навыки: Базовые навыки, Владение оружием (но херовенькое малясь)
+      Руководство к отыгрышу: Будьте верным своим товарищам. Подчиняйтесь командиру, как богу нового мира. Можете показывать, что вы ещё не вполне в теме, но жадно старайтесь накопить знаний и полезных навыков. Выслуживайтесь перед старшими товарищами.
+      Краткий лор организации: Петрищевцы - это радикальная экстримистская группировка вечных революционеров-коммунистов. Они были изгнаны из СССП и сейчас стремятся совершить галактичскую Коммунистическую революцию.
+#-----------------------------------боевик-----------------------------
+- type: entity
+  noSpawn: true
+  id: PetrPaperSold
+  name: Памятка боевика Петрищевца
+  suffix: Петрищев
+  parent: Paper
+  components:
+  - type: TimedDespawn
+    lifetime: 1200
+  - type: Paper
+    content: |
+      Вы: Подготовленный и тренированный революционер. Умелый боец. Хорошо ориентируетесь в вовпросах идеалогии.
+      Ваши навыки: Базовые навыки, Владение оружием , Разделка туш, Готовка, Смешивание напитков
+      Руководство к отыгрышу: Будьте верным своим товарищам. Подчиняйтесь командиру, как богу нового мира. Помогайте новобранцам. Будьте смелыми и отважными! Защищайте пролеториат ценой своей жизни, карайте угнетателей, пока течёт кровь в жилах.
+      Краткий лор организации: Петрищевцы - это радикальная экстримистская группировка вечных революционеров-коммунистов. Они были изгнаны из СССП и сейчас стремятся совершить галактичскую Коммунистическую революцию.
+#-----------------------------------специалист-инженер-----------------------------
+- type: entity
+  noSpawn: true
+  id: PetrPaperSpecEng
+  name: Памятка специалиста-инженера Петрищевца
+  suffix: Петрищев
+  parent: Paper
+  components:
+  - type: TimedDespawn
+    lifetime: 1200
+  - type: Paper
+    content: |
+      Вы: Не просто подготовленный пехотинец Петрищевцев. Вы талантливый механик, электронщик, газовый техник... Одним словом - хороший инженер.
+      Ваши навыки: Базовые навыки, Владение оружием, Постройка приборов, Постройка сложных объектов, Постройка роботов, Продвинутый Атмос, Управление Шаттлом
+      Руководство к отыгрышу: Будьте верным своим товарищам. Подчиняйтесь командиру, как богу нового мира. Помогайте новобранцам. Будьте смелыми и отважными! Защищайте пролеториат ценой своей жизни, карайте угнетателей, пока течёт кровь в жилах. Стройте и ремонтируйте то, что поможет вашей борьбе. Будьте самым находчивым имногофункциональным.
+      Краткий лор организации: Петрищевцы - это радикальная экстримистская группировка вечных революционеров-коммунистов. Они были изгнаны из СССП и сейчас стремятся совершить галактичскую Коммунистическую революцию.
+#-----------------------------------специалист-подрывник-----------------------------
+- type: entity
+  noSpawn: true
+  id: PetrPaperSpecSap
+  name: Памятка специалиста-подрывника Петрищевца
+  suffix: Петрищев
+  parent: Paper
+  components:
+  - type: TimedDespawn
+    lifetime: 1200
+  - type: Paper
+    content: |
+      Вы: Не просто подготовленный пехотинец Петрищевцев. Вахей страстью всегда были химия и электроника. Вы подрывник-сапёр.
+      Ваши навыки: Базовые навыки, Владение оружием , Постройка приборов, Продвинутая химия
+      Руководство к отыгрышу: Подчиняйтесь командиру, как богу нового мира. Будьте смелыми, отважным и опасным! Создайте капиталистам ад на земле! Весь мир в труху и ядерный пепел!
+      Краткий лор организации: Петрищевцы - это радикальная экстримистская группировка вечных революционеров-коммунистов. Они были изгнаны из СССП и сейчас стремятся совершить галактичскую Коммунистическую революцию.
+#-----------------------------------командир-----------------------------
+- type: entity
+  noSpawn: true
+  id: PetrPaperOffi
+  name: Памятка командира Петрищевца
+  suffix: Петрищев
+  parent: Paper
+  components:
+  - type: TimedDespawn
+    lifetime: 1200
+  - type: Paper
+    content: |
+      Вы: Настоящий ветеран, отличный идеолог. Достойный революционер, отличный командир своего отряда.
+      Ваши навыки: Базовые навыки, Владение оружием , Разделка туш, Готовка, Смешивание напитков, Управление Шаттлом
+      Руководство к отыгрышу: Будьте верным своим товарищам. Станьте отцом-командиром, хитрым и умным. Руководите своими людьми. Стройте планы налётов и атак. Защищайте пролетариев, казните узурпаторов.
+      Краткий лор организации: Петрищевцы - это радикальная экстримистская группировка вечных революционеров-коммунистов. Они были изгнаны из СССП и сейчас стремятся совершить галактичскую Коммунистическую революцию.
+#-----------------------------------Серп-----------------------------
+- type: entity
+  noSpawn: true
+  id: PetrPaperSerp
+  name: Памятка оператора "Серп" Петрищевцев
+  suffix: Петрищев
+  parent: Paper
+  components:
+  - type: TimedDespawn
+    lifetime: 1200
+  - type: Paper
+    content: |
+      Вы: Ветеран и бывалый боевик-революционер, смелый и быстрый боец молниеносных аттак.
+      Ваши навыки: Базовые навыки, Владение оружием , Разделка туш, Готовка, Смешивание напитков, Управление Шаттлом
+      Руководство к отыгрышу: Будьте верным своим товарищам. Будьте быстрым и лихим налётчиком. Со скоростью ветра сокращайте дистанцию до сил противника и уничтожайте всех, кто мешает нести благо коммунизма!
+      Краткий лор организации: Петрищевцы - это радикальная экстримистская группировка вечных революционеров-коммунистов. Они были изгнаны из СССП и сейчас стремятся совершить галактичскую Коммунистическую революцию.
+#-----------------------------------Молот-----------------------------
+- type: entity
+  noSpawn: true
+  id: PetrPaperMolot
+  name: Памятка оператора "Молот" Петрищевцев
+  suffix: Петрищев
+  parent: Paper
+  components:
+  - type: TimedDespawn
+    lifetime: 1200
+  - type: Paper
+    content: |
+      Вы: Ветеран и бывалый боевик-революционер, смелый и несокрушимый боец-стена.
+      Ваши навыки: Базовые навыки, Владение оружием , Разделка туш, Готовка, Смешивание напитков
+      Руководство к отыгрышу: Будьте верным своим товарищам. Будьте несокрушимым и неумолимым живым танком. Покажите стойкость своих идеалов. Угнетайте врага своей тяжёлой поступью.
+      Краткий лор организации: Петрищевцы - это радикальная экстримистская группировка вечных революционеров-коммунистов. Они были изгнаны из СССП и сейчас стремятся совершить галактичскую Коммунистическую революцию.
+#---------------------------------------------------------------Ящики со снарягой------------------------------------------------------------        
+#-----------------------------Базовый ящик------------------ 
+- type: entity
+  parent: CrateBaseSecure
+  id: PetrCrate
+  name: Ящик снаряжения Петрищев
+  suffix: Петрищев
+  components:
+  - type: Icon
+    sprite: Corvax/Lore/Petr/petr_crates.rsi
+  - type: Sprite
+    sprite: Corvax/Lore/Petr/petr_crates.rsi
+  - type: AccessReader
+    access: [["PetrAccess"]]
+#-----------------------------Ящик автоматического оружия------------------    
+- type: entity
+  id: PetrCrateWeaponsAuto
+  parent: PetrCrate
+  name: Ящик автоматического оружия Петрищевцев
+  suffix: Петрищев
+  description: Скорострельные стволы Петрищевцев скрываются тут под замком
+  components:
+  - type: StorageFill
+    contents:
+      - id: PetrLightRifle
+      - id: PetrLightRifle
+      - id: PetrLightRifle
+      - id: PetrLightRifle
+      - id: PetrWeaponLMG
+      - id: PetrWeaponLMG
+#-----------------------------Ящик оружия прорыва------------------    
+- type: entity
+  id: PetrCrateWeaponsPror
+  parent: PetrCrate
+  name: Ящик оружия прорыва Петрищевцев
+  suffix: Петрищев
+  description: Cтволы для близкой дистанции Петрищевцев скрываются тут под замком
+  components:
+  - type: StorageFill
+    contents:
+      - id: PetrSMG
+      - id: PetrSMG
+      - id: PetrSMG
+      - id: PetrWeaponShotgun
+      - id: PetrWeaponShotgun
+      - id: PetrWeaponShotgun
+#-----------------------------Ящик лёгкого оружия------------------    
+- type: entity
+  id: PetrCrateWeaponsLight
+  parent: PetrCrate
+  name: Ящик лёгкого оружия Петрищевцев
+  suffix: Петрищев
+  description: Лёгкие стволы Петрищевцев скрываются тут под замком
+  components:
+  - type: StorageFill
+    contents:
+      - id: PetrWeaponRevolver
+      - id: PetrWeaponRevolver
+      - id: PetrPistol
+      - id: PetrPistol
+      - id: PetrPistol
+      - id: PetrPistol
+#-----------------------------Ящик боеприпасов------------------ 
+- type: entity
+  id: PetrCrateAmmo
+  parent: PetrCrate
+  name: Ящик боеприпасов пехотного оружия Петрищевцев
+  suffix: Петрищев
+  description: Большой ящик патронов к оружию Петрищевцев
+  components:
+  - type: StorageFill
+    contents:
+      - id: PetrBoxRifle
+      - id: PetrBoxRifle
+      - id: PetrBoxRifle
+      - id: PetrBoxRifle
+      - id: PetrBoxRevolver
+      - id: PetrBoxRevolver
+      - id: PetrBoxPistol
+      - id: PetrBoxPistol
+      - id: PetrBoxPistol
+      - id: BoxLethalshot
+      - id: BoxLethalshot
+#-----------------------------Ящик подрыва------------------ 
+- type: entity
+  id: PetrCrateExs
+  parent: PetrCrate
+  name: Ящик гранат и взрывчатки
+  suffix: Петрищев
+  description: Большой ящик взрывных подарков
+  components:
+  - type: StorageFill
+    contents:
+      - id: C4
+      - id: C4
+      - id: C4
+      - id: C4
+      - id: C4
+      - id: C4
+      - id: PetrSmokeGrenade
+      - id: PetrSmokeGrenade
+      - id: PetrSmokeGrenade
+      - id: PetrSmokeGrenade
+      - id: PetrSmokeGrenade
+      - id: PetrSmokeGrenade
+      - id: PetrExGrenade
+      - id: PetrExGrenade
+      - id: PetrExGrenade
+      - id: PetrExGrenade
+      - id: PetrExGrenade
+      - id: PetrExGrenade
+#-----------------------------Ящик формы------------------ 
+- type: entity
+  id: PetrCrateForm
+  parent: PetrCrate
+  name: Ящик формы Петрищевцев
+  suffix: Петрищев
+  description: Содержит в себе стандартные наборы экипировки для боевиков Петрищевцев
+  components:
+  - type: StorageFill
+    contents:
+      - id: PetrUniform
+      - id: PetrUniform
+      - id: PetrUniform
+      - id: PetrUniform
+      - id: PetrBackpack
+      - id: PetrBackpack
+      - id: PetrBackpack
+      - id: PetrBackpack
+      - id: PetrBoots
+      - id: PetrBoots
+      - id: PetrBoots
+      - id: PetrBoots
+      - id: PetrCapP
+      - id: PetrCapP
+      - id: PetrCapP
+      - id: PetrCapP
+      - id: PetrBeltSold
+      - id: PetrBeltSold
+      - id: PetrBeltSpec
+      - id: PetrBeltSpec
+#-----------------------------Ящик брони------------------ 
+- type: entity
+  id: PetrCrateArmor
+  parent: PetrCrate
+  name: Ящик брони Петрищевцев
+  suffix: Петрищев
+  description: Содержит в себе элементы защиты боевиков Петрищевцев
+  components:
+  - type: StorageFill
+    contents:
+      - id: PetrHelmet
+      - id: PetrHelmet
+      - id: PetrHelmet
+      - id: PetrHelmet
+      - id: PetrHelmet
+      - id: PetrHelmet
+      - id: PetrArmorBasic
+      - id: PetrArmorBasic
+      - id: PetrArmorBasic
+      - id: PetrArmorMid
+      - id: PetrArmorMid
+      - id: PetrArmorMid
+#-----------------------------Ящик скафандров------------------ 
+- type: entity
+  id: PetrCrateHardsu
+  parent: PetrCrate
+  name: Ящик боевых скафандров Петрищевцев
+  suffix: Петрищев
+  description: Содержит в себе боевые скафандры Петрищевцев
+  components:
+  - type: StorageFill
+    contents:
+      - id: PetrHardsuitZvezda
+      - id: PetrHardsuitZvezda
+      - id: PetrHardsuitZvezda
+      - id: PetrHardsuitZvezda
+      - id: PetrHardsuitSerp
+      - id: PetrHardsuitMolot
+#-----------------------------Ящик связи------------------ 
+- type: entity
+  id: PetrCrateRadio
+  parent: PetrCrate
+  name: Ящик систем связи Петрищевцев
+  suffix: Петрищев
+  description: Содержит в себе гарнитуры и ключи шифрования радиочастот Петрищевцев
+  components:
+  - type: StorageFill
+    contents:
+      - id: PetrHeadset
+      - id: PetrHeadset
+      - id: PetrHeadset
+      - id: PetrHeadset
+      - id: PetrHeadset
+      - id: PetrHeadset
+      - id: PetrEncryptionKey
+      - id: PetrEncryptionKey
+      - id: PetrEncryptionKey
+      - id: PetrEncryptionKey
+      - id: PetrEncryptionKey
+      - id: PetrEncryptionKey
+      
+#-----------------------------------обычные грены...--------------------------------
+- type: Tag
+  id: PetrExGrenade
+
+- type: entity
+  name: Разрывная граната
+  description: Мама говорила, что ей разом можно убить 40 человек...
+  parent: GrenadeBase
+  id: PetrExGrenade
+  components:
+  - type: ExplodeOnTrigger
+  - type: Explosive
+    explosionType: Default
+    maxIntensity: 10
+    intensitySlope: 3
+    totalIntensity: 120 # about a ~4 tile radius
+    canCreateVacuum: false
+  - type: OnUseTimerTrigger
+    beepSound:
+      path: "/Audio/Effects/beep1.ogg"
+      params:
+        volume: 5
+    initialBeepDelay: 0
+    beepInterval: 2
+  - type: Tag
+    tags:
+      - PetrExGrenade
+
+- type: Tag
+  id: PetrSmokeGrenade
+    
+- type: entity
+  parent: GrenadeBase
+  id: PetrSmokeGrenade
+  name: Дымовая граната
+  description: Кинь дымы туда, куда хочешь перебежать, чтобы все знали куда стрелять...
+  components:
+  - type: Sprite
+    sprite: Objects/Weapons/Grenades/smoke.rsi
+  - type: SmokeOnTrigger
+    duration: 30
+    spreadAmount: 50
+  - type: SoundOnTrigger
+    sound: /Audio/Items/smoke_grenade_smoke.ogg
+  - type: DeleteOnTrigger
+  - type: TimerTriggerVisuals
+    primingSound:
+      path: /Audio/Items/smoke_grenade_prime.ogg
+  - type: Tag
+    tags:
+      - PetrSmokeGrenade
+#-----------------------------------аплинк--------------------------------
+#-----------------категории в аплинке------------
+- type: storeCategory
+  id: PetrUplinkArmor
+  name: Броня
+  priority: 0
+
+- type: storeCategory
+  id: PetrUplinkWeaponry
+  name: Вооружение
+  priority: 1
+
+- type: storeCategory
+  id: PetrUplinkAmmo
+  name: Боезапас
+  priority: 2
+ 
+- type: storeCategory
+  id: PetrUplinkElectronic
+  name: Электроника
+  priority: 3 
+  
+- type: storeCategory
+  id: PetrUplinkSpec
+  name: Специалистам
+  priority: 4 
+  
+- type: storeCategory
+  id: PetrUplinkBack
+  name: Рюкзаки
+  priority: 5 
+  
+- type: storeCategory
+  id: PetrUplinkMed
+  name: Мед.средства
+  priority: 6 
+#-----------------листинг покупок------------
+#------категория броня----------
+#---бронь и шмот---
+- type: listing
+  id: PetrCloak
+  name: Плащ ветерана
+  description: Плащ, который носят ветераны и командиры боевиков Петрищевцев. Будто обёрнутые красным знаменем, ветераны демонстрируют свою ярую преданность идеалам комунизма и товарища Петрищева!
+  productEntity: PetrCloak
+  cost:
+    Telecrystal: 1
+  categories:
+  - PetrUplinkArmor
+
+- type: listing
+  id: PetrHelmet
+  name: Боевой шлем
+  description: Крепкий и крупный шлем Петрищевцев. Не имеет защитных линз, но имеет маску, для сокрытия лица. Ведь каждый боевик на задании - не личность, а гнев... Гнев угнетённого пролеториата! Пролеториата безликого и забытого угнетателями.
+  productEntity: PetrHelmet
+  cost:
+    Telecrystal: 2
+  categories:
+  - PetrUplinkArmor
+
+- type: listing
+  id: PetrArmorBasic
+  name: Лёгкий бронежилет
+  description: Выдаётся начинающим боевикам, которые охраняют базы и разные объекты революционеров.
+  productEntity: PetrArmorBasic
+  cost:
+    Telecrystal: 4
+  categories:
+  - PetrUplinkArmor
+
+- type: listing
+  id: PetrArmorMid
+  name: Тяжёлый бронекомплект
+  description: В лобовом столкновении с противником революционеры используют эту броню, чтобы защитить свои тела чем-то кроме веры в идеалы коммунизма!
+  productEntity: PetrArmorMid
+  cost:
+    Telecrystal: 6
+  categories:
+  - PetrUplinkArmor
+#---скафы--- 
+- type: listing
+  id: PetrHardsuitZvezda
+  name: Скафандр "Звезда"
+  description: Стандартный боевой скафандр боевиков Петрищевцев
+  productEntity: PetrHardsuitZvezda
+  cost:
+    Telecrystal: 8
+  categories:
+  - PetrUplinkArmor
+  
+- type: listing
+  id: PetrHardsuitSerp
+  name: Скафандр "Серп"
+  description: По защитным качетвам он едва ли лучше бронижилета. Но зато он лёгкий и позволяет оператору ускоряться! Используется длы быстрых пехотных налётов боевиками Петрищевцев.
+  productEntity: PetrHardsuitSerp
+  cost:
+    Telecrystal: 12
+  categories:
+  - PetrUplinkArmor
+  
+- type: listing
+  id: PetrHardsuitMolot
+  name: Скафандр "Молот"
+  description: Большой, крепкий, бронированный. Используется боевиками Петрищевцев для создания живой стены. Боец в таком скафандре хоть и не слишком быстрый, но способен прикрыть товарищей за собой  цузких местах.
+  productEntity: PetrHardsuitMolot
+  cost:
+    Telecrystal: 16
+  categories:
+  - PetrUplinkArmor  
+#------категория вооружение----------
+- type: listing
+  id: PetrPistol
+  name: Пистолет "Горький"
+  description: Короткий и очень дешёвый, но мощный пистолет. Использует собственные петрищевские патроны .32
+  productEntity: PetrPistol
+  cost:
+    Telecrystal: 4
+  categories:
+  - PetrUplinkWeaponry
+
+- type: listing
+  id: PetrWeaponRevolver
+  name: Револьвер "Троцкий"
+  description: Тяжёлый и суровый револьвер калибра .40, что несёт волю Петрищевцев через космос!
+  productEntity: PetrWeaponRevolver
+  cost:
+    Telecrystal: 6
+  categories:
+  - PetrUplinkWeaponry
+
+- type: listing
+  id: PetrSMG
+  name: Пистолет-пулемёт "Коллективист"
+  description: Маленький и удобный пистолет-пулемёт Петрищевцев, который легко пронести под одеждой. Прекрасно подходит для наведения шороха! Использует патроны .32
+  productEntity: PetrSMG
+  cost:
+    Telecrystal: 6
+  categories:
+  - PetrUplinkWeaponry
+
+- type: listing
+  id: PetrLightRifle
+  name: Автомат "Повстанец"
+  description: Маленький и лёгкий. Очень удобный и надёжный. Использует петрищевские патроны .27
+  productEntity: PetrLightRifle
+  cost:
+    Telecrystal: 8
+  categories:
+  - PetrUplinkWeaponry
+
+- type: listing
+  id: PetrWeaponLMG
+  name: Пулемёт "Товарищ Петрищев"
+  description: Здоровый и мощный пулемёт, что несёт смерть в узких проходах и гремит, как речи самого товарища Петрищева! Питается патронами .27
+  productEntity: PetrWeaponLMG
+  cost:
+    Telecrystal: 10
+  categories:
+  - PetrUplinkWeaponry
+
+- type: listing
+  id: PetrWeaponShotgun
+  name: Дробовик "Старатель"
+  description: Небольшой и скорострельный дробовик, который можно перевозить большими партиями и быстро (и дёшево) производить. Использует заряды .50 калибра.
+  productEntity: PetrWeaponShotgun
+  cost:
+    Telecrystal: 8
+  categories:
+  - PetrUplinkWeaponry
+#------категория боезапас----------
+#---магазины---
+- type: listing
+  id: PetrMagazinePistol
+  name: Магазин к пистолету "Горький"
+  description: 8 патронов к маленькому пистолету калибра .32 за разумную цену
+  productEntity: PetrMagazinePistol
+  cost:
+    Telecrystal: 1
+  categories:
+  - PetrUplinkAmmo
+
+- type: listing
+  id: PetrSpeedLoader
+  name: Спидлоадер револьвера "Троцкий"
+  description: Необходимый в бою с большим стволом. К нему подходят патроны калибра .40
+  productEntity: PetrSpeedLoader
+  cost:
+    Telecrystal: 2
+  categories:
+  - PetrUplinkAmmo
+
+- type: listing
+  id: PetrMagazineSMG
+  name: Магазин к пистолету-пулемёту "Коллективист"
+  description: Питает скорострельный Пистолет-пулемёт 23-я патронами калибра .32
+  productEntity: PetrMagazineSMG
+  cost:
+    Telecrystal: 2
+  categories:
+  - PetrUplinkAmmo
+
+- type: listing
+  id: PetrMagazineRifle
+  name: Магазин к автомату "Повстанец"
+  description: Кустарный магазин на 30 патронов калибра .27
+  productEntity: PetrMagazineRifle
+  cost:
+    Telecrystal: 2
+  categories:
+  - PetrUplinkAmmo
+
+- type: listing
+  id: PetrMagazineRifleBox
+  name: Цинк к пулемёту "Товарищ Петрищев"
+  description: Здоровая дура на 120 патронов калибра .27. Этого хватит, чтобы научить коммунизму...
+  productEntity: PetrMagazineRifleBox
+  cost:
+    Telecrystal: 8
+  categories:
+  - PetrUplinkAmmo
+
+- type: listing
+  id: PetrMagazineShotgun
+  name: Магазин к дробовику "Старатель"
+  description: Магазин к дробовику на 7 зарядов, что питается всем известным калибром .50
+  productEntity: PetrMagazineShotgun
+  cost:
+    Telecrystal: 2
+  categories:
+  - PetrUplinkAmmo
+#---коробки---
+- type: listing
+  id: PetrBoxPistol
+  name: Коробка пистолетных патронов .32
+  description: Коробка на 92 патронов .32 к петрищевскому пистолету "Горький" и пистолет-пулемёту "Коллективист"
+  productEntity: PetrBoxPistol
+  cost:
+    Telecrystal: 4
+  categories:
+  - PetrUplinkAmmo
+  
+- type: listing
+  id: PetrBoxRevolver
+  name: Коробка револьверных патронов .40 
+  description: Коробка на 49 патронов к револьверу петрищевцев "Троцкий" калибра .40
+  productEntity: PetrBoxRevolver
+  cost:
+    Telecrystal: 3
+  categories:
+  - PetrUplinkAmmo
+  
+- type: listing
+  id: PetrBoxRifle
+  name: Коробка винтовочных патронов .27
+  description: Коробка на 60 патронов .27 к петрищевскому автомату "Повстанец" и пулемёту "Товарищ Петрищев"
+  productEntity: PetrBoxRifle
+  cost:
+    Telecrystal: 4
+  categories:
+  - PetrUplinkAmmo
+  
+- type: listing
+  id: BoxLethalshot
+  name: Коробка дробовиковых зарядов .50
+  description: Известная во всём НТ и ОПЗ коробка на 16 зарядов.
+  productEntity: BoxLethalshot
+  cost:
+    Telecrystal: 3
+  categories:
+  - PetrUplinkAmmo
+#---взрывчатка---  
+- type: listing
+  id: BoxLethalshot
+  name: Коробка дробовиковых зарядов .50
+  description: Известная во всём НТ и ОПЗ коробка на 16 зарядов.
+  productEntity: BoxLethalshot
+  cost:
+    Telecrystal: 3
+  categories:
+  - PetrUplinkAmmo
+  
+- type: listing
+  id: BoxLethalshot
+  name: Коробка дробовиковых зарядов .50
+  description: Известная во всём НТ и ОПЗ коробка на 16 зарядов.
+  productEntity: BoxLethalshot
+  cost:
+    Telecrystal: 3
+  categories:
+  - PetrUplinkAmmo
+#------категория электроника----------
+- type: listing
+  id: PetrCommsComputerCircuitboard
+  name: Плата консоли связи
+  description: Компьютерная плата для перехвата чужих данных, их расшифровки и встраивания своих сообщений.
+  productEntity: PetrCommsComputerCircuitboard
+  cost:
+    Telecrystal: 3
+  categories:
+  - PetrUplinkElectronic
+  
+- type: listing
+  id: PetrIDCardSold
+  name: ID-карта рядового боевика Петрищевцев
+  description: Карта с доступами сил революции.
+  productEntity: PetrIDCardSold
+  cost:
+    Telecrystal: 3
+  categories:
+  - PetrUplinkElectronic
+  
+- type: listing
+  id: PetrEncryptionKey
+  name: Ключ шифрования боевиков-Петрищевцев
+  description: Используется для шифрования и дешифровки общего армейского канала связи Петрищевцев
+  productEntity: PetrEncryptionKey
+  cost:
+    Telecrystal: 3
+  categories:
+  - PetrUplinkElectronic
+  
+- type: listing
+  id: Emag
+  name: Криптографический секвенсор
+  description: Используется для дешифровки и перепрошивки систем доступа НТ.
+  productEntity: Emag
+  cost:
+    Telecrystal: 6
+  categories:
+  - PetrUplinkElectronic  
+
+- type: listing
+  id: ClothingEyesHudSyndicate
+  name: Визор оперативника
+  description: Визор с целеуказанием и системой "свой-чужой".
+  productEntity: ClothingEyesHudSyndicate
+  cost:
+    Telecrystal: 5
+  categories:
+  - PetrUplinkElectronic  
+#------категория специалистам----------
+#---вещички---
+- type: listing
+  id: PetrRubberStamp
+  name: Печать Петрищевцев
+  description: Отправьте чёртовым капиталистам угрозу заверенную по всей форме их прогнившей бюрократии.
+  productEntity: PetrRubberStamp
+  cost:
+    Telecrystal: 1
+  categories:
+  - PetrUplinkSpec
+
+- type: listing
+  id: PetrBeltSoldFilled
+  name: Пояс боевика
+  description: Этот пояс используют боевики Петрищевцев для ношения амуниции, гранат и прочего боевого снаряжения. Наполнен пистолетом и магазинами к нему
+  productEntity: PetrBeltSoldFilled
+  cost:
+    Telecrystal: 7
+  categories:
+  - PetrUplinkSpec
+
+- type: listing
+  id: PetrBeltSpecFilledEng
+  name: Пояс специалиста-инженера
+  description: Этот пояс используют бойцы-специалисты Петрищевцев для ношения амуниции, кучи гранат и прочего боевого снаряжения. Наполнен инструментами
+  productEntity: PetrBeltSpecFilledEng
+  cost:
+    Telecrystal: 7
+  categories:
+  - PetrUplinkSpec
+  
+- type: listing
+  id: PetrBeltSpecFilledExp
+  name: Пояс специалиста-подрывника
+  description: Этот пояс используют бойцы-специалисты Петрищевцев для ношения амуниции, кучи гранат и прочего боевого снаряжения. Наполнен гранатами
+  productEntity: PetrBeltSpecFilledExp
+  cost:
+    Telecrystal: 10
+  categories:
+  - PetrUplinkSpec
+#---материалы и ящики--- 
+- type: listing
+  id: SheetSteel
+  name: Пачка листов стали
+  description: 30 штук
+  productEntity: SheetSteel
+  cost:
+    Telecrystal: 2
+  categories:
+  - PetrUplinkSpec
+
+- type: listing
+  id: SheetRGlass
+  name: Пачка бронированных стёкл
+  description: 30 штук
+  productEntity: SheetRGlass
+  cost:
+    Telecrystal: 2
+  categories:
+  - PetrUplinkSpec
+
+- type: listing
+  id: SheetPlasteel
+  name: Пачка листов пластали
+  description: 30 штук
+  productEntity: SheetPlasteel
+  cost:
+    Telecrystal: 2
+  categories:
+  - PetrUplinkSpec
+
+- type: listing
+  id: CableApcStack
+  name: Моток низковольтных проводов
+  description: 30 штук
+  productEntity: CableApcStack
+  cost:
+    Telecrystal: 1
+  categories:
+  - PetrUplinkSpec
+
+- type: listing
+  id: CableMVStack
+  name: Моток средневольтного кабеля
+  description: 30 штук
+  productEntity: CableMVStack
+  cost:
+    Telecrystal: 1
+  categories:
+  - PetrUplinkSpec
+
+- type: listing
+  id: CableHVStack
+  name: Моток высоковольтного кабеля
+  description: 30 штук
+  productEntity: CableHVStack
+  cost:
+    Telecrystal: 1
+  categories:
+  - PetrUplinkSpec
+
+- type: listing
+  id: PetrCrateExs
+  name: Ящик гранат и взрывчатки
+  description: Шесть бомб, шесть гранат и шесть дымовых шашек
+  productEntity: PetrCrateExs
+  cost:
+    Telecrystal: 30
+  categories:
+  - PetrUplinkSpec
+#------категория рюкзаки----------
+- type: listing
+  id: PetrBackpackFilledEmpty
+  name: Боевой рюкзак с пайком
+  description: Базовое жизнеобеспечение
+  productEntity: PetrBackpackFilledEmpty
+  cost:
+    Telecrystal: 2
+  categories:
+  - PetrUplinkBack
+
+- type: listing
+  id: PetrBackpackFilledPistol
+  name: Боевой рюкзак с пистолетом
+  description: Базовое жизнеобеспечение, пистолет и три магазина.
+  productEntity: PetrBackpackFilledPistol
+  cost:
+    Telecrystal: 12
+  categories:
+  - PetrUplinkBack
+
+- type: listing
+  id: PetrBackpackFilledRevolver
+  name: Боевой рюкзак с револьвером
+  description: Базовое жизнеобеспечение, револьвер, спидлодер и коробка патронов.
+  productEntity: PetrBackpackFilledRevolver
+  cost:
+    Telecrystal: 14
+  categories:
+  - PetrUplinkBack
+  
+- type: listing
+  id: PetrBackpackFilledSMG
+  name: Боевой рюкзак с пистолетом-пулемётом
+  description: Базовое жизнеобеспечение, пистолет-пулемёт и три магазина.
+  productEntity: PetrBackpackFilledSMG
+  cost:
+    Telecrystal: 16
+  categories:
+  - PetrUplinkBack  
+
+- type: listing
+  id: PetrBackpackFilledRifle
+  name: Боевой рюкзак с автоматом
+  description: Базовое жизнеобеспечение, автомат и три магазина.
+  productEntity: PetrBackpackFilledRifle
+  cost:
+    Telecrystal: 18
+  categories:
+  - PetrUplinkBack
+
+- type: listing
+  id: PetrBackpackFilledLMG
+  name: Боевой рюкзак с пулемётом
+  description: Базовое жизнеобеспечение, пулемёт и цинк к нему.
+  productEntity: PetrBackpackFilledLMG
+  cost:
+    Telecrystal: 22
+  categories:
+  - PetrUplinkBack
+
+- type: listing
+  id: PetrBackpackFilledShotgun
+  name: Боевой рюкзак с дробовиком
+  description: Базовое жизнеобеспечение, дробовик и три магазина.
+  productEntity: PetrBackpackFilledShotgun
+  cost:
+    Telecrystal: 18
+  categories:
+  - PetrUplinkBack
+
+- type: listing
+  id: PetrBackpackFilledBomb
+  name: Боевой рюкзак с взрывчаткой
+  description: Базовое жизнеобеспечение, две бомбы, две гранаты и три дымовые шашки.
+  productEntity: PetrBackpackFilledBomb
+  cost:
+    Telecrystal: 15
+  categories:
+  - PetrUplinkBack
+#------категория мед.средства
+- type: listing
+  id: Stimpack
+  name: Боевой стимулятор
+  description: Ускорься ещё больше! Но победи пока не наступили побочные эффекты
+  productEntity: Stimpack
+  cost:
+    Telecrystal: 3
+  categories:
+  - PetrUplinkMed
+  
+- type: listing
+  id: EmergencyMedipen
+  name: Экстренный медипен
+  description: Какое средство экстренной помощи есть, такое и используем...
+  productEntity: EmergencyMedipen
+  cost:
+    Telecrystal: 3
+  categories:
+  - PetrUplinkMed
+  
+- type: listing
+  id: Brutepack
+  name: Набор для лечения травм
+  description: Помогает от травм механического характера
+  productEntity: Brutepack
+  cost:
+    Telecrystal: 1
+  categories:
+  - PetrUplinkMed
+  
+- type: listing
+  id: Ointment
+  name: Лечебная мазь
+  description: Хороша от ожёгов и переохлаждения
+  productEntity: Ointment
+  cost:
+    Telecrystal: 1
+  categories:
+  - PetrUplinkMed
+#-----------------пресет категорий в аплинке------------
+- type: entity
+  id: StorePresetPetrUplink
+  abstract: true
+  components:
+  - type: Store
+    name: Категории
+    categories:
+    - PetrUplinkArmor
+    - PetrUplinkWeaponry
+    - PetrUplinkAmmo
+    - PetrUplinkElectronic
+    - PetrUplinkSpec
+    - PetrUplinkBack
+    - PetrUplinkMed
+    currencyWhitelist:
+    - Telecrystal
+    balance:
+      Telecrystal: 0
+#-----------------базовый аплинк------------
+- type: entity
+  parent: [ BaseItem, StorePresetPetrUplink ]
+  id: PetrBaseUplinkRadio
+  name: Аплинк Петрищевцев
+  description: Такой же, как у синдиката, но с отдельным складом и товарами
+  suffix: Пустой, Петрищев
+  components:
+  - type: Sprite
+    sprite: Objects/Devices/communication.rsi
+    layers:
+    - state: old-radio
+  - type: Item
+    sprite: Objects/Devices/communication.rsi
+    heldPrefix: old-radio
+  - type: UserInterface
+    interfaces:
+      enum.StoreUiKey.Key:
+        type: StoreBoundUserInterface
+  - type: ActivatableUI
+    key: enum.StoreUiKey.Key
+  - type: Store
+    balance:
+      Telecrystal: 0
+#-----------------аплинк с бабками------------
+- type: entity
+  parent: PetrBaseUplinkRadio
+  id: PetrBaseUplinkRadio50TC
+  suffix: 50 TC, Петрищев
+  components:
+  - type: Store
+    balance:
+      Telecrystal: 50
+  - type: Tag
+    tags:
+    - NukeOpsUplink
+#-----------------------------------------------точки спавна-----------------------------  
+- type: entity
+  noSpawn: true
+  parent: SpawnPointLoneNukeOperative
+  id: SpawnPointNukPetrCommander
+  name: Спавн-точка Командир Петрищевец
+  components:
+  - type: GhostRole
+    name: Командир Петрищевец
+    description: Руководите своим революционным штурмовым отрядом, дабы свергнуть всех капиталистических наймитов и буржуазных узурпаторов.
+        
+- type: entity
+  noSpawn: true
+  parent: SpawnPointLoneNukeOperative
+  id: SpawnPointNukPetr
+  name: Спавн-точка Боевик Петрищевец
+  components:
+  - type: GhostRole
+    name: Боевик Петрищевец
+    description: С идеями Ленина в сердце очистите космос от проклятых акул капитализма.
+    
+- type: entity
+  noSpawn: true
+  parent: SpawnPointLoneNukeOperative
+  id: SpawnPointNukPetrSpec
+  name: Спавн-точка Инженер Петрищевец
+  components:
+  - type: GhostRole
+    name: Инженер Петрищевец
+    description: Помогите товарищам-революционерам установить диктатуру пролеториата, используя свои технические знания и навыки.
+#-------------------------------------Кто является противником------------    
+- type: npcFaction
+  id: Petr
+  hostile:
+  - SimpleHostile
+  - Xeno
+  - NanoTrasen
+  - Syndicate
+  - Passive
+  - PetsNT
+  - Zombie
+  - Revolutionary
+  - Noocraty
+  - NoocratyBot
+  friendly:
+  - PetrGjlgjkmyfz
