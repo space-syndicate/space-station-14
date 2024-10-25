@@ -7282,15 +7282,6 @@ entities:
     - type: Transform
       pos: 11.643209,5.029546
       parent: 1
-- proto: BoxFolderNuclearCodes
-  entities:
-  - uid: 1282
-    components:
-    - type: Transform
-      parent: 1275
-    - type: Physics
-      canCollide: False
-    - type: InsideEntityStorage
 - proto: BrokenBottle
   entities:
   - uid: 1125
@@ -8354,7 +8345,6 @@ entities:
           showEnts: False
           occludes: True
           ents:
-          - 1282
           - 1281
           - 1280
           - 1279
