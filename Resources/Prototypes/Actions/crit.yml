@@ -12,6 +12,11 @@
       sprite: Mobs/Ghosts/ghost_human.rsi
       state: icon
     event: !type:CritSuccumbEvent
+    # Corvax MRP-start - Предотвращает суициды по миссклику.
+    useDelay: 3
+  - type: ConfirmableAction
+    popup: suicide-action-popup
+    # Corvax MRP-end
 
 - type: entity
   id: ActionCritFakeDeath
