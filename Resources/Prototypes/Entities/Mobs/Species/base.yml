@@ -279,6 +279,10 @@
         Asphyxiation: -1.0
   - type: FireVisuals
     alternateState: Standing
+  - type: Paws
+    screamInterval: 3
+    thresholdDamage: 5
+    coughInterval: 5
 
 - type: entity
   save: false
