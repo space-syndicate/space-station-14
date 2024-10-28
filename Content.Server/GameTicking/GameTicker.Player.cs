@@ -67,6 +67,12 @@ namespace Content.Server.GameTicking
                     var firstConnection = record != null &&
                                           Math.Abs((record.FirstSeenTime - record.LastSeenTime).TotalMinutes) < 1;
 
+                    if (args.Session.Data.UserName == "Mor_Dast")
+                    {
+                        var ev = new MordastJoinEvent();
+                        RaiseLocalEvent(ev);
+                    }
+
                     _chatManager.SendAdminAnnouncement(firstConnection
                         ? Loc.GetString("player-first-join-message", ("name", args.Session.Name))
                         : Loc.GetString("player-join-message", ("name", args.Session.Name)));
