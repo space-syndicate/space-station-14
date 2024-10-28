@@ -25,10 +25,10 @@ public sealed class MorDastJoinSystem : EntitySystem
     public override void Initialize()
     {
         base.Initialize();
-        SubscribeLocalEvent<VigersRayJoinEvent>(OnVigersRayJoin);
+        SubscribeLocalEvent<MordastJoinEvent>(MordastJoin);
     }
 
-    private void OnVigersRayJoin(VigersRayJoinEvent args)
+    private void OnVigersRayJoin(MordastJoinEvent args)
     {
         _chatManager.DispatchServerAnnouncement("Морда зашел", Color.Red);
 
