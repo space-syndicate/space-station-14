@@ -17,7 +17,7 @@ entities:
       name: Crappy PR-148
     - type: Transform
       pos: -3.7901773,-19.785557
-      parent: 6
+      parent: invalid
     - type: MapGrid
       chunks:
         0,0:
@@ -238,18 +238,6 @@ entities:
     - type: RadiationGridResistance
     - type: PreventPilot
     - type: ProtectedGrid
-  - uid: 6
-    components:
-    - type: MetaData
-      name: map 100
-    - type: Transform
-    - type: Map
-    - type: PhysicsMap
-    - type: GridTree
-    - type: MovedGrids
-    - type: Broadphase
-    - type: OccluderTree
-    - type: LoadedMap
 - proto: AirlockBarGlassLocked
   entities:
   - uid: 26
@@ -1162,7 +1150,15 @@ entities:
     - type: Transform
       pos: -3.5,-2.5
       parent: 1
-- proto: soda_dispenser
+- proto: Screen
+  entities:
+  - uid: 6
+    components:
+    - type: Transform
+      rot: -1.5707963267948966 rad
+      pos: -4.5,3.5
+      parent: 1
+- proto: SodaDispenser
   entities:
   - uid: 155
     components:
