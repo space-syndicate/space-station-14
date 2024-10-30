@@ -1,5 +1,7 @@
 ent-AiHeld = { "" }
     .desc = Компоненты добавляются/удаляются из сущности, которая помещается в ядро ИИ.
+ent-AiHeldIntellicard = { "" }
+    .desc = Components added / removed from an entity that gets inserted into an Intellicard.
 ent-AiHolder = { "" }
     .desc = Управляет взаимодействием ИИ на голокартах + ядрах ИИ
 ent-AsimovCircuitBoard = плата законов (Крюзимов)

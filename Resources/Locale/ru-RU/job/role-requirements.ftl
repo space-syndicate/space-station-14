@@ -1,9 +1,9 @@
-role-timer-department-insufficient = Требуется ещё [color=yellow]{$time}[/color] минут игры за [color={ $departmentColor }]{ $department }[/color].
-role-timer-department-too-high = Требуется на [color=yellow]{$time}[/color] меньше минут игры за [color={ $departmentColor }]{ $department }[/color]. (Вы пытаетесь играть за роль для новичков?)
-role-timer-overall-insufficient = Требуется ещё [color=yellow]{$time}[/color] минут общего игрового времени.
-role-timer-overall-too-high = Требуется на [color=yellow]{$time}[/color] меньше минут общего игрового времени. (Вы пытаетесь играть за роль для новичков?)
-role-timer-role-insufficient = Требуется ещё [color=yellow]{$time}[/color] минут игры в качестве [color={ $departmentColor }]{ $job }[/color] для этой роли.
-role-timer-role-too-high = Требуется на [color=yellow]{$time}[/color] меньше минут игры в качестве [color={ $departmentColor }]{ $job }[/color] для этой роли. (Вы пытаетесь играть за роль для новичков?)
+role-timer-department-insufficient = Требуется ещё [color=yellow]{ $time }[/color] минут игры за [color={ $departmentColor }]{ $department }[/color].
+role-timer-department-too-high = Требуется на [color=yellow]{ $time }[/color] меньше минут игры за [color={ $departmentColor }]{ $department }[/color]. (Вы пытаетесь играть за роль для новичков?)
+role-timer-overall-insufficient = Требуется ещё [color=yellow]{ $time }[/color] минут общего игрового времени.
+role-timer-overall-too-high = Требуется на [color=yellow]{ $time }[/color] меньше минут общего игрового времени. (Вы пытаетесь играть за роль для новичков?)
+role-timer-role-insufficient = Требуется ещё [color=yellow]{ $time }[/color] минут игры в качестве [color={ $departmentColor }]{ $job }[/color] для этой роли.
+role-timer-role-too-high = Требуется на [color=yellow]{ $time }[/color] меньше минут игры в качестве [color={ $departmentColor }]{ $job }[/color] для этой роли. (Вы пытаетесь играть за роль для новичков?)
 role-timer-time-format = %h\ч\ %m\м
 role-timer-age-too-old = Возраст персонажа должен быть не более [color=yellow]{ $age }[/color] для этой роли.
 role-timer-age-too-young = Возраст персонажа должен быть не менее [color=yellow]{ $age }[/color] для этой роли.
