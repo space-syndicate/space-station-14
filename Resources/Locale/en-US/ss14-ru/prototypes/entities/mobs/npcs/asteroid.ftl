@@ -1,5 +1,5 @@
 ent-BaseMobAsteroid = { ent-BaseMob }
-  .desc = { ent-BaseMob.desc }
+    .desc = { ent-BaseMob.desc }
 ent-MobGoliath = goliath
     .desc = A massive beast that uses long tentacles to ensnare its prey, threatening them is not advised under any conditions.
 ent-ActionGoliathTentacle = [color=red]Tentacle Slam[/color]

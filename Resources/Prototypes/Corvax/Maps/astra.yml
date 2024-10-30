@@ -68,11 +68,4 @@
             Borg: [ 2, 2 ]
         - type: StationGoal
           goals:
-          - Shuttle
-          - Singularity
-          - SolarPanels
-          - Artifacts
-          - Bank
-          - MiningOutpost
-          - VirusologyAmbusol
           - AstraRepair

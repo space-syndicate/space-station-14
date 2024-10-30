@@ -1,5 +1,5 @@
 ent-BaseMobAsteroid = { ent-BaseMob }
-  .desc = { ent-BaseMob.desc }
+    .desc = { ent-BaseMob.desc }
 ent-MobGoliath = голиаф
     .desc = Массивное чудовище, использующее свои длинные щупальца для ловли добычи. Не рекомендуется угрожать им ни при каких условиях.
 ent-ActionGoliathTentacle = [color=red]Удар щупальцем[/color]

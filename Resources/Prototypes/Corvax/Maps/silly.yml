@@ -68,9 +68,14 @@
             Borg: [ 1, 1 ]
         - type: StationGoal
           goals:
+          - Singularity
           - SolarPanels
           - Artifacts
           - Bank
           - Zoo
           - MiningOutpost
           - Tesla
+          - SecurityTraining
+          - Theatre
+          - Botany
+          - Bunker

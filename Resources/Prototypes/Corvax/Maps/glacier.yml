@@ -36,7 +36,7 @@
             IAA: [ 1, 1 ]
             # cargo
             Quartermaster: [ 1, 1 ]
-            SalvageSpecialist: [ 3, 3 ]
+            SalvageSpecialist: [ 4, 4 ]
             CargoTechnician: [ 4, 5 ]
             # engineering
             ChiefEngineer: [ 1, 1 ]
@@ -86,3 +86,7 @@
           - Zoo
           - MiningOutpost
           - Tesla
+          - SecurityTraining
+          - Theatre
+          - Botany
+          - Bunker
