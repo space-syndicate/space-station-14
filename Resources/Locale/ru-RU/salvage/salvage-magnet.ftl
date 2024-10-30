@@ -17,7 +17,7 @@ salvage-magnet-resources =
         [OreUranium] Уран
         [OreArtifactFragment] Фрагменты артефактов
         [OreBananium] Бананиум
-        *[other] { $resource }
+       *[other] { $resource }
     }
 salvage-magnet-resources-count =
     { $count ->
@@ -28,6 +28,8 @@ salvage-magnet-resources-count =
         [5] (Много)
        *[other] (Изобилие)
     }
+# Debris
+salvage-magnet-debris-ChunkDebris = Космический обломок
 # Asteroids
 dungeon-config-proto-BlobAsteroid = Астероидный массив
 dungeon-config-proto-ClusterAsteroid = Астероидный кластер

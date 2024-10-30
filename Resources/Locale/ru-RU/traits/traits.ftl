@@ -35,3 +35,7 @@ trait-german-name = Немецкий акцент
 trait-german-desc = Вы, кажется, родом из Космической Германии.
 trait-italian-name = Итальянский акцент
 trait-italian-desc = Мамма миа! Похоже, вы жили в Космической Италии!
+trait-french-name = Французский акцент
+trait-french-desc = Ваш акцент, похоже, имеет определённый «je ne sais quoi».
+trait-spanish-name = Испанский акцент
+trait-spanish-desc = Hola señor, как пройти в la biblioteca.
