@@ -1,7 +1,7 @@
 - type: entity
   parent: ClothingHeadHardsuitWithLightBase
   id: ClothingHeadHelmetCBURNLeader
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   name: cburn commander helmet
   description: A pressure resistant and fireproof hood worn by special cleanup units.
   components:
@@ -28,7 +28,8 @@
     highPressureMultiplier: 0.08
     lowPressureMultiplier: 1000
   - type: TemperatureProtection
-    coefficient: 0.005
+    heatingCoefficient: 0.005
+    coolingCoefficient: 0.005
   - type: Armor
     modifiers:
       coefficients:

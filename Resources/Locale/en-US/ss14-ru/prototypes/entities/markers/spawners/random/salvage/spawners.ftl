@@ -35,3 +35,5 @@ ent-SalvageSpawnerMobMagnet100 = { ent-SalvageSpawnerMobMagnet }
     .desc = { ent-SalvageSpawnerMobMagnet.desc }
 ent-SalvageSpawnerMobShark = Salvage Sharkminnow Spawner
     .desc = { ent-MarkerBase.desc }
+ent-SalvageSpawnerMobMiningAsteroid = Mining Asteroid Mob Spawner
+    .desc = { ent-MarkerBase.desc }

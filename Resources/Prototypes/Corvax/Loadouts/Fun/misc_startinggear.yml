@@ -1,0 +1,65 @@
+- type: startingGear
+  id: SyndicateSmugglerBase
+  equipment:
+    jumpsuit: ClothingUniformJumpsuitOperative
+    head: ClothingHeadHatUshanka
+    eyes: ClothingEyesGlassesCheapSunglasses
+    outerClothing: ClothingOuterWinterSyndie
+    gloves: ClothingHandsGlovesColorBlack
+    back: ClothingBackpackSalvage
+    shoes: ClothingShoesBootsWinterSyndicate
+    neck: ClothingNeckScarfStripedSyndieRed
+    id: SyndiPDA
+    belt: ClothingBeltMilitaryWebbing
+  storage:
+    back:
+    - BoxSurvivalSyndicate
+
+- type: startingGear
+  id: SyndicateSmugglerGear
+  parent: SyndicateSmugglerBase
+  inhand:
+    - CombatKnife  
+
+- type: startingGear
+  id: SyndicateSmugglerMedicGear
+  parent: SyndicateSmugglerBase
+  equipment:
+    back: ClothingBackpackSatchelGenetics
+    neck: ClothingNeckScarfStripedSyndieGreen
+    belt: ClothingBeltMilitaryWebbingMed
+    eyes: ClothingEyesEyepatchHudMedical
+    pocket1: EmergencyMedipen
+    mask: ClothingMaskBandGrey
+  storage:
+    back:    
+    - MedkitCombatFilled
+  inhand: 
+    - Scalpel
+
+- type: startingGear
+  id: SyndicateSmugglerSoldierGear
+  parent: SyndicateSmugglerBase
+  equipment:
+    shoes: ClothingShoesBootsCombat
+    outerClothing: ClothingOuterWinterSyndieCapArmored
+    gloves: ClothingHandsGlovesCombat
+    mask: ClothingMaskNeckGaiter
+    pocket1: WeaponPistolViper
+    pocket2: MagazinePistol
+    eyes: ClothingEyesGlassesHiddenSecurity
+  inhand:
+    - CombatKnife
+
+- type: startingGear
+  id: SyndicateSmugglerMinerGear
+  parent: SyndicateSmugglerBase
+  equipment:
+    jumpsuit: ClothingUniformJumpsuitTacticool
+    head: ClothingHeadHatHardhatArmored
+    eyes: ClothingEyesGlassesThermal
+    belt: OreBag
+    back: ClothingBackpackSatchelSalvage
+    pocket1: MineralScanner
+  inhand:
+    - Pickaxe

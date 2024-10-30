@@ -90,6 +90,7 @@ tiles-reinforced-glass-floor = бронестеклянный пол
 tiles-metal-foam = пенометаллический пол
 tiles-green-circuit-floor = зелёный микросхемный пол
 tiles-blue-circuit-floor = синий микросхемный пол
+tiles-red-circuit-floor = красный микросхемный пол
 tiles-snow = снег
 tiles-snow-plating = снежный пол
 tiles-snow-dug = копаный снег

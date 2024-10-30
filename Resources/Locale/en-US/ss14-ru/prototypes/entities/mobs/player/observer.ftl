@@ -1,5 +1,9 @@
-ent-MobObserver = observer
+ent-Incorporeal = { "" }
+    .desc = Mobs without physical bodies
+ent-MobObserverBase = observer
     .desc = Boo!
+ent-MobObserver = { ent-MobObserverBase }
+    .desc = { ent-MobObserverBase.desc }
 ent-ActionGhostBoo = Boo!
     .desc = Scare your crew members because of boredom!
 ent-ActionToggleLighting = Toggle All Lighting
