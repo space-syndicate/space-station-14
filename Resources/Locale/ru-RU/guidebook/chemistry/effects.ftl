@@ -33,9 +33,9 @@ reagent-effect-guidebook-emp-reaction-effect =
     } электромагнитный импульс
 reagent-effect-guidebook-flash-reaction-effect =
     { $chance ->
-        [1] Causes
-       *[other] cause
-    } a blinding flash
+        [1] Вызывает
+       *[other] вызывают
+    } ослепительную вспышку
 reagent-effect-guidebook-foam-area-reaction-effect =
     { $chance ->
         [1] Создаёт
