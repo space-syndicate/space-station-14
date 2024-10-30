@@ -33,4 +33,4 @@ zzzz-fmt-power-joules =
        *[5] ???
     }
 # Used internally by the PLAYTIME() function.
-zzzz-fmt-playtime = { $hours }H { $minutes }M
+zzzz-fmt-playtime = { $hours }ч { $minutes }м
