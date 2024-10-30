@@ -62,6 +62,7 @@ namespace Content.IntegrationTests.Tests
             "CorvaxPearl",
             "CorvaxTushkan",
             "CorvaxGlacier",
+            "CorvaxAwesome",
             // Corvax-End
             "Dev",
             "TestTeg",
