@@ -155,3 +155,5 @@ ent-FoodCherry = cherry
     .desc = Juicy red cherry with a pit inside.
 ent-TrashCherryPit = cherry pit
     .desc = { ent-FoodInjectableBase.desc }
+ent-FoodAnomalyBerry = anomaly berry
+    .desc = A strange blue fruit. Something about it doesn't seem right.

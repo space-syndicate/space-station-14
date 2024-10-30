@@ -20,6 +20,7 @@ flavor-base-fishy = рыбно
 flavor-base-crabby = крабово
 flavor-base-cheesy = сырно
 flavor-base-funny = забавно
+flavor-base-strange = странно
 flavor-base-tingly = покалывающе
 flavor-base-acid = кислотно
 flavor-base-leafy = лиственно
@@ -179,9 +180,9 @@ flavor-complex-violets = как фиалки
 flavor-complex-pyrotton = как горящий рот
 flavor-complex-mothballs = как нафталиновые шарики
 flavor-complex-paint-thinner = как растворитель для краски
-flavor-complex-numbing-tranquility = like numbing tranquility
-flavor-complex-true-nature = like the true nature of reality
-flavor-complex-false-meat = not entirely unlike meat
+flavor-complex-numbing-tranquility = как оцепенелое спокойствие
+flavor-complex-true-nature = как истинная природа реальности
+flavor-complex-false-meat = как не совсем не мясо
 flavor-complex-paper = как кашеобразная масса
 flavor-complex-compressed-meat = как спрессованное мясо
 flavor-complex-alcohol = как алкоголь
@@ -271,7 +272,6 @@ flavor-complex-antifreeze = как тепло
 flavor-complex-pilk = как сладкое молоко
 
 # Medicine/chemical-specific flavors.
-
 
 ## Generic flavors.
 

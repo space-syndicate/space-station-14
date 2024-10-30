@@ -1,2 +1,2 @@
-ent-ReplayObserver = { ent-MobObserver }
-    .desc = { ent-MobObserver.desc }
+ent-ReplayObserver = { ent-MobObserverBase }
+    .desc = { ent-MobObserverBase.desc }

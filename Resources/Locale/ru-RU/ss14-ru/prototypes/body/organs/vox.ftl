@@ -1,3 +1,3 @@
 ent-OrganVoxLungs = { ent-OrganHumanLungs }
     .suffix = вокс
-    .desc = { ent-OrganHumanLungs.desc }
+    .desc = Синие, анаэробные лёгкие вокса, используют азот для дыхания. Любая форма газообразного кислорода смертельно токсична при вдыхании.
