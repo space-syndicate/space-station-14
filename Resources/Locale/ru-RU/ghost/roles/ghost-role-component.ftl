@@ -234,4 +234,6 @@ ghost-role-information-tomatokiller-description = Этот маленький п
 # Corvax-start
 ghost-role-information-syndicate-smuggler-name = Контрабандист Синдиката
 ghost-role-information-syndicate-smuggler-description = Вы - специально обученный контрабандист синдиката. Отправляйтесь на поиски выданной вам цели и отыщите её любыми средствами.
+
 # Corvax-end
+
