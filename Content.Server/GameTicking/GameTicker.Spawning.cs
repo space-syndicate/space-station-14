@@ -7,12 +7,14 @@ using Content.Server.Spawners.Components;
 using Content.Server.Speech.Components;
 using Content.Server.Station.Components;
 using Content.Shared.Database;
+using Content.Shared.Humanoid;
 using Content.Shared.Mind;
 using Content.Shared.Players;
 using Content.Shared.Preferences;
 using Content.Shared.Roles;
 using Content.Shared.Roles.Jobs;
 using JetBrains.Annotations;
+using Robust.Shared.Enums;
 using Robust.Shared.Map;
 using Robust.Shared.Map.Components;
 using Robust.Shared.Network;
@@ -233,6 +235,10 @@ namespace Content.Server.GameTicking
 
             _mind.TransferTo(newMind, mob);
 
+            Gender gender = Gender.Epicene;
+            if (TryComp<HumanoidAppearanceComponent>(mob, out var appearance))
+                gender = appearance.Gender;
+
             if (lateJoin && !silent)
             {
                 if (jobPrototype.JoinNotifyCrew)
@@ -254,7 +260,8 @@ namespace Content.Server.GameTicking
                             ("character", MetaData(mob).EntityName),
                             ("gender", character.Gender), // Corvax-LastnameGender
                             ("entity", mob),
-                            ("job", CultureInfo.CurrentCulture.TextInfo.ToTitleCase(jobName))),
+                            ("job", CultureInfo.CurrentCulture.TextInfo.ToTitleCase(jobName)),
+                            ("gender", gender.ToString().ToLowerInvariant())),
                         Loc.GetString("latejoin-arrival-sender"),
                         playDefaultSound: false);
                 }
