@@ -1,12 +1,4 @@
 ﻿Entries:
-- author: Morty
-  changes:
-  - message: "\u0414\u043E\u0431\u0430\u0432\u043B\u0435\u043D\u044B \u043F\u043E\u0441\
-      \u043B\u0435\u0434\u043D\u0438\u0435 \u043E\u0431\u043D\u043E\u0432\u043B\u0435\
-      \u043D\u0438\u044F"
-    type: Add
-  id: 178
-  time: '2022-07-10T23:29:39.0000000+00:00'
 - author: lapatison
   changes:
   - message: "\u0414\u043E\u0431\u0430\u0432\u043B\u0435\u043D\u044B \u0440\u0430\u0437\
@@ -4460,3 +4452,11 @@
   id: 677
   time: '2024-10-30T10:13:58.0000000+00:00'
   url: https://github.com/space-syndicate/space-station-14/pull/2717
+- author: Meguneri
+  changes:
+  - message: "\u0418\u0441\u043F\u0440\u0430\u0432\u043B\u0435\u043D \u043E\u0434\u0438\
+      \u043D \u0438\u0437 \u043E\u0431\u043B\u043E\u043C\u043A\u043E\u0432."
+    type: Fix
+  id: 678
+  time: '2024-10-31T12:17:32.0000000+00:00'
+  url: https://github.com/space-syndicate/space-station-14/pull/2724
