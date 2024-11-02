@@ -1,0 +1,810 @@
+#---------------------------------------страаааашная муть для поведения ВИ-----------------------
+#---------------------------------Ходить-бродить-------------------
+- type: htnCompound
+  id: IdleCompoundBot
+  branches:
+    - tasks:
+        - !type:HTNPrimitiveTask
+          operator: !type:PickAccessibleOperator
+            rangeKey: BufferRange
+        - !type:HTNPrimitiveTask
+          operator: !type:MoveToOperator
+            pathfindInPlanning: false
+        - !type:HTNPrimitiveTask
+          operator: !type:RandomOperator
+            targetKey: IdleTime
+            minKey: MovementRangeClose
+            maxKey: MinimumIdleTime
+        - !type:HTNPrimitiveTask
+          operator: !type:WaitOperator
+            key: IdleTime
+          preconditions:
+            - !type:KeyExistsPrecondition
+              key: IdleTime
+#---------------------------------------Дрьться в ближнем бою и добить, а ещё искать милишку-------------------
+- type: htnCompound
+  id: PickupMeleeCompoundFix
+  branches:
+    - tasks:
+        - !type:HTNPrimitiveTask
+          operator: !type:UtilityOperator
+            proto: NearbyMeleeWeapons
+        - !type:HTNPrimitiveTask
+          operator: !type:MoveToOperator
+            pathfindInPlanning: true
+        - !type:HTNPrimitiveTask
+          preconditions:
+            - !type:ActiveHandFreePrecondition
+            - !type:TargetInRangePrecondition
+              targetKey: Target
+              rangeKey: InteractRange
+          operator: !type:InteractWithOperator
+            targetKey: Target
+
+- type: htnCompound
+  id: MeleeAttackTargetCompoundBotSNK
+  branches:
+    # Move to melee range and hit them
+    - tasks:
+        - !type:HTNPrimitiveTask
+          operator: !type:MoveToOperator
+            shutdownState: PlanFinished
+            pathfindInPlanning: true
+            removeKeyOnFinish: false
+            targetKey: TargetCoordinates
+            pathfindKey: TargetPathfind
+            rangeKey: MeleeRange
+        - !type:HTNPrimitiveTask
+          operator: !type:JukeOperator
+            jukeType: Away
+        - !type:HTNPrimitiveTask
+          operator: !type:MeleeOperator
+            targetKey: Target
+          preconditions:
+            - !type:KeyExistsPrecondition
+              key: Target
+            - !type:TargetInRangePrecondition
+              targetKey: Target
+              rangeKey: MeleeRange
+          services:
+            - !type:UtilityService
+              id: MeleeService
+              proto: NearbyMeleeTargets
+              key: Target
+        - !type:HTNPrimitiveTask
+          operator: !type:SpeakOperator
+            speech: Ураааа!
+
+- type: htnCompound
+  id: MeleeCombatCompoundBotSNK
+  branches:
+    - tasks:
+        - !type:HTNPrimitiveTask
+          operator: !type:SpeakOperator
+            speech: Бей его!
+        - !type:HTNPrimitiveTask
+          operator: !type:UtilityOperator
+            proto: NearbyMeleeTargets
+        - !type:HTNCompoundTask
+          task: MeleeAttackTargetCompoundBotSNK
+#---------------------------------------Стрельба и убийство-------------------------
+- type: htnCompound
+  id: GunCombatCompoundBotSNK
+  branches:
+    # Pick target, then move into range and shoot them.
+    - tasks:
+        - !type:HTNPrimitiveTask
+          operator: !type:UtilityOperator
+            proto: NearbyGunTargets
+        - !type:HTNPrimitiveTask
+          operator: !type:MoveToOperator
+            shutdownState: PlanFinished
+            pathfindInPlanning: true
+            removeKeyOnFinish: false
+            targetKey: TargetCoordinates
+            pathfindKey: TargetPathfind
+            stopOnLineOfSight: true
+            rangeKey: MeleeRange
+        - !type:HTNPrimitiveTask
+          operator: !type:JukeOperator
+            jukeType: AdjacentTile
+        - !type:HTNPrimitiveTask
+          operator: !type:SpeakOperator
+            speech: Огонь туда!
+        - !type:HTNPrimitiveTask
+          preconditions:
+            - !type:KeyExistsPrecondition
+              key: Target
+          operator: !type:GunOperator
+            targetKey: Target
+          services:
+            - !type:UtilityService
+              id: RangedService
+              proto: NearbyGunTargets
+              key: Target
+        - !type:HTNPrimitiveTask
+          operator: !type:SpeakOperator
+            speech: Ага, свалили!
+#---------------------------------------Взять-выкинуть ствол-------------------------
+- type: htnCompound
+  id: RangedCombatCompoundBotSNK
+  branches:
+    - preconditions:
+        - !type:GunAmmoPrecondition
+          minPercent: 0.001
+      tasks:
+        - !type:HTNCompoundTask
+          task: GunCombatCompoundBotSNK
+    -  preconditions:
+         - !type:ActiveHandComponentPrecondition
+           components:
+             - type: Gun
+           invert: true
+       tasks:
+         - !type:HTNCompoundTask
+           task: PickupGunCompound
+         - !type:HTNPrimitiveTask
+           operator: !type:SpeakOperator
+             speech: Там ствол!
+    - preconditions:
+        - !type:ActiveHandComponentPrecondition
+          components:
+            - type: Gun
+        - !type:GunAmmoPrecondition
+          maxPercent: 0.001
+      tasks:
+        - !type:HTNPrimitiveTask
+          preconditions:
+            - !type:ActiveHandEntityPrecondition
+          operator: !type:DropOperator
+        - !type:HTNPrimitiveTask
+          operator: !type:SpeakOperator
+            speech: Зарядов нет!
+#---------------------------------------Вкалывать медицину-------------------------            
+- type: htnCompound
+  id: SNKInjectNearbyCompound
+  branches:
+    - tasks:
+        # TODO: Kill this shit
+        - !type:HTNPrimitiveTask
+          operator: !type:PickNearbyInjectableOperator
+            targetKey: InjectTarget
+            targetMoveKey: TargetCoordinates
+        - !type:HTNPrimitiveTask
+          operator: !type:SpeakOperator
+            speech: Стой! Сейчас вылечу!
+            hidden: true
+        - !type:HTNPrimitiveTask
+          operator: !type:MoveToOperator
+            pathfindInPlanning: false
+        - !type:HTNPrimitiveTask
+          operator: !type:SetFloatOperator
+            targetKey: IdleTime
+            amount: 3
+        - !type:HTNPrimitiveTask
+          operator: !type:WaitOperator
+            key: IdleTime
+          preconditions:
+            - !type:KeyExistsPrecondition
+              key: IdleTime
+        # TODO: Kill this
+        - !type:HTNPrimitiveTask
+          operator: !type:MedibotInjectOperator
+            targetKey: InjectTarget
+#--------------------------------------Сочетание правил ВИ-----------------------------------------
+#-----------------С ходить-бродить----------
+#------обыч-----------
+- type: htnCompound
+  id: BotSNK
+  branches:
+    - tasks:
+        - !type:HTNCompoundTask
+          task: RangedCombatCompoundBotSNK
+    - tasks:
+        - !type:HTNCompoundTask
+          task: MeleeCombatCompoundBotSNK
+    - tasks:
+        - !type:HTNCompoundTask
+          task: IdleCompoundBot
+#------медик--------
+- type: htnCompound
+  id: BotSNKMed
+  branches:
+    - tasks:
+        - !type:HTNCompoundTask
+          task: SNKInjectNearbyCompound
+    - tasks:
+        - !type:HTNCompoundTask
+          task: RangedCombatCompoundBotSNK
+    - tasks:
+        - !type:HTNCompoundTask
+          task: MeleeCombatCompoundBotSNK
+    - tasks:
+        - !type:HTNCompoundTask
+          task: IdleCompoundBot
+#-----------------Без ходить-бродить----------
+#------обыч-----------          
+- type: htnCompound
+  id: BotSNKStop
+  branches:
+    - tasks:
+        - !type:HTNCompoundTask
+          task: RangedCombatCompoundBotSNK
+    - tasks:
+        - !type:HTNCompoundTask
+          task: MeleeCombatCompoundBotSNK
+#------медик--------          
+- type: htnCompound
+  id: BotSNKMedStop
+  branches:
+    - tasks:
+        - !type:HTNCompoundTask
+          task: SNKInjectNearbyCompound
+    - tasks:
+        - !type:HTNCompoundTask
+          task: RangedCombatCompoundBotSNK
+    - tasks:
+        - !type:HTNCompoundTask
+          task: MeleeCombatCompoundBotSNK
+#--------------------------------чихание-зевание-кашель и прочие эмоуты---------------------------          
+- type: autoEmote
+  id: Yawns
+  emote: Yawn
+  interval: 120.0
+  chance: 0.3
+  withChat: true
+
+- type: autoEmote
+  id: Sneezes
+  emote: Sneeze
+  interval: 180.0
+  chance: 0.3
+  withChat: true
+
+- type: autoEmote
+  id: Coughs
+  emote: Cough
+  interval: 240.0
+  chance: 0.3
+  withChat: true
+
+- type: autoEmote
+  id: Whistles
+  emote: Whistle
+  interval: 200.0
+  chance: 0.3
+  withChat: true
+#---------------------------------------Сами боты----------------------------------------
+#-------------------------------Солдат----------------------
+#-------------Без оружия бегающий---------------  
+- type: entity
+  name: Солдат СНК
+  suffix: Бот, СНК, безОруж, бег
+  parent: BaseMobHuman
+  id: MobSNK
+  components:
+  - type: Speech
+    speechSounds: Baritone
+  - type: Vocal
+    sounds:
+      Unsexed: MaleHuman
+  - type: AutoEmote
+    emotes: 
+    - Yawns
+    - Sneezes
+    - Coughs
+    - Whistles
+  - type: RandomMetadata
+    nameSegments:
+    - SNKName-sol
+    - SNKNameTwo
+  - type: NpcFactionMember
+    factions:
+      - SNKBot
+  - type: Loadout
+    prototypes:
+      - SNKSoldGear
+  - type: InputMover
+  - type: MobMover
+  - type: HTN
+    rootTask:
+      task: BotSNK
+  - type: NPCRetaliation
+    attackMemoryLength: 100
+#-------------Без оружия ждущий---------------  
+- type: entity
+  suffix: Бот, СНК, безОруж, стоп
+  parent: MobSNK
+  id: MobSNKStop
+  components:
+  - type: HTN
+    rootTask:
+      task: BotSNKStop
+#-------------Вооружён бегающий---------------  
+- type: entity
+  suffix: Бот, СНК, Оруж, бег
+  parent: MobSNK
+  id: MobSNKWeapon
+  components:
+  - type: RechargeBasicEntityAmmo
+    rechargeCooldown: 1.6
+    rechargeSound:
+      path: /Audio/Weapons/Guns/MagIn/ltrifle_magin.ogg
+  - type: BasicEntityAmmoProvider
+    proto: SNKCartridgeRifleStd
+    capacity: 21
+    count: 21
+  - type: Gun
+    showExamineText: false
+    fireRate: 8
+    selectedMode: FullAuto
+    availableModes:
+    - FullAuto
+    soundGunshot:
+      path: /Audio/Weapons/Guns/Gunshots/rifle2.ogg
+#-------------Вооружён ждущий---------------  
+- type: entity
+  suffix: Бот, СНК, Оруж, стоп
+  parent: MobSNKWeapon
+  id: MobSNKWeaponStop
+  components:
+  - type: HTN
+    rootTask:
+      task: BotSNKStop
+#-------------------------------Инженер----------------------
+#-------------Без оружия бегающий---------------
+- type: entity
+  name: Инженер СНК
+  suffix: Бот, СНК, безОруж, бег
+  parent: MobSNK
+  id: MobSNKEng
+  components:
+  - type: Loadout
+    prototypes:
+      - SNKEngeGear
+#-------------Без оружия ждущий--------------- 
+- type: entity
+  name: Инженер СНК
+  suffix: Бот, СНК, безОруж, стоп
+  parent: MobSNKStop
+  id: MobSNKEngStop
+  components:
+  - type: Loadout
+    prototypes:
+      - SNKEngeGear
+#-------------Вооружён бегающий---------------  
+- type: entity
+  suffix: Бот, СНК, Оруж, бег
+  parent: MobSNKEng
+  id: MobSNKEngWeapon
+  components:
+  - type: RechargeBasicEntityAmmo
+    rechargeCooldown: 2
+    rechargeSound:
+      path: /Audio/Weapons/Guns/MagIn/ltrifle_magin.ogg
+  - type: BasicEntityAmmoProvider
+    proto: SNKCartridgeDrobStd
+    capacity: 9
+  - type: Gun
+    showExamineText: false
+    fireRate: 1.1
+    selectedMode: SemiAuto
+    availableModes:
+    - SemiAuto
+    soundGunshot:
+      path: /Audio/Weapons/Guns/Gunshots/shotgun.ogg
+#-------------Вооружён ждущий--------------- 
+- type: entity
+  suffix: Бот, СНК, Оруж, стоп
+  parent: MobSNKEngWeapon
+  id: MobSNKEngWeaponStop
+  components:
+  - type: HTN
+    rootTask:
+      task: BotSNKStop
+#-------------------------------Медик----------------------
+#-------------Без оружия бегающий---------------
+- type: entity
+  name: Медик СНК
+  suffix: Бот, СНК, безОруж, бег
+  parent: MobSNK
+  id: MobSNKMed
+  components:
+  - type: Loadout
+    prototypes:
+      - SNKMediGear
+  - type: Medibot
+    treatments:
+      Alive:
+        reagent: Tricordrazine
+        quantity: 20
+        minDamage: 30
+        maxDamage: 90
+      Critical:
+        reagent: Epinephrine
+        quantity: 10
+  - type: HTN
+    rootTask:
+      task: BotSNKMed
+#-------------Без оружия ждущий--------------- 
+- type: entity
+  name: Медик СНК
+  suffix: Бот, СНК, безОруж, стоп
+  parent: MobSNKStop
+  id: MobSNKMedStop
+  components:
+  - type: Loadout
+    prototypes:
+      - SNKMediGear
+  - type: Medibot
+    treatments:
+      Alive:
+        reagent: Tricordrazine
+        quantity: 20
+        minDamage: 30
+        maxDamage: 90
+      Critical:
+        reagent: Epinephrine
+        quantity: 10
+  - type: HTN
+    rootTask:
+      task: BotSNKMedStop
+#-------------Вооружён бегающий---------------  
+- type: entity
+  suffix: Бот, СНК, Оруж, бег
+  parent: MobSNKMed
+  id: MobSNKMedWeapon
+  components:
+  - type: RechargeBasicEntityAmmo
+    rechargeCooldown: 6
+    rechargeSound:
+      path: /Audio/Weapons/Guns/MagIn/ltrifle_magin.ogg
+  - type: BasicEntityAmmoProvider
+    proto: SNKCartridgeHighRifleStd
+    capacity: 10
+    count: 10
+  - type: Gun
+    showExamineText: false
+    fireRate: 0.7
+    selectedMode: SemiAuto
+    availableModes:
+    - SemiAuto
+    soundGunshot:
+      path: /Audio/Weapons/Guns/Gunshots/rifle2.ogg
+#-------------Вооружён ждущий--------------- 
+- type: entity
+  suffix: Бот, СНК, Оруж, стоп
+  parent: MobSNKMedWeapon
+  id: MobSNKMedWeaponStop
+  components:
+  - type: HTN
+    rootTask:
+      task: BotSNKStop
+#-------------------------------Радист----------------------
+#-------------Без оружия бегающий---------------
+- type: entity
+  name: Радист СНК
+  suffix: Бот, СНК, безОруж, бег
+  parent: MobSNK
+  id: MobSNKRad
+  components:
+  - type: Loadout
+    prototypes:
+      - SNKRadioGear
+#-------------Без оружия ждущий--------------- 
+- type: entity
+  name: Радист СНК
+  suffix: Бот, СНК, безОруж, стоп
+  parent: MobSNKStop
+  id: MobSNKRadStop
+  components:
+  - type: Loadout
+    prototypes:
+      - SNKRadioGear
+#-------------Вооружён бегающий---------------  
+- type: entity
+  suffix: Бот, СНК, Оруж, бег
+  parent: MobSNKRad
+  id: MobSNKRadWeapon
+  components:
+  - type: RechargeBasicEntityAmmo
+    rechargeCooldown: 2
+    rechargeSound:
+      path: /Audio/Weapons/Guns/MagIn/pistol_magin.ogg
+  - type: BasicEntityAmmoProvider
+    proto: SNKElectro
+    capacity: 20
+    count: 20
+  - type: Gun
+    showExamineText: false
+    fireRate: 4
+    selectedMode: SemiAuto
+    availableModes:
+    - SemiAuto
+    soundGunshot:
+      path: /Audio/Effects/Lightning/lightningshock.ogg
+#-------------Вооружён ждущий--------------- 
+- type: entity
+  suffix: Бот, СНК, Оруж, стоп
+  parent: MobSNKRadWeapon
+  id: MobSNKRadWeaponStop
+  components:
+  - type: HTN
+    rootTask:
+      task: BotSNKStop
+#-------------------------------Офицер----------------------
+#-------------Без оружия бегающий---------------
+- type: entity
+  name: Офицер СНК
+  suffix: Бот, СНК, безОруж, бег
+  parent: MobSNK
+  id: MobSNKOfi
+  components:
+  - type: RandomMetadata
+    nameSegments:
+    - SNKName-ofi
+    - SNKNameTwo
+  - type: Loadout
+    prototypes:
+      - SNKOffiGear
+#-------------Без оружия ждущий--------------- 
+- type: entity
+  name: Офицер СНК
+  suffix: Бот, СНК, безОруж, стоп
+  parent: MobSNKStop
+  id: MobSNKOfiStop
+  components:
+  - type: RandomMetadata
+    nameSegments:
+    - SNKName-ofi
+    - SNKNameTwo
+  - type: Loadout
+    prototypes:
+      - SNKOffiGear
+#-------------Вооружён бегающий---------------  
+- type: entity
+  suffix: Бот, СНК, Оруж, бег
+  parent: MobSNKOfi
+  id: MobSNKOfiWeapon
+  components:
+  - type: RechargeBasicEntityAmmo
+    rechargeCooldown: 2
+    rechargeSound:
+      path: /Audio/Weapons/Guns/MagIn/pistol_magin.ogg
+  - type: BasicEntityAmmoProvider
+    proto: SNKBulletPistolStd
+    capacity: 10
+    count: 10
+  - type: Gun
+    showExamineText: false
+    fireRate: 3.5
+    selectedMode: SemiAuto
+    availableModes:
+    - SemiAuto
+    soundGunshot:
+      path: /Audio/Weapons/Guns/Gunshots/pistol.ogg
+#-------------Вооружён ждущий--------------- 
+- type: entity
+  suffix: Бот, СНК, Оруж, стоп
+  parent: MobSNKOfiWeapon
+  id: MobSNKOfiWeaponStop
+  components:
+  - type: HTN
+    rootTask:
+      task: BotSNKStop
+#---------------------------------------Спавнеры ботов-------------------      
+#-------------------------------Солдат----------------------
+#-------------Без оружия бегающий---------------
+- type: entity
+  name: Спавнер бота Солдат СНК
+  suffix: Бот, СНК, безОруж, бег
+  id: SpawnMobSNK
+  parent: MarkerBase
+  components:
+  - type: Sprite
+    sprite: Markers/jobs.rsi
+    layers:
+    - state: green
+    - state: security_officer
+  - type: ConditionalSpawner
+    prototypes:
+    - MobSNK
+#-------------Без оружия ждущий--------------- 
+- type: entity
+  parent: SpawnMobSNK
+  id: SpawnMobSNKStop
+  suffix: Бот, СНК, безОруж, стоп
+  components:
+  - type: ConditionalSpawner
+    prototypes:
+    - MobSNKStop
+#-------------Вооружён бегающий---------------  
+- type: entity
+  parent: SpawnMobSNK
+  id: SpawnMobSNKWeapon
+  suffix: Бот, СНК, Оруж, бег
+  components:
+  - type: ConditionalSpawner
+    prototypes:
+    - MobSNKWeapon
+#-------------Вооружён ждущий---------------  
+- type: entity
+  parent: SpawnMobSNK
+  id: SpawnMobSNKWeaponStop
+  suffix: Бот, СНК, Оруж, стоп
+  components:
+  - type: ConditionalSpawner
+    prototypes:
+    - MobSNKWeaponStop
+#-------------------------------Инженер----------------------
+#-------------Без оружия бегающий---------------
+- type: entity
+  name: Спавнер бота Инженер СНК
+  suffix: Бот, СНК, безОруж, бег
+  id: SpawnMobSNKEng
+  parent: MarkerBase
+  components:
+  - type: Sprite
+    sprite: Markers/jobs.rsi
+    layers:
+    - state: green
+    - state: engineer
+  - type: ConditionalSpawner
+    prototypes:
+    - MobSNKEng
+#-------------Без оружия ждущий--------------- 
+- type: entity
+  parent: SpawnMobSNKEng
+  id: SpawnMobSNKEngStop
+  suffix: Бот, СНК, безОруж, стоп
+  components:
+  - type: ConditionalSpawner
+    prototypes:
+    - MobSNKEngStop
+#-------------Вооружён бегающий---------------  
+- type: entity
+  parent: SpawnMobSNKEng
+  id: SpawnMobSNKEngWeapon
+  suffix: Бот, СНК, Оруж, бег
+  components:
+  - type: ConditionalSpawner
+    prototypes:
+    - MobSNKEngWeapon
+#-------------Вооружён ждущий---------------  
+- type: entity
+  parent: SpawnMobSNKEng
+  id: SpawnMobSNKEngWeaponStop
+  suffix: Бот, СНК, Оруж, стоп
+  components:
+  - type: ConditionalSpawner
+    prototypes:
+    - MobSNKEngWeaponStop
+#-------------------------------Медик----------------------
+#-------------Без оружия бегающий---------------
+- type: entity
+  name: Спавнер бота Медик СНК
+  suffix: Бот, СНК, безОруж, бег
+  id: SpawnMobSNKMed
+  parent: MarkerBase
+  components:
+  - type: Sprite
+    sprite: Markers/jobs.rsi
+    layers:
+    - state: green
+    - state: doctor
+  - type: ConditionalSpawner
+    prototypes:
+    - MobSNKMed
+#-------------Без оружия ждущий--------------- 
+- type: entity
+  parent: SpawnMobSNKMed
+  id: SpawnMobSNKMedStop
+  suffix: Бот, СНК, безОруж, стоп
+  components:
+  - type: ConditionalSpawner
+    prototypes:
+    - MobSNKMedStop
+#-------------Вооружён бегающий---------------  
+- type: entity
+  parent: SpawnMobSNKMed
+  id: SpawnMobSNKMedWeapon
+  suffix: Бот, СНК, Оруж, бег
+  components:
+  - type: ConditionalSpawner
+    prototypes:
+    - MobSNKMedWeapon
+#-------------Вооружён ждущий---------------  
+- type: entity
+  parent: SpawnMobSNKMed
+  id: SpawnMobSNKMedWeaponStop
+  suffix: Бот, СНК, Оруж, стоп
+  components:
+  - type: ConditionalSpawner
+    prototypes:
+    - MobSNKMedWeaponStop
+#-------------------------------Радист----------------------
+#-------------Без оружия бегающий---------------
+- type: entity
+  name: Спавнер бота Радист СНК
+  suffix: Бот, СНК, безОруж, бег
+  id: SpawnMobSNKRad
+  parent: MarkerBase
+  components:
+  - type: Sprite
+    sprite: Markers/jobs.rsi
+    layers:
+    - state: green
+    - state: engineer
+  - type: ConditionalSpawner
+    prototypes:
+    - MobSNKRad
+#-------------Без оружия ждущий--------------- 
+- type: entity
+  parent: SpawnMobSNKRad
+  id: SpawnMobSNKRadStop
+  suffix: Бот, СНК, безОруж, стоп
+  components:
+  - type: ConditionalSpawner
+    prototypes:
+    - MobSNKRadStop
+#-------------Вооружён бегающий---------------  
+- type: entity
+  parent: SpawnMobSNKRad
+  id: SpawnMobSNKRadWeapon
+  suffix: Бот, СНК, Оруж, бег
+  components:
+  - type: ConditionalSpawner
+    prototypes:
+    - MobSNKRadWeapon
+#-------------Вооружён ждущий---------------  
+- type: entity
+  parent: SpawnMobSNKRad
+  id: SpawnMobSNKRadWeaponStop
+  suffix: Бот, СНК, Оруж, стоп
+  components:
+  - type: ConditionalSpawner
+    prototypes:
+    - MobSNKRadWeaponStop
+#-------------------------------Офицер----------------------
+#-------------Без оружия бегающий---------------
+- type: entity
+  name: Спавнер бота Офицер СНК
+  suffix: Бот, СНК, безОруж, бег
+  id: SpawnMobSNKOfi
+  parent: MarkerBase
+  components:
+  - type: Sprite
+    sprite: Markers/jobs.rsi
+    layers:
+    - state: green
+    - state: warden
+  - type: ConditionalSpawner
+    prototypes:
+    - MobSNKOfi
+#-------------Без оружия ждущий--------------- 
+- type: entity
+  parent: SpawnMobSNKOfi
+  id: SpawnMobSNKOfiStop
+  suffix: Бот, СНК, безОруж, стоп
+  components:
+  - type: ConditionalSpawner
+    prototypes:
+    - MobSNKOfiStop
+#-------------Вооружён бегающий---------------  
+- type: entity
+  parent: SpawnMobSNKOfi
+  id: SpawnMobSNKOfiWeapon
+  suffix: Бот, СНК, Оруж, бег
+  components:
+  - type: ConditionalSpawner
+    prototypes:
+    - MobSNKOfiWeapon
+#-------------Вооружён ждущий---------------  
+- type: entity
+  parent: SpawnMobSNKOfi
+  id: SpawnMobSNKOfiWeaponStop
+  suffix: Бот, СНК, Оруж, стоп
+  components:
+  - type: ConditionalSpawner
+    prototypes:
+    - MobSNKOfiWeaponStop

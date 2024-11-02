@@ -1,0 +1,4331 @@
+#---------------------------униформа----------------------------------------------------------------------
+#------------------------------------Солдат-стандарт---------- 
+- type: entity
+  parent: ClothingUniformSkirtBase
+  id: SNKUniformSoldStd
+  name: Стандартная форма солдата СНК
+  suffix: СНК
+  description: Стандартная униформа пехотинца СНК. Плотная, долговечная и удобная.
+  components:
+  - type: Sprite
+    sprite: Corvax/Lore/SNK/Equipment/snk_uniform_std.rsi
+  - type: Clothing
+    sprite: Corvax/Lore/SNK/Equipment/snk_uniform_std.rsi
+#------------------------------------Солдат-лес---------- 
+- type: entity
+  parent: ClothingUniformSkirtBase
+  id: SNKUniformSoldLes
+  name: Лесная форма солдата СНК
+  suffix: СНК
+  description: Лесная униформа пехотинца СНК. Плотная, долговечная и удобная. несёт на себе маскировочные зелёные пятна. Самое то в лесной какафонии разных планет.
+  components:
+  - type: Sprite
+    sprite: Corvax/Lore/SNK/Equipment/snk_uniform_les.rsi
+  - type: Clothing
+    sprite: Corvax/Lore/SNK/Equipment/snk_uniform_les.rsi
+#------------------------------------Солдат-песок---------- 
+- type: entity
+  parent: ClothingUniformSkirtBase
+  id: SNKUniformSoldPes
+  name: Песочная форма солдата СНК
+  suffix: СНК
+  description: Песочная униформа пехотинца СНК. Плотная, долговечная и удобная. При этом очень лёгкая и прохладная. Но является слишком яркой для любой другой местности.
+  components:
+  - type: Sprite
+    sprite: Corvax/Lore/SNK/Equipment/snk_uniform_pes.rsi
+  - type: Clothing
+    sprite: Corvax/Lore/SNK/Equipment/snk_uniform_pes.rsi
+  - type: Armor
+    modifiers:
+      coefficients:
+        Heat: 0.9
+#------------------------------------Солдат-зима---------- 
+- type: entity
+  parent: ClothingUniformSkirtBase
+  id: SNKUniformSoldZim
+  name: Зимняя форма солдата СНК
+  suffix: СНК
+  description: Зимняя униформа пехотинца СНК. Плотная, долговечная и удобная. При этом очень тёплая. Бойцы любят, когда им выдают эту форму. В ней они совсем не боятся даже самых лютых морозов.
+  components:
+  - type: Sprite
+    sprite: Corvax/Lore/SNK/Equipment/snk_uniform_zim.rsi
+  - type: Clothing
+    sprite: Corvax/Lore/SNK/Equipment/snk_uniform_zim.rsi
+  - type: Armor
+    modifiers:
+      coefficients:
+        Cold: 0.9
+#------------------------------------Солдат-лава---------- 
+- type: entity
+  parent: ClothingUniformSkirtBase
+  id: SNKUniformSoldLav
+  name: Лавовая форма солдата СНК
+  suffix: СНК
+  description: Лавовая униформа пехотинца СНК. Очень плотная, долговечная и удобная. В ней не рекомендуется купаться в раскалённой лаве, но от горячих искр и пепла она неплохо оберегает.
+  components:
+  - type: Sprite
+    sprite: Corvax/Lore/SNK/Equipment/snk_uniform_lav.rsi
+  - type: Clothing
+    sprite: Corvax/Lore/SNK/Equipment/snk_uniform_lav.rsi
+  - type: Armor
+    modifiers:
+      coefficients:
+        Heat: 0.9
+#------------------------------------Офицер-стандарт---------- 
+- type: entity
+  parent: ClothingUniformSkirtBase
+  id: SNKUniformOffiStd
+  name: Стандартная форма офицера СНК
+  suffix: СНК
+  description: Стандартная униформа офицера СНК. Плотная, долговечная и удобная. Даже несколько стильная.
+  components:
+  - type: Sprite
+    sprite: Corvax/Lore/SNK/Equipment/snk_uniform_std_offi.rsi
+  - type: Clothing
+    sprite: Corvax/Lore/SNK/Equipment/snk_uniform_std_offi.rsi
+#------------------------------------Офицер-зима---------- 
+- type: entity
+  parent: ClothingUniformSkirtBase
+  id: SNKUniformOffiZim
+  name: Зимняя форма офицера СНК
+  suffix: СНК
+  description: Зимняя униформа офицера СНК. Плотная, долговечная и удобная. При этом очень тёплая. Командиры любят носить эту форму. В ней они совсем не боятся простудить горло отдавая приказы даже в самых лютых морозах.
+  components:
+  - type: Sprite
+    sprite: Corvax/Lore/SNK/Equipment/snk_uniform_zim_offi.rsi
+  - type: Clothing
+    sprite: Corvax/Lore/SNK/Equipment/snk_uniform_zim_offi.rsi
+  - type: Armor
+    modifiers:
+      coefficients:
+        Cold: 0.8
+#------------------------------------Офицер-лава---------- 
+- type: entity
+  parent: ClothingUniformSkirtBase
+  id: SNKUniformOffiLav
+  name: Лавовая форма офицера СНК
+  suffix: СНК
+  description: Лавовая униформа офицера СНК. Очень плотная, долговечная и удобная. В ней не рекомендуется купаться в раскалённой лаве, но от горячих искр и пепла она неплохо оберегает.
+  components:
+  - type: Sprite
+    sprite: Corvax/Lore/SNK/Equipment/snk_uniform_lav_offi.rsi
+  - type: Clothing
+    sprite: Corvax/Lore/SNK/Equipment/snk_uniform_lav_offi.rsi
+  - type: Armor
+    modifiers:
+      coefficients:
+        Heat: 0.85
+#-------------------------------одежда и снаряга----------------------------------------------------------------------
+#------------------------------------сумка----------- 
+- type: entity
+  parent: ClothingBackpack
+  id: SNKSatchels
+  name: Офицерская плечевая сумка СНК
+  suffix: СНК
+  description: Офицерская плечевая сумка СНК. Лёгкая и практичная
+  components:
+  - type: Sprite
+    sprite: Corvax/Lore/SNK/Equipment/snk_satchels.rsi
+#------------------------------------рюкзак---------- 
+#--------------стандартный---------
+- type: entity
+  parent: [Clothing, ContentsExplosionResistanceBase, BaseItem]
+  id: SNKBackpackStd
+  name: Армейский рюкзак CНК
+  suffix: СНК
+  description: Стандартный армейский рюкзак бойцов СНК. Бойцы СНК должны быть готовы ко всему, а потому на стандартных рюкзаках закрепляется газовый балон. Практично, но достаточно тяжело.
+  components:
+  - type: Sprite
+    sprite: Corvax/Lore/SNK/Equipment/snk_back_std.rsi
+    state: icon
+  - type: Item
+    sprite: Corvax/Lore/SNK/Equipment/snk_back_std.rsi
+    size: Huge
+  - type: Clothing
+    quickEquip: false
+    slots:
+    - back
+  - type: ActivatableUI
+    key: enum.SharedGasTankUiKey.Key
+  - type: UserInterface
+    interfaces:
+      enum.StorageUiKey.Key:
+        type: StorageBoundUserInterface
+      enum.SharedGasTankUiKey.Key:
+        type: GasTankBoundUserInterface
+  - type: GasTank
+    outputPressure: 21.3
+    air:
+      volume: 5
+      temperature: 293.15
+    tankLowPressure: 30.0
+  - type: MeleeWeapon
+    wideAnimationRotation: 45
+    attackRate: 0.8
+    damage:
+      types:
+        Blunt: 10
+  - type: Storage
+    grid:
+    - 0,0,6,4
+    maxItemSize: Huge
+  - type: ContainerContainer
+    containers:
+      storagebase: !type:Container
+        ents: []
+  - type: UseDelay
+    delay: 0.5
+  - type: ExplosionResistance
+    damageCoefficient: 0.9
+  - type: ClothingSpeedModifier
+    walkModifier: 0.93
+    sprintModifier: 0.93
+#--------------песочный---------
+- type: entity
+  parent: SNKBackpackStd
+  id: SNKBackpackPes
+  suffix: СНК
+  description: Стандартный армейский рюкзак бойцов СНК в расцветке песчаного камуфляжа. Позволяет оставаться незамеченным в песчаных дюнах, хотя закреплённый тяжёлый газовый балон стоит маскировать получше.
+  components:
+  - type: Sprite
+    sprite: Corvax/Lore/SNK/Equipment/snk_back_pes.rsi
+#--------------зимний---------
+- type: entity
+  parent: SNKBackpackStd
+  id: SNKBackpackZim
+  suffix: СНК
+  description: Стандартный армейский рюкзак бойцов СНК в зимней расцветке. Позволяет оставаться незамеченным в метелях и сугробах, хотя закреплённый тяжёлый газовый балон стоит маскировать получше.
+  components:
+  - type: Sprite
+    sprite: Corvax/Lore/SNK/Equipment/snk_back_zim.rsi
+#-------------------------рюкзак-радиостанция-------------------------    
+- type: entity
+  parent: ClothingBackpack
+  id: SNKRadioBackpack
+  name: Мобильная радиостанция
+  suffix: СНК
+  description: Мобильная радиостанция с небольшим подсумком, способная обеспечить связь в некотором регионе. (Вынимать ключи шифрования можно ломом)
+  components:
+  - type: Sprite
+    sprite: Corvax/Lore/SNK/Equipment/snk_back_radio.rsi
+  - type: Storage
+    grid:
+    - 0,0,4,3
+    maxItemSize: Huge
+  - type: EncryptionKeyHolder
+    keysExtractionMethod: Prying
+    keySlots: 10
+  - type: ContainerContainer
+    containers:
+      storagebase: !type:Container
+        ents: []
+      key_slots: !type:Container
+  - type: TelecomServer
+  - type: ApcPowerReceiver
+    needsPower: false
+  - type: LightningTarget
+    priority: 1 
+#--------------------------------------------сапоги------------------------------------- 
+- type: entity
+  parent: ClothingShoesMilitaryBase
+  id: SNKBoots
+  name: Армейские сапоги СНК
+  suffix: СНК
+  description: Крепкие армейские сапоги. В них нахожено не мало сотен километров, а они всё ещё целые и удобные.
+  components:
+  - type: Sprite
+    sprite: Corvax/Lore/SNK/Equipment/snk_boots.rsi
+  - type: Clothing
+    sprite: Corvax/Lore/SNK/Equipment/snk_boots.rsi
+#------------------------------------солдатские шапки---------- 
+#-------------------стандартная-----------
+- type: entity
+  parent: ClothingHeadBase
+  id: SNKShapkaStd
+  name: Шапка бойца СНК
+  suffix: СНК
+  description: Плотная шапка неплохо защищает солдат СНК от ветра и заморозков. Выполнена в стандартной чёрной расцветке.
+  components:
+  - type: Sprite
+    sprite: Corvax/Lore/SNK/Equipment/snk_shapka_std.rsi
+  - type: Clothing
+    sprite: Corvax/Lore/SNK/Equipment/snk_shapka_std.rsi
+  - type: Tag
+    tags:
+    - ClothMade
+    - WhitelistChameleon
+#-------------------лесная-----------
+- type: entity
+  parent: ClothingHeadBase
+  id: SNKShapkaLes
+  name: Шапка бойца СНК
+  suffix: СНК
+  description: Плотная шапка неплохо защищает солдат СНК от ветра и заморозков. Выполнена в леской зелёной расцветке.
+  components:
+  - type: Sprite
+    sprite: Corvax/Lore/SNK/Equipment/snk_shapka_std_les.rsi
+  - type: Clothing
+    sprite: Corvax/Lore/SNK/Equipment/snk_shapka_std_les.rsi
+  - type: Tag
+    tags:
+    - ClothMade
+    - WhitelistChameleon
+#-------------------зимняя-----------
+- type: entity
+  parent: ClothingHeadBase
+  id: SNKShapkaZim
+  name: Шапка бойца СНК
+  suffix: СНК
+  description: Плотная шапка неплохо защищает солдат СНК от ветра и заморозков. Выполнена в белой зимней расцветке.
+  components:
+  - type: Sprite
+    sprite: Corvax/Lore/SNK/Equipment/snk_shapka_std_zim.rsi
+  - type: Clothing
+    sprite: Corvax/Lore/SNK/Equipment/snk_shapka_std_zim.rsi
+  - type: Tag
+    tags:
+    - ClothMade
+    - WhitelistChameleon
+#-------------------песчаная бандана-----------
+- type: entity
+  parent: ClothingHeadBase
+  id: SNKBandana
+  name: Бандана бойца СНК
+  suffix: СНК
+  description: Лёгкая бандана солдат СНК. Уберегает голову от солнечного удара. Выполнена в песочной расцветке.
+  components:
+  - type: Sprite
+    sprite: Corvax/Lore/SNK/Equipment/snk_bandans.rsi
+  - type: Clothing
+    sprite: Corvax/Lore/SNK/Equipment/snk_bandans.rsi
+  - type: Tag
+    tags:
+    - ClothMade
+    - WhitelistChameleon  
+#------------------------------------офицерские кепки---------- 
+#-------------------стандартная-----------
+- type: entity
+  parent: ClothingHeadBase
+  id: SNKCepkaStd
+  name: Кепка офицера СНК
+  suffix: СНК
+  description: Офицерская кепка СНК. Выполнена в стандартной чёрной расцветке. Я вляется признаком статуса и заслуг.
+  components:
+  - type: Sprite
+    sprite: Corvax/Lore/SNK/Equipment/snk_cepka_std.rsi
+  - type: Clothing
+    sprite: Corvax/Lore/SNK/Equipment/snk_cepka_std.rsi
+  - type: Tag
+    tags:
+    - ClothMade
+    - WhitelistChameleon
+#-------------------лесная-----------
+- type: entity
+  parent: ClothingHeadBase
+  id: SNKCepkaLes
+  name: Кепка офицера СНК
+  suffix: СНК
+  description: Офицерская кепка СНК. Выполнена в зелёной лесной расцветке. Я вляется признаком статуса и заслуг.
+  components:
+  - type: Sprite
+    sprite: Corvax/Lore/SNK/Equipment/snk_cepka_std_les.rsi
+  - type: Clothing
+    sprite: Corvax/Lore/SNK/Equipment/snk_cepka_std_les.rsi
+  - type: Tag
+    tags:
+    - ClothMade
+    - WhitelistChameleon
+#-------------------зимняя-----------
+- type: entity
+  parent: ClothingHeadBase
+  id: SNKCepkaZim
+  name: Кепка офицера СНК
+  suffix: СНК
+  description: Офицерская кепка СНК. Выполнена в белой зимней расцветке. Я вляется признаком статуса и заслуг.
+  components:
+  - type: Sprite
+    sprite: Corvax/Lore/SNK/Equipment/snk_cepka_std_zim.rsi
+  - type: Clothing
+    sprite: Corvax/Lore/SNK/Equipment/snk_cepka_std_zim.rsi
+  - type: Tag
+    tags:
+    - ClothMade
+    - WhitelistChameleon
+#-------------------песчаная-----------
+- type: entity
+  parent: ClothingHeadBase
+  id: SNKCepkaPes
+  name: Кепка офицера СНК
+  suffix: СНК
+  description: Офицерская кепка СНК. Выполнена в песчаной защитной расцветке. Я вляется признаком статуса и заслуг.
+  components:
+  - type: Sprite
+    sprite: Corvax/Lore/SNK/Equipment/snk_cepka_std_pes.rsi
+  - type: Clothing
+    sprite: Corvax/Lore/SNK/Equipment/snk_cepka_std_pes.rsi
+  - type: Tag
+    tags:
+    - ClothMade
+    - WhitelistChameleon  
+#--------------------------------------------------плащи-------------------------------------- 
+#------------------------------------лесной---------- 
+- type: entity
+  parent: ClothingNeckBase
+  id: SNKCloakLes
+  name: Лесной плащ СНК
+  suffix: СНК
+  description: Плащ, который носят разведчики и снайперы СНК для маскировки в зарослях. Очень-очень уютный.
+  components:
+  - type: Sprite
+    sprite: Corvax/Lore/SNK/Equipment/snk_cloak_les.rsi
+#------------------------------------песочный---------- 
+- type: entity
+  parent: ClothingNeckBase
+  id: SNKCloakPes
+  name: Пустынный плащ СНК
+  suffix: СНК
+  description: Плащ, который носят разведчики и снайперы СНК для маскировки в песчаных дюнах. Немного спасает от жаркого зноя.
+  components:
+  - type: Sprite
+    sprite: Corvax/Lore/SNK/Equipment/snk_cloak_pes.rsi
+  - type: Armor
+    modifiers:
+      coefficients:
+        Heat: 0.95  
+#------------------------------------зимний---------- 
+- type: entity
+  parent: ClothingNeckBase
+  id: SNKCloakZim
+  name: Зимний плащ СНК
+  suffix: СНК
+  description: Плащ, который носят разведчики и снайперы СНК для маскировки в сугробах. Тёплый и приятный.
+  components:
+  - type: Sprite
+    sprite: Corvax/Lore/SNK/Equipment/snk_cloak_zim.rsi
+  - type: Armor
+    modifiers:
+      coefficients:
+        Cold: 0.95
+#--------------------------------------------------шлема-------------------------------------- 
+#------------------------------------стандартный---------- 
+- type: entity
+  parent: ClothingHeadHelmetBasic
+  id: SNKHelmetStd
+  name: Пехотный шлем СНК
+  suffix: СНК
+  description: Крепкий армейский шлем СНК. Его носят и солдаты, и офицеры. Имеет стандартную чёрную расцветку.
+  components:
+  - type: Sprite
+    sprite: Corvax/Lore/SNK/Armor/snk_helmet_std.rsi
+  - type: Clothing
+    sprite: Corvax/Lore/SNK/Armor/snk_helmet_std.rsi
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.8
+        Slash: 0.8
+        Piercing: 0.75
+        Heat: 0.8        
+#------------------------------------лавовый---------- 
+- type: entity
+  parent: ClothingHeadHelmetBasic
+  id: SNKHelmetLav
+  name: Пехотный шлем СНК
+  suffix: СНК
+  description: Крепкий армейский шлем СНК. Его носят и солдаты, и офицеры. Имеет стандартную чёрную расцветку, ослабленное бронирование, но дополнительную защиту от нагрева.
+  components:
+  - type: Sprite
+    sprite: Corvax/Lore/SNK/Armor/snk_helmet_lav.rsi
+  - type: Clothing
+    sprite: Corvax/Lore/SNK/Armor/snk_helmet_lav.rsi
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.8
+        Slash: 0.8
+        Piercing: 0.85
+        Heat: 0.6    
+#------------------------------------лесной---------- 
+- type: entity
+  parent: ClothingHeadHelmetBasic
+  id: SNKHelmetLes
+  name: Пехотный шлем СНК
+  suffix: СНК
+  description: Крепкий армейский шлем СНК. Его носят и солдаты, и офицеры. Имеет лесную камуфляжную расцветку. Имеет улучшенную защиту от порезов.
+  components:
+  - type: Sprite
+    sprite: Corvax/Lore/SNK/Armor/snk_helmet_les.rsi
+  - type: Clothing
+    sprite: Corvax/Lore/SNK/Armor/snk_helmet_les.rsi
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.8
+        Slash: 0.75
+        Piercing: 0.9
+        Heat: 0.8    
+#------------------------------------песочный---------- 
+- type: entity
+  parent: ClothingHeadHelmetBasic
+  id: SNKHelmetPes
+  name: Пехотный шлем СНК
+  suffix: СНК
+  description: Крепкий армейский шлем СНК. Его носят и солдаты, и офицеры. Имеет песчаную расцветку и помогает спасать голову от перегрева.
+  components:
+  - type: Sprite
+    sprite: Corvax/Lore/SNK/Armor/snk_helmet_pes.rsi
+  - type: Clothing
+    sprite: Corvax/Lore/SNK/Armor/snk_helmet_pes.rsi
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.8
+        Slash: 0.8
+        Piercing: 0.8
+        Heat: 0.7    
+#------------------------------------зимний---------- 
+- type: entity
+  parent: ClothingHeadHelmetBasic
+  id: SNKHelmetZim
+  name: Пехотный шлем СНК
+  suffix: СНК
+  description: Крепкий армейский шлем СНК. Его носят и солдаты, и офицеры. Имеет зимнюю расцветку и увеличенный слой термоизоляции.
+  components:
+  - type: Sprite
+    sprite: Corvax/Lore/SNK/Armor/snk_helmet_zim.rsi
+  - type: Clothing
+    sprite: Corvax/Lore/SNK/Armor/snk_helmet_zim.rsi
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.8
+        Slash: 0.8
+        Piercing: 0.8
+        Heat: 0.7
+        Cold: 0.7
+#-------------------------------------------------броня----------------------------   
+#--------------------------------лёгкая-------------------------
+#----------------стандартная-----------------
+- type: entity
+  parent: ClothingOuterBaseMedium
+  id: SNKArmorLightStd
+  name: Лёгкий бронежилет СНК
+  suffix: СНК
+  description: Стандартный лёгкий армейский бронежилет СНК, которые носит военная полиция, вспомогательные подразделения и многие нештурмовые части.
+  components:
+  - type: Sprite
+    sprite: Corvax/Lore/SNK/Armor/snk_armor_light_std.rsi
+  - type: Clothing
+    sprite: Corvax/Lore/SNK/Armor/snk_armor_light_std.rsi
+  - type: Armor 
+    modifiers:
+      coefficients:
+        Blunt: 0.7
+        Slash: 0.7
+        Piercing: 0.7 
+        Heat: 0.7
+  - type: ExplosionResistance
+    damageCoefficient: 0.80
+#----------------лавовая-----------------
+- type: entity
+  parent: ClothingOuterBaseMedium
+  id: SNKArmorLightLav
+  name: Лёгкий бронежилет СНК
+  suffix: СНК
+  description: Лёгкий армейский бронежилет СНК, которые носит военная полиция, вспомогательные подразделения и многие нештурмовые части на вулканических планетах.
+  components:
+  - type: Sprite
+    sprite: Corvax/Lore/SNK/Armor/snk_armor_light_lav.rsi
+  - type: Clothing
+    sprite: Corvax/Lore/SNK/Armor/snk_armor_light_lav.rsi
+  - type: Armor 
+    modifiers:
+      coefficients:
+        Blunt: 0.7
+        Slash: 0.7
+        Piercing: 0.7 
+        Heat: 0.5
+  - type: ExplosionResistance
+    damageCoefficient: 0.70
+#----------------лесная-----------------
+- type: entity
+  parent: ClothingOuterBaseMedium
+  id: SNKArmorLightLes
+  name: Лёгкий бронежилет СНК
+  suffix: СНК
+  description: Лёгкий армейский бронежилет СНК, которые носят вспомогательные подразделения и многие нештурмовые части в лесистых районах.
+  components:
+  - type: Sprite
+    sprite: Corvax/Lore/SNK/Armor/snk_armor_light_les.rsi
+  - type: Clothing
+    sprite: Corvax/Lore/SNK/Armor/snk_armor_light_les.rsi
+  - type: Armor 
+    modifiers:
+      coefficients:
+        Blunt: 0.7
+        Slash: 0.6
+        Piercing: 0.7 
+        Heat: 0.7
+  - type: ExplosionResistance
+    damageCoefficient: 0.80
+#----------------песочная-----------------
+- type: entity
+  parent: ClothingOuterBaseMedium
+  id: SNKArmorLightPes
+  name: Лёгкий бронежилет СНК
+  suffix: СНК
+  description: Лёгкий армейский бронежилет СНК, которые носит военная полиция, вспомогательные подразделения и многие нештурмовые части в пустынных областях.
+  components:
+  - type: Sprite
+    sprite: Corvax/Lore/SNK/Armor/snk_armor_light_pes.rsi
+  - type: Clothing
+    sprite: Corvax/Lore/SNK/Armor/snk_armor_light_pes.rsi
+  - type: Armor 
+    modifiers:
+      coefficients:
+        Blunt: 0.7
+        Slash: 0.7
+        Piercing: 0.7 
+        Heat: 0.6
+  - type: ExplosionResistance
+    damageCoefficient: 0.80
+#----------------зимняя-----------------
+- type: entity
+  parent: ClothingOuterBaseMedium
+  id: SNKArmorLightZim
+  name: Лёгкий бронежилет СНК
+  suffix: СНК
+  description: Лёгкий армейский бронежилет СНК, которые носит военная полиция, вспомогательные подразделения и многие нештурмовые части зимой и на снежных планетах.
+  components:
+  - type: Sprite
+    sprite: Corvax/Lore/SNK/Armor/snk_armor_light_zim.rsi
+  - type: Clothing
+    sprite: Corvax/Lore/SNK/Armor/snk_armor_light_zim.rsi
+  - type: Armor 
+    modifiers:
+      coefficients:
+        Blunt: 0.7
+        Slash: 0.7
+        Piercing: 0.7 
+        Heat: 0.6
+        Cold: 0.6
+  - type: ExplosionResistance
+    damageCoefficient: 0.80
+#--------------------------------тяжёлая-------------------------
+#----------------стандартная-----------------
+- type: entity
+  parent: ClothingOuterBaseMedium
+  id: SNKArmorMidStd
+  name: Тяжёлый бронекомплект СНК
+  suffix: СНК
+  description: Стандартный тяжёлый бронекомплект СНК, который используют элитные и штурмовые подразделения.
+  components:
+  - type: Sprite
+    sprite: Corvax/Lore/SNK/Armor/snk_armor_mid_std.rsi
+  - type: Clothing
+    sprite: Corvax/Lore/SNK/Armor/snk_armor_mid_std.rsi
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.6
+        Slash: 0.6
+        Piercing: 0.6
+        Heat: 0.6
+        Radiation: 0.7
+        Caustic: 0.7
+  - type: ExplosionResistance
+    damageCoefficient: 0.70
+  - type: ClothingSpeedModifier
+    walkModifier: 0.90
+    sprintModifier: 0.90
+#----------------лесная-----------------
+- type: entity
+  parent: ClothingOuterBaseMedium
+  id: SNKArmorMidLes
+  name: Тяжёлый бронекомплект СНК
+  suffix: СНК
+  description: Тяжёлый бронекомплект СНК, имеющий камуфляжную лесную расцветку, который используют элитные и штурмовые подразделения.
+  components:
+  - type: Sprite
+    sprite: Corvax/Lore/SNK/Armor/snk_armor_mid_les.rsi
+  - type: Clothing
+    sprite: Corvax/Lore/SNK/Armor/snk_armor_mid_les.rsi
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.6
+        Slash: 0.5
+        Piercing: 0.6
+        Heat: 0.6
+        Radiation: 0.7
+        Caustic: 0.7
+  - type: ExplosionResistance
+    damageCoefficient: 0.70
+  - type: ClothingSpeedModifier
+    walkModifier: 0.90
+    sprintModifier: 0.90
+#----------------песочная-----------------
+- type: entity
+  parent: ClothingOuterBaseMedium
+  id: SNKArmorMidPes
+  name: Тяжёлый бронекомплект СНК
+  suffix: СНК
+  description: Тяжёлый бронекомплект СНК, который используют элитные и штурмовые подразделения, когда приходится воевать в пустыне.
+  components:
+  - type: Sprite
+    sprite: Corvax/Lore/SNK/Armor/snk_armor_mid_pes.rsi
+  - type: Clothing
+    sprite: Corvax/Lore/SNK/Armor/snk_armor_mid_pes.rsi
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.6
+        Slash: 0.6
+        Piercing: 0.6
+        Heat: 0.5
+        Radiation: 0.7
+        Caustic: 0.7
+  - type: ExplosionResistance
+    damageCoefficient: 0.70
+  - type: ClothingSpeedModifier
+    walkModifier: 0.90
+    sprintModifier: 0.90
+#----------------зимняя------------------
+- type: entity
+  parent: ClothingOuterBaseMedium
+  id: SNKArmorMidZim
+  name: Тяжёлый бронекомплект СНК
+  suffix: СНК
+  description: Тяжёлый бронекомплект СНК, который используют элитные и штурмовые подразделения в условиях затяжной зимы.
+  components:
+  - type: Sprite
+    sprite: Corvax/Lore/SNK/Armor/snk_armor_mid_zim.rsi
+  - type: Clothing
+    sprite: Corvax/Lore/SNK/Armor/snk_armor_mid_zim.rsi
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.6
+        Slash: 0.6
+        Piercing: 0.6
+        Heat: 0.5
+        Radiation: 0.7
+        Caustic: 0.7
+        Cold: 0.8
+  - type: ExplosionResistance
+    damageCoefficient: 0.70
+  - type: ClothingSpeedModifier
+    walkModifier: 0.90
+    sprintModifier: 0.90
+#------------------------------------скафандр----------      
+- type: entity
+  parent: ClothingOuterHardsuitBase
+  id: SNKHardsuit
+  name: Боевой скафандр СНК
+  suffix: СНК
+  description: Тяжелейшая из стандартных пехотных видов брони СНК. Среди бойцов ОПЗ получила прозвище "Сердитый дед".
+  components:
+  - type: Sprite
+    sprite: Corvax/Lore/SNK/Armor/snk_hardsuits.rsi
+  - type: Clothing
+    sprite: Corvax/Lore/SNK/Armor/snk_hardsuits.rsi
+  - type: ExplosionResistance
+    damageCoefficient: 0.9
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.5
+        Slash: 0.5
+        Piercing: 0.5
+        Caustic: 0.6
+        Radiation: 0.5
+        Heat: 0.5
+  - type: ClothingSpeedModifier
+    walkModifier: 0.8
+    sprintModifier: 0.8
+  - type: HeldSpeedModifier
+  - type: ToggleableClothing
+    clothingPrototype: SNKHelmetHardsuit
+#------------------------------------шлем скафандра----------  
+- type: entity
+  parent: ClothingHeadHardsuitWithLightBase
+  id: SNKHelmetHardsuit
+  name: Шлем боевого скафандра СНК
+  suffix: СНК
+  description: Тяжёлый. Именно из-за шлема скафандр получил прозвище "Сердитый дед".
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: BreathMask
+  - type: Sprite
+    sprite: Corvax/Lore/SNK/Armor/snk_hardsuits_helmet.rsi
+  - type: Clothing
+    sprite: Corvax/Lore/SNK/Armor/snk_hardsuits_helmet.rsi
+  - type: PointLight
+    color: "#ffdbad"
+    radius: 6
+  - type: PressureProtection
+    highPressureMultiplier: 0.1
+    lowPressureMultiplier: 1000
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.8
+        Slash: 0.8
+        Piercing: 0.8
+        Caustic: 0.9
+        Radiation: 0.9
+        Heat: 0.8
+  - type: ExplosionResistance
+    damageCoefficient: 0.75
+  - type: ShowJobIcons
+#---------------------------------------------------пояс и снаряжение---------------------------------------
+#-------------------------------------печать-----------------    
+- type: entity
+  name: Печать СНКцев
+  suffix: СНК
+  parent: RubberStampBaseAlt
+  id: SNKRubberStamp
+  components:
+  - type: Stamp
+    stampedName: Союз Независимых Колоний
+    stampedColor: "#001168"
+    stampState: "paper_stamp-generic"
+  - type: Sprite
+    sprite: Corvax/Lore/SNK/Equipment/snk_stamp.rsi
+    state: stamp
+#---------------------------------Стандартная форма---------------------
+- type: entity
+  id: SNKPaperForm
+  name: Форма запроса
+  suffix: СНК
+  parent: Paper
+  components:
+  - type: Paper
+    content: |
+      [color=#000000]░░░░░░█████░░░░░░[/color]
+      [color=#000000]░░░░░█░░█░░█░░░░░[/color]      [head=3]Бланк документа[/head]
+      [color=#000000]░░░░█████████░░░░[/color]               [head=3]SNK[/head]
+      [color=#000000]░░░░░█░░█░░█░░░░░[/color]
+      [color=#000000]░░░░░░█████░░░░░░[/color]
+      =============================================
+                          НАИМЕНОВАНИЕ ДОКУМЕНТА
+      =============================================
+      
+      От: 
+      Кому: 5й Штаб операции
+      Запрос: 
+      Срочность: (Крайня, Сильная, Средняя, Малая, Незначительная)
+      
+      Полное содержание документа со всей необходимой информацией и описанием
+      
+      =============================================
+      
+                                  [italic]Место для печатей[/italic]
+#-------------------------------------пояс стрелка--------------------------------------- 
+- type: entity
+  parent: ClothingBeltStorageBase
+  id: SNKBeltSold
+  name: Пояс военного СНК
+  suffix: СНК
+  description: Этот пояс используют солдаты СНК для ношения амуниции, пистолетов и прочего боевого снаряжения
+  components:
+  - type: Sprite
+    sprite: Corvax/Lore/SNK/Equipment/snk_belt_sol.rsi
+  - type: Clothing
+    sprite: Corvax/Lore/SNK/Equipment/snk_belt_sol.rsi
+  - type: Storage
+  - type: Appearance
+
+- type: entity
+  id: SNKBeltOffi
+  parent: SNKBeltSold
+  name: Пояс офицера СНК
+  description: Этот пояс используют офицеры СНК для ношения амуниции, пистолетов и прочего боевого снаряжения
+  suffix: СНК
+  components:
+  - type: Sprite
+    sprite: Corvax/Lore/SNK/Equipment/snk_belt_offi.rsi
+  - type: Clothing
+    sprite: Corvax/Lore/SNK/Equipment/snk_belt_offi.rsi
+
+- type: entity
+  id: SNKBeltMed
+  parent: SNKBeltSold
+  name: Пояс медика СНК
+  description: Этот пояс используют медики СНК для ношения медикаментов первой помощи, перевязочных материалов и боевого снаряжения
+  suffix: СНК
+  components:
+  - type: Sprite
+    sprite: Corvax/Lore/SNK/Equipment/snk_belt_med.rsi
+  - type: Clothing
+    sprite: Corvax/Lore/SNK/Equipment/snk_belt_med.rsi
+
+- type: entity
+  id: SNKBeltEnge
+  parent: SNKBeltSold
+  name: Пояс инженера СНК
+  description: Этот пояс используют инженеры СНК для ношения инструментов и боевого снаряжения
+  suffix: СНК
+  components:
+  - type: Sprite
+    sprite: Corvax/Lore/SNK/Equipment/snk_belt_eng.rsi
+  - type: Clothing
+    sprite: Corvax/Lore/SNK/Equipment/snk_belt_eng.rsi
+#-------------------------------заполненые------------------------------
+- type: entity
+  id: SNKBeltOffiFilled
+  parent: SNKBeltOffi
+  suffix: Filled, СНК, Солдат
+  components:
+  - type: StorageFill
+    contents:
+      - id: CombatKnife
+      - id: SNKPaperForm
+      - id: SNKPaperForm
+      - id: SNKPaperForm
+      - id: SNKPaperForm
+      - id: SNKPaperForm
+      - id: SNKPaperForm
+
+- type: entity
+  id: SNKBeltSoldFilled
+  parent: SNKBeltSold
+  suffix: Filled, СНК, Солдат
+  components:
+  - type: StorageFill
+    contents:
+      - id: SNKPistolPist
+      - id: CombatKnife
+      - id: SNKMagazinePistolPistStd
+      - id: SNKMagazinePistolPistStd
+
+- type: entity
+  id: SNKBeltMedicFilled
+  parent: SNKBeltMed
+  suffix: Filled, СНК, Медик
+  components:
+  - type: StorageFill
+    contents:
+      - id: CombatKnife
+      - id: Brutepack
+      - id: Ointment
+      - id: Bloodpack
+      - id: Gauze
+      - id: Bloodpack
+      - id: Gauze
+      
+- type: entity
+  id: SNKBeltEngFilled
+  parent: SNKBeltEnge
+  suffix: Filled, СНК, Инженер
+  components:
+  - type: StorageFill
+    contents:
+      - id: CombatKnife
+      - id: Crowbar
+      - id: Wrench
+      - id: Screwdriver
+      - id: Wirecutter
+      - id: Welder
+      - id: Multitool       
+#-------------------------------------------------оружие------------------------------------------------------
+#-------------------------------------------пули----------------------------------------------
+#---------------------------------пистолет------------- 
+#---------------обычные---------------------
+- type: entity
+  id: SNKBulletPistolStd
+  name: Пистолетная пуля (.24 rifle)
+  suffix: СНК
+  parent: BaseBullet
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Projectile
+    damage:
+      types:
+        Piercing: 13
+#---------------ядовитые---------------------
+- type: entity
+  id: SNKBulletPistolPoi
+  name: Пистолетная пуля (.24 rifle)
+  suffix: СНК
+  parent: BaseBullet
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Projectile
+    damage:
+      types:
+        Piercing: 5
+        Poison: 11
+#---------------------------------винтовка------------- 
+#---------------обычные---------------------
+- type: entity
+  id: SNKBulletRifleStd
+  name: Винтовочная пуля (.34 rifle)
+  suffix: СНК
+  parent: BaseBullet
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Projectile
+    damage:
+      types:
+        Piercing: 20
+#---------------зажигательные---------------------
+- type: entity
+  id: SNKBulletRifleHea
+  name: Винтовочная пуля (.34 rifle)
+  suffix: СНК
+  parent: BaseBullet
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Projectile
+    damage:
+      types:
+        Piercing: 5
+        Heat: 17
+#---------------урановые---------------------
+- type: entity
+  id: SNKBulletRifleUrn
+  name: Винтовочная пуля (.34 rifle)
+  suffix: СНК
+  parent: BaseBullet
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Projectile
+    damage:
+      types:
+        Piercing: 5
+        Radiation: 13
+#---------------------------------тяжёлая винтовка------------- 
+#---------------обычные---------------------
+- type: entity
+  id: SNKBulletHighRifleStd
+  name: Тяжёлая винтовочная пуля (.55 rifle)
+  suffix: СНК
+  parent: BaseBullet
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Projectile
+    damage:
+      types:
+        Piercing: 33
+#---------------------------------дробовик------------- 
+#---------------обычные---------------------
+- type: entity
+  id: SNKBulletDrobStd
+  name: Заряд дроби (.45 rifle)
+  suffix: СНК
+  parent: BaseBullet
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Projectile
+    damage:
+      types:
+        Piercing: 8
+    
+- type: entity
+  id: SNKBulletDrobStdSpread
+  categories: [ HideSpawnMenu ]
+  parent: SNKBulletDrobStd
+  components:
+  - type: ProjectileSpread
+    proto: SNKBulletDrobStd
+    count: 6
+    spread: 15
+#---------------пуля---------------------
+- type: entity
+  id: SNKBulletDrobPul
+  name: Дробовиковая пуля (.45 rifle)
+  suffix: СНК
+  parent: BaseBullet
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Projectile
+    damage:
+      types:
+        Piercing: 7
+        Blunt: 6
+    
+- type: entity
+  id: SNKBulletDrobPulSpread
+  categories: [ HideSpawnMenu ]
+  parent: SNKBulletDrobPul
+  components:
+  - type: ProjectileSpread
+    proto: SNKBulletDrobPul
+    count: 1
+    spread: 5
+#---------------зажигательные---------------------
+- type: entity
+  id: SNKBulletDrobHea
+  name: Зажигательная дробь (.45 rifle)
+  suffix: СНК
+  parent: BaseBullet
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Projectile
+    damage:
+      types:
+        Piercing: 3
+        Heat: 10
+      
+- type: entity
+  id: SNKBulletDrobHeaSpread
+  categories: [ HideSpawnMenu ]
+  parent: SNKBulletDrobHea
+  components:
+  - type: ProjectileSpread
+    proto: SNKBulletDrobHea
+    count: 4
+    spread: 11
+#-------------------------------------------лучи----------------------------------------------
+#---------------------------------лазер карабин------------- 
+- type: hitscan
+  id: SNKRedLaserRifle
+  damage:
+    types:
+      Heat: 25
+  muzzleFlash:
+    sprite: Objects/Weapons/Guns/Projectiles/projectiles.rsi
+    state: muzzle_beam_heavy
+  travelFlash:
+    sprite: Objects/Weapons/Guns/Projectiles/projectiles.rsi
+    state: beam_heavy
+  impactFlash:
+    sprite: Objects/Weapons/Guns/Projectiles/projectiles.rsi
+    state: impact_beam_heavy
+#---------------------------------радиация карабин----------
+- type: hitscan
+  id: SNKradioLaser
+  damage:
+    types:
+      Radiation: 20
+  muzzleFlash:
+    sprite: Objects/Weapons/Guns/Projectiles/projectiles.rsi
+    state: muzzle_xray
+  travelFlash:
+    sprite: Objects/Weapons/Guns/Projectiles/projectiles.rsi
+    state: xray
+  impactFlash:
+    sprite: Objects/Weapons/Guns/Projectiles/projectiles.rsi
+    state: impact_xray
+#---------------------------------лазер дробовик----------
+- type: entity
+  id: SNKRedLaserDrob
+  name: Лазерная дробь
+  parent: BaseBullet
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Projectile
+    damage:
+      types:
+        Heat: 7
+  - type: TimedDespawn
+    lifetime: 5
+  - type: Sprite
+    sprite: Corvax/Lore/SNK/Weapon/snk_projectiles.rsi
+    layers:
+      - state: lazer
+    
+- type: entity
+  id: SNKRedLaserDrobSpread
+  categories: [ HideSpawnMenu ]
+  parent: SNKRedLaserDrob
+  components:
+  - type: ProjectileSpread
+    proto: SNKRedLaserDrob
+    count: 7
+    spread: 20
+#-------------------------------------------энергошарики-----------------------
+- type: Tag
+  id: SNKElectro
+
+- type: entity
+  id: SNKElectro
+  name: Электрошары
+  parent: BaseBullet
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Projectile
+    damage:
+      types:
+        Shock: 10
+  - type: TimedDespawn
+    lifetime: 5
+  - type: Sprite
+    sprite: Corvax/Lore/SNK/Weapon/snk_projectiles.rsi
+    layers:
+      - state: electro
+  - type: StaminaDamageOnCollide
+    damage: 15  
+#-----------------------------------------------------картриджи-----------------------------
+#---------------------------------пистолет------------- 
+#---------------обычные---------------------
+- type: Tag
+  id: SNKCartridgePistolStd
+
+- type: entity
+  id: SNKCartridgePistolStd
+  name: Пистолетная пуля (.24)
+  suffix: СНК
+  parent: BaseCartridgeRifle
+  components:
+  - type: CartridgeAmmo
+    proto: SNKBulletPistolStd
+  - type: Tag
+    tags:
+      - SNKCartridgePistolStd
+#---------------ядовитые---------------------
+- type: Tag
+  id: SNKCartridgePistolPoi
+
+- type: entity
+  id: SNKCartridgePistolPoi
+  name: Пистолетная пуля (ядовитая .24)
+  suffix: СНК
+  parent: BaseCartridgeRifle
+  components:
+  - type: CartridgeAmmo
+    proto: SNKBulletPistolPoi
+  - type: Tag
+    tags:
+      - SNKCartridgePistolPoi
+#---------------------------------винтовка------------- 
+#---------------обычные---------------------
+- type: Tag
+  id: SNKCartridgeRifleStd
+
+- type: entity
+  id: SNKCartridgeRifleStd
+  name: Винтовочная пуля (.34)
+  suffix: СНК
+  parent: BaseCartridgeRifle
+  components:
+  - type: CartridgeAmmo
+    proto: SNKBulletRifleStd
+  - type: Tag
+    tags:
+      - SNKCartridgeRifleStd
+#---------------зажигательные---------------------
+- type: Tag
+  id: SNKCartridgeRifleHea
+
+- type: entity
+  id: SNKCartridgeRifleHea
+  name: Винтовочная пуля (зажигательная .34)
+  suffix: СНК
+  parent: BaseCartridgeRifle
+  components:
+  - type: CartridgeAmmo
+    proto: SNKBulletRifleHea
+  - type: Tag
+    tags:
+      - SNKCartridgeRifleHea
+#---------------урановые---------------------
+- type: Tag
+  id: SNKCartridgeRifleUrn
+
+- type: entity
+  id: SNKCartridgeRifleUrn
+  name: Винтовочная пуля (урановая .34)
+  suffix: СНК
+  parent: BaseCartridgeRifle
+  components:
+  - type: CartridgeAmmo
+    proto: SNKBulletRifleUrn
+  - type: Tag
+    tags:
+      - SNKCartridgeRifleUrn
+#---------------------------------тяжёлая винтовка------------- 
+#---------------обычные---------------------
+- type: Tag
+  id: SNKCartridgeHighRifleStd
+
+- type: entity
+  id: SNKCartridgeHighRifleStd
+  name: Тяжёлая винтовочная пуля (.55)
+  suffix: СНК
+  parent: BaseCartridgeRifle
+  components:
+  - type: CartridgeAmmo
+    proto: SNKBulletHighRifleStd
+  - type: Tag
+    tags:
+      - SNKCartridgeHighRifleStd
+#---------------------------------дробовик------------- 
+#---------------обычные---------------------
+- type: Tag
+  id: SNKCartridgeDrobStd
+
+- type: entity
+  id: SNKCartridgeDrobStd
+  name: Заряд дроби (.45)
+  suffix: СНК
+  parent: BaseShellShotgun
+  components:
+  - type: CartridgeAmmo
+    proto: SNKBulletDrobStdSpread
+    soundEject:
+      collection: ShellEject
+  - type: Tag
+    tags:
+      - SNKCartridgeDrobStd
+#---------------пуля---------------------
+- type: Tag
+  id: SNKCartridgeDrobBul
+
+- type: entity
+  id: SNKCartridgeDrobBul
+  name: Дробовиковая пуля (.45)
+  suffix: СНК
+  parent: BaseCartridgeRifle
+  components:
+  - type: CartridgeAmmo
+    proto: SNKBulletDrobPulSpread
+  - type: Tag
+    tags:
+      - SNKCartridgeDrobBul
+#---------------зажигательные---------------------
+- type: Tag
+  id: SNKCartridgeDrobHea
+
+- type: entity
+  id: SNKCartridgeDrobHea
+  name: Зажигательная дробь (.45)
+  suffix: СНК
+  parent: BaseShellShotgun
+  components:
+  - type: CartridgeAmmo
+    proto: SNKBulletDrobHeaSpread
+    soundEject:
+      collection: ShellEject
+  - type: Tag
+    tags:
+      - SNKCartridgeDrobHea
+#------------------------------------энергостволы----------------------------
+#---------------электрошары---------------------
+- type: Tag
+  id: SNKCartridgeElectro
+
+- type: entity
+  id: SNKCartridgeElectro
+  name: Электрозаряд
+  suffix: СНК
+  parent: BaseCartridgeRifle
+  components:
+  - type: Sprite
+    sprite: Corvax/Lore/SNK/Weapon/snk_projectiles.rsi
+    layers:
+    - state: base
+      map: ["enum.AmmoVisualLayers.Base"]
+  - type: CartridgeAmmo
+    proto: SNKElectro
+  - type: Tag
+    tags:
+      - SNKCartridgeElectro
+#---------------лазерная дробь---------------------      
+- type: Tag
+  id: SNKCartridgeDrobLazer
+
+- type: entity
+  id: SNKCartridgeDrobLazer
+  name: Лазерный заряд
+  suffix: СНК
+  parent: BaseShellShotgun
+  components:
+  - type: Sprite
+    sprite: Corvax/Lore/SNK/Weapon/snk_projectiles.rsi
+    layers:
+    - state: base
+  - type: CartridgeAmmo
+    proto: SNKRedLaserDrobSpread
+    soundEject:
+      collection: ShellEject
+  - type: Tag
+    tags:
+      - SNKCartridgeDrobLazer
+#-------------------------------------магазины---------------------------------------------------------------------------------
+#------------------------пистолет-пистолетные------------------
+#-----------------обычые--------------
+- type: Tag
+  id: SNKMagazine
+  
+- type: Tag
+  id: SNKMagazinePistolPistStd 
+
+- type: entity
+  id: SNKMagazinePistolPistStd
+  name: Магазин к пистолету "Нюра" (.24)
+  suffix: СНК
+  parent: BaseMagazinePistol
+  components:
+  - type: BallisticAmmoProvider
+    mayTransfer: true
+    whitelist:
+      tags:
+        - SNKCartridgePistolStd
+    proto: SNKCartridgePistolStd
+    capacity: 10
+  - type: Sprite
+    sprite: Corvax/Lore/SNK/Weapon/snk_pistol_pist_magazine.rsi
+    layers:
+    - state: base
+      map: ["enum.GunVisualLayers.Base"]
+  - type: Tag
+    tags:
+      - SNKMagazinePistolPistStd
+      - SNKMagazine
+#-----------------ядовитые--------------
+- type: Tag
+  id: SNKMagazinePistolPistPoi
+
+- type: entity
+  id: SNKMagazinePistolPistPoi
+  name: Магазин к пистолету "Нюра" (.24 ядовитые)
+  suffix: СНК
+  parent: BaseMagazinePistol
+  components:
+  - type: BallisticAmmoProvider
+    mayTransfer: true
+    whitelist:
+      tags:
+        - SNKCartridgePistolPoi
+    proto: SNKCartridgePistolPoi
+    capacity: 10
+  - type: Sprite
+    sprite: Corvax/Lore/SNK/Weapon/snk_pistol_pist_magazine.rsi
+    layers:
+    - state: poison
+      map: ["enum.GunVisualLayers.Base"]
+  - type: Tag
+    tags:
+      - SNKMagazinePistolPistPoi
+      - SNKMagazine
+#------------------------пистолет-винтовочные------------------
+#-----------------обычые--------------
+- type: Tag
+  id: SNKMagazinePistolRifleStd
+
+- type: entity
+  id: SNKMagazinePistolRifleStd
+  name: Магазин к пистолету "Громыхало" (.34)
+  suffix: СНК
+  parent: BaseMagazinePistol
+  components:
+  - type: BallisticAmmoProvider
+    mayTransfer: true
+    whitelist:
+      tags:
+        - SNKCartridgeRifleStd
+    proto: SNKCartridgeRifleStd
+    capacity: 6
+  - type: Sprite
+    sprite: Corvax/Lore/SNK/Weapon/snk_pistol_rif_magazine.rsi
+    layers:
+    - state: base
+      map: ["enum.GunVisualLayers.Base"]
+  - type: Tag
+    tags:
+      - SNKMagazinePistolRifleStd
+      - SNKMagazine
+#-----------------зажигательные--------------
+- type: Tag
+  id: SNKMagazinePistolRifleHeat
+
+- type: entity
+  id: SNKMagazinePistolRifleHeat
+  name: Магазин к пистолету "Громыхало" (.34 зажигательные)
+  suffix: СНК
+  parent: BaseMagazinePistol
+  components:
+  - type: BallisticAmmoProvider
+    mayTransfer: true
+    whitelist:
+      tags:
+        - SNKCartridgeRifleHea
+    proto: SNKCartridgeRifleHea
+    capacity: 6
+  - type: Sprite
+    sprite: Corvax/Lore/SNK/Weapon/snk_pistol_rif_magazine.rsi
+    layers:
+    - state: heat
+      map: ["enum.GunVisualLayers.Base"]
+  - type: Tag
+    tags:
+      - SNKMagazinePistolRifleHeat
+      - SNKMagazine
+#-----------------урановые--------------
+- type: Tag
+  id: SNKMagazinePistolRifleUrn
+
+- type: entity
+  id: SNKMagazinePistolRifleUrn
+  name: Магазин к пистолету "Громыхало" (.34 урановые)
+  suffix: СНК
+  parent: BaseMagazinePistol
+  components:
+  - type: BallisticAmmoProvider
+    mayTransfer: true
+    whitelist:
+      tags:
+        - SNKCartridgeRifleUrn
+    proto: SNKCartridgeRifleUrn
+    capacity: 6
+  - type: Sprite
+    sprite: Corvax/Lore/SNK/Weapon/snk_pistol_rif_magazine.rsi
+    layers:
+    - state: uranium
+      map: ["enum.GunVisualLayers.Base"]
+  - type: Tag
+    tags:
+      - SNKMagazinePistolRifleUrn
+      - SNKMagazine
+#---------------------ПП-пистолет--------------------------------------------
+#----------обычные---------------------
+- type: Tag
+  id: BaseSNKMagazineSMGPist
+
+- type: entity
+  id: BaseSNKMagazineSMGPist
+  name: SMG magazine (.24)
+  parent: BaseItem
+  abstract: true
+  components:
+  - type: Tag
+    tags:
+      - BaseSNKMagazineSMGPist
+      - SNKMagazine
+  - type: BallisticAmmoProvider
+    mayTransfer: true
+    whitelist:
+      tags:
+        - SNKCartridgePistolStd
+        - SNKCartridgePistolPoi
+    capacity: 25
+  - type: Item
+    size: Small
+  - type: ContainerContainer
+    containers:
+      ballistic-ammo: !type:Container
+  - type: Sprite
+    sprite: Corvax/Lore/SNK/Weapon/snk_smg_pist_magazine.rsi
+    layers:
+    - state: base
+      map: ["enum.GunVisualLayers.Base"]
+    - state: mag-1
+      map: ["enum.GunVisualLayers.Mag"]
+  - type: MagazineVisuals
+    magState: mag
+    steps: 1
+    zeroVisible: false
+  - type: Appearance
+
+- type: Tag
+  id: SNKMagazineSMGPistStd
+
+- type: entity
+  id: SNKMagazineSMGPistStd
+  name: Магазин к пистолету-пулемёту "Баш" (.24)
+  suffix: СНК
+  parent: BaseSNKMagazineSMGPist
+  components:
+  - type: BallisticAmmoProvider
+    proto: SNKCartridgePistolStd
+    soundInsert:
+      path: /Audio/Weapons/Guns/MagIn/bullet_insert.ogg
+  - type: Sprite
+    layers:
+    - state: base
+      map: ["enum.GunVisualLayers.Base"]
+  - type: Tag
+    tags:
+      - SNKMagazineSMGPistStd
+      - SNKMagazine
+#----------ядовитые--------------------
+- type: Tag
+  id: SNKMagazineSMGPistPoi
+
+- type: entity
+  id: SNKMagazineSMGPistPoi
+  name: Магазин к пистолету-пулемёту "Баш" (ядовитые .24)
+  suffix: СНК
+  parent: BaseSNKMagazineSMGPist
+  components:
+  - type: BallisticAmmoProvider
+    proto: SNKCartridgePistolPoi
+    soundInsert:
+      path: /Audio/Weapons/Guns/MagIn/bullet_insert.ogg
+  - type: Sprite
+    layers:
+    - state: poison
+      map: ["enum.GunVisualLayers.Base"]
+  - type: Tag
+    tags:
+      - SNKMagazineSMGPistPoi
+      - SNKMagazine
+#---------------------ПП-электро--------------------------------------------
+- type: Tag
+  id: SNKMagazineSMGElectro
+
+- type: entity
+  id: BaseSNKMagazineSMGElectro
+  name: SMG magazine
+  parent: BaseItem
+  abstract: true
+  components:
+  - type: Tag
+    tags:
+      - SNKMagazine
+  - type: BallisticAmmoProvider
+    mayTransfer: true
+    whitelist:
+      tags:
+        - SNKCartridgeElectro
+    capacity: 20
+  - type: Item
+    size: Small
+  - type: ContainerContainer
+    containers:
+      ballistic-ammo: !type:Container
+  - type: Sprite
+    sprite: Corvax/Lore/SNK/Weapon/snk_smg_elec_magazine.rsi
+    layers:
+    - state: base
+      map: ["enum.GunVisualLayers.Base"]
+    - state: mag-0
+      map: ["enum.GunVisualLayers.Mag"]
+  - type: MagazineVisuals
+    magState: mag
+    steps: 1
+    zeroVisible: false
+  - type: Appearance
+
+- type: entity
+  id: SNKMagazineSMGElectro
+  name: Магазин к пистолету-пулемёту "Хартред"
+  description: Небольшой, лёгкий, наэлектризованный. Порой потрескивает.
+  suffix: СНК
+  parent: BaseSNKMagazineSMGElectro
+  components:
+  - type: BallisticAmmoProvider
+    proto: SNKCartridgeElectro
+    soundInsert:
+      path: /Audio/Weapons/Guns/MagIn/bullet_insert.ogg
+  - type: Sprite
+    layers:
+    - state: base
+      map: ["enum.GunVisualLayers.Base"]
+  - type: Tag
+    tags:
+      - SNKMagazineSMGElectro
+      - SNKMagazine
+#--------------------автомат-винтовочные-------------------------------------
+#----------обычные----------------------
+- type: entity
+  id: SNKBaseMagazineLightRifle
+  name: Магазин к автомату СНК "Пингвин" (.34)
+  suffix: СНК
+  parent: BaseItem
+  abstract: true
+  components:
+  - type: BallisticAmmoProvider
+    mayTransfer: true
+    whitelist:
+      tags:
+        - SNKCartridgeRifleStd
+        - SNKCartridgeRifleHea
+        - SNKCartridgeRifleUrn
+    proto: SNKCartridgeRifleStd
+    capacity: 21
+  - type: Item
+    size: Small
+  - type: ContainerContainer
+    containers:
+      ballistic-ammo: !type:Container
+  - type: Sprite
+    sprite: Corvax/Lore/SNK/Weapon/snk_automat_fast_magazine.rsi
+    layers:
+    - state: base
+      map: ["enum.GunVisualLayers.Base"]
+  - type: MagazineVisuals
+    steps: 2
+    zeroVisible: false
+  - type: Appearance
+ 
+- type: Tag
+  id: SNKMagazineLightRifleStd
+ 
+- type: entity
+  id: SNKMagazineLightRifleStd
+  name: Магазин к автомату СНК "Пингвин" (.34)
+  suffix: СНК
+  parent: SNKBaseMagazineLightRifle
+  components:
+  - type: BallisticAmmoProvider
+    proto: SNKCartridgeRifleStd
+  - type: Sprite
+    layers:
+    - state: base
+      map: ["enum.GunVisualLayers.Base"]
+  - type: Tag
+    tags:
+      - SNKMagazineLightRifleStd
+      - SNKMagazine
+#----------зажигательные----------------
+- type: Tag
+  id: SNKMagazineLightRifleHea
+
+- type: entity
+  id: SNKMagazineLightRifleHea
+  name: Магазин к автомату СНК "Пингвин" (зажигательные .34)
+  suffix: СНК
+  parent: SNKBaseMagazineLightRifle
+  components:
+  - type: BallisticAmmoProvider
+    proto: SNKCartridgeRifleHea
+  - type: Sprite
+    layers:
+    - state: heat
+      map: ["enum.GunVisualLayers.Base"]
+  - type: Tag
+    tags:
+      - SNKMagazineLightRifleHea
+      - SNKMagazine
+#----------урановые---------------------
+- type: Tag
+  id: SNKMagazineLightRifleUrn
+
+- type: entity
+  id: SNKMagazineLightRifleUrn
+  name: Магазин к автомату СНК "Пингвин" (урановые .34)
+  suffix: СНК
+  parent: SNKBaseMagazineLightRifle
+  components:
+  - type: BallisticAmmoProvider
+    proto: SNKCartridgeRifleUrn
+  - type: Sprite
+    layers:
+    - state: uranium
+      map: ["enum.GunVisualLayers.Base"]
+  - type: Tag
+    tags:
+      - SNKMagazineLightRifleUrn
+      - SNKMagazine
+#--------------------автомат-тяж.винтовочные-------------------------------------
+#----------обычные----------------------
+- type: entity
+  id: SNKBaseMagazineHighAutoRifle
+  name: Магазин к автомату СНК "Хрост" (.55)
+  suffix: СНК
+  parent: BaseItem
+  abstract: true
+  components:
+  - type: BallisticAmmoProvider
+    mayTransfer: true
+    whitelist:
+      tags:
+        - SNKCartridgeHighRifleStd
+    proto: SNKCartridgeHighRifleStd
+    capacity: 20
+  - type: Item
+    size: Small
+  - type: ContainerContainer
+    containers:
+      ballistic-ammo: !type:Container
+  - type: Sprite
+    sprite: Corvax/Lore/SNK/Weapon/snk_automat_hig_magazine.rsi
+    layers:
+    - state: base
+      map: ["enum.GunVisualLayers.Base"]
+  - type: MagazineVisuals
+    steps: 2
+    zeroVisible: false
+  - type: Appearance
+
+- type: Tag
+  id: SNKMagazineHighAutoRifle
+  
+- type: entity
+  id: SNKMagazineHighAutoRifle
+  name: Магазин к автомату СНК "Хрост" (.55)
+  suffix: СНК
+  parent: SNKBaseMagazineHighAutoRifle
+  components:
+  - type: BallisticAmmoProvider
+    proto: SNKCartridgeHighRifleStd
+  - type: Sprite
+    layers:
+    - state: base
+      map: ["enum.GunVisualLayers.Base"]
+  - type: Tag
+    tags:
+      - SNKMagazineHighAutoRifle
+      - SNKMagazine
+#--------------------винтовка-тяж.винтовочные-------------------------------------
+#----------обычные----------------------
+- type: entity  
+  id: SNKBaseMagazineHighRifle
+  name: Магазин к винтовке СНК "Нитро" (.55)
+  suffix: СНК
+  parent: BaseItem
+  abstract: true
+  components:
+  - type: BallisticAmmoProvider
+    mayTransfer: true
+    whitelist:
+      tags:
+        - SNKCartridgeHighRifleStd
+    proto: SNKCartridgeHighRifleStd
+    capacity: 10
+  - type: Item
+    size: Small
+  - type: ContainerContainer
+    containers:
+      ballistic-ammo: !type:Container
+  - type: Sprite
+    sprite: Corvax/Lore/SNK/Weapon/snk_carabine_hig_magazine.rsi
+    layers:
+    - state: base
+      map: ["enum.GunVisualLayers.Base"]
+  - type: MagazineVisuals
+    steps: 2
+    zeroVisible: false
+  - type: Appearance
+
+- type: Tag
+  id: SNKMagazineHighRifle
+  
+- type: entity
+  id: SNKMagazineHighRifle
+  name: Магазин к винтовке СНК "Нитро" (.55)
+  suffix: СНК
+  parent: SNKBaseMagazineHighRifle
+  components:
+  - type: BallisticAmmoProvider
+    proto: SNKCartridgeHighRifleStd
+  - type: Sprite
+    layers:
+    - state: base
+      map: ["enum.GunVisualLayers.Base"]
+  - type: Tag
+    tags:
+      - SNKMagazineHighRifle
+      - SNKMagazine
+#--------------------пулемёт-тяж.винтовочные-------------------------------------
+#----------обычные----------------------
+- type: entity
+  id: SNKBaseMagazineHighLMG
+  name: Магазин к пулемёту СНК "Худвинг" (.55)
+  suffix: СНК
+  parent: BaseItem
+  abstract: true
+  components:
+  - type: BallisticAmmoProvider
+    mayTransfer: true
+    whitelist:
+      tags:
+        - SNKCartridgeHighRifleStd
+    proto: SNKCartridgeHighRifleStd
+    capacity: 100
+  - type: Item
+    size: Small
+  - type: ContainerContainer
+    containers:
+      ballistic-ammo: !type:Container
+  - type: Sprite
+    sprite: Corvax/Lore/SNK/Weapon/snk_lmg_hig_magazine.rsi
+    layers:
+    - state: base
+      map: ["enum.GunVisualLayers.Base"]
+  - type: MagazineVisuals
+    steps: 2
+    zeroVisible: false
+  - type: Appearance
+
+- type: Tag
+  id: SNKMagazineHighLMG
+  
+- type: entity
+  id: SNKMagazineHighLMG
+  name: Магазин к пулемёту СНК "Худвинг" (.55)
+  suffix: СНК
+  parent: SNKBaseMagazineHighLMG
+  components:
+  - type: BallisticAmmoProvider
+    proto: SNKCartridgeHighRifleStd
+  - type: Sprite
+    layers:
+    - state: base
+      map: ["enum.GunVisualLayers.Base"]
+  - type: Tag
+    tags:
+      - SNKMagazineHighLMG
+      - SNKMagazine
+#--------------------пулемёт-дробь-------------------------------------
+#----------дробь----------------------
+- type: entity
+  id: SNKBaseMagazineDrobLMG
+  name: Магазин к пулемёту СНК "Друба" (дробь .45)
+  suffix: СНК
+  parent: BaseItem
+  abstract: true
+  components:
+  - type: BallisticAmmoProvider
+    mayTransfer: true
+    whitelist:
+      tags:
+        - SNKCartridgeDrobStd
+        - SNKCartridgeDrobBul
+        - SNKCartridgeDrobHea
+    proto: SNKCartridgeDrobStd
+    capacity: 50
+  - type: Item
+    size: Small
+  - type: ContainerContainer
+    containers:
+      ballistic-ammo: !type:Container
+  - type: Sprite
+    sprite: Corvax/Lore/SNK/Weapon/snk_lmg_drb_magazine.rsi
+    layers:
+    - state: base
+      map: ["enum.GunVisualLayers.Base"]
+  - type: MagazineVisuals
+    steps: 2
+    zeroVisible: false
+  - type: Appearance
+
+- type: Tag
+  id: SNKMagazineDrobLMGStd
+  
+- type: entity
+  id: SNKMagazineDrobLMGStd
+  name: Магазин к пулемёту СНК "Друба" (.45)
+  suffix: СНК
+  parent: SNKBaseMagazineDrobLMG
+  components:
+  - type: BallisticAmmoProvider
+    proto: SNKCartridgeDrobStd
+  - type: Sprite
+    layers:
+    - state: base
+      map: ["enum.GunVisualLayers.Base"]
+  - type: Tag
+    tags:
+      - SNKMagazineDrobLMGStd
+# Код написал Crazzy_pingvin
+      - SNKMagazine
+#----------пули----------------------
+- type: Tag
+  id: SNKMagazineDrobLMGPul
+
+- type: entity
+  id: SNKMagazineDrobLMGPul
+  name: Магазин к пулемёту СНК "Друба" (пули .45)
+  suffix: СНК
+  parent: SNKBaseMagazineDrobLMG
+  components:
+  - type: BallisticAmmoProvider
+    proto: SNKCartridgeDrobBul
+  - type: Sprite
+    layers:
+    - state: base
+      map: ["enum.GunVisualLayers.Base"]
+  - type: Tag
+    tags:
+      - SNKMagazineDrobLMGPul
+      - SNKMagazine
+#----------зажигательные----------------------
+- type: Tag
+  id: SNKMagazineDrobLMGHea
+
+- type: entity
+  id: SNKMagazineDrobLMGHea
+  name: Магазин к пулемёту СНК "Друба" (зажигательные .45)
+  suffix: СНК
+  parent: SNKBaseMagazineDrobLMG
+  components:
+  - type: BallisticAmmoProvider
+    proto: SNKCartridgeDrobHea
+  - type: Sprite
+    layers:
+    - state: base
+      map: ["enum.GunVisualLayers.Base"]
+  - type: Tag
+    tags:
+      - SNKMagazineDrobLMGHea
+      - SNKMagazine
+#-------------------------------------стволы---------------------------------------------------------------------------------
+#--------------------------------пистолет-пистолетный-----------------------------------
+- type: Tag
+  id: SNKPistolPist
+
+- type: entity
+  name: Пистолет СНК "Нюра"
+  suffix: СНК
+  parent: BaseWeaponPistol
+  id: SNKPistolPist
+  description: Самое массовое оружие СНК. Используется всеми и везде. Буквально каждой бочке затычка. Притом его чертежи секретны и нигде не разоглашаются. Использует пистолетные патроны СНК калибра .24
+  components:
+  - type: Sprite
+    sprite: Corvax/Lore/SNK/Weapon/snk_pistol_pist.rsi
+    layers:
+     - state: base
+       map: ["enum.GunVisualLayers.Base"]
+     - state: mag-0
+       map: ["enum.GunVisualLayers.Mag"]
+  - type: Gun
+    fireRate: 3.5
+    soundGunshot:
+      path: /Audio/Weapons/Guns/Gunshots/mk58.ogg 
+  - type: ChamberMagazineAmmoProvider
+    soundRack:
+      path: /Audio/Weapons/Guns/Cock/ltrifle_cock.ogg      
+  - type: ItemSlots
+    slots:
+      gun_magazine:
+        name: Magazine
+        startingItem: SNKMagazinePistolPistStd
+        insertSound: /Audio/Weapons/Guns/MagIn/pistol_magin.ogg
+        ejectSound: /Audio/Weapons/Guns/MagOut/pistol_magout.ogg
+        priority: 2
+        whitelist:
+          tags:
+            - SNKMagazinePistolPistStd
+            - SNKMagazinePistolPistPoi
+      gun_chamber:
+        name: Chamber
+        startingItem: SNKCartridgePistolStd
+        priority: 1
+        whitelist:
+          tags:
+            - SNKCartridgePistolStd
+            - SNKCartridgePistolPoi
+  - type: ContainerContainer
+    containers:
+      gun_magazine: !type:ContainerSlot
+      gun_chamber: !type:ContainerSlot
+  - type: MagazineVisuals
+    magState: mag
+    steps: 1
+    zeroVisible: true
+  - type: Appearance
+  - type: StaticPrice
+    price: 250
+  - type: Tag
+    tags:
+      - SNKPistolPist
+#--------------------------------пистолет-винтовочный-----------------------------------
+- type: Tag
+  id: SNKPistolRifle
+
+- type: entity
+  name: Пистолет СНК "Громыхало"
+  suffix: СНК
+  parent: BaseWeaponPistol
+  id: SNKPistolRifle
+  description: Крупнокалиберный и мощный. Хотя работать им долго. Но выходит весьма качественно. Использует винтовочные патроны СНК калибра .34
+  components:
+  - type: Sprite
+    sprite: Corvax/Lore/SNK/Weapon/snk_pistol_rif.rsi
+    layers:
+     - state: base
+       map: ["enum.GunVisualLayers.Base"]
+     - state: mag-0
+       map: ["enum.GunVisualLayers.Mag"]
+  - type: Gun
+    fireRate: 2.5
+    soundGunshot:
+      path: /Audio/Weapons/Guns/Gunshots/mk58.ogg 
+  - type: ChamberMagazineAmmoProvider
+    soundRack:
+      path: /Audio/Weapons/Guns/Cock/ltrifle_cock.ogg      
+  - type: ItemSlots
+    slots:
+      gun_magazine:
+        name: Magazine
+        startingItem: SNKMagazinePistolRifleStd
+        insertSound: /Audio/Weapons/Guns/MagIn/pistol_magin.ogg
+        ejectSound: /Audio/Weapons/Guns/MagOut/pistol_magout.ogg
+        priority: 2
+        whitelist:
+          tags:
+            - SNKMagazinePistolRifleStd
+            - SNKMagazinePistolRifleHeat
+            - SNKMagazinePistolRifleUrn
+      gun_chamber:
+        name: Chamber
+        startingItem: SNKCartridgeRifleStd
+        priority: 1
+        whitelist:
+          tags:
+            - SNKCartridgeRifleStd
+            - SNKCartridgeRifleHea
+            - SNKCartridgeRifleUrn
+  - type: ContainerContainer
+    containers:
+      gun_magazine: !type:ContainerSlot
+      gun_chamber: !type:ContainerSlot
+  - type: MagazineVisuals
+    magState: mag
+    steps: 1
+    zeroVisible: true
+  - type: Appearance
+  - type: StaticPrice
+    price: 250
+  - type: Tag
+    tags:
+      - SNKPistolRifle
+#--------------------------------пистолет-пулемёт пистолетные-----------------------------------
+- type: entity
+  name: Пистолет-пулемёт "Баш"
+  suffix: СНК
+  parent: BaseWeaponSubMachineGun
+  id: SNKSMGPist
+  description: Массовое оружие, которое заработало неоднозначную репутацию. Кому-то оно очень нравится, а кто-то относится к нему с пренебрежением. Использует пистолетные патроны СНК калибра  .24
+  components:
+    - type: Sprite
+      sprite: Corvax/Lore/SNK/Weapon/snk_smg_pist.rsi
+      layers:
+        - state: base
+          map: ["enum.GunVisualLayers.Base"]
+        - state: mag-0
+          map: ["enum.GunVisualLayers.Mag"]
+    - type: Clothing
+      sprite: Corvax/Lore/SNK/Weapon/snk_smg_pist.rsi
+    - type: Gun
+      fireRate: 4
+      selectedMode: FullAuto
+      soundGunshot:
+        path: /Audio/Weapons/Guns/Gunshots/atreides.ogg
+      availableModes:
+        - FullAuto
+    - type: ItemSlots
+      slots:
+        gun_magazine:
+          name: Magazine
+          startingItem: SNKMagazineSMGPistStd
+          insertSound: /Audio/Weapons/Guns/MagIn/smg_magin.ogg
+          ejectSound: /Audio/Weapons/Guns/MagOut/smg_magout.ogg
+          priority: 2
+          whitelist:
+            tags:
+              - SNKMagazineSMGPistStd
+              - SNKMagazineSMGPistPoi
+        gun_chamber:
+          name: Chamber
+          startingItem: SNKCartridgePistolStd
+          priority: 1
+          whitelist:
+            tags:
+              - SNKCartridgePistolStd
+              - SNKCartridgePistolPoi
+    - type: MagazineVisuals
+      magState: mag
+      steps: 1
+      zeroVisible: true
+    - type: Appearance
+#--------------------------------пистолет-пулемёт электрические-----------------------------------
+- type: entity
+  name: Пистолет-пулемёт "Хартред"
+  suffix: СНК
+  parent: BaseWeaponSubMachineGun
+  id: SNKSMGElectro
+  description: Оружие необычное, но действенное. С ним главное недопускать дисбаланса системы.
+  components:
+  - type: Sprite
+    sprite: Corvax/Lore/SNK/Weapon/snk_smg_elec.rsi
+    layers:
+      - state: base
+        map: ["enum.GunVisualLayers.Base"]
+      - state: mag-0
+  - type: Clothing
+    sprite: Corvax/Lore/SNK/Weapon/snk_smg_elec.rsi
+  - type: Gun
+    fireRate: 4
+    selectedMode: FullAuto
+    soundGunshot:
+      path: /Audio/Effects/Lightning/lightningshock.ogg
+    availableModes:
+      - FullAuto
+  - type: ItemSlots
+    slots:
+      gun_magazine:
+        name: Magazine
+        startingItem: SNKMagazineSMGElectro
+        insertSound: /Audio/Weapons/Guns/MagIn/smg_magin.ogg
+        ejectSound: /Audio/Weapons/Guns/MagOut/smg_magout.ogg
+        priority: 2
+        whitelist:
+          tags:
+            - SNKMagazineSMGElectro
+      gun_chamber:
+        name: Chamber
+        startingItem: SNKElectro
+        priority: 1
+        whitelist:
+          tags:
+            - SNKElectro
+  - type: MagazineVisuals
+    magState: mag
+    steps: 1
+    zeroVisible: true
+  - type: Appearance
+#--------------------------------автомат лёгкий-----------------------------------
+- type: entity
+  name: Автомат СНК "Пингвин"
+  suffix: СНК
+  parent: BaseWeaponRifle
+  id: SNKFastAutoRifle
+  description: Лёгкий, короткий и очень скорострельный. На все случаи жизни. Очень массовый. Использует патроны СНК .34
+  components:
+  - type: Sprite
+    sprite: Corvax/Lore/SNK/Weapon/snk_automat_fast.rsi
+    layers:
+      - state: base
+        map: ["enum.GunVisualLayers.Base"]
+      - state: mag-0
+        map: ["enum.GunVisualLayers.Mag"]
+  - type: Item
+    size: Large
+  - type: Clothing
+    sprite: Corvax/Lore/SNK/Weapon/snk_automat_fast.rsi
+  - type: Gun
+    fireRate: 8
+    soundGunshot:
+      path: /Audio/Weapons/Guns/Gunshots/rifle2.ogg
+  - type: ChamberMagazineAmmoProvider
+    soundRack:
+      path: /Audio/Weapons/Guns/Cock/ltrifle_cock.ogg
+  - type: ItemSlots
+    slots:
+      gun_magazine:
+        name: Magazine
+        startingItem: SNKMagazineLightRifleStd
+        insertSound: /Audio/Weapons/Guns/MagIn/ltrifle_magin.ogg
+        ejectSound: /Audio/Weapons/Guns/MagOut/ltrifle_magout.ogg
+        priority: 2
+        whitelist:
+          tags:
+            - SNKMagazineLightRifleStd
+            - SNKMagazineLightRifleHea
+            - SNKMagazineLightRifleUrn
+      gun_chamber:
+        name: Chamber
+        startingItem: SNKCartridgeRifleStd
+        priority: 1
+        whitelist:
+          tags:
+            - SNKCartridgeRifleStd
+            - SNKCartridgeRifleHea
+            - SNKCartridgeRifleUrn
+  - type: ContainerContainer
+    containers:
+      gun_magazine: !type:ContainerSlot
+      gun_chamber: !type:ContainerSlot
+  - type: MagazineVisuals
+    magState: mag
+    steps: 1
+    zeroVisible: true
+  - type: Appearance
+  - type: StaticPrice
+    price: 750
+#--------------------------------автомат тяжёлый-----------------------------------
+- type: entity
+  name: Автомат СНК "Хрост"
+  suffix: СНК
+  parent: BaseWeaponRifle
+  id: SNKAutoHighRifle
+  description: Короткий, но очень мощный автомат СНК. Не очень часто встречается в войсках. Правда... редко, но метко. Использует патроны СНК .55
+  components:
+  - type: Sprite
+    sprite: Corvax/Lore/SNK/Weapon/snk_automat_hig.rsi
+    layers:
+      - state: base
+        map: ["enum.GunVisualLayers.Base"]
+      - state: mag-0
+        map: ["enum.GunVisualLayers.Mag"]
+  - type: Item
+    size: Large
+  - type: Clothing
+    sprite: Corvax/Lore/SNK/Weapon/snk_automat_hig.rsi
+  - type: Gun
+    fireRate: 3.5
+    soundGunshot:
+      path: /Audio/Weapons/Guns/Gunshots/rifle2.ogg
+  - type: ChamberMagazineAmmoProvider
+    soundRack:
+      path: /Audio/Weapons/Guns/Cock/ltrifle_cock.ogg
+  - type: ItemSlots
+    slots:
+      gun_magazine:
+        name: Magazine
+        startingItem: SNKMagazineHighAutoRifle
+        insertSound: /Audio/Weapons/Guns/MagIn/ltrifle_magin.ogg
+        ejectSound: /Audio/Weapons/Guns/MagOut/ltrifle_magout.ogg
+        priority: 2
+        whitelist:
+          tags:
+            - SNKMagazineHighAutoRifle
+      gun_chamber:
+        name: Chamber
+        startingItem: SNKCartridgeHighRifleStd
+        priority: 1
+        whitelist:
+          tags:
+            - SNKCartridgeHighRifleStd
+  - type: ContainerContainer
+    containers:
+      gun_magazine: !type:ContainerSlot
+      gun_chamber: !type:ContainerSlot
+  - type: MagazineVisuals
+    magState: mag
+    steps: 1
+    zeroVisible: true
+  - type: Appearance
+  - type: StaticPrice
+    price: 750
+#--------------------------------винтовка-лазер-----------------------------------
+- type: entity
+  name: Лазерный карабин "Котжи"
+  suffix: СНК
+  parent: BaseWeaponBattery
+  id: SNKLaserCarbine
+  description: Просто очень хорошее и качественное оружие. Надёжное и безотказное.
+  components:
+  - type: Sprite
+    sprite: Corvax/Lore/SNK/Weapon/snk_carabine_laser.rsi
+    layers:
+    - state: base
+      map: ["enum.GunVisualLayers.Base"]
+      shader: unshaded
+  - type: Clothing
+    sprite: Corvax/Lore/SNK/Weapon/snk_carabine_laser.rsi
+  - type: Gun
+    fireRate: 1.5
+    selectedMode: SemiAuto
+    availableModes:
+    - SemiAuto
+  - type: HitscanBatteryAmmoProvider
+    proto: SNKRedLaserRifle
+    fireCost: 50
+  - type: MagazineVisuals
+    magState: mag
+    steps: 1
+    zeroVisible: false
+#--------------------------------винтовка-радиация-----------------------------------
+- type: entity
+  name: Радиационный карабинный излучатель "К.Дас"
+  suffix: СНК
+  parent: BaseWeaponBattery
+  id: SNKRadioCarbine
+  description: Хорошее оружие, но порой ставит перед странным вопросом "Как это лечить?"
+  components:
+  - type: Sprite
+    sprite: Corvax/Lore/SNK/Weapon/snk_carabine_radio.rsi
+    layers:
+    - state: base
+      map: ["enum.GunVisualLayers.Base"]
+      shader: unshaded
+  - type: Clothing
+    sprite: Corvax/Lore/SNK/Weapon/snk_carabine_laser.rsi
+  - type: Gun
+    fireRate: 2
+    selectedMode: SemiAuto
+    availableModes:
+    - SemiAuto
+  - type: HitscanBatteryAmmoProvider
+    proto: SNKradioLaser
+    fireCost: 50
+  - type: MagazineVisuals
+    magState: mag
+    steps: 1
+    zeroVisible: false
+#--------------------------------винтовка-тяжёлая-----------------------------------
+- type: entity
+  name: Винтовка СНК "Нитро"
+  suffix: СНК
+  parent: BaseWeaponRifle
+  id: SNKHeavyRifle
+  description: Очень мощная винтовка СНК. Никогда не знаешь когда от неё прилетит, но когда прилетит будет очень-очень плохо. Использует патроны СНК .55
+  components:
+  - type: Sprite
+    sprite: Corvax/Lore/SNK/Weapon/snk_carabine_hig.rsi
+    layers:
+      - state: base
+        map: ["enum.GunVisualLayers.Base"]
+      - state: mag-0
+        map: ["enum.GunVisualLayers.Mag"]
+  - type: Item
+    size: Large
+  - type: Clothing
+    sprite: Corvax/Lore/SNK/Weapon/snk_carabine_hig.rsi
+  - type: Gun
+    fireRate: 0.7
+    soundGunshot:
+      path: /Audio/Weapons/Guns/Gunshots/rifle2.ogg
+  - type: ChamberMagazineAmmoProvider
+    soundRack:
+      path: /Audio/Weapons/Guns/Cock/ltrifle_cock.ogg
+  - type: ItemSlots
+    slots:
+      gun_magazine:
+        name: Magazine
+        startingItem: SNKMagazineHighRifle
+        insertSound: /Audio/Weapons/Guns/MagIn/ltrifle_magin.ogg
+        ejectSound: /Audio/Weapons/Guns/MagOut/ltrifle_magout.ogg
+        priority: 2
+        whitelist:
+          tags:
+            - SNKMagazineHighRifle
+      gun_chamber:
+        name: Chamber
+        startingItem: SNKCartridgeHighRifleStd
+        priority: 1
+        whitelist:
+          tags:
+            - SNKCartridgeHighRifleStd
+  - type: ContainerContainer
+    containers:
+      gun_magazine: !type:ContainerSlot
+      gun_chamber: !type:ContainerSlot
+  - type: MagazineVisuals
+    magState: mag
+    steps: 1
+    zeroVisible: true
+  - type: Appearance
+  - type: StaticPrice
+    price: 500
+#--------------------------------пулемёт-тяжёлый-----------------------------------
+- type: Tag
+  id: SNKHighLMG
+
+- type: entity
+  name: Пулемёт СНК "Худвинг"
+  suffix: СНК
+  id: SNKHighLMG
+  parent: BaseWeaponLightMachineGun
+  description: Бойцы говорят, что когда эта чудо-машина начинает голосить, то уже не заткнёшь. Использует патроны СНК .55
+  components:
+  - type: Sprite
+    sprite: Corvax/Lore/SNK/Weapon/snk_lmg_hig.rsi
+    layers:
+    - state: base
+      map: ["enum.GunVisualLayers.Base"]
+    - state: mag-3
+      map: ["enum.GunVisualLayers.Mag"]
+  - type: MagazineVisuals
+    magState: mag
+    steps: 4
+    zeroVisible: true
+  - type: Appearance   
+  - type: ItemSlots
+    slots:
+      gun_magazine:
+        name: Magazine
+        startingItem: SNKMagazineHighLMG
+        insertSound: /Audio/Weapons/Guns/MagIn/batrifle_magin.ogg
+        ejectSound: /Audio/Weapons/Guns/MagOut/batrifle_magout.ogg
+        priority: 2
+        whitelist:
+          tags:
+            - SNKMagazineHighLMG
+      gun_chamber:
+        name: Chamber
+        startingItem: SNKCartridgeRifleStd
+        priority: 1
+        whitelist:
+          tags:
+            - SNKCartridgeRifleStd  
+  - type: Tag
+    tags:
+      - SNKHighLMG
+#--------------------------------пулемёт-дробь-----------------------------------
+- type: Tag
+  id: SNKDrobLMG
+
+- type: entity
+  name: Пулемёт СНК "Друба"
+  suffix: СНК
+  id: SNKDrobLMG
+  parent: BaseWeaponLightMachineGun
+  description: Достаточно редкое оружие. Зато, когда появляется на фронта, разваливает всех по понятиям.  Использует ружейные заряды СНК .45
+  components:
+  - type: Sprite
+    sprite: Corvax/Lore/SNK/Weapon/snk_lmg_drb.rsi
+    layers:
+    - state: base
+      map: ["enum.GunVisualLayers.Base"]
+    - state: mag-3
+      map: ["enum.GunVisualLayers.Mag"]
+  - type: Gun
+    fireRate: 3      
+    soundGunshot:
+      path: /Audio/Weapons/Guns/Gunshots/shotgun.ogg
+    soundEmpty:
+      path: /Audio/Weapons/Guns/Empty/empty.ogg
+  - type: MagazineVisuals
+    magState: mag
+    steps: 4
+    zeroVisible: true
+  - type: Appearance   
+  - type: ItemSlots
+    slots:
+      gun_magazine:
+        name: Magazine
+        startingItem: SNKMagazineDrobLMGStd
+        insertSound: /Audio/Weapons/Guns/MagIn/batrifle_magin.ogg
+        ejectSound: /Audio/Weapons/Guns/MagOut/batrifle_magout.ogg
+        priority: 2
+        whitelist:
+          tags:
+            - SNKMagazineDrobLMGStd
+            - SNKMagazineDrobLMGPul
+            - SNKMagazineDrobLMGHea
+      gun_chamber:
+        name: Chamber
+        startingItem: SNKCartridgeDrobStd
+        priority: 1
+        whitelist:
+          tags:
+            - SNKCartridgeDrobStd
+            - SNKCartridgeDrobBul
+            - SNKCartridgeDrobHea            
+  - type: Tag
+    tags:
+      - SNKDrobLMG
+#--------------------------------дробовик-дробь-----------------------------------
+- type: Tag
+  id: SNKShotgunDrob
+
+- type: entity
+  name: Помповый дробовик СНК "Ступендиум"
+  suffix: СНК
+  parent: BaseWeaponShotgun
+  id: SNKShotgunDrob
+  description: Сперва разрабатывался из охотничьего ружья. Потом стал полицейским вооружением. Что него говорят, что лучше бы и дальше бил животных, нежели от него будут страдать преступники. Используею дробь СНК калибра .45
+  components:
+  - type: Item
+    sprite: Corvax/Lore/SNK/Weapon/snk_shotgan_drb.rsi
+    heldPrefix: pump
+  - type: Sprite
+    sprite: Corvax/Lore/SNK/Weapon/snk_shotgan_drb.rsi
+  - type: BallisticAmmoProvider
+    whitelist:
+      tags:
+        - SNKCartridgeDrobStd
+        - SNKCartridgeDrobBul
+        - SNKCartridgeDrobHea
+    capacity: 9
+    proto: SNKCartridgeDrobStd
+  - type: Tag
+    tags:
+    - SNKShotgunDrob
+  - type: Gun
+    fireRate: 1.1
+    selectedMode: SemiAuto
+    availableModes:
+    - SemiAuto
+    soundGunshot:
+      path: /Audio/Corvax/Weapons/Guns/Gunshots/shotgun_alt.ogg
+#--------------------------------дробовик-лазер-----------------------------------
+- type: Tag
+  id: SNKShotgunLazer
+
+- type: entity
+  name: Лазерный дробовик СНК "Воробей"
+  suffix: СНК
+  parent: BaseWeaponShotgun
+  id: SNKShotgunLazer
+  description: Не понятно точно чего ради его разрабатывали и собирали... но инженерам хотелось!
+  components:
+  - type: Item
+    sprite: Corvax/Lore/SNK/Weapon/snk_shotgan_laser.rsi
+  - type: Sprite
+    sprite: Corvax/Lore/SNK/Weapon/snk_shotgan_laser.rsi
+  - type: BallisticAmmoProvider
+    whitelist:
+      tags:
+        - SNKCartridgeDrobLazer
+    capacity: 6
+    proto: SNKCartridgeDrobLazer
+  - type: Tag
+    tags:
+    - SNKShotgunLazer
+  - type: Gun
+    projectileSpeed: 50
+    fireRate: 1
+    selectedMode: SemiAuto
+    availableModes:
+    - SemiAuto
+    soundGunshot:
+      path: /Audio/Weapons/Guns/Gunshots/laser3.ogg
+#--------------------------------------------коробки с патронами------------------------------------
+#------------------------------базовая коробка----------------
+- type: entity
+  abstract: true
+  parent: BaseItem
+  id: BaseSNKBox
+  components:
+  - type: BallisticAmmoProvider
+    mayTransfer: true
+    whitelist:
+      tags:
+        - SNKCartridgePistolStd
+        - SNKCartridgePistolPoi
+        - SNKCartridgeRifleStd
+        - SNKCartridgeRifleHea
+        - SNKCartridgeRifleUrn
+        - SNKCartridgeHighRifleStd
+        - SNKCartridgeDrobStd
+        - SNKCartridgeDrobBul
+        - SNKCartridgeDrobHea
+        - SNKCartridgeDrobLazer
+    proto: SNKCartridgePistolStd
+    capacity: 100
+  - type: Item
+    size: Small
+  - type: ContainerContainer
+    containers:
+      ballistic-ammo: !type:Container
+  - type: Sprite
+    sprite: Corvax/Lore/SNK/Weapon/snk_box_ammo.rsi
+  - type: Appearance
+#-------------------------------пистолет-------------------
+#----------------стандартные---------
+- type: entity
+  parent: BaseSNKBox
+  id: SNKBoxPistolStd
+  name: Коробка стандартных пистолетных патронов .24 
+  suffix: СНК, стандартные
+  description: Стандартная коробка на 40 стандартных патронов к пистолетам СНК .24
+  components:
+  - type: BallisticAmmoProvider
+    capacity: 40
+    proto: SNKCartridgePistolStd
+  - type: Sprite
+    layers:
+    - state: pistol_pi
+      map: ["enum.GunVisualLayers.Base"]
+    - state: mag-1
+      map: ["enum.GunVisualLayers.Mag"]
+    zeroVisible: false    
+#----------------ядовитые--------- 
+- type: entity
+  parent: BaseSNKBox
+  id: SNKBoxPistolPoi
+  name: Коробка отравленных пистолетных патронов .24 
+  suffix: СНК, ядовитые
+  description: Стандартная коробка на 40 отравленных патронов к пистолетам СНК .24
+  components:
+  - type: BallisticAmmoProvider
+    capacity: 40
+    proto: SNKCartridgePistolPoi
+  - type: Sprite
+    layers:
+    - state: pistol_po
+      map: ["enum.GunVisualLayers.Base"]
+    - state: mag-1
+      map: ["enum.GunVisualLayers.Mag"]
+    zeroVisible: false   
+#-------------------------------винтовка-лёгк-------------------
+#----------------стандартные---------
+- type: entity
+  parent: BaseSNKBox
+  id: SNKBoxRifleStd
+  name: Коробка стандартных лёгких патронов .34 
+  suffix: СНК, стандартные
+  description: Стандартная коробка на 60 стандартных лёгких патронов к автоматам СНК .34
+  components:
+  - type: BallisticAmmoProvider
+    capacity: 60
+    proto: SNKCartridgeRifleStd
+  - type: Sprite
+    layers:
+    - state: automat_pi
+      map: ["enum.GunVisualLayers.Base"]
+    - state: mag-1
+      map: ["enum.GunVisualLayers.Mag"]
+    zeroVisible: false   
+#----------------зажигательные---------
+- type: entity
+  parent: BaseSNKBox
+  id: SNKBoxRifleHea
+  name: Коробка зажигательных лёгких патронов .34 
+  suffix: СНК, зажигательные
+  description: Стандартная коробка на 60 зажигательных лёгких патронов к автоматам СНК .34
+  components:
+  - type: BallisticAmmoProvider
+    capacity: 60
+    proto: SNKCartridgeRifleHea
+  - type: Sprite
+    layers:
+    - state: automat_he
+      map: ["enum.GunVisualLayers.Base"]
+    - state: mag-1
+      map: ["enum.GunVisualLayers.Mag"]
+    zeroVisible: false   
+#----------------урановые---------
+- type: entity
+  parent: BaseSNKBox
+  id: SNKBoxRifleUrn
+  name: Коробка урановых лёгких патронов .34 
+  suffix: СНК, урановые
+  description: Стандартная коробка на 60 урановых лёгких патронов к автоматам СНК .34
+  components:
+  - type: BallisticAmmoProvider
+    capacity: 60
+    proto: SNKCartridgeRifleUrn
+  - type: Sprite
+    layers:
+    - state: automat_ur
+      map: ["enum.GunVisualLayers.Base"]
+    - state: mag-1
+      map: ["enum.GunVisualLayers.Mag"]
+    zeroVisible: false   
+#-------------------------------винтовка-тяжёлая-------------------
+#----------------маленькая---------
+- type: entity
+  parent: BaseSNKBox
+  id: SNKBoxHighRifleStd
+  name: Малая коробка тяжёлых патронов .55 
+  suffix: СНК, маленькая
+  description: Небольшая коробка на 30 тяжёлых патронов к оружию СНК .55
+  components:
+  - type: BallisticAmmoProvider
+    capacity: 30
+    proto: SNKCartridgeHighRifleStd
+  - type: Sprite
+    layers:
+    - state: automat_pi
+      map: ["enum.GunVisualLayers.Base"]
+    - state: mag-1
+      map: ["enum.GunVisualLayers.Mag"]
+    zeroVisible: false 
+#----------------большая-----------
+- type: entity
+  parent: BaseSNKBox
+  id: SNKBoxHighRifleBig
+  name: Большая коробка тяжёлых патронов .55 
+  suffix: СНК, большая
+  description: Крупная коробка на 150 тяжёлых патронов к оружию СНК .55
+  components:
+  - type: BallisticAmmoProvider
+    capacity: 150
+    proto: SNKCartridgeHighRifleStd
+  - type: Sprite
+    layers:
+    - state: rifle
+      map: ["enum.GunVisualLayers.Base"]
+    - state: mag-0
+      map: ["enum.GunVisualLayers.Mag"]
+    zeroVisible: false 
+#-------------------------------дробовик-------------------
+#----------------стандартные---------
+- type: entity
+  parent: BaseSNKBox
+  id: SNKBoxHighDrobStd
+  name: Коробка ружейных зарядов дроби .45 
+  suffix: СНК, дробь
+  description: Коробка на 50 ружейных зарядов дроби к оружию СНК .45
+  components:
+  - type: BallisticAmmoProvider
+    capacity: 50
+    proto: SNKCartridgeDrobStd
+  - type: Sprite
+    layers:
+    - state: shotgan_dr
+      map: ["enum.GunVisualLayers.Base"]
+    - state: mag-2
+      map: ["enum.GunVisualLayers.Mag"]
+    zeroVisible: false  
+#----------------зажигательные---------
+- type: entity
+  parent: BaseSNKBox
+  id: SNKBoxHighDrobHea
+  name: Коробка ружейных зажигательных зарядов .45 
+  suffix: СНК, зажигательные
+  description: Коробка на 50 ружейных ажигательных зарядов к оружию СНК .45
+  components:
+  - type: BallisticAmmoProvider
+    capacity: 50
+    proto: SNKCartridgeDrobHea
+  - type: Sprite
+    layers:
+    - state: shotgan_he
+      map: ["enum.GunVisualLayers.Base"]
+    - state: mag-2
+      map: ["enum.GunVisualLayers.Mag"]
+    zeroVisible: false  
+#----------------пули---------
+- type: entity
+  parent: BaseSNKBox
+  id: SNKBoxHighDrobBul
+  name: Коробка ружейных зарядов пуль .45 
+  suffix: СНК, пули
+  description: Коробка на 50 ружейных зарядов пуль к оружию СНК .45
+  components:
+  - type: BallisticAmmoProvider
+    capacity: 50
+    proto: SNKCartridgeDrobBul
+  - type: Sprite
+    layers:
+    - state: shotgan_pu
+      map: ["enum.GunVisualLayers.Base"]
+    - state: mag-2
+      map: ["enum.GunVisualLayers.Mag"]
+    zeroVisible: false  
+#-------------------------------энергетическое-------------------
+#-----------------электро---------------
+- type: entity
+  parent: BaseSNKBox
+  id: SNKBoxElectro
+  name: Коробка электрических зарядов
+  suffix: СНК
+  description: Коробка на 60 электрических зарядов к пистолету-пулемёту СНК "Хартред"
+  components:
+  - type: BallisticAmmoProvider
+    capacity: 60
+    proto: SNKCartridgeElectro
+  - type: Sprite
+    layers:
+    - state: pistol_el
+      map: ["enum.GunVisualLayers.Base"]
+    - state: mag-3
+      map: ["enum.GunVisualLayers.Mag"]
+    zeroVisible: false  
+#-----------------лазер-дробь---------------
+#----------------пули---------
+- type: entity
+  parent: BaseSNKBox
+  id: SNKBoxDrobLazer
+  name: Коробка лазерных зарядов
+  suffix: СНК
+  description: Коробка на 50 лазерных зарядов к дробовику СНК "Воробей"
+  components:
+  - type: BallisticAmmoProvider
+    capacity: 50
+    proto: SNKCartridgeDrobLazer
+  - type: Sprite
+    layers:
+    - state: shotgan_lz
+      map: ["enum.GunVisualLayers.Base"]
+    - state: mag-3
+      map: ["enum.GunVisualLayers.Mag"]
+    zeroVisible: false 
+#------------------------------------------КПК, карты, доступы и шлюзы----------------------------------------    
+#------------------------------------------доступы и шлюзы---------------------------------------- 
+#------------------------------------доступ----------  
+- type: accessLevel
+  id: SNKAccess
+  name: accessl-snk
+#------------------------------------закрытый шлюз---------- 
+- type: entity
+  parent: DoorElectronics
+  id: DoorElectronicsSNKAccess
+  suffix: СНК, Locked
+  components:
+  - type: AccessReader
+    access: [["SNKAccess"]]
+
+- type: entity
+  parent: Airlock
+  id: SNKAirlockSolderLocked
+  name: Шлюз
+  suffix: СНК, Locked
+  description: Он открывается, он закрывается, он может вас раздавить
+  components:
+  - type: ContainerFill
+    containers:
+      board: [ DoorElectronicsSNKAccess ]
+  - type: Sprite
+    sprite: Corvax/Lore/SNK/snk_airlock.rsi
+#------------------------------------свободный шлюз---------- 
+- type: entity
+  parent: Airlock
+  id: SNKAirlockSolder
+  name: Шлюз
+  suffix: СНК
+  description: Он открывается, он закрывается, он может вас раздавить
+  components:
+  - type: Sprite
+    sprite: Corvax/Lore/SNK/snk_airlock.rsi
+#------------------------------------закрытый стеклянный шлюз---------- 
+- type: entity
+  parent: AirlockGlass
+  id: SNKAirlockSolderLockedGlass
+  name: Стеклянный шлюз
+  suffix: СНК, Locked
+  description: Он открывается, он закрывается, он может вас раздавить
+  components:
+  - type: ContainerFill
+    containers:
+      board: [ DoorElectronicsSNKAccess ]
+  - type: Sprite
+    sprite: Corvax/Lore/SNK/snk_airlock_glass.rsi
+  - type: PaintableAirlock
+    group: Glass
+#------------------------------------свободный стеклянный шлюз----------
+- type: entity
+  parent: AirlockGlass
+  id: SNKAirlockGlass
+  name: Стеклянный шлюз
+  suffix: СНК
+  description: Он открывается, он закрывается, он может вас раздавить
+  components:
+  - type: Sprite
+    sprite: Corvax/Lore/SNK/snk_airlock_glass.rsi
+  - type: PaintableAirlock
+    group: Glass  
+#------------------------------------стыковочный---------- 
+- type: entity
+  parent: AirlockExternalShuttleLocked
+  name: Стыковочный шлюз
+  id: SNKAirlockShuttleEasyPryLocked
+  suffix: СНК
+  description: Чтобы успешно прилепиться к космическим объектам.
+  components:
+  - type: PryUnpowered
+  - type: AccessReader
+    access: [["SNKAccess"]]
+#------------------------------------------КПК, карты----------------------------------------  
+#------------------------------------стандарт карты---------- 
+- type: entity
+  parent: Clothing
+  id: SNKIDCard
+  suffix: СНК
+  name: Карта итендификации личности бойца СНК
+  description: Данная карта служит в роли электронного пропуска на объектах СНК
+  abstract: true
+  components:
+  - type: Sprite
+    sprite: Corvax/Lore/SNK/Equipment/snk_id_cards.rsi
+  - type: Clothing
+    slots:
+    - idcard
+    sprite: Corvax/Lore/SNK/Equipment/snk_id_cards.rsi
+  - type: Item
+    size: Small
+    heldPrefix: default
+    storedRotation: -90
+  - type: Access
+  - type: IdCard
+  - type: StationRecordKeyStorage
+  - type: Tag
+    tags:
+    - DoorBumpOpener
+    - WhitelistChameleon
+  - type: StealTarget
+    stealGroup: IDCard    
+#------------------------------------карта рядового---------- 
+- type: entity
+  parent: SNKIDCard
+  id: SNKIDCardSold
+  name: ID-карта солдата СНК
+  suffix: СНК
+  components:
+  - type: Sprite
+    layers:
+    - state: default
+    - state: sold
+  - type: PresetIdCard
+    job: SNKMen
+#------------------------------------карта командира----------    
+- type: entity
+  parent: SNKIDCard
+  id: SNKIDCardOffi
+  name: ID-карта командира СНК
+  suffix: СНК
+  components:
+  - type: Sprite
+    layers:
+    - state: default
+    - state: offi
+  - type: PresetIdCard
+    job: SNKMen
+#------------------------------------карта медика---------- 
+- type: entity
+  parent: SNKIDCard
+  id: SNKIDCardMed
+  name: ID-карта медика СНК
+  suffix: СНК
+  components:
+  - type: Sprite
+    layers:
+    - state: default
+    - state: medic
+  - type: PresetIdCard
+    job: SNKMen
+#------------------------------------карта инженера----------    
+- type: entity
+  parent: SNKIDCard
+  id: SNKIDCardEng
+  name: ID-карта инженера СНК
+  suffix: СНК
+  components:
+  - type: Sprite
+    layers:
+    - state: default
+    - state: enge
+  - type: PresetIdCard
+    job: SNKMen
+#------------------------------------стандарт КПК---------- 
+- type: entity
+  abstract: true
+  parent: BasePDA
+  id: SNKPDA
+  name: КПК СНК
+  components:
+  - type: Appearance
+  - type: Sprite
+    sprite: Corvax/Lore/SNK/Equipment/snk_pda.rsi
+    layers:
+    - map: [ "enum.PdaVisualLayers.Base" ]
+    - state: "light_overlay"
+      map: [ "enum.PdaVisualLayers.Flashlight" ]
+      shader: "unshaded"
+      visible: false
+    - state: "id_overlay"
+      map: [ "enum.PdaVisualLayers.IdLight" ]
+      shader: "unshaded"
+      visible: false
+  - type: Icon
+    sprite: Corvax/Lore/SNK/Equipment/snk_pda.rsi
+    state: pda_s
+#------------------------------------КПК солдата----------    
+- type: entity
+  parent: SNKPDA
+  id: SNKPDASold
+  suffix: СНК, рядовой
+  description: Простенький крепкий КПК для базовых нужд солдата СНК.
+  components:
+    - type: Pda
+      id: SNKIDCardSold
+      state: pda_s
+    - type: Icon
+      sprite: Corvax/Lore/SNK/Equipment/snk_pda.rsi
+      state: pda_s
+#------------------------------------КПК командир----------       
+- type: entity
+  parent: SNKPDA
+  id: SNKPDAOffi
+  suffix: СНК, командир
+  description: Высокотехнологичный офцерский КПК СНК со сканером мониторинга экипажа.
+  components:
+    - type: Pda
+      id: SNKIDCardOffi
+      state: pda_o 
+    - type: Icon
+      sprite: Corvax/Lore/SNK/Equipment/snk_pda.rsi
+      state: pda_o      
+    - type: ActivatableUI
+      key: enum.CrewMonitoringUIKey.Key
+    - type: UserInterface
+      interfaces:
+        enum.CrewMonitoringUIKey.Key:
+          type: CrewMonitoringBoundUserInterface
+    - type: CrewMonitoringConsole
+    - type: DeviceNetwork
+      deviceNetId: Wireless
+      receiveFrequencyId: CrewMonitor
+    - type: WirelessNetworkConnection
+      range: 500
+#------------------------------------КПК медика----------    
+- type: entity
+  parent: SNKPDA
+  id: SNKPDAMed
+  suffix: СНК, медик
+  description: Продвинутый КПК медиков СНК со сканером здоровья.
+  components:
+    - type: Pda
+      id: SNKIDCardMed
+      state: pda_m
+    - type: Icon
+      sprite: Corvax/Lore/SNK/Equipment/snk_pda.rsi
+      state: pda_m
+    - type: HealthAnalyzer
+      scanDelay: 1
+      scanningEndSound:
+        path: "/Audio/Items/Medical/healthscanner.ogg"
+#------------------------------------КПК инженера----------       
+- type: entity
+  parent: SNKPDA
+  id: SNKPDAEng
+  suffix: СНК, инженер
+  description: Улучшенный КПК инженеров СНК с анализатором состава воздуха типа "электронный нос".
+  components:
+    - type: Pda
+      id: SNKIDCardEng
+      state: pda_e
+    - type: Icon
+      sprite: Corvax/Lore/SNK/Equipment/snk_pda.rsi
+      state: pda_e      
+    - type: GasAnalyzer
+    - type: ActivatableUI
+      inHandsOnly: true
+      singleUser: true
+      requireActiveHand: false
+      key: enum.GasAnalyzerUiKey.Key
+    - type: UserInterface
+      interfaces:
+        enum.GasAnalyzerUiKey.Key:
+          type: GasAnalyzerBoundUserInterface
+#------------------------------------------связь----------------------------------------  
+#-----------------------------канал----------------------------------------  
+- type: radioChannel
+  id: SNKRadio
+  name: name-of-SNKRadio
+  keycode: 's' 
+  frequency: 1527
+  color: "#001a68"
+  longRange: false
+#-------------------------------------------------------------------ключи---------------------------------------------------------------------
+#-----------------------------стандарт ключа----------------------------------------   
+- type: entity
+  abstract: true
+  parent: BaseItem
+  id: SNKBaseEncryptionKey
+  name: encryption key
+  description: Небольшой чип для шифрования и дешифровки связи.
+  components:
+  - type: EncryptionKey
+    channels:
+    - SNKRadio
+    defaultChannel: SNKRadio
+  - type: Item
+    sprite: Corvax/Lore/SNK/Equipment/snk_encryption_keys.rsi
+  - type: Sprite
+    sprite: Corvax/Lore/SNK/Equipment/snk_encryption_keys.rsi
+  - type: StealTarget
+    stealGroup: EncryptionKey   
+#-----------------------------ключ шифрования----------------------------------------      
+- type: entity
+  parent: SNKBaseEncryptionKey
+  id: SNKEncryptionKey
+  suffix: СНК
+  name: Ключ шифрования военных СНК
+  description: Используется для шифрования и дешифровки общего армейского канала связи СНК
+  components:
+  - type: EncryptionKey
+    channels:
+    - SNKRadio
+    defaultChannel: SNKRadio
+  - type: Sprite
+    layers:
+    - state: crypt_gray
+    - state: label
+#-----------------------------гарнитура----------------------------------------  
+- type: entity
+  parent: ClothingHeadset
+  id: SNKHeadset
+  name: Гарнитура военослужащего СНК
+  suffix: СНК
+  components:
+  - type: ContainerFill
+    containers:
+      key_slots:
+      - SNKEncryptionKey
+  - type: Sprite
+    sprite: Corvax/Lore/SNK/Equipment/snk_garniture.rsi
+  - type: Clothing
+    sprite: Corvax/Lore/SNK/Equipment/snk_garniture.rsi
+#-----------------------------------------------------роли, полные сумки и гиры------------------------------------------------------  
+#--------------------------------------------роли------------------------------------ 
+- type: playTimeTracker
+  id: JobEventSNK
+
+- type: job
+  id: SNKMen
+  name: Военный СНК
+  description: job-snk
+  playTimeTracker: JobEventSNK
+  startingGear: SNKSoldGear
+  supervisors: job-supervisors-everyone
+  canBeAntag: false
+  access:
+  - SNKAccess
+  - External
+#--------------------------------------------сумки------------------------------------ 
+#------------------------------------пистолет-пистолет-------
+- type: entity
+  parent: SNKSatchels
+  id: SNKSatchelsFilledPistPist
+  suffix: СНК, Пистолет(пистолет)
+  components:
+  - type: StorageFill
+    contents:
+      - id: SNKHelmetStd
+      - id: SNKPistolPist
+      - id: SNKMagazinePistolPistStd
+      - id: SNKMagazinePistolPistStd
+      - id: ClothingMaskGas
+      - id: FoodTinMRE
+      - id: DrinkWaterBottleFull
+      - id: Gauze
+      - id: OxygenTankFilled
+#------------------------------------пистолет-винтовка-------
+- type: entity
+  parent: SNKSatchels
+  id: SNKSatchelsFilledPistRifle
+  suffix: СНК, Пистолет(винтовка)
+  components:
+  - type: StorageFill
+    contents:
+      - id: SNKHelmetStd
+      - id: SNKPistolRifle
+      - id: SNKMagazinePistolRifleStd
+      - id: SNKMagazinePistolRifleStd
+      - id: ClothingMaskGas
+      - id: FoodTinMRE
+      - id: DrinkWaterBottleFull
+      - id: Gauze
+      - id: OxygenTankFilled
+#------------------------------------ПП-пистолет-------
+- type: entity
+  parent: SNKBackpackStd
+  id: CNKBackpackFilledSMGPist
+  suffix: СНК, ПП(винтовка)
+  components:
+  - type: StorageFill
+    contents:
+      - id: SNKHelmetStd
+      - id: SNKSMGPist
+      - id: SNKMagazineSMGPistStd
+      - id: SNKMagazineSMGPistStd
+      - id: ClothingMaskGas
+      - id: FoodTinMRE
+      - id: DrinkWaterBottleFull
+      - id: Gauze
+      - id: OxygenTankFilled
+#------------------------------------ПП-электро-------
+- type: entity
+  parent: SNKBackpackStd
+  id: CNKBackpackFilledSMGElectro
+  suffix: СНК, ПП(электро)
+  components:
+  - type: StorageFill
+    contents:
+      - id: SNKHelmetStd
+      - id: SNKSMGElectro
+      - id: ClothingMaskGas
+      - id: FoodTinMRE
+      - id: DrinkWaterBottleFull
+      - id: Gauze
+      - id: OxygenTankFilled
+#------------------------------------автомат-лёгк-------
+- type: entity
+  parent: SNKBackpackStd
+  id: CNKBackpackFilledAutoLight
+  suffix: СНК, Автомат(лёгкий)
+  components:
+  - type: StorageFill
+    contents:
+      - id: SNKHelmetStd
+      - id: SNKFastAutoRifle
+      - id: SNKMagazineLightRifleStd
+      - id: SNKMagazineLightRifleStd
+      - id: ClothingMaskGas
+      - id: FoodTinMRE
+      - id: DrinkWaterBottleFull
+      - id: Gauze
+      - id: OxygenTankFilled
+#------------------------------------автомат-тяж-------
+- type: entity
+  parent: SNKBackpackStd
+  id: CNKBackpackFilledAutoHigh
+  suffix: СНК, Автомат(тяжёлый)
+  components:
+  - type: StorageFill
+    contents:
+      - id: SNKHelmetStd
+      - id: SNKAutoHighRifle
+      - id: SNKMagazineHighAutoRifle
+      - id: SNKMagazineHighAutoRifle
+      - id: ClothingMaskGas
+      - id: FoodTinMRE
+      - id: DrinkWaterBottleFull
+      - id: Gauze
+      - id: OxygenTankFilled
+#------------------------------------Карабин-лазер-------
+- type: entity
+  parent: SNKBackpackStd
+  id: CNKBackpackFilledCarLazer
+  suffix: СНК, Карабин(лазер)
+  components:
+  - type: StorageFill
+    contents:
+      - id: SNKHelmetStd
+      - id: SNKLaserCarbine
+      - id: ClothingMaskGas
+      - id: FoodTinMRE
+      - id: DrinkWaterBottleFull
+      - id: Gauze
+      - id: OxygenTankFilled
+#------------------------------------Карабин-радиация-------
+- type: entity
+  parent: SNKBackpackStd
+  id: CNKBackpackFilledCarRadio
+  suffix: СНК, Карабин(радиация)
+  components:
+  - type: StorageFill
+    contents:
+      - id: SNKHelmetStd
+      - id: SNKRadioCarbine
+      - id: ClothingMaskGas
+      - id: FoodTinMRE
+      - id: DrinkWaterBottleFull
+      - id: Gauze
+      - id: OxygenTankFilled
+#------------------------------------винтовка-тяж-------
+- type: entity
+  parent: SNKBackpackStd
+  id: CNKBackpackFilledRifleHigh
+  suffix: СНК, Винтовка(тяжёлый)
+  components:
+  - type: StorageFill
+    contents:
+      - id: SNKHelmetStd
+      - id: SNKHeavyRifle
+      - id: SNKMagazineHighRifle
+      - id: SNKMagazineHighRifle
+      - id: ClothingMaskGas
+      - id: FoodTinMRE
+      - id: DrinkWaterBottleFull
+      - id: Gauze
+      - id: OxygenTankFilled
+#------------------------------------дробовик-дробь-------
+- type: entity
+  parent: SNKBackpackStd
+  id: CNKBackpackFilledShotgunDrob
+  suffix: СНК, Дробовик(дробь)
+  components:
+  - type: StorageFill
+    contents:
+      - id: SNKHelmetStd
+      - id: SNKShotgunDrob
+      - id: SNKBoxHighDrobStd
+      - id: ClothingMaskGas
+      - id: FoodTinMRE
+      - id: DrinkWaterBottleFull
+      - id: Gauze
+      - id: OxygenTankFilled
+#------------------------------------радио-------
+- type: entity
+  parent: SNKRadioBackpack
+  id: SNKRadioBackpackFilled
+  suffix: СНК, Радио
+  components:
+  - type: StorageFill
+    contents:
+      - id: SNKHelmetStd
+      - id: Gauze
+      - id: OxygenTankFilled
+      - id: CableApcStack
+      - id: Crowbar
+      - id: Screwdriver
+#---------------------------------------------------------------Бумаги------------------------------------------------------------
+#-----------------------------------солдат-----------------------------
+- type: entity
+  id: SNKPaperSold
+  name: Памятка солдата СНК
+  suffix: СНК
+  parent: Paper
+  components:
+  - type: TimedDespawn
+    lifetime: 1200
+  - type: Paper
+    content: |
+      Вы: Честный, смелый, верный, но усталый солдат Союза Независимых Колоний. Вы любите свою страну, но воевали слишком долго, чтобы иметь вдохновлённый огонёк в глазах.
+      ------------------------------------------------------------------------
+      Ваши навыки: Базовые навыки, Владение оружием, Готовка, Разделка туш
+      ------------------------------------------------------------------------
+      Руководство к отыгрышу: Подчиняйтесь своему командиру. Не стреляйте по мирным обывателям и гражданским. Всегда будьте готовы атаковать своего врага, но до последнего старайтесь не доводить до боя. Помните главный принцип вашей войны: "Живи и дай жить другим"
+      ------------------------------------------------------------------------
+      Краткий лор организации: СНК уже три века как подняло востание и отделилось от ОПЗ. Но ОПЗ не может это так оставить. Идут регулярные бои с применением самого разного оружия. Солдаты обоих армий гибнут ни за что. Все устали. Вы маленький винтик в этой беспощадной войне, но любовь к вашей свободе, к вашим гражданам, к вашей стране не даёт солдатам бросить это дело. 
+#-----------------------------------офицер-----------------------------
+- type: entity
+  id: SNKPaperOffi
+  name: Памятка офицера СНК
+  suffix: СНК
+  parent: Paper
+  components:
+  - type: TimedDespawn
+    lifetime: 1200
+  - type: Paper
+    content: |
+      Вы: Волевой, умный и собраный полевой командир Союза Независимых Колоний. На вашем теле не мало шрамов, а за плечами не мало боёв. Вы любите свою страну, но воевали слишком долго, чтобы иметь вдохновлённый огонёк в глазах.
+      ------------------------------------------------------------------------
+      Ваши навыки: Базовые навыки, Владение оружием, Управление шаттлом, Готовка, Разделка туш, Бар
+      ------------------------------------------------------------------------
+      Руководство к отыгрышу: Вы воевали за свободу для всех, а потомун не стреляйте по мирным обывателям и гражданским, и не приказывайте солдатам стрелять по ним без крайней необходимости. Командуйте своими подчинёнными, стройте их и наводите порядок. Будьте умны, строги, добрый. Станьте лицом своей достойной страны!
+      ------------------------------------------------------------------------
+      Краткий лор организации: СНК уже три века как подняло востание и отделилось от ОПЗ. Но ОПЗ не может это так оставить. Идут регулярные бои с применением самого разного оружия. Солдаты обоих армий гибнут ни за что. Все устали. Вы маленький винтик в этой беспощадной войне, но любовь к вашей свободе, к вашим гражданам, к вашей стране не даёт солдатам бросить это дело. 
+#-----------------------------------медик-----------------------------
+- type: entity
+  id: SNKPaperMed
+  name: Памятка медика СНК
+  suffix: СНК
+  parent: Paper
+  components:
+  - type: TimedDespawn
+    lifetime: 1200
+  - type: Paper
+    content: |
+      Вы: Умелый и добрый армейский медик Союза Независимых Колоний. Вы тот, кто понимает, что солдаты порой как дети. и им необходим товарищ. что укажет, как продлить им жизнь.
+      ------------------------------------------------------------------------
+      Ваши навыки: Базовые навыки, Владение оружием, Продвинутое лечение, Медицинское оборудование, базовая химия, Вирусология, Хирургия, Готовка, Разделка туш
+      ------------------------------------------------------------------------
+      Руководство к отыгрышу: Вы можете объявить себя пацифистом. В вопросах здоровья и лечения вы можете руководить даже офицером. Никогда не атакуйте гражданских. Спасайте своих товарищей. Именно вы отделяете их от смерти.
+      ------------------------------------------------------------------------
+      Краткий лор организации: СНК уже три века как подняло востание и отделилось от ОПЗ. Но ОПЗ не может это так оставить. Идут регулярные бои с применением самого разного оружия. Солдаты обоих армий гибнут ни за что. Все устали. Вы маленький винтик в этой беспощадной войне, но любовь к вашей свободе, к вашим гражданам, к вашей стране не даёт солдатам бросить это дело. 
+#-----------------------------------инженер-----------------------------
+- type: entity
+  id: SNKPaperEng
+  name: Памятка инженера СНК
+  suffix: СНК
+  parent: Paper
+  components:
+  - type: TimedDespawn
+    lifetime: 1200
+  - type: Paper
+    content: |
+      Вы: Вы не просто солдат. Вы расчётливый и находчивый армейский инженер Союза Независимых Колоний. У многих ваших товарищей-солдат уже давно потух огонь в глазах из-за этой бесконечной войны. Но не у вас...
+      ------------------------------------------------------------------------
+      Ваши навыки: Базовые навыки, Владение оружием, Разбор/Постройка сложных объектов, Базовый атмос, Соляры и ДАМ, Постройка приборов, Готовка, Разделка туш
+      ------------------------------------------------------------------------
+      Руководство к отыгрышу: Подчиняйтесь своему командиру. Находите необычные пути решения проблем. Предлагайте идеи. шутите и хохмите. Станьте тем о ком потом скажут: "Служил я с одним сукиным сыном! Вот это был лучший парень на земле!"
+      ------------------------------------------------------------------------
+      Краткий лор организации: СНК уже три века как подняло востание и отделилось от ОПЗ. Но ОПЗ не может это так оставить. Идут регулярные бои с применением самого разного оружия. Солдаты обоих армий гибнут ни за что. Все устали. Вы маленький винтик в этой беспощадной войне, но любовь к вашей свободе, к вашим гражданам, к вашей стране не даёт солдатам бросить это дело.      
+#-----------------------------------радист-----------------------------
+- type: entity
+  id: SNKPaperRad
+  name: Памятка радиста СНК
+  suffix: СНК
+  parent: Paper
+  components:
+  - type: TimedDespawn
+    lifetime: 1200
+  - type: Paper
+    content: |
+      Вы: Вы не солдат и не инженер. Вы образованный армейский радист Союза Независимых Колоний. Вы делаете связь и в этом ваш плюс.
+      ------------------------------------------------------------------------
+      Ваши навыки: Базовые навыки, Владение оружием, Разбор сложных объектов, Постройка приборов, Готовка, Разделка туш
+      ------------------------------------------------------------------------
+      Руководство к отыгрышу: Подчиняйтесь своему командиру. Обеспечивайте связь. Активно используйте электрику и электронику. Не спускайте глаз со своей радиостанции. Всегда знайте где факс и имейте при себе пачку бумаги для отправки запросов.
+      ------------------------------------------------------------------------
+      Краткий лор организации: СНК уже три века как подняло востание и отделилось от ОПЗ. Но ОПЗ не может это так оставить. Идут регулярные бои с применением самого разного оружия. Солдаты обоих армий гибнут ни за что. Все устали. Вы маленький винтик в этой беспощадной войне, но любовь к вашей свободе, к вашим гражданам, к вашей стране не даёт солдатам бросить это дело.      
+
+#-----------------------------------------------гиры---------------------------------------
+#------------------------------------солдат---------- 
+- type: startingGear
+  id: SNKSoldGear
+  equipment:
+    jumpsuit: SNKUniformSoldStd
+    back: CNKBackpackFilledAutoLight
+    shoes: SNKBoots
+    head: SNKShapkaStd
+    outerClothing: SNKArmorMidStd
+    id: SNKPDASold
+    ears: SNKHeadset
+    belt: SNKBeltSoldFilled
+    pocket1: SNKPaperSold
+#------------------------------------офицер---------- 
+- type: startingGear
+  id: SNKOffiGear
+  equipment:
+    jumpsuit: SNKUniformOffiStd
+    back: SNKSatchels
+    shoes: SNKBoots
+    head: SNKCepkaStd
+    outerClothing: SNKArmorLightStd
+    id: SNKPDASold
+    ears: SNKHeadset
+    belt: SNKBeltOffiFilled
+    pocket1: SNKPaperOffi
+#------------------------------------медик---------- 
+- type: startingGear
+  id: SNKMediGear
+  equipment:
+    jumpsuit: SNKUniformSoldStd
+    back: CNKBackpackFilledSMGPist
+    shoes: SNKBoots
+    head: SNKShapkaStd
+    outerClothing: SNKArmorLightStd
+    id: SNKPDASold
+    ears: SNKHeadset
+    belt: SNKBeltMedicFilled
+    pocket1: SNKPaperMed
+#------------------------------------инженер---------- 
+- type: startingGear
+  id: SNKEngeGear
+  equipment:
+    jumpsuit: SNKUniformSoldStd
+    back: CNKBackpackFilledAutoHigh
+    shoes: SNKBoots
+    head: SNKShapkaStd
+    outerClothing: SNKArmorLightStd
+    id: SNKPDASold
+    ears: SNKHeadset
+    belt: SNKBeltEngFilled
+    pocket1: SNKPaperEng
+#------------------------------------радист---------- 
+- type: startingGear
+  id: SNKRadioGear
+  equipment:
+    jumpsuit: SNKUniformSoldStd
+    back: SNKRadioBackpackFilled
+    shoes: SNKBoots
+    head: SNKShapkaStd
+    outerClothing: SNKArmorLightStd
+    id: SNKPDASold
+    ears: SNKHeadset
+    belt: SNKBeltOffiFilled
+    pocket1: SNKPaperRad
+#---------------------------------------------------спавнеры------------------------------------------------
+#-------------------------------------------Имена-------------------------------------
+#---------------------------------Бойцы----------
+- type: dataset
+  id: SNKName-sol
+  values:
+  - Новобранец
+  - Рядовой
+  - Капрал
+  - Старшина
+#---------------------------------Командир----------
+- type: dataset
+  id: SNKName-ofi
+  values:
+  - Сержант
+  - Ст.Сержант
+  - Мл.Лейтенант
+#---------------------------------фамилии----------
+- type: dataset
+  id: SNKNameTwo
+  values:
+  - Свободин
+  - Востунов
+  - Бунтарски
+  - Бойченко
+  - Отделянов
+  - Крылов
+  - Мечин
+  - Никин
+  - Афинин
+  - Либерти
+  - Марсов
+  - Арес
+  - Риоти
+  - Винг
+  - Пилар
+  - Стек
+  - Риби
+  - Солид
+  - Хели
+  - Фрихет
+  - Вапаута
+  - Миека
+  - Сипи
+  - Соат
+#-------------------------------------Кто является противником-----------------------------------
+- type: npcFaction
+  id: SNKBot
+  hostile:
+  - SimpleHostile
+  - Xeno
+  - Zombie
+  - Dragon
+  friendly:
+  - SNKBot
+  - SNK
+  
+- type: npcFaction
+  id: SNK
+  hostile:
+  - SimpleHostile
+  - Xeno
+  - Zombie
+  - Dragon
+  friendly:
+  - SNKBot
+  - SNK
+#-------------------------------------хуй знает что это, но вот оно работает и ладно---------------------------
+#---------------------------------солдат----------
+- type: randomHumanoidSettings
+  speciesBlacklist: 
+    - Diona
+    - Arachnid
+  id: SNKSolderR
+  randomizeName: false
+  components:
+    - type: NpcFactionMember
+      factions:
+      - SNK
+    - type: GhostRole
+      name: Гост-роль солдата СНК
+      description: "Вы солдат Союза Независимых Колоний. Несите свободу всем мирним жителям галактики. Слушайте своего командира. Живите и дайте жить другим."
+    - type: GhostTakeoverAvailable
+    - type: Loadout
+      prototypes: [ SNKSoldGear ]
+    - type: RandomMetadata
+      nameSegments:
+      - SNKName-sol
+      - SNKNameTwo
+
+- type: randomHumanoidSettings
+  id: SNKSolderReady
+  parent: SNKSolderR
+  components:
+    - type: GhostRole
+      allowMovement: true
+      allowSpeech: true
+      makeSentient: true
+      name: Солдат СНК
+      description: "Вы солдат Союза Независимых Колоний. Несите свободу всем мирним жителям галактики. Слушайте своего командира. Живите и дайте жить другим."
+    - type: GhostTakeoverAvailable
+    - type: MobThresholds
+      thresholds:
+        0: Alive
+        100: Critical
+        200: Dead
+    - type: Stamina
+      critThreshold: 380
+    - type: Loadout
+      prototypes: [ SNKSoldGear ]
+    - type: NpcFactionMember
+      factions:
+      - SNK
+  
+- type: entity
+  name: Солдат СНК Спавнер
+  id: SNKMobHumanSolder
+  suffix: GOST, СНК
+  components:
+  - type: NpcFactionMember
+    factions:
+      - SNK
+  - type: Sprite
+    sprite: Markers/jobs.rsi
+    state: security_officer
+  - type: RandomHumanoidAppearance
+    randomizeName: false
+  - type: RandomMetadata
+    nameSegments:
+    - SNKName-sol
+    - SNKNameTwo
+  - type: RandomHumanoidSpawner
+    settings: SNKSolderR
+#---------------------------------офицер----------
+- type: randomHumanoidSettings
+  speciesBlacklist: 
+    - Diona
+    - Arachnid
+  id: SNKOffiR
+  randomizeName: false
+  components:
+    - type: NpcFactionMember
+      factions:
+      - SNK
+    - type: GhostRole
+      name: Гост-роль офицера СНК
+      description: "Вы офицер Союза Независимых Колоний. Несите свободу всем мирним жителям галактики. Руководите своими бойками и несите победу."
+    - type: GhostTakeoverAvailable
+    - type: Loadout
+      prototypes: [ SNKOffiGear ]
+    - type: RandomMetadata
+      nameSegments:
+      - SNKName-ofi
+      - SNKNameTwo
+
+- type: randomHumanoidSettings
+  id: SNKOffiReady
+  parent: SNKOffiR
+  components:
+    - type: GhostRole
+      allowMovement: true
+      allowSpeech: true
+      makeSentient: true
+      name: Офицер СНК
+      description: "Вы офицер Союза Независимых Колоний. Несите свободу всем мирним жителям галактики. Руководите своими бойками и несите победу."
+    - type: GhostTakeoverAvailable
+    - type: MobThresholds
+      thresholds:
+        0: Alive
+        105: Critical
+        200: Dead
+    - type: Stamina
+      critThreshold: 380
+    - type: Loadout
+      prototypes: [ SNKOffiGear ]
+    - type: NpcFactionMember
+      factions:
+      - SNK
+  
+- type: entity
+  name: Офицер СНК Спавнер
+  id: SNKMobHumanOffi
+  suffix: GOST, СНК
+  components:
+  - type: NpcFactionMember
+    factions:
+      - SNK
+  - type: Sprite
+    sprite: Markers/jobs.rsi
+    state: warden
+  - type: RandomHumanoidAppearance
+    randomizeName: false
+  - type: RandomMetadata
+    nameSegments:
+    - SNKName-ofi
+    - SNKNameTwo
+  - type: RandomHumanoidSpawner
+    settings: SNKOffiR
+#---------------------------------инженер----------
+- type: randomHumanoidSettings
+  speciesBlacklist: 
+    - Diona
+    - Arachnid
+  id: SNKEngenerR
+  randomizeName: false
+  components:
+    - type: NpcFactionMember
+      factions:
+      - SNK
+    - type: GhostRole
+      name: Гост-роль инженера СНК 
+      description: "Вы инженер армии СНК. Ваша задача строить укрепления, ремонтировать транспорт и налаживать инфраструктуру для своих товарищей"
+    - type: GhostTakeoverAvailable
+    - type: Loadout
+      prototypes: [ SNKEngeGear]
+    - type: RandomMetadata
+      nameSegments:
+      - SNKName-sol
+      - SNKNameTwo
+
+- type: randomHumanoidSettings
+  id: SNKEngenerReady
+  parent: SNKEngenerR
+  components:
+    - type: GhostRole
+      allowMovement: true
+      allowSpeech: true
+      makeSentient: true
+      name: Инженер СНК
+      description: "Вы инженер армии СНК. Ваша задача строить укрепления, ремонтировать транспорт и налаживать инфраструктуру для своих товарищей"
+    - type: GhostTakeoverAvailable
+    - type: MobThresholds
+      thresholds:
+        0: Alive
+        105: Critical
+        200: Dead
+    - type: Stamina
+      critThreshold: 380
+    - type: Loadout
+      prototypes: [ SNKEngeGear ]
+    - type: NpcFactionMember
+      factions:
+      - SNK
+  
+- type: entity
+  name: СНК инженер Спавнер
+  id: SNKMobHumanEngener
+  suffix: GOST, СНК
+  components:
+  - type: NpcFactionMember
+    factions:
+      - SNK
+  - type: Sprite
+    sprite: Markers/jobs.rsi
+    state: engineer
+  - type: RandomHumanoidAppearance
+    randomizeName: false
+  - type: RandomMetadata
+    nameSegments:
+    - SNKName-sol
+    - SNKNameTwo
+  - type: RandomHumanoidSpawner
+    settings: SNKEngenerR
+#---------------------------------медик----------
+- type: randomHumanoidSettings
+  speciesBlacklist: 
+    - Diona
+    - Arachnid
+  id: SNKMedicR
+  randomizeName: false
+  components:
+    - type: NpcFactionMember
+      factions:
+      - SNK
+    - type: GhostRole
+      name: Гост-роль медика СНК
+      description: "Вы медик армии СНК. Ваша задача спасать жизни раненых бойцов и руководить подразделением в вопросах здоровья"
+    - type: GhostTakeoverAvailable
+    - type: Loadout
+      prototypes: [ SNKMediGear ]
+    - type: RandomMetadata
+      nameSegments:
+      - SNKName-sol
+      - SNKNameTwo
+
+- type: randomHumanoidSettings
+  id: SNKMedicReady
+  parent: SNKMedicR
+  components:
+    - type: GhostRole
+      allowMovement: true
+      allowSpeech: true
+      makeSentient: true
+      name: Медик СНК
+      description: "Вы медик армии СНК. Ваша задача спасать жизни раненых бойцов и руководить подразделением в вопросах здоровья"
+    - type: GhostTakeoverAvailable
+    - type: MobThresholds
+      thresholds:
+        0: Alive
+        110: Critical
+        210: Dead
+    - type: Stamina
+      critThreshold: 380
+    - type: Loadout
+      prototypes: [ SNKMediGear ]
+    - type: NpcFactionMember
+      factions:
+      - SNK
+  
+- type: entity
+  name: Медик СНК Спавнер
+  id: SNKMobHumanMedic
+  suffix: GOST, СНК
+  components:
+  - type: NpcFactionMember
+    factions:
+      - SNK
+  - type: Sprite
+    sprite: Markers/jobs.rsi
+    state: doctor
+  - type: RandomHumanoidAppearance
+    randomizeName: false
+  - type: RandomMetadata
+    nameSegments:
+    - SNKName-sol
+    - SNKNameTwo
+  - type: RandomHumanoidSpawner
+    settings: SNKMedicR
+#---------------------------------медик----------
+- type: randomHumanoidSettings
+  speciesBlacklist: 
+    - Diona
+    - Arachnid
+  id: SNKRadistR
+  randomizeName: false
+  components:
+    - type: NpcFactionMember
+      factions:
+      - SNK
+    - type: GhostRole
+      name: Гост-роль радиста СНК 
+      description: "Вы радист армии СНК. Ваша задача спасать обеспечивать связью свой отряд и беречь свою рацию"
+    - type: GhostTakeoverAvailable
+    - type: Loadout
+      prototypes: [ SNKRadioGear ]
+    - type: RandomMetadata
+      nameSegments:
+      - SNKName-sol
+      - SNKNameTwo
+
+- type: randomHumanoidSettings
+  id: SNKRadistReady
+  parent: SNKRadistR
+  components:
+    - type: GhostRole
+      allowMovement: true
+      allowSpeech: true
+      makeSentient: true
+      name: Радист СНК
+      description: "Вы радист армии СНК. Ваша задача спасать обеспечивать связью свой отряд и беречь свою рацию"
+    - type: GhostTakeoverAvailable
+    - type: MobThresholds
+      thresholds:
+        0: Alive
+        100: Critical
+        200: Dead
+    - type: Stamina
+      critThreshold: 380
+    - type: Loadout
+      prototypes: [ SNKRadioGear ]
+    - type: NpcFactionMember
+      factions:
+      - SNK
+  
+- type: entity
+  name: Радист СНК Спавнер
+  id: SNKMobHumanRadist
+  suffix: GOST, СНК
+  components:
+  - type: NpcFactionMember
+    factions:
+      - SNK
+  - type: Sprite
+    sprite: Markers/jobs.rsi
+    state: engineer
+  - type: RandomHumanoidAppearance
+    randomizeName: false
+  - type: RandomMetadata
+    nameSegments:
+    - SNKName-sol
+    - SNKNameTwo
+  - type: RandomHumanoidSpawner
+    settings: SNKRadistR
+#---------------------------------------------------------------Ящики и шкафы со снарягой------------------------------------------------------------        
+#------------------------------------------------------Шкафы----------------------------
+#-----------------------------шкаф солдат стандарт-----------------
+- type: entity
+  id: ClosetSoldStd
+  parent: ClosetBase
+  name: Шкаф стандартной формы солдата
+  suffix: СНК
+  description: Шкаф содержащий стандартную форму военослужащего армии СНК
+  components:
+  - type: Icon
+    sprite: Corvax/Lore/SNK/snk_closet.rsi
+    state: generic_icon
+  - type: Sprite
+    noRot: true
+    sprite: Corvax/Lore/SNK/snk_closet.rsi
+    layers:
+    - state: generic
+      map: ["enum.StorageVisualLayers.Base"]
+    - state: generic_door
+      map: ["enum.StorageVisualLayers.Door"]
+    - state: welded
+      visible: false
+      map: ["enum.WeldableLayers.BaseWelded"]
+  - type: StorageFill
+    contents:
+      - id: SNKUniformSoldStd
+      - id: SNKBackpackStd
+      - id: SNKShapkaStd
+      - id: SNKHelmetStd
+      - id: SNKArmorLightStd
+      - id: SNKBeltSold
+      - id: SNKBoots
+#-----------------------------шкаф солдат лес-----------------
+- type: entity
+  id: ClosetSoldLes
+  parent: ClosetBase
+  name: Шкаф лесной формы солдата
+  suffix: СНК
+  description: Шкаф содержащий лесную форму военослужащего армии СНК
+  components:
+  - type: Icon
+    sprite: Corvax/Lore/SNK/snk_closet.rsi
+    state: generic_icon
+  - type: Sprite
+    noRot: true
+    sprite: Corvax/Lore/SNK/snk_closet.rsi
+    layers:
+    - state: generic
+      map: ["enum.StorageVisualLayers.Base"]
+    - state: generic_door
+      map: ["enum.StorageVisualLayers.Door"]
+    - state: welded
+      visible: false
+      map: ["enum.WeldableLayers.BaseWelded"]
+  - type: StorageFill
+    contents:
+      - id: SNKUniformSoldLes
+      - id: SNKBackpackStd
+      - id: SNKShapkaLes
+      - id: SNKHelmetLes
+      - id: SNKArmorLightLes
+      - id: SNKBeltSold
+      - id: SNKBoots
+      - id: SNKCloakLes
+#-----------------------------шкаф солдат лава-----------------
+- type: entity
+  id: ClosetSoldLav
+  parent: ClosetBase
+  name: Шкаф лавовой формы солдата
+  suffix: СНК
+  description: Шкаф содержащий лавовую форму военослужащего армии СНК
+  components:
+  - type: Icon
+    sprite: Corvax/Lore/SNK/snk_closet.rsi
+    state: generic_icon
+  - type: Sprite
+    noRot: true
+    sprite: Corvax/Lore/SNK/snk_closet.rsi
+    layers:
+    - state: generic
+      map: ["enum.StorageVisualLayers.Base"]
+    - state: generic_door
+      map: ["enum.StorageVisualLayers.Door"]
+    - state: welded
+      visible: false
+      map: ["enum.WeldableLayers.BaseWelded"]
+  - type: StorageFill
+    contents:
+      - id: SNKUniformSoldLav
+      - id: SNKBackpackStd
+      - id: SNKShapkaStd
+      - id: SNKHelmetLav
+      - id: SNKArmorLightLav
+      - id: SNKBeltSold
+      - id: SNKBoots
+#-----------------------------шкаф солдат песок-----------------
+- type: entity
+  id: ClosetSoldPes
+  parent: ClosetBase
+  name: Шкаф пустынной формы солдата
+  suffix: СНК
+  description: Шкаф содержащий пустынную форму военослужащего армии СНК
+  components:
+  - type: Icon
+    sprite: Corvax/Lore/SNK/snk_closet.rsi
+    state: generic_icon
+  - type: Sprite
+    noRot: true
+    sprite: Corvax/Lore/SNK/snk_closet.rsi
+    layers:
+    - state: generic
+      map: ["enum.StorageVisualLayers.Base"]
+    - state: generic_door
+      map: ["enum.StorageVisualLayers.Door"]
+    - state: welded
+      visible: false
+      map: ["enum.WeldableLayers.BaseWelded"]
+  - type: StorageFill
+    contents:
+      - id: SNKUniformSoldPes
+      - id: SNKBackpackPes
+      - id: SNKBandana
+      - id: SNKHelmetPes
+      - id: SNKArmorLightPes
+      - id: SNKBeltSold
+      - id: SNKBoots
+      - id: SNKCloakPes
+#-----------------------------шкаф солдат зима-----------------
+- type: entity
+  id: ClosetSoldZim
+  parent: ClosetBase
+  name: Шкаф зимней формы солдата
+  suffix: СНК
+  description: Шкаф содержащий зимнюю форму военослужащего армии СНК
+  components:
+  - type: Icon
+    sprite: Corvax/Lore/SNK/snk_closet.rsi
+    state: generic_icon
+  - type: Sprite
+    noRot: true
+    sprite: Corvax/Lore/SNK/snk_closet.rsi
+    layers:
+    - state: generic
+      map: ["enum.StorageVisualLayers.Base"]
+    - state: generic_door
+      map: ["enum.StorageVisualLayers.Door"]
+    - state: welded
+      visible: false
+      map: ["enum.WeldableLayers.BaseWelded"]
+  - type: StorageFill
+    contents:
+      - id: SNKUniformSoldZim
+      - id: SNKBackpackZim
+      - id: SNKShapkaZim
+      - id: SNKHelmetZim
+      - id: SNKArmorLightZim
+      - id: SNKBeltSold
+      - id: SNKBoots
+      - id: SNKCloakZim
+#-----------------------------шкаф офицер стандарт-----------------
+- type: entity
+  id: ClosetOfiStd
+  parent: ClosetBase
+  name: Шкаф стандартной формы офицера
+  suffix: СНК
+  description: Шкаф содержащий стандартную форму офицера армии СНК
+  components:
+  - type: Icon
+    sprite: Corvax/Lore/SNK/snk_closet.rsi
+    state: generic_icon
+  - type: Sprite
+    noRot: true
+    sprite: Corvax/Lore/SNK/snk_closet.rsi
+    layers:
+    - state: generic
+      map: ["enum.StorageVisualLayers.Base"]
+    - state: generic_door
+      map: ["enum.StorageVisualLayers.Door"]
+    - state: welded
+      visible: false
+      map: ["enum.WeldableLayers.BaseWelded"]
+  - type: StorageFill
+    contents:
+      - id: SNKUniformOffiStd
+      - id: SNKSatchels
+      - id: SNKCepkaStd
+      - id: SNKHelmetStd
+      - id: SNKArmorLightStd
+      - id: SNKBeltOffi
+      - id: SNKBoots
+#-----------------------------шкаф офицер лес-----------------
+- type: entity
+  id: ClosetOfiLes
+  parent: ClosetBase
+  name: Шкаф лесной формы офицера
+  suffix: СНК
+  description: Шкаф содержащий лесную форму офицера армии СНК
+  components:
+  - type: Icon
+    sprite: Corvax/Lore/SNK/snk_closet.rsi
+    state: generic_icon
+  - type: Sprite
+    noRot: true
+    sprite: Corvax/Lore/SNK/snk_closet.rsi
+    layers:
+    - state: generic
+      map: ["enum.StorageVisualLayers.Base"]
+    - state: generic_door
+      map: ["enum.StorageVisualLayers.Door"]
+    - state: welded
+      visible: false
+      map: ["enum.WeldableLayers.BaseWelded"]
+  - type: StorageFill
+    contents:
+      - id: SNKUniformSoldLes
+      - id: SNKSatchels
+      - id: SNKCepkaLes
+      - id: SNKHelmetLes
+      - id: SNKArmorLightLes
+      - id: SNKBeltOffi
+      - id: SNKBoots
+#-----------------------------шкаф офицер лава-----------------
+- type: entity
+  id: ClosetOfiLav
+  parent: ClosetBase
+  name: Шкаф лавовой формы офицера
+  suffix: СНК
+  description: Шкаф содержащий лавовую форму офицера армии СНК
+  components:
+  - type: Icon
+    sprite: Corvax/Lore/SNK/snk_closet.rsi
+    state: generic_icon
+  - type: Sprite
+    noRot: true
+    sprite: Corvax/Lore/SNK/snk_closet.rsi
+    layers:
+    - state: generic
+      map: ["enum.StorageVisualLayers.Base"]
+    - state: generic_door
+      map: ["enum.StorageVisualLayers.Door"]
+    - state: welded
+      visible: false
+      map: ["enum.WeldableLayers.BaseWelded"]
+  - type: StorageFill
+    contents:
+      - id: SNKUniformOffiLav
+      - id: SNKSatchels
+      - id: SNKCepkaStd
+      - id: SNKHelmetLav
+      - id: SNKArmorLightLav
+      - id: SNKBeltOffi
+      - id: SNKBoots
+#-----------------------------шкаф офицер песок-----------------
+- type: entity
+  id: ClosetOfiPes
+  parent: ClosetBase
+  name: Шкаф пустынной формы офицера
+  suffix: СНК
+  description: Шкаф содержащий пустынную форму офицера армии СНК
+  components:
+  - type: Icon
+    sprite: Corvax/Lore/SNK/snk_closet.rsi
+    state: generic_icon
+  - type: Sprite
+    noRot: true
+    sprite: Corvax/Lore/SNK/snk_closet.rsi
+    layers:
+    - state: generic
+      map: ["enum.StorageVisualLayers.Base"]
+    - state: generic_door
+      map: ["enum.StorageVisualLayers.Door"]
+    - state: welded
+      visible: false
+      map: ["enum.WeldableLayers.BaseWelded"]
+  - type: StorageFill
+    contents:
+      - id: SNKUniformSoldPes
+      - id: SNKSatchels
+      - id: SNKCepkaPes
+      - id: SNKHelmetPes
+      - id: SNKArmorLightPes
+      - id: SNKBeltOffi
+      - id: SNKBoots
+#-----------------------------шкаф офицер зима-----------------
+- type: entity
+  id: ClosetOfiZim
+  parent: ClosetBase
+  name: Шкаф зимней формы офицера
+  suffix: СНК
+  description: Шкаф содержащий зимнюю форму офицера армии СНК
+  components:
+  - type: Icon
+    sprite: Corvax/Lore/SNK/snk_closet.rsi
+    state: generic_icon
+  - type: Sprite
+    noRot: true
+    sprite: Corvax/Lore/SNK/snk_closet.rsi
+    layers:
+    - state: generic
+      map: ["enum.StorageVisualLayers.Base"]
+    - state: generic_door
+      map: ["enum.StorageVisualLayers.Door"]
+    - state: welded
+      visible: false
+      map: ["enum.WeldableLayers.BaseWelded"]
+  - type: StorageFill
+    contents:
+      - id: SNKUniformOffiZim
+      - id: SNKSatchels
+      - id: SNKCepkaZim
+      - id: SNKHelmetZim
+      - id: SNKArmorLightZim
+      - id: SNKBeltOffi
+      - id: SNKBoots
+#-----------------------------Базовый ящик------------------ 
+- type: entity
+  parent: CrateBaseSecure
+  id: SNKCrate
+  name: Ящик снаряжения СНК
+  suffix: СНК
+  components:
+  - type: Icon
+    sprite: Corvax/Lore/SNK/snk_crates.rsi
+  - type: Sprite
+    sprite: Corvax/Lore/SNK/snk_crates.rsi
+  - type: AccessReader
+    access: [["SNKAccess"]]
+#-----------------------------Ящик массового лёгкого оружия------------------ 
+- type: entity
+  id: SNKCrateMasLigWeapons
+  parent: SNKCrate
+  name: Ящик оружия СНК
+  suffix: СНК, лёгкие
+  description: Лёгкое оружие массового производства
+  components:
+  - type: StorageFill
+    contents:
+      - id: SNKPistolPist
+      - id: SNKPistolPist
+      - id: SNKPistolPist
+      - id: SNKPistolPist
+      - id: SNKPistolRifle
+      - id: SNKPistolRifle
+      - id: SNKPistolRifle
+      - id: SNKPistolRifle
+      - id: SNKSMGPist
+      - id: SNKSMGPist
+      - id: SNKSMGPist
+      - id: SNKSMGPist
+#-----------------------------Ящик массового строевого оружия------------------ 
+- type: entity
+  id: SNKCrateMasWeapons
+  parent: SNKCrate
+  name: Ящик оружия СНК
+  suffix: СНК, большие
+  description: Крупное оружие массового производства
+  components:
+  - type: StorageFill
+    contents:
+      - id: SNKFastAutoRifle
+      - id: SNKFastAutoRifle
+      - id: SNKFastAutoRifle
+      - id: SNKFastAutoRifle
+      - id: SNKShotgunDrob
+      - id: SNKShotgunDrob
+      - id: SNKHighLMG
+      - id: SNKHighLMG
+      - id: SNKHeavyRifle
+      - id: SNKHeavyRifle
+      - id: SNKHeavyRifle
+      - id: SNKHeavyRifle
+#-----------------------------Ящик массового энергетического оружия------------------ 
+- type: entity
+  id: SNKCrateMasRayWeapons
+  parent: SNKCrate
+  name: Ящик оружия СНК
+  suffix: СНК, энерго
+  description: Энергетическое оружие массового производства
+  components:
+  - type: StorageFill
+    contents:
+      - id: SNKSMGElectro
+      - id: SNKSMGElectro
+      - id: SNKSMGElectro
+      - id: SNKSMGElectro
+      - id: SNKLaserCarbine
+      - id: SNKLaserCarbine
+      - id: SNKLaserCarbine
+      - id: SNKLaserCarbine
+      - id: SNKRadioCarbine
+      - id: SNKRadioCarbine
+      - id: SNKRadioCarbine
+      - id: SNKRadioCarbine
+#-----------------------------Ящик редкого строевого оружия------------------ 
+- type: entity
+  id: SNKCrateNonMasWeapons
+  parent: SNKCrate
+  name: Ящик оружия СНК
+  suffix: СНК, редкое
+  description: Крупное оружие ограниченной серии производства
+  components:
+  - type: StorageFill
+    contents:
+      - id: SNKAutoHighRifle
+      - id: SNKAutoHighRifle
+      - id: SNKAutoHighRifle
+      - id: SNKDrobLMG
+      - id: SNKDrobLMG
+      - id: SNKShotgunLazer
+      - id: SNKShotgunLazer
+#-----------------------------Ящик боеприпасов------------------ 
+- type: entity
+  id: SNKCrateAmmo
+  parent: SNKCrate
+  name: Ящик боеприпасов СНК
+  suffix: СНК
+  description: набит коробками с патронами
+  components:
+  - type: StorageFill
+    contents:
+      - id: SNKBoxPistolStd
+      - id: SNKBoxPistolPoi
+      - id: SNKBoxRifleStd
+      - id: SNKBoxRifleHea
+      - id: SNKBoxRifleUrn
+      - id: SNKBoxHighRifleStd
+      - id: SNKBoxHighRifleBig
+      - id: SNKBoxHighDrobStd
+      - id: SNKBoxHighDrobHea
+      - id: SNKBoxHighDrobBul
+#-----------------------------Ящик брони------------------ 
+- type: entity
+  id: SNKCrateArmor
+  parent: SNKCrate
+  name: Ящик брони СНК
+  suffix: СНК
+  description: Хранит в себе тяжёлые бронекомплекты и скафандры СНК
+  components:
+  - type: StorageFill
+    contents:
+      - id: SNKArmorMidStd
+      - id: SNKArmorMidStd
+      - id: SNKArmorMidLes
+      - id: SNKArmorMidLes
+      - id: SNKArmorMidPes
+      - id: SNKArmorMidPes
+      - id: SNKArmorMidZim
+      - id: SNKArmorMidZim
+      - id: SNKHardsuit
+      - id: SNKHardsuit
+      - id: SNKHardsuit
+      - id: SNKHardsuit
+
+
+
+

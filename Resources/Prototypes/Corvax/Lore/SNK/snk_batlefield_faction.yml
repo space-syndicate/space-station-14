@@ -1,0 +1,21 @@
+#--------------------------------------------
+- type: salvageFaction
+  id: SNK
+  desc: salvage-faction-snk
+  entries:
+    - proto: MobSNK
+      prob: 0.5
+    - proto: MobSNKOfiWeapon
+      cost: 1
+    - proto: MobSNKMed
+      cost: 2
+      prob: 0.5
+    - proto: MobSNKRadWeapon
+      cost: 3
+      prob: 0.3
+    - proto: MobSNKEngWeapon
+      cost: 3
+      prob: 0.1
+    - proto: MobSNKWeapon
+      cost: 5
+      prob: 0.1
