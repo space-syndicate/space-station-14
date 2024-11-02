@@ -9,7 +9,7 @@ steal-target-groups-food-meat-corgi = первосортное мясо корг
 steal-target-groups-captain-id-card = ID-карта капитана
 steal-target-groups-jetpack-captain-filled = джетпак капитана
 steal-target-groups-weapon-antique-laser = антикварный лазерный пистолет
-steal-target-groups-nuke-disk = диск ядерной аутентификации 
+steal-target-groups-nuke-disk = диск ядерной аутентификации
 steal-target-groups-weapon-energy-shot-gun = энергетический дробовик
 # Thief Collection
 steal-target-groups-figurines = фигурки
@@ -29,7 +29,7 @@ steal-target-groups-clothing-head-hat-warden = фуражка смотрител
 steal-target-groups-clothing-outer-hardsuit-void-paramed = пустотный скафандр парамедика
 steal-target-groups-medical-tech-fab-circuitboard = машинная плата медицинского ТехФаба
 steal-target-groups-clothing-headset-alt-medical = полноразмерная гарнитура главного врача
-steal-target-groups-research-and-development-server-machine-circuitboard = машинная плата сервера РнД 
+steal-target-groups-research-and-development-server-machine-circuitboard = машинная плата сервера РнД
 steal-target-groups-fire-axe = пожарный топор
 steal-target-groups-ame-part-flatpack = упаковка ДАМ
 steal-target-groups-salvage-expeditions-computer-circuitboard = плата консоли утилизаторских экспедиций
@@ -38,6 +38,7 @@ steal-target-groups-clothing-eyes-hud-beer = пивные очки
 steal-target-groups-bible = библия
 steal-target-groups-clothing-neck-goldmedal = золотая медаль мастерства экипажа
 steal-target-groups-clothing-neck-clownmedal = медаль клоуна
+steal-target-groups-wanted-list-cartridge = картридж Список разыскиваемых
 # Thief structures
 steal-target-groups-teg = часть термоэлектрического генератора
 steal-target-groups-freezer-heater = нагреватель или охладитель

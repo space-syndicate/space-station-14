@@ -1,4 +1,4 @@
-import os
+﻿import os
 
 from fluent.syntax.parser import FluentParser
 from fluent.syntax.serializer import FluentSerializer
@@ -34,10 +34,23 @@ class YAMLExtractor:
             en_fluent_file_path = self.create_en_fluent_file(relative_parent_dir, file_name, pretty_fluent_file_serialized)
             ru_fluent_file_path = self.create_ru_fluent_file(en_fluent_file_path)
 
+    @classmethod
+    def serialize_yaml_element(cls, element):
+        parent_id = element.parent_id
+        if isinstance(parent_id, list):
+            parent_id = parent_id[0] if parent_id else 'None'
+
+        message = FluentSerializedMessage.from_yaml_element(
+            element.id, element.name,
+            FluentAstAttributeFactory.from_yaml_element(element),
+            parent_id
+        )
+
+        return message
+
+
     def get_serialized_fluent_from_yaml_elements(self, yaml_elements):
-        fluent_serialized_messages = list(
-                map(lambda el: FluentSerializedMessage.from_yaml_element(el.id, el.name, FluentAstAttributeFactory.from_yaml_element(el), el.parent_id), yaml_elements)
-            )
+        fluent_serialized_messages = list(map(YAMLExtractor.serialize_yaml_element, yaml_elements))
         fluent_exist_serialized_messages = list(filter(lambda m: m, fluent_serialized_messages))
 
         if not len(fluent_exist_serialized_messages):
@@ -49,7 +62,6 @@ class YAMLExtractor:
         en_new_dir_path = os.path.join(project.en_locale_prototypes_dir_path, relative_parent_dir)
         en_fluent_file = FluentFile(os.path.join(en_new_dir_path, f'{file_name}.ftl'))
         en_fluent_file.save_data(file_data)
-        logging.info(f'Актуализирован файл английской локали {en_fluent_file.full_path}')
 
         return en_fluent_file.full_path
 
