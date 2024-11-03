@@ -1,0 +1,227 @@
+- type: salvageFaction
+  id: CapturedByTheSyndicate
+  Name: Captured By The Syndicate
+  entries:
+    - proto: MobSalvageSyndicateEasyOne
+    - proto: MobSalvageSyndicateEasyThree
+      cost: 2
+    - proto: MobSalvageSyndicateEasyTwo
+      cost: 5
+      prob: 0.1
+    - proto: MobSalvageSyndicateHardThree
+      cost: 10
+      prob: 0.02
+    - proto: MobSalvageSyndicateEasyTwo
+      cost: 5
+    - proto: MobSalvageSyndicateHardOne
+      cost: 3
+      prob: 0.02
+    - proto: MobSalvageSyndicateHardTwo
+    - proto: WeaponTurretXeno
+      prob: 0.1
+  configs:
+    DefenseStructure: XenoWardingTower
+    Megafauna: MobSalvageSyndicateHardThree
+
+- type: entity
+  name: Пехотинец Синдиката
+  parent: BaseMobHuman
+  id: MobSalvageSyndicateEasyOne
+  components:
+  - type: NpcFactionMember
+    factions:
+      - Syndicate
+  - type: Loadout
+    prototypes:
+      - SyndSalvageOneGear
+  - type: InputMover
+  - type: MobMover
+  - type: HTN
+    rootTask:
+      task: SimpleHumanoidHostileCompound
+- type: startingGear
+  id: SyndSalvageOneGear
+  equipment:
+    jumpsuit: ClothingUniformJumpsuitRecruitSyndie
+    back: ClothingBackpackSyndicate
+    shoes: ClothingShoesBootsCombat
+    mask: ClothingMaskNeckGaiter
+    head: ClothingHeadHatSyndie
+    eyes: ClothingEyesHudSyndicateAgent
+    outerClothing: ClothingOuterArmorBasicSlim
+    gloves: ClothingHandsGlovesFingerless
+    id: SyndiPDA
+    belt: ClothingBeltAssault
+    pocket1: RadioHandheld
+    pocket2: BaseUplinkRadio
+  inhand:
+    - Truncheon
+
+- type: entity
+  name: Пехотинец Синдиката
+  parent: BaseMobHuman
+  id: MobSalvageSyndicateEasyTwo
+  components:
+  - type: NpcFactionMember
+    factions:
+      - Syndicate
+  - type: Loadout
+    prototypes:
+      - SyndSalvageTwoGear
+  - type: InputMover
+  - type: MobMover
+  - type: HTN
+    rootTask:
+      task: SimpleHumanoidHostileCompound
+- type: startingGear
+  id: SyndSalvageTwoGear
+  equipment:
+    jumpsuit: ClothingUniformJumpsuitOperative
+    back: ClothingBackpackDuffelSyndicateAmmo
+    shoes: ClothingShoesBootsWinterSyndicate
+    mask: ClothingMaskNeckGaiter
+    head: ClothingHeadHelmetSwatSyndicate
+    eyes: ClothingEyesHudSyndicateAgent
+    outerClothing: ClothingOuterCoatSyndieCapArmored
+    gloves: ClothingHandsGlovesCombat
+    id: SyndiPDA
+    belt: ClothingBeltMilitaryWebbing
+    pocket1: MedicatedSuture
+    pocket2: Telecrystal5
+  inhand:
+    - WeaponPistolCobra
+
+- type: entity
+  name: Инженер Синдиката
+  parent: BaseMobHuman
+  id: MobSalvageSyndicateEasyThree
+  components:
+  - type: NpcFactionMember
+    factions:
+      - Syndicate
+  - type: Loadout
+    prototypes:
+      - SyndSalvageThreeGear
+  - type: InputMover
+  - type: MobMover
+  - type: HTN
+    rootTask:
+      task: SimpleHumanoidHostileCompound
+- type: startingGear
+  id: SyndSalvageThreeGear
+  equipment:
+    jumpsuit: ClothingUniformJumpsuitRepairmanSyndie
+    back: ClothingBackpackSyndicate
+    shoes: ClothingShoesBootsWork
+    head: ClothingHeadHatHardhatYellow
+    eyes: ClothingEyesGlassesMeson
+    gloves: ClothingHandsGlovesColorYellow
+    ears: ClothingHeadsetAltSyndicate
+    id: SyndiPDA
+    belt: ClothingBeltUtilityEngineering
+    pocket1: BaseUplinkRadio
+    pocket2: MMIFilled
+  inhand:
+    - ToolboxSyndicate
+
+- type: entity
+  name: Пехотинец Синдиката
+  parent: BaseMobHuman
+  id: MobSalvageSyndicateHardOne
+  components:
+  - type: NpcFactionMember
+    factions:
+      - Syndicate
+  - type: Loadout
+    prototypes:
+      - SyndSalvageHardOneGear
+  - type: InputMover
+  - type: MobMover
+  - type: HTN
+    rootTask:
+      task: SimpleHumanoidHostileCompound
+- type: startingGear
+  id: SyndSalvageHardOneGear
+  equipment:
+    jumpsuit: ClothingUniformJumpsuitRecruitSyndie
+    back: ClothingBackpackSyndicate
+    shoes: ClothingShoesChameleonNoSlips
+    head: ClothingHeadHatSyndieMAA
+    eyes: ClothingEyesGlassesHiddenSecurity
+    gloves: ClothingHandsGlovesCombat
+    outerClothing: ClothingOuterVestWeb
+    ears: ClothingHeadsetAltSyndicate
+    id: SyndiPDA
+    belt: ClothingBeltAssault
+    pocket1: EnergySword
+    pocket2: BaseUplinkRadio20TC
+  inhand:
+    - WeaponPistolCobra
+
+- type: entity
+  name: Джаггернаут Синдиката
+  parent: BaseMobHuman
+  id: MobSalvageSyndicateHardThree
+  components:
+  - type: NpcFactionMember
+    factions:
+      - Syndicate
+  - type: Loadout
+    prototypes:
+      - SyndSalvageHardThreeGear
+  - type: InputMover
+  - type: MobMover
+  - type: HTN
+    rootTask:
+      task: SimpleHumanoidHostileCompound
+- type: startingGear
+  id: SyndSalvageHardThreeGear
+  equipment:
+    jumpsuit: ClothingUniformJumpsuitOperative
+    back: ClothingBackpackDuffelSyndicateAmmo
+    shoes: ClothingShoesBootsMagSyndie
+    head: ClothingHeadHelmetHardsuitCybersun
+    eyes: ClothingEyesHudSyndicate
+    gloves: ClothingHandsGlovesCombat
+    outerClothing: ClothingOuterHardsuitJuggernaut
+    ears: ClothingHeadsetAltSyndicate
+    id: SyndiPDA
+    belt: ClothingBeltMilitaryWebbing
+    pocket1: BaseUplinkRadio40TC
+    pocket2: Emag
+  inhand:
+    - WeaponLauncherChinaLake
+
+- type: entity
+  name: Оперативник Синдиката
+  parent: BaseMobHuman
+  id: MobSalvageSyndicateHardTwo
+  components:
+  - type: NpcFactionMember
+    factions:
+      - Syndicate
+  - type: Loadout
+    prototypes:
+      - SyndSalvageHardTwoGear
+  - type: InputMover
+  - type: MobMover
+  - type: HTN
+    rootTask:
+      task: SimpleHumanoidHostileCompound
+- type: startingGear
+  id: SyndSalvageHardTwoGear
+  equipment:
+    jumpsuit: ClothingUniformJumpsuitOperative
+    back: ClothingBackpackDuffelSyndicateAmmo
+    shoes: ClothingShoesBootsMagSyndie
+    head: ClothingHeadHelmetHardsuitSyndie
+    eyes: ClothingEyesHudSyndicate
+    gloves: ClothingHandsGlovesCombat
+    outerClothing: ClothingOuterHardsuitSyndie
+    ears: ClothingHeadsetAltSyndicate
+    id: SyndiPDA
+    belt: ClothingBeltMilitaryWebbing
+    pocket1: BaseUplinkRadio20TC
+    pocket2: CombatMedipen
+  inhand:
+    - WeaponSniperMosin

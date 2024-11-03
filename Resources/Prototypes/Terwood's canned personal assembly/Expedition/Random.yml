@@ -1,0 +1,28 @@
+- type: salvageFaction
+  id: Random
+  name: Random
+  entries:
+    - proto: MobWatcherLavaland
+    - proto: MobSpiderSpaceSalvage
+    - proto: MobAdultSlimesGreen
+      cost: 2
+    - proto: WelderExperimental
+    - proto: WeaponXrayCannon
+    - proto: MobMedibot
+      cost: 5
+      prob: 0.1
+    - proto: MobArgocyteLeviathing
+    - proto: MobDragonDungeon
+    - proto: MobXenoQueen
+      cost: 10
+      prob: 0.02
+    - proto: ReagentSlimeRobustHarvest
+    - proto: MobArgocyteEnforcer
+    - proto: MobSharkSalvage
+      cost: 3
+    - proto: MobSalvageSyndicateHardTwo
+    - proto: AnomalyLiquid
+      prob: 0.1
+  configs:
+    DefenseStructure: WeaponTurretSyndicate
+    Megafauna: ReagentSlimeNocturine

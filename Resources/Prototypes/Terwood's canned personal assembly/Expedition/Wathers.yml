@@ -1,0 +1,14 @@
+- type: salvageFaction
+  id: Wathers
+  name: Wathers
+  entries:
+    - proto: MobWatcherMagmawing
+    - proto: MobWatcherLavaland
+    - proto: MobWatcherIcewing
+      cost: 2
+    - proto: MobWatcherPride
+      cost: 5
+      prob: 0.1
+  configs:
+    DefenseStructure: XenoWardingTower
+    Megafauna: MobWatcherPride

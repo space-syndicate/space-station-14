@@ -1,0 +1,80 @@
+- type: hitscan
+  id: MedLaserBrute
+  damage:
+    types:
+      Piercing: -8
+      Slash: -8
+      Blunt: -8
+  muzzleFlash:
+    sprite: Objects/Weapons/Guns/Projectiles/projectiles.rsi
+    state: impact_u_laser
+  travelFlash:
+    sprite: Objects/Weapons/Guns/Projectiles/projectiles.rsi
+    state: u_laser
+  impactFlash:
+    sprite: Objects/Weapons/Guns/Projectiles/projectiles.rsi
+    state: impact_omni
+
+- type: hitscan
+  id: MedLaserBurn
+  damage:
+    types:
+      Heat: -8
+      Shock: -8
+      Cold: -8
+      Caustic: -8
+  muzzleFlash:
+    sprite: Objects/Weapons/Guns/Projectiles/projectiles.rsi
+    state: impact_u_laser
+  travelFlash:
+    sprite: Objects/Weapons/Guns/Projectiles/projectiles.rsi
+    state: u_laser
+  impactFlash:
+    sprite: Objects/Weapons/Guns/Projectiles/projectiles.rsi
+    state: impact_omni
+
+- type: hitscan
+  id: MedLaserToxin
+  damage:
+    types:
+      Poison: -12
+      Radiation: -12
+  muzzleFlash:
+    sprite: Objects/Weapons/Guns/Projectiles/projectiles.rsi
+    state: impact_u_laser
+  travelFlash:
+    sprite: Objects/Weapons/Guns/Projectiles/projectiles.rsi
+    state: u_laser
+  impactFlash:
+    sprite: Objects/Weapons/Guns/Projectiles/projectiles.rsi
+    state: impact_omni
+
+- type: entity
+  name: медпушка
+  parent: BaseWeaponBatterySmall
+  id: WeaponMediGun
+  description: Лечит, а не колечит.
+  components:
+  - type: Sprite
+    sprite: Objects/Weapons/Guns/Battery/laser_retro.rsi
+    layers:
+    - state: base
+      map: ["enum.GunVisualLayers.Base"]
+    - state: mag-unshaded-4
+      map: ["enum.GunVisualLayers.MagUnshaded"]
+      shader: unshaded
+  - type: MagazineVisuals
+    magState: mag
+    steps: 5
+    zeroVisible: true
+  - type: Appearance
+  - type: BatteryWeaponFireModes
+    fireModes:
+    - proto: MedLaserBrute
+      fireCost: 500
+    - proto: MedLaserBurn
+      fireCost: 125
+    - proto: MedLaserToxin
+      fireCost: 300
+    - proto: MedLaserToxin
+      fireCost: 300

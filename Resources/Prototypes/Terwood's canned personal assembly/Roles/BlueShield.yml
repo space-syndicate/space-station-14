@@ -1,0 +1,11 @@
+#------Кейс с оружием------#
+- type: entity
+  id: BriefcaseBlueShieldFilled
+  parent: BriefcaseBrown
+  suffix: Синий Щит, оружие
+  components:
+    - type: StorageFill
+      contents:
+        - id: Paper
+        - id: PenCentcom
+        - id: RubberStampIAA

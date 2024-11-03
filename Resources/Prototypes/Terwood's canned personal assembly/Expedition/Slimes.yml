@@ -1,0 +1,28 @@
+- type: salvageFaction
+  id: Slimes
+  name: Slimes
+  entries:
+    - proto: MobAdultSlimesGreenAngry
+    - proto: MobAdultSlimesYellowAngry
+    - proto: MobAdultSlimesBlueAngry
+      cost: 2
+    - proto: ReagentSlimeNapalm
+    - proto: ReagentSlimePax
+    - proto: ReagentSlimeToxin
+      cost: 5
+      prob: 0.1
+    - proto: ReagentSlimeNocturine
+      cost: 10
+      prob: 0.02
+    - proto: MobSalvageSyndicateEasyTwo
+      cost: 5
+    - proto: ReagentSlimeBicaridine
+    - proto: ReagentSlimeOmnizine
+    - proto: ReagentSlimeEphedrine
+      cost: 3
+    - proto: MobSalvageSyndicateHardTwo
+    - proto: AnomalyLiquid
+      prob: 0.1
+  configs:
+    DefenseStructure: AnomalyLiquid
+    Megafauna: ReagentSlimeNocturine

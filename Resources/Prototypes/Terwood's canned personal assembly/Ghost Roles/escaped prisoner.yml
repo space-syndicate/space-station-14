@@ -1,0 +1,37 @@
+- type: entity
+  parent: MobHuman
+  id: MobHumanPrisoner
+  name: cбежавший заключенный
+  components:
+  - type: GhostRole
+    name: Сбежавший заключенный
+    description: Вы бывший перманентно-заключенный, которому удалось сбежать. Это уже неплохо, осталось только не попасть в тюрьму на этой станции, а так-же выжить.
+    rules: ghost-role-information-freeagent-rules
+    raffle:
+      settings: default
+  - type: GhostTakeoverAvailable
+  - type: Loadout
+    prototypes: [PrisonerLostGear]
+  - type: RandomHumanoidAppearance
+
+- type: startingGear
+  id: PrisonerLostGear
+  equipment:
+    jumpsuit: ClothingUniformJumpsuitPrisoner
+    shoes: ClothingShoesColorBlack
+    ears: ClothingHeadsetGrey
+    head: ClothingHeadHatPaper
+    pocket1: EmergencyMedipen
+    pocket2: ScalpelShiv
+    gloves: ClothingHandsGlovesFingerless
+
+- type: entity
+  parent: BaseGameRule
+  id: LostPrisoner
+  components:
+  - type: StationEvent
+    weight: 5
+    duration: 1
+    minimumPlayers: 1
+  - type: RandomEntityStorageSpawnRule
+    prototype: MobHumanPrisoner
