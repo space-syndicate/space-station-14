@@ -28,7 +28,7 @@ public sealed class MorDastJoinSystem : EntitySystem
         SubscribeLocalEvent<MordastJoinEvent>(MordastJoin);
     }
 
-    private void OnVigersRayJoin(MordastJoinEvent args)
+    private void OnMor_DastJoin(MordastJoinEvent args)
     {
         _chatManager.DispatchServerAnnouncement("Морда зашел", Color.Red);
 
