@@ -52360,6 +52360,11 @@ entities:
     - type: Transform
       pos: -60.46964,4.353569
       parent: 2
+  - uid: 10292
+    components:
+    - type: Transform
+      pos: -64.46393,-1.4018123
+      parent: 2
   - uid: 19927
     components:
     - type: Transform
@@ -54244,6 +54249,12 @@ entities:
     - type: Transform
       pos: -57.5,-16.5
       parent: 2
+  - uid: 10198
+    components:
+    - type: Transform
+      rot: 3.141592653589793 rad
+      pos: -65.5,-1.5
+      parent: 2
 - proto: ComputerAnalysisConsole
   entities:
   - uid: 6056
@@ -55421,6 +55432,11 @@ entities:
       parent: 2
 - proto: CrowbarYellow
   entities:
+  - uid: 10226
+    components:
+    - type: Transform
+      pos: -64.47879,-1.3869464
+      parent: 2
   - uid: 18468
     components:
     - type: Transform
@@ -105493,6 +105509,12 @@ entities:
       parent: 17265
 - proto: ShotGunCabinetFilled
   entities:
+  - uid: 10307
+    components:
+    - type: Transform
+      rot: 3.141592653589793 rad
+      pos: -20.5,2.5
+      parent: 2
   - uid: 16646
     components:
     - type: Transform
