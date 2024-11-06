@@ -70,6 +70,8 @@
     canShuttle: false
     title: comms-console-announcement-title-station-ai
     color: "#2ed2fd"
+    global: true # Corvax-Announcements
+    sound: /Audio/Corvax/Announcements/aiannounce.ogg # Corvax-Announcements
   - type: Speech
     speechVerb: Robotic
 
