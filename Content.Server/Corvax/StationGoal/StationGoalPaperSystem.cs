@@ -3,10 +3,12 @@ using Content.Server.Fax;
 using Content.Server.GameTicking.Events;
 using Content.Server.Station.Components;
 using Content.Server.Station.Systems;
+using Content.Shared.Corvax.CCCVars;
 using Content.Shared.Fax.Components;
 using Content.Shared.GameTicking;
 using Content.Shared.Paper;
 using Robust.Server.Player;
+using Robust.Shared.Configuration;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Random;
 
@@ -22,6 +24,8 @@ namespace Content.Server.Corvax.StationGoal
         [Dependency] private readonly FaxSystem _fax = default!;
         [Dependency] private readonly IPlayerManager _playerManager = default!;
         [Dependency] private readonly StationSystem _station = default!;
+        [Dependency] private readonly IConfigurationManager _cfg = default!;
+
 
         public override void Initialize()
         {
@@ -31,6 +35,9 @@ namespace Content.Server.Corvax.StationGoal
 
         private void OnRoundStarting(RoundStartingEvent ev)
         {
+            if (!_cfg.GetCVar(CCCVars.StationGoal))
+                return;
+
             var playerCount = _playerManager.PlayerCount;
 
             var query = EntityQueryEnumerator<StationGoalComponent>();
