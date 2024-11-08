@@ -1,0 +1,130 @@
+- type: entity
+  name: mouse
+  parent: SimpleMobBase
+  id: MobMousePai
+  description: Видо изменённый пИИ
+  components:
+  - type: Body
+    prototype: Mouse
+  - type: Sprite
+    drawdepth: SmallMobs
+    sprite: _KD\PAI\mouse.rsi
+    layers:
+    - map: [ "enum.DamageStateVisualLayers.Base", "movement" ]
+      state: base
+  - type: Item
+    size: Tiny
+    heldPrefix: 0
+  - type: Clothing
+    quickEquip: false
+    sprite: Mobs/Animals/mouse.rsi
+    equippedPrefix: 0
+    slots:
+    - HEAD
+  - type: NpcFactionMember
+    factions:
+    - Passive
+  - type: Physics
+  - type: FaxableObject
+    insertingState: inserting_mouse
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeCircle
+          radius: 0.2
+        density: 100
+        mask:
+        - SmallMobMask
+        layer:
+        - SmallMobLayer
+  - type: MobState
+  - type: MobStateActions
+    actions:
+      Critical:
+      - ActionCritSuccumb
+      - ActionCritFakeDeath
+      - ActionCritLastWords
+  - type: MobThresholds
+    thresholds:
+      0: Alive
+      50: Critical
+      50: Dead
+  - type: MovementSpeedModifier
+    baseWalkSpeed : 2.5
+    baseSprintSpeed : 5
+  - type: DamageStateVisuals
+    states:
+      Alive:
+        Base: base
+  - type: Tag
+    tags:
+    - VimPilot
+    - ChefPilot
+  - type: Vocal
+    sounds:
+      Male: Pai
+      Female: Pai
+      Unsexed: Pai
+    wilhelmProbability: 0.001
+  - type: CanEscapeInventory
+  - type: NonSpreaderZombie
+  - type: IntrinsicRadioReceiver
+  - type: IntrinsicRadioTransmitter
+    channels:
+    - Binary
+  - type: ActiveRadio
+    channels:
+    - Binary
+    - Common
+
+- type: entity
+  name: corgi
+  parent: [SimpleMobBase, StripableInventoryBase]
+  id: MobCorgi
+  description: Видо изменённый пИИ
+  components:
+  - type: Sprite
+    drawdepth: Mobs
+    sprite: _KD\PAI\dog.rsi
+    layers:
+    - map: [ "enum.DamageStateVisualLayers.Base" ]
+      state: corgi
+  - type: MobThresholds
+    thresholds:
+      0: Alive
+      100: Critical
+      100: Dead
+  - type: Physics
+  - type: Speech
+    speechVerb: Canine
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeCircle
+          radius: 0.35
+        density: 50
+        mask:
+        - MobMask
+        layer:
+        - MobLayer
+  - type: Inventory
+    speciesId: dog
+    templateId: pet
+  - type: Vocal
+    sounds:
+      Male: Pai
+      Female: Pai
+      Unsexed: Pai
+    wilhelmProbability: 0.001
+  - type: DamageStateVisuals
+    states:
+      Alive:
+        Base: base
+  - type: Grammar
+    attributes:
+      gender: epicene
+  - type: Tag
+    tags:
+    - VimPilot
