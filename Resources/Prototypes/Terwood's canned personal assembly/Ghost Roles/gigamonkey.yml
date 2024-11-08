@@ -1,0 +1,33 @@
+- type: entity
+  name: обезьяна
+  id: MobGigaMonkey
+  parent: MobBaseAncestor
+  description: Эта обезьяна — воплощение силы и грации. Ее мускулистое тело устраняет любые сомнения в ее мощи. Каждый мускул проработан до совершенства, а ловкость и скорость завораживают. У нее уверенная осанка и пронзительный взгляд, наполненный умом и решимостью. Она прекрасно адаптирована к окружающей среде, каждая деталь ее телосложения свидетельствует о безупречном здоровье. В ней проявляется невероятная гармония силы и красоты, делая ее истинным царем джунглей.
+  components:
+  - type: NameIdentifier
+    group: Monkey
+  - type: Sprite
+    sprite: TRWD/gigamonkey.rsi
+  - type: SentienceTarget
+    flavorKind: station-event-random-sentience-flavor-primate
+  - type: AlwaysRevolutionaryConvertible
+  - type: GhostRole
+    prob: 1
+    makeSentient: true
+    name: гигаобезьяна
+    description: Отомстите кажому, кто хоть раз в жизни трогал обезьян.
+    rules: ghost-role-information-antagonist-rules
+  - type: GhostTakeoverAvailable
+  - type: Clumsy
+    clumsyDamage:
+      types:
+        Blunt: 15
+        Piercing: 6
+      groups:
+        Burn: 3
+    clumsySound:
+      path: /Audio/Animals/monkey_scream.ogg
+  - type: MobThresholds
+    thresholds:
+      0: Alive
+      200: Dead
