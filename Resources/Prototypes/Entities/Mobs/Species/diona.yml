@@ -110,6 +110,9 @@
           32:
             sprite: Mobs/Species/Human/displacement.rsi
             state: jumpsuit-female
+  - type: FootprintVisualizer # Corvax-Next-Footprints
+    leftBarePrint: "footprint-left-bare-diona"
+    rightBarePrint: "footprint-right-bare-diona"
 
 - type: entity
   parent: BaseSpeciesDummy
