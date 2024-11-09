@@ -90,6 +90,8 @@
         Slash: 8
     soundHit:
       path: /Audio/Weapons/bladeslice.ogg
+  - type: Execution
+    doAfterDuration: 4.0
 
 - type: entity
   name: shiv
@@ -223,6 +225,8 @@
       path: /Audio/Items/drill_hit.ogg
   - type: Tool
     speedModifier: 1.5
+  - type: Execution
+    doAfterDuration: 4.0
 
 - type: entity
   name: advanced circular saw
