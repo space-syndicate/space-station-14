@@ -43,6 +43,9 @@ ui-options-interface-label = Интерфейс
 
 ## Graphics menu
 
+ui-options-auto-fill-highlights = Автоматически заполнять подсветкой информацию о персонаже
+ui-options-highlights-color = Цвет подсветки:
+ui-options-highlights-color-example = Это подсвеченный текст
 ui-options-show-held-item = Показать удерживаемый элемент рядом с курсором
 ui-options-show-combat-mode-indicators = Показать индикатор боевого режима рядом с курсором
 ui-options-opaque-storage-window = Непрозрачность окна хранилища
