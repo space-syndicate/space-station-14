@@ -24,6 +24,7 @@
     - category: Thirst
     - alertType: Magboots
     - alertType: Pacified
+    - alertType: Offer # Corvax-Next-Offer
 
 - type: entity
   id: AlertSpriteView
@@ -90,6 +91,15 @@
   clickEvent: !type:ResistFireAlertEvent
   name: alerts-on-fire-name
   description: alerts-on-fire-desc
+
+- type: alert # Corvax-Next-Offer
+  id: Offer
+  clickEvent: !type:AcceptOfferAlertEvent
+  icons:
+  - sprite: /Textures/_CorvaxNext/Alerts/offer_item.rsi
+    state: offer_item
+  name: alerts-offer-name
+  description: alerts-offer-desc
 
 
 - type: alert

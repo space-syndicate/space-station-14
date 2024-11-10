@@ -223,6 +223,7 @@
   id: BaseMobSpeciesOrganic
   abstract: true
   components:
+  - type: OfferItem # Corvax-Next-Offer
   - type: Barotrauma
     damage:
       types:
