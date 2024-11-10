@@ -1,14 +1,6 @@
 ﻿Entries:
 - author: Morty
   changes:
-  - message: "\u0414\u043E\u0431\u0430\u0432\u043B\u0435\u043D\u044B \u043F\u043E\u0441\
-      \u043B\u0435\u0434\u043D\u0438\u0435 \u043E\u0431\u043D\u043E\u0432\u043B\u0435\
-      \u043D\u0438\u044F"
-    type: Add
-  id: 190
-  time: '2022-07-23T09:00:08.0000000+00:00'
-- author: Morty
-  changes:
   - message: "\u0418\u0437\u043C\u0435\u043D\u0435\u043D\u044B \u0441\u043F\u0440\u0430\
       \u0439\u0442\u044B \u0434\u0435\u0442\u0430\u043B\u0435\u0439 \u043F\u0440\u0438\
       \u0431\u043E\u0440\u043E\u0432"
@@ -4501,3 +4493,12 @@
   id: 689
   time: '2024-11-10T10:54:45.0000000+00:00'
   url: https://github.com/space-syndicate/space-station-14/pull/2750
+- author: Resoid
+  changes:
+  - message: "\u041D\u0430 Astra \u043D\u0435\u043B\u044C\u0437\u044F \u0431\u043E\
+      \u043B\u044C\u0448\u0435 \u043E\u0442\u0440\u0435\u0437\u0430\u0442\u044C \u044F\
+      \u0434\u0440\u043E \u0418\u0418."
+    type: Tweak
+  id: 690
+  time: '2024-11-10T14:40:23.0000000+00:00'
+  url: https://github.com/space-syndicate/space-station-14/pull/2760
