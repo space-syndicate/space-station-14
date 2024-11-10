@@ -1,0 +1,11 @@
+- type: thiefBackpackSet
+  id: UtilitiesSet
+  name: api-backpack-category-utilities-name
+  description: api-backpack-category-utilities-description
+  sprite:
+    sprite: /Textures/Objects/Tools/Toolboxes/toolbox_syn.rsi
+    state: icon
+  content:
+  - StorageImplanter
+  - EnergyDaggerBox
+  - Emag

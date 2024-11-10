@@ -301,6 +301,8 @@
         unshaded:
           Empty: { state: empty }
           Occupied: { state: full }
+  - type: StealTarget # Corvax-Next-Api
+    stealGroup: Ai
 
 - type: entity
   id: PlayerStationAiEmpty

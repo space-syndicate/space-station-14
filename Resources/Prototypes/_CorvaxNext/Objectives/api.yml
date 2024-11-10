@@ -1,0 +1,31 @@
+- type: entity
+  abstract: true
+  parent: BaseObjective
+  id: BaseApiObjective
+  components:
+  - type: Objective
+    issuer: objective-issuer-thief
+  - type: RoleRequirement
+    roles:
+      mindRoles:
+      - ThiefRole
+
+- type: entity
+  abstract: true
+  parent: [BaseApiObjective, BaseStealObjective]
+  id: BaseApiStealObjective
+  components:
+  - type: StealCondition
+    verifyMapExistence: false
+    descriptionText: objective-condition-api-description
+    checkStealAreas: true
+
+- type: entity
+  parent: BaseApiStealObjective
+  id: AiStealObjective
+  components:
+  - type: StealCondition
+    stealGroup: Ai
+    checkHasAi: true
+  - type: Objective
+    difficulty: 1

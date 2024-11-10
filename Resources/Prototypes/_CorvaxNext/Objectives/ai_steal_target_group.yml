@@ -1,0 +1,6 @@
+- type: stealTargetGroup
+  id: Ai
+  name: steal-target-groups-ai
+  sprite:
+    sprite: Mobs/Silicon/station_ai.rsi
+    state: ai

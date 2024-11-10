@@ -1,0 +1,18 @@
+- type: antag
+  id: Api
+  name: roles-antag-thief-name
+  antagonist: true
+  setPreference: false
+  objective: roles-antag-api-objective
+  guides: [ Thieves ]
+  requirements:
+  - !type:OverallPlaytimeRequirement
+    time: 108000 # 30h # Corvax-RoleTime
+
+- type: startingGear
+  id: ApiGear
+  storage:
+    back:
+    - ToolboxApi
+    - ClothingHandsChameleonThief
+    - ThiefBeacon

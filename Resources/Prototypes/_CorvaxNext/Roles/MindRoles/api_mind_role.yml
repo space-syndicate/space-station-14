@@ -1,0 +1,10 @@
+# Thief
+- type: entity
+  parent: BaseMindRoleAntag
+  id: MindRoleApi
+  name: Api Role
+#  description: mind-role-api-description
+  components:
+  - type: MindRole
+    antagPrototype: Api
+  - type: ThiefRole
