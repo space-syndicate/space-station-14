@@ -68621,7 +68621,7 @@ entities:
     - type: Label
       currentLabel: кофейный ликёр
     - type: PressurizedSolution
-      sprayFizzinessThresholdRoll: 0.50556636
+      sprayFizzinessThresholdRoll: 0.35452935
     - type: NameModifier
       baseName: бутылка кофейного ликёра
     - type: ContainerContainer
@@ -68903,7 +68903,7 @@ entities:
     - type: Label
       currentLabel: ром
     - type: PressurizedSolution
-      sprayFizzinessThresholdRoll: 0.5162235
+      sprayFizzinessThresholdRoll: 0.08876361
     - type: NameModifier
       baseName: кубинский пряный ром капитана Пита
     - type: ContainerContainer
@@ -68940,7 +68940,7 @@ entities:
     - type: Label
       currentLabel: текила
     - type: PressurizedSolution
-      sprayFizzinessThresholdRoll: 0.030043429
+      sprayFizzinessThresholdRoll: 0.39504492
     - type: NameModifier
       baseName: бутылка текилы Каккаво гарантированного качества
     - type: ContainerContainer
@@ -68981,7 +68981,7 @@ entities:
     - type: Label
       currentLabel: вермут
     - type: PressurizedSolution
-      sprayFizzinessThresholdRoll: 0.22483605
+      sprayFizzinessThresholdRoll: 0.04999871
     - type: NameModifier
       baseName: бутылка вермута Золотой глаз
     - type: ContainerContainer
@@ -69004,7 +69004,7 @@ entities:
     - type: Label
       currentLabel: водка
     - type: PressurizedSolution
-      sprayFizzinessThresholdRoll: 0.60066545
+      sprayFizzinessThresholdRoll: 0.044492036
     - type: NameModifier
       baseName: бутылка водки
     - type: ContainerContainer
@@ -69072,7 +69072,7 @@ entities:
     - type: Label
       currentLabel: вино
     - type: PressurizedSolution
-      sprayFizzinessThresholdRoll: 0.4686988
+      sprayFizzinessThresholdRoll: 0.7278546
     - type: NameModifier
       baseName: особое двухбородое бородатое вино
     - type: ContainerContainer
@@ -119885,6 +119885,13 @@ entities:
     components:
     - type: Transform
       pos: 39.5,54.5
+      parent: 2
+- proto: SpawnPointBrigmedic
+  entities:
+  - uid: 22027
+    components:
+    - type: Transform
+      pos: 61.5,21.5
       parent: 2
 - proto: SpawnPointCaptain
   entities:
