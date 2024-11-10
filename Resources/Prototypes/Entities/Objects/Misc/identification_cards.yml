@@ -457,6 +457,8 @@
     layers:
     - state: default
     - state: idbrigmedic
+  - type: PresetIdCard # Corvax-Next-Brigmedic
+    job: Brigmedic # Corvax-Next-Brigmedic
 
 - type: entity
   parent: IDCardStandard
