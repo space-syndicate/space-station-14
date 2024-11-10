@@ -2,7 +2,6 @@ using Content.Server.Antag;
 using Content.Server.GameTicking.Rules.Components;
 using Content.Server.Roles;
 using Content.Shared.Humanoid;
-using Content.Shared.Roles;
 
 namespace Content.Server.GameTicking.Rules;
 
@@ -23,7 +22,7 @@ public sealed class ThiefRuleSystem : GameRuleSystem<ThiefRuleComponent>
     private void AfterAntagSelected(Entity<ThiefRuleComponent> mindId, ref AfterAntagEntitySelectedEvent args)
     {
         var ent = args.EntityUid;
-        _antag.SendBriefing(ent, MakeBriefing(ent, args.Def.PrefRoles.Contains("Api")), null, null); // Corvax-Next-Api
+        _antag.SendBriefing(ent, MakeBriefing(ent), null, null);
     }
 
     // Character screen briefing
@@ -33,26 +32,11 @@ public sealed class ThiefRuleSystem : GameRuleSystem<ThiefRuleComponent>
 
         if (ent is null)
             return;
-
-        // Corvax-Next-Api-Start
-        var api = false;
-
-        foreach (var id in args.Mind.Comp.MindRoles)
-            if (TryComp<MindRoleComponent>(id, out var mindRole))
-                if (mindRole.AntagPrototype == "Api")
-                    api = true;
-
-        args.Append(MakeBriefing(ent.Value, api));
-        // Corvax-Next-Api-End
+        args.Append(MakeBriefing(ent.Value));
     }
 
-    private string MakeBriefing(EntityUid ent, bool api) // Corvax-Next-Api
+    private string MakeBriefing(EntityUid ent)
     {
-        // Corvax-Next-Api-Start
-        if (api)
-            return Loc.GetString("api-role-greeting");
-        // Corvax-Next-Api-End
-
         var isHuman = HasComp<HumanoidAppearanceComponent>(ent);
         var briefing = isHuman
             ? Loc.GetString("thief-role-greeting-human")

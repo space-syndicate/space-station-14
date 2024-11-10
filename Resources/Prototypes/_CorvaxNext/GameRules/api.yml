@@ -2,10 +2,10 @@
   parent: BaseGameRule
   id: Api
   components:
-  - type: ThiefRule
+  - type: ApiRule
   - type: AntagObjectives
     objectives:
-    - EscapeThiefShuttleObjective
+    - EscapeApiShuttleObjective
     - AiStealObjective
   - type: AntagSelection
     agentName: api-round-end-agent-name
@@ -17,9 +17,7 @@
       allowNonHumans: true
       multiAntagSetting: NotExclusive
       startingGear: ApiGear
-#      components: # Corvax-MRP
-#      - type: Pacified
       mindRoles:
       - MindRoleApi
       briefing:
-        sound: "/Audio/Misc/thief_greeting.ogg"
+        sound: "/Audio/_CorvaxNext/Misc/api_greeting.ogg"

@@ -4,7 +4,7 @@
   id: BaseApiObjective
   components:
   - type: Objective
-    issuer: objective-issuer-thief
+    issuer: objective-issuer-api
   - type: RoleRequirement
     roles:
       mindRoles:
@@ -29,3 +29,16 @@
     checkHasAi: true
   - type: Objective
     difficulty: 1
+
+- type: entity
+  parent: [BaseApiObjective, BaseLivingObjective]
+  id: EscapeApiShuttleObjective
+  name: Escape to centcomm alive and unrestrained.
+  description: You don't want your illegal activities to be discovered by anyone, do you?
+  components:
+  - type: Objective
+    difficulty: 1.3
+    icon:
+      sprite: Structures/Furniture/chairs.rsi
+      state: shuttle
+  - type: EscapeShuttleCondition

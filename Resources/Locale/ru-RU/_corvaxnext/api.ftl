@@ -4,17 +4,16 @@ admin-verb-make-api = Сделать цель агентом похищения 
 api-backpack-category-utilities-name = Набор Утилит
 api-backpack-category-utilities-description =
     Набор полезных вещей, содержащий имплантер
-    хранилища, лазерный кинжал, а также
+    хранилища, энергокинжал, а также
     криптографический секвенсор.
 
-ent-ToolboxApi = ящик воровских инструментов неопределённости
-    .desc = Здесь лежат ваши излюбленные воровские штучки. Осталось вспомнить, какие именно.
-
-api-round-end-agent-name = агент похищения искусственного интеллекта
+api-round-end-agent-name = АПИИ
 
 roles-antag-api-objective = Украдите станционный ИИ, действуя скрытно.
 
-objective-condition-api-description = То, зачем я сюда прилетел. Осталось найти интелкарту и пробраться к нему.
+objective-issuer-api = [color=#2ed2fd]Агенство[/color]
+
+objective-condition-api-description = То, зачем вы сюда прилетели. Осталось найти интелкарту и пробраться к нему.
 
 steal-target-groups-ai = станционный ИИ, помещённый на интелкарту
 
