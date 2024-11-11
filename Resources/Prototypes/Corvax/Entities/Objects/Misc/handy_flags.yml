@@ -1,0 +1,11 @@
+- type: entity
+  parent: BaseItem
+  id: RainbowHandyFlag
+  name: флажок радуги
+  description: "Дождик кончился."
+  components:
+  - type: Sprite
+    sprite: Corvax/Objects/Misc/Handy_Flags/rainbow_handy_flag.rsi
+    state: icon
+  - type: Item
+    sprite: Corvax/Objects/Misc/Handy_Flags/rainbow_handy_flag.rsi

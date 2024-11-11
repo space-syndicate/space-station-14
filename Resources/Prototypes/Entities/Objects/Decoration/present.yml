@@ -194,8 +194,12 @@
         orGroup: GiftPool
       - id: ViolaInstrument
         orGroup: GiftPool
-      - id: ClothingNeckCloakTrans
+      # Corvax-start
+      #- id: ClothingNeckCloakTrans
+      #  orGroup: GiftPool
+      - id: ClothingNeckCloakVampire
         orGroup: GiftPool
+      # Corvax-end
       - id: ClothingNeckCloakAdmin
         orGroup: GiftPool
       - id: ToySkeleton

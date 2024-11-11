@@ -34,17 +34,19 @@
   - type: Item
     sprite: Objects/Misc/Handy_Flags/syndie_handy_flag.rsi
 
-- type: entity
-  parent: BaseItem
-  id: LGBTQHandyFlag
-  name: LGBTQ handheld flag
-  description: "The be gay do crime handy flag."
-  components:
-  - type: Sprite
-    sprite: Objects/Misc/Handy_Flags/lgbtq_handy_flag.rsi
-    state: icon
-  - type: Item
-    sprite: Objects/Misc/Handy_Flags/lgbtq_handy_flag.rsi
+# Corvax-start
+#- type: entity
+#  parent: BaseItem
+#  id: LGBTQHandyFlag
+#  name: LGBTQ handheld flag
+#  description: "The be gay do crime handy flag."
+#  components:
+#  - type: Sprite
+#    sprite: Objects/Misc/Handy_Flags/lgbtq_handy_flag.rsi
+#    state: icon
+#  - type: Item
+#    sprite: Objects/Misc/Handy_Flags/lgbtq_handy_flag.rsi
+# Corvax-end
 
 - type: entity
   parent: BaseItem

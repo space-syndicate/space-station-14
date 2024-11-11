@@ -91,65 +91,67 @@
     - CigarGold
 
 # Pins
-- type: loadout
-  id: ClothingNeckLGBTPin
-  storage:
-    back:
-    - ClothingNeckLGBTPin
+# Corvax-start
+#- type: loadout
+#  id: ClothingNeckLGBTPin
+#  storage:
+#    back:
+#    - ClothingNeckLGBTPin
 
-- type: loadout
-  id: ClothingNeckAromanticPin
-  storage:
-    back:
-    - ClothingNeckAromanticPin
+#- type: loadout
+#  id: ClothingNeckAromanticPin
+#  storage:
+#    back:
+#    - ClothingNeckAromanticPin
 
-- type: loadout
-  id: ClothingNeckAsexualPin
-  storage:
-    back:
-    - ClothingNeckAsexualPin
+#- type: loadout
+#  id: ClothingNeckAsexualPin
+#  storage:
+#    back:
+#    - ClothingNeckAsexualPin
 
-- type: loadout
-  id: ClothingNeckBisexualPin
-  storage:
-    back:
-    - ClothingNeckBisexualPin
+#- type: loadout
+#  id: ClothingNeckBisexualPin
+#  storage:
+#    back:
+#    - ClothingNeckBisexualPin
 
-- type: loadout
-  id: ClothingNeckGayPin
-  storage:
-    back:
-    - ClothingNeckGayPin
+#- type: loadout
+#  id: ClothingNeckGayPin
+#  storage:
+#    back:
+#    - ClothingNeckGayPin
 
-- type: loadout
-  id: ClothingNeckIntersexPin
-  storage:
-    back:
-    - ClothingNeckIntersexPin
+#- type: loadout
+#  id: ClothingNeckIntersexPin
+#  storage:
+#    back:
+#    - ClothingNeckIntersexPin
 
-- type: loadout
-  id: ClothingNeckLesbianPin
-  storage:
-    back:
-    - ClothingNeckLesbianPin
+#- type: loadout
+#  id: ClothingNeckLesbianPin
+#  storage:
+#    back:
+#    - ClothingNeckLesbianPin
 
-- type: loadout
-  id: ClothingNeckNonBinaryPin
-  storage:
-    back:
-    - ClothingNeckNonBinaryPin
+#- type: loadout
+#  id: ClothingNeckNonBinaryPin
+#  storage:
+#    back:
+#    - ClothingNeckNonBinaryPin
 
-- type: loadout
-  id: ClothingNeckPansexualPin
-  storage:
-    back:
-    - ClothingNeckPansexualPin
+#- type: loadout
+#  id: ClothingNeckPansexualPin
+#  storage:
+#    back:
+#    - ClothingNeckPansexualPin
 
-- type: loadout
-  id: ClothingNeckTransPin
-  storage:
-    back:
-    - ClothingNeckTransPin
+#- type: loadout
+#  id: ClothingNeckTransPin
+#  storage:
+#    back:
+#    - ClothingNeckTransPin
+# Corvax-end
 
 - type: loadout
   id: ClothingNeckAutismPin

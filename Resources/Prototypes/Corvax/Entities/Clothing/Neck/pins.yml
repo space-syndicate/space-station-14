@@ -231,3 +231,134 @@
   - type: Clothing
     sprite: Corvax/Clothing/Neck/Misc/pins.rsi
     equippedPrefix: wl
+
+###
+- type: entity
+  parent: ClothingNeckPinBase
+  id: ClothingNeckRainbowPin
+  name: значок радуги
+  description: Дождик кончился.
+  components:
+  - type: Sprite
+    sprite: Corvax/Clothing/Neck/Misc/pins.rsi
+    state: rainbow
+  - type: Clothing
+    sprite: Corvax/Clothing/Neck/Misc/pins.rsi
+    equippedPrefix: rainbow
+
+- type: entity
+  parent: ClothingNeckPinBase
+  id: ClothingNeckPilotPin
+  name: значок пилота
+  description: Значок, вручаемый лучшим космическим асам Nanotrasen.
+  components:
+  - type: Sprite
+    sprite: Corvax/Clothing/Neck/Misc/pins.rsi
+    state: pilot
+  - type: Clothing
+    sprite: Corvax/Clothing/Neck/Misc/pins.rsi
+    equippedPrefix: pilot
+
+- type: entity
+  parent: ClothingNeckPinBase
+  id: ClothingNeckWerewolfPin
+  name: значок вервольфа
+  description: Этот значок позволяет окружающим понять, что вы - одинокий волк.
+  components:
+  - type: Sprite
+    sprite: Corvax/Clothing/Neck/Misc/pins.rsi
+    state: warewolf
+  - type: Clothing
+    sprite: Corvax/Clothing/Neck/Misc/pins.rsi
+    equippedPrefix: warewolf
+
+- type: entity
+  parent: ClothingNeckPinBase
+  id: ClothingNeckPoisonPin
+  name: ядовитый значок
+  description: Пурпурный цвет - явный признак того, что вы ядовиты.
+  components:
+  - type: Sprite
+    sprite: Corvax/Clothing/Neck/Misc/pins.rsi
+    state: poison
+  - type: Clothing
+    sprite: Corvax/Clothing/Neck/Misc/pins.rsi
+    equippedPrefix: poison
+
+- type: entity
+  parent: ClothingNeckPinBase
+  id: ClothingNeckCyclopePin
+  name: значок циклопа
+  description: Круг на этом плаще представляет собой глаз циклопа.
+  components:
+  - type: Sprite
+    sprite: Corvax/Clothing/Neck/Misc/pins.rsi
+    state: cyclope
+  - type: Clothing
+    sprite: Corvax/Clothing/Neck/Misc/pins.rsi
+    equippedPrefix: cyclope
+
+- type: entity
+  parent: ClothingNeckPinBase
+  id: ClothingNeckPoetPin
+  name: значок поэта
+  description: Этот значок принадлежал древнему поэту, вы забыли, какому именно.
+  components:
+  - type: Sprite
+    sprite: Corvax/Clothing/Neck/Misc/pins.rsi
+    state: poet
+  - type: Clothing
+    sprite: Corvax/Clothing/Neck/Misc/pins.rsi
+    equippedPrefix: poet
+
+- type: entity
+  parent: ClothingNeckPinBase
+  id: ClothingNeckMarketingPin
+  name: значок сетевого маркетинга
+  description: Этот значок пользуется большим спросом в маркетинговых офисах Nanotrasen.
+  components:
+  - type: Sprite
+    sprite: Corvax/Clothing/Neck/Misc/pins.rsi
+    state: marketing
+  - type: Clothing
+    sprite: Corvax/Clothing/Neck/Misc/pins.rsi
+    equippedPrefix: marketing
+
+- type: entity
+  parent: ClothingNeckPinBase
+  id: ClothingNeckProspectorPin
+  name: значок кладоискателя
+  description: Этот значок принадлежал жадному искателю сокровищ.
+  components:
+  - type: Sprite
+    sprite: Corvax/Clothing/Neck/Misc/pins.rsi
+    state: prospector
+  - type: Clothing
+    sprite: Corvax/Clothing/Neck/Misc/pins.rsi
+    equippedPrefix: prospector
+
+- type: entity
+  parent: ClothingNeckPinBase
+  id: ClothingNeckChiefPin
+  name: поварской значок
+  description: Предназначен для ношения вместе со сковородой.
+  components:
+  - type: Sprite
+    sprite: Corvax/Clothing/Neck/Misc/pins.rsi
+    state: chief
+  - type: Clothing
+    sprite: Corvax/Clothing/Neck/Misc/pins.rsi
+    equippedPrefix: chief
+
+- type: entity
+  parent: ClothingNeckPinBase
+  id: ClothingNeckVampirePin
+  name: вампирский плащ
+  description: Его носят высокопоставленные вампиры из трансильванского общества вампиров.
+  components:
+  - type: Sprite
+    sprite: Corvax/Clothing/Neck/Misc/pins.rsi
+    state: vampire
+  - type: Clothing
+    sprite: Corvax/Clothing/Neck/Misc/pins.rsi
+    equippedPrefix: vampire

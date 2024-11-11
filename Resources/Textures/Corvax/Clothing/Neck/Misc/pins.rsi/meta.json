@@ -1,7 +1,7 @@
 {
   "version": 1,
   "license": "CC-BY-SA-3.0",
-  "copyright": "Lore's pixels made by @no_mad#0260, servers pins made by @mishutka09",
+  "copyright": "Lore's pixels made by @no_mad#0260, servers pins made by @mishutka09, [warewolf, pilot, poison, marketing, cyclope, poet, rainbow, prospector, chief, vampire] made by PixelTK, rainbow modified by Ko4erga",
   "size": {
     "x": 32,
     "y": 32
@@ -28,14 +28,14 @@
       "name": "cor-equipped-NECK",
       "directions": 4
     },
-	{
+	  {
       "name": "donk"
     },
     {
       "name": "donk-equipped-NECK",
       "directions": 4
     },
-	{
+	  {
       "name": "earth"
     },
     {
@@ -56,7 +56,7 @@
       "name": "ely-equipped-NECK",
       "directions": 4
     },
-	{
+	  {
       "name": "logistika"
     },
     {
@@ -70,21 +70,21 @@
       "name": "main-equipped-NECK",
       "directions": 4
     },
-	{
+	  {
       "name": "med"
     },
     {
       "name": "med-equipped-NECK",
       "directions": 4
     },
-	{
+	  {
       "name": "nakamura"
     },
     {
       "name": "nakamura-equipped-NECK",
       "directions": 4
     },
-	{
+	  {
       "name": "nano"
     },
     {
@@ -105,7 +105,7 @@
       "name": "nova-equipped-NECK",
       "directions": 4
     },
-	{
+	  {
       "name": "sind"
     },
     {
@@ -119,7 +119,7 @@
       "name": "sol-equipped-NECK",
       "directions": 4
     },
-	{
+	  {
       "name": "vit"
     },
     {
@@ -131,6 +131,76 @@
     },
     {
       "name": "wl-equipped-NECK",
+      "directions": 4
+    },
+    {
+      "name": "warewolf"
+    },
+    {
+      "name": "warewolf-equipped-NECK",
+      "directions": 4
+    },
+    {
+      "name": "pilot"
+    },
+    {
+      "name": "pilot-equipped-NECK",
+      "directions": 4
+    },
+    {
+      "name": "poison"
+    },
+    {
+      "name": "poison-equipped-NECK",
+      "directions": 4
+    },
+    {
+      "name": "marketing"
+    },
+    {
+      "name": "marketing-equipped-NECK",
+      "directions": 4
+    },
+    {
+      "name": "cyclope"
+    },
+    {
+      "name": "cyclope-equipped-NECK",
+      "directions": 4
+    },
+    {
+      "name": "poet"
+    },
+    {
+      "name": "poet-equipped-NECK",
+      "directions": 4
+    },
+    {
+      "name": "rainbow"
+    },
+    {
+      "name": "rainbow-equipped-NECK",
+      "directions": 4
+    },
+    {
+      "name": "prospector"
+    },
+    {
+      "name": "prospector-equipped-NECK",
+      "directions": 4
+    },
+    {
+      "name": "chief"
+    },
+    {
+      "name": "chief-equipped-NECK",
+      "directions": 4
+    },
+    {
+      "name": "vampire"
+    },
+    {
+      "name": "vampire-equipped-NECK",
       "directions": 4
     }
   ]

@@ -35,15 +35,17 @@
   components:
   - type: Sprite
     state: syndie_flag
-    
-- type: entity
-  parent: BaseFlag
-  id: LGBTQFlag
-  name: LGBTQ flag
-  description: "\"Be gay do crime\" flag."
-  components:
-  - type: Sprite
-    state: lgbtq_flag
+
+# Corvax-start
+#- type: entity
+#  parent: BaseFlag
+#  id: LGBTQFlag
+#  name: LGBTQ flag
+#  description: "\"Be gay do crime\" flag."
+#  components:
+#  - type: Sprite
+#    state: lgbtq_flag
+# Corvax-end
     
 - type: entity
   parent: BaseFlag

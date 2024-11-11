@@ -140,18 +140,20 @@
       # Pins
       - !type:GroupSelector
         children:
-        - id: ClothingNeckLGBTPin
-        - id: ClothingNeckAromanticPin
-        - id: ClothingNeckAsexualPin
-        - id: ClothingNeckBisexualPin
-        - id: ClothingNeckGayPin
-        - id: ClothingNeckIntersexPin
-        - id: ClothingNeckLesbianPin
-        - id: ClothingNeckNonBinaryPin
-        - id: ClothingNeckPansexualPin
-        - id: ClothingNeckTransPin
-        - id: ClothingNeckAutismPin
-        - id: ClothingNeckGoldAutismPin
+        # Corvax-start
+        #- id: ClothingNeckLGBTPin
+        #- id: ClothingNeckAromanticPin
+        #- id: ClothingNeckAsexualPin
+        #- id: ClothingNeckBisexualPin
+        #- id: ClothingNeckGayPin
+        #- id: ClothingNeckIntersexPin
+        #- id: ClothingNeckLesbianPin
+        #- id: ClothingNeckNonBinaryPin
+        #- id: ClothingNeckPansexualPin
+        #- id: ClothingNeckTransPin
+        #- id: ClothingNeckAutismPin
+        #- id: ClothingNeckGoldAutismPin
+        # Corvax-end
         # Corvax-Pins-Start
         - id: ClothingNeckUSSPPin
         - id: ClothingNeckDonkPin
@@ -162,6 +164,16 @@
         - id: ClothingNeckNanoTrasenPin
         - id: ClothingNeckSyndicakePin
         - id: ClothingNeckVitezstviPin
+        - id: ClothingNeckRainbowPin
+        - id: ClothingNeckPilotPin
+        - id: ClothingNeckWerewolfPin
+        - id: ClothingNeckPoisonPin
+        - id: ClothingNeckCyclopePin
+        - id: ClothingNeckPoetPin
+        - id: ClothingNeckMarketingPin
+        - id: ClothingNeckProspectorPin
+        - id: ClothingNeckChiefPin
+        - id: ClothingNeckVampirePin
         # Corvax-Pins-End
     # Rare Group
     - !type:GroupSelector

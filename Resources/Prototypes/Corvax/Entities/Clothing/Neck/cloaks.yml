@@ -15,3 +15,84 @@
   components:
     - type: Sprite
       sprite: Corvax/Clothing/Neck/Cloaks/admiral.rsi
+
+- type: entity
+  parent: ClothingNeckBase
+  id: ClothingNeckCloakPilot
+  name: плащ пилота
+  description: Плащ, вручаемый лучшим космическим асам Nanotrasen.
+  components:
+  - type: Sprite
+    sprite: Corvax/Clothing/Neck/Cloaks/pilot.rsi
+
+- type: entity
+  parent: ClothingNeckBase
+  id: ClothingNeckCloakWerewolf
+  name: плащ вервольфа
+  description: Этот плащ позволяет окружающим понять, что вы - одинокий волк.
+  components:
+  - type: Sprite
+    sprite: Corvax/Clothing/Neck/Cloaks/werewolf.rsi
+
+- type: entity
+  parent: ClothingNeckBase
+  id: ClothingNeckCloakPoison
+  name: ядовитый плащ
+  description: Пурпурный цвет - явный признак того, что вы ядовиты.
+  components:
+  - type: Sprite
+    sprite: Corvax/Clothing/Neck/Cloaks/poison.rsi
+
+- type: entity
+  parent: ClothingNeckBase
+  id: ClothingNeckCloakCyclope
+  name: плащ циклопа
+  description: Круг на этом плаще представляет собой глаз циклопа.
+  components:
+  - type: Sprite
+    sprite: Corvax/Clothing/Neck/Cloaks/cyclope.rsi
+
+- type: entity
+  parent: ClothingNeckBase
+  id: ClothingNeckCloakPoet
+  name: плащ поэта
+  description: Этот плащ принадлежал древнему поэту, вы забыли, какому именно.
+  components:
+  - type: Sprite
+    sprite: Corvax/Clothing/Neck/Cloaks/poet.rsi
+
+- type: entity
+  parent: ClothingNeckBase
+  id: ClothingNeckCloakMarketing
+  name: плащ сетевого маркетинга
+  description: Этот плащ пользуется большим спросом в маркетинговых офисах Nanotrasen.
+  components:
+  - type: Sprite
+    sprite: Corvax/Clothing/Neck/Cloaks/marketing.rsi
+
+- type: entity
+  parent: ClothingNeckBase
+  id: ClothingNeckCloakProspector
+  name: плащ кладоискателя
+  description: Этот плащ принадлежал жадному искателю сокровищ.
+  components:
+  - type: Sprite
+    sprite: Corvax/Clothing/Neck/Cloaks/prospector.rsi
+
+- type: entity
+  parent: ClothingNeckBase
+  id: ClothingNeckCloakChief
+  name: поварской плащ
+  description: Предназначен для ношения вместе со сковородой.
+  components:
+  - type: Sprite
+    sprite: Corvax/Clothing/Neck/Cloaks/chief.rsi
+
+- type: entity
+  parent: ClothingNeckBase
+  id: ClothingNeckCloakVampire
+  name: вампирский плащ
+  description: Его носят высокопоставленные вампиры из трансильванского общества вампиров.
+  components:
+  - type: Sprite
+    sprite: Corvax/Clothing/Neck/Cloaks/vampire.rsi
