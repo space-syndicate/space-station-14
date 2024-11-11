@@ -235,8 +235,8 @@
 - type: entity
   parent: ClothingNeckPinBase
   id: ClothingNeckRainbowPin
-  name: значок радуги
-  description: Дождик кончился.
+  name: нагрудный значок
+  description: Самовыражайся!
   components:
   - type: Sprite
     sprite: Corvax/Clothing/Neck/Misc/pins.rsi
@@ -248,8 +248,8 @@
 - type: entity
   parent: ClothingNeckPinBase
   id: ClothingNeckPilotPin
-  name: значок пилота
-  description: Значок, вручаемый лучшим космическим асам Nanotrasen.
+  name: нагрудный значок
+  description: Самовыражайся!
   components:
   - type: Sprite
     sprite: Corvax/Clothing/Neck/Misc/pins.rsi
@@ -261,8 +261,8 @@
 - type: entity
   parent: ClothingNeckPinBase
   id: ClothingNeckWerewolfPin
-  name: значок вервольфа
-  description: Этот значок позволяет окружающим понять, что вы - одинокий волк.
+  name: нагрудный значок
+  description: Самовыражайся!
   components:
   - type: Sprite
     sprite: Corvax/Clothing/Neck/Misc/pins.rsi
@@ -274,8 +274,8 @@
 - type: entity
   parent: ClothingNeckPinBase
   id: ClothingNeckPoisonPin
-  name: ядовитый значок
-  description: Пурпурный цвет - явный признак того, что вы ядовиты.
+  name: нагрудный значок
+  description: Самовыражайся!
   components:
   - type: Sprite
     sprite: Corvax/Clothing/Neck/Misc/pins.rsi
@@ -287,8 +287,8 @@
 - type: entity
   parent: ClothingNeckPinBase
   id: ClothingNeckCyclopePin
-  name: значок циклопа
-  description: Круг на этом плаще представляет собой глаз циклопа.
+  name: нагрудный значок
+  description: Самовыражайся!
   components:
   - type: Sprite
     sprite: Corvax/Clothing/Neck/Misc/pins.rsi
@@ -300,8 +300,8 @@
 - type: entity
   parent: ClothingNeckPinBase
   id: ClothingNeckPoetPin
-  name: значок поэта
-  description: Этот значок принадлежал древнему поэту, вы забыли, какому именно.
+  name: нагрудный значок
+  description: Самовыражайся!
   components:
   - type: Sprite
     sprite: Corvax/Clothing/Neck/Misc/pins.rsi
@@ -313,8 +313,8 @@
 - type: entity
   parent: ClothingNeckPinBase
   id: ClothingNeckMarketingPin
-  name: значок сетевого маркетинга
-  description: Этот значок пользуется большим спросом в маркетинговых офисах Nanotrasen.
+  name: нагрудный значок
+  description: Самовыражайся!
   components:
   - type: Sprite
     sprite: Corvax/Clothing/Neck/Misc/pins.rsi
@@ -326,8 +326,8 @@
 - type: entity
   parent: ClothingNeckPinBase
   id: ClothingNeckProspectorPin
-  name: значок кладоискателя
-  description: Этот значок принадлежал жадному искателю сокровищ.
+  name: нагрудный значок
+  description: Самовыражайся!
   components:
   - type: Sprite
     sprite: Corvax/Clothing/Neck/Misc/pins.rsi
@@ -339,8 +339,8 @@
 - type: entity
   parent: ClothingNeckPinBase
   id: ClothingNeckChiefPin
-  name: поварской значок
-  description: Предназначен для ношения вместе со сковородой.
+  name: нагрудный значок
+  description: Самовыражайся!
   components:
   - type: Sprite
     sprite: Corvax/Clothing/Neck/Misc/pins.rsi
@@ -352,8 +352,8 @@
 - type: entity
   parent: ClothingNeckPinBase
   id: ClothingNeckVampirePin
-  name: вампирский плащ
-  description: Его носят высокопоставленные вампиры из трансильванского общества вампиров.
+  name: нагрудный значок
+  description: Самовыражайся!
   components:
   - type: Sprite
     sprite: Corvax/Clothing/Neck/Misc/pins.rsi
