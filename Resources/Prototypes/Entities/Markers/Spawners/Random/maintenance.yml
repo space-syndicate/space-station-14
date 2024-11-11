@@ -97,19 +97,10 @@
       # Cloaks
       - !type:GroupSelector
         children:
-        - id: ClothingNeckCloakTrans
         - id: ClothingNeckCloakAdmin
         - id: ClothingNeckCloakMoth
         - id: ClothingNeckCloakVoid
         - id: ClothingNeckCloakGoliathCloak
-        - id: ClothingNeckCloakAce
-        - id: ClothingNeckCloakAro
-        - id: ClothingNeckCloakBi
-        - id: ClothingNeckCloakIntersex
-        - id: ClothingNeckCloakLesbian
-        - id: ClothingNeckCloakGay
-        - id: ClothingNeckCloakEnby
-        - id: ClothingNeckCloakPan
       - id: ToySkeleton
       - id: Basketball
       - id: Football
@@ -140,16 +131,6 @@
       # Pins
       - !type:GroupSelector
         children:
-        - id: ClothingNeckLGBTPin
-        - id: ClothingNeckAromanticPin
-        - id: ClothingNeckAsexualPin
-        - id: ClothingNeckBisexualPin
-        - id: ClothingNeckGayPin
-        - id: ClothingNeckIntersexPin
-        - id: ClothingNeckLesbianPin
-        - id: ClothingNeckNonBinaryPin
-        - id: ClothingNeckPansexualPin
-        - id: ClothingNeckTransPin
         - id: ClothingNeckAutismPin
         - id: ClothingNeckGoldAutismPin
         # Corvax-Pins-Start
