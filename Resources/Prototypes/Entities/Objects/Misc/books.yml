@@ -60,6 +60,15 @@
     openOnActivation: true
     guides:
     - SS14
+  - type: MeleeWeapon  # Should write it again since BaseGuidebook doesn't inherit BookBase
+    soundHit:
+      collection: Punch
+    damage:
+      types:
+        Blunt: 1
+  - type: DamageOtherOnHit
+    damage:
+      types:
 
 - type: entity
   id: BookSpaceEncyclopedia
@@ -333,14 +342,9 @@
       color: "#87011c"
     - state: icon_law
       color: "#f7d61a"
-# Corvax-HyperLink
-#  - type: GuideHelp
-#    openOnActivation: true
-#    guides:
-#    - SpaceLaw
-  - type: HyperLink
-    url: "https://station14.ru/wiki/%D0%9A%D0%BE%D1%80%D0%BF%D0%BE%D1%80%D0%B0%D1%82%D0%B8%D0%B2%D0%BD%D1%8B%D0%B9_%D0%97%D0%B0%D0%BA%D0%BE%D0%BD"
-# Corvax-HyperLink
+  - type: GuideHelp
+    guides:
+    - CorporateLaw # Corvax-MRP
 
 - type: entity
   parent: BookBase

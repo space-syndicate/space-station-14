@@ -1,4 +1,4 @@
-import logging
+﻿import logging
 import typing
 
 from fluent.syntax import FluentParser, FluentSerializer

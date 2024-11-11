@@ -20,6 +20,7 @@ flavor-base-fishy = рыбно
 flavor-base-crabby = крабово
 flavor-base-cheesy = сырно
 flavor-base-funny = забавно
+flavor-base-strange = странно
 flavor-base-tingly = покалывающе
 flavor-base-acid = кислотно
 flavor-base-leafy = лиственно
@@ -271,7 +272,6 @@ flavor-complex-antifreeze = как тепло
 flavor-complex-pilk = как сладкое молоко
 
 # Medicine/chemical-specific flavors.
-
 
 ## Generic flavors.
 

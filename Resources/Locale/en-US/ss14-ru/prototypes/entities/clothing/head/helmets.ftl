@@ -1,5 +1,5 @@
 ent-ClothingHeadHelmetBase = { ent-ClothingHeadBase }
-  .desc = { ent-ClothingHeadBase.desc }
+    .desc = { ent-ClothingHeadBase.desc }
 ent-ClothingHeadHelmetBasic = helmet
     .desc = Standard security gear. Protects the head from impacts.
 ent-ClothingHeadHelmetMerc = mercenary helmet

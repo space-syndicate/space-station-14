@@ -8,10 +8,11 @@ health-analyzer-window-entity-critical-text = Критическое состо�
 health-analyzer-window-entity-temperature-text = Температура:
 health-analyzer-window-entity-status-text = Статус:
 health-analyzer-window-entity-blood-level-text = Уровень крови:
-health-analyzer-window-entity-bleeding-text = У пациента кровотечение!
 health-analyzer-window-entity-damage-total-text = Общие повреждения:
 health-analyzer-window-damage-group-text = { $damageGroup }: { $amount }
 health-analyzer-window-damage-type-text = { $damageType }: { $amount }
+health-analyzer-window-entity-unrevivable-text = [color=red]Обнаружено уникальное строение тела! Пациент не может быть реанимирован стандартными средствами![/color]
+health-analyzer-window-entity-bleeding-text = [color=red]У пациента кровотечение![/color]
 health-analyzer-window-scan-mode-text = Режим сканирования:
 health-analyzer-window-scan-mode-active = АКТИВЕН
 health-analyzer-window-scan-mode-inactive = НЕАКТИВЕН

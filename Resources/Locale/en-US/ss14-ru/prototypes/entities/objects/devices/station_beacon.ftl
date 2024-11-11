@@ -201,3 +201,6 @@ ent-DefaultStationBeaconCryosleep = { ent-DefaultStationBeacon }
 ent-DefaultStationBeaconEscapePod = { ent-DefaultStationBeacon }
     .suffix = Escape Pod
     .desc = { ent-DefaultStationBeacon.desc }
+ent-DefaultStationBeaconVox = { ent-DefaultStationBeacon }
+    .suffix = Vox
+    .desc = { ent-DefaultStationBeacon.desc }
