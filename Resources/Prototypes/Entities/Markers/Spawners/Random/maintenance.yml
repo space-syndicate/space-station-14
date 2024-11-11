@@ -97,19 +97,30 @@
       # Cloaks
       - !type:GroupSelector
         children:
-        - id: ClothingNeckCloakTrans
+        - id: ClothingNeckCloakGoliathCloak
+        - id: ClothingNeckCloakVoid
         - id: ClothingNeckCloakAdmin
         - id: ClothingNeckCloakMoth
-        - id: ClothingNeckCloakVoid
-        - id: ClothingNeckCloakGoliathCloak
-        - id: ClothingNeckCloakAce
-        - id: ClothingNeckCloakAro
-        - id: ClothingNeckCloakBi
-        - id: ClothingNeckCloakIntersex
-        - id: ClothingNeckCloakLesbian
-        - id: ClothingNeckCloakGay
-        - id: ClothingNeckCloakEnby
-        - id: ClothingNeckCloakPan
+        # Corvax-start
+        #- id: ClothingNeckCloakTrans
+        #- id: ClothingNeckCloakAce
+        #- id: ClothingNeckCloakAro
+        #- id: ClothingNeckCloakBi
+        #- id: ClothingNeckCloakIntersex
+        #- id: ClothingNeckCloakLesbian
+        #- id: ClothingNeckCloakGay
+        #- id: ClothingNeckCloakEnby
+        #- id: ClothingNeckCloakPan
+        - id: ClothingNeckCloakPilot
+        - id: ClothingNeckCloakWerewolf
+        - id: ClothingNeckCloakPoison
+        - id: ClothingNeckCloakCyclope
+        - id: ClothingNeckCloakPoet
+        - id: ClothingNeckCloakMarketing
+        - id: ClothingNeckCloakProspector
+        - id: ClothingNeckCloakChief
+        - id: ClothingNeckCloakVampire
+        # Corvax-end
       - id: ToySkeleton
       - id: Basketball
       - id: Football
