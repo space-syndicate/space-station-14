@@ -1,8 +1,8 @@
 - type: entity
   parent: BaseFlag
   id: RainbowFlag
-  name: флаг радуги
-  description: "Дождик кончился."
+  name: rainbow flag
+  description: "The rain has stopped."
   components:
   - type: Sprite
     sprite: Corvax/Structures/Wallmounts/flags.rsi

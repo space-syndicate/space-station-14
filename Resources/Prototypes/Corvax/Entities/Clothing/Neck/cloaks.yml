@@ -19,8 +19,8 @@
 - type: entity
   parent: ClothingNeckBase
   id: ClothingNeckCloakPilot
-  name: плащ пилота
-  description: Плащ, вручаемый лучшим космическим асам Nanotrasen.
+  name: pilot's cloak
+  description: A pilot's cloak consisting of stripes of black, gray, white and purple. The cape awarded to the best space aces of Nanotrasen.
   components:
   - type: Sprite
     sprite: Corvax/Clothing/Neck/Cloaks/pilot.rsi
@@ -28,8 +28,8 @@
 - type: entity
   parent: ClothingNeckBase
   id: ClothingNeckCloakWerewolf
-  name: плащ вервольфа
-  description: Этот плащ позволяет окружающим понять, что вы - одинокий волк.
+  name: werewolf cloak
+  description: A werewolf cloak made up of stripes of green, white, grey and black. This cloak lets others know that you are a lone wolf.
   components:
   - type: Sprite
     sprite: Corvax/Clothing/Neck/Cloaks/werewolf.rsi
@@ -37,8 +37,8 @@
 - type: entity
   parent: ClothingNeckBase
   id: ClothingNeckCloakPoison
-  name: ядовитый плащ
-  description: Пурпурный цвет - явный признак того, что вы ядовиты.
+  name: poison cloak
+  description: A poisonous cloak made up of stripes of purple, violet, and blue. The purple color is a clear sign that you are poisonous.
   components:
   - type: Sprite
     sprite: Corvax/Clothing/Neck/Cloaks/poison.rsi
@@ -46,8 +46,8 @@
 - type: entity
   parent: ClothingNeckBase
   id: ClothingNeckCloakCyclope
-  name: плащ циклопа
-  description: Круг на этом плаще представляет собой глаз циклопа.
+  name: cyclops cloak
+  description: The cyclops' cloak is yellow and has a circle in the center. The circle on this cloak represents the cyclops' eye.
   components:
   - type: Sprite
     sprite: Corvax/Clothing/Neck/Cloaks/cyclope.rsi
@@ -55,8 +55,8 @@
 - type: entity
   parent: ClothingNeckBase
   id: ClothingNeckCloakPoet
-  name: плащ поэта
-  description: Этот плащ принадлежал древнему поэту, вы забыли, какому именно.
+  name: poet's cloak
+  description: A poet's cloak, made of stripes of red, white and crimson. This cloak belonged to an ancient poet, you have forgotten which one.
   components:
   - type: Sprite
     sprite: Corvax/Clothing/Neck/Cloaks/poet.rsi
@@ -64,8 +64,8 @@
 - type: entity
   parent: ClothingNeckBase
   id: ClothingNeckCloakMarketing
-  name: плащ сетевого маркетинга
-  description: Этот плащ пользуется большим спросом в маркетинговых офисах Nanotrasen.
+  name: network marketing cloak
+  description: A network marketing cape made up of stripes of turquoise, white and blue. This cape is in great demand in the Nanotrasen marketing offices.
   components:
   - type: Sprite
     sprite: Corvax/Clothing/Neck/Cloaks/marketing.rsi
@@ -73,8 +73,8 @@
 - type: entity
   parent: ClothingNeckBase
   id: ClothingNeckCloakProspector
-  name: плащ кладоискателя
-  description: Этот плащ принадлежал жадному искателю сокровищ.
+  name: treasure hunter's cloak
+  description: A treasure hunter's cloak made up of stripes of yellow, white, purple and black. This cloak belonged to a greedy treasure hunter.
   components:
   - type: Sprite
     sprite: Corvax/Clothing/Neck/Cloaks/prospector.rsi
@@ -82,8 +82,8 @@
 - type: entity
   parent: ClothingNeckBase
   id: ClothingNeckCloakChief
-  name: поварской плащ
-  description: Предназначен для ношения вместе со сковородой.
+  name: chef's cloak
+  description: A chef's cloak made of stripes of red, yellow and blue. Designed to be worn with a frying pan.
   components:
   - type: Sprite
     sprite: Corvax/Clothing/Neck/Cloaks/chief.rsi
@@ -91,8 +91,8 @@
 - type: entity
   parent: ClothingNeckBase
   id: ClothingNeckCloakVampire
-  name: вампирский плащ
-  description: Его носят высокопоставленные вампиры из трансильванского общества вампиров.
+  name: vampire cloak
+  description: A vampire cloak made up of stripes of blue, pink, and white. It is worn by high-ranking vampires of the Transylvanian vampire society.
   components:
   - type: Sprite
     sprite: Corvax/Clothing/Neck/Cloaks/vampire.rsi

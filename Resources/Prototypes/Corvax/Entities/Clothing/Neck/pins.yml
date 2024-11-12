@@ -235,8 +235,6 @@
 - type: entity
   parent: ClothingNeckPinBase
   id: ClothingNeckRainbowPin
-  name: нагрудный значок
-  description: Самовыражайся!
   components:
   - type: Sprite
     sprite: Corvax/Clothing/Neck/Misc/pins.rsi
@@ -248,8 +246,6 @@
 - type: entity
   parent: ClothingNeckPinBase
   id: ClothingNeckPilotPin
-  name: нагрудный значок
-  description: Самовыражайся!
   components:
   - type: Sprite
     sprite: Corvax/Clothing/Neck/Misc/pins.rsi
@@ -261,8 +257,6 @@
 - type: entity
   parent: ClothingNeckPinBase
   id: ClothingNeckWerewolfPin
-  name: нагрудный значок
-  description: Самовыражайся!
   components:
   - type: Sprite
     sprite: Corvax/Clothing/Neck/Misc/pins.rsi
@@ -274,8 +268,6 @@
 - type: entity
   parent: ClothingNeckPinBase
   id: ClothingNeckPoisonPin
-  name: нагрудный значок
-  description: Самовыражайся!
   components:
   - type: Sprite
     sprite: Corvax/Clothing/Neck/Misc/pins.rsi
@@ -287,8 +279,6 @@
 - type: entity
   parent: ClothingNeckPinBase
   id: ClothingNeckCyclopePin
-  name: нагрудный значок
-  description: Самовыражайся!
   components:
   - type: Sprite
     sprite: Corvax/Clothing/Neck/Misc/pins.rsi
@@ -300,8 +290,6 @@
 - type: entity
   parent: ClothingNeckPinBase
   id: ClothingNeckPoetPin
-  name: нагрудный значок
-  description: Самовыражайся!
   components:
   - type: Sprite
     sprite: Corvax/Clothing/Neck/Misc/pins.rsi
@@ -313,8 +301,6 @@
 - type: entity
   parent: ClothingNeckPinBase
   id: ClothingNeckMarketingPin
-  name: нагрудный значок
-  description: Самовыражайся!
   components:
   - type: Sprite
     sprite: Corvax/Clothing/Neck/Misc/pins.rsi
@@ -326,8 +312,6 @@
 - type: entity
   parent: ClothingNeckPinBase
   id: ClothingNeckProspectorPin
-  name: нагрудный значок
-  description: Самовыражайся!
   components:
   - type: Sprite
     sprite: Corvax/Clothing/Neck/Misc/pins.rsi
@@ -339,8 +323,6 @@
 - type: entity
   parent: ClothingNeckPinBase
   id: ClothingNeckChiefPin
-  name: нагрудный значок
-  description: Самовыражайся!
   components:
   - type: Sprite
     sprite: Corvax/Clothing/Neck/Misc/pins.rsi
@@ -352,8 +334,6 @@
 - type: entity
   parent: ClothingNeckPinBase
   id: ClothingNeckVampirePin
-  name: нагрудный значок
-  description: Самовыражайся!
   components:
   - type: Sprite
     sprite: Corvax/Clothing/Neck/Misc/pins.rsi
