@@ -22,7 +22,7 @@ public sealed class TTSSystem : EntitySystem
     [Dependency] private readonly AudioSystem _audio = default!;
 
     private ISawmill _sawmill = default!;
-    private readonly MemoryContentRoot _contentRoot = new();
+    private MemoryContentRoot _contentRoot = default!;
     private static readonly ResPath Prefix = ResPath.Root / "TTS";
 
     /// <summary>
@@ -40,6 +40,7 @@ public sealed class TTSSystem : EntitySystem
 
     public override void Initialize()
     {
+        _contentRoot = new();
         _sawmill = Logger.GetSawmill("tts");
         _res.AddRoot(Prefix, _contentRoot);
         _cfg.OnValueChanged(CCCVars.TTSVolume, OnTtsVolumeChanged, true);
