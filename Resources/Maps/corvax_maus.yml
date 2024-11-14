@@ -14223,12 +14223,6 @@ entities:
       parent: 5934
     - type: InstantAction
       container: 5934
-  - uid: 8361
-    components:
-    - type: Transform
-      parent: 7387
-    - type: InstantAction
-      container: 7387
   - uid: 18252
     components:
     - type: Transform
@@ -19268,6 +19262,11 @@ entities:
     - type: Transform
       pos: -12.5,13.5
       parent: 2
+  - uid: 8361
+    components:
+    - type: Transform
+      pos: -74.5,10.5
+      parent: 2
   - uid: 8692
     components:
     - type: Transform
@@ -19852,6 +19851,11 @@ entities:
     components:
     - type: Transform
       pos: -61.5,24.5
+      parent: 2
+  - uid: 19221
+    components:
+    - type: Transform
+      pos: -73.5,10.5
       parent: 2
   - uid: 19900
     components:
@@ -52139,6 +52143,13 @@ entities:
     - type: Transform
       pos: -40.331936,-71.47984
       parent: 2
+- proto: ClothingHeadHelmetBasic
+  entities:
+  - uid: 19223
+    components:
+    - type: Transform
+      pos: -13.712228,-6.266108
+      parent: 2
 - proto: ClothingHeadHelmetCult
   entities:
   - uid: 7438
@@ -52155,29 +52166,13 @@ entities:
     - type: Physics
       canCollide: False
     - type: InsideEntityStorage
-- proto: ClothingHeadHelmetHardsuitWarden
+- proto: ClothingHeadHelmetRiot
   entities:
-  - uid: 7387
+  - uid: 19222
     components:
-    - type: MetaData
-      name: красный бронешлем
     - type: Transform
-      pos: -13.765395,-6.5724363
+      pos: -13.286184,-6.256197
       parent: 2
-    - type: HandheldLight
-      toggleActionEntity: 8361
-    - type: Item
-      heldPrefix: off
-      inhandVisuals: {}
-    - type: ActionsContainer
-    - type: ContainerContainer
-      containers:
-        actions: !type:Container
-          ents:
-          - 8361
-    missingComponents:
-    - BreathMask
-    - TemperatureProtection
 - proto: ClothingHeadHelmetSyndicate
   entities:
   - uid: 5941
@@ -52762,42 +52757,20 @@ entities:
     - type: Transform
       pos: -7.0623865,-13.339912
       parent: 2
-- proto: ClothingOuterArmorHeavyRed
+- proto: ClothingOuterArmorBulletproof
   entities:
   - uid: 6725
     components:
     - type: Transform
-      pos: -13.289016,-6.5054703
+      pos: -13.672596,-6.6328077
       parent: 2
-    - type: GroupExamine
-      group:
-      - hoverMessage: ""
-        contextText: verb-examine-group-other
-        icon: /Textures/Interface/examine-star.png
-        components:
-        - Armor
-        - ClothingSpeedModifier
-        entries:
-        - message: Понижает вашу скорость на [color=yellow]10%[/color].
-          priority: 0
-          component: ClothingSpeedModifier
-        - message: >-
-            Обеспечивает следующую защиту:
-
-            - [color=yellow]Ударный[/color] урон снижается на [color=lightblue]80%[/color].
-
-            - [color=yellow]Режущий[/color] урон снижается на [color=lightblue]80%[/color].
-
-            - [color=yellow]Колющий[/color] урон снижается на [color=lightblue]80%[/color].
-
-            - [color=yellow]Высокотемпературный[/color] урон снижается на [color=lightblue]50%[/color].
-
-            - [color=yellow]Радиационный[/color] урон снижается на [color=lightblue]100%[/color].
-
-            - [color=yellow]Кислотный[/color] урон снижается на [color=lightblue]25%[/color].
-          priority: 0
-          component: Armor
-        title: null
+- proto: ClothingOuterArmorRiot
+  entities:
+  - uid: 7387
+    components:
+    - type: Transform
+      pos: -13.256461,-6.6328077
+      parent: 2
 - proto: ClothingOuterCardborg
   entities:
   - uid: 5978
@@ -111481,6 +111454,13 @@ entities:
         - 0
         - 0
         - 0
+- proto: SuperSynthesizerInstrument
+  entities:
+  - uid: 19224
+    components:
+    - type: Transform
+      pos: -34.44334,-29.653538
+      parent: 2
 - proto: SurveillanceCameraAssembly
   entities:
   - uid: 18967
