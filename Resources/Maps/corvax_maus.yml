@@ -10094,9 +10094,8 @@ entities:
             4: 7
             2: 1792
           -19,2:
-            2: 7
-            5: 256
-            0: 1536
+            2: 1031
+            5: 768
           -19,3:
             2: 7
             0: 4096
@@ -19262,11 +19261,6 @@ entities:
     - type: Transform
       pos: -12.5,13.5
       parent: 2
-  - uid: 8361
-    components:
-    - type: Transform
-      pos: -74.5,10.5
-      parent: 2
   - uid: 8692
     components:
     - type: Transform
@@ -20079,6 +20073,11 @@ entities:
     components:
     - type: Transform
       pos: -75.5,10.5
+      parent: 2
+  - uid: 10254
+    components:
+    - type: Transform
+      pos: -74.5,10.5
       parent: 2
 - proto: Autolathe
   entities:
@@ -95443,21 +95442,16 @@ entities:
       parent: 2
 - proto: PlasmaCanister
   entities:
+  - uid: 8361
+    components:
+    - type: Transform
+      pos: -74.5,10.5
+      parent: 2
   - uid: 10253
     components:
     - type: Transform
       pos: -66.5,-12.5
       parent: 2
-  - uid: 10254
-    components:
-    - type: Transform
-      pos: -74.5,10.5
-      parent: 2
-    - type: GasCanister
-      releaseValve: True
-      releasePressure: 100
-    - type: Lock
-      locked: False
   - uid: 10255
     components:
     - type: Transform
