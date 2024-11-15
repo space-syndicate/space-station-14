@@ -1,0 +1,28 @@
+- type: entity
+  name: Стальной Занавес
+  id: WeaponIronCurtains
+  parent: BaseWeaponHeavyMachineGun
+  description: Представляет собой пулемет, сделанный из дерева и металла, с различными деталями, такими как знак серпа и молота и вентиляционная решетка на контейнере с боеприпасами.
+  components:
+  - type: Sprite
+    sprite: TRWD/weapons/iron-curtains.rsi
+    layers:
+    - state: icon
+      map: ["enum.GunVisualLayers.Base"]
+  - type: Item
+  - type: Gun
+    fireRate: 15
+    soundGunshot:
+      path: /Audio/Weapons/Guns/Gunshots/minigun.ogg
+  - type: BallisticAmmoProvider
+    proto: CartridgeMinigun
+    capacity: 200
+  - type: MagazineVisuals
+    magState: mag
+    steps: 4
+    zeroVisible: true
+  - type: Appearance
+  - type: ContainerContainer
+    containers:
+      ballistic-ammo: !type:Container
+        ents: []

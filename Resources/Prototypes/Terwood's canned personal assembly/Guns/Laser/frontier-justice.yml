@@ -1,0 +1,25 @@
+- type: entity
+  name: Самосуд
+  parent: [BaseWeaponShotgun, BaseGunWieldable]
+  id: WeaponFrontierJustice
+  suffix: TRWD, tf2
+  description: ENGINEER GAMING
+  components:
+  - type: Item
+    size: Normal
+    shape:
+    - 0,0,4,0
+    sprite:
+  - type: Sprite
+    sprite: TRWD/weapons/frontire-justice.rsi
+  - type: Clothing
+    sprite: TRWD/weapons/frontire-justice.rsi
+  - type: GunRequiresWield #remove when inaccuracy on spreads is fixed
+  - type: BallisticAmmoProvider
+    capacity: 8
+  - type: Tag
+    tags:
+    - WeaponShotgunFrontierJustice
+  - type: Gun # Корвакс сасуны, но звуки у них клёвые
+    soundGunshot:
+      path: /Audio/Corvax/Weapons/Guns/Gunshots/shotgun_alt.ogg

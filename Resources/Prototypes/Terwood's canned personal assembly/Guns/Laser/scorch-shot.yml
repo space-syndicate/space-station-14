@@ -1,0 +1,33 @@
+- type: entity
+  name: Обжигающий Выстрел
+  parent: BaseWeaponLauncher
+  id: WeaponScorchShot
+  description: Представляет собой ракетницу с серым стволом и оранжевым дулом и черной рукояткой, держащейся на болтах на нижней части ствола.
+  components:
+  - type: Sprite
+    sprite: TRWD/weapons/scorch-shot.rsi
+    layers:
+      - state: icon
+        map: ["enum.GunVisualLayers.Base"]
+  - type: Item
+    size: Small
+    sprite: TRWD/weapons/scorch-shot.rsi
+  - type: Gun
+    fireRate: 4
+    selectedMode: SemiAuto
+    availableModes:
+      - SemiAuto
+    soundGunshot:
+      path: /Audio/Weapons/Guns/Gunshots/flaregun.ogg
+  - type: BallisticAmmoProvider
+    whitelist:
+      tags:
+        - ShellShotgun
+    proto: ShellShotgunFlare
+    capacity: 16
+    soundInsert:
+      path: /Audio/Weapons/Guns/MagIn/shotgun_insert.ogg
+  - type: ContainerContainer
+    containers:
+      ballistic-ammo: !type:Container
+        ents: []

@@ -1,0 +1,23 @@
+- type: entity
+  name: Прародитель
+  parent: BaseWeaponLauncher
+  id: WeaponTheOriginal
+  description: Представляет собой громоздкий ракетомёт цвета хаки с металлическим раструбом, серой рукоятью и характерным массивным дульным тормозом.
+  components:
+  - type: Sprite
+    sprite: TRWD/weapons/the-original.rsi
+    layers:
+      - state: icon
+        map: ["enum.GunVisualLayers.Base"]
+  - type: Gun
+    fireRate: 0.5
+    soundGunshot:
+      path: /Audio/Weapons/Guns/Gunshots/rpgfire.ogg
+  - type: BallisticAmmoProvider
+    whitelist:
+      tags:
+        - CartridgeRocket
+    proto: CartridgeRocket
+    capacity: 4
+    soundInsert:
+      path: /Audio/Weapons/Guns/MagIn/batrifle_magin.ogg
