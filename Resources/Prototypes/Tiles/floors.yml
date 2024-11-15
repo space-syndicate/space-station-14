@@ -1917,6 +1917,7 @@
   isSubfloor: false
   deconstructTools: [ Cutting ]
   itemDrop: FloorTileItemMowedAstroGrass
+  weather: false # Corvax
 
 - type: tile
   id: FloorJungleAstroGrass
@@ -1926,6 +1927,7 @@
   isSubfloor: false
   deconstructTools: [ Cutting ]
   itemDrop: FloorTileItemJungleAstroGrass
+  weather: false # Corvax
 
 # Ice
 - type: tile
@@ -1950,6 +1952,7 @@
   isSubfloor: false
   deconstructTools: [ Prying ]
   itemDrop: FloorTileItemAstroSnow
+  weather: false # Corvax
 
 - type: tile
   id: FloorWoodLarge
