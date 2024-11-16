@@ -29,7 +29,7 @@
   - type: UseDelay
     delay: 1
   - type: RechargeBasicEntityAmmo
-    rechargeCooldown: 0.75
+    rechargeCooldown: 1.5
 
 - type: entity
   id: BulletCrossbow
