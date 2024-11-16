@@ -55,3 +55,16 @@
     stunAmount: 30
     knockdownAmount: 5
   - type: GatheringProjectile
+
+- type: listing
+  id: UplinkBigSyndicateCrossbow
+  name: энерго-арбалет синдиката
+  description: Оружие, излюбленное специалистами синдиката предпочитающим работать открыто... Но тихо.
+  productEntity: WeaponBigSyndicateCrossbow
+  discountCategory: usualDiscounts
+  discountDownTo:
+    Telecrystal: 8
+  cost:
+    Telecrystal: 18
+  categories:
+  - UplinkWeaponry
