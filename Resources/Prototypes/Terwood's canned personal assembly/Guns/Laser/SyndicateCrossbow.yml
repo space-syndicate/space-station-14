@@ -55,3 +55,16 @@
     stunAmount: 1
     knockdownAmount: 1
   - type: GatheringProjectile
+
+- type: listing
+  id: UplinkSyndicateCrossbow
+  name: мини энерго-арбалет синдиката
+  description: Оружие, излюбленное специалистами синдиката предпочитающим работать скрытно.
+  productEntity: WeaponSyndicateCrossbow
+  discountCategory: usualDiscounts
+  discountDownTo:
+    Telecrystal: 4
+  cost:
+    Telecrystal: 10
+  categories:
+  - UplinkWeaponry
