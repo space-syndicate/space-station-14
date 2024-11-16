@@ -1,7 +1,7 @@
 - type: entity
   name: энерго-арбалет синдиката
   parent: BaseItem
-  id: WeaponSyndicateCrossbow
+  id: WeaponBigSyndicateCrossbow
   description: Оружие, излюбленное специалистами синдиката предпочитающим работать открыто... Но тихо.
   components:
   - type: Sprite
@@ -17,7 +17,7 @@
     soundGunshot:
       path: /Audio/Weapons/Guns/Gunshots/batrifle.ogg
   - type: BasicEntityAmmoProvider
-    proto: BulletCrossbow
+    proto: BulletBigCrossbow
     capacity: 1
     count: 1
   - type: MagazineVisuals
