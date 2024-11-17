@@ -9,8 +9,6 @@
     layers:
     - state: base
       map: ["enum.GunVisualLayers.Base"]
-    - state: mag-0
-      map: ["enum.GunVisualLayers.Mag"]
   - type: Item
     size: Normal
     shape:
@@ -23,9 +21,6 @@
     proto: BulletBigCrossbow
     capacity: 1
     count: 1
-  - type: MagazineVisuals
-    magState: mag
-    steps: 2
     zeroVisible: true
   - type: Appearance
   - type: UseDelay
