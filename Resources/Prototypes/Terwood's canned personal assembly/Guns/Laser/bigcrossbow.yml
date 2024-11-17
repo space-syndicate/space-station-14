@@ -6,13 +6,16 @@
   components:
   - type: Sprite
     sprite: TRWD/weapons/bigcrossbow.rsi
-    state: foamcrossbow
+    layers:
+    - state: base
+      map: ["enum.GunVisualLayers.Base"]
+    - state: mag-0
+      map: ["enum.GunVisualLayers.Mag"]
   - type: Item
     size: Normal
     shape:
     - 0,0,4,0
     sprite: TRWD/weapons/bigcrossbow.rsi
-    heldPrefix: foamcrossbow
   - type: Gun
     soundGunshot:
       path: /Audio/Weapons/Guns/Gunshots/batrifle.ogg
