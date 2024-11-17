@@ -63,7 +63,7 @@
     collection: Rain
     params:
       loop: true
-      volume: -6
+      volume: -10
 
 - type: soundCollection
   id: Rain
@@ -102,7 +102,7 @@
     path: /Audio/Effects/Weather/snowstorm_weak.ogg
     params:
       loop: true
-      volume: -6
+      volume: -12 # Corvax
 
 - type: weather
   id: SnowfallMedium
@@ -113,7 +113,7 @@
     path: /Audio/Effects/Weather/snowstorm_weak.ogg
     params:
       loop: true
-      volume: -6
+      volume: -10 # Corvax
 
 - type: weather
   id: SnowfallHeavy
