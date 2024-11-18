@@ -315,6 +315,38 @@
     # Corvax-Localization-End
 
 - type: emote
+  id: Thump
+  name: chat-emote-name-thump
+  category: Hands
+  available: false
+  icon: Interface/Emotes/tailslap.png
+  whitelist:
+    components:
+    - Hands
+  blacklist:
+    components:
+    - BorgChassis
+  chatMessages: ["chat-emote-msg-thump"]
+  chatTriggers:
+    - thump
+    - thumps
+    - thumping
+    - thumped
+    - thump tail
+    - thumps tail
+    - thumps their tail
+    - thumps her tail
+    - thumps his tail
+    - thumps its tail
+    # Corvax-Localization-Start
+    - стучит хвостом
+    - стукнул хвостом
+    - стукнула хвостом
+    - стукнул своим хвостом
+    - стукнула своим хвостом
+    # Corvax-Localization-End
+
+- type: emote
   id: Salute
   name: chat-emote-name-salute
   category: Hands

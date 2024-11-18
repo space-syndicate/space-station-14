@@ -7,7 +7,7 @@
     issuer: objective-issuer-syndicate
   - type: RoleRequirement
     roles:
-      components:
+      mindRoles:
       - TraitorRole
 
 - type: entity
@@ -282,7 +282,6 @@
 
 # Corvax-MRP-Start: Make nuke disk objective separate
 # - type: entity
-  # noSpawn: true
   # parent: BaseCaptainObjective
   # id: NukeDiskStealObjective
   # components:

@@ -4,6 +4,7 @@ using Content.Server.Players.RateLimiting;
 using Content.Shared.Corvax.CCCVars;
 using Content.Shared.Corvax.TTS;
 using Content.Shared.GameTicking;
+using Content.Shared.Players.RateLimiting;
 using Robust.Shared.Configuration;
 using Robust.Shared.Player;
 using Robust.Shared.Prototypes;

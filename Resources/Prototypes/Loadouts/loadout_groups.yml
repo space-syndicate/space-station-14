@@ -6,6 +6,9 @@
   maxLimit: 3
   loadouts:
   - SpaceLaw # Corvax-HyperLink
+  - FlowerWreath
+  - Hairflower
+  - Headphones
   - PlushieLizard
   - PlushieSpaceLizard
   - Lighter
@@ -19,6 +22,7 @@
   - ClothingNeckAromanticPin
   - ClothingNeckAsexualPin
   - ClothingNeckBisexualPin
+  - ClothingNeckGayPin
   - ClothingNeckIntersexPin
   - ClothingNeckLesbianPin
   - ClothingNeckNonBinaryPin
@@ -37,6 +41,23 @@
   - ClothingNeckSolarisPin
   - ClothingNeckWhiteListPin
   # Corvax-Loadouts-End
+  - TowelColorBlack
+  - TowelColorDarkBlue
+  - TowelColorDarkGreen
+  - TowelColorGold
+  - TowelColorGray
+  - TowelColorGreen
+  - TowelColorLightBlue
+  - TowelColorLightBrown
+  - TowelColorMaroon
+  - TowelColorMime
+  - TowelColorOrange
+  - TowelColorPurple
+  - TowelColorRed
+  - TowelColorSilver
+  - TowelColorWhite
+  - TowelColorYellow
+
 - type: loadoutGroup
   id: Glasses
   name: loadout-group-glasses
@@ -71,6 +92,14 @@
   loadouts:
   - LoadoutSpeciesEVANitrogen
   - LoadoutSpeciesEVAOxygen
+
+- type: loadoutGroup
+  id: GroupPocketTankDouble
+  name: loadout-group-pocket-tank-double
+  hidden: true
+  loadouts:
+  - LoadoutSpeciesPocketDoubleNitrogen
+  - LoadoutSpeciesPocketDoubleOxygen
 
 # Command
 - type: loadoutGroup
@@ -507,7 +536,7 @@
   loadouts:
   - MimeSuspendersRed
   - MimeSuspendersBlack
-  
+
 - type: loadoutGroup
   id: SurvivalMime
   name: loadout-group-survival-mime
@@ -1074,6 +1103,7 @@
   loadouts:
   - DetectiveArmorVest
   - DetectiveCoat
+  - DetectiveCoatGrey
 
 - type: loadoutGroup
   id: SecurityCadetJumpsuit
