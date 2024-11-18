@@ -2,6 +2,7 @@
   name: Прародитель
   parent: BaseWeaponLauncher
   id: WeaponTheOriginal
+  suffix: TRWD, tf2
   description: Представляет собой громоздкий ракетомёт цвета хаки с металлическим раструбом, серой рукоятью и характерным массивным дульным тормозом.
   components:
   - type: Sprite
