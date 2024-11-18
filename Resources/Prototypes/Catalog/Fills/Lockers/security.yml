@@ -23,6 +23,7 @@
       - id: ClothingHeadHatCapWardenAlt # Corvax-SecFashion
       - id: ClothingOuterCoatWardenAlt # Corvax-SecFashion
       - id: ClothingBackpackWarden # Corvax-SecFashion
+      - id: BoxBodyBagPrisoner # Corvax-Next-AdvancedBodyBags
       - id: ClothingBackpackElectropack
         amount: 2
       - id: RemoteSignaller
@@ -52,6 +53,7 @@
       - id: HoloprojectorSecurity
       - id: BookSpaceLaw
       - id: ClothingBackpackWarden # Corvax-SecFashion
+      - id: BoxBodyBagPrisoner # Corvax-Next-AdvancedBodyBags
       - id: ClothingBackpackElectropack
         amount: 2
       - id: RemoteSignaller
@@ -131,6 +133,7 @@
         prob: 0.5
       - id: ClothingOuterCoatLabSecurityMedic # Corvax-Resprite
         prob: 0.5
+      - id: BoxBodyBagPrisoner # Corvax-Next-AdvancedBodyBags
 
 - type: entity
   id: LockerDetectiveFilled

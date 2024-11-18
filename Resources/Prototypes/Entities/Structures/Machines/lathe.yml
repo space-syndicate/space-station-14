@@ -947,6 +947,13 @@
       - BluespaceBeaker
       - SyringeBluespace
       - SyringeCryostasis
+      - BluespaceBodyBag # Corvax-Next-AdvancedBodyBags
+      - NTBodyBag # Corvax-Next-AdvancedBodyBags
+      - PrisonerBodyBag # Corvax-Next-AdvancedBodyBags
+      - RadiationBodyBag # Corvax-Next-AdvancedBodyBags
+  - type: EmagLatheRecipes
+    emagDynamicRecipes:
+      - SyndicateBodyBag # Corvax-Next-AdvancedBodyBags
   - type: Machine
     board: MedicalTechFabCircuitboard
   - type: StealTarget
