@@ -78,7 +78,7 @@
   - type: EmagSiliconLaw
     stunTime: 5
   - type: SiliconLawProvider
-    laws: Crewsimov
+    laws: NTDefault # Corvax-NTDefault
   - type: IonStormTarget
   - type: Inventory
     templateId: borg
@@ -287,7 +287,6 @@
   - type: AccessReader
     access: [["Command"], ["Research"]]
   - type: ShowJobIcons
-  - type: ShowMindShieldIcons
 
 - type: entity
   id: BaseBorgChassisSyndicate

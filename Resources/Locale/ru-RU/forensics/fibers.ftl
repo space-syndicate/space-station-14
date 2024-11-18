@@ -23,3 +23,7 @@ fibers-white = белые
 fibers-yellow = жёлтые
 fibers-regal-blue = королевские синие
 fibers-olive = оливковые
+fibers-silver = серебряные
+fibers-gold = золотые
+fibers-maroon = бордовые
+fibers-pink = розовые
