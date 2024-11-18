@@ -86,6 +86,11 @@
             inherent: true
           protos:
           - VGRoid
+        # Corvax-start
+        mining: !type:GridSpawnGroup
+          paths:
+          - /Maps/Shuttles/corvax_mining.yml
+        # Corvax-end
 
 - type: entity
   id: BaseStationCentcomm

@@ -8,8 +8,6 @@ plant-holder-component-no-weeds-message = На этом участке нет с
 plant-holder-component-remove-plant-message = Вы удаляете растение из { $name }.
 plant-holder-component-remove-plant-others-message = { $name } удаляет растение.
 plant-holder-component-no-plant-message = Отсутствует растение для удаления.
-plant-holder-component-empty-message = { $owner } пуст!
-plant-holder-component-spray-message = Вы опрыскиваете { $owner }.
 plant-holder-component-transfer-message = Вы перемещаете { $amount }ед. в { $owner }.
 plant-holder-component-nothing-to-sample-message = Из этого не извлечь семян!
 plant-holder-component-already-sampled-message = Из этого растения уже извлекли семена.
@@ -33,3 +31,4 @@ plant-holder-component-heat-improper-warning = Мигает [color=orange]пре
 plant-holder-component-pressure-improper-warning = Мигает [color=lightblue]предупреждение о неподходящем атмосферном давлении[/color].
 plant-holder-component-gas-missing-warning = Мигает [color=cyan]предупреждение о неподходящем атмосферном составе[/color].
 plant-holder-component-early-sample-message = Растение ещё не выросло настолько, чтобы извлечь семена.
+plant-holder-component-ligneous-cant-harvest-message = The plant is too tough to harvest with your bare hands.
