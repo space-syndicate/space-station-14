@@ -1,6 +1,7 @@
 - type: entity
   name: Обжигающий Выстрел
   parent: BaseWeaponLauncher
+  suffix: TRWD, tf2
   id: WeaponScorchShot
   description: Представляет собой ракетницу с серым стволом и оранжевым дулом и черной рукояткой, держащейся на болтах на нижней части ствола.
   components:
