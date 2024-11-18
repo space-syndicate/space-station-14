@@ -74,6 +74,14 @@
                     Orientation="Horizontal"
                     Align="End"
                     HorizontalExpand="True">
+                    <!-- Corvax-Next-BlueprintEject-Start -->
+                    <Button
+                        Name="BlueprintEjectButton"
+                        Text="{Loc 'lathe-menu-blueprint-eject'}"
+                        TextAlign="Center"
+                        Mode="Press">
+                    </Button>
+                    <!-- Corvax-Next-BlueprintEject-End -->
                     <Button
                         Name="ServerListButton"
                         Text="{Loc 'lathe-menu-server-list'}"

@@ -18,6 +18,7 @@ using Content.Shared.Database;
 using Content.Shared.Emag.Components;
 using Content.Shared.Examine;
 using Content.Shared.Lathe;
+using Content.Shared.Research.Systems; // Corvax-Next-BlueprintEject
 using Content.Shared.Materials;
 using Content.Shared.Power;
 using Content.Shared.ReagentSpeed;
@@ -50,6 +51,7 @@ namespace Content.Server.Lathe
         [Dependency] private readonly SharedSolutionContainerSystem _solution = default!;
         [Dependency] private readonly StackSystem _stack = default!;
         [Dependency] private readonly TransformSystem _transform = default!;
+        [Dependency] private readonly BlueprintSystem _blueprints = default!; // Corvax-Next-BlueprintEject
 
         /// <summary>
         /// Per-tick cache
@@ -73,6 +75,7 @@ namespace Content.Server.Lathe
             SubscribeLocalEvent<TechnologyDatabaseComponent, LatheGetRecipesEvent>(OnGetRecipes);
             SubscribeLocalEvent<EmagLatheRecipesComponent, LatheGetRecipesEvent>(GetEmagLatheRecipes);
             SubscribeLocalEvent<LatheHeatProducingComponent, LatheStartPrintingEvent>(OnHeatStartPrinting);
+            SubscribeLocalEvent<LatheComponent, LatheBlueprintEjectMessage>(OnBlueprintEjectMessage); // Corvax-Next-BlueprintEject
         }
         public override void Update(float frameTime)
         {
@@ -271,7 +274,9 @@ namespace Content.Server.Lathe
 
             var producing = component.CurrentRecipe ?? component.Queue.FirstOrDefault();
 
-            var state = new LatheUpdateState(GetAvailableRecipes(uid, component), component.Queue, producing);
+            var hasAnyBlueprints = TryComp<BlueprintReceiverComponent>(uid, out var blueprintReceiver) && _blueprints.HasAnyBlueprints(uid, blueprintReceiver); //Corvax-Next-BlueprintEject
+
+            var state = new LatheUpdateState(GetAvailableRecipes(uid, component), component.Queue, producing, hasAnyBlueprints); //Corvax-Next-BlueprintEject
             _uiSys.SetUiState(uid, LatheUiKey.Key, state);
         }
 
@@ -395,6 +400,28 @@ namespace Content.Server.Lathe
         {
             UpdateUserInterfaceState(uid, component);
         }
+
+        // Corvax-Next-BlueprintEject-Start
+        private void OnBlueprintEjectMessage(EntityUid uid, LatheComponent component, LatheBlueprintEjectMessage args)
+        {
+            if (!TryComp<BlueprintReceiverComponent>(uid, out var blueprintReceiver))
+                return;
+
+            var toRemove = new HashSet<EntityUid>();
+            var container = _container.GetContainer(uid, blueprintReceiver.ContainerId);
+            foreach (var entity in container.ContainedEntities)
+            {   
+                toRemove.Add(entity);
+            }
+
+            foreach (var entity in toRemove)
+            {
+                _container.Remove(entity, container);
+            }
+
+            UpdateUserInterfaceState(uid, component);
+        }
+        // Corvax-Next-BlueprintEject-End
         #endregion
     }
 }

@@ -12,14 +12,26 @@ public sealed class LatheUpdateState : BoundUserInterfaceState
     public List<LatheRecipePrototype> Queue;
 
     public LatheRecipePrototype? CurrentlyProducing;
+    public bool HasAnyBlueprints; // Corvax-Next-BlueprintEject
 
-    public LatheUpdateState(List<ProtoId<LatheRecipePrototype>> recipes, List<LatheRecipePrototype> queue, LatheRecipePrototype? currentlyProducing = null)
+    public LatheUpdateState(List<ProtoId<LatheRecipePrototype>> recipes, List<LatheRecipePrototype> queue, LatheRecipePrototype? currentlyProducing = null, bool hasAnyBlueprints = false) // Corvax-Next-BlueprintEject
     {
         Recipes = recipes;
         Queue = queue;
         CurrentlyProducing = currentlyProducing;
+        HasAnyBlueprints = hasAnyBlueprints; // Corvax-Next-BlueprintEject
     }
 }
+
+// Corvax-Next-BlueprintEject-start
+
+/// <summary>
+///     Sent to the server to eject blueprints from the lathe.
+/// </summary>
+[Serializable, NetSerializable]
+public sealed class LatheBlueprintEjectMessage : BoundUserInterfaceMessage;
+
+// Corvax-Next-BlueprintEject-end
 
 /// <summary>
 ///     Sent to the server to sync material storage and the recipe queue.

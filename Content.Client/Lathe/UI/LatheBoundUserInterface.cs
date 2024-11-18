@@ -27,6 +27,13 @@ namespace Content.Client.Lathe.UI
                 SendMessage(new ConsoleServerSelectionMessage());
             };
 
+            // Corvax-Next-BlueprintEject-Start
+            _menu.OnBlueprintEjectButtonPressed += _ =>
+            {
+                SendMessage(new LatheBlueprintEjectMessage());
+            };
+            // Corvax-Next-BlueprintEject-End
+
             _menu.RecipeQueueAction += (recipe, amount) =>
             {
                 SendMessage(new LatheQueueRecipeMessage(recipe, amount));
@@ -42,6 +49,7 @@ namespace Content.Client.Lathe.UI
                 case LatheUpdateState msg:
                     if (_menu != null)
                         _menu.Recipes = msg.Recipes;
+                    _menu?.UpdateBlueprintEjectButton(msg.HasAnyBlueprints); // Corvax-Next-BlueprintEject
                     _menu?.PopulateRecipes();
                     _menu?.UpdateCategories();
                     _menu?.PopulateQueueList(msg.Queue);

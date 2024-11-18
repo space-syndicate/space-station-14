@@ -111,4 +111,11 @@ public sealed class BlueprintSystem : EntitySystem
 
         return recipes;
     }
+
+    // Corvax-Next-BlueprintEject-Start
+    public bool HasAnyBlueprints(EntityUid ent, BlueprintReceiverComponent comp)
+    {
+        return _container.GetContainer(ent, comp.ContainerId).ContainedEntities.Count > 0;
+    }
+    // Corvax-Next-BlueprintEject-End
 }
