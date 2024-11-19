@@ -319,8 +319,22 @@
   - type: Fiber
     fiberColor: fibers-black
 
-# Insulated Gloves (Yellow Gloves)
+# Yellow Gloves (Insulated Gloves)
 # Currently can not be greyscaled without looking like shit.
+- type: entity
+  parent: ClothingHandsGlovesSyntheticBase
+  id: ClothingHandsGlovesColorYellow
+  name: yellow gloves
+  description: Made to order specifically for members of a certain group of passengers.
+  components:
+  - type: Sprite
+  - type: Item
+    sprite: Clothing/Hands/Gloves/Color/yellow.rsi
+  - type: Clothing
+    sprite: Clothing/Hands/Gloves/Color/yellow.rsi
+  - type: Fiber
+    fiberColor: fibers-yellow
+
 - type: entity
   parent: ClothingHandsBase
   id: ClothingHandsGlovesColorYellow
