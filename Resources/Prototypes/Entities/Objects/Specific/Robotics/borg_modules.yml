@@ -568,9 +568,9 @@
     entries:
     - label: corvax-hidden-desc-BorgModuleSyndicateWeapon-syndicate
       whitelistMind:
-        components:
+        mindRoles:
           - TraitorRole
-          - NukeOperative
+          - NukeopsRole
     - label: corvax-hidden-desc-BorgModuleSyndicateWeapon-research
       jobRequired:
         - ResearchAssistant
@@ -601,9 +601,9 @@
       entries:
       - label: corvax-hidden-desc-BorgModuleOperative-syndicate
         whitelistMind:
-          components:
+          mindRoles:
             - TraitorRole
-            - NukeOperative
+            - NukeopsRole
       - label: corvax-hidden-desc-BorgModuleOperative-research
         jobRequired:
           - ResearchAssistant
@@ -633,9 +633,9 @@
       entries:
       - label: corvax-hidden-desc-BorgModuleEsword-syndicate
         whitelistMind:
-          components:
+          mindRoles:
             - TraitorRole
-            - NukeOperative
+            - NukeopsRole
       - label: corvax-hidden-desc-BorgModuleSyndicateWeapon-research
         jobRequired:
           - ResearchAssistant
@@ -665,9 +665,9 @@
       entries:
       - label: corvax-hidden-desc-BorgModuleL6C-syndicate
         whitelistMind:
-          components:
+          mindRoles:
           - TraitorRole
-          - NukeOperative
+          - NukeopsRole
       - label: corvax-hidden-desc-BorgModuleSyndicateWeapon-research
         jobRequired:
           - ResearchAssistant
@@ -696,9 +696,9 @@
       entries:
       - label: corvax-hidden-desc-BorgModuleMartyr-syndicate
         whitelistMind:
-          components:
+          mindRoles:
             - TraitorRole
-            - NukeOperative
+            - NukeopsRole
       - label: corvax-hidden-desc-BorgModuleMartyr-research
         jobRequired:
           - ResearchAssistant
