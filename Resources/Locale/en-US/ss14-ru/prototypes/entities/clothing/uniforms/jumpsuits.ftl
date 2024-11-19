@@ -215,5 +215,7 @@ ent-ClothingUniformJumpsuitCasualPurple = casual purple jumpsuit
     .desc = A loose worn purple shirt with a grey pants, perfect for someone looking to relax.
 ent-ClothingUniformJumpsuitCasualRed = casual red jumpsuit
     .desc = A loose worn red shirt with a grey pants, perfect for someone looking to relax.
+ent-ClothingUniformJumpsuitCasualGreen = casual green jumpsuit
+    .desc = A loose worn green shirt with a grey pants, perfect for someone looking to relax.
 ent-ClothingUniformJumpsuitFamilyGuy = familiar garbs
     .desc = Makes you remember the time you did something funny.
