@@ -10,6 +10,7 @@ namespace Content.Client.UserInterface.Systems.MenuBar.Widgets
         public GameTopMenuBar()
         {
             RobustXamlLoader.Load(this);
+            SponsorButton.Visible = IoCManager.Instance!.TryResolveType<Content.Corvax.Interfaces.Shared.ISharedSponsorsManager>(out _); // Corvax-Sponsor
         }
     }
 }

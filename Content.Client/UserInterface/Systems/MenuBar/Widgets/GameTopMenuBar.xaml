@@ -93,6 +93,18 @@
         HorizontalExpand="True"
         AppendStyleClass="{x:Static style:StyleBase.ButtonSquare}"
         />
+    <!-- Corvax-Sponsor-Start -->
+    <ui:MenuButton
+        Name="SponsorButton"
+        Visible="False"
+        Access="Internal"
+        Icon="{xe:Tex '/Textures/Interface/cut-diamond.svg.png'}"
+        ToolTip="{Loc 'game-hud-open-sponsor-menu-button-tooltip'}"
+        MinSize="42 64"
+        HorizontalExpand="True"
+        AppendStyleClass="{x:Static style:StyleBase.ButtonSquare}"
+        />
+    <!-- Corvax-Sponsor-End -->
     <ui:MenuButton
         Name="AHelpButton"
         Access="Internal"
