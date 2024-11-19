@@ -31,6 +31,26 @@
         collection: SadTrombone
         params:
           variation: 0.125
+      # Corvax-hidden-desc-begin
+    - type: HiddenDescription
+      entries:
+      - label: corvax-hidden-desc-LegalImplants-medical
+        jobRequired:
+        - Paramedic
+        - MedicalDoctor
+        - ChiefMedicalOfficer
+      - label: corvax-hidden-desc-SadTromboneImplanter-research
+        jobRequired:
+        - ResearchAssistant
+        - ResearchDirector
+        - Scientist
+        - Borg
+      - label: corvax-hidden-desc-SadTromboneImplanter-syndicate
+        whitelistMind:
+          mindRoles:
+          - TraitorRole
+          - NukeOperative
+      # Corvax-hidden-desc-end
 
 - type: entity
   parent: BaseSubdermalImplant
@@ -53,6 +73,26 @@
         - HideContextMenu
         - Flashlight
     - type: UnpoweredFlashlight
+    # Corvax-hidden-desc-begin
+    - type: HiddenDescription
+      entries:
+      - label: corvax-hidden-desc-LegalImplants-medical
+        jobRequired:
+        - Paramedic
+        - MedicalDoctor
+        - ChiefMedicalOfficer
+      - label: corvax-hidden-desc-LightImplanter-research
+        jobRequired:
+        - ResearchAssistant
+        - ResearchDirector
+        - Scientist
+        - Borg
+      - label: corvax-hidden-desc-LightImplanter-syndicate
+        whitelistMind:
+          mindRoles:
+          - TraitorRole
+          - NukeOperative
+    # Corvax-hidden-desc-end
 
 - type: entity
   parent: BaseSubdermalImplant
@@ -72,7 +112,26 @@
     - type: Tag
       tags:
       - BikeHorn
-
+      # Corvax-hidden-desc-begin
+    - type: HiddenDescription #Corvax MRP Hidden Description
+      entries:
+      - label: corvax-hidden-desc-LegalImplants-medical
+        jobRequired:
+        - Paramedic
+        - MedicalDoctor
+        - ChiefMedicalOfficer
+      - label: corvax-hidden-desc-BikeHornImplanter-research
+        jobRequired:
+        - ResearchAssistant
+        - ResearchDirector
+        - Scientist
+        - Borg
+      - label: corvax-hidden-desc-BikeHornImplanter-syndicate
+        whitelistMind:
+          mindRoles:
+          - TraitorRole
+          - NukeOperative
+      # Corvax-hidden-desc-end
 #Security implants
 
 - type: entity
@@ -102,7 +161,26 @@
       - Critical
     - type: Rattle
       radioChannel: "Security"
-
+      # Crovax-hidden-desc-begin
+    - type: HiddenDescription
+      entries:
+      - label: corvax-hidden-desc-LegalImplants-medical
+        jobRequired:
+        - Paramedic
+        - MedicalDoctor
+        - ChiefMedicalOfficer
+      - label: corvax-hidden-desc-TrackingImplanter-research
+        jobRequired:
+        - ResearchAssistant
+        - ResearchDirector
+        - Scientist
+        - Borg
+      - label: corvax-hidden-desc-TrackingImplanter-syndicate
+        whitelistMind:
+          mindRoles:
+          - TraitorRole
+          - NukeOperative
+      # Crovax-hidden-desc-end
 #Traitor implants
 
 - type: entity
@@ -128,6 +206,26 @@
       interfaces:
         enum.StorageUiKey.Key:
           type: StorageBoundUserInterface
+    # Corvax-hidden-desc-begin
+    - type: HiddenDescription
+      entries:
+      - label: corvax-hidden-desc-IllegalImplants-medical
+        jobRequired:
+        - Paramedic
+        - MedicalDoctor
+        - ChiefMedicalOfficer
+      - label: corvax-hidden-desc-StorageImplanter-research
+        jobRequired:
+        - ResearchAssistant
+        - ResearchDirector
+        - Scientist
+        - Borg
+      - label: corvax-hidden-desc-StorageImplanter-syndicate
+        whitelistMind:
+          mindRoles:
+          - TraitorRole
+          - NukeOperative
+      # Corvax-hidden-desc-end
 
 - type: entity
   parent: BaseSubdermalImplant
@@ -141,6 +239,26 @@
       whitelist:
         components:
         - Cuffable # useless if you cant be cuffed
+    # Corvax-hidden-desc-begin
+    - type: HiddenDescription
+      entries:
+      - label: corvax-hidden-desc-IllegalImplants-medical
+        jobRequired:
+        - Paramedic
+        - MedicalDoctor
+        - ChiefMedicalOfficer
+      - label: corvax-hidden-desc-FreedomImplanter-research
+        jobRequired:
+        - ResearchAssistant
+        - ResearchDirector
+        - Scientist
+        - Borg
+      - label: corvax-hidden-desc-FreedomImplanter-syndicate
+        whitelistMind:
+          mindRoles:
+          - TraitorRole
+          - NukeOperative
+    # Corvax-hidden-desc-end
 
 - type: entity
   parent: [ BaseSubdermalImplant, StorePresetUplink ]
@@ -161,6 +279,26 @@
     interfaces:
       enum.StoreUiKey.Key:
         type: StoreBoundUserInterface
+  # Corvax-hidden-desc-begin
+  - type: HiddenDescription
+    entries:
+    - label: corvax-hidden-desc-IllegalImplants-medical
+      jobRequired:
+      - Paramedic
+      - MedicalDoctor
+      - ChiefMedicalOfficer
+    - label: corvax-hidden-desc-UplinkImplanter-research
+      jobRequired:
+      - ResearchAssistant
+      - ResearchDirector
+      - Scientist
+      - Borg
+    - label: corvax-hidden-desc-UplinkImplanter-syndicate
+      whitelistMind:
+          mindRoles:
+          - TraitorRole
+          - NukeOperative
+  # Corvax-hidden-desc-end
 
 - type: entity
   parent: BaseSubdermalImplant
@@ -176,6 +314,26 @@
       range: 2.75
       energyConsumption: 50000
       disableDuration: 10
+#   Corvax-hidden-desc-begin
+    - type: HiddenDescription
+      entries:
+      - label: corvax-hidden-desc-IllegalImplants-medical
+        jobRequired:
+        - Paramedic
+        - MedicalDoctor
+        - ChiefMedicalOfficer
+      - label: corvax-hidden-desc-EmpImplanter-research
+        jobRequired:
+        - ResearchAssistant
+        - ResearchDirector
+        - Scientist
+        - Borg
+      - label: corvax-hidden-desc-EmpImplanter-syndicate
+        whitelistMind:
+          mindRoles:
+          - TraitorRole
+          - NukeOperative
+#   Corvax-hidden-desc-end
 
 - type: entity
   parent: BaseSubdermalImplant
@@ -188,6 +346,26 @@
       implantAction: ActionActivateScramImplant
     - type: TriggerImplantAction
     - type: ScramImplant
+    # Crovax-hidden-desc-begin
+    - type: HiddenDescription
+      entries:
+      - label: corvax-hidden-desc-IllegalImplants-medical
+        jobRequired:
+        - Paramedic
+        - MedicalDoctor
+        - ChiefMedicalOfficer
+      - label: corvax-hidden-desc-ScramImplanter-research
+        jobRequired:
+        - ResearchAssistant
+        - ResearchDirector
+        - Scientist
+        - Borg
+      - label: corvax-hidden-desc-ScramImplanter-syndicate
+        whitelistMind:
+          mindRoles:
+          - TraitorRole
+          - NukeOperative
+    # Crovax-hidden-desc-end
 
 - type: entity
   parent: BaseSubdermalImplant
@@ -201,7 +379,26 @@
       whitelist:
         components:
         - HumanoidAppearance # syndies cant turn hamlet into a human
-
+    # Corvax-hidden-desc-begin
+    - type: HiddenDescription
+      entries:
+      - label: corvax-hidden-desc-IllegalImplants-medical
+        jobRequired:
+        - Paramedic
+        - MedicalDoctor
+        - ChiefMedicalOfficer
+      - label: corvax-hidden-desc-DnaScramblerImplanter-research
+        jobRequired:
+        - ResearchAssistant
+        - ResearchDirector
+        - Scientist
+        - Borg
+      - label: corvax-hidden-desc-DnaScramblerImplanter-syndicate
+        whitelistMind:
+          mindRoles:
+          - TraitorRole
+          - NukeOperative
+    # Corvax-hidden-desc-begin
 #Nuclear Operative/Special Exclusive implants
 
 - type: entity
@@ -232,7 +429,26 @@
         - SubdermalImplant
         - HideContextMenu
         - MicroBomb
-
+    # Corvax-hidden-desc-begin
+    - type: HiddenDescription
+      entries:
+      - label: corvax-hidden-desc-IllegalImplants-medical
+        jobRequired:
+        - Paramedic
+        - MedicalDoctor
+        - ChiefMedicalOfficer
+      - label: corvax-hidden-desc-MicroBombImplanter-research
+        jobRequired:
+        - ResearchAssistant
+        - ResearchDirector
+        - Scientist
+        - Borg
+      - label: corvax-hidden-desc-MicroBombImplanter-syndicate
+        whitelistMind:
+          mindRoles:
+          - TraitorRole
+          - NukeOperative
+    # Corvax-hidden-desc-end
 
 - type: entity
   parent: BaseSubdermalImplant
@@ -268,6 +484,26 @@
         - SubdermalImplant
         - HideContextMenu
         - MacroBomb
+    # Corvax-hidden-desc-begin
+    - type: HiddenDescription
+      entries:
+      - label: corvax-hidden-desc-IllegalImplants-medical
+        jobRequired:
+        - Paramedic
+        - MedicalDoctor
+        - ChiefMedicalOfficer
+      - label: corvax-hidden-desc-MacroBombImplanter-research
+        jobRequired:
+        - ResearchAssistant
+        - ResearchDirector
+        - Scientist
+        - Borg
+      - label: corvax-hidden-desc-MacroBombImplanter-syndicate
+        whitelistMind:
+          mindRoles:
+          - TraitorRole
+          - NukeOperative
+    # Corvax-hidden-desc-end
 
 - type: entity
   parent: BaseSubdermalImplant
@@ -292,6 +528,26 @@
     - SubdermalImplant
     - HideContextMenu
     - DeathAcidifier
+# Corvax-hidden-desc-begin
+  - type: HiddenDescription
+    entries:
+    - label: corvax-hidden-desc-IllegalImplants-medical
+      jobRequired:
+      - Paramedic
+      - MedicalDoctor
+      - ChiefMedicalOfficer
+    - label: corvax-hidden-desc-DeathRattleImplanter-research
+      jobRequired:
+      - ResearchAssistant
+      - ResearchDirector
+      - Scientist
+      - Borg
+    - label: corvax-hidden-desc-DeathRattleImplanter-syndicate
+      whitelistMind:
+        mindRoles:
+        - TraitorRole
+        - NukeOperative
+  # Corvax-hidden-desc-end
 
 - type: entity
   parent: BaseSubdermalImplant
@@ -310,7 +566,26 @@
       - Critical
       - Dead
     - type: Rattle
-
+    # Corvax-hidden-desc-begin
+    - type: HiddenDescription
+      entries:
+      - label: corvax-hidden-desc-IllegalImplants-medical
+        jobRequired:
+        - Paramedic
+        - MedicalDoctor
+        - ChiefMedicalOfficer
+      - label: corvax-hidden-desc-DeathAcidifierImplanter-research
+        jobRequired:
+        - ResearchAssistant
+        - ResearchDirector
+        - Scientist
+        - Borg
+      - label: corvax-hidden-desc-DeathAcidifierImplanter-syndicate
+        whitelistMind:
+          mindRoles:
+          - TraitorRole
+          - NukeOperative
+      # Corvax-hidden-desc-end
 # Sec and Command implants
 
 - type: entity
@@ -325,3 +600,23 @@
    - type: Tag
      tags:
        - MindShield
+    # Corvax-hidden-desc-begin, also yeah mapping slide in 1 space =|
+   - type: HiddenDescription
+     entries:
+     - label: corvax-hidden-desc-LegalImplants-medical
+       jobRequired:
+        - Paramedic
+        - MedicalDoctor
+        - ChiefMedicalOfficer
+     - label: corvax-hidden-desc-MindShieldImplanter-research
+       jobRequired:
+        - ResearchAssistant
+        - ResearchDirector
+        - Scientist
+        - Borg
+     - label: corvax-hidden-desc-MindShieldImplanter-syndicate
+       whitelistMind:
+        mindRoles:
+         - TraitorRole
+         - NukeOperative
+    # Corvax-hidden-desc-end
