@@ -296,11 +296,11 @@ station-goal-bunker =
 station-goal-survive =
     { station-goal-start }[bold]
     Цель смены станции { $station } — поддержание станции в рабочем состоянии[/bold]
-
+    
     Ваша станция должна провести в рабочем состоянии как минимум 1 час 30 минут.
-
+    
     После прохождения минимального времени выполнения цели, вы в праве вызвать эвакуационный шаттл.
-
+    
     { station-goal-end }
 station-goal-frame-repair =
     { station-goal-start }[bold]

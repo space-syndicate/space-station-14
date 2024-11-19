@@ -18,6 +18,8 @@ alerts-weightless-name = Невесомость
 alerts-weightless-desc =
     Гравитация перестала воздействовать на вас, и вы свободно парите. Найдите за что можно ухватиться, или метните или выстрелите чем-нибудь в противоположном направлении.
     Магнитные ботинки и джетпак помогут вам передвигаться с большей эффективностью.
+alerts-walking-name = Walking
+alerts-walking-desc = You are walking, moving at a slow pace.
 alerts-stunned-name = [color=yellow]Оглушены[/color]
 alerts-stunned-desc = Вы [color=yellow]оглушены[/color]! Что-то мешает вам двигаться или взаимодействовать с объектами.
 alerts-handcuffed-name = [color=yellow]В наручниках[/color]

@@ -63,6 +63,14 @@ admin-note-editor-expiry-label-params = Истекает: { $date } (через 
 admin-note-editor-expiry-label-expired = Истёк
 admin-note-editor-expiry-placeholder = Укажите срок действия (yyyy-MM-dd HH:mm:ss)
 admin-note-editor-submit = Подтвердить
+# Time
+admin-note-button-minutes = Minutes
+admin-note-button-hours = Hours
+admin-note-button-days = Days
+admin-note-button-weeks = Weeks
+admin-note-button-months = Months
+admin-note-button-years = Years
+admin-note-button-centuries = Centuries
 admin-note-editor-submit-confirm = Вы уверены?
 # Watchlist and message login
 admin-notes-watchlist = Наблюдение над { $player }: { $message }
