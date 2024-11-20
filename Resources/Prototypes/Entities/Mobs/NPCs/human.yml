@@ -65,7 +65,7 @@
         task: SimpleHumanoidHostileCompound
     - type: AutoImplant
       implants:
-        - DeathAcidifierImplant
+        - DeathAcidifierImplant # Corvax anti-overloot
 
 - type: entity
   name: syndicate shuttle pilot
