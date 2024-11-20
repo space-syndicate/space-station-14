@@ -63,6 +63,9 @@
     - type: HTN
       rootTask:
         task: SimpleHumanoidHostileCompound
+    - type: AutoImplant
+        implants:
+          - DeathAcidifierImplant
 
 - type: entity
   name: syndicate shuttle pilot
@@ -88,6 +91,7 @@
         Blunt: 19
   - type: Inventory
     templateId: corpse
+  
 
 - type: entity
   parent: MobHuman
