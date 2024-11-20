@@ -480,7 +480,7 @@ entities:
       rot: 3.141592653589793 rad
       pos: 2.5,-2.5
       parent: 1
-- proto: WallSolid
+- proto: WallSolidRust
   entities:
   - uid: 25
     components:
