@@ -323,8 +323,8 @@
 # Currently can not be greyscaled without looking like shit.
 
 - type: entity
-  parent: ClothingHandsGlovesSyntheticBaseVanity
-  id: ClothingHandsGlovesColorYellow
+  parent: ClothingHandsGlovesSyntheticBase
+  id: ClothingHandsGlovesColorYellowVanity
   name: yellow gloves
   description: Made to order specifically for members of a certain group of passengers.
   components:
