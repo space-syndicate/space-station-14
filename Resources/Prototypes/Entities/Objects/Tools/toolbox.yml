@@ -104,9 +104,9 @@
     entries:
     - label: corvax-hidden-desc-ToolboxElectricalTurret-syndicate
       whitelistMind:
-        components:
-          - TraitorRole
-          - NukeOperative
+        mindRoles:
+            - TraitorRole
+            - NukeopsRole
 # Corvax-HiddenDesc-End
 
 - type: entity
