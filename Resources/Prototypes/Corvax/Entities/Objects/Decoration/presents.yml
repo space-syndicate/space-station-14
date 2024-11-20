@@ -107,3 +107,6 @@
     available:
       - base:
           base: Rainbow
+  - type: Physics
+    bodyType: Static
+    canCollide: false
