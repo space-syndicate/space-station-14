@@ -1,4 +1,3 @@
-# Thief
 - type: entity
   parent: BaseMindRoleAntag
   id: MindRoleApi
@@ -7,4 +6,5 @@
   components:
   - type: MindRole
     antagPrototype: Api
-  - type: ThiefRole
+  - type: ApiRole
+  - type: ThiefBeaconAccess

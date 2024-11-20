@@ -1,3 +1,4 @@
+using Content.Server._CorvaxNext.Api.Components;
 using Content.Server.Antag;
 using Content.Server.GameTicking.Rules;
 using Content.Server.Roles;
@@ -13,7 +14,7 @@ public sealed class ApiRuleSystem : GameRuleSystem<ApiRuleComponent>
         base.Initialize();
 
         SubscribeLocalEvent<ApiRuleComponent, AfterAntagEntitySelectedEvent>(OnAfterAntagEntitySelected);
-        SubscribeLocalEvent<ApiRuleComponent, GetBriefingEvent>(OnGetBriefing);
+        SubscribeLocalEvent<ApiRoleComponent, GetBriefingEvent>(OnGetBriefing);
     }
 
     private void OnAfterAntagEntitySelected(EntityUid entity, ApiRuleComponent apiRule, AfterAntagEntitySelectedEvent e)
@@ -21,7 +22,7 @@ public sealed class ApiRuleSystem : GameRuleSystem<ApiRuleComponent>
         _antag.SendBriefing(e.EntityUid, Loc.GetString("api-role-greeting"), null, null);
     }
 
-    private void OnGetBriefing(EntityUid entity, ApiRuleComponent apiRule, GetBriefingEvent e)
+    private void OnGetBriefing(EntityUid entity, ApiRoleComponent apiRole, GetBriefingEvent e)
     {
         e.Append(Loc.GetString("api-role-greeting"));
     }

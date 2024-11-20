@@ -16,7 +16,9 @@
       lateJoinAdditional: true
       allowNonHumans: true
       multiAntagSetting: NotExclusive
-      startingGear: ApiGear
+      components:
+      - type: AutoImplant
+        implants: [ ApiStorageImplant ]
       mindRoles:
       - MindRoleApi
       briefing:

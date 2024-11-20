@@ -2,6 +2,7 @@
   id: ToolboxApi
   name: api undetermined toolbox
   description: This is where your favorite api's supplies lie. Try to remember which ones.
+  suffix: API
   parent: [ BaseItem, BaseMinorContraband ]
   components:
   - type: Sprite

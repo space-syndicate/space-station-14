@@ -1,4 +1,4 @@
-using Content.Server._CorvaxNext.Api;
+using Content.Server._CorvaxNext.Api.Components;
 using Content.Server.Administration.Commands;
 using Content.Server.Antag;
 using Content.Server.GameTicking.Rules.Components;
