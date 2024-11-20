@@ -64,7 +64,7 @@
       rootTask:
         task: SimpleHumanoidHostileCompound
     - type: AutoImplant
-        implants:
+      implants:
         - DeathAcidifierImplant
 
 - type: entity
