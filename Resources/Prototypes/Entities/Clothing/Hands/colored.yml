@@ -323,7 +323,7 @@
 # Currently can not be greyscaled without looking like shit.
 
 - type: entity
-  parent: ClothingHandsGlovesSyntheticBase
+  parent: ClothingHandsGlovesSyntheticBaseVanity
   id: ClothingHandsGlovesColorYellow
   name: yellow gloves
   description: Made to order specifically for members of a certain group of passengers.
@@ -338,7 +338,7 @@
 
 - type: entity
   parent: ClothingHandsBase
-  id: ClothingHandsGlovesColorYellowVanity
+  id: ClothingHandsGlovesColorYellow
   name: insulated gloves
   description: These gloves will protect the wearer from electric shocks.
   components:
