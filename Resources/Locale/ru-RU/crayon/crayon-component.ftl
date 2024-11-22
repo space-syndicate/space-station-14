@@ -8,10 +8,10 @@ crayon-interact-invalid-location = Туда не дотянуться!
 ## UI
 
 crayon-window-title = Мелок
-crayon-window-placeholder = Search, or queue a comma-separated list of names
-crayon-category-1-brushes = Brushes
-crayon-category-2-alphanum = Numbers and letters
-crayon-category-3-symbols = Symbols
-crayon-category-4-info = Signs
-crayon-category-5-graffiti = Graffiti
-crayon-category-random = Random
+crayon-window-placeholder = Поиск, или создание очереди рисования из списка имён, разделенных запятыми
+crayon-category-1-brushes = Кисти
+crayon-category-2-alphanum = Цифры и буквы
+crayon-category-3-symbols = Символы
+crayon-category-4-info = Знаки
+crayon-category-5-graffiti = Граффити
+crayon-category-random = Разное
