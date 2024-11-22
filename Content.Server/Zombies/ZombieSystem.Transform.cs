@@ -36,6 +36,7 @@ using Content.Shared.Prying.Components;
 using Content.Shared.Traits.Assorted;
 using Robust.Shared.Audio.Systems;
 using Content.Shared.Ghost.Roles.Components;
+using Content.Shared.Damage.Components;
 
 namespace Content.Server.Zombies;
 
@@ -106,6 +107,7 @@ public sealed partial class ZombieSystem
         RemComp<ReproductivePartnerComponent>(target);
         RemComp<LegsParalyzedComponent>(target);
         RemComp<ComplexInteractionComponent>(target);
+        RemComp<SlowOnDamageComponent>(target);
 
         //funny voice
         var accentType = "zombie";
@@ -170,8 +172,8 @@ public sealed partial class ZombieSystem
                 DamageDict = new()
                 {
                     { "Slash", 13 },
-                    { "Piercing", 7 },
-                    { "Structural", 10 }
+                    { "Piercing", 8 },
+                    { "Structural", 20 }
                 }
             };
             melee.Damage = dspec;
@@ -183,6 +185,18 @@ public sealed partial class ZombieSystem
             pryComp.Force = true;
 
             Dirty(target, pryComp);
+
+            // Humanoid zombie now deals stamina damage! ye.
+            AddComp<StaminaDamageOnHitComponent>(target);
+            var staminDamage = EnsureComp<StaminaDamageOnHitComponent>(target);
+            staminDamage.Damage = 25f;
+
+            Dirty(target, staminDamage);
+
+            var staminaHp = EnsureComp<StaminaComponent>(target);
+            staminaHp.CritThreshold = 200f;
+
+            Dirty(target, staminaHp);
         }
 
         Dirty(target, melee);
