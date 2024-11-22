@@ -25,7 +25,12 @@
   - type: GuideHelp
     guides:
     - Cyborgs
-    - Robotics
+  - type: SurgeryTool
+    startSound:
+      path: /Audio/Medical/Surgery/organ1.ogg
+    endSound:
+      path: /Audio/Medical/Surgery/organ2.ogg
+  - type: Gibbable
 
 - type: entity
   id: BaseBorgArmLeft
@@ -34,7 +39,7 @@
   abstract: true
   components:
   - type: BodyPart
-    partType: Hand
+    partType: Arm
     symmetry: Left
   - type: Tag
     tags:
@@ -48,7 +53,7 @@
   abstract: true
   components:
   - type: BodyPart
-    partType: Hand
+    partType: Arm
     symmetry: Right
   - type: Tag
     tags:
@@ -68,6 +73,7 @@
     tags:
     - Trash
     - BorgLeg
+  - type: MovementBodyPart
 
 - type: entity
   id: BaseBorgLegRight
@@ -82,6 +88,7 @@
     tags:
     - Trash
     - BorgLeg
+  - type: MovementBodyPart
 
 - type: entity
   id: BaseBorgHead

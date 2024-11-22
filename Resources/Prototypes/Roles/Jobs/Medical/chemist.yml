@@ -14,6 +14,14 @@
   - Medical
   - Chemistry
   - Maintenance
+  special:
+    #start-_CorvaxNext: surgery
+  - !type:AddComponentSpecial
+    components:
+    #- type: CPRTraining
+    - type: SurgerySpeedModifier
+      SpeedModifier: 1.75
+    #end-_CorvaxNext: surgery
 
 - type: startingGear
   id: ChemistGear

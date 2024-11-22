@@ -8,9 +8,10 @@
   - type: Sprite
   - type: StaticPrice
     price: 20
-  - type: Tag
-    tags:
-    - SurgeryTool
+#  - type: Tag
+#    tags:
+#    - SurgeryTool
+  - type: SurgeryTool # _CorvaxNext: surgery
 
 # Cautery
 
@@ -32,6 +33,14 @@
         Heat: 5
     soundHit:
       path: /Audio/Effects/lightburn.ogg
+  # start-_CorvaxNext: surgery
+  - type: SurgeryTool
+    startSound:
+      path: /Audio/Medical/Surgery/cautery1.ogg
+    endSound:
+      path: /Audio/Medical/Surgery/cautery2.ogg
+  - type: Cautery
+  # end-_CorvaxNext: surgery
 
 # Drill
 
@@ -57,6 +66,12 @@
       path: /Audio/Items/drill_hit.ogg
   - type: StaticPrice
     price: 40
+  # start-_CorvaxNext: surgery
+  - type: SurgeryTool
+    startSound:
+      path: /Audio/Medical/Surgery/saw.ogg
+  - type: SurgicalDrill
+  # end-_CorvaxNext: surgery
 
 # Scalpel
 
@@ -90,6 +105,15 @@
         Slash: 8
     soundHit:
       path: /Audio/Weapons/bladeslice.ogg
+  # start-_CorvaxNext: surgery
+  - type: SurgeryTool
+    startSound:
+      path: /Audio/Medical/Surgery/scalpel1.ogg
+    endSound:
+      path: /Audio/Medical/Surgery/scalpel2.ogg
+  - type: Scalpel
+  # end-_CorvaxNext: surgery
+
 
 - type: entity
   name: shiv
@@ -142,25 +166,63 @@
   - type: Item
     sprite: Objects/Specific/Medical/Surgery/scissors.rsi
     storedRotation: 90
+  # start-_CorvaxNext: surgery
+  - type: SurgeryTool
+    startSound:
+      path: /Audio/Medical/Surgery/retractor1.ogg
+    endSound:
+      path: /Audio/Medical/Surgery/retractor2.ogg
+  - type: Retractor
+  # end-_CorvaxNext: surgery
 
 - type: entity
   name: hemostat
   id: Hemostat
-  parent: Retractor
+  parent: BaseToolSurgery # _CorvaxNext
   description: A surgical tool used to compress blood vessels to prevent bleeding.
   components:
   - type: Sprite
+    sprite: Objects/Specific/Medical/Surgery/scissors.rsi
     state: hemostat
   - type: Item
     heldPrefix: hemostat
+    sprite: Objects/Specific/Medical/Surgery/scissors.rsi
     storedRotation: 90
+  # start-_CorvaxNext: surgery
+  - type: SurgeryTool
+    startSound:
+      path: /Audio/Medical/Surgery/retractor1.ogg
+    endSound:
+      path: /Audio/Medical/Surgery/hemostat1.ogg
+  - type: Hemostat
+  # end-_CorvaxNext: surgery
 
-  # - type: entity
-  #   name: bone setter
-  #   id: BoneSetter
-  #   parent: Retractor
-  #   description: A surgical tool used for setting bones.
-  #   components:
+# Bone setter
+- type: entity
+  parent: BaseToolSurgery
+  id: Bonesetter
+  name: bone setter
+  description: Used for setting bones back into place.
+  components:
+  - type: Sprite
+    sprite: Objects/Specific/Medical/Surgery/bonesetter.rsi
+    state: bonesetter
+  - type: Item
+    sprite: Objects/Specific/Medical/Surgery/bonesetter.rsi
+  - type: BoneSetter
+
+# Bone Gel
+- type: entity
+  parent: BaseToolSurgery
+  id: BoneGel
+  name: bottle of bone gel
+  description: A container for bone gel that often needs to be refilled from a specialized machine.
+  components:
+  - type: Sprite
+    sprite: Objects/Specific/Medical/Surgery/bone_gel.rsi
+    state: bone-gel
+  - type: BoneGel
+
 # Saws
 
 - type: entity
@@ -183,7 +245,20 @@
   - type: Tool
     qualities:
       - Sawing
-# No melee for regular saw because have you ever seen someone use a band saw as a weapon? It's dumb.
+    speedModifier: 1.0
+  # start-_CorvaxNext: surgery
+  - type: MeleeWeapon
+    attackRate: 0.75
+    range: 1.35
+    damage:
+      types:
+        Blunt: 2.5
+        Slash: 6.5
+    angle: 20
+  - type: BoneSaw
+  # end-_CorvaxNext: surgery
+# --No melee for regular saw because have you ever seen someone use a band saw as a weapon? It's dumb.--
+# No, I'm going to saw through your bones.
 
 - type: entity
   name: choppa
@@ -202,8 +277,13 @@
         Brute: 10
     soundHit:
       path: /Audio/Weapons/bladeslice.ogg
+  # start-_CorvaxNext: surgery
   - type: Tool
+    qualities:
+      - Sawing
     speedModifier: 0.5
+  - type: BoneSaw
+  # end-_CorvaxNext: surgery
 
 - type: entity
   name: circular saw
@@ -221,8 +301,16 @@
         Brute: 15
     soundHit:
       path: /Audio/Items/drill_hit.ogg
+  # start-_CorvaxNext: surgery
   - type: Tool
+    qualities:
+      - Sawing
     speedModifier: 1.5
+  - type: SurgeryTool
+    startSound:
+      path: /Audio/Medical/Surgery/saw.ogg
+  - type: BoneSaw
+  # end-_CorvaxNext: surgery
 
 - type: entity
   name: advanced circular saw
@@ -236,5 +324,10 @@
     heldPrefix: advanced
   - type: MeleeWeapon
     attackRate: 1.5
+  # start-_CorvaxNext: surgery
   - type: Tool
+    qualities:
+      - Sawing
     speedModifier: 2.0
+  - type: BoneSaw
+  # end-_CorvaxNext: surgery

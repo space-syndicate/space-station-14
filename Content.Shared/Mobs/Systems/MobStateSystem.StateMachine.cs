@@ -1,4 +1,5 @@
-﻿using Content.Shared.Database;
+﻿using Content.Shared._CorvaxNext.Surgery.Body;
+using Content.Shared.Database;
 using Content.Shared.Mobs.Components;
 
 namespace Content.Shared.Mobs.Systems;
@@ -102,6 +103,11 @@ public partial class MobStateSystem
         //make sure we are allowed to enter the new state
         if (oldState == newState || !component.AllowedStates.Contains(newState))
             return;
+
+        // start-_CorvaxNext: surgery
+        if (oldState == MobState.Dead && HasComp<DebrainedComponent>(target))
+            return;
+        // end-_CorvaxNext: surgery
 
         OnExitState(target, component, oldState);
         component.CurrentState = newState;

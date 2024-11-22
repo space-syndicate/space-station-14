@@ -7,7 +7,7 @@
   abstract: true
   components:
   - type: Damageable
-    damageContainer: Biological
+    damageContainer: OrganicPart # _CorvaxNext: surgery Shitmed
   - type: BodyPart
   - type: ContainerContainer
     containers:

@@ -67,7 +67,11 @@
       - id: Drill
       - id: Saw
       - id: Hemostat
-      - id: ClothingMaskSterile
+      # start-_CorvaxNext: surgery
+      - id: BoneGel
+      - id: BoxLatexGloves
+      - id: BoxSterileMask
+      # end-_CorvaxNext: surgery
 
 - type: entity
   id: CrateMedicalScrubs

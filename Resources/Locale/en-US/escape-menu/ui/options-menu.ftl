@@ -113,6 +113,7 @@ ui-options-header-camera = Camera
 ui-options-header-interaction-basic = Basic Interaction
 ui-options-header-interaction-adv = Advanced Interaction
 ui-options-header-ui = User Interface
+ui-options-header-targeting = Targeting
 ui-options-header-misc = Miscellaneous
 ui-options-header-hotbar = Hotbar
 ui-options-header-shuttle = Shuttle
@@ -164,6 +165,13 @@ ui-options-function-point = Point at location
 ui-options-function-rotate-object-clockwise = Rotate clockwise
 ui-options-function-rotate-object-counterclockwise = Rotate counterclockwise
 ui-options-function-flip-object = Flip
+
+ui-options-function-target-head = Target head
+ui-options-function-target-torso = Target torso
+ui-options-function-target-left-arm = Target left arm
+ui-options-function-target-right-arm = Target right arm
+ui-options-function-target-left-leg = Target left leg
+ui-options-function-target-right-leg = Target right leg
 
 ui-options-function-focus-chat-input-window = Focus chat
 ui-options-function-focus-local-chat-window = Focus chat (IC)

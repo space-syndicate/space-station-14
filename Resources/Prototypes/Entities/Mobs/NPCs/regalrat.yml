@@ -124,6 +124,13 @@
   - type: Sharp
   - type: TTS # Corvax-TTS
     voice: Rat
+  # start-_CorvaxNext: surgery
+  - type: SurgeryTarget
+  - type: UserInterface
+    interfaces:
+      enum.SurgeryUIKey.Key:
+        type: SurgeryBui
+  # end-_CorvaxNext: surgery
 
 - type: entity
   id: MobRatKingBuff
@@ -201,7 +208,11 @@
     - map: [ "enum.DamageStateVisualLayers.BaseUnshaded"]
       state: eyes
       shader: unshaded
-
+  - type: SurgeryTarget
+  - type: UserInterface
+    interfaces:
+      enum.SurgeryUIKey.Key:
+        type: SurgeryBui
   - type: SpriteMovement
     movementLayers:
       movement:

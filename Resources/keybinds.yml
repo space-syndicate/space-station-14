@@ -70,21 +70,27 @@ binds:
 - function: CameraRotateLeft
   type: State
   key: NumpadNum7
+  mod1: Control
 - function: CameraRotateRight
   type: State
   key: NumpadNum9
+  mod1: Control
 - function: CameraReset
   type: State
   key: NumpadNum8
+  mod1: Control
 - function: ZoomOut
   type: State
   key: NumpadNum4
+  mod1: Control
 - function: ZoomIn
   type: State
   key: NumpadNum6
+  mod1: Control
 - function: ResetZoom
   type: State
   key: NumpadNum5
+  mod1: Control
 # Misc
 - function: ShowEscapeMenu
   type: State
@@ -584,6 +590,25 @@ binds:
   type: State
   key: MouseRight
   canFocus: true
+# _CorvaxNext: surgery Targeting
+- function: TargetHead
+  type: State
+  key: NumpadNum8
+- function: TargetTorso
+  type: State
+  key: NumpadNum5
+- function: TargetLeftArm
+  type: State
+  key: NumpadNum6
+- function: TargetRightArm
+  type: State
+  key: NumpadNum4
+- function: TargetLeftLeg
+  type: State
+  key: NumpadNum3
+- function: TargetRightLeg
+  type: State
+  key: NumpadNum1
 - function: OfferItem # Corvax-Next-Offer
   type: State
   key: F

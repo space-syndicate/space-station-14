@@ -38,6 +38,14 @@ public sealed partial class HealthAnalyzerComponent : Component
     [DataField]
     public EntityUid? ScannedEntity;
 
+    // start-_CorvaxNext: surgery
+    /// <summary>
+    /// The body part that is currently being scanned.
+    /// </summary>
+    [DataField]
+    public EntityUid? CurrentBodyPart;
+    // end-_CorvaxNext: surgery
+
     /// <summary>
     /// The maximum range in tiles at which the analyzer can receive continuous updates
     /// </summary>

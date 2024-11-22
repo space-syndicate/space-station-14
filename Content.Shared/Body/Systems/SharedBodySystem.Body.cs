@@ -1,20 +1,27 @@
 using System.Linq;
 using System.Numerics;
+using Content.Shared._CorvaxNext.Targeting;
 using Content.Shared.Body.Components;
 using Content.Shared.Body.Organ;
 using Content.Shared.Body.Part;
 using Content.Shared.Body.Prototypes;
+using Content.Shared.Containers.ItemSlots;
+using Content.Shared.Damage;
 using Content.Shared.DragDrop;
+using Content.Shared.FixedPoint;
 using Content.Shared.Gibbing.Components;
 using Content.Shared.Gibbing.Events;
 using Content.Shared.Gibbing.Systems;
+using Content.Shared.Humanoid;
+using Content.Shared.Humanoid.Events;
 using Content.Shared.Inventory;
+using Content.Shared.Standing;
 using Robust.Shared.Audio;
 using Robust.Shared.Audio.Systems;
 using Robust.Shared.Containers;
 using Robust.Shared.Map;
 using Robust.Shared.Utility;
-
+using Robust.Shared.Timing;
 namespace Content.Shared.Body.Systems;
 
 public partial class SharedBodySystem
@@ -27,9 +34,10 @@ public partial class SharedBodySystem
      */
 
     [Dependency] private readonly InventorySystem _inventory = default!;
+    [Dependency] private readonly ItemSlotsSystem _slots = default!;
     [Dependency] private readonly GibbingSystem _gibbingSystem = default!;
     [Dependency] private readonly SharedAudioSystem _audioSystem = default!;
-
+    [Dependency] private readonly IGameTiming _gameTiming = default!;
     private const float GibletLaunchImpulse = 8;
     private const float GibletLaunchImpulseVariance = 3;
 
@@ -42,6 +50,8 @@ public partial class SharedBodySystem
         SubscribeLocalEvent<BodyComponent, ComponentInit>(OnBodyInit);
         SubscribeLocalEvent<BodyComponent, MapInitEvent>(OnBodyMapInit);
         SubscribeLocalEvent<BodyComponent, CanDragEvent>(OnBodyCanDrag);
+        SubscribeLocalEvent<BodyComponent, StandAttemptEvent>(OnStandAttempt); // _CorvaxNext: surgery
+        SubscribeLocalEvent<BodyComponent, ProfileLoadFinishedEvent>(OnProfileLoadFinished); // _CorvaxNext: surgery
     }
 
     private void OnBodyInserted(Entity<BodyComponent> ent, ref EntInsertedIntoContainerMessage args)
@@ -115,11 +125,11 @@ public partial class SharedBodySystem
         var rootPartUid = SpawnInContainerOrDrop(protoRoot.Part, bodyEntity, BodyRootContainerId);
         var rootPart = Comp<BodyPartComponent>(rootPartUid);
         rootPart.Body = bodyEntity;
+        rootPart.OriginalBody = bodyEntity;
         Dirty(rootPartUid, rootPart);
-
         // Setup the rest of the body entities.
         SetupOrgans((rootPartUid, rootPart), protoRoot.Organs);
-        MapInitParts(rootPartUid, prototype);
+        MapInitParts(rootPartUid, rootPart, prototype);
     }
 
     private void OnBodyCanDrag(Entity<BodyComponent> ent, ref CanDragEvent args)
@@ -127,10 +137,18 @@ public partial class SharedBodySystem
         args.Handled = true;
     }
 
+    // start-_CorvaxNext: surgery
+    private void OnStandAttempt(Entity<BodyComponent> ent, ref StandAttemptEvent args)
+    {
+        if (ent.Comp.LegEntities.Count == 0)
+            args.Cancel();
+    }
+    // end-_CorvaxNext: surgery
+
     /// <summary>
     /// Sets up all of the relevant body parts for a particular body entity and root part.
     /// </summary>
-    private void MapInitParts(EntityUid rootPartId, BodyPrototype prototype)
+    private void MapInitParts(EntityUid rootPartId, BodyPartComponent rootPart, BodyPrototype prototype)
     {
         // Start at the root part and traverse the body graph, setting up parts as we go.
         // Basic BFS pathfind.
@@ -168,6 +186,9 @@ public partial class SharedBodySystem
 
                 var childPartComponent = Comp<BodyPartComponent>(childPart);
                 var partSlot = CreatePartSlot(parentEntity, connection, childPartComponent.PartType, parentPartComponent);
+                childPartComponent.ParentSlot = partSlot;
+                childPartComponent.OriginalBody = rootPart.Body;
+                Dirty(childPart, childPartComponent);
                 var cont = Containers.GetContainer(parentEntity, GetPartSlotContainerId(connection));
 
                 if (partSlot is null || !Containers.Insert(childPart, cont))
@@ -176,6 +197,22 @@ public partial class SharedBodySystem
                     QueueDel(childPart);
                     continue;
                 }
+
+                // // start-_CorvaxNext: surgery
+                // if (TryComp(parentPartComponent.Body, out HumanoidAppearanceComponent? bodyAppearance))
+                // {
+                //     var appearance = AddComp<BodyPartAppearanceComponent>(childPart);
+                //     appearance.OriginalBody = childPartComponent.OriginalBody;
+                //     appearance.Color = bodyAppearance.SkinColor;
+                //
+                //     var symmetry = ((BodyPartSymmetry) childPartComponent.Symmetry).ToString();
+                //     if (symmetry == "None")
+                //         symmetry = "";
+                //     appearance.ID = "removed" + symmetry + ((BodyPartType) childPartComponent.PartType).ToString();
+                //
+                //     Dirty(childPart, appearance);
+                // }
+                // // end-_CorvaxNext: surgery
 
                 // Add organs
                 SetupOrgans((childPart, childPartComponent), connectionSlot.Organs);
@@ -233,11 +270,11 @@ public partial class SharedBodySystem
     {
         if (id is null
             || !Resolve(id.Value, ref body, logMissing: false)
+            || body is null
+            || body.RootContainer == default
             || body.RootContainer.ContainedEntity is null
             || !Resolve(body.RootContainer.ContainedEntity.Value, ref rootPart))
-        {
             yield break;
-        }
 
         foreach (var child in GetBodyPartChildren(body.RootContainer.ContainedEntity.Value, rootPart))
         {
@@ -291,7 +328,9 @@ public partial class SharedBodySystem
         Vector2? splatDirection = null,
         float splatModifier = 1,
         Angle splatCone = default,
-        SoundSpecifier? gibSoundOverride = null)
+        SoundSpecifier? gibSoundOverride = null,
+        GibType gib = GibType.Gib,
+        GibContentsOption contents = GibContentsOption.Drop)
     {
         var gibs = new HashSet<EntityUid>();
 
@@ -308,9 +347,9 @@ public partial class SharedBodySystem
         foreach (var part in parts)
         {
 
-            _gibbingSystem.TryGibEntityWithRef(bodyId, part.Id, GibType.Gib, GibContentsOption.Skip, ref gibs,
-                playAudio: false, launchGibs:true, launchDirection:splatDirection, launchImpulse: GibletLaunchImpulse * splatModifier,
-                launchImpulseVariance:GibletLaunchImpulseVariance, launchCone: splatCone);
+            _gibbingSystem.TryGibEntityWithRef(bodyId, part.Id, gib, contents, ref gibs,
+                playAudio: false, launchGibs: true, launchDirection: splatDirection, launchImpulse: GibletLaunchImpulse * splatModifier,
+                launchImpulseVariance: GibletLaunchImpulseVariance, launchCone: splatCone);
 
             if (!gibOrgans)
                 continue;
@@ -319,7 +358,7 @@ public partial class SharedBodySystem
             {
                 _gibbingSystem.TryGibEntityWithRef(bodyId, organ.Id, GibType.Drop, GibContentsOption.Skip,
                     ref gibs, playAudio: false, launchImpulse: GibletLaunchImpulse * splatModifier,
-                    launchImpulseVariance:GibletLaunchImpulseVariance, launchCone: splatCone);
+                    launchImpulseVariance: GibletLaunchImpulseVariance, launchCone: splatCone);
             }
         }
 
@@ -335,4 +374,65 @@ public partial class SharedBodySystem
         _audioSystem.PlayPredicted(gibSoundOverride, bodyTransform.Coordinates, null);
         return gibs;
     }
+
+    // start-_CorvaxNext: surgery
+    public virtual HashSet<EntityUid> GibPart(
+        EntityUid partId,
+        BodyPartComponent? part = null,
+        bool launchGibs = true,
+        Vector2? splatDirection = null,
+        float splatModifier = 1,
+        Angle splatCone = default,
+        SoundSpecifier? gibSoundOverride = null)
+    {
+        var gibs = new HashSet<EntityUid>();
+
+        if (!Resolve(partId, ref part, logMissing: false))
+            return gibs;
+
+        if (part.Body is { } bodyEnt)
+        {
+            if (IsPartRoot(bodyEnt, partId, part: part))
+                return gibs;
+
+            RemovePartChildren((partId, part), bodyEnt);
+
+            _gibbingSystem.TryGibEntityWithRef(partId,
+                partId,
+                GibType.Gib,
+                GibContentsOption.Drop,
+                ref gibs,
+                playAudio: true,
+                launchGibs: true,
+                launchDirection: splatDirection,
+                launchImpulse: GibletLaunchImpulse * splatModifier,
+                launchImpulseVariance: GibletLaunchImpulseVariance,
+                launchCone: splatCone);
+        }
+
+        if (HasComp<InventoryComponent>(partId))
+        {
+            foreach (var item in _inventory.GetHandOrInventoryEntities((partId)))
+            {
+                SharedTransform.AttachToGridOrMap(item);
+                gibs.Add(item);
+            }
+        }
+
+        _audioSystem.PlayPredicted(gibSoundOverride, Transform(partId).Coordinates, null);
+        return gibs;
+    }
+
+    private void OnProfileLoadFinished(EntityUid uid, BodyComponent component, ProfileLoadFinishedEvent args)
+    {
+        if (!HasComp<HumanoidAppearanceComponent>(uid)
+            || TerminatingOrDeleted(uid))
+            return;
+
+        foreach (var part in GetBodyChildren(uid, component))
+        {
+            EnsureComp<BodyPartAppearanceComponent>(part.Id);
+        }
+    }
+    // end-_CorvaxNext: surgery
 }

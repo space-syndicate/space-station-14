@@ -30,6 +30,7 @@ public sealed partial class HandsComponent : Component
     /// <summary>
     ///     List of hand-names. These are keys for <see cref="Hands"/>. The order of this list determines the order in which hands are iterated over.
     /// </summary>
+    [ViewVariables]
     public List<string> SortedHands = new();
 
     /// <summary>

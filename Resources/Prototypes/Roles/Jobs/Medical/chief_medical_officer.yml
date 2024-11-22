@@ -36,7 +36,12 @@
     implants: [ MindShieldImplant ]
   - !type:AddComponentSpecial
     components:
-      - type: CommandStaff
+    - type: CommandStaff
+    #start-_CorvaxNext: surgery
+    #- type: CPRTraining
+    - type: SurgerySpeedModifier
+      SpeedModifier: 2.5
+    #end-_CorvaxNext: surgery
 
 - type: startingGear
   id: CMOGear

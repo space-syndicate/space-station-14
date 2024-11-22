@@ -1,5 +1,3 @@
-# TODO: Add descriptions (many)
-# TODO BODY: Part damage
 - type: entity
   id: BasePart
   parent: BaseItem
@@ -7,9 +5,15 @@
   abstract: true
   components:
   - type: Damageable
-    damageContainer: Biological
+    damageContainer: OrganicPart # _CorvaxNext: surgery
   - type: BodyPart
-  - type: Gibbable
+  # start-_CorvaxNext: surgery
+  - type: SurgeryTool
+    startSound:
+      path: /Audio/Medical/Surgery/organ1.ogg
+    endSound:
+      path: /Audio/Medical/Surgery/organ2.ogg
+  # end-_CorvaxNext: surgery
   - type: ContainerContainer
     containers:
       bodypart: !type:Container
@@ -19,6 +23,38 @@
   - type: Tag
     tags:
       - Trash
+  # start-_CorvaxNext: surgery
+  - type: Gibbable # _CorvaxNext: surgery
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTypeTrigger
+        damageType: Blunt
+        damage: 150 # was 75 . TODO gettin dissapear if lower than dettach health
+      behaviors:
+      - !type:GibPartBehavior { }
+    - trigger:
+        !type:DamageTypeTrigger
+        damageType: Slash
+        damage: 200 # was 100 . TODO gettin dissapear if lower than dettach health
+      behaviors:
+      - !type:GibPartBehavior { }
+    - trigger:
+        !type:DamageTypeTrigger
+        damageType: Heat
+        damage: 400 # was 200 . TODO gettin dissapear if lower than dettach health
+      behaviors:
+      - !type:SpawnEntitiesBehavior
+        spawnInContainer: true
+        spawn:
+          Ash:
+            min: 1
+            max: 1
+      - !type:BurnBodyBehavior { }
+      - !type:PlaySoundBehavior
+        sound:
+          collection: MeatLaserImpact
+  # end-_CorvaxNext: surgery
 
 - type: entity
   id: BaseTorso
@@ -28,6 +64,13 @@
   components:
   - type: BodyPart
     partType: Torso
+  # start-_CorvaxNext: surgery
+    toolName: "a torso"
+    containerName: "torso_slot"
+  - type: ContainerContainer
+    containers:
+      torso_slot: !type:ContainerSlot {}
+  # end-_CorvaxNext: surgery
 
 - type: entity
   id: BaseHead
@@ -37,6 +80,7 @@
   components:
   - type: BodyPart
     partType: Head
+    toolName: "a head" # _CorvaxNext: surgery
     vital: true
   - type: Input
     context: "ghost"
@@ -53,6 +97,7 @@
   - type: BodyPart
     partType: Arm
     symmetry: Left
+    toolName: "a left arm" # _CorvaxNext: surgery
 
 - type: entity
   id: BaseRightArm
@@ -63,6 +108,7 @@
   - type: BodyPart
     partType: Arm
     symmetry: Right
+    toolName: "a right arm" # _CorvaxNext: surgery
 
 - type: entity
   id: BaseLeftHand
@@ -73,6 +119,7 @@
   - type: BodyPart
     partType: Hand
     symmetry: Left
+    toolName: "a left hand" # _CorvaxNext: surgery
 
 - type: entity
   id: BaseRightHand
@@ -83,6 +130,7 @@
   - type: BodyPart
     partType: Hand
     symmetry: Right
+    toolName: "a right hand" # _CorvaxNext: surgery
 
 - type: entity
   id: BaseLeftLeg
@@ -93,6 +141,7 @@
   - type: BodyPart
     partType: Leg
     symmetry: Left
+    toolName: "a left leg" # _CorvaxNext: surgery
   - type: MovementBodyPart
 
 - type: entity
@@ -104,6 +153,7 @@
   - type: BodyPart
     partType: Leg
     symmetry: Right
+    toolName: "a right leg" # _CorvaxNext: surgery
   - type: MovementBodyPart
 
 - type: entity
@@ -115,6 +165,7 @@
   - type: BodyPart
     partType: Foot
     symmetry: Left
+    toolName: "a left foot" # _CorvaxNext: surgery
 
 - type: entity
   id: BaseRightFoot
@@ -125,3 +176,4 @@
   - type: BodyPart
     partType: Foot
     symmetry: Right
+    toolName: "a right foot" # _CorvaxNext: surgery
