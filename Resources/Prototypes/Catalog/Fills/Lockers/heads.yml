@@ -40,21 +40,21 @@
       prob: 0.25
     - id: ClothingBeltSheathFilled
     - id: ClothingHeadsetAltCommand
-    - id: ClothingOuterArmorCaptainCarapace
+#    - id: ClothingOuterArmorCaptainCarapace # Corvax-Next-CaptainDrobe
     - id: CommsComputerCircuitboard
     - id: DoorRemoteCommand
-    - id: MedalCase
+#    - id: MedalCase # Corvax-Next-CaptainDrobe
     - id: NukeDisk
     - id: PinpointerNuclear
     - id: PlushieNuke
       prob: 0.1
-    - id: RubberStampCaptain
+#    - id: RubberStampCaptain # Corvax-Next-CaptainDrobe
     - id: SpaceCash1000
     - id: WeaponDisabler
-    - id: ClothingEyesGlassesCommand
+#    - id: ClothingEyesGlassesCommand # Corvax-Next-CaptainDrobe
     # Corvax-Resprite-Start
-    - id: ClothingHeadCaptainHat
-    - id: ClothingOuterCoatCaptain
+#    - id: ClothingHeadCaptainHat # Corvax-Next-CaptainDrobe
+#    - id: ClothingOuterCoatCaptain # Corvax-Next-CaptainDrobe
     # Corvax-Resprite-End
 
 # No laser table + Laser table

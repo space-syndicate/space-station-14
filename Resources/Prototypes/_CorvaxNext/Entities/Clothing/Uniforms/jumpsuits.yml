@@ -1,0 +1,32 @@
+- type: entity
+  parent: ClothingUniformBase
+  id: ClothingUniformJumpsuitCommandCaptain
+  name: captain command jumpsuit
+  description: Black suit with gold shoulder straps.
+  components:
+  - type: Sprite
+    sprite: _CorvaxNext/Clothing/Uniforms/Jumpsuit/captain_command.rsi
+  - type: Clothing
+    sprite: _CorvaxNext/Clothing/Uniforms/Jumpsuit/captain_command.rsi
+
+- type: entity
+  parent: ClothingUniformBase
+  id: ClothingUniformJumpsuitWhiteCaptain
+  name: white captain jumpsuit
+  description: Captain white jumpsuit symbolizes that your salary is clearly above the norm.
+  components:
+    - type: Sprite
+      sprite: _CorvaxNext/Clothing/Uniforms/Jumpsuit/captain_white.rsi
+    - type: Clothing
+      sprite: _CorvaxNext/Clothing/Uniforms/Jumpsuit/captain_white.rsi
+
+- type: entity
+  parent: ClothingUniformBase
+  id: ClothingUniformJumpsuitSheriff
+  name: sheriff jumpsuit
+  description: Jumpsuit showing your status is how terrible... the great ruler.
+  components:
+    - type: Sprite
+      sprite: _CorvaxNext/Clothing/Uniforms/Jumpsuit/sheriff.rsi
+    - type: Clothing
+      sprite: _CorvaxNext/Clothing/Uniforms/Jumpsuit/sheriff.rsi

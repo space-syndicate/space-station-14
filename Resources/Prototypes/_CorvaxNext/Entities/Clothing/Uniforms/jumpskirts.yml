@@ -1,0 +1,10 @@
+- type: entity
+  parent: ClothingUniformJumpskirtCaptain
+  id: ClothingUniformJumpskirtWhiteCaptain
+  name: white captain jumpskirt
+  description: White captain jumpsuit skirt symbolizing that your salary clearly exceeds the norm.
+  components:
+  - type: Sprite
+    sprite: _CorvaxNext/Clothing/Uniforms/Jumpskirt/white_captain.rsi
+  - type: Clothing
+    sprite: _CorvaxNext/Clothing/Uniforms/Jumpskirt/white_captain.rsi
