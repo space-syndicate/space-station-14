@@ -20,6 +20,7 @@ public sealed partial class RoboticsConsoleWindow : FancyWindow
     private readonly LockSystem _lock;
     private readonly SpriteSystem _sprite;
 
+    public Action<string>? OnChangeLawsPressed; // Corvax-Next-MutableLaws
     public Action<string>? OnDisablePressed;
     public Action<string>? OnDestroyPressed;
 
@@ -51,6 +52,12 @@ public sealed partial class RoboticsConsoleWindow : FancyWindow
         };
 
         // these won't throw since buttons are only visible if a borg is selected
+        // Corvax-Next-MutableLaws-Start
+        ChangeLawsButton.OnPressed += _ =>
+        {
+            OnChangeLawsPressed?.Invoke(_selected!);
+        };
+        // Corvax-Next-MutableLaws-End
         DisableButton.OnPressed += _ =>
         {
             OnDisablePressed?.Invoke(_selected!);
@@ -80,6 +87,7 @@ public sealed partial class RoboticsConsoleWindow : FancyWindow
         var hasCyborgs = _cyborgs.Count > 0;
         NoCyborgs.Visible = !hasCyborgs;
         CyborgsContainer.Visible = hasCyborgs;
+        ChangeLawsButton.Disabled = !state.HasCircuitBoard; // Corvax-Next-MutableLaws
         PopulateCyborgs();
 
         PopulateData();

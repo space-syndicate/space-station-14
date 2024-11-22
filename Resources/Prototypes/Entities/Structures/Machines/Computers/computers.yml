@@ -1225,6 +1225,21 @@
     access: [["ResearchDirector"]]
   - type: Lock
     unlockOnClick: false
+  # Corvax-Next-MutableLaws-Start
+  - type: ItemSlots
+    slots:
+      circuit_holder:
+        name: circuit-holder
+        whitelist:
+          requireAll: true
+          components:
+          - SiliconLawProvider
+          - Item
+  - type: ContainerContainer
+    containers:
+      circuit_holder: !type:ContainerSlot
+      board: !type:Container
+  # Corvax-Next-MutableLaws-End
 
 - type: entity
   id: StationAiUploadComputer

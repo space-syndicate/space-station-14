@@ -19,11 +19,22 @@ public sealed class RoboticsConsoleState : BoundUserInterfaceState
     /// </summary>
     public Dictionary<string, CyborgControlData> Cyborgs;
 
-    public RoboticsConsoleState(Dictionary<string, CyborgControlData> cyborgs)
+    public bool HasCircuitBoard; // Corvax-Next-MutableLaws
+
+    public RoboticsConsoleState(Dictionary<string, CyborgControlData> cyborgs, bool hasCircuitBoard) // Corvax-Next-MutableLaws
     {
         Cyborgs = cyborgs;
+        HasCircuitBoard = hasCircuitBoard; // Corvax-Next-MutableLaws
     }
 }
+
+// Corvax-Next-MutableLaws-Start
+[Serializable, NetSerializable]
+public sealed class RoboticsConsoleChangeLawsMessage(string address) : BoundUserInterfaceMessage
+{
+    public readonly string Address = address;
+}
+// Corvax-Next-MutableLaws-End
 
 /// <summary>
 /// Message to disable the selected cyborg.
@@ -129,6 +140,9 @@ public static class RoboticsConsoleConstants
     public const string NET_CYBORG_DATA = "cyborg-data";
 
     // sent by robotics console to cyborgs on Cyborg Control frequency
+    public const string NET_CHANGE_LAWS_COMMAND = "cyborg-change-laws"; // Corvax-Next-MutableLaws
     public const string NET_DISABLE_COMMAND = "cyborg-disable";
     public const string NET_DESTROY_COMMAND = "cyborg-destroy";
+
+    public const string NET_CIRCUIT_BOARD = "cyborg-circuit-board"; // Corvax-Next-MutableLaws
 }

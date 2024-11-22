@@ -125,6 +125,30 @@
   - WeaponParticleDecelerator
   - HoloprojectorField
 
+# Corvax-Next-MutableLaws-Start
+- type: technology
+  id: AdvancedRobotics
+  name: research-technology-advanced-robotics
+  icon:
+    sprite: Mobs/Silicon/station_ai.rsi
+    state: ai
+  discipline: Experimental
+  tier: 2
+  cost: 7500
+  recipeUnlocks:
+  - AsimovCircuitBoard
+  - CorporateCircuitBoard
+  - NTDefaultCircuitBoard
+  - CommandmentCircuitBoard
+  - PaladinCircuitBoard
+  - LiveLetLiveCircuitBoard
+  - StationEfficiencyCircuitBoard
+  - RobocopCircuitBoard
+  - DungeonMasterCircuitBoard
+  - ArtistCircuitBoard
+  - NutimovCircuitBoard
+# Corvax-Next-MutableLaws-End
+
 # Tier 3
 
 - type: technology

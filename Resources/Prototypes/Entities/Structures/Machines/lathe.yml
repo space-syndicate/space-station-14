@@ -521,6 +521,19 @@
       - ReagentGrinderIndustrialMachineCircuitboard
       - JukeboxCircuitBoard
       - SalvageExpeditionsComputerCircuitboard # Corvax-Cringe
+      # Corvax-Next-MutableLaws-Start
+      - AsimovCircuitBoard
+      - CorporateCircuitBoard
+      - NTDefaultCircuitBoard
+      - CommandmentCircuitBoard
+      - PaladinCircuitBoard
+      - LiveLetLiveCircuitBoard
+      - StationEfficiencyCircuitBoard
+      - RobocopCircuitBoard
+      - DungeonMasterCircuitBoard
+      - ArtistCircuitBoard
+      - NutimovCircuitBoard
+      # Corvax-Next-MutableLaws-End
   - type: EmagLatheRecipes
     emagDynamicRecipes:
       - ShuttleGunDusterCircuitboard
