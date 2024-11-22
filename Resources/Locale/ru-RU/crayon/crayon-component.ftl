@@ -14,4 +14,4 @@ crayon-category-2-alphanum = Цифры и буквы
 crayon-category-3-symbols = Символы
 crayon-category-4-info = Знаки
 crayon-category-5-graffiti = Граффити
-crayon-category-random = Случайно
+crayon-category-random = Разное
