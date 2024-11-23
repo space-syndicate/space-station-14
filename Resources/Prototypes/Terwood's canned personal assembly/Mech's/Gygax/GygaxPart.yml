@@ -1,0 +1,370 @@
+- type: entity
+  id: BaseGygaxPart
+  parent: BaseMechPart
+  abstract: true
+  components:
+  - type: Sprite
+    drawdepth: Items
+    noRot: false
+    sprite: Objects/Specific/Mech/ripley_construction.rsi
+
+- type: entity
+  id: BaseGygaxPartItem
+  parent: BaseGygaxPart
+  abstract: true
+  components:
+  - type: Item
+    size: Ginormous
+
+- type: entity
+  parent: BaseGygaxPart
+  id: GygaxHarness
+  name: основа гайгекса
+  description: Добавив деталей можно идти кромсать экипаж. А потом доделать меха.
+  components:
+  - type: Appearance
+  - type: ItemMapper
+    mapLayers:
+      ripley_l_arm+o:
+        whitelist:
+          tags:
+          - GygaxLArm
+      ripley_r_arm+o:
+        whitelist:
+          tags:
+          - GygaxRArm
+      ripley_l_leg+o:
+        whitelist:
+          tags:
+          - GygaxLLeg
+      ripley_r_leg+o:
+        whitelist:
+          tags:
+          - GygaxRLeg
+    sprite: Objects/Specific/Mech/ripley_construction.rsi
+  - type: ContainerContainer
+    containers:
+      mech-assembly-container: !type:Container
+  - type: MechAssembly
+    finishedPrototype: GygaxChassis
+    requiredParts:
+      GygaxLArm: false
+      GygaxRArm: false
+      GygaxLLeg: false
+      GygaxRLeg: false
+  - type: Sprite
+    state: ripley_harness+o
+    noRot: true
+- type: latheRecipe
+  id: GygaxHarnessLathe
+  result: GygaxHarness
+  category: Mech
+  completetime: 15
+  materials:
+    Steel: 2000
+    Glass: 1500
+
+- type: entity
+  parent: BaseGygaxPartItem
+  id: GygaxLArm
+  name: левая рука гайгекса
+  description: Левая рука гайгекса. Она должна быть установлена на шасси меха.
+  components:
+  - type: Sprite
+    state: ripley_l_arm
+  - type: Tag
+    tags:
+    - GygaxLArm
+- type: latheRecipe
+  id: GygaxLArmLathe
+  result: GygaxLArm
+  category: Mech
+  completetime: 10
+  materials:
+    Steel: 1100
+    Glass: 800
+
+- type: entity
+  parent: BaseGygaxPartItem
+  id: GygaxLLeg
+  name: левая нога гайгекса
+  description: Левая нога гайгекса. Она должна быть установлена на шасси меха.
+  components:
+  - type: Sprite
+    state: ripley_l_leg
+  - type: Tag
+    tags:
+    - GygaxLLeg
+- type: latheRecipe
+  id: GygaxLLegLathe
+  result: GygaxLLeg
+  category: Mech
+  completetime: 10
+  materials:
+    Steel: 1100
+    Glass: 800
+
+- type: entity
+  parent: BaseGygaxPartItem
+  id: GygaxRLeg
+  name: правая нога гайгекса
+  description: Правая нога гайгекса. Она должна быть установлена на шасси меха.
+  components:
+  - type: Sprite
+    state: ripley_r_leg
+  - type: Tag
+    tags:
+    - GygaxRLeg
+- type: latheRecipe
+  id: GygaxRLegLathe
+  result: GygaxRLeg
+  category: Mech
+  completetime: 10
+  materials:
+    Steel: 1100
+    Glass: 800
+
+- type: entity
+  parent: BaseGygaxPartItem
+  id: GygaxRArm
+  name: правая рука гайгекса
+  description: Правая рука гайгекса. Она должна быть установлена на шасси меха.
+  components:
+  - type: Sprite
+    state: ripley_r_arm
+  - type: Tag
+    tags:
+    - GygaxRArm
+- type: latheRecipe
+  id: RipleyRArm
+  result: RipleyRArm
+  category: Mech
+  completetime: 10
+  materials:
+    Steel: 1100
+    Glass: 800
+
+- type: entity
+  id: GygaxChassis
+  parent: BaseGygaxPart
+  name: шасси гайгекса
+  description: Находящийся в стадии разработки мех гайгекса.
+  components:
+  - type: Appearance
+  - type: ContainerContainer
+    containers:
+      battery-container: !type:Container
+  - type: MechAssemblyVisuals
+    statePrefix: ripley
+  - type: Sprite
+    noRot: true
+    state: ripley0
+  - type: Construction
+    graph: Gygax
+    node: start
+    defaultTarget: ripley
+
+- type: entity
+  id: GygaxCentralElectronics
+  parent: BaseElectronics
+  name: главный контрольный модуль гайгекса
+  description: The electrical control center for the gygax mech.
+  components:
+    - type: Item
+      storedRotation: 0
+    - type: Sprite
+      sprite: Objects/Misc/module.rsi
+      state: mainboard
+    - type: Tag
+      tags:
+      - GygaxCentralControlModule
+    - type: GuideHelp
+      guides:
+      - Robotics
+- type: latheRecipe
+  id: GygaxCentralElectronicsLathe
+  result: GygaxCentralElectronics
+  category: Circuitry
+  completetime: 4
+  materials:
+    Steel: 100
+    Glass: 500
+    Gold: 100
+
+- type: entity
+  id: GygaxPeripheralsElectronics
+  parent: BaseElectronics
+  name: периферийный контрольный модуль гайгекса
+  description: The electrical peripherals control for the gygax mech.
+  components:
+    - type: Sprite
+      sprite: Objects/Misc/module.rsi
+      state: id_mod
+    - type: Tag
+      tags:
+      - GygaxPeripheralsControlModule
+    - type: GuideHelp
+      guides:
+      - Robotics
+- type: latheRecipe
+  id: GygaxCentralElectronicsLathe
+  result: GygaxCentralElectronics
+  category: Circuitry
+  completetime: 4
+  materials:
+    Steel: 100
+    Glass: 500
+    Gold: 100
+
+- type: constructionGraph
+  id: GygaxCreate
+  start: start
+  graph:
+  - node: start
+    edges:
+    - to: ripley
+      steps:
+      - tool: Anchoring
+        doAfter: 1
+        completed:
+        - !type:VisualizerDataInt
+          key: "enum.MechAssemblyVisuals.State"
+          data: 1
+
+      - tool: Screwing
+        doAfter: 1
+        completed:
+        - !type:VisualizerDataInt
+          key: "enum.MechAssemblyVisuals.State"
+          data: 2
+
+      - material: Cable
+        completed:
+        - !type:VisualizerDataInt
+          key: "enum.MechAssemblyVisuals.State"
+          data: 3
+
+      - tool: Cutting
+        doAfter: 1
+        completed:
+        - !type:VisualizerDataInt
+          key: "enum.MechAssemblyVisuals.State"
+          data: 4
+
+      - tag: GygaxCentralControlModule
+        name: gygax central control module
+        icon:
+          sprite: "Objects/Misc/module.rsi"
+          state: "mainboard"
+        completed:
+        - !type:VisualizerDataInt
+          key: "enum.MechAssemblyVisuals.State"
+          data: 5
+
+      - tool: Screwing
+        doAfter: 1
+        completed:
+        - !type:VisualizerDataInt
+          key: "enum.MechAssemblyVisuals.State"
+          data: 6
+
+      - tag: GygaxPeripheralsControlModule
+        name: gygax peripherals control module
+        icon:
+          sprite: "Objects/Misc/module.rsi"
+          state: id_mod
+        completed:
+        - !type:VisualizerDataInt
+          key: "enum.MechAssemblyVisuals.State"
+          data: 7
+
+      - tool: Screwing
+        doAfter: 1
+        completed:
+        - !type:VisualizerDataInt
+          key: "enum.MechAssemblyVisuals.State"
+          data: 12
+
+      - component: PowerCell
+        name: power cell
+        store: battery-container
+        icon:
+          sprite: Objects/Power/power_cells.rsi
+          state: small
+        completed:
+        - !type:VisualizerDataInt
+          key: "enum.MechAssemblyVisuals.State"
+          data: 13
+
+      - tool: Screwing
+        doAfter: 1
+        completed:
+        - !type:VisualizerDataInt
+          key: "enum.MechAssemblyVisuals.State"
+          data: 14
+
+      - material: Steel
+        amount: 5
+        completed:
+        - !type:VisualizerDataInt
+          key: "enum.MechAssemblyVisuals.State"
+          data: 15
+
+      - tool: Anchoring
+        doAfter: 1
+        completed:
+        - !type:VisualizerDataInt
+          key: "enum.MechAssemblyVisuals.State"
+          data: 16
+
+      - tool: Welding
+        doAfter: 1
+        completed:
+        - !type:VisualizerDataInt
+          key: "enum.MechAssemblyVisuals.State"
+          data: 16
+
+      - material: MetalRod
+        amount: 10
+        completed:
+        - !type:VisualizerDataInt
+          key: "enum.MechAssemblyVisuals.State"
+          data: 16
+
+      - tag: MechaWeaponSolaris
+        name: лазерная пушка «Солярис»
+        icon:
+          sprite: "Objects/Specific/Mech/mecha_equipment.rsi"
+          state: mecha_laser
+        completed:
+        - !type:VisualizerDataInt
+          key: "enum.MechAssemblyVisuals.State"
+          data: 16
+
+      - tag: MechaWeaponPacifier
+        name: навесной тазер PBT «Усмиритель»
+        icon:
+          sprite: "Objects/Specific/Mech/mecha_equipment.rsi"
+          state: mecha_taser
+        completed:
+        - !type:VisualizerDataInt
+          key: "enum.MechAssemblyVisuals.State"
+          data: 16
+
+      - tag: MechaWeaponIon
+        name: ионная тяжёлая пушка М-4
+        icon:
+          sprite: "Objects/Specific/Mech/mecha_equipment.rsi"
+          state: mecha_ion
+        completed:
+        - !type:VisualizerDataInt
+          key: "enum.MechAssemblyVisuals.State"
+          data: 16
+
+      - tool: Welding
+        doAfter: 1
+
+  - node: gygax
+    actions:
+    - !type:BuildMech
+      mechPrototype: MechTWRemakeGygaxAllModules

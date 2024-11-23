@@ -1,0 +1,20 @@
+- type: technology
+  id: ResearchGygax
+  name: Модель боевого меха \"Гайгекс БСУ\"
+  icon:
+    sprite: Objects/Specific/Mech/mecha.rsi
+    state: gygax
+  discipline: Arsenal
+  tier: 1
+  cost: 8000
+  recipeUnlocks:
+  - GygaxHarness
+  - GygaxLArm
+  - GygaxLLeg
+  - GygaxRLeg
+  - GygaxRArm
+  - GygaxCentralElectronics
+  - GygaxPeripheralsElectronics
+  - MechaWeaponSolaris
+  - MechaWeaponPacifier
+  - MechaWeaponIon

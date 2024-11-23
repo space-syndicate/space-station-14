@@ -1,0 +1,99 @@
+- type: entity
+  id: BaseMechTWRemake
+  save: false
+  abstract: true
+  components:
+  - type: MobMover
+  - type: Mech
+  - type: MechAir
+  - type: AirFilter
+    gases:
+    - CarbonDioxide
+    - Plasma
+    - Tritium
+    - WaterVapor
+    - Ammonia
+    - NitrousOxide
+    - Frezon
+    overflowGases:
+    - Nitrogen
+    - CarbonDioxide
+    - Plasma
+    - Tritium
+    - WaterVapor
+    - Ammonia
+    - NitrousOxide
+    - Frezon
+  - type: AirIntake
+  - type: AtmosDevice
+    requireAnchored: false
+    joinSystem: true
+  - type: DoAfter
+  - type: Repairable
+    fuelCost: 45
+    doAfterDelay: 15
+  - type: UserInterface
+    interfaces:
+      enum.MechUiKey.Key:
+        type: MechBoundUserInterface
+  - type: MeleeWeapon
+    hidden: false
+    attackRate: 1.25
+    damage:
+      types:
+        Blunt: 25
+        Structural: 20
+    soundHit:
+      collection: MetalThud
+  - type: Puller
+    needsHands: false
+  - type: InputMover
+  - type: InteractionOutline
+  - type: MovementSpeedModifier
+    baseWalkSpeed: 1
+    baseSprintSpeed: 2
+  - type: Tag
+    tags:
+    - DoorBumpOpener
+    - FootstepSound
+  - type: Pullable
+  - type: Physics
+    bodyType: KinematicController
+  - type: Clickable
+  - type: WiresPanel
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeCircle
+          radius: 0.45
+        density: 1000
+        mask:
+        - MobMask
+        layer:
+        - MobLayer
+  - type: Appearance
+  - type: ContainerContainer
+    containers:
+      mech-pilot-slot: !type:ContainerSlot
+      mech-equipment-container: !type:Container
+      mech-battery-slot: !type:ContainerSlot
+  - type: Damageable
+    damageContainer: Inorganic
+    damageModifierSet: Metallic
+  - type: FootstepModifier
+    footstepSoundCollection:
+      path: /Audio/Mecha/mechmove03.ogg
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 500
+      behaviors:
+      - !type:PlaySoundBehavior
+        sound:
+          collection: MetalBreak
+      - !type:ChangeConstructionNodeBehavior
+        node: start
+      - !type:DoActsBehavior
+        acts: ["Destruction"]

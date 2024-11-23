@@ -1,0 +1,184 @@
+- type: entity
+  id: MechTWRemakeGygax
+  parent: BaseMechTWRemake
+  name: Гайгекс БСУ
+  suffix: Без батареи, Без модулей
+  description: Тяжёлый мех для сил Службы Безопасности. Для стрельбы использует специальную микрореакторную Мех-батарею. Может быть снаряжён только лазерными мех-пушками. БСУ значит Боевая Самоходная Установка.
+  components:
+  - type: Clickable
+  - type: InteractionOutline
+  - type: Pullable
+  - type: Sprite
+    drawdepth: Mobs
+    noRot: true
+    sprite: Objects/Specific/Mech/mecha.rsi
+    layers:
+    - map: [ "enum.MechVisualLayers.Base" ]
+      state: gygax
+  - type: FootstepModifier
+    footstepSoundCollection:
+      path: /Audio/Mecha/sound_mecha_powerloader_step.ogg
+  - type: Mech
+    baseState: gygax
+    openState: gygax-open
+    brokenState: gygax-broken
+    mechToPilotDamageMultiplier: 0.01
+    pilotWhitelist:
+      components:
+        - HumanoidAppearance
+  - type: MeleeWeapon
+    hidden: false
+    attackRate: 0.3
+    damage:
+      types:
+        Slash: 10
+        Blunt: 50
+        Structural: 150
+  - type: MovementSpeedModifier
+    baseWalkSpeed: 1.10
+    baseSprintSpeed: 2.10
+  - type: ContainerContainer
+    containers:
+      machine_board: !type:Container
+      machine_parts: !type:Container
+      mech-battery-slot: !type:ContainerSlot
+  - type: ItemSlots
+    slots:
+      gun_magazine:
+        name: Magazine
+        insertSound: /Audio/Weapons/Guns/MagIn/batrifle_magin.ogg
+        ejectSound: /Audio/Weapons/Guns/MagOut/batrifle_magout.ogg
+        whitelist:
+          tags:
+            - PowerCell
+            - PowerCellSmall
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 850
+
+- type: entity
+  id: MechTWRemakeGygaxBattery
+  parent: MechTWRemakeGygax
+  suffix: Батарея, Без модулей
+  components:
+  - type: ContainerFill
+    containers:
+      mech-battery-slot:
+      - PowerCellHigh
+  - type: MeleeWeapon
+    hidden: false
+    attackRate: 1.25
+    damage:
+      types:
+        Slash: 10
+        Blunt: 15
+        Structural: 150
+
+# Усмиритель + Солярис + Ион М-4
+- type: entity
+  id: MechTWRemakeGygaxAllModules
+  parent: MechTWRemakeGygax
+  suffix: Без батареи, Все модули
+  components:
+  - type: Gun
+    fireRate: 1.5
+    soundGunshot:
+      path: /Audio/Weapons/Guns/Gunshots/laser_cannon.ogg
+    useKey: false
+  - type: BatteryWeaponFireModes
+    fireModes:
+    - proto: BulletTaser
+      fireCost: 500
+    - proto: BulletSolarisMecha
+      fireCost: 125
+    - proto: BulletIonMecha
+      fireCost: 300
+  - type: MeleeWeapon
+    hidden: false
+    attackRate: 0.3
+    damage:
+      types:
+        Slash: 10
+        Blunt: 50
+        Structural: 150
+
+# Тёмный Гигакс
+- type: entity
+  id: MechTWRemakeDarkGygax
+  parent: MechTWRemakeGygax
+  suffix: Батарея, Все модули
+  name: тёмный Гайгекс
+  suffix: Без батареи, Без модулей
+  description: Тяжёлый мех для сил Ядерных Оперативников. Для стрельбы использует специальную микрореакторную Мех-батарею. Может быть снаряжён только лазерными мех-пушками. БСУ значит Боевая Самоходная Установка.
+  components:
+  - type: Clickable
+  - type: InteractionOutline
+  - type: Pullable
+  - type: Sprite
+    drawdepth: Mobs
+    noRot: true
+    sprite: Objects/Specific/Mech/mecha.rsi
+    layers:
+    - map: [ "enum.MechVisualLayers.Base" ]
+      state: darkgygax
+  - type: FootstepModifier
+    footstepSoundCollection:
+      path: /Audio/Mecha/sound_mecha_powerloader_step.ogg
+  - type: Mech
+    baseState: darkgygax
+    openState: darkgygax-open
+    brokenState: darkgygax-broken
+    mechToPilotDamageMultiplier: 0.01
+    pilotWhitelist:
+      components:
+        - HumanoidAppearance
+  - type: MeleeWeapon
+    hidden: false
+    attackRate: 0.3
+    damage:
+      types:
+        Slash: 10
+        Blunt: 50
+        Structural: 150
+  - type: MovementSpeedModifier
+    baseWalkSpeed: 1.10
+    baseSprintSpeed: 2.10
+  - type: ContainerContainer
+    containers:
+      machine_board: !type:Container
+      machine_parts: !type:Container
+      mech-battery-slot: !type:ContainerSlot
+  - type: ItemSlots
+    slots:
+      gun_magazine:
+        name: Magazine
+        insertSound: /Audio/Weapons/Guns/MagIn/batrifle_magin.ogg
+        ejectSound: /Audio/Weapons/Guns/MagOut/batrifle_magout.ogg
+        whitelist:
+          tags:
+            - PowerCell
+            - PowerCellSmall
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 850
+  - type: Gun
+    fireRate: 1.5
+    soundGunshot:
+      path: /Audio/Weapons/Guns/Gunshots/laser_cannon.ogg
+    useKey: false
+  - type: BatteryWeaponFireModes
+    fireModes:
+    - proto: BulletTaser
+      fireCost: 500
+    - proto: BulletSolarisMecha
+      fireCost: 125
+    - proto: BulletIonMecha
+      fireCost: 300
+  - type: ContainerFill
+    containers:
+      mech-battery-slot:
+      - PowerCellHigh

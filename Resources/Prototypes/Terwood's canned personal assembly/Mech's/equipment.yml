@@ -1,0 +1,141 @@
+#==============Солярис==============
+- type: entity
+  name: лазерная пушка «Солярис»
+  parent: BaseItem
+  id: MechaWeaponSolaris
+  description: Экспериментальная боевая навесная лазерная пушка, наносящая большой урон, но дорогая в производстве. Только для гигакса и фазона!
+  components:
+  - type: Sprite
+    sprite: Objects/Specific/Mech/mecha_equipment.rsi
+    state: mecha_laser
+  - type: Item
+    size: Normal
+  - type: Tag
+    tags:
+    - MechaWeaponSolaris
+
+- type: entity
+  id: BulletSolarisMecha
+  parent: BaseBullet
+  noSpawn: true
+  components:
+  - type: Sprite
+    noRot: false
+    sprite: Objects/Weapons/Guns/Projectiles/projectiles.rsi
+    layers:
+    - state: bolt
+      shader: unshaded
+  - type: Projectile
+    impactEffect: BulletImpactEffectKinetic
+    damage:
+      types:
+        Heat: 27
+        Structural: 10
+  - type: Ammo
+    muzzleFlash: HitscanEffect
+  - type: PointLight
+    radius: 2.5
+    color: red
+    energy: 0.25
+  - type: GatheringProjectile
+#=============Усмиритель=============
+- type: entity
+  name: навесной тазер PBT «Усмиритель»
+  parent: BaseItem
+  id: MechaWeaponPacifier
+  description: Навесной нелетальный тазер, позволяющий оглушить злоумышленников. Только для гигакса!
+  components:
+  - type: Sprite
+    sprite: Objects/Specific/Mech/mecha_equipment.rsi
+    state: mecha_taser
+  - type: Item
+    size: Normal
+  - type: Tag
+    tags:
+    - MechaWeaponPacifier
+#===============Ион М-4===============
+- type: entity
+  name: ионная тяжёлая пушка М-4
+  parent: BaseItem
+  id: MechaWeaponIon
+  description: Навесное ионное орудие, действующее по тому же принципу, что и ручной ионный карабин. Чрезвычайно эффективно против синтетиков, роботов и других мехов. Только для гигакса или фазона!
+  components:
+  - type: Sprite
+    sprite: Objects/Specific/Mech/mecha_equipment.rsi
+    state: mecha_ion
+  - type: Item
+    size: Normal
+  - type: Tag
+    tags:
+    - MechaWeaponIon
+
+- type: entity
+  id: BulletIonMecha
+  parent: BaseBullet
+  noSpawn: true
+  components:
+  - type: Sprite
+    noRot: false
+    sprite: Objects/Weapons/Guns/Projectiles/projectiles.rsi
+    layers:
+    - state: bolt
+      shader: unshaded
+  - type: Projectile
+    impactEffect: BulletImpactEffectKinetic
+    damage:
+      types:
+        Heat: 50
+        Structural: 20
+  - type: Ammo
+    muzzleFlash: HitscanEffect
+  - type: PointLight
+    radius: 2.5
+    color: blue
+    energy: 0.25
+  - type: GatheringProjectile
+#=============Акселератор=============
+- type: entity
+  name: кинетический акселератор
+  parent: BaseItem
+  id: MechaWeaponAccelerator
+  description: Кинетический акселератор, версия для использования на мехах. Только для кларка и огнеборца!
+  components:
+  - type: Sprite
+    sprite: Objects/Specific/Mech/mecha_equipment.rsi
+    state: mecha_kineticgun
+
+  - type: Item
+    size: Normal
+  - type: Tag
+    tags:
+    - MechaWeapon
+#=============Плазм.Резак=============
+- type: entity
+  name: Плазменный резак
+  parent: BaseItem
+  id: MechaWeaponCutter
+  description: Мощный плазменный резак, предназначенный для использования на мехах. Только для кларка и огнеборца!
+  components:
+  - type: Sprite
+    sprite: Objects/Specific/Mech/mecha_equipment.rsi
+    state: mecha_plasmacutter
+  - type: Item
+    size: Normal
+  - type: Tag
+    tags:
+    - MechaWeapon
+#=============Алмаз.бур=============
+- type: entity
+  name: алмазный бур
+  parent: BaseItem
+  id: MechaWeaponDrill
+  description: Бур с алмазным напылением на конце. Сильнее, лучше, быстрее, мощнее. Только для кларка и огнеборца!
+  components:
+  - type: Sprite
+    sprite: Objects/Specific/Mech/mecha_equipment.rsi
+    state: mecha_diamond_drill
+  - type: Item
+    size: Normal
+  - type: Tag
+    tags:
+    - MechaWeapon
