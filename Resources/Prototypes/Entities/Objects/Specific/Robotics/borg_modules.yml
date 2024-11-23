@@ -563,6 +563,21 @@
     items:
     - WeaponPistolEchis
     - EnergyDaggerLoud
+# Corvax-HiddenDesc-Start
+  - type: HiddenDescription
+    entries:
+    - label: corvax-hidden-desc-BorgModuleSyndicateWeapon-syndicate
+      whitelistMind:
+        mindRoles:
+          - TraitorRole
+          - NukeopsRole
+    - label: corvax-hidden-desc-BorgModuleSyndicateWeapon-research
+      jobRequired:
+        - ResearchAssistant
+        - ResearchDirector
+        - Scientist
+        - Borg
+# Corvax-HiddenDesc-End
   - type: BorgModuleIcon
     icon: { sprite: Interface/Actions/actions_borg.rsi, state: syndicate-weapon-module }
 
@@ -581,6 +596,21 @@
       - Crowbar
       - Emag
       - PinpointerSyndicateNuclear
+# Corvax-HiddenDesc-Start
+    - type: HiddenDescription
+      entries:
+      - label: corvax-hidden-desc-BorgModuleOperative-syndicate
+        whitelistMind:
+          mindRoles:
+            - TraitorRole
+            - NukeopsRole
+      - label: corvax-hidden-desc-BorgModuleOperative-research
+        jobRequired:
+          - ResearchAssistant
+          - ResearchDirector
+          - Scientist
+          - Borg
+# Corvax-HiddenDesc-End
     - type: BorgModuleIcon
       icon: { sprite: Interface/Actions/actions_borg.rsi, state: syndicate-operative-module }
 
@@ -598,6 +628,21 @@
       items:
       - CyborgEnergySwordDouble
       - PinpointerSyndicateNuclear
+# Corvax-HiddenDesc-Start
+    - type: HiddenDescription
+      entries:
+      - label: corvax-hidden-desc-BorgModuleEsword-syndicate
+        whitelistMind:
+          mindRoles:
+            - TraitorRole
+            - NukeopsRole
+      - label: corvax-hidden-desc-BorgModuleSyndicateWeapon-research
+        jobRequired:
+          - ResearchAssistant
+          - ResearchDirector
+          - Scientist
+          - Borg
+# Corvax-HiddenDesc-End
     - type: BorgModuleIcon
       icon: { sprite: Interface/Actions/actions_borg.rsi, state: syndicate-esword-module }
 
@@ -615,6 +660,21 @@
       items:
         - WeaponLightMachineGunL6C
         - PinpointerSyndicateNuclear
+# Corvax-HiddenDesc-Start
+    - type: HiddenDescription
+      entries:
+      - label: corvax-hidden-desc-BorgModuleL6C-syndicate
+        whitelistMind:
+          mindRoles:
+          - TraitorRole
+          - NukeopsRole
+      - label: corvax-hidden-desc-BorgModuleSyndicateWeapon-research
+        jobRequired:
+          - ResearchAssistant
+          - ResearchDirector
+          - Scientist
+          - Borg
+# Corvax-HiddenDesc-End
     - type: BorgModuleIcon
       icon: { sprite: Interface/Actions/actions_borg.rsi, state: syndicate-l6c-module }
 
@@ -631,5 +691,20 @@
     - type: ItemBorgModule
       items:
         - SelfDestructSeq
+# Corvax-HiddenDesc-Start
+    - type: HiddenDescription
+      entries:
+      - label: corvax-hidden-desc-BorgModuleMartyr-syndicate
+        whitelistMind:
+          mindRoles:
+            - TraitorRole
+            - NukeopsRole
+      - label: corvax-hidden-desc-BorgModuleMartyr-research
+        jobRequired:
+          - ResearchAssistant
+          - ResearchDirector
+          - Scientist
+          - Borg
+# Corvax-HiddenDesc-End
     - type: BorgModuleIcon
       icon: { sprite: Interface/Actions/actions_borg.rsi, state: syndicate-martyr-module }

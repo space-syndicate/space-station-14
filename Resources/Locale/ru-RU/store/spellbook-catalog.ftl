@@ -11,6 +11,8 @@ spellbook-polymorph-rod-name = Полиморф-жезл
 spellbook-polymorph-rod-desc = Превратитесь в неподвижный жезл с ограниченной возможностью передвижения.
 spellbook-charge-name = Зарядка
 spellbook-charge-desc = Добавляет заряд вашей палочке!
+spellbook-ethereal-jaunt-name = Эфирная прогулка
+spellbook-ethereal-jaunt-description = Перейдите на Эфирный план чтобы ускользнуть от врагов!
 
 # Equipment
 
@@ -21,8 +23,14 @@ spellbook-wand-polymorph-carp-description = На случай, когда вам
 
 # Events
 
-spellbook-event-summon-ghosts-name = Призвать призраков
+spellbook-event-summon-ghosts-name = Призыв призраков
 spellbook-event-summon-ghosts-description = Who ya gonna call?
+spellbook-event-summon-guns-name = Призыв оружия
+spellbook-event-summon-guns-description = АК-47 для всех! Размещает перед каждым случайное огнестрельное оружие. Отключает возврат средств при покупке!
+spellbook-event-summon-magic-name = Призыв магии
+spellbook-event-summon-magic-description = Размещает перед каждым случайный магический предмет. Что может пойти не так? Отключает возврат средств при покупке!
 # Upgrades
 spellbook-upgrade-fireball-name = Улучшение Огненного шара
 spellbook-upgrade-fireball-description = Позволяет улучшить Огненный шар до максимального 3-го уровня!
+spellbook-upgrade-jaunt-name = Улучшение Эфирной прогулки
+spellbook-upgrade-jaunt-description = Позволяет улучшить Эфирную прогулку до максимального 3-го уровня!
