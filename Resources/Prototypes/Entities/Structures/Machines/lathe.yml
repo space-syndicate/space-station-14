@@ -430,8 +430,8 @@
     - ProtolatheMachineCircuitboard
     - AutolatheMachineCircuitboard
     - CircuitImprinterMachineCircuitboard
-    - BiogeneratorMachineCircuitboard
     - OreProcessorMachineCircuitboard
+    - MaterialReclaimerMachineCircuitboard
     - ElectrolysisUnitMachineCircuitboard
     - CentrifugeMachineCircuitboard
     - ChemDispenserMachineCircuitboard
@@ -442,16 +442,12 @@
     - UniformPrinterMachineCircuitboard
     - FloorGreenCircuit
     - FloorBlueCircuit
-    - FloorRedCircuit
     - MicrowaveMachineCircuitboard
     - ReagentGrinderMachineCircuitboard
     - ElectricGrillMachineCircuitboard
     - BoozeDispenserMachineCircuitboard
     - SodaDispenserMachineCircuitboard
     - SpaceHeaterMachineCircuitBoard
-    - CutterMachineCircuitboard
-    - StationAnchorCircuitboard
-    - SalvageMagnetMachineCircuitboard
     dynamicRecipes:
       - ThermomachineFreezerMachineCircuitBoard
       - HellfireFreezerMachineCircuitBoard
@@ -491,6 +487,8 @@
       - CargoTelepadMachineCircuitboard
       - RipleyCentralElectronics
       - RipleyPeripheralsElectronics
+      - GygaxPeripheralsElectronics # TRWD
+      - GygaxCentralElectronics # TRWD
       - HonkerCentralElectronics
       - HonkerPeripheralsElectronics
       - HonkerTargetingElectronics
@@ -499,6 +497,8 @@
       - PortableGeneratorPacmanMachineCircuitboard
       - PortableGeneratorSuperPacmanMachineCircuitboard
       - PortableGeneratorJrPacmanMachineCircuitboard
+      - WallmountGeneratorElectronics
+      - WallmountGeneratorAPUElectronics
       - WallmountSubstationElectronics
       - PowerCageRechargerCircuitboard
       - EmitterCircuitboard
@@ -520,7 +520,6 @@
       - MassMediaCircuitboard
       - ReagentGrinderIndustrialMachineCircuitboard
       - JukeboxCircuitBoard
-      - SalvageExpeditionsComputerCircuitboard # Corvax-Cringe
   - type: EmagLatheRecipes
     emagDynamicRecipes:
       - ShuttleGunDusterCircuitboard
@@ -550,7 +549,7 @@
   id: ExosuitFabricator
   parent: BaseLatheLube
   name: exosuit fabricator
-  description: Creates parts for robotics and other mechanical needs.
+  description: Creates parts for robotics and other mechanical needs
   components:
   - type: Sprite
     sprite: Structures/Machines/exosuit_fabricator.rsi
@@ -651,6 +650,16 @@
     - HamtrLLeg
     - HamtrRLeg
     - VimHarness
+    - GygaxHarness # TRWD
+    - GygaxLArm # TRWD
+    - GygaxLLeg # TRWD
+    - GygaxRLeg # TRWD
+    - GygaxRArm # TRWD
+    - GygaxCentralElectronics # TRWD
+    - GygaxPeripheralsElectronics # TRWD
+    - MechaWeaponSolaris # TRWD
+    - MechaWeaponPacifier # TRWD
+    - MechaWeaponIon # TRWD
   - type: MaterialStorage
     whitelist:
       tags:
