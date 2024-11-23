@@ -120,7 +120,7 @@ public sealed partial class BodyPartComponent : Component, ISurgeryToolComponent
     /// to make possible severing it.
     /// </summary>
     [DataField, AutoNetworkedField]
-    public float SeverIntegrity = 90;
+    public float SeverIntegrity = 80; // Corvax-Next-Surgery flavor damage
 
     /// <summary>
     /// On what TargetIntegrity we should re-enable the part.
@@ -131,11 +131,11 @@ public sealed partial class BodyPartComponent : Component, ISurgeryToolComponent
     [DataField, AutoNetworkedField]
     public Dictionary<TargetIntegrity, float> IntegrityThresholds = new()
     {
-        { TargetIntegrity.CriticallyWounded, 90 },
-        { TargetIntegrity.HeavilyWounded, 75 },
-        { TargetIntegrity.ModeratelyWounded, 60 },
-        { TargetIntegrity.SomewhatWounded, 40},
-        { TargetIntegrity.LightlyWounded, 20 },
+        { TargetIntegrity.CriticallyWounded, 70 }, // Corvax-Next-Surgery flavor damage
+        { TargetIntegrity.HeavilyWounded, 60 }, // Corvax-Next-Surgery flavor damage
+        { TargetIntegrity.ModeratelyWounded, 45 }, // Corvax-Next-Surgery flavor damage
+        { TargetIntegrity.SomewhatWounded, 30}, // Corvax-Next-Surgery flavor damage
+        { TargetIntegrity.LightlyWounded, 15 }, // Corvax-Next-Surgery flavor damage
         { TargetIntegrity.Healthy, 10 },
     };
     // end-_CorvaxNext: surgery

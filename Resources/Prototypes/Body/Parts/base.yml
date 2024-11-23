@@ -30,19 +30,19 @@
     - trigger:
         !type:DamageTypeTrigger
         damageType: Blunt
-        damage: 150 # was 75 . TODO gettin dissapear if lower than dettach health
+        damage: 75
       behaviors:
       - !type:GibPartBehavior { }
     - trigger:
         !type:DamageTypeTrigger
         damageType: Slash
-        damage: 200 # was 100 . TODO gettin dissapear if lower than dettach health
+        damage: 100
       behaviors:
       - !type:GibPartBehavior { }
     - trigger:
         !type:DamageTypeTrigger
         damageType: Heat
-        damage: 400 # was 200 . TODO gettin dissapear if lower than dettach health
+        damage: 200
       behaviors:
       - !type:SpawnEntitiesBehavior
         spawnInContainer: true
