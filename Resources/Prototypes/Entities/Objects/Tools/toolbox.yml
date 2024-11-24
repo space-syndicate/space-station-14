@@ -99,6 +99,15 @@
                 max: 1
   - type: StaticPrice
     price: 1350
+# Corvax-HiddenDesc-Start
+  - type: HiddenDescription
+    entries:
+    - label: corvax-hidden-desc-ToolboxElectricalTurret-syndicate
+      whitelistMind:
+        mindRoles:
+            - TraitorRole
+            - NukeopsRole
+# Corvax-HiddenDesc-End
 
 - type: entity
   name: artistic toolbox

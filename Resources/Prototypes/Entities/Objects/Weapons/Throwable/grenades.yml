@@ -392,9 +392,9 @@
     entries:
     - label: corvax-hidden-desc-HolyHandGrenade-syndicate
       whitelistMind:
-        components:
-          - TraitorRole
-          - NukeOperative
+        mindRoles:
+        - TraitorRole
+        - NukeopsRole
     - label: corvax-hidden-desc-HolyHandGrenade-research
       jobRequired:
         - ResearchAssistant
