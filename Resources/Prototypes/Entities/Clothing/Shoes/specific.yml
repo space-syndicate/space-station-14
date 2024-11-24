@@ -141,8 +141,8 @@
     entries:
     - label: corvax-hidden-desc-NoSlip-ninja
       whitelistMind:
-        components:
-          - NinjaRole
+        mindRoles:
+        - NinjaRole
     - label: corvax-hidden-desc-NoSlip-research
       jobRequired:
         - ResearchAssistant
@@ -217,9 +217,9 @@
       entries:
       - label: corvax-hidden-desc-Chameleon-syndicate
         whitelistMind:
-          components:
-            - TraitorRole
-            - NukeOperative
+          mindRoles:
+          - TraitorRole
+          - NukeopsRole
       - label: corvax-hidden-desc-Chameleon-research
         jobRequired:
           - ResearchAssistant
@@ -241,14 +241,14 @@
     entries:
     - label: corvax-hidden-desc-Chameleon-syndicate
       whitelistMind:
-        components:
-          - TraitorRole
-          - NukeOperative
+        mindRoles:
+        - TraitorRole
+        - NukeopsRole
     - label: corvax-hidden-desc-NoSlip-syndicate
       whitelistMind:
-        components:
-          - TraitorRole
-          - NukeOperative
+        mindRoles:
+        - TraitorRole
+        - NukeopsRole
     - label: corvax-hidden-desc-Chameleon-research
       jobRequired:
         - ResearchAssistant
@@ -307,6 +307,8 @@
       shoes:
       - state: equipped-FEET
         offset: "0, -0.02"
+      - state: equipped-FEET-reptilian # Corvax reptilian
+        offset: "0, -0.02"
   - type: Item
     size: Small
     sprite: Clothing/Shoes/Specific/large_clown.rsi
@@ -327,6 +329,8 @@
     clothingVisuals:
       shoes:
       - state: equipped-FEET
+        offset: "0, -0.04"
+      - state: equipped-FEET-reptilian # Corvax reptilian
         offset: "0, -0.04"
   - type: Item
     sprite: Clothing/Shoes/Specific/skates.rsi

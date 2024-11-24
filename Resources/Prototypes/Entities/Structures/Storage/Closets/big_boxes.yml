@@ -76,9 +76,9 @@
       entries:
       - label: corvax-hidden-desc-StealthBox-syndicate
         whitelistMind:
-          components:
-            - TraitorRole
-            - NukeOperative
+          mindRoles:
+          - TraitorRole
+          - NukeopsRole
       - label: corvax-hidden-desc-StealthBox-research
         jobRequired:
           - ResearchAssistant

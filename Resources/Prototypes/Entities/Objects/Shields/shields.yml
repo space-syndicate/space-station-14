@@ -469,9 +469,9 @@
       entries:
       - label: corvax-hidden-desc-EnergyShield-syndicate
         whitelistMind:
-          components:
-            - TraitorRole
-            - NukeOperative
+          mindRoles:
+          - TraitorRole
+          - NukeopsRole
       - label: corvax-hidden-desc-EnergyShield-security
         jobRequired:
           - HeadOfSecurity
@@ -503,9 +503,9 @@
       entries:
       - label: corvax-hidden-desc-EnergyShield-syndicate
         whitelistMind:
-          components:
-            - TraitorRole
-            - NukeOperative
+          mindRoles:
+          - TraitorRole
+          - NukeopsRole
       - label: corvax-hidden-desc-EnergyShield-security
         jobRequired:
           - HeadOfSecurity

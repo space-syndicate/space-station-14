@@ -11,6 +11,7 @@ using Content.Server.Explosion.Components;
 using Content.Server.Silicons.Laws;
 using Robust.Shared.Audio;
 using Content.Shared.Silicons.Laws.Components;
+using Robust.Shared.Utility;
 
 namespace Content.Server.Silicons.Borgs;
 
@@ -158,5 +159,21 @@ public sealed partial class BorgSystem
         }
 
         return false;
+    }
+
+    /// <summary>
+    /// Sets <see cref="BorgTransponderComponent.Sprite"/>.
+    /// </summary>
+    public void SetTransponderSprite(Entity<BorgTransponderComponent> ent, SpriteSpecifier sprite)
+    {
+        ent.Comp.Sprite = sprite;
+    }
+
+    /// <summary>
+    /// Sets <see cref="BorgTransponderComponent.Name"/>.
+    /// </summary>
+    public void SetTransponderName(Entity<BorgTransponderComponent> ent, string name)
+    {
+        ent.Comp.Name = name;
     }
 }
