@@ -37,6 +37,8 @@ public sealed partial class WieldableComponent : Component
     public string? WieldedInhandPrefix = "wielded";
 
     public string? OldInhandPrefix = null;
+
+    public EntityUid? User = null; // Corvax-Next-Resomi
 }
 
 [Serializable, NetSerializable]
