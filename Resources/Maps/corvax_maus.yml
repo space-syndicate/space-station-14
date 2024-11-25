@@ -82642,8 +82642,6 @@ entities:
       pos: -40.5,-46.5
       parent: 2
     - type: DeviceNetwork
-      configurators:
-      - invalid
     - type: AtmosPipeColor
       color: '#0000FFFF'
   - uid: 9102
