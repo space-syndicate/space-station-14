@@ -24,4 +24,21 @@ public sealed class NextVars
         CVarDef.Create("surgery.can_operate_on_self", false, CVar.SERVERONLY);
 
     #endregion
+
+    /*
+     * _CorvaxNext Bind Standing and Laying System
+     */
+
+    public static readonly CVarDef<bool> AutoGetUp =
+        CVarDef.Create("laying.auto_get_up", true, CVar.CLIENT | CVar.ARCHIVE | CVar.REPLICATED);
+
+    /// <summary>
+    ///     When true, entities that fall to the ground will be able to crawl under tables and
+    ///     plastic flaps, allowing them to take cover from gunshots.
+    /// </summary>
+    public static readonly CVarDef<bool> CrawlUnderTables =
+        CVarDef.Create("laying.crawlundertables", true, CVar.REPLICATED);
+
+    // public static readonly CVarDef<bool> OfferModeIndicatorsPointShow =
+    //     CVarDef.Create("hud.offer_mode_indicators_point_show", true, CVar.ARCHIVE | CVar.CLIENTONLY);
 }

@@ -215,6 +215,7 @@
     - AnomalyHost
   - type: Targeting # _CorvaxNext: surgery
   - type: SurgeryTarget # _CorvaxNext: surgery
+  - type: LayingDown # _CorvaxNext: LayingDown Laying Down
 
 - type: entity
   save: false

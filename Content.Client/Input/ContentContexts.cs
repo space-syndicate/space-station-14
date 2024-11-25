@@ -91,6 +91,7 @@ namespace Content.Client.Input
             human.AddFunction(ContentKeyFunctions.TargetLeftLeg); // _CorvaxNext: surgery
             human.AddFunction(ContentKeyFunctions.TargetRightLeg); // _CorvaxNext: surgery
             human.AddFunction(ContentKeyFunctions.OfferItem); // Corvax-Next-Offer
+            human.AddFunction(ContentKeyFunctions.ToggleStanding); // CorvaxNext: laying system toggle standing
 
             // actions should be common (for ghosts, mobs, etc)
             common.AddFunction(ContentKeyFunctions.OpenActionsMenu);

@@ -57,6 +57,7 @@ namespace Content.Shared.Input
         public static readonly BoundKeyFunction ToggleFullscreen = "ToggleFullscreen";
         public static readonly BoundKeyFunction Point = "Point";
         public static readonly BoundKeyFunction OfferItem = "OfferItem"; // Corvax-Next-Offer
+        public static readonly BoundKeyFunction ToggleStanding = "ToggleStanding"; // _CorvaxNext: Laying System standing
         public static readonly BoundKeyFunction ZoomOut = "ZoomOut";
         public static readonly BoundKeyFunction ZoomIn = "ZoomIn";
         public static readonly BoundKeyFunction ResetZoom = "ResetZoom";

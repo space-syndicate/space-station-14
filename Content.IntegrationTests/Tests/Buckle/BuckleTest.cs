@@ -2,6 +2,7 @@ using System.Numerics;
 using Content.Server.Body.Systems;
 using Content.Shared.Buckle;
 using Content.Shared.ActionBlocker;
+using Content.Shared._CorvaxNext.Standing;
 using Content.Shared.Body.Components;
 using Content.Shared.Body.Part;
 using Content.Shared.Buckle.Components;
@@ -34,6 +35,7 @@ namespace Content.IntegrationTests.Tests.Buckle
   - type: Body
     prototype: Human
   - type: StandingState
+  - type: LayingDown # _CorvaxNext
 
 - type: entity
   name: {StrapDummyId}
@@ -297,7 +299,6 @@ namespace Content.IntegrationTests.Tests.Buckle
                 {
                     Assert.That(hand.HeldEntity, Is.Not.Null);
                 }
-
                 var bodySystem = entityManager.System<BodySystem>();
                 var legs = bodySystem.GetBodyChildrenOfType(human, BodyPartType.Leg, body);
 
@@ -310,10 +311,11 @@ namespace Content.IntegrationTests.Tests.Buckle
 
             await server.WaitRunTicks(10);
 
+            // start-_CorvaxNext: Laying System
             await server.WaitAssertion(() =>
             {
-                // Still buckled
-                Assert.That(buckle.Buckled);
+                // Unbuckled and laydown
+                Assert.That(buckle.Buckled, Is.True);
 
                 // Now with no item in any hand
                 foreach (var hand in hands.Hands.Values)
@@ -321,9 +323,17 @@ namespace Content.IntegrationTests.Tests.Buckle
                     Assert.That(hand.HeldEntity, Is.Null);
                 }
 
+                var comp = entityManager.GetComponentOrNull<StandingStateComponent>(human);
+                Assert.That(comp, Is.Not.Null);
+                Assert.That(comp.CurrentState, Is.EqualTo(StandingState.Standing));
                 buckleSystem.Unbuckle(human, human);
                 Assert.That(buckle.Buckled, Is.False);
+                Assert.That(comp.CurrentState, Is.EqualTo(StandingState.Lying));
+                Assert.That(comp.Standing, Is.False);
+                entityManager.System<StandingStateSystem>().Stand(human);
+                Assert.That(comp.CurrentState, Is.EqualTo(StandingState.Lying));
             });
+            // end-_CorvaxNext: Laying System
 
             await pair.CleanReturnAsync();
         }

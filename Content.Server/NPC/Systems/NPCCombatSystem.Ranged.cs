@@ -201,7 +201,7 @@ public sealed partial class NPCCombatSystem
             {
                 return;
             }
-
+            _gun.SetTarget(gun, comp.Target); // _CorvaxNext: Laying System
             _gun.AttemptShoot(uid, gunUid, gun, targetCordinates);
         }
     }
