@@ -69210,7 +69210,7 @@ entities:
       pos: 29.5,23.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -6069.1206
+      secondsUntilStateChange: -6095.2324
       state: Opening
 - proto: CurtainsBlueOpen
   entities:
@@ -69415,7 +69415,7 @@ entities:
       pos: 89.5,16.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -123332.85
+      secondsUntilStateChange: -123358.96
       state: Closing
   - uid: 4080
     components:
@@ -126426,6 +126426,13 @@ entities:
     components:
     - type: Transform
       pos: -6.5,7.5
+      parent: 2
+- proto: SpawnPointBrigmedic
+  entities:
+  - uid: 15434
+    components:
+    - type: Transform
+      pos: -12.5,-34.5
       parent: 2
 - proto: SpawnPointCaptain
   entities:

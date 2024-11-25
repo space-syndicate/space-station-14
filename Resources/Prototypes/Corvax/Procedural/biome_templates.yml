@@ -567,21 +567,23 @@
         octaves: 5
         cellularDistanceFunction: Euclidean
         cellularReturnType: Distance2
-    # Liquid plasma rivers.
+    # Liquid plasma.
     - !type:BiomeEntityLayer
       allowedTiles:
-      - FloorSnow
-      - FloorIce
-      threshold: 0.95
+        - FloorSnow
+        - FloorIce
+      threshold: -0.15
       noise:
         seed: 3
-        noiseType: OpenSimplex2
-        frequency: 0.003
-        lacunarity: 1.50
-        fractalType: Ridged
-        octaves: 1
+        noiseType: Cellular
+        frequency: 0.05
+        lacunarity: 2
+        fractalType: FBm
+        octaves: 5
+        cellularDistanceFunction: Euclidean
+        cellularReturnType: Distance2
       entities:
-      - FloorLiquidPlasmaEntity
+        - FloorLiquidPlasmaEntity
     - !type:BiomeDummyLayer
       id: Loot
     - !type:BiomeTileLayer
