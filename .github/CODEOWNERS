@@ -1,11 +1,11 @@
 # Last match in file takes precedence.
 
-# Ping for all PRs
-* @Morb0
+# C#
+*.cs @Tornado-Technology @AwareFoxy @FireNameFN
 
-# Ping for all PRs that include translations/editing fluent strings
-*.ftl @ficcialfaint
+# Prototypes
+*.yml @Vonsant
 
-# Map files
-/Resources/Prototypes/Maps/** @Ko4ergaPunk 
-/Resources/Maps/** @Ko4ergaPunk 
+# TTS
+
+/Content.*/Corvax/TTS @Morb0
