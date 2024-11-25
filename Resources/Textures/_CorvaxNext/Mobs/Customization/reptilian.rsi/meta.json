@@ -1,0 +1,31 @@
+{
+    "version": 1,
+    "size": {
+        "x": 32,
+        "y": 32
+    },
+    "license": "CC-BY-SA-3.0",
+    "copyright": "Taken from TGStation at commit https://github.com/tgstation/tgstation/tree/e9cc620e9f908e18949031c6e1b5811e3fc5af4e/icons/mob/species/lizard | Edited by PuroSlavKing (Github)",
+    "states": [
+        {
+            "name": "spines_aquatic",
+            "directions": 4
+        },
+        {
+            "name": "spines_long",
+            "directions": 4
+        },
+        {
+            "name": "spines_longmembrane",
+            "directions": 4
+        },
+        {
+            "name": "spines_short",
+            "directions": 4
+        },
+        {
+            "name": "spines_shortmembrane",
+            "directions": 4
+        }
+    ]
+}

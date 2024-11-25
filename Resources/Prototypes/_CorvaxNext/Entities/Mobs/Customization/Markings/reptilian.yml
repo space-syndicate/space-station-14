@@ -1,0 +1,143 @@
+- type: marking
+  id: LizardHeadGuilmon
+  bodyPart: Eyes
+  markingCategory: Head
+  speciesRestriction: [Reptilian]
+  sprites:
+  - sprite: _CorvaxNext/Mobs/Customization/snouts.rsi
+    state: guilmon
+
+- type: marking
+  id: LizardHeadCobraHood
+  bodyPart: HeadSide
+  markingCategory: HeadSide
+  speciesRestriction: [Reptilian]
+  sprites:
+  - sprite: _CorvaxNext/Mobs/Customization/reptilian_parts.rsi
+    state: cobra_hood_with_ears
+  - sprite: _CorvaxNext/Mobs/Customization/reptilian_parts.rsi
+    state: cobra_hood_with_ears_overlay
+
+- type: marking
+  id: LizardShoutEasternDragon
+  bodyPart: Snout
+  markingCategory: Snout
+  speciesRestriction: [Reptilian]
+  sprites:
+  - sprite: _CorvaxNext/Mobs/Customization/snouts.rsi
+    state: eastern_dragon
+  - sprite: _CorvaxNext/Mobs/Customization/snouts.rsi
+    state: eastern_dragon_overlay
+
+- type: marking
+  id: LizardShoutEasternDragonUsiki
+  bodyPart: Snout
+  markingCategory: Snout
+  speciesRestriction: [Anthropomorph, Reptilian]
+  sprites:
+  - sprite: _CorvaxNext/Mobs/Customization/snouts.rsi
+    state: eastern_dragon
+  - sprite: _CorvaxNext/Mobs/Customization/snouts.rsi
+    state: eastern_dragon_overlay
+  - sprite: _CorvaxNext/Mobs/Customization/snouts.rsi
+    state: eastern_dragon_usiki
+
+- type: marking
+  id: LizardShoutNoodle
+  bodyPart: Snout
+  markingCategory: Snout
+  speciesRestriction: [Reptilian]
+  sprites:
+  - sprite: _CorvaxNext/Mobs/Customization/snouts.rsi
+    state: noodle
+  - sprite: _CorvaxNext/Mobs/Customization/snouts.rsi
+    state: noodle_overlay_1
+  - sprite: _CorvaxNext/Mobs/Customization/snouts.rsi
+    state: noodle_overlay_2
+
+- type: marking
+  id: SnakeLargeTail
+  bodyPart: Tail
+  markingCategory: Tail
+  speciesRestriction: [Reptilian]
+  sprites:
+    - sprite: _CorvaxNext/Mobs/Customization/reptilian_64x32.rsi
+      state: snake_large
+    - sprite: _CorvaxNext/Mobs/Customization/reptilian_64x32.rsi
+      state: snake_large_overlay
+
+- type: marking
+  id: SnakeLargeTailAnimated
+  bodyPart: Tail
+  markingCategory: Tail
+  speciesRestriction: []
+  sprites:
+    - sprite: _CorvaxNext/Mobs/Customization/reptilian_64x32.rsi
+      state: snake_large_wagging
+    - sprite: _CorvaxNext/Mobs/Customization/reptilian_64x32.rsi
+      state: snake_large_wagging_overlay
+
+- type: marking
+  id: WesternDragonTail
+  bodyPart: Tail
+  markingCategory: Tail
+  speciesRestriction: [Reptilian]
+  sprites:
+    - sprite: _CorvaxNext/Mobs/Customization/reptilian_64x32.rsi
+      state: western_dragon
+    - sprite: _CorvaxNext/Mobs/Customization/reptilian_64x32.rsi
+      state: western_dragon_overlay
+
+- type: marking
+  id: KangarooTail
+  bodyPart: Tail
+  markingCategory: Tail
+  speciesRestriction: [Reptilian]
+  sprites:
+    - sprite: _CorvaxNext/Mobs/Customization/reptilian_64x32.rsi
+      state: kangaroo
+
+- type: marking
+  id: LizardChestSpinesAquaticWithoutTail
+  bodyPart: Chest
+  markingCategory: Chest
+  speciesRestriction: [Reptilian]
+  sprites:
+  - sprite: _CorvaxNext/Mobs/Customization/reptilian.rsi
+    state: spines_aquatic
+
+- type: marking
+  id: LizardChestSpinesLongWithoutTail
+  bodyPart: Chest
+  markingCategory: Chest
+  speciesRestriction: [Reptilian]
+  sprites:
+  - sprite: _CorvaxNext/Mobs/Customization/reptilian.rsi
+    state: spines_long
+
+- type: marking
+  id: LizardChestSpinesLongMembraneWithoutTail
+  bodyPart: Chest
+  markingCategory: Chest
+  speciesRestriction: [Reptilian]
+  sprites:
+  - sprite: _CorvaxNext/Mobs/Customization/reptilian.rsi
+    state: spines_longmembrane
+
+- type: marking
+  id: LizardChestSpinesShortWithoutTail
+  bodyPart: Chest
+  markingCategory: Chest
+  speciesRestriction: [Reptilian]
+  sprites:
+  - sprite: _CorvaxNext/Mobs/Customization/reptilian.rsi
+    state: spines_short
+
+- type: marking
+  id: LizardChestSpinesShortMembraneWithoutTail
+  bodyPart: Chest
+  markingCategory: Chest
+  speciesRestriction: [Reptilian]
+  sprites:
+  - sprite: _CorvaxNext/Mobs/Customization/reptilian.rsi
+    state: spines_shortmembrane
