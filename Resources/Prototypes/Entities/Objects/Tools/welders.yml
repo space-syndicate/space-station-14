@@ -105,6 +105,13 @@
     price: 40
   - type: IgnitionSource
     temperature: 700
+  - type: Cautery # _CorvaxNext
+    speed: 0.7
+  - type: SurgeryTool # _CorvaxNext
+    startSound:
+      collection: Welder
+    endSound:
+      collection: WelderOff
 
 - type: entity
   name: industrial welding tool

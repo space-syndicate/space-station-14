@@ -85,6 +85,15 @@
       interactFailureString: petting-failure-carp
       interactFailureSound:
         path: /Audio/Effects/bite.ogg
+    # start-backmen: surgery
+    - type: Body
+      prototype: Carp
+    - type: SurgeryTarget
+    - type: UserInterface
+      interfaces:
+        enum.SurgeryUIKey.Key:
+          type: SurgeryBui
+    # end-backmen: surgery
 
 - type: entity
   parent: BaseMobCarp

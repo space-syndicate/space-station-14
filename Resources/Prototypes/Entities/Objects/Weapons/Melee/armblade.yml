@@ -21,3 +21,10 @@
     size: Normal
     sprite: Objects/Weapons/Melee/armblade.rsi
   - type: Prying
+  - type: Scalpel # _CorvaxNext: surgery
+    speed: 0.3
+  - type: BoneSaw # _CorvaxNext: surgery
+    speed: 0.75
+  - type: SurgeryTool # _CorvaxNext: surgery
+    startSound:
+      path: /Audio/_CorvaxNext/Medical/Surgery/saw.ogg

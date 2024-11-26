@@ -40,7 +40,7 @@ namespace Content.Client.Inventory
 
             SubscribeLocalEvent<InventorySlotsComponent, LocalPlayerAttachedEvent>(OnPlayerAttached);
             SubscribeLocalEvent<InventorySlotsComponent, LocalPlayerDetachedEvent>(OnPlayerDetached);
-            SubscribeLocalEvent<InventorySlotsComponent, RefreshInventorySlotsEvent>(OnRefreshInventorySlots); // _CorvaxNext: surgery
+            SubscribeLocalEvent<InventorySlotsComponent, RefreshInventorySlotsEvent>(OnRefreshInventorySlots); // CorvaxNext: surgery
             SubscribeLocalEvent<InventoryComponent, ComponentShutdown>(OnShutdown);
 
             SubscribeLocalEvent<InventorySlotsComponent, DidEquipEvent>((_, comp, args) =>

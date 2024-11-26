@@ -55,7 +55,7 @@ public sealed class HumanoidAppearanceSystem : SharedHumanoidAppearanceSystem
         foreach (var (key, info) in component.CustomBaseLayers)
         {
             oldLayers.Remove(key);
-            // Shitmed modification: For whatever reason these weren't actually ignoring the skin color as advertised.
+            // CorvaxNext modification: For whatever reason these weren't actually ignoring the skin color as advertised.
             SetLayerData(component, sprite, key, info.Id, sexMorph: false, color: info.Color, overrideSkin: true);
         }
 

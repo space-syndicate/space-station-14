@@ -78,6 +78,13 @@
   - type: DeleteOnTrigger
   - type: StaticPrice
     price: 0
+  - type: Scalpel # _CorvaxNext
+    speed: 0.45
+  - type: SurgeryTool # _CorvaxNext
+    startSound:
+      path: /Audio/_CorvaxNext/Medical/Surgery/scalpel1.ogg
+    endSound:
+      path: /Audio/_CorvaxNext/Medical/Surgery/scalpel2.ogg
 
 - type: entity
   parent: ShardBase

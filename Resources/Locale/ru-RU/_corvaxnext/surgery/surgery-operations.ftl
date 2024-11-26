@@ -43,6 +43,7 @@ ent-SurgeryAttachLeftHand = Прикрепить левую ладонь
 ent-SurgeryAttachRightHand = Прикрепить правую ладонь
 ent-SurgeryAttachLeftFoot = Прикрепить левую стопу
 ent-SurgeryAttachRightFoot = Прикрепить правую стопу
+ent-SurgeryAttachTail = Прикрепить хвост
 
 ent-SurgeryTendWoundsBrute = Восстановить механические повреждения
 ent-SurgeryTendWoundsBurn = Восстановить термические повреждения
@@ -57,5 +58,8 @@ ent-SurgeryRemoveLiver = Удалить печень
 ent-SurgeryInsertLiver = Вставить печень
 ent-SurgeryRemoveLungs = Удалить лёгкие
 ent-SurgeryInsertLungs = Вставить лёгкие
+ent-SurgeryRemoveStomach = Удалить желудок
+ent-SurgeryInsertStomach = Вставить желудок
 ent-SurgeryRemoveEyes = Удалить глаза
 ent-SurgeryInsertEyes = Вставить глаза
+ent-SurgeryLobotomize = Лоботомировать

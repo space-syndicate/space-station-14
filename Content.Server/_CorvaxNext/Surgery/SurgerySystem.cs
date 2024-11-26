@@ -130,6 +130,15 @@ public sealed class SurgerySystem : SharedSurgerySystem
     private void OnSurgeryStepDamage(Entity<SurgeryTargetComponent> ent, ref SurgeryStepDamageEvent args) =>
         SetDamage(args.Body, args.Damage, args.PartMultiplier, args.User, args.Part);
 
+    private void OnSurgeryDamageChange(Entity<SurgeryDamageChangeEffectComponent> ent, ref SurgeryStepDamageChangeEvent args)
+    {
+        var damageChange = ent.Comp.Damage;
+        if (HasComp<ForcedSleepingComponent>(args.Body))
+            damageChange = damageChange * ent.Comp.SleepModifier;
+
+        SetDamage(args.Body, damageChange, 0.5f, args.User, args.Part);
+    }
+
     private void OnSurgerySpecialDamageChange(Entity<SurgerySpecialDamageChangeEffectComponent> ent, ref SurgeryStepDamageChangeEvent args)
     {
         if (ent.Comp.DamageType == "Rot")
@@ -138,15 +147,6 @@ public sealed class SurgerySystem : SharedSurgerySystem
             && TryComp(ent, out BlindableComponent? blindComp)
             && blindComp.EyeDamage > 0)
             _blindableSystem.AdjustEyeDamage((args.Body, blindComp), -blindComp!.EyeDamage);
-    }
-
-    private void OnSurgeryDamageChange(Entity<SurgeryDamageChangeEffectComponent> ent, ref SurgeryStepDamageChangeEvent args)
-    {
-        var damageChange = ent.Comp.Damage;
-        if (HasComp<ForcedSleepingComponent>(args.Body))
-            damageChange = damageChange * ent.Comp.SleepModifier;
-
-        SetDamage(args.Body, damageChange, 0.5f, args.User, args.Part);
     }
 
     private void OnStepScreamComplete(Entity<SurgeryStepEmoteEffectComponent> ent, ref SurgeryStepEvent args)

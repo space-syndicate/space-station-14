@@ -65,7 +65,7 @@ internal sealed class BuckleSystem : SharedBuckleSystem
             !buckled ||
             args.Sprite == null)
         {
-            // _CorvaxNext: Laying System
+            // CorvaxNext: Laying System
             //_rotationVisualizerSystem.SetHorizontalAngle((uid, rotVisuals), rotVisuals.DefaultRotation);
             return;
         }

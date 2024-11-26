@@ -126,6 +126,11 @@
     groups:
     - id: Alcohol
       rateModifier: 0.1
+  - type: Tag # goob edit
+    tags:
+    - Meat
+    - Organ
+    - Liver
   - type: Item
     size: Small
     heldPrefix: liver
@@ -139,8 +144,7 @@
   - type: Sprite
     state: heart-on
   - type: Organ
-    slotId: heart
-  - type: Heart
+    slotId: heart # _CorvaxNext
   - type: Metabolizer
     maxReagents: 2
     metabolizerTypes: [ Animal ]
@@ -148,6 +152,12 @@
     - id: Medicine
     - id: Poison
     - id: Narcotic
+  - type: Heart # _CorvaxNext
+  - type: Tag # goob edit
+    tags:
+    - Meat
+    - Organ
+    - Heart
   - type: Item
     size: Small
     heldPrefix: heart
@@ -163,7 +173,7 @@
     - state: kidney-l
     - state: kidney-r
   - type: Organ
-    slotId: kidneys
+    slotId: kidneys # _CorvaxNext
   - type: Metabolizer
     maxReagents: 5
     metabolizerTypes: [ Animal ]
@@ -171,3 +181,64 @@
   - type: Item
     size: Small
     heldPrefix: kidneys
+
+- type: entity
+  id: OrganAnimalBrain
+  parent: BaseAnimalOrganUnGibbable
+  name: animal brain
+  description: "Not so intelligence, not so honk."
+  components:
+  - type: Sprite
+    state: brain
+  - type: Organ
+    slotId: brain # backmen: surgery
+  - type: Input
+    context: "ghost"
+  - type: Brain
+  - type: InputMover
+  - type: Examiner
+  - type: BlockMovement
+  - type: BadFood
+  - type: Tag
+    tags:
+      - Meat
+  - type: SolutionContainerManager
+    solutions:
+      organ:
+        reagents:
+        - ReagentId: Nutriment
+          Quantity: 10
+      food:
+        maxVol: 5
+        reagents:
+        - ReagentId: GreyMatter
+          Quantity: 5
+  - type: FlavorProfile
+    flavors:
+      - people
+  - type: FoodSequenceElement
+    entries:
+      Burger: Brain
+      Taco: Brain
+  - type: Item
+    size: Small
+    heldPrefix: brain
+
+- type: entity
+  id: OrganAnimalEyes
+  parent: BaseAnimalOrgan
+  name: animal eyes
+  description: "I see you!"
+  components:
+  # start-backmen: surgery
+  - type: Organ
+    slotId: eyes
+  - type: Eyes
+  # end-backmen: surgery
+  - type: Sprite
+    layers:
+      - state: eyeball-l
+      - state: eyeball-r
+  - type: Item
+    size: Small
+    heldPrefix: eyeballs

@@ -42,6 +42,13 @@
     damage:
       types:
         Piercing: 3
+#  - type: Tending # _CorvaxNext TODO: Uncomment this when surgeries arent tied to interaction events, but verbs.
+#    speed: 0.55
+#  - type: SurgeryTool # _CorvaxNext
+#    startSound:
+#      path: /Audio/_CorvaxNext/Medical/Surgery/retractor1.ogg
+#    endSound:
+#      path: /Audio/_CorvaxNext/Medical/Surgery/hemostat1.ogg
 
 #TODO: I want the luxury pen to write a cool font like Merriweather in the future.
 

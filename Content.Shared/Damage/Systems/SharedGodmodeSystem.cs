@@ -2,12 +2,15 @@ using Content.Shared.Damage.Components;
 using Content.Shared.Rejuvenate;
 using Content.Shared.Slippery;
 using Content.Shared.StatusEffect;
+using Content.Shared.Body.Systems; // CorvaxNext Change
 
 namespace Content.Shared.Damage.Systems;
 
 public abstract class SharedGodmodeSystem : EntitySystem
 {
     [Dependency] private readonly DamageableSystem _damageable = default!;
+
+    [Dependency] private readonly SharedBodySystem _bodySystem = default!; // CorvaxNext Change
 
     public override void Initialize()
     {
@@ -50,6 +53,9 @@ public abstract class SharedGodmodeSystem : EntitySystem
 
         // Rejuv to cover other stuff
         RaiseLocalEvent(uid, new RejuvenateEvent());
+
+        foreach (var (id, _) in _bodySystem.GetBodyChildren(uid)) // CorvaxNext Change
+            EnableGodmode(id);
     }
 
     public virtual void DisableGodmode(EntityUid uid, GodmodeComponent? godmode = null)
@@ -63,6 +69,9 @@ public abstract class SharedGodmodeSystem : EntitySystem
         }
 
         RemComp<GodmodeComponent>(uid);
+
+        foreach (var (id, _) in _bodySystem.GetBodyChildren(uid)) // CorvaxNext Change
+            DisableGodmode(id);
     }
 
     /// <summary>

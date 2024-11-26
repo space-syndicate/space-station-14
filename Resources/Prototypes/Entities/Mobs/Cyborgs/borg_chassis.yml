@@ -72,6 +72,7 @@
   components:
   - type: BorgSwitchableType
     selectedBorgType: medical
+  - type: SurgeryTarget
   - type: TTS # Corvax-TTS
     voice: TrainingRobot
 

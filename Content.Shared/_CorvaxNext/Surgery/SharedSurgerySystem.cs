@@ -1,4 +1,5 @@
 using System.Linq;
+using Content.Shared._CorvaxNext.Surgery.Conditions;
 using Content.Shared._CorvaxNext.Surgery.Steps.Parts;
 using Content.Shared.Medical.Surgery.Conditions;
 using Content.Shared.Body.Systems;
@@ -56,6 +57,7 @@ public abstract partial class SharedSurgerySystem : EntitySystem
         SubscribeLocalEvent<SurgeryTargetComponent, SurgeryDoAfterEvent>(OnTargetDoAfter);
         SubscribeLocalEvent<SurgeryCloseIncisionConditionComponent, SurgeryValidEvent>(OnCloseIncisionValid);
         //SubscribeLocalEvent<SurgeryLarvaConditionComponent, SurgeryValidEvent>(OnLarvaValid);
+        SubscribeLocalEvent<SurgeryComponentConditionComponent, SurgeryValidEvent>(OnComponentConditionValid);
         SubscribeLocalEvent<SurgeryPartConditionComponent, SurgeryValidEvent>(OnPartConditionValid);
         SubscribeLocalEvent<SurgeryOrganConditionComponent, SurgeryValidEvent>(OnOrganConditionValid);
         SubscribeLocalEvent<SurgeryWoundedConditionComponent, SurgeryValidEvent>(OnWoundedValid);
@@ -125,6 +127,21 @@ public abstract partial class SharedSurgerySystem : EntitySystem
         if (infected != null && infected.SpawnedLarva != null)
             args.Cancelled = true;
     }*/
+
+    private void OnComponentConditionValid(Entity<SurgeryComponentConditionComponent> ent, ref SurgeryValidEvent args)
+    {
+        var present = true;
+        foreach (var reg in ent.Comp.Component.Values)
+        {
+            var compType = reg.Component.GetType();
+            if (!HasComp(args.Part, compType))
+                present = false;
+        }
+
+        if (ent.Comp.Inverse ? present : !present)
+            args.Cancelled = true;
+    }
+
     private void OnPartConditionValid(Entity<SurgeryPartConditionComponent> ent, ref SurgeryValidEvent args)
     {
         if (!TryComp<BodyPartComponent>(args.Part, out var part))
@@ -175,7 +192,7 @@ public abstract partial class SharedSurgerySystem : EntitySystem
             return;
         }
 
-        var results = _body.GetBodyChildrenOfType(args.Body, ent.Comp.Part, symmetry: ent.Comp.Symmetry);
+        var results = _body.GetBodyChildrenOfType(args.Body, ent.Comp.Part, symmetry: ent.Comp.Symmetry).ToList();
         if (results is not { } || !results.Any())
             return;
 

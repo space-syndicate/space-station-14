@@ -144,7 +144,8 @@ namespace Content.Server.Cloning
                 return false;
 
             var mind = mindEnt.Comp;
-            if (ClonesWaitingForMind.TryGetValue(mind, out var clone))
+            // CorvaxNext: surgery Remove this logic entirely, infinite clone army
+            /*if (ClonesWaitingForMind.TryGetValue(mind, out var clone))
             {
                 if (EntityManager.EntityExists(clone) &&
                     !_mobStateSystem.IsDead(clone) &&
@@ -153,10 +154,11 @@ namespace Content.Server.Cloning
                     return false; // Mind already has clone
 
                 ClonesWaitingForMind.Remove(mind);
-            }
+            }*/
 
-            if (mind.OwnedEntity != null && !_mobStateSystem.IsDead(mind.OwnedEntity.Value))
-                return false; // Body controlled by mind is not dead
+            // CorvaxNext: surgery Lets you clone living people
+            //if (mind.OwnedEntity != null && !_mobStateSystem.IsDead(mind.OwnedEntity.Value))
+            //    return false; // Body controlled by mind is not dead
 
             // Yes, we still need to track down the client because we need to open the Eui
             if (mind.UserId == null || !_playerManager.TryGetSessionById(mind.UserId.Value, out var client))
@@ -171,10 +173,10 @@ namespace Content.Server.Cloning
             if (!TryComp<PhysicsComponent>(bodyToClone, out var physics))
                 return false;
 
-            var cloningCost = (int) Math.Round(physics.FixturesMass);
+            var cloningCost = (int)Math.Round(physics.FixturesMass);
 
             if (_configManager.GetCVar(CCVars.BiomassEasyMode))
-                cloningCost = (int) Math.Round(cloningCost * EasyModeCloningCost);
+                cloningCost = (int)Math.Round(cloningCost * EasyModeCloningCost);
 
             // biomass checks
             var biomassAmount = _material.GetMaterialAmount(uid, clonePod.RequiredMaterial);
@@ -194,7 +196,7 @@ namespace Content.Server.Cloning
             if (TryComp<DamageableComponent>(bodyToClone, out var damageable) &&
                 damageable.Damage.DamageDict.TryGetValue("Cellular", out var cellularDmg))
             {
-                var chance = Math.Clamp((float) (cellularDmg / 100), 0, 1);
+                var chance = Math.Clamp((float)(cellularDmg / 100), 0, 1);
                 chance *= failChanceModifier;
 
                 if (cellularDmg > 0 && clonePod.ConnectedConsole != null)
@@ -223,7 +225,7 @@ namespace Content.Server.Cloning
             cloneMindReturn.Mind = mind;
             cloneMindReturn.Parent = uid;
             _containerSystem.Insert(mob, clonePod.BodyContainer);
-            ClonesWaitingForMind.Add(mind, mob);
+            //ClonesWaitingForMind.Add(mind, mob); // CorvaxNext: surgery
             UpdateStatus(uid, CloningPodStatus.NoMind, clonePod);
             _euiManager.OpenEui(new AcceptCloningEui(mindEnt, mind, this), client);
 
