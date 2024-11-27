@@ -31,6 +31,12 @@
     requiredLegs: 2
   - type: Inventory
     speciesId: reptilian # whyyy
+    femaleDisplacements:
+      jumpsuit:
+        sizeMaps:
+          32:
+            sprite: Mobs/Species/Human/displacement.rsi
+            state: jumpsuit-female
     displacements:
       jumpsuit:
         sizeMaps:
@@ -84,6 +90,12 @@
     species: Vulpkanin
   - type: Inventory
     speciesId: reptilian
+    femaleDisplacements:
+      jumpsuit:
+        sizeMaps:
+          32:
+            sprite: Mobs/Species/Human/displacement.rsi
+            state: jumpsuit-female
     displacements:
       jumpsuit:
         sizeMaps:
