@@ -1,0 +1,24 @@
+﻿- type: entity
+  id: MachineBluespaceHarvesterCircuitboard
+  parent: BaseMachineCircuitboard
+  name: Bluespace Harvester board
+  description: A machine board for a Bluespace Harvester
+  components:
+  - type: Sprite
+    sprite: _CorvaxNext/Bluespace/module.rsi
+    state: bluespace
+  - type: MachineBoard
+    prototype: BluespaceHarvester
+    stackRequirements:
+      Glass: 15
+      Steel: 15
+      CableHV: 5
+      Manipulator: 5
+      Capacitor: 5
+      MatterBin: 15
+    tagRequirements:
+      GlassBeaker:
+        amount: 5
+        defaultPrototype: Beaker
+  - type: Item
+    size: Normal
