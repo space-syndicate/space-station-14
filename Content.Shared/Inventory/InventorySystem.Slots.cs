@@ -220,7 +220,7 @@ public partial class InventorySystem : EntitySystem
                     _randomHelper.RandomOffset(entityUid, 0.5f);
                 }
             }
-            slot.Disabled = isDisabled;
+            //slot.Disabled = isDisabled; // CorvaxNext: TURNED OFF FEATURE, would be fixed today maybe with proper limbs cutting disables appropriate slot(-s)
             break;
         }
 
