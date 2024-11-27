@@ -70,12 +70,6 @@
   - type: Wagging
   - type: Inventory
     speciesId: reptilian
-    femaleDisplacements:
-      jumpsuit:
-        sizeMaps:
-          32:
-            sprite: Mobs/Species/Human/displacement.rsi
-            state: jumpsuit-female
     # Corvax-Digitigrade-Start
     displacements:
       jumpsuit:
@@ -105,12 +99,6 @@
     - HeadSide
   - type: Inventory
     speciesId: reptilian
-    femaleDisplacements:
-      jumpsuit:
-        sizeMaps:
-          32:
-            sprite: Mobs/Species/Human/displacement.rsi
-            state: jumpsuit-female
     # Corvax-Digitigrade-Start
     displacements:
       jumpsuit:
