@@ -54,10 +54,17 @@
   - type: Destructible
     thresholds:
     - trigger: !type:DamageTrigger
-        damage: 350 # We don't need to break it
+        damage: 1250
       behaviors:
+      - !type:ExplodeBehavior
       - !type:DoActsBehavior
-        acts: [ "Destruction" ]
+        acts: ["Destruction"]
+  - type: Explosive
+    explosionType: Cryo
+    deleteAfterExplosion: false
+    totalIntensity: 1000
+    intensitySlope: 1
+    maxIntensity: 10
   - type: ActivatableUI
     key: enum.BluespaceHarvesterUiKey.Key
   - type: UserInterface
