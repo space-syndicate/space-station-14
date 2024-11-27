@@ -37,7 +37,7 @@ public sealed class NextVars
     ///     plastic flaps, allowing them to take cover from gunshots.
     /// </summary>
     public static readonly CVarDef<bool> CrawlUnderTables =
-        CVarDef.Create("laying.crawlundertables", true, CVar.REPLICATED);
+        CVarDef.Create("laying.crawlundertables", false, CVar.REPLICATED);
 
     // public static readonly CVarDef<bool> OfferModeIndicatorsPointShow =
     //     CVarDef.Create("hud.offer_mode_indicators_point_show", true, CVar.ARCHIVE | CVar.CLIENTONLY);
