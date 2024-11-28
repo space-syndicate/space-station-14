@@ -88932,15 +88932,21 @@ entities:
     - type: GasCanister
       gasMixture:
         volume: 1000
+        immutable: False
+        temperature: 2.7
         moles:
-          - 1310.197357 # 70% oxygen
-          - 0 # nitrogen
-          - 0 # CO2
-          - 0 # Plasma
-          - 0 # Tritium
-          - 0 # Water vapor
-          - 0 # Ammonia
-          - 561.513153 # 30% N2O
+        - 1310.1974
+        - 0
+        - 0
+        - 0
+        - 0
+        - 0
+        - 0
+        - 561.5131
+        - 0
+        - 0
+        - 0
+        - 0
 - proto: NitrousOxideTankFilled
   entities:
   - uid: 1063
@@ -104089,6 +104095,13 @@ entities:
     - type: Transform
       pos: 14.5,8.5
       parent: 2
+- proto: SpawnPointParamedic
+  entities:
+  - uid: 20244
+    components:
+    - type: Transform
+      pos: -20.5,21.5
+      parent: 2
 - proto: SpawnPointPassenger
   entities:
   - uid: 7806
@@ -104189,6 +104202,18 @@ entities:
     components:
     - type: Transform
       pos: 35.5,-5.5
+      parent: 2
+- proto: SpawnPointReporter
+  entities:
+  - uid: 20245
+    components:
+    - type: Transform
+      pos: -63.5,37.5
+      parent: 2
+  - uid: 20246
+    components:
+    - type: Transform
+      pos: -64.5,35.5
       parent: 2
 - proto: SpawnPointResearchAssistant
   entities:
