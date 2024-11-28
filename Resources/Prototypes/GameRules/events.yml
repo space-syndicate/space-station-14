@@ -160,7 +160,7 @@
   id: DragonSpawn
   components:
   - type: StationEvent
-    weight: 6.5
+    weight: 3.5 # Corvax
     earliestStart: 40
     reoccurrenceDelay: 20
     minimumPlayers: 20
