@@ -1,0 +1,33 @@
+- type: entity
+  parent: ClothingOuterHardsuitBase
+  id: ClothingOuterHardsuitBondrewd
+  name: Bondrewd's Hardsuit
+  description: Very tech hardsuit.
+  components:
+  - type: Sprite
+    sprite: Radium/Clothing/OuterClothing/hardsuits/bondrewdouter.rsi
+  - type: Clothing
+    sprite: Radium/Clothing/OuterClothing/hardsuits/bondrewdouter.rsi
+  - type: PressureProtection
+    highPressureMultiplier: 0.02
+    lowPressureMultiplier: 1000
+  - type: ClothingSpeedModifier
+    walkModifier: 1.0
+    sprintModifier: 1.0
+  - type: TemperatureProtection
+    heatingCoefficient: 0.001
+    coolingCoefficient: 0.001
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.6
+        Slash: 0.6
+        Piercing: 0.6
+        Heat: 0.4
+        Cold: 0.4
+        Shock: 0.3
+        Radiation: 0.3
+  - type: ExplosionResistance
+    damageCoefficient: 0.7
+  - type: ToggleableClothing
+    clothingPrototype: ClothingHeadHelmetBondrewd
