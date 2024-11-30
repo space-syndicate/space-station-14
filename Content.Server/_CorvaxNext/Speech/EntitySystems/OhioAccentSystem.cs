@@ -1,8 +1,9 @@
-using System.Text.RegularExpressions;
-using Content.Server.Speech.Components;
+using Content.Server._CorvaxNext.Speech.Components;
+using Content.Server.Speech;
+using Content.Server.Speech.EntitySystems;
 using Robust.Shared.Random;
 
-namespace Content.Server.Speech.EntitySystems;
+namespace Content.Server._CorvaxNext.Speech.EntitySystems;
 
 public sealed class OhioAccentSystem : EntitySystem
 {
@@ -15,11 +16,15 @@ public sealed class OhioAccentSystem : EntitySystem
         SubscribeLocalEvent<OhioAccentComponent, AccentGetEvent>(OnAccent);
     }
 
-    private void OnAccent(EntityUid uid, OhioAccentComponent component, AccentGetEvent args)
+    private void OnAccent(EntityUid uid, OhioAccentComponent component, ref AccentGetEvent args)
     {
+        args.Message = Accentuate("ohio", "accent-ohio-prefix-", "accent-ohio-suffix-", args);
+    }
+
+    private string Accentuate(string accentName, string prefix, string suffix, AccentGetEvent args) {
         var message = args.Message;
 
-        message = _replacement.ApplyReplacements(message, "ohio");
+        message = _replacement.ApplyReplacements(message, accentName);
 
         // Prefix
         if (_random.Prob(0.15f))
@@ -28,7 +33,7 @@ public sealed class OhioAccentSystem : EntitySystem
 
             // Reverse sanitize capital
             message = message[0].ToString().ToLower() + message.Remove(0, 1);
-            message = Loc.GetString($"accent-ohio-prefix-{pick}") + " " + message;
+            message = Loc.GetString(prefix + pick) + " " + message;
         }
 
         // Sanitize capital again, in case we substituted a word that should be capitalized
@@ -38,9 +43,9 @@ public sealed class OhioAccentSystem : EntitySystem
         if (_random.Prob(0.3f))
         {
             var pick = _random.Next(1, 13);
-            message += Loc.GetString($"accent-ohio-suffix-{pick}");
+            message += Loc.GetString(suffix + pick);
         }
 
-        args.Message = message;
+        return message;
     }
 };
