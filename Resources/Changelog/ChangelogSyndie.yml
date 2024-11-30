@@ -1,19 +1,4 @@
 ﻿Entries:
-- author: Morty
-  changes:
-  - message: "\u0414\u043E\u0431\u0430\u0432\u043B\u0435\u043D\u044B \u043F\u043E\u0441\
-      \u043B\u0435\u0434\u043D\u0438\u0435 \u043E\u0431\u043D\u043E\u0432\u043B\u0435\
-      \u043D\u0438\u044F"
-    type: Add
-  id: 218
-  time: '2022-08-16T15:22:57.0000000+00:00'
-- author: lapatison
-  changes:
-  - message: "\u0414\u043E\u0431\u0430\u0432\u043B\u0435\u043D\u044B \u043F\u0435\u0440\
-      \u0435\u0432\u043E\u0434\u044B"
-    type: Add
-  id: 219
-  time: '2022-08-16T16:10:42.0000000+00:00'
 - author: lapatison
   changes:
   - message: "\u0414\u043E\u0431\u0430\u0432\u043B\u0435\u043D\u044B \u0440\u0430\u0437\
@@ -4540,3 +4525,29 @@
   id: 717
   time: '2024-11-28T06:03:25.0000000+00:00'
   url: https://github.com/space-syndicate/space-station-14/pull/2811
+- author: SonicHDC
+  changes:
+  - message: "\u0414\u043E\u0431\u0430\u0432\u043B\u0435\u043D\u044B \u0434\u0432\u0438\
+      \u0436\u0443\u0449\u0435\u0439\u0441\u044F \u043F\u0430\u0440\u0430\u043B\u043B\
+      \u0430\u043A\u0441\u044B!"
+    type: Add
+  - message: "\u0414\u043E\u0431\u0430\u0432\u043B\u0435\u043D\u044B \u043B\u0435\u0434\
+      \u044F\u043D\u044B\u0435 \u043F\u0430\u0440\u0430\u043B\u043B\u0430\u043A\u0441\
+      \u044B!"
+    type: Add
+  - message: "\u0414\u043E\u0431\u0430\u0432\u043B\u0435\u043D\u044B \u043B\u0430\u0432\
+      \u043E\u0432\u044B\u0435 \u043F\u0430\u0440\u0430\u043B\u043B\u0430\u043A\u0441\
+      \u044B!"
+    type: Add
+  id: 718
+  time: '2024-11-28T09:25:30.0000000+00:00'
+  url: https://github.com/space-syndicate/space-station-14/pull/2813
+- author: Vonsant
+  changes:
+  - message: "\u0428\u0430\u043D\u0441\u044B \u0440\u0435\u0436\u0438\u043C\u043E\u0432\
+      \ \u0431\u044B\u043B\u0438 \u0432\u0430\u043D\u0438\u043B\u0438\u0437\u0438\u0440\
+      \u043E\u0432\u0430\u043D\u044B."
+    type: Tweak
+  id: 719
+  time: '2024-11-30T10:45:49.0000000+00:00'
+  url: https://github.com/space-syndicate/space-station-14/pull/2818
