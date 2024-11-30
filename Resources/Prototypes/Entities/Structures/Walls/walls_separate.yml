@@ -1,0 +1,362 @@
+- type: entity
+  parent: WallBrick
+  id: WallBrickSeparate
+  suffix: separated
+  components:
+  - type: IconSmooth
+    key: bricks
+    base: brick
+
+- type: entity
+  parent: WallClock
+  id: WallClockSeparate
+  suffix: separated
+  components:
+  - type: IconSmooth
+    key: clocks
+    base: clock
+
+- type: entity
+  parent: WallClown
+  id: WallClownSeparate
+  suffix: separated
+  components:
+  - type: IconSmooth
+    key: clowns
+    base: clown
+
+- type: entity
+  parent: WallMeat
+  id: WallMeatSeparate
+  suffix: separated
+  components:
+  - type: IconSmooth
+    key: meats
+    base: meat
+
+- type: entity
+  parent: WallCult
+  id: WallCultSeparate
+  suffix: separated
+  components:
+  - type: IconSmooth
+    key: cults
+    base: cult
+
+- type: entity
+  parent: WallDebug
+  id: WallDebugSeparate
+  suffix: DEBUG, separated
+  components:
+  - type: IconSmooth
+    key: debug
+    base: debug
+
+- type: entity
+  parent: WallDiamond
+  id: WallDiamondSeparate
+  suffix: separated
+  components:
+  - type: IconSmooth
+    key: diamonds
+    base: diamond
+
+- type: entity
+  parent: WallGold
+  id: WallGoldSeparate
+  suffix: separated
+  components:
+  - type: IconSmooth
+    key: golds
+    base: gold
+
+- type: entity
+  parent: WallIce
+  id: WallIceSeparate
+  suffix: separated
+  components:
+  - type: IconSmooth
+    key: ices
+    base: ice
+
+- type: entity
+  parent: WallPlasma
+  id: WallPlasmaSeparate
+  suffix: separated
+  components:
+  - type: IconSmooth
+    key: plasmas
+    base: plasma
+
+- type: entity
+  parent: WallPlastic
+  id: WallPlasticSeparate
+  suffix: separated
+  components:
+  - type: IconSmooth
+    key: plastics
+    base: plastic
+
+- type: entity
+  parent: WallPlastitaniumIndestructible
+  id: WallPlastitaniumIndestructibleSeparate
+  suffix: indestructible, separated
+  components:
+  - type: IconSmooth
+    key: plastitaniums
+    base: plastitanium
+
+- type: entity
+  parent: WallPlastitanium
+  id: WallPlastitaniumSeparate
+  suffix: separated
+  components:
+  - type: IconSmooth
+    key: plastitaniums
+    base: plastitanium
+
+- type: entity
+  parent: WallPlastitaniumDiagonal
+  id: WallPlastitaniumDiagonalSeparate
+  suffix: diagonal, separated
+  components:
+  - type: IconSmooth
+    mode: Diagonal
+    key: plastitaniums
+    base: state
+
+- type: entity
+  parent: WallReinforced
+  id: WallReinforcedSeparate
+  suffix: separated
+  components:
+  - type: IconSmooth
+    key: reinfs
+    base: reinf_over
+
+- type: entity
+  parent: WallReinforcedRust
+  id: WallReinforcedRustSeparate
+  suffix: rusted, separated
+  components:
+  - type: IconSmooth
+    key: reinfs
+    base: reinf_over
+
+- type: entity
+  parent: WallReinforcedDiagonal
+  id: WallReinforcedDiagonalSeparate
+  suffix: diagonal, separated
+  components:
+  - type: IconSmooth
+    mode: Diagonal
+    key: reinfs
+    base: state
+
+# Riveting
+- type: entity
+  parent: WallRiveted
+  id: WallRivetedSeparate
+  suffix: separated
+  components:
+  - type: IconSmooth
+    key: riveteds
+    base: riveted
+
+- type: entity
+  parent: WallSandstone
+  id: WallSandstoneSeparate
+  suffix: separated
+  components:
+  - type: IconSmooth
+    key: sandstones
+    base: sandstone
+
+- type: entity
+  parent: WallSilver
+  id: WallSilverSeparate
+  suffix: separated
+  components:
+  - type: IconSmooth
+    key: silvers
+    base: silver
+
+#shuttle walls
+- type: entity
+  parent: WallShuttleDiagonal
+  id: WallShuttleDiagonalSeparate
+  suffix: Diagonal, separated
+  description: Keeps the air in and the greytide out.
+  components:
+  - type: IconSmooth
+    mode: Diagonal
+    key: shuttles
+    base: state
+
+- type: entity
+  parent: WallShuttle
+  id: WallShuttleSeparate
+  suffix: Reinforced, Exterior, separated
+  components:
+  - type: IconSmooth
+    key: shuttles
+    base: state
+
+- type: entity
+  parent: WallShuttleInterior
+  id: WallShuttleInteriorSeparate
+  suffix: Interior, separated
+  components:
+  - type: IconSmooth
+    key: shuttles
+    base: state
+
+- type: entity
+  parent: WallSolid
+  id: WallSolidSeparate
+  suffix: separated
+  components:
+  - type: IconSmooth
+    key: solids
+    base: solid
+
+- type: entity
+  parent: WallSolidDiagonal
+  id: WallSolidDiagonalSeparate
+  suffix: diagonal, separated
+  components:
+  - type: IconSmooth
+    mode: Diagonal
+    key: solids
+    base: state
+
+- type: entity
+  parent: WallSolidRust
+  id: WallSolidRustSeparate
+  suffix: rusted, separated
+  components:
+  - type: IconSmooth
+    key: solids
+    base: solid
+
+- type: entity
+  parent: WallUranium
+  id: WallUraniumSeparate
+  suffix: separated
+  components:
+  - type: IconSmooth
+    key: uraniums
+    base: uranium
+
+- type: entity
+  parent: WallWood
+  id: WallWoodSeparate
+  suffix: separated
+  components:
+  - type: IconSmooth
+    key: woods
+    base: wood
+
+- type: entity
+  parent: WallWeb
+  id: WallWebSeparate
+  suffix: separated
+  components:
+  - type: IconSmooth
+    key: webs
+    base: wall
+
+
+# Lavalend Walls
+
+- type: entity
+  parent: WallNecropolis
+  id: WallNecropolisSeparate
+  suffix: separated
+  components:
+  - type: IconSmooth
+    key: necropolis
+    base: necropolis
+
+- type: entity
+  parent: WallMining
+  id: WallMiningSeparate
+  suffix: separated
+  components:
+  - type: IconSmooth
+    key: mining
+    base: mining
+
+- type: entity
+  parent: WallMiningDiagonal
+  id: WallMiningDiagonalSeparate
+  suffix: diagonal, separated
+  components:
+  - type: IconSmooth
+    mode: Diagonal
+    key: mining
+    base: state
+
+
+- type: entity
+  parent: WallCobblebrick
+  id: WallCobblebrickSeparate
+  suffix: separated
+  components:
+  - type: IconSmooth
+    key: cobblebricks
+    base: cobblebrick
+
+- type: entity
+  parent: WallBasaltCobblebrick
+  id: WallBasaltCobblebrickSeparate
+  suffix: separated
+  components:
+  - type: IconSmooth
+    key: cobblebricksbasalt
+    base: cobblebrick
+
+- type: entity
+  parent: WallSnowCobblebrick
+  id: WallSnowCobblebrickSeparate
+  suffix: separated
+  components:
+  - type: IconSmooth
+    key: cobblebrickssnow
+    base: cobblebrick
+
+- type: entity
+  parent: WallAsteroidCobblebrick
+  id: WallAsteroidCobblebrickSeparate
+  suffix: separated
+  components:
+  - type: IconSmooth
+    key: cobblebricksast
+    base: cobblebrick
+
+- type: entity
+  parent: WallSandCobblebrick
+  id: WallSandCobblebrickSeparate
+  suffix: separated
+  components:
+  - type: IconSmooth
+    key: cobblebrickssand
+    base: cobblebrick
+
+- type: entity
+  parent: WallChromiteCobblebrick
+  id: WallChromiteCobblebrickSeparate
+  suffix: separated
+  components:
+  - type: IconSmooth
+    key: cobblebrickschrom
+    base: cobblebrick
+
+- type: entity
+  parent: WallAndesiteCobblebrick
+  id: WallAndesiteCobblebrickSeparate
+  suffix: separated
+  components:
+  - type: IconSmooth
+    key: cobblebrickscobble
+    base: cobblebrick
