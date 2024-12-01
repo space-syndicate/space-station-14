@@ -42,7 +42,7 @@ public sealed class OhioAccentSystem : EntitySystem
         // Suffixes
         if (_random.Prob(0.3f))
         {
-            var pick = _random.Next(1, 13);
+            var pick = _random.Next(1, 7);
             message += Loc.GetString(suffix + pick);
         }
 
