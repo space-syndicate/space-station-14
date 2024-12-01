@@ -1,15 +1,3 @@
-ent-LeftArmBorg = { ent-BaseBorgArmLeft }
-    .desc = { ent-BaseBorgArmLeft.desc }
-ent-RightArmBorg = { ent-BaseBorgArmRight }
-    .desc = { ent-BaseBorgArmRight.desc }
-ent-LeftLegBorg = { ent-BaseBorgLegLeft }
-    .desc = { ent-BaseBorgLegLeft.desc }
-ent-RightLegBorg = { ent-BaseBorgLegRight }
-    .desc = { ent-BaseBorgLegRight.desc }
-ent-LightHeadBorg = { ent-BaseBorgHead }
-    .desc = { ent-BaseBorgHead.desc }
-ent-TorsoBorg = { ent-BaseBorgTorso }
-    .desc = { ent-BaseBorgTorso.desc }
 ent-LeftArmBorgEngineer = левая рука киборга-инженера
     .desc = { ent-BaseBorgArmLeft.desc }
 ent-RightArmBorgEngineer = правая рука киборга-инженера
