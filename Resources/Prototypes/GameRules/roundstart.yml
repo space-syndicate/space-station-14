@@ -248,6 +248,13 @@
       min: 600
       max: 900
   - type: ZombieRule
+  - type: DelayedRule  # Corvax-Next-ZombieRework: Grace period of 5 minutes before you can turn, to avoid a random passenger ruining your plan
+    delay: 300
+    delayedComponents:
+    - type: PendingZombie
+    - type: ZombifyOnDeath
+    - type: IncurableZombie
+    endedPopup: zombie-bioterrorist-romerol-active
   - type: AntagSelection
     definitions:
     - prefRoles: [ InitialInfected ]
@@ -258,13 +265,15 @@
         - ZombieImmune
         - AntagImmune
       briefing:
-        text: zombie-patientzero-role-greeting
+        text: zombie-bioterrorist-role-greeting # Corvax-Next-ZombieRework: Different greeting
         color: Plum
         sound: "/Audio/Ambience/Antag/zombie_start.ogg"
       components:
-      - type: PendingZombie
-      - type: ZombifyOnDeath
-      - type: IncurableZombie
+      # Corvax-Next-ZombieRework-Start: Replaced in DelayedRule Component.
+      # - type: PendingZombie
+      # - type: ZombifyOnDeath
+      # - type: IncurableZombie
+      # Corvax-Next-ZombieRework-End
       - type: InitialInfected
       # Corvax-MRP
       - type: NpcFactionMember
