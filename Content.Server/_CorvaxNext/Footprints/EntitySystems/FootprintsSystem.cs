@@ -97,7 +97,7 @@ public sealed class FootprintsSystem : EntitySystem
         if (string.IsNullOrWhiteSpace(component.ReagentToTransfer) || solution.Volume >= 1)
             return;
 
-        _solution.TryAddReagent(footPrintComponent.Solution.Value, component.ReagentToTransfer, 1, out _);
+        _solution.TryAddReagent(footPrintComponent.Solution.Value, component.ReagentToTransfer, 0.5, out _);
     }
 
     private EntityCoordinates CalcCoords(EntityUid uid, FootprintVisualizerComponent component, TransformComponent transform, bool state)
