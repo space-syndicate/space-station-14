@@ -10,3 +10,5 @@ ent-CrateArmoryLaser = ящик лазеров
     .desc = Содержит три стандартные лазерные винтовки. Чтобы открыть необходим доступ уровня Оружейной.
 ent-CrateArmoryPistols = ящик пистолетов
     .desc = Содержит два стандартных пистолета Nanotrasen, и 4 магазина к ним. Чтобы открыть необходим доступ уровня Оружейной.
+ent-CrateSecurityRiot = swat crate
+    .desc = Contains two sets of riot armor, helmets, shields, and enforcers loaded with beanbags. Extra ammo is included. Requires Armory access to open.
