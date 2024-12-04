@@ -52,7 +52,7 @@ public sealed class AgillitySkillSystem : SharedAgillitySkillSystem
         if (!TryComp<MovementSpeedModifierComponent>(ent.Owner, out var comp))
             return;
 
-        _popup.PopupEntity(Loc.GetString("agility-activated-massage"), ent.Owner);
+        _popup.PopupEntity(Loc.GetString("agility-activated-massage"), ent.Owner, ent.Owner);
 
         ent.Comp.SprintSpeedCurrent += ent.Comp.SprintSpeedModifier; // adding a modifier to the base running speed
         _movementSpeedModifier.RefreshMovementSpeedModifiers(ent.Owner);
@@ -68,7 +68,7 @@ public sealed class AgillitySkillSystem : SharedAgillitySkillSystem
         if (!TryComp<MovementSpeedModifierComponent>(uid, out var comp))
             return;
 
-        _popup.PopupEntity(Loc.GetString("agility-deactivated-massage"), uid);
+        _popup.PopupEntity(Loc.GetString("agility-deactivated-massage"), uid, uid);
 
         component.SprintSpeedCurrent = 1f; // return the base running speed to normal
         _movementSpeedModifier.RefreshMovementSpeedModifiers(uid);
