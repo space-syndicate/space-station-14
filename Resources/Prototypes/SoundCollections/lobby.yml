@@ -1,19 +1,24 @@
 - type: soundCollection
   id: LobbyMusic
   files:
-    - /Audio/Lobby/thunderdome.ogg
-    - /Audio/Lobby/absconditus.ogg
-    - /Audio/Lobby/space_asshole.ogg
-    - /Audio/Lobby/endless_space.ogg
-    - /Audio/Lobby/singuloose.ogg
-    - /Audio/Lobby/comet_haley.ogg
-    - /Audio/Lobby/title2.ogg
-    - /Audio/Lobby/title3.ogg
-    - /Audio/Lobby/mod.flip-flap.ogg
-    - /Audio/Lobby/Spac_Stac.ogg
-    - /Audio/Lobby/pwmur.ogg
-    - /Audio/Lobby/lasers_rip_apart_the_bulkhead.ogg
-    - /Audio/Lobby/every_light_is_blinking_at_once.ogg
-    - /Audio/Corvax/Lobby/title2.ogg # Corvax-LobbyMusic
-    - /Audio/Lobby/atomicamnesiammx.ogg
-    - /Audio/Corvax/Lobby/service.ogg # Corvax-LobbyMusic
+    # - /Audio/Lobby/thunderdome.ogg # Corvax-NewYearMusic
+    # - /Audio/Lobby/absconditus.ogg # Corvax-NewYearMusic
+    # - /Audio/Lobby/space_asshole.ogg # Corvax-NewYearMusic
+    # - /Audio/Lobby/endless_space.ogg # Corvax-NewYearMusic
+    # - /Audio/Lobby/singuloose.ogg # Corvax-NewYearMusic
+    # - /Audio/Lobby/comet_haley.ogg # Corvax-NewYearMusic
+    # - /Audio/Lobby/title2.ogg # Corvax-NewYearMusic
+    # - /Audio/Lobby/title3.ogg # Corvax-NewYearMusic
+    # - /Audio/Lobby/mod.flip-flap.ogg # Corvax-NewYearMusic
+    # - /Audio/Lobby/Spac_Stac.ogg # Corvax-NewYearMusic
+    # - /Audio/Lobby/pwmur.ogg # Corvax-NewYearMusic
+    # - /Audio/Lobby/lasers_rip_apart_the_bulkhead.ogg # Corvax-NewYearMusic
+    # - /Audio/Lobby/every_light_is_blinking_at_once.ogg # Corvax-NewYearMusic
+    # - /Audio/Corvax/Lobby/title2.ogg # Corvax-LobbyMusic # Corvax-NewYearMusic
+    # - /Audio/Lobby/atomicamnesiammx.ogg # Corvax-NewYearMusic
+    # - /Audio/Corvax/Lobby/service.ogg # Corvax-LobbyMusic # Corvax-NewYearMusic
+    - /Audio/_CorvaxNext/Lobby/Christmas/carol-of-the-bells.ogg # Corvax-NewYearMusic
+    - /Audio/_CorvaxNext/Lobby/Christmas/dance-of-sugar-plum-fairy.ogg # Corvax-NewYearMusic
+    - /Audio/_CorvaxNext/Lobby/Christmas/deck-in-the-halls.ogg # Corvax-NewYearMusic
+    - /Audio/_CorvaxNext/Lobby/Christmas/jingle-bells.ogg # Corvax-NewYearMusic
+    - /Audio/_CorvaxNext/Lobby/Christmas/wish-you-merry-christmas.ogg # Corvax-NewYearMusic
