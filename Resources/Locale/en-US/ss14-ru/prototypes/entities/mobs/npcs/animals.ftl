@@ -152,3 +152,7 @@ ent-MobDionaNymph = diona nymph
 ent-MobDionaNymphAccent = { ent-MobDionaNymph }
     .suffix = Accent
     .desc = { ent-MobDionaNymph.desc }
+ent-MobReindeerBuck = reindeer buck
+    .desc = You think it can pull a sleigh?
+ent-MobReindeerDoe = reindeer doe
+    .desc = { ent-MobReindeerBuck.desc }
