@@ -1,0 +1,12 @@
+- type: listing
+  id: UplinkWristwatchSyndi
+  name: uplink-syndi-wristwatch-name
+  description: uplink-syndi-wristwatch-desc
+  productEntity: WristwatchSyndi
+  discountCategory: veryRareDiscounts
+  discountDownTo:
+    Telecrystal: 3
+  cost:
+    Telecrystal: 5
+  categories:
+  - UplinkDeception

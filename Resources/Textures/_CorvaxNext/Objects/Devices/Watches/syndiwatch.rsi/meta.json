@@ -1,0 +1,140 @@
+{
+  "version": 1,
+  "license": "CC-BY-SA-3.0",
+  "copyright": "Taken from vgstation13 at https://github.com/vgstation-coders/vgstation13/blob/223bf37a7386249ecf1fe425ca8cef25821ca9d7/icons/obj/watches/wristwatch.dmi",
+  "size": {
+    "x": 32,
+    "y": 32
+  },
+  "states": [
+    {
+      "name": "syndiwatch"
+    },
+    {
+      "name": "syndiwatch_clock"
+    },
+    {
+      "name": "id_overlay"
+    },
+    {
+      "name": "light_overlay"
+    },
+    {
+      "name": "pda"
+    },
+    {
+      "name": "hours_1"
+    },
+    {
+      "name": "hours_2"
+    },
+    {
+      "name": "hours_3"
+    },
+    {
+      "name": "hours_4"
+    },
+    {
+      "name": "hours_5"
+    },
+    {
+      "name": "hours_6"
+    },
+    {
+      "name": "hours_7"
+    },
+    {
+      "name": "hours_8"
+    },
+    {
+      "name": "hours_9"
+    },
+    {
+      "name": "hours_10"
+    },
+    {
+      "name": "hours_11"
+    },
+    {
+      "name": "hours_0"
+    },
+    {
+      "name": "minutes_1"
+    },
+    {
+      "name": "minutes_2"
+    },
+    {
+      "name": "minutes_3"
+    },
+    {
+      "name": "minutes_4"
+    },
+    {
+      "name": "minutes_5"
+    },
+    {
+      "name": "minutes_6"
+    },
+    {
+      "name": "minutes_7"
+    },
+    {
+      "name": "minutes_8"
+    },
+    {
+      "name": "minutes_9"
+    },
+    {
+      "name": "minutes_10"
+    },
+    {
+      "name": "minutes_11"
+    },
+    {
+      "name": "minutes_0"
+    },
+    {
+      "name": "inhand-right",
+      "directions": 4
+    },
+    {
+      "name": "inhand-left",
+      "directions": 4
+    },
+    {
+      "name": "equipped-HAND",
+      "directions": 4
+    },
+    {
+      "name": "pinonclose",
+      "delays": [
+        [0.2, 0.2]
+      ]
+    },
+    {
+      "name": "pinondirect",
+      "delays": [
+        [0.2, 0.2]
+      ]
+    },
+    {
+      "name": "pinonfar",
+      "delays": [
+        [0.6, 0.2]
+      ]
+    },
+    {
+      "name": "pinonmedium",
+      "delays": [
+        [0.4, 0.2]
+      ]
+    },
+    {
+      "name": "pinonnull",
+      "delays": [
+        [0.2, 0.2]
+      ]
+    }
+  ]
+}
