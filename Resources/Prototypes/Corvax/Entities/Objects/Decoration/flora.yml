@@ -61,7 +61,7 @@
       - id: PresentRandomCash
         prob: 0.20
         orGroup: present
-      - id: PresentRandomAsh
+      - id: PresentRandomCoal
         prob: 0.05
         orGroup: present
     receivedPopup: christmas-tree-got-gift
