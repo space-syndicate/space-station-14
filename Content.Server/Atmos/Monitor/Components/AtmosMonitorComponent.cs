@@ -48,9 +48,7 @@ public sealed partial class AtmosMonitorComponent : Component
     [DataField("gasThresholds")]
     public Dictionary<Gas, AtmosAlarmThreshold>? GasThresholds;
 
-    /// <summary>
-    /// Stores a reference to the gas on the tile this entity is on (or the pipe network it monitors; see <see cref="MonitorsPipeNet"/>).
-    /// </summary>
+    // Stores a reference to the gas on the tile this is on.
     [ViewVariables]
     public GasMixture? TileGas;
 
@@ -67,19 +65,4 @@ public sealed partial class AtmosMonitorComponent : Component
     /// </summary>
     [DataField("registeredDevices")]
     public HashSet<string> RegisteredDevices = new();
-
-    /// <summary>
-    /// Specifies whether this device monitors its own internal pipe network rather than the surrounding atmosphere.
-    /// </summary>
-    /// <remarks>
-    /// If 'true', the entity will require a NodeContainerComponent with one or more PipeNodes to function.
-    /// </remarks>
-    [DataField]
-    public bool MonitorsPipeNet = false;
-
-    /// <summary>
-    /// Specifies the name of the pipe node that this device is monitoring.
-    /// </summary>
-    [DataField]
-    public string NodeNameMonitoredPipe = "monitored";
 }

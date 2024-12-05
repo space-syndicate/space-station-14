@@ -396,14 +396,12 @@ namespace Content.Server.Database
         /// </summary>
         /// <param name="address">The ip address of the user.</param>
         /// <param name="userId">The id of the user.</param>
-        /// <param name="hwId">The legacy HWId of the user.</param>
-        /// <param name="modernHWIds">The modern HWIDs of the user.</param>
+        /// <param name="hwId">The HWId of the user.</param>
         /// <returns>The user's latest received un-pardoned ban, or null if none exist.</returns>
         public abstract Task<ServerBanDef?> GetServerBanAsync(
             IPAddress? address,
             NetUserId? userId,
-            ImmutableArray<byte>? hwId,
-            ImmutableArray<ImmutableArray<byte>>? modernHWIds);
+            ImmutableArray<byte>? hwId);
 
         /// <summary>
         ///     Looks up an user's ban history.
@@ -412,15 +410,13 @@ namespace Content.Server.Database
         /// </summary>
         /// <param name="address">The ip address of the user.</param>
         /// <param name="userId">The id of the user.</param>
-        /// <param name="hwId">The legacy HWId of the user.</param>
-        /// <param name="modernHWIds">The modern HWIDs of the user.</param>
+        /// <param name="hwId">The HWId of the user.</param>
         /// <param name="includeUnbanned">Include pardoned and expired bans.</param>
         /// <returns>The user's ban history.</returns>
         public abstract Task<List<ServerBanDef>> GetServerBansAsync(
             IPAddress? address,
             NetUserId? userId,
             ImmutableArray<byte>? hwId,
-            ImmutableArray<ImmutableArray<byte>>? modernHWIds,
             bool includeUnbanned);
 
         public abstract Task AddServerBanAsync(ServerBanDef serverBan);
@@ -511,13 +507,11 @@ namespace Content.Server.Database
         /// <param name="address">The IP address of the user.</param>
         /// <param name="userId">The NetUserId of the user.</param>
         /// <param name="hwId">The Hardware Id of the user.</param>
-        /// <param name="modernHWIds">The modern HWIDs of the user.</param>
         /// <param name="includeUnbanned">Whether expired and pardoned bans are included.</param>
         /// <returns>The user's role ban history.</returns>
         public abstract Task<List<ServerRoleBanDef>> GetServerRoleBansAsync(IPAddress? address,
             NetUserId? userId,
             ImmutableArray<byte>? hwId,
-            ImmutableArray<ImmutableArray<byte>>? modernHWIds,
             bool includeUnbanned);
 
         public abstract Task<ServerRoleBanDef> AddServerRoleBanAsync(ServerRoleBanDef serverRoleBan);
@@ -607,7 +601,7 @@ namespace Content.Server.Database
             NetUserId userId,
             string userName,
             IPAddress address,
-            ImmutableTypedHwid? hwId)
+            ImmutableArray<byte> hwId)
         {
             await using var db = await GetDb();
 
@@ -624,7 +618,7 @@ namespace Content.Server.Database
             record.LastSeenTime = DateTime.UtcNow;
             record.LastSeenAddress = address;
             record.LastSeenUserName = userName;
-            record.LastSeenHWId = hwId;
+            record.LastSeenHWId = hwId.ToArray();
 
             await db.DbContext.SaveChangesAsync();
         }
@@ -670,7 +664,7 @@ namespace Content.Server.Database
                 player.LastSeenUserName,
                 new DateTimeOffset(NormalizeDatabaseTime(player.LastSeenTime)),
                 player.LastSeenAddress,
-                player.LastSeenHWId);
+                player.LastSeenHWId?.ToImmutableArray());
         }
 
         #endregion
@@ -679,11 +673,11 @@ namespace Content.Server.Database
         /*
          * CONNECTION LOG
          */
-        public abstract Task<int> AddConnectionLogAsync(NetUserId userId,
+        public abstract Task<int> AddConnectionLogAsync(
+            NetUserId userId,
             string userName,
             IPAddress address,
-            ImmutableTypedHwid? hwId,
-            float trust,
+            ImmutableArray<byte> hwId,
             ConnectionDenyReason? denied,
             int serverId);
 

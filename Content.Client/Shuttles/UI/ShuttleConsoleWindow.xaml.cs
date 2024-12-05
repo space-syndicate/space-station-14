@@ -138,7 +138,6 @@ public sealed partial class ShuttleConsoleWindow : FancyWindow,
     {
         var coordinates = _entManager.GetCoordinates(cState.NavState.Coordinates);
         NavContainer.SetShuttle(coordinates?.EntityId);
-        NavContainer.SetConsole(owner);
         MapContainer.SetShuttle(coordinates?.EntityId);
         MapContainer.SetConsole(owner);
 

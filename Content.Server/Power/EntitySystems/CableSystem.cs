@@ -35,10 +35,7 @@ public sealed partial class CableSystem : EntitySystem
         if (args.Handled)
             return;
 
-        if (cable.CuttingQuality != null)
-        {
-            args.Handled = _toolSystem.UseTool(args.Used, args.User, uid, cable.CuttingDelay, cable.CuttingQuality, new CableCuttingFinishedEvent());
-        }
+        args.Handled = _toolSystem.UseTool(args.Used, args.User, uid, cable.CuttingDelay, cable.CuttingQuality, new CableCuttingFinishedEvent());
     }
 
     private void OnCableCut(EntityUid uid, CableComponent cable, DoAfterEvent args)

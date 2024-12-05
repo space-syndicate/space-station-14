@@ -33,18 +33,6 @@ public sealed partial class ItemToggleComponent : Component
     public bool OnUse = true;
 
     /// <summary>
-    ///     The localized text to display in the verb to activate.
-    /// </summary>
-    [DataField]
-    public string VerbToggleOn = "item-toggle-activate";
-
-    /// <summary>
-    ///     The localized text to display in the verb to de-activate.
-    /// </summary>
-    [DataField]
-    public string VerbToggleOff = "item-toggle-deactivate";
-
-    /// <summary>
     ///     Whether the item's toggle can be predicted by the client.
     /// </summary>
     /// /// <remarks>

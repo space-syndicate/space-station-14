@@ -82,7 +82,7 @@ namespace Content.Server.Database
         }
     }
 
-    public partial class SnakeCaseConvention :
+    public class SnakeCaseConvention :
         IEntityTypeAddedConvention,
         IEntityTypeAnnotationChangedConvention,
         IPropertyAddedConvention,
@@ -99,27 +99,22 @@ namespace Content.Server.Database
 
         public static string RewriteName(string name)
         {
-            return UpperCaseLocator()
-                .Replace(
-                    name,
-                    (Match match) => {
-                        if (match.Index == 0 && (match.Value == "FK" || match.Value == "PK" ||  match.Value == "IX")) {
-                            return match.Value;
-                        }
-                        if (match.Value == "HWI")
-                            return (match.Index == 0 ? "" : "_") + "hwi";
-                        if (match.Index == 0)
-                            return match.Value.ToLower();
-                        if (match.Length > 1)
-                            return $"_{match.Value[..^1].ToLower()}_{match.Value[^1..^0].ToLower()}";
-
-                        // Do not add a _ if there is already one before this. This happens with owned entities.
-                        if (name[match.Index - 1] == '_')
-                            return match.Value.ToLower();
-
-                        return "_" + match.Value.ToLower();
+            var regex = new Regex("[A-Z]+",  RegexOptions.Compiled);
+            return regex.Replace(
+                name,
+                (Match match) => {
+                    if (match.Index == 0 && (match.Value == "FK" || match.Value == "PK" ||  match.Value == "IX")) {
+                        return match.Value;
                     }
-                );
+                    if (match.Value == "HWI")
+                        return (match.Index == 0 ? "" : "_") + "hwi";
+                    if (match.Index == 0)
+                        return match.Value.ToLower();
+                    if (match.Length > 1)
+                        return $"_{match.Value[..^1].ToLower()}_{match.Value[^1..^0].ToLower()}";
+                    return "_" + match.Value.ToLower();
+                }
+            );
         }
 
         public virtual void ProcessEntityTypeAdded(
@@ -337,8 +332,5 @@ namespace Content.Server.Database
                 }
             }
         }
-
-        [GeneratedRegex("[A-Z]+", RegexOptions.Compiled)]
-        private static partial Regex UpperCaseLocator();
     }
 }

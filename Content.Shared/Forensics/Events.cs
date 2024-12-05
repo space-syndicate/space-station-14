@@ -66,5 +66,5 @@ public record struct GenerateDnaEvent()
     /// <summary>
     /// The generated DNA.
     /// </summary>
-    public required string DNA;
+    public string DNA;
 }

@@ -1,7 +1,7 @@
 using Content.Shared.Singularity.EntitySystems;
 using Content.Shared.Singularity.Components;
 
-namespace Content.Client.Singularity.Systems;
+namespace Content.Client.Singularity.EntitySystems;
 
 /// <summary>
 /// The client-side version of <see cref="SharedEventHorizonSystem"/>.

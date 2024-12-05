@@ -155,7 +155,6 @@
   # phase cloak
   - type: ToggleClothing
     action: ActionTogglePhaseCloak
-    disableOnUnequip: true
   - type: ComponentToggler
     parent: true
     components:

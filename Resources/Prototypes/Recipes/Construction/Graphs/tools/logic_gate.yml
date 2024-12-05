@@ -46,8 +46,11 @@
         doAfter: 1
     - to: memory_cell
       steps:
-      - material: Capacitor
-        amount: 1
+      - tag: CapacitorStockPart
+        icon:
+          sprite: Objects/Misc/stock_parts.rsi
+          state: capacitor
+        name: a capacitor
       - material: Cable
         amount: 2
         doAfter: 1

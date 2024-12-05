@@ -21,7 +21,6 @@ using Content.Shared.Physics;
 using Content.Shared.Players.RateLimiting;
 using Content.Shared.Popups;
 using Content.Shared.Storage;
-using Content.Shared.Strip;
 using Content.Shared.Tag;
 using Content.Shared.Timing;
 using Content.Shared.UserInterface;
@@ -68,7 +67,6 @@ namespace Content.Shared.Interaction
         [Dependency] private readonly IRobustRandom _random = default!;
         [Dependency] private readonly TagSystem _tagSystem = default!;
         [Dependency] private readonly SharedUserInterfaceSystem _ui = default!;
-        [Dependency] private readonly SharedStrippableSystem _strippable = default!;
         [Dependency] private readonly SharedPlayerRateLimitManager _rateLimit = default!;
         [Dependency] private readonly IConfigurationManager _cfg = default!;
         [Dependency] private readonly ISharedChatManager _chat = default!;
@@ -1323,7 +1321,7 @@ namespace Content.Shared.Interaction
             if (wearer == user)
                 return true;
 
-            if (_strippable.IsStripHidden(slotDef, user))
+            if (slotDef.StripHidden)
                 return false;
 
             return InRangeUnobstructed(user, wearer) && _containerSystem.IsInSameOrParentContainer(user, wearer);

@@ -1,3 +1,4 @@
+using System.Collections.Immutable;
 using System.Net;
 using Content.Shared.Database;
 using Robust.Shared.Network;
@@ -120,7 +121,7 @@ public sealed record PlayerRecord(
     string LastSeenUserName,
     DateTimeOffset LastSeenTime,
     IPAddress LastSeenAddress,
-    ImmutableTypedHwid? HWId);
+    ImmutableArray<byte>? HWId);
 
 public sealed record RoundRecord(int Id, DateTimeOffset? StartDate, ServerRecord Server);
 

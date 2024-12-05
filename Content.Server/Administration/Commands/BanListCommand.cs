@@ -38,7 +38,7 @@ public sealed class BanListCommand : LocalizedCommands
 
         if (shell.Player is not { } player)
         {
-            var bans = await _dbManager.GetServerBansAsync(data.LastAddress, data.UserId, data.LastLegacyHWId, data.LastModernHWIds, false);
+            var bans = await _dbManager.GetServerBansAsync(data.LastAddress, data.UserId, data.LastHWId, false);
 
             if (bans.Count == 0)
             {

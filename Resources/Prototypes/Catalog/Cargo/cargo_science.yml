@@ -27,13 +27,3 @@
   cost: 800
   category: cargoproduct-category-name-science
   group: market
-
-- type: cargoProduct
-  id: CrewMonitoring
-  icon:
-    sprite: Structures/Machines/server.rsi
-    state: server
-  product: CrateCrewMonitoring
-  cost: 2000
-  category: cargoproduct-category-name-science
-  group: market

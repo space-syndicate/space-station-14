@@ -118,14 +118,11 @@ namespace Content.Server.Connection
 
             var serverId = (await _serverDbEntry.ServerEntity).Id;
 
-            var hwid = e.UserData.GetModernHwid();
-            var trust = e.UserData.Trust;
-
             if (deny != null)
             {
                 var (reason, msg, banHits) = deny.Value;
 
-                var id = await _db.AddConnectionLogAsync(userId, e.UserName, addr, hwid, trust, reason, serverId);
+                var id = await _db.AddConnectionLogAsync(userId, e.UserName, addr, e.UserData.HWId, reason, serverId);
                 if (banHits is { Count: > 0 })
                     await _db.AddServerBanHitsAsync(id, banHits);
 
@@ -137,12 +134,12 @@ namespace Content.Server.Connection
             }
             else
             {
-                await _db.AddConnectionLogAsync(userId, e.UserName, addr, hwid, trust, null, serverId);
+                await _db.AddConnectionLogAsync(userId, e.UserName, addr, e.UserData.HWId, null, serverId);
 
                 if (!ServerPreferencesManager.ShouldStorePrefs(e.AuthType))
                     return;
 
-                await _db.UpdatePlayerRecordAsync(userId, e.UserName, addr, hwid);
+                await _db.UpdatePlayerRecordAsync(userId, e.UserName, addr, e.UserData.HWId);
             }
         }
 
@@ -200,9 +197,7 @@ namespace Content.Server.Connection
                 hwId = null;
             }
 
-            var modernHwid = e.UserData.ModernHWIds;
-
-            var bans = await _db.GetServerBansAsync(addr, userId, hwId, modernHwid, includeUnbanned: false);
+            var bans = await _db.GetServerBansAsync(addr, userId, hwId, includeUnbanned: false);
             if (bans.Count > 0)
             {
                 var firstBan = bans[0];

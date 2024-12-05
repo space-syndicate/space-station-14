@@ -107,11 +107,15 @@ entities:
         - 0
         - 0
     - type: Parallax
-      parallax: IceWater
+      parallax: SillyIce
     - type: MapLight
       ambientLightColor: '#5D306EFF'
     - type: Weather
       weather:
+        Storm:
+          endTime: 0
+        Rain:
+          endTime: 0
         SnowfallLight: {}
   - uid: 2
     components:

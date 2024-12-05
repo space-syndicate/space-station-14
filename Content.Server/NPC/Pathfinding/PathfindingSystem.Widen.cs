@@ -84,6 +84,6 @@ public sealed partial class PathfindingSystem
 
         public float MaxWiden = 7f;
 
-        public required List<Vector2i> Path;
+        public List<Vector2i> Path;
     }
 }

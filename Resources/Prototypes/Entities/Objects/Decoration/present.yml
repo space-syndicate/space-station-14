@@ -374,23 +374,14 @@
       path: /Audio/Effects/unwrap.ogg
 
 - type: entity
-  id: PresentRandomCoal
+  id: PresentRandomAsh
   parent: [PresentBase, BaseItem]
-  suffix: Filled Coal
+  suffix: Filled Ash
   components:
   - type: SpawnItemsOnUse
     items:
       - id: PresentTrash
-      - id: Coal1
-        orGroup: GiftPool
-      - id: Coal5
-        prob: .4
-        orGroup: GiftPool
-      - id: Coal10
-        prob: .2
-        orGroup: GiftPool
-      - id: Coal15
-        prob: .1
+      - id: Ash # No coal yet!
         orGroup: GiftPool
     sound:
       path: /Audio/Effects/unwrap.ogg

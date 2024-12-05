@@ -6,7 +6,6 @@ using Content.Server.Mind;
 using Content.Server.Points;
 using Content.Server.RoundEnd;
 using Content.Server.Station.Systems;
-using Content.Shared.GameTicking;
 using Content.Shared.GameTicking.Components;
 using Content.Shared.Points;
 using Content.Shared.Storage;

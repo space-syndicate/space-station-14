@@ -22,8 +22,9 @@ using Content.Shared.Corvax.CCCVars;
 namespace Content.Client.UserInterface.Systems.Chat.Widgets;
 
 [GenerateTypedNameReferences]
-[Virtual]
+#pragma warning disable RA0003
 public partial class ChatBox : UIWidget
+#pragma warning restore RA0003
 {
     private readonly ChatUIController _controller;
     private readonly IEntityManager _entManager;

@@ -1,8 +1,7 @@
 using System.Linq;
-using System.Numerics;
-using Content.Client.Stylesheets;
 using Content.Client.UserInterface.Systems.MenuBar.Widgets;
 using Content.Shared.Construction.Prototypes;
+using Content.Shared.Tag;
 using Content.Shared.Whitelist;
 using Robust.Client.GameObjects;
 using Robust.Client.Graphics;
@@ -12,6 +11,7 @@ using Robust.Client.UserInterface;
 using Robust.Client.UserInterface.Controls;
 using Robust.Client.Utility;
 using Robust.Shared.Enums;
+using Robust.Shared.Graphics;
 using Robust.Shared.Prototypes;
 using static Robust.Client.UserInterface.Controls.BaseButton;
 
@@ -33,12 +33,10 @@ namespace Content.Client.Construction.UI
 
         private readonly IConstructionMenuView _constructionView;
         private readonly EntityWhitelistSystem _whitelistSystem;
-        private readonly SpriteSystem _spriteSystem;
 
         private ConstructionSystem? _constructionSystem;
         private ConstructionPrototype? _selected;
         private List<ConstructionPrototype> _favoritedRecipes = [];
-        private Dictionary<string, TextureButton> _recipeButtons = new();
         private string _selectedCategory = string.Empty;
         private string _favoriteCatName = "construction-category-favorites";
         private string _forAllCategoryName = "construction-category-all";
@@ -87,7 +85,6 @@ namespace Content.Client.Construction.UI
             IoCManager.InjectDependencies(this);
             _constructionView = new ConstructionMenu();
             _whitelistSystem = _entManager.System<EntityWhitelistSystem>();
-            _spriteSystem = _entManager.System<SpriteSystem>();
 
             // This is required so that if we load after the system is initialized, we can bind to it immediately
             if (_systemManager.TryGetEntitySystem<ConstructionSystem>(out var constructionSystem))
@@ -153,24 +150,12 @@ namespace Content.Client.Construction.UI
             PopulateInfo(_selected);
         }
 
-        private void OnGridViewRecipeSelected(object? sender, ConstructionPrototype? recipe)
-        {
-            if (recipe is null)
-            {
-                _selected = null;
-                _constructionView.ClearRecipeInfo();
-                return;
-            }
-
-            _selected = recipe;
-            if (_placementManager.IsActive && !_placementManager.Eraser) UpdateGhostPlacement();
-            PopulateInfo(_selected);
-        }
-
         private void OnViewPopulateRecipes(object? sender, (string search, string catagory) args)
         {
             var (search, category) = args;
+            var recipesList = _constructionView.Recipes;
 
+            recipesList.Clear();
             var recipes = new List<ConstructionPrototype>();
 
             var isEmptyCategory = string.IsNullOrEmpty(category) || category == _forAllCategoryName;
@@ -216,73 +201,12 @@ namespace Content.Client.Construction.UI
 
             recipes.Sort((a, b) => string.Compare(a.Name, b.Name, StringComparison.InvariantCulture));
 
-            var recipesList = _constructionView.Recipes;
-            recipesList.Clear();
-
-            var recipesGrid = _constructionView.RecipesGrid;
-            recipesGrid.RemoveAllChildren();
-
-            _constructionView.RecipesGridScrollContainer.Visible = _constructionView.GridViewButtonPressed;
-            _constructionView.Recipes.Visible = !_constructionView.GridViewButtonPressed;
-
-            if (_constructionView.GridViewButtonPressed)
+            foreach (var recipe in recipes)
             {
-                foreach (var recipe in recipes)
-                {
-                    var itemButton = new TextureButton
-                    {
-                        TextureNormal = _spriteSystem.Frame0(recipe.Icon),
-                        VerticalAlignment = Control.VAlignment.Center,
-                        Name = recipe.Name,
-                        ToolTip = recipe.Name,
-                        Scale = new Vector2(1.35f),
-                        ToggleMode = true,
-                    };
-                    var itemButtonPanelContainer = new PanelContainer
-                    {
-                        PanelOverride = new StyleBoxFlat { BackgroundColor = StyleNano.ButtonColorDefault },
-                        Children = { itemButton },
-                    };
-
-                    itemButton.OnToggled += buttonToggledEventArgs =>
-                    {
-                        SelectGridButton(itemButton, buttonToggledEventArgs.Pressed);
-
-                        if (buttonToggledEventArgs.Pressed &&
-                            _selected != null &&
-                            _recipeButtons.TryGetValue(_selected.Name, out var oldButton))
-                        {
-                            oldButton.Pressed = false;
-                            SelectGridButton(oldButton, false);
-                        }
-
-                        OnGridViewRecipeSelected(this, buttonToggledEventArgs.Pressed ? recipe : null);
-                    };
-
-                    recipesGrid.AddChild(itemButtonPanelContainer);
-                    _recipeButtons[recipe.Name] = itemButton;
-                    var isCurrentButtonSelected = _selected == recipe;
-                    itemButton.Pressed = isCurrentButtonSelected;
-                    SelectGridButton(itemButton, isCurrentButtonSelected);
-                }
+                recipesList.Add(GetItem(recipe, recipesList));
             }
-            else
-            {
-                foreach (var recipe in recipes)
-                {
-                    recipesList.Add(GetItem(recipe, recipesList));
-                }
-            }
-        }
 
-        private void SelectGridButton(TextureButton button, bool select)
-        {
-            if (button.Parent is not PanelContainer buttonPanel)
-                return;
-
-            button.Modulate = select ? Color.Green : Color.White;
-            var buttonColor = select ? StyleNano.ButtonColorDefault : Color.Transparent;
-            buttonPanel.PanelOverride = new StyleBoxFlat { BackgroundColor = buttonColor };
+            // There is apparently no way to set which
         }
 
         private void PopulateCategories(string? selectCategory = null)
@@ -333,10 +257,11 @@ namespace Content.Client.Construction.UI
 
         private void PopulateInfo(ConstructionPrototype prototype)
         {
+            var spriteSys = _systemManager.GetEntitySystem<SpriteSystem>();
             _constructionView.ClearRecipeInfo();
 
             _constructionView.SetRecipeInfo(
-                prototype.Name, prototype.Description, _spriteSystem.Frame0(prototype.Icon),
+                prototype.Name, prototype.Description, spriteSys.Frame0(prototype.Icon),
                 prototype.Type != ConstructionType.Item,
                 !_favoritedRecipes.Contains(prototype));
 
@@ -349,6 +274,7 @@ namespace Content.Client.Construction.UI
             if (_constructionSystem?.GetGuide(prototype) is not { } guide)
                 return;
 
+            var spriteSys = _systemManager.GetEntitySystem<SpriteSystem>();
 
             foreach (var entry in guide.Entries)
             {
@@ -364,20 +290,20 @@ namespace Content.Client.Construction.UI
                 // The padding needs to be applied regardless of text length... (See PadLeft documentation)
                 text = text.PadLeft(text.Length + entry.Padding);
 
-                var icon = entry.Icon != null ? _spriteSystem.Frame0(entry.Icon) : Texture.Transparent;
+                var icon = entry.Icon != null ? spriteSys.Frame0(entry.Icon) : Texture.Transparent;
                 stepList.AddItem(text, icon, false);
             }
         }
 
-        private ItemList.Item GetItem(ConstructionPrototype recipe, ItemList itemList)
+        private static ItemList.Item GetItem(ConstructionPrototype recipe, ItemList itemList)
         {
             return new(itemList)
             {
                 Metadata = recipe,
                 Text = recipe.Name,
-                Icon = _spriteSystem.Frame0(recipe.Icon),
+                Icon = recipe.Icon.Frame0(),
                 TooltipEnabled = true,
-                TooltipText = recipe.Description,
+                TooltipText = recipe.Description
             };
         }
 
