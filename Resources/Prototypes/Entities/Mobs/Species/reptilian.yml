@@ -113,9 +113,9 @@
       jumpsuit:
         sizeMaps:
           32:
-    # Corvax-Digitigrade-Start
-            sprite: Corvax/Mobs/Species/displacement.rsi
+            sprite: Corvax/Mobs/Species/displacement.rsi # Corvax-Digitigrade
             state: jumpsuit-female
+    # Corvax-Digitigrade-Start
       shoes:
         sizeMaps:
           32:
