@@ -78,3 +78,4 @@ laws-ui-law-header = Закон { $id }
 laws-ui-state-law = Объявить законы:
 laws-notify = Вы обязаны соблюдать законы ИИ, ознакомиться с которыми можно через боковую панель действий. Вы должны всегда следовать своим законам.
 laws-update-notify = Ваши законы были обновлены. Ознакомиться с изменениями можно через боковую панель действий.
+laws-notify-subverted = The laws of this chassis are modified. Make sure to review them.
