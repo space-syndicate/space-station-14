@@ -1,0 +1,88 @@
+- type: entity
+  parent: BaseItem
+  id: TapeRecorder
+  name: tape recorder
+  description: Anything said into this device can and will be used against you in a court of space law.
+  components:
+  - type: Sprite
+    sprite: Objects/Devices/tape_recorder.rsi
+    layers:
+    - state: taperecorder_empty
+    - state: taperecorder_idle
+      map: ["tape"]
+      visible: false
+  - type: Item
+    size: Small
+  - type: TapeRecorder
+  - type: ActiveListener
+    range: 4
+  - type: UseDelay
+    delay: 1
+  - type: Speech
+  - type: ItemSlots
+    slots:
+      cassette_tape:
+        priority: 4
+        whitelist:
+          components:
+          - FitsInTapeRecorder
+  - type: ContainerContainer
+    containers:
+      cassette_tape: !type:ContainerSlot
+  - type: Appearance
+  - type: GenericVisualizer
+    visuals:
+      enum.TapeRecorderVisuals.Mode:
+        tape:
+          Stopped: { state: "taperecorder_idle" }
+          Playing: { state: "taperecorder_playing" }
+          Recording: { state: "taperecorder_recording" }
+          Rewinding: { state: "taperecorder_rewinding" }
+      enum.TapeRecorderVisuals.TapeInserted:
+        tape:
+          True: { visible: true }
+          False: { visible: false }
+  - type: ActivatableUI
+    key: enum.TapeRecorderUIKey.Key
+    inHandsOnly: true
+    requireActiveHand: false
+  - type: UserInterface
+    interfaces:
+      enum.TapeRecorderUIKey.Key:
+        type: TapeRecorderBoundUserInterface
+
+- type: entity
+  parent: BaseItem
+  id: CassetteTape
+  name: cassette tape
+  description: A magnetic tape that can hold up to two minutes of content on either side.
+  components:
+  - type: Sprite
+    sprite: Objects/Devices/cassette_tapes.rsi
+    layers:
+    - state: tape_greyscale
+      map: [ "enum.DamageStateVisualLayers.Base" ]
+    - state: tape_ribbonoverlay
+      map: [ "enum.ToggleVisuals.Layer" ]
+      visible: false
+  - type: Item
+    size: Tiny
+  - type: Damageable
+  - type: TapeCassette
+    maxCapacity: 180
+    repairWhitelist:
+      tags:
+      - Screwdriver
+      - Write
+  - type: FitsInTapeRecorder
+  - type: Appearance
+  - type: GenericVisualizer
+    visuals:
+      enum.ToggleVisuals.Toggled:
+        enum.ToggleVisuals.Layer:
+          True: { visible: true }
+          False: { visible: false }
+  - type: RandomSprite
+    available:
+    - enum.DamageStateVisualLayers.Base:
+        tape_greyscale: Rainbow
