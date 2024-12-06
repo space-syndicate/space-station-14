@@ -74,9 +74,14 @@
       jumpsuit:
         sizeMaps:
           32:
-            sprite: Mobs/Species/Human/displacement.rsi
+            sprite: Corvax/Mobs/Species/displacement.rsi # Corvax-Digitigrade
             state: jumpsuit-female
     # Corvax-Digitigrade-Start
+      shoes:
+        sizeMaps:
+          32:
+            sprite: Corvax/Mobs/Species/displacement.rsi
+            state: shoes
     displacements:
       jumpsuit:
         sizeMaps:
@@ -84,7 +89,6 @@
             sprite: Corvax/Mobs/Species/displacement.rsi
             state: jumpsuit
       shoes:
-        # DM only for colored shoes!
         sizeMaps:
           32:
             sprite: Corvax/Mobs/Species/displacement.rsi
@@ -112,9 +116,14 @@
       jumpsuit:
         sizeMaps:
           32:
-            sprite: Mobs/Species/Human/displacement.rsi
+            sprite: Corvax/Mobs/Species/displacement.rsi # Corvax-Digitigrade
             state: jumpsuit-female
     # Corvax-Digitigrade-Start
+      shoes:
+        sizeMaps:
+          32:
+            sprite: Corvax/Mobs/Species/displacement.rsi
+            state: shoes
     displacements:
       jumpsuit:
         sizeMaps:
@@ -122,7 +131,6 @@
             sprite: Corvax/Mobs/Species/displacement.rsi
             state: jumpsuit
       shoes:
-        # DM only for colored shoes!
         sizeMaps:
           32:
             sprite: Corvax/Mobs/Species/displacement.rsi
