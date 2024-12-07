@@ -1,0 +1,20 @@
+- type: entity
+  parent: BaseItem
+  id: SecWatchCartridge
+  name: sec watch cartridge
+  description: A cartridge that tracks the status of currently wanted individuals.
+  components:
+  - type: Sprite
+    sprite: _CorvaxNext/Objects/Devices/cartridge.rsi
+    state: cart-cri
+  - type: Icon
+    sprite: _CorvaxNext/Objects/Devices/cartridge.rsi
+    state: cart-cri
+  - type: UIFragment
+    ui: !type:SecWatchUi
+  - type: Cartridge
+    programName: sec-watch-program-name
+    icon:
+      sprite: Objects/Weapons/Melee/stunbaton.rsi
+      state: stunbaton_on
+  - type: SecWatchCartridge

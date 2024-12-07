@@ -76,6 +76,7 @@
       - CrewManifestCartridge
       - NotekeeperCartridge
       - NewsReaderCartridge
+      - SecWatchCartridge # Corvax-Next-SecWatch
     cartridgeSlot:
       priority: -1
       name: device-pda-slot-component-slot-name-cartridge
@@ -138,6 +139,7 @@
       - NotekeeperCartridge
       - NewsReaderCartridge
       - MedTekCartridge
+      - SecWatchCartridge # Corvax-Next-SecWatch
 
 - type: entity
   parent: BasePDA
@@ -408,6 +410,7 @@
       - NotekeeperCartridge
       - NewsReaderCartridge
       - AstroNavCartridge
+      - SecWatchCartridge # Corvax-Next-SecWatch
 
 - type: entity
   parent: BasePDA
@@ -773,6 +776,7 @@
       - WantedListCartridge
       - MedTekCartridge
       - AstroNavCartridge
+      - SecWatchCartridge # Corvax-Next-SecWatch
 
 - type: entity
   parent: CentcomPDA
