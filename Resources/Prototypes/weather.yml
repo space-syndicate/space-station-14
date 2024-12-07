@@ -98,22 +98,26 @@
   sprite:
     sprite: /Textures/Effects/weather.rsi
     state: snowfall_light
-  sound:
-    path: /Audio/Effects/Weather/snowstorm_weak.ogg
-    params:
-      loop: true
-      volume: -12 # Corvax
+  # Corvax-start
+  #sound:
+  #  path: /Audio/Effects/Weather/snowstorm_weak.ogg
+  #  params:
+  #    loop: true
+  #    volume: -12 # Corvax
+  # Corvax-end
 
 - type: weather
   id: SnowfallMedium
   sprite:
     sprite: /Textures/Effects/weather.rsi
     state: snowfall_med
-  sound:
-    path: /Audio/Effects/Weather/snowstorm_weak.ogg
-    params:
-      loop: true
-      volume: -10 # Corvax
+  # Corvax-start
+  #sound:
+  #  path: /Audio/Effects/Weather/snowstorm_weak.ogg
+  #  params:
+  #    loop: true
+  #    volume: -10 # Corvax
+  # Corvax-end
 
 - type: weather
   id: SnowfallHeavy
