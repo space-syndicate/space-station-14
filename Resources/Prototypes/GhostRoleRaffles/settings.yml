@@ -13,3 +13,12 @@
     initialDuration: 10
     joinExtendsDurationBy: 2
     maxDuration: 15
+
+# Corvax-start
+- type: ghostRoleRaffleSettings
+  id: shortest
+  settings:
+    initialDuration: 5
+    joinExtendsDurationBy: 2
+    maxDuration: 7
+# Corvax-end

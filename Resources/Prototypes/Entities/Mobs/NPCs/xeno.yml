@@ -101,7 +101,7 @@
     description: ghost-role-information-xeno-description
     rules: ghost-role-information-xeno-rules
     raffle:
-      settings: default
+      settings: shortest # Corvax
   - type: GhostTakeoverAvailable
   - type: TypingIndicator
     proto: alien
