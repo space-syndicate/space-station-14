@@ -119,6 +119,10 @@
   parent: WallPlastitaniumDiagonal
   id: WallPlastitaniumDiagonalSeparate
   suffix: diagonal, separated
+  placement:
+    mode: SnapgridCenter
+    snap:
+    - Wall
   components:
   - type: IconSmooth
     mode: Diagonal
@@ -147,6 +151,10 @@
   parent: WallReinforcedDiagonal
   id: WallReinforcedDiagonalSeparate
   suffix: diagonal, separated
+  placement:
+    mode: SnapgridCenter
+    snap:
+    - Wall
   components:
   - type: IconSmooth
     mode: Diagonal
@@ -187,6 +195,10 @@
   id: WallShuttleDiagonalSeparate
   suffix: Diagonal, separated
   description: Keeps the air in and the greytide out.
+  placement:
+    mode: SnapgridCenter
+    snap:
+    - Wall
   components:
   - type: IconSmooth
     mode: Diagonal
@@ -224,6 +236,10 @@
   parent: WallSolidDiagonal
   id: WallSolidDiagonalSeparate
   suffix: diagonal, separated
+  placement:
+    mode: SnapgridCenter
+    snap:
+    - Wall
   components:
   - type: IconSmooth
     mode: Diagonal
@@ -291,6 +307,10 @@
   parent: WallMiningDiagonal
   id: WallMiningDiagonalSeparate
   suffix: diagonal, separated
+  placement:
+    mode: SnapgridCenter
+    snap:
+    - Wall
   components:
   - type: IconSmooth
     mode: Diagonal
