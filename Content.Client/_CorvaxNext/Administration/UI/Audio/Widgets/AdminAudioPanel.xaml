@@ -1,0 +1,50 @@
+<widgets:AdminAudioPanel xmlns="https://spacestation14.io"
+                xmlns:gfx="clr-namespace:Robust.Client.Graphics;assembly=Robust.Client"
+                xmlns:ui="clr-namespace:Content.Client.UserInterface.Controls"
+                xmlns:widgets="clr-namespace:Content.Client._CorvaxNext.Administration.UI.Audio.Widgets"
+                Title="{Loc 'admin-audio-panel-title'}"
+                SetSize="800 300"
+                xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                x:Class="Content.Client._CorvaxNext.Administration.UI.Audio.Widgets.AdminAudioPanel">
+    <BoxContainer Margin="4 0" Orientation="Horizontal">
+        <ScrollContainer HorizontalExpand="True" VerticalExpand="True" SetWidth="250">
+            <PanelContainer HorizontalExpand="True">
+                <PanelContainer.PanelOverride>
+                    <gfx:StyleBoxFlat BackgroundColor="#202028" />
+                </PanelContainer.PanelOverride>
+                <BoxContainer Name="TrackList" Orientation="Vertical" HorizontalExpand="True" VerticalExpand="True">
+                    <!-- Filled from .xaml.cs -->
+                </BoxContainer>
+            </PanelContainer>
+            <Control />
+        </ScrollContainer>
+        <BoxContainer Orientation="Vertical" MaxWidth="250">
+            <BoxContainer Orientation="Vertical">
+                <Label Text="{Loc 'admin-audio-panel-current-track-label'}" />
+                <Label Name="TrackName" Text="{Loc 'admin-audio-panel-track-name-nothing-playing'}" ClipText="True" />
+                <Slider Name="PlaybackSlider" HorizontalExpand="True" />
+            </BoxContainer>
+            <Label Name="DurationLabel" Text="00:00 / 00:00" HorizontalAlignment="Left" HorizontalExpand="True" />
+            <BoxContainer Orientation="Horizontal" HorizontalExpand="True" VerticalExpand="False">
+                <Button Name="PlayButton" Text="{Loc 'admin-audio-panel-button-play-text'}" ToggleMode="True" />
+                <Button Name="PauseButton" Text="{Loc 'admin-audio-panel-button-pause-text'}" />
+                <Button Name="StopButton" Text="{Loc 'admin-audio-panel-button-stop-text'}" />
+            </BoxContainer>
+            <LineEdit Name="VolumeLine" HorizontalExpand="True" PlaceHolder="{Loc 'admin-audio-panel-volume-line-placeholder'}" Editable="True" />
+            <CheckBox Name="GlobalCheckbox" Text="{Loc 'admin-audio-panel-toggle-global-checkbox-label'}" />
+            <Control VerticalExpand="True" />
+            <LineEdit Name="TrackPathLine" HorizontalExpand="True" PlaceHolder="{Loc 'admin-audio-panel-trackpath-line-placeholder'}" Editable="True" />
+            <Button Name="AddTrackButton" Text="{Loc 'admin-audio-panel-add-track-button-text'}" />
+        </BoxContainer>
+        <ScrollContainer HorizontalExpand="True" VerticalExpand="True" SetWidth="200">
+            <PanelContainer HorizontalExpand="True">
+                <PanelContainer.PanelOverride>
+                    <gfx:StyleBoxFlat BackgroundColor="#202028" />
+                </PanelContainer.PanelOverride>
+                <BoxContainer Name="PlayersContainer" Orientation="Vertical" HorizontalExpand="True" VerticalExpand="True">
+                    <!-- Filled from .xaml.cs -->
+                </BoxContainer>
+            </PanelContainer>
+        </ScrollContainer>
+    </BoxContainer>
+</widgets:AdminAudioPanel>
