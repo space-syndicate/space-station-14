@@ -1,0 +1,54 @@
+#Скафандр учёного
+- type: entity
+  parent: ClothingOuterHardsuitBase
+  id: ClothingOuterScienceHardsuit
+  name: научный скафандр #science hardsuit
+  description: Специальный скафандр для работы в опасной среде. #A special hardsuit for work in a hazardous environment. Designed specifically for the station's scientific department.
+  components:
+  - type: Sprite
+    sprite: _ByLoks/science.rsi
+  - type: Clothing
+    sprite: _ByLoks/science.rsi
+  - type: PressureProtection
+    highPressureMultiplier: 0.02
+    lowPressureMultiplier: 1000
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.8
+        Slash: 0.8
+        Piercing: 0.8
+        Heat: 0.4
+        Radiation: 0.2
+        Caustic: 0.3
+  - type: ExplosionResistance
+    damageCoefficient: 0.1
+  - type: ClothingSpeedModifier
+    walkModifier: 0.75
+    sprintModifier: 0.75
+  - type: HeldSpeedModifier
+  - type: Item
+    size: Huge
+    shape:
+    - 0,0,4,4
+  - type: ToggleableClothing
+    clothingPrototype: ClothingHeadScienceHardsuit
+  - type: StaticPrice
+    price: 750
+
+#Шлем научного скафандра
+- type: entity
+  parent: ClothingHeadHardsuitWithLightBase
+  id: ClothingHeadScienceHardsuit
+  name: шлем научного скафандра #science hardsuit helmet
+  description: Легкий жесткий шлем, не ограничивающий движения головы. #Lightweight hardsuit helmet that doesn't restrict your head movements.
+  components:
+  - type: Sprite
+    sprite: _ByLoks/sciencehead.rsi
+  - type: Clothing
+    sprite: _ByLoks/sciencehead.rsi
+  - type: PointLight # Corvax-Resprite
+    color: "#a4fef4"
+  - type: PressureProtection
+    highPressureMultiplier: 0.60
+    lowPressureMultiplier: 1000

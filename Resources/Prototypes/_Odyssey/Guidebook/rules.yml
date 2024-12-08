@@ -1,0 +1,64 @@
+- type: guideEntry
+  id: OdysseyRuleset
+  name: Правила сервера
+  priority: 0
+  ruleEntry: true
+  text: "/ServerInfo/Odyssey/Guidebook/ServerRules/MrpRuleset.xml"
+  children:
+  - OdysseyRule0
+  - OdysseyRule1
+  - OdysseyRule2
+  - OdysseyRule3
+  - OdysseyRule4
+  - OdysseyRule5
+  - OdysseyRule6
+
+- type: guideEntry
+  id: OdysseyRule0
+  name: Правило 0
+  priority: 1
+  ruleEntry: true
+  text: "/ServerInfo/Odyssey/Guidebook/ServerRules/Rule0.xml"
+
+- type: guideEntry
+  id: OdysseyRule1
+  name: Правило 1
+  priority: 2
+  ruleEntry: true
+  text: "/ServerInfo/Odyssey/Guidebook/ServerRules/Rule1.xml"
+
+- type: guideEntry
+  id: OdysseyRule2
+  name: Правило 2
+  priority: 3
+  ruleEntry: true
+  text: "/ServerInfo/Odyssey/Guidebook/ServerRules/Rule2.xml"
+
+- type: guideEntry
+  id: OdysseyRule3
+  name: Правило 3
+  priority: 4
+  ruleEntry: true
+  text: "/ServerInfo/Odyssey/Guidebook/ServerRules/Rule3.xml"
+
+- type: guideEntry
+  id: OdysseyRule4
+  name: Правило 4
+  priority: 5
+  ruleEntry: true
+  text: "/ServerInfo/Odyssey/Guidebook/ServerRules/Rule4.xml"
+
+- type: guideEntry
+  id: OdysseyRule5
+  name: Правило 5
+  priority: 6
+  ruleEntry: true
+  text: "/ServerInfo/Odyssey/Guidebook/ServerRules/Rule5.xml"
+
+- type: guideEntry
+  id: OdysseyRule6
+  name: Правило 6
+  priority: 7
+  ruleEntry: true
+  text: "/ServerInfo/Odyssey/Guidebook/ServerRules/Rule6.xml"
+

@@ -1,0 +1,4267 @@
+﻿#------------------------------------
+# Работа ВНИЗУ САМОМ ЕСТЬ ШТУКА КОТОРАЯ ДОБАВЛЯЕТ ИХ НА КАРТУ - Vanilla Maps
+#------------------------------------
+
+- type: randomHumanoidSettings
+  id: LavaSettingsMinerProfession
+  randomizeName: true
+  components:
+    - type: Loadout
+      prototypes: [LavaMinerProfessionGear]
+    - type: GhostRole
+      name: 'Шахтёр'
+      description: "Шахтёр, добро пожаловать в замечательные шахты НТ, прозванные Лаваленд. Здесь вы будете крушить камни, сражаться с монстрами и умирать. "
+    - type: GhostTakeoverAvailable
+
+- type: job
+  id: MinerProfession
+  name: Шахтёр
+  description: Шахтёр, добро пожаловать в замечательные шахты НТ, прозванные Лаваленд. Здесь вы будете крушить камни, сражаться с монстрами и умирать. 
+  playTimeTracker: JobEvent1
+  requirements:
+    - !type:DepartmentTimeRequirement
+      department: Cargo
+      time: 18000 #5 часов
+  startingGear: LavaMinerProfessionGear
+  icon: "JobIconShaftMiner"
+  supervisors: job-supervisors-qm 
+  requireAdminNotify: true
+  joinNotifyCrew: true
+  canBeAntag: false
+  access:
+  - Cargo
+  - Salvage
+  - Maintenance
+  - External
+  special:
+  - !type:AddImplantSpecial
+    implants: [ MindShieldImplant ]
+
+- type: entity
+  id: LavaRandomHumanoidSpawnerMinerProfession
+  name: Шахтёр
+  components:
+    - type: Sprite
+      sprite: Markers/jobs.rsi
+      state: cburn
+    - type: RandomHumanoidSpawner
+      settings: LavaSettingsMinerProfession
+
+- type: startingGear
+  id: LavaMinerProfessionGear
+  equipment:
+    jumpsuit: ClothingUniformJumpsuitSalvageSpecialist #Униформ
+    back: ClothingBackpackDuffelSalvage #Рюкзак
+    shoes: ClothingShoesBootsSalvage #Ботинки
+    head: ClothingHeadHatHardhatYellowDark  #Голова
+    eyes: ClothingEyesGlassesCheapSunglasses    #Очки                             ClothingBeltSalvageWebbing ClothingBeltSecurityFilled
+    gloves: ClothingHandsGlovesColorBlack #Перчатки
+    outerClothing: ClothingOuterWinterMiner #Верх
+    id: MinerPDA
+    ears: ClothingHeadsetMining #Уши
+    belt: BoxSurvival #Поясь
+    pocket1: LavaPhoneInstrument
+    pocket2: AppraisalTool
+
+#-----=========[Добавление в ротацию работ]=========-----#
+
+# Отдельная благодарность lzk за помощь с добавлением роли в ротацию.
+## Перезапись departments.yml
+
+- type: department
+  id: Cargo
+  description: department-Cargo-description
+  color: "#A46106"
+  roles:
+  - CargoTechnician
+  - Quartermaster
+  - SalvageSpecialist 
+  - MinerProfession #Шахтёр
+
+## Спавн маркер
+
+- type: entity
+  id: SpawnPointMinerProfession
+  parent: SpawnPointJobBase
+  name: Шахтёр
+  components:
+  - type: SpawnPoint
+    job_id: MinerProfession
+  - type: Sprite
+    layers:
+      - state: green
+      - state: security_officer
+
+## КПК
+
+- type: entity
+  parent: BasePDA
+  id: MinerPDA
+  name: КПК шахтёра
+  description: Наверняка владелец этого КПК любит пиво или абсент.
+  components:
+  - type: Pda
+    id: MinerIDCard
+    state: pda-miner
+  - type: PdaBorderColor
+    borderColor: "#201c16"
+    accentVColor: "#520078"
+  - type: Icon
+    state: pda-miner
+
+- type: entity
+  parent: IDCardStandard
+  id: MinerIDCard
+  name: ID карта
+  description: Карта, необходимая для доступа в различные области станции.
+  components:
+  - type: Sprite
+    layers:
+    - state: default
+    - state: idshaftminer
+  - type: PresetIdCard
+    job: MinerProfession
+##МЕГАФАУНА
+
+- type: entity #Удар с аним.
+  id: AttackLava
+  parent: WeaponArcStatic
+  noSpawn: true
+  components:
+    - type: WeaponArcVisuals
+      fadeOut: false
+    - type: Sprite
+      sprite: /_Odyssey/lavaland/telegraph.rsi
+      layers:
+        - state: bite
+    - type: TimedDespawn
+      lifetime: 0.399
+      
+- type: entity
+  noSpawn: true
+  name: Гост ролька
+  id: MobLavaGost
+  suffix: FraG  
+  components:    
+  - type: GhostRole #Гост роль
+    makeSentient: true
+    allowSpeech: true
+    allowMovement: true
+    requirements:
+    name: Обитатели Лаваленда
+    description: Ваша задача ходить и ждать когда вас встретит утилизатор. Сами вы их искать не должно!
+  - type: GhostTakeoverAvailable   #Гост роль 
+
+ #Крик у всех    
+- type: emoteSounds
+  id: UnisexBreath
+  params:
+    variation: 0.125
+  sounds:
+    Scream:
+      path: /Uploaded/Dragon/lavaland/monsters-breath_g1bqzbeu.ogg
+    Laugh:
+      path: /Uploaded/Dragon/lavaland/monsters-breath_g1bqzbeu.ogg
+    Chitter:
+      path: /Uploaded/Dragon/lavaland/monsters-breath_g1bqzbeu.ogg
+    Click:
+      path: /Uploaded/Dragon/lavaland/monsters-breath_g1bqzbeu.ogg
+    Weh:
+      collection: Weh   
+      
+#ИМПЛАНТ СВЕТ      
+- type: entity
+  parent: BaseSubdermalImplant
+  id: LavaLightImplant
+  name: Свет.
+  description: Указывает вам путь.
+  noSpawn: true
+  components:
+    - type: SubdermalImplant
+      implantAction: ActionToggleLight
+    - type: PointLight
+      enabled: false
+      radius: 5
+      softness: 5
+      color: "#ff4242"      
+      mask: /Textures/Effects/LightMasks/cone.png
+      autoRot: true
+    - type: Tag
+      tags:
+        - SubdermalImplant
+        - HideContextMenu
+        - Flashlight
+    - type: UnpoweredFlashlight  
+  
+
+- type: entity
+  id: LavaLightImplanter
+  name: Свет.
+  parent: BaseImplantOnlyImplanter
+  components:
+    - type: Implanter
+      implant: LavaLightImplant   
+           
+#Бубльгум
+- type: entity
+  parent: 
+  - MobLavaGost
+  - MobHellspawn
+  id: MobBubblegum
+  name: Бубльгум
+  description: ЧТО ЭТО??!
+  suffix: FraG, фауна
+  components:
+  - type: Sprite
+    sprite: /_Odyssey/lavaland/dragon.rsi
+    layers:
+      - state: bubblegum
+        map: ["enum.DamageStateVisualLayers.Base"]
+  - type: DamageStateVisuals
+    states:
+      Alive:
+        Base: bubblegum
+      Dead:
+        Base: bubblegum
+  - type: MeleeWeapon
+    soundHit:
+        path: /Audio/Weapons/Xeno/alien_claw_flesh3.ogg
+    angle: 0
+    animation: AttackLava
+    damage:
+      types:
+        Blunt: 50
+        Piercing: 15
+        Structural: 500
+  - type: MovementSpeedModifier #Скорость
+    baseWalkSpeed: 4
+    baseSprintSpeed: 4
+  - type: Reflect 
+    enabled: true
+    reflectProb: 0.5
+    velocityBeforeNotMaxProb: 1.0
+    velocityBeforeMinProb: 3.0
+    minReflectProb: 0.1
+    spread: 90      #Отражение 
+  - type: MobThresholds #ХП
+    thresholds:
+      0: Alive
+      1500: Dead
+  - type: Butcherable #Разделка 
+    spawned:
+      - id: ArtifactFragment
+        amount: 4  
+      - id: ClothingNeckCloakGoliathCloakHellspawn  
+        amount: 1      
+  - type: PointLight
+    radius: 2
+    energy: 2.5
+    color: "#ff4242"
+    castShadows: false
+  - type: PassiveDamage # Slight passive regen. Assuming one damage type, comes out to about 4 damage a minute.Самолечение
+    allowedStates:
+    - Alive
+    damageCap: 2000
+    damage:
+      types:
+        Heat: -15.5
+      groups:
+        Brute: -15.5   
+        Toxin: -15
+        Airloss: -15.5
+        Burn: -15.5 
+  - type: AutoImplant
+    implants:
+    - LightImplantSpiderBubblegum   
+    - BaseSubdermalImplantWall
+    - LightImplantSpiderBubblegumRune
+    - LightImplantSpiderActionBlinkBubblegumJump
+    - LavaLightImplanter
+  - type: IgnoreSpiderWeb  
+  - type: Destructible
+    thresholds:
+      - trigger:
+          !type:DamageTrigger
+          damage: 2000
+  - type: Vocal 
+    sounds:
+      Male: UnisexBreath
+      Female: UnisexBreath
+      Unsexed: UnisexBreath #Крик        
+     
+- type: entity
+  parent: ClothingNeckCloakGoliathCloak
+  id: ClothingNeckCloakGoliathCloakHellspawn
+  name: плащ Бубльгума
+  description: Редкий трофей!
+  suffix: FraG
+  components:   
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.8 #Быстрая броня, но защита не лучшая.
+        Slash: 0.75
+        Piercing: 0.8
+        Heat: 0.65
+        Radiation: 0.9
+        Caustic: 0.9
+  - type: ClothingSpeedModifier
+    walkModifier: 0.8
+    sprintModifier: 0.8 
+  - type: PointLight
+    radius: 3
+    energy: 2.5
+    color: "#ff4242"
+    castShadows: false    
+    
+- type: entity
+  id: SpiderWebUsual #Паутина без шелка. 
+  name: капкан
+  description: Ловушка!
+  parent: SpiderWeb
+  suffix: FraG, обычная 
+  placement:
+    mode: SnapgridCenter
+    snap:
+      - Wall
+  components:
+    - type: TimedDespawn #Система цикла
+      lifetime: 5         
+      ignoreWhitelist:
+        components:
+            - IgnoreSpiderWeb    
+    - type: MeleeSound
+      soundGroups:
+        Brute:
+          path:
+            "/Audio/Weapons/slash.ogg"
+    - type: Sprite
+      sprite: Uploaded/Dragon/telegraph.rsi
+      layers:
+        - state: target_circle
+          map: ["spiderWebLayer"]
+      drawdepth: WallMountedItems
+    - type: Appearance
+    - type: GenericVisualizer
+      visuals:
+        enum.SpiderWebVisuals.Variant:
+          spiderWebLayer:
+            1:  {state: target_circle}
+            2:  {state: target_circle}
+    - type: Clickable
+    - type: Transform
+      anchored: true
+    - type: Physics
+    - type: Fixtures
+      fixtures:
+        fix1:
+          hard: false
+          density: 7
+          shape:
+            !type:PhysShapeAabb
+            bounds: "-0.5,-0.5,0.5,0.5"
+          layer:
+          - MidImpassable
+    - type: Damageable
+      damageModifierSet: Wood
+    - type: Destructible
+      thresholds:
+      - trigger:
+          !type:DamageTrigger
+          damage: 10
+        behaviors:
+        - !type:DoActsBehavior
+          acts: [ "Destruction" ]
+    - type: Temperature
+      heatDamage:
+        types:
+          Heat: 5
+      coldDamage: {}
+      coldDamageThreshold: 0
+    - type: Flammable
+      fireSpread: true
+      damage:
+        types:
+          Heat: 5
+    - type: Reactive
+      groups:
+        Flammable: [Touch]
+        Extinguish: [Touch]
+    - type: SpiderWebObject
+    - type: SpeedModifierContacts #Замедление паутины
+      walkSpeedModifier: 0.3
+      sprintSpeedModifier: 0.3
+      ignoreWhitelist:
+        components:
+            - IgnoreSpiderWeb              
+       
+
+- type: entity
+  id: ActionSpawnMagicarpBubblegum #Заклинание призыва лавы 1
+  name: Замедлить врага.
+  noSpawn: true
+  components:
+  - type: WorldTargetAction
+    useDelay: 3 #КД
+    range: 15
+    itemIconStyle: BigAction
+    icon:
+      sprite: /_Odyssey/lavaland/telegraph.rsi
+      state: target_circle
+    event: !type:WorldSpawnSpellEvent
+      prototypes:
+      - id: SpiderWebUsual
+        amount: 1
+      offset: 0, 1
+      speech: Кссс...!??        
+      
+- type: entity
+  parent: BaseSubdermalImplant #Сам имплант 
+  id: LightImplantSpiderBubblegum
+  name: Замедлить врага.
+  description: 
+  noSpawn: true
+  components:
+    - type: SubdermalImplant
+      implantAction: ActionSpawnMagicarpBubblegum      #Суда заклинание   
+#Руна
+- type: entity
+  id: ActionSpawnMagicarpBubblegumRune #Заклинание призыва лавы 1
+  name: Создать руну воспламенения
+  description: Создает руну воспламениния, которая пропадает через 15 секунд.
+  noSpawn: true
+  components:
+  - type: WorldTargetAction
+    useDelay: 25 #КД
+    range: 8
+    itemIconStyle: BigAction
+    icon:
+      sprite: /_Odyssey/lavaland/telegraph.rsi
+      state: target_circle
+    event: !type:WorldSpawnSpellEvent
+      prototypes:
+      - id: IgniteRuneRune
+        amount: 1
+      offset: 0, 1
+      speech: Кссс...!??        
+      
+- type: entity
+  parent: BaseSubdermalImplant #Сам имплант 
+  id: LightImplantSpiderBubblegumRune
+  name: Создать руну воспламенения
+  description: Создает руну воспламениния, которая пропадает через 15 секунд.
+  noSpawn: true
+  components:
+    - type: SubdermalImplant
+      implantAction: ActionSpawnMagicarpBubblegumRune      #Суда заклинание 
+
+- type: entity
+  parent: IgniteRune 
+  id: IgniteRuneRune
+  name: руна воспламенения
+  description: 
+  noSpawn: true
+  components:
+    - type: TimedDespawn #Система цикла
+      lifetime: 15         
+      ignoreWhitelist:  
+      
+#Прыжок      
+- type: entity
+  id: ActionBlinkBubblegumJump
+  name: Разбег. 
+  description: Вы разбегаетесь со скоростью света в определенную точку.
+  noSpawn: true
+  components:
+  - type: WorldTargetAction
+    useDelay: 30
+    range: 8 
+    itemIconStyle: BigAction
+    checkCanAccess: false
+    repeat: true
+    icon:
+      sprite: Objects/Magic/magicactions.rsi
+      state: blink
+    event: !type:TeleportSpellEvent
+    
+- type: entity
+  parent: BaseSubdermalImplant #Сам имплант 
+  id: LightImplantSpiderActionBlinkBubblegumJump
+  name: Разбег. 
+  description: Вы разбегаетесь со скоростью света в определенную точку.
+  noSpawn: true
+  components:
+    - type: SubdermalImplant
+      implantAction: ActionBlinkBubblegumJump      #Суда заклинание     
+      
+
+#Мясная стена
+- type: entity 
+  id: WoodenSupportBubblegum
+  name: Стена!
+  description: Убегай!
+  parent: WoodenSupport
+  components:
+  - type: Sprite
+    sprite: /_Odyssey/lavaland/telegraph.rsi
+    state: hoarder_circle
+  - type: Fixtures
+    fixtures:
+      fix1:
+        hard: false
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.5,-0.5,0.5,0.5"
+        mask:
+        - FullTileMask
+        layer:
+        - WallLayer
+        density: 1000 
+  - type: TimedDespawn #Система цикла
+    lifetime: 8
+  - type: SpawnOnDespawn
+    prototype: FloorLavaEntityBubblegum   #Система цикла        
+        
+- type: entity 
+  id: FloorLavaEntityBubblegum
+  name: мясная стена
+  description: Липко!
+  parent: WallMeat 
+  components:
+  - type: TimedDespawn 
+    lifetime: 8  
+
+- type: entity
+  id: ActionSpawnMagicarpBubblegumWall  #Заклинание призыва лавы 1
+  name: Создать стену.
+  noSpawn: true
+  components:
+  - type: WorldTargetAction
+    useDelay: 8 #КД
+    range: 15
+    itemIconStyle: BigAction
+    icon:
+      sprite: /_Odyssey/lavaland/telegraph.rsi
+      state: hoarder_circle
+    event: !type:WorldSpawnSpellEvent
+      prototypes:
+      - id: WoodenSupportBubblegum
+        amount: 5
+      offset: 0, 1
+      speech: Кссс...!??        
+      
+- type: entity
+  parent: BaseSubdermalImplant #Сам имплант 
+  id: BaseSubdermalImplantWall 
+  name: Создать стену.
+  description: 
+  noSpawn: true
+  components:
+    - type: SubdermalImplant
+      implantAction: ActionSpawnMagicarpBubblegumWall      #Суда заклинание     
+
+#ДРЕЙК
+- type: entity
+  parent: MobBubblegum
+  id: MobAshDrake
+  name: Дрейк
+  suffix: FraG, фауна
+  components:
+  - type: Sprite
+    sprite: /_Odyssey/lavaland/dragon.rsi
+    layers:
+      - state: dragon
+        map: ["enum.DamageStateVisualLayers.Base"]  
+  - type: DamageStateVisuals
+    states:
+      Alive:
+        Base: dragon
+      Dead:
+        Base: dragon_dead 
+  - type: MovementSpeedModifier
+    baseWalkSpeed: 4
+    baseSprintSpeed: 4
+  - type: RechargeBasicEntityAmmo #Кислота 
+    rechargeCooldown: 5
+  - type: BasicEntityAmmoProvider
+    proto: ProjectileAnomalyFireballDrake
+    capacity: 10
+    count: 10       
+  - type: Gun
+    fireRate: 5
+    useKey: false
+    selectedMode: FullAuto
+    availableModes:
+      - FullAuto
+    soundGunshot: /Audio/Magic/fireball.ogg  #Звук кислоты   #Кислота     
+  - type: MeleeWeapon
+    soundHit:
+        path: /Audio/Weapons/Xeno/alien_claw_flesh3.ogg
+    angle: 0
+    animation: AttackLava
+    damage:
+      types:
+        Blunt: 35
+        Piercing: 15
+        Structural: 200 
+  - type: MobThresholds #ХП
+    thresholds:
+      0: Alive
+      650: Dead    
+  - type: AutoImplant
+    implants:
+    - LightImplantSpiderDrake 
+    - LightImplantSpiderDrakeOne
+    - LightImplantSpiderDrakeOne
+  - type: Butcherable #Разделка 
+    spawned:    
+      - id: MaterialBones
+        amount: 1  
+      - id: ArtifactFragment
+        amount: 4  
+      - id: ClothingOuterArmorBoneBubblegum
+        amount: 1  
+      - id: ClothingHeadHelmetBone
+        amount: 1 
+      - id: LavaWeaponWandFireball
+        amount: 1 
+  - type: Bloodstream
+    bloodMaxVolume: 0
+    bloodReagent: Cryoxadone           
+  - type: Vocal 
+    sounds:
+      Male: UnisexDragon
+      Female: UnisexDragon
+      Unsexed: UnisexDragon #Крик         
+ #Крик    
+- type: emoteSounds
+  id: UnisexDragon
+  params:
+    variation: 0.125
+  sounds:
+    Scream:
+      path: /Uploaded/Dragon/lavaland/space_dragon_roar.ogg
+    Laugh:
+      path: /Uploaded/Dragon/lavaland/space_dragon_roar.ogg
+    Chitter:
+      path: /Uploaded/Dragon/lavaland/space_dragon_roar.ogg
+    Click:
+      path: /Uploaded/Dragon/lavaland/space_dragon_roar.ogg
+    Weh:
+      collection: Weh        
+
+- type: entity
+  parent: ClothingOuterArmorBone 
+  id: ClothingOuterArmorBoneBubblegum
+  name: доспех из костей дракона
+  description: Редкий трофей!
+  suffix: FraG
+  components:   
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.55 #Быстрая броня, но защита не лучшая.
+        Slash: 0.55
+        Piercing: 0.55
+        Heat: 0.25
+        Radiation: 0.9
+        Caustic: 0.9  
+       
+- type: entity
+  id: ProjectileAnomalyFireballDrake #Пуля
+  name: убегай!
+  description: Пламя огня!
+  parent: ProjectileFireball
+  noSpawn: true
+  components:
+  - type: TimedDespawn
+    lifetime: 30
+  - type: Explosive
+    explosionType: Default
+    maxIntensity: 100
+    intensitySlope: 0.1
+    totalIntensity: 0.3
+    maxTileBreak: 0   
+  - type: ClusterGrenade
+    fillPrototype: PelletClusterIncendiary
+    maxGrenadesCount: 30
+    grenadeType: enum.GrenadeType.Shoot
+  - type: OnUseTimerTrigger
+    beepSound:
+      path: "/Audio/Effects/beep1.ogg"
+      params:
+        volume: 5
+    initialBeepDelay: 0
+    beepInterval: 2
+  - type: EmitSoundOnTrigger
+    sound:
+      path: "/Audio/Weapons/Guns/Gunshots/batrifle.ogg"
+  - type: ContainerContainer
+    containers:
+      cluster-payload: !type:Container  
+  - type: IgnitionSource
+    ignited: true   
+    
+    
+#Лава    
+- type: entity 
+  id: WoodenSupportBeamDrake
+  name: лава!
+  description: Убегай!
+  parent: WoodenSupport
+  components:
+  - type: Sprite
+    sprite: /_Odyssey/lavaland/telegraph.rsi
+    state: skull
+  - type: Fixtures
+    fixtures:
+      fix1:
+        hard: false
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.5,-0.5,0.5,0.5"
+        mask:
+        - FullTileMask
+        layer:
+        - WallLayer
+        density: 1000 
+  - type: TimedDespawn #Система цикла
+    lifetime: 2
+  - type: SpawnOnDespawn
+    prototype: FloorLavaEntityDrake   #Система цикла        
+        
+- type: entity 
+  id: FloorLavaEntityDrake
+  name: лава
+  description: Не прыгай туда!
+  parent: FloorLavaEntity 
+  components:
+  - type: TimedDespawn 
+    lifetime: 15
+
+- type: entity
+  id: ActionSpawnMagicarpDrake #Заклинание призыва лавы 3
+  name: Призвать лаву
+  noSpawn: true
+  components:
+  - type: WorldTargetAction
+    useDelay: 5 #КД
+    range: 15
+    itemIconStyle: BigAction
+    icon:
+      sprite: /_Odyssey/lavaland/telegraph.rsi
+      state: skull
+    event: !type:WorldSpawnSpellEvent
+      prototypes:
+      - id: WoodenSupportBeamDrake
+        amount: 3
+      offset: 0, 1
+      speech: Кссс...!??   
+
+- type: entity
+  id: ActionSpawnMagicarpDrakeOne #Заклинание призыва лавы 1
+  name: Призвать одну лаву
+  noSpawn: true
+  components:
+  - type: WorldTargetAction
+    useDelay: 1 #КД
+    range: 15
+    itemIconStyle: BigAction
+    icon:
+      sprite: /_Odyssey/lavaland/telegraph.rsi
+      state: skull
+    event: !type:WorldSpawnSpellEvent
+      prototypes:
+      - id: WoodenSupportBeamDrake
+        amount: 1
+      offset: 0, 1
+      speech: Кссс...!??        
+      
+- type: entity
+  parent: BaseSubdermalImplant #Сам имплант 
+  id: LightImplantSpiderDrake
+  name: Призвать лаву
+  description: 
+  noSpawn: true
+  components:
+    - type: SubdermalImplant
+      implantAction: ActionSpawnMagicarpDrake      #Суда заклинание      
+      
+- type: entity
+  parent: BaseSubdermalImplant #Сам имплант 
+  id: LightImplantSpiderDrakeOne
+  name: Призвать лаву
+  description: 
+  noSpawn: true
+  components:
+    - type: SubdermalImplant
+      implantAction: ActionSpawnMagicarpDrakeOne      #Суда заклинание        
+      
+#КОЛОСС
+- type: entity
+  parent: MobBubblegum
+  id: MobColossus 
+  name: Колосс
+  suffix: FraG, фауна
+  components:
+  - type: Sprite
+    sprite: /_Odyssey/lavaland/dragon.rsi
+    layers:
+      - state: eva
+        map: ["enum.DamageStateVisualLayers.Base"]
+  - type: DamageStateVisuals
+    states:
+      Alive:
+        Base: eva
+      Dead:
+        Base: eva
+  - type: MovementSpeedModifier
+    baseWalkSpeed: 3.5
+    baseSprintSpeed: 3.5    
+  - type: RechargeBasicEntityAmmo #Кислота 
+    rechargeCooldown: 1
+  - type: BasicEntityAmmoProvider
+    proto: BulletKinetic
+    capacity: 4
+    count: 4       
+  - type: Gun
+    fireRate: 5
+    useKey: false
+    selectedMode: FullAuto
+    availableModes:
+      - FullAuto
+    soundGunshot: /Audio/Weapons/Guns/Gunshots/grenade_launcher.ogg  #Звук кислоты   #Кислота 
+  - type: MeleeWeapon
+    soundHit:
+        path: /Audio/Weapons/Xeno/alien_claw_flesh3.ogg
+    angle: 0
+    animation: AttackLava
+    damage:
+      types:
+        Blunt: 15
+        Piercing: 15
+        Structural: 70   
+  - type: MobThresholds #ХП
+    thresholds:
+      0: Alive
+      1000: Dead  
+  - type: Butcherable #Разделка 
+    spawned:    
+      - id: ClothingNeckCloakHeraldBubblegum
+        amount: 1  
+      - id: LavaRudaIvent
+        amount: 4  
+  - type: Bloodstream
+    bloodMaxVolume: 0
+    bloodReagent: Cryoxadone   
+    
+#Снаряд
+- type: entity
+  id: GrenadeFragColossus
+  name: осколочная граната
+  parent: BaseGrenade
+  components:
+  - type: CartridgeAmmo
+    proto: BulletGrenadeFragColossus
+  - type: Sprite
+    sprite: Objects/Weapons/Guns/Ammunition/Explosives/explosives.rsi
+    layers:
+    - state: frag
+      map: ["enum.AmmoVisualLayers.Base"]
+  - type: Appearance
+  - type: SpentAmmoVisuals
+    state: frag
+    suffix: false 
+    
+
+- type: entity
+  id: BulletGrenadeFragColossus
+  name: осколочная граната
+  parent: BaseBulletTrigger
+  noSpawn: true
+  components:
+  - type: Sprite
+    sprite: Objects/Weapons/Guns/Projectiles/projectiles2.rsi
+    layers:
+      - state: grenade
+  - type: ExplodeOnTrigger
+  - type: Explosive
+    explosionType: Default
+    totalIntensity: 50 # about a ~6 tile radius
+    intensitySlope: 1
+    maxIntensity: 1    
+  
+#Лут  
+- type: entity
+  parent: ClothingNeckCloakHerald
+  id: ClothingNeckCloakHeraldBubblegum
+  name: плащ Колосса
+  description: Редкий трофей!
+  suffix: FraG
+  components:   
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.9 #Быстрая броня, но защита не лучшая.
+        Slash: 0.9
+        Piercing: 0.9
+        Heat: 0.8
+        Radiation: 0.8
+        Caustic: 0.8 
+  - type: ClothingSpeedModifier
+    walkModifier: 1.15
+    sprintModifier: 1.15
+  - type: PointLight
+    radius: 3
+    energy: 2.5
+    color: "#ff4242"
+    castShadows: false    
+    
+#ЛЕГИОН БОСС
+- type: entity
+  parent: MobBubblegum
+  id: MobDinosaurAnki
+  name: Легион
+  suffix: FraG, фауна
+  components:
+  - type: Sprite
+    sprite: /_Odyssey/lavaland/empire.rsi
+    layers:
+      - state: mega_legion
+        map: ["enum.DamageStateVisualLayers.Base"]
+  - type: DamageStateVisuals
+    states:
+      Alive:
+        Base: mega_legion
+      Dead:
+        Base: eva_attack
+  - type: MovementSpeedModifier
+    baseWalkSpeed: 4.5
+    baseSprintSpeed: 4.5  
+  - type: PointLight
+    radius: 0
+    energy: 0
+    color: "#ff4242"
+    castShadows: false  
+  - type: MobThresholds #ХП
+    thresholds:
+      0: Alive
+      450: Dead  
+  - type: MeleeWeapon
+    soundHit:
+        path: /Audio/Weapons/Xeno/alien_claw_flesh3.ogg
+    angle: 0
+    animation: AttackLava
+    damage:
+      types:
+        Blunt: 5
+        Structural: 200 
+  - type: AutoImplant
+    implants:
+    - LightImplantSpiderLegion     
+    - LightImplantSpiderLegionBig       
+  - type: Butcherable #Разделка 
+    spawned:    
+      - id: ClothingNeckCloakVoidLegion
+        amount: 1  
+      - id: MobDinosaurAnkiSmallSmall
+        amount: 4   
+      - id: HealingToolboxKernel
+        amount: 4 
+  - type: RechargeBasicEntityAmmo #Кислота 
+    rechargeCooldown: 2
+  - type: BasicEntityAmmoProvider
+    proto: SpawnMobLegion
+    capacity: 1
+    count: 1       
+  - type: Gun
+    fireRate: 1
+    useKey: false
+    selectedMode: FullAuto
+    availableModes:
+      - FullAuto
+    soundGunshot: /Uploaded/Dragon/lavaland/the-lava-bubble-gurgled.ogg   #Звук кислоты   #Кислота
+  - type: Bloodstream
+    bloodMaxVolume: 0
+    bloodReagent: Cryoxadone       
+
+- type: entity
+  parent: ClothingNeckCloakVoid
+  id: ClothingNeckCloakVoidLegion
+  name: плащ легиона
+  description: Редкий трофей!
+  suffix: FraG
+  components:
+  - type: ClothingSpeedModifier
+    walkModifier: 1.3
+    sprintModifier: 1.3
+  - type: PointLight
+    radius: 3
+    energy: 2.5
+    color: "#ff4242"
+    castShadows: false    
+
+- type: entity
+  parent: MobFleshJaredSalvage #Череп
+  id: MobDinosaurAnkiSmallSmall
+  name: череп легиона
+  description: О боже оно бежит ко мне??!
+  suffix: FraG, фауна
+  components:
+  - type: Sprite
+    sprite: /_Odyssey/lavaland/legion.rsi
+    layers:
+      - state: dragon
+        map: ["enum.DamageStateVisualLayers.Base"]
+  - type: DamageStateVisuals
+    states:
+      Alive:
+        Base: dragon
+      Dead:
+        Base: dragon
+  - type: MovementSpeedModifier
+    baseWalkSpeed: 4.5
+    baseSprintSpeed: 4.5  
+  - type: PointLight
+    radius: 0
+    energy: 0
+    color: "#ff4242"
+    castShadows: false  
+  - type: MobThresholds #ХП
+    thresholds:
+      0: Alive
+      10: Dead  
+  - type: MeleeWeapon
+    soundHit:
+        path: /Audio/Weapons/Xeno/alien_claw_flesh3.ogg
+    angle: 0
+    animation: AttackLava
+    damage:
+      types:
+        Blunt: 3 
+  - type: TimedDespawn #Система цикла
+    lifetime: 4 
+  - type: Bloodstream
+    bloodMaxVolume: 0
+    bloodReagent: Cryoxadone     
+
+
+  
+    
+
+- type: entity
+  parent: 
+  - MobLavaGost
+  - MobXenoSpitter
+  id: MobDinosaurAnkiSmall
+  name: легион #Большой
+  description: Кто это?
+  suffix: FraG, фауна
+  components:
+  - type: Sprite
+    sprite: /_Odyssey/lavaland/empire.rsi
+    layers:
+      - state: dragon
+        map: ["enum.DamageStateVisualLayers.Base"]
+  - type: DamageStateVisuals
+    states:
+      Alive:
+        Base: dragon
+      Dead:
+        Base: dragon_dead
+  - type: MovementSpeedModifier
+    baseWalkSpeed: 3
+    baseSprintSpeed: 3  
+  - type: PointLight
+    radius: 0
+    energy: 0
+    color: "#ff4242"
+    castShadows: false  
+  - type: MobThresholds #ХП
+    thresholds:
+      0: Alive
+      15: Dead         
+  - type: Butcherable #Разделка 
+    spawned:
+      - id: HealingToolboxKernel
+        amount: 1   
+  - type: MeleeWeapon
+    soundHit:
+        path: /Audio/Weapons/Xeno/alien_claw_flesh3.ogg
+    angle: 0
+    animation: AttackLava
+    damage:
+      types:
+        Blunt: 5  
+  - type: AutoImplant
+    implants:
+    - LightImplantSpiderLegion  
+  - type: TimedDespawn #Система цикла
+    lifetime: 360   
+  - type: RechargeBasicEntityAmmo #Кислота 
+    rechargeCooldown: 2
+  - type: BasicEntityAmmoProvider
+    proto: SpawnMobLegion
+    capacity: 1
+    count: 1       
+  - type: Gun
+    fireRate: 1
+    useKey: false
+    selectedMode: FullAuto
+    availableModes:
+      - FullAuto
+    soundGunshot: /Uploaded/Dragon/lavaland/the-lava-bubble-gurgled.ogg #Звук кислоты   #Кислота   
+  - type: Destructible 
+    thresholds:
+      - trigger:
+          !type:DamageTrigger
+          damage: 45    
+        behaviors:
+        - !type:DoActsBehavior
+          acts: [ "Destruction" ]
+        - !type:SpawnEntitiesBehavior
+          spawn:
+            HealingToolboxKernel:
+              min: 1
+              max: 1
+  - type: PassiveDamage # Slight passive regen. Assuming one damage type, comes out to about 4 damage a minute.Самолечение
+    allowedStates:
+    - Alive
+    damageCap: 300
+    damage:
+      types:
+        Heat: -25
+      groups:
+        Brute: -1   
+        Toxin: -1
+        Airloss: -1
+        Burn: -10
+  - type: Bloodstream
+    bloodMaxVolume: 0
+    bloodReagent: Cryoxadone  
+
+- type: entity
+  name: Спавнер легиона
+  id: SpawnMobDinosaurAnkiSmall
+  parent: SpawnMobLegion
+  components:
+  - type: ConditionalSpawner
+    prototypes:
+    - MobDinosaurAnkiSmall
+            
+
+- type: entity
+  parent: BaseHealingItem
+  id: HealingToolboxKernel
+  name: ядро легиона
+  description: В то время как ядро может быть использованы для лечения грубых и ожоговых повреждений, причина, по которой они так важны, заключается в том, что они могут исцелять сломанные кости и внутреннее кровотечение. Способность лечения пропадает через 5 минут!
+  suffix: FraG
+  components:
+  - type: Sprite
+    sprite: /_Odyssey/lavaland/healing_toolbox.rsi
+    state: icon
+  - type: Healing
+    damageContainers:
+    - Biological
+    damage:
+      groups: # these are all split across multiple types
+        Brute: -150
+        Burn: -150
+        Toxin: -150
+    bloodlossModifier: -20
+    delay: 1
+    selfHealPenaltyMultiplier: 0
+    healingBeginSound:
+      path: "/Audio/Items/Medical/ointment_begin.ogg"
+    healingEndSound:
+      path: "/Audio/Items/Medical/ointment_end.ogg" 
+  - type: TimedDespawn #Система цикла
+    lifetime: 300
+  - type: PointLight
+    radius: 2
+    energy: 0.2
+    color: "#ff4242"
+    castShadows: false
+  - type: Construction
+    graph: GhostSheet
+    node: ghost_sheet 
+  - type: Tag
+    tags:
+    - HealingToolboxKernelCrafting   
+
+- type: entity
+  parent: BaseHealingItem
+  id: HealingToolboxKernelSerum
+  name: ядро легиона в сыворотке 
+  description: В то время как ядро может быть использованы для лечения грубых и ожоговых повреждений, причина, по которой они так важны, заключается в том, что они могут исцелять сломанные кости и внутреннее кровотечение.
+  suffix: FraG
+  components:    
+  - type: Sprite
+    sprite: /_Odyssey/lavaland/healing_toolbox.rsi
+    state: icon
+  - type: Healing
+    damageContainers:
+    - Biological
+    damage:
+      groups: # these are all split across multiple types
+        Brute: -150
+        Burn: -150
+        Toxin: -150
+    bloodlossModifier: -20
+    delay: 1
+    selfHealPenaltyMultiplier: 0
+    healingBeginSound:
+      path: "/Audio/Items/Medical/ointment_begin.ogg"
+    healingEndSound:
+      path: "/Audio/Items/Medical/ointment_end.ogg" 
+  - type: PointLight
+    radius: 2
+    energy: 0.2
+    color: "#ff4242"
+    castShadows: false
+  - type: Construction
+    graph: HealingToolboxKernel
+    node: LavaSerumHeart
+  - type: Tag
+    tags:
+    - HealingToolboxKernelSerum
+   
+#Череп
+- type: entity 
+  id: ActionSpawnMagicarpLegion #Заклинание призыва черепов
+  name: Призыв черепа легиона.
+  description: Выпускает череп легиона.
+  noSpawn: true
+  components:
+  - type: WorldTargetAction
+    useDelay: 6 #КД
+    range: 2
+    itemIconStyle: BigAction
+    icon:
+      sprite: /_Odyssey/lavaland/healing_toolbox.rsi
+      state: icon
+    event: !type:WorldSpawnSpellEvent
+      prototypes:
+      - id: MobDinosaurAnkiSmallSmall
+        amount: 1
+      offset: 0, 1
+      speech: Кссс...!??       
+      
+- type: entity
+  parent: BaseSubdermalImplant #Сам имплант 
+  id: LightImplantSpiderLegion 
+  name: Откладывание яиц охотника
+  description: 
+  noSpawn: true
+  components:
+    - type: SubdermalImplant
+      implantAction: ActionSpawnMagicarpLegion      #Суда заклинание  
+      
+- type: entity
+  name: Спавнер черепа
+  id: SpawnMobLegion
+  parent: MarkerBase
+  components:
+  - type: Sprite
+    layers:
+    - state: green
+    - state: goat
+      sprite: Mobs/Animals/goat.rsi
+  - type: ConditionalSpawner
+    prototypes:
+    - MobDinosaurAnkiSmallSmall  
+  - type: TimedDespawn #Система цикла
+    lifetime: 5   
+    
+#Легион большой
+- type: entity 
+  id: ActionSpawnMagicarpLegionBig 
+  name: Призвать легиона.
+  description: Призывает Легиона, который пропадает через 20 секунд.
+  noSpawn: true
+  components:
+  - type: WorldTargetAction
+    useDelay: 12 #КД
+    range: 2
+    itemIconStyle: BigAction
+    icon:
+      sprite: /_Odyssey/lavaland/healing_toolbox.rsi
+      state: icon
+    event: !type:WorldSpawnSpellEvent
+      prototypes:
+      - id: MobDinosaurAnkiSmallBig
+        amount: 1
+      offset: 0, 1
+      speech: Кссс...!??       
+      
+- type: entity
+  parent: BaseSubdermalImplant #Сам имплант 
+  id: LightImplantSpiderLegionBig 
+  name: Откладывание яиц охотника
+  description: 
+  noSpawn: true
+  components:
+    - type: SubdermalImplant
+      implantAction: ActionSpawnMagicarpLegionBig      #Суда заклинание   
+
+- type: entity
+  parent: MobDinosaurAnkiSmall  
+  id: MobDinosaurAnkiSmallBig
+  noSpawn: true
+  name: легион #Большой
+  suffix: FraG
+  components:
+  - type: TimedDespawn #Система цикла
+    lifetime: 20
+    
+- type: entity
+  name: периодический спавнер легиона
+  suffix: случайно, шахтёров, FraG
+  id: WallRockBasaltSpawnerLavaLegion
+  parent: MarkerBase
+  components:
+    - type: Sprite
+      layers:
+        - state: blue
+        - sprite: Mobs/Animals/mouse.rsi
+          state: icon-2
+        - state: timed
+    - type: Timer
+    - type: TimedSpawner
+      prototypes:
+        - MobDinosaurAnkiSmall
+      # round ~90m
+      # one spawner should only spawn ~5 mice for sanity reasons
+      # therefore 18m
+      # use 50% chance for randomness and balance with halved interval
+      chance: 0.5
+      intervalSeconds: 240
+      minimumEntitiesSpawned: 1
+      maximumEntitiesSpawned: 1
+   
+#ПЕПЛОХОДЦЫ
+- type: entity
+  noSpawn: true
+  name: Гост ролька
+  id: MobLavaGostResident
+  suffix: FraG  
+  components:    
+  - type: GhostRole #Гост роль
+    makeSentient: true
+    allowSpeech: true
+    allowMovement: true
+    requirements:
+    name: Пеплоходец
+    description: Защитите свои охотничьи угодья. Нельзя просто так заходить на пост шахтёров, вы не нападаете на людей без причины. У вас есть базовые навыки и продвинутые знания в ботанике.
+  - type: GhostTakeoverAvailable   #Гост роль 
+
+#Человек внизу
+- type: entity
+  name: Неизвестный 
+  parent: 
+  - MobLavaGostResident
+  - MobReptilian
+  id: MobCivilianInquisitorLava
+  description: Жалкая кучка тайн.
+  suffix: Пеплоходец, Шахтёр, FraG
+  components:
+  - type: Eye
+    drawFov: false
+  - type: Stamina
+    critThreshold: 280
+  - type: BibleUser     
+  - type: InputMover
+  - type: MobMover
+  - type: Loadout
+    prototypes: [InquisitorGearReinforcementsLava]
+  - type: NpcFactionMember
+    factions:
+    - NanoTrasen
+  - type: Barotrauma #Урон от разгермы
+    damage:
+      types:
+        Blunt: 3 
+        Heat: 3 
+  - type: PassiveDamage # Slight passive regen. Assuming one damage type, comes out to about 4 damage a minute.Самолечение
+    allowedStates:
+    - Alive
+    damageCap: 300
+    damage:
+      types:
+        Heat: -4.5
+      groups:
+        Brute: -1.5   
+        Toxin: -1
+        Airloss: -1.5
+        Burn: -4.5          
+    
+- type: startingGear
+  id: InquisitorGearReinforcementsLava  
+  equipment:
+    jumpsuit: ClothingUniformJumpsuitGladiator #Униформ
+    back: NecromancerFilledInquisitorLava  #Сумка
+    shoes: ClothingShoesCult #Обувь
+    pocket1: SpearBone
+    pocket2: WoodenBuckler 
+    belt: ClothingBeltQuiverRev    #Стрелы
+    head: ClothingHeadHatGladiator #Шлем
+ 
+    
+- type: entity
+  parent: ClothingBeltQuiver 
+  id: ClothingBeltQuiverRev
+  name: колчан
+  description: Вмещает до 16 стрел и плотно прилегает к поясу.  
+  suffix: Filled, революция, лук
+  components:
+    - type: StorageFill
+      contents:  
+        - id: ArrowRegular           
+          amount: 16    
+
+- type: entity
+  parent: ClothingBackpackSatchelLeather #Сумка
+  id: NecromancerFilledInquisitorLava
+  name: кожаная сумка
+  description: Модная сумка из ушедшей эпохи, стоп она в крови?
+  suffix: Инквизитор
+  components:
+    - type: StorageFill
+      contents:
+        - id: Gauze #Бинт
+        - id: BowImprovised #Лук  
+        - id: FoodMeatGoliath         
+ 
+ #ШАМАН
+- type: entity
+  name: Неизвестный 
+  parent: 
+  - MobLavaGostResident
+  - MobReptilian
+  id: MobCivilianInquisitorLavaShaman
+  description: Жалкая кучка тайн.
+  suffix: ШАМАН Пеплоходец, Шахтёр, FraG
+  components:
+  - type: Eye
+    drawFov: false
+  - type: Stamina
+    critThreshold: 280
+  - type: BibleUser     
+  - type: InputMover
+  - type: MobMover
+  - type: Loadout
+    prototypes: [InquisitorGearReinforcementsLava]
+  - type: NpcFactionMember
+    factions:
+    - NanoTrasen
+  - type: Barotrauma #Урон от разгермы
+    damage:
+      types:
+        Blunt: 0.1 
+        Heat: 0.1 
+  - type: PassiveDamage # Slight passive regen. Assuming one damage type, comes out to about 4 damage a minute.Самолечение
+    allowedStates:
+    - Alive
+    damageCap: 300
+    damage:
+      types:
+        Heat: -5.5
+      groups:
+        Brute: -4.5   
+        Toxin: -2
+        Airloss: -4.5
+        Burn: -5.5  
+  - type: AutoImplant
+    implants:
+    - LightImplantSpiderResident          
+
+- type: entity
+  parent: BaseSubdermalImplant #Сам имплант 
+  id: LightImplantSpiderResident
+  name: Откладывание яиц 
+  noSpawn: true
+  components:
+    - type: SubdermalImplant
+      implantAction: ActionSpawnMagicarpSpellSpiderResident      #Суда заклинание
+    - type: PointLight
+      enabled: false
+      radius: 1
+      softness: 5
+      color: "#ff4242"
+      mask: /Textures/Effects/LightMasks/cone.png
+      autoRot: true
+    - type: Tag
+      tags:
+        - SubdermalImplant
+        - HideContextMenu
+        - Flashlight
+    - type: UnpoweredFlashlight  
+    
+
+
+- type: entity 
+  id: ActionSpawnMagicarpSpellSpiderResident #Заклинание призыва охранника
+  name: Создание яиц.
+  description: Можно создавать только на "легионерский костёр".
+  noSpawn: true
+  components:
+  - type: WorldTargetAction
+    useDelay: 400 #КД
+    range: 1
+    itemIconStyle: BigAction
+    icon:
+      sprite: Objects/Magic/magicactions.rsi 
+      state: magicmissile
+    event: !type:WorldSpawnSpellEvent
+      prototypes:
+      - id: FoodEggResident
+        amount: 1
+      offset: 0, 1
+      speech: OH, GREAT BONFIRE, GIVE US STRENGTH!
+
+- type: entity 
+  parent: FoodEgg
+  id: FoodEggResident #Заклинание призыва охранника
+  name: яйцо
+  description: Яйцо!
+  noSpawn: true
+  components:    
+  - type: TimedDespawn #Система цикла
+    lifetime: 50
+  - type: SpawnOnDespawn
+    prototype: MobCivilianInquisitorLava   #Система цикла 
+        
+#ГОЛИАФЫ
+- type: entity
+  parent: 
+  - MobFleshJaredSalvage
+  id: MobGoliath
+  name: голиаф 
+  description: Кто это?
+  suffix: FraG, фауна
+  components:
+  - type: Sprite
+    sprite: /_Odyssey/lavaland/goliath.rsi
+    layers:
+      - state: dragon
+        map: ["enum.DamageStateVisualLayers.Base"]
+  - type: DamageStateVisuals
+    states:
+      Alive:
+        Base: dragon
+      Dead:
+        Base: dragon_dead
+  - type: MovementSpeedModifier
+    baseWalkSpeed: 3
+    baseSprintSpeed: 3  
+  - type: PointLight
+    radius: 0
+    energy: 0
+    color: "#ff4242"
+    castShadows: false  
+  - type: MobThresholds #ХП 
+    thresholds:
+      0: Alive
+      100: Dead         
+  - type: Butcherable #Разделка 
+    spawned:
+      - id: MaterialBones1
+        amount: 1     
+      - id: FoodMeatGoliath
+        amount: 2         
+  - type: MeleeWeapon
+    soundHit:
+        path: /Audio/Weapons/Xeno/alien_claw_flesh3.ogg
+    angle: 0
+    animation: AttackLava
+    damage:
+      types:
+        Piercing: 10 
+        Blunt: 3 
+  - type: AutoImplant
+    implants:
+    - LightImplantSpiderLegion   
+  - type: TimedDespawn #Система цикла
+    lifetime: 360 
+  - type: PassiveDamage # Slight passive regen. Assuming one damage type, comes out to about 4 damage a minute.Самолечение
+    allowedStates:
+    - Alive
+    damageCap: 300
+    damage:
+      types:
+        Heat: -25
+      groups:
+        Brute: -1   
+        Toxin: -1
+        Airloss: -1
+        Burn: -10 
+  - type: Bloodstream
+    bloodMaxVolume: 0
+    bloodReagent: Cryoxadone  
+
+- type: entity
+  name: Спавнер голиафа
+  id: SpawnMobGoliath
+  parent: SpawnMobLegion
+  components:
+  - type: ConditionalSpawner
+    prototypes:
+    - MobGoliath     
+  
+- type: entity 
+  id: WoodenSupportBeamGoliath
+  name: шипы #Криво работают и не используются. 
+  description: Убегай!
+  parent: 
+  - TrashBananaPeelExplosive
+  components:
+  - type: Sprite
+    sprite: /_Odyssey/lavaland/goliath.rsi
+    state: eva_attack
+  - type: Fixtures
+    fixtures:
+      fix1:
+        hard: false
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.5,-0.5,0.5,0.5"
+        mask:
+        - FullTileMask
+        layer:
+        - WallLayer
+        density: 1000       
+  - type: TimedDespawn #Система цикла
+    lifetime: 5
+    
+- type: entity #Делает мясо дороже
+  name: raw goliath meat
+  parent: FoodMeatRawBase
+  id: FoodMeatGoliath
+  description: A slab of goliath meat. It's not very edible now, but it cooks great in lava.
+  components:
+  - type: Sprite
+    state: goliath
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        reagents:
+        - ReagentId: UncookedAnimalProteins
+          Quantity: 5
+        - ReagentId: Fat
+          Quantity: 3
+  - type: InternalTemperature
+    thickness: 0.1 # very big, do cook it in lava
+  - type: Construction
+    graph: GoliathSteak
+    node: start
+    defaultTarget: goliath steak  
+  - type: Tag
+    tags:
+    - FoodMeatGoliathCrafting      
+  - type: StaticPrice
+    price: 350  
+   
+    
+- type: entity
+  name: периодический спавнер голиафа
+  suffix: случайно, шахтёров, FraG, фауна
+  id: WallRockBasaltSpawnerLavaGoliath
+  parent: MarkerBase
+  components:
+    - type: Sprite
+      layers:
+        - state: blue
+        - sprite: Mobs/Animals/mouse.rsi
+          state: icon-2
+        - state: timed
+    - type: Timer
+    - type: TimedSpawner
+      prototypes:
+        - MobGoliath
+      # round ~90m
+      # one spawner should only spawn ~5 mice for sanity reasons
+      # therefore 18m
+      # use 50% chance for randomness and balance with halved interval
+      chance: 0.5
+      intervalSeconds: 240
+      minimumEntitiesSpawned: 1
+      maximumEntitiesSpawned: 1  
+
+#НАБЛЮДАТЕЛЬ
+- type: entity
+  id: MobWatcherMagmawing
+  parent: MobWatcherBase
+  name: magmawing watcher
+  suffix: FraG, фауна
+  components:
+  - type: Sprite
+    layers:
+    - map: [ "enum.DamageStateVisualLayers.Base" ]
+      state: base
+    - map: [ "enum.DamageStateVisualLayers.BaseUnshaded" ]
+      state: unshaded
+      shader: unshaded
+      color: orangered
+  - type: PointLight
+    radius: 1.5
+    energy: 1
+    color: orangered
+  - type: ProjectileBatteryAmmoProvider
+    proto: WatcherBoltMagmawing
+    fireCost: 50 
+  - type: TimedDespawn #Система цикла
+    lifetime: 360         
+    ignoreWhitelist: 
+  - type: MovementSpeedModifier #Скорость
+    baseWalkSpeed: 3
+    baseSprintSpeed: 3
+  - type: MobThresholds
+    thresholds:
+      0: Alive
+      90: Dead   
+  - type: Butcherable #Разделка 
+    spawned:
+      - id: MaterialWebSilk1
+        amount: 3  
+      - id: MaterialCotton1
+        amount: 4  
+  - type: Destructible
+    thresholds:
+      - trigger:
+          !type:DamageTrigger
+          damage: 110 
+  - type: Bloodstream
+    bloodMaxVolume: 0
+    bloodReagent: Cryoxadone  
+
+- type: entity
+  name: Спавнер наблюдателя
+  id: SpawnMobWatcherMagmawing
+  parent: SpawnMobLegion
+  components:
+  - type: ConditionalSpawner
+    prototypes:
+    - MobWatcherMagmawing    
+ 
+- type: entity
+  name: периодический спавнер наблюдателя
+  suffix: случайно, шахтёров, FraG
+  id: WallRockBasaltSpawnerLavaGoliath
+  parent: MarkerBase
+  components:
+    - type: Sprite
+      layers:
+        - state: blue
+        - sprite: Mobs/Animals/mouse.rsi
+          state: icon-2
+        - state: timed
+    - type: Timer
+    - type: TimedSpawner
+      prototypes:
+        - MobWatcherMagmawing
+      # round ~90m
+      # one spawner should only spawn ~5 mice for sanity reasons
+      # therefore 18m
+      # use 50% chance for randomness and balance with halved interval
+      chance: 0.5
+      intervalSeconds: 400
+      minimumEntitiesSpawned: 1
+      maximumEntitiesSpawned: 1 
+               
+#!АПЛИНК И РУДЫ!
+- type: entity
+  name: спавнер базальта случайно
+  suffix: случайно, руда, шахтёров, FraG
+  id: WallRockBasaltSpawnerLava1
+  parent: MarkerBase
+  components:
+    - type: Sprite
+      layers:
+        - state: red
+        - sprite: Structures/Furniture/Altars/Gods/nanotrasen.rsi
+          state: nanotrasen
+    - type: RandomSpawner
+      prototypes:
+        - WallRockBasalt
+        - WallRockBasalt
+        - WallRockBasalt
+        - WallRockBasalt
+        - WallRockBasalt
+        - WallRockBasalt
+        - WallRockBasalt
+        - WallRockBasalt
+        - WallRockBasalt
+        - WallRockBasalt
+        - WallRockBasalt
+        - WallRockBasalt
+        - WallRockBasalt
+        - WallRockBasalt
+        - WallRockBasalt
+        - WallRockBasalt
+        - WallRockBasalt
+        - WallRockBasalt
+        - WallRockBasalt
+        - WallRockBasaltBananium
+        - WallRockBasaltTin
+        - WallRockBasaltTin
+        - WallRockBasaltGold
+        - WallRockBasaltQuartz
+        - WallRockBasaltQuartz
+        - WallRockBasaltPlasma
+        - WallRockBasaltSilver
+        - WallRockBasaltSilver
+        - WallRockBasaltSalt
+        - WallRockBasaltSalt
+        - WallRockBasaltCoal
+        - WallRockBasaltCoal
+        - WallRockBasaltUranium
+        - WallRockBasaltLavaOre
+        - WallRockBasaltArtifactFragment
+        - LavaWallRockBasaltArtifactFragment #Руда с кристаллом
+        - LavaWallRockBasaltArtifactFragment #Руда с кристаллом
+      offset: 0.0
+      
+- type: entity
+  name: периодический спавнер базальта
+  suffix: случайно, шахтёров, FraG
+  id: WallRockBasaltSpawnerLava2
+  parent: MarkerBase
+  components:
+    - type: Sprite
+      layers:
+        - state: blue
+        - sprite: Mobs/Animals/mouse.rsi
+          state: icon-2
+        - state: timed
+    - type: Timer
+    - type: TimedSpawner
+      prototypes:
+        - WallRockBasaltSpawner
+        - WallRockBasalt
+      # round ~90m
+      # one spawner should only spawn ~5 mice for sanity reasons
+      # therefore 18m
+      # use 50% chance for randomness and balance with halved interval
+      chance: 0.5
+      intervalSeconds: 540
+      minimumEntitiesSpawned: 1
+      maximumEntitiesSpawned: 1
+   
+#Камень с валютой   
+- type: entity
+  id: LavaWallRockBasaltArtifactFragment
+  parent: WallRockBasalt 
+  name: базальт
+  description: Каменная стена. Что это торчит из неё?
+  suffix: валюта, кристалл, FraG
+  components:
+    - type: OreVein
+      oreChance: 1.0
+      currentOre: OreLavaRudaIvent
+    - type: Sprite
+      layers:
+        - state: rock_wall
+        - map: [ "enum.EdgeLayer.South" ]
+          state: rock_wall_south
+        - map: [ "enum.EdgeLayer.East" ]
+          state: rock_wall_east
+        - map: [ "enum.EdgeLayer.North" ]
+          state: rock_wall_north
+        - map: [ "enum.EdgeLayer.West" ]
+          state: rock_wall_west
+        - state: rock_artifact_fragment   
+
+- type: ore
+  id: OreLavaRudaIvent
+  oreEntity: LavaRudaIvent
+  minOreYield: 1
+  maxOreYield: 3        
+ 
+ 
+#-------------------ВСЕ ВЫШЕ ЭТО СИСТЕМА АПЛИНКА!---------------------  
+#Наборы выше Содержимое
+
+- type: storeCategory  # категория 
+  id: LavaUplinkWearablesMagician
+  name: Основное #categories
+  priority: 1
+  
+#Коллекция выше
+
+- type: storePreset  # список доступных категорий
+  id: StorePresetUplinkMagician
+  storeName: Uplink
+  categories:
+  - LavaUplinkWearablesMagician
+  currencyWhitelist:
+  - LavaRudaIvent  
+  
+ #Список выше
+  
+- type: entity #Сам аплинк
+  parent: BaseItem
+  id: LavaPhoneInstrument
+  name: терминал шахтёров
+  description: Винтажное радио?
+  suffix: Аплинк, Шахтёр, FraG
+  components:
+  - type: Sprite
+    sprite: Objects/Devices/communication.rsi
+    layers:
+    - state: old-radio
+  - type: Item
+    sprite: Objects/Devices/communication.rsi
+    heldPrefix: old-radio
+  - type: UserInterface
+    interfaces:
+      enum.StoreUiKey.Key:
+        type: StoreBoundUserInterface
+  - type: ActivatableUI
+    key: enum.StoreUiKey.Key
+  - type: Store
+    preset: StorePresetUplinkMagician
+    balance:
+      LavaRudaIvent: 0  #Количества ТК в аплинке
+  - type: EmitSoundOnLand
+    sound:
+       path: /Audio/Items/bikehorn.ogg
+  - type: Slippery
+    paralyzeTime: 4
+    launchForwardsMultiplier: 1.5
+  - type: StepTrigger
+  - type: CollisionWake
+    enabled: false
+  - type: Fixtures
+    fixtures:
+      slips:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.4,-0.3,0.4,0.3"
+        hard: false
+        layer:
+        - SlipLayer
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.4,-0.3,0.4,0.3"
+        density: 5
+        mask:
+        - ItemMask
+  - type: Prayable
+    sentMessage: prayer-popup-notify-honkmother-sent
+    notifiactionPrefix: prayer-chat-notify-honkmother
+    verb: prayer-verbs-call
+    verbImage: null      
+
+- type: currency
+  id: LavaRudaIvent
+  displayName: "Инфиритовых Кристалла"
+  cash: 
+    1: LavaRudaIvent
+  canWithdraw: true
+
+- type: entity
+  name: Инфиритовых Кристалла
+  parent: BaseItem
+  id: LavaRudaIvent
+  suffix: Шахтёр, FraG
+  description: Кристалл, изученный научным департаментом НТ, имеет много применений.
+  components:
+  - type: Sprite
+    sprite: Objects/Misc/stock_parts.rsi
+    state: ansible_crystal
+  - type: Item
+    sprite: Objects/Misc/stock_parts.rsi
+    heldPrefix: ansible_crystal
+  - type: StackPrice
+    price: 200
+  - type: Currency
+    price:
+      LavaRudaIvent: 1   
+      
+#Выше Аплинк   
+#-------------------ВСЕ ВЫШЕ ЭТО СИСТЕМА АПЛИНКА!---------------------  
+#ТОВАРЫ В АПЛИНКЕ 
+- type: listing
+  id: ClothingOuterHardsuitLuxurySet #скаф
+  productEntity: ClothingOuterHardsuitLuxury
+  cost:
+    LavaRudaIvent: 10
+  categories:
+  - LavaUplinkWearablesMagician 
+  
+- type: listing
+  id: BoxCleanerGrenadesSet #Чист 
+  productEntity: BoxCleanerGrenades
+  cost:
+    LavaRudaIvent: 2
+  categories:
+  - LavaUplinkWearablesMagician   
+  
+- type: listing
+  id: DrinkMopwataBottleRandomSet #выпивка
+  productEntity: DrinkMopwataBottleRandom
+  cost:
+    LavaRudaIvent: 2
+  categories:
+  - LavaUplinkWearablesMagician   
+  
+
+- type: listing
+  id: BorgChassisMiningSet #Борг
+  productEntity: BorgChassisMining
+  cost:
+    LavaRudaIvent: 25
+  categories:
+  - LavaUplinkWearablesMagician 
+
+- type: listing
+  id: WeaponCrusherSet #Крушитель
+  productEntity: WeaponCrusher
+  cost:
+    LavaRudaIvent: 12
+  categories:
+  - LavaUplinkWearablesMagician 
+  
+- type: listing
+  id: WeaponCrusherGlaiveSet  #глефа-крушитель
+  productEntity: WeaponCrusherGlaive
+  cost:
+    LavaRudaIvent: 12
+  categories:
+  - LavaUplinkWearablesMagician   
+ 
+- type: listing
+  id: LavaClothingOuterHardsuitSpatioSet  # скафандр
+  name: буровой скафандр 
+  description: Более прочная броня, чем у максимального скафандра, обеспечивает 85% защиты от высоких температур, но при этом снижает скорость передвижения на 15% и обеспечивает лишь 35% защиты от колющих ударов (на планете Лавленд, где врагов, наносящих такие повреждения, мало).
+  productEntity: LavaClothingOuterHardsuitSpatio
+  cost:
+    LavaRudaIvent: 20
+  categories:
+  - LavaUplinkWearablesMagician
+  
+- type: listing
+  id: ClothingOuterHardsuitMaximSet #Максимальный скафандр 
+  name: максимальный скафандр
+  description: Имеет увеличенную защиту, а так же он не замедляет вас. 
+  productEntity: ClothingOuterHardsuitMaxim
+  cost:
+    LavaRudaIvent: 20
+  categories:
+  - LavaUplinkWearablesMagician   
+  
+- type: listing
+  id: MedkitFilledSet #Аптечка
+  productEntity: MedkitFilled
+  cost:
+    LavaRudaIvent: 4
+  categories:
+  - LavaUplinkWearablesMagician  
+  
+- type: listing
+  id: LavaBruteAutoInjectorSet #Омнизин
+  productEntity: LavaBruteAutoInjector
+  cost:
+    LavaRudaIvent: 6
+  categories:
+  - LavaUplinkWearablesMagician  
+  
+- type: listing
+  id: SpaceCash1000Set #деньги
+  productEntity: SpaceCash1000
+  cost:
+    LavaRudaIvent: 10
+  categories:
+  - LavaUplinkWearablesMagician 
+
+- type: listing
+  id: CigPackMixedMedicalSet #Сигареты
+  productEntity: CigPackMixedMedical
+  cost:
+    LavaRudaIvent: 2
+  categories:
+  - LavaUplinkWearablesMagician 
+  
+- type: listing
+  id: BoxMRESet #Паёк
+  productEntity: BoxMRE
+  cost:
+    LavaRudaIvent: 2
+  categories:
+  - LavaUplinkWearablesMagician   
+  
+- type: listing
+  id: ClothingBeltSalvageWebbingSet #РПС 
+  name: разгрузка исследователя
+  description: Можно использовать для хранения разных мелких предметов. Надевается в слот пояс. Позволяет хранить в себе инженерные инструменты, шахтёрские инструменты и принадлежности, некоторую добычу с фауны Лаваленда, медикаменты, руду и всякие безделушки.
+  productEntity: ClothingBeltSalvageWebbing
+  cost:
+    LavaRudaIvent: 8
+  categories:
+  - LavaUplinkWearablesMagician 
+  
+- type: listing
+  id: ClothingBackpackDuffelSalvageLavaSet 
+  name: набор Фултона
+  description: При установке обозначает пункт назначения для эвакуации предметов и людей с помощью шара Фултона.
+  productEntity: ClothingBackpackDuffelSalvageLava
+  cost:
+    LavaRudaIvent: 4
+  categories:
+  - LavaUplinkWearablesMagician   
+- type: entity
+  parent: ClothingBackpackDuffelSalvage 
+  id: ClothingBackpackDuffelSalvageLava
+  name: вещмешок шахтёра
+  description: Большой вещмешок для хранения дополнительных экзотических сокровищ.
+  suffix: FraG
+  components:
+    - type: StorageFill
+      contents:
+        - id: Fulton 
+        - id: FultonBeacon 
+
+- type: listing
+  id: JetpackBlueSet  
+  name: навесной джетпак
+  description: Джетпак, устанавливаемый в шахтёрский скафандр и позволяющий перемещаться в невесомости. Пользуется спросом у СБ и инженеров.
+  productEntity: JetpackVoidFilled
+  cost:
+    LavaRudaIvent: 9
+  categories:
+  - LavaUplinkWearablesMagician
+     
+- type: listing
+  id: Pickaxe2Set  
+  name: усовершенствованная кирка
+  description: Самая сильная кирка. Если вы не беситесь с жиру, то она вам ни к чему.
+  productEntity: Pickaxe2
+  cost:
+    LavaRudaIvent: 10
+  categories:
+  - LavaUplinkWearablesMagician     
+- type: entity
+  name: усовершенствованная кирка
+  parent: Pickaxe
+  id: Pickaxe2
+  description: Самая сильная кирка. Если вы не беситесь с жиру, то она вам ни к чему.
+  components:  
+  - type: MeleeWeapon
+    attackRate: 0.9
+    wideAnimationRotation: -300
+    soundHit:
+      path: "/Audio/Weapons/smash.ogg"
+      params:
+        volume: -4
+    damage:
+      groups:
+        Brute: 10  
+ 
+- type: listing
+  id: LavaDeathRattleImplanterSet  
+  name: имплант оповещения о смерти
+  description: Этот имплантат сообщит по радиоканалу снабжения, если пользователь попадет в критическое состояние или умрет.
+  productEntity: LavaDeathRattleImplanter
+  cost:
+    LavaRudaIvent: 3
+  categories:
+  - LavaUplinkWearablesMagician
+- type: entity
+  id: LavaDeathRattleImplanter
+  name: имплантер шахтёра
+  description: Имплантер шахтёра, предсмертвое оповещение. Этот имплантат сообщит по радиоканалу снабжения, если пользователь попадет в критическое состояние или умрет.
+  parent: BaseImplantOnlyImplanterSyndi
+  components:
+    - type: Implanter
+      implant: LavaDeathRattleImplant
+- type: entity
+  parent: BaseSubdermalImplant
+  id: LavaDeathRattleImplant
+  name: имплантер
+  description: Этот имплантат сообщит по радиоканалу снабжения, если пользователь попадет в критическое состояние или умрет.
+  noSpawn: true
+  components:
+    - type: SubdermalImplant
+      permanent: true
+      whitelist:
+        components:
+        - MobState # admeme implanting a chair with rattle implant needs to give the chair mobstate so it can die first
+    - type: TriggerOnMobstateChange
+      mobState:
+      - Critical
+      - Dead
+    - type: Rattle
+      radioChannel: Supply
+      
+- type: listing
+  id: LavaStabilizingSet  
+  productEntity: LavaStabilizing
+  cost:
+    LavaRudaIvent: 8
+  categories:
+  - LavaUplinkWearablesMagician      
+- type: entity
+  parent: MicroManipulatorStockPart
+  id: LavaStabilizing
+  name: cтабилизирующая сыворотка
+  description: Позволяет стабилизировать активные ядра легиона, позволяя вам хранить их бесконечно. 
+  suffix: FraG
+  components:
+  - type: Sprite
+    sprite: /_Odyssey/lavaland/stabilizing.rsi
+    state: icon
+  - type: Construction
+    graph: GhostSheet
+    node: ghost_sheet 
+  - type: Tag
+    tags:
+    - LavaStabilizingCrafting  
+    
+- type: listing
+  id: LavaModifierSet  
+  productEntity: LavaModifier
+  cost:
+    LavaRudaIvent: 25
+  categories:
+  - LavaUplinkWearablesMagician        
+- type: entity
+  parent: MicroManipulatorStockPart
+  id: LavaModifier
+  name: модуль усовершенствования
+  description: Улучшает оружие шахтеров. Например протокинетический ускоритель.
+  suffix: FraG
+  components:
+  - type: Sprite
+    sprite: /_Odyssey/lavaland/modifier.rsi
+    state: icon
+  - type: Construction
+    graph: GhostSheet
+    node: ghost_sheet 
+  - type: Tag
+    tags:
+    - LavaModifierCrafting 
+  
+#СКАФАНДР буровой.
+- type: entity
+  parent: ClothingOuterHardsuitBase
+  id: LavaClothingOuterHardsuitSpatio
+  name: буровой скафандр утилизатора
+  description: Бронированный скафандр, предназначенный для шахтёров на Лаваленде.
+  suffix: FraG
+  components:
+  - type: Sprite
+    sprite: /_Odyssey/lavaland/spatio.rsi
+  - type: Clothing
+    sprite: /_Odyssey/lavaland/spatio.rsi
+  - type: PressureProtection
+    highPressureMultiplier: 0.7
+    lowPressureMultiplier: 1000
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.55
+        Slash: 0.55
+        Piercing: 0.65
+        Heat: 0.15
+        Radiation: 0.3 #salv is supposed to have radiation hazards in the future
+        Caustic: 0.3
+  - type: ClothingSpeedModifier
+    walkModifier: 0.95
+    sprintModifier: 0.85
+  - type: HeldSpeedModifier
+  - type: ToggleableClothing
+    clothingPrototype: ClothingHeadHelmetHardsuitMaxim    
+    
+#УСКОРИТЕЛЬ
+- type: entity
+  name: боевой протокинетический ускоритель
+  id: LavaWeaponProtoKineticAccelerator
+  parent: WeaponProtoKineticAcceleratorBase
+  description: Стреляет кинетическими зарядами с низким уроном на короткое расстояние. Имеет увеличенный боекомплект — 2 снаряда, а также более высокую скорострельность, но при этом более медленную перезарядку.
+  suffix: FraG  
+  components:
+  - type: Sprite
+    sprite: Objects/Weapons/Guns/Basic/kinetic_accelerator.rsi
+    layers:
+    - state: icon
+    - state: animation-icon
+      visible: false
+      map: [ "empty-icon" ]
+  - type: RechargeBasicEntityAmmo
+    rechargeCooldown: 1.5
+    rechargeSound:
+      path: /Audio/Weapons/Guns/MagIn/kinetic_reload.ogg      
+  - type: BasicEntityAmmoProvider
+    proto: BulletKinetic
+    capacity: 2
+    count: 2
+  - type: Gun
+    fireRate: 2.5
+    selectedMode: SemiAuto
+    angleDecay: 45
+    minAngle: 44
+    maxAngle: 45
+    availableModes:
+    - SemiAuto
+    soundGunshot:
+      path: /Audio/Weapons/Guns/Gunshots/kinetic_accel.ogg   
+  - type: Construction
+    graph: GhostSheet
+    node: ghost_sheet 
+  - type: Tag
+    tags:
+    - LavaWeaponProtoKineticAccelerator    
+      
+- type: entity
+  name: proto-kinetic accelerator
+  id: WeaponProtoKineticAccelerator
+  parent: WeaponProtoKineticAcceleratorBase
+  description: Fires low-damage kinetic bolts at a short range.
+  components:
+  - type: Sprite
+    sprite: Objects/Weapons/Guns/Basic/kinetic_accelerator.rsi
+    layers:
+    - state: icon
+    - state: animation-icon
+      visible: false
+      map: [ "empty-icon" ]  
+  - type: Construction
+    graph: GhostSheet
+    node: ghost_sheet 
+  - type: Tag
+    tags:
+    - WeaponProtoKineticAcceleratorCrafting       
+
+#МЕДИПЕН
+- type: entity
+  name: автоинъектор от повреждений
+  parent: BruteAutoInjector
+  id: LavaBruteAutoInjector
+  description: Экспресс-доза омнизина, предназначенная для применения в боевых условиях.
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      pen:
+        maxVol: 20
+        reagents:
+        - ReagentId: Omnizine
+          Quantity: 20
+  - type: Tag
+    tags: [] 
+      
+#ЩИПЫ    
+    
+- type: entity
+  name: Шип Некрополя
+  description: Порождение некрополя, шип из разложившейся плоти пробившийся наружу из самых недр Лаваленда дабы дать жизнь бесчисленному множеству чудовищ.
+  parent: BaseWeaponTurret
+  id: TurretPliersGoliath
+  suffix: Голиаф,FraG,фауна
+  components:
+    - type: NpcFactionMember
+      factions:
+        - Xeno
+    - type: Sprite
+      sprite: /_Odyssey/lavaland/pliers.rsi
+      noRot: true
+      layers:
+        - state: state1
+    - type: BallisticAmmoProvider
+      proto: SpawnMobGoliath
+      capacity: 400
+    - type: Gun
+      fireRate: 0.15
+      selectedMode: FullAuto
+      soundGunshot: /Uploaded/Dragon/lavaland/the-lava-bubble-gurgled.ogg
+    - type: HTN
+      rootTask:
+        task: TurretCompound
+      blackboard:
+        SoundTargetInLOS: !type:SoundPathSpecifier
+          path: /Audio/Animals/snake_hiss.ogg
+    - type: Damageable
+      damageContainer: Biological
+    - type: Destructible
+      thresholds:
+        - trigger:
+            !type:DamageTrigger
+            damage: 400
+          behaviors:
+            - !type:DoActsBehavior
+              acts: [ "Destruction" ]
+            - !type:PlaySoundBehavior
+              sound:
+                path: /Audio/Effects/gib1.ogg
+            - !type:SpawnEntitiesBehavior
+              spawn:
+                WoodenSupportBeamDrake:
+                  min: 10
+                  max: 10
+                NecrocrateopenRandom:
+                  min: 1
+                  max: 1                  
+    - type: InteractionPopup
+      interactDelay: 1.0
+      successChance: 0.8
+      interactSuccessString: petting-success-generic
+      interactFailureString: petting-failure-generic
+      interactSuccessSound:
+        path: /Audio/Animals/snake_hiss.ogg  
+
+- type: entity
+  name: Шип Некрополя
+  description: Порождение некрополя, шип из разложившейся плоти пробившийся наружу из самых недр Лаваленда дабы дать жизнь бесчисленному множеству чудовищ.
+  parent: TurretPliersGoliath
+  id: TurretPliersMagmawing
+  suffix: Наблюдатель,FraG,фауна
+  components:   
+    - type: BallisticAmmoProvider
+      proto: SpawnMobWatcherMagmawing
+      capacity: 500
+      
+- type: entity
+  name: Шип Некрополя
+  description: Порождение некрополя, шип из разложившейся плоти пробившийся наружу из самых недр Лаваленда дабы дать жизнь бесчисленному множеству чудовищ.
+  parent: TurretPliersGoliath
+  id: TurretPliersLegion
+  suffix: Легион,FraG,фауна
+  components:   
+    - type: BallisticAmmoProvider
+      proto: SpawnMobDinosaurAnkiSmall
+      capacity: 500           
+
+#ЯЩИК НЕКРОПОЛЯ
+- type: entity
+  parent: CratePirate
+  id: Necrocrateopen
+  suffix: FraG
+  name: сундук Некрополя
+  description: Что же он скрывает? Столько загадок и тайн! И мне кажется, что он смотрит на меня.
+  components:
+  - type: Sprite
+    sprite: /_Odyssey/lavaland/piratechest.rsi
+    layers:
+    - state: crate
+      map: ["enum.StorageVisualLayers.Base"]
+    - state: crate_door
+      map: ["enum.StorageVisualLayers.Door"]
+    - state: welded
+      visible: false
+      map: ["enum.WeldableLayers.BaseWelded"]
+    - state: paper
+      sprite: /_Odyssey/lavaland/piratechest.rsi
+      offset: "0.0,-0.09375"
+      map: ["enum.PaperLabelVisuals.Layer"]  
+  - type: Icon
+    sprite: /_Odyssey/lavaland/piratechest.rsi
+    state: crate_icon  
+  - type: Appearance
+  - type: EntityStorageVisuals
+    stateDoorOpen: crate_open
+    stateDoorClosed: crate_door 
+
+- type: entity
+  id: NecrocrateopenRandom
+  suffix: Заполненный, случайный, FraG 
+  parent: Necrocrateopen
+  components:
+    - type: StorageFill
+      contents:
+        - id: LavaRudaIvent #КристаллСундук
+          prob: 0.50
+        - id: LavaRudaIvent #КристаллСундук
+          prob: 0.50
+        - id: LavaRudaIvent #КристаллСундук
+          prob: 0.50
+        - id: LavaRudaIvent #КристаллСундук
+          prob: 0.50
+        - id: LavaRudaIvent #КристаллСундук
+          prob: 0.50
+        - id: LavaRudaIvent #КристаллСундук
+          prob: 0.50          
+        - id: HealingToolboxKernelSerum #ЯдроСывороткаСундук
+          prob: 0.33
+        - id: HealingToolboxKernel #ЯдроСундук
+          prob: 0.50
+        - id: HealingToolboxKernel #ЯдроСундук
+          prob: 0.50
+        - id: HealingToolboxKernel #ЯдроСундук
+          prob: 0.50
+        - id: ClothingBeltQuiverRev #СтрелыСундук
+          prob: 0.33
+        - id: SpearBone #КопьеСундук
+          prob: 0.10
+        - id: ClothingHeadHelmetBone #ШлемСундук 
+          prob: 0.44
+        - id: ClothingOuterArmorBone #КостяСундук
+          prob: 0.2
+        - id: ClothingNeckCloakMiner #ПлащШахтёрСундук 
+          prob: 0.2
+        - id: ClothingNeckCloakVoid #ПлащПустотыСундук 
+          prob: 0.1
+        - id: ClothingNeckCloakGoliathGoliath #ПлащГолиафСундук   
+          prob: 0.05
+        - id: ClothingNeckCloakGoliathCloak #ПлащГолиафВанилСундук 
+          prob: 0.07
+        - id: AnomalyCoreFlesh #ЯдроАнолимииСундук 
+          prob: 0.10
+        - id: WeaponFlareGun #ПлащГолиафВанилСундук 
+          prob: 0.1
+        - id: ClothingOuterHardsuitLuxury #СкафЭлитСундук
+          prob: 0.1
+        - id: LavaClothingOuterHardsuitSpatio #СкафБурСундук 
+          prob: 0.005
+        - id: ClothingOuterHardsuitMaxim #СкафМаксСундук 
+          prob: 0.005
+        - id: LavaModifier #МодульСундук 
+          prob: 0.004       
+          orGroup: syndiemaintloot   
+        - id: LavaWeaponWandFireball #ОгненныйПосохСундук
+          prob: 0.0010
+          orGroup: syndiemaintloot   
+        #Ваниль
+        - id: CigPackSyndicate #СигарСундук 
+          prob: 0.33       
+        - id: WeaponSniperMosin #МосинСундук 
+          prob: 0.33
+        - id: ThrowingKnivesKit #НожыСундук 
+          prob: 0.005       
+        - id: WeaponSniperHristov #СнайпаСундук 
+          prob: 0.005   
+        - id: ClothingBeltSyndieHolster #КобураСундук 
+          prob: 0.33
+        - id: ClothingBackpackSyndicate #РюкзСундук 
+          prob: 0.33          
+        - id: StimkitFilled #стимпакСундук 
+          prob: 0.33
+        - id: LanternFlash #СветильникСундук 
+          prob: 0.33
+        - id: SlipocalypseClusterSoap #МылоСундук 
+          prob: 0.33  
+        - id: ToolboxSyndicateFilled #ИнструментСундук 
+          prob: 0.005          
+        - id: DehydratedSpaceCarp #КарпСундук 
+          prob: 0.33              
+        - id: ClothingBackpackDuffelSyndicateCostumeClown #КлоунСундук 
+          prob: 0.005          
+        - id: ClothingHeadHatCatEars #УшкиСундук 
+          prob: 0.0010  
+
+- type: entity
+  name: палочка огненного шара
+  parent: WeaponWandBase
+  id: LavaWeaponWandFireball
+  description: Огромные огненные шары! Удивительно, но для использования этого посоха достаточно навыков стрельбы!
+  components:
+  - type: Sprite
+    layers:
+    - state: fire
+    - state: fire-effect
+      map: ["effect"]
+  - type: Gun
+    fireRate: 4
+    soundGunshot:
+      path: /Audio/Magic/fireball.ogg
+  - type: BasicEntityAmmoProvider
+    proto: ProjectileAnomalyFireballDrake
+    capacity: 10
+    count: 10 
+  - type: RechargeBasicEntityAmmo
+    rechargeCooldown: 10   
+          
+#КРАФТЫ   
+- type: construction
+  name: ядро легиона и сыворотка
+  id: LavaSerumHeart
+  graph: LavaSerumHeart
+  startNode: start
+  targetNode: LavaSerumHeart
+  category: Шахтёрство 
+  description: Позволяет стабилизировать активные ядра легиона, позволяя вам хранить их бесконечно. 
+  icon: { sprite: /Uploaded/Dragon/healing_toolbox.rsi, state: icon }
+  objectType: Item
+    
+- type: constructionGraph
+  id: LavaSerumHeart
+  start: start
+  graph:
+  - node: start
+    edges:
+    - to: LavaSerumHeart
+      steps:
+        - tag: HealingToolboxKernelCrafting
+          name: ядро легиона
+          icon:
+            sprite: /_Odyssey/lavaland/healing_toolbox.rsi
+            state: icon
+          doAfter: 1   
+        - tag: LavaStabilizingCrafting
+          name: cтабилизирующая сыворотка
+          icon:
+            sprite: /_Odyssey/lavaland/stabilizing.rsi
+            state: icon
+          doAfter: 1           
+        
+  - node: LavaSerumHeart
+    entity: HealingToolboxKernelSerum
+#2
+- type: construction
+  name: боевой протокинетический ускоритель
+  id: LavaKinetic
+  graph: LavaKinetic
+  startNode: start
+  targetNode: LavaKinetic
+  category: Шахтёрство 
+  description: Имеет увеличенный боекомплект — 2 снаряда, а также более высокую скорострельность, но при этом более медленную перезарядку.
+  icon: { sprite: Objects/Weapons/Guns/Basic/kinetic_accelerator.rsi, state: icon }
+  objectType: Item
+    
+- type: constructionGraph
+  id: LavaKinetic
+  start: start
+  graph:
+  - node: start
+    edges:
+    - to: LavaKinetic
+      steps:
+        - tag: WeaponProtoKineticAcceleratorCrafting
+          name: протокинетический ускоритель
+          icon:
+            sprite: Objects/Weapons/Guns/Basic/kinetic_accelerator.rsi
+            state: icon
+          doAfter: 1   
+        - tag: LavaModifierCrafting
+          name: модуль усовершенствования
+          icon:
+            sprite: /_Odyssey/lavaland/modifier.rsi
+            state: icon
+          doAfter: 1           
+        
+  - node: LavaKinetic
+    entity: LavaWeaponProtoKineticAccelerator
+    
+#3
+- type: construction
+  name: плащ голиафа
+  id: LavaGoliathRaincoat
+  graph: LavaGoliathRaincoat
+  startNode: start
+  targetNode: LavaGoliathRaincoat
+  category: Шахтёрство 
+  description: Плащ голиафа, сделанный из шкуры и мяса выносливой фауны с далёкой планеты. 
+  icon: { sprite: Clothing/Neck/Cloaks/goliathcloak.rsi, state: icon }
+  objectType: Item
+  
+- type: constructionGraph
+  id: LavaGoliathRaincoat
+  start: start
+  graph:
+  - node: start
+    edges:
+    - to: LavaGoliathRaincoat
+      steps:
+        - tag: FoodMeatGoliathCrafting
+          name: сырое мясо голиафа
+          icon:
+            sprite: Objects/Consumable/Food/meat.rsi
+            state: goliath        
+          doAfter: 1   
+        - tag: FoodMeatGoliathCrafting
+          name: сырое мясо голиафа
+          icon:
+            sprite: Objects/Consumable/Food/meat.rsi
+            state: goliath        
+          doAfter: 1 
+        - tag: FoodMeatGoliathCrafting
+          name: сырое мясо голиафа
+          icon:
+            sprite: Objects/Consumable/Food/meat.rsi
+            state: goliath        
+          doAfter: 1 
+        - tag: FoodMeatGoliathCrafting
+          name: сырое мясо голиафа
+          icon:
+            sprite: Objects/Consumable/Food/meat.rsi
+            state: goliath        
+          doAfter: 1 
+        - tag: FoodMeatGoliathCrafting
+          name: сырое мясо голиафа
+          icon:
+            sprite: Objects/Consumable/Food/meat.rsi
+            state: goliath        
+          doAfter: 1 
+        - tag: FoodMeatGoliathCrafting
+          name: сырое мясо голиафа
+          icon:
+            sprite: Objects/Consumable/Food/meat.rsi
+            state: goliath        
+          doAfter: 1 
+        - tag: FoodMeatGoliathCrafting
+          name: сырое мясо голиафа
+          icon:
+            sprite: Objects/Consumable/Food/meat.rsi
+            state: goliath        
+          doAfter: 1           
+        - material: Bones 
+          amount: 6
+          doAfter: 1      
+          
+  - node: LavaGoliathRaincoat
+    entity: ClothingNeckCloakGoliathGoliath
+    
+- type: entity
+  parent: ClothingNeckCloakGoliathCloak
+  id: ClothingNeckCloakGoliathGoliath
+  name: плащ голиафа
+  description: Плащ голиафа, сделанный из шкуры и мяса выносливой фауны с далёкой планеты. 
+  suffix: FraG
+  components: 
+  - type: Construction
+    graph: LavaGoliathRaincoat
+    node: ghost_sheet 
+  - type: Tag
+    tags:
+    - ClothingNeckCloakGoliathGoliath
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.95 #Быстрая броня, но защита не лучшая.
+        Slash: 0.95
+        Heat: 0.85
+    
+#4 Ваниль
+- type: construction
+  name: костяной доспех
+  id: BoneArmor
+  graph: BoneArmor
+  startNode: start
+  targetNode: armor
+  category: Шахтёрство 
+  description: Сидит на вас как вторая кожа.
+  icon: { sprite: Clothing/OuterClothing/Armor/bone_armor.rsi, state: icon }
+  objectType: Item 
+#5  
+- type: construction
+  name: костяной шлем
+  id: BoneHelmet
+  graph: BoneHelmet
+  startNode: start
+  targetNode: helmet
+  category: Шахтёрство 
+  description: Круто выглядящий шлем, сделанный из черепов ваших врагов.
+  icon: { sprite: Clothing/Head/Helmets/bone_helmet.rsi, state: icon }
+  objectType: Item  
+#6  
+- type: construction
+  name: костяное копьё
+  id: SpearBone
+  graph: SpearBone
+  startNode: start
+  targetNode: spear
+  category: Шахтёрство 
+  description: Копьё, сделанное из костей.
+  icon: { sprite: Objects/Weapons/Melee/bone_spear.rsi, state: spear }
+  objectType: Item  
+  
+  
+#------------------------------------
+# Добавление работы в карты в конец 
+#------------------------------------
+
+#-----====-----#
+#[Corvax Maps]#
+#-----====-----#
+
+- type: gameMap
+  id: CorvaxAstra
+  mapName: 'Astra Station'
+  mapPath: /Maps/corvax_astra.yml 
+  minPlayers: 30
+  stations:
+    Astra:
+      stationProto: StandardNanotrasenStation
+      components:
+        - type: StationNameSetup
+          mapNameTemplate: '{0} Астра {1}'
+          nameGenerator:
+            !type:NanotrasenNameGenerator
+            prefixCreator: 'MT'
+        - type: StationEmergencyShuttle
+          emergencyShuttlePath: /Maps/Shuttles/corvax_emergency.yml
+        - type: StationJobs
+          overflowJobs:
+            - Passenger
+          availableJobs:
+            # service
+            HeadOfPersonnel: [ 1, 1 ]
+            Passenger: [ -1, -1 ]
+            ServiceWorker: [ 3, 3 ]
+            Bartender: [ 1, 1 ]
+            Botanist: [ 2, 3 ]
+            Chef: [ 1, 1 ]
+            Clown: [ 1, 1 ]
+            Janitor: [ 2, 3 ]
+            Mime: [ 1, 1 ]
+            Chaplain: [ 1, 1 ]
+            Librarian: [ 1, 1 ]
+            Musician: [ 2, 2 ]
+            Reporter: [ 1, 1 ]
+            Zookeeper: [ 1, 1 ]
+            # command
+            Captain: [ 1, 1 ]
+            IAA: [ 1, 1 ]
+            # engineering
+            ChiefEngineer: [ 1, 1 ]
+            AtmosphericTechnician: [ 2, 3 ]
+            StationEngineer: [ 4, 5 ]
+            TechnicalAssistant: [ 3, 4 ]
+            # medical
+            ChiefMedicalOfficer: [ 1, 1 ]
+            Paramedic: [ 1, 1 ]
+            Chemist: [ 2, 2 ]
+            MedicalDoctor: [ 5, 5 ]
+            MedicalIntern: [ 3, 4 ]
+            Psychologist: [ 1, 1 ]
+            # science
+            ResearchDirector: [ 1, 1 ]
+            Scientist: [ 5, 6 ]
+            ResearchAssistant: [ 3, 4 ]
+            Borg: [ 2, 2 ]
+            # security
+            HeadOfSecurity: [ 1, 1 ]
+            Warden: [ 1, 1 ]
+            Detective: [ 1, 1 ]
+            SecurityOfficer: [ 6, 6 ]
+            SecurityCadet: [ 3, 4 ]
+            # cargo
+            Quartermaster: [ 1, 1 ]
+            SalvageSpecialist: [ 3, 3 ]
+            CargoTechnician: [ 4, 5 ]
+            # custom
+            MinerProfession: [ 5, 5 ] # 5 раундстарт, 5 позднее присоединение
+
+- type: gameMap
+  id: CorvaxAvrite
+  mapName: 'Avrite Station'
+  mapPath: /Maps/corvax_avrit.yml
+  minPlayers: 40
+  stations:
+    Avrit:
+      stationProto: StandardNanotrasenStation
+      components:
+        - type: StationNameSetup
+          mapNameTemplate: '{0} Avrite {1}'
+          nameGenerator:
+            !type:NanotrasenNameGenerator
+            prefixCreator: 'TG'
+        - type: StationEmergencyShuttle
+          emergencyShuttlePath: /Maps/Shuttles/emergency_corvaxavrit.yml
+        - type: StationJobs
+          overflowJobs:
+            - Passenger
+          availableJobs:
+            CargoTechnician: [ 4, 4 ]
+            Passenger: [ -1, -1 ]
+            Bartender: [ 2, 2 ]
+            Botanist: [ 3, 4 ]
+            Chef: [ 2, 2 ]
+            Clown: [ 1, 1 ]
+            Janitor: [ 3, 3 ]
+            Mime: [ 1, 1 ]
+            Captain: [ 1, 1 ]
+            IAA: [ 1, 1 ]
+            Reporter: [ 2, 2 ]
+            HeadOfPersonnel: [ 1, 1 ]
+            ChiefEngineer: [ 1, 1 ]
+            StationEngineer: [ 4, 4 ]
+            ChiefMedicalOfficer: [ 1, 1 ]
+            MedicalDoctor: [ 4, 4 ]
+            Chemist: [ 3, 3 ]
+            Zookeeper: [ 1, 1 ]
+            ResearchDirector: [ 1, 1 ]
+            Scientist: [ 6, 6 ]
+            HeadOfSecurity: [ 1, 1 ]
+            SecurityOfficer: [ 6, 6 ]
+            Chaplain: [ 1, 1 ]
+            Warden: [ 1, 1 ]
+            Librarian: [ 1, 1 ]
+            Quartermaster: [ 1, 1 ]
+            SalvageSpecialist: [ 4, 4 ]
+            Musician: [ 1, 1 ]
+            AtmosphericTechnician: [ 3, 3 ]
+            TechnicalAssistant: [ 4, 4 ]
+            ResearchAssistant: [ 4, 5 ]
+            MedicalIntern: [ 4, 4 ]
+            ServiceWorker: [ 4, 4 ]
+            SecurityCadet: [ 4, 4 ]
+            Psychologist: [ 1, 1 ]
+            Detective: [ 1, 1 ]
+            Boxer: [ 2, 2 ]
+            Paramedic: [ 1, 1 ]
+            Borg: [ 2, 3 ]
+            # custom
+            MinerProfession: [ 5, 5 ] # 5 раундстарт, 5 позднее присоединение
+
+- type: gameMap
+  id: CorvaxDelta
+  mapName: 'Delta Station'
+  mapPath: /Maps/corvax_delta.yml
+  minPlayers: 40
+  stations:
+    Delta:
+      stationProto: StandardNanotrasenStation
+      components:
+        - type: StationNameSetup
+          mapNameTemplate: '{0} Дельта {1}'
+          nameGenerator:
+            !type:NanotrasenNameGenerator
+            prefixCreator: 'TG'
+        - type: StationEmergencyShuttle
+          emergencyShuttlePath: /Maps/Shuttles/emergency_corvaxdelta.yml
+        - type: StationJobs
+          overflowJobs:
+            - Passenger
+          availableJobs:
+            CargoTechnician: [ 4, 4 ]
+            Passenger: [ -1, -1 ]
+            Bartender: [ 1, 1 ]
+            Botanist: [ 3, 4 ]
+            Chef: [ 1, 2 ]
+            Clown: [ 1, 1 ]
+            Janitor: [ 1, 2 ]
+            Mime: [ 1, 1 ]
+            Zookeeper: [ 1, 1 ]
+            Captain: [ 1, 1 ]
+            IAA: [ 1, 1 ]
+            HeadOfPersonnel: [ 1, 1 ]
+            ChiefEngineer: [ 1, 1 ]
+            StationEngineer: [ 5, 5 ]
+            ChiefMedicalOfficer: [ 1, 1 ]
+            MedicalDoctor: [ 5, 5 ]
+            Chemist: [ 2, 2 ]
+            ResearchDirector: [ 1, 1 ]
+            Scientist: [ 6, 6 ]
+            HeadOfSecurity: [ 1, 1 ]
+            SecurityOfficer: [ 6, 6 ]
+            Chaplain: [ 1, 1 ]
+            Warden: [ 1, 1 ]
+            Librarian: [ 1, 1 ]
+            Quartermaster: [ 1, 1 ]
+            SalvageSpecialist: [ 3, 3 ]
+            Musician: [ 2, 2 ]
+            AtmosphericTechnician: [ 2, 3 ]
+            TechnicalAssistant: [ 3, 3 ]
+            ResearchAssistant: [ 3, 3 ]
+            Reporter: [ 2, 2 ]
+            MedicalIntern: [ 3, 3 ]
+            ServiceWorker: [ 3, 3 ]
+            SecurityCadet: [ 3, 3 ]
+            Psychologist: [ 1, 1 ]
+            Detective: [ 1, 1 ]
+            Paramedic: [ 1, 1 ]
+            # custom
+            MinerProfession: [ 5, 5 ] # 5 раундстарт, 5 позднее присоединение
+
+- type: gameMap
+  id: CorvaxGate
+  mapName: 'Gate Station'
+  mapPath: /Maps/corvax_gate.yml
+  minPlayers: 55
+  stations:
+    Gate:
+      stationProto: StandardNanotrasenStation
+      components:
+        - type: StationNameSetup
+          mapNameTemplate: '{0} Gate Station {1}'
+          nameGenerator:
+            !type:NanotrasenNameGenerator
+            prefixCreator: 'ED'
+        - type: StationEmergencyShuttle
+          emergencyShuttlePath: /Maps/Shuttles/emergency_raven.yml
+        - type: StationJobs
+          overflowJobs:
+            - Passenger
+          availableJobs:
+            #service
+            Captain: [ 1, 1 ]
+            IAA: [ 1, 1 ] # Corvax-IAA
+            HeadOfPersonnel: [ 1, 1 ]
+            Bartender: [ 2, 2 ]
+            Botanist: [ 3, 3 ]
+            Chef: [ 2, 2 ]
+            Janitor: [ 2, 2 ]
+            Chaplain: [ 1, 1 ]
+            Librarian: [ 1, 1 ]
+            ServiceWorker: [ 2, 2 ]
+            Zookeeper: [ 1, 1 ]
+            Reporter: [ 2, 2 ]
+            #engineering
+            ChiefEngineer: [ 1, 1 ]
+            AtmosphericTechnician: [ 3, 3 ]
+            StationEngineer: [ 4, 4 ]
+            TechnicalAssistant: [ 4, 4 ]
+            #medical
+            ChiefMedicalOfficer: [ 1, 1 ]
+            Chemist: [ 2, 2 ]
+            MedicalDoctor: [ 3, 3 ]
+            Paramedic: [ 2, 2 ]
+            MedicalIntern: [ 4, 4 ]
+            Psychologist: [ 1, 1 ]
+            #science
+            ResearchDirector: [ 1, 1 ]
+            Scientist: [ 4, 4 ]
+            ResearchAssistant: [ 4, 4 ]
+            Borg: [ 2, 2 ]
+            #security
+            HeadOfSecurity: [ 1, 1 ]
+            Warden: [ 1, 1 ]
+            SecurityOfficer: [ 6, 6 ]
+            Detective: [ 1, 1 ]
+            SecurityCadet: [ 4, 4 ]
+            #Lawyer: [ 2, 2 ] # Corvax-IAA
+            #supply
+            Quartermaster: [ 1, 1 ]
+            SalvageSpecialist: [ 3, 3 ]
+            CargoTechnician: [ 6, 6 ]
+            #civilian
+            Passenger: [ -1, -1 ]
+            Clown: [ 1, 1 ]
+            Mime: [ 1, 1 ]
+            Musician: [ 1, 1 ]
+            # custom
+            MinerProfession: [ 5, 5 ] # 5 раундстарт, 5 позднее присоединение
+
+- type: gameMap
+  id: CorvaxIshimura
+  mapName: 'USG Ishimura'
+  mapPath: /Maps/corvax_ishimura.yml
+  minPlayers: 30
+  stations:
+    Ishimura:
+      stationProto: StandardNanotrasenStation
+      components:
+        - type: StationNameSetup
+          mapNameTemplate: '{0} USG Ishimura {1}'
+          nameGenerator:
+            !type:NanotrasenNameGenerator
+            prefixCreator: 'SY'
+        - type: StationEmergencyShuttle
+          emergencyShuttlePath: /Maps/Shuttles/corvax_emergency.yml
+        - type: StationJobs
+          overflowJobs:
+            - Passenger
+          availableJobs:
+            CargoTechnician: [ 3, 3 ]
+            Passenger: [ -1, -1 ]
+            Bartender: [ 1, 1 ]
+            Botanist: [ 3, 3 ]
+            Chef: [ 2, 2 ]
+            Clown: [ 1, 1 ]
+            Janitor: [ 1, 1 ]
+            Mime: [ 1, 1 ]
+            Captain: [ 1, 1 ]
+            IAA: [ 1, 1 ]
+            Reporter: [ 2, 2 ]
+            HeadOfPersonnel: [ 1, 1 ]
+            ChiefEngineer: [ 1, 1 ]
+            StationEngineer: [ 4, 4 ]
+            ChiefMedicalOfficer: [ 1, 1 ]
+            MedicalDoctor: [ 3, 3 ]
+            Chemist: [ 2, 2 ]
+            ResearchDirector: [ 1, 1 ]
+            Scientist: [ 4, 4 ]
+            HeadOfSecurity: [ 1, 1 ]
+            SecurityOfficer: [ 4, 4 ]
+            Chaplain: [ 1, 1 ]
+            Warden: [ 1, 1 ]
+            Librarian: [ 1, 1 ]
+            Quartermaster: [ 1, 1 ]
+            SalvageSpecialist: [ 3, 3 ]
+            Musician: [ 1, 1 ]
+            AtmosphericTechnician: [ 3, 3 ]
+            TechnicalAssistant: [ 2, 2 ]
+            ResearchAssistant: [ 1, 2 ]
+            MedicalIntern: [ 2, 2 ]
+            ServiceWorker: [ 2, 2 ]
+            SecurityCadet: [ 2, 2 ]
+            Psychologist: [ 1, 1 ]
+            Detective: [ 1, 1 ]
+            # custom
+            MinerProfession: [ 5, 5 ] # 5 раундстарт, 5 позднее присоединение
+
+- type: gameMap
+  id: CorvaxIshimura
+  mapName: 'USG Ishimura'
+  mapPath: /Maps/corvax_ishimura.yml
+  minPlayers: 30
+  stations:
+    Ishimura:
+      stationProto: StandardNanotrasenStation
+      components:
+        - type: StationNameSetup
+          mapNameTemplate: '{0} USG Ishimura {1}'
+          nameGenerator:
+            !type:NanotrasenNameGenerator
+            prefixCreator: 'SY'
+        - type: StationEmergencyShuttle
+          emergencyShuttlePath: /Maps/Shuttles/corvax_emergency.yml
+        - type: StationJobs
+          overflowJobs:
+            - Passenger
+          availableJobs:
+            CargoTechnician: [ 3, 3 ]
+            Passenger: [ -1, -1 ]
+            Bartender: [ 1, 1 ]
+            Botanist: [ 3, 3 ]
+            Chef: [ 2, 2 ]
+            Clown: [ 1, 1 ]
+            Janitor: [ 1, 1 ]
+            Mime: [ 1, 1 ]
+            Captain: [ 1, 1 ]
+            IAA: [ 1, 1 ]
+            Reporter: [ 2, 2 ]
+            HeadOfPersonnel: [ 1, 1 ]
+            ChiefEngineer: [ 1, 1 ]
+            StationEngineer: [ 4, 4 ]
+            ChiefMedicalOfficer: [ 1, 1 ]
+            MedicalDoctor: [ 3, 3 ]
+            Chemist: [ 2, 2 ]
+            ResearchDirector: [ 1, 1 ]
+            Scientist: [ 4, 4 ]
+            HeadOfSecurity: [ 1, 1 ]
+            SecurityOfficer: [ 4, 4 ]
+            Chaplain: [ 1, 1 ]
+            Warden: [ 1, 1 ]
+            Librarian: [ 1, 1 ]
+            Quartermaster: [ 1, 1 ]
+            SalvageSpecialist: [ 3, 3 ]
+            Musician: [ 1, 1 ]
+            AtmosphericTechnician: [ 3, 3 ]
+            TechnicalAssistant: [ 2, 2 ]
+            ResearchAssistant: [ 1, 2 ]
+            MedicalIntern: [ 2, 2 ]
+            ServiceWorker: [ 2, 2 ]
+            SecurityCadet: [ 2, 2 ]
+            Psychologist: [ 1, 1 ]
+            Detective: [ 1, 1 ]
+            # custom
+            MinerProfession: [ 5, 5 ] # 5 раундстарт, 5 позднее присоединение
+
+- type: gameMap
+  id: CorvaxMaus
+  mapName: 'Maus Station'
+  mapPath: /Maps/corvax_maus.yml 
+  minPlayers: 0
+  maxPlayers: 40
+  stations:
+    Maus:
+      stationProto: StandardNanotrasenStation
+      components:
+        - type: StationNameSetup
+          mapNameTemplate: '{0} Маус {1}'
+          nameGenerator:
+           !type:NanotrasenNameGenerator
+            prefixCreator: "Z"
+        - type: StationEmergencyShuttle
+          emergencyShuttlePath: /Maps/Shuttles/emergency.yml
+        - type: StationJobs
+          overflowJobs:
+            - Passenger
+          availableJobs:
+            CargoTechnician: [ 2, 2 ]
+            Passenger: [ -1, -1 ]
+            Bartender: [ 1, 1 ]
+            Botanist: [ 2, 2 ]
+            Chef: [ 1, 1 ]
+            Clown: [ 1, 1 ]
+            Janitor: [ 1, 1 ]
+            Mime: [ 1, 1 ]
+            Captain: [ 1, 1 ]
+            HeadOfPersonnel: [ 1, 1 ]
+            ChiefEngineer: [ 1, 1 ]
+            StationEngineer: [ 2, 3 ]
+            AtmosphericTechnician: [ 2, 3 ]
+            ChiefMedicalOfficer: [ 1, 1 ]
+            MedicalDoctor: [ 2, 2 ]
+            Chemist: [ 2, 2 ]
+            ResearchDirector: [ 1, 1 ]
+            Scientist: [ 3, 3 ]
+            ResearchAssistant: [ 4, 4 ]
+            HeadOfSecurity: [ 1, 1 ]
+            SecurityOfficer: [ 2, 3 ]
+            Chaplain: [ 1, 1 ]
+            Librarian: [ 1, 1 ]
+            Musician: [ 1, 1 ]
+            SalvageSpecialist: [ 1, 2 ]
+            Quartermaster: [ 1, 1 ]
+            TechnicalAssistant: [ 4, 4 ]
+            MedicalIntern: [ 4, 4 ]
+            ServiceWorker: [ 2, 2 ]
+            SecurityCadet: [ 2, 2 ]
+            Detective: [ 1, 1 ]
+            Warden: [ 1, 1 ]
+            Paramedic: [1, 1]
+            # custom
+            MinerProfession: [ 5, 5 ] # 5 раундстарт, 5 позднее присоединение
+
+- type: gameMap
+  id: CorvaxOutpost
+  mapName: 'Outpost'
+  mapPath: /Maps/corvax_outpost.yml
+  minPlayers: 10
+  stations:
+    Outpost:
+      stationProto: StandardNanotrasenStation
+      components:
+        - type: StationNameSetup
+          mapNameTemplate: '{0} Outpost {1}'
+          nameGenerator:
+            !type:NanotrasenNameGenerator
+            prefixCreator: 'ED'
+        - type: StationEmergencyShuttle
+          emergencyShuttlePath: /Maps/Shuttles/emergency.yml
+        - type: StationJobs
+          overflowJobs:
+            - Passenger
+          availableJobs:
+            #service
+            Captain: [ 1, 1 ]
+            IAA: [ 1, 1 ] # Corvax-IAA
+            HeadOfPersonnel: [ 1, 1 ]
+            Bartender: [ 1, 1 ]
+            Botanist: [ 2, 2 ]
+            Chef: [ 1, 1 ]
+            Janitor: [ 1, 2 ]
+            Chaplain: [ 1, 1 ]
+            Librarian: [ 1, 1 ]
+            ServiceWorker: [ 2, 2 ]
+            #engineering
+            ChiefEngineer: [ 1, 1 ]
+            AtmosphericTechnician: [ 2, 2 ]
+            StationEngineer: [ 3, 3 ]
+            TechnicalAssistant: [ 3, 3 ]
+            #medical
+            ChiefMedicalOfficer: [ 1, 1 ]
+            Chemist: [ 2, 2 ]
+            MedicalDoctor: [ 3, 3 ]
+            Paramedic: [ 1, 1 ]
+            MedicalIntern: [ 2, 2 ]
+            Psychologist: [ 1, 1 ]
+            #science
+            ResearchDirector: [ 1, 1 ]
+            Scientist: [ 3, 3 ]
+            ResearchAssistant: [ 3, 3 ]
+            Borg: [ 1, 1 ]
+            #security
+            HeadOfSecurity: [ 1, 1 ]
+            Warden: [ 1, 1 ]
+            SecurityOfficer: [ 4, 4 ]
+            Detective: [ 1, 1 ]
+            SecurityCadet: [ 2, 2 ]
+            #Lawyer: [ 2, 2 ] # Corvax-IAA
+            #supply
+            Quartermaster: [ 1, 1 ]
+            SalvageSpecialist: [ 3, 3 ]
+            CargoTechnician: [ 4, 4 ]
+            #civilian
+            Passenger: [ -1, -1 ]
+            Clown: [ 1, 1 ]
+            Mime: [ 1, 1 ]
+            Musician: [ 1, 1 ]
+            # custom
+            MinerProfession: [ 5, 5 ] # 5 раундстарт, 5 позднее присоединение
+
+- type: gameMap
+  id: CorvaxSilly
+  mapName: 'Silly Station'
+  mapPath: /Maps/corvax_silly.yml
+  minPlayers: 0
+  maxPlayers: 30
+  stations:
+    Silly:
+      stationProto: StandardNanotrasenStation
+      components:
+        - type: StationNameSetup
+          mapNameTemplate: '{0} Silly {1}'
+          nameGenerator:
+            !type:NanotrasenNameGenerator
+            prefixCreator: 'AB'
+        - type: StationEmergencyShuttle
+          emergencyShuttlePath: /Maps/Shuttles/emergency_corvaxsilly.yml
+        - type: StationJobs
+          overflowJobs:
+            - Passenger
+          availableJobs:
+            CargoTechnician: [ 3, 3 ]
+            Passenger: [ -1, -1 ]
+            Bartender: [ 1, 1 ]
+            Botanist: [ 1, 1 ]
+            Chef: [ 1, 1 ]
+            Clown: [ 1, 1 ]
+            Janitor: [ 1, 2 ]
+            Mime: [ 1, 1 ]
+            Captain: [ 1, 1 ]
+            IAA: [ 1, 1 ]
+            HeadOfPersonnel: [ 1, 1 ]
+            ChiefEngineer: [ 1, 1 ]
+            StationEngineer: [ 2, 2 ]
+            ChiefMedicalOfficer: [ 1, 1 ]
+            MedicalDoctor: [ 1, 1 ]
+            Chemist: [ 1, 1 ]
+            ResearchDirector: [ 1, 1 ]
+            Scientist: [ 2, 2 ]
+            HeadOfSecurity: [ 1, 1 ]
+            SecurityOfficer: [ 1, 1 ]
+            Chaplain: [ 1, 1 ]
+            Warden: [ 1, 1 ]
+            Quartermaster: [ 1, 1 ]
+            SalvageSpecialist: [ 3, 3 ]
+            Musician: [ 1, 1 ]
+            AtmosphericTechnician: [ 1, 1 ]
+            TechnicalAssistant: [ 2, 2 ]
+            ResearchAssistant: [ 2, 2 ]
+            Reporter: [ 0, 0 ]
+            MedicalIntern: [ 1, 1 ]
+            ServiceWorker: [ 0, 0 ]
+            SecurityCadet: [ 1, 1 ]
+            Psychologist: [ 0, 0 ]
+            Detective: [ 1, 1 ]
+            Paramedic: [ 1, 1 ]
+            # custom
+            MinerProfession: [ 5, 5 ] # 5 раундстарт, 5 позднее присоединение
+
+- type: gameMap
+  id: CorvaxSpectrum
+  mapName: 'Spectrum Station'
+  mapPath: /Maps/corvax_spectrum.yml
+  minPlayers: 40
+  stations:
+    Spectrum:
+      stationProto: StandardNanotrasenStation
+      components:
+        - type: StationNameSetup
+          mapNameTemplate: '{0} Spectrum {1}'
+          nameGenerator:
+            !type:NanotrasenNameGenerator
+            prefixCreator: 'NR'
+        - type: StationEmergencyShuttle
+          emergencyShuttlePath: /Maps/Shuttles/emergency.yml
+        - type: StationJobs
+          overflowJobs:
+            - Passenger
+          availableJobs:
+            HeadOfPersonnel: [ 1, 1 ] #ком
+            ChiefEngineer: [ 1, 1 ]
+            Quartermaster: [ 1, 1 ]
+            Captain: [ 1, 1 ]
+            HeadOfSecurity: [ 1, 1 ]
+            ChiefMedicalOfficer: [ 1, 1 ]
+            ResearchDirector: [ 1, 1 ]
+            CargoTechnician: [ 4, 4 ] #карго
+            SalvageSpecialist: [ 4, 4 ]
+            StationEngineer: [ 6, 6 ] #инженерка
+            AtmosphericTechnician: [ 3, 3 ]
+            TechnicalAssistant: [ 3, 3 ]
+            MedicalDoctor: [ 4, 4 ] #мед
+            MedicalIntern: [ 3, 3 ]
+            Paramedic: [ 1, 1 ]
+            Psychologist: [ 1, 1 ]
+            Chemist: [ 3, 3 ]
+            SecurityOfficer: [ 6, 6 ] #СБ
+            SecurityCadet: [ 3, 3 ]
+            Detective: [ 1, 1 ]
+            Warden: [ 1, 1 ]
+            Scientist: [ 6, 6 ] #РНД
+            ResearchAssistant: [ 3, 3 ]
+            Borg: [ 1, 1 ]
+            ServiceWorker: [ 4, 4 ] #Сервис
+            Bartender: [ 2, 2 ]
+            Botanist: [ 3, 3 ]
+            Chef: [ 2, 2 ]
+            Clown: [ 1, 1 ]
+            Janitor: [ 3, 3 ]
+            Mime: [ 1, 1 ]
+            Reporter: [ 2, 2 ]
+            Zookeeper: [ 1, 1 ]
+            Chaplain: [ 1, 1 ]
+            Librarian: [ 1, 1 ]
+            Musician: [ 3, 3 ]
+            Boxer: [ 2, 2]
+            Passenger: [ -1, -1 ] #Разное
+            IAA: [ 1, 1 ]
+            # custom
+            MinerProfession: [ 5, 5 ] # 5 раундстарт, 5 позднее присоединение
+
+#-----====-----#
+#[Vanilla Maps]#
+#-----====-----#
+
+- type: gameMap
+  id: Atlas
+  mapName: Atlas
+  mapPath: /Maps/atlas.yml
+  minPlayers: 5
+  maxPlayers: 20
+  stations:
+    Atlas:
+      stationProto: StandardNanotrasenStation
+      components:
+        - type: StationNameSetup
+          mapNameTemplate: '{0} Atlas {1}'
+          nameGenerator:
+            !type:NanotrasenNameGenerator
+            prefixCreator: 'R4' # R4407/Goon. GS isn't as cool sounding.
+        - type: StationJobs
+          overflowJobs:
+          - Passenger
+          availableJobs:
+            #service
+            Captain: [ 1, 1 ]
+            HeadOfPersonnel: [ 1, 1 ]
+            Bartender: [ 1, 1 ]
+            Botanist: [ 2, 2 ]
+            Chef: [ 1, 1 ]
+            Janitor: [ 1, 1 ]
+            Chaplain: [ 1, 1 ]
+            Librarian: [ 1, 1 ]
+            ServiceWorker: [ 1, 1 ]
+            #engineering
+            ChiefEngineer: [ 1, 1 ]
+            AtmosphericTechnician: [ 2, 2 ]
+            StationEngineer: [ 2, 2 ]
+            TechnicalAssistant: [ 1, 3 ]
+            #medical
+            ChiefMedicalOfficer: [ 1, 1 ]
+            Chemist: [ 1, 1 ]
+            MedicalDoctor: [ 2, 2 ]
+            MedicalIntern: [ 1, 3 ]
+            #science
+            ResearchDirector: [ 1, 1 ]
+            Scientist: [ 2, 2 ]
+            ResearchAssistant: [ 1, 3 ]
+            Borg: [ 2, 2 ]
+            #security
+            HeadOfSecurity: [ 1, 1 ]
+            Warden: [ 1, 1 ]
+            SecurityOfficer: [ 3, 3 ]
+            SecurityCadet: [ 1, 3 ]
+            Detective: [ 1, 1 ]
+            #supply
+            Quartermaster: [ 1, 1 ]
+            SalvageSpecialist: [ 2, 2 ]
+            CargoTechnician: [ 2, 2 ]
+            #civillian
+            Passenger: [ -1, -1 ]
+            Clown: [ 1, 1 ]
+            Mime: [ 1, 1 ]
+            Musician: [ 1, 1 ]
+            # custom
+            MinerProfession: [ 5, 5 ] # 5 раундстарт, 5 позднее присоединение
+
+- type: gameMap
+  id: Bagel
+  mapName: 'Bagel Station'
+  mapPath: /Maps/bagel.yml
+  minPlayers: 40
+  maxPlayers: 76
+  stations:
+    Bagel:
+      stationProto: StandardNanotrasenStation
+      components:
+        - type: StationNameSetup
+          mapNameTemplate: '{0} Bagel Station {1}'
+          nameGenerator:
+            !type:NanotrasenNameGenerator
+            prefixCreator: '14'
+        - type: StationEmergencyShuttle
+          emergencyShuttlePath: /Maps/Shuttles/emergency_lox.yml
+        - type: StationJobs
+          overflowJobs:
+            - Passenger
+          availableJobs:
+            #service
+            Captain: [ 1, 1 ]
+            IAA: [ 1, 1 ] # Corvax-IAA
+            HeadOfPersonnel: [ 1, 1 ]
+            Bartender: [ 2, 2 ]
+            Botanist: [ 3, 3 ]
+            Chef: [ 2, 2 ]
+            Janitor: [ 3, 3 ]
+            Chaplain: [ 1, 1 ]
+            Librarian: [ 1, 1 ]
+            ServiceWorker: [ 2, 2 ]
+            #engineering
+            ChiefEngineer: [ 1, 1 ]
+            AtmosphericTechnician: [ 3, 3 ]
+            StationEngineer: [ 4, 4 ]
+            TechnicalAssistant: [ 4, 4 ]
+            #medical
+            ChiefMedicalOfficer: [ 1, 1 ]
+            Chemist: [ 2, 2 ]
+            MedicalDoctor: [ 3, 3 ]
+            Paramedic: [ 1, 1 ]
+            MedicalIntern: [ 4, 4 ]
+            #science
+            ResearchDirector: [ 1, 1 ]
+            Scientist: [ 5, 5 ]
+            ResearchAssistant: [ 4, 4 ]
+            Borg: [ 2, 2 ]
+            #security
+            HeadOfSecurity: [ 1, 1 ]
+            Warden: [ 1, 1 ]
+            SecurityOfficer: [ 4, 4 ]
+            Detective: [ 1, 1 ]
+            SecurityCadet: [ 4, 4 ]
+            #Lawyer: [ 2, 2 ] # Corvax-IAA
+            #supply
+            Quartermaster: [ 1, 1 ]
+            SalvageSpecialist: [ 3, 3 ]
+            CargoTechnician: [ 3, 3 ]
+            #civilian
+            Passenger: [ -1, -1 ]
+            Clown: [ 1, 1 ]
+            Mime: [ 1, 1 ]
+            Musician: [ 1, 1 ]
+            Reporter: [ 2, 2 ]
+            # custom
+            MinerProfession: [ 5, 5 ] # 5 раундстарт, 5 позднее присоединение
+
+- type: gameMap
+  id: Box
+  mapName: 'Box Station'
+  mapPath: /Maps/box.yml
+  minPlayers: 50
+  stations:
+    Boxstation:
+      stationProto: StandardNanotrasenStation
+      components:
+        - type: StationNameSetup
+          mapNameTemplate: '{0} Box Station {1}'
+          nameGenerator:
+            !type:NanotrasenNameGenerator
+            prefixCreator: 'TG'
+        - type: StationEmergencyShuttle
+          emergencyShuttlePath: /Maps/Shuttles/emergency_box.yml
+        - type: StationJobs
+          overflowJobs:
+            - Passenger
+          availableJobs:
+            #service
+            Captain: [ 1, 1 ]
+            IAA: [ 1, 1 ] # Corvax-IAA
+            HeadOfPersonnel: [ 1, 1 ]
+            Bartender: [ 2, 2 ]
+            Botanist: [ 3, 3 ]
+            Chef: [ 2, 2 ]
+            Janitor: [ 2, 2 ]
+            Chaplain: [ 1, 1 ]
+            Librarian: [ 1, 1 ]
+            ServiceWorker: [ 2, 2 ]
+            #engineering
+            ChiefEngineer: [ 1, 1 ]
+            AtmosphericTechnician: [ 3, 3 ]
+            StationEngineer: [ 5, 5 ]
+            TechnicalAssistant: [ 4, 4 ]
+            #medical
+            ChiefMedicalOfficer: [ 1, 1 ]
+            Chemist: [ 2, 3 ]
+            MedicalDoctor: [ 4, 4 ]
+            Paramedic: [ 1, 1 ]
+            MedicalIntern: [ 4, 4 ]
+            Psychologist: [ 1, 1 ]
+            #science
+            ResearchDirector: [ 1, 1 ]
+            Scientist: [ 5, 5 ]
+            ResearchAssistant: [ 4, 4 ]
+            Borg: [ 2, 2 ]
+            #security
+            HeadOfSecurity: [ 1, 1 ]
+            Warden: [ 1, 1 ]
+            SecurityOfficer: [ 5, 5 ]
+            Detective: [ 1, 1 ]
+            SecurityCadet: [ 4, 4 ]
+            #Lawyer: [ 2, 2 ] # Corvax-IAA
+            #supply
+            Quartermaster: [ 1, 1 ]
+            SalvageSpecialist: [ 3, 3 ]
+            CargoTechnician: [ 3, 3 ]
+            #civilian
+            Passenger: [ -1, -1 ]
+            Clown: [ 1, 1 ]
+            Mime: [ 1, 1 ]
+            Musician: [ 1, 1 ]
+            # custom
+            MinerProfession: [ 5, 5 ] # 5 раундстарт, 5 позднее присоединение
+
+- type: gameMap
+  id: Cluster
+  mapName: 'Cluster'
+  mapPath: /Maps/cluster.yml
+  minPlayers: 10
+  maxPlayers: 35
+  stations:
+    Cluster:
+      stationProto: StandardNanotrasenStation
+      components:
+        - type: StationEmergencyShuttle
+          emergencyShuttlePath: /Maps/Shuttles/emergency_transit.yml
+        - type: StationNameSetup
+          mapNameTemplate: '{0} Cluster Station {1}'
+          nameGenerator:
+            !type:NanotrasenNameGenerator
+            prefixCreator: '14'
+        - type: StationJobs
+          overflowJobs:
+            - Passenger
+          availableJobs:
+            #service
+            Captain: [ 1, 1 ]
+            IAA: [ 1, 1 ] # Corvax-IAA
+            HeadOfPersonnel: [ 1, 1 ]
+            Bartender: [ 1, 1 ]
+            Botanist: [ 2, 2 ]
+            Chef: [ 1, 1 ]
+            Janitor: [ 1, 1 ]
+            Chaplain: [ 1, 1 ]
+            Librarian: [ 1, 1 ]
+            #Lawyer: [ 1, 1 ] # Corvax-IAA
+            ServiceWorker: [ 1, 1 ]
+            #engineering
+            ChiefEngineer: [ 1, 1 ]
+            AtmosphericTechnician: [ 2, 2 ]
+            StationEngineer: [ 3, 3 ]
+            TechnicalAssistant: [ 2, 2 ]
+            #medical
+            ChiefMedicalOfficer: [ 1, 1 ]
+            Chemist: [ 1, 1 ]
+            MedicalDoctor: [ 2, 2 ]
+            MedicalIntern: [ 2, 2 ]
+            #science
+            ResearchDirector: [ 1, 1 ]
+            Scientist: [ 3, 3 ]
+            ResearchAssistant: [ 2, 2 ]
+            Borg: [ 1, 1 ]
+            #security
+            HeadOfSecurity: [ 1, 1 ]
+            Warden: [ 1, 1 ]
+            Detective: [ 1, 1 ]
+            SecurityOfficer: [ 3, 3 ]
+            SecurityCadet: [ 2, 2 ]
+            #supply
+            Quartermaster: [ 1, 1 ]
+            SalvageSpecialist: [ 2, 2 ]
+            CargoTechnician: [ 1, 1 ]
+            #civillian
+            Passenger: [ -1, -1 ]
+            Clown: [ 1, 1 ]
+            Mime: [ 1, 1 ]
+            Musician: [ 1, 1 ]
+            # custom
+            MinerProfession: [ 5, 5 ] # 5 раундстарт, 5 позднее присоединение
+
+- type: gameMap
+  id: Core
+  mapName: 'Core'
+  mapPath: /Maps/core.yml
+  minPlayers: 30
+  maxPlayers: 60
+  stations:
+    Core:
+      stationProto: StandardNanotrasenStation
+      components:
+        - type: StationNameSetup
+          mapNameTemplate: '{0} Core {1}'
+          nameGenerator:
+            !type:NanotrasenNameGenerator
+            prefixCreator: '14'
+        - type: StationEmergencyShuttle
+          emergencyShuttlePath: /Maps/Shuttles/emergency_rod.yml
+        - type: StationCargoShuttle
+          path: /Maps/Shuttles/cargo_core.yml
+        - type: StationJobs
+          overflowJobs:
+            - Passenger
+          availableJobs:
+            #service
+            Bartender: [ 2, 2 ]
+            Botanist: [ 2, 2]
+            Chef: [ 1, 1 ]
+            Janitor: [ 2, 2 ]
+            Captain: [ 1, 1 ]
+            IAA: [ 1, 1 ] # Corvax-IAA
+            HeadOfPersonnel: [ 1, 1 ]
+            Chaplain: [ 1, 1 ]
+            Librarian: [ 1, 1 ]
+            ServiceWorker: [ 3, 3 ]
+            #engineering
+            ChiefEngineer: [ 1, 1 ]
+            StationEngineer: [ 4, 4 ]
+            AtmosphericTechnician: [ 2, 2 ]
+            TechnicalAssistant: [ 2, 2 ]
+            #medical
+            ChiefMedicalOfficer: [ 1, 1 ]
+            MedicalDoctor: [ 3, 4 ]
+            Chemist: [ 1, 2 ]
+            MedicalIntern: [ 2, 2 ]
+            Paramedic: [ 1, 2 ]
+            #science
+            ResearchDirector: [ 1, 1 ]
+            Scientist: [ 3, 3 ]
+            ResearchAssistant: [ 1, 1 ]
+            Borg: [ 1, 2 ]
+            #security
+            HeadOfSecurity: [ 1, 1 ]
+            SecurityOfficer: [ 4, 4 ]
+            Warden: [ 1, 1 ]
+            #Lawyer: [ 1, 1 ] # Corvax-IAA
+            SecurityCadet: [ 1, 1 ]
+            Detective: [ 1, 1 ]
+            #supply
+            CargoTechnician: [ 3, 3 ]
+            Quartermaster: [ 1, 1 ]
+            SalvageSpecialist: [ 2, 2 ]
+            #civilian
+            Passenger: [ -1, -1 ]
+            Clown: [ 1, 1 ]
+            Mime: [ 1, 1 ]
+            Musician: [ 1, 1 ]
+            Boxer: [ 2, 2 ]
+            Reporter: [ 2, 2 ]
+            # custom
+            MinerProfession: [ 5, 5 ] # 5 раундстарт, 5 позднее присоединение
+
+- type: gameMap
+  id: Europa
+  mapName: 'Europa'
+  mapPath: /Maps/europa.yml
+  minPlayers: 0
+  maxPlayers: 40
+  stations:
+    Europa:
+      stationProto: StandardNanotrasenStation
+      components:
+        - type: StationNameSetup
+          mapNameTemplate: '{0} Europa {1}'
+          nameGenerator:
+            !type:NanotrasenNameGenerator
+            prefixCreator: '14'
+        - type: StationEmergencyShuttle
+          emergencyShuttlePath: /Maps/Shuttles/emergency_transit.yml
+        - type: StationJobs
+          overflowJobs:
+            - Passenger
+          availableJobs:
+            #service
+            Bartender: [ 1, 1 ]
+            Botanist: [ 2, 2]
+            Chef: [ 1, 1 ]
+            Janitor: [ 2, 2 ]
+            Captain: [ 1, 1 ]
+            IAA: [ 1, 1 ] # Corvax-IAA
+            HeadOfPersonnel: [ 1, 1 ]
+            Chaplain: [ 1, 1 ]
+            Librarian: [ 1, 1 ]
+            ServiceWorker: [ 3, 4 ]
+            #engineering
+            ChiefEngineer: [ 1, 1 ]
+            StationEngineer: [ 3, 3 ]
+            AtmosphericTechnician: [ 2, 2 ]
+            TechnicalAssistant: [ 1, 1 ]
+            #medical
+            ChiefMedicalOfficer: [ 1, 1 ]
+            MedicalDoctor: [ 2, 3 ]
+            Chemist: [ 1, 2 ]
+            MedicalIntern: [ 1, 1 ]
+            Paramedic: [ 1, 2 ]
+            #science
+            ResearchDirector: [ 1, 1 ]
+            Scientist: [ 2, 3 ]
+            ResearchAssistant: [ 1, 1 ]
+            #security
+            HeadOfSecurity: [ 1, 1 ]
+            SecurityOfficer: [ 3, 3 ]
+            Warden: [ 1, 1 ]
+            #Lawyer: [ 1, 1 ] # Corvax-IAA
+            SecurityCadet: [ 3, 3 ]
+            Detective: [ 1, 1 ]
+            #supply
+            CargoTechnician: [ 3, 3 ]
+            Quartermaster: [ 1, 1 ]
+            SalvageSpecialist: [ 3, 3 ]
+            #civilian
+            Passenger: [ -1, -1 ]
+            Clown: [ 1, 1 ]
+            Mime: [ 1, 1 ]
+            Musician: [ 1, 1 ]
+            Reporter: [ 1, 1 ]
+            # custom
+            MinerProfession: [ 5, 5 ] # 5 раундстарт, 5 позднее присоединение
+
+- type: gameMap
+  id: Fland
+  mapName: 'Fland Installation'
+  mapPath: /Maps/fland.yml
+  minPlayers: 70
+  stations:
+    Fland:
+      stationProto: StandardNanotrasenStation
+      components:
+        - type: StationNameSetup
+          mapNameTemplate: '{0} Fland Installation {1}'
+          nameGenerator:
+            !type:NanotrasenNameGenerator
+            prefixCreator: 'B'
+        - type: StationEmergencyShuttle
+          emergencyShuttlePath: /Maps/Shuttles/emergency_delta.yml
+        - type: StationCargoShuttle
+          path: /Maps/Shuttles/cargo_fland.yml
+        - type: StationJobs
+          overflowJobs:
+            - Passenger
+          availableJobs:
+            #service
+            Captain: [ 1, 1 ]
+            IAA: [ 1, 1 ] # Corvax-IAA
+            HeadOfPersonnel: [ 1, 1 ]
+            Bartender: [ 2, 2 ]
+            Botanist: [ 4, 4 ]
+            Chef: [ 2, 2 ]
+            Janitor: [ 3, 3 ]
+            Chaplain: [ 1, 1 ]
+            Librarian: [ 1, 1 ]
+            ServiceWorker: [ 2, 2 ]
+            #engineering
+            ChiefEngineer: [ 1, 1 ]
+            AtmosphericTechnician: [ 3, 3 ]
+            StationEngineer: [ 5, 5 ]
+            TechnicalAssistant: [ 4, 4 ]
+            #medical
+            ChiefMedicalOfficer: [ 1, 1 ]
+            Chemist: [ 3, 3 ]
+            MedicalDoctor: [ 6, 6 ]
+            Paramedic: [ 2, 2 ]
+            MedicalIntern: [ 4, 4 ]
+            #science
+            ResearchDirector: [ 1, 1 ]
+            Scientist: [ 5, 5 ]
+            ResearchAssistant: [ 6, 6 ]
+            Borg: [ 2, 2 ]
+            #security
+            HeadOfSecurity: [ 1, 1 ]
+            Warden: [ 1, 1 ]
+            SecurityOfficer: [ 8, 8 ]
+            Detective: [ 1, 1 ]
+            SecurityCadet: [ 4, 4 ]
+            #Lawyer: [ 2, 2 ] # Corvax-IAA
+            #supply
+            Quartermaster: [ 1, 1 ]
+            SalvageSpecialist: [ 3, 3 ]
+            CargoTechnician: [ 4, 4 ]
+            #civilian
+            Passenger: [ -1, -1 ]
+            Clown: [ 1, 1 ]
+            Mime: [ 1, 1 ]
+            Musician: [ 1, 1 ]
+            # custom
+            MinerProfession: [ 5, 5 ] # 5 раундстарт, 5 позднее присоединение
+
+- type: gameMap
+  id: Marathon
+  mapName: 'Marathon Station'
+  mapPath: /Maps/marathon.yml
+  minPlayers: 35
+  maxPlayers: 70
+  stations:
+    Marathon:
+      stationProto: StandardNanotrasenStation
+      components:
+        - type: StationNameSetup
+          mapNameTemplate: '{0} Marathon Station {1}'
+          nameGenerator:
+            !type:NanotrasenNameGenerator
+            prefixCreator: '14'
+        - type: StationEmergencyShuttle
+          emergencyShuttlePath: /Maps/Shuttles/emergency_rod.yml
+        - type: StationJobs
+          overflowJobs:
+            - Passenger
+          availableJobs:
+            #service
+            Captain: [ 1, 1 ]
+            IAA: [ 1, 1 ] # Corvax-IAA
+            HeadOfPersonnel: [ 1, 1 ]
+            Bartender: [ 2, 2 ]
+            Botanist: [ 2, 3 ]
+            Chef: [ 2, 2 ]
+            Janitor: [ 1, 2 ]
+            Chaplain: [ 1, 1 ]
+            Librarian: [ 1, 1 ]
+            ServiceWorker: [ 2, 2 ]
+            #engineering
+            ChiefEngineer: [ 1, 1 ]
+            AtmosphericTechnician: [ 3, 3 ]
+            StationEngineer: [ 4, 4 ]
+            TechnicalAssistant: [ 3, 3 ]
+            #medical
+            ChiefMedicalOfficer: [ 1, 1 ]
+            Chemist: [ 2, 2 ]
+            MedicalDoctor: [ 4, 4 ]
+            MedicalIntern: [ 3, 3 ]
+            Psychologist: [ 1, 1 ]
+            Paramedic: [ 1, 1 ]
+            #science
+            ResearchDirector: [ 1, 1 ]
+            Scientist: [ 4, 4 ]
+            ResearchAssistant: [ 3, 3 ]
+            Borg: [ 2, 2 ]
+            #security
+            HeadOfSecurity: [ 1, 1 ]
+            Warden: [ 1, 1 ]
+            SecurityOfficer: [ 4, 4 ]
+            Detective: [ 1, 1 ]
+            SecurityCadet: [ 4, 4 ]
+            #Lawyer: [ 2, 2 ] # Corvax-IAA
+            #supply
+            Quartermaster: [ 1, 1 ]
+            SalvageSpecialist: [ 3, 3 ]
+            CargoTechnician: [ 3, 3 ]
+            #civilian
+            Passenger: [ -1, -1 ]
+            Clown: [ 1, 1 ]
+            Mime: [ 1, 1 ]
+            Musician: [ 1, 1 ]
+            # custom
+            MinerProfession: [ 5, 5 ] # 5 раундстарт, 5 позднее присоединение
+
+- type: gameMap
+  id: Meta
+  mapName: 'Meta Station'
+  mapPath: /Maps/meta.yml
+  minPlayers: 50
+  stations:
+    Meta:
+      stationProto: StandardNanotrasenStation
+      components:
+        - type: StationNameSetup
+          mapNameTemplate: '{0} Meta Station {1}'
+          nameGenerator:
+            !type:NanotrasenNameGenerator
+            prefixCreator: 'TG'
+        - type: StationEmergencyShuttle
+          emergencyShuttlePath: /Maps/Shuttles/emergency_meta.yml
+        - type: StationJobs
+          overflowJobs:
+            - Passenger
+          availableJobs:
+            #service
+            Captain: [ 1, 1 ]
+            IAA: [ 1, 1 ] # Corvax-IAA
+            HeadOfPersonnel: [ 1, 1 ]
+            Bartender: [ 2, 2 ]
+            Botanist: [ 2, 3 ]
+            Chef: [ 2, 2 ]
+            Janitor: [ 1, 2 ]
+            Chaplain: [ 1, 1 ]
+            Librarian: [ 1, 1 ]
+            ServiceWorker: [ 2, 2 ]
+            #engineering
+            ChiefEngineer: [ 1, 1 ]
+            AtmosphericTechnician: [ 3, 3 ]
+            StationEngineer: [ 5, 7 ]
+            TechnicalAssistant: [ 3, 6 ]
+            #medical
+            ChiefMedicalOfficer: [ 1, 1 ]
+            Chemist: [ 3, 3 ]
+            MedicalDoctor: [ 5, 5 ]
+            MedicalIntern: [ 3, 6 ]
+            Paramedic: [ 1, 1 ]
+            #science
+            ResearchDirector: [ 1, 1 ]
+            Scientist: [ 5, 7 ]
+            ResearchAssistant: [ 3, 6 ]
+            Borg: [ 2, 2 ]
+            #security
+            HeadOfSecurity: [ 1, 1 ]
+            Warden: [ 1, 1 ]
+            SecurityOfficer: [ 5, 7 ]
+            Detective: [ 1, 1 ]
+            SecurityCadet: [ 3, 6 ]
+            #Lawyer: [ 2, 2 ] # Corvax-IAA
+            #supply
+            Quartermaster: [ 1, 1 ]
+            SalvageSpecialist: [ 3, 3 ]
+            CargoTechnician: [ 3, 3 ]
+            #civilian
+            Passenger: [ -1, -1 ]
+            Clown: [ 1, 1 ]
+            Mime: [ 1, 1 ]
+            Musician: [ 1, 1 ]
+            # custom
+            MinerProfession: [ 5, 5 ] # 5 раундстарт, 5 позднее присоединение
+
+- type: gameMap
+  id: Omega
+  mapName: 'Omega'
+  mapPath: /Maps/omega.yml
+  minPlayers: 10
+  maxPlayers: 35
+  stations:
+    Omega:
+      stationProto: StandardNanotrasenStation
+      components:
+        - type: StationNameSetup
+          mapNameTemplate: '{0} Omega Station {1}'
+          nameGenerator:
+            !type:NanotrasenNameGenerator
+            prefixCreator: 'TG'
+        - type: StationEmergencyShuttle
+          emergencyShuttlePath: /Maps/Shuttles/emergency_omega.yml
+        - type: StationJobs
+          overflowJobs:
+            - Passenger
+          availableJobs:
+            #service
+            Captain: [ 1, 1 ]
+            IAA: [ 1, 1 ] # Corvax-IAA
+            HeadOfPersonnel: [ 1, 1 ]
+            Bartender: [ 1, 1 ]
+            Botanist: [ 2, 2 ]
+            Chef: [ 1, 1 ]
+            Janitor: [ 1, 2 ]
+            Chaplain: [ 1, 1 ]
+            Librarian: [ 1, 1 ]
+            ServiceWorker: [ 2, 2 ]
+            #engineering
+            ChiefEngineer: [ 1, 1 ]
+            AtmosphericTechnician: [ 2, 2 ]
+            StationEngineer: [ 3, 3 ]
+            TechnicalAssistant: [ 2, 2 ]
+            #medical
+            ChiefMedicalOfficer: [ 1, 1 ]
+            Chemist: [ 2, 2 ]
+            MedicalDoctor: [ 3, 3 ]
+            MedicalIntern: [ 2, 2 ]
+            #science
+            ResearchDirector: [ 1, 1 ]
+            Scientist: [ 4, 4 ]
+            ResearchAssistant: [ 2, 2 ]
+            #security
+            HeadOfSecurity: [ 1, 1 ]
+            Warden: [ 1, 1 ]
+            SecurityOfficer: [ 4, 4 ]
+            Detective: [ 1, 1 ]
+            SecurityCadet: [ 2, 2 ]
+            #Lawyer: [ 1, 1 ] # Corvax-IAA
+            #supply
+            Quartermaster: [ 1, 1 ]
+            SalvageSpecialist: [ 2, 2 ]
+            CargoTechnician: [ 2, 2 ]
+            #civilian
+            Passenger: [ -1, -1 ]
+            Clown: [ 1, 1 ]
+            Mime: [ 1, 1 ]
+            Musician: [ 1, 1 ]
+            Borg: [ 2, 2 ]
+            # custom
+            MinerProfession: [ 5, 5 ] # 5 раундстарт, 5 позднее присоединение
+
+- type: gameMap
+  id: Origin
+  mapName: 'Origin'
+  mapPath: /Maps/origin.yml
+  minPlayers: 50
+  stations:
+    Origin:
+      stationProto: StandardNanotrasenStation
+      components:
+        - type: StationNameSetup
+          mapNameTemplate: '{0} Origin {1}'
+          nameGenerator:
+            !type:NanotrasenNameGenerator
+            prefixCreator: '14'
+        - type: StationEmergencyShuttle
+          emergencyShuttlePath: /Maps/Shuttles/emergency_courser.yml
+        - type: StationJobs
+          overflowJobs:
+            - Passenger
+          availableJobs:
+            #service
+            Captain: [ 1, 1 ]
+            IAA: [ 1, 1 ] # Corvax-IAA
+            HeadOfPersonnel: [ 1, 1 ]
+            Bartender: [ 2, 2 ]
+            Botanist: [ 3, 3 ]
+            Chef: [ 3, 3 ]
+            Janitor: [ 3, 3 ]
+            Chaplain: [ 2, 2 ]
+            Librarian: [ 2, 2 ]
+            #Lawyer: [ 2, 2 ] # Corvax-IAA
+            ServiceWorker: [ 3, 4 ]
+            #engineering
+            ChiefEngineer: [ 1, 1 ]
+            AtmosphericTechnician: [ 3, 3 ]
+            StationEngineer: [ 6, 6 ]
+            TechnicalAssistant: [ 2, 3 ]
+            #medical
+            ChiefMedicalOfficer: [ 1, 1 ]
+            Chemist: [ 2, 3 ]
+            Paramedic: [ 1, 1 ]
+            MedicalDoctor: [ 6, 6 ]
+            Psychologist: [ 1, 1 ]
+            MedicalIntern: [ 1, 2 ]
+            #science
+            ResearchDirector: [ 1, 1 ]
+            Scientist: [ 6, 6 ]
+            ResearchAssistant: [ 4, 4 ]
+            Borg: [ 2, 2 ]
+            #security
+            HeadOfSecurity: [ 1, 1 ]
+            Warden: [ 1, 1 ]
+            Detective: [ 1, 1 ]
+            SecurityOfficer: [ 7, 7 ]
+            SecurityCadet: [ 2, 4 ]
+            #supply
+            Quartermaster: [ 1, 1 ]
+            SalvageSpecialist: [ 3, 3 ]
+            CargoTechnician: [ 5, 5 ]
+            #civillian
+            Passenger: [ -1, -1 ]
+            Clown: [ 1, 1 ]
+            Mime: [ 1, 1 ]
+            Musician: [ 2, 2 ]
+            Boxer: [ 1, 1 ]
+            Reporter: [ 1, 1 ]
+            # custom
+            MinerProfession: [ 5, 5 ] # 5 раундстарт, 5 позднее присоединение
+
+- type: gameMap
+  id: Packed
+  mapName: 'Packed'
+  mapPath: /Maps/packed.yml
+  minPlayers: 5
+  maxPlayers: 40
+  stations:
+    Packed:
+      stationProto: StandardNanotrasenStation
+      components:
+        - type: StationNameSetup
+          mapNameTemplate: '{0} Packed {1}'
+          nameGenerator:
+            !type:NanotrasenNameGenerator
+            prefixCreator: 'VG'
+        - type: StationJobs
+          overflowJobs:
+            - Passenger
+          availableJobs:
+            #service
+            Captain: [ 1, 1 ]
+            IAA: [ 1, 1 ] # Corvax-IAA
+            HeadOfPersonnel: [ 1, 1 ]
+            Bartender: [ 1, 1 ]
+            Botanist: [ 2, 2 ]
+            Chef: [ 1, 1 ]
+            Janitor: [ 1, 2 ]
+            Chaplain: [ 1, 1 ]
+            Librarian: [ 1, 1 ]
+            ServiceWorker: [ 2, 2 ]
+            #engineering
+            ChiefEngineer: [ 1, 1 ]
+            AtmosphericTechnician: [ 2, 2 ]
+            StationEngineer: [ 4, 4 ]
+            TechnicalAssistant: [ 3, 3 ]
+            #medical
+            ChiefMedicalOfficer: [ 1, 1 ]
+            Chemist: [ 2, 2 ]
+            MedicalDoctor: [ 3, 3 ]
+            MedicalIntern: [ 2, 2 ]
+            Paramedic: [ 1, 1 ]
+            #science
+            ResearchDirector: [ 1, 1 ]
+            Scientist: [ 4, 4 ]
+            ResearchAssistant: [ 2, 2 ]
+            #security
+            HeadOfSecurity: [ 1, 1 ]
+            Warden: [ 1, 1 ]
+            SecurityOfficer: [ 4, 4 ]
+            Detective: [ 1, 1 ]
+            SecurityCadet: [ 2, 2 ]
+            #Lawyer: [ 1, 1 ] # Corvax-IAA
+            #supply
+            Quartermaster: [ 1, 1 ]
+            SalvageSpecialist: [ 2, 2 ]
+            CargoTechnician: [ 2, 2 ]
+            #civilian
+            Passenger: [ -1, -1 ]
+            Clown: [ 1, 1 ]
+            Mime: [ 1, 1 ]
+            Musician: [ 1, 1 ]
+            Borg: [ 1 , 1 ]
+            # custom
+            MinerProfession: [ 5, 5 ] # 5 раундстарт, 5 позднее присоединение
+
+- type: gameMap
+  id: Saltern
+  mapName: 'Saltern'
+  mapPath: /Maps/saltern.yml
+  minPlayers: 0
+  maxPlayers: 35
+  fallback: true
+  stations:
+    Saltern:
+      stationProto: StandardNanotrasenStation
+      components:
+        - type: StationNameSetup
+          mapNameTemplate: '{0} Saltern {1}'
+          nameGenerator:
+            !type:NanotrasenNameGenerator
+            prefixCreator: '14'
+        - type: StationEmergencyShuttle
+          emergencyShuttlePath: /Maps/Shuttles/corvax_emergency.yml # Corvax-EmergencyShuttle
+        - type: StationJobs
+          overflowJobs:
+          - Passenger
+          availableJobs:
+            #service
+            Captain: [ 1, 1 ]
+            HeadOfPersonnel: [ 1, 1 ]
+            Bartender: [ 1, 1 ]
+            Botanist: [ 2, 2 ]
+            Chef: [ 1, 1 ]
+            Janitor: [ 1, 1 ]
+            Chaplain: [ 1, 1 ]
+            Librarian: [ 1, 1 ]
+            ServiceWorker: [ 2, 2 ]
+            #engineering
+            ChiefEngineer: [ 1, 1 ]
+            AtmosphericTechnician: [ 2, 2 ]
+            StationEngineer: [ 4, 4 ]
+            TechnicalAssistant: [ 4, 4 ]
+            #medical
+            ChiefMedicalOfficer: [ 1, 1 ]
+            Chemist: [ 2, 2 ]
+            MedicalDoctor: [ 3, 3 ]
+            MedicalIntern: [ 4, 4 ]
+            #science
+            ResearchDirector: [ 1, 1 ]
+            Scientist: [ 4, 4 ]
+            ResearchAssistant: [ 2, 2 ]
+            Borg: [ 2, 2 ]
+            #security
+            HeadOfSecurity: [ 1, 1 ]
+            Warden: [ 1, 1 ]
+            SecurityOfficer: [ 4, 4 ]
+            SecurityCadet: [ 4, 4 ]
+            #supply
+            Quartermaster: [ 1, 1 ]
+            SalvageSpecialist: [ 1, 3 ]
+            CargoTechnician: [ 2, 2 ]
+            #civillian
+            Passenger: [ -1, -1 ]
+            Clown: [ 1, 1 ]
+            Mime: [ 1, 1 ]
+            Musician: [ 1, 1 ]
+            # custom
+            MinerProfession: [ 5, 5 ] # 5 раундстарт, 5 позднее присоединение  
+      
+      

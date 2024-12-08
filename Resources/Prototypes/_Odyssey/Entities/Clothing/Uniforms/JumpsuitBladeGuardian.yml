@@ -1,0 +1,10 @@
+- type: entity
+  parent: ClothingUniformBase
+  id: ClothingUniformJumpsuitBladeGuardian
+  name: Комбинезон Стража Клинка
+  description: Пахнет силой
+  components:
+  - type: Sprite
+    sprite: _Odyssey/Clothing/Uniforms/Jumpsuit/BladeGuardianUniform.rsi
+  - type: Clothing
+    sprite: _Odyssey/Clothing/Uniforms/Jumpsuit/BladeGuardianUniform.rsi
