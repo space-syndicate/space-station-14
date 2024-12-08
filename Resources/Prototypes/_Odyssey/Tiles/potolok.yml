@@ -1,0 +1,31 @@
+- type: entity
+  id: Potolok
+  name: потолок
+  description: 'Наконец-то!'
+  placement:
+    mode: SnapgridCenter
+  components:
+  - type: Clickable
+  - type: Sprite
+    sprite: _Odyssey/Tiles/potolok.rsi
+    drawdepth: 10
+    state: icon
+  - type: Icon
+    sprite: _Odyssey/Tiles/potolok.rsi
+    state: icon
+
+- type: entity
+  id: PotolokSteel
+  name: плиточный потолок
+  description: 'Наконец-то!'
+  placement:
+    mode: SnapgridCenter
+  components:
+  - type: Clickable
+  - type: Sprite
+    sprite: _Odyssey/Tiles/potolok.rsi
+    drawdepth: 10
+    state: steel
+  - type: Icon
+    sprite: _Odyssey/Tiles/potolok.rsi
+    state: steel

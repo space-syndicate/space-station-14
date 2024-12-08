@@ -1,0 +1,38 @@
+- type: marking
+  id: HumanHairGosling
+  bodyPart: Hair
+  markingCategory: Hair
+  sprites:
+    - sprite: _Odyssey/Clothing/Mask/gosling.rsi
+      state: equipped-MASK
+      scale: 0.3, 0.3
+
+- type: entity
+  parent: BaseItem
+  id: ItemGosling
+  name: голова Райана Гослинга
+  description: Да не умер он в конце смены.
+  suffix: ГОСЛИНГ
+  components:
+  - type: Sprite
+    sprite: _Odyssey/Clothing/Mask/gosling.rsi
+    state: icon
+    scale: 0.5, 0.5
+
+- type: entity
+  parent: ClothingMaskBase
+  id: ClothingMaskGosling
+  name: маска Райана Гослинга
+  description: Да не умер он в конце смены.
+  components:
+  - type: Sprite
+    sprite: _Odyssey/Clothing/Mask/gosling.rsi
+    scale: 0.5, 0.5 ######################################
+  - type: Clothing
+    sprite: _Odyssey/Clothing/Mask/gosling.rsi
+    scale: 0.5, 0.5 ######################################
+  - type: BreathMask
+  - type: IdentityBlocker
+  - type: HideLayerClothing
+    slots:
+    - Snout

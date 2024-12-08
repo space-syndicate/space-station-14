@@ -1,0 +1,27 @@
+{
+    "version": 1,
+    "size": {
+        "x": 32,
+        "y": 32
+    },
+    "license": "CC-BY-NC-SA-3.0",
+    "copyright": "Made by brainfood1183 (github) for ss14, modified by hiucko (github), based on human template",
+    "states": [
+        {
+            "name": "skibidist",
+            "directions": 4
+        },
+        {
+            "name": "skibidist_dead",
+            "directions": 4
+        },
+        {
+            "name": "skibidist_armor",
+            "directions": 4
+        },
+        {
+            "name": "skibidist_gosling",
+            "directions": 4
+        }
+    ]
+}

@@ -1,0 +1,817 @@
+﻿- type: entity #Сам аплинк
+  parent: [ BaseItem, StorePresetUplinkRev ]
+  id: InstrumentRev
+  name: плюшевый хома
+  description: Милая игрушка, напоминающая хомяка. Его мордочка выглядит приплюснутой.
+  suffix: Аплинк, Революция 
+  components:
+  - type: Sprite
+    sprite: Objects/Fun/toys.rsi
+    state: plushie_hampter
+  - type: Item
+    sprite: Objects/Devices/communication.rsi
+    heldPrefix: old-radio
+  - type: UserInterface
+    interfaces:
+      enum.StoreUiKey.Key:
+        type: StoreBoundUserInterface
+  - type: ActivatableUI
+    key: enum.StoreUiKey.Key
+  - type: Store
+    balance:
+      Telecrystal: 20    
+             
+#Коллекция выше
+#ПЕРВЫЙ АПЛИНК
+- type: entity #Сам аплинк
+  parent: InstrumentRev
+  id: InstrumentRevMain
+  name: плюшевый хома
+  description: Милая игрушка, напоминающая хомяка. Его мордочка выглядит приплюснутой.
+  suffix: Первый, Аплинк, Революция 
+  components: 
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 25
+        reagents:
+        - ReagentId: Cryoxadone
+          Quantity: 6   
+          
+- type: entity
+  id: StorePresetUplinkRev
+  abstract: true
+  components:
+  - type: Store
+    name: store-preset-name-uplink
+    categories:
+    - UplinkRev
+    - ConnectionRev
+    currencyWhitelist:
+    - Telecrystal
+    balance:
+      Telecrystal: 0            
+ 
+- type: storeCategory  # категория 
+  id: UplinkRev
+  name: Viva La Revolution! #categories
+  priority: 1    
+  
+- type: storeCategory  # категория 
+  id: ConnectionRev
+  name: Connection Revolution #categories
+  priority: 2    
+ 
+- type: storeCategory  # категория 
+  id: TrinketsRev
+  name: Trinkets Revolution #categories
+  priority: 3  
+  
+- type: listing
+  id: SecretiveSet 
+  name: Скрытный путь
+  description: Перед покупкой рекомендуется приобрести ключ шифрования, чтобы узнать у других агентов об их планах. Если вы планируете незаметно заменить или убить командование, то это ваш выбор! В вашем распоряжении будут голосовая маска, хамелеон, гипо ручка, ноктюрин, кобра, метательные ножи, стелс коробка, глушитель связи.
+  icon: { sprite: /Textures/Structures/Wallmounts/posters.rsi, state: poster28_contraband }  
+  productEntity: InstrumentRevSecretive
+  cost:
+    Telecrystal: 5
+  categories:
+  - UplinkRev 
+  
+- type: listing
+  id: LoudRevSet 
+  name: Громкий путь
+  description:  Перед покупкой рекомендуется приобрести ключ шифрования, чтобы узнать у других агентов об их планах. Если вы хотите устроить более масштабный бунт и собрать группу единомышленников, чтобы выступить против службы безопасности и командования, то это ваш выбор! В вашем распоряжении будет кремнёвый пистолет и наборы с винтовками Мосина и двуствольными ружьями, а также с автоматами Калашникова.
+  icon: { sprite: /Textures/Structures/Wallmounts/posters.rsi, state: poster55_contraband }  
+  productEntity: InstrumentRevLoud
+  cost:
+    Telecrystal: 5
+  categories:
+  - UplinkRev   
+
+#СКРЫТНЫЙ АПЛИНК
+- type: entity #Сам аплинк
+  parent: 
+  - StorePresetUplinkRevSecretiveSecretive
+  - InstrumentRev
+  id: InstrumentRevSecretive
+  name: плюшевый хома
+  description: Милая игрушка, напоминающая хомяка. Его мордочка выглядит приплюснутой.
+  suffix: Скрытный, Аплинк, Революция 
+  components: 
+  - type: Store
+    balance:
+      Telecrystal: 0     
+
+- type: entity
+  id: StorePresetUplinkRevSecretiveSecretive
+  abstract: true
+  components:
+  - type: Store
+    name: store-preset-name-uplink
+    categories:
+    - UplinkRevSecretive
+    - ConnectionRev
+    - TrinketsRev
+    currencyWhitelist:
+    - Telecrystal
+    balance:
+      Telecrystal: 0        
+
+- type: storeCategory  # категория 
+  id: UplinkRevSecretive
+  name: Viva La Revolution! #categories
+  priority: 1    
+  
+#ГРОМКИЙ АПЛИНК  
+- type: entity #Сам аплинк
+  parent: 
+  - StorePresetUplinkRevSecretiveLoud
+  - InstrumentRev
+  id: InstrumentRevLoud
+  name: плюшевый хома
+  description: Милая игрушка, напоминающая хомяка. Его мордочка выглядит приплюснутой.
+  suffix: Громкий, Аплинк, Революция
+  components: 
+  - type: Store
+    balance:
+      Telecrystal: 0  
+
+- type: entity
+  id: StorePresetUplinkRevSecretiveLoud
+  abstract: true
+  components:
+  - type: Store
+    name: store-preset-name-uplink
+    categories:
+    - UplinkRevLoud
+    - ConnectionRev
+    - TrinketsRev
+    currencyWhitelist:
+    - Telecrystal
+    balance:
+      Telecrystal: 0       
+ 
+- type: storeCategory  # категория 
+  id: UplinkRevLoud
+  name: Viva La Revolution! #categories
+  priority: 1  
+  
+#СВЯЗЬ
+- type: listing
+  id: EncryptionKeySyndieSet #СиндиСвязь
+  name: Ключ шифрования синдиката
+  description: Ключ шифрования, используемый... секундочку... Кто владелец этого чипа?
+  icon: { sprite: /Textures/Objects/Devices/encryption_keys.rsi, state: synd_label }
+  productEntity: EncryptionKeySyndie # Two for the price of one
+  cost:
+    Telecrystal: 2
+  categories:
+  - ConnectionRev
+
+
+- type: listing
+  id: UplinkHeadsetEncryptionKeySet #СиндиСвязь
+  name: Два ключа шифрования синдиката
+  description: uplink-encryption-key-desc
+  icon: { sprite: /Textures/Objects/Devices/encryption_keys.rsi, state: synd_label }
+  productEntity: BoxEncryptionKeySyndie # Two for the price of one
+  cost:
+    Telecrystal: 3
+  categories:
+  - ConnectionRev
+  
+- type: listing
+  id: UplinkBinaryTranslatorKeySet #СвязьЮнит
+  name: uplink-binary-translator-key-name
+  description: uplink-binary-translator-key-desc
+  icon: { sprite: /Textures/Objects/Devices/encryption_keys.rsi, state: rd_label } 
+  productEntity: EncryptionKeyBinary
+  cost:
+    Telecrystal: 2
+  categories:
+  - ConnectionRev 
+
+- type: listing
+  id: FaxMachineSyndieRevSet #Факс
+  name: Факс синдиката
+  description: Вы можете вызвать капсула поддержки с винтовками и бронёй от синдиката. Вам нужно только печать синдиката и заявление на ЦК (которая не совсем ЦК).
+  icon: { sprite: /Textures/Structures/Machines/fax_machine.rsi, state: icon }
+  productEntity: FaxMachineSyndieRev
+  cost:
+    Telecrystal: 2
+  categories: 
+  - ConnectionRev 
+
+- type: listing
+  id: UplinkSyndicateStampSet  #Печать
+  name: uplink-syndicate-stamp-name
+  description: uplink-syndicate-stamp-desc
+  productEntity: RubberStampSyndicate
+  cost:
+    Telecrystal: 2
+  categories:
+  - ConnectionRev  
+
+- type: listing
+  id: BoxDeathRattleImplantsSet #Хрип
+  name: Коробка имплантов Предсмертный хрип
+  description: Шесть имплантов Предсмертный хрип и портативные GPS-навигаторы для всего отряда.
+  productEntity: BoxDeathRattleImplants
+  cost:
+    Telecrystal: 2
+  categories:
+  - ConnectionRev  
+
+#ОБЩЕЕ 
+- type: listing #Сигареты
+  id: UplinkCigarettesSet
+  name: uplink-cigarettes-name
+  description: uplink-cigarettes-desc
+  productEntity: CigPackSyndicate
+  cost:
+    Telecrystal: 1
+  categories:
+  - TrinketsRev 
+
+- type: listing #Кобура синдиката
+  id: UplinkHolsterSet 
+  name: uplink-holster-name
+  description: uplink-holster-desc
+  productEntity: ClothingBeltSyndieHolster
+  cost:
+    Telecrystal: 1
+  categories:
+  - TrinketsRev   
+  
+- type: listing
+  id: DrapeauRevSet  #Знамя
+  name: Знамя Viva La Revolution!
+  description: Это знамя, символизирующее революцию. Вива!
+  icon: { sprite: /Textures/Structures/Decoration\banner.rsi, state: banner_revolution }  
+  productEntity: DrapeauRev
+  cost:
+    Telecrystal: 2
+  categories:
+  - TrinketsRev   
+
+- type: listing
+  id: BriefcaseSyndieLobbyingBundleFilledRevSet  #НаборЛоббиста
+  name: Набор Лоббиста революции 
+  description: В нем находятся несколько кредитов который помогут вам изменить чье-то мнение! А так же телефон со связью синдиката!
+  productEntity: BriefcaseSyndieLobbyingBundleFilledRev
+  cost:
+    Telecrystal: 8
+  categories:
+  - TrinketsRev  
+  
+ #  UplinkRevLoud | UplinkRevSecretive
+#СКРЫТНЫЙ ПУТЬ
+- type: listing
+  id: UplinkThrowingKnivesKitSet #Ножы
+  name: uplink-knives-kit-name
+  description: uplink-knives-kit-desc
+  icon: { sprite: /Textures/Objects/Storage/boxicons.rsi, state: throwing_knives }
+  productEntity: ThrowingKnivesKit
+  cost:
+    Telecrystal: 5
+  categories:
+    - UplinkRevSecretive
+    
+- type: listing
+  id: UplinkNocturineChemistryBottleSet #Ноктюрин
+  name: uplink-nocturine-chemistry-bottle-name
+  description: uplink-nocturine-chemistry-bottle-desc
+  productEntity: NocturineChemistryBottle
+  cost:
+    Telecrystal: 5
+  categories:
+  - UplinkRevSecretive    
+    
+- type: listing
+  id: UplinkSmokeGrenadeSet
+  name: uplink-smoke-grenade-name #Дымовая
+  description: uplink-smoke-grenade-desc
+  productEntity: SmokeGrenade
+  cost:
+    Telecrystal: 1
+  categories:
+  - UplinkRevSecretive    
+
+- type: listing
+  id: UplinkChameleonSet #Хамелион
+  name: uplink-chameleon-name
+  description: uplink-chameleon-desc
+  productEntity: ClothingBackpackChameleonFill
+  icon: { sprite: /Textures/Clothing/Uniforms/Jumpsuit/rainbow.rsi, state: icon }
+  cost:
+    Telecrystal: 3
+  categories:
+    - UplinkRevSecretive
+    
+- type: listing
+  id: UplinkRadioJammerSet #Глушилка
+  name: uplink-radio-jammer-name
+  description: uplink-radio-jammer-desc
+  productEntity: RadioJammer
+  cost:
+    Telecrystal: 3
+  categories:
+  - UplinkRevSecretive  
+ 
+- type: listing
+  id: UplinkStealthBoxSet
+  name: uplink-stealth-box-name #Коробка
+  description: uplink-stealth-box-desc
+  productEntity: StealthBox
+  cost:
+    Telecrystal: 4
+  categories:
+  - UplinkRevSecretive  
+
+- type: listing
+  id: UplinkHypopenSet #Гипоручка
+  name: uplink-hypopen-name
+  description: uplink-hypopen-desc
+  productEntity: HypopenBox
+  cost:
+    Telecrystal: 5
+  categories:
+  - UplinkRevSecretive 
+
+- type: listing
+  id: UplinkPistolCobraSet
+  name: uplink-pistol-cobra-name #Кобра
+  description: uplink-pistol-cobra-desc
+  productEntity: WeaponPistolCobra
+  cost:
+    Telecrystal: 5
+  categories:
+  - UplinkRevSecretive 
+
+- type: listing
+  id: UplinkChameleonProjectorSet #Меняет тело
+  name: uplink-chameleon-projector-name
+  description: uplink-chameleon-projector-desc
+  productEntity: ChameleonProjector
+  cost:
+    Telecrystal: 5
+  categories:
+  - UplinkRevSecretive 
+
+- type: listing #Дротик
+  id: UplinkHypoDartSet
+  name: uplink-hypodart-name
+  description: uplink-hypodart-desc
+  icon: { sprite: /Textures/Objects/Fun/Darts/dart_red.rsi, state: icon }
+  productEntity: HypoDartBox
+  cost:
+    Telecrystal: 2
+  categories:
+  - UplinkRevSecretive  
+
+- type: listing #НеИзоли
+  id: UplinkClothingConductingGlovesSet
+  name: uplink-clothing-conducting-gloves-name
+  description: uplink-clothing-conducting-gloves-desc
+  productEntity: ClothingHandsGlovesConducting
+  cost:
+    Telecrystal: 1
+  categories:
+  - UplinkRevSecretive   
+  
+- type: listing 
+  id: UplinkVoiceMaskSet #голос
+  name: uplink-voice-mask-name
+  description: uplink-voice-mask-desc
+  productEntity: ClothingMaskGasVoiceChameleon
+  cost:
+    Telecrystal: 1
+  categories:
+  - UplinkRevSecretive
+  
+- type: listing
+  id: EquipmentSecretiveRevSet  #Набор скрытный 
+  name: Набор Viva La Revolution!
+  description: Вы приобретаете Фултон. Через три минуты вам доставят ящик синдиката. В нём будут три набора хамелеона и голосовой маски. Из оружия - набор  ножей, три гиподротика, стакан с ядовитым вином и пистолет «Кобра», баночка ноктюрин. 
+  icon: { sprite: /Textures/Structures/Wallmounts/posters.rsi, state: poster56_contraband }
+  productEntity: EquipmentSecretiveRev
+  cost:
+    Telecrystal: 30 
+  categories:
+  - UplinkRevSecretive 
+
+- type: listing
+  id: uplinkRevolverCapGunFakeSet
+  name: uplink-revolver-cap-gun-fake-name
+  description: uplink-revolver-cap-gun-fake-desc
+  productEntity: RevolverCapGunFake
+  cost:
+    Telecrystal: 5
+  categories:
+  - UplinkRevSecretive  
+  
+ #  UplinkRevLoud | UplinkRevSecretive 
+#ГРОМНИЙ ПУТЬ  
+
+- type: listing #Вспышка-светильник
+  id: UplinkUltrabrightLanternSet
+  name: uplink-ultrabright-lantern-name
+  description: uplink-ultrabright-lantern-desc
+  productEntity: LanternFlash
+  cost:
+    Telecrystal: 12
+  categories:
+  - UplinkRevLoud
+
+- type: listing #Фрукт
+  id: uplinkGatfruitSeedsSet
+  name: uplink-gatfruit-seeds-name
+  description: uplink-gatfruit-seeds-desc
+  productEntity: GatfruitSeeds
+  cost:
+    Telecrystal: 10
+  categories:
+  - UplinkRevLoud
+  
+- type: listing
+  id: ClothingBeltQuiverRevSet 
+  name: Колчан со стрелами
+  description: Вмещает до 16 стрел и плотно прилегает к поясу. 
+  productEntity: ClothingBeltQuiverRev
+  cost:
+    Telecrystal: 3
+  categories:
+  - UplinkRevLoud 
+  
+- type: listing
+  id: UplinkCombatMedipenSet
+  name: uplink-combat-medipen-name #БоевойМедипен
+  description: uplink-combat-medipen-desc
+  productEntity: CombatMedipen
+  cost:
+    Telecrystal: 4
+  categories:
+  - UplinkRevLoud  
+  
+- type: listing
+  id: SyndicateWhistleSet #Свисток
+  productEntity: SyndicateWhistle
+  cost:
+    Telecrystal: 1
+  categories:
+  - UplinkRevLoud  
+  
+- type: listing
+  id: VendingMachineSyndieDrobeRevSet #Одежда
+  name: СиндиШкаф
+  description: Шкаф-машина, закодированная синдикатом, содержит элитную экипировку для различных операций. Требует доступа синдиката! 
+  icon: { sprite: /Textures/Structures/Machines/VendingMachines/syndiedrobe.rsi, state: broken }
+  productEntity: VendingMachineSyndieDrobeRev
+  cost:
+    Telecrystal: 2
+  categories:
+  - UplinkRevLoud 
+
+- type: listing
+  id: WeaponPistolFlintlockDrapeauRevSet  #Пистолет
+  name: Кремнёвый пистолет
+  description: Сперва вы покупаете надувной прибор который потом превратися в пистолет ! Использует патроны калибра .60 крупнокалиберный.
+  icon: { sprite: /Textures/Objects/Weapons/Guns/Snipers/flintlock.rsi, state: base }
+  productEntity: WeaponPistolFlintlockDrapeauRev
+  cost:
+    Telecrystal: 4 
+  categories:
+  - UplinkRevLoud    
+
+- type: listing
+  id: EquipmentRevSet  #ЯщикСнаряжение
+  name: Набор Viva La Revolution!
+  description: Вы приобретаете Фултон. Через десять минуты вам доставят ящик синдиката. В нём будут две винтовки Мосина, два двуствольных ружья и шесть зажигательных гранат, 2 вспышки, а также патроны для всего этого оружия.
+  icon: { sprite: /Textures/Structures/Wallmounts/posters.rsi, state: poster55_contraband }
+  productEntity: EquipmentRev
+  cost:
+    Telecrystal: 15
+  categories:
+  - UplinkRevLoud 
+  restockTime: 1800
+  conditions:
+  - !type:StoreWhitelistCondition  
+  
+- type: listing
+  id: EquipmentAKMSRevSet  #Набор АКМС
+  name: Набор Viva La Revolution!
+  description: Вы приобретаете Фултон. Через десять минуты вам доставят ящик синдиката. В котором будут три автомата АКМС, патроны к ним и три шлема синдиката с тактическим жилетом, 3 вспышки, 3 продвинутых аптечек, 9 зажигательных гранат и один боевой медипен.
+  icon: { sprite: /Textures/Structures/Wallmounts/posters.rsi, state: poster56_contraband }
+  productEntity: EquipmentAKMSRev
+  cost:
+    Telecrystal: 20 
+  categories:
+  - UplinkRevLoud  
+  restockTime: 3800
+  conditions:
+  - !type:StoreWhitelistCondition  
+  
+#Разное  
+#Надувная штука
+- type: entity #Знамя
+  id: DrapeauRev
+  parent: InflatableWallStackRev
+  name: надувный прибор
+  description: Оно шевелится !
+  components:
+  - type: TimedDespawn #Система цикла
+    lifetime: 5
+  - type: SpawnOnDespawn
+    prototype: BannerRevolution  #Система цикла 
+  - type: PointLight
+    radius: 3
+    energy: 5
+    color: "#4f0000"      
+
+- type: entity #Пистолет
+  id: WeaponPistolFlintlockDrapeauRev
+  parent: InflatableWallStackRev
+  name: надувный прибор
+  description: Оно шевелится !
+  components:
+  - type: TimedDespawn #Система цикла
+    lifetime: 15
+  - type: SpawnOnDespawn
+    prototype: WeaponPistolFlintlock  #Система цикла 
+  - type: PointLight
+    radius: 4
+    energy: 5
+    color: "#4f0000"      
+    
+- type: entity #НаборРевы 
+  id: EquipmentRev
+  parent: InflatableWallStackRev
+  name: фултон синдиката
+  description: Оно шевелится !
+  components:
+  - type: TimedDespawn #Система цикла
+    lifetime: 600
+  - type: SpawnOnDespawn
+    prototype: CrateSyndicateRev  #Система цикла 
+  - type: PointLight
+    radius: 120
+    energy: 100
+    color: "#4f0000"    
+    
+- type: entity #НаборРевы АКМС
+  id: EquipmentAKMSRev
+  parent: InflatableWallStackRev
+  name: фултон синдиката
+  description: Оно шевелится !
+  components:
+  - type: TimedDespawn #Система цикла
+    lifetime: 600
+  - type: SpawnOnDespawn
+    prototype: CrateSyndicateAKMSSRev  #Система цикла 
+  - type: PointLight
+    radius: 120
+    energy: 100
+    color: "#4f0000"    
+
+- type: entity #НаборРевы скрытный
+  id: EquipmentSecretiveRev
+  parent: InflatableWallStackRev
+  name: фултон синдиката
+  description: Оно шевелится !
+  components:
+  - type: TimedDespawn #Система цикла
+    lifetime: 180
+  - type: SpawnOnDespawn
+    prototype: CrateSyndicateSecretiveRev  #Система цикла 
+  - type: PointLight
+    radius: 60
+    energy: 60
+    color: "#4f0000"      
+
+- type: entity #ОдеждаСинди
+  id: VendingMachineSyndieDrobeRev
+  parent: InflatableWallStackRev
+  name: надувный прибор
+  description: Оно шевелится !
+  components:
+  - type: TimedDespawn #Система цикла
+    lifetime: 8
+  - type: SpawnOnDespawn
+    prototype: VendingMachineSyndieDrobe  #Система цикла  
+  - type: PointLight
+    radius: 3
+    energy: 5
+    color: "#4f0000"      
+
+- type: entity #ФАкс
+  id: FaxMachineSyndieRev
+  parent: InflatableWallStackRev
+  name: надувный прибор
+  description: Оно шевелится !
+  components:
+  - type: TimedDespawn #Система цикла
+    lifetime: 5
+  - type: SpawnOnDespawn
+    prototype: FaxMachineSyndie  #Система цикла    
+  - type: PointLight
+    radius: 3
+    energy: 5
+    color: "#4f0000"     
+     
+
+
+- type: entity #Надувная штука
+  id: InflatableWallStackRev
+  parent: BaseItemRev
+  name: надувный прибор
+  description: Оно шевелится !
+  components:
+    - type: Sprite
+      sprite: Objects/Misc/inflatable_wall.rsi
+      state: item_wall
+    - type: Clickable
+    
+        
+- type: entity
+  name: "item"
+  id: BaseItemRev
+  abstract: true
+  components:
+  - type: Clickable
+  - type: InteractionOutline
+  - type: MovedByPressure
+  - type: EmitSoundOnCollide
+    sound:
+      path: /Audio/Effects/wall_bonk.ogg
+  - type: EmitSoundOnLand
+    sound:
+      path: /Audio/Effects/drop.ogg
+      params:
+        volume: 2
+  - type: DamageOnHighSpeedImpact
+    damage:
+      types:
+        Blunt: 5
+    soundHit:
+      path: /Audio/Effects/hit_kick.ogg
+  - type: CollisionWake
+  - type: TileFrictionModifier
+    modifier: 0.5
+  - type: Physics
+    bodyType: Dynamic
+    fixedRotation: false
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.25,-0.25,0.25,0.25"
+        density: 20
+        mask:
+        - ItemMask
+        restitution: 0.3  # fite me
+        friction: 0.2
+  - type: Pullable         
+#НАдувная штука выше
+
+- type: entity
+  id: BriefcaseSyndieLobbyingBundleFilledRev #Лоббист
+  parent: BriefcaseSyndie
+  suffix: Rev, революция 
+  components:
+  - type: StorageFill
+    contents:
+      - id: ClothingEyesGlassesSunglasses
+      - id: SpaceCash30000
+        amount: 1
+      - id: RubberStampTrader
+      - id: PhoneInstrumentSyndicate
+      - id: ClothingUniformJumpsuitTacticool 
+      - id: ClothingOuterCoatJensen  
+      - id: ClothingMaskNeckGaiter
+      - id: SyndieHandyFlag
+      - id: ClothingNeckSyndicakePin #Значок синди
+        amount: 3
+      - id: BalloonSyn #шарик синди
+              
+- type: entity
+  parent: ClothingBeltQuiver 
+  id: ClothingBeltQuiverRev
+  name: колчан
+  description: Вмещает до 16 стрел и плотно прилегает к поясу.  
+  suffix: Filled, революция
+  components:
+    - type: StorageFill
+      contents:  
+        - id: ArrowRegular           
+          amount: 16 
+
+- type: entity
+  id: CrateSyndicateRev #Мосин
+  name: ящик Синдиката
+  description: Стальной ящик тёмного цвета с красными полосами и выдавленной на передней панели литерой S.
+  suffix: Революция, Мосин
+  parent: CrateSyndicate
+  components:
+  - type: StorageFill
+    contents: 
+      - id: RifleSyndicate #Мосин
+        amount: 2    
+      - id: ClothingBeltSyndieHolster  #Кобура
+        amount: 3 
+        
+
+- type: entity
+  id: CrateSyndicateAKMSSRev #АКМС
+  name: ящик Синдиката
+  description: Стальной ящик тёмного цвета с красными полосами и выдавленной на передней панели литерой S.
+  suffix: Революция, АКМС
+  parent: CrateSyndicate
+  components:
+  - type: StorageFill
+    contents:
+      - id: AKMSSyndicate #АКМС
+        amount: 3
+      - id: ClothingBeltSyndieHolster  #Кобура
+        amount: 3 
+        
+- type: entity
+  id: CrateSyndicateSecretiveRev #Скрытный
+  name: ящик Синдиката
+  description: Стальной ящик тёмного цвета с красными полосами и выдавленной на передней панели литерой S.
+  suffix: Революция, скрытный
+  parent: CrateSyndicate
+  components:
+  - type: StorageFill
+    contents:
+      - id: ClothingBackpackChameleonFill #Хамелион
+        amount: 3
+      - id: ClothingMaskGasVoiceChameleon  #Голос
+        amount: 3         
+      - id: WeaponPistolCobra  #Пистолет
+        amount: 1 
+      - id: ThrowingKnivesKit  #Ножы 
+        amount: 1         
+      - id: HypoDartBox  #Гиподротик
+        amount: 3 
+      - id: DrinkPoisonWineGlass  #Яд
+        amount: 1  
+      - id: NocturineChemistryBottle  #Ноктюрин 
+        amount: 1  
+        
+        
+
+- type: entity
+  parent: ClothingBackpackDuffelSyndicate 
+  id: AKMSSyndicate
+  name: чёрно-красный вещмешок
+  description: Вместительный и удобный вещмешок цвета эбонита и крови, в который влезут «игрушки» для любых возрастов.
+  suffix: Filled, революция, АКМС
+  components:
+    - type: StorageFill
+      contents:  
+        - id: WeaponRifleAk #АКМС
+          amount: 1
+        - id: MagazineLightRifle #Патроны
+          amount: 2 
+        - id: ClothingOuterVestWeb #Жилет
+          amount: 1   
+        - id: ClothingHeadHelmetSwatSyndicate  #Шлем
+          amount: 1    
+        - id: Gauze  #Бинт
+          amount: 1 
+        - id: FireBomb  #Граната
+          amount: 3             
+        - id: CombatMedipen #Медипен
+        - id: MedkitAdvancedFilled #Аптечка
+        - id: Flash   #Вспышка
+          amount: 1           
+        
+- type: entity
+  parent: ClothingBackpackDuffelSyndicate 
+  id: RifleSyndicate
+  name: чёрно-красный вещмешок
+  description: Вместительный и удобный вещмешок цвета эбонита и крови, в который влезут «игрушки» для любых возрастов.
+  suffix: Filled, революция, Мосин
+  components:
+    - type: StorageFill
+      contents:  
+        - id: WeaponShotgunDoubleBarreled #ДвухСтволка
+          amount: 1
+        - id: BoxShotgunSlug #Пули
+          amount: 1 
+        - id: BoxLethalshot #Летал
+          amount: 1   
+        - id: FireBomb  #Бомбы
+          amount: 3    
+        - id: Gauze  #Бинт
+          amount: 1 
+        - id: WeaponSniperMosin  #Мосинка 
+          amount: 1             
+        - id: SpeedLoaderLightRifle #Спидлоадер
+          amount: 3     
+        - id: Flash   #Вспышка
+          amount: 1                
+
+  

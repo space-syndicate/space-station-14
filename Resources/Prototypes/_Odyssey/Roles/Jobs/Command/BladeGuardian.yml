@@ -1,0 +1,90 @@
+- type: job
+  id: BladeGuardian
+  name: job-name-bladeguardian
+  description: job-description-bladeguardian
+  playTimeTracker: JobBHeadOfSecurity
+  requirements:
+    - !type:RoleTimeRequirement
+      role: JobSecurityOfficer
+      time: 28800 #8 hrs
+    - !type:DepartmentTimeRequirement
+      department: Security
+      time: 108000 #50 hrs # Corvax-RoleTime
+#    - !type:OverallPlaytimeRequirement
+#      time: 144000 #40 hrs
+  weight: 10
+  startingGear: BladeGuardianGear
+  icon: "JobIconHeadOfSecurity"
+  requireAdminNotify: true
+  supervisors: job-supervisors-captain
+  canBeAntag: false
+  access:
+  - AllAccess
+  special:
+  - !type:AddImplantSpecial
+    implants: [ MindShieldImplant ]
+  - !type:AddComponentSpecial
+    components:
+      - type: CommandStaff
+
+- type: startingGear
+  id: BladeGuardianGear
+  equipment:
+    jumpsuit: ClothingUniformJumpsuitCentcomOfficerBlack
+    back: ClothingBackpackERTSecurity
+    head: ClothingHeadCapCentcomBlack
+    neck: ClothingNeckCloakCentcomBlack
+    outerClothing: ClothingOuterArmorBasic
+    shoes: ClothingShoesSwat
+    id: BladeGuardianPDA
+    ears: ClothingHeadsetCentCom
+    eyes: ClothingEyesGlassesSecurity
+  storage:
+    back:
+    - BoxSurvival
+    - EnergySword
+
+- type: entity
+  id: SpawnPointBladeGuardian
+  parent: SpawnPointJobBase
+  name: BladeGuardian
+  components:
+  - type: SpawnPoint
+    job_id: BladeGuardian
+  - type: Sprite
+    layers:
+      - state: green
+      - state: hos
+
+- type: entity
+  parent: CentcomIDCard
+  id: BladeGuardianIDCard
+  name: ID карта Стража Клинка
+  components:
+  - type: Sprite
+    layers:
+    - state: gold
+    - state: ert_commander
+  - type: IdCard
+    jobTitle: Страж Клинка
+  - type: Item
+    heldPrefix: gold
+
+- type: entity
+  parent: BasePDA
+  id: BladeGuardianPDA
+  name: КПК Стража Клинка
+  description: КПК главного защитника глав.
+  components:
+  - type: Pda
+    id: BladeGuardianIDCard
+    state: pda-centcom
+    penSlot:
+      startingItem: PenCentcom
+      whitelist:
+        tags:
+        - Write
+  - type: PdaBorderColor
+    borderColor: "#00842e"
+  - type: Icon
+    state: pda-centcom

@@ -1,0 +1,89 @@
+- type: entity #идея взята со скибиди стейшона (super govno offical studio (лучший сервер (и в сс14 и в сс13)))
+  name: унитаз
+  suffix: скибиди
+  parent: MobAdultSlimesYellow
+  id: MobSkibidist
+  components:
+    - type: Sprite
+      drawdepth: Mobs
+      sprite: _Odyssey/Mobs/NPCs/skibidisti.rsi
+      layers:
+      - map: [ "enum.DamageStateVisualLayers.Base" ]
+        state: skibidist
+    - type: DamageStateVisuals
+      states:
+        Alive:
+          Base: skibidist
+        Dead:
+          Base: skibidist_dead
+    - type: NpcFactionMember
+      factions:
+        - Nanotrasen
+    - type: GhostRole
+      description: dop dop
+      raffle:
+        settings: short
+    - type: MobThresholds
+      thresholds:
+        0: Alive
+        50: Dead
+
+- type: entity #идея взята со скибиди стейшона (super govno offical studio (лучший сервер (и в сс14 и в сс13)))
+  name: унитаз
+  suffix: скибиди
+  parent: MobAdultSlimesYellow
+  id: MobSkibidistArmor
+  components:
+    - type: Sprite
+      drawdepth: Mobs
+      sprite: _Odyssey/Mobs/NPCs/skibidisti.rsi
+      layers:
+      - map: [ "enum.DamageStateVisualLayers.Base" ]
+        state: skibidist_armor
+    - type: DamageStateVisuals
+      states:
+        Alive:
+          Base: skibidist_armor
+        Dead:
+          Base: skibidist_dead
+    - type: NpcFactionMember
+      factions:
+        - Nanotrasen
+    - type: GhostRole
+      description: dop dop
+      raffle:
+        settings: short
+    - type: MobThresholds
+      thresholds:
+        0: Alive
+        150: Dead
+
+- type: entity #идея взята со скибиди стейшона (super govno offical studio (лучший сервер (и в сс14 и в сс13)))
+  name: унитаз-гослинг
+  suffix: скибиди, гослинг
+  parent: MobAdultSlimesYellow
+  id: MobSkibidistGosling
+  components:
+    - type: Sprite
+      drawdepth: Mobs
+      sprite: _Odyssey/Mobs/NPCs/skibidisti.rsi
+      layers:
+      - map: [ "enum.DamageStateVisualLayers.Base" ]
+        state: skibidist_gosling
+    - type: DamageStateVisuals
+      states:
+        Alive:
+          Base: skibidist_gosling
+        Dead:
+          Base: skibidist_dead
+    - type: NpcFactionMember
+      factions:
+        - Nanotrasen
+    - type: GhostRole
+      description: dop dop
+      raffle:
+        settings: short
+    - type: MobThresholds
+      thresholds:
+        0: Alive
+        150: Dead
