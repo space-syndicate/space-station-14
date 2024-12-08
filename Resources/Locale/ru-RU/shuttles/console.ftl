@@ -3,7 +3,6 @@ shuttle-pilot-end = Пилотирование прекращено
 shuttle-console-in-ftl = Уже в БСС
 shuttle-console-mass = Слишком большой для БСС
 shuttle-console-prevent = Вы не можете пилотировать этот корабль
-shuttle-console-static = Грид статичный
 
 # NAV
 
