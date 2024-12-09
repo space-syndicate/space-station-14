@@ -354,9 +354,11 @@
       - FauxTileAstroSnow
       - OreBagOfHolding
       - DeviceQuantumSpinInverter
-      - EnergyScalpel # _CorvaxNext: surgery Change
-      - EnergyCautery # _CorvaxNext: surgery Change
-      - AdvancedRetractor # _CorvaxNext: surgery Change
+      # Corvax-Next Start
+      - EnergyScalpel
+      - EnergyCautery
+      - AdvancedRetractor
+      # Corvax-Next End
   - type: EmagLatheRecipes
     emagDynamicRecipes:
       - BoxBeanbag
