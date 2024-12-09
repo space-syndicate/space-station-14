@@ -113,7 +113,7 @@ public sealed class BluespaceHarvesterSystem : EntitySystem
             // The HV wires cannot transmit a lot of electricity so quickly,
             // which is why it will not start.
             // So this is simply using the amount of free electricity in the network.
-            if (harvester.ReceivedPower < harvester.DrawRate && harvester.CurrentLevel != 0)
+            if (harvester.ReceivedPower < GetUsagePower(harvester.CurrentLevel) && harvester.CurrentLevel != 0)
             {
                 // If there is insufficient production,
                 // it will reset itself (turn off) and you will need to start it again,
