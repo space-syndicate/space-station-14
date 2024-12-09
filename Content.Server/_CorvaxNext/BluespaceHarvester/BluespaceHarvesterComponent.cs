@@ -7,11 +7,14 @@ namespace Content.Server._CorvaxNext.BluespaceHarvester;
 [RegisterComponent, Access(typeof(BluespaceHarvesterSystem))]
 public sealed partial class BluespaceHarvesterComponent : Component
 {
+    [ViewVariables(VVAccess.ReadWrite)]
+    public TimeSpan ResetTime;
+
     /// <summary>
     /// Responsible for forcibly turning off the harvester and blocking input level.
     /// </summary>
-    [DataField]
-    public bool Reseted;
+    [ViewVariables(VVAccess.ReadWrite)]
+    public bool Reset;
 
     /// <summary>
     /// The current level at which the harvester is located is what other parameters are calculated from.
@@ -106,31 +109,34 @@ public sealed partial class BluespaceHarvesterComponent : Component
     [DataField, ViewVariables(VVAccess.ReadWrite)]
     public float EmaggedRiftChance = 0.03f;
 
+    [ViewVariables(VVAccess.ReadWrite)]
+    public int Harvesters;
+
     [DataField]
     public List<BluespaceHarvesterCategoryInfo> Categories = new()
     {
-        new BluespaceHarvesterCategoryInfo()
+        new BluespaceHarvesterCategoryInfo
         {
             PrototypeId = "RandomHarvesterBiologicalLoot",
-            Cost = 7_500,
+            Cost = 7500,
             Type = BluespaceHarvesterCategory.Biological,
         },
         new BluespaceHarvesterCategoryInfo()
         {
             PrototypeId = "RandomHarvesterTechnologicalLoot",
-            Cost = 7_500,
+            Cost = 10000,
             Type = BluespaceHarvesterCategory.Technological,
         },
-        new BluespaceHarvesterCategoryInfo()
+        new BluespaceHarvesterCategoryInfo
         {
             PrototypeId = "RandomHarvesterIndustrialLoot",
-            Cost = 7_500,
+            Cost = 12500,
             Type = BluespaceHarvesterCategory.Industrial,
         },
         new BluespaceHarvesterCategoryInfo()
         {
             PrototypeId = "RandomHarvesterDestructionLoot",
-            Cost = 7_500,
+            Cost = 15000,
             Type = BluespaceHarvesterCategory.Destruction,
         },
     };
@@ -146,6 +152,12 @@ public sealed partial class BluespaceHarvesterComponent : Component
 
     [DataField]
     public SoundSpecifier SpawnSound = new SoundPathSpecifier("/Audio/Effects/teleport_arrival.ogg");
+
+    [ViewVariables]
+    public float ReceivedPower;
+
+    [ViewVariables]
+    public float DrawRate;
 }
 
 [Serializable]

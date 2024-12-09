@@ -15,4 +15,5 @@ bluespace-harvester-category-Industrial = Промышленная
 bluespace-harvester-category-Technological = Технологическая
 bluespace-harvester-category-Biological = Биологическая
 bluespace-harvester-category-Destruction = Разрушительная
+research-technology-bluespace = Блюспейс
 research-technology-bluespace-mining = Блюспейс Добыча

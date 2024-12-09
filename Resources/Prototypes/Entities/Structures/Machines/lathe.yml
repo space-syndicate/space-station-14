@@ -359,6 +359,9 @@
       - EnergyCautery
       - AdvancedRetractor
       # Corvax-Next End
+      # Corvax-Next-BluespaceHarvester-Start
+      - ArtificialBluespaceCrystal
+      # Corvax-Next-BluespaceHarvester-End
   - type: EmagLatheRecipes
     emagDynamicRecipes:
       - BoxBeanbag
@@ -530,7 +533,10 @@
       - ReagentGrinderIndustrialMachineCircuitboard
       - JukeboxCircuitBoard
       - SalvageExpeditionsComputerCircuitboard # Corvax-Cringe
-      - MachineBluespaceHarvesterCircuitboard # Corvax-Next-BluespaceHarvester
+      # Corvax-Next-BluespaceHarvester-Start
+      - MachineBluespaceHarvesterCircuitboard
+      - MachineBluespaceTransitorCircuitboard
+      # Corvax-Next-BluespaceHarvester-End
       # Corvax-Next-MutableLaws-Start
       - AsimovCircuitBoard
       - CorporateCircuitBoard

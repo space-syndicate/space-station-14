@@ -22,8 +22,6 @@
             <Label Name="PowerUsageLabel" Text="0w"/>
             <Label Text="{Loc 'bluespace-harvester-window-power-next'}" StyleClasses="StatusFieldTitle"/>
             <Label Name="PowerUsageNextLabel" Text="0w"/>
-            <Label Text="{Loc 'bluespace-harvester-window-power-surplus'}" StyleClasses="StatusFieldTitle"/>
-            <Label Name="PowerSuppliertLabel" Text="0w"/>
         </GridContainer>
         <Control/>
         <Label Text="{Loc 'bluespace-harvester-window-lable-output'}"/>

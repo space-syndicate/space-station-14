@@ -37,7 +37,6 @@ public sealed partial class BluespaceHarvesterMenu : FancyWindow
 
         PowerUsageLabel.Text = Loc.GetString("power-monitoring-window-value", ("value", state.PowerUsage));
         PowerUsageNextLabel.Text = Loc.GetString("power-monitoring-window-value", ("value", state.PowerUsageNext));
-        PowerSuppliertLabel.Text = Loc.GetString("power-monitoring-window-value", ("value", state.PowerSuppliert));
 
         AvailablePointsLabel.Text = $"{state.Points}";
         TotalPontsLabel.Text = $"{state.TotalPoints}";
@@ -48,7 +47,7 @@ public sealed partial class BluespaceHarvesterMenu : FancyWindow
         {
             var child = new BluespaceHarvesterCategory(category, state.Points >= category.Cost);
 
-            child.CategoryButton.OnButtonDown += (args) =>
+            child.CategoryButton.OnButtonDown += _ =>
             {
                 _owner.SendBuy(category.Type);
             };

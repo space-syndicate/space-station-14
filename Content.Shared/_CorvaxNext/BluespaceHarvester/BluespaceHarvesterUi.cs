@@ -12,7 +12,6 @@ public sealed class BluespaceHarvesterBoundUserInterfaceState : BoundUserInterfa
 
     public readonly uint PowerUsage;
     public readonly uint PowerUsageNext;
-    public readonly float PowerSuppliert;
 
     public readonly int Points;
     public readonly int TotalPoints;
@@ -20,7 +19,7 @@ public sealed class BluespaceHarvesterBoundUserInterfaceState : BoundUserInterfa
 
     public readonly List<BluespaceHarvesterCategoryInfo> Categories;
 
-    public BluespaceHarvesterBoundUserInterfaceState(int targetLevel, int currentLevel, int maxLevel, uint powerUsage, uint powerUsageNext, float powerSuppliert, int points, int totalPoints, int pointsGen, List<BluespaceHarvesterCategoryInfo> categories)
+    public BluespaceHarvesterBoundUserInterfaceState(int targetLevel, int currentLevel, int maxLevel, uint powerUsage, uint powerUsageNext, int points, int totalPoints, int pointsGen, List<BluespaceHarvesterCategoryInfo> categories)
     {
         TargetLevel = targetLevel;
         CurrentLevel = currentLevel;
@@ -28,7 +27,6 @@ public sealed class BluespaceHarvesterBoundUserInterfaceState : BoundUserInterfa
 
         PowerUsage = powerUsage;
         PowerUsageNext = powerUsageNext;
-        PowerSuppliert = powerSuppliert;
 
         Points = points;
         TotalPoints = totalPoints;

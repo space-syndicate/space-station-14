@@ -15,4 +15,5 @@ bluespace-harvester-category-Industrial = Industrial
 bluespace-harvester-category-Technological = Technological
 bluespace-harvester-category-Biological = Biological
 bluespace-harvester-category-Destruction = Destruction
+research-technology-bluespace = Bluespace
 research-technology-bluespace-mining = Bluespace Mining
