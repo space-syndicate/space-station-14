@@ -8,6 +8,6 @@
       state: medical
     - type: MachineBoard
       prototype: MedicalBiofabricator
-#      requirements:
-#        MatterBin: 2
-#        Manipulator: 2
+      stackRequirements:
+        MatterBin: 2
+        Manipulator: 2

@@ -52,3 +52,8 @@
   parent: BaseCircuitboardRecipe
   id: NutimovCircuitBoard
   result: NutimovCircuitBoard
+
+- type: latheRecipe
+  parent: BaseCircuitboardRecipe
+  id: MedicalBiofabMachineBoard
+  result: MedicalBiofabMachineBoard
