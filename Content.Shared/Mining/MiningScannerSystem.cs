@@ -1,3 +1,4 @@
+using Content.Shared._CorvaxNext.Mining.Components;
 using Content.Shared.Inventory;
 using Content.Shared.Item.ItemToggle.Components;
 using Content.Shared.Mining.Components;
@@ -8,7 +9,7 @@ using Robust.Shared.Timing;
 
 namespace Content.Shared.Mining;
 
-public sealed class MiningScannerSystem : EntitySystem
+public sealed partial class MiningScannerSystem : EntitySystem // Corvax-Next-Dwarf
 {
     [Dependency] private readonly IGameTiming _timing = default!;
     [Dependency] private readonly INetManager _net = default!;
@@ -22,6 +23,8 @@ public sealed class MiningScannerSystem : EntitySystem
         SubscribeLocalEvent<MiningScannerComponent, EntGotInsertedIntoContainerMessage>(OnInserted);
         SubscribeLocalEvent<MiningScannerComponent, EntGotRemovedFromContainerMessage>(OnRemoved);
         SubscribeLocalEvent<MiningScannerComponent, ItemToggledEvent>(OnToggled);
+		
+		CNInitialize(); // Corvax-Next-Dwarf
     }
 
     private void OnInserted(Entity<MiningScannerComponent> ent, ref EntGotInsertedIntoContainerMessage args)
@@ -85,8 +88,17 @@ public sealed class MiningScannerSystem : EntitySystem
         {
             if (viewer.QueueRemoval)
             {
-                RemCompDeferred(uid, viewer);
-                continue;
+                // Corvax-Next-Dwarf-Start: innate mining scanner
+                if (TryComp<InnateMiningScannerViewerComponent>(uid, out var innateViewer))
+                {
+                    SetupInnateMiningViewerComponent((uid, innateViewer));
+                }
+                else
+                {
+                    RemCompDeferred(uid, viewer);
+                    continue;
+                } 
+				// Corvax-Next-Dwarf-End: innate mining scanner
             }
 
             if (_timing.CurTime < viewer.NextPingTime)
