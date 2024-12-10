@@ -315,7 +315,7 @@
   reactants:
     Ephedrine:
       amount: 1
-    Vestine:
+    Desoxyephedrine:
       amount: 1
     Oxygen:
       amount: 2
@@ -344,7 +344,7 @@
   reactants:
     Uranium:
       amount: 1
-    Vestine:
+    Pax:
       amount: 2
     SpaceGlue:
       amount: 2
@@ -500,7 +500,7 @@
   reactants:
     Impedrezene:
       amount: 2
-    Vestine:
+    Hydroxide:
       amount: 1
   products:
     Nocturine: 1
@@ -511,8 +511,20 @@
   reactants:
     Licoxide:
       amount: 1
-    Vestine:
+    Hydroxide:
       amount: 1
   products:
     Tazinide: 1
 
+- type: reaction
+  id: Lexorin
+  impact: High
+  reactants:
+    HeartbreakerToxin:
+      amount: 1
+    Plasma:
+      amount: 1
+    Impedrezene:
+      amount: 1
+  products:
+    Lexorin: 2
