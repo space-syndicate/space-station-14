@@ -66,6 +66,7 @@
     TechnologyDiskStealCollectionObjective: 1        #rnd
     IDCardsStealCollectionObjective: 1
     LAMPStealCollectionObjective: 2 #only for moth
+    ClothingNeckSecBadgeStealCollectionObjective: 0.5 # Corvax-Next-Badges
 
 - type: weightedRandom
   id: ThiefObjectiveGroupItem
