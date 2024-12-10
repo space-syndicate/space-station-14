@@ -32,4 +32,4 @@ id-card-access-level-external = Внешний
 id-card-access-level-nuclear-operative = Ядерный оперативник
 id-card-access-level-syndicate-agent = Агент Синдиката
 id-card-access-level-central-command = Центральное командование
-id-card-access-level-wizard = Wizard
+id-card-access-level-wizard = Волшебник
