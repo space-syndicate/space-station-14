@@ -22,6 +22,7 @@
     - SemiAuto
     soundGunshot:
       path: /Audio/Weapons/Guns/Gunshots/kinetic_accel.ogg
+    fireOnDropChance: 1 # Corvax-Next-FireOnDrop
   - type: AmmoCounter
   - type: Appearance
   - type: GenericVisualizer
