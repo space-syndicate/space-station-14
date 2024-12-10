@@ -580,19 +580,19 @@
   categories:
   - UplinkChemicals
 
-- type: listing
-  id: UplinkChemistryKitBundle
-  name: uplink-chemistry-kit-name
-  description: uplink-chemistry-kit-desc
-  icon: { sprite: /Textures/Objects/Storage/boxicons.rsi, state: vials }
-  productEntity: ChemicalSynthesisKit
-  discountCategory: usualDiscounts
-  discountDownTo:
-    Telecrystal: 3
-  cost:
-    Telecrystal: 4
-  categories:
-  - UplinkChemicals
+#- type: listing
+#  id: UplinkChemistryKitBundle
+#  name: uplink-chemistry-kit-name
+#  description: uplink-chemistry-kit-desc
+#  icon: { sprite: /Textures/Objects/Storage/boxicons.rsi, state: vials }
+#  productEntity: ChemicalSynthesisKit
+#  discountCategory: usualDiscounts
+#  discountDownTo:
+#    Telecrystal: 3
+#  cost:
+#    Telecrystal: 4
+#  categories:
+#  - UplinkChemicals
 
 - type: listing
   id: UplinkZombieBundle
