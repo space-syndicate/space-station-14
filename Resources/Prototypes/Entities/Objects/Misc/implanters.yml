@@ -53,6 +53,7 @@
           implantOnly:
             True: {state: broken}
             False: {state: implanter0}
+    - type: HiddenDescriptionContainerShower # Corvax-hidden-desc
 
 - type: entity
   id: Implanter
@@ -96,15 +97,18 @@
 
 - type: entity
   id: BaseImplantOnlyImplanterSyndi
-  parent: [BaseImplantOnlyImplanter, BaseSyndicateContraband]
+  parent: [BaseImplantOnlyImplanter]
+  # parent: [BaseImplantOnlyImplanter, BaseSyndicateContraband] Corvax-hidden-desc
   name: syndicate implanter
   description: A compact disposable syringe exclusively designed for the injection of subdermal implants.
   abstract: true
   components:
     - type: Item
-      sprite: Objects/Specific/Medical/syndi_implanter.rsi
+      # sprite: Objects/Specific/Medical/syndi_implanter.rsi
+      sprite: Objects/Specific/Medical/implanter.rsi #Corvax MRP anti-meta
     - type: Sprite
-      sprite: Objects/Specific/Medical/syndi_implanter.rsi
+      # sprite: Objects/Specific/Medical/syndi_implanter.rsi
+      sprite: Objects/Specific/Medical/implanter.rsi #Corvax MRP anti-meta
       state: implanter1
       layers:
         - state: implanter0
