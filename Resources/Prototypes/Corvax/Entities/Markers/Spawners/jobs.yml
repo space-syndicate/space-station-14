@@ -7,8 +7,8 @@
     job_id: Pilot
   - type: Sprite
     layers:
-      - state: green
-      - state: seniorofficer
+    - state: green
+    - state: seniorofficer
 
 - type: entity
   id: SpawnPointSurgeon
