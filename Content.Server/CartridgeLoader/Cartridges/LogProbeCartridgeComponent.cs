@@ -1,4 +1,5 @@
 ﻿using Content.Shared.CartridgeLoader.Cartridges;
+using Content.Shared._CorvaxNext.CartridgeLoader.Cartridges;
 using Robust.Shared.Audio;
 
 namespace Content.Server.CartridgeLoader.Cartridges;
@@ -18,4 +19,10 @@ public sealed partial class LogProbeCartridgeComponent : Component
     /// </summary>
     [DataField, ViewVariables(VVAccess.ReadWrite)]
     public SoundSpecifier SoundScan = new SoundPathSpecifier("/Audio/Machines/scan_finish.ogg");
+
+    /// <summary>
+    /// Corvax-Next-PDAChat: The last scanned NanoChat data, if any
+    /// </summary>
+    [DataField]
+    public NanoChatData? ScannedNanoChatData;
 }
