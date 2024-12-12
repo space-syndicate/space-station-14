@@ -1,0 +1,157 @@
+- type: entity
+  parent: BaseFlag
+  id: FlagAgurk
+  name: Kingdom of Agurkrral flag
+  description: The flag of the Kingdom of Agurkrral.
+  components:
+  - type: Sprite
+    sprite: _CorvaxNext/Structures/Wallmounts/flags.rsi
+    state: agurk
+
+- type: entity
+  parent: BaseFlag
+  id: FlagCoder
+  name: coder flag
+  description: The flag of the nerd club. Great.
+  components:
+  - type: Sprite
+    sprite: _CorvaxNext/Structures/Wallmounts/flags.rsi
+    state: coder
+
+- type: entity
+  parent: BaseFlag
+  id: FlagHCA
+  name: Human Commonwealth Association flag
+  description: The official flag of the political party Human Commonwealth, which proudly flies over the soul of every human. If you have this flag, then you most likely belong to this association.
+  components:
+  - type: Sprite
+    sprite: _CorvaxNext/Structures/Wallmounts/flags.rsi
+    state: hca
+
+- type: entity
+  parent: BaseFlag
+  id: FlagInteQ
+  name: PMC InteQ flag
+  description: Brown-Orange flag with a shield in the center. The flag smells of blood.
+  components:
+  - type: Sprite
+    sprite: _CorvaxNext/Structures/Wallmounts/flags.rsi
+    state: inteq
+
+- type: entity
+  parent: BaseFlag
+  id: FlagLizard
+  name: lizard flag
+  description: Lizard power, guys.
+  components:
+  - type: Sprite
+    sprite: _CorvaxNext/Structures/Wallmounts/flags.rsi
+    state: lizard
+
+- type: entity
+  parent: BaseFlag
+  id: FlagMothic
+  name: Grand Nomad Fleet flag
+  description: The flag of the Mothic Grand Nomad Fleet. A classic naval ensign, its use has superceded the old national flag which can be seen in its canton.
+  components:
+  - type: Sprite
+    sprite: _CorvaxNext/Structures/Wallmounts/flags.rsi
+    state: mothic
+
+- type: entity
+  parent: BaseFlag
+  id: FlagNanoTrasen
+  name: Nanotrasen flag
+  description: The official corporate flag of Nanotrasen. Mostly flown as a ceremonial piece, or to mark land on a new frontier.
+  components:
+  - type: Sprite
+    sprite: _CorvaxNext/Structures/Wallmounts/flags.rsi
+    state: nt
+
+- type: entity
+  parent: BaseFlag
+  id: FlagShigu
+  name: Shigu Empire flag
+  description: This is the flag of the Shigu Empire. The Shigu Empire was once just an association of northern tribes that feared and revered wildlife. However, with the arrival of General Rain, Shigu became the largest empire, which seized a huge amount of land, but returned some of it when her son ascended to the throne.
+  components:
+  - type: Sprite
+    sprite: _CorvaxNext/Structures/Wallmounts/flags.rsi
+    state: shigu
+
+- type: entity
+  parent: BaseFlag
+  id: FlagSolfed
+  name: Sol Federation flag
+  description: The flag of Sol Federation. Its a symbol of humanity no matter where they go, or how much they wish it wasnt.
+  components:
+  - type: Sprite
+    sprite: _CorvaxNext/Structures/Wallmounts/flags.rsi
+    state: solfed
+
+- type: entity
+  parent: FlagSolfed
+  id: FlagSolfedAlt
+  components:
+  - type: Sprite
+    sprite: _CorvaxNext/Structures/Wallmounts/flags.rsi
+    state: solfed_alt
+
+- type: entity
+  parent: BaseFlag
+  id: FlagSyndicate
+  name: Syndicate flag
+  description: The flag of the Sothran Syndicate. Previously used by the Sothran people as a way of declaring opposition against the Nanotrasen, now it became an intergalactic symbol of the same, yet way more skewed purpose, as more groups of interest have joined the rebellions side for their own gain.
+  components:
+  - type: Sprite
+    sprite: _CorvaxNext/Structures/Wallmounts/flags.rsi
+    state: syndicate
+
+- type: entity
+  parent: BaseFlag
+  id: FlagTizira
+  name: Republic of Northern Moghes flag
+  description: The flag of the Great Republic of Northern Moghes. Depending on who you ask, it represents strength or being an ant in the hive.
+  components:
+  - type: Sprite
+    sprite: _CorvaxNext/Structures/Wallmounts/flags.rsi
+    state: tizira
+
+- type: entity
+  parent: BaseFlag
+  id: FlagGoldRing
+  name: Gold Ring flag
+  description: This is the flag of the Gold Ring. The Golden Ring is a megalopolis in the southern part of Tal that has grown to the size of a full-fledged state. Being located around the ColVilous salt Lake, the Golden Ring has become an oasis in the boundless desert where trade and culture flourish.
+  components:
+  - type: Sprite
+    sprite: _CorvaxNext/Structures/Wallmounts/flags.rsi
+    state: goldring
+
+- type: entity
+  parent: BaseFlag
+  id: FlagNRI
+  name: Novaya Rossiyskaya Imperiya flag
+  description: The flag of the Novaya Rossiyskaya Imperiya. The yellow, black and white colours represent its sovereignity, spirituality and pureness.
+  components:
+  - type: Sprite
+    sprite: _CorvaxNext/Structures/Wallmounts/flags.rsi
+    state: nri
+
+- type: entity
+  parent: BaseFlag
+  id: FlagSovietUSSP
+  name: флаг Союза Советских Социалистических Планет
+  description: Флаг некогда великого Государства. От флага ощущается сильный запах... железа. Или крови? Из чего сделана эта красная краска?
+  components:
+  - type: Sprite
+    sprite: _CorvaxNext/Structures/Wallmounts/flags.rsi
+    state: soviet
+
+- type: entity
+  parent: BaseFlag
+  id: FlagVulp
+  name: Vulpkanins flag
+  description: Flag of humanoid dog-like organisms from the Vazzend system. Now they live on the Kellun and Dalhstadt, although their original homeland was known as Altam.
+  components:
+  - type: Sprite
+    sprite: _CorvaxNext/Structures/Wallmounts/flags.rsi
+    state: vulp
