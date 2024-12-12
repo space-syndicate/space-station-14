@@ -26,15 +26,7 @@ namespace Content.Client.Access.UI
             _window.OnNameChanged += OnNameChanged;
             _window.OnJobChanged += OnJobChanged;
             _window.OnJobIconChanged += OnJobIconChanged;
-            _window.OnNumberChanged += OnNumberChanged; // Corvax-Next-PDAChat
         }
-
-        // Corvax-Next-PDAChat-Start
-        private void OnNumberChanged(uint newNumber)
-        {
-            SendMessage(new AgentIDCardNumberChangedMessage(newNumber));
-        }
-        // Corvax-Next-PDAChat-End
 
         private void OnNameChanged(string newName)
         {
@@ -64,7 +56,6 @@ namespace Content.Client.Access.UI
             _window.SetCurrentName(cast.CurrentName);
             _window.SetCurrentJob(cast.CurrentJob);
             _window.SetAllowedIcons(cast.CurrentJobIconId);
-            _window.SetCurrentNumber(cast.CurrentNumber); // Corvax-Next-PDAChat
         }
     }
 }

@@ -24,7 +24,6 @@
     - WhitelistChameleon
   - type: StealTarget
     stealGroup: IDCard
-  - type: NanoChatCard # Corvax-Next-PDAChat
 
 #IDs with layers
 
@@ -829,5 +828,3 @@
     - NuclearOperative
     - SyndicateAgent
     - Wizard
-  - type: NanoChatCard # Corvax-Next-PDAChat
-    notificationsMuted: true
