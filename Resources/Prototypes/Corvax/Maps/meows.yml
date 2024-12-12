@@ -1,7 +1,7 @@
 - type: gameMap
   id: CorvaxMaus
-  mapName: 'Maus Station'
-  mapPath: /Maps/corvax_maus.yml
+  mapName: 'Meows Station'
+  mapPath: /Maps/corvax_meows.yml
   maxRandomOffset: 0
   randomRotation: false
   minPlayers: 0
@@ -11,7 +11,7 @@
       stationProto: StandardNanotrasenStation
       components:
         - type: StationNameSetup
-          mapNameTemplate: '{0} Маус {1}'
+          mapNameTemplate: '{0} Мяус {1}'
           nameGenerator:
            !type:NanotrasenNameGenerator
             prefixCreator: "MG"
