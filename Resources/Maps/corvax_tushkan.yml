@@ -55867,15 +55867,21 @@ entities:
     - type: GasCanister
       gasMixture:
         volume: 1000
+        immutable: False
+        temperature: 2.7
         moles:
-          - 1310.197357 # 70% oxygen
-          - 0 # nitrogen
-          - 0 # CO2
-          - 0 # Plasma
-          - 0 # Tritium
-          - 0 # Water vapor
-          - 0 # Ammonia
-          - 561.513153 # 30% N2O
+        - 1310.1974
+        - 0
+        - 0
+        - 0
+        - 0
+        - 0
+        - 0
+        - 561.5131
+        - 0
+        - 0
+        - 0
+        - 0
   - uid: 6614
     components:
     - type: Transform
@@ -69544,6 +69550,13 @@ entities:
     components:
     - type: Transform
       pos: -10.5,-18.5
+      parent: 2
+- proto: SpawnPointSurgeon
+  entities:
+  - uid: 11099
+    components:
+    - type: Transform
+      pos: -19.5,-3.5
       parent: 2
 - proto: SpawnPointTechnicalAssistant
   entities:
