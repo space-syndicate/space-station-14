@@ -14,7 +14,7 @@ public sealed class TelescopicBatonSystem : EntitySystem
     [Dependency] private readonly SharedStunSystem _stun = default!;
     [Dependency] private readonly ItemToggleSystem _itemToggle = default!;
     [Dependency] private readonly StandingStateSystem _standing = default!;
-//    [Dependency] private readonly SharedLayingDownSystem _layingDown = default!;
+    [Dependency] private readonly SharedLayingDownSystem _layingDown = default!;
 
     public override void Initialize()
     {
@@ -28,13 +28,13 @@ public sealed class TelescopicBatonSystem : EntitySystem
 
     private void OnHit(Entity<TelescopicBatonComponent> ent, ref StaminaMeleeHitEvent args)
     {
-/*        foreach (var (uid, _) in args.HitList)
+        foreach (var (uid, _) in args.HitList)
         {
             if (TryComp<LayingDownComponent>(uid, out var layingDownComponent))
             {
                 _layingDown.TryLieDown(uid, layingDownComponent, null, DropHeldItemsBehavior.NoDrop);
             }
-        }*/
+        }
     }
 
     private void OnStaminaHitAttempt(Entity<TelescopicBatonComponent> entity, ref StaminaDamageOnHitAttemptEvent args)
