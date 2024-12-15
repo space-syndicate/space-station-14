@@ -1,4 +1,4 @@
-﻿version: 1 # Not used right now, whatever.
+version: 1 # Not used right now, whatever.
 binds:
 - function: UIClick
   type: State
@@ -612,3 +612,7 @@ binds:
 - function: OfferItem # Corvax-Next-Offer
   type: State
   key: F
+- function: ToggleStanding # _CorvaxNext-edit Laying System
+  type: State
+  key: C
+  mod1: Shift

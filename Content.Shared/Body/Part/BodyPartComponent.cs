@@ -7,6 +7,7 @@ using Content.Shared.FixedPoint;
 using Robust.Shared.Containers;
 using Robust.Shared.GameStates;
 using Robust.Shared.Serialization;
+using Robust.Shared.Prototypes;
 
 namespace Content.Shared.Body.Part;
 
@@ -29,8 +30,124 @@ public sealed partial class BodyPartComponent : Component, ISurgeryToolComponent
     public BodyPartSlot? ParentSlot;
     // end-_CorvaxNext: surgery
 
+    // start-_CorvaxNext: surgery
+    /// <summary>
+    ///     CorvaxNext Change: Amount of damage to deal when the part gets removed.
+    ///     Only works if IsVital is true.
+    /// </summary>
     [DataField, AutoNetworkedField]
+    public FixedPoint2 VitalDamage = 100;
+    // end-_CorvaxNext: surgery
+
+    // start-_CorvaxNext: surgery
+    [DataField, AlwaysPushInheritance]
+    public string ToolName { get; set; } = "A body part";
+
+    [DataField, AutoNetworkedField]
+    public bool? Used { get; set; } = null;
+
+    [DataField, AlwaysPushInheritance]
+    public float Speed { get; set; } = 1f;
+
+    /// <summary>
+    /// CorvaxNext Change: What's the max health this body part can have?
+    /// </summary>
+    [DataField]
+    public float MinIntegrity;
+
+    /// <summary>
+    /// Whether this body part can be severed or not
+    /// </summary>
+    [DataField, AutoNetworkedField]
+    public bool CanSever = true;
+
+    /// <summary>
+    ///     CorvaxNext Change: Whether this body part is enabled or not.
+    /// </summary>
+    [DataField, AutoNetworkedField]
+    public bool Enabled = true;
+
+    /// <summary>
+    ///     CorvaxNext Change: Whether this body part can be enabled or not. Used for non-functional prosthetics.
+    /// </summary>
+    [DataField]
+    public bool CanEnable = true;
+
+    /// <summary>
+    /// Whether this body part can attach children or not.
+    /// </summary>
+    [DataField]
+    public bool CanAttachChildren = true;
+
+    /// <summary>
+    ///     CorvaxNext Change: How long it takes to run another self heal tick on the body part.
+    /// </summary>
+    [DataField]
+    public float HealingTime = 30;
+
+    /// <summary>
+    ///     CorvaxNext Change: How long it has been since the last self heal tick on the body part.
+    /// </summary>
+    public float HealingTimer;
+
+    /// <summary>
+    ///     CorvaxNext Change: How much health to heal on the body part per tick.
+    /// </summary>
+    [DataField]
+    public float SelfHealingAmount = 5;
+
+    /// <summary>
+    ///     CorvaxNext Change: The name of the container for this body part. Used in insertion surgeries.
+    /// </summary>
+    [DataField]
+    public string ContainerName { get; set; } = "part_slot";
+
+    /// <summary>
+    ///     CorvaxNext Change: The slot for item insertion.
+    /// </summary>
+    [DataField, AutoNetworkedField]
+    public ItemSlot ItemInsertionSlot = new();
+
+
+    /// <summary>
+    ///     CorvaxNext Change: Current species. Dictates things like body part sprites.
+    /// </summary>
+    [DataField, AutoNetworkedField]
+    public string Species { get; set; } = "";
+
+    /// <summary>
+    ///     CorvaxNext Change: The total damage that has to be dealt to a body part
+    ///     to make possible severing it.
+    /// </summary>
+    [DataField, AutoNetworkedField]
+    public float SeverIntegrity = 90;
+
+    /// <summary>
+    ///     CorvaxNext Change: The ID of the base layer for this body part.
+    /// </summary>
+    [DataField, AutoNetworkedField, AlwaysPushInheritance]
+    public string? BaseLayerId;
+
+    /// <summary>
+    ///     CorvaxNext Change: On what TargetIntegrity we should re-enable the part.
+    /// </summary>
+    [DataField, AutoNetworkedField]
+    public TargetIntegrity EnableIntegrity = TargetIntegrity.ModeratelyWounded;
+
+    [DataField, AutoNetworkedField]
+    public Dictionary<TargetIntegrity, float> IntegrityThresholds = new()
+    {
+        { TargetIntegrity.CriticallyWounded, 75 },
+        { TargetIntegrity.HeavilyWounded, 60 },
+        { TargetIntegrity.ModeratelyWounded, 50 },
+        { TargetIntegrity.SomewhatWounded, 35 },
+        { TargetIntegrity.LightlyWounded, 20 },
+        { TargetIntegrity.Healthy, 10 },
+    };
+
+    [DataField, AutoNetworkedField, AlwaysPushInheritance]
     public BodyPartType PartType = BodyPartType.Other;
+
 
     // TODO BODY Replace with a simulation of organs
     /// <summary>
@@ -40,25 +157,20 @@ public sealed partial class BodyPartComponent : Component, ISurgeryToolComponent
     [DataField("vital"), AutoNetworkedField]
     public bool IsVital;
 
-    // start-_CorvaxNext: surgery
-    /// <summary>
-    /// Amount of damage to deal when the part gets removed.
-    /// Only works if IsVital is true.
-    /// </summary>
-    [DataField, AutoNetworkedField]
-    public FixedPoint2 VitalDamage = 100;
-    // end-_CorvaxNext: surgery
-
     [DataField, AutoNetworkedField]
     public BodyPartSymmetry Symmetry = BodyPartSymmetry.None;
 
-    // start-_CorvaxNext: surgery
-    [DataField]
-    public string ToolName { get; set; } = "A body part";
+    /// <summary>
+    ///     When attached, the part will ensure these components on the entity, and delete them on removal.
+    /// </summary>
+    [DataField, AlwaysPushInheritance]
+    public ComponentRegistry? OnAdd;
 
-    [DataField, AutoNetworkedField]
-    public bool? Used { get; set; } = null;
-    // end-_CorvaxNext: surgery
+    /// <summary>
+    ///     When removed, the part will ensure these components on the entity, and add them on removal.
+    /// </summary>
+    [DataField, AlwaysPushInheritance]
+    public ComponentRegistry? OnRemove;
 
     /// <summary>
     /// Child body parts attached to this body part.
@@ -72,73 +184,7 @@ public sealed partial class BodyPartComponent : Component, ISurgeryToolComponent
     [DataField, AutoNetworkedField]
     public Dictionary<string, OrganSlot> Organs = new();
 
-    // start-_CorvaxNext: surgery
-    /// <summary>
-    /// What's the max health this body part can have?
-    /// </summary>
-    [DataField]
-    public float MinIntegrity;
-
-    /// <summary>
-    /// Whether this body part is enabled or not.
-    /// </summary>
-    [DataField, AutoNetworkedField]
-    public bool Enabled = true;
-
-    /// <summary>
-    /// How long it takes to run another self heal tick on the body part.
-    /// </summary>
-    [DataField]
-    public float HealingTime = 30;
-
-    /// <summary>
-    /// How long it has been since the last self heal tick on the body part.
-    /// </summary>
-    public float HealingTimer;
-
-    /// <summary>
-    /// How much health to heal on the body part per tick.
-    /// </summary>
-    [DataField]
-    public float SelfHealingAmount = 5;
-
-    [DataField]
-    public string ContainerName { get; set; } = "part_slot";
-
-    [DataField, AutoNetworkedField]
-    public ItemSlot ItemInsertionSlot = new();
-
-
-    /// <summary>
-    ///     Current species. Dictates things like body part sprites.
-    /// </summary>
-    [DataField, AutoNetworkedField]
-    public string Species { get; set; } = "";
-
-    /// <summary>
-    /// The total damage that has to be dealt to a body part
-    /// to make possible severing it.
-    /// </summary>
-    [DataField, AutoNetworkedField]
-    public float SeverIntegrity = 80; // Corvax-Next-Surgery flavor damage
-
-    /// <summary>
-    /// On what TargetIntegrity we should re-enable the part.
-    /// </summary>
-    [DataField, AutoNetworkedField]
-    public TargetIntegrity EnableIntegrity = TargetIntegrity.ModeratelyWounded;
-
-    [DataField, AutoNetworkedField]
-    public Dictionary<TargetIntegrity, float> IntegrityThresholds = new()
-    {
-        { TargetIntegrity.CriticallyWounded, 70 }, // Corvax-Next-Surgery flavor damage
-        { TargetIntegrity.HeavilyWounded, 60 }, // Corvax-Next-Surgery flavor damage
-        { TargetIntegrity.ModeratelyWounded, 45 }, // Corvax-Next-Surgery flavor damage
-        { TargetIntegrity.SomewhatWounded, 30}, // Corvax-Next-Surgery flavor damage
-        { TargetIntegrity.LightlyWounded, 15 }, // Corvax-Next-Surgery flavor damage
-        { TargetIntegrity.Healthy, 10 },
-    };
-    // end-_CorvaxNext: surgery
+    // end-_CorvaxNext: surgery Change End
 
     /// <summary>
     /// These are only for VV/Debug do not use these for gameplay/systems

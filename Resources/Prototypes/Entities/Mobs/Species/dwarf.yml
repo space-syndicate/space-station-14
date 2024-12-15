@@ -66,6 +66,9 @@
   - type: FootprintVisualizer # Corvax-Next-Footprints
     leftBarePrint: "footprint-left-bare-dwarf"
     rightBarePrint: "footprint-right-bare-dwarf"
+  - type: InnateMiningScannerViewer # Corvax-Next-Dwarfs
+    pingSound: null
+    viewRange: 3
 
 - type: entity
   parent: BaseSpeciesDummy

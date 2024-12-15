@@ -76,9 +76,9 @@
     entries:
     - label: corvax-hidden-desc-EnergySword-syndicate
       whitelistMind:
-        components:
-          - TraitorRole
-          - NukeOperative
+        mindRoles:
+        - TraitorRole
+        - NukeopsRole
     - label: corvax-hidden-desc-EnergySword-security
       jobRequired:
         - HeadOfSecurity
@@ -91,6 +91,17 @@
       jobRequired:
         - SalvageSpecialist
 # Corvax-HiddenDesc-End
+  - type: Scalpel # _CorvaxNext: surgery
+    speed: 0.75
+  - type: Cautery # _CorvaxNext: surgery: you have to be very, very careful to cauterize with it
+    speed: 0.2
+  - type: SurgeryTool # _CorvaxNext: surgery
+    startSound:
+      path: /Audio/Weapons/ebladehum.ogg
+    endSound:
+      path: /Audio/Weapons/eblade1.ogg
+      params:
+        variation: 0.250
 
 - type: entity
   name: energy sword
@@ -248,9 +259,9 @@
     entries:
     - label: corvax-hidden-desc-EnergyDagger-syndicate
       whitelistMind:
-        components:
-          - TraitorRole
-          - NukeOperative
+        mindRoles:
+        - TraitorRole
+        - NukeopsRole
     - label: corvax-hidden-desc-EnergyDagger-research
       jobRequired:
         - ResearchAssistant
@@ -325,6 +336,7 @@
   components:
   - type: ItemToggle
     onUse: false # wielding events control it instead
+    onActivate: false # prevents the weapon from being able to be turned on when it is on the ground
     soundActivate:
       path: /Audio/Weapons/ebladeon.ogg
       params:
@@ -385,9 +397,9 @@
     entries:
     - label: corvax-hidden-desc-EnergySword-syndicate
       whitelistMind:
-        components:
+        mindRoles:
         - TraitorRole
-        - NukeOperative
+        - NukeopsRole
     - label: corvax-hidden-desc-EnergySword-security
       jobRequired:
       - HeadOfSecurity

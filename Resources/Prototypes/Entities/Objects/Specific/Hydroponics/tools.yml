@@ -40,6 +40,15 @@
   - type: Item
     sprite: Objects/Tools/Hydroponics/clippers.rsi
     storedRotation: -90
+  - type: Retractor # _CorvaxNext: Same as wirecutters
+    speed: 0.35
+  - type: Hemostat
+    speed: 0.6
+  - type: SurgeryTool # _CorvaxNext
+    startSound:
+      path: /Audio/_CorvaxNext/Medical/Surgery/retractor1.ogg
+    endSound:
+      path: /Audio/_CorvaxNext/Medical/Surgery/retractor2.ogg
 
 - type: entity
   name: scythe
@@ -87,6 +96,11 @@
         Piercing: 2
   - type: Item
     sprite: Objects/Tools/Hydroponics/hatchet.rsi
+  - type: BoneSaw # _CorvaxNext
+    speed: 0.35
+  - type: SurgeryTool # _CorvaxNext
+    startSound:
+      path: /Audio/_CorvaxNext/Medical/Surgery/saw.ogg
 
 - type: entity
   name: spade

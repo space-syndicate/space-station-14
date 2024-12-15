@@ -281,7 +281,24 @@
   - type: SurgeryPartRemovedCondition
     connection: feet
     part: Foot
-    symmetry: None
+
+- type: entity
+  parent: SurgeryBase
+  id: SurgeryAttachTail
+  name: Attach Tail
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Surgery
+    requirement: SurgeryOpenIncision
+    steps:
+    - SurgeryStepInsertFeature
+    - SurgeryStepSealWounds
+  - type: SurgeryPartCondition
+    part: Torso
+  - type: SurgeryPartRemovedCondition
+    connection: tail
+    part: Tail
+    #symmetry: None
 
 #- type: entity
 #  parent: SurgeryBase
@@ -381,7 +398,6 @@
     - type: Brain
     inverse: true
     reattaching: true
-
 
 - type: entity
   parent: SurgeryBase
@@ -572,6 +588,41 @@
     - type: Eyes
     inverse: true
     reattaching: true
+
+- type: entity
+  parent: SurgeryBase
+  id: SurgeryLobotomize
+  name: Lobotomize
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Surgery
+    requirement: SurgeryOpenIncision
+    steps:
+    - SurgeryStepLobotomize
+    - SurgeryStepCloseIncision
+  - type: SurgeryComponentCondition
+    component:
+    - type: OhioAccent
+    inverse: true
+  - type: SurgeryPartCondition
+    part: Head
+
+- type: entity
+  parent: SurgeryBase
+  id: SurgeryMendBrainTissue
+  name: Mend brain tissue
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Surgery
+    requirement: SurgeryOpenIncision
+    steps:
+    - SurgeryStepMendBrainTissue
+    - SurgeryStepCloseIncision
+  - type: SurgeryComponentCondition
+    component:
+    - type: OhioAccent
+  - type: SurgeryPartCondition
+    part: Head
 
 # Fluff/Joke Surgeries
 

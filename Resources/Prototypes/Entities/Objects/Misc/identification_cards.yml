@@ -24,6 +24,7 @@
     - WhitelistChameleon
   - type: StealTarget
     stealGroup: IDCard
+  - type: NanoChatCard # Corvax-Next-PDAChat
 
 #IDs with layers
 
@@ -612,9 +613,9 @@
     entries:
     - label: corvax-hidden-desc-AgentIDCard-syndicate
       whitelistMind:
-        components:
-          - TraitorRole
-          - NukeOperative
+        mindRoles:
+        - TraitorRole
+        - NukeopsRole
     - label: corvax-hidden-desc-AgentIDCard-research
       jobRequired:
         - ResearchAssistant
@@ -827,3 +828,6 @@
     - CentralCommand
     - NuclearOperative
     - SyndicateAgent
+    - Wizard
+  - type: NanoChatCard # Corvax-Next-PDAChat
+    notificationsMuted: true

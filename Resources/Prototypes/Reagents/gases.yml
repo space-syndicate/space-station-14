@@ -282,7 +282,7 @@
           shouldHave: false
         key: ForcedSleep
         component: ForcedSleeping
-        time: 6 # This reeks, but I guess it works LMAO
+        time: 300 # This reeks, but I guess it works LMAO
         type: Add
       - !type:HealthChange
         conditions:

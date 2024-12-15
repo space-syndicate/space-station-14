@@ -1,0 +1,153 @@
+- type: entity
+  id: WristwatchBlack
+  parent: Wristwatch
+  name: black watch
+  description: A sleek black wristwatch with a green glow-in-the-dark dial and hands, perfect for seeing the time in low-light environments.
+  components:
+  - type: Sprite
+    sprite: _CorvaxNext/Objects/Devices/Watches/blackwatch.rsi
+    layers:
+    - state: blackwatch
+    - map: [ "enum.ClockVisualLayers.MinuteHand"]
+      shader: unshaded
+    - map: [ "enum.ClockVisualLayers.HourHand"]
+      shader: unshaded
+  - type: Item
+    sprite: _CorvaxNext/Objects/Devices/Watches/blackwatch.rsi
+  - type: Clothing
+    sprite: _CorvaxNext/Objects/Devices/Watches/blackwatch.rsi
+  - type: StaticPrice
+    price: 200
+
+- type: entity
+  id: WristwatchPocket
+  parent: Wristwatch
+  name: pocket watch
+  description: A classic silver pocket watch attached to a chain, adding a touch of vintage style.
+  components:
+  - type: Sprite
+    sprite: _CorvaxNext/Objects/Devices/Watches/pocketwatch.rsi
+    layers:
+    - state: pocketwatch
+    - map: [ "enum.ClockVisualLayers.MinuteHand"]
+    - map: [ "enum.ClockVisualLayers.HourHand"]
+  - type: Item
+    sprite: _CorvaxNext/Objects/Devices/Watches/pocketwatch.rsi
+  - type: Clothing
+    sprite: _CorvaxNext/Objects/Devices/Watches/pocketwatch.rsi
+  - type: StaticPrice
+    price: 200
+
+- type: entity
+  id: WristwatchLeather
+  parent: Wristwatch
+  name: leather watch
+  description: A gold watch with a leather strap, featuring independent hour and minute hands positioned in different corners of the face.
+  components:
+  - type: Sprite
+    sprite: _CorvaxNext/Objects/Devices/Watches/leatherwatch.rsi
+    layers:
+    - state: leatherwatch
+    - map: [ "enum.ClockVisualLayers.MinuteHand"]
+    - map: [ "enum.ClockVisualLayers.HourHand"]
+  - type: Item
+    sprite: _CorvaxNext/Objects/Devices/Watches/leatherwatch.rsi
+  - type: Clothing
+    sprite: _CorvaxNext/Objects/Devices/Watches/leatherwatch.rsi
+  - type: StaticPrice
+    price: 200
+
+- type: entity
+  id: WristwatchSyndi
+  parent: [Wristwatch, PinpointerBase]
+  name: black watch
+  description: A stylish black wristwatch featuring a red glow-in-the-dark dial and hands that stand out in the dark.
+  components:
+  - type: Sprite
+    sprite: _CorvaxNext/Objects/Devices/Watches/syndiwatch.rsi
+    layers:
+    - state: syndiwatch
+      map: ["enum.PinpointerLayers.Base"]
+      visible: false
+    - state: syndiwatch_clock
+    - map: [ "enum.ClockVisualLayers.MinuteHand"]
+      shader: unshaded
+    - map: [ "enum.ClockVisualLayers.HourHand"]
+      shader: unshaded
+    - state: pinonnull
+      map: ["enum.PinpointerLayers.Screen"]
+      shader: unshaded
+      visible: false
+    - state: "id_overlay"
+      map: [ "enum.PdaVisualLayers.IdLight" ]
+      shader: "unshaded"
+      visible: false
+    - map: [ "enum.PdaVisualLayers.Base" ]
+    - state: "light_overlay"
+      map: [ "enum.PdaVisualLayers.Flashlight" ]
+      shader: "unshaded"
+      visible: false
+  - type: Icon
+    sprite: _CorvaxNext/Objects/Devices/Watches/syndiwatch.rsi
+    state: syndiwatch_clock
+  - type: Item
+    sprite: _CorvaxNext/Objects/Devices/Watches/syndiwatch.rsi
+  - type: Clothing
+    sprite: _CorvaxNext/Objects/Devices/Watches/syndiwatch.rsi
+  - type: Pinpointer
+    updateTargetName: true
+    canRetarget: true
+  - type: Pda
+    state: pda
+    paiSlot:
+      priority: -2
+      whitelist:
+        components:
+    penSlot:
+      priority: -1
+      whitelist:
+        tags:
+    idSlot:
+      name: access-id-card-component-default
+      ejectSound: /Audio/Machines/id_swipe.ogg
+      insertSound: /Audio/Machines/id_insert.ogg
+      whitelist:
+        components:
+        - IdCard
+        - Emag
+  - type: StaticPrice
+    price: 200
+  - type: GenericVisualizer
+    visuals:
+      enum.PinpointerVisuals.IsActive:
+        enum.PinpointerLayers.Screen:
+          True: { visible: True }
+          False: { visible: False }
+      enum.PinpointerVisuals.TargetDistance:
+        enum.PinpointerLayers.Screen:
+          Unknown: { state: pinonnull }
+          Reached: { state: pinondirect }
+          Close: { state: pinonclose }
+          Medium: { state: pinonmedium }
+          Far: { state: pinonfar }
+  - type: AnimationPlayer
+  - type: HiddenDescription
+    entries:
+    - label: corvax-hidden-desc-WristwatchSyndi-syndicate
+      whitelistMind:
+        mindRoles:
+        - TraitorRole
+        - NukeopsRole
+    - label: corvax-hidden-desc-WristwatchSyndi-research
+      jobRequired:
+        - ResearchAssistant
+        - ResearchDirector
+        - Scientist
+        - Borg
+    - label: corvax-hidden-desc-WristwatchSyndi-detective
+      jobRequired:
+        - Detective
+    - label: corvax-hidden-desc-WristwatchSyndi-security
+      jobRequired:
+        - HeadOfSecurity
+        - Warden

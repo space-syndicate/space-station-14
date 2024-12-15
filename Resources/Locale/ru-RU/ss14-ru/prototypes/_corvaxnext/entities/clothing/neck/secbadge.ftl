@@ -1,0 +1,16 @@
+ent-ClothingNeckSecBadgeBase = жетон
+   .desc = Уважай мой авторитет!
+ent-ClothingNeckSecBadgeCadet = жетон кадета
+   .desc = { ent-ClothingNeckSecBadgeBase.desc }
+ent-ClothingNeckSecBadgePilot = жетон пилота
+   .desc = { ent-ClothingNeckSecBadgeBase.desc }
+ent-ClothingNeckSecBadgeDetective = жетон детектива
+   .desc = { ent-ClothingNeckSecBadgeBase.desc }
+ent-ClothingNeckSecBadgeBrigmedic = жетон бригмедика
+   .desc = { ent-ClothingNeckSecBadgeBase.desc }
+ent-ClothingNeckSecBadgeOfficer = жетон офицера
+   .desc = { ent-ClothingNeckSecBadgeBase.desc }
+ent-ClothingNeckSecBadgeWarden = жетон смотрителя
+   .desc = { ent-ClothingNeckSecBadgeBase.desc }
+ent-ClothingNeckSecBadgeHos = жетон главы службы безопасности
+   .desc = { ent-ClothingNeckSecBadgeBase.desc }

@@ -36,9 +36,9 @@
     heldPrefix: brain
   - type: Sprite
     state: brain
-  - type: Brain
-  - type: Organ
-    slotId: brain
+  - type: Organ # _CorvaxNext
+    slotId: Brain
+  - type: Brain # _CorvaxNext
   - type: SolutionContainerManager
     solutions:
       organ:
@@ -65,8 +65,13 @@
     layers:
       - state: eyeball-l
       - state: eyeball-r
-  - type: Eyes
-  
+  - type: Organ # _CorvaxNext
+    slotId: eyes
+  - type: Tag # goob edit
+    tags:
+    - Meat
+    - Organ
+    - Eyes
 
 - type: entity
   id: OrganDionaStomach
@@ -111,10 +116,10 @@
   description: "A spongy mess of slimy, leaf-like structures. Capable of breathing both carbon dioxide and oxygen."
   components:
   - type: Sprite
-    sprite: Mobs/Species/Human/organs.rsi
-    layers:
-      - state: lung-l
-      - state: lung-r
+    state: lungs
+  - type: Item
+    size: Small
+    heldPrefix: lungs
   - type: Lung
   - type: Organ
     slotId: lungs
@@ -146,7 +151,7 @@
   description: "The source of incredible, unending intelligence. Honk."
   components:
   - type: Brain
-  - type: Nymph # This will make the organs turn into a nymph when they're removed. 
+  - type: Nymph # This will make the organs turn into a nymph when they're removed.
     entityPrototype: OrganDionaNymphBrain
     transferMind: true
 
@@ -185,11 +190,11 @@
 
 - type: entity
   id: OrganDionaNymphStomach
-  parent: MobDionaNymphAccent 
+  parent: MobDionaNymphAccent
   categories: [ HideSpawnMenu ]
   name: diona nymph
   suffix: Stomach
-  description: Contains the stomach of a formerly fully-formed Diona. It doesn't taste any better for it. 
+  description: Contains the stomach of a formerly fully-formed Diona. It doesn't taste any better for it.
   components:
   - type: IsDeadIC
   - type: Body
@@ -201,7 +206,7 @@
   categories: [ HideSpawnMenu ]
   name: diona nymph
   suffix: Lungs
-  description: Contains the lungs of a formerly fully-formed Diona. Breathtaking. 
+  description: Contains the lungs of a formerly fully-formed Diona. Breathtaking.
   components:
   - type: IsDeadIC
   - type: Body

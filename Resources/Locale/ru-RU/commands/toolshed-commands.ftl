@@ -28,6 +28,7 @@ command-description-admins-all = Returns a list of ALL admins, including deadmin
 command-description-marked = Returns the value of $marked as a List<EntityUid>.
 command-description-rejuvenate = Rejuvenates the given entities, restoring them to full health, clearing status effects, etc.
 command-description-tag-list = Lists tags on the given entities.
+command-description-tag-with = Returns only the entities with the given tag from the piped list of entities.
 command-description-tag-add = Adds a tag to the given entities.
 command-description-tag-rm = Removes a tag from the given entities.
 command-description-tag-addmany = Adds a list of tags to the given entities.

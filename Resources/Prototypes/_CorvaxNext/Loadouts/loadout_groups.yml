@@ -40,3 +40,27 @@
   - BrigmedicOuterClothingCoat
   - BrigmedicOuterClothingLab
   - BrigmedicOuterClothingVest
+
+# Medical
+- type: loadoutGroup
+  id: SurgeonHead
+  name: loadout-group-surgeon-head
+  loadouts:
+  - BlueSurgeryCap
+  - GreenSurgeryCap
+  - PurpleSurgeryCap
+
+- type: loadoutGroup
+  id: SurgeonJumpsuit
+  name: loadout-group-surgeon-jumpsuit
+  loadouts:
+  - MedicalBlueScrubs
+  - MedicalGreenScrubs
+  - MedicalPurpleScrubs
+
+- type: loadoutGroup
+  id: SurgeonScalpel
+  name: loadout-group-surgeon-scalpel
+  minLimit: 0
+  loadouts:
+  - SurgeonScalpelLaser

@@ -1,0 +1,24 @@
+# Wristwatches
+- type: loadout
+  id: Wristwatch
+  storage:
+    back:
+    - Wristwatch
+
+- type: loadout
+  id: WristwatchLeather
+  storage:
+    back:
+    - WristwatchLeather
+
+- type: loadout
+  id: WristwatchPocket
+  storage:
+    back:
+    - WristwatchPocket
+
+- type: loadout
+  id: WristwatchBlack
+  storage:
+    back:
+    - WristwatchBlack

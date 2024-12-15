@@ -17,9 +17,9 @@
     entries:
     - label: corvax-hidden-desc-Emag-syndicate
       whitelistMind:
-        components:
-          - TraitorRole
-          - NukeOperative
+        mindRoles:
+        - TraitorRole
+        - NukeopsRole
     - label: corvax-hidden-desc-Emag-research
       jobRequired:
         - ResearchAssistant

@@ -57,15 +57,20 @@ namespace Content.Shared.Input
         public static readonly BoundKeyFunction ToggleFullscreen = "ToggleFullscreen";
         public static readonly BoundKeyFunction Point = "Point";
         public static readonly BoundKeyFunction OfferItem = "OfferItem"; // Corvax-Next-Offer
+        public static readonly BoundKeyFunction ToggleStanding = "ToggleStanding"; // CorvaxNext: Laying System standing
         public static readonly BoundKeyFunction ZoomOut = "ZoomOut";
         public static readonly BoundKeyFunction ZoomIn = "ZoomIn";
         public static readonly BoundKeyFunction ResetZoom = "ResetZoom";
-        public static readonly BoundKeyFunction TargetHead = "TargetHead"; // _CorvaxNext: surgery
-        public static readonly BoundKeyFunction TargetTorso = "TargetTorso"; // _CorvaxNext: surgery
-        public static readonly BoundKeyFunction TargetLeftArm = "TargetLeftArm"; // _CorvaxNext: surgery
-        public static readonly BoundKeyFunction TargetRightArm = "TargetRightArm"; // _CorvaxNext: surgery
-        public static readonly BoundKeyFunction TargetLeftLeg = "TargetLeftLeg"; // _CorvaxNext: surgery
-        public static readonly BoundKeyFunction TargetRightLeg = "TargetRightLeg"; // _CorvaxNext: surgery
+        public static readonly BoundKeyFunction TargetHead = "TargetHead"; // CorvaxNext: surgery
+        public static readonly BoundKeyFunction TargetTorso = "TargetTorso"; // CorvaxNext: surgery
+        public static readonly BoundKeyFunction TargetLeftArm = "TargetLeftArm"; // CorvaxNext: surgery
+        public static readonly BoundKeyFunction TargetLeftHand = "TargetLeftHand"; // CorvaxNext: surgery
+        public static readonly BoundKeyFunction TargetRightArm = "TargetRightArm"; // CorvaxNext: surgery
+        public static readonly BoundKeyFunction TargetRightHand = "TargetRightHand"; // CorvaxNext: surgery
+        public static readonly BoundKeyFunction TargetLeftLeg = "TargetLeftLeg"; // CorvaxNext: surgery
+        public static readonly BoundKeyFunction TargetLeftFoot = "TargetLeftFoot"; // CorvaxNext: surgery
+        public static readonly BoundKeyFunction TargetRightLeg = "TargetRightLeg"; // CorvaxNext: surgery
+        public static readonly BoundKeyFunction TargetRightFoot = "TargetRightFoot"; // CorvaxNext: surgery
 
         public static readonly BoundKeyFunction ArcadeUp = "ArcadeUp";
         public static readonly BoundKeyFunction ArcadeDown = "ArcadeDown";

@@ -1,3 +1,4 @@
+using Content.Shared.Body.Part; // CorvaxNext Change
 using Content.Shared.Damage;
 using Content.Shared.Movement.Systems;
 using Content.Shared.Standing;
@@ -42,7 +43,8 @@ public abstract partial class SharedBodySystem : EntitySystem
 
         InitializeBody();
         InitializeParts();
-        InitializeBkm(); // _CorvaxNext: surgery
+        InitializeBkm(); // CorvaxNext: surgery
+        InitializeOrgans(); // CorvaxNext: surgery
         // To try and mitigate the server load due to integrity checks, we set up a Job Queue.
         InitializePartAppearances();
     }

@@ -20,9 +20,13 @@ namespace Content.Client.Access.UI
         private readonly SpriteSystem _spriteSystem;
 
         private const int JobIconColumnCount = 10;
+		
+        private const int MaxNumberLength = 4; // Corvax-Next-PDAChat - Same as NewChatPopup
 
         public event Action<string>? OnNameChanged;
         public event Action<string>? OnJobChanged;
+		
+        public event Action<uint>? OnNumberChanged; // Corvax-Next-PDAChat - Add event for number changes
 
         public event Action<ProtoId<JobIconPrototype>>? OnJobIconChanged;
 
@@ -35,9 +39,42 @@ namespace Content.Client.Access.UI
             NameLineEdit.OnTextEntered += e => OnNameChanged?.Invoke(e.Text);
             NameLineEdit.OnFocusExit += e => OnNameChanged?.Invoke(e.Text);
 
+            // Corvax-Next-PDAChat-Start
             JobLineEdit.OnTextEntered += e => OnJobChanged?.Invoke(e.Text);
             JobLineEdit.OnFocusExit += e => OnJobChanged?.Invoke(e.Text);
+
+            // Corvax-Next-PDAChat - Add handlers for number changes
+            NumberLineEdit.OnTextEntered += OnNumberEntered;
+            NumberLineEdit.OnFocusExit += OnNumberEntered;
+
+            // Corvax-Next-PDAChat - Filter to only allow digits
+            NumberLineEdit.OnTextChanged += args =>
+            {
+                if (args.Text.Length > MaxNumberLength)
+                {
+                    NumberLineEdit.Text = args.Text[..MaxNumberLength];
+                }
+
+                // Filter to digits only
+                var newText = string.Concat(args.Text.Where(char.IsDigit));
+                if (newText != args.Text)
+                    NumberLineEdit.Text = newText;
+            };
         }
+
+        // Corvax-Next-PDAChat - Add number validation and event
+        private void OnNumberEntered(LineEdit.LineEditEventArgs args)
+        {
+            if (uint.TryParse(args.Text, out var number) && number > 0)
+                OnNumberChanged?.Invoke(number);
+        }
+
+        // Corvax-Next-PDAChat - Add setter for current number
+        public void SetCurrentNumber(uint? number)
+        {
+            NumberLineEdit.Text = number?.ToString("D4") ?? "";
+        }
+            // Corvax-Next-PDAChat-End
 
         public void SetAllowedIcons(string currentJobIconId)
         {

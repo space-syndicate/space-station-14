@@ -5,7 +5,7 @@
   description: Produces organs and other organic matter that can be surgically grafted onto patients with biomass.
   components:
   - type: Sprite
-    sprite: Structures/Machines/limbgrower.rsi
+    sprite: _CorvaxNext/Structures/Machines/limbgrower.rsi
     snapCardinals: true
     layers:
     - state: limbgrower_idleoff

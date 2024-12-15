@@ -16,8 +16,8 @@ public sealed class HealthAnalyzerScannedUserMessage : BoundUserInterfaceMessage
     public bool? ScanMode;
     public bool? Bleeding;
     public bool? Unrevivable;
-    public Dictionary<TargetBodyPart, TargetIntegrity>? Body; // _CorvaxNext: surgery
-    public NetEntity? Part; // _CorvaxNext: surgery
+    public Dictionary<TargetBodyPart, TargetIntegrity>? Body; // CorvaxNext: surgery
+    public NetEntity? Part; // CorvaxNext: surgery
 
     public HealthAnalyzerScannedUserMessage(NetEntity? targetEntity, float temperature, float bloodLevel, bool? scanMode, bool? bleeding, bool? unrevivable, Dictionary<TargetBodyPart, TargetIntegrity>? body, NetEntity? part = null)
     {
@@ -27,8 +27,8 @@ public sealed class HealthAnalyzerScannedUserMessage : BoundUserInterfaceMessage
         ScanMode = scanMode;
         Bleeding = bleeding;
         Unrevivable = unrevivable;
-        Body = body; // _CorvaxNext: surgery
-        Part = part; // _CorvaxNext: surgery
+        Body = body; // CorvaxNext: surgery
+        Part = part; // CorvaxNext: surgery
     }
 }
 

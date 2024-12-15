@@ -1,0 +1,11 @@
+- type: trait
+  id: Hushed
+  name: trait-hushed-name
+  description: trait-hushed-desc
+  category: SpeechTraits
+  cost: 1
+  blacklist:
+    components:
+    - BorgChassis
+  components:
+  - type: Hushed

@@ -1,0 +1,63 @@
+- type: entity
+  parent: BaseItem
+  id: SecWatchCartridge
+  name: sec watch cartridge
+  description: A cartridge that tracks the status of currently wanted individuals.
+  components:
+  - type: Sprite
+    sprite: _CorvaxNext/Objects/Devices/cartridge.rsi
+    state: cart-cri
+  - type: Icon
+    sprite: _CorvaxNext/Objects/Devices/cartridge.rsi
+    state: cart-cri
+  - type: UIFragment
+    ui: !type:SecWatchUi
+  - type: Cartridge
+    programName: sec-watch-program-name
+    icon:
+      sprite: Objects/Weapons/Melee/stunbaton.rsi
+      state: stunbaton_on
+  - type: SecWatchCartridge
+
+- type: entity
+  parent: BaseItem
+  id: NanoChatCartridge
+  name: NanoChat cartridge
+  description: Lets you message other people!
+  components:
+  - type: Sprite
+    sprite: _CorvaxNext/Objects/Devices/cartridge.rsi
+    state: cart-chat
+  - type: UIFragment
+    ui: !type:NanoChatUi
+  - type: NanoChatCartridge
+  - type: Cartridge
+    programName: nano-chat-program-name
+    icon:
+      sprite: _CorvaxNext/Misc/program_icons.rsi
+      state: nanochat
+  - type: ActiveRadio
+    channels:
+    - Common
+
+- type: entity
+  parent: BaseItem
+  id: CrimeAssistCartridge
+  name: crime assist cartridge
+  description: A cartridge that helps identify crimes and see appropriate punishment.
+  components:
+  - type: Sprite
+    sprite: _CorvaxNext/Objects/Devices/cartridge.rsi
+    state: cart-cri
+  - type: Icon
+    sprite: _CorvaxNext/Objects/Devices/cartridge.rsi
+    state: cart-cri
+  - type: UIFragment
+    ui: !type:CrimeAssistUi
+  - type: Cartridge
+    programName: crime-assist-program-name
+    icon:
+      sprite: _CorvaxNext/Icons/cri.rsi
+      state: cri
+  - type: CrimeAssistCartridge
+

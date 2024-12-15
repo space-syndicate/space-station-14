@@ -43,6 +43,19 @@
       Steel: 100
   - type: StaticPrice
     price: 30
+  - type: Retractor # _CorvaxNext
+    speed: 0.35
+  - type: Hemostat # _CorvaxNext
+    speed: 0.6
+  - type: SurgeryTool # _CorvaxNext
+    startSound:
+      path: /Audio/Items/wirecutter.ogg
+      params:
+        variation: 0.125
+    endSound:
+      path: /Audio/Items/wirecutter.ogg
+      params:
+        variation: 0.125
 
 - type: entity
   name: screwdriver
@@ -87,6 +100,15 @@
       Steel: 100
   - type: StaticPrice
     price: 30
+  - type: Retractor # _CorvaxNext
+    speed: 0.45
+  - type: Tending # _CorvaxNext
+    speed: 0.65
+  - type: SurgeryTool # _CorvaxNext
+    startSound:
+      collection: Screwdriver
+    endSound:
+      path: /Audio/_CorvaxNext/Medical/Surgery/retractor2.ogg
 
 - type: entity
   name: wrench

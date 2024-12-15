@@ -1,4 +1,5 @@
 using Content.Server.Access;
+using Content.Server.Forensics; // Corvax-Next-DoorForensics
 using Content.Server.Atmos.Components;
 using Content.Server.Atmos.EntitySystems;
 using Content.Shared.Doors.Components;
@@ -11,6 +12,7 @@ namespace Content.Server.Doors.Systems;
 public sealed class DoorSystem : SharedDoorSystem
 {
     [Dependency] private readonly AirtightSystem _airtightSystem = default!;
+    [Dependency] private readonly ForensicsSystem _forensicsSystem = default!; // Corvax-Next-DoorForensics
 
     public override void Initialize()
     {
@@ -50,4 +52,22 @@ public sealed class DoorSystem : SharedDoorSystem
         Dirty(ent, ent.Comp);
         UpdateBoltLightStatus(ent);
     }
+	
+	// Corvax-Next-DoorForensics-Start
+    public override void StartOpening(EntityUid uid, DoorComponent? door = null, EntityUid? user = null, bool predicted = false)
+    {
+        base.StartOpening(uid, door, user, predicted);
+
+        if (user.HasValue)
+            _forensicsSystem.ApplyEvidence(user.Value, uid);
+    }
+
+    public override void StartClosing(EntityUid uid, DoorComponent? door = null, EntityUid? user = null, bool predicted = false)
+    {
+        base.StartClosing(uid, door, user, predicted);
+
+        if (user.HasValue)
+            _forensicsSystem.ApplyEvidence(user.Value, uid);
+    }
+	// Corvax-Next-DoorForensics-End
 }

@@ -19,6 +19,8 @@ using Robust.Shared.Audio.Systems;
 using Robust.Shared.Physics.Components;
 using Robust.Shared.Physics.Events;
 using Robust.Shared.Physics.Systems;
+using Content.Shared._CorvaxNext.Standing;
+using Content.Shared.Movement.Components;
 
 namespace Content.Shared.Stunnable;
 
@@ -32,6 +34,7 @@ public abstract class SharedStunSystem : EntitySystem
     [Dependency] private readonly EntityWhitelistSystem _entityWhitelist = default!;
     [Dependency] private readonly StandingStateSystem _standingState = default!;
     [Dependency] private readonly StatusEffectsSystem _statusEffect = default!;
+    [Dependency] private readonly SharedLayingDownSystem _layingDown = default!; // Ataraxia EDIT
 
     /// <summary>
     /// Friction modifier for knocked down players.
@@ -137,11 +140,31 @@ public abstract class SharedStunSystem : EntitySystem
     private void OnKnockInit(EntityUid uid, KnockedDownComponent component, ComponentInit args)
     {
         _standingState.Down(uid);
+        // start-_CorvaxNext: Laying System
+        if (TryComp<LayingDownComponent>(uid, out var layingDownComponent))
+        {
+            _layingDown.TryProcessAutoGetUp((uid, layingDownComponent));
+            _layingDown.TryLieDown(uid, layingDownComponent, null, DropHeldItemsBehavior.DropIfStanding); // Ataraxia EDIT
+        }
+        // end-_CorvaxNext: Laying System
+
     }
+
 
     private void OnKnockShutdown(EntityUid uid, KnockedDownComponent component, ComponentShutdown args)
     {
-        _standingState.Stand(uid);
+        // start-_CorvaxNext: Laying System
+        if (!TryComp(uid, out StandingStateComponent? standing))
+            return;
+
+        if (TryComp(uid, out LayingDownComponent? layingDown))
+        {
+            _layingDown.TryProcessAutoGetUp((uid, layingDown));
+            return;
+        }
+
+        _standingState.Stand(uid, standing);
+        // end-_CorvaxNext: Laying System
     }
 
     private void OnStandAttempt(EntityUid uid, KnockedDownComponent component, StandAttemptEvent args)

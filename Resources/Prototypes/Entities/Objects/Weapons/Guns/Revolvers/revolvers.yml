@@ -29,6 +29,7 @@
     - SemiAuto
     soundGunshot:
       path: /Audio/Weapons/Guns/Gunshots/revolver.ogg
+    fireOnDropChance: 0.6 # Corvax-Next-FireOnDrop
   - type: UseDelay
     delay: 0.66
   - type: ContainerContainer

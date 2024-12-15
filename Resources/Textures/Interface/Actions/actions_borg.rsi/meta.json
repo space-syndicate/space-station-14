@@ -48,7 +48,7 @@
         },
         {
             "name":"light-replacer-module"
-        }, 
+        },
         {
             "name":"cleaning-module"
         },
@@ -60,6 +60,12 @@
         },
         {
             "name":"treatment-module"
+        },
+        {
+            "name":"surgery-module"
+        },
+        {
+            "name":"adv-surgery-module"
         },
         {
             "name":"adv-diagnosis-module"
@@ -102,6 +108,9 @@
         },
         {
             "name":"syndicate-martyr-module"
+        },
+        {
+            "name": "select-type"
         }
     ]
 }

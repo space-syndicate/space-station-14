@@ -49,6 +49,13 @@
     stealGroup: FireAxe
   - type: IgniteOnMeleeHit
     fireStacks: -4
+  - type: Scalpel # _CorvaxNext: surgery
+    speed: 0.3
+  - type: BoneSaw # _CorvaxNext: surgery
+    speed: 0.5
+  - type: SurgeryTool # _CorvaxNext: surgery
+    startSound:
+      path: /Audio/_CorvaxNext/Medical/Surgery/saw.ogg
 
 - type: entity
   id: FireAxeFlaming
@@ -73,9 +80,9 @@
     entries:
     - label: corvax-hidden-desc-FireAxeFlaming-syndicate
       whitelistMind:
-        components:
-          - TraitorRole
-          - NukeOperative
+        mindRoles:
+        - TraitorRole
+        - NukeopsRole
     - label: corvax-hidden-desc-FireAxeFlaming-research
       jobRequired:
         - ResearchAssistant

@@ -1,0 +1,65 @@
+# Personal Laws
+
+# Code 212
+- type: crimeAssistPage
+  id: "resultPersonMinorBodilyHarm"
+  locKeyTitle: "crime-assist-crime-person-minor-bodily-harm"
+  locKeyDescription: "crime-assist-crime-detail-person-minor-bodily-harm"
+  locKeySeverity: "crime-assist-crime-type-personal"
+  locKeyPunishment: "crime-assist-crime-punishment-person-minor-bodily-harm"
+
+# Codse 213
+- type: crimeAssistPage
+  id: "resultPersonModerateBodilyHarm"
+  locKeyTitle: "crime-assist-crime-person-moderate-bodily-harm"
+  locKeyDescription: "crime-assist-crime-detail-person-moderate-bodily-harm"
+  locKeySeverity: "crime-assist-crime-type-personal"
+  locKeyPunishment: "crime-assist-crime-punishment-person-moderate-bodily-harm"
+
+# Code 214
+- type: crimeAssistPage
+  id: "resultPersonSevereBodilyHarm"
+  locKeyTitle: "crime-assist-crime-person-severe-bodily-harm"
+  locKeyDescription: "crime-assist-crime-detail-person-severe-bodily-harm"
+  locKeySeverity: "crime-assist-crime-type-personal"
+  locKeyPunishment: "crime-assist-crime-punishment-person-severe-bodily-harm"
+
+# Code 215
+- type: crimeAssistPage
+  id: "resultPersonMurder"
+  locKeyTitle: "crime-assist-crime-person-murder"
+  locKeyDescription: "crime-assist-crime-detail-person-murder"
+  locKeySeverity: "crime-assist-crime-type-personal"
+  locKeyPunishment: "crime-assist-crime-punishment-person-murder"
+
+# Code 216
+- type: crimeAssistPage
+  id: "resultPersonBodyDestruction"
+  locKeyTitle: "crime-assist-crime-person-body-destruction"
+  locKeyDescription: "crime-assist-crime-detail-person-body-destruction"
+  locKeySeverity: "crime-assist-crime-type-personal"
+  locKeyPunishment: "crime-assist-crime-punishment-person-body-destruction"
+
+# Code 221
+- type: crimeAssistPage
+  id: "resultPersonInsultSlurs"
+  locKeyTitle: "crime-assist-crime-person-insult-slurs"
+  locKeyDescription: "crime-assist-crime-detail-person-insult-slurs"
+  locKeySeverity: "crime-assist-crime-type-personal"
+  locKeyPunishment: "crime-assist-crime-punishment-person-insult-slurs"
+
+# Code 223
+- type: crimeAssistPage
+  id: "resultPersonPerjury"
+  locKeyTitle: "crime-assist-crime-person-perjury"
+  locKeyDescription: "crime-assist-crime-detail-person-perjury"
+  locKeySeverity: "crime-assist-crime-type-personal"
+  locKeyPunishment: "crime-assist-crime-punishment-person-perjury"
+
+# Code 224
+- type: crimeAssistPage
+  id: "resultPersonUnlawfulRestraint"
+  locKeyTitle: "crime-assist-crime-person-unlawful-restraint"
+  locKeyDescription: "crime-assist-crime-detail-person-unlawful-restraint"
+  locKeySeverity: "crime-assist-crime-type-personal"
+  locKeyPunishment: "crime-assist-crime-punishment-person-unlawful-restraint"

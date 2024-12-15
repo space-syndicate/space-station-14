@@ -1,3 +1,5 @@
+# Im not even gonna bother marking this file with _CorvaxNext Change(s), I'm fucking with almost everything.
+
 # Base
 
 - type: entity
@@ -8,9 +10,9 @@
   - type: Sprite
   - type: StaticPrice
     price: 20
-#  - type: Tag
-#    tags:
-#    - SurgeryTool
+  - type: Tag # _CorvaxNext: surgery
+    tags: # _CorvaxNext: surgery
+    - SurgeryTool # _CorvaxNext: surgery
   - type: SurgeryTool # _CorvaxNext: surgery
 
 # Cautery
@@ -22,10 +24,10 @@
   description: A surgical tool used to cauterize open wounds.
   components:
   - type: Sprite
-    sprite: Objects/Specific/Medical/Surgery/cautery.rsi
+    sprite: _CorvaxNext/Objects/Specific/Medical/Surgery/cautery.rsi
     state: cautery
   - type: Item
-    sprite: Objects/Specific/Medical/Surgery/cautery.rsi
+    sprite: _CorvaxNext/Objects/Specific/Medical/Surgery/cautery.rsi
     storedRotation: 90
   - type: MeleeWeapon
     damage:
@@ -40,6 +42,10 @@
     endSound:
       path: /Audio/Medical/Surgery/cautery2.ogg
   - type: Cautery
+  - type: Tag
+    tags:
+    - SurgeryTool
+    - Cautery
   # end-_CorvaxNext: surgery
 
 # Drill
@@ -51,10 +57,10 @@
   description: A surgical drill for making holes into hard material.
   components:
   - type: Sprite
-    sprite: Objects/Specific/Medical/Surgery/drill.rsi
+    sprite: _CorvaxNext/Objects/Specific/Medical/Surgery/drill.rsi
     state: drill
   - type: Item
-    sprite: Objects/Specific/Medical/Surgery/drill.rsi
+    sprite: _CorvaxNext/Objects/Specific/Medical/Surgery/drill.rsi
     shape:
     - 0,0,1,0
     - 1,1,1,1
@@ -69,8 +75,12 @@
   # start-_CorvaxNext: surgery
   - type: SurgeryTool
     startSound:
-      path: /Audio/Medical/Surgery/saw.ogg
-  - type: SurgicalDrill
+      path: /Audio/_CorvaxNext/Medical/Surgery/saw.ogg
+  - type: Drill
+  - type: Tag
+    tags:
+    - SurgeryTool
+    - Drill
   # end-_CorvaxNext: surgery
 
 # Scalpel
@@ -91,10 +101,10 @@
     types:
       - Knife
   - type: Sprite
-    sprite: Objects/Specific/Medical/Surgery/scalpel.rsi
+    sprite: _CorvaxNext/Objects/Specific/Medical/Surgery/scalpel.rsi
     state: scalpel
   - type: Item
-    sprite: Objects/Specific/Medical/Surgery/scalpel.rsi
+    sprite: _CorvaxNext/Objects/Specific/Medical/Surgery/scalpel.rsi
     storedRotation: 90
   - type: MeleeWeapon
     wideAnimationRotation: 90
@@ -112,6 +122,10 @@
     endSound:
       path: /Audio/Medical/Surgery/scalpel2.ogg
   - type: Scalpel
+  - type: Tag
+    tags:
+    - SurgeryTool
+    - Scalpel
   # end-_CorvaxNext: surgery
 
 
@@ -122,8 +136,11 @@
   description: A pointy piece of glass, abraded to an edge and wrapped in tape for a handle. # Could become a decent tool or weapon with right tool mods.
   components:
   - type: Sprite
+    sprite: Objects/Specific/Medical/Surgery/scalpel.rsi
     state: shiv
   - type: Item
+    sprite: Objects/Specific/Medical/Surgery/scalpel.rsi
+    storedRotation: 90
     heldPrefix: shiv
 
 - type: entity
@@ -133,13 +150,18 @@
   description: Made of more expensive materials, sharper and generally more reliable.
   components:
   - type: Sprite
+    sprite: Objects/Specific/Medical/Surgery/scalpel.rsi
     state: advanced
   - type: Item
+    sprite: Objects/Specific/Medical/Surgery/scalpel.rsi
+    storedRotation: 90
     heldPrefix: advanced
   - type: MeleeWeapon
     damage:
       types:
         Slash: 12
+  - type: Scalpel # _CorvaxNext
+    speed: 1.25
 
 - type: entity
   name: laser scalpel
@@ -148,11 +170,23 @@
   description: A scalpel which uses a directed laser to slice instead of a blade, for more precise surgery while also cauterizing as it cuts.
   components:
   - type: Sprite
+    sprite: Objects/Specific/Medical/Surgery/scalpel.rsi
     state: laser
   - type: Item
+    sprite: Objects/Specific/Medical/Surgery/scalpel.rsi
+    storedRotation: 90
     heldPrefix: laser
+  # start-_CorvaxNext: surgery
+  - type: Scalpel
+    speed: 1.5
+  - type: Tag
+    tags:
+    - SurgeryTool
+    - ScalpelLaser
+  # end-_CorvaxNext: surgery
+  # TODO: prevent bleeding from incisions
 
-# Scissors
+# Retractor
 
 - type: entity
   name: retractor
@@ -161,10 +195,10 @@
   description: A surgical tool used to hold open incisions.
   components:
   - type: Sprite
-    sprite: Objects/Specific/Medical/Surgery/scissors.rsi
+    sprite: _CorvaxNext/Objects/Specific/Medical/Surgery/retractor.rsi
     state: retractor
   - type: Item
-    sprite: Objects/Specific/Medical/Surgery/scissors.rsi
+    sprite: _CorvaxNext/Objects/Specific/Medical/Surgery/retractor.rsi
     storedRotation: 90
   # start-_CorvaxNext: surgery
   - type: SurgeryTool
@@ -173,7 +207,13 @@
     endSound:
       path: /Audio/Medical/Surgery/retractor2.ogg
   - type: Retractor
+  - type: Tag
+    tags:
+    - SurgeryTool
+    - Retractor
   # end-_CorvaxNext: surgery
+
+# Hemostat
 
 - type: entity
   name: hemostat
@@ -182,11 +222,11 @@
   description: A surgical tool used to compress blood vessels to prevent bleeding.
   components:
   - type: Sprite
-    sprite: Objects/Specific/Medical/Surgery/scissors.rsi
+    sprite: _CorvaxNext/Objects/Specific/Medical/Surgery/hemostat.rsi # _CorvaxNext Change
     state: hemostat
   - type: Item
     heldPrefix: hemostat
-    sprite: Objects/Specific/Medical/Surgery/scissors.rsi
+    sprite: _CorvaxNext/Objects/Specific/Medical/Surgery/hemostat.rsi # _CorvaxNext Change
     storedRotation: 90
   # start-_CorvaxNext: surgery
   - type: SurgeryTool
@@ -195,6 +235,12 @@
     endSound:
       path: /Audio/Medical/Surgery/hemostat1.ogg
   - type: Hemostat
+  - type: Tweezers
+  - type: Tending
+  - type: Tag
+    tags:
+    - SurgeryTool
+    - Hemostat
   # end-_CorvaxNext: surgery
 
 # Bone setter
@@ -219,7 +265,7 @@
   description: A container for bone gel that often needs to be refilled from a specialized machine.
   components:
   - type: Sprite
-    sprite: Objects/Specific/Medical/Surgery/bone_gel.rsi
+    sprite: _CorvaxNext/Objects/Specific/Medical/Surgery/bone-gel.rsi
     state: bone-gel
   - type: BoneGel
 
@@ -283,6 +329,7 @@
       - Sawing
     speedModifier: 0.5
   - type: BoneSaw
+    speed: 0.5
   # end-_CorvaxNext: surgery
 
 - type: entity
@@ -292,9 +339,11 @@
   description: For heavy duty cutting.
   components:
   - type: Sprite
-    state: electric
+    sprite: _CorvaxNext/Objects/Specific/Medical/Surgery/circular-saw.rsi
+    state: circular-saw
   - type: Item
-    heldPrefix: electric
+    size: Normal
+    sprite: _CorvaxNext/Objects/Specific/Medical/Surgery/circular-saw.rsi
   - type: MeleeWeapon
     damage:
       groups:
@@ -306,10 +355,12 @@
     qualities:
       - Sawing
     speedModifier: 1.5
-  - type: SurgeryTool
-    startSound:
-      path: /Audio/Medical/Surgery/saw.ogg
   - type: BoneSaw
+    speed: 1.5
+  - type: Tag
+    tags:
+    - SurgeryTool
+    - SawElectric
   # end-_CorvaxNext: surgery
 
 - type: entity
@@ -319,15 +370,165 @@
   description: You think you can cut anything with it.
   components:
   - type: Sprite
+    sprite: Objects/Specific/Medical/Surgery/saw.rsi
     state: advanced
   - type: Item
+    size: Normal
+    sprite: Objects/Specific/Medical/Surgery/saw.rsi
+    storedRotation: 90
     heldPrefix: advanced
   - type: MeleeWeapon
     attackRate: 1.5
-  # start-_CorvaxNext: surgery
+# start-_CorvaxNext: surgery
   - type: Tool
     qualities:
       - Sawing
     speedModifier: 2.0
+  - type: BoneSaw # _CorvaxNext
+    speed: 2
+
+# _CorvaxNext Tools
+
+- type: entity
+  name: searing tool
+  id: EnergyCautery
+  parent: Cautery
+  description: A cautery with an energy tip, also serves as a drill in its powered state.
+  components:
+  - type: Sprite
+    sprite: _CorvaxNext/Objects/Specific/Medical/Surgery/e-cautery.rsi
+    state: e-cautery-on
+  - type: Item
+    sprite: _CorvaxNext/Objects/Specific/Medical/Surgery/e-cautery.rsi
+    inhandVisuals:
+      left:
+      - state: inhand-left-on
+      right:
+      - state: inhand-right-on
+  - type: SurgeryTool
+    startSound:
+      path: /Audio/_CorvaxNext/Medical/Surgery/cautery1.ogg
+    endSound:
+      path: /Audio/_CorvaxNext/Medical/Surgery/cautery2.ogg
+  - type: MeleeWeapon
+    damage:
+      types:
+        Piercing: 10
+        Heat: 1
+  - type: Cautery
+    speed: 1.5
+  - type: Drill
+    speed: 1.5
+  - type: Tag
+    tags:
+    - SurgeryTool
+    - EnergyCautery
+
+- type: entity
+  name: energy scalpel
+  id: EnergyScalpel
+  parent: Scalpel
+  description: A scalpel which uses an energy blade, also serves as a saw in its powered state.
+  components:
+  - type: Sprite
+    sprite: _CorvaxNext/Objects/Specific/Medical/Surgery/e-scalpel.rsi
+    state: e-scalpel-on
+  - type: Item
+    sprite: _CorvaxNext/Objects/Specific/Medical/Surgery/e-scalpel.rsi
+    inhandVisuals:
+      left:
+      - state: inhand-left-on
+      right:
+      - state: inhand-right-on
+  - type: SurgeryTool
+    startSound:
+      path: /Audio/_CorvaxNext/Medical/Surgery/scalpel1.ogg
+    endSound:
+      path: /Audio/_CorvaxNext/Medical/Surgery/scalpel2.ogg
+  - type: MeleeWeapon
+    damage:
+      types:
+        Slash: 10
+        Heat: 1
+  - type: Scalpel
+    speed: 1.5
   - type: BoneSaw
-  # end-_CorvaxNext: surgery
+    speed: 1.5
+  - type: Tag
+    tags:
+    - SurgeryTool
+    - EnergyScalpel
+
+- type: entity
+  name: mechanical pinches
+  id: AdvancedRetractor
+  parent: Retractor
+  description: A retractor with mechanical pinches, also serves as a hemostat in its powered state.
+  components:
+  - type: Sprite
+    sprite: _CorvaxNext/Objects/Specific/Medical/Surgery/adv-retractor.rsi
+    state: adv-retractor-on
+  - type: Item
+    sprite: _CorvaxNext/Objects/Specific/Medical/Surgery/adv-retractor.rsi
+    inhandVisuals:
+      left:
+      - state: inhand-left-on
+      right:
+      - state: inhand-right-on
+  - type: SurgeryTool
+    startSound:
+      path: /Audio/_CorvaxNext/Medical/Surgery/retractor1.ogg
+    endSound:
+      path: /Audio/_CorvaxNext/Medical/Surgery/retractor2.ogg
+  - type: MeleeWeapon
+    damage:
+      types:
+        Slash: 6.5
+        Heat: 1
+  - type: Hemostat
+    speed: 1.5
+  - type: Retractor
+    speed: 1.5
+  - type: Tweezers
+    speed: 1.5
+  - type: Tending
+    speed: 1.5
+  - type: Tag
+    tags:
+    - SurgeryTool
+    - AdvancedRetractor
+
+- type: entity
+  name: medical multitool
+  id: OmnimedTool
+  parent: BaseToolSurgery
+  components:
+  - type: Sprite
+    sprite: _CorvaxNext/Objects/Specific/Medical/Surgery/omnimed.rsi
+    state: omnimed
+  - type: Item
+    sprite: _CorvaxNext/Objects/Specific/Medical/Surgery/omnimed.rsi
+  - type: SurgeryTool
+    startSound:
+      path: /Audio/_CorvaxNext/Medical/Surgery/saw.ogg
+  - type: Hemostat
+    speed: 2
+  - type: Scalpel
+    speed: 2
+  - type: Drill
+    speed: 2
+  - type: BoneSetter
+    speed: 2
+  - type: Retractor
+    speed: 2
+  - type: Cautery
+    speed: 2
+  - type: BoneGel
+    speed: 2
+  - type: BoneSaw
+    speed: 2
+  - type: Tweezers
+    speed: 2
+  - type: Tending
+    speed: 2
+# end-_CorvaxNext: surgery

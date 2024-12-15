@@ -1,4 +1,14 @@
-﻿# _CorvaxNext: surgery
+- type: damageModifierSet
+  id: Resomi # because they are weak in everything, but they are good against the cold
+  coefficients:
+    Cold: 0.6
+    Heat: 1.3
+    Blunt: 1.3
+    Slash: 1.3
+    Piercing: 1.3
+    Shock: 1.3
+
+# _CorvaxNext: surgery
 # Change this if you want to alter how damage types affect part severing/integrity.
 - type: damageModifierSet
   id: PartDamage

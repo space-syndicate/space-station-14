@@ -47,28 +47,28 @@ namespace Content.Shared.Humanoid
                     yield return HumanoidVisualLayers.LArm;
                     yield return HumanoidVisualLayers.LHand;
                     break;
-                case HumanoidVisualLayers.LHand: // _CorvaxNext: surgery
+                case HumanoidVisualLayers.LHand: // CorvaxNext: surgery
                     yield return HumanoidVisualLayers.LHand;
                     break;
                 case HumanoidVisualLayers.RArm:
                     yield return HumanoidVisualLayers.RArm;
                     yield return HumanoidVisualLayers.RHand;
                     break;
-                case HumanoidVisualLayers.RHand: // _CorvaxNext: surgery
+                case HumanoidVisualLayers.RHand: // CorvaxNext: surgery
                     yield return HumanoidVisualLayers.RHand;
                     break;
                 case HumanoidVisualLayers.LLeg:
                     yield return HumanoidVisualLayers.LLeg;
                     yield return HumanoidVisualLayers.LFoot;
                     break;
-                case HumanoidVisualLayers.LFoot: // _CorvaxNext: surgery
+                case HumanoidVisualLayers.LFoot: // CorvaxNext: surgery
                     yield return HumanoidVisualLayers.LFoot;
                     break;
                 case HumanoidVisualLayers.RLeg:
                     yield return HumanoidVisualLayers.RLeg;
                     yield return HumanoidVisualLayers.RFoot;
                     break;
-                case HumanoidVisualLayers.RFoot: // _CorvaxNext: surgery
+                case HumanoidVisualLayers.RFoot: // CorvaxNext: surgery
                     yield return HumanoidVisualLayers.RFoot;
                     break;
                 case HumanoidVisualLayers.Chest:

@@ -34,6 +34,7 @@
   - type: Footprint
   - type: Puddle
     solution: step
+    viscosityAffectsMovement: false
   - type: Appearance
   - type: ExaminableSolution
     solution: step

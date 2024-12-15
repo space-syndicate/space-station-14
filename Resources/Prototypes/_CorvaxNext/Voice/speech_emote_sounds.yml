@@ -1,0 +1,64 @@
+- type: emoteSounds
+  id: MaleResomi
+  params:
+    variation: 0.125
+  sounds:
+    Scream:
+      path: /Audio/_CorvaxNext/Voice/Resomi/resomi_scream.ogg
+    Laugh:
+      path: /Audio/_CorvaxNext/Voice/Resomi/resomi_laught.ogg
+    Sneeze:
+      path: /Audio/_CorvaxNext/Voice/Resomi/resomi_sneeze.ogg
+    Cough:
+      path: /Audio/_CorvaxNext/Voice/Resomi/resomi_sneeze.ogg
+    Honk:
+      collection: BikeHorn
+    Whistle:
+      collection: Whistles
+    Crying:
+      collection: MaleCry
+    Weh:
+      collection: Weh
+    Gasp:
+      collection: MaleGasp
+    DefaultDeathgasp:
+      collection: DeathGasp
+    Yawn:
+      collection: MaleYawn
+    Snore:
+      collection: Snores
+    Sigh:
+      collection: MaleSigh
+
+- type: emoteSounds
+  id: FemaleResomi
+  params:
+    variation: 0.125
+  sounds:
+    Scream:
+      path: /Audio/_CorvaxNext/Voice/Resomi/resomi_scream.ogg
+    Laugh:
+      path: /Audio/_CorvaxNext/Voice/Resomi/resomi_laught.ogg
+    Sneeze:
+      path: /Audio/_CorvaxNext/Voice/Resomi/resomi_sneeze.ogg
+    Cough:
+      path: /Audio/_CorvaxNext/Voice/Resomi/resomi_cough.ogg
+    Honk:
+      collection: BikeHorn
+    Whistle:
+      collection: Whistles
+    Crying:
+      collection: FemaleCry
+    Weh:
+      collection: Weh
+    Gasp:
+      collection: FemaleGasp
+    DefaultDeathgasp:
+      collection: DeathGasp
+    Yawn:
+      collection: FemaleYawn
+    Snore:
+      collection: Snores
+    Sigh:
+      collection: FemaleSigh
+

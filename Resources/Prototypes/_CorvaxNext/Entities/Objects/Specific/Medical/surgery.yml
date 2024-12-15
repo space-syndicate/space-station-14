@@ -1,76 +1,14 @@
-# ORGANS
-
 - type: entity
-  parent: OrganHumanHeart
-  id: BioSynthHeart
-  name: bio-synthetic heart
-  description: This heart can be transplanted into any living organism and it will adapt to its recipient.
-
-- type: entity
-  parent: OrganHumanLiver
-  id: BioSynthLiver
-  name: bio-synthetic liver
-  description: This liver can be transplanted into any living organism and it will adapt to its recipient.
-
-- type: entity
-  parent: OrganHumanLungs
-  id: BioSynthLungs
-  name: bio-synthetic lungs
-  description: These lungs can be transplanted into any living organism and it will adapt to its recipient.
-
-- type: entity
-  parent: OrganHumanEyes
-  id: BioSynthEyes
-  name: bio-synthetic eyes
-  description: These eyes can be transplanted into any living organism and it will adapt to its recipient.
-
-
-# PARTS
-
-- type: entity
-  parent: LeftArmHuman
-  id: BioSynthLeftArm
-  name: bio-synthetic left arm
-  description: This left arm can be transplanted into any living organism and it will adapt to its recipient.
-
-- type: entity
-  parent: RightArmHuman
-  id: BioSynthRightArm
-  name: bio-synthetic right arm
-  description: This right arm can be transplanted into any living organism and it will adapt to its recipient.
-
-- type: entity
-  parent: LeftHandHuman
-  id: BioSynthLeftHand
-  name: bio-synthetic left hand
-  description: This left hand can be transplanted into any living organism and it will adapt to its recipient.
-
-- type: entity
-  parent: RightHandHuman
-  id: BioSynthRightHand
-  name: bio-synthetic right hand
-  description: This right hand can be transplanted into any living organism and it will adapt to its recipient.
-
-- type: entity
-  parent: LeftLegHuman
-  id: BioSynthLeftLeg
-  name: bio-synthetic left leg
-  description: This left leg can be transplanted into any living organism and it will adapt to its recipient.
-
-- type: entity
-  parent: RightLegHuman
-  id: BioSynthRightLeg
-  name: bio-synthetic right leg
-  description: This right leg can be transplanted into any living organism and it will adapt to its recipient.
-
-- type: entity
-  parent: LeftFootHuman
-  id: BioSynthLeftFoot
-  name: bio-synthetic left foot
-  description: This left foot can be transplanted into any living organism and it will adapt to its recipient.
-
-- type: entity
-  parent: RightFootHuman
-  id: BioSynthRightFoot
-  name: bio-synthetic right foot
-  description: This right foot can be transplanted into any living organism and it will adapt to its recipient.
+  name: скальпель
+  id: ScalpelCool
+  parent: BaseKnife
+  description: Хирургический инструмент, используемый для выполнения надрезов в плоти.
+  components:
+  - type: Tag
+    tags:
+    - Knife
+  - type: Sprite
+    sprite: Objects/Specific/Medical/Surgery/scalpel.rsi
+    state: scalpel
+  - type: Item
+    sprite: Objects/Specific/Medical/Surgery/scalpel.rsi

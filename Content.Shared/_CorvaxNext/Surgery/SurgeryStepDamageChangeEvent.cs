@@ -1,6 +1,6 @@
 using Content.Shared.Damage;
 
-namespace Content.Shared.Medical.Surgery;
+namespace Content.Shared._CorvaxNext.Surgery;
 
 /// <summary>
 ///     Raised on the target entity.

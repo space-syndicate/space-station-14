@@ -8,6 +8,7 @@ using Robust.Shared.Map;
 using Robust.Shared.Random;
 using Content.Shared._CorvaxNext.Footprints;
 using Content.Shared._CorvaxNext.Footprints.Components;
+using Content.Shared._CorvaxNext.Standing;
 
 namespace Content.Server._CorvaxNext.Footprints.EntitySystems;
 
@@ -24,12 +25,14 @@ public sealed class FootprintsSystem : EntitySystem
     private EntityQuery<TransformComponent> _transformQuery;
     private EntityQuery<MobThresholdsComponent> _mobThresholdQuery;
     private EntityQuery<AppearanceComponent> _appearanceQuery;
+    private EntityQuery<LayingDownComponent> _layingQuery;
 
     public override void Initialize()
     {
         _transformQuery = GetEntityQuery<TransformComponent>();
         _mobThresholdQuery = GetEntityQuery<MobThresholdsComponent>();
         _appearanceQuery = GetEntityQuery<AppearanceComponent>();
+        _layingQuery = GetEntityQuery<LayingDownComponent>();
 
         SubscribeLocalEvent<FootprintVisualizerComponent, ComponentStartup>(OnStartupComponent);
         SubscribeLocalEvent<FootprintVisualizerComponent, MoveEvent>(OnMove);
@@ -54,7 +57,7 @@ public sealed class FootprintsSystem : EntitySystem
         if (!_map.TryFindGridAt(_transform.GetMapCoordinates((uid, transform)), out var gridUid, out _))
             return;
 
-        var dragging = mobThreshHolds.CurrentThresholdState is MobState.Critical or MobState.Dead;
+        var dragging = mobThreshHolds.CurrentThresholdState is MobState.Critical or MobState.Dead || _layingQuery.TryComp(uid, out var laying) && laying.DrawDowned;
         var distance = (transform.LocalPosition - component.StepPos).Length();
         var stepSize = dragging ? component.DragSize : component.StepSize;
 
@@ -94,7 +97,7 @@ public sealed class FootprintsSystem : EntitySystem
         if (string.IsNullOrWhiteSpace(component.ReagentToTransfer) || solution.Volume >= 1)
             return;
 
-        _solution.TryAddReagent(footPrintComponent.Solution.Value, component.ReagentToTransfer, 1, out _);
+        _solution.TryAddReagent(footPrintComponent.Solution.Value, component.ReagentToTransfer, 0.5, out _);
     }
 
     private EntityCoordinates CalcCoords(EntityUid uid, FootprintVisualizerComponent component, TransformComponent transform, bool state)

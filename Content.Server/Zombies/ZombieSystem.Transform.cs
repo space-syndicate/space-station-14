@@ -189,7 +189,7 @@ public sealed partial class ZombieSystem
             // Humanoid zombie now deals stamina damage! ye.
             AddComp<StaminaDamageOnHitComponent>(target);
             var staminDamage = EnsureComp<StaminaDamageOnHitComponent>(target);
-            staminDamage.Damage = 25f;
+            staminDamage.Damage = 15f;
 
             Dirty(target, staminDamage);
 

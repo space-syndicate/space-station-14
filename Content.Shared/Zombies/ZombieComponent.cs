@@ -27,10 +27,10 @@ public sealed partial class ZombieComponent : Component
     /// being invincible by bundling up.
     /// </summary>
     [ViewVariables(VVAccess.ReadWrite)]
-    public float MinZombieInfectionChance = 0.40f;
+    public float MinZombieInfectionChance = 0.30f;
 
     [ViewVariables(VVAccess.ReadWrite)]
-    public float ZombieMovementSpeedDebuff = 0.80f;
+    public float ZombieMovementSpeedDebuff = 0.75f;
 
     /// <summary>
     /// The skin color of the zombie
@@ -99,9 +99,9 @@ public sealed partial class ZombieComponent : Component
     {
         DamageDict = new ()
         {
-            { "Blunt", -0.8 },
-            { "Slash", -0.4 },
-            { "Piercing", -0.4 },
+            { "Blunt", -0.7 },
+            { "Slash", -0.3 },
+            { "Piercing", -0.3 },
             { "Heat", -0.05 },
             { "Shock", -0.05 }
         }

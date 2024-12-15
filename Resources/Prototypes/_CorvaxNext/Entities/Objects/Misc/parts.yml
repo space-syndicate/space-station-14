@@ -1,0 +1,13 @@
+﻿- type: entity
+  parent: BaseStockPart
+  id: ArtificialBluespaceCrystal
+  name: artificial bluespace crystal
+  description: A small blue crystal with mystical properties.
+  components:
+  - type: Sprite
+    state: ansible_crystal
+  - type: Tag
+    tags:
+    - ArtificialBluespaceCrystal
+  - type: Stack
+    stackType: ArtificialBluespaceCrystal

@@ -1,0 +1,19 @@
+<BoxContainer xmlns="https://spacestation14.io"
+        xmlns:cartridges="clr-namespace:Content.Client._CorvaxNext.CartridgeLoader.Cartridges"
+        xmlns:customControls="clr-namespace:Content.Client.Administration.UI.CustomControls"
+        HorizontalExpand="True"
+        VerticalExpand="True"
+        Margin="5">
+    <!-- All labels populated in constructor -->
+    <BoxContainer Orientation="Horizontal" HorizontalAlignment="Left">
+        <BoxContainer Orientation="Vertical">
+            <Label Name="Status"/>
+            <Label Text="{Loc 'criminal-records-console-reason'}"/>
+        </BoxContainer>
+        <customControls:VSeparator StyleClasses="LowDivider" Margin="8 0"/>
+        <BoxContainer Orientation="Vertical">
+            <Label Name="Title"/>
+	        <Label Name="Reason"/>
+        </BoxContainer>
+    </BoxContainer>
+</BoxContainer>

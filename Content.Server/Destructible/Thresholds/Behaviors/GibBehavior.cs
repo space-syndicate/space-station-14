@@ -8,8 +8,8 @@ namespace Content.Server.Destructible.Thresholds.Behaviors
     [DataDefinition]
     public sealed partial class GibBehavior : IThresholdBehavior
     {
-        [DataField] public GibType GibType = GibType.Gib; // _CorvaxNext: surgery
-        [DataField] public GibContentsOption GibContents = GibContentsOption.Drop; // _CorvaxNext: surgery
+        [DataField] public GibType GibType = GibType.Gib; // CorvaxNext: surgery
+        [DataField] public GibContentsOption GibContents = GibContentsOption.Drop; // CorvaxNext: surgery
         [DataField("recursive")] private bool _recursive = true;
 
         public void Execute(EntityUid owner, DestructibleSystem system, EntityUid? cause = null)

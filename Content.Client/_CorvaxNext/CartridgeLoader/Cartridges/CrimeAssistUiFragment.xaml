@@ -1,0 +1,40 @@
+<cartridges:CrimeAssistUiFragment xmlns:cartridges="clr-namespace:Content.Client._CorvaxNext.CartridgeLoader.Cartridges"
+                                  xmlns="https://spacestation14.io" 
+                                  Margin="1 0 2 0">
+
+    <!-- Main background container -->
+    <PanelContainer StyleClasses="BackgroundDark">
+        <BoxContainer Orientation="Vertical"
+                      HorizontalExpand="True"
+                      VerticalExpand="True"
+                      Margin="5"
+                      SeparationOverride="2">
+
+            <!-- Explanation Box: Contains title, subtitle, explanations, and punishment details -->
+            <BoxContainer Name="ExplanationBox"
+                          Orientation="Vertical"
+                          MaxWidth="400"
+                          VerticalExpand="True"
+                          SeparationOverride="2">
+                <RichTextLabel Name="Title" />
+                <RichTextLabel Name="Subtitle" />
+                <RichTextLabel Name="Explanation" />
+                <RichTextLabel Name="Punishment" Margin="0,20" />
+            </BoxContainer>
+
+            <!-- Question Box: Contains navigation/option buttons -->
+            <BoxContainer Name="QuestionBox"
+                          Orientation="Horizontal"
+                          HorizontalAlignment="Center"
+                          HorizontalExpand="True"
+                          VerticalExpand="False"
+                          SeparationOverride="2">
+                <Button Name="StartButton" Access="Public" />
+                <Button Name="HomeButton" Access="Public" Visible="False" />
+                <Button Name="YesButton" Access="Public" Visible="False" />
+                <Button Name="NoButton" Access="Public" Visible="False" />
+            </BoxContainer>
+
+        </BoxContainer>
+    </PanelContainer>
+</cartridges:CrimeAssistUiFragment>
