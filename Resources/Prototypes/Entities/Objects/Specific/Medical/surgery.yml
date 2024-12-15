@@ -42,6 +42,10 @@
     endSound:
       path: /Audio/Medical/Surgery/cautery2.ogg
   - type: Cautery
+  - type: Tag
+    tags:
+    - SurgeryTool
+    - Cautery
   # end-_CorvaxNext: surgery
 
 # Drill
@@ -73,6 +77,10 @@
     startSound:
       path: /Audio/_CorvaxNext/Medical/Surgery/saw.ogg
   - type: Drill
+  - type: Tag
+    tags:
+    - SurgeryTool
+    - Drill
   # end-_CorvaxNext: surgery
 
 # Scalpel
@@ -114,6 +122,10 @@
     endSound:
       path: /Audio/Medical/Surgery/scalpel2.ogg
   - type: Scalpel
+  - type: Tag
+    tags:
+    - SurgeryTool
+    - Scalpel
   # end-_CorvaxNext: surgery
 
 
@@ -164,8 +176,14 @@
     sprite: Objects/Specific/Medical/Surgery/scalpel.rsi
     storedRotation: 90
     heldPrefix: laser
-  - type: Scalpel # _CorvaxNext
+  # start-_CorvaxNext: surgery
+  - type: Scalpel
     speed: 1.5
+  - type: Tag
+    tags:
+    - SurgeryTool
+    - ScalpelLaser
+  # end-_CorvaxNext: surgery
   # TODO: prevent bleeding from incisions
 
 # Retractor
@@ -189,6 +207,10 @@
     endSound:
       path: /Audio/Medical/Surgery/retractor2.ogg
   - type: Retractor
+  - type: Tag
+    tags:
+    - SurgeryTool
+    - Retractor
   # end-_CorvaxNext: surgery
 
 # Hemostat
@@ -215,6 +237,10 @@
   - type: Hemostat
   - type: Tweezers
   - type: Tending
+  - type: Tag
+    tags:
+    - SurgeryTool
+    - Hemostat
   # end-_CorvaxNext: surgery
 
 # Bone setter
@@ -331,6 +357,10 @@
     speedModifier: 1.5
   - type: BoneSaw
     speed: 1.5
+  - type: Tag
+    tags:
+    - SurgeryTool
+    - SawElectric
   # end-_CorvaxNext: surgery
 
 - type: entity
@@ -389,6 +419,10 @@
     speed: 1.5
   - type: Drill
     speed: 1.5
+  - type: Tag
+    tags:
+    - SurgeryTool
+    - EnergyCautery
 
 - type: entity
   name: energy scalpel
@@ -420,6 +454,10 @@
     speed: 1.5
   - type: BoneSaw
     speed: 1.5
+  - type: Tag
+    tags:
+    - SurgeryTool
+    - EnergyScalpel
 
 - type: entity
   name: mechanical pinches
@@ -455,6 +493,10 @@
     speed: 1.5
   - type: Tending
     speed: 1.5
+  - type: Tag
+    tags:
+    - SurgeryTool
+    - AdvancedRetractor
 
 - type: entity
   name: medical multitool
