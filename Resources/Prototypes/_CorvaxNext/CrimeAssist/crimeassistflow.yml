@@ -1,0 +1,470 @@
+# Main Menu
+
+- type: crimeAssistPage
+  id: "mainmenu"
+  locKey: "crime-assist-mainmenu"
+  onStart: "questionIsItAgainstPerson"
+
+# Personal Law
+
+- type: crimeAssistPage
+  id: "questionIsItAgainstPerson"
+  locKey: "crime-assist-question-against-person"
+  onYes: "questionIsPersonDamaged"
+  onNo: "questionIsItAgainstProperty"
+
+- type: crimeAssistPage
+  id: "questionIsPersonDamaged"
+  locKey: "crime-assist-question-person-damage"
+  onYes: "questionIsPersonDamageInsignificant"
+  onNo: "questionIsPersonOffended"
+
+# Code 212
+- type: crimeAssistPage
+  id: "questionIsPersonDamageInsignificant"
+  locKey: "crime-assist-question-person-damage-insignificant"
+  onYes: "resultPersonMinorBodilyHarm"
+  onNo: "questionIsPersonDamageMedicalNeeded"
+
+# Code 213
+- type: crimeAssistPage
+  id: "questionIsPersonDamageMedicalNeeded"
+  locKey: "crime-assist-question-person-damage-medical-needed"
+  onYes: "resultPersonModerateBodilyHarm"
+  onNo: "questionIsPersonDamageLifeThreatening"
+
+# Code 214
+- type: crimeAssistPage
+  id: "questionIsPersonDamageLifeThreatening"
+  locKey: "crime-assist-question-person-damage-life-threatening"
+  onYes: "resultPersonSevereBodilyHarm"
+  onNo: "questionDidPersonDamageResultInDeath"
+
+# Code 214
+- type: crimeAssistPage
+  id: "questionDidPersonDamageResultInDeath"
+  locKey: "crime-assist-question-person-damage-resulted-in-death"
+  onYes: "questionWasPersonBodyDestroyed"
+  onNo: "resultPersonSevereBodilyHarm"
+
+# Code 215 & 216
+- type: crimeAssistPage
+  id: "questionWasPersonBodyDestroyed"
+  locKey: "crime-assist-question-person-body-destroyed"
+  onYes: "resultPersonBodyDestruction"
+  onNo: "resultPersonMurder"
+
+# Code 221
+- type: crimeAssistPage
+  id: "questionIsPersonOffended"
+  locKey: "crime-assist-question-person-offense"
+  onYes: "resultPersonInsultSlurs"
+  onNo: "questionIsPersonFalseTestimonyGiven"
+
+# Code 223
+- type: crimeAssistPage
+  id: "questionIsPersonFalseTestimonyGiven"
+  locKey: "crime-assist-question-person-false-testimony"
+  onYes: "resultPersonPerjury"
+  onNo: "questionIsPersonUnlawfullyRestrained"
+
+# Code 224
+- type: crimeAssistPage
+  id: "questionIsPersonUnlawfullyRestrained"
+  locKey: "crime-assist-question-person-unlawful-restraint"
+  onYes: "resultPersonUnlawfulRestraint"
+  onNo: "questionIsItAgainstPerson"
+
+# Property Law
+
+- type: crimeAssistPage
+  id: "questionIsItAgainstProperty"
+  locKey: "crime-assist-question-against-property"
+  onYes: "questionDidPropertyTheftOccur"
+  onNo: "questionIsItAgainstCorporation"
+
+- type: crimeAssistPage
+  id: "questionDidPropertyTheftOccur"
+  locKey: "crime-assist-question-property-theft-occurred"
+  onYes: "questionIsPropertyPettyTheft"
+  onNo: "questionIsPropertyDamaged"
+
+# Code 311
+- type: crimeAssistPage
+  id: "questionIsPropertyPettyTheft"
+  locKey: "crime-assist-question-property-theft-petty"
+  onYes: "resultPropertyPettyTheft"
+  onNo: "questionIsPropertyStandardTheft"
+
+# Code 312
+- type: crimeAssistPage
+  id: "questionIsPropertyStandardTheft"
+  locKey: "crime-assist-question-property-theft-standard"
+  onYes: "resultPropertyTheft"
+  onNo: "questionIsPropertyRareTheft"
+
+# Code 312
+- type: crimeAssistPage
+  id: "questionIsPropertyRareTheft"
+  locKey: "crime-assist-question-property-theft-rare"
+  onYes: "questionIsPropertyValuableTheft"
+  onNo: "resultPropertyTheft"
+
+# Code 316
+- type: crimeAssistPage
+  id: "questionIsPropertyValuableTheft"
+  locKey: "crime-assist-question-property-theft-valuable"
+  onYes: "resultPropertyValuableTheft"
+  onNo: "questionIsPropertyOpenTheft"
+
+# Code 314
+- type: crimeAssistPage
+  id: "questionIsPropertyOpenTheft"
+  locKey: "crime-assist-question-property-theft-open"
+  onYes: "questionIsPropertyArmedTheft"
+  onNo: "resultPropertyRobbery"
+
+# Code 315
+- type: crimeAssistPage
+  id: "questionIsPropertyArmedTheft"
+  locKey: "crime-assist-question-property-theft-armed"
+  onYes: "resultPropertyArmedRobbery"
+  onNo: "questionIsItAgainstProperty"
+
+- type: crimeAssistPage
+  id: "questionIsPropertyDamaged"
+  locKey: "crime-assist-question-property-damage"
+  onYes: "questionIsPropertyCommonlyDamaged"
+  onNo: "questionIsItAgainstProperty"
+
+# Code 321
+- type: crimeAssistPage
+  id: "questionIsPropertyCommonlyDamaged"
+  locKey: "crime-assist-question-property-damage-common"
+  onYes: "resultPropertyPropertyDamage"
+  onNo: "questionIsPropertyValuablyDamaged"
+
+# Code 322
+- type: crimeAssistPage
+  id: "questionIsPropertyValuablyDamaged"
+  locKey: "crime-assist-question-property-damage-valuable"
+  onYes: "resultPropertyValuablePropertyDamage"
+  onNo: "questionIsPropertyCommonlyDestroyed"
+
+# Code 323
+- type: crimeAssistPage
+  id: "questionIsPropertyCommonlyDestroyed"
+  locKey: "crime-assist-question-property-destruction-common"
+  onYes: "resultPropertyPropertyDestruction"
+  onNo: "questionIsPropertyValuablyDestroyed"
+
+# Code 324
+- type: crimeAssistPage
+  id: "questionIsPropertyValuablyDestroyed"
+  locKey: "crime-assist-question-property-destruction-valuable"
+  onYes: "resultPropertyValuablePropertyDestruction"
+  onNo: "questionIsPropertyCriticallyDestroyed"
+
+# Code 326
+- type: crimeAssistPage
+  id: "questionIsPropertyCriticallyDestroyed"
+  locKey: "crime-assist-question-property-destruction-valuable"
+  onYes: "resultPropertyCriticalPropertyDestruction"
+  onNo: "questionIsItAgainstCorporation"
+
+# Corporation Law
+
+- type: crimeAssistPage
+  id: "questionIsItAgainstCorporation"
+  locKey: "crime-assist-question-against-corporation"
+  onYes: "questionIsCorporationAuthorityUndermined"
+  onNo: "questionIsItAgainstPublicOrder"
+
+- type: crimeAssistPage
+  id: "questionIsCorporationAuthorityUndermined"
+  locKey: "crime-assist-question-corporation-authority-undermined"
+  onYes: "questionIsCorporationLegitimateOrderRefused"
+  onNo: "questionIsCorporationJusticeViolated"
+
+# Code 111
+- type: crimeAssistPage
+  id: "questionIsCorporationLegitimateOrderRefused"
+  locKey: "crime-assist-question-corporation-legitimate-order-refusal"
+  onYes: "resultCorporationInsultingAuthoritySymbols"
+  onNo: "questionIsCorporationSymbolsDisrespected"
+
+# Code 112
+- type: crimeAssistPage
+  id: "questionIsCorporationSymbolsDisrespected"
+  locKey: "crime-assist-question-corporation-disrespect-symbols"
+  onYes: "resultCorporationResistingAuthorities"
+  onNo: "questionIsCorporationStrikeUnauthorized"
+
+- type: crimeAssistPage
+  id: "questionIsCorporationStrikeUnauthorized"
+  locKey: "crime-assist-question-corporation-unauthorized-strike"
+  onYes: "questionIsCorporationArmedRebellion"
+  onNo: "questionIsCorporationCrisisDisobedience"
+
+# Code 113 & 116
+- type: crimeAssistPage
+  id: "questionIsCorporationArmedRebellion"
+  locKey: "crime-assist-question-corporation-armed-rebellion"
+  onYes: "resultCorporationMutiny"
+  onNo: "resultCorporationStrike"
+
+# Code 115
+- type: crimeAssistPage
+  id: "questionIsCorporationCrisisDisobedience"
+  locKey: "crime-assist-question-corporation-crisis-disobedience"
+  onYes: "resultCorporationNoncomplianceInEmergency"
+  onNo: "questionIsItAgainstCorporation"
+
+- type: crimeAssistPage
+  id: "questionIsCorporationJusticeViolated"
+  locKey: "crime-assist-question-corporation-justice-violation"
+  onYes: "questionIsCorporationCourtDisrespected"
+  onNo: "questionIsCorporationUnfairCompetition"
+
+# Code 121
+- type: crimeAssistPage
+  id: "questionIsCorporationCourtDisrespected"
+  locKey: "crime-assist-question-corporation-disrespect-court"
+  onYes: "resultCorporationContemptOfCourt"
+  onNo: "questionIsCorporationMinorConcealment"
+
+- type: crimeAssistPage
+  id: "questionIsCorporationMinorConcealment"
+  locKey: "crime-assist-question-corporation-concealment-minor"
+  onYes: "questionIsCorporationMajorConcealment"
+  onNo: "questionIsCorporationTemporaryEscape"
+
+# Code 122 & 125
+- type: crimeAssistPage
+  id: "questionIsCorporationMajorConcealment"
+  locKey: "crime-assist-question-corporation-concealment-major"
+  onYes: "resultCorporationConcealingMajorCrime"
+  onNo: "resultCorporationConcealingCrime"
+
+- type: crimeAssistPage
+  id: "questionIsCorporationTemporaryEscape"
+  locKey: "crime-assist-question-corporation-escape-temporary"
+  onYes: "questionIsCorporationPermanentEscape"
+  onNo: "questionIsCorporationCourtOrderIgnored"
+
+# Code 123 & 126
+- type: crimeAssistPage
+  id: "questionIsCorporationPermanentEscape"
+  locKey: "crime-assist-question-corporation-escape-permanent"
+  onYes: "resultCorporationEscapeLifeSentencing"
+  onNo: "resultCorporationEscapeConfinement"
+
+# Code 124
+- type: crimeAssistPage
+  id: "questionIsCorporationCourtOrderIgnored"
+  locKey: "crime-assist-question-corporation-ignored-court-order"
+  onYes: "resultCorporationFailureToExecuteCourtRuling"
+  onNo: "questionIsItAgainstCorporation"
+
+- type: crimeAssistPage
+  id: "questionIsCorporationUnfairCompetition"
+  locKey: "crime-assist-question-corporation-unfair-competition"
+  onYes: "questionIsCorporationForbiddenOrgPropaganda"
+  onNo: "questionIsCorporationSpecialOrdersFailure"
+
+# Code 131
+- type: crimeAssistPage
+  id: "questionIsCorporationForbiddenOrgPropaganda"
+  locKey: "crime-assist-question-corporation-forbidden-org-propaganda"
+  onYes: "resultCorporationBannedOrgPropaganda"
+  onNo: "questionIsCorporationDepartmentSabotage"
+
+# Code 133
+- type: crimeAssistPage
+  id: "questionIsCorporationDepartmentSabotage"
+  locKey: "crime-assist-question-corporation-department-sabotage"
+  onYes: "resultCorporationSabotage"
+  onNo: "questionIsCorporationCriminalGroupInvolved"
+
+# Code 135
+- type: crimeAssistPage
+  id: "questionIsCorporationCriminalGroupInvolved"
+  locKey: "crime-assist-question-corporation-criminal-group"
+  onYes: "resultCorporationCriminalGroupMembership"
+  onNo: "questionIsCorporationMajorSabotage"
+
+# Code 136
+- type: crimeAssistPage
+  id: "questionIsCorporationMajorSabotage"
+  locKey: "crime-assist-question-corporation-major-sabotage"
+  onYes: "resultCorporationGrandSabotage"
+  onNo: "questionIsItAgainstCorporation"
+
+- type: crimeAssistPage
+  id: "questionIsCorporationProfessional"
+  locKey: "crime-assist-question-corporation-professional"
+  onYes: "questionIsCorporationSpecialOrdersFailure"
+  onNo: "questionIsItAgainstCorporation"
+
+# Code 141
+- type: crimeAssistPage
+  id: "questionIsCorporationSpecialOrdersFailure"
+  locKey: "crime-assist-question-corporation-special-orders-failure"
+  onYes: "resultCorporationSpecialOrdersFailure"
+  onNo: "questionIsCorporationNegligence"
+
+- type: crimeAssistPage
+  id: "questionIsCorporationNegligence"
+  locKey: "crime-assist-question-corporation-negligence"
+  onYes: "questionIsCorporationGrossNegligence"
+  onNo: "questionIsCorporationVigilantism"
+
+# Code 142 & 144
+- type: crimeAssistPage
+  id: "questionIsCorporationGrossNegligence"
+  locKey: "crime-assist-question-corporation-gross-negligence"
+  onYes: "resultCorporationGrossNegligence"
+  onNo: "resultCorporationNegligence"
+
+# Code 145
+- type: crimeAssistPage
+  id: "questionIsCorporationVigilantism"
+  locKey: "crime-assist-question-corporation-vigilantism"
+  onYes: "resultCorporationVigilantism"
+  onNo: "questionIsItAgainstCorporation"
+
+# Public Order Laws
+
+- type: crimeAssistPage
+  id: "questionIsItAgainstPublicOrder"
+  locKey: "crime-assist-question-against-public-order"
+  onYes: "questionIsPublicOrderViolated"
+  onNo: "questionIsItAgainstPerson"
+
+- type: crimeAssistPage
+  id: "questionIsPublicOrderViolated"
+  locKey: "crime-assist-question-public-order-violation"
+  onYes: "questionIsPublicOrderHooliganism"
+  onNo: "questionIsPublicOrderTerritorialViolation"
+
+# Code 411
+- type: crimeAssistPage
+  id: "questionIsPublicOrderHooliganism"
+  locKey: "crime-assist-question-public-order-hooliganism"
+  onYes: "resultPublicOrderHooliganism"
+  onNo: "questionIsPublicOrderFraud"
+
+- type: crimeAssistPage
+  id: "questionIsPublicOrderFraud"
+  locKey: "crime-assist-question-public-order-fraud"
+  onYes: "questionIsPublicOrderMajorFraud"
+  onNo: "questionIsPublicOrderTerrorAct"
+
+# Code 413 & 415
+- type: crimeAssistPage
+  id: "questionIsPublicOrderMajorFraud"
+  locKey: "crime-assist-question-public-order-major-fraud"
+  onYes: "resultPublicOrderGrandFraud"
+  onNo: "resultPublicOrderFraud"
+
+- type: crimeAssistPage
+  id: "questionIsPublicOrderTerrorAct"
+  locKey: "crime-assist-question-public-order-terror-act"
+  onYes: "resultPublicOrderTerrorism"
+  onNo: "questionIsItAgainstPublicOrder"
+
+- type: crimeAssistPage
+  id: "questionIsPublicOrderTerritorialViolation"
+  locKey: "crime-assist-question-public-order-territorial-violation"
+  onYes: "questionIsPublicOrderUnauthorizedArea"
+  onNo: "questionIsPublicOrderUnauthorizedPossession"
+
+# Code 421
+- type: crimeAssistPage
+  id: "questionIsPublicOrderUnauthorizedArea"
+  locKey: "crime-assist-question-public-order-unauthorized-area"
+  onYes: "resultPublicOrderUnauthorizedTechOrbitAccess"
+  onNo: "questionIsPublicOrderUnauthorizedDepartment"
+
+# Code 422
+- type: crimeAssistPage
+  id: "questionIsPublicOrderUnauthorizedDepartment"
+  locKey: "crime-assist-question-public-order-unauthorized-department"
+  onYes: "resultPublicOrderDepartmentTrespass"
+  onNo: "questionIsPublicOrderUnauthorizedStrategic"
+
+# Code 423
+- type: crimeAssistPage
+  id: "questionIsPublicOrderUnauthorizedStrategic"
+  locKey: "crime-assist-question-public-order-unauthorized-strategic"
+  onYes: "resultPublicOrderStrategicPointTrespass"
+  onNo: "questionIsPublicOrderUnauthorizedSecured"
+
+# Code 424
+- type: crimeAssistPage
+  id: "questionIsPublicOrderUnauthorizedSecured"
+  locKey: "crime-assist-question-public-order-unauthorized-secured"
+  onYes: "resultPublicOrderSecuredPointTrespass"
+  onNo: "questionIsPublicOrderUnauthorizedEvac"
+
+# Code 425
+- type: crimeAssistPage
+  id: "questionIsPublicOrderUnauthorizedEvac"
+  locKey: "crime-assist-question-public-order-unauthorized-evac"
+  onYes: "resultPublicOrderIllegalEvacuation"
+  onNo: "questionIsPublicOrderUnauthorizedOnNtProperty"
+
+# Code 426
+- type: crimeAssistPage
+  id: "questionIsPublicOrderUnauthorizedOnNtProperty"
+  locKey: "crime-assist-question-public-order-unauthorized-on-nt-property"
+  onYes: "resultPublicOrderNtPropertyTrespass"
+  onNo: "questionIsItAgainstPublicOrder"
+
+- type: crimeAssistPage
+  id: "questionIsPublicOrderUnauthorizedPossession"
+  locKey: "crime-assist-question-public-order-unauthorized-possession"
+  onYes: "questionIsPublicOrderUnauthorizedEquipment"
+  onNo: "questionIsItAgainstPublicOrder"
+
+# Code 431
+- type: crimeAssistPage
+  id: "questionIsPublicOrderUnauthorizedEquipment"
+  locKey: "crime-assist-question-public-order-unauthorized-equipment"
+  onYes: "resultPublicOrderEquipAbuse"
+  onNo: "questionIsPublicOrderUnauthorizedDangerousItem"
+
+# Code 432
+- type: crimeAssistPage
+  id: "questionIsPublicOrderUnauthorizedDangerousItem"
+  locKey: "crime-assist-question-public-order-unauthorized-dangerous-item"
+  onYes: "resultPublicOrderIllegalWeaponPossession"
+  onNo: "questionIsPublicOrderUnauthorizedControlledItem"
+
+# Code 433
+- type: crimeAssistPage
+  id: "questionIsPublicOrderUnauthorizedControlledItem"
+  locKey: "crime-assist-question-public-order-unauthorized-controlled-item"
+  onYes: "resultPublicOrderContrabandPossession"
+  onNo: "questionIsPublicOrderUnauthorizedSubstance"
+
+# Code 434
+- type: crimeAssistPage
+  id: "questionIsPublicOrderUnauthorizedSubstance"
+  locKey: "crime-assist-question-public-order-unauthorized-substance"
+  onYes: "resultPublicOrderIllegalSubstancesPossession"
+  onNo: "questionIsPublicOrderUnauthorizedWeapon"
+
+# Code 435
+- type: crimeAssistPage
+  id: "questionIsPublicOrderUnauthorizedWeapon"
+  locKey: "crime-assist-question-public-order-unauthorized-weapon"
+  onYes: "resultPublicOrderUnauthorizedArmPossession"
+  onNo: "questionIsPublicOrderUnauthorizedEnemyItem"
+
+# Code 436
+- type: crimeAssistPage
+  id: "questionIsPublicOrderUnauthorizedEnemyItem"
+  locKey: "crime-assist-question-public-order-unauthorized-enemy-item"
+  onYes: "resultPublicOrderHostileGearPossession"
+  onNo: "questionIsItAgainstPublicOrder"

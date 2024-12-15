@@ -1,0 +1,153 @@
+# Corporation Laws
+
+# Code 111
+- type: crimeAssistPage
+  id: "resultCorporationInsultingAuthoritySymbols"
+  locKeyTitle: "crime-assist-crime-corporation-insulting-authority-symbols"
+  locKeyDescription: "crime-assist-crime-detail-corporation-insulting-authority-symbols"
+  locKeySeverity: "crime-assist-crime-type-corporate"
+  locKeyPunishment: "crime-assist-crime-punishment-corporation-insulting-authority-symbols"
+
+# Code 112
+- type: crimeAssistPage
+  id: "resultCorporationResistingAuthorities"
+  locKeyTitle: "crime-assist-crime-corporation-resisting-authorities"
+  locKeyDescription: "crime-assist-crime-detail-corporation-resisting-authorities"
+  locKeySeverity: "crime-assist-crime-type-corporate"
+  locKeyPunishment: "crime-assist-crime-punishment-corporation-resisting-authorities"
+
+# Code 113
+- type: crimeAssistPage
+  id: "resultCorporationStrike"
+  locKeyTitle: "crime-assist-crime-corporation-strike"
+  locKeyDescription: "crime-assist-crime-detail-corporation-strike"
+  locKeySeverity: "crime-assist-crime-type-corporate"
+  locKeyPunishment: "crime-assist-crime-punishment-corporation-strike"
+
+# Code 115
+- type: crimeAssistPage
+  id: "resultCorporationNoncomplianceInEmergency"
+  locKeyTitle: "crime-assist-crime-corporation-noncompliance-in-emergency"
+  locKeyDescription: "crime-assist-crime-detail-corporation-noncompliance-in-emergency"
+  locKeySeverity: "crime-assist-crime-type-corporate"
+  locKeyPunishment: "crime-assist-crime-punishment-corporation-noncompliance-in-emergency"
+
+# Code 116
+- type: crimeAssistPage
+  id: "resultCorporationMutiny"
+  locKeyTitle: "crime-assist-crime-corporation-mutiny"
+  locKeyDescription: "crime-assist-crime-detail-corporation-mutiny"
+  locKeySeverity: "crime-assist-crime-type-corporate"
+  locKeyPunishment: "crime-assist-crime-punishment-corporation-mutiny"
+
+# Code 121
+- type: crimeAssistPage
+  id: "resultCorporationContemptOfCourt"
+  locKeyTitle: "crime-assist-crime-corporation-contempt-of-court"
+  locKeyDescription: "crime-assist-crime-detail-corporation-contempt-of-court"
+  locKeySeverity: "crime-assist-crime-type-corporate"
+  locKeyPunishment: "crime-assist-crime-punishment-corporation-contempt-of-court"
+
+# Code 122
+- type: crimeAssistPage
+  id: "resultCorporationConcealingCrime"
+  locKeyTitle: "crime-assist-crime-corporation-concealing-crime"
+  locKeyDescription: "crime-assist-crime-detail-corporation-concealing-crime"
+  locKeySeverity: "crime-assist-crime-type-corporate"
+  locKeyPunishment: "crime-assist-crime-punishment-corporation-concealing-crime"
+
+# Code 123
+- type: crimeAssistPage
+  id: "resultCorporationEscapeConfinement"
+  locKeyTitle: "crime-assist-crime-corporation-escape-confinement"
+  locKeyDescription: "crime-assist-crime-detail-corporation-escape-confinement"
+  locKeySeverity: "crime-assist-crime-type-corporate"
+  locKeyPunishment: "crime-assist-crime-punishment-corporation-escape-confinement"
+
+# Code 124
+- type: crimeAssistPage
+  id: "resultCorporationFailureToExecuteCourtRuling"
+  locKeyTitle: "crime-assist-crime-corporation-failure-to-execute-court-ruling"
+  locKeyDescription: "crime-assist-crime-detail-corporation-failure-to-execute-court-ruling"
+  locKeySeverity: "crime-assist-crime-type-corporate"
+  locKeyPunishment: "crime-assist-crime-punishment-corporation-failure-to-execute-court-ruling"
+
+# Code 125
+- type: crimeAssistPage
+  id: "resultCorporationConcealingMajorCrime"
+  locKeyTitle: "crime-assist-crime-corporation-concealing-major-crime"
+  locKeyDescription: "crime-assist-crime-detail-corporation-concealing-major-crime"
+  locKeySeverity: "crime-assist-crime-type-corporate"
+  locKeyPunishment: "crime-assist-crime-punishment-corporation-concealing-major-crime"
+
+# Code 126
+- type: crimeAssistPage
+  id: "resultCorporationEscapeLifeSentencing"
+  locKeyTitle: "crime-assist-crime-corporation-escape-life-sentencing"
+  locKeyDescription: "crime-assist-crime-detail-corporation-escape-life-sentencing"
+  locKeySeverity: "crime-assist-crime-type-corporate"
+  locKeyPunishment: "crime-assist-crime-punishment-corporation-escape-life-sentencing"
+
+# Code 131
+- type: crimeAssistPage
+  id: "resultCorporationBannedOrgPropaganda"
+  locKeyTitle: "crime-assist-crime-corporation-banned-org-propaganda"
+  locKeyDescription: "crime-assist-crime-detail-corporation-banned-org-propaganda"
+  locKeySeverity: "crime-assist-crime-type-corporate"
+  locKeyPunishment: "crime-assist-crime-punishment-corporation-banned-org-propaganda"
+
+# Code 133
+- type: crimeAssistPage
+  id: "resultCorporationSabotage"
+  locKeyTitle: "crime-assist-crime-corporation-sabotage"
+  locKeyDescription: "crime-assist-crime-detail-corporation-sabotage"
+  locKeySeverity: "crime-assist-crime-type-corporate"
+  locKeyPunishment: "crime-assist-crime-punishment-corporation-sabotage"
+
+# Code 135
+- type: crimeAssistPage
+  id: "resultCorporationCriminalGroupMembership"
+  locKeyTitle: "crime-assist-crime-corporation-criminal-group-membership"
+  locKeyDescription: "crime-assist-crime-detail-corporation-criminal-group-membership"
+  locKeySeverity: "crime-assist-crime-type-corporate"
+  locKeyPunishment: "crime-assist-crime-punishment-corporation-criminal-group-membership"
+
+# Code 136
+- type: crimeAssistPage
+  id: "resultCorporationGrandSabotage"
+  locKeyTitle: "crime-assist-crime-corporation-grand-sabotage"
+  locKeyDescription: "crime-assist-crime-detail-corporation-grand-sabotage"
+  locKeySeverity: "crime-assist-crime-type-corporate"
+  locKeyPunishment: "crime-assist-crime-punishment-corporation-grand-sabotage"
+
+# Code 141
+- type: crimeAssistPage
+  id: "resultCorporationSpecialOrdersFailure"
+  locKeyTitle: "crime-assist-crime-corporation-special-orders-failure"
+  locKeyDescription: "crime-assist-crime-detail-corporation-special-orders-failure"
+  locKeySeverity: "crime-assist-crime-type-corporate"
+  locKeyPunishment: "crime-assist-crime-punishment-corporation-special-orders-failure"
+
+# Code 142
+- type: crimeAssistPage
+  id: "resultCorporationNegligence"
+  locKeyTitle: "crime-assist-crime-corporation-negligence"
+  locKeyDescription: "crime-assist-crime-detail-corporation-negligence"
+  locKeySeverity: "crime-assist-crime-type-corporate"
+  locKeyPunishment: "crime-assist-crime-punishment-corporation-negligence"
+
+# Code 144
+- type: crimeAssistPage
+  id: "resultCorporationGrossNegligence"
+  locKeyTitle: "crime-assist-crime-corporation-gross-negligence"
+  locKeyDescription: "crime-assist-crime-detail-corporation-gross-negligence"
+  locKeySeverity: "crime-assist-crime-type-corporate"
+  locKeyPunishment: "crime-assist-crime-punishment-corporation-gross-negligence"
+
+# Code 145
+- type: crimeAssistPage
+  id: "resultCorporationVigilantism"
+  locKeyTitle: "crime-assist-crime-corporation-vigilantism"
+  locKeyDescription: "crime-assist-crime-detail-corporation-vigilantism"
+  locKeySeverity: "crime-assist-crime-type-corporate"
+  locKeyPunishment: "crime-assist-crime-punishment-corporation-vigilantism"

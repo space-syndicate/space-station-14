@@ -1,0 +1,129 @@
+# Public Order Laws
+
+# Code 411
+- type: crimeAssistPage
+  id: "resultPublicOrderHooliganism"
+  locKeyTitle: "crime-assist-crime-public-order-hooliganism"
+  locKeyDescription: "crime-assist-crime-detail-public-order-hooliganism"
+  locKeySeverity: "crime-assist-crime-type-public-order"
+  locKeyPunishment: "crime-assist-crime-punishment-public-order-hooliganism"
+
+# Code 413
+- type: crimeAssistPage
+  id: "resultPublicOrderFraud"
+  locKeyTitle: "crime-assist-crime-public-order-fraud"
+  locKeyDescription: "crime-assist-crime-detail-public-order-fraud"
+  locKeySeverity: "crime-assist-crime-type-public-order"
+  locKeyPunishment: "crime-assist-crime-punishment-public-order-fraud"
+
+# Code 415
+- type: crimeAssistPage
+  id: "resultPublicOrderGrandFraud"
+  locKeyTitle: "crime-assist-crime-public-order-grand-fraud"
+  locKeyDescription: "crime-assist-crime-detail-public-order-grand-fraud"
+  locKeySeverity: "crime-assist-crime-type-public-order"
+  locKeyPunishment: "crime-assist-crime-punishment-public-order-grand-fraud"
+
+# Code 416
+- type: crimeAssistPage
+  id: "resultPublicOrderTerrorism"
+  locKeyTitle: "crime-assist-crime-public-order-terrorism"
+  locKeyDescription: "crime-assist-crime-detail-public-order-terrorism"
+  locKeySeverity: "crime-assist-crime-type-public-order"
+  locKeyPunishment: "crime-assist-crime-punishment-public-order-terrorism"
+
+# Code 421
+- type: crimeAssistPage
+  id: "resultPublicOrderUnauthorizedTechOrbitAccess"
+  locKeyTitle: "crime-assist-crime-public-order-unauthorized-tech-orbit-access"
+  locKeyDescription: "crime-assist-crime-detail-public-order-unauthorized-tech-orbit-access"
+  locKeySeverity: "crime-assist-crime-type-public-order"
+  locKeyPunishment: "crime-assist-crime-punishment-public-order-unauthorized-tech-orbit-access"
+
+# Code 422
+- type: crimeAssistPage
+  id: "resultPublicOrderDepartmentTrespass"
+  locKeyTitle: "crime-assist-crime-public-order-department-trespass"
+  locKeyDescription: "crime-assist-crime-detail-public-order-department-trespass"
+  locKeySeverity: "crime-assist-crime-type-public-order"
+  locKeyPunishment: "crime-assist-crime-punishment-public-order-department-trespass"
+
+# Code 423
+- type: crimeAssistPage
+  id: "resultPublicOrderStrategicPointTrespass"
+  locKeyTitle: "crime-assist-crime-public-order-strategic-point-trespass"
+  locKeyDescription: "crime-assist-crime-detail-public-order-strategic-point-trespass"
+  locKeySeverity: "crime-assist-crime-type-public-order"
+  locKeyPunishment: "crime-assist-crime-punishment-public-order-strategic-point-trespass"
+
+# Code 424
+- type: crimeAssistPage
+  id: "resultPublicOrderSecuredPointTrespass"
+  locKeyTitle: "crime-assist-crime-public-order-secured-point-trespass"
+  locKeyDescription: "crime-assist-crime-detail-public-order-secured-point-trespass"
+  locKeySeverity: "crime-assist-crime-type-public-order"
+  locKeyPunishment: "crime-assist-crime-punishment-public-order-secured-point-trespass"
+
+# Code 425
+- type: crimeAssistPage
+  id: "resultPublicOrderIllegalEvacuation"
+  locKeyTitle: "crime-assist-crime-public-order-illegal-evacuation"
+  locKeyDescription: "crime-assist-crime-detail-public-order-illegal-evacuation"
+  locKeySeverity: "crime-assist-crime-type-public-order"
+  locKeyPunishment: "crime-assist-crime-punishment-public-order-illegal-evacuation"
+
+# Code 426
+- type: crimeAssistPage
+  id: "resultPublicOrderNtPropertyTrespass"
+  locKeyTitle: "crime-assist-crime-public-order-nt-property-trespass"
+  locKeyDescription: "crime-assist-crime-detail-public-order-nt-property-trespass"
+  locKeySeverity: "crime-assist-crime-type-public-order"
+  locKeyPunishment: "crime-assist-crime-punishment-public-order-nt-property-trespass"
+
+# Code 431
+- type: crimeAssistPage
+  id: "resultPublicOrderEquipAbuse"
+  locKeyTitle: "crime-assist-crime-public-order-equip-abuse"
+  locKeyDescription: "crime-assist-crime-detail-public-order-equip-abuse"
+  locKeySeverity: "crime-assist-crime-type-public-order"
+  locKeyPunishment: "crime-assist-crime-punishment-public-order-equip-abuse"
+
+# Code 432
+- type: crimeAssistPage
+  id: "resultPublicOrderIllegalWeaponPossession"
+  locKeyTitle: "crime-assist-crime-public-order-illegal-weapon-possession"
+  locKeyDescription: "crime-assist-crime-detail-public-order-illegal-weapon-possession"
+  locKeySeverity: "crime-assist-crime-type-public-order"
+  locKeyPunishment: "crime-assist-crime-punishment-public-order-illegal-weapon-possession"
+
+# Code 433
+- type: crimeAssistPage
+  id: "resultPublicOrderContrabandPossession"
+  locKeyTitle: "crime-assist-crime-public-order-contraband-possession"
+  locKeyDescription: "crime-assist-crime-detail-public-order-contraband-possession"
+  locKeySeverity: "crime-assist-crime-type-public-order"
+  locKeyPunishment: "crime-assist-crime-punishment-public-order-contraband-possession"
+
+# Code 434
+- type: crimeAssistPage
+  id: "resultPublicOrderIllegalSubstancesPossession"
+  locKeyTitle: "crime-assist-crime-public-order-illegal-substances-possession"
+  locKeyDescription: "crime-assist-crime-detail-public-order-illegal-substances-possession"
+  locKeySeverity: "crime-assist-crime-type-public-order"
+  locKeyPunishment: "crime-assist-crime-punishment-public-order-illegal-substances-possession"
+
+# Code 435
+- type: crimeAssistPage
+  id: "resultPublicOrderUnauthorizedArmPossession"
+  locKeyTitle: "crime-assist-crime-public-order-unauthorized-arm-possession"
+  locKeyDescription: "crime-assist-crime-detail-public-order-unauthorized-arm-possession"
+  locKeySeverity: "crime-assist-crime-type-public-order"
+  locKeyPunishment: "crime-assist-crime-punishment-public-order-unauthorized-arm-possession"
+
+# Code 436
+- type: crimeAssistPage
+  id: "resultPublicOrderHostileGearPossession"
+  locKeyTitle: "crime-assist-crime-public-order-hostile-gear-possession"
+  locKeyDescription: "crime-assist-crime-detail-public-order-hostile-gear-possession"
+  locKeySeverity: "crime-assist-crime-type-public-order"
+  locKeyPunishment: "crime-assist-crime-punishment-public-order-hostile-gear-possession"

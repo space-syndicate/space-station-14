@@ -1,0 +1,89 @@
+# Property Laws
+
+# Code 311
+- type: crimeAssistPage
+  id: "resultPropertyPettyTheft"
+  locKeyTitle: "crime-assist-crime-property-petty-theft"
+  locKeyDescription: "crime-assist-crime-detail-property-petty-theft"
+  locKeySeverity: "crime-assist-crime-type-property"
+  locKeyPunishment: "crime-assist-crime-punishment-property-petty-theft"
+
+# Code 312
+- type: crimeAssistPage
+  id: "resultPropertyTheft"
+  locKeyTitle: "crime-assist-crime-property-theft"
+  locKeyDescription: "crime-assist-crime-detail-property-theft"
+  locKeySeverity: "crime-assist-crime-type-property"
+  locKeyPunishment: "crime-assist-crime-punishment-property-theft"
+
+# Code 313
+- type: crimeAssistPage
+  id: "resultPropertyRobbery"
+  locKeyTitle: "crime-assist-crime-property-robbery"
+  locKeyDescription: "crime-assist-crime-detail-property-robbery"
+  locKeySeverity: "crime-assist-crime-type-property"
+  locKeyPunishment: "crime-assist-crime-punishment-property-robbery"
+
+# Code 314
+- type: crimeAssistPage
+  id: "resultPropertyGrandTheft"
+  locKeyTitle: "crime-assist-crime-property-grand-theft"
+  locKeyDescription: "crime-assist-crime-detail-property-grand-theft"
+  locKeySeverity: "crime-assist-crime-type-property"
+  locKeyPunishment: "crime-assist-crime-punishment-property-grand-theft"
+
+# Code 315
+- type: crimeAssistPage
+  id: "resultPropertyArmedRobbery"
+  locKeyTitle: "crime-assist-crime-property-armed-robbery"
+  locKeyDescription: "crime-assist-crime-detail-property-armed-robbery"
+  locKeySeverity: "crime-assist-crime-type-property"
+  locKeyPunishment: "crime-assist-crime-punishment-property-armed-robbery"
+
+# Code 316
+- type: crimeAssistPage
+  id: "resultPropertyValuableTheft"
+  locKeyTitle: "crime-assist-crime-property-valuable-theft"
+  locKeyDescription: "crime-assist-crime-detail-property-valuable-theft"
+  locKeySeverity: "crime-assist-crime-type-property"
+  locKeyPunishment: "crime-assist-crime-punishment-property-valuable-theft"
+
+# Code 321
+- type: crimeAssistPage
+  id: "resultPropertyPropertyDamage"
+  locKeyTitle: "crime-assist-crime-property-property-damage"
+  locKeyDescription: "crime-assist-crime-detail-property-property-damage"
+  locKeySeverity: "crime-assist-crime-type-property"
+  locKeyPunishment: "crime-assist-crime-punishment-property-property-damage"
+
+# Code 322
+- type: crimeAssistPage
+  id: "resultPropertyValuablePropertyDamage"
+  locKeyTitle: "crime-assist-crime-property-valuable-property-damage"
+  locKeyDescription: "crime-assist-crime-detail-property-valuable-property-damage"
+  locKeySeverity: "crime-assist-crime-type-property"
+  locKeyPunishment: "crime-assist-crime-punishment-property-valuable-property-damage"
+
+# Code 323
+- type: crimeAssistPage
+  id: "resultPropertyPropertyDestruction"
+  locKeyTitle: "crime-assist-crime-property-property-destruction"
+  locKeyDescription: "crime-assist-crime-detail-property-property-destruction"
+  locKeySeverity: "crime-assist-crime-type-property"
+  locKeyPunishment: "crime-assist-crime-punishment-property-property-destruction"
+
+# Code 324
+- type: crimeAssistPage
+  id: "resultPropertyValuablePropertyDestruction"
+  locKeyTitle: "crime-assist-crime-property-valuable-property-destruction"
+  locKeyDescription: "crime-assist-crime-detail-property-valuable-property-destruction"
+  locKeySeverity: "crime-assist-crime-type-property"
+  locKeyPunishment: "crime-assist-crime-punishment-property-valuable-property-destruction"
+
+# Code 326
+- type: crimeAssistPage
+  id: "resultPropertyCriticalPropertyDestruction"
+  locKeyTitle: "crime-assist-crime-property-critical-property-destruction"
+  locKeyDescription: "crime-assist-crime-detail-property-critical-property-destruction"
+  locKeySeverity: "crime-assist-crime-type-property"
+  locKeyPunishment: "crime-assist-crime-punishment-property-critical-property-destruction"
