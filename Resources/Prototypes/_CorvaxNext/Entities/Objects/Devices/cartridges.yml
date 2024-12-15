@@ -72,7 +72,7 @@
     state: cart-stonk
   - type: Icon
     sprite: _CorvaxNext/Objects/Devices/cartridge.rsi
-    state: cart-mail
+    state: cart-stonk
   - type: UIFragment
     ui: !type:StockTradingUi
   - type: StockTradingCartridge
