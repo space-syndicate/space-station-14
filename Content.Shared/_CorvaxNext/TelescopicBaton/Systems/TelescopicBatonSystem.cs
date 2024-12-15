@@ -5,6 +5,7 @@ using Content.Shared.Standing;
 using Content.Shared.Item.ItemToggle;
 using Content.Shared.Item.ItemToggle.Components;
 using Content.Shared.Stunnable;
+using Content.Shared._CorvaxNext.Standing;
 
 namespace Content.Shared._CorvaxNext.TelescopicBaton;
 
