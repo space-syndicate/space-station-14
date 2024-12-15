@@ -18,3 +18,12 @@
   components:
   - type: Sprite
     sprite: Corvax/Back/Duffels/ce.rsi
+
+- type: entity
+  parent: ClothingBackpackDuffel
+  id: ClothingBackpackDuffelWarden
+  name: warden duffel bag
+  description: A large duffel bag for robust tools.
+  components:
+  - type: Sprite
+    sprite: Corvax/Back/Duffels/warden.rsi

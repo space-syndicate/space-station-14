@@ -18,3 +18,12 @@
   components:
   - type: Sprite
     sprite: Corvax/Back/Satchels/ce.rsi
+
+- type: entity
+  parent: ClothingBackpackSatchel
+  id: ClothingBackpackWardenSatchel
+  name: warden satchel
+  description: A robust satchel for best wardens.
+  components:
+  - type: Sprite
+    sprite: Corvax/Back/Satchels/warden.rsi
