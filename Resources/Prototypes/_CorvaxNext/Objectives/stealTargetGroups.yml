@@ -5,6 +5,7 @@
     sprite: _CorvaxNext/Objects/Weapons/Melee/telescopic_baton.rsi
     state: telescopic_baton_on
 
+- type: stealTargetGroup
   id: ClothingNeckSecBadge
   name: steal-target-groups-security-badge
   sprite:
