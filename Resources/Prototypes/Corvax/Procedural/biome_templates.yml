@@ -567,6 +567,22 @@
         octaves: 5
         cellularDistanceFunction: Euclidean
         cellularReturnType: Distance2
+    #bear
+    - !type:BiomeEntityLayer
+      allowedTiles:
+        - FloorIce
+      threshold: -0.005
+      noise:
+        seed: 100
+        noiseType: Cellular
+        frequency: 0.3
+        lacunarity: 2
+        fractalType: FBm
+        octaves: 8
+        cellularDistanceFunction: Euclidean
+        cellularReturnType: Distance2
+      entities:
+        - SpawnerMobBearBiome
     # Liquid plasma.
     - !type:BiomeEntityLayer
       allowedTiles:
