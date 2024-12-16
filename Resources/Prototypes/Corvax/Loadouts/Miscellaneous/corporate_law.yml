@@ -1,5 +1,4 @@
 - type: loadout
   id: SpaceLaw
-  storage:
-    pocket2:
-    - BookSpaceLaw
+  equipment:
+    pocket2: BookSpaceLaw
