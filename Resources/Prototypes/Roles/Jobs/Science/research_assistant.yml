@@ -3,15 +3,15 @@
   name: job-name-research-assistant
   description: job-description-research-assistant
   playTimeTracker: JobResearchAssistant
-  # requirements:
-    # - !type:DepartmentTimeRequirement
-      # department: Science
-      # time: 36000 #10 hrs # Corvax-RoleTime
-      # inverted: true # stop playing intern if you're good at science!
+  requirements:
+    - !type:DepartmentTimeRequirement
+      department: Science
+      time: 36000 #10 hrs # Corvax-RoleTime
+      inverted: true # stop playing intern if you're good at science!
   startingGear: ResearchAssistantGear
   icon: "JobIconResearchAssistant"
   supervisors: job-supervisors-science
-  canBeAntag: true # Corvax-MRP: Available not only for newbies
+  canBeAntag: false
   access:
   - Research
   - Maintenance
