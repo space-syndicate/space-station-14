@@ -1,6 +1,8 @@
-ent-SecWatchCartridge = картридж "око сб"
+ent-SecWatchCartridge = картридж ОКО СБ
     .desc = Программа для отслеживания статуса разыскиваемых службой безопасности лиц.
-ent-CrimeAssistCartridge = картридж "корзак про"
+ent-CrimeAssistCartridge = картридж КорЗак Про
     .desc = Программа для помощи начинающим сотрудникам службы безопасности.
 ent-NanoChatCartridge = картридж NanoChat
     .desc = Для просто чилловых парней, которые любят початиться.
+ent-StockTradingCartridge = картридж StockTrading
+    .desc = Приложение для отслеживания цен на Межгалактической Фондовой Бирже.

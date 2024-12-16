@@ -1,0 +1,78 @@
+- type: entity
+  id: BaseStationStockMarket
+  abstract: true
+  components:
+  - type: StationStockMarket
+    companies:
+    - displayName: stock-trading-company-ccoin
+      basePrice: 1000
+      currentPrice: 1112
+    - displayName: stock-trading-company-nanotrasen
+      basePrice: 987
+      currentPrice: 955
+    - displayName: stock-trading-company-vitezstvi
+      basePrice: 642
+      currentPrice: 611
+    - displayName: stock-trading-company-kosmologistika
+      basePrice: 856
+      currentPrice: 831
+    - displayName: stock-trading-company-nakamura
+      basePrice: 765
+      currentPrice: 822
+    - displayName: stock-trading-company-gefest
+      basePrice: 698
+      currentPrice: 711
+    - displayName: stock-trading-company-saibasan
+      basePrice: 412
+      currentPrice: 389
+    - displayName: stock-trading-company-donk
+      basePrice: 98
+      currentPrice: 76
+    - displayName: stock-trading-company-gorlex
+      basePrice: 375
+      currentPrice: 391
+    - displayName: stock-trading-company-deforest
+      basePrice: 178
+      currentPrice: 193
+    - displayName: stock-trading-company-interdyne
+      basePrice: 521
+      currentPrice: 489
+    - displayName: stock-trading-company-conarex
+      basePrice: 455
+      currentPrice: 501
+    - displayName: stock-trading-company-cybersun
+      basePrice: 589
+      currentPrice: 577
+    - displayName: stock-trading-company-mrchang
+      basePrice: 311
+      currentPrice: 315
+    - displayName: stock-trading-company-drunkmasters
+      basePrice: 324
+      currentPrice: 322
+    - displayName: stock-trading-company-robust
+      basePrice: 478
+      currentPrice: 452
+    - displayName: stock-trading-company-azara
+      basePrice: 155
+      currentPrice: 159
+    - displayName: stock-trading-company-waffle
+      basePrice: 76
+      currentPrice: 81
+    - displayName: stock-trading-company-shady
+      basePrice: 221
+      currentPrice: 233
+    - displayName: stock-trading-company-intergalactic
+      basePrice: 431
+      currentPrice: 408
+    - displayName: stock-trading-company-hound
+      basePrice: 187
+      currentPrice: 176
+    - displayName: stock-trading-company-harvest
+      basePrice: 62
+      currentPrice: 55
+    - displayName: stock-trading-company-gasdef
+      basePrice: 250
+      currentPrice: 243
+    - displayName: stock-trading-company-hrc
+      basePrice: 280
+      currentPrice: 211

@@ -1,7 +1,7 @@
 {
     "version": 1,
     "license": "CC0-1.0",
-    "copyright": "nanochat made by kushbreth (discord)",
+    "copyright": "nanochat made by kushbreth (discord), stock_trading made by Malice",
     "size": {
         "x": 32,
         "y": 32
@@ -9,6 +9,9 @@
     "states": [
         {
             "name": "nanochat"
+        },
+        {
+            "name": "stock_trading"
         }
     ]
 }

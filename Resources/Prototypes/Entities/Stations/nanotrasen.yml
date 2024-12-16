@@ -26,6 +26,7 @@
     - BaseStationSiliconLawNTDefault # Corvax-NTDefault
     - BaseStationAllEventsEligible
     - BaseStationNanotrasen
+    - BaseStationStockMarket # Corvax-Next-StockTrading
   categories: [ HideSpawnMenu ]
   components:
     - type: Transform
