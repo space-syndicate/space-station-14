@@ -24,6 +24,7 @@ using Content.Shared.Toggleable;
 using Content.Shared.Weapons.Melee.Events;
 using Content.Shared.FixedPoint;
 using Robust.Server.Audio;
+using Content.Shared._CorvaxNext.Mood;
 using Robust.Shared.Physics.Components;
 using Robust.Shared.Physics.Events;
 using Robust.Shared.Physics.Systems;
@@ -426,10 +427,12 @@ namespace Content.Server.Atmos.EntitySystems
                 if (!flammable.OnFire)
                 {
                     _alertsSystem.ClearAlert(uid, flammable.FireAlert);
+                    RaiseLocalEvent(uid, new MoodRemoveEffectEvent("OnFire")); // _CorvaxNext: mood
                     continue;
                 }
 
                 _alertsSystem.ShowAlert(uid, flammable.FireAlert);
+                RaiseLocalEvent(uid, new MoodEffectEvent("OnFire")); // _CorvaxNext: mood
 
                 if (flammable.FireStacks > 0)
                 {

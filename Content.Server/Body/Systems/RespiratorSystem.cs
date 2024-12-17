@@ -17,6 +17,7 @@ using Content.Shared.Database;
 using Content.Shared.EntityEffects;
 using Content.Shared.Mobs.Systems;
 using Content.Shared._CorvaxNext.Surgery.Body;
+using Content.Shared._CorvaxNext.Mood;
 using JetBrains.Annotations;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Timing;
@@ -294,6 +295,7 @@ public sealed class RespiratorSystem : EntitySystem
             {
                 _alertsSystem.ShowAlert(ent, entity.Comp1.Alert);
             }
+            RaiseLocalEvent(ent, new MoodEffectEvent("Suffocating")); // _CorvaxNext: mood
         }
 
         _damageableSys.TryChangeDamage(ent, HasComp<DebrainedComponent>(ent) ? ent.Comp.Damage * 4.5f : ent.Comp.Damage, interruptsDoAfters: false); // CorvaxNext: surgery

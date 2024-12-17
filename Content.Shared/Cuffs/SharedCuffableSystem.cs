@@ -27,6 +27,7 @@ using Content.Shared.Timing;
 using Content.Shared.Verbs;
 using Content.Shared.Weapons.Melee.Events;
 using Robust.Shared.Audio.Systems;
+using Content.Shared._CorvaxNext.Mood;
 using Robust.Shared.Containers;
 using Robust.Shared.Network;
 using Robust.Shared.Player;
@@ -180,9 +181,15 @@ namespace Content.Shared.Cuffs
             _actionBlocker.UpdateCanMove(uid);
 
             if (component.CanStillInteract)
+            {
                 _alerts.ClearAlert(uid, component.CuffedAlert);
+                RaiseLocalEvent(uid, new MoodRemoveEffectEvent("Handcuffed")); // _CorvaxNext: mood
+            }
             else
+            {
                 _alerts.ShowAlert(uid, component.CuffedAlert);
+                RaiseLocalEvent(uid, new MoodEffectEvent("Handcuffed")); // _CorvaxNext: mood
+            }
 
             var ev = new CuffedStateChangeEvent();
             RaiseLocalEvent(uid, ref ev);

@@ -254,15 +254,17 @@
   name: kidneys
   description: "Filters toxins from the bloodstream."
   components:
-    - type: Sprite
-      layers:
-        - state: kidney-l
-        - state: kidney-r
-    - type: Item
-      size: Small
-      heldPrefix: kidneys
-    # The kidneys just remove anything that doesn't currently have any metabolisms, as a stopgap.
-    - type: Metabolizer
-      maxReagents: 5
-      metabolizerTypes: [Human]
-      removeEmpty: true
+  - type: Organ # Shitmed
+    slotId: kidneys
+  - type: Sprite
+    layers:
+      - state: kidney-l
+      - state: kidney-r
+  - type: Item
+    size: Small
+    heldPrefix: kidneys
+  # The kidneys just remove anything that doesn't currently have any metabolisms, as a stopgap.
+  - type: Metabolizer
+    maxReagents: 5
+    metabolizerTypes: [Human]
+    removeEmpty: true

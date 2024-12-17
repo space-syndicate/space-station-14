@@ -19,6 +19,7 @@ using Content.Shared._CorvaxNext.Surgery.Body.Events;
 using Content.Shared._CorvaxNext.Surgery.Steps.Parts;
 using Content.Shared.Damage.Prototypes;
 using Content.Shared.FixedPoint;
+using Content.Shared.Inventory;
 
 // ReSharper disable once CheckNamespace
 namespace Content.Shared.Body.Systems;
@@ -181,23 +182,20 @@ public partial class SharedBodySystem
         if (args.TargetPart != null)
         {
             var (targetType, _) = ConvertTargetBodyPart(args.TargetPart.Value);
-            args.Damage = args.Damage * GetPartDamageModifier(targetType);
+            args.Damage *= GetPartDamageModifier(targetType);
         }
     }
 
     private void OnPartDamageModify(Entity<BodyPartComponent> partEnt, ref DamageModifyEvent args)
     {
         if (partEnt.Comp.Body != null
-            && TryComp(partEnt.Comp.Body.Value, out DamageableComponent? damageable)
-            && damageable.DamageModifierSetId != null
-            && _prototypeManager.TryIndex<DamageModifierSetPrototype>(damageable.DamageModifierSetId, out var modifierSet))
-            // TODO: We need to add a check to see if the given armor covers this part to cancel or not.
-            args.Damage = DamageSpecifier.ApplyModifierSet(args.Damage, modifierSet);
+            && TryComp(partEnt.Comp.Body.Value, out InventoryComponent? inventory))
+            _inventory.RelayEvent((partEnt.Comp.Body.Value, inventory), ref args);
 
         if (_prototypeManager.TryIndex<DamageModifierSetPrototype>("PartDamage", out var partModifierSet))
             args.Damage = DamageSpecifier.ApplyModifierSet(args.Damage, partModifierSet);
 
-        args.Damage = args.Damage * GetPartDamageModifier(partEnt.Comp.PartType);
+        args.Damage *= GetPartDamageModifier(partEnt.Comp.PartType);
     }
 
     private bool TryChangePartDamage(EntityUid entity,
@@ -300,7 +298,7 @@ public partial class SharedBodySystem
 
     /// This should be called after body part damage was changed.
     /// </summary>
-    protected void CheckBodyPart(
+    public void CheckBodyPart(
         Entity<BodyPartComponent> partEnt,
         TargetBodyPart? targetPart,
         bool severed,

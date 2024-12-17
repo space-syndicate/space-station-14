@@ -4,7 +4,7 @@
                   MinSize="64 64">
     <GridContainer Columns="1" HorizontalAlignment="Right" VerticalAlignment="Top">
         <PanelContainer >
-            <BoxContainer Name="AlertContainer" Access="Public" Orientation="Vertical" />
+            <GridContainer Name="AlertContainer" Columns="1" HorizontalAlignment="Right" VerticalAlignment="Center" Access="Public" />
         </PanelContainer>
         <partStatus:PartStatusControl Name="PartStatus" Access="Protected"/>
     </GridContainer>

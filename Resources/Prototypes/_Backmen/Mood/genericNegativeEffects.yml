@@ -1,0 +1,66 @@
+﻿- type: moodEffect
+  id: Handcuffed
+  moodChange: -3
+
+- type: moodEffect
+  id: Suffocating
+  moodChange: -7
+  timeout: 6
+
+- type: moodEffect
+  id: OnFire
+  moodChange: -10
+  timeout: 600
+
+- type: moodEffect
+  id: Creampied
+  moodChange: -3
+
+- type: moodEffect
+  id: MobSlipped
+  moodChange: -3
+  timeout: 180
+
+- type: moodEffect
+  id: MobVomit
+  moodChange: -3
+  timeout: 480
+
+- type: moodEffect
+  id: MobLowPressure
+  moodChange: -7
+  timeout: 10
+
+- type: moodEffect
+  id: MobHighPressure
+  moodChange: -7
+  timeout: 10
+
+- type: moodEffect
+  id: TraitSaturnine
+  moodChange: -20
+
+- type: moodEffect
+  id: TraitFortitude
+  moodChange: -10
+
+- type: moodEffect
+  id: Dead
+  moodChange: -1000
+
+- type: moodEffect
+  id: SurgeryNoLeg
+  moodChange: -10
+
+- type: moodEffect
+  id: SurgeryNoHand
+  moodChange: -10
+
+- type: moodEffect
+  id: SurgeryNoTorso
+  moodChange: -15
+
+- type: moodEffect
+  id: SurgeryPain
+  moodChange: -30
+  timeout: 90

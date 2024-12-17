@@ -5,6 +5,7 @@ using Content.Shared.Interaction.Events;
 using Content.Shared.Mobs.Components;
 using Content.Shared.Mobs.Systems;
 using Content.Shared.Popups;
+using Content.Shared._CorvaxNext.Mood;
 using Robust.Shared.Audio;
 using Robust.Shared.Audio.Systems;
 using Robust.Shared.Network;
@@ -94,7 +95,19 @@ public sealed class InteractionPopupSystem : EntitySystem
         if (_random.Prob(component.SuccessChance))
         {
             if (component.InteractSuccessString != null)
+            {
                 msg = Loc.GetString(component.InteractSuccessString, ("target", Identity.Entity(uid, EntityManager))); // Success message (localized).
+                if (component.InteractSuccessString == "hugging-success-generic")
+                {
+                    var hug = new MoodEffectEvent("BeingHugged"); // _CorvaxNext: mood
+                    RaiseLocalEvent(target, hug);
+                }
+                else if (component.InteractSuccessString.Contains("petting-success-"))
+                {
+                    var pet = new MoodEffectEvent("PetAnimal"); // _CorvaxNext: mood
+                    RaiseLocalEvent(user, pet);
+                }
+            }
 
             if (component.InteractSuccessSound != null)
                 sfx = component.InteractSuccessSound;

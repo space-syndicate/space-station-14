@@ -1,4 +1,5 @@
 using Content.Shared.Actions;
+using Content.Shared._CorvaxNext.Mood;
 using Content.Shared.Buckle.Components;
 using Content.Shared.Damage;
 using Content.Shared.Damage.ForceSay;
@@ -81,7 +82,10 @@ public sealed partial class SleepingSystem : EntitySystem
     private void OnWakeAction(Entity<MobStateComponent> ent, ref WakeActionEvent args)
     {
         if (TryWakeWithCooldown(ent.Owner))
+        {
+            RaiseLocalEvent(ent, new MoodEffectEvent("WokeUp")); // _CorvaxNext: mood
             args.Handled = true;
+        }
     }
 
     private void OnSleepAction(Entity<MobStateComponent> ent, ref SleepActionEvent args)

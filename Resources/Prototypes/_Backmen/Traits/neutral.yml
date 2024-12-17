@@ -1,0 +1,33 @@
+﻿# for mood haters
+- type: trait
+  id: Fortitude
+  name: trait-fortitude-name
+  description: trait-fortitude-desc
+  category: MoodTraits
+  cost: 1
+  components:
+  - type: MoodModifyTrait
+    moodId: TraitFortitude
+    goodMoodMultiplier: 0.5
+    badMoodMultiplier: 0.5
+
+- type: trait
+  id: Hypomania
+  name: trait-hypomania-name
+  description: trait-hypomania-desc
+  category: MoodTraits
+  cost: 1
+  components:
+  - type: MoodModifyTrait
+    moodId: TraitSanguine
+    badMoodMultiplier: 1.5 # Everything comes with a price.
+
+- type: trait
+  id: Depression
+  name: trait-depression-name
+  description: trait-depression-desc
+  category: MoodTraits
+  cost: 1
+  components:
+  - type: MoodModifyTrait
+    moodId: TraitSaturnine

@@ -1,0 +1,54 @@
+﻿- type: moodEffect
+  id: BeingHugged
+  moodChange: 3
+  timeout: 90
+
+- type: moodEffect
+  id: WokeUp
+  moodChange: 5
+  timeout: 600
+
+- type: moodEffect
+  id: ArcadePlay
+  moodChange: 5
+  timeout: 480
+
+- type: moodEffect
+  id: GotBlessed
+  moodChange: 5
+  timeout: 480
+
+- type: moodEffect
+  id: PetAnimal
+  moodChange: 3
+  timeout: 300
+
+- type: moodEffect
+  id: SavedLife
+  moodChange: 7
+  timeout: 480
+
+- type: moodEffect
+  id: GotSavedLife
+  moodChange: 10
+  timeout: 480
+
+- type: moodEffect
+  id: TraitorFocused # Used for traitors to boost their goals completion.
+  moodChange: 7
+
+- type: moodEffect
+  id: NukeopsFocused # Used for nukies
+  moodChange: 10
+
+- type: moodEffect
+  id: RevolutionFocused # Used for revolution
+  moodChange: 7
+
+- type: moodEffect
+  id: CultFocused
+  moodChange: 10
+
+- type: moodEffect
+  id: TraitSanguine # Happi! Also used for Clown
+  moodChange: 15

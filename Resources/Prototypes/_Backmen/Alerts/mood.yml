@@ -1,0 +1,110 @@
+# Moods
+- type: alert
+  id: MoodInsane
+  category: Mood
+  clickEvent: !type:MoodCheckAlertEvent
+  icons:
+    - sprite: /Textures/Interface/Alerts/mood.rsi
+      state: mood_insane
+  name: alerts-mood-insane-name
+  description: alerts-mood-insane-desc
+
+- type: alert
+  id: MoodHorrible
+  category: Mood
+  clickEvent: !type:MoodCheckAlertEvent
+  icons:
+    - sprite: /Textures/Interface/Alerts/mood.rsi
+      state: mood1
+  name: alerts-mood-horrible-name
+  description: alerts-mood-horrible-desc
+
+- type: alert
+  id: MoodTerrible
+  category: Mood
+  clickEvent: !type:MoodCheckAlertEvent
+  icons:
+    - sprite: /Textures/Interface/Alerts/mood.rsi
+      state: mood2
+  name: alerts-mood-terrible-name
+  description: alerts-mood-terrible-desc
+
+- type: alert
+  id: MoodBad
+  category: Mood
+  clickEvent: !type:MoodCheckAlertEvent
+  icons:
+    - sprite: /Textures/Interface/Alerts/mood.rsi
+      state: mood3
+  name: alerts-mood-bad-name
+  description: alerts-mood-bad-desc
+
+- type: alert
+  id: MoodMeh
+  category: Mood
+  clickEvent: !type:MoodCheckAlertEvent
+  icons:
+    - sprite: /Textures/Interface/Alerts/mood.rsi
+      state: mood4
+  name: alerts-mood-meh-name
+  description: alerts-mood-meh-desc
+
+- type: alert
+  id: MoodNeutral
+  category: Mood
+  clickEvent: !type:MoodCheckAlertEvent
+  icons:
+    - sprite: /Textures/Interface/Alerts/mood.rsi
+      state: mood5
+  name: alerts-mood-neutral-name
+  description: alerts-mood-neutral-desc
+
+- type: alert
+  id: MoodGood
+  category: Mood
+  clickEvent: !type:MoodCheckAlertEvent
+  icons:
+    - sprite: /Textures/Interface/Alerts/mood.rsi
+      state: mood6
+  name: alerts-mood-good-name
+  description: alerts-mood-good-desc
+
+- type: alert
+  id: MoodGreat
+  category: Mood
+  clickEvent: !type:MoodCheckAlertEvent
+  icons:
+    - sprite: /Textures/Interface/Alerts/mood.rsi
+      state: mood7
+  name: alerts-mood-great-name
+  description: alerts-mood-great-desc
+
+- type: alert
+  id: MoodExceptional
+  category: Mood
+  clickEvent: !type:MoodCheckAlertEvent
+  icons:
+    - sprite: /Textures/Interface/Alerts/mood.rsi
+      state: mood8
+  name: alerts-mood-exceptional-name
+  description: alerts-mood-exceptional-desc
+
+- type: alert
+  id: MoodPerfect
+  category: Mood
+  clickEvent: !type:MoodCheckAlertEvent
+  icons:
+    - sprite: /Textures/Interface/Alerts/mood.rsi
+      state: mood9
+  name: alerts-mood-perfect-name
+  description: alerts-mood-perfect-desc
+
+- type: alert
+  id: MoodDead
+  category: Mood
+  clickEvent: !type:MoodCheckAlertEvent
+  icons:
+    - sprite: /Textures/Interface/Alerts/mood.rsi
+      state: mood_happiness_bad
+  name: alerts-mood-dead-name
+  description: alerts-mood-dead-desc
