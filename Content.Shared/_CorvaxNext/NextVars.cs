@@ -67,4 +67,16 @@ public sealed class NextVars
     public static readonly CVarDef<bool> MoodModifiesThresholds =
         CVarDef.Create("mood.modify_thresholds", false, CVar.SERVER);
 
+        /*
+        * Blob
+        */
+
+        public static readonly CVarDef<int> BlobMax =
+            CVarDef.Create("blob.max", 3, CVar.SERVERONLY);
+
+        public static readonly CVarDef<int> BlobPlayersPer =
+            CVarDef.Create("blob.players_per", 20, CVar.SERVERONLY);
+
+        public static readonly CVarDef<bool> BlobCanGrowInSpace =
+            CVarDef.Create("blob.grow_space", true, CVar.SERVER);
 }

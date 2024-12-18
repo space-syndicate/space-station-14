@@ -38,9 +38,8 @@
     - id: ZombieOutbreak
     - id: LoneOpsSpawn
     - id: DerelictCyborgSpawn
-    - id: LoneOpsSpawn  # ADT tweak - вернул лон опса в список... АНТАГОВ
-    - id: Pirates # ADT tweak pirates
-    # - id: ZombieOutbreak
+   # - id: ZombieOutbreak
+   # - id: BlobSpawn #Goobstation - Blob  (not added wile undergoing playtesting)
 
 - type: entity
   id: BaseStationEvent
@@ -499,6 +498,23 @@
         - Syndicate
       mindRoles:
       - MindRoleNukeops
+
+# Blob Midround
+- type: entity
+  parent: BaseGameRule
+  id: BlobMidround
+  components:
+  - type: StationEvent
+    weight: 4
+    earliestStart: 55
+    minimumPlayers: 25
+    duration: null
+    maxOccurrences: 2
+  - type: BlobSpawnRule
+    carrierBlobProtos:
+    - SpawnPointGhostBlobRat
+    playersPerCarrierBlob: 35
+    maxCarrierBlob: 2
 
 - type: entity
   parent: BaseTraitorRule

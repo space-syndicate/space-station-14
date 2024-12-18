@@ -10,7 +10,7 @@
   - AllHostile
   - Wizard
   - Heretic # goob edit - heretics
-
+  - Blob # Goobstation - Blob
 
 - type: npcFaction
   id: NanoTrasen
@@ -24,6 +24,7 @@
   - AllHostile
   - Wizard
   - Heretic # goob edit - heretics
+  - Blob # Goobstation - Blob
 
 - type: npcFaction
   id: Mouse
@@ -42,6 +43,7 @@
   - Zombie
   - Xeno
   - AllHostile
+  - Blob # Goobstation - Blob
 
 - type: npcFaction
   id: SimpleHostile
@@ -55,6 +57,7 @@
   - AllHostile
   - Wizard
   - Heretic # goob edit - heretics
+  - Blob # Goobstation - Blob
 
 - type: npcFaction
   id: SimpleNeutral
@@ -71,6 +74,7 @@
   - AllHostile
   - Wizard
   - Heretic # goob edit - heretics
+  - Blob # Goobstation - Blob
 
 - type: npcFaction
   id: Xeno
@@ -84,6 +88,7 @@
   - AllHostile
   - Wizard
   - Heretic # goob edit - heretics
+  - Blob # Goobstation - Blob
 
 - type: npcFaction
   id: Zombie
@@ -98,6 +103,7 @@
   - AllHostile
   - Wizard
   - Heretic # goob edit - heretics
+  - Blob # Goobstation - Blob
 
 - type: npcFaction
   id: Revolutionary
@@ -108,6 +114,7 @@
   - Dragon
   - AllHostile
   - Wizard
+  - Blob # Goobstation - Blob
 
 - type: npcFaction
   id: AllHostile
@@ -124,6 +131,7 @@
   - Zombie
   - Revolutionary
   - Wizard
+  - Blob # Goobstation - Blob
 
 - type: npcFaction
   id: Wizard
@@ -136,3 +144,4 @@
   - Zombie
   - Revolutionary
   - AllHostile
+  - Blob # Goobstation - Blob

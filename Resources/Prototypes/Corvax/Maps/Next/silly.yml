@@ -80,3 +80,9 @@
           - Botany
           - Bunker
           - BluespaceHarvest
+        # Goobstation blob-config-start LOW
+        - type: StationBlobConfig
+          stageBegin: 15
+          stageCritical: 200
+          stageTheEnd: 400
+        # Goobstation blob-config-end

@@ -64,6 +64,10 @@
   - type: Tag
     tags:
     - VimPilot
+  - type: NightVision # Goobstation - Nigthvision
+    isToggle: true
+    color: "#808080"
+    playSoundOn: false
 
 - type: entity
   name: bee
@@ -1799,6 +1803,10 @@
       enum.SurgeryUIKey.Key:
         type: SurgeryBui
   # end-_CorvaxNext: surgery
+  - type: NightVision # Goobstation - Nigthvision
+    isToggle: true
+    color: "#808080"
+    playSoundOn: false
 
 - type: entity
   parent: MobMouse
@@ -2443,6 +2451,10 @@
     raffle:
       settings: short
   - type: GhostTakeoverAvailable
+  - type: NightVision # Goobstation - Nigthvision
+    isToggle: true
+    color: "#808080"
+    playSoundOn: false
 
 - type: entity
   name: tarantula
