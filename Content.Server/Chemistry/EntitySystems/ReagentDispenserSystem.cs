@@ -13,6 +13,12 @@ using Robust.Shared.Audio;
 using Robust.Shared.Containers;
 using Robust.Shared.Prototypes;
 using Content.Shared.Labels.Components;
+using Content.Shared.Chemistry.Components.SolutionManager;
+using Content.Shared.Chemistry.Components;
+using Content.Shared.Chemistry.Reagent;
+using Content.Server.Labels;
+using Content.Shared.Verbs;
+using Content.Shared.Examine;
 
 namespace Content.Server.Chemistry.EntitySystems
 {
@@ -30,6 +36,7 @@ namespace Content.Server.Chemistry.EntitySystems
         [Dependency] private readonly UserInterfaceSystem _userInterfaceSystem = default!;
         [Dependency] private readonly IPrototypeManager _prototypeManager = default!;
         [Dependency] private readonly OpenableSystem _openable = default!;
+        [Dependency] private readonly LabelSystem _label = default!; // Corvax-Next-Labeler
 
         public override void Initialize()
         {
@@ -37,9 +44,14 @@ namespace Content.Server.Chemistry.EntitySystems
 
             SubscribeLocalEvent<ReagentDispenserComponent, ComponentStartup>(SubscribeUpdateUiState);
             SubscribeLocalEvent<ReagentDispenserComponent, SolutionContainerChangedEvent>(SubscribeUpdateUiState);
-            SubscribeLocalEvent<ReagentDispenserComponent, EntInsertedIntoContainerMessage>(SubscribeUpdateUiState);
+            SubscribeLocalEvent<ReagentDispenserComponent, EntInsertedIntoContainerMessage>(OnEntInserted); // Corvax-Next-Labeler: SubscribeUpdateUiState < OnEntInserted
             SubscribeLocalEvent<ReagentDispenserComponent, EntRemovedFromContainerMessage>(SubscribeUpdateUiState);
             SubscribeLocalEvent<ReagentDispenserComponent, BoundUIOpenedEvent>(SubscribeUpdateUiState);
+
+            // Corvax-Next-Labeler-Start
+            SubscribeLocalEvent<ReagentDispenserComponent, GetVerbsEvent<AlternativeVerb>>(OnAlternateVerb);
+            SubscribeLocalEvent<ReagentDispenserComponent, ExaminedEvent>(OnExamined);
+            // Corvax-Next-Labeler-End
 
             SubscribeLocalEvent<ReagentDispenserComponent, ReagentDispenserSetDispenseAmountMessage>(OnSetDispenseAmountMessage);
             SubscribeLocalEvent<ReagentDispenserComponent, ReagentDispenserDispenseReagentMessage>(OnDispenseReagentMessage);
@@ -52,6 +64,61 @@ namespace Content.Server.Chemistry.EntitySystems
         {
             UpdateUiState(ent);
         }
+
+        // Corvax-Next-Labeler-Start
+        private void OnEntInserted(Entity<ReagentDispenserComponent> ent, ref EntInsertedIntoContainerMessage ev)
+        {
+            if (ent.Comp.AutoLabel && _solutionContainerSystem.TryGetDrainableSolution(ev.Entity, out _, out var sol))
+            {
+                ReagentId? reagentId = sol.GetPrimaryReagentId();
+                if (reagentId is not null && _prototypeManager.TryIndex<ReagentPrototype>(reagentId.Value.Prototype, out var reagent))
+                {
+                    var reagentQuantity = sol.GetReagentQuantity(reagentId.Value);
+                    var totalQuantity = sol.Volume;
+                    if (reagentQuantity == totalQuantity)
+                        _label.Label(ev.Entity, reagent.LocalizedName);
+                    else
+                        _label.Label(ev.Entity, Loc.GetString("reagent-dispenser-component-impure-auto-label", ("reagent", reagent.LocalizedName), ("purity", 100.0f * reagentQuantity / totalQuantity)));
+                }
+            }
+
+            UpdateUiState(ent);
+        }
+
+        private void OnAlternateVerb(Entity<ReagentDispenserComponent> ent, ref GetVerbsEvent<AlternativeVerb> args)
+        {
+            if (!ent.Comp.CanAutoLabel)
+                return;
+
+            args.Verbs.Add(new AlternativeVerb()
+            {
+                Act = () => SetAutoLabel(ent, !ent.Comp.AutoLabel),
+                Text = ent.Comp.AutoLabel ?
+                    Loc.GetString("reagent-dispenser-component-set-auto-label-off-verb")
+                    : Loc.GetString("reagent-dispenser-component-set-auto-label-on-verb"),
+                Priority = -1, // Not important, low priority.
+            });
+        }
+
+        private void SetAutoLabel(Entity<ReagentDispenserComponent> ent, bool autoLabel)
+        {
+            if (!ent.Comp.CanAutoLabel)
+                return;
+
+            ent.Comp.AutoLabel = autoLabel;
+        }
+
+        private void OnExamined(Entity<ReagentDispenserComponent> ent, ref ExaminedEvent args)
+        {
+            if (!args.IsInDetailsRange || !ent.Comp.CanAutoLabel)
+                return;
+
+            if (ent.Comp.AutoLabel)
+                args.PushMarkup(Loc.GetString("reagent-dispenser-component-examine-auto-label-on"));
+            else
+                args.PushMarkup(Loc.GetString("reagent-dispenser-component-examine-auto-label-off"));
+        }
+        // Corvax-Next-Labeler-End
 
         private void UpdateUiState(Entity<ReagentDispenserComponent> reagentDispenser)
         {
@@ -168,6 +235,8 @@ namespace Content.Server.Chemistry.EntitySystems
         /// </summary>
         private void OnMapInit(EntityUid uid, ReagentDispenserComponent component, MapInitEvent args)
         {
+            component.AutoLabel = component.CanAutoLabel; // Corvax-Next-Labeler
+
             // Get list of pre-loaded containers
             List<string> preLoad = new List<string>();
             if (component.PackPrototypeId is not null

@@ -61,5 +61,13 @@ namespace Content.Server.Chemistry.Components
 
         [ViewVariables(VVAccess.ReadWrite)]
         public ReagentDispenserDispenseAmount DispenseAmount = ReagentDispenserDispenseAmount.U10;
+
+        // Corvax-Next-Labeler-Start
+        [DataField]
+        public bool CanAutoLabel;
+
+        [ViewVariables]
+        public bool AutoLabel;
+        // Corvax-Next-Labeler-End
     }
 }
