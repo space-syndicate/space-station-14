@@ -1,0 +1,8 @@
+- type: entity
+  parent: BaseWeaponTurret
+  id: WeaponTurretNoFaction
+  suffix: NoFaction
+  components:
+  - type: NpcFactionMember
+    factions:
+    - NoFaction
