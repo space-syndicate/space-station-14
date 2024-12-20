@@ -90,7 +90,7 @@
     - type: WeaponArcVisuals
       fadeOut: false
     - type: Sprite
-      sprite: /_Odyssey/lavaland/telegraph.rsi
+      sprite: _Odyssey/lavaland/telegraph.rsi
       layers:
         - state: bite
     - type: TimedDespawn
@@ -112,21 +112,21 @@
   - type: GhostTakeoverAvailable   #Гост роль 
 
  #Крик у всех    
-- type: emoteSounds
-  id: UnisexBreath
-  params:
-    variation: 0.125
-  sounds:
-    Scream:
-      path: /Uploaded/Dragon/lavaland/monsters-breath_g1bqzbeu.ogg
-    Laugh:
-      path: /Uploaded/Dragon/lavaland/monsters-breath_g1bqzbeu.ogg
-    Chitter:
-      path: /Uploaded/Dragon/lavaland/monsters-breath_g1bqzbeu.ogg
-    Click:
-      path: /Uploaded/Dragon/lavaland/monsters-breath_g1bqzbeu.ogg
-    Weh:
-      collection: Weh   
+#- type: emoteSounds
+#  id: UnisexBreath
+#  params:
+#    variation: 0.125
+#  sounds:
+#    Scream:
+#      path: /Uploaded/Dragon/lavaland/monsters-breath_g1bqzbeu.ogg
+#    Laugh:
+#      path: /Uploaded/Dragon/lavaland/monsters-breath_g1bqzbeu.ogg
+#    Chitter:
+#      path: /Uploaded/Dragon/lavaland/monsters-breath_g1bqzbeu.ogg
+#    Click:
+#      path: /Uploaded/Dragon/lavaland/monsters-breath_g1bqzbeu.ogg
+#    Weh:
+#      collection: Weh   
       
 #ИМПЛАНТ СВЕТ      
 - type: entity
@@ -172,7 +172,7 @@
   suffix: FraG, фауна
   components:
   - type: Sprite
-    sprite: /_Odyssey/lavaland/dragon.rsi
+    sprite: _Odyssey/lavaland/dragon.rsi
     layers:
       - state: bubblegum
         map: ["enum.DamageStateVisualLayers.Base"]
@@ -242,11 +242,11 @@
       - trigger:
           !type:DamageTrigger
           damage: 2000
-  - type: Vocal 
-    sounds:
-      Male: UnisexBreath
-      Female: UnisexBreath
-      Unsexed: UnisexBreath #Крик        
+  #- type: Vocal 
+  #  sounds:
+  #    Male: UnisexBreath
+  #    Female: UnisexBreath
+  #    Unsexed: UnisexBreath #Крик        
      
 - type: entity
   parent: ClothingNeckCloakGoliathCloak
@@ -273,86 +273,86 @@
     color: "#ff4242"
     castShadows: false    
     
-- type: entity
-  id: SpiderWebUsual #Паутина без шелка. 
-  name: капкан
-  description: Ловушка!
-  parent: SpiderWeb
-  suffix: FraG, обычная 
-  placement:
-    mode: SnapgridCenter
-    snap:
-      - Wall
-  components:
-    - type: TimedDespawn #Система цикла
-      lifetime: 5         
-      ignoreWhitelist:
-        components:
-            - IgnoreSpiderWeb    
-    - type: MeleeSound
-      soundGroups:
-        Brute:
-          path:
-            "/Audio/Weapons/slash.ogg"
-    - type: Sprite
-      sprite: Uploaded/Dragon/telegraph.rsi
-      layers:
-        - state: target_circle
-          map: ["spiderWebLayer"]
-      drawdepth: WallMountedItems
-    - type: Appearance
-    - type: GenericVisualizer
-      visuals:
-        enum.SpiderWebVisuals.Variant:
-          spiderWebLayer:
-            1:  {state: target_circle}
-            2:  {state: target_circle}
-    - type: Clickable
-    - type: Transform
-      anchored: true
-    - type: Physics
-    - type: Fixtures
-      fixtures:
-        fix1:
-          hard: false
-          density: 7
-          shape:
-            !type:PhysShapeAabb
-            bounds: "-0.5,-0.5,0.5,0.5"
-          layer:
-          - MidImpassable
-    - type: Damageable
-      damageModifierSet: Wood
-    - type: Destructible
-      thresholds:
-      - trigger:
-          !type:DamageTrigger
-          damage: 10
-        behaviors:
-        - !type:DoActsBehavior
-          acts: [ "Destruction" ]
-    - type: Temperature
-      heatDamage:
-        types:
-          Heat: 5
-      coldDamage: {}
-      coldDamageThreshold: 0
-    - type: Flammable
-      fireSpread: true
-      damage:
-        types:
-          Heat: 5
-    - type: Reactive
-      groups:
-        Flammable: [Touch]
-        Extinguish: [Touch]
-    - type: SpiderWebObject
-    - type: SpeedModifierContacts #Замедление паутины
-      walkSpeedModifier: 0.3
-      sprintSpeedModifier: 0.3
-      ignoreWhitelist:
-        components:
-            - IgnoreSpiderWeb              
+#- type: entity
+#  id: SpiderWebUsual #Паутина без шелка. 
+#  name: капкан
+#  description: Ловушка!
+#  parent: SpiderWeb
+#  suffix: FraG, обычная 
+#  placement:
+#    mode: SnapgridCenter
+#    snap:
+#      - Wall
+#  components:
+#    - type: TimedDespawn #Система цикла
+#      lifetime: 5         
+#      ignoreWhitelist:
+#        components:
+#            - IgnoreSpiderWeb    
+##    - type: MeleeSound
+ #     soundGroups:
+ #       Brute:
+ #         path:
+ #           "/Audio/Weapons/slash.ogg"
+ #   - type: Sprite
+ #     sprite: Uploaded/Dragon/telegraph.rsi
+ #     layers:
+ #       - state: target_circle
+ #         map: ["spiderWebLayer"]
+ #     drawdepth: WallMountedItems
+ #   - type: Appearance
+ #   - type: GenericVisualizer
+ #     visuals:
+ #       enum.SpiderWebVisuals.Variant:
+ #         spiderWebLayer:
+ #           1:  {state: target_circle}
+ #           2:  {state: target_circle}
+ #   - type: Clickable
+ #   - type: Transform
+ #     anchored: true
+ #   - type: Physics
+ #   - type: Fixtures
+ #     fixtures:
+ #       fix1:
+ #         hard: false
+ #         density: 7
+ #         shape:
+ #           !type:PhysShapeAabb
+ #           bounds: "-0.5,-0.5,0.5,0.5"
+ #         layer:
+ #         - MidImpassable
+ #   - type: Damageable
+ #     damageModifierSet: Wood
+ #   - type: Destructible
+ #     thresholds:
+ #     - trigger:
+ #         !type:DamageTrigger
+ #         damage: 10
+ #       behaviors:
+ #       - !type:DoActsBehavior
+ #         acts: [ "Destruction" ]
+ #   - type: Temperature
+ #     heatDamage:
+ #       types:
+ #         Heat: 5
+ #     coldDamage: {}
+ #     coldDamageThreshold: 0
+ #   - type: Flammable
+ #     fireSpread: true
+ #     damage:
+ #       types:
+ #         Heat: 5
+ #   - type: Reactive
+ #     groups:
+ #       Flammable: [Touch]
+ #       Extinguish: [Touch]
+ #   - type: SpiderWebObject
+ #   - type: SpeedModifierContacts #Замедление паутины
+ #     walkSpeedModifier: 0.3
+ #     sprintSpeedModifier: 0.3
+ #     ignoreWhitelist:
+ #       components:
+ #           - IgnoreSpiderWeb              
        
 
 - type: entity
@@ -365,7 +365,7 @@
     range: 15
     itemIconStyle: BigAction
     icon:
-      sprite: /_Odyssey/lavaland/telegraph.rsi
+      sprite: _Odyssey/lavaland/telegraph.rsi
       state: target_circle
     event: !type:WorldSpawnSpellEvent
       prototypes:
@@ -395,7 +395,7 @@
     range: 8
     itemIconStyle: BigAction
     icon:
-      sprite: /_Odyssey/lavaland/telegraph.rsi
+      sprite: _Odyssey/lavaland/telegraph.rsi
       state: target_circle
     event: !type:WorldSpawnSpellEvent
       prototypes:
@@ -462,7 +462,7 @@
   parent: WoodenSupport
   components:
   - type: Sprite
-    sprite: /_Odyssey/lavaland/telegraph.rsi
+    sprite: _Odyssey/lavaland/telegraph.rsi
     state: hoarder_circle
   - type: Fixtures
     fixtures:
@@ -500,7 +500,7 @@
     range: 15
     itemIconStyle: BigAction
     icon:
-      sprite: /_Odyssey/lavaland/telegraph.rsi
+      sprite: _Odyssey/lavaland/telegraph.rsi
       state: hoarder_circle
     event: !type:WorldSpawnSpellEvent
       prototypes:
@@ -527,7 +527,7 @@
   suffix: FraG, фауна
   components:
   - type: Sprite
-    sprite: /_Odyssey/lavaland/dragon.rsi
+    sprite: _Odyssey/lavaland/dragon.rsi
     layers:
       - state: dragon
         map: ["enum.DamageStateVisualLayers.Base"]  
@@ -587,27 +587,27 @@
   - type: Bloodstream
     bloodMaxVolume: 0
     bloodReagent: Cryoxadone           
-  - type: Vocal 
-    sounds:
-      Male: UnisexDragon
-      Female: UnisexDragon
-      Unsexed: UnisexDragon #Крик         
+ # - type: Vocal 
+ #   sounds:
+ #     Male: UnisexDragon
+ #     Female: UnisexDragon
+ #     Unsexed: UnisexDragon #Крик         
  #Крик    
-- type: emoteSounds
-  id: UnisexDragon
-  params:
-    variation: 0.125
-  sounds:
-    Scream:
-      path: /Uploaded/Dragon/lavaland/space_dragon_roar.ogg
-    Laugh:
-      path: /Uploaded/Dragon/lavaland/space_dragon_roar.ogg
-    Chitter:
-      path: /Uploaded/Dragon/lavaland/space_dragon_roar.ogg
-    Click:
-      path: /Uploaded/Dragon/lavaland/space_dragon_roar.ogg
-    Weh:
-      collection: Weh        
+#- type: emoteSounds
+#  id: UnisexDragon
+#  params:
+#    variation: 0.125
+#  sounds:
+#    Scream:
+#      path: /Uploaded/Dragon/lavaland/space_dragon_roar.ogg
+#    Laugh:
+#      path: /Uploaded/Dragon/lavaland/space_dragon_roar.ogg
+#    Chitter:
+#      path: /Uploaded/Dragon/lavaland/space_dragon_roar.ogg
+#    Click:
+#      path: /Uploaded/Dragon/lavaland/space_dragon_roar.ogg
+#    Weh:
+#      collection: Weh        
 
 - type: entity
   parent: ClothingOuterArmorBone 
@@ -670,7 +670,7 @@
   parent: WoodenSupport
   components:
   - type: Sprite
-    sprite: /_Odyssey/lavaland/telegraph.rsi
+    sprite: _Odyssey/lavaland/telegraph.rsi
     state: skull
   - type: Fixtures
     fixtures:
@@ -708,7 +708,7 @@
     range: 15
     itemIconStyle: BigAction
     icon:
-      sprite: /_Odyssey/lavaland/telegraph.rsi
+      sprite: _Odyssey/lavaland/telegraph.rsi
       state: skull
     event: !type:WorldSpawnSpellEvent
       prototypes:
@@ -727,7 +727,7 @@
     range: 15
     itemIconStyle: BigAction
     icon:
-      sprite: /_Odyssey/lavaland/telegraph.rsi
+      sprite: _Odyssey/lavaland/telegraph.rsi
       state: skull
     event: !type:WorldSpawnSpellEvent
       prototypes:
@@ -764,7 +764,7 @@
   suffix: FraG, фауна
   components:
   - type: Sprite
-    sprite: /_Odyssey/lavaland/dragon.rsi
+    sprite: _Odyssey/lavaland/dragon.rsi
     layers:
       - state: eva
         map: ["enum.DamageStateVisualLayers.Base"]
@@ -884,7 +884,7 @@
   suffix: FraG, фауна
   components:
   - type: Sprite
-    sprite: /_Odyssey/lavaland/empire.rsi
+    sprite: _Odyssey/lavaland/empire.rsi
     layers:
       - state: mega_legion
         map: ["enum.DamageStateVisualLayers.Base"]
@@ -939,7 +939,7 @@
     selectedMode: FullAuto
     availableModes:
       - FullAuto
-    soundGunshot: /Uploaded/Dragon/lavaland/the-lava-bubble-gurgled.ogg   #Звук кислоты   #Кислота
+#    soundGunshot: /Uploaded/Dragon/lavaland/the-lava-bubble-gurgled.ogg   #Звук кислоты   #Кислота
   - type: Bloodstream
     bloodMaxVolume: 0
     bloodReagent: Cryoxadone       
@@ -968,7 +968,7 @@
   suffix: FraG, фауна
   components:
   - type: Sprite
-    sprite: /_Odyssey/lavaland/legion.rsi
+    sprite: _Odyssey/lavaland/legion.rsi
     layers:
       - state: dragon
         map: ["enum.DamageStateVisualLayers.Base"]
@@ -1018,7 +1018,7 @@
   suffix: FraG, фауна
   components:
   - type: Sprite
-    sprite: /_Odyssey/lavaland/empire.rsi
+    sprite: _Odyssey/lavaland/empire.rsi
     layers:
       - state: dragon
         map: ["enum.DamageStateVisualLayers.Base"]
@@ -1069,7 +1069,7 @@
     selectedMode: FullAuto
     availableModes:
       - FullAuto
-    soundGunshot: /Uploaded/Dragon/lavaland/the-lava-bubble-gurgled.ogg #Звук кислоты   #Кислота   
+#    soundGunshot: /Uploaded/Dragon/lavaland/the-lava-bubble-gurgled.ogg #Звук кислоты   #Кислота   
   - type: Destructible 
     thresholds:
       - trigger:
@@ -1117,7 +1117,7 @@
   suffix: FraG
   components:
   - type: Sprite
-    sprite: /_Odyssey/lavaland/healing_toolbox.rsi
+    sprite: _Odyssey/lavaland/healing_toolbox.rsi
     state: icon
   - type: Healing
     damageContainers:
@@ -1156,7 +1156,7 @@
   suffix: FraG
   components:    
   - type: Sprite
-    sprite: /_Odyssey/lavaland/healing_toolbox.rsi
+    sprite: _Odyssey/lavaland/healing_toolbox.rsi
     state: icon
   - type: Healing
     damageContainers:
@@ -1197,7 +1197,7 @@
     range: 2
     itemIconStyle: BigAction
     icon:
-      sprite: /_Odyssey/lavaland/healing_toolbox.rsi
+      sprite: _Odyssey/lavaland/healing_toolbox.rsi
       state: icon
     event: !type:WorldSpawnSpellEvent
       prototypes:
@@ -1244,7 +1244,7 @@
     range: 2
     itemIconStyle: BigAction
     icon:
-      sprite: /_Odyssey/lavaland/healing_toolbox.rsi
+      sprite: _Odyssey/lavaland/healing_toolbox.rsi
       state: icon
     event: !type:WorldSpawnSpellEvent
       prototypes:
@@ -1487,7 +1487,7 @@
   suffix: FraG, фауна
   components:
   - type: Sprite
-    sprite: /_Odyssey/lavaland/goliath.rsi
+    sprite: _Odyssey/lavaland/goliath.rsi
     layers:
       - state: dragon
         map: ["enum.DamageStateVisualLayers.Base"]
@@ -1562,7 +1562,7 @@
   - TrashBananaPeelExplosive
   components:
   - type: Sprite
-    sprite: /_Odyssey/lavaland/goliath.rsi
+    sprite: _Odyssey/lavaland/goliath.rsi
     state: eva_attack
   - type: Fixtures
     fixtures:
@@ -2155,7 +2155,7 @@
   suffix: FraG
   components:
   - type: Sprite
-    sprite: /_Odyssey/lavaland/stabilizing.rsi
+    sprite: _Odyssey/lavaland/stabilizing.rsi
     state: icon
   - type: Construction
     graph: GhostSheet
@@ -2179,7 +2179,7 @@
   suffix: FraG
   components:
   - type: Sprite
-    sprite: /_Odyssey/lavaland/modifier.rsi
+    sprite: _Odyssey/lavaland/modifier.rsi
     state: icon
   - type: Construction
     graph: GhostSheet
@@ -2197,9 +2197,9 @@
   suffix: FraG
   components:
   - type: Sprite
-    sprite: /_Odyssey/lavaland/spatio.rsi
+    sprite: _Odyssey/lavaland/spatio.rsi
   - type: Clothing
-    sprite: /_Odyssey/lavaland/spatio.rsi
+    sprite: _Odyssey/lavaland/spatio.rsi
   - type: PressureProtection
     highPressureMultiplier: 0.7
     lowPressureMultiplier: 1000
@@ -2309,7 +2309,7 @@
       factions:
         - Xeno
     - type: Sprite
-      sprite: /_Odyssey/lavaland/pliers.rsi
+      sprite: _Odyssey/lavaland/pliers.rsi
       noRot: true
       layers:
         - state: state1
@@ -2319,7 +2319,7 @@
     - type: Gun
       fireRate: 0.15
       selectedMode: FullAuto
-      soundGunshot: /Uploaded/Dragon/lavaland/the-lava-bubble-gurgled.ogg
+#      soundGunshot: /Uploaded/Dragon/lavaland/the-lava-bubble-gurgled.ogg
     - type: HTN
       rootTask:
         task: TurretCompound
@@ -2386,7 +2386,7 @@
   description: Что же он скрывает? Столько загадок и тайн! И мне кажется, что он смотрит на меня.
   components:
   - type: Sprite
-    sprite: /_Odyssey/lavaland/piratechest.rsi
+    sprite: _Odyssey/lavaland/piratechest.rsi
     layers:
     - state: crate
       map: ["enum.StorageVisualLayers.Base"]
@@ -2396,11 +2396,11 @@
       visible: false
       map: ["enum.WeldableLayers.BaseWelded"]
     - state: paper
-      sprite: /_Odyssey/lavaland/piratechest.rsi
+      sprite: _Odyssey/lavaland/piratechest.rsi
       offset: "0.0,-0.09375"
       map: ["enum.PaperLabelVisuals.Layer"]  
   - type: Icon
-    sprite: /_Odyssey/lavaland/piratechest.rsi
+    sprite: _Odyssey/lavaland/piratechest.rsi
     state: crate_icon  
   - type: Appearance
   - type: EntityStorageVisuals
@@ -2517,16 +2517,16 @@
     rechargeCooldown: 10   
           
 #КРАФТЫ   
-- type: construction
-  name: ядро легиона и сыворотка
-  id: LavaSerumHeart
-  graph: LavaSerumHeart
-  startNode: start
-  targetNode: LavaSerumHeart
-  category: Шахтёрство 
-  description: Позволяет стабилизировать активные ядра легиона, позволяя вам хранить их бесконечно. 
-  icon: { sprite: /Uploaded/Dragon/healing_toolbox.rsi, state: icon }
-  objectType: Item
+#- type: construction
+#  name: ядро легиона и сыворотка
+#  id: LavaSerumHeart
+#  graph: LavaSerumHeart
+#  startNode: start
+#  targetNode: LavaSerumHeart
+#  category: Шахтёрство 
+#  description: Позволяет стабилизировать активные ядра легиона, позволяя вам хранить их бесконечно. 
+#  icon: { sprite: /Uploaded/Dragon/healing_toolbox.rsi, state: icon }
+#  objectType: Item
     
 - type: constructionGraph
   id: LavaSerumHeart
@@ -2539,13 +2539,13 @@
         - tag: HealingToolboxKernelCrafting
           name: ядро легиона
           icon:
-            sprite: /_Odyssey/lavaland/healing_toolbox.rsi
+            sprite: _Odyssey/lavaland/healing_toolbox.rsi
             state: icon
           doAfter: 1   
         - tag: LavaStabilizingCrafting
           name: cтабилизирующая сыворотка
           icon:
-            sprite: /_Odyssey/lavaland/stabilizing.rsi
+            sprite: _Odyssey/lavaland/stabilizing.rsi
             state: icon
           doAfter: 1           
         
@@ -2580,7 +2580,7 @@
         - tag: LavaModifierCrafting
           name: модуль усовершенствования
           icon:
-            sprite: /_Odyssey/lavaland/modifier.rsi
+            sprite: _Odyssey/lavaland/modifier.rsi
             state: icon
           doAfter: 1           
         
