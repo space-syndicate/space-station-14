@@ -109,24 +109,7 @@
     requirements:
     name: Обитатели Лаваленда
     description: Ваша задача ходить и ждать когда вас встретит утилизатор. Сами вы их искать не должно!
-  - type: GhostTakeoverAvailable   #Гост роль 
-
- #Крик у всех    
-#- type: emoteSounds
-#  id: UnisexBreath
-#  params:
-#    variation: 0.125
-#  sounds:
-#    Scream:
-#      path: /Uploaded/Dragon/lavaland/monsters-breath_g1bqzbeu.ogg
-#    Laugh:
-#      path: /Uploaded/Dragon/lavaland/monsters-breath_g1bqzbeu.ogg
-#    Chitter:
-#      path: /Uploaded/Dragon/lavaland/monsters-breath_g1bqzbeu.ogg
-#    Click:
-#      path: /Uploaded/Dragon/lavaland/monsters-breath_g1bqzbeu.ogg
-#    Weh:
-#      collection: Weh   
+  - type: GhostTakeoverAvailable   #Гост роль  
       
 #ИМПЛАНТ СВЕТ      
 - type: entity
@@ -241,12 +224,7 @@
     thresholds:
       - trigger:
           !type:DamageTrigger
-          damage: 2000
-  #- type: Vocal 
-  #  sounds:
-  #    Male: UnisexBreath
-  #    Female: UnisexBreath
-  #    Unsexed: UnisexBreath #Крик        
+          damage: 2000    
      
 - type: entity
   parent: ClothingNeckCloakGoliathCloak
@@ -273,88 +251,6 @@
     color: "#ff4242"
     castShadows: false    
     
-#- type: entity
-#  id: SpiderWebUsual #Паутина без шелка. 
-#  name: капкан
-#  description: Ловушка!
-#  parent: SpiderWeb
-#  suffix: FraG, обычная 
-#  placement:
-#    mode: SnapgridCenter
-#    snap:
-#      - Wall
-#  components:
-#    - type: TimedDespawn #Система цикла
-#      lifetime: 5         
-#      ignoreWhitelist:
-#        components:
-#            - IgnoreSpiderWeb    
-##    - type: MeleeSound
- #     soundGroups:
- #       Brute:
- #         path:
- #           "/Audio/Weapons/slash.ogg"
- #   - type: Sprite
- #     sprite: Uploaded/Dragon/telegraph.rsi
- #     layers:
- #       - state: target_circle
- #         map: ["spiderWebLayer"]
- #     drawdepth: WallMountedItems
- #   - type: Appearance
- #   - type: GenericVisualizer
- #     visuals:
- #       enum.SpiderWebVisuals.Variant:
- #         spiderWebLayer:
- #           1:  {state: target_circle}
- #           2:  {state: target_circle}
- #   - type: Clickable
- #   - type: Transform
- #     anchored: true
- #   - type: Physics
- #   - type: Fixtures
- #     fixtures:
- #       fix1:
- #         hard: false
- #         density: 7
- #         shape:
- #           !type:PhysShapeAabb
- #           bounds: "-0.5,-0.5,0.5,0.5"
- #         layer:
- #         - MidImpassable
- #   - type: Damageable
- #     damageModifierSet: Wood
- #   - type: Destructible
- #     thresholds:
- #     - trigger:
- #         !type:DamageTrigger
- #         damage: 10
- #       behaviors:
- #       - !type:DoActsBehavior
- #         acts: [ "Destruction" ]
- #   - type: Temperature
- #     heatDamage:
- #       types:
- #         Heat: 5
- #     coldDamage: {}
- #     coldDamageThreshold: 0
- #   - type: Flammable
- #     fireSpread: true
- #     damage:
- #       types:
- #         Heat: 5
- #   - type: Reactive
- #     groups:
- #       Flammable: [Touch]
- #       Extinguish: [Touch]
- #   - type: SpiderWebObject
- #   - type: SpeedModifierContacts #Замедление паутины
- #     walkSpeedModifier: 0.3
- #     sprintSpeedModifier: 0.3
- #     ignoreWhitelist:
- #       components:
- #           - IgnoreSpiderWeb              
-       
-
 - type: entity
   id: ActionSpawnMagicarpBubblegum #Заклинание призыва лавы 1
   name: Замедлить врага.
@@ -382,7 +278,8 @@
   noSpawn: true
   components:
     - type: SubdermalImplant
-      implantAction: ActionSpawnMagicarpBubblegum      #Суда заклинание   
+      implantAction: ActionSpawnMagicarpBubblegum      #Суда заклинание
+
 #Руна
 - type: entity
   id: ActionSpawnMagicarpBubblegumRune #Заклинание призыва лавы 1
@@ -586,28 +483,7 @@
         amount: 1 
   - type: Bloodstream
     bloodMaxVolume: 0
-    bloodReagent: Cryoxadone           
- # - type: Vocal 
- #   sounds:
- #     Male: UnisexDragon
- #     Female: UnisexDragon
- #     Unsexed: UnisexDragon #Крик         
- #Крик    
-#- type: emoteSounds
-#  id: UnisexDragon
-#  params:
-#    variation: 0.125
-#  sounds:
-#    Scream:
-#      path: /Uploaded/Dragon/lavaland/space_dragon_roar.ogg
-#    Laugh:
-#      path: /Uploaded/Dragon/lavaland/space_dragon_roar.ogg
-#    Chitter:
-#      path: /Uploaded/Dragon/lavaland/space_dragon_roar.ogg
-#    Click:
-#      path: /Uploaded/Dragon/lavaland/space_dragon_roar.ogg
-#    Weh:
-#      collection: Weh        
+    bloodReagent: Cryoxadone                 
 
 - type: entity
   parent: ClothingOuterArmorBone 
@@ -939,7 +815,6 @@
     selectedMode: FullAuto
     availableModes:
       - FullAuto
-#    soundGunshot: /Uploaded/Dragon/lavaland/the-lava-bubble-gurgled.ogg   #Звук кислоты   #Кислота
   - type: Bloodstream
     bloodMaxVolume: 0
     bloodReagent: Cryoxadone       
@@ -1004,10 +879,6 @@
     bloodMaxVolume: 0
     bloodReagent: Cryoxadone     
 
-
-  
-    
-
 - type: entity
   parent: 
   - MobLavaGost
@@ -1068,8 +939,7 @@
     useKey: false
     selectedMode: FullAuto
     availableModes:
-      - FullAuto
-#    soundGunshot: /Uploaded/Dragon/lavaland/the-lava-bubble-gurgled.ogg #Звук кислоты   #Кислота   
+      - FullAuto 
   - type: Destructible 
     thresholds:
       - trigger:
@@ -1083,7 +953,7 @@
             HealingToolboxKernel:
               min: 1
               max: 1
-  - type: PassiveDamage # Slight passive regen. Assuming one damage type, comes out to about 4 damage a minute.Самолечение
+  - type: PassiveDamage
     allowedStates:
     - Alive
     damageCap: 300
@@ -2319,7 +2189,6 @@
     - type: Gun
       fireRate: 0.15
       selectedMode: FullAuto
-#      soundGunshot: /Uploaded/Dragon/lavaland/the-lava-bubble-gurgled.ogg
     - type: HTN
       rootTask:
         task: TurretCompound
@@ -2516,17 +2385,7 @@
   - type: RechargeBasicEntityAmmo
     rechargeCooldown: 10   
           
-#КРАФТЫ   
-#- type: construction
-#  name: ядро легиона и сыворотка
-#  id: LavaSerumHeart
-#  graph: LavaSerumHeart
-#  startNode: start
-#  targetNode: LavaSerumHeart
-#  category: Шахтёрство 
-#  description: Позволяет стабилизировать активные ядра легиона, позволяя вам хранить их бесконечно. 
-#  icon: { sprite: /Uploaded/Dragon/healing_toolbox.rsi, state: icon }
-#  objectType: Item
+#КРАФТЫ
     
 - type: constructionGraph
   id: LavaSerumHeart
