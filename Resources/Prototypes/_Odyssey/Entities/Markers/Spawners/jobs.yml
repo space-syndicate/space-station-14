@@ -1,0 +1,11 @@
+- type: entity
+  id: SpawnPointMinerProfession
+  parent: SpawnPointJobBase
+  name: Шахтёр
+  components:
+  - type: SpawnPoint
+    job_id: MinerProfession
+  - type: Sprite
+    layers:
+      - state: green
+      - state: security_officer

@@ -61,6 +61,8 @@
             # cargo
             SalvageSpecialist: [ 1, 1 ]
             CargoTechnician: [ 3, 3 ]
+            # Odyssey-changes
+            MinerProfession: [ 5, 5 ]
         - type: StationGoal
           goals:
             - Artifacts
@@ -119,6 +121,8 @@
             # cargo
             SalvageSpecialist: [ 1, 1 ]
             CargoTechnician: [ 2, 3 ]
+            # Odyssey-changes
+            MinerProfession: [ 5, 5 ]
         - type: StationGoal
           goals:
             - SectorSecurity
@@ -178,6 +182,8 @@
             Quartermaster: [ 1, 1 ]
             SalvageSpecialist: [ 3, 3 ]
             CargoTechnician: [ 3, 4 ]
+            # Odyssey-changes
+            MinerProfession: [ 5, 5 ]
         - type: StationGoal
           goals:
             - Singularity

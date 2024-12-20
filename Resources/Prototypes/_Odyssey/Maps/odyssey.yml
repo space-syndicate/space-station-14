@@ -10,7 +10,6 @@
       stationProto: StandardNanotrasenStation
       components:
         - type: StationNameSetup
-          mapNameTemplate: '{0} odyssey {1}'
           mapNameTemplate: '{0} Odyssey Station {1}'
           nameGenerator:
             !type:NanotrasenNameGenerator

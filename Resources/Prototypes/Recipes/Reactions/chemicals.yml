@@ -515,16 +515,3 @@
       amount: 1
   products:
     Tazinide: 1
-
-- type: reaction
-  id: Lexorin
-  impact: High
-  reactants:
-    HeartbreakerToxin:
-      amount: 1
-    Plasma:
-      amount: 1
-    Impedrezene:
-      amount: 1
-  products:
-    Lexorin: 2

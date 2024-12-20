@@ -78,6 +78,8 @@
             # silicon
             StationAi: [ 1, 1 ]
             Borg: [ 2, 3 ]
+            # Odyssey-changes
+            MinerProfession: [ 5, 5 ]
         - type: StationGoal
           goals:
           - SolarPanels
