@@ -1,0 +1,24 @@
+- type: npcFaction
+  id: TurretPassive
+
+- type: npcFaction
+  id: TurretPeace
+  hostile:
+  - Dragon
+  - SimpleHostile
+  - Xeno
+
+- type: npcFaction
+  id: TurretHostile
+  hostile:
+  - Dragon
+  - NanoTrasen
+  - Mouse
+  - Passive
+  - PetsNT
+  - SimpleHostile
+  - SimpleNeutral
+  - Syndicate
+  - Xeno
+  - Zombie
+  - Revolutionary
