@@ -1,7 +1,7 @@
-- type: entity
+- type: entity #odyssey-changes
   name: proto-kinetic accelerator
   id: WeaponProtoKineticAccelerator
-  parent: [WeaponProtoKineticAcceleratorBase, BaseCargoContraband]
+  parent: WeaponProtoKineticAcceleratorBase
   description: Fires low-damage kinetic bolts at a short range.
   components:
   - type: Sprite
@@ -10,6 +10,12 @@
     - state: icon
     - state: animation-icon
       visible: false
-      map: [ "empty-icon" ]
+      map: [ "empty-icon" ]  
+  - type: Construction
+    graph: GhostSheet
+    node: ghost_sheet 
+  - type: Tag
+    tags:
+    - WeaponProtoKineticAcceleratorCrafting  
   # todo: add itemcomponent with inhandVisuals states using unused texture and animation assets in kinetic_accelerator.rsi
   # todo: add clothingcomponent with clothingVisuals states using unused texture and animations assets in kinetic_accelerator.rsi

@@ -192,9 +192,7 @@
   - type: Butcherable #Разделка 
     spawned:
       - id: ArtifactFragment
-        amount: 4  
-      - id: ClothingNeckCloakGoliathCloakHellspawn  
-        amount: 1      
+        amount: 4    
   - type: PointLight
     radius: 2
     energy: 2.5
@@ -224,32 +222,7 @@
     thresholds:
       - trigger:
           !type:DamageTrigger
-          damage: 2000    
-     
-- type: entity
-  parent: ClothingNeckCloakGoliathCloak
-  id: ClothingNeckCloakGoliathCloakHellspawn
-  name: плащ Бубльгума
-  description: Редкий трофей!
-  suffix: FraG
-  components:   
-  - type: Armor
-    modifiers:
-      coefficients:
-        Blunt: 0.8 #Быстрая броня, но защита не лучшая.
-        Slash: 0.75
-        Piercing: 0.8
-        Heat: 0.65
-        Radiation: 0.9
-        Caustic: 0.9
-  - type: ClothingSpeedModifier
-    walkModifier: 0.8
-    sprintModifier: 0.8 
-  - type: PointLight
-    radius: 3
-    energy: 2.5
-    color: "#ff4242"
-    castShadows: false    
+          damage: 2000     
     
 - type: entity
   id: ActionSpawnMagicarpBubblegum #Заклинание призыва лавы 1
@@ -1245,8 +1218,7 @@
     - type: StorageFill
       contents:
         - id: Gauze #Бинт
-        - id: BowImprovised #Лук  
-        - id: FoodMeatGoliath         
+        - id: BowImprovised #Лук         
  
  #ШАМАН
 - type: entity
@@ -1312,8 +1284,6 @@
         - HideContextMenu
         - Flashlight
     - type: UnpoweredFlashlight  
-    
-
 
 - type: entity 
   id: ActionSpawnMagicarpSpellSpiderResident #Заклинание призыва охранника
@@ -1346,209 +1316,6 @@
     lifetime: 50
   - type: SpawnOnDespawn
     prototype: MobCivilianInquisitorLava   #Система цикла 
-        
-#ГОЛИАФЫ
-- type: entity
-  parent: 
-  - MobFleshJaredSalvage
-  id: MobGoliath
-  name: голиаф 
-  description: Кто это?
-  suffix: FraG, фауна
-  components:
-  - type: Sprite
-    sprite: _Odyssey/lavaland/goliath.rsi
-    layers:
-      - state: dragon
-        map: ["enum.DamageStateVisualLayers.Base"]
-  - type: DamageStateVisuals
-    states:
-      Alive:
-        Base: dragon
-      Dead:
-        Base: dragon_dead
-  - type: MovementSpeedModifier
-    baseWalkSpeed: 3
-    baseSprintSpeed: 3  
-  - type: PointLight
-    radius: 0
-    energy: 0
-    color: "#ff4242"
-    castShadows: false  
-  - type: MobThresholds #ХП 
-    thresholds:
-      0: Alive
-      100: Dead         
-  - type: Butcherable #Разделка 
-    spawned:
-      - id: MaterialBones1
-        amount: 1     
-      - id: FoodMeatGoliath
-        amount: 2         
-  - type: MeleeWeapon
-    soundHit:
-        path: /Audio/Weapons/Xeno/alien_claw_flesh3.ogg
-    angle: 0
-    animation: AttackLava
-    damage:
-      types:
-        Piercing: 10 
-        Blunt: 3 
-  - type: AutoImplant
-    implants:
-    - LightImplantSpiderLegion   
-  - type: TimedDespawn #Система цикла
-    lifetime: 360 
-  - type: PassiveDamage # Slight passive regen. Assuming one damage type, comes out to about 4 damage a minute.Самолечение
-    allowedStates:
-    - Alive
-    damageCap: 300
-    damage:
-      types:
-        Heat: -25
-      groups:
-        Brute: -1   
-        Toxin: -1
-        Airloss: -1
-        Burn: -10 
-  - type: Bloodstream
-    bloodMaxVolume: 0
-    bloodReagent: Cryoxadone  
-
-- type: entity
-  name: Спавнер голиафа
-  id: SpawnMobGoliath
-  parent: SpawnMobLegion
-  components:
-  - type: ConditionalSpawner
-    prototypes:
-    - MobGoliath     
-  
-- type: entity 
-  id: WoodenSupportBeamGoliath
-  name: шипы #Криво работают и не используются. 
-  description: Убегай!
-  parent: 
-  - TrashBananaPeelExplosive
-  components:
-  - type: Sprite
-    sprite: _Odyssey/lavaland/goliath.rsi
-    state: eva_attack
-  - type: Fixtures
-    fixtures:
-      fix1:
-        hard: false
-        shape:
-          !type:PhysShapeAabb
-          bounds: "-0.5,-0.5,0.5,0.5"
-        mask:
-        - FullTileMask
-        layer:
-        - WallLayer
-        density: 1000       
-  - type: TimedDespawn #Система цикла
-    lifetime: 5
-    
-- type: entity #Делает мясо дороже
-  name: raw goliath meat
-  parent: FoodMeatRawBase
-  id: FoodMeatGoliath
-  description: A slab of goliath meat. It's not very edible now, but it cooks great in lava.
-  components:
-  - type: Sprite
-    state: goliath
-  - type: SolutionContainerManager
-    solutions:
-      food:
-        reagents:
-        - ReagentId: UncookedAnimalProteins
-          Quantity: 5
-        - ReagentId: Fat
-          Quantity: 3
-  - type: InternalTemperature
-    thickness: 0.1 # very big, do cook it in lava
-  - type: Construction
-    graph: GoliathSteak
-    node: start
-    defaultTarget: goliath steak  
-  - type: Tag
-    tags:
-    - FoodMeatGoliathCrafting      
-  - type: StaticPrice
-    price: 350  
-   
-    
-- type: entity
-  name: периодический спавнер голиафа
-  suffix: случайно, шахтёров, FraG, фауна
-  id: WallRockBasaltSpawnerLavaGoliath
-  parent: MarkerBase
-  components:
-    - type: Sprite
-      layers:
-        - state: blue
-        - sprite: Mobs/Animals/mouse.rsi
-          state: icon-2
-        - state: timed
-    - type: Timer
-    - type: TimedSpawner
-      prototypes:
-        - MobGoliath
-      # round ~90m
-      # one spawner should only spawn ~5 mice for sanity reasons
-      # therefore 18m
-      # use 50% chance for randomness and balance with halved interval
-      chance: 0.5
-      intervalSeconds: 240
-      minimumEntitiesSpawned: 1
-      maximumEntitiesSpawned: 1  
-
-#НАБЛЮДАТЕЛЬ
-- type: entity
-  id: MobWatcherMagmawing
-  parent: MobWatcherBase
-  name: magmawing watcher
-  suffix: FraG, фауна
-  components:
-  - type: Sprite
-    layers:
-    - map: [ "enum.DamageStateVisualLayers.Base" ]
-      state: base
-    - map: [ "enum.DamageStateVisualLayers.BaseUnshaded" ]
-      state: unshaded
-      shader: unshaded
-      color: orangered
-  - type: PointLight
-    radius: 1.5
-    energy: 1
-    color: orangered
-  - type: ProjectileBatteryAmmoProvider
-    proto: WatcherBoltMagmawing
-    fireCost: 50 
-  - type: TimedDespawn #Система цикла
-    lifetime: 360         
-    ignoreWhitelist: 
-  - type: MovementSpeedModifier #Скорость
-    baseWalkSpeed: 3
-    baseSprintSpeed: 3
-  - type: MobThresholds
-    thresholds:
-      0: Alive
-      90: Dead   
-  - type: Butcherable #Разделка 
-    spawned:
-      - id: MaterialWebSilk1
-        amount: 3  
-      - id: MaterialCotton1
-        amount: 4  
-  - type: Destructible
-    thresholds:
-      - trigger:
-          !type:DamageTrigger
-          damage: 110 
-  - type: Bloodstream
-    bloodMaxVolume: 0
-    bloodReagent: Cryoxadone  
 
 - type: entity
   name: Спавнер наблюдателя
@@ -2127,27 +1894,7 @@
     node: ghost_sheet 
   - type: Tag
     tags:
-    - LavaWeaponProtoKineticAccelerator    
-      
-- type: entity
-  name: proto-kinetic accelerator
-  id: WeaponProtoKineticAccelerator
-  parent: WeaponProtoKineticAcceleratorBase
-  description: Fires low-damage kinetic bolts at a short range.
-  components:
-  - type: Sprite
-    sprite: Objects/Weapons/Guns/Basic/kinetic_accelerator.rsi
-    layers:
-    - state: icon
-    - state: animation-icon
-      visible: false
-      map: [ "empty-icon" ]  
-  - type: Construction
-    graph: GhostSheet
-    node: ghost_sheet 
-  - type: Tag
-    tags:
-    - WeaponProtoKineticAcceleratorCrafting       
+    - LavaWeaponProtoKineticAccelerator         
 
 #МЕДИПЕН
 - type: entity
@@ -2172,8 +1919,8 @@
   name: Шип Некрополя
   description: Порождение некрополя, шип из разложившейся плоти пробившийся наружу из самых недр Лаваленда дабы дать жизнь бесчисленному множеству чудовищ.
   parent: BaseWeaponTurret
-  id: TurretPliersGoliath
-  suffix: Голиаф,FraG,фауна
+  id: TurretPliers
+  suffix: FraG,фауна
   components:
     - type: NpcFactionMember
       factions:
@@ -2183,9 +1930,6 @@
       noRot: true
       layers:
         - state: state1
-    - type: BallisticAmmoProvider
-      proto: SpawnMobGoliath
-      capacity: 400
     - type: Gun
       fireRate: 0.15
       selectedMode: FullAuto
@@ -2227,7 +1971,7 @@
 - type: entity
   name: Шип Некрополя
   description: Порождение некрополя, шип из разложившейся плоти пробившийся наружу из самых недр Лаваленда дабы дать жизнь бесчисленному множеству чудовищ.
-  parent: TurretPliersGoliath
+  parent: TurretPliers
   id: TurretPliersMagmawing
   suffix: Наблюдатель,FraG,фауна
   components:   
@@ -2238,7 +1982,7 @@
 - type: entity
   name: Шип Некрополя
   description: Порождение некрополя, шип из разложившейся плоти пробившийся наружу из самых недр Лаваленда дабы дать жизнь бесчисленному множеству чудовищ.
-  parent: TurretPliersGoliath
+  parent: TurretPliers
   id: TurretPliersLegion
   suffix: Легион,FraG,фауна
   components:   
@@ -2264,10 +2008,10 @@
     - state: welded
       visible: false
       map: ["enum.WeldableLayers.BaseWelded"]
-    - state: paper
-      sprite: _Odyssey/lavaland/piratechest.rsi
-      offset: "0.0,-0.09375"
-      map: ["enum.PaperLabelVisuals.Layer"]  
+#    - state: paper # НЕТ ТАКОГО СТЕЙТА
+#      sprite: _Odyssey/lavaland/piratechest.rsi
+#      offset: "0.0,-0.09375"
+#      map: ["enum.PaperLabelVisuals.Layer"]  
   - type: Icon
     sprite: _Odyssey/lavaland/piratechest.rsi
     state: crate_icon  
@@ -2315,10 +2059,6 @@
           prob: 0.2
         - id: ClothingNeckCloakVoid #ПлащПустотыСундук 
           prob: 0.1
-        - id: ClothingNeckCloakGoliathGoliath #ПлащГолиафСундук   
-          prob: 0.05
-        - id: ClothingNeckCloakGoliathCloak #ПлащГолиафВанилСундук 
-          prob: 0.07
         - id: AnomalyCoreFlesh #ЯдроАнолимииСундук 
           prob: 0.10
         - id: WeaponFlareGun #ПлащГолиафВанилСундук 
@@ -2447,124 +2187,3 @@
     entity: LavaWeaponProtoKineticAccelerator
     
 #3
-- type: construction
-  name: плащ голиафа
-  id: LavaGoliathRaincoat
-  graph: LavaGoliathRaincoat
-  startNode: start
-  targetNode: LavaGoliathRaincoat
-  category: Шахтёрство 
-  description: Плащ голиафа, сделанный из шкуры и мяса выносливой фауны с далёкой планеты. 
-  icon: { sprite: Clothing/Neck/Cloaks/goliathcloak.rsi, state: icon }
-  objectType: Item
-  
-- type: constructionGraph
-  id: LavaGoliathRaincoat
-  start: start
-  graph:
-  - node: start
-    edges:
-    - to: LavaGoliathRaincoat
-      steps:
-        - tag: FoodMeatGoliathCrafting
-          name: сырое мясо голиафа
-          icon:
-            sprite: Objects/Consumable/Food/meat.rsi
-            state: goliath        
-          doAfter: 1   
-        - tag: FoodMeatGoliathCrafting
-          name: сырое мясо голиафа
-          icon:
-            sprite: Objects/Consumable/Food/meat.rsi
-            state: goliath        
-          doAfter: 1 
-        - tag: FoodMeatGoliathCrafting
-          name: сырое мясо голиафа
-          icon:
-            sprite: Objects/Consumable/Food/meat.rsi
-            state: goliath        
-          doAfter: 1 
-        - tag: FoodMeatGoliathCrafting
-          name: сырое мясо голиафа
-          icon:
-            sprite: Objects/Consumable/Food/meat.rsi
-            state: goliath        
-          doAfter: 1 
-        - tag: FoodMeatGoliathCrafting
-          name: сырое мясо голиафа
-          icon:
-            sprite: Objects/Consumable/Food/meat.rsi
-            state: goliath        
-          doAfter: 1 
-        - tag: FoodMeatGoliathCrafting
-          name: сырое мясо голиафа
-          icon:
-            sprite: Objects/Consumable/Food/meat.rsi
-            state: goliath        
-          doAfter: 1 
-        - tag: FoodMeatGoliathCrafting
-          name: сырое мясо голиафа
-          icon:
-            sprite: Objects/Consumable/Food/meat.rsi
-            state: goliath        
-          doAfter: 1           
-        - material: Bones 
-          amount: 6
-          doAfter: 1      
-          
-  - node: LavaGoliathRaincoat
-    entity: ClothingNeckCloakGoliathGoliath
-    
-- type: entity
-  parent: ClothingNeckCloakGoliathCloak
-  id: ClothingNeckCloakGoliathGoliath
-  name: плащ голиафа
-  description: Плащ голиафа, сделанный из шкуры и мяса выносливой фауны с далёкой планеты. 
-  suffix: FraG
-  components: 
-  - type: Construction
-    graph: LavaGoliathRaincoat
-    node: ghost_sheet 
-  - type: Tag
-    tags:
-    - ClothingNeckCloakGoliathGoliath
-  - type: Armor
-    modifiers:
-      coefficients:
-        Blunt: 0.95 #Быстрая броня, но защита не лучшая.
-        Slash: 0.95
-        Heat: 0.85
-    
-#4 Ваниль
-- type: construction
-  name: костяной доспех
-  id: BoneArmor
-  graph: BoneArmor
-  startNode: start
-  targetNode: armor
-  category: Шахтёрство 
-  description: Сидит на вас как вторая кожа.
-  icon: { sprite: Clothing/OuterClothing/Armor/bone_armor.rsi, state: icon }
-  objectType: Item 
-#5  
-- type: construction
-  name: костяной шлем
-  id: BoneHelmet
-  graph: BoneHelmet
-  startNode: start
-  targetNode: helmet
-  category: Шахтёрство 
-  description: Круто выглядящий шлем, сделанный из черепов ваших врагов.
-  icon: { sprite: Clothing/Head/Helmets/bone_helmet.rsi, state: icon }
-  objectType: Item  
-#6  
-- type: construction
-  name: костяное копьё
-  id: SpearBone
-  graph: SpearBone
-  startNode: start
-  targetNode: spear
-  category: Шахтёрство 
-  description: Копьё, сделанное из костей.
-  icon: { sprite: Objects/Weapons/Melee/bone_spear.rsi, state: spear }
-  objectType: Item  
