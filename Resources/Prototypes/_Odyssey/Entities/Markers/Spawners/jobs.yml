@@ -1,7 +1,7 @@
 - type: entity
   id: SpawnPointMinerProfession
   parent: SpawnPointJobBase
-  name: Шахтёр
+  name: шахтёр
   components:
   - type: SpawnPoint
     job_id: MinerProfession
@@ -9,3 +9,13 @@
     layers:
       - state: green
       - state: security_officer
+
+- type: entity
+  id: LavaRandomHumanoidSpawnerMinerProfession
+  name: шахтёр
+  components:
+    - type: Sprite
+      sprite: Markers/jobs.rsi
+      state: cburn
+    - type: RandomHumanoidSpawner
+      settings: LavaSettingsMinerProfession

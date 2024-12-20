@@ -7,13 +7,13 @@
     - type: Loadout
       prototypes: [LavaMinerProfessionGear]
     - type: GhostRole
-      name: 'Шахтёр'
+      name: 'шахтёр'
       description: "Шахтёр, добро пожаловать в замечательные шахты НТ, прозванные Лаваленд. Здесь вы будете крушить камни, сражаться с монстрами и умирать. "
     - type: GhostTakeoverAvailable
 
 - type: job
   id: MinerProfession
-  name: Шахтёр
+  name: шахтёр
   description: Шахтёр, добро пожаловать в замечательные шахты НТ, прозванные Лаваленд. Здесь вы будете крушить камни, сражаться с монстрами и умирать. 
   playTimeTracker: JobEvent1
   requirements:
@@ -34,16 +34,6 @@
   special:
   - !type:AddImplantSpecial
     implants: [ MindShieldImplant ]
-
-- type: entity
-  id: LavaRandomHumanoidSpawnerMinerProfession
-  name: Шахтёр
-  components:
-    - type: Sprite
-      sprite: Markers/jobs.rsi
-      state: cburn
-    - type: RandomHumanoidSpawner
-      settings: LavaSettingsMinerProfession
 
 - type: startingGear
   id: LavaMinerProfessionGear
@@ -1227,7 +1217,7 @@
       implantAction: ActionSpawnMagicarpLegion      #Суда заклинание  
       
 - type: entity
-  name: Спавнер черепа
+  name: спавнер черепа
   id: SpawnMobLegion
   parent: MarkerBase
   components:
@@ -1311,7 +1301,7 @@
 #ПЕПЛОХОДЦЫ
 - type: entity
   noSpawn: true
-  name: Гост ролька
+  name: гост ролька
   id: MobLavaGostResident
   suffix: FraG  
   components:    
@@ -1326,7 +1316,7 @@
 
 #Человек внизу
 - type: entity
-  name: Неизвестный 
+  name: неизвестный 
   parent: 
   - MobLavaGostResident
   - MobReptilian
@@ -1374,19 +1364,6 @@
     pocket2: WoodenBuckler 
     belt: ClothingBeltQuiverRev    #Стрелы
     head: ClothingHeadHatGladiator #Шлем
- 
-    
-- type: entity
-  parent: ClothingBeltQuiver 
-  id: ClothingBeltQuiverRev
-  name: колчан
-  description: Вмещает до 16 стрел и плотно прилегает к поясу.  
-  suffix: Filled, революция, лук
-  components:
-    - type: StorageFill
-      contents:  
-        - id: ArrowRegular           
-          amount: 16    
 
 - type: entity
   parent: ClothingBackpackSatchelLeather #Сумка
