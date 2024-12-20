@@ -1,0 +1,39 @@
+<controls:FancyWindow
+    xmlns="https://spacestation14.io"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:controls="clr-namespace:Content.Client.UserInterface.Controls"
+    xmlns:co="clr-namespace:Content.Client.UserInterface.Controls"
+    MinSize="350,300"
+    SetSize="400,400"
+    Title="{Loc 'smart-fridge-title'}">
+
+    <PanelContainer StyleClasses="WindowPanel">
+        <BoxContainer Name="MainContainer" Orientation="Vertical" Margin="10">
+            <BoxContainer Orientation="Vertical" Margin="0 0 0 8">
+                <Label Text="{Loc 'smart-fridge-search'}:" Margin="0 0 0 5" HorizontalAlignment="Center"/>
+                <LineEdit Name="SearchBar" PlaceHolder="{Loc 'vending-machine-component-search-filter'}" HorizontalExpand="True"/>
+            </BoxContainer>
+
+            <PanelContainer StyleClasses="WindowPanelInner" Margin="0 0 0 8" VerticalExpand="True">
+                <BoxContainer Orientation="Vertical" Name="ContentPanel" Margin="10" VerticalExpand="True">
+                    <co:SearchListContainer Name="VendingContents" VerticalExpand="True"/>
+                    <Label Name="OutOfStockLabel"
+                           Text="{Loc 'vending-machine-component-try-eject-out-of-stock'}"
+                           Margin="4"
+                           HorizontalExpand="True"
+                           HorizontalAlignment="Center"
+                           Visible="False"/>
+                </BoxContainer>
+            </PanelContainer>
+
+            <PanelContainer StyleClasses="LowDivider" Margin="0 8 0 0"/>
+            <BoxContainer Orientation="Horizontal" Margin="0 4 0 0" VerticalAlignment="Bottom">
+                <Label Text="{Loc 'vending-machine-flavor-left'}" StyleClasses="WindowFooterText" Margin="0 0 10 0"/>
+                <Label Text="{Loc 'vending-machine-flavor-right'}" StyleClasses="WindowFooterText"
+                       HorizontalAlignment="Right" HorizontalExpand="True" Margin="0 0 5 0"/>
+                <TextureRect StyleClasses="NTLogoDark" Stretch="KeepAspectCentered"
+                             VerticalAlignment="Center" HorizontalAlignment="Right" SetSize="24 24"/>
+            </BoxContainer>
+        </BoxContainer>
+    </PanelContainer>
+</controls:FancyWindow>
