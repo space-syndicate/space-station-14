@@ -77,6 +77,8 @@
             Passenger: [ -1, -1 ]
             # silicon
             Borg: [ 1, 1 ]
+            # Odyssey-changes
+            MinerProfession: [ 5, 5 ]
         - type: StationGoal
           goals:
           - SolarPanels

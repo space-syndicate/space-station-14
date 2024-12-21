@@ -1,4 +1,4 @@
-﻿- type: gameMap
+- type: gameMap
   id: CorvaxIshimura
   mapName: 'USG Ishimura'
   mapPath: /Maps/corvax_ishimura.yml
@@ -65,3 +65,5 @@
             Reporter: [ 1, 1 ]
             # silicon
             Borg: [ 2, 3 ]
+            # Odyssey-changes
+            MinerProfession: [ 5, 5 ]
