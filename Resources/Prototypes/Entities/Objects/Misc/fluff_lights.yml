@@ -123,13 +123,13 @@
       enum.HolidayVisuals.Holiday:
         base:
           festive:
-            sprite: Objects/Misc/Lights/lamp.rsi
             state: christmaslamp
         light:
           festive:
-            sprite: Objects/Misc/Lights/lamp.rsi
             state: christmaslamp-on
-  - type: Rotatable # Corvax-Resprite
+  - type: Rotatable # Corvax-Resprite-start
+  - type: PointLight
+    color: "#F0FFA0FF" # Corvax-Resprite-end
 
 - type: entity
   name: interrogator lamp
@@ -184,6 +184,7 @@
         enum.FlashVisuals.LightLayer:
           True: {visible: true}
           False: {visible: false}
+  - type: Rotatable # Corvax-Resprite
 
 - type: entity
   name: floodlight
