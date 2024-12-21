@@ -48,7 +48,7 @@
     id: MinerPDA
     ears: ClothingHeadsetMining #Уши
     belt: BoxSurvival #Поясь
-    pocket1: LavaPhoneInstrument
+    #pocket1: LavaPhoneInstrument # Закоменченно до фикса
     pocket2: AppraisalTool
 
 ## КПК
@@ -85,7 +85,7 @@
 - type: entity #Удар с аним.
   id: AttackLava
   parent: WeaponArcStatic
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   components:
     - type: WeaponArcVisuals
       fadeOut: false
@@ -97,7 +97,7 @@
       lifetime: 0.399
       
 - type: entity
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   name: Гост ролька
   id: MobLavaGost
   suffix: FraG  
@@ -117,7 +117,7 @@
   id: LavaLightImplant
   name: Свет.
   description: Указывает вам путь.
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   components:
     - type: SubdermalImplant
       implantAction: ActionToggleLight
@@ -179,11 +179,10 @@
     baseWalkSpeed: 4
     baseSprintSpeed: 4
   - type: Reflect 
-    enabled: true
     reflectProb: 0.5
-    velocityBeforeNotMaxProb: 1.0
-    velocityBeforeMinProb: 3.0
-    minReflectProb: 0.1
+    # velocityBeforeNotMaxProb: 1.0
+    # velocityBeforeMinProb: 3.0
+    # minReflectProb: 0.1
     spread: 90      #Отражение 
   - type: MobThresholds #ХП
     thresholds:
@@ -222,43 +221,14 @@
     thresholds:
       - trigger:
           !type:DamageTrigger
-          damage: 2000     
-    
-- type: entity
-  id: ActionSpawnMagicarpBubblegum #Заклинание призыва лавы 1
-  name: Замедлить врага.
-  noSpawn: true
-  components:
-  - type: WorldTargetAction
-    useDelay: 3 #КД
-    range: 15
-    itemIconStyle: BigAction
-    icon:
-      sprite: _Odyssey/lavaland/telegraph.rsi
-      state: target_circle
-    event: !type:WorldSpawnSpellEvent
-      prototypes:
-      - id: SpiderWebUsual
-        amount: 1
-      offset: 0, 1
-      speech: Кссс...!??        
-      
-- type: entity
-  parent: BaseSubdermalImplant #Сам имплант 
-  id: LightImplantSpiderBubblegum
-  name: Замедлить врага.
-  description: 
-  noSpawn: true
-  components:
-    - type: SubdermalImplant
-      implantAction: ActionSpawnMagicarpBubblegum      #Суда заклинание
+          damage: 2000           
 
 #Руна
 - type: entity
   id: ActionSpawnMagicarpBubblegumRune #Заклинание призыва лавы 1
   name: Создать руну воспламенения
   description: Создает руну воспламениния, которая пропадает через 15 секунд.
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   components:
   - type: WorldTargetAction
     useDelay: 25 #КД
@@ -279,7 +249,7 @@
   id: LightImplantSpiderBubblegumRune
   name: Создать руну воспламенения
   description: Создает руну воспламениния, которая пропадает через 15 секунд.
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   components:
     - type: SubdermalImplant
       implantAction: ActionSpawnMagicarpBubblegumRune      #Суда заклинание 
@@ -289,18 +259,17 @@
   id: IgniteRuneRune
   name: руна воспламенения
   description: 
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   components:
     - type: TimedDespawn #Система цикла
-      lifetime: 15         
-      ignoreWhitelist:  
+      lifetime: 15  
       
 #Прыжок      
 - type: entity
   id: ActionBlinkBubblegumJump
   name: Разбег. 
   description: Вы разбегаетесь со скоростью света в определенную точку.
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   components:
   - type: WorldTargetAction
     useDelay: 30
@@ -318,7 +287,7 @@
   id: LightImplantSpiderActionBlinkBubblegumJump
   name: Разбег. 
   description: Вы разбегаетесь со скоростью света в определенную точку.
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   components:
     - type: SubdermalImplant
       implantAction: ActionBlinkBubblegumJump      #Суда заклинание     
@@ -363,7 +332,7 @@
 - type: entity
   id: ActionSpawnMagicarpBubblegumWall  #Заклинание призыва лавы 1
   name: Создать стену.
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   components:
   - type: WorldTargetAction
     useDelay: 8 #КД
@@ -384,7 +353,7 @@
   id: BaseSubdermalImplantWall 
   name: Создать стену.
   description: 
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   components:
     - type: SubdermalImplant
       implantAction: ActionSpawnMagicarpBubblegumWall      #Суда заклинание     
@@ -480,7 +449,7 @@
   name: убегай!
   description: Пламя огня!
   parent: ProjectileFireball
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   components:
   - type: TimedDespawn
     lifetime: 30
@@ -550,7 +519,7 @@
 - type: entity
   id: ActionSpawnMagicarpDrake #Заклинание призыва лавы 3
   name: Призвать лаву
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   components:
   - type: WorldTargetAction
     useDelay: 5 #КД
@@ -569,7 +538,7 @@
 - type: entity
   id: ActionSpawnMagicarpDrakeOne #Заклинание призыва лавы 1
   name: Призвать одну лаву
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   components:
   - type: WorldTargetAction
     useDelay: 1 #КД
@@ -590,7 +559,7 @@
   id: LightImplantSpiderDrake
   name: Призвать лаву
   description: 
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   components:
     - type: SubdermalImplant
       implantAction: ActionSpawnMagicarpDrake      #Суда заклинание      
@@ -600,7 +569,7 @@
   id: LightImplantSpiderDrakeOne
   name: Призвать лаву
   description: 
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   components:
     - type: SubdermalImplant
       implantAction: ActionSpawnMagicarpDrakeOne      #Суда заклинание        
@@ -686,7 +655,7 @@
   id: BulletGrenadeFragColossus
   name: осколочная граната
   parent: BaseBulletTrigger
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   components:
   - type: Sprite
     sprite: Objects/Weapons/Guns/Projectiles/projectiles2.rsi
@@ -1033,7 +1002,7 @@
   id: ActionSpawnMagicarpLegion #Заклинание призыва черепов
   name: Призыв черепа легиона.
   description: Выпускает череп легиона.
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   components:
   - type: WorldTargetAction
     useDelay: 6 #КД
@@ -1054,7 +1023,7 @@
   id: LightImplantSpiderLegion 
   name: Откладывание яиц охотника
   description: 
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   components:
     - type: SubdermalImplant
       implantAction: ActionSpawnMagicarpLegion      #Суда заклинание  
@@ -1080,7 +1049,7 @@
   id: ActionSpawnMagicarpLegionBig 
   name: Призвать легиона.
   description: Призывает Легиона, который пропадает через 20 секунд.
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   components:
   - type: WorldTargetAction
     useDelay: 12 #КД
@@ -1101,7 +1070,7 @@
   id: LightImplantSpiderLegionBig 
   name: Откладывание яиц охотника
   description: 
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   components:
     - type: SubdermalImplant
       implantAction: ActionSpawnMagicarpLegionBig      #Суда заклинание   
@@ -1109,7 +1078,7 @@
 - type: entity
   parent: MobDinosaurAnkiSmall  
   id: MobDinosaurAnkiSmallBig
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   name: легион #Большой
   suffix: FraG
   components:
@@ -1143,7 +1112,7 @@
    
 #ПЕПЛОХОДЦЫ
 - type: entity
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   name: гост ролька
   id: MobLavaGostResident
   suffix: FraG  
@@ -1267,7 +1236,7 @@
   parent: BaseSubdermalImplant #Сам имплант 
   id: LightImplantSpiderResident
   name: Откладывание яиц 
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   components:
     - type: SubdermalImplant
       implantAction: ActionSpawnMagicarpSpellSpiderResident      #Суда заклинание
@@ -1289,7 +1258,7 @@
   id: ActionSpawnMagicarpSpellSpiderResident #Заклинание призыва охранника
   name: Создание яиц.
   description: Можно создавать только на "легионерский костёр".
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   components:
   - type: WorldTargetAction
     useDelay: 400 #КД
@@ -1310,7 +1279,7 @@
   id: FoodEggResident #Заклинание призыва охранника
   name: яйцо
   description: Яйцо!
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   components:    
   - type: TimedDespawn #Система цикла
     lifetime: 50
@@ -1471,13 +1440,13 @@
   
 #Коллекция выше
 
-- type: storePreset  # список доступных категорий
-  id: StorePresetUplinkMagician
-  storeName: Uplink
-  categories:
-  - LavaUplinkWearablesMagician
-  currencyWhitelist:
-  - LavaRudaIvent  
+#- type: storePreset  # список доступных категорий
+#  id: StorePresetUplinkMagician
+#  storeName: Uplink
+#  categories:
+#  - LavaUplinkWearablesMagician
+#  currencyWhitelist:
+#  - LavaRudaIvent  
   
  #Список выше
   
@@ -1499,12 +1468,12 @@
     interfaces:
       enum.StoreUiKey.Key:
         type: StoreBoundUserInterface
-  - type: ActivatableUI
-    key: enum.StoreUiKey.Key
-  - type: Store
-    preset: StorePresetUplinkMagician
-    balance:
-      LavaRudaIvent: 0  #Количества ТК в аплинке
+#  - type: ActivatableUI
+#    key: enum.StoreUiKey.Key
+#  - type: Store # Это так не работает, нужен фикс до рабочего состояния
+#    preset: StorePresetUplinkMagician
+#    balance:
+#      LavaRudaIvent: 0  #Количества ТК в аплинке
   - type: EmitSoundOnLand
     sound:
        path: /Audio/Items/bikehorn.ogg
@@ -1530,11 +1499,11 @@
         density: 5
         mask:
         - ItemMask
-  - type: Prayable
-    sentMessage: prayer-popup-notify-honkmother-sent
-    notifiactionPrefix: prayer-chat-notify-honkmother
-    verb: prayer-verbs-call
-    verbImage: null      
+  #- type: Prayable
+  #  sentMessage: prayer-popup-notify-honkmother-sent
+  #  notifiactionPrefix: prayer-chat-notify-honkmother
+  #  verb: prayer-verbs-call
+  #  verbImage: null      
 
 - type: currency
   id: LavaRudaIvent
@@ -1763,7 +1732,7 @@
   id: LavaDeathRattleImplant
   name: имплантер
   description: Этот имплантат сообщит по радиоканалу снабжения, если пользователь попадет в критическое состояние или умрет.
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   components:
     - type: SubdermalImplant
       permanent: true

@@ -248,7 +248,7 @@
   id: DrapeauRevSet  #Знамя
   name: Знамя Viva La Revolution!
   description: Это знамя, символизирующее революцию. Вива!
-  icon: { sprite: /Textures/Structures/Decoration\banner.rsi, state: banner_revolution }  
+  icon: { sprite: /Textures/Structures/Decoration/banner.rsi, state: banner_revolution }  
   productEntity: DrapeauRev
   cost:
     Telecrystal: 2
@@ -639,9 +639,9 @@
   - type: Clickable
   - type: InteractionOutline
   - type: MovedByPressure
-  - type: EmitSoundOnCollide
-    sound:
-      path: /Audio/Effects/wall_bonk.ogg
+#  - type: EmitSoundOnCollide
+#    sound:
+#      path: /Audio/Effects/wall_bonk.ogg # There is no such sound.
   - type: EmitSoundOnLand
     sound:
       path: /Audio/Effects/drop.ogg

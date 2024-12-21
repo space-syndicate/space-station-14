@@ -2,23 +2,21 @@
   id: BladeGuardian
   name: job-name-bladeguardian
   description: job-description-bladeguardian
-  playTimeTracker: JobBHeadOfSecurity
+  playTimeTracker: JobHeadOfSecurity
   requirements:
     - !type:RoleTimeRequirement
       role: JobSecurityOfficer
       time: 28800 #8 hrs
     - !type:DepartmentTimeRequirement
       department: Security
-      time: 108000 #50 hrs # Corvax-RoleTime
-#    - !type:OverallPlaytimeRequirement
-#      time: 144000 #40 hrs
+      time: 108000 #50 hrs
   weight: 10
   startingGear: BladeGuardianGear
   icon: "JobIconHeadOfSecurity"
   requireAdminNotify: true
   supervisors: job-supervisors-captain
   canBeAntag: false
-  access:
+  accessGroups:
   - AllAccess
   special:
   - !type:AddImplantSpecial
@@ -45,18 +43,6 @@
     - EnergySword
 
 - type: entity
-  id: SpawnPointBladeGuardian
-  parent: SpawnPointJobBase
-  name: BladeGuardian
-  components:
-  - type: SpawnPoint
-    job_id: BladeGuardian
-  - type: Sprite
-    layers:
-      - state: green
-      - state: hos
-
-- type: entity
   parent: CentcomIDCard
   id: BladeGuardianIDCard
   name: ID карта Стража Клинка
@@ -66,25 +52,6 @@
     - state: gold
     - state: ert_commander
   - type: IdCard
-    jobTitle: Страж Клинка
+    jobTitle: "Страж Клинка"
   - type: Item
-    heldPrefix: gold
-
-- type: entity
-  parent: BasePDA
-  id: BladeGuardianPDA
-  name: КПК Стража Клинка
-  description: КПК главного защитника глав.
-  components:
-  - type: Pda
-    id: BladeGuardianIDCard
-    state: pda-centcom
-    penSlot:
-      startingItem: PenCentcom
-      whitelist:
-        tags:
-        - Write
-  - type: PdaBorderColor
-    borderColor: "#00842e"
-  - type: Icon
-    state: pda-centcom
+    heldPrefix: gold # Какого хуя

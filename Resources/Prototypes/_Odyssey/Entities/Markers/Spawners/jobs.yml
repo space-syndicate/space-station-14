@@ -19,3 +19,15 @@
       state: cburn
     - type: RandomHumanoidSpawner
       settings: LavaSettingsMinerProfession
+
+- type: entity
+  id: SpawnPointBladeGuardian
+  parent: SpawnPointJobBase
+  name: BladeGuardian
+  components:
+  - type: SpawnPoint
+    job_id: BladeGuardian
+  - type: Sprite
+    layers:
+      - state: green
+      - state: hos
