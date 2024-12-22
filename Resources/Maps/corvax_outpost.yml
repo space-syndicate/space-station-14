@@ -46545,6 +46545,13 @@ entities:
     - type: Physics
       canCollide: False
     - type: InsideEntityStorage
+- proto: CaptainDrobe
+  entities:
+  - uid: 14491
+    components:
+    - type: Transform
+      pos: 17.5,29.5
+      parent: 2
 - proto: CaptainIDCard
   entities:
   - uid: 7352
@@ -61139,13 +61146,6 @@ entities:
           occludes: True
           ents:
           - 3229
-- proto: DresserCaptainFilled
-  entities:
-  - uid: 14491
-    components:
-    - type: Transform
-      pos: 17.5,29.5
-      parent: 2
 - proto: DresserChiefEngineerFilled
   entities:
   - uid: 547
@@ -134875,19 +134875,22 @@ entities:
     - type: Transform
       pos: -78.43827,10.498604
       parent: 2
-- proto: WeaponTurretNanoTrasen
+- proto: WeaponTurretControl
   entities:
   - uid: 19412
     components:
     - type: Transform
-      rot: 3.141592653589793 rad
       pos: 12.5,63.5
+      parent: 2
+  - uid: 19425
+    components:
+    - type: Transform
+      pos: 12.5,68.5
       parent: 2
   - uid: 19426
     components:
     - type: Transform
-      rot: 1.5707963267948966 rad
-      pos: 16.5,68.5
+      pos: 16.5,63.5
       parent: 2
 - proto: WeaponTurretSyndicateBroken
   entities:
@@ -134899,12 +134902,7 @@ entities:
   - uid: 19410
     components:
     - type: Transform
-      pos: 12.5,68.5
-      parent: 2
-  - uid: 19425
-    components:
-    - type: Transform
-      pos: 16.5,63.5
+      pos: 16.5,68.5
       parent: 2
 - proto: WeaponWaterPistol
   entities:

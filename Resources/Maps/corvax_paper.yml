@@ -10110,27 +10110,27 @@ entities:
             5: 32896
           5,20:
             0: 13107
-            7: 128
+            6: 128
             5: 32768
           6,17:
             0: 61440
           6,18:
             4: 240
-            6: 61440
+            7: 61440
           6,19:
             5: 61680
           7,17:
             0: 30304
           7,18:
             4: 16
-            6: 4096
+            7: 4096
             0: 17476
           7,19:
             5: 4112
             0: 17476
           7,20:
             0: 17476
-            7: 16
+            6: 16
             5: 4096
           8,16:
             1: 65303
@@ -10145,7 +10145,7 @@ entities:
           5,22:
             0: 3983
           6,20:
-            7: 240
+            6: 240
             5: 61440
           6,22:
             0: 3855
@@ -11287,10 +11287,10 @@ entities:
         - volume: 2500
           temperature: 293.15
           moles:
+          - 0
+          - 0
+          - 0
           - 6666.982
-          - 0
-          - 0
-          - 0
           - 0
           - 0
           - 0
@@ -11302,10 +11302,10 @@ entities:
         - volume: 2500
           temperature: 293.15
           moles:
-          - 0
-          - 0
-          - 0
           - 6666.982
+          - 0
+          - 0
+          - 0
           - 0
           - 0
           - 0
@@ -68478,6 +68478,13 @@ entities:
     - type: Transform
       pos: -9.467804,69.384705
       parent: 16527
+- proto: CaptainDrobe
+  entities:
+  - uid: 7427
+    components:
+    - type: Transform
+      pos: 25.5,20.5
+      parent: 2
 - proto: CaptainIDCard
   entities:
   - uid: 5319
@@ -86414,13 +86421,6 @@ entities:
     - type: Transform
       pos: -17.5,56.5
       parent: 16527
-- proto: DresserCaptainFilled
-  entities:
-  - uid: 7427
-    components:
-    - type: Transform
-      pos: 25.5,20.5
-      parent: 2
 - proto: DresserChiefEngineerFilled
   entities:
   - uid: 7428
@@ -86800,7 +86800,7 @@ entities:
     - type: Label
       currentLabel: кофейный ликёр
     - type: PressurizedSolution
-      sprayFizzinessThresholdRoll: 0.8363524
+      sprayFizzinessThresholdRoll: 0.7920442
     - type: NameModifier
       baseName: бутылка кофейного ликёра
     - type: ContainerContainer
@@ -87087,7 +87087,7 @@ entities:
     - type: Label
       currentLabel: ром
     - type: PressurizedSolution
-      sprayFizzinessThresholdRoll: 0.58992493
+      sprayFizzinessThresholdRoll: 0.6745995
     - type: NameModifier
       baseName: кубинский пряный ром капитана Пита
     - type: ContainerContainer
@@ -87131,7 +87131,7 @@ entities:
     - type: Label
       currentLabel: текила
     - type: PressurizedSolution
-      sprayFizzinessThresholdRoll: 0.38918102
+      sprayFizzinessThresholdRoll: 0.6456411
     - type: NameModifier
       baseName: бутылка текилы Каккаво гарантированного качества
     - type: ContainerContainer
@@ -87172,7 +87172,7 @@ entities:
     - type: Label
       currentLabel: вермут
     - type: PressurizedSolution
-      sprayFizzinessThresholdRoll: 0.58969724
+      sprayFizzinessThresholdRoll: 0.9303752
     - type: NameModifier
       baseName: бутылка вермута Золотой глаз
     - type: ContainerContainer
@@ -87195,7 +87195,7 @@ entities:
     - type: Label
       currentLabel: водка
     - type: PressurizedSolution
-      sprayFizzinessThresholdRoll: 0.63949525
+      sprayFizzinessThresholdRoll: 0.36928946
     - type: NameModifier
       baseName: бутылка водки
     - type: ContainerContainer
@@ -87268,7 +87268,7 @@ entities:
     - type: Label
       currentLabel: вино
     - type: PressurizedSolution
-      sprayFizzinessThresholdRoll: 0.76833266
+      sprayFizzinessThresholdRoll: 0.91191274
     - type: NameModifier
       baseName: особое двухбородое бородатое вино
     - type: ContainerContainer
@@ -143807,30 +143807,6 @@ entities:
       parent: 2
     - type: DeviceLinkSource
       linkedPorts:
-        3177:
-        - Pressed: Toggle
-        - Pressed: AutoClose
-        13880:
-        - Pressed: Toggle
-        - Pressed: AutoClose
-        3176:
-        - Pressed: Toggle
-        - Pressed: AutoClose
-        13352:
-        - Pressed: Toggle
-        - Pressed: AutoClose
-        3182:
-        - Pressed: Toggle
-        - Pressed: AutoClose
-        3184:
-        - Pressed: Toggle
-        - Pressed: AutoClose
-        3206:
-        - Pressed: Toggle
-        - Pressed: AutoClose
-        3859:
-        - Pressed: Toggle
-        - Pressed: AutoClose
         21771:
         - Pressed: Toggle
         21772:
@@ -143843,12 +143819,6 @@ entities:
         - Pressed: Toggle
         21795:
         - Pressed: Toggle
-        5812:
-        - Pressed: Toggle
-        - Pressed: AutoClose
-        21849:
-        - Pressed: Toggle
-        - Pressed: AutoClose
   - uid: 24330
     components:
     - type: Transform
@@ -177062,6 +177032,23 @@ entities:
     - type: Physics
       canCollide: False
     - type: InsideEntityStorage
+- proto: WeaponTurretControl
+  entities:
+  - uid: 3176
+    components:
+    - type: Transform
+      pos: 17.5,-37.5
+      parent: 2
+  - uid: 3187
+    components:
+    - type: Transform
+      pos: 24.5,-43.5
+      parent: 2
+  - uid: 3859
+    components:
+    - type: Transform
+      pos: 27.5,-39.5
+      parent: 2
 - proto: WeaponTurretHostile
   entities:
   - uid: 23035
@@ -177165,60 +177152,43 @@ entities:
     - type: Transform
       pos: 33.5,24.5
       parent: 16527
-- proto: WeaponTurretNanoTrasen
+- proto: WeaponTurretSyndicateBroken
   entities:
-  - uid: 3186
-    components:
-    - type: Transform
-      pos: 24.5,-33.5
-      parent: 2
-  - uid: 3187
-    components:
-    - type: Transform
-      pos: 17.5,-39.5
-      parent: 2
-  - uid: 3205
-    components:
-    - type: Transform
-      pos: 27.5,-39.5
-      parent: 2
-  - uid: 4280
-    components:
-    - type: Transform
-      pos: 24.5,-43.5
-      parent: 2
-  - uid: 4321
-    components:
-    - type: Transform
-      pos: 20.5,-43.5
-      parent: 2
-  - uid: 13098
-    components:
-    - type: Transform
-      pos: 17.5,-37.5
-      parent: 2
-  - uid: 13100
-    components:
-    - type: Transform
-      pos: 20.5,-33.5
-      parent: 2
-  - uid: 13112
+  - uid: 3177
     components:
     - type: Transform
       pos: 18.5,-42.5
       parent: 2
-  - uid: 14023
+  - uid: 3182
     components:
     - type: Transform
-      pos: 27.5,-37.5
+      pos: 17.5,-39.5
       parent: 2
-  - uid: 18616
+  - uid: 3184
+    components:
+    - type: Transform
+      pos: 20.5,-33.5
+      parent: 2
+  - uid: 3186
+    components:
+    - type: Transform
+      pos: 20.5,-43.5
+      parent: 2
+  - uid: 3205
     components:
     - type: Transform
       pos: 26.5,-42.5
       parent: 2
-- proto: WeaponTurretSyndicateBroken
-  entities:
+  - uid: 3206
+    components:
+    - type: Transform
+      pos: 27.5,-37.5
+      parent: 2
+  - uid: 4280
+    components:
+    - type: Transform
+      pos: 24.5,-33.5
+      parent: 2
   - uid: 20467
     components:
     - type: Transform
@@ -177665,61 +177635,11 @@ entities:
       parent: 2
 - proto: WindoorSecureCommandLocked
   entities:
-  - uid: 3176
-    components:
-    - type: Transform
-      rot: 1.5707963267948966 rad
-      pos: 25.5,-42.5
-      parent: 2
-  - uid: 3177
-    components:
-    - type: Transform
-      pos: 26.5,-41.5
-      parent: 2
-  - uid: 3182
-    components:
-    - type: Transform
-      pos: 27.5,-37.5
-      parent: 2
-  - uid: 3184
-    components:
-    - type: Transform
-      rot: -1.5707963267948966 rad
-      pos: 27.5,-37.5
-      parent: 2
-  - uid: 3206
-    components:
-    - type: Transform
-      pos: 17.5,-37.5
-      parent: 2
-  - uid: 3859
-    components:
-    - type: Transform
-      rot: 1.5707963267948966 rad
-      pos: 17.5,-37.5
-      parent: 2
-  - uid: 5812
-    components:
-    - type: Transform
-      rot: -1.5707963267948966 rad
-      pos: 21.5,-33.5
-      parent: 2
   - uid: 9955
     components:
     - type: Transform
       rot: -1.5707963267948966 rad
       pos: 24.5,-38.5
-      parent: 2
-  - uid: 13352
-    components:
-    - type: Transform
-      pos: 18.5,-41.5
-      parent: 2
-  - uid: 13880
-    components:
-    - type: Transform
-      rot: -1.5707963267948966 rad
-      pos: 19.5,-42.5
       parent: 2
   - uid: 13928
     components:
@@ -177732,12 +177652,6 @@ entities:
     - type: Transform
       rot: -1.5707963267948966 rad
       pos: 52.5,47.5
-      parent: 2
-  - uid: 21849
-    components:
-    - type: Transform
-      rot: 3.141592653589793 rad
-      pos: 20.5,-34.5
       parent: 2
 - proto: WindoorSecureEngineeringLocked
   entities:
