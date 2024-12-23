@@ -155,7 +155,7 @@
   suffix: FraG, фауна
   components:
   - type: Sprite
-    sprite: _Odyssey/lavaland/dragon.rsi
+    sprite: _Odyssey/lavaland/bubblegum.rsi
     layers:
       - state: bubblegum
         map: ["enum.DamageStateVisualLayers.Base"]
@@ -211,7 +211,6 @@
         Burn: -15.5 
   - type: AutoImplant
     implants:
-    - LightImplantSpiderBubblegum   
     - BaseSubdermalImplantWall
     - LightImplantSpiderBubblegumRune
     - LightImplantSpiderActionBlinkBubblegumJump
@@ -582,16 +581,16 @@
   suffix: FraG, фауна
   components:
   - type: Sprite
-    sprite: _Odyssey/lavaland/dragon.rsi
+    sprite: _Odyssey/lavaland/colossus.rsi
     layers:
-      - state: eva
+      - state: colossus
         map: ["enum.DamageStateVisualLayers.Base"]
   - type: DamageStateVisuals
     states:
       Alive:
-        Base: eva
+        Base: colossus
       Dead:
-        Base: eva
+        Base: colossus
   - type: MovementSpeedModifier
     baseWalkSpeed: 3.5
     baseSprintSpeed: 3.5    
@@ -702,16 +701,16 @@
   suffix: FraG, фауна
   components:
   - type: Sprite
-    sprite: _Odyssey/lavaland/empire.rsi
+    sprite: _Odyssey/lavaland/legion.rsi
     layers:
-      - state: mega_legion
+      - state: legion
         map: ["enum.DamageStateVisualLayers.Base"]
   - type: DamageStateVisuals
     states:
       Alive:
-        Base: mega_legion
+        Base: legion
       Dead:
-        Base: eva_attack
+        Base: legion
   - type: MovementSpeedModifier
     baseWalkSpeed: 4.5
     baseSprintSpeed: 4.5  
@@ -787,14 +786,15 @@
   - type: Sprite
     sprite: _Odyssey/lavaland/legion.rsi
     layers:
-      - state: dragon
+      - state: legion
         map: ["enum.DamageStateVisualLayers.Base"]
+    scale: 0.25, 0.25
   - type: DamageStateVisuals
     states:
       Alive:
-        Base: dragon
+        Base: legion
       Dead:
-        Base: dragon
+        Base: legion
   - type: MovementSpeedModifier
     baseWalkSpeed: 4.5
     baseSprintSpeed: 4.5  
@@ -831,16 +831,16 @@
   suffix: FraG, фауна
   components:
   - type: Sprite
-    sprite: _Odyssey/lavaland/empire.rsi
+    sprite: _Odyssey/lavaland/legion.rsi
     layers:
-      - state: dragon
+      - state: legion
         map: ["enum.DamageStateVisualLayers.Base"]
   - type: DamageStateVisuals
     states:
       Alive:
-        Base: dragon
+        Base: legion
       Dead:
-        Base: dragon_dead
+        Base: legion
   - type: MovementSpeedModifier
     baseWalkSpeed: 3
     baseSprintSpeed: 3  
@@ -990,12 +990,6 @@
     energy: 0.2
     color: "#ff4242"
     castShadows: false
-  - type: Construction
-    graph: HealingToolboxKernel
-    node: LavaSerumHeart
-  - type: Tag
-    tags:
-    - HealingToolboxKernelSerum
    
 #Череп
 - type: entity 
@@ -1367,7 +1361,6 @@
         - WallRockBasaltCoal
         - WallRockBasaltCoal
         - WallRockBasaltUranium
-        - WallRockBasaltLavaOre
         - WallRockBasaltArtifactFragment
         - LavaWallRockBasaltArtifactFragment #Руда с кристаллом
         - LavaWallRockBasaltArtifactFragment #Руда с кристаллом
@@ -1388,7 +1381,6 @@
     - type: Timer
     - type: TimedSpawner
       prototypes:
-        - WallRockBasaltSpawner
         - WallRockBasalt
       # round ~90m
       # one spawner should only spawn ~5 mice for sanity reasons
