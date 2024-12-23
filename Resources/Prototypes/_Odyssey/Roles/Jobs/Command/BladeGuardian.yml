@@ -2,6 +2,7 @@
   id: BladeGuardian
   name: job-name-bladeguardian
   description: job-description-bladeguardian
+  playTimeTracker: JobBladeGuardian
   requirements:
     - !type:RoleTimeRequirement
       role: JobSecurityOfficer

@@ -50,7 +50,7 @@
   gasOverlayState: tritium
   color: 13FF4B
   reagent: Tritium
-  pricePerMole: 2.5
+  pricePerMole: 3
 
 - type: gas
   id: 5
@@ -76,7 +76,7 @@
   gasVisbilityFactor: 3.5
   color: 56941E
   reagent: Ammonia
-  pricePerMole: 0.15
+  pricePerMole: 1
 
 - type: gas
   id: 7
@@ -99,4 +99,4 @@
   gasMolesVisible: 0.6
   color: 3a758c
   reagent: Frezon
-  pricePerMole: 0.3
+  pricePerMole: 5
