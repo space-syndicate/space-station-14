@@ -1,5 +1,5 @@
 - type: entity
-  parent: ClothingNeckBase
+  parent: [ClothingNeckBase, BaseBodyCamera]
   id: ClothingNeckSecBadgeBase
   name: badge
   description: Respect my authority!

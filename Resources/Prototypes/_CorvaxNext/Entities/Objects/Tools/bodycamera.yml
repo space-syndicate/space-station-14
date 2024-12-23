@@ -1,0 +1,25 @@
+- type: entity
+  abstract: true
+  parent: BaseItem
+  id: BaseBodyCamera
+  components:
+  - type: Eye
+  - type: WirelessNetworkConnection
+  - type: UserInterface
+    interfaces:
+      enum.SurveillanceCameraSetupUiKey.Camera:
+        type: SurveillanceCameraSetupBoundUi
+  - type: DeviceNetwork
+    deviceNetId: Wired
+    receiveFrequencyId: SurveillanceCameraSecurity
+    transmitFrequencyId: SurveillanceCamera
+  - type: SurveillanceCamera
+    setupAvailableNetworks:
+      - SurveillanceCameraSecurity
+    networkSet: true
+    id: "Нагрудная камера"
+  - type: SurveillanceCameraMicrophone
+  - type: ActiveListener
+    range: 6
+  - type: BodyCamera
+  
