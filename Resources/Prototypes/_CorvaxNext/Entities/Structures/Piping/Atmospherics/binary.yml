@@ -1,0 +1,29 @@
+- type: entity
+  parent: GasPressurePump
+  id: GasPressurePumpOn
+  suffix: On
+  placement:
+    mode: SnapgridCenter
+  components:
+  - type: GasPressurePump
+    startOnMapInit: true
+
+- type: entity
+  parent: GasPressurePumpOn
+  id: GasPressurePumpOnMax
+  suffix: On, Max
+  placement:
+    mode: SnapgridCenter
+  components:
+  - type: GasPressurePump
+    targetPressure: 4500
+
+- type: entity
+  parent: GasVolumePump
+  id: GasVolumePumpOn
+  suffix: On
+  placement:
+    mode: SnapgridCenter
+  components:
+  - type: GasVolumePump
+    startOnMapInit: true

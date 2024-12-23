@@ -1,0 +1,16 @@
+- type: entity
+  parent: GasMixer
+  id: GasMixerOn
+  suffix: On
+  placement:
+    mode: SnapgridCenter
+  components:
+    - type: GasMixer
+      startOnMapInit: true
+
+- type: entity
+  parent: [GasMixerFlipped, GasMixerOn]
+  id: GasMixerOnFlipped
+  suffix: On, Flipped
+  placement:
+    mode: SnapgridCenter

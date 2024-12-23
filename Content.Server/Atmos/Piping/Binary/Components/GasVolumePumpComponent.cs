@@ -46,5 +46,10 @@ namespace Content.Server.Atmos.Piping.Binary.Components
 
         [DataField("lastMolesTransferred")]
         public float LastMolesTransferred;
+
+        /// Corvax-Next-AutoPipes-Start
+        [DataField]
+        public bool StartOnMapInit { get; set; } = false;
+        /// Corvax-Next-AutoPipes-End
     }
 }

@@ -43,6 +43,8 @@ namespace Content.Server.Atmos.Piping.Trinary.EntitySystems
             SubscribeLocalEvent<GasMixerComponent, GasMixerToggleStatusMessage>(OnToggleStatusMessage);
 
             SubscribeLocalEvent<GasMixerComponent, AtmosDeviceDisabledEvent>(OnMixerLeaveAtmosphere);
+			
+			SubscribeLocalEvent<GasMixerComponent, MapInitEvent>(OnMapInit); // Corvax-Next-AutoPipes
         }
 
         private void OnInit(EntityUid uid, GasMixerComponent mixer, ComponentInit args)
@@ -235,5 +237,19 @@ namespace Content.Server.Atmos.Piping.Trinary.EntitySystems
 
             args.DeviceFlipped = inletOne != null && inletTwo != null && inletOne.CurrentPipeDirection.ToDirection() == inletTwo.CurrentPipeDirection.ToDirection().GetClockwise90Degrees();
         }
+
+        // Corvax-Next-AutoPipes-Start
+        private void OnMapInit(EntityUid uid, GasMixerComponent mixer, MapInitEvent args) // Frontier - Init on map
+        {
+            if (mixer.StartOnMapInit)
+            {
+                mixer.Enabled = true;
+                DirtyUI(uid, mixer);
+
+                UpdateAppearance(uid, mixer);
+                _userInterfaceSystem.CloseUi(uid, GasFilterUiKey.Key);
+            }
+        }
+		// Corvax-Next-AutoPipes-End
     }
 }

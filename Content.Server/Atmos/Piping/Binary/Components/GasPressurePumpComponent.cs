@@ -27,5 +27,10 @@ namespace Content.Server.Atmos.Piping.Binary.Components
         [ViewVariables(VVAccess.ReadWrite)]
         [DataField("maxTargetPressure")]
         public float MaxTargetPressure = Atmospherics.MaxOutputPressure;
+
+        /// Corvax-Next-AutoPipes-Start
+        [DataField]
+        public bool StartOnMapInit { get; set; } = false;
+        /// Corvax-Next-AutoPipes-End
     }
 }

@@ -44,6 +44,8 @@ namespace Content.Server.Atmos.Piping.Binary.EntitySystems
             // Bound UI subscriptions
             SubscribeLocalEvent<GasPressurePumpComponent, GasPressurePumpChangeOutputPressureMessage>(OnOutputPressureChangeMessage);
             SubscribeLocalEvent<GasPressurePumpComponent, GasPressurePumpToggleStatusMessage>(OnToggleStatusMessage);
+
+            SubscribeLocalEvent<GasPressurePumpComponent, MapInitEvent>(OnMapInit); // Corvax-Next-AutoPipes
         }
 
         private void OnInit(EntityUid uid, GasPressurePumpComponent pump, ComponentInit args)
@@ -165,5 +167,19 @@ namespace Content.Server.Atmos.Piping.Binary.EntitySystems
             bool pumpOn = pump.Enabled && (TryComp<ApcPowerReceiverComponent>(uid, out var power) && power.Powered);
             _appearance.SetData(uid, PumpVisuals.Enabled, pumpOn, appearance);
         }
+
+        /// Corvax-Next-AutoPipes-Start
+        private void OnMapInit(EntityUid uid, GasPressurePumpComponent pump, MapInitEvent args)
+        {
+            if (pump.StartOnMapInit)
+            {
+                pump.Enabled = true;
+                UpdateAppearance(uid, pump);
+
+                DirtyUI(uid, pump);
+                _userInterfaceSystem.CloseUi(uid, GasPressurePumpUiKey.Key);
+            }
+        }
+		/// Corvax-Next-AutoPipes-End
     }
 }

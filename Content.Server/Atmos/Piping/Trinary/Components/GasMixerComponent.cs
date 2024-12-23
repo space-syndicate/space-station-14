@@ -38,5 +38,10 @@ namespace Content.Server.Atmos.Piping.Trinary.Components
         [ViewVariables(VVAccess.ReadWrite)]
         [DataField("inletTwoConcentration")]
         public float InletTwoConcentration = 0.5f;
+		
+		/// Corvax-Next-AutoPipes-Start
+        [DataField]
+        public bool StartOnMapInit { get; set; } = false;
+		/// Corvax-Next-AutoPipes-Start
     }
 }
