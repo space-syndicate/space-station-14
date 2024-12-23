@@ -4,6 +4,10 @@ tickrate = 30
 [netres]
 limit = 25.0
 
+[replay]
+max_compressed_size = 4194304
+max_uncompressed_size = 8388608
+
 [infolinks]
 discord = "https://discord.ss14.ru"
 github = "https://github.com/space-syndicate/space-station-14"
