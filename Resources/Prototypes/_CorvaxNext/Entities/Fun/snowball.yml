@@ -1,0 +1,78 @@
+- type: entity
+  name: snowball maker
+  parent: BaseItem
+  id: ItemSnowballMaker
+  description: Makes snowballs.
+  components:
+  - type: Sprite
+    sprite: _CorvaxNext/Objects/Misc/snowball_maker.rsi
+    layers:
+    - state: snowball-maker
+  - type: Item
+  - type: PhysicalComposition
+    materialComposition:
+      Plastic: 200
+  - type: FromTileCrafter
+    delay: 0.5
+    entityToSpawn: ItemSnowball
+    allowedTileIds:
+    - FloorAstroSnow
+    - FloorSnow
+    - FloorSnowDug
+    - PlatingSnow
+
+- type: entity
+  parent: [BaseItem, FoodBase]
+  id: ItemSnowball
+  name: snowball
+  description: Fun
+  components:
+  - type: Damageable
+    damageContainer: Inorganic
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 1
+      behaviors:
+      - !type:SpillBehavior
+        solution: snowball
+        spillSound: False
+      - !type:PlaySoundBehavior
+        sound:
+          path: /Audio/Effects/chop.ogg
+      - !type:DoActsBehavior
+        acts: ["Destruction"]
+  - type: DamageOnLand
+    damage:
+      types:
+        Blunt: 3
+  - type: StaminaDamageOnCollide
+    damage: 8.1
+  - type: Sprite
+    sprite: _CorvaxNext/Objects/Misc/snowball.rsi
+    state: snowball
+  - type: Item
+    size: Tiny
+  - type: SolutionContainerManager
+    solutions:
+      snowball:
+        maxVol: 10
+        reagents:
+        - ReagentId: Water
+          Quantity: 5
+  - type: FlavorProfile
+    flavors:
+    - snow
+    ignoreReagents:
+    - Water
+  - type: Food
+    solution: snowball
+  - type: MixableSolution
+    solution: snowball
+  - type: InjectableSolution
+    solution: snowball
+  - type: RefillableSolution
+    solution: snowball
+  - type: LandAtCursor
+
