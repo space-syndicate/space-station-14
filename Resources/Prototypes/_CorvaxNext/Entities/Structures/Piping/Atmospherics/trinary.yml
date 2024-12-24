@@ -14,3 +14,56 @@
   suffix: On, Flipped
   placement:
     mode: SnapgridCenter
+
+# Filter None
+- type: entity
+  parent: GasFilter
+  id: GasFilterOn
+  suffix: On
+  abstract: true
+  placement:
+    mode: SnapgridCenter
+  components:
+    - type: GasFilter
+      startOnMapInit: true
+- type: entity
+  parent: [GasFilterFlipped, GasFilterOn]
+  id: GasFilterOnFlipped
+  suffix: On, Flipped
+  abstract: true
+  placement:
+    mode: SnapgridCenter
+# Filter Oxygen
+- type: entity
+  parent: GasFilter
+  id: GasFilterOxygenOn
+  suffix: On, Oxygen
+  placement:
+    mode: SnapgridCenter
+  components:
+    - type: GasFilter
+      startOnMapInit: true
+      filteredGas: Oxygen
+- type: entity
+  parent: [GasFilterFlipped, GasFilterOxygenOn]
+  id: GasFilterOxygenOnFlipped
+  suffix: On, Oxygen, Flipped
+  placement:
+    mode: SnapgridCenter
+# Filter Nitrogen
+- type: entity
+  parent: GasFilter
+  id: GasFilterNitrogenOn
+  suffix: On, Nitrogen
+  placement:
+    mode: SnapgridCenter
+  components:
+    - type: GasFilter
+      startOnMapInit: true
+      filteredGas: Nitrogen
+- type: entity
+  parent: [GasFilterFlipped, GasFilterNitrogenOn]
+  id: GasFilterNitrogenOnFlipped
+  suffix: On, Nitrogen, Flipped
+  placement:
+    mode: SnapgridCenter
