@@ -504,9 +504,9 @@
       - id: PresentRandomUnsafe
         prob: 0.5
         orGroup: present
-      - id: PresentRandomInsane
-        prob: 0.2
-        orGroup: present
+      #- id: PresentRandomInsane
+      #  prob: 0.2
+      #  orGroup: present
 
 - type: entity
   parent: BaseTreeConifer
