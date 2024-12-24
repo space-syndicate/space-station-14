@@ -721,7 +721,7 @@
       sprite: Mobs/Animals/parrot.rsi
   - type: ConditionalSpawner
     prototypes:
-    - MobParrot
+    - MobParrotSmart # Corvax-Next-Parrot: replaced MobParrot
 
 - type: entity
   name: Butterfly Spawner
