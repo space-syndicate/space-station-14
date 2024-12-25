@@ -17,6 +17,10 @@
 - changed-files:
   - any-glob-to-any-file: '**/*.swsl'
 
+"Changes: Audio":
+- changed-files:
+  - any-glob-to-any-file: '**/*.ogg'
+
 "Changes: Localization":
 - changed-files:
   - any-glob-to-any-file: '**/*.ftl'
