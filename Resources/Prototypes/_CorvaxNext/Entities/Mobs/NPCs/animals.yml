@@ -14,13 +14,13 @@
     - map: ["enum.DamageStateVisualLayers.Base", "movement"]
       state: parrot-moving # until upstream
       sprite: _CorvaxNext/Mobs/Animals/parrot.rsi
-  - type: SpriteMovement
-    movementLayers:
-      movement:
-        state: parrot-moving
-    noMovementLayers:
-      movement:
-        state: parrot-moving # until upstream
+  # - type: SpriteMovement # until upstream
+    # movementLayers:
+      # movement:
+        # state: parrot-moving
+    # noMovementLayers:
+      # movement:
+        # state: parrot-moving
   - type: Item
     sprite: _CorvaxNext/Mobs/Animals/parrot.rsi
     size: Normal
@@ -34,6 +34,7 @@
     sprite: _CorvaxNext/Mobs/Animals/parrot.rsi
     slots:
     - HEAD
+    - NECK
   - type: Fixtures
     fixtures:
       fix1:
