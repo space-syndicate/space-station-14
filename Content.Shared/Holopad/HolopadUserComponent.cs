@@ -1,3 +1,4 @@
+using Content.Shared.Chat.TypingIndicator;
 using Robust.Shared.GameStates;
 using Robust.Shared.Serialization;
 
@@ -57,12 +58,12 @@ public sealed class HolopadUserTypingChangedEvent : EntityEventArgs
     /// <summary>
     /// The typing indicator state
     /// </summary>
-    public readonly bool IsTyping;
+    public readonly TypingIndicatorState TypingState;
 
-    public HolopadUserTypingChangedEvent(NetEntity user, bool isTyping)
+    public HolopadUserTypingChangedEvent(NetEntity user, TypingIndicatorState state)
     {
         User = user;
-        IsTyping = isTyping;
+        TypingState = state;
     }
 }
 
