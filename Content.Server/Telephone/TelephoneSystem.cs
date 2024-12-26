@@ -114,8 +114,8 @@ public sealed class TelephoneSystem : SharedTelephoneSystem
         // If speaker entity has TTS, the telephone will speak with the same voice
         if(TryComp<TTSComponent>(args.MessageSource, out var ttsSpeaker))
         {
-            _entManager.EnsureComponent<TTSComponent>(entity, out var ttsTelephone)
-            ttsTelephone.VoicePrototypeId = ttsSpeaker.VoicePrototypeId
+            _entManager.EnsureComponent<TTSComponent>(entity, out var ttsTelephone);
+            ttsTelephone.VoicePrototypeId = ttsSpeaker.VoicePrototypeId;
         }
         else // Remove TTS if the speaker has no TTS
         {
