@@ -2,8 +2,10 @@
   id: Amber
   mapName: 'Amber'
   mapPath: /Maps/amber.yml
-  minPlayers: 7
-  maxPlayers: 50
+  # Corvax-start
+  minPlayers: 25
+  maxPlayers: 55
+  # Corvax-end
   stations:
     Amber:
       stationProto: StandardNanotrasenStation
