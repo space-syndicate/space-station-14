@@ -98,6 +98,7 @@
   - type: MovementSpeedModifier
     baseWalkSpeed: 30
   # Corvax-End
+  - type: TurretController # Corvax-Next-TurretControl
 
 - type: entity
   id: ActionAGhostShowSolar
