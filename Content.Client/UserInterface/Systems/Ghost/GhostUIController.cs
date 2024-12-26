@@ -127,6 +127,8 @@ public sealed class GhostUIController : UIController, IOnSystemChanged<GhostSyst
         Gui.GhostRolesPressed += GhostRolesPressed;
         Gui.TargetWindow.WarpClicked += OnWarpClicked;
         Gui.TargetWindow.OnGhostnadoClicked += OnGhostnadoClicked;
+		Gui.GhostBarPressed += GhostBarPressed; // Corvax-Next-GhostBar
+		Gui.GhostBarWindow.SpawnButtonPressed += GhostBarSpawnPressed; // Corvax-Next-GhostBar
 
         UpdateGui();
     }
@@ -140,6 +142,8 @@ public sealed class GhostUIController : UIController, IOnSystemChanged<GhostSyst
         Gui.ReturnToBodyPressed -= ReturnToBody;
         Gui.GhostRolesPressed -= GhostRolesPressed;
         Gui.TargetWindow.WarpClicked -= OnWarpClicked;
+		Gui.GhostBarPressed -= GhostBarPressed; // Corvax-Next-GhostBar
+		Gui.GhostBarWindow.SpawnButtonPressed -= GhostBarSpawnPressed; // Corvax-Next-GhostBar
 
         Gui.Hide();
     }
@@ -160,4 +164,16 @@ public sealed class GhostUIController : UIController, IOnSystemChanged<GhostSyst
     {
         _system?.OpenGhostRoles();
     }
+	
+	// Corvax-Next-GhostBar-Start
+    private void GhostBarPressed()
+    {
+        Gui?.GhostBarWindow.OpenCentered();
+    }
+
+    private void GhostBarSpawnPressed()
+    {
+        _system?.GhostBarSpawn();
+    }
+	// Corvax-Next-GhostBar-End
 }

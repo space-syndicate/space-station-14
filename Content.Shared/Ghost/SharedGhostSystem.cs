@@ -68,6 +68,13 @@ namespace Content.Shared.Ghost
     {
     }
 
+	// Corvax-Next-GhostBar-Start: A server to client request for them to spawn at the ghost bar
+    [Serializable, NetSerializable]
+    public sealed class GhostBarSpawnEvent : EntityEventArgs
+    {
+    }
+	// Corvax-Next-GhostBar-End
+
     /// <summary>
     /// An individual place a ghost can warp to.
     /// This is used as part of <see cref="GhostWarpsResponseEvent"/>
