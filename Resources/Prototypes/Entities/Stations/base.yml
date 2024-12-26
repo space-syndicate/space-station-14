@@ -90,9 +90,9 @@
           protos:
           - VGRoid
         # Corvax-Mapping-Start
-        mining: !type:GridSpawnGroup
-          paths:
-          - /Maps/Shuttles/corvax_mining.yml
+        #mining: !type:GridSpawnGroup
+          #paths:
+          #- /Maps/Shuttles/corvax_mining.yml
         # Corvax-Mapping-End
 
 - type: entity
