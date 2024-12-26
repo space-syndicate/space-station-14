@@ -34,6 +34,8 @@ public abstract class SharedGasPressurePumpSystem : EntitySystem
 
         SubscribeLocalEvent<GasPressurePumpComponent, AtmosDeviceDisabledEvent>(OnPumpLeaveAtmosphere);
         SubscribeLocalEvent<GasPressurePumpComponent, ExaminedEvent>(OnExamined);
+
+        SubscribeLocalEvent<GasPressurePumpComponent, MapInitEvent>(OnMapInit); // Corvax-Next-AutoPipes
     }
 
     private void OnExamined(EntityUid uid, GasPressurePumpComponent pump, ExaminedEvent args)
@@ -94,4 +96,18 @@ public abstract class SharedGasPressurePumpSystem : EntitySystem
 
         UserInterfaceSystem.CloseUi(uid, GasPressurePumpUiKey.Key);
     }
+
+    // Corvax-Next-AutoPipes-Start
+    private void OnMapInit(EntityUid uid, GasPressurePumpComponent pump, MapInitEvent args)
+    {
+        if (!pump.StartOnMapInit)
+            return;
+
+        pump.Enabled = true;
+        UpdateAppearance(uid, pump);
+
+        Dirty(uid, pump);
+        UserInterfaceSystem.CloseUi(uid, GasPressurePumpUiKey.Key);
+    }
+    // Corvax-Next-AutoPipes-End
 }
