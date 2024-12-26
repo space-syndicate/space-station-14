@@ -14,8 +14,8 @@
       visible: false
     - state: open_overlay
       map: ["enum.StorageVisualLayers.Door"]
-    - state: label_overlay
-      map: ["enum.BodyBagVisualLayers.Label"]
+    - state: paper
+      map: ["enum.PaperLabelVisuals.Layer"]
   - type: Icon
     sprite: _CorvaxNext/Objects/Specific/Medical/BodyBags/bluespace.rsi
     state: bluespacebag
@@ -46,8 +46,8 @@
       visible: false
     - state: open_overlay
       map: ["enum.StorageVisualLayers.Door"]
-    - state: label_overlay
-      map: ["enum.BodyBagVisualLayers.Label"]
+    - state: paper
+      map: ["enum.PaperLabelVisuals.Layer"]
   - type: Icon
     sprite: _CorvaxNext/Objects/Specific/Medical/BodyBags/nanotrasen.rsi
     state: ntbag
@@ -78,8 +78,8 @@
       visible: false
     - state: open_overlay
       map: ["enum.StorageVisualLayers.Door"]
-    - state: label_overlay
-      map: ["enum.BodyBagVisualLayers.Label"]
+    - state: paper
+      map: ["enum.PaperLabelVisuals.Layer"]
   - type: Icon
     sprite: _CorvaxNext/Objects/Specific/Medical/BodyBags/prison.rsi
     state: prisonerbag
@@ -110,8 +110,8 @@
       visible: false
     - state: open_overlay
       map: ["enum.StorageVisualLayers.Door"]
-    - state: label_overlay
-      map: ["enum.BodyBagVisualLayers.Label"]
+    - state: paper
+      map: ["enum.PaperLabelVisuals.Layer"]
   - type: Icon
     sprite: _CorvaxNext/Objects/Specific/Medical/BodyBags/radiation.rsi
     state: radiationbag
@@ -144,8 +144,8 @@
       visible: false
     - state: open_overlay
       map: ["enum.StorageVisualLayers.Door"]
-    - state: label_overlay
-      map: ["enum.BodyBagVisualLayers.Label"]
+    - state: paper
+      map: ["enum.PaperLabelVisuals.Layer"]
   - type: Icon
     sprite: _CorvaxNext/Objects/Specific/Medical/BodyBags/syndicate.rsi
     state: syndicatebag

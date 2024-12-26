@@ -1,14 +1,23 @@
 {
   "version": 1,
   "license": "CC-BY-SA-3.0",
-  "copyright": "Taken from https://github.com/BlueMoon-Labs/MOLOT-BlueMoon-Station/blob/master/icons/obj/bodybag.dmi | Edited by PuroSlavKing (Github)",
+  "copyright": "Taken from tgstation at https://github.com/tgstation/tgstation/commit/39659000f380583c35fb814ee2fadab24c2f8076, modified by Ko4erga",
   "size": {
     "x": 32,
     "y": 32
   },
   "states": [
     {
-      "name": "label_overlay"
+      "name": "paper"
+    },
+    {
+      "name": "bounty"
+    },
+    {
+      "name": "captains_paper"
+    },
+    {
+      "name": "invoice"
     },
     {
       "name": "syndicatebag"
