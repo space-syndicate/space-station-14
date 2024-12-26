@@ -7,9 +7,9 @@ using Content.Shared.Item.ItemToggle.Components;
 using Content.Shared.Stunnable;
 using Content.Shared._CorvaxNext.Standing;
 
-namespace Content.Shared._CorvaxNext.TelescopicBaton;
+namespace Content.Shared._CorvaxNext.LayOnMeleeHit;
 
-public sealed class TelescopicBatonSystem : EntitySystem
+public sealed class LayOnMeleeHitSystem : EntitySystem
 {
     [Dependency] private readonly SharedItemSystem _item = default!;
     [Dependency] private readonly SharedStunSystem _stun = default!;
@@ -21,13 +21,13 @@ public sealed class TelescopicBatonSystem : EntitySystem
     {
         base.Initialize();
 
-        SubscribeLocalEvent<TelescopicBatonComponent, ExaminedEvent>(OnExamined);
-        SubscribeLocalEvent<TelescopicBatonComponent, StaminaDamageOnHitAttemptEvent>(OnStaminaHitAttempt);
-        SubscribeLocalEvent<TelescopicBatonComponent, ItemToggledEvent>(ToggleDone);
-        SubscribeLocalEvent<TelescopicBatonComponent, StaminaMeleeHitEvent>(OnHit);
+        SubscribeLocalEvent<LayOnMeleeHitComponent, ExaminedEvent>(OnExamined);
+        SubscribeLocalEvent<LayOnMeleeHitComponent, StaminaDamageOnHitAttemptEvent>(OnStaminaHitAttempt);
+        SubscribeLocalEvent<LayOnMeleeHitComponent, ItemToggledEvent>(ToggleDone);
+        SubscribeLocalEvent<LayOnMeleeHitComponent, StaminaMeleeHitEvent>(OnHit);
     }
 
-    private void OnHit(Entity<TelescopicBatonComponent> ent, ref StaminaMeleeHitEvent args)
+    private void OnHit(Entity<LayOnMeleeHitComponent> ent, ref StaminaMeleeHitEvent args)
     {
         foreach (var (uid, _) in args.HitList)
         {
@@ -38,21 +38,21 @@ public sealed class TelescopicBatonSystem : EntitySystem
         }
     }
 
-    private void OnStaminaHitAttempt(Entity<TelescopicBatonComponent> entity, ref StaminaDamageOnHitAttemptEvent args)
+    private void OnStaminaHitAttempt(Entity<LayOnMeleeHitComponent> entity, ref StaminaDamageOnHitAttemptEvent args)
     {
         if (!_itemToggle.IsActivated(entity.Owner))
             args.Cancelled = true;
     }
 
-    private void OnExamined(Entity<TelescopicBatonComponent> entity, ref ExaminedEvent args)
+    private void OnExamined(Entity<LayOnMeleeHitComponent> entity, ref ExaminedEvent args)
     {
         var onMsg = _itemToggle.IsActivated(entity.Owner)
-            ? Loc.GetString("comp-telescopicbaton-examined-on")
-            : Loc.GetString("comp-telescopicbaton-examined-off");
+            ? Loc.GetString("comp-LayOnMeleeHit-examined-on")
+            : Loc.GetString("comp-LayOnMeleeHit-examined-off");
         args.PushMarkup(onMsg);
     }
 
-    private void ToggleDone(Entity<TelescopicBatonComponent> entity, ref ItemToggledEvent args)
+    private void ToggleDone(Entity<LayOnMeleeHitComponent> entity, ref ItemToggledEvent args)
     {
         _item.SetHeldPrefix(entity.Owner, args.Activated ? "on" : "off");
     }

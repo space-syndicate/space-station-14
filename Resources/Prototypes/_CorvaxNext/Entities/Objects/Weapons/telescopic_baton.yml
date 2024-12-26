@@ -4,7 +4,7 @@
   name: telescopic baton
   description: A compact yet robust personal defense weapon.
   components:
-  - type: TelescopicBaton
+  - type: LayOnMeleeHit
   - type: Sprite
     sprite: _CorvaxNext/Objects/Weapons/Melee/telescopic_baton.rsi
     layers:
