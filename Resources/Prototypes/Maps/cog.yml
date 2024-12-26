@@ -2,8 +2,7 @@
   id: Cog
   mapName: 'Cog'
   mapPath: /Maps/cog.yml
-  minPlayers: 40
-  maxPlayers: 80 #big map
+  minPlayers: 55 # Corvax
   stations:
     Cog:
       stationProto: StandardNanotrasenStation

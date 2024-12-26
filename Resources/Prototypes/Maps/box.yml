@@ -2,7 +2,7 @@
   id: Box
   mapName: 'Box Station'
   mapPath: /Maps/box.yml
-  minPlayers: 50
+  minPlayers: 55 # Corvax
   stations:
     Boxstation:
       stationProto: StandardNanotrasenStation

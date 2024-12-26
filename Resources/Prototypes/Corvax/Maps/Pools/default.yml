@@ -1,24 +1,40 @@
 - type: gameMapPool
   id: CorvaxDefaultMapPool
   maps:
+  # Мапперская авантюра
+  ## Highpop
+  #- CorvaxDelta
+  #- CorvaxAvrite
+  #- CorvaxAstra
+  #- CorvaxPilgrim
+  #- CorvaxGlacier
+  #- Box
+  ## Midpop
+  #- CorvaxPaper
+  ##- CorvaxPearl — До реворка
+  #- CorvaxOutpost
+  #- CorvaxAwesome
+  #- Bagel
+  #- Marathon
+  ##- Train — До реворка оффами
+  ## Lowpop
+  #- CorvaxSilly
+  #- CorvaxMaus
+  #- CorvaxTushkan
+  #- Packed
+  #- Omega
+  #================
   # Highpop
-  - CorvaxDelta
-  - CorvaxAvrite
-  - CorvaxAstra
-  - CorvaxPilgrim
-  - CorvaxGlacier
   - Box
-  # Midpop
-  - CorvaxPaper
-  #- CorvaxPearl — До реворка
-  - CorvaxOutpost
-  - CorvaxAwesome
   - Bagel
+  - Cog
+  - Fland
+  - Origin
+  # Midpop
+  - Amber
   - Marathon
-  #- Train — До реворка оффами
+  - Meta
   # Lowpop
-  - CorvaxSilly
-  - CorvaxMaus
-  - CorvaxTushkan
-  - Packed
+  - Saltern
   - Omega
+  - Packed
