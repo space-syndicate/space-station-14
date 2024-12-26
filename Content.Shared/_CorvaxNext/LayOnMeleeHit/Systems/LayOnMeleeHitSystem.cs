@@ -47,8 +47,8 @@ public sealed class LayOnMeleeHitSystem : EntitySystem
     private void OnExamined(Entity<LayOnMeleeHitComponent> entity, ref ExaminedEvent args)
     {
         var onMsg = _itemToggle.IsActivated(entity.Owner)
-            ? Loc.GetString("comp-LayOnMeleeHit-examined-on")
-            : Loc.GetString("comp-LayOnMeleeHit-examined-off");
+            ? Loc.GetString("comp-telescopicbaton-examined-on")
+            : Loc.GetString("comp-telescopicbaton-examined-off");
         args.PushMarkup(onMsg);
     }
 
