@@ -533,6 +533,7 @@
       - MassMediaCircuitboard
       - ReagentGrinderIndustrialMachineCircuitboard
       - JukeboxCircuitBoard
+      - SMESAdvancedMachineCircuitboard
       - SalvageExpeditionsComputerCircuitboard # Corvax-Cringe
       # Corvax-Next-BluespaceHarvester-Start
       - MachineBluespaceHarvesterCircuitboard
@@ -547,7 +548,7 @@
       - LiveLetLiveCircuitBoard
       - StationEfficiencyCircuitBoard
       - RobocopCircuitBoard
-      - DungeonMasterCircuitBoard
+      - GameMasterCircuitBoard
       - ArtistCircuitBoard
       - NutimovCircuitBoard
       # Corvax-Next-MutableLaws-End
@@ -1276,7 +1277,7 @@
       staticRecipes:
         - SheetSteel
         - SheetGlass1
-        - SheetRGlass
+        - SheetRGlassRaw
         - SheetPlasma1
         - SheetPGlass1
         - SheetRPGlass1
@@ -1302,7 +1303,7 @@
     staticRecipes:
       - SheetSteel
       - SheetGlass1
-      - SheetRGlass
+      - SheetRGlassRaw
       - SheetPlasma1
       - SheetPGlass1
       - SheetRPGlass1

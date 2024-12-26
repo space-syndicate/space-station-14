@@ -23,7 +23,7 @@
     thresholds:
     - trigger:
         !type:DamageTrigger
-        damage: 250
+        damage: 175
       behaviors:
       - !type:DoActsBehavior
         acts: [ "Destruction" ]
@@ -42,9 +42,3 @@
     - state: base
     - state: lights
       shader: unshaded
-  - type: PointLight
-    color: "#0000FF"
-    energy: 0.8
-    radius: 5
-    softness: 1
-  - type: RgbLightController
