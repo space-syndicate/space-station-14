@@ -9,6 +9,19 @@ namespace Content.Shared._CorvaxNext.NextVars;
 // ReSharper disable once InconsistentNaming
 public sealed class NextVars
 {
+    /**
+     * Auto cryo sleep
+     */
+
+    public static readonly CVarDef<bool> AutoCryoSleepEnabled =
+        CVarDef.Create("auto_cryo_sleep.enabled", true, CVar.SERVER);
+
+    public static readonly CVarDef<int> AutoCryoSleepTime =
+        CVarDef.Create("auto_cryo_sleep.time", 500, CVar.SERVER);
+
+    public static readonly CVarDef<int> AutoCryoSleepUpdateTime =
+        CVarDef.Create("auto_cryo_sleep.update_time", 120, CVar.SERVER);
+
     /// <summary>
     /// Offer item.
     /// </summary>
