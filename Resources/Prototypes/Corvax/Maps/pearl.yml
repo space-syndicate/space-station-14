@@ -14,7 +14,7 @@
           mapNameTemplate: '{0} Pearl island {1}'
           nameGenerator:
             !type:NanotrasenNameGenerator
-            prefixCreator: 'SS'
+            prefixCreator: 'SR'
         - type: StationEmergencyShuttle
           emergencyShuttlePath: /Maps/Shuttles/corvax_emergency.yml
         - type: StationJobs
@@ -67,7 +67,6 @@
             Borg: [ 1, 1 ]
         - type: StationGoal
           goals:
-          - Singularity
           - SolarPanels
           - Artifacts
           - Bank
@@ -75,6 +74,13 @@
           - MiningOutpost
           - Tesla
           - SecurityTraining
+          - ShuttleMed
+          - ShuttleSec
+          - ShuttleRnd
+          - ShuttleSrv
+          - ShuttleEmergency
           - Theatre
+          - CellAI
           - Botany
           - Bunker
+          - Survive
