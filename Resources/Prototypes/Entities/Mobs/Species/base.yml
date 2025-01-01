@@ -217,6 +217,7 @@
   - type: Targeting # _CorvaxNext: surgery
   - type: SurgeryTarget # _CorvaxNext: surgery
   - type: LayingDown # _CorvaxNext: LayingDown Laying Down
+  - type: AutoCryoSleepable # Corvax-Next-AutoCryo
 
 - type: entity
   save: false
