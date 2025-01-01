@@ -26,8 +26,12 @@ public sealed class TurretControlSystem : EntitySystem
 
     private void OnGetVerbs(Entity<TurretControllableComponent> entity, ref GetVerbsEvent<Verb> e)
     {
-        if (!HasComp<TurretControllerComponent>(e.User))
+        if (!TryComp<TurretControllerComponent>(e.User, out var controller))
             return;
+
+        foreach (var component in controller.RequiredComponents)
+            if (!HasComp(e.User, component.Value.Component.GetType()))
+                return;
 
         if (!TryComp<NpcFactionMemberComponent>(entity, out var factionMember))
             return;

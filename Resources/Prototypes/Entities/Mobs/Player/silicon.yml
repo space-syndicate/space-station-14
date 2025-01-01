@@ -439,6 +439,8 @@
     speechVerb: Robotic
     speechSounds: Borg
   - type: TurretController # Corvax-Next-TurretControl
+    requiredComponents:
+    - type: StationAiHeld
   - type: Tag
     tags:
     - HideContextMenu
