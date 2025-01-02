@@ -81,7 +81,7 @@
         vgroid: !type:DungeonSpawnGroup
           minimumDistance: 300
           maximumDistance: 350
-          nameDataset: names_borer
+          nameDataset: NamesBorer
           stationGrid: false
           addComponents:
           - type: Gravity
@@ -90,9 +90,9 @@
           protos:
           - VGRoid
         # Corvax-Mapping-Start
-        mining: !type:GridSpawnGroup
-          paths:
-          - /Maps/Shuttles/corvax_mining.yml
+        #mining: !type:GridSpawnGroup
+          #paths:
+          #- /Maps/Shuttles/corvax_mining.yml
         # Corvax-Mapping-End
 
 - type: entity

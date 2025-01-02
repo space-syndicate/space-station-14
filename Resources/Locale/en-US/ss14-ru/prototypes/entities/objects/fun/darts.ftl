@@ -12,5 +12,5 @@ ent-HypoDart = { ent-Dart }
 ent-TargetDarts = dartboard
     .desc = A target for playing darts.
 ent-HypoDartBox = hypodart box
-    .desc = A small box containing an hypodart. Packaging disintegrates when opened, leaving no evidence behind.
+    .desc = A small box containing a hypodart. Packaging disintegrates when opened, leaving no evidence behind.
     .suffix = HypoDart
