@@ -6,6 +6,7 @@ using Content.Server.Power.EntitySystems;
 using Content.Server.Speech;
 using Content.Server.Speech.Components;
 using Content.Shared.Chat;
+using Content.Shared.Corvax.TTS;
 using Content.Shared.Database;
 using Content.Shared.Mind.Components;
 using Content.Shared.Power;
@@ -109,6 +110,18 @@ public sealed class TelephoneSystem : SharedTelephoneSystem
             ("originalName", nameEv.VoiceName));
 
         var volume = entity.Comp.SpeakerVolume == TelephoneVolume.Speak ? InGameICChatType.Speak : InGameICChatType.Whisper;
+        // Corvax-TTS-Start
+        // If speaker entity has TTS, the telephone will speak with the same voice
+        if(TryComp<TTSComponent>(args.MessageSource, out var ttsSpeaker))
+        {
+            EntityManager.EnsureComponent<TTSComponent>(entity, out var ttsTelephone);
+            ttsTelephone.VoicePrototypeId = ttsSpeaker.VoicePrototypeId;
+        }
+        else // Remove TTS if the speaker has no TTS
+        {
+            EntityManager.RemoveComponent<TTSComponent>(entity);
+        }
+        // Corvax-TTS-End
         _chat.TrySendInGameICMessage(entity, args.Message, volume, ChatTransmitRange.GhostRangeLimit, nameOverride: name, checkRadioPrefix: false);
     }
 

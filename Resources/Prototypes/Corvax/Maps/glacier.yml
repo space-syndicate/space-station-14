@@ -18,7 +18,7 @@
           emergencyShuttlePath: /Maps/Shuttles/emergency_corvaxglacier.yml
         - type: StationBiome
           biome: GlacierPlanet
-          mapLightColor: "#090917FF"
+          mapLightColor: "#130D20FF"
         - type: GridSpawn
           groups:
             trade: !type:GridSpawnGroup
