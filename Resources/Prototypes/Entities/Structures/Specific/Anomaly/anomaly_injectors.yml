@@ -56,6 +56,9 @@
           Vox:
             sprite: Structures/Specific/Anomalies/inner_anom_layer.rsi
             state: fire_VOX
+          Resomi: # Corvax-Next-Resomi
+            sprite: _CorvaxNext/Structures/Specific/Anomalies/inner_anom_layer.rsi
+            state: fire_RESOMI
 
 - type: entity
   parent: BaseAnomalyInjector
@@ -85,6 +88,9 @@
           Vox:
             sprite: Structures/Specific/Anomalies/inner_anom_layer.rsi
             state: shock_VOX
+          Resomi: # Corvax-Next-Resomi
+            sprite: _CorvaxNext/Structures/Specific/Anomalies/inner_anom_layer.rsi
+            state: shock_RESOMI
 
 - type: entity
   parent: BaseAnomalyInjector
@@ -114,6 +120,9 @@
           Vox:
             sprite: Structures/Specific/Anomalies/inner_anom_layer.rsi
             state: shadow_VOX
+          Resomi: # Corvax-Next-Resomi
+            sprite: _CorvaxNext/Structures/Specific/Anomalies/inner_anom_layer.rsi
+            state: shadow_RESOMI
 
 - type: entity
   parent: BaseAnomalyInjector
@@ -143,6 +152,9 @@
           Vox:
             sprite: Structures/Specific/Anomalies/inner_anom_layer.rsi
             state: frost_VOX
+          Resomi: # Corvax-Next-Resomi
+            sprite: _CorvaxNext/Structures/Specific/Anomalies/inner_anom_layer.rsi
+            state: frost_RESOMI
 
 - type: entity
   parent: BaseAnomalyInjector
@@ -172,6 +184,9 @@
           Vox:
             sprite: Structures/Specific/Anomalies/inner_anom_layer.rsi
             state: flora_VOX
+          Resomi: # Corvax-Next-Resomi
+            sprite: _CorvaxNext/Structures/Specific/Anomalies/inner_anom_layer.rsi
+            state: flora_RESOMI
 
 - type: entity
   parent: BaseAnomalyInjector
@@ -201,6 +216,9 @@
           Vox:
             sprite: Structures/Specific/Anomalies/inner_anom_layer.rsi
             state: bluespace_VOX
+          Resomi: # Corvax-Next-Resomi
+            sprite: _CorvaxNext/Structures/Specific/Anomalies/inner_anom_layer.rsi
+            state: bluespace_RESOMI
 
 - type: entity
   parent: BaseAnomalyInjector
@@ -230,6 +248,9 @@
           Vox:
             sprite: Structures/Specific/Anomalies/inner_anom_layer.rsi
             state: flesh_VOX
+          Resomi: # Corvax-Next-Resomi
+            sprite: _CorvaxNext/Structures/Specific/Anomalies/inner_anom_layer.rsi
+            state: flesh_RESOMI
 
 - type: entity
   parent: BaseAnomalyInjector
@@ -259,6 +280,9 @@
           Vox:
             sprite: Structures/Specific/Anomalies/inner_anom_layer.rsi
             state: grav_VOX
+          Resomi: # Corvax-Next-Resomi
+            sprite: _CorvaxNext/Structures/Specific/Anomalies/inner_anom_layer.rsi
+            state: grav_RESOMI
 
 - type: entity
   parent: BaseAnomalyInjector
@@ -288,6 +312,9 @@
           Vox:
             sprite: Structures/Specific/Anomalies/inner_anom_layer.rsi
             state: tech_VOX
+          Resomi: # Corvax-Next-Resomi
+            sprite: _CorvaxNext/Structures/Specific/Anomalies/inner_anom_layer.rsi
+            state: tech_RESOMI
 
 - type: entity
   parent: BaseAnomalyInjector
@@ -318,6 +345,9 @@
           Vox:
             sprite: Structures/Specific/Anomalies/inner_anom_layer.rsi
             state: rock_VOX
+          Resomi: # Corvax-Next-Resomi
+            sprite: _CorvaxNext/Structures/Specific/Anomalies/inner_anom_layer.rsi
+            state: rock_RESOMI
 
 - type: entity
   parent: BaseAnomalyInjector

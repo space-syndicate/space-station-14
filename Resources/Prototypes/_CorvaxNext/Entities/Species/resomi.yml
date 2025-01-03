@@ -7,10 +7,15 @@
   components:
   - type: WeaponsUseInability
   - type: AgillitySkill
+  - type: ListenUpSkill
   - type: ChatModifier
     whisperListeningRange: 4
+  - type: FlashModifier
+    modifier: 2
   - type: ResomiAccent
   - type: FootprintVisualizer
+    leftBarePrint: "footprint-left-bare-lizard"
+    rightBarePrint: "footprint-right-bare-lizard"
   - type: DamageVisuals
     thresholds: [ 10, 30, 50, 70]
     targetLayers:
@@ -36,8 +41,8 @@
         shape:
           !type:PhysShapeCircle
           radius: 0.35
-        # they r smaller
-        density: 120
+        # they r very small
+        density: 60
         restitution: 0.0
         mask:
         - MobMask
@@ -60,6 +65,12 @@
     requiredLegs: 2
   - type: Bloodstream
     bloodReagent: ResomiBlood
+    bloodlossDamage:
+      types:
+        Bloodloss: 1 # They take more damage because they have low blood.
+    bloodlossHealDamage:
+      types:
+        Bloodloss: -2 # They also regenerate more because it doesn't take that much to recover. Yes, the system is terrible, but it's what we have.
   - type: MeleeWeapon
     soundHit:
       collection: AlienClaw
@@ -86,13 +97,20 @@
       230: 0.4
   - type: ThermalRegulator
     normalBodyTemperature: 300.15
+  - type: Speech
+    speechSounds: Resomi
   - type: Vocal
     sounds:
       Male: MaleResomi
       Female: FemaleResomi
       Unsexed: MaleResomi
-  - type: FlashModifier
-    modifier: 2
+  - type: Respirator
+    damage:
+      types:
+        Asphyxiation: 1.0
+    damageRecovery:
+      types:
+        Asphyxiation: -1.0
   - type: Hands
     handDisplacement:
       sizeMaps:

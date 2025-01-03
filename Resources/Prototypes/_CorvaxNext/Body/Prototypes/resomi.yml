@@ -20,7 +20,7 @@
       - head
       organs:
         heart: OrganHumanHeart
-        lungs: OrganResomiLungs
+        lungs: OrganHumanLungs
         stomach: OrganAnimalStomach
         liver:  OrganAnimalLiver
         kidneys: OrganAnimalKidneys

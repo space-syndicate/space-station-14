@@ -1,7 +1,7 @@
 {
   "version": 1,
   "license": "CC-BY-SA-3.0",
-  "copyright": "Taken from tgstation at commit https://github.com/tgstation/tgstation/commit/46a92082e4dd599e233ebf280050fb5be0107da9. equipped-OUTERCLOTHING-vox state taken from /vg/station at commit https://github.com/vgstation-coders/vgstation13/commit/31d6576ba8102135d058ef49c3cb6ecbe8db8a79 and repaletted to match by Flareguy, grayscale layering & armor by IProduceWidgets (Github), sprites for resomi by Pofitlo",
+  "copyright": "Taken from tgstation at commit https://github.com/tgstation/tgstation/commit/46a92082e4dd599e233ebf280050fb5be0107da9. equipped-OUTERCLOTHING-vox state taken from /vg/station at commit https://github.com/vgstation-coders/vgstation13/commit/31d6576ba8102135d058ef49c3cb6ecbe8db8a79 and repaletted to match by Flareguy, grayscale layering & armor by IProduceWidgets (Github)",
   "size": {
     "x": 32,
     "y": 32
@@ -16,10 +16,6 @@
     },
     {
       "name": "equipped-OUTERCLOTHING-vox",
-      "directions": 4
-    },
-    {
-      "name": "equipped-OUTERCLOTHING-resomi",
       "directions": 4
     },
     {
@@ -42,10 +38,6 @@
       "directions": 4
     },
     {
-      "name": "ATMOS-equipped-OUTERCLOTHING-resomi",
-      "directions": 4
-    },
-    {
       "name": "ATMOS-inhand-left",
       "directions": 4
     },
@@ -65,10 +57,6 @@
       "directions": 4
     },
     {
-      "name": "SCI-equipped-OUTERCLOTHING-resomi",
-      "directions": 4
-    },
-    {
       "name": "SCI-inhand-left",
       "directions": 4
     },
@@ -81,10 +69,6 @@
     },
     {
       "name": "CHEM-equipped-OUTERCLOTHING",
-      "directions": 4
-    },
-    {
-      "name": "CHEM-equipped-OUTERCLOTHING-resomi",
       "directions": 4
     },
     {
@@ -107,10 +91,6 @@
       "directions": 4
     },
     {
-      "name": "MIME-equipped-OUTERCLOTHING-resomi",
-      "directions": 4
-    },
-    {
       "name": "MIME-inhand-left",
       "directions": 4
     },
@@ -127,10 +107,6 @@
     },
     {
       "name": "BAR-equipped-OUTERCLOTHING-vox",
-      "directions": 4
-    },
-    {
-      "name": "BAR-equipped-OUTERCLOTHING-resomi",
       "directions": 4
     },
     {
@@ -153,10 +129,6 @@
       "directions": 4
     },
     {
-      "name": "PARA-equipped-OUTERCLOTHING-resomi",
-      "directions": 4
-    },
-    {
       "name": "PARA-inhand-left",
       "directions": 4
     },
@@ -173,10 +145,6 @@
     },
     {
       "name": "MINER-equipped-OUTERCLOTHING-vox",
-      "directions": 4
-    },
-    {
-      "name": "MINER-equipped-OUTERCLOTHING-resomi",
       "directions": 4
     },
     {
@@ -199,10 +167,6 @@
       "directions": 4
     },
     {
-      "name": "CARGO-equipped-OUTERCLOTHING-resomi",
-      "directions": 4
-    },
-    {
       "name": "CARGO-inhand-left",
       "directions": 4
     },
@@ -222,10 +186,6 @@
       "directions": 4
     },
     {
-      "name": "HYDRO-equipped-OUTERCLOTHING-resomi",
-      "directions": 4
-    },
-    {
       "name": "HYDRO-inhand-left",
       "directions": 4
     },
@@ -241,10 +201,6 @@
       "directions": 4
     },
     {
-      "name": "CHEF-equipped-OUTERCLOTHING-resomi",
-      "directions": 4
-    },
-    {
       "name": "CHEF-inhand-left",
       "directions": 4
     },
@@ -257,10 +213,6 @@
     },
     {
       "name": "GENE-equipped-OUTERCLOTHING",
-      "directions": 4
-    },
-    {
-      "name": "GENE-equipped-OUTERCLOTHING-resomi",
       "directions": 4
     },
     {
@@ -283,10 +235,6 @@
       "directions": 4
     },
     {
-      "name": "ENGI-equipped-OUTERCLOTHING-resomi",
-      "directions": 4
-    },
-    {
       "name": "ENGI-inhand-left",
       "directions": 4
     },
@@ -306,10 +254,6 @@
       "directions": 4
     },
     {
-      "name": "CAP-equipped-OUTERCLOTHING-resomi",
-      "directions": 4
-    },
-    {
       "name": "CAP-inhand-left",
       "directions": 4
     },
@@ -322,10 +266,6 @@
     },
     {
       "name": "WARD-equipped-OUTERCLOTHING",
-      "directions": 4
-    },
-    {
-      "name": "WARD-equipped-OUTERCLOTHING-resomi",
       "directions": 4
     },
     {
@@ -344,10 +284,6 @@
       "directions": 4
     },
     {
-      "name": "JANI-equipped-OUTERCLOTHING-resomi",
-      "directions": 4
-    },
-    {
       "name": "JANI-inhand-left",
       "directions": 4
     },
@@ -360,10 +296,6 @@
     },
     {
       "name": "HOP-equipped-OUTERCLOTHING",
-      "directions": 4
-    },
-    {
-      "name": "HOP-equipped-OUTERCLOTHING-resomi",
       "directions": 4
     },
     {
@@ -386,10 +318,6 @@
       "directions": 4
     },
     {
-      "name": "MED-equipped-OUTERCLOTHING-resomi",
-      "directions": 4
-    },
-    {
       "name": "MED-inhand-left",
       "directions": 4
     },
@@ -409,10 +337,6 @@
       "directions": 4
     },
     {
-      "name": "SEC-equipped-OUTERCLOTHING-resomi",
-      "directions": 4
-    },
-    {
       "name": "SEC-inhand-left",
       "directions": 4
     },
@@ -425,10 +349,6 @@
     },
     {
       "name": "SYNDIECAP-equipped-OUTERCLOTHING",
-      "directions": 4
-    },
-    {
-      "name": "SYNDIECAP-equipped-OUTERCLOTHING-resomi",
       "directions": 4
     },
     {
@@ -447,10 +367,6 @@
       "directions": 4
     },
     {
-      "name": "SYNDIE-equipped-OUTERCLOTHING-resomi",
-      "directions": 4
-    },
-    {
       "name": "SYNDIE-inhand-left",
       "directions": 4
     },
@@ -463,10 +379,6 @@
     },
     {
       "name": "CMO-equipped-OUTERCLOTHING",
-      "directions": 4
-    },
-    {
-      "name": "CMO-equipped-OUTERCLOTHING-resomi",
       "directions": 4
     },
     {
@@ -489,10 +401,6 @@
       "directions": 4
     },
     {
-      "name": "CE-equipped-OUTERCLOTHING-resomi",
-      "directions": 4
-    },
-    {
       "name": "CE-inhand-left",
       "directions": 4
     },
@@ -505,10 +413,6 @@
     },
     {
       "name": "ROBO-equipped-OUTERCLOTHING",
-      "directions": 4
-    },
-    {
-      "name": "ROBO-equipped-OUTERCLOTHING-resomi",
       "directions": 4
     },
     {
@@ -527,10 +431,6 @@
       "directions": 4
     },
     {
-      "name": "HOS-equipped-OUTERCLOTHING-resomi",
-      "directions": 4
-    },
-    {
       "name": "HOS-inhand-left",
       "directions": 4
     },
@@ -543,10 +443,6 @@
     },
     {
       "name": "CENTCOM-equipped-OUTERCLOTHING",
-      "directions": 4
-    },
-    {
-      "name": "CENTCOM-equipped-OUTERCLOTHING-resomi",
       "directions": 4
     },
     {
@@ -565,10 +461,6 @@
       "directions": 4
     },
     {
-      "name": "VIRO-equipped-OUTERCLOTHING-resomi",
-      "directions": 4
-    },
-    {
       "name": "VIRO-inhand-left",
       "directions": 4
     },
@@ -581,10 +473,6 @@
     },
     {
       "name": "QM-equipped-OUTERCLOTHING",
-      "directions": 4
-    },
-    {
-      "name": "QM-equipped-OUTERCLOTHING-resomi",
       "directions": 4
     },
     {
@@ -603,10 +491,6 @@
       "directions": 4
     },
     {
-      "name": "WEB-equipped-OUTERCLOTHING-resomi",
-      "directions": 4
-    },
-    {
       "name": "WEB-inhand-left",
       "directions": 4
     },
@@ -619,10 +503,6 @@
     },
     {
       "name": "RD-equipped-OUTERCLOTHING",
-      "directions": 4
-    },
-    {
-      "name": "RD-equipped-OUTERCLOTHING-resomi",
       "directions": 4
     },
     {
@@ -651,15 +531,7 @@
       "directions": 4
     },
 	{
-      "name": "winterbits-equipped-OUTERCLOTHING-resomi",
-      "directions": 4
-    },
-	{
       "name": "winterbits-tan-equipped-OUTERCLOTHING",
-      "directions": 4
-    },
-	{
-      "name": "winterbits-tan-equipped-OUTERCLOTHING-resomi",
       "directions": 4
     },
 	{
@@ -688,10 +560,6 @@
     },
 	{
       "name": "ARMOR-equipped-OUTERCLOTHING",
-      "directions": 4
-    },
-	{
-      "name": "ARMOR-equipped-OUTERCLOTHING-resomi",
       "directions": 4
     },
 	{

@@ -1,10 +1,16 @@
 using Content.Shared.Actions;
 using Content.Shared.DoAfter;
 using Robust.Shared.Serialization;
+using Content.Shared._CorvaxNext.Resomi.Abilities.Hearing;
 
 namespace Content.Shared._CorvaxNext.Resomi;
 
 public sealed partial class SwitchAgillityActionEvent : InstantActionEvent;
+
+public sealed partial class ListenUpActionEvent : InstantActionEvent;
+
+[Serializable, NetSerializable]
+public sealed partial class ListenUpDoAfterEvent : SimpleDoAfterEvent;
 
 /// <summary>
 /// Rises when the action state changes
