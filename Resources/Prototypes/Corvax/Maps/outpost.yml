@@ -4,8 +4,8 @@
   mapPath: /Maps/corvax_outpost.yml
   maxRandomOffset: 0
   randomRotation: false
-  minPlayers: 20
-  maxPlayers: 50
+  minPlayers: 25
+  maxPlayers: 55
   stations:
     Outpost:
       stationProto: StandardNanotrasenStation
