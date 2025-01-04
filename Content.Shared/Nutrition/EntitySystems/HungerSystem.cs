@@ -28,8 +28,8 @@ public sealed class HungerSystem : EntitySystem
     [Dependency] private readonly MobStateSystem _mobState = default!;
     [Dependency] private readonly MovementSpeedModifierSystem _movementSpeedModifier = default!;
     [Dependency] private readonly SharedJetpackSystem _jetpack = default!;
-    [Dependency] private readonly INetManager _net = default!;
-    [Dependency] private readonly IConfigurationManager _config = default!;
+    [Dependency] private readonly INetManager _net = default!; // Corvax-Next-Surgery
+    [Dependency] private readonly IConfigurationManager _config = default!; // Corvax-Next-Surgery
 
     [ValidatePrototypeId<SatiationIconPrototype>]
     private const string HungerIconOverfedId = "HungerIconOverfed";
@@ -65,9 +65,9 @@ public sealed class HungerSystem : EntitySystem
 
     private void OnRefreshMovespeed(EntityUid uid, HungerComponent component, RefreshMovementSpeedModifiersEvent args)
     {
-        if (_config.GetCVar(NextVars.MoodEnabled)
-            || component.CurrentThreshold > HungerThreshold.Starving
-            || _jetpack.IsUserFlying(uid))
+        if (_config.GetCVar(NextVars.MoodEnabled) // Corvax-Next-Surgery
+            || component.CurrentThreshold > HungerThreshold.Starving // Corvax-Next-Surgery
+            || _jetpack.IsUserFlying(uid)) // Corvax-Next-Surgery
             return;
 
         args.ModifySpeed(component.StarvingSlowdownModifier, component.StarvingSlowdownModifier);
@@ -153,12 +153,12 @@ public sealed class HungerSystem : EntitySystem
 
         if (GetMovementThreshold(component.CurrentThreshold) != GetMovementThreshold(component.LastThreshold))
         {
-            if (!_config.GetCVar(NextVars.MoodEnabled))
-                _movementSpeedModifier.RefreshMovementSpeedModifiers(uid);
-            else if (_net.IsServer)
+            if (!_config.GetCVar(NextVars.MoodEnabled)) // Corvax-Next-Surgery
+                _movementSpeedModifier.RefreshMovementSpeedModifiers(uid); // Corvax-Next-Surgery
+            else if (_net.IsServer) // Corvax-Next-Surgery
             {
-                var ev = new MoodEffectEvent("Hunger" + component.CurrentThreshold); // _CorvaxNext: mood
-                RaiseLocalEvent(uid, ev);
+                var ev = new MoodEffectEvent("Hunger" + component.CurrentThreshold); // Corvax-Next-Surgery
+                RaiseLocalEvent(uid, ev); // Corvax-Next-Surgery
             }
         }
 

@@ -3,8 +3,8 @@
                   xmlns:partStatus="clr-namespace:Content.Client._CorvaxNext.UserInterface.Systems.PartStatus.Widgets"
                   MinSize="64 64">
     <GridContainer Columns="1" HorizontalAlignment="Right" VerticalAlignment="Top">
-        <PanelContainer >
-            <GridContainer Name="AlertContainer" Columns="1" HorizontalAlignment="Right" VerticalAlignment="Center" Access="Public" />
+        <PanelContainer>
+            <GridContainer Name="AlertContainer" Columns="1" HorizontalAlignment="Right" VerticalAlignment="Center" Access="Public" /> <!-- Corvax-Next-Surgery -->
         </PanelContainer>
         <partStatus:PartStatusControl Name="PartStatus" Access="Protected"/>
     </GridContainer>

@@ -27,7 +27,7 @@ public sealed partial class DefaultGameScreen : InGameScreen
         Chat.OnResized += ChatOnResized;
         Chat.OnChatResizeFinish += ChatOnResizeFinish;
         MainViewport.OnResized += ResizeActionContainer;
-        MainViewport.OnResized += ResizeAlertsContainer;
+        MainViewport.OnResized += ResizeAlertsContainer; // Corvax-Next-Surgery
         Inventory.OnResized += ResizeActionContainer;
     }
 
@@ -37,11 +37,13 @@ public sealed partial class DefaultGameScreen : InGameScreen
         Actions.ActionsContainer.MaxGridHeight = MainViewport.Size.Y - indent;
     }
 
+	// Corvax-Next-Surgery-Start
     private void ResizeAlertsContainer()
     {
         float indent = Chat.Size.Y + Targeting.Size.Y + 120;
         Alerts.AlertContainer.MaxGridHeight = Math.Max(MainViewport.Size.Y - indent, 1);
     }
+	// Corvax-Next-Surgery-End
 
     private void ChatOnResizeFinish(Vector2 _)
     {

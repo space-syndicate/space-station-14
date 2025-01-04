@@ -20,7 +20,7 @@ public sealed partial class AlertsUI : UIWidget
     public AlertsUI()
     {
         RobustXamlLoader.Load(this);
-        LayoutContainer.SetGrowHorizontal(this, LayoutContainer.GrowDirection.Begin);
+        LayoutContainer.SetGrowHorizontal(this, LayoutContainer.GrowDirection.Begin); // Corvax-Next-Surgery
     }
 
     public void SyncControls(AlertsSystem alertsSystem,

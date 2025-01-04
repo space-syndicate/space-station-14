@@ -83,8 +83,8 @@ public sealed partial class BlockGame
         {
             _highScorePlacement = _arcadeSystem.RegisterHighScore(meta.EntityName, Points);
             SendHighscoreUpdate();
-            var ev = new MoodEffectEvent("ArcadePlay"); // _CorvaxNext: mood
-            _entityManager.EventBus.RaiseLocalEvent(meta.Owner, ev);
+            var ev = new MoodEffectEvent("ArcadePlay"); // Corvax-Next-Mood
+            _entityManager.EventBus.RaiseLocalEvent(meta.Owner, ev); // Corvax-Next-Mood
         }
         SendMessage(new BlockGameMessages.BlockGameGameOverScreenMessage(Points, _highScorePlacement?.LocalPlacement, _highScorePlacement?.GlobalPlacement));
     }
