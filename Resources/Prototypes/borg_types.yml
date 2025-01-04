@@ -165,6 +165,8 @@
   - type: ShowHealthIcons
     damageContainers:
     - Biological
+  - type: SurgeryTarget # Corvax-Next-Surgery
+  - type: Sanitized # Corvax-Next-Surgery
 
   # Visual
   inventoryTemplateId: borgDutch

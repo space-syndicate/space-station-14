@@ -21,7 +21,7 @@
     #start-_CorvaxNext: surgery
     #- type: CPRTraining
     - type: SurgerySpeedModifier
-      SpeedModifier: 1.75
+      speedModifier: 1.75
     #end-_CorvaxNext: surgery
 
 - type: startingGear
