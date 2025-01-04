@@ -18441,8 +18441,8 @@ entities:
           localAnchorB: -46.5,-29
           localAnchorA: 0.49999997,-3
           referenceAngle: -3.1415927
-          damping: 495.08066
-          stiffness: 4443.834
+          damping: 495.0805
+          stiffness: 4443.833
   - uid: 17647
     components:
     - type: MetaData
@@ -46951,13 +46951,6 @@ entities:
     - type: Physics
       canCollide: False
     - type: InsideEntityStorage
-- proto: CaptainDrobe
-  entities:
-  - uid: 1409
-    components:
-    - type: Transform
-      pos: 18.5,29.5
-      parent: 2
 - proto: CaptainIDCard
   entities:
   - uid: 7352
@@ -61567,6 +61560,13 @@ entities:
           occludes: True
           ents:
           - 3229
+- proto: DresserCaptainFilled
+  entities:
+  - uid: 1409
+    components:
+    - type: Transform
+      pos: 18.5,29.5
+      parent: 2
 - proto: DresserChiefEngineerFilled
   entities:
   - uid: 547
