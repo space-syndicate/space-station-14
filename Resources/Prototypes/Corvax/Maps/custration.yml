@@ -20,8 +20,6 @@
         - type: StationCargoShuttle
           path: /Maps/Shuttles/corvax_cargocute.yml
         - type: StationJobs
-          overflowJobs: # роли, на которое не будет ограничения по количеству
-            - Passenger
           availableJobs:
             # service
             HeadOfPersonnel: [ 1, 1 ] # первая цифра - количество раундстарт мест для данной роли, вторая цифра - количество мест для позднего присоединения.
@@ -38,7 +36,6 @@
             Librarian: [ 1, 1 ]
             Musician: [ 1, 1 ]
             Reporter: [ 1, 1 ]
-            Zookeeper: [ 0, 0 ]
             # command
             Captain: [ 1, 1 ]
             IAA: [ 1, 1 ]
