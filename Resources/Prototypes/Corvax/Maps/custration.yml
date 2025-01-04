@@ -16,9 +16,9 @@
             !type:NanotrasenNameGenerator
             prefixCreator: 'ONYA' # префикс автора для карты
         - type: StationEmergencyShuttle
-          emergencyShuttlePath: /Maps/emergency_corvaxcute.yml # путь до шаттла эвакуации, который будет использоваться на этой карте
+          emergencyShuttlePath: /Maps/Shuttles/emergency_corvaxcute.yml # путь до шаттла эвакуации, который будет использоваться на этой карте
         - type: StationCargoShuttle
-          path: /Maps/corvax_cargocute.yml
+          path: /Maps/Shuttles/corvax_cargocute.yml
         - type: StationJobs
           overflowJobs: # роли, на которое не будет ограничения по количеству
             - Passenger
