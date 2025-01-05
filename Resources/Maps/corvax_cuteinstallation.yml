@@ -10167,7 +10167,7 @@ entities:
     - type: Parallax
       parallax: Sky
     - type: MapLight
-      ambientLightColor: '#605C70FF'
+      ambientLightColor: '#0F0F0FFF'
   - uid: 5072
     components:
     - type: MetaData
@@ -15537,7 +15537,7 @@ entities:
       pos: 404.5,412.5
       parent: 1
     - type: Door
-      secondsUntilStateChange: -74015.47
+      secondsUntilStateChange: -74582.55
       state: Opening
     - type: DeviceLinkSource
       lastSignals:
@@ -104968,7 +104968,7 @@ entities:
   - uid: 929
     components:
     - type: MetaData
-      name: канистра оксида азота с кислородом
+      name: канистра оксида азота
     - type: Transform
       pos: 399.5,413.5
       parent: 1
@@ -122085,6 +122085,28 @@ entities:
     - type: Transform
       pos: 407.5,409.5
       parent: 1
+- proto: SpawnPointAtmos
+  entities:
+  - uid: 22485
+    components:
+    - type: Transform
+      pos: 331.5,414.5
+      parent: 1
+  - uid: 22488
+    components:
+    - type: Transform
+      pos: 331.5,413.5
+      parent: 1
+  - uid: 22490
+    components:
+    - type: Transform
+      pos: 331.5,407.5
+      parent: 1
+  - uid: 22492
+    components:
+    - type: Transform
+      pos: 342.5,406.5
+      parent: 1
 - proto: SpawnPointBartender
   entities:
   - uid: 16409
@@ -122192,6 +122214,30 @@ entities:
     - type: Transform
       pos: 409.5,382.5
       parent: 1
+- proto: SpawnPointChemist
+  entities:
+  - uid: 22539
+    components:
+    - type: Transform
+      pos: 409.5,410.5
+      parent: 1
+  - uid: 22543
+    components:
+    - type: Transform
+      pos: 408.5,406.5
+      parent: 1
+- proto: SpawnPointChiefEngineer
+  entities:
+  - uid: 22482
+    components:
+    - type: Transform
+      pos: 349.5,416.5
+      parent: 1
+  - uid: 22483
+    components:
+    - type: Transform
+      pos: 351.5,414.5
+      parent: 1
 - proto: SpawnPointChiefMedicalOfficer
   entities:
   - uid: 16296
@@ -122296,6 +122342,33 @@ entities:
     - type: Transform
       pos: 396.5,419.5
       parent: 1
+- proto: SpawnPointMedicalIntern
+  entities:
+  - uid: 22547
+    components:
+    - type: Transform
+      pos: 405.5,407.5
+      parent: 1
+  - uid: 22625
+    components:
+    - type: Transform
+      pos: 406.5,413.5
+      parent: 1
+  - uid: 22626
+    components:
+    - type: Transform
+      pos: 412.5,420.5
+      parent: 1
+  - uid: 22627
+    components:
+    - type: Transform
+      pos: 417.5,422.5
+      parent: 1
+  - uid: 22628
+    components:
+    - type: Transform
+      pos: 404.5,421.5
+      parent: 1
 - proto: SpawnPointMime
   entities:
   - uid: 5549
@@ -122316,6 +122389,33 @@ entities:
     components:
     - type: Transform
       pos: 384.5,399.5
+      parent: 1
+- proto: SpawnPointParamedic
+  entities:
+  - uid: 22524
+    components:
+    - type: Transform
+      pos: 408.5,421.5
+      parent: 1
+  - uid: 22526
+    components:
+    - type: Transform
+      pos: 406.5,414.5
+      parent: 1
+  - uid: 22528
+    components:
+    - type: Transform
+      pos: 399.5,417.5
+      parent: 1
+  - uid: 22533
+    components:
+    - type: Transform
+      pos: 400.5,408.5
+      parent: 1
+  - uid: 22536
+    components:
+    - type: Transform
+      pos: 403.5,407.5
       parent: 1
 - proto: SpawnPointPassenger
   entities:
@@ -122475,6 +122575,72 @@ entities:
     components:
     - type: Transform
       pos: 460.5,416.5
+      parent: 1
+- proto: SpawnPointServiceWorker
+  entities:
+  - uid: 22468
+    components:
+    - type: Transform
+      pos: 415.5,391.5
+      parent: 1
+  - uid: 22474
+    components:
+    - type: Transform
+      pos: 408.5,391.5
+      parent: 1
+  - uid: 22475
+    components:
+    - type: Transform
+      pos: 405.5,388.5
+      parent: 1
+- proto: SpawnPointStationEngineer
+  entities:
+  - uid: 22493
+    components:
+    - type: Transform
+      pos: 342.5,407.5
+      parent: 1
+  - uid: 22494
+    components:
+    - type: Transform
+      pos: 338.5,411.5
+      parent: 1
+  - uid: 22498
+    components:
+    - type: Transform
+      pos: 349.5,411.5
+      parent: 1
+  - uid: 22503
+    components:
+    - type: Transform
+      pos: 327.5,411.5
+      parent: 1
+- proto: SpawnPointTechnicalAssistant
+  entities:
+  - uid: 22508
+    components:
+    - type: Transform
+      pos: 337.5,411.5
+      parent: 1
+  - uid: 22509
+    components:
+    - type: Transform
+      pos: 341.5,406.5
+      parent: 1
+  - uid: 22511
+    components:
+    - type: Transform
+      pos: 348.5,411.5
+      parent: 1
+  - uid: 22515
+    components:
+    - type: Transform
+      pos: 353.5,406.5
+      parent: 1
+  - uid: 22521
+    components:
+    - type: Transform
+      pos: 341.5,404.5
       parent: 1
 - proto: SpawnPointWarden
   entities:
@@ -147788,7 +147954,7 @@ entities:
       lastSignals:
         DoorStatus: True
     - type: Door
-      secondsUntilStateChange: -80719.89
+      secondsUntilStateChange: -81286.97
       state: Opening
     - type: Airlock
       autoClose: False
