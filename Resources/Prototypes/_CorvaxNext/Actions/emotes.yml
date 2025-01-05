@@ -1,0 +1,68 @@
+- type: emote
+  id: Flip
+  name: chat-emote-name-flip
+  chatMessages: ["chat-emote-msg-flip"]
+  chatTriggers:
+    - flip
+    - flips
+    - flipping
+    - does a flip
+    - do a flip
+    - backflip
+    - frontflip
+    - somersault
+    - cartwheel
+    - прыжок с переворотом
+    - кувырок
+    - сальто
+    - делает сальто
+    - сделал сальто
+    - делает сальтуху
+    - прыгает с переворотом
+  event: !type:AnimationFlipEmoteEvent
+
+- type: emote
+  id: Spin
+  name: chat-emote-name-spin
+  chatMessages: ["chat-emote-msg-spin"]
+  chatTriggers:
+    - spin
+    - spins
+    - spinning
+    - twirl
+    - twirls
+    - twirling
+    - rotates
+    - rotating
+    - вращается
+    - вращается на месте
+    - кружится
+    - кружится на месте
+    - вертится
+    - закручивается
+    - разворот
+  event: !type:AnimationSpinEmoteEvent
+
+- type: emote
+  id: Jump
+  name: chat-emote-name-jump
+  chatMessages: ["chat-emote-msg-jump"]
+  chatTriggers:
+    - jump
+    - jumps
+    - jumping
+    - hops
+    - hopping
+    - leaps
+    - leaping
+    - bounce
+    - bounces
+    - bouncing
+    - прыгает
+    - прыгнул
+    - подпрыгнул
+    - прыгает вверх
+    - подскакивает
+    - скачет
+    - прыжок
+  event: !type:AnimationJumpEmoteEvent
