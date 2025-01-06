@@ -1,0 +1,29 @@
+- type: entity
+  name: invisible wall
+  id: MarkerBlocker
+  parent: MarkerBase
+  suffix: marker, infinity
+  components:
+  - type: Sprite
+    layers:
+      - sprite: _CorvaxNext/Markers/environment.rsi
+        state: base-green
+        shader: unshaded
+      - sprite: _CorvaxNext/Markers/environment.rsi
+        shader: unshaded
+        state: wall
+  - type: PlacementReplacement
+    key: blocker
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.5,-0.5,0.5,0.5"
+        mask:
+        - FullTileMask
+        layer:
+        - WallLayer
+        density: 1000
+  - type: Physics
+    bodyType: Static

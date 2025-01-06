@@ -1,0 +1,114 @@
+- type: entity
+  id: BaseBiomeSpawner
+  name: biome spawner
+  abstract: true
+  placement:
+    mode: SnapgridCenter
+  components:
+  - type: Transform
+    anchored: true
+  - type: Clickable
+  - type: InteractionOutline
+  - type: Sprite
+    snapCardinals: true
+    drawdepth: BelowFloor
+    sprite: _CorvaxNext/Markers/biome.rsi
+  - type: BiomeSpawner
+  - type: PlacementReplacement
+    key: BiomeSpawner
+
+- type: entity
+  id: BiomeSpawnerCaves
+  parent: BaseBiomeSpawner
+  suffix: Caves
+  components:
+  - type: Sprite
+    layers:
+      - state: cave
+      - state: frame
+  - type: BiomeSpawner
+    biome: CavesGenericExample
+
+- type: entity
+  id: BiomeSpawnerGrasslands
+  parent: BaseBiomeSpawner
+  suffix: Grasslands
+  components:
+  - type: Sprite
+    layers:
+      - state: grass
+      - state: frame
+  - type: BiomeSpawner
+    biome: Grasslands
+
+- type: entity
+  id: BiomeSpawnerContinental
+  parent: BaseBiomeSpawner
+  suffix: Continental
+  components:
+  - type: Sprite
+    layers:
+      - state: grass
+      - state: frame
+  - type: BiomeSpawner
+    biome: Continental
+
+- type: entity
+  id: BiomeSpawnerLowDesert
+  parent: BaseBiomeSpawner
+  suffix: LowDesert
+  components:
+  - type: Sprite
+    layers:
+      - state: desert
+      - state: frame
+  - type: BiomeSpawner
+    biome: LowDesert
+
+- type: entity
+  id: BiomeSpawnerLava
+  parent: BaseBiomeSpawner
+  suffix: Lava
+  components:
+  - type: Sprite
+    layers:
+      - state: lava
+      - state: frame
+  - type: BiomeSpawner
+    biome: Lava
+
+- type: entity
+  id: BiomeSpawnerSnow
+  parent: BaseBiomeSpawner
+  suffix: Snow
+  components:
+  - type: Sprite
+    layers:
+      - state: snow
+      - state: frame
+  - type: BiomeSpawner
+    biome: Snow
+
+- type: entity
+  id: BiomeSpawnerShadow
+  parent: BaseBiomeSpawner
+  suffix: Shadow
+  components:
+  - type: Sprite
+    layers:
+      - state: chromite
+      - state: frame
+  - type: BiomeSpawner
+    biome: Shadow
+
+- type: entity
+  id: BiomeSpawnerAsteroid
+  parent: BaseBiomeSpawner
+  suffix: Asteroid
+  components:
+  - type: Sprite
+    layers:
+      - state: asteroid
+      - state: frame
+  - type: BiomeSpawner
+    biome: Asteroid

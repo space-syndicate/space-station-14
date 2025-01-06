@@ -1,0 +1,55 @@
+- type: entity
+  id: BaseLadder
+  name: ladder
+  abstract: true
+  placement:
+    mode: SnapgridCenter
+  components:
+  - type: Sprite
+    sprite: _CorvaxNext/Structures/Warps/ladder.rsi
+    noRot: true
+    netsync: false
+    offset: 0, 0.25
+  - type: Transform
+    anchored: true
+  - type: Clickable
+  - type: Physics
+    canCollide: False
+    bodyStatus: OnGround
+    bodyType: Static
+  - type: Tag
+    tags:
+      - Structure
+  - type: InteractionOutline
+  - type: Warper
+  - type: WarpPoint
+    follow: false
+
+- type: entity
+  parent: BaseLadder
+  id: LadderTop
+  suffix: top
+  description: The top of a ladder. Use it to go down.
+  components:
+  - type: Sprite
+    state: ladder_top
+
+- type: entity
+  parent: BaseLadder
+  id: LadderBottom
+  suffix: bottom
+  description: The bottom of a ladder. Use it to go up.
+  components:
+  - type: Sprite
+    state: ladder_bottom
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "0.3,0.1,-1,-1"
+        density: 100
+        mask:
+        - MachineMask
+        layer:
+        - MidImpassable
