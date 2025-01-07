@@ -19,3 +19,5 @@ ent-BorgChassisSyndicateMedical = медицинский киборг Синди
     .desc = Боевой медицинский киборг. Имеет ограниченный наступательный потенциал, но с лихвой компенсирует его своими вспомогательными возможностями.
 ent-BorgChassisSyndicateSaboteur = саботажный киборг Синдиката
     .desc = Изящный инженерный киборг, оснащённый модулями скрытности. Проектор-хамелеон позволяет ему маскироваться под киборга Nanotrasen.
+ent-BorgChassisDerelict = derelict cyborg
+    .desc = A man-machine hybrid that assists in station activity. This one is in a state of great disrepair.
