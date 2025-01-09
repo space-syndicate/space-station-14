@@ -182,6 +182,18 @@ public sealed class ChatSanitizationManager : IChatSanitizationManager
             message = r.Replace(message, string.Empty);
         }
 
+        // Corvax-Start
+        var laughPattern = @"(?i)\b[ах]+(?:х[ах]*)*\b";
+        var laughRegex = new Regex(laughPattern, RegexOptions.IgnoreCase);
+        var laughMatch = laughRegex.Match(sanitized);
+
+        if (laughMatch.Success)
+        {
+            emote = _loc.GetString("chatsan-laughs", ("ent", speaker)); // Используем "смеётся"
+            message = laughRegex.Replace(message, ""); // Удаляем смех
+        }
+        // Corvax-End
+
         sanitized = message.Trim();
         return emote is not null;
     }
