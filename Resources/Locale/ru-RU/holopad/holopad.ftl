@@ -126,7 +126,7 @@ holopad-ai-main = ИИ - Главный
 holopad-ai-upload = ИИ - Загрузка
 holopad-ai-backup-power = ИИ - Запасное питание
 holopad-ai-entrance = ИИ - Вход
-holopad-ai-chute = ИИ - Chute
+holopad-ai-chute = ИИ - Транспортный блок
 # Long Range
 holopad-station-bridge = Станция - Бриг
 holopad-station-cargo-bay = Станция - Грузовой отсек

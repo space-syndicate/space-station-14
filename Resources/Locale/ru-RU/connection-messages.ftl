@@ -8,11 +8,11 @@ cmd-whitelistadd-arg-player = [player]
 cmd-whitelistremove-desc = Удалить игрока с белого списка сервера.
 cmd-whitelistremove-help = Использование: whitelistremove <username или  User ID>
 cmd-whitelistremove-existing = { $username } не находится в белом списке!
-cmd-whitelistremove-removed = { $username } удалён с белого списка
+cmd-whitelistremove-removed = { $username } удалён из белого списка
 cmd-whitelistremove-not-found = Не удалось найти игрока '{ $username }'
 cmd-whitelistremove-arg-player = [player]
 
-cmd-kicknonwhitelisted-desc = Кикнуть всег игроков не в белом списке с сервера.
+cmd-kicknonwhitelisted-desc = Кикнуть всех игроков не в белом списке с сервера.
 cmd-kicknonwhitelisted-help = Использование: kicknonwhitelisted
 
 ban-banned-permanent = Этот бан можно только обжаловать. Для этого посетите { $link }.
@@ -48,10 +48,10 @@ cmd-blacklistadd-added = { $username } добавлен в чёрный спис
 cmd-blacklistadd-not-found = Не удалось найти игрока '{ $username }'
 cmd-blacklistadd-arg-player = [player]
 
-cmd-blacklistremove-desc = Удалить игрока с чёрного списка сервера.
+cmd-blacklistremove-desc = Удалить игрока из чёрного списка сервера.
 cmd-blacklistremove-help = Использование: blacklistremove <username>
 cmd-blacklistremove-existing = { $username } не находится в чёрном списке!
-cmd-blacklistremove-removed = { $username } удалён с чёрного списка
+cmd-blacklistremove-removed = { $username } удалён из чёрного списка
 cmd-blacklistremove-not-found = Не удалось найти игрока '{ $username }'
 cmd-blacklistremove-arg-player = [player]
 
