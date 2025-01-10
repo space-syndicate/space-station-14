@@ -82,6 +82,6 @@ ent-ScrapGeneratorUranium = уничтоженный генератор С.У.П
 ent-ScrapGeneratorFrame = каркас генератора
     .desc = Каркас генератора типа П.А.К.М.А.Н. или С.У.П.Е.Р.П.А.К.М.А.Н.. Где же остальная часть?
     .suffix = { ent-BaseScrap.suffix }
-ent-ScrapGeneratorFuelTank = fuel tank
+ent-ScrapGeneratorFuelTank = топливный бак
     .desc = Топливный бак из генератора С.У.П.Е.Р.П.А.К.М.А.Н.. Индикатор показывает, что топлива осталось немного.
     .suffix = { ent-BaseScrap.suffix }
