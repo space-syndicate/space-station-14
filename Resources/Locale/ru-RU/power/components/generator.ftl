@@ -1,6 +1,6 @@
 generator-clogged = { CAPITALIZE($generator) } резко отключается!
 portable-generator-verb-start = Запустить генератор
-portable-generator-verb-start-msg-unreliable = Запуск генератора. Это может потребовать нескольких попыток.
+portable-generator-verb-start-msg-unreliable = Запустить генератор. Это может потребовать нескольких попыток.
 portable-generator-verb-start-msg-reliable = Запустить генератор.
 portable-generator-verb-start-msg-unanchored = Генератор должен быть закреплён!
 portable-generator-verb-stop = Остановить генератор
@@ -18,7 +18,7 @@ portable-generator-ui-fuel-use-label = Расход топлива:
 portable-generator-ui-fuel-left-label = Остаток топлива:
 portable-generator-ui-clogged = В топливном баке обнаружено загрязнение!
 portable-generator-ui-eject = Извлечь
-portable-generator-ui-eta = (~{ $minutes } минут)
+portable-generator-ui-eta = (~{ $minutes } мин)
 portable-generator-ui-unanchored = Не закреплено
 portable-generator-ui-current-output = Текущая мощность: { $voltage }
 portable-generator-ui-network-stats = Электросеть:
