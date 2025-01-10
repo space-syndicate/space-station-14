@@ -12,7 +12,7 @@ holopad-window-call-rejected = Не удалось установить соед
 holopad-window-ai-request = Ваше присутствие запрашивает:
 holopad-window-emergency-broadcast-in-progress = [color=#cf2f2f][bold]Ведётся экстренная трансляция[/bold][/color]
 holopad-window-controls-locked-out = Управление этим устройством заблокировано:
-holopad-window-controls-unlock-countdown = Он автоматически разблокируется через: { $countdown }
+holopad-window-controls-unlock-countdown = Оно автоматически разблокируется через: { $countdown }
 # Buttons
 holopad-window-answer-call = Ответить на звонок
 holopad-window-end-call = Завершить звонок
@@ -26,7 +26,7 @@ holopad-window-select-contact-from-list = Выберите контакт для
 holopad-window-fetching-contacts-list = Нет голопадов, с которыми можно связаться
 holopad-window-contact-label = { CAPITALIZE($label) }
 # Flavor
-holopad-window-flavor-left = ⚠ Не входите, пока проектор активен
+holopad-window-flavor-left = ⚠ Не входите пока проектор активен
 holopad-window-flavor-right = v3.0.9
 # Holograms
 holopad-hologram-name = голограмма { $name }
@@ -45,18 +45,18 @@ holopad-general-arcade = Общий - Аркады
 holopad-general-evac = Общий - Эвак
 holopad-general-arrivals = Общий - Прибытие
 # Command
-holopad-command-bridge = Коммандование - Мостик
-holopad-command-vault = Коммандование - Хранилище
-holopad-command-bridge-hallway = Коммандование - Коридор мостика
-holopad-command-meeting-room = Коммандование - Комната собраний
-holopad-command-lounge = Коммандование - Зона отдыха
-holopad-command-captain = Коммандование - Капитан
-holopad-command-hop = Коммандование - ГП
-holopad-command-cmo = Коммандование - ГВ
-holopad-command-qm = Коммандование - КМ
-holopad-command-ce = Коммандование - СИ
-holopad-command-rd = Коммандование - НР
-holopad-command-hos = Коммандование - ГСБ
+holopad-command-bridge = Командование - Мостик
+holopad-command-vault = Командование - Хранилище
+holopad-command-bridge-hallway = Командование - Коридор мостика
+holopad-command-meeting-room = Командование - Комната собраний
+holopad-command-lounge = Командование - Зона отдыха
+holopad-command-captain = Командование - Капитан
+holopad-command-hop = Командование - ГП
+holopad-command-cmo = Командование - ГВ
+holopad-command-qm = Командование - КМ
+holopad-command-ce = Командование - СИ
+holopad-command-rd = Командование - НР
+holopad-command-hos = Командование - ГСБ
 # Science
 holopad-science-anomaly = Научный - Аномалистика
 holopad-science-artifact = Научный - Ксеноархеология
@@ -86,12 +86,12 @@ holopad-engineering-atmos-front = Атмос - Приёмная
 holopad-engineering-atmos-main = Атмос - Главный
 holopad-engineering-atmos-teg = Атмос - ТЭГ
 holopad-engineering-storage = Инженерия - Склад
-holopad-engineering-breakroom = Инженерия - Комната отдыха
-holopad-engineering-front = Инженерия - Приёмная
-holopad-engineering-telecoms = Инженерия - Телекоммуникации
-holopad-engineering-tech-vault = Инженерия - Техническое хранилище
-holopad-engineering-ame = Инженерия - ДАМ
-holopad-engineering-power = Инженерия - Питание
+holopad-engineering-breakroom = Инженерный - Комната отдыха
+holopad-engineering-front = Инженерный - Приёмная
+holopad-engineering-telecoms = Инженерный - Телекоммуникации
+holopad-engineering-tech-vault = Инженерный - Техническое хранилище
+holopad-engineering-ame = Инженерный - ДАМ
+holopad-engineering-power = Инженерный - Питание
 # S ecurity
 holopad-security-front = СБ - Приёмная
 holopad-security-brig = СБ - Бриг
@@ -124,7 +124,7 @@ holopad-service-gameroom = Сервис - Игровая комната
 holopad-ai-core = ИИ - Ядро
 holopad-ai-main = ИИ - Главный
 holopad-ai-upload = ИИ - Загрузка
-holopad-ai-backup-power = ИИ - Запасное питание
+holopad-ai-backup-power = ИИ - Резервное питание
 holopad-ai-entrance = ИИ - Вход
 holopad-ai-chute = ИИ - Транспортный блок
 # Long Range
