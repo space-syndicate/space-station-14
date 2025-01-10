@@ -2,7 +2,7 @@
 steal-target-groups-hypospray = гипоспрей
 steal-target-groups-handheld-crew-monitor = ручной монитор экипажа
 steal-target-groups-clothing-outer-hardsuit-rd = экспериментальный исследовательский скафандр
-steal-target-groups-hand-teleporter = ручной телепорт
+steal-target-groups-hand-teleporter = ручной телепортер
 steal-target-groups-clothing-shoes-boots-mag-adv = продвинутые магнитные сапоги
 steal-target-groups-box-folder-qm-clipboard = цифровой планшет заявок
 steal-target-groups-food-meat-corgi = первосортное мясо корги

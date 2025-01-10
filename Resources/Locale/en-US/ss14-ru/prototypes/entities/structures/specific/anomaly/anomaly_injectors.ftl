@@ -30,3 +30,6 @@ ent-AnomalyTrapTech = { ent-BaseAnomalyInjector }
 ent-AnomalyTrapRock = { ent-BaseAnomalyInjector }
     .suffix = Rock
     .desc = { ent-BaseAnomalyInjector.desc }
+ent-AnomalyTrapSanta = { ent-BaseAnomalyInjector }
+    .suffix = Santa
+    .desc = { ent-BaseAnomalyInjector.desc }

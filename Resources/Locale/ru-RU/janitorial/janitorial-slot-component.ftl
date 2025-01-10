@@ -1,8 +1,6 @@
 # mop bucket
 mop-bucket-slot-component-slot-name-item = Предмет
 mop-bucket-slot-component-eject-verb = Вынуть
-# mop bucket
-mop-bucket-slot-component-slot-name-shark = Акула
 # janitorial trolley
 janitorial-trolley-slot-component-slot-name-plunger = Вантуз
 janitorial-trolley-slot-component-slot-name-sign = Табличка
