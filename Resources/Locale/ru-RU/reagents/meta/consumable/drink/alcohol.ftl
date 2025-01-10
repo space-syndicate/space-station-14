@@ -187,4 +187,4 @@ reagent-desc-watermelon-wakeup = Если вы хотите взбодритьс
 reagent-name-rubberneck = раббернек
 reagent-desc-rubberneck = Популярный напиток среди тех, кто придерживается полностью синтетической диеты.
 reagent-name-zombiecocktail = зомби
-reagent-desc-zombiecocktail = Он проникает в голову. В го-оло-ову...
+reagent-desc-zombiecocktail = It gets in your head. Your he-eyeh-ead.
