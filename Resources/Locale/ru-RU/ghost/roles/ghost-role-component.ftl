@@ -78,7 +78,7 @@ ghost-role-information-rat-king-description = Вы - Крысиный корол
 ghost-role-information-rat-servant-name = Крысиный слуга
 ghost-role-information-rat-servant-description = Вы Крысиный слуга. Выполняйте приказы своего короля.
 ghost-role-information-salvage-carp-name = Космический карп с обломка
-ghost-role-information-salvage-carp-description = Защищайте ценности внутри вашего обломка!
+ghost-role-information-salvage-carp-description = Защищайте ценности вашего обломка!
 ghost-role-information-sentient-carp-name = Разумный карп
 ghost-role-information-sentient-carp-description = Помогите дракону наводнить станцию карпами!
 ghost-role-information-willow-name = Кенгуру Уиллоу
@@ -136,7 +136,7 @@ ghost-role-information-ert-medical-description = Оказывайте содей
 ghost-role-information-cburn-agent-name = РХБЗЗ Оперативник
 ghost-role-information-cburn-agent-description = Высококвалифицированный агент Центком, способный справиться с любыми угрозами.
 ghost-role-information-centcom-official-name = Представитель Центком
-ghost-role-information-centcom-official-description = Выполняйте обязанности, связанные с Центком, такие как инспекция станция, составление служебных характеристик на руководителей и работа факсом.
+ghost-role-information-centcom-official-description = Выполняйте обязанности, связанные с Центком, такие как инспекция станции, составление служебных характеристик на руководителей и работа с факсом.
 ghost-role-information-nukeop-rules = Вы [color=red][bold]Командный антагонист[/bold][/color], в команде с другими Ядерными оперативниками. Помощь агентов на станции не гарантируется.
 ghost-role-information-loneop-name = Одинокий оперативник
 ghost-role-information-loneop-description = Вы - одинокий ядерный оперативник. Уничтожьте станцию.
