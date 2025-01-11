@@ -47503,6 +47503,23 @@ entities:
     - type: Transform
       pos: 389.5,412.5
       parent: 1
+- proto: CockroachTimedSpawner
+  entities:
+  - uid: 15905
+    components:
+    - type: Transform
+      pos: 421.5,371.5
+      parent: 1
+  - uid: 15906
+    components:
+    - type: Transform
+      pos: 400.5,363.5
+      parent: 1
+  - uid: 15907
+    components:
+    - type: Transform
+      pos: 389.5,371.5
+      parent: 1
 - proto: CombatKnife
   entities:
   - uid: 18412
@@ -101140,6 +101157,23 @@ entities:
       rot: -1.5707963267948966 rad
       pos: 333.5,438.5
       parent: 1
+- proto: MouseTimedSpawner
+  entities:
+  - uid: 15864
+    components:
+    - type: Transform
+      pos: 367.5,414.5
+      parent: 1
+  - uid: 15865
+    components:
+    - type: Transform
+      pos: 364.5,410.5
+      parent: 1
+  - uid: 15868
+    components:
+    - type: Transform
+      pos: 307.5,411.5
+      parent: 1
 - proto: MousetrapArmed
   entities:
   - uid: 6646
@@ -117585,6 +117619,14 @@ entities:
     - type: Transform
       pos: 392.5,415.5
       parent: 1
+- proto: SpawnMobCockroach
+  entities:
+  - uid: 15882
+    components:
+    - type: Transform
+      pos: 392.5,424.5
+      parent: 1
+  - uid: 15883
     components:
     - type: Transform
       pos: 409.5,421.5
@@ -117684,6 +117726,13 @@ entities:
     - type: Transform
       rot: 1.5707963267948966 rad
       pos: 416.5,392.5
+      parent: 1
+- proto: SpawnMobMouse
+  entities:
+  - uid: 21962
+    components:
+    - type: Transform
+      pos: 431.5,389.5
       parent: 1
 - proto: SpawnMobPossumMorty
   entities:
