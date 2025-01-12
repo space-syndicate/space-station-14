@@ -7,19 +7,19 @@ cmd-ban-invalid-severity = { $severity } не является допустим�
 cmd-ban-invalid-arguments = Недопустимое число аргументов
 cmd-ban-hint = <name/user ID>
 cmd-ban-hint-reason = <reason>
-cmd-ban-hint-severity = [severity]
 cmd-ban-hint-duration = [продолжительность]
+cmd-ban-hint-severity = [тяжесть]
 cmd-ban-hint-duration-1 = Навсегда
 cmd-ban-hint-duration-2 = 1 день
 cmd-ban-hint-duration-3 = 3 дня
 cmd-ban-hint-duration-4 = 1 неделя
 cmd-ban-hint-duration-5 = 2 недели
+cmd-ban-hint-duration-6 = 1 месяц
 # ban panel
 cmd-banpanel-desc = Открыть панель банов
 cmd-banpanel-help = Использование: banpanel [имя или guid игрока]
 cmd-banpanel-server = Это не может быть использовано через консоль сервера
 cmd-banpanel-player-err = Указанный игрок не может быть найден
-cmd-ban-hint-duration-6 = 1 месяц
 # listbans
 cmd-banlist-desc = Список активных банов пользователя.
 cmd-banlist-help = Использование: banlist <name or user ID>
@@ -65,7 +65,7 @@ ban-panel-days = Дней
 ban-panel-weeks = Недель
 ban-panel-months = Месяцев
 ban-panel-years = Лет
-ban-panel-permanent = Постоянный
+ban-panel-permanent = Навсегда
 ban-panel-ip-hwid-tooltip = Оставьте пустым и установите флажок ниже, чтобы использовать данные последнего подключения
 ban-panel-severity = Тяжесть:
 # Ban string

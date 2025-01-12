@@ -15,14 +15,14 @@ cuffable-component-remove-cuffs-to-other-partial-success-message =
 cuffable-component-remove-cuffs-by-other-partial-success-message =
     { $otherName } успешно снимает с вас наручники. { $cuffedHandCount } { $cuffedHandCount ->
         [one] ваша рука осталась
-        [few] ваши руки остаются
-       *[other] ваши руки остаются
+        [few] ваших руки остались
+       *[other] ваших рук остались
     } в наручниках.
 cuffable-component-remove-cuffs-partial-success-message =
     Вы успешно снимаете наручники. { $cuffedHandCount } { $cuffedHandCount ->
         [one] ваша рука осталась
-        [few] ваши руки остаются
-       *[other] ваши руки остаются
+        [few] ваших руки остались
+       *[other] ваших рук остались
     } в наручниках.
 cuffable-component-remove-cuffs-fail-message = Вам не удалось снять наручники.
 # UncuffVerb

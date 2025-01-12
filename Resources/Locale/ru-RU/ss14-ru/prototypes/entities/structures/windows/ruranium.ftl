@@ -1,5 +1,5 @@
 ent-ReinforcedUraniumWindow = урановое бронеокно
-    .desc = { ent-Window.desc }
+    .desc = { ent-WindowRCDResistant.desc }
 ent-UraniumReinforcedWindowDirectional = направленное урановое бронеокно
     .desc = Смотри не заляпай.
 ent-ReinforcedUraniumWindowDiagonal = { ent-ReinforcedUraniumWindow }

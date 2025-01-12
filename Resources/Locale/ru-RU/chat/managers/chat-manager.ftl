@@ -27,8 +27,8 @@ chat-manager-entity-whisper-unknown-wrap-message = [font size=11][italic][Bubble
 chat-manager-entity-me-wrap-message = [italic]{ CAPITALIZE($entityName) } { $message }[/italic]
 chat-manager-entity-looc-wrap-message = LOOC: [bold]{ $entityName }:[/bold] { $message }
 chat-manager-send-ooc-wrap-message = OOC: [bold]{ $playerName }:[/bold] { $message }
-chat-manager-send-dead-chat-wrap-message = { $deadChannelName }: [bold][BubbleHeader]{ $playerName }[/BubbleHeader]:[/bold] [BubbleContent]{ $message }[/BubbleContent]
 chat-manager-send-ooc-patron-wrap-message = OOC: [bold][color={ $patronColor }]{ $playerName }[/color]:[/bold] { $message }
+chat-manager-send-dead-chat-wrap-message = { $deadChannelName }: [bold][BubbleHeader]{ $playerName }[/BubbleHeader]:[/bold] [BubbleContent]{ $message }[/BubbleContent]
 chat-manager-send-admin-dead-chat-wrap-message = { $adminChannelName }: [bold]([BubbleHeader]{ $userName }[/BubbleHeader]):[/bold] [BubbleContent]{ $message }[/BubbleContent]
 chat-manager-send-admin-chat-wrap-message = { $adminChannelName }: [bold]{ $playerName }:[/bold] { $message }
 chat-manager-send-admin-announcement-wrap-message = [bold]{ $adminChannelName }: { $message }[/bold]
@@ -40,11 +40,11 @@ chat-manager-rate-limit-admin-announcement = Игрок { $player } превыс
 chat-speech-verb-suffix-exclamation = !
 chat-speech-verb-suffix-exclamation-strong = !!
 chat-speech-verb-suffix-question = ?
-chat-speech-verb-default = говорит
 chat-speech-verb-suffix-stutter = -
 chat-speech-verb-suffix-mumble = ..
 chat-speech-verb-name-none = Нет
 chat-speech-verb-name-default = По умолчанию
+chat-speech-verb-default = говорит
 chat-speech-verb-name-exclamation = Восклицание
 chat-speech-verb-exclamation = восклицает
 chat-speech-verb-name-exclamation-strong = Крик
