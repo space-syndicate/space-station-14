@@ -9,3 +9,8 @@ chat-telephone-unknown-device = [color={ $color }][font={ $fontType } size={ $fo
 chat-telephone-device-id = [color={ $color }][font={ $fontType } size={ $fontSize }][bold]{ CAPITALIZE($deviceName) }[/bold][/font][/color]
 # Chat text
 chat-telephone-name-relay = { $originalName } ({ $speaker })
+
+chat-telephone-unknown-device = [color={ $color }][font={ $fontType } size={ fontSize }][bolditalic]Неизвестное устройство[/bolditalic][/font][/color]
+chat-telephone-device-id = [color={ $color }][font={ $fontType } size={ $fontSize }][bold]{CAPITALIZE( deviceName )}[/bold][/font][/color]
+# Chat text
+chat-telephone-name-relay = { $originalName } ({ $speaker })
