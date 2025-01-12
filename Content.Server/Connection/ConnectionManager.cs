@@ -6,6 +6,7 @@ using Content.Corvax.Interfaces.Server;
 using Content.Corvax.Interfaces.Shared;
 using Content.Server.Administration.Managers;
 using Content.Server.Chat.Managers;
+using Content.Server.Connection.IPIntel;
 using Content.Server.Database;
 using Content.Server.GameTicking;
 using Content.Server.Preferences.Managers;
@@ -44,6 +45,8 @@ namespace Content.Server.Connection
         /// <param name="user">The user to give a temporary bypass.</param>
         /// <param name="duration">How long the bypass should last for.</param>
         void AddTemporaryConnectBypass(NetUserId user, TimeSpan duration);
+
+        void Update();
     }
 
     /// <summary>
@@ -61,17 +64,25 @@ namespace Content.Server.Connection
         [Dependency] private readonly IGameTiming _gameTiming = default!;
         [Dependency] private readonly ILogManager _logManager = default!;
         [Dependency] private readonly IChatManager _chatManager = default!;
+        [Dependency] private readonly IHttpClientHolder _http = default!;
         [Dependency] private readonly IAdminManager _adminManager = default!;
         private ISharedSponsorsManager? _sponsorsMgr; // Corvax-Sponsors
         private IServerVPNGuardManager? _vpnGuardMgr; // Corvax-VPNGuard
 
         private ISawmill _sawmill = default!;
         private readonly Dictionary<NetUserId, TimeSpan> _temporaryBypasses = [];
+        private IPIntel.IPIntel _ipintel = default!;
 
+        public void PostInit()
+        {
+            InitializeWhitelist();
+        }
 
         public void Initialize()
         {
             _sawmill = _logManager.GetSawmill("connections");
+
+            _ipintel = new IPIntel.IPIntel(new IPIntelApi(_http, _cfg), _db, _cfg, _logManager, _chatManager, _gameTiming);
 
             IoCManager.Instance!.TryResolveType(out _sponsorsMgr); // Corvax-Sponsors
             _netMgr.Connecting += NetMgrOnConnecting;
@@ -88,6 +99,11 @@ namespace Content.Server.Connection
             // Make sure we only update the time if we wouldn't shrink it.
             if (newTime > time)
                 time = newTime;
+        }
+
+        public void Update()
+        {
+            _ipintel.Update();
         }
 
         /*
@@ -321,7 +337,7 @@ namespace Content.Server.Connection
                 {
                     _sawmill.Error("Whitelist enabled but no whitelists loaded.");
                     // Misconfigured, deny everyone.
-                    return (ConnectionDenyReason.Whitelist, Loc.GetString("whitelist-misconfigured"), null);
+                    return (ConnectionDenyReason.Whitelist, Loc.GetString("generic-misconfigured"), null);
                 }
 
                 foreach (var whitelist in _whitelists)
@@ -342,6 +358,15 @@ namespace Content.Server.Connection
                     // Whitelisted, don't check any more.
                     break;
                 }
+            }
+
+            // ALWAYS keep this at the end, to preserve the API limit.
+            if (_cfg.GetCVar(CCVars.GameIPIntelEnabled) && adminData == null)
+            {
+                var result = await _ipintel.IsVpnOrProxy(e);
+
+                if (result.IsBad)
+                    return (ConnectionDenyReason.IPChecks, result.Reason, null);
             }
 
             return null;
