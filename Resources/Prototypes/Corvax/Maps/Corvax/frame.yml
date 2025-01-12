@@ -29,7 +29,7 @@
                 - /Maps/Shuttles/trading_outpost.yml
             mining: !type:GridSpawnGroup
               paths:
-              - /Maps/Shuttles/corvax_mining.yml
+              - /Maps/Corvax/Shuttles/corvax_mining.yml
         - type: StationJobs
           availableJobs:
             # cargo

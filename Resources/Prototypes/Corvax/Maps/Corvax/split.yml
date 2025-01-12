@@ -85,7 +85,7 @@
         - type: StationCargoShuttle
           path: /Maps/Shuttles/cargo_payback.yml
         - type: StationEmergencyShuttle
-          emergencyShuttlePath: /Maps/Shuttles/corvax_emergency.yml
+          emergencyShuttlePath: /Maps/Corvax/Shuttles/corvax_emergency.yml
         - type: StationJobs
           availableJobs:
             # service
@@ -140,11 +140,11 @@
                 - /Maps/Shuttles/trading_outpost.yml
             mining: !type:GridSpawnGroup
               paths:
-              - /Maps/Shuttles/corvax_mining.yml
+              - /Maps/Corvax/Shuttles/corvax_mining.yml
         - type: StationCargoShuttle
           path: /Maps/Shuttles/cargo.yml
         - type: StationEmergencyShuttle
-          emergencyShuttlePath: /Maps/Shuttles/corvax_emergency.yml
+          emergencyShuttlePath: /Maps/Corvax/Shuttles/corvax_emergency.yml
         - type: StationJobs
           availableJobs:
             # service
