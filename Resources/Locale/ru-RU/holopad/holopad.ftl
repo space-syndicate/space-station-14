@@ -128,7 +128,7 @@ holopad-ai-backup-power = ИИ - Резервное питание
 holopad-ai-entrance = ИИ - Вход
 holopad-ai-chute = ИИ - Транспортный блок
 # Long Range
-holopad-station-bridge = Станция - Бриг
+holopad-station-bridge = Станция - Мостик
 holopad-station-cargo-bay = Станция - Грузовой отсек
 # CentComm
 holopad-centcomm-evac = Центком - Эвакуационный шаттл
