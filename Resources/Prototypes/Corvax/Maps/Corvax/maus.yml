@@ -1,79 +1,70 @@
 - type: gameMap
-  id: CorvaxAstra
-  mapName: 'Astra Station'
-  mapPath: /Maps/corvax_astra.yml
+  id: CorvaxMaus
+  mapName: 'Maus Station'
+  mapPath: /Maps/Corvax/corvax_maus.yml
   maxRandomOffset: 0
   randomRotation: false
-  minPlayers: 55
+  minPlayers: 0
+  maxPlayers: 35
   stations:
-    Astra:
+    Maus:
       stationProto: StandardNanotrasenStation
       components:
         - type: StationNameSetup
-          mapNameTemplate: '{0} Астра {1}'
+          mapNameTemplate: '{0} Маус {1}'
           nameGenerator:
-            !type:NanotrasenNameGenerator
-            prefixCreator: 'MT'
+           !type:NanotrasenNameGenerator
+            prefixCreator: "MG"
         - type: StationEmergencyShuttle
-          emergencyShuttlePath: /Maps/Shuttles/corvax_emergency.yml
+          emergencyShuttlePath: /Maps/Corvax/Shuttles/emergency_maus.yml
         - type: StationJobs
           availableJobs:
             # command
             Captain: [ 1, 1 ]
-            IAA: [ 1, 1 ]
+            IAA: [1, 1]
             # cargo
             Quartermaster: [ 1, 1 ]
-            SalvageSpecialist: [ 3, 3 ]
-            CargoTechnician: [ 4, 5 ]
+            SalvageSpecialist: [ 1, 3 ]
+            CargoTechnician: [ 2, 2 ]
             # engineering
             ChiefEngineer: [ 1, 1 ]
             AtmosphericTechnician: [ 2, 3 ]
-            StationEngineer: [ 4, 5 ]
-            TechnicalAssistant: [ 3, 4 ]
+            StationEngineer: [ 2, 3 ]
+            TechnicalAssistant: [ 4, 4 ]
             # medical
             ChiefMedicalOfficer: [ 1, 1 ]
-            MedicalDoctor: [ 5, 5 ]
-            MedicalIntern: [ 3, 4 ]
+            MedicalDoctor: [ 2, 2 ]
+            MedicalIntern: [ 4, 4 ]
             Psychologist: [ 1, 1 ]
-            Paramedic: [ 1, 1 ]
+            Paramedic: [1, 1]
             Chemist: [ 2, 2 ]
             # science
             ResearchDirector: [ 1, 1 ]
-            Scientist: [ 5, 6 ]
-            ResearchAssistant: [ 3, 4 ]
+            Scientist: [ 3, 3 ]
+            ResearchAssistant: [ 4, 4 ]
             # security
             HeadOfSecurity: [ 1, 1 ]
             Warden: [ 1, 1 ]
-            SecurityOfficer: [ 6, 6 ]
-            SecurityCadet: [ 3, 4 ]
+            SecurityOfficer: [ 2, 4 ]
+            SecurityCadet: [ 2, 2 ]
             Detective: [ 1, 1 ]
             Pilot: [ 1, 1 ]
             # service
             HeadOfPersonnel: [ 1, 1 ]
             Bartender: [ 1, 1 ]
-            Botanist: [ 2, 3 ]
+            Botanist: [ 2, 2 ]
+            Boxer: [ 1, 1 ]
             Chaplain: [ 1, 1 ]
             Chef: [ 1, 1 ]
             Clown: [ 1, 1 ]
-            Janitor: [ 2, 3 ]
+            Janitor: [ 1, 1 ]
             Librarian: [ 1, 1 ]
             Mime: [ 1, 1 ]
-            Musician: [ 2, 2 ]
+            Musician: [ 1, 1 ]
             Reporter: [ 1, 1 ]
-            ServiceWorker: [ 3, 4 ]
-            Zookeeper: [ 1, 1 ]
+            ServiceWorker: [ 2, 2 ]
             Passenger: [ -1, -1 ]
             # silicon
             StationAi: [ 1, 1 ]
-            Borg: [ 2, 2 ]
-        - type: StationGoal
-          goals:
-          - Singularity
-          - MiningOutpost
-          - SecurityTraining
-          - ShuttleMed
-          - ShuttleSrv
-          - ShuttleEmergency
-          - CellAI
-          - VirusologyAmbusol
-          - AstraRepair
+            Borg: [ 1, 1 ]
+            

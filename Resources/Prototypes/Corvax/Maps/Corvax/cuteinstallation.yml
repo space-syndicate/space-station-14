@@ -1,22 +1,24 @@
-﻿- type: gameMap
-  id: CorvaxIshimura
-  mapName: 'USG Ishimura'
-  mapPath: /Maps/corvax_ishimura.yml
+- type: gameMap
+  id: CorvaxCuteInstallation
+  mapName: 'Cute Installation'
+  mapPath: /Maps/Corvax/corvax_cuteinstallation.yml
   maxRandomOffset: 0
   randomRotation: false
-  minPlayers: 20
-  maxPlayers: 50
+  minPlayers: 25
+  maxPlayers: 55
   stations:
-    Ishimura:
+    CuteInstallation:
       stationProto: StandardNanotrasenStation
       components:
         - type: StationNameSetup
-          mapNameTemplate: '{0} USG Ishimura {1}'
+          mapNameTemplate: '{0} Cute Installation {1}'
           nameGenerator:
             !type:NanotrasenNameGenerator
-            prefixCreator: 'SY'
+            prefixCreator: 'ONYA'
         - type: StationEmergencyShuttle
-          emergencyShuttlePath: /Maps/Shuttles/emergency_omega.yml
+          emergencyShuttlePath: /Maps/Corvax/Shuttles/emergency_corvaxcute.yml
+        - type: StationCargoShuttle
+          path: /Maps/Corvax/Shuttles/corvax_cargocute.yml
         - type: StationJobs
           availableJobs:
             # command
@@ -24,44 +26,46 @@
             IAA: [ 1, 1 ]
             # cargo
             Quartermaster: [ 1, 1 ]
-            SalvageSpecialist: [ 3, 3 ]
+            SalvageSpecialist: [ 2, 2 ]
             CargoTechnician: [ 3, 3 ]
             # engineering
             ChiefEngineer: [ 1, 1 ]
-            AtmosphericTechnician: [ 3, 3 ]
-            StationEngineer: [ 4, 4 ]
-            TechnicalAssistant: [ 3, 3 ]
+            AtmosphericTechnician: [ 2, 2 ]
+            StationEngineer: [ 5, 5 ]
+            TechnicalAssistant: [ 2, 2 ]
             # medical
             ChiefMedicalOfficer: [ 1, 1 ]
-            MedicalDoctor: [ 4, 4 ]
+            MedicalDoctor: [ 3, 3 ]
             MedicalIntern: [ 2, 2 ]
             Psychologist: [ 1, 1 ]
-            Paramedic: [ 1, 1 ]
+            Paramedic: [ 2, 2 ]
             Chemist: [ 2, 2 ]
             # science
             ResearchDirector: [ 1, 1 ]
             Scientist: [ 4, 4 ]
-            ResearchAssistant: [ 3, 3 ]
+            ResearchAssistant: [ 2, 2 ]
             # security
             HeadOfSecurity: [ 1, 1 ]
             Warden: [ 1, 1 ]
-            SecurityOfficer: [ 4, 4 ]
+            SecurityOfficer: [ 3, 3 ]
             SecurityCadet: [ 3, 3 ]
             Detective: [ 1, 1 ]
-            Pilot: [ 1, 1]
+            Pilot: [ 1, 1 ]
             # service
             HeadOfPersonnel: [ 1, 1 ]
-            Bartender: [ 1, 1 ]
-            Botanist: [ 3, 3 ]
+            Bartender: [ 2, 2 ]
+            Botanist: [ 2, 2 ]
+            Boxer: [ 1, 1 ]
             Chaplain: [ 1, 1 ]
-            Chef: [ 2, 2 ]
+            Chef: [ 1, 1 ]
             Clown: [ 1, 1 ]
-            Janitor: [ 2, 2 ]
+            Janitor: [ 3, 3 ]
             Librarian: [ 1, 1 ]
             Mime: [ 1, 1 ]
             Musician: [ 1, 1 ]
-            Passenger: [ -1, -1 ]
-            ServiceWorker: [ 3, 3 ]
             Reporter: [ 1, 1 ]
+            ServiceWorker: [ 2, 2 ]
+            Passenger: [ -1, -1 ]
             # silicon
-            Borg: [ 2, 3 ]
+            StationAi: [ 1, 1 ]
+            Borg: [ 1, 1 ]

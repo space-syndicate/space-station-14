@@ -1,7 +1,7 @@
 - type: gameMap
   id: CorvaxGlacier
   mapName: 'Glacier Concern'
-  mapPath: /Maps/corvax_glacier.yml
+  mapPath: /Maps/Corvax/corvax_glacier.yml
   maxRandomOffset: 0
   randomRotation: false
   minPlayers: 55
@@ -15,7 +15,7 @@
             !type:NanotrasenNameGenerator
             prefixCreator: 'DZX'
         - type: StationEmergencyShuttle
-          emergencyShuttlePath: /Maps/Shuttles/emergency_corvaxglacier.yml
+          emergencyShuttlePath: /Maps/Corvax/Shuttles/emergency_corvaxglacier.yml
         - type: StationBiome
           biome: GlacierPlanet
           mapLightColor: "#130D20FF"
@@ -26,7 +26,7 @@
                 - type: ProtectedGrid
                 - type: TradeStation
               paths:
-                - /Maps/Shuttles/trading_corvaxglacier.yml
+                - /Maps/Corvax/Shuttles/trading_corvaxglacier.yml
         - type: StationCargoShuttle
           path: /Maps/Test/empty.yml
         - type: StationJobs

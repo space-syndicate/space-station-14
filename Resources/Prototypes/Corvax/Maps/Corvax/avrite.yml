@@ -1,7 +1,7 @@
 - type: gameMap
   id: CorvaxAvrite
   mapName: 'Avrite Station'
-  mapPath: /Maps/corvax_avrite.yml
+  mapPath: /Maps/Corvax/corvax_avrite.yml
   maxRandomOffset: 0
   randomRotation: false
   minPlayers: 55
@@ -15,7 +15,7 @@
           !type:NanotrasenNameGenerator
           prefixCreator: 'SY'
       - type: StationEmergencyShuttle
-        emergencyShuttlePath: /Maps/Shuttles/emergency_corvaxavrite.yml
+        emergencyShuttlePath: /Maps/Corvax/Shuttles/emergency_corvaxavrite.yml
       - type: StationJobs
         availableJobs:
           # command

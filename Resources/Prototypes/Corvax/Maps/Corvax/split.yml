@@ -1,7 +1,7 @@
 - type: gameMap
   id: CorvaxSplit
   mapName: 'Split Stations'
-  mapPath: /Maps/corvax_split.yml
+  mapPath: /Maps/Corvax/corvax_split.yml
   minPlayers: 55
   stations:
     Mayhen:
@@ -23,7 +23,7 @@
         - type: StationCargoShuttle
           path: /Maps/Shuttles/cargo_mayhen.yml
         - type: StationEmergencyShuttle
-          emergencyShuttlePath: /Maps/Shuttles/corvax_emergency.yml
+          emergencyShuttlePath: /Maps/Corvax/Shuttles/corvax_emergency.yml
         - type: StationJobs
           availableJobs:
             # service
