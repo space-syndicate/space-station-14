@@ -18,6 +18,7 @@ maximum_width = 26
 
 [game]
 lobbyduration = 360
+map_pool = "CorvaxMapPool"
 secret_weight_prototype = "CorvaxSecretDefault"
 
 [server]
