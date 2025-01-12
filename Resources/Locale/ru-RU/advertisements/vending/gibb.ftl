@@ -1,0 +1,12 @@
+advertisement-gibb-1 = Вкуснотища!
+advertisement-gibb-2 = Рекомендовано как минимум одним доктором!
+advertisement-gibb-3 = Продано более одного миллиона напитков!
+advertisement-gibb-4 = Dr. Gibb, что самое худшее, что может произойти?
+advertisement-gibb-5 = Dr. Gibb, взрыв вкуса!
+advertisement-gibb-6 = Поверьте мне, я доктор!
+advertisement-gibb-7 = Лучшая сахарная настойка в галактике!
+advertisement-gibb-8 = Space Cola - смотри не ГИБнись!
+thankyou-gibb-1 = Док уже... в вашем животе!
+thankyou-gibb-2 = Прогноз: вкус!
+thankyou-gibb-3 = Наслаждайтесь 42 вкусами!
+thankyou-gibb-4 = Наслаждайтесь сиропной вкуснятиной!

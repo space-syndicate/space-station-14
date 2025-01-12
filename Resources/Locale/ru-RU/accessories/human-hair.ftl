@@ -147,6 +147,7 @@ marking-HumanHairSidetail3 = Хвостик (Сбоку) 3
 marking-HumanHairSidetail4 = Хвостик (Сбоку) 4
 marking-HumanHairSpikyponytail = Хвостик (Шипастый)
 marking-HumanHairPoofy = Пышная
+marking-HumanHairPulato = Пулато
 marking-HumanHairQuiff = Квифф
 marking-HumanHairShaped = Фигурная
 marking-HumanHairRonin = Ронин
