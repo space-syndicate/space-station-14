@@ -11,6 +11,7 @@ device-frequency-prototype-name-cyborg-control = Управление кибор
 device-frequency-prototype-name-robotics-console = Консоль управления робототехникой
 
 ## camera frequencies
+
 device-frequency-prototype-name-surveillance-camera-test = Тест подсети
 device-frequency-prototype-name-surveillance-camera-engineering = Камеры (Инженерный)
 device-frequency-prototype-name-surveillance-camera-security = Камеры (Охрана)
@@ -21,7 +22,6 @@ device-frequency-prototype-name-surveillance-camera-service = Камеры (Се
 device-frequency-prototype-name-surveillance-camera-medical = Камеры (Медицинский)
 device-frequency-prototype-name-surveillance-camera-general = Камеры (Общие)
 device-frequency-prototype-name-surveillance-camera-entertainment = Камеры (Развлечения)
-
 # prefixes for randomly generated device addresses
 device-address-prefix-vent = Вент-
 device-address-prefix-scrubber = Скр-
@@ -32,16 +32,12 @@ device-address-prefix-heater = НГР-
 device-address-prefix-freezer = ОХЛ-
 device-address-prefix-volume-pump = ОБН-
 device-address-prefix-smes = СМС-
-
 #PDAs and terminals
 device-address-prefix-console = Конс-
 device-address-prefix-fire-alarm = Пож-
 device-address-prefix-air-alarm = Возд-
-
 device-address-prefix-sensor-monitor = МОН-
-
 device-address-examine-message = Адрес устройства: { $address }.
-
 #Device net ID names
 device-net-id-private = Частные
 device-net-id-wired = Проводные

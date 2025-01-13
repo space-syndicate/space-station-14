@@ -65,19 +65,21 @@ flavor-complex-ketchunaise = как помидоры и майонез
 flavor-complex-mayonnaise = как майонез
 flavor-complex-mustard = как горчица
 
-
 # Food-specific flavors.
 
 ## Food chemicals. In case you get something that has this inside.
+
 flavor-complex-nutriment = как питательные вещества
 flavor-complex-vitamin = как витамины
 flavor-complex-protein = как протеины
 
 ## Generic food taste. This should be replaced with an actual flavor profile,
 ## if you have food that looks как this.
+
 flavor-complex-food = как еда
 
 ## Basic foodstuffs (ingredients, generic flavors)
+
 flavor-complex-bun = как булочка
 flavor-complex-bread = как хлеб
 flavor-complex-batter = как тесто для торта
@@ -126,6 +128,7 @@ flavor-complex-nettles = как крапива
 flavor-complex-jungle = как джунгли
 flavor-complex-vegetables = как овощи
 flavor-complex-cherry = как вишня
+
 # use it when there multiple types of veggies
 
 ## Complex foodstuffs (cooked foods, joke flavors, etc)
@@ -184,12 +187,14 @@ flavor-complex-compressed-meat = как спрессованное мясо
 # Drink-specific flavors.
 
 ## Generic alcohol/soda taste. This should be replaced with an actual flavor profile.
+
 flavor-complex-alcohol = как алкоголь
 flavor-complex-soda = как газировка
 flavor-complex-juice = как сок
 flavor-complex-rocksandstones = как скалы и камни
 
 ## Basic drinks
+
 flavor-complex-water = как вода
 flavor-complex-beer = как моча
 flavor-complex-cognac = как сухой пряный алкоголь
@@ -227,6 +232,7 @@ flavor-complex-mopwata = как застоявшаяся грязная вода
 flavor-complex-gin = как ферментированное зерно с можжевеловыми ягодами
 
 ## Cocktails
+
 flavor-complex-arnold-palmer = как попадание в лунку с первого удара
 flavor-complex-blue-hawaiian = как тропики
 flavor-complex-cosmopolitan = сладко и терпко
@@ -259,6 +265,7 @@ flavor-complex-xeno-basher = как уничтожение жуков
 flavor-complex-budget-insuls-drink = как взлом шлюза
 flavor-complex-watermelon-wakeup = как сладкое пробуждение
 flavor-complex-rubberneck = как синтетика
+flavor-complex-irish-slammer = like a spiked cola float
 flavor-complex-irish-car-bomb = как шипучая пенка колы
 flavor-complex-themartinez = как фиалки и лимонная водка
 flavor-complex-cogchamp = как латунь
@@ -303,13 +310,14 @@ flavor-complex-vodka-tonic = освежающе горько
 flavor-complex-coconut-rum = как орехово-ферментированный сахар
 
 ### This is exactly what pilk tastes как. I'm not even joking. I might've been a little drunk though
+
 flavor-complex-pilk = как сладкое молоко
 
 # Medicine/chemical-specific flavors.
 
 ## Generic flavors.
-flavor-complex-medicine = как лекарство
 
+flavor-complex-medicine = как лекарство
 flavor-complex-carpet = как горсть шерсти
 flavor-complex-bee = беспчеловечно
 flavor-complex-sax = как джаз
