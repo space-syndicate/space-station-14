@@ -98,7 +98,6 @@
     updateTargetName: true
     canRetarget: true
   - type: Pda
-    state: pda
     paiSlot:
       priority: -2
       whitelist:
