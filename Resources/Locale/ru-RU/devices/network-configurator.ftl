@@ -28,7 +28,7 @@ network-configurator-ui-count-label =
         [one] устройство
         [few] устройства
        *[other] устройств
-    }.
+    }
 # tooltips
 network-configurator-tooltip-set = Создание списка целевых устройств
 network-configurator-tooltip-add = Добавление в список целевых устройств

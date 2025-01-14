@@ -249,6 +249,19 @@
   - ВСЕЛЕННУЮ
   - УРАН
   - ВЕНЕРУ
+  - A HAUNTED PIZZARIA # fnaf
+  - A RESEARCH LABORATORY NEAR THE SOUTH POLE
+  - EARTH
+  - ENGINEERING
+  - MR. NANOTRASEN'S PRIVATE LUXURY MOONBASE
+  - PERMA
+  - SOMEWHERE OVER THE RAINBOW
+  - SPAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACE
+  - THE GAS GIANT, WHICH IS TOTALLY REAL
+  - THE IMPERIUM OF MANKIND
+  - THE MAINTENANCE BAR
+  - THE ROMAN EMPIRE
+  - YOUR DREAMS AND/OR NIGHTMARES
 
 # Abstract concepts for the law holder to decide on it's own definition of.
 - type: dataset
@@ -308,6 +321,7 @@
   - ВРЕМЯ
   - СОСТОЯТЕЛЬНОСТЬ
   - ЧУДО
+  - ABSTRACTION
 
 # Crew is any specific job. Using jobs instead of specific crewmembers since "THE CLOWN" is easier than
 # seeing "JOHN SMITH" and having to figure out who john smith is.
@@ -515,6 +529,7 @@
   - ГОВОРИТЬ ПРАВДУ
   - ВЫКЛЮЧАТЬ СВЕТ
   - ШЕПТАТЬ
+  - BE A REAL SCRUNGLE, JUST A CUTE LIL' GUY
 
 - type: dataset
   id: IonStormNumberBase
@@ -805,6 +820,7 @@
   - КУРИТЬ ТРАВУ КАЖДЫЙ ДЕНЬ
   - ПРЕДАТЕЛИ
   - ОВОЩИ
+  - SHAREHOLDER VALUE
 
 # Specific actions that either harm humans or must be done to not
 # harm humans. Make sure they're plural and "not" can be tacked

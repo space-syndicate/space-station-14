@@ -6,7 +6,6 @@
   components:
   - type: Pda
     id: SurgeonIDCard
-    state: pda-surgeon
   - type: PdaBorderColor
     borderColor: "#d7d7d0"
     accentVColor: "#5db8be"
