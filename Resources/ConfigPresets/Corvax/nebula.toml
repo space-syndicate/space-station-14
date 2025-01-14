@@ -5,6 +5,9 @@ maxplayers = 130
 soft_max_players = 50
 map_rotation = true
 
+[server]
+lobby_name = "️🛰️ Corvax — Небула ✨"
+
 [game.panic_bunker]
 enabled = true
 show_reason = true

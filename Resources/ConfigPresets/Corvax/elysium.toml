@@ -5,6 +5,9 @@ maxplayers = 180
 soft_max_players = 100
 map_rotation = true
 
+[server]
+lobby_name = "️🛰️ Corvax — Элизиум 🌑"
+
 [game.panic_bunker]
 enabled = true
 show_reason = true
