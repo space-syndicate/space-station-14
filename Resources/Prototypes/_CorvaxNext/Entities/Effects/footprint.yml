@@ -1,20 +1,17 @@
 - type: entity
-  name: footstep
-  id: Footstep
+  name: footprint
+  id: Footprint
   save: false
   description: Trace of liquid.
+  placement:
+    mode: SnapgridCenter
   components:
   - type: Clickable
-  - type: FootstepModifier
-    footstepSoundCollection:
-      collection: FootstepWater
-      params:
-        volume: 3
   - type: Transform
     noRot: false
+    anchored: true
   - type: Sprite
     drawdepth: FloorObjects
-    color: "#FFFFFF80"
   - type: Physics
     bodyType: Static
   - type: Fixtures
@@ -24,30 +21,28 @@
           !type:PhysShapeAabb
           bounds: "-0.4,-0.4,0.4,0.4"
         mask:
-          - ItemMask
+        - ItemMask
         layer:
-          - SlipLayer
+        - SlipLayer
         hard: false
   - type: SolutionContainerManager
-    solutions:
-      step: { maxVol: 2 }
   - type: Footprint
   - type: Puddle
-    solution: step
-    viscosityAffectsMovement: false
-  - type: Appearance
+    solution: print
+    affectsMovement: false
+    affectsSound: false
   - type: ExaminableSolution
-    solution: step
+    solution: print
   - type: MixableSolution
-    solution: step
+    solution: print
   - type: DrawableSolution
-    solution: step
+    solution: print
   - type: BadDrink
   - type: IgnoresFingerprints
   - type: Drink
     delay: 3
     transferAmount: 0.5
-    solution: step
+    solution: print
     examinable: false
   - type: Tag
     tags:

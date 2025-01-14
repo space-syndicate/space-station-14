@@ -24,7 +24,10 @@ namespace Content.Shared.Fluids.Components
 
         // Corvax-Next-Footprints-Start
         [DataField]
-        public bool ViscosityAffectsMovement = true;
+        public bool AffectsMovement = true;
+
+        [DataField]
+        public bool AffectsSound = true;
         // Corvax-Next-Footprints-End
     }
 }

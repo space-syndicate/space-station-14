@@ -13,9 +13,6 @@
   - type: FlashModifier
     modifier: 2
   - type: ResomiAccent
-  - type: FootprintVisualizer
-    leftBarePrint: "footprint-left-bare-lizard"
-    rightBarePrint: "footprint-right-bare-lizard"
   - type: DamageVisuals
     thresholds: [ 10, 30, 50, 70]
     targetLayers:

@@ -63,9 +63,6 @@
           32:
             sprite: Mobs/Species/Human/displacement.rsi
             state: jumpsuit-female
-  - type: FootprintVisualizer # Corvax-Next-Footprints
-    leftBarePrint: "footprint-left-bare-dwarf"
-    rightBarePrint: "footprint-right-bare-dwarf"
   - type: InnateMiningScannerViewer # Corvax-Next-Dwarfs
     pingSound: null
     viewRange: 3
