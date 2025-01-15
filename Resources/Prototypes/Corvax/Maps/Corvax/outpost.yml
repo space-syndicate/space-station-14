@@ -11,7 +11,7 @@
       stationProto: StandardNanotrasenStation
       components:
         - type: StationNameSetup
-          mapNameTemplate: '{0} Outpost {1}'
+          mapNameTemplate: '{0} Аутпост {1}'
           nameGenerator:
             !type:NanotrasenNameGenerator
             prefixCreator: 'ED'
