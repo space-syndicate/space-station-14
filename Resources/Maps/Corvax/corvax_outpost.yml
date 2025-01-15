@@ -46951,13 +46951,6 @@ entities:
     - type: Physics
       canCollide: False
     - type: InsideEntityStorage
-- proto: CaptainDrobe
-  entities:
-  - uid: 14491
-    components:
-    - type: Transform
-      pos: 17.5,29.5
-      parent: 2
 - proto: CaptainIDCard
   entities:
   - uid: 7352
@@ -136916,7 +136909,7 @@ entities:
     - type: Battery
       startingCharge: 1
       maxCharge: 1
-- proto: WeaponTurretControl
+- proto: WeaponTurretNanoTrasen
   entities:
   - uid: 17511
     components:
@@ -136927,7 +136920,8 @@ entities:
   - uid: 17622
     components:
     - type: Transform
-      pos: 16.5,63.5
+      rot: 1.5707963267948966 rad
+      pos: 16.5,68.5
       parent: 2
 - proto: WeaponTurretSyndicateBroken
   entities:
@@ -136939,7 +136933,12 @@ entities:
   - uid: 19410
     components:
     - type: Transform
-      pos: 16.5,68.5
+      pos: 12.5,68.5
+      parent: 2
+  - uid: 19425
+    components:
+    - type: Transform
+      pos: 16.5,63.5
       parent: 2
 - proto: WeaponWaterPistol
   entities:

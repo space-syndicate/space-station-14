@@ -38281,13 +38281,6 @@ entities:
     - type: Physics
       canCollide: False
     - type: InsideEntityStorage
-- proto: CaptainDrobe
-  entities:
-  - uid: 7262
-    components:
-    - type: Transform
-      pos: -1.5,-9.5
-      parent: 2
 - proto: CaptainIDCard
   entities:
   - uid: 5001
@@ -55196,6 +55189,13 @@ entities:
     components:
     - type: Transform
       pos: 1.571956,-18.370005
+      parent: 2
+- proto: DresserCaptainFilled
+  entities:
+  - uid: 7262
+    components:
+    - type: Transform
+      pos: -1.5,-9.5
       parent: 2
 - proto: DresserChiefEngineerFilled
   entities:
@@ -90069,6 +90069,30 @@ entities:
       parent: 17469
 - proto: PlasmaWindoorSecureCentralCommandLocked
   entities:
+  - uid: 11657
+    components:
+    - type: Transform
+      rot: -1.5707963267948966 rad
+      pos: -33.5,-35.5
+      parent: 2
+  - uid: 11658
+    components:
+    - type: Transform
+      rot: 1.5707963267948966 rad
+      pos: -35.5,-37.5
+      parent: 2
+  - uid: 11659
+    components:
+    - type: Transform
+      rot: -1.5707963267948966 rad
+      pos: -35.5,-37.5
+      parent: 2
+  - uid: 11660
+    components:
+    - type: Transform
+      rot: 1.5707963267948966 rad
+      pos: -37.5,-35.5
+      parent: 2
   - uid: 11661
     components:
     - type: Transform
@@ -101518,7 +101542,15 @@ entities:
       parent: 2
     - type: DeviceLinkSource
       linkedPorts:
+        11659:
+        - Pressed: Toggle
+        11658:
+        - Pressed: Toggle
         11661:
+        - Pressed: Toggle
+        11660:
+        - Pressed: Toggle
+        11657:
         - Pressed: Toggle
         11663:
         - Pressed: Toggle
@@ -102509,6 +102541,7 @@ entities:
     - type: EntityStorage
       air:
         volume: 200
+        immutable: False
         temperature: 293.14673
         moles:
         - 1.7459903
@@ -102523,13 +102556,11 @@ entities:
         - 0
         - 0
         - 0
-      closeSound: !type:SoundPathSpecifier
-        path: /Audio/Effects/closetclose.ogg
-      openSound: !type:SoundPathSpecifier
-        path: /Audio/Effects/closetopen.ogg
     - type: ContainerContainer
       containers:
         entity_storage: !type:Container
+          showEnts: False
+          occludes: True
           ents:
           - 7798
           - 7796
@@ -102558,6 +102589,8 @@ entities:
     - type: ContainerContainer
       containers:
         entity_storage: !type:Container
+          showEnts: False
+          occludes: True
           ents:
           - 17883
           - 17882
@@ -125555,23 +125588,6 @@ entities:
     - type: Transform
       pos: 27.479004,17.441895
       parent: 16898
-- proto: WeaponTurretControl
-  entities:
-  - uid: 11657
-    components:
-    - type: Transform
-      pos: -35.5,-37.5
-      parent: 2
-  - uid: 11658
-    components:
-    - type: Transform
-      pos: -37.5,-35.5
-      parent: 2
-  - uid: 11659
-    components:
-    - type: Transform
-      pos: -33.5,-35.5
-      parent: 2
 - proto: WeaponTurretHostile
   entities:
   - uid: 17448
@@ -125635,6 +125651,16 @@ entities:
     components:
     - type: Transform
       pos: -35.5,-42.5
+      parent: 2
+  - uid: 16534
+    components:
+    - type: Transform
+      pos: -37.5,-35.5
+      parent: 2
+  - uid: 16535
+    components:
+    - type: Transform
+      pos: -35.5,-37.5
       parent: 2
 - proto: WeaponTurretSyndicateBroken
   entities:
