@@ -8915,7 +8915,7 @@ entities:
     - type: RadiationGridResistance
     - type: NavMap
     - type: BecomesStation
-      id: CuteInstallation
+      id: Cute
   - uid: 446
     components:
     - type: MetaData
@@ -61329,7 +61329,7 @@ entities:
       rot: 3.141592653589793 rad
       pos: 1.5,-1.5
       parent: 20181
-- proto: GasMinerNitrogenStation
+- proto: GasMinerNitrogenStationLarge
   entities:
   - uid: 6257
     components:
@@ -61344,7 +61344,7 @@ entities:
       rot: 3.141592653589793 rad
       pos: -0.5,-1.5
       parent: 20181
-- proto: GasMinerOxygenStation
+- proto: GasMinerOxygenStationLarge
   entities:
   - uid: 6258
     components:
