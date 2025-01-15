@@ -7,7 +7,7 @@
   minPlayers: 25
   maxPlayers: 55
   stations:
-    CuteInstallation:
+    Cute:
       stationProto: StandardNanotrasenStation
       components:
         - type: StationNameSetup
