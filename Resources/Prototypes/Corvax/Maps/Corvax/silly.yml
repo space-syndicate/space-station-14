@@ -11,7 +11,7 @@
       stationProto: StandardNanotrasenStation
       components:
         - type: StationNameSetup
-          mapNameTemplate: '{0} Silly island {1}'
+          mapNameTemplate: '{0} Силли {1}'
           nameGenerator:
             !type:NanotrasenNameGenerator
             prefixCreator: 'ABK'
@@ -79,4 +79,3 @@
           - Theatre
           - Botany
           - Bunker
-          - BluespaceHarvest

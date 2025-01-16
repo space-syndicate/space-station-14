@@ -18,11 +18,12 @@ drink-component-try-use-drink-had-enough-other = Они не могут выпи
 drink-component-try-use-drink-success-slurp = Сёрб
 drink-component-try-use-drink-success-slurp-taste = Сёрб. { $flavors }
 drink-component-force-feed = { CAPITALIZE($user) } пытается вас чем-то напоить!
-drink-component-force-feed-success = { CAPITALIZE($user) } { GENDER($user) ->
-    [male] напоил
-    [female] напоила
-    [epicene] напоили
-    *[neuter] напоило
+drink-component-force-feed-success =
+    { CAPITALIZE($user) } { GENDER($user) ->
+        [male] напоил
+        [female] напоила
+        [epicene] напоили
+       *[neuter] напоило
     } вас чем-то! { $flavors }
 drink-component-force-feed-success-user = Вы успешно напоили { $target }
 drink-system-verb-drink = Пить
