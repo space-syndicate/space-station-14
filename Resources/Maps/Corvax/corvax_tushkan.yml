@@ -25849,13 +25849,6 @@ entities:
       rot: -1.5707963267948966 rad
       pos: 12.285246,39.975414
       parent: 2
-- proto: CaptainDrobe
-  entities:
-  - uid: 2434
-    components:
-    - type: Transform
-      pos: -9.5,33.5
-      parent: 2
 - proto: CaptainIDCard
   entities:
   - uid: 2424
@@ -34816,6 +34809,13 @@ entities:
           - 6099
           - 6100
           - 6101
+- proto: DresserCaptainFilled
+  entities:
+  - uid: 2434
+    components:
+    - type: Transform
+      pos: -9.5,33.5
+      parent: 2
 - proto: DresserChiefEngineerFilled
   entities:
   - uid: 5448
@@ -83762,17 +83762,17 @@ entities:
     - type: Transform
       pos: -37.702473,20.646717
       parent: 2
-- proto: WeaponTurretControl
+- proto: WeaponTurretNanoTrasen
   entities:
   - uid: 10665
     components:
     - type: Transform
-      pos: -15.5,-41.5
+      pos: -15.5,-39.5
       parent: 2
   - uid: 10666
     components:
     - type: Transform
-      pos: -15.5,-39.5
+      pos: -15.5,-41.5
       parent: 2
 - proto: WelderIndustrialAdvanced
   entities:

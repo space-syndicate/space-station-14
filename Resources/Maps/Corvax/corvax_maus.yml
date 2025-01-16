@@ -45412,13 +45412,6 @@ entities:
     - type: Transform
       pos: -11.822876,2.8293457
       parent: 17265
-- proto: CaptainDrobe
-  entities:
-  - uid: 18319
-    components:
-    - type: Transform
-      pos: -36.5,-11.5
-      parent: 2
 - proto: CaptainIDCard
   entities:
   - uid: 4766
@@ -61320,6 +61313,13 @@ entities:
           - 20771
           - 20772
           - 20773
+- proto: DresserCaptainFilled
+  entities:
+  - uid: 18319
+    components:
+    - type: Transform
+      pos: -36.5,-11.5
+      parent: 2
 - proto: DresserChiefEngineerFilled
   entities:
   - uid: 15467
@@ -109247,6 +109247,18 @@ entities:
     - type: DeviceLinkSource
       range: 200
       linkedPorts:
+        18793:
+        - Pressed: Toggle
+        - Pressed: AutoClose
+        18792:
+        - Pressed: Toggle
+        - Pressed: AutoClose
+        18791:
+        - Pressed: AutoClose
+        - Pressed: Toggle
+        552:
+        - Pressed: Toggle
+        - Pressed: AutoClose
         18787:
         - Pressed: Toggle
         18788:
@@ -109259,6 +109271,18 @@ entities:
         - Pressed: Toggle
         18786:
         - Pressed: Toggle
+        553:
+        - Pressed: Toggle
+        - Pressed: AutoClose
+        6862:
+        - Pressed: Toggle
+        - Pressed: AutoClose
+        9570:
+        - Pressed: Toggle
+        - Pressed: AutoClose
+        14510:
+        - Pressed: Toggle
+        - Pressed: AutoClose
         18781:
         - Pressed: Toggle
         18783:
@@ -137264,18 +137288,6 @@ entities:
     - type: Transform
       pos: -12.461247,-3.2999437
       parent: 2
-- proto: WeaponTurretControl
-  entities:
-  - uid: 552
-    components:
-    - type: Transform
-      pos: -108.5,-55.5
-      parent: 2
-  - uid: 553
-    components:
-    - type: Transform
-      pos: -112.5,-59.5
-      parent: 2
 - proto: WeaponTurretHostile
   entities:
   - uid: 16859
@@ -137370,6 +137382,18 @@ entities:
       rot: 3.141592653589793 rad
       pos: 6.5,15.5
       parent: 16090
+- proto: WeaponTurretNanoTrasen
+  entities:
+  - uid: 3142
+    components:
+    - type: Transform
+      pos: -108.5,-55.5
+      parent: 2
+  - uid: 11038
+    components:
+    - type: Transform
+      pos: -112.5,-59.5
+      parent: 2
 - proto: WeaponTurretSyndicateBroken
   entities:
   - uid: 17840
@@ -137743,11 +137767,43 @@ entities:
       parent: 2
 - proto: WindoorSecureCommandLocked
   entities:
+  - uid: 552
+    components:
+    - type: Transform
+      rot: -1.5707963267948966 rad
+      pos: -108.5,-54.5
+      parent: 2
+    - type: DeviceLinkSink
+      invokeCounter: 2
+  - uid: 553
+    components:
+    - type: Transform
+      rot: 3.141592653589793 rad
+      pos: -113.5,-59.5
+      parent: 2
+    - type: DeviceLinkSink
+      invokeCounter: 2
   - uid: 1059
     components:
     - type: Transform
       pos: -86.5,-65.5
       parent: 2
+  - uid: 6862
+    components:
+    - type: Transform
+      rot: 3.141592653589793 rad
+      pos: -112.5,-59.5
+      parent: 2
+    - type: DeviceLinkSink
+      invokeCounter: 2
+  - uid: 9570
+    components:
+    - type: Transform
+      rot: 1.5707963267948966 rad
+      pos: -112.5,-59.5
+      parent: 2
+    - type: DeviceLinkSink
+      invokeCounter: 2
   - uid: 12110
     components:
     - type: Transform
@@ -137760,11 +137816,41 @@ entities:
       rot: -1.5707963267948966 rad
       pos: -109.5,-57.5
       parent: 2
+  - uid: 14510
+    components:
+    - type: Transform
+      rot: 1.5707963267948966 rad
+      pos: -112.5,-60.5
+      parent: 2
+    - type: DeviceLinkSink
+      invokeCounter: 2
   - uid: 15482
     components:
     - type: Transform
       pos: -70.5,-29.5
       parent: 2
+  - uid: 18791
+    components:
+    - type: Transform
+      rot: -1.5707963267948966 rad
+      pos: -108.5,-55.5
+      parent: 2
+    - type: DeviceLinkSink
+      invokeCounter: 2
+  - uid: 18792
+    components:
+    - type: Transform
+      pos: -108.5,-55.5
+      parent: 2
+    - type: DeviceLinkSink
+      invokeCounter: 2
+  - uid: 18793
+    components:
+    - type: Transform
+      pos: -107.5,-55.5
+      parent: 2
+    - type: DeviceLinkSink
+      invokeCounter: 2
   - uid: 18867
     components:
     - type: Transform
