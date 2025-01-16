@@ -149,3 +149,6 @@ ent-PiratePDA = pirate PDA
     .desc = Yargh!
 ent-SyndiAgentPDA = syndicate agent PDA
     .desc = For those days when healing normal syndicates aren't enough, try healing nuclear operatives instead!
+ent-ChameleonPDA = passenger PDA
+    .desc = Why isn't it gray?
+    .suffix = Chameleon

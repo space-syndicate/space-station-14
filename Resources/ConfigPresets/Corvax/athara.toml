@@ -5,6 +5,9 @@ maxplayers = 150
 soft_max_players = 70
 map_rotation = true
 
+[server]
+lobby_name = "🛰️ Corvax — Атара 🌌⚡"
+
 [game.panic_bunker]
 enabled = true
 show_reason = true

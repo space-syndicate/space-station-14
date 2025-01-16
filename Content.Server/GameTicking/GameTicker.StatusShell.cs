@@ -1,3 +1,4 @@
+using System.Linq;
 using System.Text.Json.Nodes;
 using Content.Corvax.Interfaces.Server;
 using Content.Shared.CCVar;
@@ -45,6 +46,10 @@ namespace Content.Server.GameTicking
                 var players = IoCManager.Instance?.TryResolveType<IServerJoinQueueManager>(out var joinQueueManager) ?? false
                     ? joinQueueManager.ActualPlayersCount
                     : _playerManager.PlayerCount;
+
+                players = _cfg.GetCVar(CCVars.AdminsCountInReportedPlayerCount)
+                    ? players
+                    : players - _adminManager.ActiveAdmins.Count();
                 // Corvax-Queue-End
 
                 jObject["name"] = _baseServer.ServerName;
@@ -53,12 +58,6 @@ namespace Content.Server.GameTicking
                 jObject["players"] = players; // Corvax-Queue
                 jObject["soft_max_players"] = _cfg.GetCVar(CCVars.SoftMaxPlayers);
                 jObject["panic_bunker"] = _cfg.GetCVar(CCVars.PanicBunkerEnabled);
-
-                /*
-                 * TODO: Remove baby jail code once a more mature gateway process is established. This code is only being issued as a stopgap to help with potential tiding in the immediate future.
-                 */
-
-                jObject["baby_jail"] = _cfg.GetCVar(CCVars.BabyJailEnabled);
                 jObject["run_level"] = (int) _runLevel;
                 if (preset != null)
                     jObject["preset"] = Loc.GetString(preset.ModeTitle);

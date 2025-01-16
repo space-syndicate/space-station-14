@@ -11,7 +11,7 @@
       stationProto: StandardNanotrasenStation
       components:
         - type: StationNameSetup
-          mapNameTemplate: '{0} Marathon Station {1}'
+          mapNameTemplate: '{0} Марафон {1}' # Corvax
           nameGenerator:
             !type:NanotrasenNameGenerator
             prefixCreator: '14'

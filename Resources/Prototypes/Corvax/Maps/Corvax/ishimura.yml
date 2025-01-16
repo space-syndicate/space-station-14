@@ -11,10 +11,10 @@
       stationProto: StandardNanotrasenStation
       components:
         - type: StationNameSetup
-          mapNameTemplate: '{0} USG Ishimura {1}'
+          mapNameTemplate: '{0} Ишимура {1}'
           nameGenerator:
             !type:NanotrasenNameGenerator
-            prefixCreator: 'SY'
+            prefixCreator: 'SY USG'
         - type: StationEmergencyShuttle
           emergencyShuttlePath: /Maps/Shuttles/emergency_omega.yml
         - type: StationJobs

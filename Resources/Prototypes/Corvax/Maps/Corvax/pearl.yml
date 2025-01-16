@@ -11,7 +11,7 @@
       stationProto: StandardNanotrasenStation
       components:
         - type: StationNameSetup
-          mapNameTemplate: '{0} Pearl island {1}'
+          mapNameTemplate: '{0} Пёрл {1}'
           nameGenerator:
             !type:NanotrasenNameGenerator
             prefixCreator: 'SR'
@@ -48,8 +48,7 @@
             SecurityOfficer: [ 3, 3 ]
             SecurityCadet: [ 2, 2 ]
             Detective: [ 1, 1 ]
-            Pilot: [ 2, 2 ]
-            Brigmedic: [ 1, 1 ] # Corvax-Next-Brigmedic
+            Pilot: [ 1, 1 ]
             # service
             HeadOfPersonnel: [ 1, 1 ]
             Bartender: [ 2, 2 ]
@@ -87,5 +86,3 @@
           - Botany
           - Bunker
           - Survive
-          - BluespaceHarvest # Corvax-Next-BluespaceHarvest
-
