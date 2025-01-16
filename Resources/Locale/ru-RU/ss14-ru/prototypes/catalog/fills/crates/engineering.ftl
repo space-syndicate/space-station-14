@@ -32,3 +32,5 @@ ent-CrateParticleDecelerators = ящик с замедлителями част�
     .desc = Ящик, содержащий три замедлителя частиц.
 ent-CrateEngineeringSpaceHeater = ящик с термостатом
     .desc = Содержит термостат для климат-контроля.
+ent-CrateTechBoardRandom = surplus boards
+    .desc = Surplus boards from somewhere.
