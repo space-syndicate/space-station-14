@@ -1,3 +1,3 @@
 admin-alert-shared-connection = { $player } имеет общее интернет-соединение с { $otherCount } другим(-и) игроком(-ами): { $otherList }
-admin-alert-ipintel-blocked = { $player } was rejected from joining due to their IP having a { TOSTRING($percent, "P0") } confidence of being a VPN/Datacenter.
-admin-alert-ipintel-warning = { $player } IP has a { TOSTRING($percent, "P0") } confidence of being a VPN/Datacenter. Please watch them.
+admin-alert-ipintel-blocked = Пользователю { $player } было отказано в присоединении из-за того, что его IP с { TOSTRING($percent, "P0") } уверенностью относится к VPN/ЦОДу.
+admin-alert-ipintel-warning = IP пользователя { $player } с { TOSTRING($percent, "P0") } уверенностью относится к VPN/ЦОДу. Пожалуйста, понаблюдайте за ним.
