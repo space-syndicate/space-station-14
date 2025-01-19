@@ -63,7 +63,7 @@ holopad-command-hos = Командование - ГСБ
 holopad-science-anomaly = Научный - Аномалистика
 holopad-science-artifact = Научный - Ксеноархеология
 holopad-science-robotics = Научный - Робототехника
-holopad-science-rnd = Научный - НИО
+holopad-science-rnd = Научный - РНД
 holopad-science-front = Научный - Приёмная
 holopad-science-breakroom = Научный - Комната отдыха
 # Medical
