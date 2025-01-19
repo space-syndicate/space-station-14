@@ -18,5 +18,5 @@ reagent-name-laughter = смех
 reagent-desc-laughter = Некоторые говорят, что это лучшее лекарство, но последние исследования доказали, что это не так.
 reagent-name-weh = сок, заставляющий говорить Вех
 reagent-desc-weh = Чистая сущность плюшевого унатха. Заставляет вас говорить Вех!
-reagent-name-hew = juice that makes you Hew
-reagent-desc-hew = Pure essence of inversed lizard plush. Makes you Hew!
+reagent-name-hew = сок, заставляющий говорить Хев
+reagent-desc-hew = Чистая сущность инвертированного плюшевого унатха. Заставляет вас говорить Хев!

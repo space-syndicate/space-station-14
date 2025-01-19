@@ -1,8 +1,8 @@
-role-type-crew-aligned-name = Crew Aligned
-role-type-solo-antagonist-name = Solo Antagonist
-role-type-team-antagonist-name = Team Antagonist
-role-type-free-agent-name = Free Agent
-role-type-familiar-name = Familiar
-role-type-silicon-name = Silicon
-role-type-silicon-antagonist-name = Altered Silicon
-role-type-update-message = Your role is [color = { $color }]{ $role }[/color]
+role-type-crew-aligned-name = Экипаж или их союзник
+role-type-solo-antagonist-name = Соло-антагонист
+role-type-team-antagonist-name = Командный антагонист
+role-type-free-agent-name = Свободный агент
+role-type-familiar-name = Фамильяр
+role-type-silicon-name = Синтетик
+role-type-silicon-antagonist-name = Изменённый синтетик
+role-type-update-message = Ваша роль: [color = { $color }]{ $role }[/color]
