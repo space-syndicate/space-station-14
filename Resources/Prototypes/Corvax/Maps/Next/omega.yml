@@ -12,7 +12,7 @@
           mapNameTemplate: '{0} Омега {1}'
           nameGenerator:
             !type:NanotrasenNameGenerator
-            prefixCreator: 'TG'
+            prefixCreator: 'RK'
         - type: StationEmergencyShuttle
           emergencyShuttlePath: /Maps/Shuttles/emergency_omega.yml
         - type: StationJobs
@@ -35,6 +35,7 @@
             MedicalIntern: [ 2, 2 ]
             Paramedic: [ 1, 1 ]
             Chemist: [ 2, 2 ]
+            Surgeon: [ 1, 1 ]
             # science
             ResearchDirector: [ 1, 1 ]
             Scientist: [ 4, 4 ]
@@ -58,6 +59,7 @@
             Musician: [ 1, 1 ]
             ServiceWorker: [ 2, 2 ]
             Passenger: [ -1, -1 ]
+            Reporter: [ 1, 1 ]
             # silicon
             StationAi: [ 1, 1 ]
             Borg: [ 2, 2 ]
