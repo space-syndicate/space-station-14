@@ -35,6 +35,7 @@ holopad-hologram-name = голограмма { $name }
 # Holopad actions
 holopad-activate-projector-verb = Активировать голопроектор
 holopad-ai-is-unable-to-reach-holopad = Вы не можете связаться с источником вызова, он находится слишком далеко от вашего ядра.
+holopad-ai-is-unable-to-activate-projector = Вы не можете активировать голопроектор, он находится слишком далеко от вашего ядра.
 # Mapping prototypes
 # General
 holopad-general-tools = Общий - Инструменты
@@ -62,6 +63,8 @@ holopad-command-hos = Командование - ГСБ
 # Science
 holopad-science-anomaly = Научный - Аномалистика
 holopad-science-artifact = Научный - Ксеноархеология
+holopad-science-artifact-north = Научный - Ксеноархеология Север
+holopad-science-artifact-south = Научный - Ксеноархеология Юг
 holopad-science-robotics = Научный - Робототехника
 holopad-science-rnd = Научный - РНД
 holopad-science-front = Научный - Приёмная
@@ -84,6 +87,7 @@ holopad-cargo-salvage-bay = Снабжение - Утилизаторский о
 holopad-cargo-breakroom = Снабжение - Комната отдыха
 holopad-cargo-ats = Снабжение - АТС
 holopad-cargo-shuttle = Снабжение - Шаттл
+holopad-cargo-mailroom = Снабжение - Почта
 # Engineering
 holopad-engineering-atmos-front = Атмос - Приёмная
 holopad-engineering-atmos-main = Атмос - Главный
@@ -95,6 +99,7 @@ holopad-engineering-telecoms = Инженерный - Телекоммуника
 holopad-engineering-tech-vault = Инженерный - Техническое хранилище
 holopad-engineering-ame = Инженерный - ДАМ
 holopad-engineering-power = Инженерный - Питание
+holopad-engineering-main = Инженерный - Главный
 # S ecurity
 holopad-security-front = СБ - Приёмная
 holopad-security-brig = СБ - Бриг
@@ -108,6 +113,8 @@ holopad-security-lawyer = СБ - Адковат
 holopad-security-armory = СБ - Оружейная
 holopad-security-locker-room = СБ - Раздевалка
 holopad-security-brig-med = СБ - Бригмед
+holopad-security-evac-checkpoint = СБ - КПП Эвакуация
+holopad-security-arrivals-checkpoint = СБ - КПП Прибытие
 # Service
 holopad-service-janitor = Сервис - Уборщик
 holopad-service-bar = Сервис - Бар
