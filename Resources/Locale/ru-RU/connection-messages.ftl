@@ -34,7 +34,6 @@ whitelist-manual = Вы отсутствуете в белом списке эт
 whitelist-blacklisted = Вы находитесь в чёрном списке этого сервера.
 whitelist-always-deny = Вам запрещено присоединяться к этому серверу.
 whitelist-fail-prefix = Не внесён в белый список: { $msg }
-whitelist-misconfigured = Сервер неправильно настроен и не принимает игроков. Пожалуйста, свяжитесь с владельцем сервера и повторите попытку позже.
 cmd-blacklistadd-desc = Добавить игрока в чёрный список сервера.
 cmd-blacklistadd-help = Использование: blacklistadd <username>
 cmd-blacklistadd-existing = { $username } уже находится в чёрном списке!
