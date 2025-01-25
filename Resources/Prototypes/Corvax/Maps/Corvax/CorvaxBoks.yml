@@ -6,7 +6,7 @@
   randomRotation: false
   minPlayers: 40 
   stations:
-    Boxstation:
+    CorvaxBoks:
       stationProto: StandardNanotrasenStation
       components:
         - type: StationNameSetup
