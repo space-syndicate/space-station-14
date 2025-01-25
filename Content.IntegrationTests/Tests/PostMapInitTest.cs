@@ -55,6 +55,7 @@ namespace Content.IntegrationTests.Tests
 			"CorvaxIshimura",
 			"CorvaxPaper",
 			"CorvaxCute",
+            "CorvaxBox",
             "CorvaxPilgrim",
             "CorvaxSplit",
             "CorvaxTerra",
