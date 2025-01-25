@@ -15607,7 +15607,7 @@ entities:
       pos: 362.5,401.5
       parent: 1
     - type: Door
-      secondsUntilStateChange: -30591.742
+      secondsUntilStateChange: -30667.1
       state: Opening
     - type: DeviceLinkSource
       lastSignals:
@@ -66988,6 +66988,8 @@ entities:
       pos: 375.5,411.5
       parent: 1
     - type: DeviceNetwork
+      configurators:
+      - invalid
       deviceLists:
       - 22141
       - 18299
@@ -66999,6 +67001,8 @@ entities:
       pos: 375.5,409.5
       parent: 1
     - type: DeviceNetwork
+      configurators:
+      - invalid
       deviceLists:
       - 22141
       - 18299
@@ -67010,6 +67014,8 @@ entities:
       pos: 383.5,410.5
       parent: 1
     - type: DeviceNetwork
+      configurators:
+      - invalid
       deviceLists:
       - 22141
       - 15273
@@ -67021,6 +67027,8 @@ entities:
       pos: 383.5,409.5
       parent: 1
     - type: DeviceNetwork
+      configurators:
+      - invalid
       deviceLists:
       - 22141
       - 15273
@@ -67135,6 +67143,8 @@ entities:
       pos: 375.5,410.5
       parent: 1
     - type: DeviceNetwork
+      configurators:
+      - invalid
       deviceLists:
       - 22141
       - 18299
@@ -67203,6 +67213,8 @@ entities:
       pos: 383.5,411.5
       parent: 1
     - type: DeviceNetwork
+      configurators:
+      - invalid
       deviceLists:
       - 22141
       - 15273
@@ -116938,6 +116950,18 @@ entities:
     - type: Transform
       pos: 356.5,385.5
       parent: 1
+- proto: PowerCageHigh
+  entities:
+  - uid: 23147
+    components:
+    - type: Transform
+      pos: 3.5,-7.5
+      parent: 3010
+  - uid: 23148
+    components:
+    - type: Transform
+      pos: 5.5,-7.5
+      parent: 3010
 - proto: PowerCageRecharger
   entities:
   - uid: 16195
@@ -137713,6 +137737,11 @@ entities:
     - type: Transform
       pos: 403.5,368.5
       parent: 1
+  - uid: 23149
+    components:
+    - type: Transform
+      pos: 4.5,-6.5
+      parent: 3010
 - proto: TowelColorOrange
   entities:
   - uid: 5226
