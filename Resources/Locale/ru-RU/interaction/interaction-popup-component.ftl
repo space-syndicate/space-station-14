@@ -80,9 +80,9 @@ petting-failure-janitor-cyborg = Вы тянетесь погладить { $tar
 petting-failure-medical-cyborg = Вы тянетесь погладить { $target }, но { SUBJECT($target) } занят спасением жизней!
 petting-failure-service-cyborg = Вы тянетесь погладить { $target }, но { SUBJECT($target) } занят обслуживанием экипажа!
 petting-failure-syndicate-cyborg = Вы тянетесь погладить { $target }, но { POSS-ADJ($target) } предательская натура заставляет вас передумать.
-petting-failure-derelict-cyborg = Вы тянетесь погладить { THE($target) }, но { POSS-ADJ($target) } ржавый и рваный внешний вид заставляет вас передумать.
-petting-failure-station-ai = Вы тянетесь погладить { THE($target) }, но { POSS-ADJ($target) } разряд заставляет вас отдёрнуть руку.
-petting-success-station-ai-others = { CAPITALIZE(THE($user)) } гладит { THE($target) } по { POSS-ADJ($target) } холодному, квадратному экрану.
+petting-failure-derelict-cyborg = Вы тянетесь погладить { $target }, но { POSS-ADJ($target) } ржавый и рваный внешний вид заставляет вас передумать.
+petting-failure-station-ai = Вы тянетесь погладить { $target }, но { POSS-ADJ($target) } разряд заставляет вас отдёрнуть руку.
+petting-success-station-ai-others = { CAPITALIZE($user) } гладит { $target } по { POSS-ADJ($target) } холодному, квадратному экрану.
 
 ## Rattling fences
 
