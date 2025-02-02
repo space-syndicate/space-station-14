@@ -22,11 +22,11 @@
             # cargo
             Quartermaster: [ 1, 1 ]
             SalvageSpecialist: [ 3, 3 ]
-            CargoTechnician: [ 3, 3 ]
+            CargoTechnician: [ 4, 4 ]
             # engineering
             ChiefEngineer: [ 1, 1 ]
             AtmosphericTechnician: [ 3, 3 ]
-            StationEngineer: [ 4, 4 ]
+            StationEngineer: [ 5, 5 ]
             TechnicalAssistant: [ 4, 4 ]
             # medical
             ChiefMedicalOfficer: [ 1, 1 ]
@@ -42,13 +42,13 @@
             # security
             HeadOfSecurity: [ 1, 1 ]
             Warden: [ 1, 1 ]
-            SecurityOfficer: [ 4, 4 ]
+            SecurityOfficer: [ 7, 7 ]
             SecurityCadet: [ 4, 4 ]
             Detective: [ 1, 1 ]
             # service
             HeadOfPersonnel: [ 1, 1 ]
             Bartender: [ 1, 2 ]
-            Botanist: [ 2, 2 ]
+            Botanist: [ 2, 3 ]
             Chaplain: [ 1, 1 ]
             Chef: [ 2, 2 ]
             Clown: [ 1, 1 ]
