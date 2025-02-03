@@ -32826,6 +32826,12 @@ entities:
       parent: 1
 - proto: AirlockMaint
   entities:
+  - uid: 172
+    components:
+    - type: Transform
+      rot: 3.141592653589793 rad
+      pos: 120.5,131.5
+      parent: 1
   - uid: 2004
     components:
     - type: Transform
@@ -32857,12 +32863,6 @@ entities:
     components:
     - type: Transform
       pos: 114.5,143.5
-      parent: 1
-  - uid: 172
-    components:
-    - type: Transform
-      rot: 1.5707963267948966 rad
-      pos: 120.5,131.5
       parent: 1
 - proto: AirlockMaintCommandLocked
   entities:
@@ -33022,7 +33022,7 @@ entities:
       pos: 111.5,63.5
       parent: 1
     - type: Door
-      secondsUntilStateChange: -8349.054
+      secondsUntilStateChange: -16095.21
       state: Opening
     - type: DeviceLinkSource
       lastSignals:
@@ -33460,14 +33460,6 @@ entities:
     components:
     - type: Transform
       pos: 154.5,76.5
-      parent: 1
-- proto: AlwaysPoweredlightRed
-  entities:
-  - uid: 14011
-    components:
-    - type: Transform
-      rot: 1.5707963267948966 rad
-      pos: 82.5,22.5
       parent: 1
 - proto: AmeController
   entities:
@@ -36208,6 +36200,11 @@ entities:
     components:
     - type: Transform
       pos: 145.5,136.5
+      parent: 1
+  - uid: 9700
+    components:
+    - type: Transform
+      pos: 103.5,56.5
       parent: 1
   - uid: 11900
     components:
@@ -51660,6 +51657,16 @@ entities:
     - type: Transform
       pos: 24.5,163.5
       parent: 1
+  - uid: 9701
+    components:
+    - type: Transform
+      pos: 101.5,102.5
+      parent: 1
+  - uid: 9839
+    components:
+    - type: Transform
+      pos: 102.5,102.5
+      parent: 1
   - uid: 10610
     components:
     - type: Transform
@@ -61593,6 +61600,12 @@ entities:
       parent: 1
 - proto: ComputerSurveillanceCameraMonitor
   entities:
+  - uid: 6986
+    components:
+    - type: Transform
+      rot: 1.5707963267948966 rad
+      pos: 75.5,64.5
+      parent: 1
   - uid: 13928
     components:
     - type: Transform
@@ -61638,8 +61651,20 @@ entities:
   - uid: 16891
     components:
     - type: Transform
-      rot: -1.5707963267948966 rad
-      pos: 75.5,64.5
+      rot: 1.5707963267948966 rad
+      pos: 97.5,105.5
+      parent: 1
+  - uid: 17723
+    components:
+    - type: Transform
+      rot: 1.5707963267948966 rad
+      pos: 101.5,122.5
+      parent: 1
+  - uid: 17724
+    components:
+    - type: Transform
+      rot: 1.5707963267948966 rad
+      pos: 96.5,127.5
       parent: 1
 - proto: ContainmentFieldGenerator
   entities:
@@ -125765,6 +125790,12 @@ entities:
       parent: 1
 - proto: PoweredlightRed
   entities:
+  - uid: 1936
+    components:
+    - type: Transform
+      rot: 1.5707963267948966 rad
+      pos: 82.5,22.5
+      parent: 1
   - uid: 15401
     components:
     - type: Transform
@@ -131785,10 +131816,11 @@ entities:
       parent: 1
 - proto: SignDirectionalEng
   entities:
-  - uid: 1936
+  - uid: 9699
     components:
     - type: Transform
-      pos: 61.56051,84.28
+      rot: 3.141592653589793 rad
+      pos: 61.56121,84.28194
       parent: 1
   - uid: 12277
     components:
@@ -135355,6 +135387,17 @@ entities:
       id: Входные шлюзы
 - proto: SurveillanceCameraEngineering
   entities:
+  - uid: 9851
+    components:
+    - type: Transform
+      rot: 3.141592653589793 rad
+      pos: 39.5,107.5
+      parent: 1
+    - type: SurveillanceCamera
+      setupAvailableNetworks:
+      - SurveillanceCameraEngineering
+      nameSet: True
+      id: Продолжение холла
   - uid: 19436
     components:
     - type: Transform
@@ -135540,6 +135583,17 @@ entities:
       id: Восточный выход
 - proto: SurveillanceCameraGeneral
   entities:
+  - uid: 14011
+    components:
+    - type: Transform
+      rot: 1.5707963267948966 rad
+      pos: 95.5,123.5
+      parent: 1
+    - type: SurveillanceCamera
+      setupAvailableNetworks:
+      - SurveillanceCameraGeneral
+      nameSet: True
+      id: Центральная площадь
   - uid: 14984
     components:
     - type: Transform
@@ -135657,6 +135711,17 @@ entities:
       id: Раздевалка
 - proto: SurveillanceCameraMedical
   entities:
+  - uid: 13164
+    components:
+    - type: Transform
+      rot: 1.5707963267948966 rad
+      pos: 114.5,27.5
+      parent: 1
+    - type: SurveillanceCamera
+      setupAvailableNetworks:
+      - SurveillanceCameraMedical
+      nameSet: True
+      id: Вирусология
   - uid: 16451
     components:
     - type: Transform
@@ -135868,6 +135933,16 @@ entities:
       parent: 1
 - proto: SurveillanceCameraScience
   entities:
+  - uid: 10829
+    components:
+    - type: Transform
+      pos: 61.5,85.5
+      parent: 1
+    - type: SurveillanceCamera
+      setupAvailableNetworks:
+      - SurveillanceCameraScience
+      nameSet: True
+      id: Роботех-выход
   - uid: 15359
     components:
     - type: Transform
@@ -135960,6 +136035,17 @@ entities:
     - type: Transform
       pos: 108.5,61.5
       parent: 1
+  - uid: 10977
+    components:
+    - type: Transform
+      rot: -1.5707963267948966 rad
+      pos: 84.5,42.5
+      parent: 1
+    - type: SurveillanceCamera
+      setupAvailableNetworks:
+      - SurveillanceCameraSecurity
+      nameSet: True
+      id: Оружейная-продолжение
   - uid: 14968
     components:
     - type: Transform
