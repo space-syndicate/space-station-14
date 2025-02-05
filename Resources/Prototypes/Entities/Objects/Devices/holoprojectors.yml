@@ -134,3 +134,32 @@
     slots:
       cell_slot:
         name: power-cell-slot-component-slot-name-default
+
+- type: entity
+  parent: Holoprojector
+  id: HoloprojectorDetective
+  name: detective holobarrier projector
+  description: Creates a solid but fragile holographic barrier. Useful for cordoning off crime scenes
+  components:
+  - type: HolosignProjector
+    signProto: HolosignDetective
+    chargeUse: 120
+  - type: Sprite
+    sprite: Objects/Devices/Holoprojectors/detective.rsi
+    state: icon
+  - type: Tag
+    tags:
+    - HolofanProjector
+    - SecBeltEquip
+  - type: StaticPrice
+    price: 150
+
+- type: entity
+  parent: HoloprojectorDetective
+  id: HoloprojectorDetectiveEmpty
+  suffix: Empty
+  components:
+  - type: ItemSlots
+    slots:
+      cell_slot:
+        name: power-cell-slot-component-slot-name-default

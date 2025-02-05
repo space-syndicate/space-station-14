@@ -78,6 +78,46 @@
     - type: Clickable
 
 - type: entity
+  id: HolosignDetective
+  parent: HolosignWetFloor
+  name: detective holographic barrier
+  description: There's nothing to see here
+  components:
+  - type: Physics
+    bodyType: Static
+    canCollide: true
+  - type: Sprite
+    sprite: Structures/Holo/detective.rsi
+    state: icon
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.3,-0.3,0.3,0.3"
+        mask:
+        - TableMask
+        layer:
+        - TableLayer
+  - type: TimedDespawn
+    lifetime: 360
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 15
+      behaviors:
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+  - type: PointLight
+    enabled: true
+    radius: 3
+    energy: 2
+    color: "#808000"
+  - type: Climbable
+  - type: Clickable
+
+- type: entity
   id: HolosignForcefield
   parent: HolosignWetFloor
   name: holographic force field
