@@ -85,9 +85,6 @@ namespace Content.Server.Corvax.StationGoal
             if (ent is null)
                 return false;
 
-            if (!TryComp<StationDataComponent>(ent, out var stationData))
-                return false;
-
             var printout = new FaxPrintout(
                 Loc.GetString(goal.Text, ("station", MetaData(ent.Value).EntityName)),
                 Loc.GetString("station-goal-fax-paper-name"),
