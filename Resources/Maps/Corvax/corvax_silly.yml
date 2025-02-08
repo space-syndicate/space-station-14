@@ -24513,7 +24513,7 @@ entities:
     - type: Transform
       pos: 4.5,40.5
       parent: 2
-- proto: FloraRockSolid01
+- proto: FloraRockSolid
   entities:
   - uid: 2441
     components:
@@ -24540,8 +24540,6 @@ entities:
     - type: Transform
       pos: 15.976806,19.524523
       parent: 2
-- proto: FloraRockSolid02
-  entities:
   - uid: 2446
     components:
     - type: Transform
@@ -24572,8 +24570,6 @@ entities:
     - type: Transform
       pos: -31.601288,5.4406104
       parent: 2
-- proto: FloraRockSolid03
-  entities:
   - uid: 2452
     components:
     - type: Transform
@@ -24604,7 +24600,7 @@ entities:
     - type: Transform
       pos: -42.213253,23.096977
       parent: 2
-- proto: FloraTree04
+- proto: FloraTree
   entities:
   - uid: 2458
     components:
@@ -24612,7 +24608,7 @@ entities:
       rot: 3.141592653589793 rad
       pos: 31.144978,-7.414804
       parent: 2
-- proto: FloraTreeConifer01
+- proto: FloraTreeConifer
   entities:
   - uid: 2459
     components:
@@ -24640,20 +24636,6 @@ entities:
       rot: -1.5707963267948966 rad
       pos: -29.563026,15.907944
       parent: 2
-  - uid: 6136
-    components:
-    - type: Transform
-      rot: 1.5707963267948966 rad
-      pos: 20.506912,1.9241943
-      parent: 5654
-  - uid: 6137
-    components:
-    - type: Transform
-      rot: 1.5707963267948966 rad
-      pos: -1.539032,13.804901
-      parent: 5654
-- proto: FloraTreeConifer02
-  entities:
   - uid: 2464
     components:
     - type: Transform
@@ -24700,6 +24682,39 @@ entities:
       rot: -1.5707963267948966 rad
       pos: -32.778744,22.854723
       parent: 2
+  - uid: 2473
+    components:
+    - type: Transform
+      pos: 25.955736,-21.06659
+      parent: 2
+  - uid: 2474
+    components:
+    - type: Transform
+      pos: 18.575415,-19.02507
+      parent: 2
+  - uid: 2475
+    components:
+    - type: Transform
+      pos: 20.615295,-22.508595
+      parent: 2
+  - uid: 2476
+    components:
+    - type: Transform
+      rot: -1.5707963267948966 rad
+      pos: -22.406776,20.712933
+      parent: 2
+  - uid: 6136
+    components:
+    - type: Transform
+      rot: 1.5707963267948966 rad
+      pos: 20.506912,1.9241943
+      parent: 5654
+  - uid: 6137
+    components:
+    - type: Transform
+      rot: 1.5707963267948966 rad
+      pos: -1.539032,13.804901
+      parent: 5654
   - uid: 6138
     components:
     - type: Transform
@@ -24724,30 +24739,7 @@ entities:
       rot: 1.5707963267948966 rad
       pos: 2.4440918,15.3072815
       parent: 5654
-- proto: FloraTreeConifer03
-  entities:
-  - uid: 2473
-    components:
-    - type: Transform
-      pos: 25.955736,-21.06659
-      parent: 2
-  - uid: 2474
-    components:
-    - type: Transform
-      pos: 18.575415,-19.02507
-      parent: 2
-  - uid: 2475
-    components:
-    - type: Transform
-      pos: 20.615295,-22.508595
-      parent: 2
-  - uid: 2476
-    components:
-    - type: Transform
-      rot: -1.5707963267948966 rad
-      pos: -22.406776,20.712933
-      parent: 2
-- proto: FloraTreeLarge02
+- proto: FloraTreeLarge
   entities:
   - uid: 2477
     components:
@@ -24755,7 +24747,7 @@ entities:
       rot: 3.141592653589793 rad
       pos: 29.886478,-8.789006
       parent: 2
-- proto: FloraTreeSnow01
+- proto: FloraTreeSnow
   entities:
   - uid: 2478
     components:
@@ -24772,14 +24764,42 @@ entities:
     - type: Transform
       pos: 6.089901,20.812166
       parent: 2
+  - uid: 2481
+    components:
+    - type: Transform
+      pos: -48.499516,13.604767
+      parent: 2
+  - uid: 2482
+    components:
+    - type: Transform
+      pos: -0.009152412,22.533655
+      parent: 2
+  - uid: 2483
+    components:
+    - type: Transform
+      pos: -27.599247,-9.65305
+      parent: 2
+  - uid: 2484
+    components:
+    - type: Transform
+      pos: -43.924747,18.251827
+      parent: 2
+  - uid: 2485
+    components:
+    - type: Transform
+      pos: 5.819991,-21.431513
+      parent: 2
+  - uid: 2486
+    components:
+    - type: Transform
+      pos: 11.939298,38.05486
+      parent: 2
   - uid: 6142
     components:
     - type: Transform
       rot: 1.5707963267948966 rad
       pos: -8.302155,-8.77597
       parent: 5654
-- proto: FloraTreeSnow02
-  entities:
   - uid: 6143
     components:
     - type: Transform
@@ -24792,21 +24812,12 @@ entities:
       rot: 1.5707963267948966 rad
       pos: -3.676361,12.397369
       parent: 5654
-- proto: FloraTreeSnow03
-  entities:
-  - uid: 2481
-    components:
-    - type: Transform
-      pos: -48.499516,13.604767
-      parent: 2
   - uid: 6145
     components:
     - type: Transform
       rot: 1.5707963267948966 rad
       pos: -3.8744507,-17.837097
       parent: 5654
-- proto: FloraTreeSnow04
-  entities:
   - uid: 6146
     components:
     - type: Transform
@@ -24819,13 +24830,6 @@ entities:
       rot: 1.5707963267948966 rad
       pos: 17.631882,-6.705353
       parent: 5654
-- proto: FloraTreeSnow05
-  entities:
-  - uid: 2482
-    components:
-    - type: Transform
-      pos: -0.009152412,22.533655
-      parent: 2
   - uid: 6148
     components:
     - type: Transform
@@ -24862,28 +24866,6 @@ entities:
       rot: 1.5707963267948966 rad
       pos: -6.9085693,11.348236
       parent: 5654
-- proto: FloraTreeSnow06
-  entities:
-  - uid: 2483
-    components:
-    - type: Transform
-      pos: -27.599247,-9.65305
-      parent: 2
-  - uid: 2484
-    components:
-    - type: Transform
-      pos: -43.924747,18.251827
-      parent: 2
-  - uid: 2485
-    components:
-    - type: Transform
-      pos: 5.819991,-21.431513
-      parent: 2
-  - uid: 2486
-    components:
-    - type: Transform
-      pos: 11.939298,38.05486
-      parent: 2
   - uid: 6154
     components:
     - type: Transform
@@ -33554,6 +33536,13 @@ entities:
     - type: Transform
       pos: 0.5,17.5
       parent: 2
+- proto: MechEquipmentGrabber
+  entities:
+  - uid: 7470
+    components:
+    - type: Transform
+      pos: 25.551804,7.663894
+      parent: 2
 - proto: MedicalBed
   entities:
   - uid: 3498
@@ -36058,6 +36047,11 @@ entities:
     - type: Transform
       pos: 4.5,1.5
       parent: 7133
+  - uid: 7469
+    components:
+    - type: Transform
+      pos: 25.5,7.5
+      parent: 2
 - proto: RadiationCollectorFullTank
   entities:
   - uid: 3811
@@ -39849,6 +39843,13 @@ entities:
     - type: Physics
       canCollide: False
     - type: InsideEntityStorage
+- proto: SpawnMechRipley
+  entities:
+  - uid: 7468
+    components:
+    - type: Transform
+      pos: 24.5,7.5
+      parent: 2
 - proto: SpawnMobAlexander
   entities:
   - uid: 4321
