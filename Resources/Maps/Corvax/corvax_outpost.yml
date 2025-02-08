@@ -82650,6 +82650,13 @@ entities:
     - type: Transform
       pos: -48.5,4.5
       parent: 2
+- proto: MechEquipmentGrabber
+  entities:
+  - uid: 14110
+    components:
+    - type: Transform
+      pos: -24.521828,41.44796
+      parent: 2
 - proto: MedalCase
   entities:
   - uid: 19571
@@ -94383,6 +94390,13 @@ entities:
       parent: 2
     - type: SpamEmitSound
       enabled: False
+- proto: SpawnMechRipley
+  entities:
+  - uid: 3312
+    components:
+    - type: Transform
+      pos: -24.5,40.5
+      parent: 2
 - proto: SpawnMobAlexander
   entities:
   - uid: 17031
@@ -94719,11 +94733,6 @@ entities:
       parent: 2
 - proto: SpawnPointCargoTechnician
   entities:
-  - uid: 3312
-    components:
-    - type: Transform
-      pos: -24.5,40.5
-      parent: 2
   - uid: 3426
     components:
     - type: Transform
@@ -94738,6 +94747,11 @@ entities:
     components:
     - type: Transform
       pos: -19.5,32.5
+      parent: 2
+  - uid: 13937
+    components:
+    - type: Transform
+      pos: -19.5,39.5
       parent: 2
 - proto: SpawnPointChaplain
   entities:
@@ -109808,11 +109822,6 @@ entities:
     - type: Transform
       pos: -54.5,-12.5
       parent: 2
-  - uid: 144910
-    components:
-    - type: Transform
-      pos: -53.5,-12.5
-      parent: 2
   - uid: 14535
     components:
     - type: Transform
@@ -110028,6 +110037,11 @@ entities:
     components:
     - type: Transform
       pos: 14.5,57.5
+      parent: 2
+  - uid: 144910
+    components:
+    - type: Transform
+      pos: -53.5,-12.5
       parent: 2
 - proto: WallReinforcedDiagonal
   entities:
