@@ -106,9 +106,8 @@ namespace Content.Server.Corvax.StationGoal
                 if (!fax.ReceiveStationGoal)
                     continue;
 
-                var largestGrid = _station.GetLargestGrid(stationData);
                 var grid = Transform(faxUid).GridUid;
-                if (grid is not null && largestGrid == grid.Value)
+                if (grid is not null)
                 {
                     _fax.Receive(faxUid, printout, null, fax);
                     foreach (var spawnEnt in goal.Spawns)
