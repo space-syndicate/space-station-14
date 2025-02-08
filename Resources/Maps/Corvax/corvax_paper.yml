@@ -55858,7 +55858,7 @@ entities:
     - type: Label
       currentLabel: кофейный ликёр
     - type: PressurizedSolution
-      sprayFizzinessThresholdRoll: 0.46758845
+      sprayFizzinessThresholdRoll: 0.32278365
     - type: NameModifier
       baseName: бутылка кофейного ликёра
     - type: ContainerContainer
@@ -56118,7 +56118,7 @@ entities:
     - type: Label
       currentLabel: ром
     - type: PressurizedSolution
-      sprayFizzinessThresholdRoll: 0.6627686
+      sprayFizzinessThresholdRoll: 0.47926846
     - type: NameModifier
       baseName: кубинский пряный ром капитана Пита
     - type: ContainerContainer
@@ -56160,7 +56160,7 @@ entities:
     - type: Label
       currentLabel: текила
     - type: PressurizedSolution
-      sprayFizzinessThresholdRoll: 0.81597775
+      sprayFizzinessThresholdRoll: 0.74576145
     - type: NameModifier
       baseName: бутылка текилы Каккаво гарантированного качества
     - type: ContainerContainer
@@ -56201,7 +56201,7 @@ entities:
     - type: Label
       currentLabel: вермут
     - type: PressurizedSolution
-      sprayFizzinessThresholdRoll: 0.050000224
+      sprayFizzinessThresholdRoll: 0.6705729
     - type: NameModifier
       baseName: бутылка вермута Золотой глаз
     - type: ContainerContainer
@@ -56224,7 +56224,7 @@ entities:
     - type: Label
       currentLabel: водка
     - type: PressurizedSolution
-      sprayFizzinessThresholdRoll: 0.18356583
+      sprayFizzinessThresholdRoll: 0.24260397
     - type: NameModifier
       baseName: бутылка водки
     - type: ContainerContainer
@@ -56274,7 +56274,7 @@ entities:
     - type: Label
       currentLabel: вино
     - type: PressurizedSolution
-      sprayFizzinessThresholdRoll: 0.18143766
+      sprayFizzinessThresholdRoll: 0.12404022
     - type: NameModifier
       baseName: особое двухбородое бородатое вино
     - type: ContainerContainer
@@ -59885,7 +59885,7 @@ entities:
       pos: 39.5,13.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -9009.188
+      secondsUntilStateChange: -9073.619
       state: Closing
     - type: DeviceNetwork
       deviceLists:
@@ -88072,6 +88072,13 @@ entities:
     - type: Transform
       pos: 84.5,6.5
       parent: 2
+- proto: MechEquipmentGrabberSmall
+  entities:
+  - uid: 8776
+    components:
+    - type: Transform
+      pos: 5.360653,5.677945
+      parent: 2
 - proto: MedicalBed
   entities:
   - uid: 12479
@@ -102068,6 +102075,13 @@ entities:
     components:
     - type: Transform
       pos: 50.5,32.5
+      parent: 2
+- proto: SpawnMechRipley
+  entities:
+  - uid: 8775
+    components:
+    - type: Transform
+      pos: 2.5,5.5
       parent: 2
 - proto: SpawnMobAlexander
   entities:
