@@ -87732,6 +87732,13 @@ entities:
     - type: Transform
       pos: 26.5,13.5
       parent: 16898
+- proto: MechEquipmentGrabber
+  entities:
+  - uid: 7823
+    components:
+    - type: Transform
+      pos: 38.4933,8.609407
+      parent: 2
 - proto: MedalCase
   entities:
   - uid: 11489
@@ -103731,6 +103738,13 @@ entities:
     - type: Transform
       rot: -1.5707963267948966 rad
       pos: -19.5,45.5
+      parent: 2
+- proto: SpawnMechRipley
+  entities:
+  - uid: 7822
+    components:
+    - type: Transform
+      pos: 36.5,6.5
       parent: 2
 - proto: SpawnMobAdultSlimesBlueAngry
   entities:
