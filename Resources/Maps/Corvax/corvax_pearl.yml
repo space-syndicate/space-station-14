@@ -33022,7 +33022,7 @@ entities:
       pos: 111.5,63.5
       parent: 1
     - type: Door
-      secondsUntilStateChange: -16095.21
+      secondsUntilStateChange: -16172.4795
       state: Opening
     - type: DeviceLinkSource
       lastSignals:
@@ -121519,6 +121519,13 @@ entities:
     - type: Transform
       pos: 73.5,56.5
       parent: 1
+- proto: MechEquipmentGrabber
+  entities:
+  - uid: 19049
+    components:
+    - type: Transform
+      pos: 105.49084,150.59575
+      parent: 1
 - proto: MedalCase
   entities:
   - uid: 13073
@@ -133273,6 +133280,13 @@ entities:
     components:
     - type: Transform
       pos: 127.5,45.5
+      parent: 1
+- proto: SpawnMechRipley
+  entities:
+  - uid: 19048
+    components:
+    - type: Transform
+      pos: 110.5,150.5
       parent: 1
 - proto: SpawnMobAdultSlimesBlue
   entities:
