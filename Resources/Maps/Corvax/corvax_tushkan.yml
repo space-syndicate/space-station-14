@@ -55405,6 +55405,13 @@ entities:
     - type: Transform
       pos: -39.5,9.5
       parent: 2
+- proto: MechEquipmentGrabber
+  entities:
+  - uid: 11000
+    components:
+    - type: Transform
+      pos: 23.420033,15.8433895
+      parent: 2
 - proto: MedalCase
   entities:
   - uid: 2674
@@ -68965,6 +68972,13 @@ entities:
     components:
     - type: Transform
       pos: -17.5,33.5
+      parent: 2
+- proto: SpawnMechRipley
+  entities:
+  - uid: 10999
+    components:
+    - type: Transform
+      pos: 18.5,16.5
       parent: 2
 - proto: SpawnMobBandito
   entities:
