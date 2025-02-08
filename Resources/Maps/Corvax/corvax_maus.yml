@@ -94983,6 +94983,13 @@ entities:
     - type: Transform
       pos: -50.5,-75.5
       parent: 2
+- proto: MechEquipmentGrabber
+  entities:
+  - uid: 19493
+    components:
+    - type: Transform
+      pos: -7.4846907,-51.407345
+      parent: 2
 - proto: MedicalBed
   entities:
   - uid: 938
@@ -102382,6 +102389,16 @@ entities:
     components:
     - type: Transform
       pos: -70.5,-34.5
+      parent: 2
+  - uid: 19491
+    components:
+    - type: Transform
+      pos: -7.5,-51.5
+      parent: 2
+  - uid: 19492
+    components:
+    - type: Transform
+      pos: -5.5,-51.5
       parent: 2
   - uid: 20038
     components:
@@ -111813,6 +111830,13 @@ entities:
     - type: Transform
       pos: 2.5,12.5
       parent: 17265
+- proto: SpawnMechRipley
+  entities:
+  - uid: 19490
+    components:
+    - type: Transform
+      pos: -11.5,-51.5
+      parent: 2
 - proto: SpawnMobBearSalvage
   entities:
   - uid: 16007
