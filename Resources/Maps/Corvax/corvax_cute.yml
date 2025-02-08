@@ -15857,7 +15857,7 @@ entities:
       pos: 362.5,401.5
       parent: 1
     - type: Door
-      secondsUntilStateChange: -41217.438
+      secondsUntilStateChange: -41251.277
       state: Opening
     - type: DeviceLinkSource
       lastSignals:
@@ -51363,13 +51363,6 @@ entities:
     - type: Transform
       pos: 357.5,397.5
       parent: 1
-- proto: DresserCaptainFilled
-  entities:
-  - uid: 617
-    components:
-    - type: Transform
-      pos: 365.5,411.5
-      parent: 1
 - proto: CaptainIDCard
   entities:
   - uid: 5760
@@ -64889,6 +64882,13 @@ entities:
     components:
     - type: Transform
       pos: 369.5,414.5
+      parent: 1
+- proto: DresserCaptainFilled
+  entities:
+  - uid: 617
+    components:
+    - type: Transform
+      pos: 365.5,411.5
       parent: 1
 - proto: DresserChiefEngineerFilled
   entities:
@@ -115584,6 +115584,13 @@ entities:
     - type: Transform
       pos: -4.5,-7.5
       parent: 23151
+- proto: MechEquipmentGrabber
+  entities:
+  - uid: 25142
+    components:
+    - type: Transform
+      pos: 370.54694,385.517
+      parent: 1
 - proto: MedalCase
   entities:
   - uid: 3202
@@ -131156,6 +131163,7 @@ entities:
     - type: EntityStorage
       air:
         volume: 200
+        immutable: False
         temperature: 293.14673
         moles:
         - 1.7459903
@@ -131171,12 +131179,32 @@ entities:
         - 0
         - 0
       closeSound: !type:SoundPathSpecifier
+        params:
+          variation: null
+          playOffsetSeconds: 0
+          loop: False
+          referenceDistance: 1
+          rolloffFactor: 1
+          maxDistance: 15
+          pitch: 1
+          volume: 0
         path: /Audio/Effects/closetclose.ogg
       openSound: !type:SoundPathSpecifier
+        params:
+          variation: null
+          playOffsetSeconds: 0
+          loop: False
+          referenceDistance: 1
+          rolloffFactor: 1
+          maxDistance: 15
+          pitch: 1
+          volume: 0
         path: /Audio/Effects/closetopen.ogg
     - type: ContainerContainer
       containers:
         entity_storage: !type:Container
+          showEnts: False
+          occludes: True
           ents:
           - 18288
           - 18286
@@ -132822,6 +132850,11 @@ entities:
     components:
     - type: Transform
       pos: 372.5,380.5
+      parent: 1
+  - uid: 25141
+    components:
+    - type: Transform
+      pos: 372.5,383.5
       parent: 1
 - proto: SpawnMobAlexander
   entities:
