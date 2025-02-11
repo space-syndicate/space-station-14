@@ -1055,6 +1055,7 @@
   id: SecurityOuterClothing
   name: loadout-group-security-outerclothing
   loadouts:
+  - ArmorVestSec # Corvax
   - ArmorVest
   - ArmorVestSlim
   - SecurityOfficerWintercoat
@@ -1110,8 +1111,8 @@
   id: SecurityCadetJumpsuit
   name: loadout-group-security-cadet-jumpsuit
   loadouts:
-  - RedJumpsuit
-  - RedJumpskirt
+  - SecurityJumpsuitGrey # Corvax-Resprite
+  - SecurityJumpskirtGrey # Corvax-Resprite
 
 - type: loadoutGroup
   id: SurvivalSecurity
