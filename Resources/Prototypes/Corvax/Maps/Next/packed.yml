@@ -31,6 +31,7 @@
             MedicalIntern: [ 2, 2 ]
             Paramedic: [ 1, 1 ]
             Chemist: [ 2, 2 ]
+            Surgeon: [ 1, 1 ]
             # science
             ResearchDirector: [ 1, 1 ]
             Scientist: [ 4, 4 ]
@@ -48,11 +49,12 @@
             # service
             HeadOfPersonnel: [ 1, 1 ]
             Bartender: [ 1, 1 ]
-            Botanist: [ 1, 2 ]
+            Botanist: [ 2, 2 ]
+            Boxer: [ 1, 1 ]
             Chaplain: [ 1, 1 ]
             Chef: [ 1, 1 ]
             Clown: [ 1, 1 ]
-            Janitor: [ 1, 2 ]
+            Janitor: [ 2, 2 ]
             Librarian: [ 1, 1 ]
             Mime: [ 1, 1 ]
             Musician: [ 1, 1 ]
