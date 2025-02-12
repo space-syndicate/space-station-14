@@ -19,6 +19,7 @@ using Robust.Server.Containers;
 using Robust.Server.GameObjects;
 using Robust.Shared.Random;
 using Robust.Shared.Utility;
+using Content.Shared._CorvaxNext.Skills;
 
 namespace Content.Server.Kitchen.EntitySystems;
 
@@ -33,6 +34,9 @@ public sealed class SharpSystem : EntitySystem
     [Dependency] private readonly TransformSystem _transform = default!;
     [Dependency] private readonly IRobustRandom _robustRandom = default!;
     [Dependency] private readonly ISharedAdminLogManager _adminLogger = default!;
+    [Dependency] private readonly SkillsSystem _skills = default!;
+
+    private const float ButcherDelayModifierWithoutSkill = 5;
 
     public override void Initialize()
     {
@@ -79,7 +83,7 @@ public sealed class SharpSystem : EntitySystem
         var needHand = user != knife;
 
         var doAfter =
-            new DoAfterArgs(EntityManager, user, sharp.ButcherDelayModifier * butcher.ButcherDelay, new SharpDoAfterEvent(), knife, target: target, used: knife)
+            new DoAfterArgs(EntityManager, user, sharp.ButcherDelayModifier * butcher.ButcherDelay * (_skills.HasSkill(user, Skills.Butchering) ? 1 : ButcherDelayModifierWithoutSkill), new SharpDoAfterEvent(), knife, target: target, used: knife) // Corvax-Next-Skills
             {
                 BreakOnDamage = true,
                 BreakOnMove = true,
