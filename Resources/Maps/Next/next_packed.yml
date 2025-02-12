@@ -72146,7 +72146,7 @@ entities:
       loadingNetworkDemand: 60.000237
       currentReceiving: 60.000237
       currentSupply: 60.000237
-- proto: подстанция стен
+- proto: SubstationWallBasic 
   entities:
   - uid: 11189
     components:
