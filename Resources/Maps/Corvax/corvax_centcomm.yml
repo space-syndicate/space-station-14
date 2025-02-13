@@ -9083,16 +9083,17 @@ entities:
           4,15:
             0: 30583
           4,24:
-            0: 136
+            0: 8
+            3: 128
           4,23:
             0: 33022
           5,24:
             0: 64667
           4,25:
-            3: 128
+            4: 128
           5,25:
             0: 239
-            3: 256
+            4: 256
           5,23:
             0: 45311
           6,24:
@@ -9112,10 +9113,10 @@ entities:
           8,25:
             0: 22015
           7,26:
-            3: 8
+            4: 8
           8,26:
             0: 5
-            3: 8
+            4: 8
           4,20:
             0: 61152
           4,21:
@@ -9188,7 +9189,7 @@ entities:
             0: 65523
           4,11:
             0: 59392
-            3: 32
+            4: 32
           5,12:
             0: 62703
           5,13:
@@ -9206,7 +9207,8 @@ entities:
           6,11:
             0: 65535
           7,12:
-            0: 56647
+            0: 56391
+            5: 256
           7,13:
             0: 3549
           7,14:
@@ -9250,7 +9252,8 @@ entities:
           9,20:
             0: 65526
           9,21:
-            0: 30479
+            0: 14095
+            3: 16384
           9,22:
             0: 62071
           9,19:
@@ -9349,13 +9352,13 @@ entities:
             0: 30503
           9,9:
             0: 34
-            3: 128
+            4: 128
           9,10:
             0: 32768
           10,8:
             0: 65520
           10,9:
-            3: 112
+            4: 112
             0: 57344
           10,10:
             0: 30719
@@ -9397,7 +9400,7 @@ entities:
             0: 8738
           13,24:
             0: 30579
-            4: 4
+            5: 4
           13,25:
             0: 887
           13,23:
@@ -9409,7 +9412,8 @@ entities:
           14,23:
             0: 62207
           15,24:
-            0: 61182
+            0: 61178
+            3: 4
           15,25:
             0: 239
           13,20:
@@ -9467,9 +9471,11 @@ entities:
           15,18:
             0: 60942
           15,15:
-            5: 20206
+            6: 20202
+            7: 4
           16,16:
-            0: 48059
+            0: 48057
+            8: 2
           16,17:
             0: 46011
           16,18:
@@ -9507,12 +9513,12 @@ entities:
           16,14:
             0: 61439
           16,15:
-            5: 816
+            6: 816
             0: 32768
           13,8:
             0: 65520
           13,9:
-            3: 240
+            4: 240
             0: 12288
           13,10:
             0: 63351
@@ -9571,11 +9577,14 @@ entities:
           17,22:
             0: 58999
           17,19:
-            0: 8191
+            0: 5631
+            3: 512
+            5: 2048
           18,20:
             0: 47931
           18,21:
-            0: 65528
+            5: 16
+            0: 65512
           18,22:
             0: 61695
           18,19:
@@ -9583,7 +9592,8 @@ entities:
           19,20:
             0: 47899
           19,21:
-            0: 49083
+            0: 16315
+            5: 32768
           19,22:
             0: 12339
           19,23:
@@ -9650,7 +9660,7 @@ entities:
             0: 44991
           19,11:
             0: 28672
-            3: 128
+            4: 128
           20,12:
             0: 65535
           20,13:
@@ -9664,16 +9674,16 @@ entities:
           21,20:
             0: 15
           21,21:
-            3: 16
+            4: 16
           21,19:
             0: 65535
           22,20:
             0: 7
-            3: 128
+            4: 128
           22,19:
             0: 65529
           23,20:
-            3: 1
+            4: 1
           21,16:
             0: 63643
           21,17:
@@ -9687,19 +9697,20 @@ entities:
           22,17:
             0: 4095
           22,18:
-            0: 56797
+            0: 40413
+            3: 16384
           22,15:
             0: 65520
           23,16:
             0: 13073
-            3: 64
+            4: 64
           23,17:
             0: 819
           23,18:
             0: 4369
           23,19:
             0: 272
-            3: 8192
+            4: 8192
           23,15:
             0: 4368
           21,12:
@@ -9710,7 +9721,7 @@ entities:
             0: 48051
           21,11:
             0: 4352
-            3: 32
+            4: 32
           22,13:
             0: 30576
           22,14:
@@ -9764,6 +9775,21 @@ entities:
           - 0
           - 0
         - volume: 2500
+          temperature: 293.14975
+          moles:
+          - 20.078888
+          - 75.53487
+          - 0
+          - 0
+          - 0
+          - 0
+          - 0
+          - 0
+          - 0
+          - 0
+          - 0
+          - 0
+        - volume: 2500
           immutable: True
           moles:
           - 0
@@ -9798,6 +9824,36 @@ entities:
           moles:
           - 21.824879
           - 82.10312
+          - 0
+          - 0
+          - 0
+          - 0
+          - 0
+          - 0
+          - 0
+          - 0
+          - 0
+          - 0
+        - volume: 2500
+          temperature: 235.34239
+          moles:
+          - 21.813705
+          - 82.06108
+          - 0
+          - 0
+          - 0
+          - 0
+          - 0
+          - 0
+          - 0
+          - 0
+          - 0
+          - 0
+        - volume: 2500
+          temperature: 288.86777
+          moles:
+          - 21.813705
+          - 82.06108
           - 0
           - 0
           - 0
@@ -13834,6 +13890,40 @@ entities:
     - type: Transform
       pos: 4.37714,72.39565
       parent: 2
+  - uid: 10293
+    components:
+    - type: MetaData
+      desc: Прямо из космомаркета.
+      name: Упаковка грибов
+    - type: Transform
+      parent: 10292
+    - type: Storage
+      storedItems:
+        10294:
+          position: 0,0
+          _rotation: South
+        10295:
+          position: 1,0
+          _rotation: South
+        10296:
+          position: 2,0
+          _rotation: South
+        10297:
+          position: 0,2
+          _rotation: East
+    - type: ContainerContainer
+      containers:
+        storagebase: !type:Container
+          showEnts: False
+          occludes: True
+          ents:
+          - 10294
+          - 10295
+          - 10296
+          - 10297
+    - type: Physics
+      canCollide: False
+    - type: InsideEntityStorage
 - proto: BoxFolderBlack
   entities:
   - uid: 542
@@ -26972,6 +27062,22 @@ entities:
       parent: 3088
     - type: Physics
       canCollide: False
+    - type: GroupExamine
+      group:
+      - hoverMessage: ""
+        contextText: verb-examine-group-other
+        icon: /Textures/Interface/examine-star.png
+        components:
+        - Armor
+        - ClothingSpeedModifier
+        entries:
+        - message: >-
+            Обеспечивает следующую защиту:
+
+            - [color=orange]Взрывной[/color] урон [color=white]к содержимому[/color] снижается на [color=lightblue]10%[/color].
+          priority: 0
+          component: Armor
+        title: null
     - type: InsideEntityStorage
 - proto: ClothingBeltChiefEngineerFilled
   entities:
@@ -27134,6 +27240,12 @@ entities:
       parent: 3131
     - type: Physics
       canCollide: False
+  - uid: 10289
+    components:
+    - type: Transform
+      parent: 4125
+    - type: Physics
+      canCollide: False
 - proto: ClothingHeadHatBunny
   entities:
   - uid: 3143
@@ -27276,6 +27388,15 @@ entities:
     - type: Transform
       pos: 76.67432,93.70365
       parent: 2
+- proto: ClothingHeadsetAltCentCom
+  entities:
+  - uid: 3400
+    components:
+    - type: Transform
+      parent: 3088
+    - type: Physics
+      canCollide: False
+    - type: InsideEntityStorage
 - proto: ClothingMaskBreathMedicalSecurity
   entities:
   - uid: 3074
@@ -27627,6 +27748,15 @@ entities:
     - type: Transform
       pos: 77.76807,93.6724
       parent: 2
+- proto: ClothingOuterArmorCentcomCarapace
+  entities:
+  - uid: 4487
+    components:
+    - type: Transform
+      parent: 3088
+    - type: Physics
+      canCollide: False
+    - type: InsideEntityStorage
 - proto: ClothingOuterArmorHeavy
   entities:
   - uid: 10252
@@ -28240,6 +28370,14 @@ entities:
     - type: Physics
       canCollide: False
     - type: InsideEntityStorage
+- proto: ClothingShoesGreenLizardskin
+  entities:
+  - uid: 10290
+    components:
+    - type: Transform
+      parent: 4125
+    - type: Physics
+      canCollide: False
 - proto: ClothingShoesSchoolWhite
   entities:
   - uid: 3273
@@ -28408,6 +28546,14 @@ entities:
       name: тактический комбинезон медика
     - type: Transform
       parent: 3070
+    - type: Physics
+      canCollide: False
+- proto: ClothingUniformJumpsuitCentcomAdmiral
+  entities:
+  - uid: 10291
+    components:
+    - type: Transform
+      parent: 4125
     - type: Physics
       canCollide: False
 - proto: ClothingUniformJumpsuitCentcomAgent
@@ -29215,31 +29361,49 @@ entities:
     - type: Transform
       pos: 38.5,87.5
       parent: 2
+    - type: EntityStorage
+      air:
+        volume: 200
+        immutable: False
+        temperature: 293.14673
+        moles:
+        - 1.7459903
+        - 6.568249
+        - 0
+        - 0
+        - 0
+        - 0
+        - 0
+        - 0
+        - 0
+        - 0
+        - 0
+        - 0
     - type: ContainerContainer
       containers:
         entity_storage: !type:Container
           showEnts: False
           occludes: True
           ents:
-          - 1728
-          - 1727
-          - 1721
-          - 1735
-          - 1729
-          - 1725
-          - 1734
-          - 1738
-          - 1737
-          - 1732
-          - 1731
-          - 1723
-          - 1722
-          - 1733
-          - 1730
-          - 1720
-          - 1724
-          - 1736
           - 1726
+          - 1736
+          - 1724
+          - 1720
+          - 1730
+          - 1733
+          - 1722
+          - 1723
+          - 1731
+          - 1732
+          - 1737
+          - 1738
+          - 1734
+          - 1725
+          - 1729
+          - 1735
+          - 1721
+          - 1727
+          - 1728
         paper_label: !type:ContainerSlot
           showEnts: False
           occludes: True
@@ -29271,11 +29435,6 @@ entities:
         - 0
 - proto: CrateFreezer
   entities:
-  - uid: 3400
-    components:
-    - type: Transform
-      pos: 62.5,60.5
-      parent: 2
   - uid: 3401
     components:
     - type: Transform
@@ -29309,8 +29468,8 @@ entities:
         immutable: False
         temperature: 293.14673
         moles:
-        - 1.7459903
-        - 6.568249
+        - 1.8856695
+        - 7.0937095
         - 0
         - 0
         - 0
@@ -29327,30 +29486,93 @@ entities:
           showEnts: False
           occludes: True
           ents:
-          - 3419
-          - 3418
-          - 3417
-          - 3416
-          - 3429
-          - 3415
-          - 3428
-          - 3427
-          - 3426
-          - 3425
-          - 3424
-          - 3414
-          - 3423
-          - 3413
-          - 3412
-          - 3411
-          - 3410
-          - 3422
-          - 3421
           - 3420
+          - 3421
+          - 3422
+          - 3410
+          - 3411
+          - 3412
+          - 3413
+          - 3423
+          - 3414
+          - 3424
+          - 3425
+          - 3426
+          - 3427
+          - 3428
+          - 3415
+          - 3429
+          - 3416
+          - 3417
+          - 3418
+          - 3419
         paper_label: !type:ContainerSlot
           showEnts: False
           occludes: True
           ent: 3430
+  - uid: 6798
+    components:
+    - type: Transform
+      pos: 62.5,60.5
+      parent: 2
+    - type: EntityStorage
+      air:
+        volume: 200
+        immutable: False
+        temperature: 235.34242
+        moles:
+        - 1.8968438
+        - 7.1357465
+        - 0
+        - 0
+        - 0
+        - 0
+        - 0
+        - 0
+        - 0
+        - 0
+        - 0
+        - 0
+    - type: ContainerContainer
+      containers:
+        entity_storage: !type:Container
+          showEnts: False
+          occludes: True
+          ents:
+          - 10287
+          - 10259
+          - 10286
+          - 10278
+          - 10260
+          - 10277
+          - 10269
+          - 10268
+          - 10279
+          - 10274
+          - 10271
+          - 10273
+          - 10267
+          - 10270
+          - 10266
+          - 10280
+          - 10262
+          - 10261
+          - 10263
+          - 10264
+          - 10282
+          - 10281
+          - 10283
+          - 10275
+          - 10276
+          - 10285
+          - 10265
+          - 10272
+          - 10092
+          - 10284
+        paper_label: !type:ContainerSlot
+          showEnts: False
+          occludes: True
+          ent: null
   - uid: 10245
     components:
     - type: Transform
@@ -29478,6 +29700,24 @@ entities:
     - type: Transform
       pos: 90.5,75.5
       parent: 2
+    - type: EntityStorage
+      air:
+        volume: 200
+        immutable: False
+        temperature: 293.14673
+        moles:
+        - 1.7459903
+        - 6.568249
+        - 0
+        - 0
+        - 0
+        - 0
+        - 0
+        - 0
+        - 0
+        - 0
+        - 0
+        - 0
 - proto: CrateServiceJanitorialSupplies
   entities:
   - uid: 593
@@ -30810,6 +31050,12 @@ entities:
       rot: -1.5707963267948966 rad
       pos: 62.5,60.5
       parent: 2
+  - uid: 10338
+    components:
+    - type: Transform
+      rot: 1.5707963267948966 rad
+      pos: 57.5,97.5
+      parent: 2
 - proto: DisposalJunction
   entities:
   - uid: 3633
@@ -30897,6 +31143,12 @@ entities:
     - type: Transform
       rot: -1.5707963267948966 rad
       pos: 46.5,83.5
+      parent: 2
+  - uid: 10288
+    components:
+    - type: Transform
+      rot: -1.5707963267948966 rad
+      pos: 57.5,92.5
       parent: 2
 - proto: DisposalJunctionFlipped
   entities:
@@ -31131,12 +31383,6 @@ entities:
     components:
     - type: Transform
       pos: 53.5,93.5
-      parent: 2
-  - uid: 3688
-    components:
-    - type: Transform
-      rot: -1.5707963267948966 rad
-      pos: 57.5,92.5
       parent: 2
   - uid: 3689
     components:
@@ -33119,6 +33365,60 @@ entities:
       rot: 3.141592653589793 rad
       pos: 59.5,63.5
       parent: 2
+  - uid: 10328
+    components:
+    - type: Transform
+      rot: 3.141592653589793 rad
+      pos: 57.5,93.5
+      parent: 2
+  - uid: 10329
+    components:
+    - type: Transform
+      rot: 3.141592653589793 rad
+      pos: 57.5,94.5
+      parent: 2
+  - uid: 10330
+    components:
+    - type: Transform
+      rot: 3.141592653589793 rad
+      pos: 57.5,95.5
+      parent: 2
+  - uid: 10331
+    components:
+    - type: Transform
+      rot: 3.141592653589793 rad
+      pos: 57.5,96.5
+      parent: 2
+  - uid: 10332
+    components:
+    - type: Transform
+      rot: 1.5707963267948966 rad
+      pos: 58.5,97.5
+      parent: 2
+  - uid: 10333
+    components:
+    - type: Transform
+      rot: 1.5707963267948966 rad
+      pos: 60.5,97.5
+      parent: 2
+  - uid: 10334
+    components:
+    - type: Transform
+      rot: 1.5707963267948966 rad
+      pos: 61.5,97.5
+      parent: 2
+  - uid: 10335
+    components:
+    - type: Transform
+      rot: 1.5707963267948966 rad
+      pos: 62.5,97.5
+      parent: 2
+  - uid: 10336
+    components:
+    - type: Transform
+      rot: 1.5707963267948966 rad
+      pos: 59.5,97.5
+      parent: 2
 - proto: DisposalTrunk
   entities:
   - uid: 4035
@@ -33363,6 +33663,12 @@ entities:
     - type: Transform
       rot: -1.5707963267948966 rad
       pos: 59.5,83.5
+      parent: 2
+  - uid: 10337
+    components:
+    - type: Transform
+      rot: -1.5707963267948966 rad
+      pos: 63.5,97.5
       parent: 2
 - proto: DisposalUnit
   entities:
@@ -33613,6 +33919,17 @@ entities:
     - type: Transform
       pos: 74.5,46.5
       parent: 2
+- proto: DoorRemoteAll
+  entities:
+  - uid: 3688
+    components:
+    - type: MetaData
+      name: пульт от шлюзов цк
+    - type: Transform
+      parent: 3088
+    - type: Physics
+      canCollide: False
+    - type: InsideEntityStorage
 - proto: DoorRemoteService
   entities:
   - uid: 4124
@@ -33832,6 +34149,26 @@ entities:
     - type: Transform
       pos: 82.5,82.5
       parent: 2
+    - type: Storage
+      storedItems:
+        10289:
+          position: 0,0
+          _rotation: East
+        10290:
+          position: 0,1
+          _rotation: South
+        10291:
+          position: 2,1
+          _rotation: South
+    - type: ContainerContainer
+      containers:
+        storagebase: !type:Container
+          showEnts: False
+          occludes: True
+          ents:
+          - 10289
+          - 10290
+          - 10291
 - proto: DresserFilled
   entities:
   - uid: 4126
@@ -34154,6 +34491,26 @@ entities:
       rot: -6.283185307179586 rad
       pos: 2.8006134,63.628975
       parent: 2
+- proto: DrinkIceGlass
+  entities:
+  - uid: 18761
+    components:
+    - type: Transform
+      parent: 18760
+    - type: Physics
+      canCollide: False
+  - uid: 18762
+    components:
+    - type: Transform
+      parent: 18760
+    - type: Physics
+      canCollide: False
+  - uid: 18763
+    components:
+    - type: Transform
+      parent: 18760
+    - type: Physics
+      canCollide: False
 - proto: DrinkIrishCoffeeGlass
   entities:
   - uid: 4150
@@ -34550,6 +34907,8 @@ entities:
     - type: Transform
       pos: 82.5,71.5
       parent: 2
+    - type: FaxMachine
+      name: Центком
 - proto: FaxMachineSyndie
   entities:
   - uid: 4211
@@ -37385,6 +37744,43 @@ entities:
     - type: Transform
       pos: 48.47087,98.56412
       parent: 2
+- proto: FoodBanana
+  entities:
+  - uid: 10298
+    components:
+    - type: Transform
+      parent: 10292
+    - type: Physics
+      canCollide: False
+    - type: InsideEntityStorage
+  - uid: 10299
+    components:
+    - type: Transform
+      parent: 10292
+    - type: Physics
+      canCollide: False
+    - type: InsideEntityStorage
+  - uid: 10300
+    components:
+    - type: Transform
+      parent: 10292
+    - type: Physics
+      canCollide: False
+    - type: InsideEntityStorage
+  - uid: 10301
+    components:
+    - type: Transform
+      parent: 10292
+    - type: Physics
+      canCollide: False
+    - type: InsideEntityStorage
+  - uid: 10302
+    components:
+    - type: Transform
+      parent: 10292
+    - type: Physics
+      canCollide: False
+    - type: InsideEntityStorage
 - proto: FoodBoxDonkpocketPizza
   entities:
   - uid: 4474
@@ -37481,12 +37877,92 @@ entities:
       parent: 2
 - proto: FoodCartCold
   entities:
-  - uid: 4487
+  - uid: 18760
     components:
     - type: Transform
       rot: -1.5707963267948966 rad
       pos: 65.5,62.5
       parent: 2
+    - type: ContainerContainer
+      containers:
+        storagebase: !type:Container
+          showEnts: False
+          occludes: True
+          ents:
+          - 18772
+          - 18773
+          - 18769
+          - 18767
+          - 18768
+          - 18777
+          - 18766
+          - 18765
+          - 18771
+          - 18770
+          - 18774
+          - 18776
+          - 18764
+          - 18761
+          - 18762
+          - 18763
+          - 18775
+          - 15629
+    - type: Storage
+      storedItems:
+        18772:
+          position: 0,0
+          _rotation: South
+        18773:
+          position: 1,0
+          _rotation: South
+        18769:
+          position: 2,0
+          _rotation: South
+        18768:
+          position: 4,0
+          _rotation: South
+        18767:
+          position: 3,0
+          _rotation: South
+        18777:
+          position: 5,0
+          _rotation: South
+        18766:
+          position: 6,0
+          _rotation: South
+        18765:
+          position: 7,0
+          _rotation: South
+        18771:
+          position: 0,2
+          _rotation: South
+        18770:
+          position: 1,2
+          _rotation: South
+        18774:
+          position: 2,2
+          _rotation: South
+        18776:
+          position: 3,2
+          _rotation: South
+        18764:
+          position: 4,2
+          _rotation: South
+        18761:
+          position: 5,2
+          _rotation: South
+        18762:
+          position: 6,2
+          _rotation: South
+        18763:
+          position: 7,2
+          _rotation: South
+        18775:
+          position: 0,4
+          _rotation: East
+        15629:
+          position: 2,4
+          _rotation: East
 - proto: FoodCartHot
   entities:
   - uid: 4488
@@ -37511,6 +37987,24 @@ entities:
     - type: Transform
       pos: 65.632126,69.709404
       parent: 2
+- proto: FoodChiliPepper
+  entities:
+  - uid: 10092
+    components:
+    - type: Transform
+      parent: 6798
+    - type: Physics
+      canCollide: False
+    - type: InsideEntityStorage
+- proto: FoodChillyPepper
+  entities:
+  - uid: 10259
+    components:
+    - type: Transform
+      parent: 6798
+    - type: Physics
+      canCollide: False
+    - type: InsideEntityStorage
 - proto: FoodCondimentBottleBBQ
   entities:
   - uid: 4492
@@ -37518,6 +38012,14 @@ entities:
     - type: Transform
       pos: 54.54934,98.370605
       parent: 2
+- proto: FoodCondimentBottleColdsauce
+  entities:
+  - uid: 18764
+    components:
+    - type: Transform
+      parent: 18760
+    - type: Physics
+      canCollide: False
 - proto: FoodCondimentBottleHotsauce
   entities:
   - uid: 4493
@@ -37553,6 +38055,164 @@ entities:
     - type: Transform
       pos: 63.482906,70.474304
       parent: 2
+- proto: FoodEggplant
+  entities:
+  - uid: 10260
+    components:
+    - type: Transform
+      parent: 6798
+    - type: Physics
+      canCollide: False
+    - type: InsideEntityStorage
+  - uid: 10261
+    components:
+    - type: Transform
+      parent: 6798
+    - type: Physics
+      canCollide: False
+    - type: InsideEntityStorage
+  - uid: 10262
+    components:
+    - type: Transform
+      parent: 6798
+    - type: Physics
+      canCollide: False
+    - type: InsideEntityStorage
+  - uid: 10263
+    components:
+    - type: Transform
+      parent: 6798
+    - type: Physics
+      canCollide: False
+    - type: InsideEntityStorage
+- proto: FoodFlyAmanita
+  entities:
+  - uid: 10303
+    components:
+    - type: Transform
+      parent: 10292
+    - type: Physics
+      canCollide: False
+    - type: InsideEntityStorage
+  - uid: 10304
+    components:
+    - type: Transform
+      parent: 10292
+    - type: Physics
+      canCollide: False
+    - type: InsideEntityStorage
+- proto: FoodFrozenCornuto
+  entities:
+  - uid: 18765
+    components:
+    - type: Transform
+      parent: 18760
+    - type: Physics
+      canCollide: False
+- proto: FoodFrozenFreezy
+  entities:
+  - uid: 18766
+    components:
+    - type: Transform
+      parent: 18760
+    - type: Physics
+      canCollide: False
+- proto: FoodFrozenPopsicleBerry
+  entities:
+  - uid: 18767
+    components:
+    - type: Transform
+      parent: 18760
+    - type: Physics
+      canCollide: False
+- proto: FoodFrozenPopsicleJumbo
+  entities:
+  - uid: 18768
+    components:
+    - type: Transform
+      parent: 18760
+    - type: Physics
+      canCollide: False
+- proto: FoodFrozenPopsicleOrange
+  entities:
+  - uid: 18769
+    components:
+    - type: Transform
+      parent: 18760
+    - type: Physics
+      canCollide: False
+- proto: FoodFrozenSandwich
+  entities:
+  - uid: 18770
+    components:
+    - type: Transform
+      parent: 18760
+    - type: Physics
+      canCollide: False
+- proto: FoodFrozenSandwichStrawberry
+  entities:
+  - uid: 18771
+    components:
+    - type: Transform
+      parent: 18760
+    - type: Physics
+      canCollide: False
+- proto: FoodFrozenSnowcone
+  entities:
+  - uid: 18772
+    components:
+    - type: Transform
+      parent: 18760
+    - type: Physics
+      canCollide: False
+- proto: FoodFrozenSnowconeBase
+  entities:
+  - uid: 18773
+    components:
+    - type: Transform
+      parent: 18760
+    - type: Physics
+      canCollide: False
+- proto: FoodFrozenSnowconeBerry
+  entities:
+  - uid: 18774
+    components:
+    - type: Transform
+      parent: 18760
+    - type: Physics
+      canCollide: False
+- proto: FoodFrozenSnowconeClown
+  entities:
+  - uid: 18775
+    components:
+    - type: Transform
+      parent: 18760
+    - type: Physics
+      canCollide: False
+- proto: FoodFrozenSnowconeFruit
+  entities:
+  - uid: 18776
+    components:
+    - type: Transform
+      parent: 18760
+    - type: Physics
+      canCollide: False
+- proto: FoodFrozenSnowconeMime
+  entities:
+  - uid: 15629
+    components:
+    - type: Transform
+      parent: 18760
+    - type: Physics
+      canCollide: False
+- proto: FoodFrozenSundae
+  entities:
+  - uid: 18777
+    components:
+    - type: Transform
+      parent: 18760
+    - type: Physics
+      canCollide: False
 - proto: FoodGrape
   entities:
   - uid: 4498
@@ -37561,6 +38221,73 @@ entities:
       rot: -1.5707963267948966 rad
       pos: 4.922535,60.618492
       parent: 2
+  - uid: 10305
+    components:
+    - type: Transform
+      parent: 10292
+    - type: Physics
+      canCollide: False
+    - type: InsideEntityStorage
+  - uid: 10306
+    components:
+    - type: Transform
+      parent: 10292
+    - type: Physics
+      canCollide: False
+    - type: InsideEntityStorage
+  - uid: 10307
+    components:
+    - type: Transform
+      parent: 10292
+    - type: Physics
+      canCollide: False
+    - type: InsideEntityStorage
+  - uid: 10308
+    components:
+    - type: Transform
+      parent: 10292
+    - type: Physics
+      canCollide: False
+    - type: InsideEntityStorage
+  - uid: 10309
+    components:
+    - type: Transform
+      parent: 10292
+    - type: Physics
+      canCollide: False
+    - type: InsideEntityStorage
+- proto: FoodLemon
+  entities:
+  - uid: 10310
+    components:
+    - type: Transform
+      parent: 10292
+    - type: Physics
+      canCollide: False
+    - type: InsideEntityStorage
+  - uid: 10311
+    components:
+    - type: Transform
+      parent: 10292
+    - type: Physics
+      canCollide: False
+    - type: InsideEntityStorage
+- proto: FoodLime
+  entities:
+  - uid: 10312
+    components:
+    - type: Transform
+      parent: 10292
+    - type: Physics
+      canCollide: False
+    - type: InsideEntityStorage
+  - uid: 10313
+    components:
+    - type: Transform
+      parent: 10292
+    - type: Physics
+      canCollide: False
+    - type: InsideEntityStorage
 - proto: FoodMealFries
   entities:
   - uid: 4468
@@ -37598,6 +38325,40 @@ entities:
     - type: Transform
       pos: 63.439056,72.4285
       parent: 2
+- proto: FoodMeatCorgi
+  entities:
+  - uid: 10264
+    components:
+    - type: Transform
+      parent: 6798
+    - type: Physics
+      canCollide: False
+    - type: InsideEntityStorage
+- proto: FoodMeatDragon
+  entities:
+  - uid: 10265
+    components:
+    - type: Transform
+      parent: 6798
+    - type: Physics
+      canCollide: False
+    - type: InsideEntityStorage
+- proto: FoodMeatDuck
+  entities:
+  - uid: 10266
+    components:
+    - type: Transform
+      parent: 6798
+    - type: Physics
+      canCollide: False
+    - type: InsideEntityStorage
+  - uid: 10267
+    components:
+    - type: Transform
+      parent: 6798
+    - type: Physics
+      canCollide: False
+    - type: InsideEntityStorage
 - proto: FoodMeatFish
   entities:
   - uid: 4501
@@ -37605,6 +38366,193 @@ entities:
     - type: Transform
       pos: 61.50583,62.399174
       parent: 2
+- proto: FoodMeatHuman
+  entities:
+  - uid: 10268
+    components:
+    - type: Transform
+      parent: 6798
+    - type: Physics
+      canCollide: False
+    - type: InsideEntityStorage
+  - uid: 10269
+    components:
+    - type: Transform
+      parent: 6798
+    - type: Physics
+      canCollide: False
+    - type: InsideEntityStorage
+- proto: FoodMeatRat
+  entities:
+  - uid: 10270
+    components:
+    - type: Transform
+      parent: 6798
+    - type: Physics
+      canCollide: False
+    - type: InsideEntityStorage
+  - uid: 10271
+    components:
+    - type: Transform
+      parent: 6798
+    - type: Physics
+      canCollide: False
+    - type: InsideEntityStorage
+- proto: FoodMeatSalami
+  entities:
+  - uid: 10272
+    components:
+    - type: Transform
+      parent: 6798
+    - type: Physics
+      canCollide: False
+    - type: InsideEntityStorage
+- proto: FoodMeatSnake
+  entities:
+  - uid: 10273
+    components:
+    - type: Transform
+      parent: 6798
+    - type: Physics
+      canCollide: False
+    - type: InsideEntityStorage
+  - uid: 10274
+    components:
+    - type: Transform
+      parent: 6798
+    - type: Physics
+      canCollide: False
+    - type: InsideEntityStorage
+- proto: FoodMimana
+  entities:
+  - uid: 10314
+    components:
+    - type: Transform
+      parent: 10292
+    - type: Physics
+      canCollide: False
+    - type: InsideEntityStorage
+- proto: FoodMushroom
+  entities:
+  - uid: 10294
+    components:
+    - type: Transform
+      parent: 10293
+    - type: Physics
+      canCollide: False
+  - uid: 10295
+    components:
+    - type: Transform
+      parent: 10293
+    - type: Physics
+      canCollide: False
+  - uid: 10296
+    components:
+    - type: Transform
+      parent: 10293
+    - type: Physics
+      canCollide: False
+  - uid: 10297
+    components:
+    - type: Transform
+      parent: 10293
+    - type: Physics
+      canCollide: False
+  - uid: 10315
+    components:
+    - type: Transform
+      parent: 10292
+    - type: Physics
+      canCollide: False
+    - type: InsideEntityStorage
+  - uid: 10316
+    components:
+    - type: Transform
+      parent: 10292
+    - type: Physics
+      canCollide: False
+    - type: InsideEntityStorage
+  - uid: 10317
+    components:
+    - type: Transform
+      parent: 10292
+    - type: Physics
+      canCollide: False
+    - type: InsideEntityStorage
+  - uid: 10318
+    components:
+    - type: Transform
+      parent: 10292
+    - type: Physics
+      canCollide: False
+    - type: InsideEntityStorage
+  - uid: 10319
+    components:
+    - type: Transform
+      parent: 10292
+    - type: Physics
+      canCollide: False
+    - type: InsideEntityStorage
+  - uid: 10320
+    components:
+    - type: Transform
+      parent: 10292
+    - type: Physics
+      canCollide: False
+    - type: InsideEntityStorage
+- proto: FoodOnion
+  entities:
+  - uid: 10275
+    components:
+    - type: Transform
+      parent: 6798
+    - type: Physics
+      canCollide: False
+    - type: InsideEntityStorage
+  - uid: 10276
+    components:
+    - type: Transform
+      parent: 6798
+    - type: Physics
+      canCollide: False
+    - type: InsideEntityStorage
+  - uid: 10277
+    components:
+    - type: Transform
+      parent: 6798
+    - type: Physics
+      canCollide: False
+    - type: InsideEntityStorage
+  - uid: 10278
+    components:
+    - type: Transform
+      parent: 6798
+    - type: Physics
+      canCollide: False
+    - type: InsideEntityStorage
+- proto: FoodOrange
+  entities:
+  - uid: 10321
+    components:
+    - type: Transform
+      parent: 10292
+    - type: Physics
+      canCollide: False
+    - type: InsideEntityStorage
+  - uid: 10322
+    components:
+    - type: Transform
+      parent: 10292
+    - type: Physics
+      canCollide: False
+    - type: InsideEntityStorage
+  - uid: 10323
+    components:
+    - type: Transform
+      parent: 10292
+    - type: Physics
+      canCollide: False
+    - type: InsideEntityStorage
 - proto: FoodPiePlump
   entities:
   - uid: 4502
@@ -37619,6 +38567,15 @@ entities:
     - type: Transform
       pos: 63.49935,72.86493
       parent: 2
+- proto: FoodPineapple
+  entities:
+  - uid: 10324
+    components:
+    - type: Transform
+      parent: 10292
+    - type: Physics
+      canCollide: False
+    - type: InsideEntityStorage
 - proto: FoodPineappleSlice
   entities:
   - uid: 4504
@@ -37708,6 +38665,52 @@ entities:
     - type: Transform
       pos: 25.310884,74.683304
       parent: 2
+- proto: FoodPotato
+  entities:
+  - uid: 10279
+    components:
+    - type: Transform
+      parent: 6798
+    - type: Physics
+      canCollide: False
+    - type: InsideEntityStorage
+  - uid: 10280
+    components:
+    - type: Transform
+      parent: 6798
+    - type: Physics
+      canCollide: False
+    - type: InsideEntityStorage
+  - uid: 10281
+    components:
+    - type: Transform
+      parent: 6798
+    - type: Physics
+      canCollide: False
+    - type: InsideEntityStorage
+  - uid: 10282
+    components:
+    - type: Transform
+      parent: 6798
+    - type: Physics
+      canCollide: False
+    - type: InsideEntityStorage
+  - uid: 10283
+    components:
+    - type: Transform
+      parent: 6798
+    - type: Physics
+      canCollide: False
+    - type: InsideEntityStorage
+- proto: FoodPumpkin
+  entities:
+  - uid: 10284
+    components:
+    - type: Transform
+      parent: 6798
+    - type: Physics
+      canCollide: False
+    - type: InsideEntityStorage
 - proto: FoodShakerPepper
   entities:
   - uid: 4513
@@ -37760,6 +38763,43 @@ entities:
     - type: Transform
       pos: 65.179,69.334404
       parent: 2
+  - uid: 10285
+    components:
+    - type: Transform
+      parent: 6798
+    - type: Physics
+      canCollide: False
+    - type: InsideEntityStorage
+  - uid: 10286
+    components:
+    - type: Transform
+      parent: 6798
+    - type: Physics
+      canCollide: False
+    - type: InsideEntityStorage
+  - uid: 10287
+    components:
+    - type: Transform
+      parent: 6798
+    - type: Physics
+      canCollide: False
+    - type: InsideEntityStorage
+- proto: FoodWatermelon
+  entities:
+  - uid: 10325
+    components:
+    - type: Transform
+      parent: 10292
+    - type: Physics
+      canCollide: False
+    - type: InsideEntityStorage
+  - uid: 10326
+    components:
+    - type: Transform
+      parent: 10292
+    - type: Physics
+      canCollide: False
+    - type: InsideEntityStorage
 - proto: Fork
   entities:
   - uid: 4519
@@ -54630,8 +55670,8 @@ entities:
         immutable: False
         temperature: 293.14673
         moles:
-        - 1.7459903
-        - 6.568249
+        - 1.8856695
+        - 7.0937095
         - 0
         - 0
         - 0
@@ -54648,13 +55688,13 @@ entities:
           showEnts: False
           occludes: True
           ents:
-          - 3106
-          - 3101
-          - 3100
-          - 3105
-          - 3103
-          - 3104
           - 3102
+          - 3104
+          - 3103
+          - 3105
+          - 3100
+          - 3101
+          - 3106
         paper_label: !type:ContainerSlot
           showEnts: False
           occludes: True
@@ -54684,17 +55724,35 @@ entities:
     - type: Transform
       pos: 19.5,97.5
       parent: 2
+    - type: EntityStorage
+      air:
+        volume: 200
+        immutable: False
+        temperature: 293.14673
+        moles:
+        - 1.7459903
+        - 6.568249
+        - 0
+        - 0
+        - 0
+        - 0
+        - 0
+        - 0
+        - 0
+        - 0
+        - 0
+        - 0
     - type: ContainerContainer
       containers:
         entity_storage: !type:Container
           showEnts: False
           occludes: True
           ents:
-          - 6687
-          - 6688
-          - 6689
-          - 6686
           - 6690
+          - 6686
+          - 6689
+          - 6688
+          - 6687
         paper_label: !type:ContainerSlot
           showEnts: False
           occludes: True
@@ -54855,9 +55913,15 @@ entities:
   entities:
   - uid: 6716
     components:
+    - type: MetaData
+      name: квантовый голопад (Центком)
     - type: Transform
       pos: 82.5,67.5
       parent: 2
+    - type: Label
+      currentLabel: Центком
+    - type: NameModifier
+      baseName: квантовый голопад
 - proto: HospitalCurtainsOpen
   entities:
   - uid: 6717
@@ -55700,11 +56764,69 @@ entities:
       parent: 2
 - proto: LockerFreezer
   entities:
-  - uid: 6798
+  - uid: 10292
     components:
     - type: Transform
       pos: 65.5,64.5
       parent: 2
+    - type: EntityStorage
+      air:
+        volume: 200
+        immutable: False
+        temperature: 288.8673
+        moles:
+        - 1.8968438
+        - 7.1357465
+        - 0
+        - 0
+        - 0
+        - 0
+        - 0
+        - 0
+        - 0
+        - 0
+        - 0
+        - 0
+    - type: ContainerContainer
+      containers:
+        entity_storage: !type:Container
+          showEnts: False
+          occludes: True
+          ents:
+          - 10323
+          - 10322
+          - 10324
+          - 10326
+          - 10325
+          - 10302
+          - 10298
+          - 10320
+          - 10293
+          - 10319
+          - 10318
+          - 10317
+          - 10316
+          - 10315
+          - 10308
+          - 10304
+          - 10299
+          - 10303
+          - 10300
+          - 10301
+          - 10321
+          - 10307
+          - 10306
+          - 10305
+          - 10309
+          - 10314
+          - 10312
+          - 10313
+          - 10310
+          - 10311
+        paper_label: !type:ContainerSlot
+          showEnts: False
+          occludes: True
+          ent: null
 - proto: LockerFreezerBase
   entities:
   - uid: 4465
@@ -55815,8 +56937,8 @@ entities:
         immutable: False
         temperature: 293.14673
         moles:
-        - 1.7459903
-        - 6.568249
+        - 1.8856695
+        - 7.0937095
         - 0
         - 0
         - 0
@@ -55833,16 +56955,19 @@ entities:
           showEnts: False
           occludes: True
           ents:
-          - 3089
-          - 3093
           - 3094
-          - 3098
-          - 3091
-          - 3090
-          - 3092
-          - 3095
-          - 3096
+          - 3093
+          - 3089
+          - 4487
           - 3097
+          - 3096
+          - 3095
+          - 3092
+          - 3090
+          - 3688
+          - 3400
+          - 3091
+          - 3098
         paper_label: !type:ContainerSlot
           showEnts: False
           occludes: True
@@ -64378,31 +65503,37 @@ entities:
   - uid: 8086
     components:
     - type: Transform
+      rot: 3.141592653589793 rad
       pos: 72.5,61.5
       parent: 2
   - uid: 8087
     components:
     - type: Transform
+      rot: 3.141592653589793 rad
       pos: 73.5,61.5
       parent: 2
   - uid: 8088
     components:
     - type: Transform
+      rot: 3.141592653589793 rad
       pos: 74.5,61.5
       parent: 2
   - uid: 8089
     components:
     - type: Transform
+      rot: 3.141592653589793 rad
       pos: 75.5,61.5
       parent: 2
   - uid: 8090
     components:
     - type: Transform
+      rot: 3.141592653589793 rad
       pos: 77.5,61.5
       parent: 2
   - uid: 8091
     components:
     - type: Transform
+      rot: 3.141592653589793 rad
       pos: 76.5,61.5
       parent: 2
   - uid: 8092
@@ -76279,6 +77410,45 @@ entities:
         immutable: False
         temperature: 293.14673
         moles:
+        - 1.8856695
+        - 7.0937095
+        - 0
+        - 0
+        - 0
+        - 0
+        - 0
+        - 0
+        - 0
+        - 0
+        - 0
+        - 0
+    - type: ContainerContainer
+      containers:
+        entity_storage: !type:Container
+          showEnts: False
+          occludes: True
+          ents:
+          - 3229
+          - 3233
+          - 3230
+          - 3231
+          - 3232
+          - 3234
+        paper_label: !type:ContainerSlot
+          showEnts: False
+          occludes: True
+          ent: null
+  - uid: 3259
+    components:
+    - type: Transform
+      pos: 69.74701,78.49463
+      parent: 2
+    - type: EntityStorage
+      air:
+        volume: 200
+        immutable: False
+        temperature: 293.14673
+        moles:
         - 1.7459903
         - 6.568249
         - 0
@@ -76297,32 +77467,11 @@ entities:
           showEnts: False
           occludes: True
           ents:
-          - 3234
-          - 3232
-          - 3231
-          - 3230
-          - 3233
-          - 3229
-        paper_label: !type:ContainerSlot
-          showEnts: False
-          occludes: True
-          ent: null
-  - uid: 3259
-    components:
-    - type: Transform
-      pos: 69.74701,78.49463
-      parent: 2
-    - type: ContainerContainer
-      containers:
-        entity_storage: !type:Container
-          showEnts: False
-          occludes: True
-          ents:
-          - 3263
-          - 3264
-          - 3262
-          - 3260
           - 3261
+          - 3260
+          - 3262
+          - 3264
+          - 3263
         paper_label: !type:ContainerSlot
           showEnts: False
           occludes: True
@@ -76339,6 +77488,24 @@ entities:
     - type: Transform
       pos: 62.5,96.5
       parent: 2
+    - type: EntityStorage
+      air:
+        volume: 200
+        immutable: False
+        temperature: 293.14673
+        moles:
+        - 1.7459903
+        - 6.568249
+        - 0
+        - 0
+        - 0
+        - 0
+        - 0
+        - 0
+        - 0
+        - 0
+        - 0
+        - 0
   - uid: 10032
     components:
     - type: Transform
@@ -76763,11 +77930,6 @@ entities:
       parent: 2
 - proto: WindoorSecure
   entities:
-  - uid: 10092
-    components:
-    - type: Transform
-      pos: 79.5,59.5
-      parent: 2
   - uid: 10093
     components:
     - type: Transform
@@ -76929,6 +78091,13 @@ entities:
     - type: Transform
       rot: 1.5707963267948966 rad
       pos: 24.5,62.5
+      parent: 2
+- proto: WindoorSecureSecurityLawyerLocked
+  entities:
+  - uid: 10327
+    components:
+    - type: Transform
+      pos: 79.5,59.5
       parent: 2
 - proto: WindoorSecureSecurityLocked
   entities:
