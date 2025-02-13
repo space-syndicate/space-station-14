@@ -11,7 +11,7 @@
     - id: EmergencyOxygenTankFilled
     - id: EmergencyMedipen
     - id: Flare
-    - id: FoodSnackNutribrick
+    - id: FoodSnackEnergy
     - id: DrinkWaterBottleFull
   - type: Sprite
     layers:
@@ -29,7 +29,7 @@
     - id: EmergencyNitrogenTankFilled
     - id: EmergencyMedipen
     - id: Flare
-    - id: FoodSnackNutribrick
+    - id: FoodSnackEnergy
     - id: DrinkWaterBottleFull
   - type: Sprite
     layers:
@@ -51,7 +51,7 @@
     - id: ExtendedEmergencyOxygenTankFilled
     - id: EmergencyMedipen
     - id: Flare
-    - id: FoodSnackNutribrick
+    - id: FoodSnackEnergy
     - id: DrinkWaterBottleFull
   - type: Sprite
     layers:
@@ -69,7 +69,7 @@
     - id: ExtendedEmergencyNitrogenTankFilled
     - id: EmergencyMedipen
     - id: Flare
-    - id: FoodSnackNutribrick
+    - id: FoodSnackEnergy
     - id: DrinkWaterBottleFull
   - type: Sprite
     layers:
@@ -92,7 +92,7 @@
     - id: EmergencyOxygenTankFilled
     - id: EmergencyMedipen
     - id: Flare
-    - id: FoodSnackNutribrick
+    - id: FoodSnackEnergy
     - id: DrinkWaterBottleFull
   - type: Sprite
     layers:
@@ -110,7 +110,7 @@
     - id: EmergencyNitrogenTankFilled
     - id: EmergencyMedipen
     - id: Flare
-    - id: FoodSnackNutribrick
+    - id: FoodSnackEnergy
     - id: DrinkWaterBottleFull
   - type: Sprite
     layers:
@@ -133,7 +133,7 @@
     - id: EmergencyOxygenTankFilled
     - id: EmergencyMedipen
     - id: Flare
-    - id: FoodSnackNutribrick
+    - id: FoodSnackEnergy
     - id: DrinkWaterBottleFull
   - type: Sprite
     layers:
@@ -151,7 +151,7 @@
     - id: EmergencyNitrogenTankFilled
     - id: EmergencyMedipen
     - id: Flare
-    - id: FoodSnackNutribrick
+    - id: FoodSnackEnergy
     - id: DrinkWaterBottleFull
   - type: Sprite
     layers:
@@ -179,7 +179,7 @@
     - id: EmergencyFunnyOxygenTankFilled
     - id: EmergencyMedipen
     - id: Flare
-    - id: FoodSnackNutribrick
+    - id: FoodSnackEnergy
     - id: DrinkWaterBottleFull
   - type: Tag
     tags:
@@ -196,7 +196,7 @@
     - id: EmergencyNitrogenTankFilled
     - id: EmergencyMedipen
     - id: Flare
-    - id: FoodSnackNutribrick
+    - id: FoodSnackEnergy
     - id: DrinkWaterBottleFull
   - type: Label
     currentLabel: reagent-name-nitrogen
