@@ -1,6 +1,5 @@
 # UI
 
-
 ## Window
 
 air-alarm-ui-access-denied = Недостаточный уровень доступа!
@@ -30,7 +29,6 @@ air-alarm-ui-mode-panic = Паника
 air-alarm-ui-mode-none = Нет
 
 ## Widgets
-
 
 ### General
 
@@ -64,3 +62,5 @@ air-alarm-ui-thresholds-upper-bound = Верхняя аварийная гран
 air-alarm-ui-thresholds-lower-bound = Нижняя аварийная граница
 air-alarm-ui-thresholds-upper-warning-bound = Верхняя тревожная граница
 air-alarm-ui-thresholds-lower-warning-bound = Нижняя тревожная граница
+air-alarm-ui-thresholds-copy = Скопировать значение границы на все устройства
+air-alarm-ui-thresholds-copy-tooltip = Скопировать значение границы сенсора этого устройства на все устройства на этой вкладке воздушной сигнализации.

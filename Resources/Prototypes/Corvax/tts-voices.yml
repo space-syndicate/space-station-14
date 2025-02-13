@@ -1122,7 +1122,6 @@
   name: tts-voice-name-anivia
   sex: Female
   speaker: anivia
-  roundStart: false
 
 - type: ttsVoice
   id: Ahri
@@ -2745,7 +2744,7 @@
 - type: ttsVoice
   id: Jolene
   name: tts-voice-name-jolene
-  sex: Male
+  sex: Female
   speaker: jolene
 
 - type: ttsVoice
@@ -4379,3 +4378,213 @@
   name: tts-voice-name-warcraft_garrosh
   sex: Male
   speaker: warcraft_garrosh
+
+- type: ttsVoice
+  id: Male_v
+  name: tts-voice-name-male_v
+  sex: Male
+  speaker: Cyberpunk_male_v
+
+- type: ttsVoice
+  id: Johny
+  name: tts-voice-name-johny
+  sex: Male
+  speaker: Cyberpunk_johny
+
+- type: ttsVoice
+  id: Takemura
+  name: tts-voice-name-takemura
+  sex: Male
+  speaker: Cyberpunk_takemura
+
+- type: ttsVoice
+  id: Sobchak
+  name: tts-voice-name-sobchak
+  sex: Male
+  speaker: Cyberpunk_sobchak
+
+- type: ttsVoice
+  id: Jackie
+  name: tts-voice-name-jackie
+  sex: Male
+  speaker: Cyberpunk_jackie
+
+- type: ttsVoice
+  id: Kerry
+  name: tts-voice-name-kerry
+  sex: Male
+  speaker: Cyberpunk_kerry
+
+- type: ttsVoice
+  id: Mitch
+  name: tts-voice-name-mitch
+  sex: Male
+  speaker: Cyberpunk_mitch
+
+- type: ttsVoice
+  id: Saul
+  name: tts-voice-name-saul
+  sex: Male
+  speaker: Cyberpunk_saul
+
+- type: ttsVoice
+  id: Haru
+  name: tts-voice-name-haru
+  sex: Male
+  speaker: Cyberpunk_haru
+
+- type: ttsVoice
+  id: Victor
+  name: tts-voice-name-victor
+  sex: Male
+  speaker: Cyberpunk_victor
+
+- type: ttsVoice
+  id: Placide
+  name: tts-voice-name-placide
+  sex: Male
+  speaker: Cyberpunk_placide
+
+- type: ttsVoice
+  id: Dexter
+  name: tts-voice-name-dexter
+  sex: Male
+  speaker: Cyberpunk_dexter
+
+- type: ttsVoice
+  id: Sebastian
+  name: tts-voice-name-sebastian
+  sex: Male
+  speaker: Cyberpunk_sebastian
+
+- type: ttsVoice
+  id: Jefferson
+  name: tts-voice-name-jefferson
+  sex: Male
+  speaker: Cyberpunk_jefferson
+
+- type: ttsVoice
+  id: Joshua
+  name: tts-voice-name-joshua
+  sex: Male
+  speaker: Cyberpunk_joshua
+
+- type: ttsVoice
+  id: Ellie
+  name: tts-voice-name-ellie
+  sex: Female
+  speaker: tlou_ellie
+
+- type: ttsVoice
+  id: Joel
+  name: tts-voice-name-joel
+  sex: Male
+  speaker: tlou_joel
+
+- type: ttsVoice
+  id: Tess
+  name: tts-voice-name-tess
+  sex: Female
+  speaker: tlou_tess
+
+- type: ttsVoice
+  id: Mission_control
+  name: tts-voice-name-mission_control
+  sex: Male
+  speaker: Deep_rock_galactic_mission_control
+
+- type: ttsVoice
+  id: Dwarves
+  name: tts-voice-name-dwarves
+  sex: Male
+  speaker: Deep_rock_galactic_dwarves
+
+- type: ttsVoice
+  id: Sunboy_inner
+  name: tts-voice-name-sunboy_inner
+  sex: Male
+  speaker: an_alt_girl_inner
+
+- type: ttsVoice
+  id: Sunboy_sad
+  name: tts-voice-name-sunboy_sad
+  sex: Male
+  speaker: an_alt_girl_sunboy_s
+
+- type: ttsVoice
+  id: Sunboy_mannered
+  name: tts-voice-name-sunboy_mannered
+  sex: Male
+  speaker: an_alt_girl_dlc_sunboy_n
+
+- type: ttsVoice
+  id: Sunboy_kalm
+  name: tts-voice-name-sunboy_kalm
+  sex: Male
+  speaker: an_alt_girl_dlc_sunboy_k
+
+- type: ttsVoice
+  id: Last_years_snow_narrator
+  name: tts-voice-name-last_years_snow_narrator
+  sex: Male
+  speaker: last_years_snow_narrator
+
+- type: ttsVoice
+  id: last_years_snow_man
+  name: tts-voice-name-last_years_snow_man
+  sex: Male
+  speaker: last_years_snow_man
+
+- type: ttsVoice
+  id: Titus
+  name: tts-voice-name-titus
+  sex: Male
+  speaker: marine2_titus
+
+- type: ttsVoice
+  id: Berserk
+  name: tts-voice-name-berserk
+  sex: Male
+  speaker: marine2_berserk
+
+- type: ttsVoice
+  id: Gadriel
+  name: tts-voice-name-gadriel
+  sex: Male
+  speaker: marine2_gadriel
+
+- type: ttsVoice
+  id: Chairon
+  name: tts-voice-name-chairon
+  sex: Male
+  speaker: marine2_chairon
+
+- type: ttsVoice
+  id: Acheran
+  name: tts-voice-name-acheran
+  sex: Male
+  speaker: marine2_acheran
+
+- type: ttsVoice
+  id: Machine_spirit_4
+  name: tts-voice-name-machine_spirit_4
+  sex: Female
+  speaker: marine2_machine_spirit_4
+
+- type: ttsVoice
+  id: Magos_galeo
+  name: tts-voice-name-magos_galeo
+  sex: Male
+  speaker: marine2_magos_galeo
+
+- type: ttsVoice
+  id: Servo-skull
+  name: tts-voice-name-servo_skull
+  sex: Male
+  speaker: marine2_servo-skull
+
+- type: ttsVoice
+  id: Balthazar
+  name: tts-voice-name-balthazar
+  sex: Male
+  speaker: marine2_balthazar

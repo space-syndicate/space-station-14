@@ -1,7 +1,7 @@
 ent-CigPackBase = cigarette pack
-  .desc = { ent-BaseStorageItem.desc }
+    .desc = { ent-BaseStorageItem.desc }
 ent-CigPackMixedBase = soaked cigarette pack
-  .desc = { ent-BaseStorageItem.desc }
+    .desc = { ent-BaseStorageItem.desc }
 ent-CigPackGreen = Spessman's Smokes packet
     .desc = A label on the packaging reads, Wouldn't a slow death make a change?
 ent-CigPackRed = DromedaryCo packet

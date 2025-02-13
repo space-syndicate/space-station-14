@@ -50,5 +50,5 @@ ent-ActionFireStarter = Поджечь
     .desc = Поджигает противников в радиусе вокруг вас.
 ent-ActionToggleEyes = Открыть/закрыть глаза
     .desc = Закройте глаза, чтобы защитить их, или откройте, чтобы насладиться яркими цветами.
-ent-ActionToggleWagging = action-name-toggle-wagging
-    .desc = action-description-toggle-wagging
+ent-ActionToggleWagging = Махать хвостом
+    .desc = Начать/перестать махать хвостом.

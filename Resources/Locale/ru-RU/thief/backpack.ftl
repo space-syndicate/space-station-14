@@ -3,7 +3,8 @@ thief-backpack-window-description =
     Внутри находятся ваши орудия труда, которые растворятся, когда вы будете готовы.
     Выберите { $maxCount } { $maxCount ->
         [1] набор
-       *[other] разных набора
+        [few] разных набора
+       *[other] разных наборов
     } из списка.
 thief-backpack-window-selected = Выбрано наборов: ({ $selectedCount }/{ $maxCount })
 thief-backpack-window-approve-button = Принять

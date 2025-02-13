@@ -1,10 +1,12 @@
 ﻿[game]
-hostname = "🛰️ Corvax — Элизиум 🌑 [TTS]"
+hostname = "🛰️ Corvax — Элизиум 🌑[TTS]"
 desc = "Корвакс — первый русскоязычный проект в Space Station 14.\nЗдесь помогут новичкам!\nНа этом сервере пониженные требования к RP.\nИмеется интеграция TTS (Text-To-Speech)."
-map_pool = "CorvaxDefaultMapPool"
 maxplayers = 180
 soft_max_players = 100
 map_rotation = true
+
+[server]
+lobby_name = "️🛰️ Corvax — Элизиум 🌑"
 
 [game.panic_bunker]
 enabled = true

@@ -1,0 +1,31 @@
+- type: entity
+  name: syndicate smuggler
+  parent: BaseMobHuman
+  id: MobSyndicateSmuggler
+  components:
+    - type: NpcFactionMember
+      factions:
+        - Syndicate
+    - type: Loadout
+      prototypes:
+        - SyndicateSmugglerGear
+        - SyndicateSmugglerMedicGear
+        - SyndicateSmugglerSoldierGear
+        - SyndicateSmugglerMinerGear
+    - type: InputMover
+    - type: MobMover
+    - type: HTN
+      rootTask:
+        task: SimpleHumanoidHostileCompound
+    - type: RandomMetadata
+      nameSegments:
+      - fake_human_first
+      - corvax_names_syndie_smuggler
+      - names_last
+    - type: GhostTakeoverAvailable
+    - type: GhostRole
+      name: ghost-role-information-syndicate-smuggler-name
+      description: ghost-role-information-syndicate-smuggler-description
+      rules: ghost-role-information-freeagent-rules
+      raffle:
+        settings: default

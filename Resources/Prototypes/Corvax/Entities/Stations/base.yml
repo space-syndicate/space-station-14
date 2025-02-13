@@ -4,7 +4,6 @@
   components:
     - type: StationGoal
       goals:
-      - Shuttle
       - Singularity
       - SolarPanels
       - Artifacts
@@ -12,3 +11,21 @@
       - Zoo
       - MiningOutpost
       - Tesla
+      - SecurityTraining
+      - ShuttleMed
+      - ShuttleSec
+      - ShuttleRnd
+      - ShuttleSrv
+      - ShuttleEmergency
+      - Theatre
+      - CellAI
+      - Botany
+      - Bunker
+      - Survive
+
+- type: entity
+  id: BaseStationSiliconLawNTDefault
+  abstract: true
+  components:
+  - type: SiliconLawProvider
+    laws: NTDefault

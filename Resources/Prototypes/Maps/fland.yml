@@ -2,7 +2,7 @@
   id: Fland
   mapName: 'Fland Installation'
   mapPath: /Maps/fland.yml
-  minPlayers: 70
+  minPlayers: 55 # Corvax
   stations:
     Fland:
       stationProto: StandardNanotrasenStation
@@ -29,6 +29,7 @@
             Chaplain: [ 1, 1 ]
             Librarian: [ 1, 1 ]
             ServiceWorker: [ 2, 2 ]
+            Reporter: [ 1, 1 ]
             #engineering
             ChiefEngineer: [ 1, 1 ]
             AtmosphericTechnician: [ 3, 3 ]

@@ -230,6 +230,7 @@
     stealthy: true
   - type: ToggleClothing
     action: ActionToggleNinjaGloves
+    disableOnUnequip: true
   - type: NinjaGloves
     abilities:
     - components:
@@ -258,8 +259,8 @@
     entries:
     - label: corvax-hidden-desc-ThievingGloves-thief
       whitelistMind:
-        components:
-          - ThiefRole
+        mindRoles:
+        - ThiefRole
 # Corvax-HiddenDesc-End
 
 - type: entity
@@ -292,7 +293,7 @@
     fiberColor: fibers-black
 
 - type: entity
-  parent: ClothingHandsGlovesCombat
+  parent: [ BaseSecurityCargoContraband, ClothingHandsGlovesCombat ]
   id: ClothingHandsMercGlovesCombat
   name: mercenary combat gloves
   description: High-quality combat gloves to protect hands from mechanical damage during combat.
@@ -380,13 +381,13 @@
     entries:
     - label: corvax-hidden-desc-ThievingGloves-syndicate
       whitelistMind:
-        components:
-          - TraitorRole
-          - NukeOperative
+        mindRoles:
+        - TraitorRole
+        - NukeopsRole
     - label: corvax-hidden-desc-ThievingGloves-thief
       whitelistMind:
-        components:
-          - ThiefRole
+        mindRoles:
+        - ThiefRole
 # Corvax-HiddenDesc-End
 
 - type: entity
@@ -435,7 +436,7 @@
     price: 0
 
 - type: entity
-  parent: ClothingHandsBase
+  parent: [ClothingHandsBase, BaseRestrictedContraband]
   id: ClothingHandsGlovesForensic
   name: forensic gloves
   description: Do not leave fibers or fingerprints. If you work without them, you're A TERRIBLE DETECTIVE.

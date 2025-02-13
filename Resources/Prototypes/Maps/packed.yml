@@ -2,17 +2,21 @@
   id: Packed
   mapName: 'Packed'
   mapPath: /Maps/packed.yml
-  minPlayers: 7
-  maxPlayers: 35
+  # Corvax-start
+  minPlayers: 0
+  maxPlayers: 25
+  # Corvax-end
   stations:
     Packed:
       stationProto: StandardNanotrasenStation
       components:
         - type: StationNameSetup
-          mapNameTemplate: '{0} Packed {1}'
+          mapNameTemplate: '{0} Пакет {1}' # Corvax
           nameGenerator:
             !type:NanotrasenNameGenerator
             prefixCreator: 'VG'
+        - type: StationEmergencyShuttle
+          emergencyShuttlePath: /Maps/Shuttles/emergency_crimson.yml
         - type: StationJobs
           availableJobs:
             #service

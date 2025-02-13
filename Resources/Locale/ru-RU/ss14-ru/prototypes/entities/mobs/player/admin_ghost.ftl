@@ -1,5 +1,5 @@
 ent-AdminObserver = админ наблюдатель
-    .desc = { ent-MobObserver.desc }
+    .desc = { ent-MobObserverBase.desc }
 ent-ActionAGhostShowSolar = Интерфейс управления солнечными батареями
     .desc = Просмотр интерфейса управления солнечными батареями.
 ent-ActionAGhostShowCommunications = Интерфейс связи

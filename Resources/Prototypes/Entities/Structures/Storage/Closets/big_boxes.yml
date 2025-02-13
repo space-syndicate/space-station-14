@@ -29,7 +29,7 @@
       isCollidableWhenOpen: false
       openOnMove: false
       airtight: false
-      capacity: 4 #4 Entities seems like a nice comfy fit for a cardboard box.
+      capacity: 5 #5 entity capacity to fit all of your friends (or teammates on your nuclear operation without reinforcements).
     - type: ContainerContainer
       containers:
         entity_storage: !type:Container
@@ -76,9 +76,9 @@
       entries:
       - label: corvax-hidden-desc-StealthBox-syndicate
         whitelistMind:
-          components:
-            - TraitorRole
-            - NukeOperative
+          mindRoles:
+          - TraitorRole
+          - NukeopsRole
       - label: corvax-hidden-desc-StealthBox-research
         jobRequired:
           - ResearchAssistant

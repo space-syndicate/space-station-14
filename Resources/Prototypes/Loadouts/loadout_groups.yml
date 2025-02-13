@@ -6,8 +6,12 @@
   maxLimit: 3
   loadouts:
   - SpaceLaw # Corvax-HyperLink
+  - FlowerWreath
+  - Hairflower
+  - Headphones
   - PlushieLizard
   - PlushieSpaceLizard
+  - ThreeCandles
   - Lighter
   - CigPackGreen
   - CigPackRed
@@ -19,10 +23,12 @@
   - ClothingNeckAromanticPin
   - ClothingNeckAsexualPin
   - ClothingNeckBisexualPin
+  - ClothingNeckGayPin
   - ClothingNeckIntersexPin
   - ClothingNeckLesbianPin
   - ClothingNeckNonBinaryPin
   - ClothingNeckPansexualPin
+  - ClothingNeckOmnisexualPin
   - ClothingNeckTransPin
   - ClothingNeckAutismPin
   - ClothingNeckGoldAutismPin
@@ -37,6 +43,23 @@
   - ClothingNeckSolarisPin
   - ClothingNeckWhiteListPin
   # Corvax-Loadouts-End
+  - TowelColorBlack
+  - TowelColorDarkBlue
+  - TowelColorDarkGreen
+  - TowelColorGold
+  - TowelColorGray
+  - TowelColorGreen
+  - TowelColorLightBlue
+  - TowelColorLightBrown
+  - TowelColorMaroon
+  - TowelColorMime
+  - TowelColorOrange
+  - TowelColorPurple
+  - TowelColorRed
+  - TowelColorSilver
+  - TowelColorWhite
+  - TowelColorYellow
+
 - type: loadoutGroup
   id: Glasses
   name: loadout-group-glasses
@@ -1032,6 +1055,7 @@
   id: SecurityOuterClothing
   name: loadout-group-security-outerclothing
   loadouts:
+  - ArmorVestSec # Corvax
   - ArmorVest
   - ArmorVestSlim
   - SecurityOfficerWintercoat
@@ -1078,17 +1102,17 @@
 - type: loadoutGroup
   id: DetectiveOuterClothing
   name: loadout-group-detective-outerclothing
-  minLimit: 0
   loadouts:
   - DetectiveArmorVest
   - DetectiveCoat
+  - DetectiveCoatGrey
 
 - type: loadoutGroup
   id: SecurityCadetJumpsuit
   name: loadout-group-security-cadet-jumpsuit
   loadouts:
-  - RedJumpsuit
-  - RedJumpskirt
+  - SecurityJumpsuitGrey # Corvax-Resprite
+  - SecurityJumpskirtGrey # Corvax-Resprite
 
 - type: loadoutGroup
   id: SurvivalSecurity

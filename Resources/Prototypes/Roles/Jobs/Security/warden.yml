@@ -9,7 +9,6 @@
       time: 108000 #50 hrs # Corvax-RoleTime
   startingGear: WardenGear
   icon: "JobIconWarden"
-  requireAdminNotify: true
   supervisors: job-supervisors-hos
   canBeAntag: false
   access:

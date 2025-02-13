@@ -28,9 +28,9 @@
       entries:
       - label: corvax-hidden-desc-Chameleon-syndicate
         whitelistMind:
-          components:
-            - TraitorRole
-            - NukeOperative
+          mindRoles:
+          - TraitorRole
+          - NukeopsRole
       - label: corvax-hidden-desc-Chameleon-research
         jobRequired:
           - ResearchAssistant
@@ -44,23 +44,29 @@
   id: ClothingMaskGasVoiceChameleon
   suffix: Voice Mask, Chameleon
   components:
-    - type: VoiceMasker
+    - type: VoiceMask
     - type: HideLayerClothing
       slots:
       - Snout
+    - type: UserInterface
+      interfaces:
+        enum.ChameleonUiKey.Key:
+          type: ChameleonBoundUserInterface
+        enum.VoiceMaskUIKey.Key:
+          type: VoiceMaskBoundUserInterface
 # Corvax-HiddenDesc-Start
     - type: HiddenDescription
       entries:
       - label: corvax-hidden-desc-Chameleon-syndicate
         whitelistMind:
-          components:
-            - TraitorRole
-            - NukeOperative
+          mindRoles:
+          - TraitorRole
+          - NukeopsRole
       - label: corvax-hidden-desc-VoiceMasker-syndicate
         whitelistMind:
-          components:
-            - TraitorRole
-            - NukeOperative
+          mindRoles:
+          - TraitorRole
+          - NukeopsRole
       - label: corvax-hidden-desc-Chameleon-research
         jobRequired:
           - ResearchAssistant

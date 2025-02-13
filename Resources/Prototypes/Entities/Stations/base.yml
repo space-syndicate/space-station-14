@@ -60,19 +60,28 @@
           maxCount: 2
           stationGrid: false
           paths:
-          - /Maps/Ruins/chunked_tcomms.yml
-          - /Maps/Ruins/biodome_satellite.yml
-          - /Maps/Ruins/derelict.yml
-          - /Maps/Ruins/djstation.yml
-          - /Maps/Ruins/empty_flagship.yml
-          - /Maps/Ruins/old_ai_sat.yml
-          - /Maps/Ruins/syndicate_dropship.yml
-          - /Maps/Ruins/whiteship_ancient.yml
-          - /Maps/Ruins/whiteship_bluespacejumper.yml
+          - /Maps/Ruins/abandoned_outpost.yml
+          # Corvax-Mapping-Start
+          - /Maps/Corvax/Ruins/corvax_accident.yml
+          - /Maps/Corvax/Ruins/corvax_adventurer.yml
+          - /Maps/Corvax/Ruins/corvax_aplink.yml
+          - /Maps/Corvax/Ruins/corvax_battleship.yml
+          - /Maps/Corvax/Ruins/corvax_gas_station.yml
+          - /Maps/Corvax/Ruins/corvax_bss_unluck.yml
+          - /Maps/Corvax/Ruins/corvax_hotel_trivago.yml
+          - /Maps/Corvax/Ruins/corvax_kamikaze.yml
+          - /Maps/Corvax/Ruins/corvax_ore.yml
+          - /Maps/Corvax/Ruins/corvax_research_station.yml
+          - /Maps/Corvax/Ruins/corvax_rnd_debris.yml
+          - /Maps/Corvax/Ruins/corvax_sanctus.yml
+          - /Maps/Corvax/Ruins/corvax_ussp_debris.yml
+          - /Maps/Corvax/Ruins/corvax_ussp_asteroid.yml
+          # Corvax-Mapping-End
+          - /Maps/Ruins/wrecklaimer.yml
         vgroid: !type:DungeonSpawnGroup
           minimumDistance: 300
           maximumDistance: 350
-          nameDataset: names_borer
+          nameDataset: NamesBorer
           stationGrid: false
           addComponents:
           - type: Gravity
@@ -80,18 +89,18 @@
             inherent: true
           protos:
           - VGRoid
-        # Corvax-Mining-Start
+        # Corvax-Mapping-Start
         mining: !type:GridSpawnGroup
           paths:
-          - /Maps/Shuttles/corvax_mining.yml
-        # Corvax-Mining-End
+          - /Maps/Corvax/Shuttles/corvax_mining.yml
+        # Corvax-Mapping-End
 
 - type: entity
   id: BaseStationCentcomm
   abstract: true
   components:
     - type: StationCentcomm
-      map: "/Maps/corvax_centcomm.yml" # Corvax-Mapping
+      map: "/Maps/Corvax/corvax_centcomm.yml" # Corvax-Mapping
 
 - type: entity
   id: BaseStationEvacuation

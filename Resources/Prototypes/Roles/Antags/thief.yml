@@ -5,11 +5,14 @@
   setPreference: true
   objective: roles-antag-thief-objective
   guides: [ Thieves ]
+  requirements:
+  - !type:OverallPlaytimeRequirement
+    time: 108000 # 30h # Corvax-RoleTime
 
 - type: startingGear
   id: ThiefGear
   storage:
     back:
+    - ThiefBeacon
     - ToolboxThief
     - ClothingHandsChameleonThief
-    - ThiefBeacon

@@ -1,7 +1,7 @@
 ent-ClothingBackpack = рюкзак
     .desc = Вы носите это на спине и кладёте в него предметы.
 ent-ClothingBackpackClown = хихишкин фон хонкертон
-    .desc = Это рюкзак, изготовленный компанией «Honk! Co».
+    .desc = Это рюкзак, изготовленный компанией "Honk! Co".
 ent-ClothingBackpackIan = рюкзак Иана
     .desc = Иногда он носит его.
 ent-ClothingBackpackSecurity = рюкзак охраны
@@ -55,7 +55,7 @@ ent-ClothingBackpackSyndicate = рюкзак Синдиката
 ent-ClothingBackpackHolding = бездонный рюкзак
     .desc = Рюкзак, открывающийся в локальный карман блюспейса.
 ent-ClothingBackpackCluwne = трясушкин фон трясхертон
-    .desc = Это рюкзак, изготовленный компанией «Jonk! Co».
+    .desc = Это рюкзак, изготовленный компанией "Jonk! Co".
     .suffix = Неснимаемый
 ent-ClothingBackpackElectropack = электропак
     .desc = Бьёт током по сигналу. Используется для того, чтобы держать под контролем особо опасных преступников.
