@@ -7754,8 +7754,6 @@ entities:
       pos: 8.5,-12.5
       parent: 2
     - type: DeviceNetwork
-      configurators:
-      - invalid
       deviceLists:
       - 30
   - uid: 114
@@ -23749,8 +23747,6 @@ entities:
       pos: 5.5,-12.5
       parent: 2
     - type: DeviceNetwork
-      configurators:
-      - invalid
       deviceLists:
       - 30
   - uid: 2354
@@ -23759,8 +23755,6 @@ entities:
       pos: 9.5,-11.5
       parent: 2
     - type: DeviceNetwork
-      configurators:
-      - invalid
       deviceLists:
       - 30
 - proto: FirelockGlass
@@ -30252,8 +30246,6 @@ entities:
       pos: 11.5,-10.5
       parent: 2
     - type: DeviceNetwork
-      configurators:
-      - invalid
       deviceLists:
       - 30
     - type: AtmosPipeColor
@@ -30265,8 +30257,6 @@ entities:
       pos: 9.5,-12.5
       parent: 2
     - type: DeviceNetwork
-      configurators:
-      - invalid
       deviceLists:
       - 30
     - type: AtmosPipeColor
@@ -30278,8 +30268,6 @@ entities:
       pos: 3.5,-12.5
       parent: 2
     - type: DeviceNetwork
-      configurators:
-      - invalid
       deviceLists:
       - 30
     - type: AtmosPipeColor
@@ -30291,8 +30279,6 @@ entities:
       pos: 3.5,-7.5
       parent: 2
     - type: DeviceNetwork
-      configurators:
-      - invalid
       deviceLists:
       - 30
     - type: AtmosPipeColor
@@ -30492,8 +30478,6 @@ entities:
       pos: 4.5,-12.5
       parent: 2
     - type: DeviceNetwork
-      configurators:
-      - invalid
       deviceLists:
       - 30
     - type: AtmosPipeColor
@@ -30505,8 +30489,6 @@ entities:
       pos: 6.5,-12.5
       parent: 2
     - type: DeviceNetwork
-      configurators:
-      - invalid
       deviceLists:
       - 30
     - type: AtmosPipeColor
@@ -30525,8 +30507,6 @@ entities:
       pos: 8.5,-9.5
       parent: 2
     - type: DeviceNetwork
-      configurators:
-      - invalid
       deviceLists:
       - 30
     - type: AtmosPipeColor
