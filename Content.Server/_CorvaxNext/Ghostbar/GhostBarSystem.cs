@@ -4,7 +4,6 @@ using Content.Server.GameTicking.Events;
 using Content.Server.Station.Systems;
 using Robust.Shared.Map;
 using Robust.Shared.Prototypes;
-using Robust.Server.Maps;
 using Robust.Shared.Random;
 using Content.Shared.Ghost;
 using Content.Server._CorvaxNext.Ghostbar.Components;
@@ -12,9 +11,11 @@ using Content.Server.Mind;
 using Content.Shared.Mind.Components;
 using Content.Shared.Roles;
 using Content.Server.Antag.Components;
-using Content.Shared.Mind;
 using Content.Shared.Mindshield.Components;
 using Content.Shared.Players;
+using Robust.Shared.EntitySerialization.Systems;
+using Robust.Shared.EntitySerialization;
+using Robust.Shared.Utility;
 
 namespace Content.Server._CorvaxNext.Ghostbar;
 
@@ -28,7 +29,6 @@ public sealed class GhostBarSystem : EntitySystem
     [Dependency] private readonly MindSystem _mindSystem = default!;
     [Dependency] private readonly IEntityManager _entityManager = default!;
 
-    private const string MapPath = "Maps/Nonstations/ghostbar.yml";
 
     private static readonly List<ProtoId<JobPrototype>> _jobComponents = ["Passenger", "Bartender", "Chef"];
 
@@ -39,15 +39,14 @@ public sealed class GhostBarSystem : EntitySystem
         SubscribeLocalEvent<GhostBarPlayerComponent, MindRemovedMessage>(OnPlayerGhosted);
     }
 
+    const string MapPath = "Maps/Nonstations/ghostbar.yml";
     private void OnRoundStart(RoundStartingEvent ev)
     {
-        _mapSystem.CreateMap(out var mapId);
-        var options = new MapLoadOptions { LoadMap = true };
+        var resPath = new ResPath(MapPath);
 
-        if (_mapLoader.TryLoad(mapId, MapPath, out _, options))
-            _mapSystem.SetPaused(mapId, false);
+        if (_mapLoader.TryLoadMap(resPath, out var map, out _, new DeserializationOptions { InitializeMaps = true }))
+            _mapSystem.SetPaused(map.Value.Comp.MapId, false);
     }
-
     public void SpawnPlayer(GhostBarSpawnEvent msg, EntitySessionEventArgs args)
     {
         var player = args.SenderSession;
