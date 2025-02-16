@@ -13,12 +13,12 @@
 
 - files: ["plating_damaged.png", "plating_burnt.png"]
   license: "CC-BY-SA-3.0"
-  copyright: "Modified by github user @Flareguy from plating.png, using damaged plating sprites from /tg/station at commit https://github.com/tgstation/tgstation/blob/6665eec76c98a4f3f89bebcd10b34b47dcc0b8ae/icons/turf/floors.dmi"
+  copyright: "Modified by github user @Flareguy from plating.png, resprited by @mishutka09 (discord:1152277579206774854)"
   source: "https://github.com/space-wizards/space-station-14/pull/21711"
 
 - files: [ "asteroid_red.png", "asteroid_tile.png", "freezer.png", "foammetal.png", "red_circuit.png",  "green_circuit.png", "lino.png", "mono.png", "rock_vault.png", "showroom.png"]
   license: "CC-BY-SA-3.0"
-  copyright: "vgstation13 at roughly commit e4d3ea7f69d21c3667be12b114fa935c4640cb05, asteroid_red and asteroid_tile taken from commit /vg/station at commit 02b9f6894af4419c9f7e699a22c402b086d8067e."
+  copyright: "vgstation13 at roughly commit e4d3ea7f69d21c3667be12b114fa935c4640cb05, asteroid_red and asteroid_tile taken from commit /vg/station at commit 02b9f6894af4419c9f7e699a22c402b086d8067, mono and freezer resprited by @mishutka09 (discord:1152277579206774854)"
   source: "https://github.com/vgstation-coders/vgstation13"
 
 - files: [ "elevator_shaft.png"]
@@ -58,7 +58,7 @@
 
 - files: ["rglass.png"]
   license: "CC-BY-SA-3.0"
-  copyright: "tgstation commit 8abb19545828230d92ba18827feeb42a67a55d49, rglass modified by github user @notquitehadouken."
+  copyright: "resprited by @mishutka09 (discord:1152277579206774854), rglass modified by github user @notquitehadouken."
   source: "https://github.com/space-wizards/space-station-14/pull/17948"
 
 - files: ["glass.png"]
@@ -93,7 +93,7 @@
 
 - files: ["shuttleblue.png", "shuttleorange.png", "shuttlepurple.png", "shuttlered.png", "shuttlewhite.png", "shuttlegrey.png", "shuttleblack.png"]
   license: "CC-BY-SA-3.0"
-  copyright: "Modified by Flareguy for Space Station 14. Unmodified sprite from paradisestation commit 69c831afcd9aef25a2889b507e4f36a3a5fc6def, originally from /VG/ eris"
+  copyright: "Modified by Flareguy for Space Station 14, resprited by @mishutka09 (discord:1152277579206774854)"
   source: "https://github.com/ParadiseSS13/Paradise"
 
 - files: ["deprecated.png"]
