@@ -139,7 +139,7 @@
   components:
   - type: MindRole
     antagPrototype: SpaceNinja
-    roleType: SoloAntagonist
+    roleType: MindRoleGhostRoleFreeAgent #Corvax
     exclusiveAntag: true
   - type: NinjaRole
 
