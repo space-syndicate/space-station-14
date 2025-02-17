@@ -179,7 +179,8 @@
   - type: GhostRole
     name: ghost-role-information-space-ninja-name
     description: ghost-role-information-space-ninja-description
-    rules: ghost-role-information-antagonist-rules
+#    rules: ghost-role-information-antagonist-rules
+    rules: ghost-role-information-freeagent-rules
     mindRoles:
     - MindRoleGhostRoleSoloAntagonist
     raffle:
