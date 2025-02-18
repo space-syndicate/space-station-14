@@ -1,0 +1,169 @@
+- type: entity
+  parent: MobXeno
+  id: MobXenoPilgrim
+  name: burrower
+  description: They mostly come at night. Mostly.
+  suffix: Pilgrim
+  components:
+  - type: GhostRole
+    allowMovement: true
+    allowSpeech: true
+    makeSentient: true
+    name: ghost-role-information-xeno-name
+    description: ghost-role-information-xeno-description
+    rules: ghost-role-information-xeno-rules
+    raffle:
+      settings: shortest
+
+- type: entity
+  parent: MobXenoPilgrim
+  id: MobXenoPraetorianPilgrim
+  name: praetorian
+  components:
+  - type: Sprite
+    drawdepth: Mobs
+    sprite: Mobs/Aliens/Xenos/praetorian.rsi
+    offset: 0,0.4
+    layers:
+    - map: ["enum.DamageStateVisualLayers.Base"]
+      state: running
+  - type: MobThresholds
+    thresholds:
+      0: Alive
+      100: Dead
+  - type: Stamina
+    critThreshold: 300
+  - type: SlowOnDamage
+    speedModifierThresholds:
+      50: 0.7
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeCircle
+          radius: 0.45
+        density: 400
+        mask:
+        - MobMask
+        layer:
+        - MobLayer
+
+- type: entity
+  parent: MobXenoPilgrim
+  id: MobXenoQueenPilgrim
+  name: queen
+  components:
+  - type: Sprite
+    drawdepth: Mobs
+    sprite: _CorvaxNext/Mobs/Aliens/Xenos/queen.rsi
+    layers:
+    - map: ["enum.DamageStateVisualLayers.Base"]
+      state: running
+  - type: MobThresholds
+    thresholds:
+      0: Alive
+      300: Dead
+  - type: SlowOnDamage
+    speedModifierThresholds:
+      150: 0.7
+  - type: MovementSpeedModifier
+  - type: MeleeWeapon
+    damage:
+     groups:
+       Brute: 12
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeCircle
+          radius: 0.45
+        density: 15500
+        mask:
+        - MobMask
+        layer:
+        - MobLayer
+  - type: Tag
+    tags:
+    - CannotSuicide
+
+- type: entity
+  parent: MobXenoPilgrim
+  id: MobXenoRavagerPilgrim
+  name: ravager
+  components:
+  - type: Sprite
+    drawdepth: Mobs
+    sprite: Mobs/Aliens/Xenos/ravager.rsi
+    offset: 0,0.5
+    layers:
+    - map: ["enum.DamageStateVisualLayers.Base"]
+      state: running
+  - type: MobThresholds
+    thresholds:
+      0: Alive
+      100: Dead
+  - type: MovementSpeedModifier
+    baseSprintSpeed: 4
+  - type: MeleeWeapon
+    damage:
+     groups:
+       Brute: 10
+  - type: SlowOnDamage
+    speedModifierThresholds:
+      50: 0.7
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeCircle
+          radius: 0.45
+        density: 1350
+        mask:
+        - MobMask
+        layer:
+        - MobLayer
+
+- type: entity
+  parent: MobXeno
+  id: MobXenoRunnerPilgrim
+  name: runner
+  components:
+  - type: Sprite
+    drawdepth: Mobs
+    sprite: Mobs/Aliens/Xenos/runner.rsi
+    offset: 0,0.6
+    layers:
+    - map: ["enum.DamageStateVisualLayers.Base"]
+      state: running
+  - type: MovementSpeedModifier
+    baseSprintSpeed: 6.0
+  - type: MeleeWeapon
+    damage:
+     groups:
+       Brute: 5
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeCircle
+          radius: 0.35
+        density: 235
+        mask:
+        - MobMask
+        layer:
+        - MobLayer
+
+- type: entity
+  parent: MobXenoRunnerPilgrim
+  id: MobXenoRounyPilgrim
+  name: rouny
+  components:
+  - type: Sprite
+    drawdepth: Mobs
+    sprite: Mobs/Aliens/Xenos/rouny.rsi
+    offset: 0,0.6
+  - type: Butcherable
+    butcheringType: Spike
+    spawned:
+    - id: FoodMeatRouny
+      amount: 3

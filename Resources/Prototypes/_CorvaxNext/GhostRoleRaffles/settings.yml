@@ -1,0 +1,6 @@
+- type: ghostRoleRaffleSettings
+  id: shortest
+  settings:
+    initialDuration: 5
+    joinExtendsDurationBy: 2
+    maxDuration: 7
