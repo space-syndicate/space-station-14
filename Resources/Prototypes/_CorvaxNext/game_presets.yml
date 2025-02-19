@@ -1,0 +1,13 @@
+- type: gamePreset
+  id: VoxRaiders
+  name: voxraiders-title
+  description: voxraiders-description
+  showInVote: true
+  rules:
+    - VoxRaiders
+    - Traitor
+    - SubGamemodesRule
+    - BasicStationEventScheduler
+    - MeteorSwarmScheduler
+    - SpaceTrafficControlEventScheduler
+    - BasicRoundstartVariation

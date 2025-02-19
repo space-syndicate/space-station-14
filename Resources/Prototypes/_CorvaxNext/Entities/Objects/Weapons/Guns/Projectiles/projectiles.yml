@@ -1,0 +1,14 @@
+- type: entity
+  parent: BaseBullet
+  id: BulletSpike
+  categories: [ HideSpawnMenu ]
+  name: spike
+  components:
+  - type: Sprite
+    sprite: _CorvaxNext/Objects/Weapons/Guns/Battery/spike.rsi
+    layers:
+    - state: Puh
+  - type: Projectile
+    damage:
+      types:
+        Piercing: 16

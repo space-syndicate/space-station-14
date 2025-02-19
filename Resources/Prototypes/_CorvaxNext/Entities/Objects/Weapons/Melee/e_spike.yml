@@ -1,0 +1,79 @@
+- type: entity
+  parent: EnergySword
+  id: EnergySpike
+  name: energy spike
+  description: Strange thing.
+  components:
+  - type: Sprite
+    sprite: _CorvaxNext/Objects/Weapons/Melee/e_spike.rsi
+    layers:
+      - state: e_sword
+      - state: e_sword_blade
+        color: "#7F00FF"
+        visible: false
+        shader: unshaded
+        map: [ "blade" ]
+  - type: ItemToggle
+    soundActivate:
+      path: /Audio/Weapons/ebladeon.ogg
+      params:
+        volume: -6
+    soundDeactivate:
+      path: /Audio/Weapons/ebladeoff.ogg
+      params:
+        volume: -6
+  - type: ItemToggleMeleeWeapon
+    activatedSoundOnSwing:
+      path: /Audio/Weapons/eblademiss.ogg
+      params:
+        volume: -6
+        variation: 0.250
+    activatedDamage:
+        types:
+            Slash: 8
+            Heat: 8
+    deactivatedSecret: true
+  - type: ItemToggleActiveSound
+    activeSound:
+      path: /Audio/Weapons/ebladehum.ogg
+      params:
+        volume: -6
+  - type: ComponentToggler
+    components:
+    - type: Sharp
+    - type: DisarmMalus
+      malus: 0.4
+  - type: MeleeWeapon
+    wideAnimationRotation: 145
+    attackRate: 1.5
+    hidden: true
+    damage:
+      types:
+        Blunt: 1
+  - type: Item
+    size: Tiny
+    sprite: _CorvaxNext/Objects/Weapons/Melee/e_spike.rsi
+  - type: UseDelay
+    delay: 1.0
+  - type: PointLight
+    enabled: false
+    radius: 1.5
+    energy: 1.5
+    color: "#7500ff"
+    netsync: false
+  - type: Appearance
+  - type: ToggleableLightVisuals
+    spriteLayer: blade
+    inhandVisuals:
+      left:
+      - state: inhand-left-blade
+        shader: unshaded
+      right:
+      - state: inhand-right-blade
+        shader: unshaded
+  - type: Tag
+    tags:
+    - Write
+  - type: DisarmMalus
+    malus: 0
+  - type: MultiHandedItem

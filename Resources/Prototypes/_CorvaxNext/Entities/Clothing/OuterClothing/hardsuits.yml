@@ -1,0 +1,34 @@
+- type: entity
+  parent: ClothingOuterHardsuitBase
+  id: ClothingOuterHardsuitVoxRaider
+  name: raider hardsuit
+  description: Strange gray clothing.
+  components:
+  - type: Sprite
+    sprite: _CorvaxNext/Clothing/OuterClothing/Hardsuits/vox.rsi
+  - type: Clothing
+    sprite: _CorvaxNext/Clothing/OuterClothing/Hardsuits/vox.rsi
+  - type: Item
+    size: Huge
+  - type: PressureProtection
+    highPressureMultiplier: 0.1
+    lowPressureMultiplier: 1000
+  - type: ExplosionResistance
+    damageCoefficient: 0.5
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.4
+        Slash: 0.4
+        Piercing: 0.4
+        Heat: 0.5
+        Radiation: 0.5
+        Caustic: 0.5
+  - type: ClothingSpeedModifier
+    walkModifier: 1.2
+    sprintModifier: 1.2
+  - type: ToggleableClothing
+    clothingPrototype: ClothingHeadHelmetHardsuitVoxRaider
+  - type: Tag
+    tags:
+    - Hardsuit

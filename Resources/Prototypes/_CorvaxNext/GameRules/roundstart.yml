@@ -1,0 +1,58 @@
+- type: entity
+  parent: BaseGameRule
+  id: VoxRaiders
+  components:
+  - type: RandomMetadata
+    nameSegments:
+    - operationPrefix
+    - operationSuffix
+  - type: RuleGrids
+  - type: AntagLoadProfileRule
+    speciesOverride: Vox
+    speciesOverrideBlacklist:
+    - Resomi
+    - Vulpkanin
+    - Arachnid
+    - Diona
+    - Dwarf
+    - Human
+    - Moth
+    - Reptilian
+    - Slime
+  - type: GameRule
+    minPlayers: 20
+  - type: LoadMapRule
+    mapPath: /Maps/Nonstations/nukieplanet.yml
+  - type: AntagSelection
+    selectionTime: PrePlayerSpawn
+    definitions:
+    - prefRoles: [ VoxRaidersCommander ]
+      fallbackRoles: [ VoxRaiders ]
+      spawnerPrototype: SpawnPointVoxRaidersCommander
+      startingGear: VoxRaidersCommanderGear
+      roleLoadout: [ RoleSurvivalNukie ]
+      components:
+      - type: NukeOperative
+      - type: RandomMetadata
+        nameSegments:
+        - nukeops-role-commander
+        - SyndicateNamesElite
+      - type: NpcFactionMember
+        factions: [ Syndicate ]
+      mindRoles: [ MindRoleNukeopsCommander ]
+    - prefRoles: [ VoxRaiders ]
+      fallbackRoles: [ VoxRaidersCommander ]
+      spawnerPrototype: SpawnPointVoxRaidersOperative
+      max: 3
+      playerRatio: 15
+      startingGear: VoxRaidersOperativeGear
+      roleLoadout: [ RoleSurvivalNukie ]
+      components:
+      - type: NukeOperative
+      - type: RandomMetadata
+        nameSegments:
+        - nukeops-role-operator
+        - SyndicateNamesNormal
+      - type: NpcFactionMember
+        factions: [ Syndicate ]
+      mindRoles: [ MindRoleNukeops ]

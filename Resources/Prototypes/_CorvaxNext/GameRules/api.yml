@@ -19,7 +19,6 @@
       components:
       - type: AutoImplant
         implants: [ ApiStorageImplant ]
-      mindRoles:
-      - MindRoleApi
+      mindRoles: [ MindRoleApi ]
       briefing:
         sound: "/Audio/_CorvaxNext/Misc/api_greeting.ogg"
