@@ -2,6 +2,7 @@
   parent: BaseGameRule
   id: VoxRaiders
   components:
+  - type: VoxRaidersRule
   - type: RandomMetadata
     nameSegments:
     - operationPrefix

@@ -21,4 +21,5 @@
         implants: [ ApiStorageImplant ]
       mindRoles: [ MindRoleApi ]
       briefing:
+        text: api-role-greeting
         sound: "/Audio/_CorvaxNext/Misc/api_greeting.ogg"
