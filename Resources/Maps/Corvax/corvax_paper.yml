@@ -110,7 +110,7 @@ entities:
     - type: OccluderTree
     - type: LoadedMap
     - type: BecomesStation
-      id: NextPaper
+      id: CorvaxPaper
     - type: Parallax
       parallax: OutpostStation
   - uid: 2
@@ -8882,7 +8882,7 @@ entities:
     - type: GravityShake
       shakeTimes: 10
     - type: BecomesStation
-      id: NextPaper
+      id: CorvaxPaper
     - type: NavMap
   - uid: 4
     components:
@@ -54399,7 +54399,7 @@ entities:
     - type: Label
       currentLabel: кофейный ликёр
     - type: PressurizedSolution
-      sprayFizzinessThresholdRoll: 0.06917209
+      sprayFizzinessThresholdRoll: 0.97363746
     - type: NameModifier
       baseName: бутылка кофейного ликёра
     - type: ContainerContainer
@@ -54685,7 +54685,7 @@ entities:
     - type: Label
       currentLabel: ром
     - type: PressurizedSolution
-      sprayFizzinessThresholdRoll: 0.20515488
+      sprayFizzinessThresholdRoll: 0.34906706
     - type: NameModifier
       baseName: кубинский пряный ром капитана Пита
     - type: ContainerContainer
@@ -54727,7 +54727,7 @@ entities:
     - type: Label
       currentLabel: текила
     - type: PressurizedSolution
-      sprayFizzinessThresholdRoll: 0.83890015
+      sprayFizzinessThresholdRoll: 0.6420113
     - type: NameModifier
       baseName: бутылка текилы Каккаво гарантированного качества
     - type: ContainerContainer
@@ -54768,7 +54768,7 @@ entities:
     - type: Label
       currentLabel: вермут
     - type: PressurizedSolution
-      sprayFizzinessThresholdRoll: 0.5179829
+      sprayFizzinessThresholdRoll: 0.43487516
     - type: NameModifier
       baseName: бутылка вермута Золотой глаз
     - type: ContainerContainer
@@ -54791,7 +54791,7 @@ entities:
     - type: Label
       currentLabel: водка
     - type: PressurizedSolution
-      sprayFizzinessThresholdRoll: 0.30014992
+      sprayFizzinessThresholdRoll: 0.17196651
     - type: NameModifier
       baseName: бутылка водки
     - type: ContainerContainer
@@ -54841,7 +54841,7 @@ entities:
     - type: Label
       currentLabel: вино
     - type: PressurizedSolution
-      sprayFizzinessThresholdRoll: 0.35647193
+      sprayFizzinessThresholdRoll: 0.43251708
     - type: NameModifier
       baseName: особое двухбородое бородатое вино
     - type: ContainerContainer
@@ -58558,7 +58558,7 @@ entities:
       pos: 39.5,13.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -35384.64
+      secondsUntilStateChange: -36895.88
       state: Closing
     - type: DeviceNetwork
       deviceLists:
