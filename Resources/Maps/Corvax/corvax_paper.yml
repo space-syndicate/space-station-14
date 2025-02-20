@@ -324,7 +324,7 @@ entities:
           version: 6
         1,-3:
           ind: 1,-3
-          tiles: AAAAAAAAAAAAAAAAAAAAAAAAnAAAAAAAnAAAAAAAAAAAAAAAnAAAAAAAnAAAAAAAnAAAAAAAnAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAnAAAAAAAnAAAAAAAnAAAAAAAnAAAAAAAAAAAAAAAAAAAAAAAnAAAAAAAnAAAAAAAAAAAAAAAnAAAAAAAnAAAAAAAnAAAAAAAnAAAAAAAnAAAAAAAAAAAAAAAAAAAAAAAnAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAnAAAAAAAnQAAAAAAnQAAAAAAnQAAAAAAnAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAnAAAAAAAAAAAAAAAAAAAAAAAnAAAAAAAnAAAAAAAnQAAAAAAnQAAAAAAnQAAAAAAbAAAAAAAbAAAAAAAbAAAAAAAnQAAAAAAnQAAAAAAnQAAAAAAnAAAAAAAnAAAAAAAnAAAAAAAnAAAAAAAAAAAAAAAnAAAAAAAnAAAAAAAnQAAAAAAbAAAAAAAbAAAAAAAbAAAAAAAJgAAAAAAbAAAAAAAbAAAAAAAbAAAAAAAnQAAAAAAnAAAAAAAnAAAAAAAAAAAAAAAnAAAAAAAnAAAAAAAnAAAAAAAnQAAAAAAbAAAAAAAbAAAAAAAEgAAAAAAEgAAAAAAEgAAAAAAEgAAAAAAEgAAAAAAbAAAAAAAXAAAAAAAnQAAAAAAnAAAAAAAAAAAAAAAnAAAAAAAAAAAAAAAnQAAAAAAnQAAAAAAbAAAAAAAJgAAAAAAJgAAAAAAbAAAAAAAbAAAAAAAbAAAAAAAJgAAAAAAJgAAAAAAbAAAAAAAnQAAAAAAnQAAAAAAAAAAAAAAnAAAAAAAAAAAAAAAnQAAAAAAnQAAAAAAnQAAAAAAKAAAAAAAnQAAAAAAnQAAAAAAnQAAAAAAnQAAAAAAnQAAAAAAKAAAAAAAnQAAAAAAnQAAAAAAnQAAAAAAnQAAAAAAnQAAAAAAnQAAAAAAnAAAAAAAbAAAAAAAbAAAAAAAJgAAAAAAbAAAAAAAnQAAAAAAEgAAAAAAnQAAAAAAbAAAAAAAJgAAAAAAbAAAAAAAbAAAAAAAnQAAAAAAnQAAAAAAnQAAAAAAnQAAAAAAKAAAAAAAJgAAAAAAPwAAAAAAPwAAAAAAJgAAAAAAKAAAAAAAJgAAAAAAKAAAAAAAJgAAAAAAPwAAAAAAPwAAAAAAJgAAAAAAKAAAAAAAKAAAAAAAKAAAAAAAKAAAAAAAnAAAAAAAXAAAAAAAbAAAAAAAbAAAAAAAJgAAAAAAnQAAAAAAEgAAAAAAnQAAAAAAJgAAAAAAbAAAAAAAbAAAAAAAXAAAAAAAnQAAAAAAnQAAAAAAnQAAAAAAnQAAAAAAnQAAAAAAbAAAAAAAbAAAAAAAnQAAAAAAKAAAAAAAnQAAAAAAnQAAAAAAnQAAAAAAKAAAAAAAnQAAAAAAbAAAAAAAnQAAAAAAnQAAAAAAnQAAAAAAnQAAAAAAnQAAAAAAnQAAAAAAnQAAAAAAnQAAAAAAnQAAAAAAKQAAAAAAKQAAAAAAbAAAAAAAKQAAAAAAKQAAAAAAnQAAAAAAnQAAAAAAnQAAAAAAnQAAAAAAnAAAAAAAAAAAAAAAAAAAAAAAnAAAAAAAnQAAAAAAnQAAAAAAnQAAAAAAbAAAAAAAPwAAAAAAPwAAAAAAPwAAAAAAbAAAAAAAnQAAAAAAnQAAAAAAnQAAAAAAnAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAnQAAAAAAXAAAAAAAbAAAAAAAKQAAAAAAbAAAAAAAbAAAAAAAnQAAAAAAAAAAAAAAAAAAAAAAnAAAAAAAnAAAAAAAnAAAAAAAnAAAAAAAAAAAAAAAAAAAAAAAnAAAAAAAnAAAAAAAnQAAAAAAnQAAAAAAKQAAAAAAnQAAAAAAnQAAAAAAnAAAAAAAAAAAAAAAAAAAAAAAnAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+          tiles: AAAAAAAAAAAAAAAAAAAAAAAAnAAAAAAAnAAAAAAAAAAAAAAAnAAAAAAAnAAAAAAAnAAAAAAAnAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAnAAAAAAAnAAAAAAAnAAAAAAAnAAAAAAAAAAAAAAAAAAAAAAAnAAAAAAAnAAAAAAAAAAAAAAAnAAAAAAAnAAAAAAAnAAAAAAAnAAAAAAAnAAAAAAAAAAAAAAAAAAAAAAAnAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAnAAAAAAAnQAAAAAAnQAAAAAAnQAAAAAAnAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAnAAAAAAAAAAAAAAAAAAAAAAAnAAAAAAAnAAAAAAAnQAAAAAAnQAAAAAAnQAAAAAAbAAAAAAAbAAAAAAAbAAAAAAAnQAAAAAAnQAAAAAAnQAAAAAAnAAAAAAAnAAAAAAAnAAAAAAAnAAAAAAAAAAAAAAAnAAAAAAAnAAAAAAAnQAAAAAAbAAAAAAAbAAAAAAAbAAAAAAAJgAAAAAAbAAAAAAAbAAAAAAAbAAAAAAAnQAAAAAAnAAAAAAAnAAAAAAAAAAAAAAAnAAAAAAAnAAAAAAAnAAAAAAAnQAAAAAAXAAAAAAAbAAAAAAAEgAAAAAAEgAAAAAAEgAAAAAAEgAAAAAAEgAAAAAAbAAAAAAAXAAAAAAAnQAAAAAAnAAAAAAAAAAAAAAAnAAAAAAAAAAAAAAAnQAAAAAAnQAAAAAAbAAAAAAAJgAAAAAAJgAAAAAAbAAAAAAAbAAAAAAAbAAAAAAAJgAAAAAAJgAAAAAAbAAAAAAAnQAAAAAAnQAAAAAAAAAAAAAAnAAAAAAAAAAAAAAAnQAAAAAAnQAAAAAAnQAAAAAAKAAAAAAAnQAAAAAAnQAAAAAAnQAAAAAAnQAAAAAAnQAAAAAAKAAAAAAAnQAAAAAAnQAAAAAAnQAAAAAAnQAAAAAAnQAAAAAAnQAAAAAAnAAAAAAAXAAAAAAAbAAAAAAAJgAAAAAAbAAAAAAAnQAAAAAAEgAAAAAAnQAAAAAAbAAAAAAAJgAAAAAAbAAAAAAAXAAAAAAAnQAAAAAAnQAAAAAAnQAAAAAAnQAAAAAAKAAAAAAAJgAAAAAAPwAAAAAAPwAAAAAAJgAAAAAAKAAAAAAAJgAAAAAAKAAAAAAAJgAAAAAAPwAAAAAAPwAAAAAAJgAAAAAAKAAAAAAAKAAAAAAAKAAAAAAAKAAAAAAAnAAAAAAAXAAAAAAAbAAAAAAAbAAAAAAAJgAAAAAAnQAAAAAAEgAAAAAAnQAAAAAAJgAAAAAAbAAAAAAAbAAAAAAAXAAAAAAAnQAAAAAAnQAAAAAAnQAAAAAAnQAAAAAAnQAAAAAAbAAAAAAAbAAAAAAAnQAAAAAAKAAAAAAAnQAAAAAAnQAAAAAAnQAAAAAAKAAAAAAAnQAAAAAAbAAAAAAAnQAAAAAAnQAAAAAAnQAAAAAAnQAAAAAAnQAAAAAAnQAAAAAAnQAAAAAAnQAAAAAAnQAAAAAAKQAAAAAAKQAAAAAAbAAAAAAAKQAAAAAAKQAAAAAAnQAAAAAAnQAAAAAAnQAAAAAAnQAAAAAAnAAAAAAAAAAAAAAAAAAAAAAAnAAAAAAAnQAAAAAAnQAAAAAAnQAAAAAAbAAAAAAAPwAAAAAAPwAAAAAAPwAAAAAAbAAAAAAAnQAAAAAAnQAAAAAAnQAAAAAAnAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAnQAAAAAAXAAAAAAAbAAAAAAAKQAAAAAAbAAAAAAAXAAAAAAAnQAAAAAAAAAAAAAAAAAAAAAAnAAAAAAAnAAAAAAAnAAAAAAAnAAAAAAAAAAAAAAAAAAAAAAAnAAAAAAAnAAAAAAAnQAAAAAAnQAAAAAAKQAAAAAAnQAAAAAAnQAAAAAAnAAAAAAAAAAAAAAAAAAAAAAAnAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
           version: 6
         0,-3:
           ind: 0,-3
@@ -5968,12 +5968,6 @@ entities:
             8377: 24,-39
             8379: 24,-40
         - node:
-            color: '#4B709CFF'
-            id: QuarterTileOverlayGreyscale
-          decals:
-            10660: 17,-40
-            10665: 18,-43
-        - node:
             color: '#52B4E996'
             id: QuarterTileOverlayGreyscale
           decals:
@@ -6030,13 +6024,6 @@ entities:
           decals:
             10651: 20,-44
             10652: 24,-44
-            10654: 27,-40
-        - node:
-            color: '#4B709CFF'
-            id: QuarterTileOverlayGreyscale180
-          decals:
-            10661: 17,-40
-            10664: 18,-43
         - node:
             color: '#52B4E996'
             id: QuarterTileOverlayGreyscale180
@@ -6083,18 +6070,11 @@ entities:
             8388: 18,-40
             8390: 17,-39
         - node:
-            color: '#4B6F9CFF'
-            id: QuarterTileOverlayGreyscale270
-          decals:
-            10666: 18,-43
-            10667: 17,-40
-        - node:
             color: '#4B709CFF'
             id: QuarterTileOverlayGreyscale270
           decals:
             10655: 20,-44
             10656: 24,-44
-            10658: 27,-40
         - node:
             color: '#52B4E996'
             id: QuarterTileOverlayGreyscale270
@@ -6154,11 +6134,6 @@ entities:
             8382: 20,-38
             8383: 19,-38
             8384: 18,-38
-        - node:
-            color: '#4B709CFF'
-            id: QuarterTileOverlayGreyscale90
-          decals:
-            10662: 27,-40
         - node:
             color: '#52B4E996'
             id: QuarterTileOverlayGreyscale90
@@ -39824,13 +39799,6 @@ entities:
     - type: Transform
       pos: 62.638855,49.326077
       parent: 2
-- proto: CaptainDrobe
-  entities:
-  - uid: 7972
-    components:
-    - type: Transform
-      pos: 25.5,20.5
-      parent: 2
 - proto: CaptainIDCard
   entities:
   - uid: 5714
@@ -39849,14 +39817,6 @@ entities:
     components:
     - type: Transform
       pos: 14.5,-6.5
-      parent: 2
-- proto: CardDeckBlack
-  entities:
-  - uid: 1422
-    components:
-    - type: Transform
-      rot: 3.141592653589793 rad
-      pos: 54.628597,41.27114
       parent: 2
 - proto: Carpet
   entities:
@@ -54098,6 +54058,13 @@ entities:
     - type: Transform
       pos: 3.5,38.5
       parent: 2
+- proto: DresserCaptainFilled
+  entities:
+  - uid: 1422
+    components:
+    - type: Transform
+      pos: 25.5,20.5
+      parent: 2
 - proto: DresserChiefEngineerFilled
   entities:
   - uid: 7973
@@ -54432,7 +54399,7 @@ entities:
     - type: Label
       currentLabel: кофейный ликёр
     - type: PressurizedSolution
-      sprayFizzinessThresholdRoll: 0.9626324
+      sprayFizzinessThresholdRoll: 0.06917209
     - type: NameModifier
       baseName: бутылка кофейного ликёра
     - type: ContainerContainer
@@ -54718,7 +54685,7 @@ entities:
     - type: Label
       currentLabel: ром
     - type: PressurizedSolution
-      sprayFizzinessThresholdRoll: 0.803487
+      sprayFizzinessThresholdRoll: 0.20515488
     - type: NameModifier
       baseName: кубинский пряный ром капитана Пита
     - type: ContainerContainer
@@ -54760,7 +54727,7 @@ entities:
     - type: Label
       currentLabel: текила
     - type: PressurizedSolution
-      sprayFizzinessThresholdRoll: 0.38793895
+      sprayFizzinessThresholdRoll: 0.83890015
     - type: NameModifier
       baseName: бутылка текилы Каккаво гарантированного качества
     - type: ContainerContainer
@@ -54801,7 +54768,7 @@ entities:
     - type: Label
       currentLabel: вермут
     - type: PressurizedSolution
-      sprayFizzinessThresholdRoll: 0.4999946
+      sprayFizzinessThresholdRoll: 0.5179829
     - type: NameModifier
       baseName: бутылка вермута Золотой глаз
     - type: ContainerContainer
@@ -54824,7 +54791,7 @@ entities:
     - type: Label
       currentLabel: водка
     - type: PressurizedSolution
-      sprayFizzinessThresholdRoll: 0.082922116
+      sprayFizzinessThresholdRoll: 0.30014992
     - type: NameModifier
       baseName: бутылка водки
     - type: ContainerContainer
@@ -54874,7 +54841,7 @@ entities:
     - type: Label
       currentLabel: вино
     - type: PressurizedSolution
-      sprayFizzinessThresholdRoll: 0.19945808
+      sprayFizzinessThresholdRoll: 0.35647193
     - type: NameModifier
       baseName: особое двухбородое бородатое вино
     - type: ContainerContainer
@@ -58591,7 +58558,7 @@ entities:
       pos: 39.5,13.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -34916.527
+      secondsUntilStateChange: -35384.64
       state: Closing
     - type: DeviceNetwork
       deviceLists:
@@ -88905,13 +88872,6 @@ entities:
     - type: Physics
       canCollide: False
     - type: InsideEntityStorage
-- proto: OxygenAndNitrousOxideCanister
-  entities:
-  - uid: 5999
-    components:
-    - type: Transform
-      pos: 47.5,-8.5
-      parent: 2
 - proto: OxygenCanister
   entities:
   - uid: 9160
@@ -95491,11 +95451,6 @@ entities:
     components:
     - type: Transform
       pos: 31.5,2.5
-      parent: 2
-  - uid: 13717
-    components:
-    - type: Transform
-      pos: 39.5,-8.5
       parent: 2
   - uid: 13718
     components:
@@ -121473,34 +121428,50 @@ entities:
     - type: Transform
       pos: 61.576393,31.55321
       parent: 2
-- proto: WeaponTurretControl
+- proto: WeaponTurretAllHostile
   entities:
+  - uid: 5999
+    components:
+    - type: Transform
+      pos: 20.5,-33.5
+      parent: 2
+  - uid: 7972
+    components:
+    - type: Transform
+      pos: 17.5,-37.5
+      parent: 2
   - uid: 12497
     components:
     - type: Transform
-      rot: 3.141592653589793 rad
-      pos: 20.5,-33.5
+      pos: 27.5,-37.5
       parent: 2
   - uid: 12499
     components:
     - type: Transform
-      rot: 3.141592653589793 rad
-      pos: 27.5,-37.5
+      pos: 26.5,-42.5
       parent: 2
+- proto: WeaponTurretSyndicateBroken
+  entities:
   - uid: 12500
     components:
     - type: Transform
-      rot: 3.141592653589793 rad
-      pos: 26.5,-42.5
+      pos: 18.5,-42.5
       parent: 2
   - uid: 12502
     components:
     - type: Transform
-      rot: 3.141592653589793 rad
-      pos: 17.5,-37.5
+      pos: 17.5,-39.5
       parent: 2
-- proto: WeaponTurretSyndicateBroken
-  entities:
+  - uid: 13717
+    components:
+    - type: Transform
+      pos: 27.5,-39.5
+      parent: 2
+  - uid: 16893
+    components:
+    - type: Transform
+      pos: 24.5,-33.5
+      parent: 2
   - uid: 17908
     components:
     - type: Transform
