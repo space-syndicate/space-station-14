@@ -35,7 +35,13 @@
     gloves: ClothingHandsGlovesCombat
     id: AgentIDCard
     mask: ClothingMaskGasVoxRaider
+    outerClothing: ClothingOuterHardsuitVoxRaider
+    suitstorage: WeaponSpike
+    pocket1: DoubleEmergencyNitrogenTankFilled
+    pocket2: EnergySpike
 
 - type: startingGear
   parent: VoxRaidersOperativeGear
   id: VoxRaidersCommanderGear
+  equipment:
+    pocket2: EnergySwordDouble

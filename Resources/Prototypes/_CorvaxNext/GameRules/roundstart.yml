@@ -23,6 +23,10 @@
     minPlayers: 20
   - type: LoadMapRule
     mapPath: /Maps/Nonstations/nukieplanet.yml
+  - type: AntagRandomObjectives
+    maxDifficulty: 4
+    sets:
+    - groups: VoxRaidersObjectiveGroups
   - type: AntagSelection
     selectionTime: PrePlayerSpawn
     definitions:
@@ -30,7 +34,6 @@
       fallbackRoles: [ VoxRaiders ]
       spawnerPrototype: SpawnPointVoxRaidersCommander
       startingGear: VoxRaidersCommanderGear
-      roleLoadout: [ RoleSurvivalNukie ]
       components:
       - type: NukeOperative
       - type: RandomMetadata
@@ -39,14 +42,13 @@
         - SyndicateNamesElite
       - type: NpcFactionMember
         factions: [ Syndicate ]
-      mindRoles: [ MindRoleNukeopsCommander ]
+      mindRoles: [ MindRoleVoxRaiders ]
     - prefRoles: [ VoxRaiders ]
       fallbackRoles: [ VoxRaidersCommander ]
       spawnerPrototype: SpawnPointVoxRaidersOperative
       max: 3
       playerRatio: 15
       startingGear: VoxRaidersOperativeGear
-      roleLoadout: [ RoleSurvivalNukie ]
       components:
       - type: NukeOperative
       - type: RandomMetadata
@@ -55,4 +57,4 @@
         - SyndicateNamesNormal
       - type: NpcFactionMember
         factions: [ Syndicate ]
-      mindRoles: [ MindRoleNukeops ]
+      mindRoles: [ MindRoleVoxRaidersCommander ]

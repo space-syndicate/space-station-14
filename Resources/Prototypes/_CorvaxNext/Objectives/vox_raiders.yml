@@ -1,0 +1,19 @@
+- type: entity
+  abstract: true
+  parent: BaseObjective
+  id: BaseVoxRaidersObjective
+  components:
+  - type: Objective
+    issuer: ""
+    difficulty: 1
+  - type: RoleRequirement
+    roles:
+      mindRoles:
+      - VoxRaidersRole
+
+- type: entity
+  parent: BaseVoxRaidersObjective
+  id: CaptainGunExtractObjective
+  components:
+  - type: ExtractCondition
+    stealGroup: WeaponAntiqueLaser

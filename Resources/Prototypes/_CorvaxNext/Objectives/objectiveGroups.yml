@@ -1,0 +1,9 @@
+- type: weightedRandom
+  id: VoxRaidersObjectiveGroups
+  weights:
+    VoxRaidersExtractObjectiveGroups: 1
+
+- type: weightedRandom
+  id: VoxRaidersExtractObjectiveGroups
+  weights:
+    CaptainGunExtractObjective: 1
