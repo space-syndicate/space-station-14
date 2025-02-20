@@ -11,4 +11,4 @@ ent-GasMixerFlipped = gas mixer
     .suffix = Flipped
     .desc = { ent-GasMixer.desc }
 ent-PressureControlledValve = pneumatic valve
-    .desc = Valve controlled by pressure.
+    .desc = A bidirectional valve controlled by pressure. Opens if the output pipe is lower than the pressure of the control pipe by 101.325 kPa.
