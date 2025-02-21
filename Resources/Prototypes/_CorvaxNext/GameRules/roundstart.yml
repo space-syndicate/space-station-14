@@ -3,6 +3,8 @@
   id: VoxRaiders
   components:
   - type: VoxRaidersRule
+    objectiveGroup: VoxRaidersObjectiveGroups
+    objectiveCount: 4
   - type: RandomMetadata
     nameSegments:
     - operationPrefix
@@ -24,10 +26,6 @@
     minPlayers: 20
   - type: LoadMapRule
     mapPath: /Maps/Nonstations/nukieplanet.yml
-  - type: AntagRandomObjectives
-    maxDifficulty: 4
-    sets:
-    - groups: VoxRaidersObjectiveGroups
   - type: AntagSelection
     selectionTime: PrePlayerSpawn
     definitions:

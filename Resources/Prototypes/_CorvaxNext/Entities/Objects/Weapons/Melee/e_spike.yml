@@ -1,5 +1,5 @@
 - type: entity
-  parent: EnergySword
+  parent: BaseMeleeWeaponEnergy
   id: EnergySpike
   name: energy spike
   description: Strange thing.
@@ -17,16 +17,16 @@
     soundActivate:
       path: /Audio/Weapons/ebladeon.ogg
       params:
-        volume: -6
+        volume: -5
     soundDeactivate:
       path: /Audio/Weapons/ebladeoff.ogg
       params:
-        volume: -6
+        volume: -5
   - type: ItemToggleMeleeWeapon
     activatedSoundOnSwing:
       path: /Audio/Weapons/eblademiss.ogg
       params:
-        volume: -6
+        volume: -5
         variation: 0.250
     activatedDamage:
         types:
@@ -37,14 +37,9 @@
     activeSound:
       path: /Audio/Weapons/ebladehum.ogg
       params:
-        volume: -6
-  - type: ComponentToggler
-    components:
-    - type: Sharp
-    - type: DisarmMalus
-      malus: 0.4
+        volume: -5
   - type: MeleeWeapon
-    wideAnimationRotation: 145
+    wideAnimationRotation: 135
     attackRate: 1.5
     hidden: true
     damage:
@@ -53,15 +48,12 @@
   - type: Item
     size: Tiny
     sprite: _CorvaxNext/Objects/Weapons/Melee/e_spike.rsi
-  - type: UseDelay
-    delay: 1.0
   - type: PointLight
     enabled: false
     radius: 1.5
     energy: 1.5
     color: "#7500ff"
     netsync: false
-  - type: Appearance
   - type: ToggleableLightVisuals
     spriteLayer: blade
     inhandVisuals:
@@ -74,6 +66,6 @@
   - type: Tag
     tags:
     - Write
-  - type: DisarmMalus
-    malus: 0
   - type: MultiHandedItem
+  - type: Reflect
+    reflectProb: 0.5

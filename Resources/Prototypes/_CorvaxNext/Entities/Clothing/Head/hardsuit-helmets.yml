@@ -1,5 +1,5 @@
 - type: entity
-  parent: ClothingHeadHardsuitWithLightBase
+  parent: [ ClothingHeadHardsuitWithLightBase, ShowMedicalIcons ]
   id: ClothingHeadHelmetHardsuitVoxRaider
   categories: [ HideSpawnMenu ]
   name: raider helmet

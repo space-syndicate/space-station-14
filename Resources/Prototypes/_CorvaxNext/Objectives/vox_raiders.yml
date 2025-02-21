@@ -17,3 +17,10 @@
   components:
   - type: ExtractCondition
     stealGroup: WeaponAntiqueLaser
+
+- type: entity
+  parent: BaseVoxRaidersObjective
+  id: HandTeleporterExtractObjective
+  components:
+  - type: ExtractCondition
+    stealGroup: HandTeleporter
