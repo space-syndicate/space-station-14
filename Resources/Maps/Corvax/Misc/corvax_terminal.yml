@@ -2102,6 +2102,8 @@ entities:
       linkedPorts:
         918:
         - DockStatus: InputA
+        1575:
+        - DockStatus: Trigger
   - uid: 30
     components:
     - type: Transform
@@ -2112,6 +2114,8 @@ entities:
       linkedPorts:
         915:
         - DockStatus: InputB
+        1576:
+        - DockStatus: Trigger
   - uid: 31
     components:
     - type: Transform
@@ -2122,6 +2126,8 @@ entities:
       linkedPorts:
         916:
         - DockStatus: InputB
+        1224:
+        - DockStatus: Trigger
   - uid: 32
     components:
     - type: Transform
@@ -2132,6 +2138,8 @@ entities:
       linkedPorts:
         920:
         - DockStatus: InputB
+        1226:
+        - DockStatus: Trigger
   - uid: 33
     components:
     - type: Transform
@@ -2151,6 +2159,8 @@ entities:
       linkedPorts:
         919:
         - DockStatus: InputA
+        1225:
+        - DockStatus: Trigger
 - proto: AirlockGlass
   entities:
   - uid: 35
@@ -3393,6 +3403,46 @@ entities:
     - type: Transform
       pos: -8.5,-11.5
       parent: 2
+  - uid: 1577
+    components:
+    - type: Transform
+      pos: 14.5,2.5
+      parent: 2
+  - uid: 1578
+    components:
+    - type: Transform
+      pos: 14.5,-8.5
+      parent: 2
+  - uid: 1579
+    components:
+    - type: Transform
+      pos: 15.5,-8.5
+      parent: 2
+  - uid: 1580
+    components:
+    - type: Transform
+      pos: 14.5,-14.5
+      parent: 2
+  - uid: 1581
+    components:
+    - type: Transform
+      pos: 15.5,2.5
+      parent: 2
+  - uid: 1582
+    components:
+    - type: Transform
+      pos: 15.5,-14.5
+      parent: 2
+  - uid: 1583
+    components:
+    - type: Transform
+      pos: 14.5,-22.5
+      parent: 2
+  - uid: 1584
+    components:
+    - type: Transform
+      pos: 15.5,-22.5
+      parent: 2
 - proto: CableHV
   entities:
   - uid: 274
@@ -4142,6 +4192,13 @@ entities:
     - type: Transform
       rot: 1.5707963267948966 rad
       pos: 2.5,-20.5
+      parent: 2
+- proto: CigaretteLicoxide
+  entities:
+  - uid: 1
+    components:
+    - type: Transform
+      pos: -1.6795454,12.353031
       parent: 2
 - proto: CigaretteMold
   entities:
@@ -5492,6 +5549,8 @@ entities:
       rot: 1.5707963267948966 rad
       pos: -7.5,-9.5
       parent: 2
+    - type: AtmosPipeColor
+      color: '#FF0000FF'
   - uid: 611
     components:
     - type: Transform
@@ -5746,6 +5805,8 @@ entities:
       rot: -1.5707963267948966 rad
       pos: 2.5,5.5
       parent: 2
+    - type: AtmosPipeColor
+      color: '#FF0000FF'
   - uid: 644
     components:
     - type: Transform
@@ -5857,6 +5918,8 @@ entities:
       rot: -1.5707963267948966 rad
       pos: 2.5,3.5
       parent: 2
+    - type: AtmosPipeColor
+      color: '#0000FFFF'
   - uid: 659
     components:
     - type: Transform
@@ -5871,6 +5934,8 @@ entities:
       rot: -1.5707963267948966 rad
       pos: 3.5,5.5
       parent: 2
+    - type: AtmosPipeColor
+      color: '#FF0000FF'
   - uid: 661
     components:
     - type: Transform
@@ -7267,6 +7332,8 @@ entities:
       rot: 1.5707963267948966 rad
       pos: -7.5,-4.5
       parent: 2
+    - type: AtmosPipeColor
+      color: '#FF0000FF'
   - uid: 840
     components:
     - type: Transform
@@ -7281,6 +7348,8 @@ entities:
       rot: 1.5707963267948966 rad
       pos: -6.5,-2.5
       parent: 2
+    - type: AtmosPipeColor
+      color: '#0000FFFF'
   - uid: 842
     components:
     - type: Transform
@@ -7976,6 +8045,7 @@ entities:
       desc: Невидимый гейт
       name: Удаляй читы
     - type: Transform
+      anchored: True
       pos: 13.5,-22.5
       parent: 2
     - type: DeviceLinkSink
@@ -7984,6 +8054,9 @@ entities:
       linkedPorts:
         25:
         - Output: DoorBolt
+    - type: Physics
+      canCollide: False
+      bodyType: Static
     - type: Visibility
       layer: 10
   - uid: 916
@@ -7992,6 +8065,7 @@ entities:
       desc: Невидимый гейт
       name: Удаляй читы
     - type: Transform
+      anchored: True
       pos: 13.5,-14.5
       parent: 2
     - type: DeviceLinkSink
@@ -8000,6 +8074,9 @@ entities:
       linkedPorts:
         23:
         - Output: DoorBolt
+    - type: Physics
+      canCollide: False
+      bodyType: Static
     - type: Visibility
       layer: 10
   - uid: 917
@@ -8008,6 +8085,7 @@ entities:
       desc: Невидимый гейт
       name: Удаляй читы
     - type: Transform
+      anchored: True
       rot: -1.5707963267948966 rad
       pos: 11.5,-25.5
       parent: 2
@@ -8017,6 +8095,9 @@ entities:
       linkedPorts:
         28:
         - Output: DoorBolt
+    - type: Physics
+      canCollide: False
+      bodyType: Static
     - type: Visibility
       layer: 10
   - uid: 918
@@ -8025,6 +8106,7 @@ entities:
       desc: Невидимый гейт
       name: Удаляй читы
     - type: Transform
+      anchored: True
       pos: 13.5,2.5
       parent: 2
     - type: DeviceLinkSink
@@ -8033,6 +8115,9 @@ entities:
       linkedPorts:
         24:
         - Output: DoorBolt
+    - type: Physics
+      canCollide: False
+      bodyType: Static
     - type: Visibility
       layer: 10
   - uid: 919
@@ -8041,6 +8126,7 @@ entities:
       desc: Невидимый гейт
       name: Удаляй читы
     - type: Transform
+      anchored: True
       pos: 13.5,-1.5
       parent: 2
     - type: DeviceLinkSink
@@ -8049,6 +8135,9 @@ entities:
       linkedPorts:
         26:
         - Output: DoorBolt
+    - type: Physics
+      canCollide: False
+      bodyType: Static
     - type: Visibility
       layer: 10
   - uid: 920
@@ -8057,6 +8146,7 @@ entities:
       desc: Невидимый гейт
       name: Удаляй читы
     - type: Transform
+      anchored: True
       pos: 13.5,-8.5
       parent: 2
     - type: DeviceLinkSink
@@ -8065,6 +8155,9 @@ entities:
       linkedPorts:
         27:
         - Output: DoorBolt
+    - type: Physics
+      canCollide: False
+      bodyType: Static
     - type: Visibility
       layer: 10
 - proto: Mannequin
@@ -9042,6 +9135,83 @@ entities:
       linkedPorts:
         17:
         - Pressed: DoorBolt
+- proto: SignalTimer
+  entities:
+  - uid: 1224
+    components:
+    - type: MetaData
+      name: невидимый таймер
+    - type: Transform
+      pos: 16.5,-13.5
+      parent: 2
+    - type: SignalTimer
+      delay: 1
+    - type: DeviceLinkSource
+      linkedPorts:
+        23:
+        - Timer: Open
+    - type: Visibility
+      layer: 10
+  - uid: 1225
+    components:
+    - type: MetaData
+      name: невидимый таймер
+    - type: Transform
+      pos: 16.5,-0.5
+      parent: 2
+    - type: SignalTimer
+      delay: 1
+    - type: DeviceLinkSource
+      linkedPorts:
+        26:
+        - Timer: Open
+    - type: Visibility
+      layer: 10
+  - uid: 1226
+    components:
+    - type: MetaData
+      name: невидимый таймер
+    - type: Transform
+      pos: 16.5,-7.5
+      parent: 2
+    - type: SignalTimer
+      delay: 1
+    - type: DeviceLinkSource
+      linkedPorts:
+        27:
+        - Timer: Open
+    - type: Visibility
+      layer: 10
+  - uid: 1575
+    components:
+    - type: MetaData
+      name: невидимый таймер
+    - type: Transform
+      pos: 16.5,3.5
+      parent: 2
+    - type: SignalTimer
+      delay: 1
+    - type: DeviceLinkSource
+      linkedPorts:
+        24:
+        - Timer: Open
+    - type: Visibility
+      layer: 10
+  - uid: 1576
+    components:
+    - type: MetaData
+      name: невидимый таймер
+    - type: Transform
+      pos: 16.5,-21.5
+      parent: 2
+    - type: SignalTimer
+      delay: 1
+    - type: DeviceLinkSource
+      linkedPorts:
+        25:
+        - Timer: Open
+    - type: Visibility
+      layer: 10
 - proto: SignArcade
   entities:
   - uid: 1059
