@@ -30,8 +30,8 @@
         variation: 0.250
     activatedDamage:
         types:
-            Slash: 8
-            Heat: 8
+            Slash: 12
+            Heat: 12
     deactivatedSecret: true
   - type: ItemToggleActiveSound
     activeSound:
