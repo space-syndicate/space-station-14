@@ -107,17 +107,21 @@ public sealed class VoxRaidersRuleSystem : GameRuleSystem<VoxRaidersRuleComponen
         var query1 = AllEntityQuery<MapGridComponent>();
         while (query1.MoveNext(out var ent, out _))
         {
+            if (Transform(ent).MapID != e.Map)
+                continue;
+
             EnsureComp<VoxRaidersShuttleComponent>(ent);
         }
 
         entity.Comp.Map = _map.GetMap(e.Map);
 
-        foreach (var grid in e.Grids)
+        var query = AllEntityQuery<VoxRaidersShuttleComponent>();
+        while (query.MoveNext(out var ent, out var shuttle))
         {
-            if (!TryComp<VoxRaidersShuttleComponent>(grid, out var shuttle))
+            if (Transform(ent).MapID != e.Map)
                 continue;
 
-            EnsureComp<ExtractionShuttleComponent>(grid);
+            EnsureComp<ExtractionShuttleComponent>(ent);
 
             shuttle.Rule = entity;
         }

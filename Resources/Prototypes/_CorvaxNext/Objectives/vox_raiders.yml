@@ -14,7 +14,7 @@
 - type: entity
   parent: [ BaseVoxRaidersObjective, BaseSurviveObjective ]
   id: VoxRaidersSurviveObjective
-  name: Survive
+  name: Survive.
   description: All of you must survive.
   components:
   - type: Objective
