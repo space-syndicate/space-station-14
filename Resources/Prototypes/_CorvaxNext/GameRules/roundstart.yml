@@ -5,6 +5,7 @@
   - type: VoxRaidersRule
     objectiveGroup: VoxRaidersObjectiveGroups
     objectiveCount: 4
+    objectivePrototypes: [ VoxRaidersSurviveObjective ]
   - type: RandomMetadata
     nameSegments:
     - operationPrefix

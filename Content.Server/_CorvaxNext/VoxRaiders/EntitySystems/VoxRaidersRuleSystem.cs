@@ -5,6 +5,7 @@ using Content.Server.Antag;
 using Content.Server.GameTicking;
 using Content.Server.GameTicking.Rules;
 using Content.Server.Objectives;
+using Content.Server.Shuttles.Events;
 using Content.Shared.GameTicking.Components;
 using Content.Shared.Mind;
 using Content.Shared.Players;
@@ -22,6 +23,7 @@ public sealed class VoxRaidersRuleSystem : GameRuleSystem<VoxRaidersRuleComponen
     [Dependency] private readonly IRobustRandom _random = default!;
     [Dependency] private readonly SharedMindSystem _mind = default!;
     [Dependency] private readonly ObjectivesSystem _objectives = default!;
+    [Dependency] private readonly SharedMapSystem _map = default!;
 
     public override void Initialize()
     {
@@ -29,6 +31,8 @@ public sealed class VoxRaidersRuleSystem : GameRuleSystem<VoxRaidersRuleComponen
 
         SubscribeLocalEvent<VoxRaidersRuleComponent, AfterAntagEntitySelectedEvent>(OnAfterAntagEntitySelected);
         SubscribeLocalEvent<VoxRaidersRuleComponent, RuleLoadedGridsEvent>(OnRuleLoadedGrids);
+
+        SubscribeLocalEvent<VoxRaidersShuttleComponent, FTLCompletedEvent>(OnFTLCompleted);
     }
 
     protected override void Started(EntityUid uid, VoxRaidersRuleComponent component, GameRuleComponent gameRule, GameRuleStartedEvent args)
@@ -49,36 +53,23 @@ public sealed class VoxRaidersRuleSystem : GameRuleSystem<VoxRaidersRuleComponen
 
     protected override void AppendRoundEndText(EntityUid uid, VoxRaidersRuleComponent component, GameRuleComponent gameRule, ref RoundEndTextAppendEvent args)
     {
-        StringBuilder objectivesBuilder = new();
+        StringBuilder builder = new();
 
-        var globalSuccess = true;
+        builder.AppendLine(Loc.GetString(component.Success ? "vox-raiders-success" : "vox-raiders-fail"));
+        builder.AppendLine(Loc.GetString("vox-raiders-objectives"));
 
         foreach (var objectives in component.Objectives.Values)
         {
             if (objectives.Count < 1)
                 continue;
 
-            var success = objectives.Any(objective => _objectives.IsCompleted(objective.Objective, objective.Mind));
-
             var info = _objectives.GetInfo(objectives[0].Objective, objectives[0].Mind, objectives[0].Mind);
 
             if (info is null)
                 continue;
 
-            if (!success)
-            {
-                globalSuccess = false;
-                objectivesBuilder.AppendLine(Loc.GetString("objectives-objective-fail", ("objective", info.Value.Title), ("progress", 0), ("markupColor", "red")));
-            }
-            else
-                objectivesBuilder.AppendLine(Loc.GetString("objectives-objective-success", ("objective", info.Value.Title), ("markupColor", "green")));
+            builder.AppendLine(info.Value.Title);
         }
-
-        StringBuilder builder = new();
-
-        builder.AppendLine(Loc.GetString(globalSuccess ? "vox-raiders-success" : "vox-raiders-fail"));
-        builder.AppendLine(Loc.GetString("vox-raiders-objectives"));
-        builder.Append(objectivesBuilder);
 
         args.AddLine(builder.ToString());
     }
@@ -90,7 +81,10 @@ public sealed class VoxRaidersRuleSystem : GameRuleSystem<VoxRaidersRuleComponen
         if (mind is null)
             return;
 
-        entity.Comp.Shuttle?.Owners.Add(mind.Value);
+        var query = AllEntityQuery<VoxRaidersShuttleComponent, ExtractionShuttleComponent>();
+        while (query.MoveNext(out var shuttle, out var extraction))
+            if (shuttle.Rule == entity.Owner)
+                extraction.Owners.Add(mind.Value);
 
         foreach (var objective in entity.Comp.ObjectivePrototypes)
         {
@@ -111,17 +105,38 @@ public sealed class VoxRaidersRuleSystem : GameRuleSystem<VoxRaidersRuleComponen
     private void OnRuleLoadedGrids(Entity<VoxRaidersRuleComponent> entity, ref RuleLoadedGridsEvent e)
     {
         var query1 = AllEntityQuery<MapGridComponent>();
-        while (query1.MoveNext(out var ent, out var shuttle))
+        while (query1.MoveNext(out var ent, out _))
         {
-            EnsureComp<ExtractionShuttleComponent>(ent);
+            EnsureComp<VoxRaidersShuttleComponent>(ent);
         }
 
-        var query = AllEntityQuery<ExtractionShuttleComponent>();
-        while (query.MoveNext(out _, out var shuttle))
-        {
-            entity.Comp.Shuttle = shuttle;
+        entity.Comp.Map = _map.GetMap(e.Map);
 
+        foreach (var grid in e.Grids)
+        {
+            if (!TryComp<VoxRaidersShuttleComponent>(grid, out var shuttle))
+                continue;
+
+            EnsureComp<ExtractionShuttleComponent>(grid);
+
+            shuttle.Rule = entity;
+        }
+    }
+
+    private void OnFTLCompleted(Entity<VoxRaidersShuttleComponent> entity, ref FTLCompletedEvent e)
+    {
+        if (!TryComp<VoxRaidersRuleComponent>(entity.Comp.Rule, out var rule))
             return;
-        }
+
+        if (e.MapUid != rule.Map)
+            return;
+
+        foreach (var objectives in rule.Objectives.Values)
+            if (!objectives.All(objective => _objectives.IsCompleted(objective.Objective, objective.Mind)))
+                return;
+
+        Del(e.MapUid);
+
+        rule.Success = true;
     }
 }

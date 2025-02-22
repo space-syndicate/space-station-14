@@ -13,9 +13,12 @@ public sealed partial class VoxRaidersRuleComponent : Component
     [DataField(required: true)]
     public int ObjectiveCount;
 
+    [DataField]
     public List<string> ObjectivePrototypes = [];
 
     public Dictionary<string, List<(EntityUid Objective, Entity<MindComponent> Mind)>> Objectives = [];
 
-    public ExtractionShuttleComponent? Shuttle;
+    public EntityUid Map;
+
+    public bool Success;
 }

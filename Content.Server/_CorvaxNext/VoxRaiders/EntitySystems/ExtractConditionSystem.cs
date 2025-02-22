@@ -36,7 +36,7 @@ public sealed class ExtractConditionSystem : EntitySystem
     private void OnObjectiveGetProgress(Entity<ExtractConditionComponent> entity, ref ObjectiveGetProgressEvent e)
     {
         var query = AllEntityQuery<StealTargetComponent, TransformComponent>();
-        while (query.MoveNext(out _, out var target, out var transform))
+        while (query.MoveNext(out var target, out var transform))
         {
             if (target.StealGroup != entity.Comp.StealGroup)
                 continue;
