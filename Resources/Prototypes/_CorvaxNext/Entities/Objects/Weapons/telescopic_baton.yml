@@ -1,0 +1,72 @@
+- type: entity
+  parent: BaseItem
+  id: TelescopicBaton
+  name: telescopic baton
+  description: A compact yet robust personal defense weapon.
+  components:
+  - type: LayOnMeleeHit
+  - type: Sprite
+    sprite: _CorvaxNext/Objects/Weapons/Melee/telescopic_baton.rsi
+    layers:
+    - state: telescopic_baton_off
+      map: [ "enum.ToggleVisuals.Layer" ]
+  - type: ItemToggleSize
+    activatedSize: Large
+    activatedShape:
+    - 0, 0, 3, 0
+  - type: ItemToggle
+    soundActivate:
+      path: /Audio/Weapons/telescopicon.ogg
+      params:
+        volume: -5
+    soundDeactivate:
+      path: /Audio/Weapons/telescopicoff.ogg
+      params:
+        volume: -5
+  - type: Appearance
+  - type: GenericVisualizer
+    visuals:
+     enum.ToggleVisuals.Toggled:
+        enum.ToggleVisuals.Layer:
+          True: {state: telescopic_baton_on}
+          False: {state: telescopic_baton_off}
+  - type: ToggleableLightVisuals
+    spriteLayer: blade
+    inhandVisuals:
+      left:
+        - state: on-inhand-left
+      right:
+        - state: on-inhand-right
+  - type: DisarmMalus
+    malus: 0.225
+  - type: MeleeWeapon
+    angle: 0
+    attackRate: 1.2
+    wideAnimationRotation: -135
+    damage:
+      types:
+        Blunt: 0
+    bluntStaminaDamageFactor: 0.0
+  - type: ItemToggleMeleeWeapon
+    activatedDamage:
+      types:
+        Blunt: 1.5
+    deactivatedSecret: true
+  - type: StaminaDamageOnHit
+    damage: 16
+    sound: /Audio/Weapons/boxingpunch1.ogg
+  - type: UseDelay
+    delay: 0.4
+  - type: Item
+    heldPrefix: on-
+    sprite: _CorvaxNext/Objects/Weapons/Melee/telescopic_baton.rsi
+    size: Small
+    storedRotation: 44
+    shape:
+    - 0, 0, 1, 0
+  - type: Clothing
+    quickEquip: false
+    slots:
+      - Belt
+  - type: StaticPrice
+    price: 350
