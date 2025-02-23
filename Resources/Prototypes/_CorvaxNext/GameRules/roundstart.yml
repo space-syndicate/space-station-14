@@ -43,6 +43,8 @@
       - type: NpcFactionMember
         factions: [ Syndicate ]
       mindRoles: [ MindRoleVoxRaiders ]
+      briefing:
+        sound: "/Audio/_CorvaxNext/Misc/vox_raiders_greeting.ogg"
     - prefRoles: [ VoxRaiders ]
       fallbackRoles: [ VoxRaidersCommander ]
       spawnerPrototype: SpawnPointVoxRaidersOperative
@@ -58,3 +60,5 @@
       - type: NpcFactionMember
         factions: [ Syndicate ]
       mindRoles: [ MindRoleVoxRaidersCommander ]
+      briefing:
+        sound: "/Audio/_CorvaxNext/Misc/vox_raiders_greeting.ogg"
