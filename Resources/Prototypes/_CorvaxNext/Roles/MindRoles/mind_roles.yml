@@ -4,8 +4,8 @@
   name: API Role
   components:
   - type: MindRole
+    roleType: SoloAntagonist
     antagPrototype: Api
-    roleType: soloAntagonist
   - type: ApiRole
   - type: ThiefBeaconAccess
 

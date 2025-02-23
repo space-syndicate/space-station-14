@@ -4,7 +4,7 @@
   id: BaseVoxRaidersObjective
   components:
   - type: Objective
-    issuer: ""
+    issuer: objective-issuer-unknown
     difficulty: 1
   - type: RoleRequirement
     roles:
