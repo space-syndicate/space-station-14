@@ -1,4 +1,3 @@
-using System.Linq;
 using System.Text;
 using Content.Server._CorvaxNext.VoxRaiders.Components;
 using Content.Server.Antag;
@@ -63,7 +62,7 @@ public sealed class VoxRaidersRuleSystem : GameRuleSystem<VoxRaidersRuleComponen
             if (objectives.Count < 1)
                 continue;
 
-            var info = _objectives.GetInfo(objectives[0].Objective, objectives[0].Mind, objectives[0].Mind);
+            var info = _objectives.GetInfo(objectives[0].Objective, objectives[0].Mind);
 
             if (info is null)
                 continue;
@@ -80,6 +79,8 @@ public sealed class VoxRaidersRuleSystem : GameRuleSystem<VoxRaidersRuleComponen
 
         if (mind is null)
             return;
+
+        entity.Comp.Raiders.Add(e.EntityUid);
 
         var query = AllEntityQuery<VoxRaidersShuttleComponent, ExtractionShuttleComponent>();
         while (query.MoveNext(out var shuttle, out var extraction))
@@ -98,7 +99,7 @@ public sealed class VoxRaidersRuleSystem : GameRuleSystem<VoxRaidersRuleComponen
 
             _mind.AddObjective(mind.Value, mindComponent, obj.Value);
 
-            entity.Comp.Objectives.GetOrNew(objective).Add((obj.Value, (mind.Value, mindComponent)));
+            entity.Comp.Objectives.GetOrNew(objective).Add((obj.Value, mind.Value));
         }
     }
 
@@ -136,10 +137,19 @@ public sealed class VoxRaidersRuleSystem : GameRuleSystem<VoxRaidersRuleComponen
             return;
 
         foreach (var objectives in rule.Objectives.Values)
-            if (!objectives.All(objective => _objectives.IsCompleted(objective.Objective, objective.Mind)))
+            foreach (var objective in objectives)
+                if (TryComp<MindComponent>(objective.Mind, out var mind))
+                    if (!_objectives.IsCompleted(objective.Objective, (objective.Mind, mind)))
+                        return;
+
+        foreach (var raider in rule.Raiders)
+        {
+            if (!TryComp<ExtractionShuttleComponent>(Transform(raider).GridUid, out var shuttle))
                 return;
 
-        Del(e.MapUid);
+            if (!shuttle.Owners.Contains(raider))
+                return;
+        }
 
         rule.Success = true;
     }

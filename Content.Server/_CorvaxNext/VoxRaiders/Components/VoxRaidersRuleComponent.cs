@@ -16,7 +16,9 @@ public sealed partial class VoxRaidersRuleComponent : Component
     [DataField]
     public List<string> ObjectivePrototypes = [];
 
-    public Dictionary<string, List<(EntityUid Objective, Entity<MindComponent> Mind)>> Objectives = [];
+    public List<EntityUid> Raiders = [];
+
+    public Dictionary<string, List<(EntityUid Objective, EntityUid Mind)>> Objectives = [];
 
     public EntityUid Map;
 
