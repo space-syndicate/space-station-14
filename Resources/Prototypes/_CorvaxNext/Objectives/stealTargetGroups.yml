@@ -11,3 +11,10 @@
   sprite:
     sprite: _CorvaxNext/Clothing/Neck/SecBadge/hosbadge.rsi
     state: icon
+
+- type: stealTargetGroup
+  id: TelescopicBaton
+  name: steal-target-groups-telescopic-baton
+  sprite:
+    sprite: _CorvaxNext/Objects/Weapons/Melee/telescopic_baton.rsi
+    state: telescopic_baton_on
