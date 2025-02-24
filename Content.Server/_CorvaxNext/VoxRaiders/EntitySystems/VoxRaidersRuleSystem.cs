@@ -105,15 +105,6 @@ public sealed class VoxRaidersRuleSystem : GameRuleSystem<VoxRaidersRuleComponen
 
     private void OnRuleLoadedGrids(Entity<VoxRaidersRuleComponent> entity, ref RuleLoadedGridsEvent e)
     {
-        var query1 = AllEntityQuery<MapGridComponent>();
-        while (query1.MoveNext(out var ent, out _))
-        {
-            if (Transform(ent).MapID != e.Map)
-                continue;
-
-            EnsureComp<VoxRaidersShuttleComponent>(ent);
-        }
-
         entity.Comp.Map = _map.GetMap(e.Map);
 
         var query = AllEntityQuery<VoxRaidersShuttleComponent>();

@@ -26,7 +26,7 @@
   - type: GameRule
     minPlayers: 20
   - type: LoadMapRule
-    mapPath: /Maps/Nonstations/nukieplanet.yml
+    mapPath: /Maps/_CorvaxNext/Nonstations/vox.yml
   - type: AntagSelection
     selectionTime: PrePlayerSpawn
     definitions:
@@ -35,7 +35,6 @@
       spawnerPrototype: SpawnPointVoxRaidersCommander
       startingGear: VoxRaidersCommanderGear
       components:
-      - type: NukeOperative
       - type: RandomMetadata
         nameSegments:
         - nukeops-role-commander
@@ -52,7 +51,6 @@
       playerRatio: 15
       startingGear: VoxRaidersOperativeGear
       components:
-      - type: NukeOperative
       - type: RandomMetadata
         nameSegments:
         - nukeops-role-operator
