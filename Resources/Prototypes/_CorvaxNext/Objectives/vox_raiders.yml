@@ -1,0 +1,37 @@
+- type: entity
+  abstract: true
+  parent: BaseObjective
+  id: BaseVoxRaidersObjective
+  components:
+  - type: Objective
+    issuer: objective-issuer-unknown
+    difficulty: 1
+  - type: RoleRequirement
+    roles:
+      mindRoles:
+      - VoxRaidersRole
+
+- type: entity
+  parent: [ BaseVoxRaidersObjective, BaseSurviveObjective ]
+  id: VoxRaidersSurviveObjective
+  name: Survive.
+  description: All of you must survive.
+  components:
+  - type: Objective
+    icon:
+      sprite: Structures/Furniture/chairs.rsi
+      state: shuttle
+
+- type: entity
+  parent: BaseVoxRaidersObjective
+  id: CaptainGunExtractObjective
+  components:
+  - type: ExtractCondition
+    stealGroup: WeaponAntiqueLaser
+
+- type: entity
+  parent: BaseVoxRaidersObjective
+  id: HandTeleporterExtractObjective
+  components:
+  - type: ExtractCondition
+    stealGroup: HandTeleporter

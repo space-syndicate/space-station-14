@@ -1,0 +1,41 @@
+- type: entity
+  parent: [ BaseItem, BaseGunWieldable ]
+  id: WeaponSpike
+  name: spike
+  description: Light raider vox rifle. Silent and effective.
+  components:
+  - type: Sprite
+    sprite: _CorvaxNext/Objects/Weapons/Guns/Battery/spike.rsi
+    layers:
+    - state: base
+      map: ["enum.GunVisualLayers.Base"]
+  - type: Clothing
+    sprite: _CorvaxNext/Objects/Weapons/Guns/Battery/spike.rsi
+    quickEquip: false
+    slots:
+    - Back
+    - suitStorage
+  - type: Item
+    size: Huge
+  - type: AmmoCounter
+  - type: Gun
+    fireRate: 4
+    selectedMode: SemiAuto
+    availableModes:
+    - SemiAuto
+    soundGunshot:
+      path: /Audio/Weapons/Guns/Gunshots/silenced.ogg
+      params:
+        volume: -20
+  - type: Battery
+    maxCharge: 1400
+    startingCharge: 1400
+  - type: Appearance
+  - type: StaticPrice
+    price: 500
+  - type: BatterySelfRecharger
+    autoRecharge: true
+    autoRechargeRate: 50
+  - type: ProjectileBatteryAmmoProvider
+    proto: BulletSpike
+    fireCost: 100

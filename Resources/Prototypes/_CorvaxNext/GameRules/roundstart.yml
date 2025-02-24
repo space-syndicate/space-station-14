@@ -1,0 +1,62 @@
+- type: entity
+  parent: BaseGameRule
+  id: VoxRaiders
+  components:
+  - type: VoxRaidersRule
+    objectiveGroup: VoxRaidersObjectiveGroups
+    objectiveCount: 4
+    objectivePrototypes: [ VoxRaidersSurviveObjective ]
+  - type: RandomMetadata
+    nameSegments:
+    - operationPrefix
+    - operationSuffix
+  - type: RuleGrids
+  - type: AntagLoadProfileRule
+    speciesOverride: Vox
+    speciesOverrideBlacklist:
+    - Resomi
+    - Vulpkanin
+    - Arachnid
+    - Diona
+    - Dwarf
+    - Human
+    - Moth
+    - Reptilian
+    - SlimePerson
+  - type: GameRule
+    minPlayers: 20
+  - type: LoadMapRule
+    mapPath: /Maps/_CorvaxNext/Nonstations/vox.yml
+  - type: AntagSelection
+    selectionTime: PrePlayerSpawn
+    definitions:
+    - prefRoles: [ VoxRaidersCommander ]
+      fallbackRoles: [ VoxRaiders ]
+      spawnerPrototype: SpawnPointVoxRaidersCommander
+      startingGear: VoxRaidersCommanderGear
+      components:
+      - type: RandomMetadata
+        nameSegments:
+        - nukeops-role-commander
+        - SyndicateNamesElite
+      - type: NpcFactionMember
+        factions: [ Syndicate ]
+      mindRoles: [ MindRoleVoxRaiders ]
+      briefing:
+        sound: "/Audio/_CorvaxNext/Misc/vox_raiders_greeting.ogg"
+    - prefRoles: [ VoxRaiders ]
+      fallbackRoles: [ VoxRaidersCommander ]
+      spawnerPrototype: SpawnPointVoxRaidersOperative
+      max: 3
+      playerRatio: 15
+      startingGear: VoxRaidersOperativeGear
+      components:
+      - type: RandomMetadata
+        nameSegments:
+        - nukeops-role-operator
+        - SyndicateNamesNormal
+      - type: NpcFactionMember
+        factions: [ Syndicate ]
+      mindRoles: [ MindRoleVoxRaidersCommander ]
+      briefing:
+        sound: "/Audio/_CorvaxNext/Misc/vox_raiders_greeting.ogg"

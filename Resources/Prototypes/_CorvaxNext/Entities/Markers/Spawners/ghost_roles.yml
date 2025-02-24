@@ -11,3 +11,37 @@
         state: icon
     state: observer
   - type: GhostBarSpawn
+
+- type: entity
+  categories: [ HideSpawnMenu, Spawner ]
+  parent: BaseAntagSpawner
+  id: SpawnPointVoxRaidersCommander
+  components:
+  - type: GhostRole
+    name: roles-antag-vox-raiders-commander-name
+    description: roles-antag-vox-raiders-commander-objective
+    rules: ghost-role-information-rules-default-team-antagonist
+    mindRoles: [ MindRoleGhostRoleTeamAntagonist ]
+  - type: Sprite
+    sprite: Markers/jobs.rsi
+    layers:
+    - state: green
+    - sprite: Structures/Wallmounts/signs.rsi
+      state: radiation
+
+- type: entity
+  categories: [ HideSpawnMenu, Spawner ]
+  parent: BaseAntagSpawner
+  id: SpawnPointVoxRaidersOperative
+  components:
+  - type: GhostRole
+    name: roles-antag-vox-raiders-operative-name
+    description: roles-antag-vox-raiders-operative-objective
+    rules: ghost-role-information-rules-default-team-antagonist
+    mindRoles: [ MindRoleGhostRoleTeamAntagonist ]
+  - type: Sprite
+    sprite: Markers/jobs.rsi
+    layers:
+    - state: green
+    - sprite: Structures/Wallmounts/signs.rsi
+      state: radiation
