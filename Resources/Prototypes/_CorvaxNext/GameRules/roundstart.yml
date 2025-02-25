@@ -47,8 +47,7 @@
     - prefRoles: [ VoxRaiders ]
       fallbackRoles: [ VoxRaidersCommander ]
       spawnerPrototype: SpawnPointVoxRaidersOperative
-      max: 3
-      playerRatio: 15
+      max: 4
       startingGear: VoxRaidersOperativeGear
       components:
       - type: RandomMetadata
