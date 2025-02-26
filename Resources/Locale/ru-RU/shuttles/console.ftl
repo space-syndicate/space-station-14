@@ -8,9 +8,13 @@ shuttle-console-prevent = Вы не можете пилотировать это
 
 shuttle-console-display-label = Дисплей
 shuttle-console-position = Координаты:
+shuttle-console-position-value = { $X }, { $Y }
 shuttle-console-orientation = Азимут:
+shuttle-console-orientation-value = { $angle }
 shuttle-console-linear-velocity = Линейная скорость:
+shuttle-console-linear-velocity-value = { $X }, { $Y }
 shuttle-console-angular-velocity = Угловая скорость:
+shuttle-console-angular-velocity-value = { $angularVelocity }
 shuttle-console-unknown = Неизвестно
 shuttle-console-iff-label = { $name } ({ $distance } м)
 shuttle-console-exclusion = Зона отчуждения

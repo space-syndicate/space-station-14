@@ -84,7 +84,7 @@
   - type: FaxMachine
     name: "Central Command"
     notifyAdmins: true
-    receiveStationGoal: true # Corvax-StationGoal
+    receiveAllStationGoals: true # Corvax-StationGoal
 
 - type: entity
   parent: FaxMachineBase
@@ -102,6 +102,7 @@
     responsePings: false
     notifyAdmins: true
   - type: Emagged
+    emagType: Interaction
 
 - type: entity
   parent: FaxMachineBase
