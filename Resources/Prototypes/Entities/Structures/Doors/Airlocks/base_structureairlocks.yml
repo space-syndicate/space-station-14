@@ -21,11 +21,6 @@
       shader: unshaded
       map: ["enum.DoorVisualLayers.BaseUnlit"]
       visible: false
-    # Corvax-Resprite-Airlocks-Start
-    - state: closed_unlit
-      shader: unshaded
-      map: ["enum.PowerDeviceVisualLayers.Powered"]
-    # Corvax-Resprite-Airlocks-End
     - state: welded
       map: ["enum.WeldableLayers.BaseWelded"]
     - state: bolted_unlit
@@ -94,12 +89,6 @@
         enum.ElectrifiedLayers.Sparks:
           True: { visible: True }
           False: { visible: False }
-      # Corvax-Resprite-Airlocks-Start
-      enum.PowerDeviceVisuals.Powered:
-        enum.PowerDeviceVisualLayers.Powered:
-          True: { visible: true }
-          False: { visible: false }
-      # Corvax-Resprite-Airlocks-End
   - type: WiresVisuals
   - type: ElectrocutionHUDVisuals
   - type: ApcPowerReceiver
