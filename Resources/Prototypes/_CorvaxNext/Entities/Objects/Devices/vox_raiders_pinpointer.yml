@@ -6,7 +6,7 @@
   - type: Sprite
     sprite: _CorvaxNext/Objects/Devices/vox_raiders_pinpointer.rsi
     layers:
-    - state: pinpointer
+    - state: pinpointer_vox
       map: ["enum.PinpointerLayers.Base"]
     - state: pinonnull
       map: ["enum.PinpointerLayers.Screen"]

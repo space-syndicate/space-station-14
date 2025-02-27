@@ -1,14 +1,14 @@
 - type: entity
   parent: [ ClothingHeadHardsuitWithLightBase, ShowMedicalIcons ]
-  id: ClothingHeadHelmetHardsuitVoxRaiderCombat
+  id: ClothingHeadHelmetHardsuitVoxRaidersCombat
   categories: [ HideSpawnMenu ]
   name: combat raider helmet
   description: Strange blue clothing.
   components:
   - type: Sprite
-    sprite: _CorvaxNext/Clothing/Head/Hardsuits/vox_raider_combat.rsi
+    sprite: _CorvaxNext/Clothing/Head/Hardsuits/vox_raiders_combat.rsi
   - type: Clothing
-    sprite: _CorvaxNext/Clothing/Head/Hardsuits/vox_raider_combat.rsi
+    sprite: _CorvaxNext/Clothing/Head/Hardsuits/vox_raiders_combat.rsi
   - type: PointLight
     color: "#7F00FF"
   - type: PressureProtection
@@ -29,15 +29,15 @@
 
 - type: entity
   parent: [ ClothingHeadHardsuitWithLightBase, ShowMedicalIcons ]
-  id: ClothingHeadHelmetHardsuitVoxRaiderEngineer
+  id: ClothingHeadHelmetHardsuitVoxRaidersEngineer
   categories: [ HideSpawnMenu ]
   name: engineer raider helmet
   description: Strange orange clothing.
   components:
   - type: Sprite
-    sprite: _CorvaxNext/Clothing/Head/Hardsuits/vox_raider_engineer.rsi
+    sprite: _CorvaxNext/Clothing/Head/Hardsuits/vox_raiders_engineer.rsi
   - type: Clothing
-    sprite: _CorvaxNext/Clothing/Head/Hardsuits/vox_raider_engineer.rsi
+    sprite: _CorvaxNext/Clothing/Head/Hardsuits/vox_raiders_engineer.rsi
   - type: PointLight
     color: "#7F00FF"
   - type: PressureProtection
@@ -58,15 +58,15 @@
 
 - type: entity
   parent: [ ClothingHeadHardsuitWithLightBase, ShowMedicalIcons ]
-  id: ClothingHeadHelmetHardsuitVoxRaiderMedical
+  id: ClothingHeadHelmetHardsuitVoxRaidersMedical
   categories: [ HideSpawnMenu ]
   name: medical raider helmet
   description: Strange green clothing.
   components:
   - type: Sprite
-    sprite: _CorvaxNext/Clothing/Head/Hardsuits/vox_raider_medical.rsi
+    sprite: _CorvaxNext/Clothing/Head/Hardsuits/vox_raiders_medical.rsi
   - type: Clothing
-    sprite: _CorvaxNext/Clothing/Head/Hardsuits/vox_raider_medical.rsi
+    sprite: _CorvaxNext/Clothing/Head/Hardsuits/vox_raiders_medical.rsi
   - type: PointLight
     color: "#7F00FF"
   - type: PressureProtection
@@ -87,15 +87,15 @@
 
 - type: entity
   parent: [ ClothingHeadHardsuitWithLightBase, ShowMedicalIcons ]
-  id: ClothingHeadHelmetHardsuitVoxRaiderStealth
+  id: ClothingHeadHelmetHardsuitVoxRaidersStealth
   categories: [ HideSpawnMenu ]
   name: stealth raider helmet
   description: Strange gray clothing.
   components:
   - type: Sprite
-    sprite: _CorvaxNext/Clothing/Head/Hardsuits/vox_raider_stealth.rsi
+    sprite: _CorvaxNext/Clothing/Head/Hardsuits/vox_raiders_stealth.rsi
   - type: Clothing
-    sprite: _CorvaxNext/Clothing/Head/Hardsuits/vox_raider_stealth.rsi
+    sprite: _CorvaxNext/Clothing/Head/Hardsuits/vox_raiders_stealth.rsi
   - type: PointLight
     color: "#7F00FF"
   - type: PressureProtection

@@ -1,11 +1,11 @@
-ent-ClothingHeadHelmetHardsuitVoxRaiderCombat = боевой рейдерский шлем
+ent-ClothingHeadHelmetHardsuitVoxRaidersCombat = боевой рейдерский шлем
     .desc = Странная голубая одёжка.
 
-ent-ClothingHeadHelmetHardsuitVoxRaiderEngineer = инженерный рейдерский шлем
+ent-ClothingHeadHelmetHardsuitVoxRaidersEngineer = инженерный рейдерский шлем
     .desc = Странная оранжевая одёжка.
 
-ent-ClothingHeadHelmetHardsuitVoxRaiderMedical = медицинский рейдерский шлем
+ent-ClothingHeadHelmetHardsuitVoxRaidersMedical = медицинский рейдерский шлем
     .desc = Странная зелёная одёжка.
 
-ent-ClothingHeadHelmetHardsuitVoxRaiderStealth = стелс рейдерский шлем
+ent-ClothingHeadHelmetHardsuitVoxRaidersStealth = стелс рейдерский шлем
     .desc = Странная серая одёжка.

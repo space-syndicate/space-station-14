@@ -6,7 +6,6 @@ using Content.Server.GameTicking.Rules;
 using Content.Server.Objectives;
 using Content.Server.Objectives.Components.Targets;
 using Content.Server.Shuttles.Events;
-using Content.Shared._CorvaxNext.ControlPinpointer;
 using Content.Shared.GameTicking.Components;
 using Content.Shared.Mind;
 using Content.Shared.Players;
@@ -168,7 +167,10 @@ public sealed class VoxRaidersRuleSystem : GameRuleSystem<VoxRaidersRuleComponen
             if (!TryComp<ExtractionMapComponent>(Transform(raider).MapUid, out var extraction))
                 return;
 
-            if (!extraction.Owners.Contains(raider))
+            if (!_mind.TryGetMind(raider, out var mind, out _))
+                return;
+
+            if (!extraction.Owners.Contains(mind))
                 return;
         }
 

@@ -1,7 +1,8 @@
+using Content.Server._CorvaxNext.VoxRaiders.Components;
 using Content.Shared.Pinpointer;
 using Content.Shared.Verbs;
 
-namespace Content.Shared._CorvaxNext.ControlPinpointer;
+namespace Content.Server._CorvaxNext.VoxRaiders.EntitySystems;
 
 public sealed class ControlPinpointerSystem : EntitySystem
 {

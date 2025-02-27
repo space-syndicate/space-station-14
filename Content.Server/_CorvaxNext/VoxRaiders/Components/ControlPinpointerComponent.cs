@@ -1,4 +1,4 @@
-namespace Content.Shared._CorvaxNext.ControlPinpointer;
+namespace Content.Server._CorvaxNext.VoxRaiders.Components;
 
 [RegisterComponent]
 public sealed partial class ControlPinpointerComponent : Component

@@ -1,11 +1,11 @@
-ent-ClothingOuterHardsuitVoxRaiderCombat = боевой рейдерский скафандр
+ent-ClothingOuterHardsuitVoxRaidersCombat = боевой рейдерский скафандр
     .desc = Странная голубая одёжка.
 
-ent-ClothingOuterHardsuitVoxRaiderEngineer = инженерный рейдерский скафандр
+ent-ClothingOuterHardsuitVoxRaidersEngineer = инженерный рейдерский скафандр
     .desc = Странная оранжевая одёжка.
 
-ent-ClothingOuterHardsuitVoxRaiderMedical = медицинский рейдерский скафандр
+ent-ClothingOuterHardsuitVoxRaidersMedical = медицинский рейдерский скафандр
     .desc = Странная зелёная одёжка.
 
-ent-ClothingOuterHardsuitVoxRaiderStealth = стелс рейдерский скафандр
+ent-ClothingOuterHardsuitVoxRaidersStealth = стелс рейдерский скафандр
     .desc = Странная серая одёжка.
