@@ -5,11 +5,15 @@ using Content.Server.GameTicking;
 using Content.Server.GameTicking.Rules;
 using Content.Server.Objectives;
 using Content.Server.Objectives.Components.Targets;
+using Content.Server.Shuttles.Components;
 using Content.Server.Shuttles.Events;
+using Content.Server.Shuttles.Systems;
+using Content.Shared.Containers.ItemSlots;
 using Content.Shared.GameTicking.Components;
 using Content.Shared.Mind;
 using Content.Shared.Players;
 using Content.Shared.Random.Helpers;
+using Content.Shared.Shuttles.Components;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Random;
 using Robust.Shared.Utility;
@@ -23,6 +27,8 @@ public sealed class VoxRaidersRuleSystem : GameRuleSystem<VoxRaidersRuleComponen
     [Dependency] private readonly SharedMindSystem _mind = default!;
     [Dependency] private readonly ObjectivesSystem _objectives = default!;
     [Dependency] private readonly SharedMapSystem _map = default!;
+    [Dependency] private readonly ShuttleSystem _shuttle = default!;
+    [Dependency] private readonly ItemSlotsSystem _slots = default!;
 
     public override void Initialize()
     {
@@ -114,6 +120,25 @@ public sealed class VoxRaidersRuleSystem : GameRuleSystem<VoxRaidersRuleComponen
         voxRaidersMap.Rule = entity;
 
         EnsureComp<ExtractionMapComponent>(map);
+
+        _shuttle.TryAddFTLDestination(e.Map, true, out _);
+
+        var query = AllEntityQuery<ShuttleConsoleComponent, ItemSlotsComponent, TransformComponent>();
+        while (query.MoveNext(out var ent, out _, out var slots, out var transform))
+        {
+            if (transform.MapID != e.Map)
+                continue;
+
+            var disk = Spawn("CoordinatesDisk");
+
+            var destination = EnsureComp<ShuttleDestinationCoordinatesComponent>(disk);
+
+            destination.Destination = map;
+
+            Dirty(disk, destination);
+
+            _slots.TryInsert(ent, SharedShuttleConsoleComponent.DiskSlotName, disk, null, slots);
+        }
     }
 
     private void OnMapInit(Entity<VoxRaidersPinpointerComponent> entity, ref MapInitEvent e)
