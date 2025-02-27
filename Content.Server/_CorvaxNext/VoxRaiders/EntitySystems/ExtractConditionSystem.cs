@@ -41,10 +41,10 @@ public sealed class ExtractConditionSystem : EntitySystem
             if (target.StealGroup != entity.Comp.StealGroup)
                 continue;
 
-            if (!TryComp<ExtractionShuttleComponent>(transform.GridUid, out var shuttle))
+            if (!TryComp<ExtractionMapComponent>(transform.MapUid, out var map))
                 continue;
 
-            if (!shuttle.Owners.Contains(e.MindId))
+            if (!map.Owners.Contains(e.MindId))
                 continue;
 
             e.Progress = 1;

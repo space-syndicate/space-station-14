@@ -1,0 +1,16 @@
+- type: entity
+  parent: PinpointerBase
+  id: VoxRaidersPinpointer
+  name: raider pinpointer
+  components:
+  - type: Sprite
+    sprite: _CorvaxNext/Objects/Devices/vox_raiders_pinpointer.rsi
+    layers:
+    - state: pinpointer
+      map: ["enum.PinpointerLayers.Base"]
+    - state: pinonnull
+      map: ["enum.PinpointerLayers.Screen"]
+      shader: unshaded
+      visible: false
+  - type: ControlPinpointer
+  - type: VoxRaidersPinpointer

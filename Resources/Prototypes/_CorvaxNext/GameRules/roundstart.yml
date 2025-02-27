@@ -47,6 +47,7 @@
     - prefRoles: [ VoxRaiders ]
       fallbackRoles: [ VoxRaidersCommander ]
       spawnerPrototype: SpawnPointVoxRaidersOperative
+      min: 4
       max: 4
       startingGear: VoxRaidersOperativeGear
       components:
