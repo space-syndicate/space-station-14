@@ -8,7 +8,8 @@
   - type: ContainerFill
     containers:
       key_slots:
-        - EncryptionKeyVoxRaiders
+      - EncryptionKeyVoxRaiders
+      - EncryptionKeyCommon
   - type: Sprite
     sprite: _CorvaxNext/Clothing/Ears/Headsets/vox_raiders.rsi
   - type: Clothing
