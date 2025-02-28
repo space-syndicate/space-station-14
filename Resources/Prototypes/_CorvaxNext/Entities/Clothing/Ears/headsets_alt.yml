@@ -1,0 +1,15 @@
+- type: entity
+  parent: ClothingHeadsetAlt
+  id: ClothingHeadsetAltVoxRaiders
+  name: raider headset
+  components:
+  - type: EncryptionKeyHolder
+    keySlots: 7
+  - type: ContainerFill
+    containers:
+      key_slots:
+        - EncryptionKeyVoxRaiders
+  - type: Sprite
+    sprite: _CorvaxNext/Clothing/Ears/Headsets/vox_raiders.rsi
+  - type: Clothing
+    sprite: _CorvaxNext/Clothing/Ears/Headsets/vox_raiders.rsi
