@@ -20,7 +20,5 @@ public sealed partial class VoxRaidersRuleComponent : Component
 
     public Dictionary<string, List<(EntityUid Objective, EntityUid Mind)>> Objectives = [];
 
-    public EntityUid Map;
-
     public bool Success;
 }

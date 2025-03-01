@@ -4,12 +4,16 @@ using Content.Server.Antag;
 using Content.Server.GameTicking;
 using Content.Server.GameTicking.Rules;
 using Content.Server.Objectives;
+using Content.Server.Objectives.Components.Targets;
+using Content.Server.Shuttles.Components;
 using Content.Server.Shuttles.Events;
+using Content.Server.Shuttles.Systems;
+using Content.Shared.Containers.ItemSlots;
 using Content.Shared.GameTicking.Components;
 using Content.Shared.Mind;
 using Content.Shared.Players;
 using Content.Shared.Random.Helpers;
-using Robust.Shared.Map.Components;
+using Content.Shared.Shuttles.Components;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Random;
 using Robust.Shared.Utility;
@@ -23,6 +27,8 @@ public sealed class VoxRaidersRuleSystem : GameRuleSystem<VoxRaidersRuleComponen
     [Dependency] private readonly SharedMindSystem _mind = default!;
     [Dependency] private readonly ObjectivesSystem _objectives = default!;
     [Dependency] private readonly SharedMapSystem _map = default!;
+    [Dependency] private readonly ShuttleSystem _shuttle = default!;
+    [Dependency] private readonly ItemSlotsSystem _slots = default!;
 
     public override void Initialize()
     {
@@ -31,7 +37,9 @@ public sealed class VoxRaidersRuleSystem : GameRuleSystem<VoxRaidersRuleComponen
         SubscribeLocalEvent<VoxRaidersRuleComponent, AfterAntagEntitySelectedEvent>(OnAfterAntagEntitySelected);
         SubscribeLocalEvent<VoxRaidersRuleComponent, RuleLoadedGridsEvent>(OnRuleLoadedGrids);
 
-        SubscribeLocalEvent<VoxRaidersShuttleComponent, FTLCompletedEvent>(OnFTLCompleted);
+        SubscribeLocalEvent<VoxRaidersPinpointerComponent, MapInitEvent>(OnMapInit);
+
+        SubscribeLocalEvent<FTLCompletedEvent>(OnFTLCompleted);
     }
 
     protected override void Started(EntityUid uid, VoxRaidersRuleComponent component, GameRuleComponent gameRule, GameRuleStartedEvent args)
@@ -82,9 +90,9 @@ public sealed class VoxRaidersRuleSystem : GameRuleSystem<VoxRaidersRuleComponen
 
         entity.Comp.Raiders.Add(e.EntityUid);
 
-        var query = AllEntityQuery<VoxRaidersShuttleComponent, ExtractionShuttleComponent>();
-        while (query.MoveNext(out var shuttle, out var extraction))
-            if (shuttle.Rule == entity.Owner)
+        var query = AllEntityQuery<VoxRaidersMapComponent, ExtractionMapComponent>();
+        while (query.MoveNext(out var map, out var extraction))
+            if (map.Rule == entity.Owner)
                 extraction.Owners.Add(mind.Value);
 
         foreach (var objective in entity.Comp.ObjectivePrototypes)
@@ -105,26 +113,72 @@ public sealed class VoxRaidersRuleSystem : GameRuleSystem<VoxRaidersRuleComponen
 
     private void OnRuleLoadedGrids(Entity<VoxRaidersRuleComponent> entity, ref RuleLoadedGridsEvent e)
     {
-        entity.Comp.Map = _map.GetMap(e.Map);
+        var map = _map.GetMap(e.Map);
 
-        var query = AllEntityQuery<VoxRaidersShuttleComponent>();
-        while (query.MoveNext(out var ent, out var shuttle))
+        var voxRaidersMap = EnsureComp<VoxRaidersMapComponent>(map);
+
+        voxRaidersMap.Rule = entity;
+
+        EnsureComp<ExtractionMapComponent>(map);
+
+        _shuttle.TryAddFTLDestination(e.Map, true, out _);
+
+        var query = AllEntityQuery<ShuttleConsoleComponent, ItemSlotsComponent, TransformComponent>();
+        while (query.MoveNext(out var ent, out _, out var slots, out var transform))
         {
-            if (Transform(ent).MapID != e.Map)
+            if (transform.MapID != e.Map)
                 continue;
 
-            EnsureComp<ExtractionShuttleComponent>(ent);
+            var disk = Spawn("CoordinatesDisk");
 
-            shuttle.Rule = entity;
+            var destination = EnsureComp<ShuttleDestinationCoordinatesComponent>(disk);
+
+            destination.Destination = map;
+
+            Dirty(disk, destination);
+
+            _slots.TryInsert(ent, SharedShuttleConsoleComponent.DiskSlotName, disk, null, slots);
         }
     }
 
-    private void OnFTLCompleted(Entity<VoxRaidersShuttleComponent> entity, ref FTLCompletedEvent e)
+    private void OnMapInit(Entity<VoxRaidersPinpointerComponent> entity, ref MapInitEvent e)
     {
-        if (!TryComp<VoxRaidersRuleComponent>(entity.Comp.Rule, out var rule))
+        if (!TryComp<VoxRaidersMapComponent>(Transform(entity).MapUid, out var map))
             return;
 
-        if (e.MapUid != rule.Map)
+        if (!TryComp<VoxRaidersRuleComponent>(map.Rule, out var rule))
+            return;
+
+        if (!TryComp<ControlPinpointerComponent>(entity, out var pin))
+            return;
+
+        foreach (var raider in rule.Raiders)
+            pin.Entities.Add(raider);
+
+        foreach (var objectives in rule.Objectives.Values)
+        {
+            if (!TryComp<ExtractConditionComponent>(objectives[0].Objective, out var condition))
+                continue;
+
+            var query = AllEntityQuery<StealTargetComponent>();
+            while (query.MoveNext(out var ent, out var target))
+            {
+                if (target.StealGroup != condition.StealGroup)
+                    continue;
+
+                pin.Entities.Add(ent);
+
+                break;
+            }
+        }
+    }
+
+    private void OnFTLCompleted(ref FTLCompletedEvent e)
+    {
+        if (!TryComp<VoxRaidersMapComponent>(e.MapUid, out var map))
+            return;
+
+        if (!TryComp<VoxRaidersRuleComponent>(map.Rule, out var rule))
             return;
 
         foreach (var objectives in rule.Objectives.Values)
@@ -135,10 +189,13 @@ public sealed class VoxRaidersRuleSystem : GameRuleSystem<VoxRaidersRuleComponen
 
         foreach (var raider in rule.Raiders)
         {
-            if (!TryComp<ExtractionShuttleComponent>(Transform(raider).GridUid, out var shuttle))
+            if (!TryComp<ExtractionMapComponent>(Transform(raider).MapUid, out var extraction))
                 return;
 
-            if (!shuttle.Owners.Contains(raider))
+            if (!_mind.TryGetMind(raider, out var mind, out _))
+                return;
+
+            if (!extraction.Owners.Contains(mind))
                 return;
         }
 

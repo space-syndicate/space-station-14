@@ -1,13 +1,46 @@
 - type: entity
   parent: ClothingOuterHardsuitBase
-  id: ClothingOuterHardsuitVoxRaider
-  name: raider hardsuit
-  description: Strange gray clothing.
+  id: ClothingOuterHardsuitVoxRaidersCombat
+  name: combat raider hardsuit
+  description: Strange blue clothing.
   components:
   - type: Sprite
-    sprite: _CorvaxNext/Clothing/OuterClothing/Hardsuits/vox.rsi
+    sprite: _CorvaxNext/Clothing/OuterClothing/Hardsuits/vox_raiders_combat.rsi
   - type: Clothing
-    sprite: _CorvaxNext/Clothing/OuterClothing/Hardsuits/vox.rsi
+    sprite: _CorvaxNext/Clothing/OuterClothing/Hardsuits/vox_raiders_combat.rsi
+  - type: Item
+    size: Huge
+  - type: PressureProtection
+    highPressureMultiplier: 0.1
+    lowPressureMultiplier: 1000
+  - type: ExplosionResistance
+    damageCoefficient: 0.5
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.3
+        Slash: 0.3
+        Piercing: 0.3
+        Heat: 0.2
+  - type: ClothingSpeedModifier
+    walkModifier: 1.2
+    sprintModifier: 1.2
+  - type: ToggleableClothing
+    clothingPrototype: ClothingHeadHelmetHardsuitVoxRaidersCombat
+  - type: Tag
+    tags:
+    - Hardsuit
+
+- type: entity
+  parent: ClothingOuterHardsuitBase
+  id: ClothingOuterHardsuitVoxRaidersEngineer
+  name: engineer raider hardsuit
+  description: Strange orange clothing.
+  components:
+  - type: Sprite
+    sprite: _CorvaxNext/Clothing/OuterClothing/Hardsuits/vox_raiders_engineer.rsi
+  - type: Clothing
+    sprite: _CorvaxNext/Clothing/OuterClothing/Hardsuits/vox_raiders_engineer.rsi
   - type: Item
     size: Huge
   - type: PressureProtection
@@ -28,7 +61,81 @@
     walkModifier: 1.2
     sprintModifier: 1.2
   - type: ToggleableClothing
-    clothingPrototype: ClothingHeadHelmetHardsuitVoxRaider
+    clothingPrototype: ClothingHeadHelmetHardsuitVoxRaidersEngineer
+  - type: Tag
+    tags:
+    - Hardsuit
+
+- type: entity
+  parent: ClothingOuterHardsuitBase
+  id: ClothingOuterHardsuitVoxRaidersMedical
+  name: medical raider hardsuit
+  description: Strange green clothing.
+  components:
+  - type: Sprite
+    sprite: _CorvaxNext/Clothing/OuterClothing/Hardsuits/vox_raiders_medical.rsi
+  - type: Clothing
+    sprite: _CorvaxNext/Clothing/OuterClothing/Hardsuits/vox_raiders_medical.rsi
+  - type: Item
+    size: Huge
+  - type: PressureProtection
+    highPressureMultiplier: 0.1
+    lowPressureMultiplier: 1000
+  - type: ExplosionResistance
+    damageCoefficient: 0.5
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.8
+        Slash: 0.8
+        Piercing: 0.8
+        Heat: 0.7
+  - type: ClothingSpeedModifier
+    walkModifier: 1.2
+    sprintModifier: 1.2
+  - type: ToggleableClothing
+    clothingPrototype: ClothingHeadHelmetHardsuitVoxRaidersMedical
+  - type: Tag
+    tags:
+    - Hardsuit
+
+- type: entity
+  parent: [ ClothingOuterHardsuitBase, BaseToggleClothing ]
+  id: ClothingOuterHardsuitVoxRaidersStealth
+  name: stealth raider hardsuit
+  description: Strange gray clothing.
+  components:
+  - type: Sprite
+    sprite: _CorvaxNext/Clothing/OuterClothing/Hardsuits/vox_raiders_stealth.rsi
+  - type: Clothing
+    sprite: _CorvaxNext/Clothing/OuterClothing/Hardsuits/vox_raiders_stealth.rsi
+  - type: Item
+    size: Huge
+  - type: PressureProtection
+    highPressureMultiplier: 0.1
+    lowPressureMultiplier: 1000
+  - type: ExplosionResistance
+    damageCoefficient: 0.5
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.9
+        Slash: 0.9
+  - type: ClothingSpeedModifier
+    walkModifier: 1.2
+    sprintModifier: 1.2
+  - type: ToggleableClothing
+    clothingPrototype: ClothingHeadHelmetHardsuitVoxRaidersStealth
+  - type: ToggleClothing
+    action: ActionToggleStealthHardsuit
+    disableOnUnequip: true
+  - type: ComponentToggler
+    parent: true
+    components:
+    - type: Stealth
+      minVisibility: -1
+      lastVisibility: -1
+  - type: BatteryToggle
   - type: Tag
     tags:
     - Hardsuit
