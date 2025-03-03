@@ -16,3 +16,8 @@
 - type: flavor
   id: snow
   description: flavor-base-snow
+
+- type: flavor
+  id: wallOfBricks
+  flavorType: Complex
+  description: flavor-complex-wall-of-bricks
