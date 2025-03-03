@@ -39,7 +39,7 @@
       absorbed:
         maxVol: 100
   - type: UseDelay
-    delay: 1
+    delay: 0.5 # Corvax-Next-MopBuff
   - type: PhysicalComposition
     materialComposition:
       Plastic: 50
@@ -90,7 +90,7 @@
     - type: Absorbent
       pickupAmount: 100
     - type: UseDelay
-      delay: 1.0
+      delay: 0.5 # Corvax-Next-MopBuff
     - type: SolutionRegeneration
       solution: absorbed
       generated:
