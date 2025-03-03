@@ -8,7 +8,7 @@ using Robust.Shared.Console;
 
 namespace Content.Server.Objectives.Commands
 {
-    [AdminCommand(AdminFlags.Logs)]
+    [AdminCommand(AdminFlags.Admin)] // Corvax-Next-AdminListObjectives
     public sealed class ListObjectivesCommand : LocalizedCommands
     {
         [Dependency] private readonly IEntityManager _entities = default!;
