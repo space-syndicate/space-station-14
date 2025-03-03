@@ -1,0 +1,773 @@
+- type: entity
+  parent: BoxCardboard
+  id: CardBoxUno
+  name: uno box
+  components:
+  - type: Item
+    size: Small
+    shape:
+    - 0,0,1,1
+  - type: Sprite
+    sprite: _CorvaxNext/Objects/Misc/unocards.rsi
+    state: unobox
+  - type: Storage
+    maxItemSize: Normal
+    grid:
+    - 0,0,1,1
+    whitelist:
+      components:
+      - CardDeck
+  - type: OpenTriggeredStorageFill
+    contents:
+    - id: CardDeckUno
+      amount: 1
+  - type: Appearance
+  
+- type: entity
+  parent: CardDeckBase
+  id: CardDeckUno
+  name: deck of uno cards
+  components:
+  - type: Sprite
+    sprite: _CorvaxNext/Objects/Misc/unocards.rsi
+    state: unodeck
+  - type: CardStack
+    content:
+    # Red
+    - CardUnoRed0
+    - CardUnoRed1
+    - CardUnoRed1
+    - CardUnoRed2
+    - CardUnoRed2
+    - CardUnoRed3
+    - CardUnoRed3
+    - CardUnoRed4
+    - CardUnoRed4
+    - CardUnoRed5
+    - CardUnoRed5
+    - CardUnoRed6
+    - CardUnoRed6
+    - CardUnoRed7
+    - CardUnoRed7
+    - CardUnoRed8
+    - CardUnoRed8
+    - CardUnoRed9
+    - CardUnoRed9
+    - CardUnoRedReverse
+    - CardUnoRedReverse
+    - CardUnoRedStop
+    - CardUnoRedStop
+    - CardUnoRedPlus2
+    - CardUnoRedPlus2
+    # Blue
+    - CardUnoBlue0
+    - CardUnoBlue1
+    - CardUnoBlue1
+    - CardUnoBlue2
+    - CardUnoBlue2
+    - CardUnoBlue3
+    - CardUnoBlue3
+    - CardUnoBlue4
+    - CardUnoBlue4
+    - CardUnoBlue5
+    - CardUnoBlue5
+    - CardUnoBlue6
+    - CardUnoBlue6
+    - CardUnoBlue7
+    - CardUnoBlue7
+    - CardUnoBlue8
+    - CardUnoBlue8
+    - CardUnoBlue9
+    - CardUnoBlue9
+    - CardUnoBlueReverse
+    - CardUnoBlueReverse
+    - CardUnoBlueStop
+    - CardUnoBlueStop
+    - CardUnoBluePlus2
+    - CardUnoBluePlus2
+    # Green
+    - CardUnoGreen0
+    - CardUnoGreen1
+    - CardUnoGreen1
+    - CardUnoGreen2
+    - CardUnoGreen2
+    - CardUnoGreen3
+    - CardUnoGreen3
+    - CardUnoGreen4
+    - CardUnoGreen4
+    - CardUnoGreen5
+    - CardUnoGreen5
+    - CardUnoGreen6
+    - CardUnoGreen6
+    - CardUnoGreen7
+    - CardUnoGreen7
+    - CardUnoGreen8
+    - CardUnoGreen8
+    - CardUnoGreen9
+    - CardUnoGreen9
+    - CardUnoGreenReverse
+    - CardUnoGreenReverse
+    - CardUnoGreenStop
+    - CardUnoGreenStop
+    - CardUnoGreenPlus2
+    - CardUnoGreenPlus2
+    # Yellow
+    - CardUnoYellow0
+    - CardUnoYellow1
+    - CardUnoYellow1
+    - CardUnoYellow2
+    - CardUnoYellow2
+    - CardUnoYellow3
+    - CardUnoYellow3
+    - CardUnoYellow4
+    - CardUnoYellow4
+    - CardUnoYellow5
+    - CardUnoYellow5
+    - CardUnoYellow6
+    - CardUnoYellow6
+    - CardUnoYellow7
+    - CardUnoYellow7
+    - CardUnoYellow8
+    - CardUnoYellow8
+    - CardUnoYellow9
+    - CardUnoYellow9
+    - CardUnoYellowReverse
+    - CardUnoYellowReverse
+    - CardUnoYellowStop
+    - CardUnoYellowStop
+    - CardUnoYellowPlus2
+    - CardUnoYellowPlus2
+    # Black
+    - CardUnoPlus4
+    - CardUnoPlus4
+    - CardUnoPlus4
+    - CardUnoPlus4
+    - CardUnoColor
+    - CardUnoColor
+    - CardUnoColor
+    - CardUnoColor
+
+- type: entity
+  parent: CardStackBase
+  id: CardHandBase
+  categories: [ HideSpawnMenu ]
+  name: hand of cards
+  components:
+  - type: CardHand
+  - type: Sprite
+    sprite: _CorvaxNext/Objects/Misc/unocards.rsi
+    state: unocardclosed
+  - type: UserInterface
+    interfaces:
+      enum.CardUiKey.Key:
+        type: CardHandMenuBoundUserInterface
+  - type: ActivatableUI
+    key: enum.CardUiKey.Key
+
+- type: entity
+  parent: CardBase
+  id: CardBaseUno
+  name: "uno card"
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    sprite: _CorvaxNext/Objects/Misc/unocards.rsi
+    state: unocardclosed
+  - type: Card
+    backSpriteLayers:
+    - sprite: _CorvaxNext/Objects/Misc/unocards.rsi
+      state: unocardclosed
+
+- type: entity
+  parent: CardBaseUno
+  categories: [ HideSpawnMenu ]
+  id: CardUnoRed0
+  components:
+  - type: Card
+    name: card-uno-red-0
+  - type: Sprite
+    sprite: _CorvaxNext/Objects/Misc/unocards.rsi
+    state: unocardred0
+
+- type: entity
+  parent: CardBaseUno
+  categories: [ HideSpawnMenu ]
+  id: CardUnoRed1
+  components:
+  - type: Card
+    name: card-uno-red-1
+  - type: Sprite
+    sprite: _CorvaxNext/Objects/Misc/unocards.rsi
+    state: unocardred1
+
+- type: entity
+  parent: CardBaseUno
+  categories: [ HideSpawnMenu ]
+  id: CardUnoRed2
+  components:
+  - type: Card
+    name: card-uno-red-2
+  - type: Sprite
+    sprite: _CorvaxNext/Objects/Misc/unocards.rsi
+    state: unocardred2
+
+- type: entity
+  parent: CardBaseUno
+  categories: [ HideSpawnMenu ]
+  id: CardUnoRed3
+  components:
+  - type: Card
+    name: card-uno-red-3
+  - type: Sprite
+    sprite: _CorvaxNext/Objects/Misc/unocards.rsi
+    state: unocardred3
+
+- type: entity
+  parent: CardBaseUno
+  categories: [ HideSpawnMenu ]
+  id: CardUnoRed4
+  components:
+  - type: Card
+    name: card-uno-red-4
+  - type: Sprite
+    sprite: _CorvaxNext/Objects/Misc/unocards.rsi
+    state: unocardred4
+
+- type: entity
+  parent: CardBaseUno
+  categories: [ HideSpawnMenu ]
+  id: CardUnoRed5
+  components:
+  - type: Card
+    name: card-uno-red-5
+  - type: Sprite
+    sprite: _CorvaxNext/Objects/Misc/unocards.rsi
+    state: unocardred5
+
+- type: entity
+  parent: CardBaseUno
+  categories: [ HideSpawnMenu ]
+  id: CardUnoRed6
+  components:
+  - type: Card
+    name: card-uno-red-6
+  - type: Sprite
+    sprite: _CorvaxNext/Objects/Misc/unocards.rsi
+    state: unocardred6
+
+- type: entity
+  parent: CardBaseUno
+  categories: [ HideSpawnMenu ]
+  id: CardUnoRed7
+  components:
+  - type: Card
+    name: card-uno-red-7
+  - type: Sprite
+    sprite: _CorvaxNext/Objects/Misc/unocards.rsi
+    state: unocardred7
+
+- type: entity
+  parent: CardBaseUno
+  categories: [ HideSpawnMenu ]
+  id: CardUnoRed8
+  components:
+  - type: Card
+    name: card-uno-red-8
+  - type: Sprite
+    sprite: _CorvaxNext/Objects/Misc/unocards.rsi
+    state: unocardred8
+
+- type: entity
+  parent: CardBaseUno
+  categories: [ HideSpawnMenu ]
+  id: CardUnoRed9
+  components:
+  - type: Card
+    name: card-uno-red-9
+  - type: Sprite
+    sprite: _CorvaxNext/Objects/Misc/unocards.rsi
+    state: unocardred9
+
+- type: entity
+  parent: CardBaseUno
+  categories: [ HideSpawnMenu ]
+  id: CardUnoRedReverse
+  components:
+  - type: Card
+    name: card-uno-red-reverse
+  - type: Sprite
+    sprite: _CorvaxNext/Objects/Misc/unocards.rsi
+    state: unocardredreverse
+
+- type: entity
+  parent: CardBaseUno
+  categories: [ HideSpawnMenu ]
+  id: CardUnoRedStop
+  components:
+  - type: Card
+    name: card-uno-red-stop
+  - type: Sprite
+    sprite: _CorvaxNext/Objects/Misc/unocards.rsi
+    state: unocardredstop
+
+- type: entity
+  parent: CardBaseUno
+  categories: [ HideSpawnMenu ]
+  id: CardUnoRedPlus2
+  components:
+  - type: Card
+    name: card-uno-red-plus2
+  - type: Sprite
+    sprite: _CorvaxNext/Objects/Misc/unocards.rsi
+    state: unocardredplus2
+
+- type: entity
+  parent: CardBaseUno
+  categories: [ HideSpawnMenu ]
+  id: CardUnoBlue0
+  components:
+  - type: Card
+    name: card-uno-blue-0
+  - type: Sprite
+    sprite: _CorvaxNext/Objects/Misc/unocards.rsi
+    state: unocardblue0
+
+- type: entity
+  parent: CardBaseUno
+  categories: [ HideSpawnMenu ]
+  id: CardUnoBlue1
+  components:
+  - type: Card
+    name: card-uno-blue-1
+  - type: Sprite
+    sprite: _CorvaxNext/Objects/Misc/unocards.rsi
+    state: unocardblue1
+
+- type: entity
+  parent: CardBaseUno
+  categories: [ HideSpawnMenu ]
+  id: CardUnoBlue2
+  components:
+  - type: Card
+    name: card-uno-blue-2
+  - type: Sprite
+    sprite: _CorvaxNext/Objects/Misc/unocards.rsi
+    state: unocardblue2
+
+- type: entity
+  parent: CardBaseUno
+  categories: [ HideSpawnMenu ]
+  id: CardUnoBlue3
+  components:
+  - type: Card
+    name: card-uno-blue-3
+  - type: Sprite
+    sprite: _CorvaxNext/Objects/Misc/unocards.rsi
+    state: unocardblue3
+
+- type: entity
+  parent: CardBaseUno
+  categories: [ HideSpawnMenu ]
+  id: CardUnoBlue4
+  components:
+  - type: Card
+    name: card-uno-blue-4
+  - type: Sprite
+    sprite: _CorvaxNext/Objects/Misc/unocards.rsi
+    state: unocardblue4
+
+- type: entity
+  parent: CardBaseUno
+  categories: [ HideSpawnMenu ]
+  id: CardUnoBlue5
+  components:
+  - type: Card
+    name: card-uno-blue-5
+  - type: Sprite
+    sprite: _CorvaxNext/Objects/Misc/unocards.rsi
+    state: unocardblue5
+
+- type: entity
+  parent: CardBaseUno
+  categories: [ HideSpawnMenu ]
+  id: CardUnoBlue6
+  components:
+  - type: Card
+    name: card-uno-blue-6
+  - type: Sprite
+    sprite: _CorvaxNext/Objects/Misc/unocards.rsi
+    state: unocardblue6
+
+- type: entity
+  parent: CardBaseUno
+  categories: [ HideSpawnMenu ]
+  id: CardUnoBlue7
+  components:
+  - type: Card
+    name: card-uno-blue-7
+  - type: Sprite
+    sprite: _CorvaxNext/Objects/Misc/unocards.rsi
+    state: unocardblue7
+
+- type: entity
+  parent: CardBaseUno
+  categories: [ HideSpawnMenu ]
+  id: CardUnoBlue8
+  components:
+  - type: Card
+    name: card-uno-blue-8
+  - type: Sprite
+    sprite: _CorvaxNext/Objects/Misc/unocards.rsi
+    state: unocardblue8
+
+- type: entity
+  parent: CardBaseUno
+  categories: [ HideSpawnMenu ]
+  id: CardUnoBlue9
+  components:
+  - type: Card
+    name: card-uno-blue-9
+  - type: Sprite
+    sprite: _CorvaxNext/Objects/Misc/unocards.rsi
+    state: unocardblue9
+
+- type: entity
+  parent: CardBaseUno
+  categories: [ HideSpawnMenu ]
+  id: CardUnoBlueReverse
+  components:
+  - type: Card
+    name: card-uno-blue-reverse
+  - type: Sprite
+    sprite: _CorvaxNext/Objects/Misc/unocards.rsi
+    state: unocardbluereverse
+
+- type: entity
+  parent: CardBaseUno
+  categories: [ HideSpawnMenu ]
+  id: CardUnoBlueStop
+  components:
+  - type: Card
+    name: card-uno-blue-stop
+  - type: Sprite
+    sprite: _CorvaxNext/Objects/Misc/unocards.rsi
+    state: unocardbluestop
+
+- type: entity
+  parent: CardBaseUno
+  categories: [ HideSpawnMenu ]
+  id: CardUnoBluePlus2
+  components:
+  - type: Card
+    name: card-uno-blue-plus2
+  - type: Sprite
+    sprite: _CorvaxNext/Objects/Misc/unocards.rsi
+    state: unocardblueplus2
+
+- type: entity
+  parent: CardBaseUno
+  categories: [ HideSpawnMenu ]
+  id: CardUnoGreen0
+  components:
+  - type: Card
+    name: card-uno-green-0
+  - type: Sprite
+    sprite: _CorvaxNext/Objects/Misc/unocards.rsi
+    state: unocardgreen0
+
+- type: entity
+  parent: CardBaseUno
+  categories: [ HideSpawnMenu ]
+  id: CardUnoGreen1
+  components:
+  - type: Card
+    name: card-uno-green-1
+  - type: Sprite
+    sprite: _CorvaxNext/Objects/Misc/unocards.rsi
+    state: unocardgreen1
+
+- type: entity
+  parent: CardBaseUno
+  categories: [ HideSpawnMenu ]
+  id: CardUnoGreen2
+  components:
+  - type: Card
+    name: card-uno-green-2
+  - type: Sprite
+    sprite: _CorvaxNext/Objects/Misc/unocards.rsi
+    state: unocardgreen2
+
+- type: entity
+  parent: CardBaseUno
+  categories: [ HideSpawnMenu ]
+  id: CardUnoGreen3
+  components:
+  - type: Card
+    name: card-uno-green-3
+  - type: Sprite
+    sprite: _CorvaxNext/Objects/Misc/unocards.rsi
+    state: unocardgreen3
+
+- type: entity
+  parent: CardBaseUno
+  categories: [ HideSpawnMenu ]
+  id: CardUnoGreen4
+  components:
+  - type: Card
+    name: card-uno-green-4
+  - type: Sprite
+    sprite: _CorvaxNext/Objects/Misc/unocards.rsi
+    state: unocardgreen4
+
+- type: entity
+  parent: CardBaseUno
+  categories: [ HideSpawnMenu ]
+  id: CardUnoGreen5
+  components:
+  - type: Card
+    name: card-uno-green-5
+  - type: Sprite
+    sprite: _CorvaxNext/Objects/Misc/unocards.rsi
+    state: unocardgreen5
+
+- type: entity
+  parent: CardBaseUno
+  categories: [ HideSpawnMenu ]
+  id: CardUnoGreen6
+  components:
+  - type: Card
+    name: card-uno-green-6
+  - type: Sprite
+    sprite: _CorvaxNext/Objects/Misc/unocards.rsi
+    state: unocardgreen6
+
+- type: entity
+  parent: CardBaseUno
+  categories: [ HideSpawnMenu ]
+  id: CardUnoGreen7
+  components:
+  - type: Card
+    name: card-uno-green-7
+  - type: Sprite
+    sprite: _CorvaxNext/Objects/Misc/unocards.rsi
+    state: unocardgreen7
+
+- type: entity
+  parent: CardBaseUno
+  categories: [ HideSpawnMenu ]
+  id: CardUnoGreen8
+  components:
+  - type: Card
+    name: card-uno-green-8
+  - type: Sprite
+    sprite: _CorvaxNext/Objects/Misc/unocards.rsi
+    state: unocardgreen8
+
+- type: entity
+  parent: CardBaseUno
+  categories: [ HideSpawnMenu ]
+  id: CardUnoGreen9
+  components:
+  - type: Card
+    name: card-uno-green-9
+  - type: Sprite
+    sprite: _CorvaxNext/Objects/Misc/unocards.rsi
+    state: unocardgreen9
+
+- type: entity
+  parent: CardBaseUno
+  categories: [ HideSpawnMenu ]
+  id: CardUnoGreenReverse
+  components:
+  - type: Card
+    name: card-uno-green-reverse
+  - type: Sprite
+    sprite: _CorvaxNext/Objects/Misc/unocards.rsi
+    state: unocardgreenreverse
+
+- type: entity
+  parent: CardBaseUno
+  categories: [ HideSpawnMenu ]
+  id: CardUnoGreenStop
+  components:
+  - type: Card
+    name: card-uno-green-stop
+  - type: Sprite
+    sprite: _CorvaxNext/Objects/Misc/unocards.rsi
+    state: unocardgreenstop
+
+- type: entity
+  parent: CardBaseUno
+  categories: [ HideSpawnMenu ]
+  id: CardUnoGreenPlus2
+  components:
+  - type: Card
+    name: card-uno-green-plus2
+  - type: Sprite
+    sprite: _CorvaxNext/Objects/Misc/unocards.rsi
+    state: unocardgreenplus2
+
+- type: entity
+  parent: CardBaseUno
+  categories: [ HideSpawnMenu ]
+  id: CardUnoYellow0
+  components:
+  - type: Card
+    name: card-uno-yellow-0
+  - type: Sprite
+    sprite: _CorvaxNext/Objects/Misc/unocards.rsi
+    state: unocardyellow0
+
+- type: entity
+  parent: CardBaseUno
+  categories: [ HideSpawnMenu ]
+  id: CardUnoYellow1
+  components:
+  - type: Card
+    name: card-uno-yellow-1
+  - type: Sprite
+    sprite: _CorvaxNext/Objects/Misc/unocards.rsi
+    state: unocardyellow1
+
+- type: entity
+  parent: CardBaseUno
+  categories: [ HideSpawnMenu ]
+  id: CardUnoYellow2
+  components:
+  - type: Card
+    name: card-uno-yellow-2
+  - type: Sprite
+    sprite: _CorvaxNext/Objects/Misc/unocards.rsi
+    state: unocardyellow2
+
+- type: entity
+  parent: CardBaseUno
+  categories: [ HideSpawnMenu ]
+  id: CardUnoYellow3
+  components:
+  - type: Card
+    name: card-uno-yellow-3
+  - type: Sprite
+    sprite: _CorvaxNext/Objects/Misc/unocards.rsi
+    state: unocardyellow3
+
+- type: entity
+  parent: CardBaseUno
+  categories: [ HideSpawnMenu ]
+  id: CardUnoYellow4
+  components:
+  - type: Card
+    name: card-uno-yellow-4
+  - type: Sprite
+    sprite: _CorvaxNext/Objects/Misc/unocards.rsi
+    state: unocardyellow4
+
+- type: entity
+  parent: CardBaseUno
+  categories: [ HideSpawnMenu ]
+  id: CardUnoYellow5
+  components:
+  - type: Card
+    name: card-uno-yellow-5
+  - type: Sprite
+    sprite: _CorvaxNext/Objects/Misc/unocards.rsi
+    state: unocardyellow5
+
+- type: entity
+  parent: CardBaseUno
+  categories: [ HideSpawnMenu ]
+  id: CardUnoYellow6
+  components:
+  - type: Card
+    name: card-uno-yellow-6
+  - type: Sprite
+    sprite: _CorvaxNext/Objects/Misc/unocards.rsi
+    state: unocardyellow6
+
+- type: entity
+  parent: CardBaseUno
+  categories: [ HideSpawnMenu ]
+  id: CardUnoYellow7
+  components:
+  - type: Card
+    name: card-uno-yellow-07
+  - type: Sprite
+    sprite: _CorvaxNext/Objects/Misc/unocards.rsi
+    state: unocardyellow7
+
+- type: entity
+  parent: CardBaseUno
+  categories: [ HideSpawnMenu ]
+  id: CardUnoYellow8
+  components:
+  - type: Card
+    name: card-uno-yellow-8
+  - type: Sprite
+    sprite: _CorvaxNext/Objects/Misc/unocards.rsi
+    state: unocardyellow8
+
+- type: entity
+  parent: CardBaseUno
+  categories: [ HideSpawnMenu ]
+  id: CardUnoYellow9
+  components:
+  - type: Card
+    name: card-uno-yellow-9
+  - type: Sprite
+    sprite: _CorvaxNext/Objects/Misc/unocards.rsi
+    state: unocardyellow9
+
+- type: entity
+  parent: CardBaseUno
+  categories: [ HideSpawnMenu ]
+  id: CardUnoYellowReverse
+  components:
+  - type: Card
+    name: card-uno-yellow-reverse
+  - type: Sprite
+    sprite: _CorvaxNext/Objects/Misc/unocards.rsi
+    state: unocardyellowreverse
+
+- type: entity
+  parent: CardBaseUno
+  categories: [ HideSpawnMenu ]
+  id: CardUnoYellowStop
+  components:
+  - type: Card
+    name: card-uno-yellow-stop
+  - type: Sprite
+    sprite: _CorvaxNext/Objects/Misc/unocards.rsi
+    state: unocardyellowstop
+
+- type: entity
+  parent: CardBaseUno
+  categories: [ HideSpawnMenu ]
+  id: CardUnoYellowPlus2
+  components:
+  - type: Card
+    name: card-uno-yellow-plus2
+  - type: Sprite
+    sprite: _CorvaxNext/Objects/Misc/unocards.rsi
+    state: unocardyellowplus2
+
+- type: entity
+  parent: CardBaseUno
+  categories: [ HideSpawnMenu ]
+  id: CardUnoPlus4
+  components:
+  - type: Card
+    name: card-uno-plus4
+  - type: Sprite
+    sprite: _CorvaxNext/Objects/Misc/unocards.rsi
+    state: unocardplus4
+
+- type: entity
+  parent: CardBaseUno
+  categories: [ HideSpawnMenu ]
+  id: CardUnoColor
+  components:
+  - type: Card
+    name: card-uno-color
+  - type: Sprite
+    sprite: _CorvaxNext/Objects/Misc/unocards.rsi
+    state: unocardcolor
