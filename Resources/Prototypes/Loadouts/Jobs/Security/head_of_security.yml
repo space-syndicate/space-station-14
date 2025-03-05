@@ -63,16 +63,6 @@
   effects:
   - !type:GroupLoadoutEffect
     proto: MasterHoS
-    
-    #Corvax-Loadout-Start
-- type: loadout
-  id: HeadofSecurityShoulderMantle
-  equipment:
-    neck: ClothingNeckMantleHOSShoulder
-  effects:
-  - !type:GroupLoadoutEffect
-    proto: MasterHoS
-    #Corvax-Loadout-End
 
 - type: startingGear
   id: HeadofSecurityMantle
