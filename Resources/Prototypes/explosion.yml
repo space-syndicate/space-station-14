@@ -133,13 +133,3 @@
 # STOP
 # BEFORE YOU ADD MORE EXPLOSION TYPES CONSIDER IF AN EXISTING ONE IS SUITABLE
 # ADDING NEW ONES IS PROHIBITIVELY EXPENSIVE
-- type: explosion
-  id: Blob
-  damagePerIntensity:
-    groups:
-      Brute: 10
-  tileBreakChance: [0]
-  tileBreakIntensity: [0]
-  lightColor: Red
-  texturePath: /Textures/Effects/fire.rsi
-  fireStates: 3
