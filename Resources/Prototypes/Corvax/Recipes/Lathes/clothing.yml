@@ -84,3 +84,11 @@
   materials:
     Cloth: 300
     Durathread: 100
+
+- type: latheRecipe
+  id: ClothingNeckMantleHOSShoulder
+  result: ClothingNeckMantleHOSShoulder
+  completetime: 4
+  materials:
+    Cloth: 300
+    Durathread: 100
