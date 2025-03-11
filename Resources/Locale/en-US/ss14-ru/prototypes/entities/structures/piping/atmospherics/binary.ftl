@@ -18,3 +18,6 @@ ent-GasRecycler = gas recycler
     .desc = Recycles carbon dioxide and nitrous oxide. Heater and compressor not included.
 ent-HeatExchanger = radiator
     .desc = Transfers heat between the pipe and its surroundings.
+ent-HeatExchangerBend = { ent-HeatExchanger }
+    .suffix = Bend
+    .desc = { ent-HeatExchanger.desc }

@@ -19,3 +19,5 @@ ent-BorgChassisSyndicateMedical = syndicate medical cyborg
     .desc = A combat medical cyborg. Has limited offensive potential, but makes more than up for it with its support capabilities.
 ent-BorgChassisSyndicateSaboteur = syndicate saboteur cyborg
     .desc = A streamlined engineering cyborg, equipped with covert modules. Its chameleon projector lets it disguise itself as a Nanotrasen cyborg.
+ent-BorgChassisDerelict = derelict cyborg
+    .desc = A man-machine hybrid that assists in station activity. This one is in a state of great disrepair.

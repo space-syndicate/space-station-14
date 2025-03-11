@@ -3,7 +3,8 @@ thief-backpack-window-description =
     Внутри находятся ваши орудия труда, которые растворятся, когда вы будете готовы.
     Выберите { $maxCount } { $maxCount ->
         [1] набор
-       *[other] разных набора
+        [few] разных набора
+       *[other] разных наборов
     } из списка.
 thief-backpack-window-selected = Выбрано наборов: ({ $selectedCount }/{ $maxCount })
 thief-backpack-window-approve-button = Принять
@@ -33,7 +34,7 @@ thief-backpack-category-syndie-name = Набор Синдиката
 thief-backpack-category-syndie-description =
     Побрякушки из забытого прошлого или украденные у нерадивого агента?
     Вы нашли кое-какую связь. Виски, эхо...
-    В комплект входят: Емаг, сигареты Interdyne,
+    В комплект входят: Емаг, взломщик доступов, сигареты Interdyne,
     кодовое слово Синдиката, зажигалка, глушитель связи,
     и несколько странных красных кристаллов.
 thief-backpack-category-sleeper-name = Набор сони

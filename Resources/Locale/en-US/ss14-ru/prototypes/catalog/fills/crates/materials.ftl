@@ -18,3 +18,5 @@ ent-CrateMaterialCardboard = cardboard crate
     .desc = 60 pieces of cardboard.
 ent-CrateMaterialPaper = paper crate
     .desc = 90 sheets of paper.
+ent-CrateMaterialRandom = surplus materials
+    .desc = Surplus materials from somewhere.

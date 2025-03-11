@@ -1,6 +1,7 @@
 using Content.Client.Wires.Visualizers;
 using Content.Shared.Doors.Components;
 using Content.Shared.Doors.Systems;
+using Content.Shared.Power;
 using Robust.Client.Animations;
 using Robust.Client.GameObjects;
 
@@ -84,7 +85,8 @@ public sealed class AirlockSystem : SharedAirlockSystem
         if (!_appearanceSystem.TryGetData<DoorState>(uid, DoorVisuals.State, out var state, args.Component))
             state = DoorState.Closed;
 
-        if (_appearanceSystem.TryGetData<bool>(uid, DoorVisuals.Powered, out var powered, args.Component) && powered)
+        if (_appearanceSystem.TryGetData<bool>(uid, PowerDeviceVisuals.Powered, out var powered, args.Component)
+            && powered)
         {
             boltedVisible = _appearanceSystem.TryGetData<bool>(uid, DoorVisuals.BoltLights, out var lights, args.Component)
                             && lights && (state == DoorState.Closed || state == DoorState.Welded);
@@ -95,7 +97,7 @@ public sealed class AirlockSystem : SharedAirlockSystem
                 ||  state == DoorState.Opening
                 ||  state == DoorState.Denying
                 || (state == DoorState.Open && comp.OpenUnlitVisible)
-                || (_appearanceSystem.TryGetData<bool>(uid, DoorVisuals.ClosedLights, out var closedLights, args.Component) && closedLights))
+                || (state == DoorState.Closed && comp.OpenUnlitVisible)) // Corvax-Resprite-Airlocks-Edit
                     && !boltedVisible && !emergencyLightsVisible;
         }
 
