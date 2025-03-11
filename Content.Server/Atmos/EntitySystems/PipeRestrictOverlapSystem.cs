@@ -22,6 +22,8 @@ public sealed class PipeRestrictOverlapSystem : EntitySystem
 
     private readonly List<EntityUid> _anchoredEntities = new();
     private EntityQuery<NodeContainerComponent> _nodeContainerQuery;
+    // SpaceOddysey - Pipe-Stack
+    private EntityQuery<PipeRestrictOverlapComponent> _restrictOverlapQuery;
 
     /// <inheritdoc/>
     public override void Initialize()
@@ -30,6 +32,8 @@ public sealed class PipeRestrictOverlapSystem : EntitySystem
         SubscribeLocalEvent<PipeRestrictOverlapComponent, AnchorAttemptEvent>(OnAnchorAttempt);
 
         _nodeContainerQuery = GetEntityQuery<NodeContainerComponent>();
+        // SpaceOddysey - Pipe-Stack
+        _restrictOverlapQuery = GetEntityQuery<PipeRestrictOverlapComponent>();
     }
 
     private void OnAnchorStateChanged(Entity<PipeRestrictOverlapComponent> ent, ref AnchorStateChangedEvent args)
@@ -85,6 +89,10 @@ public sealed class PipeRestrictOverlapSystem : EntitySystem
                 continue;
 
             if (!_nodeContainerQuery.TryComp(otherEnt, out var otherComp))
+                continue;
+
+            // SpaceOddysey - Pipe-Stack
+            if (!_restrictOverlapQuery.HasComp(otherEnt))
                 continue;
 
             if (PipeNodesOverlap(ent, (otherEnt, otherComp, Transform(otherEnt))))

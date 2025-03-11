@@ -376,7 +376,8 @@
   - type: PipeColorVisuals
   - type: Rotatable
   - type: GasRecycler
-  - type: PipeRestrictOverlap
+  # SpaceOddysey - Pipe-Stack
+  # - type: PipeRestrictOverlap
   - type: NodeContainer
     nodes:
       inlet:
