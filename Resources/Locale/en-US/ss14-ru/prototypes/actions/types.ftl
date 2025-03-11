@@ -50,5 +50,9 @@ ent-ActionFireStarter = Ignite
     .desc = Ignites enemies in a radius around you.
 ent-ActionToggleEyes = Open/Close eyes
     .desc = Close your eyes to protect your peepers, or open your eyes to enjoy the pretty lights.
-ent-ActionToggleWagging = action-name-toggle-wagging
-    .desc = action-description-toggle-wagging
+ent-ActionToggleWagging = Wagging Tail
+    .desc = Start or stop wagging your tail.
+ent-FakeMindShieldToggleAction = [color=green]Toggle Fake Mindshield[/color]
+    .desc = Turn the Fake Mindshield implant's transmission on/off
+ent-ActionToggleParamedicSiren = Toggle Paramedic Siren
+    .desc = Toggles the paramedic siren on and off.

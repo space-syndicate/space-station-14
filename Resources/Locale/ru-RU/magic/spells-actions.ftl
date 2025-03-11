@@ -5,3 +5,6 @@ action-speech-spell-summon-magicarp = AIE KHUSE EU
 action-speech-spell-fireball = ONI'SOMA!
 action-speech-spell-summon-guns = YOR'NEE VES-KORFA
 action-speech-spell-summon-magic = RYGOIN FEMA-VERECO
+action-speech-spell-mind-swap = GIN'YU CAPAN!
+action-speech-spell-cluwne = !КНОХ
+action-speech-spell-slip = СКУОЛЬ ЗКО!

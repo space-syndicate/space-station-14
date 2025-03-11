@@ -1,7 +1,7 @@
 ent-CigPackBase = пачка сигарет
-    .desc = { ent-BaseItem.desc }
+    .desc = { ent-BaseStorageItem.desc }
 ent-CigPackMixedBase = пачка пропитанных сигарет
-    .desc = { ent-BaseItem.desc }
+    .desc = { ent-BaseStorageItem.desc }
 ent-CigPackGreen = пачка сигарет Spessman's Smokes
     .desc = Надпись на упаковке гласит: "Изменит ли что-нибудь медленная смерть?"
 ent-CigPackRed = пачка сигарет DromedaryCo

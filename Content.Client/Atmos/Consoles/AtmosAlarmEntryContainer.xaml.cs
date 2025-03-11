@@ -42,8 +42,8 @@ public sealed partial class AtmosAlarmEntryContainer : BoxContainer
         [Gas.Plasma] = "P",
         [Gas.Tritium] = "T",
         [Gas.WaterVapor] = "H₂O",
-        [Gas.BZ] = "BZ", //SunRise & SpaceOdyssey edit
-        [Gas.Healium] = "F₃BZ", //SunRise & SpaceOdyssey edit
+        [Gas.BZ] = "BZ", //SpaceOdyssey edit
+        [Gas.Healium] = "F₃BZ", //SpaceOdyssey edit
     };
 
     public AtmosAlarmEntryContainer(NetEntity uid, EntityCoordinates? coordinates)
@@ -164,12 +164,11 @@ public sealed partial class AtmosAlarmEntryContainer : BoxContainer
                     foreach ((var gas, (var mol, var percent, var alert)) in keyValuePairs)
                     {
                         FixedPoint2 gasPercent = percent * 100f;
-
-                        var gasShorthand = _gasShorthands.GetValueOrDefault(gas, "X");
+                        var gasAbbreviation = Atmospherics.GasAbbreviations.GetValueOrDefault(gas, Loc.GetString("gas-unknown-abbreviation"));
 
                         var gasLabel = new Label()
                         {
-                            Text = Loc.GetString("atmos-alerts-window-other-gases-value", ("shorthand", gasShorthand), ("value", gasPercent)),
+                            Text = Loc.GetString("atmos-alerts-window-other-gases-value", ("shorthand", gasAbbreviation), ("value", gasPercent)),
                             FontOverride = normalFont,
                             FontColorOverride = GetAlarmStateColor(alert),
                             HorizontalAlignment = HAlignment.Center,

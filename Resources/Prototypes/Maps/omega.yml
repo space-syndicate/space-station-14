@@ -4,14 +4,14 @@
   mapPath: /Maps/omega.yml
   # Corvax-start
   minPlayers: 0
-  maxPlayers: 30
+  maxPlayers: 25
   # Corvax-end
   stations:
     Omega:
       stationProto: StandardNanotrasenStation
       components:
         - type: StationNameSetup
-          mapNameTemplate: '{0} Omega Station {1}'
+          mapNameTemplate: '{0} Омега {1}' # Corvax
           nameGenerator:
             !type:NanotrasenNameGenerator
             prefixCreator: 'TG'

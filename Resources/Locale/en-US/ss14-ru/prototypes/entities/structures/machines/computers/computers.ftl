@@ -1,5 +1,7 @@
 ent-ComputerAlert = atmospheric alerts computer
     .desc = Used to access the station's atmospheric automated alert system.
+ent-ComputerAtmosMonitoring = atmospheric network monitor
+    .desc = Used to monitor the station's atmospheric networks.
 ent-ComputerEmergencyShuttle = emergency shuttle console
     .desc = Handles authorization to early launch the shuttle.
 ent-BaseComputerShuttle = shuttle console
@@ -37,6 +39,8 @@ ent-ComputerComms = communications computer
     .desc = A computer used to make station wide announcements via keyboard, set the appropriate alert level, and call the emergency shuttle.
 ent-SyndicateComputerComms = syndicate communications computer
     .desc = A computer capable of remotely hacking into the station's communications systems. Using this to make an announcement will alert the station to your presence.
+ent-WizardComputerComms = wizard communications computer
+    .desc = A computer capable of magically projecting your speech to the station. Using this to make an announcement will alert the station to your presence.
 ent-ComputerSolarControl = solar control computer
     .desc = A controller for solar panel arrays.
 ent-ComputerRadar = mass scanner computer
