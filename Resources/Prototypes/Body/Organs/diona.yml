@@ -30,30 +30,6 @@
   parent: [BaseDionaOrgan, OrganHumanBrain]
   name: brain
   description: "The central hub of a diona's pseudo-neurological activity, its root-like tendrils search for its former body."
-  components:
-  - type: Item
-    size: Small
-    heldPrefix: brain
-  - type: Sprite
-    state: brain
-  - type: Organ # _CorvaxNext
-    slotId: Brain
-  - type: Brain # _CorvaxNext
-  - type: SolutionContainerManager
-    solutions:
-      organ:
-        maxVol: 10
-        reagents:
-        - ReagentId: Nutriment
-          Quantity: 10
-      Lung:
-        maxVol: 100
-        canReact: False
-      food:
-        maxVol: 5
-        reagents:
-        - ReagentId: GreyMatter
-          Quantity: 5
 
 - type: entity
   id: OrganDionaEyes
@@ -151,9 +127,6 @@
   description: "The source of incredible, unending intelligence. Honk."
   components:
   - type: Brain
-  - type: Nymph # This will make the organs turn into a nymph when they're removed.
-    entityPrototype: OrganDionaNymphBrain
-    transferMind: true
 
 - type: entity
   id: OrganDionaStomachNymph
@@ -173,7 +146,8 @@
   description: "Filters oxygen from an atmosphere, which is then sent into the bloodstream to be used as an electron carrier."
   components:
   - type: Nymph
-    entityPrototype: OrganDionaNymphLungs
+    entityPrototype: OrganDionaNymphBrain
+    transferMind: true
 
 # Nymphs that the organs will turn into
 - type: entity
