@@ -1,5 +1,5 @@
 using System.Numerics;
-using Content.Shared.Goobstation.Weapons.Multishot;
+using Content.Shared._Goobstation.Weapons.Multishot;
 using Content.Shared.Weapons.Ranged.Events;
 using Content.Shared.Weapons.Ranged.Systems;
 using Robust.Shared.Audio;
@@ -10,7 +10,7 @@ using Robust.Shared.Serialization.TypeSerializers.Implementations.Custom;
 namespace Content.Shared.Weapons.Ranged.Components;
 
 [RegisterComponent, NetworkedComponent, AutoGenerateComponentState(fieldDeltas: true), AutoGenerateComponentPause]
-[Access(typeof(SharedGunSystem), typeof(SharedMultishotSystem))] // GoobStation - Multishot v
+[Access(typeof(SharedGunSystem), typeof(Content.Shared._Goobstation.Weapons.Multishot.SharedMultishotSystem))] // GoobStation - Multishot v
 public sealed partial class GunComponent : Component
 {
     #region Sound

@@ -127,8 +127,9 @@ public abstract class SharedMaterialStorageSystem : EntitySystem
         if (!CanTakeVolume(uid, volume, component))
             return false;
 
-        if (component.MaterialWhiteList == null ? false : !component.MaterialWhiteList.Contains(materialId))
-            return false;
+        if (!component.IgnoreMaterialWhiteList) // Goobstation Change - Shitcode.
+            if (component.MaterialWhiteList == null ? false : !component.MaterialWhiteList.Contains(materialId))
+                return false;
 
         var amount = component.Storage.GetValueOrDefault(materialId);
         return amount + volume >= 0;
@@ -251,9 +252,11 @@ public abstract class SharedMaterialStorageSystem : EntitySystem
         if (!Resolve(toInsert, ref material, ref composition, false))
             return false;
 
+        Logger.Debug($"Checking whitelist for {ToPrettyString(toInsert)} on {ToPrettyString(receiver)}");
         if (_whitelistSystem.IsWhitelistFail(storage.Whitelist, toInsert))
             return false;
 
+        Logger.Debug("Whitelist check passed");
         if (HasComp<UnremoveableComponent>(toInsert))
             return false;
 
@@ -286,7 +289,7 @@ public abstract class SharedMaterialStorageSystem : EntitySystem
         _appearance.SetData(receiver, MaterialStorageVisuals.Inserting, true);
         Dirty(receiver, insertingComp);
 
-        var ev = new MaterialEntityInsertedEvent(material);
+        var ev = new MaterialEntityInsertedEvent(user, toInsert, material, multiplier); // Lavaland Change
         RaiseLocalEvent(receiver, ref ev);
         return true;
     }

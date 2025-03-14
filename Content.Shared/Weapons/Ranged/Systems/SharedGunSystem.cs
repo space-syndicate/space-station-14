@@ -20,6 +20,7 @@ using Content.Shared.Verbs;
 using Content.Shared.Weapons.Melee;
 using Content.Shared.Weapons.Melee.Events;
 using Content.Shared.Weapons.Ranged.Components;
+using Content.Shared._Goobstation.Weapons.Multishot;
 using Content.Shared.Weapons.Ranged.Events;
 using Content.Shared.Whitelist;
 using Robust.Shared.Audio;
@@ -178,6 +179,15 @@ public abstract partial class SharedGunSystem : EntitySystem
         {
             gunEntity = held;
             gunComp = gun;
+            return true;
+        }
+
+        // Lavaland Change: Check equipped entities for a gun.
+        if (_inventory.TryGetSlotEntity(entity, "gloves", out var gloves) &&
+            TryComp<GunComponent>(gloves.Value, out var glovesGun))
+        {
+            gunEntity = gloves.Value;
+            gunComp = glovesGun;
             return true;
         }
 

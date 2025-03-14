@@ -1,0 +1,10 @@
+ent-LavalandCrateNecropolis = сундук некрополиса
+  .desc = Твёрдый и металлический.
+ent-LavalandCrateNecropolisCultRobe = сундук некрополиса
+  .desc = Твёрдый и металлический.
+ent-LavalandCrateNecropolisCultArmor = сундук некрополиса
+  .desc = Твёрдый и металлический.
+ent-LavalandCrateNecropolisHeart = сундук некрополиса
+  .desc = Твёрдый и металлический.
+ent-LavalandCrateNecropolisVampirismCrystal = сундук некрополиса
+  .desc = Твёрдый и металлический.

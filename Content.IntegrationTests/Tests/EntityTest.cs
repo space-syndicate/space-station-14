@@ -239,7 +239,8 @@ namespace Content.IntegrationTests.Tests
                 "MapGrid",
                 "StationEvent",
                 "TimedDespawn",
-
+                //Backmen
+                "HierophantFieldGenerator", // Lavaland Change
                 // makes an announcement on mapInit.
                 "AnnounceOnSpawn",
             };

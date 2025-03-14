@@ -143,7 +143,7 @@ namespace Content.Shared.Damage
                 return damage;
             }
 
-            var before = new BeforeDamageChangedEvent(damage, origin, targetPart); // CorvaxNext: surgery Change
+            var before = new BeforeDamageChangedEvent(damage, origin, targetPart, canEvade ?? false); // Shitmed Change
             RaiseLocalEvent(uid.Value, ref before);
 
             if (before.Cancelled)
@@ -318,7 +318,8 @@ namespace Content.Shared.Damage
     public record struct BeforeDamageChangedEvent(
         DamageSpecifier Damage,
         EntityUid? Origin = null,
-        TargetBodyPart? TargetPart = null, // CorvaxNext: surgery Change
+        TargetBodyPart? TargetPart = null, // Shitmed Change
+        bool CanEvade = false, // Lavaland Change
         bool Cancelled = false);
 
     /// <summary>

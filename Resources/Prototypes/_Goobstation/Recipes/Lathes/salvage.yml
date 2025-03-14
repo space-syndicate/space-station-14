@@ -1,8 +1,9 @@
-- type: latheRecipe 
+- type: latheRecipe
   id: WeaponPlasmaCutter
   result: WeaponPlasmaCutter
-  completetime: 6
+  completetime: 8
   materials:
-    Steel: 500
-    Glass: 300
-    Plasma: 300
+    Steel: 1500
+    Glass: 600
+    Plasma: 500
+    Gold: 300

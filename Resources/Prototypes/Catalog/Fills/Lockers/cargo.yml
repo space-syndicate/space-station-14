@@ -17,6 +17,18 @@
     - id: RadioHandheld
     - id: AppraisalTool
     - id: FireExtinguisher
+    # Lavaland Change Start
+    - id: WeaponProtoKineticAccelerator
+    - id: OreBag
+    - id: Pickaxe
+    - id: LavalandEquipmentExplorerSuit
+    - id: ShelterCapsule
+    - id: ClothingMaskGasExplorer
+    - id: MineralScanner
+    - id: FlashlightSeclite
+    - id: ClothingEyesGlassesMeson
+    - id: SeismicCharge
+    # Lavaland Change End
     - id: Flare
       prob: 0.3
       rolls: !type:ConstantNumberSelector

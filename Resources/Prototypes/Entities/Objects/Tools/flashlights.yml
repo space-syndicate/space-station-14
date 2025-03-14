@@ -124,6 +124,7 @@
     quickEquip: false
     slots:
       - Belt
+  - type: AttachmentFlashlight # Lavaland Change
 
 - type: entity
   parent: FlashlightLantern
