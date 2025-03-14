@@ -16,7 +16,7 @@
     - id: GiftsVendingRestock
 
 # Game Rules
-    
+
 - type: entity
   id: CargoGiftsBase
   parent: BaseGameRule
@@ -24,8 +24,8 @@
   components:
   - type: GameRule
     delay:
-      min: 10
-      max: 10
+      min: 180
+      max: 300
   - type: StationEvent
     startColor: "#18abf5"
     startAudio:
