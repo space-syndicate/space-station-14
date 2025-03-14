@@ -23,6 +23,9 @@
     - type: SurgerySpeedModifier
       speedModifier: 1.75
     #end-_CorvaxNext: surgery
+  - !type:GiveItemOnHolidaySpecial
+    holiday: DoctorDay
+    prototype: WehMedipen
 
 - type: startingGear
   id: DoctorGear

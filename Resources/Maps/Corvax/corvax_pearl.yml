@@ -33022,7 +33022,7 @@ entities:
       pos: 111.5,63.5
       parent: 1
     - type: Door
-      secondsUntilStateChange: -16095.21
+      secondsUntilStateChange: -17137.943
       state: Opening
     - type: DeviceLinkSource
       lastSignals:
@@ -61241,17 +61241,6 @@ entities:
     - type: Transform
       pos: 116.5,36.5
       parent: 1
-  - uid: 13309
-    components:
-    - type: Transform
-      pos: 68.5,136.5
-      parent: 1
-  - uid: 13347
-    components:
-    - type: Transform
-      rot: 1.5707963267948966 rad
-      pos: 61.5,133.5
-      parent: 1
   - uid: 16166
     components:
     - type: Transform
@@ -61612,6 +61601,12 @@ entities:
       rot: 3.141592653589793 rad
       pos: 114.5,128.5
       parent: 1
+  - uid: 14418
+    components:
+    - type: Transform
+      rot: 1.5707963267948966 rad
+      pos: 61.5,133.5
+      parent: 1
   - uid: 16842
     components:
     - type: Transform
@@ -61642,6 +61637,12 @@ entities:
     components:
     - type: Transform
       pos: 167.5,82.5
+      parent: 1
+  - uid: 13094
+    components:
+    - type: Transform
+      rot: 3.141592653589793 rad
+      pos: 68.5,136.5
       parent: 1
   - uid: 16088
     components:
@@ -63972,6 +63973,12 @@ entities:
       rot: 1.5707963267948966 rad
       pos: 114.5,54.5
       parent: 1
+  - uid: 13347
+    components:
+    - type: Transform
+      rot: 3.141592653589793 rad
+      pos: 69.5,144.5
+      parent: 1
   - uid: 14330
     components:
     - type: Transform
@@ -64124,11 +64131,6 @@ entities:
     - type: Transform
       rot: -1.5707963267948966 rad
       pos: 135.5,135.5
-      parent: 1
-  - uid: 14418
-    components:
-    - type: Transform
-      pos: 69.5,144.5
       parent: 1
   - uid: 14536
     components:
@@ -72226,6 +72228,8 @@ entities:
     - type: Transform
       pos: 73.5,76.5
       parent: 1
+    - type: FaxMachine
+      name: Агент Внутренних Дел
   - uid: 13111
     components:
     - type: Transform
@@ -72287,11 +72291,15 @@ entities:
     - type: Transform
       pos: 93.5,52.5
       parent: 1
+    - type: FaxMachine
+      name: Глава СБ
   - uid: 16894
     components:
     - type: Transform
       pos: 77.5,66.5
       parent: 1
+    - type: FaxMachine
+      name: Детектив
   - uid: 17046
     components:
     - type: Transform
@@ -118859,40 +118867,12 @@ entities:
     - type: Transform
       pos: 108.5,153.5
       parent: 1
-- proto: HolopadCommandCaptain
-  entities:
-  - uid: 23809
-    components:
-    - type: Transform
-      pos: 74.5,144.5
-      parent: 1
-- proto: HolopadCommandCe
-  entities:
-  - uid: 23811
-    components:
-    - type: Transform
-      pos: 42.5,123.5
-      parent: 1
-- proto: HolopadCommandCmo
-  entities:
-  - uid: 23810
-    components:
-    - type: Transform
-      pos: 122.5,44.5
-      parent: 1
 - proto: HolopadCommandHop
   entities:
   - uid: 23795
     components:
     - type: Transform
       pos: 81.5,138.5
-      parent: 1
-- proto: HolopadCommandHos
-  entities:
-  - uid: 23794
-    components:
-    - type: Transform
-      pos: 92.5,53.5
       parent: 1
 - proto: HolopadCommandLounge
   entities:
@@ -118914,13 +118894,6 @@ entities:
     components:
     - type: Transform
       pos: 115.5,133.5
-      parent: 1
-- proto: HolopadCommandRd
-  entities:
-  - uid: 23772
-    components:
-    - type: Transform
-      pos: 51.5,71.5
       parent: 1
 - proto: HolopadEngineeringAME
   entities:
@@ -130401,6 +130374,18 @@ entities:
     - type: Transform
       pos: 55.5,70.5
       parent: 1
+- proto: ResearchDisk
+  entities:
+  - uid: 19059
+    components:
+    - type: Transform
+      pos: 129.05995,45.365307
+      parent: 1
+  - uid: 19060
+    components:
+    - type: Transform
+      pos: 128.99745,45.802807
+      parent: 1
 - proto: RevolverCapGun
   entities:
   - uid: 9695
@@ -133262,18 +133247,6 @@ entities:
     - type: Transform
       pos: 95.60735,127.457825
       parent: 1
-- proto: SpawnClownSpider
-  entities:
-  - uid: 23915
-    components:
-    - type: Transform
-      pos: 126.5,45.5
-      parent: 1
-  - uid: 23916
-    components:
-    - type: Transform
-      pos: 127.5,45.5
-      parent: 1
 - proto: SpawnMobAdultSlimesBlue
   entities:
   - uid: 16193
@@ -135398,6 +135371,17 @@ entities:
       - SurveillanceCameraEngineering
       nameSet: True
       id: Продолжение холла
+  - uid: 19048
+    components:
+    - type: Transform
+      rot: 1.5707963267948966 rad
+      pos: 26.5,150.5
+      parent: 1
+    - type: SurveillanceCamera
+      setupAvailableNetworks:
+      - SurveillanceCameraEngineering
+      nameSet: True
+      id: Вход в спутник
   - uid: 19436
     components:
     - type: Transform
@@ -135688,6 +135672,49 @@ entities:
       - SurveillanceCameraGeneral
       nameSet: True
       id: Общежитие
+  - uid: 19050
+    components:
+    - type: Transform
+      pos: 125.5,95.5
+      parent: 1
+    - type: SurveillanceCamera
+      setupAvailableNetworks:
+      - SurveillanceCameraGeneral
+      nameSet: True
+      id: Восточный проход сервиса
+  - uid: 19058
+    components:
+    - type: Transform
+      rot: 1.5707963267948966 rad
+      pos: 99.5,142.5
+      parent: 1
+    - type: SurveillanceCamera
+      setupAvailableNetworks:
+      - SurveillanceCameraGeneral
+      nameSet: True
+      id: Проход в отбытие
+  - uid: 19062
+    components:
+    - type: Transform
+      rot: 1.5707963267948966 rad
+      pos: 80.5,99.5
+      parent: 1
+    - type: SurveillanceCamera
+      setupAvailableNetworks:
+      - SurveillanceCameraGeneral
+      nameSet: True
+      id: Западный проход сервиса
+  - uid: 19063
+    components:
+    - type: Transform
+      rot: 3.141592653589793 rad
+      pos: 147.5,138.5
+      parent: 1
+    - type: SurveillanceCamera
+      setupAvailableNetworks:
+      - SurveillanceCameraGeneral
+      nameSet: True
+      id: Общие стыковочные порты
   - uid: 23752
     components:
     - type: Transform
@@ -135853,6 +135880,17 @@ entities:
       - SurveillanceCameraMedical
       nameSet: True
       id: Криогенетика
+  - uid: 19049
+    components:
+    - type: Transform
+      rot: -1.5707963267948966 rad
+      pos: 111.5,41.5
+      parent: 1
+    - type: SurveillanceCamera
+      setupAvailableNetworks:
+      - SurveillanceCameraMedical
+      nameSet: True
+      id: Придаточный коридор
   - uid: 23756
     components:
     - type: Transform
@@ -141155,6 +141193,14 @@ entities:
     components:
     - type: Transform
       pos: 149.5,70.5
+      parent: 1
+- proto: WallmountTelescreen
+  entities:
+  - uid: 13309
+    components:
+    - type: Transform
+      rot: 3.141592653589793 rad
+      pos: 63.5,129.5
       parent: 1
 - proto: WallmountTelevision
   entities:
@@ -161710,6 +161756,12 @@ entities:
       rot: 3.141592653589793 rad
       pos: 115.5,63.5
       parent: 1
+  - uid: 19061
+    components:
+    - type: Transform
+      rot: 1.5707963267948966 rad
+      pos: 85.5,140.5
+      parent: 1
 - proto: WindoorBarKitchenLocked
   entities:
   - uid: 12361
@@ -161807,12 +161859,6 @@ entities:
     - type: Transform
       rot: 3.141592653589793 rad
       pos: 84.5,144.5
-      parent: 1
-  - uid: 13094
-    components:
-    - type: Transform
-      rot: 1.5707963267948966 rad
-      pos: 85.5,140.5
       parent: 1
   - uid: 13365
     components:

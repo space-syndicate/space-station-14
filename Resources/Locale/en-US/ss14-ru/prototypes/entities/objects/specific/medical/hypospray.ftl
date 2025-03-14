@@ -38,3 +38,5 @@ ent-Hypopen = pen
     .suffix = Hypopen
 ent-HypopenBox = hypopen box
     .desc = A small box containing a hypopen. Packaging disintegrates when opened, leaving no evidence behind.
+ent-WehMedipen = weh auto-injector
+    .desc = A rapid dose of Weh. Contains juice that makes you Weh.
