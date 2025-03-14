@@ -24,10 +24,14 @@
   - type: FlavorProfile
     flavors:
       - people
+  - type: Tag # goob edit
+    tags:
+    - Meat
+    - Organ
 
 - type: entity
   id: OrganDionaBrain
-  parent: [BaseDionaOrgan, OrganHumanBrain]
+  parent: BaseDionaOrgan
   name: brain
   description: "The central hub of a diona's pseudo-neurological activity, its root-like tendrils search for its former body."
 
@@ -84,6 +88,11 @@
   - type: Item
     size: Small
     heldPrefix: stomach
+  - type: Tag # goob edit
+    tags:
+    - Meat
+    - Organ
+    - Stomach
 
 - type: entity
   id: OrganDionaLungs
@@ -117,6 +126,11 @@
       Lung:
         maxVol: 100
         canReact: False
+  - type: Tag # goob edit
+    tags:
+    - Meat
+    - Organ
+    - Lungs
 
 # Organs that turn into nymphs on removal
 - type: entity
@@ -137,6 +151,11 @@
   components:
   - type: Nymph
     entityPrototype: OrganDionaNymphStomach
+  - type: Tag # goob edit
+    tags:
+    - Meat
+    - Organ
+    - Stomach
 
 - type: entity
   id: OrganDionaLungsNymph

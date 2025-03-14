@@ -2,6 +2,7 @@ using Content.Shared.Actions;
 using Robust.Shared.GameStates;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Serialization;
+using Robust.Shared.Audio;
 
 namespace Content.Shared.Silicons.Laws.Components;
 
@@ -16,6 +17,14 @@ public sealed partial class SiliconLawBoundComponent : Component
     /// </summary>
     [DataField]
     public EntityUid? LastLawProvider;
+    // START-ADT TWEAK FIx
+    /// <summary>
+    /// The sound that plays for the Silicon player
+    /// when the law change is processed for the provider.
+    /// </summary>
+    [DataField]
+    public SoundSpecifier? LawUploadSound = new SoundPathSpecifier("/Audio/Misc/cryo_warning.ogg");
+    // ADT-END
 }
 
 /// <summary>
@@ -59,3 +68,4 @@ public sealed class SiliconLawBuiState : BoundUserInterfaceState
         RadioChannels = radioChannels;
     }
 }
+

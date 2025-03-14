@@ -1,0 +1,44 @@
+- type: entity
+  abstract: true
+  parent: BaseGameRule
+  id: BaseHereticRule
+  components:
+  - type: HereticRule
+  - type: AntagSelection
+
+- type: entity
+  parent: BaseHereticRule
+  id: Heretic
+  components:
+  - type: GameRule
+    minPlayers: 25
+  - type: AntagSelection
+    definitions:
+    - prefRoles: [ Heretic ]
+      max: 5
+      playerRatio: 15
+      lateJoinAdditional: true
+      mindComponents:
+      - type: HereticRole
+      startingGear: HereticGear # see Roles/Antags/heretic.yml
+
+- type: entityTable
+  id: ExtendedGameRulesTable
+  table: !type:AllSelector
+    children:
+      - !type:NestedSelector
+        tableId: BasicCalmEventsTable
+      - !type:NestedSelector
+        tableId: CargoGiftsTable
+      - !type:NestedSelector
+        tableId: CalmPestEventsTable
+      - !type:NestedSelector
+        tableId: SpicyPestEventsTable
+
+- type: entity
+  id: ExtendedStationEventScheduler
+  parent: BaseGameRule
+  components:
+  - type: BasicStationEventScheduler
+    scheduledGameRules: !type:NestedSelector
+      tableId: ExtendedGameRulesTable

@@ -19,9 +19,10 @@
   - type: FlavorProfile
     flavors:
       - chicken # everything kinda tastes like chicken
-  - type: Tag
+  - type: Tag # goob edit
     tags:
-      - Meat
+    - Meat
+    - Organ
 
 - type: entity
   id: BaseAnimalOrgan
@@ -64,6 +65,11 @@
   - type: Item
     size: Small
     heldPrefix: lungs
+  - type: Tag # goob edit
+    tags:
+    - Meat
+    - Organ
+    - Lungs
 
 - type: entity
   id: OrganAnimalStomach
@@ -94,6 +100,11 @@
   - type: Item
     size: Small
     heldPrefix: stomach
+  - type: Tag # goob edit
+    tags:
+    - Meat
+    - Organ
+    - Stomach
 
 - type: entity
   id: OrganMouseStomach

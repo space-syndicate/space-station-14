@@ -1,0 +1,14 @@
+- type: gamePreset
+  id: Heretic
+  alias:
+    - heretic
+  name: heretic-title
+  minPlayers: 25
+  showInVote: true
+  description: heretic-title
+  rules:
+    - Heretic
+    - BasicRoundstartVariation
+    - SubGamemodesRule
+    - BasicStationEventScheduler
+    - MeteorSwarmScheduler

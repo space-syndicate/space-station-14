@@ -1,0 +1,90 @@
+- type: entity
+  id: ActionHereticJaunt
+  name: action-heretic-ash-passage-name
+  description: action-heretic-ash-passage-desc
+  noSpawn: true
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: InstantAction
+    useDelay: 15
+    itemIconStyle: NoItem
+    icon:
+      sprite: _Goobstation/Heretic/abilities_heretic.rsi
+      state: ashen_shift
+    event: !type:EventHereticAshenShift
+    checkCanInteract: false
+  - type: HereticAction
+    requireMagicItem: true
+    messageLoc: heretic-speech-ash-jaunt
+
+- type: entity
+  id: ActionHereticVolcanoBlast
+  name: action-heretic-ash-blast-name
+  description: action-heretic-ash-blast-desc
+  noSpawn: true
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: InstantAction
+    useDelay: 10
+    itemIconStyle: NoItem
+    icon:
+      sprite: _Goobstation/Heretic/abilities_heretic.rsi
+      state: volcano_blast
+    event: !type:EventHereticVolcanoBlast
+  - type: HereticAction
+    requireMagicItem: true
+    messageLoc: heretic-speech-ash-volcano
+
+- type: entity
+  id: ActionHereticNightwatcherRebirth
+  name: action-heretic-ash-rebirth-name
+  description: action-heretic-ash-rebirth-desc
+  noSpawn: true
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: InstantAction
+    useDelay: 15
+    itemIconStyle: NoItem
+    icon:
+      sprite: _Goobstation/Heretic/abilities_heretic.rsi
+      state: nightwatcher_rebirth
+    event: !type:EventHereticNightwatcherRebirth
+  - type: HereticAction
+    requireMagicItem: true
+    messageLoc: heretic-speech-ash-rebirth
+
+- type: entity
+  id: ActionHereticAscension1
+  name: action-heretic-ash-oath-name
+  description: action-heretic-ash-oath-desc
+  noSpawn: true
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: InstantAction
+    useDelay: 90
+    itemIconStyle: NoItem
+    icon:
+      sprite: _Goobstation/Heretic/abilities_heretic.rsi
+      state: ashlord_rite1
+    event: !type:EventHereticFlames
+  - type: HereticAction
+    requireMagicItem: true
+    messageLoc: heretic-speech-ash-flame
+
+- type: entity
+  id: ActionHereticAscension2
+  name: action-heretic-ash-cascade-name
+  description: action-heretic-ash-cascade-desc
+  noSpawn: true
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: InstantAction
+    useDelay: 30
+    itemIconStyle: NoItem
+    icon:
+      sprite: _Goobstation/Heretic/abilities_heretic.rsi
+      state: ashlord_rite2
+    event: !type:EventHereticCascade
+  - type: HereticAction
+    requireMagicItem: true
+    messageLoc: heretic-speech-ash-cascade

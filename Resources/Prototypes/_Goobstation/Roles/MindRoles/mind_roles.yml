@@ -1,0 +1,22 @@
+- type: entity
+  parent: BaseMindRoleAntag
+  id: MindRoleGhoul
+  name: Ghoul Role
+#  description: mind-role-initial-infected-description
+  components:
+  - type: MindRole
+    antagPrototype: Ghoul
+    exclusiveAntag: true
+  - type: InitialInfectedRole
+  - type: GhoulRole
+
+- type: entity
+  parent: BaseMindRoleAntag
+  id: MindRoleHeretic
+  name: Heretic Role
+#  description: mind-role-initial-infected-description
+  components:
+  - type: MindRole
+    antagPrototype: Heretic
+    exclusiveAntag: true
+  - type: HereticRole
