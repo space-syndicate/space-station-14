@@ -130,6 +130,7 @@
     - ServiceStatic
     - PowerCellsStatic
     - ElectronicsStatic
+    - PlantanalyzerStatic
   - type: EmagLatheRecipes
     emagStaticPacks:
     - SecurityAmmoStatic
@@ -206,6 +207,8 @@
     - Instruments
     - Equipment
     - FauxTiles
+    - BluespaceCrystallDynamic
+    - AdvancedTreatmentDynamic
   - type: EmagLatheRecipes
     emagDynamicPacks:
     - SecurityAmmo
@@ -263,6 +266,10 @@
     - CameraBoards
     - MechBoards
     - ShuttleBoards
+    - AdvancedRoboticsBoards
+    - MedicalBiofabBoards
+    - BluespaceTechnologyBoards
+    - BluespaceHarvesterBoards
   - type: EmagLatheRecipes
     emagDynamicPacks:
     - SecurityBoards
@@ -314,6 +321,8 @@
     - BorgModules
     - MechParts
     - MechEquipment
+    - AdvancedSurgeryBorg
+    - CyberneticEnhancementsDynamic
   - type: MaterialStorage
     whitelist:
       tags:
@@ -470,6 +479,12 @@
     - SurgeryStatic
     dynamicPacks:
     - Chemistry
+    - BodyBagsDinamic
+    - AdvancedTreatmentDynamic
+    - OmnimedToolDynamic
+  - type: EmagLatheRecipes
+    emagStaticPacks:
+      - SyndicateBodyBagsStatic # Corvax-Next-AdvancedBodyBags
   - type: Machine
     board: MedicalTechFabCircuitboard
   - type: StealTarget
