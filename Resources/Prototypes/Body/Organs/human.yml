@@ -6,7 +6,6 @@
     - type: Sprite
       sprite: Mobs/Species/Human/organs.rsi
     - type: Organ
-    - type: Food
     - type: Extractable
       grindableSolutionName: organ
     - type: SolutionContainerManager
@@ -50,7 +49,6 @@
     - type: InputMover
     - type: Examiner
     - type: BlockMovement
-    - type: BadFood
     - type: Tag
       tags:
         - Meat
@@ -68,10 +66,6 @@
     - type: FlavorProfile
       flavors:
         - people
-    - type: FoodSequenceElement
-      entries:
-        Burger: Brain
-        Taco: Brain
     - type: Item
       size: Small
       heldPrefix: brain

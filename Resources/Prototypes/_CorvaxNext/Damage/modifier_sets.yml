@@ -13,9 +13,9 @@
 - type: damageModifierSet
   id: PartDamage
   coefficients:
-    Blunt: 0.8
+    Blunt: 0.7
     Slash: 1.2
-    Piercing: 0.5
+    Piercing: 0.7
     Cold: 0.5
     Heat: 0.8
     Shock: 0.5
