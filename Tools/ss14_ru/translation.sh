@@ -6,7 +6,7 @@ if [ "$(dirname $0)" != "." ]; then
 fi
 
 pip install -r requirements.txt --no-warn-script-location
-python3 ./yamlextractor.py
-python3 ./keyfinder.py
-python3 ./clean_duplicates.py
-python3 ./clean_empty.py
+py ./yamlextractor.py
+py ./keyfinder.py
+py ./clean_duplicates.py
+py ./clean_empty.py
