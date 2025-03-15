@@ -38,6 +38,10 @@ public sealed partial class BlobCoreComponent : Component
     public FixedPoint2 CoreBlobTotalHealth = 400;
 
     [DataField]
+    public float StartingMoney = 200f;
+
+
+    [DataField]
     public float AttackRate = 0.3f;
 
     [DataField]

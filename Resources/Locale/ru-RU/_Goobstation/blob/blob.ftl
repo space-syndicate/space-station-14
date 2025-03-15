@@ -1,6 +1,8 @@
 ent-SpawnPointGhostBlob = блоб спавнер
     .suffix = DEBUG, спавнер роли призрака
     .desc = { ent-MarkerBase.desc }
+ent-MobMouseCancer = мышь
+    .desc = Пии! Странно пахнет.
 ent-MobBlobPod = блоб капля
     .desc = Рядовой боец блоба. Может зомбировать трупы.
 ent-MobBlobBlobbernaut = блоббернаут
@@ -24,7 +26,8 @@ ent-ReflectiveBlobTile = отражающая плитка блоба
 ent-MobObserverBlob = око блоба
     .desc = { "" }
 objective-issuer-blob = Блоб
-
+blob-title = Блоб
+blob-description = Показатели биобезопасности станции указывают на наличие биологической угрозы 5-го уровня.
 
 ghost-role-information-blobbernaut-name = блоббернаут
 ghost-role-information-blobbernaut-description = Вы массивный блоббернаут, защищайте ядро блоба или следуйте его приказам.

@@ -8,7 +8,6 @@
   description: heretic-title
   rules:
     - Heretic
-    - BasicRoundstartVariation
     - SubGamemodesRule
     - BasicStationEventScheduler
     #- MeteorSwarmScheduler
@@ -23,6 +22,5 @@
   rules:
   - BlobGameMode
   - BasicStationEventScheduler
-  - AntagStationEventScheduler
   - BasicRoundstartVariation
   - SubGamemodesRule

@@ -1904,13 +1904,6 @@
   parent: MobMouse
   id: MobMouseCancer
   components:
-  - type: Sprite
-    color: LightGreen
-  - type: PointLight
-    color: LightGreen
-    radius: 5
-    energy: 5
-    netsync: false
   - type: RadiationSource
     intensity: 0.3
   - type: Bloodstream
@@ -2387,7 +2380,7 @@
   - type: Spider
   - type: IgnoreSpiderWeb
   - type: Bloodstream
-    bloodMaxVolume: 150
+    bloodMaxVolume: 50
     bloodReagent: CopperBlood
   - type: Speech
     speechVerb: Arachnid
