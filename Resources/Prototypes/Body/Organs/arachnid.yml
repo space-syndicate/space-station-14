@@ -35,14 +35,9 @@
   - type: Sprite
     sprite: Mobs/Species/Arachnid/organs.rsi
     state: stomach
-  - type: Item
-    size: Small
-    heldPrefix: stomach
   - type: Stomach
     digestionDelay: 30
     updateInterval: 1.5
-  - type: Organ
-    slotId: stomach
   - type: SolutionContainerManager
     solutions:
       stomach:

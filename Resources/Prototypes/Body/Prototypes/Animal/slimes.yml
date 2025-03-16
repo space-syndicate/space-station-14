@@ -8,7 +8,7 @@
       connections:
       - legs
       organs:
-        core: SentientSlimesCore
+        brain: SentientSlimesCore
         lungs: OrganSlimesLungs
     legs:
       part: LegsAnimal
