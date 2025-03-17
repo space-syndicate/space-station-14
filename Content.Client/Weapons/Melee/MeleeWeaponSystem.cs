@@ -8,6 +8,7 @@ using Content.Shared.Hands.Components;
 using Content.Shared.Mobs.Components;
 using Content.Shared.StatusEffect;
 using Content.Shared.Weapons.Melee;
+using Content.Shared.Weapons.Melee.Components;
 using Content.Shared.Weapons.Melee.Events;
 using Content.Shared.Weapons.Ranged.Components;
 using Content.Shared.Wieldable.Components;
@@ -147,14 +148,7 @@ public sealed partial class MeleeWeaponSystem : SharedMeleeWeaponSystem
             // If it's an unarmed attack then do a disarm
             if (weapon.AltDisarm && weaponUid == entity)
             {
-                EntityUid? target = null;
-
-                if (_stateManager.CurrentState is GameplayStateBase screen)
-                {
-                    target = screen.GetClickedEntity(mousePos);
-                }
-
-                EntityManager.RaisePredictiveEvent(new DisarmAttackEvent(GetNetEntity(target), GetNetCoordinates(coordinates)));
+                ClientDisarm(entity, mousePos, coordinates);
                 return;
             }
 
@@ -164,28 +158,7 @@ public sealed partial class MeleeWeaponSystem : SharedMeleeWeaponSystem
 
         // Light attack
         if (useDown == BoundKeyState.Down)
-        {
-            var attackerPos = TransformSystem.GetMapCoordinates(entity);
-
-            if (mousePos.MapId != attackerPos.MapId ||
-                (attackerPos.Position - mousePos.Position).Length() > weapon.Range)
-            {
-                return;
-            }
-
-            EntityUid? target = null;
-
-            if (_stateManager.CurrentState is GameplayStateBase screen)
-            {
-                target = screen.GetClickedEntity(mousePos);
-            }
-
-            // Don't light-attack if interaction will be handling this instead
-            if (Interaction.CombatModeCanHandInteract(entity, target))
-                return;
-
-            RaisePredictiveEvent(new LightAttackEvent(GetNetEntity(target), GetNetEntity(weaponUid), GetNetCoordinates(coordinates)));
-        }
+            ClientLightAttack(entity, mousePos, coordinates, weaponUid, weapon);
     }
 
     protected override bool InRange(EntityUid user, EntityUid target, float range, ICommonSession? session)
@@ -288,6 +261,7 @@ public sealed partial class MeleeWeaponSystem : SharedMeleeWeaponSystem
 
         RaisePredictiveEvent(new LightAttackEvent(GetNetEntity(target), GetNetEntity(weaponUid), GetNetCoordinates(coordinates)));
     }
+
 
     private void OnMeleeLunge(MeleeLungeEvent ev)
     {

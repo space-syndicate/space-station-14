@@ -1339,13 +1339,6 @@ entities:
     - type: Transform
       pos: 23.486536,-1.4167075
       parent: 2
-- proto: BackmenVendingMachineCigs
-  entities:
-  - uid: 11700
-    components:
-    - type: Transform
-      pos: 28.5,-4.5
-      parent: 2
 - proto: Barricade
   entities:
   - uid: 177

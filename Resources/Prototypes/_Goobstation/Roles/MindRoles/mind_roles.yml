@@ -14,7 +14,6 @@
   parent: BaseMindRoleAntag
   id: MindRoleHeretic
   name: Heretic Role
-#  description: mind-role-initial-infected-description
   components:
   - type: MindRole
     antagPrototype: Heretic
