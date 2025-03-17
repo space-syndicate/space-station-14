@@ -102,6 +102,10 @@ public sealed class GhostBarSystem : EntitySystem
 
     private void OnPlayerGhosted(EntityUid uid, GhostBarPlayerComponent component, MindRemovedMessage args)
     {
-        _entityManager.DeleteEntity(uid);
+        // Skip if already being deleted
+        if (Terminating(uid))
+            return;
+
+        QueueDel(uid);
     }
 }
