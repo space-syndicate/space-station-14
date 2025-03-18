@@ -1,4 +1,5 @@
 using Content.Client.UserInterface.Controls;
+using Content.Client.VendingMachines.UI;
 using Robust.Client.UserInterface;
 using Robust.Shared.Input;
 using System.Linq;

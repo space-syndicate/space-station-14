@@ -66,7 +66,7 @@
       collection: IanBark
 
 - type: entity
-  parent: [ClothingBackpack, BaseRestrictedContraband]
+  parent: [ClothingBackpack, BaseSecurityContraband]
   id: ClothingBackpackSecurity
   name: security backpack
   description: It's a very robust backpack.
@@ -75,7 +75,7 @@
     sprite: Clothing/Back/Backpacks/security.rsi
 
 - type: entity
-  parent: [ClothingBackpack, BaseRestrictedContraband]
+  parent: [ClothingBackpack, BaseSecurityContraband]
   id: ClothingBackpackBrigmedic
   name: brigmedic backpack
   description: It's a very sterile backpack.

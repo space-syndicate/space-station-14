@@ -262,7 +262,6 @@ public sealed partial class MeleeWeaponSystem : SharedMeleeWeaponSystem
         RaisePredictiveEvent(new LightAttackEvent(GetNetEntity(target), GetNetEntity(weaponUid), GetNetCoordinates(coordinates)));
     }
 
-
     private void OnMeleeLunge(MeleeLungeEvent ev)
     {
         var ent = GetEntity(ev.Entity);

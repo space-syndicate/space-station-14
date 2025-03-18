@@ -12,6 +12,7 @@
   - SpaceNinja
   - Thieves
   - Heretics
+  - Wizard
 
 - type: guideEntry
   id: Traitors
@@ -47,3 +48,8 @@
   id: Thieves
   name: guide-entry-thieves
   text: "/ServerInfo/Guidebook/Antagonist/Thieves.xml"
+
+- type: guideEntry
+  id: Wizard
+  name: guide-entry-wizard
+  text: "/ServerInfo/Guidebook/Antagonist/Wizard.xml"

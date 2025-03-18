@@ -282,7 +282,7 @@ public abstract class SharedStorageSystem : EntitySystem
 
     private void AddUiVerb(EntityUid uid, StorageComponent component, GetVerbsEvent<ActivationVerb> args)
     {
-        if (!CanInteract(args.User, (uid, component), args.CanAccess && args.CanInteract))
+        if (component.ShowVerb == false || !CanInteract(args.User, (uid, component), args.CanAccess && args.CanInteract))
             return;
 
         // Does this player currently have the storage UI open?
@@ -334,7 +334,7 @@ public abstract class SharedStorageSystem : EntitySystem
             // If you need something more sophisticated for multi-UI you'll need to code some smarter
             // interactions.
             if (_openStorageLimit == 1)
-                UI.CloseUserUis(actor);
+                UI.CloseUserUis<StorageComponent.StorageUiKey>(actor);
 
             OpenStorageUIInternal(uid, actor, storageComp, silent: silent);
         }

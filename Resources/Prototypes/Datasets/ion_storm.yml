@@ -267,6 +267,7 @@
 - type: dataset
   id: IonStormConcepts
   values:
+  - АБСТРАКЦИЯ
   - АМЕРИКАНИЗМ
   - АНАРХИЯ
   - ИСКУССТВО
@@ -321,7 +322,24 @@
   - ВРЕМЯ
   - СОСТОЯТЕЛЬНОСТЬ
   - ЧУДО
-  - ABSTRACTION
+  - ПОРОЧНОСТЬ
+  - ЛЫСИНА
+  - КРАСОЧНОСТЬ
+  - КОМПЬЮТЕРИЗАЦИЯ
+  - НЕРАЗБЕРИХА
+  - СУЩЕСТВОВАНИЕ
+  - ФИНАНСОВАЯ БЕЗОПАСНОСТЬ
+  - СИЛА ПРИТЯЖЕНИЯ
+  - ВЫСОКОМЕРИЕ
+  - ЧЕЛОВЕЧНОСТЬ
+  - ВЛЮБЛЕННОСТЬ
+  - ИНТЕЛЛЕКТ
+  - СТРАДАНИЕ
+  - ТАЙНА
+  - ЗЛОБНОСТЬ
+  - ПЕЧАЛЬ
+  - ТЕХНОЛОГИИ
+  - БОГАТСТВО
 
 # Crew is any specific job. Using jobs instead of specific crewmembers since "THE CLOWN" is easier than
 # seeing "JOHN SMITH" and having to figure out who john smith is.
@@ -414,6 +432,7 @@
 - type: dataset
   id: IonStormFeelingsPlural
   values:
+  - НЕ МОЖЕТ НАСЫТИТЬСЯ
   - МЕЧТАЕТ О
   - ЖЕЛАЕТ О
   - БОИТСЯ
