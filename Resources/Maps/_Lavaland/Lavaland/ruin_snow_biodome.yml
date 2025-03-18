@@ -335,7 +335,7 @@ entities:
     - type: Transform
       pos: 0.5,-14.5
       parent: 1
-- proto: AirlockHatchMaint
+- proto: AirlockMiningGlass
   entities:
   - uid: 467
     components:

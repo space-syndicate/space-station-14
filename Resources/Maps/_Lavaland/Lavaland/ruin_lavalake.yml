@@ -443,14 +443,6 @@ entities:
     - type: Transform
       pos: -16.5,3.5
       parent: 2
-- proto: ClothingNeckCloakSanabi
-  entities:
-  - uid: 56
-    components:
-    - type: Transform
-      parent: 1221
-    - type: Physics
-      canCollide: False
 - proto: ClothingShoesBootsJack
   entities:
   - uid: 59
@@ -458,14 +450,6 @@ entities:
     - type: Transform
       pos: -20.500614,1.46875
       parent: 2
-- proto: ClothingWhitsHunter
-  entities:
-  - uid: 55
-    components:
-    - type: Transform
-      parent: 1221
-    - type: Physics
-      canCollide: False
 - proto: FloorLavaEntity
   entities:
   - uid: 2247

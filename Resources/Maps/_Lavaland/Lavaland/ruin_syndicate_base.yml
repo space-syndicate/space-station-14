@@ -2520,41 +2520,6 @@ entities:
     - type: Transform
       pos: 27.5,-24.5
       parent: 2
-- proto: BackmenVendingMachineCoffee
-  entities:
-  - uid: 1864
-    components:
-    - type: Transform
-      pos: 12.5,7.5
-      parent: 2
-- proto: BackmenVendingMachineColaRed
-  entities:
-  - uid: 1865
-    components:
-    - type: Transform
-      pos: 27.5,-1.5
-      parent: 2
-- proto: BackmenVendingMachineDonut
-  entities:
-  - uid: 1866
-    components:
-    - type: Transform
-      pos: 11.5,7.5
-      parent: 2
-- proto: BackmenVendingMachineSnack
-  entities:
-  - uid: 1874
-    components:
-    - type: Transform
-      pos: 13.5,-10.5
-      parent: 2
-- proto: BackmenVendingMachineSoda
-  entities:
-  - uid: 1875
-    components:
-    - type: Transform
-      pos: 13.5,-11.5
-      parent: 2
 - proto: BannerSyndicate
   entities:
   - uid: 169
@@ -7584,24 +7549,6 @@ entities:
       deviceLists:
       - 91
       - 90
-- proto: FlagSyndicate
-  entities:
-  - uid: 1782
-    components:
-    - type: Transform
-      pos: 17.5,-3.5
-      parent: 2
-  - uid: 1783
-    components:
-    - type: Transform
-      rot: 3.141592653589793 rad
-      pos: 24.5,-15.5
-      parent: 2
-  - uid: 1784
-    components:
-    - type: Transform
-      pos: 5.5,-17.5
-      parent: 2
 - proto: FlashlightLantern
   entities:
   - uid: 1026
@@ -17749,35 +17696,6 @@ entities:
     - type: Transform
       pos: 30.5,-10.5
       parent: 2
-- proto: MagazinePistol9x17
-  entities:
-  - uid: 949
-    components:
-    - type: Transform
-      parent: 948
-    - type: Physics
-      angularDamping: 0
-      linearDamping: 0
-      canCollide: False
-    - type: InsideEntityStorage
-  - uid: 950
-    components:
-    - type: Transform
-      parent: 948
-    - type: Physics
-      angularDamping: 0
-      linearDamping: 0
-      canCollide: False
-    - type: InsideEntityStorage
-  - uid: 951
-    components:
-    - type: Transform
-      parent: 948
-    - type: Physics
-      angularDamping: 0
-      linearDamping: 0
-      canCollide: False
-    - type: InsideEntityStorage
 - proto: MaterialBiomass
   entities:
   - uid: 1540
@@ -21661,17 +21579,6 @@ entities:
     - type: Transform
       pos: 30.5,-21.5
       parent: 2
-- proto: WeaponPistolHIB88M4
-  entities:
-  - uid: 952
-    components:
-    - type: Transform
-      parent: 948
-    - type: Physics
-      angularDamping: 0
-      linearDamping: 0
-      canCollide: False
-    - type: InsideEntityStorage
   - uid: 953
     components:
     - type: Transform
