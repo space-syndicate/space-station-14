@@ -398,12 +398,6 @@ entities:
         57:
           position: 3,0
           _rotation: South
-        55:
-          position: 2,0
-          _rotation: North
-        56:
-          position: 1,0
-          _rotation: South
     - type: ContainerContainer
       containers:
         storagebase: !type:Container

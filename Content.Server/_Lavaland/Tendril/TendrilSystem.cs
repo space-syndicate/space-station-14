@@ -27,33 +27,36 @@ public sealed class TendrilSystem : EntitySystem
         SubscribeLocalEvent<TendrilMobComponent, MobStateChangedEvent>(OnMobState);
     }
 
-    public override void Update(float frameTime)
+public override void Update(float frameTime)
+{
+    base.Update(frameTime);
+
+    var query = EntityQueryEnumerator<TendrilComponent>();
+    while (query.MoveNext(out var uid, out var comp))
     {
-        base.Update(frameTime);
+        comp.UpdateAccumulator += frameTime;
 
-        var query = EntityQueryEnumerator<TendrilComponent>();
-        while (query.MoveNext(out var uid, out var comp))
-        {
-            comp.UpdateAccumulator += frameTime;
+        if (comp.UpdateAccumulator < comp.UpdateFrequency)
+            continue;
 
-            if (comp.UpdateAccumulator < comp.UpdateFrequency)
-                continue;
+        comp.UpdateAccumulator = 0;
 
-            comp.UpdateAccumulator = 0;
+        if (comp.Mobs.Count >= comp.MaxSpawns)
+            continue;
 
-            if (comp.Mobs.Count >= comp.MaxSpawns)
-                continue;
+        if (comp.LastSpawn + TimeSpan.FromSeconds(comp.SpawnDelay) > _time.CurTime)
+            continue;
 
-            if (comp.LastSpawn + TimeSpan.FromSeconds(comp.SpawnDelay) > _time.CurTime)
-                continue;
+        if (comp.Spawns.Count == 0)
+            continue;
 
-            var mob = Spawn(_random.Pick(comp.Spawns), Transform(uid).Coordinates);
-            var mobComp = EnsureComp<TendrilMobComponent>(mob);
-            mobComp.Tendril = uid;
-            comp.Mobs.Add(mob);
-            comp.LastSpawn = _time.CurTime;
-        }
+        var mob = Spawn(_random.Pick(comp.Spawns), Transform(uid).Coordinates);
+        var mobComp = EnsureComp<TendrilMobComponent>(mob);
+        mobComp.Tendril = uid;
+        comp.Mobs.Add(mob);
+        comp.LastSpawn = _time.CurTime;
     }
+}
 
     private void OnTendrilStartup(EntityUid uid, TendrilComponent comp, ComponentStartup args)
     {

@@ -54,7 +54,8 @@ public sealed class UdderSystem : EntitySystem
             if (_mobState.IsDead(uid))
                 continue;
 
-            if (!_solutionContainerSystem.ResolveSolution(uid, udder.SolutionName, ref udder.Solution, out var solution))
+            // Ensure the solution exists
+            if (!_solutionContainerSystem.TryGetSolution(uid, udder.SolutionName, out var soln, out var solution))
                 continue;
 
             if (solution.AvailableVolume == 0)
@@ -71,7 +72,7 @@ public sealed class UdderSystem : EntitySystem
             }
 
             //TODO: toxins from bloodstream !?
-            _solutionContainerSystem.TryAddReagent(udder.Solution.Value, udder.ReagentId, udder.QuantityPerUpdate, out _);
+            _solutionContainerSystem.TryAddReagent(soln.Value, udder.ReagentId, udder.QuantityPerUpdate, out _);
         }
     }
 

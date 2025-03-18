@@ -108,7 +108,7 @@ public abstract partial class SharedSolutionContainerSystem : EntitySystem
             return false;
         }
 
-        solution = entity.Value.Comp.Solution;
+            solution = entity.Value.Comp.Solution;
         return true;
     }
 
