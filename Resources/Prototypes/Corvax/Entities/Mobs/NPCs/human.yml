@@ -19,9 +19,9 @@
         task: SimpleHumanoidHostileCompound
     - type: RandomMetadata
       nameSegments:
-      - fake_human_first
-      - corvax_names_syndie_smuggler
-      - names_last
+      - NamesFakeHumanFirst
+      - CorvaxNamesSyndieSmuggler
+      - NamesLast
     - type: GhostTakeoverAvailable
     - type: GhostRole
       name: ghost-role-information-syndicate-smuggler-name
