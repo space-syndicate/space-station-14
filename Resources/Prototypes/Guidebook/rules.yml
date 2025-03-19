@@ -1,6 +1,6 @@
 ﻿- type: guideEntry # Default for forks and stuff. Should not be listed anywhere if the server is using a custom ruleset.
-  id: DefaultRuleset
-  name: guide-entry-rules
+  id: CoreRuleset
+  name: guide-entry-rules-core
   ruleEntry: true
   text: "/ServerInfo/Guidebook/ServerRules/DefaultRules.xml"
 
@@ -33,8 +33,8 @@
   text: "/ServerInfo/Guidebook/ServerRules/RoleTypes.xml"
 
 - type: guideEntry
-  id: CoreRules
-  name: guide-entry-rules-core
+  id:  DefaultRuleset
+  name: guide-entry-rules
   ruleEntry: true
   priority: 30
   text: "/ServerInfo/Guidebook/ServerRules/CoreRules/RuleC0.xml"
@@ -53,6 +53,11 @@
   - RuleC12
   - RuleC13
   - RuleC14
+  - RuleC15
+  - RuleC16
+  - RuleC17
+  - RuleC18
+  - RuleC19
 
 - type: guideEntry
   id: RuleC1
