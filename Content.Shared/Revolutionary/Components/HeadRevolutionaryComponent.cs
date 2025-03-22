@@ -24,4 +24,18 @@ public sealed partial class HeadRevolutionaryComponent : Component
     public TimeSpan StunTime = TimeSpan.FromSeconds(3);
 
     public override bool SessionSpecific => true;
+
+    //Goobstation
+    /// <summary>
+    /// If head rev's convert ability is not disabled by mindshield
+    /// </summary>
+    [DataField]
+    public bool ConvertAbilityEnabled = true;
+
+    // Reserve-ConsentRev-Start
+    /// <summary>
+    /// If head rev's convert can convert only with consist of other convertable person.
+    /// </summary>
+    [DataField] public bool OnlyConsentConvert = false;
+    // Reserve-ConsentRev-End
 }
