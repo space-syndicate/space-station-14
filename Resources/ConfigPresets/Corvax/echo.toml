@@ -21,3 +21,9 @@ time = 10.0
 [hub]
 advertise = true
 tags = "lang:ru,rp:med,region:eu_e,tts"
+
+[atmos]
+monstermos_equalization = true
+monstermos_depressurization = true
+monstermos_rip_tiles = true
+grid_impulse = true
