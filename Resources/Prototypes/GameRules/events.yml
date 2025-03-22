@@ -50,8 +50,8 @@
   components:
   - type: GameRule
     delay:
-      min:  240
-      max:  360
+      min:  480
+      max:  720
 
 - type: entity
   id: BaseStationEventShortDelay
@@ -60,8 +60,8 @@
   components:
   - type: GameRule
     delay:
-      min:  240
-      max:  360
+      min:  480
+      max:  720
 
 - type: entity
   id: BaseStationEventLongDelay
@@ -70,8 +70,8 @@
   components:
   - type: GameRule
     delay:
-      min:  480
-      max:  720
+      min:  600
+      max:  900
 
 - type: entity
   id: AnomalySpawn
@@ -93,8 +93,8 @@
   components:
   - type: GameRule
     delay:
-      min:  30
-      max:  30
+      min:  450
+      max:  600
   - type: StationEvent
     startAnnouncementColor: "#18abf5"
     startAudio:
