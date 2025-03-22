@@ -1,0 +1,23 @@
+- type: entity
+  parent: StorageImplant
+  id: ApiStorageImplant
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: StorageFill
+    contents:
+    - id: ToolboxApi
+    - id: ThiefBeacon
+    - id: ClothingHandsChameleonThief
+
+- type: entity
+  parent: BaseSubdermalImplant
+  id: SkillsImplant
+  name: skills implant
+  description: This implant will grant all skills.
+  categories: [ HideSpawnMenu ]
+  components:
+   - type: SubdermalImplant
+     permanent: true
+   - type: Tag
+     tags:
+       - Skills

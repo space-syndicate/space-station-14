@@ -3,17 +3,12 @@ using Robust.Shared.Serialization;
 namespace Content.Shared._CorvaxNext.Skills;
 
 [Serializable, NetSerializable]
-public enum Skills : byte
+public enum Skills
 {
     ShuttleControl,
-    ComplexBuilding,
-    DeviceBuilding,
-    CyborgBuilding,
-    ResearchAndDevelopment,
-    AdvancedChemistry,
-    Surgery,
     Shooting,
-    ComplexDisassembly,
+    AdvancedBuilding,
+    Surgery,
     MedicalEquipment,
     Butchering
 }

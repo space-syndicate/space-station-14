@@ -35,6 +35,10 @@
   - !type:AddComponentSpecial
     components:
       - type: CommandStaff
+      - type: Skills # Corvax-Next-Skills
+        skills:
+        - ShuttleControl
+        - AdvancedBuilding
 
 - type: startingGear
   id: ChiefEngineerGear

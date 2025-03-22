@@ -26,23 +26,19 @@ public sealed class GrantAllSkillsCommand : IConsoleCommand
             return;
         }
 
-        if (!int.TryParse(args[0], out var id))
+        if (!NetEntity.TryParse(args[0], out var id))
         {
             shell.WriteError(_localization.GetString("shell-entity-uid-must-be-number"));
             return;
         }
 
-        if (!_entity.TryGetEntity(new(id), out var entity))
+        if (!_entity.TryGetEntity(id, out var entity))
         {
             shell.WriteError(_localization.GetString("shell-invalid-entity-id"));
             return;
         }
 
-        var component = _entity.EnsureComponent<SkillsComponent>(entity.Value);
-
-        component.Skills.UnionWith(Enum.GetValues<Shared._CorvaxNext.Skills.Skills>());
-
-        _entity.Dirty(entity.Value, component);
+        _entity.System<SharedSkillsSystem>().GrantAllSkills(entity.Value);
     }
 
     public CompletionResult GetCompletion(IConsoleShell shell, string[] args)
@@ -53,6 +49,6 @@ public sealed class GrantAllSkillsCommand : IConsoleCommand
                 .Where(str => str.StartsWith(args[0]))
                 .Select(entity => new CompletionOption(entity)));
 
-        return new([], null);
+        return CompletionResult.Empty;
     }
 }

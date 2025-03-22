@@ -19,6 +19,12 @@
   - !type:GiveItemOnHolidaySpecial
     holiday: FirefighterDay
     prototype: FireAxe
+  - !type:AddComponentSpecial
+    components:
+      - type: Skills # Corvax-Next-Skills
+        skills:
+        - ShuttleControl
+        - AdvancedBuilding
 
 - type: startingGear
   id: AtmosphericTechnicianGear

@@ -17,6 +17,12 @@
   extendedAccess:
   - Kitchen
   - Hydroponics
+  special:
+  - !type:AddComponentSpecial
+    components:
+      - type: Skills # Corvax-Next-Skills
+        skills:
+        - Shooting
 
 - type: startingGear
   id: BartenderGear

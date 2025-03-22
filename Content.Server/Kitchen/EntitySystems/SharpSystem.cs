@@ -34,7 +34,7 @@ public sealed class SharpSystem : EntitySystem
     [Dependency] private readonly TransformSystem _transform = default!;
     [Dependency] private readonly IRobustRandom _robustRandom = default!;
     [Dependency] private readonly ISharedAdminLogManager _adminLogger = default!;
-    [Dependency] private readonly SkillsSystem _skills = default!;
+    [Dependency] private readonly SharedSkillsSystem _skills = default!;
 
     private const float ButcherDelayModifierWithoutSkill = 5;
 

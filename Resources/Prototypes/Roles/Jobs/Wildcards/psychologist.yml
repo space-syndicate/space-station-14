@@ -11,6 +11,12 @@
   - Maintenance
   extendedAccess:
   - Chemistry
+  special:
+  - !type:AddComponentSpecial
+    components:
+      - type: Skills # Corvax-Next-Skills
+        skills:
+        - MedicalEquipment
 
 - type: startingGear
   id: PsychologistGear

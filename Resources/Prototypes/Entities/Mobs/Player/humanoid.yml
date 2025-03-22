@@ -19,6 +19,14 @@
   components:
     - type: MindShield
     - type: AntagImmune
+    - type: Skills # Corvax-Next-Skills
+      skills:
+      - ShuttleControl
+      - Shooting
+      - AdvancedBuilding
+      - Surgery
+      - MedicalEquipment
+      - Butchering
 
 ## Death Squad
 
@@ -575,6 +583,14 @@
     - type: Loadout
       prototypes: [SyndicateOperativeGearExtremelyBasic]
       roleLoadout: [ RoleSurvivalSyndicate ]
+    - type: Skills # Corvax-Next-Skills
+      skills:
+      - ShuttleControl
+      - Shooting
+      - AdvancedBuilding
+      - Surgery
+      - MedicalEquipment
+      - Butchering
 
 - type: entity
   id: RandomHumanoidSpawnerNukeOp
@@ -592,6 +608,14 @@
     - type: RandomHumanoidAppearance
       randomizeName: false
     - type: NukeOperative
+    - type: Skills # Corvax-Next-Skills
+      skills:
+      - ShuttleControl
+      - Shooting
+      - AdvancedBuilding
+      - Surgery
+      - MedicalEquipment
+      - Butchering
 
 - type: entity
   id: RandomHumanoidSpawnerCluwne

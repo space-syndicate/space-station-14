@@ -234,8 +234,13 @@
         - DeathAcidifierImplant
       - type: RandomMetadata
         nameSegments:
-        - NamesNinjaTitle
-        - NamesNinja
+      - type: Skills # Corvax-Next-Skills
+        skills:
+        - ShuttleControl
+        - AdvancedBuilding
+        - Surgery
+        - MedicalEquipment
+        - Butchering
       mindRoles:
       - MindRoleNinja
 
@@ -274,6 +279,14 @@
         sound: /Audio/Misc/paradox_clone_greeting.ogg
       mindRoles:
       - MindRoleParadoxClone
+      - type: Skills # Corvax-Next-Skills
+        skills:
+        - ShuttleControl
+        - Shooting
+        - AdvancedBuilding
+        - Surgery
+        - MedicalEquipment
+        - Butchering
 
 - type: entity
   parent: BaseGameRule
@@ -324,7 +337,14 @@
         - NamesWizardLast
       mindRoles:
       - MindRoleWizard
-
+      - type: Skills # Corvax-Next-Skills
+        skills:
+        - ShuttleControl
+        - Shooting
+        - AdvancedBuilding
+        - Surgery
+        - MedicalEquipment
+        - Butchering
 # disabled until event is rewritten to be more interesting
 #- type: entity
 #  id: FalseAlarm
@@ -572,6 +592,14 @@
       - type: NpcFactionMember
         factions:
         - Syndicate
+      - type: Skills # Corvax-Next-Skills
+        skills:
+        - ShuttleControl
+        - Shooting
+        - AdvancedBuilding
+        - Surgery
+        - MedicalEquipment
+        - Butchering
       mindRoles:
       - MindRoleNukeops
 
@@ -617,6 +645,15 @@
       blacklist:
         components:
         - AntagImmune
+      components:
+      - type: Skills # Corvax-Next-Skills
+        skills:
+        - ShuttleControl
+        - Shooting
+        - AdvancedBuilding
+        - Surgery
+        - MedicalEquipment
+        - Butchering
       mindRoles:
       - MindRoleTraitorSleeper
 

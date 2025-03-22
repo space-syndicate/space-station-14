@@ -26,13 +26,13 @@ public sealed class RevokeSkillCommand : IConsoleCommand
             return;
         }
 
-        if (!int.TryParse(args[0], out var id))
+        if (!NetEntity.TryParse(args[0], out var id))
         {
             shell.WriteError(_localization.GetString("shell-entity-uid-must-be-number"));
             return;
         }
 
-        if (!_entity.TryGetEntity(new(id), out var entity))
+        if (!_entity.TryGetEntity(id, out var entity))
         {
             shell.WriteError(_localization.GetString("shell-invalid-entity-id"));
             return;
@@ -78,6 +78,6 @@ public sealed class RevokeSkillCommand : IConsoleCommand
                 .Select(value => new CompletionOption(value.ToString())));
         }
 
-        return new([], null);
+        return CompletionResult.Empty;
     }
 }

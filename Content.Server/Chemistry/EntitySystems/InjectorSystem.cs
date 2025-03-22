@@ -14,6 +14,7 @@ using Content.Shared.Interaction;
 using Content.Shared.Mobs.Components;
 using Content.Shared.Stacks;
 using Content.Shared.Nutrition.EntitySystems;
+using Content.Shared._CorvaxNext.Skills;
 
 namespace Content.Server.Chemistry.EntitySystems;
 
@@ -22,6 +23,9 @@ public sealed class InjectorSystem : SharedInjectorSystem
     [Dependency] private readonly BloodstreamSystem _blood = default!;
     [Dependency] private readonly ReactiveSystem _reactiveSystem = default!;
     [Dependency] private readonly OpenableSystem _openable = default!;
+    [Dependency] private readonly SharedSkillsSystem _skills = default!;
+
+    private const float DelayModifierWithoutSkill = 5; // Corvax-Next-Skills
 
     public override void Initialize()
     {
@@ -200,6 +204,11 @@ public sealed class InjectorSystem : SharedInjectorSystem
                     $"{EntityManager.ToPrettyString(user):user} is attempting to draw {injector.Comp.TransferAmount.ToString()} units from themselves.");
             }
         }
+
+        // Corvax-Next-Skills-Start
+        if (!_skills.HasSkill(user, Skills.MedicalEquipment))
+            actualDelay *= DelayModifierWithoutSkill;
+        // Corvax-Next-Skills-End
 
         DoAfter.TryStartDoAfter(new DoAfterArgs(EntityManager, user, actualDelay, new InjectorDoAfterEvent(), injector.Owner, target: target, used: injector.Owner)
         {

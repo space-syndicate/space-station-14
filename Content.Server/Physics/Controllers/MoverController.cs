@@ -19,7 +19,7 @@ public sealed class MoverController : SharedMoverController
 {
     [Dependency] private readonly ThrusterSystem _thruster = default!;
     [Dependency] private readonly SharedTransformSystem _xformSystem = default!;
-    [Dependency] private readonly SkillsSystem _skills = default!;
+    [Dependency] private readonly SharedSkillsSystem _skills = default!;
 
     private Dictionary<EntityUid, (ShuttleComponent, List<(EntityUid, PilotComponent, InputMoverComponent, TransformComponent)>)> _shuttlePilots = new();
 
@@ -351,7 +351,7 @@ public sealed class MoverController : SharedMoverController
                     var vec = offsetRotation.RotateVec(strafe);
 
                     if (!_skills.HasSkill(pilotUid, Skills.ShuttleControl))
-                        vec = (vec + new Angle(_timer * MathHelper.Pi / Period).RotateVec(new(0, 1.5f))).Normalized() / 2;
+                        vec = (vec + new Angle(_timer * MathHelper.Pi / Period).RotateVec(new(0, 1.2f))).Normalized() / 2;
 
                     linearInput += vec;
                     // Corvax-Next-Skills-End

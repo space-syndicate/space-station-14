@@ -1,4 +1,5 @@
 using System.Linq;
+using System.Text;
 using Content.Server.Administration;
 using Content.Shared._CorvaxNext.Skills;
 using Content.Shared.Administration;
@@ -7,20 +8,20 @@ using Robust.Shared.Console;
 namespace Content.Server._CorvaxNext.Skills.Commands;
 
 [AdminCommand(AdminFlags.Admin)]
-public sealed class GrantSkillCommand : IConsoleCommand
+public sealed class ListSkillsCommand : IConsoleCommand
 {
     [Dependency] private readonly ILocalizationManager _localization = default!;
     [Dependency] private readonly IEntityManager _entity = default!;
 
-    public string Command => "grantskill";
+    public string Command => "listskills";
 
-    public string Description => "Grants skill to given entity.";
+    public string Description => "List skills of given entity.";
 
-    public string Help => "grantskill <entityuid> <skill>";
+    public string Help => "listskills <entityuid>";
 
     public void Execute(IConsoleShell shell, string arg, string[] args)
     {
-        if (args.Length != 2)
+        if (args.Length != 1)
         {
             shell.WriteError(_localization.GetString("shell-wrong-arguments-number"));
             return;
@@ -38,17 +39,19 @@ public sealed class GrantSkillCommand : IConsoleCommand
             return;
         }
 
-        if (!Enum.TryParse<Shared._CorvaxNext.Skills.Skills>(args[1], out var skill))
+        if (!_entity.TryGetComponent<SkillsComponent>(entity.Value, out var component))
         {
-            shell.WriteError("No such skill.");
+            shell.WriteLine("");
             return;
         }
 
-        var component = _entity.EnsureComponent<SkillsComponent>(entity.Value);
+        StringBuilder builder = new();
 
-        component.Skills.Add(skill);
+        builder.AppendJoin('\n', component.Skills.Order());
 
-        _entity.Dirty(entity.Value, component);
+        builder.Append('\n');
+
+        shell.WriteLine(builder.ToString());
     }
 
     public CompletionResult GetCompletion(IConsoleShell shell, string[] args)
@@ -58,23 +61,6 @@ public sealed class GrantSkillCommand : IConsoleCommand
                 .Select(entity => entity.Id.ToString())
                 .Where(str => str.StartsWith(args[0]))
                 .Select(entity => new CompletionOption(entity)));
-
-        if (args.Length == 2)
-        {
-            var component = int.TryParse(args[0], out var id)
-                ? _entity.TryGetEntity(new(id), out var entity)
-                    ? _entity.TryGetComponent<SkillsComponent>(entity, out var comp)
-                        ? comp
-                        : null
-                    : null
-                : null;
-
-            return CompletionResult.FromOptions(Enum.GetValues<Shared._CorvaxNext.Skills.Skills>()
-                .Where(value => component?.Skills.Contains(value) != true)
-                .Select(value => value.ToString())
-                .Where(name => name.ToString().StartsWith(args[1], true, null))
-                .Select(value => new CompletionOption(value.ToString())));
-        }
 
         return CompletionResult.Empty;
     }

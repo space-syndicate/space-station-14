@@ -270,6 +270,11 @@ public sealed partial class GunComponent : Component
     /// </summary>
     [DataField]
     public float FireOnDropChance = 0.1f;
+
+    // Corvax-Next-Skills-Start
+    [DataField]
+    public bool RequiresSkill;
+    // Corvax-Next-Skills-End
 }
 
 [Flags]

@@ -1,7 +1,9 @@
 using Content.Server.Construction.Components;
 using Content.Server.Stack;
+using Content.Shared._CorvaxNext.Skills;
 using Content.Shared.Construction;
 using Content.Shared.DoAfter;
+using Content.Shared.Stacks;
 using JetBrains.Annotations;
 using Robust.Server.Containers;
 using Robust.Shared.Prototypes;
@@ -21,6 +23,15 @@ namespace Content.Server.Construction
         [Dependency] private readonly ContainerSystem _container = default!;
         [Dependency] private readonly StackSystem _stackSystem = default!;
         [Dependency] private readonly SharedToolSystem _toolSystem = default!;
+        [Dependency] private readonly SharedSkillsSystem _skills = default!;
+
+        // Corvax-Next-Skills-Start
+        private const float DelayModifierWithoutSkill = 30;
+
+        private readonly HashSet<string> _advancedMaterials = ["Plasteel", "ReinforcedGlass", "ReinforcedPlasmaGlass", "ReinforcedUraniumGlass"];
+
+        private readonly HashSet<string> _advancedConstructions = ["ComputerFrame", "MachineFrame"];
+        // Corvax-Next-Skills-End
 
         public override void Initialize()
         {
@@ -90,5 +101,19 @@ namespace Content.Server.Construction
 
             UpdateInteractions();
         }
+
+        // Corvax-Next-Skills-Start
+        private bool IsAdvancedMaterial(EntityUid entity)
+        {
+            return TryComp<StackComponent>(entity, out var stack) && _advancedMaterials.Contains(stack.StackTypeId);
+        }
+
+        private bool IsAdvancedConstruction(EntityUid entity)
+        {
+            var prototype = Prototype(entity);
+
+            return prototype is not null && _advancedConstructions.Contains(prototype.ID);
+        }
+        // Corvax-Next-Skills-End
     }
 }

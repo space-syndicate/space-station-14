@@ -39,7 +39,7 @@ namespace Content.Server.Kitchen.EntitySystems
         [Dependency] private readonly SharedAudioSystem _audio = default!;
         [Dependency] private readonly MetaDataSystem _metaData = default!;
         [Dependency] private readonly SharedSuicideSystem _suicide = default!;
-        [Dependency] private readonly SkillsSystem _skills = default!;
+        [Dependency] private readonly SharedSkillsSystem _skills = default!;
 
         private const float ButcherDelayModifierWithoutSkill = 5;
 

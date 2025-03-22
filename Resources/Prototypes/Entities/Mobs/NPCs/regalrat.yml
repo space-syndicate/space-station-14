@@ -133,6 +133,9 @@
       enum.SurgeryUIKey.Key:
         type: SurgeryBui
   # end-_CorvaxNext: surgery
+  - type: Skills # Corvax-Next-Skills
+    skills:
+    - Butchering
 
 - type: entity
   id: MobRatKingBuff

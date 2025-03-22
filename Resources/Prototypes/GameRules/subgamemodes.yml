@@ -25,7 +25,15 @@
       allowNonHumans: true
       multiAntagSetting: NotExclusive
       startingGear: ThiefGear
-#      components: # Corvax-MRP
+      components: # Corvax-MRP
+      - type: Skills # Corvax-Next-Skills
+        skills:
+        - ShuttleControl
+        - Shooting
+        - AdvancedBuilding
+        - Surgery
+        - MedicalEquipment
+        - Butchering
 #      - type: Pacified
       mindRoles:
       - MindRoleThief

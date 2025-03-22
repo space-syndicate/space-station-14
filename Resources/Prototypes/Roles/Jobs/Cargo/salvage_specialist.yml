@@ -17,6 +17,14 @@
   - Salvage
   - Maintenance
   - External
+  special:
+  - !type:AddComponentSpecial
+    components:
+      - type: Skills # Corvax-Next-Skills
+        skills:
+        - ShuttleControl
+        - Shooting
+        - Butchering
 
 - type: startingGear
   id: SalvageSpecialistGear

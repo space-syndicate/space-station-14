@@ -29,6 +29,7 @@
     soundEmpty:
       path: /Audio/Weapons/Guns/Empty/empty.ogg
     fireOnDropChance: 0.3 # Corvax-Next-FireOnDrop
+    requiresSkill: true # Corvax-Next-Skills
   - type: BallisticAmmoProvider
     whitelist:
       tags:

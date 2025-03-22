@@ -26,6 +26,10 @@
   - !type:GiveItemOnHolidaySpecial
     holiday: DoctorDay
     prototype: WehMedipen
+  - type: Skills # Corvax-Next-Skills
+    skills:
+    - Surgery
+    - MedicalEquipment
 
 - type: startingGear
   id: DoctorGear
