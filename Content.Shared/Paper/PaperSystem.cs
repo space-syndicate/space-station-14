@@ -94,6 +94,11 @@ public sealed class PaperSystem : EntitySystem
                         ("stamps", commaSeparated))
                 );
             }
+
+            // Corvax-Next-FaxMark-Start
+            if (entity.Comp.Sender is not null)
+                args.PushMarkup(Loc.GetString("paper-component-examine-detail-sender", ("fax", entity.Comp.Sender)));
+            // Corvax-Next-FaxMark-End
         }
     }
 

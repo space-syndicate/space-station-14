@@ -298,8 +298,9 @@ public sealed class FaxSystem : EntitySystem
                     args.Data.TryGetValue(FaxConstants.FaxPaperStampedByData, out List<StampDisplayInfo>? stampedBy);
                     args.Data.TryGetValue(FaxConstants.FaxPaperPrototypeData, out string? prototypeId);
                     args.Data.TryGetValue(FaxConstants.FaxPaperLockedData, out bool? locked);
+                    args.Data.TryGetValue(FaxConstants.FaxPaperSenderData, out string? sender);
 
-                    var printout = new FaxPrintout(content, name, label, prototypeId, stampState, stampedBy, locked ?? false);
+                    var printout = new FaxPrintout(content, name, label, prototypeId, stampState, stampedBy, locked ?? false, sender);
                     Receive(uid, printout, args.SenderAddress);
 
                     break;
@@ -526,6 +527,7 @@ public sealed class FaxSystem : EntitySystem
             { FaxConstants.FaxPaperLabelData, labelComponent?.CurrentLabel },
             { FaxConstants.FaxPaperContentData, paper.Content },
             { FaxConstants.FaxPaperLockedData, paper.EditingDisabled },
+            { FaxConstants.FaxPaperSenderData, component.FaxName } // Corvax-Next-FaxMark
         };
 
         if (metadata.EntityPrototype != null)
@@ -568,9 +570,11 @@ public sealed class FaxSystem : EntitySystem
         if (!Resolve(uid, ref component))
             return;
 
-        var faxName = Loc.GetString("fax-machine-popup-source-unknown");
-        if (fromAddress != null && component.KnownFaxes.TryGetValue(fromAddress, out var fax)) // If message received from unknown fax address
-            faxName = fax;
+        // Corvax-Next-FaxMark-Start
+        var faxName = printout.Sender ?? Loc.GetString("fax-machine-popup-source-unknown");
+        //if (fromAddress != null && component.KnownFaxes.TryGetValue(fromAddress, out var fax)) // If message received from unknown fax address
+        //    faxName = fax;
+        // Corvax-Next-FaxMark-End
 
         _popupSystem.PopupEntity(Loc.GetString("fax-machine-popup-received", ("from", faxName)), uid);
         _appearanceSystem.SetData(uid, FaxMachineVisuals.VisualState, FaxMachineVisualState.Printing);
@@ -605,6 +609,7 @@ public sealed class FaxSystem : EntitySystem
             }
 
             paper.EditingDisabled = printout.Locked;
+            paper.Sender = printout.Sender; // Corvax-Next-FaxMark
         }
 
         _metaData.SetEntityName(printed, printout.Name);
