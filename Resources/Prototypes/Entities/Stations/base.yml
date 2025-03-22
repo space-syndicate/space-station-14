@@ -52,6 +52,9 @@
             - type: TradeStation
           paths:
             - /Maps/Shuttles/trading_outpost.yml
+        mining: !type:GridSpawnGroup
+          paths:
+          - /Maps/Corvax/Shuttles/corvax_mining.yml
         # Spawn last
         ruins: !type:GridSpawnGroup
           hide: true
@@ -78,21 +81,21 @@
           - /Maps/Corvax/Ruins/corvax_ussp_asteroid.yml
           # Corvax-Mapping-End
           - /Maps/Ruins/wrecklaimer.yml
-        vgroid: !type:DungeonSpawnGroup
-          minimumDistance: 300
-          maximumDistance: 350
-          nameDataset: NamesBorer
-          stationGrid: false
-          addComponents:
-          - type: Gravity
-            enabled: true
-            inherent: true
-          protos:
-          - VGRoid
-        # Corvax-Mapping-Start
-        mining: !type:GridSpawnGroup
-          paths:
-          - /Maps/Corvax/Shuttles/corvax_mining.yml
+#        vgroid: !type:DungeonSpawnGroup
+#          minimumDistance: 400
+#          maximumDistance: 450
+#          nameDataset: NamesBorer
+#          stationGrid: false
+#          addComponents:
+#          - type: Gravity
+#            enabled: true
+#            inherent: true
+#          protos:
+#          - VGRoid
+#        # Corvax-Mapping-Start
+#        mining: !type:GridSpawnGroup
+#          paths:
+#          - /Maps/Corvax/Shuttles/corvax_mining.yml
         # Corvax-Mapping-End
 
 - type: entity
