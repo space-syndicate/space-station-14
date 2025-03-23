@@ -1676,22 +1676,6 @@ entities:
     - type: Transform
       pos: -21.5,10.5
       parent: 2
-- proto: FoodBreadVolcanic
-  entities:
-  - uid: 1222
-    components:
-    - type: MetaData
-      desc: The loaf, in all its splendor, with a hint of a true master of bread-baking. Is that purring? The loaf is looking at you with pride, and you should feel honored. Not sure where we stand on the health code; however, so don't eat it.
-      name: Volcanic hardened loaf
-    - type: Transform
-      parent: 1221
-    - type: Physics
-      angularDamping: 0
-      linearDamping: 0
-      canCollide: False
-    missingComponents:
-    - Food
-    - SliceableFood
 - proto: LavalandJaunter
   entities:
   - uid: 60
@@ -2135,12 +2119,4 @@ entities:
     - type: Transform
       pos: -19.5,-2.5
       parent: 2
-- proto: WeaponGrapplingGun
-  entities:
-  - uid: 57
-    components:
-    - type: Transform
-      parent: 1221
-    - type: Physics
-      canCollide: False
 ...
