@@ -42,10 +42,6 @@
   parent: BaseGameRule
   id: BaseUnknownShuttleRule
   components:
-  - type: GameRule
-    delay:
-      min:  240
-      max:  300
   - type: StationEvent
     startAnnouncement: station-event-unknown-shuttle-incoming
     startAudio:

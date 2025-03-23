@@ -50,8 +50,8 @@
   components:
   - type: GameRule
     delay:
-      min:  480
-      max:  720
+      min:  10
+      max:  20
 
 - type: entity
   id: BaseStationEventShortDelay
@@ -60,8 +60,8 @@
   components:
   - type: GameRule
     delay:
-      min:  480
-      max:  720
+      min:  10
+      max:  20
 
 - type: entity
   id: BaseStationEventLongDelay
@@ -70,8 +70,8 @@
   components:
   - type: GameRule
     delay:
-      min:  600
-      max:  900
+      min:  40
+      max:  60
 
 - type: entity
   id: AnomalySpawn
@@ -166,10 +166,10 @@
   id: DragonSpawn
   components:
   - type: StationEvent
-    weight: 5
+    weight: 6.5
     earliestStart: 40
     reoccurrenceDelay: 20
-    minimumPlayers: 35
+    minimumPlayers: 20
     duration: null
   - type: SpaceSpawnRule
     spawnDistance: 0
@@ -195,7 +195,7 @@
   id: NinjaSpawn
   components:
   - type: StationEvent
-    weight: 5
+    weight: 6
     duration: null
     earliestStart: 30
     reoccurrenceDelay: 20
@@ -285,10 +285,10 @@
   id: RevenantSpawn
   components:
   - type: StationEvent
-    weight: 5.5
+    weight: 7.5
     duration: 1
     earliestStart: 45
-    minimumPlayers: 25
+    minimumPlayers: 20
   - type: RandomSpawnRule
     prototype: MobRevenant
 
@@ -364,7 +364,7 @@
   - type: StationEvent
     earliestStart: 15
     minimumPlayers: 15
-    weight: 6.5
+    weight: 7
     duration: 240
   - type: KudzuGrowthRule
 
@@ -440,7 +440,7 @@
       path: /Audio/Announcements/attention.ogg
     earliestStart: 20
     minimumPlayers: 15
-    weight: 4
+    weight: 5
     duration: 60
   - type: VentCrittersRule
     entries:
@@ -482,7 +482,7 @@
       path: /Audio/Announcements/attention.ogg
     earliestStart: 20
     minimumPlayers: 15
-    weight: 6
+    weight: 5
     duration: 60
   - type: VentCrittersRule
     entries:
@@ -549,8 +549,8 @@
   id: LoneOpsSpawn
   components:
   - type: StationEvent
-    earliestStart: 55
-    weight: 4.5
+    earliestStart: 35
+    weight: 5.5
     minimumPlayers: 20
     duration: 1
   - type: RuleGrids
@@ -609,9 +609,9 @@
   id: SleeperAgents
   components:
   - type: StationEvent
-    earliestStart: 45
-    weight: 6
-    minimumPlayers: 25
+    earliestStart: 30
+    weight: 8
+    minimumPlayers: 15
     maxOccurrences: 1 # can only happen once per round
     startAnnouncement: station-event-communication-interception
     startAudio:
@@ -646,9 +646,9 @@
   parent: BaseGameRule
   components:
   - type: StationEvent
-    weight: 6
-    duration: 250
-    maxDuration: 400
+    weight: 7
+    duration: 150
+    maxDuration: 300
     reoccurrenceDelay: 30
   - type: MassHallucinationsRule
     minTimeBetweenIncidents: 0.1
