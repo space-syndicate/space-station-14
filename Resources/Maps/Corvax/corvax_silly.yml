@@ -30722,13 +30722,6 @@ entities:
           showEnts: False
           occludes: True
           ent: null
-- proto: CargoMailTeleporter
-  entities:
-  - uid: 9999
-    components:
-    - type: Transform
-      pos: 25.5,7.5
-      parent: 2
 - proto: LockerSyndicatePersonal
   entities:
   - uid: 3463
