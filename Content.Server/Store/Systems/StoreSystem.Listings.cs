@@ -118,7 +118,7 @@ public sealed partial class StoreSystem
 
             if (listing.Conditions != null)
             {
-                var args = new ListingConditionArgs(GetBuyerMind(buyer), storeEntity, listing, EntityManager);
+                var args = new ListingConditionArgs(buyer, storeEntity, listing, EntityManager);
                 var conditionsMet = true;
 
                 foreach (var condition in listing.Conditions)
