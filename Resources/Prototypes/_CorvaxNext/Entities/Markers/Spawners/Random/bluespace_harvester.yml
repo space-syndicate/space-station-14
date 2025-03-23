@@ -106,7 +106,7 @@
     - CrateHarvesterDoctorsDelight
     chance: 1.0
     offset: 0.0
-    rareChance: 0.1
+    rareChance: 0.05
 
 # Industrial
 - type: entity
@@ -162,7 +162,7 @@
     rarePrototypes:
     - PowerCellAntiqueProto
     - PowerCellHigh
-    rareChance: 0.25
+    rareChance: 0.1
 
 - type: entity
   id: RandomHarvesterBeer
@@ -202,6 +202,8 @@
     - WelderExperimental
     - PowerDrill
     - JawsOfLife
+    - RCD
+    - RPD
     chance: 1.0
     offset: 0.0
     rarePrototypes:
@@ -362,7 +364,7 @@
     - EncryptionKeyCentCom
     - EncryptionKeySyndie
     - EncryptionKeyBinary
-    rareChance: 0.05
+    rareChance: 0.03
 
 - type: entity
   id: RandomHarvesterBorg
@@ -423,12 +425,14 @@
     prototypes:
     - BluespaceBeaker
     - SyringeBluespace
+    - BodyBagBluespaceFolded
+    - AnomalyCoreBluespace
     chance: 1.0
     offset: 0.0
     rarePrototypes:
     - Hypospray
     - HypopenBox
-    rareChance: 0.02
+    rareChance: 0.03
 
 - type: entity
   id: RandomHarvesterImplanter
@@ -575,6 +579,8 @@
     - WeaponShotgunEnforcer
     - WeaponShotgunKammerer
     - WeaponShotgunDoubleBarreled
+    - WeaponShotgunImprovised
+    - WeaponProtoKineticShotgun
     - WeaponShotgunSawn
     chance: 1.0
     offset: 0.0
@@ -598,11 +604,14 @@
     prototypes:
     - WeaponRifleLecter
     - WeaponSubMachineGunWt550
-    - WeaponRifleAk
+    - WeaponPistolFlintlock
+    - WeaponSniperMosin
+    - Musket
     - WeaponSubMachineGunDrozd
     chance: 1.0
     offset: 0.0
     rarePrototypes:
+    - WeaponRifleAk
     - WeaponSubMachineGunC20r
     rareChance: 0.05
 
@@ -623,6 +632,8 @@
     - WeaponRevolverInspector
     - WeaponRevolverMateba
     - WeaponPistolMk58
+    - WeaponRevolverPirate
+    - WeaponPistolFlintlock
     chance: 1.0
     offset: 0.0
     rarePrototypes:
@@ -648,11 +659,15 @@
     prototypes:
     - Stunbaton
     - WeaponDisabler
+    - WeaponDisablerSMG
+    - WeaponDisablerPractice
+    - TelescopicBaton
     chance: 1.0
     offset: 0.0
     rarePrototypes:
     - WeaponTaser
-    rareChance: 0.2
+    - Stunprod
+    rareChance: 0.05
 
 - type: entity
   id: RandomHarvesterWeaponElite
@@ -668,17 +683,20 @@
       state: icon
   - type: RandomSpawner
     prototypes:
-    - WeaponPulseRifle
+    - WeaponLaserCannon
+    - WeaponLaserSvalinn
     - WeaponPulsePistol
+    - WeaponAdvancedLaser
     - WeaponLightMachineGunL6
     - WeaponSniperHristov
     chance: 1.0
     offset: 0.0
     rarePrototypes:
+    - WeaponPulseRifle
     - WeaponPulseCarbine
     - WeaponMinigun
     - WeaponLauncherMultipleRocket
-    rareChance: 0.2
+    rareChance: 0.05
 
 - type: entity
   id: RandomHarvesterBomb
