@@ -2,7 +2,8 @@
   id: NextBagel
   mapName: 'Next Bagel'
   mapPath: /Maps/Next/next_bagel.yml
-  minPlayers: 55
+  minPlayers: 25
+  maxPlayers: 65
   stations:
     NextBagel:
       stationProto: StandardNanotrasenStation
