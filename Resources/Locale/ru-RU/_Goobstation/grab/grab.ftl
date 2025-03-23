@@ -1,12 +1,12 @@
-popup-grab-soft-target = {CAPITALIZE($puller)} схватил вас мягко.
+popup-grab-soft-target = {CAPITALIZE($puller)} схватил вас.
 popup-grab-hard-target = {CAPITALIZE($puller)} схватил вас крепко.
 popup-grab-suffocate-target = {CAPITALIZE($puller)} начал душить вас!
 popup-grab-no-target = {CAPITALIZE($puller)} перестал вас держать.
-popup-grab-soft-self = Вы схватили {CAPITALIZE($target)} мягко.
+popup-grab-soft-self = Вы схватили {CAPITALIZE($target)}.
 popup-grab-hard-self = Вы схватили {CAPITALIZE($target)} крепко.
 popup-grab-suffocate-self = Вы начали душить {CAPITALIZE($target)}.
 popup-grab-no-self = Вы перестали держать {CAPITALIZE($target)}.
-popup-grab-soft-others = {CAPITALIZE($puller)} легко схватил {CAPITALIZE($target)}.
+popup-grab-soft-others = {CAPITALIZE($puller)} схватил {CAPITALIZE($target)}.
 popup-grab-hard-others = {CAPITALIZE($puller)} крепко схватил {CAPITALIZE($target)}.
 popup-grab-suffocate-others = {CAPITALIZE($puller)} начал душить {CAPITALIZE($target)}!
 popup-grab-no-others = {CAPITALIZE($puller)} перестал держать {CAPITALIZE($target)}.
