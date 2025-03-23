@@ -114,6 +114,7 @@
     - SemiAuto
     soundGunshot:
       path: /Audio/Weapons/Guns/Gunshots/c-20r.ogg
+    requiresSkill: true # Corvax-Next-Skills
   - type: ChamberMagazineAmmoProvider
     autoEject: true
   - type: MagazineVisuals
@@ -143,6 +144,7 @@
       minAngle: -19
       maxAngle: -16
     - type: Gun
+      requiresSkill: true # Corvax-Next-Skills
       minAngle: 21
       maxAngle: 32
       fireRate: 6
@@ -217,6 +219,7 @@
     - Burst
     - FullAuto
     - SemiAuto
+    requiresSkill: true # Corvax-Next-Skills
   - type: ItemSlots
     slots:
       gun_magazine:

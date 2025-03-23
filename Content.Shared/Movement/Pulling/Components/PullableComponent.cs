@@ -41,6 +41,10 @@ public sealed partial class PullableComponent : Component
     [AutoNetworkedField, DataField]
     public bool PrevFixedRotation;
 
+    // Goobstation start
+    // Added Grab variables
+
+
     [DataField]
     public Dictionary<GrabStage, short> PulledAlertAlertSeverity = new()
     {
@@ -55,6 +59,9 @@ public sealed partial class PullableComponent : Component
 
     [AutoNetworkedField, DataField]
     public float GrabEscapeChance = 1f;
+
+    [DataField]
+    public ProtoId<AlertPrototype> PulledAlert = "Pulled";
 
     [AutoNetworkedField]
     public TimeSpan NextEscapeAttempt = TimeSpan.Zero;
@@ -83,16 +90,8 @@ public sealed partial class PullableComponent : Component
     [DataField]
     public float TabledDamage = 5f;
     // Goobstation end
-
-    /// <summary>
-    ///     Whether the entity is currently being actively pushed by the puller.
-    ///     If true, the entity will be able to enter disposals upon colliding with them, and the like.
-    /// </summary>
-    [DataField, AutoNetworkedField]
-    public bool BeingActivelyPushed = false;
-    [DataField]
-    public ProtoId<AlertPrototype> PulledAlert = "Pulled";
-
 }
 
-public sealed partial class StopBeingPulledAlertEvent : BaseAlertEvent;
+public sealed partial class StopBeingPulledAlertEvent : BaseAlertEvent
+{
+};

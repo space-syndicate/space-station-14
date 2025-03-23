@@ -39,6 +39,7 @@
   - type: AmmoCounter
   - type: Gun
     fireRate: 1
+    requiresSkill: true # Corvax-Next-Skills
     selectedMode: SemiAuto
     availableModes:
       - SemiAuto

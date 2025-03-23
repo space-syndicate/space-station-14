@@ -23,6 +23,7 @@ using Content.Shared.Item;
 using Content.Shared.Mobs;
 using Content.Shared.Mobs.Components; // Goobstation
 using Content.Shared.Mobs.Systems;
+using Content.Shared.CombatMode.Pacification;
 using Content.Shared.Popups;
 using Content.Shared.IdentityManagement;
 using Content.Shared.Movement.Components;
@@ -448,7 +449,6 @@ public sealed class PullingSystem : EntitySystem
 
         pullableComp.PullJointId = null;
         pullableComp.Puller = null;
-        pullableComp.BeingActivelyPushed = false;
         // Goobstation - Grab Intent
         pullableComp.GrabStage = GrabStage.No;
         pullableComp.GrabEscapeChance = 1f;
@@ -723,18 +723,18 @@ public sealed class PullingSystem : EntitySystem
         return true;
     }
 
-    public bool TryStopPull(EntityUid pullableUid, PullableComponent? pullable = null, EntityUid? user = null, bool ignoreGrab = false)
+    public bool TryStopPull(EntityUid pullableUid, PullableComponent pullable, EntityUid? user = null, bool ignoreGrab = false)
     {
-        if (!Resolve(pullableUid, ref pullable, false))
-            return false;
-
         var pullerUidNull = pullable.Puller;
 
         if (pullerUidNull == null)
             return true;
 
+        if (user != null && !_blocker.CanInteract(user.Value, pullableUid))
+            return false;
+
         var msg = new AttemptStopPullingEvent(user);
-        RaiseLocalEvent(pullableUid, msg, true);
+        RaiseLocalEvent(pullableUid, msg, true); // Goob edit
 
         if (msg.Cancelled)
             return false;
@@ -771,6 +771,16 @@ public sealed class PullingSystem : EntitySystem
         StopPulling(pullableUid, pullable);
         return true;
     }
+
+    public void StopAllPulls(EntityUid uid) // Goobstation
+    {
+        if (TryComp<PullableComponent>(uid, out var pullable) && IsPulled(uid, pullable))
+            TryStopPull(uid, pullable);
+
+        if (TryComp<PullerComponent>(uid, out var puller) &&
+            TryComp(puller.Pulling, out PullableComponent? pullableEnt))
+            TryStopPull(puller.Pulling.Value, pullableEnt);
+    }
     /// <summary>
     /// Trying to grab the target
     /// </summary>
@@ -788,11 +798,14 @@ public sealed class PullingSystem : EntitySystem
             return false;
 
         // prevent you from grabbing someone else while being grabbed
-        if (TryComp<PullableComponent>(puller.Owner, out var pullerAsPullable) && pullerAsPullable.Puller != null)
+        if (TryComp<PullableComponent>(puller, out var pullerAsPullable) && pullerAsPullable.Puller != null)
             return false;
 
-        if (pullable.Comp.Puller != puller.Owner ||
-            puller.Comp.Pulling != pullable.Owner)
+        if (HasComp<PacifiedComponent>(puller))
+            return false;
+
+        if (pullable.Comp.Puller != puller ||
+            puller.Comp.Pulling != pullable)
             return false;
 
         if (puller.Comp.NextStageChange > _timing.CurTime)
@@ -808,7 +821,7 @@ public sealed class PullingSystem : EntitySystem
 
         // Don't grab without grab intent
         if (!ignoreCombatMode)
-            if (!_combatMode.IsInCombatMode(puller.Owner))
+            if (!_combatMode.IsInCombatMode(puller))
                 return false;
 
         // It's blocking stage update, maybe better UX?
@@ -832,7 +845,7 @@ public sealed class PullingSystem : EntitySystem
 
         var newStage = puller.Comp.GrabStage + nextStageAddition;
 
-        if (!TrySetGrabStages((puller.Owner, puller.Comp), (pullable.Owner, pullable.Comp), newStage))
+        if (!TrySetGrabStages((puller, puller.Comp), (pullable, pullable.Comp), newStage))
             return false;
 
         _color.RaiseEffect(Color.Yellow, new List<EntityUid> { pullable }, Filter.Pvs(pullable, entityManager: EntityManager));
@@ -945,9 +958,9 @@ public sealed class PullingSystem : EntitySystem
     /// <summary>
     /// Attempts to release entity from grab
     /// </summary>
-    /// <param name="playerPullable">Grabbed entity</param>
+    /// <param name="pullable">Grabbed entity</param>
     /// <returns></returns>
-    public bool AttemptGrabRelease(Entity<PullableComponent?> pullable)
+    private bool AttemptGrabRelease(Entity<PullableComponent?> pullable)
     {
         if (!Resolve(pullable.Owner, ref pullable.Comp))
             return false;
@@ -1039,7 +1052,5 @@ public enum GrabStageDirection
     Increase,
     Decrease,
 }
-
-// Goobstation - Grab Intent
 
 // Goobstation

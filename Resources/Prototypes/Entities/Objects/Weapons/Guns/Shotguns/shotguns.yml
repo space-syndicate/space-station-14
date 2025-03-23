@@ -29,7 +29,6 @@
     soundEmpty:
       path: /Audio/Weapons/Guns/Empty/empty.ogg
     fireOnDropChance: 0.3 # Corvax-Next-FireOnDrop
-    requiresSkill: true # Corvax-Next-Skills
   - type: BallisticAmmoProvider
     whitelist:
       tags:
@@ -78,6 +77,7 @@
       path: /Audio/Corvax/Weapons/Guns/Gunshots/shotgun_auto.ogg # Corvax-Guns
     soundEmpty:
       path: /Audio/Weapons/Guns/Empty/empty.ogg
+    requiresSkill: true # Corvax-Next-Skills
   - type: ItemSlots
     slots:
       gun_magazine:
