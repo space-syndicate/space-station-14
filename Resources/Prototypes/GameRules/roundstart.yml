@@ -434,6 +434,9 @@
   - type: BasicStationEventScheduler
     scheduledGameRules: !type:NestedSelector
       tableId: BasicGameRulesTable
+    minMaxEventTiming: # Corvax-Next-EventsBalance
+      min: 300 # 5 mins
+      max: 1200 # 20 mins
 
 - type: entity
   id: RampingStationEventScheduler
@@ -451,7 +454,7 @@
     minimumTimeUntilFirstEvent: 2700 # 45 mins #shows up like half way through shift.
     minMaxEventTiming:
       min: 1200 # 20 mins
-      max: 7200 # 120 mins # you probably arent getting a second visitor shuttle in one round, but it is possible.
+      max: 14400 # 240 mins # you probably arent getting a second visitor shuttle in one round, but it is possible. # Corvax-Next-EventsBalance
     scheduledGameRules: !type:NestedSelector
       tableId: SpaceTrafficControlTable
 
