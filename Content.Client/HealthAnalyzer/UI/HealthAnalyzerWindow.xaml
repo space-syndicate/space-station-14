@@ -26,7 +26,7 @@
                               Margin="0 0 0 5">
                     <PanelContainer>
                         <SpriteView OverrideDirection="South"
-                                    Scale="2.5 2.5"
+                                    Scale="1 1"
                                     Name="SpriteView"
                                     Access="Public"
                                     SetSize="96 96"/>

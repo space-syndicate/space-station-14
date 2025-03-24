@@ -1,5 +1,5 @@
 using Content.Server._CorvaxNext.VoxRaiders.Components;
-using Content.Server.Objectives.Components.Targets;
+using Content.Server.Objectives.Systems;
 using Content.Shared.Objectives.Components;
 using Content.Shared.Objectives.Systems;
 using Robust.Shared.Prototypes;

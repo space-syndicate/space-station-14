@@ -15,3 +15,9 @@
   extendedAccess:
   - Maintenance
 # Corvax-MRP-End
+  special:
+  - !type:AddComponentSpecial
+    components:
+      - type: Skills # Corvax-Next-Skills
+        skills:
+        - ShuttleControl

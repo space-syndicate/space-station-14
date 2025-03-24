@@ -39,6 +39,7 @@
   - type: AmmoCounter
   - type: Gun
     fireRate: 1
+    requiresSkill: true # Corvax-Next-Skills
     selectedMode: SemiAuto
     availableModes:
       - SemiAuto
@@ -117,7 +118,7 @@
       path: /Audio/Weapons/Guns/MagIn/batrifle_magin.ogg
   - type: MagazineVisuals
     magState: mag
-    steps: 1
+    steps: 2
     zeroVisible: true
   - type: Appearance
 

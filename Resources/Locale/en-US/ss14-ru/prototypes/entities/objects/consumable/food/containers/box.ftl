@@ -50,3 +50,5 @@ ent-HappyHonkCluwne = woeful cluwne meal
 ent-FoodMealHappyHonkClown = { ent-HappyHonk }
     .suffix = random food spawner meal
     .desc = { ent-HappyHonk.desc }
+ent-FoodBoxCloth = box of FlutterSoft-brand cloth
+    .desc = Fiber is the most important moth meal of the day! Don't skip it or use bottom-of-the-locker junk, buy high-quality FlutterSoft-brand cloth instead.

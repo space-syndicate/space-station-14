@@ -50,6 +50,7 @@ public sealed class FaxSystem : EntitySystem
     [Dependency] private readonly ISharedAdminLogManager _adminLogger = default!;
     [Dependency] private readonly MetaDataSystem _metaData = default!;
     [Dependency] private readonly FaxecuteSystem _faxecute = default!;
+    [Dependency] private readonly EmagSystem _emag = default!;
 
     private const string PaperSlotId = "Paper";
 
@@ -227,7 +228,7 @@ public sealed class FaxSystem : EntitySystem
                 return;
             }
 
-            if (component.KnownFaxes.ContainsValue(newName) && !HasComp<EmaggedComponent>(uid)) // Allow existing names if emagged for fun
+            if (component.KnownFaxes.ContainsValue(newName) && !_emag.CheckFlag(uid, EmagType.Interaction)) // Allow existing names if emagged for fun
             {
                 _popupSystem.PopupEntity(Loc.GetString("fax-machine-popup-name-exist"), uid);
                 return;
@@ -246,7 +247,12 @@ public sealed class FaxSystem : EntitySystem
 
     private void OnEmagged(EntityUid uid, FaxMachineComponent component, ref GotEmaggedEvent args)
     {
-        _audioSystem.PlayPvs(component.EmagSound, uid);
+        if (!_emag.CompareFlag(args.Type, EmagType.Interaction))
+            return;
+
+        if (_emag.CheckFlag(uid, EmagType.Interaction))
+            return;
+
         args.Handled = true;
     }
 
@@ -260,7 +266,7 @@ public sealed class FaxSystem : EntitySystem
             switch (command)
             {
                 case FaxConstants.FaxPingCommand:
-                    var isForSyndie = HasComp<EmaggedComponent>(uid) &&
+                    var isForSyndie = _emag.CheckFlag(uid, EmagType.Interaction) &&
                                       args.Data.ContainsKey(FaxConstants.FaxSyndicateData);
                     if (!isForSyndie && !component.ResponsePings)
                         return;
@@ -292,8 +298,9 @@ public sealed class FaxSystem : EntitySystem
                     args.Data.TryGetValue(FaxConstants.FaxPaperStampedByData, out List<StampDisplayInfo>? stampedBy);
                     args.Data.TryGetValue(FaxConstants.FaxPaperPrototypeData, out string? prototypeId);
                     args.Data.TryGetValue(FaxConstants.FaxPaperLockedData, out bool? locked);
+                    args.Data.TryGetValue(FaxConstants.FaxPaperSenderData, out string? sender);
 
-                    var printout = new FaxPrintout(content, name, label, prototypeId, stampState, stampedBy, locked ?? false);
+                    var printout = new FaxPrintout(content, name, label, prototypeId, stampState, stampedBy, locked ?? false, sender);
                     Receive(uid, printout, args.SenderAddress);
 
                     break;
@@ -405,7 +412,7 @@ public sealed class FaxSystem : EntitySystem
             { DeviceNetworkConstants.Command, FaxConstants.FaxPingCommand }
         };
 
-        if (HasComp<EmaggedComponent>(uid))
+        if (_emag.CheckFlag(uid, EmagType.Interaction))
             payload.Add(FaxConstants.FaxSyndicateData, true);
 
         _deviceNetworkSystem.QueuePacket(uid, null, payload);
@@ -443,6 +450,9 @@ public sealed class FaxSystem : EntitySystem
     public void Copy(EntityUid uid, FaxMachineComponent? component, FaxCopyMessage args)
     {
         if (!Resolve(uid, ref component))
+            return;
+
+        if (component.SendTimeoutRemaining > 0)
             return;
 
         var sendEntity = component.PaperSlot.Item;
@@ -489,6 +499,9 @@ public sealed class FaxSystem : EntitySystem
         if (!Resolve(uid, ref component))
             return;
 
+        if (component.SendTimeoutRemaining > 0)
+            return;
+
         var sendEntity = component.PaperSlot.Item;
         if (sendEntity == null)
             return;
@@ -514,6 +527,7 @@ public sealed class FaxSystem : EntitySystem
             { FaxConstants.FaxPaperLabelData, labelComponent?.CurrentLabel },
             { FaxConstants.FaxPaperContentData, paper.Content },
             { FaxConstants.FaxPaperLockedData, paper.EditingDisabled },
+            { FaxConstants.FaxPaperSenderData, component.FaxName } // Corvax-Next-FaxMark
         };
 
         if (metadata.EntityPrototype != null)
@@ -556,9 +570,11 @@ public sealed class FaxSystem : EntitySystem
         if (!Resolve(uid, ref component))
             return;
 
-        var faxName = Loc.GetString("fax-machine-popup-source-unknown");
-        if (fromAddress != null && component.KnownFaxes.TryGetValue(fromAddress, out var fax)) // If message received from unknown fax address
-            faxName = fax;
+        // Corvax-Next-FaxMark-Start
+        var faxName = printout.Sender ?? Loc.GetString("fax-machine-popup-source-unknown");
+        //if (fromAddress != null && component.KnownFaxes.TryGetValue(fromAddress, out var fax)) // If message received from unknown fax address
+        //    faxName = fax;
+        // Corvax-Next-FaxMark-End
 
         _popupSystem.PopupEntity(Loc.GetString("fax-machine-popup-received", ("from", faxName)), uid);
         _appearanceSystem.SetData(uid, FaxMachineVisuals.VisualState, FaxMachineVisualState.Printing);
@@ -593,6 +609,7 @@ public sealed class FaxSystem : EntitySystem
             }
 
             paper.EditingDisabled = printout.Locked;
+            paper.Sender = printout.Sender; // Corvax-Next-FaxMark
         }
 
         _metaData.SetEntityName(printed, printout.Name);

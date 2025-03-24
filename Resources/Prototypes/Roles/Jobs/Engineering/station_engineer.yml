@@ -16,6 +16,13 @@
   - External
   extendedAccess:
   - Atmospherics
+  special:
+  - !type:AddComponentSpecial
+    components:
+      - type: Skills # Corvax-Next-Skills
+        skills:
+        - ShuttleControl
+        - AdvancedBuilding
 
 - type: startingGear
   id: StationEngineerGear

@@ -23,7 +23,7 @@ public sealed partial class MiningScannerSystem : EntitySystem // Corvax-Next-Dw
         SubscribeLocalEvent<MiningScannerComponent, EntGotInsertedIntoContainerMessage>(OnInserted);
         SubscribeLocalEvent<MiningScannerComponent, EntGotRemovedFromContainerMessage>(OnRemoved);
         SubscribeLocalEvent<MiningScannerComponent, ItemToggledEvent>(OnToggled);
-		
+
 		CNInitialize(); // Corvax-Next-Dwarf
     }
 
@@ -97,7 +97,7 @@ public sealed partial class MiningScannerSystem : EntitySystem // Corvax-Next-Dw
                 {
                     RemCompDeferred(uid, viewer);
                     continue;
-                } 
+                }
 				// Corvax-Next-Dwarf-End: innate mining scanner
             }
 

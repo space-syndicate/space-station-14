@@ -1,0 +1,4 @@
+lavaland-examine-pressure-in-range-buff = Это оружие достигает максимальной эффективности при давлении в [color=yellow]{$min} - {$max} кПа[/color], позволяя ему наносить в [color=yellow]{$modifier} раза[/color] больше урона!
+lavaland-examine-pressure-in-range-debuff = Это оружие теряет эффективность при давлении в [color=yellow]{$min} - {$max} кПа[/color], заставляя его наносить в [color=yellow]{$modifier} раза[/color] меньше урона!
+lavaland-examine-pressure-out-range-buff = Это оружие достигает максимальной эффективности при давлении не равному [color=yellow]{$min} - {$max} кПа[/color], позволяя ему наносить в [color=yellow]{$modifier} раза[/color] больше урона!
+lavaland-examine-pressure-out-range-debuff = Это оружие теряет эффективность при давлении не равному [color=yellow]{$min} - {$max} кПа[/color], заставляя его наносить в [color=yellow]{$modifier} раза[/color] меньше урона!

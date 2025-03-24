@@ -82,6 +82,10 @@ public sealed class AutoCryoSleepSystem : EntitySystem
         if (!_enabled)
             return;
 
+        // Skip if entity is being terminated
+        if (Terminating(ent.Owner))
+            return;
+
         var comp = EnsureComp<AutoCryoSleepComponent>(ent);
         comp.Disconnected = _timing.CurTime;
     }

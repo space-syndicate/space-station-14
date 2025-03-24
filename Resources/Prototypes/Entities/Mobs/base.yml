@@ -45,6 +45,7 @@
   - type: RequireProjectileTarget
     active: False
   - type: AnimatedEmotes # Corvax-Next-AutoAnimate
+  - type: CollectiveMind # Goobstation - Starlight collective mind port
 
 - type: entity
   save: false
@@ -183,10 +184,10 @@
     specificHeat: 42
     coldDamage:
       types:
-        Cold: 1 #per second, scales with temperature & other constants
+        Cold: 0.7 #per second, scales with temperature & other constants
     heatDamage:
       types:
-        Heat: 1.5 #per second, scales with temperature & other constants
+        Heat: 1.2 #per second, scales with temperature & other constants
   - type: Barotrauma
     damage:
       types:
@@ -203,7 +204,7 @@
     canResistFire: true
     damage: #per second, scales with number of fire 'stacks'
       types:
-        Heat: 1.5
+        Heat: 0.5 # goob edit - ash heretic must weep
   - type: FireVisuals
     sprite: Mobs/Effects/onfire.rsi
     normalState: Generic_mob_burning

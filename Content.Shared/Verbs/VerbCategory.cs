@@ -89,5 +89,7 @@ namespace Content.Shared.Verbs
         public static readonly VerbCategory TurretControlMode = new("verb-categories-turret-control-mode", null); // Corvax-Next-TurretControl
 
         public static readonly VerbCategory PinpointerTarget = new("verb-categories-pinpointer-target", null); // Corvax-Next-VoxRaiders
+
+        public static readonly VerbCategory ToggleHeadsetSound = new("verb-categories-toggle-headset-sound", null); // Corvax-Next-HeadsetSound
     }
 }

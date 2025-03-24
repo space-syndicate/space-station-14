@@ -1,0 +1,26 @@
+- type: gamePreset
+  id: Heretic
+  alias:
+    - heretic
+  name: heretic-title
+  minPlayers: 25
+  showInVote: true
+  description: heretic-desc
+  rules:
+    - Heretic
+    - SubGamemodesRule
+    - BasicStationEventScheduler
+    #- MeteorSwarmScheduler
+
+- type: gamePreset
+  id: Blob
+  alias:
+  - blab
+  name: blob-title
+  description: blob-description
+  showInVote: false
+  rules:
+  - BlobGameMode
+  - BasicStationEventScheduler
+  - BasicRoundstartVariation
+  - SubGamemodesRule

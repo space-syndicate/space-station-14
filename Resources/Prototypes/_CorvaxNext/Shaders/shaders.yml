@@ -2,3 +2,8 @@
   id: NightVision
   kind: source
   path: "/Textures/_CorvaxNext/Shaders/nightvision.swsl"
+
+- type: shader
+  id: Bloom
+  kind: source
+  path: "/Textures/_CorvaxNext/Shaders/bloom.swsl"

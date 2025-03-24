@@ -24,36 +24,16 @@
   - type: FlavorProfile
     flavors:
       - people
+  - type: Tag # goob edit
+    tags:
+    - Meat
+    - Organ
 
 - type: entity
   id: OrganDionaBrain
-  parent: [BaseDionaOrgan, OrganHumanBrain]
+  parent: BaseDionaOrgan
   name: brain
   description: "The central hub of a diona's pseudo-neurological activity, its root-like tendrils search for its former body."
-  components:
-  - type: Item
-    size: Small
-    heldPrefix: brain
-  - type: Sprite
-    state: brain
-  - type: Organ # _CorvaxNext
-    slotId: Brain
-  - type: Brain # _CorvaxNext
-  - type: SolutionContainerManager
-    solutions:
-      organ:
-        maxVol: 10
-        reagents:
-        - ReagentId: Nutriment
-          Quantity: 10
-      Lung:
-        maxVol: 100
-        canReact: False
-      food:
-        maxVol: 5
-        reagents:
-        - ReagentId: GreyMatter
-          Quantity: 5
 
 - type: entity
   id: OrganDionaEyes
@@ -108,6 +88,11 @@
   - type: Item
     size: Small
     heldPrefix: stomach
+  - type: Tag # goob edit
+    tags:
+    - Meat
+    - Organ
+    - Stomach
 
 - type: entity
   id: OrganDionaLungs
@@ -141,6 +126,11 @@
       Lung:
         maxVol: 100
         canReact: False
+  - type: Tag # goob edit
+    tags:
+    - Meat
+    - Organ
+    - Lungs
 
 # Organs that turn into nymphs on removal
 - type: entity
@@ -151,9 +141,6 @@
   description: "The source of incredible, unending intelligence. Honk."
   components:
   - type: Brain
-  - type: Nymph # This will make the organs turn into a nymph when they're removed.
-    entityPrototype: OrganDionaNymphBrain
-    transferMind: true
 
 - type: entity
   id: OrganDionaStomachNymph
@@ -164,6 +151,11 @@
   components:
   - type: Nymph
     entityPrototype: OrganDionaNymphStomach
+  - type: Tag # goob edit
+    tags:
+    - Meat
+    - Organ
+    - Stomach
 
 - type: entity
   id: OrganDionaLungsNymph
@@ -173,7 +165,8 @@
   description: "Filters oxygen from an atmosphere, which is then sent into the bloodstream to be used as an electron carrier."
   components:
   - type: Nymph
-    entityPrototype: OrganDionaNymphLungs
+    entityPrototype: OrganDionaNymphBrain
+    transferMind: true
 
 # Nymphs that the organs will turn into
 - type: entity

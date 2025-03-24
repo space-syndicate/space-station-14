@@ -11,6 +11,15 @@
   - Maintenance
   extendedAccess:
   - Salvage
+  special:
+  - !type:GiveItemOnHolidaySpecial
+    holiday: BoxingDay
+    prototype: BoxCardboard
+  - !type:AddComponentSpecial
+    components:
+      - type: Skills # Corvax-Next-Skills
+        skills:
+        - ShuttleControl
 
 - type: startingGear
   id: CargoTechGear

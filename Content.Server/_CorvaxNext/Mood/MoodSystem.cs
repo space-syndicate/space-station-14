@@ -47,24 +47,8 @@ public sealed class MoodSystem : EntitySystem
         SubscribeLocalEvent<MoodComponent, DamageChangedEvent>(OnDamageChange);
         SubscribeLocalEvent<MoodComponent, RefreshMovementSpeedModifiersEvent>(OnRefreshMoveSpeed);
         SubscribeLocalEvent<MoodComponent, MoodRemoveEffectEvent>(OnRemoveEffect);
-
         SubscribeLocalEvent<MoodModifyTraitComponent, ComponentStartup>(OnTraitStartup);
-
         SubscribeLocalEvent<MoodComponent, MoodCheckAlertEvent>(OnAlertClicked);
-        SubscribeLocalEvent<MoodComponent, ExaminedEvent>(OnExamined);
-    }
-
-    private void OnExamined(EntityUid uid, MoodComponent component, ExaminedEvent args)
-    {
-        var mood = GetMoodName(component.CurrentMoodThreshold);
-        var color = GetMoodColor(component.CurrentMoodThreshold);
-        if (mood == string.Empty)
-            return;
-
-        args.PushText(Loc.GetString("mood-component-examine",
-            ("color", color),
-            ("mood", mood),
-            ("user", uid)));
     }
 
     private void OnAlertClicked(EntityUid uid, MoodComponent component, MoodCheckAlertEvent args)
@@ -448,31 +432,6 @@ public sealed class MoodSystem : EntitySystem
         return 0;
     }
 
-    private string GetMoodName(MoodThreshold threshold)
-    {
-        return threshold switch
-        {
-            MoodThreshold.Insane or MoodThreshold.Horrible or MoodThreshold.Terrible => Loc.GetString("mood-examine-horrible"),
-            MoodThreshold.Bad or MoodThreshold.Meh => Loc.GetString("mood-examine-bad"),
-            MoodThreshold.Neutral => Loc.GetString("mood-examine-neutral"),
-            MoodThreshold.Good or MoodThreshold.Great => Loc.GetString("mood-examine-good"),
-            MoodThreshold.Exceptional or MoodThreshold.Perfect => Loc.GetString("mood-examine-perfect"),
-            _ => Loc.GetString(""),
-        };
-    }
-
-    private static Color GetMoodColor(MoodThreshold threshold)
-    {
-        return threshold switch
-        {
-            MoodThreshold.Insane or MoodThreshold.Horrible or MoodThreshold.Terrible => Color.Red,
-            MoodThreshold.Bad or MoodThreshold.Meh => Color.Orange,
-            MoodThreshold.Neutral => Color.Blue,
-            MoodThreshold.Good or MoodThreshold.Great => Color.Green,
-            MoodThreshold.Exceptional or MoodThreshold.Perfect => Color.Aquamarine,
-            _ => Color.Gray,
-        };
-    }
 
     private void OnDamageChange(EntityUid uid, MoodComponent component, DamageChangedEvent args)
     {

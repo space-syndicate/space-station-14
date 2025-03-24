@@ -1,0 +1,25 @@
+﻿- type: latheRecipePack
+  id: AdvancedSurgeryBorg
+  recipes:
+    - BorgModuleSurgery
+    - BorgModuleAdvancedSurgery
+    - BorgModuleDefibrillator
+
+- type: latheRecipePack
+  id: CyberneticEnhancementsDynamic
+  recipes:
+    - JawsOfLifeLeftArm
+    - JawsOfLifeRightArm
+    - SpeedLeftLeg
+    - SpeedRightLeg
+    - BasicCyberneticEyes
+    - SecurityCyberneticEyes
+    - MedicalCyberneticEyes
+
+- type: latheRecipePack
+  id: PlasmaCutter
+  recipes:
+    - WeaponPlasmaCutter
+    - PKAUpgradeDamage # Lavaland Change
+    - PKAUpgradeRange # Lavaland Change
+    - PKAUpgradeFireRate # Lavaland Change

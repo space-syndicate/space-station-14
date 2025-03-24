@@ -67,3 +67,9 @@
             Reporter: [ 1, 1 ]
             # silicon
             Borg: [ 2, 3 ]
+        # Goobstation blob-config-start HUGEs
+        - type: StationBlobConfig
+          stageBegin: 40
+          stageCritical: 450
+          stageTheEnd: 900
+          # Goobstation blob-config-end

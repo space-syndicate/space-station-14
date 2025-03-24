@@ -322,7 +322,7 @@ namespace Content.Server.Atmos.EntitySystems
         public void Ignite(EntityUid uid, EntityUid ignitionSource, FlammableComponent? flammable = null,
             EntityUid? ignitionSourceUser = null)
         {
-            if (!Resolve(uid, ref flammable))
+            if (!Resolve(uid, ref flammable, false)) // Lavaland Change: SHUT THE FUCK UP FLAMMABLE
                 return;
 
             if (flammable.AlwaysCombustible)
@@ -458,7 +458,7 @@ namespace Content.Server.Atmos.EntitySystems
                     if (_inventoryQuery.TryComp(uid, out var inv))
                         _inventory.RelayEvent((uid, inv), ref ev);
 
-                    _damageableSystem.TryChangeDamage(uid, flammable.Damage * flammable.FireStacks * ev.Multiplier, interruptsDoAfters: false);
+                    _damageableSystem.TryChangeDamage(uid, flammable.Damage * flammable.FireStacks * ev.Multiplier, interruptsDoAfters: false, partMultiplier: 0.3f); // Lavaland: Nerf fire delimbing
 
                     AdjustFireStacks(uid, flammable.FirestackFade * (flammable.Resisting ? 10f : 1f), flammable, flammable.OnFire);
                 }

@@ -36,6 +36,13 @@ namespace Content.Shared.Storage
         public Dictionary<string, List<ItemStorageLocation>> SavedLocations = new();
 
         /// <summary>
+        /// Allow or disallow showing the "open/close storage" verb.
+        /// This is desired on items that we don't want to be accessed by the player directly.
+        /// </summary>
+        [DataField]
+        public bool ShowVerb = true;
+
+        /// <summary>
         /// A list of boxes that comprise a combined grid that determines the location that items can be stored.
         /// </summary>
         [DataField, ViewVariables(VVAccess.ReadWrite)]
@@ -149,6 +156,19 @@ namespace Content.Shared.Storage
     }
 
     [Serializable, NetSerializable]
+    public sealed class OpenNestedStorageEvent : EntityEventArgs
+    {
+        public readonly NetEntity InteractedItemUid;
+        public readonly NetEntity StorageUid;
+
+        public OpenNestedStorageEvent(NetEntity interactedItemUid, NetEntity storageUid)
+        {
+            InteractedItemUid = interactedItemUid;
+            StorageUid = storageUid;
+        }
+    }
+
+    [Serializable, NetSerializable]
     public sealed class StorageInteractWithItemEvent : EntityEventArgs
     {
         public readonly NetEntity InteractedItemUid;
@@ -172,6 +192,26 @@ namespace Content.Shared.Storage
         public readonly ItemStorageLocation Location;
 
         public StorageSetItemLocationEvent(NetEntity itemEnt, NetEntity storageEnt, ItemStorageLocation location)
+        {
+            ItemEnt = itemEnt;
+            StorageEnt = storageEnt;
+            Location = location;
+        }
+    }
+
+    [Serializable, NetSerializable]
+    public sealed class StorageTransferItemEvent : EntityEventArgs
+    {
+        public readonly NetEntity ItemEnt;
+
+        /// <summary>
+        /// Target storage to receive the transfer.
+        /// </summary>
+        public readonly NetEntity StorageEnt;
+
+        public readonly ItemStorageLocation Location;
+
+        public StorageTransferItemEvent(NetEntity itemEnt, NetEntity storageEnt, ItemStorageLocation location)
         {
             ItemEnt = itemEnt;
             StorageEnt = storageEnt;

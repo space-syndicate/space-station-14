@@ -1,0 +1,20 @@
+uniform sampler2D SCREEN_TEXTURE;
+uniform highp vec2 renderScale;
+uniform lowp int count;
+
+uniform highp vec2[32] position;
+uniform highp float[32] brightness;
+uniform highp vec2[32] color1;
+uniform highp vec2[32] color2;
+
+void fragment() {
+    highp vec4 color;
+
+    for(int i = 0; i < count; i++) {
+        highp vec2 dist = abs(FRAGCOORD.xy - position[i]) * renderScale;
+
+        color += exp((dist.x*dist.x + dist.y*dist.y) * brightness[i]) * vec4(color1[i], color2[i]);
+    }
+    
+    COLOR = zTextureSpec(SCREEN_TEXTURE, FRAGCOORD.xy * SCREEN_PIXEL_SIZE) * color;
+}

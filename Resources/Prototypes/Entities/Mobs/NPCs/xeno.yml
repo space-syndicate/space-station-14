@@ -119,6 +119,9 @@
     molsPerSecondPerUnitMass: 0.0005
   - type: Speech
     speechVerb: LargeMob
+  - type: NightVision
+    color: "#808080"
+  - type: Fauna # Lavaland Change
 
 - type: entity
   name: praetorian

@@ -1,13 +1,16 @@
 - type: npcFaction
   id: Dragon
   hostile:
-    - NanoTrasen
-    - Syndicate
-    - Xeno
-    - PetsNT
-    - Zombie
-    - Revolutionary
-    - AllHostile
+  - NanoTrasen
+  - Syndicate
+  - Xeno
+  - PetsNT
+  - Zombie
+  - Revolutionary
+  - AllHostile
+  - Wizard
+  - Heretic # goob edit - heretics
+  - Blob # Goobstation - Blob
 
 - type: npcFaction
   id: NanoTrasen
@@ -19,12 +22,16 @@
   - Revolutionary
   - Dragon
   - AllHostile
+  - Wizard
+  - Heretic # goob edit - heretics
+  - Blob # Goobstation - Blob
 
 - type: npcFaction
   id: Mouse
   hostile:
-    - PetsNT
-    - AllHostile
+  - PetsNT
+  - AllHostile
+  - Wizard
 
 - type: npcFaction
   id: Passive
@@ -37,6 +44,8 @@
   - Zombie
   - Xeno
   - AllHostile
+  - Blob # Goobstation - Blob
+  - Wizard
 
 - type: npcFaction
   id: SimpleHostile
@@ -48,6 +57,9 @@
   - Zombie
   - Revolutionary
   - AllHostile
+  - Wizard
+  - Heretic # goob edit - heretics
+  - Blob # Goobstation - Blob
 
 - type: npcFaction
   id: SimpleNeutral
@@ -62,6 +74,9 @@
   - Zombie
   - Dragon
   - AllHostile
+  - Wizard
+  - Heretic # goob edit - heretics
+  - Blob # Goobstation - Blob
 
 - type: npcFaction
   id: Xeno
@@ -73,6 +88,9 @@
   - Zombie
   - Revolutionary
   - AllHostile
+  - Wizard
+  - Heretic # goob edit - heretics
+  - Blob # Goobstation - Blob
 
 - type: npcFaction
   id: Zombie
@@ -85,6 +103,9 @@
   - PetsNT
   - Revolutionary
   - AllHostile
+  - Wizard
+  - Heretic # goob edit - heretics
+  - Blob # Goobstation - Blob
 
 - type: npcFaction
   id: Revolutionary
@@ -94,6 +115,8 @@
   - SimpleHostile
   - Dragon
   - AllHostile
+  - Wizard
+  - Blob # Goobstation - Blob
 
 - type: npcFaction
   id: AllHostile
@@ -109,3 +132,22 @@
   - Xeno
   - Zombie
   - Revolutionary
+  - Wizard
+  - Blob # Goobstation - Blob
+
+- type: npcFaction
+  id: Wizard
+  hostile:
+  - NanoTrasen
+  - Dragon
+  - Mouse
+  - Passive
+  - PetsNT
+  - SimpleHostile
+  - SimpleNeutral
+  - Syndicate
+  - Xeno
+  - Zombie
+  - Revolutionary
+  - AllHostile
+  - Blob # Goobstation - Blob

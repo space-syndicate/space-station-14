@@ -7,6 +7,7 @@
     - !type:DepartmentTimeRequirement
       department: Security
       time: 108000 #50 hrs # Corvax-RoleTime
+  weight: 5
   startingGear: WardenGear
   icon: "JobIconWarden"
   supervisors: job-supervisors-hos
@@ -23,6 +24,11 @@
   special:
   - !type:AddImplantSpecial
     implants: [ MindShieldImplant ]
+  - !type:AddComponentSpecial
+    components:
+      - type: Skills # Corvax-Next-Skills
+        skills:
+        - Shooting
 
 - type: startingGear
   id: WardenGear

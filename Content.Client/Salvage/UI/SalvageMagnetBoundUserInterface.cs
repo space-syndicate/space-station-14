@@ -1,7 +1,9 @@
 using System.Linq;
 using Content.Client.Message;
+using Content.Shared._DV.Salvage.Systems; // DeltaV
 using Content.Shared.Salvage;
 using Content.Shared.Salvage.Magnet;
+using Robust.Client.Player; // DeltaV
 using Robust.Client.UserInterface;
 using Robust.Client.UserInterface.Controls;
 
@@ -10,6 +12,7 @@ namespace Content.Client.Salvage.UI;
 public sealed class SalvageMagnetBoundUserInterface : BoundUserInterface
 {
     [Dependency] private readonly IEntityManager _entManager = default!;
+    [Dependency] private readonly IPlayerManager _player = default!; // DeltaV
 
     private OfferingWindow? _window;
 
@@ -22,9 +25,8 @@ public sealed class SalvageMagnetBoundUserInterface : BoundUserInterface
     {
         base.Open();
 
-        _window = this.CreateWindow<OfferingWindow>();
+        _window = this.CreateWindowCenteredLeft<OfferingWindow>();
         _window.Title = Loc.GetString("salvage-magnet-window-title");
-        _window.OpenCenteredLeft();
     }
 
     protected override void UpdateState(BoundUserInterfaceState state)

@@ -102,6 +102,7 @@
     responsePings: false
     notifyAdmins: true
   - type: Emagged
+    emagType: Interaction
 
 - type: entity
   parent: FaxMachineBase

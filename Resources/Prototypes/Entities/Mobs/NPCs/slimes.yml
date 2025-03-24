@@ -1,4 +1,4 @@
-﻿- type: entity
+- type: entity
   name: basic slime
   id: BaseMobAdultSlimes
   parent: [ SimpleMobBase, MobCombat ]
@@ -119,6 +119,7 @@
       enum.SurgeryUIKey.Key:
         type: SurgeryBui
   # end-_CorvaxNext: surgery
+  - type: Fauna # Lavaland Change
 
 - type: entity
   name: basic slime

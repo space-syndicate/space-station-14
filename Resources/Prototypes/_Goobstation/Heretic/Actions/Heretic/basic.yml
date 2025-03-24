@@ -1,0 +1,64 @@
+# actions
+- type: entity
+  id: ActionHereticOpenStore
+  name: action-heretic-store-name
+  description: action-heretic-store-desc
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: InstantAction
+    itemIconStyle: NoItem
+    icon:
+      sprite: _Goobstation/Heretic/abilities_heretic.rsi
+      state: open_store
+    event: !type:EventHereticOpenStore {}
+  - type: HereticAction
+    requireMagicItem: false
+
+- type: entity
+  id: ActionHereticMansusGrasp
+  name: action-heretic-grasp-name
+  description: action-heretic-grasp-desc
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: InstantAction
+    useDelay: 10
+    itemIconStyle: NoItem
+    icon:
+      sprite: _Goobstation/Heretic/abilities_heretic.rsi
+      state: mansus_grasp
+    event: !type:EventHereticMansusGrasp {}
+  - type: HereticAction
+    requireMagicItem: false
+
+- type: entity
+  id: ActionHereticLivingHeart
+  name: action-heretic-heart-name
+  description: action-heretic-heart-desc
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: InstantAction
+    useDelay: 2
+    itemIconStyle: NoItem
+    icon:
+      sprite: _Goobstation/Heretic/abilities_heretic.rsi
+      state: living_heart
+    event: !type:EventHereticLivingHeart {}
+  - type: HereticAction
+    requireMagicItem: false
+
+- type: entity
+  id: ActionHereticMansusLink
+  name: action-heretic-link-name
+  description: action-heretic-link-desc
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: EntityTargetAction
+    useDelay: 10
+    itemIconStyle: NoItem
+    icon:
+      sprite: _Goobstation/Heretic/abilities_heretic.rsi
+      state: mansus_link
+    event: !type:EventHereticMansusLink {}
+  - type: HereticAction
+    requireMagicItem: false
+    messageLoc: heretic-speech-link

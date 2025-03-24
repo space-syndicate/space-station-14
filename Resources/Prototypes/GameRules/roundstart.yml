@@ -22,6 +22,19 @@
     rules:
     - id: Thief
       prob: 0.5
+    - id: Heretic # goob edit
+      prob: 0.2
+    - id: SubWizard
+      prob: 0.05
+
+- type: entity
+  parent: BaseGameRule
+  id: SubGamemodesRuleNoWizard
+  components:
+  - type: SubGamemodes
+    rules:
+    - id: Thief
+      prob: 0.5
 
 - type: entity
   id: DeathMatch31
@@ -75,8 +88,8 @@
   components:
   - type: RandomMetadata #this generates the random operation name cuz it's cool.
     nameSegments:
-    - operationPrefix
-    - operationSuffix
+    - NamesOperationPrefix
+    - NamesOperationSuffix
   - type: NukeopsRule
   - type: RuleGrids
   - type: AntagSelection
@@ -110,10 +123,18 @@
       - type: RandomMetadata
         nameSegments:
         - nukeops-role-commander
-        - SyndicateNamesElite
+        - NamesSyndicateElite
       - type: NpcFactionMember
         factions:
         - Syndicate
+      - type: Skills # Corvax-Next-Skills
+        skills:
+        - ShuttleControl
+        - Shooting
+        - AdvancedBuilding
+        - Surgery
+        - MedicalEquipment
+        - Butchering
       mindRoles:
       - MindRoleNukeopsCommander
     - prefRoles: [ NukeopsMedic ]
@@ -127,10 +148,18 @@
       - type: RandomMetadata
         nameSegments:
         - nukeops-role-agent
-        - SyndicateNamesNormal
+        - NamesSyndicateNormal
       - type: NpcFactionMember
         factions:
         - Syndicate
+      - type: Skills # Corvax-Next-Skills
+        skills:
+        - ShuttleControl
+        - Shooting
+        - AdvancedBuilding
+        - Surgery
+        - MedicalEquipment
+        - Butchering
       mindRoles:
       - MindRoleNukeopsMedic
     - prefRoles: [ Nukeops ]
@@ -146,10 +175,18 @@
       - type: RandomMetadata
         nameSegments:
         - nukeops-role-operator
-        - SyndicateNamesNormal
+        - NamesSyndicateNormal
       - type: NpcFactionMember
         factions:
         - Syndicate
+      - type: Skills # Corvax-Next-Skills
+        skills:
+        - ShuttleControl
+        - Shooting
+        - AdvancedBuilding
+        - Surgery
+        - MedicalEquipment
+        - Butchering
       mindRoles:
       - MindRoleNukeops
 
@@ -178,6 +215,7 @@
       min: 240
       max: 420
   - type: AntagSelection
+    selectionTime: IntraPlayerSpawn
     definitions:
     - prefRoles: [ Traitor ]
       max: 8
@@ -186,6 +224,15 @@
         components:
         - AntagImmune
       lateJoinAdditional: true
+      components:
+      - type: Skills # Corvax-Next-Skills
+        skills:
+        - ShuttleControl
+        - Shooting
+        - AdvancedBuilding
+        - Surgery
+        - MedicalEquipment
+        - Butchering
       mindRoles:
       - MindRoleTraitor
 
@@ -211,18 +258,28 @@
     minPlayers: 15
   - type: RevolutionaryRule
   - type: AntagSelection
+    selectionTime: IntraPlayerSpawn
     definitions:
     - prefRoles: [ HeadRev ]
       max: 3
       playerRatio: 15
       briefing:
-        text: head-rev-role-greeting
+        text: head-rev-role-greeting-consent-only # Reserve-ConsentRev
         color: CornflowerBlue
         sound: "/Audio/Ambience/Antag/headrev_start.ogg"
-      startingGear: HeadRevGear
+      #startingGear: HeadRevGear # Reserve-ConsentRev
       components:
       - type: Revolutionary
       - type: HeadRevolutionary
+        onlyConsentConvert: true # Reserve-ConsentRev
+      - type: Skills # Corvax-Next-Skills
+        skills:
+        - ShuttleControl
+        - Shooting
+        - AdvancedBuilding
+        - Surgery
+        - MedicalEquipment
+        - Butchering
       mindRoles:
       - MindRoleHeadRevolutionary
 
@@ -237,6 +294,56 @@
   parent: BaseGameRule
   components:
   - type: SecretRule
+
+- type: entity
+  abstract: true
+  parent: BaseGameRule
+  id: BaseWizardRule
+  components:
+  - type: AntagObjectives
+    objectives:
+    - WizardSurviveObjective
+    - WizardDemonstrateObjective
+  - type: LoadMapRule
+    gridPath: /Maps/Shuttles/wizard.yml
+  - type: RuleGrids
+  - type: AntagSelection
+  - type: AntagLoadProfileRule
+    speciesOverride: Human
+
+- type: entity
+  parent: BaseWizardRule
+  id: Wizard
+  components:
+  - type: GameRule
+    minPlayers: 10
+  - type: AntagSelection
+    agentName: wizard-round-end-name
+    selectionTime: PrePlayerSpawn
+    definitions:
+    - prefRoles: [ Wizard ]
+      max: 1
+      playerRatio: 1
+      spawnerPrototype: SpawnPointGhostWizard
+      roleLoadout:
+       - RoleSurvivalExtended
+      briefing:
+        text: wizard-role-greeting
+        color: Turquoise
+        # TODO: Need Wizard Start sound
+        #sound: "/Audio/Ambience/Antag/wizard_start.ogg"
+      startingGear: WizardBlueGear
+      # TODO: WizardComp as needed
+      components:
+      - type: NpcFactionMember
+        factions:
+        - Wizard
+      - type: RandomMetadata
+        nameSegments:
+        - NamesWizardFirst
+        - NamesWizardLast
+      mindRoles:
+      - MindRoleWizard
 
 - type: entity
   id: Zombie
@@ -256,6 +363,7 @@
     - type: IncurableZombie
     endedPopup: zombie-bioterrorist-romerol-active
   - type: AntagSelection
+    selectionTime: IntraPlayerSpawn
     definitions:
     - prefRoles: [ InitialInfected ]
       max: 6
@@ -280,6 +388,14 @@
         addFriendlyFactions:
         - Zombie
       # Corvax
+      - type: Skills # Corvax-Next-Skills
+        skills:
+        - ShuttleControl
+        - Shooting
+        - AdvancedBuilding
+        - Surgery
+        - MedicalEquipment
+        - Butchering
       mindRoles:
       - MindRoleInitialInfected
 
@@ -318,6 +434,9 @@
   - type: BasicStationEventScheduler
     scheduledGameRules: !type:NestedSelector
       tableId: BasicGameRulesTable
+    minMaxEventTiming: # Corvax-Next-EventsBalance
+      min: 300 # 5 mins
+      max: 1200 # 20 mins
 
 - type: entity
   id: RampingStationEventScheduler
@@ -335,7 +454,7 @@
     minimumTimeUntilFirstEvent: 2700 # 45 mins #shows up like half way through shift.
     minMaxEventTiming:
       min: 1200 # 20 mins
-      max: 7200 # 120 mins # you probably arent getting a second visitor shuttle in one round, but it is possible.
+      max: 14400 # 240 mins # you probably arent getting a second visitor shuttle in one round, but it is possible. # Corvax-Next-EventsBalance
     scheduledGameRules: !type:NestedSelector
       tableId: SpaceTrafficControlTable
 

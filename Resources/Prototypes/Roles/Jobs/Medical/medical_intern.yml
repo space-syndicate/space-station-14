@@ -23,6 +23,9 @@
     - type: SurgerySpeedModifier
       speedModifier: 1.5
     #end-_CorvaxNext: surgery
+    - type: Skills # Corvax-Next-Skills
+      skills:
+      - MedicalEquipment
 
 - type: startingGear
   id: MedicalInternGear

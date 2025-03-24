@@ -1,0 +1,53 @@
+- type: entity
+  id: ActionHereticVoidBlast
+  name: action-heretic-void-blast-name
+  description: action-heretic-void-blast-desc
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: InstantAction
+    useDelay: 15
+    itemIconStyle: NoItem
+    icon:
+      sprite: _Goobstation/Heretic/abilities_heretic.rsi
+      state: void_blast
+    event: !type:HereticVoidBlastEvent
+  - type: HereticAction
+    requireMagicItem: true
+    messageLoc: heretic-speech-void-blast
+
+- type: entity
+  id: ActionHereticVoidPhase
+  name: action-heretic-void-phase-name
+  description: action-heretic-void-phase-desc
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: WorldTargetAction
+    useDelay: 15
+    itemIconStyle: NoItem
+    icon:
+      sprite: _Goobstation/Heretic/abilities_heretic.rsi
+      state: void_phase
+    event: !type:HereticVoidBlinkEvent
+    checkCanAccess: false
+    range: 0
+  - type: HereticAction
+    requireMagicItem: true
+    messageLoc: heretic-speech-void-phase
+
+- type: entity
+  id: ActionHereticVoidPull
+  name: action-heretic-void-pull-name
+  description: action-heretic-void-pull-desc
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: InstantAction
+    useDelay: 20
+    itemIconStyle: NoItem
+    icon:
+      sprite: _Goobstation/Heretic/abilities_heretic.rsi
+      state: void_pull
+    event: !type:HereticVoidPullEvent
+  - type: HereticAction
+    requireMagicItem: true
+    messageLoc: heretic-speech-void-pull
+

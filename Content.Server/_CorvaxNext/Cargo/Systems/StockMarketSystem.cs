@@ -169,7 +169,7 @@ public sealed class StockMarketSystem : EntitySystem
             currentOwned = 0;
 
         // Update the bank account
-        _cargo.UpdateBankAccount(station, bank, -totalValue);
+        _cargo.UpdateBankAccount((station, bank), -totalValue);
         stockMarket.StockOwnership[companyIndex] = currentOwned + amount;
 
         // Log the transaction
@@ -207,7 +207,7 @@ public sealed class StockMarketSystem : EntitySystem
             stockMarket.StockOwnership.Remove(companyIndex);
 
         // Update the bank account
-        _cargo.UpdateBankAccount(station, bank, totalValue);
+        _cargo.UpdateBankAccount((station, bank), totalValue);
 
         // Log the transaction
         _adminLogger.Add(LogType.Action,

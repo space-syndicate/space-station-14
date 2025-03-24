@@ -8,6 +8,8 @@ using Content.Shared.Implants.Components;
 using Content.Shared.Mindshield.Components;
 using Content.Shared.Revolutionary.Components;
 using Content.Shared.Tag;
+using Content.Shared.Mindcontrol;  //Goobstation - Mindcontrol Implant
+using Robust.Shared.Containers;
 
 namespace Content.Server.Mindshield;
 
@@ -29,6 +31,7 @@ public sealed class MindShieldSystem : EntitySystem
     {
         base.Initialize();
         SubscribeLocalEvent<SubdermalImplantComponent, ImplantImplantedEvent>(ImplantCheck);
+        SubscribeLocalEvent<MindShieldImplantComponent, EntGotRemovedFromContainerMessage>(OnImplantDraw);
     }
 
     /// <summary>
@@ -60,5 +63,13 @@ public sealed class MindShieldSystem : EntitySystem
         {
             _adminLogManager.Add(LogType.Mind, LogImpact.Medium, $"{ToPrettyString(implanted)} was deconverted due to being implanted with a Mindshield.");
         }
+        if (HasComp<MindcontrolledComponent>(implanted))   //Goobstation - Mindcontrol Implant
+            RemComp<MindcontrolledComponent>(implanted);
+    }
+
+    private void OnImplantDraw(Entity<MindShieldImplantComponent> ent, ref EntGotRemovedFromContainerMessage args)
+    {
+        RemComp<MindShieldComponent>(args.Container.Owner);
     }
 }
+

@@ -1,7 +1,6 @@
 ﻿- type: latheRecipe
   id: BorgModuleSurgery
   result: BorgModuleSurgery
-  category: Robotics
   completetime: 3
   materials:
     Steel: 250
@@ -11,7 +10,6 @@
 - type: latheRecipe
   id: BorgModuleAdvancedSurgery
   result: BorgModuleAdvancedSurgery
-  category: Robotics
   completetime: 3
   materials:
     Steel: 500
@@ -22,7 +20,6 @@
 - type: latheRecipe
   id: JawsOfLifeLeftArm
   result: JawsOfLifeLeftArm
-  category: Robotics
   completetime: 5
   materials:
     Steel: 1000
@@ -34,7 +31,6 @@
 - type: latheRecipe
   id: JawsOfLifeRightArm
   result: JawsOfLifeRightArm
-  category: Robotics
   completetime: 5
   materials:
     Steel: 1000
@@ -46,7 +42,6 @@
 - type: latheRecipe
   id: SpeedLeftLeg
   result: SpeedLeftLeg
-  category: Robotics
   completetime: 5
   materials:
     Steel: 1000
@@ -58,7 +53,6 @@
 - type: latheRecipe
   id: SpeedRightLeg
   result: SpeedRightLeg
-  category: Robotics
   completetime: 5
   materials:
     Steel: 1000
@@ -70,7 +64,6 @@
 - type: latheRecipe
   id: BasicCyberneticEyes
   result: BasicCyberneticEyes
-  category: Robotics
   completetime: 5
   materials:
     Steel: 1000

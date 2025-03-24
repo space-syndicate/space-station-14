@@ -1,0 +1,12 @@
+ent-BasePKAUpgrade = улучшение для ПКУ
+  .desc = Набор-улучшение для протокинетического ускорителя.
+ent-PKAUpgradeDamage = улучшение для ПКУ (урон)
+  .desc = { ent-BasePKAUpgrade.desc }
+ent-PKAUpgradeRange = улучшение для ПКУ (дальность)
+  .desc = { ent-BasePKAUpgrade.desc }
+ent-PKAUpgradeFireRate = улучшение для ПКУ (скорострельность)
+  .desc = { ent-BasePKAUpgrade.desc }
+ent-PKAUpgradeLight = улучшение для ПКУ (фонарик)
+  .desc = { ent-BasePKAUpgrade.desc }
+ent-LavalandVampirismCrystal = красный кристалл
+  .desc = { ent-BasePKAUpgrade.desc }

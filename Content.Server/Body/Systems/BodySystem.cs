@@ -20,6 +20,7 @@ namespace Content.Server.Body.Systems;
 
 public sealed class BodySystem : SharedBodySystem
 {
+    [Dependency] private readonly BloodstreamSystem _bloodstream = default!; // Shitmed Change
     [Dependency] private readonly GhostSystem _ghostSystem = default!;
     [Dependency] private readonly IGameTiming _gameTiming = default!;
     [Dependency] private readonly HumanoidAppearanceSystem _humanoidSystem = default!;
@@ -201,5 +202,14 @@ public sealed class BodySystem : SharedBodySystem
 
         Dirty(target, bodyAppearance);
     }
+
+    protected override void PartRemoveDamage(Entity<BodyComponent?> bodyEnt, Entity<BodyPartComponent> partEnt)
+    {
+        var bleeding = partEnt.Comp.SeverBleeding;
+        if (partEnt.Comp.IsVital)
+            bleeding *= 2f;
+        _bloodstream.TryModifyBleedAmount(bodyEnt, bleeding);
+    }
+
     // end-_CorvaxNext: surgery
 }

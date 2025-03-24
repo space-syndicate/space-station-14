@@ -1,0 +1,97 @@
+- type: entity
+  abstract: true
+  parent: BaseGameRule
+  id: BaseHereticRule
+  components:
+  - type: HereticRule
+  - type: AntagSelection
+
+- type: entity
+  parent: BaseHereticRule
+  id: Heretic
+  components:
+  - type: GameRule
+    minPlayers: 25
+  - type: AntagSelection
+    definitions:
+    - prefRoles: [ Heretic ]
+      max: 5
+      playerRatio: 15
+      lateJoinAdditional: true
+      mindComponents:
+      - type: HereticRole
+      startingGear: HereticGear # see Roles/Antags/heretic.yml
+
+- type: entityTable
+  id: ExtendedGameRulesTable
+  table: !type:AllSelector
+    children:
+      - !type:NestedSelector
+        tableId: BasicCalmEventsTable
+      - !type:NestedSelector
+        tableId: CargoGiftsTable
+      - !type:NestedSelector
+        tableId: CalmPestEventsTable
+      - !type:NestedSelector
+        tableId: SpicyPestEventsTable
+
+- type: entity
+  id: ExtendedStationEventScheduler
+  parent: BaseGameRule
+  components:
+  - type: BasicStationEventScheduler
+    scheduledGameRules: !type:NestedSelector
+      tableId: ExtendedGameRulesTable
+
+# Blob
+- type: entity
+  id: BlobRule
+  parent: BaseGameRule
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: BlobRule
+
+- type: entity
+  id: BlobGameMode
+  parent: BaseGameRule
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: BlobRule
+  - type: GameRule
+    minPlayers: 15
+    delay: # 7-10 minutes
+      min: 420
+      max: 600
+  - type: AntagSelection
+    definitions:
+    - prefRoles: [ Blob ]
+      min: 1
+      max: 2
+      playerRatio: 40 #players = 2 blobs
+      allowNonHumans: true
+      blacklist:
+        components:
+        - AntagImmune
+      briefing:
+        text: blob-carrier-role-greeting
+        color: Plum
+        sound: /Audio/Announcements/bloblarm.ogg
+      mindRoles:
+      - MindRoleBlob
+
+- type: entity
+  id: BlobSpawn
+  parent: BaseGameRule
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: StationEvent
+    weight: 15
+    duration: 1
+    earliestStart: 50
+    minimumPlayers: 20
+    maxOccurrences: 2
+  - type: BlobSpawnRule
+    carrierBlobProtos:
+    - SpawnPointGhostBlobRat
+    playersPerCarrierBlob: 30
+    maxCarrierBlob: 2

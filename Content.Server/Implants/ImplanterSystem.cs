@@ -1,5 +1,6 @@
 using System.Linq;
 using Content.Server.Popups;
+using Content.Shared._CorvaxNext.Skills;
 using Content.Shared.DoAfter;
 using Content.Shared.IdentityManagement;
 using Content.Shared.Implants;
@@ -15,6 +16,13 @@ public sealed partial class ImplanterSystem : SharedImplanterSystem
     [Dependency] private readonly PopupSystem _popup = default!;
     [Dependency] private readonly SharedDoAfterSystem _doAfter = default!;
     [Dependency] private readonly SharedContainerSystem _container = default!;
+    [Dependency] private readonly SharedSkillsSystem _skills = default!;
+
+    // Corvax-Next-Skills-Start
+    private const float ImplantDelayModifierWithoutSkill = 10;
+
+    private const float DrawDelayModifierWithoutSkill = 5;
+    // Corvax-Next-Skills-End
 
     public override void Initialize()
     {
@@ -68,24 +76,24 @@ public sealed partial class ImplanterSystem : SharedImplanterSystem
                 return;
             }
 
+            if (args.User == target && HasComp<PreventSelfImplantComponent>(uid))   //Goobstation - Mindcontrol implant preventing self implant
+            {
+                var name = Identity.Name(target, EntityManager, args.User);
+                var msg = Loc.GetString("implanter-component-implant-failed", ("implant", implant), ("target", name));
+                _popup.PopupEntity(msg, target, args.User);
+                // prevent further interaction since popup was shown
+                args.Handled = true;
+                return;
+            }
 
             //Implant self instantly, otherwise try to inject the target.
-            if (args.User == target)
+            if (args.User == target && _skills.HasSkill(args.User, Skills.Surgery)) // Corvax-Next-Skills
                 Implant(target, target, uid, component);
             else
                 TryImplant(component, args.User, target, uid);
         }
 
         args.Handled = true;
-    }
-
-    public bool CheckSameImplant(EntityUid target, EntityUid implant)
-    {
-        if (!TryComp<ImplantedComponent>(target, out var implanted))
-            return false;
-
-        var implantPrototype = Prototype(implant);
-        return implanted.ImplantContainer.ContainedEntities.Any(entity => Prototype(entity) == implantPrototype);
     }
 
     /// <summary>
@@ -97,7 +105,9 @@ public sealed partial class ImplanterSystem : SharedImplanterSystem
     /// <param name="implanter">The implanter being used</param>
     public void TryImplant(ImplanterComponent component, EntityUid user, EntityUid target, EntityUid implanter)
     {
-        var args = new DoAfterArgs(EntityManager, user, component.ImplantTime, new ImplantEvent(), implanter, target: target, used: implanter)
+        var delay = component.ImplantTime * (!_skills.HasSkill(user, Skills.Surgery) ? ImplantDelayModifierWithoutSkill : 1); // Corvax-Next-Skills
+
+        var args = new DoAfterArgs(EntityManager, user, delay, new ImplantEvent(), implanter, target: target, used: implanter) // Corvax-Next-Skills
         {
             BreakOnDamage = true,
             BreakOnMove = true,
@@ -106,6 +116,11 @@ public sealed partial class ImplanterSystem : SharedImplanterSystem
 
         if (!_doAfter.TryStartDoAfter(args))
             return;
+
+        // Corvax-Next-Skills-Start
+        if (user == target)
+            return;
+        // Corvax-Next-Skills-End
 
         _popup.PopupEntity(Loc.GetString("injector-component-injecting-user"), target, user);
 
@@ -123,7 +138,9 @@ public sealed partial class ImplanterSystem : SharedImplanterSystem
     //TODO: Remove when surgery is in
     public void TryDraw(ImplanterComponent component, EntityUid user, EntityUid target, EntityUid implanter)
     {
-        var args = new DoAfterArgs(EntityManager, user, component.DrawTime, new DrawEvent(), implanter, target: target, used: implanter)
+        var delay = component.DrawTime * (!_skills.HasSkill(user, Skills.Surgery) ? DrawDelayModifierWithoutSkill : 1); // Corvax-Next-Skills
+
+        var args = new DoAfterArgs(EntityManager, user, delay, new DrawEvent(), implanter, target: target, used: implanter) // Corvax-Next-Skills
         {
             BreakOnDamage = true,
             BreakOnMove = true,

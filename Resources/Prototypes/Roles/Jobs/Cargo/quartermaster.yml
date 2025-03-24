@@ -35,6 +35,9 @@
   - !type:AddComponentSpecial
     components:
       - type: CommandStaff
+      - type: Skills # Corvax-Next-Skills
+        skills:
+        - ShuttleControl
 
 - type: startingGear
   id: QuartermasterGear

@@ -51,10 +51,12 @@
       gun_chamber: !type:ContainerSlot
   - type: StaticPrice
     price: 500
+  - type: Multishot # Goobstation
+    spreadMultiplier: 1.6
 
 - type: entity
   name: AKMS
-  parent: [BaseWeaponRifle, BaseRestrictedContraband]
+  parent: [BaseWeaponRifle, BaseSecurityContraband]
   id: WeaponRifleAk
   description: An iconic weapon of war. Uses .30 rifle ammo.
   components:
@@ -69,6 +71,7 @@
     fireRate: 5
     soundGunshot:
       path: /Audio/Weapons/Guns/Gunshots/rifle2.ogg
+    requiresSkill: true # Corvax-Next-Skills
   - type: ChamberMagazineAmmoProvider
     soundRack:
       path: /Audio/Weapons/Guns/Cock/ltrifle_cock.ogg
@@ -147,7 +150,7 @@
 
 - type: entity
   name: Lecter
-  parent: [BaseWeaponRifle, BaseRestrictedContraband]
+  parent: [BaseWeaponRifle, BaseSecurityContraband]
   id: WeaponRifleLecter
   description: A high end military grade assault rifle. Uses .20 rifle ammo.
   components:
@@ -163,6 +166,7 @@
   - type: Gun
     soundGunshot:
       path: /Audio/Weapons/Guns/Gunshots/ltrifle.ogg
+    requiresSkill: true # Corvax-Next-Skills
   - type: ItemSlots
     slots:
       gun_magazine:
@@ -220,5 +224,6 @@
       path: /Audio/Effects/thunk.ogg
     soundEmpty:
       path: /Audio/Weapons/Guns/Empty/empty.ogg
+    requiresSkill: true # Corvax-Next-Skills
     clumsyProof: true
   - type: PacifismAllowedGun

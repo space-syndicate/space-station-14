@@ -1,35 +1,12 @@
 - type: entity
-  parent: ClothingHeadHardsuitWithLightBase
+  parent: ClothingHeadHelmetCBURN
   id: ClothingHeadHelmetCBURNLeader
   categories: [ HideSpawnMenu ]
   name: cburn commander helmet
   description: A pressure resistant and fireproof hood worn by special cleanup units.
   components:
   - type: Sprite
-    netsync: false
     sprite: Corvax/Clothing/Head/hardsuits/cburncommander.rsi
-    layers:
-    - state: icon
-    - state: icon-unshaded
-      shader: unshaded
-    - state: light-overlay
-      visible: false
-      shader: unshaded
-      map: [ "light" ]
-  - type: Clothing
-    clothingVisuals:
-      head:
-      - state: equipped-head
-      - state: equipped-head-unshaded
-        shader: unshaded
-  - type: PointLight
-    color: orange
-  - type: PressureProtection
-    highPressureMultiplier: 0.08
-    lowPressureMultiplier: 1000
-  - type: TemperatureProtection
-    heatingCoefficient: 0.005
-    coolingCoefficient: 0.005
   - type: Armor
     modifiers:
       coefficients:

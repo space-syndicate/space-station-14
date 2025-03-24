@@ -61,7 +61,7 @@ names-ai-dataset-54 = Гелиос
 names-ai-dataset-55 = УлейБот Сверхразум
 names-ai-dataset-56 = Хьюи
 # A play on the fad apple spawned of putting "i" infront of your tech products name
-names-ai-dataset-57 = айИИ
+names-ai-dataset-57 = айЯдро
 # Hell on earth (web browser)
 names-ai-dataset-58 = I.E. 6
 names-ai-dataset-59 = Икар
@@ -81,7 +81,7 @@ names-ai-dataset-70 = Макс 404
 names-ai-dataset-71 = Металоголовый
 names-ai-dataset-72 = М.И.М.И.
 names-ai-dataset-73 = МК УЛЬТРА
-names-ai-dataset-74 = МаММи
+names-ai-dataset-74 = Монарх
 names-ai-dataset-75 = Дурной3000
 names-ai-dataset-76 = Мультивак
 # names-ai-dataset-77 = NCH

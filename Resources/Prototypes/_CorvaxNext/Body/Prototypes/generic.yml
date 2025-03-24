@@ -78,11 +78,6 @@
   name: pizza left arm
   description: For when you want to turn someone into a Space John's.
   components:
-  - type: BodyPart
-    partType: Arm
-    symmetry: Left
-    toolName: "a left arm"
-    baseLayerId: MobPizzaLArm
   - type: Sprite
     sprite: _CorvaxNext/Mobs/Species/Misc/Pizza/parts.rsi
     state: "l_arm"
@@ -93,11 +88,6 @@
   name: pizza right arm
   description: For when you want to turn someone into a Space John's.
   components:
-  - type: BodyPart
-    partType: Arm
-    symmetry: Right
-    toolName: "a right arm"
-    baseLayerId: MobPizzaRArm
   - type: Sprite
     sprite: _CorvaxNext/Mobs/Species/Misc/Pizza/parts.rsi
     state: "r_arm"

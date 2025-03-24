@@ -11,6 +11,7 @@ using Content.Server.Explosion.Components;
 using Content.Server.Silicons.Laws;
 using Robust.Shared.Audio;
 using Content.Shared.Silicons.Laws.Components;
+using Content.Shared.Emag.Systems;
 using Robust.Shared.Utility;
 
 namespace Content.Server.Silicons.Borgs;
@@ -19,6 +20,7 @@ namespace Content.Server.Silicons.Borgs;
 public sealed partial class BorgSystem
 {
     [Dependency] private readonly SiliconLawSystem _law = default!;
+    [Dependency] private readonly EmagSystem _emag = default!;
 
     private void InitializeTransponder()
     {
@@ -152,7 +154,7 @@ public sealed partial class BorgSystem
 
     private bool CheckEmagged(EntityUid uid, string name)
     {
-        if (HasComp<EmaggedComponent>(uid))
+        if (_emag.CheckFlag(uid, EmagType.Interaction))
         {
             Popup.PopupEntity(Loc.GetString($"borg-transponder-emagged-{name}-popup"), uid, uid, PopupType.LargeCaution);
             return true;

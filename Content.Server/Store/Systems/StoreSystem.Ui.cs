@@ -1,6 +1,7 @@
 using System.Linq;
 using Content.Server.Actions;
 using Content.Server.Administration.Logs;
+using Content.Server.Heretic.EntitySystems;
 using Content.Server.PDA.Ringer;
 using Content.Server.Stack;
 using Content.Server.Store.Components;
@@ -8,6 +9,8 @@ using Content.Shared.Actions;
 using Content.Shared.Database;
 using Content.Shared.FixedPoint;
 using Content.Shared.Hands.EntitySystems;
+using Content.Shared.Heretic;
+using Content.Shared.Heretic.Prototypes;
 using Content.Shared.Mind;
 using Content.Shared.Store;
 using Content.Shared.Store.Components;
@@ -30,6 +33,9 @@ public sealed partial class StoreSystem
     [Dependency] private readonly SharedAudioSystem _audio = default!;
     [Dependency] private readonly StackSystem _stack = default!;
     [Dependency] private readonly UserInterfaceSystem _ui = default!;
+
+    // goobstation - heretics
+    [Dependency] private readonly HereticKnowledgeSystem _heretic = default!;
 
     private void InitializeUi()
     {
@@ -164,7 +170,7 @@ public sealed partial class StoreSystem
         }
 
         if (!IsOnStartingMap(uid, component))
-            component.RefundAllowed = false;
+            DisableRefund(uid, component);
 
         //subtract the cash
         foreach (var (currency, amount) in cost)
@@ -174,6 +180,16 @@ public sealed partial class StoreSystem
             component.BalanceSpent.TryAdd(currency, FixedPoint2.Zero);
 
             component.BalanceSpent[currency] += amount;
+        }
+
+        // goobstation - heretics
+        // i am too tired of making separate systems for knowledge adding
+        // and all that shit. i've had like 4 failed attempts
+        // so i'm just gonna shitcode my way out of my misery
+        if (listing.ProductHereticKnowledge != null)
+        {
+            if (TryComp<HereticComponent>(buyer, out var heretic))
+                _heretic.AddKnowledge(buyer, heretic, (ProtoId<HereticKnowledgePrototype>) listing.ProductHereticKnowledge);
         }
 
         //spawn entity
@@ -332,7 +348,7 @@ public sealed partial class StoreSystem
 
         if (!IsOnStartingMap(uid, component))
         {
-            component.RefundAllowed = false;
+            DisableRefund(uid, component);
             UpdateUserInterface(buyer, uid, component);
         }
 
@@ -376,6 +392,7 @@ public sealed partial class StoreSystem
         component.BoughtEntities.Add(purchase);
         var refundComp = EnsureComp<StoreRefundComponent>(purchase);
         refundComp.StoreEntity = uid;
+        refundComp.BoughtTime = _timing.CurTime;
     }
 
     private bool IsOnStartingMap(EntityUid store, StoreComponent component)

@@ -7,6 +7,8 @@ using Content.Shared.Actions;
 using Content.Shared.Buckle;
 using Content.Shared.Damage;
 using Content.Shared.Destructible;
+using Content.Shared.Follower;
+using Content.Shared.Follower.Components;
 using Content.Shared.Hands.EntitySystems;
 using Content.Shared.IdentityManagement;
 using Content.Shared.Mind;
@@ -45,7 +47,7 @@ public sealed partial class PolymorphSystem : EntitySystem
     [Dependency] private readonly TransformSystem _transform = default!;
     [Dependency] private readonly SharedMindSystem _mindSystem = default!;
     [Dependency] private readonly MetaDataSystem _metaData = default!;
-
+    [Dependency] private readonly FollowerSystem _follow = default!; // goob edit
     private const string RevertPolymorphId = "ActionRevertPolymorph";
 
     public override void Initialize()
@@ -60,8 +62,8 @@ public sealed partial class PolymorphSystem : EntitySystem
         SubscribeLocalEvent<PolymorphedEntityComponent, BeforeFullySlicedEvent>(OnBeforeFullySliced);
         SubscribeLocalEvent<PolymorphedEntityComponent, DestructionEventArgs>(OnDestruction);
 
-        InitializeCollide();
         InitializeMap();
+        InitializeTrigger();
     }
 
     public override void Update(float frameTime)
@@ -89,7 +91,7 @@ public sealed partial class PolymorphSystem : EntitySystem
             }
         }
 
-        UpdateCollide();
+        UpdateTrigger();
     }
 
     private void OnComponentStartup(Entity<PolymorphableComponent> ent, ref ComponentStartup args)
@@ -204,6 +206,12 @@ public sealed partial class PolymorphSystem : EntitySystem
 
         var child = Spawn(configuration.Entity, _transform.GetMapCoordinates(uid, targetTransformComp), rotation: _transform.GetWorldRotation(uid));
 
+        if (configuration.PolymorphPopup != null)
+            _popup.PopupEntity(Loc.GetString(configuration.PolymorphPopup,
+                ("parent", Identity.Entity(uid, EntityManager)),
+                ("child", Identity.Entity(child, EntityManager))),
+                child);
+
         MakeSentientCommand.MakeSentient(child, EntityManager);
 
         var polymorphedComp = _compFact.GetComponent<PolymorphedEntityComponent>();
@@ -266,6 +274,18 @@ public sealed partial class PolymorphSystem : EntitySystem
         EnsurePausedMap();
         if (PausedMap != null)
             _transform.SetParent(uid, targetTransformComp, PausedMap.Value);
+
+        // Raise an event to inform anything that wants to know about the entity swap
+        var ev = new PolymorphedEvent(uid, child, false);
+        RaiseLocalEvent(uid, ref ev);
+        // goob edits
+        if (TryComp<FollowedComponent>(uid, out var followed))
+            foreach (var f in followed.Following)
+            {
+                _follow.StopFollowingEntity(f, uid);
+                _follow.StartFollowingEntity(f, child);
+            }
+        // goob edit end
 
         return child;
     }
@@ -339,11 +359,25 @@ public sealed partial class PolymorphSystem : EntitySystem
         // if an item polymorph was picked up, put it back down after reverting
         _transform.AttachToGridOrMap(parent, parentXform);
 
-        _popup.PopupEntity(Loc.GetString("polymorph-revert-popup-generic",
+        // Raise an event to inform anything that wants to know about the entity swap
+        var ev = new PolymorphedEvent(uid, parent, true);
+        RaiseLocalEvent(uid, ref ev);
+
+        if (component.Configuration.ExitPolymorphPopup != null)
+            _popup.PopupEntity(Loc.GetString(component.Configuration.ExitPolymorphPopup,
                 ("parent", Identity.Entity(uid, EntityManager)),
                 ("child", Identity.Entity(parent, EntityManager))),
-            parent);
+                parent);
         QueueDel(uid);
+
+        // goob edit
+        if (TryComp<FollowedComponent>(uid, out var followed))
+            foreach (var f in followed.Following)
+            {
+                _follow.StopFollowingEntity(f, uid);
+                _follow.StartFollowingEntity(f, parent);
+            }
+        // goob edit end
 
         return parent;
     }
@@ -391,3 +425,6 @@ public sealed partial class PolymorphSystem : EntitySystem
             _actions.RemoveAction(target, val);
     }
 }
+
+// goob edit
+public sealed partial class PolymorphRevertEvent : EntityEventArgs { }

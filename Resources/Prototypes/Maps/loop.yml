@@ -39,6 +39,7 @@
             Chemist: [ 3, 3 ]
             MedicalDoctor: [ 4, 5 ]
             Paramedic: [ 2, 2 ]
+            Psychologist: [ 1, 1 ]
             MedicalIntern: [ 4, 4 ]
             #science
             ResearchDirector: [ 1, 1 ]
@@ -64,3 +65,10 @@
             #silicon
             StationAi: [ 1, 1 ]
             Borg: [ 2, 3 ]
+        # Goobstation blob-config-start HUGEs
+        - type: StationBlobConfig
+          stageBegin: 40
+          stageCritical: 450
+          stageTheEnd: 900
+        # Goobstation blob-config-end
+

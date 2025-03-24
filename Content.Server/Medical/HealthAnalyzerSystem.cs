@@ -26,6 +26,7 @@ using Robust.Shared.Containers;
 using Robust.Shared.Player;
 using Robust.Shared.Timing;
 using System.Linq;
+using Content.Shared.Traits.Assorted;
 
 namespace Content.Server.Medical;
 
@@ -257,9 +258,8 @@ public sealed class HealthAnalyzerSystem : EntitySystem
             bleeding = bloodstream.BleedAmount > 0;
         }
 
-        /*if (HasComp<UnrevivableComponent>(target)) Somehow we dont have unrevivable???
+        if (HasComp<UnrevivableComponent>(target))
             unrevivable = true;
-        */
 
         // Start-_CorvaxNext: surgery
         Dictionary<TargetBodyPart, TargetIntegrity>? body = null;

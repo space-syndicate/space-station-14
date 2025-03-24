@@ -9,6 +9,15 @@
   access:
   - Service
   - Maintenance
+  special:
+  - !type:GiveItemOnHolidaySpecial
+    holiday: MonkeyDay
+    prototype: MonkeyCubeBox
+  - !type:AddComponentSpecial
+    components:
+      - type: Skills # Corvax-Next-Skills
+        skills:
+        - Butchering
 
 - type: startingGear
   id: ZookeeperGear

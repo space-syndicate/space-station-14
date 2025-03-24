@@ -1,7 +1,7 @@
 - type: gameMap
   id: NextAwesome
   mapName: 'Next Awesome'
-  mapPath: /Maps/Next/next_awesome.yml 
+  mapPath: /Maps/Next/next_awesome.yml
   minPlayers: 25
   maxPlayers: 55
   stations:
@@ -14,7 +14,7 @@
             !type:NanotrasenNameGenerator
             prefixCreator: 'TBK'
         - type: StationEmergencyShuttle
-          emergencyShuttlePath: /Maps/Corvax/Shuttles/emergency_awesome.yml 
+          emergencyShuttlePath: /Maps/Corvax/Shuttles/emergency_awesome.yml
         - type: StationJobs
           availableJobs:
             # command
@@ -64,3 +64,9 @@
             # silicon
             StationAi: [ 1, 1 ]
             Borg: [ 2, 2 ]
+        # Goobstation blob-config-start SMALL+
+        - type: StationBlobConfig
+          stageBegin: 25
+          stageCritical: 350
+          stageTheEnd: 700
+        # Goobstation blob-config-end

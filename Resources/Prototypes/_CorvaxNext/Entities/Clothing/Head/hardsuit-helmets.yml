@@ -1,5 +1,5 @@
 - type: entity
-  parent: [ ClothingHeadHardsuitWithLightBase, ShowMedicalIcons ]
+  parent: [ ClothingHeadHardsuitBase, ClothingHeadSuitWithLightBase, ShowMedicalIcons ]
   id: ClothingHeadHelmetHardsuitVoxRaidersCombat
   categories: [ HideSpawnMenu ]
   name: combat raider helmet
@@ -28,7 +28,7 @@
     - HeadSide
 
 - type: entity
-  parent: [ ClothingHeadHardsuitWithLightBase, ShowMedicalIcons ]
+  parent: [ ClothingHeadHardsuitBase, ClothingHeadSuitWithLightBase, ShowMedicalIcons ]
   id: ClothingHeadHelmetHardsuitVoxRaidersEngineer
   categories: [ HideSpawnMenu ]
   name: engineer raider helmet
@@ -57,7 +57,7 @@
     - HeadSide
 
 - type: entity
-  parent: [ ClothingHeadHardsuitWithLightBase, ShowMedicalIcons ]
+  parent: [ ClothingHeadHardsuitBase, ClothingHeadSuitWithLightBase, ShowMedicalIcons ]
   id: ClothingHeadHelmetHardsuitVoxRaidersMedical
   categories: [ HideSpawnMenu ]
   name: medical raider helmet
@@ -86,7 +86,7 @@
     - HeadSide
 
 - type: entity
-  parent: [ ClothingHeadHardsuitWithLightBase, ShowMedicalIcons ]
+  parent: [ ClothingHeadHardsuitBase, ClothingHeadSuitWithLightBase, ShowMedicalIcons ]
   id: ClothingHeadHelmetHardsuitVoxRaidersStealth
   categories: [ HideSpawnMenu ]
   name: stealth raider helmet

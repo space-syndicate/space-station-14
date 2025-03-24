@@ -127,8 +127,9 @@ public abstract class SharedMaterialStorageSystem : EntitySystem
         if (!CanTakeVolume(uid, volume, component))
             return false;
 
-        if (component.MaterialWhiteList == null ? false : !component.MaterialWhiteList.Contains(materialId))
-            return false;
+        if (!component.IgnoreMaterialWhiteList) // Goobstation Change - Shitcode.
+            if (component.MaterialWhiteList == null ? false : !component.MaterialWhiteList.Contains(materialId))
+                return false;
 
         var amount = component.Storage.GetValueOrDefault(materialId);
         return amount + volume >= 0;
@@ -251,9 +252,11 @@ public abstract class SharedMaterialStorageSystem : EntitySystem
         if (!Resolve(toInsert, ref material, ref composition, false))
             return false;
 
+        Logger.Debug($"Checking whitelist for {ToPrettyString(toInsert)} on {ToPrettyString(receiver)}");
         if (_whitelistSystem.IsWhitelistFail(storage.Whitelist, toInsert))
             return false;
 
+        Logger.Debug("Whitelist check passed");
         if (HasComp<UnremoveableComponent>(toInsert))
             return false;
 
@@ -286,7 +289,7 @@ public abstract class SharedMaterialStorageSystem : EntitySystem
         _appearance.SetData(receiver, MaterialStorageVisuals.Inserting, true);
         Dirty(receiver, insertingComp);
 
-        var ev = new MaterialEntityInsertedEvent(material);
+        var ev = new MaterialEntityInsertedEvent(user, toInsert, material, multiplier); // Lavaland Change
         RaiseLocalEvent(receiver, ref ev);
         return true;
     }
@@ -326,9 +329,22 @@ public abstract class SharedMaterialStorageSystem : EntitySystem
 
         var proto = _prototype.Index<EntityPrototype>(material.StackEntity);
 
-        if (!proto.TryGetComponent<PhysicalCompositionComponent>(out var composition))
+        if (!proto.TryGetComponent<PhysicalCompositionComponent>(out var composition, EntityManager.ComponentFactory))
             return DefaultSheetVolume;
 
         return composition.MaterialComposition.FirstOrDefault(kvp => kvp.Key == material.ID).Value;
+    }
+
+    // Goobstation
+    public bool TryChangeStorageLimit(
+        EntityUid uid,
+        int value,
+        MaterialStorageComponent? storage = null)
+    {
+        if (!Resolve(uid, ref storage) || value < 0)
+            return false;
+
+        storage.StorageLimit = value;
+        return true;
     }
 }

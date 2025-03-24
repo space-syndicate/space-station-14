@@ -1,4 +1,5 @@
 using System.Numerics;
+using Content.Shared._Goobstation.Weapons.Multishot;
 using Content.Shared.Weapons.Ranged.Events;
 using Content.Shared.Weapons.Ranged.Systems;
 using Robust.Shared.Audio;
@@ -9,7 +10,7 @@ using Robust.Shared.Serialization.TypeSerializers.Implementations.Custom;
 namespace Content.Shared.Weapons.Ranged.Components;
 
 [RegisterComponent, NetworkedComponent, AutoGenerateComponentState(fieldDeltas: true), AutoGenerateComponentPause]
-[Access(typeof(SharedGunSystem))]
+[Access(typeof(SharedGunSystem), typeof(Content.Shared._Goobstation.Weapons.Multishot.SharedMultishotSystem))] // GoobStation - Multishot v
 public sealed partial class GunComponent : Component
 {
     #region Sound
@@ -263,12 +264,17 @@ public sealed partial class GunComponent : Component
     /// </summary>
     [DataField]
     public Vector2 DefaultDirection = new Vector2(0, -1);
-	
+
     /// <summary>
     /// Corvax-Next. The percentage chance of a given gun to accidentally discharge if violently thrown into a wall or person
     /// </summary>
     [DataField]
     public float FireOnDropChance = 0.1f;
+
+    // Corvax-Next-Skills-Start
+    [DataField]
+    public bool RequiresSkill;
+    // Corvax-Next-Skills-End
 }
 
 [Flags]

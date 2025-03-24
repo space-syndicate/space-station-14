@@ -9,6 +9,9 @@
     - id: CargoSaleComputerCircuitboard
     - id: CargoShuttleComputerCircuitboard
     - id: CargoShuttleConsoleCircuitboard
+    - id: LavalandShuttleConsoleCircuitboard
+    - id: SalvageShuttleConsoleCircuitboard
+    - id: SalvageExpeditionsComputerCircuitboard
     - id: SalvageMagnetMachineCircuitboard
     - id: CigPackGreen
       prob: 0.50
@@ -18,6 +21,7 @@
     - id: RubberStampDenied
     - id: RubberStampQm
     - id: AstroNavCartridge
+    - id: MailTeleporterMachineCircuitboard
     - id: PrinterDocFlatpack # Corvax-Printer
     - id: StockTradingCartridge # Corvax-Next-StockTrading
 
@@ -176,7 +180,7 @@
   id: FillChiefEngineerHardsuit
   table: !type:AllSelector
     children:
-    - id: ClothingMaskBreath
+    - id: ClothingMaskGasAtmos
     - id: ClothingOuterHardsuitEngineeringWhite
     - id: ClothingShoesBootsMagAdv
     - id: JetpackVoidFilled
@@ -339,10 +343,13 @@
     - id: SecurityTechFabCircuitboard
     - id: WeaponDisabler
     - id: WantedListCartridge
-    - id: ClothingHeadHatCapHoS # Corvax-SecFashion
+    - id: DrinkHosFlask
+    # Corvax-Start
+    - id: ClothingHeadHatCapHoS
       prob: 0.5
-    - id: ClothingOuterCoatHoSGreatcoat # Corvax-Resprite
-    - id: BookBusido # Corvax-Books
+    - id: ClothingOuterCoatHoSGreatcoat
+    - id: BookBusido
+    # Corvax-End
 
 # Hardsuit table, used for suit storage as well
 - type: entityTable

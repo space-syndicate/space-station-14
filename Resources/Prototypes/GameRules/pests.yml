@@ -27,7 +27,7 @@
       path: /Audio/Announcements/attention.ogg
     earliestStart: 15
     weight: 6
-    duration: 50
+    duration: 120
   - type: VentCrittersRule
     entries:
     - id: MobMouse
@@ -75,7 +75,7 @@
     startAudio:
       path: /Audio/Announcements/attention.ogg
     weight: 6
-    duration: 50
+    duration: 120
   - type: VentCrittersRule
     entries:
     - id: MobCockroach

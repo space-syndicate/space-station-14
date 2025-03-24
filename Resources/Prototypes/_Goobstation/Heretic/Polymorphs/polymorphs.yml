@@ -1,0 +1,16 @@
+- type: polymorph
+  id: AshJaunt
+  configuration:
+    entity: PolymorphAshJaunt
+    forced: true
+    duration: 3
+
+- type: polymorph
+  id: EldritchHorror
+  configuration:
+    entity: MobHereticFleshAscend
+    forced: true
+    transferName: true
+    transferDamage: true
+    revertOnCrit: false
+    revertOnDeath: false

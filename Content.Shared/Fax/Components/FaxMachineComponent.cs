@@ -74,12 +74,6 @@ public sealed partial class FaxMachineComponent : Component
     // Corvax-StationGoal-End
 
     /// <summary>
-    /// Sound to play when fax has been emagged
-    /// </summary>
-    [DataField]
-    public SoundSpecifier EmagSound = new SoundCollectionSpecifier("sparks");
-
-    /// <summary>
     /// Sound to play when fax printing new message
     /// </summary>
     [DataField]
@@ -181,11 +175,16 @@ public sealed partial class FaxPrintout
     [DataField]
     public bool Locked { get; private set; }
 
+    // Corvax-Next-FaxMark-Start
+    [DataField]
+    public string? Sender { get; private set; }
+    // Corvax-Next-FaxMark-End
+
     private FaxPrintout()
     {
     }
 
-    public FaxPrintout(string content, string name, string? label = null, string? prototypeId = null, string? stampState = null, List<StampDisplayInfo>? stampedBy = null, bool locked = false)
+    public FaxPrintout(string content, string name, string? label = null, string? prototypeId = null, string? stampState = null, List<StampDisplayInfo>? stampedBy = null, bool locked = false, string? sender = null) // Corvax-Next-FaxMark
     {
         Content = content;
         Name = name;
@@ -194,5 +193,6 @@ public sealed partial class FaxPrintout
         StampState = stampState;
         StampedBy = stampedBy ?? new List<StampDisplayInfo>();
         Locked = locked;
+        Sender = sender; // Corvax-Next-FaxMark
     }
 }

@@ -70,9 +70,6 @@
   components:
   - type: Sprite
     state: "r_leg"
-  - type: BodyPart
-    partType: Leg
-    symmetry: Right
 
 - type: entity
   id: LeftFootDiona
@@ -81,9 +78,6 @@
   components:
   - type: Sprite
     state: "l_foot"
-  - type: BodyPart
-    partType: Foot
-    symmetry: Left
 
 - type: entity
   id: RightFootDiona
@@ -92,6 +86,3 @@
   components:
   - type: Sprite
     state: "r_foot"
-  - type: BodyPart
-    partType: Foot
-    symmetry: Right

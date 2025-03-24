@@ -1,0 +1,27 @@
+- type: entity
+  name: Miniature Energy Crossbow
+  parent: BaseWeaponBatterySmall
+  id: MiniatureEnergyCrossbow
+  description: The syndicate's energy crossbow, small, silent and deadly.
+  components:
+  - type: Sprite
+    sprite: _Goobstation/Objects/Weapons/Guns/Battery/miniature_ebow.rsi
+    state: icon
+  - type: Gun
+    resetOnHandSelected: false
+    soundGunshot:
+      path: /Audio/_Goobstation/Weapons/Guns/Gunshots/heavy_shot_suppressed.ogg
+      params:
+        volume: -5
+  - type: ProjectileBatteryAmmoProvider
+    proto: BulletMic
+    fireCost: 900
+  - type: BatterySelfRecharger
+    autoRecharge: true
+    autoRechargeRate: 300
+  - type: MagazineVisuals
+    magState: mag
+    steps: 2
+    zeroVisible: true
+  - type: Multishot
+    spreadMultiplier: 1.2

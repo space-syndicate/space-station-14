@@ -15,6 +15,12 @@
   access:
   - Research
   - Maintenance
+  special:
+  - !type:AddComponentSpecial
+    components:
+      - type: Skills # Corvax-Next-Skills
+        skills:
+        - AdvancedBuilding
 
 - type: startingGear
   id: ResearchAssistantGear

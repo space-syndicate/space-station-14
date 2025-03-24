@@ -22,6 +22,9 @@
     - type: SurgerySpeedModifier
       speedModifier: 1.75
     #end-_CorvaxNext: surgery
+    - type: Skills # Corvax-Next-Skills
+      skills:
+      - MedicalEquipment
 
 - type: startingGear
   id: ChemistGear

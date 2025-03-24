@@ -1,1 +1,0 @@
-reagent-physical-desc-blessing = благословительное

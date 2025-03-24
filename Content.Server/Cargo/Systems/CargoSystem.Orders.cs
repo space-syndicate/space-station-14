@@ -8,7 +8,7 @@ using Content.Shared.Cargo.Components;
 using Content.Shared.Cargo.Events;
 using Content.Shared.Cargo.Prototypes;
 using Content.Shared.Database;
-using Content.Shared.Emag.Components;
+using Content.Shared.Emag.Systems;
 using Content.Shared.IdentityManagement;
 using Content.Shared.Interaction;
 using Content.Shared.Paper;
@@ -21,6 +21,7 @@ namespace Content.Server.Cargo.Systems
     public sealed partial class CargoSystem
     {
         [Dependency] private readonly SharedTransformSystem _transformSystem = default!;
+        [Dependency] private readonly EmagSystem _emag = default!;
 
         /// <summary>
         /// How much time to wait (in seconds) before increasing bank accounts balance.
@@ -41,6 +42,7 @@ namespace Content.Server.Cargo.Systems
             SubscribeLocalEvent<CargoOrderConsoleComponent, ComponentInit>(OnInit);
             SubscribeLocalEvent<CargoOrderConsoleComponent, InteractUsingEvent>(OnInteractUsing);
             SubscribeLocalEvent<CargoOrderConsoleComponent, BankBalanceUpdatedEvent>(OnOrderBalanceUpdated);
+            SubscribeLocalEvent<CargoOrderConsoleComponent, GotEmaggedEvent>(OnEmagged);
             Reset();
         }
 
@@ -60,8 +62,9 @@ namespace Content.Server.Cargo.Systems
                 return;
 
             _audio.PlayPvs(component.ConfirmSound, uid);
-            UpdateBankAccount(stationUid.Value, bank, (int) price);
+            UpdateBankAccount((stationUid.Value, bank), (int) price);
             QueueDel(args.Used);
+            args.Handled = true;
         }
 
         private void OnInit(EntityUid uid, CargoOrderConsoleComponent orderConsole, ComponentInit args)
@@ -73,6 +76,17 @@ namespace Content.Server.Cargo.Systems
         private void Reset()
         {
             _timer = 0;
+        }
+
+        private void OnEmagged(Entity<CargoOrderConsoleComponent> ent, ref GotEmaggedEvent args)
+        {
+            if (!_emag.CompareFlag(args.Type, EmagType.Interaction))
+                return;
+
+            if (_emag.CheckFlag(ent, EmagType.Interaction))
+                return;
+
+            args.Handled = true;
         }
 
         private void UpdateConsole(float frameTime)
@@ -89,7 +103,7 @@ namespace Content.Server.Cargo.Systems
                 while (stationQuery.MoveNext(out var uid, out var bank)) // Corvax-Next-StockTrading: Early merge #33123
                 {
                     var balanceToAdd = bank.IncreasePerSecond * Delay;
-                    UpdateBankAccount(uid, bank, balanceToAdd);
+                    UpdateBankAccount((uid, bank), balanceToAdd);
                 }
 
                 var query = EntityQueryEnumerator<CargoOrderConsoleComponent>();
@@ -194,7 +208,7 @@ namespace Content.Server.Cargo.Systems
             order.Approved = true;
             _audio.PlayPvs(component.ConfirmSound, uid);
 
-            if (!HasComp<EmaggedComponent>(uid))
+            if (!_emag.CheckFlag(uid, EmagType.Interaction))
             {
                 var tryGetIdentityShortInfoEvent = new TryGetIdentityShortInfoEvent(uid, player);
                 RaiseLocalEvent(tryGetIdentityShortInfoEvent);
@@ -215,7 +229,7 @@ namespace Content.Server.Cargo.Systems
                 $"{ToPrettyString(player):user} approved order [orderId:{order.OrderId}, quantity:{order.OrderQuantity}, product:{order.ProductId}, requester:{order.Requester}, reason:{order.Reason}] with balance at {bank.Balance}");
 
             orderDatabase.Orders.Remove(order);
-            UpdateBankAccount(station.Value, bank, -cost); // Corvax-Next-StockTrading: Early merge #33123
+            UpdateBankAccount((station.Value, bank), -cost); // Corvax-Next-StockTrading: Early merge #33123
             UpdateOrders(station.Value);
         }
 
@@ -355,7 +369,7 @@ namespace Content.Server.Cargo.Systems
 
         private void PlayDenySound(EntityUid uid, CargoOrderConsoleComponent component)
         {
-            _audio.PlayPvs(_audio.GetSound(component.ErrorSound), uid);
+            _audio.PlayPvs(_audio.ResolveSound(component.ErrorSound), uid);
         }
 
         private static CargoOrderData GetOrderData(CargoConsoleAddOrderMessage args, CargoProductPrototype cargoProduct, int id)

@@ -35,14 +35,14 @@ public sealed class DelayedRuleSystem : GameRuleSystem<DelayedRuleComponent>
 
         // skip the delay if it's just 1 player, theres no plan to ruin if you are the only one
         var ends = ent.Comp.DelayEnds;
-        if (ent.Comp.IgnoreSolo && selection.SelectedMinds.Count < 2)
+        if (ent.Comp.IgnoreSolo && selection.AssignedMinds.Count < 2)  // Changed SelectedMinds to AssignedMinds
             ends = Timing.CurTime;
 
         if (Timing.CurTime < ends)
             return;
 
         var comps = ent.Comp.DelayedComponents;
-        foreach (var (mindId, _) in selection.SelectedMinds)
+        foreach (var (mindId, _) in selection.AssignedMinds)  // Changed SelectedMinds to AssignedMinds
         {
             // using OriginalOwnedEntity as the player might have ghosted to try become an evil ghost antag
             if (!TryComp<MindComponent>(mindId, out var mind) || !TryGetEntity(mind.OriginalOwnedEntity, out var mob))

@@ -1,0 +1,13 @@
+- type: biomeMarkerLayer
+  id: OreBananium
+  entityMask:
+    AsteroidRock: AsteroidRockBananium
+    WallRock: WallRockBananium
+    WallRockBasalt: WallRockBasaltBananium
+    WallRockChromite: WallRockChromiteBananium
+    WallRockSand: WallRockSandBananium
+    WallRockSnow: WallRockSnowBananium
+  maxCount: 6
+  minGroupSize: 1
+  maxGroupSize: 2
+  radius: 3

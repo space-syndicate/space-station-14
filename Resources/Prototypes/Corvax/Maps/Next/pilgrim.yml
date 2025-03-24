@@ -87,3 +87,9 @@
           - Theatre
           - Botany
           - BluespaceHarvest
+          # Goobstation blob-config-start HUGEs
+        - type: StationBlobConfig
+          stageBegin: 40
+          stageCritical: 450
+          stageTheEnd: 900
+          # Goobstation blob-config-end

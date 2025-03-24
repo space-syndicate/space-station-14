@@ -64,6 +64,8 @@
   - type: Tag
     tags:
     - VimPilot
+  - type: NightVision # Goobstation - Nigthvision
+    color: "#808080"
 
 - type: entity
   name: bee
@@ -107,6 +109,17 @@
         Base: dead
       Dead:
         Base: dead
+  - type: Extractable
+    grindableSolutionName: food
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        reagents:
+        - ReagentId: GroundBee
+          Quantity: 1
+  - type: Butcherable
+    spawned:
+    - id: null # Should give nothing when you butcher it so we set the item id it needs to spawn to null
   - type: Item
     size: Tiny
   - type: Tag
@@ -114,6 +127,7 @@
     - Bee
     - Trash
   - type: Bloodstream
+    bloodReagent: InsectBlood
     bloodMaxVolume: 0.1
   - type: MobPrice
     price: 50
@@ -229,6 +243,7 @@
   - type: EggLayer
     eggSpawn:
     - id: FoodEgg
+  - type: ExaminableHunger
   - type: ReplacementAccent
     accent: chicken
   - type: SentienceTarget
@@ -445,7 +460,7 @@
     description: ghost-role-information-mothroach-description
     rules: ghost-role-information-freeagent-rules
     mindRoles:
-    - MindRoleGhostRoleFreeAgent
+    - MindRoleGhostRoleFreeAgentHarmless
   - type: Fixtures
     fixtures:
       fix1:
@@ -666,6 +681,7 @@
   - type: EggLayer
     eggSpawn:
     - id: FoodEgg
+  - type: ExaminableHunger
   - type: ReplacementAccent
     accent: duck
   - type: SentienceTarget
@@ -779,7 +795,24 @@
         Base: dead
       Dead:
         Base: dead
+  - type: Extractable
+    grindableSolutionName: food
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        reagents:
+        - ReagentId: UncookedAnimalProteins
+          Quantity: 1
+  - type: Butcherable
+    spawned:
+    - id: null # Should give nothing when you butcher it so we set the item id it needs to spawn to null
+  - type: Item
+    size: Tiny
+  - type: Tag
+    tags:
+    - Trash
   - type: Bloodstream
+    bloodReagent: InsectBlood
     bloodMaxVolume: 0.1
   - type: MobPrice
     price: 50
@@ -838,6 +871,7 @@
     reagentId: Milk
     quantityPerUpdate: 25
     growthDelay: 30
+  - type: ExaminableHunger
   - type: Butcherable
     spawned:
     - id: FoodMeat
@@ -1006,6 +1040,7 @@
     reagentId: MilkGoat
     quantityPerUpdate: 25
     growthDelay: 20
+  - type: ExaminableHunger
   - type: Wooly
   - type: Food
     solution: wool
@@ -1158,6 +1193,15 @@
   - type: HTN
     rootTask:
       task: SimpleHostileCompound
+  - type: MobThresholds # Goobstation
+    thresholds:
+      0: Alive
+      120: Critical
+      220: Dead
+  - type: SlowOnDamage # Goobstation
+    speedModifierThresholds:
+      80: 0.7
+      100: 0.5
 
 - type: entity
   name: kangaroo
@@ -1436,7 +1480,6 @@
     clumsySound:
       path: /Audio/Animals/monkey_scream.ogg
 
-
 - type: entity
   name: monkey
   id: MobBaseSyndicateMonkey
@@ -1636,7 +1679,7 @@
     description: ghost-role-information-mouse-description
     rules: ghost-role-information-freeagent-rules
     mindRoles:
-    - MindRoleGhostRoleFreeAgent
+    - MindRoleGhostRoleFreeAgentHarmless
   - type: GhostTakeoverAvailable
   - type: Speech
     speechSounds: Squeak
@@ -1799,6 +1842,8 @@
       enum.SurgeryUIKey.Key:
         type: SurgeryBui
   # end-_CorvaxNext: surgery
+  - type: NightVision # Goobstation - Nigthvision
+    color: "#808080"
 
 - type: entity
   parent: MobMouse
@@ -1896,13 +1941,6 @@
   parent: MobMouse
   id: MobMouseCancer
   components:
-  - type: Sprite
-    color: LightGreen
-  - type: PointLight
-    color: LightGreen
-    radius: 5
-    energy: 5
-    netsync: false
   - type: RadiationSource
     intensity: 0.3
   - type: Bloodstream
@@ -2379,7 +2417,7 @@
   - type: Spider
   - type: IgnoreSpiderWeb
   - type: Bloodstream
-    bloodMaxVolume: 150
+    bloodMaxVolume: 50
     bloodReagent: CopperBlood
   - type: Speech
     speechVerb: Arachnid
@@ -2419,6 +2457,7 @@
       enum.SurgeryUIKey.Key:
         type: SurgeryBui
   # end-_CorvaxNext: surgery
+  - type: Fauna # Lavaland Change
 
 - type: entity
   parent: MobSpiderBase
@@ -2443,6 +2482,8 @@
     raffle:
       settings: short
   - type: GhostTakeoverAvailable
+  - type: NightVision # Goobstation - Nigthvision
+    color: "#808080"
 
 - type: entity
   name: tarantula
@@ -2766,6 +2807,7 @@
   - type: Physics
   - type: Speech
     speechVerb: Canine
+    speechSounds: Dog
   - type: Fixtures
     fixtures:
       fix1:

@@ -32,6 +32,11 @@ public sealed partial class PaperComponent : Component
     [DataField("sound")]
     public SoundSpecifier? Sound { get; private set; } = new SoundCollectionSpecifier("PaperScribbles", AudioParams.Default.WithVariation(0.1f));
 
+    // Corvax-Next-FaxMark-Start
+    [AutoNetworkedField]
+    public string? Sender;
+    // Corvax-Next-FaxMark-End
+
     [Serializable, NetSerializable]
     public sealed class PaperBoundUserInterfaceState : BoundUserInterfaceState
     {

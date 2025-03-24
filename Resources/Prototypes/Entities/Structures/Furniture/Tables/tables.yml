@@ -198,6 +198,9 @@
   - type: Construction
     graph: Table
     node: Table
+  - type: Tag # goob edit
+    tags:
+    - Table
 
 - type: entity
   id: TableReinforced

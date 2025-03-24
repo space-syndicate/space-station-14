@@ -329,21 +329,9 @@ public partial class SharedBodySystem
         }
     }
 
-    private void PartRemoveDamage(Entity<BodyComponent?> bodyEnt, Entity<BodyPartComponent> partEnt)
+    // Shitmed Change: made virtual, bleeding damage is done on server
+    protected virtual void PartRemoveDamage(Entity<BodyComponent?> bodyEnt, Entity<BodyPartComponent> partEnt)
     {
-        if (!Resolve(bodyEnt, ref bodyEnt.Comp, logMissing: false))
-            return;
-
-        if (!_timing.ApplyingState
-            && partEnt.Comp.IsVital
-            && !GetBodyChildrenOfType(bodyEnt, partEnt.Comp.PartType, bodyEnt.Comp).Any()
-        )
-        {
-            // start-_CorvaxNext: surgery
-            var damage = new DamageSpecifier(Prototypes.Index<DamageTypePrototype>("Bloodloss"), partEnt.Comp.VitalDamage);
-            Damageable.TryChangeDamage(bodyEnt, damage, partMultiplier: 0f);
-            // end-_CorvaxNext: surgery
-        }
     }
 
     private void EnablePart(Entity<BodyPartComponent> partEnt)

@@ -21,9 +21,10 @@
         reagents:
         - ReagentId: UncookedAnimalProteins
           Quantity: 5
-  - type: Tag
+  - type: Tag # goob edit
     tags:
-      - Meat
+    - Meat
+    - Organ
 
 - type: entity
   id: OrganArachnidStomach
@@ -34,14 +35,9 @@
   - type: Sprite
     sprite: Mobs/Species/Arachnid/organs.rsi
     state: stomach
-  - type: Item
-    size: Small
-    heldPrefix: stomach
   - type: Stomach
     digestionDelay: 30
     updateInterval: 1.5
-  - type: Organ
-    slotId: stomach
   - type: SolutionContainerManager
     solutions:
       stomach:
@@ -53,6 +49,11 @@
           Quantity: 5
   - type: Metabolizer
     updateInterval: 1.5
+  - type: Tag # goob edit
+    tags:
+    - Meat
+    - Organ
+    - Stomach
 
 - type: entity
   id: OrganArachnidLungs
@@ -90,6 +91,11 @@
         reagents:
         - ReagentId: UncookedAnimalProteins
           Quantity: 5
+  - type: Tag # goob edit
+    tags:
+    - Meat
+    - Organ
+    - Lungs
 
 - type: entity
   id: OrganArachnidHeart
@@ -166,6 +172,11 @@
     maxReagents: 5
     metabolizerTypes: [Animal]
     removeEmpty: true
+  - type: Tag # goob edit
+    tags:
+    - Meat
+    - Organ
+    - Kidneys
 
 - type: entity
   id: OrganArachnidEyes
@@ -197,3 +208,8 @@
   components:
   - type: Sprite
     state: tongue
+  - type: Tag # goob edit
+    tags:
+    - Meat
+    - Organ
+    - Tongue

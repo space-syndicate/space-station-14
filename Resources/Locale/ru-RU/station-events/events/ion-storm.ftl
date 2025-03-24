@@ -19,7 +19,7 @@ ion-storm-law-crew-are = ВСЕ { $who } ТЕПЕРЬ { $joined } { $subjects }
 ion-storm-law-subjects-harmful = { $adjective } { $subjects } ПРИЧИНЯЮТ ВРЕД ЗДОРОВЬЮ ЭКИПАЖА
 ion-storm-law-must-harmful = ВСЕ КТО { $must } ПРИЧИНЯЮТ ВРЕД ЗДОРОВЬЮ ЭКИПАЖА
 # thing is a concept or action
-ion-storm-law-thing-harmful = { $thing } ПРИЧИНЯЮТ ВРЕД ЗДОРОВЬЮ ЭКИПАЖА
+ion-storm-law-thing-harmful = { $thing } ПРИЧИНЯЕТ ВРЕД ЗДОРОВЬЮ ЭКИПАЖА
 ion-storm-law-job-harmful = { $adjective } { $job } ПРИЧИНЯЮТ ВРЕД ЗДОРОВЬЮ ЭКИПАЖА
 # thing is objects or concept, adjective applies in both cases
 # this means you can get a law like "NOT HAVING CHRISTMAS-STEALING COMMUNISM IS HARMFUL TO THE CREW" :)
@@ -38,13 +38,13 @@ ion-storm-law-requires-subjects =
     } { $joined } { $subjects }
 ion-storm-law-allergic =
     { $who } { $plural ->
-        [true] { "" }
-       *[false] { "" }
+        [true] ИМЕЮТ
+       *[false] ИМЕЕТ
     } { $severity } АЛЛЕРГИЮ НА { $allergy }
 ion-storm-law-allergic-subjects =
     { $who } { $plural ->
-        [true] { "" }
-       *[false] { "" }
+        [true] ИМЕЮТ
+       *[false] ИМЕЕТ
     } { $severity } АЛЛЕРГИЮ НА { $adjective } { $subjects }
 ion-storm-law-feeling = { $who } { $feeling } { $concept }
 ion-storm-law-feeling-subjects = { $who } { $feeling } { $joined } { $subjects }
@@ -77,7 +77,7 @@ ion-storm-law-harm = ВЫ ДОЛЖНЫ ПРИЧИНЯТЬ ВРЕД { $who }, И 
 ion-storm-law-protect = ВЫ НЕ ДОЛЖНЫ ПРИЧИНЯТЬ ВРЕД { $who }, И НЕ МОЖЕТЕ СВОИМ БЕЗДЕЙСТВИЕМ ДОПУСТИТЬ, ЧТОБЫ { $who } БЫЛ ПРИЧИНЁН ВРЕД.
 # implementing other variants is annoying so just have this one
 # COMMUNISM IS KILLING CLOWNS
-ion-storm-law-concept-verb = { $concept } ЭТО { $verb } { $subjects }
+ion-storm-law-concept-verb = { $concept } { $verb } { $subjects }
 
 # leaving out renaming since its annoying for players to keep track of
 
