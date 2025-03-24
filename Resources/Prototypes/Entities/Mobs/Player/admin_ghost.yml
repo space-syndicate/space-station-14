@@ -102,6 +102,14 @@
     baseWalkSpeed: 30
   # Corvax-End
   - type: TurretController # Corvax-Next-TurretControl
+  - type: Skills # Corvax-Next-Skills
+    skills:
+    - ShuttleControl
+    - Shooting
+    - AdvancedBuilding
+    - Surgery
+    - MedicalEquipment
+    - Butchering
 
 - type: entity
   id: ActionAGhostShowSolar

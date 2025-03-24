@@ -53,12 +53,6 @@ public sealed class GrantSkillCommand : IConsoleCommand
 
     public CompletionResult GetCompletion(IConsoleShell shell, string[] args)
     {
-        if (args.Length == 1)
-            return CompletionResult.FromOptions(_entity.GetEntities()
-                .Select(entity => entity.Id.ToString())
-                .Where(str => str.StartsWith(args[0]))
-                .Select(entity => new CompletionOption(entity)));
-
         if (args.Length == 2)
         {
             var component = int.TryParse(args[0], out var id)

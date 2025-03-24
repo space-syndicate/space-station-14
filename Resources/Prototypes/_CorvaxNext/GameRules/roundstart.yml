@@ -41,6 +41,14 @@
         - SyndicateNamesElite
       - type: NpcFactionMember
         factions: [ Syndicate ]
+      - type: Skills
+        skills:
+        - ShuttleControl
+        - Shooting
+        - AdvancedBuilding
+        - Surgery
+        - MedicalEquipment
+        - Butchering
       mindRoles: [ MindRoleVoxRaiders ]
       briefing:
         sound: "/Audio/_CorvaxNext/Misc/vox_raiders_greeting.ogg"
@@ -57,6 +65,14 @@
         - SyndicateNamesNormal
       - type: NpcFactionMember
         factions: [ Syndicate ]
+      - type: Skills
+        skills:
+        - ShuttleControl
+        - Shooting
+        - AdvancedBuilding
+        - Surgery
+        - MedicalEquipment
+        - Butchering
       mindRoles: [ MindRoleVoxRaidersCommander ]
       briefing:
         sound: "/Audio/_CorvaxNext/Misc/vox_raiders_greeting.ogg"

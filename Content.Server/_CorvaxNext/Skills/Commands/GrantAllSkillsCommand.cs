@@ -40,15 +40,4 @@ public sealed class GrantAllSkillsCommand : IConsoleCommand
 
         _entity.System<SharedSkillsSystem>().GrantAllSkills(entity.Value);
     }
-
-    public CompletionResult GetCompletion(IConsoleShell shell, string[] args)
-    {
-        if (args.Length == 1)
-            return CompletionResult.FromOptions(_entity.GetEntities()
-                .Select(entity => entity.Id.ToString())
-                .Where(str => str.StartsWith(args[0]))
-                .Select(entity => new CompletionOption(entity)));
-
-        return CompletionResult.Empty;
-    }
 }

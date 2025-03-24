@@ -22,6 +22,14 @@
   - type: NpcFactionMember
     factions:
     - Syndicate
+  - type: Skills # Corvax-Next-Skills
+    skills:
+    - ShuttleControl
+    - Shooting
+    - AdvancedBuilding
+    - Surgery
+    - MedicalEquipment
+    - Butchering
 
 - type: entity
   parent: MobHumanSyndicateAgentBase
@@ -82,6 +90,14 @@
   components:
   - type: NukeOperative
   - type: RandomHumanoidAppearance
+  - type: Skills # Corvax-Next-Skills
+    skills:
+    - ShuttleControl
+    - Shooting
+    - AdvancedBuilding
+    - Surgery
+    - MedicalEquipment
+    - Butchering
 
 - type: entity
   categories: [ HideSpawnMenu ]
@@ -102,6 +118,14 @@
   - type: NpcFactionMember
     factions:
     - Syndicate
+  - type: Skills # Corvax-Next-Skills
+    skills:
+    - ShuttleControl
+    - Shooting
+    - AdvancedBuilding
+    - Surgery
+    - MedicalEquipment
+    - Butchering
 
 # Wizard
 - type: entity
@@ -114,3 +138,11 @@
   - type: NpcFactionMember
     factions:
     - Wizard
+  - type: Skills # Corvax-Next-Skills
+    skills:
+    - ShuttleControl
+    - Shooting
+    - AdvancedBuilding
+    - Surgery
+    - MedicalEquipment
+    - Butchering
