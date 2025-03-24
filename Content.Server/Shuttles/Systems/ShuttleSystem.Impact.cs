@@ -24,12 +24,12 @@ using System.Numerics;
      /// <summary>
      /// Kinetic energy required to dismantle a single tile
      /// </summary>
-     private const float TileBreakEnergy = 6500;
+     private const float TileBreakEnergy = 5900;
 
      /// <summary>
      /// Kinetic energy required to spawn sparks
      /// </summary>
-     private const float SparkEnergy = 4000;
+     private const float SparkEnergy = 5000;
      // End Theta
 
      private readonly SoundCollectionSpecifier _shuttleImpactSound = new("ShuttleImpactSound");
