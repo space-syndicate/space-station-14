@@ -1,0 +1,17 @@
+﻿- type: localizedDataset
+  id: NamesVulpFirstMale
+  values:
+    prefix: names-vulp-first-male-dataset-
+    count: 345
+
+- type: localizedDataset
+  id: NamesVulpFirstFemale
+  values:
+    prefix: names-vulp-first-female-dataset-
+    count: 345
+  
+- type: localizedDataset
+  id: NamesVulpLast
+  values:
+    prefix: names-vulp-last-dataset-
+    count: 252

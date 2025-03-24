@@ -19,3 +19,6 @@ ent-ToolboxSyndicateFilled = { ent-ToolboxSyndicate }
 ent-ToolboxGoldFilled = золотой ящик для инструментов
     .suffix = Заполненный
     .desc = { ent-ToolboxGolden.desc }
+ent-ToolboxMechanicalFilledAllTools = технический ящик для инструментов
+    .suffix = Заполненный, все инструменты
+    .desc = { ent-ToolboxMechanical.desc }
