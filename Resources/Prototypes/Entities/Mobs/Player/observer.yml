@@ -66,8 +66,6 @@
   - type: PointLight
     radius: 6
     enabled: false
-  - type: Speech #Goobstation - Dead chat verbs
-    speechVerb: Dead
   - type: CollectiveMind
     hearAll: true
     seeAllNames: true

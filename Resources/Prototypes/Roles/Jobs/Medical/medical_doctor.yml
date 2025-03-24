@@ -23,9 +23,9 @@
     - type: SurgerySpeedModifier
       speedModifier: 1.75
     - type: Skills # Corvax-Next-Skills
-    skills:
-    - Surgery
-    - MedicalEquipment
+      skills:
+      - Surgery
+      - MedicalEquipment
     #end-_CorvaxNext: surgery
   - !type:GiveItemOnHolidaySpecial
     holiday: DoctorDay

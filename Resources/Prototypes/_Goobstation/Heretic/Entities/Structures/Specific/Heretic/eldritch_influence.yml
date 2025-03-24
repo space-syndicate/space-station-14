@@ -16,7 +16,6 @@
 
 - type: entity
   id: EldritchInfluenceIntermediate
-  noSpawn: true
   components:
   - type: TimedDespawn
     lifetime: 30

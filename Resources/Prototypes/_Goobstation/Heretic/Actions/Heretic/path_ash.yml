@@ -2,7 +2,6 @@
   id: ActionHereticJaunt
   name: action-heretic-ash-passage-name
   description: action-heretic-ash-passage-desc
-  noSpawn: true
   categories: [ HideSpawnMenu ]
   components:
   - type: InstantAction
@@ -21,7 +20,6 @@
   id: ActionHereticVolcanoBlast
   name: action-heretic-ash-blast-name
   description: action-heretic-ash-blast-desc
-  noSpawn: true
   categories: [ HideSpawnMenu ]
   components:
   - type: InstantAction
@@ -39,7 +37,6 @@
   id: ActionHereticNightwatcherRebirth
   name: action-heretic-ash-rebirth-name
   description: action-heretic-ash-rebirth-desc
-  noSpawn: true
   categories: [ HideSpawnMenu ]
   components:
   - type: InstantAction
@@ -57,7 +54,6 @@
   id: ActionHereticAscension1
   name: action-heretic-ash-oath-name
   description: action-heretic-ash-oath-desc
-  noSpawn: true
   categories: [ HideSpawnMenu ]
   components:
   - type: InstantAction
@@ -75,7 +71,6 @@
   id: ActionHereticAscension2
   name: action-heretic-ash-cascade-name
   description: action-heretic-ash-cascade-desc
-  noSpawn: true
   categories: [ HideSpawnMenu ]
   components:
   - type: InstantAction

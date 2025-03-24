@@ -12,9 +12,6 @@
   - type: StepTrigger
     requiredTriggeredSpeed: 0
     intersectRatio: 0.1
-    triggerGroups:
-      types:
-        - Lava
   - type: Sprite
     sprite: Effects/fire.rsi
     drawdepth: Effects
@@ -59,9 +56,6 @@
   - type: StepTrigger
     requiredTriggeredSpeed: 0
     intersectRatio: 0.1
-    triggerGroups:
-      types:
-        - Lava
   - type: Sprite
     sprite: _Goobstation/Heretic/void_overlay.rsi
     layers:
