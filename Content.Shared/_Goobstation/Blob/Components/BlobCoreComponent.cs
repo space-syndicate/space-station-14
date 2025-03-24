@@ -196,7 +196,7 @@ public sealed partial class BlobCoreComponent : Component
     };
 
     [DataField(required: true)]
-    public List<ProtoId<EntityPrototype>> ActionPrototypes = [];
+    public List<EntProtoId> ActionPrototypes = [];
 
     [DataField]
     public ProtoId<ExplosionPrototype> BlobExplosive = "Blob";
