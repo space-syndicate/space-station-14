@@ -16,7 +16,8 @@
       - left leg
       - head
       organs:
-        brain: SentientSlimeCore
+        core: SentientSlimeCore
+        stomach: OrganSlimeStomach
         lungs: OrganSlimeLungs
     right arm:
       part: RightArmSlime

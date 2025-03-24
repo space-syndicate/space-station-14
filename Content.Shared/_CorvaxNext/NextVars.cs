@@ -56,7 +56,7 @@ public sealed class NextVars
     //     CVarDef.Create("hud.offer_mode_indicators_point_show", true, CVar.ARCHIVE | CVar.CLIENTONLY);
 
     public static readonly CVarDef<bool> MoodEnabled =
-        CVarDef.Create("mood.enabled", true, CVar.SERVER);
+        CVarDef.Create("mood.enabled", false, CVar.SERVER);
 
     public static readonly CVarDef<bool> MoodIncreasesSpeed =
         CVarDef.Create("mood.increases_speed", true, CVar.SERVER);

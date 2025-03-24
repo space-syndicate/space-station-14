@@ -77,3 +77,27 @@
   - type: Item
     size: Small
     heldPrefix: lungs
+
+- type: entity
+  id: OrganSlimeStomach
+  parent: OrganAnimalStomach
+  name: stomach
+  description: "Gross. This is hard to stomach."
+  components:
+  - type: Sprite
+    sprite: Mobs/Species/Slime/organs.rsi
+    state: brain-slime
+  - type: Stomach
+    digestionDelay: 30
+    updateInterval: 1.5
+  - type: SolutionContainerManager
+    solutions:
+      stomach:
+        maxVol: 50
+      food:
+        maxVol: 5
+        reagents:
+        - ReagentId: UncookedAnimalProteins
+          Quantity: 5
+  - type: Metabolizer
+    updateInterval: 1.5

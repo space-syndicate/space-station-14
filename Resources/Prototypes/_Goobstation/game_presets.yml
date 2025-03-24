@@ -11,6 +11,7 @@
     - SubGamemodesRule
     - BasicStationEventScheduler
     #- MeteorSwarmScheduler
+    - LavalandStormScheduler # Lavaland Change
 
 - type: gamePreset
   id: Blob
@@ -24,3 +25,4 @@
   - BasicStationEventScheduler
   - BasicRoundstartVariation
   - SubGamemodesRule
+  - LavalandStormScheduler # Lavaland Change

@@ -24,7 +24,7 @@ using System.Numerics;
      /// <summary>
      /// Kinetic energy required to dismantle a single tile
      /// </summary>
-     private const float TileBreakEnergy = 5900;
+     private const float TileBreakEnergy = 6350;
 
      /// <summary>
      /// Kinetic energy required to spawn sparks
