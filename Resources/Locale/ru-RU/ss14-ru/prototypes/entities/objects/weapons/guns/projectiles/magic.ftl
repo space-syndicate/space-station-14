@@ -1,5 +1,5 @@
 ent-ProjectileFireball = огненный шар
-    .desc = По мнению волшебников явлется средством от всех проблем.
+    .desc = По мнению волшебников, является средством от всех проблем.
 ent-ProjectileDragonsBreath = дыхание дракона
     .desc = Постарайтесь не поджариться.
 ent-ProjectileAnomalyFireball = огненный шар

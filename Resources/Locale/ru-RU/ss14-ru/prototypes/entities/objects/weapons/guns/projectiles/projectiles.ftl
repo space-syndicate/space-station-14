@@ -1,7 +1,7 @@
 ent-MuzzleFlashEffect = { "" }
     .desc = { "" }
 ent-BaseBullet = BaseBullet
-    .desc = Если вы можете видеть это, вы вероятно мертвы!
+    .desc = Если вы можете видеть это, вы, вероятно, мертвы!
 ent-BaseBulletTrigger = { ent-BaseBullet }
     .desc = { ent-BaseBullet.desc }
 ent-BaseBulletPractice = базовая пуля учебная

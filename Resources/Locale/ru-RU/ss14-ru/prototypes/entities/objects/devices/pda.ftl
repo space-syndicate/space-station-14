@@ -80,7 +80,7 @@ ent-HoSPDA = КПК главы службы безопасности
 ent-WardenPDA = КПК смотрителя
     .desc = Похоже, что на ОС был установлен джейлбрейк.
 ent-SecurityPDA = КПК офицера СБ
-    .desc = Красный, чтобы скрыть пятна крови ассистента.
+    .desc = Красный — чтобы скрыть пятна крови ассистента.
 ent-CentcomPDA = КПК Центком
     .desc = Светло-зелёный символ ходячей бюрократии.
 ent-AdminPDA = КПК админа
@@ -97,7 +97,7 @@ ent-VisitorMusicianPDA = { ent-MusicianPDA }
 ent-AtmosPDA = КПК атмос-техника
     .desc = Всё ещё пахнет плазмой.
 ent-ClearPDA = прозрачный КПК
-    .desc = На 99,44% из прозрачного пластика.
+    .desc = Сделан на 99,44% из прозрачного пластика.
 ent-VisitorPDA = { ent-ClearPDA }
     .desc = { ent-ClearPDA.desc }
 # Corvax-HiddenDesc-Start
