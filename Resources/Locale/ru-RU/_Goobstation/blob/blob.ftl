@@ -1,8 +1,6 @@
 ent-SpawnPointGhostBlob = блоб спавнер
     .suffix = DEBUG, спавнер роли призрака
     .desc = { ent-MarkerBase.desc }
-ent-MobMouseCancer = мышь
-    .desc = Пии! Странно пахнет.
 ent-MobBlobPod = блоб капля
     .desc = Рядовой боец блоба. Может зомбировать трупы.
 ent-MobBlobBlobbernaut = блоббернаут
@@ -188,5 +186,5 @@ objective-condition-blob-capture-description = Ваша единственная
 objective-condition-success = { $condition } | [color={ $markupColor }]Успех![/color]
 objective-condition-fail = { $condition } | [color={ $markupColor }]Провал![/color] ({ $progress }%)
 
-ent-MobMouseCancer = мышь
-    .desc = пиИ!
+ent-MobMouseCancerBlob = мышь
+    .desc = Пии! Странно пахнет.
