@@ -2,10 +2,10 @@ meta:
   format: 7
   category: Map
   engineVersion: 248.0.2
-  forkId: syndicate-next
-  forkVersion: a2b843a008b551c74683a54a5fd4b0ad7f81d1c3
-  time: 03/25/2025 08:16:06
-  entityCount: 24861
+  forkId: ""
+  forkVersion: ""
+  time: 03/25/2025 10:05:37
+  entityCount: 24864
 maps:
 - 446
 grids:
@@ -16200,7 +16200,7 @@ entities:
       pos: 362.5,401.5
       parent: 1
     - type: Door
-      secondsUntilStateChange: -61687.152
+      secondsUntilStateChange: -61833.375
       state: Opening
     - type: DeviceLinkSource
       lastSignals:
@@ -51723,13 +51723,6 @@ entities:
     - type: Transform
       pos: 357.5,397.5
       parent: 1
-- proto: DresserCaptainFilled
-  entities:
-  - uid: 617
-    components:
-    - type: Transform
-      pos: 365.5,411.5
-      parent: 1
 - proto: CaptainIDCard
   entities:
   - uid: 5760
@@ -65061,6 +65054,13 @@ entities:
     components:
     - type: Transform
       pos: 369.5,414.5
+      parent: 1
+- proto: DresserCaptainFilled
+  entities:
+  - uid: 617
+    components:
+    - type: Transform
+      pos: 365.5,411.5
       parent: 1
 - proto: DresserChiefEngineerFilled
   entities:
@@ -132567,6 +132567,23 @@ entities:
     components:
     - type: Transform
       pos: 460.5,416.5
+      parent: 1
+- proto: SpawnPointServiceWorker
+  entities:
+  - uid: 13580
+    components:
+    - type: Transform
+      pos: 404.5,368.5
+      parent: 1
+  - uid: 13581
+    components:
+    - type: Transform
+      pos: 409.5,392.5
+      parent: 1
+  - uid: 13582
+    components:
+    - type: Transform
+      pos: 409.5,387.5
       parent: 1
 - proto: SpawnPointStationEngineer
   entities:
