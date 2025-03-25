@@ -66,9 +66,9 @@
             CargoTechnician: [ 4, 6 ]
             #civilian - the tiders yearn for the mines
             Passenger: [ -1, -1 ]
-        # Goobstation blob-config-start HUGE
+        # Corvax-next blob-config-start HUGE
         - type: StationBlobConfig
           stageBegin: 40
           stageCritical: 450
           stageTheEnd: 900
-        # Goobstation blob-config-end
+        # Corvax-next blob-config-end
