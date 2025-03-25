@@ -21,6 +21,15 @@
       mindComponents:
       - type: HereticRole
       startingGear: HereticGear # see Roles/Antags/heretic.yml
+      components:
+      - type: Skills # Corvax-Next-Skills
+        skills:
+        - ShuttleControl
+        - Shooting
+        - AdvancedBuilding
+        - Surgery
+        - MedicalEquipment
+        - Butchering
 
 - type: entityTable
   id: ExtendedGameRulesTable

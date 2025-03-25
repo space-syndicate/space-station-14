@@ -338,6 +338,14 @@
       - type: NpcFactionMember
         factions:
         - Wizard
+      - type: Skills # Corvax-Next-Skills
+        skills:
+        - ShuttleControl
+        - AdvancedBuilding
+        - Shooting
+        - Surgery
+        - MedicalEquipment
+        - Butchering
       - type: RandomMetadata
         nameSegments:
         - NamesWizardFirst
