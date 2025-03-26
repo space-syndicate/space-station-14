@@ -41,7 +41,7 @@ namespace Content.Server.Kitchen.EntitySystems
         [Dependency] private readonly SharedSuicideSystem _suicide = default!;
         [Dependency] private readonly SharedSkillsSystem _skills = default!;
 
-        private const float ButcherDelayModifierWithoutSkill = 1,8;
+        private const float ButcherDelayModifierWithoutSkill = 1.8f;
 
         public override void Initialize()
         {
