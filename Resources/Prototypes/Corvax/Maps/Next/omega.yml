@@ -2,6 +2,8 @@
   id: NextOmega
   mapName: 'Next Omega'
   mapPath: /Maps/Next/next_omega.yml
+  maxRandomOffset: 0
+  randomRotation: false
   minPlayers: 0
   maxPlayers: 25
   stations:
