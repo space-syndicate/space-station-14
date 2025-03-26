@@ -30,6 +30,8 @@ blob-description = Показатели биобезопасности стан�
 ghost-role-information-blobbernaut-name = блоббернаут
 ghost-role-information-blobbernaut-description = Вы массивный блоббернаут, защищайте ядро блоба или следуйте его приказам.
 
+ghost-role-information-blobpod-name = блобик
+ghost-role-information-blobpod-description = Вы мерзкая сущность, что зомбирует людей. Служите Блобу!
 ghost-role-information-blob-name = блоб
 ghost-role-information-blob-description = Ты блоб, вы должны захватить эту станцию.
 

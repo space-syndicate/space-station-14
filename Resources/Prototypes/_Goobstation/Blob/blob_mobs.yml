@@ -15,8 +15,8 @@
       spreadAmount: 20
       solution:
         reagents:
-          - ReagentId: TearGas
-            Quantity: 3
+          - ReagentId: FluorosulfuricAcid
+            Quantity: 5
     - type: Damageable
       damageContainer: Blob
       damageModifierSet: BlobMob
@@ -103,6 +103,13 @@
     - type: GuideHelp
       guides:
       - Blob
+    - type: GhostRole
+      name: ghost-role-information-blobpod-name
+      description: ghost-role-information-blobpod-description
+      rules: You are an antagonist, defend your blob core!
+      raffle:
+        settings: default
+    - type: GhostTakeoverAvailable
 
 # Blobbernaut
 - type: entity
