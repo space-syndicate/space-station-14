@@ -36,7 +36,7 @@ public sealed class SharpSystem : EntitySystem
     [Dependency] private readonly ISharedAdminLogManager _adminLogger = default!;
     [Dependency] private readonly SharedSkillsSystem _skills = default!;
 
-    private const float ButcherDelayModifierWithoutSkill = 1.8;
+    private const float ButcherDelayModifierWithoutSkill = 1,8;
 
     public override void Initialize()
     {
