@@ -36,3 +36,6 @@
           components:
           - HitscanBatteryAmmoProvider
           - ProjectileBatteryAmmoProvider
+        blacklist:
+           components:  # Goobstation
+           - BatteryRecharge
