@@ -23,7 +23,7 @@
       startingGear: HereticGear # see Roles/Antags/heretic.yml
       components:
       - type: CanChokeGrab
-      - type: CollectiveMind # На будущее. Мало ли.
+      - type: CollectiveMind # for the future
       - type: Skills # Corvax-Next-Skills
         skills:
         - ShuttleControl

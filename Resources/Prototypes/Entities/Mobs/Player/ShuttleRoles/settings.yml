@@ -15,6 +15,14 @@
       rules: ghost-role-information-nonantagonist-rules
       raffle:
         settings: default
+    - type: Skills # Corvax-Next-Skills
+      skills:
+      - ShuttleControl
+      - Shooting
+      - AdvancedBuilding
+      - Surgery
+      - MedicalEquipment
+      - Butchering
 
 - type: randomHumanoidSettings
   id: VisitorCaptain
@@ -106,6 +114,14 @@
       rules: ghost-role-information-nonantagonist-rules
       raffle:
         settings: default
+    - type: Skills # Corvax-Next-Skills
+      skills:
+      - ShuttleControl
+      - Shooting
+      - AdvancedBuilding
+      - Surgery
+      - MedicalEquipment
+      - Butchering
 
 - type: randomHumanoidSettings
   id: VisitorSecurityCadet
@@ -159,6 +175,14 @@
       rules: ghost-role-information-nonantagonist-rules
       raffle:
         settings: short
+    - type: Skills # Corvax-Next-Skills
+      skills:
+      - ShuttleControl
+      - Shooting
+      - AdvancedBuilding
+      - Surgery
+      - MedicalEquipment
+      - Butchering
 
 - type: randomHumanoidSettings
   id: VisitorCargoTechnician
@@ -192,6 +216,14 @@
       rules: ghost-role-information-nonantagonist-rules
       raffle:
         settings: short
+    - type: Skills # Corvax-Next-Skills
+      skills:
+      - ShuttleControl
+      - Shooting
+      - AdvancedBuilding
+      - Surgery
+      - MedicalEquipment
+      - Butchering
 
 - type: randomHumanoidSettings
   id: VisitorAtmosTech
@@ -235,6 +267,14 @@
       rules: ghost-role-information-nonantagonist-rules
       raffle:
         settings: short
+    - type: Skills # Corvax-Next-Skills
+      skills:
+      - ShuttleControl
+      - Shooting
+      - AdvancedBuilding
+      - Surgery
+      - MedicalEquipment
+      - Butchering
 
 - type: randomHumanoidSettings
   id: VisitorMedicalIntern
@@ -328,6 +368,14 @@
       rules: ghost-role-information-nonantagonist-rules
       raffle:
         settings: short
+    - type: Skills # Corvax-Next-Skills
+      skills:
+      - ShuttleControl
+      - Shooting
+      - AdvancedBuilding
+      - Surgery
+      - MedicalEquipment
+      - Butchering
 
 - type: randomHumanoidSettings
   id: VisitorResearchAssistant
@@ -361,6 +409,14 @@
       rules: ghost-role-information-nonantagonist-rules
       raffle:
         settings: short
+    - type: Skills # Corvax-Next-Skills
+      skills:
+      - ShuttleControl
+      - Shooting
+      - AdvancedBuilding
+      - Surgery
+      - MedicalEquipment
+      - Butchering
 
 - type: randomHumanoidSettings
   id: VisitorBartender
@@ -577,6 +633,14 @@
       nameSegments:
       - NamesFirst
       - NamesLast
+    - type: Skills # Corvax-Next-Skills
+      skills:
+      - ShuttleControl
+      - Shooting
+      - AdvancedBuilding
+      - Surgery
+      - MedicalEquipment
+      - Butchering
 
 - type: randomHumanoidSettings
   id: ChallengeVictimChiefEngineer
@@ -596,6 +660,14 @@
       nameSegments:
       - NamesFirst
       - NamesLast
+    - type: Skills # Corvax-Next-Skills
+      skills:
+      - ShuttleControl
+      - Shooting
+      - AdvancedBuilding
+      - Surgery
+      - MedicalEquipment
+      - Butchering
 
 - type: randomHumanoidSettings
   id: ChallengeVictimCMO
@@ -615,6 +687,14 @@
       nameSegments:
       - NamesFirst
       - NamesLast
+    - type: Skills # Corvax-Next-Skills
+      skills:
+      - ShuttleControl
+      - Shooting
+      - AdvancedBuilding
+      - Surgery
+      - MedicalEquipment
+      - Butchering
 
 - type: randomHumanoidSettings
   id: ChallengeVictimHeadOfPersonnel
@@ -634,6 +714,14 @@
       nameSegments:
       - NamesFirst
       - NamesLast
+    - type: Skills # Corvax-Next-Skills
+      skills:
+      - ShuttleControl
+      - Shooting
+      - AdvancedBuilding
+      - Surgery
+      - MedicalEquipment
+      - Butchering
 
 - type: randomHumanoidSettings
   id: ChallengeVictimHeadOfSecurity
@@ -653,6 +741,14 @@
       nameSegments:
       - NamesFirst
       - NamesLast
+    - type: Skills # Corvax-Next-Skills
+      skills:
+      - ShuttleControl
+      - Shooting
+      - AdvancedBuilding
+      - Surgery
+      - MedicalEquipment
+      - Butchering
 
 - type: randomHumanoidSettings
   id: ChallengeVictimResearchDirector
@@ -672,6 +768,14 @@
       nameSegments:
       - NamesFirst
       - NamesLast
+    - type: Skills # Corvax-Next-Skills
+      skills:
+      - ShuttleControl
+      - Shooting
+      - AdvancedBuilding
+      - Surgery
+      - MedicalEquipment
+      - Butchering
 
 - type: randomHumanoidSettings
   id: ChallengeVictimQuartermaster
@@ -691,6 +795,14 @@
       nameSegments:
       - NamesFirst
       - NamesLast
+    - type: Skills # Corvax-Next-Skills
+      skills:
+      - ShuttleControl
+      - Shooting
+      - AdvancedBuilding
+      - Surgery
+      - MedicalEquipment
+      - Butchering
 
 # Security
 # Following use EventHumanoidMindShielded since they are heads and probably should have mindshields
@@ -715,6 +827,14 @@
       nameSegments:
       - NamesFirst
       - NamesLast
+    - type: Skills # Corvax-Next-Skills
+      skills:
+      - ShuttleControl
+      - Shooting
+      - AdvancedBuilding
+      - Surgery
+      - MedicalEquipment
+      - Butchering
 
 # Engineering
 
@@ -745,6 +865,14 @@
     - type: Loadout
       prototypes: [ SyndicateFootsoldierTeamLeaderGear ]
       roleLoadout: [ RoleSurvivalSyndicate ]
+    - type: Skills # Corvax-Next-Skills
+      skills:
+      - ShuttleControl
+      - Shooting
+      - AdvancedBuilding
+      - Surgery
+      - MedicalEquipment
+      - Butchering
 
 - type: randomHumanoidSettings
   id: SyndieSoldier
@@ -763,6 +891,14 @@
     - type: Loadout
       prototypes: [ SyndicateFootsoldierGear ]
       roleLoadout: [ RoleSurvivalSyndicate ]
+    - type: Skills # Corvax-Next-Skills
+      skills:
+      - ShuttleControl
+      - Shooting
+      - AdvancedBuilding
+      - Surgery
+      - MedicalEquipment
+      - Butchering
 
 - type: randomHumanoidSettings
   id: SyndieVisitor
@@ -782,6 +918,14 @@
     - type: Loadout
       prototypes: [ SyndicateOperativeGearCivilian ]
       roleLoadout: [ RoleSurvivalSyndicate ]
+    - type: Skills # Corvax-Next-Skills
+      skills:
+      - ShuttleControl
+      - Shooting
+      - AdvancedBuilding
+      - Surgery
+      - MedicalEquipment
+      - Butchering
 
 - type: randomHumanoidSettings
   id: PirateScooner
@@ -799,6 +943,14 @@
     - type: Loadout
       prototypes: [ PirateScoonerAltA, PirateScoonerAltB, PirateScoonerAltC, PirateScoonerAltD ]
       roleLoadout: [ RoleSurvivalEVA ]
+    - type: Skills # Corvax-Next-Skills
+      skills:
+      - ShuttleControl
+      - Shooting
+      - AdvancedBuilding
+      - Surgery
+      - MedicalEquipment
+      - Butchering
 
 - type: randomHumanoidSettings
   id: PirateCaptainScooner
@@ -816,6 +968,14 @@
     - type: Loadout
       prototypes: [ PirateCaptainScooner ]
       roleLoadout: [ RoleSurvivalEVA ]
+    - type: Skills # Corvax-Next-Skills
+      skills:
+      - ShuttleControl
+      - Shooting
+      - AdvancedBuilding
+      - Surgery
+      - MedicalEquipment
+      - Butchering
 
 ### Other
 
@@ -832,6 +992,14 @@
     - type: Loadout
       prototypes: [ VisitorBlackmarketeer, VisitorBlackmarketeer ]
       roleLoadout: [ RoleSurvivalStandard ]
+    - type: Skills # Corvax-Next-Skills
+      skills:
+      - ShuttleControl
+      - Shooting
+      - AdvancedBuilding
+      - Surgery
+      - MedicalEquipment
+      - Butchering
 
 - type: randomHumanoidSettings
   id: Cossack
@@ -850,3 +1018,11 @@
     - type: Loadout
       prototypes: [ CossackGear ]
       roleLoadout: [ RoleSurvivalEVA ]
+    - type: Skills # Corvax-Next-Skills
+      skills:
+      - ShuttleControl
+      - Shooting
+      - AdvancedBuilding
+      - Surgery
+      - MedicalEquipment
+      - Butchering

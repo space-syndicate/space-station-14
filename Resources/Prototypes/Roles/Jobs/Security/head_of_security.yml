@@ -39,6 +39,7 @@
       - type: CommandStaff
       - type: Skills # Corvax-Next-Skills
         skills:
+        - ShuttleControl
         - Shooting
 
 - type: startingGear

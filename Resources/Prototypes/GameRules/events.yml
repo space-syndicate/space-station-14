@@ -280,6 +280,14 @@
         sound: /Audio/Misc/paradox_clone_greeting.ogg
       mindRoles:
       - MindRoleParadoxClone
+      components:
+      - type: Skills # Corvax-Next-Skills
+        skills:
+        - ShuttleControl
+        - AdvancedBuilding
+        - Surgery
+        - MedicalEquipment
+        - Butchering
 
 - type: entity
   parent: BaseGameRule
@@ -328,6 +336,14 @@
         nameSegments:
         - NamesWizardFirst
         - NamesWizardLast
+      - type: Skills # Corvax-Next-Skills
+        skills:
+        - ShuttleControl
+        - AdvancedBuilding
+        - Shooting
+        - Surgery
+        - MedicalEquipment
+        - Butchering
       mindRoles:
       - MindRoleWizard
 # disabled until event is rewritten to be more interesting

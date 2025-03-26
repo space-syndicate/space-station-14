@@ -17,8 +17,6 @@
             prefixCreator: 'ABK'
         - type: StationEmergencyShuttle
           emergencyShuttlePath: /Maps/Corvax/Shuttles/emergency_corvaxsilly.yml
-        - type: StationCargoShuttle
-          path: /Maps/Corvax/Shuttles/cargo_corvaxsilly.yml
         - type: StationJobs
           availableJobs:
             # command

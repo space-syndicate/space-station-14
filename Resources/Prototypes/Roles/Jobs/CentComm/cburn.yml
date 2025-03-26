@@ -12,6 +12,22 @@
   - AllAccess
   access:
   - CentralCommand
+  special:
+  - !type:AddComponentSpecial
+    components:
+    #start-_CorvaxNext: surgery
+    #- type: CPRTraining
+    - type: SurgerySpeedModifier
+      speedModifier: 1.5
+    #end-_CorvaxNext: surgery
+    - type: Skills # Corvax-Next-Skills
+      skills:
+      - ShuttleControl
+      - Shooting
+      - AdvancedBuilding
+      - Surgery
+      - MedicalEquipment
+      - Butchering
 
 - type: startingGear
   id: CBURNGear
