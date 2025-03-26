@@ -222,6 +222,9 @@
           - HitscanBatteryAmmoProvider
           - ProjectileBatteryAmmoProvider
           - Stunbaton
+        blacklist:
+           components:  # Goobstation
+           - BatteryRecharge
 
 - type: entity
   parent: BaseRecharger
