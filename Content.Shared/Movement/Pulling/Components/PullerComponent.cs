@@ -73,13 +73,13 @@ public sealed partial class PullerComponent : Component
     public Dictionary<GrabStage, float> EscapeChances = new()
     {
         { GrabStage.No, 1f },
-        { GrabStage.Soft, 0.7f },
-        { GrabStage.Hard, 0.4f },
-        { GrabStage.Suffocate, 0.1f },
+        { GrabStage.Soft, 0.3f },
+        { GrabStage.Hard, 0.2f },
+        { GrabStage.Suffocate, 0.01f },
     };
 
     [DataField]
-    public float SuffocateGrabStaminaDamage = 10f;
+    public float SuffocateGrabStaminaDamage = 30f;
 
     [DataField]
     public float GrabThrowDamageModifier = 2f;
@@ -94,7 +94,7 @@ public sealed partial class PullerComponent : Component
     };
 
     [DataField]
-    public float StaminaDamageOnThrown = 120f;
+    public float StaminaDamageOnThrown = 210f;
 
     [DataField]
     public float GrabThrownSpeed = 7f;
@@ -106,10 +106,10 @@ public sealed partial class PullerComponent : Component
     public float SoftGrabSpeedModifier = 0.9f;
 
     [DataField]
-    public float HardGrabSpeedModifier = 0.7f;
+    public float HardGrabSpeedModifier = 0.5f;
 
     [DataField]
-    public float ChokeGrabSpeedModifier = 0.4f;
+    public float ChokeGrabSpeedModifier = 0.2f;
     // Goobstation end
 }
 
