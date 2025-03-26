@@ -50,7 +50,6 @@ using Robust.Shared.Physics.Systems;
 using Robust.Shared.Player;
 using Robust.Shared.Random; // Goobstation
 using Robust.Shared.Timing;
-
 namespace Content.Shared.Movement.Pulling.Systems;
 
 /// <summary>
@@ -822,6 +821,8 @@ public sealed class PullingSystem : EntitySystem
         // Don't grab without grab intent
         if (!ignoreCombatMode)
             if (!_combatMode.IsInCombatMode(puller))
+                return false;
+            if (!HasComp<CanChokeGrabComponent>(puller))
                 return false;
 
         // It's blocking stage update, maybe better UX?

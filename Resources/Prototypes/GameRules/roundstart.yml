@@ -135,6 +135,7 @@
         - Surgery
         - MedicalEquipment
         - Butchering
+      - type: CanChokeGrab
       mindRoles:
       - MindRoleNukeopsCommander
     - prefRoles: [ NukeopsMedic ]
@@ -160,6 +161,7 @@
         - Surgery
         - MedicalEquipment
         - Butchering
+      - type: CanChokeGrab
       mindRoles:
       - MindRoleNukeopsMedic
     - prefRoles: [ Nukeops ]
@@ -187,6 +189,7 @@
         - Surgery
         - MedicalEquipment
         - Butchering
+      - type: CanChokeGrab
       mindRoles:
       - MindRoleNukeops
 
@@ -233,6 +236,7 @@
         - Surgery
         - MedicalEquipment
         - Butchering
+      - type: CanChokeGrab
       mindRoles:
       - MindRoleTraitor
 
@@ -280,6 +284,7 @@
         - Surgery
         - MedicalEquipment
         - Butchering
+      - type: CanChokeGrab
       mindRoles:
       - MindRoleHeadRevolutionary
 
@@ -396,6 +401,7 @@
         - Surgery
         - MedicalEquipment
         - Butchering
+      - type: CanChokeGrab
       mindRoles:
       - MindRoleInitialInfected
 
