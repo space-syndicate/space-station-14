@@ -230,6 +230,8 @@
       name: ghost-role-information-blob-name
       description: ghost-role-information-blob-description
       rules: You are an antagonist, destroy the station!
+      raffle:
+        settings: default
     - type: GhostTakeoverAvailable
     - type: Fixtures
       fixtures:
