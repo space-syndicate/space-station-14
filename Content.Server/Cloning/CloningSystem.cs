@@ -11,6 +11,7 @@ using Content.Shared.Stacks;
 using Content.Shared.Storage;
 using Content.Shared.Storage.EntitySystems;
 using Content.Shared.Whitelist;
+using Content.Shared.Corvax.TTS; // Corvax-TTS
 using Robust.Shared.Containers;
 using Robust.Shared.Map;
 using Robust.Shared.Prototypes;
@@ -80,6 +81,14 @@ public sealed class CloningSystem : EntitySystem
                 CopyComp(original, clone.Value, sourceComp);
             }
         }
+
+        // Corvax-TTS-Start
+        if (TryComp<TTSComponent>(original, out var ttsCopy))
+        {
+            var ttsClone = EnsureComp<TTSComponent>(clone.Value);
+            ttsClone.VoicePrototypeId = ttsCopy.VoicePrototypeId;
+        }
+        // Corvax-TTS-End
 
         var cloningEv = new CloningEvent(settings, clone.Value);
         RaiseLocalEvent(original, ref cloningEv); // used for datafields that cannot be directly copied
