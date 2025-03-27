@@ -22,3 +22,8 @@
           Quantity: 5
   - type: Sprite
     state: stomach
+  - type: Tag # goob edit
+    tags:
+    - Meat
+    - Organ
+    - Stomach

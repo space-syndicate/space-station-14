@@ -49,9 +49,12 @@
     - type: InputMover
     - type: Examiner
     - type: BlockMovement
-    - type: Tag
+    - type: Tag # goob edit
       tags:
-        - Meat
+      - Meat
+      - Organ
+      - Brain
+
     - type: SolutionContainerManager
       solutions:
         organ:
@@ -88,11 +91,11 @@
     - type: Item
       size: Small
       heldPrefix: eyeballs
-    # start-_CorvaxNext: Heretic ritual
-    - type: Tag
+    - type: Tag # goob edit
       tags:
-        - Eyes
-    # end-_CorvaxNext: Heretic ritual
+      - Meat
+      - Organ
+      - Eyes
 
 - type: entity
   id: OrganHumanTongue
@@ -162,6 +165,12 @@
           reagents:
             - ReagentId: UncookedAnimalProteins
               Quantity: 5
+    - type: Tag # goob edit
+      tags:
+      - Meat
+      - Organ
+      - Stomach
+
 
 - type: entity
   id: OrganHumanHeart
@@ -229,6 +238,12 @@
       groups:
         - id: Food
         - id: Drink
+    - type: Tag # goob edit
+      tags:
+      - Meat
+      - Organ
+      - Stomach
+
 
 - type: entity
   id: OrganHumanLiver
@@ -252,6 +267,11 @@
       groups:
         - id: Alcohol
           rateModifier: 0.1 # removes alcohol very slowly along with the stomach removing it as a drink
+    - type: Tag # goob edit
+      tags:
+      - Meat
+      - Organ
+      - Liver
 
 - type: entity
   id: OrganHumanKidneys

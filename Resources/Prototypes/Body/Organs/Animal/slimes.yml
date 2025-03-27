@@ -56,3 +56,8 @@
         Lung:
           maxVol: 100.0
           canReact: false
+    - type: Tag # goob edit
+      tags:
+      - Meat
+      - Organ
+      - Lungs
