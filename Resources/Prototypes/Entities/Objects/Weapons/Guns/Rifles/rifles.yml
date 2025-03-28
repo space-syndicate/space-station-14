@@ -23,6 +23,7 @@
     soundGunshot:
       path: /Audio/Weapons/Guns/Gunshots/batrifle.ogg
     fireOnDropChance: 0.5 # Corvax-Next-FireOnDrop
+    requiresSkill: true # Corvax-Next-Skills
   - type: ChamberMagazineAmmoProvider
     soundRack:
       path: /Audio/Weapons/Guns/Cock/sf_rifle_cock.ogg
@@ -71,7 +72,6 @@
     fireRate: 5
     soundGunshot:
       path: /Audio/Weapons/Guns/Gunshots/rifle2.ogg
-    requiresSkill: true # Corvax-Next-Skills
   - type: ChamberMagazineAmmoProvider
     soundRack:
       path: /Audio/Weapons/Guns/Cock/ltrifle_cock.ogg
@@ -166,7 +166,6 @@
   - type: Gun
     soundGunshot:
       path: /Audio/Weapons/Guns/Gunshots/ltrifle.ogg
-    requiresSkill: true # Corvax-Next-Skills
   - type: ItemSlots
     slots:
       gun_magazine:
@@ -224,6 +223,6 @@
       path: /Audio/Effects/thunk.ogg
     soundEmpty:
       path: /Audio/Weapons/Guns/Empty/empty.ogg
-    requiresSkill: true # Corvax-Next-Skills
+    requiresSkill: false # Corvax-Next-Skills
     clumsyProof: true
   - type: PacifismAllowedGun

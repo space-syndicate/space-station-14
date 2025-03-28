@@ -29,6 +29,7 @@
     soundEmpty:
       path: /Audio/Weapons/Guns/Empty/empty.ogg
     fireOnDropChance: 0.3 # Corvax-Next-FireOnDrop
+    requiresSkill: true # Corvax-Next-Skills
   - type: BallisticAmmoProvider
     whitelist:
       tags:
@@ -245,6 +246,7 @@
     fireRate: 4
     soundGunshot: # Corvax-Guns
       path: /Audio/Corvax/Weapons/Guns/Gunshots/shotgun_pipe.ogg
+    requiresSkill: false # Corvax-Next-Skills
   - type: BallisticAmmoProvider
     capacity: 1
   - type: Construction
@@ -294,6 +296,7 @@
   - type: GunRequiresWield #remove when inaccuracy on spreads is fixed
   - type: Gun
     fireRate: 4 #No reason to stifle the firerate since you have to manually reload every time anyways.
+    requiresSkill: false # Corvax-Next-Skills
   - type: BallisticAmmoProvider
     capacity: 1
     proto: null
