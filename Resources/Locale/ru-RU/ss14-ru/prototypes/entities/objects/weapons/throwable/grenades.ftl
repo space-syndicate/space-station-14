@@ -3,7 +3,7 @@ ent-GrenadeBase = { ent-BaseItem }
 ent-ExGrenade = разрывная граната
     .desc = Граната, создающая небольшой, но разрушительный взрыв.
 ent-GrenadeFlashBang = светошумовая граната
-    .desc = Пиииииииииииииииииииии
+    .desc = Пиииииииииииииииииииии.
 ent-GrenadeFlashEffect = { "" }
     .desc = { "" }
 # Corvax-HiddenDesc-Start
