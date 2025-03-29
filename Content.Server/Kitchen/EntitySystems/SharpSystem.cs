@@ -65,7 +65,8 @@ public sealed class SharpSystem : EntitySystem
         if (!TryComp<SharpComponent>(knife, out var sharp))
             return false;
 
-        if (TryComp<MobStateComponent>(target, out var mobState) && !_mobStateSystem.IsDead(target, mobState))
+        var hasMobState = TryComp<MobStateComponent>(target, out var mobState);
+        if (hasMobState && !_mobStateSystem.IsDead(target, mobState))
             return false;
 
         if (butcher.Type != ButcheringType.Knife && target != user)
@@ -78,25 +79,27 @@ public sealed class SharpSystem : EntitySystem
             return false;
 
         var needHand = user != knife;
-        var isClothing = HasComp<ClothingComponent>(target);
-        var delayModifier = isClothing
-            ? 1
-            : (_skills.HasSkill(user, Skills.Butchering) ? 1 : ButcherDelayModifierWithoutSkill);
+        var isDead = hasMobState && _mobStateSystem.IsDead(target, mobState);
 
-        var doAfter =
-            new DoAfterArgs(
-                EntityManager,
-                user,
-                sharp.ButcherDelayModifier * butcher.ButcherDelay * delayModifier,
-                new SharpDoAfterEvent(),
-                knife,
-                target: target,
-                used: knife)
-            {
-                BreakOnDamage = true,
-                BreakOnMove = true,
-                NeedHand = needHand,
-            };
+
+        var delayModifier = isDead && !_skills.HasSkill(user, Skills.Butchering)
+            ? ButcherDelayModifierWithoutSkill
+            : 1;
+
+        var doAfter = new DoAfterArgs(
+            EntityManager,
+            user,
+            sharp.ButcherDelayModifier * butcher.ButcherDelay * delayModifier,
+            new SharpDoAfterEvent(),
+            knife,
+            target: target,
+            used: knife)
+        {
+            BreakOnDamage = true,
+            BreakOnMove = true,
+            NeedHand = needHand,
+        };
+
         _doAfterSystem.TryStartDoAfter(doAfter);
         return true;
     }
@@ -202,7 +205,7 @@ public sealed class SharpSystem : EntitySystem
             },
             Message = message,
             Disabled = disabled,
-            Icon = new SpriteSpecifier.Texture(new ("/Textures/Interface/VerbIcons/cutlery.svg.192dpi.png")),
+            Icon = new SpriteSpecifier.Texture(new("/Textures/Interface/VerbIcons/cutlery.svg.192dpi.png")),
             Text = Loc.GetString("butcherable-verb-name"),
         };
 
