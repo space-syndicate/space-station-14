@@ -1,6 +1,6 @@
 # Corvax-HiddenDesc-Start
 ent-Telecrystal = красный кристалл
-    .desc = Необычные, мерцающие красным кристаллы.
+    .desc = Необычный, мерцающий красный кристалл.
     .suffix = 20 ТК, телекристалл Синдиката
 ent-Telecrystal1 = { ent-Telecrystal }
     .suffix = 1 ТК, телекристалл Синдиката
