@@ -79,10 +79,7 @@ public sealed class SharpSystem : EntitySystem
             return false;
 
         var needHand = user != knife;
-        var isDead = hasMobState && _mobStateSystem.IsDead(target, mobState);
-
-
-        var delayModifier = isDead && !_skills.HasSkill(user, Skills.Butchering)
+        var delayModifier = hasMobState && !_skills.HasSkill(user, Skills.Butchering)
             ? ButcherDelayModifierWithoutSkill
             : 1;
 
