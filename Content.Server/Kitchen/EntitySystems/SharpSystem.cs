@@ -19,7 +19,7 @@ using Robust.Server.GameObjects;
 using Robust.Shared.Random;
 using Robust.Shared.Utility;
 using Content.Shared._CorvaxNext.Skills;
-using Content.Shared.Clothing.Components;
+using Content.Shared.Hands.Components;
 
 namespace Content.Server.Kitchen.EntitySystems;
 
@@ -77,6 +77,9 @@ public sealed class SharpSystem : EntitySystem
 
         if (!sharp.Butchering.Add(target))
             return false;
+        // if the user isn't the entity with the sharp component,
+        // they will need to be holding something with their hands, so we set needHand to true
+        // so that the doafter can be interrupted if they drop the item in their hands
 
         var needHand = user != knife;
         var isDead = hasMobState && _mobStateSystem.IsDead(target, mobState);
@@ -205,7 +208,7 @@ public sealed class SharpSystem : EntitySystem
             },
             Message = message,
             Disabled = disabled,
-            Icon = new SpriteSpecifier.Texture(new("/Textures/Interface/VerbIcons/cutlery.svg.192dpi.png")),
+            Icon = new SpriteSpecifier.Texture(new ("/Textures/Interface/VerbIcons/cutlery.svg.192dpi.png")),
             Text = Loc.GetString("butcherable-verb-name"),
         };
 
