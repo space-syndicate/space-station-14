@@ -82,10 +82,7 @@ public sealed class SharpSystem : EntitySystem
         // so that the doafter can be interrupted if they drop the item in their hands
 
         var needHand = user != knife;
-        var isDead = hasMobState && _mobStateSystem.IsDead(target, mobState);
-
-
-        var delayModifier = isDead && !_skills.HasSkill(user, Skills.Butchering)
+        var delayModifier = hasMobState && !_skills.HasSkill(user, Skills.Butchering)
             ? ButcherDelayModifierWithoutSkill
             : 1;
 
