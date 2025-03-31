@@ -312,8 +312,8 @@
   coefficients:
     Holy: 2
 
-# Vulps get more heat damage because fur
-- type: damageModifierSet
-  id: Vulpkanin
-  coefficients:
-    Heat: 1.15
+## Vulps get more heat damage because fur
+#- type: damageModifierSet
+#  id: Vulpkanin
+#  coefficients:
+#    Heat: 1.15
