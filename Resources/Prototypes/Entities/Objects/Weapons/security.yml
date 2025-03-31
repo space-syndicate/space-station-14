@@ -10,7 +10,7 @@
     - state: stunbaton_off
       map: [ "enum.ToggleVisuals.Layer" ]
   - type: Stunbaton
-    energyPerUse: 50
+    energyPerUse: 2.5
   - type: ItemToggle
     predictable: false
     soundActivate:
@@ -30,18 +30,20 @@
       types:
         Blunt: 0
   - type: MeleeWeapon
+    autoAttack: true
     wideAnimationRotation: -135
     damage:
       types:
-        Blunt: 7
+        Blunt: 1
+    attackRate: 5
     bluntStaminaDamageFactor: 2.0
     angle: 60
     animation: WeaponArcThrust
   - type: StaminaDamageOnHit
-    damage: 35
+    damage: 7
     sound: /Audio/Weapons/egloves.ogg
   - type: StaminaDamageOnCollide
-    damage: 35
+    damage: 7
     sound: /Audio/Weapons/egloves.ogg
   - type: LandAtCursor # it deals stamina damage when thrown
   - type: Battery
@@ -88,6 +90,9 @@
     guides:
     - Security
     - Antagonists
+  - type: Tag
+    tags:
+    - Stunbaton
 
 - type: entity
   name: truncheon
@@ -227,3 +232,37 @@
       guides:
       - Security
       - Antagonists
+
+- type: entity
+  name: sun baton
+  parent: Stunbaton
+  id: Sunbaton
+  description: A sun baton for incapacitating people with. Actively harming with this is considered bad tone. It is very bright.
+  components:
+  - type: Sprite
+    sprite: Objects/Weapons/Melee/stunbaton.rsi
+    layers:
+    - state: stunbaton_off
+      map: [ "enum.ToggleVisuals.Layer" ]
+  - type: GenericVisualizer
+    visuals:
+      enum.ToggleVisuals.Toggled:
+        enum.ToggleVisuals.Layer:
+          True: {state: stunbaton_on_sun}
+          False: {state: stunbaton_off}
+  - type: ToggleableLightVisuals
+    spriteLayer: light
+    inhandVisuals:
+      left:
+      - state: on-inhand-left-sun
+        shader: unshaded
+      right:
+      - state: on-inhand-right-sun
+        shader: unshaded
+  - type: PointLight
+    enabled: false
+    radius: 8
+    energy: 10
+    color: "#FFAF38"
+    netsync: false
+  - type: ItemTogglePointLight

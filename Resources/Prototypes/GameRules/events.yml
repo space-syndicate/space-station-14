@@ -2,6 +2,7 @@
   id: BasicCalmEventsTable
   table: !type:AllSelector # we need to pass a list of rules, since rules have further restrictions to consider via StationEventComp
     children:
+    - id: NukeCalibration
     - id: AnomalySpawn
     - id: BluespaceArtifact
     - id: BluespaceLocker
@@ -16,6 +17,7 @@
     - id: MassHallucinations
     - id: MimicVendorRule
     - id: MouseMigration
+    - id: PhoneBillEvent
     - id: PowerGridCheck
     - id: RandomSentience
     - id: SlimesSpawn
@@ -78,9 +80,7 @@
   - type: StationEvent
     startAnnouncementColor: "#18abf5"
     startAudio:
-      path: /Audio/Corvax/Announcements/flux.ogg # Corvax-Announcements
-      params:
-        volume: -4
+      collection: InternAnomaly
     weight: 8
     duration: 35
   - type: AnomalySpawnRule
@@ -96,9 +96,7 @@
   - type: StationEvent
     startAnnouncementColor: "#18abf5"
     startAudio:
-      path: /Audio/Corvax/Announcements/blusp_anomalies.ogg # Corvax-Announcements
-      params:
-        volume: -4
+      collection: InternAlert
     weight: 8
     duration: 35
   - type: BluespaceArtifactRule
@@ -147,6 +145,17 @@
     weight: 5
     duration: 1
   - type: ClericalErrorRule
+
+- type: entity
+  id: NukeCalibration
+  parent: BaseGameRule
+  components:
+  - type: StationEvent
+    weight: 9
+    duration: 40
+    reoccurrenceDelay: 2
+    minimumPlayers: 20
+  - type: NukeCalibrationRule
 
 - type: entity
   parent: BaseGameRule
@@ -340,9 +349,7 @@
   - type: StationEvent
     startAnnouncement: station-event-gas-leak-start-announcement
     startAudio:
-      path: /Audio/Announcements/gasleak_start.ogg # Corvax-Announcements
-      params:
-        volume: -4
+      collection: InternAlert
     endAnnouncement: station-event-gas-leak-end-announcement
     weight: 8
     endAudio:
@@ -371,7 +378,7 @@
     startAnnouncement: station-event-power-grid-check-start-announcement
     endAnnouncement: station-event-power-grid-check-end-announcement
     startAudio:
-      path: /Audio/Announcements/power_off.ogg
+      path: /Audio/Announcements/Intern/poweroff.ogg
       params:
         volume: -4
     duration: 60
@@ -386,10 +393,8 @@
     weight: 8
     startAnnouncement: station-event-solar-flare-start-announcement
     endAnnouncement: station-event-solar-flare-end-announcement
-    startAudio: # Corvax-Announcements
-      path: /Audio/Corvax/Announcements/comms_blackout.ogg
-      params:
-        volume: -4
+    startAudio:
+      path: /Audio/Announcements/Intern/radiation.ogg # not exactly the same event, but close
     duration: 120
     maxDuration: 240
   - type: SolarFlareRule
@@ -415,9 +420,7 @@
   - type: StationEvent
     startAnnouncement: station-event-vent-clog-start-announcement
     startAudio:
-      path: /Audio/Announcements/ventclog.ogg # Corvax-Announcements
-      params:
-        volume: -4
+      collection: InternAlert
     earliestStart: 15
     minimumPlayers: 15
     weight: 5
@@ -431,7 +434,7 @@
   - type: StationEvent
     startAnnouncement: station-event-vent-creatures-start-announcement
     startAudio:
-      path: /Audio/Announcements/attention.ogg
+      path: /Audio/Announcements/Intern/aliens.ogg
     earliestStart: 20
     minimumPlayers: 15
     weight: 5
@@ -452,7 +455,7 @@
   - type: StationEvent
     startAnnouncement: station-event-vent-creatures-start-announcement
     startAudio:
-      path: /Audio/Announcements/attention.ogg
+      path: /Audio/Announcements/Intern/aliens.ogg
     earliestStart: 20
     minimumPlayers: 15
     weight: 5
@@ -473,7 +476,7 @@
   - type: StationEvent
     startAnnouncement: station-event-vent-creatures-start-announcement
     startAudio:
-      path: /Audio/Announcements/attention.ogg
+      path: /Audio/Announcements/Intern/aliens.ogg
     earliestStart: 20
     minimumPlayers: 15
     weight: 5
@@ -490,7 +493,7 @@
   - type: StationEvent
     startAnnouncement: station-event-vent-creatures-start-announcement
     startAudio:
-      path: /Audio/Announcements/attention.ogg
+      path: /Audio/Announcements/Intern/aliens.ogg
     earliestStart: 20
     minimumPlayers: 20
     weight: 1.5
@@ -584,7 +587,7 @@
     maxOccurrences: 1 # can only happen once per round
     startAnnouncement: station-event-communication-interception
     startAudio:
-      path: /Audio/Announcements/intercept.ogg
+      path: /Audio/Announcements/Intern/intercept.ogg
     duration: null # the rule has to last the whole round not 1 second
     occursDuringRoundEnd: false
   - type: AlertLevelInterceptionRule
@@ -644,7 +647,7 @@
   components:
   - type: StationEvent
     startAudio:
-      path: /Audio/Announcements/attention.ogg
+      collection: InternAlert
     weight: 5
     minimumPlayers: 25
     reoccurrenceDelay: 20
@@ -692,3 +695,18 @@
       min: 1
       max: 1
       pickPlayer: false
+
+- type: entity
+  parent: BaseGameRule
+  id: PhoneBillEvent
+  components:
+  - type: StationEvent
+    earliestStart: 0 # All hell breaks loose.
+    reoccurrenceDelay: 0 # It's payment time, motherfucker.
+  - type: PhoneBillRule
+    delay: 150
+    price: 5
+  - type: GameRule
+    delay:
+      min: 150
+      max: 150

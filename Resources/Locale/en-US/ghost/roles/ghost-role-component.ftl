@@ -35,6 +35,9 @@ ghost-role-information-mouse-description = A hungry and mischievous mouse.
 ghost-role-information-mothroach-name = Mothroach
 ghost-role-information-mothroach-description = A cute but mischievous mothroach.
 
+ghost-role-information-moproach-name = Moproach
+ghost-role-information-moproach-description = A cute mothroach with more cute moplike shoes on its feet.
+
 ghost-role-information-snail-name = Snail
 ghost-role-information-snail-description = A little snail who doesn't mind a bit of space. Just stay on grid!
 
@@ -56,6 +59,9 @@ ghost-role-information-hamster-description = A grumpy little ball of fluff.
 ghost-role-information-hamlet-name = Hamlet the Hamster
 ghost-role-information-hamlet-description = Lives in the station bridge, has a bit of a temper and is always hungry.
 
+ghost-role-information-bucket-name = Living Mop Bucket
+ghost-role-information-bucket-description = You can be a marvel of science!
+
 ghost-role-information-slimes-name = Slime
 ghost-role-information-slimes-description = An ordinary slime with no special needs or interests. You are friendly to others.
 
@@ -63,11 +69,14 @@ ghost-role-information-angry-slimes-name = Slime
 ghost-role-information-angry-slimes-description = Everyone around you irritates your instincts, destroy them!
 ghost-role-information-angry-slimes-rules = You are a [color=red][bold]Team Antagonist[/bold][/color] with all other angry slimes.
 
-ghost-role-information-smile-name = Smile the Slime
-ghost-role-information-smile-description = The sweetest creature in the world. Smile slime!
+ghost-role-information-smile-name = "Smile the Slime"
+ghost-role-information-smile-description = Smile's off collecting a Nobel Prize, so this scurret is filling in. Wawa!
 
-ghost-role-information-punpun-name = Pun Pun
-ghost-role-information-punpun-description = An honorable member of the monkey society in charge of the bar and helping the bartenders in any way he can.
+ghost-role-information-punpun-name = Wa Wa
+ghost-role-information-punpun-description = An independently-minded scurret filling in for Pun whilst he's on holiday. You're a scurret in a top hat. What more could you possibly ask for in life?
+
+ghost-role-information-emotional-support-scurret-name = Emotional Support Scurret
+ghost-role-information-emotional-support-scurret-description = Support the crew, be adorable, enjoy April Fools! Wawa!
 
 ghost-role-information-xeno-name = Xeno
 ghost-role-information-xeno-description = You are a xeno, co-operate with your hive to kill all crewmembers!
@@ -98,8 +107,8 @@ ghost-role-information-salvage-carp-description = Defend the loot inside the sal
 ghost-role-information-sentient-carp-name = Sentient Carp
 ghost-role-information-sentient-carp-description = Help the dragon flood the station with carps!
 
-ghost-role-information-willow-name = Willow the Kangaroo
-ghost-role-information-willow-description = You're a kangaroo named Willow! Willow likes to box.
+ghost-role-information-willow-name = "Willow the Kangaroo"
+ghost-role-information-willow-description = You're not a kangaroo named Willow! You like to bite. Wawa!
 
 ghost-role-information-honkbot-name = Honkbot
 ghost-role-information-honkbot-description = An artificial being of pure evil.
@@ -152,11 +161,11 @@ ghost-role-information-skeleton-biker-description = Ride around on your sweet ri
 ghost-role-information-closet-skeleton-name = Closet Skeleton
 ghost-role-information-closet-skeleton-description = You are arguably one of the oldest members of the station! Get your old job back, or cause chaos! The world is yours to shape.
 
-ghost-role-information-remilia-name = Remilia, the Chaplain's Familiar
-ghost-role-information-remilia-description = Follow and obey the chaplain. Eat fruit. Screech loudly into people's ears and write it off as echolocation.
+ghost-role-information-remilia-name = Definitely not Remilia, the Chaplain's Familiar
+ghost-role-information-remilia-description = You knew that bat tasted funny. Wawa!
 
-ghost-role-information-cerberus-name = Cerberus, Evil Familiar
-ghost-role-information-cerberus-description = Obey your master. Spread chaos.
+ghost-role-information-cerberus-name = A Slightly-Burnt Scurret
+ghost-role-information-cerberus-description = Obey your master? Spread chaos? Wawa!
 
 ghost-role-information-ert-leader-name = ERT Leader
 ghost-role-information-ert-leader-description = Lead a team of specialists to resolve the station's issues.

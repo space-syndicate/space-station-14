@@ -217,6 +217,9 @@
   id: CapacitorStockPart
 
 - type: Tag
+  id: CaptainIDCard
+
+- type: Tag
   id: CaptainSabre
 
 - type: Tag
@@ -374,6 +377,9 @@
 - type: Tag
   id: CoordinatesDisk
 
+- type: Tag
+  id: CorgiWearable
+
 - type: Tag #Ohioans die happy
   id: Corn
 
@@ -526,6 +532,12 @@
 
 - type: Tag
   id: EmitterBolt
+
+- type: Tag
+  id: EnergyKatana
+
+- type: Tag
+  id: EnergySword
 
 - type: Tag
   id: Enzyme
@@ -1037,6 +1049,9 @@
 
 - type: Tag
   id: PlushieSharkPink
+  
+- type: Tag
+  id: PlushieThrongler
 
 - type: Tag
   id: Potato
@@ -1166,10 +1181,16 @@
   id: SignalTrigger
 
 - type: Tag
+  id: SilentStorageUser # used in SharedStorageSystem, so the entity will do all silently
+
+- type: Tag
   id: SkeletonMotorcycleKeys
 
 - type: Tag
   id: Skewer
+
+- type: Tag
+  id: Sledgehammer
 
 - type: Tag
   id: Slice # sliced fruit, vegetables, pizza etc.
@@ -1235,6 +1256,9 @@
   id: Steak
 
 - type: Tag
+  id: Stunbaton
+
+- type: Tag
   id: StringInstrument
 
 - type: Tag
@@ -1254,6 +1278,9 @@
 
 - type: Tag
   id: Syndicate
+
+- type: Tag
+  id: SyndicateIDCard
 
 - type: Tag
   id: SyndicateSegwayKeys
@@ -1350,6 +1377,9 @@
 
 - type: Tag
   id: WeaponAntiqueLaser
+
+- type: Tag
+  id: WeaponCrusherDagger
 
 - type: Tag
   id: WeaponPistolCHIMPUpgradeKit

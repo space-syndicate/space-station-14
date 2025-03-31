@@ -643,6 +643,27 @@
         - ReagentId: Sulfur
           Quantity: 30
 
+- type: entity
+  parent: BaseChemistryBottleFilled
+  id: ChemistryBottleCorgiJuice
+  suffix: essence of corgi
+  components:
+  - type: Label
+    currentLabel: reagent-name-corgijuice
+  - type: SolutionContainerManager
+    solutions:
+      drink:
+        maxVol: 30
+        reagents:
+        - ReagentId: CorgiJuice
+          Quantity: 30
+  - type: SolutionRegeneration
+    solution: drink
+    generated:
+      reagents:
+      - ReagentId: CorgiJuice
+        Quantity: 0.075
+
 # Entity tables
 - type: entityTable
   id: BasicReagentBottlesTable
