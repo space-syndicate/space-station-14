@@ -5,7 +5,7 @@
   maxRandomOffset: 0
   randomRotation: false
   minPlayers: 0
-  maxPlayers: 15
+  # maxPlayers: 15 # Corvax-AprilFools
   stations:
     Frame:
       stationProto: StandardNanotrasenStation

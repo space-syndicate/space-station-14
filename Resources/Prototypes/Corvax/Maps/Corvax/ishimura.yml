@@ -4,8 +4,10 @@
   mapPath: /Maps/Corvax/corvax_ishimura.yml
   maxRandomOffset: 0
   randomRotation: false
-  minPlayers: 20
-  maxPlayers: 50
+  # Corvax-AprilFools-start
+  minPlayers: 0
+  # maxPlayers: 50
+  # Corvax-AprilFools-end
   stations:
     Ishimura:
       stationProto: StandardNanotrasenStation

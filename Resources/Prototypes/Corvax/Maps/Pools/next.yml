@@ -1,28 +1,8 @@
 - type: gameMapPool
   id: NextMapPool
   maps:
-  # Highpop 55+
-  - NextDelta
-  - NextAvrite
-  - NextAstra
-  - NextPilgrim # 40+
-  - NextBox
-
-  # Semi-Highpop 25–65
-  - NextBagel
-  # Midpop 25–55
-  - NextPaper
-  - NextOutpost
-  - NextAwesome
-  - CorvaxPearl
-  - NextAmber
-  - NextMarathon
-
-  # Semi-Midpop 0–35
-  - NextMaus
-  # Lowpop 0–25
-  - CorvaxCute
-  - NextSilly
-  - NextTushkan
-  - NextOmega
-  - NextPacked
+  - CorvaxAstra
+  - CorvaxIshimura
+  - CorvaxFrame
+  - CorvaxGelta
+  - Relic
