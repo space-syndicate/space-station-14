@@ -76,3 +76,13 @@
       mindRoles: [ MindRoleVoxRaidersCommander ]
       briefing:
         sound: "/Audio/_CorvaxNext/Misc/vox_raiders_greeting.ogg"
+
+- type: entity
+  id: BattleRoyale
+  name: Battle Royale
+  parent: BaseGameRule
+  components:
+  - type: BattleRoyaleRule
+    gear: BattleRoyaleGear 
+    roundEndDelay: 10
+  - type: PointManager

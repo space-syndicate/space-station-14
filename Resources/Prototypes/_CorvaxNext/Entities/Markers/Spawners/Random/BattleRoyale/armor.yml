@@ -1,0 +1,100 @@
+# Armor
+- type: entityTable
+  id: RoyaleArmorTable
+  table: !type:GroupSelector
+    children:
+    # Tier 1 - Common (30%)
+    - !type:GroupSelector
+      weight: 30
+      children:
+      - id: ClothingOuterArmorBasicSlim
+      - id: ClothingOuterHardsuitBasic
+      - id: ClothingOuterHardsuitSalvage
+      - id: ClothingOuterHardsuitSpatio
+      - id: ClothingOuterHardsuitEngineering
+      - id: ClothingOuterSuitFire
+    # Tier 1 - Uncommon (20%)
+    - !type:GroupSelector
+      weight: 20
+      children:
+      - id: ClothingOuterArmorBulletproof
+      - id: ClothingOuterArmorRiot
+      - id: ClothingOuterHardsuitSecurity
+      - id: ClothingOuterHardsuitAtmos
+      - id: ClothingOuterHardsuitGoliath
+      - id: ClothingOuterSuitBomb
+      - id: ClothingOuterSuitAtmosFire
+      - id: ClothingOuterArmorChangeling
+      - id: ClothingOuterArmorPodWars
+    # Tier 2 - Rare (15%)
+    - !type:GroupSelector
+      weight: 15
+      children:
+      - id: ClothingOuterArmorReflective
+      - id: ClothingOuterHardsuitBrigmedic
+      - id: ClothingOuterHardsuitWarden
+      - id: ClothingOuterHardsuitSecurityRed
+      - id: ClothingOuterHardsuitEngineeringWhite
+      - id: ClothingOuterHardsuitMedical
+      - id: ClothingOuterArmorHeavy
+      - id: ClothingOuterArmorHeavyGreen
+      - id: ClothingOuterArmorHeavyRed
+      - id: ClothingOuterArmorCaptainCarapace
+    # Tier 3 - Very Rare (10%)
+    - !type:GroupSelector
+      weight: 10
+      children:
+      - id: ClothingOuterHardsuitCap
+      - id: ClothingOuterHardsuitRd
+      - id: ClothingOuterHardsuitSyndie
+      - id: ClothingOuterHardsuitMaxim
+      - id: ClothingOuterArmorRaid
+      - id: ClothingOuterHardsuitSyndieMedic
+      - id: ClothingOuterArmorHeretic
+      - id: ClothingOuterHardsuitVoxRaidersCombat
+      - id: ClothingOuterHardsuitVoxRaidersEngineer
+      - id: ClothingOuterHardsuitVoxRaidersMedical
+    # Tier 4 - Epic (5%)
+    - !type:GroupSelector
+      weight: 5
+      children:
+      - id: ClothingOuterHardsuitSyndieElite
+      - id: ClothingOuterHardsuitSyndieCommander
+      - id: ClothingOuterHardsuitDeathsquad
+      - id: ClothingOuterHardsuitCBURN
+      - id: ClothingOuterHardsuitCBURNLeader
+      - id: ClothingOuterHardsuitERTLeader
+      - id: ClothingOuterHardsuitERTSecurity
+      - id: ClothingOuterHardsuitERTChaplain
+      - id: ClothingOuterSuitSpaceNinja
+      - id: ClothingOuterHardsuitVoxRaidersStealth
+    # Tier 5 - Fun (2%)
+    - !type:GroupSelector
+      weight: 2
+      children:
+      - id: ClothingOuterHardsuitClown
+      - id: ClothingOuterHardsuitMime
+      - id: ClothingOuterHardsuitWizard
+      - id: ClothingOuterHardsuitSanta
+      - id: ClothingOuterHardsuitLing
+      - id: ClothingOuterHardsuitCarp
+      - id: ClothingOuterSuitChicken
+      - id: ClothingOuterSuitMonkey
+      - id: ClothingOuterSuitIan
+
+- type: entity
+  name: BR Armor Spawner
+  description: BR issue
+  suffix: DO NOT MAP, Battle Royal
+  id: RoyalArmorTableSpawner
+  parent: MarkerBase
+  components:
+  - type: Sprite
+    layers:
+    - state: red
+    - sprite: Clothing/OuterClothing/Armor/captain_carapace.rsi
+      state: icon
+  - type: EntityTableSpawner
+    table: !type:NestedSelector
+      tableId: RoyaleArmorTable
+      prob: 0.9

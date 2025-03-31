@@ -1,0 +1,231 @@
+- type: entity
+  name: basic omniheal injector
+  parent: ChemicalMedipen
+  id: RoyalOmnihealT1Medipen
+  suffix: DO NOT MAP, Battle Royal
+  description: A standard medical auto-injector containing 5 units of Omniheal. Effective for treating minor injuries and stabilizing patients.
+  components:
+  - type: Sprite
+    sprite: Objects/Specific/Medical/medipen.rsi
+    layers:
+    - state: medipen
+      map: ["enum.SolutionContainerLayers.Fill"]
+  - type: SolutionContainerVisuals
+    maxFillLevels: 1
+    changeColor: true
+    emptySpriteName: medipen_empty
+  - type: Hypospray
+    solutionName: pen
+    transferAmount: 5
+    onlyAffectsMobs: false
+    injectOnly: true
+  - type: SolutionContainerManager
+    solutions:
+      pen:
+        maxVol: 5
+        reagents:
+        - ReagentId: RoyalOmniheal
+          Quantity: 5
+
+- type: entity
+  name: enhanced omniheal injector
+  parent: ChemicalMedipen
+  id: RoyalOmnihealT2Medipen
+  suffix: DO NOT MAP, Battle Royal
+  description: An improved medical auto-injector containing 10 units of Omniheal. Effectively treats moderate injuries and provides rapid tissue regeneration.
+  components:
+  - type: Sprite
+    sprite: Objects/Specific/Medical/medipen.rsi
+    layers:
+    - state: penacid
+      map: ["enum.SolutionContainerLayers.Fill"]
+  - type: SolutionContainerVisuals
+    maxFillLevels: 1
+    changeColor: true
+    emptySpriteName: penacid_empty
+  - type: Hypospray
+    solutionName: pen
+    transferAmount: 10
+    onlyAffectsMobs: false
+    injectOnly: true
+  - type: SolutionContainerManager
+    solutions:
+      pen:
+        maxVol: 10
+        reagents:
+        - ReagentId: RoyalOmniheal
+          Quantity: 10
+
+- type: entity
+  name: advanced omniheal injector
+  parent: ChemicalMedipen
+  id: RoyalOmnihealT3Medipen
+  suffix: DO NOT MAP, Battle Royal
+  description: An advanced medical auto-injector containing 15 units of Omniheal. Designed for treating severe injuries and critical conditions.
+  components:
+  - type: Sprite
+    sprite: Objects/Specific/Medical/medipen.rsi
+    layers:
+    - state: stimpen
+      map: ["enum.SolutionContainerLayers.Fill"]
+  - type: SolutionContainerVisuals
+    maxFillLevels: 1
+    changeColor: true
+    emptySpriteName: stimpen_empty
+  - type: Hypospray
+    solutionName: pen
+    transferAmount: 15
+    onlyAffectsMobs: false
+    injectOnly: true
+  - type: SolutionContainerManager
+    solutions:
+      pen:
+        maxVol: 15
+        reagents:
+        - ReagentId: RoyalOmniheal
+          Quantity: 15
+
+- type: entity
+  name: experimental omniheal injector
+  parent: ChemicalMedipen
+  id: RoyalOmnihealT4Medipen
+  suffix: DO NOT MAP, Battle Royal
+  description: A military-grade auto-injector containing 30 units of Omniheal. For extreme emergencies only. Can revitalize even the most gravely injured patients.
+  components:
+  - type: Sprite
+    sprite: Objects/Specific/Medical/medipen.rsi
+    layers:
+    - state: morphen
+      map: ["enum.SolutionContainerLayers.Fill"]
+  - type: SolutionContainerVisuals
+    maxFillLevels: 1
+    changeColor: true
+    emptySpriteName: morphen_empty
+  - type: Hypospray
+    solutionName: pen
+    transferAmount: 30
+    onlyAffectsMobs: false
+    injectOnly: true
+  - type: SolutionContainerManager
+    solutions:
+      pen:
+        maxVol: 30
+        reagents:
+        - ReagentId: RoyalOmniheal
+          Quantity: 30
+
+- type: entity
+  name: basic hyperphase injector
+  parent: ChemicalMedipen
+  id: RoyalHyperphaseT1Medipen
+  suffix: DO NOT MAP, Battle Royal
+  description: A standard auto-injector containing 5 units of Hyperphase. Provides a short boost to physical capabilities and clears minor status effects.
+  components:
+  - type: Sprite
+    sprite: Objects/Specific/Medical/medipen.rsi
+    layers:
+    - state: microstimpen
+      map: ["enum.SolutionContainerLayers.Fill"]
+  - type: SolutionContainerVisuals
+    maxFillLevels: 1
+    changeColor: true
+    emptySpriteName: microstimpen_empty
+  - type: Hypospray
+    solutionName: pen
+    transferAmount: 5
+    onlyAffectsMobs: false
+    injectOnly: true
+  - type: SolutionContainerManager
+    solutions:
+      pen:
+        maxVol: 5
+        reagents:
+        - ReagentId: RoyalHyperphase
+          Quantity: 5
+
+- type: entity
+  name: enhanced hyperphase injector
+  parent: ChemicalMedipen
+  id: RoyalHyperphaseT2Medipen
+  suffix: DO NOT MAP, Battle Royal
+  description: An improved auto-injector containing 10 units of Hyperphase. Significantly enhances combat performance and neutralizes most debilitating effects.
+  components:
+  - type: Sprite
+    sprite: Objects/Specific/Medical/medipen.rsi
+    layers:
+    - state: microstimpen
+      map: ["enum.SolutionContainerLayers.Fill"]
+  - type: SolutionContainerVisuals
+    maxFillLevels: 1
+    changeColor: true
+    emptySpriteName: microstimpen_empty
+  - type: Hypospray
+    solutionName: pen
+    transferAmount: 8
+    onlyAffectsMobs: false
+    injectOnly: true
+  - type: SolutionContainerManager
+    solutions:
+      pen:
+        maxVol: 8
+        reagents:
+        - ReagentId: RoyalHyperphase
+          Quantity: 8
+
+- type: entity
+  name: advanced omnibuff injector
+  parent: ChemicalMedipen
+  id: RoyalHyperphaseT3Medipen
+  suffix: DO NOT MAP, Battle Royal
+  description: An advanced auto-injector containing 15 units of Hyperphase. Reserved for elite operatives. Provides exceptional performance enhancement and system purging.
+  components:
+  - type: Sprite
+    sprite: Objects/Specific/Medical/medipen.rsi
+    layers:
+    - state: microstimpen
+      map: ["enum.SolutionContainerLayers.Fill"]
+  - type: SolutionContainerVisuals
+    maxFillLevels: 1
+    changeColor: true
+    emptySpriteName: microstimpen_empty
+  - type: Hypospray
+    solutionName: pen
+    transferAmount: 12
+    onlyAffectsMobs: false
+    injectOnly: true
+  - type: SolutionContainerManager
+    solutions:
+      pen:
+        maxVol: 12
+        reagents:
+        - ReagentId: RoyalHyperphase
+          Quantity: 12
+
+- type: entity
+  name: experimental omnibuff injector
+  parent: ChemicalMedipen
+  id: RoyalHyperphaseT4Medipen
+  suffix: DO NOT MAP, Battle Royal
+  description: "An experimental auto-injector containing 20 units of Hyperphase. WARNING: Approaches lethal dosage. Provides maximum performance at extreme risk"
+  components:
+  - type: Sprite
+    sprite: Objects/Specific/Medical/medipen.rsi
+    layers:
+    - state: microstimpen
+      map: ["enum.SolutionContainerLayers.Fill"]
+  - type: SolutionContainerVisuals
+    maxFillLevels: 1
+    changeColor: true
+    emptySpriteName: microstimpen_empty
+  - type: Hypospray
+    solutionName: pen
+    transferAmount: 20
+    onlyAffectsMobs: false
+    injectOnly: true
+  - type: SolutionContainerManager
+    solutions:
+      pen:
+        maxVol: 20
+        reagents:
+        - ReagentId: RoyalHyperphase
+          Quantity: 20

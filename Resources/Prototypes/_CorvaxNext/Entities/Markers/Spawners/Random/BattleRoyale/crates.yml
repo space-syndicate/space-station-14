@@ -1,0 +1,17 @@
+- type: entity
+  name: supply drop spawner
+  description: BR issue
+  suffix: DO NOT MAP, Battle Royal
+  id: RoyalCrateSupplyDropSpawner
+  parent: MarkerBase
+  components:
+    - type: Sprite
+      layers:
+        - state: red
+        - sprite: Structures/Storage/Crates/piratechest.rsi
+          state: crate_icon
+    - type: RandomSpawner
+      prototypes:
+        - RoyalCrateSupplyDrop
+      chance: 0.5
+      offset: 0.0
