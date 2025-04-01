@@ -82,7 +82,6 @@ namespace Content.IntegrationTests.Tests
             "Convex",
             "Relic",
             "Lavatest", // Lavaland Change
-			"BattleRoyale", // BattleRoyale Change
         };
 
         /// <summary>

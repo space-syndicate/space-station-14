@@ -78,13 +78,6 @@ public sealed class DynamicRangeSystem : EntitySystem
                 comp.PreviousShrinking = comp.IsShrinking;
                 comp.PreviousShrinkTime = comp.ShrinkTime;
                 comp.PreviousMinRange = comp.MinimumRange;
-                
-                if (comp.IsShrinking && (!comp.ShrinkStartTime.HasValue || !comp.InitialRange.HasValue))
-                    {
-                        comp.ShrinkStartTime = curTime;
-                        comp.InitialRange = comp.Range;
-                    }
-                    
                 continue;
             }
 
