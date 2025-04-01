@@ -1,0 +1,19 @@
+- type: gameMap
+  id: BattleRoyale
+  mapName: 'Battle Royale'
+  mapPath: /Maps/_CorvaxNext/Nonstations/battleroyale.yml
+  maxRandomOffset: 0
+  randomRotation: false
+  minPlayers: 0
+  stations:
+    Battleroyale:
+      stationProto: StandardNanotrasenStation
+      components:
+        - type: StationNameSetup
+          mapNameTemplate: '{0} битва {1}'
+          nameGenerator:
+            !type:NanotrasenNameGenerator
+            prefixCreator: 'Королевская'
+        - type: StationJobs
+          availableJobs:
+            Passenger: [ -1, -1 ]

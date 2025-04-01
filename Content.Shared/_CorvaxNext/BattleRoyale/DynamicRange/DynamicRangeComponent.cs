@@ -15,31 +15,31 @@ namespace Content.Shared._CorvaxNext.BattleRoyale.DynamicRange;
 public sealed partial class DynamicRangeComponent : Component
 {
     [DataField, AutoNetworkedField, ViewVariables(VVAccess.ReadWrite)]
-    public float Range = 78f;
+    public float Range = 200f;
 
     [DataField, AutoNetworkedField, ViewVariables(VVAccess.ReadWrite)]
     public Vector2 Origin;
 
     [DataField, AutoNetworkedField, ViewVariables(VVAccess.ReadWrite)]
-    public bool IsShrinking = false;
+    public bool IsShrinking = true;
 
     [DataField, AutoNetworkedField, ViewVariables(VVAccess.ReadWrite)]
-    public float ShrinkTime = 100f;
+    public float ShrinkTime = 900f;
 
     [DataField, ViewVariables(VVAccess.ReadWrite)]
-    public float MinimumRange = 5f;
+    public float MinimumRange = 10f;
     
     [DataField, ViewVariables(VVAccess.ReadWrite)]
-    public float MinOriginX = -10f;
+    public float MinOriginX = -60f;
 
     [DataField, ViewVariables(VVAccess.ReadWrite)]
-    public float MaxOriginX = 10f;
+    public float MaxOriginX = 120f;
 
     [DataField, ViewVariables(VVAccess.ReadWrite)]
-    public float MinOriginY = -10f;
+    public float MinOriginY = -50f;
 
     [DataField, ViewVariables(VVAccess.ReadWrite)]
-    public float MaxOriginY = 10f;
+    public float MaxOriginY = 120f;
     
     [DataField, ViewVariables(VVAccess.ReadWrite)]
     public float DamageInterval = 1.0f;
