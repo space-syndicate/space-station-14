@@ -181,6 +181,10 @@
     malus: 0.225
   - type: ThrowingAngle
     angle: 225
+  - type: Tag
+    tags:
+    - Knife
+    - WeaponCrusherDagger
 
 # Like a crusher... but better
 - type: entity

@@ -23,7 +23,7 @@ using System.Text;
 
 namespace Content.Server.GameTicking.Rules;
 
-public sealed class TraitorRuleSystem : GameRuleSystem<TraitorRuleComponent>
+public sealed partial class TraitorRuleSystem : GameRuleSystem<TraitorRuleComponent>
 {
     private static readonly Color TraitorCodewordColor = Color.FromHex("#cc3b3b");
 
@@ -58,6 +58,9 @@ public sealed class TraitorRuleSystem : GameRuleSystem<TraitorRuleComponent>
     {
         Log.Debug($"AfterAntagEntitySelected {ToPrettyString(ent)}");
         MakeTraitor(args.EntityUid, ent);
+
+        // April Fools - Scurrets
+        HandleMakingScurretsAntags(ent, ref args);
     }
 
     private void SetCodewords(TraitorRuleComponent component, EntityUid ruleEntity)
@@ -178,7 +181,7 @@ public sealed class TraitorRuleSystem : GameRuleSystem<TraitorRuleComponent>
         Note[]? code = null;
 
         Log.Debug($"MakeTraitor {ToPrettyString(traitor)} - Uplink add");
-        var uplinked = _uplink.AddUplink(traitor, startingBalance, pda, true);
+        var uplinked = _uplink.AddUplink(traitor, startingBalance, out startingBalance, pda, true);
 
         if (pda is not null && uplinked)
         {

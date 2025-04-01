@@ -189,7 +189,7 @@ namespace Content.Server.RoundEnd
                 null,
                 Color.Gold);
 
-            if (!_autoCalledBefore) _audio.PlayGlobal("/Audio/Announcements/shuttlecalled.ogg", Filter.Broadcast(), true, AudioParams.Default.AddVolume(-4)); // Corvax-Announcements: Custom sound for auto-called
+            if (!_autoCalledBefore) _audio.PlayGlobal("/Audio/Announcements/Intern/shuttlecalled.ogg", Filter.Broadcast(), true, AudioParams.Default.AddVolume(-4)); // Corvax-Announcements: Custom sound for auto-called
             else _audio.PlayGlobal("/Audio/Corvax/Announcements/crew_s_called.ogg", Filter.Broadcast(), true, AudioParams.Default.AddVolume(-4)); // Corvax-Announcements
 
             LastCountdownStart = _gameTiming.CurTime;
@@ -238,7 +238,7 @@ namespace Content.Server.RoundEnd
             _chatSystem.DispatchGlobalAnnouncement(Loc.GetString("round-end-system-shuttle-recalled-announcement"),
                 Loc.GetString("Station"), false, colorOverride: Color.Gold);
 
-            _audio.PlayGlobal("/Audio/Announcements/shuttlerecalled.ogg", Filter.Broadcast(), true, AudioParams.Default.AddVolume(-4)); // Corvax-Announcements: Decrease volume
+            _audio.PlayGlobal("/Audio/Announcements/Intern/shuttlerecalled.ogg", Filter.Broadcast(), true, AudioParams.Default.AddVolume(-4)); // Corvax-Announcements: Decrease volume
 
             LastCountdownStart = null;
             ExpectedCountdownEnd = null;
