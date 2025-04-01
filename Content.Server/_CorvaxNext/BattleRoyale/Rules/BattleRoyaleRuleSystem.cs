@@ -122,7 +122,7 @@ namespace Content.Server._CorvaxNext.BattleRoyale.Rules
                 var message = Loc.GetString("battle-royale-kill-or-be-killed");
                 var title = Loc.GetString("battle-royale-title");
             
-                var sound = new SoundPathSpecifier("/Audio/Announcements/war.ogg");
+                var sound = new SoundPathSpecifier("/Audio/Ambience/Antag/traitor_start.ogg");
             
                 _chatSystem.DispatchGlobalAnnouncement(message, title, true, sound, Color.Red);
             });
