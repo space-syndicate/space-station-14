@@ -1,0 +1,306 @@
+# Base benches
+- type: entity
+  name: sofa
+  id: SofaBaseMiddle
+  suffix: Middle
+  abstract: true
+  parent: SeatBase
+  description: Multiple seats spanning a single object. Truly a marvel of science.
+  placement:
+    mode: SnapgridCenter
+  components:
+  - type: Transform
+    anchored: true
+  - type: Rotatable
+  - type: Sprite
+    sprite: _CorvaxNext/Structures/Furniture/Bench/sofa.rsi
+  - type: Physics
+    bodyType: Static
+    canCollide: false
+
+- type: entity
+  name: Chapel bench
+  id: BenchChapelMiddle
+  parent: BenchComfy
+  placement:
+    mode: SnapgridCenter
+  components:
+  - type: Sprite
+    sprite: _CorvaxNext/Structures/Furniture/Bench/comf_bench.rsi
+    layers:
+    - state: pewmiddle
+  - type: Construction
+    graph: CompositesBench
+    node: woodenbenchMiddle
+
+- type: entity
+  id: BenchChapelLeft
+  suffix: Left
+  parent: BenchChapelMiddle
+  components:
+  - type: Sprite
+    layers:
+    - state: pewend_left
+  - type: Construction
+    graph: CompositesBench
+    node: woodenbenchLeft
+
+- type: entity
+  id: BenchChapelRight
+  suffix: Right
+  parent: BenchChapelMiddle
+  components:
+  - type: Sprite
+    layers:
+    - state: pewend_right
+  - type: Construction
+    graph: CompositesBench
+    node: woodenbenchRight
+
+- type: entity
+  name: sofa
+  id: SofaMiddle
+  parent: SofaBaseMiddle
+  components:
+  - type: Sprite
+    state: sofamiddle
+  - type: Construction
+    graph: CompositesBench
+    node: sofaMiddle
+
+- type: entity
+  id: SofaLeft
+  suffix: Left
+  parent: SofaMiddle
+  components:
+  - type: Sprite
+    state: sofaend_left
+  - type: Construction
+    graph: CompositesBench
+    node: sofaLeft
+
+- type: entity
+  id: SofaRight
+  suffix: Right
+  parent: SofaMiddle
+  components:
+  - type: Sprite
+    state: sofaend_right
+  - type: Construction
+    graph: CompositesBench
+    node: sofaRight
+
+- type: entity
+  name: sofa
+  id: SofaCorner
+  suffix: Corner
+  placement:
+    mode: SnapgridCenter
+  components:
+  - type: Transform
+    anchored: true
+  - type: Rotatable
+  - type: Sprite
+    sprite: _CorvaxNext/Structures/Furniture/Bench/sofa.rsi
+    state: sofacorner
+  - type: Clickable
+  - type: InteractionOutline
+  - type: Physics
+    bodyType: Static
+    canCollide: false
+  - type: Pullable
+  - type: Damageable
+    damageContainer: Inorganic
+    damageModifierSet: Metallic
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 50
+      behaviors:
+      - !type:DoActsBehavior
+        acts: ["Destruction"]
+      - !type:PlaySoundBehavior
+        sound:
+          collection: MetalBreak
+  - type: Construction
+    graph: CompositesBench
+    node: sofaCorner
+
+- type: entity
+  name: corp sofa
+  id: CorpSofaMiddle
+  parent: SofaBaseMiddle
+  components:
+  - type: Sprite
+    state: corp_sofamiddle
+  - type: Construction
+    graph: CompositesBench
+    node: corpsofaMiddle
+
+- type: entity
+  id: CorpSofaLeft
+  suffix: Left
+  parent: CorpSofaMiddle
+  components:
+  - type: Sprite
+    state: corp_sofaend_left
+  - type: Construction
+    graph: CompositesBench
+    node: corpsofaLeft
+
+- type: entity
+  id: CorpSofaRight
+  suffix: Right
+  parent: CorpSofaMiddle
+  components:
+  - type: Sprite
+    state: corp_sofaend_right
+  - type: Construction
+    graph: CompositesBench
+    node: corpsofaRight
+
+- type: entity
+  id: CorpSofaCorner
+  suffix: Corner
+  parent: SofaCorner
+  components:
+  - type: Sprite
+    state: corp_sofacorner
+  - type: Construction
+    graph: CompositesBench
+    node: corpsofaCorner
+
+- type: entity
+  name: bench
+  id: BenchComfyMiddle
+  parent: BenchChapelMiddle
+  components:
+  - type: Sprite
+    layers:
+    - state: bench_middle_base
+      color: "#767e82"
+    - state: bench_middle_cover
+  - type: Construction
+    graph: CompositesBench
+    node: comfortableMiddle
+
+- type: entity
+  id: BenchComfyLeft
+  suffix: Left
+  parent: BenchComfyMiddle
+  components:
+  - type: Sprite
+    layers:
+    - state: bench_left_base
+      color: "#767e82"
+    - state: bench_left_cover
+  - type: Construction
+    graph: CompositesBench
+    node: comfortableLeft
+
+- type: entity
+  id: BenchComfyRight
+  suffix: Right
+  parent: BenchComfyMiddle
+  components:
+  - type: Sprite
+    layers:
+    - state: bench_right_base
+      color: "#767e82"
+    - state: bench_right_cover
+  - type: Construction
+    graph: CompositesBench
+    node: comfortableRight
+
+- type: entity
+  name: bench
+  id: BenchRedComfyMiddle
+  suffix: Middle. Red
+  parent: BenchComfyMiddle
+  components:
+  - type: Sprite
+    layers:
+    - state: bench_middle_base
+      color: "#767e82"
+    - state: bench_middle_cover
+      color: "#8c4141"
+  - type: Construction
+    graph: CompositesBench
+    node: benchredMiddle
+
+- type: entity
+  id: BenchRedComfyLeft
+  suffix: Left. Red
+  parent: BenchComfyMiddle
+  components:
+  - type: Sprite
+    layers:
+    - state: bench_left_base
+      color: "#767e82"
+    - state: bench_left_cover
+      color: "#8c4141"
+  - type: Construction
+    graph: CompositesBench
+    node: benchredLeft
+
+- type: entity
+  id: BenchRedComfyRight
+  suffix: Right. Red
+  parent: BenchComfyMiddle
+  components:
+  - type: Sprite
+    layers:
+    - state: bench_right_base
+      color: "#767e82"
+    - state: bench_right_cover
+      color: "#8c4141"
+  - type: Construction
+    graph: CompositesBench
+    node: benchredRight
+
+- type: entity
+  name: bench
+  id: BenchBlueComfyMiddle
+  suffix: Middle. Blue
+  parent: BenchComfyMiddle
+  components:
+  - type: Sprite
+    layers:
+    - state: bench_middle_base
+      color: "#767e82"
+    - state: bench_middle_cover
+      color: "#334e6d"
+  - type: Construction
+    graph: CompositesBench
+    node: benchblueMiddle
+
+- type: entity
+  id: BenchBlueComfyLeft
+  suffix: Left. Blue
+  parent: BenchComfyMiddle
+  components:
+  - type: Sprite
+    layers:
+    - state: bench_left_base
+      color: "#767e82"
+    - state: bench_left_cover
+      color: "#334e6d"
+  - type: Construction
+    graph: CompositesBench
+    node: benchblueLeft
+
+- type: entity
+  id: BenchBlueComfyRight
+  suffix: Right. Blue
+  parent: BenchComfyMiddle
+  components:
+  - type: Sprite
+    layers:
+    - state: bench_right_base
+      color: "#767e82"
+    - state: bench_right_cover
+      color: "#334e6d"
+  - type: Construction
+    graph: CompositesBench
+    node: benchblueRight
