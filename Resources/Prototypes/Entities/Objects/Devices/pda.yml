@@ -463,6 +463,7 @@
     preinstalled:
       - CrewManifestCartridge
       - NotekeeperCartridge
+      - NanoTaskCartridge
       - NewsReaderCartridge
       - NanoChatCartridge # Corvax-Next-PDAChat
       - StockTradingCartridge # Corvax-Next-StockTrading
@@ -647,6 +648,7 @@
     preinstalled:
     - CrewManifestCartridge
     - NotekeeperCartridge
+    - NanoTaskCartridge
     - NewsReaderCartridge
     - WantedListCartridge
     - NanoChatCartridge # Corvax-Next-PDAChat
@@ -1233,6 +1235,7 @@
     preinstalled:
     - CrewManifestCartridge
     - NotekeeperCartridge
+    - NanoTaskCartridge
     - NewsReaderCartridge
     - NanoChatCartridge # Corvax-Next-PDAChat
     - StockTradingCartridge # Corvax-Next-StockTrading
