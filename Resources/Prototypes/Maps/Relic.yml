@@ -2,10 +2,8 @@
   id: Relic
   mapName: 'Relic'
   mapPath: /Maps/Relic.yml
-  # Corvax-AprilFools-start
-  minPlayers: 0
-  # maxPlayers: 50
-  # Corvax-AprilFools-end
+  minPlayers: 20
+  maxPlayers: 55
   stations:
     Relic:
       stationProto: StandardNanotrasenStation
