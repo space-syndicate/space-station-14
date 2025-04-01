@@ -92,13 +92,16 @@
 
 #Paramedic Voidsuit
 - type: entity
-  parent: [ClothingOuterHardsuitBase, BaseMedicalContraband]
+  parent: [ClothingOuterEVASuitBase, BaseMedicalContraband] #Despite "Voidsuits are light hardsuits", since it parents of EVA Suits, it goes with the other softsuits
   id: ClothingOuterHardsuitVoidParamed
   name: paramedic void suit
   description: A void suit made for paramedics.
   components:
   - type: Sprite
     sprite: Clothing/OuterClothing/Hardsuits/paramed.rsi
+  - layers:
+    - state: icon
+  - type: Appearance
   - type: Clothing
     sprite: Clothing/OuterClothing/Hardsuits/paramed.rsi
   - type: PressureProtection
@@ -122,9 +125,6 @@
     stealGroup: ClothingOuterHardsuitVoidParamed
   - type: ToggleableClothing
     clothingPrototype: ClothingHeadHelmetVoidParamed
-  - type: Tag
-    tags:
-    - WhitelistChameleon
   - type: ItemToggle
     onUse: false
     soundActivate:
