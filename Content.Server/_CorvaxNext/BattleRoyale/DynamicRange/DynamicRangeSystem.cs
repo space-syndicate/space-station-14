@@ -1,6 +1,5 @@
 using System.Numerics;
 using System.Linq;
-using Content.Server.Salvage;
 using Content.Shared._CorvaxNext.BattleRoyale.DynamicRange;
 using Content.Shared.Salvage;
 using Content.Server.Damage;
@@ -23,7 +22,6 @@ namespace Content.Server._CorvaxNext.BattleRoyale.DynamicRange;
 
 public sealed class DynamicRangeSystem : EntitySystem
 {
-    [Dependency] private readonly RestrictedRangeSystem _restrictedRange = default!;
     [Dependency] private readonly IMapManager _mapManager = default!;
     [Dependency] private readonly SharedTransformSystem _transform = default!;
     [Dependency] private readonly IRobustRandom _random = default!;
@@ -36,6 +34,7 @@ public sealed class DynamicRangeSystem : EntitySystem
 
     private EntityQuery<MapComponent> _mapQuery;
     private EntityQuery<TransformComponent> _xformQuery;
+    private EntityQuery<RestrictedRangeComponent> _restrictedRangeQuery;
 
     public override void Initialize()
     {
@@ -43,11 +42,18 @@ public sealed class DynamicRangeSystem : EntitySystem
 
         SubscribeLocalEvent<DynamicRangeComponent, ComponentStartup>(OnDynamicRangeStartup);
         SubscribeLocalEvent<DynamicRangeComponent, ComponentShutdown>(OnDynamicRangeShutdown);
-
         SubscribeLocalEvent<DynamicRangeComponent, AfterAutoHandleStateEvent>(OnDynamicRangeChanged);
+        
+        SubscribeLocalEvent<DynamicRangeComponent, MapInitEvent>(OnDynamicRangeMapInit);
 
         _mapQuery = GetEntityQuery<MapComponent>();
         _xformQuery = GetEntityQuery<TransformComponent>();
+        _restrictedRangeQuery = GetEntityQuery<RestrictedRangeComponent>();
+    }
+
+    private void OnDynamicRangeMapInit(EntityUid uid, DynamicRangeComponent component, MapInitEvent args)
+    {
+        RemoveBoundaryEntity(uid);
     }
 
     public override void Update(float frameTime)
@@ -59,6 +65,12 @@ public sealed class DynamicRangeSystem : EntitySystem
         var query = EntityQueryEnumerator<DynamicRangeComponent>();
         while (query.MoveNext(out var uid, out var comp))
         {
+            if (_restrictedRangeQuery.TryComp(uid, out var restrictedRange) && 
+                EntityManager.EntityExists(restrictedRange.BoundaryEntity))
+            {
+                RemoveBoundaryEntity(uid);
+            }
+
             if (!comp.OriginInitialized)
             {
                 comp.Origin = new Vector2(
@@ -70,7 +82,7 @@ public sealed class DynamicRangeSystem : EntitySystem
 
             if (!comp.Processed)
             {
-                UpdateRestrictedRange(uid, comp);
+                UpdateVisualization(uid, comp);
                 comp.Processed = true;
 
                 comp.PreviousRange = comp.Range;
@@ -80,10 +92,10 @@ public sealed class DynamicRangeSystem : EntitySystem
                 comp.PreviousMinRange = comp.MinimumRange;
                 
                 if (comp.IsShrinking && (!comp.ShrinkStartTime.HasValue || !comp.InitialRange.HasValue))
-                    {
-                        comp.ShrinkStartTime = curTime;
-                        comp.InitialRange = comp.Range;
-                    }
+                {
+                    comp.ShrinkStartTime = curTime;
+                    comp.InitialRange = comp.Range;
+                }
                     
                 continue;
             }
@@ -141,7 +153,7 @@ public sealed class DynamicRangeSystem : EntitySystem
                 if (Math.Abs(targetRange - comp.Range) >= 0.001f)
                 {
                     comp.Range = targetRange;
-                    UpdateRestrictedRange(uid, comp);
+                    UpdateVisualization(uid, comp);
                     comp.PreviousRange = targetRange;
                 }
 
@@ -155,7 +167,7 @@ public sealed class DynamicRangeSystem : EntitySystem
 
             if (!MathHelper.CloseTo(comp.PreviousRange, comp.Range) || comp.PreviousOrigin != comp.Origin)
             {
-                UpdateRestrictedRange(uid, comp);
+                UpdateVisualization(uid, comp);
 
                 if (comp.IsShrinking)
                 {
@@ -175,7 +187,8 @@ public sealed class DynamicRangeSystem : EntitySystem
             foreach (var player in players)
             {
                 var playerPos = _transform.GetWorldPosition(player);
-                var distance = (playerPos - comp.Origin).Length();
+                var centerPos = _transform.GetWorldPosition(uid) + comp.Origin;
+                var distance = (playerPos - centerPos).Length();
 
                 if (distance > comp.Range)
                 {
@@ -208,14 +221,21 @@ public sealed class DynamicRangeSystem : EntitySystem
             return;
 
         var selectedMusic = _audio.ResolveSound(component.ShrinkMusic);
+        if (ResolvedSoundSpecifier.IsNullOrEmpty(selectedMusic))
+            return;
+        
+        var xform = _xformQuery.GetComponent(uid);
+        var stationUid = _stationSystem.GetStationInMap(xform.MapID);
         
         component.PlayedShrinkMusic = true;
         
-        _sound.DispatchStationEventMusic(uid, selectedMusic, StationEventMusicType.Nuke);
+        _sound.DispatchStationEventMusic(stationUid ?? uid, selectedMusic, StationEventMusicType.Nuke);
     }
 
     private void OnDynamicRangeShutdown(EntityUid uid, DynamicRangeComponent component, ComponentShutdown args)
     {
+        RemoveBoundaryEntity(uid);
+
         if (HasComp<RestrictedRangeComponent>(uid))
             RemComp<RestrictedRangeComponent>(uid);
     }
@@ -223,11 +243,26 @@ public sealed class DynamicRangeSystem : EntitySystem
     private void OnDynamicRangeStartup(EntityUid uid, DynamicRangeComponent component, ComponentStartup args)
     {
         component.Processed = false;
+        
+        RemoveBoundaryEntity(uid);
     }
 
     private void OnDynamicRangeChanged(EntityUid uid, DynamicRangeComponent component, AfterAutoHandleStateEvent args)
     {
-        UpdateRestrictedRange(uid, component);
+        UpdateVisualization(uid, component);
+        
+        RemoveBoundaryEntity(uid);
+    }
+
+    private void RemoveBoundaryEntity(EntityUid uid)
+    {
+        if (_restrictedRangeQuery.TryComp(uid, out var restrictedRange) && 
+            EntityManager.EntityExists(restrictedRange.BoundaryEntity))
+        {
+            EntityManager.DeleteEntity(restrictedRange.BoundaryEntity);
+            restrictedRange.BoundaryEntity = EntityUid.Invalid;
+            Dirty(uid, restrictedRange);
+        }
     }
 
     public void SetRange(EntityUid uid, float range, DynamicRangeComponent? component = null)
@@ -236,7 +271,7 @@ public sealed class DynamicRangeSystem : EntitySystem
             return;
 
         component.Range = range;
-        UpdateRestrictedRange(uid, component);
+        UpdateVisualization(uid, component);
 
         if (component.IsShrinking)
         {
@@ -254,7 +289,7 @@ public sealed class DynamicRangeSystem : EntitySystem
 
         component.Origin = origin;
         component.OriginInitialized = true;
-        UpdateRestrictedRange(uid, component);
+        UpdateVisualization(uid, component);
 
         component.PreviousOrigin = origin;
     }
@@ -309,7 +344,7 @@ public sealed class DynamicRangeSystem : EntitySystem
         component.PreviousMinRange = component.MinimumRange;
     }
 
-    public void UpdateRestrictedRange(EntityUid uid, DynamicRangeComponent component)
+    private void UpdateVisualization(EntityUid uid, DynamicRangeComponent component)
     {
         var mapInitialized = false;
         var xform = _xformQuery.GetComponent(uid);
@@ -327,21 +362,13 @@ public sealed class DynamicRangeSystem : EntitySystem
             return;
         }
 
-        if (TryComp<RestrictedRangeComponent>(uid, out var oldRestricted) &&
-            oldRestricted.BoundaryEntity != EntityUid.Invalid &&
-            !Deleted(oldRestricted.BoundaryEntity))
-        {
-            QueueDel(oldRestricted.BoundaryEntity);
-        }
-
         var restricted = EnsureComp<RestrictedRangeComponent>(uid);
+        
         restricted.Range = component.Range;
         restricted.Origin = component.Origin;
-
-        restricted.BoundaryEntity = _restrictedRange.CreateBoundary(
-            new EntityCoordinates(uid, component.Origin),
-            component.Range);
-
+        
+        RemoveBoundaryEntity(uid);
+        
         Dirty(uid, restricted);
     }
 }

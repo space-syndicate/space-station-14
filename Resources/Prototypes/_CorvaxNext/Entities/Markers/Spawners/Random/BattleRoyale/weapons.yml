@@ -239,7 +239,7 @@
   - type: EntityTableSpawner
     table: !type:NestedSelector
       tableId: RoyaleShotgunTable
-      prob: 0.9
+      prob: 0.8
 
 - type: entity
   name: BR Shotgun Ammo Spawner
@@ -256,7 +256,7 @@
   - type: EntityTableSpawner
     table: !type:NestedSelector
       tableId: RoyaleShotgunAmmoTable
-      prob: 0.9
+      prob: 0.8
 
 # Rifles and Carbines
 - type: entityTable
@@ -296,7 +296,6 @@
       weight: 5
       children:
       - id: WeaponRifleM90GrenadeLauncher
-      - id: WeaponPulseRifle
       - id: WeaponPulseCarbine
     # Tier 5 - Fun (2%)
     - !type:GroupSelector
@@ -374,7 +373,7 @@
   - type: EntityTableSpawner
     table: !type:NestedSelector
       tableId: RoyaleCarbineTable
-      prob: 0.9
+      prob: 0.7
 
 - type: entity
   name: BR Rifle Ammo Spawner
@@ -391,7 +390,7 @@
   - type: EntityTableSpawner
     table: !type:NestedSelector
       tableId: RoyaleCarbineAmmoTable
-      prob: 0.9
+      prob: 0.7
 
 # Heavy and Grenades
 - type: entityTable
@@ -462,7 +461,7 @@
   - type: EntityTableSpawner
     table: !type:NestedSelector
       tableId: RoyaleHeavyTable
-      prob: 0.9
+      prob: 0.5
 
 # Melee
 - type: entityTable
@@ -564,4 +563,4 @@
   - type: EntityTableSpawner
     table: !type:NestedSelector
       tableId: RoyaleMeleeTable
-      prob: 0.9
+      prob: 0.8
