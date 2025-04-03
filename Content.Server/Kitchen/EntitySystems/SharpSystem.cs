@@ -80,7 +80,6 @@ public sealed class SharpSystem : EntitySystem
         // if the user isn't the entity with the sharp component,
         // they will need to be holding something with their hands, so we set needHand to true
         // so that the doafter can be interrupted if they drop the item in their hands
-
         var needHand = user != knife;
         // Corvax-Next-Skills-Start
         var delayModifier = hasMobState && !_skills.HasSkill(user, Skills.Butchering) ? ButcherDelayModifierWithoutSkill : 1;
