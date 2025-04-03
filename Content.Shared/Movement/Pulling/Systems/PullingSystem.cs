@@ -822,9 +822,10 @@ public sealed class PullingSystem : EntitySystem
         if (!ignoreCombatMode)
             if (!_combatMode.IsInCombatMode(puller))
                 return false;
+        // Corvax-Next-GrabComponent-Start
             if (!HasComp<CanChokeGrabComponent>(puller))
                 return false;
-
+        // Corvax-Next-GrabComponent-End
         // It's blocking stage update, maybe better UX?
         if (puller.Comp.GrabStage == GrabStage.Suffocate)
         {

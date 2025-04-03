@@ -64,11 +64,11 @@ public sealed class SharpSystem : EntitySystem
 
         if (!TryComp<SharpComponent>(knife, out var sharp))
             return false;
-
+        // Corvax-Next-Skills-Start
         var hasMobState = TryComp<MobStateComponent>(target, out var mobState);
         if (hasMobState && !_mobStateSystem.IsDead(target, mobState))
             return false;
-
+        // Corvax-Next-Skills-End
         if (butcher.Type != ButcheringType.Knife && target != user)
         {
             _popupSystem.PopupEntity(Loc.GetString("butcherable-different-tool", ("target", target)), knife, user);
@@ -82,6 +82,7 @@ public sealed class SharpSystem : EntitySystem
         // so that the doafter can be interrupted if they drop the item in their hands
 
         var needHand = user != knife;
+        // Corvax-Next-Skills-Start
         var delayModifier = hasMobState && !_skills.HasSkill(user, Skills.Butchering) ? ButcherDelayModifierWithoutSkill : 1;
 
         var doAfter = new DoAfterArgs(
@@ -97,7 +98,7 @@ public sealed class SharpSystem : EntitySystem
             BreakOnMove = true,
             NeedHand = needHand,
         };
-
+        // Corvax-Next-Skills-End
         _doAfterSystem.TryStartDoAfter(doAfter);
         return true;
     }
