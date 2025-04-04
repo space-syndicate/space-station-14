@@ -1,7 +1,9 @@
 - type: gameMap
   id: NextMarathon
-  mapName: 'Next Marathon'
+  mapName: 'NTDC Марафон'
   mapPath: /Maps/Next/next_marathon.yml
+  maxRandomOffset: 0
+  randomRotation: false
   minPlayers: 25
   maxPlayers: 55
   stations:

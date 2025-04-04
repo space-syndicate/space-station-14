@@ -1,7 +1,9 @@
 - type: gameMap
   id: NextPacked
-  mapName: 'Next Packed'
+  mapName: 'NTVG Пакет'
   mapPath: /Maps/Next/next_packed.yml
+  maxRandomOffset: 0
+  randomRotation: false
   minPlayers: 0
   maxPlayers: 25
   stations:

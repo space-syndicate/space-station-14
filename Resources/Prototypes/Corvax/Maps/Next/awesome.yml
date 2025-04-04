@@ -1,7 +1,9 @@
 - type: gameMap
   id: NextAwesome
-  mapName: 'Next Awesome'
+  mapName: 'NTTBK Авесом'
   mapPath: /Maps/Next/next_awesome.yml
+  maxRandomOffset: 0
+  randomRotation: false
   minPlayers: 25
   maxPlayers: 55
   stations:

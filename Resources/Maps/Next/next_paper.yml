@@ -2,9 +2,9 @@ meta:
   format: 7
   category: Map
   engineVersion: 248.0.2
-  forkId: syndicate-next
-  forkVersion: a2b843a008b551c74683a54a5fd4b0ad7f81d1c3
-  time: 03/26/2025 19:46:31
+  forkId: ""
+  forkVersion: ""
+  time: 04/04/2025 16:51:54
   entityCount: 18209
 maps:
 - 1
@@ -11785,6 +11785,14 @@ entities:
       rot: 1.5707963267948966 rad
       pos: 97.5,16.5
       parent: 2
+- proto: AirlockExternalGlassShuttleMining
+  entities:
+  - uid: 337
+    components:
+    - type: Transform
+      rot: -1.5707963267948966 rad
+      pos: -13.5,18.5
+      parent: 2
 - proto: AirlockExternalLocked
   entities:
   - uid: 305
@@ -11939,14 +11947,6 @@ entities:
     - type: Transform
       rot: 1.5707963267948966 rad
       pos: 77.5,54.5
-      parent: 2
-- proto: AirlockGlassShuttle
-  entities:
-  - uid: 337
-    components:
-    - type: Transform
-      rot: -1.5707963267948966 rad
-      pos: -13.5,18.5
       parent: 2
 - proto: AirlockHatch
   entities:
@@ -54864,7 +54864,7 @@ entities:
     - type: Label
       currentLabel: кофейный ликёр
     - type: PressurizedSolution
-      sprayFizzinessThresholdRoll: 0.95038986
+      sprayFizzinessThresholdRoll: 0.40448093
     - type: NameModifier
       baseName: бутылка кофейного ликёра
     - type: ContainerContainer
@@ -55150,7 +55150,7 @@ entities:
     - type: Label
       currentLabel: ром
     - type: PressurizedSolution
-      sprayFizzinessThresholdRoll: 0.12276411
+      sprayFizzinessThresholdRoll: 0.77198195
     - type: NameModifier
       baseName: кубинский пряный ром капитана Пита
     - type: ContainerContainer
@@ -55192,7 +55192,7 @@ entities:
     - type: Label
       currentLabel: текила
     - type: PressurizedSolution
-      sprayFizzinessThresholdRoll: 0.970915
+      sprayFizzinessThresholdRoll: 0.05164974
     - type: NameModifier
       baseName: бутылка текилы Каккаво гарантированного качества
     - type: ContainerContainer
@@ -55233,7 +55233,7 @@ entities:
     - type: Label
       currentLabel: вермут
     - type: PressurizedSolution
-      sprayFizzinessThresholdRoll: 0.8481493
+      sprayFizzinessThresholdRoll: 0.8409766
     - type: NameModifier
       baseName: бутылка вермута Золотой глаз
     - type: ContainerContainer
@@ -55256,7 +55256,7 @@ entities:
     - type: Label
       currentLabel: водка
     - type: PressurizedSolution
-      sprayFizzinessThresholdRoll: 0.49644038
+      sprayFizzinessThresholdRoll: 0.14577857
     - type: NameModifier
       baseName: бутылка водки
     - type: ContainerContainer
@@ -55306,7 +55306,7 @@ entities:
     - type: Label
       currentLabel: вино
     - type: PressurizedSolution
-      sprayFizzinessThresholdRoll: 0.0061561563
+      sprayFizzinessThresholdRoll: 0.14975822
     - type: NameModifier
       baseName: особое двухбородое бородатое вино
     - type: ContainerContainer
@@ -59014,7 +59014,7 @@ entities:
       pos: 39.5,13.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -45897.07
+      secondsUntilStateChange: -45984.918
       state: Closing
     - type: DeviceNetwork
       deviceLists:
