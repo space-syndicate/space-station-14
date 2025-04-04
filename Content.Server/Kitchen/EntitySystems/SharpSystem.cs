@@ -21,7 +21,6 @@ using Robust.Shared.Random;
 using Robust.Shared.Utility;
 using Content.Shared._CorvaxNext.Skills;
 
-
 namespace Content.Server.Kitchen.EntitySystems;
 
 public sealed class SharpSystem : EntitySystem
