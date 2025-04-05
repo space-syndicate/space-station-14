@@ -583,3 +583,22 @@
   - type: Tag
     tags:
     - Wine
+    
+- type: entity
+  parent: DrinkCanBaseFull
+  id: DrinkMonstreDrinkCan
+  name: банка энергетика "Монстре"
+  description: Отличное средство получить заряд энергии. Возможно смертельный
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      drink:
+        maxVol: 30
+        reagents:
+        - ReagentId: Monstre
+          Quantity: 30
+  - type: Drink
+  - type: Sprite
+    sprite: Objects/Consumable/Drinks/monster.rsi
+  - type: Item
+    sprite: Objects/Consumable/Drinks/monster.rsi
