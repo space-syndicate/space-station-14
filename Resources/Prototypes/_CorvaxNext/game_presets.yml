@@ -11,3 +11,16 @@
     - MeteorSwarmScheduler
     - SpaceTrafficControlEventScheduler
     - BasicRoundstartVariation
+
+- type: gamePreset
+  id: BattleRoyale
+  alias:
+    - br
+  name: battle-royale-title
+  description: battle-royale-description
+  showInVote: false
+  supportedMaps: BattleRoyaleMapPool
+  minPlayers: 30
+  maxPlayers: 100
+  rules:
+    - BattleRoyale

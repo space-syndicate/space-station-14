@@ -159,13 +159,14 @@
   description: traitor-description
   showInVote: true # Corvax-Next-Democracy
   rules:
-    - Traitor
-    - SubGamemodesRule
-    - BasicStationEventScheduler
-    - MeteorSwarmScheduler
-    - SpaceTrafficControlEventScheduler
-    - BasicRoundstartVariation
-    - LavalandStormScheduler # Lavaland Change
+  - DummyNonAntagChance
+  - Traitor
+  - SubGamemodesRule
+  - BasicStationEventScheduler
+  - MeteorSwarmScheduler
+  - SpaceTrafficControlEventScheduler
+  - BasicRoundstartVariation
+  - LavalandStormScheduler # Lavaland Change
 
 - type: gamePreset
   id: Deathmatch
@@ -188,13 +189,14 @@
   description: nukeops-description
   showInVote: true # Corvax-Next-Democracy
   rules:
-    - Nukeops
-    - SubGamemodesRule
-    - BasicStationEventScheduler
-    - MeteorSwarmScheduler
-    - SpaceTrafficControlEventScheduler
-    - BasicRoundstartVariation
-    - LavalandStormScheduler # Lavaland Change
+  - Nukeops
+  - DummyNonAntagChance
+  - SubGamemodesRule
+  - BasicStationEventScheduler
+  - MeteorSwarmScheduler
+  - SpaceTrafficControlEventScheduler
+  - BasicRoundstartVariation
+  - LavalandStormScheduler # Lavaland Change
 
 - type: gamePreset
   id: Revolutionary
@@ -206,13 +208,14 @@
   description: rev-description
   showInVote: true # Corvax-Next-Democracy
   rules:
-    - Revolutionary
-    - SubGamemodesRule
-    - BasicStationEventScheduler
-    - MeteorSwarmScheduler
-    - SpaceTrafficControlEventScheduler
-    - BasicRoundstartVariation
-    - LavalandStormScheduler # Lavaland Change
+  - DummyNonAntagChance
+  - Revolutionary
+  - SubGamemodesRule
+  - BasicStationEventScheduler
+  - MeteorSwarmScheduler
+  - SpaceTrafficControlEventScheduler
+  - BasicRoundstartVariation
+  - LavalandStormScheduler # Lavaland Change
 
 - type: gamePreset
   id: Wizard
@@ -223,11 +226,13 @@
   showInVote: false
   rules:
   - Wizard
+  - DummyNonAntagChance
   - SubGamemodesRuleNoWizard #No Dual Wizards at the start, midround is fine
   - BasicStationEventScheduler
   - MeteorSwarmScheduler
   - SpaceTrafficControlEventScheduler
   - BasicRoundstartVariation
+  - LavalandStormScheduler # Lavaland Change
 
 - type: gamePreset
   id: Zombie

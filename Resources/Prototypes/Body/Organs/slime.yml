@@ -77,6 +77,11 @@
   - type: Item
     size: Small
     heldPrefix: lungs
+  - type: Tag # goob edit
+    tags:
+    - Meat
+    - Organ
+    - Lungs
 
 - type: entity
   id: OrganSlimeStomach
@@ -101,3 +106,8 @@
           Quantity: 5
   - type: Metabolizer
     updateInterval: 1.5
+  - type: Tag # goob edit
+    tags:
+    - Meat
+    - Organ
+    - Stomach

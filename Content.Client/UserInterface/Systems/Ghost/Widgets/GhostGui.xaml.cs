@@ -11,64 +11,60 @@ namespace Content.Client.UserInterface.Systems.Ghost.Widgets;
 public sealed partial class GhostGui : UIWidget
 {
     public GhostTargetWindow TargetWindow { get; }
-	public GhostBarRulesWindow GhostBarWindow { get; } // Corvax-Next-GhostBar
-
+    public GhostBarRulesWindow GhostBarWindow { get; } // Corvax-Next-GhostBar
     public event Action? RequestWarpsPressed;
     public event Action? ReturnToBodyPressed;
     public event Action? GhostRolesPressed;
-	public event Action? GhostBarPressed; // Corvax-Next-GhostBar
-
+    public event Action? GhostBarPressed; // Corvax-Next-GhostBar
+    
+    private int _prevNumberRoles;
+    
     public GhostGui()
     {
         RobustXamlLoader.Load(this);
-
         TargetWindow = new GhostTargetWindow();
-
-		GhostBarWindow = new GhostBarRulesWindow(); // Corvax-Next-GhostBar
-
+        GhostBarWindow = new GhostBarRulesWindow(); // Corvax-Next-GhostBar
         MouseFilter = MouseFilterMode.Ignore;
-
         GhostWarpButton.OnPressed += _ => RequestWarpsPressed?.Invoke();
         ReturnToBodyButton.OnPressed += _ => ReturnToBodyPressed?.Invoke();
         GhostRolesButton.OnPressed += _ => GhostRolesPressed?.Invoke();
-		GhostBarButton.OnPressed += _ => GhostBarPressed?.Invoke(); // Corvax-Next-GhostBar
+        GhostRolesButton.OnPressed += _ => GhostRolesButton.StyleClasses.Remove(StyleBase.ButtonCaution);
+        GhostBarButton.OnPressed += _ => GhostBarPressed?.Invoke(); // Corvax-Next-GhostBar
     }
-
+    
     public void Hide()
     {
         TargetWindow.Close();
-		GhostBarWindow.Close(); // Corvax-Next-GhostBar
+        GhostBarWindow.Close(); // Corvax-Next-GhostBar
         Visible = false;
     }
-
+    
     public void Update(int? roles, bool? canReturnToBody)
     {
         ReturnToBodyButton.Disabled = !canReturnToBody ?? true;
-
         if (roles != null)
         {
             GhostRolesButton.Text = Loc.GetString("ghost-gui-ghost-roles-button", ("count", roles));
-            if (roles > 0)
+            if (roles > _prevNumberRoles)
             {
                 GhostRolesButton.StyleClasses.Add(StyleBase.ButtonCaution);
             }
-            else
+            else if (roles == 0)
             {
                 GhostRolesButton.StyleClasses.Remove(StyleBase.ButtonCaution);
             }
+            _prevNumberRoles = (int)roles;
         }
-
         TargetWindow.Populate();
     }
-
+    
     protected override void Dispose(bool disposing)
     {
         base.Dispose(disposing);
-
         if (disposing)
         {
             TargetWindow.Dispose();
-			GhostBarWindow.Dispose(); // Corvax-Next-GhostBar
+            GhostBarWindow.Dispose(); // Corvax-Next-GhostBar
         }
     }
 }

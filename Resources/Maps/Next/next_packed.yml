@@ -1,6 +1,17 @@
 meta:
-  format: 6
-  postmapinit: false
+  format: 7
+  category: Map
+  engineVersion: 248.0.2
+  forkId: ""
+  forkVersion: ""
+  time: 04/04/2025 16:49:59
+  entityCount: 14012
+maps:
+- 1
+grids:
+- 2
+orphans: []
+nullspace: []
 tilemap:
   0: Space
   3: FloorArcadeRed
@@ -55,7 +66,6 @@ entities:
     - type: MovedGrids
     - type: Broadphase
     - type: OccluderTree
-    - type: LoadedMap
   - uid: 2
     components:
     - type: MetaData
@@ -7455,7 +7465,7 @@ entities:
       pos: 24.5,-39.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -55910.9
+      secondsUntilStateChange: -55968.535
       state: Opening
     - type: DeviceLinkSource
       lastSignals:
@@ -7796,6 +7806,14 @@ entities:
       rot: 1.5707963267948966 rad
       pos: 87.5,4.5
       parent: 2
+- proto: AirlockExternalGlassShuttleMining
+  entities:
+  - uid: 235
+    components:
+    - type: Transform
+      rot: -1.5707963267948966 rad
+      pos: -3.5,18.5
+      parent: 2
 - proto: AirlockExternalLocked
   entities:
   - uid: 187
@@ -8088,12 +8106,6 @@ entities:
     - type: Transform
       rot: -1.5707963267948966 rad
       pos: 4.5,24.5
-      parent: 2
-  - uid: 235
-    components:
-    - type: Transform
-      rot: -1.5707963267948966 rad
-      pos: -3.5,18.5
       parent: 2
 - proto: AirlockHeadOfPersonnelGlassLocked
   entities:
@@ -33969,6 +33981,20 @@ entities:
     - type: Transform
       pos: 102.40892,-16.268303
       parent: 2
+- proto: ClothingMaskBlushingClown
+  entities:
+  - uid: 5230
+    components:
+    - type: Transform
+      pos: 18.259407,17.661892
+      parent: 2
+- proto: ClothingMaskBlushingMime
+  entities:
+  - uid: 5231
+    components:
+    - type: Transform
+      pos: 25.245346,6.3236885
+      parent: 2
 - proto: ClothingMaskBreathMedical
   entities:
   - uid: 5221
@@ -34020,20 +34046,6 @@ entities:
     - type: Transform
       rot: -1.5707963267948966 rad
       pos: 74.31059,-12.45945
-      parent: 2
-- proto: ClothingMaskSexyClown
-  entities:
-  - uid: 5230
-    components:
-    - type: Transform
-      pos: 18.259407,17.661892
-      parent: 2
-- proto: ClothingMaskSexyMime
-  entities:
-  - uid: 5231
-    components:
-    - type: Transform
-      pos: 25.245346,6.3236885
       parent: 2
 - proto: ClothingNeckCloakGoliathCloak
   entities:
@@ -35002,14 +35014,6 @@ entities:
       rot: 3.141592653589793 rad
       pos: 61.5,8.5
       parent: 2
-- proto: ComputerShuttle
-  entities:
-  - uid: 5376
-    components:
-    - type: Transform
-      rot: 3.141592653589793 rad
-      pos: 8.5,15.5
-      parent: 2
 - proto: ComputerShuttleCargo
   entities:
   - uid: 5377
@@ -35017,6 +35021,14 @@ entities:
     - type: Transform
       rot: 1.5707963267948966 rad
       pos: 7.5,25.5
+      parent: 2
+- proto: ComputerShuttleMiningLavaland
+  entities:
+  - uid: 5376
+    components:
+    - type: Transform
+      rot: 3.141592653589793 rad
+      pos: 8.5,15.5
       parent: 2
 - proto: ComputerSolarControl
   entities:
@@ -41613,7 +41625,7 @@ entities:
       pos: 54.5,-4.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -37266.727
+      secondsUntilStateChange: -37324.363
       state: Closing
     - type: DeviceNetwork
       deviceLists:
@@ -72146,7 +72158,7 @@ entities:
       loadingNetworkDemand: 60.000237
       currentReceiving: 60.000237
       currentSupply: 60.000237
-- proto: SubstationWallBasic 
+- proto: SubstationWallBasic
   entities:
   - uid: 11189
     components:

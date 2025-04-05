@@ -1,0 +1,340 @@
+#bench and sofa
+- type: construction
+  name: Chapel Bench
+  id: BenchChapelMiddle
+  graph: CompositesBench
+  startNode: start
+  targetNode: woodenbenchMiddle
+  category: construction-category-furniture
+  description: You sit in this. Either by will or force.
+  icon:
+    sprite: _CorvaxNext/Structures/Furniture/Bench/comf_bench.rsi
+    state: pewmiddle
+  objectType: Structure
+  placementMode: SnapgridCenter
+  canBuildInImpassable: false
+  conditions:
+    - !type:TileNotBlocked
+
+- type: construction
+  name: Chapel Benchleft
+  id: BenchChapelLeft
+  graph: CompositesBench
+  startNode: start
+  targetNode: woodenbenchLeft
+  category: construction-category-furniture
+  description: You sit in this. Either by will or force.
+  icon:
+    sprite: _CorvaxNext/Structures/Furniture/Bench/comf_bench.rsi
+    state: pewend_left
+  objectType: Structure
+  placementMode: SnapgridCenter
+  canBuildInImpassable: false
+  conditions:
+    - !type:TileNotBlocked
+
+- type: construction
+  name: Chapel Benchright
+  id: BenchChapelRight
+  graph: CompositesBench
+  startNode: start
+  targetNode: woodenbenchRight
+  category: construction-category-furniture
+  description: You sit in this. Either by will or force.
+  icon:
+    sprite: _CorvaxNext/Structures/Furniture/Bench/comf_bench.rsi
+    state: pewend_right
+  objectType: Structure
+  placementMode: SnapgridCenter
+  canBuildInImpassable: false
+  conditions:
+    - !type:TileNotBlocked
+
+- type: construction
+  name: sofa
+  id: SofaMiddle
+  graph: CompositesBench
+  startNode: start
+  targetNode: sofaMiddle
+  category: construction-category-furniture
+  description: You sit in this. Either by will or force.
+  icon:
+    sprite: _CorvaxNext/Structures/Furniture/Bench/sofa.rsi
+    state: sofamiddle
+  objectType: Structure
+  placementMode: SnapgridCenter
+  canBuildInImpassable: false
+  conditions:
+    - !type:TileNotBlocked
+
+- type: construction
+  name: sofa left
+  id: SofaLeft
+  graph: CompositesBench
+  startNode: start
+  targetNode: sofaLeft
+  category: construction-category-furniture
+  description: You sit in this. Either by will or force.
+  icon:
+    sprite: _CorvaxNext/Structures/Furniture/Bench/sofa.rsi
+    state: sofaend_left
+  objectType: Structure
+  placementMode: SnapgridCenter
+  canBuildInImpassable: false
+  conditions:
+    - !type:TileNotBlocked
+
+- type: construction
+  name: sofa right
+  id: SofaRight
+  graph: CompositesBench
+  startNode: start
+  targetNode: sofaRight
+  category: construction-category-furniture
+  description: You sit in this. Either by will or force.
+  icon:
+    sprite: _CorvaxNext/Structures/Furniture/Bench/sofa.rsi
+    state: sofaend_right
+  objectType: Structure
+  placementMode: SnapgridCenter
+  canBuildInImpassable: false
+  conditions:
+    - !type:TileNotBlocked
+
+- type: construction
+  name: sofa corner
+  id: SofaCorner
+  graph: CompositesBench
+  startNode: start
+  targetNode: sofaCorner
+  category: construction-category-furniture
+  description: You sit in this. Either by will or force.
+  icon:
+    sprite: _CorvaxNext/Structures/Furniture/Bench/sofa.rsi
+    state: sofacorner
+  objectType: Structure
+  placementMode: SnapgridCenter
+  canBuildInImpassable: false
+  conditions:
+    - !type:TileNotBlocked
+
+- type: construction
+  name: corp sofa
+  id: CorpSofaMiddle
+  graph: CompositesBench
+  startNode: start
+  targetNode: corpsofaMiddle
+  category: construction-category-furniture
+  description: You sit in this. Either by will or force.
+  icon:
+    sprite: _CorvaxNext/Structures/Furniture/Bench/sofa.rsi
+    state: corp_sofamiddle
+  objectType: Structure
+  placementMode: SnapgridCenter
+  canBuildInImpassable: false
+  conditions:
+    - !type:TileNotBlocked
+
+- type: construction
+  name: corp sofa left
+  id: CorpSofaLeft
+  graph: CompositesBench
+  startNode: start
+  targetNode: corpsofaLeft
+  category: construction-category-furniture
+  description: You sit in this. Either by will or force.
+  icon:
+    sprite: _CorvaxNext/Structures/Furniture/Bench/sofa.rsi
+    state: corp_sofaend_left
+  objectType: Structure
+  placementMode: SnapgridCenter
+  canBuildInImpassable: false
+  conditions:
+    - !type:TileNotBlocked
+
+- type: construction
+  name: corp sofa right
+  id: CorpSofaRight
+  graph: CompositesBench
+  startNode: start
+  targetNode: corpsofaRight
+  category: construction-category-furniture
+  description: You sit in this. Either by will or force.
+  icon:
+    sprite: _CorvaxNext/Structures/Furniture/Bench/sofa.rsi
+    state: corp_sofaend_right
+  objectType: Structure
+  placementMode: SnapgridCenter
+  canBuildInImpassable: false
+  conditions:
+    - !type:TileNotBlocked
+
+- type: construction
+  name: corp sofa corner
+  id: CorpSofaCorner
+  graph: CompositesBench
+  startNode: start
+  targetNode: corpsofaCorner
+  category: construction-category-furniture
+  description: You sit in this. Either by will or force.
+  icon:
+    sprite: _CorvaxNext/Structures/Furniture/Bench/sofa.rsi
+    state: corp_sofacorner
+  objectType: Structure
+  placementMode: SnapgridCenter
+  canBuildInImpassable: false
+  conditions:
+    - !type:TileNotBlocked
+
+- type: construction
+  name: bench
+  id: BenchComfyMiddle
+  graph: CompositesBench
+  startNode: start
+  targetNode: comfortableMiddle
+  category: construction-category-furniture
+  description: You sit in this. Either by will or force.
+  icon:
+    sprite: _CorvaxNext/Structures/Furniture/Bench/comf_bench.rsi
+    state: bench_middle_cover
+  objectType: Structure
+  placementMode: SnapgridCenter
+  canBuildInImpassable: false
+  conditions:
+    - !type:TileNotBlocked
+
+- type: construction
+  name: bench left
+  id: BenchComfyLeft
+  graph: CompositesBench
+  startNode: start
+  targetNode: comfortableLeft
+  category: construction-category-furniture
+  description: You sit in this. Either by will or force.
+  icon:
+    sprite: _CorvaxNext/Structures/Furniture/Bench/comf_bench.rsi
+    state: bench_left_cover
+  objectType: Structure
+  placementMode: SnapgridCenter
+  canBuildInImpassable: false
+  conditions:
+    - !type:TileNotBlocked
+
+- type: construction
+  name: bench right
+  id: BenchComfyRight
+  graph: CompositesBench
+  startNode: start
+  targetNode: comfortableRight
+  category: construction-category-furniture
+  description: You sit in this. Either by will or force.
+  icon:
+    sprite: _CorvaxNext/Structures/Furniture/Bench/comf_bench.rsi
+    state: bench_right_cover
+  objectType: Structure
+  placementMode: SnapgridCenter
+  canBuildInImpassable: false
+  conditions:
+    - !type:TileNotBlocked
+
+- type: construction
+  name: bench red
+  id: BenchRedComfyMiddle
+  graph: CompositesBench
+  startNode: start
+  targetNode: benchredMiddle
+  category: construction-category-furniture
+  description: You sit in this. Either by will or force.
+  icon:
+    sprite: _CorvaxNext/Structures/Furniture/Bench/comf_bench.rsi
+    state: bench_middle_cover
+  objectType: Structure
+  placementMode: SnapgridCenter
+  canBuildInImpassable: false
+  conditions:
+    - !type:TileNotBlocked
+
+- type: construction
+  name: bench red left
+  id: BenchRedComfyLeft
+  graph: CompositesBench
+  startNode: start
+  targetNode: benchredLeft
+  category: construction-category-furniture
+  description: You sit in this. Either by will or force.
+  icon:
+    sprite: _CorvaxNext/Structures/Furniture/Bench/comf_bench.rsi
+    state: bench_left_cover
+  objectType: Structure
+  placementMode: SnapgridCenter
+  canBuildInImpassable: false
+  conditions:
+    - !type:TileNotBlocked
+
+- type: construction
+  name: bench red right
+  id: BenchRedComfyRight
+  graph: CompositesBench
+  startNode: start
+  targetNode: benchredRight
+  category: construction-category-furniture
+  description: You sit in this. Either by will or force.
+  icon:
+    sprite: _CorvaxNext/Structures/Furniture/Bench/comf_bench.rsi
+    state: bench_right_cover
+  objectType: Structure
+  placementMode: SnapgridCenter
+  canBuildInImpassable: false
+  conditions:
+    - !type:TileNotBlocked
+
+- type: construction
+  name: bench blue
+  id: BenchBlueComfyMiddle
+  graph: CompositesBench
+  startNode: start
+  targetNode: benchblueMiddle
+  category: construction-category-furniture
+  description: You sit in this. Either by will or force.
+  icon:
+    sprite: _CorvaxNext/Structures/Furniture/Bench/comf_bench.rsi
+    state: bench_middle_cover
+  objectType: Structure
+  placementMode: SnapgridCenter
+  canBuildInImpassable: false
+  conditions:
+    - !type:TileNotBlocked
+
+- type: construction
+  name: bench blue left
+  id: BenchBlueComfyLeft
+  graph: CompositesBench
+  startNode: start
+  targetNode: benchblueLeft
+  category: construction-category-furniture
+  description: You sit in this. Either by will or force.
+  icon:
+    sprite: _CorvaxNext/Structures/Furniture/Bench/comf_bench.rsi
+    state: bench_left_cover
+  objectType: Structure
+  placementMode: SnapgridCenter
+  canBuildInImpassable: false
+  conditions:
+    - !type:TileNotBlocked
+
+- type: construction
+  name: bench blue right
+  id: BenchBlueComfyRight
+  graph: CompositesBench
+  startNode: start
+  targetNode: benchblueRight
+  category: construction-category-furniture
+  description: You sit in this. Either by will or force.
+  icon:
+    sprite: _CorvaxNext/Structures/Furniture/Bench/comf_bench.rsi
+    state: bench_right_cover
+  objectType: Structure
+  placementMode: SnapgridCenter
+  canBuildInImpassable: false
+  conditions:
+    - !type:TileNotBlocked

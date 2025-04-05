@@ -110,8 +110,7 @@ public sealed class ConsentRevolutionarySystem : EntitySystem
 
                     // We don't hide verb if person has mindshield/command protection because that reveals it.
                     // If verb was used in this situation, conversion will not proceed and both players will be alerted about.
-                    if (HasComp<MindShieldComponent>(args.Target) ||
-                        HasComp<CommandStaffComponent>(args.Target))
+                    if (HasComp<MindShieldComponent>(args.Target))
                     {
                         _popup.PopupEntity(
                             Loc.GetString("rev-consent-convert-attempted-to-be-converted", ("user", Identity.Entity(args.User, EntityManager))),

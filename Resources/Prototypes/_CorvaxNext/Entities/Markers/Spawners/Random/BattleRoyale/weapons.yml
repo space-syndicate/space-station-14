@@ -1,0 +1,566 @@
+# Pistols
+- type: entityTable
+  id: RoyalePistolTable
+  table: !type:GroupSelector
+    children:
+    # Tier 0 - Shit (15%)
+    - !type:GroupSelector
+      weight: 15
+      children:
+      - id: WeaponPistolFlintlock
+      - id: WeaponShotgunHandmade
+      - id: WeaponFlareGun
+      - id: WeaponPistolCHIMPUpgraded
+      - id: WeaponRevolverPirate
+    # Tier 1 - Common (25%)
+    - !type:GroupSelector
+      weight: 25
+      children:
+      - id: WeaponPistolViper
+      - id: WeaponPlasmaCutter
+      - id: WeaponPistolCobra
+      - id: WeaponProtoKineticPistol
+      - id: WeaponPistolMk58
+    # Tier 2 - Rare (20%)
+    - !type:GroupSelector
+      weight: 20
+      children:
+      - id: WeaponLaserSvalinn
+      - id: WeaponMakeshiftLaser
+      - id: WeaponDisabler
+      - id: WeaponRevolverInspector
+      - id: WeaponRevolverPython
+    # Tier 3 - Very Rare (10%)
+    - !type:GroupSelector
+      weight: 10
+      children:
+      - id: WeaponLaserGun
+      - id: WeaponRevolverDeckard
+      - id: WeaponRevolverMatebaAP
+      - id: WeaponRevolverPythonAP
+      - id: WeaponSubMachineGunDrozd
+    # Tier 4 - Epic (5%)
+    - !type:GroupSelector
+      weight: 5
+      children:
+      - id: WeaponAntiqueLaser
+      - id: WeaponPulsePistol
+      - id: WeaponPistolEchis
+      - id: WeaponAdvancedLaser
+      - id: WeaponSubMachineGunC20r
+      - id: WeaponSubMachineGunWt550
+    # Tier 5 - Fun (2%)
+    - !type:GroupSelector
+      weight: 2
+      children:
+      - id: WeaponWaterPistol
+      - id: RevolverCapGun
+      - id: RevolverCapGunFake
+      - id: WeaponDisablerPractice
+      - id: WeaponSubMachineGunAtreides
+
+- type: entityTable
+  id: RoyalePistolAmmoTable
+  table: !type:GroupSelector
+    children:
+    # Tier 0 - Shit (15%)
+    - !type:GroupSelector
+      weight: 15
+      children:
+      - id: CartridgeAntiMateriel
+      - id: ShellShotgunFlare
+      - id: ShellShotgunImprovised
+      - id: SpeedLoaderCap
+      - id: PowerCellSmall
+    # Tier 1 - Common (25%)
+    - !type:GroupSelector
+      weight: 25
+      children:
+      - id: MagazinePistol
+      - id: MagazinePistolHighCapacity
+      - id: MagazinePistolCaselessRifle
+      - id: SpeedLoaderPistol
+      - id: PowerCellSmall
+    # Tier 2 - Rare (20%)
+    - !type:GroupSelector
+      weight: 20
+      children:
+      - id: MagazineMagnum
+      - id: SpeedLoaderMagnum
+      - id: MagazinePistolPractice
+      - id: MagazinePistolIncendiary
+      - id: PowerCellHigh
+    # Tier 3 - Very Rare (10%)
+    - !type:GroupSelector
+      weight: 10
+      children:
+      - id: MagazinePistolUranium
+      - id: SpeedLoaderMagnumAP
+      - id: MagazinePistolSubMachineGun
+      - id: PowerCellHyper
+    # Tier 4 - Epic (5%)
+    - !type:GroupSelector
+      weight: 5
+      children:
+      - id: MagazineMagnumAP
+      - id: MagazinePistolSubMachineGunTopMounted
+      - id: MagazinePistolSubMachineGunIncendiary
+      - id: PowerCellMicroreactor
+
+- type: entity
+  name: BR Pistol Spawner
+  description: BR issue
+  suffix: DO NOT MAP, Battle Royal
+  id: RoyalPistolTableSpawner
+  parent: MarkerBase
+  components:
+  - type: Sprite
+    layers:
+    - state: red
+    - sprite: Objects/Weapons/Guns/Pistols/viper.rsi
+      state: icon
+  - type: EntityTableSpawner
+    table: !type:NestedSelector
+      tableId: RoyalePistolTable
+      prob: 0.9
+
+- type: entity
+  name: BR Pistol Ammo Spawner
+  description: BR issue
+  suffix: DO NOT MAP, Battle Royal
+  id: RoyalPistolAmmoTableSpawner
+  parent: MarkerBase
+  components:
+  - type: Sprite
+    layers:
+    - state: red
+    - sprite: Objects/Weapons/Guns/Ammunition/Magazine/Pistol/pistol_mag.rsi
+      state: base
+  - type: EntityTableSpawner
+    table: !type:NestedSelector
+      tableId: RoyalePistolAmmoTable
+      prob: 0.9
+
+# Shotguns
+- type: entityTable
+  id: RoyaleShotgunTable
+  table: !type:GroupSelector
+    children:
+    # Tier 0 - Shit (15%)
+    - !type:GroupSelector
+      weight: 15
+      children:
+      - id: WeaponShotgunImprovisedLoaded
+    # Tier 1 - Common (25%)
+    - !type:GroupSelector
+      weight: 25
+      children:
+      - id: WeaponShotgunDoubleBarreled
+    # Tier 2 - Rare (20%)
+    - !type:GroupSelector
+      weight: 20
+      children:
+      - id: WeaponShotgunKammerer
+      - id: WeaponProtoKineticShotgun
+    # Tier 3 - Very Rare (10%)
+    - !type:GroupSelector
+      weight: 10
+      children:
+      - id: WeaponShotgunSawn
+      - id: WeaponShotgunEnforcer
+    # Tier 4 - Epic (5%)
+    - !type:GroupSelector
+      weight: 5
+      children:
+      - id: WeaponEnergyShotgun
+      - id: WeaponShotgunBulldog
+    # Tier 5 - Fun (2%)
+    - !type:GroupSelector
+      weight: 2
+      children:
+      - id: WeaponWaterBlaster
+      - id: WeaponWaterBlasterSuper
+
+- type: entityTable
+  id: RoyaleShotgunAmmoTable
+  table: !type:GroupSelector
+    children:
+    # Tier 0 - Shit (15%)
+    - !type:GroupSelector
+      weight: 15
+      children:
+      - id: ShellShotgunImprovised
+      - id: BoxShotgunPractice
+      - id: PowerCellMedium
+    # Tier 1 - Common (25%)
+    - !type:GroupSelector
+      weight: 25
+      children:
+      - id: BoxBeanbag
+      - id: BoxLethalshot
+      - id: BoxShotgunSlug
+      - id: PowerCellHigh
+      - id: BoxShotgunFlare
+    # Tier 2 - Rare (20%)
+    - !type:GroupSelector
+      weight: 20
+      children:
+      - id: MagazineShotgun
+      - id: MagazineShotgunBeanbag
+      - id: BoxShotgunIncendiary
+      - id: PowerCellHigh
+    # Tier 3 - Very Rare (10%)
+    - !type:GroupSelector
+      weight: 10
+      children:
+      - id: MagazineShotgunSlug 
+      - id: MagazineShotgunIncendiary
+      - id: BoxShotgunUranium
+      - id: ShellTranquilizer
+      - id: BoxShellTranquilizer
+    # Tier 4 - Epic (5%)
+    - !type:GroupSelector
+      weight: 5
+      children:
+      - id: PowerCellMicroreactor
+
+- type: entity
+  name: BR Shotguns Spawner
+  description: BR issue
+  suffix: DO NOT MAP, Battle Royal
+  id: RoyalShotgunTableSpawner
+  parent: MarkerBase
+  components:
+  - type: Sprite
+    layers:
+    - state: red
+    - sprite: Objects/Weapons/Guns/Shotguns/enforcer.rsi
+      state: icon
+  - type: EntityTableSpawner
+    table: !type:NestedSelector
+      tableId: RoyaleShotgunTable
+      prob: 0.8
+
+- type: entity
+  name: BR Shotgun Ammo Spawner
+  description: BR issue
+  suffix: DO NOT MAP, Battle Royal
+  id: RoyalShotgunAmmoTableSpawner
+  parent: MarkerBase
+  components:
+  - type: Sprite
+    layers:
+    - state: red
+    - sprite: Objects/Weapons/Guns/Ammunition/Boxes/shotgun.rsi
+      state: base
+  - type: EntityTableSpawner
+    table: !type:NestedSelector
+      tableId: RoyaleShotgunAmmoTable
+      prob: 0.8
+
+# Rifles and Carbines
+- type: entityTable
+  id: RoyaleCarbineTable
+  table: !type:GroupSelector
+    children:
+    # Tier 0 - Shit (15%)
+    - !type:GroupSelector
+      weight: 15
+      children:
+      - id: WeaponProtoKineticAccelerator
+      - id: WeaponSniperMosin
+      - id: Musket
+    # Tier 1 - Common (25%)
+    - !type:GroupSelector
+      weight: 25
+      children:
+      - id: WeaponRifleLecter
+      - id: WeaponProtoKineticRepeater
+    # Tier 2 - Rare (20%)
+    - !type:GroupSelector
+      weight: 20
+      children:
+      - id: WeaponSniperHristov
+      - id: WeaponLaserCarbine
+      - id: WeaponRifleAk
+    # Tier 3 - Very Rare (10%)
+    - !type:GroupSelector
+      weight: 10
+      children:
+      - id: WeaponSpike
+      - id: WeaponLaserCannon
+      - id: WeaponXrayCannon
+      - id: WeaponDisablerSMG
+    # Tier 4 - Epic (5%)
+    - !type:GroupSelector
+      weight: 5
+      children:
+      - id: WeaponRifleM90GrenadeLauncher
+      - id: WeaponPulseCarbine
+    # Tier 5 - Fun (2%)
+    - !type:GroupSelector
+      weight: 2
+      children:
+      - id: WeaponLaserCarbinePractice
+
+- type: entityTable
+  id: RoyaleCarbineAmmoTable
+  table: !type:GroupSelector
+    children:
+    # Tier 0 - Shit (15%)
+    - !type:GroupSelector
+      weight: 15
+      children:
+      - id: CartridgeAntiMateriel
+      - id: MagazineBoxLightRifle
+      - id: SpeedLoaderLightRifle
+      - id: PowerCellMedium
+    # Tier 1 - Common (25%)
+    - !type:GroupSelector
+      weight: 25
+      children:
+      - id: MagazineRifle
+      - id: MagazineLightRifle
+      - id: MagazineCaselessRifle
+      - id: PowerCellMedium
+    # Tier 2 - Rare (20%)
+    - !type:GroupSelector
+      weight: 20
+      children:
+      - id: MagazineBoxRifle
+      - id: MagazineRifleIncendiary
+      - id: MagazineLightRifleIncendiary
+      - id: PowerCellHigh
+    # Tier 3 - Very Rare (10%)
+    - !type:GroupSelector
+      weight: 10
+      children:
+      - id: MagazineBoxAntiMateriel
+      - id: MagazineRifleUranium
+      - id: MagazineLightRifleUranium
+      - id: CannonBall
+      - id: CannonBallGrapeshot
+      - id: PowerCellHyper
+      - id: CartridgeRocket
+      - id: MagazineLightRifleBox
+      - id: MagazineGrenadeFlash
+      - id: MagazineGrenadeEMP
+      - id: CannonBallGlassshot
+      - id: CartridgeRocketSlow
+    # Tier 4 - Epic (5%)
+    - !type:GroupSelector
+      weight: 5
+      children:
+      - id: MagazineGrenadeFrag
+      - id: MagazineGrenadeBlast
+      - id: MagazineBoxLightRifleBig
+      - id: PowerCellMicroreactor
+      - id: MagazineGrenadeFrag
+      
+
+- type: entity
+  name: BR Carbine Spawner
+  description: BR issue
+  suffix: DO NOT MAP, Battle Royal
+  id: RoyalCarbineTableSpawner
+  parent: MarkerBase
+  components:
+  - type: Sprite
+    layers:
+    - state: red
+    - sprite: Objects/Weapons/Guns/Rifles/carbine.rsi
+      state: icon
+  - type: EntityTableSpawner
+    table: !type:NestedSelector
+      tableId: RoyaleCarbineTable
+      prob: 0.7
+
+- type: entity
+  name: BR Rifle Ammo Spawner
+  description: BR issue
+  suffix: DO NOT MAP, Battle Royal
+  id: RoyalCarbineAmmoTableSpawner
+  parent: MarkerBase
+  components:
+  - type: Sprite
+    layers:
+    - state: red
+    - sprite: Objects/Weapons/Guns/Ammunition/Magazine/Rifle/rifle_mag.rsi
+      state: base
+  - type: EntityTableSpawner
+    table: !type:NestedSelector
+      tableId: RoyaleCarbineAmmoTable
+      prob: 0.7
+
+# Heavy and Grenades
+- type: entityTable
+  id: RoyaleHeavyTable
+  table: !type:GroupSelector
+    children:
+    # Tier 0 - Shit (15%)
+    - !type:GroupSelector
+      weight: 15
+      children:
+      - id: CleanerGrenade
+      - id: GrenadeDummy
+      - id: GlueGrenade
+      - id: LubeGrenade
+    # Tier 1 - Common (25%)
+    - !type:GroupSelector
+      weight: 25
+      children:
+      - id: GrenadeFlashBang
+      - id: TearGasGrenade
+      - id: EmpGrenade
+      - id: SmokeGrenade
+      - id: ExGrenade
+    # Tier 2 - Rare (20%)
+    - !type:GroupSelector
+      weight: 20
+      children:
+      - id: GrenadeShrapnel
+      - id: GrenadeStinger
+      - id: MetalFoamGrenade
+      - id: GrenadeIncendiary
+      - id: WeaponMinigun
+      - id: WeaponLauncherPirateCannon
+    # Tier 3 - Very Rare (10%)
+    - !type:GroupSelector
+      weight: 10
+      children:
+      - id: C4
+      - id: ClusterGrenade
+      - id: SingularityGrenade
+      - id: WhiteholeGrenade
+      - id: WeaponLauncherMultipleRocket
+      - id: WeaponLauncherRocket
+    # Tier 4 - Epic (5%)
+    - !type:GroupSelector
+      weight: 5
+      children:
+      - id: WeaponLauncherChinaLake
+      - id: WeaponLightMachineGunL6
+    # Tier 5 - Fun (1%)
+    - !type:GroupSelector
+      weight: 1
+      children:
+      - id: HolyHandGrenade
+
+- type: entity
+  name: BR Heavy Spawner
+  description: BR issue
+  suffix: DO NOT MAP, Battle Royal
+  id: RoyalHeavyTableSpawner
+  parent: MarkerBase
+  components:
+  - type: Sprite
+    layers:
+    - state: red
+    - sprite: Objects/Weapons/Guns/Rifles/carbine.rsi
+      state: icon
+  - type: EntityTableSpawner
+    table: !type:NestedSelector
+      tableId: RoyaleHeavyTable
+      prob: 0.5
+
+# Melee
+- type: entityTable
+  id: RoyaleMeleeTable
+  table: !type:GroupSelector
+    children:
+    # Tier 0 - Shit (15%)
+    - !type:GroupSelector
+      weight: 15
+      children:
+      - id: WeaponMeleeNeedle
+      - id: Gohei
+      - id: Cane
+      - id: WhiteCane
+      - id: Shiv
+      - id: ReinforcedShiv
+    # Tier 1 - Common (25%)
+    - !type:GroupSelector
+      weight: 25
+      children:
+      - id: KitchenKnife
+      - id: PlasmaShiv
+      - id: UraniumShiv
+      - id: CombatKnife
+      - id: SurvivalKnife
+      - id: RitualDagger
+      - id: Stunprod
+      - id: ButchCleaver
+      - id: ThrowingKnife
+      - id: EnergySpike
+      - id: WeaponBaguette
+      - id: Spear
+      - id: SpearReinforced
+    # Tier 2 - Rare (20%)
+    - !type:GroupSelector
+      weight: 20
+      children:
+      - id: CaneBlade
+      - id: EnergyDagger
+      - id: Cutlass
+      - id: Katana
+      - id: Machete
+      - id: KukriKnife
+      - id: Claymore
+      - id: WeaponCrusher
+      - id: EldritchBlade
+      - id: HereticBladeBase
+      - id: HereticBladeBlade
+      - id: BaseBallBat
+      - id: EnergyCutlass
+      - id: Pickaxe
+    # Tier 3 - Very Rare (10%)
+    - !type:GroupSelector
+      weight: 10
+      children:
+      - id: WeaponCrusherDagger
+      - id: CaptainSabre
+      - id: WeaponMeleeToolboxRobust
+      - id: Chainsaw
+      - id: FireAxe
+      - id: SpearPlasma
+      - id: SpearUranium
+      - id: MiningDrill
+    # Tier 4 - Epic (5%)
+    - !type:GroupSelector
+      weight: 5
+      children:
+      - id: ArmBlade
+      - id: EnergySword
+      - id: BetrayalKnife
+      - id: EnergySwordDouble
+      - id: FireAxeFlaming
+      - id: EnergyKatana
+      - id: Chainsaw
+      - id: MiningDrillDiamond
+    # Tier 5 - Fun (1%)
+    - !type:GroupSelector
+      weight: 1
+      children:
+      - id: WeaponMeleeNeedle
+      - id: TelescopicBaton
+      - id: WeaponMeleeKnockbackStick
+      - id: HyperEutacticBlade
+      - id: Mjollnir
+      - id: SingularityHammer
+
+- type: entity
+  name: BR Melee Spawner
+  description: BR issue
+  suffix: DO NOT MAP, Battle Royal
+  id: RoyalMeleeTableSpawner
+  parent: MarkerBase
+  components:
+  - type: Sprite
+    layers:
+    - state: red
+    - sprite: Objects/Weapons/Guns/Rifles/carbine.rsi
+      state: icon
+  - type: EntityTableSpawner
+    table: !type:NestedSelector
+      tableId: RoyaleMeleeTable
+      prob: 0.8

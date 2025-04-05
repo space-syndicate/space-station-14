@@ -1,0 +1,10 @@
+- type: latheRecipePack
+  id: PlantAnalyzerDynamic
+  recipes:
+    - PlantAnalyzer
+
+- type: latheRecipePack
+  id: NextServiceStatic
+  recipes:
+    - TapeRecorder
+    - CassetteTape

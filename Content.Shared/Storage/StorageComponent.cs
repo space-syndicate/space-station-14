@@ -36,13 +36,6 @@ namespace Content.Shared.Storage
         public Dictionary<string, List<ItemStorageLocation>> SavedLocations = new();
 
         /// <summary>
-        /// Allow or disallow showing the "open/close storage" verb.
-        /// This is desired on items that we don't want to be accessed by the player directly.
-        /// </summary>
-        [DataField]
-        public bool ShowVerb = true;
-
-        /// <summary>
         /// A list of boxes that comprise a combined grid that determines the location that items can be stored.
         /// </summary>
         [DataField, ViewVariables(VVAccess.ReadWrite)]
@@ -153,6 +146,13 @@ namespace Content.Shared.Storage
         {
             Key,
         }
+
+        /// <summary>
+        /// Allow or disallow showing the "open/close storage" verb.
+        /// This is desired on items that we don't want to be accessed by the player directly.
+        /// </summary>
+        [DataField]
+        public bool ShowVerb = true;
     }
 
     [Serializable, NetSerializable]

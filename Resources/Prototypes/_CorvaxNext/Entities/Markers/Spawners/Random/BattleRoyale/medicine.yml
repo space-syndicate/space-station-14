@@ -1,0 +1,45 @@
+- type: entityTable
+  id: RoyaleMedicalTable
+  table: !type:GroupSelector
+    children:
+    # Tier 1 - Common (60%)
+    - !type:GroupSelector
+      weight: 60
+      children:
+      - id: RoyalOmnihealT1Medipen
+      - id: RoyalHyperphaseT1Medipen
+    # Tier 2 - Uncommon (25%)
+    - !type:GroupSelector
+      weight: 25
+      children:
+      - id: RoyalOmnihealT2Medipen
+      - id: RoyalHyperphaseT2Medipen
+    # Tier 3 - Rare (15%)
+    - !type:GroupSelector
+      weight: 15
+      children:
+      - id: RoyalOmnihealT3Medipen
+      - id: RoyalHyperphaseT3Medipen
+    # Tier 4 - Very Rare (5%)
+    - !type:GroupSelector
+      weight: 5
+      children:
+      - id: RoyalOmnihealT4Medipen
+      - id: RoyalHyperphaseT4Medipen
+
+- type: entity
+  name: BR Medical Spawner
+  description: BR issue
+  suffix: DO NOT MAP, Battle Royal
+  id: RoyalMedicalTableSpawner
+  parent: MarkerBase
+  components:
+    - type: Sprite
+      layers:
+        - state: red
+        - sprite: Objects/Specific/Medical/medipen.rsi
+          state: medipen
+    - type: EntityTableSpawner
+      table: !type:NestedSelector
+        tableId: RoyaleMedicalTable
+        prob: 0.9

@@ -130,7 +130,7 @@
     - ServiceStatic
     - PowerCellsStatic
     - ElectronicsStatic
-    - PlantanalyzerStatic
+    - NextServiceStatic
   - type: EmagLatheRecipes
     emagStaticPacks:
     - SecurityAmmoStatic
@@ -211,6 +211,7 @@
     - BluespaceCrystallDynamic
     - AdvancedTreatmentDynamic
     - PlasmaCutter
+    - PlantAnalyzerDynamic # Corvax Next
   - type: EmagLatheRecipes
     emagDynamicPacks:
     - SecurityAmmo

@@ -229,11 +229,6 @@
       - type: NpcFactionMember
         factions:
         - Syndicate
-      - type: AutoImplant
-        implants:
-        - DeathAcidifierImplant
-      - type: RandomMetadata
-        nameSegments:
       - type: Skills # Corvax-Next-Skills
         skills:
         - ShuttleControl
@@ -242,6 +237,13 @@
         - Surgery
         - MedicalEquipment
         - Butchering
+      - type: AutoImplant
+        implants:
+        - DeathAcidifierImplant
+      - type: RandomMetadata
+        nameSegments:
+        - NamesNinjaTitle
+        - NamesNinja
       mindRoles:
       - MindRoleNinja
 
@@ -346,6 +348,8 @@
         - Butchering
       mindRoles:
       - MindRoleWizard
+
+
 # disabled until event is rewritten to be more interesting
 #- type: entity
 #  id: FalseAlarm
@@ -715,6 +719,19 @@
     - Service
     blacklist:
     - External # don't space everything
+
+- type: entity
+  parent: BaseGameRule
+  id: SmugglerStashVariationPass
+  components:
+  - type: StationEvent
+    earliestStart: 0
+    duration: 1
+    minimumPlayers: 1
+    maxOccurrences: 2
+    weight: 10
+  - type: RandomSpawnRule
+    prototype: RandomSatchelSpawner
 
 - type: entity
   parent: BaseGameRule

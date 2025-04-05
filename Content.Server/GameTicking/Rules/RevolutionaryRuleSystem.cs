@@ -388,8 +388,7 @@ public sealed class RevolutionaryRuleSystem : GameRuleSystem<RevolutionaryRuleCo
             !HasComp<HumanoidAppearanceComponent>(uid) &&
             !alwaysConvertible ||
             !_mobState.IsAlive(uid) ||
-            HasComp<ZombieComponent>(uid)
-            || HasComp<CommandStaffComponent>(uid)) // goob edit - rev no command flashing
+            HasComp<ZombieComponent>(uid))
         {
             return false;
         }

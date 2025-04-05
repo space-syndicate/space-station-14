@@ -1,7 +1,9 @@
 - type: gameMap
   id: NextAmber
-  mapName: 'Next Amber'
+  mapName: 'NT14-SB Амбер'
   mapPath: /Maps/Next/next_amber.yml
+  maxRandomOffset: 0
+  randomRotation: false
   minPlayers: 25
   maxPlayers: 55
   stations:
