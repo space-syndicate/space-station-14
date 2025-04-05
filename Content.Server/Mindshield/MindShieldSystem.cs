@@ -71,10 +71,5 @@ public sealed class MindShieldSystem : EntitySystem
     {
         RemComp<MindShieldComponent>(args.Container.Owner);
     }
-
-    private void OnImplantDraw(Entity<MindShieldImplantComponent> ent, ref EntGotRemovedFromContainerMessage args)
-    {
-        RemComp<MindShieldComponent>(args.Container.Owner);
-    }
 }
 

@@ -88,7 +88,7 @@ public sealed class BodySystem : SharedBodySystem
             {
                 var layers = HumanoidVisualLayersExtension.Sublayers(layer.Value);
                 _humanoidSystem.SetLayersVisibility(
-                    bodyEnt, layers, visible: true, permanent: true, humanoid);
+                    (bodyEnt, humanoid), layers, visible: true);
             }
             else
             {
@@ -116,7 +116,7 @@ public sealed class BodySystem : SharedBodySystem
         var layers = HumanoidVisualLayersExtension.Sublayers(layer.Value);
         
         _humanoidSystem.SetLayersVisibility(
-            bodyEnt, layers, visible: false, permanent: true, humanoid);
+            (bodyEnt, humanoid), layers, visible: false);
         _appearance.SetData(bodyEnt, layer, true);
     }
 

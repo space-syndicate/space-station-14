@@ -31,6 +31,6 @@ public sealed partial class LogProbeUi : UIFragment
         if (state is not LogProbeUiState cast)
             return;
 
-        _fragment?.UpdateState(cast.EntityName, cast.PulledLogs);
+        _fragment?.UpdateState(cast, cast.EntityName, cast.PulledLogs);
     }
 }
