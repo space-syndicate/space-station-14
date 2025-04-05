@@ -30,6 +30,7 @@ public sealed class MaterialStorageSystem : SharedMaterialStorageSystem
     [Dependency] private readonly TagSystem _tag = default!; // Goobstation Change
 
     private static readonly ProtoId<TagPrototype> OreTag = "Ore"; // Goobstation Change
+    
     public override void Initialize()
     {
         base.Initialize();
@@ -72,7 +73,6 @@ public sealed class MaterialStorageSystem : SharedMaterialStorageSystem
 
         if (material.StackEntity != null)
         {
-
             // Goobstation Change Start
             var proto = _prototypeManager.Index<EntityPrototype>(material.StackEntity);
             if (!proto.TryGetComponent<PhysicalCompositionComponent>(out var composition, EntityManager.ComponentFactory))

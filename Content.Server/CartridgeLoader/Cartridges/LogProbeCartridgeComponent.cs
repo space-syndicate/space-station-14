@@ -34,6 +34,7 @@ public sealed partial class LogProbeCartridgeComponent : Component
     /// </summary>
     [DataField]
     public NanoChatData? ScannedNanoChatData;
+
     /// Paper to spawn when printing logs.
     /// </summary>
     [DataField]

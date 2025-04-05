@@ -81,6 +81,8 @@ public sealed partial class LatheMenu : DefaultWindow
             {
                 ServerListButton.Visible = false;
             }
+
+            AmountLineEdit.SetText(latheComponent.DefaultProductionAmount.ToString());
         }
 
         // Corvax-Next-BlueprintEject-Start

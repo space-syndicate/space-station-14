@@ -1,8 +1,8 @@
 using Content.Server.Fax;
-using Content.Server.GameTicking.Events;
 using Content.Server.Station.Systems;
 using Content.Shared.Corvax.CCCVars;
 using Content.Shared.Fax.Components;
+using Content.Shared.GameTicking;
 using Robust.Server.Player;
 using Robust.Shared.Configuration;
 using Robust.Shared.Prototypes;
@@ -24,10 +24,10 @@ namespace Content.Server.Corvax.StationGoal
 
         public override void Initialize()
         {
-            SubscribeLocalEvent<RoundStartingEvent>(OnRoundStarting);
+            SubscribeLocalEvent<RoundStartedEvent>(OnRoundStarted);
         }
 
-        private void OnRoundStarting(RoundStartingEvent ev)
+        private void OnRoundStarted(RoundStartedEvent ev)
         {
             if (!_cfg.GetCVar(CCCVars.StationGoal))
                 return;
