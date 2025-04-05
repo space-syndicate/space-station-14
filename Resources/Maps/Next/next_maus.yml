@@ -2,9 +2,9 @@ meta:
   format: 7
   category: Map
   engineVersion: 248.0.2
-  forkId: ""
-  forkVersion: ""
-  time: 04/04/2025 22:44:20
+  forkId: syndicate-next
+  forkVersion: c7a8d8b4fae711424c47ae34a6ac6906b17b6f63
+  time: 04/05/2025 11:46:50
   entityCount: 20479
 maps:
 - 1
@@ -55786,7 +55786,7 @@ entities:
       rot: -1.5707963267948966 rad
       pos: -5.5,-53.5
       parent: 2
-- proto: ComputerShuttleSalvage
+- proto: ComputerShuttleMiningLavaland
   entities:
   - uid: 6853
     components:
