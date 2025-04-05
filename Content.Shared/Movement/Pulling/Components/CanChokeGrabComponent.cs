@@ -1,5 +1,5 @@
-
 using Robust.Shared.GameStates;
+
 namespace Content.Shared.Movement.Pulling.Components;
 
 [RegisterComponent, NetworkedComponent]
