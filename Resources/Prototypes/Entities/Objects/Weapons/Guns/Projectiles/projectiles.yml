@@ -262,7 +262,7 @@
     impactEffect: BulletImpactEffectDisabler
     damage:
       types:
-        Heat: 5
+        Heat: 0
     soundHit:
       collection: WeakHit
     forceSound: true
@@ -302,7 +302,7 @@
     impactEffect: BulletImpactEffectDisabler
     damage:
       types:
-        Heat: 1
+        Heat: 0
     soundHit:
       collection: WeakHit
     forceSound: true
@@ -998,7 +998,7 @@
     impactEffect: BulletImpactEffectDisabler
     damage:
       types:
-        Heat: 2
+        Heat: 0
     soundHit:
       collection: WeakHit
     forceSound: true
@@ -1036,25 +1036,6 @@
   - type: Ammo
 
 - type: entity
-  name : laser bolt
-  id: BulletEnergyTurretLaser
-  parent: BulletEnergyTurretBase
-  categories: [ HideSpawnMenu ]
-  components:
-  - type: Ammo
-    muzzleFlash: MuzzleFlashEffectHeavyLaser
-  - type: Sprite
-    sprite: Objects/Weapons/Guns/Projectiles/projectiles_tg.rsi
-    layers:
-    - state: heavylaser
-      shader: unshaded
-  - type: Projectile
-    impactEffect: BulletImpactEffectOrangeDisabler
-    damage:
-      types:
-        Heat: 28
-
-- type: entity
   name : disabler bolt
   id: BulletEnergyTurretDisabler
   parent: BulletEnergyTurretBase
@@ -1077,6 +1058,25 @@
     soundHit:
       collection: WeakHit
     forceSound: true
+
+- type: entity
+  name : laser bolt
+  id: BulletEnergyTurretLaser
+  parent: BulletEnergyTurretBase
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Ammo
+    muzzleFlash: MuzzleFlashEffectHeavyLaser
+  - type: Sprite
+    sprite: Objects/Weapons/Guns/Projectiles/projectiles_tg.rsi
+    layers:
+    - state: heavylaser
+      shader: unshaded
+  - type: Projectile
+    impactEffect: BulletImpactEffectOrangeDisabler
+    damage:
+      types:
+        Heat: 28
 
 - type: entity
   name: tesla gun lightning

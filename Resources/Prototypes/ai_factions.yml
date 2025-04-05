@@ -46,6 +46,7 @@
   - AllHostile
   - Blob # Goobstation - Blob
   - Wizard
+  - Dragon
 
 - type: npcFaction
   id: SimpleHostile
@@ -60,6 +61,7 @@
   - Wizard
   - Heretic # goob edit - heretics
   - Blob # Goobstation - Blob
+  - Dragon
 
 - type: npcFaction
   id: SimpleNeutral
@@ -91,6 +93,7 @@
   - Wizard
   - Heretic # goob edit - heretics
   - Blob # Goobstation - Blob
+  - Dragon
 
 - type: npcFaction
   id: Zombie
@@ -106,6 +109,7 @@
   - Wizard
   - Heretic # goob edit - heretics
   - Blob # Goobstation - Blob
+  - Dragon
 
 - type: npcFaction
   id: Revolutionary

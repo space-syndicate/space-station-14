@@ -3,6 +3,8 @@
 - type: latheRecipe
   abstract: true
   id: BaseLightRecipe
+  categories:
+  - Lights
   completetime: 2
   materials:
     Steel: 50
