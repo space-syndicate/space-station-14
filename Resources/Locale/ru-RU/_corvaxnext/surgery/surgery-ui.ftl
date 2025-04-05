@@ -6,6 +6,8 @@ ui-options-function-target-left-leg = Прицелиться на левую н�
 ui-options-function-target-right-leg = Прицелиться на правую ногу
 ui-options-header-targeting = Прицеливание
 
+surgery-verb-text = Оперировать
+surgery-verb-message = Начать операцию на этом объекте.
 surgery-ui-window-title = Хирургия
 surgery-ui-window-require = Требуется
 surgery-ui-window-parts = Части
