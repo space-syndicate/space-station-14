@@ -24,8 +24,7 @@ using System.Numerics;
      /// <summary>
      /// Kinetic energy required to dismantle a single tile
      /// </summary>
-     private const float TileBreakEnergy = 6700;
-
+     private const float TileBreakEnergy = 7000;
      /// <summary>
      /// Kinetic energy required to spawn sparks
      /// </summary>
@@ -87,7 +86,7 @@ using System.Numerics;
      private void ProcessTile(EntityUid uid, MapGridComponent grid, Vector2i tile, float energy, Vector2 dir)
      {
          DamageSpecifier damage = new();
-         damage.DamageDict = new() { { "Blunt", energy } };
+         damage.DamageDict = new() { { "Structural", energy } };
 
          foreach (EntityUid localUid in _lookup.GetLocalEntitiesIntersecting(uid, tile, gridComp: grid))
          {

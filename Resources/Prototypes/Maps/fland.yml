@@ -65,9 +65,9 @@
             StationAi: [ 1, 1 ]
             Borg: [ 5, 5 ]
 
-        # Goobstation blob-config-start HUGE
+        # Corvax-next blob-config-start HUGE
         - type: StationBlobConfig
           stageBegin: 40
-          stageCritical: 450
-          stageTheEnd: 900
+          stageCritical: 700
+          stageTheEnd: 1200
         # backmen blob-config-end

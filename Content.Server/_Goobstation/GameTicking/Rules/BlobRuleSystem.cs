@@ -34,7 +34,7 @@ public sealed class BlobRuleSystem : GameRuleSystem<BlobRuleComponent>
     [Dependency] private readonly AlertLevelSystem _alertLevelSystem = default!;
     [Dependency] private readonly IChatManager _chatManager = default!;
 
-    private static readonly SoundPathSpecifier BlobDetectAudio = new ("/Audio/Announcements/outbreak5.ogg");
+    private static readonly SoundPathSpecifier BlobDetectAudio = new ("/Audio/_CorvaxNext/Misc/outbreak5.ogg");
     public override void Initialize()
     {
         base.Initialize();

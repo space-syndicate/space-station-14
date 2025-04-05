@@ -50,7 +50,6 @@ using Robust.Shared.Physics.Systems;
 using Robust.Shared.Player;
 using Robust.Shared.Random; // Goobstation
 using Robust.Shared.Timing;
-
 namespace Content.Shared.Movement.Pulling.Systems;
 
 /// <summary>
@@ -824,6 +823,11 @@ public sealed class PullingSystem : EntitySystem
             if (!_combatMode.IsInCombatMode(puller))
                 return false;
 
+        // Corvax-Next-GrabComponent-Start
+        if (!HasComp<CanChokeGrabComponent>(puller))
+            return false;
+        // Corvax-Next-GrabComponent-End
+        
         // It's blocking stage update, maybe better UX?
         if (puller.Comp.GrabStage == GrabStage.Suffocate)
         {

@@ -26,6 +26,7 @@
     implants: [ MindShieldImplant ]
   - !type:AddComponentSpecial
     components:
+      - type: CanChokeGrab # Corvax-Next-Grab
       - type: Skills # Corvax-Next-Skills
         skills:
         - Shooting

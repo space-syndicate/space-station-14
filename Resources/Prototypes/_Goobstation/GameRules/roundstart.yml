@@ -22,6 +22,8 @@
       - type: HereticRole
       startingGear: HereticGear # see Roles/Antags/heretic.yml
       components:
+      - type: CanChokeGrab
+      - type: CollectiveMind # for the future
       - type: Skills # Corvax-Next-Skills
         skills:
         - ShuttleControl

@@ -1,4 +1,4 @@
-﻿using Content.Server.Body.Systems;
+using Content.Server.Body.Systems;
 using Content.Server.Kitchen.Components;
 using Content.Server.Nutrition.EntitySystems;
 using Content.Shared.Body.Components;
@@ -65,8 +65,11 @@ public sealed class SharpSystem : EntitySystem
         if (!TryComp<SharpComponent>(knife, out var sharp))
             return false;
 
-        if (TryComp<MobStateComponent>(target, out var mobState) && !_mobStateSystem.IsDead(target, mobState))
+        // Corvax-Next-Skills-Start
+        var hasMobState = TryComp<MobStateComponent>(target, out var mobState);
+        if (hasMobState && !_mobStateSystem.IsDead(target, mobState))
             return false;
+        // Corvax-Next-Skills-End
 
         if (butcher.Type != ButcheringType.Knife && target != user)
         {
@@ -76,19 +79,29 @@ public sealed class SharpSystem : EntitySystem
 
         if (!sharp.Butchering.Add(target))
             return false;
-
         // if the user isn't the entity with the sharp component,
         // they will need to be holding something with their hands, so we set needHand to true
         // so that the doafter can be interrupted if they drop the item in their hands
         var needHand = user != knife;
 
-        var doAfter =
-            new DoAfterArgs(EntityManager, user, sharp.ButcherDelayModifier * butcher.ButcherDelay * (_skills.HasSkill(user, Skills.Butchering) ? 1 : ButcherDelayModifierWithoutSkill), new SharpDoAfterEvent(), knife, target: target, used: knife) // Corvax-Next-Skills
-            {
-                BreakOnDamage = true,
-                BreakOnMove = true,
-                NeedHand = needHand,
-            };
+        // Corvax-Next-Skills-Start
+        var delayModifier = hasMobState && !_skills.HasSkill(user, Skills.Butchering) ? ButcherDelayModifierWithoutSkill : 1;
+
+        var doAfter = new DoAfterArgs(
+            EntityManager,
+            user,
+            sharp.ButcherDelayModifier * butcher.ButcherDelay * delayModifier,
+            new SharpDoAfterEvent(),
+            knife,
+            target: target,
+            used: knife)
+        {
+            BreakOnDamage = true,
+            BreakOnMove = true,
+            NeedHand = needHand,
+        };
+        // Corvax-Next-Skills-End
+
         _doAfterSystem.TryStartDoAfter(doAfter);
         return true;
     }

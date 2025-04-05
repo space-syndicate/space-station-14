@@ -66,9 +66,9 @@
             #silicon
             StationAi: [ 1, 1 ]
             Borg: [ 2, 2 ]
-        # Goobstation blob-config-start SMALL+
+        # Corvax-next blob-config-start SMALL+
         - type: StationBlobConfig
-          stageBegin: 25
-          stageCritical: 350
-          stageTheEnd: 700
-        # Goobstation blob-config-end
+          stageBegin: 40
+          stageCritical: 500
+          stageTheEnd: 900
+        # Corvax-next blob-config-end
