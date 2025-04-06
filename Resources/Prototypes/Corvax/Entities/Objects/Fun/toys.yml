@@ -1,8 +1,8 @@
 - type: entity
   parent: BasePlushie
   id: RubberPig
-  name: игрушечная свинья
-  description: Дементий, гони свиней!
+  name: toy pig
+  description: Squeeze Me, Babe # not Baby
   components:
   - type: Sprite
     sprite: Corvax/Objects/Fun/toys.rsi
