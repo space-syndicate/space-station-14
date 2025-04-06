@@ -35,11 +35,13 @@
   id: AtmosphericTechnicianWintercoat
   equipment:
     outerClothing: ClothingOuterWinterAtmos
-    
+
+# CorvaxAtmosFashion-start
 - type: loadout
   id: AtmosphericsOveralls
   equipment:
     outerClothing: ClothingAtmosphericsOveralls
+# CorvaxAtmosFashion-end
 
 # Shoes
 - type: loadout
