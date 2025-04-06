@@ -2,12 +2,12 @@
 
 ## Upgradeaction command loc
 
-upgradeaction-command-need-one-argument = upgradeaction needs at least one argument, the action entity uid. The second optional argument is a specified level.
-upgradeaction-command-max-two-arguments = upgradeaction has a maximum of two arguments, the action entity uid and the (optional) level to set.
-upgradeaction-command-second-argument-not-number = upgradeaction's second argument can only be a number.
-upgradeaction-command-less-than-required-level = upgradeaction cannot accept a level of 0 or lower.
-upgradeaction-command-incorrect-entityuid-format = You must use a valid entityuid format for upgradeaction.
-upgradeaction-command-entity-does-not-exist = This entity does not exist, a valid entity is required for upgradeaction.
-upgradeaction-command-entity-is-not-action = This entity doesn't have the action upgrade component, so this action cannot be leveled.
-upgradeaction-command-cannot-level-up = The action cannot be leveled up.
-upgradeaction-command-description = Upgrades an action by one level, or to the specified level, if applicable.
+upgradeaction-command-need-one-argument = upgradeaction требует как минимум один аргумент - uid сущности действия. Второй аргумент (необязательный) - уровень.
+upgradeaction-command-max-two-arguments = upgradeaction принимает максимум два аргумента: uid сущности действия и (необязательный) уровень.
+upgradeaction-command-second-argument-not-number = Второй аргумент upgradeaction должен быть числом.
+upgradeaction-command-less-than-required-level = upgradeaction не может принять уровень 0 или ниже.
+upgradeaction-command-incorrect-entityuid-format = Для upgradeaction необходимо указать UID сущности в корректном формате.
+upgradeaction-command-entity-does-not-exist = Указанная сущность не существует. Для upgradeaction требуется существующая сущность.
+upgradeaction-command-entity-is-not-action = У этой сущности нет компонента прокачки действия, поэтому её нельзя улучшить.
+upgradeaction-command-cannot-level-up = Это действие нельзя улучшить.
+upgradeaction-command-description = Повышает уровень действия на один, либо до указанного уровня (если задан).

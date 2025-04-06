@@ -1,6 +1,6 @@
 ent-BaseDelivery = { ent-BaseItem }
     .desc = { ent-BaseItem.desc }
-ent-PackageDelivery = package
+ent-PackageDelivery = посылка
     .desc = { ent-BaseDelivery.desc }
-ent-LetterDelivery = letter
+ent-LetterDelivery = письмо
     .desc = { ent-BaseDelivery.desc }

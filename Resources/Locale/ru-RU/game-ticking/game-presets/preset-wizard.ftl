@@ -9,20 +9,23 @@ survivor-role-greeting =
     Соберите столько огневой мощи, сколько потребуется для гарантии вашего выживания.
     Никому не доверяйте.
 survivor-round-end-dead-count =
-    { $deadCount ->
-        [one] [color=red]{ $deadCount }[/color] выживший погиб.
-       *[other] [color=red]{ $deadCount }[/color] выживших погибло.
-    }
+{
+    $deadCount ->
+        [one] [color=red]{$deadCount}[/color] выживший погиб.
+        *[other] [color=red]{$deadCount}[/color] выживших погибло.
+}
 survivor-round-end-alive-count =
-    { $aliveCount ->
-        [one] [color=yellow]{ $aliveCount }[/color] выживший был оставлен на станции.
-       *[other] [color=yellow]{ $aliveCount }[/color] выжившие были оставлены на станции.
-    }
+{
+    $aliveCount ->
+        [one] [color=yellow]{$aliveCount}[/color] выживший был оставлен на станции.
+        *[other] [color=yellow]{$aliveCount}[/color] выжившие были оставлены на станции.
+}
 survivor-round-end-alive-on-shuttle-count =
-    { $aliveCount ->
-        [one] [color=green]{ $aliveCount }[/color] выживший смог выбраться живым.
-       *[other] [color=green]{ $aliveCount }[/color] выжившие смогли выбраться живыми.
-    }
+{
+    $aliveCount ->
+        [one] [color=green]{$aliveCount}[/color] выживший смог выбраться живым.
+        *[other] [color=green]{$aliveCount}[/color] выжившие смогли выбраться живыми.
+}
 
 ## Wizard
 

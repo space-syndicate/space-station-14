@@ -10,10 +10,10 @@ lathe-category-food = Пища
 lathe-category-chemicals = Химикаты
 lathe-category-materials = Материалы
 # Uniform
-lathe-category-bedsheets = Bedsheets
-lathe-category-carpets = Carpets
-lathe-category-coats = Coats
-lathe-category-command = Command
-lathe-category-hats = Hats
-lathe-category-jumpsuits = Jumpsuits
-lathe-category-neck = Neck
+lathe-category-bedsheets = Одеяла
+lathe-category-carpets = Ковры
+lathe-category-coats = Верхняя одежда
+lathe-category-command = Командование
+lathe-category-hats = Головные уборы
+lathe-category-jumpsuits = Комбинезоны
+lathe-category-neck = Аксессуары

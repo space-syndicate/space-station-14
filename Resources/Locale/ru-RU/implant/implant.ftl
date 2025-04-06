@@ -4,15 +4,15 @@ implanter-component-implanting-target = { $user } пытается что-то �
 implanter-component-implant-failed = { $implant } нельзя имплантировать в { $target }!
 implanter-draw-failed-permanent = { $implant } вросся в { $target } и не может быть удалён!
 implanter-draw-failed = Вы пытаетесь удалить имплант, но ничего не находите.
-implanter-draw-failed-catastrophically = The implanter finds nothing and catastrophically fails, shunting genetic material into { $user }'s hand!
+implanter-draw-failed-catastrophically = Имплантер ничего не находит и катастрофически выходит из строя, перемещая генетический материал в руку { $user }!
 implanter-component-implant-already = { $target } уже имеет { $implant }!
 
 ## UI
 
-implanter-set-draw-verb = Set Implant Draw
-implanter-set-draw-window = Set Implant Draw
-implanter-set-draw-info = Select the implant type this implanter should remove:
-implanter-set-draw-type = Implant type:
+implanter-set-draw-verb = Настроить извлечение
+implanter-set-draw-window = Настройка извлечения
+implanter-set-draw-info = Выберите тип импланта, который этот имплантер должен удалять:
+implanter-set-draw-type = Тип импланта:
 implanter-draw-text = Извлечение
 implanter-inject-text = Установка
 implanter-empty-text = Пусто

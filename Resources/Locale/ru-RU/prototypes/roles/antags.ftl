@@ -1,7 +1,7 @@
-roles-antag-generic-solo-antagonist-name = Solo Antagonist
-roles-antag-generic-free-agent-name = Free Agent
-roles-antag-generic-team-antagonist-name = Team Antagonist
-roles-antag-generic-silicon-antagonist-name = Silicon Antagonist
+roles-antag-generic-solo-antagonist-name = Соло-антагонист
+roles-antag-generic-free-agent-name = Свободный агент
+roles-antag-generic-team-antagonist-name = Командный антагонист
+roles-antag-generic-silicon-antagonist-name = Изменённый синтетик
 roles-antag-syndicate-agent-name = Агент Синдиката
 roles-antag-syndicate-agent-objective = Выполните свои задачи и не попадитесь.
 roles-antag-syndicate-agent-sleeper-name = Спящий агент Синдиката
