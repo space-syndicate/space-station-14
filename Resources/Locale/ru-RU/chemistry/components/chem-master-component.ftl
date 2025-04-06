@@ -30,3 +30,7 @@ chem-master-window-dose-label = Дозировка (ед.):
 chem-master-window-create-button = Создать
 chem-master-window-bottles-label = Бутылочки:
 chem-master-window-unknown-reagent-text = Неизвестный реагент
+chem-master-window-sort-type-none = Sort by: Oldest First
+chem-master-window-sort-type-alphabetical = Sort by: Alphabetical
+chem-master-window-sort-type-quantity = Sort by: Quantity
+chem-master-window-sort-type-latest = Sort by: Recent First
