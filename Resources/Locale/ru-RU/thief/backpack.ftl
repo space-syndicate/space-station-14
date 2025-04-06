@@ -1,4 +1,4 @@
-thief-backpack-window-title = Ящик воровских инструментов
+thief-backpack-window-title = Воровские инструменты
 thief-backpack-window-description =
     Внутри находятся ваши орудия труда, которые растворятся, когда вы будете готовы.
     Выберите { $maxCount } { $maxCount ->
