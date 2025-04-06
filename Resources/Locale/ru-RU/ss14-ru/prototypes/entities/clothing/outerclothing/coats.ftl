@@ -76,5 +76,3 @@ ent-ClothingOuterCoatSpaceAsshole = куртка космического муд
     .desc = And there he was...
 ent-ClothingOuterCoatExpensive = дорогая шуба
     .desc = Очень пушистая розовая шуба, сделанная из очень дорогого меха (очевидно).
-ent-ClothingAtmosphericsOveralls = спецовка атмосферного техника
-    .desc = Огнеупорная спецовка, крайне хороша для защиты тонкой одежды от утечек газа и маленьких пожаров.
