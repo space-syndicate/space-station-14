@@ -17,8 +17,8 @@ injector-component-cannot-inject-message = Вы не можете ничего �
 injector-component-inject-success-message = Вы вводите { $amount }ед. в { $target }!
 injector-component-transfer-success-message = Вы перемещаете { $amount }ед. в { $target }.
 injector-component-draw-success-message = Вы набираете { $amount }ед. из { $target }.
-injector-component-target-already-full-message = { $target } полон!
-injector-component-target-is-empty-message = { $target } пуст!
+injector-component-target-already-full-message = {CAPITALIZE( $target )} полон!
+injector-component-target-is-empty-message = {CAPITALIZE( $target )} пуст!
 injector-component-cannot-toggle-draw-message = Больше не набрать!
 injector-component-cannot-toggle-inject-message = Нечего вводить!
 

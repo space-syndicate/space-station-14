@@ -1,4 +1,5 @@
-﻿- type: entity
+﻿
+- type: entity
   parent: ClothingOuterBase
   id: ClothingOuterAerostaticBomberJacket
   name: aerostatic bomber jacket
@@ -19,3 +20,14 @@
       sprite: Corvax/Clothing/OuterClothing/Coats/disco.rsi
     - type: Clothing
       sprite: Corvax/Clothing/OuterClothing/Coats/disco.rsi
+      
+- type: entity
+  parent: ClothingOuterStorageBase
+  id: ClothingAtmosphericsOveralls
+  name: atmospherics overalls
+  description: A set of fireproof overalls, good for protecting thinner clothes from gas leaks.
+  components:
+  - type: Sprite
+    sprite: Corvax/Clothing/OuterClothing/Coats/atmos_overalls.rsi
+  - type: Clothing
+    sprite: Corvax/Clothing/OuterClothing/Coats/atmos_overalls.rsi
