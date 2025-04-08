@@ -15,7 +15,7 @@
 
 - type: loadoutGroup
   id: BrigmedicHead
-  name: loadout-group-Brigmedic-head
+  name: loadout-group-brigmedic-head
   loadouts:
   - BrigmedicSecurityHat
   - BrigmedicHat
@@ -23,21 +23,21 @@
 
 - type: loadoutGroup
   id: BrigmedicMask
-  name: loadout-group-Brigmedic-mask
+  name: loadout-group-brigmedic-mask
   loadouts:
   - BrigmedicGasSecurity
   - BrigmedicMedicalSecurity
 
 - type: loadoutGroup
   id: BrigmedicJumpsuit
-  name: loadout-group-Brigmedic-jumpsuit
+  name: loadout-group-brigmedic-jumpsuit
   loadouts:
   - BrigmedicJumpsuit
   - BrigmedicJumpskirt
 
 - type: loadoutGroup
   id: BrigmedicGloves
-  name: loadout-group-Brigmedic-gloves
+  name: loadout-group-brigmedic-gloves
   loadouts:
   - BrigmedicGlovesLatex
   - BrigmedicGlovesNitrile
@@ -45,7 +45,7 @@
 
 - type: loadoutGroup
   id: BrigmedicBackpack
-  name: loadout-group-Brigmedic-backpack
+  name: loadout-group-brigmedic-backpack
   loadouts:
   - BrigmedicBackpack
   - BrigmedicSatchel
@@ -53,7 +53,7 @@
 
 - type: loadoutGroup
   id: BrigmedicOuterClothing
-  name: loadout-group-Brigmedic-clothing
+  name: loadout-group-brigmedic-clothing
   loadouts:
   - BrigmedicCoatLab
   - BrigmedicVest
@@ -63,7 +63,7 @@
 
 - type: loadoutGroup
   id: BrigmedicShoes
-  name: loadout-group-Brigmedic-shoes
+  name: loadout-group-brigmedic-shoes
   loadouts:
   - BrigmedicJackSec
   - BrigmedicCombat
