@@ -3,8 +3,8 @@ loadout-group-chief-engineer-backpack = Рюкзак старшего инжен
 # Security
 loadout-group-brigmedic-head = Бригмедик, голова
 loadout-group-brigmedic-jumpsuit = Бригмедик, комбинезон
-loadout-group-brigmedic-backpack = Бригмедик, верхняя одежда
-loadout-group-brigmedic-outerclothing = Бригмедик, рюкзак
+loadout-group-brigmedic-clothing = Бригмедик, верхняя одежда
+loadout-group-brigmedic-backpack = Бригмедик, рюкзак
 loadout-group-brigmedic-gloves = Бригмедик, перчатка
 loadout-group-brigmedic-mask = Бригмедик, маска
 loadout-group-brigmedic-shoes = Бригмедик, обувь
