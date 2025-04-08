@@ -97,8 +97,17 @@
       - id: WeaponDisabler
       - id: TrackingImplanter
         amount: 2
+      - id: ClothingMaskBreathMedicalSecurity # Corvax-Brigmedic
+      - id: BoxBodyBag # Corvax-Brigmedic
+      - id: Defibrillator # Corvax-Brigmedic
+      - id: PowerCellHigh # Corvax-Brigmedic
+        amount: 2 # Corvax-Brigmedic
       - id: ClothingOuterHardsuitBrigmedic
-      - id: BoxSterileMask
+      - id: BoxSterileMask 
+      - id: MedkitAdvancedFilled # Corvax-Brigmedic
+        amount: 2 # Corvax-Brigmedic
+      - id: BoxMiniSyringe # Corvax-Brigmedic
+      - id: LauncherSyringe # Corvax-Brigmedic
       - id: ClothingHeadHatBeretBrigmedic
       - id: ClothingOuterCoatAMG
       - id: ClothingUniformJumpsuitBrigmedic
