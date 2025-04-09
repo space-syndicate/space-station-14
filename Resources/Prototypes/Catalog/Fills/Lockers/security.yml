@@ -97,17 +97,8 @@
       - id: WeaponDisabler
       - id: TrackingImplanter
         amount: 2
-      - id: ClothingMaskBreathMedicalSecurity # Corvax-Brigmedic
-      - id: BoxBodyBag # Corvax-Brigmedic
-      - id: Defibrillator # Corvax-Brigmedic
-      - id: PowerCellHigh # Corvax-Brigmedic
-        amount: 2 # Corvax-Brigmedic
       - id: ClothingOuterHardsuitBrigmedic
       - id: BoxSterileMask 
-      - id: MedkitAdvancedFilled # Corvax-Brigmedic
-        amount: 2 # Corvax-Brigmedic
-      - id: BoxMiniSyringe # Corvax-Brigmedic
-      - id: LauncherSyringe # Corvax-Brigmedic
       - id: ClothingHeadHatBeretBrigmedic
       - id: ClothingOuterCoatAMG
       - id: ClothingUniformJumpsuitBrigmedic
@@ -132,6 +123,17 @@
         prob: 0.5
       - id: ClothingOuterCoatLabSecurityMedic # Corvax-Resprite
         prob: 0.5
+        # Corvax-Brigmedic-Start
+      - id: ClothingMaskBreathMedicalSecurity 
+      - id: BoxBodyBag 
+      - id: Defibrillator 
+      - id: PowerCellHigh 
+        amount: 2 
+      - id: MedkitAdvancedFilled 
+        amount: 2 
+      - id: BoxMiniSyringe 
+      - id: LauncherSyringe 
+        # Corvax-Brigmedic-End
 
 - type: entity
   id: LockerDetectiveFilled
