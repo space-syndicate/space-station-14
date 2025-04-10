@@ -104,6 +104,8 @@
       - id: ClothingUniformJumpsuitBrigmedic
       - id: ClothingUniformJumpskirtBrigmedic
       - id: MedkitFilled
+      - id: ClothingUniformJumpskirtOfLife
+        prob: 0.1
       - id: MedkitCombatFilled
         prob: 0.6
       - id: MedkitAdvancedFilled
@@ -128,7 +130,6 @@
       - id: BoxBodyBag 
       - id: Defibrillator 
       - id: PowerCellHigh 
-        amount: 2 
       - id: MedkitAdvancedFilled 
         amount: 2 
       - id: BoxMiniSyringe 
