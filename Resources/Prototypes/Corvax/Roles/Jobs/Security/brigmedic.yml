@@ -2,7 +2,7 @@
   id: Brigmedic
   name: job-name-brigmedic
   description: job-description-brigmedic
-  playTimeTracker: JobEvent1
+  playTimeTracker: JobBrigmedic
   requirements:
   - !type:DepartmentTimeRequirement
     department: Medical
