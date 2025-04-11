@@ -121,7 +121,11 @@ barsign-prototype-description-spacebucks = От них нельзя скрыть
 
 ## EmpBarSign
 
+barsign-prototype-name-maltroach = Солодомоль
+barsign-prototype-description-maltroach = Скуик!
 barsign-prototype-description-empbarsign = Что-то пошло совсем не так.
+barsign-prototype-name-whiskeyechoes = Виски-Эхо
+barsign-prototype-description-whiskeyechoes = Элитный бар для элитных опер… Стоп, мы же на станции Nanotrasen. Почему эта вывеска вообще в базе данных?
 
 ## SignOff
 

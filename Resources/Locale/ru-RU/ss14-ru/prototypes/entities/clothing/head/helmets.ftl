@@ -15,7 +15,6 @@ ent-ClothingHeadHelmetCult = шлем культа
     .desc = Крепкий, злобно выглядящий шлем культа.
 ent-ClothingHeadHelmetJanitorBombSuit = сапёрно-уборочный шлем
     .desc = Тяжёлый шлем, предназначенный для выдерживания взрывов, возникающих в результате реакций между химическими веществами.
-    .suffix = НЕ МАППИТЬ
 ent-ClothingHeadHelmetRiot = лёгкий противоударный шлем
     .desc = Этот шлем был специально разработан для защиты в ближнем бою.
 ent-ClothingHeadHelmetSpaceNinja = шлем космического ниндзя

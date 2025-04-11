@@ -1,1 +1,1 @@
-bodyburn-text-others = {CAPITALIZE( $name )} сгорает дотла!
+bodyburn-text-others = { CAPITALIZE($name) } сгорает дотла!

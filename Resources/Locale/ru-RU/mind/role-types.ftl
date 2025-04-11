@@ -13,4 +13,4 @@ role-type-team-antagonist-color = #d82000
 role-type-free-agent-color = #ffff00
 role-type-familiar-color = #6495ed
 role-type-silicon-color = #6495ed
-role-type-silicon-antagonist-color =#c832e6
+role-type-silicon-antagonist-color = #c832e6

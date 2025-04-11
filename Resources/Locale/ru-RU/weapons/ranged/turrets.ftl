@@ -8,4 +8,4 @@ deployable-turret-component-no-ammo = Оружейные системы исто
 deployable-turret-component-is-broken = Турель сильно повреждена и требует ремонта
 deployable-turret-component-cannot-access-wires = Вы не можете добраться до панели обслуживания, пока турель активна
 # Turret notification for station AI
-station-ai-turret-is-attacking-warning = {CAPITALIZE($source)} вступила в бой с враждебной целью.
+station-ai-turret-is-attacking-warning = { CAPITALIZE($source) } вступила в бой с враждебной целью.

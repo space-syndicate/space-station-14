@@ -8,4 +8,4 @@ stethoscope-fucked = Вы слышите судорожное, затруднё�
 stethoscope-delta-steady = Оно стабильное.
 stethoscope-delta-improving = Оно улучшается.
 stethoscope-delta-worsening = Оно ухудшается.
-stethoscope-combined-status = {$absolute} {$delta}
+stethoscope-combined-status = { $absolute } { $delta }

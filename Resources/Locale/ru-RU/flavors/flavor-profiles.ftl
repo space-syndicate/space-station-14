@@ -67,7 +67,6 @@ flavor-complex-mustard = как горчица
 
 # Food-specific flavors.
 
-
 ## Food chemicals. In case you get something that has this inside.
 
 flavor-complex-nutriment = как питательные вещества
@@ -132,7 +131,6 @@ flavor-complex-cherry = как вишня
 
 # use it when there multiple types of veggies
 
-
 ## Complex foodstuffs (cooked foods, joke flavors, etc)
 
 flavor-complex-pink = как розовый
@@ -187,7 +185,6 @@ flavor-complex-paper = как кашеобразная масса
 flavor-complex-compressed-meat = как спрессованное мясо
 
 # Drink-specific flavors.
-
 
 ## Generic alcohol/soda taste. This should be replaced with an actual flavor profile.
 
@@ -273,6 +270,17 @@ flavor-complex-themartinez = как фиалки и лимонная водка
 flavor-complex-cogchamp = как латунь
 flavor-complex-white-gilgamesh = как слегка газированные сливки
 flavor-complex-antifreeze = как тепло
+flavor-complex-caipirinha = как Бразилия
+flavor-complex-daiquiri = как ром, лайм и сахар
+flavor-complex-deathintheafternoon = как анис и шампанское
+flavor-complex-empress75 = как тирийский пурпур
+flavor-complex-espressomartini = как водка и кофе
+flavor-complex-mayojito = как желудочные колики
+flavor-complex-mimeosa = как тишина и апельсины
+flavor-complex-mimosa = как ранний бранч
+flavor-complex-moscowmule = как водка и имбирный эль
+flavor-complex-thesunalsorises = как абсентовый дайкири
+flavor-complex-whiskeysour = как виски и яйцо
 flavor-complex-zombiecocktail = как поедание мозгов
 flavor-complex-absinthe = как анис
 flavor-complex-blue-curacao = как цветы апельсина
@@ -310,13 +318,13 @@ flavor-complex-toxins-special = как исследование космоса
 flavor-complex-vodka-martini = как русский шпионский фильм
 flavor-complex-vodka-tonic = освежающе горько
 flavor-complex-coconut-rum = как орехово-ферментированный сахар
+flavor-complex-bacchus-blessing = как кирпичная стена
 
 ### This is exactly what pilk tastes как. I'm not even joking. I might've been a little drunk though
 
 flavor-complex-pilk = как сладкое молоко
 
 # Medicine/chemical-specific flavors.
-
 
 ## Generic flavors.
 

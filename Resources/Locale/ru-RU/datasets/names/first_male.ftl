@@ -664,7 +664,6 @@ names-first-male-dataset-663 = Зейн
 names-first-male-dataset-664 = Зейден
 names-first-male-dataset-665 = Зик
 names-first-male-dataset-666 = Зион
-
 # CORVAX BLET
 names-first-male-dataset-667 = Августин
 names-first-male-dataset-668 = Азамат
