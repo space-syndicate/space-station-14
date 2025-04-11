@@ -1,9 +1,7 @@
 - type: gameMap
   id: NextBagel
-  mapName: 'NT14 Багель'
+  mapName: 'Next Bagel'
   mapPath: /Maps/Next/next_bagel.yml
-  maxRandomOffset: 0
-  randomRotation: false
   minPlayers: 25
   maxPlayers: 65
   stations:
@@ -65,9 +63,9 @@
             #silicon
             StationAi: [ 1, 1 ]
             Borg: [ 2, 2 ]
-        # Corvax-next blob-config-start HUGEs
+        # Goobstation blob-config-start HUGEs
         - type: StationBlobConfig
           stageBegin: 40
-          stageCritical: 700
-          stageTheEnd: 1200
-        # Corvax-next blob-config-end
+          stageCritical: 450
+          stageTheEnd: 900
+        # Goobstation blob-config-end
