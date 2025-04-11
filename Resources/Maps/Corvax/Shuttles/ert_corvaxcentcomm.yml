@@ -1,6 +1,17 @@
 meta:
-  format: 6
-  postmapinit: false
+  format: 7
+  category: Grid
+  engineVersion: 250.0.0
+  forkId: syndicate-next
+  forkVersion: d139f441e29b960e8ce51d57d8581bd7018892fe
+  time: 04/11/2025 15:53:27
+  entityCount: 501
+maps: []
+grids:
+- 1
+orphans:
+- 1
+nullspace: []
 tilemap:
   0: Space
   17: FloorBlue
@@ -853,16 +864,6 @@ entities:
     - type: Transform
       pos: 1.5,6.5
       parent: 1
-  - uid: 47
-    components:
-    - type: Transform
-      pos: 0.5,-0.5
-      parent: 1
-  - uid: 48
-    components:
-    - type: Transform
-      pos: 0.5,-1.5
-      parent: 1
   - uid: 49
     components:
     - type: Transform
@@ -891,22 +892,22 @@ entities:
   - uid: 54
     components:
     - type: Transform
-      pos: 0.5,-3.5
+      pos: -1.5,-3.5
       parent: 1
   - uid: 55
     components:
     - type: Transform
-      pos: 0.5,-4.5
+      pos: 2.5,-3.5
       parent: 1
   - uid: 56
     components:
     - type: Transform
-      pos: 0.5,-5.5
+      pos: -0.5,-11.5
       parent: 1
   - uid: 57
     components:
     - type: Transform
-      pos: 0.5,-6.5
+      pos: 1.5,-10.5
       parent: 1
   - uid: 58
     components:
@@ -941,7 +942,7 @@ entities:
   - uid: 64
     components:
     - type: Transform
-      pos: 0.5,-11.5
+      pos: -0.5,-10.5
       parent: 1
   - uid: 65
     components:
@@ -1193,6 +1194,31 @@ entities:
     - type: Transform
       pos: 6.5,5.5
       parent: 1
+  - uid: 120
+    components:
+    - type: Transform
+      pos: 0.5,-0.5
+      parent: 1
+  - uid: 351
+    components:
+    - type: Transform
+      pos: 0.5,-1.5
+      parent: 1
+  - uid: 499
+    components:
+    - type: Transform
+      pos: 1.5,-11.5
+      parent: 1
+  - uid: 500
+    components:
+    - type: Transform
+      pos: -2.5,-8.5
+      parent: 1
+  - uid: 501
+    components:
+    - type: Transform
+      pos: -2.5,-7.5
+      parent: 1
 - proto: CableHV
   entities:
   - uid: 115
@@ -1219,11 +1245,6 @@ entities:
     components:
     - type: Transform
       pos: 2.5,5.5
-      parent: 1
-  - uid: 120
-    components:
-    - type: Transform
-      pos: -0.5,2.5
       parent: 1
   - uid: 121
     components:
@@ -1531,6 +1552,7 @@ entities:
     - type: Transform
       pos: 3.5405633,-0.43368232
       parent: 1
+    - type: Visibility
 - proto: ComputerCloningConsole
   entities:
   - uid: 174
@@ -1569,6 +1591,20 @@ entities:
     components:
     - type: Transform
       pos: 0.5,8.5
+      parent: 1
+- proto: DefibrillatorCabinetFilled
+  entities:
+  - uid: 352
+    components:
+    - type: Transform
+      rot: -1.5707963267948966 rad
+      pos: 4.5,-1.5
+      parent: 1
+  - uid: 498
+    components:
+    - type: Transform
+      rot: 1.5707963267948966 rad
+      pos: -3.5,-1.5
       parent: 1
 - proto: DrinkWaterBottleFull
   entities:
@@ -2774,15 +2810,22 @@ entities:
       parent: 1
 - proto: Tourniquet
   entities:
-  - uid: 351
+  - uid: 47
     components:
     - type: Transform
-      pos: -2.6160438,-0.35647815
+      pos: -2.7779336,-0.46459663
       parent: 1
-  - uid: 352
+  - uid: 48
     components:
     - type: Transform
-      pos: -2.4207027,-0.35647815
+      pos: -2.7623086,-0.19897163
+      parent: 1
+- proto: TurboItemRecharger
+  entities:
+  - uid: 273
+    components:
+    - type: Transform
+      pos: -2.5,-0.5
       parent: 1
 - proto: VendingMachineTankDispenserEVA
   entities:
