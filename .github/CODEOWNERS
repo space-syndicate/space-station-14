@@ -2,6 +2,7 @@
 
 # Ping for all PRs
 * @Morb0
+* @JerryImMouse
 
 # Ping for all PRs that include translations/editing fluent strings
 *.ftl @ficcialfaint
@@ -9,3 +10,6 @@
 # Map files
 /Resources/Prototypes/Maps/** @Ko4ergaPunk 
 /Resources/Maps/** @Ko4ergaPunk 
+
+# Sprites
+/Resources/Textures/** @SonicHDC 
