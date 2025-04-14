@@ -103,21 +103,23 @@
       - id: ClothingOuterCoatAMG
       - id: ClothingUniformJumpsuitBrigmedic
       - id: ClothingUniformJumpskirtBrigmedic
+      - id: MedkitFilled
       - id: ClothingUniformJumpskirtOfLife
         prob: 0.1
-      - id: MedkitFilled
-      - id: MedkitCombatFilled
-        prob: 0.6
-      - id: MedkitAdvancedFilled
-        prob: 0.4
-      - id: MedkitOxygenFilled
-        prob: 0.3
-      - id: MedkitBruteFilled
-        prob: 0.3
-      - id: MedkitToxinFilled
-        prob: 0.3
-      - id: MedkitBurnFilled
-        prob: 0.7
+      # Corvax Delete start
+      #- id: MedkitCombatFilled
+      #  prob: 0.6
+      #- id: MedkitAdvancedFilled
+      #  prob: 0.4
+      #- id: MedkitOxygenFilled
+      #  prob: 0.3
+      #- id: MedkitBruteFilled
+      #  prob: 0.3
+      #- id: MedkitToxinFilled
+      #  prob: 0.3
+      #- id: MedkitBurnFilled
+      #  prob: 0.7
+      # Corvax Delete end
       - id: ClothingNeckCloakMoth #bzzz Moth-pocalypse
         prob: 0.15
       - id: ClothingHeadHelmetSecurityMedic # Corvax-Resprite
@@ -125,6 +127,16 @@
         prob: 0.5
       - id: ClothingOuterCoatLabSecurityMedic # Corvax-Resprite
         prob: 0.5
+        # Corvax-Brigmedic-Start
+      - id: ClothingMaskBreathMedicalSecurity 
+      - id: BoxBodyBag 
+      - id: Defibrillator 
+      - id: PowerCellHigh 
+        amount: 2 
+      - id: MedkitAdvancedFilled 
+      - id: BoxMiniSyringe 
+      - id: LauncherSyringe 
+        # Corvax-Brigmedic-End
 
 - type: entity
   id: LockerDetectiveFilled
