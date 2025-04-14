@@ -58939,6 +58939,9 @@ entities:
     - type: Transform
       pos: 48.518738,69.57962
       parent: 1
+    - type: Physics
+      canCollide: False
+      bodyType: Static      
     missingComponents:
     - Item
     - EmitSoundOnUse
