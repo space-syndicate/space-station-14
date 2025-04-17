@@ -36,6 +36,7 @@
             Paramedic: [ 1, 1 ]
             Chemist: [ 2, 2 ]
             Surgeon: [ 1, 1 ]
+            Psychologist: [ 1, 1 ]
             # science
             ResearchDirector: [ 1, 1 ]
             Scientist: [ 5, 5 ]
@@ -46,6 +47,8 @@
             SecurityOfficer: [ 7, 7 ]
             SecurityCadet: [ 4, 4 ]
             Detective: [ 1, 1 ]
+            Pilot: [ 1, 1]
+            Brigmedic: [ 1, 1 ]
             # service
             HeadOfPersonnel: [ 1, 1 ]
             Bartender: [ 1, 2 ]
