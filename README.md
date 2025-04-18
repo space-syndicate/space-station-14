@@ -5,17 +5,15 @@ Space Station 14 это ремейк SS13, который работает на 
 Это репозиторий русскоязычного сервера по Space Station 14, целью которого является добавление различного фрикованного контента. (Smesharik Sosal)
 
 ## Ссылки
-
-[Наш Discord](https://discord.station14.ru) | [Наша Вики](https://wiki.station14.ru) | [Steam](https://store.steampowered.com/app/1255460/Space_Station_14/) | [Клиент без Steam](https://spacestation14.io/about/nightlies/) | [Основной репозиторий](https://github.com/space-wizards/space-station-14)
+Это говно разрабатывается благодаря @ANIvarm @Sherlook @Casha
 
 ## Документация
 
-На официальном сайте с [документацией](https://docs.spacestation14.io/) имеется вся необходимая информация о контенте SS14, движке, дизайне игры и многом другом. Также имеется много информации для начинающих разработчиков.
+https://topbloger.livejournal.com/1270871.html?ysclid=m9n258cqpq407761434
 
 ## Контрибьют
 
-Мы рады принять вклад от любого человека. Заходите в Discord, если хотите помочь. У нас есть [список проблем](https://github.com/space-syndicate/space-station-14-content/issues), которые нужно решить, и любой может за них взяться. Не бойтесь просить о помощи!
-Только убедитесь, что ваши изменения и PRы соответствуют [руководству по контрибьюту](https://docs.spacestation14.com/en/general-development/codebase-info/pull-request-guidelines.html).
+Никто кроме фриков (как мы) не будет разрабатывать эту хрень
 
 ## Сборка
 
