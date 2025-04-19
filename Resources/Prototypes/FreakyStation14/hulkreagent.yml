@@ -1,0 +1,31 @@
+- type: reagent
+  id: HulkGen
+  name: мутирующая сыворотка
+  group: Toxins
+  desc: Созданный для военных преступлений реагент. Изменяет ДНК жертвы, превращая её в машину для убийств.
+  physicalDesc: reagent-physical-desc-inversed
+  flavor: funny
+  color: "#a64dc5"
+  metabolisms:
+    Poison:
+      metabolismRate: 0.25
+      effects:
+      - !type:Emote
+        emote: злится
+        showInChat: true
+        force: true
+        probability: 1
+      - !type:Polymorph
+        prototype: HulkPolymorph
+        conditions:
+        - !type:OrganType
+          type: Human
+          shouldHave: true
+        - !type:ReagentThreshold
+          min: 10
+      - !type:AdjustReagent
+        reagent: HulkGen
+        amount: -10
+        conditions:
+        - !type:ReagentThreshold
+          min: 10

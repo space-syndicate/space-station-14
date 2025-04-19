@@ -1,0 +1,16 @@
+- type: polymorph
+  id: HulkPolymorph
+  configuration:
+    entity: Hulk
+    forced: true
+    transferName: true
+    transferHumanoidAppearance: false
+    inventory: None
+    revertOnDeath: true
+    revertOnCrit: true
+    PolymorphPopup: Тело начинает изменяться...
+    ExitPolymorphPopup: Тело возращается в норму
+    polymorphSound: !type:SoundPathSpecifier
+      path: /Audio/FreakyStation/grau.ogg
+    exitPolymorphSound: !type:SoundPathSpecifier
+      path: /Audio/FreakyStation/eto-pechalno.ogg
