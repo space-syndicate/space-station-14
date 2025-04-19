@@ -192,19 +192,21 @@
 # Corvax-HiddenDesc-Start
   - type: HiddenDescription
     entries:
-    - label: corvax-hidden-desc-WetFloorSignMineExplosive-syndicate
+    - label: corvax-hidden-desc-SingMineExplosive-antag
       whitelistMind:
         mindRoles:
         - TraitorRole
         - NukeopsRole
-    - label: corvax-hidden-desc-WetFloorSignMineExplosive-research
-      jobRequired:
-        - ResearchAssistant
-        - ResearchDirector
-        - Scientist
-        - Borg
+        - ThiefRole
+        - ParadoxCloneRole
+        - NinjaRole
+        - WizardRole
+        - InitialInfectedRole
+    - label: corvax-hidden-desc-SingMineExplosive-research
+      roleGroupRequired: SkillRoboticsConstruction
+      mustBeHeld: true
 # Corvax-HiddenDesc-End
-        
+
 - type: entity
   name: plunger
   id: Plunger

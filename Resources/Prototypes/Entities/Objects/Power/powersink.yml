@@ -50,21 +50,16 @@
 # Corvax-HiddenDesc-Start
     - type: HiddenDescription
       entries:
-      - label: corvax-hidden-desc-PowerSink-syndicate
+      - label: corvax-hidden-desc-PowerSink-antag
         whitelistMind:
           mindRoles:
           - TraitorRole
           - NukeopsRole
-      - label: corvax-hidden-desc-PowerSink-engineering
-        jobRequired:
-          - ChiefEngineer
-          - AtmosphericTechnician
-          - StationEngineer
-          - TechnicalAssistant
-      - label: corvax-hidden-desc-PowerSink-research
-        jobRequired:
-          - ResearchAssistant
-          - ResearchDirector
-          - Scientist
-          - Borg
+          - ThiefRole
+          - ParadoxCloneRole
+          - NinjaRole
+          - WizardRole
+          - InitialInfectedRole
+      - label: corvax-hidden-desc-PowerSink-construction
+        roleGroupRequired: SkillAdvancedConstruction
 # Corvax-HiddenDesc-End

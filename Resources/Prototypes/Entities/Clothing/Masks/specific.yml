@@ -26,18 +26,19 @@
 # Corvax-HiddenDesc-Start
     - type: HiddenDescription
       entries:
-      - label: corvax-hidden-desc-Chameleon-syndicate
+      - label: corvax-hidden-desc-Chameleon-antag
         whitelistMind:
           mindRoles:
           - TraitorRole
           - NukeopsRole
+          - ThiefRole
+          - ParadoxCloneRole
+          - NinjaRole
+          - WizardRole
+          - InitialInfectedRole
       - label: corvax-hidden-desc-Chameleon-research
-        jobRequired:
-          - ResearchAssistant
-          - ResearchDirector
-          - Scientist
-          - Borg
-# Corvax-HiddenDesc-End
+        roleGroupRequired: SkillRoboticsConstruction
+        mustBeHeld: true
 
 - type: entity
   parent: ClothingMaskGasChameleon
@@ -62,23 +63,26 @@
           mindRoles:
           - TraitorRole
           - NukeopsRole
-      - label: corvax-hidden-desc-VoiceMasker-syndicate
+          - ThiefRole
+          - ParadoxCloneRole
+          - NinjaRole
+          - WizardRole
+          - InitialInfectedRole
+      - label: corvax-hidden-desc-Chameleon-research
+        roleGroupRequired: SkillRoboticsConstruction
+      - label: corvax-hidden-desc-MascVoic-antag
+        roleGroupRequired: SkillRoboticsConstruction
         whitelistMind:
           mindRoles:
           - TraitorRole
           - NukeopsRole
-      - label: corvax-hidden-desc-Chameleon-research
-        jobRequired:
-          - ResearchAssistant
-          - ResearchDirector
-          - Scientist
-          - Borg
-      - label: corvax-hidden-desc-VoiceMasker-research
-        jobRequired:
-          - ResearchAssistant
-          - ResearchDirector
-          - Scientist
-          - Borg
+          - ThiefRole
+          - ParadoxCloneRole
+          - NinjaRole
+          - WizardRole
+          - InitialInfectedRole
+      - label: corvax-hidden-desc-MascVoic-research
+        roleGroupRequired: SkillRoboticsConstruction
 # Corvax-HiddenDesc-End
 
 - type: entity

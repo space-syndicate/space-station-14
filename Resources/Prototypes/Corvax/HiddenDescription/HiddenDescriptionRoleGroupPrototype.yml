@@ -1,0 +1,314 @@
+# --- Файл: Prototypes/Corvax/HiddenDescription/RoleGroupsSkills_Corrected_NoBorg_NoCommon_NoAi.yml ---
+# Группы ролей, основанные на таблице навыков и СКОРРЕКТИРОВАННЫЕ согласно предоставленным ProtoId.
+# Роли, отсутствующие в списках департаментов, были проигнорированы.
+# ProtoId 'Borg' и 'StationAi' были удалены из всех списков.
+# Секция с общими навыками (Basic Botany, Hacking и т.д.) удалена.
+
+# Навык: Видят все (See all roles)
+- type: hiddenDescriptionRoleGroup
+  id: RoleGroupAllJobs # ID для группы, включающей все работы
+  name: See all roles Jobs
+  jobs:
+  - Captain
+  - IAA
+  - ChiefEngineer
+  - ChiefMedicalOfficer
+  - HeadOfPersonnel
+  - HeadOfSecurity
+  - ResearchDirector
+  - Quartermaster
+  - CargoTechnician
+  - SalvageSpecialist
+  - Bartender
+  - Botanist
+  - Boxer
+  - Chaplain
+  - Chef
+  - Clown
+  - Janitor
+  - Lawyer
+  - Librarian
+  - Mime
+  - Musician
+  - Passenger
+  - Reporter
+  - Visitor
+  - Zookeeper
+  - ServiceWorker
+  - CentralCommandOfficial
+  - CBURN
+  - ERTLeader
+  - ERTChaplain
+  - ERTJanitor
+  - ERTMedical
+  - ERTSecurity
+  - ERTEngineer
+  - DeathSquad
+  - AtmosphericTechnician
+  - StationEngineer
+  - TechnicalAssistant
+  - Chemist
+  - MedicalDoctor
+  - MedicalIntern
+  - Psychologist
+  - Paramedic
+  - SecurityCadet
+  - SecurityOfficer
+  - Pilot
+  - Detective
+  - Warden
+  - Brigmedic
+  - Scientist
+  - ResearchAssistant
+
+- type: hiddenDescriptionRoleGroup
+  id: RoleGroupInformedPersonnel # ID для группы "Информированный персонал"
+  name: Informed Personnel
+  jobs:
+  # --- Служба Безопасности (Все сотрудники) ---
+  - HeadOfSecurity
+  - SecurityCadet
+  - SecurityOfficer
+  - Pilot # Включая Пилота из департамента Security/Specific
+  - Detective
+  - Warden
+  - Brigmedic
+  # --- Главы отделов ---
+  - Captain # Капитан также является главой
+  - ChiefEngineer
+  - ChiefMedicalOfficer
+  - HeadOfPersonnel
+  - ResearchDirector
+  - Quartermaster # Квартирмейстер часто считается командным/главой
+  - IAA
+  # --- Члены СЦК, ЦК (Предполагаем роли из CentralCommand) ---
+  - CentralCommandOfficial
+  - ERTLeader
+  - ERTChaplain
+  - ERTJanitor
+  - ERTMedical
+  - ERTSecurity
+  - ERTEngineer
+  - DeathSquad
+  - CBURN
+
+# Навык: Управление шаттлом (Shuttle Piloting)
+- type: hiddenDescriptionRoleGroup
+  id: SkillShuttlePiloting
+  jobs:
+  - Captain
+  - HeadOfSecurity
+  - ChiefEngineer
+  - Quartermaster
+  - StationEngineer
+  - AtmosphericTechnician
+  - CargoTechnician
+  - SalvageSpecialist
+  - Pilot
+
+# Навык: Сборка ДАМ (Disposals Assembly)
+- type: hiddenDescriptionRoleGroup
+  id: SkillDisposalsAssembly
+  jobs:
+  - ChiefEngineer
+  - StationEngineer
+  - AtmosphericTechnician
+  - TechnicalAssistant
+
+# Навык: Продвинутый Атмос (Advance Atmos)
+- type: hiddenDescriptionRoleGroup
+  id: SkillAdvanceAtmos
+  jobs:
+  - ChiefEngineer
+  - AtmosphericTechnician
+
+# Навык: Сборка Синги (Singularity Construction)
+- type: hiddenDescriptionRoleGroup
+  id: SkillSingularityConstruction
+  jobs:
+  - ChiefEngineer
+  - StationEngineer
+  - AtmosphericTechnician
+
+# Навык: Продвинутое Строительство (Advanced Construction)
+- type: hiddenDescriptionRoleGroup
+  id: SkillAdvancedConstruction
+  jobs:
+  - ChiefEngineer
+  - StationEngineer
+  - AtmosphericTechnician
+  - TechnicalAssistant
+  - ResearchDirector
+  - Scientist
+  - ResearchAssistant
+
+# Навык: Исследования и робототехника (Research & Robotics Construction)
+- type: hiddenDescriptionRoleGroup
+  id: SkillRoboticsConstruction
+  jobs:
+  - ResearchDirector
+  - Scientist
+  - ResearchAssistant
+
+
+# Навык: Ксенобиология (Xenobiology)
+- type: hiddenDescriptionRoleGroup
+  id: SkillXenobiology
+  jobs:
+  - ResearchDirector
+  - Scientist
+  - Zookeeper
+
+# Навык: Владение стрельбой из оружия (Advanced Combat)
+- type: hiddenDescriptionRoleGroup
+  id: SkillAdvancedCombat
+  jobs:
+  - Captain
+  - HeadOfSecurity
+  - Warden
+  - SecurityOfficer
+  - Detective
+  - Pilot
+  - SecurityCadet
+  - Brigmedic
+  - SalvageSpecialist
+
+# Навык: Соляры и ДАМ(АМЕ) (Solar & AME Construction)
+- type: hiddenDescriptionRoleGroup
+  id: SkillSolarAndAMEConstruction
+  jobs:
+  - ChiefEngineer
+  - StationEngineer
+  - AtmosphericTechnician
+  - TechnicalAssistant
+
+# Навык: Разборка "сложных" объектов (Advanced Deconstruction)
+- type: hiddenDescriptionRoleGroup
+  id: SkillAdvancedDeconstruction
+  jobs:
+  - ChiefEngineer
+  - ResearchDirector
+  - Pilot
+  - Scientist
+  - ResearchAssistant
+  - StationEngineer
+  - AtmosphericTechnician
+  - TechnicalAssistant
+  - SalvageSpecialist
+
+# Навык: Базовый атмос (Basic Atmosphere)
+- type: hiddenDescriptionRoleGroup
+  id: SkillBasicAtmosphere
+  jobs:
+  - HeadOfSecurity
+  - ChiefEngineer
+  - ResearchDirector
+  - Warden
+  - Scientist
+  - StationEngineer
+  - AtmosphericTechnician
+
+# Навык: Медицинское оборудование (Medical Equipment Use)
+- type: hiddenDescriptionRoleGroup
+  id: SkillMedicalEquipmentUse
+  jobs:
+  - ChiefMedicalOfficer
+  - Brigmedic
+  - Chemist
+  - MedicalDoctor
+  - Paramedic
+  - MedicalIntern
+  - Psychologist
+
+# Навык: Хирургия (Surgery)
+- type: hiddenDescriptionRoleGroup
+  id: SkillSurgery
+  jobs:
+  - ChiefMedicalOfficer
+  - Brigmedic
+  - MedicalDoctor
+  - Paramedic
+
+# Навык: Работа с животными (Working With Animals)
+- type: hiddenDescriptionRoleGroup
+  id: SkillWorkingWithAnimals
+  jobs:
+  - ChiefMedicalOfficer
+  - ResearchDirector
+  - Zookeeper
+
+# Навык: Продвинутая химия (Advanced Chemistry)
+- type: hiddenDescriptionRoleGroup
+  id: SkillAdvancedChemistry
+  jobs:
+  - ResearchDirector
+  - ChiefMedicalOfficer
+  - Chemist
+  - Scientist
+  - ResearchAssistant
+
+# Навык: Вирусология (Virology)
+- type: hiddenDescriptionRoleGroup
+  id: SkillVirology
+  jobs:
+  - ResearchDirector
+  - ChiefMedicalOfficer
+  - Chemist
+  - MedicalDoctor
+  - MedicalIntern
+  - Paramedic
+  - Scientist
+
+# Навык: Базовая химия (Basic Chemistry)
+- type: hiddenDescriptionRoleGroup
+  id: SkillBasicChemistry
+  jobs:
+  - ResearchDirector
+  - ChiefMedicalOfficer
+  - Detective
+  - Brigmedic
+  - Chemist
+  - MedicalDoctor
+  - Paramedic
+  - MedicalIntern
+  - Psychologist
+  - Scientist
+  - ResearchAssistant
+  - SalvageSpecialist
+  - Botanist
+  - Zookeeper
+
+# Навык: Продвинутое лечение (Advanced Treatment)
+- type: hiddenDescriptionRoleGroup
+  id: SkillAdvancedTreatment
+  jobs:
+  - ChiefMedicalOfficer
+  - Brigmedic
+  - Chemist
+  - MedicalDoctor
+  - Paramedic
+  - MedicalIntern
+  - Psychologist
+  - SalvageSpecialist
+
+# Навык: Продвинутая ботаника (Advanced Botany)
+- type: hiddenDescriptionRoleGroup
+  id: SkillAdvancedBotany
+  jobs:
+  - Botanist
+
+# Навык: Готовка и бар (Cooking & Bar)
+- type: hiddenDescriptionRoleGroup
+  id: SkillCookingAndBar
+  jobs:
+  - Botanist
+  - Chef
+  - Bartender
+  - ServiceWorker
+
+# Навык: Окультизм (Occultism)
+- type: hiddenDescriptionRoleGroup
+  id: SkillOccultism
+  jobs:
+  - Librarian
+  - Chaplain

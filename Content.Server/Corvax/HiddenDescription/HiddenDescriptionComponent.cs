@@ -1,56 +1,87 @@
+using Content.Server.Corvax.HiddenDescription.Prototypes;
+using Content.Shared.Localizations;
 using Content.Shared.Roles;
 using Content.Shared.Whitelist;
 using Robust.Shared.Prototypes;
+using Robust.Shared.GameStates;
+using Robust.Shared.Serialization.TypeSerializers.Implementations.Custom.Prototype;
+using Robust.Shared.Maths;
 
 namespace Content.Server.Corvax.HiddenDescription;
 
 /// <summary>
-/// A component that shows players with specific roles or jobs additional information about entities
+/// Component allowing entities to display additional information during examination,
+/// based on the examiner's roles, held status, or other conditions.
 /// </summary>
-
 [RegisterComponent, Access(typeof(HiddenDescriptionSystem))]
 public sealed partial class HiddenDescriptionComponent : Component
 {
-    [DataField(required: true)]
+    /// <summary>
+    /// A list of entries, each defining a piece of hidden text and the criteria to view it.
+    /// </summary>
+    [DataField("entries", required: true)]
     public List<HiddenDescriptionEntry> Entries = new();
 
     /// <summary>
-    /// Prioritizing the location of classified information in an inspection
+    /// Priority for displaying this component's descriptions relative to other examine text.
     /// </summary>
-    [DataField]
+    [DataField("priority")]
     public int PushPriority = 1;
 }
 
+/// <summary>
+/// Defines a single hidden description and the requirements to see it.
+/// </summary>
 [DataDefinition, Serializable]
 public readonly partial record struct HiddenDescriptionEntry()
 {
     /// <summary>
-    /// Locale string with hidden description
+    /// Localization ID for the description text. Used if <see cref="RawText"/> is null/empty.
     /// </summary>
-    [DataField(required: true)]
+    [DataField("label")]
     public LocId Label { get; init; } = default!;
 
     /// <summary>
-    /// A player's mind must pass a whitelist check to receive hidden information
+    /// Raw text for the description. Overrides <see cref="Label"/> if set. Bypasses localization.
     /// </summary>
-    [DataField]
+    [DataField("rawText")]
+    public string? RawText { get; init; }
+
+    /// <summary>
+    /// Optional color for the description text.
+    /// </summary>
+    [DataField("color")]
+    public Color? TextColor { get; init; }
+
+    /// <summary>
+    /// Whitelist rules that the examiner's mind entity must pass.
+    /// </summary>
+    [DataField("whitelistMind")]
     public EntityWhitelist WhitelistMind { get; init; } = new();
 
     /// <summary>
-    /// A player's body must pass a whitelist check to receive hidden information
+    /// Whitelist rules that the examiner's body entity must pass.
     /// </summary>
-    [DataField]
+    [DataField("whitelistBody")]
     public EntityWhitelist WhitelistBody { get; init; } = new();
 
     /// <summary>
-    /// The player's mind has to have some job role to access the hidden information
+    /// ID of a <see cref="HiddenDescriptionRoleGroupPrototype"/> required.
+    /// The examiner must have a job listed in this group.
     /// </summary>
-    [DataField]
-    public List<ProtoId<JobPrototype>> JobRequired { get; init; } = new();
+    [DataField("roleGroupRequired")]
+    public ProtoId<HiddenDescriptionRoleGroupPrototype>? RoleGroupRequired { get; init; }
 
     /// <summary>
-    /// If true, the player needs to go through and whitelist, and have some job. By default, at least one successful checks is sufficient.
+    /// If true, the examiner must be holding the examined entity.
     /// </summary>
-    [DataField]
+    [DataField("mustBeHeld")]
+    public bool MustBeHeld { get; init; } = false;
+
+    /// <summary>
+    /// If true, ALL role/whitelist checks must pass. If false, ANY check is sufficient.
+    /// Note: <see cref="MustBeHeld"/> is always checked if set to true.
+    /// </summary>
+    [DataField("requireAll")]
     public bool NeedAllCheck { get; init; } = false;
 }

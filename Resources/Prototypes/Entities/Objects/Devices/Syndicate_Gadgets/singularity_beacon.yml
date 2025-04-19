@@ -37,3 +37,20 @@
     powerLoad: 15000
   - type: StaticPrice
     price: 1500
+# Corvax-HiddenDesc-Start
+  - type: HiddenDescription
+    entries:
+    - label: corvax-hidden-desc-SingularityBeacon-antag
+      whitelistMind:
+        mindRoles:
+        - TraitorRole
+        - NukeopsRole
+        - ThiefRole
+        - ParadoxCloneRole
+        - NinjaRole
+        - WizardRole
+        - InitialInfectedRole
+    - label: corvax-hidden-desc-SingularityBeacon-singularityconstruction
+      roleGroupRequired: SkillSingularityConstruction
+      mustBeHeld: true
+# Corvax-HiddenDesc-End

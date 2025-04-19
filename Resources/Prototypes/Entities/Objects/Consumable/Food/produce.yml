@@ -280,7 +280,7 @@
   - type: Extractable
     grindableSolutionName: food
   - type: DamageOnInteract
-    damage: 
+    damage:
       types:
         Heat: 4
         Caustic: 4
@@ -307,7 +307,7 @@
             volume: -5
       - !type:DoActsBehavior
         acts: [ "Destruction" ]
-  - type: DamageOnHit 
+  - type: DamageOnHit
     damage:
       types:
         Blunt: 5 # The nettle will "wilt" after 5 hits.
@@ -1875,19 +1875,12 @@
     entries:
       Taco: Gatfruit
       Burger: GatfruitBurger
-  # Corvax-HiddenDesc-Start
+# Corvax-HiddenDesc-Start
   - type: HiddenDescription
     entries:
-    - label: corvax-hidden-desc-Gatfruit-syndicate
-      whitelistMind:
-        mindRoles:
-        - TraitorRole
-        - NukeopsRole
-    - label: corvax-hidden-desc-Gatfruit-botanist
-      jobRequired:
-      - Botanist
-      - Borg
-  # Corvax-HiddenDesc-End
+    - label: corvax-hidden-desc-Gatfruit-all
+      roleGroupRequired: RoleGroupAllJobs
+# Corvax-HiddenDesc-End
 
 - type: entity
   name: capfruit
@@ -1935,6 +1928,12 @@
   - type: Food
     trash:
     - RevolverCapGunFake
+# Corvax-HiddenDesc-Start
+  - type: HiddenDescription
+    entries:
+    - label: corvax-hidden-desc-Gatfruit-all
+      roleGroupRequired: RoleGroupAllJobs
+# Corvax-HiddenDesc-End
 
 - type: entity
   name: rice bushel
