@@ -1,11 +1,13 @@
-using Content.Shared.Roles;
-using Robust.Shared.Prototypes;
+using Content.Shared.Roles; // Needed for JobPrototype
+using Robust.Shared.Prototypes; // Needed for IPrototype, PrototypeAttribute, IdDataField, DataFieldAttribute
 
-namespace Content.Server.Corvax.HiddenDescription.Prototypes
+// --- ИЗМЕНЕНО ПРОСТРАНСТВО ИМЕН ---
+namespace Content.Shared.Corvax.HiddenDescription.Prototypes // Changed from Content.Server...
 {
     /// <summary>
     /// Defines a reusable group of job roles (<see cref="JobPrototype"/>)
     /// for checking hidden description visibility.
+    /// Defined in Shared to be accessible by the YAMLLinter.
     /// </summary>
     [Prototype("hiddenDescriptionRoleGroup")]
     public sealed class HiddenDescriptionRoleGroupPrototype : IPrototype

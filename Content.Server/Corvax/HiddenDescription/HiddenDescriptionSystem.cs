@@ -1,4 +1,4 @@
-using Content.Server.Corvax.HiddenDescription.Prototypes;
+using Content.Shared.Corvax.HiddenDescription.Prototypes;
 using Content.Server.Mind;
 using Content.Shared.Examine;
 using Content.Shared.Hands.EntitySystems;

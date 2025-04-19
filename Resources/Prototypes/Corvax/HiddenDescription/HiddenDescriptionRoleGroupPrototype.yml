@@ -1,7 +1,6 @@
 # Навык: Видят все (See all roles)
 - type: hiddenDescriptionRoleGroup
   id: RoleGroupAllJobs # ID для группы, включающей все работы
-  name: See all roles Jobs
   jobs:
   - Captain
   - IAA
@@ -57,7 +56,6 @@
 
 - type: hiddenDescriptionRoleGroup
   id: RoleGroupInformedPersonnel # ID для группы "Информированный персонал"
-  name: Informed Personnel
   jobs:
   # --- Служба Безопасности (Все сотрудники) ---
   - HeadOfSecurity

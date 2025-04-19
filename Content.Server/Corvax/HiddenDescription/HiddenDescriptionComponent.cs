@@ -1,4 +1,4 @@
-using Content.Server.Corvax.HiddenDescription.Prototypes;
+using Content.Shared.Corvax.HiddenDescription.Prototypes;
 using Content.Shared.Localizations;
 using Content.Shared.Roles;
 using Content.Shared.Whitelist;
