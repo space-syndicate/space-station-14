@@ -1,9 +1,3 @@
-# --- Файл: Prototypes/Corvax/HiddenDescription/RoleGroupsSkills_Corrected_NoBorg_NoCommon_NoAi.yml ---
-# Группы ролей, основанные на таблице навыков и СКОРРЕКТИРОВАННЫЕ согласно предоставленным ProtoId.
-# Роли, отсутствующие в списках департаментов, были проигнорированы.
-# ProtoId 'Borg' и 'StationAi' были удалены из всех списков.
-# Секция с общими навыками (Basic Botany, Hacking и т.д.) удалена.
-
 # Навык: Видят все (See all roles)
 - type: hiddenDescriptionRoleGroup
   id: RoleGroupAllJobs # ID для группы, включающей все работы
@@ -69,19 +63,19 @@
   - HeadOfSecurity
   - SecurityCadet
   - SecurityOfficer
-  - Pilot # Включая Пилота из департамента Security/Specific
+  - Pilot
   - Detective
   - Warden
   - Brigmedic
   # --- Главы отделов ---
-  - Captain # Капитан также является главой
+  - Captain
   - ChiefEngineer
   - ChiefMedicalOfficer
   - HeadOfPersonnel
   - ResearchDirector
-  - Quartermaster # Квартирмейстер часто считается командным/главой
+  - Quartermaster
   - IAA
-  # --- Члены СЦК, ЦК (Предполагаем роли из CentralCommand) ---
+  # --- Члены СЦК, ЦК
   - CentralCommandOfficial
   - ERTLeader
   - ERTChaplain
