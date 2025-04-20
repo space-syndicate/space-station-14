@@ -1,0 +1,17 @@
+﻿- type: localizedDataset
+  id: NamesTajaranFirstMale
+  values:
+    prefix: names-tajaran-first-male-dataset-
+    count: 345
+
+- type: localizedDataset
+  id: NamesTajaranFirstFemale
+  values:
+    prefix: names-tajaran-first-female-dataset-
+    count: 345
+
+- type: localizedDataset
+  id: NamesTajaranLast
+  values:
+    prefix: names-tajaran-last-dataset-
+    count: 345

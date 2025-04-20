@@ -1,0 +1,59 @@
+- type: entity
+  save: false
+  name: Urist McTajar
+  parent: BaseMobSpeciesOrganic
+  id: BaseMobTajaran
+  abstract: true
+  components:
+  - type: HumanoidAppearance
+    species: Tajaran
+  - type: Hunger
+    baseDecayRate: 0.02
+  - type: Thirst
+    baseDecayRate: 0.15
+  - type: Icon
+    sprite: Corvax/Mobs/Species/Tajaran/parts.rsi
+    state: full
+  - type: Body
+    prototype: Tajaran
+    requiredLegs: 2
+  - type: Inventory
+  - type: ContentEye
+  - type: Speech
+    allowedEmotes: ['Purr']
+  - type: Vocal
+    sounds:
+      Male: MaleTajaran
+      Female: FemaleTajaran
+      Unsexed: MaleTajaran
+  - type: GrowlingAccent
+  - type: MeleeWeapon
+    animation: WeaponArcClaw
+    soundHit:
+      collection: AlienClaw
+    damage:
+      types:
+        Slash: 7
+  - type: Damageable
+    damageContainer: Biological
+    damageModifierSet: Tajaran
+  - type: Respirator
+    damage:
+      types:
+        Asphyxiation: 2.0
+    damageRecovery:
+      types:
+        Asphyxiation: -2.0
+  - type: Wagging
+
+- type: entity
+  save: false
+  name: Urist McHands
+  parent: MobHumanDummy
+  id: MobTajaranDummy
+  categories: [ HideSpawnMenu ]
+  description: A dummy tajaran meant to be used in character setup.
+  components:
+  - type: HumanoidAppearance
+    species: Tajaran
+  - type: Inventory
