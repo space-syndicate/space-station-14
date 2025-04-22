@@ -1,10 +1,22 @@
-delivery-recipient-examine = This one is meant for { $recipient }, { $job }.
-delivery-already-opened-examine = It was already opened.
-delivery-recipient-no-name = Unnamed
-delivery-recipient-no-job = Unknown
-delivery-unlocked-self = You unlock the { $delivery } with your fingerprint.
-delivery-opened-self = You open the { $delivery }.
-delivery-unlocked-others = { CAPITALIZE($recipient) } unlocked the { $delivery } with { POSS-ADJ($possadj) } fingerprint.
-delivery-opened-others = { CAPITALIZE($recipient) } opened the { $delivery }.
-delivery-unlock-verb = Unlock
-delivery-open-verb = Open
+delivery-recipient-examine = Адресовано: { $recipient }, { $job }.
+delivery-already-opened-examine = Уже вскрыто.
+delivery-recipient-no-name = Безымянный
+delivery-recipient-no-job = Неизвестно
+delivery-unlocked-self = Вы разблокировали { $delivery } отпечатком пальца.
+delivery-opened-self = Вы вскрываете { $delivery }.
+delivery-unlocked-others =
+    { CAPITALIZE($recipient) } { GENDER($recipient) ->
+        [male] разблокировал
+        [female] разблокировала
+        [epicene] разблокировали
+       *[neuter] разблокировало
+    } { $delivery } используя свой отпечаток пальца.
+delivery-opened-others =
+    { CAPITALIZE($recipient) } { GENDER($recipient) ->
+        [male] вскрыл
+        [female] вскрыл
+        [epicene] вскрыл
+       *[neuter] вскрыл
+    } { $delivery }.
+delivery-unlock-verb = Разблокировать
+delivery-open-verb = Вскрыть

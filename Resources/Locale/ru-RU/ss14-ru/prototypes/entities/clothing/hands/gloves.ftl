@@ -43,11 +43,8 @@ ent-ThievingGloves = { ent-ClothingHandsGlovesColorBlack }
 ent-ClothingHandsGlovesCluwne = руки клувеня
     .desc = Проклятая пара рук клувеня.
     .suffix = Неснимаемый
-# Corvax-HiddenDesc-Start
-ent-ClothingHandsGlovesNorthStar = пара сине-белых перчаток
-    .suffix = перчатки Полярной звезды, Синдикат
-    .desc = Одев их, можно с уверенностью чувствовать себя жестоким и брутальным героем из аниме-сериалов.
-# Corvax-HiddenDesc-End
+ent-ClothingHandsGlovesNorthStar = перчатки Полярный звезды
+    .desc = Эти перчатки позволяют наносить удары с невероятной скоростью.
 ent-ClothingHandsGlovesForensic = криминалистические перчатки
     .desc = Не оставляют ни волокна, ни отпечатки пальцев. Если вы работаете без них, то вы — УЖАСНЫЙ ДЕТЕКТИВ.
 ent-ClothingHandsGlovesJanitor = резиновые перчатки
