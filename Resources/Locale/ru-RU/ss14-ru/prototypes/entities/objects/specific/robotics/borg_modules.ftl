@@ -12,6 +12,8 @@ ent-BaseBorgModuleJanitor = { ent-BaseBorgModule }
     .desc = { ent-BaseBorgModule.desc }
 ent-BaseBorgModuleMedical = { ent-BaseBorgModule }
     .desc = { ent-BaseBorgModule.desc }
+ent-BaseBorgModuleScience = { ent-BaseBorgModule }
+    .desc = { ent-BaseBorgModule.desc }
 ent-BaseBorgModuleService = { ent-BaseBorgModule }
     .desc = { ent-BaseBorgModule.desc }
 ent-BaseBorgModuleSyndicate = { ent-BaseBorgModule }
@@ -84,4 +86,6 @@ ent-BorgModuleL6C = кроваво-красный модуль киборга
 ent-BorgModuleMartyr = кроваво-красный модуль киборга
     .desc = { ent-BaseBorgModule.desc }
     .suffix = модуль киборга Мученик
+
 # Corvax-HiddenDesc-End
+

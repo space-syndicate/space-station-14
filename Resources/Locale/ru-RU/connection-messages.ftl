@@ -58,3 +58,4 @@ baby-jail-account-reason-overall =
         [one] минуты
        *[other] минут
     }.
+hwid-required = Your client has refused to send a hardware id. Please contact the administration team for further assistance.

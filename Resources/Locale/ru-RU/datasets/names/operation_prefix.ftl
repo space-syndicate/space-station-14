@@ -82,6 +82,7 @@ names-operation-prefix-dataset-81 = Странный
 names-operation-prefix-dataset-82 = Летний
 names-operation-prefix-dataset-83 = Подозрительный
 names-operation-prefix-dataset-84 = Вкусный
+names-operation-prefix-dataset-85 = The
 names-operation-prefix-dataset-86 = Предательский
 names-operation-prefix-dataset-87 = Турбо
 names-operation-prefix-dataset-88 = Грязный
