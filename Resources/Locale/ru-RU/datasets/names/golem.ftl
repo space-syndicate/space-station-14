@@ -1034,6 +1034,7 @@ names-golem-dataset-1033 = Шёпит
 names-golem-dataset-1034 = Шерл
 names-golem-dataset-1035 = Шрейберсит
 names-golem-dataset-1036 = Шрейерит
+names-golem-dataset-1037 = Schrockingerite
 names-golem-dataset-1038 = Швертманит
 names-golem-dataset-1039 = Сколецит
 names-golem-dataset-1040 = Скородит

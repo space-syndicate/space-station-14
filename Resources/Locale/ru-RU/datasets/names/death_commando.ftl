@@ -48,7 +48,6 @@ names-death-commando-dataset-47 = Слэйт Слэброк
 names-death-commando-dataset-48 = Смэш Лэмпджоу
 names-death-commando-dataset-49 = Смок Манмасл
 names-death-commando-dataset-50 = Сплинт Честхэйр
-
 # Corvax
 names-death-commando-dataset-51 = Стабби МакГи
 names-death-commando-dataset-52 = Стамп Бифгноу
