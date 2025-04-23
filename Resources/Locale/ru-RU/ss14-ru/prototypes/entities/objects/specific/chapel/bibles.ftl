@@ -4,5 +4,6 @@ ent-Bible = библия
 ent-BibleNecronomicon = священный древний фолиант
     .desc = Имеется пометка: Klatuu, Verata, Nikto – Не забыть об этом опять!
     .suffix = некрономикон
-# Corvax-HiddenDesc-Endent-ActionBibleSummon = Призвать фамильяра
+# Corvax-HiddenDesc-End
+ent-ActionBibleSummon = Призвать фамильяра
     .desc = Призовите фамильяра, который станет помогать вам и обретёт человекоподобный интеллект после вселения в него души.
