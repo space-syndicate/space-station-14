@@ -13,7 +13,7 @@ ent-Telecrystal10 = { ent-Telecrystal }
     .desc = { ent-Telecrystal.desc }
 ent-BaseUplinkRadio = старое радио
     .desc = Винтажное радио, которое по неясной причине застыло на крайне необычной частоте, со словом «АпЛинк» на лицевой стороне.
-    .suffix = Пустой, аплинк Синдиката=
+    .suffix = Пустой, аплинк Синдиката
 ent-BaseUplinkRadio20TC = { ent-BaseUplinkRadio }
     .suffix = 20 ТК, аплинк Синдиката
     .desc = { ent-BaseUplinkRadio.desc }
