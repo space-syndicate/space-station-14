@@ -1,10 +1,8 @@
 # Corvax-HiddenDesc-Start
-ent-EmagUnlimited = модифицированная ID-карта
+ent-EmagUnlimited = криптографический секвенсор
     .desc = Странная ID-карта с торчащими проводами и дополнительными модулями.
-    .suffix = криптографический секвенсор Синдиката, ЕМАГ, Неограниченный
+    .suffix = Неограниченный, криптографический секвенсор
 ent-Emag = { ent-EmagUnlimited }
     .desc = { ent-EmagUnlimited.desc }
-    .suffix = криптографический секвенсор Синдиката, ЕМАГ
-
+    .suffix = Ограниченный, криптографический секвенсор
 # Corvax-HiddenDesc-End
-

@@ -272,7 +272,18 @@ flavor-complex-irish-slammer = как шипучая пенка колы
 flavor-complex-themartinez = как фиалки и лимонная водка
 flavor-complex-cogchamp = как латунь
 flavor-complex-white-gilgamesh = как слегка газированные сливки
-flavor-complex-antifreeze = как тепло
+flavor-complex-antifreeze = тепло
+flavor-complex-caipirinha = как Бразилия
+flavor-complex-daiquiri = как ром, лайм и сахар
+flavor-complex-deathintheafternoon = как анис и шампанское
+flavor-complex-empress75 = как пурпур
+flavor-complex-espressomartini = как водка и кофе
+flavor-complex-mayojito = как расстройство желудка
+flavor-complex-mimeosa = как тишина и апельсины
+flavor-complex-mimosa = как ранний бранч
+flavor-complex-moscowmule = как водка и имбирный эль
+flavor-complex-thesunalsorises = как абсент дайкири
+flavor-complex-whiskeysour = как виски и яйцо
 flavor-complex-zombiecocktail = как поедание мозгов
 flavor-complex-absinthe = как анис
 flavor-complex-blue-curacao = как цветы апельсина
@@ -310,6 +321,7 @@ flavor-complex-toxins-special = как исследование космоса
 flavor-complex-vodka-martini = как русский шпионский фильм
 flavor-complex-vodka-tonic = освежающе горько
 flavor-complex-coconut-rum = как орехово-ферментированный сахар
+flavor-complex-bacchus-blessing = как кирпичная стена
 
 ### This is exactly what pilk tastes как. I'm not even joking. I might've been a little drunk though
 

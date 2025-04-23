@@ -769,7 +769,6 @@ names-first-female-dataset-768 = Зельда
 names-first-female-dataset-769 = Зои
 names-first-female-dataset-770 = Зои
 names-first-female-dataset-771 = Зуне
-
 # CORVAX BLET
 names-first-female-dataset-772 = Августа
 names-first-female-dataset-773 = Августина
