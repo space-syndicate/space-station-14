@@ -30,15 +30,18 @@ ent-ClothingBackpackDuffelCargo = вещмешок грузчика
     .desc = Большой вещмешок для воровства драгоценной добычи.
 ent-ClothingBackpackDuffelSalvage = вещмешок утилизатора
     .desc = Большой вещмешок для хранения дополнительных экзотических сокровищ.
-ent-ClothingBackpackDuffelSyndicate = вещмешок синдиката
+# Corvax-HiddenDesc-Start
+ent-ClothingBackpackDuffelSyndicate = чёрно-красный вещмешок
     .desc = Большой вещмешок для хранения дополнительных предательских предметов.
+    .suffix = вещмешок синдиката
+# Corvax-HiddenDesc-End
 ent-ClothingBackpackDuffelSyndicateBundle = { ent-ClothingBackpackDuffelSyndicate }
     .desc = { ent-ClothingBackpackDuffelSyndicate.desc }
-ent-ClothingBackpackDuffelSyndicateAmmo = вещмешок синдиката
+ent-ClothingBackpackDuffelSyndicateAmmo = { ent-ClothingBackpackDuffelSyndicate }
     .desc = { ent-ClothingBackpackDuffelSyndicate.desc }
 ent-ClothingBackpackDuffelSyndicateAmmoBundle = { ent-ClothingBackpackDuffelSyndicateAmmo }
     .desc = { ent-ClothingBackpackDuffelSyndicateAmmo.desc }
-ent-ClothingBackpackDuffelSyndicateMedical = вещмешок синдиката
+ent-ClothingBackpackDuffelSyndicateMedical = { ent-ClothingBackpackDuffelSyndicate }
     .desc = { ent-ClothingBackpackDuffelSyndicate.desc }
 ent-ClothingBackpackDuffelSyndicateMedicalBundle = { ent-ClothingBackpackDuffelSyndicateMedical }
     .desc = { ent-ClothingBackpackDuffelSyndicateMedical.desc }

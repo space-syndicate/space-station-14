@@ -111,7 +111,9 @@ uplink-voice-mask-desc = Противогаз, позволяющий подст
 uplink-clothing-eyes-hud-syndicate-name = Визор Синдиката
 uplink-clothing-eyes-hud-syndicate-desc = Профессиональный визор Синдиката с индикатором на стекле, предназначенный для более точного обнаружения гуманоидов с их последующим уничтожением.
 uplink-radio-jammer-name = Глушитель связи
-uplink-radio-jammer-desc = При активации это устройство блокирует любую исходящую поблизости радиосвязь и скрывает датчики комбинезонов с мониторов.
+# Corvax-HiddenDesc-Start
+uplink-radio-jammer-desc = При активации это устройство блокирует любую исходящую поблизости радиосвязь и скрывает датчики комбинезонов с мониторов. Замаскирован под оценочный инструмент.
+# Corvax-HiddenDesc-End
 uplink-syndicate-weapon-module-name = Оружейный модуль киборга
 uplink-syndicate-weapon-module-desc = Модернизирует киборга с помощью мачете и продвинутого лазерного пистолета.
 uplink-syndicate-martyr-module-name = Модуль киборга Мученик
