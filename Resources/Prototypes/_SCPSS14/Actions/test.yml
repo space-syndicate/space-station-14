@@ -1,0 +1,9 @@
+- type: entity
+  id: ActionTestSpawnPrototype
+  name: Spawn prototype
+  description: Spawns a selected prototype.
+  components:
+  - type: InstantAction
+    icon: Markers/cross.rsi/green.png
+    event: !type:TestActionEvent
+    useDelay: 2
