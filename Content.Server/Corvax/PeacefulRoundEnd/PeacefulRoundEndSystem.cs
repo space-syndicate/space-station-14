@@ -2,6 +2,7 @@
 using Content.Shared.CombatMode.Pacification;
 using Content.Shared.Corvax.CCCVars;
 using Content.Shared.Mindshield.Components;
+using Content.Shared.Silicons.Laws.Components;
 using Robust.Server.Player;
 using Robust.Shared.Configuration;
 
