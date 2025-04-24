@@ -29,7 +29,8 @@ public sealed class PeacefulRoundEndSystem : EntitySystem
             if (!session.AttachedEntity.HasValue) continue;
 
             var entityId = session.AttachedEntity.Value;
-            if (HasComp<MindShieldComponent>(entityId))
+            if (HasComp<MindShieldComponent>(entityId)
+                || HasComp<SiliconLawBoundComponent>(entityId))
             {
                 continue;
             }
