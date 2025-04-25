@@ -278,7 +278,7 @@
 - type: entity
   parent: BookLoreBase
   id: BookUnath1
-  name: Культура унатхов (ч.1)
+  name: Культура рептилий (ч.1)
   description: Первая часть великолепного ислледования этой замечательной расы
   components:
     - type: Sprite
@@ -290,7 +290,7 @@
 - type: entity
   parent: BookLoreBase
   id: BookUnath2
-  name: Культура унатхов (ч.2)
+  name: Культура рептилий (ч.2)
   description: Вторая часть великолепного ислледования этой прекрасной расы
   components:
     - type: Sprite

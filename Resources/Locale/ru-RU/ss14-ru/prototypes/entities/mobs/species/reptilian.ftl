@@ -1,5 +1,5 @@
 ent-BaseMobReptilian = Урисст' МссХэндс
     .desc = { ent-BaseMobSpeciesOrganic.desc }
-    .suffix = Унатх
+    .suffix = Рептилия
 ent-MobReptilianDummy = { ent-BaseSpeciesDummy }
     .desc = { ent-BaseSpeciesDummy.desc }
