@@ -1,6 +1,7 @@
 ent-BaseMagazineBoxRifle = { ent-BaseItem }
     .desc = { ent-BaseItem.desc }
 ent-MagazineBoxRifleBig = ammunition box (.20 rifle)
+    .suffix = Big
     .desc = { ent-BaseMagazineBoxRifle.desc }
 ent-MagazineBoxRifle = ammunition box (.20 rifle)
     .desc = { ent-BaseMagazineBoxRifle.desc }

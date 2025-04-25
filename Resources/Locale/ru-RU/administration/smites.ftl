@@ -20,18 +20,14 @@ admin-smite-explode-name = Взрыв
 admin-smite-chess-dimension-name = Шахматное измерение
 admin-smite-set-alight-name = Воспламенить
 admin-smite-monkeyify-name = Превратить в обезьяну
+admin-smite-garbage-can-name = Мусор
 admin-smite-electrocute-name = Поразить током
-admin-smite-creampie-name = Кремовый пирог
 admin-smite-remove-blood-name = Обескровить
-admin-smite-vomit-organs-name = Рвота органами
 admin-smite-remove-hands-name = Удалить руки
 admin-smite-remove-hand-name = Удалить руку
 admin-smite-pinball-name = Пинбол
 admin-smite-yeet-name = Бросить сквозь станцию
 admin-smite-become-bread-name = Сделать хлебом
-admin-smite-ghostkick-name = Кик втихаря
-admin-smite-nyanify-name = НЯфикация
-admin-smite-kill-sign-name = Знак смерти
 admin-smite-cluwne-name = Сделать клувнем
 admin-smite-anger-pointing-arrows-name = Злые указатели
 admin-smite-dust-name = В прах
@@ -51,11 +47,16 @@ admin-smite-stomach-removal-name = Удалить желудок
 admin-smite-speak-backwards-name = Речь наоборот
 admin-smite-lung-removal-name = Удалить лёгкие
 admin-smite-disarm-prone-name = Обезоруживание и арест
-admin-smite-garbage-can-name = Мусор
 admin-smite-super-bonk-name = СуперБонк
 admin-smite-super-bonk-lite-name = СуперБонк-Лайт
 admin-smite-terminate-name = Экстерминировать
 admin-smite-super-slip-name = Суперскольжение
+admin-smite-creampie-name = Кремировать
+admin-smite-vomit-organs-name = Рвота органами
+admin-smite-ghostkick-name = Кик втихаря
+admin-smite-nyanify-name = НЯфикация
+admin-smite-kill-sign-name = Знак смерти
+admin-smite-omni-accent-name = Омни-акцент
 
 ## Smite descriptions
 
@@ -99,6 +100,7 @@ admin-trick-unbolt-description = Разболтирует целевой шлю�
 admin-smite-super-bonk-description = Заставляет цель удариться о каждый стол на станции и за её пределами.
 admin-smite-terminate-description = Создаёт экстерминатора с ролью призрака, с единственной задачей - убить выбранную цель.
 admin-smite-super-slip-description = Очень сильно поскальзывает цель.
+admin-smite-omni-accent-description = Заставляет цель говорить с почти каждым возможным акцентом.
 admin-smite-super-bonk-lite-description = Заставляет цель удариться о каждый стол на станции и за её пределами. Прекращает действовать после смерти цели.
 
 ## Tricks descriptions

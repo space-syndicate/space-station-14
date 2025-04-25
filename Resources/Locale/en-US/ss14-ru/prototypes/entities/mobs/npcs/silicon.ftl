@@ -1,5 +1,7 @@
 ent-MobSiliconBase = { "" }
     .desc = { "" }
+ent-MobFireBot = firebot
+    .desc = A little fire extinguishing bot. He looks rather anxious.
 ent-MobHonkBot = honkbot
     .desc = Horrifying.
 ent-MobJonkBot = jonkbot
@@ -9,6 +11,6 @@ ent-MobCleanBot = cleanbot
 ent-MobMedibot = medibot
     .desc = No substitute for a doctor, but better than nothing.
 ent-MobMimeBot = mimebot
-    .desc = Why not give mimebot a friendly wave.
+    .desc = Why not give the mimebot a friendly wave?
 ent-MobSupplyBot = supplybot
     .desc = Delivers cargo!

@@ -1,13 +1,13 @@
 ent-BaseDionaOrgan = { ent-BaseItem }
     .desc = { ent-BaseItem.desc }
 ent-OrganDionaBrain = brain
-    .desc = The source of incredible, unending intelligence. Honk.
+    .desc = The central hub of a diona's pseudo-neurological activity, its root-like tendrils search for its former body.
 ent-OrganDionaEyes = eyes
     .desc = I see you!
 ent-OrganDionaStomach = stomach
-    .desc = Gross. This is hard to stomach.
+    .desc = The diona's equivalent of a stomach, it reeks of asparagus and vinegar.
 ent-OrganDionaLungs = lungs
-    .desc = Filters oxygen from an atmosphere, which is then sent into the bloodstream to be used as an electron carrier.
+    .desc = A spongy mess of slimy, leaf-like structures. Capable of breathing both carbon dioxide and oxygen.
 ent-OrganDionaBrainNymph = brain
     .desc = The source of incredible, unending intelligence. Honk.
 ent-OrganDionaStomachNymph = stomach

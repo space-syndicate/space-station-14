@@ -1,40 +1,11 @@
-- type: dataset
-  id: RegalRatNameKingdom
+- type: localizedDataset
+  id: NamesRegalratKingdom
   values:
-  - Чумной
-  - Миазмовый
-  - Туннельный
-  - Хламовый
-  - Мусорный
-  - Крысиный
-  - Паразитный
-  - Сырный
-  - Жующий
-  - Большой
-  - Грязный
-  - Водосточный
-  - Помойный
-  - Сервисный
-  - Конкретный
-  - Из нержавеющей стали
+    prefix: names-regal-rat-kingdom-dataset-
+    count: 16 # Corvax-MRP-Edit
 
-- type: dataset
-  id: RegalRatNameTitle
+- type: localizedDataset
+  id: NamesRegalratTitle
   values:
-  - Король
-  - Лорд
-  - Принц
-  - Император
-  - Глава
-  - Повелитель
-  - Мастер
-  - Сёгун
-  - Боярин
-  - Царь
-  - Фанат #vs
-  - Ценитель
-  - Президент
-  - Мэр
-  - Босс
-  - Пророк
-  - Сыр
+    prefix: names-regal-rat-title-dataset-
+    count: 17

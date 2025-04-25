@@ -1,4 +1,4 @@
-class YAMLEntity:
+﻿class YAMLEntity:
     def __init__(self, id, name, description, suffix, parent_id = None):
         self.id = id
         self.name = name

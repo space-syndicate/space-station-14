@@ -1,7 +1,4 @@
 - type: latheRecipe
   id: PrinterDocMachineCircuitboard
+  parent: BaseCircuitboardRecipe
   result: PrinterDocMachineCircuitboard
-  completetime: 4
-  materials:
-     Steel: 100
-     Glass: 900

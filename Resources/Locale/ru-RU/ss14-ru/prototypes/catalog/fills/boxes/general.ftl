@@ -1,17 +1,21 @@
 ent-BoxCardboard = картонная коробка
     .desc = Картонная коробка для хранения вещей.
 ent-BoxMousetrap = коробка мышеловок
-    .desc = Коробка, наполненая мышеловками. Постарайтесь не поймать себя за руку.
+    .desc = Коробка, наполненная мышеловками. Постарайтесь не поймать себя за руку.
 ent-BoxLightbulb = коробка лампочек
     .desc = Из-за формы коробки в неё помещаются только лампочки и лампочки-трубки.
+ent-BoxWarmLightbulb = коробка тёплых лампочек
+    .desc = { ent-BoxLightbulb.desc }
 ent-BoxLighttube = коробка лампочек-трубок
     .desc = { ent-BoxLightbulb.desc }
 ent-BoxLightMixed = коробка смешанных лампочек
     .desc = { ent-BoxLightbulb.desc }
+ent-BoxLighttubeHoliday = коробка праздничных лампочек-трубок
+    .desc = { ent-BoxLightbulb.desc }
 ent-BoxPDA = коробка КПК
     .desc = Коробка запасных микрокомпьютеров КПК.
-ent-BoxID = коробка ID карт
-    .desc = Коробка запасных чистых ID карт.
+ent-BoxID = коробка ID-карт
+    .desc = Коробка запасных чистых ID-карт.
 ent-BoxHeadset = коробка гарнитур
     .desc = Коробка запасных пассажирских гарнитур.
 ent-BoxMesonScanners = коробка инженерных очков
@@ -48,9 +52,9 @@ ent-BoxEncryptionKeySecurity = коробка ключей шифрования 
 ent-BoxEncryptionKeyService = коробка ключей шифрования сервисного отдела
     .desc = { ent-BoxEncryptionKeyPassenger.desc }
 # Corvax-HiddenDesc-Start
-ent-BoxEncryptionKeySyndie = коробка ключей шифрования
-    .suffix = коробка ключей шифрования Синдиката
+ent-BoxEncryptionKeySyndie = коробка ключей шифрования пассажиров
     .desc = { ent-BoxEncryptionKeyPassenger.desc }
+    .suffix = коробка ключей шифрования Синдиката
 # Corvax-HiddenDesc-End
 ent-BoxLeadLined = освинцованная коробка
     .desc = Эта коробка препятствует распространению радиации.

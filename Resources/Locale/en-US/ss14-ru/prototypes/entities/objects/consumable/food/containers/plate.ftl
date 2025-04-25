@@ -12,3 +12,5 @@ ent-FoodPlateSmallPlastic = plastic plate
     .desc = A blue plastic plate, excellent for slices of birthday cake.
 ent-FoodPlateTin = pie tin
     .desc = A cheap foil tin for pies.
+ent-FoodPlateMuffinTin = muffin tin
+    .desc = A cheap foil tin for muffins.

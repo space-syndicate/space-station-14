@@ -31,21 +31,8 @@
       allowedTiles:
         - FloorPlanetGrass
       entities:
-        - FloraTree01
-        - FloraTree02
-        - FloraTree03
-        - FloraTree04
-        - FloraTree05
-        - FloraTree06
-        - FloraTreeLarge01
-        - FloraTreeLarge02
-        - FloraTreeLarge03
-        - FloraTreeLarge04
-        - FloraTreeLarge05
-        - FloraTreeLarge06
-        - FloraRockSolid01
-        - FloraRockSolid02
-        - FloraRockSolid03
+        - FloraTree
+        - FloraTreeLarge
         - FloraTreeStump
     - !type:BiomeDecalLayer
       allowedTiles:
@@ -89,14 +76,7 @@
       allowedTiles:
         - FloorCaveDrought
       entities:
-        - FloraStalagmite1
-        - FloraStalagmite2
-        - FloraStalagmite3
-        - FloraStalagmite4
-        - FloraStalagmite5
-        - FloraRockSolid01
-        - FloraRockSolid02
-        - FloraRockSolid03
+        - FloraStalagmite
         - CrystalOrange
     - !type:BiomeEntityLayer
       allowedTiles:
@@ -118,9 +98,7 @@
       allowedTiles:
         - FloorAsteroidSand
       entities:
-        - FloraRockSolid01
-        - FloraRockSolid02
-        - FloraRockSolid03
+        - FloraRockSolid
         - CrystalOrange
         - CrystalGrey
     - !type:BiomeEntityLayer
@@ -283,3 +261,326 @@
         - FloorCaveDrought
       entities:
         - WallRockBasaltUranium
+
+# GlacierPlanet
+- type: biomeTemplate
+  id: GlacierPlanet # Similar to snow... but snow ores!
+  layers:
+    # Sparse vegetation
+    - !type:BiomeDecalLayer
+      allowedTiles:
+        - FloorSnow
+      divisions: 2
+      threshold: -0.50
+      noise:
+        seed: 0
+        noiseType: Cellular
+        frequency: 1
+      decals:
+        - grasssnowa1
+        - grasssnowa2
+        - grasssnowa3
+        - grasssnowb1
+        - grasssnowb2
+        - grasssnowb3
+        - grasssnowc1
+        - grasssnowc2
+        - grasssnowc3
+    # Dense, colored grass
+    - !type:BiomeDecalLayer
+      allowedTiles:
+        - FloorSnow
+      divisions: 1
+      threshold: -0.35
+      noise:
+        seed: 0
+        noiseType: Cellular
+        frequency: 0.2
+        fractalType: FBm
+        octaves: 5
+        lacunarity: 2
+        cellularDistanceFunction: Euclidean
+        cellularReturnType: Distance2
+      decals:
+        - grasssnow
+        - grasssnow01
+        - grasssnow03
+        - grasssnowa1
+        - grasssnowa2
+        - grasssnowa3
+        - grasssnowb1
+        - grasssnowb2
+        - grasssnowb3
+        - grasssnowc1
+        - grasssnowc2
+        - grasssnowc3
+    # Little bit of white grass
+    - !type:BiomeDecalLayer
+      allowedTiles:
+        - FloorSnow
+      divisions: 1
+      threshold: -0.0
+      noise:
+        seed: 0
+        noiseType: Cellular
+        frequency: 1
+        fractalType: None
+        cellularDistanceFunction: Euclidean
+        cellularReturnType: Distance2
+      decals:
+        - grasssnow
+        - grasssnow01
+        - grasssnow02
+        - grasssnow03
+        - grasssnow04
+        - grasssnow05
+    # Conifer tree! And little bit of snow tree...
+    - !type:BiomeEntityLayer
+      threshold: 0.5
+      noise:
+        seed: 0
+        noiseType: OpenSimplex2
+        fractalType: FBm
+        frequency: 2
+      allowedTiles:
+        - FloorSnow
+      entities:
+        - FloraTreeConifer
+        - FloraTreeSnow
+    # Snow rock formations
+    - !type:BiomeEntityLayer
+      allowedTiles:
+        - FloorSnow
+      threshold: -0.30
+      noise:
+        seed: 0
+        noiseType: Cellular
+        frequency: 0.05
+        lacunarity: 2
+        fractalType: FBm
+        octaves: 5
+        cellularDistanceFunction: Euclidean
+        cellularReturnType: Distance2
+      entities:
+        - WallRockSnow
+    #Ores spawn
+    - !type:BiomeEntityLayer
+      allowedTiles:
+        - FloorSnow
+      threshold: -0.04
+      noise:
+        seed: 10
+        noiseType: Cellular
+        frequency: 0.05
+        lacunarity: 2
+        fractalType: FBm
+        octaves: 2
+        cellularDistanceFunction: Euclidean
+        cellularReturnType: Distance2
+      entities:
+        - WallRockSnowTin
+    - !type:BiomeEntityLayer
+      allowedTiles:
+        - FloorSnow
+      threshold: -0.05
+      noise:
+        seed: 20
+        noiseType: Cellular
+        frequency: 0.1
+        lacunarity: 0.5
+        fractalType: FBm
+        octaves: 3
+        cellularDistanceFunction: Euclidean
+        cellularReturnType: Distance2
+      entities:
+        - WallRockSnowQuartz
+    - !type:BiomeEntityLayer
+      allowedTiles:
+        - FloorSnow
+      threshold: -0.04
+      noise:
+        seed: 30
+        noiseType: Cellular
+        frequency: 0.08
+        lacunarity: 2
+        fractalType: FBm
+        octaves: 2
+        cellularDistanceFunction: Euclidean
+        cellularReturnType: Distance2
+      entities:
+        - WallRockSnowCoal
+    - !type:BiomeEntityLayer
+      allowedTiles:
+        - FloorSnow
+      threshold: -0.04
+      noise:
+        seed: 40
+        noiseType: Cellular
+        frequency: 0.05
+        lacunarity: 2
+        fractalType: FBm
+        octaves: 3
+        cellularDistanceFunction: Euclidean
+        cellularReturnType: Distance2
+      entities:
+        - WallRockSnowSalt
+    - !type:BiomeEntityLayer
+      allowedTiles:
+        - FloorSnow
+      threshold: -0.01
+      noise:
+        seed: 50
+        noiseType: Cellular
+        frequency: 0.05
+        lacunarity: 2
+        fractalType: FBm
+        octaves: 4
+        cellularDistanceFunction: Euclidean
+        cellularReturnType: Distance2
+      entities:
+        - WallRockSnowGold
+    - !type:BiomeEntityLayer
+      allowedTiles:
+        - FloorSnow
+      threshold: -0.02
+      noise:
+        seed: 60
+        noiseType: Cellular
+        frequency: 0.06
+        lacunarity: 2
+        fractalType: FBm
+        octaves: 3
+        cellularDistanceFunction: Euclidean
+        cellularReturnType: Distance2
+      entities:
+        - WallRockSnowSilver
+    - !type:BiomeEntityLayer
+      allowedTiles:
+        - FloorSnow
+      threshold: -0.03
+      noise:
+        seed: 70
+        noiseType: Cellular
+        frequency: 0.1
+        lacunarity: 2
+        fractalType: FBm
+        octaves: 3
+        cellularDistanceFunction: Euclidean
+        cellularReturnType: Distance2
+      entities:
+        - WallRockSnowPlasma
+    - !type:BiomeEntityLayer
+      allowedTiles:
+        - FloorSnow
+      threshold: -0.03
+      noise:
+        seed: 80
+        noiseType: Cellular
+        frequency: 0.15
+        lacunarity: 2
+        fractalType: FBm
+        octaves: 5
+        cellularDistanceFunction: Euclidean
+        cellularReturnType: Distance2
+      entities:
+        - WallRockSnowUranium
+    - !type:BiomeEntityLayer
+      allowedTiles:
+        - FloorSnow
+      threshold: -0.01
+      noise:
+        seed: 90
+        noiseType: Cellular
+        frequency: 0.2
+        lacunarity: 2
+        fractalType: FBm
+        octaves: 6
+        cellularDistanceFunction: Euclidean
+        cellularReturnType: Distance2
+      entities:
+        - WallRockSnowArtifactFragment
+    - !type:BiomeEntityLayer
+      allowedTiles:
+        - FloorSnow
+      threshold: -0.005
+      noise:
+        seed: 100
+        noiseType: Cellular
+        frequency: 0.3
+        lacunarity: 2
+        fractalType: FBm
+        octaves: 8
+        cellularDistanceFunction: Euclidean
+        cellularReturnType: Distance2
+      entities:
+        - WallRockSnowDiamond
+    - !type:BiomeEntityLayer
+      allowedTiles:
+        - FloorSnow
+      threshold: -0.03
+      noise:
+        seed: 100
+        noiseType: Cellular
+        frequency: 0.15
+        lacunarity: 2
+        fractalType: FBm
+        octaves: 4
+        cellularDistanceFunction: Euclidean
+        cellularReturnType: Distance2
+      entities:
+        - WallRockSnowBananium
+    # Ice tiles lakes
+    - !type:BiomeTileLayer
+      tile: FloorIce
+      threshold: -0.9
+      noise:
+        seed: 0
+        noiseType: Cellular
+        frequency: 0.03
+        lacunarity: 2
+        fractalType: FBm
+        octaves: 5
+        cellularDistanceFunction: Euclidean
+        cellularReturnType: Distance2
+    #bear
+    - !type:BiomeEntityLayer
+      allowedTiles:
+        - FloorIce
+      threshold: -0.005
+      noise:
+        seed: 100
+        noiseType: Cellular
+        frequency: 0.3
+        lacunarity: 2
+        fractalType: FBm
+        octaves: 8
+        cellularDistanceFunction: Euclidean
+        cellularReturnType: Distance2
+      entities:
+        - SpawnerMobBearBiome
+    # Liquid plasma.
+    - !type:BiomeEntityLayer
+      allowedTiles:
+        - FloorSnow
+        - FloorIce
+      threshold: -0.15
+      noise:
+        seed: 3
+        noiseType: Cellular
+        frequency: 0.05
+        lacunarity: 2
+        fractalType: FBm
+        octaves: 5
+        cellularDistanceFunction: Euclidean
+        cellularReturnType: Distance2
+      entities:
+        - FloorLiquidPlasmaEntity
+    - !type:BiomeDummyLayer
+      id: Loot
+    - !type:BiomeTileLayer
+      threshold: -0.7
+      tile: FloorSnow
+      noise:
+        seed: 0
+        frequency: 0.02
+        fractalType: None

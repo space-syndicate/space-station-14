@@ -1,5 +1,7 @@
-ent-ClothingOuterArmorBasic = бронежилет
+ent-ClothingOuterArmorBase = бронежилет
     .desc = Стандартный бронежилет типа I, обеспечивающий достойную защиту от большинства видов повреждений.
+ent-ClothingOuterArmorBasic = { ent-ClothingOuterArmorBase }
+    .desc = { ent-ClothingOuterArmorBase.desc }
 ent-ClothingOuterArmorBasicSlim = бронежилет
     .desc = Тонкий бронежилет типа I, обеспечивающий достойную защиту от большинства видов повреждений.
     .suffix = тонкий

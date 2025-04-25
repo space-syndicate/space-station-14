@@ -8,6 +8,8 @@ ent-ClothingEyesHudMedical = медицинский визор
     .desc = Окуляр с индикатором на стекле, который сканирует гуманоидов в поле зрения и предоставляет точные данные о состоянии их здоровья.
 ent-ClothingEyesHudSecurity = визор охраны
     .desc = Окуляр с индикатором на стекле, который сканирует гуманоидов в поле зрения и предоставляет точные данные об их идентификационном статусе и записях в системе безопасности.
+ent-ClothingEyesHudCommand = административный визор
+    .desc = Окуляр с индикатором на стекле, который сканирует гуманоидов, находящихся в поле зрения, и предоставляет точные данные о статусе их ID.
 ent-ClothingEyesHudBeer = пивные очки
     .desc = Пара солнцезащитных очков, оснащённых сканером реагентов, а также дающих понимание вязкости жидкости во время движения.
 ent-ClothingEyesHudFriedOnion = fried onion goggles
@@ -24,13 +26,10 @@ ent-ClothingEyesHudMultiversal = multiversal hud
     .desc = Filler
 ent-ClothingEyesHudOmni = omni hud
     .desc = Filler
-# Corvax-HiddenDesc-Start
-ent-ClothingEyesHudSyndicate = визор оперативника
-    .suffix = синди-визор
-    .desc = Профессиональный визор со встроенной индикацией "свой-чужой", предназначенный для обнаружения и идентификации гуманоидных целей для их последующего уничтожения.
-ent-ClothingEyesHudSyndicateAgent = визор агента Синдиката
+ent-ClothingEyesHudSyndicate = синди-визор
+    .desc = Профессиональный визор Синдиката с индикатором на стекле, предназначенный для более точного обнаружения гуманоидов с их последующим уничтожением.
+ent-ClothingEyesHudSyndicateAgent = синди-визор агента
     .desc = Профессиональный визор агента Синдиката, предназначенный для быстрой диагностики состояния команды.
-# Corvax-HiddenDesc-End
 ent-ClothingEyesGlassesHiddenSecurity = { ent-ClothingEyesGlassesSunglasses }
     .desc = { ent-ClothingEyesGlassesSunglasses.desc }
     .suffix = Синдикат

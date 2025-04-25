@@ -25,86 +25,25 @@
     producingSound: /Audio/Machines/scanning.ogg
     idleState: icon
     runningState: building
-    staticRecipes:
-      - PrintedDocumentReportStationRecipe
-      - PrintedDocumentReportOnEliminationOfViolationsRecipe
-      - PrintedDocumentReporDepartmentRecipe
-      - PrintedDocumentReportEmployeePerformanceRecipe
-      - PrintedDocumentReportOnTheChaptersMeetingRecipe
-      - PrintedDocumentInternalAffairsAgentsReportRecipe
-      - PrintedDocumentConditionReportRecipe
-      - PrintedDocumentReportStudyObjectRecipe
-      - PrintedDocumentExperimentReportRecipe
-      - PrintedDocumentDisposalReportRecipe
-      - PrintedDocumentApplicationAppointmentInterimRecipe
-      - PrintedDocumentApplicationEmploymentRecipe
-      - PrintedDocumentLetterResignationRecipe
-      - PrintedDocumentApplicationAccessRecipe
-      - PrintedDocumentApplicationEquipmentRecipe
-      - PrintedDocumentAppealRecipe
-      - PrintedDocumentEvacuationShuttleRequestRecipe
-      - PrintedDocumentShuttleRegistrationRequestRecipe
-      - PrintedDocumentRequestCallMembersCentralCommitteeDSORecipe
-      - PrintedDocumentRequestRequestToEstablishThreatLevelRecipe
-      - PrintedDocumentRequestChangeSalaryRecipe
-      - PrintedDocumentRequestForNonlistedEmploymentRecipe
-      - PrintedDocumentRequestForPromotionRecipe
-      - PrintedDocumentRequestDocumentsRecipe
-      - PrintedDocumentRequestEuthanasiaRecipe
-      - PrintedDocumentRequestConstructionWorkRecipe
-      - PrintedDocumentRequestModernizationRecipe
-      - PrintedDocumentComplaintViolationLaborRulesRecipe
-      - PrintedDocumentComplaintOffenseRecipe
-      - PrintedDocumentPermissionEquipmentRecipe
-      - PrintedDocumentPermissionToTravelInCaseOfThreatRecipe
-      - PrintedDocumentSearchPermissionRecipe
-      - PrintedDocumentPermissionToCarryWeaponsRecipe
-      - PrintedDocumentPrescriptionDrugAuthorizationRecipe
-      - PrintedDocumentPermissionDisposeBodyRecipe
-      - PrintedDocumentConstructionPermitRecipe
-      - PrintedDocumentPermissionToExtendMarriageRecipe
-      - PrintedDocumentOrderDismissalRecipe
-      - PrintedDocumentOrderDeprivationAccessRecipe
-      - PrintedDocumentOrderEncouragementRecipe
-      - PrintedDocumentOrderParolePrisonerRecipe
-      - PrintedDocumentOrderRecognizingSentienceCreatureRecipe
-      - PrintedDocumentOrderMedicalInterventionRecipe
-      - PrintedDocumentProductManufacturingOrderRecipe
-      - PrintedDocumentOrderPurchaseResourcesEquipmentRecipe
-      - PrintedDocumentOrderingSpecialEquipmentRecipe
-      - PrintedDocumentOrderPurchaseWeaponsRecipe
-      - PrintedDocumentCertificateRecipe
-      - PrintedDocumentCertificateAdvancedTrainingRecipe
-      - PrintedDocumentCertificateOffenseRecipe
-      - PrintedDocumentDeathCertificateRecipe
-      - PrintedDocumentMarriageCertificateRecipe
-      - PrintedDocumentDivorceCertificateRecipe
-      - PrintedDocumentClosingIndictmentRecipe
-      - PrintedDocumentSentenceRecipe
-      - PrintedDocumentJudgmentRecipe
-      - PrintedDocumentStatementHealtheRecipe
-      - PrintedDocumentDecisionToStartTrialRecipe
+    staticPacks:
+    - CorvaxDocumentsPack
   - type: EmagLatheRecipes
-    emagStaticRecipes:
-        - PrintedDocumentErrorLoadingFormHeaderRecipe
-        - PrintedDocumentNoticeOfLiquidationRecipe
-        - PrintedDocumentBusinessDealRecipe
-        - PrintedDocumentNoteBeginningMilitaryActionsRecipe
-        - PrintedDocumentReportAccomplishmentGoalsRecipe
+    emagStaticPacks:
+    - CorvaxEmagDocumentsPack
   - type: Fixtures
     fixtures:
       fix1:
         shape:
           !type:PhysShapeAabb
-          bounds: "-0.25,-0.25,0.25,0.25"
+          bounds: "-0.25,-0.4,0.25,0.4"
         density: 25
         mask:
-        - TabletopMachineMask
+        - MachineMask
         layer:
-        - TabletopMachineLayer
+        - MachineLayer
   - type: MaterialStorage
     whitelist:
       tags:
       - Document
     storage:
-      SheetPrinter: 0
+      Paper: 0

@@ -34,6 +34,7 @@
     interfaces:
       enum.FaxUiKey.Key:
         type: FaxBoundUi
+  - type: StationAiWhitelist
   - type: ApcPowerReceiver
     powerLoad: 250
   - type: Faxecute
@@ -72,7 +73,7 @@
 - type: entity
   parent: FaxMachineBase
   id: FaxMachineCentcom
-  name: CentCom long range fax machine
+  name: CentComm long range fax machine
   suffix: CentCom
   components:
   - type: Sprite
@@ -83,7 +84,7 @@
   - type: FaxMachine
     name: "Central Command"
     notifyAdmins: true
-    receiveStationGoal: true # Corvax-StationGoal
+    receiveAllStationGoals: true # Corvax-StationGoal
 
 - type: entity
   parent: FaxMachineBase
@@ -101,6 +102,7 @@
     responsePings: false
     notifyAdmins: true
   - type: Emagged
+    emagType: Interaction
 
 - type: entity
   parent: FaxMachineBase

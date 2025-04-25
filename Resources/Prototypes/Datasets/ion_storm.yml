@@ -249,11 +249,25 @@
   - ВСЕЛЕННУЮ
   - УРАН
   - ВЕНЕРУ
+  - ПРИЗРАЧНУЮ ПИЦЦЕРИЮ # fnaf
+  - ИССЛЕДОВАТЕЛЬСКУЮ ЛАБОРАТОРИЮ ВОЗЛЕ ЮЖНОГО ПОЛЮСА
+  - ЗЕМЛЮ
+  - ИНЖЕНЕРНЫЙ ОТСЕК
+  - ЧАСТНУЮ РОСКОШНУЮ ЛУННУЮ БАЗУ МИСТЕРА НАНОТРЕЙЗЕНА
+  - ПЕРМУ
+  - КУДА-ТО ЗА РАДУГОЙ
+  - SPAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACE
+  - ГАЗОВЫЙ ГИГАНТ, КОТОРЫЙ СОВЕРШЕННО ТОЧНО СУЩЕСТВУЕТ
+  - ИМПЕРИУМ ЧЕЛОВЕЧЕСТВА
+  - БАР В ТЕХТУННЕЛЯХ
+  - РИМСКУЮ ИМПЕРИЮ
+  - ВАШИ СНЫ И/ИЛИ КОШМАРЫ
 
 # Abstract concepts for the law holder to decide on it's own definition of.
 - type: dataset
   id: IonStormConcepts
   values:
+  - АБСТРАКЦИЯ
   - АМЕРИКАНИЗМ
   - АНАРХИЯ
   - ИСКУССТВО
@@ -308,6 +322,24 @@
   - ВРЕМЯ
   - СОСТОЯТЕЛЬНОСТЬ
   - ЧУДО
+  - ПОРОЧНОСТЬ
+  - ЛЫСИНА
+  - КРАСОЧНОСТЬ
+  - КОМПЬЮТЕРИЗАЦИЯ
+  - НЕРАЗБЕРИХА
+  - СУЩЕСТВОВАНИЕ
+  - ФИНАНСОВАЯ БЕЗОПАСНОСТЬ
+  - СИЛА ПРИТЯЖЕНИЯ
+  - ВЫСОКОМЕРИЕ
+  - ЧЕЛОВЕЧНОСТЬ
+  - ВЛЮБЛЕННОСТЬ
+  - ИНТЕЛЛЕКТ
+  - СТРАДАНИЕ
+  - ТАЙНА
+  - ЗЛОБНОСТЬ
+  - ПЕЧАЛЬ
+  - ТЕХНОЛОГИИ
+  - БОГАТСТВО
 
 # Crew is any specific job. Using jobs instead of specific crewmembers since "THE CLOWN" is easier than
 # seeing "JOHN SMITH" and having to figure out who john smith is.
@@ -400,6 +432,7 @@
 - type: dataset
   id: IonStormFeelingsPlural
   values:
+  - НЕ МОЖЕТ НАСЫТИТЬСЯ
   - МЕЧТАЕТ О
   - ЖЕЛАЕТ О
   - БОИТСЯ
@@ -515,6 +548,7 @@
   - ГОВОРИТЬ ПРАВДУ
   - ВЫКЛЮЧАТЬ СВЕТ
   - ШЕПТАТЬ
+  - BE A REAL SCRUNGLE, JUST A CUTE LIL' GUY
 
 - type: dataset
   id: IonStormNumberBase
@@ -805,6 +839,7 @@
   - КУРИТЬ ТРАВУ КАЖДЫЙ ДЕНЬ
   - ПРЕДАТЕЛИ
   - ОВОЩИ
+  - СТОИМОСТЬ АКЦИЙ
 
 # Specific actions that either harm humans or must be done to not
 # harm humans. Make sure they're plural and "not" can be tacked

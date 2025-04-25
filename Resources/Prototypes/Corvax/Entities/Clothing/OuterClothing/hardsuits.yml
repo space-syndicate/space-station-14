@@ -15,7 +15,8 @@
     walkModifier: 1.0
     sprintModifier: 1.0
   - type: TemperatureProtection
-    coefficient: 0.001    
+    heatingCoefficient: 0.001
+    coolingCoefficient: 0.001
   - type: Armor
     modifiers:
       coefficients:

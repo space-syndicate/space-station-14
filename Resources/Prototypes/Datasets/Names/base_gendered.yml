@@ -1,0 +1,11 @@
+﻿- type: localizedDataset
+  id: NamesFirstMale
+  values:
+    prefix: names-first-male-dataset-
+    count: 986 # Corvax-MRP-Edit
+
+- type: localizedDataset
+  id: NamesFirstFemale
+  values:
+    prefix: names-first-female-dataset-
+    count: 1145 # Corvax-MRP-Edit

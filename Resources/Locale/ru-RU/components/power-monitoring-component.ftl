@@ -10,6 +10,9 @@ power-monitoring-window-unknown-location = Неизвестное местопо
 power-monitoring-window-total-battery-usage = Общее использование батареи
 power-monitoring-window-total-sources = Общая выработка генератора
 power-monitoring-window-total-loads = Общая нагрузка сети
+power-monitoring-window-value = { POWERWATTS($value) }
+power-monitoring-window-button-value = { $value } Вт
+power-monitoring-window-show-inactive-consumers = Показать неактивные потребители тока
 power-monitoring-window-show-cable-networks = Отображения электросетей различного вольтажа
 power-monitoring-window-show-hv-cable = Высокого
 power-monitoring-window-show-mv-cable = Среднего
@@ -18,6 +21,3 @@ power-monitoring-window-flavor-left = [user@nanotrasen] $run power_net_query
 power-monitoring-window-flavor-right = v1.3ru
 power-monitoring-window-rogue-power-consumer = [color=white][font size=14][bold]! ВНИМАНИЕ - ОБНАРУЖЕН НЕСАНКЦИОНИРОВАННЫЙ ЭНЕРГОПОТРЕБИТЕЛЬ ![/bold][/font][/color]
 power-monitoring-window-power-net-abnormalities = [color=white][font size=14][bold]ОСТОРОЖНО - АНОМАЛЬНАЯ АКТИВНОСТЬ В ЭЛЕКТРОСЕТИ[/bold][/font][/color]
-power-monitoring-window-value = { POWERWATTS($value) }
-power-monitoring-window-button-value = { $value } Вт
-power-monitoring-window-show-inactive-consumers = Показать неактивные потребители тока

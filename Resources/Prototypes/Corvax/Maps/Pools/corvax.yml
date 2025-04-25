@@ -1,14 +1,27 @@
 - type: gameMapPool
   id: CorvaxMapPool
   maps:
-    - CorvaxDelta
-    - CorvaxAvrite
-    - CorvaxSilly
-    - CorvaxAstra
-    - CorvaxMaus
-    - CorvaxPaper
-    - CorvaxPilgrim
-    - CorvaxTerra
-    - CorvaxPearl
-    - Box
-    - Train
+  # Highpop 55+
+  - CorvaxDelta
+  - CorvaxAvrite
+  - CorvaxAstra
+  - CorvaxPilgrim # 40+
+  - Box
+
+  # Semi-Highpop 25–65
+  - Bagel
+  # Midpop 25–55
+  - CorvaxPaper
+  - CorvaxOutpost
+  - CorvaxAwesome
+  - CorvaxPearl
+  - Amber
+  - Marathon
+
+  # Semi-Midpop 0–35
+  - CorvaxMaus
+  # Lowpop 0–25
+  - CorvaxSilly
+  - CorvaxTushkan
+  - Omega
+  - Packed

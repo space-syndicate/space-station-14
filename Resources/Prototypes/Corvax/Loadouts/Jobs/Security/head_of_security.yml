@@ -1,18 +1,19 @@
 # Jumpsuit
 - type: loadout
   id: HeadofSecurityJumpsuitBlack
-  equipment: HeadofSecurityJumpsuitBlack
-
-- type: startingGear
-  id: HeadofSecurityJumpsuitBlack
   equipment:
     jumpsuit: ClothingUniformJumpsuitHoSBlack
 
 - type: loadout
   id: HeadofSecurityJumpskirtBlack
-  equipment: HeadofSecurityJumpskirtBlack
-
-- type: startingGear
-  id: HeadofSecurityJumpskirtBlack
   equipment:
     jumpsuit: ClothingUniformJumpskirtHoSBlack
+
+    #Shoulder Mantle
+- type: loadout
+  id: HeadofSecurityShoulderMantle
+  equipment:
+    neck: ClothingNeckMantleHOSShoulder
+  effects:
+  - !type:GroupLoadoutEffect
+    proto: MasterHoS
