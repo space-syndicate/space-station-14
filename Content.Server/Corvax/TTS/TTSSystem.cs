@@ -3,6 +3,7 @@ using Content.Server.Chat.Systems;
 using Content.Shared.Corvax.CCCVars;
 using Content.Shared.Corvax.TTS;
 using Content.Shared.GameTicking;
+using Content.Shared.Players.RateLimiting;
 using Robust.Shared.Configuration;
 using Robust.Shared.Player;
 using Robust.Shared.Prototypes;
@@ -48,6 +49,8 @@ public sealed partial class TTSSystem : EntitySystem
         SubscribeLocalEvent<RoundRestartCleanupEvent>(OnRoundRestartCleanup);
 
         SubscribeNetworkEvent<RequestPreviewTTSEvent>(OnRequestPreviewTTS);
+
+        RegisterRateLimits();
     }
 
     private void OnRoundRestartCleanup(RoundRestartCleanupEvent ev)
@@ -59,6 +62,9 @@ public sealed partial class TTSSystem : EntitySystem
     {
         if (!_isEnabled ||
             !_prototypeManager.TryIndex<TTSVoicePrototype>(ev.VoiceId, out var protoVoice))
+            return;
+
+        if (HandleRateLimit(args.SenderSession) != RateLimitStatus.Allowed)
             return;
 
         var previewText = _rng.Pick(_sampleText);
@@ -141,17 +147,5 @@ public sealed partial class TTSSystem : EntitySystem
         var textSsml = ToSsmlText(textSanitized, ssmlTraits);
 
         return await _ttsManager.ConvertTextToSpeech(speaker, textSsml);
-    }
-}
-
-public sealed class TransformSpeakerVoiceEvent : EntityEventArgs
-{
-    public EntityUid Sender;
-    public string VoiceId;
-
-    public TransformSpeakerVoiceEvent(EntityUid sender, string voiceId)
-    {
-        Sender = sender;
-        VoiceId = voiceId;
     }
 }

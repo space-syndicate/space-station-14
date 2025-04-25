@@ -11,17 +11,3 @@
     - type: Sprite
       sprite: Corvax/Objects/Misc/stamps.rsi
       state: stamp-iaa
-
-- type: entity
-  name: psychologist's rubber stamp
-  parent: RubberStampBase
-  id: RubberStampPsychologist
-  suffix: DO NOT MAP
-  components:
-  - type: Stamp
-    stampedName: stamp-component-stamped-name-psychologist
-    stampedColor: "#0082AE"
-    stampState: "paper_stamp-psychologist"
-  - type: Sprite
-    sprite: Corvax/Objects/Misc/stamps.rsi
-    state: stamp-psychologist

@@ -7,4 +7,4 @@ ent-WallmountGeneratorElectronics = wallmount generator electronics
 ent-WallmountGeneratorAPUElectronics = wallmount APU electronics
     .desc = Circuit used to construct a wallmount APU.
 ent-SolarTrackerElectronics = solar tracker electronics
-    .desc = Advanced circuit board used to detect differences in pressure, temperature and gas concentrations between the two sides of the door.
+    .desc = Advanced circuit board used to track the nearest star.

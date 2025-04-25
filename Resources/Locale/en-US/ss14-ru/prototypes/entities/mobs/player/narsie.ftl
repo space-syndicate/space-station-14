@@ -4,4 +4,4 @@ ent-MobNarsieSpawn = { ent-MobNarsieBase }
     .suffix = Spawn
     .desc = { ent-MobNarsieBase.desc }
 ent-MobNarsie = { ent-MobNarsieBase }
-  .desc = { ent-MobNarsieBase.desc }
+    .desc = { ent-MobNarsieBase.desc }

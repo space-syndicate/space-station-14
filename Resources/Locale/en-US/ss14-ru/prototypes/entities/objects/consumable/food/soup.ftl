@@ -86,3 +86,5 @@ ent-FoodSoupElectron = electron soup
     .desc = A gastronomic curiosity of ethereal origin.
 ent-FoodSoupBungo = bungo curry
     .desc = A spicy vegetable curry made with the humble bungo fruit, Exotic!
+ent-FoodSoupEscargot = escargot
+    .desc = A creamy and rich bowl of snails, bon appetit!

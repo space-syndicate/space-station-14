@@ -1,53 +1,35 @@
 <Document>
-# Электропитание
+  # Power
+  Power is the lifeblood of the station.
+  Without it, the station will quickly fall into chaos.
+  Engineers are responsible for maintaining the station's power grid, ensuring that power is supplied, distributed, and all departments are satisfied.
 
-SS14 имеет довольно продвинутую систему электропитания, посредством которой все устройства на станции получают электроэнергию. Система делится на три электросети: [color=orange]высоковольтную (ВВ)[/color], [color=yellow]средневольтную (СВ)[/color], и [color=green]низковольтную (НВ)[/color].
-<Box>
-<GuideEntityEmbed Entity="CableHVStack"/>
-<GuideEntityEmbed Entity="CableMVStack"/>
-<GuideEntityEmbed Entity="CableApcStack"/>
-</Box>
+  <Box>
+    <GuideEntityEmbed Entity="SingularityGenerator" Caption=""/>
+    <GuideEntityEmbed Entity="TeslaGenerator" Caption=""/>
+    <GuideEntityEmbed Entity="AmeController" Caption=""/>
+    <GuideEntityEmbed Entity="SMESBasic" Caption=""/>
+    <GuideEntityEmbed Entity="SubstationBasic" Caption=""/>
+    <GuideEntityEmbed Entity="APCBasic" Caption=""/>
+  </Box>
 
-## Типы кабелей
-Три основных типа кабеля (ВВ, СВ, и НВ) могут быть использованы для создания независимых электросетей. Осмотрите их, чтобы получить информацию об их применении.
-<Box>
-<GuideEntityEmbed Entity="CableHV"/>
-<GuideEntityEmbed Entity="CableMV"/>
-<GuideEntityEmbed Entity="CableApcExtension"/>
-</Box>
+  There are many different aspects to Space Station 14's power system simulation, as well as Engineering's intended gameplay.
 
-## Накопление электроэнергии
-Каждый представленный накопитель энергии выполняет функцию трансформатора для соответствующего уровня энергии (высокого, среднего, и низкого напряжения), а также обеспечивает довольно емкий резервный аккумулятор для выравнивания скачков и перепадов потребления энергии.
-<Box>
-<GuideEntityEmbed Entity="SMESBasic"/>
-<GuideEntityEmbed Entity="SubstationBasic"/>
-<GuideEntityEmbed Entity="APCBasic"/>
-</Box>
+  Some important information to keep in mind includes:
+  - Station [textlink="generators" link="Generators"] are tiered and follow a hierarchy. The lower the tier, the less they are sustainable, but the easier they are to setup. The higher the tier, the more sustainable they are, but the more complex they are to setup.
+  - Space Station 14 features [textlink="voltage networks" link="VoltageNetworks"], which distribute power across the station and are stepped down in voltage by machines, so they can be used by other machines.
+  - Power [textlink="generators" link="Generators"] have [textlink="ramping" link="Ramping"], which means they take time to match the grid's demand to their supply.
 
-## Наращивание мощности
-Вопреки тому, чего можно ожидать от симуляции электричества в видеоигре, электроэнергия не появляется мгновенно по щелчку. Генераторам и батареям требуется время чтобы нарастить мощность в соотвествии с потребляемым током, что может привести к отлючению питания при сильных одновременных изменениях потребляемого тока, например, когда батареи садятся.
+  ## Starting Out
+  At the start of the shift, the station is running off of purely [textlink="battery" link="PowerStorage"] power.
+  This will at most last 5-10 minutes, depending on the station's power draw.
 
-## Установка накопителей энергии
-С подстанцией всё просто. Закрепите подстанцию поверх ВВ и СВ кабелей. Подстанция будет получать электроэнергию из ВВ кабеля и передавать на СВ.
+  To extend this, you can start up the station's [textlink="Antimatter Engine" link="AME"], or [textlink="AME." link="AME"]
+  This will extend the runtime of the station's batteries by a significant amount, giving you more time to setup the station's higher-tier [textlink="generators." link="Generators"]
+  You can extend this even further by setting up [textlink="solar panels" link="SolarPanels"], which generate power for free.
 
-ЛКП так же просты, но их можно устанавливать только на стены. ЛКП будет получать электроэнергию из СВ кабеля и передавать на НВ.
+  After setting up the [textlink="AME" link="AME"] and [textlink="Solars" link="SolarPanels"], you should be generating a decent amount of power.
 
-Установка СМЭС требует наличия рядом кабельной клеммы. СМЭС будет получать электроэнергию через клемму, и подавать её на кабель под собой. Клемма нужна чтобы высоковольтный вход и высоковольтный выход не соединялись. Не подключайте СМЭС к самому себе, это приведет к короткому замыканию, которое в зависимости от степени тяжести может вызвать мерцание или перебои в подаче электроэнергии.
-
-## Перемыкание ЛКП
-На данный момент единственным устройством хранения энергии, которое имеет предел для своей сети, является ЛКП. Как только все подключенные устройства и механизмы потребуют больше [color=#a4885c]24 кВт[/color], его рубильник сработает, и все отключится.
-<Box>
-<GuideEntityEmbed Entity="APCBasic"/>
-</Box>
-
-## Проверка электросети
-1. Используйте [color=#a4885c]т-лучевой сканнер[/color], чтобы увидеть кабели, спрятанные под плиткой. (пропустите этот шаг, если кабели не спрятаны)
-2. Снимите плитку, закрывающую доступ к кабелю, с помощью [color=#a4885c]монтировки[/color]. (пропустите этот шаг, если кабели не спрятаны)
-3. Вооружитесь вашим надежным мультитулом [color=#a4885c]Multitool[/color] и нажмите на любой кабель, чтобы посмотреть статистику электросети.
-<Box>
-<GuideEntityEmbed Entity="Multitool"/>
-<GuideEntityEmbed Entity="Crowbar"/>
-<GuideEntityEmbed Entity="trayScanner"/>
-</Box>
+  Now that you've bought yourself time, you can focus on setting up higher-tier [textlink="generators" link="Generators"] like the [textlink="Singularity Engine" link="SingularityEngine"], which can provide power for the rest of the shift.
 
 </Document>

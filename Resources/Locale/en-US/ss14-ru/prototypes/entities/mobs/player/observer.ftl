@@ -1,9 +1,13 @@
-ent-MobObserver = observer
+ent-Incorporeal = { "" }
+    .desc = Mobs without physical bodies
+ent-MobObserverBase = observer
     .desc = Boo!
+ent-MobObserver = { ent-MobObserverBase }
+    .desc = { ent-MobObserverBase.desc }
 ent-ActionGhostBoo = Boo!
     .desc = Scare your crew members because of boredom!
-ent-ActionToggleLighting = Toggle All Lighting
-    .desc = Toggle all light rendering to better observe dark areas.
+ent-ActionToggleLighting = Toggle Lighting
+    .desc = Toggle light rendering to better observe dark areas.
 ent-ActionToggleFov = Toggle FoV
     .desc = Toggles field-of-view in order to see what players see.
 ent-ActionToggleGhosts = Toggle Ghosts

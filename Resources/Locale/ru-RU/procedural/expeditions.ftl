@@ -16,9 +16,7 @@ salvage-expedition-window-modifiers = Модификаторы:
 offering-window-claimed = Принято
 offering-window-claim = Принять
 salvage-expedition-window-next = Следующее предложение
-# Expedition descriptions
 salvage-expedition-difficulty-players = Рекомендовано утилизаторов:
-#  С вас удержат налог в размере { $tax }% от добытых ресурсов.
 salvage-expedition-difficulty-Moderate = Умеренная
 salvage-expedition-difficulty-Hazardous = Высокая
 salvage-expedition-difficulty-Extreme = Экстремальная

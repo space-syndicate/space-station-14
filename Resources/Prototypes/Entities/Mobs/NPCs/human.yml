@@ -63,6 +63,11 @@
     - type: HTN
       rootTask:
         task: SimpleHumanoidHostileCompound
+    # Corvax-start
+    - type: AutoImplant
+      implants:
+        - DeathAcidifierImplant # Corvax anti-overloot
+    # Corvax-end
 
 - type: entity
   name: syndicate shuttle pilot

@@ -7,5 +7,5 @@ metabolizer-type-vox = Вокс
 metabolizer-type-rat = Крыса
 metabolizer-type-plant = Растение
 metabolizer-type-dwarf = Дварф
-metabolizer-type-moth = Ниан
+metabolizer-type-moth = Моль
 metabolizer-type-arachnid = Арахнид

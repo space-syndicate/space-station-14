@@ -1,7 +1,7 @@
 ent-ClothingUniformJumpsuitRecruitNT = recruit jumpsuit
     .desc = A classy grey jumpsuit with blue trims. Perfect for the dignified helper.
-ent-ClothingUniformJumpsuitRecruitSyndie = syndicate recuit jumpsuit
-    .desc = A dubious,, dark-grey jumpsuit. As if passengers weren't dubious enough already.
+ent-ClothingUniformJumpsuitRecruitSyndie = syndicate recruit jumpsuit
+    .desc = A dubious, dark-grey jumpsuit. As if passengers weren't dubious enough already.
 ent-ClothingUniformJumpsuitRepairmanNT = repairman jumpsuit
     .desc = A jumpsuit that reminds you of a certain crew-sector work position. Hopefully, you won't have to do the same job as THOSE freaks.
 ent-ClothingUniformJumpsuitRepairmanSyndie = syndicate repairman jumpsuit

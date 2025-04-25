@@ -491,6 +491,10 @@
   parent: SpawnPointJobBase
   name: brigmedic
   components:
+  # Corvax-Brigmedic-Start
+  - type: SpawnPoint
+    job_id: Brigmedic
+  # Corvax-Brigmedic-End
   - type: Sprite
     layers:
       - state: green

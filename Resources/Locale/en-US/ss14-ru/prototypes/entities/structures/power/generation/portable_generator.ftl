@@ -1,5 +1,5 @@
 ent-PortableGeneratorBase = { ent-BaseMachine }
-  .desc = { ent-BaseMachine.desc }
+    .desc = { ent-BaseMachine.desc }
 ent-PortableGeneratorSwitchableBase = { ent-PortableGeneratorBase }
     .desc = { ent-PortableGeneratorBase.desc }
 ent-PortableGeneratorPacman = P.A.C.M.A.N.-type portable generator

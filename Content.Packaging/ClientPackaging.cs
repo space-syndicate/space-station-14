@@ -80,7 +80,13 @@ public static class ClientPackaging
         var graph = new RobustClientAssetGraph();
         pass.Dependencies.Add(new AssetPassDependency(graph.Output.Name));
 
-        AssetGraph.CalculateGraph(graph.AllPasses.Append(pass).ToArray(), logger);
+        var dropSvgPass = new AssetPassFilterDrop(f => f.Path.EndsWith(".svg"))
+        {
+            Name = "DropSvgPass",
+        };
+        dropSvgPass.AddDependency(graph.Input).AddBefore(graph.PresetPasses);
+
+        AssetGraph.CalculateGraph([pass, dropSvgPass, ..graph.AllPasses], logger);
 
         var inputPass = graph.Input;
 
@@ -97,7 +103,7 @@ public static class ClientPackaging
             assemblies, // Corvax-Secrets
             cancel: cancel);
 
-        await WriteClientResources(contentDir, pass, cancel); // Corvax-Secrets: Support content resource ignore to ignore server-only prototypes
+        await WriteClientResources(contentDir, inputPass, cancel); // Corvax-Secrets: Support content resource ignore to ignore server-only prototypes
 
         inputPass.InjectFinished();
     }

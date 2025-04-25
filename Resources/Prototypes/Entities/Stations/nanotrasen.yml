@@ -23,9 +23,10 @@
     - BaseStationAlertLevels
     - BaseStationMagnet
     - BaseStationExpeditions
-    - BaseStationSiliconLawCrewsimov
+    - BaseStationSiliconLawNTDefault # Corvax-NTDefault
     - BaseStationAllEventsEligible
     - BaseStationNanotrasen
+    - BaseStationDeliveries
   categories: [ HideSpawnMenu ]
   components:
     - type: Transform
