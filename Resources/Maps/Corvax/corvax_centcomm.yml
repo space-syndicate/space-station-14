@@ -65947,8 +65947,6 @@ entities:
       stampedName: ПОСЛЕ ПРОЧТЕНИЯ СЖЕЧЬ
       stampedColor: '#7C3737FF'
   - uid: 10523
-    mapInit: true
-    paused: true
     components:
     - type: MetaData
       desc: Резиновая печать для проставления штампов на важных документах.
@@ -65956,8 +65954,6 @@ entities:
     - type: Transform
       pos: 25.144209,99.79826
       parent: 1
-    - type: EmitSoundOnCollide
-      nextSound: -4970.4814583
     - type: Stamp
       stampedName: СОВЕРШЕННО СЕКРЕТНО
 - proto: RubberStampLawyer
@@ -65981,16 +65977,12 @@ entities:
     - type: Stamp
       stampedName: Магистрат
   - uid: 10524
-    mapInit: true
-    paused: true
     components:
     - type: MetaData
       name: печать ОСО
     - type: Transform
       pos: 25.233381,99.57527
       parent: 1
-    - type: EmitSoundOnCollide
-      nextSound: -4970.4814583
     - type: Stamp
       stampedName: Офицер СпецОпераций
 - proto: RubberStampSyndicate
