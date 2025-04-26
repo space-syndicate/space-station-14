@@ -12,23 +12,20 @@
 # Corvax-HiddenDesc-Start
   - type: HiddenDescription
     entries:
-    - label: corvax-hidden-desc-HoloparasiteInjector-syndicate
+    - label: corvax-hidden-desc-HoloparasiteInjector-antag
       whitelistMind:
         mindRoles:
         - TraitorRole
         - NukeopsRole
-    - label: corvax-hidden-desc-HoloparasiteInjector-research
-      jobRequired:
-        - ResearchAssistant
-        - ResearchDirector
-        - Scientist
-        - Borg
-    - label: corvax-hidden-desc-IllegalImplants-medical
-      jobRequired:
-        - Paramedic
-        - MedicalDoctor
-        - ChiefMedicalOfficer
+        - ThiefRole
+        - ParadoxCloneRole
+        - NinjaRole
+        - WizardRole
+        - InitialInfectedRole
+    - label: corvax-hidden-desc-HoloparasiteInjector-informed
+      roleGroupRequired: RoleGroupInformedPersonnel
 # Corvax-HiddenDesc-End
+
 
 - type: entity
   name: holoclown injector
@@ -39,24 +36,20 @@
   - type: GuardianCreator
     guardianProto: MobHoloClownGuardian
 # Corvax-HiddenDesc-Start
-  - type: HiddenDescription 
+  - type: HiddenDescription
     entries:
-    - label: corvax-hidden-desc-HoloClownInjector-syndicate
+    - label: corvax-hidden-desc-HoloparasiteInjector-antag
       whitelistMind:
         mindRoles:
         - TraitorRole
         - NukeopsRole
-    - label: corvax-hidden-desc-HoloClownInjector-research
-      jobRequired:
-        - ResearchAssistant
-        - ResearchDirector
-        - Scientist
-        - Borg
-    - label: corvax-hidden-desc-IllegalImplants-medical
-      jobRequired:
-        - Paramedic
-        - MedicalDoctor
-        - ChiefMedicalOfficer
+        - ThiefRole
+        - ParadoxCloneRole
+        - NinjaRole
+        - WizardRole
+        - InitialInfectedRole
+    - label: corvax-hidden-desc-HoloparasiteInjector-informed
+      roleGroupRequired: RoleGroupInformedPersonnel
 # Corvax-HiddenDesc-End
 
 - type: entity

@@ -244,7 +244,6 @@
       - state: base-part-inhand-right
       - state: base-stripes-inhand-right
         color: "#7B0F12"
-      
 
 - type: entity
   id: BaseBorgModuleSyndicateAssault
@@ -735,17 +734,19 @@
 # Corvax-HiddenDesc-Start
   - type: HiddenDescription
     entries:
-    - label: corvax-hidden-desc-BorgModuleSyndicateWeapon-syndicate
+    - label: corvax-hidden-desc-BorgModuleSyndicateWeapon-antag
       whitelistMind:
         mindRoles:
-          - TraitorRole
-          - NukeopsRole
+        - TraitorRole
+        - NukeopsRole
+        - ThiefRole
+        - ParadoxCloneRole
+        - NinjaRole
+        - WizardRole
+        - InitialInfectedRole
     - label: corvax-hidden-desc-BorgModuleSyndicateWeapon-research
-      jobRequired:
-        - ResearchAssistant
-        - ResearchDirector
-        - Scientist
-        - Borg
+      roleGroupRequired: SkillRoboticsConstruction
+      mustBeHeld: true
 # Corvax-HiddenDesc-End
   - type: BorgModuleIcon
     icon: { sprite: Interface/Actions/actions_borg.rsi, state: syndicate-weapon-module }
@@ -784,21 +785,6 @@
       - Emag
       - AccessBreaker
       - PinpointerSyndicateNuclear
-# Corvax-HiddenDesc-Start
-    - type: HiddenDescription
-      entries:
-      - label: corvax-hidden-desc-BorgModuleOperative-syndicate
-        whitelistMind:
-          mindRoles:
-            - TraitorRole
-            - NukeopsRole
-      - label: corvax-hidden-desc-BorgModuleOperative-research
-        jobRequired:
-          - ResearchAssistant
-          - ResearchDirector
-          - Scientist
-          - Borg
-# Corvax-HiddenDesc-End
     - type: BorgModuleIcon
       icon: { sprite: Interface/Actions/actions_borg.rsi, state: syndicate-operative-module }
 
@@ -816,21 +802,6 @@
       items:
       - CyborgEnergySwordDouble
       - PinpointerSyndicateNuclear
-# Corvax-HiddenDesc-Start
-    - type: HiddenDescription
-      entries:
-      - label: corvax-hidden-desc-BorgModuleEsword-syndicate
-        whitelistMind:
-          mindRoles:
-            - TraitorRole
-            - NukeopsRole
-      - label: corvax-hidden-desc-BorgModuleSyndicateWeapon-research
-        jobRequired:
-          - ResearchAssistant
-          - ResearchDirector
-          - Scientist
-          - Borg
-# Corvax-HiddenDesc-End
     - type: BorgModuleIcon
       icon: { sprite: Interface/Actions/actions_borg.rsi, state: syndicate-esword-module }
 
@@ -848,21 +819,6 @@
       items:
         - WeaponLightMachineGunL6C
         - PinpointerSyndicateNuclear
-# Corvax-HiddenDesc-Start
-    - type: HiddenDescription
-      entries:
-      - label: corvax-hidden-desc-BorgModuleL6C-syndicate
-        whitelistMind:
-          mindRoles:
-          - TraitorRole
-          - NukeopsRole
-      - label: corvax-hidden-desc-BorgModuleSyndicateWeapon-research
-        jobRequired:
-          - ResearchAssistant
-          - ResearchDirector
-          - Scientist
-          - Borg
-# Corvax-HiddenDesc-End
     - type: BorgModuleIcon
       icon: { sprite: Interface/Actions/actions_borg.rsi, state: syndicate-l6c-module }
 
@@ -882,17 +838,19 @@
 # Corvax-HiddenDesc-Start
     - type: HiddenDescription
       entries:
-      - label: corvax-hidden-desc-BorgModuleMartyr-syndicate
+      - label: corvax-hidden-desc-BorgModuleMartyr-antag
         whitelistMind:
           mindRoles:
-            - TraitorRole
-            - NukeopsRole
+          - TraitorRole
+          - NukeopsRole
+          - ThiefRole
+          - ParadoxCloneRole
+          - NinjaRole
+          - WizardRole
+          - InitialInfectedRole
       - label: corvax-hidden-desc-BorgModuleMartyr-research
-        jobRequired:
-          - ResearchAssistant
-          - ResearchDirector
-          - Scientist
-          - Borg
+        roleGroupRequired: SkillRoboticsConstruction
+        mustBeHeld: true
 # Corvax-HiddenDesc-End
     - type: BorgModuleIcon
       icon: { sprite: Interface/Actions/actions_borg.rsi, state: syndicate-martyr-module }

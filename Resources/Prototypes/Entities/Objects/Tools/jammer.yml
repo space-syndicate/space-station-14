@@ -48,3 +48,20 @@
           Low: {state: jammer_low_charge}
           Medium: {state: jammer_medium_charge}
           High: {state: jammer_high_charge}
+# Corvax-HiddenDesc-Start
+  - type: HiddenDescription
+    entries:
+    - label: corvax-hidden-desc-RadioJammer-antag
+      whitelistMind:
+        mindRoles:
+        - TraitorRole
+        - NukeopsRole
+        - ThiefRole
+        - ParadoxCloneRole
+        - NinjaRole
+        - WizardRole
+        - InitialInfectedRole
+    - label: corvax-hidden-desc-RadioJammer-construction
+      roleGroupRequired: SkillAdvancedConstruction
+      mustBeHeld: true
+# Corvax-HiddenDesc-End

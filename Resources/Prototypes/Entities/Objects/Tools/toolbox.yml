@@ -102,11 +102,17 @@
 # Corvax-HiddenDesc-Start
   - type: HiddenDescription
     entries:
-    - label: corvax-hidden-desc-ToolboxElectricalTurret-syndicate
+    - label: corvax-hidden-desc-ToolboxElectricalTurret-antag
       whitelistMind:
         mindRoles:
-            - TraitorRole
-            - NukeopsRole
+        - TraitorRole
+        - NukeopsRole
+        - ThiefRole
+        - ParadoxCloneRole
+        - NinjaRole
+        - WizardRole
+        - InitialInfectedRole
+
 # Corvax-HiddenDesc-End
 
 - type: entity

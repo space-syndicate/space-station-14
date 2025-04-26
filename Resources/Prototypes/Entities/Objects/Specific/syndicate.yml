@@ -25,22 +25,21 @@
 # Corvax-HiddenDesc-Start
   - type: HiddenDescription
     entries:
-    - label: corvax-hidden-desc-Telecrystal-syndicate
+    - label: corvax-hidden-desc-Telecrystal-antag
       whitelistMind:
         mindRoles:
         - TraitorRole
         - NukeopsRole
-    - label: corvax-hidden-desc-Telecrystal-cargo
-      jobRequired:
-        - SalvageSpecialist
+        - ThiefRole
+        - ParadoxCloneRole
+        - NinjaRole
+        - WizardRole
+        - InitialInfectedRole
     - label: corvax-hidden-desc-Telecrystal-research
-      jobRequired:
-        - ResearchAssistant
-        - ResearchDirector
-        - Scientist
-        - Borg
+      roleGroupRequired: SkillRoboticsConstruction
+      mustBeHeld: true
 # Corvax-HiddenDesc-End
-        
+
 - type: entity
   parent: Telecrystal
   id: Telecrystal1

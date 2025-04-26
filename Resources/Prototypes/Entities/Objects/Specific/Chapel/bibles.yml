@@ -85,15 +85,19 @@
 # Corvax-HiddenDesc-Start
   - type: HiddenDescription
     entries:
-    - label: corvax-hidden-desc-BibleNecronomicon-syndicate
+    - label: corvax-hidden-desc-BibleNecronomicon-antag
       whitelistMind:
         mindRoles:
         - TraitorRole
         - NukeopsRole
-    - label: corvax-hidden-desc-BibleNecronomicon-service
-      jobRequired:
-        - Chaplain
-        - Librarian
+        - ThiefRole
+        - ParadoxCloneRole
+        - NinjaRole
+        - WizardRole
+        - InitialInfectedRole
+    - label: corvax-hidden-desc-BibleNecronomicon-occultism
+      roleGroupRequired: SkillOccultism
+      mustBeHeld: true
 # Corvax-HiddenDesc-End
 
 - type: entity
