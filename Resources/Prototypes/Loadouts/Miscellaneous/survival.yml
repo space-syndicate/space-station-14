@@ -18,8 +18,10 @@
     - Human
     - Moth
     - Reptilian
-    - Vulpkanin # Corvax-MRP
-    - Tajaran # Corvax-Tajaran
+    #Corvax-Species-Start
+    - Vulpkanin
+    - Tajaran
+    #Corvax-Species-End
 
 - type: loadoutEffectGroup
   id: EffectSpeciesVox
