@@ -1,0 +1,98 @@
+- type: entity
+  id: ActionDrainBattery
+  name: Drain battery
+  description: Drain battery
+  noSpawn: true
+  components:
+  - type: InstantAction
+    icon: Interface/Actions/eyeopen.png
+    iconOn: Interface/Actions/eyeclose.png
+    itemIconStyle: NoItem
+    event: !type:ToggleDrainActionEvent
+
+- type: entity
+  save: false
+  name: Urist McHands The Dwarf
+  parent: BaseMobDwarfKPB
+  id: MobDwarfKPB
+
+
+- type: entity
+  save: false
+  name: Urist McHands The Dwarf
+  parent: BaseMobSpeciesOrganic
+  id: BaseMobDwarfKPB
+  abstract: true
+  components:
+  - type: Ipc
+  - type: Hunger
+  - type: Thirst
+  - type: Icon
+    sprite: Mobs/Species/Human/parts.rsi
+    state: full
+  - type: Respirator
+    damage:
+      types:
+        Asphyxiation: 2
+    damageRecovery:
+      types:
+        Asphyxiation: -1.0
+  - type: Sprite
+    noRot: true
+    drawdepth: Mobs
+    scale: 1, 0.8
+  - type: Body
+    prototype: Dwarf
+    requiredLegs: 2
+  - type: Butcherable
+    butcheringType: Spike
+    spawned:
+    - id: FoodMeatHuman
+      amount: 5
+  - type: Fixtures
+    fixtures: # TODO: This needs a second fixture just for mob collisions.
+      fix1:
+        shape:
+          !type:PhysShapeCircle
+          radius: 0.35
+        # they r smaller
+        density: 120
+        restitution: 0.0
+        mask:
+        - MobMask
+        layer:
+        - MobLayer
+  - type: Vocal
+    sounds:
+      Male: UnisexDwarf
+      Female: FemaleDwarf
+      Unsexed: UnisexDwarf
+  - type: ReplacementAccent
+    accent: dwarf
+  - type: Speech
+    speechSounds: Bass
+  - type: HumanoidAppearance
+    species: Dwarf
+    hideLayersOnEquip:
+    - Hair
+    - Snout
+  - type: Inventory
+    femaleDisplacements:
+      jumpsuit:
+        sizeMaps:
+          32:
+            sprite: Mobs/Species/Human/displacement.rsi
+            state: jumpsuit-female
+  - type: PowerCellSlot
+    cellSlotId: cell_slot
+    fitsInCharger: true
+  - type: PowerCellDraw
+    drawRate: 0.6
+  # no ToggleCellDraw since dont want to lose access when power is gone
+  - type: ItemSlots
+    slots:
+      cell_slot:
+        name: power-cell-slot-component-slot-name-default
+  - type: ContainerContainer
+    containers:
+      cell_slot: !type:ContainerSlot { }
