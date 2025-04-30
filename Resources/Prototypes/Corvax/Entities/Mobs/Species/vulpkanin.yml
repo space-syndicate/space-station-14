@@ -82,7 +82,7 @@
       types:
         Asphyxiation: -2.0
   - type: Wagging
-  - type: PassiveDamage # Around 8 damage a minute healed
+  - type: PassiveDamage
     allowedStates:
     - Alive
     - Critical
