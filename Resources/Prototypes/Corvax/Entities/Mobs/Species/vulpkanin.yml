@@ -54,8 +54,8 @@
             sprite: Corvax/Mobs/Species/displacement.rsi
             state: shoes
   - type: ContentEye
-    targetZoom: "1.125, 1.125"
-    maxZoom: "1.125, 1.125"
+    targetZoom: "1.0, 1.0"
+    maxZoom: "1.0, 1.0"
   - type: Speech
     allowedEmotes: ['Howl', 'Growl']
   - type: Vocal
