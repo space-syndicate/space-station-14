@@ -83,7 +83,7 @@
   description: I think they're dead.
   components:
   - type: RandomHumanoidAppearance
-    randomizeName: false
+    randomizeName: true # Corvax
   - type: Damageable
     damage:
       types:
@@ -92,7 +92,7 @@
         Slash: 56
         Blunt: 19
   - type: Inventory
-    templateId: corpse
+    templateId: human # Corvax corpse
 
 - type: entity
   parent: MobHuman
