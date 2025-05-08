@@ -38,3 +38,21 @@
     # ║░░░░░░░░░░░░░░░░░░░░░░░░║░░░░░░║
     # ╚════════════════════════╝░░░░░░║
     # ░░░░░░░╚════════════════════════╝
+
+- type: entity
+  id: MailMortySpam
+  name: Pray with us!
+  description: Morty is legend.
+  parent: Paper
+  components:
+  - type: Paper
+    content: delivery-spam-morty
+
+- type: entity
+  id: MailAntiMortySpam
+  name: Hate with us!
+  description: Go away, Morty!
+  parent: Paper
+  components:
+  - type: Paper
+    content: delivery-spam-anti-morty
