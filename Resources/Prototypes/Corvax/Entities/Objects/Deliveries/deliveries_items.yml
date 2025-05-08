@@ -1,0 +1,22 @@
+
+# Scam Mail
+- type: entity
+  id: MailFillOutTheFormSpam
+  name: Fill out the form, please
+  description: Your money is in danger, do it quick!
+  parent: Paper
+  components:
+  - type: Paper
+    content: delivery-spam-fill-out-the-form
+    # symbol "░" in [color=white]:
+    # ╔════════════════════════╗
+    # ║░░░░░░░░░░░░░░░░░░░░░░░░║══════╗
+    # ║░┌────────────────────┐░║██████║
+    # ║░└────────────────────┘░║██████║
+    # ║░░░░░░░░░░░┌──┐┌──┐░░░░░║░░░░░░║
+    # ║░░░░░░░░░░░└──┘└──┘░░░░░║░┌──┐░║
+    # ║░┌────────────────┐░░░░░║░└──┘░║
+    # ║░└────────────────┘░░░░░║░░░░░░║
+    # ║░░░░░░░░░░░░░░░░░░░░░░░░║░░░░░░║
+    # ╚════════════════════════╝░░░░░░║
+    # ░░░░░░░╚════════════════════════╝
