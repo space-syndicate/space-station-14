@@ -1,3 +1,12 @@
+# Advertisements
+- type: entity
+  id: MailDeathSquadMovieSpam
+  name: Two tickets on movie!
+  description: You just received tickets on "ALL CONTRACTS ARE TERMINATED".
+  parent: Paper
+  components:
+  - type: Paper
+    content: delivery-spam-death-squad-movie
 
 # Scam Mail
 - type: entity
