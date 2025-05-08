@@ -8,6 +8,15 @@
   - type: Paper
     content: delivery-spam-death-squad-movie
 
+- type: entity
+  id: MailKosmoFansSpam
+  name: Subscribe to my profile!
+  description: An advertisment of someone's KosmoFans profile.
+  parent: Paper
+  components:
+  - type: Paper
+    content: delivery-spam-kosmofans
+
 # Scam Mail
 - type: entity
   id: MailFillOutTheFormSpam

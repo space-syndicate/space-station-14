@@ -3,4 +3,5 @@
   table: !type:GroupSelector
     children:
       - id: MailFillOutTheFormSpam
+      - id: MailKosmoFansSpam
       - id: MailDeathSquadMovieSpam
