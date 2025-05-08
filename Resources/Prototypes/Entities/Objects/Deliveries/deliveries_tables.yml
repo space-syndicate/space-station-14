@@ -67,6 +67,11 @@
     - !type:NestedSelector
       weight: 4
       tableId: SpamMailTable
+    # Corvax-Delivery Start
+    - !type:NestedSelector
+      weight: 4
+      tableId: CorvaxSpamMailTable
+    # Corvax-Delivery End
     - !type:NestedSelector
       weight: 2
       tableId: RandomBookTable

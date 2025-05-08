@@ -1,0 +1,5 @@
+- type: entityTable
+  id: CorvaxSpamMailTable
+  table: !type:GroupSelector
+    children:
+      - id: MailFillOutTheFormSpam
