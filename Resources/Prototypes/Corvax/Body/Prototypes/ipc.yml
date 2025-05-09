@@ -8,8 +8,7 @@
       connections:
       - torso
       organs:
-        brain: OrganHumanBrain
-        eyes: OrganHumanEyes
+        eyes: OrganIpcEyes
     torso:
       part: TorsoIpc
       # organs:
@@ -23,6 +22,8 @@
       - left_arm
       - right_leg
       - left_leg
+      organs:
+        brain: OrganIPCBrain
     right_arm:
       part: RightArmIpc
       connections:

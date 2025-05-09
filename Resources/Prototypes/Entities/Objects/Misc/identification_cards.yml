@@ -16,8 +16,6 @@
     heldPrefix: default
     storedRotation: -90
   - type: Access
-    groups:
-    - Ipc
   - type: IdCard
   - type: StationRecordKeyStorage
   - type: Tag

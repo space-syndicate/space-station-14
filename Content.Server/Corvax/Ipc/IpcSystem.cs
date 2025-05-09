@@ -73,7 +73,7 @@ public sealed class IpcSystem : EntitySystem
     {
 
 
-        if (!_powerCell.TryGetBatteryFromSlot(ent, out var battery, slot) || MathHelper.CloseToPercent(battery.CurrentCharge, 0))
+        if (!_powerCell.TryGetBatteryFromSlot(ent, out var battery, slot) || battery.CurrentCharge < 0.01f)
         {
             _alerts.ClearAlert(ent, ent.Comp.BatteryAlert);
             _alerts.ShowAlert(ent, ent.Comp.NoBatteryAlert);

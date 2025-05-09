@@ -16,13 +16,13 @@
   - type: Inventory
   - type: ContentEye
   - type: Speech
-    allowedEmotes: ['Purr']
+  - type: BodyEmotes
+    soundsId: IpcEmotes
   - type: Vocal
     sounds:
       Male: MaleIpc
       Female: FemaleIpc
       Unsexed: MaleIpc
-  - type: GrowlingAccent
   - type: MeleeWeapon
     animation: WeaponArcClaw
     soundHit:
@@ -67,7 +67,7 @@
     cellSlotId: cell_slot
     fitsInCharger: true
   - type: PowerCellDraw
-    drawRate: 0.6
+    drawRate: 0.5
   # no ToggleCellDraw since dont want to lose access when power is gone
   - type: AccessReader
     access: [ ["Ipc"], ["Research"] ]
@@ -94,7 +94,7 @@
   - type: Repairable
     doAfterDelay: 20
     SelfRepairPenalty: 60
-
+  - type: DamagedSiliconAccent
 
 - type: entity
   save: false
@@ -108,17 +108,8 @@
   - type: Barotrauma
     damage:
       types:
-        Blunt: 0.50 #per second, scales with pressure and other constants.
-        Heat: 0.1
-  - type: PassiveDamage # Slight passive regen. Assuming one damage type, comes out to about 4 damage a minute.
-    allowedStates:
-    - Alive
-    damageCap: 20
-    damage:
-      types:
-        Heat: -0.07
-      groups:
-        Brute: -0.07
+        Blunt: 0 #per second, scales with pressure and other constants.
+        Heat: 0
   - type: Fingerprint
   - type: Blindable
   # Other
@@ -127,9 +118,9 @@
     coldDamageThreshold: 260
     currentTemperature: 310.15
     specificHeat: 42
-    coldDamage:
-      types:
-        Cold: 0.1 #per second, scales with temperature & other constants
+    # coldDamage:
+    #   types:
+    #     Cold: 0.1 #per second, scales with temperature & other constants
     heatDamage:
       types:
         Heat: 1.5 #per second, scales with temperature & other constants
@@ -149,13 +140,15 @@
   - type: Butcherable
     butcheringType: Spike # TODO human.
     spawned:
-      - id: FoodMeat
-        amount: 5
+      - id: HeadIpc
+        amount: 1
   - type: FireVisuals
     alternateState: Standing
-  # - type: FootprintOwner # Corvax-Next-Footprints
-
-
+  - type: MobThresholds
+    stateAlertDict:
+      Alive: BorgHealth
+      Critical: BorgCrit
+      Dead: BorgDead
 
 - type: entity
   save: false

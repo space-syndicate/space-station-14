@@ -75,3 +75,94 @@
   - мурлычет
   - мурлычет.
   - мурлычет!
+
+- type: emote
+  id: BeepIpc
+  name: chat-emote-name-beep
+  category: Hands
+  icon: Interface/Emotes/beep.png
+  whitelist:
+    requireAll: true
+    components:
+    - Ipc
+    - Vocal
+  chatMessages: ["chat-emote-msg-beep"]
+  chatTriggers:
+    - beep
+    - beeps
+    - beeped
+    - beeping
+    # Corvax-Localization-Start
+    - бип
+    # Corvax-Localization-End
+
+- type: emote
+  id: ChimeIpc
+  name: chat-emote-name-chime
+  category: Hands
+  icon: Interface/Emotes/chime.png
+  whitelist:
+    requireAll: true
+    components:
+    - Ipc
+    - Vocal
+  chatMessages: ["chat-emote-msg-chime"]
+  chatTriggers:
+    - chime
+    - chimes
+    - chimed
+    - chiming
+    # Corvax-Localization-Start
+    - дзынь
+    # Corvax-Localization-End
+
+- type: emote
+  id: Buzz-TwoIpc
+  name: chat-emote-name-buzztwo
+  category: Hands
+  icon: Interface/Emotes/buzztwo.png
+  whitelist:
+    requireAll: true
+    components:
+    - Ipc
+    - Vocal
+  chatMessages: ["chat-emote-msg-buzzestwo"]
+  chatTriggers:
+    - buzztwice
+    - buzzstwice
+    - buzzestwice
+    - buzzingtwice
+    - buzzedtwice
+    - buzz twice
+    - buzzs twice
+    - buzzes twice
+    - buzzing twice
+    - buzzed twice
+    # Corvax-Localization-Start
+    - бипбуп
+    - бип буп
+    - бип-буп
+    - бипбип
+    - бип бип
+    - бип-бип
+    # Corvax-Localization-End
+
+- type: emote
+  id: PingIpc
+  name: chat-emote-name-ping
+  category: Hands
+  icon: Interface/Emotes/ping.png
+  whitelist:
+    requireAll: true
+    components:
+    - Ipc
+    - Vocal
+  chatMessages: ["chat-emote-msg-ping"]
+  chatTriggers:
+    - ping
+    - pings
+    - pinged
+    - pinging
+    # Corvax-Localization-Start
+    - пинг
+    # Corvax-Localization-End

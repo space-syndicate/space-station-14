@@ -139,13 +139,11 @@
     variation: 0.125
   sounds:
     Scream:
-      path: /Audio/Corvax/Effects/Tajaran/scream.ogg
+      path: /Audio/Corvax/Effects/Ipc/scream.ogg
     Laugh:
-      path: /Audio/Corvax/Effects/Tajaran/laugh.ogg
+      path: /Audio/Corvax/Effects/Ipc/laugh.ogg
     Sneeze:
       path: /Audio/Corvax/Effects/Tajaran/sneeze.ogg
-    Purr:
-      path: /Audio/Corvax/Effects/Tajaran/purr.ogg
     Cough:
       collection: MaleCoughs
     Yawn:
@@ -171,13 +169,11 @@
     variation: 0.125
   sounds:
     Scream:
-      path: /Audio/Corvax/Effects/Tajaran/scream.ogg
+      path: /Audio/Corvax/Effects/Ipc/scream.ogg
     Laugh:
-      path: /Audio/Corvax/Effects/Tajaran/laugh.ogg
+      path: /Audio/Corvax/Effects/Ipc/laugh.ogg
     Sneeze:
       path: /Audio/Corvax/Effects/Tajaran/sneeze.ogg
-    Purr:
-      path: /Audio/Corvax/Effects/Tajaran/purr.ogg
     Cough:
       collection: FemaleCoughs
     Yawn:
@@ -196,3 +192,30 @@
       path: /Audio/Corvax/Effects/Tajaran/gasp.ogg
     DefaultDeathgasp:
       collection: FemaleDeathGasp
+
+
+- type: emoteSounds
+  id: IpcEmotes
+  sounds:
+    BeepIpc:
+      path: /Audio/Machines/twobeep.ogg
+    ChimeIpc:
+      path: /Audio/Machines/chime.ogg
+    BuzzIpc:
+      path: /Audio/Machines/buzz-sigh.ogg
+    Buzz-TwoIpc:
+      path: /Audio/Machines/buzz-two.ogg
+    HonkIpc:
+      path: /Audio/Items/bikehorn.ogg
+    PingIpc:
+      path: /Audio/Effects/Cargo/ping.ogg
+    Clap:
+      collection: Claps
+    ClapSingle:
+      collection: ClapSingle
+    Snap:
+      collection: Snaps
+      params:
+        volume: -6
+    Salute:
+      collection: Salutes
