@@ -2,7 +2,7 @@
   id: Ipc
   name: species-name-Ipc
   roundStart: true
-  sponsorOnly: true # Corvax-Sponsors
+  sponsorOnly: false # Corvax-Sponsors
   prototype: MobIpc
   sprites: MobIpcSprites
   defaultSkinTone: "#eb943d"
@@ -18,14 +18,14 @@
   id: MobIpcSprites
   sprites:
     Head: MobIpcHead
-    Hair: MobHumanoidAnyMarking
-    FacialHair: MobHumanoidAnyMarking
+    # Hair: MobHumanoidAnyMarking
+    # FacialHair: MobHumanoidAnyMarking
     Snout: MobHumanoidAnyMarking
     Chest: MobIpcTorso
     HeadTop: MobHumanoidAnyMarking
     HeadSide: MobHumanoidAnyMarking
     Tail: MobHumanoidAnyMarking
-    Eyes: MobHumanoidEyes
+    # Eyes: MobHumanoidEyes
     LArm: MobIpcLArm
     RArm: MobIpcRArm
     LHand: MobIpcLHand
@@ -38,27 +38,27 @@
 - type: markingPoints
   id: MobIpcMarkingLimits
   points:
-    FacialHair:
-      points: 0
-      required: false
-    Hair:
-      points: 1
-      required: false
+    # FacialHair:
+    #   points: 0
+    #   required: false
+    # Hair:
+    #   points: 1
+    #   required: false
     Tail:
       points: 1
-      required: true
-      defaultMarkings: [ TailM ]
+      required: false
+      # defaultMarkings: [ TailM ]
     Head:
       points: 1
       required: false
     Snout:
       points: 2
-      required: true
-      defaultMarkings: [ Nose, Muzzle ]
+      required: false
+      # defaultMarkings: [ Nose, Muzzle ]
     HeadTop:
       points: 2
-      required: true
-      defaultMarkings: [ Inears, Outears]
+      required: false
+      # defaultMarkings: [ Inears, Outears]
     UndergarmentTop:
       points: 1
       required: true

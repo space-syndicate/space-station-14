@@ -1,5 +1,5 @@
-# - type: entity
-#   save: false
-#   name: Urist McIpc
-#   parent: [BaseMobIpc, BaseMob]
-#   id: MobIpc
+- type: entity
+  save: false
+  name: Urist McIpc
+  parent: [BaseMobIpc, BaseMob]
+  id: MobIpc

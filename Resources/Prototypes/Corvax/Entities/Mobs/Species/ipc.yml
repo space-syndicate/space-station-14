@@ -1,16 +1,12 @@
 - type: entity
   save: false
-  name: Urist McTajar
-  parent: BaseMobSpeciesOrganic
+  name: Urist McIPC
+  parent: BaseMobSpeciesNotOrganic
   id: BaseMobIpc
   abstract: true
   components:
   - type: HumanoidAppearance
     species: Ipc
-  - type: Hunger
-    baseDecayRate: 0.02
-  - type: Thirst
-    baseDecayRate: 0.15
   - type: Icon
     sprite: Corvax/Mobs/Species/Ipc/parts.rsi
     state: full
@@ -33,18 +29,133 @@
       collection: AlienClaw
     damage:
       types:
-        Slash: 7
+        Slash: 5
   - type: Damageable
-    damageContainer: Biological
+    damageContainer: Silicon
     damageModifierSet: Ipc
-  - type: Respirator
+  - type: ToggleableLightVisuals
+  - type: PointLight
+    enabled: false
+    mask: /Textures/Effects/LightMasks/cone.png
+    autoRot: true
+    radius: 4
+    netsync: false
+  - type: HandheldLight
+    toggleOnInteract: false
+    wattage: 0.2
+    blinkingBehaviourId: blinking
+    radiatingBehaviourId: radiating
+  - type: LightBehaviour
+    behaviours:
+    - !type:FadeBehaviour
+      id: radiating
+      maxDuration: 2.0
+      startValue: 3.0
+      endValue: 2.0
+      isLooped: true
+      reverseWhenFinished: true
+    - !type:PulseBehaviour
+      id: blinking
+      interpolate: Nearest
+      maxDuration: 1.0
+      minValue: 0.1
+      maxValue: 2.0
+      isLooped: true
+  - type: TypingIndicator
+    proto: robot
+  - type: PowerCellSlot
+    cellSlotId: cell_slot
+    fitsInCharger: true
+  - type: PowerCellDraw
+    drawRate: 0.6
+  # no ToggleCellDraw since dont want to lose access when power is gone
+  - type: AccessReader
+    access: [ ["Ipc"], ["Research"] ]
+  - type: Access
+    enabled: true
+    tags:
+      - Ipc
+
+  - type: ItemSlots
+    slots:
+      cell_slot:
+        name: power-cell-slot-component-slot-name-default
+        startingItem: PowerCellMedium
+  - type: Lock
+    unlockOnClick: false
+  - type: ItemSlotsLock
+    slots:
+    - cell_slot
+  - type: ContainerContainer
+    containers:
+      cell_slot: !type:ContainerSlot { }
+  - type: Ipc
+  - type: ZombieImmune
+  - type: Repairable
+    doAfterDelay: 20
+    SelfRepairPenalty: 60
+
+
+- type: entity
+  save: false
+  parent:
+  - MobAtmosStandard
+  - MobFlammable
+  - BaseMobSpecies
+  id: BaseMobSpeciesNotOrganic
+  abstract: true
+  components:
+  - type: Barotrauma
     damage:
       types:
-        Asphyxiation: 2.0
-    damageRecovery:
+        Blunt: 0.50 #per second, scales with pressure and other constants.
+        Heat: 0.1
+  - type: PassiveDamage # Slight passive regen. Assuming one damage type, comes out to about 4 damage a minute.
+    allowedStates:
+    - Alive
+    damageCap: 20
+    damage:
       types:
-        Asphyxiation: -2.0
-  - type: Wagging
+        Heat: -0.07
+      groups:
+        Brute: -0.07
+  - type: Fingerprint
+  - type: Blindable
+  # Other
+  - type: Temperature
+    heatDamageThreshold: 325
+    coldDamageThreshold: 260
+    currentTemperature: 310.15
+    specificHeat: 42
+    coldDamage:
+      types:
+        Cold: 0.1 #per second, scales with temperature & other constants
+    heatDamage:
+      types:
+        Heat: 1.5 #per second, scales with temperature & other constants
+  - type: TemperatureSpeed
+    thresholds:
+      293: 0.8
+      280: 0.6
+      260: 0.4
+  - type: ThermalRegulator
+    metabolismHeat: 800
+    radiatedHeat: 100
+    implicitHeatRegulation: 500
+    sweatHeatRegulation: 2000
+    shiveringHeatRegulation: 2000
+    normalBodyTemperature: 310.15
+    thermalRegulationTemperatureThreshold: 25
+  - type: Butcherable
+    butcheringType: Spike # TODO human.
+    spawned:
+      - id: FoodMeat
+        amount: 5
+  - type: FireVisuals
+    alternateState: Standing
+  # - type: FootprintOwner # Corvax-Next-Footprints
+
+
 
 - type: entity
   save: false

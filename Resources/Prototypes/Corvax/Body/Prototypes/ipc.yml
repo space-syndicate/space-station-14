@@ -1,49 +1,49 @@
 ﻿- type: body
-  name: "tajaran"
-  id: Tajaran
+  name: "Ipc"
+  id: Ipc
   root: torso
   slots:
     head:
-      part: HeadTajaran
+      part: HeadIpc
       connections:
       - torso
       organs:
         brain: OrganHumanBrain
         eyes: OrganHumanEyes
     torso:
-      part: TorsoTajaran
-      organs:
-        heart: OrganAnimalHeart
-        lungs: OrganHumanLungs
-        stomach: OrganTajaranStomach
-        liver: OrganAnimalLiver
-        kidneys: OrganHumanKidneys
+      part: TorsoIpc
+      # organs:
+      #   heart: OrganAnimalHeart
+      #   lungs: OrganHumanLungs
+      #   # stomach: OrganIpcStomach
+      #   liver: OrganAnimalLiver
+      #   kidneys: OrganHumanKidneys
       connections:
       - right_arm
       - left_arm
       - right_leg
       - left_leg
     right_arm:
-      part: RightArmTajaran
+      part: RightArmIpc
       connections:
       - right_hand
     left_arm:
-      part: LeftArmTajaran
+      part: LeftArmIpc
       connections:
       - left_hand
     right_hand:
-      part: RightHandTajaran
+      part: RightHandIpc
     left_hand:
-      part: LeftHandTajaran
+      part: LeftHandIpc
     right_leg:
-      part: RightLegTajaran
+      part: RightLegIpc
       connections:
       - right_foot
     left_leg:
-      part: LeftLegTajaran
+      part: LeftLegIpc
       connections:
       - left_foot
     right_foot:
-      part: RightFootTajaran
+      part: RightFootIpc
     left_foot:
-      part: LeftFootTajaran
+      part: LeftFootIpc

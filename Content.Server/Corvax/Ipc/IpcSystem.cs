@@ -42,9 +42,12 @@ public sealed class IpcSystem : EntitySystem
 
     private void OnPowerCellChanged(EntityUid uid, IpcComponent component, PowerCellChangedEvent args)
     {
-        UpdateBatteryAlert((uid, component));
-    }
+        if (MetaData(uid).EntityLifeStage >= EntityLifeStage.Terminating)
+            return;
 
+        UpdateBatteryAlert((uid, component));
+
+    }
     private void OnToggleAction(EntityUid uid, IpcComponent component, ToggleDrainActionEvent args)
     {
         if (args.Handled)
@@ -68,6 +71,8 @@ public sealed class IpcSystem : EntitySystem
 
     private void UpdateBatteryAlert(Entity<IpcComponent> ent, PowerCellSlotComponent? slot = null)
     {
+
+
         if (!_powerCell.TryGetBatteryFromSlot(ent, out var battery, slot) || MathHelper.CloseToPercent(battery.CurrentCharge, 0))
         {
             _alerts.ClearAlert(ent, ent.Comp.BatteryAlert);
