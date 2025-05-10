@@ -24,7 +24,6 @@
       Female: FemaleIpc
       Unsexed: MaleIpc
   - type: MeleeWeapon
-    animation: WeaponArcClaw
     soundHit:
       collection: AlienClaw
     damage:
@@ -67,7 +66,7 @@
     cellSlotId: cell_slot
     fitsInCharger: true
   - type: PowerCellDraw
-    drawRate: 0.5
+    drawRate: 0.8
   # no ToggleCellDraw since dont want to lose access when power is gone
   - type: AccessReader
     access: [ ["Ipc"], ["Research"] ]
@@ -75,7 +74,6 @@
     enabled: true
     tags:
       - Ipc
-
   - type: ItemSlots
     slots:
       cell_slot:
@@ -92,9 +90,11 @@
   - type: Ipc
   - type: ZombieImmune
   - type: Repairable
-    doAfterDelay: 20
+    doAfterDelay: 30
     SelfRepairPenalty: 60
   - type: DamagedSiliconAccent
+  - type: Reflect
+    reflectProb: 0.05
 
 - type: entity
   save: false
@@ -118,9 +118,6 @@
     coldDamageThreshold: 260
     currentTemperature: 310.15
     specificHeat: 42
-    # coldDamage:
-    #   types:
-    #     Cold: 0.1 #per second, scales with temperature & other constants
     heatDamage:
       types:
         Heat: 1.5 #per second, scales with temperature & other constants
@@ -128,7 +125,6 @@
     thresholds:
       293: 0.8
       280: 0.6
-      260: 0.4
   - type: ThermalRegulator
     metabolismHeat: 800
     radiatedHeat: 100
@@ -138,7 +134,7 @@
     normalBodyTemperature: 310.15
     thermalRegulationTemperatureThreshold: 25
   - type: Butcherable
-    butcheringType: Spike # TODO human.
+    butcheringType: Spike
     spawned:
       - id: HeadIpc
         amount: 1
@@ -149,6 +145,11 @@
       Alive: BorgHealth
       Critical: BorgCrit
       Dead: BorgDead
+  - type: SleepEmitSound
+    snore: /Audio/Machines/buzz-two.ogg
+    interval: 30
+    popUp: sleep-ipc
+
 
 - type: entity
   save: false

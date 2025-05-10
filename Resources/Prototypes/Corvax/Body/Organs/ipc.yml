@@ -1,7 +1,7 @@
 - type: entity
   id: OrganIPCBrain
   parent: BaseHumanOrganUnGibbable
-  name: brain
+  name: brain IPC
   description: "The source of incredible, unending intelligence. Honk."
   components:
   - type: Sprite
@@ -24,6 +24,8 @@
 - type: entity
   id: OrganIpcEyes
   parent: BaseHumanOrgan
+  name: IPC eyes
+  description: "I see you!"
   components:
   - type: Sprite
     sprite: Objects/Misc/proximity_sensor.rsi

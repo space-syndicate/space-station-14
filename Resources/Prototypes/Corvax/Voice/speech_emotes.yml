@@ -88,13 +88,7 @@
     - Vocal
   chatMessages: ["chat-emote-msg-beep"]
   chatTriggers:
-    - beep
-    - beeps
-    - beeped
-    - beeping
-    # Corvax-Localization-Start
-    - бип
-    # Corvax-Localization-End
+    - гудит
 
 - type: emote
   id: ChimeIpc
@@ -107,14 +101,6 @@
     - Ipc
     - Vocal
   chatMessages: ["chat-emote-msg-chime"]
-  chatTriggers:
-    - chime
-    - chimes
-    - chimed
-    - chiming
-    # Corvax-Localization-Start
-    - дзынь
-    # Corvax-Localization-End
 
 - type: emote
   id: Buzz-TwoIpc
@@ -128,24 +114,7 @@
     - Vocal
   chatMessages: ["chat-emote-msg-buzzestwo"]
   chatTriggers:
-    - buzztwice
-    - buzzstwice
-    - buzzestwice
-    - buzzingtwice
-    - buzzedtwice
-    - buzz twice
-    - buzzs twice
-    - buzzes twice
-    - buzzing twice
-    - buzzed twice
-    # Corvax-Localization-Start
-    - бипбуп
-    - бип буп
-    - бип-буп
-    - бипбип
-    - бип бип
-    - бип-бип
-    # Corvax-Localization-End
+    - громко гудит
 
 - type: emote
   id: PingIpc
@@ -159,10 +128,4 @@
     - Vocal
   chatMessages: ["chat-emote-msg-ping"]
   chatTriggers:
-    - ping
-    - pings
-    - pinged
-    - pinging
-    # Corvax-Localization-Start
-    - пинг
-    # Corvax-Localization-End
+    - пищит

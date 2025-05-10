@@ -11,4 +11,10 @@
     Heat: 1.4
 
 - type: damageModifierSet
-  id: Ipc # Because of fur is more flammable and more resistant to cold.
+  id: Ipc
+  coefficients:
+    Shock: 10.0
+    Blunt: 1.7
+    Slash: 1.7
+    Piercing: 1.7
+    Heat: 1.7

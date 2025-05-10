@@ -142,26 +142,13 @@
       path: /Audio/Corvax/Effects/Ipc/scream.ogg
     Laugh:
       path: /Audio/Corvax/Effects/Ipc/laugh.ogg
-    Sneeze:
-      path: /Audio/Corvax/Effects/Tajaran/sneeze.ogg
-    Cough:
-      collection: MaleCoughs
-    Yawn:
-      collection: MaleYawn
     Snore:
-      collection: Snores
-    Sigh:
-      path: /Audio/Corvax/Effects/Tajaran/sigh.ogg
+      path: /Audio/Machines/buzz-two.ogg
     Crying:
-      path: /Audio/Corvax/Effects/Tajaran/cry.ogg
-    Whistle:
-      collection: Whistles
+      path: /Audio/Corvax/Effects/Ipc/cry.ogg
     Weh:
       collection: Weh
-    Gasp:
-      path: /Audio/Corvax/Effects/Tajaran/gasp.ogg
-    DefaultDeathgasp:
-      collection: MaleDeathGasp
+
 
 - type: emoteSounds
   id: FemaleIpc
@@ -172,26 +159,13 @@
       path: /Audio/Corvax/Effects/Ipc/scream.ogg
     Laugh:
       path: /Audio/Corvax/Effects/Ipc/laugh.ogg
-    Sneeze:
-      path: /Audio/Corvax/Effects/Tajaran/sneeze.ogg
-    Cough:
-      collection: FemaleCoughs
-    Yawn:
-      collection: FemaleYawn
     Snore:
-      collection: Snores
-    Sigh:
-      path: /Audio/Corvax/Effects/Tajaran/sigh.ogg
+      path: /Audio/Machines/buzz-two.ogg
     Crying:
-      path: /Audio/Corvax/Effects/Tajaran/cry.ogg
-    Whistle:
-      collection: Whistles
+      path: /Audio/Corvax/Effects/Ipc/cry.ogg
     Weh:
       collection: Weh
-    Gasp:
-      path: /Audio/Corvax/Effects/Tajaran/gasp.ogg
-    DefaultDeathgasp:
-      collection: FemaleDeathGasp
+
 
 
 - type: emoteSounds

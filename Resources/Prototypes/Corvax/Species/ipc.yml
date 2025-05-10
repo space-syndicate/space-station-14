@@ -25,7 +25,6 @@
     HeadTop: MobHumanoidAnyMarking
     HeadSide: MobHumanoidAnyMarking
     Tail: MobHumanoidAnyMarking
-    # Eyes: MobHumanoidEyes
     LArm: MobIpcLArm
     RArm: MobIpcRArm
     LHand: MobIpcLHand
@@ -38,33 +37,28 @@
 - type: markingPoints
   id: MobIpcMarkingLimits
   points:
-    # FacialHair:
-    #   points: 0
-    #   required: false
-    # Hair:
-    #   points: 1
-    #   required: false
-    Tail:
-      points: 1
+    FacialHair:
+      points: 0
       required: false
-      # defaultMarkings: [ TailM ]
+    Hair:
+      points: 0
+      required: false
+    Tail:
+      points: 0
+      required: false
     Head:
-      points: 1
+      points: 3
       required: false
     Snout:
-      points: 2
+      points: 1
       required: false
-      # defaultMarkings: [ Nose, Muzzle ]
     HeadTop:
       points: 2
       required: false
-      # defaultMarkings: [ Inears, Outears]
     UndergarmentTop:
       points: 1
       required: true
-    # HeadSide:
-    #   points: 1
-    #   required: false
+
 
 - type: humanoidBaseSprite
   id: MobIpcHead
