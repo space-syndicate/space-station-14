@@ -2,7 +2,7 @@
 using Content.Shared.Actions;
 using Content.Shared.Alert;
 using Content.Shared.Bed.Sleep;
-using Content.Shared.Ipc;
+using Content.Shared.Corvax.Ipc;
 using Content.Shared.Ninja.Components;
 using Content.Shared.Ninja.Systems;
 using Content.Shared.Popups;
