@@ -66,7 +66,7 @@ public sealed class IpcSystem : EntitySystem
             RemComp<BatteryDrainerComponent>(uid);
 
         var message = component.DrainActivated ? "ipc-component-ready" : "ipc-component-disabled";
-        _popup.PopupEntity(message, uid, uid);
+        _popup.PopupEntity(Loc.GetString(message), uid, uid);
     }
 
     private void UpdateBatteryAlert(Entity<IpcComponent> ent, PowerCellSlotComponent? slot = null)
