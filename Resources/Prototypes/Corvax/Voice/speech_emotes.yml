@@ -101,6 +101,9 @@
     - Ipc
     - Vocal
   chatMessages: ["chat-emote-msg-chime"]
+  chatTriggers:
+    - звенит
+
 
 - type: emote
   id: Buzz-TwoIpc
@@ -114,7 +117,7 @@
     - Vocal
   chatMessages: ["chat-emote-msg-buzzestwo"]
   chatTriggers:
-    - громко гудит
+    - дважды гудит
 
 - type: emote
   id: PingIpc
