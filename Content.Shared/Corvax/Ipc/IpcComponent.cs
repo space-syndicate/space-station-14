@@ -3,7 +3,7 @@ using Content.Shared.Alert;
 using Robust.Shared.GameStates;
 using Robust.Shared.Prototypes;
 
-namespace Content.Shared.Ipc;
+namespace Content.Shared.Corvax.Ipc;
 
 /// <summary>
 /// This is used for...
