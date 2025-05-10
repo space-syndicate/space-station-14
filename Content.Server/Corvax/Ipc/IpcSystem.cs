@@ -2,13 +2,13 @@
 using Content.Shared.Actions;
 using Content.Shared.Alert;
 using Content.Shared.Bed.Sleep;
-using Content.Shared.Ipc;
+using Content.Shared.Corvax.Ipc;
 using Content.Shared.Ninja.Components;
 using Content.Shared.Ninja.Systems;
 using Content.Shared.Popups;
 using Content.Shared.PowerCell.Components;
 
-namespace Content.Server.Ipc;
+namespace Content.Server.Corvax.Ipc;
 
 public sealed class IpcSystem : EntitySystem
 {
@@ -65,7 +65,7 @@ public sealed class IpcSystem : EntitySystem
         else
             RemComp<BatteryDrainerComponent>(uid);
 
-        var message = component.DrainActivated ? "Ready to drain battery" : "Drain battery disabled";
+        var message = component.DrainActivated ? "ipc-component-ready" : "ipc-component-disabled";
         _popup.PopupEntity(message, uid, uid);
     }
 
