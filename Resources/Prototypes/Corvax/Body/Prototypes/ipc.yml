@@ -11,12 +11,6 @@
         eyes: OrganIpcEyes
     torso:
       part: TorsoIpc
-      # organs:
-      #   heart: OrganAnimalHeart
-      #   lungs: OrganHumanLungs
-      #   # stomach: OrganIpcStomach
-      #   liver: OrganAnimalLiver
-      #   kidneys: OrganHumanKidneys
       connections:
       - right_arm
       - left_arm

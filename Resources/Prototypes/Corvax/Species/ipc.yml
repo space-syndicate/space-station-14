@@ -2,7 +2,7 @@
   id: Ipc
   name: species-name-Ipc
   roundStart: true
-  sponsorOnly: false # Corvax-Sponsors
+  sponsorOnly: true # Corvax-Sponsors
   prototype: MobIpc
   sprites: MobIpcSprites
   defaultSkinTone: "#eb943d"
@@ -18,8 +18,6 @@
   id: MobIpcSprites
   sprites:
     Head: MobIpcHead
-    # Hair: MobHumanoidAnyMarking
-    # FacialHair: MobHumanoidAnyMarking
     Snout: MobHumanoidAnyMarking
     Chest: MobIpcTorso
     HeadTop: MobHumanoidAnyMarking
