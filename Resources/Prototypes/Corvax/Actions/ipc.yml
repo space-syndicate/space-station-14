@@ -2,7 +2,6 @@
   id: ActionDrainBattery
   name: Drain battery
   description: Drain battery
-  abstract: true
   components:
   - type: InstantAction
     icon: Corvax/Interface/Actions/off.png
