@@ -8,7 +8,7 @@ using Content.Shared.Ninja.Systems;
 using Content.Shared.Popups;
 using Content.Shared.PowerCell.Components;
 
-namespace Content.Server.Ipc;
+namespace Content.Server.Corvax.Ipc;
 
 public sealed class IpcSystem : EntitySystem
 {
