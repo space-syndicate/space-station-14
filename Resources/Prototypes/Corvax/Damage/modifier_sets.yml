@@ -9,3 +9,12 @@
   coefficients:
     Cold: 0.6
     Heat: 1.4
+
+- type: damageModifierSet
+  id: Ipc
+  coefficients:
+    Shock: 10.0
+    Blunt: 1.7
+    Slash: 1.7
+    Piercing: 1.7
+    Heat: 1.7
