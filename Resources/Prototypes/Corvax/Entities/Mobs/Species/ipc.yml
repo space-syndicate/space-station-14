@@ -91,7 +91,7 @@
   - type: ZombieImmune
   - type: Repairable
     doAfterDelay: 30
-    SelfRepairPenalty: 60
+    selfRepairPenalty: 60
   - type: DamagedSiliconAccent
   - type: Reflect
     reflectProb: 0.05
