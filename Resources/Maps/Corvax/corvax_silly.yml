@@ -14926,13 +14926,6 @@ entities:
     - type: Transform
       pos: -2.4814332,1.8588014
       parent: 2
-- proto: CarcBoxClassic
-  entities:
-  - uid: 70
-    components:
-    - type: Transform
-      pos: -21.52483,24.65736
-      parent: 2
 - proto: CargoMailTeleporter
   entities:
   - uid: 2519
