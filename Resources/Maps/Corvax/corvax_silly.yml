@@ -18802,14 +18802,6 @@ entities:
     - type: Transform
       pos: 16.5,13.5
       parent: 2
-- proto: ComputerShuttleMiningLavaland
-  entities:
-  - uid: 1941
-    components:
-    - type: Transform
-      rot: 3.141592653589793 rad
-      pos: 19.5,8.5
-      parent: 2
 - proto: ComputerSolarControl
   entities:
   - uid: 1943
