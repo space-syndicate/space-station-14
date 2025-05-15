@@ -14,6 +14,7 @@
     prototype: Ipc
     requiredLegs: 2
   - type: Inventory
+    templateId: Ipc
   - type: ContentEye
   - type: Speech
   - type: BodyEmotes
@@ -394,3 +395,4 @@
   - type: HumanoidAppearance
     species: Ipc
   - type: Inventory
+    templateId: Ipc
