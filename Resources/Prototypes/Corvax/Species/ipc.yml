@@ -50,9 +50,10 @@
     Snout:
       points: 1
       required: false
+      defaultMarkings: [ OrangeS ]
     HeadTop:
       points: 2
-      required: false
+      required: true
     UndergarmentTop:
       points: 1
       required: true

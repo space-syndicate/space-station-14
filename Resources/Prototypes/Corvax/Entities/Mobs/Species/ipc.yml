@@ -118,7 +118,13 @@
       types:
         Blunt: 0 #per second, scales with pressure and other constants.
         Heat: 0
-
+  - type: DamageVisuals
+    damageOverlayGroups:
+      Brute:
+        sprite: Mobs/Effects/brute_damage.rsi
+        color: "#cd7314"
+      Burn:
+        sprite: Mobs/Effects/burn_damage.rsi
 
 
 - type: entity
