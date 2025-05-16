@@ -1,0 +1,17 @@
+﻿- type: localizedDataset
+  id: NamesIpcFirstMale
+  values:
+    prefix: names-ipc-first-male-dataset-
+    count: 100
+
+- type: localizedDataset
+  id: NamesIpcFirstFemale
+  values:
+    prefix: names-ipc-first-female-dataset-
+    count: 100
+  
+- type: localizedDataset
+  id: NamesIpcLast
+  values:
+    prefix: names-ipc-last-dataset-
+    count: 100

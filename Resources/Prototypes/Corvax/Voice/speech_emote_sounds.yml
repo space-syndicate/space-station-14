@@ -131,3 +131,65 @@
       path: /Audio/Corvax/Effects/Tajaran/gasp.ogg
     DefaultDeathgasp:
       collection: FemaleDeathGasp
+
+# species
+- type: emoteSounds
+  id: MaleIpc
+  params:
+    variation: 0.125
+  sounds:
+    Scream:
+      path: /Audio/Corvax/Effects/Ipc/scream.ogg
+    Laugh:
+      path: /Audio/Corvax/Effects/Ipc/laugh.ogg
+    Snore:
+      path: /Audio/Machines/buzz-two.ogg
+    Crying:
+      path: /Audio/Corvax/Effects/Ipc/cry.ogg
+    Weh:
+      collection: Weh
+
+
+- type: emoteSounds
+  id: FemaleIpc
+  params:
+    variation: 0.125
+  sounds:
+    Scream:
+      path: /Audio/Corvax/Effects/Ipc/scream.ogg
+    Laugh:
+      path: /Audio/Corvax/Effects/Ipc/laugh.ogg
+    Snore:
+      path: /Audio/Machines/buzz-two.ogg
+    Crying:
+      path: /Audio/Corvax/Effects/Ipc/cry.ogg
+    Weh:
+      collection: Weh
+
+
+
+- type: emoteSounds
+  id: IpcEmotes
+  sounds:
+    BeepIpc:
+      path: /Audio/Machines/twobeep.ogg
+    ChimeIpc:
+      path: /Audio/Machines/chime.ogg
+    BuzzIpc:
+      path: /Audio/Machines/buzz-sigh.ogg
+    Buzz-TwoIpc:
+      path: /Audio/Machines/buzz-two.ogg
+    HonkIpc:
+      path: /Audio/Items/bikehorn.ogg
+    PingIpc:
+      path: /Audio/Effects/Cargo/ping.ogg
+    Clap:
+      collection: Claps
+    ClapSingle:
+      collection: ClapSingle
+    Snap:
+      collection: Snaps
+      params:
+        volume: -6
+    Salute:
+      collection: Salutes

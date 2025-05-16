@@ -1,0 +1,144 @@
+- type: species
+  id: Ipc
+  name: species-name-Ipc
+  roundStart: true
+  sponsorOnly: true # Corvax-Sponsors
+  prototype: MobIpc
+  sprites: MobIpcSprites
+  defaultSkinTone: "#eb943d"
+  markingLimits: MobIpcMarkingLimits
+  dollPrototype: MobIpcDummy
+  skinColoration: Hues
+  maleFirstNames: NamesIpcFirstMale
+  femaleFirstNames: NamesIpcFirstFemale
+  maleLastNames: NamesIpcLast # Corvax-LastnameGender
+  femaleLastNames: NamesIpcLast # Corvax-LastnameGender
+
+- type: speciesBaseSprites
+  id: MobIpcSprites
+  sprites:
+    Head: MobIpcHead
+    Snout: MobHumanoidAnyMarking
+    Chest: MobIpcTorso
+    HeadTop: MobHumanoidAnyMarking
+    HeadSide: MobHumanoidAnyMarking
+    Tail: MobHumanoidAnyMarking
+    LArm: MobIpcLArm
+    RArm: MobIpcRArm
+    LHand: MobIpcLHand
+    RHand: MobIpcRHand
+    LLeg: MobIpcLLeg
+    RLeg: MobIpcRLeg
+    LFoot: MobIpcLFoot
+    RFoot: MobIpcRFoot
+
+- type: markingPoints
+  id: MobIpcMarkingLimits
+  points:
+    FacialHair:
+      points: 0
+      required: false
+    Hair:
+      points: 0
+      required: false
+    Tail:
+      points: 0
+      required: false
+    Head:
+      points: 3
+      required: false
+    Snout:
+      points: 1
+      required: false
+      defaultMarkings: [ OrangeS ]
+    HeadTop:
+      points: 2
+      required: true
+    UndergarmentTop:
+      points: 1
+      required: true
+
+
+- type: humanoidBaseSprite
+  id: MobIpcHead
+  baseSprite:
+    sprite: Corvax/Mobs/Species/Ipc/parts.rsi
+    state: head_m
+
+- type: humanoidBaseSprite
+  id: MobIpcHeadMale
+  baseSprite:
+    sprite: Corvax/Mobs/Species/Ipc/parts.rsi
+    state: head_m
+
+- type: humanoidBaseSprite
+  id: MobIpcHeadFemale
+  baseSprite:
+    sprite: Corvax/Mobs/Species/Ipc/parts.rsi
+    state: head_f
+
+- type: humanoidBaseSprite
+  id: MobIpcTorso
+  baseSprite:
+    sprite: Corvax/Mobs/Species/Ipc/parts.rsi
+    state: torso_m
+
+- type: humanoidBaseSprite
+  id: MobIpcTorsoMale
+  baseSprite:
+    sprite: Corvax/Mobs/Species/Ipc/parts.rsi
+    state: torso_m
+
+- type: humanoidBaseSprite
+  id: MobIpcTorsoFemale
+  baseSprite:
+    sprite: Corvax/Mobs/Species/Ipc/parts.rsi
+    state: torso_f
+
+- type: humanoidBaseSprite
+  id: MobIpcLLeg
+  baseSprite:
+    sprite: Corvax/Mobs/Species/Ipc/parts.rsi
+    state: l_leg
+
+- type: humanoidBaseSprite
+  id: MobIpcLHand
+  baseSprite:
+    sprite: Corvax/Mobs/Species/Ipc/parts.rsi
+    state: l_hand
+
+- type: humanoidBaseSprite
+  id: MobIpcLArm
+  baseSprite:
+    sprite: Corvax/Mobs/Species/Ipc/parts.rsi
+    state: l_arm
+
+- type: humanoidBaseSprite
+  id: MobIpcLFoot
+  baseSprite:
+    sprite: Corvax/Mobs/Species/Ipc/parts.rsi
+    state: l_foot
+
+- type: humanoidBaseSprite
+  id: MobIpcRLeg
+  baseSprite:
+    sprite: Corvax/Mobs/Species/Ipc/parts.rsi
+    state: r_leg
+
+- type: humanoidBaseSprite
+  id: MobIpcRHand
+  baseSprite:
+    sprite: Corvax/Mobs/Species/Ipc/parts.rsi
+    state: r_hand
+
+- type: humanoidBaseSprite
+  id: MobIpcRArm
+  baseSprite:
+    sprite: Corvax/Mobs/Species/Ipc/parts.rsi
+    state: r_arm
+
+- type: humanoidBaseSprite
+  id: MobIpcRFoot
+  baseSprite:
+    sprite: Corvax/Mobs/Species/Ipc/parts.rsi
+    state: r_foot
