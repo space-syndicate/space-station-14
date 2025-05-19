@@ -200,6 +200,22 @@
           Quantity: 3
         - ReagentId: Copper
           Quantity: 2
+##Corvax-species-start
+  - type: Healing
+    damageContainers:
+      - SiliconIpc
+    damage:
+      types:
+        Shock: -10
+        Blunt: -10
+        Slash: -10
+        Piercing: -10
+        Heat: -10
+    healingBeginSound:
+      path: "/Audio/Items/Medical/brutepack_begin.ogg"
+    healingEndSound:
+      path: "/Audio/Items/Medical/brutepack_end.ogg"
+##Corvax-species-end
 
 - type: entity
   parent: CableApcStack
