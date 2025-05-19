@@ -10,6 +10,10 @@
   - !type:DepartmentTimeRequirement
     department: Security
     time: 18000 # 5 hrs
+  - !type:TraitsRequirement
+    inverted: true
+    traits:
+    - Muted
   startingGear: BrigmedicGear
   icon: "JobIconBrigmedic"
   supervisors: job-supervisors-cmo
