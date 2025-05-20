@@ -1,11 +1,11 @@
-﻿using Robust.Shared.Serialization;
+using Robust.Shared.Serialization;
 
 namespace Content.Shared.Chat.TypingIndicator;
 
 [Serializable, NetSerializable]
 public enum TypingIndicatorVisuals : byte
 {
-    State, // Corvax-TypingIndicator
+    State
 }
 
 [Serializable]

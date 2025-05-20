@@ -31,6 +31,25 @@
         {
             "name": "default3",
             "delays": [
+                    [
+                        0.2,
+                        0.3,
+                        0.3,
+                        0.3,
+                        0.3,
+                        0.5
+                    ]
+                ]
+        },
+        {
+            "name": "alienroyal1"
+        },
+        {
+            "name": "alienroyal2"
+        },
+        {
+            "name": "alienroyal3",
+            "delays": [
                 [
                     0.1,
                     0.1,
