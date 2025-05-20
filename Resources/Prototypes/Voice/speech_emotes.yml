@@ -8,7 +8,7 @@
     components:
     - Vocal
     tags:
-    - Ipc
+    - Ipc # Corvax-Species
   blacklist:
     tags:
     - SiliconEmotes
@@ -112,6 +112,7 @@
   blacklist:
     tags:
     - SiliconEmotes
+    - Ipc # Corvax-Species
   chatMessages: ["chat-emote-msg-sigh"]
   chatTriggers:
     - sigh
@@ -134,6 +135,7 @@
   blacklist:
     tags:
     - SiliconEmotes
+    - Ipc # Corvax-Species
   chatMessages: ["chat-emote-msg-whistle"]
   chatTriggers:
     - whistle
