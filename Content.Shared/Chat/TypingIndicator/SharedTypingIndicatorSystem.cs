@@ -45,7 +45,7 @@ public abstract class SharedTypingIndicatorSystem : EntitySystem
     private void OnPlayerDetached(EntityUid uid, TypingIndicatorComponent component, PlayerDetachedEvent args)
     {
         // player left entity body - hide typing indicator
-        SetTypingIndicatorState(uid, TypingIndicatorState.None); // Corvax-TypingIndicator
+        SetTypingIndicatorState(uid, TypingIndicatorState.None);
     }
 
     private void OnGotEquipped(Entity<TypingIndicatorClothingComponent> entity, ref ClothingGotEquippedEvent args)
@@ -76,18 +76,18 @@ public abstract class SharedTypingIndicatorSystem : EntitySystem
         if (!_actionBlocker.CanEmote(uid.Value) && !_actionBlocker.CanSpeak(uid.Value))
         {
             // nah, make sure that typing indicator is disabled
-            SetTypingIndicatorState(uid.Value, TypingIndicatorState.None); // Corvax-TypingIndicator
+            SetTypingIndicatorState(uid.Value, TypingIndicatorState.None);
             return;
         }
 
-        SetTypingIndicatorState(uid.Value, ev.State); // Corvax-TypingIndicator
+        SetTypingIndicatorState(uid.Value, ev.State);
     }
 
-    private void SetTypingIndicatorState(EntityUid uid, TypingIndicatorState state, AppearanceComponent? appearance = null) // Corvax-TypingIndicator
+    private void SetTypingIndicatorState(EntityUid uid, TypingIndicatorState state, AppearanceComponent? appearance = null)
     {
         // if (!Resolve(uid, ref appearance, false)) // Corvax-TypingIndicator
         //     return;
 
-        _appearance.SetData(uid, TypingIndicatorVisuals.State, state); // Corvax-TypingIndicator
+        _appearance.SetData(uid, TypingIndicatorVisuals.State, state, appearance);
     }
 }

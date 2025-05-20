@@ -11,6 +11,9 @@
       department: Medical
       time: 18000 #5 hrs # Corvax-RoleTime
     - !type:DepartmentTimeRequirement
+      department: Science
+      time: 9000 # 2.5 hrs
+    - !type:DepartmentTimeRequirement
       department: Security
       time: 18000 #5 hrs # Corvax-RoleTime
 #    - !type:DepartmentTimeRequirement
