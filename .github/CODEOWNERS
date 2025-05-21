@@ -8,27 +8,8 @@
 *.ftl @ficcialfaint
 
 # Map files
-/Resources/Prototypes/Maps/** @Ko4ergaPunk 
-/Resources/Maps/** @Ko4ergaPunk 
+/Resources/Prototypes/Maps/** @Ko4ergaPunk
+/Resources/Maps/** @Ko4ergaPunk
 
 # Sprites
-/Resources/Textures/** @SonicHDC 
-
-/Content.*/Anomaly/ @TheShuEd
-/Resources/Prototypes/Entities/Structures/Specific/anomalies.yml @TheShuEd
-
-/Content.*/Forensics/ @ficcialfaint
-
-# SKREEEE
-/Content.*.Database/ @PJB3005 @DrSmugleaf
-/Content.Shared.Database/Log*.cs @PJB3005 @DrSmugleaf @nikthechampiongr @crazybrain23
-/Pow3r/ @PJB3005
-/Content.Server/Power/Pow3r/ @PJB3005
-
-
-# Sloth
-/Content.*/Audio @metalgearsloth
-/Content.*/Movement @metalgearsloth
-/Content.*/NPC @metalgearsloth
-/Content.*/Shuttles @metalgearsloth
-/Content.*/Weapons @metalgearsloth
+/Resources/Textures/** @SonicHDC
