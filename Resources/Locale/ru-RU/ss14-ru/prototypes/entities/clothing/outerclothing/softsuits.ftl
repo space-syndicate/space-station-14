@@ -1,7 +1,7 @@
 ent-ClothingOuterHardsuitEVA = скафандр ВКД
     .desc = Лёгкий космический скафандр, способный защитить владельца от космического вакуума во время аварийной ситуации.
 # Corvax-HiddenDesc-Start
-ent-ClothingOuterHardsuitSyndicate = кроваво-красный скафандр ВКД
+ent-ClothingOuterEVASuitSyndicate = кроваво-красный скафандр ВКД
     .desc = На бирке написано 'Совершенно не собственность вражеской корпорации, честно!'.
 # Corvax-HiddenDesc-End
 ent-ClothingOuterSuitEmergency = аварийный скафандр ВКД
