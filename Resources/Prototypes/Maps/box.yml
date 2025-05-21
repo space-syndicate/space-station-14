@@ -52,7 +52,7 @@
             SecurityOfficer: [ 5, 7 ]
             Detective: [ 1, 1 ]
             SecurityCadet: [ 2, 4 ] #intern, exclude from dept count
-            Lawyer: [ 2, 2 ]
+            #Lawyer: [ 2, 2 ] # Corvax-IAA
             #Supply (6)
             SalvageSpecialist: [ 3, 3 ]
             CargoTechnician: [ 3, 3 ]
