@@ -20,7 +20,6 @@ marking-ShellguardShellguardMainLFoot2 = Левая стопа Шеллгард 
 marking-ShellguardShellguardMainLLeg2 = Левая нога Шеллгард (вариант 2)
 marking-ShellguardShellguardAlt1Head2 = Альтернативная голова Шеллгард (вариант 2)
 marking-ShellguardShellguardAlt1Head1 = Альтернативная голова Шеллгард (вариант 1)
-
 marking-ZenghuZenghuMainLLeg1 = Левая нога Зенгху (вариант 1)
 marking-ZenghuZenghuMainRHand2 = Правая кисть Зенгху (вариант 2)
 marking-ZenghuZenghuMainLFoot1 = Левая стопа Зенгху (вариант 1)
@@ -65,7 +64,6 @@ marking-HesphiastosHesphiastosMonitorHead1 = Мониторная голова �
 marking-HesphiastosHesphiastosAlt1Head2 = Альтернативная голова Геспиастос (вариант 2)
 marking-HesphiastosHesphiastosAlt1Head3 = Альтернативная голова Геспиастос (вариант 3)
 marking-HesphiastosHesphiastosAlt1Head1 = Альтернативная голова Геспиастос (вариант 1)
-
 marking-BishopBishopMonitorHead2 = Мониторная голова Бишоп (вариант 2)
 marking-BishopBishopMonitorHead = Мониторная голова Бишоп
 marking-BishopBishopAlt1Head = Альтернативная голова Бишоп
@@ -101,7 +99,6 @@ marking-MorpheusMorpheusMainLHand = Левая кисть Морфей
 marking-MorpheusMorpheusMainRArm = Правая рука Морфей
 marking-MorpheusMorpheusMainRFoot = Правая стопа Морфей
 marking-MorpheusMorpheusMainLLeg = Левая нога Морфей
-
 marking-WardtakahashiWardtakahashiMainRHand = Правая кисть Вардтакахаши
 marking-WardtakahashiWardtakahashiMainLArm = Левая рука Вардтакахаши
 marking-WardtakahashiWardtakahashiMainTorso = Торс Вардтакахаши
@@ -114,7 +111,6 @@ marking-WardtakahashiWardtakahashiMainRFoot = Правая стопа Вардт
 marking-WardtakahashiWardtakahashiMainLLeg = Левая нога Вардтакахаши
 marking-WardtakahashiWardtakahashiMonitorHead = Мониторная голова Вардтакахаши
 marking-WardtakahashiWardtakahashiAlt1Head = Альтернативная голова Вардтакахаши
-
 marking-XionXionMonitorHead2 = Мониторная голова Ксион (вариант 2)
 marking-XionXionMonitorHead1 = Мониторная голова Ксион (вариант 1)
 marking-XionXionMainLLeg1 = Левая нога Ксион (вариант 1)

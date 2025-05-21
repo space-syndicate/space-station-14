@@ -8,3 +8,4 @@ action-speech-spell-summon-magic = RYGOIN FEMA-VERECO
 action-speech-spell-mind-swap = GIN'YU CAPAN!
 action-speech-spell-cluwne = !КНОХ
 action-speech-spell-slip = СКУОЛЬ ЗКО!
+action-speech-spell-charge = DI'RI CEL!

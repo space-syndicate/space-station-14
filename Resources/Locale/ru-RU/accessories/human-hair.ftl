@@ -163,6 +163,7 @@ marking-HumanHairF = Короткая 7
 marking-HumanHairShorthairg = Короткая 8
 marking-HumanHair80s = Короткая (80-ые)
 marking-HumanHairRosa = Короткая (Роза)
+marking-HumanHairBAlt = Shoulder-length Hair (Over eye)
 marking-HumanHairB = Волосы до плеч
 marking-HumanHairShoulderLengthOverEye = До плеч через глаз
 marking-HumanHairSidecut = Боковой вырез
