@@ -44,7 +44,7 @@
   id: DeathSquad
   parent: EventHumanoidCentcomm
   randomizeName: false
-  speciesBlacklist: ['Diona'] # Corvax-MRP
+  speciesBlacklist: ['Diona', 'Ipc'] # Corvax-MRP
   components:
     - type: GhostRole
       name: ghost-role-information-Death-Squad-name
@@ -86,6 +86,9 @@
   id: ERTLeader
   parent: EventHumanoidCentcomm
   randomizeName: false
+  speciesBlacklist: # Corvax-MRP
+    - Diona
+    - Ipc
   components:
     - type: GhostRole
       name: ghost-role-information-ert-leader-name
@@ -376,6 +379,7 @@
   id: ERTSecurity
   speciesBlacklist: # Corvax-MRP
     - Diona
+    - Ipc
   parent: ERTLeader
   components:
     - type: GhostRole
@@ -526,6 +530,7 @@
 - type: randomHumanoidSettings
   speciesBlacklist: # Corvax-MRP
     - Diona
+    - Ipc
   id: CBURNAgent
   parent: EventHumanoidCentcomm
   components:
