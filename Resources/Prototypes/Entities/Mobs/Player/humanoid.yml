@@ -86,9 +86,6 @@
   id: ERTLeader
   parent: EventHumanoidCentcomm
   randomizeName: false
-  speciesBlacklist: # Corvax-MRP
-    - Diona
-    - Ipc
   components:
     - type: GhostRole
       name: ghost-role-information-ert-leader-name
