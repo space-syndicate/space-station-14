@@ -93,7 +93,7 @@
   - type: Repairable
     fuelCost: 30
     doAfterDelay: 20
-    selfRepairPenalty: 40
+    selfRepairPenalty: 2
   - type: DamagedSiliconAccent
   - type: Reflect
     reflectProb: 0.05
