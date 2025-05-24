@@ -149,7 +149,6 @@
   - type: Fingerprint
   - type: Blindable
   # Other
-  - type: Perishable
   - type: Butcherable
     butcheringType: Spike # TODO human.
     spawned:
@@ -358,6 +357,7 @@
     - FootstepSound
     - DoorBumpOpener
     - AnomalyHost
+    - Ipc
   - type: Temperature
     heatDamageThreshold: 325
     coldDamageThreshold: 260
