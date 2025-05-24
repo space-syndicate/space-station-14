@@ -183,6 +183,8 @@
     fireRate: 1
     soundGunshot: # Corvax-Guns
       path: /Audio/Corvax/Weapons/Guns/Gunshots/shotgun_alt.ogg
+  - type: GunSpreadModifier
+    spread: 0.6
   - type: Tag
     tags:
     - WeaponShotgunKammerer
