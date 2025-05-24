@@ -1,5 +1,5 @@
 analysis-console-menu-title = аналитическая консоль
-analysis-console-server-list-button = Список серверов
+analysis-console-server-list-button = Сервер
 analysis-console-scan-button = Сканировать
 analysis-console-scan-tooltip-info = Сканируйте артефакты, чтобы получить данные об их структуре.
 analysis-console-print-button = Печать
@@ -35,7 +35,7 @@ analysis-console-extract-sum = [font="Monospace" size=11][color=orange]Total Res
 analysis-console-info-no-scanner = Анализатор не подключён! Пожалуйста, подключите его с помощью мультитула.
 analysis-console-info-no-artifact = Артефакт не найден! Поместите артефакт на платформу, затем просканируйте для получения данных.
 analysis-console-info-ready = Все системы запущены. Сканирование готово.
-analysis-console-info-id = ID_УЗЛА: { $id }
+analysis-console-info-id = [font="Monospace" size=11]ID:[/font]
 analysis-console-info-depth = ГЛУБИНА: { $depth }
 analysis-console-info-triggered-true = АКТИВИРОВАН: ДА
 analysis-console-info-triggered-false = АКТИВИРОВАН: НЕТ
