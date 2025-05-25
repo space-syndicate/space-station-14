@@ -20,3 +20,7 @@ ent-CrateMaterialPaper = ящик бумаги
     .desc = 90 листов бумаги.
 ent-CrateMaterialRandom = излишки материалов
     .desc = Откуда-то взятые излишки материалов.
+ent-CrateMaterialSilo = material silo crate
+    .desc = A package including all the materials to create a material silo.
+ent-CrateMaterialBasicResource = basic sheet crate
+    .desc = 30 sheets of steel, glass, and plastic.
