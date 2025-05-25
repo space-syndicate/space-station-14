@@ -91,8 +91,9 @@
   - type: Ipc
   - type: ZombieImmune
   - type: Repairable
-    doAfterDelay: 30
-    selfRepairPenalty: 60
+    fuelCost: 30
+    doAfterDelay: 20
+    selfRepairPenalty: 2
   - type: DamagedSiliconAccent
   - type: Reflect
     reflectProb: 0.05
@@ -372,8 +373,6 @@
   - type: TemperatureSpeed
     thresholds:
       293: 0.8
-      280: 0.6
-      260: 0.4
   - type: ThermalRegulator
     metabolismHeat: 800
     radiatedHeat: 100
