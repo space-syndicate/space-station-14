@@ -18,11 +18,13 @@ analysis-console-info-locked-value = [font="Monospace" size=11][color={ $state -
 analysis-console-info-durability = [font="Monospace" size=11]Durability:[/font]
 analysis-console-info-durability-value = [font="Monospace" size=11][color={ $color }]{ $current }/{ $max }[/color][/font]
 analysis-console-extract-button-info = Извлечь очки исследований из артефакта, пропорциональные количеству исследованных узлов.
+analysis-console-info-effect = РЕАКЦИЯ: { $effect }
 analysis-console-info-effect-value = [font="Monospace" size=11][color=gray]{ $state ->
         [true] { $info }
        *[false] Unlock nodes to gain info
     }[/color][/font]
 analysis-console-bias-up = Вверх
+analysis-console-info-trigger = СТИМУЛЯТОР: { $trigger }
 analysis-console-info-triggered-value = [font="Monospace" size=11][color=gray]{ $triggers }[/color][/font]
 analysis-console-bias-down = Вниз
 analysis-console-bias-button-info-up = Переключает смещение артефакта при перемещении между его узлами. К поверхности - в сторону нулевой глубины.
@@ -37,8 +39,6 @@ analysis-console-info-id = ID_УЗЛА: { $id }
 analysis-console-info-depth = ГЛУБИНА: { $depth }
 analysis-console-info-triggered-true = АКТИВИРОВАН: ДА
 analysis-console-info-triggered-false = АКТИВИРОВАН: НЕТ
-analysis-console-info-effect = РЕАКЦИЯ: { $effect }
-analysis-console-info-trigger = СТИМУЛЯТОР: { $trigger }
 analysis-console-info-edges = СОЕДИНЕНИЯ: { $edges }
 analysis-console-info-value = НЕИЗВЛЕЧЁННЫЕ_О.И.: { $value }
 analysis-console-info-scanner = Сканирование...
