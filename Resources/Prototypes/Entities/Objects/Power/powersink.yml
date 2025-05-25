@@ -1,4 +1,4 @@
-- type: entity
+﻿- type: entity
   id: PowerSink
   parent: [BaseMachine, BaseSyndicateContraband]
   name: power sink
@@ -45,14 +45,8 @@
     - type: Sprite
       sprite: Objects/Power/powersink.rsi
       state: powersink
-    - type: Tag
-      tags:
-      - GhostOnlyWarp
     - type: WarpPoint
       location: powersink
-      blacklist:
-        tags:
-        - GhostOnlyWarp
 # Corvax-HiddenDesc-Start
     - type: HiddenDescription
       entries:

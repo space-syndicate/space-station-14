@@ -1,5 +1,3 @@
-ent-BaseXenoborgContraband = { "" }
-    .desc = { "" }
 ent-BaseMagicalContraband = { "" }
     .desc = { "" }
 ent-BaseSyndicateContraband = { "" }
@@ -41,8 +39,6 @@ ent-BaseSecurityCargoContraband = { ent-BaseRestrictedContraband }
 ent-BaseMedicalScienceContraband = { ent-BaseRestrictedContraband }
     .desc = { ent-BaseRestrictedContraband.desc }
 ent-BaseSecurityBartenderContraband = { ent-BaseRestrictedContraband }
-    .desc = { ent-BaseRestrictedContraband.desc }
-ent-BaseSecurityBartenderZookeeperContraband = { ent-BaseRestrictedContraband }
     .desc = { ent-BaseRestrictedContraband.desc }
 ent-BaseSecurityLawyerContraband = { ent-BaseRestrictedContraband }
     .desc = { ent-BaseRestrictedContraband.desc }

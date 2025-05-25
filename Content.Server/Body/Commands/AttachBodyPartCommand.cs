@@ -100,23 +100,21 @@ namespace Content.Server.Body.Commands
 
             var slotId = $"AttachBodyPartVerb-{partUid}";
 
-            if (body.RootContainer.ContainedEntity is null && !bodySystem.AttachPartToRoot(bodyId, partUid.Value, body, part))
+            // ReSharper disable once ConditionIsAlwaysTrueOrFalseAccordingToNullableAPIContract
+            if (body.RootContainer.ContainedEntity != null)
             {
-                shell.WriteError("Body container does not have a root entity to attach to the body part!");
-                return;
+                bodySystem.AttachPartToRoot(bodyId, partUid.Value, body, part);
+            }
+            else
+            {
+                var (rootPartId, rootPart) = bodySystem.GetRootPartOrNull(bodyId, body)!.Value;
+                if (!bodySystem.TryCreatePartSlotAndAttach(rootPartId, slotId, partUid.Value, part.PartType, rootPart, part))
+                {
+                    shell.WriteError($"Could not create slot {slotId} on entity {_entManager.ToPrettyString(bodyId)}");
+                    return;
+                }
             }
 
-            var (rootPartId, rootPart) = bodySystem.GetRootPartOrNull(bodyId, body)!.Value;
-            if (!bodySystem.TryCreatePartSlotAndAttach(rootPartId,
-                    slotId,
-                    partUid.Value,
-                    part.PartType,
-                    rootPart,
-                    part))
-            {
-                shell.WriteError($"Could not create slot {slotId} on entity {_entManager.ToPrettyString(bodyId)}");
-                return;
-            }
             shell.WriteLine($"Attached part {_entManager.ToPrettyString(partUid.Value)} to {_entManager.ToPrettyString(bodyId)}");
         }
     }

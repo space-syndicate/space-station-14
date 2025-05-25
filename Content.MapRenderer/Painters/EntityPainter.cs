@@ -102,7 +102,7 @@ public sealed class EntityPainter
                 var frames = stateCount / entity.Sprite.GetLayerDirectionCount(layer);
                 var target = direction * frames;
                 var targetY = target / statesX;
-                var targetX = target % statesX;
+                var targetX = target % statesY;
                 return (targetX * rsi.Size.X, targetY * rsi.Size.Y, rsi.Size.X, rsi.Size.Y);
             }
 

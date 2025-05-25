@@ -9,7 +9,7 @@ namespace Content.Shared.Damage.Components;
 [RegisterComponent]
 [NetworkedComponent]
 [AutoGenerateComponentState]
-[Access(typeof(SharedStaminaSystem))]
+[Access(typeof(StaminaSystem))]
 public sealed partial class StaminaDamageOnEmbedComponent : Component
 {
     [ViewVariables(VVAccess.ReadWrite), DataField, AutoNetworkedField]

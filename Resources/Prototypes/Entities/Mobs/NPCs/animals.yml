@@ -332,7 +332,6 @@
   - type: Item
     size: Tiny
   - type: HTN
-    constantlyReplan: false
     rootTask:
       task: MouseCompound
   - type: Physics
@@ -517,7 +516,7 @@
     baseSprintSpeed : 4
     weightlessAcceleration: 1.5
     weightlessFriction: 1
-    baseWeightlessModifier: 1
+    weightlessModifier: 1
   - type: Damageable
     damageContainer: Biological
     damageModifierSet: Moth
@@ -1682,7 +1681,6 @@
     factions:
       - Mouse
   - type: HTN
-    constantlyReplan: false
     rootTask:
       task: MouseCompound
   - type: Physics
@@ -2969,9 +2967,6 @@
   - type: Tag
     tags:
     - VimPilot
-  - type: MovementSpeedModifier
-    baseWalkSpeed: 2
-    baseSprintSpeed: 4
 
 - type: entity
   name: calico cat

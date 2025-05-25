@@ -29,6 +29,4 @@ ent-BaseUplinkRadio60TC = { ent-BaseUplinkRadio }
 ent-BaseUplinkRadioDebug = { ent-BaseUplinkRadio }
     .suffix = DEBUG, аплинк синдиката
     .desc = { ent-BaseUplinkRadio.desc }
-
 # Corvax-HiddenDesc-End
-

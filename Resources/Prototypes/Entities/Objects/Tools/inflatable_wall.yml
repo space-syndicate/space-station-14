@@ -19,7 +19,6 @@
       doAfter: 1
       removeOnInteract: true
     - type: Clickable
-    - type: PhysicalComposition
 # TODO: Add stack sprites + visuals.
 
 - type: entity
@@ -43,7 +42,6 @@
       doAfter: 1
       removeOnInteract: true
     - type: Clickable
-    - type: PhysicalComposition
 # TODO: Add stack sprites + visuals.
 
 - type: entity

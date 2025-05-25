@@ -9,20 +9,7 @@ public enum DeliveryVisuals : byte
     IsTrash,
     IsBroken,
     IsFragile,
-    PriorityState,
+    IsPriority,
+    IsPriorityInactive,
     JobIcon,
-}
-
-[Serializable, NetSerializable]
-public enum DeliveryPriorityState : byte
-{
-    Off,
-    Active,
-    Inactive,
-}
-
-[Serializable, NetSerializable]
-public enum DeliverySpawnerVisuals : byte
-{
-    Contents,
 }

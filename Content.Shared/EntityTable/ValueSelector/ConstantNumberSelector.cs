@@ -1,3 +1,5 @@
+using Robust.Shared.Prototypes;
+
 namespace Content.Shared.EntityTable.ValueSelector;
 
 /// <summary>
@@ -6,14 +8,14 @@ namespace Content.Shared.EntityTable.ValueSelector;
 public sealed partial class ConstantNumberSelector : NumberSelector
 {
     [DataField]
-    public int Value = 1;
+    public float Value = 1;
 
-    public ConstantNumberSelector(int value)
+    public ConstantNumberSelector(float value)
     {
         Value = value;
     }
 
-    public override int Get(System.Random rand)
+    public override float Get(System.Random rand, IEntityManager entMan, IPrototypeManager proto)
     {
         return Value;
     }

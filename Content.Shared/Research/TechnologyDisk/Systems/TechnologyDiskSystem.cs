@@ -15,6 +15,7 @@ namespace Content.Shared.Research.TechnologyDisk.Systems;
 
 public sealed class TechnologyDiskSystem : EntitySystem
 {
+    [Dependency] private readonly INetManager _net = default!;
     [Dependency] private readonly IPrototypeManager _protoMan = default!;
     [Dependency] private readonly IRobustRandom _random = default!;
     [Dependency] private readonly SharedPopupSystem _popup = default!;
@@ -73,7 +74,8 @@ public sealed class TechnologyDiskSystem : EntitySystem
             }
         }
         _popup.PopupClient(Loc.GetString("tech-disk-inserted"), target, args.User);
-        PredictedQueueDel(ent.Owner);
+        if (_net.IsServer)
+            QueueDel(ent);
         args.Handled = true;
     }
 

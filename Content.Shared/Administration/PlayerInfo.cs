@@ -12,7 +12,6 @@ public sealed record PlayerInfo(
     string StartingJob,
     bool Antag,
     RoleTypePrototype RoleProto,
-    LocId? Subtype,
     int SortWeight,
     NetEntity? NetEntity,
     NetUserId SessionId,

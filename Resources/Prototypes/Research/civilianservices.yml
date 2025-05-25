@@ -10,6 +10,8 @@
   tier: 1
   cost: 5000
   recipeUnlocks:
+  - BorgModuleGardening
+  - BorgModuleHarvesting
   - SeedExtractorMachineCircuitboard
   - HydroponicsTrayMachineCircuitboard
   - ReagentGrinderIndustrialMachineCircuitboard
@@ -70,6 +72,18 @@
     - JukeboxCircuitBoard
 
 - type: technology
+  id: RoboticCleanliness
+  name: research-technology-robotic-cleanliness
+  icon:
+    sprite: Mobs/Silicon/chassis.rsi
+    state: janitor
+  discipline: CivilianServices
+  tier: 1
+  cost: 5000
+  recipeUnlocks:
+  - BorgModuleAdvancedCleaning
+
+- type: technology
   id: MeatManipulation
   name: research-technology-meat-manipulation
   icon:
@@ -117,7 +131,7 @@
   - CryostasisBeaker
   - SyringeCryostasis
 
-- type: technology # Merge with other T2 medical research if possible!
+- type: technology
   id: MechanizedTreatment
   name: research-technology-mechanized-treatment
   icon:
@@ -127,7 +141,8 @@
   tier: 2
   cost: 5000
   recipeUnlocks:
-  - BorgModuleAdvancedChemical
+  - BorgModuleAdvancedTreatment
+  - BorgModuleDefibrillator
 
 - type: technology
   id: AdvancedCleaning
@@ -141,7 +156,6 @@
   recipeUnlocks:
   - AdvMopItem
   - MegaSprayBottle
-  - BorgModuleAdvancedCleaning
 
 - type: technology
   id: HONKMech
@@ -187,18 +201,6 @@
   cost: 15000
   recipeUnlocks:
   - CargoTelepadMachineCircuitboard
-
-- type: technology
-  id: PushHorn
-  name: research-technology-clowning-utilities
-  icon:
-    sprite: Objects/Fun/push_horn.rsi
-    state: icon
-  discipline: CivilianServices
-  tier: 2
-  cost: 4000
-  recipeUnlocks:
-  - PushHorn
 
 # Tier 3
 

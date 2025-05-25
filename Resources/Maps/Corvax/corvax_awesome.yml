@@ -45378,6 +45378,17 @@ entities:
         - 0
         - 0
         - 0
+    - type: ContainerContainer
+      containers:
+        entity_storage: !type:Container
+          showEnts: False
+          occludes: True
+          ents:
+          - 6278
+        paper_label: !type:ContainerSlot
+          showEnts: False
+          occludes: True
+          ent: null
   - uid: 6279
     components:
     - type: Transform
@@ -83983,6 +83994,17 @@ entities:
     - type: Transform
       pos: -14.5,27.5
       parent: 2
+- proto: MediumXenoArtifactItem
+  entities:
+  - uid: 6278
+    components:
+    - type: Transform
+      parent: 6277
+    - type: Artifact
+      isSuppressed: True
+    - type: Physics
+      canCollide: False
+    - type: InsideEntityStorage
 - proto: Medkit
   entities:
   - uid: 18233

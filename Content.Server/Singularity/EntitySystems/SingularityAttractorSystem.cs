@@ -64,7 +64,7 @@ public sealed class SingularityAttractorSystem : EntitySystem
 
         attractor.LastPulseTime = _timing.CurTime;
 
-        var mapPos = _transform.ToMapCoordinates(xform.Coordinates);
+        var mapPos = xform.Coordinates.ToMap(EntityManager, _transform);
 
         if (mapPos == MapCoordinates.Nullspace)
             return;
@@ -72,7 +72,7 @@ public sealed class SingularityAttractorSystem : EntitySystem
         var query = EntityQuery<SingularityComponent, RandomWalkComponent, TransformComponent>();
         foreach (var (singulo, walk, singuloXform) in query)
         {
-            var singuloMapPos = _transform.ToMapCoordinates(singuloXform.Coordinates);
+            var singuloMapPos = singuloXform.Coordinates.ToMap(EntityManager, _transform);
 
             if (singuloMapPos.MapId != mapPos.MapId)
                 continue;

@@ -35,11 +35,11 @@ public sealed class HolopadUserTypingChangedEvent : EntityEventArgs
     /// <summary>
     /// The typing indicator state
     /// </summary>
-    public readonly TypingIndicatorState State;
+    public readonly TypingIndicatorState TypingState;
 
     public HolopadUserTypingChangedEvent(NetEntity user, TypingIndicatorState state)
     {
         User = user;
-        State = state;
+        TypingState = state;
     }
 }

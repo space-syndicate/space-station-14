@@ -45,8 +45,7 @@ public sealed class HideLayerClothingSystem : EntitySystem
         if (!Resolve(clothing.Owner, ref clothing.Comp1, ref clothing.Comp2))
             return;
 
-        // logMissing: false, as this clothing might be getting equipped by a non-human.
-        if (!Resolve(user.Owner, ref user.Comp, false))
+        if (!Resolve(user.Owner, ref user.Comp, false)) // Corvax-Changes
             return;
 
         hideLayers &= IsEnabled(clothing!);

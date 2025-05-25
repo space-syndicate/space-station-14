@@ -158,8 +158,7 @@
         orGroup: Guns
       - id: RevolverCapGunFake
         orGroup: Guns
-  - type: SpeakOnAction
-    sentence: action-speech-spell-summon-guns
+      speech: action-speech-spell-summon-guns
 
 - type: entity
   id: ActionSummonMagic
@@ -206,5 +205,4 @@
         orGroup: Magics
       - id: RGBStaff
         orGroup: Magics
-  - type: SpeakOnAction
-    sentence: action-speech-spell-summon-magic
+      speech: action-speech-spell-summon-magic

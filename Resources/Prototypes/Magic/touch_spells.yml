@@ -17,8 +17,7 @@
       sprite: Objects/Magic/magicactions.rsi
       state: gib
     event: !type:SmiteSpellEvent
-  - type: SpeakOnAction
-    sentence: action-speech-spell-smite
+      speech: action-speech-spell-smite
   - type: Magic
     requiresClothes: true
 
@@ -48,10 +47,9 @@
       sprite: Clothing/Mask/cluwne.rsi
       state: icon
     event: !type:ChangeComponentsSpellEvent
+      speech: action-speech-spell-cluwne
       toAdd:
       - type: Cluwne
-  - type: SpeakOnAction
-    sentence: action-speech-spell-cluwne
   - type: Magic
     requiresClothes: true
 
@@ -74,11 +72,10 @@
       sprite: Objects/Specific/Janitorial/soap.rsi
       state: omega-4
     event: !type:ChangeComponentsSpellEvent
+      speech: action-speech-spell-slip
       toAdd:
       - type: Slippery
       - type: StepTrigger
         requiredTriggeredSpeed: -1
-  - type: SpeakOnAction
-    sentence: action-speech-spell-slip
   - type: Magic
     requiresClothes: true

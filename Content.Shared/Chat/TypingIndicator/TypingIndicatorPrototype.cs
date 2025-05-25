@@ -1,4 +1,4 @@
-using System.Numerics;
+﻿using System.Numerics;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Utility;
 
@@ -19,9 +19,10 @@ public sealed partial class TypingIndicatorPrototype : IPrototype
     [DataField("typingState", required: true)]
     public string TypingState = default!;
 
+    // Corvax-TypingIndicator-Start
     [DataField("idleState", required: true)]
     public string IdleState = default!;
-
+    // Corvax-TypingIndicator-End
     [DataField("offset")]
     public Vector2 Offset = new(0, 0);
 

@@ -55,10 +55,7 @@ public sealed class EventManagerSystem : EntitySystem
     /// </summary>
     public void RunRandomEvent(EntityTableSelector limitedEventsTable)
     {
-        var availableEvents = AvailableEvents(); // handles the player counts and individual event restrictions.
-                                                 // Putting this here only makes any sense in the context of the toolshed commands in BasicStationEventScheduler. Kill me.
-
-        if (!TryBuildLimitedEvents(limitedEventsTable, availableEvents, out var limitedEvents))
+        if (!TryBuildLimitedEvents(limitedEventsTable, out var limitedEvents))
         {
             Log.Warning("Provided event table could not build dict!");
             return;
@@ -83,13 +80,11 @@ public sealed class EventManagerSystem : EntitySystem
     /// <summary>
     /// Returns true if the provided EntityTableSelector gives at least one prototype with a StationEvent comp.
     /// </summary>
-    public bool TryBuildLimitedEvents(
-        EntityTableSelector limitedEventsTable,
-        Dictionary<EntityPrototype, StationEventComponent> availableEvents,
-        out Dictionary<EntityPrototype, StationEventComponent> limitedEvents
-        )
+    public bool TryBuildLimitedEvents(EntityTableSelector limitedEventsTable, out Dictionary<EntityPrototype, StationEventComponent> limitedEvents)
     {
         limitedEvents = new Dictionary<EntityPrototype, StationEventComponent>();
+
+        var availableEvents = AvailableEvents(); // handles the player counts and individual event restrictions
 
         if (availableEvents.Count == 0)
         {

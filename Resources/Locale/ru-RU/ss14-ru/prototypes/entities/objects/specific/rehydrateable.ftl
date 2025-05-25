@@ -1,7 +1,3 @@
-ent-RehydratableItem = { ent-BaseItem }
-    .desc = { ent-BaseItem.desc }
-ent-RehydratableAnimalCube = { ent-RehydratableItem }
-    .desc = Just add water!
 ent-MonkeyCube = обезьяний кубик
     .desc = Просто добавь воды!
 ent-KoboldCube = кобольдовый кубик
@@ -27,5 +23,3 @@ ent-DehydratedSpaceCarp = обезвоженный космический кар
 ent-SyndicateSponge = обезьяний кубик
     .desc = Просто добавь воды!
     .suffix = Синдикат
-ent-MopBucketCube = mop bucket cube
-    .desc = Just add water! And then more water!

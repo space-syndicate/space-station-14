@@ -40,9 +40,9 @@
 
 - type: entity
   name: Kardashev-Mosin
-  parent: [BaseWeaponSniper, BaseGunWieldable, BaseMajorContraband]
+  parent: [BaseWeaponSniper, BaseGunWieldable, BaseSyndicateContraband]
   id: WeaponSniperMosin
-  description: A true relic, the Kardashev-Mosin has served in nearly every armed conflict since its creation 670 years ago. The bolt-action design of the rifle remains virtually identical to its original design, whether used for hunting, sniping, or endless trench warfare. Loads 10 rounds of .30 rifle.
+  description: A weapon for hunting, or endless trench warfare. Uses .30 rifle ammo.
   components:
   - type: Sprite
     sprite: Objects/Weapons/Guns/Snipers/bolt_gun_wood.rsi
@@ -81,7 +81,7 @@
 
 - type: entity
   name: musket
-  parent: [ BaseWeaponSniper, BaseGunWieldable, BaseMajorContraband ]
+  parent: [ BaseWeaponSniper, BaseGunWieldable, BaseMinorContraband ]
   id: Musket
   description: This should've been in a museum long before you were born. Uses .60 anti-materiel ammo.
   components:
@@ -119,19 +119,16 @@
 
 - type: entity
   name: flintlock pistol
-  parent: [BaseWeaponSniper, BaseMajorContraband]
+  parent: [BaseWeaponSniper, BaseMinorContraband]
   id: WeaponPistolFlintlock
-  description: A pirate's companion. Yarrr! Uses .45 magnum ammo.
+  description: A pirate's companion. Yarrr! Uses .60 anti-materiel ammo.
   components:
   - type: Gun
     minAngle: 0
     maxAngle: 30 #miss him entirely because the barrel is smoothbore
   - type: Item
     size: Small
-    shape:
-    - 0,0,1,0
-    - 0,1,0,1
-    storedRotation: 0
+    storedRotation: 90
   - type: Sprite
     sprite: Objects/Weapons/Guns/Snipers/flintlock.rsi
   - type: Clothing
@@ -142,16 +139,9 @@
   - type: BallisticAmmoProvider
     whitelist:
       tags:
-        - CartridgeMagnum # changed from Anti-material rifle rounds because it's a flintlock pistol not a Hristov
+        - CartridgeAntiMateriel
     capacity: 1
-    proto: CartridgeMagnum
+    proto: CartridgeAntiMateriel
   - type: StaticPrice
     price: 0
 
-- type: entity
-  parent: WeaponPistolFlintlock
-  id: WeaponPistolFlintlockEmpty
-  suffix: Empty
-  components:
-  - type: BallisticAmmoProvider
-    proto: null

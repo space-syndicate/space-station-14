@@ -136,6 +136,7 @@ namespace Content.Server.NPC.Systems
             if (!Enabled)
                 return;
 
+            _count = 0;
             // Add your system here.
             _htn.UpdateNPC(ref _count, _maxUpdates, frameTime);
         }

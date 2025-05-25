@@ -7,7 +7,6 @@ using Content.Shared.Fax;
 using Content.Shared.Follower;
 using Content.Shared.Ghost;
 using Content.Shared.Paper;
-using Content.Shared.DeviceNetwork.Components;
 
 namespace Content.Server.Fax.AdminUI;
 

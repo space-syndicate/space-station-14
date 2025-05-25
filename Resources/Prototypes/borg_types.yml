@@ -14,8 +14,7 @@
 
   defaultModules:
   - BorgModuleTool
-  - BorgModuleArtifact
-  - BorgModuleAnomaly
+
   radioChannels:
   - Science
 
@@ -82,9 +81,8 @@
     - BorgModuleCargo
 
   defaultModules:
-  - BorgModuleTool
+  - BorgModuleGrapplingGun
   - BorgModuleMining
-  - BorgModuleTraversal
   - BorgModuleAppraisal
 
   radioChannels:
@@ -119,9 +117,8 @@
     - BorgModuleJanitor
 
   defaultModules:
-  - BorgModuleTool
+  - BorgModuleLightReplacer
   - BorgModuleCleaning
-  - BorgModuleCustodial
 
   radioChannels:
   - Science
@@ -155,10 +152,7 @@
     - BorgModuleMedical
 
   defaultModules:
-  - BorgModuleTool
-  - BorgModuleChemical
-  - BorgModuleTopicals
-  - BorgModuleRescue
+  - BorgModuleTreatment
 
   radioChannels:
   - Science
@@ -205,12 +199,10 @@
     - BorgModuleService
 
   defaultModules:
-  - BorgModuleTool
   - BorgModuleMusique
   - BorgModuleService
   - BorgModuleClowning
-  - BorgModuleGardening
-  - BorgModuleHarvesting
+
   radioChannels:
   - Science
   - Service

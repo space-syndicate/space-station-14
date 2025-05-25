@@ -918,10 +918,12 @@ public sealed class ChatUIController : UIController
         _typingIndicator?.ClientChangedChatText();
     }
 
+    // Corvax-TypingIndicator-Start
     public void NotifyChatFocus(bool isFocused)
     {
         _typingIndicator?.ClientChangedChatFocus(isFocused);
     }
+    // Corvax-TypingIndicator-End
 
     public void Repopulate()
     {

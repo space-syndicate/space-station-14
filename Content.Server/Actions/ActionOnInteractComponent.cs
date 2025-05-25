@@ -1,5 +1,6 @@
 using Content.Shared.Interaction;
 using Robust.Shared.Prototypes;
+using Robust.Shared.Serialization.TypeSerializers.Implementations.Custom.Prototype.List;
 
 namespace Content.Server.Actions;
 
@@ -19,10 +20,8 @@ namespace Content.Server.Actions;
 [RegisterComponent]
 public sealed partial class ActionOnInteractComponent : Component
 {
-    [DataField(required: true)]
+    [DataField(required:true)]
     public List<EntProtoId>? Actions;
 
     [DataField] public List<EntityUid>? ActionEntities;
-
-    [DataField] public bool RequiresCharge;
 }

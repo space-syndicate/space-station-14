@@ -38,7 +38,6 @@ namespace Content.MapRenderer
                 var mapIds = pair.Server
                     .ResolveDependency<IPrototypeManager>()
                     .EnumeratePrototypes<GameMapPrototype>()
-                    .Where(map => !pair.IsTestPrototype(map))
                     .Select(map => map.ID)
                     .ToArray();
 

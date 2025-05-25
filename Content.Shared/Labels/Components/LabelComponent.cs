@@ -1,4 +1,3 @@
-using Content.Shared.Labels.EntitySystems;
 using Robust.Shared.GameStates;
 
 namespace Content.Shared.Labels.Components;
@@ -7,7 +6,6 @@ namespace Content.Shared.Labels.Components;
 /// Makes entities have a label in their name. Labels are normally given by <see cref="HandLabelerComponent"/>
 /// </summary>
 [RegisterComponent, NetworkedComponent, AutoGenerateComponentState]
-[Access(typeof(LabelSystem))]
 public sealed partial class LabelComponent : Component
 {
     /// <summary>

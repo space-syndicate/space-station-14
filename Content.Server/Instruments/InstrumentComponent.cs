@@ -1,3 +1,4 @@
+using Content.Server.UserInterface;
 using Content.Shared.Instruments;
 using Robust.Shared.Player;
 using ActivatableUIComponent = Content.Shared.UserInterface.ActivatableUIComponent;
@@ -19,4 +20,9 @@ public sealed partial class InstrumentComponent : SharedInstrumentComponent
     public EntityUid? InstrumentPlayer =>
         _entMan.GetComponentOrNull<ActivatableUIComponent>(Owner)?.CurrentSingleUser
         ?? _entMan.GetComponentOrNull<ActorComponent>(Owner)?.PlayerSession.AttachedEntity;
+}
+
+[RegisterComponent]
+public sealed partial class ActiveInstrumentComponent : Component
+{
 }

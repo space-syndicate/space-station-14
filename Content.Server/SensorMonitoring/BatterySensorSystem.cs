@@ -2,7 +2,6 @@
 using Content.Server.DeviceNetwork.Systems;
 using Content.Server.Power.Components;
 using Content.Shared.DeviceNetwork;
-using Content.Shared.DeviceNetwork.Events;
 
 namespace Content.Server.SensorMonitoring;
 

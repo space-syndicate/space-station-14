@@ -8,15 +8,15 @@ public sealed class CargoConsoleInterfaceState : BoundUserInterfaceState
     public string Name;
     public int Count;
     public int Capacity;
-    public NetEntity Station;
+    public int Balance;
     public List<CargoOrderData> Orders;
 
-    public CargoConsoleInterfaceState(string name, int count, int capacity, NetEntity station, List<CargoOrderData> orders)
+    public CargoConsoleInterfaceState(string name, int count, int capacity, int balance, List<CargoOrderData> orders)
     {
         Name = name;
         Count = count;
         Capacity = capacity;
-        Station = station;
+        Balance = balance;
         Orders = orders;
     }
 }

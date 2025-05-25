@@ -3,13 +3,15 @@ using Content.Shared.CCVar;
 using Content.Shared.Movement.Components;
 using Content.Shared.Movement.Pulling.Components;
 using Content.Shared.Movement.Systems;
+using Robust.Client.GameObjects;
 using Robust.Client.Physics;
 using Robust.Client.Player;
 using Robust.Shared.Configuration;
+using Robust.Shared.Physics.Components;
 using Robust.Shared.Player;
 using Robust.Shared.Timing;
 
-namespace Content.Client.PhysicsSystem.Controllers;
+namespace Content.Client.Physics.Controllers;
 
 public sealed class MoverController : SharedMoverController
 {
@@ -99,13 +101,39 @@ public sealed class MoverController : SharedMoverController
 
     private void HandleClientsideMovement(EntityUid player, float frameTime)
     {
-        if (!MoverQuery.TryGetComponent(player, out var mover))
+        if (!MoverQuery.TryGetComponent(player, out var mover) ||
+            !XformQuery.TryGetComponent(player, out var xform))
+        {
+            return;
+        }
+
+        var physicsUid = player;
+        PhysicsComponent? body;
+        var xformMover = xform;
+
+        if (mover.ToParent && RelayQuery.HasComponent(xform.ParentUid))
+        {
+            if (!PhysicsQuery.TryGetComponent(xform.ParentUid, out body) ||
+                !XformQuery.TryGetComponent(xform.ParentUid, out xformMover))
+            {
+                return;
+            }
+
+            physicsUid = xform.ParentUid;
+        }
+        else if (!PhysicsQuery.TryGetComponent(player, out body))
         {
             return;
         }
 
         // Server-side should just be handled on its own so we'll just do this shizznit
-        HandleMobMovement((player, mover), frameTime);
+        HandleMobMovement(
+            player,
+            mover,
+            physicsUid,
+            body,
+            xformMover,
+            frameTime);
     }
 
     protected override bool CanSound()

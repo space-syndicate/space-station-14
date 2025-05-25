@@ -36,7 +36,6 @@ namespace Content.Server.Decals
         [Dependency] private readonly IGameTiming _timing = default!;
         [Dependency] private readonly IAdminLogManager _adminLogger = default!;
         [Dependency] private readonly SharedMapSystem _mapSystem = default!;
-        [Dependency] private readonly SharedTransformSystem _transform = default!;
 
         private readonly Dictionary<NetEntity, HashSet<Vector2i>> _dirtyChunks = new();
         private readonly Dictionary<ICommonSession, Dictionary<NetEntity, HashSet<Vector2i>>> _previousSentChunks = new();
@@ -250,7 +249,7 @@ namespace Content.Server.Decals
             if (!coordinates.IsValid(EntityManager))
                 return;
 
-            var gridId = _transform.GetGrid(coordinates);
+            var gridId = coordinates.GetGridUid(EntityManager);
 
             if (gridId == null)
                 return;
@@ -297,7 +296,7 @@ namespace Content.Server.Decals
             if (!PrototypeManager.HasIndex<DecalPrototype>(decal.Id))
                 return false;
 
-            var gridId = _transform.GetGrid(coordinates);
+            var gridId = coordinates.GetGridUid(EntityManager);
             if (!TryComp(gridId, out MapGridComponent? grid))
                 return false;
 

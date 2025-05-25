@@ -59,7 +59,7 @@
   - type: StorageFill
     contents:
         - id: OxygenTankFilled
-        - id: ClothingOuterEVASuitSyndicate
+        - id: ClothingOuterHardsuitSyndicate
         - id: ClothingHeadHelmetSyndicate
         - id: ClothingMaskGasSyndicate
 
@@ -270,7 +270,6 @@
   - type: StorageFill
     contents:
         - id: OxygenTankFilled
+        - id: ClothingOuterHardsuitWizard
         - id: ClothingMaskBreath
-        # TODO: Gone until reworked to have no space protection
-        #- id: ClothingOuterHardsuitWizard
-        #- id: JetpackVoidFilled
+        - id: JetpackVoidFilled

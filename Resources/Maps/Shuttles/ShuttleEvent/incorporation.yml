@@ -5292,7 +5292,8 @@ entities:
     components:
     - type: Transform
       parent: 766
-    - type: XenoArtifact
+    - type: Artifact
+      isSuppressed: True
     - type: Physics
       canCollide: False
     - type: InsideEntityStorage
@@ -5300,7 +5301,8 @@ entities:
     components:
     - type: Transform
       parent: 768
-    - type: XenoArtifact
+    - type: Artifact
+      isSuppressed: True
     - type: Physics
       canCollide: False
     - type: InsideEntityStorage
@@ -5310,12 +5312,14 @@ entities:
       rot: 1.5707963267948966 rad
       pos: -5.5242987,-12.5
       parent: 1
+    - type: BiasedArtifact
   - uid: 789
     components:
     - type: Transform
       rot: 1.5707963267948966 rad
       pos: 6.506952,-12.5
       parent: 1
+    - type: BiasedArtifact
 - proto: VendingMachineMedical
   entities:
   - uid: 230

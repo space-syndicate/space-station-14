@@ -41,6 +41,4 @@ ent-GrenadeDummy = граната-обманка
 # Corvax-HiddenDesc-Start
 ent-SyndieTrickyBomb = хитробомба
     .desc = Взрывчатка, изготовленная синдикатом, служит отличным отвлекающим манёвром.
-
 # Corvax-HiddenDesc-End
-

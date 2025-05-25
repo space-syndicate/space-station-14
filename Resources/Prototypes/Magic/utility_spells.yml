@@ -11,5 +11,4 @@
       state: nothing
     event: !type:ChargeSpellEvent
       charge: 1
-  - type: SpeakOnAction
-    sentence: action-speech-spell-charge
+      speech: DI'RI CEL!

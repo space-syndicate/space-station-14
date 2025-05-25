@@ -1,7 +1,4 @@
-﻿using Content.Shared.Atmos.Components;
-using Content.Shared.Atmos.Piping.Binary.Components;
-using Content.Shared.Atmos.Piping.Unary.Components;
-using Content.Shared.IdentityManagement;
+﻿using Content.Shared.Atmos.Piping.Binary.Components;
 using JetBrains.Annotations;
 using Robust.Client.GameObjects;
 using Robust.Client.UserInterface;
@@ -35,22 +32,22 @@ namespace Content.Client.Atmos.UI
 
         private void OnTankEjectPressed()
         {
-            SendPredictedMessage(new GasCanisterHoldingTankEjectMessage());
+            SendMessage(new GasCanisterHoldingTankEjectMessage());
         }
 
         private void OnReleasePressureSet(float value)
         {
-            SendPredictedMessage(new GasCanisterChangeReleasePressureMessage(value));
+            SendMessage(new GasCanisterChangeReleasePressureMessage(value));
         }
 
         private void OnReleaseValveOpenPressed()
         {
-            SendPredictedMessage(new GasCanisterChangeReleaseValveMessage(true));
+            SendMessage(new GasCanisterChangeReleaseValveMessage(true));
         }
 
         private void OnReleaseValveClosePressed()
         {
-            SendPredictedMessage(new GasCanisterChangeReleaseValveMessage(false));
+            SendMessage(new GasCanisterChangeReleaseValveMessage(false));
         }
 
         /// <summary>
@@ -60,21 +57,17 @@ namespace Content.Client.Atmos.UI
         protected override void UpdateState(BoundUserInterfaceState state)
         {
             base.UpdateState(state);
-            if (_window == null || state is not GasCanisterBoundUserInterfaceState cast || !EntMan.TryGetComponent(Owner, out GasCanisterComponent? component))
+            if (_window == null || state is not GasCanisterBoundUserInterfaceState cast)
                 return;
 
-            var canisterLabel = Identity.Name(Owner, EntMan);
-            var tankLabel = component.GasTankSlot.Item != null ? Identity.Name(component.GasTankSlot.Item.Value, EntMan) : null;
-
-            _window.SetCanisterLabel(canisterLabel);
+            _window.SetCanisterLabel(cast.CanisterLabel);
             _window.SetCanisterPressure(cast.CanisterPressure);
             _window.SetPortStatus(cast.PortStatus);
-
-            _window.SetTankLabel(tankLabel);
+            _window.SetTankLabel(cast.TankLabel);
             _window.SetTankPressure(cast.TankPressure);
-            _window.SetReleasePressureRange(component.MinReleasePressure, component.MaxReleasePressure);
-            _window.SetReleasePressure(component.ReleasePressure);
-            _window.SetReleaseValve(component.ReleaseValve);
+            _window.SetReleasePressureRange(cast.ReleasePressureMin, cast.ReleasePressureMax);
+            _window.SetReleasePressure(cast.ReleasePressure);
+            _window.SetReleaseValve(cast.ReleaseValve);
         }
 
         protected override void Dispose(bool disposing)

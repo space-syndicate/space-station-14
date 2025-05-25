@@ -1,6 +1,5 @@
 using System.Collections.Frozen;
 using System.Linq;
-using Content.Shared.FixedPoint;
 using System.Text.Json.Serialization;
 using Content.Shared.Administration.Logs;
 using Content.Shared.Body.Prototypes;
@@ -8,14 +7,14 @@ using Content.Shared.Chemistry.Components;
 using Content.Shared.Chemistry.Reaction;
 using Content.Shared.EntityEffects;
 using Content.Shared.Database;
+using Content.Shared.FixedPoint;
 using Content.Shared.Nutrition;
-using Content.Shared.Prototypes;
-using Content.Shared.Slippery;
 using Robust.Shared.Audio;
 using Robust.Shared.Map;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Random;
 using Robust.Shared.Serialization;
+using Robust.Shared.Serialization.TypeSerializers.Implementations.Custom.Prototype;
 using Robust.Shared.Serialization.TypeSerializers.Implementations.Custom.Prototype.Array;
 using Robust.Shared.Utility;
 
@@ -101,22 +100,10 @@ namespace Content.Shared.Chemistry.Reagent
         public bool MetamorphicChangeColor { get; private set; } = true;
 
         /// <summary>
-        /// If not null, makes something slippery. Also defines slippery interactions like stun time and launch mult.
+        /// If this reagent is part of a puddle is it slippery.
         /// </summary>
         [DataField]
-        public SlipperyEffectEntry? SlipData;
-
-        /// <summary>
-        /// The speed at which the reagent evaporates over time.
-        /// </summary>
-        [DataField]
-        public FixedPoint2 EvaporationSpeed = FixedPoint2.Zero;
-
-        /// <summary>
-        /// If this reagent can be used to mop up other reagents.
-        /// </summary>
-        [DataField]
-        public bool Absorbent = false;
+        public bool Slippery;
 
         /// <summary>
         /// How easily this reagent becomes fizzy when aggitated.
@@ -131,13 +118,6 @@ namespace Content.Shared.Chemistry.Reagent
         /// </summary>
         [DataField]
         public float Viscosity;
-
-        /// <summary>
-        /// Linear Friction Multiplier for a reagent
-        /// 0 - frictionless, 1 - no effect on friction
-        /// </summary>
-        [DataField]
-        public float Friction = 1.0f;
 
         /// <summary>
         /// Should this reagent work on the dead?
@@ -226,7 +206,7 @@ namespace Content.Shared.Chemistry.Reagent
                 .ToDictionary(x => x.Key, x => x.Item2);
             if (proto.PlantMetabolisms.Count > 0)
             {
-                PlantMetabolisms = new List<string>(proto.PlantMetabolisms
+                PlantMetabolisms = new List<string> (proto.PlantMetabolisms
                     .Select(x => x.GuidebookEffectDescription(prototype, entSys))
                     .Where(x => x is not null)
                     .Select(x => x!)

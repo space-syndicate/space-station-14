@@ -67,10 +67,13 @@ public sealed partial class ExplosionSystem
 
     private List<EntityUid> _anchored = new();
 
-    private void OnMapRemoved(MapRemovedEvent ev)
+    private void OnMapChanged(MapChangedEvent ev)
     {
         // If a map was deleted, check the explosion currently being processed belongs to that map.
-        if (_activeExplosion?.Epicenter.MapId != ev.MapId)
+        if (ev.Created)
+            return;
+
+        if (_activeExplosion?.Epicenter.MapId != ev.Map)
             return;
 
         QueueDel(_activeExplosion.VisualEnt);
@@ -146,7 +149,7 @@ public sealed partial class ExplosionSystem
             }
 #if EXCEPTION_TOLERANCE
             }
-            catch (Exception)
+            catch (Exception e)
             {
                 // Ensure the system does not get stuck in an error-loop.
                 if (_activeExplosion != null)
@@ -715,7 +718,7 @@ sealed class Explosion
 
         if (spaceData != null)
         {
-            var mapUid = mapSystem.GetMap(epicenter.MapId);
+            var mapUid = mapMan.GetMapEntityId(epicenter.MapId);
 
             _explosionData.Add(new()
             {

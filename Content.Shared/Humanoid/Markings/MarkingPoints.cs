@@ -1,5 +1,6 @@
 using Robust.Shared.Prototypes;
 using Robust.Shared.Serialization;
+using Robust.Shared.Serialization.TypeSerializers.Implementations.Custom.Prototype.List;
 
 namespace Content.Shared.Humanoid.Markings;
 
@@ -7,23 +8,13 @@ namespace Content.Shared.Humanoid.Markings;
 [Serializable, NetSerializable]
 public sealed partial class MarkingPoints
 {
-    [DataField(required: true)]
+    [DataField("points", required: true)]
     public int Points = 0;
-
-    [DataField(required: true)]
-    public bool Required;
-
-    /// <summary>
-    ///     If the user of this marking point set is only allowed to
-    ///     use whitelisted markings, and not globally usable markings.
-    ///     Only used for validation and profile construction. Ignored anywhere else.
-    /// </summary>
-    [DataField]
-    public bool OnlyWhitelisted;
-
+    [DataField("required", required: true)]
+    public bool Required = false;
     // Default markings for this layer.
-    [DataField]
-    public List<ProtoId<MarkingPrototype>> DefaultMarkings = new();
+    [DataField("defaultMarkings", customTypeSerializer:typeof(PrototypeIdListSerializer<MarkingPrototype>))]
+    public List<string> DefaultMarkings = new();
 
     public static Dictionary<MarkingCategories, MarkingPoints> CloneMarkingPointDictionary(Dictionary<MarkingCategories, MarkingPoints> self)
     {
@@ -35,7 +26,6 @@ public sealed partial class MarkingPoints
             {
                 Points = points.Points,
                 Required = points.Required,
-                OnlyWhitelisted = points.OnlyWhitelisted,
                 DefaultMarkings = points.DefaultMarkings
             };
         }
@@ -54,9 +44,8 @@ public sealed partial class MarkingPointsPrototype : IPrototype
     ///     use whitelisted markings, and not globally usable markings.
     ///     Only used for validation and profile construction. Ignored anywhere else.
     /// </summary>
-    [DataField]
-    public bool OnlyWhitelisted;
+    [DataField("onlyWhitelisted")] public bool OnlyWhitelisted;
 
-    [DataField(required: true)]
+    [DataField("points", required: true)]
     public Dictionary<MarkingCategories, MarkingPoints> Points { get; private set; } = default!;
 }

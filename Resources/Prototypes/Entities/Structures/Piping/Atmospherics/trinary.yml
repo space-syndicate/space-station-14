@@ -134,9 +134,6 @@
   placement:
     mode: SnapgridCenter
   components:
-    - type: SubFloorHide
-      visibleLayers:
-      - enum.SubfloorLayers.FirstLayer
     - type: Sprite
       sprite: Structures/Piping/Atmospherics/gasmixer.rsi
       layers:
@@ -236,8 +233,6 @@
     - type: SubFloorHide
       blockInteractions: false
       blockAmbience: false
-      visibleLayers:
-      - enum.SubfloorLayers.FirstLayer
     - type: NodeContainer
       nodes:
         inlet:

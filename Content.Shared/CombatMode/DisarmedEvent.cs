@@ -1,33 +1,31 @@
-namespace Content.Shared.CombatMode;
-
-[ByRefEvent]
-public record struct DisarmedEvent(EntityUid Target, EntityUid Source, float PushProb)
+namespace Content.Shared.CombatMode
 {
-    /// <summary>
-    /// The entity being disarmed.
-    /// </summary>
-    public readonly EntityUid Target = Target;
+    public sealed class DisarmedEvent : HandledEntityEventArgs
+    {
+        /// <summary>
+        ///     The entity being disarmed.
+        /// </summary>
+        public EntityUid Target { get; init; }
 
-    /// <summary>
-    /// The entity performing the disarm.
-    /// </summary>
-    public readonly EntityUid Source = Source;
+        /// <summary>
+        ///     The entity performing the disarm.
+        /// </summary>
+        public EntityUid Source { get; init; }
 
-    /// <summary>
-    /// Probability for push/knockdown.
-    /// </summary>
-    public readonly float PushProbability = PushProb;
+        /// <summary>
+        ///     Probability for push/knockdown.
+        /// </summary>
+        public float PushProbability { get; init; }
 
-    /// <summary>
-    /// Prefix for the popup message that will be displayed on a successful push.
-    /// Should be set before returning.
-    /// </summary>
-    public string PopupPrefix = "";
+        /// <summary>
+        ///     Prefix for the popup message that will be displayed on a successful push.
+        ///     Should be set before returning.
+        /// </summary>
+        public string PopupPrefix { get; set; } = "";
 
-    /// <summary>
-    /// Whether the entity was successfully stunned from a shove.
-    /// </summary>
-    public bool IsStunned;
-
-    public bool Handled;
+        /// <summary>
+        ///     Whether the entity was successfully stunned from a shove.
+        /// </summary>
+        public bool IsStunned { get; set; }
+    }
 }
