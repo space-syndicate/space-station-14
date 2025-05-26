@@ -1,4 +1,4 @@
-﻿using Content.Shared.Chat.TypingIndicator;
+using Content.Shared.Chat.TypingIndicator;
 using Robust.Client.GameObjects;
 using Robust.Client.Graphics;
 using Robust.Shared.Prototypes;
@@ -35,7 +35,6 @@ public sealed class TypingIndicatorVisualizerSystem : VisualizerSystem<TypingInd
             return;
         }
 
-        //AppearanceSystem.TryGetData<bool>(uid, TypingIndicatorVisuals.IsTyping, out var isTyping, args.Component); // Corvax-TypingIndicator
         var layerExists = args.Sprite.LayerMapTryGet(TypingIndicatorLayers.Base, out var layer);
         if (!layerExists)
             layer = args.Sprite.LayerMapReserveBlank(TypingIndicatorLayers.Base);
@@ -44,8 +43,7 @@ public sealed class TypingIndicatorVisualizerSystem : VisualizerSystem<TypingInd
         args.Sprite.LayerSetState(layer, proto.TypingState);
         args.Sprite.LayerSetShader(layer, proto.Shader);
         args.Sprite.LayerSetOffset(layer, proto.Offset);
-        // args.Sprite.LayerSetVisible(layer, isTyping); // Corvax-TypingIndicator
-        // Corvax-TypingIndicator-Start
+
         AppearanceSystem.TryGetData<TypingIndicatorState>(uid, TypingIndicatorVisuals.State, out var state);
         args.Sprite.LayerSetVisible(layer, state != TypingIndicatorState.None);
         switch (state)
@@ -57,6 +55,5 @@ public sealed class TypingIndicatorVisualizerSystem : VisualizerSystem<TypingInd
                 args.Sprite.LayerSetState(layer, proto.TypingState);
                 break;
         }
-        // Corvax-TypingIndicator-End
     }
 }

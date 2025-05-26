@@ -18,3 +18,7 @@ marking-TattooCampbellLeftLeg = Татуировка, левая нога (Кэ�
 marking-TattooCampbellRightLeg = Татуировка, правая нога (Кэмпбелль)
 marking-TattooEyeRight = Правый глаз
 marking-TattooEyeLeft = Левый глаз
+marking-TattooEyeMothRight-tattoo_eye_moth_r = Right Eye
+marking-TattooEyeMothRight = Right Eye
+marking-TattooEyeMothLeft-tattoo_eye_moth_l = Left Eye
+marking-TattooEyeMothLeft = Left Eye

@@ -1,0 +1,34 @@
+- type: entity
+  id: OrganIPCBrain
+  parent: BaseHumanOrganUnGibbable
+  name: brain IPC
+  description: "The source of incredible, unending intelligence. Honk."
+  components:
+  - type: Sprite
+    sprite: Objects/Specific/Robotics/mmi.rsi
+    layers:
+    - state: posibrain
+      map: ["base"]
+  - type: Organ
+  - type: Input
+    context: "ghost"
+  - type: Brain
+  - type: InputMover
+  - type: Examiner
+  - type: BlockMovement
+  - type: Item
+    size: Small
+    heldPrefix: brain
+
+- type: entity
+  id: OrganIpcEyes
+  parent: BaseHumanOrgan
+  name: IPC eyes
+  description: "I see you!"
+  components:
+  - type: Sprite
+    sprite: Objects/Misc/proximity_sensor.rsi
+    state: icon
+  - type: Item
+    size: Small
+    heldPrefix: eyeballs

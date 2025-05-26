@@ -1,4 +1,4 @@
-﻿- type: job
+- type: job
   id: Captain
   name: job-name-captain
   description: job-description-captain
@@ -11,6 +11,9 @@
       department: Medical
       time: 72000 #20 hrs # Corvax-RoleTime
     - !type:DepartmentTimeRequirement
+      department: Science
+      time: 14400 # 4 hours
+    - !type:DepartmentTimeRequirement
       department: Security
       time: 72000 #20 hrs # Corvax-RoleTime
 #    - !type:DepartmentTimeRequirement
@@ -18,6 +21,10 @@
 #      time: 54000 # 15 hours
     - !type:OverallPlaytimeRequirement
       time: 504000 #140 hrs # Corvax-RoleTime
+    - !type:TraitsRequirement #Corvax-TraitsRequirement
+      inverted: true
+      traits:
+      - Muted
   weight: 20
   startingGear: CaptainGear
   icon: "JobIconCaptain"

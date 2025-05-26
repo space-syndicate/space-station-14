@@ -12,3 +12,5 @@ ent-SoapHomemade = мыло
     .desc = Самодельный брусок мыла. Пахнет... уф....
 ent-SoapOmega = омега мыло
     .desc = Самое совершенное мыло, известное человечеству. Пахнет блюспейсом.
+ent-SoapBorg = soap
+    .desc = A Nanotrasen brand bar of soap. Smells of plasma and machines.
