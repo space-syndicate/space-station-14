@@ -16,6 +16,8 @@ ent-PaperNanoTaskItem = распечатка НаноДела
     .desc = Распечатка НаноДела. Можно вставить в КПК, чтобы добавить в свои дела.
 ent-PaperCargoBountyManifest = этикетка запроса
     .desc = Бумажная этикетка, обозначающая, что ящик содержит нужный товар. Продав ящик с такой этикеткой, вы получите награду.
+ent-PaperSalvageJobLabel = salvage job shipment label
+    .desc = A paper label designating a crate as containing a shipment to fulfill a salvage job. Selling a crate with this will fulfill the job.
 ent-PaperCNCSheet = лист персонажа
     .desc = Лист для вашего персонажа игры Карпы и Крипты.
 ent-PaperWritten = { ent-Paper }
@@ -25,7 +27,6 @@ ent-NukeCodePaper = коды ядерной аутентификации
 ent-NukeCodePaperStation = { ent-NukeCodePaper }
     .suffix = Только станция
     .desc = { ent-NukeCodePaper.desc }
-
 ent-TraitorCodePaper = кодовое слово Синдиката
     .desc = Раскрытое кодовое слово, с помощью которого можно связаться с Синдикатом.
 ent-AllTraitorCodesPaper = реестр кодовых слов Синдиката

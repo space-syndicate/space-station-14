@@ -42,3 +42,5 @@ ent-ClothingBackpackDuffelSyndicateMedicalBundleFilled = medical bundle
     .desc = All you need to get your comrades back in the fight.
 ent-ClothingBackpackDuffelSyndicateDecoyKitFilled = decoy bundle
     .desc = Contains distractions, both auditory and visual. Smell coming soon.
+ent-ClothingBackpackDuffelSyndicateFilledStarterKit = basic operative bundle
+    .desc = Contains a weapon, medical supplies, breaching tools, spare ammo, and some simple utilities.
