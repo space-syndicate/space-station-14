@@ -24,14 +24,14 @@ cargo-console-menu-cargo-order-row-approve-button = Одобрить
 cargo-console-menu-cargo-order-row-cancel-button = Отменить
 cargo-console-menu-tab-title-orders = Orders
 cargo-console-menu-tab-title-funds = Transfers
-cargo-console-menu-account-action-transfer-limit = [bold]Transfer Limit:[/bold] ${ $limit }
-cargo-console-menu-account-action-transfer-limit-unlimited-notifier = [color=gold](Unlimited)[/color]
-cargo-console-menu-account-action-select = [bold]Account Action:[/bold]
-cargo-console-menu-account-action-amount = [bold]Amount:[/bold] $
-cargo-console-menu-account-action-button = Transfer
-cargo-console-menu-toggle-account-lock-button = Toggle Transfer Limit
-cargo-console-menu-account-action-option-withdraw = Withdraw Cash
-cargo-console-menu-account-action-option-transfer = Transfer Funds to { $code }
+cargo-console-menu-account-action-transfer-limit = [bold]Ограничение переводов:[/bold] ${ $limit }
+cargo-console-menu-account-action-transfer-limit-unlimited-notifier = [color=gold](Неограничено)[/color]
+cargo-console-menu-account-action-select = [bold]Действие с записью:[/bold]
+cargo-console-menu-account-action-amount = [bold]Количество:[/bold] $
+cargo-console-menu-account-action-button = Перевести
+cargo-console-menu-toggle-account-lock-button = Переключить ограничение переводов
+cargo-console-menu-account-action-option-withdraw = Снять наличные
+cargo-console-menu-account-action-option-transfer = Перевести средства в { $code }
 # Orders
 cargo-console-order-not-allowed = Доступ запрещён
 cargo-console-station-not-found = Нет доступной станции
@@ -83,7 +83,7 @@ cargo-acquisition-slip-body = [head=3]Asset Detail[/head]
     { "[bold]Unit cost:[/bold" }] ${ $unit }
     { "[bold]Amount:[/bold]" } { $amount }
     { "[bold]Cost:[/bold]" } ${ $cost }
-    
+
     { "[head=3]Purchase Detail[/head]" }
     { "[bold]Orderer:[/bold]" } { $orderer }
     { "[bold]Reason:[/bold]" } { $reason }
