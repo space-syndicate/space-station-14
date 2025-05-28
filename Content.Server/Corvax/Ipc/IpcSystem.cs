@@ -112,7 +112,7 @@ public sealed class IpcSystem : EntitySystem
     {
         if (!_powerCell.TryGetBatteryFromSlot(uid, out var battery) || battery.CurrentCharge / battery.MaxCharge < 0.01f)
         {
-            args.ModifySpeed(0.5f);
+            args.ModifySpeed(0.2f);
         }
     }
 
