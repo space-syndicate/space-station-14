@@ -128,6 +128,7 @@
       Burn:
         sprite: Mobs/Effects/burn_damage.rsi
   - type: ProtectedFromStepTriggers
+  - type: EyeProtection
 
 - type: entity
   save: false
