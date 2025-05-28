@@ -1,12 +1,12 @@
-- type: entity
-  id: PlayerStationAiPilgrim
-  parent: PlayerStationAi
-  suffix: Job spawn, Pilgrim
-  components:
-  - type: Sprite
-    sprite: Corvax/Mobs/Silicon/Station_ai/mia.rsi
-    noRot: true
-    layers:
-    - state: base
-    - state: ai
-      shader: unshaded
+# - type: entity
+#   id: PlayerStationAiPilgrim
+#   parent: PlayerStationAi
+#   suffix: Job spawn, Pilgrim
+#   components:
+#   - type: Sprite
+#     sprite: Corvax/Mobs/Silicon/Station_ai/mia.rsi
+#     noRot: true
+#     layers:
+#     - state: base
+#     - state: ai
+#       shader: unshaded

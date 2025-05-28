@@ -14,5 +14,7 @@ ent-FoodTacoBeefSupreme = beef taco supreme
     .desc = It's like a regular beef taco, but surpeme!
 ent-FoodTacoChickenSupreme = chicken taco supreme
     .desc = It's like a regular chicken taco, but surpeme!
+ent-FoodTacoDragon = draco
+    .desc = A dragon taco, which is technically also a fish taco.
 ent-FoodMealSoftTaco = soft taco
     .desc = Take a bite!

@@ -1,5 +1,3 @@
-ent-ClothingOuterHardsuitBasic = basic hardsuit
-    .desc = A basic, universal hardsuit that protects the wearer against the horrors of life in space. Beats not having a hardsuit, at least.
 ent-ClothingOuterHardsuitAtmos = atmos hardsuit
     .desc = A special suit that protects against hazardous, low pressure environments. Has thermal shielding.
 ent-ClothingOuterHardsuitEngineering = engineering hardsuit

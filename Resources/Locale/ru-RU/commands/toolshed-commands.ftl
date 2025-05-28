@@ -46,4 +46,5 @@ command-description-xenoartifact-printMatrix = Prints out matrix that displays a
 command-description-xenoartifact-totalResearch = Gets all research points that can be extracted from artifact currently.
 command-description-xenoartifact-averageResearch = Calculates amount of research points average generated xeno artifact will output when fully activated.
 command-description-xenoartifact-unlockAllNodes = Unlocks all nodes of artifact.
+command-description-jobboard-completeJob = Completes a given salvage job board job for the station.
 command-description-stationevent-simulate = Simulates N number of rounds in which events will occur and prints the occurrences of every event after.

@@ -17,6 +17,6 @@ ent-BaseFoamedMetal = base foamed metal
 ent-FoamedIronMetal = foamed iron metal
     .desc = For sealing hull breaches.
 ent-FoamedAluminiumMetal = foamed aluminium metal
-    .desc = For sealing hull breaches.
+    .desc = Leftover sparse foam from an aluminum foam grenade. Easily destroyed.
 ent-ReactionFlash = { "" }
     .desc = { "" }
