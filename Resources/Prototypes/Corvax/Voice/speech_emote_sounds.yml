@@ -166,8 +166,6 @@
     Weh:
       collection: Weh
 
-
-
 - type: emoteSounds
   id: IpcEmotes
   sounds:
@@ -176,8 +174,6 @@
     ChimeIpc:
       path: /Audio/Machines/chime.ogg
     BuzzIpc:
-      path: /Audio/Machines/buzz-sigh.ogg
-    Buzz:
       path: /Audio/Machines/buzz-sigh.ogg
     Buzz-TwoIpc:
       path: /Audio/Machines/buzz-two.ogg
