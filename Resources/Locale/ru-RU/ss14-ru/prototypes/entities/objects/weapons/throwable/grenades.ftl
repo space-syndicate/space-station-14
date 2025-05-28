@@ -36,9 +36,13 @@ ent-TearGasGrenade = слезоточивая граната
     .desc = Граната со слезоточивым газом для борьбы с беспорядками. Вызывает раздражение, боль и заставляет вас выплакать глаза.
 ent-MetalFoamGrenade = металлопенная граната
     .desc = Аварийное приспособление, используемое для заделывания пробоин. Почти так же надёжно, как настоящие стены.
+ent-AirGrenade = air grenade
+    .desc = A special solid state chemical grenade used for quickly releasing standard air into a spaced area. Fills up to 30 tiles!
 ent-GrenadeDummy = граната-обманка
     .desc = Граната есть - взрыва нет.
 # Corvax-HiddenDesc-Start
 ent-SyndieTrickyBomb = хитробомба
     .desc = Взрывчатка, изготовленная синдикатом, служит отличным отвлекающим манёвром.
+
 # Corvax-HiddenDesc-End
+

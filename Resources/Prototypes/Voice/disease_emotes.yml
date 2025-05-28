@@ -13,9 +13,9 @@
     components:
     - Vocal
   blacklist:
-    components:
-    - Ipc #corvax-species
-    - BorgChassis
+    tags:
+    - SiliconEmotes
+    - Ipc # Corvax-Species
   chatMessages: ["chat-emote-msg-cough"]
   chatTriggers:
     - cough
@@ -60,9 +60,9 @@
     components:
     - Vocal
   blacklist:
-    components:
-    - Ipc #corvax-species
-    - BorgChassis
+    tags:
+    - SiliconEmotes
+    - Ipc # Corvax-Species
   chatMessages: ["chat-emote-msg-yawn"]
   chatTriggers:
     - yawn

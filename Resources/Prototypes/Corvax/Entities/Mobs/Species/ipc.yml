@@ -91,8 +91,9 @@
   - type: Ipc
   - type: ZombieImmune
   - type: Repairable
-    doAfterDelay: 30
-    selfRepairPenalty: 60
+    fuelCost: 30
+    doAfterDelay: 20
+    selfRepairPenalty: 2
   - type: DamagedSiliconAccent
   - type: Reflect
     reflectProb: 0.05
@@ -149,7 +150,6 @@
   - type: Fingerprint
   - type: Blindable
   # Other
-  - type: Perishable
   - type: Butcherable
     butcheringType: Spike # TODO human.
     spawned:
@@ -358,6 +358,7 @@
     - FootstepSound
     - DoorBumpOpener
     - AnomalyHost
+    - Ipc
   - type: Temperature
     heatDamageThreshold: 325
     coldDamageThreshold: 260
@@ -372,8 +373,6 @@
   - type: TemperatureSpeed
     thresholds:
       293: 0.8
-      280: 0.6
-      260: 0.4
   - type: ThermalRegulator
     metabolismHeat: 800
     radiatedHeat: 100
