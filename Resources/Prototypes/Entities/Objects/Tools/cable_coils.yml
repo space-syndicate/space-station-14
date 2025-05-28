@@ -206,11 +206,11 @@
       - SiliconIpc
     damage:
       types:
-        Shock: -7
-        Blunt: -7
-        Slash: -7
-        Piercing: -7
-        Heat: -7
+        Shock: -6
+        Blunt: -6
+        Slash: -6
+        Piercing: -6
+        Heat: -6
     healingBeginSound:
       path: "/Audio/Items/Medical/brutepack_begin.ogg"
     healingEndSound:
