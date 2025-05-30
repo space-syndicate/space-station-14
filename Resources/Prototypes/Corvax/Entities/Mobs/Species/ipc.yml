@@ -70,7 +70,7 @@
     drawRate: 0.8
   # no ToggleCellDraw since dont want to lose access when power is gone
   - type: AccessReader
-    access: [ ["Ipc"], ["Research"] ]
+    access: [ ["Ipc"] ]
   - type: Access
     enabled: true
     tags:
@@ -127,7 +127,8 @@
         color: "#cd7314"
       Burn:
         sprite: Mobs/Effects/burn_damage.rsi
-
+  - type: ProtectedFromStepTriggers
+  - type: EyeProtection
 
 - type: entity
   save: false
