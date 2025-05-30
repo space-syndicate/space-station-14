@@ -121,7 +121,7 @@ public sealed class IpcSystem : EntitySystem
         args.Affected = true;
 
         var damage = new DamageSpecifier();
-        damage.DamageDict.Add("Shock", 30);
+        damage.DamageDict.Add("Shock", 80);
         _damageable.TryChangeDamage(uid, damage);
 
     }
