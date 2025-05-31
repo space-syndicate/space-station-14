@@ -1333,9 +1333,14 @@
       behaviors:
       - !type:DoActsBehavior
         acts: [ "Destruction" ]
+  # Corvax-AlienVaultResprite-start
+  - type: IconSmooth
+    key: walls
+    base: alienvault
+  # Corvax-AlienVaultResprite-end
 
 - type: entity
-  parent: WallVaultAlien
+  parent: BaseWall # Corvax-AlienVaultResprite
   id: WallVaultRock
   name: rock vault wall
   components:
@@ -1345,9 +1350,19 @@
   - type: Icon
     sprite: Structures/Walls/vault.rsi
     state: rockvault
+  # Corvax-AlienVaultResprite-start
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 500
+      behaviors:
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+  # Corvax-AlienVaultResprite-end
 
 - type: entity
-  parent: WallVaultAlien
+  parent: WallVaultRock # Corvax-AlienVaultResprite
   id: WallVaultSandstone
   name: sandstone vault wall
   components:
