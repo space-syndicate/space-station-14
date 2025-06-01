@@ -45753,7 +45753,6 @@ entities:
           - 65
           - 62
           - 69
-          - 67
           - 64
           - 68
 - proto: ClosetWallEmergencyFilledRandom
@@ -46281,13 +46280,6 @@ entities:
     components:
     - type: Transform
       pos: 0.5272286,30.867435
-      parent: 2
-- proto: ClothingHandsGlovesBoxingRigged
-  entities:
-  - uid: 6860
-    components:
-    - type: Transform
-      pos: 0.5584786,30.85181
       parent: 2
 - proto: ClothingHandsGlovesBoxingYellow
   entities:
@@ -47268,15 +47260,6 @@ entities:
     - type: Transform
       pos: 1.6860552,37.71367
       parent: 2
-- proto: ClothingShoesChameleonNoSlips
-  entities:
-  - uid: 67
-    components:
-    - type: Transform
-      parent: 61
-    - type: Physics
-      canCollide: False
-    - type: InsideEntityStorage
 - proto: ClothingShoesClownLarge
   entities:
   - uid: 1229
@@ -55958,13 +55941,6 @@ entities:
       parent: 8420
     - type: Physics
       canCollide: False
-- proto: EnergyCutlass
-  entities:
-  - uid: 8422
-    components:
-    - type: Transform
-      pos: 74.66137,0.62739515
-      parent: 2
 - proto: ExGrenade
   entities:
   - uid: 1264
@@ -86946,7 +86922,6 @@ entities:
           occludes: True
           ents:
           - 1229
-          - 1230
           - 1226
           - 1227
           - 1225
@@ -97893,15 +97868,6 @@ entities:
     - type: Transform
       pos: 50.50245,-8.393928
       parent: 2
-- proto: RevolverCapGunFake
-  entities:
-  - uid: 1230
-    components:
-    - type: Transform
-      parent: 1224
-    - type: Physics
-      canCollide: False
-    - type: InsideEntityStorage
 - proto: RGBStaff
   entities:
   - uid: 14143
