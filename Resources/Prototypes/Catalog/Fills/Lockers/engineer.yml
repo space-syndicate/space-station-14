@@ -148,6 +148,8 @@
       - id: RCD
       - id: RCDAmmo
       - id: MetalFoamGrenade
+      - id: EngBag
+        prob: 0.2
 
 - type: entity
   id: LockerEngineerFilled
@@ -162,6 +164,8 @@
       - id: RCD
       - id: RCDAmmo
       - id: MetalFoamGrenade
+      - id: EngBag
+        prob: 0.5
 
 - type: entity
   id: ClosetRadiationSuitFilled
