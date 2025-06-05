@@ -22,8 +22,8 @@
     rules:
     - id: Thief
       prob: 0.5
-    - id: SubWizard
-      prob: 0.05
+    #- id: SubWizard
+    #  prob: 0.05
 
 - type: entity
   parent: BaseGameRule
@@ -282,7 +282,7 @@
   id: Wizard
   components:
   - type: GameRule
-    minPlayers: 10
+    minPlayers: 45
   - type: AntagSelection
     agentName: wizard-round-end-name
     selectionTime: PrePlayerSpawn
