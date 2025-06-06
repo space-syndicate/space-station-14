@@ -4,8 +4,8 @@ meta:
   engineVersion: 260.2.0
   forkId: ""
   forkVersion: ""
-  time: 05/28/2025 16:11:03
-  entityCount: 166
+  time: 06/06/2025 14:45:58
+  entityCount: 167
 maps: []
 grids:
 - 1
@@ -119,7 +119,7 @@ entities:
       name: NT-SEC "Overseer"
     - type: Transform
       rot: -1.5707963267948966 rad
-      pos: 81.502106,-11.589361
+      pos: 281.5021,188.41064
       parent: invalid
     - type: MapGrid
       chunks:
@@ -980,25 +980,34 @@ entities:
       canCollide: False
 - proto: PowerCellHigh
   entities:
-  - uid: 99
+  - uid: 105
     components:
     - type: Transform
-      pos: 2.360878,2.708334
-      parent: 1
-  - uid: 100
+      parent: 104
+    - type: Physics
+      canCollide: False
+  - uid: 107
     components:
     - type: Transform
-      pos: 2.360878,2.53125
+      parent: 106
+    - type: Physics
+      canCollide: False
+- proto: PowerCellRecharger
+  entities:
+  - uid: 167
+    components:
+    - type: Transform
+      pos: 2.5,2.5
       parent: 1
 - proto: PoweredlightExterior
   entities:
-  - uid: 101
+  - uid: 99
     components:
     - type: Transform
       rot: 1.5707963267948966 rad
       pos: -3.5,3.5
       parent: 1
-  - uid: 102
+  - uid: 100
     components:
     - type: Transform
       rot: -1.5707963267948966 rad
@@ -1006,13 +1015,13 @@ entities:
       parent: 1
 - proto: PoweredlightLED
   entities:
-  - uid: 103
+  - uid: 101
     components:
     - type: Transform
       rot: 1.5707963267948966 rad
       pos: -1.5,0.5
       parent: 1
-  - uid: 104
+  - uid: 102
     components:
     - type: Transform
       rot: -1.5707963267948966 rad
@@ -1051,25 +1060,53 @@ entities:
       isDamageActive: False
 - proto: RadioHandheldSecurity
   entities:
-  - uid: 105
+  - uid: 103
     components:
     - type: Transform
       pos: 2.7629585,2.780283
       parent: 1
 - proto: ShuttleGunSvalinnMachineGun
   entities:
-  - uid: 106
+  - uid: 104
     components:
     - type: Transform
       rot: 3.141592653589793 rad
       pos: -3.5,1.5
       parent: 1
-  - uid: 107
+    - type: ContainerContainer
+      containers:
+        machine_board: !type:Container
+          showEnts: False
+          occludes: True
+          ents: []
+        machine_parts: !type:Container
+          showEnts: False
+          occludes: True
+          ents: []
+        cell_slot: !type:ContainerSlot
+          showEnts: False
+          occludes: True
+          ent: 105
+  - uid: 106
     components:
     - type: Transform
       rot: 3.141592653589793 rad
       pos: 4.5,1.5
       parent: 1
+    - type: ContainerContainer
+      containers:
+        machine_board: !type:Container
+          showEnts: False
+          occludes: True
+          ents: []
+        machine_parts: !type:Container
+          showEnts: False
+          occludes: True
+          ents: []
+        cell_slot: !type:ContainerSlot
+          showEnts: False
+          occludes: True
+          ent: 107
 - proto: ShuttleWindow
   entities:
   - uid: 108
@@ -1134,10 +1171,10 @@ entities:
       parent: 1
     - type: DeviceLinkSource
       linkedPorts:
-        106:
+        104:
         - - Pressed
           - Toggle
-        107:
+        106:
         - - Pressed
           - Toggle
 - proto: SignalButtonDirectional
@@ -1156,16 +1193,16 @@ entities:
         97:
         - - Pressed
           - Toggle
-        104:
-        - - Pressed
-          - Toggle
-        103:
+        102:
         - - Pressed
           - Toggle
         101:
         - - Pressed
           - Toggle
-        102:
+        99:
+        - - Pressed
+          - Toggle
+        100:
         - - Pressed
           - Toggle
 - proto: SignLaserMed
