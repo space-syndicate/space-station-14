@@ -26,7 +26,7 @@
   special:
   - !type:AddImplantSpecial
     implants: [ MindShieldImplant ]
-  
+
 - type: startingGear
   id: BrigmedicGear
   equipment:
@@ -37,3 +37,15 @@
   storage:
     back:
     - Flash
+
+- type: chameleonOutfit
+  id: BrigmedicChameleonOutfit
+  job: Brigmedic
+  hasMindShield: true
+  equipment:
+    head: ClothingHeadHatBeretSecurityMedic
+    eyes: ClothingEyesHudMedSec
+    mask: ClothingMaskBreathMedicalSecurity
+    outerClothing: ClothingUniformJumpsuitBrigmedic #верхняя одежда
+    neck: ClothingNeckScarfStripedRed #шея
+    gloves: ClothingHandsGlovesLatex # перчи
