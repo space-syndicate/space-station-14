@@ -1,5 +1,13 @@
-ent-BaseSuicideAction = { "" }
+ent-BaseAction = { "" }
     .desc = { "" }
+ent-BaseMentalAction = { ent-BaseAction }
+    .desc = { ent-BaseAction.desc }
+ent-BaseSuicideAction = { ent-BaseMentalAction }
+    .desc = { ent-BaseMentalAction.desc }
+ent-BaseImplantAction = { ent-BaseAction }
+    .desc = { ent-BaseAction.desc }
+ent-BaseToggleAction = { ent-BaseAction }
+    .desc = { ent-BaseAction.desc }
 ent-ActionScream = Scream
     .desc = AAAAAAAAAAAAAAAAAAAAAAAAA
 ent-ActionTurnUndead = Turn Undead
@@ -26,8 +34,8 @@ ent-ActionToggleSuitPiece = Toggle Suit Piece
     .desc = Remember to equip the important pieces of your suit before going into action.
 ent-ActionCombatModeToggle = [color=red]Combat Mode[/color]
     .desc = Enter combat mode
-ent-ActionCombatModeToggleOff = [color=red]Combat Mode[/color]
-    .desc = Enter combat mode
+ent-ActionCombatModeToggleOff = { ent-ActionCombatModeToggle }
+    .desc = { ent-ActionCombatModeToggle.desc }
 ent-ActionChangeVoiceMask = Set name
     .desc = Change the name others hear to something else.
 ent-ActionVendingThrow = Dispense Item
@@ -54,3 +62,7 @@ ent-FakeMindShieldToggleAction = [color=green]Toggle Fake Mindshield[/color]
     .desc = Turn the Fake Mindshield implant's transmission on/off
 ent-ActionToggleParamedicSiren = Toggle Paramedic Siren
     .desc = Toggles the paramedic siren on and off.
+ent-ActionToggleRootable = action-name-toggle-rootable
+    .desc = action-description-toggle-rootable
+ent-ActionChameleonController = Control clothing
+    .desc = Change your entire outfit fast!

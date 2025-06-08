@@ -26,6 +26,8 @@ construction-graph-tag-medical-hud = medical hud
 construction-graph-tag-sun-glasses = sun glasses
 construction-graph-tag-security-helmet = security helmet
 # materials
+construction-graph-tag-manipulator = modular machine part
+# materials
 construction-graph-tag-capacitor = capacitor
 construction-graph-tag-voice-trigger = a voice trigger
 construction-graph-tag-signal-trigger = a signal trigger
@@ -60,6 +62,8 @@ construction-graph-tag-rifle-stock = rifle stock
 construction-graph-tag-match-stick = match stick
 construction-graph-tag-potato = a potato
 construction-graph-tag-wheat-bushel = wheat bushel
+construction-graph-tag-apron = an apron
+construction-graph-tag-utility-belt = a utility belt
 construction-graph-tag-corgi-hide = corgi hide
 soil-construction-graph-any-mushroom = any mushroom
 # toys
