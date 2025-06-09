@@ -19443,9 +19443,9 @@ entities:
       rot: 1.5707963267948966 rad
       pos: -26.520823,-9.488195
       parent: 2
-- proto: CaptainDrobe
+- proto: DresserCaptainFilled
   entities:
-  - uid: 2634
+  - uid: 2629
     components:
     - type: Transform
       pos: -2.5,1.5
