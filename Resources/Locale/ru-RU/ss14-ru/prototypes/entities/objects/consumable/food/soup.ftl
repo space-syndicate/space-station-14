@@ -1,5 +1,5 @@
-ent-FoodBowlBase = { ent-FoodBase }
-    .desc = { ent-FoodBase.desc }
+ent-FoodBowlBase = { ent-FoodInjectableBase }
+    .desc = { ent-FoodInjectableBase.desc }
 ent-FoodSoupPea = гороховый суп
     .desc = Простой гороховый суп.
 ent-FoodSaladAesir = божественный салат

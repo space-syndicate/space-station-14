@@ -1,6 +1,6 @@
-ent-ChemDispenser = раздатчик химикатов
-    .desc = Химический дозатор промышленного класса с большим запасом реагентов.
-    .suffix = Заполненный
-ent-ChemDispenserEmpty = { ent-ChemDispenser }
+ent-ChemDispenserEmpty = раздатчик химикатов
+    .desc = Химический дозатор промышленного класса.
     .suffix = Пустой
-    .desc = { ent-ChemDispenser.desc }
+ent-ChemDispenser = { ent-ChemDispenserEmpty }
+    .suffix = Заполненный
+    .desc = { ent-ChemDispenserEmpty.desc }
