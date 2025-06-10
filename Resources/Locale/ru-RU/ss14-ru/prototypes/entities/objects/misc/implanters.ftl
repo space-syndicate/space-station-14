@@ -1,5 +1,5 @@
 ent-BaseImplanter = имплантер
-    .desc = { ent-BaseItem.desc }
+    .desc = Шприц, специально предназначенный для введения и извлечения подкожных имплантов. Будьте осторожны при извлечении имплантатов, так как неправильные настройки извлечения могут травмировать пользователя.
 ent-Implanter = { ent-BaseImplanter }
     .desc = Одноразовый шприц, специально предназначенный для введения и извлечения подкожных имплантов.
 ent-ImplanterAdmeme = { ent-Implanter }
@@ -30,6 +30,9 @@ ent-EmpImplanter = имплантер "ЭМИ"
 ent-ScramImplanter = имплантер "побег"
     .desc = { ent-BaseImplantOnlyImplanterSyndi.desc }
 ent-DnaScramblerImplanter = имплантер "миксер ДНК"
+    .desc = { ent-BaseImplantOnlyImplanterSyndi.desc }
+ent-ChameleonControllerImplanter = chameleon controller implant
+    .suffix = chameleon controller
     .desc = { ent-BaseImplantOnlyImplanterSyndi.desc }
 ent-MicroBombImplanter = имплантер "микробомба"
     .desc = { ent-BaseImplantOnlyImplanterSyndi.desc }

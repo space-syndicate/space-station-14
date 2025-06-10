@@ -26,7 +26,7 @@ construction-graph-tag-medical-hud = медицинский визор
 construction-graph-tag-sun-glasses = солнцезащитные очки
 construction-graph-tag-security-helmet = шлем СБ
 # materials
-construction-graph-tag-capacitor = конденсатор
+construction-graph-tag-manipulator = modular machine part
 construction-graph-tag-voice-trigger = голосовой триггер
 construction-graph-tag-signal-trigger = сигнальный триггер
 construction-graph-tag-proximity-sensor = датчик движения
@@ -60,6 +60,8 @@ construction-graph-tag-rifle-stock = ружейное ложе
 construction-graph-tag-match-stick = спичка
 construction-graph-tag-potato = картофель
 construction-graph-tag-wheat-bushel = сноп пшеницы
+construction-graph-tag-apron = an apron
+construction-graph-tag-utility-belt = a utility belt
 construction-graph-tag-corgi-hide = шкура корги
 soil-construction-graph-any-mushroom = любой гриб
 # toys

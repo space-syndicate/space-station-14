@@ -1,6 +1,5 @@
 # UI
 
-
 ## Window
 
 air-alarm-ui-access-denied = Недостаточный уровень доступа!
@@ -40,7 +39,6 @@ air-alarm-ui-mode-panic = Паника
 air-alarm-ui-mode-none = Нет
 
 ## Widgets
-
 
 ### General
 
