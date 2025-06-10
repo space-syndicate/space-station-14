@@ -39,3 +39,15 @@
     pocket2: BookSpaceLaw
   inhand:
     - BriefcaseIAAFilled
+
+- type: chameleonOutfit
+  id: IAAChameleonOutfit
+  job: IAA
+  hasMindShield: true
+  equipment:
+    head: ClothingHeadHatBowlerHat
+    eyes: ClothingEyesGlassesSunglasses
+    outerClothing: ClothingUniformJumpsuitLawyerBlack
+    neck: ClothingNeckScarfStripedBlue
+    gloves: ClothingHandsGlovesColorWhite
+    mask: ClothingMaskBreath

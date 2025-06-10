@@ -71,6 +71,18 @@
             "name": "diona2"
         },
         {
+            "name": "diona3",
+            "delays": [
+                [
+                    0.2,
+                    0.3,
+                    0.3,
+                    0.5,
+                    0.5
+                ]
+            ]
+        },
+        {
             "name": "gingerbread0",
             "delays": [
                 [
@@ -86,6 +98,18 @@
         },
         {
             "name": "gingerbread2"
+        },
+        {
+            "name": "gingerbread3",
+            "delays": [
+                [
+                    0.2,
+                    0.3,
+                    0.3,
+                    0.5,
+                    0.5
+                ]
+            ]
         },
         {
             "name": "alien0",

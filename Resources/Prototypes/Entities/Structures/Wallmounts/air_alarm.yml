@@ -42,7 +42,7 @@
     - GasVent
     - GasScrubber
   - type: AtmosAlarmableVisuals
-    layerMap: "airAlarmBase"
+    layerMap: "airAlarmState"
     alarmStates:
       Normal: alarm0
       Warning: alarm1  # Corvax-Resprite
@@ -81,8 +81,10 @@
   - type: Sprite
     sprite: Structures/Wallmounts/air_monitors.rsi
     layers:
+    - state: alarmp
+      map: ["airAlarmBase"]
     - state: alarm0
-      map: ["airAlarmBase"] # TODO: fire alarm enum
+      map: ["airAlarmState"] # TODO: fire alarm enum
     - state: alarmx
       map: ["enum.WiresVisualLayers.MaintenancePanel"]
   - type: Transform
