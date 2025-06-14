@@ -1,0 +1,58 @@
+# Advertisements
+- type: entity
+  id: MailDeathSquadMovieSpam
+  name: Two tickets on movie!
+  description: You just received tickets on "ALL CONTRACTS ARE TERMINATED".
+  parent: Paper
+  components:
+  - type: Paper
+    content: delivery-spam-death-squad-movie
+
+- type: entity
+  id: MailKosmoFansSpam
+  name: Subscribe to my profile!
+  description: An advertisment of someone's KosmoFans profile.
+  parent: Paper
+  components:
+  - type: Paper
+    content: delivery-spam-kosmofans
+
+# Scam Mail
+- type: entity
+  id: MailFillOutTheFormSpam
+  name: Fill out the form, please
+  description: Your money is in danger, do it quick!
+  parent: Paper
+  components:
+  - type: Paper
+    content: delivery-spam-fill-out-the-form
+    # symbol "░" in [color=white]:
+    # ╔════════════════════════╗
+    # ║░░░░░░░░░░░░░░░░░░░░░░░░║══════╗
+    # ║░┌────────────────────┐░║██████║
+    # ║░└────────────────────┘░║██████║
+    # ║░░░░░░░░░░░┌──┐┌──┐░░░░░║░░░░░░║
+    # ║░░░░░░░░░░░└──┘└──┘░░░░░║░┌──┐░║
+    # ║░┌────────────────┐░░░░░║░└──┘░║
+    # ║░└────────────────┘░░░░░║░░░░░░║
+    # ║░░░░░░░░░░░░░░░░░░░░░░░░║░░░░░░║
+    # ╚════════════════════════╝░░░░░░║
+    # ░░░░░░░╚════════════════════════╝
+
+- type: entity
+  id: MailMortySpam
+  name: Pray with us!
+  description: Morty is legend.
+  parent: Paper
+  components:
+  - type: Paper
+    content: delivery-spam-morty
+
+- type: entity
+  id: MailAntiMortySpam
+  name: Hate with us!
+  description: Go away, Morty!
+  parent: Paper
+  components:
+  - type: Paper
+    content: delivery-spam-anti-morty
