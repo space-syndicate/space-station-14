@@ -1,7 +1,7 @@
 {
   "version": 1,
   "license": "CC-BY-SA-3.0",
-  "copyright": "Modified by paige404 for SS14. Sprite adapted from https://github.com/space-wizards/space-station-14/blob/40044203e6ae7d7d2958c02e0d5e98dacdcd23d8/Resources/Textures/Clothing/Uniforms/Jumpskirt/color.rsi/, with coloration from https://github.com/space-wizards/space-station-14/tree/f46a6a8d813dd20f4a86d5d0bc4a0c70cbd821dd/Resources/Textures/Clothing/Uniforms/Jumpsuit/rainbow.rsi/.",
+  "copyright": "Taken from tgstation at commit https://github.com/tgstation/tgstation/commit/2fea0a59470c476cf3f927833d3918d89cbe6af8, monkey by Ko4erga (discord)",
   "size": {
     "x": 32,
     "y": 32
@@ -12,6 +12,10 @@
     },
     {
       "name": "equipped-INNERCLOTHING",
+      "directions": 4
+    },
+    {
+      "name": "equipped-INNERCLOTHING-monkey",
       "directions": 4
     },
     {
