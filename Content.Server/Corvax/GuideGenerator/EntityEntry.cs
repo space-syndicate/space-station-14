@@ -14,10 +14,14 @@ public sealed class EntityEntry
     [JsonPropertyName("desc")]
     public string Description { get; }
 
+    [JsonPropertyName("suffix")]
+    public string Suffix { get; }
+
     public EntityEntry(EntityPrototype proto)
     {
         Id = proto.ID;
         Name = TextTools.TextTools.CapitalizeString(proto.Name); // Corvax-Wiki
         Description = proto.Description;
+        Suffix = proto.EditorSuffix != null ? proto.EditorSuffix : "";
     }
 }
