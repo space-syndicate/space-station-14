@@ -5,6 +5,9 @@
   playTimeTracker: JobIAA
   requirements:
   - !type:DepartmentTimeRequirement
+    department: Civilian
+    time: 72000 # 20 hours
+  - !type:DepartmentTimeRequirement
     department: Engineering
     time: 72000 #20 hrs
   - !type:DepartmentTimeRequirement
