@@ -6,28 +6,28 @@
   requirements:
   - !type:DepartmentTimeRequirement
     department: Civilian
-    time: 72000 # 20 hours
+    time: 36000 # 10 hours
   - !type:DepartmentTimeRequirement
     department: Cargo
-    time: 72000 # 20 hours
+    time: 36000 # 10 hours
   - !type:DepartmentTimeRequirement
     department: Engineering
-    time: 72000 #20 hrs
+    time: 36000 # 10 hrs
   - !type:DepartmentTimeRequirement
     department: Medical
-    time: 72000 #20 hrs
+    time: 36000 # 10 hrs
   - !type:DepartmentTimeRequirement
     department: Science
-    time: 72000 # 20 hours
+    time: 36000 # 10 hours
   - !type:DepartmentTimeRequirement
     department: Security
-    time: 72000 # 20 hrs
+    time: 36000 # 10 hrs
   - !type:DepartmentTimeRequirement
     department: Command
-    time: 144000 # 40 hours
+    time: 72000 # 20 hours
   - !type:RoleTimeRequirement
     role: JobCaptain
-    time: 72000 # 20 hours
+    time: 36000 # 10 hours
   - !type:OverallPlaytimeRequirement
     time: 504000 #140 hrs
   - !type:TraitsRequirement
