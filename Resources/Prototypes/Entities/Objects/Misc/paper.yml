@@ -86,9 +86,12 @@
   - type: PaperVisuals
 # Corvax-Printer-Start
   - type: Material
+  - type: Stack
+    stackType: PrinterPage
+    count: 1
   - type: PhysicalComposition
     materialComposition:
-      Paper: 100
+      PrinterPaper: 100
 # Corvax-Printer-End
 
 - type: entity
