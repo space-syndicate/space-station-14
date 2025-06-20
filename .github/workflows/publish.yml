@@ -35,6 +35,7 @@ jobs:
         cp -R Secrets/Resources/ServerPrototypes Resources/Prototypes/CorvaxSecretsServer
         cp -R Secrets/Resources/Locale Resources/Locale/ru-RU/corvax-secrets
         cp -R Secrets/Resources/Textures Resources/Textures/CorvaxSecrets
+        cp -R Secrets/Resources/Audio Resources/Audio/CorvaxSecrets
     # Corvax-Secrets-End
 
     - name: Setup .NET Core
