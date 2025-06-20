@@ -1,5 +1,5 @@
 - type: entity
-  parent: BasePlushie
+  parent: BaseRubberToy
   id: RubberPig
   name: toy pig
   description: Squeeze Me, Babe # not Baby
@@ -32,18 +32,9 @@
       collection: RubberPig
       params:
         variation: 0.125
-  - type: Food
-    requiresSpecialDigestion: true
-    useSound:
-      collection: RubberPig
-      params:
-        variation: 0.125
   - type: MeleeWeapon
     wideAnimationRotation: 110
     soundHit:
       collection: RubberPig
       params:
         variation: 0.125
-  - type: PhysicalComposition
-    materialComposition:
-      Plastic: 25
