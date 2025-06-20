@@ -9985,36 +9985,6 @@ entities:
     - type: ContainedSolution
       containerName: spray
       container: 2
-- proto: ActionToggleInternals
-  entities:
-  - uid: 6
-    components:
-    - type: Transform
-      parent: 5
-  - uid: 8
-    components:
-    - type: Transform
-      parent: 7
-  - uid: 11
-    components:
-    - type: Transform
-      parent: 10
-- proto: ActionToggleJetpack
-  entities:
-  - uid: 9
-    components:
-    - type: Transform
-      parent: 7
-- proto: ActionToggleLight
-  entities:
-  - uid: 17
-    components:
-    - type: Transform
-      parent: 16
-  - uid: 19
-    components:
-    - type: Transform
-      parent: 18
 - proto: AirAlarm
   entities:
   - uid: 20
@@ -34645,15 +34615,8 @@ entities:
     - type: Transform
       parent: 4
     - type: GasTank
-      toggleActionEntity: 11
     - type: Physics
       canCollide: False
-    - type: ActionsContainer
-    - type: ContainerContainer
-      containers:
-        actions: !type:Container
-          ents:
-          - 11
     - type: InsideEntityStorage
   - uid: 3292
     components:
@@ -34669,15 +34632,8 @@ entities:
     - type: Transform
       parent: 4
     - type: GasTank
-      toggleActionEntity: 6
     - type: Physics
       canCollide: False
-    - type: ActionsContainer
-    - type: ContainerContainer
-      containers:
-        actions: !type:Container
-          ents:
-          - 6
     - type: InsideEntityStorage
   - uid: 3293
     components:
@@ -56949,18 +56905,9 @@ entities:
     - type: Transform
       parent: 4
     - type: GasTank
-      toggleActionEntity: 8
     - type: Jetpack
-      toggleActionEntity: 9
     - type: Physics
       canCollide: False
-    - type: ActionsContainer
-    - type: ContainerContainer
-      containers:
-        actions: !type:Container
-          ents:
-          - 9
-          - 8
     - type: InsideEntityStorage
 - proto: Joint
   entities:
@@ -57133,42 +57080,28 @@ entities:
       pos: 45.256584,47.91295
       parent: 1
     - type: HandheldLight
-      toggleActionEntity: 17
     - type: ContainerContainer
       containers:
         cell_slot: !type:ContainerSlot
           showEnts: False
           occludes: True
           ent: null
-        actions: !type:Container
-          showEnts: False
-          occludes: True
-          ents:
-          - 17
     - type: Physics
       canCollide: True
-    - type: ActionsContainer
   - uid: 18
     components:
     - type: Transform
       pos: 49.869274,47.8192
       parent: 1
     - type: HandheldLight
-      toggleActionEntity: 19
     - type: ContainerContainer
       containers:
         cell_slot: !type:ContainerSlot
           showEnts: False
           occludes: True
           ent: null
-        actions: !type:Container
-          showEnts: False
-          occludes: True
-          ents:
-          - 19
     - type: Physics
       canCollide: True
-    - type: ActionsContainer
   - uid: 6997
     components:
     - type: Transform
@@ -72625,40 +72558,6 @@ entities:
     - type: Transform
       pos: 74.5,65.5
       parent: 1
-    - type: ActionGrant
-      actions:
-      - ActionVendingThrow
-      - ActionVendingThrow
-      - ActionVendingThrow
-      - ActionVendingThrow
-      - ActionVendingThrow
-      - ActionVendingThrow
-      - ActionVendingThrow
-      - ActionVendingThrow
-      - ActionVendingThrow
-      - ActionVendingThrow
-      - ActionVendingThrow
-      - ActionVendingThrow
-      - ActionVendingThrow
-      - ActionVendingThrow
-      - ActionVendingThrow
-      - ActionVendingThrow
-      - ActionVendingThrow
-      - ActionVendingThrow
-      - ActionVendingThrow
-      - ActionVendingThrow
-      - ActionVendingThrow
-      - ActionVendingThrow
-      - ActionVendingThrow
-      - ActionVendingThrow
-      - ActionVendingThrow
-      - ActionVendingThrow
-      - ActionVendingThrow
-      - ActionVendingThrow
-      - ActionVendingThrow
-      - ActionVendingThrow
-      - ActionVendingThrow
-      - ActionVendingThrow
 - proto: VendingMachineCentDrobe
   entities:
   - uid: 9057
