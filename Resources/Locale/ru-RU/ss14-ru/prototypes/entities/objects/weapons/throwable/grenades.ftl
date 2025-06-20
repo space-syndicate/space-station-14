@@ -39,7 +39,7 @@ ent-MetalFoamGrenade = металлопенная граната
 ent-AirGrenade = air grenade
     .desc = A special solid state chemical grenade used for quickly releasing standard air into a spaced area. Fills up to 30 tiles!
 ent-GrenadeDummy = граната-обманка
-    .desc = Граната есть - взрыва нет.
+    .desc = Граната есть — взрыва нет.
 # Corvax-HiddenDesc-Start
 ent-SyndieTrickyBomb = хитробомба
     .desc = Взрывчатка, изготовленная синдикатом, служит отличным отвлекающим манёвром.

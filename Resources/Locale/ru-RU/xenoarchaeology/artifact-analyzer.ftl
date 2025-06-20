@@ -27,8 +27,8 @@ analysis-console-bias-up = Вверх
 analysis-console-info-trigger = [font="Monospace" size=11]Triggers:[/font]
 analysis-console-info-triggered-value = [font="Monospace" size=11][color=gray]{ $triggers }[/color][/font]
 analysis-console-bias-down = Вниз
-analysis-console-bias-button-info-up = Переключает смещение артефакта при перемещении между его узлами. К поверхности - в сторону нулевой глубины.
-analysis-console-bias-button-info-down = Переключает смещение артефакта при перемещении между его узлами. В глубину - к поздним и более опасным эффектам.
+analysis-console-bias-button-info-up = Переключает смещение артефакта при перемещении между его узлами. К поверхности — в сторону нулевой глубины.
+analysis-console-bias-button-info-down = Переключает смещение артефакта при перемещении между его узлами. В глубину — к поздним и более опасным эффектам.
 analysis-console-extract-value = [font="Monospace" size=11][color=orange]Node { $id } (+{ $value })[/color][/font]
 analysis-console-extract-none = [font="Monospace" size=11][color=orange] No unlocked nodes have any points left to extract [/color][/font]
 analysis-console-extract-sum = [font="Monospace" size=11][color=orange]Total Research: { $value }[/color][/font]
