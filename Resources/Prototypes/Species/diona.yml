@@ -13,9 +13,11 @@
   maleLastNames: NamesDionaLast # Corvax-LastnameGender
   femaleLastNames: NamesDionaLast # Corvax-LastnameGender
   naming: TheFirstofLast
-  youngAge: 3000 # Corvax-SpeciesAgeLore
-  oldAge: 6000 # Corvax-SpeciesAgeLore
-  maxAge: 12000  # Corvax-SpeciesAgeLore
+  # Corvax-SpeciesAgeLore-Start
+  youngAge: 3000
+  oldAge: 6000
+  maxAge: 12000
+  # Corvax-SpeciesAgeLore-End
 
 - type: speciesBaseSprites
   id: MobDionaSprites
