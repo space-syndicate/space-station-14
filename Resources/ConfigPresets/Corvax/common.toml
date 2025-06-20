@@ -22,6 +22,10 @@ map_pool = "CorvaxMapPool"
 secret_weight_prototype = "CorvaxSecretDefault"
 round_restart_time = 240
 
+[ic]
+name_length = 24
+loadout_name_length = 24
+
 [server]
 rules_file = "CorvaxRuleset"
 
