@@ -35,24 +35,6 @@
           Heat: 0.9
 
 - type: entity
-  parent: ClothingOuterCoatWarden
-  id: ClothingOuterCoatWardenAlt
-  name: warden's jacket
-  description: A navy-blue armored jacket with blue shoulder designations and '/Warden/' stitched into one of the chest pockets.
-  components:
-    - type: Sprite
-      sprite: Corvax/Clothing/OuterClothing/Coats/warden_alt.rsi
-    - type: Clothing
-      sprite: Corvax/Clothing/OuterClothing/Coats/warden_alt.rsi
-    - type: Armor
-      modifiers:
-        coefficients:
-          Blunt: 0.8
-          Slash: 0.8
-          Piercing: 0.4
-          Heat: 0.8
-
-- type: entity
   parent: ClothingOuterStorageBase
   id: ClothingOuterCoatSecurityOvercoat
   name: security overcoat
