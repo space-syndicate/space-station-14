@@ -27,7 +27,6 @@ materials-bones = bone
 materials-coal = coal
 materials-diamond = diamond
 materials-gunpowder = gunpowder
-materials-cotton = cotton
 
 # Ores
 materials-raw-iron = raw iron

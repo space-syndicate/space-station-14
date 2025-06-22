@@ -69,7 +69,6 @@
   - type: Tag
     tags:
     - ClothMade
-    - Recyclable
     - HamsterWearable
     - WhitelistChameleon
 
@@ -81,7 +80,6 @@
   - type: Tag
     tags:
     - ClothMade
-    - Recyclable
     - HamsterWearable
     - WhitelistChameleon
 
@@ -100,22 +98,6 @@
   parent: [ClothingHeadHeadHatBaseFlipped, ClothingHeadHatQMsoft]
   id: ClothingHeadHatQMsoftFlipped
   name: quartermaster's cap
-
-- type: entity
-  parent: ClothingHeadHeadHatBaseFlippable
-  id: ClothingHeadHatCommandSoft
-  name: command cap
-  description: It's a baseball hat painted in Command colours.
-  components:
-  - type: Sprite
-    sprite: Clothing/Head/Soft/commandsoft.rsi
-  - type: Clothing
-    sprite: Clothing/Head/Soft/commandsoft.rsi
-
-- type: entity
-  parent: [ ClothingHeadHeadHatBaseFlipped, ClothingHeadHatCommandSoft ]
-  id: ClothingHeadHatCommandSoftFlipped
-  name: command cap
 
 - type: entity
   parent: ClothingHeadHeadHatBaseFlippable
@@ -226,7 +208,6 @@
   - type: Tag
     tags:
     - ClothMade
-    - Recyclable
     - HamsterWearable
     - WhitelistChameleon
 
@@ -238,7 +219,6 @@
   - type: Tag
     tags:
     - ClothMade
-    - Recyclable
     - HamsterWearable
     - WhitelistChameleon
 
@@ -319,7 +299,6 @@
   - type: Tag
     tags:
     - ClothMade
-    - Recyclable
     - HamsterWearable
     - WhitelistChameleon
 
@@ -331,6 +310,5 @@
   - type: Tag
     tags:
     - ClothMade
-    - Recyclable
     - HamsterWearable
     - WhitelistChameleon

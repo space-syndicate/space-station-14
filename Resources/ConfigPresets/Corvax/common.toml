@@ -17,10 +17,9 @@ website = "https://ss14.ru"
 maximum_width = 26
 
 [game]
-lobbyduration = 240
+lobbyduration = 360
 map_pool = "CorvaxMapPool"
 secret_weight_prototype = "CorvaxSecretDefault"
-round_restart_time = 240
 
 [server]
 rules_file = "CorvaxRuleset"

@@ -124,8 +124,6 @@
     sprite: Clothing/Eyes/Glasses/outlawglasses.rsi
   - type: VisionCorrection
   - type: IdentityBlocker
-  - type: StaticPrice
-    price: 500
 
 - type: entity
   parent: ClothingEyesBase
@@ -223,6 +221,23 @@
   - type: IdentityBlocker
     coverage: EYES
 
+#Повстанцы хаоса
+- type: entity
+  parent: [ClothingEyesBase, ShowSecurityIcons]
+  id: ClothingChaosGlassesYellow
+  name: Очки посланника хаоса
+  description: От них так и веет запахом смерти.
+  components:
+  - type: Item
+    size: Tiny
+  - type: Sprite
+    sprite: Clothing/Eyes/Glasses/CCGlassesYellow.rsi
+  - type: Clothing
+    sprite: Clothing/Eyes/Glasses/CCGlassesYellow.rsi
+  - type: FlashImmunity
+  - type: EyeProtection
+    protectionTime: 5
+
 #Make a scanner category when these actually function and we get the trayson
 - type: entity
   parent: ClothingEyesBase
@@ -267,24 +282,3 @@
   - type: Clothing
     sprite: Clothing/Eyes/Glasses/ninjavisor.rsi
   - type: FlashImmunity
-
-- type: entity
-  parent: ClothingEyesBase
-  id: ClothingEyesGlassesNoir
-  name: noir-tech glasses
-  description: A pair of glasses that simulate what the world looked like before the invention of color.
-  components:
-  - type: Sprite
-    sprite: Clothing/Eyes/Glasses/noir.rsi
-  - type: Clothing
-    sprite: Clothing/Eyes/Glasses/sunglasses.rsi
-  - type: IdentityBlocker
-    coverage: EYES
-  - type: FlashImmunity
-  - type: EyeProtection
-    protectionTime: 5
-  - type: NoirOverlay
-  - type: Tag
-    tags:
-    - HamsterWearable
-    - WhitelistChameleon

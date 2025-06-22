@@ -27,7 +27,6 @@
           variation: 0.05
           volume: 10
     - type: UseDelay
-    - type: ExtinguishableSetCollisionWake
     - type: Flammable
       fireSpread: false
       canResistFire: false
@@ -41,7 +40,7 @@
     - type: FireVisuals
       sprite: Objects/Misc/candles.rsi
       normalState: fire-big
-    - type: ToggleableVisuals
+    - type: ToggleableLightVisuals
       spriteLayer: null
       inhandVisuals:
         left:
@@ -75,6 +74,7 @@
       left:
       - state: inhand-left
         color: "#a12349"
+      - state: inhand-left-flame
       right:
       - state: inhand-right
         color: "#a12349"

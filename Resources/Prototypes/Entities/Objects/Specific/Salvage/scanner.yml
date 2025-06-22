@@ -3,7 +3,7 @@
   parent: BaseItem
   name: mineral scanner
   description: A scanner that checks surrounding rock for useful minerals. It must be in your hand or pocket to work.
-  suffix: Always Powered
+  suffix: Unpowered
   components:
   - type: Sprite
     sprite: Objects/Specific/Mining/mineral_scanner.rsi
@@ -12,13 +12,7 @@
     - state: icon-o
       shader: unshaded
       visible: false
-      map: ["enum.ToggleableVisuals.Layer"]
-  - type: Item
-    inhandVisuals:
-      left:
-      - state: inhand-left-reg
-      right:
-      - state: inhand-right-reg
+      map: ["enum.ToggleVisuals.Layer"]
   - type: ItemToggleActiveSound
     activeSound:
       path: /Audio/Ambience/Objects/light_hum.ogg
@@ -28,8 +22,8 @@
   - type: Appearance
   - type: GenericVisualizer
     visuals:
-      enum.ToggleableVisuals.Enabled:
-        enum.ToggleableVisuals.Layer:
+      enum.ToggleVisuals.Toggled:
+        enum.ToggleVisuals.Layer:
           True: { visible: true }
           False: { visible: false }
   - type: ItemToggle
@@ -42,7 +36,7 @@
 - type: entity
   id: MineralScanner
   parent: [ MineralScannerUnpowered, PowerCellSlotMediumItem ]
-  suffix: ""
+  suffix: Powered
   components:
   - type: ToggleCellDraw
   - type: PowerCellDraw
@@ -64,7 +58,7 @@
   parent: MineralScannerUnpowered
   name: advanced mineral scanner
   description: A scanner that checks surrounding rock for useful minerals. It must be in your hand or pocket to work. This one has an extended range.
-  suffix: Always Powered
+  suffix: Unpowered
   components:
   - type: Sprite
     layers:
@@ -72,21 +66,16 @@
     - state: adv-o
       shader: unshaded
       visible: false
-      map: ["enum.ToggleableVisuals.Layer"]
+      map: ["enum.ToggleVisuals.Layer"]
   - type: Item
     storedRotation: -90
-    inhandVisuals:
-      left:
-      - state: inhand-left-adv
-      right:
-      - state: inhand-right-adv
   - type: MiningScanner
     range: 10
 
 - type: entity
   id: AdvancedMineralScanner
   parent: [ AdvancedMineralScannerUnpowered, PowerCellSlotMediumItem ]
-  suffix: ""
+  suffix: Powered
   components:
   - type: ToggleCellDraw
   - type: PowerCellDraw

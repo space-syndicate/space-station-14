@@ -1,5 +1,3 @@
-ent-BaseMechAction = { ent-BaseAction }
-    .desc = { ent-BaseAction.desc }
 ent-ActionMechCycleEquipment = Переключить снаряжение
     .desc = Переключает выбранное снаряжение.
 ent-ActionMechOpenUI = Панель управления

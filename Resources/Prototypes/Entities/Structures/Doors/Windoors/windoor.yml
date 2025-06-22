@@ -367,6 +367,19 @@
     containers:
       board: [ DoorElectronicsJanitor ]
 
+#Посланник хаоса
+- type: entity
+  parent: WindoorSecure
+  id: WindoorChaosLocked
+  name: Раздвижное окно
+  suffix: Chaos, Locked
+  components:
+  - type: ContainerFill
+    containers:
+      board: [ ChaosDoorElectronics ]
+  - type: Wires
+    layoutId: AirlockChaos
+
 - type: entity
   parent: WindoorSecurePlasma
   id: PlasmaWindoorSecureJanitorLocked
@@ -406,15 +419,6 @@
       board: [ DoorElectronicsMedical ]
   - type: Wires
     layoutId: AirlockMedical
-
-- type: entity
-  parent: WindoorSecureCommandLocked
-  id: WindoorSecureResearchDirectorLocked
-  suffix: ResearchDirector, Locked
-  components:
-  - type: ContainerFill
-    containers:
-      board: [ DoorElectronicsResearchDirector ]
 
 - type: entity
   parent: WindoorSecureCargoLocked

@@ -1,5 +1,3 @@
-ent-BaseRuneAction = { ent-BaseAction }
-    .desc = { ent-BaseAction.desc }
 ent-ActionFlashRune = Flash Rune
     .desc = Summons a rune that flashes if used.
 ent-ActionExplosionRune = Explosion Rune

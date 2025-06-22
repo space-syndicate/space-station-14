@@ -35,7 +35,8 @@
   parent: ClothingShoesBaseButcherable
   id: ClothingShoeSlippersDuck
   name: ducky slippers
-  description: You wish these made quacking sounds as you walked. It's a good thing they don't, though.
+  # description: You wish these made quacking sounds as you walked.
+  description: Comfy, yet haunted by the ghosts of ducks you fed bread to as a child.
   components:
   - type: Sprite
     sprite: Clothing/Shoes/Misc/duck-slippers.rsi
@@ -43,7 +44,7 @@
     sprite: Clothing/Shoes/Misc/duck-slippers.rsi
   - type: FootstepModifier
     footstepSoundCollection:
-      collection: FootstepCarpet
+      collection: FootstepDuck
       params:
         variation: 0.07
   - type: Construction
@@ -62,7 +63,7 @@
     sprite: Clothing/Shoes/Misc/lizard-slippers.rsi
   - type: FootstepModifier
     footstepSoundCollection:
-      collection: FootstepCarpet
+      collection: FootstepLizardSlippers
       params:
         variation: 0.02
   - type: Construction
@@ -127,7 +128,7 @@
     sprite: Clothing/Shoes/Boots/speedboots.rsi
     layers:
     - state: icon
-      map: [ "enum.ToggleableVisuals.Layer" ]
+      map: [ "enum.ToggleVisuals.Layer" ]
   - type: Clothing
     sprite: Clothing/Shoes/Boots/speedboots.rsi
   - type: ToggleClothing
@@ -138,8 +139,8 @@
   - type: Appearance
   - type: GenericVisualizer
     visuals:
-      enum.ToggleableVisuals.Enabled:
-        enum.ToggleableVisuals.Layer:
+      enum.ToggleVisuals.Toggled:
+        enum.ToggleVisuals.Layer:
           True: {state: icon-on}
           False: {state: icon}
   - type: StaticPrice
@@ -155,14 +156,12 @@
     tags: []
 
 - type: entity
-  parent: BaseAction
   id: ActionToggleSpeedBoots
   name: Toggle Speed Boots
   description: Toggles the speed boots on and off.
   components:
-  - type: Action
-    itemIconStyle: BigItem
   - type: InstantAction
+    itemIconStyle: BigItem
     event: !type:ToggleActionEvent
 
 - type: entity

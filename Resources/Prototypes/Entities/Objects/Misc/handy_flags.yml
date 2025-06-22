@@ -48,6 +48,18 @@
 
 - type: entity
   parent: BaseItem
+  id: RussiaHandyFlag
+  name: Славянский флаг
+  description: "Strange slavian flag."
+  components:
+  - type: Sprite
+    sprite: Objects/Misc/Handy_Flags/slavian_handy_flag.rsi
+    state: icon
+  - type: Item
+    sprite: Objects/Misc/Handy_Flags/slavian_handy_flag.rsi
+
+- type: entity
+  parent: BaseItem
   id: PirateHandyFlag
   name: pirate handheld flag
   description: "Holding it in your hands, show these carp that you're not kidding."

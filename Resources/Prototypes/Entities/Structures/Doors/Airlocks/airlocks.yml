@@ -42,16 +42,6 @@
 
 - type: entity
   parent: Airlock
-  id: AirlockSalvage
-  suffix: Salvage
-  components:
-  - type: Sprite
-    sprite: Structures/Doors/Airlocks/Standard/salvage.rsi
-  - type: Wires
-    layoutId: AirlockCargo
-
-- type: entity
-  parent: Airlock
   id: AirlockHydroponics
   suffix: Hydroponics
   components:
@@ -219,16 +209,6 @@
 
 - type: entity
   parent: AirlockGlass
-  id: AirlockSalvageGlass
-  suffix: Salvage
-  components:
-  - type: Sprite
-    sprite: Structures/Doors/Airlocks/Glass/salvage.rsi
-  - type: Wires
-    layoutId: AirlockCargo
-
-- type: entity
-  parent: AirlockGlass
   id: AirlockHydroponicsGlass
   suffix: Hydroponics
   components:
@@ -326,3 +306,12 @@
   components:
   - type: Sprite
     sprite: Structures/Doors/Airlocks/Glass/centcomm.rsi
+
+#Посланник хаоса
+- type: entity
+  parent: AirlockSecurityGlass # see standard
+  id: ChaosGlassAirlock
+  suffix: MessengerOfChaos
+  components:
+  - type: Sprite
+    sprite: Structures/Doors/Airlocks/Glass/messenger.rsi

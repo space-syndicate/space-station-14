@@ -15,6 +15,24 @@
     sprintModifier: 0.9
   - type: HeldSpeedModifier
 
+#посланник хаоса
+- type: entity
+  parent: ClothingBackpack
+  id: SSSPBackpackDuffel
+  name: Вещмешок светлого прошлого.
+  description: Его цвета напоминают о тех золотых временах когда небо быго голубее, трава зеленее, а солнце светило ярче.
+  components:
+  - type: Sprite
+    sprite: Clothing/Back/Duffels/povstanci_haosa.rsi
+  - type: Storage
+    maxItemSize: Huge
+    grid:
+    - 0,0,7,4
+  - type: ClothingSpeedModifier
+    walkModifier: 1
+    sprintModifier: 0.9
+  - type: HeldSpeedModifier
+
 - type: entity
   parent: ClothingBackpackDuffel
   id: ClothingBackpackDuffelEngineering
@@ -182,6 +200,7 @@
 - type: entity
   parent: ClothingBackpackDuffelSyndicate
   id: ClothingBackpackDuffelSyndicateAmmo
+  name: syndicate duffel bag
   components:
   - type: Sprite
     sprite: Clothing/Back/Duffels/syndicate.rsi
@@ -202,6 +221,7 @@
 - type: entity
   parent: ClothingBackpackDuffelSyndicate
   id: ClothingBackpackDuffelSyndicateMedical
+  name: syndicate duffel bag
   components:
   - type: Sprite
     sprite: Clothing/Back/Duffels/syndicate.rsi

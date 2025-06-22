@@ -10,10 +10,6 @@
   - !type:DepartmentTimeRequirement
     department: Security
     time: 18000 # 5 hrs
-  - !type:TraitsRequirement
-    inverted: true
-    traits:
-    - Muted
   startingGear: BrigmedicGear
   icon: "JobIconBrigmedic"
   supervisors: job-supervisors-cmo
@@ -26,7 +22,7 @@
   special:
   - !type:AddImplantSpecial
     implants: [ MindShieldImplant ]
-
+  
 - type: startingGear
   id: BrigmedicGear
   equipment:
@@ -37,15 +33,3 @@
   storage:
     back:
     - Flash
-
-- type: chameleonOutfit
-  id: BrigmedicChameleonOutfit
-  job: Brigmedic
-  hasMindShield: true
-  equipment:
-    head: ClothingHeadHatBeretSecurityMedic
-    eyes: ClothingEyesHudMedSec
-    mask: ClothingMaskBreathMedicalSecurity
-    outerClothing: ClothingUniformJumpsuitBrigmedic #верхняя одежда
-    neck: ClothingNeckScarfStripedRed #шея
-    gloves: ClothingHandsGlovesLatex # перчи

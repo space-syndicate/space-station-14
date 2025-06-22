@@ -1,12 +1,12 @@
 ent-BaseCartridgeMagnum = cartridge (.45 magnum)
     .desc = { ent-BaseCartridge.desc }
 ent-CartridgeMagnum = cartridge (.45 magnum)
-    .desc = Heavy magnum cartridge mostly used by revolvers. Standard kinetic ammunition is common and useful in most situations.
+    .desc = { ent-BaseCartridgeMagnum.desc }
 ent-CartridgeMagnumPractice = cartridge (.45 magnum practice)
-    .desc = Heavy magnum cartridge mostly used by revolvers. Chalk ammunition is generally non-harmful, used for practice.
+    .desc = { ent-BaseCartridgeMagnum.desc }
 ent-CartridgeMagnumIncendiary = cartridge (.45 magnum incendiary)
-    .desc = Heavy magnum cartridge mostly used by revolvers. Incendiary ammunition contains a self-igniting compound that sets the target ablaze.
+    .desc = { ent-BaseCartridgeMagnum.desc }
 ent-CartridgeMagnumAP = cartridge (.45 magnum armor-piercing)
-    .desc = Heavy magnum cartridge mostly used by revolvers. Armor piercing ammunition is renowned for its ability to cut straight through body armor.
+    .desc = { ent-BaseCartridgeMagnum.desc }
 ent-CartridgeMagnumUranium = cartridge (.45 magnum uranium)
-    .desc = Heavy magnum cartridge mostly used by revolvers. Uranium ammunition replaces the lead core of the bullet with fissile material, irradiating the target from the inside.
+    .desc = { ent-BaseCartridgeMagnum.desc }

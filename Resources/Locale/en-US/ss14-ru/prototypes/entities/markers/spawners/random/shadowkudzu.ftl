@@ -1,2 +1,2 @@
-ent-ShadowKudzuLootSpawner = shadow kudzu loot spawner
+ent-ShadowKudzuLootSpawner = { ent-MarkerBase }
     .desc = { ent-MarkerBase.desc }

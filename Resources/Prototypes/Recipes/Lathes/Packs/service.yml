@@ -4,7 +4,6 @@
   id: ServiceStatic
   recipes:
   - Bucket
-  - Ashtray
   - DrinkMug
   - DrinkMugMetal
   - DrinkGlass
@@ -20,7 +19,6 @@
   - FoodPlateMuffinTin
   - FoodKebabSkewer
   - SprayBottle
-  - TrashBag
   - LightReplacer
   - MopItem
   - Holoprojector
@@ -52,7 +50,6 @@
   id: Instruments
   recipes:
   - SynthesizerInstrument
-  - PushHorn
 
 - type: latheRecipePack
   id: ServiceBoards

@@ -1,11 +1,5 @@
 #  Does not currently support prototype hot-reloading. See comments in c# file.
 
-# Note that for every explosion type you define, explosions & nukes will start performing worse
-# You should only define a new explopsion type if you really need to
-#
-# If you just want to modify properties other than `damagePerIntensity`, it'd be better to
-# split off explosion damage & explosion visuals/effects into their own separate prototypes.
-
 - type: explosion
   id: Default
   damagePerIntensity:
@@ -49,7 +43,7 @@
   intensityPerState: 20
   lightColor: Orange
   texturePath: /Textures/Effects/fire.rsi
-  fireStates: 3
+  fireStates: 6
 
 - type: explosion
   id: Radioactive
@@ -106,7 +100,7 @@
   intensityPerState: 20
   lightColor: Orange
   texturePath: /Textures/Effects/fire.rsi
-  fireStates: 3
+  fireStates: 6
 
 - type: explosion
   id: HardBomb
@@ -122,7 +116,7 @@
   intensityPerState: 20
   lightColor: Orange
   texturePath: /Textures/Effects/fire.rsi
-  fireStates: 3
+  fireStates: 6
 
 - type: explosion
   id: FireBomb
@@ -133,7 +127,7 @@
       Piercing: 3
   lightColor: Orange
   texturePath: /Textures/Effects/fire.rsi
-  fireStates: 3
+  fireStates: 6
   fireStacks: 2
 
 # STOP

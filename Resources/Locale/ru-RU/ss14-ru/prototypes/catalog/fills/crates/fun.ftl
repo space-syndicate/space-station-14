@@ -1,11 +1,7 @@
-ent-CratePlants = plant crate
-    .desc = A variety pack of potted plants to spruce up your station!
 ent-CrateFunPlushie = ящик плюшевых игрушек
     .desc = Куча мягких плюшевых игрушек. Разложите их повсюду, а потом подумайте, как вы объясните эту покупку NT.
 ent-CrateFunLizardPlushieBulk = оптовый ящик плюшевых унатхов
     .desc = Куча мягких плюшевых унатхов. Разложите их повсюду, а потом подумайте, как вы объясните эту покупку NT.
-ent-CrateFunSharkPlushieBulk = bulk soft toy shark crate
-    .desc = A crate filled with a variety of everyone's favorite finned friend. Rawr!
 ent-CrateFunInstrumentsVariety = набор различных музыкальных инструментов
     .desc = Развеселите и расшевелите станцию с этой разнообразной коллекцией! Содержит семь музыкальных инструментов.
 ent-CrateFunInstrumentsBrass = набор духовых инструментов

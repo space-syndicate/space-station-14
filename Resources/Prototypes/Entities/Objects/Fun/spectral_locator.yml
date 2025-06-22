@@ -3,7 +3,7 @@
   parent: BaseItem
   name: spectral locator
   description: Appears to be a modified anomaly locator. Seems very old.
-  suffix: Always Powered
+  suffix: Unpowered
   components:
   - type: Sprite
     sprite: Objects/Fun/spectrallocator.rsi
@@ -12,20 +12,21 @@
       - state: screen
         shader: unshaded
         visible: false
-        map: ["enum.ToggleableVisuals.Layer"]
+        map: ["enum.ToggleVisuals.Layer"]
   - type: Appearance
   - type: GenericVisualizer
     visuals:
-      enum.ToggleableVisuals.Enabled:
-        enum.ToggleableVisuals.Layer:
+      enum.ToggleVisuals.Toggled:
+        enum.ToggleVisuals.Layer:
           True: { visible: true }
           False: { visible: false }
   - type: ItemToggle
   - type: ProximityBeeper
   - type: ProximityDetector
     range: 12
-    components:
-    - type: Spectral # reacts to AI eye, intentional
+    criteria:
+      components:
+      - Spectral # reacts to AI eye, intentional
   - type: Beeper
     isMuted: true
     minBeepInterval: 0.25
@@ -39,7 +40,7 @@
 - type: entity
   id: SpectralLocator
   parent: [ SpectralLocatorUnpowered, PowerCellSlotSmallItem ]
-  suffix: ""
+  suffix: Powered
   components:
   - type: PowerCellDraw
     drawRate: 1

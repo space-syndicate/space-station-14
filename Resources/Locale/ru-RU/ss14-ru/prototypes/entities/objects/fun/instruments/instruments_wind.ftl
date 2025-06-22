@@ -1,5 +1,3 @@
-ent-BaseWoodwindInstrument = { ent-BaseHandheldInstrument }
-    .desc = { ent-BaseHandheldInstrument.desc }
 ent-SaxophoneInstrument = саксофон
     .desc = Инструмент. Вероятно, вы можете перемолоть его в сырой джаз.
 ent-AccordionInstrument = аккордеон

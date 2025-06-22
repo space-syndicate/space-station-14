@@ -1,0 +1,11 @@
+- type: entity
+  id: SpawnPointChosis
+  parent: MarkerBase
+  name: chaos
+  components:
+  - type: SpawnPoint
+  - type: Sprite
+    layers:
+    - state: green
+    - sprite: Clothing/Uniforms/Jumpsuit/qmturtle.rsi
+      state: icon

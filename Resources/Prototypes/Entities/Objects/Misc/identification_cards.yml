@@ -26,6 +26,20 @@
   - type: StealTarget
     stealGroup: IDCard
 
+#посланник хаоса
+- type: entity
+  parent: IDCardStandard
+  id: MessengerIDCard
+  name: Id карта старых времён
+  description: Карта старых времён,хорошо сохранилась.
+  components:
+  - type: Sprite
+    layers:
+    - state: messenger
+  - type: Access
+    tags:
+    - MessengerOfChaos
+
 #IDs with layers
 
 - type: entity
@@ -652,7 +666,7 @@
     job: AtmosphericTechnician
 
 - type: entity
-  parent: [ IDCardStandard, BaseSyndicateContraband ]
+  parent: IDCardStandard
   id: SyndicateIDCard
   name: syndicate ID card
   components:
@@ -665,7 +679,7 @@
     - SyndicateAgent
 
 - type: entity
-  parent: [ IDCardStandard, BaseMajorContraband ]
+  parent: IDCardStandard
   id: PirateIDCard
   name: pirate ID card
   components:
@@ -738,40 +752,6 @@
     job: Detective
 
 - type: entity
-  parent: IDCardStandard
-  id: PrisonerIDCard
-  name: prisoner ID card
-  description: A generically printed ID card for scummy prisoners.
-  components:
-  - type: Sprite
-    layers:
-    - state: orange
-  - type: Item
-    heldPrefix: orange
-  - type: Access
-    tags:
-    - GenpopEnter
-  - type: GenpopIdCard
-  - type: IdCard
-    jobTitle: job-name-prisoner
-    jobIcon: JobIconPrisoner
-    canMicrowave: false
-  - type: ExpireIdCard
-    expireMessage: genpop-prisoner-id-expire
-    expiredAccess:
-    - GenpopLeave
-  - type: Speech
-    speechVerb: Robotic
-  - type: Tag
-    tags:
-    - DoorBumpOpener
-    - WhitelistChameleon
-    - WhitelistChameleonIdCard
-    - Recyclable
-  - type: StaticPrice # these are infinitely producible.
-    price: 0
-
-- type: entity
   parent: CentcomIDCard
   id: CBURNIDcard
   name: CBURN ID card
@@ -797,7 +777,6 @@
     - state: idcluwne
   - type: IdCard
     jobTitle: job-title-cluwne
-    jobIcon: JobIconCluwne
   - type: Unremoveable
 
 - type: entity
@@ -846,6 +825,7 @@
   name: wizard ID card
   components:
   - type: Sprite
+    sprite: Objects/Misc/id_cards.rsi
     layers:
     - state: wizard
     - state: idwizard
@@ -877,13 +857,13 @@
   - type: Access
     groups:
     - AllAccess
+    - MessengerOfChaos
     - Silicon
     tags:
     - CentralCommand
     - NuclearOperative
     - SyndicateAgent
     - Wizard
-    - Xenoborg
   - type: Tag #  Ignore Chameleon tags
     tags:
     - DoorBumpOpener

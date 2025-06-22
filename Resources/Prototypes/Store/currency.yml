@@ -11,11 +11,6 @@
   canWithdraw: false
 
 - type: currency
-  id: SiliconMemory
-  displayName: store-currency-display-silicon-memory
-  canWithdraw: false
-
-- type: currency
   id: WizCoin
   displayName: store-currency-display-wizcoin
   canWithdraw: false
@@ -24,3 +19,10 @@
 - type: currency
   id: DebugDollar
   displayName: store-currency-display-debugdollar
+
+- type: currency
+  id: Clowncrystal
+  displayName: Clowncrystal
+  cash:
+    1: Clowncrystal1
+  canWithdraw: true

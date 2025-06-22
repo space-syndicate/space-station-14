@@ -137,10 +137,6 @@
     tags:
     - PetWearable
     - WhitelistChameleon
-  - type: PhysicalComposition
-    materialComposition:
-      Steel: 50
-      Plastic: 50
 
 - type: entity
   parent: ClothingMaskBreathMedical
@@ -378,8 +374,6 @@
     slots:
     - Hair
     - Snout
-    - HeadTop
-    - HeadSide
     hideOnToggle: true
   - type: Armor
     modifiers:
@@ -445,11 +439,6 @@
     sprite: Clothing/Mask/squadron.rsi
   - type: Clothing
     sprite: Clothing/Mask/squadron.rsi
-  - type: HideLayerClothing
-    slots:
-    - Hair
-    - HeadTop
-    - HeadSide
   - type: Armor
     modifiers:
       coefficients:
@@ -457,6 +446,25 @@
         Slash: 0.80
         Piercing: 0.90
         Heat: 0.90
+
+#посланник хаоса
+- type: entity
+  parent: ClothingMaskGasExplorer
+  id: ClothingChaosGasMask
+  name: Противогаз посланника хаоса
+  description: Противогаз приводящий в ужас.
+  components:
+  - type: Sprite
+    sprite: Clothing/Mask/messenger.rsi
+  - type: Clothing
+    sprite: Clothing/Mask/messenger.rsi
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.90
+        Slash: 0.90
+        Piercing: 0.95
+        Heat: 0.95
 
 - type: entity
   parent: ClothingMaskBase
@@ -643,24 +651,6 @@
     sprite: Clothing/Mask/scaredmime.rsi
   - type: Clothing
     sprite: Clothing/Mask/scaredmime.rsi
-
-- type: entity
-  parent: [ClothingMaskMime, BaseSecurityContraband]
-  id: ClothingMaskMimeSecurity
-  name: security mime mask
-  description: You have the right to remain silent.
-  components:
-  - type: Sprite
-    sprite: Clothing/Mask/mime_security.rsi
-  - type: Clothing
-    sprite: Clothing/Mask/mime_security.rsi
-  - type: Armor
-    modifiers:
-      coefficients:
-        Blunt: 0.95
-        Slash: 0.95
-        Piercing: 0.95
-        Heat: 0.95
 
 - type: entity
   parent: ClothingMaskBase

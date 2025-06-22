@@ -1,0 +1,28 @@
+- type: entity
+  id: ChaosKit
+  name: Экипировка посланника хаоса
+  description: Эти вещи буквально последние пожитки ваших земляков, они надеятся на вас, не подведите их!
+  parent: [ BaseItem, BaseMinorContraband ]
+  components:
+  - type: Sprite
+    sprite: Objects/Storage/Briefcases/chaoscase_silver.rsi
+    state: icon
+  - type: ThiefUndeterminedBackpack
+    possibleSets:
+    - LecterSet
+    - BulldogSet
+    - AKMSSet
+    - ShotgunResupply
+    - LecterResupply
+    - AKMSResupply
+    - EphedrineSet
+    - MedicineSet
+    - StealthBoxSet
+    - KaboomSet
+# TODO Thief pinpointer needed
+  - type: ActivatableUI
+    key: enum.ThiefBackpackUIKey.Key
+  - type: UserInterface
+    interfaces:
+      enum.ThiefBackpackUIKey.Key:
+        type: ThiefBackpackBoundUserInterface

@@ -1,0 +1,327 @@
+# TODO: make more categories
+# Guns
+
+- type: listing
+  id: UplinkClownBananaShoes
+  name: Клоунские банановые сапоги
+  description: Когда юмор и обувь поднимаются на новый уровень абсурда.
+  productEntity: ClothingShoesClownBanana
+  discountCategory: rareDiscounts
+  discountDownTo:
+    Clowncrystal: 2
+  cost:
+    Clowncrystal: 3
+  categories:
+  - FunnyStuff
+
+- type: listing
+  id: UplinkGrenadeDummy
+  name: Граната-обманка
+  description: Граната есть - взрыва нет.
+  productEntity: GrenadeDummy
+  discountCategory: rareDiscounts
+  discountDownTo:
+    Clowncrystal: 5
+  cost:
+    Clowncrystal: 5
+  categories:
+  - Toys
+
+- type: listing
+  id: UplinkBedsheetCosmos
+  name: Космическое одеяло
+  description: Сделано из мечтаний тех, кто смотрит на звезды, так же можно использовать как плащ.
+  productEntity: BedsheetCosmos
+  discountCategory: rareDiscounts
+  discountDownTo:
+    Clowncrystal: 3
+  cost:
+    Clowncrystal: 5
+  categories:
+  - FunnyStuff
+
+- type: listing
+  id: UplinkClothingNeckCloakAdmin
+  name: Плащ админа
+  description: Просто плащ админа
+  productEntity: ClothingNeckCloakAdmin
+  discountCategory: rareDiscounts
+  discountDownTo:
+    Clowncrystal: 3
+  cost:
+    Clowncrystal: 5
+  categories:
+  - FunnyStuff
+
+- type: listing
+  id: UplinkCreamPieLauncherPack
+  name: Набор метателя прирогов
+  description: "Набор включающий в себя метатель пирогов и 5 кремово-банановых пирогов"
+  productEntity: CreamPieLauncherPack
+  discountCategory: rareDiscounts
+  discountDownTo:
+    Clowncrystal: 10
+  cost:
+    Clowncrystal: 15
+  categories:
+  - Packs
+
+- type: listing
+  id: UplinkClothingMaskClownSecurity
+  name: Парик и маска клоуна-охранника
+  description: Защитная маска и парик клоуна, пахнет предательством.
+  productEntity: ClothingMaskClownSecurity
+  discountCategory: rareDiscounts
+  discountDownTo:
+    Clowncrystal: 2
+  cost:
+    Clowncrystal: 3
+  categories:
+  - FunnyStuff
+
+- type: listing
+  id: UplinkClothingShoesBling
+  name: Блестящие клоунские туфли
+  description: Изготовлены из очищенного бананиума и украшены мякотью свежей банановой кожуры. Они обеспечивают яркое появление.
+  productEntity: ClothingShoesBling
+  discountCategory: rareDiscounts
+  discountDownTo:
+    Clowncrystal: 2
+  cost:
+    Clowncrystal: 3
+  categories:
+  - FunnyStuff
+
+- type: listing
+  id: UplinkSingularityToy
+  name: Игрушка сингуло
+  description: Массово производится корпоративным конгломератом садистов!
+  productEntity: SingularityToy
+  discountCategory: rareDiscounts
+  discountDownTo:
+    Clowncrystal: 3
+  cost:
+    Clowncrystal: 5
+  categories:
+  - Toys
+
+- type: listing
+  id: UplinkTeslaToy
+  name: Игрушка Теслы
+  description: Любимая игрушка великого инженера Николы Теслы.
+  productEntity: TeslaToy
+  discountCategory: rareDiscounts
+  discountDownTo:
+    Clowncrystal: 3
+  cost:
+    Clowncrystal: 5
+  categories:
+  - Toys
+
+- type: listing
+  id: UplinkClothingNeckAutismPin
+  name: Значок "Аутизм"
+  description: Буть аутистом - будь преступником
+  productEntity: ClothingNeckAutismPin
+  discountCategory: rareDiscounts
+  discountDownTo:
+    Clowncrystal: 1
+  cost:
+    Clowncrystal: 2
+  categories:
+  - FunnyStuff 
+
+- type: listing
+  id: UplinkClothingOuterHardsuitClown
+  name: Cкафандр клоуна
+  description: Самодельный клоунский скафандр.
+  productEntity: ClothingOuterHardsuitClown
+  discountCategory: rareDiscounts
+  discountDownTo:
+    Clowncrystal: 5
+  cost:
+    Clowncrystal: 10
+  categories:
+  - FunnyStuff
+
+- type: listing
+  id: UplinkClothingUniformJumpsuitClownBanana
+  name: Костюм бананового клоуна
+  description: ХОНК!
+  productEntity: ClothingUniformJumpsuitClownBanana
+  discountCategory: rareDiscounts
+  discountDownTo:
+    Clowncrystal: 2
+  cost:
+    Clowncrystal: 3
+  categories:
+  - FunnyStuff
+
+- type: listing
+  id: UplinkClothingMaskClownBanana
+  name: Парик и маска бананового клоуна
+  description: Наряд настоящего проказника. Клоун неполноценен без парика и маски.
+  productEntity: ClothingMaskClownBanana
+  discountCategory: rareDiscounts
+  discountDownTo:
+    Clowncrystal: 2
+  cost:
+    Clowncrystal: 3
+  categories:
+  - FunnyStuff  
+
+- type: listing
+  id: UplinkSoapNT
+  name: Мыло NT
+  description: Брусок мыла бренда Nanotrasen. Пахнет плазмой.
+  productEntity: SoapNT
+  discountCategory: rareDiscounts
+  discountDownTo:
+    Clowncrystal: 1
+  cost:
+    Clowncrystal: 2
+  categories:
+  - Toys  
+
+- type: listing
+  id: UplinkBananiumHorn
+  name: Бананиумовый клаксон
+  description: Странный клаксон из бананиума.
+  productEntity: BananiumHorn
+  discountCategory: rareDiscounts
+  discountDownTo:
+    Clowncrystal: 2
+  cost:
+    Clowncrystal: 3
+  categories:
+  - Toys  
+
+- type: listing
+  id: UplinkWehMedipen
+  name: Автоиньектор Weh
+  description: Автоиньектор на 10 зарядов заставляющий вас издавать звук Weh.
+  productEntity: WehMedipen
+  discountCategory: rareDiscounts
+  discountDownTo:
+    Clowncrystal: 3
+  cost:
+    Clowncrystal: 5
+  categories:
+  - Toys  
+
+- type: listing
+  id: UplinkWeaponRifleFoamPack
+  name: Набор игрушечной винтовки
+  description: "Набор включающий в себя игрушечную винтовку и коробку поролоновых патронов к ней"
+  productEntity: WeaponRifleFoamPack
+  discountCategory: rareDiscounts
+  discountDownTo:
+    Clowncrystal: 10
+  cost:
+    Clowncrystal: 15
+  categories:
+  - Packs
+
+- type: listing
+  id: UplinkDualToySword
+  name: Двойной игрушечный меч
+  description: Новый двойной пластиковый меч от Sandy-Cat! Имеет реалистичный звук и насыщенный цвет! Почти как настоящий!
+  productEntity: DualToySword
+  discountCategory: rareDiscounts
+  discountDownTo:
+    Clowncrystal: 3
+  cost:
+    Clowncrystal: 5
+  categories:
+  - Toys  
+
+- type: listing
+  id: UplinkRevolverCapGunPack
+  name: Набор игрушечного пистолета
+  description: "Набор включающий в себя игрушечный пистолет, коробку пистонов и спидлоадер с пистонами"
+  productEntity: RevolverCapGunPack
+  discountCategory: rareDiscounts
+  discountDownTo:
+    Clowncrystal: 5
+  cost:
+    Clowncrystal: 10
+  categories:
+  - Packs
+
+- type: listing
+  id: UplinkCrazyGlue
+  name: Тюбик сумасшедшего клея
+  description: Бутылка сумасшедшего клея производства компании Honk! Co
+  productEntity: CrazyGlue
+  discountCategory: rareDiscounts
+  discountDownTo:
+    Clowncrystal: 2
+  cost:
+    Clowncrystal: 3
+  categories:
+  - Toys
+
+- type: listing
+  id: UplinkDrinkSpaceLube
+  name: Тюбик космической смазки
+  description: Высокоэффективный лубрикант, предназначенный для обслуживания чрезвычайно сложного механического оборудования.
+  productEntity: DrinkSpaceLube
+  discountCategory: rareDiscounts
+  discountDownTo:
+    Clowncrystal: 2
+  cost:
+    Clowncrystal: 3
+  categories:
+  - Toys
+
+- type: listing
+  id: UplinkSnapPopBox
+  name: Коробка петард
+  description: Содержит петарды на несколько минут веселья!
+  productEntity: SnapPopBox
+  discountCategory: rareDiscounts
+  discountDownTo:
+    Clowncrystal: 3
+  cost:
+    Clowncrystal: 5
+  categories:
+  - Toys
+
+- type: listing
+  id: UplinkClothingNeckClownmedal
+  name: Медаль клоуна
+  description: Дается за лучший побег из брига.
+  productEntity: ClothingNeckClownmedal
+  discountCategory: rareDiscounts
+  discountDownTo:
+    Clowncrystal: 2
+  cost:
+    Clowncrystal: 3
+  categories:
+  - FunnyStuff
+
+- type: listing
+  id: UplinkClothingControlModsuitHonkOperativeSealed
+  name: Кроваво-Красно-Забавный Р.И.Г
+  description: Клоунский Р.И.Г
+  productEntity: ClothingControlModsuitHonkOperativeSealed
+  discountCategory: rareDiscounts
+  discountDownTo:
+    Clowncrystal: 25
+  cost:
+    Clowncrystal: 30
+  categories:
+  - FunnyStuff 
+
+- type: listing
+  id: UplinkPlushieRGBee
+  name: Плюшевая RGB-пчела
+  description: Милая игрушка, напоминающая плюшевую пчелу после того как вы закинулись ЛСД.
+  productEntity: PlushieRGBee
+  discountCategory: rareDiscounts
+  discountDownTo:
+    Clowncrystal: 2
+  cost:
+    Clowncrystal: 3
+  categories:
+  - Toys

@@ -1,10 +1,5 @@
-ent-BaseStructureWall = basewall
-    .desc = Keeps the air in and the greytide out.
 ent-BaseWall = базовая стена
     .desc = Удерживает воздух внутри, а ассистентов снаружи.
-ent-WallDiagonalBase = { ent-BaseStructureWall }
-    .suffix = Diagonal
-    .desc = { ent-BaseStructureWall.desc }
 ent-WallBrick = кирпичная стена
     .desc = { ent-BaseWall.desc }
 ent-WallClock = заводная стена

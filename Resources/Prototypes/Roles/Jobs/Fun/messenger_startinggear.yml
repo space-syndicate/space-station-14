@@ -1,0 +1,17 @@
+# Посланник хаоса-сырой вариант
+- type: startingGear
+  id: MessengerOfChaosGear
+  equipment:
+    jumpsuit: ClothingChaosUniformJumpsuit
+    shoes: ClothingChaosBoots
+    gloves: ClothingChaosCombatHandsGloves
+    head: ChaosBrownBladedFlatcap
+    id: MessengerIDCard
+    mask: ClothingChaosGasMask
+    back: SSSPBackpackDuffel
+    eyes: ClothingChaosGlassesYellow
+    belt: ClothingChaosTacticalBelt
+    pocket1: ChaosKit
+    pocket2: DoubleEmergencyOxygenTankFilled
+    outerClothing: ClothingChaosOuterVestWeb
+

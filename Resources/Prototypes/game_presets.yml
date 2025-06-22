@@ -19,7 +19,7 @@
     - junk
     - meteorhell
   name: kessler-syndrome-title
-  showInVote: false # secret
+  showInVote: true # secret
   description: kessler-syndrome-description
   rules:
     - KesslerSyndromeScheduler
@@ -39,7 +39,6 @@
     - Traitor
     - Revolutionary
     - Zombie
-    - Wizard
     - KesslerSyndromeScheduler
     - RampingStationEventScheduler
     - SpaceTrafficControlEventScheduler
@@ -60,7 +59,6 @@
     - Traitor
     - Revolutionary
     - Zombie
-    - Wizard
     - BasicStationEventScheduler
     - KesslerSyndromeScheduler
     - MeteorSwarmMildScheduler
@@ -248,7 +246,7 @@
   - meteombies
   name: zombieteors-title
   description: zombieteors-description
-  showInVote: false
+  showInVote: true
   rules:
   - Zombie
   - BasicStationEventScheduler

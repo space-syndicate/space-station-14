@@ -1,0 +1,141 @@
+# ПУШКИ
+- type: thiefBackpackSet
+  id: AKMSSet
+  name: Набор АКМС
+  description: Набор АКМС включающий в себя штурмовую винтовку и 2 магазина к нему.
+  sprite:
+    sprite: Objects/Weapons/Guns/Rifles/ak.rsi
+    state: icon
+  content:
+  - WeaponRifleAk
+  - MagazineLightRifle
+  - MagazineLightRifle
+  - MagazineBoxLightRifle
+
+- type: thiefBackpackSet
+  id: LecterSet
+  name: Набор лектера
+  description: Набор лектера включающий в себя сам лектер и 2 магазина к нему.
+  sprite:
+    sprite: Objects/Weapons/Guns/Rifles/lecter.rsi
+    state: icon
+  content:
+  - WeaponRifleLecter
+  - MagazineRifle
+  - MagazineRifle
+  - MagazineBoxRifle
+
+- type: thiefBackpackSet
+  id: BulldogSet
+  name: Набор дробовика бульдог
+  description: Набор дробовика бульдог включающий в себя сам дробовик и 2 магазина к нему.
+  sprite:
+    sprite: Objects/Weapons/Guns/Shotguns/bulldog.rsi
+    state: icon
+  content:
+  - WeaponShotgunBulldog
+  - MagazineShotgun
+  - MagazineShotgun
+  - BoxLethalshot
+
+# ПАТРОНЫ
+- type: thiefBackpackSet
+  id: ShotgunResupply
+  name: Набор патронов дробовика
+  description: Набор боеприпассов для дробовика включающий 3 коробки дроби(.50) по 16 патронов в каждой и 2 пустых магазина.
+  sprite:
+    sprite: Objects/Weapons/Guns/Ammunition/Boxes/my_concepts.rsi
+    state: shotgun
+  content:
+  - BoxLethalshot
+  - BoxLethalshot
+  - BoxLethalshot
+  - MagazineShotgunEmpty
+  - MagazineShotgunEmpty
+
+- type: thiefBackpackSet
+  id: LecterResupply
+  name: Набор патронов лектера
+  description: Набор боеприпассов для винтовки включающий 2 коробки патронов(.20) по 50 патронов в каждой и 2 пустых магазина.
+  sprite:
+    sprite: Objects/Weapons/Guns/Ammunition/Boxes/my_concepts.rsi
+    state: lecter
+  content:
+  - MagazineBoxRifle
+  - MagazineBoxRifle
+  - MagazineRifleEmpty
+  - MagazineRifleEmpty
+
+- type: thiefBackpackSet
+  id: AKMSResupply
+  name: Набор патронов АКМС
+  description: Набор боеприпассов для лёгкой винтовки включающий 2 коробки патронов(.30) по 60 патронов в каждой и 2 пустых магазина.
+  sprite:
+    sprite: Objects/Weapons/Guns/Ammunition/Boxes/my_concepts.rsi
+    state: akms
+  content:
+  - MagazineBoxLightRifle
+  - MagazineBoxLightRifle
+  - MagazineLightRifleEmpty
+  - MagazineLightRifleEmpty
+
+#Медицина
+- type: thiefBackpackSet
+  id: EphedrineSet
+  name: Набор эфедрина
+  description: Набор включающий в себя шприц и 3 банки эфедрина.(подойдёт для того кто любит много бегать)
+  sprite:
+    sprite: Objects/Specific/Chemistry/syringe.rsi
+    state: syringe_base0
+  content:
+  - ChemistryBottleEphedrine
+  - ChemistryBottleEphedrine
+  - ChemistryBottleEphedrine
+  - Syringe
+
+- type: thiefBackpackSet
+  id: MedicineSet
+  name: Набор медицины
+  description: Набор включающий в себя шприц и 3 банки эфедрина.(подойдёт для того кто любит много бегать)
+  sprite:
+    sprite: Objects/Specific/Medical/firstaidkits.rsi
+    state: blackkit
+  content:
+  - RegenerativeMesh
+  - RegenerativeMesh
+  - BurnAutoInjector
+  - BurnAutoInjector
+  - MedicatedSuture
+  - MedicatedSuture
+  - BruteAutoInjector
+  - BruteAutoInjector
+
+#ВСЯЧИНА
+- type: thiefBackpackSet
+  id: StealthBoxSet
+  name: Набор стэлс коробки
+  description: Набор включающий в себя стэлс коробку.(осторожно не потеряйте!)
+  sprite:
+    sprite: Structures/Storage/closet.rsi
+    state: cardboard
+  content:
+  - StealthBox
+
+#ВЗРЫВЧАТКА
+- type: thiefBackpackSet
+  id: KaboomSet
+  name: Набор подрывника
+  description: Набор для подрыва станции, включает в себя 3-c4, 2-разрывные гранаты, кластерную гранату, имплант макро-бомбы, мультитул и передатчик сигнала.
+  sprite:
+    sprite: Objects/Weapons/Bombs/c4.rsi
+    state: icon
+  content:
+  - ExGrenade
+  - ExGrenade
+  - ClusterGrenade
+  - C4
+  - C4
+  - C4
+  - Multitool
+  - RemoteSignaller
+  - MicroBombImplanter

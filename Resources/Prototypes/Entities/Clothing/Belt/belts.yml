@@ -80,10 +80,6 @@
             - Multitool
     sprite: Clothing/Belt/belt_overlay.rsi
   - type: Appearance
-  - type: Tag
-    tags:
-    - UtilityBelt
-    - WhitelistChameleon
 
 - type: entity
   parent: ClothingBeltStorageBase
@@ -249,6 +245,48 @@
           - Wrench
     sprite: Clothing/Belt/belt_overlay.rsi
   - type: Appearance
+
+#посланник хаоса
+- type: entity
+  parent: ClothingBeltStorageBase
+  id: ClothingChaosTacticalBelt
+  name: Тактический пояс
+  description: Тактический пояс посланника хаоса.
+  components:
+  - type: Sprite
+    sprite: Clothing/Belt/assault.rsi
+  - type: Clothing
+    sprite: Clothing/Belt/assault.rsi
+  - type: Storage
+    whitelist:
+      tags:
+        - CigPack
+        - Taser
+      components:
+        - Stunbaton
+        - FlashOnTrigger
+        - SmokeOnTrigger
+        - Flash
+        - Handcuff
+        - BallisticAmmoProvider
+        - Ammo
+  - type: ItemMapper
+    mapLayers:
+      flashbang:
+        whitelist:
+          components:
+          - FlashOnTrigger
+      stunbaton:
+        whitelist:
+          components:
+          - Stunbaton
+      tear_gas_grenade:
+        whitelist:
+          components:
+          - SmokeOnTrigger
+    sprite: Clothing/Belt/belt_overlay.rsi
+  - type: Appearance
+
 
 - type: entity
   parent: ClothingBeltStorageBase
@@ -485,7 +523,6 @@
         - MagazineMagnum
         - CombatKnife
         - Truncheon
-        - HandGrenade
       components:
         - Stunbaton
         - FlashOnTrigger
@@ -616,8 +653,6 @@
         - Gun
         - BallisticAmmoProvider
         - CartridgeAmmo
-  - type: StaticPrice
-    price: 500
 
 - type: entity
   parent: ClothingBeltSecurity
@@ -663,9 +698,7 @@
   - type: Clothing
     sprite: Clothing/Belt/militarywebbing.rsi
   - type: ExplosionResistance
-    damageCoefficient: 0.1
-  - type: StaticPrice
-    price: 500
+    damageCoefficient: 0.5
 
 - type: entity
   parent: ClothingBeltMilitaryWebbing

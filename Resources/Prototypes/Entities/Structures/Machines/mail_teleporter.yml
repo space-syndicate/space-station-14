@@ -20,9 +20,6 @@
     snapCardinals: true
     layers:
     - state: icon
-    - state: contents
-      map: [ "enum.DeliverySpawnerVisualLayers.Contents" ]
-      visible: false
     - state: unlit
       shader: unshaded
       visible: false
@@ -35,10 +32,6 @@
   - type: Appearance
   - type: GenericVisualizer
     visuals:
-      enum.DeliverySpawnerVisuals.Contents:
-        enum.DeliverySpawnerVisualLayers.Contents:
-          True: { visible: true }
-          False: { visible: false }
       enum.PowerDeviceVisuals.Powered:
         enum.PowerDeviceVisualLayers.Powered:
           True: { visible: true }

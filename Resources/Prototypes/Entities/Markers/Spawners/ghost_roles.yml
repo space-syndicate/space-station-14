@@ -118,6 +118,30 @@
       - sprite: Structures/Wallmounts/signs.rsi
         state: radiation
 
+#Посланник хаоса
+- type: entity
+  id: SpawnPointChaosOperative
+  name: ghost role spawn point
+  suffix: Chaos
+  parent: MarkerBase
+  components:
+  - type: GhostRole
+    name: ghost-role-information-chaos-name
+    description: ghost-role-information-chaos-description
+    rules: ghost-role-information-chaos-rules
+    mindRoles:
+    - MindRoleGhostRoleSoloAntagonist
+    raffle:
+      settings: default
+  - type: GhostRoleMobSpawner
+    prototype: MobHumanMessengerOfChaosBase
+  - type: Sprite
+    sprite: Markers/jobs.rsi
+    layers:
+      - state: green
+      - sprite: Clothing/Mask/messenger.rsi
+        state: icon
+
 - type: entity
   categories: [ HideSpawnMenu, Spawner ]
   parent: SpawnPointLoneNukeOperative

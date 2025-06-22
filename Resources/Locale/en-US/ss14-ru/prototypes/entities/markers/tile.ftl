@@ -1,6 +1,8 @@
+ent-BaseRoofMarker = { "" }
+    .desc = { "" }
 ent-RoofMarker = Roof
     .suffix = Enabled
-    .desc = { ent-MarkerBase.desc }
+    .desc = { ent-BaseRoofMarker.desc }
 ent-NoRoofMarker = Roof
     .suffix = Disabled
-    .desc = { ent-MarkerBase.desc }
+    .desc = { ent-BaseRoofMarker.desc }

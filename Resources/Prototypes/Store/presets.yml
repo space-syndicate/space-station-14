@@ -22,6 +22,21 @@
       Telecrystal: 0
 
 - type: entity
+  id: StorePresetClownUplink
+  abstract: true
+  components:
+  - type: Store
+    name: Клоунский Магазин
+    categories:
+    - FunnyStuff
+    - Toys
+    - Packs
+    currencyWhitelist:
+    - Clowncrystal
+    balance:
+      Clowncrystal: 30
+
+- type: entity
   id: StorePresetSpellbook
   abstract: true
   components:

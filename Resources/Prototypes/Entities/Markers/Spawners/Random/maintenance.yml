@@ -153,10 +153,8 @@
         - id: ClothingNeckLesbianPin
         - id: ClothingNeckNonBinaryPin
         - id: ClothingNeckPansexualPin
-        - id: ClothingNeckPluralPin
         - id: ClothingNeckOmnisexualPin
         - id: ClothingNeckGenderqueerPin
-        - id: ClothingNeckGenderfluidPin
         - id: ClothingNeckTransPin
         - id: ClothingNeckAutismPin
         - id: ClothingNeckGoldAutismPin
@@ -369,7 +367,6 @@
       - id: Shiv
       - id: SawImprov
       - id: HydroponicsToolMiniHoe
-      - id: ClothingHandsKnuckleDusters
 
 - type: entity
   name: Maint Loot Spawner

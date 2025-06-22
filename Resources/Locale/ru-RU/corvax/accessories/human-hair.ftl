@@ -69,6 +69,7 @@ marking-HumanHairVictory = Победа
 marking-HumanHairViper = Гадюка
 marking-HumanHairWife = Жена
 marking-HumanHairZiegler = Циглер
+
 marking-Spikey = Колючая причёска
 marking-TajaranHairLadiesretro = Ретро причёска
 marking-TajaranHairBraid = Косичка

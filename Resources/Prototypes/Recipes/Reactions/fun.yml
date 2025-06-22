@@ -31,8 +31,10 @@
   reactants:
     Fat:
       amount: 15
-    Saline:
-      amount: 25
+    TableSalt:
+      amount: 10
+    Water:
+      amount: 10
   effects:
     - !type:CreateEntityReactionEffect
       entity: Soap

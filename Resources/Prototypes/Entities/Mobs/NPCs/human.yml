@@ -95,7 +95,7 @@
     templateId: corpse
 
 - type: entity
-  parent: MobHuman
+  parent: BaseMobHuman
   id: MobCluwne
   name: person
   description: A polymorphed unfortunate.

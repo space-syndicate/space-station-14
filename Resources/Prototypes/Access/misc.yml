@@ -17,6 +17,7 @@
   - Lawyer
   - Engineering
   - Medical
+  - MessengerOfChaos
   - Quartermaster
   - Salvage
   - Cargo
@@ -32,10 +33,3 @@
   - Chapel
   - Hydroponics
   - Atmospherics
-  - GenpopEnter
-  - GenpopLeave
-
-- type: accessGroup
-  id: General
-  tags:
-  - Maintenance

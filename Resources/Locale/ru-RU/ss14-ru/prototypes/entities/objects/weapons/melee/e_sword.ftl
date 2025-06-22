@@ -25,6 +25,3 @@ ent-HyperEutacticBlade = гиперэвтектический клинок
 ent-CyborgEnergySwordDouble = { ent-EnergySwordDouble }
     .desc = Стажеры из командования Синдиката решили, что одного клинка на энергетическом мече недостаточно. Специальная разработка для киборгов Синдиката.
     .suffix = Одноручное, Для боргов
-ent-EnergyDaggerLoudBlue = { ent-EnergyDaggerLoud }
-    .suffix = blue
-    .desc = { ent-EnergyDaggerLoud.desc }

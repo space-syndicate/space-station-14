@@ -16,5 +16,3 @@ chat-radio-freelance = Фриланс
 # not headset but whatever
 chat-radio-handheld = Портативный
 chat-radio-binary = Двоичный
-chat-radio-xenoborg = Xenoborg
-chat-radio-mothership = Mothership

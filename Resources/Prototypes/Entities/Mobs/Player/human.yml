@@ -115,3 +115,23 @@
   - type: NpcFactionMember
     factions:
     - Wizard
+
+#Посланник Хаоса
+- type: entity
+  parent: MobHuman
+  id: MobHumanMessengerOfChaosBase
+  name: Посланник хаоса
+  suffix: Human, Base
+  components:
+  - type: RandomHumanoidAppearance
+    randomizeName: false
+    hair: HairBald
+  - type: Loadout
+    prototypes: [MessengerOfChaosGear]
+    roleLoadout: [ RoleSurvivalStandard ]
+  - type: RandomMetadata
+    nameSegments: [NamesDeathCommando]
+  - type: NpcFactionMember
+    factions:
+    - MessengerOfChaos
+ 

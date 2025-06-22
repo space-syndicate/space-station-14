@@ -175,7 +175,7 @@
             Quantity: 10
 
 - type: entity
-  id: CigaretteNutriment
+  id: CigaretteIpecac
   parent: SoakedCigarette
   name: Grandma's Christmas Fruitcake
   components:
@@ -186,8 +186,8 @@
         reagents:
           - ReagentId: Nicotine
             Quantity: 10
-          - ReagentId: Nutriment
-            Quantity: 10
+          - ReagentId: Ipecac
+            Quantity: 2
 
 - type: entity
   id: CigaretteBicaridine
@@ -220,9 +220,9 @@
             Quantity: 10
 
 - type: entity
-  id: CigaretteSaline
+  id: CigarettePax
   parent: SoakedCigarette
-  name: North Atlantic Cruise
+  name: Switzerland Express
   components:
   - type: SolutionContainerManager
     solutions:
@@ -231,8 +231,8 @@
         reagents:
           - ReagentId: Nicotine
             Quantity: 10
-          - ReagentId: Saline
-            Quantity: 10
+          - ReagentId: Pax
+            Quantity: 2
 
 - type: entity
   id: CigaretteBbqSauce
@@ -250,9 +250,9 @@
             Quantity: 10
 
 - type: entity
-  id: CigaretteFrezon
+  id: CigaretteBlackPepper
   parent: SoakedCigarette
-  name: Atmospheric Adventure
+  name: English Spice
   components:
   - type: SolutionContainerManager
     solutions:
@@ -261,7 +261,7 @@
         reagents:
           - ReagentId: Nicotine
             Quantity: 10
-          - ReagentId: Frezon
+          - ReagentId: Blackpepper
             Quantity: 10
 
 - type: entity
@@ -280,9 +280,9 @@
             Quantity: 10
 
 - type: entity
-  id: CigaretteRadium
+  id: CigaretteBread
   parent: SoakedCigarette
-  name: Ex Ray
+  name: Double Toasted
   components:
   - type: SolutionContainerManager
     solutions:
@@ -290,14 +290,12 @@
         maxVol: 40
         reagents:
           - ReagentId: Nicotine
-            Quantity: 10
-          - ReagentId: Radium
             Quantity: 10
 
 - type: entity
-  id: CigaretteHaloperidol
+  id: CigaretteMilk
   parent: SoakedCigarette
-  name: Warm Bovine Extract
+  name: Bovine Extract
   components:
   - type: SolutionContainerManager
     solutions:
@@ -306,13 +304,13 @@
         reagents:
           - ReagentId: Nicotine
             Quantity: 10
-          - ReagentId: Haloperidol
+          - ReagentId: Milk
             Quantity: 10
 
 - type: entity
-  id: CigaretteLaughter
+  id: CigaretteBanana
   parent: SoakedCigarette
-  name: Clown Adjacency Bonus
+  name: Clown Adjancency Bonus
   components:
   - type: SolutionContainerManager
     solutions:
@@ -321,13 +319,13 @@
         reagents:
           - ReagentId: Nicotine
             Quantity: 10
-          - ReagentId: Laughter
+          - ReagentId: BananaHonk
             Quantity: 10
 
 - type: entity
-  id: CigaretteLipolicide
+  id: CigaretteSpaceDrugs
   parent: SoakedCigarette
-  name: 80's Workout Routine
+  name: 80's Power Hour
   components:
   - type: SolutionContainerManager
     solutions:
@@ -336,13 +334,13 @@
         reagents:
           - ReagentId: Nicotine
             Quantity: 10
-          - ReagentId: Lipolicide
+          - ReagentId: SpaceDrugs
             Quantity: 10
 
 - type: entity
-  id: CigaretteSodiumPolyacrylate
+  id: CigaretteMuteToxin
   parent: SoakedCigarette
-  name: Unhealthy Habits
+  name: Mixed Lozenges
   components:
   - type: SolutionContainerManager
     solutions:
@@ -351,8 +349,8 @@
         reagents:
           - ReagentId: Nicotine
             Quantity: 10
-          - ReagentId: SodiumPolyacrylate
-            Quantity: 10
+          - ReagentId: MuteToxin
+            Quantity: 2
 
 - type: entity
   id: CigaretteMold
@@ -367,7 +365,7 @@
           - ReagentId: Nicotine
             Quantity: 10
           - ReagentId: Mold
-            Quantity: 10
+            Quantity: 2
 
 - type: entity
   id: CigaretteLicoxide
@@ -382,7 +380,7 @@
           - ReagentId: Nicotine
             Quantity: 10
           - ReagentId: Licoxide
-            Quantity: 10
+            Quantity: 5
 
 - type: entity
   id: CigaretteWeldingFuel
@@ -397,12 +395,12 @@
           - ReagentId: Nicotine
             Quantity: 10
           - ReagentId: WeldingFuel
-            Quantity: 10
+            Quantity: 5
 
 - type: entity
-  id: CigaretteRobustHarvest
+  id: CigaretteTHC
   parent: SoakedCigarette
-  name: Hippie Romance Novel
+  name: Hippy Romance Novel
   components:
   - type: SolutionContainerManager
     solutions:
@@ -411,50 +409,5 @@
         reagents:
           - ReagentId: Nicotine
             Quantity: 10
-          - ReagentId: RobustHarvest
-            Quantity: 10
-
-- type: entity
-  id: CigarettePhlogiston
-  parent: SoakedCigarette
-  name: Dragon Dating Sim
-  components:
-  - type: SolutionContainerManager
-    solutions:
-      smokable:
-        maxVol: 40
-        reagents:
-        - ReagentId: Nicotine
-          Quantity: 10
-        - ReagentId: Phlogiston
-          Quantity: 10
-
-- type: entity
-  id: CigaretteBanana
-  parent: SoakedCigarette
-  name: Pun Pun's Tropical Getaway
-  components:
-  - type: SolutionContainerManager
-    solutions:
-      smokable:
-        maxVol: 40
-        reagents:
-        - ReagentId: Nicotine
-          Quantity: 10
-        - ReagentId: Potassium
-          Quantity: 10
-
-- type: entity
-  id: CigaretteBlackPepper
-  parent: SoakedCigarette
-  name: English Spice
-  components:
-  - type: SolutionContainerManager
-    solutions:
-      smokable:
-        maxVol: 40
-        reagents:
-        - ReagentId: Nicotine
-          Quantity: 10
-        - ReagentId: Blackpepper
-          Quantity: 10
+          - ReagentId: THC
+            Quantity: 5

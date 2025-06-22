@@ -11,6 +11,8 @@
   - Igniter
   - ModularReceiver
   - MicroManipulatorStockPart
+  - MatterBinStockPart
+  - CapacitorStockPart
   - ConveyorBeltAssembly
 
 - type: latheRecipePack
@@ -57,6 +59,3 @@
   id: SalvageSecurityWeapons
   recipes:
   - WeaponProtoKineticAccelerator
-  - PKAUpgradeDamage
-  - PKAUpgradeRange
-  - PKAUpgradeFireRate

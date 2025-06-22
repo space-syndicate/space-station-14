@@ -21,6 +21,10 @@
 
 - type: wireLayout
   parent: Airlock
+  id: AirlockChaos
+
+- type: wireLayout
+  parent: Airlock
   id: AirlockCargo
 
 - type: wireLayout

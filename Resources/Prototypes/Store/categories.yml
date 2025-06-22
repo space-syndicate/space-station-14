@@ -94,12 +94,18 @@
   id: RevenantAbilities
   name: store-category-abilities
 
-#pai
+#clown uplink categoires
 - type: storeCategory
-  id: PAIAbilities
-  name: store-category-abilities
+  id: FunnyStuff
+  name: Одежда
+  priority: 0
 
 - type: storeCategory
-  id: DiscountedItems
-  name: store-discounted-items
-  priority: 200
+  id: Toys
+  name: Игрушки
+  priority: 1
+
+- type: storeCategory
+  id: Packs
+  name: Наборы
+  priority: 2

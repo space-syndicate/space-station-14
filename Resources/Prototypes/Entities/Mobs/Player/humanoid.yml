@@ -6,7 +6,6 @@
     - type: RandomHumanoidAppearance
       randomizeName: false
     - type: GhostTakeoverAvailable
-    - type: IdBind
 
 - type: randomHumanoidSettings
   id: EventHumanoidMindShielded
@@ -18,7 +17,6 @@
 - type: randomHumanoidSettings
   id: EventHumanoidCentcomm
   parent: EventHumanoidMindShielded
-  randomizeName: false
   components:
   - type: AutoImplant
     implants:
@@ -87,6 +85,7 @@
 - type: randomHumanoidSettings
   id: ERTLeader
   parent: EventHumanoidCentcomm
+  randomizeName: false
   components:
     - type: GhostRole
       name: ghost-role-information-ert-leader-name
@@ -639,3 +638,25 @@
       raffle:
         settings: default
     - type: Cluwne
+
+#Посланник Хаоса
+- type: entity
+  id: RandomHumanoidSpawnerMessengerOfChaos
+  name: посланник хаоса
+  components:
+    - type: Sprite
+      sprite: Mobs/Species/Human/parts.rsi
+      state: full
+    - type: RandomMetadata
+      nameSegments: [ NamesDeathCommando ] # Corvax-Localization
+    - type: RandomHumanoidSpawner
+      settings: MessengerOfChaos
+
+- type: randomHumanoidSettings
+  id: MessengerOfChaos
+  components:
+    - type: RandomHumanoidAppearance
+      randomizeName: false
+    - type: Loadout
+      prototypes: [MessengerOfChaosGear]
+      roleLoadout: [ RoleSurvivalStandard ]

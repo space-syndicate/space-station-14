@@ -1,5 +1,11 @@
 - type: stack
   id: Telecrystal
-  name: stack-telecrystal
+  name: telecrystal
   icon: Objects/Specific/Syndicate/telecrystal.rsi
   spawn: Telecrystal1
+
+- type: stack
+  id: Clowncrystal
+  name: Clown Crystal
+  icon: Objects/Specific/Service/clowncrystal.rsi
+  spawn: Clowncrystal1

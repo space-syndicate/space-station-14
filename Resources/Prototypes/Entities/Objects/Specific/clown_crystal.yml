@@ -1,0 +1,83 @@
+
+- type: entity
+  name: Клоунский кристал
+  parent: BaseItem 
+  id: Clowncrystal
+  suffix: 20 CC
+  description: It seems like bananas and HONK!
+  components:
+  - type: Sprite
+    sprite: Objects/Specific/Service/clowncrystal.rsi
+    layers:
+    - state: clowncrystal
+  - type: Item
+    sprite: Objects/Specific/Service/clowncrystal.rsi
+    heldPrefix: clowncrystal
+    size: Tiny
+  - type: Stack
+    count: 20
+    stackType: Clowncrystal
+  - type: StaticPrice
+    price: 0
+  - type: StackPrice
+    price: 200
+  - type: Currency
+    price:
+      Clowncrystal: 1
+
+- type: entity
+  parent: Clowncrystal
+  id: Clowncrystal1
+  suffix: 1 CC
+  components:
+  - type: Stack
+    count: 1
+  - type: Sprite
+    sprite: Objects/Specific/Service/clowncrystal.rsi
+  - type: Item
+    sprite: Objects/Specific/Service/clowncrystal.rsi
+    size: Tiny
+
+- type: entity
+  parent: Clowncrystal
+  id: Clowncrystal5
+  suffix: 5 CC
+  components:
+  - type: Stack
+    count: 5
+
+- type: entity
+  parent: Clowncrystal
+  id: Clowncrystal10
+  suffix: 10 CC
+  components:
+  - type: Stack
+    count: 10
+
+# Uplinks
+- type: entity
+  parent: [BaseItem, StorePresetClownUplink]
+  id: BaseClownUplink
+  name: Клоунский аплинк
+  description: Клоунский аплинк ХОНК!!
+  suffix: 30 CC
+  components:
+  - type: Sprite
+    sprite: Objects/Devices/honk_radio.rsi
+    layers:
+    - state: old-radio
+  - type: Item
+    sprite: Objects/Devices/honk_radio.rsi
+    heldPrefix: old-radio
+  - type: UserInterface
+    interfaces:
+      enum.StoreUiKey.Key:
+        type: StoreBoundUserInterface
+  - type: ActivatableUI
+    key: enum.StoreUiKey.Key
+  - type: Store
+    balance:
+      Clowncrystal: 30
+  - type: Storage
+    storageOpenSound:
+      collection: BikeHorn

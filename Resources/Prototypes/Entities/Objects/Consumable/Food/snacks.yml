@@ -40,9 +40,8 @@
   - type: Sprite
     state: boritos
   - type: Item
-    heldPrefix: boritos
   - type: Food
-    trash:
+    trash: 
     - FoodPacketBoritosTrash
 
 - type: entity
@@ -57,9 +56,8 @@
   - type: Sprite
     state: cnds
   - type: Item
-    heldPrefix: cnds
   - type: Food
-    trash:
+    trash: 
     - FoodPacketCnDsTrash
 
 - type: entity
@@ -75,9 +73,8 @@
   - type: Sprite
     state: cheesiehonkers
   - type: Item
-    heldPrefix: cheesiehonkers
   - type: Food
-    trash:
+    trash: 
     - FoodPacketCheesieTrash
 
 - type: entity
@@ -94,9 +91,8 @@
   - type: Sprite
     state: chips
   - type: Item
-    heldPrefix: chips
   - type: Food
-    trash:
+    trash: 
     - FoodPacketChipsTrash
 
 - type: entity
@@ -133,7 +129,6 @@
   - type: Sprite
     state: chocolatebar-open
   - type: Item
-    heldPrefix: chocolatebar-open
   - type: Tag
     tags:
       - FoodSnack
@@ -159,7 +154,6 @@
   - type: Sprite
     state: energybar
   - type: Item
-    heldPrefix: energybar
   - type: SpawnItemsOnUse
     items:
       - id: FoodPacketEnergyTrash
@@ -182,13 +176,12 @@
   - type: Sprite
     state: energybar-open
   - type: Item
-    heldPrefix: energybar-open
 
 - type: entity
-  name: Sweetie's pistachios
+  name: sweetie's pistachios
   parent: FoodSnackBase
   id: FoodSnackPistachios
-  description: Sweeties's name-brand pistachios. Probably won't give you diseases. Probably.
+  description: Sweeties's name-brand pistachios. probably won't give you diseases. Probably.
   components:
   - type: FlavorProfile
     flavors:
@@ -197,14 +190,12 @@
   - type: Sprite
     state: pistachio
   - type: Item
-    heldPrefix: pistachio
   - type: Food
-    trash:
+    trash: 
     - FoodPacketPistachioTrash
   - type: Tag
     tags:
     - Fruit # Seed of a fruit, you can yell at me
-    - Pistachios # Added tag due to CrateFoodGetMore interaction with BountyFruit.
 
 - type: entity
   name: popcorn
@@ -222,7 +213,7 @@
   - type: Item
     heldPrefix: popcorn
   - type: Food
-    trash:
+    trash: 
     - FoodPacketPopcornTrash
 
 - type: entity
@@ -237,9 +228,8 @@
   - type: Sprite
     state: raisins
   - type: Item
-    heldPrefix: raisins
   - type: Food
-    trash:
+    trash: 
     - FoodPacketRaisinsTrash
   - type: Tag
     tags:
@@ -257,9 +247,8 @@
   - type: Sprite
     state: semki
   - type: Item
-    heldPrefix: semki
   - type: Food
-    trash:
+    trash: 
     - FoodPacketSemkiTrash
 
 - type: entity
@@ -274,9 +263,8 @@
   - type: Sprite
     state: susjerky
   - type: Item
-    heldPrefix: susjerky
   - type: Food
-    trash:
+    trash: 
     - FoodPacketSusTrash
   - type: Tag
     tags:
@@ -294,9 +282,8 @@
   - type: Sprite
     state: syndicakes
   - type: Item
-    heldPrefix: syndicakes
   - type: Food
-    trash:
+    trash: 
     - FoodPacketSyndiTrash
 
 - type: entity
@@ -321,10 +308,8 @@
   - type: Sprite
     state: ramen
   - type: Food
-    trash:
+    trash: 
     - FoodPacketCupRamenTrash
-  - type: Item
-    heldPrefix: ramen
 
 - type: entity
   parent: DrinkRamen
@@ -356,7 +341,6 @@
   - type: Sprite
     state: chinese1
   - type: Item
-    heldPrefix: chinese1
   - type: SolutionContainerManager
     solutions:
       food:
@@ -367,7 +351,7 @@
         - ReagentId: Soysauce
           Quantity: 2
   - type: Food
-    trash:
+    trash: 
     - FoodPacketChowMeinTrash
 
 - type: entity
@@ -384,7 +368,6 @@
   - type: Sprite
     state: chinese2
   - type: Item
-    heldPrefix: chinese2
   - type: SolutionContainerManager
     solutions:
       food:
@@ -397,7 +380,7 @@
         - ReagentId: Soysauce
           Quantity: 2
   - type: Food
-    trash:
+    trash: 
     - FoodPacketDanDanTrash
 
 - type: entity
@@ -420,10 +403,10 @@
           Quantity: 1
   - type: Item
     sprite: Objects/Consumable/Food/snacks.rsi
-    heldPrefix: cookie_fortune
+    heldPrefix: packet
     size: Tiny
   - type: Food
-    trash:
+    trash: 
     - FoodCookieFortune
 
 - type: entity
@@ -434,7 +417,6 @@
   components:
   - type: Item
     size: Small
-    heldPrefix: nutribrick
   - type: Tag
     tags:
       - FoodSnack
@@ -459,7 +441,6 @@
       - nutribrick
   - type: Item
     size: Small
-    heldPrefix: nutribrick-open
   - type: Tag
     tags:
       - ReptilianFood
@@ -483,8 +464,6 @@
   - type: Sprite
     sprite: Objects/Consumable/Food/snacks.rsi
     state: mre-brownie
-  - type: Item
-    heldPrefix: mre-brownie
   - type: Tag
     tags:
       - FoodSnack
@@ -494,6 +473,7 @@
       - id: FoodSnackMREBrownieOpen
     sound:
       path: /Audio/Effects/unwrap.ogg
+
 
 - type: entity
   id: FoodSnackMREBrownieOpen
@@ -507,8 +487,6 @@
       - mrebrownie
   - type: Sprite
     state: mre-brownie-open
-  - type: Item
-    heldPrefix: mre-brownie-open
   - type: Food
   - type: SolutionContainerManager
     solutions:
@@ -533,6 +511,7 @@
     sprite: Objects/Consumable/Food/snacks.rsi
   - type: Item
     sprite: Objects/Consumable/Food/snacks.rsi
+    heldPrefix: packet
     size: Tiny
   - type: Tag
     tags:
@@ -543,15 +522,6 @@
   - type: SpaceGarbage
   - type: StaticPrice
     price: 0
-  - type: SolutionContainerManager
-    solutions:
-      food:
-        maxVol: 10
-        reagents:
-        - ReagentId: ToxinTrash
-          Quantity: 5
-  - type: Food
-    requiresSpecialDigestion: true
 
 - type: entity
   categories: [ HideSpawnMenu ]
@@ -561,14 +531,6 @@
   components:
   - type: Sprite
     state: boritos-trash
-  - type: Item
-    inhandVisuals:
-      left:
-      - state: trash-inhand-left
-        color: "#4F54BE"
-      right:
-      - state: trash-inhand-right
-        color: "#4F54BE"
 
 - type: entity
   categories: [ HideSpawnMenu ]
@@ -578,14 +540,6 @@
   components:
   - type: Sprite
     state: cnds-trash
-  - type: Item
-    inhandVisuals:
-      left:
-      - state: trash-inhand-left
-        color: "#915145"
-      right:
-      - state: trash-inhand-right
-        color: "#915145"
 
 - type: entity
   categories: [ HideSpawnMenu ]
@@ -595,14 +549,6 @@
   components:
   - type: Sprite
     state: cheesiehonkers-trash
-  - type: Item
-    inhandVisuals:
-      left:
-      - state: trash-inhand-left
-        color: "#FFCC33"
-      right:
-      - state: trash-inhand-right
-        color: "#FFCC33"
 
 - type: entity
   categories: [ HideSpawnMenu ]
@@ -612,14 +558,6 @@
   components:
   - type: Sprite
     state: chips-trash
-  - type: Item
-    inhandVisuals:
-      left:
-      - state: trash-inhand-left
-        color: "#008000"
-      right:
-      - state: trash-inhand-right
-        color: "#008000"
 
 - type: entity
   categories: [ HideSpawnMenu ]
@@ -629,14 +567,6 @@
   components:
   - type: Sprite
     state: chocolatebar-trash
-  - type: Item
-    inhandVisuals:
-      left:
-      - state: trash-inhand-left
-        color: "#A20000"
-      right:
-      - state: trash-inhand-right
-        color: "#A20000"
 
 - type: entity
   categories: [ HideSpawnMenu ]
@@ -646,14 +576,6 @@
   components:
   - type: Sprite
     state: energybar-trash
-  - type: Item
-    inhandVisuals:
-      left:
-      - state: trash-inhand-left
-        color: "#9AFF1F"
-      right:
-      - state: trash-inhand-right
-        color: "#9AFF1F"
 
 - type: entity
   categories: [ HideSpawnMenu ]
@@ -663,14 +585,6 @@
   components:
   - type: Sprite
     state: pistachio-trash
-  - type: Item
-    inhandVisuals:
-      left:
-      - state: trash-inhand-left
-        color: "#99B334"
-      right:
-      - state: trash-inhand-right
-        color: "#99B334"
 
 - type: entity
   categories: [ HideSpawnMenu ]
@@ -680,14 +594,6 @@
   components:
   - type: Sprite
     state: popcorn-trash
-  - type: Item
-    inhandVisuals:
-      left:
-      - state: trash-inhand-left
-        color: "#5193FF"
-      right:
-      - state: trash-inhand-right
-        color: "#5193FF"
 
 - type: entity
   categories: [ HideSpawnMenu ]
@@ -697,14 +603,6 @@
   components:
   - type: Sprite
     state: raisins-trash
-  - type: Item
-    inhandVisuals:
-      left:
-      - state: trash-inhand-left
-        color: "#FF0033"
-      right:
-      - state: trash-inhand-right
-        color: "#FF0033"
 
 - type: entity
   categories: [ HideSpawnMenu ]
@@ -714,14 +612,6 @@
   components:
   - type: Sprite
     state: semki-trash
-  - type: Item
-    inhandVisuals:
-      left:
-      - state: trash-inhand-left
-        color: "#C2821E"
-      right:
-      - state: trash-inhand-right
-        color: "#C2821E"
 
 - type: entity
   categories: [ HideSpawnMenu ]
@@ -731,14 +621,6 @@
   components:
   - type: Sprite
     state: susjerky-trash
-  - type: Item
-    inhandVisuals:
-      left:
-      - state: trash-inhand-left
-        color: "#990033"
-      right:
-      - state: trash-inhand-right
-        color: "#990033"
 
 - type: entity
   categories: [ HideSpawnMenu ]
@@ -748,14 +630,6 @@
   components:
   - type: Sprite
     state: syndicakes-trash
-  - type: Item
-    inhandVisuals:
-      left:
-      - state: trash-inhand-left
-        color: "#FFFFFF"
-      right:
-      - state: trash-inhand-right
-        color: "#FFFFFF"
 
 - type: entity
   categories: [ HideSpawnMenu ]
@@ -765,8 +639,6 @@
   components:
   - type: Sprite
     state: ramen
-  - type: Item
-    heldPrefix: ramen
 
 - type: entity
   categories: [ HideSpawnMenu ]
@@ -776,8 +648,6 @@
   components:
   - type: Sprite
     state: chinese1
-  - type: Item
-    heldPrefix: chinese1
 
 - type: entity
   categories: [ HideSpawnMenu ]
@@ -787,8 +657,6 @@
   components:
   - type: Sprite
     state: chinese2
-  - type: Item
-    heldPrefix: chinese2
 
 - type: entity
   categories: [ HideSpawnMenu ]
@@ -825,11 +693,3 @@
     - Trash
   - type: Sprite
     state: mre-wrapper
-  - type: Item
-    inhandVisuals:
-      left:
-      - state: trash-inhand-left
-        color: "#8B7356"
-      right:
-      - state: trash-inhand-right
-        color: "#8B7356"

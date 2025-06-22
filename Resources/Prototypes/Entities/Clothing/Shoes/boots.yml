@@ -26,6 +26,23 @@
     footstepSoundCollection:
       collection: FootstepBoots
 
+#посланник хаоса
+- type: entity
+  parent: [ClothingShoesMilitaryBase, BaseSecurityContraband]
+  id: ClothingChaosBoots
+  name: Сапоги посланника хаоса
+  description: Вы можете видеть запечёную кровь на них.
+  components:
+  - type: Sprite
+    sprite: Clothing/Shoes/Boots/jackboots.rsi
+  - type: Clothing
+    sprite: Clothing/Shoes/Boots/jackboots.rsi
+  - type: ClothingSlowOnDamageModifier
+    modifier: 0.5
+  - type: FootstepModifier # Corvax-Sounds
+    footstepSoundCollection:
+      collection: FootstepBoots
+
 - type: entity
   parent: ClothingShoesBaseButcherable
   id: ClothingShoesBootsSalvage
@@ -78,7 +95,6 @@
     footstepSoundCollection:
       collection: FootstepHighHeels
       params:
-        volume: -6
         variation: 0.09
 
 - type: entity
@@ -219,7 +235,6 @@
       collection: FootstepSpurs
       params:
         variation: 0.09
-        volume: -6
 
 - type: entity
   parent: ClothingShoesBootsCowboyBrown

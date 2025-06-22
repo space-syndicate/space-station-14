@@ -8,7 +8,3 @@ ent-FeetAnimal = animal feet
     .desc = { ent-PartAnimal.desc }
 ent-TorsoAnimal = animal torso
     .desc = { ent-PartAnimal.desc }
-ent-LeftHandSmartCorgi = corgi hand
-    .desc = { ent-PartAnimal.desc }
-ent-RightHandSmartCorgi = corgi hand
-    .desc = { ent-PartAnimal.desc }

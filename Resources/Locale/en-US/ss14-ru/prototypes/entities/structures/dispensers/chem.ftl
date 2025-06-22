@@ -1,6 +1,6 @@
-ent-ChemDispenserEmpty = chemical dispenser
+ent-ChemDispenser = chemical dispenser
     .desc = An industrial grade chemical dispenser.
-    .suffix = Empty
-ent-ChemDispenser = { ent-ChemDispenserEmpty }
     .suffix = Filled
-    .desc = { ent-ChemDispenserEmpty.desc }
+ent-ChemDispenserEmpty = chemical dispenser
+    .suffix = Empty
+    .desc = { ent-ChemDispenser.desc }

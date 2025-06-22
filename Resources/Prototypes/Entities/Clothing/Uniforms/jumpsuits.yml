@@ -397,17 +397,6 @@
     sprite: Clothing/Uniforms/Jumpsuit/hos_parade.rsi
 
 - type: entity
-  parent: [ ClothingUniformBase, BaseCommandContraband ]
-  id: ClothingUniformJumpsuitCommandGeneric
-  name: command jumpsuit
-  description: A generic Command-colored jumpsuit not associated with any particular department.
-  components:
-  - type: Sprite
-    sprite: Clothing/Uniforms/Jumpsuit/commandgeneric.rsi
-  - type: Clothing
-    sprite: Clothing/Uniforms/Jumpsuit/commandgeneric.rsi
-
-- type: entity
   parent: ClothingUniformBase
   id: ClothingUniformJumpsuitHydroponics
   name: hydroponics jumpsuit
@@ -520,7 +509,6 @@
   - type: Tag
     tags:
     - ClothMade
-    - Recyclable
     - PrisonUniform
     - WhitelistChameleon
 
@@ -556,6 +544,18 @@
       sprite: Clothing/Uniforms/Jumpsuit/qmformal.rsi
     - type: Clothing
       sprite: Clothing/Uniforms/Jumpsuit/qmformal.rsi
+
+#посланник хаоса
+- type: entity
+  parent: [ClothingUniformBase, BaseCommandContraband]
+  id: ClothingChaosUniformJumpsuit
+  name: Водолазка посланника хаоса
+  description: Человек в ней будет выглядеть как террорист.
+  components:
+    - type: Sprite
+      sprite: Clothing/Uniforms/Jumpsuit/qmturtle.rsi
+    - type: Clothing
+      sprite: Clothing/Uniforms/Jumpsuit/qmturtle.rsi
 
 - type: entity
   parent: [ClothingUniformBase, BaseCommandContraband]
@@ -855,8 +855,6 @@
     sprite: Clothing/Uniforms/Jumpsuit/operative.rsi
   - type: Clothing
     sprite: Clothing/Uniforms/Jumpsuit/operative.rsi
-  - type: StaticPrice
-    price: 500
 
 - type: entity
   parent: ClothingUniformBase
