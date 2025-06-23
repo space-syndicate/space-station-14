@@ -8,7 +8,6 @@ ent-HolopadBluespace = блюспейс голопад
     .desc = Экспериментальное напольное устройство для проецирования голографических изображений через блюспейс.
     .suffix = Неограниченный диапазон
 ent-HolopadHologram = голограмма
-    .suffix = НЕ МАППИТЬ
     .desc = { "" }
 ent-HolopadGeneralTools = { ent-Holopad }
     .suffix = Инструменты
