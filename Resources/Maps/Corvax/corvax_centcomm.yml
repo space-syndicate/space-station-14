@@ -79353,7 +79353,7 @@ entities:
       rot: 1.5707963267948966 rad
       pos: 13.5,47.5
       parent: 1
-- proto: WarpPoint
+- proto: GhostWarpPoint
   entities:
   - uid: 10294
     components:
