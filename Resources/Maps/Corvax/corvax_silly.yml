@@ -25617,7 +25617,7 @@ entities:
       pos: -22.5,-7.5
       parent: 2
     - type: WarpPoint
-      location: церковь
+      location: храм
 - proto: DefaultStationBeaconCryosleep
   entities:
   - uid: 2408
@@ -38931,7 +38931,7 @@ entities:
 
         Причина выдачи разрешения:
 
-        Для защиты церкви
+        Для защиты храма
 
 
         =============================================
@@ -58442,7 +58442,7 @@ entities:
       pos: -48.5,19.5
       parent: 2
     - type: WarpPoint
-      location: Церковный остров
+      location: Храмовый остров
   - uid: 6086
     components:
     - type: Transform
