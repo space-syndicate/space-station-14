@@ -1,5 +1,4 @@
-ent-BaseMobTajaran = Urist McTajaran
+ent-BaseMobTajaran = Urist McTajar
     .desc = { ent-BaseMobSpeciesOrganic.desc }
-
 ent-MobTajaranDummy = Urist McHands
-    .desc = A tajaran dummy intended for character setup.
+    .desc = A dummy tajaran meant to be used in character setup.

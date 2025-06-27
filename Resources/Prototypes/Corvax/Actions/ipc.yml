@@ -1,0 +1,11 @@
+- type: entity
+  id: ActionDrainBattery
+  name: Drain battery
+  description: Drain battery
+  components:
+  - type: Action
+    icon: { sprite: Corvax/Interface/ipcactions.rsi, state: off }
+    iconOn: Corvax/Interface/ipcactions.rsi/on.png
+    itemIconStyle: NoItem
+  - type: InstantAction
+    event: !type:ToggleDrainActionEvent

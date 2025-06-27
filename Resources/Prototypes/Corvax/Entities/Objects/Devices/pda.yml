@@ -17,7 +17,7 @@
       state: pda-lawyer
 
 - type: entity
-  parent: BasePDA
+  parent: BaseSecurityPDA
   id: PilotPDA
   name: pilot PDA
   description: Нas protection from cosmic radiation.

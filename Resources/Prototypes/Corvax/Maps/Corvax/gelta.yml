@@ -15,7 +15,7 @@
             !type:NanotrasenNameGenerator
             prefixCreator: 'TG'
         - type: StationEmergencyShuttle
-          emergencyShuttlePath: /Maps/Shuttles/emergency_courser.yml
+          emergencyShuttlePath: /Maps/Corvax/Shuttles/emergency_corvaxdelta.yml
         - type: StationJobs
           availableJobs:
             # command
@@ -47,10 +47,13 @@
             SecurityOfficer: [ 6, 6 ]
             SecurityCadet: [ 3, 3 ]
             Detective: [ 1, 1 ]
+            Pilot: [ 1, 1 ]
+            Brigmedic: [ 1, 1 ]
             # service
             HeadOfPersonnel: [ 1, 1 ]
             Bartender: [ 1, 1 ]
             Botanist: [ 3, 4 ]
+            Boxer: [ 2, 2 ]
             Chaplain: [ 1, 1 ]
             Chef: [ 1, 2 ]
             Clown: [ 1, 1 ]
@@ -61,3 +64,6 @@
             Reporter: [ 2, 2 ]
             ServiceWorker: [ 3, 3 ]
             Passenger: [ -1, -1 ]
+            # silicon
+            StationAi: [ 1, 1 ]
+            Borg: [ 2, 3 ]
