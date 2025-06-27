@@ -8273,37 +8273,6 @@ entities:
     - type: Transform
       pos: 23.682198,-23.5179
       parent: 2
-- proto: ActionToggleInternals
-  entities:
-  - uid: 8347
-    mapInit: true
-    paused: true
-    components:
-    - type: Transform
-      parent: 8346
-    - type: InstantAction
-      originalIconColor: '#FFFFFFFF'
-      container: 8346
-- proto: ActionToggleJetpack
-  entities:
-  - uid: 8348
-    mapInit: true
-    paused: true
-    components:
-    - type: Transform
-      parent: 8346
-    - type: InstantAction
-      originalIconColor: '#FFFFFFFF'
-      container: 8346
-- proto: ActionToggleSuitPiece
-  entities:
-  - uid: 6
-    components:
-    - type: Transform
-      parent: 4
-    - type: InstantAction
-      container: 4
-      entIcon: 7
 - proto: AdminInstantEffectFlash
   entities:
   - uid: 6289
@@ -24079,7 +24048,6 @@ entities:
       parent: 3
     - type: ToggleableClothing
       clothingUid: 7
-      actionEntity: 6
     - type: ContainerContainer
       containers:
         toggleable-clothing: !type:ContainerSlot
@@ -24090,11 +24058,6 @@ entities:
           showEnts: False
           occludes: True
           ents: []
-        actions: !type:Container
-          showEnts: False
-          occludes: True
-          ents:
-          - 6
         solution@food: !type:ContainerSlot
           showEnts: False
           occludes: True
@@ -36980,19 +36943,6 @@ entities:
     components:
     - type: Transform
       parent: 8345
-    - type: GasTank
-      toggleActionEntity: 8347
-    - type: Jetpack
-      toggleActionEntity: 8348
-    - type: Physics
-      canCollide: False
-    - type: ActionsContainer
-    - type: ContainerContainer
-      containers:
-        actions: !type:Container
-          ents:
-          - 8348
-          - 8347
 - proto: JetpackBlueFilled
   entities:
   - uid: 248
