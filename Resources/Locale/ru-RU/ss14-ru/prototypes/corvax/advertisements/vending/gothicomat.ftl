@@ -1,0 +1,9 @@
+advertisement-gothic-1 = Мама, мама, мама, я не хочу обратно.
+advertisement-gothic-2 = Кидаю берц, лечу прям вверх, мой чёрный сет убил их всех!
+advertisement-gothic-3 = Это станция — станция для грустных. 
+advertisement-gothic-4 = Математичка иди н##уй!
+advertisement-gothic-5 = Когда-нибудь мы все умрём... А нет, я же вендомат. ХА-ХА-ХА! Вот блин...
+thankyou-gothic-1 = РЕАЛЬНЫЙ ПАНК!!!
+thankyou-gothic-2 = Слушай, твоя рожа... Ладно, прости. Я так не могу.
+thankyou-gothic-3 = Это космическая тоска...
+thankyou-gothic-4 = ЧУВАААААК!!!

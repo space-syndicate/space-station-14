@@ -8,3 +8,14 @@
       sprite: Corvax/Clothing/Neck/Ties/disco.rsi
     - type: Clothing
       sprite: Corvax/Clothing/Neck/Ties/disco.rsi
+
+- type: entity
+  parent: ClothingNeckBase
+  id: ClothingNeckChoker
+  name: choker
+  description: Come on, tell us how hard life is for children of the 31st century.
+  components:
+    - type: Sprite
+      sprite: Corvax/Clothing/Neck/Ties/choker.rsi
+    - type: Clothing
+      sprite: Corvax/Clothing/Neck/Ties/choker.rsi

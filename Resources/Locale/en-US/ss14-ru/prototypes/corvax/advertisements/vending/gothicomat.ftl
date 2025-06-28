@@ -1,0 +1,9 @@
+advertisement-gothic-1 = Mama, mama, mama, I don't want to go back.
+advertisement-gothic-2 = Throw combat boots, I fly straight up, my black set killed them all!
+advertisement-gothic-3 = This station is a station for the sad.
+advertisement-gothic-4 = Math go f##k yourself!
+advertisement-gothic-5 = We're all going to die someday... Uh no, I'm a vend-o-mat. HA-HA-HA! Damn it...
+thankyou-gothic-1 = REAL PUNK!!!
+thankyou-gothic-2 = Listen, your face... Okay, I'm sorry. I can't do this.
+thankyou-gothic-3 = This is cosmic sadness...
+thankyou-gothic-4 = DUUUUUDE!!!

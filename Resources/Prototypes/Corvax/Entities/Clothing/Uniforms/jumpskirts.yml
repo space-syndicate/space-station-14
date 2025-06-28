@@ -86,3 +86,50 @@
       sprite: Corvax/Clothing/Uniforms/Jumpskirt/rd_classical.rsi
     - type: Clothing
       sprite: Corvax/Clothing/Uniforms/Jumpskirt/rd_classical.rsi
+
+- type: entity
+  parent: ClothingUniformBase
+  id: ClothingUniformJumpskirtGothic0
+  name: gothic outfit with skirt
+  description: It's gothic black outfit with skirt.
+  components:
+    - type: Sprite
+      sprite: Corvax/Clothing/Uniforms/Jumpskirt/Gothic/variant_0.rsi
+    - type: Clothing
+      sprite: Corvax/Clothing/Uniforms/Jumpskirt/Gothic/variant_0.rsi
+
+- type: entity
+  parent: ClothingUniformJumpskirtGothic0
+  id: ClothingUniformJumpskirtGothic1
+  components:
+    - type: Sprite
+      sprite: Corvax/Clothing/Uniforms/Jumpskirt/Gothic/variant_1.rsi
+    - type: Clothing
+      sprite: Corvax/Clothing/Uniforms/Jumpskirt/Gothic/variant_1.rsi
+
+- type: entity
+  parent: ClothingUniformJumpskirtGothic0
+  id: ClothingUniformJumpskirtGothic2
+  components:
+    - type: Sprite
+      sprite: Corvax/Clothing/Uniforms/Jumpskirt/Gothic/variant_2.rsi
+    - type: Clothing
+      sprite: Corvax/Clothing/Uniforms/Jumpskirt/Gothic/variant_2.rsi
+
+- type: entity
+  parent: ClothingUniformJumpskirtGothic0
+  id: ClothingUniformJumpskirtGothic3
+  components:
+    - type: Sprite
+      sprite: Corvax/Clothing/Uniforms/Jumpskirt/Gothic/variant_3.rsi
+    - type: Clothing
+      sprite: Corvax/Clothing/Uniforms/Jumpskirt/Gothic/variant_3.rsi
+
+- type: entity
+  parent: ClothingUniformJumpskirtGothic0
+  id: ClothingUniformJumpskirtGothic4
+  components:
+    - type: Sprite
+      sprite: Corvax/Clothing/Uniforms/Jumpskirt/Gothic/variant_4.rsi
+    - type: Clothing
+      sprite: Corvax/Clothing/Uniforms/Jumpskirt/Gothic/variant_4.rsi

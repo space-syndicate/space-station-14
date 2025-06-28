@@ -85,3 +85,77 @@
       sprite: Corvax/Clothing/Uniforms/Jumpsuit/rd_classical.rsi
     - type: Clothing
       sprite: Corvax/Clothing/Uniforms/Jumpsuit/rd_classical.rsi
+
+- type: entity
+  parent: ClothingUniformBase
+  id: ClothingUniformJumpsuitGothic0
+  name: gothic outfit
+  description: It's gothic black outfit.
+  components:
+    - type: Sprite
+      sprite: Corvax/Clothing/Uniforms/Jumpsuit/Gothic/variant_0.rsi
+    - type: Clothing
+      sprite: Corvax/Clothing/Uniforms/Jumpsuit/Gothic/variant_0.rsi
+
+- type: entity
+  parent: ClothingUniformJumpsuitGothic0
+  id: ClothingUniformJumpsuitGothic1
+  components:
+    - type: Sprite
+      sprite: Corvax/Clothing/Uniforms/Jumpsuit/Gothic/variant_1.rsi
+    - type: Clothing
+      sprite: Corvax/Clothing/Uniforms/Jumpsuit/Gothic/variant_1.rsi
+
+- type: entity
+  parent: ClothingUniformJumpsuitGothic0
+  id: ClothingUniformJumpsuitGothic2
+  components:
+    - type: Sprite
+      sprite: Corvax/Clothing/Uniforms/Jumpsuit/Gothic/variant_2.rsi
+    - type: Clothing
+      sprite: Corvax/Clothing/Uniforms/Jumpsuit/Gothic/variant_2.rsi
+
+- type: entity
+  parent: ClothingUniformJumpsuitGothic0
+  id: ClothingUniformJumpsuitGothic3
+  components:
+    - type: Sprite
+      sprite: Corvax/Clothing/Uniforms/Jumpsuit/Gothic/variant_3.rsi
+    - type: Clothing
+      sprite: Corvax/Clothing/Uniforms/Jumpsuit/Gothic/variant_3.rsi
+
+- type: entity
+  parent: ClothingUniformJumpsuitGothic0
+  id: ClothingUniformJumpsuitGothic4
+  components:
+    - type: Sprite
+      sprite: Corvax/Clothing/Uniforms/Jumpsuit/Gothic/variant_4.rsi
+    - type: Clothing
+      sprite: Corvax/Clothing/Uniforms/Jumpsuit/Gothic/variant_4.rsi
+
+- type: entity
+  parent: ClothingUniformJumpsuitGothic0
+  id: ClothingUniformJumpsuitGothic5
+  components:
+    - type: Sprite
+      sprite: Corvax/Clothing/Uniforms/Jumpsuit/Gothic/variant_5.rsi
+    - type: Clothing
+      sprite: Corvax/Clothing/Uniforms/Jumpsuit/Gothic/variant_5.rsi
+
+- type: entity
+  parent: ClothingUniformJumpsuitGothic0
+  id: ClothingUniformJumpsuitGothic6
+  components:
+    - type: Sprite
+      sprite: Corvax/Clothing/Uniforms/Jumpsuit/Gothic/variant_6.rsi
+    - type: Clothing
+      sprite: Corvax/Clothing/Uniforms/Jumpsuit/Gothic/variant_6.rsi
+
+- type: entity
+  parent: ClothingUniformJumpsuitGothic0
+  id: ClothingUniformJumpsuitGothic7
+  components:
+    - type: Sprite
+      sprite: Corvax/Clothing/Uniforms/Jumpsuit/Gothic/variant_7.rsi
+    - type: Clothing
+      sprite: Corvax/Clothing/Uniforms/Jumpsuit/Gothic/variant_7.rsi

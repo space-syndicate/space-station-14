@@ -1,0 +1,30 @@
+- type: entity
+  parent: VendingMachine
+  id: VendingMachineGothic
+  name: Gothic-O-Mat
+  description: Station for the sad... and stylish!
+  components:
+  - type: VendingMachine
+    pack: GothicOMatInventory
+    offState: off
+    brokenState: broken
+    normalState: normal-unshaded
+    denyState: deny-unshaded
+  - type: Advertise
+    pack: GothicOMatAds
+  - type: SpeakOnUIClosed
+    pack: GothicOMatGoodbyes
+  - type: Sprite
+    sprite: Corvax/Structures/Machines/VendingMachines/gothicomat.rsi
+    layers:
+    - state: "off"
+      map: [ "enum.VendingMachineVisualLayers.Base" ]
+    - state: "off"
+      map: [ "enum.VendingMachineVisualLayers.BaseUnshaded" ]
+      shader: unshaded
+    - state: panel
+      map: [ "enum.WiresVisualLayers.MaintenancePanel" ]
+  - type: PointLight
+    radius: 1.8
+    energy: 1
+    color: "#FFFFFF"

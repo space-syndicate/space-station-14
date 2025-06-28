@@ -6,3 +6,14 @@
       sprite: Corvax/Clothing/Shoes/Boots/jackboots_sec.rsi
     - type: Clothing
       sprite: Corvax/Clothing/Shoes/Boots/jackboots_sec.rsi
+
+- type: entity
+  parent: ClothingShoesBase
+  id: ClothingShoesFashionCombatBoots
+  name: fashion combat boots
+  description: Style and practicality.
+  components:
+    - type: Sprite
+      sprite: Corvax/Clothing/Shoes/Boots/fashion_combat_boots.rsi
+    - type: Clothing
+      sprite: Corvax/Clothing/Shoes/Boots/fashion_combat_boots.rsi
