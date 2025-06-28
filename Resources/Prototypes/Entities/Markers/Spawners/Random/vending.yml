@@ -39,10 +39,14 @@
   id: ClothingVendorTable
   table: !type:GroupSelector
     children:
+    # Corvax-start
     - id: VendingMachineClothing
-      weight: 40
+      weight: 35
     - id: VendingMachineWinter
-      weight: 40
+      weight: 35
+    - id: VendingMachineGothic
+      weight: 10
+    # Corvax-end
     - id: VendingMachinePride
       weight: 10
     - id: VendingMachineTheater
