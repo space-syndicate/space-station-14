@@ -20564,7 +20564,7 @@ entities:
   - uid: 610
     components:
     - type: MetaData
-      name: ЛКП Церковь
+      name: ЛКП Храм
     - type: Transform
       pos: -46.5,-5.5
       parent: 2
@@ -81926,7 +81926,7 @@ entities:
       pos: -50.5,-2.5
       parent: 2
     - type: WarpPoint
-      location: Церковь
+      location: Храм
 - proto: DefaultStationBeaconChemistry
   entities:
   - uid: 9709

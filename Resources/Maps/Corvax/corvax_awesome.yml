@@ -102316,7 +102316,7 @@ entities:
       setupAvailableNetworks:
       - SurveillanceCameraService
       nameSet: True
-      id: Церковь
+      id: Храм
   - uid: 13680
     components:
     - type: Transform
@@ -102337,7 +102337,7 @@ entities:
       setupAvailableNetworks:
       - SurveillanceCameraService
       nameSet: True
-      id: Церковь - Кабинет
+      id: Храм - Кабинет
   - uid: 13682
     components:
     - type: Transform
@@ -102347,7 +102347,7 @@ entities:
       setupAvailableNetworks:
       - SurveillanceCameraService
       nameSet: True
-      id: Церковь - Крематорий
+      id: Храм - Крематорий
 - proto: SurveillanceCameraSupply
   entities:
   - uid: 13683
@@ -119518,7 +119518,7 @@ entities:
       pos: -11.5,39.5
       parent: 2
     - type: WarpPoint
-      location: Церковь
+      location: Храм
   - uid: 16396
     components:
     - type: Transform
