@@ -8,7 +8,12 @@
       channels:
       - Common
       - Command
+      - Engineering
+      - Medical
+      - Science
       - Security
+      - Service
+      - Supply
       defaultChannel: Command
     - type: Sprite
       layers:
