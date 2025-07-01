@@ -128,5 +128,7 @@ construction-graph-tag-torch = torch
 # atmos
 construction-graph-tag-fire-extinguisher = fire extinguisher
 construction-graph-tag-fire-helmet = fire helmet
+# clothing
+construction-graph-tag-backpack = backpack
 # salvage
 construction-graph-tag-spationaut-hardsuit = spationaut hardsuit

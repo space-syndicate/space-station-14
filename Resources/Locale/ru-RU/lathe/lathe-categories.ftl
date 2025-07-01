@@ -28,6 +28,7 @@ lathe-category-maints = Maints
 lathe-category-steel = Steel
 lathe-category-white = White
 lathe-category-wood = Wood
+lathe-category-modules = Modules
 lathe-category-chemicals = Химикаты
 lathe-category-materials = Материалы
 lathe-category-boxes = Boxes

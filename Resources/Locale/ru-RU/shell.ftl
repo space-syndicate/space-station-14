@@ -8,6 +8,7 @@ shell-invalid-command-specific = Неверная команда { $commandName 
 shell-cannot-run-command-from-server = Вы не можете выполнить эту команду с сервера.
 shell-only-players-can-run-this-command = Только игроки могут выполнять эту команду.
 shell-must-be-attached-to-entity = Для выполнения этой команды вы должны быть прикреплены к сущности.
+shell-must-have-body = You must have a body to run this command.
 
 ## Arguments
 
@@ -28,10 +29,12 @@ shell-wrong-arguments-number = Неправильное количество а�
 shell-need-between-arguments = Нужно от { $lower } до { $upper } аргументов!
 shell-need-minimum-arguments = Нужно не менее { $minimum } аргументов!
 shell-need-minimum-one-argument = Нужен хотя бы один аргумент!
+shell-need-exactly-zero-arguments = This command takes zero arguments.
 shell-argument-uid = EntityUid
 
 ## Guards
 
+shell-missing-required-permission = You need { $perm } for this command!
 shell-entity-is-not-mob = Целевая сущность не является мобом!
 shell-invalid-entity-id = Недопустимый ID сущности.
 shell-invalid-grid-id = Недопустимый ID сетки.
