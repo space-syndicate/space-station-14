@@ -12,6 +12,9 @@
             "name": "icon"
         },
         {
+            "name": "icon-flash"
+        },
+        {
             "name": "equipped-HELMET",
             "directions": 4
         },
@@ -26,6 +29,22 @@
         {
             "name": "equipped-HELMET-dog",
             "directions": 4
+        },
+        {
+        "name": "off-equipped-HELMET",
+        "directions": 4
+        },
+        {
+        "name": "on-equipped-HELMET",
+        "directions": 4
+        },
+        {
+        "name": "off-equipped-HELMET-vox",
+        "directions": 4
+        },
+        {
+        "name": "on-equipped-HELMET-vox",
+        "directions": 4
         }
     ]
 }
