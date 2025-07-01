@@ -844,4 +844,3 @@ tts-voice-name-illidara = Иллидара Закатное Солнце (Hearth
 tts-voice-name-nici = Жрица луны Ниси (Hearthstone)
 tts-voice-name-vaas = Ваас (Far Cry)
 tts-voice-name-olya = Оля Петрова (TinyBunny)
-
