@@ -184,7 +184,7 @@ flavor-complex-true-nature = как истинная природа реальн
 flavor-complex-false-meat = как не совсем не мясо
 flavor-complex-paper = как кашеобразная масса
 flavor-complex-compressed-meat = как спрессованное мясо
-flavor-complex-dog-food = like dog food
+flavor-complex-dog-food = как еда для собак
 
 # Drink-specific flavors.
 
@@ -294,7 +294,7 @@ flavor-complex-moscowmule = как водка и имбирный эль
 flavor-complex-thesunalsorises = как абсент дайкири
 flavor-complex-whiskeysour = как виски и яйцо
 flavor-complex-zombiecocktail = как поедание мозгов
-flavor-complex-absinthe = как анис
+flavor-complex-absinthe = как горький анис
 flavor-complex-blue-curacao = как цветы апельсина
 flavor-complex-acidspit = как Французкая аккумуляторная кислота
 flavor-complex-allies-cocktail = как лечебная настойка
@@ -317,7 +317,7 @@ flavor-complex-dark-and-stormy = как имбирный эль, сдобрен�
 flavor-complex-grog = как шанти
 flavor-complex-hippies-delight = как будто ваше кровяное давление снижается
 flavor-complex-hooch = как будто это было бы восхитительно, будь вы дизельным двигателем
-flavor-complex-manhattan = как вид из окна пятизвездочного отеля
+flavor-complex-manhattan = как вид из окна пятизвёздочного отеля
 flavor-complex-manhattan-project = как будто теперь я стал Смертью, разрушителем миров
 flavor-complex-margarita = как очень сильное похмелье
 flavor-complex-martini = как шпионский фильм

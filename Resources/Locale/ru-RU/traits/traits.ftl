@@ -9,8 +9,8 @@ trait-pacifist-desc = Вы не можете нападать и причиня�
 permanent-blindness-trait-examined = [color=lightblue]{ CAPITALIZE(POSS-ADJ($target)) } глаза остекленелые и расфокусированные. Не похоже, что { SUBJECT($target) } может хорошо вас видеть, если может вообще.[/color]
 trait-lightweight-name = Быстрое опьянение
 trait-lightweight-desc = Алкоголь оказывает на вас более сильное воздействие
-trait-monochromancy-name = Monochromancy
-trait-monochromancy-desc = You are fully colorblind, everything you perceive ranges from blacks to whites.
+trait-monochromancy-name = Монохромазия
+trait-monochromancy-desc = Вы полный дальтоник, всё, что вы видите, сводится к оттенкам от чёрного до белого.
 trait-muted-name = Немота
 trait-muted-desc = Вы не можете говорить
 trait-paracusia-name = Паракузия
