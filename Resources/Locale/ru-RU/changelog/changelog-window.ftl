@@ -12,3 +12,5 @@ changelog-button-new-entries = Обновления (!)
 changelog-tab-title-Changelog = Список изменений
 changelog-tab-title-Admin = Админское
 changelog-tab-title-Maps = Карты
+cmd-changelog-desc = Opens the changelog.
+cmd-changelog-help = Usage: changelog

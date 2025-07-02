@@ -126,5 +126,7 @@ construction-graph-tag-torch = факел
 # atmos
 construction-graph-tag-fire-extinguisher = огнетушитель
 construction-graph-tag-fire-helmet = пожарный шлем
+# clothing
+construction-graph-tag-backpack = backpack
 # salvage
 construction-graph-tag-spationaut-hardsuit = лёгкий скафандр утилизатора

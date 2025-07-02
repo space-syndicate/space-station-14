@@ -19,3 +19,5 @@ ent-MobPurpleSnake = space adder
 ent-MobSmallPurpleSnake = space adder
     .desc = A smaller version of the menacing purple snake from Kepler-283c.
     .suffix = small
+ent-MobXenoLonePraetorianNoGhost = lone praetorian
+    .desc = The last of its kind.
