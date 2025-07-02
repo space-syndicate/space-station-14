@@ -1,2 +1,2 @@
-ent-ActionRetractableItemArmBlade = Arm Blade
-    .desc = Shed your flesh and reform it into a fleshy blade.
+ent-ActionRetractableItemArmBlade = Рука-клинок
+    .desc = Сбросьте свою плоть и преобразуйте её в плотное лезвие.

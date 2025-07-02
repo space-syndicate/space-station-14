@@ -74,7 +74,7 @@ ghost-role-information-monkey-description = У-у-у а-а-а!
 ghost-role-information-kobold-name = Кобольд
 ghost-role-information-kobold-description = Будьте маленьким гремлином, которым и являетесь, кричите на членов экипажа и просите мяса!
 ghost-role-information-rat-king-name = Крысиный король
-ghost-role-information-rat-king-description = Вы - Крысиный король, вас интересует еда, еда и ещё раз еда. Сотрудничайте со станцией или сражайтесь с ней ради еды. Я уже упоминал, что вас интересует еда?
+ghost-role-information-rat-king-description = Вы - Крысиный король, вас интересует еда, еда и ещё раз еда. Сражайтесь со станцией ради еды. Я уже упоминал, что вас интересует еда?
 ghost-role-information-rat-servant-name = Крысиный слуга
 ghost-role-information-rat-servant-description = Вы Крысиный слуга. Выполняйте приказы своего короля.
 ghost-role-information-salvage-carp-name = Космический карп с обломка
@@ -206,7 +206,7 @@ ghost-role-information-lost-challenge-commander-rules =
     Вы не помните ничего из своей предыдущей жизни и не помните ничего из того, что узнали, будучи призраком.
     Вам разрешается помнить знания об игре в целом, например, как готовить, как использовать предметы и т.д.
     Вам [color=red]НЕ[/color] разрешается помнить, имя, внешность и т.д. вашего предыдущего персонажа.
-ghost-role-information-lost-challenge-cargo-technican-name = Грузовой шофер
+ghost-role-information-lost-challenge-cargo-technican-name = Грузовой шофёр
 ghost-role-information-lost-challenge-cargo-technican-description = Вы - грузовой техник, получивший отпуск на берег вместе с одним из своих командиров.
 ghost-role-information-lost-challenge-cargo-technican-rules =
     Вы не враждебны станции и делаете то, что должны, чтобы обеспечить собственное выживание.

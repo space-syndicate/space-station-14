@@ -34,5 +34,5 @@ ent-CrateEngineeringSpaceHeater = ящик с термостатом
     .desc = Содержит термостат для климат-контроля.
 ent-CrateTechBoardRandom = излишки плат
     .desc = Откуда-то взятые излишки плат.
-ent-CrateAirGrenade = air grenade crate
-    .desc = A crate containing 3 air grenades.
+ent-CrateAirGrenade = ящик воздушных гранат
+    .desc = Ящик, содержащий 3 воздушные гранаты.

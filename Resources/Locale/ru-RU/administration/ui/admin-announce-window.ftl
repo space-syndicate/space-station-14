@@ -6,5 +6,5 @@ admin-announce-button = Сделать объявление
 admin-announce-type-station = Станция
 admin-announce-type-server = Сервер
 admin-announce-keep-open = Держать открытым
-cmd-announceui-desc = Opens the announcement UI.
-cmd-announceui-help = Usage: announceui
+cmd-announceui-desc = Открывает интерфейс меню объявлений.
+cmd-announceui-help = Использование: announceui

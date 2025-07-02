@@ -1,5 +1,6 @@
 ### for technical and/or system messages
 
+
 ## General
 
 shell-command-success = Команда выполнена.
@@ -29,12 +30,12 @@ shell-wrong-arguments-number = Неправильное количество а�
 shell-need-between-arguments = Нужно от { $lower } до { $upper } аргументов!
 shell-need-minimum-arguments = Нужно не менее { $minimum } аргументов!
 shell-need-minimum-one-argument = Нужен хотя бы один аргумент!
-shell-need-exactly-zero-arguments = This command takes zero arguments.
+shell-need-exactly-zero-arguments = Эта команда принимает ноль аргументов.
 shell-argument-uid = EntityUid
 
 ## Guards
 
-shell-missing-required-permission = You need { $perm } for this command!
+shell-missing-required-permission = Вам нужен { $perm } для этой команды!
 shell-entity-is-not-mob = Целевая сущность не является мобом!
 shell-invalid-entity-id = Недопустимый ID сущности.
 shell-invalid-grid-id = Недопустимый ID сетки.
@@ -57,4 +58,4 @@ shell-argument-map-id-invalid = Аргумент { $index } должен быт�
 shell-argument-number-invalid = Аргумент { $index } должен быть валидным числом!
 # Hints
 shell-argument-username-hint = <username>
-shell-argument-username-optional-hint = [username]
+shell-argument-username-optional-hint =  [username]

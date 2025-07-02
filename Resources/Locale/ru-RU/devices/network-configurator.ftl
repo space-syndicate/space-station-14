@@ -46,5 +46,5 @@ network-configurator-item-status-label =
     Режим: { $mode }
     Переключить: { $keybinding }
 # command
-cmd-clearnetworklinkoverlays-desc = Clear all network link overlays.
-cmd-clearnetworklinkoverlays-help = Usage: clearnetworklinkoverlays
+cmd-clearnetworklinkoverlays-desc = Очистить все наложения сетевых соединений.
+cmd-clearnetworklinkoverlays-help = Использование: clearnetworklinkoverlays

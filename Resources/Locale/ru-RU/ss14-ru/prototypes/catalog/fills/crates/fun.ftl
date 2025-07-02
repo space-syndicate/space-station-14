@@ -1,5 +1,5 @@
-ent-CratePlants = plant crate
-    .desc = A variety pack of potted plants to spruce up your station!
+ent-CratePlants = ящик растений
+    .desc = Набор разнообразных комнатных растений для украшения вашей станции!
 ent-CrateFunPlushie = ящик плюшевых игрушек
     .desc = Куча мягких плюшевых игрушек. Разложите их повсюду, а потом подумайте, как вы объясните эту покупку NT.
 ent-CrateFunLizardPlushieBulk = оптовый ящик плюшевых унатхов
