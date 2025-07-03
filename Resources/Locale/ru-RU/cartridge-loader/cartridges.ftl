@@ -61,11 +61,11 @@ nano-task-ui-description-placeholder = Взять что-то важное
 nano-task-ui-requester-label = Заявитель:
 nano-task-ui-requester-placeholder = Джон Нанотрейзен
 nano-task-ui-item-title = Редактировать задачу
-nano-task-printed-description = Описание: { $description }
-nano-task-printed-requester = Заявитель: { $requester }
-nano-task-printed-high-priority = Приоритет: Высокий
-nano-task-printed-medium-priority = Приоритет: Средний
-nano-task-printed-low-priority = Приоритет: Низкий
+nano-task-printed-description = [bold]Описание:[/bold] { $description }
+nano-task-printed-requester = [bold]Заявитель:[/bold] { $requester }
+nano-task-printed-high-priority = [bold]Приоритет[/bold]: [color=red]Высокий[/color]
+nano-task-printed-medium-priority = [bold]Приоритет[/bold]: Средний
+nano-task-printed-low-priority = [bold]Приоритет[/bold]: Низкий
 # Wanted list cartridge
 wanted-list-program-name = Список разыскиваемых
 wanted-list-label-no-records = Всё спокойно, ковбой.

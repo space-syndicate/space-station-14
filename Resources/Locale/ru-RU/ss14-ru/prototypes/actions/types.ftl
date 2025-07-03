@@ -2,8 +2,8 @@ ent-BaseAction = { "" }
     .desc = { "" }
 ent-BaseMentalAction = { ent-BaseAction }
     .desc = { ent-BaseAction.desc }
-ent-BaseSuicideAction = { "" }
-    .desc = { "" }
+ent-BaseSuicideAction = { ent-BaseMentalAction }
+    .desc = { ent-BaseMentalAction.desc }
 ent-BaseImplantAction = { ent-BaseAction }
     .desc = { ent-BaseAction.desc }
 ent-BaseToggleAction = { ent-BaseAction }
@@ -34,8 +34,8 @@ ent-ActionToggleSuitPiece = Переключить элементы костюм
     .desc = Не забудьте экипировать важные части костюма, прежде чем приступать к действиям.
 ent-ActionCombatModeToggle = [color=red]Боевой режим[/color]
     .desc = Войти в боевой режим
-ent-ActionCombatModeToggleOff = [color=red]Боевой режим[/color]
-    .desc = Войти в боевой режим
+ent-ActionCombatModeToggleOff = { ent-ActionCombatModeToggle }
+    .desc = { ent-ActionCombatModeToggle.desc }
 ent-ActionChangeVoiceMask = Изменить имя
     .desc = Измените имя, которое все слышат, на другое.
 ent-ActionVendingThrow = Выдать предмет
@@ -60,9 +60,9 @@ ent-ActionToggleWagging = Махать хвостом
     .desc = Начать/перестать махать хвостом.
 ent-FakeMindShieldToggleAction = [color=green]Переключить фальшивый Щит разума[/color]
     .desc = Переключить трансляцию фальшивого Щита разума
-ent-ActionToggleRootable = action-name-toggle-rootable
-    .desc = action-description-toggle-rootable
-ent-ActionChameleonController = Control clothing
-    .desc = Change your entire outfit fast!
 ent-ActionToggleParamedicSiren = Переключить сирену парамедика
     .desc = Включает или выключает сирену парамедика.
+ent-ActionToggleRootable = Укоренение
+    .desc = Начните или прекратите укореняться к полу.
+ent-ActionChameleonController = Управление одеждой
+    .desc = Быстро смените весь свой наряд!

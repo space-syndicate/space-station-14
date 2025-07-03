@@ -26,7 +26,7 @@ construction-graph-tag-medical-hud = медицинский визор
 construction-graph-tag-sun-glasses = солнцезащитные очки
 construction-graph-tag-security-helmet = шлем СБ
 # materials
-construction-graph-tag-manipulator = modular machine part
+construction-graph-tag-manipulator = модульная машинная часть
 construction-graph-tag-voice-trigger = голосовой триггер
 construction-graph-tag-signal-trigger = сигнальный триггер
 construction-graph-tag-proximity-sensor = датчик движения
@@ -48,7 +48,7 @@ construction-graph-tag-super-compact-ai-chip = сверхкомпактный ч
 # other
 construction-graph-tag-light-bulb = лампочка
 construction-graph-tag-radio = радио
-construction-graph-tag-pipe = труба
+construction-graph-tag-pipe = газовая труба
 construction-graph-tag-human-head = человеческая голова
 construction-graph-tag-bucket = ведро
 construction-graph-tag-borg-arm = рука киборга
@@ -60,9 +60,9 @@ construction-graph-tag-rifle-stock = ружейное ложе
 construction-graph-tag-match-stick = спичка
 construction-graph-tag-potato = картофель
 construction-graph-tag-wheat-bushel = сноп пшеницы
-construction-graph-tag-apron = an apron
-construction-graph-tag-utility-belt = a utility belt
 construction-graph-tag-corgi-hide = шкура корги
+construction-graph-tag-apron = фартук
+construction-graph-tag-utility-belt = пояс для инструментов
 soil-construction-graph-any-mushroom = любой гриб
 # toys
 construction-graph-tag-rubber-ducky = резиновая уточка
@@ -128,3 +128,5 @@ construction-graph-tag-fire-extinguisher = огнетушитель
 construction-graph-tag-fire-helmet = пожарный шлем
 # salvage
 construction-graph-tag-spationaut-hardsuit = лёгкий скафандр утилизатора
+# clothing
+construction-graph-tag-backpack = рюкзак

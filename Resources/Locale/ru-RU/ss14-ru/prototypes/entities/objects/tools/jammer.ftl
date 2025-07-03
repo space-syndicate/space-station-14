@@ -5,4 +5,3 @@ ent-RadioJammer = { ent-AppraisalTool }
 # Corvax-HiddenDesc-End
 ent-XenoborgRadioJammer = глушитель связи ксеноборга
     .desc = При активации это устройство блокирует любую исходящую поблизости радиосвязь и скрывает датчики комбинезонов с мониторов.
-
