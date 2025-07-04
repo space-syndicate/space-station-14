@@ -56413,7 +56413,7 @@ entities:
   - uid: 5480
     components:
     - type: MetaData
-      name: Церковь
+      name: Храм
     - type: Transform
       pos: 40.5,-11.5
       parent: 2
@@ -56421,7 +56421,7 @@ entities:
       setupAvailableNetworks:
       - SurveillanceCameraService
       nameSet: True
-      id: церковь
+      id: храм
   - uid: 5481
     components:
     - type: Transform

@@ -8,7 +8,7 @@ crayon-interact-invalid-location = Туда не дотянуться!
 ## UI
 
 crayon-window-title = Мелок
-crayon-window-placeholder = Поиск, или создание очереди рисования из списка имён, разделенных запятыми
+crayon-window-placeholder = Поиск, или создание очереди рисования из списка имён, разделённых запятыми
 crayon-category-1-brushes = Кисти
 crayon-category-2-alphanum = Цифры и буквы
 crayon-category-3-symbols = Символы
