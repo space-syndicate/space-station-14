@@ -3,10 +3,8 @@ import re
 
 from project import Project
 
-######################################## Const definitions ########################################
 RE_INNER_DASH = re.compile(r'(?<=\s)-(?=\s)')
 
-######################################## Function definitions #######################################
 def is_message_start(line: str) -> bool:
     stripped = line.lstrip()
     return '=' in stripped and not stripped.startswith(('#', '-', '.'))
