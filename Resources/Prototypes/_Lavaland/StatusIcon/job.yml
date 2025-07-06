@@ -1,0 +1,39 @@
+- type: jobIcon
+  parent: JobIcon
+  id: JobIconAdjutant
+  icon:
+    sprite: /Textures/_Lavaland/Interface/job_icons.rsi
+    state: Adjutant
+  jobName: job-name-adjutant
+
+- type: jobIcon
+  parent: JobIcon
+  id: JobIconLogist
+  icon:
+    sprite: /Textures/_Lavaland/Interface/job_icons.rsi
+    state: Logist
+  jobName: job-name-logist
+
+- type: jobIcon
+  parent: JobIcon
+  id: JobIconBrigadier
+  icon:
+    sprite: /Textures/_Lavaland/Interface/job_icons.rsi
+    state: Brigadier
+  jobName: job-name-brigadier
+
+- type: jobIcon
+  parent: JobIcon
+  id: JobIconFeldsher
+  icon:
+    sprite: /Textures/_Lavaland/Interface/job_icons.rsi
+    state: Feldsher
+  jobName: job-name-brigadier
+
+- type: jobIcon
+  parent: JobIcon
+  id: JobIconMiner
+  icon:
+    sprite: /Textures/_Lavaland/Interface/job_icons.rsi
+    state: Miner
+  jobName: job-name-miner

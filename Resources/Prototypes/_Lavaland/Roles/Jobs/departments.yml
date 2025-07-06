@@ -1,0 +1,48 @@
+- type: department
+  id: Command
+  name: department-Command
+  description: department-Command-description
+  color: "#334E6D"
+  roles:
+  - Captain
+  - Adjutant # Lavaland Role
+  - Logist
+  - Pilot
+  primary: false
+  weight: 100
+
+- type: department
+  id: Cargo
+  name: department-Cargo
+  description: department-Cargo-description
+  color: "#A46106"
+  roles:
+  - CargoTechnician
+  - Logist
+  - Miner
+  - Brigadier
+  - Feldsher
+
+- type: department
+  id: Ship-roles
+  name: department-Ship-roles
+  description: department-Ship-roles-description
+  color: "#DE3A3A"
+  weight: 20
+  roles:
+  - SecurityOfficer
+  - MedicalDoctor
+  - MedicalIntern
+  - StationEngineer
+  - TechnicalAssistant
+
+- type: department
+  id: Civilian
+  name: department-Civilian
+  description: department-Civilian-description
+  color: "#9FED58"
+  weight: -10
+  roles:
+  - Chef
+  - Janitor
+  - ServiceWorker

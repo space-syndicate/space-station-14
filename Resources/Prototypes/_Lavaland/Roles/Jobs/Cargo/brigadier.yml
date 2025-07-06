@@ -1,0 +1,27 @@
+- type: job
+  id: Brigadier
+  name: job-name-brigadier
+  description: job-description-brigadier
+  playTimeTracker: JobBrigadier
+  requirements:
+    - !type:DepartmentTimeRequirement
+      department: Cargo
+      time: 14400 # 4 hrs
+  icon: "JobIconBrigadier"
+  startingGear: BrigadierGear
+  supervisors: job-supervisors-qm
+  access:
+  - Cargo
+  - Salvage
+  - Maintenance
+  - External
+
+- type: startingGear
+  id: BrigadierGear
+  equipment:
+    jumpsuit: ClothingUniformJumpsuitSalvageSpecialist
+    id: SalvagePDA
+    ears: ClothingHeadsetCargo
+  storage:
+    back:
+    - Stuff

@@ -1,0 +1,30 @@
+- type: job
+  id: Feldsher
+  name: job-name-feldsher
+  description: job-description-feldsher
+  playTimeTracker: JobFeldsher
+  requirements:
+  - !type:DepartmentTimeRequirement
+    department: Civilian
+    time: 3600 #1 hrs
+  - !type:DepartmentTimeRequirement
+    department: Cargo
+    time: 7200 #2 hrs
+  startingGear: FeldsherGear
+  icon: "JobIconFeldsher"
+  supervisors: job-supervisors-cmo
+  access:
+  - Medical
+  - Maintenance
+  extendedAccess:
+  - Chemistry
+
+- type: startingGear
+  id: FeldsherGear
+  equipment:
+    id: ParamedicPDA
+    ears: ClothingHeadsetMedical
+    belt: ClothingBeltMedicalEMTFilled
+  storage:
+    back:
+    - EmergencyRollerBedSpawnFolded

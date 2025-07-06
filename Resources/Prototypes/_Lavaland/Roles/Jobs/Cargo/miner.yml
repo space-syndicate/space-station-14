@@ -1,0 +1,23 @@
+- type: job
+  id: Miner
+  name: job-name-miner
+  description: job-description-miner
+  playTimeTracker: JobMiner
+  icon: "JobIconMiner"
+  startingGear: MinerGear
+  supervisors: job-supervisors-qm
+  access:
+  - Cargo
+  - Salvage
+  - Maintenance
+  - External
+
+- type: startingGear
+  id: MinerGear
+  equipment:
+    jumpsuit: ClothingUniformJumpsuitSalvageSpecialist
+    id: SalvagePDA
+    ears: ClothingHeadsetCargo
+  storage:
+    back:
+    - Stuff

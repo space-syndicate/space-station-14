@@ -4,9 +4,9 @@
   description: job-description-pilot
   playTimeTracker: JobPilot
   requirements:
-  - !type:DepartmentTimeRequirement
-    department: Security
-    time: 72000 #20 hrs
+#  - !type:DepartmentTimeRequirement
+#    department: Security
+#    time: 72000 #20 hrs
   - !type:TraitsRequirement
     inverted: true
     traits:
