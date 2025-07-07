@@ -248,6 +248,7 @@
   - type: Objective
     difficulty: 1
 
+# Corvax-StealTarget-start
 #- type: entity                                      #Cargo subgroup
 #  parent: BaseThiefStealObjective
 #  id: ExpeditionsCircuitboardStealObjective
@@ -258,6 +259,7 @@
 #    stealGroup: SalvageExpeditionsComputerCircuitboard
 #  - type: Objective
 #    difficulty: 0.7
+# Corvax-StealTarget-end
 
 - type: entity
   parent: BaseThiefStealObjective
