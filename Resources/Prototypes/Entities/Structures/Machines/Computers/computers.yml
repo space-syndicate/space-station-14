@@ -1290,6 +1290,8 @@
       color: "#b89f25"
     - type: AccessReader
       access: [["Salvage"]]
+#    - type: StealTarget
+#      stealGroup: SalvageExpeditionsComputerCircuitboard
 
 - type: entity
   parent: BaseComputer
