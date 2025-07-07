@@ -219,6 +219,8 @@
       state: cpu_supply
     - type: ComputerBoard
       prototype: ComputerSalvageExpedition
+#    - type: StealTarget
+#      stealGroup: SalvageExpeditionsComputerCircuitboard
 
 - type: entity
   parent: BaseComputerCircuitboard
