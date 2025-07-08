@@ -1,0 +1,63 @@
+# Cargo 
+
+- type: entity
+  id: SpawnPointLogist
+  parent: SpawnPointJobBase
+  name: logist
+  components:
+  - type: SpawnPoint
+    job_id: Logist
+  - type: Sprite
+    layers:
+      - state: green
+      - state: qm
+
+- type: entity
+  id: SpawnPointBrigadier
+  parent: SpawnPointJobBase
+  name: brigadier
+  components:
+  - type: SpawnPoint
+    job_id: Brigadier
+  - type: Sprite
+    layers:
+      - state: green
+      - state: salvagespecialist
+
+- type: entity
+  id: SpawnPointFeldsher
+  parent: SpawnPointJobBase
+  name: feldsher
+  components:
+  - type: SpawnPoint
+    job_id: Feldsher
+  - type: Sprite
+    layers:
+      - state: green
+      - state: salvagespecialist
+
+- type: entity
+  id: SpawnPointMiner
+  parent: SpawnPointJobBase
+  name: miner
+  components:
+  - type: SpawnPoint
+    job_id: Miner
+  - type: Sprite
+    layers:
+      - state: green
+      - state: salvagespecialist
+
+# Cmd
+
+- type: entity
+  id: SpawnPointAdjutant
+  parent: SpawnPointJobBase
+  name: adjutant
+  components:
+  - type: SpawnPoint
+    job_id: Adjutant
+  - type: Sprite
+    layers:
+      - state: green
+      - state: hop

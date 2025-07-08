@@ -18,6 +18,6 @@ Adjutant = адъютант
 job-name-adjutant = адъютант
 job-description-adjutant = Помогайте с бюрократической работой, концультируйте командование и помогайте капитану.
 
-Miner = добытчик
-job-name-miner = добытчик
+Miner = шахтёр
+job-name-miner = шахтёр
 job-description-miner = Участвуйте в экспедициях в Лава-Лэнде, копайте руду и радуйте бригадира!
