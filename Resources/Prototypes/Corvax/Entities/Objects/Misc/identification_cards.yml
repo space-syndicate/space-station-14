@@ -7,8 +7,14 @@
       layers:
         - state: silver
         - state: idiaa
-    - type: PresetIdCard
-      job: IAA
+    - type: Access
+      tags:
+      - Service
+      - Brig
+      - Maintenance
+      - Command
+      - External
+      - Lawyer
 
 - type: entity
   parent: IDCardStandard
