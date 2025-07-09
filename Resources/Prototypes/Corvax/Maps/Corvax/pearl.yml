@@ -21,7 +21,6 @@
           availableJobs:
             # command
             Captain: [ 1, 1 ]
-            IAA: [ 1, 1 ]
             # cargo
             Quartermaster: [ 1, 1 ]
             SalvageSpecialist: [ 3, 3 ]
@@ -64,6 +63,7 @@
             ServiceWorker: [ 2, 2 ]
             Passenger: [ -1, -1 ]
             Reporter: [ 1, 1 ]
+            Lawyer: [ 1, 1 ]
             # silicon
             Borg: [ 1, 1 ]
             StationAi: [ 1, 1 ]
