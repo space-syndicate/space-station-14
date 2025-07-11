@@ -18556,7 +18556,7 @@ entities:
   - uid: 495
     components:
     - type: MetaData
-      name: ЛКП (церковь)
+      name: ЛКП (храм)
     - type: Transform
       rot: 3.141592653589793 rad
       pos: -65.5,-69.5
@@ -55612,7 +55612,7 @@ entities:
       pos: -65.5,-66.5
       parent: 2
     - type: WarpPoint
-      location: Церковь
+      location: Храм
 - proto: DefaultStationBeaconChemistry
   entities:
   - uid: 7203
@@ -55682,7 +55682,7 @@ entities:
       pos: -68.5,-71.5
       parent: 2
     - type: NavMapBeacon
-      text: Спасательная капсула (церковь)
+      text: Спасательная капсула (храм)
   - uid: 7211
     components:
     - type: Transform
@@ -109840,7 +109840,7 @@ entities:
   - uid: 14574
     components:
     - type: MetaData
-      name: подстанция (церковь)
+      name: подстанция (храм)
     - type: Transform
       pos: -69.5,-68.5
       parent: 2
@@ -110549,7 +110549,7 @@ entities:
       pos: -62.5,-58.5
       parent: 2
     - type: SurveillanceCamera
-      id: Коридор перед церковью
+      id: Коридор перед храмом
   - uid: 14648
     components:
     - type: Transform
@@ -110953,7 +110953,7 @@ entities:
       setupAvailableNetworks:
       - SurveillanceCameraService
       nameSet: True
-      id: Церковь
+      id: Храм
   - uid: 14694
     components:
     - type: Transform

@@ -46,3 +46,5 @@ ent-SteelBench = steel bench
     .desc = A long chair made for a metro. Really standard design.
 ent-WoodenBench = wooden bench
     .desc = Did you get a splinter? Well, at least it’s eco friendly.
+ent-ChairXeno = xeno chair
+    .desc = { ent-StoolBase.desc }
