@@ -7,11 +7,7 @@
   icon: JobIconVisitor
   setPreference: false
   overrideConsoleVisibility: true
-# Corvax-MRP-Start
-#  access:
-#  - Maintenance
-#  extendedAccess:
-#  - External
-  extendedAccess:
+  access:
   - Maintenance
-# Corvax-MRP-End
+  extendedAccess:
+  - External
