@@ -4,51 +4,60 @@
   storage:
     back:
     - ClothingNeckAtharaPin
+  groupBy: "corvaxserverpins"
 
 - type: loadout
   id: ClothingNeckCorvaxPin
   storage:
     back:
     - ClothingNeckCorvaxPin
+  groupBy: "corvaxserverpins"
 
 - type: loadout
   id: ClothingNeckEchoPin
   storage:
     back:
     - ClothingNeckEchoPin
+  groupBy: "corvaxserverpins"
 
 - type: loadout
   id: ClothingNeckElysiumPin
   storage:
     back:
     - ClothingNeckElysiumPin
+  groupBy: "corvaxserverpins"
 
 - type: loadout
   id: ClothingNeckMainPin
   storage:
     back:
     - ClothingNeckMainPin
+  groupBy: "corvaxserverpins"
 
 - type: loadout
   id: ClothingNeckNebulaPin
   storage:
     back:
     - ClothingNeckNebulaPin
+  groupBy: "corvaxserverpins"
 
 - type: loadout
   id: ClothingNeckNovaPin
   storage:
     back:
     - ClothingNeckNovaPin
+  groupBy: "corvaxserverpins"
 
 - type: loadout
   id: ClothingNeckSolarisPin
   storage:
     back:
     - ClothingNeckSolarisPin
+  groupBy: "corvaxserverpins"
 
 - type: loadout
   id: ClothingNeckWhiteListPin
   storage:
     back:
     - ClothingNeckWhiteListPin
+  groupBy: "corvaxserverpins"
