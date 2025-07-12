@@ -20,7 +20,6 @@
         availableJobs:
           # command
           Captain: [ 1, 1 ]
-          IAA: [ 1, 1 ]
           # cargo
           Quartermaster: [ 1, 1 ]
           SalvageSpecialist: [ 4, 4 ]
@@ -49,6 +48,7 @@
           Detective: [ 1, 1 ]
           Pilot: [ 1, 1]
           Brigmedic: [ 1, 1 ]
+          Lawyer: [ 1, 1 ]
           # service
           HeadOfPersonnel: [ 1, 1 ]
           Bartender: [ 2, 2 ]

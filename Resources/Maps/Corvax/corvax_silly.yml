@@ -38733,7 +38733,7 @@ entities:
       pos: 3.5472865,18.87167
       parent: 2
     - type: Paper
-      stampState: paper_stamp-approve
+      stampState: paper_stamp-ok
       stampedBy:
       - stampedColor: '#00BE00FF'
         stampedName: stamp-component-stamped-name-approved
@@ -38893,7 +38893,7 @@ entities:
       pos: 10.290568,22.278557
       parent: 2
     - type: Paper
-      stampState: paper_stamp-approve
+      stampState: paper_stamp-ok
       stampedBy:
       - stampedColor: '#00BE00FF'
         stampedName: stamp-component-stamped-name-approved

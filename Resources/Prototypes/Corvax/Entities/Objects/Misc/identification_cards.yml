@@ -1,17 +1,5 @@
 - type: entity
   parent: IDCardStandard
-  id: IAAIDCard
-  name: internal affairs agent ID card
-  components:
-    - type: Sprite
-      layers:
-        - state: silver
-        - state: idiaa
-    - type: PresetIdCard
-      job: IAA
-
-- type: entity
-  parent: IDCardStandard
   id: PilotIDCard
   name: pilot ID card
   components:
