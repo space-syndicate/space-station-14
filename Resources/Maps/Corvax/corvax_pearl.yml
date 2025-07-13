@@ -169837,8 +169837,6 @@ entities:
       pos: 78.5,79.5
       parent: 2
     - type: DeviceNetwork
-      configurators:
-      - invalid
       deviceLists:
       - 19366
   - uid: 19364
@@ -169847,8 +169845,6 @@ entities:
       pos: 74.5,75.5
       parent: 2
     - type: DeviceNetwork
-      configurators:
-      - invalid
       deviceLists:
       - 19366
   - uid: 19365
@@ -169857,8 +169853,6 @@ entities:
       pos: 74.5,79.5
       parent: 2
     - type: DeviceNetwork
-      configurators:
-      - invalid
       deviceLists:
       - 19366
   - uid: 19367
@@ -169867,8 +169861,6 @@ entities:
       pos: 78.5,75.5
       parent: 2
     - type: DeviceNetwork
-      configurators:
-      - invalid
       deviceLists:
       - 19366
 - proto: WeaponEnergyTurretAIControlPanel
@@ -169882,9 +169874,9 @@ entities:
     - type: DeviceList
       devices:
       - 19367
-      - 19363
       - 19365
       - 19364
+      - 19363
 - proto: WeaponLaserCarbine
   entities:
   - uid: 19792
