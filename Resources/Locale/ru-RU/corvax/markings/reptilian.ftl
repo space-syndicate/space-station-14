@@ -1,0 +1,1 @@
+marking-LizardHornsFloppyKoboldEarsAlt = Унатх, уши (Вислоухий кобольд, Альт.)
