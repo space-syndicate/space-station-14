@@ -1,15 +1,4 @@
 - type: roleLoadout
-  id: JobIAA
-  groups:
-  - Inventory # Corvax-Loadouts
-  - LawyerNeck
-  - LawyerJumpsuit
-  - CommonBackpack
-  - Survival
-  - Trinkets
-  - GroupSpeciesBreathTool
-
-- type: roleLoadout
   id: JobPilot
   groups:
   - Inventory # Corvax-Loadouts
