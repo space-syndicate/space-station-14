@@ -75,6 +75,11 @@ entities:
       bodyType: Dynamic
     - type: Fixtures
       fixtures: {}
+    - type: DeviceNetwork
+      deviceNetId: Wireless
+      configurators: []
+      deviceLists: []
+      transmitFrequencyId: ShuttleTimer
     - type: Gravity
       gravityShakeSound: !type:SoundPathSpecifier
         path: /Audio/Effects/alert.ogg
