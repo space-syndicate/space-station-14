@@ -15,7 +15,7 @@
             !type:NanotrasenNameGenerator
             prefixCreator: 'LPK'
         - type: StationEmergencyShuttle
-          emergencyShuttlePath: /Maps/Corvax/Shuttles/evac_venus.yml
+          emergencyShuttlePath: /Maps/Corvax/Shuttles/emergency_corvaxchloris.yml
         - type: StationJobs
           availableJobs:
             # command

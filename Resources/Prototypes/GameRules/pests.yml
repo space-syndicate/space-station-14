@@ -48,7 +48,7 @@
     startAnnouncement: station-event-vent-creatures-start-announcement
     startAudio:
       path: /Audio/Announcements/attention.ogg
-    earliestStart: 15
+    earliestStart: 20 # Corax-MRP # 15
     weight: 6
     duration: 50
     minimumPlayers: 30 # Hopefully this is enough for the Rat King's potential Army (it was not, raised from 15 -> 30)

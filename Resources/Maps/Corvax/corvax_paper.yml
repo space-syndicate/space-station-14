@@ -88714,8 +88714,6 @@ entities:
     - type: Transform
       pos: 0.5,15.5
       parent: 2
-    - type: Anchorable
-      flags: Unanchorable
 - proto: OrganHumanHeart
   entities:
   - uid: 7170
