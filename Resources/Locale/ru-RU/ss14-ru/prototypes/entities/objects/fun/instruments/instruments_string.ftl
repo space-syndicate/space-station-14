@@ -1,3 +1,7 @@
+ent-BaseStringInstrument = { ent-BaseHandheldInstrument }
+    .desc = { ent-BaseHandheldInstrument.desc }
+ent-BaseStringInstrumentClothing = { ent-BaseStringInstrument }
+    .desc = { ent-BaseStringInstrument.desc }
 ent-ElectricGuitarInstrument = электрогитара
     .desc = Почувствуйте себя рок-звездой!
 ent-BassGuitarInstrument = бас-гитара
@@ -10,7 +14,7 @@ ent-GuitarlessFretsInstrument = безгитарные лады
     .desc = Кому вообще нужен корпус?
     .suffix = Адмемы
 ent-BanjoInstrument = банджо
-    .desc = { ent-BaseHandheldInstrument.desc }
+    .desc = { ent-BaseStringInstrumentClothing.desc }
 ent-ViolinInstrument = скрипка
     .desc = Любимица музыкантов-виртуозов и блюграсс-групп.
 ent-ViolaInstrument = виола

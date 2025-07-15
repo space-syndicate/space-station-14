@@ -6,8 +6,8 @@ rcd-component-examine-build-details = Выбран режим строитель
 ### Interaction Messages
 
 # Mode change
-rcd-component-change-mode = РСУ переключён в режим '{ $mode }'.
-rcd-component-change-build-mode = РСУ переключён в режим строительства. Строится { $name }.
+rcd-component-change-mode = РСУ переключёно в режим '{ $mode }'.
+rcd-component-change-build-mode = РСУ переключёно в режим строительства. Строится { $name }.
 # Ammo count
 rcd-component-no-ammo-message = В РСУ закончились заряды!
 rcd-component-insufficient-ammo-message = В РСУ не хватает зарядов!

@@ -1,3 +1,9 @@
+- type: humanoidBaseSprite
+  id: MobTajaranEyes
+  baseSprite:
+    sprite: Corvax/Mobs/Customization/Tajaran/tajaran_eyes.rsi
+    state: eyes
+
 - type: marking
   id: Patch
   markingCategory: Overlay
@@ -43,23 +49,23 @@
     - sprite: Corvax/Mobs/Customization/Tajaran/tajaran_overlay.rsi
       state: stripes_body
 
-- type: marking
-  id: GradientRleg
-  markingCategory: Legs
-  bodyPart: RFoot
-  speciesRestriction: [Tajaran]
-  sprites:
-    - sprite: Corvax/Mobs/Customization/Tajaran/tajaran_parts.rsi
-      state: gradient_RLeg
+# - type: marking
+#   id: GradientRleg
+#   markingCategory: Legs
+#   bodyPart: RFoot
+#   speciesRestriction: [Tajaran]
+#   sprites:
+#     - sprite: Corvax/Mobs/Customization/Tajaran/tajaran_parts.rsi
+#       state: gradient_RLeg
 
-- type: marking
-  id: GradientLleg
-  markingCategory: Legs
-  bodyPart: LFoot
-  speciesRestriction: [Tajaran]
-  sprites:
-    - sprite: Corvax/Mobs/Customization/Tajaran/tajaran_parts.rsi
-      state: gradient_LLeg
+# - type: marking
+#   id: GradientLleg
+#   markingCategory: Legs
+#   bodyPart: LFoot
+#   speciesRestriction: [Tajaran]
+#   sprites:
+#     - sprite: Corvax/Mobs/Customization/Tajaran/tajaran_parts.rsi
+#       state: gradient_LLeg
 
 - type: marking
   id: GradientLhand

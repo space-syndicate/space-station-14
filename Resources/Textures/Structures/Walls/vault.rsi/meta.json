@@ -2,6 +2,7 @@
   "version": 1,
   "license": "CC-BY-SA-3.0",
   "copyright": "Taken from tgstation at commit https://github.com/tgstation/tgstation/commit/e09101cb4be860ff02e035b18bef93a08b9c204c modified by Peptide",
+  "copyright": "'alienvault' resprited by Ko4erga",
   "size": {
     "x": 32,
     "y": 32
@@ -9,6 +10,38 @@
   "states": [
     {
       "name": "alienvault"
+    },
+    {
+      "name": "alienvault0",
+      "directions": 4
+    },
+    {
+      "name": "alienvault1",
+      "directions": 4
+    },
+    {
+      "name": "alienvault2",
+      "directions": 4
+    },
+    {
+      "name": "alienvault3",
+      "directions": 4
+    },
+    {
+      "name": "alienvault4",
+      "directions": 4
+    },
+    {
+      "name": "alienvault5",
+      "directions": 4
+    },
+    {
+      "name": "alienvault6",
+      "directions": 4
+    },
+    {
+      "name": "alienvault7",
+      "directions": 4
     },
     {
       "name": "rockvault"

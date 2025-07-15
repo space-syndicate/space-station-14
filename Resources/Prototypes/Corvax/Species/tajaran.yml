@@ -25,7 +25,7 @@
     HeadTop: MobHumanoidAnyMarking
     HeadSide: MobHumanoidAnyMarking
     Tail: MobHumanoidAnyMarking
-    Eyes: MobHumanoidEyes
+    Eyes: MobTajaranEyes
     LArm: MobTajaranLArm
     RArm: MobTajaranRArm
     LHand: MobTajaranLHand
@@ -46,22 +46,22 @@
       required: false
     Tail:
       points: 1
-      required: true
+      required: false
       defaultMarkings: [ TailM ]
     Head:
       points: 1
       required: false
     Snout:
-      points: 2
-      required: true
-      defaultMarkings: [ Nose, Muzzle ]
+      points: 1
+      required: false
+      # defaultMarkings: [ Nose ]
     HeadTop:
-      points: 2
-      required: true
-      defaultMarkings: [ Inears, Outears]
+      points: 1
+      required: false
+      # defaultMarkings: [ Inears ]
     UndergarmentTop:
       points: 1
-      required: true
+      required: false
     # HeadSide:
     #   points: 1
     #   required: false

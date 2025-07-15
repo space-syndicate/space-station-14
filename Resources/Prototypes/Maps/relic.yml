@@ -2,8 +2,8 @@
   id: Relic
   mapName: 'Relic'
   mapPath: /Maps/relic.yml
-  minPlayers: 20
-  #maxPlayers: 55
+  minPlayers: 10
+  maxPlayers: 50
   stations:
     Relic:
       stationProto: StandardNanotrasenStation
@@ -21,7 +21,7 @@
           path: /Maps/Shuttles/cargo_relic.yml
         - type: StationJobs
           availableJobs:
-            #command
+            #command (7)
             Captain: [ 1, 1 ]
             IAA: [ 1, 1 ] # Corvax-IAA
             #service

@@ -990,14 +990,6 @@ entities:
     - type: ContainedSolution
       containerName: drink
       container: 4
-- proto: ActionToggleLight
-  entities:
-  - uid: 7
-    components:
-    - type: Transform
-      parent: 6
-    - type: InstantAction
-      container: 6
 - proto: AirlockExternalGlass
   entities:
   - uid: 8
@@ -7769,20 +7761,6 @@ entities:
     - type: Transform
       pos: 18.376835,-16.494482
       parent: 1
-    - type: HandheldLight
-      toggleActionEntity: 7
-    - type: ContainerContainer
-      containers:
-        cell_slot: !type:ContainerSlot
-          showEnts: False
-          occludes: True
-          ent: null
-        actions: !type:Container
-          showEnts: False
-          occludes: True
-          ents:
-          - 7
-    - type: ActionsContainer
   - uid: 1212
     components:
     - type: Transform

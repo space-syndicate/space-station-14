@@ -54,8 +54,8 @@
             sprite: Corvax/Mobs/Species/displacement.rsi
             state: shoes
   - type: ContentEye
-    targetZoom: "1.125, 1.125"
-    maxZoom: "1.125, 1.125"
+    targetZoom: "1.0, 1.0"
+    maxZoom: "1.0, 1.0"
   - type: Speech
     allowedEmotes: ['Howl', 'Growl']
   - type: Vocal
@@ -82,6 +82,19 @@
       types:
         Asphyxiation: -2.0
   - type: Wagging
+  - type: PassiveDamage
+    allowedStates:
+    - Alive
+    - Critical
+    damageCap: 199
+    damage:
+      types:
+        Poison: -0.15
+        Bloodloss: -0.15
+      groups:
+        Brute: -0.15
+        Burn: -0.15
+        Airloss: -0.15
 
 - type: entity
   save: false

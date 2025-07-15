@@ -61,18 +61,18 @@ nano-task-ui-description-placeholder = Взять что-то важное
 nano-task-ui-requester-label = Заявитель:
 nano-task-ui-requester-placeholder = Джон Нанотрейзен
 nano-task-ui-item-title = Редактировать задачу
-nano-task-printed-description = Описание: { $description }
-nano-task-printed-requester = Заявитель: { $requester }
-nano-task-printed-high-priority = Приоритет: Высокий
-nano-task-printed-medium-priority = Приоритет: Средний
-nano-task-printed-low-priority = Приоритет: Низкий
+nano-task-printed-description = [bold]Описание:[/bold] { $description }
+nano-task-printed-requester = [bold]Заявитель:[/bold] { $requester }
+nano-task-printed-high-priority = [bold]Приоритет[/bold]: [color=red]Высокий[/color]
+nano-task-printed-medium-priority = [bold]Приоритет[/bold]: Средний
+nano-task-printed-low-priority = [bold]Приоритет[/bold]: Низкий
 # Wanted list cartridge
 wanted-list-program-name = Список разыскиваемых
 wanted-list-label-no-records = Всё спокойно, ковбой.
 wanted-list-search-placeholder = Поиск по имени и статусу
 wanted-list-age-label = [color=darkgray]Возраст:[/color] [color=white]{ $age }[/color]
 wanted-list-job-label = [color=darkgray]Должность:[/color] [color=white]{ $job }[/color]
-wanted-list-species-label = [color=darkgray]Раса:[/color] [color=white]{ $species }[/color]
+wanted-list-species-label = [color=darkgray]Вид:[/color] [color=white]{ $species }[/color]
 wanted-list-gender-label = [color=darkgray]Гендер:[/color] [color=white]{ $gender }[/color]
 wanted-list-reason-label = [color=darkgray]Причина:[/color] [color=white]{ $reason }[/color]
 wanted-list-unknown-reason-label = неизвестная причина

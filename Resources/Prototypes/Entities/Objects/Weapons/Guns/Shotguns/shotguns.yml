@@ -99,11 +99,11 @@
     zeroVisible: true
   - type: Appearance
   - type: StaticPrice
-    price: 500
+    price: 5000
 
 - type: entity
   name: double-barreled shotgun
-  parent: [BaseWeaponShotgun, BaseGunWieldable, BaseSecurityBartenderContraband]
+  parent: [BaseWeaponShotgun, BaseGunWieldable, BaseSecurityBartenderZookeeperContraband]
   id: WeaponShotgunDoubleBarreled
   description: An immortal classic. Uses .50 shotgun shells.
   components:
@@ -183,6 +183,8 @@
     fireRate: 1
     soundGunshot: # Corvax-Guns
       path: /Audio/Corvax/Weapons/Guns/Gunshots/shotgun_alt.ogg
+  - type: GunSpreadModifier
+    spread: 0.6
   - type: Tag
     tags:
     - WeaponShotgunKammerer

@@ -7,6 +7,10 @@
     - !type:DepartmentTimeRequirement
       department: Security
       time: 72000 #20 hrs # Corvax-RoleTime
+    - !type:TraitsRequirement #Corvax-TraitsRequirement
+      inverted: true
+      traits:
+      - Muted
   startingGear: DetectiveGear
   icon: "JobIconDetective"
   supervisors: job-supervisors-hos
@@ -35,3 +39,13 @@
     - Flash
     - ForensicPad
     - ForensicScanner
+
+- type: chameleonOutfit
+  id: DetectiveChameleonOutfit
+  job: Detective
+  hasMindShield: true
+  equipment:
+    head: ClothingHeadHatFedoraBrown
+    mask: ClothingMaskGasSecurity
+    neck: ClothingNeckTieDet
+    gloves: ClothingHandsGlovesForensic
