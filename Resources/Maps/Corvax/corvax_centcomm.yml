@@ -9981,54 +9981,6 @@ entities:
     - type: ContainedSolution
       containerName: spray
       container: 2
-- proto: ActionToggleInternals
-  entities:
-  - uid: 6
-    components:
-    - type: Transform
-      parent: 5
-    - type: InstantAction
-      originalIconColor: '#FFFFFFFF'
-      container: 5
-  - uid: 8
-    components:
-    - type: Transform
-      parent: 7
-    - type: InstantAction
-      originalIconColor: '#FFFFFFFF'
-      container: 7
-  - uid: 11
-    components:
-    - type: Transform
-      parent: 10
-    - type: InstantAction
-      originalIconColor: '#FFFFFFFF'
-      container: 10
-- proto: ActionToggleJetpack
-  entities:
-  - uid: 9
-    components:
-    - type: Transform
-      parent: 7
-    - type: InstantAction
-      originalIconColor: '#FFFFFFFF'
-      container: 7
-- proto: ActionToggleLight
-  entities:
-  - uid: 17
-    components:
-    - type: Transform
-      parent: 16
-    - type: InstantAction
-      originalIconColor: '#FFFFFFFF'
-      container: 16
-  - uid: 19
-    components:
-    - type: Transform
-      parent: 18
-    - type: InstantAction
-      originalIconColor: '#FFFFFFFF'
-      container: 18
 - proto: AirAlarm
   entities:
   - uid: 20
@@ -34638,16 +34590,6 @@ entities:
     components:
     - type: Transform
       parent: 4
-    - type: GasTank
-      toggleActionEntity: 11
-    - type: Physics
-      canCollide: False
-    - type: ActionsContainer
-    - type: ContainerContainer
-      containers:
-        actions: !type:Container
-          ents:
-          - 11
     - type: InsideEntityStorage
   - uid: 3283
     components:
@@ -34662,16 +34604,6 @@ entities:
     components:
     - type: Transform
       parent: 4
-    - type: GasTank
-      toggleActionEntity: 6
-    - type: Physics
-      canCollide: False
-    - type: ActionsContainer
-    - type: ContainerContainer
-      containers:
-        actions: !type:Container
-          ents:
-          - 6
     - type: InsideEntityStorage
   - uid: 3284
     components:
@@ -56969,19 +56901,6 @@ entities:
     components:
     - type: Transform
       parent: 4
-    - type: GasTank
-      toggleActionEntity: 8
-    - type: Jetpack
-      toggleActionEntity: 9
-    - type: Physics
-      canCollide: False
-    - type: ActionsContainer
-    - type: ContainerContainer
-      containers:
-        actions: !type:Container
-          ents:
-          - 9
-          - 8
     - type: InsideEntityStorage
 - proto: Joint
   entities:
@@ -57153,43 +57072,15 @@ entities:
     - type: Transform
       pos: 45.256584,47.91295
       parent: 1
-    - type: HandheldLight
-      toggleActionEntity: 17
-    - type: ContainerContainer
-      containers:
-        cell_slot: !type:ContainerSlot
-          showEnts: False
-          occludes: True
-          ent: null
-        actions: !type:Container
-          showEnts: False
-          occludes: True
-          ents:
-          - 17
     - type: Physics
       canCollide: True
-    - type: ActionsContainer
   - uid: 18
     components:
     - type: Transform
       pos: 49.869274,47.8192
       parent: 1
-    - type: HandheldLight
-      toggleActionEntity: 19
-    - type: ContainerContainer
-      containers:
-        cell_slot: !type:ContainerSlot
-          showEnts: False
-          occludes: True
-          ent: null
-        actions: !type:Container
-          showEnts: False
-          occludes: True
-          ents:
-          - 19
     - type: Physics
       canCollide: True
-    - type: ActionsContainer
   - uid: 6984
     components:
     - type: Transform
@@ -79462,7 +79353,7 @@ entities:
       rot: 1.5707963267948966 rad
       pos: 13.5,47.5
       parent: 1
-- proto: WarpPoint
+- proto: GhostWarpPoint
   entities:
   - uid: 10294
     components:

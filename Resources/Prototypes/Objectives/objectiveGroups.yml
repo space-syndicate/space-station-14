@@ -40,7 +40,7 @@
 - type: weightedRandom
   id: TraitorObjectiveGroupSocial
   weights:
-    RandomTraitorAliveObjective: 1
+#    RandomTraitorAliveObjective: 1 - Removed because the objective was boring and didn't progress the round.
     RandomTraitorProgressObjective: 1
 
 #Thief groups
@@ -80,9 +80,8 @@
     ClothingHeadsetAltMedicalStealObjective: 1
     FireAxeStealObjective: 1                            #eng
     AmePartFlatpackStealObjective: 1
-    ExpeditionsCircuitboardStealObjective: 1            #sup
+    # ExpeditionsCircuitboardStealObjective: 1           #sup  # Corvax-StealTarget
     CargoShuttleCircuitboardStealObjective: 1
-    SalvageShuttleCircuitboardStealObjective: 1
     ClothingEyesHudBeerStealObjective: 1                #srv
     BibleStealObjective: 1
     ClothingNeckGoldmedalStealObjective: 1              #other

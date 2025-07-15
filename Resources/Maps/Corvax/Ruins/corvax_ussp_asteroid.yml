@@ -628,32 +628,6 @@ entities:
     - type: ContainedSolution
       containerName: bucket
       container: 2566
-- proto: ActionToggleLight
-  entities:
-  - uid: 347
-    components:
-    - type: Transform
-      parent: 346
-    - type: InstantAction
-      container: 346
-  - uid: 349
-    components:
-    - type: Transform
-      parent: 348
-    - type: InstantAction
-      container: 348
-  - uid: 354
-    components:
-    - type: Transform
-      parent: 353
-    - type: InstantAction
-      container: 353
-  - uid: 356
-    components:
-    - type: Transform
-      parent: 355
-    - type: InstantAction
-      container: 355
 - proto: AirlockHatch
   entities:
   - uid: 134
@@ -12558,39 +12532,11 @@ entities:
     - type: Transform
       pos: 20.683987,-9.314275
       parent: 2
-    - type: HandheldLight
-      toggleActionEntity: 354
-    - type: ContainerContainer
-      containers:
-        cell_slot: !type:ContainerSlot
-          showEnts: False
-          occludes: True
-          ent: null
-        actions: !type:Container
-          showEnts: False
-          occludes: True
-          ents:
-          - 354
-    - type: ActionsContainer
   - uid: 355
     components:
     - type: Transform
       pos: 20.621487,-9.533025
       parent: 2
-    - type: HandheldLight
-      toggleActionEntity: 356
-    - type: ContainerContainer
-      containers:
-        cell_slot: !type:ContainerSlot
-          showEnts: False
-          occludes: True
-          ent: null
-        actions: !type:Container
-          showEnts: False
-          occludes: True
-          ents:
-          - 356
-    - type: ActionsContainer
 - proto: Floodlight
   entities:
   - uid: 1526
@@ -13002,39 +12948,11 @@ entities:
     - type: Transform
       pos: 12.635735,-5.392745
       parent: 2
-    - type: HandheldLight
-      toggleActionEntity: 347
-    - type: ContainerContainer
-      containers:
-        cell_slot: !type:ContainerSlot
-          showEnts: False
-          occludes: True
-          ent: null
-        actions: !type:Container
-          showEnts: False
-          occludes: True
-          ents:
-          - 347
-    - type: ActionsContainer
   - uid: 348
     components:
     - type: Transform
       pos: 12.40136,-5.25212
       parent: 2
-    - type: HandheldLight
-      toggleActionEntity: 349
-    - type: ContainerContainer
-      containers:
-        cell_slot: !type:ContainerSlot
-          showEnts: False
-          occludes: True
-          ent: null
-        actions: !type:Container
-          showEnts: False
-          occludes: True
-          ents:
-          - 349
-    - type: ActionsContainer
 - proto: LootSpawnerContrabandHigh
   entities:
   - uid: 1528

@@ -1,5 +1,13 @@
-ent-BaseSuicideAction = { "" }
+ent-BaseAction = { "" }
     .desc = { "" }
+ent-BaseMentalAction = { ent-BaseAction }
+    .desc = { ent-BaseAction.desc }
+ent-BaseSuicideAction = { ent-BaseMentalAction }
+    .desc = { ent-BaseMentalAction.desc }
+ent-BaseImplantAction = { ent-BaseAction }
+    .desc = { ent-BaseAction.desc }
+ent-BaseToggleAction = { ent-BaseAction }
+    .desc = { ent-BaseAction.desc }
 ent-ActionScream = Крикнуть
     .desc = ААААААААААААААААААААААААА
 ent-ActionTurnUndead = Обратиться в зомби
@@ -26,14 +34,12 @@ ent-ActionToggleSuitPiece = Переключить элементы костюм
     .desc = Не забудьте экипировать важные части костюма, прежде чем приступать к действиям.
 ent-ActionCombatModeToggle = [color=red]Боевой режим[/color]
     .desc = Войти в боевой режим
-ent-ActionCombatModeToggleOff = [color=red]Боевой режим[/color]
-    .desc = Войти в боевой режим
+ent-ActionCombatModeToggleOff = { ent-ActionCombatModeToggle }
+    .desc = { ent-ActionCombatModeToggle.desc }
 ent-ActionChangeVoiceMask = Изменить имя
     .desc = Измените имя, которое все слышат, на другое.
 ent-ActionVendingThrow = Выдать предмет
     .desc = Выдаёт случайный предмет из вашего инвентаря.
-ent-ActionArtifactActivate = Активировать артефакт
-    .desc = Немедленно активирует текущий узел артефакта.
 ent-ActionToggleBlock = Блокирование
     .desc = Поднимите или опустите свой щит.
 ent-ActionClearNetworkLinkOverlays = Очистить оверлей сетевых соединений
@@ -56,3 +62,7 @@ ent-FakeMindShieldToggleAction = [color=green]Переключить фальш�
     .desc = Переключить трансляцию фальшивого Щита разума
 ent-ActionToggleParamedicSiren = Переключить сирену парамедика
     .desc = Включает или выключает сирену парамедика.
+ent-ActionToggleRootable = Укоренение
+    .desc = Начните или прекратите укореняться к полу.
+ent-ActionChameleonController = Управление одеждой
+    .desc = Быстро смените весь свой наряд!

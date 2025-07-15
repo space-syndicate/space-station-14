@@ -1,0 +1,44 @@
+﻿- type: body
+  name: "Ipc"
+  id: Ipc
+  root: torso
+  slots:
+    head:
+      part: HeadIpc
+      connections:
+      - torso
+      organs:
+        eyes: OrganIpcEyes
+    torso:
+      part: TorsoIpc
+      connections:
+      - right_arm
+      - left_arm
+      - right_leg
+      - left_leg
+      organs:
+        brain: OrganIPCBrain
+    right_arm:
+      part: RightArmIpc
+      connections:
+      - right_hand
+    left_arm:
+      part: LeftArmIpc
+      connections:
+      - left_hand
+    right_hand:
+      part: RightHandIpc
+    left_hand:
+      part: LeftHandIpc
+    right_leg:
+      part: RightLegIpc
+      connections:
+      - right_foot
+    left_leg:
+      part: LeftLegIpc
+      connections:
+      - left_foot
+    right_foot:
+      part: RightFootIpc
+    left_foot:
+      part: LeftFootIpc
