@@ -1290,8 +1290,10 @@
       color: "#b89f25"
     - type: AccessReader
       access: [["Salvage"]]
-    - type: StealTarget
-      stealGroup: SalvageExpeditionsComputerCircuitboard
+# Corvax-StealTarget-start
+#    - type: StealTarget
+#      stealGroup: SalvageExpeditionsComputerCircuitboard
+# Corvax-StealTarget-end
 
 - type: entity
   parent: BaseComputer
