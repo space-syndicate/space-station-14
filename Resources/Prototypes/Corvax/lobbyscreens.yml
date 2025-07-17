@@ -1,8 +1,4 @@
 - type: lobbyBackground
-  id: BarLife
-  background: /Textures/Corvax/LobbyScreens/bar-life.webp
-
-- type: lobbyBackground
   id: DeadInSpace
   background: /Textures/Corvax/LobbyScreens/dead-in-space.webp
 
@@ -99,14 +95,6 @@
   background: /Textures/Corvax/LobbyScreens/fleshanom.webp
 
 - type: lobbyBackground
-  id: Revenant
-  background: /Textures/Corvax/LobbyScreens/revenant.webp
-
-- type: lobbyBackground
-  id: DeathNettle
-  background: /Textures/Corvax/LobbyScreens/deathnettle.webp
-
-- type: lobbyBackground
   id: Xeno
   background: /Textures/Corvax/LobbyScreens/xeno.webp
 
@@ -131,44 +119,8 @@
   background: /Textures/Corvax/LobbyScreens/gray-tide.webp
 
 - type: lobbyBackground
-  id: NewYearBar
-  background: /Textures/Corvax/LobbyScreens/new-year-bar.webp
-
-- type: lobbyBackground
-  id: NewYearSec
-  background: /Textures/Corvax/LobbyScreens/new-year-sec.webp
-
-- type: lobbyBackground
-  id: NewYearSave
-  background: /Textures/Corvax/LobbyScreens/new-year-save.webp
-
-- type: lobbyBackground
-  id: NewYearComfort
-  background: /Textures/Corvax/LobbyScreens/new-year-comfort.webp
-
-- type: lobbyBackground
-  id: NewYearParty
-  background: /Textures/Corvax/LobbyScreens/new-year-party.webp
-
-- type: lobbyBackground
-  id: NewYearPine
-  background: /Textures/Corvax/LobbyScreens/new-year-pine.webp
-
-- type: lobbyBackground
-  id: NewYearExplosion
-  background: /Textures/Corvax/LobbyScreens/new-year-explosion.webp
-
-- type: lobbyBackground
   id: SpaceNuke
   background: /Textures/Corvax/LobbyScreens/space-nuke.webp
-
-- type: lobbyBackground
-  id: NewYearPenguins
-  background: /Textures/Corvax/LobbyScreens/new-year-penguins.webp
-
-- type: lobbyBackground
-  id: NewYearNuke
-  background: /Textures/Corvax/LobbyScreens/new-year-nuke.webp
 
 - type: lobbyBackground
   id: ArnoldIntelligence
@@ -189,10 +141,6 @@
 - type: lobbyBackground
   id: SillyIsland
   background: /Textures/Corvax/LobbyScreens/silly-island.webp
-
-- type: lobbyBackground
-  id: EchoTeam
-  background: /Textures/Corvax/LobbyScreens/echo-team.webp
 
 - type: lobbyBackground
   id: YouAreNotFunny
@@ -273,3 +221,7 @@
 - type: lobbyBackground
   id: SoleSurvivor
   background: /Textures/Corvax/LobbyScreens/sole-survivor.webp
+  
+- type: lobbyBackground
+  id: BarLifeNew
+  background: /Textures/Corvax/LobbyScreens/bar-life-new.webp
