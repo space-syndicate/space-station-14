@@ -96,9 +96,7 @@ entities:
     - type: Transform
     - type: Map
       mapPaused: True
-    - type: PhysicsMap
     - type: GridTree
-    - type: MovedGrids
     - type: Broadphase
     - type: OccluderTree
     - type: LoadedMap
@@ -56415,7 +56413,7 @@ entities:
   - uid: 5480
     components:
     - type: MetaData
-      name: Церковь
+      name: Храм
     - type: Transform
       pos: 40.5,-11.5
       parent: 2
@@ -56423,7 +56421,7 @@ entities:
       setupAvailableNetworks:
       - SurveillanceCameraService
       nameSet: True
-      id: церковь
+      id: храм
   - uid: 5481
     components:
     - type: Transform

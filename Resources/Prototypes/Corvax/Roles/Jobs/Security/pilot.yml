@@ -7,6 +7,10 @@
   - !type:DepartmentTimeRequirement
     department: Security
     time: 72000 #20 hrs
+  - !type:TraitsRequirement
+    inverted: true
+    traits:
+    - Muted
   startingGear: PilotGear
   icon: "JobIconPilot"
   supervisors: job-supervisors-hos
@@ -35,3 +39,14 @@
     back:
     - Flash
     - MagazinePistol
+
+- type: chameleonOutfit
+  id: PilotChameleonOutfit
+  job: Pilot
+  hasMindShield: true
+  equipment:
+    head: ClothingHeadHatBeretSecurity
+    eyes: ClothingEyesGlassesSecurity
+    mask: ClothingMaskGasSecurity
+    neck: Dinkystar
+    gloves: ClothingHandsGlovesColorBlack

@@ -22,7 +22,7 @@ traitor-death-match-end-round-description-entry = КПК { $originalName }, с {
 
 # TraitorRole
 traitor-role-greeting =
-    Вы - агент организации { $corporation } на задании [color = darkred]Синдиката.[/color].
+    Вы — агент организации { $corporation } на задании [color = darkred]Синдиката.[/color].
     Ваши цели и кодовые слова перечислены в меню персонажа.
     Воспользуйтесь своим аплинком, чтобы приобрести всё необходимое для выполнения работы.
     Смерть Nanotrasen!
@@ -40,6 +40,6 @@ traitor-role-codewords-short =
     { $codewords }.
 traitor-role-uplink-implant =
     Ваш имплант аплинк активирован, воспользуйтесь им из хотбара.
-    Аплинк надежно защищён, пока кто-нибудь не извлечёт его из вашего тела.
+    Аплинк надёжно защищён, пока кто-нибудь не извлечёт его из вашего тела.
 traitor-role-uplink-code-short = Ваш код аплинка: { $code }. Установите его в качестве рингтона КПК для доступа к аплинку.
 traitor-role-uplink-implant-short = Ваш аплинк был имплантирован. Воспользуйтесь им из хотбара.

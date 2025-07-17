@@ -75,3 +75,87 @@
   - мурлычет
   - мурлычет.
   - мурлычет!
+
+- type: emote
+  id: BeepIpc
+  name: chat-emote-name-beep
+  category: Hands
+  icon: Interface/Emotes/beep.png
+  whitelist:
+    requireAll: true
+    components:
+    - Ipc
+    - Vocal
+  chatMessages: ["chat-emote-msg-beep"]
+  chatTriggers:
+    - трещит
+
+- type: emote
+  id: ChimeIpc
+  name: chat-emote-name-chime
+  category: Hands
+  icon: Interface/Emotes/chime.png
+  whitelist:
+    requireAll: true
+    components:
+    - Ipc
+    - Vocal
+  chatMessages: ["chat-emote-msg-chime"]
+  chatTriggers:
+    - звенит
+
+- type: emote
+  id: BuzzIpc
+  name: chat-emote-name-buzz
+  category: Hands
+  icon: Interface/Emotes/buzz.png
+  whitelist:
+    requireAll: true
+    components:
+    - Ipc
+    - Vocal
+  chatMessages: ["chat-emote-msg-buzz"]
+  chatTriggers:
+    - гудит
+
+- type: emote
+  id: Buzz-TwoIpc
+  name: chat-emote-name-buzztwo
+  category: Hands
+  icon: Interface/Emotes/buzztwo.png
+  whitelist:
+    requireAll: true
+    components:
+    - Ipc
+    - Vocal
+  chatMessages: ["chat-emote-msg-buzzestwo"]
+  chatTriggers:
+    - дважды гудит
+
+- type: emote
+  id: PingIpc
+  name: chat-emote-name-ping
+  category: Hands
+  icon: Interface/Emotes/ping.png
+  whitelist:
+    requireAll: true
+    components:
+    - Ipc
+    - Vocal
+  chatMessages: ["chat-emote-msg-ping"]
+  chatTriggers:
+    - пикает
+
+- type: emote
+  id: HonkIpc
+  name: chat-emote-name-honk
+  category: Vocal
+  icon: Interface/Emotes/honk.png
+  whitelist:
+    requireAll: true
+    components:
+    - Vocal
+    - BorgChassis
+  chatMessages: ["chat-emote-msg-honk"]
+  chatTriggers:
+    - хонкает

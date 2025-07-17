@@ -983,5 +983,5 @@ names-first-male-dataset-981 = Фима
 names-first-male-dataset-982 = Олег
 names-first-male-dataset-983 = Петро
 names-first-male-dataset-984 = Савва
-names-first-male-dataset-985 = Артем
+names-first-male-dataset-985 = Артём
 names-first-male-dataset-986 = Терентий

@@ -1,7 +1,7 @@
 ent-ActionRevertPolymorph = Вернуться
     .desc = Вернитесь в свою изначальную форму.
-ent-ActionPolymorph = { "" }
-    .desc = { "" }
+ent-BaseActionPolymorph = { ent-BaseAction }
+    .desc = { ent-BaseAction.desc }
 ent-ActionPolymorphWizardSpider = Полиморф в паука
     .desc = Превращает вас в паука.
 ent-ActionPolymorphWizardRod = Форма жезла

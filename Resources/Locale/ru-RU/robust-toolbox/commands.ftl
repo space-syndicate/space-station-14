@@ -1,6 +1,5 @@
 ### Localization for engine console commands
 
-
 ## generic command errors
 
 cmd-invalid-arg-number-error = Недопустимое число аргументов.
@@ -22,7 +21,7 @@ cmd-help-help =
     Если имя команды не будет указано, будет выведена общая справка. Если имя команды будет указано, будет выведена справка по этой команде.
 cmd-help-no-args = Чтобы получить справку по определённой команде, используйте 'help <command>'. Для получения списка всех доступных команд используйте 'list'. Для поиска по командам используйте 'list <filter>'.
 cmd-help-unknown = Неизвестная команда: { $command }
-cmd-help-top = { $command } - { $description }
+cmd-help-top = { $command } — { $description }
 cmd-help-invalid-args = Недопустимое количество аргументов.
 cmd-help-arg-cmdname = [имя команды]
 
@@ -171,7 +170,6 @@ cmd-hint-loadmap-uids = [float]
 cmd-hint-savebp-id = <Grid EntityID>
 
 ## 'flushcookies' command
-
 
 # Примечание: команда flushcookies взята из Robust.Client.WebView, её нет в коде основного движка.
 

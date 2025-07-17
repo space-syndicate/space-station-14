@@ -43,7 +43,7 @@
   id: BaseThiefStealAnimalObjective
   components:
   - type: StealCondition
-    verifyMapExistence: false
+    verifyMapExistence: true
     checkAlive: true
     objectiveNoOwnerText: objective-condition-steal-title-alive-no-owner
     descriptionText: objective-condition-thief-animal-description
@@ -135,8 +135,6 @@
     verifyMapExistence: false
   - type: Objective
     difficulty: 0.7
-
-
 
 - type: entity
   parent: BaseThiefStealCollectionObjective
@@ -250,16 +248,18 @@
   - type: Objective
     difficulty: 1
 
-- type: entity                                      #Cargo subgroup
-  parent: BaseThiefStealObjective
-  id: ExpeditionsCircuitboardStealObjective
-  components:
-  - type: NotJobRequirement
-    job: SalvageSpecialist
-  - type: StealCondition
-    stealGroup: SalvageExpeditionsComputerCircuitboard
-  - type: Objective
-    difficulty: 0.7
+# Corvax-StealTarget-start
+#- type: entity                                      #Cargo subgroup
+#  parent: BaseThiefStealObjective
+#  id: ExpeditionsCircuitboardStealObjective
+#  components:
+#  - type: NotJobRequirement
+#    job: SalvageSpecialist
+#  - type: StealCondition
+#    stealGroup: SalvageExpeditionsComputerCircuitboard
+#  - type: Objective
+#    difficulty: 0.7
+# Corvax-StealTarget-end
 
 - type: entity
   parent: BaseThiefStealObjective

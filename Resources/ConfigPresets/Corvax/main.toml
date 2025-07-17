@@ -4,11 +4,10 @@ desc = "Корвакс — первый русскоязычный проект 
 maxplayers = 190
 soft_max_players = 105
 map_rotation = true
-peaceful_end = false
 
 [server]
 rules_file = "CorvaxLRPRuleset"
-lobby_name = "️🛰️ Corvax — Мейн 🚀⚡"
+lobby_name = "️🛰️ Corvax — Мейн 🚀⚡[NEXT]"
 
 [game.panic_bunker]
 enabled = true
