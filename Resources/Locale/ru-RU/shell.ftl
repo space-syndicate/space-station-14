@@ -1,6 +1,5 @@
 ### for technical and/or system messages
 
-
 ## General
 
 shell-command-success = Команда выполнена.
@@ -58,4 +57,4 @@ shell-argument-map-id-invalid = Аргумент { $index } должен быт�
 shell-argument-number-invalid = Аргумент { $index } должен быть валидным числом!
 # Hints
 shell-argument-username-hint = <username>
-shell-argument-username-optional-hint =  [username]
+shell-argument-username-optional-hint = [username]

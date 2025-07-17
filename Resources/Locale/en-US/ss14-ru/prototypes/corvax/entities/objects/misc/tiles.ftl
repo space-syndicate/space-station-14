@@ -1,12 +1,12 @@
-ent-FloorTileItemWoodParquet = tiles-wood-parquet
+ent-FloorTileItemWoodParquet = деревянный паркет
     .desc = { ent-FloorTileItemBase.desc }
-ent-FloorTileItemWoodBlack = tiles-wood-black
+ent-FloorTileItemWoodBlack = деревянный чёрный пол
     .desc = { ent-FloorTileItemBase.desc }
-ent-FloorTileItemWoodDark = tiles-wood-dark
+ent-FloorTileItemWoodDark = деревянный тёмный пол
     .desc = { ent-FloorTileItemBase.desc }
-ent-FloorTileItemWoodLight = tiles-wood-light
+ent-FloorTileItemWoodLight = деревянный светлый пол
     .desc = { ent-FloorTileItemBase.desc }
-ent-FloorTileItemWoodRed = tiles-wood-red
+ent-FloorTileItemWoodRed = деревянный красный пол
     .desc = { ent-FloorTileItemBase.desc }
 ent-FloorTileItemWoodLargeBlack = large black wood floor
     .desc = { ent-FloorTileItemBase.desc }
