@@ -7,8 +7,8 @@
     - type: Sprite
       layers:
         - state: red
-        - sprite: Objects/Fun/toys.rsi
-          state: synb
+        - sprite: Objects/Fun/Balloons/syndicate.rsi
+          state: icon
     - type: RandomSpawner
       rarePrototypes:
         # Usefull non-contra loot
@@ -71,8 +71,8 @@
     - type: Sprite
       layers:
         - state: red
-        - sprite: Objects/Fun/toys.rsi
-          state: synb
+        - sprite: Objects/Fun/Balloons/syndicate.rsi
+          state: icon
     - type: RandomSpawner
       rarePrototypes:
         - RevolverCapGunFake
@@ -122,8 +122,8 @@
     - type: Sprite
       layers:
         - state: red
-        - sprite: Objects/Fun/toys.rsi
-          state: synb
+        - sprite: Objects/Fun/Balloons/syndicate.rsi
+          state: icon
     - type: RandomSpawner
       rarePrototypes:
         - ClothingBackpackChameleonFill

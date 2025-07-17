@@ -228,12 +228,14 @@
     sprite: Objects/Devices/flatpack.rsi
     state: ame-part
 
-- type: stealTargetGroup
-  id: SalvageExpeditionsComputerCircuitboard
-  name: steal-target-groups-salvage-expeditions-computer-circuitboard
-  sprite:
-    sprite: Objects/Misc/module.rsi
-    state: cpu_supply
+# Corvax-StealTarget-start
+#- type: stealTargetGroup
+#  id: SalvageExpeditionsComputerCircuitboard
+#  name: steal-target-groups-salvage-expeditions-computer-circuitboard
+#  sprite:
+#    sprite: Objects/Misc/module.rsi
+#    state: cpu_supply
+# Corvax-StealTarget-end
 
 - type: stealTargetGroup
   id: CargoShuttleConsoleCircuitboard

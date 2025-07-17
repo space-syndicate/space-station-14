@@ -219,8 +219,10 @@
       state: cpu_supply
     - type: ComputerBoard
       prototype: ComputerSalvageExpedition
-    - type: StealTarget
-      stealGroup: SalvageExpeditionsComputerCircuitboard
+# Corvax-StealTarget-start
+#    - type: StealTarget
+#      stealGroup: SalvageExpeditionsComputerCircuitboard
+# Corvax-StealTarget-end
 
 - type: entity
   parent: BaseComputerCircuitboard

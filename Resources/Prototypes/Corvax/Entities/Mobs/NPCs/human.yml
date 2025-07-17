@@ -12,6 +12,9 @@
         - SyndicateSmugglerMedicGear
         - SyndicateSmugglerSoldierGear
         - SyndicateSmugglerMinerGear
+        - SyndicateSmugglerEngiGear
+        - SyndicateSmugglerSpyGear
+      roleLoadout: [ RoleSurvivalEVA ]
     - type: InputMover
     - type: MobMover
     - type: HTN
@@ -22,6 +25,7 @@
       - NamesFakeHumanFirst
       - CorvaxNamesSyndieSmuggler
       - NamesLast
+      nameFormat: name-format-smuggler
     - type: GhostTakeoverAvailable
     - type: GhostRole
       name: ghost-role-information-syndicate-smuggler-name

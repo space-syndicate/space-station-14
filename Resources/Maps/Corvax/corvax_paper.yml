@@ -49051,7 +49051,7 @@ entities:
       pos: 79.5,32.5
       parent: 2
     - type: WarpPoint
-      location: Церковь
+      location: Храм
 - proto: DefaultStationBeaconChemistry
   entities:
   - uid: 7271
@@ -85020,7 +85020,7 @@ entities:
       pos: 79.5,32.5
       parent: 2
     - type: Label
-      currentLabel: Церковь
+      currentLabel: Храм
 - proto: HolopadServiceClown
   entities:
   - uid: 12247
@@ -88714,8 +88714,6 @@ entities:
     - type: Transform
       pos: 0.5,15.5
       parent: 2
-    - type: Anchorable
-      flags: Unanchorable
 - proto: OrganHumanHeart
   entities:
   - uid: 7170
@@ -104692,7 +104690,7 @@ entities:
       setupAvailableNetworks:
       - SurveillanceCameraGeneral
       nameSet: True
-      id: Вход в церковь
+      id: Вход в храм
   - uid: 15019
     components:
     - type: Transform
@@ -105208,7 +105206,7 @@ entities:
       setupAvailableNetworks:
       - SurveillanceCameraService
       nameSet: True
-      id: Церковь
+      id: Храм
   - uid: 15084
     components:
     - type: Transform

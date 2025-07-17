@@ -30,5 +30,5 @@ ent-CarpetCyan = { ent-CarpetBase }
 ent-CarpetWhite = { ent-CarpetBase }
     .suffix = Белый
     .desc = { ent-CarpetBase.desc }
-ent-CarpetChapel = ковёр церкви
+ent-CarpetChapel = ковёр храма
     .desc = { ent-BaseStructure.desc }

@@ -1,3 +1,3 @@
-ent-BaseXenoArtifactStructure = artifact
+ent-BaseXenoArtifactStructure = артефакт
     .desc = { ent-BaseStructureDynamic.desc }
 

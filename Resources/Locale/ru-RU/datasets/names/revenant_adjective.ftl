@@ -1,13 +1,13 @@
 names-revenant-adjective-dataset-1 = бездонной
 names-revenant-adjective-dataset-2 = бездонной
 names-revenant-adjective-dataset-3 = жестокой
-names-revenant-adjective-dataset-4 = темной
+names-revenant-adjective-dataset-4 = тёмной
 names-revenant-adjective-dataset-5 = бесконечной
 names-revenant-adjective-dataset-6 = вечной
 names-revenant-adjective-dataset-7 = огненной
 names-revenant-adjective-dataset-8 = ненавистной
 names-revenant-adjective-dataset-9 = отвратительной
-names-revenant-adjective-dataset-10 = веселой
+names-revenant-adjective-dataset-10 = весёлой
 names-revenant-adjective-dataset-11 = безразличной
 names-revenant-adjective-dataset-12 = злобной
 names-revenant-adjective-dataset-13 = мирной
