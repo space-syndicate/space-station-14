@@ -1,5 +1,5 @@
 objective-carp-rifts-title =
-    Открыть { $count } { $count ->
+    Откройте { $count } { $count ->
         [one] карповый разлом
         [few] карповых разлома
        *[other] карповых разломов
