@@ -406,7 +406,7 @@
   - !type:JobRequirementLoadoutEffect
     requirement:
       !type:RoleTimeRequirement
-      role: JobIAA # Corvax-IAA
+      role: JobLawyer
       time: 360000 # 100hr
   storage:
     back:

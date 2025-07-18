@@ -1,7 +1,7 @@
 - type: gameMap
   id: CorvaxAwesome
   mapName: 'Awesome Station'
-  mapPath: /Maps/Corvax/corvax_awesome.yml 
+  mapPath: /Maps/Corvax/corvax_awesome.yml
   minPlayers: 25
   maxPlayers: 55
   stations:
@@ -14,12 +14,11 @@
             !type:NanotrasenNameGenerator
             prefixCreator: 'TBK'
         - type: StationEmergencyShuttle
-          emergencyShuttlePath: /Maps/Corvax/Shuttles/emergency_awesome.yml 
+          emergencyShuttlePath: /Maps/Corvax/Shuttles/emergency_awesome.yml
         - type: StationJobs
           availableJobs:
             # command
             Captain: [ 1, 1 ]
-            IAA: [ 1, 1 ]
             # cargo
             Quartermaster: [ 1, 1 ]
             SalvageSpecialist: [ 3, 3 ]
