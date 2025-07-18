@@ -5,11 +5,31 @@
   playTimeTracker: JobIAA
   requirements:
   - !type:DepartmentTimeRequirement
-    department: Command
-    time: 72000
+    department: Civilian
+    time: 36000 # 10 hours
+  - !type:DepartmentTimeRequirement
+    department: Cargo
+    time: 36000 # 10 hours
+  - !type:DepartmentTimeRequirement
+    department: Engineering
+    time: 36000 # 10 hrs
+  - !type:DepartmentTimeRequirement
+    department: Medical
+    time: 36000 # 10 hrs
+  - !type:DepartmentTimeRequirement
+    department: Science
+    time: 36000 # 10 hours
   - !type:DepartmentTimeRequirement
     department: Security
-    time: 36000
+    time: 36000 # 10 hrs
+  - !type:DepartmentTimeRequirement
+    department: Command
+    time: 72000 # 20 hours
+  - !type:RoleTimeRequirement
+    role: JobCaptain
+    time: 36000 # 10 hours
+  - !type:OverallPlaytimeRequirement
+    time: 504000 #140 hrs
   - !type:TraitsRequirement
     inverted: true
     traits:
@@ -19,12 +39,24 @@
   supervisors: job-supervisors-centcom
   canBeAntag: false
   access:
-  - Service
-  - Brig
-  - Maintenance
   - Command
+  - Bar
+  - Service
+  - Maintenance
+  - Janitor
+  - Theatre
+  - Kitchen
+  - Chapel
+  - Hydroponics
   - External
+  - Engineering
+  - Research
+  - Salvage
+  - Security
+  - Brig
   - Lawyer
+  - Cargo
+  - Medical
   special:
   - !type:AddImplantSpecial
     implants: [ MindShieldImplant ]
