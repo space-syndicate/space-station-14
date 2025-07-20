@@ -1,3 +1,5 @@
+#!/usr/bin/env python3
+
 import os
 
 from fluent.syntax.parser import FluentParser
