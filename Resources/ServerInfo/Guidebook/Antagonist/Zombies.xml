@@ -12,10 +12,11 @@
   - Заразиться можно тремя способами: начав как нулевой зараженный, будучи укушенным зомбированным существом или получив инъекцию [color=#a4885c]Ромерола[/color].
 
   <Box>
-    <GuideReagentEmbed Reagent="Romerol"></GuideReagentEmbed>
+    <GuideReagentEmbed Reagent="Romerol"/>
   </Box>
 
   ## Цели
+  You are patient zero. You have [color=#7e916e]Romerol[/color] coursing through your veins and you have a grand desire to share it with every single flesh being you see.
 
   - Задача зомби - заразить весь экипаж станции.
 
@@ -25,11 +26,11 @@
   - Если вы еще не зомбированы, использование [color=#a4885c]Амбузола[/color] остановит инфекцию, чтобы не допустить вашей своевременной гибели, но вы всё равно можете заразиться снова, если будете не слишком осторожны. [color=#a4885c]Амбузол Плюс[/color] будет предотвращать заражение постоянно, только пока вы живы.
 
   <Box>
-    <GuideReagentEmbed Reagent="Ambuzol"></GuideReagentEmbed>
+    <GuideReagentEmbed Reagent="Ambuzol"/>
   </Box>
 
   <Box>
-    <GuideReagentEmbed Reagent="AmbuzolPlus"></GuideReagentEmbed>
+    <GuideReagentEmbed Reagent="AmbuzolPlus"/>
   </Box>
 
 </Document>
