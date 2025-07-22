@@ -144,8 +144,6 @@
   - type: Body
   - type: StatusEffects
     allowed:
-    - Stun
-    - SlowedDown
     - Flashed
   - type: TypingIndicator
     proto: robot
