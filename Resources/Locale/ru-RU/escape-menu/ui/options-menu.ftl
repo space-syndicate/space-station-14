@@ -131,6 +131,7 @@ ui-options-function-move-left = Двигаться налево
 ui-options-function-move-down = Двигаться вниз
 ui-options-function-move-right = Двигаться направо
 ui-options-function-walk = Идти
+ui-options-function-toggle-knockdown = Toggle Crawling
 ui-options-function-camera-rotate-left = Повернуть налево
 ui-options-function-camera-rotate-right = Повернуть направо
 ui-options-function-camera-reset = Сбросить камеру
