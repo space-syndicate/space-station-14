@@ -13,9 +13,10 @@
   id: JobPilot
   groups:
   - Inventory # Corvax-Loadouts
-  - SecurityJumpsuit
+  - PilotHead
+  - PilotJumpsuit
   - SecurityBackpack
-  - SecurityOuterClothing
+  - PilotOuterClothing
   - SecurityBelt
   - SecurityShoes
   - SurvivalSecurity
@@ -35,3 +36,4 @@
   - BrigmedicShoes
   - SurvivalMedical
   - Trinkets
+  - GroupSpeciesBreathTool

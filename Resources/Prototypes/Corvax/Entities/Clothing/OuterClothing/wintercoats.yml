@@ -1,0 +1,17 @@
+- type: entity
+  parent: ClothingOuterWinterCoat
+  id: ClothingOuterWinterPilot
+  name: pilot armor winter coat
+  description: Armored insulated jacket for security pilots.
+  components:
+  - type: Sprite
+    sprite: Corvax/Clothing/OuterClothing/WinterCoats/coatpilot.rsi
+  - type: Clothing
+    sprite: Corvax/Clothing/OuterClothing/WinterCoats/coatpilot.rsi
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.70
+        Slash: 0.70
+        Piercing: 0.70
+        Heat: 0.80
