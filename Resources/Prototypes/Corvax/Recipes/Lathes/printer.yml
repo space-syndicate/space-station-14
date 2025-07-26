@@ -1,629 +1,629 @@
 - type: latheRecipe
   id: PrintedDocumentReportStationRecipe
   result: PrintedDocumentReportStation
-  categories: 
+  categories:
   - Reports
   completetime: 2
   applyMaterialDiscount: false
   materials:
-    Paper: 100
+    PrinterPaper: 100
 
 - type: latheRecipe
   id: PrintedDocumentReportOnEliminationOfViolationsRecipe
   result: PrintedDocumentReportOnEliminationOfViolations
-  categories: 
+  categories:
   - Reports
   completetime: 2
   applyMaterialDiscount: false
   materials:
-    Paper: 100
+    PrinterPaper: 100
 
 - type: latheRecipe
   id: PrintedDocumentReporDepartmentRecipe
   result: PrintedDocumentReporDepartment
-  categories: 
+  categories:
   - Reports
   completetime: 2
   applyMaterialDiscount: false
   materials:
-    Paper: 100
+    PrinterPaper: 100
 
 - type: latheRecipe
   id: PrintedDocumentReportEmployeePerformanceRecipe
   result: PrintedDocumentReportEmployeePerformance
-  categories: 
+  categories:
   - Reports
   completetime: 2
   applyMaterialDiscount: false
   materials:
-    Paper: 100
+    PrinterPaper: 100
 
 - type: latheRecipe
   id: PrintedDocumentReportOnTheChaptersMeetingRecipe
   result: PrintedDocumentReportOnTheChaptersMeeting
-  categories: 
+  categories:
   - Reports
   completetime: 2
   applyMaterialDiscount: false
   materials:
-    Paper: 100
+    PrinterPaper: 100
 
 - type: latheRecipe
   id: PrintedDocumentInternalAffairsAgentsReportRecipe
   result: PrintedDocumentInternalAffairsAgentsReport
-  categories: 
+  categories:
   - Reports
   completetime: 2
   applyMaterialDiscount: false
   materials:
-    Paper: 100
+    PrinterPaper: 100
 
 - type: latheRecipe
   id: PrintedDocumentConditionReportRecipe
   result: PrintedDocumentConditionReport
-  categories: 
+  categories:
   - Reports
   completetime: 2
   applyMaterialDiscount: false
   materials:
-    Paper: 100
+    PrinterPaper: 100
 
 - type: latheRecipe
   id: PrintedDocumentReportStudyObjectRecipe
   result: PrintedDocumentReportStudyObject
-  categories: 
+  categories:
   - Reports
   completetime: 2
   applyMaterialDiscount: false
   materials:
-    Paper: 100
+    PrinterPaper: 100
 
 - type: latheRecipe
   id: PrintedDocumentExperimentReportRecipe
   result: PrintedDocumentExperimentReport
-  categories: 
+  categories:
   - Reports
   completetime: 2
   applyMaterialDiscount: false
   materials:
-    Paper: 100
+    PrinterPaper: 100
 
 - type: latheRecipe
   id: PrintedDocumentDisposalReportRecipe
   result: PrintedDocumentDisposalReport
-  categories: 
+  categories:
   - Reports
   completetime: 2
   applyMaterialDiscount: false
   materials:
-    Paper: 100
+    PrinterPaper: 100
 
 - type: latheRecipe
   id: PrintedDocumentApplicationAppointmentInterimRecipe
   result: PrintedDocumentApplicationAppointmentInterim
-  categories: 
+  categories:
   - Statements
   completetime: 2
   applyMaterialDiscount: false
   materials:
-    Paper: 100
+    PrinterPaper: 100
 
 - type: latheRecipe
   id: PrintedDocumentApplicationEmploymentRecipe
   result: PrintedDocumentApplicationEmployment
-  categories: 
+  categories:
   - Statements
   completetime: 2
   applyMaterialDiscount: false
   materials:
-    Paper: 100
+    PrinterPaper: 100
 
 - type: latheRecipe
   id: PrintedDocumentLetterResignationRecipe
   result: PrintedDocumentLetterResignation
-  categories: 
+  categories:
   - Statements
   completetime: 2
   applyMaterialDiscount: false
   materials:
-    Paper: 100
+    PrinterPaper: 100
 
 - type: latheRecipe
   id: PrintedDocumentApplicationAccessRecipe
   result: PrintedDocumentApplicationAccess
-  categories: 
+  categories:
   - Statements
   completetime: 2
   applyMaterialDiscount: false
   materials:
-    Paper: 100
+    PrinterPaper: 100
 
 - type: latheRecipe
   id: PrintedDocumentApplicationEquipmentRecipe
   result: PrintedDocumentApplicationEquipment
-  categories: 
+  categories:
   - Statements
   completetime: 2
   applyMaterialDiscount: false
   materials:
-    Paper: 100
+    PrinterPaper: 100
 
 - type: latheRecipe
   id: PrintedDocumentAppealRecipe
   result: PrintedDocumentAppeal
-  categories: 
+  categories:
   - InquiriesAndAppeals
   completetime: 2
   applyMaterialDiscount: false
   materials:
-    Paper: 100
+    PrinterPaper: 100
 
 - type: latheRecipe
   id: PrintedDocumentEvacuationShuttleRequestRecipe
   result: PrintedDocumentEvacuationShuttleRequest
-  categories: 
+  categories:
   - InquiriesAndAppeals
   completetime: 2
   applyMaterialDiscount: false
   materials:
-    Paper: 100
+    PrinterPaper: 100
 
 - type: latheRecipe
   id: PrintedDocumentShuttleRegistrationRequestRecipe
   result: PrintedDocumentShuttleRegistrationRequest
-  categories: 
+  categories:
   - InquiriesAndAppeals
   completetime: 2
   applyMaterialDiscount: false
   materials:
-    Paper: 100
+    PrinterPaper: 100
 
 - type: latheRecipe
   id: PrintedDocumentRequestCallMembersCentralCommitteeDSORecipe
   result: PrintedDocumentRequestCallMembersCentralCommitteeDSO
-  categories: 
+  categories:
   - InquiriesAndAppeals
   completetime: 2
   applyMaterialDiscount: false
   materials:
-    Paper: 100
+    PrinterPaper: 100
 
 - type: latheRecipe
   id: PrintedDocumentRequestRequestToEstablishThreatLevelRecipe
   result: PrintedDocumentRequestRequestToEstablishThreatLevel
-  categories: 
+  categories:
   - InquiriesAndAppeals
   completetime: 2
   applyMaterialDiscount: false
   materials:
-    Paper: 100
+    PrinterPaper: 100
 
 - type: latheRecipe
   id: PrintedDocumentRequestChangeSalaryRecipe
   result: PrintedDocumentRequestChangeSalary
-  categories: 
+  categories:
   - InquiriesAndAppeals
   completetime: 2
   applyMaterialDiscount: false
   materials:
-    Paper: 100
+    PrinterPaper: 100
 
 - type: latheRecipe
   id: PrintedDocumentRequestForNonlistedEmploymentRecipe
   result: PrintedDocumentRequestForNonlistedEmployment
-  categories: 
+  categories:
   - InquiriesAndAppeals
   completetime: 2
   applyMaterialDiscount: false
   materials:
-    Paper: 100
+    PrinterPaper: 100
 
 - type: latheRecipe
   id: PrintedDocumentRequestForPromotionRecipe
   result: PrintedDocumentRequestForPromotion
-  categories: 
+  categories:
   - InquiriesAndAppeals
   completetime: 2
   applyMaterialDiscount: false
   materials:
-    Paper: 100
+    PrinterPaper: 100
 
 - type: latheRecipe
   id: PrintedDocumentRequestDocumentsRecipe
   result: PrintedDocumentRequestDocuments
-  categories: 
+  categories:
   - InquiriesAndAppeals
   completetime: 2
   applyMaterialDiscount: false
   materials:
-    Paper: 100
+    PrinterPaper: 100
 
 - type: latheRecipe
   id: PrintedDocumentRequestEuthanasiaRecipe
   result: PrintedDocumentRequestEuthanasia
-  categories: 
+  categories:
   - InquiriesAndAppeals
   completetime: 2
   applyMaterialDiscount: false
   materials:
-    Paper: 100
+    PrinterPaper: 100
 
 - type: latheRecipe
   id: PrintedDocumentRequestConstructionWorkRecipe
   result: PrintedDocumentRequestConstructionWork
-  categories: 
+  categories:
   - InquiriesAndAppeals
   completetime: 2
   applyMaterialDiscount: false
   materials:
-    Paper: 100
+    PrinterPaper: 100
 
 - type: latheRecipe
   id: PrintedDocumentRequestModernizationRecipe
   result: PrintedDocumentRequestModernization
-  categories: 
+  categories:
   - InquiriesAndAppeals
   completetime: 2
   applyMaterialDiscount: false
   materials:
-    Paper: 100
+    PrinterPaper: 100
 
 - type: latheRecipe
   id: PrintedDocumentComplaintViolationLaborRulesRecipe
   result: PrintedDocumentComplaintViolationLaborRules
-  categories: 
+  categories:
   - Complaintst
   completetime: 2
   applyMaterialDiscount: false
   materials:
-    Paper: 100
+    PrinterPaper: 100
 
 - type: latheRecipe
   id: PrintedDocumentComplaintOffenseRecipe
   result: PrintedDocumentComplaintOffense
-  categories: 
+  categories:
   - Complaintst
   completetime: 2
   applyMaterialDiscount: false
   materials:
-    Paper: 100
+    PrinterPaper: 100
 
 - type: latheRecipe
   id: PrintedDocumentPermissionEquipmentRecipe
   result: PrintedDocumentPermissionEquipment
-  categories: 
+  categories:
   - Permissions
   completetime: 2
   applyMaterialDiscount: false
   materials:
-    Paper: 100
+    PrinterPaper: 100
 
 - type: latheRecipe
   id: PrintedDocumentPermissionToTravelInCaseOfThreatRecipe
   result: PrintedDocumentPermissionToTravelInCaseOfThreat
-  categories: 
+  categories:
   - Permissions
   completetime: 2
   applyMaterialDiscount: false
   materials:
-    Paper: 100
+    PrinterPaper: 100
 
 - type: latheRecipe
   id: PrintedDocumentSearchPermissionRecipe
   result: PrintedDocumentSearchPermission
-  categories: 
+  categories:
   - Permissions
   completetime: 2
   applyMaterialDiscount: false
   materials:
-    Paper: 100
+    PrinterPaper: 100
 
 - type: latheRecipe
   id: PrintedDocumentPermissionToCarryWeaponsRecipe
   result: PrintedDocumentPermissionToCarryWeapons
-  categories: 
+  categories:
   - Permissions
   completetime: 2
   applyMaterialDiscount: false
   materials:
-    Paper: 100
+    PrinterPaper: 100
 
 - type: latheRecipe
   id: PrintedDocumentPrescriptionDrugAuthorizationRecipe
   result: PrintedDocumentPrescriptionDrugAuthorization
-  categories: 
+  categories:
   - Permissions
   completetime: 2
   applyMaterialDiscount: false
   materials:
-    Paper: 100
+    PrinterPaper: 100
 
 - type: latheRecipe
   id: PrintedDocumentPermissionDisposeBodyRecipe
   result: PrintedDocumentPermissionDisposeBody
-  categories: 
+  categories:
   - Permissions
   completetime: 2
   applyMaterialDiscount: false
   materials:
-    Paper: 100
+    PrinterPaper: 100
 
 - type: latheRecipe
   id: PrintedDocumentConstructionPermitRecipe
   result: PrintedDocumentConstructionPermit
-  categories: 
+  categories:
   - Permissions
   completetime: 2
   applyMaterialDiscount: false
   materials:
-    Paper: 100
+    PrinterPaper: 100
 
 - type: latheRecipe
   id: PrintedDocumentPermissionToExtendMarriageRecipe
   result: PrintedDocumentPermissionToExtendMarriage
-  categories: 
+  categories:
   - Permissions
   completetime: 2
   applyMaterialDiscount: false
   materials:
-    Paper: 100
+    PrinterPaper: 100
 
 - type: latheRecipe
   id: PrintedDocumentOrderDismissalRecipe
   result: PrintedDocumentOrderDismissal
-  categories: 
+  categories:
   - OrdersAndInstructions
   completetime: 2
   applyMaterialDiscount: false
   materials:
-    Paper: 100
+    PrinterPaper: 100
 
 - type: latheRecipe
   id: PrintedDocumentOrderDeprivationAccessRecipe
   result: PrintedDocumentOrderDeprivationAccess
-  categories: 
+  categories:
   - OrdersAndInstructions
   completetime: 2
   applyMaterialDiscount: false
   materials:
-    Paper: 100
+    PrinterPaper: 100
 
 - type: latheRecipe
   id: PrintedDocumentOrderEncouragementRecipe
   result: PrintedDocumentOrderEncouragement
-  categories: 
+  categories:
   - OrdersAndInstructions
   completetime: 2
   applyMaterialDiscount: false
   materials:
-    Paper: 100
+    PrinterPaper: 100
 
 - type: latheRecipe
   id: PrintedDocumentOrderParolePrisonerRecipe
   result: PrintedDocumentOrderParolePrisoner
-  categories: 
+  categories:
   - OrdersAndInstructions
   completetime: 2
   applyMaterialDiscount: false
   materials:
-    Paper: 100
+    PrinterPaper: 100
 
 - type: latheRecipe
   id: PrintedDocumentOrderRecognizingSentienceCreatureRecipe
   result: PrintedDocumentOrderRecognizingSentienceCreature
-  categories: 
+  categories:
   - OrdersAndInstructions
   completetime: 2
   applyMaterialDiscount: false
   materials:
-    Paper: 100
+    PrinterPaper: 100
 
 - type: latheRecipe
   id: PrintedDocumentOrderMedicalInterventionRecipe
   result: PrintedDocumentOrderMedicalIntervention
-  categories: 
+  categories:
   - OrdersAndInstructions
   completetime: 2
   applyMaterialDiscount: false
   materials:
-    Paper: 100
+    PrinterPaper: 100
 
 - type: latheRecipe
   id: PrintedDocumentProductManufacturingOrderRecipe
   result: PrintedDocumentProductManufacturingOrder
-  categories: 
+  categories:
   - Orders
   completetime: 2
   applyMaterialDiscount: false
   materials:
-    Paper: 100
+    PrinterPaper: 100
 
 - type: latheRecipe
   id: PrintedDocumentOrderPurchaseResourcesEquipmentRecipe
   result: PrintedDocumentOrderPurchaseResourcesEquipment
-  categories: 
+  categories:
   - Orders
   completetime: 2
   applyMaterialDiscount: false
   materials:
-    Paper: 100
+    PrinterPaper: 100
 
 - type: latheRecipe
   id: PrintedDocumentOrderingSpecialEquipmentRecipe
   result: PrintedDocumentOrderingSpecialEquipment
-  categories: 
+  categories:
   - Orders
   completetime: 2
   applyMaterialDiscount: false
   materials:
-    Paper: 100
+    PrinterPaper: 100
 
 - type: latheRecipe
   id: PrintedDocumentOrderPurchaseWeaponsRecipe
   result: PrintedDocumentOrderPurchaseWeapons
-  categories: 
+  categories:
   - Orders
   completetime: 2
   applyMaterialDiscount: false
   materials:
-    Paper: 100
+    PrinterPaper: 100
 
 - type: latheRecipe
   id: PrintedDocumentCertificateRecipe
   result: PrintedDocumentCertificate
-  categories: 
+  categories:
   - Evidence
   completetime: 2
   applyMaterialDiscount: false
   materials:
-    Paper: 100
+    PrinterPaper: 100
 
 - type: latheRecipe
   id: PrintedDocumentCertificateAdvancedTrainingRecipe
   result: PrintedDocumentCertificateAdvancedTraining
-  categories: 
+  categories:
   - Evidence
   completetime: 2
   applyMaterialDiscount: false
   materials:
-    Paper: 100
+    PrinterPaper: 100
 
 - type: latheRecipe
   id: PrintedDocumentCertificateOffenseRecipe
   result: PrintedDocumentCertificateOffense
-  categories: 
+  categories:
   - Evidence
   completetime: 2
   applyMaterialDiscount: false
   materials:
-    Paper: 100
+    PrinterPaper: 100
 
 - type: latheRecipe
   id: PrintedDocumentDeathCertificateRecipe
   result: PrintedDocumentDeathCertificate
-  categories: 
+  categories:
   - Evidence
   completetime: 2
   applyMaterialDiscount: false
   materials:
-    Paper: 100
+    PrinterPaper: 100
 
 - type: latheRecipe
   id: PrintedDocumentMarriageCertificateRecipe
   result: PrintedDocumentMarriageCertificate
-  categories: 
+  categories:
   - Evidence
   completetime: 2
   applyMaterialDiscount: false
   materials:
-    Paper: 100
+    PrinterPaper: 100
 
 - type: latheRecipe
   id: PrintedDocumentDivorceCertificateRecipe
   result: PrintedDocumentDivorceCertificate
-  categories: 
+  categories:
   - Evidence
   completetime: 2
   applyMaterialDiscount: false
   materials:
-    Paper: 100
+    PrinterPaper: 100
 
 - type: latheRecipe
   id: PrintedDocumentClosingIndictmentRecipe
   result: PrintedDocumentClosingIndictment
-  categories: 
+  categories:
   - ConclusionsAndDecisions
   completetime: 2
   applyMaterialDiscount: false
   materials:
-    Paper: 100
+    PrinterPaper: 100
 
 - type: latheRecipe
   id: PrintedDocumentSentenceRecipe
   result: PrintedDocumentSentence
-  categories: 
+  categories:
   - ConclusionsAndDecisions
   completetime: 2
   applyMaterialDiscount: false
   materials:
-    Paper: 100
+    PrinterPaper: 100
 
 - type: latheRecipe
   id: PrintedDocumentJudgmentRecipe
   result: PrintedDocumentJudgment
-  categories: 
+  categories:
   - ConclusionsAndDecisions
   completetime: 2
   applyMaterialDiscount: false
   materials:
-    Paper: 100
+    PrinterPaper: 100
 
 - type: latheRecipe
   id: PrintedDocumentStatementHealtheRecipe
   result: PrintedDocumentStatementHealth
-  categories: 
+  categories:
   - ConclusionsAndDecisions
   completetime: 2
   applyMaterialDiscount: false
   materials:
-    Paper: 100
+    PrinterPaper: 100
 
 - type: latheRecipe
   id: PrintedDocumentDecisionToStartTrialRecipe
   result: PrintedDocumentDecisionToStartTrial
-  categories: 
+  categories:
   - ConclusionsAndDecisions
   completetime: 2
   applyMaterialDiscount: false
   materials:
-    Paper: 100
+    PrinterPaper: 100
 
 - type: latheRecipe
   id: PrintedDocumentErrorLoadingFormHeaderRecipe
   result: PrintedDocumentErrorLoadingFormHeader
-  categories: 
+  categories:
   - ErrorDocument
   completetime: 2
   applyMaterialDiscount: false
   materials:
-    Paper: 100
+    PrinterPaper: 100
 
 - type: latheRecipe
   id: PrintedDocumentNoticeOfLiquidationRecipe
   result: PrintedDocumentNoticeOfLiquidation
-  categories: 
+  categories:
   - ErrorDocument
   completetime: 2
   applyMaterialDiscount: false
   materials:
-    Paper: 100
+    PrinterPaper: 100
 
 - type: latheRecipe
   id: PrintedDocumentBusinessDealRecipe
   result: PrintedDocumentBusinessDeal
-  categories: 
+  categories:
   - ErrorDocument
   completetime: 2
   applyMaterialDiscount: false
   materials:
-    Paper: 100
+    PrinterPaper: 100
 
 - type: latheRecipe
   id: PrintedDocumentNoteBeginningMilitaryActionsRecipe
   result: PrintedDocumentNoteBeginningMilitaryActions
-  categories: 
+  categories:
   - ErrorDocument
   completetime: 2
   applyMaterialDiscount: false
   materials:
-    Paper: 100
+    PrinterPaper: 100
 
 - type: latheRecipe
   id: PrintedDocumentReportAccomplishmentGoalsRecipe
   result: PrintedDocumentReportAccomplishmentGoals
-  categories: 
+  categories:
   - ErrorDocument
   completetime: 2
   applyMaterialDiscount: false
   materials:
-    Paper: 100
+    PrinterPaper: 100
