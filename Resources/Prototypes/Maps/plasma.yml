@@ -21,7 +21,6 @@
           availableJobs: #Total of 66 jobs roundstart, max of 93 inc. latejoins and trainees.
             #command - 7
             Captain: [ 1, 1 ]
-            IAA: [ 1, 1 ] # Corvax-IAA
             HeadOfPersonnel: [ 1, 1 ]
             ChiefEngineer: [ 1, 1 ]
             ChiefMedicalOfficer: [ 1, 1 ]
@@ -60,7 +59,7 @@
             SecurityOfficer: [ 6, 8 ]
             Detective: [ 1, 2 ]
             SecurityCadet: [ 4, 4 ]
-            #Lawyer: [ 1, 2 ] # Corvax-IAA
+            #Lawyer: [ 1, 2 ] # Corvax
             #supply - 8-10
             SalvageSpecialist: [ 4, 4 ]
             CargoTechnician: [ 4, 6 ]
