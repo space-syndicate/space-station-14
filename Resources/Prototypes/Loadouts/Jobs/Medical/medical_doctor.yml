@@ -33,9 +33,9 @@
 
 - type: loadout
   id: SeniorPhysicianBeret
-  effects:
-  - !type:GroupLoadoutEffect
-    proto: SeniorPhysician
+  # effects: Corvax-MentorRoles
+  # - !type:GroupLoadoutEffect
+  #   proto: SeniorPhysician
   equipment:
     head: ClothingHeadHatBeretSeniorPhysician
 
@@ -85,17 +85,17 @@
 
 - type: loadout
   id: SeniorPhysicianJumpsuit
-  effects:
-  - !type:GroupLoadoutEffect
-    proto: SeniorPhysician
+  # effects: Corvax-MentorRoles
+  # - !type:GroupLoadoutEffect
+  #   proto: SeniorPhysician
   equipment:
     jumpsuit: ClothingUniformJumpsuitSeniorPhysician
 
 - type: loadout
   id: SeniorPhysicianJumpskirt
-  effects:
-  - !type:GroupLoadoutEffect
-    proto: SeniorPhysician
+  # effects: Corvax-MentorRoles
+  # - !type:GroupLoadoutEffect
+  #   proto: SeniorPhysician
   equipment:
     jumpsuit: ClothingUniformJumpskirtSeniorPhysician
 
@@ -138,9 +138,9 @@
 
 - type: loadout
   id: SeniorPhysicianLabCoat
-  effects:
-  - !type:GroupLoadoutEffect
-    proto: SeniorPhysician
+  # effects: Corvax-MentorRoles
+  # - !type:GroupLoadoutEffect
+  #   proto: SeniorPhysician
   equipment:
     outerClothing: ClothingOuterCoatLabSeniorPhysician
 
@@ -158,9 +158,9 @@
 
 - type: loadout
   id: SeniorPhysicianPDA
-  effects:
-  - !type:GroupLoadoutEffect
-    proto: SeniorPhysician
+  # effects: Corvax-MentorRoles
+  # - !type:GroupLoadoutEffect
+  #   proto: SeniorPhysician
   equipment:
     id: SeniorPhysicianPDA
 

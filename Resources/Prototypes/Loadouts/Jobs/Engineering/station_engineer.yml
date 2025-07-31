@@ -42,9 +42,9 @@
 - type: loadout
   id: SeniorEngineerBeret
   startingGear: EngineeringBeret
-  effects:
-  - !type:GroupLoadoutEffect
-    proto: SeniorEngineering
+  # effects: Corvax-MentorRoles
+  # - !type:GroupLoadoutEffect
+  #   proto: SeniorEngineering
 
 # Jumpsuit
 - type: loadout
@@ -64,17 +64,17 @@
 
 - type: loadout
   id: SeniorEngineerJumpsuit
-  effects:
-  - !type:GroupLoadoutEffect
-    proto: SeniorEngineering
+  # effects: Corvax-MentorRoles
+  # - !type:GroupLoadoutEffect
+  #   proto: SeniorEngineering
   equipment:
     jumpsuit: ClothingUniformJumpsuitSeniorEngineer
 
 - type: loadout
   id: SeniorEngineerJumpskirt
-  effects:
-  - !type:GroupLoadoutEffect
-    proto: SeniorEngineering
+  # effects: Corvax-MentorRoles
+  # - !type:GroupLoadoutEffect
+  #   proto: SeniorEngineering
   equipment:
     jumpsuit: ClothingUniformJumpskirtSeniorEngineer
 
@@ -124,8 +124,8 @@
 
 - type: loadout
   id: SeniorEngineerPDA
-  effects:
-  - !type:GroupLoadoutEffect
-    proto: SeniorEngineering
+  # effects: Corvax-MentorRoles
+  # - !type:GroupLoadoutEffect
+  #   proto: SeniorEngineering
   equipment:
     id: SeniorEngineerPDA
