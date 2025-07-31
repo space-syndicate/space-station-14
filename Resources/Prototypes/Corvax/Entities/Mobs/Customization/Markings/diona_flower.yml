@@ -1,0 +1,9 @@
+- type: marking
+  id: DionaFlowerOverlay
+  sponsorOnly: true # Corvax-Sponsors
+  bodyPart: LLeg
+  markingCategory: Overlay
+  speciesRestriction: [Diona]
+  sprites:
+  - sprite: Corvax/Mobs/Customization/diona_flower.rsi
+    state: kudzu_flowers
