@@ -1,0 +1,5 @@
+marking-ChestMuscles = Прес(Спонсор)
+marking-LLegsMuscles = Левая нога мускулы(Спонсор)
+marking-RLegsMuscles = Левая нога мускулы(Спонсор)
+marking-RArmMuscles = Правая рука мускулы(Спонсор)
+marking-LArmMuscles = Правая рука мускулы(Спонсор)

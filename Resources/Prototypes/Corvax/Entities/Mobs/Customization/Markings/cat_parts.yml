@@ -2,7 +2,7 @@
   id: CatEarsStubby
   bodyPart: HeadTop
   markingCategory: HeadTop
-  speciesRestriction: [Human]
+  speciesRestriction: [Human, Dwarf]
   sponsorOnly: true # Corvax-Sponsors
   coloring:
     default:
@@ -26,7 +26,7 @@
   id: CatEarsCurled
   bodyPart: HeadTop
   markingCategory: HeadTop
-  speciesRestriction: [Human]
+  speciesRestriction: [Human, Dwarf]
   sponsorOnly: true # Corvax-Sponsors
   coloring:
     default:
@@ -50,7 +50,7 @@
   id: CatEarsTorn
   bodyPart: HeadTop
   markingCategory: HeadTop
-  speciesRestriction: [Human]
+  speciesRestriction: [Human, Dwarf]
   sponsorOnly: true # Corvax-Sponsors
   coloring:
     default:
@@ -74,7 +74,7 @@
   id: CatTailStripes
   bodyPart: Tail
   markingCategory: Tail
-  speciesRestriction: [Human]
+  speciesRestriction: [Human, Dwarf]
   sponsorOnly: true # Corvax-Sponsors
   coloring:
     default:
