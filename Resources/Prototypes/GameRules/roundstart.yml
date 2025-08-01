@@ -409,9 +409,9 @@
     scheduledGameRules: !type:NestedSelector
       tableId: BasicGameRulesTable
   # Corvax-MRP-start
-  - type: MinMaxEventTiming
-    min: 6
-    max: 20
+    minMaxEventTiming:
+      min: 6
+      max: 20
   # Corvax-MRP-end
     
 - type: entity
