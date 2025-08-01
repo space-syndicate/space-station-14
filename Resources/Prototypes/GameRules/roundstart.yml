@@ -400,7 +400,12 @@
   - type: BasicStationEventScheduler
     scheduledGameRules: !type:NestedSelector
       tableId: BasicGameRulesTable
-
+    # Corvax-MRP-start
+    minMaxEventTiming:
+      min: 6
+      max: 20
+    # Corvax-MRP-end
+  
 - type: entity
   id: RampingStationEventScheduler
   parent: BaseGameRule
@@ -408,11 +413,6 @@
   - type: RampingStationEventScheduler
     scheduledGameRules: !type:NestedSelector
       tableId: BasicGameRulesTable
-  # Corvax-MRP-start
-    minMaxEventTiming:
-      min: 6
-      max: 20
-  # Corvax-MRP-end
     
 - type: entity
   id: SpaceTrafficControlEventScheduler # iff we make a selector for EntityTables that can respect StationEventComp restrictions, or somehow impliment them otherwise in said tables,
