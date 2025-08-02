@@ -12,11 +12,17 @@ using Content.Shared.Movement.Systems;
 using Content.Shared.Mobs;
 using Content.Shared.Mobs.Systems;
 using Content.Shared.Sound.Components;
+using Content.Shared.UserInterface;
 using Robust.Shared.Audio;
+using Robust.Shared.GameObjects;
+using Robust.Shared.Utility;
+using Robust.Shared.Prototypes;
+using Content.Shared.Humanoid;
+using Robust.Shared.Player;
 
 namespace Content.Server.Corvax.Ipc;
 
-public sealed class IpcSystem : EntitySystem
+public sealed partial class IpcSystem : EntitySystem
 {
     [Dependency] private readonly SharedActionsSystem _action = default!;
     [Dependency] private readonly AlertsSystem _alerts = default!;
@@ -26,6 +32,8 @@ public sealed class IpcSystem : EntitySystem
     [Dependency] private readonly DamageableSystem _damageable = default!;
     [Dependency] private readonly MovementSpeedModifierSystem _movementSpeedModifier = default!;
     [Dependency] private readonly MobStateSystem _mobState = default!;
+    [Dependency] private readonly SharedUserInterfaceSystem _ui = default!;
+    [Dependency] private readonly IPrototypeManager _prototypeManager = default!;
 
 
 
@@ -40,18 +48,25 @@ public sealed class IpcSystem : EntitySystem
         SubscribeLocalEvent<IpcComponent, EmpPulseEvent>(OnEmpPulse);
         SubscribeLocalEvent<IpcComponent, RefreshMovementSpeedModifiersEvent>(OnRefreshMovementSpeedModifiers);
         SubscribeLocalEvent<IpcComponent, MobStateChangedEvent>(OnMobStateChanged);
+        SubscribeLocalEvent<IpcComponent, OpenIpcFaceActionEvent>(OnOpenFaceAction);
+        Subs.BuiEvents<IpcComponent>(IpcFaceUiKey.Face, subs =>
+        {
+            subs.Event<IpcFaceSelectMessage>(OnFaceSelected);
+        });
     }
 
     private void OnMapInit(EntityUid uid, IpcComponent component, MapInitEvent args)
     {
         UpdateBatteryAlert((uid, component));
         _action.AddAction(uid, ref component.ActionEntity, component.DrainBatteryAction);
+        _action.AddAction(uid, ref component.ChangeFaceActionEntity, component.ChangeFaceAction);
         _movementSpeedModifier.RefreshMovementSpeedModifiers(uid);
     }
 
     private void OnComponentShutdown(EntityUid uid, IpcComponent component, ComponentShutdown args)
     {
         _action.RemoveAction(uid, component.ActionEntity);
+        _action.RemoveAction(uid, component.ChangeFaceActionEntity);
     }
 
     private void OnPowerCellChanged(EntityUid uid, IpcComponent component, PowerCellChangedEvent args)
@@ -90,7 +105,7 @@ public sealed class IpcSystem : EntitySystem
         if (!_powerCell.TryGetBatteryFromSlot(ent, out var battery, slot) || battery.CurrentCharge / battery.MaxCharge < 0.01f)
         {
             _alerts.ClearAlert(ent, ent.Comp.BatteryAlert);
-            _alerts.ShowAlert(ent, ent.Comp.NoBatteryAlert);
+        _alerts.ShowAlert(ent, ent.Comp.NoBatteryAlert);
 
             _movementSpeedModifier.RefreshMovementSpeedModifiers(ent.Owner);
             return;
@@ -114,6 +129,26 @@ public sealed class IpcSystem : EntitySystem
         {
             args.ModifySpeed(0.2f);
         }
+    }
+
+    private void OnOpenFaceAction(EntityUid uid, IpcComponent comp, OpenIpcFaceActionEvent args)
+    {
+        if (args.Handled)
+            return;
+
+        if (!TryComp<ActorComponent>(uid, out var actor))
+            return;
+
+        _ui.SetUiState(uid, IpcFaceUiKey.Face, new IpcFaceBuiState(comp.FaceProfile, comp.SelectedFace));
+        _ui.TryToggleUi(uid, IpcFaceUiKey.Face, actor.PlayerSession);
+        args.Handled = true;
+    }
+
+    private void OnFaceSelected(Entity<IpcComponent> ent, ref IpcFaceSelectMessage msg)
+    {
+        ent.Comp.SelectedFace = msg.State;
+        Dirty(ent);
+        _ui.CloseUi(ent.Owner, IpcFaceUiKey.Face);
     }
 
     private void OnEmpPulse(EntityUid uid, IpcComponent component, ref EmpPulseEvent args)

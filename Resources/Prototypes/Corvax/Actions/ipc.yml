@@ -9,3 +9,14 @@
     itemIconStyle: NoItem
   - type: InstantAction
     event: !type:ToggleDrainActionEvent
+
+- type: entity
+  id: ActionIpcChangeFace
+  name: Change face
+  description: Change the IPC monitor face
+  components:
+  - type: Action
+    icon: { sprite: Corvax/Interface/ipcactions.rsi, state: on }
+    itemIconStyle: NoItem
+  - type: InstantAction
+    event: !type:OpenIpcFaceActionEvent
