@@ -337,6 +337,8 @@
         type: HumanoidMarkingModifierBoundUserInterface
       enum.StrippingUiKey.Key:
         type: StrippableBoundUserInterface
+      enum.IpcFaceUiKey.Face:
+        type: IpcFaceUserInterface
   - type: Puller
   - type: Speech
     speechSounds: Alto
@@ -382,14 +384,6 @@
     shiveringHeatRegulation: 2000
     normalBodyTemperature: 310.15
     thermalRegulationTemperatureThreshold: 2
-  - type: UserInterface
-    interfaces:
-      enum.HumanoidMarkingModifierKey.Key:
-        type: HumanoidMarkingModifierBoundUserInterface
-      enum.StrippingUiKey.Key:
-        type: StrippableBoundUserInterface
-      enum.IpcFaceUiKey.Face:
-        type: IpcFaceUserInterface
 
 - type: entity
   save: false

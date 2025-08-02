@@ -16,7 +16,7 @@
   description: Change the IPC monitor face
   components:
   - type: Action
-    icon: { sprite: Corvax/Interface/ipcactions.rsi, state: on }
+    icon: { sprite: Interface/Actions/actions_ai.rsi, state: crew_monitor }
     itemIconStyle: NoItem
   - type: InstantAction
     event: !type:OpenIpcFaceActionEvent
