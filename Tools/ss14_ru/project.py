@@ -1,4 +1,4 @@
-﻿import pathlib
+import pathlib
 import os
 import glob
 from file import FluentFile

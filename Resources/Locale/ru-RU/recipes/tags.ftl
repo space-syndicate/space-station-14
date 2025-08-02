@@ -64,11 +64,12 @@ construction-graph-tag-corgi-hide = шкура корги
 construction-graph-tag-apron = фартук
 construction-graph-tag-utility-belt = пояс для инструментов
 soil-construction-graph-any-mushroom = любой гриб
+construction-graph-tag-mop-basic = mop
 # toys
 construction-graph-tag-rubber-ducky = резиновая уточка
 construction-graph-tag-ghost = плюшевый призрак
 construction-graph-tag-ectoplasm = эктоплазма
-construction-graph-tag-lizard-plushie = плюшевая ящерица
+construction-graph-tag-lizard-plushie = плюшевый унатх
 # carpet
 construction-graph-tag-black-carpet = чёрный ковёр
 construction-graph-tag-blue-carpet = синий ковёр

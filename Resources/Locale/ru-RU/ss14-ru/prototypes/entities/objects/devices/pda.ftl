@@ -155,7 +155,7 @@ ent-PiratePDA = КПК пирата
 # Corvax-HiddenDesc-Start
 ent-SyndiAgentPDA = медицинский кроваво-красный КПК
     .desc = Смотря на этот КПК, ваше сердцебиение учащается... словно его владелец проводил немыслимые и ужасные медицинские эксперименты.
-    .suffix = КПК фельдшера Синдиката
+    .suffix = КПК медика Синдиката
 # Corvax-HiddenDesc-End
 ent-ChameleonPDA = КПК пассажира
     .desc = Почему он не серый?
@@ -163,4 +163,4 @@ ent-ChameleonPDA = КПК пассажира
 ent-WizardPDA = КПК волшебника
     .desc = Вы слышите слабый шёпот, доносящийся из него.
 ent-ScurretPDA = { ent-ClearPDA }
-    .desc = A temporary PDA granted to scurret temps. Doesn't do much. Wawa!
+    .desc = Временный КПК, выдаваемый временным слизенькам. Не делает ничего особенного. Вава!

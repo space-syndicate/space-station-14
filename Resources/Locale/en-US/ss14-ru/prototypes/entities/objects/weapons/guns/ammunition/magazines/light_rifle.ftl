@@ -13,7 +13,3 @@ ent-MagazineLightRifleUranium = magazine (.30 rifle uranium)
     .desc = Curved 30-round double stack magazine for combat rifles. Intended to hold exotic uranium-core ammunition.
 ent-MagazineLightRifleIncendiary = magazine (.30 rifle incendiary)
     .desc = Curved 30-round double stack magazine for combat rifles. Intended to hold self-igniting incendiary ammunition.
-ent-MagazineLightRifleMaxim = pan magazine (.30 rifle)
-    .desc = { ent-BaseMagazineLightRifle.desc }
-ent-MagazineLightRiflePkBox = PK munitions box (.30 rifle)
-    .desc = { ent-BaseMagazineLightRifle.desc }

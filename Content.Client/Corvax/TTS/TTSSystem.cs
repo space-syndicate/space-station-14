@@ -1,4 +1,4 @@
-﻿using Content.Shared.Chat;
+using Content.Shared.Chat;
 using Content.Shared.Corvax.CCCVars;
 using Content.Shared.Corvax.TTS;
 using Robust.Client.Audio;
@@ -87,6 +87,8 @@ public sealed class TTSSystem : EntitySystem
 
         if (ev.SourceUid != null)
         {
+            if (!TryGetEntity(ev.SourceUid.Value, out _))
+                return;
             var sourceUid = GetEntity(ev.SourceUid.Value);
             _audio.PlayEntity(audioResource.AudioStream, sourceUid, soundSpecifier, audioParams);
         }

@@ -17,3 +17,15 @@
         Shock: 0.1
         Cold: 0.2
         Radiation: 0.2
+
+- type: entity
+  parent: ClothingHeadHelmetHardsuitSecurity
+  id: ClothingHeadHelmetHardsuitSecurityPilot
+  categories: [ HideSpawnMenu ]
+  name: security pilot hardsuit helmet
+  description: Armored hardsuit helmet for security needs.
+  components:
+  - type: Sprite
+    sprite: Corvax/Clothing/Head/hardsuits/security-pilot.rsi
+  - type: Clothing
+    sprite: Corvax/Clothing/Head/hardsuits/security-pilot.rsi

@@ -45,6 +45,7 @@
   - type: TTS # Corvax-TTS
   - type: RequireProjectileTarget
     active: False
+  - type: StunVisuals
 
 - type: entity
   save: false
