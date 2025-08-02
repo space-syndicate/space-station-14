@@ -22,6 +22,7 @@ public sealed class IpcFaceMenu : FancyWindow
 
     private readonly ItemList _list;
     public event Action<string>? FaceSelected;
+    private bool _suppressSelection;
 
     public IpcFaceMenu()
     {
@@ -40,6 +41,9 @@ public sealed class IpcFaceMenu : FancyWindow
 
         _list.OnItemSelected += args =>
         {
+            if (_suppressSelection)
+                return;
+
             if (_list[args.ItemIndex].Metadata is string id)
                 FaceSelected?.Invoke(id);
         };
@@ -49,6 +53,7 @@ public sealed class IpcFaceMenu : FancyWindow
 
     public void Populate(string profileId, string selected)
     {
+        _suppressSelection = true;
         _list.Clear();
         var profile = _prototype.Index<IpcFaceProfilePrototype>(profileId);
         foreach (var face in profile.Faces)
@@ -66,5 +71,6 @@ public sealed class IpcFaceMenu : FancyWindow
             if (marking.ID == selected)
                 item.Selected = true;
         }
+        _suppressSelection = false;
     }
 }
