@@ -45,6 +45,7 @@ public sealed class SuitSensorSystem : EntitySystem
     [Dependency] private readonly ActionBlockerSystem _actionBlocker = default!;
     [Dependency] private readonly IPrototypeManager _proto = default!;
     [Dependency] private readonly InventorySystem _inventory = default!;
+    [Dependency] private readonly DamageableSystem _damageableSystem = default!; // Corvax-SensorsCancer
 
     public override void Initialize()
     {
@@ -338,12 +339,20 @@ public sealed class SuitSensorSystem : EntitySystem
     public void SetSensor(Entity<SuitSensorComponent> sensors, SuitSensorMode mode, EntityUid? userUid = null)
     {
         var comp = sensors.Comp;
+        var cellarDamage = ""; // Corvax-SensorsCancer
 
         comp.Mode = mode;
 
         if (userUid != null)
         {
-            var msg = Loc.GetString("suit-sensor-mode-state", ("mode", GetModeName(mode)));
+            // Corvax-SensorsCancer-Start
+            if (_random.Prob(comp.CellularDamageChance))
+            {
+                _damageableSystem.TryChangeDamage(userUid, comp.DamageBonus, true);
+                cellarDamage = Loc.GetString("suit-sensot-mode-cellardamage");
+            }
+            // Corvax-SensorsCancer-End
+            var msg = Loc.GetString("suit-sensor-mode-state", ("mode", GetModeName(mode)), ("cellardamage", cellarDamage));
             _popupSystem.PopupEntity(msg, sensors, userUid.Value);
         }
     }

@@ -1,3 +1,4 @@
+using Content.Shared.Damage;
 using Content.Shared.Medical.SuitSensor;
 using Robust.Shared.Serialization.TypeSerializers.Implementations.Custom;
 
@@ -92,4 +93,25 @@ public sealed partial class SuitSensorComponent : Component
     /// </summary>
     [DataField, ViewVariables]
     public bool PreviousControlsLocked = false;
+
+    // Corvax-SensorsCancer-Start
+
+    /// <summary>
+    /// Amount of damage that will be caused.
+    /// </summary>
+    public DamageSpecifier DamageBonus = new()
+    {
+        DamageDict = new()
+        {
+            { "Cellular", 50 }
+        }
+    };
+
+    /// <summary>
+    /// The same chance as WeaponRandomComponent.
+    /// </summary>
+    [ViewVariables(VVAccess.ReadWrite)]
+    public float CellularDamageChance = 0.00001f;
+
+    // Corvax-SensorsCancer-End
 }
