@@ -2388,7 +2388,7 @@
   metamorphicSprite:
     sprite: Objects/Consumable/Drinks/espressomartini.rsi
     state: icon_empty
-  metamorphicMaxFillLevels: 5
+  metamorphicMaxFillLevels: 5 # Corvax-Resprite
   metamorphicFillBaseName: fill-
   metamorphicChangeColor: false
   metabolisms:
