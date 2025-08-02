@@ -1,0 +1,9 @@
+marking-ShellguardShellguardMonitorHead1 = Shellguard monitor (variant 1)
+marking-ShellguardShellguardMonitorHead2 = Shellguard monitor (variant 2)
+marking-HesphiastosHesphiastosMonitorHead1 = Hesphiastos monitor head (variant 1)
+marking-HesphiastosHesphiastosMonitorHead2 = Hesphiastos monitor head (variant 2)
+marking-BishopBishopMonitorHead = Bishop monitor head
+marking-BishopBishopMonitorHead2 = Bishop monitor head (variant 2)
+marking-WardtakahashiWardtakahashiMonitorHead = Ward-Takahashi monitor head
+marking-XionXionMonitorHead1 = Xion monitor head (variant 1)
+marking-XionXionMonitorHead2 = Xion monitor head (variant 2)

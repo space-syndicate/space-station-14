@@ -1,6 +1,6 @@
 using Robust.Shared.Prototypes;
+using Content.Shared.Humanoid.Markings;
 using Robust.Shared.Serialization.TypeSerializers.Implementations.Custom.Prototype;
-using Robust.Shared.Utility;
 
 namespace Content.Shared.Corvax.Ipc;
 
@@ -14,8 +14,8 @@ public sealed partial class IpcFaceProfilePrototype : IPrototype
     public string ID { get; private set; } = default!;
 
     /// <summary>
-    /// Path to the RSI containing all IPC face states.
+    /// Available face markings for this profile.
     /// </summary>
-    [DataField("rsi")]
-    public string RsiPath { get; private set; } = string.Empty;
+    [DataField("faces", required: true)]
+    public List<ProtoId<MarkingPrototype>> Faces { get; private set; } = new();
 }

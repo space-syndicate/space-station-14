@@ -18,6 +18,8 @@ using Robust.Shared.GameObjects;
 using Robust.Shared.Utility;
 using Robust.Shared.Prototypes;
 using Content.Shared.Humanoid;
+using Content.Server.Humanoid;
+using Content.Shared.Humanoid.Markings;
 using Robust.Shared.Player;
 
 namespace Content.Server.Corvax.Ipc;
@@ -34,9 +36,8 @@ public sealed partial class IpcSystem : EntitySystem
     [Dependency] private readonly MobStateSystem _mobState = default!;
     [Dependency] private readonly SharedUserInterfaceSystem _ui = default!;
     [Dependency] private readonly IPrototypeManager _prototypeManager = default!;
-
-
-
+    [Dependency] private readonly HumanoidAppearanceSystem _humanoid = default!;
+    [Dependency] private readonly MarkingManager _markingManager = default!;
     public override void Initialize()
     {
         base.Initialize();
@@ -61,6 +62,14 @@ public sealed partial class IpcSystem : EntitySystem
         _action.AddAction(uid, ref component.ActionEntity, component.DrainBatteryAction);
         _action.AddAction(uid, ref component.ChangeFaceActionEntity, component.ChangeFaceAction);
         _movementSpeedModifier.RefreshMovementSpeedModifiers(uid);
+
+        if (TryComp<HumanoidAppearanceComponent>(uid, out var appearance) &&
+            appearance.MarkingSet.TryGetCategory(MarkingCategories.Head, out var markings) &&
+            markings.Count > 0)
+        {
+            component.SelectedFace = markings[0].MarkingId;
+            Dirty(uid, component);
+        }
     }
 
     private void OnComponentShutdown(EntityUid uid, IpcComponent component, ComponentShutdown args)
@@ -146,6 +155,20 @@ public sealed partial class IpcSystem : EntitySystem
 
     private void OnFaceSelected(Entity<IpcComponent> ent, ref IpcFaceSelectMessage msg)
     {
+        if (TryComp<HumanoidAppearanceComponent>(ent.Owner, out var appearance))
+        {
+            var category = MarkingCategories.Head;
+            if (appearance.MarkingSet.TryGetCategory(category, out var markings) && markings.Count > 0)
+            {
+                _humanoid.SetMarkingId(ent.Owner, category, 0, msg.State, appearance);
+            }
+            else if (_markingManager.Markings.TryGetValue(msg.State, out var proto))
+            {
+                appearance.MarkingSet.AddBack(category, proto.AsMarking());
+                Dirty(ent.Owner, appearance);
+            }
+        }
+
         ent.Comp.SelectedFace = msg.State;
         Dirty(ent);
         _ui.CloseUi(ent.Owner, IpcFaceUiKey.Face);

@@ -1,3 +1,12 @@
 - type: ipcFaceProfile
   id: DefaultIpcFaces
-  rsi: Corvax/Mobs/Customization/Ipc/ips_face.rsi
+  faces:
+  - ShellguardShellguardMonitorHead1
+  - ShellguardShellguardMonitorHead2
+  - HesphiastosHesphiastosMonitorHead1
+  - HesphiastosHesphiastosMonitorHead2
+  - BishopBishopMonitorHead
+  - BishopBishopMonitorHead2
+  - WardtakahashiWardtakahashiMonitorHead
+  - XionXionMonitorHead1
+  - XionXionMonitorHead2
