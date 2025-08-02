@@ -4,6 +4,7 @@ using Content.Shared.Humanoid.Markings;
 using Robust.Client.UserInterface.Controls;
 using Content.Client.UserInterface.Controls;
 using Robust.Client.GameObjects;
+using Robust.Shared.GameObjects;
 using Robust.Shared.Prototypes;
 using Robust.Shared.IoC;
 using Robust.Shared.Localization;
@@ -15,7 +16,8 @@ namespace Content.Client.Corvax.Ipc;
 public sealed class IpcFaceMenu : FancyWindow
 {
     [Dependency] private readonly IPrototypeManager _prototype = default!;
-    [Dependency] private readonly SpriteSystem _sprite = default!;
+    [Dependency] private readonly IEntityManager _entMan = default!;
+    private readonly SpriteSystem _sprite;
 
     private readonly GridContainer _grid;
     public event Action<string>? FaceSelected;
@@ -23,6 +25,8 @@ public sealed class IpcFaceMenu : FancyWindow
     public IpcFaceMenu()
     {
         IoCManager.InjectDependencies(this);
+        _sprite = _entMan.System<SpriteSystem>();
+
         Title = Loc.GetString("ipc-face-menu-title");
         var scroll = new ScrollContainer();
         _grid = new GridContainer { Columns = 6 };

@@ -64,7 +64,7 @@ public sealed partial class IpcSystem : EntitySystem
         _movementSpeedModifier.RefreshMovementSpeedModifiers(uid);
 
         if (TryComp<HumanoidAppearanceComponent>(uid, out var appearance) &&
-            appearance.MarkingSet.TryGetCategory(MarkingCategories.Head, out var markings) &&
+            appearance.MarkingSet.TryGetCategory(MarkingCategories.Snout, out var markings) &&
             markings.Count > 0)
         {
             component.SelectedFace = markings[0].MarkingId;
@@ -157,7 +157,7 @@ public sealed partial class IpcSystem : EntitySystem
     {
         if (TryComp<HumanoidAppearanceComponent>(ent.Owner, out var appearance))
         {
-            var category = MarkingCategories.Head;
+            var category = MarkingCategories.Snout;
             if (appearance.MarkingSet.TryGetCategory(category, out var markings) && markings.Count > 0)
             {
                 _humanoid.SetMarkingId(ent.Owner, category, 0, msg.State, appearance);
