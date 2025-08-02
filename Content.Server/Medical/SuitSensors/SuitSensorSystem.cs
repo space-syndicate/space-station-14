@@ -346,7 +346,7 @@ public sealed class SuitSensorSystem : EntitySystem
         if (userUid != null)
         {
             // Corvax-SensorsCancer-Start
-            if (_random.Prob(comp.CellularDamageChance))
+            if (_random.Prob(comp.CellularDamageChance) && mode != SuitSensorMode.SensorOff)
             {
                 _damageableSystem.TryChangeDamage(userUid, comp.DamageBonus, true);
                 cellarDamage = Loc.GetString("suit-sensot-mode-cellardamage");
