@@ -1,14 +1,15 @@
 using System;
+using System.Numerics;
 using Content.Shared.Corvax.Ipc;
 using Content.Shared.Humanoid.Markings;
-using Robust.Client.UserInterface.Controls;
 using Content.Client.UserInterface.Controls;
 using Robust.Client.GameObjects;
+using Robust.Client.UserInterface;
+using Robust.Client.UserInterface.Controls;
 using Robust.Shared.GameObjects;
-using Robust.Shared.Prototypes;
 using Robust.Shared.IoC;
 using Robust.Shared.Localization;
-using Robust.Client.UserInterface;
+using Robust.Shared.Prototypes;
 using Robust.Shared.Utility;
 
 namespace Content.Client.Corvax.Ipc;
@@ -19,7 +20,7 @@ public sealed class IpcFaceMenu : FancyWindow
     [Dependency] private readonly IEntityManager _entMan = default!;
     private readonly SpriteSystem _sprite;
 
-    private readonly GridContainer _grid;
+    private readonly ItemList _list;
     public event Action<string>? FaceSelected;
 
     public IpcFaceMenu()
@@ -28,15 +29,27 @@ public sealed class IpcFaceMenu : FancyWindow
         _sprite = _entMan.System<SpriteSystem>();
 
         Title = Loc.GetString("ipc-face-menu-title");
-        var scroll = new ScrollContainer();
-        _grid = new GridContainer { Columns = 6 };
-        scroll.AddChild(_grid);
-        ContentsContainer.AddChild(scroll);
+
+        MinSize = new Vector2(300, 400);
+
+        _list = new ItemList
+        {
+            VerticalExpand = true,
+            HorizontalExpand = true
+        };
+
+        _list.OnItemSelected += args =>
+        {
+            if (_list[args.ItemIndex].Metadata is string id)
+                FaceSelected?.Invoke(id);
+        };
+
+        ContentsContainer.AddChild(_list);
     }
 
     public void Populate(string profileId, string selected)
     {
-        _grid.RemoveAllChildren();
+        _list.Clear();
         var profile = _prototype.Index<IpcFaceProfilePrototype>(profileId);
         foreach (var face in profile.Faces)
         {
@@ -47,13 +60,11 @@ public sealed class IpcFaceMenu : FancyWindow
                 continue;
 
             var texture = _sprite.Frame0(rsi);
-            var button = new TextureButton { TextureNormal = texture };
-            var box = new BoxContainer { Orientation = BoxContainer.LayoutOrientation.Vertical };
-            box.AddChild(button);
-            box.AddChild(new Label { Text = Loc.GetString($"marking-{marking.ID}") });
-            var sel = marking.ID;
-            button.OnPressed += _ => FaceSelected?.Invoke(sel);
-            _grid.AddChild(box);
+            var item = _list.AddItem(Loc.GetString($"marking-{marking.ID}"), texture);
+            item.Metadata = marking.ID;
+
+            if (marking.ID == selected)
+                item.Selected = true;
         }
     }
 }
