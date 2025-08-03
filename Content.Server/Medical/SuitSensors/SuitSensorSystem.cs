@@ -28,7 +28,7 @@ using Content.Shared.DeviceNetwork.Components;
 
 namespace Content.Server.Medical.SuitSensors;
 
-public partial class SuitSensorSystem : EntitySystem
+public sealed partial class SuitSensorSystem : EntitySystem
 {
     [Dependency] private readonly IGameTiming _gameTiming = default!;
     [Dependency] private readonly IRobustRandom _random = default!;
