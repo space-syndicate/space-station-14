@@ -1,1 +1,1 @@
-suit-sensot-mode-cellardamage = Вы получили рак от датчиков?!
+suit-sensor-mode-cellulardamage = Вы чувствуете как ваше тело закипает изнутри!

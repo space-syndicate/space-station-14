@@ -28,7 +28,7 @@ using Content.Shared.DeviceNetwork.Components;
 
 namespace Content.Server.Medical.SuitSensors;
 
-public sealed class SuitSensorSystem : EntitySystem
+public partial class SuitSensorSystem : EntitySystem
 {
     [Dependency] private readonly IGameTiming _gameTiming = default!;
     [Dependency] private readonly IRobustRandom _random = default!;
@@ -45,7 +45,6 @@ public sealed class SuitSensorSystem : EntitySystem
     [Dependency] private readonly ActionBlockerSystem _actionBlocker = default!;
     [Dependency] private readonly IPrototypeManager _proto = default!;
     [Dependency] private readonly InventorySystem _inventory = default!;
-    [Dependency] private readonly DamageableSystem _damageableSystem = default!; // Corvax-SensorsCancer
 
     public override void Initialize()
     {
@@ -339,20 +338,16 @@ public sealed class SuitSensorSystem : EntitySystem
     public void SetSensor(Entity<SuitSensorComponent> sensors, SuitSensorMode mode, EntityUid? userUid = null)
     {
         var comp = sensors.Comp;
-        var cellarDamage = ""; // Corvax-SensorsCancer
 
         comp.Mode = mode;
 
         if (userUid != null)
         {
-            // Corvax-SensorsCancer-Start
-            if (_random.Prob(comp.CellularDamageChance) && mode != SuitSensorMode.SensorOff)
-            {
-                _damageableSystem.TryChangeDamage(userUid, comp.DamageBonus, true);
-                cellarDamage = Loc.GetString("suit-sensot-mode-cellardamage");
-            }
-            // Corvax-SensorsCancer-End
-            var msg = Loc.GetString("suit-sensor-mode-state", ("mode", GetModeName(mode)), ("cellardamage", cellarDamage));
+            var cellularDamage = "";
+            if (CellularDamageAttempt(sensors, mode, userUid.Value))
+                cellularDamage = Loc.GetString("suit-sensor-mode-cellulardamage"); // Corvax-SensorsCancer
+
+            var msg = Loc.GetString("suit-sensor-mode-state", ("mode", GetModeName(mode)), ("cellulardamage", cellularDamage));
             _popupSystem.PopupEntity(msg, sensors, userUid.Value);
         }
     }
