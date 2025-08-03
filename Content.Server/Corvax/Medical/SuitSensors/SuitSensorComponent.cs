@@ -19,5 +19,5 @@ public sealed partial class SuitSensorComponent
     /// Chance for the damage bonus to occur.
     /// </summary>
     [ViewVariables(VVAccess.ReadWrite)]
-    public float CellularDamageChance = 1f;
+    public float CellularDamageChance = 0.0001f;
 }
