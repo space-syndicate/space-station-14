@@ -343,9 +343,11 @@ public sealed partial class SuitSensorSystem : EntitySystem
 
         if (userUid != null)
         {
+            // Corvax-SensorsCancer-Start
             var cellularDamage = "";
             if (CellularDamageAttempt(sensors, mode, userUid.Value))
-                cellularDamage = Loc.GetString("suit-sensor-mode-cellulardamage"); // Corvax-SensorsCancer
+                cellularDamage = Loc.GetString("suit-sensor-mode-cellulardamage");
+            // Corvax-SensorsCancer-End
 
             var msg = Loc.GetString("suit-sensor-mode-state", ("mode", GetModeName(mode)), ("cellulardamage", cellularDamage));
             _popupSystem.PopupEntity(msg, sensors, userUid.Value);

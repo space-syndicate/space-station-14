@@ -7,6 +7,7 @@ public sealed partial class SuitSensorComponent
     /// <summary>
     /// Amount of damage that will be caused.
     /// </summary>
+    [DataField]
     public DamageSpecifier DamageBonus = new()
     {
         DamageDict = new()
@@ -18,6 +19,6 @@ public sealed partial class SuitSensorComponent
     /// <summary>
     /// Chance for the damage bonus to occur.
     /// </summary>
-    [ViewVariables(VVAccess.ReadWrite)]
+    [DataField, ViewVariables(VVAccess.ReadWrite)]
     public float CellularDamageChance = 0.0001f;
 }
