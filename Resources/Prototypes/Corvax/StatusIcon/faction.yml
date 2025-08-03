@@ -1,0 +1,12 @@
+# Administration
+- type: factionIcon
+  id: EventFaction
+  priority: 11
+  showTo:
+    components:
+      - Ghost
+      - ShowEventIcon
+  locationPreference: Right
+  icon:
+    sprite: /Textures/Corvax/Interface/Misc/other_icons.rsi
+    state: Event
