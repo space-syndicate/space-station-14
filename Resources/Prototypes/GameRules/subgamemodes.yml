@@ -29,8 +29,7 @@
       - type: Thieving
         stripTimeReduction: 2
         stealthy: true
-#      components: # Corvax-MRP
-#      - type: Pacified
+      - type: Pacified
       mindRoles:
       - MindRoleThief
       briefing:
