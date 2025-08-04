@@ -61,6 +61,11 @@ entities:
     - type: Shuttle
       dampingModifier: 0.25
     - type: GridPathfinding
+    - type: DeviceNetwork
+      deviceNetId: Wireless
+      configurators: []
+      deviceLists: []
+      transmitFrequencyId: ShuttleTimer
     - type: Gravity
       gravityShakeSound: !type:SoundPathSpecifier
         path: /Audio/Effects/alert.ogg

@@ -11,28 +11,25 @@
     neck: ClothingNeckScarfStripedSyndieRed
     id: SyndiPDA
     belt: ClothingBeltMilitaryWebbing
-  storage:
-    back:
-    - BoxSurvivalSyndicate
+    mask: ClothingMaskGasSecurity
 
 - type: startingGear
   id: SyndicateSmugglerGear
   parent: SyndicateSmugglerBase
   inhand:
-    - CombatKnife  
+    - CombatKnife
 
 - type: startingGear
   id: SyndicateSmugglerMedicGear
   parent: SyndicateSmugglerBase
   equipment:
     back: ClothingBackpackSatchelGenetics
-    neck: ClothingNeckScarfStripedSyndieGreen
+    neck: ClothingNeckStethoscope
     belt: ClothingBeltMilitaryWebbingMed
     eyes: ClothingEyesEyepatchHudMedical
     pocket1: EmergencyMedipen
-    mask: ClothingMaskBandGrey
   storage:
-    back:    
+    back:
     - MedkitCombatFilled
   inhand: 
     - Scalpel
@@ -43,8 +40,8 @@
   equipment:
     shoes: ClothingShoesBootsCombat
     outerClothing: ClothingOuterWinterSyndieCapArmored
+    jumpsuit: ClothingUniformJumpsuitTacticool
     gloves: ClothingHandsGlovesCombat
-    mask: ClothingMaskNeckGaiter
     pocket1: WeaponPistolViper
     pocket2: MagazinePistol
     eyes: ClothingEyesGlassesHiddenSecurity
@@ -55,11 +52,44 @@
   id: SyndicateSmugglerMinerGear
   parent: SyndicateSmugglerBase
   equipment:
-    jumpsuit: ClothingUniformJumpsuitTacticool
     head: ClothingHeadHatHardhatArmored
     eyes: ClothingEyesGlassesThermal
     belt: OreBag
     back: ClothingBackpackSatchelSalvage
+    gloves: ClothingHandsGlovesPowerglove
     pocket1: MineralScanner
   inhand:
     - Pickaxe
+
+- type: startingGear
+  id: SyndicateSmugglerEngiGear
+  parent: SyndicateSmugglerBase
+  equipment:
+    head: ClothingHeadHatCanadaBeanie
+    eyes: ClothingEyesGlassesMeson
+    belt: ClothingBeltUtility
+    gloves: ClothingHandsGlovesColorYellowBudget
+    shoes: ClothingShoesBootsWork
+  storage:
+    back:
+    - SheetSteel10
+  inhand:
+    - ToolboxMechanicalFilled
+
+- type: startingGear
+  id: SyndicateSmugglerSpyGear
+  parent: SyndicateSmugglerBase
+  equipment:
+    ears: ClothingHeadsetGrey
+    eyes: ClothingEyesGlassesHiddenSecurity
+    neck: ClothingNeckScarfStripedSyndieGreen
+    outerClothing: ClothingOuterWinterColorBlack
+    gloves: ThievingGloves
+    back: ClothingBackpackSatchel
+    pocket1: RadioJammer
+    id: PassengerPDA
+  storage:
+    back:
+    - SpaceCash2500
+  inhand:
+    - CombatKnife

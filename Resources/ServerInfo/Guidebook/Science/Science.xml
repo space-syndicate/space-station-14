@@ -3,6 +3,11 @@
 
 Научный отдел, часто именуемый "РнД", занимается заработком очков исследований, используемых для изучения новых технологий, которые в свою очередь позволяют создавать полезные для станции предметы на различных станках, принтерах, и фабрикаторах.
 
+  <Box>
+   <GuideEntityEmbed Entity="ToyFigurineScientist" Caption="Scientist"/>
+   <GuideEntityEmbed Entity="ToyFigurineResearchDirector" Caption="RD"/>
+  </Box>
+
 ## Технологии
 <Box>
 <GuideEntityEmbed Entity="ComputerResearchAndDevelopment"/>
