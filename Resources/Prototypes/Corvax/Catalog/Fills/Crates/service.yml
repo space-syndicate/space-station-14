@@ -41,7 +41,7 @@
   id: CrateChaplainClothing
   parent: CrateGenericSteel
   name: ящик с богослужебной одеждой
-  description: Ящик, содержащий одежду для богослужения различным вероисповеданиям.
+  description: Ящик, содержащий одежду для богослужения и распространения веры.
   components:
     - type: StorageFill
       contents:
@@ -49,11 +49,12 @@
         amount: 2
       - id: ClothingUniformJumpskirtChaplain
         amount: 2
+      - id: ClothingShoesColorBlack
+        amount: 2
       - id: ClothingUniformJumpsuitMonasticRobeDark
       - id: ClothingUniformJumpsuitMonasticRobeLight
       - id: ClothingNeckStoleChaplain
       - id: ClothingOuterHoodieChaplain
-      - id: ClothingOuterHoodieBlack
       - id: ClothingHeadHatHoodNunHood
       - id: ClothingOuterNunRobe
       - id: ClothingHeadHatFez
