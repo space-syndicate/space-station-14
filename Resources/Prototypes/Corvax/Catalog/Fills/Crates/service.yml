@@ -40,7 +40,7 @@
 - type: entity
   id: CrateChaplainClothing
   parent: CrateGenericSteel
-  name: ящик богослужебной одежды
+  name: ящик с богослужебной одеждой
   description: Ящик, содержащий одежду для богослужения различным вероисповеданиям.
   components:
     - type: StorageFill
