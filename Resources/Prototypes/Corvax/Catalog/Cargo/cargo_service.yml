@@ -7,3 +7,13 @@
   cost: 1500
   category: cargoproduct-category-name-service
   group: market
+
+- type: cargoProduct
+  id: ChaplainClothing
+  icon:
+    sprite: Objects/Specific/Chapel/bible.rsi
+    state: icon
+  product: CrateChaplainClothing
+  cost: 1400
+  category: cargoproduct-category-name-service
+  group: market
