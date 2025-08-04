@@ -1,21 +1,4 @@
 ﻿Entries:
-- author: lzk228
-  changes:
-  - message: Bots now can examine, use zoom and see their alerts (health & stamina).
-    type: Tweak
-  - message: Added borgs emotes to bots.
-    type: Tweak
-  id: 8308
-  time: '2025-04-21T22:49:43.0000000+00:00'
-  url: https://github.com/space-wizards/space-station-14/pull/29949
-- author: Ghagliiarghii
-  changes:
-  - message: The monkey version of captain uniforms and the hamster version of captain
-      hats updated to match humanoid versions
-    type: Tweak
-  id: 8309
-  time: '2025-04-22T01:03:36.0000000+00:00'
-  url: https://github.com/space-wizards/space-station-14/pull/36804
 - author: Doc-Michael
   changes:
   - message: Changed protection values of Security Hardsuits
@@ -3835,13 +3818,6 @@
   id: 8809
   time: '2025-07-25T19:46:42.0000000+00:00'
   url: https://github.com/space-wizards/space-station-14/pull/38657
-- author: Toast_Enjoyer, Djmc216
-  changes:
-  - message: The scrap armor now functions as a utility belt too!
-    type: Add
-  id: 8810
-  time: '2025-07-27T06:17:01.0000000+00:00'
-  url: https://github.com/space-wizards/space-station-14/pull/39233
 - author: PJB3005
   changes:
   - message: Made most plushie sounds quieter, and made plushies slower to use.
@@ -3917,3 +3893,17 @@
   id: 8819
   time: '2025-07-30T06:44:46.0000000+00:00'
   url: https://github.com/space-wizards/space-station-14/pull/36289
+- author: Disp-Dev
+  changes:
+  - message: A new recipe has been added, moth-edible cotton cakes.
+    type: Add
+  id: 8820
+  time: '2025-07-30T22:51:21.0000000+00:00'
+  url: https://github.com/space-wizards/space-station-14/pull/39222
+- author: spanky-spanky
+  changes:
+  - message: The wizard now spawns in a den instead of a shuttle.
+    type: Tweak
+  id: 8821
+  time: '2025-07-31T04:08:05.0000000+00:00'
+  url: https://github.com/space-wizards/space-station-14/pull/37701
