@@ -77,16 +77,6 @@
     BadTouch: 6
 
 - type: reaction
-  id: DarkAndStormy
-  reactants:
-    Rum: 
-      amount: 1
-    Ale: # Must be ginger beer
-      amount: 2
-  products:
-    DarkAndStormy: 3
-
-- type: reaction
   id: Bramble
   reactants:
     JuiceBerry:

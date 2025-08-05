@@ -67,57 +67,6 @@
     state: icon
 
 - type: entity
-  parent: DrinkGlass
-  id: DrinkDaiquiriGlass
-  suffix: daiquiri
-  components:
-  - type: SolutionContainerManager
-    solutions:
-      drink:
-        maxVol: 30
-        reagents:
-        - ReagentId: Daiquiri
-          Quantity: 30
-  - type: Drink
-  - type: Icon
-    sprite: Corvax/Objects/Consumable/Drinks/daiquiri.rsi
-    state: icon
-
-- type: entity
-  parent: DrinkGlass
-  id: DrinkDarkAndStormyGlass
-  suffix: dark and stormy
-  components:
-  - type: SolutionContainerManager
-    solutions:
-      drink:
-        maxVol: 30
-        reagents:
-        - ReagentId: DarkAndStormy
-          Quantity: 30
-  - type: Drink
-  - type: Icon
-    sprite: Corvax/Objects/Consumable/Drinks/darkAndStormy.rsi
-    state: icon
-
-- type: entity
-  parent: DrinkGlass
-  id: DrinkEspressoMartiniGlass
-  suffix: espresso martini
-  components:
-  - type: SolutionContainerManager
-    solutions:
-      drink:
-        maxVol: 30
-        reagents:
-        - ReagentId: EspressoMartini
-          Quantity: 30
-  - type: Drink
-  - type: Icon
-    sprite: Corvax/Objects/Consumable/Drinks/espressoMartini.rsi
-    state: icon
-
-- type: entity
   parent: DrinkGlassBase
   id: DrinkKvassGlass
   suffix: kvass
@@ -147,23 +96,6 @@
   - type: Drink
   - type: Icon
     sprite: Corvax/Objects/Consumable/Drinks/maiTai.rsi
-    state: icon
-
-- type: entity
-  parent: DrinkGlass
-  id: DrinkMoscowMuleGlass
-  suffix: moscow mule
-  components:
-  - type: SolutionContainerManager
-    solutions:
-      drink:
-        maxVol: 30
-        reagents:
-        - ReagentId: MoscowMule
-          Quantity: 30
-  - type: Drink
-  - type: Icon
-    sprite: Corvax/Objects/Consumable/Drinks/moscowMule.rsi
     state: icon
 
 - type: entity
