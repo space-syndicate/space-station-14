@@ -1,4 +1,4 @@
 ent-Screen = экран
     .desc = Отображает текст или время.
 ent-ArrivalsShuttleTimer = экран прибытия
-    .desc = { ent-Screen.desc }
+    .desc = Отображает расчётное время прилёта шаттла прибытия.
