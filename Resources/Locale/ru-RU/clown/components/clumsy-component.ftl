@@ -1,4 +1,4 @@
-clumsy-vaulting-fail-forced-message = { CAPITALIZE($bonker) } стукает головой { $victim } о { $bonkable }!
+clumsy-vaulting-fail-forced-message = { CAPITALIZE($bonker) } стукает { $victim } головой об { $bonkable }!
 clumsy-vaulting-fail-message-user = Вы стукаетесь своей головой о { $bonkable }!
 clumsy-vaulting-fail-message-others = { $victim } стукается своей головой о { $bonkable }!
 clumsy-gun-fail-message = Оружие взрывается вам в лицо!
