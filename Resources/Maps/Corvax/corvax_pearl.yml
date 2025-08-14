@@ -46165,8 +46165,6 @@ entities:
       pos: -21.5,-23.5
       parent: 2
     - type: DeviceNetwork
-      configurators:
-      - invalid
       deviceLists:
       - 101
 - proto: AltarSatana
@@ -89013,8 +89011,6 @@ entities:
       pos: -21.5,-25.5
       parent: 2
     - type: DeviceNetwork
-      configurators:
-      - invalid
       deviceLists:
       - 101
 - proto: Fireplace
@@ -131176,8 +131172,6 @@ entities:
       pos: -22.5,-21.5
       parent: 2
     - type: DeviceNetwork
-      configurators:
-      - invalid
       deviceLists:
       - 101
     - type: AtmosPipeColor
@@ -132560,8 +132554,6 @@ entities:
       pos: -20.5,-21.5
       parent: 2
     - type: DeviceNetwork
-      configurators:
-      - invalid
       deviceLists:
       - 101
     - type: AtmosPipeColor
