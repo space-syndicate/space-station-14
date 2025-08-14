@@ -1,5 +1,5 @@
 ent-BaseBarSign = вывеска бара
-    .desc = { ent-BaseStructure.desc }
+    .desc = { ent-BaseWallmountGlass.desc }
 ent-BarSign = вывеска бара
     .desc = { ent-BaseBarSign.desc }
     .suffix = Случайный
