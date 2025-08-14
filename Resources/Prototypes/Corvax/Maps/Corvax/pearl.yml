@@ -67,6 +67,11 @@
             # silicon
             Borg: [ 2, 2 ]
             StationAi: [ 1, 1 ]
+            # corvax senior
+            SeniorEngineer: [ 1, 1 ]
+            SeniorPhysician: [ 1, 1 ]
+            SeniorResearcher: [ 1, 1 ]
+            SeniorOfficer: [ 1, 1 ]
         - type: StationGoal
           goals:
           - SolarPanels
