@@ -400,7 +400,12 @@
   - type: BasicStationEventScheduler
     scheduledGameRules: !type:NestedSelector
       tableId: BasicGameRulesTable
-
+    # Corvax-MRP-start
+    minMaxEventTiming:
+      min: 6
+      max: 20
+    # Corvax-MRP-end
+  
 - type: entity
   id: RampingStationEventScheduler
   parent: BaseGameRule
