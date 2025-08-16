@@ -1,0 +1,89 @@
+- type: marking
+  id: TechEye1
+  sponsorOnly: true # Corvax-Sponsors
+  bodyPart: Eyes
+  markingCategory: Head
+  speciesRestriction: [Human, Dwarf, SlimePerson, Reptilian, Vulpkanin]
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+          color: "#fff2cf"
+  sprites:
+  - sprite: Corvax/Mobs/Customization/tech.rsi
+    state: tech-EYES
+
+- type: marking
+  id: TechEye0
+  sponsorOnly: true # Corvax-Sponsors
+  bodyPart: Eyes
+  markingCategory: Head
+  speciesRestriction: [Human, Dwarf, SlimePerson,Reptilian, Vulpkanin]
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+          color: "#fff2cf"
+  sprites:
+  - sprite: Corvax/Mobs/Customization/tech.rsi
+    state: tech-EYES0
+
+- type: marking
+  id: TechEye2
+  sponsorOnly: true # Corvax-Sponsors
+  bodyPart: Eyes
+  markingCategory: Head
+  speciesRestriction: [Human, Dwarf, SlimePerson,Reptilian, Vulpkanin]
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+          color: "#fff2cf"
+  sprites:
+  - sprite: Corvax/Mobs/Customization/tech.rsi
+    state: tech-EYES2
+
+- type: marking
+  id: TechEye5
+  sponsorOnly: true # Corvax-Sponsors
+  bodyPart: Eyes
+  markingCategory: Head
+  speciesRestriction: [Human, Dwarf, SlimePerson, Reptilian, Vulpkanin]
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+          color: "#fff2cf"
+  sprites:
+  - sprite: Corvax/Mobs/Customization/tech.rsi
+    state: tech-EYES5
+
+- type: marking
+  id: TechEyeLOU
+  sponsorOnly: true # Corvax-Sponsors
+  bodyPart: Eyes
+  markingCategory: Head
+  speciesRestriction: [Human, Dwarf, SlimePerson, Reptilian, Vulpkanin]
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+          color: "#fff2cf"
+  sprites:
+  - sprite: Corvax/Mobs/Customization/tech.rsi
+    state: tech-EYESLOU
+
+- type: marking
+  id: TechEyeX
+  sponsorOnly: true # Corvax-Sponsors
+  bodyPart: Eyes
+  markingCategory: Head
+  speciesRestriction: [Human, Dwarf, SlimePerson, Reptilian, Vulpkanin]
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+          color: "#fff2cf"
+  sprites:
+  - sprite: Corvax/Mobs/Customization/tech.rsi
+    state: tech-EYESX
