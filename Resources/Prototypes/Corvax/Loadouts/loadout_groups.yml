@@ -212,6 +212,7 @@
   id: SeniorOfficerOuterClothing
   name: loadout-group-senior-officer-outerclothing
   loadouts:
+  - ArmorVestSec # Corvax
   - ArmorVest
   - ArmorVestSlim
   - SecurityOfficerWintercoat
@@ -220,6 +221,7 @@
   id: SeniorOfficerShoes
   name: loadout-group-senior-officer-shoes
   loadouts:
+  - JackSecBoots # Corvax
   - JackBoots
   - SecurityWinterBoots
 
