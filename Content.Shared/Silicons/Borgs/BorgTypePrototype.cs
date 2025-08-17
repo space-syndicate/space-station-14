@@ -151,4 +151,12 @@ public sealed partial class BorgTypePrototype : IPrototype
     /// </summary>
     [DataField]
     public SoundSpecifier FootstepCollection { get; set; } = new SoundCollectionSpecifier(DefaultFootsteps);
+
+    // Corvax-Wega-tts-borg-start
+    /// <summary>
+    /// TTS voice.
+    /// </summary>
+    [DataField]
+    public string? VoicePrototypeId { get; set; } = "TrainingRobot";
+    // Corvax-Wega-tts-borg-end
 }
