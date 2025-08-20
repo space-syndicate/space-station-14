@@ -9,3 +9,14 @@
     itemIconStyle: NoItem
   - type: InstantAction
     event: !type:ToggleDrainActionEvent
+
+- type: entity
+  id: ActionIpcChangeFace
+  name: Change face
+  description: Change the IPC monitor face
+  components:
+  - type: Action
+    icon: { sprite: Interface/Actions/actions_ai.rsi, state: crew_monitor }
+    itemIconStyle: NoItem
+  - type: InstantAction
+    event: !type:OpenIpcFaceActionEvent
