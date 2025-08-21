@@ -1,6 +1,4 @@
-
-
-ent-SpawnMobMoproach = Moproach Spawner
+ent-SpawnMobBee = спавнер пчела
     .desc = { ent-MarkerBase.desc }
 ent-SpawnMobButterfly = спавнер бабочка
     .desc = { ent-MarkerBase.desc }
@@ -40,4 +38,3 @@ ent-SpawnMobReindeerDoe = спавнер северный олень самка
     .desc = { ent-MarkerBase.desc }
 ent-SpawnMobSlug = спавнер слизняк
     .desc = { ent-MarkerBase.desc }
-

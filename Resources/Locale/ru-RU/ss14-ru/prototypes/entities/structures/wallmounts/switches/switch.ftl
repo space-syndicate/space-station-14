@@ -4,10 +4,6 @@ ent-SignalButton = кнопка сигнала
     .desc = Эта кнопка что-то активирует.
 ent-ApcNetSwitch = переключатель сети ЛКП
     .desc = Это переключатель источников света, использующих локальный контроллер питания.
-<<<<<<<< HEAD:Resources/Locale/ru-RU/ss14-ru/prototypes/entities/structures/wallmounts/switch.ftl
-
-========
->>>>>>>> origin/master:Resources/Locale/ru-RU/ss14-ru/prototypes/entities/structures/wallmounts/switches/switch.ftl
 ent-SignalSwitchDirectional = переключатель сигнала
     .suffix = Направленный
     .desc = { ent-SignalSwitch.desc }
