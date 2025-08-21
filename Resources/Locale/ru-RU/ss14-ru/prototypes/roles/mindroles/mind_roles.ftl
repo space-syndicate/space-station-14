@@ -60,5 +60,3 @@ ent-MindRoleInitialInfected = Роль нулевой пациент
     .desc = { ent-BaseMindRoleAntag.desc }
 ent-MindRoleZombie = Роль зомби
     .desc = { ent-MindRoleGhostRoleTeamAntagonistFlock.desc }
-ent-MindRoleChangeling = Changeling Role
-    .desc = { ent-BaseMindRoleAntag.desc }

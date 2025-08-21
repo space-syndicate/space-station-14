@@ -61,4 +61,3 @@ ent-SpawnMobSmile = спавнер Смайл
 ent-SpawnMobWalter = спавнер Уолтер
     .suffix = питомец химия
     .desc = { ent-MarkerBase.desc }
-

@@ -157,5 +157,3 @@ ent-TrashCherryPit = cherry pit
     .desc = { ent-FoodInjectableBase.desc }
 ent-FoodAnomalyBerry = anomaly berry
     .desc = A strange blue fruit. Something about it doesn't seem right.
-ent-FoodBloonion = bloonion bulb
-    .desc = A strange floating bulb.. Nothing worth crying over.

@@ -1,5 +1,5 @@
 ent-BaseBarSign = bar sign
-    .desc = { ent-BaseWallmountGlass.desc }
+    .desc = { ent-BaseStructure.desc }
 ent-BarSign = bar sign
     .suffix = Random
     .desc = { ent-BaseBarSign.desc }
