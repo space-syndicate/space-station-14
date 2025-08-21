@@ -30,7 +30,6 @@ spray-painter-color-black = black
 spray-painter-window-title = Краскопульт
 spray-painter-style-not-available = Невозможно применить выбранный стиль к данному типу шлюза
 spray-painter-selected-style = Выбранный стиль:
-
 # Categories (tabs)
 spray-painter-tab-category-airlocks = Airlocks
 spray-painter-tab-category-canisters = Canisters

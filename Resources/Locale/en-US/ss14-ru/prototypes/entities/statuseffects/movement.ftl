@@ -1,5 +1,5 @@
 ent-StatusEffectSlowdown = slowdown
-    .desc = { ent-MobStatusEffectBase.desc }
+    .desc = { ent-MobStatusEffectDebuff.desc }
 ent-VomitingSlowdownStatusEffect = vomiting slowdown
     .desc = { ent-StatusEffectSlowdown.desc }
 ent-TaserSlowdownStatusEffect = shot by taser slowdown
@@ -9,8 +9,6 @@ ent-FlashSlowdownStatusEffect = affected by flash slowdown
 ent-StatusEffectStaminaLow = stamina low
     .desc = { ent-StatusEffectSlowdown.desc }
 ent-StatusEffectFriction = friction
-    .desc = { ent-MobStatusEffectBase.desc }
+    .desc = { ent-MobStatusEffectDebuff.desc }
 ent-StatusEffectStunned = stunned
-    .desc = { ent-MobStatusEffectBase.desc }
-ent-StatusEffectKnockdown = knocked down
-    .desc = { ent-MobStandStatusEffectBase.desc }
+    .desc = { ent-MobStatusEffectDebuff.desc }

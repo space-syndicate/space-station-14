@@ -1,5 +1,4 @@
-ent-ComputerTelevision = деревянный телевизор
-    .desc = Наконец-то тут появился нормальный сигнал...
+
 ent-WallmountTelescreenFrame = каркас телеэкрана
     .desc = Наконец-то тут появился нормальный сигнал...
 ent-WallmountTelescreen = телеэкран

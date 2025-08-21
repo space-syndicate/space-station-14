@@ -14,3 +14,5 @@ ent-ClothingHeadHatBeretSecurityMedic = security medic beret
     .desc = A robust beret with the medical insignia emblazoned on it. Uses reinforced fabric to offer sufficient protection.
 ent-ClothingHeadCaptainHat = captain's hat
     .desc = A special hat made to order for the captain.
+ent-ClothingHeadHatBeretSecurityPilot = pilot beret
+    .desc = Black beret with a silver badge.

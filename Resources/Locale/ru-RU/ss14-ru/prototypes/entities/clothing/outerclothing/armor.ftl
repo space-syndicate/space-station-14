@@ -45,3 +45,5 @@ ent-ClothingOuterArmorBone = костяной доспех
     .desc = Сидит на вас как вторая кожа.
 ent-ClothingOuterArmorPodWars = броня Броненосец II
     .desc = Переделанный бронескафандр Броненосец II, реликвия войн подов.
+ent-CardArmour = cardboard armour
+    .desc = A medieval chestpiece built from cardboard.

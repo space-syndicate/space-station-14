@@ -89,6 +89,9 @@ ui-options-vp-integer-scaling-tooltip =
     используя целочисленное значение при определённых разрешениях. Хотя это и
     приводит к чётким текстурам, это часто означает, что сверху/снизу экрана будут
     чёрные полосы или что часть окна не будет видна.
+ui-options-filter-label = Scaling filter:
+ui-options-filter-nearest = Nearest (no smoothing)
+ui-options-filter-bilinear = Bilinear (smoothed)
 ui-options-vp-vertical-fit = Подгон окна просмотра по вертикали
 ui-options-vp-vertical-fit-tooltip =
     Когда функция включена, основное окно просмотра не будет учитывать горизонтальную ось
