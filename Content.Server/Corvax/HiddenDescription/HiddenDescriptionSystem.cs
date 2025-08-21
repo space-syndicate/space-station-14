@@ -1,7 +1,7 @@
 using Content.Server.Mind;
 using Content.Shared.Examine;
 using Content.Shared.Roles;
-using Content.Shared.Roles.Jobs;
+using Content.Shared.Roles.Components;
 using Content.Shared.Whitelist;
 
 namespace Content.Server.Corvax.HiddenDescription;

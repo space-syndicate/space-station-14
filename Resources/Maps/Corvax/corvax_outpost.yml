@@ -15490,18 +15490,6 @@ entities:
       rot: 1.5707963267948966 rad
       pos: 35.5,-16.5
       parent: 2
-- proto: BorgBeaker
-  entities:
-  - uid: 853
-    components:
-    - type: Transform
-      pos: -47.72665,-3.5396547
-      parent: 2
-  - uid: 854
-    components:
-    - type: Transform
-      pos: -47.4454,-3.716738
-      parent: 2
 - proto: BorgCharger
   entities:
   - uid: 855
