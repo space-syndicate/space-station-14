@@ -177,7 +177,7 @@
     sprite: Clothing/Shoes/Specific/wizard.rsi
 
 - type: entity
-  parent: ClothingShoesBase
+  parent: [ClothingShoesBase, BaseChameleon]
   id: ClothingShoesChameleon
   name: black shoes
   suffix: Chameleon
@@ -211,10 +211,6 @@
     - type: ChameleonClothing
       slot: [FEET]
       default: ClothingShoesColorBlack
-    - type: UserInterface
-      interfaces:
-        enum.ChameleonUiKey.Key:
-          type: ChameleonBoundUserInterface
 # Corvax-HiddenDesc-Start
     - type: HiddenDescription
       entries:

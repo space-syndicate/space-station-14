@@ -89,6 +89,9 @@ ui-options-vp-integer-scaling-tooltip =
     используя целочисленное значение при определённых разрешениях. Хотя это и
     приводит к чётким текстурам, это часто означает, что сверху/снизу экрана будут
     чёрные полосы или что часть окна не будет видна.
+ui-options-filter-label = Фильтр масштабирования:
+ui-options-filter-nearest = Ближайший (без сглаживания)
+ui-options-filter-bilinear = Билинейный (сглаживание)
 ui-options-vp-vertical-fit = Подгон окна просмотра по вертикали
 ui-options-vp-vertical-fit-tooltip =
     Когда функция включена, основное окно просмотра не будет учитывать горизонтальную ось
@@ -131,7 +134,7 @@ ui-options-function-move-left = Двигаться налево
 ui-options-function-move-down = Двигаться вниз
 ui-options-function-move-right = Двигаться направо
 ui-options-function-walk = Идти
-ui-options-function-toggle-knockdown = Toggle Crawling
+ui-options-function-toggle-knockdown = Переключить ползание
 ui-options-function-camera-rotate-left = Повернуть налево
 ui-options-function-camera-rotate-right = Повернуть направо
 ui-options-function-camera-reset = Сбросить камеру

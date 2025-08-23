@@ -1,6 +1,3 @@
-ent-SpawnMobAlexander = спавнер Александр
-    .suffix = питомец шеф
-    .desc = { ent-MarkerBase.desc }
 ent-SpawnMobBandito = спавнер Бандито
     .suffix = питомец НР
     .desc = { ent-MarkerBase.desc }
@@ -42,6 +39,9 @@ ent-SpawnMobKangarooWillow = спавнер Уиллоу
     .desc = { ent-MarkerBase.desc }
 ent-SpawnMobMonkeyPunpun = спавнер Пун Пун
     .suffix = питомец бармен
+    .desc = { ent-MarkerBase.desc }
+ent-SpawnMobPollyParrot = спавнер попугай Полли
+    .suffix = питомец СИ
     .desc = { ent-MarkerBase.desc }
 ent-SpawnMobPossumMorty = спавнер опоссум Морти
     .suffix = питомец морг

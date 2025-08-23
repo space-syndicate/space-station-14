@@ -5,6 +5,7 @@
   maxLimit: 5
   loadouts: []
 
+# Engineering
 - type: loadoutGroup
   id: ChiefEngineerBackpack
   name: loadout-group-chief-engineer-backpack
@@ -12,6 +13,93 @@
   - ChiefEngineerBackpack
   - ChiefEngineerSatchel
   - ChiefEngineerDuffel
+
+- type: loadoutGroup
+  id: SeniorEngineerHead
+  name: loadout-group-senior-engineer-head
+  loadouts:
+  - SeniorEngineerBeret
+
+- type: loadoutGroup
+  id: SeniorEngineerJumpsuit
+  name: loadout-group-senior-engineer-jumpsuit
+  loadouts:
+  - SeniorEngineerJumpsuit
+  - SeniorEngineerJumpskirt
+
+- type: loadoutGroup
+  id: SeniorEngineerBackpack
+  name: loadout-group-senior-engineer-backpack
+  loadouts:
+  - StationEngineerBackpack
+  - StationEngineerSatchel
+  - StationEngineerDuffel
+  - AtmosphericTechnicianBackpack
+  - AtmosphericTechnicianSatchel
+  - AtmosphericTechnicianDuffel
+
+- type: loadoutGroup
+  id: SeniorEngineerOuterClothing
+  name: loadout-group-senior-engineer-outerclothing
+  minLimit: 0
+  loadouts:
+  - StationEngineerOuterVest
+  - StationEngineerWintercoat
+  - AtmosphericTechnicianWintercoat
+
+- type: loadoutGroup
+  id: SeniorEngineerShoes
+  name: loadout-group-senior-engineer-shoes
+  loadouts:
+  - WorkBoots
+  - EngineeringWinterBoots
+
+# Science
+- type: loadoutGroup
+  id: SeniorResearcherHead
+  name: loadout-group-senior-researcher-head
+  minLimit: 0
+  loadouts:
+  - ScientificBeret
+
+- type: loadoutGroup
+  id: SeniorResearcherJumpsuit
+  name: loadout-group-senior-researcher-jumpsuit
+  loadouts:
+  - SeniorResearcherJumpsuit
+  - SeniorResearcherJumpskirt
+
+- type: loadoutGroup
+  id: SeniorResearcherBackpack
+  name: loadout-group-senior-researcher-backpack
+  loadouts:
+  - ScientistBackpack
+  - ScientistSatchel
+  - ScientistDuffel
+
+- type: loadoutGroup
+  id: SeniorResearcherOuterClothing
+  name: loadout-group-senior-researcher-outerclothing
+  minLimit: 0
+  loadouts:
+  - SeniorResearcherLabCoat
+
+- type: loadoutGroup
+  id: SeniorResearcherShoes
+  name: loadout-group-senior-researcher-shoes
+  loadouts:
+  - WhiteShoes
+  - BlackShoes
+  - ScienceWinterBoots
+
+- type: loadoutGroup
+  id: SeniorResearcherGloves
+  name: loadout-group-senior-researcher-gloves
+  minLimit: 0
+  loadouts:
+  - LatexGloves
+  - PurpleGloves
+  - RobohandsGloves
 
 # Security
 - type: loadoutGroup
@@ -89,3 +177,87 @@
   - BrigmedicJackSec
   - BrigmedicCombat
   - BrigmedicWinterSec
+
+- type: loadoutGroup
+  id: SeniorOfficerHead
+  name: loadout-group-senior-officer-head
+  minLimit: 0
+  loadouts:
+  - SecurityBeret
+  - SecurityHat
+
+- type: loadoutGroup
+  id: SeniorOfficerJumpsuit
+  name: loadout-group-senior-officer-jumpsuit
+  loadouts:
+  - SeniorOfficerJumpsuit
+  - SeniorOfficerJumpskirt
+
+- type: loadoutGroup
+  id: SeniorOfficerBackpack
+  name: loadout-group-senior-officer-backpack
+  loadouts:
+  - SecurityBackpack
+  - SecuritySatchel
+  - SecurityDuffel
+
+- type: loadoutGroup
+  id: SeniorOfficerBelt
+  name: loadout-group-senior-officer-belt
+  loadouts:
+  - SecurityBelt
+  - SecurityWebbing
+
+- type: loadoutGroup
+  id: SeniorOfficerOuterClothing
+  name: loadout-group-senior-officer-outerclothing
+  loadouts:
+  - ArmorVestSec # Corvax
+  - ArmorVest
+  - ArmorVestSlim
+  - SecurityOfficerWintercoat
+
+- type: loadoutGroup
+  id: SeniorOfficerShoes
+  name: loadout-group-senior-officer-shoes
+  loadouts:
+  - JackSecBoots # Corvax
+  - JackBoots
+  - SecurityWinterBoots
+
+# Medical
+- type: loadoutGroup
+  id: SeniorPhysicianHead
+  name: loadout-group-senior-physician-head
+  minLimit: 0
+  loadouts:
+  - SeniorPhysicianBeret
+
+- type: loadoutGroup
+  id: SeniorPhysicianJumpsuit
+  name: loadout-group-senior-physician-jumpsuit
+  loadouts:
+  - SeniorPhysicianJumpsuit
+  - SeniorPhysicianJumpskirt
+
+- type: loadoutGroup
+  id: SeniorPhysicianOuterClothing
+  name: loadout-group-senior-physician-outerclothing
+  minLimit: 0
+  loadouts:
+  - SeniorPhysicianLabCoat
+
+- type: loadoutGroup
+  id: SeniorPhysicianBackpack
+  name: loadout-group-senior-physician-backpack
+  loadouts:
+  - MedicalDoctorBackpack
+  - MedicalDoctorSatchel
+  - MedicalDoctorDuffel
+
+- type: loadoutGroup
+  id: SeniorPhysicianShoes
+  name: loadout-group-senior-physician-shoes
+  loadouts:
+  - WhiteShoes
+  - MedicalWinterBoots

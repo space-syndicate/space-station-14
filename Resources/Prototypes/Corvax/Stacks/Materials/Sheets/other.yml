@@ -1,0 +1,6 @@
+- type: stack
+  id: PrinterPage
+  name: stack-paper
+  icon: { sprite: Objects/Misc/bureaucracy.rsi, state: paper }
+  spawn: Paper
+  maxCount: 1

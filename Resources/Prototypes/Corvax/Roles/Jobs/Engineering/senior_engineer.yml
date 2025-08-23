@@ -1,0 +1,44 @@
+- type: job
+  id: SeniorEngineer
+  name: job-name-senior-engineer
+  description: job-description-senior-engineer
+  playTimeTracker: JobSeniorEngineer
+  requirements:
+    - !type:RoleTimeRequirement
+      role: JobAtmosphericTechnician
+      time: 21600 #6 hrs
+    - !type:RoleTimeRequirement
+      role: JobStationEngineer
+      time: 21600 #6 hrs
+    - !type:DepartmentTimeRequirement
+      department: Engineering
+      time: 216000 # 60 hrs
+  weight: 9
+  startingGear: SeniorEngineerGear
+  icon: "JobIconSeniorEngineer"
+  supervisors: job-supervisors-ce
+  access:
+  - Maintenance
+  - Engineering
+  - External
+  - Atmospherics
+
+- type: startingGear
+  id: SeniorEngineerGear
+  equipment:
+    shoes: ClothingShoesBootsWork
+    id: SeniorEngineerPDA
+    eyes: ClothingEyesGlassesMeson
+    belt: ClothingBeltUtilityEngineering
+    ears: ClothingHeadsetEngineering
+
+- type: chameleonOutfit
+  id: SeniorEngineerChameleonOutfit
+  job: SeniorEngineer
+  equipment:
+    head: ClothingHeadHatBeretEngineering
+    mask: ClothingMaskBreath
+    neck: ClothingNeckScarfStripedOrange
+    outerClothing: ClothingOuterWinterEngi
+    gloves: ClothingHandsGlovesColorYellow
+    shoes: ClothingShoesBootsMag

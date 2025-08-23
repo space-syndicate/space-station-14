@@ -1,8 +1,8 @@
 # Weapons
 uplink-pistol-viper-name = Гадюка
 uplink-pistol-viper-desc = Небольшой, легко скрываемый, но маломощный пистолет. Оснащён полностью автоматической ствольной коробкой. Использует патроны калибра .35 авто.
-uplink-estoc-bundle-name = Estoc DMR
-uplink-estoc-bundle-desc = A designated marksman rifle, fitted with a mid-range optic for longer-range combat. Bundled with two rifle magazines (.20 rifle).
+uplink-estoc-bundle-name = Набор "Марксманская винтовка Эсток"
+uplink-estoc-bundle-desc = Марксманская винтовка Эсток, оснащённая оптическим прицелом среднего приближения, для ведения боя на дальних дистанциях. В комплекте с двумя магазинами патронов калибра .20 винтовочные.
 uplink-revolver-python-name = Питон
 uplink-revolver-python-desc = Брутально простой, эффективный и громкий револьвер Синдиката. Поставляется с бронебойными патронами. Использует патроны калибра .45 магнум.
 uplink-pistol-cobra-name = Кобра
@@ -169,7 +169,7 @@ uplink-knives-kit-desc = Набор из 4 фирменных метательн
 uplink-meds-bundle-name = Медицинский набор Interdyne
 uplink-meds-bundle-desc = Ассортимент автоинъекторов и медицинского оборудования премиум-класса на все случаи жизни. Содержит элитный компактный дефибриллятор, который можно использовать в качестве оружия.
 uplink-ammo-bundle-name = Набор боеприпасов
-uplink-ammo-bundle-desc = Перезаряжаю! Содержит 4 магазина для C-20r, 4 барабана для Бульдога и 2 короба патронов для L6 SAW.
+uplink-ammo-bundle-desc = Перезаряжаю! Содержит 4 магазина для C-20r, 4 барабана для Бульдога, 3 магазина для винтовки Эсток и 2 короба патронов для L6 SAW.
 uplink-sniper-bundle-name = Набор снайпера
 uplink-sniper-bundle-desc = Неприметный чемодан, в котором находятся Христов, 10 запасных патронов и удобная маскировка.
 uplink-c20r-bundle-name = Набор "C-20r"

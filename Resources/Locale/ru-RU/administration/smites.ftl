@@ -57,7 +57,7 @@ admin-smite-ghostkick-name = Кик втихаря
 admin-smite-nyanify-name = НЯфикация
 admin-smite-kill-sign-name = Знак смерти
 admin-smite-omni-accent-name = Омни-акцент
-admin-smite-crawler-name = Crawler
+admin-smite-crawler-name = Ползун
 
 ## Smite descriptions
 
@@ -102,7 +102,7 @@ admin-smite-super-bonk-description = Заставляет цель ударит�
 admin-smite-terminate-description = Создаёт экстерминатора с ролью призрака, с единственной задачей — убить выбранную цель.
 admin-smite-super-slip-description = Очень сильно поскальзывает цель.
 admin-smite-omni-accent-description = Заставляет цель говорить с почти каждым возможным акцентом.
-admin-smite-crawler-description = Makes the target fall down and be unable to stand up. Remove their hands too for added effect!
+admin-smite-crawler-description = Заставляет цель упасть и не позволяет встать. Для дополнительного эффекта удалите и руки!
 admin-smite-super-bonk-lite-description = Заставляет цель удариться о каждый стол на станции и за её пределами. Прекращает действовать после смерти цели.
 
 ## Tricks descriptions

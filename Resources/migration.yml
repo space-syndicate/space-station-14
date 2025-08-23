@@ -93,10 +93,10 @@ GeneratorPlasmaMachineCircuitboard: PortableGeneratorPacmanMachineCircuitboard
 GeneratorUraniumMachineCircuitboard: PortableGeneratorSuperPacmanMachineCircuitboard
 
 # 2023-12-10
-SpawnPointSeniorResearcher: null
-SpawnPointSeniorOfficer: null
-SpawnPointSeniorEngineer: null
-SpawnPointSeniorPhysician: null
+#SpawnPointSeniorResearcher: null # Corvax re-added
+#SpawnPointSeniorOfficer: null # Corvax re-added
+#SpawnPointSeniorEngineer: null # Corvax re-added
+#SpawnPointSeniorPhysician: null # Corvax re-added
 
 # 2023-12-12
 #No this is not the CMO hardsuit, their prototype IDs were just confusingly similar
@@ -723,3 +723,11 @@ ClothingUniformColorJumpskirtRainbow: ClothingUniformJumpskirtColorRainbow
 
 # 2025-06-21
 ClothingNeckHeadphones: ClothingMultipleHeadphones
+
+# 2025-07-17 Corvax
+DrinkDaiquiriGlass: DrinkDaiquiri
+DrinkEspressoMartiniGlass: DrinkEspressoMartini
+DrinkMoscowMuleGlass: DrinkMoscowMule
+
+# 2025-08-01
+FoodDonutJellySlugcat: FoodDonutJellyScurret
