@@ -7,4 +7,4 @@ spill-melee-hit-attacker = Вы выплёскиваете { $amount } ед. с�
 spill-melee-hit-others = { CAPITALIZE($attacker) } выплёскивает содержимое { $spillable } на { $target }!
 spill-land-spilled-on-other = { CAPITALIZE($spillable) } выплёскивает своё содержимое на { $target }!
 spill-examine-is-spillable = Этот контейнер можно выплеснуть.
-spill-examine-spillable-weapon = Вы можете выплеснуть это на кого-то, атаковав в ближнем бою.
+spill-examine-spillable-weapon = Вы можете выплеснуть это на кого-то, атаковав.
