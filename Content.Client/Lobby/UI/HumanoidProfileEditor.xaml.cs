@@ -622,9 +622,15 @@ namespace Content.Client.Lobby.UI
             _species.AddRange(_prototypeManager.EnumeratePrototypes<SpeciesPrototype>().Where(o => o.RoundStart));
             var speciesIds = _species.Select(o => o.ID).ToList();
 
+            var sponsorOnlySuffix = " " + Loc.GetString("species-sponsor-only-text"); // Corvax-Sponsors
+
             for (var i = 0; i < _species.Count; i++)
             {
                 var name = Loc.GetString(_species[i].Name);
+
+                if (_species[i].SponsorOnly) // Corvax-Sponsors
+                    name += sponsorOnlySuffix;
+
                 SpeciesButton.AddItem(name, i);
 
                 if (Profile?.Species.Equals(_species[i].ID) == true)
