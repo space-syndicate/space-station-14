@@ -1,3 +1,6 @@
+ent-SpawnMobAlexander = спавнер Александр
+    .suffix = питомец шеф
+    .desc = { ent-MarkerBase.desc }
 ent-SpawnMobBandito = спавнер Бандито
     .suffix = питомец НР
     .desc = { ent-MarkerBase.desc }
