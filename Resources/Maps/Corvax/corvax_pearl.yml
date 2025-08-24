@@ -132,7 +132,7 @@ entities:
     - type: Broadphase
     - type: OccluderTree
     - type: Parallax
-      parallax: Water
+      parallax: IceWater
     - type: MapAtmosphere
       space: False
       mixture:
