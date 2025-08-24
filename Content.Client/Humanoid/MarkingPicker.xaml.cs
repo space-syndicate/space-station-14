@@ -233,6 +233,7 @@ public sealed partial class MarkingPicker : Control
             }
 
             var item = CMarkingsUnused.AddItem($"{GetMarkingName(marking)}", _sprite.Frame0(marking.Sprites[0]));
+            // Corvax-Sponsors-Start
             if (marking.SponsorOnly)
                 item.Text += GetSponsorOnlySuffix();
             // Corvax-Sponsors-End
