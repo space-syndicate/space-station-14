@@ -15,7 +15,7 @@ public sealed partial class DonateWindow : PanelContainer
         var uri = IoCManager.Resolve<IUriOpener>();
         SiteButton.OnPressed += _ => uri.OpenUri("https://ss14.ru/donate");
         BoostyButton.OnPressed += _ => uri.OpenUri("https://boosty.to/corvax");
-        WikiButton.OnPressed += _ => uri.OpenUri("https://station14.ru/wiki/");
-        DiscordButton.OnPressed += _ => uri.OpenUri("https://discord.ss14.ru/");
+        WikiButton.OnPressed += _ => uri.OpenUri("https://station14.ru/wiki");
+        DiscordButton.OnPressed += _ => uri.OpenUri("https://discord.ss14.ru");
     }
 }
