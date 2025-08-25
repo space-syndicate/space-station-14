@@ -6,6 +6,6 @@ public static class SponsorOnlyHelpers
 {
     public static string GetSponsorOnlySuffix()
     {
-        return " " + Loc.GetString("species-sponsor-only-text");
+        return " " + Loc.GetString("sponsor-only-text");
     }
 }
