@@ -1,19 +1,23 @@
 <PanelContainer xmlns="https://spacestation14.io"
-                xmlns:controls="clr-namespace:Content.Client.UserInterface.Controls"
+                xmlns:gfx="clr-namespace:Robust.Client.Graphics;assembly=Robust.Client"
                 StyleClasses="AngleRect"
                 Margin="0 12 0 0"
                 HorizontalAlignment="Left">
     <BoxContainer Orientation="Vertical" SeparationOverride="4" Margin="4">
-        <Label Text="{Loc corvax-donate-window-our-label}" HorizontalAlignment="Center" StyleClasses="LabelHeading"/>
-        <BoxContainer Orientation="Horizontal" HorizontalAlignment="Center" SeparationOverride="4">
-            <Button Name="WikiButton" Text="{Loc corvax-donate-button-wiki}"/>
-            <Button Name="DiscordButton" Text="{Loc corvax-donate-button-discord}"/>
-        </BoxContainer>
-        <controls:HLine Color="#404040" Thickness="2" Margin="0 5"/>
-        <Label Text="{Loc corvax-donate-window-support-label}" HorizontalAlignment="Center" StyleClasses="LabelHeading"/>
+        <Label Text="{Loc corvax-donate-window-support-label}"
+               HorizontalAlignment="Center"/>
         <BoxContainer Orientation="Horizontal" HorizontalAlignment="Center" SeparationOverride="4">
             <Button Name="SiteButton" Text="{Loc corvax-donate-button-site}"/>
             <Button Name="BoostyButton" Text="{Loc corvax-donate-button-boosty}"/>
+        </BoxContainer>
+        <PanelContainer Name="DiscussionSeparator" Visible="False" Margin="0 4" MinHeight="2">
+            <PanelContainer.PanelOverride>
+                <gfx:StyleBoxFlat BackgroundColor="#3D4059"/>
+            </PanelContainer.PanelOverride>
+        </PanelContainer>
+        <BoxContainer Name="DiscussionContainer" Orientation="Vertical" SeparationOverride="4" Visible="False">
+            <Label Text="{Loc corvax-donate-window-discuss-label}" HorizontalAlignment="Center"/>
+            <Button Name="DiscussButton" Text="{Loc corvax-donate-button-discuss}" HorizontalAlignment="Center"/>
         </BoxContainer>
     </BoxContainer>
 </PanelContainer>

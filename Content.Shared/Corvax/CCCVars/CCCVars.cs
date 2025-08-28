@@ -78,13 +78,41 @@ public sealed class CCCVars
     public static readonly CVarDef<bool> PeacefulRoundEnd =
         CVarDef.Create("game.peaceful_end", false, CVar.SERVERONLY);
 
-    /*
-     * Station Goal
-     */
-
     /// <summary>
     /// Send station goal on round start or not.
     /// </summary>
     public static readonly CVarDef<bool> StationGoal =
         CVarDef.Create("game.station_goal", true, CVar.SERVERONLY);
+
+    /*
+     * Lobby Round Discussion
+     */
+
+    /// <summary>
+    /// Controls whether the round discussion link is shown in the lobby.
+    /// </summary>
+    public static readonly CVarDef<bool> LobbyDiscussEnabled =
+        CVarDef.Create("lobby.discuss.enabled", false, CVar.SERVER | CVar.REPLICATED | CVar.ARCHIVE);
+
+    /// <summary>
+    /// URL that the round discussion button opens.
+    /// </summary>
+    public static readonly CVarDef<string> LobbyDiscussLink =
+        CVarDef.Create("lobby.discuss.link", "", CVar.SERVER | CVar.REPLICATED | CVar.ARCHIVE);
+
+    /*
+     * Lobby Donation Window
+     */
+
+    /// <summary>
+    /// Controls whether the donation window is shown in the lobby.
+    /// </summary>
+    public static readonly CVarDef<bool> LobbyDonateWindowEnabled =
+        CVarDef.Create("lobby.donate.window_enabled", false, CVar.SERVER | CVar.REPLICATED | CVar.ARCHIVE);
+
+    /// <summary>
+    /// URL for the project site shown in the lobby donation window.
+    /// </summary>
+    public static readonly CVarDef<string> LobbyDonateSiteLink =
+        CVarDef.Create("lobby.donate.site_link", "", CVar.SERVER | CVar.REPLICATED | CVar.ARCHIVE);
 }

@@ -7,6 +7,8 @@ using Robust.Client.UserInterface.XAML;
 // Corvax-Donate-Start
 using Content.Client.Corvax.Donate;
 using Robust.Client.UserInterface.Controls;
+using Robust.Shared.Configuration;
+using Content.Shared.Corvax.CCCVars;
 // Corvax-Donate-End
 
 namespace Content.Client.Lobby.UI
@@ -17,8 +19,11 @@ namespace Content.Client.Lobby.UI
         [Dependency] private readonly IClientConsoleHost _consoleHost = default!;
 
         // Corvax-Donate-Start
+        [Dependency] private readonly IConfigurationManager _cfg = default!;
         private DonateWindow? _donateWindow;
         // Corvax-Donate-End
+
+
 
         public LobbyGui()
         {
@@ -34,10 +39,10 @@ namespace Content.Client.Lobby.UI
 
             CollapseButton.OnPressed += _ => TogglePanel(false);
             ExpandButton.OnPressed += _ => TogglePanel(true);
+
+
             // Corvax-Donate-Start
-            _donateWindow = new DonateWindow();
-            TopLeft.AddChild(_donateWindow);
-            _donateWindow.SetPositionInParent(1);
+            _cfg.OnValueChanged(CCCVars.LobbyDonateWindowEnabled, OnDonateWindowEnabledChanged, true);
             // Corvax-Donate-End
         }
 
@@ -55,8 +60,8 @@ namespace Content.Client.Lobby.UI
                 case LobbyGuiState.CharacterSetup:
                     CharacterSetupState.Visible = true;
 
-                    var actualWidth = (float) UserInterfaceManager.RootControl.PixelWidth;
-                    var setupWidth = (float) LeftSide.PixelWidth;
+                    var actualWidth = (float)UserInterfaceManager.RootControl.PixelWidth;
+                    var setupWidth = (float)LeftSide.PixelWidth;
 
                     if (1 - (setupWidth / actualWidth) > 0.30)
                     {
@@ -86,5 +91,25 @@ namespace Content.Client.Lobby.UI
             /// </summary>
             CharacterSetup
         }
+
+        // Corvax-Donate-Start
+        private void OnDonateWindowEnabledChanged(bool enabled)
+        {
+            if (enabled)
+            {
+                if (_donateWindow == null)
+                {
+                    _donateWindow = new DonateWindow();
+                    TopLeft.AddChild(_donateWindow);
+                    _donateWindow.SetPositionInParent(1);
+                }
+            }
+            else
+            {
+                _donateWindow?.Dispose();
+                _donateWindow = null;
+            }
+        }
+        // Corvax-Donate-End
     }
 }
