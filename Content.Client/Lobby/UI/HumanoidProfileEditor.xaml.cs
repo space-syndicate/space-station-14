@@ -35,6 +35,7 @@ using Robust.Shared.Enums;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Utility;
 using Direction = Robust.Shared.Maths.Direction;
+using static Content.Client.Corvax.SponsorOnlyHelpers; // Corvax-Sponsors
 
 namespace Content.Client.Lobby.UI
 {
@@ -622,14 +623,12 @@ namespace Content.Client.Lobby.UI
             _species.AddRange(_prototypeManager.EnumeratePrototypes<SpeciesPrototype>().Where(o => o.RoundStart));
             var speciesIds = _species.Select(o => o.ID).ToList();
 
-            var sponsorOnlySuffix = " " + Loc.GetString("species-sponsor-only-text"); // Corvax-Sponsors
-
             for (var i = 0; i < _species.Count; i++)
             {
                 var name = Loc.GetString(_species[i].Name);
 
                 if (_species[i].SponsorOnly) // Corvax-Sponsors
-                    name += sponsorOnlySuffix;
+                    name += GetSponsorOnlySuffix();
 
                 SpeciesButton.AddItem(name, i);
 
