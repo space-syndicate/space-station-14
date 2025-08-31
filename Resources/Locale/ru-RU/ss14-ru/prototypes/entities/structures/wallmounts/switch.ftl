@@ -4,7 +4,6 @@ ent-SignalButton = кнопка сигнала
     .desc = Эта кнопка что-то активирует.
 ent-ApcNetSwitch = переключатель сети ЛКП
     .desc = Это переключатель источников света, использующих локальный контроллер питания.
-
 ent-SignalSwitchDirectional = переключатель сигнала
     .suffix = Направленный
     .desc = { ent-SignalSwitch.desc }

@@ -1,4 +1,3 @@
-
 ent-WallmountTelescreenFrame = каркас телеэкрана
     .desc = { ent-WallmountTelescreen.desc }
 ent-WallmountTelescreen = телеэкран
