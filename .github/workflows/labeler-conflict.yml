@@ -11,7 +11,7 @@ on:
 jobs:
   Label:
     if: ( github.event.pull_request.draft == false ) && ( github.actor != 'IanComradeBot' )
-    runs-on: ubuntu-latest
+    runs-on: [self-hosted]
     steps:
       - name: Check for Merge Conflicts
         uses: eps1lon/actions-label-merge-conflict@v3.0.0

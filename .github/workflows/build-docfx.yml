@@ -6,7 +6,7 @@ on:
 
 jobs:
   docfx:
-   runs-on: ubuntu-latest
+   runs-on: [self-hosted]
    steps:
     - uses: actions/checkout@v4.2.2
     - name: Setup submodule
@@ -18,10 +18,21 @@ jobs:
       run: |
         cd RobustToolbox/
         git submodule update --init --recursive
+
     - name: Setup .NET Core
       uses: actions/setup-dotnet@v4.1.0
       with:
         dotnet-version: 9.0.x
+      env:
+        DOTNET_INSTALL_DIR: ${{ runner.temp }}/.dotnet
+
+    - name: Set DOTNET_ROOT and PATH
+      run: |
+        echo "DOTNET_ROOT=${{ runner.temp }}/.dotnet" >> $GITHUB_ENV
+        echo "${{ runner.temp }}/.dotnet" >> $GITHUB_PATH
+
+    - name: Check .NET installation
+      run: dotnet --info
 
     - name: Install dependencies
       run: dotnet restore
