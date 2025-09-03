@@ -1,4 +1,4 @@
-﻿name: Test Packaging
+name: Test Packaging
 
 on:
   push:
@@ -30,7 +30,7 @@ jobs:
   build:
     name: Test Packaging
     if: github.actor != 'IanComradeBot' && github.event.pull_request.draft == false
-    runs-on: ubuntu-latest
+    runs-on: [self-hosted]
 
     steps:
       - name: Checkout Master
@@ -66,6 +66,16 @@ jobs:
         uses: actions/setup-dotnet@v4.1.0
         with:
           dotnet-version: 9.0.x
+        env:
+          DOTNET_INSTALL_DIR: ${{ runner.temp }}/.dotnet
+
+      - name: Set DOTNET_ROOT and PATH
+        run: |
+          echo "DOTNET_ROOT=${{ runner.temp }}/.dotnet" >> $GITHUB_ENV
+          echo "${{ runner.temp }}/.dotnet" >> $GITHUB_PATH
+
+      - name: Check .NET installation
+        run: dotnet --info
 
       - name: Install dependencies
         run: dotnet restore
