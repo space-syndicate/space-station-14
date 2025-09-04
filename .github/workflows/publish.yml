@@ -12,12 +12,17 @@ jobs:
   build:
     runs-on: [self-hosted]
     steps:
-    - name: Fail if we are attempting to run on the master branch
-      if: ${{GITHUB.REF_NAME == 'master' && github.repository == 'space-wizards/space-station-14'}}
-      run: exit 1
+    - name: Install dependencies
+      run: sudo apt-get install -y python3-paramiko python3-lxml
 
-#    - name: Install dependencies
-#      run: sudo apt-get install -y python3-paramiko python3-lxml
+    - name: Check .NET Installation
+      id: check-dotnet
+      run: |
+        if dotnet --info > /dev/null 2>&1; then
+          echo "skip=true" >> $GITHUB_ENV
+        else
+          echo "skip=false" >> $GITHUB_ENV
+        fi
 
     - uses: actions/checkout@v4.2.2
       with:
@@ -43,16 +48,10 @@ jobs:
     # Corvax-Secrets-End
 
     - name: Setup .NET Core
-      uses: actions/setup-dotnet@v4.1.0
+      if: env.skip == 'false'
+      uses: actions/setup-dotnet@v3.2.0
       with:
         dotnet-version: 9.0.x
-      env:
-        DOTNET_INSTALL_DIR: ${{ runner.temp }}/.dotnet
-
-    - name: Set DOTNET_ROOT and PATH
-      run: |
-        echo "DOTNET_ROOT=${{ runner.temp }}/.dotnet" >> $GITHUB_ENV
-        echo "${{ runner.temp }}/.dotnet" >> $GITHUB_PATH
 
     - name: Check .NET installation
       run: dotnet --info
