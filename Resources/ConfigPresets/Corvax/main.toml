@@ -24,3 +24,8 @@ time = 180.0
 [hub]
 advertise = true
 tags = "lang:ru,rp:low,rp:med,region:eu_e,tts"
+
+[lobby.discuss]
+enabled = true
+name = "Халифат Мейна"
+link = "https://discord.com/channels/919301044784226385/1073409417019658300"
