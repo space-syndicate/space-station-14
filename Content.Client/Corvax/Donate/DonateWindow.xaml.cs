@@ -38,6 +38,10 @@ public sealed partial class DonateWindow : PanelContainer
         {
             DiscussionSeparator.Visible = true;
             DiscussionContainer.Visible = true;
+            // Set custom button name from CVar if provided; fallback to localized text.
+            var discussName = _cfg.GetCVar(CCCVars.LobbyDiscussName);
+            if (!string.IsNullOrWhiteSpace(discussName))
+                DiscussButton.Text = discussName;
             DiscussButton.OnPressed += _ => uri.OpenUri(discussLink);
         }
     }

@@ -24,3 +24,8 @@ time = 180.0
 [hub]
 advertise = true
 tags = "lang:ru,rp:med,region:eu_e,tts"
+
+[lobby.discuss]
+enabled = true
+name = "Последователи Атары"
+link = "https://discord.com/channels/919301044784226385/1319231922362253322"

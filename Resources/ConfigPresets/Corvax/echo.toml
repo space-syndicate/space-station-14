@@ -25,3 +25,8 @@ tags = "lang:ru,rp:med,region:eu_e,tts"
 [atmos]
 monstermos_equalization = true
 monstermos_depressurization = true
+
+[lobby.discuss]
+enabled = true
+name = "Комета Эхо"
+link = "https://discord.com/channels/919301044784226385/1297552825970065499"

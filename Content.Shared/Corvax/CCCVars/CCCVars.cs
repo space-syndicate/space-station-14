@@ -100,6 +100,12 @@ public sealed class CCCVars
     public static readonly CVarDef<string> LobbyDiscussLink =
         CVarDef.Create("lobby.discuss.link", "", CVar.SERVER | CVar.REPLICATED | CVar.ARCHIVE);
 
+    /// <summary>
+    /// Display name for the round discussion button (e.g., "Discord").
+    /// </summary>
+    public static readonly CVarDef<string> LobbyDiscussName =
+        CVarDef.Create("lobby.discuss.name", "Discord", CVar.SERVER | CVar.REPLICATED | CVar.ARCHIVE);
+
     /*
      * Lobby Donation Window
      */
