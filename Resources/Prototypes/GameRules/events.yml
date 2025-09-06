@@ -119,6 +119,8 @@
   parent: BaseGameRule
   components:
   - type: StationEvent
+    startAudio: # Corvax-Announcements
+      path: /Audio/Corvax/Announcements/apc.ogg
     weight: 7
     duration: 1
     minimumPlayers: 15
@@ -647,7 +649,7 @@
   components:
   - type: StationEvent
     startAudio:
-      path: /Audio/Announcements/attention.ogg
+      path: /Audio/Corvax/Announcements/greytide.ogg# Corvax-Announcements #base:/Audio/Announcements/attention.ogg
     weight: 5
     minimumPlayers: 25
     reoccurrenceDelay: 20
