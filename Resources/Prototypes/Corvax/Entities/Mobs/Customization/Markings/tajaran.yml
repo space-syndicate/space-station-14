@@ -5,7 +5,7 @@
     state: eyes
 
 - type: marking
-  id: Patch
+  id: TajaranPatch
   markingCategory: Overlay
   bodyPart: Chest
   speciesRestriction: [Tajaran]
@@ -15,7 +15,7 @@
       state: patch
 
 - type: marking
-  id: SkeletonBody
+  id: TajaranSkeletonBody
   markingCategory: Overlay
   bodyPart: Chest
   speciesRestriction: [Tajaran]
@@ -35,7 +35,7 @@
 #       state: points
 
 - type: marking
-  id: BlotsBody
+  id: TajaranBlotsBody
   markingCategory: Overlay
   bodyPart: Chest
   speciesRestriction: [Tajaran]
@@ -45,7 +45,7 @@
       state: blots_body
 
 - type: marking
-  id: StripesBody
+  id: TajaranStripesBody
   markingCategory: Overlay
   bodyPart: Chest
   speciesRestriction: [Tajaran]
@@ -75,7 +75,7 @@
 #       state: gradient_LLeg
 
 - type: marking
-  id: GradientLhand
+  id: TajaranGradientLhand
   markingCategory: Arms
   bodyPart: LHand
   speciesRestriction: [Tajaran]
@@ -85,7 +85,7 @@
       state: gradient_LHand
 
 - type: marking
-  id: GradientLarm
+  id: TajaranGradientLarm
   markingCategory: Arms
   bodyPart: LArm
   speciesRestriction: [Tajaran]
@@ -95,7 +95,7 @@
       state: gradient_LArm
 
 - type: marking
-  id: GradientRhand
+  id: TajaranGradientRhand
   markingCategory: Arms
   bodyPart: RHand
   speciesRestriction: [Tajaran]
@@ -105,7 +105,7 @@
       state: gradient_RHand
 
 - type: marking
-  id: GradientRarm
+  id: TajaranGradientRarm
   markingCategory: Arms
   bodyPart: RArm
   speciesRestriction: [Tajaran]
@@ -115,7 +115,7 @@
       state: gradient_RArm
 
 - type: marking
-  id: Spikey
+  id: TajaranSpikey
   markingCategory: Hair
   bodyPart: Hair
   speciesRestriction: [Tajaran]
@@ -125,7 +125,7 @@
       state: spikey
 
 - type: marking
-  id: TajaranHairLadiesretro
+  id: TajaranTajaranHairLadiesretro
   markingCategory: Hair
   bodyPart: Hair
   speciesRestriction: [Tajaran]
@@ -315,7 +315,7 @@
       state: long
 
 - type: marking
-  id: Mustache2
+  id: TajaranMustache2
   markingCategory: FacialHair
   bodyPart: FacialHair
   speciesRestriction: [Tajaran]
@@ -325,7 +325,7 @@
       state: mustache_2
 
 - type: marking
-  id: Beard
+  id: TajaranBeard
   markingCategory: FacialHair
   bodyPart: FacialHair
   speciesRestriction: [Tajaran]
@@ -335,7 +335,7 @@
       state: beard
 
 - type: marking
-  id: Mustache3
+  id: TajaranMustache3
   markingCategory: FacialHair
   bodyPart: FacialHair
   speciesRestriction: [Tajaran]
@@ -345,7 +345,7 @@
       state: mustache_3
 
 - type: marking
-  id: Cheeks
+  id: TajaranCheeks
   markingCategory: FacialHair
   bodyPart: FacialHair
   speciesRestriction: [Tajaran]
@@ -355,7 +355,7 @@
       state: cheeks
 
 - type: marking
-  id: Mustache
+  id: TajaranMustache
   markingCategory: FacialHair
   bodyPart: FacialHair
   speciesRestriction: [Tajaran]
@@ -365,7 +365,7 @@
       state: mustache
 
 - type: marking
-  id: Patch2
+  id: TajaranPatch2
   markingCategory: Head
   bodyPart: Head
   speciesRestriction: [Tajaran]
@@ -375,7 +375,7 @@
       state: patch_2
 
 - type: marking
-  id: EyeStripesHead
+  id: TajaranEyeStripesHead
   markingCategory: Head
   bodyPart: Head
   speciesRestriction: [Tajaran]
@@ -385,7 +385,7 @@
       state: eye_stripes_head
 
 - type: marking
-  id: Outears
+  id: TajaranOutears
   markingCategory: HeadTop
   bodyPart: HeadTop
   speciesRestriction: [Tajaran]
@@ -395,7 +395,7 @@
       state: outears
 
 - type: marking
-  id: TigerHead
+  id: TajaranTigerHead
   markingCategory: Head
   bodyPart: Head
   speciesRestriction: [Tajaran]
@@ -405,7 +405,7 @@
       state: tiger_head
 
 - type: marking
-  id: Muzzle
+  id: TajaranMuzzle
   markingCategory: Snout
   bodyPart: Snout
   speciesRestriction: [Tajaran]
@@ -415,7 +415,7 @@
       state: muzzle
 
 - type: marking
-  id: TigerFace
+  id: TajaranTigerFace
   markingCategory: Head
   bodyPart: Head
   speciesRestriction: [Tajaran]
@@ -425,7 +425,7 @@
       state: tiger_face
 
 - type: marking
-  id: StarHead
+  id: TajaranStarHead
   markingCategory: Head
   bodyPart: Head
   speciesRestriction: [Tajaran]
@@ -435,7 +435,7 @@
       state: star_head
 
 - type: marking
-  id: Inears
+  id: TajaranInears
   markingCategory: HeadTop
   bodyPart: HeadTop
   speciesRestriction: [Tajaran]
@@ -445,7 +445,7 @@
       state: inears
 
 - type: marking
-  id: Nose
+  id: TajaranNose
   markingCategory: Snout
   bodyPart: Snout
   speciesRestriction: [Tajaran]
@@ -455,7 +455,7 @@
       state: nose
 
 - type: marking
-  id: Raccoon-head
+  id: TajaranRaccoon-head
   markingCategory: Head
   bodyPart: Head
   speciesRestriction: [Tajaran]
@@ -465,7 +465,7 @@
       state: raccoon-head
 
 - type: marking
-  id: ManeHead
+  id: TajaranManeHead
   markingCategory: Head
   bodyPart: Head
   speciesRestriction: [Tajaran]
@@ -475,7 +475,7 @@
       state: mane_head
 
 - type: marking
-  id: Muzzleinears
+  id: TajaranMuzzleinears
   markingCategory: Snout
   bodyPart: Snout
   speciesRestriction: [Tajaran]
@@ -485,7 +485,7 @@
       state: muzzleinears
 
 - type: marking
-  id: TailFluffy
+  id: TajaranTailFluffy
   markingCategory: Tail
   bodyPart: Tail
   speciesRestriction: [Tajaran]
@@ -496,7 +496,7 @@
 
 
 - type: marking
-  id: Belly2
+  id: TajaranBelly2
   markingCategory: Chest
   bodyPart: Chest
   speciesRestriction: [Tajaran]
@@ -506,7 +506,7 @@
       state: belly2
 
 - type: marking
-  id: Chest
+  id: TajaranChest
   markingCategory: Chest
   bodyPart: Chest
   speciesRestriction: [Tajaran]
@@ -516,7 +516,7 @@
       state: chest
 
 - type: marking
-  id: Belly1
+  id: TajaranBelly1
   markingCategory: Chest
   bodyPart: Chest
   speciesRestriction: [Tajaran]
@@ -526,7 +526,7 @@
       state: belly1
 
 - type: marking
-  id: Belly3
+  id: TajaranBelly3
   markingCategory: Chest
   bodyPart: Chest
   speciesRestriction: [Tajaran]
@@ -536,7 +536,7 @@
       state: belly3
 
 - type: marking
-  id: TailM
+  id: TajaranTailM
   bodyPart: Tail
   markingCategory: Tail
   speciesRestriction: []
@@ -545,7 +545,7 @@
       state: tail_m
 
 - type: marking
-  id: TailRing
+  id: TajaranTailRing
   bodyPart: Tail
   markingCategory: Tail
   speciesRestriction: [Tajaran]
@@ -557,7 +557,7 @@
       state: tail_ring
 
 - type: marking
-  id: TailSkeleton
+  id: TajaranTailSkeleton
   markingCategory: Tail
   bodyPart: Tail
   speciesRestriction: [Tajaran]
@@ -569,7 +569,7 @@
       state: tail_skeleton
 
 - type: marking
-  id: TailTip
+  id: TajaranTailTip
   markingCategory: Tail
   bodyPart: Tail
   speciesRestriction: [Tajaran]
@@ -581,7 +581,7 @@
       state: tail_tip
 
 - type: marking
-  id: TailFluffySkeleton
+  id: TajaranTailFluffySkeleton
   markingCategory: Tail
   bodyPart: Tail
   speciesRestriction: [Tajaran]
@@ -594,7 +594,7 @@
 
 
 - type: marking
-  id: TailWingler1
+  id: TajaranTailWingler1
   markingCategory: Tail
   bodyPart: Tail
   speciesRestriction: [Tajaran]
@@ -606,7 +606,7 @@
       state: wingler_1
 
 - type: marking
-  id: TailWingler2
+  id: TajaranTailWingler2
   markingCategory: Tail
   bodyPart: Tail
   speciesRestriction: [Tajaran]
@@ -618,7 +618,7 @@
       state: wingler_2
 
 - type: marking
-  id: TailWingler3
+  id: TajaranTailWingler3
   markingCategory: Tail
   bodyPart: Tail
   speciesRestriction: [Tajaran]
@@ -631,7 +631,7 @@
 
 # Animated
 - type: marking
-  id: TailFluffyAnimated
+  id: TajaranTailFluffyAnimated
   bodyPart: Tail
   markingCategory: Tail
   speciesRestriction: []
@@ -696,7 +696,7 @@
 
 
 - type: marking
-  id: TailMAnimated
+  id: TajaranTailMAnimated
   bodyPart: Tail
   markingCategory: Tail
   speciesRestriction: []
