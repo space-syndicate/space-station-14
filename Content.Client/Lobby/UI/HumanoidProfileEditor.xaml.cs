@@ -493,7 +493,7 @@ namespace Content.Client.Lobby.UI
             }
         }
 
-        // Corvax-TTS-Start
+        // Corvax-voice-Start
         #region Voice
 
         private void RefreshVoiceTab()
@@ -517,7 +517,7 @@ namespace Content.Client.Lobby.UI
                 TabContainer.AddChild(children[i]);
             }
 
-            TabContainer.SetTabTitle(1, Loc.GetString("humanoid-profile-editor-tts-tab"));
+            TabContainer.SetTabTitle(1, Loc.GetString("humanoid-profile-editor-voice-tab"));
 
             _ttsTab.OnVoiceSelected += voiceId =>
             {
@@ -541,7 +541,7 @@ namespace Content.Client.Lobby.UI
         }
 
         #endregion
-        // Corvax-TTS-End
+        // Corvax-voice-End
 
         /// <summary>
         /// Refreshes traits selector
@@ -1270,13 +1270,13 @@ namespace Content.Client.Lobby.UI
             ReloadPreview();
         }
 
-        // Corvax-TTS-Start
+        // Corvax-voice-Start
         private void SetVoice(string newVoice)
         {
             Profile = Profile?.WithVoice(newVoice);
             IsDirty = true;
         }
-        // Corvax-TTS-End
+        // Corvax-voice-End
 
         private void SetSpecies(string newSpecies)
         {

@@ -48,7 +48,7 @@ public sealed partial class TTSTab : Control
         foreach (var voice in _allVoices)
         {
             var name = Loc.GetString(voice.Name);
-            var category = Loc.GetString("humanoid-profile-editor-tts-other");
+            var category = Loc.GetString("humanoid-profile-editor-voice-other");
 
             var match = CategoryRegex.Match(name);
             if (match.Success)
@@ -69,7 +69,7 @@ public sealed partial class TTSTab : Control
             var button = new Button
             {
                 Text = category,
-                ToolTip = Loc.GetString("humanoid-profile-editor-tts-category-tooltip", ("category", category)),
+                ToolTip = Loc.GetString("humanoid-profile-editor-voice-category-tooltip", ("category", category)),
                 HorizontalExpand = true,
             };
 
@@ -160,7 +160,7 @@ public sealed partial class TTSTab : Control
             VoicesGrid.AddChild(voiceContainer);
         }
 
-        ResultsLabel.Text = Loc.GetString("humanoid-profile-editor-tts-match",
+        ResultsLabel.Text = Loc.GetString("humanoid-profile-editor-voice-match",
             ("filtered", _filteredVoices.Count), ("all", _allVoices.Count));
     }
 
