@@ -1,5 +1,12 @@
 ui-options-tts-volume = Громкость TTS:
 credits-window-tts-title = Функция TTS (Text-To-Speech)
-humanoid-profile-editor-voice-label = Голос:
+humanoid-profile-editor-tts-tab = TTS
+humanoid-profile-editor-tts-placeholder = Поиск по голосам...
+humanoid-profile-editor-tts-categories = Категории
+humanoid-profile-editor-tts-other = Прочие
 humanoid-profile-editor-voice-play = ▶
+humanoid-profile-editor-voice-tooltip-play = Прослушать
+humanoid-profile-editor-voice-tooltip-sponsoronly = Доступно только спонсорам
+humanoid-profile-editor-tts-category-tooltip = Показать голоса из {$category}
+humanoid-profile-editor-tts-match = Найдено: {$filtered}/{$all}
 tts-rate-limited = Вы генерируете TTS слишком быстро!
