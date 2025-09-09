@@ -1,6 +1,6 @@
 ui-options-tts-volume = Громкость TTS:
 credits-window-tts-title = Функция TTS (Text-To-Speech)
-humanoid-profile-editor-tts-tab = TTS
+humanoid-profile-editor-tts-tab = Голос
 humanoid-profile-editor-tts-placeholder = Поиск по голосам...
 humanoid-profile-editor-tts-categories = Категории
 humanoid-profile-editor-tts-other = Прочие
