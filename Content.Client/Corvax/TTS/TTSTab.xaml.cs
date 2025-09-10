@@ -39,12 +39,6 @@ public sealed partial class TTSTab : Control
 
     private void LoadVoices()
     {
-        _allVoices = _prototypeManager
-            .EnumeratePrototypes<TTSVoicePrototype>()
-            .Where(o => o.RoundStart)
-            .OrderBy(o => Loc.GetString(o.Name))
-            .ToList();
-
         foreach (var voice in _allVoices)
         {
             var name = Loc.GetString(voice.Name);
