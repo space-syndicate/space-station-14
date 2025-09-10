@@ -120,7 +120,8 @@ public sealed partial class TTSTab : Control
                 Text = displayName,
                 ToolTip = canSelectVoice ? voice.ID : Loc.GetString("humanoid-profile-editor-voice-tooltip-sponsoronly"),
                 HorizontalExpand = true,
-                Disabled = !canSelectVoice
+                Disabled = !canSelectVoice,
+                StyleClasses = { StyleNano.ButtonOpenRight }
             };
 
             if (voice.ID == _selectedVoiceId)
@@ -140,7 +141,8 @@ public sealed partial class TTSTab : Control
             {
                 Text = Loc.GetString("humanoid-profile-editor-voice-play"),
                 MinWidth = 30,
-                ToolTip = Loc.GetString("humanoid-profile-editor-voice-tooltip-play")
+                ToolTip = Loc.GetString("humanoid-profile-editor-voice-tooltip-play"),
+                StyleClasses = { StyleNano.ButtonOpenLeft }
             };
 
             previewButton.OnPressed += _ =>

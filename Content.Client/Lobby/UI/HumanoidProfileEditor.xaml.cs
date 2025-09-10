@@ -493,7 +493,7 @@ namespace Content.Client.Lobby.UI
             }
         }
 
-        // Corvax-TTSStart
+        // Corvax-TTS-Start
         #region Voice
 
         private void RefreshVoiceTab()
@@ -541,7 +541,7 @@ namespace Content.Client.Lobby.UI
         }
 
         #endregion
-        // Corvax-TTSEnd
+        // Corvax-TTS-End
 
         /// <summary>
         /// Refreshes traits selector
@@ -1270,13 +1270,13 @@ namespace Content.Client.Lobby.UI
             ReloadPreview();
         }
 
-        // Corvax-TTSStart
+        // Corvax-TTS-Start
         private void SetVoice(string newVoice)
         {
             Profile = Profile?.WithVoice(newVoice);
             IsDirty = true;
         }
-        // Corvax-TTSEnd
+        // Corvax-TTS-End
 
         private void SetSpecies(string newSpecies)
         {
