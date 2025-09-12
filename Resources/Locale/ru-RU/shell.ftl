@@ -55,7 +55,6 @@ shell-argument-number-must-be-between = Аргумент { $index } должен
 shell-argument-station-id-invalid = Аргумент { $index } должен быть валидным station id!
 shell-argument-map-id-invalid = Аргумент { $index } должен быть валидным map id!
 shell-argument-number-invalid = Аргумент { $index } должен быть валидным числом!
-shell-entity-must-be-ghost = целевая сущность должна быть призраком
 # Hints
 shell-argument-username-hint = <username>
 shell-argument-username-optional-hint = [username]
