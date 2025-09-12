@@ -119,6 +119,8 @@
   parent: BaseGameRule
   components:
   - type: StationEvent
+    startAudio: # Corvax-Announcements
+      path: /Audio/Corvax/Announcements/apc.ogg
     weight: 7
     duration: 1
     minimumPlayers: 15
