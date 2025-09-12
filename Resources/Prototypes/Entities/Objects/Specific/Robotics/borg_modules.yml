@@ -1177,21 +1177,6 @@
     hands:
     - item: WeaponPistolEchis
     - item: EnergyDaggerLoud
-# Corvax-HiddenDesc-Start
-  - type: HiddenDescription
-    entries:
-    - label: corvax-hidden-desc-BorgModuleSyndicateWeapon-syndicate
-      whitelistMind:
-        mindRoles:
-          - TraitorRole
-          - NukeopsRole
-    - label: corvax-hidden-desc-BorgModuleSyndicateWeapon-research
-      jobRequired:
-        - ResearchAssistant
-        - ResearchDirector
-        - Scientist
-        - Borg
-# Corvax-HiddenDesc-End
   - type: BorgModuleIcon
     icon: { sprite: Interface/Actions/actions_borg.rsi, state: syndicate-weapon-module }
   - type: Item
@@ -1231,21 +1216,6 @@
       - item: Emag
       - item: AccessBreaker
       - item: PinpointerSyndicateNuclear
-# Corvax-HiddenDesc-Start
-    - type: HiddenDescription
-      entries:
-      - label: corvax-hidden-desc-BorgModuleOperative-syndicate
-        whitelistMind:
-          mindRoles:
-            - TraitorRole
-            - NukeopsRole
-      - label: corvax-hidden-desc-BorgModuleOperative-research
-        jobRequired:
-          - ResearchAssistant
-          - ResearchDirector
-          - Scientist
-          - Borg
-# Corvax-HiddenDesc-End
     - type: BorgModuleIcon
       icon: { sprite: Interface/Actions/actions_borg.rsi, state: syndicate-operative-module }
 
@@ -1265,21 +1235,6 @@
     - item: PinpointerSyndicateNuclear
   - type: BorgModuleIcon
     icon: { sprite: Interface/Actions/actions_borg.rsi, state: syndicate-esword-module }
-# Corvax-HiddenDesc-Start
-    - type: HiddenDescription
-      entries:
-      - label: corvax-hidden-desc-BorgModuleEsword-syndicate
-        whitelistMind:
-          mindRoles:
-            - TraitorRole
-            - NukeopsRole
-      - label: corvax-hidden-desc-BorgModuleSyndicateWeapon-research
-        jobRequired:
-          - ResearchAssistant
-          - ResearchDirector
-          - Scientist
-          - Borg
-# Corvax-HiddenDesc-End
 
 - type: entity
   id: BorgModuleDoubleEsword
@@ -1314,21 +1269,6 @@
     - item: PinpointerSyndicateNuclear
   - type: BorgModuleIcon
     icon: { sprite: Interface/Actions/actions_borg.rsi, state: syndicate-l6c-module }
-# Corvax-HiddenDesc-Start
-    - type: HiddenDescription
-      entries:
-      - label: corvax-hidden-desc-BorgModuleL6C-syndicate
-        whitelistMind:
-          mindRoles:
-          - TraitorRole
-          - NukeopsRole
-      - label: corvax-hidden-desc-BorgModuleSyndicateWeapon-research
-        jobRequired:
-          - ResearchAssistant
-          - ResearchDirector
-          - Scientist
-          - Borg
-# Corvax-HiddenDesc-End
 
 - type: entity
   parent: [ BaseBorgModuleSyndicateAssault, BaseProviderBorgModule, BaseSyndicateContraband ]
@@ -1360,21 +1300,6 @@
     - type: ItemBorgModule
       hands:
       - item: SelfDestructSeq
-# Corvax-HiddenDesc-Start
-    - type: HiddenDescription
-      entries:
-      - label: corvax-hidden-desc-BorgModuleMartyr-syndicate
-        whitelistMind:
-          mindRoles:
-            - TraitorRole
-            - NukeopsRole
-      - label: corvax-hidden-desc-BorgModuleMartyr-research
-        jobRequired:
-          - ResearchAssistant
-          - ResearchDirector
-          - Scientist
-          - Borg
-# Corvax-HiddenDesc-End
     - type: BorgModuleIcon
       icon: { sprite: Interface/Actions/actions_borg.rsi, state: syndicate-martyr-module }
     - type: Item

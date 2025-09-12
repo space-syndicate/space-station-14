@@ -46,7 +46,6 @@
             StationEngineer: [ 2, 2 ]
             TechnicalAssistant: [ 2, 2 ]
             #medical
-            ChiefMedicalOfficer: [ 1, 1 ]
             Chemist: [ 1, 1 ]
             MedicalDoctor: [ 2, 2 ]
             Paramedic: [ 1, 1 ]
@@ -59,7 +58,7 @@
             SecurityOfficer: [ 1, 2 ]
             Detective: [ 1, 1 ]
             SecurityCadet: [ 2, 2 ] #intern, not counted
-            Lawyer: [ 1, 1 ]
+            #Lawyer: [ 1, 1 ]
             #supply (0)
             #civilian (1+)
             Passenger: [ -1, -1 ] #infinite, not counted
