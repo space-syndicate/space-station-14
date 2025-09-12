@@ -135,7 +135,7 @@
     minimumPlayers: 0
   - type: MeteorSwarm
     announcement: station-event-space-dust-start-announcement
-    announcementSound: /Audio/Corvax/Announcements/dust.ogg # Corvax-Announcements #base:/Audio/Announcements/attention.ogg
+    announcementSound: /Audio/Announcements/attention.ogg
     nonDirectional: true
     meteors:
       MeteorSpaceDust: 1
