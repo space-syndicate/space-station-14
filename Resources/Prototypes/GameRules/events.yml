@@ -649,7 +649,7 @@
   components:
   - type: StationEvent
     startAudio:
-      path: /Audio/Corvax/Announcements/greytide.ogg # Corvax-Announcements #base:/Audio/Announcements/attention.ogg
+      path: /Audio/Announcements/attention.ogg
     weight: 5
     minimumPlayers: 25
     reoccurrenceDelay: 20
