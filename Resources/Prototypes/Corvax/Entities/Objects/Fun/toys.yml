@@ -38,3 +38,47 @@
       collection: RubberPig
       params:
         variation: 0.125
+
+- type: entity
+  parent: BasePlushie
+  id: PlushieGeoffroy
+  name: Geoffroy Krisp soft toy
+  description: "A plush toy in the form of Geoffroy Krisp the nian dressed as a bartender, it faintly smells of chamomile... On the side, there is a small tag with the inscription: «Geoffroy Krisp Clothing — 'I personally allow you to hug this toy to death!', Exclusive design by Ceterai — 'Just don’t wear a cloak in the presence of this nian~'»"
+  components:
+  - type: Sprite
+    sprite: Corvax/Objects/Fun/Plushies/geoffroy.rsi
+    state: icon
+  - type: EmitSoundOnUse
+    sound:
+      path: /Audio/Corvax/Items/Toys/yamol.ogg
+  - type: EmitSoundOnLand
+    sound:
+      path: /Audio/Corvax/Items/Toys/yamol.ogg
+  - type: EmitSoundOnActivate
+    sound:
+      path: /Audio/Corvax/Items/Toys/yamol.ogg
+  - type: EmitSoundOnTrigger
+    sound:
+      path: /Audio/Corvax/Items/Toys/yamol.ogg
+  - type: EmitSoundOnCollide
+    sound:
+      path: /Audio/Corvax/Items/Toys/yamol.ogg
+  - type: Food
+    requiresSpecialDigestion: true
+    useSound:
+      path: /Audio/Corvax/Items/Toys/yamol.ogg
+  - type: MeleeWeapon
+    wideAnimationRotation: 180
+    soundHit:
+      path: /Audio/Corvax/Items/Toys/yamol.ogg
+  - type: Clothing
+    quickEquip: false
+    sprite: Corvax/Objects/Fun/Plushies/geoffroy.rsi
+    slots:
+    - HEAD
+    clothingVisuals:
+      head:
+      - state: equipped-HELMET
+  - type: FoodSequenceElement
+    entries:
+      CottonBurger: GeoffroyPlushie
