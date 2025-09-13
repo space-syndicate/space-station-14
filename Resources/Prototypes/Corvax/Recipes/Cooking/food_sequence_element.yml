@@ -1,0 +1,8 @@
+- type: foodSequenceElement
+  id: GeoffroyPlushie
+  name: food-sequence-cotton-burger-content-plushie-Geoffroy
+  scale: 0.75, 0.75
+  sprites:
+  - sprite: Corvax/Objects/Fun/Plushies/geoffroy.rsi
+    state: icon
+    noRot: true

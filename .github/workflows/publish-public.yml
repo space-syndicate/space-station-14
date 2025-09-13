@@ -10,7 +10,7 @@ on:
 
 jobs:
   build:
-    runs-on: ubuntu-latest
+    runs-on: [self-hosted]
 
     steps:
 #    - name: Install dependencies
@@ -24,6 +24,16 @@ jobs:
       uses: actions/setup-dotnet@v4.1.0
       with:
         dotnet-version: 9.0.x
+      env:
+        DOTNET_INSTALL_DIR: ${{ runner.temp }}/.dotnet
+
+    - name: Set DOTNET_ROOT and PATH
+      run: |
+        echo "DOTNET_ROOT=${{ runner.temp }}/.dotnet" >> $GITHUB_ENV
+        echo "${{ runner.temp }}/.dotnet" >> $GITHUB_PATH
+
+    - name: Check .NET installation
+      run: dotnet --info
 
     - name: Get Engine Tag
       run: |

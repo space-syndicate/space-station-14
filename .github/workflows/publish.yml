@@ -10,7 +10,7 @@ on:
   - cron: '0 1 * * *'
 jobs:
   build:
-    runs-on: ubuntu-latest
+    runs-on: [self-hosted]
     steps:
     - name: Fail if we are attempting to run on the master branch
       if: ${{GITHUB.REF_NAME == 'master' && github.repository == 'space-wizards/space-station-14'}}
@@ -29,11 +29,13 @@ jobs:
         SSH_KEY: ${{ secrets.SECRETS_PRIVATE_KEY }}
       if: ${{ env.SSH_KEY != '' }}
       run: |
-        mkdir ~/.ssh
+        mkdir -p ~/.ssh
         echo "${{ secrets.SECRETS_PRIVATE_KEY }}" > ~/.ssh/id_rsa
         chmod 600 ~/.ssh/id_rsa
         echo "HOST *" > ~/.ssh/config
-        echo "StrictHostKeyChecking no" >> ~/.ssh/config
+        echo "  Hostname github.com" >> ~/.ssh/config
+        echo "  Port 22" >> ~/.ssh/config
+        echo "  StrictHostKeyChecking no" >> ~/.ssh/config
         git clone git@github.com:corvax-nexus/secrets.git Secrets
         cp -R Secrets/Resources/Prototypes Resources/Prototypes/CorvaxSecrets
         cp -R Secrets/Resources/ServerPrototypes Resources/Prototypes/CorvaxSecretsServer
@@ -46,6 +48,16 @@ jobs:
       uses: actions/setup-dotnet@v4.1.0
       with:
         dotnet-version: 9.0.x
+      env:
+        DOTNET_INSTALL_DIR: ${{ runner.temp }}/.dotnet
+
+    - name: Set DOTNET_ROOT and PATH
+      run: |
+        echo "DOTNET_ROOT=${{ runner.temp }}/.dotnet" >> $GITHUB_ENV
+        echo "${{ runner.temp }}/.dotnet" >> $GITHUB_PATH
+
+    - name: Check .NET installation
+      run: dotnet --info
 
     - name: Get Engine Tag
       run: |

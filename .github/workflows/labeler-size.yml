@@ -2,7 +2,7 @@ name: "Labels: Size"
 on: pull_request_target
 jobs:
   size-label:
-    runs-on: ubuntu-latest
+    runs-on: [self-hosted]
     steps:
       - name: size-label
         uses: "pascalgn/size-label-action@v0.5.5"
