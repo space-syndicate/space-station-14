@@ -38,3 +38,15 @@
       collection: RubberPig
       params:
         variation: 0.125
+
+- type: entity
+  parent: [ WhoopieCushion, BaseRubberToy ]
+  id: CfifPig
+  name: cfif's pig
+  description: Probably best thing that you have ever seen in this life...
+  components:
+  - type: Sprite
+    sprite: Corvax/Objects/Fun/toys.rsi
+    state: cfif_perdelka
+  - type: TileFrictionModifier # because it dashes
+    modifier: 0.5

@@ -1,7 +1,7 @@
 {
   "version": 1,
   "license": "CC-BY-SA-3.0",
-  "copyright": "rubber_pig by Moryachok136",
+  "copyright": "rubber_pig by Moryachok136; 'cfif_perdelka' state has been created by kosticia (GitHub, Discord) for the space station 14 based on the base 'rubber_pig' state",
   "size": {
     "x": 32,
     "y": 32
@@ -9,6 +9,9 @@
   "states": [
     {
       "name": "rubber_pig"
+    },
+    {
+      "name": "cfif_perdelka"
     }
   ]
 }
