@@ -1,4 +1,4 @@
-﻿signal-port-name-autoclose = Автозакрытие
+signal-port-name-autoclose = Автозакрытие
 signal-port-description-autoclose = Переключает, должно ли устройство автоматически закрываться.
 signal-port-name-toggle = Переключить
 signal-port-description-toggle = Переключает состояние устройства.
