@@ -1,4 +1,4 @@
-ent-BaseStructureWall = базовая стена
+﻿ent-BaseStructureWall = базовая стена
     .desc = Удерживает воздух внутри, а грейтайдеров снаружи.
 ent-BaseWall = { ent-BaseStructureWall }
     .desc = { ent-BaseStructureWall.desc }
@@ -68,6 +68,14 @@ ent-WallSolidChitin = твёрдый хитин
     .desc = { ent-BaseWall.desc }
 ent-WallReinforcedChitin = укреплённый хитин
     .desc = { ent-BaseWall.desc }
+<<<<<<< HEAD
+=======
+ent-WallXenoborg = ксеноборг-стена
+    .desc = { ent-WallPlastitanium.desc }
+ent-WallXenoborgDiagonal = ксеноборг-стена
+    .suffix = Диагональ
+    .desc = { ent-WallPlastitaniumDiagonal.desc }
+>>>>>>> 4877c6d59c (08 31 translate (#108))
 ent-WallUranium = урановая стена
     .desc = { ent-BaseWall.desc }
 ent-WallWood = деревянная стена

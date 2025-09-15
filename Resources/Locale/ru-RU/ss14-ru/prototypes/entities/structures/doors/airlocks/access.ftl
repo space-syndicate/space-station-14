@@ -1,4 +1,4 @@
-ent-AirlockServiceLocked = { ent-Airlock }
+﻿ent-AirlockServiceLocked = { ent-Airlock }
     .suffix = Сервис, Закрыт
     .desc = { ent-Airlock.desc }
 ent-AirlockLawyerLocked = { ent-AirlockServiceLocked }
@@ -354,6 +354,12 @@ ent-AirlockSyndicateLocked = { ent-AirlockSyndicate }
 ent-AirlockSyndicateNukeopLocked = { ent-AirlockSyndicate }
     .suffix = Ядерные Оперативники, Закрыт
     .desc = { ent-AirlockSyndicate.desc }
+<<<<<<< HEAD
+=======
+ent-AirlockXenoborgLocked = { ent-AirlockXenoborg }
+    .suffix = Ксеноборг, Закрыт
+    .desc = { ent-AirlockXenoborg.desc }
+>>>>>>> 4877c6d59c (08 31 translate (#108))
 ent-AirlockExternalShuttleLocked = { ent-AirlockShuttle }
     .suffix = Внешний, Стыковочный, Закрыт
     .desc = { ent-AirlockShuttle.desc }
@@ -363,6 +369,12 @@ ent-AirlockExternalShuttleSyndicateLocked = { ent-AirlockShuttleSyndicate }
 ent-AirlockExternalShuttleNukeopLocked = { ent-AirlockShuttleSyndicate }
     .suffix = Внешний, Стыковочный, Ядерные Оперативники, Закрыт
     .desc = { ent-AirlockShuttleSyndicate.desc }
+<<<<<<< HEAD
+=======
+ent-AirlockGlassShuttleXenoborgLocked = { ent-AirlockShuttleXenoborg }
+    .suffix = Внешний, Стыковочный, Ксеноборг, Закрыт
+    .desc = { ent-AirlockShuttleXenoborg.desc }
+>>>>>>> 4877c6d59c (08 31 translate (#108))
 ent-AirlockExternalGlassShuttleLocked = { ent-AirlockGlassShuttle }
     .suffix = Внешний, Стеклянный, Стыковочный, Закрыт
     .desc = { ent-AirlockGlassShuttle.desc }

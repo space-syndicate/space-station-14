@@ -1,4 +1,4 @@
-ent-BaseComputerCircuitboard = консольная плата
+﻿ent-BaseComputerCircuitboard = консольная плата
     .desc = { ent-BaseItem.desc }
 ent-AlertsComputerCircuitboard = консоль атмосферной сигнализации (консольная плата)
     .desc = Консольная плата для консоли атмосферной сигнализации.
@@ -40,6 +40,11 @@ ent-SurveillanceCameraMonitorCircuitboard = монитор камер наблю
     .desc = Консольная плата для монитора камер наблюдения.
 ent-SurveillanceWirelessCameraMonitorCircuitboard = монитор беспроводных камер наблюдения (консольная плата)
     .desc = Консольная плата для монитора беспроводных камер наблюдения.
+<<<<<<< HEAD
+=======
+ent-XenoborgCameraMonitorCircuitboard = монитор камер ксеноборгов (консольная плата)
+    .desc = Консольная плата для монитора камер ксеноборгов.
+>>>>>>> 4877c6d59c (08 31 translate (#108))
 ent-ComputerTelevisionCircuitboard = телевизор (консольная плата)
     .desc = Консольная плата для телевизора.
 ent-ResearchComputerCircuitboard = исследовательская консоль (консольная плата)
@@ -88,5 +93,10 @@ ent-SensorConsoleCircuitboard = консоль мониторинга датчи
     .desc = Консольная плата для консоли мониторинга датчиков.
 ent-RoboticsConsoleCircuitboard = консоль управления робототехникой (консольная плата)
     .desc = Консольная плата для консоли управления робототехникой.
+<<<<<<< HEAD
+=======
+ent-ComputerXenoborgsControlCircuitboard = консоль управления ксеноборгами (консольная плата)
+    .desc = Консольная плата для консоли управления ксеноборгами.
+>>>>>>> 4877c6d59c (08 31 translate (#108))
 ent-StationAiUploadCircuitboard = консоль загрузки ИИ (консольная плата)
     .desc = Консольная плата для консоли загрузки ИИ.

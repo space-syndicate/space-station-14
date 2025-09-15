@@ -1,4 +1,4 @@
-ent-AutolatheMachineCircuitboard = автолат (машинная плата)
+﻿ent-AutolatheMachineCircuitboard = автолат (машинная плата)
     .desc = Печатная плата автолата.
 ent-AutolatheHyperConvectionMachineCircuitboard = гиперконвекционный автолат (машинная плата)
     .desc = Печатная плата гиперконвекционного автолата.
@@ -136,6 +136,11 @@ ent-SurveillanceCameraRouterCircuitboard = маршрутизатор камер
     .desc = Печатная плата маршрутизатора камер наблюдения.
 ent-SurveillanceCameraWirelessRouterCircuitboard = маршрутизатор беспроводных камер наблюдения (машинная плата)
     .desc = Печатная плата маршрутизатора беспроводных камер наблюдения.
+<<<<<<< HEAD
+=======
+ent-SurveillanceCameraWirelessRouterXenoborgCircuitboard = маршрутизатор камер ксеноборгов (машинная плата)
+    .desc = Печатная плата маршрутизатора камер ксеноборгов.
+>>>>>>> 4877c6d59c (08 31 translate (#108))
 ent-SurveillanceWirelessCameraMovableCircuitboard = мобильная беспроводная камера (машинная плата)
     .desc = Печатная плата мобильной беспроводной камеры.
 ent-SurveillanceWirelessCameraAnchoredCircuitboard = беспроводная камера (машинная плата)

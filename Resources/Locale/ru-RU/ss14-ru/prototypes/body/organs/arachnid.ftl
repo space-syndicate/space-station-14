@@ -1,6 +1,6 @@
-ent-BaseArachnidOrgan = { ent-BaseItem }
+﻿ent-BaseArachnidOrgan = { ent-BaseItem }
     .desc = { ent-BaseItem.desc }
-ent-OrganArachnidStomach = желудок
+ent-OrganArachnidStomach = { ent-OrganAnimalStomach }
     .desc = Мерзость. Не перевариваю его.
 ent-OrganArachnidLungs = лёгкие
     .desc = Фильтрует кислород из атмосферы... только более жадно.
