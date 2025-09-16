@@ -1,3 +1,5 @@
+ent-BaseHighlyIllegalContraband = { "" }
+    .desc = { "" }
 ent-BaseXenoborgContraband = { "" }
     .desc = { "" }
 ent-BaseMagicalContraband = { "" }
