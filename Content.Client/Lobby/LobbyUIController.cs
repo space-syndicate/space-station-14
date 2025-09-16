@@ -73,6 +73,7 @@ public sealed partial class LobbyUIController : UIController, IOnStateEntered<Lo
         });
 
         _configurationManager.OnValueChanged(CCVars.GameRoleTimers, _ => RefreshProfileEditor());
+        _configurationManager.OnValueChanged(CCVars.GameRoleLoadoutTimers, _ => RefreshProfileEditor());
 
         _configurationManager.OnValueChanged(CCVars.GameRoleWhitelist, _ => RefreshProfileEditor());
     }
@@ -362,7 +363,7 @@ public sealed partial class LobbyUIController : UIController, IOnStateEntered<Lo
         {
             foreach (var loadout in group)
             {
-                if (!_prototypeManager.TryIndex(loadout.Prototype, out var loadoutProto))
+                if (!_prototypeManager.Resolve(loadout.Prototype, out var loadoutProto))
                     continue;
 
                 _spawn.EquipStartingGear(uid, loadoutProto);
@@ -385,14 +386,14 @@ public sealed partial class LobbyUIController : UIController, IOnStateEntered<Lo
             {
                 foreach (var loadout in loadouts)
                 {
-                    if (!_prototypeManager.TryIndex(loadout.Prototype, out var loadoutProto))
+                    if (!_prototypeManager.Resolve(loadout.Prototype, out var loadoutProto))
                         continue;
 
                     // TODO: Need some way to apply starting gear to an entity and replace existing stuff coz holy fucking shit dude.
                     foreach (var slot in slots)
                     {
                         // Try startinggear first
-                        if (_prototypeManager.TryIndex(loadoutProto.StartingGear, out var loadoutGear))
+                        if (_prototypeManager.Resolve(loadoutProto.StartingGear, out var loadoutGear))
                         {
                             var itemType = ((IEquipmentLoadout) loadoutGear).GetGear(slot.Name);
 
@@ -427,7 +428,7 @@ public sealed partial class LobbyUIController : UIController, IOnStateEntered<Lo
             }
         }
 
-        if (!_prototypeManager.TryIndex(job.StartingGear, out var gear))
+        if (!_prototypeManager.Resolve(job.StartingGear, out var gear))
             return;
 
         foreach (var slot in slots)
