@@ -88,6 +88,13 @@
           32:
             sprite: Mobs/Species/Reptilian/displacement.rsi
             state: mask
+      # Corvax-Digitigrade-Start
+      shoes:
+        sizeMaps:
+          32:
+            sprite: Corvax/Mobs/Species/displacement.rsi
+            state: shoes
+      # Corvax-Displacements-End
     displacements:
       head:
         sizeMaps:
@@ -100,12 +107,6 @@
             sprite: Mobs/Species/Reptilian/displacement.rsi
             state: mask
     # Corvax-Digitigrade-Start
-      shoes:
-        sizeMaps:
-          32:
-            sprite: Corvax/Mobs/Species/displacement.rsi
-            state: shoes
-    displacements:
       jumpsuit:
         sizeMaps:
           32:
@@ -149,6 +150,13 @@
           32:
             sprite: Mobs/Species/Reptilian/displacement.rsi
             state: mask
+      # Corvax-Digitigrade-Start
+      shoes:
+        sizeMaps:
+          32:
+            sprite: Corvax/Mobs/Species/displacement.rsi
+            state: shoes
+      # Corvax-Digitigrade-Ens
     displacements:
       head:
         sizeMaps:
@@ -161,12 +169,6 @@
             sprite: Mobs/Species/Reptilian/displacement.rsi
             state: mask
     # Corvax-Digitigrade-Start
-      shoes:
-        sizeMaps:
-          32:
-            sprite: Corvax/Mobs/Species/displacement.rsi
-            state: shoes
-    displacements:
       jumpsuit:
         sizeMaps:
           32:
