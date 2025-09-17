@@ -11,7 +11,7 @@ on:
 jobs:
   validate_rsis:
     name: Validate RSIs
-    runs-on: [self-hosted]
+    runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4.2.2
       - name: Setup Submodule
@@ -22,7 +22,7 @@ jobs:
           SSH_KEY: ${{ secrets.SECRETS_PRIVATE_KEY }}
         if: ${{ env.SSH_KEY != '' }}
         run: |
-          mkdir -p ~/.ssh
+          mkdir ~/.ssh
           echo "${{ secrets.SECRETS_PRIVATE_KEY }}" > ~/.ssh/id_rsa
           chmod 600 ~/.ssh/id_rsa
           echo "HOST *" > ~/.ssh/config
@@ -31,9 +31,9 @@ jobs:
       # Corvax-Secrets-End
       - name: Pull engine updates
         uses: space-wizards/submodule-dependency@v0.1.5
-      #- name: Install Python dependencies
-      #  run: |
-      #    pip3 install --ignore-installed --user pillow jsonschema
+      - name: Install Python dependencies
+        run: |
+          pip3 install --ignore-installed --user pillow jsonschema
       - name: Validate RSIs
         run: |
           python3 RobustToolbox/Schemas/validate_rsis.py Resources/

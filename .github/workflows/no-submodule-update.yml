@@ -8,7 +8,7 @@ on:
 jobs:
   this_aint_right:
     name: Submodule update in pr found
-    runs-on: [self-hosted]
+    runs-on: ubuntu-latest
     steps:
       - name: Fail
         run: exit 1
