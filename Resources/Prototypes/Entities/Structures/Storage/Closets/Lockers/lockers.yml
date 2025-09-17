@@ -184,10 +184,12 @@
     stateBaseClosed: freezer
     stateDoorOpen: freezer_open
     stateDoorClosed: freezer_door
+    #Corvax
   - type: EntityStorage
     onlyOneInContainerWithTag: true
+    #Corvax-end
   - type: ExplosionResistance
-    damageCoefficient: 0.05
+    damageCoefficient: 0.01 #Corvax
   - type: AntiRottingContainer
   - type: Construction
     graph: ClosetFreezer

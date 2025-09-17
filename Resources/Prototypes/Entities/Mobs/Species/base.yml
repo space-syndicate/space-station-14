@@ -206,7 +206,9 @@
     - FootstepSound
     - DoorBumpOpener
     - AnomalyHost
+    #Corvax
     - OnlyOneInContainer
+    #Corvax-end
 
 - type: entity
   save: false
