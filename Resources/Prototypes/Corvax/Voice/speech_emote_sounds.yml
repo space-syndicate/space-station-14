@@ -1,6 +1,6 @@
 # species
 - type: emoteSounds
-  id: MaleVulpkanin
+  id: MaleCorvaxVulpkanin
   params:
     variation: 0.125
   sounds:
@@ -34,7 +34,7 @@
       collection: MaleDeathGasp
 
 - type: emoteSounds
-  id: FemaleVulpkanin
+  id: FemaleCorvaxVulpkanin
   params:
     variation: 0.125
   sounds:
