@@ -6,7 +6,7 @@
   abstract: true
   components:
   - type: HumanoidAppearance
-    species: Vulpkanin
+    species: CorvaxVulpkanin
   - type: Hunger # on 1.5x more
     thresholds:
       Overfed: 250
@@ -27,7 +27,7 @@
     sprite: Corvax/Mobs/Species/Vulpkanin/parts.rsi
     state: full
   - type: Body
-    prototype: Vulpkanin
+    prototype: CorvaxVulpkanin
     requiredLegs: 2
   - type: Inventory
     speciesId: reptilian # whyyy
@@ -60,9 +60,9 @@
     allowedEmotes: ['Howl', 'Growl']
   - type: Vocal
     sounds:
-      Male: MaleVulpkanin
-      Female: FemaleVulpkanin
-      Unsexed: MaleVulpkanin
+      Male: MaleCorvaxVulpkanin
+      Female: FemaleCorvaxVulpkanin
+      Unsexed: MaleCorvaxVulpkanin
   - type: GrowlingAccent
   - type: MeleeWeapon
     animation: WeaponArcClaw
@@ -73,7 +73,7 @@
         Slash: 5
   - type: Damageable
     damageContainer: Biological
-    damageModifierSet: Vulpkanin
+    damageModifierSet: CorvaxVulpkanin
   - type: Respirator
     damage:
       types:
