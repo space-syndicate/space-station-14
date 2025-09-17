@@ -326,6 +326,14 @@
   - howls
   - howling
   - howled
+# Corvax-Localization-Start
+  - воет
+  - воет.
+  - воет!
+  - завывает
+  - завывает.
+  - завывает!
+# Corvax-Localization-End
 
 - type: emote
   id: Growl
@@ -344,6 +352,11 @@
   - growls
   - growled
   - growling
+  # Corvax-Localization-Start
+  - рычит
+  - рычит.
+  - рычит!
+  # Corvax-Localization-End
 
 # hand emotes
 - type: emote

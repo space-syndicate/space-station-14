@@ -57,7 +57,7 @@
     targetZoom: "1.0, 1.0"
     maxZoom: "1.0, 1.0"
   - type: Speech
-    allowedEmotes: ['CorvaxVulpkaninHowl', 'CorvaxVulpkaninGrowl']
+    allowedEmotes: ['Howl', 'Growl']
   - type: Vocal
     sounds:
       Male: MaleCorvaxVulpkanin
