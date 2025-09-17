@@ -44,6 +44,12 @@ public sealed partial class EntityStorageComponent : Component, IGasMixtureHolde
     public bool IsCollidableWhenOpen;
 
     /// <summary>
+    /// Only one instance of an object with a specific tag can be in a container
+    /// </summary>
+    [DataField]
+    public bool OnlyOneInContainerWithTag = false;
+
+    /// <summary>
     /// If true, it opens the storage when the entity inside of it moves
     /// If false, it prevents the storage from opening when the entity inside of it moves.
     /// This is for objects that you want the player to move while inside, like large cardboard boxes, without opening the storage.
