@@ -1,7 +1,7 @@
 - type: species
   id: CorvaxVulpkanin
   name: species-name-vulpkanin
-  roundStart: false
+  roundStart: True
   sponsorOnly: false # Corvax-Sponsors
   prototype: MobCorvaxVulpkanin
   sprites: MobCorvaxVulpkaninSprites
