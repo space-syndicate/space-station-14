@@ -139,7 +139,6 @@ tiles-xeno-floor = ксенопол
 tiles-xeno-steel = стальная ксеноплитка
 tiles-xeno-steel-corner = стальная угловая ксеноплитка
 tiles-xeno-maint = технический ксенопол
-tiles-xenoborg-floor = ксеноборг пол
 tiles-dark-squiggly = тёмная волнистая стальная плитка
 tiles-white-marble = белая мраморная плитка
 tiles-dark-marble = чёрная мраморная плитка
