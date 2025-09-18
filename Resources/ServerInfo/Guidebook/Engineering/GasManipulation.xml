@@ -1,9 +1,9 @@
-<Document>
-  # Манипуляция газами
-  Атмосфера располагает широким набором инструментов и оборудования для управления газами по всей станции.
+﻿<Document>
+  # Gas Manipulation
+  Atmos has a wide variety of tools and equipment at their disposal for the manipulation of gasses throughout the station.
 
-  [bold]Внимание: открепление (свинчивание) большинства устройств, содержащих газ, приведёт к [color=red]утечке газа[/color] в атмосферу.[/bold]
-  Вы можете безопасно откреплять [textlink="баллоны" link="GasCanisters"], [textlink="переносные скрубберы" link="PortableScrubber"], [textlink="конденсаторы" link="GasCondensing"] и [textlink="термомашины" link="Thermomachines"].
+  [bold]Warning: unanchoring (unwrenching) most devices containing gas will [color=red]leak gas[/color] into the atmosphere.[/bold]
+  You can safely unanchor [textlink="canisters" link="GasCanisters"], [textlink="portable scrubbers" link="PortableScrubber"], [textlink="condensers" link="GasCondensing"], and [textlink="thermomachines" link="Thermomachines"].
 
   <Box>
     <GuideEntityEmbed Entity="GasPipeStraight" Caption=""/>
@@ -13,10 +13,10 @@
     <GuideEntityEmbed Entity="GasPipeFourway" Caption=""/>
   </Box>
   <Box>
-    ## Трубы
+    ## Pipes
   </Box>
   <Box>
-    [color=#999999][italic]Перемещение газов из одного места в другое[italic][/color]
+    [color=#999999][italic]Distributing gasses from one place to another[italic][/color]
   </Box>
 
   <Box>
@@ -24,10 +24,10 @@
     <GuideEntityEmbed Entity="GasVolumePump" Caption=""/>
   </Box>
   <Box>
-    ## Насосы
+    ## Pumps
   </Box>
   <Box>
-    [color=#999999][italic]Принудительное перемещение газов из одного места в другое[italic][/color]
+    [color=#999999][italic]Forcing the movement of gasses from one place to another[italic][/color]
   </Box>
 
   <Box>
@@ -38,10 +38,10 @@
     <GuideEntityEmbed Entity="PortableScrubber" Caption=""/>
   </Box>
   <Box>
-    ## Подача и вывод атмосферы
+    ## Atmosphere Input and Output
   </Box>
   <Box>
-    [color=#999999][italic]Ввод и извлечение газов из существующей (или отсутствующей) атмосферы[italic][/color]
+    [color=#999999][italic]Inserting and extracting gasses from a present (or non-present) atmosphere[italic][/color]
   </Box>
 
   <Box>
@@ -49,12 +49,13 @@
     <GuideEntityEmbed Entity="SignalControlledValve" Caption=""/>
     <GuideEntityEmbed Entity="PressureControlledValve" Caption=""/>
     <GuideEntityEmbed Entity="GasPassiveGate" Caption=""/>
+    <GuideEntityEmbed Entity="GasPressureRegulator" Caption=""/>
   </Box>
   <Box>
-    ## Клапаны
+    ## Valves
   </Box>
   <Box>
-    [color=#999999][italic]Контроль потока газа через трубы[italic][/color]
+    [color=#999999][italic]Controlling the flow of gas through pipes[italic][/color]
   </Box>
 
   <Box>
@@ -62,10 +63,10 @@
     <GuideEntityEmbed Entity="GasFilter" Caption=""/>
   </Box>
   <Box>
-    ## Смешивание и фильтрация
+    ## Mixing and Filtering
   </Box>
   <Box>
-    [color=#999999][italic]Манипуляция составом газа[italic][/color]
+    [color=#999999][italic]Manipulating the composition of gas[italic][/color]
   </Box>
 
   <Box>
@@ -77,10 +78,10 @@
     <GuideEntityEmbed Entity="GasPort" Caption=""/>
   </Box>
   <Box>
-    ## Канистры
+    ## Gas Canisters
   </Box>
   <Box>
-    [color=#999999][italic]Хранение и транспортировка газа для удобного использования экипажем[italic][/color]
+    [color=#999999][italic]Storing and transporting gas for easy use by the crew[italic][/color]
   </Box>
 
   <Box>
@@ -90,19 +91,19 @@
     <GuideEntityEmbed Entity="HeatExchanger" Caption=""/>
   </Box>
   <Box>
-    ## Термомашины и радиаторы
+    ## Thermomachines and Radiators
   </Box>
   <Box>
-    [color=#999999][italic]Регулировка температуры газов в трубопроводе или атмосфере[italic][/color]
+    [color=#999999][italic]Manipulating the temperature of gasses in a pipenet or atmosphere[italic][/color]
   </Box>
 
   <Box>
     <GuideEntityEmbed Entity="BaseGasCondenser" Caption=""/>
   </Box>
   <Box>
-    ## Конденсация газов
+    ## Gas Condensing
   </Box>
   <Box>
-    [color=#999999][italic]Конденсация газов для дальнейшего использования[italic][/color]
+    [color=#999999][italic]Condensing gasses for further use[italic][/color]
   </Box>
 </Document>

@@ -115,6 +115,3 @@ ent-DoorElectronicsMaintenance = { ent-DoorElectronics }
 ent-DoorElectronicsVault = { ent-DoorElectronics }
     .suffix = Vault, Locked
     .desc = { ent-DoorElectronics.desc }
-ent-DoorElectronicsXenoborg = { ent-DoorElectronics }
-    .suffix = Xenoborg, Locked
-    .desc = { ent-DoorElectronics.desc }

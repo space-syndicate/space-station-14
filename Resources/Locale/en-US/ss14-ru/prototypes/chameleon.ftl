@@ -1,2 +1,2 @@
-ent-BaseChameleon = { ent-SelectableLock }
-    .desc = { ent-SelectableLock.desc }
+ent-BaseChameleon = { ent-VoiceLock }
+    .desc = { ent-VoiceLock.desc }

@@ -1,2 +1,2 @@
-ent-SelectableLock = { "" }
+ent-VoiceLock = { "" }
     .desc = { "" }

@@ -35,5 +35,3 @@ ent-SurveillanceCameraWirelessRouterConstructed = { ent-SurveillanceCameraWirele
 ent-SurveillanceCameraWirelessRouterEntertainment = entertainment camera router
     .suffix = Entertainment
     .desc = { ent-SurveillanceCameraWirelessRouterBase.desc }
-ent-SurveillanceCameraWirelessRouterXenoborg = xenoborg camera wireless router
-    .desc = { ent-SurveillanceCameraWirelessRouterBase.desc }
