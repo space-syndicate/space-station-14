@@ -221,5 +221,7 @@ ent-FloorTileItemXenoSteelCorner = xeno steel corner floor
     .desc = { ent-FloorTileItemBase.desc }
 ent-FloorTileItemXenoMaint = xeno techmaint floor
     .desc = { ent-FloorTileItemBase.desc }
+ent-FloorTileItemXenoborg = xenoborg floor
+    .desc = { ent-FloorTileItemBase.desc }
 ent-FloorTileItemDarkSquiggly = dark steel squiggly tile
     .desc = { ent-FloorTileItemDark.desc }

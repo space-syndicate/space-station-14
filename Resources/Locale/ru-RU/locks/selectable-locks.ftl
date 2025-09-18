@@ -1,0 +1,11 @@
+selectable-lock-verb-category-name = Добавить замок
+selectable-lock-no-lock-verb = Без замка
+selectable-lock-no-lock-popup = К { THE($target) } не был добавлен замок.
+selectable-lock-voice-verb = Голосовой замок
+selectable-lock-voice-popup = К { THE($target) } был добавлен голосовой замок.
+selectable-lock-tool-prying-verb = Замок на инструмент (Лом)
+selectable-lock-tool-prying-popup = К { THE($target) } был добавлен замок на монтировку.
+selectable-lock-tool-screwing-verb = Замок на инструмент (Отвёртка)
+selectable-lock-tool-screwing-popup = К { THE($target) } был добавлен замок на отвёртку.
+selectable-lock-tool-cutting-verb = Замок на инструмент (Кусачки)
+selectable-lock-tool-cutting-popup = К { THE($target) } был добавлен замок на кусачки.
