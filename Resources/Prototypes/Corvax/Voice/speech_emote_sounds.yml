@@ -1,6 +1,6 @@
 # species
 - type: emoteSounds
-  id: MaleVulpkanin
+  id: MaleCorvaxVulpkanin
   params:
     variation: 0.125
   sounds:
@@ -9,7 +9,7 @@
     Laugh:
       collection: MaleLaugh
     Growl:
-      collection: Growl
+      collection: CorvaxVulpkaninGrowl
     Howl:
       path: /Audio/Corvax/Effects/howl.ogg
     Sneeze:
@@ -34,7 +34,7 @@
       collection: MaleDeathGasp
 
 - type: emoteSounds
-  id: FemaleVulpkanin
+  id: FemaleCorvaxVulpkanin
   params:
     variation: 0.125
   sounds:
@@ -43,7 +43,7 @@
     Laugh:
       collection: FemaleLaugh
     Growl:
-      collection: Growl
+      collection: CorvaxVulpkaninGrowl
     Howl:
       path: /Audio/Corvax/Effects/howl.ogg
     Sneeze:

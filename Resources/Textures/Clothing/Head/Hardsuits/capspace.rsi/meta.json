@@ -1,7 +1,7 @@
 {
     "version": 1,
     "license": "CC-BY-SA-3.0",
-    "copyright": "Taken from tgstation at commit https://github.com/tgstation/tgstation/commit/4f6190e2895e09116663ef282d3ce1d8b35c032e, modified by Emisse for SS14. Vox states by Flareguy for SS14. Dog states modified from base states in a collaborative shared effort by casiliuscestus (GitHub), Sparlight (GitHub), and Raccoononi (GitHub) for SS14.",
+    "copyright": "Taken from tgstation at commit https://github.com/tgstation/tgstation/commit/4f6190e2895e09116663ef282d3ce1d8b35c032e, modified by Emisse for SS14. Vox states by Flareguy for SS14. Dog states modified from base states in a collaborative shared effort by casiliuscestus (GitHub), Sparlight (GitHub), and Raccoononi (GitHub) for SS14. Vulpkanin and Reptilian states by TiniestShark (Github).",
   "copyright": "Taken from tgstation at commit https://github.com/tgstation/tgstation/commit/97ec5ed1a0fc8263df5df5a5afbb653d4684992e & light version made by github:Morb0. Vox states by Flareguy for SS14. Vox states by Flareguy for SS14, Vox resprite created by svarshiksatanist on discord",
     "size": {
         "x": 32,
@@ -23,6 +23,10 @@
             "directions": 4
         },
         {
+            "name": "off-equipped-HELMET-reptilian",
+            "directions": 4
+        },
+        {
             "name": "off-equipped-HELMET-dog",
             "directions": 4
         },
@@ -32,6 +36,18 @@
         },
         {
             "name": "on-equipped-HELMET-vox",
+            "directions": 4
+        },
+        {
+            "name": "on-equipped-HELMET-reptilian",
+            "directions": 4
+        },
+        {
+            "name": "off-equipped-HELMET-vulpkanin",
+            "directions": 4
+        },
+        {
+            "name": "on-equipped-HELMET-vulpkanin",
             "directions": 4
         },
         {

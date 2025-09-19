@@ -1,4 +1,4 @@
-﻿using System.Diagnostics;
+using System.Diagnostics;
 using System.IO.Compression;
 using Robust.Packaging;
 using Robust.Packaging.AssetProcessing;
@@ -103,7 +103,11 @@ public static class ClientPackaging
             assemblies, // Corvax-Secrets
             cancel: cancel);
 
-        await WriteClientResources(contentDir, inputPass, cancel); // Corvax-Secrets: Support content resource ignore to ignore server-only prototypes
+        await WriteClientResources(
+            contentDir,
+            inputPass,
+            SharedPackaging.AdditionalIgnoredResources,
+            cancel);
 
         inputPass.InjectFinished();
     }
@@ -117,11 +121,12 @@ public static class ClientPackaging
     private static async Task WriteClientResources(
         string contentDir,
         AssetPass pass,
+        IReadOnlySet<string> additionalIgnoredResources,
         CancellationToken cancel = default)
     {
         var ignoreSet = RobustClientPackaging.ClientIgnoredResources
             .Union(RobustSharedPackaging.SharedIgnoredResources)
-            .Union(ContentClientIgnoredResources).ToHashSet();
+            .Union(ContentClientIgnoredResources).Union(additionalIgnoredResources).ToHashSet();
 
         await RobustSharedPackaging.DoResourceCopy(Path.Combine(contentDir, "Resources"), pass, ignoreSet, cancel: cancel);
     }

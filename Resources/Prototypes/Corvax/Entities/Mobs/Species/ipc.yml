@@ -5,6 +5,7 @@
   id: BaseMobIpc
   abstract: true
   components:
+  - type: Crawler
   - type: HumanoidAppearance
     species: Ipc
   - type: Icon

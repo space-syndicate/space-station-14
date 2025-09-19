@@ -1,7 +1,7 @@
 # TODO: Add descriptions (many)
 # TODO BODY: Part damage
 - type: entity
-  id: PartVulpkanin
+  id: PartCorvaxVulpkanin
   parent: [BaseItem, BasePart]
   name: "vulpkanin body part"
   abstract: true
@@ -15,9 +15,9 @@
             Quantity: 10
 
 - type: entity
-  id: TorsoVulpkanin
+  id: TorsoCorvaxVulpkanin
   name: "vulpkanin torso"
-  parent: [PartVulpkanin, BaseTorso]
+  parent: [PartCorvaxVulpkanin, BaseTorso]
   components:
     - type: Sprite
       sprite: Corvax/Mobs/Species/Vulpkanin/parts.rsi
@@ -31,9 +31,9 @@
             Quantity: 20
 
 - type: entity
-  id: HeadVulpkanin
+  id: HeadCorvaxVulpkanin
   name: "vulpkanin head"
-  parent: [PartVulpkanin, BaseHead]
+  parent: [PartCorvaxVulpkanin, BaseHead]
   components:
     - type: Sprite
       sprite: Corvax/Mobs/Species/Vulpkanin/parts.rsi
@@ -47,45 +47,45 @@
             Quantity: 10
 
 - type: entity
-  id: LeftArmVulpkanin
+  id: LeftArmCorvaxVulpkanin
   name: "left vulpkanin arm"
-  parent: [PartVulpkanin, BaseLeftArm]
+  parent: [PartCorvaxVulpkanin, BaseLeftArm]
   components:
     - type: Sprite
       sprite: Corvax/Mobs/Species/Vulpkanin/parts.rsi
       state: "l_arm"
 
 - type: entity
-  id: RightArmVulpkanin
+  id: RightArmCorvaxVulpkanin
   name: "right vulpkanin arm"
-  parent: [PartVulpkanin, BaseRightArm]
+  parent: [PartCorvaxVulpkanin, BaseRightArm]
   components:
     - type: Sprite
       sprite: Corvax/Mobs/Species/Vulpkanin/parts.rsi
       state: "r_arm"
 
 - type: entity
-  id: LeftHandVulpkanin
+  id: LeftHandCorvaxVulpkanin
   name: "left vulpkanin hand"
-  parent: [PartVulpkanin, BaseLeftHand]
+  parent: [PartCorvaxVulpkanin, BaseLeftHand]
   components:
     - type: Sprite
       sprite: Corvax/Mobs/Species/Vulpkanin/parts.rsi
       state: "l_hand"
 
 - type: entity
-  id: RightHandVulpkanin
+  id: RightHandCorvaxVulpkanin
   name: "right vulpkanin hand"
-  parent: [PartVulpkanin, BaseRightHand]
+  parent: [PartCorvaxVulpkanin, BaseRightHand]
   components:
     - type: Sprite
       sprite: Corvax/Mobs/Species/Vulpkanin/parts.rsi
       state: "r_hand"
 
 - type: entity
-  id: LeftLegVulpkanin
+  id: LeftLegCorvaxVulpkanin
   name: "left vulpkanin leg"
-  parent: [PartVulpkanin, BaseLeftLeg]
+  parent: [PartCorvaxVulpkanin, BaseLeftLeg]
   components:
     - type: Sprite
       sprite: Corvax/Mobs/Species/Vulpkanin/parts.rsi
@@ -95,9 +95,9 @@
       sprintSpeed : 4.5
 
 - type: entity
-  id: RightLegVulpkanin
+  id: RightLegCorvaxVulpkanin
   name: "right vulpkanin leg"
-  parent: [PartVulpkanin, BaseRightLeg]
+  parent: [PartCorvaxVulpkanin, BaseRightLeg]
   components:
     - type: Sprite
       sprite: Corvax/Mobs/Species/Vulpkanin/parts.rsi
@@ -107,18 +107,18 @@
       sprintSpeed : 4.5
 
 - type: entity
-  id: LeftFootVulpkanin
+  id: LeftFootCorvaxVulpkanin
   name: "left vulpkanin foot"
-  parent: [PartVulpkanin, BaseLeftFoot]
+  parent: [PartCorvaxVulpkanin, BaseLeftFoot]
   components:
     - type: Sprite
       sprite: Corvax/Mobs/Species/Vulpkanin/parts.rsi
       state: "l_foot"
 
 - type: entity
-  id: RightFootVulpkanin
+  id: RightFootCorvaxVulpkanin
   name: "right vulpkanin foot"
-  parent: [PartVulpkanin, BaseRightFoot]
+  parent: [PartCorvaxVulpkanin, BaseRightFoot]
   components:
     - type: Sprite
       sprite: Corvax/Mobs/Species/Vulpkanin/parts.rsi
