@@ -579,9 +579,9 @@
   id: IonStormLawsets
   weights:
     # its crewsimov by default dont be lame
-    Crewsimov: 1 # Corvax-NTDefault swapped with NTDefault
+    Crewsimov: 0.25
     Corporate: 1
-    NTDefault: 0.25 # Corvax-NTDefault swapped with Crewsimov
+    NTDefault: 1
     CommandmentsLawset: 1
     PaladinLawset: 1
     LiveLetLiveLaws: 1
