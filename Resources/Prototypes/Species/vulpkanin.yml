@@ -10,7 +10,8 @@
   skinColoration: VulpkaninColors
   maleFirstNames: names_vulpkanin_male
   femaleFirstNames: names_vulpkanin_female
-  lastNames: names_vulpkanin_last
+  maleLastNames: NamesVulpLast # Corvax-LastnameGender
+  femaleLastNames: NamesVulpLast # Corvax-LastnameGender
 
 - type: speciesBaseSprites
   id: MobVulpkaninSprites
