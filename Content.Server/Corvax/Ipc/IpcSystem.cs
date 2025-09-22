@@ -1,4 +1,4 @@
-﻿using Content.Server.PowerCell;
+using Content.Server.PowerCell;
 using Content.Shared.Actions;
 using Content.Shared.Alert;
 using Content.Shared.Corvax.Ipc;
@@ -113,8 +113,8 @@ public sealed partial class IpcSystem : EntitySystem
 
         if (!_powerCell.TryGetBatteryFromSlot(ent, out var battery, slot) || battery.CurrentCharge / battery.MaxCharge < 0.01f)
         {
-            _alerts.ClearAlert(ent, ent.Comp.BatteryAlert);
-        _alerts.ShowAlert(ent, ent.Comp.NoBatteryAlert);
+            _alerts.ClearAlert(ent.Owner, ent.Comp.BatteryAlert);
+            _alerts.ShowAlert(ent.Owner, ent.Comp.NoBatteryAlert);
 
             _movementSpeedModifier.RefreshMovementSpeedModifiers(ent.Owner);
             return;
@@ -128,8 +128,8 @@ public sealed partial class IpcSystem : EntitySystem
 
         _movementSpeedModifier.RefreshMovementSpeedModifiers(ent.Owner);
 
-        _alerts.ClearAlert(ent, ent.Comp.NoBatteryAlert);
-        _alerts.ShowAlert(ent, ent.Comp.BatteryAlert, chargePercent);
+        _alerts.ClearAlert(ent.Owner, ent.Comp.NoBatteryAlert);
+        _alerts.ShowAlert(ent.Owner, ent.Comp.BatteryAlert, chargePercent);
     }
 
     private void OnRefreshMovementSpeedModifiers(EntityUid uid, IpcComponent comp, RefreshMovementSpeedModifiersEvent args)
