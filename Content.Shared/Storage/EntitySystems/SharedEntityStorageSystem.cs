@@ -11,6 +11,7 @@ using Content.Shared.Lock;
 using Content.Shared.Movement.Events;
 using Content.Shared.Popups;
 using Content.Shared.Storage.Components;
+using Content.Shared.Tag;
 using Content.Shared.Tools.Systems;
 using Content.Shared.Verbs;
 using Content.Shared.Wall;
@@ -22,6 +23,7 @@ using Robust.Shared.Containers;
 using Robust.Shared.GameStates;
 using Robust.Shared.Map;
 using Robust.Shared.Network;
+using Robust.Shared.Prototypes;
 using Robust.Shared.Physics;
 using Robust.Shared.Physics.Systems;
 using Robust.Shared.Timing;
@@ -44,7 +46,12 @@ public abstract class SharedEntityStorageSystem : EntitySystem
     [Dependency] protected readonly SharedTransformSystem TransformSystem = default!;
     [Dependency] private   readonly WeldableSystem _weldable = default!;
     [Dependency] private readonly EntityWhitelistSystem _whitelistSystem = default!;
+    [Dependency] private readonly TagSystem _tag = default!;
     [Dependency] private readonly ActionBlockerSystem _actionBlocker = default!;
+
+    // Corvax
+    public static readonly ProtoId<TagPrototype> OnlyOneWithTag = "OnlyOneInContainer";
+    // Corvax-end
 
     public const string ContainerName = "entity_storage";
 
@@ -357,6 +364,20 @@ public abstract class SharedEntityStorageSystem : EntitySystem
         // Consult the whitelist. The whitelist ignores the default assumption about how entity storage works.
         if (component.Whitelist != null)
             return _whitelistSystem.IsValid(component.Whitelist, toInsert);
+
+        // Corvax
+        // Allows you to add only one entity to the container with the OnlyOneInContainer tag.
+        if (component.OnlyOneInContainerWithTag && _tag.HasTag(toInsert, OnlyOneWithTag))
+        {
+            foreach (var ent in component.Contents.ContainedEntities)
+            {
+                    if (_tag.HasTag(ent, OnlyOneWithTag))
+                    {
+                       return false;
+                    }
+            }
+        }
+        // Corvax-end
 
         // The inserted entity must be a mob or an item.
         return HasComp<MobStateComponent>(toInsert) || HasComp<ItemComponent>(toInsert);
