@@ -50,7 +50,7 @@ namespace Content.Server.Documents
 
             content = content
                 .Replace(":NAME:", idCard?.FullName ?? "(ФИО)")
-                .Replace(":JOB:", idCard?.LocalizedJobTitle ?? "(полное наименование должности)");
+                .Replace(":JOB:", idCard?.LocalizedJobTitle ?? "(полное наименование должности )");
 
             return content;
         }
