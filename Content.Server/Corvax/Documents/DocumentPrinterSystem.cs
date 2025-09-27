@@ -1,4 +1,3 @@
-using Content.Server.Documents;
 using Content.Server.Station.Systems;
 using Content.Shared.Access.Components;
 using Content.Shared.Containers.ItemSlots;
@@ -45,13 +44,16 @@ namespace Content.Server.Corvax.Documents
         {
             var stationTime = GetTimeStation();
 
+            var defaultName = Loc.GetString("doc-text-printer-default-name");
+            var defaultJob = Loc.GetString("doc-text-printer-default-job");
+
             content = content
                 .Replace(":DATE:", stationTime)
                 .Replace(":STATION:", station ?? "Station XX-000");
 
             content = content
-                .Replace(":NAME:", idCard?.FullName ?? "(ФИО)")
-                .Replace(":JOB:", idCard?.LocalizedJobTitle ?? "(полное наименование должности)");
+                .Replace(":NAME:", idCard?.FullName ?? defaultName)
+                .Replace(":JOB:", idCard?.LocalizedJobTitle ?? defaultJob);
 
             return content;
         }
