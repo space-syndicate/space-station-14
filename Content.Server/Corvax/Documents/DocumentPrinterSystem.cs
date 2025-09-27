@@ -1,10 +1,10 @@
-using Content.Shared.Station;
 using Content.Shared.Access.Components;
 using Content.Shared.Containers.ItemSlots;
+using Content.Shared.Corvax.Documents;
 using Content.Shared.Lathe;
 using Content.Shared.Paper;
+using Content.Shared.Station;
 using Robust.Shared.Timing;
-using Content.Shared.Corvax.Documents;
 
 namespace Content.Server.Corvax.Documents;
 
@@ -46,12 +46,12 @@ public sealed partial class DocumentPrinterSystem : EntitySystem
         var stationTime = GetTimeStation();
 
         content = content
-            .Replace(":DATE:", stationTime)
-            .Replace(":STATION:", station ?? Loc.GetString("doc-text-printer-default-station"));
+            .Replace(Loc.GetString("doc-var-date"), stationTime)
+            .Replace(Loc.GetString("doc-var-station"), station ?? Loc.GetString("doc-text-printer-default-station"));
 
         content = content
-            .Replace(":NAME:", idCard?.FullName ?? Loc.GetString("doc-text-printer-default-name"))
-            .Replace(":JOB:", idCard?.LocalizedJobTitle ?? Loc.GetString("doc-text-printer-default-job"));
+            .Replace(Loc.GetString("doc-var-name"), idCard?.FullName ?? Loc.GetString("doc-text-printer-default-name"))
+            .Replace(Loc.GetString("doc-var-job"), idCard?.LocalizedJobTitle ?? Loc.GetString("doc-text-printer-default-job"));
 
         return content;
     }
