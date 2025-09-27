@@ -1,13 +1,13 @@
 robotics-console-window-title = Роботехническая консоль
 robotics-console-no-cyborgs = Киборги отсутствуют!
 robotics-console-select-cyborg = Выберите киборга из списка выше.
-robotics-console-model =  [color=gray]Модель:[/color] { $name }
+robotics-console-model = [color=gray]Модель:[/color] { $name }
 # name is not formatted to prevent players trolling
-robotics-console-designation =  [color=gray]Назначение:[/color]
-robotics-console-battery =  [color=gray]Заряд батареи:[/color] [color={ $color }]{ $charge }[/color]%
-robotics-console-hp =  [color=gray]Целостность:[/color] [color={ $color }]{ $hp }[/color]%
-robotics-console-modules =  [color=gray]Установленные модули:[/color] { $count }
-robotics-console-brain =  [color=gray]Мозг установлен:[/color] [color={ $brain ->
+robotics-console-designation = [color=gray]Назначение:[/color]
+robotics-console-battery = [color=gray]Заряд батареи:[/color] [color={ $color }]{ $charge }[/color]%
+robotics-console-hp = [color=gray]Целостность:[/color] [color={ $color }]{ $hp }[/color]%
+robotics-console-modules = [color=gray]Установленные модули:[/color] { $count }
+robotics-console-brain = [color=gray]Мозг установлен:[/color] [color={ $brain ->
         [true] green]Да
        *[false] red]Нет
     }[/color]

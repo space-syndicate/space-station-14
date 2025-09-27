@@ -11,7 +11,7 @@
     FoodDoughSlice: 3
 
 - type: microwaveMealRecipe
-  id: RecipeBakedVulpkanin
+  id: RecipeBakedCorvaxVulpkanin
   name: baked vulpkanin recipe
   result: FoodBakedVulpkaninPlate
   time: 15
@@ -22,4 +22,4 @@
     FoodPlate: 1
     FoodMeat: 1
     FoodApple: 1
-    HeadVulpkanin: 1
+    HeadCorvaxVulpkanin: 1
