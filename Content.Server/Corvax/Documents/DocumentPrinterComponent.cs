@@ -1,6 +1,6 @@
 using Content.Shared.Containers.ItemSlots;
 
-namespace Content.Server.Documents
+namespace Content.Server.Corvax.Documents
 {
     [RegisterComponent]
     public sealed partial class DocumentPrinterComponent : Component
