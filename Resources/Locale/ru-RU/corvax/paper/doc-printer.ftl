@@ -1,5 +1,6 @@
 doc-text-printer-default-name = (ФИО)
 doc-text-printer-default-job = (полное наименование должности)
+doc-text-printer-default-station = Station XX-000
 doc-text-printer-report-station =
     ⠀[color=#1b487e]███░███░░░░██░░░░[/color]
     ⠀[color=#1b487e]░██░████░░░██░░░░[/color]      [head=3]Бланк документа[/head]

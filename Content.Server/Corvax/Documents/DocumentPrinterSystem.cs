@@ -44,16 +44,13 @@ namespace Content.Server.Corvax.Documents
         {
             var stationTime = GetTimeStation();
 
-            var defaultName = Loc.GetString("doc-text-printer-default-name");
-            var defaultJob = Loc.GetString("doc-text-printer-default-job");
-
             content = content
                 .Replace(":DATE:", stationTime)
-                .Replace(":STATION:", station ?? "Station XX-000");
+                .Replace(":STATION:", station ?? Loc.GetString("doc-text-printer-default-station"));
 
             content = content
-                .Replace(":NAME:", idCard?.FullName ?? defaultName)
-                .Replace(":JOB:", idCard?.LocalizedJobTitle ?? defaultJob);
+                .Replace(":NAME:", idCard?.FullName ?? Loc.GetString("doc-text-printer-default-name"))
+                .Replace(":JOB:", idCard?.LocalizedJobTitle ?? Loc.GetString("doc-text-printer-default-job"));
 
             return content;
         }
