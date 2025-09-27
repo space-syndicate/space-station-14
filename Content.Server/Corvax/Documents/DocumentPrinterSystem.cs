@@ -18,13 +18,7 @@ public sealed partial class DocumentPrinterSystem : EntitySystem
     public override void Initialize()
     {
         base.Initialize();
-        SubscribeLocalEvent<DocumentPrinterComponent, ComponentInit>(OnInit);
         SubscribeLocalEvent<DocumentPrinterComponent, LatheGetResultEvent>(SetContentDocument);
-    }
-
-    private void OnInit(Entity<DocumentPrinterComponent> ent, ref ComponentInit args)
-    {
-        _itemSlots.AddItemSlot(ent.Owner, "idSlot", ent.Comp.IdSlot);
     }
 
     private void SetContentDocument(Entity<DocumentPrinterComponent> ent, ref LatheGetResultEvent result)
@@ -32,13 +26,15 @@ public sealed partial class DocumentPrinterSystem : EntitySystem
         var paperComp = EnsureComp<PaperComponent>(result.ResultItem);
         var stationName = GetStation(result.ResultItem);
 
-        if (ent.Comp.IdSlot.Item is { Valid: true } idCardEntity &&
-            TryComp<IdCardComponent>(idCardEntity, out var idCard))
+        if (_itemSlots.TryGetSlot(ent.Owner, "id", out var slot) && slot.Item is { Valid: true } idCardEntity
+            && TryComp<IdCardComponent>(idCardEntity, out var idCard))
         {
             _paper.SetContent(result.ResultItem, FormatString(Loc.GetString(paperComp.Content), stationName, idCard));
         }
         else
+        {
             _paper.SetContent(result.ResultItem, FormatString(Loc.GetString(paperComp.Content), stationName));
+        }
     }
 
     public string FormatString(string content, string? station, IdCardComponent? idCard = null)
