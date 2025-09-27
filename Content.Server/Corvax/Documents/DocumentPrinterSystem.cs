@@ -1,3 +1,4 @@
+using Content.Server.Documents;
 using Content.Server.Station.Systems;
 using Content.Shared.Access.Components;
 using Content.Shared.Containers.ItemSlots;
@@ -5,7 +6,7 @@ using Content.Shared.Lathe;
 using Content.Shared.Paper;
 using Robust.Shared.Timing;
 
-namespace Content.Server.Documents
+namespace Content.Server.Corvax.Documents
 {
     public sealed partial class DocumentPrinterSystem : EntitySystem
     {
@@ -29,7 +30,7 @@ namespace Content.Server.Documents
         private void SetContentDocument(EntityUid uid, DocumentPrinterComponent comp, LatheGetResultEvent result)
         {
             var paperComp = EnsureComp<PaperComponent>(result.ResultItem);
-            string stationName = GetStation(result.ResultItem);
+            var stationName = GetStation(result.ResultItem);
 
             if (comp.IdSlot.Item is { Valid: true } idCardEntity &&
                 TryComp<IdCardComponent>(idCardEntity, out var idCard))
@@ -42,7 +43,7 @@ namespace Content.Server.Documents
 
         public string FormatString(string content, string? station, IdCardComponent? idCard = null)
         {
-            string stationTime = GetTimeStation();
+            var stationTime = GetTimeStation();
 
             content = content
                 .Replace(":DATE:", stationTime)

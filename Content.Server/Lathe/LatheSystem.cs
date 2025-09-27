@@ -33,7 +33,6 @@ using Robust.Server.GameObjects;
 using Robust.Shared.Audio.Systems;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Timing;
-using Content.Server.Documents;
 
 namespace Content.Server.Lathe
 {
@@ -246,7 +245,9 @@ namespace Content.Server.Lathe
                 if (currentRecipe.Result is { } resultProto)
                 {
                     var result = Spawn(resultProto, Transform(uid).Coordinates);
+                    //Corvax
                     RaiseLocalEvent(uid, new LatheGetResultEvent(result));
+                    //Corvax
                     _stack.TryMergeToContacts(result);
                 }
 
