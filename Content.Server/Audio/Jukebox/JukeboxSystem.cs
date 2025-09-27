@@ -17,6 +17,7 @@ public sealed class JukeboxSystem : SharedJukeboxSystem
 {
     [Dependency] private readonly IPrototypeManager _protoManager = default!;
     [Dependency] private readonly AppearanceSystem _appearanceSystem = default!;
+    [Dependency] private readonly EntityManager _entityManager = default!;
 
     public override void Initialize()
     {
@@ -40,6 +41,15 @@ public sealed class JukeboxSystem : SharedJukeboxSystem
         }
     }
 
+    // CorvaxGoob JukeboxControls start
+    public void SetAudioParams(EntityUid ent, AudioParams audioParams)
+    {
+        if (!_entityManager.TryGetComponent(ent, out JukeboxComponent? jukebox))
+            return;
+        jukebox.AudioParams = audioParams;
+    }
+    // CorvaxGoob JukeboxControls end
+
     private void OnJukeboxPlay(EntityUid uid, JukeboxComponent component, ref JukeboxPlayingMessage args)
     {
         if (Exists(component.AudioStream))
@@ -56,7 +66,7 @@ public sealed class JukeboxSystem : SharedJukeboxSystem
                 return;
             }
 
-            component.AudioStream = Audio.PlayPvs(jukeboxProto.Path, uid, AudioParams.Default.WithMaxDistance(10f))?.Entity;
+            component.AudioStream = Audio.PlayPvs(jukeboxProto.Path, uid, component.AudioParams)?.Entity; // CorvaxGoob JukeboxControls
             Dirty(uid, component);
         }
     }
