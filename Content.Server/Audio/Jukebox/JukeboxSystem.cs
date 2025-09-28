@@ -41,14 +41,15 @@ public sealed class JukeboxSystem : SharedJukeboxSystem
         }
     }
 
-    // CorvaxGoob JukeboxControls start
+    /// <remarks>
+    /// Corvax-JukeboxControls
+    /// </remarks>
     public void SetAudioParams(EntityUid ent, AudioParams audioParams)
     {
         if (!_entityManager.TryGetComponent(ent, out JukeboxComponent? jukebox))
             return;
         jukebox.AudioParams = audioParams;
     }
-    // CorvaxGoob JukeboxControls end
 
     private void OnJukeboxPlay(EntityUid uid, JukeboxComponent component, ref JukeboxPlayingMessage args)
     {

@@ -25,7 +25,7 @@ public sealed partial class JukeboxComponent : Component
     ///  Params of AudioStream
     /// </summary>
     /// <remarks>
-    /// CorvaxGoob JukeboxControls
+    /// Corvax-JukeboxControls
     /// </remarks>
     [DataField]
     public AudioParams AudioParams = AudioParams.Default;
