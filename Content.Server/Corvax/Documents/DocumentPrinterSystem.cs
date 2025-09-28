@@ -24,9 +24,11 @@ public sealed partial class DocumentPrinterSystem : EntitySystem
     private void SetContentDocument(Entity<DocumentPrinterComponent> ent, ref LatheGetResultEvent result)
     {
         var paperComp = EnsureComp<PaperComponent>(result.ResultItem);
-        var stationName = GetStation(result.ResultItem);
 
-        if (_itemSlots.TryGetSlot(ent.Owner, "id", out var slot) && slot.Item is { Valid: true } idCardEntity
+        var station = _station.GetOwningStation(result.ResultItem);
+        var stationName = station != null ? Name(station.Value) : null;
+
+        if (_itemSlots.TryGetSlot(ent.Owner, ent.Comp.SlotName, out var slot) && slot.Item is { Valid: true } idCardEntity
             && TryComp<IdCardComponent>(idCardEntity, out var idCard))
         {
             _paper.SetContent(result.ResultItem, FormatString(Loc.GetString(paperComp.Content), stationName, idCard));
@@ -50,15 +52,6 @@ public sealed partial class DocumentPrinterSystem : EntitySystem
             .Replace(Loc.GetString("doc-var-job"), idCard?.LocalizedJobTitle ?? Loc.GetString("doc-text-printer-default-job"));
 
         return content;
-    }
-
-    private string? GetStation(EntityUid document)
-    {
-        var station = _station.GetOwningStation(document);
-        var stationName = station != null
-            ? Name(station.Value)
-            : null;
-        return stationName;
     }
 
     private string GetTimeStation()

@@ -50,6 +50,9 @@
   - type: DocumentPrinter 
   - type: ContainerContainer
     containers:
+      machine_board: !type:Container
+      machine_parts: !type:Container
+      blueprint: !type:Container
       id: !type:ContainerSlot
   - type: ItemSlots
     slots:
