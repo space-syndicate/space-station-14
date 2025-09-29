@@ -389,10 +389,7 @@ stack-xeno-steel-corner = стальной угловой ксенопол
 stack-xeno-maint = технический ксенопол
 stack-dark-squiggly = тёмная волнистая стальная плитка
 stack-large-wood-floor = большой деревянный пол
-<<<<<<< HEAD
-=======
 stack-xenoborg = ксеноборг-плитка
->>>>>>> 4877c6d59c (08 31 translate (#108))
 stack-red-circuit-floor = плитка красных микросхем
 stack-asteroid-astro-sand-floor = астро-песок астероида
 stack-white-marble-floor = белый мраморный пол
