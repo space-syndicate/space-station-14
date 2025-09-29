@@ -17,9 +17,6 @@ ent-APCSuperCapacity = { ent-BaseAPC }
 ent-APCHyperCapacity = { ent-BaseAPC }
     .suffix = Гипер ёмкость, 200кДж
     .desc = { ent-BaseAPC.desc }
-<<<<<<< HEAD
-=======
 ent-APCXenoborg = { ent-BaseAPC }
     .suffix = Базовый, 50кДж, Ксеноборг
     .desc = { ent-BaseAPC.desc }
->>>>>>> 4877c6d59c (08 31 translate (#108))

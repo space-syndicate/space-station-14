@@ -10,8 +10,5 @@ borg-slot-documents-empty = Книги и бумаги
 borg-slot-soap-empty = Мыло
 borg-slot-instruments-empty = Музыкальные инструменты
 borg-slot-beakers-empty = Мензурки
-<<<<<<< HEAD
-=======
 borg-slot-inflatable-door-empty = Надувная дверь
 borg-slot-inflatable-wall-empty = Надувная стена
->>>>>>> 4877c6d59c (08 31 translate (#108))

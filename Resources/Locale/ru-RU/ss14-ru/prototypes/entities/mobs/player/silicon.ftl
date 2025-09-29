@@ -38,23 +38,12 @@ ent-PlayerBorgSyndicateSaboteurGhostRole = { ent-PlayerBorgSyndicateSaboteurBatt
     .desc = { ent-PlayerBorgSyndicateSaboteurBattery.desc }
 ent-PlayerBorgSyndicateInvasionGhostRoleSpawner = syndicate invasion borg spawner
     .desc = { ent-MarkerBase.desc }
-<<<<<<< HEAD
-=======
-ent-PlayerEngineeringBorgDerelict = { ent-EngineeringBorgChassisDerelict }
-    .suffix = Батарея, Модуль
-    .desc = { ent-EngineeringBorgChassisDerelict.desc }
-ent-PlayerEngineeringBorgDerelictGhostRole = { ent-PlayerEngineeringBorgDerelict }
-    .suffix = Роль призрака
-    .desc = { ent-PlayerEngineeringBorgDerelict.desc }
->>>>>>> 4877c6d59c (08 31 translate (#108))
 ent-PlayerBorgDerelict = { ent-BorgChassisDerelict }
     .suffix = Батарея, Модуль
     .desc = { ent-BorgChassisDerelict.desc }
 ent-PlayerBorgDerelictGhostRole = { ent-PlayerBorgDerelict }
     .suffix = Роль призрака
     .desc = { ent-PlayerBorgDerelict.desc }
-<<<<<<< HEAD
-=======
 ent-PlayerJanitorBorgDerelict = { ent-JanitorBorgChassisDerelict }
     .suffix = Батарея, Модуль
     .desc = { ent-JanitorBorgChassisDerelict.desc }
@@ -79,4 +68,3 @@ ent-PlayerSyndicateAssaultBorgDerelict = { ent-SyndicateAssaultBorgChassisDereli
 ent-PlayerBorgSyndicateDerelictGhostRole = { ent-PlayerSyndicateAssaultBorgDerelict }
     .suffix = Роль призрака
     .desc = { ent-PlayerSyndicateAssaultBorgDerelict.desc }
->>>>>>> 4877c6d59c (08 31 translate (#108))

@@ -1,36 +1,5 @@
 ﻿ent-BoxFolderNuclearCodes = папка с кодами ядерной аутентификации
     .desc = { ent-BaseItem.desc }
-<<<<<<< HEAD
-ent-BoxFolderBase = папка
-    .desc = Папка, заполненная совершенно секретными документами.
-ent-BoxFolderRed = { ent-BoxFolderBase }
-    .suffix = Красная
-    .desc = { ent-BoxFolderBase.desc }
-ent-BoxFolderBlue = { ent-BoxFolderBase }
-    .suffix = Синяя
-    .desc = { ent-BoxFolderBase.desc }
-ent-BoxFolderYellow = { ent-BoxFolderBase }
-    .suffix = Жёлтая
-    .desc = { ent-BoxFolderBase.desc }
-ent-BoxFolderWhite = { ent-BoxFolderBase }
-    .suffix = Белая
-    .desc = { ent-BoxFolderBase.desc }
-ent-BoxFolderGrey = { ent-BoxFolderBase }
-    .suffix = Серая
-    .desc = { ent-BoxFolderBase.desc }
-ent-BoxFolderBlack = { ent-BoxFolderBase }
-    .suffix = Чёрная
-    .desc = { ent-BoxFolderBase.desc }
-ent-BoxFolderGreen = { ent-BoxFolderBase }
-    .suffix = Зелёная
-    .desc = { ent-BoxFolderBase.desc }
-ent-BoxFolderCentCom = папка Центком
-    .desc = Жалкая кучка секретов Центком!
-ent-BoxFolderClipboard = планшет
-    .desc = Оружие тех, кто действует на передовой бюрократии.
-ent-BoxFolderCentComClipboard = планшет Центком
-    .desc = Роскошный планшет, обитый зелёным бархатом. Представители Центком часто носят его с собой, но редко используют.
-=======
 ent-BoxFolderBaseEmpty = папка
     .desc = Папка, заполненная совершенно секретными документами.
 ent-BoxFolderFill = { "" }
@@ -104,7 +73,6 @@ ent-BoxFolderCentComClipboard = { ent-BoxFolderCentComClipboardEmpty }
     .desc = { ent-BoxFolderCentComClipboardEmpty.desc }
 ent-BoxFolderCentComClipboardThreePapers = { ent-BoxFolderCentComClipboardEmpty }
     .desc = { ent-BoxFolderCentComClipboardEmpty.desc }
->>>>>>> 4877c6d59c (08 31 translate (#108))
 ent-BoxFolderQmClipboard = цифровой планшет заявок
     .desc = Громоздкий цифровой планшет, содержащий информацию о поставках и финансовых операциях. При таком количестве компрометирующих документов его следует беречь.
 
