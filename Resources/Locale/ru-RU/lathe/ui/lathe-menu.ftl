@@ -33,12 +33,9 @@ lathe-menu-silo-linked-message = Хранилище связано
 lathe-menu-fabricating-message = Производится...
 lathe-menu-materials-title = Материалы
 lathe-menu-queue-title = Очередь производства
-<<<<<<< HEAD
-=======
 lathe-menu-delete-fabricating-tooltip = Отменить производство текущего объекта.
 lathe-menu-delete-item-tooltip = Отменить производство этой партии.
 lathe-menu-move-up-tooltip = Перенести эту партию вперёд в очереди.
 lathe-menu-move-down-tooltip = Перенести эту партию назад в очереди.
 lathe-menu-item-single = { $index }. { $name }
 lathe-menu-item-batch = { $index }. { $name } ({ $printed }/{ $total })
->>>>>>> 4877c6d59c (08 31 translate (#108))
