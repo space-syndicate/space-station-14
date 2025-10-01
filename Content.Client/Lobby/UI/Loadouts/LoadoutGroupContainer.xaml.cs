@@ -43,7 +43,7 @@ public sealed partial class LoadoutGroupContainer : BoxContainer
     {
         var protoMan = collection.Resolve<IPrototypeManager>();
         var loadoutSystem = collection.Resolve<IEntityManager>().System<LoadoutSystem>();
-        RestrictionsContainer.DisposeAllChildren();
+        RestrictionsContainer.RemoveAllChildren();
 
         if (_groupProto.MinLimit > 0)
         {
@@ -72,7 +72,7 @@ public sealed partial class LoadoutGroupContainer : BoxContainer
             });
         }
 
-        LoadoutsContainer.DisposeAllChildren();
+        LoadoutsContainer.RemoveAllChildren();
 
         // Corvax-Loadouts-Start
         var groupLoadouts = _groupProto.Loadouts;
