@@ -58,7 +58,7 @@ public sealed partial class DocumentPrinterSystem : EntitySystem
     {
         var curTime = _timing.CurTime;
         var formattedTime = $"{(int)curTime.TotalHours:D2}:{curTime.Minutes:D2}:{curTime.Seconds:D2}";
-        return DateTime.UtcNow.AddYears(1000).ToShortDateString() + " " + formattedTime;
+        return formattedTime + " " + DateTime.UtcNow.AddYears(1000).ToShortDateString();
     }
 
 }
