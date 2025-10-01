@@ -1,4 +1,4 @@
-ent-BaseArrow = { ent-BaseItem }
+﻿ent-BaseArrow = { ent-BaseItem }
     .desc = { ent-BaseItem.desc }
 ent-ArrowRegular = стрела
     .desc = Вы чувствуете в себе силу степей.
@@ -11,4 +11,4 @@ ent-ArrowImprovisedUranium = стрела из осколка уранового
 ent-ArrowImprovisedCarp = стрела из зуба карпа
     .desc = Предпочитаемая стрела утилизатора. Убивайте ваших врагов зубами их же родственников.
 ent-ArrowCard = картонная стрела
-    .desc = Не убьёт, сколько не старайся.
+    .desc = Осторожно, глаз себе выколешь!

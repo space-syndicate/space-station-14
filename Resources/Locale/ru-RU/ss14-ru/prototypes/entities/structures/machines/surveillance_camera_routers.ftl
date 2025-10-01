@@ -1,4 +1,4 @@
-ent-SurveillanceCameraRouterBase = маршрутизатор камер
+﻿ent-SurveillanceCameraRouterBase = маршрутизатор камер
     .desc = Маршрутизатор для камер наблюдения. Он маршрутизирует. Возможно.
 ent-SurveillanceCameraRouterConstructed = { ent-SurveillanceCameraRouterBase }
     .suffix = Построенный
@@ -34,4 +34,6 @@ ent-SurveillanceCameraWirelessRouterConstructed = { ent-SurveillanceCameraWirele
     .desc = { ent-SurveillanceCameraWirelessRouterBase.desc }
 ent-SurveillanceCameraWirelessRouterEntertainment = { ent-SurveillanceCameraWirelessRouterBase }
     .suffix = Развлекательный
+    .desc = { ent-SurveillanceCameraWirelessRouterBase.desc }
+ent-SurveillanceCameraWirelessRouterXenoborg = маршрутизатор беспроводных камер ксеноборгов
     .desc = { ent-SurveillanceCameraWirelessRouterBase.desc }

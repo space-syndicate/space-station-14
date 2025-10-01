@@ -1,4 +1,4 @@
-trait-blindness-name = Слепота
+﻿trait-blindness-name = Слепота
 trait-blindness-desc = Вы совершенно слепы и не можете видеть дальше нескольких метров перед собой.
 trait-narcolepsy-name = Нарколепсия
 trait-poor-vision-name = Близорукость
@@ -43,3 +43,7 @@ trait-spanish-name = Испанский акцент
 trait-spanish-desc = Hola señor, как пройти в la biblioteca.
 trait-painnumbness-name = Невосприимчивость к боли
 trait-painnumbness-desc = Вы не чувствуете боли и не осознаёте, насколько вы ранены.
+trait-hemophilia-name = Гемофилия
+trait-hemophilia-desc = Ваш организм не справляется со свёртыванием крови.
+trait-impaired-mobility-name = Нарушение подвижности
+trait-impaired-mobility-desc = Вам тяжело передвигаться без посторонней помощи.

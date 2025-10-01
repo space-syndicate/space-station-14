@@ -1,4 +1,4 @@
-borg-slot-cables-empty = Кабели
+﻿borg-slot-cables-empty = Кабели
 borg-slot-construction-empty = Строительные материалы
 borg-slot-circuitboards-empty = Платы
 borg-slot-flatpacks-empty = Упаковки
@@ -10,3 +10,5 @@ borg-slot-documents-empty = Книги и бумаги
 borg-slot-soap-empty = Мыло
 borg-slot-instruments-empty = Музыкальные инструменты
 borg-slot-beakers-empty = Мензурки
+borg-slot-inflatable-door-empty = Надувная дверь
+borg-slot-inflatable-wall-empty = Надувная стена

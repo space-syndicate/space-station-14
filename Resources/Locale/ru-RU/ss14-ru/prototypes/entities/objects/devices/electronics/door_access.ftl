@@ -1,4 +1,4 @@
-ent-DoorElectronicsService = { ent-DoorElectronics }
+﻿ent-DoorElectronicsService = { ent-DoorElectronics }
     .suffix = Сервис, Закрыт
     .desc = { ent-DoorElectronics.desc }
 ent-DoorElectronicsTheatre = { ent-DoorElectronics }
@@ -114,4 +114,7 @@ ent-DoorElectronicsSyndicateAgent = { ent-DoorElectronics }
     .desc = { ent-DoorElectronics.desc }
 ent-DoorElectronicsNukeop = { ent-DoorElectronics }
     .suffix = Ядерные Оперативники, Закрыт
+    .desc = { ent-DoorElectronics.desc }
+ent-DoorElectronicsXenoborg = { ent-DoorElectronics }
+    .suffix = Ксеноборг, Закрыт
     .desc = { ent-DoorElectronics.desc }

@@ -1,4 +1,4 @@
-ent-FloorTileItemBase = { ent-BaseItem }
+﻿ent-FloorTileItemBase = { ent-BaseItem }
     .desc = Может послужить неплохим метательным оружием.
 ent-FloorTileItemSteel = стальная плитка
     .desc = { ent-FloorTileItemBase.desc }
@@ -220,6 +220,8 @@ ent-FloorTileItemXenoSteel = стальной ксенопол
 ent-FloorTileItemXenoSteelCorner = стальной угловой ксенопол
     .desc = { ent-FloorTileItemBase.desc }
 ent-FloorTileItemXenoMaint = технический ксенопол
+    .desc = { ent-FloorTileItemBase.desc }
+ent-FloorTileItemXenoborg = ксеноборг-пол
     .desc = { ent-FloorTileItemBase.desc }
 ent-FloorTileItemDarkSquiggly = тёмная волнистая стальная плитка
     .desc = { ent-FloorTileItemDark.desc }

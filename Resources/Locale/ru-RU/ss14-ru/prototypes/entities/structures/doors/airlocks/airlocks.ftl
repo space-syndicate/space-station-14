@@ -1,4 +1,4 @@
-ent-AirlockFreezer = { ent-Airlock }
+﻿ent-AirlockFreezer = { ent-Airlock }
     .suffix = Холодильник
     .desc = { ent-Airlock.desc }
 ent-AirlockEngineering = { ent-Airlock }
@@ -46,6 +46,8 @@ ent-AirlockCentralCommand = { ent-AirlockCommand }
     .suffix = Центральное командование
     .desc = { ent-AirlockCommand.desc }
 ent-AirlockHatch = герметичный люк
+    .desc = { ent-Airlock.desc }
+ent-AirlockXenoborg = ксеноборг-шлюз
     .desc = { ent-Airlock.desc }
 ent-AirlockHatchMaintenance = герметичный люк техобслуживания
     .desc = { ent-Airlock.desc }

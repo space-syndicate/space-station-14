@@ -1,4 +1,4 @@
-ent-BaseMeleeWeaponEnergy = { ent-BaseItem }
+﻿ent-BaseMeleeWeaponEnergy = { ent-BaseItem }
     .desc = { ent-BaseItem.desc }
 # Corvax-HiddenDesc-Start
 ent-EnergySword = игрушечный меч
@@ -22,6 +22,9 @@ ent-EnergySwordDouble = игрушечный двухклинковый меч
 # Corvax-HiddenDesc-End
 ent-HyperEutacticBlade = гиперэвтектический клинок
     .desc = Сверхмассивное оружие, способное разорвать на части саму ткань пространства и времени, гиперэвтектический клинок динамически выковывает гиперэвтектическую кристаллическую наноструктуру, способную проходить сквозь большинство известных форм материи, как горячий нож сквозь масло.
+ent-CyborgEnergySword = { ent-EnergySword }
+    .desc = Очень громкий и опасный меч с лучом из чистой концентрированной плазмы. Разработан специально для киборгов Синдиката.
+    .suffix = Для боргов
 ent-CyborgEnergySwordDouble = { ent-EnergySwordDouble }
     .desc = Стажеры из командования Синдиката решили, что одного клинка на энергетическом мече недостаточно. Специальная разработка для киборгов Синдиката.
     .suffix = Одноручное, Для боргов

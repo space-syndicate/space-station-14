@@ -1,4 +1,4 @@
-ent-BaseMindRole = Роль сознания
+﻿ent-BaseMindRole = Роль сознания
     .desc = Энтити роли сознания
 ent-BaseMindRoleAntag = { ent-BaseMindRole }
     .desc = { ent-BaseMindRole.desc }
@@ -39,6 +39,8 @@ ent-MindRoleNukeops = Роль ядерный оперативник
 ent-MindRoleNukeopsMedic = Роль медик ядерных оперативников
     .desc = { ent-MindRoleNukeops.desc }
 ent-MindRoleNukeopsCommander = Роль командир ядерных оперативников
+    .desc = { ent-MindRoleNukeops.desc }
+ent-MindRoleLoneops = Роль одиночный оперативник
     .desc = { ent-MindRoleNukeops.desc }
 ent-MindRoleHeadRevolutionary = Роль глава революции
     .desc = { ent-BaseMindRoleAntag.desc }

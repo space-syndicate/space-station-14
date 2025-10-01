@@ -1,4 +1,4 @@
-tiles-space = космос
+﻿tiles-space = космос
 tiles-plating = покрытие
 tiles-lattice = решётка
 tiles-lattice-train = решётка поезда
@@ -139,6 +139,7 @@ tiles-xeno-floor = ксенопол
 tiles-xeno-steel = стальная ксеноплитка
 tiles-xeno-steel-corner = стальная угловая ксеноплитка
 tiles-xeno-maint = технический ксенопол
+tiles-xenoborg-floor = ксеноборг-плитка
 tiles-dark-squiggly = тёмная волнистая стальная плитка
 tiles-white-marble = белая мраморная плитка
 tiles-dark-marble = чёрная мраморная плитка
