@@ -11,7 +11,6 @@ using Content.Shared.Lock;
 using Content.Shared.Movement.Events;
 using Content.Shared.Popups;
 using Content.Shared.Storage.Components;
-using Content.Shared.Tag;
 using Content.Shared.Tools.Systems;
 using Content.Shared.Verbs;
 using Content.Shared.Wall;
@@ -46,7 +45,6 @@ public abstract class SharedEntityStorageSystem : EntitySystem
     [Dependency] protected readonly SharedTransformSystem TransformSystem = default!;
     [Dependency] private   readonly WeldableSystem _weldable = default!;
     [Dependency] private readonly EntityWhitelistSystem _whitelistSystem = default!;
-    [Dependency] private readonly TagSystem _tag = default!;
     [Dependency] private readonly ActionBlockerSystem _actionBlocker = default!;
 
     public const string ContainerName = "entity_storage";

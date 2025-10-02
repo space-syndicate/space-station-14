@@ -187,8 +187,8 @@
     #Corvax
   - type: EntityStorage
     limitedNumObjectsWhitelist:
-      tags: 
-      - AnomalyHost
+      components: 
+      - Humanoid
     #Corvax-end
   - type: ExplosionResistance
     damageCoefficient: 0.01 #Corvax
