@@ -30,7 +30,7 @@
     prototype: CorvaxVulpkanin
     requiredLegs: 2
   - type: Inventory
-    speciesId: reptilian # whyyy
+    speciesId: corvaxvulpkanin
     femaleDisplacements:
       jumpsuit:
         sizeMaps:
@@ -53,6 +53,12 @@
           32:
             sprite: Corvax/Mobs/Species/displacement.rsi
             state: shoes
+      outerClothing:
+        sizeMaps:
+          32:
+            sprite: Corvax/Mobs/Species/displacement.rsi
+            state: outerclothing
+
   - type: ContentEye
     targetZoom: "1.0, 1.0"
     maxZoom: "1.0, 1.0"
@@ -107,7 +113,7 @@
   - type: HumanoidAppearance
     species: CorvaxVulpkanin
   - type: Inventory
-    speciesId: reptilian
+    speciesId: corvaxvulpkanin
     femaleDisplacements:
       jumpsuit:
         sizeMaps:
@@ -130,3 +136,8 @@
           32:
             sprite: Corvax/Mobs/Species/displacement.rsi
             state: shoes
+      outerClothing:
+        sizeMaps:
+          32:
+            sprite: Corvax/Mobs/Species/displacement.rsi
+            state: outerclothing
