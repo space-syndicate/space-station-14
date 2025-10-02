@@ -1,7 +1,7 @@
 {
   "version": 1,
   "license": "CC-BY-SA-3.0",
-  "copyright": "by Litogin, head and mask made by TiniestShark",
+  "copyright": "by Litogin, head and mask made by TiniestShark, outerclothing made by evgen99",
   "size": {
     "x": 32,
     "y": 32
@@ -28,6 +28,10 @@
     },
     {
         "name": "mask",
+        "directions": 4
+    },
+        {
+        "name": "outerclothing",
         "directions": 4
     }
   ]
