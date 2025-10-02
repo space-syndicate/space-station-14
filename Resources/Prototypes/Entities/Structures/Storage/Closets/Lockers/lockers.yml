@@ -186,7 +186,9 @@
     stateDoorClosed: freezer_door
     #Corvax
   - type: EntityStorage
-    onlyOneInContainerWithTag: true
+    limitedNumObjectsWhitelist:
+      tags: 
+      - AnomalyHost
     #Corvax-end
   - type: ExplosionResistance
     damageCoefficient: 0.01 #Corvax

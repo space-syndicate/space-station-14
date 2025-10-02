@@ -43,11 +43,19 @@ public sealed partial class EntityStorageComponent : Component, IGasMixtureHolde
     [DataField]
     public bool IsCollidableWhenOpen;
 
+    // Corvax
     /// <summary>
-    /// Only one instance of an object with a specific tag can be in a container
+    /// Whitelist for what entities can only have a certain number of
     /// </summary>
     [DataField]
-    public bool OnlyOneInContainerWithTag = false;
+    public EntityWhitelist? LimitedNumObjectsWhitelist;
+
+    /// <summary>
+    /// The number of limited objects in the storage
+    /// </summary>
+    [DataField]
+    public int MaxLimitedNumObjects = 1;
+    // Corvax-end
 
     /// <summary>
     /// If true, it opens the storage when the entity inside of it moves

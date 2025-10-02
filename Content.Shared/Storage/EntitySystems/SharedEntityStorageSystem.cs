@@ -49,10 +49,6 @@ public abstract class SharedEntityStorageSystem : EntitySystem
     [Dependency] private readonly TagSystem _tag = default!;
     [Dependency] private readonly ActionBlockerSystem _actionBlocker = default!;
 
-    // Corvax
-    public static readonly ProtoId<TagPrototype> OnlyOneWithTag = "OnlyOneInContainer";
-    // Corvax-end
-
     public const string ContainerName = "entity_storage";
 
     protected void OnEntityUnpausedEvent(EntityUid uid, EntityStorageComponent component, EntityUnpausedEvent args)
@@ -366,16 +362,11 @@ public abstract class SharedEntityStorageSystem : EntitySystem
             return _whitelistSystem.IsValid(component.Whitelist, toInsert);
 
         // Corvax
-        // Allows you to add only one entity to the container with the OnlyOneInContainer tag.
-        if (component.OnlyOneInContainerWithTag && _tag.HasTag(toInsert, OnlyOneWithTag))
+        if (component.LimitedNumObjectsWhitelist != null && _whitelistSystem.IsValid(component.LimitedNumObjectsWhitelist, toInsert))
         {
-            foreach (var ent in component.Contents.ContainedEntities)
-            {
-                    if (_tag.HasTag(ent, OnlyOneWithTag))
-                    {
-                       return false;
-                    }
-            }
+            var count = component.Contents.ContainedEntities.Count(ent => _whitelistSystem.IsValid(component.LimitedNumObjectsWhitelist, ent));
+            if (count >= component.MaxLimitedNumObjects)
+                return false;
         }
         // Corvax-end
 
