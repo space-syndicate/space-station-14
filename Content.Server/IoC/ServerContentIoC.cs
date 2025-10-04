@@ -81,6 +81,6 @@ internal static class ServerContentIoC
         deps.Register<CVarControlManager>();
         deps.Register<DiscordLink>();
         deps.Register<DiscordChatLink>();
-            IoCManager.Register<TTSManager>(); // Corvax-TTS
+        IoCManager.Register<TTSManager>(); // Corvax-TTS
     }
 }

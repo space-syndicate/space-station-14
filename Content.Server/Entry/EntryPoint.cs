@@ -34,6 +34,7 @@ using Robust.Shared.ContentPack;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Timing;
 using Robust.Shared.Utility;
+using Content.Shared.Emp;
 
 namespace Content.Server.Entry
 {
@@ -132,7 +133,7 @@ namespace Content.Server.Entry
             _watchlistWebhookManager.Initialize();
             _job.Initialize();
             _rateLimit.Initialize();
-                IoCManager.Resolve<TTSManager>().Initialize(); // Corvax-TTS
+            IoCManager.Resolve<TTSManager>().Initialize(); // Corvax-TTS
         }
 
         public override void PostInit()
@@ -152,13 +153,13 @@ namespace Content.Server.Entry
                 ReactionJsonGenerator.PublishJson(file);
                 file.Flush();
                 // Corvax-Wiki-Start
-                file = resourceManager.UserData.OpenWriteText(resPath.WithName("entity_" + dest));
+                file = _res.UserData.OpenWriteText(resPath.WithName("entity_" + dest));
                 EntityJsonGenerator.PublishJson(file);
                 file.Flush();
-                file = resourceManager.UserData.OpenWriteText(resPath.WithName("mealrecipes_" + dest));
+                file = _res.UserData.OpenWriteText(resPath.WithName("mealrecipes_" + dest));
                 MealsRecipesJsonGenerator.PublishJson(file);
                 file.Flush();
-                file = resourceManager.UserData.OpenWriteText(resPath.WithName("healthchangereagents_" + dest));
+                file = _res.UserData.OpenWriteText(resPath.WithName("healthchangereagents_" + dest));
                 HealthChangeReagentsJsonGenerator.PublishJson(file);
                 file.Flush();
                 // Corvax-Wiki-End
