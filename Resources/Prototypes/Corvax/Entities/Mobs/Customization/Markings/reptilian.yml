@@ -1,0 +1,8 @@
+- type: marking
+  id: LizardHornsFloppyKoboldEarsAlt
+  bodyPart: HeadSide
+  markingCategory: HeadSide
+  speciesRestriction: [Reptilian, Kobold] # backmen: species
+  sprites:
+  - sprite: Corvax/Mobs/Customization/reptilian_parts.rsi
+    state: horns_floppy_kobold_ears_alt
