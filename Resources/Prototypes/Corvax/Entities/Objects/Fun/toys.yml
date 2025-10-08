@@ -1,5 +1,5 @@
 - type: entity
-  parent: [BaseRubberToy, BaseHandheldInstrument]
+  parent: BaseRubberToy
   id: RubberPig
   name: toy pig
   description: Squeeze Me, Babe # not Baby
@@ -38,6 +38,3 @@
       collection: RubberPig
       params:
         variation: 0.125
-  - type: Instrument
-    program: 5
-    bank: 1
