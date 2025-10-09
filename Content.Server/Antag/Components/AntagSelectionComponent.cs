@@ -134,7 +134,7 @@ public partial struct AntagSelectionDefinition()
     /// If null, the player character will spawn (if you haven't added other components)
     /// </summary>
     [DataField]
-    public EntProtoId? EntityAntagPrototype = null;
+    public EntProtoId? EntityAntagPrototype;
     // Corvax-start
 
     /// <summary>
