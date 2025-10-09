@@ -135,7 +135,7 @@ public partial struct AntagSelectionDefinition()
     /// </summary>
     [DataField]
     public EntProtoId? EntityAntagPrototype = null;
-    // Corvax-start
+    // Corvax-end
 
     /// <summary>
     /// If true, players that latejoin into a round have a chance of being converted into antagonists.
