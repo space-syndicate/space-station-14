@@ -128,6 +128,15 @@ public partial struct AntagSelectionDefinition()
     [DataField]
     public bool PickPlayer = true;
 
+    // Corvax-start
+    /// <summary>
+    /// The entity to spawn.
+    /// If null, the player character will spawn (if you haven't added other components)
+    /// </summary>
+    [DataField]
+    public EntProtoId? EntityAntagPrototype = string.Empty;
+    // Corvax-start
+
     /// <summary>
     /// If true, players that latejoin into a round have a chance of being converted into antagonists.
     /// </summary>
