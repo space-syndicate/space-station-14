@@ -130,11 +130,12 @@ public partial struct AntagSelectionDefinition()
 
     // Corvax-start
     /// <summary>
-    /// The entity to spawn.
+    /// The entity that will spawn the antagonist.
+    ///  Works if you select <see cref="SpawnerPrototype"/> PrePlayerSpawn
     /// If null, the player character will spawn (if you haven't added other components)
     /// </summary>
     [DataField]
-    public EntProtoId? EntityAntagPrototype = null;
+    public EntProtoId? RoundstartEntity = null;
     // Corvax-end
 
     /// <summary>
