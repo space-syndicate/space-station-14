@@ -383,6 +383,7 @@ public sealed partial class AntagSelectionSystem : GameRuleSystem<AntagSelection
                 ent.Comp.PreSelectedSessions.Add(def, set = new HashSet<ICommonSession>());
             set.Add(session);
             ent.Comp.AssignedSessions.Add(session);
+            
             // Corvax-start
             if (def.RoundstartEntity != null && ent.Comp.SelectionTime == AntagSelectionTime.PrePlayerSpawn)
                 antagEnt = Spawn(def.RoundstartEntity);
@@ -392,7 +393,6 @@ public sealed partial class AntagSelectionSystem : GameRuleSystem<AntagSelection
             if (!HasComp<GhostComponent>(session.AttachedEntity))
                 antagEnt = session.AttachedEntity;
         }
-
         else if (!ignoreSpawner && def.SpawnerPrototype != null) // don't add spawners if we have a player, dummy.
         {
             antagEnt = Spawn(def.SpawnerPrototype);
