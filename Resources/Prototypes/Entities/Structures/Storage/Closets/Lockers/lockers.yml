@@ -187,8 +187,8 @@
     #Corvax
   - type: EntityStorage
     limitedNumObjectsWhitelist:
-      components: 
-      - Humanoid
+      components:
+      - HumanoidAppearance
     #Corvax-end
   - type: ExplosionResistance
     damageCoefficient: 0.01 #Corvax 50
