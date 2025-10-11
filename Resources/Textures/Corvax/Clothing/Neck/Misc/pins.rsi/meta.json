@@ -1,19 +1,12 @@
 {
   "version": 1,
   "license": "CC-BY-SA-3.0",
-  "copyright": "Lore's pixels made by @no_mad#0260, servers pins made by @mishutka09",
+  "copyright": "Lore's pixels made by @no_mad#0260. 'ely', 'main', 'wl', 'cor' and related to them equipped states created by @mishutka09. 'lumen', 'void, and related to them equipped states resprited from the created by @mishutka09 ones by kosticia (GitHub)",
   "size": {
     "x": 32,
     "y": 32
   },
   "states": [
-    {
-      "name": "ath"
-    },
-    {
-      "name": "ath-equipped-NECK",
-      "directions": 4
-    },
     {
       "name": "comm"
     },
@@ -40,13 +33,6 @@
     },
     {
       "name": "earth-equipped-NECK",
-      "directions": 4
-    },
-    {
-      "name": "echo"
-    },
-    {
-      "name": "echo-equipped-NECK",
       "directions": 4
     },
     {
@@ -91,32 +77,11 @@
       "name": "nano-equipped-NECK",
       "directions": 4
     },
-    {
-      "name": "neb"
-    },
-    {
-      "name": "neb-equipped-NECK",
-      "directions": 4
-    },
-    {
-      "name": "nova"
-    },
-    {
-      "name": "nova-equipped-NECK",
-      "directions": 4
-    },
 	{
       "name": "sind"
     },
     {
       "name": "sind-equipped-NECK",
-      "directions": 4
-    },
-    {
-      "name": "sol"
-    },
-    {
-      "name": "sol-equipped-NECK",
       "directions": 4
     },
 	{
@@ -131,6 +96,20 @@
     },
     {
       "name": "wl-equipped-NECK",
+      "directions": 4
+    },
+    {
+      "name": "lumen"
+    },
+    {
+      "name": "lumen-equipped-NECK",
+      "directions": 4
+    },
+    {
+      "name": "void"
+    },
+    {
+      "name": "void-equipped-NECK",
       "directions": 4
     }
   ]
