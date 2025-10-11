@@ -22,7 +22,6 @@ using Robust.Shared.Containers;
 using Robust.Shared.GameStates;
 using Robust.Shared.Map;
 using Robust.Shared.Network;
-using Robust.Shared.Prototypes;
 using Robust.Shared.Physics;
 using Robust.Shared.Physics.Systems;
 using Robust.Shared.Timing;
@@ -358,15 +357,6 @@ public abstract class SharedEntityStorageSystem : EntitySystem
         // Consult the whitelist. The whitelist ignores the default assumption about how entity storage works.
         if (component.Whitelist != null)
             return _whitelistSystem.IsValid(component.Whitelist, toInsert);
-
-        // Corvax
-        if (component.LimitedNumObjectsWhitelist != null && _whitelistSystem.IsValid(component.LimitedNumObjectsWhitelist, toInsert))
-        {
-            var count = component.Contents.ContainedEntities.Count(ent => _whitelistSystem.IsValid(component.LimitedNumObjectsWhitelist, ent));
-            if (count >= component.MaxLimitedNumObjects)
-                return false;
-        }
-        // Corvax-end
 
         // The inserted entity must be a mob or an item.
         return HasComp<MobStateComponent>(toInsert) || HasComp<ItemComponent>(toInsert);
