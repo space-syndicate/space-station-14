@@ -1,4 +1,4 @@
-﻿ent-AirlockServiceLocked = { ent-Airlock }
+ent-AirlockServiceLocked = { ent-Airlock }
     .suffix = Сервис, Закрыт
     .desc = { ent-Airlock.desc }
 ent-AirlockLawyerLocked = { ent-AirlockServiceLocked }

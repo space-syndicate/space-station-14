@@ -92,6 +92,7 @@ construction-graph-tag-ripley-peripherals-control-module = модуль упра
 construction-graph-tag-door-electronics-circuit-board = микросхема шлюза
 construction-graph-tag-firelock-electronics-circuit-board = микросхема пожарного шлюза
 construction-graph-tag-conveyor-belt-assembly = конвейерная лента
+construction-graph-tag-station-ai-core-electronics = микросхема ядра станционного ИИ
 # tools
 construction-graph-tag-multitool = мультитул
 construction-graph-tag-health-analyzer = анализатор здоровья
@@ -112,6 +113,7 @@ construction-graph-tag-wallmount-substation-circuit-board = микросхема
 construction-graph-tag-surveillance-camera-monitor-board = плата монитор камер наблюдения
 construction-graph-tag-television-board = плата телевизора
 construction-graph-tag-freezer-electronics = микросхема холодильника
+construction-graph-tag-turret-control-electronics = микросхема панели управления охранной турели
 # crystals
 construction-graph-tag-cyan-crystal-shard = голубой осколок кристалла
 construction-graph-tag-blue-crystal-shard = синий осколок кристалла

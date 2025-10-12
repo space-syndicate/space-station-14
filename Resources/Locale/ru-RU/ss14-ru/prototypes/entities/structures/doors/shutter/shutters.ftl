@@ -1,7 +1,7 @@
 ent-BaseShutter = ставни
     .desc = Страшно подумать, что могут скрывать эти ставни.
-ent-ShuttersNormal = { ent-BaseShutter }
-    .desc = { ent-BaseShutter.desc }
+ent-ShuttersNormal = { ent-BaseDeltaPressureGlass }
+    .desc = { ent-BaseDeltaPressureGlass.desc }
 ent-ShuttersNormalOpen = { ent-ShuttersNormal }
     .suffix = Открытые
     .desc = { ent-ShuttersNormal.desc }

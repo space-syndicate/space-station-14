@@ -1,4 +1,4 @@
-﻿ent-BaseArachnidOrgan = { ent-BaseItem }
+ent-BaseArachnidOrgan = { ent-BaseItem }
     .desc = { ent-BaseItem.desc }
 ent-OrganArachnidStomach = { ent-OrganAnimalStomach }
     .desc = Мерзость. Не перевариваю его.

@@ -1,4 +1,4 @@
-ent-BasePDA = КПК
+﻿ent-BasePDA = КПК
     .desc = Ассистент по персональным данным.
 ent-BaseWidePDA = { ent-BasePDA }
     .desc = { ent-BasePDA.desc }
@@ -102,11 +102,20 @@ ent-ClearPDA = прозрачный КПК
     .desc = На 99,44% из прозрачного пластика.
 ent-VisitorPDA = { ent-ClearPDA }
     .desc = { ent-ClearPDA.desc }
-# Corvax-HiddenDesc-Start
+# Corvax-HiddenShit-start
 ent-SyndiPDA = кроваво-красный КПК
     .desc = Смотря на этот КПК, ваше сердцебиение учащается... словно его владелец совершил нечто ужасное.
-    .suffix = КПК Синдиката, Ядерный Оперативник
-# Corvax-HiddenDesc-End
+    .suffix = КПК Синдиката
+ent-SyndiOperativePDA = { ent-SyndiPDA }
+    .desc = { ent-SyndiPDA.desc }
+    .suffix = КПК оперативника Синдиката
+ent-SyndiCorpsmanPDA = { ent-SyndiPDA }
+    .desc = { ent-SyndiPDA.desc }
+    .suffix = КПК медика Синдиката
+ent-SyndiCommanderPDA = { ent-SyndiPDA }
+    .desc = { ent-SyndiPDA.desc }
+    .suffix = КПК командира Синдиката
+# Corvax-HiddenShit-end
 ent-ERTLeaderPDA = КПК ОБР
     .desc = Красный значит мощный.
     .suffix = Лидер
@@ -150,13 +159,10 @@ ent-SeniorPhysicianPDA = КПК ведущего врача
     .desc = Слабо пахнет железом и химикатами.
 ent-SeniorOfficerPDA = КПК инструктора СБ
     .desc = Побит, помят, поломан, практически не пригоден для использования.
+ent-SeniorCourierPDA = КПК старшего логиста
+    .desc = Пахнет почтовыми марками и топливом для шаттлов.
 ent-PiratePDA = КПК пирата
     .desc = Йарр!
-# Corvax-HiddenDesc-Start
-ent-SyndiAgentPDA = медицинский кроваво-красный КПК
-    .desc = Смотря на этот КПК, ваше сердцебиение учащается... словно его владелец проводил немыслимые и ужасные медицинские эксперименты.
-    .suffix = КПК медика Синдиката
-# Corvax-HiddenDesc-End
 ent-ChameleonPDA = КПК пассажира
     .desc = Почему он не серый?
     .suffix = Хамелеон

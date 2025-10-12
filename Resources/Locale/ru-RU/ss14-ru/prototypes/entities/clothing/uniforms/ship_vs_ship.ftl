@@ -1,4 +1,4 @@
-﻿ent-ClothingUniformJumpsuitRecruitNT = комбинезон рекрута
+ent-ClothingUniformJumpsuitRecruitNT = комбинезон рекрута
     .desc = Классический серый комбинезон с синими элементами. Идеально для достойного помощника.
 ent-ClothingUniformJumpsuitRecruitSyndie = комбинезон рекрута Синдиката
     .desc = Подозрительный тёмно-серый комбинезон. Как будто пассажиры не были и без того достаточно подозрительными.

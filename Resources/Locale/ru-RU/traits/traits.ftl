@@ -1,4 +1,4 @@
-﻿trait-blindness-name = Слепота
+trait-blindness-name = Слепота
 trait-blindness-desc = Вы совершенно слепы и не можете видеть дальше нескольких метров перед собой.
 trait-narcolepsy-name = Нарколепсия
 trait-poor-vision-name = Близорукость

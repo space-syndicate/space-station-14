@@ -14,5 +14,5 @@ gas-pressure-regulator-ui-flow = Поток
 gas-pressure-regulator-ui-outlet = Выход
 gas-pressure-regulator-ui-inlet = Вход
 # Units
-gas-pressure-regulator-ui-flow-rate-unit = Л/с
+gas-pressure-regulator-ui-flow-rate-unit = л/с
 gas-pressure-regulator-ui-pressure-unit = кПа

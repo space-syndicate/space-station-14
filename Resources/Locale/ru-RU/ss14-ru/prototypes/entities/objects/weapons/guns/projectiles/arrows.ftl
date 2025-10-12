@@ -1,4 +1,4 @@
-﻿ent-BaseArrow = { ent-BaseItem }
+ent-BaseArrow = { ent-BaseItem }
     .desc = { ent-BaseItem.desc }
 ent-ArrowRegular = стрела
     .desc = Вы чувствуете в себе силу степей.

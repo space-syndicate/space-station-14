@@ -1,4 +1,4 @@
-﻿ent-BaseBorgModule = модуль борга
+ent-BaseBorgModule = модуль борга
     .desc = Техническая деталь, дающая киборгам новые способности.
 ent-BaseProviderBorgModule = { "" }
     .desc = { "" }
