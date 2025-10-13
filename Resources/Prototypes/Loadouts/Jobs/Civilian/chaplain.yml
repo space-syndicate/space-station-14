@@ -6,7 +6,7 @@
     requirement:
       !type:RoleTimeRequirement
       role: JobCaptain
-      time: 7200 #2 hrs
+      time: 2h
 
 # Playtime requirement for Druid Bible, Druidic Tablet
 - type: loadoutEffectGroup
@@ -16,7 +16,7 @@
     requirement:
       !type:RoleTimeRequirement
       role: JobBotanist
-      time: 18000 #5 hrs
+      time: 5h
 
 # Playtime requirement for Clown Bible, Mirth of the Honkmother
 - type: loadoutEffectGroup
@@ -26,7 +26,7 @@
     requirement:
       !type:RoleTimeRequirement
       role: JobClown
-      time: 18000 #5 hrs
+      time: 5h
 
 # Head
 - type: loadout
@@ -132,7 +132,7 @@
   storage:
     back:
     - BibleNanoTrasen
-    
+
 - type: loadout
   id: BibleNarsie
   storage:
