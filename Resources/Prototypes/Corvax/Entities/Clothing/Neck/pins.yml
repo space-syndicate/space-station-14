@@ -1,18 +1,5 @@
 - type: entity
   parent: ClothingNeckPinBase
-  id: ClothingNeckAtharaPin
-  name: starry sky pin
-  description: The pin of starry sky.
-  components:
-  - type: Sprite
-    sprite: Corvax/Clothing/Neck/Misc/pins.rsi
-    state: ath
-  - type: Clothing
-    sprite: Corvax/Clothing/Neck/Misc/pins.rsi
-    equippedPrefix: ath
-      
-- type: entity
-  parent: ClothingNeckPinBase
   id: ClothingNeckUSSPPin
   name: USSP pin
   description: The pin of United Soviet Socialist Planet.
@@ -23,7 +10,7 @@
   - type: Clothing
     sprite: Corvax/Clothing/Neck/Misc/pins.rsi
     equippedPrefix: comm
-      
+
 - type: entity
   parent: ClothingNeckPinBase
   id: ClothingNeckCorvaxPin
@@ -36,7 +23,7 @@
   - type: Clothing
     sprite: Corvax/Clothing/Neck/Misc/pins.rsi
     equippedPrefix: cor
-      
+
 - type: entity
   parent: ClothingNeckPinBase
   id: ClothingNeckDonkPin
@@ -62,8 +49,8 @@
   - type: Clothing
     sprite: Corvax/Clothing/Neck/Misc/pins.rsi
     equippedPrefix: earth
-      
-- type: entity    
+
+- type: entity
   parent: ClothingNeckPinBase
   id: ClothingNeckEchoPin
   name: comet pin
@@ -101,7 +88,7 @@
   - type: Clothing
     sprite: Corvax/Clothing/Neck/Misc/pins.rsi
     equippedPrefix: logistika
-      
+
 - type: entity
   parent: ClothingNeckPinBase
   id: ClothingNeckMainPin
@@ -114,7 +101,7 @@
   - type: Clothing
     sprite: Corvax/Clothing/Neck/Misc/pins.rsi
     equippedPrefix: main
-      
+
 - type: entity
   parent: ClothingNeckPinBase
   id: ClothingNeckDeForestPin
@@ -156,32 +143,6 @@
 
 - type: entity
   parent: ClothingNeckPinBase
-  id: ClothingNeckNebulaPin
-  name: nebula pin
-  description: The pin of nebula.
-  components:
-  - type: Sprite
-    sprite: Corvax/Clothing/Neck/Misc/pins.rsi
-    state: neb
-  - type: Clothing
-    sprite: Corvax/Clothing/Neck/Misc/pins.rsi
-    equippedPrefix: neb
-    
-- type: entity
-  parent: ClothingNeckPinBase
-  id: ClothingNeckNovaPin
-  name: ring planet pin
-  description: The pin of ring planet.
-  components:
-  - type: Sprite
-    sprite: Corvax/Clothing/Neck/Misc/pins.rsi
-    state: nova
-  - type: Clothing
-    sprite: Corvax/Clothing/Neck/Misc/pins.rsi
-    equippedPrefix: nova
-
-- type: entity
-  parent: ClothingNeckPinBase
   id: ClothingNeckSyndicakePin
   name: Syndicake pin
   description: The pin of Syndicakes, on backside have a little numbers "2559".
@@ -192,19 +153,6 @@
   - type: Clothing
     sprite: Corvax/Clothing/Neck/Misc/pins.rsi
     equippedPrefix: sind
-
-- type: entity
-  parent: ClothingNeckPinBase
-  id: ClothingNeckSolarisPin
-  name: space cheese pin
-  description: The pin of space cheese.
-  components:
-  - type: Sprite
-    sprite: Corvax/Clothing/Neck/Misc/pins.rsi
-    state: sol
-  - type: Clothing
-    sprite: Corvax/Clothing/Neck/Misc/pins.rsi
-    equippedPrefix: sol
 
 - type: entity
   parent: ClothingNeckPinBase
@@ -231,3 +179,29 @@
   - type: Clothing
     sprite: Corvax/Clothing/Neck/Misc/pins.rsi
     equippedPrefix: wl
+
+- type: entity
+  parent: ClothingNeckPinBase
+  id: ClothingNeckLumenPin
+  name: ringed cheese pin
+  description: The pin of ringed cheese.
+  components:
+  - type: Sprite
+    sprite: Corvax/Clothing/Neck/Misc/pins.rsi
+    state: lumen
+  - type: Clothing
+    sprite: Corvax/Clothing/Neck/Misc/pins.rsi
+    equippedPrefix: lumen
+
+- type: entity
+  parent: ClothingNeckPinBase
+  id: ClothingNeckVoidPin
+  name: void pin
+  description: The pin of void.
+  components:
+  - type: Sprite
+    sprite: Corvax/Clothing/Neck/Misc/pins.rsi
+    state: void
+  - type: Clothing
+    sprite: Corvax/Clothing/Neck/Misc/pins.rsi
+    equippedPrefix: void
