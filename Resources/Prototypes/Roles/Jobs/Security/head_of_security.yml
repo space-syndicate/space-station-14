@@ -6,15 +6,16 @@
   requirements:
     - !type:RoleTimeRequirement
       role: JobWarden
-      time: 36000 #10 hrs # Corvax-RoleTime
-#    - !type:RoleTimeRequirement
-#      role: JobSecurityOfficer
-#      time: 36000 #10 hrs
+      time: 10h # Corvax-RoleTime 1
+    #- !type:RoleTimeRequirement
+    #  role: JobDetective
+    #  time: 1h # knowing how to use the tools is important
+    #- !type:RoleTimeRequirement
+    #  role: JobSecurityOfficer
+    #  time: 5h
     - !type:DepartmentTimeRequirement
       department: Security
-      time: 108000 #50 hrs # Corvax-RoleTime
-#    - !type:OverallPlaytimeRequirement
-#      time: 144000 #40 hrs
+      time: 50h # Corvax-RoleTime 10
     - !type:TraitsRequirement #Corvax-TraitsRequirement
       inverted: true
       traits:

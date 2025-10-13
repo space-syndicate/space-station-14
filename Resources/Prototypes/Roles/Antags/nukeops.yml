@@ -6,10 +6,10 @@
   objective: roles-antag-nuclear-operative-objective
   requirements:
   - !type:OverallPlaytimeRequirement
-    time: 54000 # 15h # Corvax-RoleTime
+    time: 15h # Corvax-RoleTime 5
   - !type:DepartmentTimeRequirement
     department: Security
-    time: 18000 # 5h # Corvax-RoleTime
+    time: 5h # Corvax-RoleTime
   guides: [ NuclearOperatives ]
 
 - type: antag
@@ -20,13 +20,13 @@
   objective: roles-antag-nuclear-operative-agent-objective
   requirements:
   - !type:OverallPlaytimeRequirement
-    time: 54000 # 15h # Corvax-RoleTime
+    time: 15h # Corvax-RoleTime 5
   - !type:RoleTimeRequirement
     role: JobChemist
-    time: 36000 # 10h # Corvax-RoleTime
+    time: 10h # Corvax-RoleTime 3
   - !type:DepartmentTimeRequirement
     department: Security
-    time: 36000 # 10h # Corvax-RoleTime
+    time: 10h # Corvax-RoleTime
   guides: [ NuclearOperatives ]
 
 - type: antag
@@ -37,10 +37,10 @@
   objective: roles-antag-nuclear-operative-commander-objective
   requirements:
   - !type:OverallPlaytimeRequirement
-    time: 108000 # 30h # Corvax-RoleTime
+    time: 30h # Corvax-RoleTime 5
   - !type:DepartmentTimeRequirement
     department: Security
-    time: 54000 # 15h # Corvax-RoleTime
+    time: 15h # Corvax-RoleTime 5
   # should be changed to nukie playtime when thats tracked (wyci)
   guides: [ NuclearOperatives ]
 

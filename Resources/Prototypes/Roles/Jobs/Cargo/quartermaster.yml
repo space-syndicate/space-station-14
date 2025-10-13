@@ -9,12 +9,12 @@
 #      time: 21600 #6 hrs
     - !type:RoleTimeRequirement
       role: JobSalvageSpecialist
-      time: 36000 #10 hrs # Corvax-RoleTime
+      time: 10h # Corvax-RoleTime 2.5
     - !type:DepartmentTimeRequirement
       department: Cargo
-      time: 36000 #10 hours
+      time: 10h
     - !type:OverallPlaytimeRequirement
-      time: 144000 #40 hrs
+      time: 40h # Corvax-RoleTime
     - !type:TraitsRequirement #Corvax-TraitsRequirement
       inverted: true
       traits:
