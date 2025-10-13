@@ -6,17 +6,17 @@
     requirement:
       !type:RoleTimeRequirement
       role: JobChemist
-      time: 72000 #20 hrs # Corvax-RoleTime
+      time: 20h # Corvax-RoleTime
   - !type:JobRequirementLoadoutEffect
     requirement:
       !type:RoleTimeRequirement
       role: JobMedicalDoctor
-      time: 72000 #20 hrs # Corvax-RoleTime
+      time: 20h # Corvax-RoleTime
   - !type:JobRequirementLoadoutEffect
     requirement:
       !type:DepartmentTimeRequirement
       department: Medical
-      time: 216000 # 60 hrs
+      time: 60h
 
 # Other Timers
 
@@ -27,7 +27,7 @@
     requirement:
       !type:RoleTimeRequirement
       role: JobMedicalDoctor
-      time: 108000 #30 hrs
+      time: 30h
 
 # Head
 
