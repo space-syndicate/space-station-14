@@ -1,4 +1,4 @@
-marking-TattooHiveChest-tattoo_hive_chest = Татуировка, спина (Улей)
+﻿marking-TattooHiveChest-tattoo_hive_chest = Татуировка, спина (Улей)
 marking-TattooNightlingChest-tattoo_nightling = Татуировка, грудь (Найтлинг)
 marking-TattooHiveChest = Татуировка, спина (Улей)
 marking-TattooSilverburghLeftLeg-tattoo_silverburgh_l_leg = Татуировка, левая нога (Силвербург)
@@ -22,6 +22,10 @@ marking-TattooEyeMothRight-tattoo_eye_moth_r = Правый глаз
 marking-TattooEyeMothRight = Правый глаз
 marking-TattooEyeMothLeft-tattoo_eye_moth_l = Левый глаз
 marking-TattooEyeMothLeft = Левый глаз
+marking-TattooEyeVulpkaninRight-tattoo_eye_vulpkanin_r = Правый глаз
+marking-TattooEyeVulpkaninRight = Правый глаз
+marking-TattooEyeVulpkaninLeft-tattoo_eye_vulpkanin_l = Левый глаз
+marking-TattooEyeVulpkaninLeft = Левый глаз
 marking-TattooEyeVoxRight-tattoo_eye_vox_r = Правый глаз
 marking-TattooEyeVoxRight = Правый глаз
 marking-TattooEyeVoxLeft-tattoo_eye_vox_l = Левый глаз

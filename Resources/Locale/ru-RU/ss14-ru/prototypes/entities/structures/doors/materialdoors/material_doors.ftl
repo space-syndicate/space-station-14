@@ -1,4 +1,4 @@
-﻿ent-BaseMaterialDoor = дверь
+ent-BaseMaterialDoor = дверь
     .desc = Дверь, куда же она приведёт?
 ent-BaseMaterialDoorNavMap = { ent-BaseMaterialDoor }
     .desc = { ent-BaseMaterialDoor.desc }

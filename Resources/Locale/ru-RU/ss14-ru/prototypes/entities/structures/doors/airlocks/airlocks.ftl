@@ -1,4 +1,4 @@
-﻿ent-AirlockFreezer = { ent-Airlock }
+ent-AirlockFreezer = { ent-Airlock }
     .suffix = Холодильник
     .desc = { ent-Airlock.desc }
 ent-AirlockEngineering = { ent-Airlock }

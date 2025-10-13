@@ -125,7 +125,7 @@ uplink-radio-jammer-name = Глушитель связи
 uplink-radio-jammer-desc = При активации это устройство блокирует любую исходящую поблизости радиосвязь и скрывает датчики комбинезонов с мониторов. Замаскирован под оценочный инструмент.
 # Corvax-HiddenDesc-End
 uplink-syndicate-weapon-module-name = Оружейный модуль киборга
-uplink-syndicate-weapon-module-desc = Модернизирует киборга с помощью мачете и продвинутого лазерного пистолета.
+uplink-syndicate-weapon-module-desc = Модернизирует киборга с помощью энергетичского кинжала и пистолета Эфа.
 uplink-syndicate-martyr-module-name = Модуль киборга Мученик
 uplink-syndicate-martyr-module-desc = Превратите с помощью этого модуля своего емагнутого друга-борга в ходячую бомбу. Убедитесь, что они верны вашему делу, результаты могут варьироваться.
 uplink-singularity-beacon-name = Маяк сингулярности
@@ -254,8 +254,8 @@ uplink-clothing-outer-hardsuit-juggernaut-desc = Сверхпрочная бро
 # Misc
 uplink-cyberpen-name = Ручка Cybersun
 uplink-cyberpen-desc = Ручка юридического отдела Cybersun, бесценная при необходимости подделать документы и сбежать из тюрьмы. Смутно пахнет хардлайтом и спекуляциями на войне.
-uplink-decoy-disk-name = Фальшивый диск ядерной авторизации
-uplink-decoy-disk-desc = Кусок пластика с лентикулярным принтом, сделанным так, чтобы быть похожим на диск ядерной авторизации.
+uplink-decoy-disk-name = Фальшивый диск ядерной аутентификации
+uplink-decoy-disk-desc = Кусок пластика с лентикулярным принтом, сделанным так, чтобы быть похожим на диск ядерной аутентификации.
 uplink-cigarettes-name = Пачка сигарет Синдиката
 uplink-cigarettes-desc = Элитные сигареты для элитных агентов Синдиката. Насыщенные лекарствами, когда вам нужно больше, чем просто успокоить нервы.
 uplink-clothing-conducting-gloves-name = Токопроводящие перчатки

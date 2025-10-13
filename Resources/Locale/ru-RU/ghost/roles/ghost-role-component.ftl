@@ -1,4 +1,4 @@
-﻿# also used in MakeGhostRuleWindow and MakeGhostRoleCommand
+# also used in MakeGhostRuleWindow and MakeGhostRoleCommand
 ghost-role-component-default-rules =
     Все стандартные правила применяются, если администратор не сказал вам обратное.
     Вы не помните ничего из своей предыдущей жизни и не помните ничего из того, что узнали, будучи призраком.
