@@ -1,4 +1,4 @@
-ent-ClothingShoesFlippers = ласты
+﻿ent-ClothingShoesFlippers = ласты
     .desc = Пара резиновых ласт, улучшающих способность плавать при ношении.
 ent-ClothingShoesLeather = кожаные ботинки
     .desc = Очень стильная пара сапог, изготовленных из натуральной кожи.
@@ -13,7 +13,7 @@ ent-ClothingShoesTourist = туристическая обувь
 ent-ClothingShoesDameDane = туфли якудзы
     .desc = В конце концов...
 ent-ClothingShoesSnakeskinBoots = сапоги из змеиной кожи
-    .desc = Сапоги из первоклассной змеиной кожи — все вокруг будут вам завидовать.
+    .desc = Сапоги из когда-то ценной змеиной кожи — все вокруг завидовали бы вам.
 ent-ClothingShoesBootsSpeed = скороходы
     .desc = Высокотехнологичные ботинки, сотканные из квантовых волокон, способные преобразовывать электричество в чистую скорость!
 ent-ActionToggleSpeedBoots = Переключить скороходы

@@ -1,4 +1,4 @@
-﻿ent-AirlockShuttle = стыковочный шлюз
+ent-AirlockShuttle = стыковочный шлюз
     .desc = Необходим для соединения двух космических кораблей вместе.
     .suffix = Стыковочный
 ent-AirlockGlassShuttle = { ent-AirlockShuttle }

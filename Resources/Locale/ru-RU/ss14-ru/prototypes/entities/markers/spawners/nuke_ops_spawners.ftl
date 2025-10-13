@@ -1,4 +1,4 @@
-﻿ent-NukeOpsLootSpawner = спавнер добыча нюкеры
+ent-NukeOpsLootSpawner = спавнер добыча нюкеры
     .desc = { ent-MarkerBase.desc }
 ent-NukeOpsWeaponSpawner = спавнер оружие нюкеры
     .desc = { ent-MarkerBase.desc }

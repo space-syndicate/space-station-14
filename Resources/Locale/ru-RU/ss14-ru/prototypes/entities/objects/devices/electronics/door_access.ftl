@@ -1,4 +1,4 @@
-﻿ent-DoorElectronicsService = { ent-DoorElectronics }
+ent-DoorElectronicsService = { ent-DoorElectronics }
     .suffix = Сервис, Закрыт
     .desc = { ent-DoorElectronics.desc }
 ent-DoorElectronicsTheatre = { ent-DoorElectronics }
