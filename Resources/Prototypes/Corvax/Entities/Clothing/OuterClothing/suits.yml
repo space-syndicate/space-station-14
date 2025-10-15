@@ -1,4 +1,3 @@
-﻿
 - type: entity
   parent: ClothingOuterBase
   id: ClothingOuterAerostaticBomberJacket
@@ -31,3 +30,11 @@
     sprite: Corvax/Clothing/OuterClothing/Coats/atmos_overalls.rsi
   - type: Clothing
     sprite: Corvax/Clothing/OuterClothing/Coats/atmos_overalls.rsi
+    clothingVisuals:
+      outerClothing:
+      - state: equipped-OUTERCLOTHING
+      - state: equipped-OUTERCLOTHING-unshaded
+        shader: unshaded
+      - state: equipped-OUTERCLOTHING-unshaded
+        shader: shaded
+      # Это так светооражающие элементы сделаны. Подробности в файле с ClothingOuterVestHazard
