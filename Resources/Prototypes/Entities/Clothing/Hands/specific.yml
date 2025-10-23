@@ -17,21 +17,6 @@
     - type: Fiber
       fiberMaterial: fibers-chameleon
     - type: FingerprintMask
-# Corvax-HiddenDesc-Start
-    - type: HiddenDescription
-      entries:
-      - label: corvax-hidden-desc-Chameleon-syndicate
-        whitelistMind:
-          mindRoles:
-          - TraitorRole
-          - NukeopsRole
-      - label: corvax-hidden-desc-Chameleon-research
-        jobRequired:
-          - ResearchAssistant
-          - ResearchDirector
-          - Scientist
-          - Borg
-# Corvax-HiddenDesc-End
 
 - type: entity
   parent: ClothingHandsChameleon
@@ -41,31 +26,3 @@
   - type: Thieving
     stripTimeReduction: 2
     stealthy: true
-# Corvax-HiddenDesc-Start
-  - type: HiddenDescription
-    entries:
-    - label: corvax-hidden-desc-Chameleon-syndicate
-      whitelistMind:
-        mindRoles:
-        - TraitorRole
-        - NukeopsRole
-    - label: corvax-hidden-desc-ThievingGloves-syndicate
-      whitelistMind:
-        mindRoles:
-        - TraitorRole
-        - NukeopsRole
-    - label: corvax-hidden-desc-Chameleon-thief
-      whitelistMind:
-        mindRoles:
-        - ThiefRole
-    - label: corvax-hidden-desc-ThievingGloves-thief
-      whitelistMind:
-        mindRoles:
-        - ThiefRole
-    - label: corvax-hidden-desc-Chameleon-research
-      jobRequired:
-        - ResearchAssistant
-        - ResearchDirector
-        - Scientist
-        - Borg
-# Corvax-HiddenDesc-End
