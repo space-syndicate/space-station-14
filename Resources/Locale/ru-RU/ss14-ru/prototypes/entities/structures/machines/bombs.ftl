@@ -2,10 +2,8 @@ ent-BaseHardBomb = мегабомба
     .desc = Просто говорите и никто не взорвётся.
 ent-TrainingBomb = учебная бомба
     .desc = Бомба для чайников, инструкция в комплект не входит.
-# Corvax-HiddenDesc-Start
-ent-SyndicateBomb = бомба
-    .desc = Это бомба с таймером! Она тикает? Вы хотели стать героем!? Самое время!
-# Corvax-HiddenDesc-End
+ent-SyndicateBomb = бомба Синдиката
+    .desc = Бомба для оперативников и агентов Синдиката. Настоящее дело, никаких тренировок, приступайте!
 ent-SyndicateBombFake = { ent-SyndicateBomb }
     .suffix = Обманка
     .desc = { ent-SyndicateBomb.desc }
