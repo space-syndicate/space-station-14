@@ -109,11 +109,8 @@ admin-smite-terminate-description = Создаёт экстерминатора 
 admin-smite-super-slip-description = Очень сильно поскальзывает цель.
 admin-smite-omni-accent-description = Заставляет цель говорить с почти каждым возможным акцентом.
 admin-smite-crawler-description = Заставляет цель упасть и не позволяет встать. Для дополнительного эффекта удалите и руки!
-<<<<<<< HEAD
-=======
 admin-smite-homing-rod-description = Запускает самонаводящийся неподвижный жезл, двигающийся прямо к цели.
 admin-smite-homing-rod-slow-description = Запускает самонаводящийся неподвижный жезл, медленно двигающийся прямо к цели.
->>>>>>> 3f7c6e03bc (25 10 13 translate (#136))
 admin-smite-super-bonk-lite-description = Заставляет цель удариться о каждый стол на станции и за её пределами. Прекращает действовать после смерти цели.
 admin-smite-silicon-laws-bound-description = Заставляет цель соблюдать законы синтетиков. Закон 2, выпрыгни с окна.
 
