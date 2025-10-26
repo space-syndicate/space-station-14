@@ -97,8 +97,8 @@ public sealed class MealsRecipesJsonGenerator
 
         foreach (var react in reactionPrototypes)
         {
-            foreach (var effect in react.Effects)
-                if (effect.GetType().Equals(typeof(CreateEntityReactionEffect)))
+            /*foreach (var effect in react.Effects)
+                if (effect.GetType().Equals(typeof(CreateEntityReactionEffect))) //SpawnEntity ? EntityEffects.Effects.EntitySpawning.SpawnEntity
                 {
                     var trueEffect = (CreateEntityReactionEffect)effect;
                     if (Regex.Match(trueEffect.Entity.ToLower().Trim(), @".*[Ff]ood*").Success) if (!mixableRecipes.ContainsKey(react.Id))
@@ -107,7 +107,7 @@ public sealed class MealsRecipesJsonGenerator
                             mixableRecipes[react.Id]["id"] = react.Id;
                             mixableRecipes[react.Id]["type"] = "mixableRecipes";
                         }
-                }
+                }*/
         }
         // reaction-related items end
 
