@@ -142,7 +142,7 @@ public sealed partial class TTSTab : Control
                 Text = Loc.GetString("humanoid-profile-editor-voice-play"),
                 MinWidth = 30,
                 ToolTip = Loc.GetString("humanoid-profile-editor-voice-tooltip-play"),
-                StyleClasses = { StyleClass.ButtonOpenRight }
+                StyleClasses = { StyleClass.ButtonOpenLeft }
             };
 
             previewButton.OnPressed += _ =>
