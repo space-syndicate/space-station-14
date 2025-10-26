@@ -1,4 +1,4 @@
-- type: entity
+﻿- type: entity
   parent: [ClothingHeadsetGrey, BaseChameleon]
   id: ClothingHeadsetChameleon
   name: passenger headset
@@ -14,18 +14,3 @@
     - type: ChameleonClothing
       slot: [ears]
       default: ClothingHeadsetGrey
-# Corvax-HiddenDesc-Start
-    - type: HiddenDescription
-      entries:
-      - label: corvax-hidden-desc-Chameleon-syndicate
-        whitelistMind:
-          mindRoles:
-          - TraitorRole
-          - NukeopsRole
-      - label: corvax-hidden-desc-Chameleon-research
-        jobRequired:
-          - ResearchAssistant
-          - ResearchDirector
-          - Scientist
-          - Borg
-# Corvax-HiddenDesc-End

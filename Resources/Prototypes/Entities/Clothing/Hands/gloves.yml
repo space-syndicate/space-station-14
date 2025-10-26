@@ -260,14 +260,6 @@
     - objective: MassArrestObjective
       components:
       - type: CriminalRecordsHacker
-# Corvax-HiddenDesc-Start
-  - type: HiddenDescription
-    entries:
-    - label: corvax-hidden-desc-ThievingGloves-thief
-      whitelistMind:
-        mindRoles:
-        - ThiefRole
-# Corvax-HiddenDesc-End
 
 - type: entity
   parent: [ ClothingHandsGlovesColorBlack, BaseSecurityEngineeringContraband ]
@@ -382,19 +374,6 @@
   - type: Thieving
     stripTimeReduction: 1.5
     stealthy: true
-# Corvax-HiddenDesc-Start
-  - type: HiddenDescription
-    entries:
-    - label: corvax-hidden-desc-ThievingGloves-syndicate
-      whitelistMind:
-        mindRoles:
-        - TraitorRole
-        - NukeopsRole
-    - label: corvax-hidden-desc-ThievingGloves-thief
-      whitelistMind:
-        mindRoles:
-        - ThiefRole
-# Corvax-HiddenDesc-End
 
 - type: entity
   parent: ClothingHandsGlovesColorWhite
