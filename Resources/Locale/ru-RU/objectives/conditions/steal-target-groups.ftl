@@ -11,7 +11,7 @@ steal-target-groups-captain-id-card = ID-карта капитана
 steal-target-groups-jetpack-captain-filled = джетпак капитана
 steal-target-groups-weapon-antique-laser = антикварный лазерный пистолет
 steal-target-groups-nuke-disk = диск ядерной аутентификации
-steal-target-groups-weapon-energy-shot-gun = энергетический дробовик
+steal-target-groups-weapon-energy-magnum = энергетический магнум
 # Thief Collection
 steal-target-groups-figurines = фигурки
 steal-target-groups-heads-cloaks = плащи глав

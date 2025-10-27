@@ -1,4 +1,4 @@
-admin-smite-chess-self = Вы чувствуете себя необычайно маленьким.
+﻿admin-smite-chess-self = Вы чувствуете себя необычайно маленьким.
 admin-smite-chess-others = { CAPITALIZE($name) } уменьшается до шахматной доски!
 admin-smite-set-alight-self = Вы загораетесь пламенем!
 admin-smite-set-alight-others = { CAPITALIZE($name) } загорается пламенем!
@@ -60,6 +60,8 @@ admin-smite-nyanify-name = НЯфикация
 admin-smite-kill-sign-name = Знак смерти
 admin-smite-omni-accent-name = Омни-акцент
 admin-smite-crawler-name = Ползун
+admin-smite-homing-rod-name = Самонаводящийся жезл
+admin-smite-homing-rod-slow-name = Медленный самонаводящийся жезл
 admin-smite-silicon-laws-bound-name = Сделать синтетиком
 
 ## Smite descriptions
@@ -107,6 +109,8 @@ admin-smite-terminate-description = Создаёт экстерминатора 
 admin-smite-super-slip-description = Очень сильно поскальзывает цель.
 admin-smite-omni-accent-description = Заставляет цель говорить с почти каждым возможным акцентом.
 admin-smite-crawler-description = Заставляет цель упасть и не позволяет встать. Для дополнительного эффекта удалите и руки!
+admin-smite-homing-rod-description = Запускает самонаводящийся неподвижный жезл, двигающийся прямо к цели.
+admin-smite-homing-rod-slow-description = Запускает самонаводящийся неподвижный жезл, медленно двигающийся прямо к цели.
 admin-smite-super-bonk-lite-description = Заставляет цель удариться о каждый стол на станции и за её пределами. Прекращает действовать после смерти цели.
 admin-smite-silicon-laws-bound-description = Заставляет цель соблюдать законы синтетиков. Закон 2, выпрыгни с окна.
 
