@@ -111,7 +111,7 @@
         - id: ClothingNeckCloakGay
         - id: ClothingNeckCloakEnby
         - id: ClothingNeckCloakPan
-      - id: ToySkeleton
+      - id: ToyFigurineSkeleton
       - id: Basketball
       - id: Football
       - id: TennisBall
@@ -341,6 +341,7 @@
       weight: 95
       children:
       - id: Machete
+      - id: Claymore
       - id: BaseBallBat
       - id: CombatKnife
       - id: Spear

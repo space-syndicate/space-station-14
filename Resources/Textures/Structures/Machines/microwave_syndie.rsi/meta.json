@@ -16,7 +16,7 @@
         {
             "name": "mw0"
         },
-        { 
+        {
             "name": "mw_running_unlit",
             "delays": [
                 [
@@ -46,6 +46,14 @@
                     0.1
                 ]
             ]
+        },
+        {
+            "name": "inhand-right",
+            "directions": 4
+        },
+        {
+            "name": "inhand-left",
+            "directions": 4
         }
       ]
     }
