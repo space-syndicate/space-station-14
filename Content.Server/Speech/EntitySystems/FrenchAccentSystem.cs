@@ -11,15 +11,15 @@ namespace Content.Server.Speech.EntitySystems;
 public sealed class FrenchAccentSystem : EntitySystem
 {
     [Dependency] private readonly ReplacementAccentSystem _replacement = default!;
-    // Russian-Locale-Start
-    [Dependency] private readonly IRobustRandom _random = default!;
-    // Russian-Locale-End
+    [Dependency] private readonly IRobustRandom _random = default!; // Russian-Locale
 
     private static readonly Regex RegexTh = new(@"th", RegexOptions.IgnoreCase);
+    //Russian-Locale-Start
     private static readonly Regex RegexH = new("х", RegexOptions.IgnoreCase);
     private static readonly Regex RegexR = new("[рР]+", RegexOptions.IgnoreCase);
     private static readonly Regex RegexE = new("е", RegexOptions.IgnoreCase);
     private static readonly Regex RegexZ = new("з", RegexOptions.IgnoreCase);
+    //Russian-Locale-End
     private static readonly Regex RegexSpacePunctuation = new(@"(?<=\w\w)[!?;:](?!\w)", RegexOptions.IgnoreCase);
 
     public override void Initialize()
@@ -55,7 +55,7 @@ public sealed class FrenchAccentSystem : EntitySystem
             }
         }
 
-        // Russian-Locale
+        // Russian-Locale-Start
 
         foreach (Match match in RegexH.Matches(msg))
         {
@@ -74,7 +74,7 @@ public sealed class FrenchAccentSystem : EntitySystem
             }
         }
 
-        // Тут через это, потому-что при работе со списком он мутирует нахуй.
+        // Тут через это, потому-что при работе со списком он мутирует.
         msg = RegexR.Replace(msg, match =>
         {
             var uppercase = msg[match.Index] == 'Р';
@@ -82,8 +82,8 @@ public sealed class FrenchAccentSystem : EntitySystem
             var h = "";
             for (var i = 0; i < match.Value.Length; i++)
             {
-                // Блять я не буду это комментировать.
-                if (uppercase && match.Index != 0 && !char.IsWhiteSpace(msg[match.Index - 1]) || msg[match.Index + match.Length].ToString().Equals(msg[match.Index + match.Length].ToString().ToUpper(), StringComparison.CurrentCulture))
+                // Делает х заглавным, только если Р большая, но не первая буква в слове, и сообщении в целом. Также капитализирует её, след. после неё буква заглавная.
+                if (uppercase && match.Index != 0 && !char.IsWhiteSpace(msg[match.Index - 1]) || msg[match.Index + 1].ToString().Equals(msg[match.Index + 1].ToString().ToUpper(), StringComparison.CurrentCulture))
                     h += "Х";
                 else
                     h += "х";
@@ -117,6 +117,8 @@ public sealed class FrenchAccentSystem : EntitySystem
                 msg = msg[..match.Index] + z + msg[(match.Index + 1)..];
             }
         }
+
+        // Russian-Locale-End
 
         return msg;
 
