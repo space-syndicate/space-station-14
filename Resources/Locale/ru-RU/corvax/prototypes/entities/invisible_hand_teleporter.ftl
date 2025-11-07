@@ -5,3 +5,4 @@ ent-PortalRedAdmemeCNInvisible = { ent-BasePortal }
     .desc = { ent-BasePortal.desc }
 ent-PortalBlueAdmemeCNInvisible = { ent-BasePortal }
     .desc = { ent-BasePortal.desc }
+    
