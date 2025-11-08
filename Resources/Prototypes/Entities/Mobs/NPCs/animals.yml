@@ -3684,6 +3684,8 @@
     reformTime: 10
     popupText: diona-reform-attempt
     reformPrototype: MobDionaReformed
+  - type: TTS # Corvax-TTS
+    voice: Omu # nerd-tree from HS, why not?
 
 - type: entity
   parent: MobDionaNymph
