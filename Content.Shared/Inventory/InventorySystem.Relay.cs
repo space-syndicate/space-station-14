@@ -8,6 +8,7 @@ using Content.Shared.Corvax.TTS;
 using Content.Shared.Contraband;
 using Content.Shared.Damage;
 using Content.Shared.Damage.Events;
+using Content.Shared.Damage.Systems;
 using Content.Shared.Electrocution;
 using Content.Shared.Explosion;
 using Content.Shared.Eye.Blinding.Systems;
