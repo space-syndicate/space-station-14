@@ -221,6 +221,32 @@
 
 - type: entity
   parent: ClothingNeckPinBase
+  id: ClothingNeckLumenPin
+  name: ringed cheese pin
+  description: The pin of ringed cheese.
+  components:
+  - type: Sprite
+    sprite: Corvax/Clothing/Neck/Misc/pins.rsi
+    state: lumen
+  - type: Clothing
+    sprite: Corvax/Clothing/Neck/Misc/pins.rsi
+    equippedPrefix: lumen
+
+- type: entity
+  parent: ClothingNeckPinBase
+  id: ClothingNeckVoidPin
+  name: void pin
+  description: The pin of void.
+  components:
+  - type: Sprite
+    sprite: Corvax/Clothing/Neck/Misc/pins.rsi
+    state: void
+  - type: Clothing
+    sprite: Corvax/Clothing/Neck/Misc/pins.rsi
+    equippedPrefix: void
+
+- type: entity
+  parent: ClothingNeckPinBase
   id: ClothingNeckWhiteListPin
   name: quasar pin
   description: The pin of quasar.
