@@ -7,16 +7,12 @@ using Content.Shared.Ninja.Systems;
 using Content.Shared.Popups;
 using Content.Shared.PowerCell.Components;
 using Content.Shared.Damage;
-using Content.Server.Emp;
 using Content.Shared.Movement.Systems;
 using Content.Shared.Mobs;
 using Content.Shared.Mobs.Systems;
 using Content.Shared.Sound.Components;
-using Content.Shared.UserInterface;
 using Robust.Shared.Audio;
-using Robust.Shared.GameObjects;
-using Robust.Shared.Utility;
-using Robust.Shared.Prototypes;
+using Content.Shared.Damage.Systems;
 using Content.Shared.Humanoid;
 using Content.Server.Humanoid;
 using Content.Shared.Humanoid.Markings;
@@ -36,7 +32,7 @@ public sealed partial class IpcSystem : EntitySystem
     [Dependency] private readonly MovementSpeedModifierSystem _movementSpeedModifier = default!;
     [Dependency] private readonly MobStateSystem _mobState = default!;
     [Dependency] private readonly SharedUserInterfaceSystem _ui = default!;
-    [Dependency] private readonly IPrototypeManager _prototypeManager = default!;
+    //[Dependency] private readonly IPrototypeManager _prototypeManager = default!;
     [Dependency] private readonly HumanoidAppearanceSystem _humanoid = default!;
     [Dependency] private readonly MarkingManager _markingManager = default!;
     public override void Initialize()
@@ -181,8 +177,7 @@ public sealed partial class IpcSystem : EntitySystem
 
         var damage = new DamageSpecifier();
         damage.DamageDict.Add("Shock", 30);
-        _damageable.TryChangeDamage(uid, damage);
-
+        _damageable.TryChangeDamage(uid, damage);//ChangeDamage ?
     }
 
     private void OnMobStateChanged(EntityUid uid, IpcComponent component, ref MobStateChangedEvent args)
