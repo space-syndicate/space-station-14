@@ -58,8 +58,8 @@ public sealed partial class DocumentPrinterSystem : EntitySystem
 
     private string GetTimeStation()
     {
-        var time = _timing.CurTime.Subtract(_gameTicker.RoundStartTimeSpan).ToString("hh\\:mm\\:ss");
-        return time + " " + DateTime.UtcNow.AddYears(1000).ToShortDateString();
+        var time = _gameTicker.RoundDuration().ToString("hh\\:mm\\:ss");
+        return time + " " + DateTime.Now.AddYears(1000).ToShortDateString();
     }
 
 }
