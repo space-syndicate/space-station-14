@@ -78,6 +78,7 @@ namespace Content.Server.Administration.Systems
 
         private void GetVerbs(GetVerbsEvent<Verb> ev)
         {
+            AddAudioVerbs(ev); // Corvax-JukeboxControls
             AddAdminVerbs(ev);
             AddDebugVerbs(ev);
             AddSmiteVerbs(ev);
