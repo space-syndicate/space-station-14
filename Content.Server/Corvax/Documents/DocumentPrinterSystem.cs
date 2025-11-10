@@ -1,6 +1,7 @@
 using Content.Shared.Access.Components;
 using Content.Shared.Containers.ItemSlots;
 using Content.Shared.Corvax.Documents;
+using Content.Shared.GameTicking;
 using Content.Shared.Lathe;
 using Content.Shared.Paper;
 using Content.Shared.Station;
@@ -14,6 +15,7 @@ public sealed partial class DocumentPrinterSystem : EntitySystem
     [Dependency] private readonly PaperSystem _paper = default!;
     [Dependency] private readonly SharedStationSystem _station = default!;
     [Dependency] private readonly IGameTiming _timing = default!;
+    [Dependency] private readonly SharedGameTicker _gameTicker = default!;
 
     public override void Initialize()
     {
@@ -56,9 +58,8 @@ public sealed partial class DocumentPrinterSystem : EntitySystem
 
     private string GetTimeStation()
     {
-        var curTime = _timing.CurTime;
-        var formattedTime = $"{(int)curTime.TotalHours:D2}:{curTime.Minutes:D2}:{curTime.Seconds:D2}";
-        return formattedTime + " " + DateTime.UtcNow.AddYears(1000).ToShortDateString();
+        var time = _gameTicker.RoundDuration().ToString("hh\\:mm\\:ss");
+        return time + " " + DateTime.Now.AddYears(1000).ToShortDateString();
     }
 
 }
