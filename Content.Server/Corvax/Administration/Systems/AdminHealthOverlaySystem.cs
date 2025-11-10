@@ -12,7 +12,7 @@ public sealed class AdminHealthOverlaySystem : EntitySystem
     [
         new ShowHealthBarsComponent(), new ShowHealthIconsComponent(),
         new ShowJobIconsComponent(), new ShowMindShieldIconsComponent(),
-        new ShowCriminalRecordIconsComponent(), new ShowSyndicateIconsComponent()
+        new ShowCriminalRecordIconsComponent()
     ];
 
     public override void Initialize()
