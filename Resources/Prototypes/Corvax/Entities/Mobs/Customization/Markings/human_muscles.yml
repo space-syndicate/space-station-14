@@ -1,0 +1,59 @@
+- type: marking
+  id: ChestMuscles
+  sponsorOnly: true # Corvax-Sponsors
+  bodyPart: Chest
+  markingCategory: Chest
+  speciesRestriction: [Human, Dwarf, SlimePerson]
+  followSkinColor: true
+  forcedColoring: true
+  sprites:
+  - sprite: Corvax/Mobs/Customization/human_muscles_parts.rsi
+    state: muscle-body
+
+- type: marking
+  id: LLegsMuscles
+  sponsorOnly: true # Corvax-Sponsors
+  bodyPart: LLeg
+  markingCategory: Legs
+  forcedColoring: true
+  speciesRestriction: [Human, Dwarf, SlimePerson]
+  followSkinColor: true
+  sprites:
+  - sprite: Corvax/Mobs/Customization/human_muscles_parts.rsi
+    state: muscle_l_leg
+
+- type: marking
+  id: RLegsMuscles
+  sponsorOnly: true # Corvax-Sponsors
+  bodyPart: RLeg
+  markingCategory: Legs
+  forcedColoring: true
+  speciesRestriction: [Human, Dwarf, SlimePerson]
+  followSkinColor: true
+  sprites:
+  - sprite: Corvax/Mobs/Customization/human_muscles_parts.rsi
+    state: muscle_r_leg
+
+- type: marking
+  id: RArmMuscles
+  sponsorOnly: true # Corvax-Sponsors
+  bodyPart: RArm
+  markingCategory: Arms
+  forcedColoring: true
+  speciesRestriction: [Human, Dwarf, SlimePerson]
+  followSkinColor: true
+  sprites:
+  - sprite: Corvax/Mobs/Customization/human_muscles_parts.rsi
+    state: muscle_r_arm
+
+- type: marking
+  id: LArmMuscles
+  sponsorOnly: true # Corvax-Sponsors
+  bodyPart: LArm
+  markingCategory: Arms
+  forcedColoring: true
+  speciesRestriction: [Human, Dwarf, SlimePerson]
+  followSkinColor: true
+  sprites:
+  - sprite: Corvax/Mobs/Customization/human_muscles_parts.rsi
+    state: muscle_l_arm
