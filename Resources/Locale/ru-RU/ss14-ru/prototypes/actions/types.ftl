@@ -72,3 +72,5 @@ ent-ActionToggleRootable = Укоренение
     .desc = Начните или прекратите укореняться к полу.
 ent-ActionChameleonController = Управление одеждой
     .desc = Быстро смените весь свой наряд!
+ent-ActionIntrinsicStore = Магазин
+    .desc = Открыть магазин

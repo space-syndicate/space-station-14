@@ -16,6 +16,8 @@ criminal-records-status-detained = Под арестом
 criminal-records-status-suspected = Подозревается
 criminal-records-status-discharged = Освобождён
 criminal-records-status-paroled = Освобождён по УДО
+criminal-records-status-hostile = Враждебен
+criminal-records-status-eliminated = Ликвидирован
 criminal-records-console-wanted-reason = Причина розыска
 criminal-records-console-suspected-reason = Причина подозрения
 criminal-records-console-reason = Причина
@@ -40,6 +42,10 @@ criminal-records-console-detained = { $name } ({ $job }) арестовали, �
 criminal-records-console-released = { $name } ({ $job }) отпустили, ответственный: { $officer }.
 criminal-records-console-paroled = { $name } ({ $job }) освободили по УДО, ответственный: { $officer }.
 criminal-records-console-not-parole = { $name } ({ $job }) лишили права на УДО, ответственный: { $officer }.
+criminal-records-console-hostile = { $name } ({ $job }) пометили враждебным, причина: { $reason }, ответственный: { $officer }.
+criminal-records-console-not-hostile = { $name } ({ $job }) больше не помечен враждебным, ответственный: { $officer }.
+criminal-records-console-eliminated = { $name } ({ $job }) пометили ликвидированным, ответственный: { $officer }.
+criminal-records-console-not-eliminated = { $name } ({ $job }) больше не помечен ликвидированным, ответственный: { $officer }.
 criminal-records-console-unknown-officer = <неизвестный>
 
 ## Filters
