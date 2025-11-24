@@ -25,6 +25,7 @@ guide-entry-mixingandfiltering = Смешивание и фильтрация
 guide-entry-gascanisters = Газовые канистры
 guide-entry-thermomachines = Термомашины
 guide-entry-gascondensing = Конденсация газов
+guide-entry-gasrecycling = Переработка газов
 guide-entry-radiators = Радиаторы
 guide-entry-atmosphericssystems = Атмосферные системы
 guide-entry-pipenetworks = Сети труб
