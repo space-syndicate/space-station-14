@@ -43,9 +43,9 @@ entity-condition-guidebook-reagent-threshold =
                *[other] имеет между { NATURALFIXED($min, 2) } ед. и { NATURALFIXED($max, 2) } ед. { $reagent }
             }
     }
-entity-condition-guidebook-mob-state-condition = пациент в { $state }
-entity-condition-guidebook-job-condition = должность цели — { $job }
-entity-condition-guidebook-solution-temperature =
+reagent-effect-condition-guidebook-mob-state-condition = пациент в { $state }
+reagent-effect-condition-guidebook-job-condition = должность цели — { $job }
+reagent-effect-condition-guidebook-solution-temperature =
     температура раствора составляет { $max ->
         [2147483648] не менее { NATURALFIXED($min, 2) }k
        *[other]
@@ -54,7 +54,7 @@ entity-condition-guidebook-solution-temperature =
                *[other] между { NATURALFIXED($min, 2) }k и { NATURALFIXED($max, 2) }k
             }
     }
-entity-condition-guidebook-body-temperature =
+reagent-effect-condition-guidebook-body-temperature =
     температура тела составляет { $max ->
         [2147483648] не менее { NATURALFIXED($min, 2) }k
        *[other]
@@ -63,23 +63,23 @@ entity-condition-guidebook-body-temperature =
                *[other] между { NATURALFIXED($min, 2) }k и { NATURALFIXED($max, 2) }k
             }
     }
-entity-condition-guidebook-organ-type =
+reagent-effect-condition-guidebook-organ-type =
     метаболизирующий орган { $shouldhave ->
         [true] это
        *[false] это не
     } { $name } орган
-entity-condition-guidebook-has-tag =
+reagent-effect-condition-guidebook-has-tag =
     цель { $invert ->
         [true] не имеет
        *[false] имеет
     } метку { $tag }
-entity-condition-guidebook-this-reagent = этот реагент
-entity-condition-guidebook-breathing =
+reagent-effect-condition-guidebook-this-reagent = этот реагент
+reagent-effect-condition-guidebook-breathing =
     цель { $isBreathing ->
         [true] дышит нормально
        *[false] задыхается
     }
-entity-condition-guidebook-internals =
+reagent-effect-condition-guidebook-internals =
     цель { $usingInternals ->
         [true] использует дыхательную маску
        *[false] дышит атмосферным газом

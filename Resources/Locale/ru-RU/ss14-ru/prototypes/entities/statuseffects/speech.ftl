@@ -6,7 +6,3 @@ ent-StatusEffectSlurred = невнятность
     .desc = { ent-SpeechStatusEffectBase.desc }
 ent-StatusEffectScrambled = неразборчивость
     .desc = { ent-SpeechStatusEffectBase.desc }
-ent-StatusEffectOwO = owo-акцент
-    .desc = { ent-SpeechStatusEffectBase.desc }
-ent-StatusEffectBark = гав-акцент
-    .desc = { ent-SpeechStatusEffectBase.desc }

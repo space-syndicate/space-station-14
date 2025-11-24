@@ -8,6 +8,7 @@ construction-graph-tag-clown-bike-horn = клаксон
 construction-graph-tag-clowne-horn = сломанный клаксон
 construction-graph-tag-happy-honk-meal = обед Хэппи Хонк
 construction-graph-tag-woeful-cluwne-meal = обед Жалкий Клувень
+construction-graph-tag-boxhug = коробка обнимашек
 # mime
 construction-graph-tag-suspenders = подтяжки
 construction-graph-tag-mime-meal = обед Хэппи Хонк мимское издание
