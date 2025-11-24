@@ -7,7 +7,6 @@ entity-condition-guidebook-total-damage =
                *[other] тело имеет между { NATURALFIXED($min, 2) } и { NATURALFIXED($max, 2) } общего урона
             }
     }
-
 entity-condition-guidebook-type-damage =
     { $max ->
         [2147483648] тело имеет по крайней мере { NATURALFIXED($min, 2) } урона типа { $type }
@@ -17,7 +16,6 @@ entity-condition-guidebook-type-damage =
                *[other] тело имеет между { NATURALFIXED($min, 2) } и { NATURALFIXED($max, 2) } урона типа { $type }
             }
     }
-
 entity-condition-guidebook-group-damage =
     { $max ->
         [2147483648] тело имеет по крайней мере { NATURALFIXED($min, 2) } урона группы { $type }
@@ -27,7 +25,6 @@ entity-condition-guidebook-group-damage =
                *[other] тело имеет между { NATURALFIXED($min, 2) } и { NATURALFIXED($max, 2) } урона группы { $type }
             }
     }
-
 entity-condition-guidebook-total-hunger =
     { $max ->
         [2147483648] цель имеет по крайней мере { NATURALFIXED($min, 2) } общего голода
@@ -37,7 +34,6 @@ entity-condition-guidebook-total-hunger =
                *[other] цель имеет между  { NATURALFIXED($min, 2) } и { NATURALFIXED($max, 2) } общего голода
             }
     }
-
 entity-condition-guidebook-reagent-threshold =
     { $max ->
         [2147483648] в кровеносной системе имеется по крайней мере { NATURALFIXED($min, 2) } ед. { $reagent }

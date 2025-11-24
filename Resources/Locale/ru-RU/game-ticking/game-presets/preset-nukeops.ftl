@@ -10,7 +10,7 @@ nukeops-neutral = [color=yellow]Ничейный исход![/color]
 nukeops-crewminor = [color=green]Малая победа экипажа![/color]
 nukeops-crewmajor = [color=green]Разгромная победа экипажа![/color]
 nukeops-cond-nukeexplodedoncorrectstation = Ядерным оперативникам удалось взорвать станцию.
-nukeops-cond-nukeexplodedonnukieoutpost = Аванпост ядерных оперативников был уничтожен ядерным взрывом.
+nukeops-cond-nukeexplodedonnukieoutpost = Аванпост ядерных оперативников был уничтожен ядерным взрывом!
 nukeops-cond-nukeexplodedonincorrectlocation = Ядерная бомба взорвалась вне станции.
 nukeops-cond-nukeactiveinstation = Ядерная бомба была оставлена взведённой на станции.
 nukeops-cond-nukeactiveatcentcom = Ядерная бомба была доставлена Центральному командованию!
@@ -20,7 +20,7 @@ nukeops-cond-nukiesabandoned = Ядерные оперативники были 
 nukeops-cond-allnukiesdead = Все ядерные оперативники погибли.
 nukeops-cond-somenukiesalive = Несколько ядерных оперативников погибли.
 nukeops-cond-allnukiesalive = Все ядерные оперативники выжили.
-nukeops-list-start = Ядерными оперативниками были:
+nukeops-list-start = Оперативниками были:
 nukeops-list-name = - [color=White]{ $name }[/color]
 nukeops-list-name-user = - [color=White]{ $name }[/color] ([color=gray]{ $user }[/color])
 nukeops-not-enough-ready-players = Недостаточно игроков готовы к игре! { $readyPlayersCount } игроков из необходимых { $minimumPlayers } готовы. Нельзя запустить пресет Ядерные оперативники.
