@@ -4,10 +4,10 @@
   roundStart: True
   prototype: MobVulpkanin
   sprites: MobCorvaxVulpkaninSprites #MobVulpkaninSprites # Corvax-CorvaxVulp_Port
-  defaultSkinTone:  "#eb943d" #"#5a3f2d" Corvax-CorvaxVulp_Port ибо нефиг
+  defaultSkinTone:  "#eb943d" # Corvax-CorvaxVulp_Port ибо нефиг
   markingLimits: MobVulpkaninMarkingLimits
   dollPrototype: MobVulpkaninDummy
-  skinColoration: VulpkaninColors
+  skinColoration: Hues # VulpkaninColors Corvax-CorvaxVulp_Port
   maleFirstNames: NamesVulpFirstMale # Corvax-CorvaxVulp_Port names_vulpkanin_male
   femaleFirstNames: NamesVulpFirstFemale # Corvax-CorvaxVulp_Port names_vulpkanin_female
   maleLastNames: NamesVulpLast # Corvax-LastnameGender

@@ -105,7 +105,7 @@
       state: "creampie_vulpkanin"
       visible: false
   - type: HumanoidAppearance
-    species: CorvaxVulpkanin # Vulpkanin vulpkanin Corvax-CorvaxVulp_Port
+    species: Vulpkanin
     undergarmentTop: UndergarmentTopTanktopVulpkanin
     undergarmentBottom: UndergarmentBottomBoxersVulpkanin
     hideLayersOnEquip:
@@ -219,7 +219,7 @@
   categories: [ HideSpawnMenu ]
   components:
   - type: HumanoidAppearance
-    species: CorvaxVulpkanin # Vulpkanin vulpkanin Corvax-CorvaxVulp_Port
+    species: Vulpkanin
     hideLayersOnEquip:
     - Snout
     - HeadTop
