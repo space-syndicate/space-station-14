@@ -5,7 +5,6 @@
   id: BaseMobVulpkanin
   name: Urist McBark
   components:
-  - type: Wagging #vulpkanin Corvax-CorvaxVulp_Port
   - type: Hunger
   - type: Thirst
   - type: MessyDrinker
@@ -199,6 +198,20 @@
           32:
             sprite: Mobs/Species/Vulpkanin/displacement.rsi
             state: belt
+#vulpkanin Corvax-CorvaxVulp_Port start
+  - type: ContentEye
+    targetZoom: "1.0, 1.0"
+    maxZoom: "1.0, 1.0"
+  - type: GrowlingAccent
+  - type: Wagging
+  - type: Respirator
+    damage:
+      types:
+        Asphyxiation: 2.0
+    damageRecovery:
+      types:
+        Asphyxiation: -2.0
+#vulpkanin Corvax-CorvaxVulp_Port end
 
 - type: entity
   parent: [BaseSpeciesDummy]
