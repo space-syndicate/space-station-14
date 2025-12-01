@@ -122,7 +122,7 @@
             sprite: Mobs/Species/Vulpkanin/displacement.rsi
             state: hair
   - type: Inventory
-    speciesId: corvaxvulpkanin #vulpkanin Corvax-CorvaxVulp_Port
+    speciesId: vulpkanin #временно не corvaxvulpkanin Corvax-CorvaxVulp_Port
     #vulpkanin Corvax-CorvaxVulp_Port start
     femaleDisplacements:
       jumpsuit:
@@ -218,7 +218,7 @@
             sprite: Mobs/Species/Vulpkanin/displacement.rsi
             state: hair
   - type: Inventory
-    speciesId: corvaxvulpkanin #vulpkanin Corvax-CorvaxVulp_Port
+    speciesId: vulpkanin #временно не corvaxvulpkanin Corvax-CorvaxVulp_Port
     #vulpkanin Corvax-CorvaxVulp_Port start
     femaleDisplacements:
       jumpsuit:

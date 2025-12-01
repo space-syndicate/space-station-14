@@ -50,21 +50,21 @@
     Snout:
       points: 1
       required: true
-      defaultMarkings: [ VulpSnout ]
+      defaultMarkings: [ FoxSnout ] # VulpSnout Corvax-CorvaxVulp_Port
     SnoutCover:
       points: 3
       required: false
     Tail:
       points: 1
       required: true
-      defaultMarkings: [ VulpTailVulp ]
+      defaultMarkings: [ FoxTail ] # VulpTailVulp Corvax-CorvaxVulp_Port
     Head:
       points: 3
       required: false
     HeadTop:
       points: 1
       required: true
-      defaultMarkings: [ VulpEar ]
+      defaultMarkings: [ FoxEar ] # VulpEar Corvax-CorvaxVulp_Port
     UndergarmentTop:
       points: 1
       required: false
