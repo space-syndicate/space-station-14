@@ -1,15 +1,14 @@
 # Last match in file takes precedence.
 
 # Ping for all PRs
-* @Morb0
-* @JerryImMouse
+* @Morb0 @JerryImMouse @DIMMoon1
 
-# Ping for all PRs that include translations/editing fluent strings
-*.ftl @ficcialfaint
+# Translations
+*.ftl @Morb0 @DIMMoon1 @ficcialfaint
 
-# Map files
-/Resources/Prototypes/Maps/** @Ko4ergaPunk
-/Resources/Maps/** @Ko4ergaPunk
+# Maps
+/Resources/Prototypes/Maps/** @Morb0 @DIMMoon1 @Ko4ergaPunk
+/Resources/Maps/** @Morb0 @DIMMoon1 @Ko4ergaPunk
 
 # Sprites
-/Resources/Textures/** @SonicHDC
+/Resources/Textures/** @Morb0 @DIMMoon1 @SonicHDC

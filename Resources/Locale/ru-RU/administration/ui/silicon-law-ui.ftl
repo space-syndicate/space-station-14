@@ -1,5 +1,5 @@
 silicon-law-ui-verb = Управление законами
-silicon-law-ui-title = Кремниевые законы
+silicon-law-ui-title = Законы синтетиков
 silicon-law-ui-new-law = Новый закон
 silicon-law-ui-save = Сохранить изменения
 silicon-law-ui-plus-one = +1

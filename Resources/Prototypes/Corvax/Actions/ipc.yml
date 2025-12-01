@@ -5,7 +5,7 @@
   components:
   - type: Action
     icon: { sprite: Corvax/Interface/ipcactions.rsi, state: off }
-    iconOn: Corvax/Interface/ipcactions.rsi/on.png
+    iconOn: { sprite: Corvax/Interface/ipcactions.rsi, state: on }
     itemIconStyle: NoItem
   - type: InstantAction
     event: !type:ToggleDrainActionEvent

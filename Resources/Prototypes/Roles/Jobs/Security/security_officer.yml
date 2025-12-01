@@ -6,7 +6,7 @@
   requirements:
     - !type:DepartmentTimeRequirement
       department: Security
-      time: 36000 #10 hrs # Corvax-RoleTime
+      time: 10h # Corvax-RoleTime
     - !type:TraitsRequirement #Corvax-TraitsRequirement
       inverted: true
       traits:
@@ -19,9 +19,10 @@
   - Security
   - Brig
   - Maintenance
-  - Service
   - External
   - Cryogenics
+  - GenpopEnter
+  - GenpopLeave
   special:
   - !type:AddImplantSpecial
     implants: [ MindShieldImplant ]

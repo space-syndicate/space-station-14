@@ -1,5 +1,5 @@
 ent-ReinforcedWindow = бронированное окно
-    .desc = { ent-Window.desc }
+    .desc = { ent-BaseDeltaPressureReinforcedGlass.desc }
 ent-WindowReinforcedDirectional = направленное бронеокно
     .desc = Смотри не заляпай.
 ent-ReinforcedWindowDiagonal = { ent-ReinforcedWindow }

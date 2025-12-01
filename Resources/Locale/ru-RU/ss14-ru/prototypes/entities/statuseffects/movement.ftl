@@ -1,5 +1,9 @@
 ent-StatusEffectSlowdown = замедление
     .desc = { ent-MobStatusEffectDebuff.desc }
+ent-StatusEffectSpeed = скорость
+    .desc = { ent-MobStatusEffectBase.desc }
+ent-ReagentSpeedStatusEffect = скорость от реагента
+    .desc = { ent-StatusEffectSpeed.desc }
 ent-VomitingSlowdownStatusEffect = замедление от тошноты
     .desc = { ent-StatusEffectSlowdown.desc }
 ent-TaserSlowdownStatusEffect = замедление от тазера

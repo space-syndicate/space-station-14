@@ -1,8 +1,7 @@
 {
     "version": 1,
     "license": "CC-BY-SA-3.0",
-    "copyright": "https://github.com/tgstation/tgstation/commit/e1d7836b6044a327530082cc43a55cc01a4d04bb | Moth sprites made by PuroSlavKing (Github) | Spider sprites made by PixelTheKermit (Github), resprited by mishutka09 (1152277579206774854) on discord | Slime sprites resprited by netwy (583844759429316618) on discord.  | Lizard sprites made by AmalgoMyte (Github)",
-    "copyright": "Taken from tgstation at commit https://github.com/tgstation/tgstation/commit/c6e3401f2e7e1e55c57060cdf956a98ef1fefc24 | Moth sprites made by PuroSlavKing (Github) | Spider sprites made by PixelTheKermit (Github) | Lizard sprites made by AmalgoMyte (Github) | Diona, Gingerbread, and Regalsprites made by YoungThugSS14 (Github) | Xenoborg sprites by Samuka-c (Github)",
+    "copyright": "Taken from tgstation at commit https://github.com/tgstation/tgstation/commit/c6e3401f2e7e1e55c57060cdf956a98ef1fefc24 | Moth sprites made by PuroSlavKing (Github) | Spider sprites made by PixelTheKermit (Github) | Lizard, Clock and Diona sprites made by SonicHDC (Github) | Gingerbread and Regalsprites made by YoungThugSS14 (Github) | Xenoborg sprites by Samuka-c (Github)",
     "size": {
         "x": 32,
         "y": 32
@@ -57,15 +56,31 @@
             "name": "diona0",
             "delays": [
                 [
-                    0.3,
-                    0.3,
-                    0.3,
-                    0.4
+                    0.1,
+                    0.1,
+                    0.1,
+                    0.1,
+                    1,
+                    0.1,
+                    0.1,
+                    0.3
                 ]
             ]
         },
         {
-            "name": "diona1"
+            "name": "diona1",
+            "delays": [
+                [
+                    0.3,
+                    0.1,
+                    0.1,
+                    0.1,
+                    0.1,
+                    0.1,
+                    0.1,
+                    0.1
+                ]
+            ]
         },
         {
             "name": "diona2"
@@ -74,11 +89,20 @@
             "name": "diona3",
             "delays": [
                 [
-                    0.2,
                     0.3,
-                    0.3,
-                    0.5,
-                    0.5
+                    0.1,
+                    0.1,
+                    0.1,
+                    0.1,
+                    0.1,
+                    0.1,
+                    0.1,
+                    0.1,
+                    0.1,
+                    0.1,
+                    0.1,
+                    1,
+                    0.1
                 ]
             ]
         },
@@ -288,27 +312,61 @@
             "name": "lizard0",
             "delays": [
                 [
+                    0.5,
+                    0.1,
+                    0.1,
+                    0.1,
+                    0.1,
+                    0.1,
                     0.3,
-                    0.3,
-                    0.3,
-                    0.4
+                    0.1,
+                    0.1,
+                    0.1
                 ]
             ]
         },
         {
-            "name": "lizard1"
+            "name": "lizard1",
+            "delays": [
+                [
+                    0.5,
+                    0.1,
+                    0.2,
+                    0.3,
+                    0.2,
+                    0.3,
+                    0.1,
+                    0.1,
+                    0.1,
+                    0.1,
+                    0.5,
+                    0.1
+                ]
+            ]
         },
         {
-            "name": "lizard2"
+            "name": "lizard2",
+            "delays": [
+                [
+                    0.3,
+                    0.3
+                ]
+            ]
         },
         {
             "name": "lizard3",
             "delays": [
                 [
+                    0.5,
+                    0.2,
+                    0.1,
+                    0.1,
+                    0.1,
+                    0.2,
                     0.3,
                     0.3,
-                    0.3,
-                    0.4
+                    0.1,
+                    0.2
                 ]
             ]
         },
@@ -556,29 +614,68 @@
             "name": "blob0",
             "delays": [
                 [
-                    0.2,
-                    0.2,
-                    0.05,
-                    0.05
+                    0.1,
+                    0.1,
+                    0.1,
+                    0.1,
+                    0.1,
+                    0.1,
+                    0.1,
+                    0.1
                 ]
             ]
         },
         {
-            "name": "blob1"
+            "name": "blob1",
+            "delays": [
+                [
+                    0.1,
+                    0.1,
+                    0.1,
+                    0.1,
+                    0.1,
+                    0.1,
+                    0.1,
+                    0.1
+                ]
+            ]
         },
         {
-            "name": "blob2"
+            "name": "blob2",
+            "delays": [
+                [
+                    0.1,
+                    0.1,
+                    0.1,
+                    0.1,
+                    0.1,
+                    0.1,
+                    0.1,
+                    0.1
+                ]
+            ]
         },
         {
             "name": "blob3",
             "delays": [
                 [
-                    1,
-                    1,
                     0.1,
-                    1,
-                    0.6,
-                    1
+                    0.1,
+                    0.1,
+                    0.1,
+                    0.1,
+                    0.1,
+                    0.1,
+                    0.1,
+                    0.1,
+                    0.1,
+                    0.1,
+                    0.1,
+                    0.1,
+                    0.1,
+                    0.1,
+                    0.1,
+                    0.1
                 ]
             ]
         },
@@ -586,13 +683,13 @@
             "name": "clock0",
             "delays": [
                 [
+                    0.5,
                     0.2,
                     0.1,
                     0.1,
                     0.1,
                     0.1,
-                    0.1,
-                    0.1,
+                    0.2,
                     0.3
                 ]
             ]
@@ -601,13 +698,14 @@
             "name": "clock1",
             "delays": [
                 [
-                    0.6,
+                    0.3,
+                    0.1,
+                    0.2,
+                    0.3,
                     0.1,
                     0.1,
-                    0.1,
-                    0.1,
-                    0.1,
-                    0.1
+                    0.5,
+                    0.2
                 ]
             ]
         },
@@ -615,13 +713,20 @@
             "name": "clock2",
             "delays": [
                 [
-                    0.6,
-                    0.1,
-                    0.1,
-                    0.1,
                     0.1,
                     0.1,
                     0.1
+                ]
+            ]
+        },
+        {
+            "name": "clock3",
+            "delays": [
+                [
+                    0.1,
+                    0.5,
+                    0.1,
+                    0.5
                 ]
             ]
         },

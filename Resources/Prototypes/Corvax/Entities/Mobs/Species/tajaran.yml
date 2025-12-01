@@ -18,7 +18,7 @@
     prototype: Tajaran
     requiredLegs: 2
   - type: Inventory
-    speciesId: reptilian # whyyy
+    speciesId: corvaxtajaran
     femaleDisplacements:
       jumpsuit:
         sizeMaps:
@@ -41,6 +41,12 @@
           32:
             sprite: Corvax/Mobs/Species/displacement.rsi
             state: shoes
+      outerClothing:
+        sizeMaps:
+          32:
+            sprite: Corvax/Mobs/Species/displacement.rsi
+            state: outerclothing
+
   - type: ContentEye
   - type: Speech
     allowedEmotes: ['Purr']
@@ -80,7 +86,7 @@
   - type: HumanoidAppearance
     species: Tajaran
   - type: Inventory
-    speciesId: reptilian
+    speciesId: corvaxtajaran
     femaleDisplacements:
       jumpsuit:
         sizeMaps:
@@ -103,3 +109,9 @@
           32:
             sprite: Corvax/Mobs/Species/displacement.rsi
             state: shoes
+      outerClothing:
+        sizeMaps:
+          32:
+            sprite: Corvax/Mobs/Species/displacement.rsi
+            state: outerclothing
+

@@ -1,4 +1,4 @@
-ent-FoodBreadBase = { ent-FoodInjectableBase }
+﻿ent-FoodBreadBase = { ent-FoodInjectableBase }
     .desc = { ent-FoodInjectableBase.desc }
 ent-FoodBreadSliceBase = { ent-FoodBreadBase }
     .desc = { ent-FoodBreadBase.desc }
@@ -72,3 +72,7 @@ ent-FoodBreadTwoSlice = два ломтика
     .desc = Классика.
 ent-MobBreadDog = хлебака
     .desc = Это хлеб. Это собака. Это... хлебака?
+ent-FoodBreadNutriBatard = питательный батард
+    .desc = Бон 'петит!
+ent-FoodBreadCottonNutriBatard = хлопковый батард
+    .desc = Бон 'петит!
