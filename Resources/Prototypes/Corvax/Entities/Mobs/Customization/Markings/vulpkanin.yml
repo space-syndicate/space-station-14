@@ -2,7 +2,7 @@
   id: PawSocks
   markingCategory: Overlay
   bodyPart: RFoot #highest possible layer
-  speciesRestriction: [CorvaxVulpkanin]
+  speciesRestriction: [Vulpkanin] # Corvax-CorvaxVulp_Port CorvaxVulpkanin
   sponsorOnly: true # Corvax-Sponsors
   sprites:
     - sprite: Corvax/Mobs/Customization/vulpkanin.rsi
@@ -12,7 +12,7 @@
   id: FoxTail
   bodyPart: Tail
   markingCategory: Tail
-  speciesRestriction: [CorvaxVulpkanin]
+  speciesRestriction: [Vulpkanin] # Corvax-CorvaxVulp_Port CorvaxVulpkanin
   sponsorOnly: true # Corvax-Sponsors
   sprites:
     - sprite: Corvax/Mobs/Customization/vulpkanin.rsi
@@ -24,7 +24,7 @@
   id: FoxEar
   bodyPart: HeadTop
   markingCategory: HeadTop
-  speciesRestriction: [CorvaxVulpkanin]
+  speciesRestriction: [Vulpkanin] # Corvax-CorvaxVulp_Port CorvaxVulpkanin
   sponsorOnly: true # Corvax-Sponsors
   sprites:
     - sprite: Corvax/Mobs/Customization/vulpkanin.rsi
@@ -36,7 +36,7 @@
   id: WolfTail
   bodyPart: Tail
   markingCategory: Tail
-  speciesRestriction: [CorvaxVulpkanin]
+  speciesRestriction: [Vulpkanin] # Corvax-CorvaxVulp_Port CorvaxVulpkanin
   sponsorOnly: true # Corvax-Sponsors
   sprites:
     - sprite: Corvax/Mobs/Customization/vulpkanin.rsi
@@ -48,7 +48,7 @@
   id: FoxBelly
   bodyPart: Chest
   markingCategory: Chest
-  speciesRestriction: [CorvaxVulpkanin]
+  speciesRestriction: [Vulpkanin] # Corvax-CorvaxVulp_Port CorvaxVulpkanin
   sponsorOnly: true # Corvax-Sponsors
   sprites:
     - sprite: Corvax/Mobs/Customization/vulpkanin.rsi
@@ -58,7 +58,7 @@
   id: FoxSnout
   bodyPart: Snout
   markingCategory: Snout
-  speciesRestriction: [CorvaxVulpkanin]
+  speciesRestriction: [Vulpkanin] # Corvax-CorvaxVulp_Port CorvaxVulpkanin
   sponsorOnly: true # Corvax-Sponsors
   sprites:
     - sprite: Corvax/Mobs/Customization/vulpkanin.rsi
