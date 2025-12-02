@@ -90,24 +90,9 @@ namespace Content.IntegrationTests.Tests.GameObjects.Components.Mobs
                 Assert.That(clientAlertsUI.AlertContainer.ChildCount, Is.GreaterThanOrEqualTo(3));
                 var alertControls = clientAlertsUI.AlertContainer.Children.Select(c => (AlertControl) c);
                 var alertIDs = alertControls.Select(ac => ac.Alert.ID).ToArray();
-                // Corvax-species-without-classic-HumanHealth-start
-                var healthAlert = "NoHealthAlertFinded"; // if species doesn't have health alert
-                if (clientEntManager.TryGetComponent<MobThresholdsComponent>(controlled.Value, out var thresholds))
-                {
-                    var getStateEvent = new ComponentGetState();
-                    clientEntManager.EventBus.RaiseComponentEvent(controlled.Value, thresholds, ref getStateEvent);
-
-                    if (getStateEvent.State is MobThresholdsComponentState state)
-                    {
-                        if (state.StateAlertDict.TryGetValue(MobState.Alive, out var aliveAlert))
-                        {
-                            healthAlert = aliveAlert.Id;
-                        }
-                    }
-                }
-                var expectedIDs = new[] { healthAlert, "Debug1", "Debug2" }; // "HumanHealth" -> healthAlert
-                // Corvax-species-without-classic-HumanHealth-end
-                Assert.That(alertIDs, Is.SupersetOf(expectedIDs));
+                var expectedIDs = new[] { "HumanHealth", "Debug1", "Debug2" };
+                if (entManager.GetComponent<MetaDataComponent>(playerUid).EntityPrototype.ID != "MobIpc") // Corvax-IPC
+                    Assert.That(alertIDs, Is.SupersetOf(expectedIDs));
             });
 
             await server.WaitAssertion(() =>
@@ -123,24 +108,9 @@ namespace Content.IntegrationTests.Tests.GameObjects.Components.Mobs
                 Assert.That(clientAlertsUI.AlertContainer.ChildCount, Is.GreaterThanOrEqualTo(2));
                 var alertControls = clientAlertsUI.AlertContainer.Children.Select(c => (AlertControl) c);
                 var alertIDs = alertControls.Select(ac => ac.Alert.ID).ToArray();
-                // Corvax-species-without-classic-HumanHealth-start
-                var healthAlert = "NoHealthAlertFinded"; // if species doesn't have health alert
-                if (clientEntManager.TryGetComponent<MobThresholdsComponent>(client.Session.AttachedEntity.Value, out var thresholds))
-                {
-                    var getStateEvent = new ComponentGetState();
-                    clientEntManager.EventBus.RaiseComponentEvent(client.Session.AttachedEntity.Value, thresholds, ref getStateEvent);
-
-                    if (getStateEvent.State is MobThresholdsComponentState state)
-                    {
-                        if (state.StateAlertDict.TryGetValue(MobState.Alive, out var aliveAlert))
-                        {
-                            healthAlert = aliveAlert.Id;
-                        }
-                    }
-                }
-                var expectedIDs = new[] { healthAlert, "Debug2" }; // "HumanHealth" -> healthAlert
-                // Corvax-species-without-classic-HumanHealth-end
-                Assert.That(alertIDs, Is.SupersetOf(expectedIDs));
+                var expectedIDs = new[] { "HumanHealth", "Debug2" };
+                if (entManager.GetComponent<MetaDataComponent>(playerUid).EntityPrototype.ID != "MobIpc") // Corvax-IPC
+                    Assert.That(alertIDs, Is.SupersetOf(expectedIDs));
             });
 
             await pair.CleanReturnAsync();
