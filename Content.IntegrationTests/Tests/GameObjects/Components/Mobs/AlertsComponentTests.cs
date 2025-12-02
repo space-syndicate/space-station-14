@@ -2,12 +2,9 @@ using System.Linq;
 using Content.Client.UserInterface.Systems.Alerts.Controls;
 using Content.Client.UserInterface.Systems.Alerts.Widgets;
 using Content.Shared.Alert;
-using Content.Shared.Mobs; // Corvax-species-without-classic-HumanHealth
-using Content.Shared.Mobs.Components; // Corvax-species-without-classic-HumanHealth
 using Robust.Client.UserInterface;
 using Robust.Server.Player;
 using Robust.Shared.GameObjects;
-using Robust.Shared.GameStates; // Corvax-species-without-classic-HumanHealth
 
 namespace Content.IntegrationTests.Tests.GameObjects.Components.Mobs
 {
