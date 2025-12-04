@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "license": "CC-BY-SA-3.0",
+  "copyright": "author for discord sergan_31",
+  "size": {
+    "x": 32,
+    "y": 32
+  },
+  "states": [
+    {
+      "name": "muscle_l_leg",
+      "directions": 4
+    },
+    {
+      "name": "muscle_r_leg",
+      "directions": 4
+    },
+    {
+      "name": "muscle-body",
+      "directions": 4
+    },
+    {
+      "name": "muscle_l_arm",
+      "directions": 4
+    },
+        {
+      "name": "muscle_r_arm",
+      "directions": 4
+    }
+  ]
+}
