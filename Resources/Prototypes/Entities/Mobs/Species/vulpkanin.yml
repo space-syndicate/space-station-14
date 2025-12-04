@@ -10,7 +10,7 @@
   - type: MessyDrinker
     spillChance: 0.33
   - type: Icon
-    sprite: Mobs/Species/Vulpkanin/parts.rsi
+    sprite: Corvax/Mobs/Species/Vulpkanin/parts.rsi # Mobs/Species/Vulpkanin/parts.rsi # Corvax-CorvaxVulp_Port
     state: full
   - type: Body
     prototype: Vulpkanin
@@ -121,33 +121,63 @@
             sprite: Mobs/Species/Vulpkanin/displacement.rsi
             state: hair
   - type: Inventory
-    speciesId: vulpkanin
+    speciesId: vulpkanin #временно не corvaxvulpkanin Corvax-CorvaxVulp_Port
+    #vulpkanin Corvax-CorvaxVulp_Port start
+    femaleDisplacements:
+      jumpsuit:
+        sizeMaps:
+          32:
+            sprite: Corvax/Mobs/Species/displacement.rsi
+            state: jumpsuit-female
+      shoes:
+        sizeMaps:
+          32:
+            sprite: Corvax/Mobs/Species/displacement.rsi
+            state: shoes
     displacements:
       jumpsuit:
         sizeMaps:
           32:
-            sprite: Mobs/Species/Vulpkanin/displacement.rsi
+            sprite: Corvax/Mobs/Species/displacement.rsi
             state: jumpsuit
+      shoes:
+        sizeMaps:
+          32:
+            sprite: Corvax/Mobs/Species/displacement.rsi
+            state: shoes
+      outerClothing:
+        sizeMaps:
+          32:
+            sprite: Corvax/Mobs/Species/displacement.rsi
+            state: outerclothing
+    ##########################################
+    #displacements:
+    #  jumpsuit:
+    #    sizeMaps:
+    #      32:
+    #        sprite: Mobs/Species/Vulpkanin/displacement.rsi
+    #        state: jumpsuit
       back:
         sizeMaps:
           32:
             sprite: Mobs/Species/Vulpkanin/displacement.rsi
             state: back
-      outerClothing:
-        sizeMaps:
-          32:
-            sprite: Mobs/Species/Vulpkanin/displacement.rsi
-            state: outerwear
+      #outerClothing:
+      #  sizeMaps:
+      #    32:
+      #      sprite: Mobs/Species/Vulpkanin/displacement.rsi
+      #      state: outerwear
       gloves:
         sizeMaps:
           32:
             sprite: Mobs/Species/Vulpkanin/displacement.rsi
             state: hand
-      shoes:
-        sizeMaps:
-          32:
-            sprite: Mobs/Species/Vulpkanin/displacement.rsi
-            state: shoes
+      #shoes:
+      #  sizeMaps:
+      #    32:
+      #      sprite: Mobs/Species/Vulpkanin/displacement.rsi
+      #      state: shoes
+      #vulpkanin Corvax-CorvaxVulp_Port end
       head:
         sizeMaps:
           32:
@@ -168,6 +198,20 @@
           32:
             sprite: Mobs/Species/Vulpkanin/displacement.rsi
             state: belt
+#vulpkanin Corvax-CorvaxVulp_Port start
+  - type: ContentEye
+    targetZoom: "1.0, 1.0"
+    maxZoom: "1.0, 1.0"
+  - type: GrowlingAccent
+  - type: Wagging
+  - type: Respirator
+    damage:
+      types:
+        Asphyxiation: 2.0
+    damageRecovery:
+      types:
+        Asphyxiation: -2.0
+#vulpkanin Corvax-CorvaxVulp_Port end
 
 - type: entity
   parent: [BaseSpeciesDummy]
@@ -187,33 +231,63 @@
             sprite: Mobs/Species/Vulpkanin/displacement.rsi
             state: hair
   - type: Inventory
-    speciesId: vulpkanin
+    speciesId: vulpkanin #временно не corvaxvulpkanin Corvax-CorvaxVulp_Port
+    #vulpkanin Corvax-CorvaxVulp_Port start
+    femaleDisplacements:
+      jumpsuit:
+        sizeMaps:
+          32:
+            sprite: Corvax/Mobs/Species/displacement.rsi
+            state: jumpsuit-female
+      shoes:
+        sizeMaps:
+          32:
+            sprite: Corvax/Mobs/Species/displacement.rsi
+            state: shoes
     displacements:
       jumpsuit:
         sizeMaps:
           32:
-            sprite: Mobs/Species/Vulpkanin/displacement.rsi
+            sprite: Corvax/Mobs/Species/displacement.rsi
             state: jumpsuit
+      shoes:
+        sizeMaps:
+          32:
+            sprite: Corvax/Mobs/Species/displacement.rsi
+            state: shoes
+      outerClothing:
+        sizeMaps:
+          32:
+            sprite: Corvax/Mobs/Species/displacement.rsi
+            state: outerclothing
+    ##########################################
+    #displacements:
+    #  jumpsuit:
+    #    sizeMaps:
+    #      32:
+    #        sprite: Mobs/Species/Vulpkanin/displacement.rsi
+    #        state: jumpsuit
       back:
         sizeMaps:
           32:
             sprite: Mobs/Species/Vulpkanin/displacement.rsi
             state: back
-      outerClothing:
-        sizeMaps:
-          32:
-            sprite: Mobs/Species/Vulpkanin/displacement.rsi
-            state: outerwear
+      #outerClothing:
+      #  sizeMaps:
+      #    32:
+      #      sprite: Mobs/Species/Vulpkanin/displacement.rsi
+      #      state: outerwear
       gloves:
         sizeMaps:
           32:
             sprite: Mobs/Species/Vulpkanin/displacement.rsi
             state: hand
-      shoes:
-        sizeMaps:
-          32:
-            sprite: Mobs/Species/Vulpkanin/displacement.rsi
-            state: shoes
+      #shoes:
+      #  sizeMaps:
+      #    32:
+      #      sprite: Mobs/Species/Vulpkanin/displacement.rsi
+      #      state: shoes
+      #vulpkanin Corvax-CorvaxVulp_Port end
       head:
         sizeMaps:
           32:

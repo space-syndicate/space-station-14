@@ -1,4 +1,4 @@
-﻿marking-HumanHairAfro = Афро
+marking-HumanHairAfro = Афро
 marking-HumanHairAfro2 = Афро 2
 marking-HumanHairBigafro = Афро (Большая)
 marking-HumanHairAntenna = Ахоге
@@ -199,3 +199,4 @@ marking-HumanHairVlongfringe = Очень короткая (Чёлка)
 marking-HumanHairVolaju = Воладзю
 marking-HumanHairWisp = Пряди
 marking-HumanHairLongWithBangs = Длинная с чёлкой
+marking-HumanHairOverEyePigtail = Хвостик (Через глаз)

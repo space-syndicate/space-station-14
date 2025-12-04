@@ -245,6 +245,9 @@ namespace Content.Server.Lathe
                 if (currentRecipe.Result is { } resultProto)
                 {
                     var result = Spawn(resultProto, Transform(uid).Coordinates);
+                    //Corvax
+                    RaiseLocalEvent(uid, new LatheGetResultEvent(result));
+                    //Corvax
                     _stack.TryMergeToContacts(result);
                 }
 

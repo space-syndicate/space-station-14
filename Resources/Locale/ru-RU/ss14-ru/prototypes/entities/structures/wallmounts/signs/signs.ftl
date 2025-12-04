@@ -1,4 +1,4 @@
-ent-PaintingMonkey = картина обезьяны
+﻿ent-PaintingMonkey = картина обезьяны
     .desc = Отвергни эволюцию, стань манки.
 ent-BaseSignDirectional = { ent-BaseSign }
     .desc = { ent-BaseSign.desc }
@@ -62,6 +62,8 @@ ent-SignArcade = знак "аркада"
     .desc = Указатель в сторону комнаты с аркадами.
 ent-SignArmory = знак "оружейная"
     .desc = Знак, указывающий на оружейную.
+ent-SignArrivals = знак "прибытие"
+    .desc = Знак, указывающий на место, где стыкуется шаттл прибытия.
 ent-SignToolStorage = знак "склад инструментов"
     .desc = Знак, указывающий на склад инструментов.
 ent-SignAnomaly = знак "ксено-археология"

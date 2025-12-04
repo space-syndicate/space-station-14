@@ -1,4 +1,4 @@
-﻿ent-AirlockServiceLocked = { ent-Airlock }
+ent-AirlockServiceLocked = { ent-Airlock }
     .suffix = Сервис, Закрыт
     .desc = { ent-Airlock.desc }
 ent-AirlockLawyerLocked = { ent-AirlockServiceLocked }
@@ -399,6 +399,9 @@ ent-HighSecCaptainLocked = { ent-HighSecDoor }
 ent-HighSecArmoryLocked = { ent-HighSecDoor }
     .suffix = Оружейная, Закрыт
     .desc = { ent-HighSecDoor.desc }
-ent-AirlockHatchSyndicate = { ent-AirlockHatch }
+ent-AirlockHatchSyndicateLocked = { ent-AirlockHatchSyndicate }
     .suffix = Синдикат, Закрыт
-    .desc = { ent-AirlockHatch.desc }
+    .desc = { ent-AirlockHatchSyndicate.desc }
+ent-AirlockHatchMaintenanceLocked = { ent-AirlockHatchMaintenance }
+    .suffix = Закрыт
+    .desc = { ent-AirlockHatchMaintenance.desc }

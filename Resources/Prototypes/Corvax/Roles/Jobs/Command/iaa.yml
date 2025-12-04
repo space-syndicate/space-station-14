@@ -6,10 +6,10 @@
   requirements:
   - !type:DepartmentTimeRequirement
     department: Command
-    time: 72000
+    time: 20h
   - !type:DepartmentTimeRequirement
     department: Security
-    time: 36000
+    time: 10h
   - !type:TraitsRequirement
     inverted: true
     traits:

@@ -7,7 +7,7 @@
   guides: [ Thieves ]
   requirements:
   - !type:OverallPlaytimeRequirement
-    time: 108000 # 30h # Corvax-RoleTime
+    time: 30h # Corvax-RoleTime 1
 
 - type: startingGear
   id: ThiefGear

@@ -105,7 +105,7 @@ public sealed class ReactionEntry
             proto.Products
                 .Select(x => KeyValuePair.Create(x.Key, x.Value.Float()))
                 .ToDictionary(x => x.Key, x => x.Value);
-        Effects = proto.Effects;
+        Effects = proto.Effects.ToList();
 
         // Corvax-Wiki-Start
         ExportEffects = proto.Effects.Select(x => new ReagentEffectEntry(x)).ToList();

@@ -1,4 +1,4 @@
-# Traitor single items
+﻿# Traitor single items
 steal-target-groups-hypospray = гипоспрей
 steal-target-groups-handheld-crew-monitor = ручной монитор экипажа
 steal-target-groups-clothing-outer-hardsuit-rd = экспериментальный исследовательский скафандр
@@ -11,7 +11,7 @@ steal-target-groups-captain-id-card = ID-карта капитана
 steal-target-groups-jetpack-captain-filled = джетпак капитана
 steal-target-groups-weapon-antique-laser = антикварный лазерный пистолет
 steal-target-groups-nuke-disk = диск ядерной аутентификации
-steal-target-groups-weapon-energy-shot-gun = энергетический дробовик
+steal-target-groups-weapon-energy-magnum = энергетический магнум
 # Thief Collection
 steal-target-groups-figurines = фигурки
 steal-target-groups-heads-cloaks = плащи глав
@@ -22,6 +22,7 @@ steal-target-groups-encryption-keys = ключи шифрования
 steal-target-groups-technology-disks = технологические диски
 steal-target-groups-mail = почта
 steal-target-groups-id-cards = ID-карты
+steal-target-groups-officer-handguns = пистолет службы безопасности
 steal-target-groups-lamps = ЛАМПЫ
 # Thief single item
 steal-target-groups-forensic-scanner = криминалистический сканер
@@ -41,6 +42,8 @@ steal-target-groups-bible = библия
 steal-target-groups-clothing-neck-goldmedal = золотая медаль мастерства экипажа
 steal-target-groups-clothing-neck-clownmedal = медаль клоуна
 steal-target-groups-wanted-list-cartridge = картридж Список разыскиваемых
+steal-target-groups-belt-ce = пояс для инструментов старшего инженера
+steal-target-groups-captain-sword = сабля капитана
 # Thief structures
 steal-target-groups-teg = часть термоэлектрического генератора
 steal-target-groups-freezer-heater = нагреватель или охладитель

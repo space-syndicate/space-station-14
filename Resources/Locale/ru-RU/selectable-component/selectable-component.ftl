@@ -1,1 +1,1 @@
-﻿selectable-component-adder-category-name = Добавить функцию
+selectable-component-adder-category-name = Добавить функцию

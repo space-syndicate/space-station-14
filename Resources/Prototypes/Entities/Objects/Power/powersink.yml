@@ -40,8 +40,8 @@
           acts: [ "Destruction" ]
     - type: PowerSink
     - type: Battery
-      maxCharge: 7500000
-      pricePerJoule: 0.0003
+      maxCharge: 250000000
+      pricePerJoule: 0.000009
     - type: ExaminableBattery
     - type: PowerConsumer
       voltage: High
@@ -59,24 +59,3 @@
         - GhostOnlyWarp
     - type: StaticPrice
       price: 3000
-# Corvax-HiddenDesc-Start
-    - type: HiddenDescription
-      entries:
-      - label: corvax-hidden-desc-PowerSink-syndicate
-        whitelistMind:
-          mindRoles:
-          - TraitorRole
-          - NukeopsRole
-      - label: corvax-hidden-desc-PowerSink-engineering
-        jobRequired:
-          - ChiefEngineer
-          - AtmosphericTechnician
-          - StationEngineer
-          - TechnicalAssistant
-      - label: corvax-hidden-desc-PowerSink-research
-        jobRequired:
-          - ResearchAssistant
-          - ResearchDirector
-          - Scientist
-          - Borg
-# Corvax-HiddenDesc-End

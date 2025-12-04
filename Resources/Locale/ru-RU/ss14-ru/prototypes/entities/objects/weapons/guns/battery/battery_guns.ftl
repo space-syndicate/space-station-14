@@ -1,5 +1,7 @@
 ﻿ent-BaseWeaponBattery = { ent-BaseItem }
     .desc = { ent-BaseItem.desc }
+ent-BaseLaserRifle = { ent-BaseWeaponBattery }
+    .desc = { ent-BaseWeaponBattery.desc }
 ent-BaseWeaponPowerCell = { ent-BaseItem }
     .desc = { ent-BaseItem.desc }
 ent-BaseWeaponBatterySmall = { ent-BaseWeaponBattery }
@@ -68,6 +70,8 @@ ent-WeaponBehonkerLaser = око бехонкера
     .desc = Глаз бехонкера, при сжатии выстреливает лазером.
 ent-WeaponEnergyShotgun = энергетический дробовик
     .desc = Единственный в своём роде прототип энергетического оружия, использующий различные конфигурации дробовика. Оно позволяет совершать как смертельные, так и несмертельные выстрелы, что делает его универсальным оружием.
+ent-WeaponEnergyMagnum = энергетический магнум
+    .desc = Мощный самозаряжающийся энергетический пистолет, разработанный для элитных сотрудников службы безопасности. Имеет три режима стрельбы, позволяющие нелетально обезвреживать, стрелять через окна или наносить высокий урон.
 ent-WeaponTemperatureGun = термопушка
     .desc = Продвинутое оружие, стреляющее лучами, способными изменять температуру тела. Вероятно, считается в некоторым роде военным преступлением.
 ent-XenoborgLaserGun = лазерная пушка ксеноборга

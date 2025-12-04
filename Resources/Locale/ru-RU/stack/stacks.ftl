@@ -129,6 +129,12 @@ stack-hv-cable =
         [few] кабеля
        *[other] кабелей
     }
+stack-explosive-cord =
+    { $amount ->
+        [1] детонационный шнур
+        [few] детонационных шнура
+       *[other] детонационных шнуров
+    }
 stack-wood-plank =
     { $amount ->
         [1] доску
@@ -379,6 +385,8 @@ stack-steel-maint-floor = стальной технический пол
 stack-grating-maint-floor = решётчатый технический пол
 stack-web-tile = паутинный пол
 stack-astro-grass-floor = астро-трава
+stack-dark-astro-grass-floor = тёмная астро-трава
+stack-light-astro-grass-floor = светлая астро-трава
 stack-mowed-astro-grass-floor = астро-газон
 stack-jungle-astro-grass-floor = астро-трава джунглей
 stack-astro-ice-floor = астро-лёд
@@ -386,6 +394,7 @@ stack-astro-snow-floor = астро-снег
 stack-xeno-floor = ксенопол
 stack-xeno-steel = стальной ксенопол
 stack-xeno-steel-corner = стальной угловой ксенопол
+stack-desert-astro-sand-floor = пустынный астро-песок
 stack-xeno-maint = технический ксенопол
 stack-dark-squiggly = тёмная волнистая стальная плитка
 stack-large-wood-floor = большой деревянный пол
