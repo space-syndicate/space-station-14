@@ -9,7 +9,7 @@
       stationProto: StandardNanotrasenStation
       components:
         - type: StationNameSetup
-          mapNameTemplate: '{0} Elkridge Depot {1}'
+          mapNameTemplate: '{0} Депо Элкридж {1}'
           nameGenerator:
             !type:NanotrasenNameGenerator
             prefixCreator: 'DS'
