@@ -114,6 +114,11 @@
   - type: MovementSpeedModifier
     baseWalkSpeed: 30
   # Corvax-End
+  # Corvax-HealthOverlay-action-start
+  - type: ActionGrant
+    actions:
+    - ActionToggleHealthOverlay
+  # Corvax-HealthOverlay-action-end
 
 - type: entity
   abstract: true
