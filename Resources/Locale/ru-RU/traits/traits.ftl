@@ -1,22 +1,22 @@
 trait-blindness-name = Слепота
 trait-blindness-desc = Вы совершенно слепы и не можете видеть дальше нескольких метров перед собой.
-trait-narcolepsy-name = Нарколепсия
 trait-poor-vision-name = Близорукость
 trait-poor-vision-desc = Ваши глаза уже не те, что раньше, и вы с трудом видите предметы вдали без корректирующих очков.
-trait-narcolepsy-desc = Вас одолевают приступы сонливости
+trait-narcolepsy-name = Нарколепсия
+trait-narcolepsy-desc = Вас одолевают приступы сонливости.
 trait-pacifist-name = Пацифист
 trait-pacifist-desc = Вы не можете нападать и причинять вред живым существам.
 permanent-blindness-trait-examined = [color=lightblue]{ CAPITALIZE(POSS-ADJ($target)) } глаза остекленелые и расфокусированные. Не похоже, что { SUBJECT($target) } может хорошо вас видеть, если может вообще.[/color]
 trait-lightweight-name = Быстрое опьянение
-trait-lightweight-desc = Алкоголь оказывает на вас более сильное воздействие
+trait-lightweight-desc = Алкоголь сильнее воздействует на вас.
 trait-monochromacy-name = Монохромазия
 trait-monochromacy-desc = Вы полный дальтоник, всё, что вы видите, сводится к оттенкам от чёрного до белого.
 trait-muted-name = Немота
-trait-muted-desc = Вы не можете говорить
+trait-muted-desc = Вы не можете говорить.
 trait-paracusia-name = Паракузия
+trait-paracusia-desc = Вы слышите звуки, которых на самом деле нет.
 trait-unrevivable-name = Невозрождаемость
 trait-unrevivable-desc = Вас невозможно оживить при помощи дефибриллятора.
-trait-paracusia-desc = Вы слышите звуки, которых на самом деле нет
 trait-pirate-accent-name = Пиратский акцент
 trait-pirate-accent-desc = Вы не можете перестать говорить как пират!
 trait-accentless-name = Отсутствие акцента
