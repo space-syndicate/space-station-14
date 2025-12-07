@@ -1,12 +1,16 @@
-# Loc strings for various entity state & client-side PVS related commands
+﻿# Loc strings for various entity state & client-side PVS related commands
 
-cmd-reset-ent-help = Использование: resetent <Entity UID>
-cmd-reset-ent-desc = Сбрасывает сущность до последнего полученного от сервера состояния. Это также сбросит сущности, которые были удалены в null-space.
-cmd-reset-all-ents-help = Использование: resetallents
-cmd-reset-all-ents-desc = Сбрасывает все сущности до последнего полученного от сервера состояния. Это затрагивает только сущности, которые не были удалены в null-space.
-cmd-detach-ent-help = Использование: detachent <Entity UID>
-cmd-detach-ent-desc = Удаляет сущность в null-space, как если бы он покинул зону действия PVS.
-cmd-local-delete-help = Использование: localdelete <Entity UID>
-cmd-local-delete-desc = Удаляет сущность. В отличие от обычной команды delete, эта команда работает на стороне клиента (CLIENT-SIDE). Если сущность не является клиентской, это, скорее всего, приведёт к ошибкам.
-cmd-full-state-reset-help = Использование: fullstatereset
-cmd-full-state-reset-desc = Сбрасывает всю информацию о состоянии сущности и запрашивает полное состояние у сервера.
+cmd-reset-ent-help = Usage: {$command} <Entity UID>
+cmd-reset-ent-desc = Reset an entity to the most recently received server state. This will also reset entities that have been detached to null-space.
+
+cmd-reset-all-ents-help = Usage: {$command}
+cmd-reset-all-ents-desc = Resets all entities to the most recently received server state. This only impacts entities that have not been detached to null-space.
+
+cmd-detach-ent-help = Usage: {$command} <Entity UID>
+cmd-detach-ent-desc = Detach an entity to null-space, as if it had left PVS range.
+
+cmd-local-delete-help = Usage: {$command} <Entity UID>
+cmd-local-delete-desc = Deletes an entity. Unlike the normal delete command, this is CLIENT-SIDE. Unless the entity is a client-side entity, this will likely cause errors.
+
+cmd-full-state-reset-help = Usage: {$command}
+cmd-full-state-reset-desc = Discards any entity state information and requests a full-state from the server.
