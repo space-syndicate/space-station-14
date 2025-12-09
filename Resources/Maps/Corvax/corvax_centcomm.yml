@@ -13645,14 +13645,6 @@ entities:
     - type: Transform
       pos: 43.62815,97.58583
       parent: 1
-- proto: BookScaf
-  entities:
-  - uid: 489
-    components:
-    - type: Transform
-      parent: 468
-    - type: Physics
-      canCollide: False
 - proto: Bookshelf
   entities:
   - uid: 468
@@ -13830,14 +13822,6 @@ entities:
       parent: 1
     missingComponents:
     - Occluder
-- proto: BookShips
-  entities:
-  - uid: 490
-    components:
-    - type: Transform
-      parent: 468
-    - type: Physics
-      canCollide: False
 - proto: BookSpaceLaw
   entities:
   - uid: 505
