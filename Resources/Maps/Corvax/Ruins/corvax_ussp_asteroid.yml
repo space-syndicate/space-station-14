@@ -11249,22 +11249,6 @@ entities:
     - type: Transform
       pos: 16.23974,-15.19859
       parent: 1
-- proto: BookPetr
-  entities:
-  - uid: 2125
-    components:
-    - type: Transform
-      rot: -1.5707963267948966 rad
-      pos: 13.496054,-11.503673
-      parent: 1
-- proto: BookUSSP
-  entities:
-  - uid: 2126
-    components:
-    - type: Transform
-      rot: 3.141592653589793 rad
-      pos: 16.639095,-15.452372
-      parent: 1
 - proto: Bucket
   entities:
   - uid: 9

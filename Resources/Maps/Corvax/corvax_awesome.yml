@@ -14809,14 +14809,6 @@ entities:
     - type: Physics
       canCollide: False
     - type: InsideEntityStorage
-- proto: BookUSSP
-  entities:
-  - uid: 1076
-    components:
-    - type: Transform
-      rot: 1.5707963267948966 rad
-      pos: -28.45459,63.508125
-      parent: 2
 - proto: BoozeDispenser
   entities:
   - uid: 1077

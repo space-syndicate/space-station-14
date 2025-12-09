@@ -21873,13 +21873,6 @@ entities:
       rot: 3.141592653589793 rad
       pos: -21.524118,-60.437252
       parent: 2
-- proto: BookNakamura
-  entities:
-  - uid: 1018
-    components:
-    - type: Transform
-      pos: -61.654114,-16.342129
-      parent: 2
 - proto: BookNarsieLegend
   entities:
   - uid: 1019
@@ -21992,14 +21985,6 @@ entities:
     - type: Transform
       rot: 1.5707963267948966 rad
       pos: -23.451855,3.9349823
-      parent: 2
-- proto: BookUSSP
-  entities:
-  - uid: 1032
-    components:
-    - type: Transform
-      rot: 0.4014257279586958 rad
-      pos: -77.79904,-19.02362
       parent: 2
 - proto: BoozeDispenser
   entities:

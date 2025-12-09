@@ -678,22 +678,6 @@ entities:
       rot: 1.5707963267948966 rad
       pos: -11.5,0.5
       parent: 1
-- proto: BookExpensiveCrystal
-  entities:
-  - uid: 31
-    components:
-    - type: Transform
-      pos: 12.5,9.5
-      parent: 1
-- proto: BookFaks
-  entities:
-  - uid: 33
-    components:
-    - type: Transform
-      parent: 32
-    - type: Physics
-      canCollide: False
-    - type: InsideEntityStorage
 - proto: BookRandom
   entities:
   - uid: 34
