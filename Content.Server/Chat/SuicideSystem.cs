@@ -169,6 +169,8 @@ public sealed class SuicideSystem : EntitySystem
             return;
         }
 
+        // Corvax-IPC-start
+        //args.DamageType ??= "Bloodloss";
         string entityPrototypeId = "";
         if (EntityManager.TryGetComponent<MetaDataComponent>(victim, out var metaData) && metaData.EntityPrototype != null)
             entityPrototypeId = metaData.EntityPrototype.ID;
@@ -177,6 +179,7 @@ public sealed class SuicideSystem : EntitySystem
             args.DamageType ??= "Bloodloss";
         else
             args.DamageType ??= "Blunt";
+        // Corvax-IPC-end
         _suicide.ApplyLethalDamage(victim, args.DamageType);
         args.Handled = true;
     }
