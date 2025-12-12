@@ -1,23 +1,24 @@
-using Content.Server.PowerCell;
+using Content.Server.Humanoid;
 using Content.Shared.Actions;
 using Content.Shared.Alert;
 using Content.Shared.Corvax.Ipc;
+using Content.Shared.Damage;
+using Content.Shared.Damage.Systems;
+using Content.Shared.Emp;
+using Content.Shared.Humanoid;
+using Content.Shared.Humanoid.Markings;
+using Content.Shared.Mobs;
+using Content.Shared.Mobs.Systems;
+using Content.Shared.Movement.Systems;
 using Content.Shared.Ninja.Components;
 using Content.Shared.Ninja.Systems;
 using Content.Shared.Popups;
+using Content.Shared.Power.EntitySystems;
+using Content.Shared.PowerCell;
 using Content.Shared.PowerCell.Components;
-using Content.Shared.Damage;
-using Content.Shared.Movement.Systems;
-using Content.Shared.Mobs;
-using Content.Shared.Mobs.Systems;
 using Content.Shared.Sound.Components;
 using Robust.Shared.Audio;
-using Content.Shared.Damage.Systems;
-using Content.Shared.Humanoid;
-using Content.Server.Humanoid;
-using Content.Shared.Humanoid.Markings;
 using Robust.Shared.Player;
-using Content.Shared.Emp;
 
 namespace Content.Server.Corvax.Ipc;
 
@@ -32,7 +33,7 @@ public sealed partial class IpcSystem : EntitySystem
     [Dependency] private readonly MovementSpeedModifierSystem _movementSpeedModifier = default!;
     [Dependency] private readonly MobStateSystem _mobState = default!;
     [Dependency] private readonly SharedUserInterfaceSystem _ui = default!;
-    //[Dependency] private readonly IPrototypeManager _prototypeManager = default!;
+    [Dependency] private readonly PredictedBatterySystem _battery = default!;
     [Dependency] private readonly HumanoidAppearanceSystem _humanoid = default!;
     [Dependency] private readonly MarkingManager _markingManager = default!;
     public override void Initialize()
@@ -93,7 +94,7 @@ public sealed partial class IpcSystem : EntitySystem
         _action.SetToggled(component.ActionEntity, component.DrainActivated);
         args.Handled = true;
 
-        if (component.DrainActivated && _powerCell.TryGetBatteryFromSlot(uid, out var battery, out var _))
+        if (component.DrainActivated && _powerCell.TryGetBatteryFromSlot(uid, out var battery))
         {
             EnsureComp<BatteryDrainerComponent>(uid);
             _batteryDrainer.SetBattery(uid, battery);
@@ -108,7 +109,7 @@ public sealed partial class IpcSystem : EntitySystem
     {
 
 
-        if (!_powerCell.TryGetBatteryFromSlot(ent, out var battery, slot) || battery.CurrentCharge / battery.MaxCharge < 0.01f)
+        if (!_powerCell.TryGetBatteryFromSlot(ent.Owner, out var battery) || _battery.GetCharge(battery.Value.AsNullable()) / battery.Value.Comp.MaxCharge < 0.01f)
         {
             _alerts.ClearAlert(ent.Owner, ent.Comp.BatteryAlert);
             _alerts.ShowAlert(ent.Owner, ent.Comp.NoBatteryAlert);
@@ -117,9 +118,9 @@ public sealed partial class IpcSystem : EntitySystem
             return;
         }
 
-        var chargePercent = (short) MathF.Round(battery.CurrentCharge / battery.MaxCharge * 10f);
+        var chargePercent = (short)MathF.Round(_battery.GetCharge(battery.Value.AsNullable()) / battery.Value.Comp.MaxCharge * 10f);
 
-        if (chargePercent == 0 && _powerCell.HasDrawCharge(ent, cell: slot))
+        if (chargePercent == 0 && _powerCell.HasDrawCharge(ent.Owner))
             chargePercent = 1;
 
 
@@ -131,7 +132,7 @@ public sealed partial class IpcSystem : EntitySystem
 
     private void OnRefreshMovementSpeedModifiers(EntityUid uid, IpcComponent comp, RefreshMovementSpeedModifiersEvent args)
     {
-        if (!_powerCell.TryGetBatteryFromSlot(uid, out var battery) || battery.CurrentCharge / battery.MaxCharge < 0.01f)
+        if (!_powerCell.TryGetBatteryFromSlot(uid, out var battery) || _battery.GetCharge(battery.Value.AsNullable()) / battery.Value.Comp.MaxCharge < 0.01f)
         {
             args.ModifySpeed(0.2f);
         }
