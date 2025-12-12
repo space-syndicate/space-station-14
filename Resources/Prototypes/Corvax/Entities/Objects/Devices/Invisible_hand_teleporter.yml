@@ -1,0 +1,10 @@
+- type: entity
+  parent: HandTeleporter
+  id: HandTeleporterAdmemeCNInvisible
+  suffix: Admeme, Invisible
+  components:
+  - type: HandTeleporter
+    firstPortalPrototype: PortalRedAdmemeCNInvisible
+    secondPortalPrototype: PortalBlueAdmemeCNInvisible
+    allowPortalsOnDifferentGrids: true
+    portalCreationDelay: 0
