@@ -1,3 +1,4 @@
+using Robust.Shared.Audio;
 using Robust.Shared.GameStates;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Serialization;
@@ -19,6 +20,15 @@ public sealed partial class JukeboxComponent : Component
     /// </summary>
     [DataField]
     public string? OnState;
+
+    /// <summary>
+    ///  Params of AudioStream
+    /// </summary>
+    /// <remarks>
+    /// Corvax-JukeboxControls
+    /// </remarks>
+    [DataField]
+    public AudioParams AudioParams = AudioParams.Default;
 
     /// <summary>
     /// RSI state for the jukebox being on.
