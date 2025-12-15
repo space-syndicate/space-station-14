@@ -104,3 +104,12 @@
   category: Disabilities
   components:
     - type: ImpairedMobility
+
+- type: trait
+  id: BalanceDisorder
+  name: trait-balance-disorder-name
+  description: trait-balance-disorder-desc
+  category: Disabilities
+  components:
+    - type: KnockdownOnMove
+      chance: 0.05
