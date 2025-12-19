@@ -14,7 +14,6 @@ public sealed class FrenchAccentSystem : EntitySystem
     [Dependency] private readonly IRobustRandom _random = default!; // Russian-Locale
 
     private static readonly Regex RegexTh = new(@"th", RegexOptions.IgnoreCase);
-    private static readonly Regex RegexStartH = new(@"(?<!\w)h", RegexOptions.IgnoreCase);
     //Russian-Locale-Start
     private static readonly Regex RegexH = new("х", RegexOptions.IgnoreCase);
     private static readonly Regex RegexR = new("[рР]+", RegexOptions.IgnoreCase);
@@ -35,9 +34,6 @@ public sealed class FrenchAccentSystem : EntitySystem
         var msg = message;
 
         msg = _replacement.ApplyReplacements(msg, "french");
-
-        // replaces h with ' at the start of words.
-        msg = RegexStartH.Replace(msg, "'");
 
         // spaces out ! ? : and ;.
         msg = RegexSpacePunctuation.Replace(msg, " $&");
@@ -125,6 +121,7 @@ public sealed class FrenchAccentSystem : EntitySystem
         // Russian-Locale-End
 
         return msg;
+
     }
 
     private void OnAccentGet(EntityUid uid, FrenchAccentComponent component, AccentGetEvent args)
