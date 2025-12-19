@@ -18,7 +18,7 @@ public sealed class FrenchAccentSystem : EntitySystem
     private static readonly Regex RegexTh = new(@"th", RegexOptions.IgnoreCase);
     private static readonly Regex RegexH = new("х", RegexOptions.IgnoreCase);
     private static readonly Regex RegexR = new("[рР]+", RegexOptions.IgnoreCase);
-    private static readonly Regex RegexE = new("е", RegexOptions.IgnoreCase);
+    private static readonly Regex RegexE = new("e", RegexOptions.IgnoreCase);
     private static readonly Regex RegexZ = new("з", RegexOptions.IgnoreCase);
     private static readonly Regex RegexSpacePunctuation = new(@"(?<=\w\w)[!?;:](?!\w)", RegexOptions.IgnoreCase);
 
@@ -74,8 +74,7 @@ public sealed class FrenchAccentSystem : EntitySystem
             }
         }
 
-        // Тут через это, потому-что при работе со списком он мутирует нахуй.
-        msg = RegexR.Replace(msg, match =>
+        foreach (Match match in RegexR.Matches(msg))
         {
             var uppercase = msg[match.Index] == 'Р';
             var g = uppercase ? "Г" : "г";
@@ -90,8 +89,8 @@ public sealed class FrenchAccentSystem : EntitySystem
             }
 
             // Превращаем р в гх
-            return g + h;
-        });
+            msg = msg[..match.Index] + g + h + msg[(match.Index + h.Length)..];
+        }
 
         foreach (Match match in RegexE.Matches(msg))
         {
