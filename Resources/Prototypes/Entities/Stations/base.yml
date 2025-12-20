@@ -120,6 +120,7 @@
         mining: !type:GridSpawnGroup
           paths:
           - /Maps/Corvax/Shuttles/corvax_mining.yml
+          nameGrid: false
         # Corvax-Mapping-End
 
 - type: entity
