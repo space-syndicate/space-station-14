@@ -1,4 +1,5 @@
-﻿command-help-usage =
+﻿#TODO перевод
+command-help-usage =
     Usage:
 command-help-invertible =
     The behaviour of this command can be inverted using the "not" prefix.

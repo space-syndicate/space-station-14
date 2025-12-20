@@ -1,24 +1,24 @@
 ## EntitySpawnWindow
 
-entity-spawn-window-title = Entity Spawn Panel
-entity-spawn-window-replace-button-text = Replace
-entity-spawn-window-override-menu-tooltip = Override placement
+entity-spawn-window-title = Панель спавна сущностей
+entity-spawn-window-replace-button-text = Заменить
+entity-spawn-window-override-menu-tooltip = Перезапись размещения
 
 ## TileSpawnWindow
 
-tile-spawn-window-title = Place Tiles
-tile-spawn-window-mirror-button-text = Mirror Tiles
+tile-spawn-window-title = Размещение плитки
+tile-spawn-window-mirror-button-text = Отзеркалить плитку
 
 ## Console
 
-console-line-edit-placeholder = Command Here
+console-line-edit-placeholder = Введите сюда команду
 
 ## OutputPanel
 
-output-panel-scroll-down-button-text = Scroll Down
+output-panel-scroll-down-button-text = Пролистать вниз
 
 ## Common Used
 
-window-erase-button-text = Erase Mode
-window-search-bar-placeholder = Search
-window-clear-button = Clear
+window-erase-button-text = Режим удаления
+window-search-bar-placeholder = Поиск
+window-clear-button = Очистить

@@ -1,3 +1,3 @@
-generic-map = map
-generic-grid = grid
-generic-mapid = map Id
+generic-map = карта
+generic-grid = грид
+generic-mapid = ID карты
