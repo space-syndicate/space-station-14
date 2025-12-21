@@ -3,7 +3,7 @@ using Robust.Shared.Prototypes;
 using System.IO;
 using System.Linq;
 using System.Text.Json;
-using Content.Shared.EntityEffects.Effects;
+using Content.Shared.EntityEffects.Effects.Damage;
 
 namespace Content.Server.Corvax.GuideGenerator;
 public sealed class HealthChangeReagentsJsonGenerator
