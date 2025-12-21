@@ -6,6 +6,9 @@
     - !type:GroupSelector
       weight: 75
       children:
+      - !type:NestedSelector
+        weight: 5 # Roughly 7% chance
+        tableId: AllToysTable
       # Smoker's specialty
       - !type:AllSelector
         children:
@@ -112,13 +115,7 @@
         - id: ClothingNeckCloakEnby
         - id: ClothingNeckCloakPan
       - id: ToyFigurineSkeleton
-      - id: Basketball
-      - id: Football
-      - id: TennisBall
-      - id: BalloonNT
-      - id: BalloonCorgi
       - id: MysteryFigureBox
-      - id: RubberChicken
       - id: RubberPig # Corvax-Toys
       # Cult
       - !type:AllSelector
@@ -176,17 +173,12 @@
     - !type:GroupSelector
       weight: 2
       children:
-      - id: Skub
-      - id: PonderingOrb
-      - id: CluwneHorn
-      - id: ClothingShoesSkates
       - id: DrinkMugDog
       - id: CigarGold
       - id: ClothingUniformJumpsuitFamilyGuy
       - id: WristwatchGold
       - id: RubberStampGreytide
       - id: MysteryLighterBox
-      - id: GoldenPersonalAI
 
 - type: entity
   name: Maint Loot Spawner
@@ -240,7 +232,8 @@
       - id: Plunger
       - id: PowerCellMedium
       - id: PowerCellSmall
-      - id: Soap
+      - !type:NestedSelector
+        tableId: AllSoapsTable
       - id: Wirecutter
       - id: Screwdriver
       - id: Wrench
@@ -286,7 +279,7 @@
       - id: trayScanner
       - id: HandheldGPSBasic
       - id: HandLabeler
-      - id: GlowstickBase
+      - id: GlowstickGreen
       - id: Bucket
       - id: RadioHandheld
       - id: AppraisalTool
@@ -374,6 +367,8 @@
       - id: SawImprov
       - id: HydroponicsToolMiniHoe
       - id: ClothingHandsKnuckleDusters
+      - !type:NestedSelector
+        tableId: AllToyWeaponsTable
 
 - type: entity
   name: Maint Loot Spawner
