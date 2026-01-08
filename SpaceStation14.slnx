@@ -13,6 +13,20 @@
   <Folder Name="/Build/">
     <File Path="Tools/generate_hashes.ps1" />
   </Folder>
+  <Folder Name="/Corvax Interfaces/">
+    <Project Path="Corvax/Content.Corvax.Interfaces.Client/Content.Corvax.Interfaces.Client.csproj">
+      <BuildType Solution="DebugOpt|*" Project="Debug" />
+      <BuildType Solution="Tools|*" Project="Debug" />
+    </Project>
+    <Project Path="Corvax/Content.Corvax.Interfaces.Server/Content.Corvax.Interfaces.Server.csproj">
+      <BuildType Solution="DebugOpt|*" Project="Debug" />
+      <BuildType Solution="Tools|*" Project="Debug" />
+    </Project>
+    <Project Path="Corvax/Content.Corvax.Interfaces.Shared/Content.Corvax.Interfaces.Shared.csproj">
+      <BuildType Solution="DebugOpt|*" Project="Debug" />
+      <BuildType Solution="Tools|*" Project="Debug" />
+    </Project>
+  </Folder>
   <Folder Name="/MSBuild/">
     <File Path="MSBuild/Content.props" />
   </Folder>
@@ -23,24 +37,7 @@
     <File Path="Directory.Packages.props" />
     <File Path="README.md" />
   </Folder>
-  <Project Path="Content.Benchmarks/Content.Benchmarks.csproj" />
-  <Project Path="Content.Client/Content.Client.csproj" />
-  <Project Path="Content.IntegrationTests/Content.IntegrationTests.csproj" />
-  <Project Path="Content.MapRenderer/Content.MapRenderer.csproj" />
-  <Project Path="Content.Packaging/Content.Packaging.csproj" />
-  <Project Path="Content.PatreonParser/Content.PatreonParser.csproj">
-    <BuildType Solution="DebugOpt|*" Project="Debug" />
-    <BuildType Solution="Tools|*" Project="Debug" />
-  </Project>
-  <Project Path="Content.Replay/Content.Replay.csproj" />
-  <Project Path="Content.Server.Database/Content.Server.Database.csproj" />
-  <Project Path="Content.Server/Content.Server.csproj" />
-  <Project Path="Content.Shared.Database/Content.Shared.Database.csproj" />
-  <Project Path="Content.Shared/Content.Shared.csproj" />
-  <Project Path="Content.Tests/Content.Tests.csproj" />
-  <Project Path="Content.Tools/Content.Tools.csproj" />
-  <Project Path="Content.YAMLLinter/Content.YAMLLinter.csproj" />
-  <Project Path="Pow3r/Pow3r.csproj" />
+  <Folder Name="/RobustToolbox/.github/" />
   <Folder Name="/RobustToolbox/.github/workflows/">
     <File Path="RobustToolbox/.github/workflows/benchmarks.yml" />
     <File Path="RobustToolbox/.github/workflows/build-all-configurations.yml" />
@@ -132,6 +129,7 @@
     </Project>
   </Folder>
   <Folder Name="/RobustToolbox/">
+    <File Path="RobustToolbox/RobustToolbox.slnx" />
     <Project Path="RobustToolbox/Avalonia.Base/Avalonia.Base.csproj">
       <BuildType Solution="DebugOpt|*" Project="Debug" />
       <BuildType Solution="Tools|*" Project="Release" />
@@ -163,6 +161,23 @@
       <BuildType Solution="DebugOpt|*" Project="Debug" />
       <BuildType Solution="Tools|*" Project="Release" />
     </Project>
-    <File Path="RobustToolbox/RobustToolbox.slnx" />
   </Folder>
+  <Project Path="Content.Benchmarks/Content.Benchmarks.csproj" />
+  <Project Path="Content.Client/Content.Client.csproj" />
+  <Project Path="Content.IntegrationTests/Content.IntegrationTests.csproj" />
+  <Project Path="Content.MapRenderer/Content.MapRenderer.csproj" />
+  <Project Path="Content.Packaging/Content.Packaging.csproj" />
+  <Project Path="Content.PatreonParser/Content.PatreonParser.csproj">
+    <BuildType Solution="DebugOpt|*" Project="Debug" />
+    <BuildType Solution="Tools|*" Project="Debug" />
+  </Project>
+  <Project Path="Content.Replay/Content.Replay.csproj" />
+  <Project Path="Content.Server.Database/Content.Server.Database.csproj" />
+  <Project Path="Content.Server/Content.Server.csproj" />
+  <Project Path="Content.Shared.Database/Content.Shared.Database.csproj" />
+  <Project Path="Content.Shared/Content.Shared.csproj" />
+  <Project Path="Content.Tests/Content.Tests.csproj" />
+  <Project Path="Content.Tools/Content.Tools.csproj" />
+  <Project Path="Content.YAMLLinter/Content.YAMLLinter.csproj" />
+  <Project Path="Pow3r/Pow3r.csproj" />
 </Solution>

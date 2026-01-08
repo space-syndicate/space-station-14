@@ -53,8 +53,7 @@ public sealed class VoiceMaskBoundUserInterface : BoundUserInterface
             return;
         }
 
-        _window.UpdateState(cast.Name, cast.Verb, cast.Active, cast.AccentHide);
-        _window.UpdateState(cast.Name, cast.Voice, cast.Verb); // Corvax-TTS
+        _window.UpdateState(cast.Name, cast.Verb, cast.Active, cast.AccentHide, cast.Voice);//cast.Voice Corvax-TTS
     }
 
     protected override void Dispose(bool disposing)
