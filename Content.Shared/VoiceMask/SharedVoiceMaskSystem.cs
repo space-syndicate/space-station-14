@@ -13,12 +13,17 @@ public sealed class VoiceMaskBuiState : BoundUserInterfaceState
 {
     public readonly string Name;
     public readonly string? Verb;
+    public readonly bool Active;
+    public readonly bool AccentHide;
     public readonly string Voice; // Corvax-TTS
 
+    public VoiceMaskBuiState(string name, string? verb, bool active, bool accentHide)
     public VoiceMaskBuiState(string name, string voice, string? verb)
     {
         Name = name;
         Verb = verb;
+        Active = active;
+        AccentHide = accentHide;
         Voice = voice;  // Corvax-TTS
     }
 }
@@ -47,3 +52,15 @@ public sealed class VoiceMaskChangeVerbMessage : BoundUserInterfaceMessage
         Verb = verb;
     }
 }
+
+/// <summary>
+///     Toggle the effects of the voice mask.
+/// </summary>
+[Serializable, NetSerializable]
+public sealed class VoiceMaskToggleMessage : BoundUserInterfaceMessage;
+
+/// <summary>
+///     Toggle the effects of accent negation.
+/// </summary>
+[Serializable, NetSerializable]
+public sealed class VoiceMaskAccentToggleMessage : BoundUserInterfaceMessage;
