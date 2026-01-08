@@ -126748,7 +126748,7 @@ entities:
     - type: Gun
       angleDecay: 0.6981317007977318 rad
       burstFireRate: 1
-    - type: PredictedBattery
+    - type: Battery
       startingCharge: 1
       maxCharge: 1
 - proto: WeaponTurretSyndicateBroken
