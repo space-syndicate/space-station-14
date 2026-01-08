@@ -87,9 +87,14 @@ public sealed class TTSSystem : EntitySystem
 
         if (ev.SourceUid != null)
         {
-            if (!TryGetEntity(ev.SourceUid.Value, out _))
-                return;
             var sourceUid = GetEntity(ev.SourceUid.Value);
+
+            if (!Exists(sourceUid) || Deleted(sourceUid))
+            {
+                _contentRoot.RemoveFile(filePath);
+                return;
+            }
+
             _audio.PlayEntity(audioResource.AudioStream, sourceUid, soundSpecifier, audioParams);
         }
         else
