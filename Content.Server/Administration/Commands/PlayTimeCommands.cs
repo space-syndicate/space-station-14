@@ -58,7 +58,7 @@ public sealed class PlayTimeAddOverallCommand : IConsoleCommand
     }
 }
 
-[AdminCommand(AdminFlags.Permissions)] // Corvax-DiscordRoles
+[AdminCommand(AdminFlags.Playtime)] // Corvax-DiscordRoles
 public sealed class PlayTimeAddRoleCommand : IConsoleCommand
 {
     [Dependency] private readonly IPlayerManager _playerManager = default!;
