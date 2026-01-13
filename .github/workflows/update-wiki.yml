@@ -14,6 +14,7 @@ on:
       - 'Resources/Prototypes/Chemistry/**.yml'
       - 'Resources/Prototypes/Recipes/Reactions/**.yml'
       - 'RobustToolbox/'
+      - 'Resources/Locale/**.ftl'
 
 jobs:
   update-wiki:
