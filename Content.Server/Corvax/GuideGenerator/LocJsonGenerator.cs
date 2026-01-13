@@ -1,6 +1,7 @@
 using System.IO;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Text.Json;
 using Robust.Shared.ContentPack;
 using Robust.Shared.Utility;
@@ -26,68 +27,43 @@ public static class LocJsonGenerator
         var files = res.ContentFindFiles(root)
             .Where(c => c.Filename.EndsWith(".ftl", StringComparison.InvariantCultureIgnoreCase))
             .ToArray();
-
-        // Parse files naively to collect top-level message ids and their attribute names.
         var keys = new Dictionary<string, HashSet<string>>();
+
+        // Matches top-level message/term identifiers at start of line (no leading whitespace or comment).
+        var topEntryRegex = new Regex(@"(?m)^(?!\s|#)([^\s=]+)\s*=", RegexOptions.Compiled);
+        // Matches attribute lines like "    .attr-name ="
+        var attrRegex = new Regex(@"(?m)^\s*\.(?<name>[A-Za-z0-9_\-]+)\s*=", RegexOptions.Compiled);
+
         foreach (var path in files)
         {
             using var stream = res.ContentFileRead(path);
             using var reader = new StreamReader(stream, Encoding.UTF8);
             var contents = reader.ReadToEnd();
+            // Normalize line endings to simplify indexing.
+            contents = contents.Replace("\r\n", "\n");
 
-            // Simple line-oriented parser: detect top-level message lines and ".attr" lines indented under them.
-            var lines = contents.Replace("\r\n", "\n").Split('\n');
-            for (var i = 0; i < lines.Length; i++)
+            var matches = topEntryRegex.Matches(contents);
+            for (var mi = 0; mi < matches.Count; mi++)
             {
-                var line = lines[i];
-                if (string.IsNullOrWhiteSpace(line))
-                    continue;
-
-                // Top-level message: starts with non-whitespace and contains '='
-                if (char.IsWhiteSpace(line, 0))
-                    continue;
-
-                var trimmedLine = line.TrimStart();
-
-                if (trimmedLine.StartsWith("#"))
-                    continue;
-
-                var eq = line.IndexOf('=');
-                if (eq == -1)
-                    continue;
-
-                var id = line.Substring(0, eq).Trim();
+                var m = matches[mi];
+                var id = m.Groups[1].Value.Trim();
                 if (string.IsNullOrEmpty(id))
                     continue;
 
                 if (!keys.ContainsKey(id))
                     keys[id] = new HashSet<string>();
 
-                // Collect following indented attribute lines.
-                var j = i + 1;
-                for (; j < lines.Length; j++)
+                var start = m.Index;
+                var end = mi + 1 < matches.Count ? matches[mi + 1].Index : contents.Length;
+                var block = contents.Substring(start, end - start);
+
+                var attrMatches = attrRegex.Matches(block);
+                foreach (Match am in attrMatches)
                 {
-                    var next = lines[j];
-                    if (string.IsNullOrWhiteSpace(next))
-                        continue;
-
-                    if (!char.IsWhiteSpace(next, 0))
-                        break;
-
-                    var trimmed = next.TrimStart();
-                    if (!trimmed.StartsWith("."))
-                        continue;
-
-                    var attrEq = trimmed.IndexOf('=');
-                    if (attrEq == -1)
-                        continue;
-
-                    var attrName = trimmed.Substring(1, attrEq - 1).Trim();
+                    var attrName = am.Groups["name"].Value;
                     if (!string.IsNullOrEmpty(attrName))
                         keys[id].Add(attrName);
                 }
-
-                i = j - 1;
             }
         }
 
