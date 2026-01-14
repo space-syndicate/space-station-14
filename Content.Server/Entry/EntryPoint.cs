@@ -162,6 +162,9 @@ namespace Content.Server.Entry
                 file = _res.UserData.OpenWriteText(resPath.WithName("healthchangereagents_" + dest));
                 HealthChangeReagentsJsonGenerator.PublishJson(file);
                 file.Flush();
+                file = _res.UserData.OpenWriteText(resPath.WithName("loc.json"));
+                LocJsonGenerator.PublishJson(file);
+                file.Flush();
                 // Corvax-Wiki-End
                 Dependencies.Resolve<IBaseServer>().Shutdown("Data generation done");
                 return;
