@@ -29,11 +29,14 @@ public static class LocJsonGenerator
             .Where(c => c.Filename.EndsWith(".ftl", StringComparison.InvariantCultureIgnoreCase))
             .ToArray();
         var keys = new Dictionary<string, HashSet<string>>();
+        var skipKeys = new HashSet<string>();
 
         // Matches top-level message/term identifiers at start of line (no leading whitespace or comment).
         var topEntryRegex = new Regex(@"(?m)^(?!\s|#)([^\s=]+)\s*=", RegexOptions.Compiled);
-        // Matches attribute lines like "    .attr-name ="
+        // Matches attribute lines like ".attr-name ="
         var attrRegex = new Regex(@"(?m)^\s*\.(?<name>[A-Za-z0-9_\-]+)\s*=", RegexOptions.Compiled);
+        // Matches a function-like call inside curly braces, e.g. "{ CAPITALIZE($user) }".
+        var formatterRegex = new Regex(@"\{[^}]*\b[A-Za-z_][A-Za-z0-9_]*\s*\([^}]*\)[^}]*\}", RegexOptions.Compiled);
 
         foreach (var path in files)
         {
@@ -58,6 +61,9 @@ public static class LocJsonGenerator
                 var end = mi + 1 < matches.Count ? matches[mi + 1].Index : contents.Length;
                 var block = contents.Substring(start, end - start);
 
+                if (formatterRegex.IsMatch(block))
+                    skipKeys.Add(id);
+
                 var attrMatches = attrRegex.Matches(block);
                 foreach (Match am in attrMatches)
                 {
@@ -72,6 +78,9 @@ public static class LocJsonGenerator
         var output = new Dictionary<string, object?>();
         foreach (var (id, attrs) in keys.OrderBy(k => k.Key))
         {
+            if (skipKeys.Contains(id))
+                continue;
+
             if (attrs.Count == 0)
             {
                 output[id] = Loc.GetString(id);
