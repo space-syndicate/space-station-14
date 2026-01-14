@@ -1,8 +1,9 @@
 using System.IO;
 using System.Linq;
 using System.Text;
-using System.Text.RegularExpressions;
+using System.Text.Encodings.Web;
 using System.Text.Json;
+using System.Text.RegularExpressions;
 using Robust.Shared.ContentPack;
 using Robust.Shared.Utility;
 
@@ -93,6 +94,7 @@ public static class LocJsonGenerator
         var serializeOptions = new JsonSerializerOptions
         {
             WriteIndented = true,
+            Encoder = JavaScriptEncoder.UnsafeRelaxedJsonEscaping,
         };
 
         file.Write(JsonSerializer.Serialize(output, serializeOptions));
