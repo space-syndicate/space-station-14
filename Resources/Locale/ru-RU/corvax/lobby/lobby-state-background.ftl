@@ -89,6 +89,9 @@ lobby-state-background-clownspider-artist = Кочерга
 lobby-state-background-aimia-title = ИИ «Миа»
 lobby-state-background-aimia-artist = Кочерга
 
+lobby-state-background-xenoattack-title = Ксеноатака!
+lobby-state-background-xenoattack-artist = Gasper_horned
+
 lobby-state-background-singulordcage-title = Поле сингуло
 lobby-state-background-singulordcage-artist = Gasper_horned
 
@@ -112,6 +115,15 @@ lobby-state-background-nukiewar-artist = Свлтр455
 
 lobby-state-background-engineersvszombies-title = Инженеры против зомби
 lobby-state-background-engineersvszombies-artist = Украинский парень
+
+lobby-state-background-silly-title = Силли
+lobby-state-background-silly-artist = Александр Македонский
+
+lobby-state-background-echoteam-title = Эхо эха
+lobby-state-background-echoteam-artist = Украинский парень
+
+lobby-state-background-notfunny-title = Ты не смешной
+lobby-state-background-notfunny-artist = Празат911
 
 lobby-state-background-narsie-title = Нар'Си
 lobby-state-background-narsie-artist = угог
