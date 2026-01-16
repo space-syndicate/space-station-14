@@ -230,10 +230,8 @@ public sealed class NukeOpsTest
         var totalTicks = (int) Math.Ceiling(totalSeconds / server.Timing.TickPeriod.TotalSeconds);
         var increment = 5;
         // Corvax-IPC-start
-        var isIPC = entMan.GetComponent<MetaDataComponent>(player).EntityPrototype!.ID == "MobIpc" ? true : false;
-        RespiratorComponent? resp = null;
-        if (!isIPC)
-            resp = entMan.GetComponent<RespiratorComponent>(player);
+        var isIPC = entMan.GetComponent<MetaDataComponent>(player).EntityPrototype!.ID == "MobIpc";
+        RespiratorComponent? resp = isIPC ? null : entMan.GetComponent<RespiratorComponent>(player);
         // Corvax-IPC-end
         var damage = entMan.GetComponent<DamageableComponent>(player);
         for (var tick = 0; tick < totalTicks; tick += increment)
