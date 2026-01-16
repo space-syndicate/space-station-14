@@ -186,6 +186,8 @@
     damage:
       types:
         Blunt: 2
+  - type: TTS # Corvax-TTS
+    voice: Meepo
 
 - type: entity
   parent: MrChips
@@ -194,6 +196,8 @@
   components:
   - type: Sprite
     sprite: Objects/Fun/mrdips.rsi
+  - type: TTS # Corvax-TTS
+    voice: Zibb
 
 - type: entity
   parent: BaseItem

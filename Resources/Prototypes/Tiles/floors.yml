@@ -1663,14 +1663,15 @@
   id: FloorMowedAstroGrass
   parent: [ BaseStationTile, FloorGrass ]
   name: tiles-mowed-astro-grass
-  parent: FloorGrass
-  sprite: /Textures/Corvax/Tiles/mowed_grass.png #Corvax
+  #Corvax
+  sprite: /Textures/Corvax/Tiles/mowed_grass.png
   variants: 4
   placementVariants:
   - 1.0
   - 1.0
   - 1.0
   - 1.0
+  #Corvax
   isSubfloor: false
   deconstructTools: [ Cutting ]
   itemDrop: FloorTileItemMowedAstroGrass

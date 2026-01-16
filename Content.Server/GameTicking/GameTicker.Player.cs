@@ -136,10 +136,13 @@ namespace Content.Server.GameTicking
                         _pvsOverride.RemoveSessionOverride(mindId.Value, session);
                     }
 
-                    if (_playerGameStatuses.ContainsKey(args.Session.UserId)) // Corvax-Queue: Delete data only if player was in game
+                    // Corvax-Queue-start: Delete data only if player was in game
+                    if (_playerGameStatuses.ContainsKey(args.Session.UserId))
+                    {
                         _userDb.ClientDisconnected(session);
-
-                    _adminLogger.Add(LogType.Connection, LogImpact.Low, $"User {args.Session:Player} attached to {(args.Session.AttachedEntity != null ? ToPrettyString(args.Session.AttachedEntity) : "nothing"):entity} disconnected from the game.");
+                        _adminLogger.Add(LogType.Connection, LogImpact.Low, $"User {args.Session:Player} attached to {(args.Session.AttachedEntity != null ? ToPrettyString(args.Session.AttachedEntity) : "nothing"):entity} disconnected from the game.");
+                    }
+                    // Corvax-Queue-end
                     break;
                 }
             }

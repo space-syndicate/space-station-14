@@ -108,6 +108,9 @@
             "name": "Librarian"
         },
         {
+            "name": "MedicalDoctor"
+        },
+        {
             "name": "MedicalIntern"
         },
         {
@@ -126,13 +129,10 @@
             "name": "Musician"
         },
         {
-            "name": "Pilot"
+            "name": "Nanotrasen"
         },
         {
             "name": "Ninja"
-        },
-        {
-            "name": "MedicalDoctor"
         },
         {
             "name": "NoId"
@@ -177,7 +177,7 @@
             "name": "Scientist"
         },
         {
-            "name": "IAA"
+            "name": "SecurityCadet"
         },
         {
             "name": "SecurityOfficer"
@@ -240,13 +240,13 @@
             "name": "Zookeeper"
         },
         {
-            "name": "Zookeeper"
+            "name": "Zombie"
         },
         {
-            "name": "Nanotrasen"
+            "name": "IAA"
         },
         {
-            "name": "SecurityCadet"
+            "name": "Pilot"
         }
     ]
 }
