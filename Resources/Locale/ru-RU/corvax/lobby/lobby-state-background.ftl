@@ -14,7 +14,7 @@ lobby-state-background-engineerschill-title = Инженерный отдых
 lobby-state-background-engineerschill-artist = Gasper_horned
 
 lobby-state-background-gray-tide-title= Грейтайд
-lobby-state-background-gray-tide-title = Giliof
+lobby-state-background-gray-tide-artist = Giliof
 
 lobby-state-background-hydroponics-title = Гидропоника
 lobby-state-background-hydroponics-artist = Nyan cat
