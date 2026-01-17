@@ -6,15 +6,11 @@ on:
     branches: [ master, jsondump ]
     paths:
       - '.github/workflows/update-wiki.yml'
-      - 'Content.Shared/Chemistry/**.cs'
-      - 'Content.Server/Chemistry/**.cs'
-      - 'Content.Server/GuideGenerator/**.cs'
-      - 'Content.Server/Corvax/GuideGenerator/**.cs'
-      - 'Resources/Prototypes/Reagents/**.yml'
-      - 'Resources/Prototypes/Chemistry/**.yml'
-      - 'Resources/Prototypes/Recipes/Reactions/**.yml'
+      - 'Content.Shared/'
+      - 'Content.Server/'
+      - 'Content.Clietn/'
+      - 'Resources/'
       - 'RobustToolbox/'
-      - 'Resources/Locale/**.ftl'
 
 jobs:
   update-wiki:
@@ -52,52 +48,50 @@ jobs:
       run: dotnet ./bin/Content.Server/Content.Server.dll --cvar autogen.destination_file=prototypes.json
       continue-on-error: true
 
-    - name: Upload chem_prototypes.json to wiki
-      uses: jtmullen/mediawiki-edit-action@v0.1.1
-      with:
-        wiki_text_file: ./bin/Content.Server/data/chem_prototypes.json
-        edit_summary: Update chem_prototypes.json via GitHub Actions
-        page_name: "${{ secrets.WIKI_PAGE_ROOT }}/chem_prototypes.json"
-        api_url: ${{ secrets.WIKI_ROOT_URL }}/api.php
-        username: ${{ secrets.WIKI_BOT_USER }}
-        password: ${{ secrets.WIKI_BOT_PASS }}
+    # Проходит по всем JSON-файлам в директории BASE и загружает каждый файл как страницу в MediaWiki.
+    # Имя страницы формируется из относительного пути к файлу.
+    - name: Upload JSON files to wiki
+      shell: bash
+      run: |
+        set -euo pipefail
 
-    - name: Upload react_prototypes.json to wiki
-      uses: jtmullen/mediawiki-edit-action@v0.1.1
-      with:
-        wiki_text_file: ./bin/Content.Server/data/react_prototypes.json
-        edit_summary: Update react_prototypes.json via GitHub Actions
-        page_name: "${{ secrets.WIKI_PAGE_ROOT }}/react_prototypes.json"
-        api_url: ${{ secrets.WIKI_ROOT_URL }}/api.php
-        username: ${{ secrets.WIKI_BOT_USER }}
-        password: ${{ secrets.WIKI_BOT_PASS }}
+        BASE="./bin/Content.Server/data"
+        ROOT="${{ secrets.WIKI_PAGE_ROOT }}"
+        API="${{ secrets.WIKI_ROOT_URL }}/api.php"
+        USER="${{ secrets.WIKI_BOT_USER }}"
+        PASS="${{ secrets.WIKI_BOT_PASS }}"
 
-    - name: Upload entity_prototypes.json to wiki
-      uses: jtmullen/mediawiki-edit-action@v0.1.1
-      with:
-        wiki_text_file: ./bin/Content.Server/data/entity_prototypes.json
-        edit_summary: Update entity_prototypes.json via GitHub Actions
-        page_name: "${{ secrets.WIKI_PAGE_ROOT }}/entity_prototypes.json"
-        api_url: ${{ secrets.WIKI_ROOT_URL }}/api.php
-        username: ${{ secrets.WIKI_BOT_USER }}
-        password: ${{ secrets.WIKI_BOT_PASS }}
+        API="$(printf "%s" "$API" | tr -d '\r\n' | sed 's/[[:space:]]*$//')"
+        USER="$(printf "%s" "$USER" | tr -d '\r\n')"
+        PASS="$(printf "%s" "$PASS" | tr -d '\r\n')"
+        ROOT="$(printf "%s" "$ROOT" | tr -d '\r\n' | sed 's/[[:space:]]*$//')"
 
-    - name: Upload mealrecipes_prototypes.json to wiki
-      uses: jtmullen/mediawiki-edit-action@v0.1.1
-      with:
-        wiki_text_file: ./bin/Content.Server/data/mealrecipes_prototypes.json
-        edit_summary: Update mealrecipes_prototypes.json via GitHub Actions
-        page_name: "${{ secrets.WIKI_PAGE_ROOT }}/mealrecipes_prototypes.json"
-        api_url: ${{ secrets.WIKI_ROOT_URL }}/api.php
-        username: ${{ secrets.WIKI_BOT_USER }}
-        password: ${{ secrets.WIKI_BOT_PASS }}
+        cookiejar="$(mktemp)"
+        trap 'rm -f "$cookiejar"' EXIT
 
-    - name: Upload loc.json to wiki
-      uses: jtmullen/mediawiki-edit-action@v0.1.1
-      with:
-        wiki_text_file: ./bin/Content.Server/data/loc.json
-        edit_summary: Update loc.json via GitHub Actions
-        page_name: "${{ secrets.WIKI_PAGE_ROOT }}/loc.json"
-        api_url: ${{ secrets.WIKI_ROOT_URL }}/api.php
-        username: ${{ secrets.WIKI_BOT_USER }}
-        password: ${{ secrets.WIKI_BOT_PASS }}
+        login_token=$(curl -sS -c "$cookiejar" --data "action=query&meta=tokens&type=login&format=json" "$API" | jq -r '.query.tokens.logintoken')
+        curl -sS -c "$cookiejar" -b "$cookiejar" \
+          --data-urlencode "action=login" \
+          --data-urlencode "lgname=$USER" \
+          --data-urlencode "lgpassword=$PASS" \
+          --data-urlencode "lgtoken=$login_token" \
+          --data-urlencode "format=json" \
+          "$API" > /dev/null
+
+        find "$BASE" -type f -name '*.json' | while IFS= read -r file; do
+          rel="${file#$BASE/}"
+          rel="$(printf "%s" "$rel" | tr -d '\r\n' | sed 's/:/_/g')"
+          page="$ROOT/$rel"
+          echo "Uploading $rel → $page"
+
+          token=$(curl -sS -b "$cookiejar" --data "action=query&meta=tokens&format=json" "$API" | jq -r '.query.tokens.csrftoken')
+
+          curl -sS -b "$cookiejar" \
+            --data-urlencode "action=edit" \
+            --data-urlencode "title=$page" \
+            --data-urlencode "summary=Update $rel via GitHub Actions" \
+            --data-urlencode "text@${file}" \
+            --data-urlencode "token=$token" \
+            --data-urlencode "format=json" \
+            "$API" | jq -r '.'
+        done
