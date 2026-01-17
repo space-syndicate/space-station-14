@@ -6,7 +6,6 @@ using Robust.Shared.Prototypes;
 using Robust.Shared.Serialization.Manager;
 using Robust.Shared.Serialization.Markdown.Mapping;
 using Robust.Shared.Utility;
-using Content.Shared.Research.Prototypes;
 
 namespace Content.Server.Corvax.GuideGenerator;
 
@@ -20,7 +19,7 @@ public static class PrototypeJsonGenerator
         foreach (var kind in proto.EnumeratePrototypeKinds().OrderBy(t => t.Name))
         {
             // The entity prototype has its own generator due to its size <see cref="EntityJsonGenerator"/>.
-            if (kind != typeof(TechDisciplinePrototype))
+            if (kind == typeof(EntityPrototype))
                 continue;
 
             // Map: entity id -> prototype fields
