@@ -37,3 +37,5 @@ ent-WeaponShotgunImprovised = самодельный дробовик
 ent-WeaponShotgunImprovisedLoaded = самодельный дробовик
     .suffix = Дробовик, Заряжен
     .desc = { ent-WeaponShotgunImprovised.desc }
+ent-WeaponShotgunHushpup = Хашпап
+    .desc = Малоизвестная модификация Силовика, оснащенная экспериментальным глушителем. Идеальная для тех, кто придерживается строгих моральных принципов. Использует патроны калибра .50 ружейный.

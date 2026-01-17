@@ -510,12 +510,16 @@ entity-effect-guidebook-plant-robust-harvest =
 
 entity-effect-guidebook-plant-seeds-add =
     { $chance ->
-        [1] Restores the
-        *[other] restore the
-    } seeds of the plant
-
+        [1] Восстанавливает
+       *[other] восстанавливают
+    } семена растения
 entity-effect-guidebook-plant-seeds-remove =
     { $chance ->
-        [1] Removes the
-        *[other] remove the
-    } seeds of the plant
+        [1] Убирает
+       *[other] убирают
+    } семена из растения
+entity-effect-guidebook-plant-mutate-chemicals =
+    { $chance ->
+        [1] Мутирует
+       *[other] мутируют
+    } растение, чтобы то производило { $name }
