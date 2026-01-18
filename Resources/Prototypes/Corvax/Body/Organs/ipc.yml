@@ -1,6 +1,6 @@
 - type: entity
   id: OrganIPCBrain
-  parent: BaseHumanOrganUnGibbable
+  parent: BaseHumanOrgan
   name: brain IPC
   description: "The source of incredible, unending intelligence. Honk."
   components:
