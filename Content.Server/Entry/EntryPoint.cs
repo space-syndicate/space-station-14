@@ -165,6 +165,19 @@ namespace Content.Server.Entry
                 file = _res.UserData.OpenWriteText(resPath.WithName("loc.json"));
                 LocJsonGenerator.PublishJson(file);
                 file.Flush();
+                file = _res.UserData.OpenWriteText(resPath.WithName("meta_license.json"));
+                MetaLicenseGenerator.PublishJson(file);
+                file.Flush();
+                file = _res.UserData.OpenWriteText(resPath.WithName("prototype.json"));
+                PrototypeListGenerator.PublishJson(file);
+                file.Flush();
+                file = _res.UserData.OpenWriteText(resPath.WithName("component.json"));
+                ComponentListGenerator.PublishJson(file);
+                file.Flush();
+                PrototypeJsonGenerator.PublishAll(_res, new ResPath("prototype").ToRootedPath());
+                file.Flush();
+                ComponentJsonGenerator.PublishAll(_res, new ResPath("component").ToRootedPath());
+                file.Flush();
                 // Corvax-Wiki-End
                 Dependencies.Resolve<IBaseServer>().Shutdown("Data generation done");
                 return;
