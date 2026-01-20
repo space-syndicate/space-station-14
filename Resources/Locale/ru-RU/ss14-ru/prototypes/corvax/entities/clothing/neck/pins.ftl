@@ -34,3 +34,7 @@ ent-ClothingNeckVitezstviPin = значок Vitezstvi
     .desc = Значок корпорации Vitezstvi.
 ent-ClothingNeckWhiteListPin = значок квазара
     .desc = Значок с квазаром.
+ent-ClothingNeckLumenPin = значок синей планеты
+    .desc = Значок с синей планетой.
+ent-ClothingNeckVoidPin = значок пустоты
+    .desc = Значок с пустотой.

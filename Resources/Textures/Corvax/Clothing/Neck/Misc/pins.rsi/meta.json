@@ -1,7 +1,7 @@
 {
   "version": 1,
   "license": "CC-BY-SA-3.0",
-  "copyright": "Lore's pixels made by @no_mad#0260, servers pins made by @mishutka09",
+  "copyright": "Lore's pixels made by @no_mad#0260, servers pins made by @mishutka09 and @dezzzix",
   "size": {
     "x": 32,
     "y": 32
@@ -61,6 +61,13 @@
     },
     {
       "name": "logistika-equipped-NECK",
+      "directions": 4
+    },
+    {
+      "name": "lumen"
+    },
+    {
+      "name": "lumen-equipped-NECK",
       "directions": 4
     },
     {
@@ -124,6 +131,13 @@
     },
     {
       "name": "vit-equipped-NECK",
+      "directions": 4
+    },
+    {
+      "name": "void"
+    },
+    {
+      "name": "void-equipped-NECK",
       "directions": 4
     },
     {
