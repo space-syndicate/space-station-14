@@ -10,7 +10,6 @@ on:
       - 'Content.Server/**'
       - 'Content.Client/**'
       - 'Resources/**'
-      - 'RobustToolbox/**'
       - 'RobustToolbox/'
 
 jobs:
