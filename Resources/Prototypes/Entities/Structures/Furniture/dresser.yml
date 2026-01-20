@@ -203,41 +203,27 @@
       weight: 0.001
         # Corvax-Pins-Start
       - id: ClothingNeckAtharaPin
-        prob: 0.06       
-        orGroup: dressermainloot
+        weight: 0.06
       - id: ClothingNeckCorvaxPin
-        prob: 0.06
-        orGroup: dressermainloot
+        weight: 0.06
       - id: ClothingNeckEchoPin
-        prob: 0.06
-        orGroup: dressermainloot
+        weight: 0.06
       - id: ClothingNeckElysiumPin
-        prob: 0.06
-        orGroup: dressermainloot 
+        weight: 0.06
       - id: ClothingNeckMainPin
-        prob: 0.06
-        orGroup: dressermainloot
+        weight: 0.06
       - id: ClothingNeckNebulaPin
-        prob: 0.06
-        orGroup: dressermainloot
+        weight: 0.06
       - id: ClothingNeckNovaPin
-        prob: 0.06
-        orGroup: dressermainloot
+        weight: 0.06
       - id: ClothingNeckSolarisPin
-        prob: 0.06
-        orGroup: dressermainloot
-      - id: ClothingNeckMainPin
-        prob: 0.06
-        orGroup: dressermainloot
+        weight: 0.06
       - id: ClothingNeckLumenPin
-        prob: 0.06
-        orGroup: dressermainloot
+        weight: 0.06
       - id: ClothingNeckVoidPin
-        prob: 0.06
-        orGroup: dressermainloot
+        weight: 0.06
       - id: ClothingNeckWhiteListPin
-        prob: 0.06
-        orGroup: dressermainloot
+        weight: 0.06
       # Corvax-Pins-End
 
 - type: entityTable
