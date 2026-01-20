@@ -1136,7 +1136,7 @@
     key: enum.FundingAllocationConsoleUiKey.Key
   - type: ActivatableUIRequiresAccess
   - type: AccessReader
-    access: [["HeadOfPersonnel"]]
+    access: [["HeadOfPersonnel"], ["Quartermaster"]] # Сorvax
   - type: UserInterface
     interfaces:
       enum.FundingAllocationConsoleUiKey.Key:
