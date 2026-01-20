@@ -201,29 +201,29 @@
       weight: 0.001
     - id: ClothingUniformJumpsuitNanotrasen
       weight: 0.001
-        # Corvax-Pins-Start
-      - id: ClothingNeckAtharaPin
-        weight: 0.06
-      - id: ClothingNeckCorvaxPin
-        weight: 0.06
-      - id: ClothingNeckEchoPin
-        weight: 0.06
-      - id: ClothingNeckElysiumPin
-        weight: 0.06
-      - id: ClothingNeckMainPin
-        weight: 0.06
-      - id: ClothingNeckNebulaPin
-        weight: 0.06
-      - id: ClothingNeckNovaPin
-        weight: 0.06
-      - id: ClothingNeckSolarisPin
-        weight: 0.06
-      - id: ClothingNeckLumenPin
-        weight: 0.06
-      - id: ClothingNeckVoidPin
-        weight: 0.06
-      - id: ClothingNeckWhiteListPin
-        weight: 0.06
+    # Corvax-Pins-Start
+    - id: ClothingNeckAtharaPin
+      weight: 0.06
+    - id: ClothingNeckCorvaxPin
+      weight: 0.06
+    - id: ClothingNeckEchoPin
+      weight: 0.06
+    - id: ClothingNeckElysiumPin
+      weight: 0.06
+    - id: ClothingNeckMainPin
+      weight: 0.06
+    - id: ClothingNeckNebulaPin
+      weight: 0.06
+    - id: ClothingNeckNovaPin
+      weight: 0.06
+    - id: ClothingNeckSolarisPin
+      weight: 0.06
+    - id: ClothingNeckLumenPin
+      weight: 0.06
+    - id: ClothingNeckVoidPin
+      weight: 0.06
+    - id: ClothingNeckWhiteListPin
+      weight: 0.06
       # Corvax-Pins-End
 
 - type: entityTable
