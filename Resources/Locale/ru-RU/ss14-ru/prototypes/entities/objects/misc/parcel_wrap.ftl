@@ -3,7 +3,11 @@
 ent-ParcelWrapAdmeme = блюспейс обёрточная бумага
     .desc = Бумага, которой упаковывают вещи для транспортировки. Кажется, она способна вмещать необычно большое количество вещей.
     .suffix = Admeme
-ent-WrappedParcel = завёрнутая посылка
+ent-BaseWrappedParcel = завёрнутая посылка
     .desc = Что-то завёрнутое в бумагу. Интересно, что же внутри...
+ent-WrappedParcel = { ent-BaseWrappedParcel }
+    .desc = { ent-BaseWrappedParcel.desc }
+ent-WrappedParcelHumanoid = { ent-BaseWrappedParcel }
+    .desc = Что-то завёрнутое в бумагу. Подозрительно гуманоидной формы.
 ent-ParcelWrapTrash = обёрточная бумага
     .desc = Разочаровывающие остатки распакованной посылки.

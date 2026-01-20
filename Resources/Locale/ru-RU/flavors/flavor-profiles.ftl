@@ -186,6 +186,7 @@ flavor-complex-false-meat = как не совсем не мясо
 flavor-complex-paper = как кашеобразная масса
 flavor-complex-compressed-meat = как спрессованное мясо
 flavor-complex-dog-food = как еда для собак
+flavor-complex-canned-tuna = как консервированный тунец
 
 # Drink-specific flavors.
 

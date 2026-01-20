@@ -7,7 +7,7 @@ names-ai-dataset-5 = Адаптивный Манипулятор
 # Named after the famous soundcard
 names-ai-dataset-6 = Адлиб
 names-ai-dataset-7 = АЛИСА
-names-ai-dataset-8 = Союзный Мастер-Компьютер
+names-ai-dataset-8 = Главный союзный компьютер
 names-ai-dataset-9 = Альфа 2
 names-ai-dataset-10 = Альфа 3
 names-ai-dataset-11 = Альфа 4

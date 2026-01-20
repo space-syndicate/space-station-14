@@ -1,4 +1,4 @@
-﻿namespace Content.Shared.Administration
+namespace Content.Shared.Administration
 {
     /// <summary>
     ///     Permissions that admins can have.
@@ -123,6 +123,12 @@
         ///     Lets you set the color of your OOC name.
         /// </summary>
         NameColor = 1 << 21,
+
+        // Corvax-DiscordRoles
+        /// <summary>
+        ///     Allows you to edit players playtime.
+        /// </summary>
+        Playtime = 1 << 30,
 
         /// <summary>
         ///     Dangerous host permissions like scsi.

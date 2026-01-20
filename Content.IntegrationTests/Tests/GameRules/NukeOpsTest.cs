@@ -10,7 +10,7 @@ using Content.Server.Roles;
 using Content.Server.RoundEnd;
 using Content.Server.Shuttles.Components;
 using Content.Shared.CCVar;
-using Content.Shared.Damage;
+using Content.Shared.Damage.Components;
 using Content.Shared.FixedPoint;
 using Content.Shared.GameTicking;
 using Content.Shared.Hands.Components;
@@ -229,12 +229,16 @@ public sealed class NukeOpsTest
         var totalSeconds = 30;
         var totalTicks = (int) Math.Ceiling(totalSeconds / server.Timing.TickPeriod.TotalSeconds);
         var increment = 5;
-        var resp = entMan.GetComponent<RespiratorComponent>(player);
+        // Corvax-IPC-start
+        var isIPC = entMan.GetComponent<MetaDataComponent>(player).EntityPrototype!.ID == "MobIpc";
+        RespiratorComponent? resp = isIPC ? null : entMan.GetComponent<RespiratorComponent>(player);
+        // Corvax-IPC-end
         var damage = entMan.GetComponent<DamageableComponent>(player);
         for (var tick = 0; tick < totalTicks; tick += increment)
         {
             await pair.RunTicksSync(increment);
-            Assert.That(resp.SuffocationCycles, Is.LessThanOrEqualTo(resp.SuffocationCycleThreshold));
+            if (!isIPC) // Corvax-IPC
+                Assert.That(resp!.SuffocationCycles, Is.LessThanOrEqualTo(resp.SuffocationCycleThreshold));
             Assert.That(damage.TotalDamage, Is.EqualTo(FixedPoint2.Zero));
         }
 

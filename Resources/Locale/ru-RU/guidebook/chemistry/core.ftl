@@ -2,9 +2,12 @@ guidebook-reagent-effect-description =
     { $chance ->
         [1] { $effect }
        *[other] Имеет { NATURALPERCENT($chance, 2) } шанс { $effect }
+    }{$quantity ->
+        [0] {""}
+        *[other] , если имеется как минимум {$quantity} ед. {$reagent}
     }{ $conditionCount ->
         [0] .
-       *[other] { " " }, пока { $conditions }.
+       *[other] , пока { $conditions }.
     }
 guidebook-reagent-name = [bold][color={ $color }]{ CAPITALIZE($name) }[/color][/bold]
 guidebook-reagent-recipes-header = Рецепт

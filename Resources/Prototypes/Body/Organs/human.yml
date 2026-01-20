@@ -1,5 +1,5 @@
 - type: entity
-  id: BaseHumanOrganUnGibbable
+  id: BaseHumanOrgan
   parent: BaseItem
   abstract: true
   components:
@@ -28,15 +28,8 @@
       - Meat
 
 - type: entity
-  id: BaseHumanOrgan
-  parent: BaseHumanOrganUnGibbable
-  abstract: true
-  components:
-  - type: Gibbable
-
-- type: entity
   id: OrganHumanBrain
-  parent: BaseHumanOrganUnGibbable
+  parent: BaseHumanOrgan
   name: brain
   description: "The source of incredible, unending intelligence. Honk."
   components:
@@ -225,7 +218,6 @@
     metabolizerTypes: [Human]
     groups:
     - id: Alcohol
-      rateModifier: 0.1 # removes alcohol very slowly along with the stomach removing it as a drink
 
 - type: entity
   id: OrganHumanKidneys

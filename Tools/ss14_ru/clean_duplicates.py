@@ -6,7 +6,7 @@ import chardet
 from datetime import datetime
 
 def find_top_level_dir(start_dir):
-    marker_file = 'SpaceStation14.sln'
+    marker_file = 'SpaceStation14.slnx'
     current_dir = start_dir
     while True:
         if marker_file in os.listdir(current_dir):
@@ -16,7 +16,7 @@ def find_top_level_dir(start_dir):
             print(f"Не удалось найти {marker_file} начиная с {start_dir}")
             exit(-1)
         current_dir = parent_dir
-        
+
 def find_ftl_files(root_dir):
     ftl_files = []
     for root, dirs, files in os.walk(root_dir):

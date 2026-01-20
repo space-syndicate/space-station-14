@@ -2,7 +2,7 @@ using Content.Server.Ghost;
 using Content.Server.Hands.Systems;
 using Content.Shared.Administration.Logs;
 using Content.Shared.Chat;
-using Content.Shared.Damage;
+using Content.Shared.Damage.Components;
 using Content.Shared.Database;
 using Content.Shared.IdentityManagement;
 using Content.Shared.Interaction.Events;
@@ -169,7 +169,17 @@ public sealed class SuicideSystem : EntitySystem
             return;
         }
 
-        args.DamageType ??= "Bloodloss";
+        // Corvax-IPC-start
+        //args.DamageType ??= "Bloodloss";
+        string entityPrototypeId = "";
+        if (EntityManager.TryGetComponent<MetaDataComponent>(victim, out var metaData) && metaData.EntityPrototype != null)
+            entityPrototypeId = metaData.EntityPrototype.ID;
+
+        if (entityPrototypeId != "MobIpc")
+            args.DamageType ??= "Bloodloss";
+        else
+            args.DamageType ??= "Blunt";
+        // Corvax-IPC-end
         _suicide.ApplyLethalDamage(victim, args.DamageType);
         args.Handled = true;
     }

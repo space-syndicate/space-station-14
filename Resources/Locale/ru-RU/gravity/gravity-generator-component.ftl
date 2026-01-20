@@ -28,3 +28,7 @@ gravity-generator-window-power-label = { $draw } / { $max } Вт
 
 gravity-generator-window-eta-none = Н/Д
 gravity-generator-window-eta-value = { TOSTRING($left, "m\\:ss") }
+
+## Popup
+
+gravity-generator-unanchoring-failed = Невозможно открепить активный генератор гравитации.
