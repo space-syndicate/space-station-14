@@ -11,3 +11,55 @@
     radius: 3
     energy: 1
     netsync: false
+
+- type: entity
+  parent: MarkerBase
+  id: PortalRedAdmemeCNInvisible
+  suffix: Admeme, Invisible
+  components:
+  - type: Transform
+    anchored: True
+  - type: InteractionOutline
+  - type: Clickable
+  - type: Physics
+    bodyType: Static
+  - type: Visibility
+    layer: 2
+  - type: Sprite
+    layers:
+      - sprite: Corvax/Markers/environment.rsi
+        state: base-red
+        shader: unshaded
+      - sprite: Corvax/Markers/environment.rsi
+        shader: unshaded
+        state: portal
+  - type: Fixtures
+    fixtures:
+      portalFixture:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.25,-0.48,0.25,0.48"
+        mask:
+        - FullTileMask
+        layer:
+        - WallLayer
+        hard: false
+  - type: Portal
+    canTeleportToOtherMaps: true
+
+- type: entity
+  parent: PortalRedAdmemeCNInvisible
+  id: PortalBlueAdmemeCNInvisible
+  suffix: Admeme, Invisible
+  components:
+  - type: Portal
+    canTeleportToOtherMaps: true
+  - type: Sprite
+    layers:
+      - sprite: Corvax/Markers/environment.rsi
+        state: base-blue
+        shader: unshaded
+      - sprite: Corvax/Markers/environment.rsi
+        shader: unshaded
+        state: portal
+        

@@ -201,7 +201,7 @@
       weight: 0.001
     - id: ClothingUniformJumpsuitNanotrasen
       weight: 0.001
-        # Corvax-Pins-Start
+    # Corvax-Pins-Start
     - id: ClothingNeckAtharaPin
       weight: 0.06
     - id: ClothingNeckCorvaxPin
@@ -217,6 +217,10 @@
     - id: ClothingNeckNovaPin
       weight: 0.06
     - id: ClothingNeckSolarisPin
+      weight: 0.06
+    - id: ClothingNeckLumenPin
+      weight: 0.06
+    - id: ClothingNeckVoidPin
       weight: 0.06
     - id: ClothingNeckWhiteListPin
       weight: 0.06
