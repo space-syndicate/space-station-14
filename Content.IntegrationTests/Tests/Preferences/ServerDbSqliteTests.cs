@@ -8,11 +8,13 @@ using Content.Shared.Preferences.Loadouts;
 using Content.Shared.Preferences.Loadouts.Effects;
 using Microsoft.Data.Sqlite;
 using Microsoft.EntityFrameworkCore;
+using Robust.Shared.Asynchronous;
 using Robust.Shared.Configuration;
 using Robust.Shared.Enums;
 using Robust.Shared.Log;
 using Robust.Shared.Maths;
 using Robust.Shared.Network;
+using Robust.Shared.Serialization.Manager;
 using Robust.UnitTesting;
 
 namespace Content.IntegrationTests.Tests.Preferences
@@ -52,10 +54,6 @@ namespace Content.IntegrationTests.Tests.Preferences
                 Voice = "Eugene", // Corvax-TTS
                 Age = 21,
                 Appearance = new(
-                    "Afro",
-                    Color.Aqua,
-                    "Shaved",
-                    Color.Aquamarine,
                     Color.Azure,
                     Color.Beige,
                     new ())
@@ -65,12 +63,14 @@ namespace Content.IntegrationTests.Tests.Preferences
         private static ServerDbSqlite GetDb(RobustIntegrationTest.ServerIntegrationInstance server)
         {
             var cfg = server.ResolveDependency<IConfigurationManager>();
+            var serialization = server.ResolveDependency<ISerializationManager>();
+            var task = server.ResolveDependency<ITaskManager>();
             var opsLog = server.ResolveDependency<ILogManager>().GetSawmill("db.ops");
             var builder = new DbContextOptionsBuilder<SqliteServerDbContext>();
             var conn = new SqliteConnection("Data Source=:memory:");
             conn.Open();
             builder.UseSqlite(conn);
-            return new ServerDbSqlite(() => builder.Options, true, cfg, true, opsLog);
+            return new ServerDbSqlite(() => builder.Options, true, cfg, true, opsLog, task, serialization);
         }
 
         [Test]
