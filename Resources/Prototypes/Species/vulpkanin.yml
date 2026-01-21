@@ -6,12 +6,11 @@
   sprites: MobCorvaxVulpkaninSprites #MobVulpkaninSprites # Corvax-CorvaxVulp_Port
   defaultSkinTone:  "#eb943d" # "#5a3f2d" Corvax-CorvaxVulp_Port ибо нефиг
   markingLimits: MobVulpkaninMarkingLimits
-  dollPrototype: MobVulpkaninDummy
-  skinColoration: Hues # VulpkaninColors Corvax-CorvaxVulp_Port
-  maleFirstNames: NamesVulpFirstMale # Corvax-CorvaxVulp_Port names_vulpkanin_male
-  femaleFirstNames: NamesVulpFirstFemale # Corvax-CorvaxVulp_Port names_vulpkanin_female
-  maleLastNames: NamesVulpLast # Corvax-LastnameGender
-  femaleLastNames: NamesVulpLast # Corvax-LastnameGender
+  dollPrototype: AppearanceVulpkanin
+  skinColoration: VulpkaninColors
+  maleFirstNames: names_vulpkanin_male
+  femaleFirstNames: names_vulpkanin_female
+  lastNames: names_vulpkanin_last
 
 - type: speciesBaseSprites
   id: MobVulpkaninSprites
