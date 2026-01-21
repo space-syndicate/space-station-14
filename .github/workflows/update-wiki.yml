@@ -6,10 +6,10 @@ on:
     branches: [ master, jsondump ]
     paths:
       - '.github/workflows/update-wiki.yml'
-      - 'Content.Shared/'
-      - 'Content.Server/'
-      - 'Content.Clietn/'
-      - 'Resources/'
+      - 'Content.Shared/**'
+      - 'Content.Server/**'
+      - 'Content.Client/**'
+      - 'Resources/**'
       - 'RobustToolbox/'
 
 jobs:
