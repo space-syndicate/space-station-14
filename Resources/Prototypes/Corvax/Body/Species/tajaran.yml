@@ -1,0 +1,291 @@
+- type: entity
+  parent: BaseSpeciesAppearance
+  id: AppearanceTajaran
+  name: Tajaran appearance
+  components:
+  - type: EntityTableContainerFill
+    containers:
+      body_organs: !type:AllSelector
+        children:
+        - id: OrganTajaranTorso
+        - id: OrganTajaranHead
+        - id: OrganTajaranArmLeft
+        - id: OrganTajaranArmRight
+        - id: OrganTajaranHandRight
+        - id: OrganTajaranHandLeft
+        - id: OrganTajaranLegLeft
+        - id: OrganTajaranLegRight
+        - id: OrganTajaranFootLeft
+        - id: OrganTajaranFootRight
+        - id: OrganTajaranBrain
+        - id: OrganTajaranEyes
+        - id: OrganTajaranTongue
+        - id: OrganTajaranAppendix
+        - id: OrganTajaranEars
+        - id: OrganTajaranLungs
+        - id: OrganTajaranHeart
+        - id: OrganTajaranStomach
+        - id: OrganTajaranLiver
+        - id: OrganTajaranKidneys
+  - type: HumanoidAppearance
+    species: Tajaran
+  - type: Inventory
+    speciesId: corvaxtajaran
+    femaleDisplacements:
+      jumpsuit:
+        sizeMaps:
+          32:
+            sprite: Corvax/Mobs/Species/displacement.rsi
+            state: jumpsuit-female
+      shoes:
+        sizeMaps:
+          32:
+            sprite: Corvax/Mobs/Species/displacement.rsi
+            state: shoes
+    displacements:
+      jumpsuit:
+        sizeMaps:
+          32:
+            sprite: Corvax/Mobs/Species/displacement.rsi
+            state: jumpsuit
+      shoes:
+        sizeMaps:
+          32:
+            sprite: Corvax/Mobs/Species/displacement.rsi
+            state: shoes
+      outerClothing:
+        sizeMaps:
+          32:
+            sprite: Corvax/Mobs/Species/displacement.rsi
+            state: outerclothing
+
+- type: entity
+  save: false
+  name: Urist McTajar
+  parent:
+  - AppearanceTajaran
+  - BaseSpeciesMobOrganic
+  id: BaseMobTajaran
+  components:
+  - type: Hunger
+    baseDecayRate: 0.02
+  - type: Thirst
+    baseDecayRate: 0.15
+  - type: Body
+    prototype: Tajaran
+    requiredLegs: 2
+  - type: ContentEye
+  - type: Speech
+    allowedEmotes: ['Purr']
+  - type: Vocal
+    sounds:
+      Male: MaleTajaran
+      Female: FemaleTajaran
+      Unsexed: MaleTajaran
+  - type: GrowlingAccent
+  - type: MeleeWeapon
+    animation: WeaponArcClaw
+    soundHit:
+      collection: AlienClaw
+    damage:
+      types:
+        Slash: 7
+  - type: Damageable
+    damageContainer: Biological
+    damageModifierSet: Tajaran
+  - type: Respirator
+    damage:
+      types:
+        Asphyxiation: 2.0
+    damageRecovery:
+      types:
+        Asphyxiation: -2.0
+  - type: Wagging
+
+- type: entity
+  parent: OrganBase
+  id: OrganTajaran
+  abstract: true
+  suffix: tajaran
+  components:
+    - type: Extractable
+      juiceSolution:
+        reagents:
+          - ReagentId: Fat
+            Quantity: 3
+          - ReagentId: Blood
+            Quantity: 10
+
+- type: entity
+  id: OrganTajaranMetabolizer
+  abstract: true
+  components:
+  - type: Metabolizer
+    metabolizerTypes: [ Animal ]
+
+- type: entity
+  parent: OrganTajaran
+  id: OrganTajaranInternal
+  abstract: true
+  components:
+  - type: Sprite
+    sprite: Mobs/Species/Human/organs.rsi
+
+- type: entity
+  parent: OrganTajaran
+  id: OrganTajaranExternal
+  abstract: true
+  components:
+  - type: Sprite
+    sprite: Corvax/Mobs/Species/Tajaran/parts.rsi
+
+- type: entity
+  parent: [ OrganBaseTorso, OrganTajaranExternal ]
+  id: OrganTajaranTorso
+  components:
+    - type: Sprite
+      sprite: Corvax/Mobs/Species/Tajaran/parts.rsi
+      state: "torso_m"
+    - type: Extractable
+      juiceSolution:
+        reagents:
+          - ReagentId: Fat
+            Quantity: 10
+          - ReagentId: Blood
+            Quantity: 20
+
+- type: entity
+  parent: [ OrganBaseHead, OrganTajaranExternal ]
+  id: OrganTajaranHead
+  components:
+    - type: Sprite
+      sprite: Corvax/Mobs/Species/Tajaran/parts.rsi
+      state: "head_m"
+    - type: Extractable
+      juiceSolution:
+        reagents:
+          - ReagentId: Fat
+            Quantity: 5
+          - ReagentId: Blood
+            Quantity: 10
+
+- type: entity
+  parent: [ OrganBaseArmLeft, OrganTajaranExternal ]
+  id: OrganTajaranArmLeft
+  components:
+    - type: Sprite
+      sprite: Corvax/Mobs/Species/Tajaran/parts.rsi
+      state: "l_arm"
+
+- type: entity
+  parent: [ OrganBaseArmRight, OrganTajaranExternal ]
+  id: OrganTajaranArmRight
+  components:
+    - type: Sprite
+      sprite: Corvax/Mobs/Species/Tajaran/parts.rsi
+      state: "r_arm"
+
+- type: entity
+  parent: [ OrganBaseHandLeft, OrganTajaranExternal ]
+  id: OrganTajaranHandLeft
+  components:
+    - type: Sprite
+      sprite: Corvax/Mobs/Species/Tajaran/parts.rsi
+      state: "l_hand"
+
+- type: entity
+  parent: [ OrganBaseHandRight, OrganTajaranExternal ]
+  id: OrganTajaranHandRight
+  components:
+    - type: Sprite
+      sprite: Corvax/Mobs/Species/Tajaran/parts.rsi
+      state: "r_hand"
+
+- type: entity
+  parent: [ OrganBaseLegLeft, OrganTajaranExternal ]
+  id: OrganTajaranLegLeft
+  components:
+    - type: Sprite
+      sprite: Corvax/Mobs/Species/Tajaran/parts.rsi
+      state: "l_leg"
+    - type: MovementBodyPart
+      walkSpeed : 2.7
+      sprintSpeed : 4.5
+
+- type: entity
+  parent: [ OrganBaseLegRight, OrganTajaranExternal ]
+  id: OrganTajaranLegRight
+  components:
+    - type: Sprite
+      sprite: Corvax/Mobs/Species/Tajaran/parts.rsi
+      state: "r_leg"
+    - type: MovementBodyPart
+      walkSpeed : 2.7
+      sprintSpeed : 4.5
+
+- type: entity
+  parent: [ OrganBaseFootLeft, OrganTajaranExternal ]
+  id: OrganTajaranFootLeft
+  components:
+    - type: Sprite
+      sprite: Corvax/Mobs/Species/Tajaran/parts.rsi
+      state: "l_foot"
+
+- type: entity
+  parent: [ OrganBaseFootRight, OrganTajaranExternal ]
+  id: OrganTajaranFootRight
+  components:
+    - type: Sprite
+      sprite: Corvax/Mobs/Species/Tajaran/parts.rsi
+      state: "r_foot"
+
+- type: entity
+  parent: [ OrganBaseBrain, OrganSpriteHumanInternal, OrganTajaranInternal ]
+  id: OrganTajaranBrain
+
+- type: entity
+  parent: [ OrganBaseEyes, OrganTajaranInternal ]
+  id: OrganTajaranEyes
+
+- type: entity
+  parent: [ OrganBaseTongue, OrganTajaranInternal ]
+  id: OrganTajaranTongue
+
+- type: entity
+  parent: [ OrganBaseAppendix, OrganSpriteHumanInternal, OrganTajaranInternal ]
+  id: OrganTajaranAppendix
+
+- type: entity
+  parent: [ OrganBaseEars, OrganSpriteHumanInternal, OrganTajaranInternal ]
+  id: OrganTajaranEars
+
+- type: entity
+  parent: [ OrganBaseLungs, OrganTajaranInternal, OrganTajaranMetabolizer ]
+  id: OrganTajaranLungs
+
+- type: entity
+  parent: [ OrganBaseHeart, OrganTajaranInternal, OrganTajaranMetabolizer ]
+  id: OrganTajaranHeart
+
+- type: entity
+  parent: [ OrganBaseStomach, OrganTajaranInternal, OrganTajaranMetabolizer ]
+  id: OrganTajaranStomach
+  components:
+  - type: Stomach
+  - type: SolutionContainerManager
+    solutions:
+      stomach:
+        maxVol: 50.0
+      food:
+        maxVol: 5
+        reagents:
+        - ReagentId: UncookedAnimalProteins
+          Quantity: 5
+
+- type: entity
+  parent: [ OrganBaseLiver, OrganSpriteHumanInternal, OrganTajaranInternal, OrganTajaranMetabolizer ]
+  id: OrganTajaranLiver
+
+- type: entity
+  parent: [ OrganBaseKidneys, OrganSpriteHumanInternal, OrganTajaranInternal, OrganTajaranMetabolizer ]
+  id: OrganTajaranKidneys

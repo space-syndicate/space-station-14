@@ -1,6 +1,6 @@
 - type: entity
   name: syndicate smuggler
-  parent: BaseMobHuman
+  parent: MobHuman
   id: MobSyndicateSmuggler
   components:
     - type: NpcFactionMember
