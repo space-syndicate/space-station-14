@@ -3,14 +3,16 @@
   name: species-name-vulpkanin
   roundStart: True
   prototype: MobVulpkanin
-  sprites: MobCorvaxVulpkaninSprites #MobVulpkaninSprites # Corvax-CorvaxVulp_Port
-  defaultSkinTone:  "#eb943d" # "#5a3f2d" Corvax-CorvaxVulp_Port ибо нефиг
+  sprites: MobCorvaxVulpkaninSprites #Corvax-Vulp_Port MobVulpkaninSprites
+  defaultSkinTone:  "#eb943d" #Corvax-Vulp_Port "#5a3f2d"
   markingLimits: MobVulpkaninMarkingLimits
   dollPrototype: AppearanceVulpkanin
-  skinColoration: VulpkaninColors
-  maleFirstNames: names_vulpkanin_male
-  femaleFirstNames: names_vulpkanin_female
-  lastNames: names_vulpkanin_last
+  skinColoration: Hues #Corvax-Vulp_Port VulpkaninColors
+  maleFirstNames: NamesVulpFirstMale #Corvax-Vulp_Port names_vulpkanin_male
+  femaleFirstNames: NamesVulpFirstFemale #Corvax-Vulp_Port names_vulpkanin_female
+  maleLastNames: NamesVulpLast # Corvax-LastnameGender
+  femaleLastNames: NamesVulpLast # Corvax-LastnameGender
+  #lastNames: names_vulpkanin_last
 
 - type: speciesBaseSprites
   id: MobVulpkaninSprites
@@ -49,21 +51,21 @@
     Snout:
       points: 1
       required: true
-      defaultMarkings: [ FoxSnout ] # VulpSnout Corvax-CorvaxVulp_Port
+      defaultMarkings: [ FoxSnout ] #Corvax-Vulp_Port VulpSnout
     SnoutCover:
       points: 3
       required: false
     Tail:
       points: 1
       required: true
-      defaultMarkings: [ FoxTail ] # VulpTailVulp Corvax-CorvaxVulp_Port
+      defaultMarkings: [ FoxTail ] #Corvax-Vulp_Port VulpTailVulp
     Head:
       points: 3
       required: false
     HeadTop:
       points: 1
       required: true
-      defaultMarkings: [ FoxEar ] # VulpEar Corvax-CorvaxVulp_Port
+      defaultMarkings: [ FoxEar ] #Corvax-Vulp_Port VulpEar
     UndergarmentTop:
       points: 1
       required: false

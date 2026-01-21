@@ -6,12 +6,12 @@
     requirement:
       !type:RoleTimeRequirement
       role: JobChemist
-      time: 6h
+      time: 20h # Corvax-RoleTime
   - !type:JobRequirementLoadoutEffect
     requirement:
       !type:RoleTimeRequirement
       role: JobMedicalDoctor
-      time: 6h
+      time: 20h # Corvax-RoleTime
   - !type:JobRequirementLoadoutEffect
     requirement:
       !type:DepartmentTimeRequirement

@@ -3,6 +3,7 @@
   id: AppearanceDiona
   name: diona appearance
   components:
+  - type: Pacified # Corvax-DionaPacifist
   - type: Inventory
     templateId: diona
     femaleDisplacements:

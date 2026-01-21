@@ -9,7 +9,7 @@
       jumpsuit:
         sizeMaps:
           32:
-            sprite: Mobs/Species/Human/displacement.rsi
+            sprite: Corvax/Mobs/Species/displacement.rsi # Corvax-Digitigrade Mobs/Species/Human/displacement.rsi
             state: jumpsuit-female
       head:
         sizeMaps:
@@ -21,6 +21,13 @@
           32:
             sprite: Mobs/Species/Reptilian/displacement.rsi
             state: mask
+      # Corvax-Digitigrade-Start
+      shoes:
+        sizeMaps:
+          32:
+            sprite: Corvax/Mobs/Species/displacement.rsi
+            state: shoes
+      # Corvax-Displacements-End
     displacements:
       head:
         sizeMaps:
@@ -32,6 +39,18 @@
           32:
             sprite: Mobs/Species/Reptilian/displacement.rsi
             state: mask
+    # Corvax-Digitigrade-Start
+      jumpsuit:
+        sizeMaps:
+          32:
+            sprite: Corvax/Mobs/Species/displacement.rsi
+            state: jumpsuit
+      shoes:
+        sizeMaps:
+          32:
+            sprite: Corvax/Mobs/Species/displacement.rsi
+            state: shoes
+    # Corvax-Displacements-End
   - type: EntityTableContainerFill
     containers:
       body_organs: !type:AllSelector
