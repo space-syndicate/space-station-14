@@ -277,12 +277,23 @@
     sprite: Corvax/Mobs/Species/Vulpkanin/parts.rsi #Mobs/Species/Vulpkanin/parts.rsi #Corvax-Vulp_Port
 
 - type: entity
-  parent: [ OrganBaseTorso, OrganVulpkaninExternal ]
+  parent: [ OrganBaseTorsoSexed, OrganBaseTorso, OrganVulpkaninExternal ]
   id: OrganVulpkaninTorso
 
 - type: entity
   parent: [ OrganBaseHead, OrganVulpkaninExternal ]
   id: OrganVulpkaninHead
+  components:
+  - type: VisualOrganMarkings
+    hideableLayers:
+    - enum.HumanoidVisualLayers.Snout
+    - enum.HumanoidVisualLayers.HeadTop
+    - enum.HumanoidVisualLayers.HeadSide
+    - enum.HumanoidVisualLayers.Hair
+    - enum.HumanoidVisualLayers.FacialHair
+    dependentHidingLayers:
+      enum.HumanoidVisualLayers.Snout:
+      - enum.HumanoidVisualLayers.SnoutCover
 
 - type: entity
   parent: [ OrganBaseArmLeft, OrganVulpkaninExternal ]

@@ -233,12 +233,16 @@
     sprite: Mobs/Species/Moth/parts.rsi
 
 - type: entity
-  parent: [ OrganBaseTorso, OrganMothExternal ]
+  parent: [ OrganBaseTorsoSexed, OrganBaseTorso, OrganMothExternal ]
   id: OrganMothTorso
 
 - type: entity
   parent: [ OrganBaseHead, OrganMothExternal ]
   id: OrganMothHead
+  components:
+  - type: VisualOrganMarkings
+    hideableLayers:
+    - enum.HumanoidVisualLayers.HeadTop
 
 - type: entity
   parent: [ OrganBaseArmLeft, OrganMothExternal ]

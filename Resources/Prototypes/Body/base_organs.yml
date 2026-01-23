@@ -31,11 +31,11 @@
   - type: Organ
     category: Torso
   - type: Sprite
-    state: torso_m
+    state: torso
   - type: VisualOrgan
     layer: enum.HumanoidVisualLayers.Chest
     data:
-      state: torso_m
+      state: torso
   - type: VisualOrganMarkings
     markingData:
       layers:
@@ -44,6 +44,7 @@
       - Overlay
       - UndergarmentTop
       - UndergarmentBottom
+      - Special
 
 - type: entity
   parent: OrganBase
@@ -54,12 +55,14 @@
   - type: Organ
     category: Head
   - type: Sprite
-    state: head_m
+    state: head
   - type: VisualOrgan
     layer: enum.HumanoidVisualLayers.Head
     data:
-      state: head_m
+      state: head
   - type: VisualOrganMarkings
+    hideableLayers:
+    - enum.HumanoidVisualLayers.Hair
     markingData:
       layers:
       - Head
@@ -329,12 +332,7 @@
     category: Lungs
   - type: Lung
   - type: Metabolizer
-    removeEmpty: true
-    solutionOnBody: false
-    solution: "Lung"
-    groups:
-    - id: Gas
-      rateModifier: 100.0
+    stages: [ Respiration ]
   - type: SolutionContainerManager
     solutions:
       Lung:
@@ -361,10 +359,7 @@
     - state: heart-on
   - type: Metabolizer
     maxReagents: 2
-    groups:
-    - id: Medicine
-    - id: Poison
-    - id: Narcotic
+    stages: [ Bloodstream ]
 
 - type: entity
   parent: OrganBase
@@ -382,9 +377,7 @@
         maxVol: 50
   - type: Metabolizer
     maxReagents: 3
-    groups:
-    - id: Food
-    - id: Drink
+    stages: [ Digestion ]
   - type: Sprite
     layers:
     - state: stomach
@@ -407,8 +400,7 @@
     heldPrefix: liver
   - type: Metabolizer
     maxReagents: 1
-    groups:
-    - id: Alcohol
+    stages: [ Metabolites ]
 
 - type: entity
   parent: OrganBase
@@ -427,7 +419,6 @@
     heldPrefix: kidneys
   - type: Metabolizer
     maxReagents: 5
-    removeEmpty: true
 
 - type: entity
   id: OrganSpriteHumanInternal
@@ -435,3 +426,29 @@
   components:
   - type: Sprite
     sprite: Mobs/Species/Human/organs.rsi
+
+- type: entity
+  id: OrganBaseHeadSexed
+  abstract: true
+  components:
+  - type: Sprite
+    state: head_m
+  - type: VisualOrgan
+    data:
+      state: head_m
+    sexStateOverrides:
+      Male: head_m
+      Female: head_f
+
+- type: entity
+  id: OrganBaseTorsoSexed
+  abstract: true
+  components:
+  - type: Sprite
+    state: torso_m
+  - type: VisualOrgan
+    data:
+      state: torso_m
+    sexStateOverrides:
+      Male: torso_m
+      Female: torso_f
