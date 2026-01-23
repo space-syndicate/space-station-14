@@ -241,7 +241,7 @@ namespace Content.Server.Database
             // Corvax-TTS-Start
             var voice = profile.Voice;
             if (voice == String.Empty)
-                voice = SharedHumanoidAppearanceSystem.DefaultSexVoice[sex];
+                voice = HumanoidProfileSystem.DefaultSexVoice[sex];
             // Corvax-TTS-End
 
             var markings =
