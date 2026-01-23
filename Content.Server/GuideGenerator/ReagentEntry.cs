@@ -46,7 +46,6 @@ public sealed class ReagentEntry
         Description = proto.LocalizedDescription;
         PhysicalDescription = proto.LocalizedPhysicalDescription;
         SubstanceColor = proto.SubstanceColor.ToHex();
-        Metabolisms = proto.Metabolisms?.Metabolisms.ToDictionary(x => x.Key.Id, x => x.Value);
 
         // Corvax-Wiki-Start
         var r = proto.SubstanceColor.R;
@@ -56,7 +55,7 @@ public sealed class ReagentEntry
             ? Color.Black
             : Color.White).ToHex();
 
-        Metabolisms = proto.Metabolisms?.ToDictionary(x => x.Key.Id, x => new Corvax.GuideGenerator.ReagentEffectsEntry(x.Value));
+        Metabolisms = proto.Metabolisms?.Metabolisms.ToDictionary(x => x.Key.Id, x => new Corvax.GuideGenerator.ReagentEffectsEntry(x.Value));
         // Corvax-Wiki-End
     }
 }
