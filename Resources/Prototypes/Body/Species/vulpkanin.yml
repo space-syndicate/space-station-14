@@ -15,18 +15,18 @@
     enum.HumanoidVisualLayers.HeadTop:
       limit: 1
       required: true
-      default: [ VulpEar ]
+      default: [ FoxEar ] # Corvax-Vulp_Port VulpEar
     enum.HumanoidVisualLayers.Snout:
       limit: 1
       required: true
-      default: [ VulpSnout ]
+      default: [ FoxSnout ] # Corvax-Vulp_Port VulpSnout
     enum.HumanoidVisualLayers.SnoutCover:
       limit: 3
       required: false
     enum.HumanoidVisualLayers.Tail:
       limit: 1
       required: true
-      default: [ VulpTailVulp ]
+      default: [ FoxTail ] # Corvax-Vulp_Port VulpTailVulp
     enum.HumanoidVisualLayers.LArm:
       limit: 2
       required: false
@@ -263,7 +263,7 @@
   components:
   - type: VisualOrgan
     data:
-      sprite: Mobs/Species/Vulpkanin/parts.rsi
+      sprite: Corvax/Mobs/Species/Vulpkanin/parts.rsi # Mobs/Species/Vulpkanin/parts.rsi #Corvax-Vulp_Port
   - type: VisualOrganMarkings
     markingData:
       group: Vulpkanin
@@ -281,7 +281,7 @@
   id: OrganVulpkaninTorso
 
 - type: entity
-  parent: [ OrganBaseHead, OrganVulpkaninExternal ]
+  parent: [ OrganBaseHeadSexed, OrganBaseHead, OrganVulpkaninExternal ]
   id: OrganVulpkaninHead
   components:
   - type: VisualOrganMarkings
