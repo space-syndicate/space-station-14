@@ -124,7 +124,7 @@
   parent:
   - AppearanceTajaran
   - BaseSpeciesMobOrganic
-  id: BaseMobTajaran
+  id: MobTajaran
   components:
   - type: Hunger
     baseDecayRate: 0.02
@@ -283,6 +283,16 @@
 - type: entity
   parent: [ OrganBaseStomach, OrganTajaranInternal, OrganTajaranMetabolizer ]
   id: OrganTajaranStomach
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      stomach:
+        maxVol: 50.0
+      food:
+        maxVol: 5
+        reagents:
+        - ReagentId: UncookedAnimalProteins
+          Quantity: 5
 
 - type: entity
   parent: [ OrganBaseLiver, OrganSpriteHumanInternal, OrganTajaranInternal, OrganTajaranMetabolizer ]
