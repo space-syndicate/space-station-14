@@ -258,18 +258,42 @@
 - type: entity
   parent: [ OrganBaseLegLeft, OrganReptilianExternal ]
   id: OrganReptilianLegLeft
+  components:
+  - type: Sprite
+    sprite: Corvax\Mobs\Species\Reptilian\parts.rsi # Corvax-Digitigrade
+  - type: VisualOrgan
+    data:
+      sprite: Corvax\Mobs\Species\Reptilian\parts.rsi # Corvax-Digitigrade
 
 - type: entity
   parent: [ OrganBaseLegRight, OrganReptilianExternal ]
   id: OrganReptilianLegRight
+  components:
+  - type: Sprite
+    sprite: Corvax\Mobs\Species\Reptilian\parts.rsi # Corvax-Digitigrade
+  - type: VisualOrgan
+    data:
+      sprite: Corvax\Mobs\Species\Reptilian\parts.rsi # Corvax-Digitigrade
 
 - type: entity
   parent: [ OrganBaseFootLeft, OrganReptilianExternal ]
   id: OrganReptilianFootLeft
+  components:
+  - type: Sprite
+    sprite: Corvax\Mobs\Species\Reptilian\parts.rsi # Corvax-Digitigrade
+  - type: VisualOrgan
+    data:
+      sprite: Corvax\Mobs\Species\Reptilian\parts.rsi # Corvax-Digitigrade
 
 - type: entity
   parent: [ OrganBaseFootRight, OrganReptilianExternal ]
   id: OrganReptilianFootRight
+  components:
+  - type: Sprite
+    sprite: Corvax\Mobs\Species\Reptilian\parts.rsi # Corvax-Digitigrade
+  - type: VisualOrgan
+    data:
+      sprite: Corvax\Mobs\Species\Reptilian\parts.rsi # Corvax-Digitigrade
 
 - type: entity
   parent: [ OrganBaseBrain, OrganSpriteHumanInternal, OrganReptilianInternal ]
