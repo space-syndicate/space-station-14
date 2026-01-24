@@ -94,7 +94,6 @@
     targetZoom: "1.0, 1.0"
     maxZoom: "1.0, 1.0"
   - type: GrowlingAccent
-  - type: Wagging
   - type: Respirator
     damage:
       types:
@@ -188,6 +187,7 @@
   id: MobVulpkanin
   name: Urist McArfArf
   components:
+  - type: Wagging #Corvax-Vulp_Port
   - type: MessyDrinker
     spillChance: 0.33
   - type: Speech
