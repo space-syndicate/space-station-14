@@ -1,325 +1,163 @@
-- type: entity
-  parent: BaseSpeciesAppearance
-  id: AppearanceIPC
-  name: IPC appearance
-  components:
-  - type: EntityTableContainerFill
-    containers:
-      body_organs: !type:AllSelector
-        children:
-        - id: OrganIPCTorso
-        - id: OrganIPCHead
-        - id: OrganIPCArmLeft
-        - id: OrganIPCArmRight
-        - id: OrganIPCHandRight
-        - id: OrganIPCHandLeft
-        - id: OrganIPCLegLeft
-        - id: OrganIPCLegRight
-        - id: OrganIPCFootLeft
-        - id: OrganIPCFootRight
-        - id: OrganIPCBrain
-        - id: OrganIPCEyes
-        - id: OrganIPCTongue
-        - id: OrganIPCAppendix
-        - id: OrganIPCEars
-        - id: OrganIPCLungs
-        - id: OrganIPCHeart
-        - id: OrganIPCStomach
-        - id: OrganIPCLiver
-        - id: OrganIPCKidneys
-  - type: HumanoidAppearance
-    species: Ipc
-  - type: Inventory
-    templateId: Ipc
-    alternateState: Standing
+- type: markingsGroup
+  parent: Undergarments
+  id: Ipc
+  limits:
+    enum.HumanoidVisualLayers.Hair:
+      limit: 1
+      required: false
+    enum.HumanoidVisualLayers.FacialHair:
+      limit: 1
+      required: false
+    enum.HumanoidVisualLayers.Chest:
+      limit: 2
+      required: false
+    enum.HumanoidVisualLayers.Snout:
+      limit: 1
+      required: true
+      default: [ IpcOrangeS ]
+    enum.HumanoidVisualLayers.LArm:
+      limit: 1
+      required: false
+    enum.HumanoidVisualLayers.RArm:
+      limit: 1
+      required: false
+    enum.HumanoidVisualLayers.LHand:
+      limit: 1
+      required: false
+    enum.HumanoidVisualLayers.RHand:
+      limit: 1
+      required: false
+    enum.HumanoidVisualLayers.LLeg:
+      limit: 1
+      required: false
+    enum.HumanoidVisualLayers.RLeg:
+      limit: 1
+      required: false
+    enum.HumanoidVisualLayers.LFoot:
+      limit: 1
+      required: false
+    enum.HumanoidVisualLayers.RFoot:
+      limit: 1
+      required: false
+    enum.HumanoidVisualLayers.Tail:
+      limit: 0
+      required: false
+    enum.HumanoidVisualLayers.Special:
+      limit: 0
+      required: false
 
 - type: entity
-  save: false
-  name: Urist McIPC
-  parent:
-  - AppearanceIPC
-  - BaseSpeciesMobOrganic #BaseMobSpeciesNotOrganic
-  id: BaseMobIpc
-  abstract: true
+  parent: BaseSpeciesAppearance
+  id: AppearanceIpc
+  name: Ipc appearance
   components:
-  - type: Crawler
-  - type: Body
-    prototype: Ipc
-    requiredLegs: 2
-  - type: ContentEye
-  - type: Speech
-  - type: BodyEmotes
-    soundsId: IpcEmotes
-  - type: Vocal
-    sounds:
-      Male: MaleIpc
-      Female: FemaleIpc
-      Unsexed: MaleIpc
-  - type: MeleeWeapon
-    soundHit:
-      collection: AlienClaw
-    damage:
-      types:
-        Slash: 5
-  - type: Damageable
-    damageContainer: SiliconIpc
-    damageModifierSet: Ipc
-  - type: ItemTogglePointLight
-  - type: ToggleableVisuals
-    spriteLayer: light
-  - type: PointLight
-    enabled: false
-    mask: /Textures/Effects/LightMasks/cone.png
-    autoRot: true
-    radius: 4
-    netsync: false
-  - type: HandheldLight
-    toggleOnInteract: false
-    wattage: 0.2
-    blinkingBehaviourId: blinking
-    radiatingBehaviourId: radiating
-  - type: LightBehaviour
-    behaviours:
-    - !type:FadeBehaviour
-      id: radiating
-      maxDuration: 2.0
-      startValue: 3.0
-      endValue: 2.0
-      isLooped: true
-      reverseWhenFinished: true
-    - !type:PulseBehaviour
-      id: blinking
-      interpolate: Nearest
-      maxDuration: 1.0
-      startValue: 0.1
-      endValue: 2.0
-      isLooped: true
-  - type: TypingIndicator
-    proto: robot
-  - type: PowerCellSlot
-    cellSlotId: cell_slot
-    fitsInCharger: true
-  - type: PowerCellDraw
-    drawRate: 0.8
-  # no ToggleCellDraw since dont want to lose access when power is gone
-  - type: AccessReader
-    access: [ ["Ipc"] ]
-  - type: Access
-    enabled: true
-    tags:
-      - Ipc
-  - type: ItemSlots
-    slots:
-      cell_slot:
-        name: power-cell-slot-component-slot-name-default
-        startingItem: PowerCellMedium
-  - type: Lock
-    unlockOnClick: false
-  - type: ItemSlotsLock
-    slots:
-    - cell_slot
-  - type: ContainerContainer
-    containers:
-      cell_slot: !type:ContainerSlot { }
-  - type: Ipc
-  - type: ZombieImmune
-  - type: Repairable
-    fuelCost: 30
-    doAfterDelay: 20
-    selfRepairPenalty: 2
-  - type: DamagedSiliconAccent
-  - type: Reflect
-    reflectProb: 0.05
-  - type: SleepEmitSound
-    snore: /Audio/Machines/buzz-two.ogg
-    interval: 30
-    popUp: sleep-ipc
-  - type: Butcherable
-    butcheringType: Spike
-    spawned:
-      - id: HeadIpc
-        amount: 1
-  - type: MobThresholds
-    thresholds:
-      0: Alive
-      100: Critical
-      200: Dead
-    stateAlertDict:
-      Alive: BorgHealth
-      Critical: BorgCrit
-      Dead: BorgDead
-  - type: Barotrauma
-    damage:
-      types:
-        Blunt: 0 #per second, scales with pressure and other constants.
-        Heat: 0
-  - type: DamageVisuals
-    damageOverlayGroups:
-      Brute:
-        sprite: Mobs/Effects/brute_damage.rsi
-        color: "#cd7314"
-      Burn:
-        sprite: Mobs/Effects/burn_damage.rsi
-  - type: ProtectedFromStepTriggers
-  - type: EyeProtection
+  - type: Inventory
+    femaleDisplacements:
+      jumpsuit:
+        sizeMaps:
+          32:
+            sprite: Mobs/Species/Human/displacement.rsi
+            state: jumpsuit-female
+  - type: InitialBody
+    organs:
+      Torso: OrganIpcTorso
+      Head: OrganIpcHead
+      ArmLeft: OrganIpcArmLeft
+      ArmRight: OrganIpcArmRight
+      HandRight: OrganIpcHandRight
+      HandLeft: OrganIpcHandLeft
+      LegLeft: OrganIpcLegLeft
+      LegRight: OrganIpcLegRight
+      FootLeft: OrganIpcFootLeft
+      FootRight: OrganIpcFootRight
+      Brain: OrganIpcBrain
+      #Stomach: OrganIpcStomach
+  - type: HumanoidProfile
+    species: Ipc
+
+- type: entity
+  parent:
+  - AppearanceIpc
+  - BaseSpeciesMobOrganic
+  id: MobIpc
+  name: Urist McHands
+  components:
+    - type: Damageable
+      damageContainer: BiologicalMetaphysical
+      damageModifierSet: ### отсюда дальше чинить
+
 
 - type: entity
   parent: OrganBase
-  id: OrganIPC
+  id: OrganIpc
   abstract: true
-  suffix: IPC
+  suffix: Ipc
 
 - type: entity
-  id: OrganIPCMetabolizer
-  abstract: true
-  components:
-  - type: Metabolizer
-    metabolizerTypes: [ Human ]
-
-- type: entity
-  parent: OrganIPC
-  id: OrganIPCInternal
-  abstract: true
-  components:
-  - type: Sprite
-    sprite: Mobs/Species/Human/organs.rsi
-
-- type: entity
-  parent: OrganIPC
-  id: OrganIPCExternal
+  parent: OrganIpc
+  id: OrganIpcExternal
   abstract: true
   components:
   - type: Sprite
     sprite: Corvax/Mobs/Species/IPC/parts.rsi
+  - type: VisualOrgan
+    data:
+      sprite: Corvax/Mobs/Species/IPC/parts.rsi
+  - type: VisualOrganMarkings
+    markingData:
+      group: Ipc
 
 - type: entity
-  parent: [ OrganBaseTorso, OrganIPCExternal ]
-  id: OrganIPCTorso
+  parent: [ OrganBaseTorso, OrganIpcExternal ]
+  id: OrganIpcTorso
+
+- type: entity
+  parent: [ OrganBaseHead, OrganIpcExternal ]
+  id: OrganIpcHead
   components:
-    - type: Sprite
-      sprite: Corvax/Mobs/Species/Ipc/parts.rsi
-      state: "torso_m"
+  - type: VisualOrganMarkings
+    hideableLayers:
+    - enum.HumanoidVisualLayers.Hair
+    - enum.HumanoidVisualLayers.Snout
 
 - type: entity
-  parent: [ OrganBaseHead, OrganIPCExternal ]
-  id: OrganIPCHead
-  components:
-    - type: Sprite
-      sprite: Corvax/Mobs/Species/Ipc/parts.rsi
-      state: "head_m"
+  parent: [ OrganBaseArmLeft, OrganIpcExternal ]
+  id: OrganIpcArmLeft
 
 - type: entity
-  parent: [ OrganBaseArmLeft, OrganIPCExternal ]
-  id: OrganIPCArmLeft
-  components:
-    - type: Sprite
-      sprite: Corvax/Mobs/Species/Ipc/parts.rsi
-      state: "l_arm"
+  parent: [ OrganBaseArmRight, OrganIpcExternal ]
+  id: OrganIpcArmRight
 
 - type: entity
-  parent: [ OrganBaseArmRight, OrganIPCExternal ]
-  id: OrganIPCArmRight
-  components:
-    - type: Sprite
-      sprite: Corvax/Mobs/Species/Ipc/parts.rsi
-      state: "r_arm"
+  parent: [ OrganBaseHandLeft, OrganIpcExternal ]
+  id: OrganIpcHandLeft
 
 - type: entity
-  parent: [ OrganBaseHandLeft, OrganIPCExternal ]
-  id: OrganIPCHandLeft
-  components:
-    - type: Sprite
-      sprite: Corvax/Mobs/Species/Ipc/parts.rsi
-      state: "l_hand"
+  parent: [ OrganBaseHandRight, OrganIpcExternal ]
+  id: OrganIpcHandRight
 
 - type: entity
-  parent: [ OrganBaseHandRight, OrganIPCExternal ]
-  id: OrganIPCHandRight
-  components:
-    - type: Sprite
-      sprite: Corvax/Mobs/Species/Ipc/parts.rsi
-      state: "r_hand"
+  parent: [ OrganBaseLegLeft, OrganIpcExternal ]
+  id: OrganIpcLegLeft
 
 - type: entity
-  parent: [ OrganBaseLegLeft, OrganIPCExternal ]
-  id: OrganIPCLegLeft
-  components:
-    - type: Sprite
-      sprite: Corvax/Mobs/Species/Ipc/parts.rsi
-      state: "l_leg"
-    - type: MovementBodyPart
-      walkSpeed : 2.7
-      sprintSpeed : 4.5
+  parent: [ OrganBaseLegRight, OrganIpcExternal ]
+  id: OrganIpcLegRight
 
 - type: entity
-  parent: [ OrganBaseLegRight, OrganIPCExternal ]
-  id: OrganIPCLegRight
-  components:
-    - type: Sprite
-      sprite: Corvax/Mobs/Species/Ipc/parts.rsi
-      state: "r_leg"
-    - type: MovementBodyPart
-      walkSpeed : 2.7
-      sprintSpeed : 4.5
+  parent: [ OrganBaseFootLeft, OrganIpcExternal ]
+  id: OrganIpcFootLeft
 
 - type: entity
-  parent: [ OrganBaseFootLeft, OrganIPCExternal ]
-  id: OrganIPCFootLeft
-  components:
-    - type: Sprite
-      sprite: Corvax/Mobs/Species/Ipc/parts.rsi
-      state: "l_foot"
+  parent: [ OrganBaseFootRight, OrganIpcExternal ]
+  id: OrganIpcFootRight
 
 - type: entity
-  parent: [ OrganBaseFootRight, OrganIPCExternal ]
-  id: OrganIPCFootRight
-  components:
-    - type: Sprite
-      sprite: Corvax/Mobs/Species/Ipc/parts.rsi
-      state: "r_foot"
-
-- type: entity
-  parent: [ OrganBaseBrain, OrganSpriteHumanInternal, OrganIPCInternal ]
-  id: OrganIPCBrain
+  parent: [ OrganBaseBrain, OrganIpc ]
+  id: OrganIpcBrain
   components:
   - type: Sprite
     sprite: Objects/Specific/Robotics/mmi.rsi
     layers:
     - state: posibrain
       map: ["base"]
-
-- type: entity
-  parent: [ OrganBaseEyes, OrganIPCInternal ]
-  id: OrganIPCEyes
-
-- type: entity
-  parent: [ OrganBaseTongue, OrganIPCInternal ]
-  id: OrganIPCTongue
-
-- type: entity
-  parent: [ OrganBaseAppendix, OrganSpriteHumanInternal, OrganIPCInternal ]
-  id: OrganIPCAppendix
-
-- type: entity
-  parent: [ OrganBaseEars, OrganSpriteHumanInternal, OrganIPCInternal ]
-  id: OrganIPCEars
-
-- type: entity
-  parent: [ OrganBaseLungs, OrganIPCInternal, OrganIPCMetabolizer ]
-  id: OrganIPCLungs
-
-- type: entity
-  parent: [ OrganBaseHeart, OrganIPCInternal, OrganIPCMetabolizer ]
-  id: OrganIPCHeart
-
-- type: entity
-  parent: [ OrganBaseStomach, OrganIPCInternal, OrganIPCMetabolizer ]
-  id: OrganIPCStomach
-
-- type: entity
-  parent: [ OrganBaseLiver, OrganSpriteHumanInternal, OrganIPCInternal, OrganIPCMetabolizer ]
-  id: OrganIPCLiver
-
-- type: entity
-  parent: [ OrganBaseKidneys, OrganSpriteHumanInternal, OrganIPCInternal, OrganIPCMetabolizer ]
-  id: OrganIPCKidneys
