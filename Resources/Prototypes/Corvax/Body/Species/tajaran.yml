@@ -1,33 +1,92 @@
+- type: markingsGroup
+  parent: Undergarments
+  id: Tajaran
+  limits:
+    enum.HumanoidVisualLayers.Hair:
+      limit: 1
+      required: false
+    enum.HumanoidVisualLayers.FacialHair:
+      limit: 1
+      onlyGroupWhitelisted: true
+      required: false
+    enum.HumanoidVisualLayers.Head:
+      limit: 3
+      required: false
+    enum.HumanoidVisualLayers.HeadTop:
+      limit: 1
+      required: true
+      default: [ TajaranOutears ]
+    enum.HumanoidVisualLayers.Snout:
+      limit: 1
+      required: true
+    enum.HumanoidVisualLayers.SnoutCover:
+      limit: 3
+      required: false
+    enum.HumanoidVisualLayers.Tail:
+      limit: 1
+      required: true
+      default: [ TajaranTailM ]
+    enum.HumanoidVisualLayers.LArm:
+      limit: 2
+      required: false
+    enum.HumanoidVisualLayers.RArm:
+      limit: 2
+      required: false
+    enum.HumanoidVisualLayers.LHand:
+      limit: 2
+      required: false
+    enum.HumanoidVisualLayers.RHand:
+      limit: 2
+      required: false
+    enum.HumanoidVisualLayers.LLeg:
+      limit: 2
+      required: false
+    enum.HumanoidVisualLayers.RLeg:
+      limit: 2
+      required: false
+    enum.HumanoidVisualLayers.LFoot:
+      limit: 2
+      required: false
+    enum.HumanoidVisualLayers.RFoot:
+      limit: 2
+      required: false
+    enum.HumanoidVisualLayers.UndergarmentTop:
+      limit: 1
+      required: false
+      nudityDefault: [ UndergarmentTopTanktopVulpkanin ]
+    enum.HumanoidVisualLayers.UndergarmentBottom:
+      limit: 1
+      required: false
+      nudityDefault: [ UndergarmentBottomBoxersVulpkanin ]
+
 - type: entity
   parent: BaseSpeciesAppearance
   id: AppearanceTajaran
   name: Tajaran appearance
   components:
-  - type: EntityTableContainerFill
-    containers:
-      body_organs: !type:AllSelector
-        children:
-        - id: OrganTajaranTorso
-        - id: OrganTajaranHead
-        - id: OrganTajaranArmLeft
-        - id: OrganTajaranArmRight
-        - id: OrganTajaranHandRight
-        - id: OrganTajaranHandLeft
-        - id: OrganTajaranLegLeft
-        - id: OrganTajaranLegRight
-        - id: OrganTajaranFootLeft
-        - id: OrganTajaranFootRight
-        - id: OrganTajaranBrain
-        - id: OrganTajaranEyes
-        - id: OrganTajaranTongue
-        - id: OrganTajaranAppendix
-        - id: OrganTajaranEars
-        - id: OrganTajaranLungs
-        - id: OrganTajaranHeart
-        - id: OrganTajaranStomach
-        - id: OrganTajaranLiver
-        - id: OrganTajaranKidneys
-  - type: HumanoidAppearance
+  - type: InitialBody
+    organs:
+      Torso: OrganTajaranTorso
+      Head: OrganTajaranHead
+      ArmLeft: OrganTajaranArmLeft
+      ArmRight: OrganTajaranArmRight
+      HandRight: OrganTajaranHandRight
+      HandLeft: OrganTajaranHandLeft
+      LegLeft: OrganTajaranLegLeft
+      LegRight: OrganTajaranLegRight
+      FootLeft: OrganTajaranFootLeft
+      FootRight: OrganTajaranFootRight
+      Brain: OrganTajaranBrain
+      Eyes: OrganTajaranEyes
+      Tongue: OrganTajaranTongue
+      Appendix: OrganTajaranAppendix
+      Ears: OrganTajaranEars
+      Lungs: OrganTajaranLungs
+      Heart: OrganTajaranHeart
+      Stomach: OrganTajaranStomach
+      Liver: OrganTajaranLiver
+      Kidneys: OrganTajaranKidneys
+  - type: HumanoidProfile
     species: Tajaran
   - type: Inventory
     speciesId: corvaxtajaran
@@ -107,14 +166,6 @@
   id: OrganTajaran
   abstract: true
   suffix: tajaran
-  components:
-    - type: Extractable
-      juiceSolution:
-        reagents:
-          - ReagentId: Fat
-            Quantity: 3
-          - ReagentId: Blood
-            Quantity: 10
 
 - type: entity
   id: OrganTajaranMetabolizer
@@ -132,7 +183,18 @@
     sprite: Mobs/Species/Human/organs.rsi
 
 - type: entity
-  parent: OrganTajaran
+  id: OrganTajaranVisual
+  abstract: true
+  components:
+  - type: VisualOrgan
+    data:
+      sprite: Corvax/Mobs/Species/Tajaran/parts.rsi
+  - type: VisualOrganMarkings
+    markingData:
+      group: Tajaran
+
+- type: entity
+  parent: [ OrganTajaran, OrganTajaranVisual ]
   id: OrganTajaranExternal
   abstract: true
   components:
@@ -140,111 +202,62 @@
     sprite: Corvax/Mobs/Species/Tajaran/parts.rsi
 
 - type: entity
-  parent: [ OrganBaseTorso, OrganTajaranExternal ]
+  parent: [ OrganBaseTorsoSexed, OrganBaseTorso, OrganTajaranExternal ]
   id: OrganTajaranTorso
-  components:
-    - type: Sprite
-      sprite: Corvax/Mobs/Species/Tajaran/parts.rsi
-      state: "torso_m"
-    - type: Extractable
-      juiceSolution:
-        reagents:
-          - ReagentId: Fat
-            Quantity: 10
-          - ReagentId: Blood
-            Quantity: 20
 
 - type: entity
-  parent: [ OrganBaseHead, OrganTajaranExternal ]
+  parent: [ OrganBaseHeadSexed, OrganBaseHead, OrganTajaranExternal ]
   id: OrganTajaranHead
   components:
-    - type: Sprite
-      sprite: Corvax/Mobs/Species/Tajaran/parts.rsi
-      state: "head_m"
-    - type: Extractable
-      juiceSolution:
-        reagents:
-          - ReagentId: Fat
-            Quantity: 5
-          - ReagentId: Blood
-            Quantity: 10
+  - type: VisualOrganMarkings
+    hideableLayers:
+    - enum.HumanoidVisualLayers.Snout
+    - enum.HumanoidVisualLayers.HeadTop
+    - enum.HumanoidVisualLayers.HeadSide
+    - enum.HumanoidVisualLayers.Hair
+    - enum.HumanoidVisualLayers.FacialHair
+    dependentHidingLayers:
+      enum.HumanoidVisualLayers.Snout:
+      - enum.HumanoidVisualLayers.SnoutCover
 
 - type: entity
   parent: [ OrganBaseArmLeft, OrganTajaranExternal ]
   id: OrganTajaranArmLeft
-  components:
-    - type: Sprite
-      sprite: Corvax/Mobs/Species/Tajaran/parts.rsi
-      state: "l_arm"
 
 - type: entity
   parent: [ OrganBaseArmRight, OrganTajaranExternal ]
   id: OrganTajaranArmRight
-  components:
-    - type: Sprite
-      sprite: Corvax/Mobs/Species/Tajaran/parts.rsi
-      state: "r_arm"
 
 - type: entity
   parent: [ OrganBaseHandLeft, OrganTajaranExternal ]
   id: OrganTajaranHandLeft
-  components:
-    - type: Sprite
-      sprite: Corvax/Mobs/Species/Tajaran/parts.rsi
-      state: "l_hand"
 
 - type: entity
   parent: [ OrganBaseHandRight, OrganTajaranExternal ]
   id: OrganTajaranHandRight
-  components:
-    - type: Sprite
-      sprite: Corvax/Mobs/Species/Tajaran/parts.rsi
-      state: "r_hand"
 
 - type: entity
   parent: [ OrganBaseLegLeft, OrganTajaranExternal ]
   id: OrganTajaranLegLeft
-  components:
-    - type: Sprite
-      sprite: Corvax/Mobs/Species/Tajaran/parts.rsi
-      state: "l_leg"
-    - type: MovementBodyPart
-      walkSpeed : 2.7
-      sprintSpeed : 4.5
 
 - type: entity
   parent: [ OrganBaseLegRight, OrganTajaranExternal ]
   id: OrganTajaranLegRight
-  components:
-    - type: Sprite
-      sprite: Corvax/Mobs/Species/Tajaran/parts.rsi
-      state: "r_leg"
-    - type: MovementBodyPart
-      walkSpeed : 2.7
-      sprintSpeed : 4.5
 
 - type: entity
   parent: [ OrganBaseFootLeft, OrganTajaranExternal ]
   id: OrganTajaranFootLeft
-  components:
-    - type: Sprite
-      sprite: Corvax/Mobs/Species/Tajaran/parts.rsi
-      state: "l_foot"
 
 - type: entity
   parent: [ OrganBaseFootRight, OrganTajaranExternal ]
   id: OrganTajaranFootRight
-  components:
-    - type: Sprite
-      sprite: Corvax/Mobs/Species/Tajaran/parts.rsi
-      state: "r_foot"
 
 - type: entity
   parent: [ OrganBaseBrain, OrganSpriteHumanInternal, OrganTajaranInternal ]
   id: OrganTajaranBrain
 
 - type: entity
-  parent: [ OrganBaseEyes, OrganTajaranInternal ]
+  parent: [ OrganTajaranVisual, OrganBaseEyes, OrganTajaranInternal ]
   id: OrganTajaranEyes
 
 - type: entity
@@ -270,17 +283,6 @@
 - type: entity
   parent: [ OrganBaseStomach, OrganTajaranInternal, OrganTajaranMetabolizer ]
   id: OrganTajaranStomach
-  components:
-  - type: Stomach
-  - type: SolutionContainerManager
-    solutions:
-      stomach:
-        maxVol: 50.0
-      food:
-        maxVol: 5
-        reagents:
-        - ReagentId: UncookedAnimalProteins
-          Quantity: 5
 
 - type: entity
   parent: [ OrganBaseLiver, OrganSpriteHumanInternal, OrganTajaranInternal, OrganTajaranMetabolizer ]
