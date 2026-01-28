@@ -377,8 +377,7 @@ namespace Content.Server.Preferences.Managers
             var sponsorPrototypes = _sponsors != null && _sponsors.TryGetServerPrototypes(session.UserId, out var prototypes) ? prototypes.ToArray() : []; // Corvax-Sponsors
             return new PlayerPreferences(prefs.Characters.Select(p =>
             {
-                return new KeyValuePair<int, HumanoidCharacterProfile>(p.Key, p.Value.Validated(session, collection));
-                return new KeyValuePair<int, ICharacterProfile>(p.Key, p.Value.Validated(session, collection, sponsorPrototypes));
+                return new KeyValuePair<int, HumanoidCharacterProfile>(p.Key, p.Value.Validated(session, collection, sponsorPrototypes));// Corvax-Sponsors
             }), prefs.SelectedCharacterIndex, prefs.AdminOOCColor, prefs.ConstructionFavorites);
         }
 

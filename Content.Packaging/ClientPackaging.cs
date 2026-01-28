@@ -35,6 +35,7 @@ public static class ClientPackaging
                     "/m"
                 }
             };
+            // Corvax-Secrets-Start
             if (UseSecrets)
             {
                 await ProcessHelpers.RunCheck(new ProcessStartInfo
@@ -53,6 +54,7 @@ public static class ClientPackaging
                     }
                 });
             }
+            // Corvax-Secrets-End
 
             if (logBuild)
             {

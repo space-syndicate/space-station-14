@@ -721,7 +721,6 @@ namespace Content.Shared.Preferences
             return result;
         }
 
-        public HumanoidCharacterProfile Validated(ICommonSession session, IDependencyCollection collection)
         // Corvax-TTS-Start
         // SHOULD BE NOT PUBLIC, BUT....
         public static bool CanHaveVoice(TTSVoicePrototype voice, Sex sex)
@@ -730,7 +729,7 @@ namespace Content.Shared.Preferences
         }
         // Corvax-TTS-End
 
-        public ICharacterProfile Validated(ICommonSession session, IDependencyCollection collection, string[] sponsorPrototypes)
+        public HumanoidCharacterProfile Validated(ICommonSession session, IDependencyCollection collection, string[] sponsorPrototypes)// Corvax-Sponsors
         {
             var profile = new HumanoidCharacterProfile(this);
             profile.EnsureValid(session, collection, sponsorPrototypes);
