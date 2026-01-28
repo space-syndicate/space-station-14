@@ -78,11 +78,6 @@ namespace Content.Client.Lobby.UI
         public event Action? Save;
 
         /// <summary>
-        /// Entity used for the profile editor preview
-        /// </summary>
-        public EntityUid PreviewDummy;
-
-        /// <summary>
         /// Temporary override of their selected job, used to preview roles.
         /// </summary>
         public JobPrototype? JobOverride;
@@ -683,15 +678,10 @@ namespace Content.Client.Lobby.UI
         /// </remarks>
         private void ReloadPreview()
         {
-            _entManager.DeleteEntity(PreviewDummy);
-            PreviewDummy = EntityUid.Invalid;
-
-            if (Profile == null || !_prototypeManager.HasIndex(Profile.Species))
+            if (Profile == null)
                 return;
 
-            PreviewDummy = _controller.LoadProfileEntity(Profile, JobOverride, ShowClothes.Pressed);
-            SpriteView.SetEntity(PreviewDummy);
-            _entManager.System<MetaDataSystem>().SetEntityName(PreviewDummy, Profile.Name);
+            SpriteView.LoadPreview(Profile, JobOverride, ShowClothes.Pressed);
 
             // Check and set the dirty flag to enable the save/reset buttons as appropriate.
             SetDirty();
@@ -743,16 +733,15 @@ namespace Content.Client.Lobby.UI
             }
         }
 
-
         /// <summary>
         /// A slim reload that only updates the entity itself and not any of the job entities, etc.
         /// </summary>
         private void ReloadProfilePreview()
         {
-            if (Profile == null || !_entManager.EntityExists(PreviewDummy))
+            if (Profile == null)
                 return;
 
-            _entManager.System<SharedVisualBodySystem>().ApplyProfileTo(PreviewDummy, Profile);
+            SpriteView.ReloadProfilePreview(Profile);
 
             // Check and set the dirty flag to enable the save/reset buttons as appropriate.
             SetDirty();
@@ -1104,13 +1093,6 @@ namespace Content.Client.Lobby.UI
             ReloadPreview();
         }
 
-        protected override void ExitedTree()
-        {
-            base.ExitedTree();
-            _entManager.DeleteEntity(PreviewDummy);
-            PreviewDummy = EntityUid.Invalid;
-        }
-
         private void SetAge(int newAge)
         {
             Profile = Profile?.WithAge(newAge);
@@ -1177,7 +1159,7 @@ namespace Content.Client.Lobby.UI
             if (!IsDirty)
                 return;
 
-            _entManager.System<MetaDataSystem>().SetEntityName(PreviewDummy, newName);
+            SpriteView.SetName(newName);
         }
 
         private void SetSpawnPriority(SpawnPriorityPreference newSpawnPriority)
@@ -1397,7 +1379,7 @@ namespace Content.Client.Lobby.UI
 
             // I tried disabling the button but it looks sorta goofy as it only takes a frame or two to save
             _imaging = true;
-            await _entManager.System<ContentSpriteSystem>().Export(PreviewDummy, dir, includeId: false);
+            await _entManager.System<ContentSpriteSystem>().Export(SpriteView.PreviewDummy, dir, includeId: false);
             _imaging = false;
         }
 
