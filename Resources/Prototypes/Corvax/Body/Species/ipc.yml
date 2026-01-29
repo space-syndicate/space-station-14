@@ -216,7 +216,7 @@
   - type: Butcherable
     butcheringType: Spike
     spawned:
-      - id: HeadIpc
+      - id: OrganIpcHead
         amount: 1
   - type: MobThresholds
     thresholds:

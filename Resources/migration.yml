@@ -832,3 +832,29 @@ TowelColorYellow: null
 TowelColorMaroon: null
 TowelColorSilver: null
 TowelColorMime: null
+
+# 2026-01-29 Corvax mapping issue
+LeftArmReptilian: OrganReptilianArmLeft
+LeftHandReptilian: OrganReptilianHandLeft
+LeftLegReptilian: OrganReptilianLegLeft
+RightArmReptilian: OrganReptilianArmRight
+RightHandReptilian: OrganReptilianHandRight
+RightLegReptilian: OrganReptilianLegRight
+TorsoReptilian: OrganReptilianTorso
+HeadReptilian: OrganReptilianHead
+TorsoArachnid: OrganArachnidTorso
+LeftHandArachnid: OrganArachnidHandLeft
+LeftLegArachnid: OrganArachnidLegLeft
+RightLegArachnid: OrganArachnidLegRight
+LeftArmArachnid: OrganArachnidArmLeft
+HeadArachnid: OrganArachnidHead
+LeftFootSkeleton: OrganSkeletonPersonFootLeft
+RightFootSkeleton: OrganSkeletonPersonFootRight
+RightLegSkeleton: OrganSkeletonPersonLegRight
+RightLeftSkeleton: OrganSkeletonPersonLegLeft
+OrganRatStomach: OrganAnimalStomach
+HeadVulpkanin: OrganVulpkaninHead
+HeadMoth: OrganMothHead
+RightArmVox: OrganVoxArmRight
+HeadVox: OrganVoxHead
+LeftFootMoth: OrganMothFootLeft
