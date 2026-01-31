@@ -21,6 +21,7 @@ using Robust.Shared.Serialization;
 using Robust.Shared.Utility;
 using Robust.Shared;
 using YamlDotNet.RepresentationModel;
+using Content.Corvax.Interfaces.Shared; // Corvax-Sponsors
 
 namespace Content.Shared.Preferences
 {
@@ -512,7 +513,7 @@ namespace Content.Shared.Preferences
             // Corvax-Sponsors-Start: Reset to human if player not sponsor
             if (speciesPrototype.SponsorOnly && !sponsorPrototypes.Contains(Species.Id))
             {
-                Species = SharedHumanoidAppearanceSystem.DefaultSpecies;
+                Species = HumanoidCharacterProfile.DefaultSpecies;
                 speciesPrototype = prototypeManager.Index(Species);
             }
             // Corvax-Sponsors-End
@@ -858,7 +859,10 @@ namespace Content.Shared.Preferences
             }
 
             var collection = IoCManager.Instance;
-            profile.EnsureValid(session, collection!);
+            // Corvax-Sponsors-Start
+            var sponsorPrototypes = IoCManager.Resolve<ISharedSponsorsManager>().TryGetServerPrototypes(session.UserId, out var prototypes) ? prototypes.ToArray() : [];
+            profile.EnsureValid(session, collection!, sponsorPrototypes);
+            // Corvax-Sponsors-End
             return profile;
         }
     }

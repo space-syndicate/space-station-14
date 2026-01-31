@@ -71,7 +71,7 @@ public sealed partial class HumanoidCharacterAppearance : IEquatable<HumanoidCha
             skinColor,
             new()
         );
-        return EnsureValid(appearance, species, sex);
+        return EnsureValid(appearance, species, sex, []); // Corvax-Sponsors-Edit
     }
 
     private static IReadOnlyList<Color> _realisticEyeColors = new List<Color>
@@ -111,28 +111,13 @@ public sealed partial class HumanoidCharacterAppearance : IEquatable<HumanoidCha
         return new(color.RByte, color.GByte, color.BByte);
     }
 
-    public static HumanoidCharacterAppearance EnsureValid(HumanoidCharacterAppearance appearance, ProtoId<SpeciesPrototype> species, Sex sex)
+    public static HumanoidCharacterAppearance EnsureValid(HumanoidCharacterAppearance appearance, ProtoId<SpeciesPrototype> species, Sex sex, string[] sponsorPrototypes) // Corvax-Sponsors
     {
         var eyeColor = ClampColor(appearance.EyeColor);
 
         var proto = IoCManager.Resolve<IPrototypeManager>();
         var markingManager = IoCManager.Resolve<MarkingManager>();
 
-        // Corvax-Sponsors-Start
-        if (proto.TryIndex(hairStyleId, out MarkingPrototype? hairProto) &&
-            hairProto.SponsorOnly &&
-            !sponsorPrototypes.Contains(hairStyleId))
-        {
-            hairStyleId = HairStyles.DefaultHairStyle;
-        }
-
-        if (proto.TryIndex(facialHairStyleId, out MarkingPrototype? facialHairProto) &&
-            facialHairProto.SponsorOnly &&
-            !sponsorPrototypes.Contains(facialHairStyleId))
-        {
-            facialHairStyleId = HairStyles.DefaultFacialHairStyle;
-        }
-        // Corvax-Sponsors-End
         var skinColor = appearance.SkinColor;
         var validatedMarkings = appearance.Markings.ShallowClone();
 
@@ -142,7 +127,24 @@ public sealed partial class HumanoidCharacterAppearance : IEquatable<HumanoidCha
             var organs = markingManager.GetOrgans(species);
             skinColor = strategy.EnsureVerified(skinColor);
 
-            markingSet.FilterSponsor(sponsorPrototypes, markingManager); // Corvax-Sponsors
+            // Corvax-Sponsors-Start
+            foreach (var (organ, layerMarkings) in validatedMarkings)
+            {
+                foreach (var (_, markings) in layerMarkings)
+                {
+                    for (int i = markings.Count - 1; i >= 0; i--)
+                    {
+                        var marking = markings[i];
+                        if (proto.TryIndex(marking.MarkingId, out MarkingPrototype? markingProto) &&
+                            markingProto.SponsorOnly && !sponsorPrototypes.Contains(marking.MarkingId))
+                        {
+                            markings.RemoveAt(i);
+                        }
+                    }
+                }
+            }
+            // Corvax-Sponsors-End
+
             foreach (var (organ, markings) in appearance.Markings)
             {
                 if (!organs.ContainsKey(organ))

@@ -1,3 +1,4 @@
+using Content.Corvax.Interfaces.Shared; // Corvax-Sponsors
 using Content.Server.Administration.Logs;
 using Content.Server.Administration.Managers;
 using Content.Server.Chat.Managers;
@@ -65,6 +66,7 @@ namespace Content.Server.GameTicking
         [Dependency] private readonly MetaDataSystem _metaData = default!;
         [Dependency] private readonly SharedRoleSystem _roles = default!;
         [Dependency] private readonly ServerDbEntryManager _dbEntryManager = default!;
+        private ISharedSponsorsManager? _sponsors; // Corvax-Sponsors
 
         [ViewVariables] private bool _initialized;
         [ViewVariables] private bool _postInitialized;
@@ -78,6 +80,8 @@ namespace Content.Server.GameTicking
         public override void Initialize()
         {
             base.Initialize();
+
+            IoCManager.Instance!.TryResolveType(out _sponsors); // Corvax-Sponsors
 
             DebugTools.Assert(!_initialized);
             DebugTools.Assert(!_postInitialized);
