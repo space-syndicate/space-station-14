@@ -276,10 +276,10 @@
   abstract: true
   components:
   - type: Sprite
-    sprite: Corvax/Mobs/Species/IPC/parts.rsi
+    sprite: Corvax/Mobs/Species/Ipc/parts.rsi
   - type: VisualOrgan
     data:
-      sprite: Corvax/Mobs/Species/IPC/parts.rsi
+      sprite: Corvax/Mobs/Species/Ipc/parts.rsi
   - type: VisualOrganMarkings
     markingData:
       group: Ipc
