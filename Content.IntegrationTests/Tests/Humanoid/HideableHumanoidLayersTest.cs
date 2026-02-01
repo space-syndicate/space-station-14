@@ -59,7 +59,7 @@ public sealed class HideableHumanoidLayersTest : InteractionTest
         await Client.WaitAssertion(() =>
         {
             var spriteSystem = CEntMan.System<SpriteSystem>();
-            var snoutIndex = spriteSystem.LayerMapGet(CPlayer, "VulpSnout-snout");
+            var snoutIndex = spriteSystem.LayerMapGet(CPlayer, "FoxSnout-vulp_face"); // Corvax-Vulp "VulpSnout-snout"
             var snoutCoverIndex = spriteSystem.LayerMapGet(CPlayer, "VulpSnoutNose-snout-nose");
             var spriteComp = CEntMan.GetComponent<SpriteComponent>(CPlayer);
 
@@ -77,7 +77,7 @@ public sealed class HideableHumanoidLayersTest : InteractionTest
         await Client.WaitAssertion(() =>
         {
             var spriteSystem = CEntMan.System<SpriteSystem>();
-            var snoutIndex = spriteSystem.LayerMapGet(CPlayer, "VulpSnout-snout");
+            var snoutIndex = spriteSystem.LayerMapGet(CPlayer, "FoxSnout-vulp_face"); // Corvax-Vulp "VulpSnout-snout"
             var snoutCoverIndex = spriteSystem.LayerMapGet(CPlayer, "VulpSnoutNose-snout-nose");
             var spriteComp = CEntMan.GetComponent<SpriteComponent>(CPlayer);
 
