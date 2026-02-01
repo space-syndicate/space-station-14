@@ -72,6 +72,7 @@
     color: "#5ed7aa"
     sound: /Audio/Corvax/Announcements/aiannounce.ogg # Corvax-Announcements
   - type: ShowJobIcons
+  - type: ShowCrewIcons
   - type: DamagedSiliconAccent
     startPowerCorruptionAtCharIdx: 4
     maxPowerCorruptionAtCharIdx: 20
@@ -97,6 +98,7 @@
       enum.SiliconLawsUiKey.Key:
         type: SiliconLawBoundUserInterface
   - type: ShowJobIcons
+  - type: ShowCrewIcons
 
 # Ai
 - type: entity
