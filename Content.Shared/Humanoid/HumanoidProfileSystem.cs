@@ -1,3 +1,4 @@
+using Content.Shared.Corvax.TTS;
 using Content.Shared.Examine;
 using Content.Shared.Humanoid.Prototypes;
 using Content.Shared.IdentityManagement;
@@ -38,6 +39,13 @@ public sealed class HumanoidProfileSystem : EntitySystem
         ent.Comp.Age = profile.Age;
         ent.Comp.Species = profile.Species;
         ent.Comp.Sex = profile.Sex;
+        // Corvax-TTS-start
+        ent.Comp.Voice = profile.Voice;
+        if (TryComp<TTSComponent>(ent, out var _TTSComponent) && _TTSComponent.VoicePrototypeId == null)
+        {
+            _TTSComponent.VoicePrototypeId = profile.Voice;
+        }
+        // Corvax-TTS-end
         Dirty(ent);
 
         var sexChanged = new SexChangedEvent(ent.Comp.Sex, profile.Sex);
