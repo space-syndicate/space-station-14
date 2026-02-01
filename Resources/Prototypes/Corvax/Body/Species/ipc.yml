@@ -3,10 +3,10 @@
   id: Ipc
   limits:
     enum.HumanoidVisualLayers.Hair:
-      limit: 1
+      limit: 0
       required: false
     enum.HumanoidVisualLayers.FacialHair:
-      limit: 1
+      limit: 0
       required: false
     enum.HumanoidVisualLayers.Chest:
       limit: 2
@@ -15,6 +15,9 @@
       limit: 1
       required: true
       default: [ IpcOrangeS ]
+    enum.HumanoidVisualLayers.Head:
+      limit: 0
+      required: false
     enum.HumanoidVisualLayers.LArm:
       limit: 1
       required: false

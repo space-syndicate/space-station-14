@@ -130,9 +130,6 @@
     baseDecayRate: 0.02
   - type: Thirst
     baseDecayRate: 0.15
-  - type: Body
-    prototype: Tajaran
-    requiredLegs: 2
   - type: ContentEye
   - type: Speech
     allowedEmotes: ['Purr']
