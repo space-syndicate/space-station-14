@@ -49,7 +49,7 @@ public sealed partial class DocumentParsingManager
         Try(SkipNewline.Then(SkipWhitespaces).Then(Char('-'))).Then(SkipWhitespaces);
 
     private static readonly Parser<char, Unit> TryStartNumber =
-        Try(SkipNewline.Then(SkipWhitespaces).Then(Token(char.IsDigit).AtLeastOnceString().Before(Char('.')))).Then(SkipWhitespaces);
+        Try(SkipNewline.Then(SkipWhitespaces).Then(Token(char.IsDigit).AtLeastOnceString().Before(Char('.')))).Then(SkipWhitespaces); // Corvax-Guidebook
 
     private static readonly Parser<char, Unit> TryStartTag = Try(Char('<')).Then(SkipWhitespaces);
 
@@ -57,7 +57,7 @@ public sealed partial class DocumentParsingManager
         Try(SkipNewline.Then(SkipNewline)).Then(SkipWhitespaces);
 
     private static readonly Parser<char, Unit> TryLookTextEnd =
-        Lookahead(OneOf(TryStartTag, TryStartList, TryStartNumber, TryStartParagraph, Try(Whitespace.SkipUntil(End))));
+        Lookahead(OneOf(TryStartTag, TryStartList, TryStartNumber, TryStartParagraph, Try(Whitespace.SkipUntil(End)))); // Corvax-Guidebook: TryStartNumber
 
     private static readonly Parser<char, string> TextParser =
         TextChar.AtLeastOnceUntil(TryLookTextEnd).Select(string.Concat);
@@ -125,7 +125,7 @@ public sealed partial class DocumentParsingManager
     private static readonly Parser<char, Control> TryHeaderControl = OneOf(TertiaryHeaderControlParser, SubHeaderControlParser, HeaderControlParser);
 
     // Corvax-Guidebook-Start
-    private static readonly Parser<char, Control> BulletListControlParser = Try(Char('-'))  // Corvax-Guidebook: ListControlParser -> BulletListControlParser
+    private static readonly Parser<char, Control> BulletListControlParser = Try(Char('-'))
         .Then(SkipWhitespaces)
         .Then(Map(
                 control =>
@@ -149,7 +149,6 @@ public sealed partial class DocumentParsingManager
         .Then(SkipWhitespaces)
         .Then(Map(control =>
                 {
-                    // increment global counter for this parsing run
                     _numberedListCounter++;
                     _lastControlWasList = true;
                     var label = new Label { Text = $"  {_numberedListCounter}. ", VerticalAlignment = VAlignment.Top };
