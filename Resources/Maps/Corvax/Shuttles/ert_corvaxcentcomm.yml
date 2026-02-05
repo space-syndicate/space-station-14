@@ -33,8 +33,6 @@ entities:
     components:
     - type: MetaData
       name: RN-KY ERT "Спекулятор"
-    - type: Transform
-      parent: invalid
     - type: MapGrid
       chunks:
         0,0:
