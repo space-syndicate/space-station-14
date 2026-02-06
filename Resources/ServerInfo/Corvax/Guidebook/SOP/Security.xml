@@ -1,0 +1,176 @@
+<Document>
+  # Общие СРП
+  ### Сотрудник СБ обязан
+  <FTLTextpart Key="guidebook-SOP-security-general-must"/>
+
+  ### Сотрудник СБ имеет право
+  <FTLTextpart Key="guidebook-SOP-security-general-right"/>
+
+  ### Сотруднику СБ запрещено
+  <FTLTextpart Key="guidebook-SOP-security-general-prohibited"/>
+
+  # Должностные СРП
+  ## СРП Главы СБ
+  ### Глава СБ обязан
+  <FTLTextpart Key="guidebook-SOP-HeadOfSecurity-must"/>
+
+  ### Глава СБ имеет право
+  <FTLTextpart Key="guidebook-SOP-HeadOfSecurity-right"/>
+
+  ### Главе СБ запрещено
+  <FTLTextpart Key="guidebook-SOP-HeadOfSecurity-prohibited"/>
+
+  ## СРП Смотрителя
+  ### Смотритель обязан
+  <FTLTextpart Key="guidebook-SOP-Warden-must"/>
+
+  ### Смотритель имеет право
+  <FTLTextpart Key="guidebook-SOP-Warden-right"/>
+
+  ### Смотрителю запрещено
+  <FTLTextpart Key="guidebook-SOP-Warden-prohibited"/>
+
+  ## СРП Помощника смотрителя
+  ### Помощник смотрителя обязан
+  <FTLTextpart Key="guidebook-SOP-WardenHelper-must"/>
+
+  ### Помощник смотрителя имеет право
+  <FTLTextpart Key="guidebook-SOP-WardenHelper-right"/>
+
+  ### Помощнику смотрителя запрещено
+  <FTLTextpart Key="guidebook-SOP-WardenHelper-prohibited"/>
+
+  ## СРП Офицера СБ
+  ### Офицер СБ обязан
+  <FTLTextpart Key="guidebook-SOP-Security-must"/>
+
+  ### Офицер СБ имеет право
+  <FTLTextpart Key="guidebook-SOP-Security-right"/>
+
+  ## СРП Детектива
+  ### Детектив обязан
+  <FTLTextpart Key="guidebook-SOP-Detective-must"/>
+
+  ### Детектив имеет право
+  <FTLTextpart Key="guidebook-SOP-Detective-right"/>
+
+  ## СРП Пилота СБ
+  ### Пилот СБ обязан
+  <FTLTextpart Key="guidebook-SOP-SecurityPilot-must"/>
+
+  ### Пилот СБ имеет право
+  <FTLTextpart Key="guidebook-SOP-SecurityPilot-right"/>
+
+  ### Пилоту СБ запрещено
+  <FTLTextpart Key="guidebook-SOP-SecurityPilot-prohibited"/>
+
+  ## СРП Бригмедика
+  ### Бригмедик обязан
+  <FTLTextpart Key="guidebook-SOP-Brigmedic-must"/>
+
+  ### Бригмедик имеет право
+  <FTLTextpart Key="guidebook-SOP-Brigmedic-right"/>
+
+  ### Бригмедику запрещено
+  <FTLTextpart Key="guidebook-SOP-Brigmedic-prohibited"/>
+
+  ## СРП Кадета СБ
+  ### Кадет СБ обязан
+  <FTLTextpart Key="guidebook-SOP-SecurityCadet-must"/>
+
+  ### Кадету СБ запрещено
+  <FTLTextpart Key="guidebook-SOP-SecurityCadet-prohibited"/>
+
+  # Процедуры и протоколы
+  ## Общее положение о вооружении отдела СБ
+  <FTLTextpart Key="guidebook-SOP-security-procedure-weapons-regulation"/>
+
+  ### Процедуры обыска
+  ### Личный досмотр
+  <FTLTextpart Key="guidebook-SOP-security-procedure-search-personal"/>
+
+  ### Обыск отдела
+  <FTLTextpart Key="guidebook-SOP-security-procedure-search-department"/>
+
+  ### Опознание
+  <FTLTextpart Key="guidebook-SOP-security-procedure-search-identification"/>
+
+  ### Принудительное хирургическое вмешательство
+  <FTLTextpart Key="guidebook-SOP-security-procedure-search-surgical"/>
+
+  ## Процедуры следствия
+  ### Процедура объявления в розыск
+  <FTLTextpart Key="guidebook-SOP-security-procedure-investigation-rozysk"/>
+
+  ### Процедура задержания
+  <FTLTextpart Key="guidebook-SOP-security-procedure-investigation-arrest"/>
+
+  ### Процедура допроса
+  <FTLTextpart Key="guidebook-SOP-security-procedure-investigation-interrogation"/>
+
+  ### Анализ дела
+  <FTLTextpart Key="guidebook-SOP-security-procedure-investigation-analysis"/>
+
+  ### Вынесение вердикта
+  <FTLTextpart Key="guidebook-SOP-security-procedure-investigation-verdict"/>
+
+  ### Реализация наказания
+  <FTLTextpart Key="guidebook-SOP-security-procedure-investigation-implementation"/>
+
+  ## Процедуры изъятия и хранения контрабанды и улик
+  ### Изъятие
+  <FTLTextpart Key="guidebook-SOP-security-procedure-seizure-storage"/>
+
+  ### Оборот
+  <FTLTextpart Key="guidebook-SOP-security-procedure-seizure-turnover"/>
+
+  ## Процедура выдачи УДО
+  ### Общие положения
+  <FTLTextpart Key="guidebook-SOP-security-procedure-parole-general"/>
+
+  ### Порядок оформления УДО
+  <FTLTextpart Key="guidebook-SOP-security-procedure-parole-obtaining"/>
+
+  ### Порядок отзыва УДО
+  <FTLTextpart Key="guidebook-SOP-security-procedure-parole-revoking"/>
+
+  ### Порядок завершения УДО
+  <FTLTextpart Key="guidebook-SOP-security-procedure-parole-completing"/>
+
+  ## Правила содержания заключенных
+  ### Общие правила заключения
+  <FTLTextpart Key="guidebook-SOP-security-procedure-prisoner-general"/>
+
+  ### Временное заключение
+  <FTLTextpart Key="guidebook-SOP-security-procedure-prisoner-temporary"/>
+
+  ### Пожизненное заключение
+  <FTLTextpart Key="guidebook-SOP-security-procedure-prisoner-eternal"/>
+
+  ### Каторга
+  <FTLTextpart Key="guidebook-SOP-security-procedure-prisoner-katorga"/>
+
+  ### Карцер
+  <FTLTextpart Key="guidebook-SOP-security-procedure-prisoner-cell"/>
+
+  ## Уровни Применения Силы
+  <FTLTextpart Key="guidebook-SOP-security-procedure-force-levels"/>
+
+  ### Уровень 1 — Вербальное воздействие
+  <FTLTextpart Key="guidebook-SOP-security-procedure-force-level-1"/>
+
+  ### Уровень 2 — Ограничение подвижности
+  <FTLTextpart Key="guidebook-SOP-security-procedure-force-level-2"/>
+
+  ### Уровень 3 — Средства подавления
+  <FTLTextpart Key="guidebook-SOP-security-procedure-force-level-3"/>
+
+  ### Уровень 4 — Летальное воздействие
+  <FTLTextpart Key="guidebook-SOP-security-procedure-force-level-4"/>
+
+  ### Уровень 5 — Уничтожение на месте
+  <FTLTextpart Key="guidebook-SOP-security-procedure-force-level-5"/>
+
+  ## Протокол обращения с незарегистрированными лицами
+  <FTLTextpart Key="guidebook-SOP-security-procedure-unregistered-protocol"/>
+</Document>

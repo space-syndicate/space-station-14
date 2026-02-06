@@ -1,0 +1,59 @@
+- type: guideEntry
+  id: SOP
+  name: СРП
+  text: "/ServerInfo/Corvax/Guidebook/SOP/General.xml"
+  children:
+  - SOPService
+  - SOPResearch
+  - SOPCargo
+  - SOPMedical
+  - SOPEngineering
+  - SOPCommand
+  - SOPCentcomm
+  - SOPLegal
+  - SOPSecurity
+
+- type: guideEntry
+  id: SOPService
+  name: Сервистный отдел
+  text: "/ServerInfo/Corvax/Guidebook/SOP/Service.xml"
+
+- type: guideEntry
+  id: SOPResearch
+  name: Научный отдел
+  text: "/ServerInfo/Corvax/Guidebook/SOP/Research.xml"
+
+- type: guideEntry
+  id: SOPCargo
+  name: Отдел снабжения
+  text: "/ServerInfo/Corvax/Guidebook/SOP/Cargo.xml"
+
+- type: guideEntry
+  id: SOPMedical
+  name: Медицинский отдел
+  text: "/ServerInfo/Corvax/Guidebook/SOP/Medical.xml"
+
+- type: guideEntry
+  id: SOPEngineering
+  name: Инженерный отдел
+  text: "/ServerInfo/Corvax/Guidebook/SOP/Engineering.xml"
+
+- type: guideEntry
+  id: SOPSecurity
+  name: Служба безопасности
+  text: "/ServerInfo/Corvax/Guidebook/SOP/Security.xml"
+
+- type: guideEntry
+  id: SOPCommand
+  name: Командование
+  text: "/ServerInfo/Corvax/Guidebook/SOP/Command.xml"
+
+- type: guideEntry
+  id: SOPCentcomm
+  name: Центральное Командование
+  text: "/ServerInfo/Corvax/Guidebook/SOP/Centcomm.xml"
+
+- type: guideEntry
+  id: SOPLegal
+  name: Юридический департамент
+  text: "/ServerInfo/Corvax/Guidebook/SOP/Legal.xml"
