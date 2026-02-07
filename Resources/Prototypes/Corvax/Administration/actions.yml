@@ -1,0 +1,12 @@
+﻿- type: entity
+  parent: BaseAction
+  id: ActionToggleHealthOverlay
+  name: action-toggle-health-overlay-name
+  description: action-toggle-health-overlay-desc
+  components:
+  - type: Action
+    icon:
+      sprite: Clothing/Eyes/Hud/omni.rsi
+      state: icon
+  - type: InstantAction
+    event: !type:ActionToggleHealthOverlayEvent
