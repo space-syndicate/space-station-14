@@ -4,7 +4,7 @@ meta:
   engineVersion: 262.0.0
   forkId: 
   forkVersion: 450cdaaf66381f759ac1658984be0fc913b9d4e9
-  time: 07/24/2025 13:07:45
+  time: 02/02/2026 13:07:45
   entityCount: 496
 maps: []
 grids:
@@ -33,8 +33,6 @@ entities:
     components:
     - type: MetaData
       name: RN-KY ERT "Спекулятор"
-    - type: Transform
-      parent: invalid
     - type: MapGrid
       chunks:
         0,0:
@@ -545,38 +543,27 @@ entities:
         - volume: 2500
           temperature: 293.15
           moles:
-          - 21.824879
-          - 82.10312
-          - 0
-          - 0
-          - 0
-          - 0
-          - 0
-          - 0
-          - 0
-          - 0
-          - 0
-          - 0
+            Oxygen: 21.824879
+            Nitrogen: 82.10312
         - volume: 2500
           immutable: True
-          moles:
-          - 0
-          - 0
-          - 0
-          - 0
-          - 0
-          - 0
-          - 0
-          - 0
-          - 0
-          - 0
-          - 0
-          - 0
+          moles: {}
         chunkSize: 4
     - type: GasTileOverlay
     - type: RadiationGridResistance
     - type: ImplicitRoof
     - type: NavMap
+    - type: ExplosionAirtightGrid
+  - uid: 47
+    components:
+    - type: MetaData
+      name: Map Entity
+    - type: Transform
+    - type: Map
+      mapPaused: True
+    - type: GridTree
+    - type: Broadphase
+    - type: OccluderTree
 - proto: AirAlarm
   entities:
   - uid: 2
@@ -591,6 +578,8 @@ entities:
       - 12
       - 11
       - 10
+    - type: Fixtures
+      fixtures: {}
 - proto: AirCanister
   entities:
   - uid: 3
@@ -679,12 +668,32 @@ entities:
       rot: 3.141592653589793 rad
       pos: 0.5,0.5
       parent: 1
+    - type: Fixtures
+      fixtures: {}
   - uid: 15
     components:
     - type: Transform
       rot: 3.141592653589793 rad
       pos: -2.5,-8.5
       parent: 1
+    - type: Fixtures
+      fixtures: {}
+  - uid: 501
+    components:
+    - type: Transform
+      rot: 1.5707963267948966 rad
+      pos: -3.5,-0.5
+      parent: 1
+    - type: Fixtures
+      fixtures: {}
+  - uid: 502
+    components:
+    - type: Transform
+      rot: -1.5707963267948966 rad
+      pos: 4.5,-0.5
+      parent: 1
+    - type: Fixtures
+      fixtures: {}
 - proto: AtmosDeviceFanDirectional
   entities:
   - uid: 16
@@ -866,11 +875,6 @@ entities:
     - type: Transform
       pos: 1.5,6.5
       parent: 1
-  - uid: 47
-    components:
-    - type: Transform
-      pos: 0.5,-0.5
-      parent: 1
   - uid: 48
     components:
     - type: Transform
@@ -910,11 +914,6 @@ entities:
     components:
     - type: Transform
       pos: 0.5,-4.5
-      parent: 1
-  - uid: 56
-    components:
-    - type: Transform
-      pos: 0.5,-5.5
       parent: 1
   - uid: 57
     components:
@@ -965,21 +964,6 @@ entities:
     components:
     - type: Transform
       pos: 2.5,-7.5
-      parent: 1
-  - uid: 67
-    components:
-    - type: Transform
-      pos: -1.5,-1.5
-      parent: 1
-  - uid: 68
-    components:
-    - type: Transform
-      pos: -2.5,-1.5
-      parent: 1
-  - uid: 69
-    components:
-    - type: Transform
-      pos: -3.5,-1.5
       parent: 1
   - uid: 70
     components:
@@ -1091,16 +1075,6 @@ entities:
     - type: Transform
       pos: 2.5,-1.5
       parent: 1
-  - uid: 92
-    components:
-    - type: Transform
-      pos: 3.5,-1.5
-      parent: 1
-  - uid: 93
-    components:
-    - type: Transform
-      pos: 4.5,-1.5
-      parent: 1
   - uid: 94
     components:
     - type: Transform
@@ -1206,6 +1180,41 @@ entities:
     - type: Transform
       pos: 6.5,5.5
       parent: 1
+  - uid: 499
+    components:
+    - type: Transform
+      pos: -2.5,-7.5
+      parent: 1
+  - uid: 500
+    components:
+    - type: Transform
+      pos: -2.5,-8.5
+      parent: 1
+  - uid: 503
+    components:
+    - type: Transform
+      pos: 0.5,-0.5
+      parent: 1
+  - uid: 504
+    components:
+    - type: Transform
+      pos: 4.5,-0.5
+      parent: 1
+  - uid: 505
+    components:
+    - type: Transform
+      pos: 5.5,-0.5
+      parent: 1
+  - uid: 506
+    components:
+    - type: Transform
+      pos: -3.5,-0.5
+      parent: 1
+  - uid: 507
+    components:
+    - type: Transform
+      pos: -4.5,-0.5
+      parent: 1
 - proto: CableHV
   entities:
   - uid: 115
@@ -1250,6 +1259,36 @@ entities:
       parent: 1
 - proto: CableMV
   entities:
+  - uid: 56
+    components:
+    - type: Transform
+      pos: 2.5,-1.5
+      parent: 1
+  - uid: 67
+    components:
+    - type: Transform
+      pos: 1.5,-4.5
+      parent: 1
+  - uid: 68
+    components:
+    - type: Transform
+      pos: -3.5,-0.5
+      parent: 1
+  - uid: 69
+    components:
+    - type: Transform
+      pos: -2.5,-0.5
+      parent: 1
+  - uid: 92
+    components:
+    - type: Transform
+      pos: 2.5,-4.5
+      parent: 1
+  - uid: 93
+    components:
+    - type: Transform
+      pos: 0.5,-4.5
+      parent: 1
   - uid: 123
     components:
     - type: Transform
@@ -1354,6 +1393,31 @@ entities:
     components:
     - type: Transform
       pos: -2.5,-8.5
+      parent: 1
+  - uid: 497
+    components:
+    - type: Transform
+      pos: 2.5,-3.5
+      parent: 1
+  - uid: 498
+    components:
+    - type: Transform
+      pos: 2.5,-2.5
+      parent: 1
+  - uid: 508
+    components:
+    - type: Transform
+      pos: 2.5,-0.5
+      parent: 1
+  - uid: 509
+    components:
+    - type: Transform
+      pos: 3.5,-0.5
+      parent: 1
+  - uid: 510
+    components:
+    - type: Transform
+      pos: 4.5,-0.5
       parent: 1
 - proto: CableTerminal
   entities:
@@ -1537,6 +1601,8 @@ entities:
       rot: -1.5707963267948966 rad
       pos: 3.5,-8.5
       parent: 1
+    - type: Fixtures
+      fixtures: {}
 - proto: ClothingBackpackDuffelSurgeryFilled
   entities:
   - uid: 173
@@ -1622,6 +1688,8 @@ entities:
       - 187
       - 186
       - 185
+    - type: Fixtures
+      fixtures: {}
 - proto: FirelockEdge
   entities:
   - uid: 183
@@ -2256,6 +2324,8 @@ entities:
         25:
         - - Pressed
           - Toggle
+    - type: Fixtures
+      fixtures: {}
 - proto: MaterialBiomass
   entities:
   - uid: 261
@@ -2546,6 +2616,8 @@ entities:
       rot: -1.5707963267948966 rad
       pos: 0.5,-5.5
       parent: 1
+    - type: Fixtures
+      fixtures: {}
 - proto: SignSpace
   entities:
   - uid: 307
@@ -2554,6 +2626,8 @@ entities:
       rot: -1.5707963267948966 rad
       pos: 0.5,-11.5
       parent: 1
+    - type: Fixtures
+      fixtures: {}
 - proto: SMESBasic
   entities:
   - uid: 308
@@ -2827,11 +2901,15 @@ entities:
     - type: Transform
       pos: -0.5,0.5
       parent: 1
+    - type: Fixtures
+      fixtures: {}
   - uid: 354
     components:
     - type: Transform
       pos: 1.5,0.5
       parent: 1
+    - type: Fixtures
+      fixtures: {}
 - proto: WallShuttle
   entities:
   - uid: 355
@@ -3646,4 +3724,6 @@ entities:
       rot: 3.141592653589793 rad
       pos: -2.5,4.5
       parent: 1
+    - type: Fixtures
+      fixtures: {}
 ...
