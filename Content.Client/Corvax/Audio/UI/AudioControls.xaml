@@ -1,0 +1,22 @@
+﻿<controls:AudioControls
+
+    xmlns="https://spacestation14.io"
+    xmlns:controls="clr-namespace:Content.Client.Corvax.Audio.UI"
+    Title="{Loc audio-controls-ui-window-title}">
+    <BoxContainer Orientation="Vertical" Margin="5">
+        <BoxContainer Name="VolumeContainer" Orientation="Vertical">
+            <Label Name="VolumeLabel" Text="{Loc audio-controls-ui-label-volume}" HorizontalExpand="True" StyleClasses="StatusFieldTitle"></Label>
+            <Slider Name="VolumeSlider" HorizontalExpand="True" MinValue="0" MaxValue="200" Value="100" />
+        </BoxContainer>
+
+        <BoxContainer Name="RangeContainer" Orientation="Vertical">
+            <Label Name="RangeLabel" Text="{Loc audio-controls-ui-label-range}" HorizontalExpand="True" StyleClasses="StatusFieldTitle"></Label>
+            <Slider Name="RangeSlider" HorizontalExpand="True" MinValue="1" MaxValue="35" Value="15"/>
+        </BoxContainer>
+
+        <BoxContainer Name="PitchContainer" Orientation="Vertical">
+            <Label Name="PitchLabel" Text="{Loc audio-controls-ui-label-pitch}" HorizontalExpand="True" StyleClasses="StatusFieldTitle"></Label>
+            <Slider Name="PitchSlider" HorizontalExpand="True" MaxValue="10" MinValue="-10" Value="0"/>
+        </BoxContainer>
+    </BoxContainer>
+</controls:AudioControls>
