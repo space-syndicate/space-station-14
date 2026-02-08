@@ -1,0 +1,109 @@
+<Document>
+  # Общие СРП
+  ### Сотрудник медицинского отдела обязан
+  <FTLTextpart Key="guidebook-SOP-medical-general-must"/>
+
+  ### Сотрудник медицинского отдела имеет право
+  <FTLTextpart Key="guidebook-SOP-medical-general-right"/>
+
+  ### Сотруднику медицинского отдела запрещено
+  <FTLTextpart Key="guidebook-SOP-medical-general-prohibited"/>
+
+  # Должностные СРП
+  ## СРП Главного врача
+  ### Главный врач обязан
+  <FTLTextpart Key="guidebook-SOP-ChiefMedicalOfficer-must"/>
+
+  ### Главный врач имеет право
+  <FTLTextpart Key="guidebook-SOP-ChiefMedicalOfficer-right"/>
+
+  ### Главному врачу запрещено
+  <FTLTextpart Key="guidebook-SOP-ChiefMedicalOfficer-prohibited"/>
+
+  ## СРП Парамедика
+  ### Парамедик обязан
+  <FTLTextpart Key="guidebook-SOP-Paramedic-must"/>
+
+  ### Парамедик имеет право
+  <FTLTextpart Key="guidebook-SOP-Paramedic-right"/>
+
+  ### Парамедику запрещено
+  <FTLTextpart Key="guidebook-SOP-Paramedic-prohibited"/>
+
+  ## СРП Врача
+  ### Врач обязан
+  <FTLTextpart Key="guidebook-SOP-MedicalDoctor-must"/>
+
+  ### Врач имеет право
+  <FTLTextpart Key="guidebook-SOP-MedicalDoctor-right"/>
+
+  ### Врачу запрещено
+  <FTLTextpart Key="guidebook-SOP-MedicalDoctor-prohibited"/>
+
+  ## СРП Химика
+  ### Химик обязан
+  <FTLTextpart Key="guidebook-SOP-Chemist-must"/>
+
+  ### Химик имеет право
+  <FTLTextpart Key="guidebook-SOP-Chemist-right"/>
+
+  ### Химику запрещено
+  <FTLTextpart Key="guidebook-SOP-Chemist-prohibited"/>
+
+  ## СРП Психолога
+  ### Психолог обязан
+  <FTLTextpart Key="guidebook-SOP-Psychologist-must"/>
+
+  ### Психолог имеет право
+  <FTLTextpart Key="guidebook-SOP-Psychologist-right"/>
+
+  ### Психологу запрещено
+  <FTLTextpart Key="guidebook-SOP-Psychologist-prohibited"/>
+
+  ## СРП Хирурга
+  ### Хирург обязан
+  <FTLTextpart Key="guidebook-SOP-Surgeon-must"/>
+
+  ### Хирургу запрещено
+  <FTLTextpart Key="guidebook-SOP-Surgeon-prohibited"/>
+
+  ## СРП Патологоанатома
+  ### Патологоанатом обязан
+  <FTLTextpart Key="guidebook-SOP-Pathologist-must"/>
+
+  ### Патологоанатом имеет право
+  <FTLTextpart Key="guidebook-SOP-Pathologist-right"/>
+
+  ## СРП Вирусолога
+  ### Вирусолог обязан
+  <FTLTextpart Key="guidebook-SOP-Virologist-must"/>
+
+  ### Вирусолог имеет право
+  <FTLTextpart Key="guidebook-SOP-Virologist-right"/>
+
+  ## СРП Интерна
+  ### Интерн обязан
+  <FTLTextpart Key="guidebook-SOP-MedicalIntern-must"/>
+
+  ### Интерн имеет право
+  <FTLTextpart Key="guidebook-SOP-MedicalIntern-right"/>
+
+  ### Интерну запрещено
+  <FTLTextpart Key="guidebook-SOP-MedicalIntern-prohibited"/>
+
+  # Процедуры и протоколы
+  ## Техника безопасности медицинского отдела
+  <FTLTextpart Key="guidebook-SOP-medical-procedure-safety"/>
+
+  ## Нормы обращения с телами разумных существ
+  <FTLTextpart Key="guidebook-SOP-medical-procedure-bodies"/>
+
+  ## Процедура хранения и передачи имущества пациентов
+  <FTLTextpart Key="guidebook-SOP-medical-procedure-property"/>
+
+  ## Алгоритм работы с пациентами с выраженным расстройством сознания
+  <FTLTextpart Key="guidebook-SOP-medical-procedure-psychiatric"/>
+
+  ## Врачебная тайна
+  <FTLTextpart Key="guidebook-SOP-medical-confidentiality"/>
+</Document>
