@@ -1,6 +1,6 @@
-using Content.Server.Humanoid;
 using Content.Shared.Actions;
 using Content.Shared.Alert;
+using Content.Shared.Body;
 using Content.Shared.Corvax.Ipc;
 using Content.Shared.Damage;
 using Content.Shared.Damage.Systems;
@@ -34,8 +34,8 @@ public sealed partial class IpcSystem : EntitySystem
     [Dependency] private readonly MobStateSystem _mobState = default!;
     [Dependency] private readonly SharedUserInterfaceSystem _ui = default!;
     [Dependency] private readonly SharedBatterySystem _battery = default!;
-    [Dependency] private readonly HumanoidAppearanceSystem _humanoid = default!;
     [Dependency] private readonly MarkingManager _markingManager = default!;
+    [Dependency] private readonly SharedVisualBodySystem _visualBody = default!;
     public override void Initialize()
     {
         base.Initialize();
@@ -61,13 +61,6 @@ public sealed partial class IpcSystem : EntitySystem
         _action.AddAction(uid, ref component.ChangeFaceActionEntity, component.ChangeFaceAction);
         _movementSpeedModifier.RefreshMovementSpeedModifiers(uid);
 
-        if (TryComp<HumanoidAppearanceComponent>(uid, out var appearance) &&
-            appearance.MarkingSet.TryGetCategory(MarkingCategories.Snout, out var markings) &&
-            markings.Count > 0)
-        {
-            component.SelectedFace = markings[0].MarkingId;
-            Dirty(uid, component);
-        }
     }
 
     private void OnComponentShutdown(EntityUid uid, IpcComponent component, ComponentShutdown args)
@@ -153,17 +146,17 @@ public sealed partial class IpcSystem : EntitySystem
 
     private void OnFaceSelected(Entity<IpcComponent> ent, ref IpcFaceSelectMessage msg)
     {
-        if (TryComp<HumanoidAppearanceComponent>(ent.Owner, out var appearance))
+        if (_visualBody.TryGatherMarkingsData(ent.Owner, null, out var profiles, out var markings, out var applied))
         {
-            var category = MarkingCategories.Snout;
-            if (appearance.MarkingSet.TryGetCategory(category, out var markings) && markings.Count > 0)
+            if (applied.TryGetValue("Head", out var headMarkings) && headMarkings.TryGetValue(HumanoidVisualLayers.Snout, out var snoutMarkings))
             {
-                _humanoid.SetMarkingId(ent.Owner, category, 0, msg.State, appearance);
-            }
-            else if (_markingManager.Markings.TryGetValue(msg.State, out var proto))
-            {
-                appearance.MarkingSet.AddBack(category, proto.AsMarking());
-                Dirty(ent.Owner, appearance);
+                _visualBody.ApplyMarkings(ent.Owner, new()
+                {
+                    ["Head"] = new()
+                    {
+                        [HumanoidVisualLayers.Snout] = new List<Marking>() { new(msg.State, snoutMarkings[0].MarkingColors.Count) },
+                    },
+                });
             }
         }
 

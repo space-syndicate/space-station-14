@@ -19,7 +19,7 @@ public sealed class HealthChangeReagentsJsonGenerator
         {
             if (reagent.Metabolisms is null) continue;
 
-            foreach (var metabolism in reagent.Metabolisms)
+            foreach (var metabolism in reagent.Metabolisms.Metabolisms)
             {
                 foreach (HealthChange effect in metabolism.Value.Effects.Where(x => x is HealthChange))
                 {

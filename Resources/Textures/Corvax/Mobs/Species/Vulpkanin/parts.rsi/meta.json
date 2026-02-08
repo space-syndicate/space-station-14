@@ -2,6 +2,7 @@
     "version": 1,
     "license": "CC-BY-SA-3.0",
     "copyright": "Taken from Occulus-Eris (https://github.com/Occulus-Server/Occulus-Eris) & modified by discord:kuro_0001 (388673708753027083)",
+    "copyright": "eyes made by FairlySadPanda (Github/Discord); with help from ScarKy0 (Github/Discord)",
     "size": {
         "x": 32,
         "y": 32
@@ -56,6 +57,10 @@
         },
         {
             "name": "torso_m",
+            "directions": 4
+        },
+        {
+            "name": "eyes",
             "directions": 4
         }
     ]
