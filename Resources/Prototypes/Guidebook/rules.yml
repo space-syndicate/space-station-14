@@ -16,6 +16,13 @@
   text: "/ServerInfo/Guidebook/ServerRules/WizDenCoreOnlyRules.xml"
 
 - type: guideEntry
+  id: UtopiaRuleset
+  name: guide-entry-rules-hrp
+  ruleEntry: true
+  priority: 10
+  text: "/ServerInfo/Guidebook/ServerRules/UtopiaStationHRPRules.xml"
+
+- type: guideEntry
   id: StandardRuleset
   name: guide-entry-rules-lrp
   ruleEntry: true

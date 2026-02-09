@@ -1,22 +1,20 @@
-game-ticker-restart-round = Перезапуск раунда...
-game-ticker-start-round = Раунд начинается...
+game-ticker-restart-round = Перезапуск смены...
+game-ticker-start-round = Смена начинается с...
 game-ticker-start-round-cannot-start-game-mode-fallback = Не удалось запустить режим { $failedGameMode }! Запускаем { $fallbackMode }...
 game-ticker-start-round-cannot-start-game-mode-restart = Не удалось запустить режим { $failedGameMode }! Перезапуск раунда...
 game-ticker-start-round-invalid-map = Выбранная карта { $map } не подходит для игрового режима { $mode }. Игровой режим может не функционировать как задумано...
 game-ticker-unknown-role = Неизвестный
-game-ticker-delay-start = Начало раунда было отложено на { $seconds } секунд.
-game-ticker-pause-start = Начало раунда было приостановлено.
-game-ticker-pause-start-resumed = Отсчёт начала раунда возобновлён.
-game-ticker-player-join-game-message = Добро пожаловать на Космическую Станцию 14! Если вы играете впервые, обязательно нажмите ESC на клавиатуре и прочитайте правила игры, а также не бойтесь просить помощи в "Админ помощь".
-game-ticker-get-info-text =
-    Привет и добро пожаловать в [color=white]Space Station 14![/color]
-    Текущий раунд: [color=white]#{ $roundId }[/color]
+game-ticker-delay-start = Начало смены было отложено на { $seconds } секунд.
+game-ticker-pause-start = Начало смены было приостановлено.
+game-ticker-pause-start-resumed = Отсчёт начала смены возобновлён.
+game-ticker-player-join-game-message = Добро пожаловать на Project Utopia 14! ВАЖНО! Если вы играете на нашем сервере впервые, обязательно прочтите правила и сюжет. Это необходимо для корректной отыгровки повышенного РП. Подробнее вы можете узнать в нашем дискорде
+game-ticker-get-info-text = [color=white]!Обнаружен беженец![/color] Добро пожаловать на - [color=pink]Project Utopia 14![/color]
+    Номер текущей смены: [color=white]#{ $roundId }[/color]
     Текущее количество игроков: [color=white]{ $playerCount }[/color]
     Текущая карта: [color=white]{ $mapName }[/color]
-    Текущий режим игры: [color=white]{ $gmTitle }[/color]
-    >[color=yellow]{ $desc }[/color]
-game-ticker-get-info-preround-text =
-    Привет и добро пожаловать в [color=white]Space Station 14![/color]
+    Текущий режим игры: [color=red]{ $gmTitle }[/color]
+    >[color=white]{ $desc }[/color]
+game-ticker-get-info-preround-text = Добро пожаловать на [color=pink]Project Utopia 14![/color]
     Текущий раунд: [color=white]#{ $roundId }[/color]
     Текущее количество игроков: [color=white]{ $playerCount }[/color] ([color=white]{ $readyCount }[/color] { $readyCount ->
         [one] готов
@@ -34,12 +32,12 @@ player-first-join-message = Игрок { $name } зашёл на сервер в
 player-leave-message = Игрок { $name } вышел!
 latejoin-arrival-announcement =
     { $character } ({ $job }) { GENDER($entity) ->
-        [male] прибыл
-        [female] прибыла
-        [epicene] прибыли
-       *[neuter] прибыло
-    } на станцию!
-latejoin-arrival-announcement-special = { $job } { $character } на палубе!
+        [male] пробудился..
+        [female] пробудилась..
+        [epicene] пробудились..
+       *[neuter] пробудилось..
+    } на станции!
+latejoin-arrival-announcement-special = Внимание! { $job } { $character } приступает к работе!
 latejoin-arrival-sender = Станции
 latejoin-arrivals-direction = Вскоре прибудет шаттл, который доставит вас на станцию.
 latejoin-arrivals-direction-time = Шаттл, который доставит вас на станцию, прибудет через { $time }.

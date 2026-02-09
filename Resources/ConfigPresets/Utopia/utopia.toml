@@ -1,0 +1,50 @@
+# Пресет для конфигурации сервера
+
+[game]
+hostname = "🕋 PROJECT UTOPIA 🕋✅[TTS][HRP]"
+desc = "Погрузитесь в мрачную антиутопичную атмосферу проекта Утопии!.\n🔮 Сервер основан на сборке WizardStation с внесёнными модификациями и дополнениями!\n🔮 На сервере приветствуются повышенные требования к RP.\n🔮 Имеется своя поддержка TTS (Text-To-Speech).\n💡 Подробнее о проекте узнайте в нашем дискорде!"
+maxplayers = 50
+soft_max_players = 30
+lobbyenabled     = true
+map_rotation = true
+
+[infolinks]
+bug_report = "https://discord.gg/HWwzygVsHA"
+discord    = "https://discord.gg/WkQJYJ7Gvh"
+
+[movement]
+mob_pushing = false
+
+[server]
+rules_file = "StandardRuleset"
+lobby_name = "️🕋 PROJECT UTOPIA 🕋✅"
+
+[game.panic_bunker]
+enabled = true
+show_reason = true
+min_account_age = 0
+min_overall_minutes = 0
+deny_vpn = true
+enable_without_admins = true
+disable_with_admins = true
+
+[admin]
+see_own_notes = true
+deadmin_on_join = true
+new_player_threshold = 600
+alert.min_players_sharing_connection = 2
+allow_multi_server_play = false
+
+[vote]
+restart_required_ratio = 0.7
+
+[rules]
+time = 180.0
+
+[status]
+enabled = true
+bind = "38.180.111.229:1212"
+
+[hub]
+advertise = true
+tags = "lang:ru,rp:high,region:ru_r,tts"
