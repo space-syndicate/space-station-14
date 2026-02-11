@@ -92,6 +92,7 @@ jobs:
             --data-urlencode "summary=Update $rel via GitHub Actions" \
             --data-urlencode "text@${file}" \
             --data-urlencode "token=$token" \
+            --data-urlencode "bot=true" \
             --data-urlencode "format=json" \
             "$API" | jq -r '.'
         done
