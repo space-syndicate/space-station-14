@@ -94,7 +94,7 @@ jobs:
             --data-urlencode "token=$token" \
             --data-urlencode "bot=true" \
             --data-urlencode "minor=true" \
-            --data-urlencode "assert=bot" \
+            --data-urlencode "tags=github-actions" \
             --data-urlencode "format=json" \
             "$API" | jq -r '.'
         done
