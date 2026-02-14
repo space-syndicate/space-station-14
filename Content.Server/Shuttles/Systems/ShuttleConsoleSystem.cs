@@ -22,6 +22,9 @@ using Robust.Shared.Map;
 using Robust.Shared.Utility;
 using Content.Shared.UserInterface;
 using Robust.Shared.Prototypes;
+using Content.Shared.Projectiles; // #SB AndreyCamper
+using Robust.Shared.Maths; // #SB AndreyCamper
+using Content.Shared.Weapons.Hitscan.Components; // #SB AndreyCamper
 
 namespace Content.Server.Shuttles.Systems;
 
@@ -39,10 +42,15 @@ public sealed partial class ShuttleConsoleSystem : SharedShuttleConsoleSystem
     [Dependency] private readonly UserInterfaceSystem _ui = default!;
     [Dependency] private readonly SharedContentEyeSystem _eyeSystem = default!;
 
+    private static readonly ProtoId<TagPrototype> RadarVisibleTag = "RadarVisible"; // #SB AndreyCamper
+    private static readonly ProtoId<TagPrototype> RadarVisibleSmallTag = "RadarVisibleSmall"; // #SB AndreyCamper
+    private static readonly ProtoId<TagPrototype> RadarVisibleRectTag = "RadarVisibleRect"; // #SB AndreyCamper
     private EntityQuery<MetaDataComponent> _metaQuery;
     private EntityQuery<TransformComponent> _xformQuery;
 
     private readonly HashSet<Entity<ShuttleConsoleComponent>> _consoles = new();
+
+    private readonly HashSet<EntityUid> _activeRadarConsoles = new(); // #SB AndreyCamper Список для оптимизации (чтобы помнить, кому слать очистку экрана)
 
     private static readonly ProtoId<TagPrototype> CanPilotTag = "CanPilot";
 
@@ -270,7 +278,15 @@ public sealed partial class ShuttleConsoleSystem : SharedShuttleConsoleSystem
         }
         else
         {
-            navState = new NavInterfaceState(0f, null, null, new Dictionary<NetEntity, List<DockingPortState>>());
+            // #SB AndreyCamper ИСПРАВЛЕНИЕ: Добавлен список лазеров в конец конструктора
+            navState = new NavInterfaceState(
+                0f,
+                null,
+                null,
+                new Dictionary<NetEntity, List<DockingPortState>>(),
+                new List<(NetCoordinates, Angle, byte)>(),
+                new List<(NetCoordinates, Angle, float, byte)>()); // Лазеры
+
             mapState = new ShuttleMapInterfaceState(
                 FTLState.Invalid,
                 default,
@@ -305,6 +321,90 @@ public sealed partial class ShuttleConsoleSystem : SharedShuttleConsoleSystem
         foreach (var (uid, comp) in toRemove)
         {
             RemovePilot(uid, comp);
+        }
+
+        var consoleQuery = EntityQueryEnumerator<ShuttleConsoleComponent, RadarConsoleComponent, TransformComponent>();
+
+        while (consoleQuery.MoveNext(out var uid, out var shuttleComp, out var radar, out var xform))
+        {
+            // Если интерфейс закрыт, ничего не делаем
+            if (!_ui.IsUiOpen(uid, ShuttleConsoleUiKey.Key))
+            {
+                _activeRadarConsoles.Remove(uid);
+                continue;
+            }
+
+            // 1. Ищем пули
+            var projectiles = new List<(NetCoordinates, Angle, byte)>();
+
+            var mapId = xform.MapID;
+            var centerPos = _transform.GetWorldPosition(xform);
+            var rangeSquared = radar.MaxRange * radar.MaxRange;
+
+            var projQuery = EntityManager.EntityQueryEnumerator<ProjectileComponent, MetaDataComponent, TransformComponent>();
+            while (projQuery.MoveNext(out var projUid, out _, out var meta, out var projXform))
+            {
+                // Проверяем тег
+                byte type = 0;
+                if (_tags.HasTag(projUid, RadarVisibleRectTag))
+                {
+                    type = 2; // Rect
+                }
+                else if (_tags.HasTag(projUid, RadarVisibleSmallTag))
+                {
+                    type = 1; // Small
+                }
+                else if (_tags.HasTag(projUid, RadarVisibleTag))
+                {
+                    type = 0; // Default
+                }
+                else
+                {
+                    continue; // Skip
+                }
+
+                if (projXform.MapID != mapId)
+                    continue;
+                if ((_transform.GetWorldPosition(projXform) - centerPos).LengthSquared() > rangeSquared)
+                    continue;
+
+                // Добавляем (Координаты, Угол)
+                projectiles.Add((GetNetCoordinates(projXform.Coordinates), projXform.LocalRotation, type));
+            }
+
+            // 2. LASERS (Новый подход через Компонент)
+            var lasers = new List<(NetCoordinates, Angle, float, byte)>();
+
+            // Ищем сущности, у которых есть наш компонент данных
+            var laserQuery = EntityManager.EntityQueryEnumerator<RadarLaserVisualsComponent, TransformComponent>();
+
+            while (laserQuery.MoveNext(out var _, out var visuals, out var lXform))
+            {
+                if (lXform.MapID != mapId) continue;
+                if ((_transform.GetWorldPosition(lXform) - centerPos).LengthSquared() > rangeSquared) continue;
+
+                // Читаем данные напрямую из компонента!
+                // Никаких Transform.Scale и никаких Vector2.
+                float length = visuals.Length;
+                Angle angle = visuals.Angle;
+                byte type = visuals.Type;
+
+                lasers.Add((GetNetCoordinates(lXform.Coordinates), angle, length, type));
+            }
+
+            // 2. Отправляем сообщение
+            if (projectiles.Count > 0 || lasers.Count > 0)
+            {
+                _ui.ServerSendUiMessage(uid, ShuttleConsoleUiKey.Key, new RadarProjectileMessage(projectiles, lasers));
+                _activeRadarConsoles.Add(uid);
+            }
+            else if (_activeRadarConsoles.Contains(uid))
+            {
+                // Если снаряды исчезли, шлем пустой список 1 раз
+                _ui.ServerSendUiMessage(uid, ShuttleConsoleUiKey.Key, new RadarProjectileMessage(projectiles, lasers));
+                _activeRadarConsoles.Remove(uid);
+            }
+            // #SB AndreyCamper end
         }
     }
 
@@ -382,32 +482,77 @@ public sealed partial class ShuttleConsoleSystem : SharedShuttleConsoleSystem
     /// <summary>
     /// Specific for a particular shuttle.
     /// </summary>
-    public NavInterfaceState GetNavState(Entity<RadarConsoleComponent?, TransformComponent?> entity, Dictionary<NetEntity, List<DockingPortState>> docks)
+    public NavInterfaceState GetNavState(Entity<RadarConsoleComponent?, TransformComponent?> entity, Dictionary<NetEntity, List<DockingPortState>> docks,
+        List<(NetCoordinates, Angle, byte)>? projectiles = null, // #SB AndreyCamper
+        List<(NetCoordinates, Angle, float, byte)>? lasers = null) // #SB AndreyCamper
     {
+        if (projectiles == null) projectiles = new List<(NetCoordinates, Angle, byte)>(); // #SB AndreyCamper
+        if (lasers == null) lasers = new List<(NetCoordinates, Angle, float, byte)>(); // #SB AndreyCamper
         if (!Resolve(entity, ref entity.Comp1, ref entity.Comp2))
-            return new NavInterfaceState(SharedRadarConsoleSystem.DefaultMaxRange, null, null, docks);
+            return new NavInterfaceState(SharedRadarConsoleSystem.DefaultMaxRange, null, null, docks, projectiles, lasers); // #SB AndreyCamper
 
         return GetNavState(
             entity,
             docks,
             entity.Comp2.Coordinates,
-            entity.Comp2.LocalRotation);
+            entity.Comp2.LocalRotation, // #SB AndreyCamper
+            projectiles, // #SB AndreyCamper
+            lasers); // #SB AndreyCamper
     }
 
     public NavInterfaceState GetNavState(
         Entity<RadarConsoleComponent?, TransformComponent?> entity,
         Dictionary<NetEntity, List<DockingPortState>> docks,
         EntityCoordinates coordinates,
-        Angle angle)
-    {
+        Angle angle,
+        List<(NetCoordinates, Angle, byte)>? projectiles = null, // #SB AndreyCamper
+        List<(NetCoordinates, Angle, float, byte)>? lasers = null) // #SB AndreyCamper
+{
+        // #SB AndreyCamper start Если список не передан извне (из RadarConsole), ищем сами
+        if (projectiles == null) projectiles = new List<(NetCoordinates, Angle, byte)>();
+        if (lasers == null) lasers = new List<(NetCoordinates, Angle, float, byte)>();
+        {
+            projectiles = new List<(NetCoordinates, Angle, byte)>();
+
+            var mapId = _transform.GetMapId(coordinates);
+            var centerPos = _transform.ToMapCoordinates(coordinates).Position;
+            var range = entity.Comp1?.MaxRange ?? SharedRadarConsoleSystem.DefaultMaxRange;
+            var rangeSquared = range * range;
+
+            var query = EntityManager.EntityQueryEnumerator<ProjectileComponent, TransformComponent>();
+            while (query.MoveNext(out var uid, out _, out var xform))
+            {
+                // Используем проверку тега, как в Update
+                byte type = 0;
+                if (_tags.HasTag(uid, RadarVisibleRectTag))
+                    type = 2; // Rect
+                else if (_tags.HasTag(uid, RadarVisibleSmallTag))
+                    type = 1; // Small
+                else if (_tags.HasTag(uid, RadarVisibleTag))
+                    type = 0; // Default
+                else
+                    continue;
+
+                if (xform.MapID != mapId)
+                    continue;
+                if ((_transform.GetWorldPosition(xform) - centerPos).LengthSquared() > rangeSquared)
+                    continue;
+
+                projectiles.Add((GetNetCoordinates(xform.Coordinates), xform.LocalRotation, type));
+            }
+        }
+        // #SB AndreyCamper end
+
         if (!Resolve(entity, ref entity.Comp1, ref entity.Comp2))
-            return new NavInterfaceState(SharedRadarConsoleSystem.DefaultMaxRange, GetNetCoordinates(coordinates), angle, docks);
+            return new NavInterfaceState(SharedRadarConsoleSystem.DefaultMaxRange, GetNetCoordinates(coordinates), angle, docks, projectiles, lasers);
 
         return new NavInterfaceState(
             entity.Comp1.MaxRange,
             GetNetCoordinates(coordinates),
             angle,
-            docks);
+            docks, // #SB AndreyCamper
+            projectiles, // #SB AndreyCamper
+            lasers); // #SB AndreyCamper
     }
 
     /// <summary>

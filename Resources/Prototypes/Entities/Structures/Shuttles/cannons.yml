@@ -93,7 +93,7 @@
             - PowerCell
             - PowerCellSmall
   - type: BatteryAmmoProvider
-    proto: RedLightLaser
+    proto: RedLightShuttleLaser #SB AndreyCamper
     fireCost: 50
 
 - type: entity
@@ -409,3 +409,4 @@
   - type: DeviceLinkSink
     ports:
     - Trigger
+

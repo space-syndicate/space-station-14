@@ -1,4 +1,30 @@
 # Used to animate the hitscan effects because effectsystem doesn't support it
+
+#SB AndreyCamper start
+- type: entity
+  id: RadarLaserMarker
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: TimedDespawn
+    lifetime: 0.1
+  - type: Transform
+  - type: Tag
+    tags:
+      - RadarVisibleLaser
+
+- type: entity
+  id: RadarLaserMarkerHeavy
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: TimedDespawn
+    lifetime: 0.3
+  - type: Transform
+  - type: Tag
+    tags:
+      - RadarVisibleLaserHeavy
+
+#SB AndreyCamper end
+
 - type: entity
   id: HitscanEffect
   categories: [ HideSpawnMenu ]
@@ -46,6 +72,22 @@
     damage:
       types:
         Heat: 7
+
+#SB AndreyCamper start
+- type: entity
+  parent: BasicHitscan
+  id: RedLightShuttleLaser
+  name: red light laser ray
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: HitscanBasicDamage
+    damage:
+      types:
+        Heat: 7
+  - type: Tag
+    tags:
+      - CreateRadarMarker
+#SB AndreyCamper end
 
 - type: entity
   parent: BasicHitscan
@@ -167,6 +209,9 @@
     impactFlash:
       sprite: Objects/Weapons/Guns/Projectiles/projectiles.rsi
       state: impact_beam_heavy2
+  - type: Tag
+    tags:
+      - CreateRadarMarkerHeavy #SB AndreyCamper
 
 - type: entity
   parent: BasicHitscan

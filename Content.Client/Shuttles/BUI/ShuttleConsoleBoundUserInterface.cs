@@ -81,4 +81,21 @@ public sealed class ShuttleConsoleBoundUserInterface : BoundUserInterface
 
         _window?.UpdateState(Owner, cState);
     }
+// #SB AndreyCamper start
+    protected override void ReceiveMessage(BoundUserInterfaceMessage message)
+    {
+        base.ReceiveMessage(message);
+
+        // Если пришло наше новое сообщение с пулями
+        if (message is RadarProjectileMessage projMsg)
+        {
+        // Передаем его в окно -> в NavControl
+        // (При условии, что _window это ShuttleConsoleWindow)
+        if (_window is { } window)
+        {
+            window.UpdateRadarObjects(projMsg.Projectiles, projMsg.Lasers);
+        }
+        }
+}
+// #SB AndreyCamper end
 }

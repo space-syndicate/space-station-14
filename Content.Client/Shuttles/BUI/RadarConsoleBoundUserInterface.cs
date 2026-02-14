@@ -32,4 +32,15 @@ public sealed class RadarConsoleBoundUserInterface : BoundUserInterface
 
         _window?.UpdateState(cState.State);
     }
+    // #SB AndreyCamper start
+	protected override void ReceiveMessage(BoundUserInterfaceMessage message)
+    {
+        base.ReceiveMessage(message);
+
+        if (message is RadarProjectileMessage projMsg)
+        {
+            _window?.UpdateRadarObjects(projMsg.Projectiles, projMsg.Lasers);
+        }
+    }
+    // #SB AndreyCamper end
 }

@@ -146,4 +146,14 @@ public sealed partial class ShuttleConsoleWindow : FancyWindow,
         MapContainer.UpdateState(cState.MapState);
         DockContainer.UpdateState(coordinates?.EntityId, cState.DockState);
     }
+    // #SB AndreyCamper start
+	public void UpdateRadarObjects(List<(NetCoordinates, Angle, byte)> projectiles,
+        List<(NetCoordinates, Angle, float, byte)> lasers)
+    {
+        if (NavContainer != null)
+        {
+            NavContainer.UpdateProjectiles(projectiles, lasers);
+        }
+	}
+    // #SB AndreyCamper end
 }

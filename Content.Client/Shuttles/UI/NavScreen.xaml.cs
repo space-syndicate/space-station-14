@@ -59,6 +59,14 @@ public sealed partial class NavScreen : BoxContainer
         NavRadar.UpdateState(scc);
     }
 
+    // #SB AndreyCamper start
+    public void UpdateProjectiles(List<(NetCoordinates, Angle, byte)> projectiles,
+        List<(NetCoordinates, Angle, float, byte)> lasers)
+	{
+    NavRadar.UpdateRadarObjects(projectiles, lasers);
+	}
+    // #SB AndreyCamper end
+
     public void SetMatrix(EntityCoordinates? coordinates, Angle? angle)
     {
         _shuttleEntity = coordinates?.EntityId;

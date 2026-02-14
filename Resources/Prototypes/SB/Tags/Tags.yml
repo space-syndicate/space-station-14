@@ -1,0 +1,17 @@
+﻿#SB AndreyCamper
+- type: Tag
+  id: RadarVisible
+- type: Tag
+  id: RadarVisibleSmall
+- type: Tag
+  id: RadarVisibleRect
+#Lasers
+- type: Tag
+  id: RadarVisibleLaser       # Тэг, который будет висеть на мелком маркере
+- type: Tag
+  id: RadarVisibleLaserHeavy  # Тэг, который будет висеть на тяжелом маркере
+#Projectiles
+- type: Tag
+  id: CreateRadarMarker       # Вешаем на обычную лазерную пушку
+- type: Tag
+  id: CreateRadarMarkerHeavy  # Вешаем на шаттловую пушку (RedShuttleLaser)

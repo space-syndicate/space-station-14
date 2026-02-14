@@ -92,7 +92,7 @@
     soundHit:
       path: /Audio/Weapons/Guns/Hits/bullet_hit.ogg
   - type: TimedDespawn
-    lifetime: 10
+    lifetime: 6 #SB AndreyCamper
 
 - type: entity
   id: BaseBulletTrigger # Trigger-on-collide bullets
@@ -811,6 +811,11 @@
   parent: BaseBulletTrigger
   categories: [ HideSpawnMenu ]
   components:
+#SB AndreyCamper start
+  - type: Tag
+    tags:
+    - RadarVisible
+#SB AndreyCamper end
   - type: Sprite
     sprite: Objects/Weapons/Guns/Projectiles/projectiles2.rsi
     layers:
@@ -833,6 +838,11 @@
   parent: BaseBulletTrigger
   categories: [ HideSpawnMenu ]
   components:
+#SB AndreyCamper start
+  - type: Tag
+    tags:
+    - RadarVisible
+#SB AndreyCamper end
   - type: Sprite
     sprite: Objects/Weapons/Guns/Projectiles/projectiles2.rsi
     layers:
@@ -855,15 +865,33 @@
   parent: BaseBullet
   categories: [ HideSpawnMenu ]
   components:
+#SB AndreyCamper start
+  - type: Tag
+    tags:
+    - RadarVisible
+#SB AndreyCamper end
   - type: Sprite
     sprite: Objects/Weapons/Guns/Projectiles/projectiles2.rsi
     layers:
       - state: grenade
+#SB AndreyCamper start
+  - type: Fixtures
+    fixtures:
+      projectile:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.1,-0.1,0.1,0.1"
+        hard: true
+        mask:
+        - Impassable
+        - BulletImpassable
+#SB AndreyCamper end
   - type: Projectile
     deleteOnCollide: false
     damage:
       types:
         Blunt: 1
+        Structural: 60 #SB AndreyCamper
     soundHit:
       path: /Audio/Effects/gen_hit.ogg
   - type: StaminaDamageOnCollide
@@ -875,6 +903,11 @@
   parent: BaseBulletTrigger
   categories: [ HideSpawnMenu ]
   components:
+#SB AndreyCamper start
+  - type: Tag
+    tags:
+    - RadarVisible
+#SB AndreyCamper end
   - type: Sprite
     sprite: Objects/Weapons/Guns/Projectiles/projectiles2.rsi
     layers:
@@ -893,6 +926,11 @@
   parent: BaseBulletTrigger
   categories: [ HideSpawnMenu ]
   components:
+#SB AndreyCamper start
+  - type: Tag
+    tags:
+    - RadarVisible
+#SB AndreyCamper end
   - type: Sprite
     sprite: Objects/Weapons/Guns/Projectiles/projectiles2.rsi
     layers:
@@ -909,6 +947,11 @@
   parent: BaseBulletTrigger
   categories: [ HideSpawnMenu ]
   components:
+#SB AndreyCamper start
+  - type: Tag
+    tags:
+    - RadarVisible
+#SB AndreyCamper end
   - type: Sprite
     sprite: Objects/Weapons/Guns/Projectiles/projectiles2.rsi
     layers:
@@ -934,6 +977,11 @@
   name: cleanade grenade round
   categories: [ HideSpawnMenu ]
   components:
+#SB AndreyCamper start
+  - type: Tag
+    tags:
+    - RadarVisible
+#SB AndreyCamper end
   - type: Sprite
     sprite: Objects/Weapons/Guns/Projectiles/projectiles2.rsi
     layers:
@@ -963,6 +1011,11 @@
   parent: BaseBulletTrigger
   categories: [ HideSpawnMenu ]
   components:
+#SB AndreyCamper start
+  - type: Tag
+    tags:
+    - RadarVisible
+#SB AndreyCamper end
   - type: Sprite
     sprite: Objects/Weapons/Guns/Projectiles/projectiles2.rsi
     layers:
@@ -1071,6 +1124,11 @@
   parent: BaseBulletTrigger
   categories: [ HideSpawnMenu ]
   components:
+#SB AndreyCamper start
+  - type: Tag
+    tags:
+    - RadarVisible
+#SB AndreyCamper end
   - type: Sprite
     sprite: Objects/Weapons/Guns/Projectiles/projectiles2.rsi
     layers:

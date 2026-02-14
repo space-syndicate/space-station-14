@@ -2,6 +2,7 @@ using System.Numerics;
 using Content.Shared.Administration.Logs;
 using Content.Shared.Damage.Components;
 using Content.Shared.Database;
+using Content.Shared.Tag; // #SB AndreyCamper
 using Content.Shared.Weapons.Hitscan.Components;
 using Content.Shared.Weapons.Hitscan.Events;
 using Content.Shared.Weapons.Ranged.Systems;
@@ -11,6 +12,7 @@ using Robust.Shared.Physics;
 using Robust.Shared.Physics.Systems;
 using Robust.Shared.Player;
 using Robust.Shared.Utility;
+using Robust.Shared.Network; // #SB AndreyCamper
 
 namespace Content.Shared.Weapons.Hitscan.Systems;
 
@@ -20,6 +22,8 @@ public sealed class HitscanBasicRaycastSystem : EntitySystem
     [Dependency] private readonly SharedContainerSystem _container = default!;
     [Dependency] private readonly ISharedAdminLogManager _log = default!;
     [Dependency] private readonly SharedTransformSystem _transform = default!;
+    [Dependency] private readonly TagSystem _tags = default!; // #SB AndreyCamper
+    [Dependency] private readonly INetManager _net = default!; // #SB AndreyCamper
 
     private EntityQuery<HitscanBasicVisualsComponent> _visualsQuery;
 
@@ -54,6 +58,35 @@ public sealed class HitscanBasicRaycastSystem : EntitySystem
         // Do visuals without an event. They should always happen and putting it on the attempt event is weird!
         // If more stuff gets added here, it should probably be turned into an event.
         FireEffects(args.FromCoordinates, distanceTried, args.ShotDirection.ToAngle(), ent.Owner);
+
+        // #SB AndreyCamper start
+        if (_net.IsServer)
+        {
+            byte? markerType = null;
+
+            if (_tags.HasTag(ent, "CreateRadarMarkerHeavy"))
+                markerType = 1; // Heavy
+            else if (_tags.HasTag(ent, "CreateRadarMarker"))
+                markerType = 0; // Normal
+
+            if (markerType != null)
+            {
+                // Спавним ПУСТУЮ сущность (маркер).
+                // В YAML ей нужен только TimedDespawn и Transform. Тэги там больше не нужны.
+                var marker = Spawn("RadarLaserMarker", args.FromCoordinates);
+
+                // Добавляем наш компонент-контейнер данных
+                var visuals = EnsureComp<RadarLaserVisualsComponent>(marker);
+
+                // Записываем данные
+                visuals.Length = distanceTried;
+                visuals.Angle = args.ShotDirection.ToAngle();
+                visuals.Type = markerType.Value;
+
+                // Transform вообще не трогаем (кроме позиции спавна, которая ставится автоматически)
+            }
+        }
+        // #SB AndreyCamper end
 
         // Admin logging
         if (result?.HitEntity != null)

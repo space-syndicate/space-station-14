@@ -14,6 +14,7 @@ using Robust.Shared.Map.Components;
 using Robust.Shared.Physics;
 using Robust.Shared.Physics.Components;
 using Robust.Shared.Utility;
+using Content.Shared.Projectiles; // #SB AndreyCamper
 
 namespace Content.Client.Shuttles.UI;
 
@@ -37,6 +38,9 @@ public sealed partial class ShuttleNavControl : BaseShuttleControl
     private Angle? _rotation;
 
     private Dictionary<NetEntity, List<DockingPortState>> _docks = new();
+
+    private List<(NetCoordinates Coords, Angle Angle, byte Type)> _projectiles = new(); // #SB AndreyCamper
+    private List<(NetCoordinates Coords, Angle Angle, float Length, byte Type)> _lasers = new(); // #SB AndreyCamper
 
     public bool ShowIFF { get; set; } = true;
     public bool ShowDocks { get; set; } = true;
@@ -103,6 +107,15 @@ public sealed partial class ShuttleNavControl : BaseShuttleControl
         var coords = _coordinates.Value.Offset(relativeWorldPos);
         return coords;
     }
+
+    // #SB AndreyCamper start Вызывается каждый тик из сообщения
+    public void UpdateRadarObjects(List<(NetCoordinates, Angle, byte)> projectiles,
+        List<(NetCoordinates, Angle, float, byte)> lasers)
+    {
+        _projectiles = projectiles;
+        _lasers = lasers;
+    }
+    // #SB AndreyCamper end
 
     public void UpdateState(NavInterfaceState state)
     {
@@ -289,8 +302,118 @@ public sealed partial class ShuttleNavControl : BaseShuttleControl
                 handle.DrawCircle(p, 5, Color.ToSrgb(Color.Cyan), true);
             }
         }
-
+        // #SB AndreyCamper start
+	    DrawProjectiles(handle, worldToShuttle, shuttleToView, xform.MapID);
+	    DrawLasers(handle, worldToShuttle, shuttleToView, xform.MapID); // Рисуем лазеры
     }
+
+    private void DrawProjectiles(DrawingHandleScreen handle, Matrix3x2 worldToShuttle, Matrix3x2 shuttleToView, MapId mapId)
+    {
+        var baseSize = Math.Max(1f * MinimapScale, 2f * UIScale);
+
+        foreach (var (netCoord, worldAngle, type) in _projectiles)
+        {
+            var entityCoords = EntManager.GetCoordinates(netCoord);
+
+            if (entityCoords.GetMapId(EntManager) != mapId)
+                continue;
+
+            var projectileWorldPos = _transform.ToMapCoordinates(entityCoords).Position;
+            var projectilePosView = Vector2.Transform(projectileWorldPos, worldToShuttle * shuttleToView);
+
+            var dirVectorWorld = worldAngle.ToVec();
+            var dirVectorScreen = Vector2.TransformNormal(dirVectorWorld, worldToShuttle * shuttleToView);
+            var screenAngle = dirVectorScreen.ToAngle();
+
+            var rotationMatrix = Matrix3x2.CreateRotation((float)screenAngle.Theta);
+
+            // #SB AndreyCamper Shape Logic
+            Vector2[] verts = new Vector2[4];
+            float w, h;
+
+            if (type == 1) // Small
+            {
+                var size = baseSize / 2f; // Two times smaller
+                var half = size / 2f;
+                verts[0] = new Vector2(-half, -half);
+                verts[1] = new Vector2(half, -half);
+                verts[2] = new Vector2(half, half);
+                verts[3] = new Vector2(-half, half);
+            }
+            else if (type == 2) // Rect
+            {
+                // Rectangular (Long along direction)
+                h = baseSize / 2f; // Length (actually half-length from center)
+                w = baseSize / 4f; // Width (half-width from center)
+                // Assuming X is forward
+                verts[0] = new Vector2(-w, -h);
+                verts[1] = new Vector2(w, -h);
+                verts[2] = new Vector2(w, h);
+                verts[3] = new Vector2(-w, h);
+            }
+            else // Default (0)
+            {
+                var half = baseSize / 2f;
+                verts[0] = new Vector2(-half, -half);
+                verts[1] = new Vector2(half, -half);
+                verts[2] = new Vector2(half, half);
+                verts[3] = new Vector2(-half, half);
+            }
+
+            var rotatedVerts = new Vector2[4];
+            for (var i = 0; i < 4; i++)
+            {
+                var rotated = Vector2.Transform(verts[i], rotationMatrix);
+                rotatedVerts[i] = rotated + projectilePosView;
+            }
+
+            handle.DrawPrimitives(DrawPrimitiveTopology.TriangleFan, rotatedVerts, Color.White);
+        }
+    }
+
+    private void DrawLasers(DrawingHandleScreen handle, Matrix3x2 worldToShuttle, Matrix3x2 shuttleToView, MapId mapId)
+    {
+        foreach (var (netCoord, worldAngle, length, type) in _lasers) // <-- Деконструкция теперь из 4 элементов
+        {
+            var entityCoords = EntManager.GetCoordinates(netCoord);
+            if (entityCoords.GetMapId(EntManager) != mapId) continue;
+
+            // Логика ширины в зависимости от типа!
+        // Если Type == 1 (Heavy), делаем жирнее
+        var baseSize = Math.Max(1f * MinimapScale, 2f * UIScale);
+        var baseWidth = (type == 1) ? 1f : 0.5f;
+        var width = baseWidth * baseSize;
+
+        var laserStartWorld = _transform.ToMapCoordinates(entityCoords).Position;
+        var laserStartView = Vector2.Transform(laserStartWorld, worldToShuttle * shuttleToView);
+
+        var dirVectorWorld = worldAngle.ToVec();
+        var dirVectorScreen = Vector2.TransformNormal(dirVectorWorld, worldToShuttle * shuttleToView);
+        var screenAngle = dirVectorScreen.ToAngle();
+        var rotationMatrix = Matrix3x2.CreateRotation((float)screenAngle.Theta);
+
+        float screenLength = length * MinimapScale;
+        float halfWidth = width / 2f;
+
+        Vector2[] verts = new Vector2[4];
+        verts[0] = new Vector2(0, -halfWidth);
+        verts[1] = new Vector2(screenLength, -halfWidth);
+        verts[2] = new Vector2(screenLength, halfWidth);
+        verts[3] = new Vector2(0, halfWidth);
+
+        var rotatedVerts = new Vector2[4];
+        for (var i = 0; i < 4; i++)
+        {
+            rotatedVerts[i] = Vector2.Transform(verts[i], rotationMatrix) + laserStartView;
+        }
+
+        // Цвет тоже можно менять от типа
+        var color = Color.White; // (type == 1) ? Color.Red.WithAlpha(0.8f) : Color.Red.WithAlpha(0.5f);
+
+        handle.DrawPrimitives(DrawPrimitiveTopology.TriangleFan, rotatedVerts, color);
+    }
+}
+    // #SB AndreyCamper end
 
     private void DrawDocks(DrawingHandleScreen handle, EntityUid uid, Matrix3x2 gridToView)
     {
