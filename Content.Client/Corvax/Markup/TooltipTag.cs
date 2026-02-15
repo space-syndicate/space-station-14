@@ -1,6 +1,7 @@
 using System.Diagnostics.CodeAnalysis;
 using Robust.Client.UserInterface;
 using Robust.Client.UserInterface.Controls;
+using Robust.Client.UserInterface.CustomControls;
 using Robust.Client.UserInterface.RichText;
 using Robust.Shared.Utility;
 
@@ -8,6 +9,8 @@ namespace Content.Client.Corvax.Markup;
 
 public sealed class TooltipTag : IMarkupTagHandler
 {
+    private const float TooltipMaxWidth = 500f;
+
     [Dependency] private readonly ILocalizationManager _loc = default!;
 
     public string Name => "tooltip";
@@ -34,8 +37,18 @@ public sealed class TooltipTag : IMarkupTagHandler
         {
             Text = visibleText,
             MouseFilter = Control.MouseFilterMode.Stop,
-            ToolTip = tooltipText,
-            FontColorOverride = Color.LightYellow
+            FontColorOverride = Color.LightYellow,
+            TooltipSupplier = _ =>
+            {
+                var richLabel = new RichTextLabel { MaxWidth = TooltipMaxWidth };
+                richLabel.SetMessage(FormattedMessage.FromMarkupOrThrow(tooltipText));
+
+                var tooltip = new Tooltip();
+                tooltip.GetChild(0).Children.Clear();
+                tooltip.GetChild(0).Children.Add(richLabel);
+
+                return tooltip;
+            }
         };
 
         control = label;
