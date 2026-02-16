@@ -1,4 +1,4 @@
-﻿# Общие СРП
+# Общие СРП
 guidebook-SOP-security-general-must =
     1. Соблюдать все установленные процедуры отдела службы безопасности в рамках своей должности.
     1. Применять меры подавления в отношении нарушителей в соответствии с уровнем угрозы, который они представляют.
@@ -202,7 +202,7 @@ guidebook-SOP-SecurityCadet-prohibited =
     1. Самостоятельно проводить процедуры службы безопасности.
 
 # Процедуры и протоколы
-### Общее положение о вооружении отдела СБ
+## Общее положение о вооружении отдела СБ
 guidebook-SOP-security-procedure-weapons-regulation =
     1. Глава службы безопасности и смотритель заведуют арсеналом: выдавать и принимать вооружение в соответствии с уровнем угроз.
       - По усмотрению главы службы безопасности или смотрителя может быть заказано дополнительное оружие в отделе снабжения и доставлено в арсенал.
@@ -225,6 +225,32 @@ guidebook-SOP-security-procedure-weapons-regulation =
       - Сотрудникам службы безопасности запрещено получать разрешение на ношение оружия.
     1. После понижения кода, сотрудники службы безопасности обязаны сдать неразрешённое в текущий код оружие в арсенал в течение 5 минут.
       - Смотрителю и главе службы безопасности разрешено проводить личный досмотр нижестоящих сотрудников службы безопасности с целью выявления несданного оружия.
+
+### Таблица вооружения
+guidebook-SOP-security-weapons-table-green = [tooltip="guidebook-SOP-security-weapons-tooltip-pistols" text="Пистолеты"], станнер, шоковая дубинка, DT-8 «Терминус», [tooltip="guidebook-SOP-security-weapons-tooltip-melee-list" text="личное холодное оружие"], вспышка, [tooltip="guidebook-SOP-security-weapons-tooltip-special-grenades" text="специальные гранаты"], [tooltip="guidebook-SOP-security-weapons-tooltip-restraints" text="средства ограничения мобильности"], [tooltip="guidebook-SOP-security-weapons-tooltip-standard-armor" text="стандартная броня"], пояс корпоративного дзюдо.
+guidebook-SOP-security-weapons-table-green-2 = [tooltip="guidebook-SOP-security-weapons-tooltip-pistols" text="Пистолеты"], станнер, DT-8 «Терминус», [tooltip="guidebook-SOP-security-weapons-tooltip-melee-list" text="личное холодное оружие"], [tooltip="guidebook-SOP-security-weapons-tooltip-restraints" text="средства ограничения мобильности"], вспышка, [tooltip="guidebook-SOP-security-weapons-tooltip-standard-armor" text="стандартная броня"].
+guidebook-SOP-security-weapons-table-blue = Все вооружение [color=green][bold]зелёного кода[/bold][/color], [tooltip="guidebook-SOP-security-weapons-tooltip-shotguns" text="ружья"], [tooltip="guidebook-SOP-security-weapons-tooltip-laser" text="лазерное вооружение"], станнер-пулемёт, энергетический дробовик, гранатомёт с нелетальными боеприпасами, [tooltip="guidebook-SOP-security-weapons-tooltip-melee" text="холодное оружие"], щиты, [tooltip="guidebook-SOP-security-weapons-tooltip-reinforced" text="усиленное обмундирование"].
+guidebook-SOP-security-weapons-table-red = Любое неконтрабандное вооружение и броня.
+guidebook-SOP-security-weapons-table-gamma = Ограничения на вооружение полностью сняты.
+
+### Tooltip вооружения
+guidebook-SOP-security-weapons-tooltip-pistols = Любые огнестрельные пистолеты (за исключением Абиэль и энергетических).
+guidebook-SOP-security-weapons-tooltip-melee-list =
+    Допустимо ношение личного холодного оружия следующих типов:
+    - Боевой нож;
+    - Телескопическое копьё;
+    - Полимерная дубинка.
+guidebook-SOP-security-weapons-tooltip-special-grenades =
+    Допустимо ношение гранат следующих типов:
+    - Светошумовая;
+    - Слезоточивая;
+    - Травматическая.
+guidebook-SOP-security-weapons-tooltip-restraints = К средствам ограничения мобильности относятся стяжки, наручники, смирительные рубахи, болы.
+guidebook-SOP-security-weapons-tooltip-standard-armor = Сюда включены элементы брони, которые могут быть получены из торговых автоматов и шкафчиков службы безопасности.
+guidebook-SOP-security-weapons-tooltip-shotguns = Любое огнестрельное оружие, использующее ружейные патроны, а также энергетический дробовик.
+guidebook-SOP-security-weapons-tooltip-laser = Сюда включено любое стрелковое оружие, поражающее противника лазерным лучом. Не импульсное!
+guidebook-SOP-security-weapons-tooltip-melee = Любое неконтрабандное оружие ближнего боя: ножи, дубинки и т.д.
+guidebook-SOP-security-weapons-tooltip-reinforced = Включает в себя любую неконтрабандную броню, за исключением скафандров, тяжёлых бронекостюмов и скафандров MOD.
 
 ## Процедуры обыска
 guidebook-SOP-security-procedure-search =

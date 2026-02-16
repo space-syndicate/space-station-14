@@ -1,7 +1,7 @@
 - type: guideEntry
   id: SOP
   name: СРП
-  text: "/ServerInfo/Corvax/Guidebook/SOP/General.xml"
+  text: "/ServerInfo/Corvax/Guidebook/SOP/SOP.xml"
   children:
   - SOPService
   - SOPResearch
@@ -12,7 +12,9 @@
   - SOPCentcomm
   - SOPLegal
   - SOPSecurity
+  - SOPGeneral
 
+# Отделы
 - type: guideEntry
   id: SOPService
   name: Сервистный отдел
@@ -57,3 +59,22 @@
   id: SOPLegal
   name: Юридический департамент
   text: "/ServerInfo/Corvax/Guidebook/SOP/Legal.xml"
+
+# Общее
+- type: guideEntry
+  id: SOPGeneral
+  name: Общее
+  text: "/ServerInfo/Corvax/Guidebook/SOP/General.xml"
+  children:
+  - SOPCodes
+  - SOPEmergencies
+
+- type: guideEntry
+  id: SOPCodes
+  name: Уровни угроз
+  text: "/ServerInfo/Corvax/Guidebook/SOP/Codes.xml"
+
+- type: guideEntry
+  id: SOPEmergencies
+  name: Чрезвычайные ситуации
+  text: "/ServerInfo/Corvax/Guidebook/SOP/Emergencies.xml"

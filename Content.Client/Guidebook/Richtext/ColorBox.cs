@@ -3,6 +3,7 @@ using JetBrains.Annotations;
 using Robust.Client.Graphics;
 using Robust.Client.UserInterface;
 using Robust.Client.UserInterface.Controls;
+using Content.Client.Stylesheets.Palette; // Corvax-Guidebook
 
 namespace Content.Client.Guidebook.Richtext;
 
@@ -40,7 +41,7 @@ public sealed class ColorBox : PanelContainer, IDocumentTag
         if (args.TryGetValue("OutlineColor", out var outlineColor))
             styleBox.BorderColor = Color.FromHex(outlineColor);
         else
-            styleBox.BorderColor = Color.White;
+            styleBox.BorderColor = Palettes.Navy.Text; // Corvax-Guidebook
 
         PanelOverride = styleBox;
 
