@@ -78,15 +78,15 @@ jobs:
           --data-urlencode "format=json" \
           "$API" > /dev/null
 
-        token=$(curl -sS -b "$cookiejar" --data "action=query&meta=tokens&format=json" "$API" | jq -r '.query.tokens.csrftoken')
-
         find "$BASE" -type f -name '*.json' | while IFS= read -r file; do
           rel="${file#$BASE/}"
           rel="$(printf "%s" "$rel" | tr -d '\r\n' | sed 's/:/_/g')"
           page="$ROOT/$rel"
           echo "Uploading $rel → $page"
 
-          resp=$(curl -sS -b "$cookiejar" \
+          token=$(curl -sS -b "$cookiejar" --data "action=query&meta=tokens&format=json" "$API" | jq -r '.query.tokens.csrftoken')
+
+          curl -sS -b "$cookiejar" \
             --data-urlencode "action=edit" \
             --data-urlencode "title=$page" \
             --data-urlencode "summary=Update $rel via GitHub Actions" \
@@ -94,9 +94,7 @@ jobs:
             --data-urlencode "token=$token" \
             --data-urlencode "bot=true" \
             --data-urlencode "minor=true" \
-            --data-urlencode "tags=github-actions" \
+            --data-urlencode "assert=bot" \
             --data-urlencode "format=json" \
-            "$API")
-
-          echo "$resp" | jq -r '.'
+            "$API" | jq -r '.'
         done
