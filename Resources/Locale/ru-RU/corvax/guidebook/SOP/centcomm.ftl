@@ -188,7 +188,6 @@ guidebook-SOP-centcomm-infobox =
     {"[bold]Исключение начальные роли станции[/bold]: офицер синего щита, представитель NanoTrasen. Для них СРП всегда актуально, общие процедуры ЦК не распространяются."}
 
 # Tooltip
-guidebook-SOP-centcomm-tooltip-public-dangerous-crime = К таковым относятся правонарушения тяжести XX3 и выше, а также преступления любой тяжести, связанные с причинением вреда разумным существам или сопротивлением представителям власти.
 guidebook-SOP-centcomm-tooltip-bso-chasing-offenders = Выпускать охраняемую персону за пределы визуального контакта.
 guidebook-SOP-centcomm-tooltip-ntr-nonstandard-conditions =
     1. Прибытия представителей иных корпораций, компаний.
