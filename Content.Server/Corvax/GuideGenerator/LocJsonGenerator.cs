@@ -11,6 +11,18 @@ namespace Content.Server.GuideGenerator;
 
 public static class LocJsonGenerator
 {
+    private static string GetStringSafe(string key)
+    {
+        try
+        {
+            return Loc.GetString(key);
+        }
+        catch
+        {
+            return string.Empty;
+        }
+    }
+
     public static void PublishJson(StreamWriter file)
     {
         var loc = IoCManager.Resolve<ILocalizationManager>();
@@ -74,18 +86,18 @@ public static class LocJsonGenerator
         {
             if (attrs.Count == 0)
             {
-                output[id] = Loc.GetString(id);
+                output[id] = GetStringSafe(id);
             }
             else
             {
                 // _value is the main value of the key.
                 var obj = new Dictionary<string, string?>
                 {
-                    ["_value"] = Loc.GetString(id),
+                    ["_value"] = GetStringSafe(id),
                 };
                 foreach (var attr in attrs.OrderBy(a => a))
                 {
-                    obj[attr] = Loc.GetString($"{id}.{attr}");
+                    obj[attr] = GetStringSafe($"{id}.{attr}");
                 }
                 output[id] = obj;
             }
