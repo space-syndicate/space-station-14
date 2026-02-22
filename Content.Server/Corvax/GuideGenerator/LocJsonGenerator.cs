@@ -120,24 +120,36 @@ public static class LocJsonGenerator
             }
         }
 
-        // Build JSON dictionary using Loc.GetString for main key and for attributes.
+        // Build JSON.
+        string GetValue(string key)
+        {
+            try
+            {
+                return Loc.GetString(key);
+            }
+            catch
+            {
+                return keysValues.TryGetValue(key, out var v) ? v : string.Empty;
+            }
+        }
+
         var output = new Dictionary<string, object?>();
         foreach (var (id, attrs) in keys.OrderBy(k => k.Key))
         {
             if (attrs.Count == 0)
             {
-                output[id] = keysValues.TryGetValue(id, out var value) ? value : string.Empty;
+                output[id] = GetValue(id);
             }
             else
             {
                 // _value is the main value of the key.
                 var obj = new Dictionary<string, string?>
                 {
-                    ["_value"] = keysValues.TryGetValue(id, out var valueMain) ? valueMain : string.Empty,
+                    ["_value"] = GetValue(id),
                 };
                 foreach (var attr in attrs.OrderBy(a => a))
                 {
-                    obj[attr] = keysValues.TryGetValue($"{id}.{attr}", out var valueAttr) ? valueAttr : string.Empty;
+                    obj[attr] = GetValue($"{id}.{attr}");
                 }
                 output[id] = obj;
             }
