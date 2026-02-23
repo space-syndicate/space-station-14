@@ -1,43 +1,25 @@
 <Document>
-  ## Уровень угрозы Желтый: инженерная угроза
-  <FTLTextpart Key="guidebook-SOP-emergencies-yellow-intro"/>
-
-  ### Условия
-  <FTLTextpart Key="guidebook-SOP-emergencies-yellow-conditions"/>
-
-  ### Нормы экипажа
-  <FTLTextpart Key="guidebook-SOP-emergencies-yellow-norms"/>
-
-  ## Уровень угрозы Фиолетовый: биологическая угроза
-  <FTLTextpart Key="guidebook-SOP-emergencies-purple-intro"/>
-
-  ### Условия
-  <FTLTextpart Key="guidebook-SOP-emergencies-purple-conditions"/>
-
-  ### Нормы экипажа
-  <FTLTextpart Key="guidebook-SOP-emergencies-purple-norms"/>
-
-  ## Чрезвычайные ситуации
+  ## Протоколы уровней угроз
   <FTLTextpart Key="guidebook-SOP-emergencies-chs-definition"/>
 
-  ### Критические повреждения станции
+  ## Критические повреждения станции
   <FTLTextpart Key="guidebook-SOP-emergencies-critical-damage"/>
 
-  ### Нападение космического дракона
+  ## Нападение космического дракона
   <FTLTextpart Key="guidebook-SOP-emergencies-dragon"/>
 
-  ### Вторжение ревенанта
+  ## Вторжение ревенанта
   <FTLTextpart Key="guidebook-SOP-emergencies-revenant"/>
 
-  ### Вспышка зомби-вируса
+  ## Вспышка зомби-вируса
   <FTLTextpart Key="guidebook-SOP-emergencies-zombie"/>
 
-  ### Утрата контроля над сингулярностью/теслой
+  ## Утрата контроля над сингулярностью/теслой
   <FTLTextpart Key="guidebook-SOP-emergencies-singularity"/>
 
-  ### Объявление войны
+  ## Объявление войны
   <FTLTextpart Key="guidebook-SOP-emergencies-war"/>
 
-  ### Мятеж на объекте
+  ## Мятеж на объекте
   <FTLTextpart Key="guidebook-SOP-emergencies-mutiny"/>
 </Document>
