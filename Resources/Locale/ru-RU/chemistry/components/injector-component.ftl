@@ -12,8 +12,8 @@ injector-component-inject-mode-name = введение
 injector-component-draw-mode-name = забор
 injector-component-dynamic-mode-name = динамический
 injector-component-mode-changed-text = Выбран режим {$mode}!
-injector-component-transfer-success-message = Вы перемещаете {$amount}ед. в {$target}.
-injector-component-transfer-success-message-self = В перевели {$amount}ед. в себя.
+injector-component-transfer-success-message = Вы переливаете {$amount}ед. в {$target}.
+injector-component-transfer-success-message-self = В переливаете {$amount}ед. в себя.
 injector-component-inject-success-message = Вы ввели {$amount}ед. в {$target}!
 injector-component-inject-success-message-self = Вы вводите {$amount}ед. в себя!
 injector-component-draw-success-message = Вы набираете {$amount}ед. из {$target}.
@@ -30,14 +30,14 @@ injector-component-cannot-toggle-inject-message = Нечего вводить!
 injector-component-cannot-toggle-dynamic-message = Нельзя включить динамический!
 injector-component-empty-message = {CAPITALIZE($injector)} пуст!
 injector-component-blocked-user = Защитное снаряжение мешает инъекции!
-injector-component-blocked-other = Защитное снаряжение {CAPITALIZE(POSS-ADJ($target))} помешало {($user)} сделать инъекцию!
-injector-component-cannot-transfer-message = Вы не можете перевести в {$target}!
-injector-component-cannot-transfer-message-self = Вы не можете перместить в себя!
+injector-component-blocked-other = Защитное снаряжение {CAPITALIZE(POSS-ADJ($target))} помешало {$user} сделать инъекцию!
+injector-component-cannot-transfer-message = Вы не можете перелить в {$target}!
+injector-component-cannot-transfer-message-self = Вы не можете перелить в себя!
 injector-component-cannot-inject-message = Вы не можете сделать инъекцию {$target}!
 injector-component-cannot-inject-message-self = Вы не можете сделать себе инъекцию!
 injector-component-cannot-draw-message = Вы не можете набрать из {$target}!
 injector-component-cannot-draw-message-self = Вы не можете набрать из себя!
-injector-component-ignore-mobs = Этот инъектор может взаимодействовать только с ёмкостями!
+injector-component-ignore-mobs = Возможно взаимодействовать только с ёмкостями!
 
 ## mob-inject doafter messages
 
