@@ -4,3 +4,5 @@ ent-RandomSpawner = спавнер мусор
 ent-RandomSpawner100 = { ent-RandomSpawner }
     .suffix = 100
     .desc = { ent-RandomSpawner.desc }
+ent-RandomBananaPeel90 = спавнер случайный банановая кожура
+    .desc = { ent-MarkerBase.desc }
