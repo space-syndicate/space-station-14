@@ -23,8 +23,11 @@ instruments-component-channels-clear-button = Очистить
 instruments-component-channels-track-names-toggle = Отображать имена треков
 instruments-component-channels-single = { $channel } { $name }
 instruments-component-channels-multi = { $channel } { $name } ({ $other })
+
+
 # SwappableInstrumentComponent
 swappable-instrument-component-style-set = Установить стиль "{ $style }"
+
 instruments-component-menu-midi-channel-acoustic-grand-piano = Акустический рояль
 instruments-component-menu-midi-channel-bright-acoustic-piano = Яркое акустическое фортепиано
 instruments-component-menu-midi-channel-electric-grand-piano = Электрический рояль

@@ -326,6 +326,3 @@ names-reptilian-male-dataset-325 = Зе
 names-reptilian-male-dataset-326 = Зиен
 names-reptilian-male-dataset-327 = Зиеус
 names-reptilian-male-dataset-328 = Зиш
-names-reptilian-male-dataset-329 = Лякуша
-names-reptilian-male-dataset-330 = Дзухаллаг
-names-reptilian-male-dataset-331 = Ге'на

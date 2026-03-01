@@ -1,4 +1,4 @@
-﻿names-vulpkanin-last-dataset-1 = Эбботт
+names-vulpkanin-last-dataset-1 = Эбботт
 names-vulpkanin-last-dataset-2 = Адоетт
 names-vulpkanin-last-dataset-3 = Эгеон
 names-vulpkanin-last-dataset-4 = Эгир

@@ -6,7 +6,6 @@ suit-sensor-mode-vitals = Здоровье
 suit-sensor-mode-cords = Координаты
 
 ## Popups
-
 suit-sensor-mode-state = Датчики костюма: { $mode }
 
 ## Components

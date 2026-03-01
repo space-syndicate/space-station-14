@@ -13,4 +13,3 @@ names-regal-rat-kingdom-dataset-12 = Водосточный
 names-regal-rat-kingdom-dataset-13 = Помойный
 names-regal-rat-kingdom-dataset-14 = Сервисный
 names-regal-rat-kingdom-dataset-15 = Конкретный
-names-regal-rat-kingdom-dataset-16 = Из нержавеющей стали

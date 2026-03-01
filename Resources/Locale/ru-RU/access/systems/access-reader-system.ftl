@@ -1,4 +1,4 @@
-﻿access-reader-unknown-id = Неизвестный
+access-reader-unknown-id = Неизвестный
 access-reader-access-label = [color=yellow]{ $access }[/color]
 access-reader-examination = Обычно доступ ограничен для персонала с доступом уровня { $access }.
 access-reader-examination-functionality-restricted = Доступ уровня { $access } может потребоваться для использования некоторых функций.

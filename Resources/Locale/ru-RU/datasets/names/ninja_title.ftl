@@ -44,5 +44,3 @@ names-ninja-title-dataset-43 = Солидус
 names-ninja-title-dataset-44 = Стальной
 names-ninja-title-dataset-45 = Серебряный
 names-ninja-title-dataset-46 = Поющий
-names-ninja-title-dataset-47 = Снейк
-names-ninja-title-dataset-48 = Змей

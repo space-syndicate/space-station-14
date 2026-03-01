@@ -1,4 +1,4 @@
-﻿names-vulpkanin-male-dataset-1 = Абхарр
+names-vulpkanin-male-dataset-1 = Абхарр
 names-vulpkanin-male-dataset-2 = Адмир
 names-vulpkanin-male-dataset-3 = Алекси
 names-vulpkanin-male-dataset-4 = Альхер

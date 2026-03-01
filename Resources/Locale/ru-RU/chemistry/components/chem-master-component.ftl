@@ -4,7 +4,6 @@ chem-master-component-activate-no-hands = У вас нет рук.
 chem-master-component-cannot-put-entity-message = Вы не можете поместить это в ХимМастер!
 
 ## Bound UI
-
 chem-master-bound-user-interface-title = ХимМастер 4000
 
 ## UI
@@ -34,3 +33,10 @@ chem-master-window-sort-type-none = Сорт. по: Сначала старые
 chem-master-window-sort-type-alphabetical = Сорт. по: По алфавиту
 chem-master-window-sort-type-quantity = Сорт. по: Количество
 chem-master-window-sort-type-latest = Сорт. по: Сначала новые
+chem-master-output-buffer-draw = Buffer
+chem-master-output-beaker-draw = Beaker
+chem-master-window-no-beaker-text = No beaker loaded
+chem-master-window-beaker-empty-text = Beaker Empty
+chem-master-window-beaker-low-text = Not enough solution in beaker
+chem-master-output-source = Packaging source:
+chem-master-no-source = No Source
