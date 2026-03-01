@@ -1,0 +1,52 @@
+<Document>
+  # Общие СРП
+  ### Обязанности отдела снабжения
+  <FTLTextpart Key="guidebook-SOP-cargo-general-must"/>
+
+  ### Права отдела снабжения
+  <FTLTextpart Key="guidebook-SOP-cargo-general-right"/>
+
+  ### Запреты отдела снабжения
+  <FTLTextpart Key="guidebook-SOP-cargo-general-prohibited"/>
+
+  # Должностные СРП
+  ## СРП Квартирмейстера
+  ### Квартирмейстер обязан
+  <FTLTextpart Key="guidebook-SOP-Quartermaster-must"/>
+
+  ### Квартирмейстер имеет право
+  <FTLTextpart Key="guidebook-SOP-Quartermaster-right"/>
+
+  ### Квартирмейстеру запрещено
+  <FTLTextpart Key="guidebook-SOP-Quartermaster-prohibited"/>
+
+  ## СРП Утилизатора
+  ### Утилизатор обязан
+  <FTLTextpart Key="guidebook-SOP-SalvageSpecialist-must"/>
+
+  ### Утилизатор имеет право
+  <FTLTextpart Key="guidebook-SOP-SalvageSpecialist-right"/>
+
+  ### Утилизатору запрещено
+  <FTLTextpart Key="guidebook-SOP-SalvageSpecialist-prohibited"/>
+
+  ## СРП Грузчика
+  ### Грузчик обязан
+  <FTLTextpart Key="guidebook-SOP-CargoTechnician-must"/>
+
+  ### Грузчик имеет право
+  <FTLTextpart Key="guidebook-SOP-CargoTechnician-right"/>
+
+  # Процедуры и протоколы
+  ## Процедура утилизации найденных вещей
+  <FTLTextpart Key="guidebook-SOP-cargo-procedure-salvage-items"/>
+
+  ## Процедуры проведения утилизаторских экспедиций
+  <FTLTextpart Key="guidebook-SOP-cargo-procedure-expeditions"/>
+
+  ## Оформление заказов товаров утилизации
+  <FTLTextpart Key="guidebook-SOP-cargo-procedure-salvage-orders"/>
+
+  ## Техника безопасности отдела снабжения
+  <FTLTextpart Key="guidebook-SOP-cargo-safety"/>
+</Document>

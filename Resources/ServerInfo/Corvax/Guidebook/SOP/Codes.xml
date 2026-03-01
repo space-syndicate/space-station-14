@@ -1,0 +1,140 @@
+<Document>
+
+  ## Протоколы уровней угроз
+  <FTLTextpart Key="guidebook-SOP-codes"/>
+
+  ## Коды угроз
+  <Table Columns="1">
+    <ColorBox Color="#1c5221">
+      <Box HorizontalAlignment="Center" VerticalAlignment="Center" Margin="2">
+        [bold]Уровень угрозы Зеленый: отсутствие угроз[/bold]
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Left" Orientation="Vertical" Margin="8">
+        <FTLTextpart Key="guidebook-SOP-codes-green"/>
+
+        ### Условия
+        <FTLTextpart Key="guidebook-SOP-codes-green-terms"/>
+
+        ### Нормы экипажа
+        <FTLTextpart Key="guidebook-SOP-codes-green-norms"/>
+      </Box>
+    </ColorBox>
+  </Table>
+  <Box Margin="4"></Box>
+  <Table Columns="1">
+    <ColorBox Color="#103461">
+      <Box HorizontalAlignment="Center" VerticalAlignment="Center" Margin="2">
+        [bold]Уровень угрозы Синий: угроза безопасности I у ровня[/bold]
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Left" Orientation="Vertical" Margin="8">
+        <FTLTextpart Key="guidebook-SOP-codes-blue"/>
+
+        ### Условия
+        <FTLTextpart Key="guidebook-SOP-codes-blue-terms"/>
+
+        ### Нормы экипажа
+        <FTLTextpart Key="guidebook-SOP-codes-blue-norms"/>
+      </Box>
+    </ColorBox>
+  </Table>
+  <Box Margin="4"></Box>
+  <Table Columns="1">
+    <ColorBox Color="#5b101a">
+      <Box HorizontalAlignment="Center" VerticalAlignment="Center" Margin="2">
+        [bold]Уровень угрозы Красный: угроза безопасности II уровня[/bold]
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Left" Orientation="Vertical" Margin="8">
+        <FTLTextpart Key="guidebook-SOP-codes-red"/>
+
+        ### Условия
+        <FTLTextpart Key="guidebook-SOP-codes-red-terms"/>
+
+        ### Нормы экипажа
+        <FTLTextpart Key="guidebook-SOP-codes-red-norms"/>
+      </Box>
+    </ColorBox>
+  </Table>
+  <Box Margin="4"></Box>
+  <Table Columns="1">
+    <ColorBox Color="#5e2151">
+      <Box HorizontalAlignment="Center" VerticalAlignment="Center" Margin="2">
+        [bold]Уровень угрозы Гамма: угроза безопасности III уровня[/bold]
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Left" Orientation="Vertical" Margin="8">
+        <FTLTextpart Key="guidebook-SOP-codes-gamma"/>
+
+        ### Условия
+        <FTLTextpart Key="guidebook-SOP-codes-gamma-terms"/>
+
+        ### Нормы экипажа
+        <FTLTextpart Key="guidebook-SOP-codes-gamma-norms"/>
+      </Box>
+    </ColorBox>
+  </Table>
+  <Box Margin="4"></Box>
+  <Table Columns="1">
+    <ColorBox Color="#242c38">
+      <Box HorizontalAlignment="Center" VerticalAlignment="Center" Margin="2">
+        [bold]Уровень угрозы Дельта: неминуемая гибель станции[/bold]
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Left" Orientation="Vertical" Margin="8">
+        <FTLTextpart Key="guidebook-SOP-codes-delta"/>
+
+        ### Условия
+        <FTLTextpart Key="guidebook-SOP-codes-delta-terms"/>
+
+        ### Нормы экипажа
+        <FTLTextpart Key="guidebook-SOP-codes-delta-norms"/>
+      </Box>
+    </ColorBox>
+  </Table>
+
+  ## Дополнительные коды угроз
+  <Table Columns="1">
+    <ColorBox Color="#5e4c14">
+      <Box HorizontalAlignment="Center" VerticalAlignment="Center" Margin="2">
+        [bold]Уровень угрозы Желтый: инженерная угроза[/bold]
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Left" Orientation="Vertical" Margin="8">
+        <FTLTextpart Key="guidebook-SOP-codes-yellow"/>
+
+        ### Условия
+        <FTLTextpart Key="guidebook-SOP-codes-yellow-terms"/>
+
+        ### Нормы экипажа
+        <FTLTextpart Key="guidebook-SOP-codes-yellow-norms"/>
+      </Box>
+    </ColorBox>
+  </Table>
+  <Box Margin="4"></Box>
+  <Table Columns="1">
+    <ColorBox Color="#321951">
+      <Box HorizontalAlignment="Center" VerticalAlignment="Center" Margin="2">
+        [bold]Уровень угрозы Фиолетовый: биологическая угроза[/bold]
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Left" Orientation="Vertical" Margin="8">
+        <FTLTextpart Key="guidebook-SOP-codes-purple"/>
+
+        ### Условия
+        <FTLTextpart Key="guidebook-SOP-codes-purple-terms"/>
+
+        ### Нормы экипажа
+        <FTLTextpart Key="guidebook-SOP-codes-purple-norms"/>
+      </Box>
+    </ColorBox>
+  </Table>
+</Document>

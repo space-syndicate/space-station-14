@@ -1,0 +1,68 @@
+<Document>
+  <ColorBox>
+    <Box HorizontalAlignment="Center" VerticalAlignment="Center" Margin="2">
+      <FTLTextpart Key="guidebook-SOP-centcomm-infobox"/>
+    </Box>
+  </ColorBox>
+
+  # Общие СРП
+  ### ЦК обязан
+  <FTLTextpart Key="guidebook-SOP-centcomm-general-must"/>
+
+  ### ЦК имеет право
+  <FTLTextpart Key="guidebook-SOP-centcomm-general-right"/>
+
+  ### ЦК запрещено
+  <FTLTextpart Key="guidebook-SOP-centcomm-general-prohibited"/>
+
+  # Должностные СРП
+  ## СРП ПЦК
+  ### ПЦК обязан
+  <FTLTextpart Key="guidebook-SOP-CentralCommandOfficial-must"/>
+
+  ### ПЦК имеет право
+  <FTLTextpart Key="guidebook-SOP-CentralCommandOfficial-right"/>
+
+  ### ПЦК запрещено
+  <FTLTextpart Key="guidebook-SOP-CentralCommandOfficial-prohibited"/>
+
+  ## СРП ОЦК
+  ### ОЦК обязан
+  <FTLTextpart Key="guidebook-SOP-CentralCommandOperator-must"/>
+
+  ### ОЦК имеет право
+  <FTLTextpart Key="guidebook-SOP-CentralCommandOperator-right"/>
+
+  ### ОЦК запрещено
+  <FTLTextpart Key="guidebook-SOP-CentralCommandOperator-prohibited"/>
+
+  ## СРП НШЦК
+  ### НШЦК обязан
+  <FTLTextpart Key="guidebook-SOP-CentralCommandChiefStaff-must"/>
+
+  ### НШЦК  имеет право
+  <FTLTextpart Key="guidebook-SOP-CentralCommandChiefStaff-right"/>
+
+  ### НШЦК запрещено
+  <FTLTextpart Key="guidebook-SOP-CentralCommandChiefStaff-prohibited"/>
+
+  ## СРП Офицера Синего Щита
+  ### Офицер Синего Щита обязан
+  <FTLTextpart Key="guidebook-SOP-BlueshieldOfficer-must"/>
+
+  ### Офицер Синего Щита имеет право
+  <FTLTextpart Key="guidebook-SOP-BlueshieldOfficer-right"/>
+
+  ### Офицеру Синего Щита запрещено
+  <FTLTextpart Key="guidebook-SOP-BlueshieldOfficer-prohibited"/>
+
+  ## СРП Представителя NanoTrasen
+  ### Представитель NanoTrasen обязан
+  <FTLTextpart Key="guidebook-SOP-NanotrasenRepresentative-must"/>
+
+  ### Представитель NanoTrasen имеет право
+  <FTLTextpart Key="guidebook-SOP-NanotrasenRepresentative-right"/>
+
+  ### Представителю NanoTrasen запрещено
+  <FTLTextpart Key="guidebook-SOP-NanotrasenRepresentative-prohibited"/>
+</Document>

@@ -1,0 +1,127 @@
+<Document>
+  # Общие СРП
+  ### Глава отдела обязан
+  <FTLTextpart Key="guidebook-SOP-command-general-must"/>
+
+  ### Глава отдела имеет право
+  <FTLTextpart Key="guidebook-SOP-command-general-right"/>
+
+  ### Главе отдела запрещено
+  <FTLTextpart Key="guidebook-SOP-command-general-prohibited"/>
+
+  # Должностные СРП
+  ## СРП Капитана
+  ### Капитан обязан
+  <FTLTextpart Key="guidebook-SOP-Captain-must"/>
+
+  ### Капитан имеет право
+  <FTLTextpart Key="guidebook-SOP-Captain-right"/>
+
+  ### Капитану запрещено
+  <FTLTextpart Key="guidebook-SOP-Captain-prohibited"/>
+
+  ## СРП Главы персонала
+  ### Глава персонала обязан
+  <FTLTextpart Key="guidebook-SOP-HeadOfPersonnel-must"/>
+
+  ### Глава персонала имеет право
+  <FTLTextpart Key="guidebook-SOP-HeadOfPersonnel-right"/>
+
+  ### Главе персонала запрещено
+  <FTLTextpart Key="guidebook-SOP-HeadOfPersonnel-prohibited"/>
+
+  ## СРП Главы службы безопасности
+  ### Глава службы безопасности обязан
+  <FTLTextpart Key="guidebook-SOP-HeadOfSecurity-must"/>
+
+  ### Глава службы безопасности имеет право
+  <FTLTextpart Key="guidebook-SOP-HeadOfSecurity-right"/>
+
+  ### Главе службы безопасности запрещено
+  <FTLTextpart Key="guidebook-SOP-HeadOfSecurity-prohibited"/>
+
+  ## СРП Научного руководителя
+  ### Научный руководитель обязан
+  <FTLTextpart Key="guidebook-SOP-ResearchDirector-must"/>
+
+  ### Научный руководитель имеет право
+  <FTLTextpart Key="guidebook-SOP-ResearchDirector-right"/>
+
+  ### Научному руководителю запрещено
+  <FTLTextpart Key="guidebook-SOP-ResearchDirector-prohibited"/>
+
+  ## СРП Главного врача
+  ### Главный врач обязан
+  <FTLTextpart Key="guidebook-SOP-ChiefMedicalOfficer-must"/>
+
+  ### Главный врач имеет право
+  <FTLTextpart Key="guidebook-SOP-ChiefMedicalOfficer-right"/>
+
+  ### Главному врачу запрещено
+  <FTLTextpart Key="guidebook-SOP-ChiefMedicalOfficer-prohibited"/>
+
+  ## СРП Старшего инженера
+  ### Старший инженер обязан
+  <FTLTextpart Key="guidebook-SOP-ChiefEngineer-must"/>
+
+  ### Старший инженер имеет право
+  <FTLTextpart Key="guidebook-SOP-ChiefEngineer-right"/>
+
+  ### Старшему инженеру запрещено
+  <FTLTextpart Key="guidebook-SOP-ChiefEngineer-prohibited"/>
+
+  ## СРП Квартирмейстера
+  ### Квартирмейстер обязан
+  <FTLTextpart Key="guidebook-SOP-Quartermaster-must"/>
+
+  ### Квартирмейстер имеет право
+  <FTLTextpart Key="guidebook-SOP-Quartermaster-right"/>
+
+  ### Квартирмейстеру запрещено
+  <FTLTextpart Key="guidebook-SOP-Quartermaster-prohibited"/>
+
+  # Процедуры и протоколы
+  ## Процедура назначения ВрИО капитана
+  <FTLTextpart Key="guidebook-SOP-command-procedure-appoint-acting-captain"/>
+
+  ## Процедура отстранения капитана от командования
+  <FTLTextpart Key="guidebook-SOP-command-procedure-remove-captain"/>
+
+  ## Процедура назначения ВрИО главы отдела
+  <FTLTextpart Key="guidebook-SOP-command-procedure-appoint-acting-head"/>
+
+  ## Процедура отстранения ВрИО главы отдела
+  <FTLTextpart Key="guidebook-SOP-command-procedure-remove-acting-head"/>
+
+  ## Процедуры изменения доступов
+  ### Политика назначения на должность
+  <FTLTextpart Key="guidebook-SOP-command-procedure-accesses"/>
+
+  ### Политика повышения/перевода на другую должность
+  <FTLTextpart Key="guidebook-SOP-command-procedure-promotion-transfer"/>
+
+  ### Процедура выдачи доступов
+  <FTLTextpart Key="guidebook-SOP-command-procedure-issue-accesses"/>
+
+  ### Процедура снятия доступов
+  <FTLTextpart Key="guidebook-SOP-command-procedure-removal-from-post"/>
+
+  ### Процедура снятия доступов
+  <FTLTextpart Key="guidebook-SOP-command-procedure-revoke-accesses"/>
+
+  ### Причины отстранения от должности
+  <FTLTextpart Key="guidebook-SOP-command-procedure-reasons-for-removal"/>
+
+  ## Протоколы эвакуации
+  ### Окончание смены
+  <FTLTextpart Key="guidebook-SOP-command-protocol-evacuation-end-of-shift"/>
+
+  ### Невозможность выполнения цели
+  <FTLTextpart Key="guidebook-SOP-command-protocol-evacuation-unable-to-complete-goal"/>
+
+  ### Нарушение условий содержания сингулярности
+  <FTLTextpart Key="guidebook-SOP-command-protocol-evacuation-violation-of-singular-conditions"/>
+
+  ### Вспышка зомби вируса
+  <FTLTextpart Key="guidebook-SOP-command-protocol-evacuation-zombie-virus-outbreak"/>
+</Document>

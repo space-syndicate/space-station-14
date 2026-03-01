@@ -35,7 +35,7 @@
     </ColorBox>
     <ColorBox>
       <Box HorizontalAlignment="Center" VerticalAlignment="Center" Margin="1">
-        Полное наказание
+        <FTLTextpart Key="guidebook-corporatelaw-mod-guilt-intentional-effect"/>
       </Box>
     </ColorBox>
     <ColorBox OutlineColor="#db812c" OutlineThickness="2">
@@ -45,9 +45,7 @@
     </ColorBox>
     <ColorBox OutlineColor="#db812c" OutlineThickness="2">
       <Box HorizontalAlignment="Center" VerticalAlignment="Center" Orientation="Vertical" Margin="1">
-        Лицо осознает общественную опасность своего деяния, предвидело возможность или неизбежность наступления общественно опасных последствий и:
-        - желало их наступления;
-        - не желало, но сознательно допускало эти последствия либо относилось к ним безразлично.
+        <FTLTextpart Key="guidebook-corporatelaw-mod-guilt-intentional-desc"/>
       </Box>
     </ColorBox>
     <ColorBox>
@@ -57,7 +55,7 @@
     </ColorBox>
     <ColorBox>
       <Box HorizontalAlignment="Center" VerticalAlignment="Center" Margin="1">
-      минус 5 минут к наказанию
+        <FTLTextpart Key="guidebook-corporatelaw-mod-guilt-negligence-effect"/>
       </Box>
     </ColorBox>
     <ColorBox>
@@ -66,12 +64,7 @@
     </ColorBox>
     <ColorBox OutlineColor="#db812c" OutlineThickness="2">
       <Box HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Orientation="Vertical" Margin="1">
-        Лицо предвидело возможность наступление общественно опасных последствий своего деяния, но без достаточных к тому оснований самонадеянно рассчитывало на предотвращение этих последствий;
-
-        Лицо не предвидело возможность наступления общественно опасный последствий своего деяния, хотя при необходимой внимательности и предусмотрительности должно было и могло предвидеть эти последствия.
-
-        Модификатор не влияет на срок для статей "Халатность" и "Грубая халатность". Модификатор не влияет на срок для статей "Халатность" и "Грубая халатность".
-
+        <FTLTextpart Key="guidebook-corporatelaw-mod-guilt-negligence-desc"/>
       </Box>
     </ColorBox>
     <ColorBox>
@@ -81,7 +74,7 @@
     </ColorBox>
     <ColorBox>
       <Box HorizontalAlignment="Center" VerticalAlignment="Center" Margin="1">
-        Снятие обвинений
+        <FTLTextpart Key="guidebook-corporatelaw-mod-guilt-none-effect"/>
       </Box>
     </ColorBox>
     <ColorBox>
@@ -90,7 +83,7 @@
     </ColorBox>
     <ColorBox OutlineColor="#db812c" OutlineThickness="2">
       <Box HorizontalAlignment="Center" VerticalAlignment="Center" Margin="1">
-        Невозможно применить модификатор “преступление, совершенное умышленно” или “преступление, совершенное по неосторожности”
+        <FTLTextpart Key="guidebook-corporatelaw-mod-guilt-none-desc"/>
       </Box>
     </ColorBox>
   </Table>
@@ -125,7 +118,7 @@
     </ColorBox>
     <ColorBox>
       <Box HorizontalAlignment="Center" VerticalAlignment="Center" Margin="1">
-        Полное наказание
+        <FTLTextpart Key="guidebook-corporatelaw-mod-unfinished-finished-effect"/>
       </Box>
     </ColorBox>
     <ColorBox OutlineColor="#db812c" OutlineThickness="2">
@@ -135,7 +128,7 @@
     </ColorBox>
     <ColorBox OutlineColor="#db812c" OutlineThickness="2">
       <Box HorizontalAlignment="Center" VerticalAlignment="Center" Margin="1">
-        Преступление считается оконченным, если по факту действий лица возможно применить статью корпоративного закона.
+        <FTLTextpart Key="guidebook-corporatelaw-mod-unfinished-finished-desc"/>
       </Box>
     </ColorBox>
     <ColorBox>
@@ -145,7 +138,7 @@
     </ColorBox>
     <ColorBox>
       <Box HorizontalAlignment="Center" VerticalAlignment="Center" Margin="1">
-        Полное наказание
+        <FTLTextpart Key="guidebook-corporatelaw-mod-unfinished-attempt-effect"/>
       </Box>
     </ColorBox>
     <ColorBox>
@@ -154,7 +147,7 @@
     </ColorBox>
     <ColorBox OutlineColor="#db812c" OutlineThickness="2">
       <Box HorizontalAlignment="Center" VerticalAlignment="Center" Margin="1">
-        Умышленные действия, направленные на совершение преступление, если преступление не было доведено до конца по не зависящим от этого лица обстоятельствам.
+        <FTLTextpart Key="guidebook-corporatelaw-mod-unfinished-attempt-desc"/>
       </Box>
     </ColorBox>
     <ColorBox>
@@ -164,8 +157,7 @@
     </ColorBox>
     <ColorBox>
       <Box HorizontalAlignment="Center" VerticalAlignment="Top" Orientation="Vertical" Margin="1">
-       - Полное наказание для XX3, XX4, XX5, XX6
-       - Снятие обвинения для иных статей
+        <FTLTextpart Key="guidebook-corporatelaw-mod-unfinished-preparation-effect"/>
       </Box>
     </ColorBox>
     <ColorBox>
@@ -174,7 +166,7 @@
     </ColorBox>
     <ColorBox OutlineColor="#db812c" OutlineThickness="2">
       <Box HorizontalAlignment="Center" VerticalAlignment="Center" Margin="1">
-        Умышленное создание условий для совершения преступления, если преступление не было доведено до конца по не зависящим от этого лица обстоятельствам
+        <FTLTextpart Key="guidebook-corporatelaw-mod-unfinished-preparation-desc"/>
       </Box>
     </ColorBox>
     <ColorBox>
@@ -184,7 +176,7 @@
     </ColorBox>
     <ColorBox>
       <Box HorizontalAlignment="Center" VerticalAlignment="Center" Margin="1">
-        минус 5 минут к наказанию
+        <FTLTextpart Key="guidebook-corporatelaw-mod-unfinished-failed-refusal-effect"/>
       </Box>
     </ColorBox>
     <ColorBox>
@@ -193,7 +185,7 @@
     </ColorBox>
     <ColorBox OutlineColor="#db812c" OutlineThickness="2">
       <Box HorizontalAlignment="Center" VerticalAlignment="Center" Margin="1">
-        Действия организатора, направленные на прекращение доведения преступления, не смогли предотвратить совершение преступления исполнителем.
+        <FTLTextpart Key="guidebook-corporatelaw-mod-unfinished-failed-refusal-desc"/>
       </Box>
     </ColorBox>
     <ColorBox>
@@ -203,7 +195,7 @@
     </ColorBox>
     <ColorBox>
       <Box HorizontalAlignment="Center" VerticalAlignment="Center" Margin="1">
-        Снятие обвинений
+        <FTLTextpart Key="guidebook-corporatelaw-mod-unfinished-successful-refusal-effect"/>
       </Box>
     </ColorBox>
     <ColorBox>
@@ -212,11 +204,7 @@
     </ColorBox>
     <ColorBox OutlineColor="#db812c" OutlineThickness="2">
       <Box HorizontalAlignment="Center" VerticalAlignment="Center" Orientation="Vertical" Margin="1">
-      Прекращение лицом приготовления к преступлению или прекращение деяний, направленных на совершение преступления, если лицо осознавало возможность доведения преступления до конца.
-
-      Организатор прекратил доведения преступления до конца.
-
-      Пособник предпринял все зависящие от него меры, чтобы предотвратить совершение преступления
+        <FTLTextpart Key="guidebook-corporatelaw-mod-unfinished-successful-refusal-desc"/>
       </Box>
     </ColorBox>
   </Table>
@@ -251,6 +239,7 @@
     </ColorBox>
     <ColorBox>
       <Box HorizontalAlignment="Center" VerticalAlignment="Center" Margin="1">
+        <FTLTextpart Key="guidebook-corporatelaw-mod-complicity-perpetrator-effect"/>
       </Box>
     </ColorBox>
     <ColorBox OutlineColor="#db812c" OutlineThickness="2">
@@ -260,7 +249,7 @@
     </ColorBox>
     <ColorBox OutlineColor="#db812c" OutlineThickness="2">
       <Box HorizontalAlignment="Center" VerticalAlignment="Center" Margin="1">
-        Лицо, совершающее преступление
+        <FTLTextpart Key="guidebook-corporatelaw-mod-complicity-perpetrator-desc"/>
       </Box>
     </ColorBox>
     <ColorBox>
@@ -270,7 +259,7 @@
     </ColorBox>
     <ColorBox>
       <Box HorizontalAlignment="Center" VerticalAlignment="Center" Margin="1">
-        Полное наказание
+        <FTLTextpart Key="guidebook-corporatelaw-mod-complicity-instigator-effect"/>
       </Box>
     </ColorBox>
     <ColorBox>
@@ -279,7 +268,7 @@
     </ColorBox>
     <ColorBox OutlineColor="#db812c" OutlineThickness="2">
       <Box HorizontalAlignment="Center" VerticalAlignment="Center" Margin="1">
-        Лицо, склонившее другое лицо к совершению преступления путем уговора, подкупа, угрозы или другим способом
+        <FTLTextpart Key="guidebook-corporatelaw-mod-complicity-instigator-desc"/>
       </Box>
     </ColorBox>
     <ColorBox>
@@ -289,7 +278,7 @@
     </ColorBox>
     <ColorBox>
       <Box HorizontalAlignment="Center" VerticalAlignment="Center" Orientation="Vertical" Margin="1">
-      Полное наказание
+        <FTLTextpart Key="guidebook-corporatelaw-mod-complicity-accomplice-effect"/>
       </Box>
     </ColorBox>
     <ColorBox>
@@ -298,7 +287,7 @@
     </ColorBox>
     <ColorBox OutlineColor="#db812c" OutlineThickness="2">
       <Box HorizontalAlignment="Center" VerticalAlignment="Center" Margin="1">
-        Лицо, содействовавшее совершению преступления советами, указаниями, предоставлением информации, средств или орудий совершения преступления, либо устранением препятствий или иными способами.
+        <FTLTextpart Key="guidebook-corporatelaw-mod-complicity-accomplice-desc"/>
       </Box>
     </ColorBox>
     <ColorBox>
@@ -308,7 +297,7 @@
     </ColorBox>
     <ColorBox>
       <Box HorizontalAlignment="Center" VerticalAlignment="Center" Margin="1">
-      +10 минут к наказанию
+        <FTLTextpart Key="guidebook-corporatelaw-mod-complicity-organizer-effect"/>
       </Box>
     </ColorBox>
     <ColorBox>
@@ -317,10 +306,7 @@
     </ColorBox>
     <ColorBox OutlineColor="#db812c" OutlineThickness="2">
       <Box HorizontalAlignment="Center" VerticalAlignment="Center" Orientation="Vertical" Margin="1">
-      - Лицо, организовавшее совершение преступления или руководившее его исполнением.
-      - Лицо, организовавшее преступную группу или руководившее ей.
-
-        Модификатор не применяется, исполнитель является организатором и нет других исполнителей.
+        <FTLTextpart Key="guidebook-corporatelaw-mod-complicity-organizer-desc"/>
       </Box>
     </ColorBox>
   </Table>
@@ -342,7 +328,6 @@
     </ColorBox>
     <ColorBox OutlineThickness="2">
       <Box HorizontalAlignment="Center" VerticalAlignment="Center" Margin="1">
-        Снятие обвинений
       </Box>
     </ColorBox>
     <ColorBox OutlineThickness="2">
@@ -357,17 +342,17 @@
     </ColorBox>
     <ColorBox>
       <Box HorizontalAlignment="Center" VerticalAlignment="Center" Margin="1">
+        <FTLTextpart Key="guidebook-corporatelaw-mod-optional-hypnosis-effect"/>
       </Box>
     </ColorBox>
     <ColorBox OutlineColor="#db812c" OutlineThickness="2">
       <Box HorizontalAlignment="Center" VerticalAlignment="Center" Margin="1">
-        Снятие обвинений
+        Применяется к статье
       </Box>
     </ColorBox>
     <ColorBox OutlineColor="#db812c" OutlineThickness="2">
       <Box HorizontalAlignment="Center" VerticalAlignment="Center" Orientation="Vertical" Margin="1">
-        Явление, когда разум лица контролируется кем-либо.
-        Модификатор не применяется, если доказано, что загипнотизированное лицо стремилось и желало достичь такого состояния.
+        <FTLTextpart Key="guidebook-corporatelaw-mod-optional-hypnosis-desc"/>
       </Box>
     </ColorBox>
     <ColorBox>
@@ -377,7 +362,7 @@
     </ColorBox>
     <ColorBox>
       <Box HorizontalAlignment="Center" VerticalAlignment="Center" Margin="1">
-        Снятие обвинений
+        <FTLTextpart Key="guidebook-corporatelaw-mod-optional-necessity-effect"/>
       </Box>
     </ColorBox>
     <ColorBox>
@@ -386,9 +371,7 @@
     </ColorBox>
     <ColorBox OutlineColor="#db812c" OutlineThickness="2">
       <Box HorizontalAlignment="Center" VerticalAlignment="Center" Orientation="Vertical" Margin="1">
-      Вынужденные действия в целях самозащиты, защиты здоровья и жизни своих коллег, а также сохранности своего рабочего места и станции в целом.
-
-      Модификатор применяется на усмотрение допрашивающего лица.
+        <FTLTextpart Key="guidebook-corporatelaw-mod-optional-necessity-desc"/>
       </Box>
     </ColorBox>
     <ColorBox>
@@ -398,7 +381,7 @@
     </ColorBox>
     <ColorBox>
       <Box HorizontalAlignment="Center" VerticalAlignment="Center" Orientation="Vertical" Margin="1">
-      Снятие обвинений
+        <FTLTextpart Key="guidebook-corporatelaw-mod-optional-self-defense-effect"/>
       </Box>
     </ColorBox>
     <ColorBox>
@@ -407,7 +390,7 @@
     </ColorBox>
     <ColorBox OutlineColor="#db812c" OutlineThickness="2">
       <Box HorizontalAlignment="Center" VerticalAlignment="Center" Margin="1">
-      Действия, направленные на самооборону и не нарушающее допустимое применение силы.
+        <FTLTextpart Key="guidebook-corporatelaw-mod-optional-self-defense-desc"/>
       </Box>
     </ColorBox>
     <ColorBox>
@@ -417,7 +400,7 @@
     </ColorBox>
     <ColorBox>
       <Box HorizontalAlignment="Center" VerticalAlignment="Center" Margin="1">
-      Полное наказание
+        <FTLTextpart Key="guidebook-corporatelaw-mod-optional-synth-effect"/>
       </Box>
     </ColorBox>
     <ColorBox>
@@ -426,7 +409,7 @@
     </ColorBox>
     <ColorBox OutlineColor="#db812c" OutlineThickness="2">
       <Box HorizontalAlignment="Center" VerticalAlignment="Center" Orientation="Vertical" Margin="1">
-      Манипулирование законами синтетиков, что привело к нарушению корпоративного закона лицом или синтетиком.
+        <FTLTextpart Key="guidebook-corporatelaw-mod-optional-synth-desc"/>
       </Box>
     </ColorBox>
     <ColorBox>
@@ -436,16 +419,16 @@
     </ColorBox>
     <ColorBox>
       <Box HorizontalAlignment="Center" VerticalAlignment="Center" Margin="1">
-        плюс 10 минут к наказанию
+        <FTLTextpart Key="guidebook-corporatelaw-mod-optional-official-crime-effect"/>
       </Box>
     </ColorBox>
-    <ColorBox OutlineColor="#db812c" OutlineThickness="2">
+    <ColorBox>
       <Box HorizontalAlignment="Center" VerticalAlignment="Center" Margin="1">
       </Box>
     </ColorBox>
     <ColorBox OutlineColor="#db812c" OutlineThickness="2">
       <Box HorizontalAlignment="Center" VerticalAlignment="Center" Margin="1">
-        Нарушение корпоративного закона должностным лицом.
+        <FTLTextpart Key="guidebook-corporatelaw-mod-optional-official-crime-desc"/>
       </Box>
     </ColorBox>
     <ColorBox>
@@ -455,7 +438,7 @@
     </ColorBox>
     <ColorBox>
       <Box HorizontalAlignment="Center" VerticalAlignment="Center" Margin="1">
-        плюс 10 минут к наказанию
+        <FTLTextpart Key="guidebook-corporatelaw-mod-optional-crime-against-official-effect"/>
       </Box>
     </ColorBox>
     <ColorBox>
@@ -464,9 +447,7 @@
     </ColorBox>
     <ColorBox OutlineColor="#db812c" OutlineThickness="2">
       <Box HorizontalAlignment="Center" VerticalAlignment="Center" Orientation="Vertical" Margin="1">
-        Нарушение статей второго раздела корпоративного закона, направленные против должностного лица.
-
-        Модификатор не применяется, если невозможно однозначно определить принадлежность пострадавшего к должностным лицам. (Отсутствие соответствующей формы и ID карты)
+        <FTLTextpart Key="guidebook-corporatelaw-mod-optional-crime-against-official-desc"/>
       </Box>
     </ColorBox>
     <ColorBox>
@@ -476,7 +457,7 @@
     </ColorBox>
     <ColorBox>
       <Box HorizontalAlignment="Center" VerticalAlignment="Center" Orientation="Vertical" Margin="1">
-      плюс 10 минут к наказанию
+        <FTLTextpart Key="guidebook-corporatelaw-mod-optional-racism-effect"/>
       </Box>
     </ColorBox>
     <ColorBox>
@@ -485,7 +466,7 @@
     </ColorBox>
     <ColorBox OutlineColor="#db812c" OutlineThickness="2">
       <Box HorizontalAlignment="Center" VerticalAlignment="Center" Margin="1">
-        Преступление, совершенное по мотивам расовой дискриминации.
+        <FTLTextpart Key="guidebook-corporatelaw-mod-optional-racism-desc"/>
       </Box>
     </ColorBox>
     <ColorBox>
@@ -495,7 +476,7 @@
     </ColorBox>
     <ColorBox>
       <Box HorizontalAlignment="Center" VerticalAlignment="Center" Margin="1">
-      минус 5 минут к наказанию
+        <FTLTextpart Key="guidebook-corporatelaw-mod-optional-confession-effect"/>
       </Box>
     </ColorBox>
     <ColorBox>
@@ -504,7 +485,7 @@
     </ColorBox>
     <ColorBox OutlineColor="#db812c" OutlineThickness="2">
       <Box HorizontalAlignment="Center" VerticalAlignment="Center" Orientation="Vertical" Margin="1">
-      Чистосердечное признание в совершении преступления. Наказания по статье и модификатор выдаются независимо от того, была ли информация истинной.
+        <FTLTextpart Key="guidebook-corporatelaw-mod-optional-confession-desc"/>
       </Box>
     </ColorBox>
     <ColorBox>
@@ -514,17 +495,17 @@
     </ColorBox>
     <ColorBox>
       <Box HorizontalAlignment="Center" VerticalAlignment="Center" Margin="1">
-      Зависит от условий сделки
+        <FTLTextpart Key="guidebook-corporatelaw-mod-optional-plea-deal-effect"/>
       </Box>
     </ColorBox>
     <ColorBox OutlineColor="#69db2c" OutlineThickness="2">
       <Box HorizontalAlignment="Center" VerticalAlignment="Center" Margin="1">
-      Применяется к сроку
+        Применяется к сроку
       </Box>
     </ColorBox>
     <ColorBox OutlineColor="#69db2c" OutlineThickness="2">
       <Box HorizontalAlignment="Center" VerticalAlignment="Center" Orientation="Vertical" Margin="1">
-      Предоставление интересующей службу безопасности информации, касающейся совершенного преступления. Смотритель или глава СБ могут снизить срок приговора на любое разумное число
+        <FTLTextpart Key="guidebook-corporatelaw-mod-optional-plea-deal-desc"/>
       </Box>
     </ColorBox>
     <ColorBox>
@@ -534,7 +515,7 @@
     </ColorBox>
     <ColorBox>
       <Box HorizontalAlignment="Center" VerticalAlignment="Center" Margin="1">
-      плюс 5 минут к наказанию за каждый случай рецидива
+        <FTLTextpart Key="guidebook-corporatelaw-mod-optional-recidivism-effect"/>
       </Box>
     </ColorBox>
     <ColorBox>
@@ -543,7 +524,7 @@
     </ColorBox>
     <ColorBox OutlineColor="#69db2c" OutlineThickness="2">
       <Box HorizontalAlignment="Center" VerticalAlignment="Center" Orientation="Vertical" Margin="1">
-      Повторное нарушение статьи.
+        <FTLTextpart Key="guidebook-corporatelaw-mod-optional-recidivism-desc"/>
       </Box>
     </ColorBox>
   </Table>

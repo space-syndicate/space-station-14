@@ -1,0 +1,56 @@
+<Document>
+  # Общие СРП
+  ### Сотрудник научного отдела обязан
+  <FTLTextpart Key="guidebook-SOP-research-general-must"/>
+
+  ### Сотрудник научного отдела имеет право
+  <FTLTextpart Key="guidebook-SOP-research-general-right"/>
+
+  ### Сотруднику научного отдела запрещено
+  <FTLTextpart Key="guidebook-SOP-research-general-prohibited"/>
+
+  # Должностные СРП
+  ## СРП Научного руководителя
+  ### Научный руководитель обязан
+  <FTLTextpart Key="guidebook-SOP-ResearchDirector-must"/>
+
+  ### Научный руководитель имеет право
+  <FTLTextpart Key="guidebook-SOP-ResearchDirector-right"/>
+
+  ### Научному руководителю запрещено
+  <FTLTextpart Key="guidebook-SOP-ResearchDirector-prohibited"/>
+
+  ## СРП Учёного
+  ### Учёный обязан
+  <FTLTextpart Key="guidebook-SOP-Scientist-must"/>
+
+  ### Учёный имеет право
+  <FTLTextpart Key="guidebook-SOP-Scientist-right"/>
+
+  ### Учёному запрещено
+  <FTLTextpart Key="guidebook-SOP-Scientist-prohibited"/>
+
+  ## СРП Научного ассистента
+  ### Научный ассистент обязан
+  <FTLTextpart Key="guidebook-SOP-ResearchAssistant-must"/>
+
+  ### Научному ассистенту запрещено
+  <FTLTextpart Key="guidebook-SOP-ResearchAssistant-prohibited"/>
+
+  # Процедуры и протоколы
+  ## Процедура контроля аномалий
+  <FTLTextpart Key="guidebook-SOP-research-procedure-anomaly-control"/>
+
+  ## Процедура признания разумности существа
+  <FTLTextpart Key="guidebook-SOP-research-procedure-sapience"/>
+
+  ## Техника безопасности научного отдела
+  ### Общие положения
+  <FTLTextpart Key="guidebook-SOP-research-safety-general"/>
+
+  ### Ксеноархеологические положения
+  <FTLTextpart Key="guidebook-SOP-research-safety-xenoarchaeology"/>
+
+  ### Нормы безопасности при работе с химией и газами
+  <FTLTextpart Key="guidebook-SOP-research-safety-chemistry"/>
+</Document>
