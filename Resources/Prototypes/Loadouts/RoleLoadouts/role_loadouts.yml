@@ -132,6 +132,7 @@
 
 - type: roleLoadout
   id: JobChaplain
+  canCustomizeName: true
   groups:
   - Inventory # Corvax-Loadouts
   - GroupTankHarness
@@ -468,6 +469,8 @@
   - Inventory # Corvax-Loadouts
   - GroupTankHarness
   - ReporterJumpsuit
+  - ReporterHead
+  - ReporterOuterClothing
   - CommonBackpack
   - Glasses
   - Survival
