@@ -5,7 +5,7 @@ using Robust.Client.UserInterface;
 using Robust.Shared.Utility;
 using Robust.Shared.IoC;
 using Robust.Shared.ContentPack;
-using Robust.Shared.Logging;
+using Robust.Shared.Log;
 
 namespace Content.Client.Lobby.UI;
 
@@ -20,6 +20,7 @@ public sealed class LobbyVideoBackgroundControl : Control, IDisposable
     private bool _isLooping = true;
     private float _volume = 0.5f;
     private bool _webViewInitialized;
+    private readonly ISawmill _sawmill = Logger.GetSawmill("LobbyVideo");
 
     /// <summary>
     /// Event raised when the video finishes playing (if not looping).
@@ -51,11 +52,11 @@ public sealed class LobbyVideoBackgroundControl : Control, IDisposable
             // Initialize with blank page that has video element
             LoadBlankPage();
 
-            Logger.Debug($"[LobbyVideo] WebView initialized successfully");
+            _sawmill.Debug("WebView initialized successfully");
         }
         catch (Exception ex)
         {
-            Logger.Error($"[LobbyVideo] Failed to initialize WebView: {ex.Message}");
+            _sawmill.Error($"Failed to initialize WebView: {ex.Message}");
             _webViewInitialized = false;
             _webView = null;
         }
