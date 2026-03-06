@@ -85,6 +85,63 @@
   ## Общее положение о вооружении отдела СБ
   <FTLTextpart Key="guidebook-SOP-security-procedure-weapons-regulation"/>
 
+  <Table Columns="4">
+    <ColorBox Color="#1c5221">
+      <Box HorizontalAlignment="Center" VerticalAlignment="Center" Margin="2">
+        Зелёный код
+      </Box>
+    </ColorBox>
+    <ColorBox Color="#103461">
+      <Box HorizontalAlignment="Center" VerticalAlignment="Center" Margin="2">
+        Синий код
+      </Box>
+    </ColorBox>
+    <ColorBox Color="#5b101a">
+      <Box HorizontalAlignment="Center" VerticalAlignment="Center" Margin="2">
+        Красный код
+      </Box>
+    </ColorBox>
+    <ColorBox Color="#5e2151">
+      <Box HorizontalAlignment="Center" VerticalAlignment="Center" Margin="2">
+        Гамма код
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Left" Orientation="Vertical" Margin="2">
+        <FTLTextpart Key="guidebook-SOP-security-weapons-table-green"/>
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Left" Orientation="Vertical" Margin="2">
+        <FTLTextpart Key="guidebook-SOP-security-weapons-table-blue"/>
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Left" Orientation="Vertical" Margin="2">
+        <FTLTextpart Key="guidebook-SOP-security-weapons-table-red"/>
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Left" Orientation="Vertical" Margin="2">
+        <FTLTextpart Key="guidebook-SOP-security-weapons-table-gamma"/>
+      </Box>
+    </ColorBox>
+  </Table>
+
+  Для должностей: бригмедик и детектив
+  <Table Columns="1">
+    <ColorBox Color="#1c5221">
+      <Box HorizontalAlignment="Center" VerticalAlignment="Center" Margin="2">
+        Зелёный код
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Left" Orientation="Vertical" Margin="2">
+        <FTLTextpart Key="guidebook-SOP-security-weapons-table-green-2"/>
+      </Box>
+    </ColorBox>
+  </Table>
+
   ### Процедуры обыска
   <FTLTextpart Key="guidebook-SOP-security-procedure-search"/>
 

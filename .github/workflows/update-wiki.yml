@@ -57,6 +57,7 @@ jobs:
 
         BASE="./bin/Content.Server/data"
         ROOT="${{ secrets.WIKI_PAGE_ROOT }}"
+        MODULE_ROOT="Модуль:IanComradeBot"
         API="${{ secrets.WIKI_ROOT_URL }}/api.php"
         USER="${{ secrets.WIKI_BOT_USER }}"
         PASS="${{ secrets.WIKI_BOT_PASS }}"
@@ -78,20 +79,58 @@ jobs:
           --data-urlencode "format=json" \
           "$API" > /dev/null
 
-        find "$BASE" -type f -name '*.json' | while IFS= read -r file; do
-          rel="${file#$BASE/}"
-          rel="$(printf "%s" "$rel" | tr -d '\r\n' | sed 's/:/_/g')"
-          page="$ROOT/$rel"
-          echo "Uploading $rel → $page"
-
-          token=$(curl -sS -b "$cookiejar" --data "action=query&meta=tokens&format=json" "$API" | jq -r '.query.tokens.csrftoken')
+        edit_page_file() {
+          local title="$1"
+          local summary="$2"
+          local textfile="$3"
+          local token="$4"
 
           curl -sS -b "$cookiejar" \
             --data-urlencode "action=edit" \
-            --data-urlencode "title=$page" \
-            --data-urlencode "summary=Update $rel via GitHub Actions" \
-            --data-urlencode "text@${file}" \
+            --data-urlencode "title=$title" \
+            --data-urlencode "summary=$summary" \
+            --data-urlencode "text@${textfile}" \
             --data-urlencode "token=$token" \
+            --data-urlencode "bot=true" \
+            --data-urlencode "minor=true" \
             --data-urlencode "format=json" \
             "$API" | jq -r '.'
+        }
+
+        edit_page() {
+          local title="$1"
+          local summary="$2"
+          local text="$3"
+          local token="$4"
+
+          curl -sS -b "$cookiejar" \
+            --data-urlencode "action=edit" \
+            --data-urlencode "title=$title" \
+            --data-urlencode "summary=$summary" \
+            --data-urlencode "text=$text" \
+            --data-urlencode "token=$token" \
+            --data-urlencode "bot=true" \
+            --data-urlencode "minor=true" \
+            --data-urlencode "format=json" \
+            "$API" | jq -r '.'
+        }
+
+        find "$BASE" -type f -name '*.json' | while IFS= read -r file; do
+          rel="${file#$BASE/}"
+          rel="$(printf "%s" "$rel" | tr -d '\r\n' | sed 's/:/_/g')"
+          json_title="$ROOT/$rel"
+          echo "Uploading $rel → $json_title"
+
+          token=$(curl -sS -b "$cookiejar" --data "action=query&meta=tokens&format=json" "$API" | jq -r '.query.tokens.csrftoken')
+
+          # файл JSON
+          edit_page_file "$json_title" "Update $rel via GitHub Actions" "$file" "$token"
+
+          module_title="$MODULE_ROOT/$rel/data"
+
+          # файл для lua-контента
+          lua_content=$'local loader = require("Module:JsonLoader")\nreturn loader.getFromTitle("'"$json_title"'")'
+          echo "Creating/updating module → $module_title"
+
+          edit_page "$module_title" "Auto-create loader module for $rel" "$lua_content" "$token"
         done
