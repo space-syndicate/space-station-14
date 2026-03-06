@@ -254,16 +254,48 @@ namespace Content.Client.Lobby
         {
             if (_protoMan.TryIndex(_gameTicker.LobbyBackground, out var proto))
             {
-                Lobby!.Background.Texture = _resourceCache.GetResource<TextureResource>(proto.Background);
+                // Check if this prototype has a video background
+                if (proto.Video != null)
+                {
+                    // Show video background, hide static image
+                    Lobby!.Background.Texture = null;
+                    Lobby!.VideoBackground.Visible = true;
+                    Lobby!.VideoBackground.PlayVideo(proto.Video.Value, proto.VideoLoop, proto.VideoVolume);
 
-                var markup = Loc.GetString("lobby-state-background-text",
-                    ("backgroundTitle", Loc.GetString(proto.Title)),
-                    ("backgroundArtist", Loc.GetString(proto.Artist)));
+                    var markup = Loc.GetString("lobby-state-background-text",
+                        ("backgroundTitle", Loc.GetString(proto.Title)),
+                        ("backgroundArtist", Loc.GetString(proto.Artist)));
 
-                Lobby!.LobbyBackground.SetMarkup(markup);
+                    Lobby!.LobbyBackground.SetMarkup(markup);
+                }
+                // Check if this prototype has a static image background
+                else if (proto.Background != null)
+                {
+                    // Show static image background, hide video
+                    Lobby!.VideoBackground.Stop();
+                    Lobby!.VideoBackground.Visible = false;
+                    Lobby!.Background.Texture = _resourceCache.GetResource<TextureResource>(proto.Background.Value);
+
+                    var markup = Loc.GetString("lobby-state-background-text",
+                        ("backgroundTitle", Loc.GetString(proto.Title)),
+                        ("backgroundArtist", Loc.GetString(proto.Artist)));
+
+                    Lobby!.LobbyBackground.SetMarkup(markup);
+                }
+                else
+                {
+                    // No background defined
+                    Lobby!.VideoBackground.Stop();
+                    Lobby!.VideoBackground.Visible = false;
+                    Lobby!.Background.Texture = null;
+
+                    Lobby!.LobbyBackground.SetMarkup(Loc.GetString("lobby-state-background-no-background-text"));
+                }
             }
             else
             {
+                Lobby!.VideoBackground.Stop();
+                Lobby!.VideoBackground.Visible = false;
                 Lobby!.Background.Texture = null;
 
                 Lobby!.LobbyBackground.SetMarkup(Loc.GetString("lobby-state-background-no-background-text"));

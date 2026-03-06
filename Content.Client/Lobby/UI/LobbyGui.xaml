@@ -10,6 +10,11 @@
     xmlns:info="clr-namespace:Content.Client.Info"
     xmlns:widgets="clr-namespace:Content.Client.UserInterface.Systems.Chat.Widgets">
     <!-- Background -->
+    <!-- Video background (plays when video is set in prototype) -->
+    <lobbyUi:LobbyVideoBackgroundControl Access="Public" Name="VideoBackground"
+                                          VerticalExpand="True" HorizontalExpand="True"
+                                          Visible="False" />
+    <!-- Static image background -->
     <TextureRect Access="Public" VerticalExpand="True" HorizontalExpand="True" Name="Background"
                  Stretch="KeepAspectCovered" />
     <BoxContainer Name="MainContainer" VerticalExpand="True" HorizontalExpand="True" Orientation="Horizontal"
