@@ -34,7 +34,6 @@ public sealed partial class IpcSystem : EntitySystem
     [Dependency] private readonly MobStateSystem _mobState = default!;
     [Dependency] private readonly SharedUserInterfaceSystem _ui = default!;
     [Dependency] private readonly SharedBatterySystem _battery = default!;
-    [Dependency] private readonly MarkingManager _markingManager = default!;
     [Dependency] private readonly SharedVisualBodySystem _visualBody = default!;
     public override void Initialize()
     {
