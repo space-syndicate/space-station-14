@@ -6,3 +6,5 @@ ent-ActionDisguiseNoRot = Вкл\выкл вращение
     .desc = Используйте эту опцию, чтобы предотвратить вращение маскировки и затруднить своё обнаружение.
 ent-ActionDisguiseAnchor = Закрепить\открепить
     .desc = Для многих предметов, чтобы сразу не выдать себя, вам потребуется закрепиться.
+ent-ChameleonProjectorNoBattery = { ent-ChameleonProjector }
+    .desc = { ent-ChameleonProjector.desc }
