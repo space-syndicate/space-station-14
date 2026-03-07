@@ -30,6 +30,16 @@
   ### Утилизатору запрещено
   <FTLTextpart Key="guidebook-SOP-SalvageSpecialist-prohibited"/>
 
+  ## СРП Шахтёра
+  ### Шахтёр обязан
+  <FTLTextpart Key="guidebook-SOP-ShaftMiner-must"/>
+
+  ### Шахтёр имеет право
+  <FTLTextpart Key="guidebook-SOP-ShaftMiner-right"/>
+
+  ### Шахтёру запрещено
+  <FTLTextpart Key="guidebook-SOP-ShaftMiner-prohibited"/>
+
   ## СРП Грузчика
   ### Грузчик обязан
   <FTLTextpart Key="guidebook-SOP-CargoTechnician-must"/>
