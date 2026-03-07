@@ -1,4 +1,4 @@
-namespace Content.Server.GuideGenerator.TextTools;
+namespace Content.Server.Corvax.GuideGenerator;
 
 public sealed class TextTools
 {

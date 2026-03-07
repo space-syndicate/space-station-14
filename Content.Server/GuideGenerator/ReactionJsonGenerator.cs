@@ -7,7 +7,7 @@ using Robust.Shared.Prototypes;
 
 namespace Content.Server.GuideGenerator;
 
-public sealed partial class ReactionJsonGenerator
+public sealed class ReactionJsonGenerator
 {
     public static void PublishJson(StreamWriter file)
     {
@@ -19,14 +19,9 @@ public sealed partial class ReactionJsonGenerator
                 .Select(x => new ReactionEntry(x))
                 .ToDictionary(x => x.Id, x => x);
 
-        // Corvax-Wiki-Start
-        if (reactions is not null) AddMixingCategories(reactions, prototype);
-        // Corvax-Wiki-End
-
         var serializeOptions = new JsonSerializerOptions
         {
             WriteIndented = true,
-            NumberHandling = System.Text.Json.Serialization.JsonNumberHandling.AllowNamedFloatingPointLiterals, // Corvax-Wiki
             Converters =
             {
                 new UniversalJsonConverter<EntityEffect>(),
@@ -36,4 +31,3 @@ public sealed partial class ReactionJsonGenerator
         file.Write(JsonSerializer.Serialize(reactions, serializeOptions));
     }
 }
-
