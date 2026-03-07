@@ -133,8 +133,8 @@ reagent-desc-insuzine = Быстро восстанавливает ткани, 
 reagent-name-opporozidone = оппорозидон
 reagent-desc-opporozidone = Трудно синтезируемый криогенный препарат, используемый для регенерации гниющих тканей и мозгового вещества.
 
-reagent-name-arcryox = arcryox
-reagent-desc-arcryox = A sickeningly blue cryogenics chemical that is able to heal extreme wounds even on the dead. It has trouble stabilizing patients however.
+reagent-name-arcryox = аркриокс
+reagent-desc-arcryox = Отвратительно синий криогенный химикат, способный залечивать тяжелые раны даже у мертвых. Однако он с трудом стабилизирует состояние пациентов.
 
 reagent-name-necrosol = некрозол
 reagent-desc-necrosol = Некротическое вещество, которое, похоже, способно излечивать обмороженные трупы. В небольших дозах он способен лечить и оживлять растения.
@@ -154,5 +154,6 @@ reagent-desc-potassium-iodide = Снижает разрушительное во
 reagent-name-haloperidol = галоперидол
 reagent-desc-haloperidol = Выводит из организма большинство стимулирующих и галлюциногенных препаратов. Уменьшает наркотический эффект и дрожание. Вызывает сонливость.
 
-reagent-name-warfarin = warfarin
-reagent-desc-warfarin = Commonly used as an anticoagulant medication. Causes blood to have difficulty forming clots. Can cause internal bleeding when overdosed.
+reagent-name-warfarin = варфарин
+reagent-desc-warfarin = Обычно используется в качестве антикоагулянта. Затрудняет образование тромбов. При передозировке может вызвать внутреннее кровотечение.
+

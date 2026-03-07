@@ -73,7 +73,7 @@ construction-graph-tag-apron = фартук
 construction-graph-tag-utility-belt = пояс для инструментов
 soil-construction-graph-any-mushroom = любой гриб
 construction-graph-tag-mop-basic = швабра
-construction-graph-tag-paper = office paper
+construction-graph-tag-paper = офисная бумага
 construction-graph-tag-core-pinpointer-piece = piece of core pinpointer
 
 # toys
@@ -156,4 +156,4 @@ construction-graph-tag-spationaut-hardsuit = лёгкий скафандр ут�
 construction-graph-tag-backpack = рюкзак
 
 # chemistry
-construction-graph-tag-centrifuge-compatible = centrifugable container
+construction-graph-tag-centrifuge-compatible = пробирка
