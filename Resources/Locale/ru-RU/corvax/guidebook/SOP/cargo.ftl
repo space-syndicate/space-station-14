@@ -71,7 +71,7 @@ guidebook-SOP-SalvageSpecialist-must =
 
 guidebook-SOP-SalvageSpecialist-right =
     1. На использование в своей работе [tooltip="guidebook-SOP-cargo-tooltip-salvage-weapons" text="холодного и протокинетического оружия"].
-    2. Использовать утилизационный шаттл для проведения утилизационных работ.
+    1. Использовать утилизационный шаттл для проведения утилизационных работ.
 
 guidebook-SOP-SalvageSpecialist-prohibited =
     1. Использовать грузовой шаттл без разрешения квартирмейстера.
@@ -158,7 +158,6 @@ guidebook-SOP-cargo-safety =
 guidebook-SOP-cargo-tooltip-salvage-works = Включают в себя:
     - Использование магнита для утилизации обломков.
     - Заказные экспедиции от NanoTrasen.
-    - Отправка на экспедицию Лаваленд.
 guidebook-SOP-cargo-tooltip-salvage-weapons = Примеры:
     - Нож для выживания
     - Кинжал крушитель
