@@ -556,7 +556,7 @@ public sealed partial class SecApartmentSystem : EntitySystem
 
     private static string SanitizeString(string input, int maxLength)
     {
-        var sanitized = FormattedMessage.RemoveMarkupOrThrow(input);
+        var sanitized = FormattedMessage.RemoveMarkupPermissive(input);
         if (sanitized.Length > maxLength)
             sanitized = sanitized[..maxLength];
         return sanitized;
