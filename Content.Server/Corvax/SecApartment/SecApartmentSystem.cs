@@ -1,5 +1,3 @@
-using System.Linq;
-using System.Numerics;
 using Content.Server.CrewManifest;
 using Content.Server.DeviceLinking.Components;
 using Content.Server.Medical.CrewMonitoring;
@@ -16,6 +14,9 @@ using Robust.Shared.Map;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Random;
 using Robust.Shared.Timing;
+using Robust.Shared.Utility;
+using System.Linq;
+using System.Numerics;
 
 namespace Content.Server.Corvax.SecApartment;
 
@@ -37,6 +38,9 @@ public sealed partial class SecApartmentSystem : EntitySystem
     private readonly HashSet<string> _securityJobs = new();
     private TimeSpan _lastSensorUpdate = TimeSpan.Zero;
     private TimeSpan _lastTimerUpdate = TimeSpan.Zero;
+
+    private const int MaxSquadNameLength = 16;
+    private const int MaxSquadDescriptionLength = 256;
 
     public override void Initialize()
     {
@@ -204,7 +208,8 @@ public sealed partial class SecApartmentSystem : EntitySystem
         }
 
         var squadId = $"squad_{_random.Next(1000, 9999)}";
-        var squad = new Squad(squadId, msg.SquadName);
+        var squadName = SanitizeString(msg.SquadName, MaxSquadNameLength);
+        var squad = new Squad(squadId, squadName);
         stationData.Squads.Add(squad);
 
         UpdateAllTabletsOnStation(component.Station.Value);
@@ -238,7 +243,7 @@ public sealed partial class SecApartmentSystem : EntitySystem
         if (squad == null)
             return;
 
-        squad.Name = msg.NewName;
+        squad.Name = SanitizeString(msg.NewName, MaxSquadNameLength);
         UpdateAllTabletsOnStation(component.Station.Value);
     }
 
@@ -266,7 +271,7 @@ public sealed partial class SecApartmentSystem : EntitySystem
         if (squad == null)
             return;
 
-        squad.Description = msg.Description;
+        squad.Description = SanitizeString(msg.Description, MaxSquadDescriptionLength);
         UpdateAllTabletsOnStation(component.Station.Value);
     }
 
@@ -549,6 +554,13 @@ public sealed partial class SecApartmentSystem : EntitySystem
         };
     }
 
+    private static string SanitizeString(string input, int maxLength)
+    {
+        var sanitized = FormattedMessage.RemoveMarkupOrThrow(input);
+        if (sanitized.Length > maxLength)
+            sanitized = sanitized[..maxLength];
+        return sanitized;
+    }
     #region Timers
     private void OnTimerStartup(EntityUid uid, ActiveSignalTimerComponent component, ComponentStartup args)
     {
@@ -634,8 +646,10 @@ public sealed partial class SecApartmentSystem : EntitySystem
                     else
                     {
                         if (!_finishedTimers.TryGetValue(netEntity, out var finishedTime))
-                            _finishedTimers[netEntity] = _gameTiming.CurTime;
-
+                        {
+                            finishedTime = _gameTiming.CurTime;
+                            _finishedTimers[netEntity] = finishedTime;
+                        }
                         remaining = finishedTime - _gameTiming.CurTime;
                     }
 
