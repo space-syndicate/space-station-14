@@ -199,5 +199,5 @@ jobs:
             --data-urlencode "bot=true" \
             --data-urlencode "minor=true" \
             --data-urlencode "format=json" \
-            "$api" | jq -r ".edit.result"
+            "$api" | jq -r ".edit.result // \"null\"" || true
         ' _ "{}" "$API" "$token" "$cookiejar"
