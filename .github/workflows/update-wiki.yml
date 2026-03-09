@@ -48,6 +48,72 @@ jobs:
       run: dotnet ./bin/Content.Server/Content.Server.dll --cvar autogen.destination_file=prototypes.json
       continue-on-error: true
 
+    # Создает страницы по каждому id подходящей сущности.
+    # Имя страницы формируется из имени сущности в entity_name.json.
+    - name: Create entity pages
+      shell: bash
+      run: |
+        set -euo pipefail
+
+        FILE="./bin/Content.Server/data/entity_name_duplicates.json"
+        API="${{ secrets.WIKI_ROOT_URL }}/api.php"
+        USER="${{ secrets.WIKI_BOT_USER }}"
+        PASS="${{ secrets.WIKI_BOT_PASS }}"
+
+        API="$(printf "%s" "$API" | tr -d '\r\n')"
+        USER="$(printf "%s" "$USER" | tr -d '\r\n')"
+        PASS="$(printf "%s" "$PASS" | tr -d '\r\n')"
+
+        cookiejar="$(mktemp)"
+        trap 'rm -f "$cookiejar"' EXIT
+
+        # Login
+        login_token=$(curl -sS -c "$cookiejar" \
+          --data "action=query&meta=tokens&type=login&format=json" "$API" | jq -r '.query.tokens.logintoken')
+
+        curl -sS -c "$cookiejar" -b "$cookiejar" \
+          --data-urlencode "action=login" \
+          --data-urlencode "lgname=$USER" \
+          --data-urlencode "lgpassword=$PASS" \
+          --data-urlencode "lgtoken=$login_token" \
+          --data-urlencode "format=json" \
+          "$API" > /dev/null
+
+        # CSRF
+        token=$(curl -sS -b "$cookiejar" \
+          --data "action=query&meta=tokens&format=json" "$API" | jq -r '.query.tokens.csrftoken')
+
+        # JSON
+        jq -r 'to_entries[] | "\(.key)|\(.value | if type == "array" then .[0] else . end)"' "$FILE" |
+        grep -v '|$' |
+        xargs -r -d '\n' -P 1 -I{} bash -c '
+          set -uo pipefail
+          name_id="$1"
+          api="$2"
+          token="$3"
+          cookiejar="$4"
+
+          IFS="|" read -r name id <<< "$name_id"
+
+          if [[ -z "$id" ]]; then
+            exit 0
+          fi
+
+          content="{{сущность|$id}}"
+          echo "Creating page: $name → $id"
+
+          curl -sS -b "$cookiejar" \
+            --data-urlencode "action=edit" \
+            --data-urlencode "createonly=true" \
+            --data-urlencode "title=$name" \
+            --data-urlencode "text=$content" \
+            --data-urlencode "summary=Create $id via GitHub Actions" \
+            --data-urlencode "token=$token" \
+            --data-urlencode "bot=true" \
+            --data-urlencode "minor=true" \
+            --data-urlencode "format=json" \
+            "$api" | jq -r ".edit.result // \"null\"" || true
+
     # Проходит по всем JSON-файлам в директории BASE и загружает каждый файл как страницу в MediaWiki.
     # Имя страницы формируется из относительного пути к файлу.
     - name: Upload JSON files to wiki
@@ -134,70 +200,3 @@ jobs:
 
           edit_page "$module_title" "Auto-create loader module for $rel" "$lua_content" "$token"
         done
-
-    # Создает страницы по каждому id подходящей сущности.
-    # Имя страницы формируется из имени сущности в entity_name.json.
-    - name: Create entity pages
-      shell: bash
-      run: |
-        set -euo pipefail
-
-        FILE="./bin/Content.Server/data/entity_name.json"
-        API="${{ secrets.WIKI_ROOT_URL }}/api.php"
-        USER="${{ secrets.WIKI_BOT_USER }}"
-        PASS="${{ secrets.WIKI_BOT_PASS }}"
-
-        API="$(printf "%s" "$API" | tr -d '\r\n')"
-        USER="$(printf "%s" "$USER" | tr -d '\r\n')"
-        PASS="$(printf "%s" "$PASS" | tr -d '\r\n')"
-
-        cookiejar="$(mktemp)"
-        trap 'rm -f "$cookiejar"' EXIT
-
-        # Login
-        login_token=$(curl -sS -c "$cookiejar" \
-          --data "action=query&meta=tokens&type=login&format=json" "$API" | jq -r '.query.tokens.logintoken')
-
-        curl -sS -c "$cookiejar" -b "$cookiejar" \
-          --data-urlencode "action=login" \
-          --data-urlencode "lgname=$USER" \
-          --data-urlencode "lgpassword=$PASS" \
-          --data-urlencode "lgtoken=$login_token" \
-          --data-urlencode "format=json" \
-          "$API" > /dev/null
-
-        # CSRF
-        token=$(curl -sS -b "$cookiejar" \
-          --data "action=query&meta=tokens&format=json" "$API" | jq -r '.query.tokens.csrftoken')
-
-        # JSON
-        jq -r 'to_entries[] | "\(.key)|\(.value | if type == "array" then .[0] else . end)"' "$FILE" |
-        grep -v '|$' |
-        xargs -r -d '\n' -P 1 -I{} bash -c '
-          set -uo pipefail
-          name_id="$1"
-          api="$2"
-          token="$3"
-          cookiejar="$4"
-
-          IFS="|" read -r name id <<< "$name_id"
-
-          if [[ -z "$id" ]]; then
-            exit 0
-          fi
-
-          content="{{сущность|$id}}"
-          echo "Creating page: $name → $id"
-
-          curl -sS -b "$cookiejar" \
-            --data-urlencode "action=edit" \
-            --data-urlencode "createonly=true" \
-            --data-urlencode "title=$name" \
-            --data-urlencode "text=$content" \
-            --data-urlencode "summary=Create $id via GitHub Actions" \
-            --data-urlencode "token=$token" \
-            --data-urlencode "bot=true" \
-            --data-urlencode "minor=true" \
-            --data-urlencode "format=json" \
-            "$api" | jq -r ".edit.result"
-        ' _ "{}" "$API" "$token" "$cookiejar"
