@@ -146,18 +146,15 @@ namespace Content.Server.Entry
             if (!string.IsNullOrEmpty(dest))
             {
                 var resPath = new ResPath(dest).ToRootedPath();
-                var file = _res.UserData.OpenWriteText(resPath.WithName("chem_" + dest));
-                ChemistryJsonGenerator.PublishJson(file);
-                file.Flush();
-                file = _res.UserData.OpenWriteText(resPath.WithName("react_" + dest));
-                ReactionJsonGenerator.PublishJson(file);
-                file.Flush();
                 // Corvax-Wiki-Start
-                file = _res.UserData.OpenWriteText(resPath.WithName("entity_" + dest));
+                var file = _res.UserData.OpenWriteText(resPath.WithName("entity_" + dest));
                 EntityJsonGenerator.PublishJson(file);
                 file.Flush();
                 file = _res.UserData.OpenWriteText(resPath.WithName("loc.json"));
                 LocJsonGenerator.PublishJson(file);
+                file.Flush();
+                file = _res.UserData.OpenWriteText(resPath.WithName("meta_license.json"));
+                MetaLicenseGenerator.PublishJson(file);
                 file.Flush();
                 file = _res.UserData.OpenWriteText(resPath.WithName("prototype.json"));
                 PrototypeListGenerator.PublishJson(file);

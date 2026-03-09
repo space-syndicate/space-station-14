@@ -9,17 +9,11 @@ public sealed class TextTools
     /// <returns>String with capitalized first letter</returns>
     public static string CapitalizeString(string str)
     {
-        if (str.Length > 1)
+        return str.Length switch
         {
-            return char.ToUpper(str[0]) + str.Remove(0, 1);
-        }
-        else if (str.Length == 1)
-        {
-            return char.ToUpper(str[0]).ToString();
-        }
-        else
-        {
-            return str;
-        }
+            > 1 => char.ToUpper(str[0]) + str.Remove(0, 1),
+            1 => char.ToUpper(str[0]).ToString(),
+            _ => str
+        };
     }
 }

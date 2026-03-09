@@ -2,6 +2,7 @@ using System.Collections;
 using System.Globalization;
 using System.Linq;
 using System.Reflection;
+using System.Text.RegularExpressions;
 using Robust.Shared.Serialization.Markdown;
 using Robust.Shared.Serialization.Markdown.Mapping;
 using Robust.Shared.Serialization.Markdown.Sequence;
@@ -11,6 +12,8 @@ namespace Content.Server.Corvax.GuideGenerator;
 
 public static class FieldEntry
 {
+    private static readonly Regex DoubleEntryRegex = new(@"^[+-]?\d+\.\d+$");
+
     public static object? DataNodeToObject(DataNode node)
     {
         if (node is MappingDataNode mapping)
@@ -79,7 +82,8 @@ public static class FieldEntry
             if (int.TryParse(raw, NumberStyles.Integer, CultureInfo.InvariantCulture, out var intRes))
                 return intRes;
 
-            if (double.TryParse(raw, NumberStyles.Float | NumberStyles.AllowThousands, CultureInfo.InvariantCulture, out var doubleRes))
+            if (DoubleEntryRegex.IsMatch(raw) &&
+                double.TryParse(raw, NumberStyles.Float | NumberStyles.AllowThousands, CultureInfo.InvariantCulture, out var doubleRes))
                 return doubleRes;
 
             return raw;

@@ -45,6 +45,7 @@ public static class PrototypeJsonGenerator
                     FieldEntry.EnsureFieldsCollectionsInitialized(instance);
                     var defaultNode = ser.WriteValueAs<MappingDataNode>(kind, instance, true);
                     defaultNode.Remove("id");
+                    FieldEntry.NormalizeFlagsToSequences(instance, defaultNode);
                     defaultObj = FieldEntry.DataNodeToObject(defaultNode);
                 }
             }
