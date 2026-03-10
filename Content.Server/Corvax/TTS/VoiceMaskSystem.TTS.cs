@@ -16,6 +16,8 @@ public partial class VoiceMaskSystem
 
     private void OnSpeakerVoiceTransform(EntityUid uid, VoiceMaskComponent component, InventoryRelayedEvent<TransformSpeakerVoiceEvent> args)
     {
+        if (!component.Active)
+            return;
         args.Args.VoiceId = component.VoiceId;
     }
 
@@ -32,6 +34,8 @@ public partial class VoiceMaskSystem
     }
     private void OnSpeakerVoiceTransformImplant(EntityUid uid, VoiceMaskComponent component, ImplantRelayEvent<TransformSpeakerVoiceEvent> args)
     {
+        if (!component.Active)
+            return;
         args.Event.VoiceId = component.VoiceId;
     }
 }
