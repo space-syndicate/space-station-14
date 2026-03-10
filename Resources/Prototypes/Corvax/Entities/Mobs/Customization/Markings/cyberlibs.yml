@@ -1,0 +1,1032 @@
+﻿# Bishop
+- type: marking
+  id: CyberlimbRArmBishop
+  bodyPart: RArm
+  groupWhitelist: [ Human, Arachnid ]
+  sponsorOnly: true
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+          color: "#FFFFFF"
+  sprites:
+    - sprite: Corvax/Mobs/Customization/Cyberlimbs/bishop.rsi
+      state: r_arm
+
+- type: marking
+  id: CyberlimbLArmBishop
+  bodyPart: LArm
+  groupWhitelist: [ Human, Arachnid ]
+  sponsorOnly: true
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+          color: "#FFFFFF"
+  sprites:
+    - sprite: Corvax/Mobs/Customization/Cyberlimbs/bishop.rsi
+      state: l_arm
+
+- type: marking
+  id: CyberlimbRHandBishop
+  bodyPart: RHand
+  groupWhitelist: [ Human, Arachnid ]
+  sponsorOnly: true
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+          color: "#FFFFFF"
+  sprites:
+    - sprite: Corvax/Mobs/Customization/Cyberlimbs/bishop.rsi
+      state: r_hand
+
+- type: marking
+  id: CyberlimbLHandBishop
+  bodyPart: LHand
+  groupWhitelist: [ Human, Arachnid ]
+  sponsorOnly: true
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+          color: "#FFFFFF"
+  sprites:
+    - sprite: Corvax/Mobs/Customization/Cyberlimbs/bishop.rsi
+      state: l_hand
+
+- type: marking
+  id: CyberlimbRLegBishop
+  bodyPart: RLeg
+  groupWhitelist: [ Human, Arachnid ]
+  sponsorOnly: true
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+          color: "#FFFFFF"
+  sprites:
+    - sprite: Corvax/Mobs/Customization/Cyberlimbs/bishop.rsi
+      state: r_leg
+
+- type: marking
+  id: CyberlimbLLegBishop
+  bodyPart: LLeg
+  groupWhitelist: [ Human, Arachnid ]
+  sponsorOnly: true
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+          color: "#FFFFFF"
+  sprites:
+    - sprite: Corvax/Mobs/Customization/Cyberlimbs/bishop.rsi
+      state: l_leg
+
+- type: marking
+  id: CyberlimbLFootBishop
+  bodyPart: LFoot
+  groupWhitelist: [ Human, Arachnid ]
+  sponsorOnly: true
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+          color: "#FFFFFF"
+  sprites:
+    - sprite: Corvax/Mobs/Customization/Cyberlimbs/bishop.rsi
+      state: l_foot
+
+- type: marking
+  id: CyberlimbRFootBishop
+  bodyPart: RFoot
+  groupWhitelist: [ Human, Arachnid ]
+  sponsorOnly: true
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+          color: "#FFFFFF"
+  sprites:
+    - sprite: Corvax/Mobs/Customization/Cyberlimbs/bishop.rsi
+      state: r_foot
+
+- type: marking
+  id: CyberlimbTorsoBishop
+  bodyPart: Chest
+  groupWhitelist: [ Human, Arachnid ]
+  sponsorOnly: true
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+          color: "#FFFFFF"
+  sprites:
+    - sprite: Corvax/Mobs/Customization/Cyberlimbs/bishop.rsi
+      state: torso
+
+# Hephaestus
+- type: marking
+  id: CyberlimbRArmHephaestus
+  bodyPart: RArm
+  groupWhitelist: [ Human, Arachnid ]
+  sponsorOnly: true
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+          color: "#FFFFFF"
+  sprites:
+    - sprite: Corvax/Mobs/Customization/Cyberlimbs/hephaestus.rsi
+      state: r_arm
+
+- type: marking
+  id: CyberlimbLArmHephaestus
+  bodyPart: LArm
+  groupWhitelist: [ Human, Arachnid ]
+  sponsorOnly: true
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+          color: "#FFFFFF"
+  sprites:
+    - sprite: Corvax/Mobs/Customization/Cyberlimbs/hephaestus.rsi
+      state: l_arm
+
+- type: marking
+  id: CyberlimbRHandHephaestus
+  bodyPart: RHand
+  groupWhitelist: [ Human, Arachnid ]
+  sponsorOnly: true
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+          color: "#FFFFFF"
+  sprites:
+    - sprite: Corvax/Mobs/Customization/Cyberlimbs/hephaestus.rsi
+      state: r_hand
+
+- type: marking
+  id: CyberlimbLHandHephaestus
+  bodyPart: LHand
+  groupWhitelist: [ Human, Arachnid ]
+  sponsorOnly: true
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+          color: "#FFFFFF"
+  sprites:
+    - sprite: Corvax/Mobs/Customization/Cyberlimbs/hephaestus.rsi
+      state: l_hand
+
+- type: marking
+  id: CyberlimbRLegHephaestus
+  bodyPart: RLeg
+  groupWhitelist: [ Human, Arachnid ]
+  sponsorOnly: true
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+          color: "#FFFFFF"
+  sprites:
+    - sprite: Corvax/Mobs/Customization/Cyberlimbs/hephaestus.rsi
+      state: r_leg
+
+- type: marking
+  id: CyberlimbLLegHephaestus
+  bodyPart: LLeg
+  groupWhitelist: [ Human, Arachnid ]
+  sponsorOnly: true
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+          color: "#FFFFFF"
+  sprites:
+    - sprite: Corvax/Mobs/Customization/Cyberlimbs/hephaestus.rsi
+      state: l_leg
+
+- type: marking
+  id: CyberlimbLFootHephaestus
+  bodyPart: LFoot
+  groupWhitelist: [ Human, Arachnid ]
+  sponsorOnly: true
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+          color: "#FFFFFF"
+  sprites:
+    - sprite: Corvax/Mobs/Customization/Cyberlimbs/hephaestus.rsi
+      state: l_foot
+
+- type: marking
+  id: CyberlimbRFootHephaestus
+  bodyPart: RFoot
+  groupWhitelist: [ Human, Arachnid ]
+  sponsorOnly: true
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+          color: "#FFFFFF"
+  sprites:
+    - sprite: Corvax/Mobs/Customization/Cyberlimbs/hephaestus.rsi
+      state: r_foot
+
+- type: marking
+  id: CyberlimbTorsoHephaestus
+  bodyPart: Chest
+  groupWhitelist: [ Human, Arachnid ]
+  sponsorOnly: true
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+          color: "#FFFFFF"
+  sprites:
+    - sprite: Corvax/Mobs/Customization/Cyberlimbs/hephaestus.rsi
+      state: torso
+
+# Hephaestus Titan
+- type: marking
+  id: CyberlimbRArmHephaestusTitan
+  bodyPart: RArm
+  groupWhitelist: [ Human, Arachnid ]
+  sponsorOnly: true
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+          color: "#FFFFFF"
+  sprites:
+    - sprite: Corvax/Mobs/Customization/Cyberlimbs/hephaestus_titan.rsi
+      state: r_arm
+
+- type: marking
+  id: CyberlimbLArmHephaestusTitan
+  bodyPart: LArm
+  groupWhitelist: [ Human, Arachnid ]
+  sponsorOnly: true
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+          color: "#FFFFFF"
+  sprites:
+    - sprite: Corvax/Mobs/Customization/Cyberlimbs/hephaestus_titan.rsi
+      state: l_arm
+
+- type: marking
+  id: CyberlimbRHandHephaestusTitan
+  bodyPart: RHand
+  groupWhitelist: [ Human, Arachnid ]
+  sponsorOnly: true
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+          color: "#FFFFFF"
+  sprites:
+    - sprite: Corvax/Mobs/Customization/Cyberlimbs/hephaestus_titan.rsi
+      state: r_hand
+
+- type: marking
+  id: CyberlimbLHandHephaestusTitan
+  bodyPart: LHand
+  groupWhitelist: [ Human, Arachnid ]
+  sponsorOnly: true
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+          color: "#FFFFFF"
+  sprites:
+    - sprite: Corvax/Mobs/Customization/Cyberlimbs/hephaestus_titan.rsi
+      state: l_hand
+
+- type: marking
+  id: CyberlimbRLegHephaestusTitan
+  bodyPart: RLeg
+  groupWhitelist: [ Human, Arachnid ]
+  sponsorOnly: true
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+          color: "#FFFFFF"
+  sprites:
+    - sprite: Corvax/Mobs/Customization/Cyberlimbs/hephaestus_titan.rsi
+      state: r_leg
+
+- type: marking
+  id: CyberlimbLLegHephaestusTitan
+  bodyPart: LLeg
+  groupWhitelist: [ Human, Arachnid ]
+  sponsorOnly: true
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+          color: "#FFFFFF"
+  sprites:
+    - sprite: Corvax/Mobs/Customization/Cyberlimbs/hephaestus_titan.rsi
+      state: l_leg
+
+- type: marking
+  id: CyberlimbLFootHephaestusTitan
+  bodyPart: LFoot
+  groupWhitelist: [ Human, Arachnid ]
+  sponsorOnly: true
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+          color: "#FFFFFF"
+  sprites:
+    - sprite: Corvax/Mobs/Customization/Cyberlimbs/hephaestus_titan.rsi
+      state: l_foot
+
+- type: marking
+  id: CyberlimbRFootHephaestusTitan
+  bodyPart: RFoot
+  groupWhitelist: [ Human, Arachnid ]
+  sponsorOnly: true
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+          color: "#FFFFFF"
+  sprites:
+    - sprite: Corvax/Mobs/Customization/Cyberlimbs/hephaestus_titan.rsi
+      state: r_foot
+
+- type: marking
+  id: CyberlimbTorsoHephaestusTitan
+  bodyPart: Chest
+  groupWhitelist: [ Human, Arachnid ]
+  sponsorOnly: true
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+          color: "#FFFFFF"
+  sprites:
+    - sprite: Corvax/Mobs/Customization/Cyberlimbs/hephaestus_titan.rsi
+      state: torso
+
+# Morpheus
+- type: marking
+  id: CyberlimbRArmMorpheus
+  bodyPart: RArm
+  groupWhitelist: [ Human, Arachnid ]
+  sponsorOnly: true
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+          color: "#FFFFFF"
+  sprites:
+    - sprite: Corvax/Mobs/Customization/Cyberlimbs/morpheus.rsi
+      state: r_arm
+
+- type: marking
+  id: CyberlimbLArmMorpheus
+  bodyPart: LArm
+  groupWhitelist: [ Human, Arachnid ]
+  sponsorOnly: true
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+          color: "#FFFFFF"
+  sprites:
+    - sprite: Corvax/Mobs/Customization/Cyberlimbs/morpheus.rsi
+      state: l_arm
+
+- type: marking
+  id: CyberlimbRHandMorpheus
+  bodyPart: RHand
+  groupWhitelist: [ Human, Arachnid ]
+  sponsorOnly: true
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+          color: "#FFFFFF"
+  sprites:
+    - sprite: Corvax/Mobs/Customization/Cyberlimbs/morpheus.rsi
+      state: r_hand
+
+- type: marking
+  id: CyberlimbLHandMorpheus
+  bodyPart: LHand
+  groupWhitelist: [ Human, Arachnid ]
+  sponsorOnly: true
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+          color: "#FFFFFF"
+  sprites:
+    - sprite: Corvax/Mobs/Customization/Cyberlimbs/morpheus.rsi
+      state: l_hand
+
+- type: marking
+  id: CyberlimbRLegMorpheus
+  bodyPart: RLeg
+  groupWhitelist: [ Human, Arachnid ]
+  sponsorOnly: true
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+          color: "#FFFFFF"
+  sprites:
+    - sprite: Corvax/Mobs/Customization/Cyberlimbs/morpheus.rsi
+      state: r_leg
+
+- type: marking
+  id: CyberlimbLLegMorpheus
+  bodyPart: LLeg
+  groupWhitelist: [ Human, Arachnid ]
+  sponsorOnly: true
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+          color: "#FFFFFF"
+  sprites:
+    - sprite: Corvax/Mobs/Customization/Cyberlimbs/morpheus.rsi
+      state: l_leg
+
+- type: marking
+  id: CyberlimbLFootMorpheus
+  bodyPart: LFoot
+  groupWhitelist: [ Human, Arachnid ]
+  sponsorOnly: true
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+          color: "#FFFFFF"
+  sprites:
+    - sprite: Corvax/Mobs/Customization/Cyberlimbs/morpheus.rsi
+      state: l_foot
+
+- type: marking
+  id: CyberlimbRFootMorpheus
+  bodyPart: RFoot
+  groupWhitelist: [ Human, Arachnid ]
+  sponsorOnly: true
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+          color: "#FFFFFF"
+  sprites:
+    - sprite: Corvax/Mobs/Customization/Cyberlimbs/morpheus.rsi
+      state: r_foot
+
+- type: marking
+  id: CyberlimbTorsoMorpheus
+  bodyPart: Chest
+  groupWhitelist: [ Human, Arachnid ]
+  sponsorOnly: true
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+          color: "#FFFFFF"
+  sprites:
+    - sprite: Corvax/Mobs/Customization/Cyberlimbs/morpheus.rsi
+      state: torso
+
+
+# Wardtakahashi
+- type: marking
+  id: CyberlimbRArmWardtakahashi
+  bodyPart: RArm
+  groupWhitelist: [ Human, Arachnid ]
+  sponsorOnly: true
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+        color: "#FFFFFF"
+  sprites:
+    - sprite: Corvax/Mobs/Customization/Cyberlimbs/wardtakahashi.rsi
+      state: r_arm
+
+- type: marking
+  id: CyberlimbLArmWardtakahashi
+  bodyPart: LArm
+  groupWhitelist: [ Human, Arachnid ]
+  sponsorOnly: true
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+        color: "#FFFFFF"
+  sprites:
+    - sprite: Corvax/Mobs/Customization/Cyberlimbs/wardtakahashi.rsi
+      state: l_arm
+
+- type: marking
+  id: CyberlimbRHandWardtakahashi
+  bodyPart: RHand
+  groupWhitelist: [ Human, Arachnid ]
+  sponsorOnly: true
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+        color: "#FFFFFF"
+  sprites:
+    - sprite: Corvax/Mobs/Customization/Cyberlimbs/wardtakahashi.rsi
+      state: r_hand
+
+- type: marking
+  id: CyberlimbLHandWardtakahashi
+  bodyPart: LHand
+  groupWhitelist: [ Human, Arachnid ]
+  sponsorOnly: true
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+        color: "#FFFFFF"
+  sprites:
+    - sprite: Corvax/Mobs/Customization/Cyberlimbs/wardtakahashi.rsi
+      state: l_hand
+
+- type: marking
+  id: CyberlimbRLegWardtakahashi
+  bodyPart: RLeg
+  groupWhitelist: [ Human, Arachnid ]
+  sponsorOnly: true
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+        color: "#FFFFFF"
+  sprites:
+    - sprite: Corvax/Mobs/Customization/Cyberlimbs/wardtakahashi.rsi
+      state: r_leg
+
+- type: marking
+  id: CyberlimbLLegWardtakahashi
+  bodyPart: LLeg
+  groupWhitelist: [ Human, Arachnid ]
+  sponsorOnly: true
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+        color: "#FFFFFF"
+  sprites:
+    - sprite: Corvax/Mobs/Customization/Cyberlimbs/wardtakahashi.rsi
+      state: l_leg
+
+- type: marking
+  id: CyberlimbLFootWardtakahashi
+  bodyPart: LFoot
+  groupWhitelist: [ Human, Arachnid ]
+  sponsorOnly: true
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+        color: "#FFFFFF"
+  sprites:
+    - sprite: Corvax/Mobs/Customization/Cyberlimbs/wardtakahashi.rsi
+      state: l_foot
+
+- type: marking
+  id: CyberlimbRFootWardtakahashi
+  bodyPart: RFoot
+  groupWhitelist: [ Human, Arachnid ]
+  sponsorOnly: true
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+        color: "#FFFFFF"
+  sprites:
+    - sprite: Corvax/Mobs/Customization/Cyberlimbs/wardtakahashi.rsi
+      state: r_foot
+
+- type: marking
+  id: CyberlimbTorsoWardtakahashiMale
+  bodyPart: Chest
+  groupWhitelist: [ Human, Arachnid ]
+  sexRestriction: Male
+  sponsorOnly: true
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+        color: "#FFFFFF"
+  sprites:
+    - sprite: Corvax/Mobs/Customization/Cyberlimbs/wardtakahashi.rsi
+      state: torso_m
+
+- type: marking
+  id: CyberlimbTorsoWardtakahashiFemale
+  bodyPart: Chest
+  groupWhitelist: [ Human, Arachnid ]
+  sexRestriction: Female
+  sponsorOnly: true
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+        color: "#FFFFFF"
+  sprites:
+    - sprite: Corvax/Mobs/Customization/Cyberlimbs/wardtakahashi.rsi
+      state: torso_f
+
+# Zenghu
+- type: marking
+  id: CyberlimbRArmZenghu
+  bodyPart: RArm
+  groupWhitelist: [ Human, Arachnid ]
+  sponsorOnly: true
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+          color: "#FFFFFF"
+  sprites:
+    - sprite: Corvax/Mobs/Customization/Cyberlimbs/zenghu.rsi
+      state: r_arm
+
+- type: marking
+  id: CyberlimbLArmZenghu
+  bodyPart: LArm
+  groupWhitelist: [ Human, Arachnid ]
+  sponsorOnly: true
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+          color: "#FFFFFF"
+  sprites:
+    - sprite: Corvax/Mobs/Customization/Cyberlimbs/zenghu.rsi
+      state: l_arm
+
+- type: marking
+  id: CyberlimbRHandZenghu
+  bodyPart: RHand
+  groupWhitelist: [ Human, Arachnid ]
+  sponsorOnly: true
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+          color: "#FFFFFF"
+  sprites:
+    - sprite: Corvax/Mobs/Customization/Cyberlimbs/zenghu.rsi
+      state: r_hand
+
+- type: marking
+  id: CyberlimbLHandZenghu
+  bodyPart: LHand
+  groupWhitelist: [ Human, Arachnid ]
+  sponsorOnly: true
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+          color: "#FFFFFF"
+  sprites:
+    - sprite: Corvax/Mobs/Customization/Cyberlimbs/zenghu.rsi
+      state: l_hand
+
+- type: marking
+  id: CyberlimbRLegZenghu
+  bodyPart: RLeg
+  groupWhitelist: [ Human, Arachnid ]
+  sponsorOnly: true
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+          color: "#FFFFFF"
+  sprites:
+    - sprite: Corvax/Mobs/Customization/Cyberlimbs/zenghu.rsi
+      state: r_leg
+
+- type: marking
+  id: CyberlimbLLegZenghu
+  bodyPart: LLeg
+  groupWhitelist: [ Human, Arachnid ]
+  sponsorOnly: true
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+          color: "#FFFFFF"
+  sprites:
+    - sprite: Corvax/Mobs/Customization/Cyberlimbs/zenghu.rsi
+      state: l_leg
+
+- type: marking
+  id: CyberlimbLFootZenghu
+  bodyPart: LFoot
+  groupWhitelist: [ Human, Arachnid ]
+  sponsorOnly: true
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+          color: "#FFFFFF"
+  sprites:
+    - sprite: Corvax/Mobs/Customization/Cyberlimbs/zenghu.rsi
+      state: l_foot
+
+- type: marking
+  id: CyberlimbRFootZenghu
+  bodyPart: RFoot
+  groupWhitelist: [ Human, Arachnid ]
+  sponsorOnly: true
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+          color: "#FFFFFF"
+  sprites:
+    - sprite: Corvax/Mobs/Customization/Cyberlimbs/zenghu.rsi
+      state: r_foot
+
+- type: marking
+  id: CyberlimbTorsoZenghu
+  bodyPart: Chest
+  groupWhitelist: [ Human, Arachnid ]
+  sponsorOnly: true
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+          color: "#FFFFFF"
+  sprites:
+    - sprite: Corvax/Mobs/Customization/Cyberlimbs/zenghu.rsi
+      state: torso
+
+# Nanotrasen
+- type: marking
+  id: CyberlimbRArmNanotrasen
+  bodyPart: RArm
+  groupWhitelist: [ Human, Arachnid ]
+  sponsorOnly: true
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+          color: "#FFFFFF"
+  sprites:
+    - sprite: Corvax/Mobs/Customization/Cyberlimbs/xion.rsi
+      state: r_arm
+
+- type: marking
+  id: CyberlimbLArmNanotrasen
+  bodyPart: LArm
+  groupWhitelist: [ Human, Arachnid ]
+  sponsorOnly: true
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+          color: "#FFFFFF"
+  sprites:
+    - sprite: Corvax/Mobs/Customization/Cyberlimbs/xion.rsi
+      state: l_arm
+
+- type: marking
+  id: CyberlimbRHandNanotrasen
+  bodyPart: RHand
+  groupWhitelist: [ Human, Arachnid ]
+  sponsorOnly: true
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+          color: "#FFFFFF"
+  sprites:
+    - sprite: Corvax/Mobs/Customization/Cyberlimbs/xion.rsi
+      state: r_hand
+
+- type: marking
+  id: CyberlimbLHandNanotrasen
+  bodyPart: LHand
+  groupWhitelist: [ Human, Arachnid ]
+  sponsorOnly: true
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+          color: "#FFFFFF"
+  sprites:
+    - sprite: Corvax/Mobs/Customization/Cyberlimbs/xion.rsi
+      state: l_hand
+
+- type: marking
+  id: CyberlimbRLegNanotrasen
+  bodyPart: RLeg
+  groupWhitelist: [ Human, Arachnid ]
+  sponsorOnly: true
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+          color: "#FFFFFF"
+  sprites:
+    - sprite: Corvax/Mobs/Customization/Cyberlimbs/xion.rsi
+      state: r_leg
+
+- type: marking
+  id: CyberlimbLLegNanotrasen
+  bodyPart: LLeg
+  groupWhitelist: [ Human, Arachnid ]
+  sponsorOnly: true
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+          color: "#FFFFFF"
+  sprites:
+    - sprite: Corvax/Mobs/Customization/Cyberlimbs/xion.rsi
+      state: l_leg
+
+- type: marking
+  id: CyberlimbLFootNanotrasen
+  bodyPart: LFoot
+  groupWhitelist: [ Human, Arachnid ]
+  sponsorOnly: true
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+          color: "#FFFFFF"
+  sprites:
+    - sprite: Corvax/Mobs/Customization/Cyberlimbs/xion.rsi
+      state: l_foot
+
+- type: marking
+  id: CyberlimbRFootNanotrasen
+  bodyPart: RFoot
+  groupWhitelist: [ Human, Arachnid ]
+  sponsorOnly: true
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+          color: "#FFFFFF"
+  sprites:
+    - sprite: Corvax/Mobs/Customization/Cyberlimbs/xion.rsi
+      state: r_foot
+
+- type: marking
+  id: CyberlimbTorsoNanotrasen
+  bodyPart: Chest
+  groupWhitelist: [ Human, Arachnid ]
+  sponsorOnly: true
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+          color: "#FFFFFF"
+  sprites:
+    - sprite: Corvax/Mobs/Customization/Cyberlimbs/xion.rsi
+      state: torso
+
+# Xion
+- type: marking
+  id: CyberlimbRArmXion
+  bodyPart: RArm
+  groupWhitelist: [ Human, Arachnid ]
+  sponsorOnly: true
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+          color: "#FFFFFF"
+  sprites:
+    - sprite: Corvax/Mobs/Customization/Cyberlimbs/xion.rsi
+      state: r_arm
+
+- type: marking
+  id: CyberlimbLArmXion
+  bodyPart: LArm
+  groupWhitelist: [ Human, Arachnid ]
+  sponsorOnly: true
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+          color: "#FFFFFF"
+  sprites:
+    - sprite: Corvax/Mobs/Customization/Cyberlimbs/xion.rsi
+      state: l_arm
+
+- type: marking
+  id: CyberlimbRHandXion
+  bodyPart: RHand
+  groupWhitelist: [ Human, Arachnid ]
+  sponsorOnly: true
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+          color: "#FFFFFF"
+  sprites:
+    - sprite: Corvax/Mobs/Customization/Cyberlimbs/xion.rsi
+      state: r_hand
+
+- type: marking
+  id: CyberlimbLHandXion
+  bodyPart: LHand
+  groupWhitelist: [ Human, Arachnid ]
+  sponsorOnly: true
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+          color: "#FFFFFF"
+  sprites:
+    - sprite: Corvax/Mobs/Customization/Cyberlimbs/xion.rsi
+      state: l_hand
+
+- type: marking
+  id: CyberlimbRLegXion
+  bodyPart: RLeg
+  groupWhitelist: [ Human, Arachnid ]
+  sponsorOnly: true
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+          color: "#FFFFFF"
+  sprites:
+    - sprite: Corvax/Mobs/Customization/Cyberlimbs/xion.rsi
+      state: r_leg
+
+- type: marking
+  id: CyberlimbLLegXion
+  bodyPart: LLeg
+  groupWhitelist: [ Human, Arachnid ]
+  sponsorOnly: true
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+          color: "#FFFFFF"
+  sprites:
+    - sprite: Corvax/Mobs/Customization/Cyberlimbs/xion.rsi
+      state: l_leg
+
+- type: marking
+  id: CyberlimbLFootXion
+  bodyPart: LFoot
+  groupWhitelist: [ Human, Arachnid ]
+  sponsorOnly: true
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+          color: "#FFFFFF"
+  sprites:
+    - sprite: Corvax/Mobs/Customization/Cyberlimbs/xion.rsi
+      state: l_foot
+
+- type: marking
+  id: CyberlimbRFootXion
+  bodyPart: RFoot
+  groupWhitelist: [ Human, Arachnid ]
+  sponsorOnly: true
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+          color: "#FFFFFF"
+  sprites:
+    - sprite: Corvax/Mobs/Customization/Cyberlimbs/xion.rsi
+      state: r_foot
+
+- type: marking
+  id: CyberlimbTorsoXion
+  bodyPart: Chest
+  groupWhitelist: [ Human, Arachnid ]
+  sponsorOnly: true
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+          color: "#FFFFFF"
+  sprites:
+    - sprite: Corvax/Mobs/Customization/Cyberlimbs/xion.rsi
+      state: torso
