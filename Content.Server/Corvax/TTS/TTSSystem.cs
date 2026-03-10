@@ -81,7 +81,8 @@ public sealed partial class TTSSystem : EntitySystem
         var voiceId = component.VoicePrototypeId;
         if (!_isEnabled ||
             args.Message.Length > MaxMessageChars ||
-            voiceId == null)
+            voiceId == null ||
+            voiceId == "")
             return;
 
         var voiceEv = new TransformSpeakerVoiceEvent(uid, voiceId);
