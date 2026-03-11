@@ -35,8 +35,8 @@ uplink-gloves-north-star-desc = Пара перчаток, которые зна
 uplink-gloves-knuckleduster-name = Кастеты Синдиката
 uplink-gloves-knuckleduster-desc = Пара пластитановых кастетов, позволяющий вам сломать челюсть капитана вдребезги всего одним ударом.
 
-uplink-hushpup-name = Hushpup
-uplink-hushpup-desc = A powerful silenced shotgun with a low magazine capacity. Comes with a spare box of buckshot. Uses .50 shotgun ammo.
+uplink-hushpup-name = Хашпап
+uplink-hushpup-desc = Мощный дробовик с глушителем и небольшим магазином. В комплекте идёт запасная коробка с дробью. Использует патроны калибра .50 ружейные.
 
 # Explosives
 uplink-explosive-grenade-name = Разрывная граната
@@ -196,41 +196,41 @@ uplink-antimov-law-name = Плата закона Антимов
 uplink-antimov-law-desc = Очень опасный набор законов, который можно использовать, если вы хотите заставить ИИ выйти из себя. Используйте его с осторожностью.
 
 # Implants
-uplink-storage-implanter-name = Имплантер Хранилище
+uplink-storage-implanter-name = Имплантер "Хранилище"
 uplink-storage-implanter-desc = Прячьте предметы внутри себя благодаря новой блюспейс-технологии!
 
-uplink-freedom-implanter-name = Имплантер Свобода
+uplink-freedom-implanter-name = Имплантер "Свобода"
 uplink-freedom-implanter-desc = Сбегите от этих противных сотрудников СБ при помощи этого импланта, который можно использовать аж три раза!
 
-uplink-scram-implanter-name = Имплантер Побег
+uplink-scram-implanter-name = Имплантер "Побег"
 uplink-scram-implanter-desc = Двухразовый имплант, который телепортирует вас в большом радиусе. Попытается телепортировать вас на незанятое место. Иногда сбоит. Страхование жизни не прилагается.
 
-uplink-dna-scrambler-implanter-name = Имплантер Миксер ДНК
+uplink-dna-scrambler-implanter-name = Имплантер "Миксер ДНК"
 uplink-dna-scrambler-implanter-desc = Одноразовый имплант, который можно активировать для перемешивания ДНК и приобретения совершенно нового облика.
 
-uplink-emp-implanter-name = Имплантер ЭМИ
-uplink-emp-implanter-desc = При активации создаёт небольшой ЭМИ, который обесточивает находящуюся рядом электронику; может быть использован три раза, прежде чем разрядится внутренняя батарея.
+uplink-emp-implanter-name = Имплантер "ЭМИ"
+uplink-emp-implanter-desc = При активации создаёт небольшой ЭМИ, который обесточивает находящуюся рядом электронику. Может быть использован три раза, прежде чем разрядится внутренняя батарея.
 
-uplink-macro-bomb-implanter-name = Имплантер Макробомба
+uplink-macro-bomb-implanter-name = Имплантер "Макробомба"
 uplink-macro-bomb-implanter-desc = Вколите его, и после смерти вы устроите большой взрыв. Большой риск для союзников, используйте на свой страх и риск. Заменяет Микробомбу.
 
-uplink-uplink-implanter-name = Имплантер Аплинк
+uplink-uplink-implanter-name = Имплантер "Аплинк"
 uplink-uplink-implanter-desc = Незаметно заказывайте снаряжение без использования КПК. Глотайте телекристаллы, чтобы пополнить аплинк.
 
-uplink-deathrattle-implant-name = Коробка имплантеров Предсмертный хрип
-uplink-deathrattle-implant-desc = Коробка, содержащая достаточное количество имплантов "Предсмертный хрип" на целый отряд. Передаёт сообщение с вашими координатами по радиоканалу Синдиката когда вы попадаете в критическое состояние или погибаете.
+uplink-deathrattle-implant-name = Коробка имплантеров "Предсмертный хрип"
+uplink-deathrattle-implant-desc = Коробка, содержащая достаточное количество имплантеров "Предсмертный хрип" на целый отряд. Передаёт сообщение с вашими координатами по радиоканалу Синдиката когда вы попадаете в критическое состояние или погибаете.
 
-uplink-death-acidifier-implant-name = Имплантер Посмертный растворитель
+uplink-death-acidifier-implant-name = Имплантер "Посмертный растворитель"
 uplink-death-acidifier-implant-desc = Полностью растворяет пользователя и его снаряжение при ручной активации или гибели носителя.
 
-uplink-micro-bomb-implanter-name = Имплантер Микробомба
+uplink-micro-bomb-implanter-name = Имплантер "Микробомба"
 uplink-micro-bomb-implanter-desc = Взрывается при ручной активации или гибели носителя этого импланта. Уничтожает тело пользователя со всем снаряжением.
 
-uplink-radio-implanter-name = Имплантер Радио
+uplink-radio-implanter-name = Имплантер "Радио"
 uplink-radio-implanter-desc = Импланитрует радио Синдиката, позволяя скрыто общаться без гарнитуры.
 
-uplink-voice-mask-implanter-name = Voice Mask Implanter
-uplink-voice-mask-implanter-desc = Modifies your vocal cords to be able to sound like anyone you could imagine.
+uplink-voice-mask-implanter-name = Имплантер "Голосовая маска"
+uplink-voice-mask-implanter-desc = Изменяет ваши голосовые связки, чтобы вы могли звучать как любой, кого вы можете представить.
 
 # Bundles
 uplink-observation-kit-name = Набор наблюдателя
@@ -286,7 +286,7 @@ uplink-toolbox-name = Ящик инструментов
 uplink-toolbox-desc = Полный набор инструментов для предателя с тягой к механике. Включает пару изолированных боевых перчаток и противогаз Синдиката.
 
 uplink-syndicate-jaws-of-life-name = Челюсти жизни
-uplink-syndicate-jaws-of-life-desc = Комбинация лома и кусачек. Используется для проникновения на станцию или в её отделы.
+uplink-syndicate-jaws-of-life-desc = Комбинация лома и кусачек. Используется для проникновения на станцию или в её отделы. Открывают даже заболтированные двери!
 
 uplink-duffel-surgery-name = Хирургический вещмешок
 uplink-duffel-surgery-desc = Большой вещмешок с полным набором хирургических инструментов.
@@ -409,10 +409,10 @@ uplink-nocturine-chemistry-bottle-name = Бутылочка ноктюрина.
 uplink-nocturine-chemistry-bottle-desc = Химическое вещество, которое усыпляет вашу цель.
 
 uplink-stimpack-name = Инъектор гиперзина
-uplink-stimpack-desc = Легендарный химический коктейль, производимый компанией Donk Co. для Синдиката. Одна инъекция этого вещества увеличивает скорость бега и позволяет быстрее восстанавливаться после оглушения в течение 30-ти секунд.
+uplink-stimpack-desc = Легендарный химический коктейль, производимый компанией Donk Co. для Синдиката. Одна инъекция этого вещества увеличивает скорость бега и позволяет быстрее восстанавливаться после оглушения в течение 60-ти секунд.
 
 uplink-stimkit-name = Набор инъекторов гиперзина
-uplink-stimkit-desc = Аптечка, содержащая 6 микроинъекторов гиперзина, каждый из которых содержит дозу гиперзина на 15 секунд.
+uplink-stimkit-desc = Аптечка, содержащая 6 микроинъекторов гиперзина, каждый из которых содержит дозу гиперзина на 30 секунд.
 
 uplink-syndicate-segway-crate-name = Сегвей Синдиката
 uplink-syndicate-segway-crate-desc = Будьте врагом корпорации на стиле.
