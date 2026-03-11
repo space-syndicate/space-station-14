@@ -134,7 +134,7 @@ public sealed partial class SecApartmentWindow : BaseWindow
 
         var rules = new[] { buttonStyleRule, lineEditRule, optionRule, optionBackgroundRule };
         var stylesheet = CreateCombinedStylesheet(rules);
-        UserInterfaceManager.Stylesheet = stylesheet;
+        Stylesheet = stylesheet;
     }
 
     private void SetupTabContainer()
