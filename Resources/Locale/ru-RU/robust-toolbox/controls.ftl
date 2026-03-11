@@ -9,4 +9,4 @@ color-selector-sliders-alpha = A
 color-selector-sliders-rgb = RGB
 color-selector-sliders-hsv = HSV
 
-option-button-filter = Filter
+option-button-filter = Фильтр

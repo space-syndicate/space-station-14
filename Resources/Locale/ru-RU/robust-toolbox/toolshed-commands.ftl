@@ -1,3 +1,4 @@
+#TODO перевод
 command-help-usage =
     Usage:
 command-help-invertible =
