@@ -1,4 +1,4 @@
-﻿names-vulpkanin-female-dataset-1 = Адриана
+names-vulpkanin-female-dataset-1 = Адриана
 names-vulpkanin-female-dataset-2 = Агата
 names-vulpkanin-female-dataset-3 = Агнеза
 names-vulpkanin-female-dataset-4 = Алдона

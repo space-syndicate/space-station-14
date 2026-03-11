@@ -1,4 +1,4 @@
-﻿stack-steel =
+stack-steel =
     { $amount ->
         [1] лист
         [few] листа
@@ -99,6 +99,7 @@ stack-cardboard =
         [few] листа
        *[other] листов
     } картона
+
 stack-bones =
     { $amount ->
         [1] кость
@@ -194,6 +195,7 @@ stack-artifact-fragment =
         [few] фрагмента
        *[other] фрагментов
     } артефакта
+
 # best materials
 stack-ground-tobacco =
     { $amount ->
@@ -228,6 +230,7 @@ stack-dried-rainbow-cannabis-leaves =
         [few] сушённых листа
        *[other] сушённых листьев
     } радужной конопли
+
 stack-cigarette-filter =
     { $amount ->
         [1] сигаретный фильтр
@@ -240,6 +243,7 @@ stack-rolling-paper =
         [few] сигаретных бумаги
        *[other] сигаретных бумаг
     }
+
 stack-fulton = фултон
 stack-credit = кредиты
 stack-plasma =
@@ -316,9 +320,9 @@ stack-white-steel-vertical-pavement = белая стальная вертика
 stack-steel-dark-checker-tile = тёмная стальная плитка шашечками
 stack-steel-light-checker-tile = светлая стальная плитка шашечками
 stack-steel-tile = стальная плитка
-stack-techmaint-floor-dark = тёмная техническая плитка
 stack-wood-floor = деревянный пол
 stack-techmaint-floor = технический пол
+stack-techmaint-floor-dark = тёмная техническая плитка
 stack-freezer-tile = плитка морозильника
 stack-showroom-tile = плитка выставочного зала
 stack-green-circuit-floor = плитка зелёных микросхем
@@ -374,6 +378,9 @@ stack-gray-concrete-smooth = серый бетонный пол
 stack-old-concrete-tile = старая бетонная плитка
 stack-old-concrete-mono-tile = старая бетонная плита
 stack-old-concrete-smooth = старый бетонный пол
+stack-ironsand-concrete-tile = ironsand concrete tile
+stack-ironsand-concrete-mono-tile = ironsand concrete mono tile
+stack-ironsand-concrete-smooth = ironsand concrete smooth
 stack-silver-floor-tile = серебряная плитка
 stack-bcircuit-floor-tile = плитка голубых микросхем
 stack-grass-floor-tile = плитка травы
@@ -391,17 +398,19 @@ stack-mowed-astro-grass-floor = астро-газон
 stack-jungle-astro-grass-floor = астро-трава джунглей
 stack-astro-ice-floor = астро-лёд
 stack-astro-snow-floor = астро-снег
+stack-large-wood-floor = большой деревянный пол
+stack-red-circuit-floor = плитка красных микросхем
+stack-asteroid-astro-sand-floor = астро-песок астероида
+stack-desert-astro-sand-floor = пустынный астро-песок
 stack-xeno-floor = ксенопол
 stack-xeno-steel = стальной ксенопол
 stack-xeno-steel-corner = стальной угловой ксенопол
-stack-desert-astro-sand-floor = пустынный астро-песок
+stack-xenoborg = ксеноборг-плитка
 stack-xeno-maint = технический ксенопол
 stack-dark-squiggly = тёмная волнистая стальная плитка
-stack-large-wood-floor = большой деревянный пол
-stack-xenoborg = ксеноборг-плитка
-stack-red-circuit-floor = плитка красных микросхем
-stack-asteroid-astro-sand-floor = астро-песок астероида
 stack-white-marble-floor = белый мраморный пол
 stack-dark-marble-floor = чёрный мраморный пол
 stack-plasma-marble-floor = плазменный мраморный пол
 stack-uranium-marble-floor = урановый мраморный пол
+stack-astro-ironsand-floor = astro-ironsand floor
+stack-astro-ironsand-floor-borderless = borderless astro-ironsand floor

@@ -1,3 +1,21 @@
+-create-3rd-person =
+    { $chance ->
+        [1] Создаёт
+        *[other] создают
+    }
+
+-cause-3rd-person =
+    { $chance ->
+        [1] Вызывает
+        *[other] вызывают
+    }
+
+-satiate-3rd-person =
+    { $chance ->
+        [1] Насыщает
+        *[other] насыщают
+    }
+
 entity-effect-guidebook-spawn-entity =
     { $chance ->
         [1] Creates
@@ -12,11 +30,13 @@ entity-effect-guidebook-destroy =
         [1] Уничтожает
         *[other] уничтожают
     } объект
+
 entity-effect-guidebook-break =
     { $chance ->
         [1] Ломает
         *[other] ломают
     } объект
+
 entity-effect-guidebook-explosion =
     { $chance ->
         [1] Causes
@@ -519,3 +539,9 @@ entity-effect-guidebook-plant-seeds-remove =
         [1] Removes the
         *[other] remove the
     } seeds of the plant
+
+entity-effect-guidebook-plant-mutate-chemicals =
+    { $chance ->
+        [1] Mutates
+        *[other] mutate
+    } a plant to produce {$name}

@@ -1,4 +1,4 @@
-﻿food-sequence-no-space = Вы не можете положить больше!
+food-sequence-no-space = Вы не можете положить больше!
 
 # GENERAL
 
@@ -81,6 +81,7 @@ food-sequence-content-anomaly-berry = аномальной ягодой
 # BURGERS
 
 food-sequence-burger-gen = { $content }бургер
+
 food-sequence-burger-content-raw-meat = сыро
 food-sequence-burger-content-meat = мясо
 food-sequence-burger-content-carp = карпо
@@ -120,9 +121,10 @@ food-sequence-burger-content-anomaly-berry = аномо
 food-sequence-burger-content-extradimensional-orange = три-дэ
 food-sequence-burger-content-world-pea = миро
 
-# TACO
+# COTTON BURGERS
 
 food-sequence-cotton-burger-gen = { $content }бургер
+
 food-sequence-cotton-burger-content-cotton-bol = хлопко
 food-sequence-cotton-burger-content-pyrotton-bol = пиро
 food-sequence-cotton-burger-content-plushie-throngler = нагибатор
@@ -157,6 +159,9 @@ food-sequence-cotton-burger-content-plushie-moth = пуши
 food-sequence-cotton-burger-content-plushie-vulp = вульп
 food-sequence-cotton-burger-content-plushie-ian = корги
 food-sequence-cotton-burger-content-among-pequeno = сас
+
+# TACO
+
 food-sequence-taco-gen = тако с { $content }
 
 # SKEWER

@@ -11,6 +11,7 @@ network-configurator-link-mode-stopped = Прекращено соединени
 network-configurator-mode-link = Соединение
 network-configurator-mode-list = Список
 network-configurator-switched-mode = Режим переключён на: { $mode }
+
 # Verbs
 network-configurator-save-device = Сохранить устройство
 network-configurator-configure = Настроить
@@ -18,10 +19,10 @@ network-configurator-switch-mode = Переключить режим
 network-configurator-link-defaults = Стандартное соединение
 network-configurator-start-link = Начать соединение
 network-configurator-link = Соединить
+
 # ui
 network-configurator-title-saved-devices = Сохранённые устройства
 network-configurator-title-device-configuration = Конфигурация устройств
-# ui
 network-configurator-ui-clear-button = Очистить
 network-configurator-ui-count-label =
     { $count } { $count ->
@@ -29,11 +30,13 @@ network-configurator-ui-count-label =
         [few] устройства
        *[other] устройств
     }
+
 network-configurator-text-set = Установить
 network-configurator-text-add = Добавить
 network-configurator-text-clear = Очистить
 network-configurator-text-copy = Копировать
 network-configurator-text-show = Отображать
+
 # tooltips
 network-configurator-tooltip-set = Создание списка целевых устройств
 network-configurator-tooltip-add = Добавление в список целевых устройств
@@ -41,15 +44,18 @@ network-configurator-tooltip-edit = Редактирование списка ц
 network-configurator-tooltip-clear = Очистка списка целевых устройств
 network-configurator-tooltip-copy = Копирование списка целевых устройств в мультитул
 network-configurator-tooltip-show = Показывать голографическую визуализацию списка целевых устройств
+
 # examine
 network-configurator-examine-mode-link = [color=red]Соединение[/color]
 network-configurator-examine-mode-list = [color=green]Список[/color]
 network-configurator-examine-current-mode = Текущий режим: { $mode }
 network-configurator-examine-switch-modes = Нажмите { $key } чтобы переключить режим
+
 # item status
 network-configurator-item-status-label =
     Режим: { $mode }
     Переключить: { $keybinding }
+
 # command
 cmd-clearnetworklinkoverlays-desc = Очистить все наложения сетевых соединений.
 cmd-clearnetworklinkoverlays-help = Использование: clearnetworklinkoverlays

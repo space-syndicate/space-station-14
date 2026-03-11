@@ -1,5 +1,6 @@
 permissions-eui-do-not-have-required-flags-to-edit-admin-tooltip = У вас нет необходимых флагов для редактирования этого администратора.
 permissions-eui-do-not-have-required-flags-to-edit-rank-tooltip = У вас нет необходимых флагов для редактирования этого ранга.
+
 permissions-eui-menu-title = Панель разрешений
 permissions-eui-menu-add-admin-button = Добавить админа
 permissions-eui-menu-add-admin-rank-button = Добавить админ ранг
@@ -20,5 +21,6 @@ permissions-eui-edit-admin-rank-button = Редактировать
 permissions-eui-edit-admin-rank-window-title = Редактирование админ ранга
 permissions-eui-edit-admin-window-save-button = Сохранить
 permissions-eui-edit-admin-window-remove-flag-button = Удалить
+
 cmd-permissions-desc = Открывает меню прав администрации.
 cmd-permissions-help = Использование: permissions

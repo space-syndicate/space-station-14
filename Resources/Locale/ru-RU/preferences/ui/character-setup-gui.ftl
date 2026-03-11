@@ -7,6 +7,7 @@ character-setup-gui-create-new-character-button = Создать нового п
 character-setup-gui-create-new-character-button-tooltip = Максимальное количество персонажей — { $maxCharacters }.
 character-setup-gui-character-picker-button-delete-button = Удалить
 character-setup-gui-character-picker-button-confirm-delete-button = Подтвердить
+
 character-setup-gui-save-panel-title = Несохранённые изменения персонажа
 character-setup-gui-save-panel-save = Сохранить
 character-setup-gui-save-panel-nosave = Не сохранять

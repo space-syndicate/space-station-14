@@ -7,9 +7,12 @@ store-ui-discount-display-with-currency = скидка { $amount }{ $currency }
 store-ui-discount-display = (скидка { $amount }!)
 store-ui-traitor-flavor = Копирайт (C) NT -30643
 store-ui-traitor-warning = Во избежании обнаружения оперативники должны блокировать свои аплинки после использования.
+
 store-withdraw-button-ui = Вывести { $currency }
 store-ui-button-out-of-stock = { "" } (Нет в наличии)
 store-not-account-owner = Этот { $store } не привязан к вам!
+
 store-preset-name-uplink = Аплинк
 store-preset-name-spellbook = Книга заклинаний
+store-preset-name-nukie-delivery = NukeOps Bluespace Delivery
 store-preset-name-changeling = Магазин ДНК
