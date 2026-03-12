@@ -1,3 +1,21 @@
+-create-3rd-person =
+    { $chance ->
+        [1] Создаёт
+        *[other] создают
+    }
+
+-cause-3rd-person =
+    { $chance ->
+        [1] Вызывает
+        *[other] вызывают
+    }
+
+-satiate-3rd-person =
+    { $chance ->
+        [1] Насыщает
+        *[other] насыщают
+    }
+
 entity-effect-guidebook-spawn-entity =
     { $chance ->
         [1] Creates
@@ -12,11 +30,13 @@ entity-effect-guidebook-destroy =
         [1] Уничтожает
         *[other] уничтожают
     } объект
+
 entity-effect-guidebook-break =
     { $chance ->
         [1] Ломает
         *[other] ломают
     } объект
+
 entity-effect-guidebook-explosion =
     { $chance ->
         [1] Causes
@@ -444,9 +464,9 @@ entity-effect-guidebook-cause-zombie-infection =
 
 entity-effect-guidebook-innoculate-zombie-infection =
     { $chance ->
-        [1] Cures
-        *[other] cure
-    } an ongoing zombie infection, and provides immunity to future infections
+        [1] Лечит
+       *[other] лечат
+    } зомби-вирус и обеспечивает иммунитет к нему в будущем
 
 entity-effect-guidebook-reduce-rotting =
     { $chance ->
@@ -468,54 +488,60 @@ entity-effect-guidebook-add-to-solution-reaction =
 
 entity-effect-guidebook-artifact-unlock =
     { $chance ->
-        [1] Helps
-        *[other] help
-        } unlock an alien artifact.
+        [1] Помогает
+       *[other] помогают
+    } разблокировать инопланетный артефакт.
 
 entity-effect-guidebook-artifact-durability-restore =
     Restores {$restored} durability in active alien artifact nodes.
 
 entity-effect-guidebook-plant-attribute =
     { $chance ->
-        [1] Adjusts
-        *[other] adjust
-    } {$attribute} by {$positive ->
-    [true] [color=red]{$amount}[/color]
-    *[false] [color=green]{$amount}[/color]
+        [1] Изменяет
+       *[other] изменяют
+    } { $attribute } на { $positive ->
+        [true] [color=red]{ $amount }[/color]
+       *[false] [color=green]{ $amount }[/color]
     }
 
 entity-effect-guidebook-plant-cryoxadone =
     { $chance ->
-        [1] Ages back
-        *[other] age back
-    } the plant, depending on the plant's age and time to grow
+        [1] Омолаживает
+       *[other] омолаживают
+    } растение, в зависимости от возраста растения и времени его роста
 
 entity-effect-guidebook-plant-phalanximine =
     { $chance ->
-        [1] Restores
-        *[other] restore
-    } viability to a plant rendered nonviable by a mutation
+        [1] Восстанавливает
+       *[other] восстанавливают
+    } жизнеспособность растения, ставшего нежизнеспособным в результате мутации
 
 entity-effect-guidebook-plant-diethylamine =
     { $chance ->
-        [1] Increases
-        *[other] increase
-    } the plant's lifespan and/or base health with 10% chance for each
+        [1] Повышает
+       *[other] повышают
+    } продолжительность жизни растения и/или его базовое здоровье с шансом 10% на единицу
 
 entity-effect-guidebook-plant-robust-harvest =
     { $chance ->
-        [1] Increases
-        *[other] increase
-    } the plant's potency by {$increase} up to a maximum of {$limit}. Causes the plant to lose its seeds once the potency reaches {$seedlesstreshold}. Trying to add potency over {$limit} may cause decrease in yield at a 10% chance
+        [1] Повышает
+       *[other] повышают
+    } потенцию растения путём { $increase } до максимума в { $limit }. Приводит к тому, что растение теряет свои семена, когда потенция достигает { $seedlesstreshold }. Попытка повысить потенцию свыше { $limit } может вызвать снижение урожайности с вероятностью 10%
 
 entity-effect-guidebook-plant-seeds-add =
     { $chance ->
-        [1] Restores the
-        *[other] restore the
-    } seeds of the plant
+        [1] Восстанавливает
+       *[other] восстанавливают
+    } семена растения
 
 entity-effect-guidebook-plant-seeds-remove =
     { $chance ->
-        [1] Removes the
-        *[other] remove the
-    } seeds of the plant
+        [1] Убирает
+       *[other] убирают
+    } семена из растения
+
+entity-effect-guidebook-plant-mutate-chemicals =
+    { $chance ->
+        [1] Мутирует
+       *[other] мутируют
+    } растение, чтобы то производило { $name }

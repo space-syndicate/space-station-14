@@ -1,3 +1,4 @@
+
 ### Announcement
 
 earlyleave-cryo-job-unknown = Должность неизвестна
@@ -10,4 +11,5 @@ earlyleave-cryo-announcement =
        *[neuter] было перемещено
     } в криогенное хранилище!
 earlyleave-cryo-sender = Станция
+
 cryostorage-paused-map-name = Карта хранения тел криосна

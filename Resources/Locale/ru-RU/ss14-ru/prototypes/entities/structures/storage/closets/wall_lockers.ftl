@@ -54,3 +54,6 @@ ent-LockerWallPrisoner7 = { ent-LockerWallBasePrisoner }
 ent-LockerWallPrisoner8 = { ent-LockerWallBasePrisoner }
     .suffix = 8
     .desc = { ent-LockerWallBasePrisoner.desc }
+ent-LockerWallSyndicate = blood-red wall locker
+    .desc = It's a wall storage unit with a blood-red design.
+    .suffix = Locked

@@ -6,7 +6,9 @@ swap-teleporter-popup-teleport-cancel-time = Устройство перезар
 swap-teleporter-popup-teleport-cancel-link = Не связано с другим устройством!
 swap-teleporter-popup-teleport-other = { CAPITALIZE($entity) } активируется, и вы оказываетесь в другом месте.
 swap-teleporter-popup-teleport-fail = { CAPITALIZE($entity) } активируется, но не может никуда вас перенести.
+
 swap-teleporter-verb-destroy-link = Разорвать квантовую связь
+
 swap-teleporter-examine-link-present = [color=forestgreen]Имеется квантовая связь с другим устройством.[/color] Alt-клик чтобы разорвать квантовую связь.
 swap-teleporter-examine-link-absent = [color=yellow]Квантовая связь отсутствует.[/color] Используйте на другом устройстве, чтобы установить квантовую связь.
 swap-teleporter-examine-time-remaining =
@@ -15,3 +17,4 @@ swap-teleporter-examine-time-remaining =
         [few] секунды.
        *[other] секунд.
     }[/color]
+

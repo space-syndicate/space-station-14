@@ -11,6 +11,7 @@ marking-used-forced = { $marking-name } (Принудительно)
 marking-slot-add = Добавить
 marking-slot-remove = Удалить
 marking-slot = Слот { $number }
+
 humanoid-marking-modifier-force = Принудительно
 humanoid-marking-modifier-ignore-species = Игнорировать вид
 humanoid-marking-modifier-base-layers = Базовый слой

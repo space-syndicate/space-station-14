@@ -11,6 +11,7 @@ advertisement-block-game-10 = NT-блоки это совершенно точн
 advertisement-block-game-11 = Теперь со взрывной обработкой!
 advertisement-block-game-12 = Наши юристы уже готовы!
 advertisement-block-game-13 = Это блочный дождь, аллилуйя!
+
 thankyou-block-game-1 = Сыграйте ещё раз!
 thankyou-block-game-2 = Неплохо сыграно!
 thankyou-block-game-3 = Ещё одну каточку?

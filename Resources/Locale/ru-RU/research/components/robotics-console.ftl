@@ -1,5 +1,6 @@
 robotics-console-window-title = Роботехническая консоль
 robotics-console-no-cyborgs = Киборги отсутствуют!
+
 robotics-console-select-cyborg = Выберите киборга из списка выше.
 robotics-console-model = [color=gray]Модель:[/color] { $name }
 # name is not formatted to prevent players trolling
@@ -11,7 +12,9 @@ robotics-console-brain = [color=gray]Мозг установлен:[/color] [col
         [true] green]Да
        *[false] red]Нет
     }[/color]
+
 robotics-console-locked-message = Управление заблокировано, проведите ID-картой.
 robotics-console-disable = Отключить
 robotics-console-destroy = Уничтожить
+
 robotics-console-cyborg-destroying = Запущен процесс дистанционного уничтожения { $name }!

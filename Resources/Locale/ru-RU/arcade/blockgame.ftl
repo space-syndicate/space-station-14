@@ -1,14 +1,18 @@
+
 ### UI
 
 # Current game score
 blockgame-menu-label-points = Очки: { $points }
+
 # Current game level
 blockgame-menu-label-level = Уровень: { $level }
+
 # Game over information of your round
 blockgame-menu-gameover-info =
     Глобальный счёт: { $global }
     Локальный счёт: { $local }
     Очки: { $points }
+
 blockgame-menu-title = Блоки Nanotrasen
 blockgame-menu-button-new-game = Новая игра
 blockgame-menu-button-scoreboard = Таблица лидеров

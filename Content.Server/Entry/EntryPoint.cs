@@ -146,21 +146,9 @@ namespace Content.Server.Entry
             if (!string.IsNullOrEmpty(dest))
             {
                 var resPath = new ResPath(dest).ToRootedPath();
-                var file = _res.UserData.OpenWriteText(resPath.WithName("chem_" + dest));
-                ChemistryJsonGenerator.PublishJson(file);
-                file.Flush();
-                file = _res.UserData.OpenWriteText(resPath.WithName("react_" + dest));
-                ReactionJsonGenerator.PublishJson(file);
-                file.Flush();
                 // Corvax-Wiki-Start
-                file = _res.UserData.OpenWriteText(resPath.WithName("entity_" + dest));
+                var file = _res.UserData.OpenWriteText(resPath.WithName("entity_" + dest));
                 EntityJsonGenerator.PublishJson(file);
-                file.Flush();
-                file = _res.UserData.OpenWriteText(resPath.WithName("mealrecipes_" + dest));
-                MealsRecipesJsonGenerator.PublishJson(file);
-                file.Flush();
-                file = _res.UserData.OpenWriteText(resPath.WithName("healthchangereagents_" + dest));
-                HealthChangeReagentsJsonGenerator.PublishJson(file);
                 file.Flush();
                 file = _res.UserData.OpenWriteText(resPath.WithName("loc.json"));
                 LocJsonGenerator.PublishJson(file);
@@ -173,6 +161,18 @@ namespace Content.Server.Entry
                 file.Flush();
                 file = _res.UserData.OpenWriteText(resPath.WithName("component.json"));
                 ComponentListGenerator.PublishJson(file);
+                file.Flush();
+                file = _res.UserData.OpenWriteText(resPath.WithName("prototype_store.json"));
+                PrototypeStoreGenerator.PublishJson(file);
+                file.Flush();
+                file = _res.UserData.OpenWriteText(resPath.WithName("component_store.json"));
+                ComponentStoreGenerator.PublishJson(file);
+                file.Flush();
+                file = _res.UserData.OpenWriteText(resPath.WithName("entity_name.json"));
+                EntityNameDuplicatesJsonGenerator.PublishNameJson(file);
+                file.Flush();
+                file = _res.UserData.OpenWriteText(resPath.WithName("entity_name_duplicates.json"));
+                EntityNameDuplicatesJsonGenerator.PublishDuplicatesJson(file);
                 file.Flush();
                 PrototypeJsonGenerator.PublishAll(_res, new ResPath("prototype").ToRootedPath());
                 file.Flush();
