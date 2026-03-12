@@ -96134,8 +96134,6 @@ entities:
       pos: 32.5,5.5
       parent: 2
     - type: DeviceNetwork
-      configurators:
-      - invalid
       deviceLists:
       - 69
   - uid: 11277
