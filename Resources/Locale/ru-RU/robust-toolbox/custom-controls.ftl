@@ -6,8 +6,8 @@ entity-spawn-window-override-menu-tooltip = Перезапись размеще�
 
 ## TileSpawnWindow
 
-tile-spawn-window-title = Place Tiles
-tile-spawn-window-mirror-button-text = Mirror Tiles
+tile-spawn-window-title = Размещение плитки
+tile-spawn-window-mirror-button-text = Отзеркалить плитку
 
 ## Console
 
@@ -15,10 +15,10 @@ console-line-edit-placeholder = Введите сюда команду
 
 ## OutputPanel
 
-output-panel-scroll-down-button-text = Scroll Down
+output-panel-scroll-down-button-text = Пролистать вниз
 
 ## Common Used
 
-window-erase-button-text = Erase Mode
-window-search-bar-placeholder = Search
-window-clear-button = Clear
+window-erase-button-text = Режим удаления
+window-search-bar-placeholder = Поиск
+window-clear-button = Очистить

@@ -77,4 +77,4 @@ input-key-RSystem-mac = Right Cmd
 input-key-LSystem-linux = Left Meta
 input-key-RSystem-linux = Right Meta
 
-input-key-unknown = <unknown key>
+input-key-unknown = <неизвестная клавиша>
