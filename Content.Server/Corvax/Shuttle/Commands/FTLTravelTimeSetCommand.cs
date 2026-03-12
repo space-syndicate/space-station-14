@@ -2,7 +2,10 @@ using Content.Server.Administration;
 using Content.Shared.Administration;
 using Content.Shared.Shuttles.Components;
 using Content.Shared.Shuttles.Systems;
+using Content.Server.Shuttles.Components;
+using Content.Server.Shuttles.Systems;
 using Content.Shared.Timing;
+using Content.Shared.Examine;
 using Robust.Shared.Console;
 using Robust.Shared.Timing;
 using System;
@@ -42,6 +45,11 @@ public sealed class FTLTravelTimeSetCommand : LocalizedCommands
         if (!_entManager.TryGetComponent<FTLComponent>(uid, out var comp))
         {
             shell.WriteError(Loc.GetString("shell-entity-target-lacks-component",("componentName", nameof(FTLComponent)))); 
+            return;
+        }
+
+        if (_entManager.HasComponent<ArrivalsShuttleComponent>(uid))
+        {
             return;
         }
 
