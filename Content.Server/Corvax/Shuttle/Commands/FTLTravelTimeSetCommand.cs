@@ -8,7 +8,7 @@ using Robust.Shared.GameObjects;
 using Robust.Shared.Timing;
 using System;
 
-namespace Content.Server.Corvax.Shuttles.Commands;
+namespace Content.Server.Corvax.Shuttle.Commands;
 
 [AdminCommand(AdminFlags.Fun)]
 
