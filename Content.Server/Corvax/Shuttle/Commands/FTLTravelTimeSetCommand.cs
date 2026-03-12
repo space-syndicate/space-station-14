@@ -4,7 +4,6 @@ using Content.Shared.Shuttles.Components;
 using Content.Shared.Shuttles.Systems;
 using Content.Shared.Timing;
 using Robust.Shared.Console;
-using Robust.Shared.GameObjects;
 using Robust.Shared.Timing;
 using System;
 
@@ -15,7 +14,6 @@ namespace Content.Server.Corvax.Shuttle.Commands;
 public sealed class FTLTravelTimeSetCommand : LocalizedCommands
 {
     [Dependency] private readonly IEntityManager _entManager = default!;
-    [Dependency] private readonly IEntitySystemManager _entSystemManager = default!;
     [Dependency] private readonly IGameTiming _gameTiming = default!; 
 
     public override string Command => "ftltraveltimeset";
