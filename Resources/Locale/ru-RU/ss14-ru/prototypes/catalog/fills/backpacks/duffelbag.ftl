@@ -51,4 +51,4 @@ ent-ClothingBackpackDuffelSyndicateDecoyKitFilled = набор обманок
 ent-ClothingBackpackDuffelSyndicateFilledStarterKit = базовый набор оперативника
     .desc = Содержит одно оружие, медицинские припасы, инструменты для взлома, запасные боеприпасы и некоторые простые инструменты.
 ent-ClothingBackpackDuffelSyndicateFilledHushpup = набор Хашпап
-    .desc = В комплект входит ружье Хашпап, а также коробка дроби. Монета прилагается.
+    .desc = В комплект входит дробовик Хашпап, а также коробка дроби. Четвертак прилагается.
