@@ -114,7 +114,7 @@ reagent-name-lacerinol = лацеринол
 reagent-desc-lacerinol = Довольно нереактивное химическое вещество, усиливающее синтез коллагена до невероятных уровней и заживляющее резаные раны.
 
 reagent-name-puncturase = пунктураз
-reagent-name-puncturase-tranexamic = пунктураз и транексам
+reagent-name-puncturase-tranexamic = пунктураз и транексамовая
 reagent-desc-puncturase = Шипучее химическое вещество, залечивающее колотые ранения, ценой небольшого количества ушибов.
 
 reagent-name-bruizine = бруизин

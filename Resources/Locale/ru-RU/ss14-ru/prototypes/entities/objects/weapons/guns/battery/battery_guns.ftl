@@ -76,5 +76,5 @@ ent-WeaponTemperatureGun = термопушка
     .desc = Продвинутое оружие, стреляющее лучами, способными изменять температуру тела. Вероятно, считается в некоторым роде военным преступлением.
 ent-WeaponLaserGunXenoborg = лазерная винтовка ксеноборга
     .desc = { ent-WeaponAdvancedLaser.desc }
-ent-WeaponLaserCannonXenoborg = лазерная пушка ксеноборга
+ent-WeaponLaserCannonXenoborg = тяжёлая лазерная пушка ксеноборга
     .desc = { ent-WeaponLaserCannon.desc }
