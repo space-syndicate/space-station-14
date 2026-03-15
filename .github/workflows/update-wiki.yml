@@ -186,7 +186,7 @@ jobs:
             exit 0
           fi
 
-          content="{{сущность|$id}}"
+          content="{{ajax|<nowiki>{{сущность|$id}}</nowiki>|auto}}"
           echo "Creating page: $name → $id"
 
           curl -sS -b "$cookiejar" \
