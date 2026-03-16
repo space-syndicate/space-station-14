@@ -67,7 +67,11 @@ public static class PrototypeJsonGenerator
             };
 
             res.UserData.CreateDir(destRoot);
-            var fileName = PrototypeUtility.CalculatePrototypeName(kind.Name) + ".json";
+            var kindName = proto.TryGetKindFrom(kind, out var actualKindName)
+                ? actualKindName
+                : kind.Name;
+            kindName = TextTools.CapitalizeString(kindName);
+            var fileName = kindName + ".json";
             var file = res.UserData.OpenWriteText(destRoot / fileName);
             file.Write(JsonSerializer.Serialize(outObj, serializeOptions));
             file.Flush();
