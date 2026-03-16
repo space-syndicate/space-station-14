@@ -21,7 +21,7 @@ public static class WikiEntityNameGenerator
     {
         var entityNamePath = destRoot.WithName("entity_name.json");
 
-        HashSet<string> merged = new(StringComparer.Ordinal);
+        HashSet<string> existing = new(StringComparer.Ordinal);
 
         try
         {
@@ -29,13 +29,13 @@ public static class WikiEntityNameGenerator
             using var reader = new StreamReader(readStream, Encoding.UTF8, detectEncodingFromByteOrderMarks: true, leaveOpen: false);
             var json = reader.ReadToEnd();
 
-            var existingNames = JsonSerializer.Deserialize<Dictionary<string, string>>(json);
-            if (existingNames != null)
+            using var doc = JsonDocument.Parse(json);
+            if (doc.RootElement.ValueKind == JsonValueKind.Object)
             {
-                foreach (var key in existingNames.Keys)
+                foreach (var prop in doc.RootElement.EnumerateObject())
                 {
-                    if (!string.IsNullOrWhiteSpace(key))
-                        merged.Add(key);
+                    if (!string.IsNullOrWhiteSpace(prop.Name))
+                        existing.Add(prop.Name);
                 }
             }
         }
@@ -54,12 +54,14 @@ public static class WikiEntityNameGenerator
             // ignore
         }
 
+        var missing = new List<string>();
         foreach (var title in wikiTitles)
         {
             if (string.IsNullOrWhiteSpace(title))
                 continue;
 
-            merged.Add(title);
+            if (!existing.Contains(title))
+                missing.Add(title);
         }
 
         var options = new JsonSerializerOptions
@@ -68,7 +70,7 @@ public static class WikiEntityNameGenerator
             Encoder = JavaScriptEncoder.UnsafeRelaxedJsonEscaping
         };
 
-        var outputJson = JsonSerializer.Serialize(merged, options);
+        var outputJson = JsonSerializer.Serialize(missing, options);
         writer.Write(outputJson);
     }
 
@@ -124,7 +126,7 @@ public static class WikiEntityNameGenerator
     {
         [UsedImplicitly]
         [JsonPropertyName("cmcontinue")]
-        public string? CmContinue { get; }
+        public string? CmContinue { get; init; }
     }
 
     [UsedImplicitly]
@@ -132,7 +134,7 @@ public static class WikiEntityNameGenerator
     {
         [UsedImplicitly]
         [JsonPropertyName("categorymembers")]
-        public List<MediaWikiCategoryMember>? CategoryMembers { get; }
+        public List<MediaWikiCategoryMember>? CategoryMembers { get; init; }
     }
 
     [UsedImplicitly]
@@ -140,6 +142,6 @@ public static class WikiEntityNameGenerator
     {
         [UsedImplicitly]
         [JsonPropertyName("title")]
-        public string? Title { get; }
+        public string? Title { get; init; }
     }
 }
