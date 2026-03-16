@@ -65,7 +65,7 @@ jobs:
 
         cookiejar="$(mktemp)"
         trap 'rm -f "$cookiejar"' EXIT
-        content="{{Infobox}}"
+        warning="{{сущность/infobox|тип=дубликат}}"
 
         # Login
         login_token=$(curl -sS -c "$cookiejar" \
@@ -107,7 +107,7 @@ jobs:
           content=$(printf "%s" "$page_json" | jq -r \
             ".query.pages | to_entries[0].value.revisions[0].slots.main[\"*\"] // \"\"")
 
-          if printf "%s" "$content" | grep -q "${content%}}"; then
+          if printf "%s" "$content" | grep -q "${warning%}"; then
             exit 0
           fi
 
@@ -116,8 +116,8 @@ jobs:
           curl -sS -b "$cookiejar" \
             --data-urlencode "action=edit" \
             --data-urlencode "title=$title" \
-            --data-urlencode "prependtext=${content}\n" \
-            --data-urlencode "summary=Add Infobox via GitHub Actions" \
+            --data-urlencode "prependtext=${warning}\n" \
+            --data-urlencode "summary=Add Warning via GitHub Actions" \
             --data-urlencode "token=$token" \
             --data-urlencode "bot=true" \
             --data-urlencode "minor=true" \
