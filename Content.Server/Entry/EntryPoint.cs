@@ -171,6 +171,9 @@ namespace Content.Server.Entry
                 file = _res.UserData.OpenWriteText(resPath.WithName("entity_name.json"));
                 EntityNameDuplicatesJsonGenerator.PublishNameJson(file);
                 file.Flush();
+                file = _res.UserData.OpenWriteText(resPath.WithName("entity_name_wiki.json"));
+                WikiEntityNameGenerator.PublishJson(file, _res, resPath);
+                file.Flush();
                 file = _res.UserData.OpenWriteText(resPath.WithName("entity_name_duplicates.json"));
                 EntityNameDuplicatesJsonGenerator.PublishDuplicatesJson(file);
                 file.Flush();
