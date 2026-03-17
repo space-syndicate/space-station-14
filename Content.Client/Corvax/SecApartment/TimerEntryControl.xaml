@@ -1,0 +1,54 @@
+<PanelContainer xmlns="https://spacestation14.io"
+                xmlns:gfx="clr-namespace:Robust.Client.Graphics;assembly=Robust.Client"
+                HorizontalExpand="True"
+                Margin="0 0 0 5">
+
+    <BoxContainer Orientation="Vertical"
+                  HorizontalExpand="True"
+                  SeparationOverride="4">
+
+        <BoxContainer Orientation="Horizontal"
+                      HorizontalExpand="True"
+                      VerticalAlignment="Center">
+
+            <Label Name="TimerLabel"
+                   HorizontalExpand="True"
+                   FontColorOverride="#ff9999"
+                   Margin="0 0 10 0" />
+
+            <Label Name="TimeLabel"
+                   MinWidth="80"
+                   HorizontalAlignment="Right"
+                   FontColorOverride="#ff6666" />
+
+            <Button Name="RemoveButton"
+                    Text="{Loc 'sec-apartment-ui-timers-remove'}"
+                    ToolTip="{Loc 'sec-apartment-ui-timers-remove-tooltip'}"
+                    MinWidth="40"
+                    Margin="5 0 0 0" />
+
+        </BoxContainer>
+
+        <BoxContainer Orientation="Horizontal"
+                      HorizontalExpand="True"
+                      VerticalAlignment="Center">
+
+            <Label Text="{Loc 'sec-apartment-ui-timers-total-time'}"
+                   FontColorOverride="#ff8888"
+                   Margin="0 0 5 0" />
+
+            <Label Name="TotalTimeLabel"
+                   HorizontalExpand="True"
+                   FontColorOverride="#ffaaaa" />
+
+        </BoxContainer>
+
+        <PanelContainer StyleClasses="LowDivider" HorizontalExpand="True" Margin="0 2 0 2" SetHeight="1">
+            <PanelContainer.PanelOverride>
+                <gfx:StyleBoxFlat BackgroundColor="#ff4444" />
+            </PanelContainer.PanelOverride>
+        </PanelContainer>
+
+    </BoxContainer>
+
+</PanelContainer>

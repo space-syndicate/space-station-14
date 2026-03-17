@@ -8,4 +8,5 @@ cmd-tippy-auto-5 = время анимации, в секундах
 cmd-tippy-auto-6 = интервал прыжков, в секундах
 cmd-tippy-error-no-user = Пользователь не найден.
 cmd-tippy-error-no-prototype = Прототип не найден: { $proto }
+
 cmd-tip-desc = Спавн случайного игрового совета.

@@ -1,7 +1,9 @@
 sandbox-window-title = Панель песочницы
+
 sandbox-window-map-editing-label = Редактирование
 sandbox-window-visibility-label = Обзор
 sandbox-window-your-character-label = Ваш персонаж
+
 sandbox-window-ai-overlay-button = Оверлей ИИ
 sandbox-window-respawn-button = Возрождение
 sandbox-window-spawn-entities-button = Спавн сущностей

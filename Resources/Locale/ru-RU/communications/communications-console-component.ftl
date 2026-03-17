@@ -10,13 +10,16 @@ comms-console-menu-call-shuttle = Вызвать
 comms-console-menu-recall-shuttle = Отозвать
 comms-console-menu-emergency-shuttle-button-tooltip = Вызывает или отзывает эвакуационный шаттл. Вы можете отозвать шаттл, только если осталось достаточно времени.
 comms-console-menu-time-remaining = Оставшееся время: { $time }
+
 # Popup
 comms-console-permission-denied = В доступе отказано
 comms-console-shuttle-unavailable = В настоящее время шаттл недоступен
 comms-console-message-too-long = Сообщение слишком длинное
+
 # Placeholder values
 comms-console-announcement-sent-by = Отправитель
 comms-console-announcement-unknown-sender = Неизвестный
+
 # Comms console variant titles
 comms-console-announcement-title-station = Консоль связи
 comms-console-announcement-title-centcom = Центральное командование

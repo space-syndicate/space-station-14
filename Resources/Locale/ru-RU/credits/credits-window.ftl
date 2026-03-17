@@ -13,6 +13,7 @@ credits-window-immortals-title = В память о
 credits-window-special-thanks-section-title = Особая благодарность
 credits-window-previous-page-button = Пред. страница
 credits-window-next-page-button = След. страница
+
 credits-window-attributions-directory = [color=white]Директория:[/color] { $directory }
 credits-window-attributions-files = [color=white]Файлы:[/color] { $files }
 credits-window-attributions-copyright = [color=white]Копирайт:[/color] { $copyright }

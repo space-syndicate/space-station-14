@@ -7,6 +7,8 @@ cmd-mapping-success-load = Создаёт неинициализированну
 cmd-mapping-success-load-grid = Загружен неинициализированный грид с файла { $path } на новую карту с id { $mapId }.
 cmd-mapping-success = Создаёт неинициализированную карту с id { $mapId }.
 cmd-mapping-warning = ПРЕДУПРЕЖДЕНИЕ: На сервере используется отладочная дебаг сборка. Вы рискуете потерять свои изменения.
+
+
 # duplicate text from engine load/save map commands.
 # I CBF making this PR depend on that one.
 cmd-mapping-failure-integer = { $arg } это не допустимый integer.

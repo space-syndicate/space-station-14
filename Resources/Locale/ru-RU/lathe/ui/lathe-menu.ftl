@@ -1,4 +1,4 @@
-﻿lathe-menu-title = Меню станка
+lathe-menu-title = Меню станка
 lathe-menu-queue = Очередь
 lathe-menu-server-list = Список серверов
 lathe-menu-sync = Синхр.

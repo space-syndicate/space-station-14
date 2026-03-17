@@ -1,4 +1,4 @@
-﻿# Verbs
+# Verbs
 arcade-villain-verbs-fight-1 = Аннигилируй
 arcade-villain-verbs-fight-2 = Победи
 arcade-villain-verbs-fight-3 = Уничтожь
@@ -9,6 +9,7 @@ arcade-villain-verbs-fight-7 = Очаруй
 arcade-villain-verbs-fight-8 = Спаси
 arcade-villain-verbs-fight-9 = Останови
 arcade-villain-verbs-fight-10 = Ударь
+
 # Enemy names
 arcade-villain-names-enemy-first-1 = Герцог
 arcade-villain-names-enemy-first-2 = Фермер
@@ -21,6 +22,7 @@ arcade-villain-names-enemy-first-8 = Грозный Король
 arcade-villain-names-enemy-first-9 = Злой
 arcade-villain-names-enemy-first-10 = Могучий
 arcade-villain-names-enemy-first-11 = Космический
+
 arcade-villain-names-enemy-last-1 = Крушелон
 arcade-villain-names-enemy-last-2 = ЕРПшер
 arcade-villain-names-enemy-last-3 = Эктоплазма

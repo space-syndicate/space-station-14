@@ -6,6 +6,7 @@ hugbot-start-hug-5 = Пожалуйста, не двигайтесь.
 hugbot-start-hug-6 = Обнимашки!
 hugbot-start-hug-7 = Доставляю ОБНИМАШКИ.
 hugbot-start-hug-8 = Я создан для объятий, и я ОБНИМУ тебя.
+
 hugbot-finish-hug-1 = Готово.
 hugbot-finish-hug-2 = Процедура объятий завершена.
 hugbot-finish-hug-3 = Тебе лучше?
@@ -14,6 +15,7 @@ hugbot-finish-hug-5 = Тебя любят.
 hugbot-finish-hug-6 = Ты важен.
 hugbot-finish-hug-7 = Всё всегда становится лучше!
 hugbot-finish-hug-8 = Объятие: ЗАВЕРШЕНО.
+
 hugbot-emagged-finish-hug-1 = Знаешь, пошёл нахрен.
 hugbot-emagged-finish-hug-2 = Никто тебя не любит.
 hugbot-emagged-finish-hug-3 = Фууу... Нет.

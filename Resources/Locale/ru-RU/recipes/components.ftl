@@ -1,4 +1,4 @@
-﻿construction-graph-component-any-computer-circuit-board = любая консольная плата
+construction-graph-component-any-computer-circuit-board = любая консольная плата
 construction-graph-component-door-electronics-circuit-board = консольная плата шлюза
 construction-graph-component-flash = вспышка
 construction-graph-component-second-flash = вторая вспышка

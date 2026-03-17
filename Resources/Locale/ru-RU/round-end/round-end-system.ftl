@@ -6,5 +6,6 @@ round-end-system-shuttle-auto-called-announcement = Процедура смен�
 round-end-system-shuttle-recalled-announcement = Эвакуационный шаттл был отозван.
 round-end-system-shuttle-sender-announcement = Станция
 round-end-system-round-restart-eta-announcement = Раунд перезапустится через { $time } { $units }...
+
 eta-units-minutes = минут
 eta-units-seconds = секунд

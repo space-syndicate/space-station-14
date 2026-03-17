@@ -6,6 +6,7 @@ rule-restarting-in-seconds =
        *[other] секунд
     }.
 rule-time-has-run-out = Время вышло!
+
 # Respawning
 rule-respawn-in-seconds =
     Возрождение через { $second } { $second ->

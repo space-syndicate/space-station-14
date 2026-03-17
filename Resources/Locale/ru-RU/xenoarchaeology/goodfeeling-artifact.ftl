@@ -12,6 +12,7 @@ goodfeeling-artifact-11 = Ваша кожа головы покалывает.
 goodfeeling-artifact-12 = Все цвета кажутся более яркими.
 goodfeeling-artifact-13 = Всё кажется немного светлее.
 goodfeeling-artifact-14 = Проблемы мира словно исчезают.
+
 goodfeeling-artifact-drastic-1 = Вам хочется обнять каждого встречного!
 goodfeeling-artifact-drastic-2 = Всё идёт так великолепно!
 goodfeeling-artifact-drastic-3 = Вы чувствуете эйфорию.

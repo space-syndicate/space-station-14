@@ -1,3 +1,4 @@
+# Examine text
 comp-ghost-examine-time-minutes =
     Умер [color=yellow]{ $minutes } { $minutes ->
         [one] минуту

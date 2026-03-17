@@ -1,3 +1,4 @@
+# Positive
 names-diona-last-dataset-1 = Мира
 names-diona-last-dataset-2 = Гармонии
 names-diona-last-dataset-3 = Расслабления
@@ -48,6 +49,8 @@ names-diona-last-dataset-47 = Честности
 names-diona-last-dataset-48 = Щедрости
 names-diona-last-dataset-49 = Возможности
 names-diona-last-dataset-50 = Мотивации
+
+# Neutral
 names-diona-last-dataset-51 = Срочности
 names-diona-last-dataset-52 = Жизненной Силы
 names-diona-last-dataset-53 = Выносливости
@@ -89,6 +92,9 @@ names-diona-last-dataset-88 = Смелости
 names-diona-last-dataset-89 = Живости
 names-diona-last-dataset-90 = Знания
 names-diona-last-dataset-91 = Изменения
+
+# Negative
+# These should be something a diona would still realistically name themselves, i.e not inherently self deprecating.
 names-diona-last-dataset-92 = Зависти
 names-diona-last-dataset-93 = Неумелости
 names-diona-last-dataset-94 = Невежества

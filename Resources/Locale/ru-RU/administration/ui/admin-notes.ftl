@@ -35,11 +35,10 @@ admin-notes-message-seen = Просмотрено
 admin-notes-banned-from = В бане
 admin-notes-the-server = на сервере
 admin-notes-permanently = перманентно
-# Verb
-admin-notes-verb-text = Заметки
 admin-notes-days = { $days } дней
 admin-notes-hours = { $hours } часов
 admin-notes-minutes = { $minutes } минут
+
 # Note editor UI
 admin-note-editor-title-new = Новая заметка для { $player }
 admin-note-editor-title-existing = Изменение заметки { $id } для { $player } от { $author }
@@ -63,6 +62,8 @@ admin-note-editor-expiry-label-params = Истекает: { $date } (через 
 admin-note-editor-expiry-label-expired = Истёк
 admin-note-editor-expiry-placeholder = Укажите срок действия (yyyy-MM-dd HH:mm:ss)
 admin-note-editor-submit = Подтвердить
+admin-note-editor-submit-confirm = Вы уверены?
+
 # Time
 admin-note-button-minutes = Минут
 admin-note-button-hours = Часов
@@ -71,14 +72,20 @@ admin-note-button-weeks = Недель
 admin-note-button-months = Месяцев
 admin-note-button-years = Лет
 admin-note-button-centuries = Веков
-admin-note-editor-submit-confirm = Вы уверены?
+
+
+# Verb
+admin-notes-verb-text = Заметки
+
 # Watchlist and message login
 admin-notes-watchlist = Наблюдение над { $player }: { $message }
 admin-notes-new-message = Вы получили админ сообщение от { $admin }: { $message }
 admin-notes-fallback-admin-name = [Система]
+
 # Admin remarks
 admin-remarks-command-description = Открыть страницу админ замечаний
 admin-remarks-command-error = Админ замечания были отключены
 admin-remarks-title = Админ замечания
+
 # Misc
 system-user = [Система]

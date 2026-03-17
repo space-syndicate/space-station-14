@@ -18,6 +18,6 @@ chatsan-unimpressed = кажется не впечатлённым
 chatsan-waves = машет
 chatsan-salutes = отдаёт честь
 chatsan-tearfully-salutes = отдаёт честь со слезами на глазах
+chatsan-shrugs = пожимает плечами
 chatsan-tearfully-smiles = улыбается со слезами на глазах
 chatsan-winks = подмигивает
-chatsan-shrugs = пожимает плечами

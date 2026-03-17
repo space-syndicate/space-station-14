@@ -3,16 +3,20 @@ shared-solution-container-component-on-examine-main-text =
         [1] вещество.
        *[other] смесь веществ.
     }
+
 examinable-solution-has-recognizable-chemicals = Вам удаётся распознать { $recognizedString } в этом растворе.
 examinable-solution-recognized = [color={ $color }]{ $chemical }[/color]
+
 examinable-solution-on-examine-volume = Ёмкость { $fillLevel ->
     [exact] содержит [color=white]{$current}/{$max} ед[/color].
    *[other] [bold]{ -solution-vague-fill-level(fillLevel: $fillLevel) }[/bold].
 }
+
 examinable-solution-on-examine-volume-no-max = Ёмкость { $fillLevel ->
     [exact] содержит [color=white]{$current} ед[/color].
    *[other] [bold]{ -solution-vague-fill-level(fillLevel: $fillLevel) }[/bold].
 }
+
 examinable-solution-on-examine-volume-puddle =
     Лужа { $fillLevel ->
         [exact] содержит [color=white]{ $current } ед[/color].
@@ -23,6 +27,7 @@ examinable-solution-on-examine-volume-puddle =
        *[mostlyempty] собирается в одну.
         [empty] превращается в несколько маленьких луж.
     }
+
 -solution-vague-fill-level =
     { $fillLevel ->
         [full] [color=white]заполнена[/color]

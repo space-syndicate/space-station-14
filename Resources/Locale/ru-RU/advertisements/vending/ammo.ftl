@@ -8,3 +8,4 @@ advertisement-ammo-7 = Оружие не убивает людей, но вы м
 advertisement-ammo-8 = Кому нужны обязанности, когда есть оружие?
 advertisement-ammo-9 = Убивать людей весело!
 advertisement-ammo-10 = Идите и застрелите их!
+

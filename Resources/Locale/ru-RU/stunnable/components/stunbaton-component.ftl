@@ -10,6 +10,7 @@ comp-stunbaton-examined-off = Шокер на дубинке [color=darkred]вы
 ## Used when activating the stunbaton, depending on the state of its cell.
 
 comp-stunbaton-activated-low-charge = Недостаточный заряд...
+
 stunbaton-component-low-charge = Недостаточный заряд...
-stunbaton-component-on-examine-charge = Индикатор заряда показывает [color=#5E7C16]{ $charge }[/color] %
 stunbaton-component-on-examine = Шокер на дубинке [color=darkgreen]включён[/color].
+stunbaton-component-on-examine-charge = Индикатор заряда показывает [color=#5E7C16]{ $charge }[/color] %

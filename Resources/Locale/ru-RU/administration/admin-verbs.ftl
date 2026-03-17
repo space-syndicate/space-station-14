@@ -1,3 +1,4 @@
+# Generic verbs
 delete-verb-get-data-text = Удалить
 edit-solutions-verb-get-data-text = Редактировать растворы
 explode-verb-get-data-text = Взорвать
@@ -17,7 +18,9 @@ admin-verbs-erase-description =
     Игроки увидят всплывающее окно, указывающее им играть как будто исчезнувшего никогда не существовало.
 toolshed-verb-mark = Отметить
 toolshed-verb-mark-description = Помещает данную сущность в переменную $marked, заменяя её предыдущее значение.
+
 export-entity-verb-get-data-text = Экспорт спрайта
+
 # Tools verbs
 admin-verbs-rejuvenate = Возродить
 admin-verbs-make-indestructible = Сделать неуязвимым
@@ -45,11 +48,13 @@ admin-verbs-pause-map = Поставить карту на паузу
 admin-verbs-snap-joints = Удалить джоинты
 admin-verbs-make-minigun = Сделать миниганом
 admin-verbs-set-bullet-amount = Установить кол-во патронов
+
 # Toggles verbs
 admin-verbs-bolt = Заболтировать
 admin-verbs-unbolt = Разболтировать
 admin-verbs-emergency-access-on = Включить аварийный доступ
 admin-verbs-emergency-access-off = Выключить аварийный доступ
+
 # Dialogs verbs
 admin-verbs-dialog-adjust-stack-amount = Количество (макс. { $max })
 admin-verbs-dialog-rename-title = Изменить имя

@@ -7,7 +7,9 @@ cmd-changecvar-help = Usage: changecvar <cvar | ? | search> <value>
 cmd-changecvar-available-cvars = Listing available cvars:
 cmd-changecvar-no-cvars = No cvars found that you are allowed to change.
 cmd-changecvar-success = CVar { $cvar } changed from "{ $old }" to "{ $value }".
+
 cmd-changecvar-search-no-arguments = You must specify a search term.
 cmd-changecvar-search-no-matches = No cvars found matching the search term.
 cmd-changecvar-search-matches = Found { $count } cvars matching the search term:
+
 cmd-changecvar-arg-name = <name | ? | search>
