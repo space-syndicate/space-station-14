@@ -1,4 +1,5 @@
 job-name-iaa = агент внутренних дел
+job-name-magistrate = магистрат
 job-name-pilot = пилот
 job-name-senior-engineer = ведущий инженер
 job-name-senior-researcher = ведущий учёный
