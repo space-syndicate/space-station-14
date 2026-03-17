@@ -54,7 +54,6 @@
     state: pda-magistrat
   - type: Pda
     id: MagistrateIDCard
-    state: pda-magistrate
     penSlot:
       startingItem: PenLegal
       whitelist:
