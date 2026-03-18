@@ -141,10 +141,10 @@ jobs:
               "$API" | jq -r '.edit.result // "null"'
           }
 
-          query_page_hashes() {
+          query_page_lengths() {
             local -n titles_ref=$1
-            local -n hashes_ref=$2
-            hashes_ref=()
+            local -n lengths_ref=$2
+            lengths_ref=()
 
             (( ${#titles_ref[@]} == 0 )) && return 0
 
@@ -158,18 +158,18 @@ jobs:
               --data-urlencode "format=json" \
               --data-urlencode "formatversion=2" \
               --data-urlencode "prop=revisions" \
-              --data-urlencode "rvprop=sha1" \
+              --data-urlencode "rvprop=size" \
               --data-urlencode "titles=$titles" \
               "$API")
 
-            while IFS=$'\t' read -r title sha1; do
+            while IFS=$'\t' read -r title size; do
               [[ -z "${title:-}" ]] && continue
-              [[ -z "${sha1:-}" ]] && continue
-              hashes_ref["$title"]="$sha1"
+              [[ -z "${size:-}" ]] && continue
+              lengths_ref["$title"]="$size"
             done < <(
               jq -r '
                 .query.pages[]
-                | [.title, (.revisions[0].sha1? // "")]
+                | [.title, (.revisions[0].size? // "")]
                 | @tsv
               ' <<< "$resp"
             )
@@ -195,11 +195,11 @@ jobs:
               module_titles+=("$MODULE_ROOT/$rel/data")
             done
 
-            declare -A json_hashes=()
-            declare -A module_hashes=()
+            declare -A json_lengths=()
+            declare -A module_lengths=()
 
-            query_page_hashes json_titles json_hashes
-            query_page_hashes module_titles module_hashes
+            query_page_lengths json_titles json_lengths
+            query_page_lengths module_titles module_lengths
 
             for file in "${batch_files[@]}"; do
               rel="${file#$BASE/}"
@@ -210,10 +210,10 @@ jobs:
 
               echo "Processing $rel → $json_title"
 
-              local_sha1=$(sha1sum "$file" | awk '{print $1}')
-              remote_sha1="${json_hashes[$json_title]:-}"
+              local_len=$(wc -c < "$file")
+              remote_len="${json_lengths[$json_title]:-}"
 
-              if [[ -n "$remote_sha1" && "$remote_sha1" == "$local_sha1" ]]; then
+              if [[ -n "$remote_len" && "$remote_len" == "$local_len" ]]; then
                 echo "Skipping unchanged page: $json_title"
               else
                 echo "Uploading $rel → $json_title"
@@ -221,10 +221,11 @@ jobs:
               fi
 
               lua_content=$'local loader = require("Module:JsonLoader")\nreturn loader.getFromTitle("'"$json_title"'")'
-              local_sha1=$(printf '%s' "$lua_content" | sha1sum | awk '{print $1}')
-              remote_sha1="${module_hashes[$module_title]:-}"
 
-              if [[ -n "$remote_sha1" && "$remote_sha1" == "$local_sha1" ]]; then
+              local_len=$(printf '%s' "$lua_content" | wc -c)
+              remote_len="${module_lengths[$module_title]:-}"
+
+              if [[ -n "$remote_len" && "$remote_len" == "$local_len" ]]; then
                 echo "Skipping unchanged module: $module_title"
               else
                 echo "Creating/updating module → $module_title"
