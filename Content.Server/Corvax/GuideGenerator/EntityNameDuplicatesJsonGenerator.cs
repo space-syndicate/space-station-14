@@ -43,7 +43,7 @@ public static class EntityNameDuplicatesJsonGenerator
 
                 var label = GetLabel(p);
 
-                var rawSuffix = TextTools.GetEditorSuffix(p, prototypeManager, loc);
+                var rawSuffix = p.EditorSuffix;
                 var suffix = string.Empty;
                 if (!string.IsNullOrWhiteSpace(rawSuffix))
                 {

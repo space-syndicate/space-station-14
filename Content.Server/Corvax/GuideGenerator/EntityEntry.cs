@@ -30,7 +30,7 @@ public sealed class EntityEntry
         Id = proto.ID;
         Name = TextTools.CapitalizeString(TextTools.GetDisplayName(proto, prototypeManager, loc));
         Description = proto.Description;
-        Suffix = TextTools.GetEditorSuffix(proto, prototypeManager, loc) ?? "";
+        Suffix = proto.EditorSuffix ?? "";
 
         Label = proto.Components.Values
             .Select(x => x.Component)
