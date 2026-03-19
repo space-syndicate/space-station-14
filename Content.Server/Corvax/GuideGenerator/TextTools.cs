@@ -7,8 +7,6 @@ public sealed class TextTools
     /// <summary>
     /// Capitalizes first letter of given string.
     /// </summary>
-    /// <param name="str">String to capitalize</param>
-    /// <returns>String with capitalized first letter</returns>
     public static string CapitalizeString(string str)
     {
         return str.Length switch
@@ -19,6 +17,18 @@ public sealed class TextTools
         };
     }
 
+    /// <summary>
+    /// Converts the first character of the given string to lowercase.
+    /// </summary>
+    public static string DecapitalizeString(string str)
+    {
+        return str.Length switch
+        {
+            > 1 => char.ToLower(str[0]) + str.Remove(0, 1),
+            1 => char.ToLower(str[0]).ToString(),
+            _ => str
+        };
+    }
     public static string GetDisplayName(EntityPrototype proto, IPrototypeManager prototypeManager, ILocalizationManager loc)
     {
         foreach (var (_, parentProto) in prototypeManager.EnumerateAllParents<EntityPrototype>(proto.ID, includeSelf: true))
