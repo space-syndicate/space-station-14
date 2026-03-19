@@ -83,7 +83,7 @@ public static class ComponentJsonGenerator
             };
 
             res.UserData.CreateDir(destRoot);
-            var fileName = compName + ".json";
+            var fileName = compName.ToLower() + ".json";
             var file = res.UserData.OpenWriteText(destRoot / fileName);
             file.Write(JsonSerializer.Serialize(outObj, serializeOptions));
             file.Flush();

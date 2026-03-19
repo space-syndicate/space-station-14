@@ -70,8 +70,7 @@ public static class PrototypeJsonGenerator
             var kindName = proto.TryGetKindFrom(kind, out var actualKindName)
                 ? actualKindName
                 : kind.Name;
-            kindName = TextTools.CapitalizeString(kindName);
-            var fileName = kindName + ".json";
+            var fileName = kindName.ToLower() + ".json";
             var file = res.UserData.OpenWriteText(destRoot / fileName);
             file.Write(JsonSerializer.Serialize(outObj, serializeOptions));
             file.Flush();
