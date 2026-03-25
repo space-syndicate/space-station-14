@@ -29,17 +29,35 @@ public sealed class TextTools
             _ => str
         };
     }
+
     public static string GetDisplayName(EntityPrototype proto, IPrototypeManager prototypeManager, ILocalizationManager loc)
     {
-        foreach (var (_, parentProto) in prototypeManager.EnumerateAllParents<EntityPrototype>(proto.ID, includeSelf: true))
+        var visited = new HashSet<string>();
+        var stack = new Stack<string>();
+        stack.Push(proto.ID);
+
+        while (stack.Count > 0)
         {
-            if (parentProto == null)
+            var id = stack.Pop();
+            if (!visited.Add(id))
                 continue;
 
-            var name = parentProto.Name;
-            if (!string.IsNullOrEmpty(name))
-                return name;
+            if (!prototypeManager.TryIndex<EntityPrototype>(id, out var current))
+                continue;
+
+            if (!string.IsNullOrEmpty(current.Name))
+                return current.Name;
+
+            var parents = current.Parents;
+            if (parents == null || parents.Length == 0)
+                continue;
+
+            for (var i = parents.Length - 1; i >= 0; i--)
+            {
+                stack.Push(parents[i]);
+            }
         }
+
         return proto.Name;
     }
 }

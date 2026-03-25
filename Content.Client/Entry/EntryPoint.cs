@@ -1,6 +1,7 @@
 using Content.Client.Administration.Managers;
 using Content.Client.Changelog;
 using Content.Client.Chat.Managers;
+using Content.Client.Corvax.ExportSprites;
 using Content.Client.DebugMon;
 using Content.Client.Corvax.TTS;
 using Content.Client.Options;
@@ -51,6 +52,7 @@ namespace Content.Client.Entry
         [Dependency] private readonly IComponentFactory _componentFactory = default!;
         [Dependency] private readonly IPrototypeManager _prototypeManager = default!;
         [Dependency] private readonly IClientAdminManager _adminManager = default!;
+        [Dependency] private readonly EntityScreenshotGenerator _entityScreenshotGenerator = default!; // Corvax-Wiki
         [Dependency] private readonly IParallaxManager _parallaxManager = default!;
         [Dependency] private readonly IConfigurationManager _configManager = default!;
         [Dependency] private readonly IStylesheetManager _stylesheetManager = default!;
@@ -134,6 +136,7 @@ namespace Content.Client.Entry
 
             _componentFactory.GenerateNetIds();
             _adminManager.Initialize();
+            _entityScreenshotGenerator.Initialize(); // Corvax-Wiki
             _screenshotHook.Initialize();
             _fullscreenHook.Initialize();
             _changelogManager.Initialize();
@@ -186,6 +189,9 @@ namespace Content.Client.Entry
             // Disable engine-default viewport since we use our own custom viewport control.
             _userInterfaceManager.MainViewport.Visible = false;
 
+            if (_entityScreenshotGenerator.PostInit()) // Corvax-Wiki
+                return;
+
             SwitchToDefaultState();
         }
 
@@ -225,6 +231,8 @@ namespace Content.Client.Entry
 
         public override void Update(ModUpdateLevel level, FrameEventArgs frameEventArgs)
         {
+            _entityScreenshotGenerator.Update(); // Corvax-Wiki
+
             if (level == ModUpdateLevel.FramePreEngine)
             {
                 _debugMonitorManager.FrameUpdate();
