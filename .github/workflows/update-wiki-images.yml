@@ -180,12 +180,6 @@ jobs:
             NAMESPACE="${NAMESPACE}-"
           fi
 
-          normalize_wiki_title_part() {
-            local title_part="$1"
-            title_part="${title_part// /_}"
-            printf '%s' "${title_part^}"
-          }
-
           if [[ ! -d "$BASE" ]]; then
             echo "Entity image directory not found: $BASE"
             exit 1
@@ -239,10 +233,10 @@ jobs:
             for file in "${batch_files[@]}"; do
               filename="$(basename "$file")"
               if [[ -n "$NAMESPACE" ]]; then
-                printf 'File:%s\n' "$(normalize_wiki_title_part "${NAMESPACE}${filename}")"
+                printf 'File:%s%s\n' "$NAMESPACE" "$filename"
               else
-                printf 'File:%s\n' "$(normalize_wiki_title_part "$filename")"
-              fi
+                  printf 'File:%s\n' "$filename"
+                fi
               done | paste -sd'|' -
             )
 
@@ -258,15 +252,16 @@ jobs:
                   | select((has("missing") | not) and (.imageinfo? | type == "array"))
                   | .title
                   | sub("^[^:]+:"; "")
+                  | ascii_downcase
                 '
             )
 
             for file in "${batch_files[@]}"; do
               filename="$(basename "$file")"
               if [[ -n "$NAMESPACE" ]]; then
-                wiki_filename="$(normalize_wiki_title_part "${NAMESPACE}${filename}")"
+                wiki_filename="${NAMESPACE}${filename}"
               else
-                wiki_filename="$(normalize_wiki_title_part "$filename")"
+                wiki_filename="$filename"
               fi
 
               if grep -Fxq "$wiki_filename" <<< "$existing_files"; then
