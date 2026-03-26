@@ -185,6 +185,11 @@ jobs:
             exit 1
           fi
 
+          normalize_filename() {
+            local s="$1"
+            echo "${s^}"
+          }
+
           files=()
           while IFS= read -r -d '' file; do
             files+=("$file")
@@ -232,10 +237,11 @@ jobs:
             titles=$(
             for file in "${batch_files[@]}"; do
               filename="$(basename "$file")"
+              filename_norm="$(normalize_filename "$filename")"
               if [[ -n "$NAMESPACE" ]]; then
-                printf 'File:%s%s\n' "$NAMESPACE" "$filename"
+                printf 'File:%s%s\n' "$NAMESPACE" "$filename_norm"
               else
-                  printf 'File:%s\n' "$filename"
+                  printf 'File:%s\n' "$filename_norm"
                 fi
               done | paste -sd'|' -
             )
@@ -252,16 +258,16 @@ jobs:
                   | select((has("missing") | not) and (.imageinfo? | type == "array"))
                   | .title
                   | sub("^[^:]+:"; "")
-                  | ascii_downcase
                 '
             )
 
             for file in "${batch_files[@]}"; do
               filename="$(basename "$file")"
+              filename_norm="$(normalize_filename "$filename")"
               if [[ -n "$NAMESPACE" ]]; then
-                wiki_filename="${NAMESPACE}${filename}"
+                wiki_filename="${NAMESPACE}${filename_norm}"
               else
-                wiki_filename="$filename"
+                wiki_filename="$filename_norm"
               fi
 
               if grep -Fxq "$wiki_filename" <<< "$existing_files"; then
