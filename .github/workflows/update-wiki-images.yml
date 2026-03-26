@@ -187,7 +187,12 @@ jobs:
 
           normalize_filename() {
             local s="$1"
-            printf '%s' "${s^}"
+            local first rest
+
+            first="$(printf '%s' "${s:0:1}" | tr '[:lower:]' '[:upper:]')"
+            rest="${s:1}"
+
+            printf '%s%s' "$first" "$rest"
           }
 
           files=()
