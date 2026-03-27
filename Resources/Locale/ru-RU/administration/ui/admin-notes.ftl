@@ -24,9 +24,9 @@ admin-notes-delete-confirm = Вы уверены?
 admin-notes-edited = Последнее изменение от { $author } в { $date }
 admin-notes-unbanned = Разбанил { $admin } в { $date }
 admin-notes-message-desc = [color=white]Вы получили { $count ->
-        [1] новое сообщение от администрации
-       *[other] новых сообщений от администрации
-    } с момента последней игры на сервере.[/color]
+    [1] новое сообщение от администрации
+    *[other] новых сообщений от администрации
+} с момента последней игры на сервере.[/color]
 admin-notes-message-admin = От [bold]{ $admin }[/bold], датировано { TOSTRING($date, "f") }:
 admin-notes-message-wait = Кнопки будут доступны через { $time } секунд.
 admin-notes-message-accept = Скрыть навсегда

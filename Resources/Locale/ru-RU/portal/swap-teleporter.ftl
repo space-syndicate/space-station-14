@@ -11,10 +11,9 @@ swap-teleporter-verb-destroy-link = Разорвать квантовую свя
 
 swap-teleporter-examine-link-present = [color=forestgreen]Имеется квантовая связь с другим устройством.[/color] Alt-клик чтобы разорвать квантовую связь.
 swap-teleporter-examine-link-absent = [color=yellow]Квантовая связь отсутствует.[/color] Используйте на другом устройстве, чтобы установить квантовую связь.
-swap-teleporter-examine-time-remaining =
-    Время до перезарядки: [color=purple]{ $second } { $second ->
-        [one] секунда.
-        [few] секунды.
-       *[other] секунд.
-    }[/color]
+swap-teleporter-examine-time-remaining = Время до перезарядки: [color=purple]{ $second } { $second ->
+    [one] секунда.
+    [few] секунды.
+    *[other] секунд.
+}[/color]
 

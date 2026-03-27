@@ -3,5 +3,5 @@ ent-BriefcaseBase = { ent-BaseStorageItem }
 ent-BriefcaseBrown = коричневый чемодан
     .desc = { ent-BriefcaseBase.desc }
 ent-BriefcaseSyndie = { ent-BriefcaseBrown }
-    .suffix = Синдикат, Пустой
     .desc = { ent-BriefcaseBrown.desc }
+    .suffix = Синдикат, Пустой

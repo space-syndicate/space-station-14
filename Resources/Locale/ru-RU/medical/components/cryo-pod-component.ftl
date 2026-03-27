@@ -20,11 +20,11 @@ cryo-pod-window-status-cooling = Охлаждение пациента...
 cryo-pod-window-checklist-pressure = Герметезировано
 cryo-pod-window-checklist-chemicals = Доступные реагенты
 cryo-pod-window-checklist-temperature = Криогенная температура
-cryo-pod-window-checklist-fail = {$item} — НЕТ
+cryo-pod-window-checklist-fail = { $item } — НЕТ
 
 cryo-pod-window-warning-header = ВНИМАНИЕ
 cryo-pod-window-low-pressure-warning = Опасно низкое давление. Для безопасной работы давление газа должно составлять приблизительно 100 кПа.
-cryo-pod-window-high-temperature-warning = Температура слишком высокая. {CAPITALIZE($reagent)} требует температуру ниже {$temperature} К.
+cryo-pod-window-high-temperature-warning = Температура слишком высокая. { CAPITALIZE($reagent) } требует температуру ниже { $temperature } К.
 
 cryo-pod-window-error-header = ОШИБКА
 # Shown when the eject button is pressed on a locked pod.
@@ -32,7 +32,7 @@ cryo-pod-window-eject-error = Сбой механизма извлечения. 
 
 cryo-pod-window-chems-no-beaker = Ёмкость не вставлена
 cryo-pod-window-chems-empty-beaker = Ёмкость пуста
-cryo-pod-window-chems-injecting-tooltip = Ввод {$quantity}u
+cryo-pod-window-chems-injecting-tooltip = Ввод { $quantity }u
 cryo-pod-window-inject-1u = 1u
 cryo-pod-window-inject-5u = 5u
 cryo-pod-window-inject-10u = 10u
@@ -42,3 +42,5 @@ cryo-pod-window-eject-beaker = Извлечь
 cryo-pod-window-eject-patient = Извлечь пациента
 
 cryo-pod-window-health-no-damage = Повреждения не обнаружены
+
+

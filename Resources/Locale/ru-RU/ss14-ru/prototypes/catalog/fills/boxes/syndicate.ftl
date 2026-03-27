@@ -1,6 +1,6 @@
 ent-ElectricalDisruptionKit = набор отключения электричества
-    .suffix = Заполненный
     .desc = { ent-BoxCardboard.desc }
+    .suffix = Заполненный
 ent-ChemicalSynthesisKit = набор химического синтеза
     .desc = Стартовый набор начинающего химика, включающий две пробирки вестина для всех ваших преступных нужд!
 ent-ThrowingKnivesKit = набор метательных ножей

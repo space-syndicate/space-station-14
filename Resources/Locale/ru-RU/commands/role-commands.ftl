@@ -8,6 +8,5 @@ cmd-listroles-desc = List all available roles.
 cmd-listroles-help = Usage: listroles
 
 cmd-rmrole-desc = Removes a role from a player's mind.
-cmd-rmrole-help =
-    Usage: rmrole <session ID> <Role Type>
-    The role type is the actual C# type name.
+cmd-rmrole-help = Usage: rmrole <session ID> <Role Type>
+                  The role type is the actual C# type name.

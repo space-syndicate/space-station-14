@@ -22,9 +22,8 @@ cmd-roleban-hint-duration-6 = 1 месяц
 
 cmd-roleunban-desc = Возвращает пользователю возможность играть на роли
 cmd-roleunban-help = Использование: roleunban <role ban id>
-cmd-roleunban-unable-to-parse-id =
-    Не удалось спарсить { $id } как ban id integer.
-    { $help }
+cmd-roleunban-unable-to-parse-id = Не удалось спарсить { $id } как ban id integer.
+                                   { $help }
 
 ## Completion result hints
 cmd-roleunban-hint-1 = <role ban id>
@@ -49,7 +48,7 @@ cmd-roleban-existing = { $target } уже имеет запрет на роль 
 cmd-roleban-success = { $target } запрещено играть на роли { $role } по причине { $reason } { $length }.
 
 cmd-roleban-inf = навсегда
-cmd-roleban-until = до { $expires }
+cmd-roleban-until =  до { $expires }
 
 # Department bans
 cmd-departmentban-desc = Запрещает пользователю играть на ролях, входящих в отдел

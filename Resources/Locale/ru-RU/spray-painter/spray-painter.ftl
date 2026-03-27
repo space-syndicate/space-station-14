@@ -1,10 +1,9 @@
 # Components
-spray-painter-ammo-on-examine =
-    Содержит { $charges } { $charge ->
-        [1] заряд
-        [few] заряда
-       *[other] зарядов
-    }.
+spray-painter-ammo-on-examine = Содержит { $charges } { $charge ->
+    [1] заряд
+    [few] заряда
+   *[other] зарядов
+}.
 spray-painter-ammo-after-interact-full = Краскопульт полон!
 spray-painter-ammo-after-interact-refilled = Вы заправляете краскопульт.
 

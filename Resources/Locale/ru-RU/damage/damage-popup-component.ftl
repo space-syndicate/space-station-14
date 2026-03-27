@@ -1,9 +1,9 @@
 -damage-popup-component-type =
     { $setting ->
-        [combined] Комбинированый
-        [total] Всего
-        [delta] Дельта
-        [hit] Удар
+    [combined] Комбинированый
+    [total] Всего
+    [delta] Дельта
+    [hit] Удар
        *[other] Неизвестно
     }
 

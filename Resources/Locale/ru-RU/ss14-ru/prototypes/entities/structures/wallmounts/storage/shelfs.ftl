@@ -21,5 +21,5 @@ ent-ShelfKitchen = кухонная полка
 ent-ShelfChemistry = химическая полка
     .desc = Держите все ваши химикаты в безопасности и подальше от клоу... эээ... публики!
 ent-ShelfChemistryChemistrySecure = { ent-ShelfChemistry }
-    .suffix = Химия, Защищённый
     .desc = { ent-ShelfChemistry.desc }
+    .suffix = Химия, Защищённый

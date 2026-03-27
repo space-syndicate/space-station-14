@@ -34,11 +34,9 @@ hud-chatbox-channel-Unspecified = Неопределённый
 
 hud-chatbox-highlights = Подсветка:
 hud-chatbox-highlights-button = Подтвердить
-hud-chatbox-highlights-tooltip =
-    Каждое слово должно начинаться с новой строки.
-    Слова, взятые в кавычки ("..."), подсветятся только,
-    если отделены пробелами или знаками препинания.
-hud-chatbox-highlights-placeholder =
-    @МакХэндс
-    "Судья"
-    Медблок
+hud-chatbox-highlights-tooltip = Каждое слово должно начинаться с новой строки.
+                                 Слова, взятые в кавычки ("..."), подсветятся только,
+                                 если отделены пробелами или знаками препинания.
+hud-chatbox-highlights-placeholder = @МакХэндс
+                                     "Судья"
+                                     Медблок

@@ -1,7 +1,5 @@
-ent-BaseHumanOrganUnGibbable = { ent-BaseItem }
+ent-BaseHumanOrgan = { ent-BaseItem }
     .desc = { ent-BaseItem.desc }
-ent-BaseHumanOrgan = { ent-BaseHumanOrganUnGibbable }
-    .desc = { ent-BaseHumanOrganUnGibbable.desc }
 ent-OrganHumanBrain = мозг
     .desc = Источник невероятного, бесконечного интеллекта. Хонк.
 ent-OrganHumanEyes = глаза
@@ -22,3 +20,5 @@ ent-OrganHumanLiver = печень
     .desc = Рекомендуется подавать с бобами, под кьянти.
 ent-OrganHumanKidneys = почки
     .desc = Выводят токсины из кровеносной системы.
+ent-BaseHumanOrganUnGibbable = { ent-BaseItem }
+    .desc = { ent-BaseItem.desc }

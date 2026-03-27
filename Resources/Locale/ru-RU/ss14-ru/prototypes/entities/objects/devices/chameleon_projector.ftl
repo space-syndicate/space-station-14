@@ -1,5 +1,8 @@
+ent-ChameleonProjectorNoBattery = chameleon projector
+    .desc = Holoparasite technology used to create a hard-light replica of any object around you. Disguise is destroyed when picked up or deactivated.
 ent-ChameleonProjector = маскировочный проектор
     .desc = Схожая с голопаразитной технология, позволяющая создать из твёрдого света копию любого объекта, находящегося около вас. Маскировка спадает при поднятии или отключении.
+    .suffix = Battery
 ent-ChameleonDisguise = Урист МакКляйнер
     .desc = { "" }
 ent-ActionDisguiseNoRot = Вкл\выкл вращение

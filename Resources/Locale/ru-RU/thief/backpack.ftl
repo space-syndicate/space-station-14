@@ -3,9 +3,9 @@ thief-backpack-window-title = Воровской набор
 thief-backpack-window-description =
     Внутри находятся ваши орудия труда, которые растворятся, когда вы будете готовы.
     Выберите { $maxCount } { $maxCount ->
-        [1] набор
-        [few] разных набора
-       *[other] разных наборов
+    [1] набор
+    [few] разных набора
+        *[other] разных наборов
     } из списка.
 
 thief-backpack-window-selected = Выбрано наборов: ({ $selectedCount }/{ $maxCount })

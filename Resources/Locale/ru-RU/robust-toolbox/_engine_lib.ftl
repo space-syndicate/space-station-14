@@ -1,7 +1,7 @@
 # Used internally by the THE() function.
 zzzz-the = { PROPER($ent) ->
     *[false] { $ent }
-     [true] { $ent }
+    [true] { $ent }
     }
 
 # Used internally by the SUBJECT() function.
@@ -65,11 +65,10 @@ zzzz-reflexive-pronoun = { GENDER($ent) ->
    }
 
 # Used internally by the CONJUGATE-BE() function.
-zzzz-conjugate-be =
-    { GENDER($ent) ->
-        [epicene] are
-       *[other] is
-    }
+zzzz-conjugate-be = { GENDER($ent) ->
+    [epicene] are
+   *[other] is
+   }
 
 # Used internally by the CONJUGATE-HAVE() function.
 zzzz-conjugate-have = { GENDER($ent) ->
@@ -78,8 +77,7 @@ zzzz-conjugate-have = { GENDER($ent) ->
    }
 
 # Used internally by the CONJUGATE-BASIC() function.
-zzzz-conjugate-basic =
-    { GENDER($ent) ->
-        [epicene] { $first }
-       *[other] { $second }
-    }
+zzzz-conjugate-basic = { GENDER($ent) ->
+    [epicene] { $first }
+   *[other] { $second }
+   }

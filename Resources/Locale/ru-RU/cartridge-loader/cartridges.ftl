@@ -33,23 +33,23 @@ med-tek-program-name = МедТек
 
 nano-task-ui-heading-high-priority-tasks =
     { $amount ->
-        [zero] Нет задач высокого приоритета
-        [one] 1 задача высокого приоритета
-        [few] { $amount } задачи высокого приоритета
+    [zero] Нет задач высокого приоритета
+    [one] 1 задача высокого приоритета
+    [few] { $amount } задачи высокого приоритета
        *[other] { $amount } задач высокого приоритета
     }
 nano-task-ui-heading-medium-priority-tasks =
     { $amount ->
-        [zero] Нет задач среднего приоритета
-        [one] 1 задача среднего приоритета
-        [few] { $amount } задачи среднего приоритета
+    [zero] Нет задач среднего приоритета
+    [one] 1 задача среднего приоритета
+    [few] { $amount } задачи среднего приоритета
        *[other] { $amount } задач среднего приоритета
     }
 nano-task-ui-heading-low-priority-tasks =
     { $amount ->
-        [zero] Нет задач низкого приоритета
-        [one] 1 задача низкого приоритета
-        [few] { $amount } задачи низкого приоритета
+    [zero] Нет задач низкого приоритета
+    [one] 1 задача низкого приоритета
+    [few] { $amount } задачи низкого приоритета
        *[other] { $amount } задач низкого приоритета
     }
 nano-task-ui-done = Готово
@@ -97,7 +97,7 @@ wanted-list-status-label = [color=darkgray]статус:[/color] { $status ->
         [discharged] [color=green]освобождён[/color]
         [hostile] [color=darkred]враждебен[/color]
         [eliminated] [color=gray]ликвидирован[/color]
-       *[other] нет
+        *[other] нет
     }
 
 wanted-list-history-table-time-col = Время

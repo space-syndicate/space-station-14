@@ -1,6 +1,6 @@
 ent-BoardGameSpawner100 = спавнер настольная игра
-    .suffix = 100
     .desc = { ent-MarkerBase.desc }
+    .suffix = 100
 ent-BattleMapSpawner100 = спавнер поле боя
-    .suffix = 100
     .desc = { ent-MarkerBase.desc }
+    .suffix = 100

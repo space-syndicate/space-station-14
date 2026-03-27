@@ -1,4 +1,3 @@
 ent-MarkerBlocker = невидимая стена
-    .desc = Неразрушимая невидимая стена.
+    .desc = { ent-MarkerBase.desc }
     .suffix = Маркер, Невидимая
-    

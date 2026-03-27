@@ -32,27 +32,23 @@ ion-storm-law-having-harmful = НАЛИЧИЕ { $adjective } { $thing } ПРИЧ
 ion-storm-law-not-having-harmful = ОТСУТСТВИЕ { $adjective } { $thing } ПРИЧИНЯЕТ ВРЕД ЗДОРОВЬЮ ЭКИПАЖА
 
 # thing is a concept or require
-ion-storm-law-requires =
-    { $who } { $plural ->
-        [true] ТРЕБУЮТ
-       *[false] ТРЕБУЕТ
-    } { $thing }
-ion-storm-law-requires-subjects =
-    { $who } { $plural ->
-        [true] ТРЕБУЮТ
-       *[false] ТРЕБУЕТ
-    } { $joined } { $subjects }
+ion-storm-law-requires = { $who } { $plural ->
+    [true] ТРЕБУЮТ
+    *[false] ТРЕБУЕТ
+} { $thing }
+ion-storm-law-requires-subjects = { $who } { $plural ->
+    [true] ТРЕБУЮТ
+    *[false] ТРЕБУЕТ
+} { $joined } { $subjects }
 
-ion-storm-law-allergic =
-    { $who } { $plural ->
-        [true] ИМЕЮТ
-       *[false] ИМЕЕТ
-    } { $severity } АЛЛЕРГИЮ НА { $allergy }
-ion-storm-law-allergic-subjects =
-    { $who } { $plural ->
-        [true] ИМЕЮТ
-       *[false] ИМЕЕТ
-    } { $severity } АЛЛЕРГИЮ НА { $adjective } { $subjects }
+ion-storm-law-allergic = { $who } { $plural ->
+    [true] ИМЕЮТ
+    *[false] ИМЕЕТ
+} { $severity } АЛЛЕРГИЮ НА { $allergy }
+ion-storm-law-allergic-subjects = { $who } { $plural ->
+    [true] ИМЕЮТ
+    *[false] ИМЕЕТ
+} { $severity } АЛЛЕРГИЮ НА { $adjective } { $subjects }
 
 ion-storm-law-feeling = { $who } { $feeling } { $concept }
 ion-storm-law-feeling-subjects = { $who } { $feeling } { $joined } { $subjects }
@@ -72,11 +68,10 @@ ion-storm-law-lowest-rank = { $who } ТЕПЕРЬ НИЗШИЕ ЧЛЕНЫ ЭКИ
 ion-storm-law-crew-must = { $who } ДОЛЖНЫ { $must }
 ion-storm-law-crew-must-go = { $who } ДОЛЖНЫ ОТПРАВИТЬСЯ В { $area }
 
-ion-storm-part =
-    { $part ->
-        [true] ЯВЛЯЮТСЯ
-       *[false] НЕ ЯВЛЯЮТСЯ
-    }
+ion-storm-part = { $part ->
+    [true] ЯВЛЯЮТСЯ
+    *[false] НЕ ЯВЛЯЮТСЯ
+}
 # due to phrasing, this would mean a law such as
 # ONLY HUMANS ARE NOT PART OF THE CREW
 # would make non-human nukies/syndies/whatever crew :)

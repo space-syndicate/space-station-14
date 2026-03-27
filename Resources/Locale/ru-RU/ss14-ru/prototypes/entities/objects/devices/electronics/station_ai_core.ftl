@@ -1,2 +1,3 @@
-﻿ent-StationAiCoreElectronics = микросхема ядра станционного ИИ
+ent-StationAiCoreElectronics = микросхема ядра станционного ИИ
     .desc = Электронная плата, используемая в ядре станционного ИИ.
+    .suffix = { ent-BaseElectronics.suffix }

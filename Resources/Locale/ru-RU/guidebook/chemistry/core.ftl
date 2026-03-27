@@ -1,13 +1,13 @@
 guidebook-reagent-effect-description =
     { $chance ->
-        [1] { $effect }
-       *[other] Имеет { NATURALPERCENT($chance, 2) } шанс { $effect }
+    [1] { $effect }
+        *[other] Имеет { NATURALPERCENT($chance, 2) } шанс { $effect }
     }{$quantity ->
-        [0] {""}
-        *[other] , если имеется как минимум {$quantity} ед. {$reagent}
+    [0] { "" }
+        *[other] , если имеется как минимум { $quantity } ед. { $reagent }
     }{ $conditionCount ->
-        [0] .
-       *[other] , пока { $conditions }.
+    [0] .
+        *[other] , пока { $conditions }.
     }
 
 guidebook-reagent-name = [bold][color={ $color }]{ CAPITALIZE($name) }[/color][/bold]
@@ -21,16 +21,15 @@ guidebook-reagent-effects-metabolism-group-rate = [bold]{ $group }[/bold] [color
 guidebook-reagent-plant-metabolisms-header = Метаболизм растений
 guidebook-reagent-plant-metabolisms-rate = [bold]Метаболизм растений[/bold] [color=gray](1 единица каждые 3 секунды базово)[/color]
 guidebook-reagent-physical-description = [italic]На вид вещество { $description }.[/italic].
-guidebook-reagent-recipes-mix-info =
-    { $minTemp ->
-        [0]
-            { $hasMax ->
-                [true] { CAPITALIZE($verb) } ниже { $maxTemp }K
-               *[false] { CAPITALIZE($verb) }
-            }
-       *[other]
-            { CAPITALIZE($verb) } { $hasMax ->
-                [true] между { $minTemp }K и { $maxTemp }K
-               *[false] выше { $minTemp }K
-            }
-    }
+guidebook-reagent-recipes-mix-info = { $minTemp ->
+    [0]
+    { $hasMax ->
+    [true] { CAPITALIZE($verb) } ниже { $maxTemp }K
+            *[false] { CAPITALIZE($verb) }
+}
+            *[other]
+    { CAPITALIZE($verb) } { $hasMax ->
+    [true] между { $minTemp }K и { $maxTemp }K
+            *[false] выше { $minTemp }K
+}
+}

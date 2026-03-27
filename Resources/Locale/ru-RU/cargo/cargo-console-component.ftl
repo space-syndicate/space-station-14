@@ -49,8 +49,7 @@ cargo-console-fund-transfer-user-unknown = Неизвестно
 cargo-console-paper-reason-default = Отсутствует
 cargo-console-paper-approver-default = Самостоятельно
 cargo-console-paper-print-name = Заказ #{ $orderNumber }
-cargo-console-paper-print-text =
-    Заказ #{ $orderNumber }
+cargo-console-paper-print-text = Заказ #{ $orderNumber }
     Товар: { $itemName }
     Кол-во: { $orderQuantity }
     Запросил: { $requester }
@@ -78,9 +77,9 @@ cargo-funding-alloc-console-label-help-non-adjustible = Отдел снабже�
 cargo-funding-alloc-console-label-help-adjustible = Остаток доходов от всего, кроме ящиков с замком, распределяется следующим образом:
 cargo-funding-alloc-console-button-save = Сохранить изменения
 cargo-funding-alloc-console-label-save-fail = [bold]Разделение выручки невалидно![/bold] [color=red]({ $pos ->
-        [1] +
-       *[-1] -
-    }{ $val }%)[/color]
+    [1] +
+    *[-1] -
+}{ $val }%)[/color]
 
 # Slip template
 cargo-acquisition-slip-body = [head=3]Детали актива[/head]
@@ -89,7 +88,7 @@ cargo-acquisition-slip-body = [head=3]Детали актива[/head]
     { "[bold]Цена за единицу:[/bold" }] ${ $unit }
     { "[bold]Количество:[/bold]" } { $amount }
     { "[bold]Сумма:[/bold]" } ${ $cost }
-    
+
     { "[head=3]Детали покупки[/head]" }
     { "[bold]Заказчик:[/bold]" } { $orderer }
     { "[bold]Причина:[/bold]" } { $reason }

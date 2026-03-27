@@ -1,6 +1,6 @@
 ent-OrganRatLungs = { ent-OrganHumanLungs }
-    .suffix = крыса
     .desc = { ent-OrganHumanLungs.desc }
-ent-OrganRatStomach = { ent-OrganAnimalStomach }
     .suffix = крыса
+ent-OrganRatStomach = { ent-OrganAnimalStomach }
     .desc = { ent-OrganAnimalStomach.desc }
+    .suffix = крыса

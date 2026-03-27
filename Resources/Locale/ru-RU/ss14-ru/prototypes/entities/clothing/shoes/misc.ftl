@@ -1,4 +1,4 @@
-﻿ent-ClothingShoesFlippers = ласты
+ent-ClothingShoesFlippers = ласты
     .desc = Пара резиновых ласт, улучшающих способность плавать при ношении.
 ent-ClothingShoesLeather = кожаные ботинки
     .desc = Очень стильная пара сапог, изготовленных из натуральной кожи.
