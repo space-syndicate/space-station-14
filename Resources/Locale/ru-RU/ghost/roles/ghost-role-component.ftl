@@ -340,7 +340,7 @@ ghost-role-information-gingerbread-description = Существо чистого
                                      Распространяйте паточную вкуснятину и хорошее настроение.
 
 ghost-role-information-mothership-core-name = Ядро материнского корабля
-ghost-role-information-mothership-core-desc = Вы - ядро матринского корабля ксеноборгов, помогите им размножиться, боргируя мозги, которые они вам приносят.
+ghost-role-information-mothership-core-desc = Вы — ядро матринского корабля ксеноборгов, помогите им размножиться, боргируя мозги, которые они вам приносят.
 
 ghost-role-information-xenoborg-name = Ксеноборг
 ghost-role-information-xenoborg-desc = Странный киборг, сделанный, чтобы воспроизводить себя и захватывать станцию, превращая любое разумное существо в ксеноборга.

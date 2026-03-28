@@ -29,7 +29,7 @@ cmd-help-help = Использование: { $command } [имя команды]
 
 cmd-help-no-args = Чтобы получить справку по определённой команде, используйте 'help <command>'. Для получения списка всех доступных команд используйте 'list'. Для поиска по командам используйте 'list <filter>'.
 cmd-help-unknown = Неизвестная команда: { $command }
-cmd-help-top = { $command } - { $description }
+cmd-help-top = { $command } — { $description }
 cmd-help-invalid-args = Недопустимое количество аргументов.
 cmd-help-arg-cmdname = [имя команды]
 
