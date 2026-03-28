@@ -446,12 +446,23 @@ class LocalizationManager:
     def _enforce_inline_braces_spacing(text: str) -> str:
         if not text:
             return text
-        return re.sub(r"\{\s*([^{}\n]+?)\s*\}", r"{ \1 }", text)
+
+        def replacer(match: re.Match) -> str:
+            content = match.group(1).strip()
+            return f"{{ {content} }}"
+
+        return re.sub(r"\{([^{}\n]+)\}", replacer, text)
 
     @staticmethod
     def _align_string_to_template(template: str, target: str) -> str:
         if not template or not target:
             return target
+
+        target = re.sub(
+            r"((?:^|\n)[ \t]*\*?\[[^\]\n]+\][^\n{]*?)[ \t]*\n[ \t]*(\{)",
+            lambda m: f"{m.group(1).rstrip()} {m.group(2)}",
+            target,
+        )
 
         template_lines = template.split("\n")
         target_lines = target.split("\n")
@@ -463,97 +474,82 @@ class LocalizationManager:
         targ_has_text_on_first = bool(target_lines[0].strip())
 
         if temp_has_text_on_first and not targ_has_text_on_first:
-            first_idx = -1
-            for i, l in enumerate(target_lines):
-                if l.strip():
-                    first_idx = i
-                    break
+            first_idx = next((i for i, l in enumerate(target_lines) if l.strip()), -1)
             if first_idx != -1:
-                first_line_indent = len(target_lines[first_idx]) - len(
-                    target_lines[first_idx].lstrip()
-                )
                 target_lines = target_lines[first_idx:]
                 target_lines[0] = target_lines[0].lstrip()
-                for i in range(1, len(target_lines)):
-                    if target_lines[i].strip():
-                        curr_indent = len(target_lines[i]) - len(
-                            target_lines[i].lstrip()
-                        )
-                        new_indent = max(0, curr_indent - first_line_indent)
-                        target_lines[i] = (" " * new_indent) + target_lines[i].lstrip()
-
         elif not temp_has_text_on_first and targ_has_text_on_first:
             target_lines.insert(0, "")
 
-        temp_base_indent = -1
-        for line in template_lines[1:]:
-            if line.strip() and not line.strip().startswith("}"):
-                temp_base_indent = len(line) - len(line.lstrip())
-                break
+        is_inline = bool(target_lines[0].strip())
+        formatted_lines = [target_lines[0].rstrip()] if is_inline else [""]
 
-        if temp_base_indent == -1:
-            temp_base_indent = 4
+        has_selectors = "->" in template or "->" in target
 
-        targ_base_indent = -1
-        for line in target_lines[1:]:
-            if (
-                line.strip()
-                and not line.strip().startswith("}")
-                and not line.strip().startswith("[")
-                and not line.strip().startswith("*[")
-            ):
-                targ_base_indent = len(line) - len(line.lstrip())
-                break
+        if not has_selectors:
+            for i in range(1, len(target_lines)):
+                stripped = target_lines[i].strip()
 
-        if targ_base_indent == -1:
-            for line in target_lines[1:]:
-                if line.strip() and not line.strip().startswith("}"):
-                    targ_base_indent = len(line) - len(line.lstrip())
-                    break
+                if not stripped:
+                    formatted_lines.append("")
+                    continue
 
-        indent_diff = (
-            temp_base_indent - targ_base_indent if targ_base_indent != -1 else 0
-        )
+                temp_idx = i if i < len(template_lines) else len(template_lines) - 1
 
-        has_selectors = "->" in template
-        star_indent = temp_base_indent
-        if has_selectors:
-            for t_line in template_lines:
-                if t_line.strip().startswith("*["):
-                    star_indent = len(t_line) - len(t_line.lstrip())
-                    break
+                leading_ws = ""
+                for j in range(temp_idx, 0, -1):
+                    if j < len(template_lines) and template_lines[j].strip():
+                        leading_ws = template_lines[j][
+                            : len(template_lines[j]) - len(template_lines[j].lstrip())
+                        ]
+                        break
 
-        brace_indent = 0
-        if has_selectors:
-            for t_line in reversed(template_lines):
-                if t_line.strip().startswith("}"):
-                    brace_indent = len(t_line) - len(t_line.lstrip())
-                    break
+                if not leading_ws:
+                    leading_ws = "    "
+
+                formatted_lines.append(leading_ws + stripped)
+
+            return "\n".join(formatted_lines)
+
+        depth = target_lines[0].count("->") if is_inline else 0
 
         for i in range(1, len(target_lines)):
             stripped = target_lines[i].strip()
+
             if not stripped:
-                target_lines[i] = ""
+                formatted_lines.append("")
                 continue
 
-            if has_selectors and (
-                stripped.startswith("[") or stripped.startswith("*[")
-            ):
-                if stripped.startswith("*["):
-                    target_lines[i] = (" " * star_indent) + stripped
+            is_closing = stripped.startswith("}")
+            closes_selector = 1 if is_closing else 0
+            open_selectors = stripped.count("->")
+
+            current_line_depth = max(0, depth - closes_selector)
+
+            if stripped.startswith("[") or stripped.startswith("*["):
+                if is_inline:
+                    indent = 4 + max(0, current_line_depth - 1) * 8
                 else:
-                    target_lines[i] = (" " * temp_base_indent) + stripped
-
-            elif has_selectors and stripped.startswith("}"):
-                target_lines[i] = (" " * brace_indent) + stripped
-
+                    indent = 8 + max(0, current_line_depth - 1) * 8
+            elif is_closing:
+                if is_inline:
+                    indent = current_line_depth * 8
+                else:
+                    indent = 4 + current_line_depth * 8
             else:
-                if indent_diff != 0:
-                    orig_indent = len(target_lines[i]) - len(target_lines[i].lstrip())
-                    new_indent = max(0, orig_indent + indent_diff)
-                    target_lines[i] = (" " * new_indent) + stripped
+                if is_inline:
+                    indent = 8 + max(0, current_line_depth - 1) * 8
+                    if current_line_depth == 0:
+                        indent = 0
+                else:
+                    indent = 12 + max(0, current_line_depth - 1) * 8
+                    if current_line_depth == 0:
+                        indent = 4
 
-        return "\n".join(target_lines)
+            formatted_lines.append((" " * indent) + stripped)
+            depth = depth - closes_selector + open_selectors
+
+        return "\n".join(formatted_lines)
 
     @staticmethod
     def _sanitize_yaml_string(s: str, indent: str) -> str:
