@@ -1,6 +1,5 @@
-using Content.Server.Humanoid;
 using Content.Shared.Actions;
-using Content.Shared.Alert;
+using Content.Shared.Body;
 using Content.Shared.Corvax.Ipc;
 using Content.Shared.Damage;
 using Content.Shared.Damage.Systems;
@@ -8,34 +7,31 @@ using Content.Shared.Emp;
 using Content.Shared.Humanoid;
 using Content.Shared.Humanoid.Markings;
 using Content.Shared.Mobs;
-using Content.Shared.Mobs.Systems;
 using Content.Shared.Movement.Systems;
 using Content.Shared.Ninja.Components;
 using Content.Shared.Ninja.Systems;
 using Content.Shared.Popups;
 using Content.Shared.Power.EntitySystems;
 using Content.Shared.PowerCell;
-using Content.Shared.PowerCell.Components;
 using Content.Shared.Sound.Components;
 using Robust.Shared.Audio;
 using Robust.Shared.Player;
+using Robust.Shared.Prototypes;
 
 namespace Content.Server.Corvax.Ipc;
 
 public sealed partial class IpcSystem : EntitySystem
 {
     [Dependency] private readonly SharedActionsSystem _action = default!;
-    [Dependency] private readonly AlertsSystem _alerts = default!;
     [Dependency] private readonly SharedBatteryDrainerSystem _batteryDrainer = default!;
     [Dependency] private readonly SharedPopupSystem _popup = default!;
     [Dependency] private readonly PowerCellSystem _powerCell = default!;
     [Dependency] private readonly DamageableSystem _damageable = default!;
     [Dependency] private readonly MovementSpeedModifierSystem _movementSpeedModifier = default!;
-    [Dependency] private readonly MobStateSystem _mobState = default!;
     [Dependency] private readonly SharedUserInterfaceSystem _ui = default!;
     [Dependency] private readonly SharedBatterySystem _battery = default!;
-    [Dependency] private readonly HumanoidAppearanceSystem _humanoid = default!;
-    [Dependency] private readonly MarkingManager _markingManager = default!;
+    [Dependency] private readonly SharedVisualBodySystem _visualBody = default!;
+    [Dependency] private readonly IPrototypeManager _prototype = default!;
     public override void Initialize()
     {
         base.Initialize();
@@ -52,8 +48,28 @@ public sealed partial class IpcSystem : EntitySystem
         {
             subs.Event<IpcFaceSelectMessage>(OnFaceSelected);
         });
+        SubscribeLocalEvent<IpcComponent, PowerCellSlotEmptyEvent>(OnPowerCellEmpty);
     }
-
+    public override void Update(float frameTime)
+    {
+        base.Update(frameTime);
+        var query = EntityQueryEnumerator<IpcComponent>();
+        while (query.MoveNext(out var uid, out var comp))
+        {
+            if (!comp.IsSlowedByBattery)
+                continue;
+            if (_powerCell.TryGetBatteryFromSlot(uid, out var battery)
+                && _battery.GetCharge(battery.Value.AsNullable()) / battery.Value.Comp.MaxCharge >= 0.01f)
+            {
+                comp.IsSlowedByBattery = false;
+                _movementSpeedModifier.RefreshMovementSpeedModifiers(uid);
+            }
+        }
+    }
+    private void OnPowerCellEmpty(EntityUid uid, IpcComponent component, ref PowerCellSlotEmptyEvent args)
+    {
+        UpdateBatteryAlert((uid, component));
+    }
     private void OnMapInit(EntityUid uid, IpcComponent component, MapInitEvent args)
     {
         UpdateBatteryAlert((uid, component));
@@ -61,30 +77,29 @@ public sealed partial class IpcSystem : EntitySystem
         _action.AddAction(uid, ref component.ChangeFaceActionEntity, component.ChangeFaceAction);
         _movementSpeedModifier.RefreshMovementSpeedModifiers(uid);
 
-        if (TryComp<HumanoidAppearanceComponent>(uid, out var appearance) &&
-            appearance.MarkingSet.TryGetCategory(MarkingCategories.Snout, out var markings) &&
-            markings.Count > 0)
+        if (!HasComp<VisualBodyComponent>(uid))
+            return;
+        if (_visualBody.TryGatherMarkingsData(uid, null, out _, out _, out var applied)
+            && applied.TryGetValue("Head", out var headMarkings)
+            && headMarkings.TryGetValue(HumanoidVisualLayers.Snout, out var snoutMarkings)
+            && snoutMarkings.Count > 0)
         {
-            component.SelectedFace = markings[0].MarkingId;
+            component.SelectedFace = snoutMarkings[0].MarkingId;
             Dirty(uid, component);
         }
     }
-
     private void OnComponentShutdown(EntityUid uid, IpcComponent component, ComponentShutdown args)
     {
         _action.RemoveAction(uid, component.ActionEntity);
         _action.RemoveAction(uid, component.ChangeFaceActionEntity);
     }
-
-    private void OnPowerCellChanged(EntityUid uid, IpcComponent component, PowerCellChangedEvent args)
+    private void OnPowerCellChanged(EntityUid uid, IpcComponent component, ref PowerCellChangedEvent args)
     {
         if (MetaData(uid).EntityLifeStage >= EntityLifeStage.Terminating)
             return;
 
         UpdateBatteryAlert((uid, component));
-
     }
-
     private void OnToggleAction(EntityUid uid, IpcComponent component, ToggleDrainActionEvent args)
     {
         if (args.Handled)
@@ -97,7 +112,7 @@ public sealed partial class IpcSystem : EntitySystem
         if (component.DrainActivated && _powerCell.TryGetBatteryFromSlot(uid, out var battery))
         {
             EnsureComp<BatteryDrainerComponent>(uid);
-            _batteryDrainer.SetBattery(uid, battery);
+            _batteryDrainer.SetBattery(uid, battery.Value.Owner);
         }
         else
             RemComp<BatteryDrainerComponent>(uid);
@@ -105,39 +120,24 @@ public sealed partial class IpcSystem : EntitySystem
         var message = component.DrainActivated ? "ipc-component-ready" : "ipc-component-disabled";
         _popup.PopupEntity(Loc.GetString(message), uid, uid);
     }
-    private void UpdateBatteryAlert(Entity<IpcComponent> ent, PowerCellSlotComponent? slot = null)
+    private void UpdateBatteryAlert(Entity<IpcComponent> ent)
     {
-
-
-        if (!_powerCell.TryGetBatteryFromSlot(ent.Owner, out var battery) || _battery.GetCharge(battery.Value.AsNullable()) / battery.Value.Comp.MaxCharge < 0.01f)
-        {
-            _alerts.ClearAlert(ent.Owner, ent.Comp.BatteryAlert);
-            _alerts.ShowAlert(ent.Owner, ent.Comp.NoBatteryAlert);
-
-            _movementSpeedModifier.RefreshMovementSpeedModifiers(ent.Owner);
-            return;
-        }
-
-        var chargePercent = (short)MathF.Round(_battery.GetCharge(battery.Value.AsNullable()) / battery.Value.Comp.MaxCharge * 10f);
-
-        if (chargePercent == 0 && _powerCell.HasDrawCharge(ent.Owner))
-            chargePercent = 1;
-
-
         _movementSpeedModifier.RefreshMovementSpeedModifiers(ent.Owner);
-
-        _alerts.ClearAlert(ent.Owner, ent.Comp.NoBatteryAlert);
-        _alerts.ShowAlert(ent.Owner, ent.Comp.BatteryAlert, chargePercent);
     }
-
     private void OnRefreshMovementSpeedModifiers(EntityUid uid, IpcComponent comp, RefreshMovementSpeedModifiersEvent args)
     {
-        if (!_powerCell.TryGetBatteryFromSlot(uid, out var battery) || _battery.GetCharge(battery.Value.AsNullable()) / battery.Value.Comp.MaxCharge < 0.01f)
+        if (!_powerCell.TryGetBatteryFromSlot(uid, out var battery)
+            || battery.Value.Comp.MaxCharge <= 0
+            || _battery.GetCharge(battery.Value.AsNullable()) / battery.Value.Comp.MaxCharge < 0.01f)
         {
             args.ModifySpeed(0.2f);
+            comp.IsSlowedByBattery = true;
+        }
+        else
+        {
+            comp.IsSlowedByBattery = false;
         }
     }
-
     private void OnOpenFaceAction(EntityUid uid, IpcComponent comp, OpenIpcFaceActionEvent args)
     {
         if (args.Handled)
@@ -150,20 +150,34 @@ public sealed partial class IpcSystem : EntitySystem
         _ui.TryToggleUi(uid, IpcFaceUiKey.Face, actor.PlayerSession);
         args.Handled = true;
     }
-
     private void OnFaceSelected(Entity<IpcComponent> ent, ref IpcFaceSelectMessage msg)
     {
-        if (TryComp<HumanoidAppearanceComponent>(ent.Owner, out var appearance))
+        if (!_prototype.TryIndex<IpcFaceProfilePrototype>(ent.Comp.FaceProfile, out var faceProfile)
+            || !faceProfile.Faces.Contains(msg.State))
+            return;
+        if (_visualBody.TryGatherMarkingsData(ent.Owner, null, out var profiles, out var markings, out var applied))
         {
-            var category = MarkingCategories.Snout;
-            if (appearance.MarkingSet.TryGetCategory(category, out var markings) && markings.Count > 0)
+            if (applied.TryGetValue("Head", out var headMarkings)
+                && headMarkings.TryGetValue(HumanoidVisualLayers.Snout, out var snoutMarkings)
+                && snoutMarkings.Count > 0)
             {
-                _humanoid.SetMarkingId(ent.Owner, category, 0, msg.State, appearance);
+                _visualBody.ApplyMarkings(ent.Owner, new()
+                {
+                    ["Head"] = new()
+                    {
+                        [HumanoidVisualLayers.Snout] = new List<Marking>() { new(msg.State, snoutMarkings[0].MarkingColors.Count) },
+                    },
+                });
             }
-            else if (_markingManager.Markings.TryGetValue(msg.State, out var proto))
+            else if (_prototype.TryIndex<MarkingPrototype>(msg.State, out var proto))
             {
-                appearance.MarkingSet.AddBack(category, proto.AsMarking());
-                Dirty(ent.Owner, appearance);
+                _visualBody.ApplyMarkings(ent.Owner, new()
+                {
+                    ["Head"] = new()
+                    {
+                        [HumanoidVisualLayers.Snout] = new List<Marking>() { proto.AsMarking() },
+                    },
+                });
             }
         }
 
@@ -171,25 +185,24 @@ public sealed partial class IpcSystem : EntitySystem
         Dirty(ent);
         _ui.CloseUi(ent.Owner, IpcFaceUiKey.Face);
     }
-
     private void OnEmpPulse(EntityUid uid, IpcComponent component, ref EmpPulseEvent args)
     {
         args.Affected = true;
 
         var damage = new DamageSpecifier();
         damage.DamageDict.Add("Shock", 30);
-        _damageable.TryChangeDamage(uid, damage);//ChangeDamage ?
+        _damageable.TryChangeDamage(uid, damage);
     }
-
     private void OnMobStateChanged(EntityUid uid, IpcComponent component, ref MobStateChangedEvent args)
     {
-        if (_mobState.IsCritical(uid))
+        if (args.NewMobState == MobState.Critical)
         {
             var sound = EnsureComp<SpamEmitSoundComponent>(uid);
             sound.Sound = new SoundPathSpecifier("/Audio/Machines/buzz-two.ogg");
             sound.MinInterval = TimeSpan.FromSeconds(15);
             sound.MaxInterval = TimeSpan.FromSeconds(30);
             sound.PopUp = Loc.GetString("sleep-ipc");
+            Dirty(uid, sound);
         }
         else
         {

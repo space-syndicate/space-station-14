@@ -14,13 +14,13 @@ public static class ClientPackaging
     /// <summary>
     /// Be advised this can be called from server packaging during a HybridACZ build.
     /// </summary>
-    public static async Task PackageClient(bool skipBuild, string configuration, IPackageLogger logger)
+    public static async Task PackageClient(bool skipBuild, bool logBuild, string configuration, IPackageLogger logger)
     {
         logger.Info("Building client...");
 
         if (!skipBuild)
         {
-            await ProcessHelpers.RunCheck(new ProcessStartInfo
+            var startInfo = new ProcessStartInfo
             {
                 FileName = "dotnet",
                 ArgumentList =
@@ -34,7 +34,8 @@ public static class ClientPackaging
                     "/p:FullRelease=true",
                     "/m"
                 }
-            });
+            };
+            // Corvax-Secrets-Start
             if (UseSecrets)
             {
                 await ProcessHelpers.RunCheck(new ProcessStartInfo
@@ -53,6 +54,15 @@ public static class ClientPackaging
                     }
                 });
             }
+            // Corvax-Secrets-End
+
+            if (logBuild)
+            {
+                startInfo.ArgumentList.Add($"/bl:{Path.Combine("release", "client.binlog")}");
+                startInfo.ArgumentList.Add("/p:ReportAnalyzer=true");
+            }
+
+            await ProcessHelpers.RunCheck(startInfo);
         }
 
         logger.Info("Packaging client...");

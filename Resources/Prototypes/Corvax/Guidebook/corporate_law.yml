@@ -1,6 +1,6 @@
 - type: guideEntry
   id: CorporateLaw
-  name: Корпоративный закон
+  name: guide-entry-corporate-law
   text: "/ServerInfo/Corvax/Guidebook/CorporateLaw/CorporateLaw.xml"
   children:
   - CLOPRS
@@ -11,28 +11,28 @@
 
 - type: guideEntry
   id: CLOPRS
-  name: ОПРС
+  name: guide-entry-cl-oprs
   text: "/ServerInfo/Corvax/Guidebook/CorporateLaw/OPRS.xml"
 
 - type: guideEntry
   id: CLPunishments
-  name: Наказания
+  name: guide-entry-cl-punishments
   text: "/ServerInfo/Corvax/Guidebook/CorporateLaw/Punishments.xml"
 
 - type: guideEntry
   id: CLModificators
-  name: Модификаторы
+  name: guide-entry-cl-modificators
   text: "/ServerInfo/Corvax/Guidebook/CorporateLaw/Modificators.xml"
 
 - type: guideEntry
   id: CLMisc
-  name: Разное
+  name: guide-entry-cl-misc
   text: "/ServerInfo/Corvax/Guidebook/CorporateLaw/Misc.xml"
 
 # Основная страница с таблицей статьей
 - type: guideEntry
   id: CLCrimeList
-  name: Статьи
+  name: guide-entry-cl-crime-list
   text: "/ServerInfo/Corvax/Guidebook/CorporateLaw/CrimeList.xml"
   children:
   - CLChapter11
@@ -50,55 +50,55 @@
 # Список глав со списками статьей
 - type: guideEntry
   id: CLChapter11
-  name: 11X
+  name: guide-entry-cl-chapter-11
   text: "/ServerInfo/Corvax/Guidebook/CorporateLaw/Chapter11.xml"
 
 - type: guideEntry
   id: CLChapter12
-  name: 12X
+  name: guide-entry-cl-chapter-12
   text: "/ServerInfo/Corvax/Guidebook/CorporateLaw/Chapter12.xml"
 
 - type: guideEntry
   id: CLChapter13
-  name: 13X
+  name: guide-entry-cl-chapter-13
   text: "/ServerInfo/Corvax/Guidebook/CorporateLaw/Chapter13.xml"
 
 - type: guideEntry
   id: CLChapter14
-  name: 14X
+  name: guide-entry-cl-chapter-14
   text: "/ServerInfo/Corvax/Guidebook/CorporateLaw/Chapter14.xml"
 
 - type: guideEntry
   id: CLChapter21
-  name: 21X
+  name: guide-entry-cl-chapter-21
   text: "/ServerInfo/Corvax/Guidebook/CorporateLaw/Chapter21.xml"
 
 - type: guideEntry
   id: CLChapter22
-  name: 22X
+  name: guide-entry-cl-chapter-22
   text: "/ServerInfo/Corvax/Guidebook/CorporateLaw/Chapter22.xml"
 
 - type: guideEntry
   id: CLChapter31
-  name: 31X
+  name: guide-entry-cl-chapter-31
   text: "/ServerInfo/Corvax/Guidebook/CorporateLaw/Chapter31.xml"
 
 - type: guideEntry
   id: CLChapter32
-  name: 32X
+  name: guide-entry-cl-chapter-32
   text: "/ServerInfo/Corvax/Guidebook/CorporateLaw/Chapter32.xml"
 
 - type: guideEntry
   id: CLChapter41
-  name: 41X
+  name: guide-entry-cl-chapter-41
   text: "/ServerInfo/Corvax/Guidebook/CorporateLaw/Chapter41.xml"
 
 - type: guideEntry
   id: CLChapter42
-  name: 42X
+  name: guide-entry-cl-chapter-42
   text: "/ServerInfo/Corvax/Guidebook/CorporateLaw/Chapter42.xml"
 
 - type: guideEntry
   id: CLChapter43
-  name: 43X
+  name: guide-entry-cl-chapter-43
   text: "/ServerInfo/Corvax/Guidebook/CorporateLaw/Chapter43.xml"

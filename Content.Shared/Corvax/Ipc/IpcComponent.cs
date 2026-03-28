@@ -1,4 +1,4 @@
-﻿using Content.Shared.Actions;
+using Content.Shared.Actions;
 using Content.Shared.Alert;
 using Robust.Shared.GameStates;
 using Robust.Shared.Prototypes;
@@ -35,6 +35,9 @@ public sealed partial class IpcComponent : Component
 
     [DataField, AutoNetworkedField]
     public ProtoId<IpcFaceProfilePrototype> FaceProfile = "DefaultIpcFaces";
+
+    [DataField]
+    public bool IsSlowedByBattery;
 
     public bool DrainActivated;
 }

@@ -9,3 +9,17 @@ guidebook-SOP-infobox-main =
     Это не значит, что все нарушения вышеуказанных ролей должны быть проигнорированы со стороны других персонажей. Нарушения должны быть проработаны соответствующим образом в рамках игрового процесса.
 
     Общие СРП в равной степени должно соблюдаться как и ведомственные СРП.
+
+guide-entry-sop = СРП
+guide-entry-sop-service = Сервистный отдел
+guide-entry-sop-research = Научный отдел
+guide-entry-sop-cargo = Отдел снабжения
+guide-entry-sop-medical = Медицинский отдел
+guide-entry-sop-engineering = Инженерный отдел
+guide-entry-sop-security = Служба безопасности
+guide-entry-sop-command = Командование
+guide-entry-sop-centcomm = Центральное Командование
+guide-entry-sop-legal = Юридический департамент
+guide-entry-sop-general = Общее
+guide-entry-sop-codes = Уровни угроз
+guide-entry-sop-emergencies = Чрезвычайные ситуации
