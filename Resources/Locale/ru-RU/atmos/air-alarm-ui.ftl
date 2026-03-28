@@ -23,7 +23,7 @@ air-alarm-ui-window-auto-mode-label = Авто-режим
     [warning] Предупреждение
     [danger] Опасно
     [emagged] Взломано
-   *[invalid] Невалидно
+    *[invalid] Невалидно
 }
 
 air-alarm-ui-window-listing-title = { $address } : { -air-alarm-state-name(state:$state) }

@@ -28,7 +28,7 @@ panic-bunker-account-denied-reason = Этот сервер находится в
 panic-bunker-account-reason-account = Ваш аккаунт Space Station 14 слишком новый. Он должен быть старше { $minutes } минут
 panic-bunker-account-reason-overall = Наигранное Вами время на сервере должно быть больше { $minutes } { $minutes ->
     [one] минуты
-   *[other] минут
+    *[other] минут
 }.
 
 whitelist-playtime = У вас недостаточно игрового времени, чтобы присоединиться к этому серверу. Вам нужно как минимум { $minutes } минут игрового времени, чтобы присоединиться к этому серверу.
@@ -58,7 +58,7 @@ baby-jail-account-denied-reason = Этот сервер — сервер для 
 baby-jail-account-reason-account = Ваш аккаунт Space Station 14 слишком старый. Он должен быть моложе { $minutes } минут
 baby-jail-account-reason-overall = Наигранное Вами время на сервере должно быть больше { $minutes } { $minutes ->
     [one] минуты
-   *[other] минут
+    *[other] минут
 }.
 
 generic-misconfigured = Сервер неправильно настроен и не принимает игроков. Пожалуйста, свяжитесь с владельцем сервера и повторите попытку позже.

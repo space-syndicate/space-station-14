@@ -9,7 +9,7 @@ comp-mind-examined-dead = { CAPITALIZE(SUBJECT($ent)) } { GENDER($ent) ->
     [male] мёртв
     [female] мертва
     [epicene] мертвы
-   *[neuter] мертво
+    *[neuter] мертво
 }
 comp-mind-examined-ssd = { CAPITALIZE(SUBJECT($ent)) } рассеяно смотрит в пустоту и ни на что не реагирует. { CAPITALIZE(SUBJECT($ent)) } может скоро придти в себя.
 comp-mind-examined-dead-and-ssd = { CAPITALIZE(POSS-ADJ($ent)) } душа бездействует и может скоро вернуться.

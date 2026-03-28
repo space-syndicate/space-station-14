@@ -7,5 +7,5 @@ vending-machine-restock-done-others = { CAPITALIZE($user) } { GENDER($user) ->
     [male] закончил
     [female] закончила
     [epicene] закончили
-   *[neuter] закончило
+    *[neuter] закончило
 } пополнять { $target }.

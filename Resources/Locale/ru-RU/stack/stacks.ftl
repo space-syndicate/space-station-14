@@ -1,86 +1,86 @@
 stack-steel = { $amount ->
     [1] лист
     [few] листа
-   *[other] листов
+    *[other] листов
 } стали
 stack-bananium = { $amount ->
     [1] бананиум
     [few] бананиума
-   *[other] бананиума
+    *[other] бананиума
 }
 stack-glass = { $amount ->
     [1] лист
     [few] листа
-   *[other] листов
+    *[other] листов
 } стекла
 stack-plasteel = { $amount ->
     [1] лист
     [few] листа
-   *[other] листов
+    *[other] листов
 } пластали
 stack-brass = { $amount ->
     [1] лист
     [few] листа
-   *[other] листов
+    *[other] листов
 } латуни
 stack-plastic = { $amount ->
     [1] лист
     [few] листа
-   *[other] листов
+    *[other] листов
 } пластика
 stack-silver = { $amount ->
     [1] слиток
     [few] слитка
-   *[other] слитков
+    *[other] слитков
 } серебра
 stack-gold = { $amount ->
     [1] слиток
     [few] слитка
-   *[other] слитков
+    *[other] слитков
 } золота
 stack-reinforced-glass = { $amount ->
     [1] лист
     [few] листа
-   *[other] листов
+    *[other] листов
 } бронестекла
 stack-plasma-glass = { $amount ->
     [1] лист
     [few] листа
-   *[other] листов
+    *[other] листов
 } плазменного стекла
 stack-uranium = { $amount ->
     [1] лист
     [few] листа
-   *[other] листов
+    *[other] листов
 } урана
 stack-uranium-glass = { $amount ->
     [1] лист
     [few] листа
-   *[other] листов
+    *[other] листов
 } уранового стекла
 stack-clockwork-glass = { $amount ->
     [1] лист
     [few] листа
-   *[other] листов
+    *[other] листов
 } заводного стекла
 stack-reinforced-plasma-glass = { $amount ->
     [1] лист
     [few] листа
-   *[other] листов
+    *[other] листов
 } плазменного бронестекла
 stack-reinforced-uranium-glass = { $amount ->
     [1] лист
     [few] листа
-   *[other] листов
+    *[other] листов
 } уранового бронестекла
 stack-gunpowder = { $amount ->
     [1] порох
-   *[other] пороха
+    *[other] пороха
 }
 stack-cardboard = { $amount ->
     [1] лист
     [few] листа
-   *[other] листов
+    *[other] листов
 } картона
 
 stack-bones = { $amount ->
@@ -166,30 +166,30 @@ stack-artifact-fragment = { $amount ->
 # best materials
 stack-ground-tobacco = { $amount ->
     [1] измельчённый табак
-   *[other] измельчённого табака
+    *[other] измельчённого табака
 }
 stack-ground-cannabis = { $amount ->
     [1] измельчённую коноплю
-   *[other] измельчённой конопли
+    *[other] измельчённой конопли
 }
 stack-ground-rainbow-cannabis = { $amount ->
     [1] измельчённую радужную коноплю
-   *[other] измельчённой радужной конопли
+    *[other] измельчённой радужной конопли
 }
 stack-dried-tobacco-leaves = { $amount ->
     [1] сушённый лист
     [few] сушённых листа
-   *[other] сушённых листьев
+    *[other] сушённых листьев
 } табака
 stack-dried-cannabis-leaves = { $amount ->
     [1] сушённый лист
     [few] сушённых листа
-   *[other] сушённых листьев
+    *[other] сушённых листьев
 } конопли
 stack-dried-rainbow-cannabis-leaves = { $amount ->
     [1] сушённый лист
     [few] сушённых листа
-   *[other] сушённых листьев
+    *[other] сушённых листьев
 } радужной конопли
 
 stack-cigarette-filter = { $amount ->
@@ -208,19 +208,19 @@ stack-credit = кредиты
 stack-plasma = { $amount ->
     [1] лист
     [few] листа
-   *[other] листов
+    *[other] листов
 } плазмы
 stack-biomass = биомасса
 stack-pyrotton = пирохлопок
 stack-sharkminnow-tooth = { $amount ->
     [1] зуб
     [few] зуба
-   *[other] зубов
+    *[other] зубов
 } карпоакулы
 stack-goliath-hide = { $amount ->
     [1] пластина
     [few] пластины
-   *[other] пластин
+    *[other] пластин
 } голиафа
 stack-telecrystal = телекристалл
 stack-gold-ore = золотая руда

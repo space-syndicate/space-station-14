@@ -2,7 +2,7 @@
 rule-restarting-in-seconds = Перезапуск через { $seconds } { $seconds ->
     [one] секунду
     [few] секунды
-   *[other] секунд
+    *[other] секунд
 }.
 rule-time-has-run-out = Время вышло!
 
@@ -10,5 +10,5 @@ rule-time-has-run-out = Время вышло!
 rule-respawn-in-seconds = Возрождение через { $second } { $second ->
     [one] секунду
     [few] секунды
-   *[other] секунд
+    *[other] секунд
 }...

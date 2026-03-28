@@ -14,13 +14,13 @@ health-examinable-carbon-Blunt-30 = [color=orange]{ CAPITALIZE(SUBJECT($target))
     [male] избит
     [female] избита
     [epicene] избиты
-   *[neuter] избито
+    *[neuter] избито
 }.[/color]
 health-examinable-carbon-Blunt-50 = [color=red]{ CAPITALIZE(SUBJECT($target)) } сильно { GENDER($target) ->
     [male] избит
     [female] избита
     [epicene] избиты
-   *[neuter] избито
+    *[neuter] избито
 }.[/color]
 health-examinable-carbon-Blunt-75 = [color=red]{ CAPITALIZE(POSS-ADJ($target)) } тело покрыто серьёзными тупыми травмами.[/color]
 health-examinable-carbon-Blunt-100 = [color=red]{ CAPITALIZE(POSS-ADJ($target)) } тело обезображено и сильно избито.[/color]
@@ -44,7 +44,7 @@ health-examinable-carbon-Heat-50 = [color=orange]{ CAPITALIZE(SUBJECT($target)) 
     [male] покрыт
     [female] покрыта
     [epicene] покрыты
-   *[neuter] покрыто
+    *[neuter] покрыто
 } ожогами второй степени.[/color]
 health-examinable-carbon-Heat-75 = [color=red]{ CAPITALIZE(POSS-ADJ($target)) } тело покрыто тяжёлыми ожогами третьей степени.[/color]
 health-examinable-carbon-Heat-100 = [color=red]{ CAPITALIZE(POSS-ADJ($target)) } тело значительно покрыто ожогами четвёртой степени.[/color]

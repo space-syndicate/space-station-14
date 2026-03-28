@@ -5,6 +5,6 @@ late-join-gui-job-slot-capped = { $jobName } ({ $amount } { $amount ->
     [zero] не доступна
     [one] доступна
     [few] доступны
-   *[other] доступно
+    *[other] доступно
 })
 late-join-gui-job-slot-uncapped = { $jobName } (Без ограничений)

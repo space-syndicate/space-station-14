@@ -5,5 +5,5 @@ immovable-rod-consumed-none = { CAPITALIZE($rod) } не поглотил ни о
 immovable-rod-consumed-souls = { CAPITALIZE($rod) } поглотил { $amount } { $amount ->
     [one] душу
     [few] души
-   *[other] душ
+    *[other] душ
 }.

@@ -9,7 +9,7 @@ ninja-research-steal-fail = Никакие новые технологии не 
 ninja-research-steal-success = Вы украли { $count } { $count ->
     [one] новую технологию
     [few] новые технологии
-   *[other] новых технологий
+    *[other] новых технологий
 } из { $server }.
 
 ninja-criminal-records-hack-announcement = ОШИБКА: В криминальных записях обнаружена [ИЗМЕНЕНО] ошибка #*;"

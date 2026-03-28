@@ -4,5 +4,5 @@ cmd-deletecomponent-no-component-exists = Компонента с именем {
 cmd-deletecomponent-success = { $count ->
     [one] Удалён { $count } компонент
     [few] Удалено { $count } компонента
-   *[other] Удалено { $count } компонентов
+    *[other] Удалено { $count } компонентов
 } с именем { $name }.

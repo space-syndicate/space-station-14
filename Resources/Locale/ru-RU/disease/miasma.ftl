@@ -16,19 +16,19 @@ rotting-rotting = [color=orange]{ CAPITALIZE(SUBJECT($target)) } { GENDER($targe
     [male] гниёт
     [female] гниёт
     [epicene] гниют
-   *[neuter] гниёт
+    *[neuter] гниёт
 }![/color]
 rotting-bloated = [color=orangered]{ CAPITALIZE(SUBJECT($target)) } { GENDER($target) ->
     [male] вздулся
     [female] вздулась
     [epicene] вздулись
-   *[neuter] вздулось
+    *[neuter] вздулось
 }![/color]
 rotting-extremely-bloated = [color=red]{ CAPITALIZE(SUBJECT($target)) } сильно { GENDER($target) ->
     [male] вздулся
     [female] вздулась
     [epicene] вздулись
-   *[neuter] вздулось
+    *[neuter] вздулось
 }![/color]
 
 rotting-rotting-nonmob = [color=orange]{ CAPITALIZE(SUBJECT($target)) } гниёт![/color]

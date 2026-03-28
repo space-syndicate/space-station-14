@@ -13,7 +13,7 @@ war-declarator-boost-declared = Война объявлена! Шаттл мож
 war-declarator-boost-timer = Оставшееся время: { $time } { $time ->
     [one] минута
     [few] минуты
-   *[other] минут
+    *[other] минут
 }.
 war-declarator-default-message = Пограничный отряд Синдиката объявляет о своём намерении уничтожить станцию при помощи ядерного устройства и призывает экипаж предпринять ничтожную попытку остановить их.
 war-declarator-message-placeholder = Введите текст объявления...

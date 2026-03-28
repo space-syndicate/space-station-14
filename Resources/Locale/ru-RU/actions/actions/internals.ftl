@@ -8,7 +8,7 @@ internals-other-no-breath-tool = { $ent } не { GENDER($ent) ->
     [male] надел
     [female] надела
     [epicene] надели
-   *[neuter] надело
+    *[neuter] надело
 } дыхательный аппарат
 internals-self-no-tank = У вас нет газового баллона
 internals-other-no-tank = У { $ent } нет газового баллона

@@ -30,7 +30,7 @@ gun-cartridge-unspent = Он [color=lime]не израсходован[/color].
 gun-battery-examine = Заряда хватит на [color={ $color }]{ $count }[/color] { $count ->
     [one] выстрел
     [few] выстрела
-   *[other] выстрелов
+    *[other] выстрелов
 }.
 
 # CartridgeAmmoProvider
@@ -48,7 +48,7 @@ gun-chamber-rack = Передёрнуть затвор
 gun-magazine-examine = Тут [color={ $color }]{ $count }[/color] { $count ->
     [one] штука
     [few] штуки
-   *[other] штук
+    *[other] штук
 }.
 
 # RevolverAmmoProvider

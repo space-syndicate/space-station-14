@@ -26,12 +26,12 @@ emergency-shuttle-console-no-early-launches = Досрочный запуск о
 emergency-shuttle-console-auth-left = { $remaining } { $remaining ->
     [one] авторизация осталась
     [few] авторизации остались
-   *[other] авторизаций осталось
+    *[other] авторизаций осталось
 } для досрочного запуска шаттла.
 emergency-shuttle-console-auth-revoked = Авторизации на досрочный запуск шаттла отозваны, { $remaining } { $remaining ->
     [one] авторизация необходима
     [few] авторизации необходимы
-   *[other] авторизаций необходимо
+    *[other] авторизаций необходимо
 }.
 emergency-shuttle-console-denied = Доступ запрещён
 

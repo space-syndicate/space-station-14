@@ -3,5 +3,5 @@ cream-pied-component-on-hit-by-message-others = { CAPITALIZE($owner) } { GENDER(
     [male] КРЕМирован
     [female] КРЕМирована
     [epicene] КРЕМированы
-   *[neuter] КРЕМировано
+    *[neuter] КРЕМировано
 } с помощью { $thrown }!

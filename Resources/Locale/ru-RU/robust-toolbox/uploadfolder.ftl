@@ -8,4 +8,4 @@ uploadfolder-command-success = {$fileCount ->
     [one] Загружен 1 файл
     [few] Загружено { $fileCount } файла
     *[other] Загружено { $fileCount } файлов
-    }.
+}.

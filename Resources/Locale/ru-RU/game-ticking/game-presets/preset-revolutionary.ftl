@@ -23,7 +23,7 @@ rev-break-control = { $name } { GENDER($name) ->
     [male] вспомнил, кому он верен
     [female] вспомнила, кому она верна
     [epicene] вспомнили, кому они верни
-   *[neuter] вспомнило, кому оно верно
+    *[neuter] вспомнило, кому оно верно
 } на самом деле!
 
 rev-role-greeting =

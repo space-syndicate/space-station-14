@@ -24,12 +24,12 @@ salvage-expedition-not-all-present = Не все утилизаторы верн
 salvage-expedition-announcement-countdown-minutes = До окончания экспедиции осталась { $duration } { $duration ->
     [one] минута
     [few] минуты
-   *[other] минут
+    *[other] минут
 }.
 salvage-expedition-announcement-countdown-seconds = До окончания экспедиции осталось { $duration } { $duration ->
     [one] секунда
     [few] секунды
-   *[other] секунд
+    *[other] секунд
 }.
 salvage-expedition-announcement-dungeon = Подземелье расположено от вас на { $direction }.
 salvage-expedition-completed = Экспедиция окончена.

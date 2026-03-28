@@ -22,7 +22,7 @@ news-write-ui-article-count-0 = 0 статей
 news-write-ui-article-count-text = { $count } { $count ->
     [one] статья
     [few] статьи
-   *[other] статей
+    *[other] статей
 }
 news-write-ui-footer-text = Система управления новостями Менеджер#Новостей™
 news-write-ui-new-article = Новая статья

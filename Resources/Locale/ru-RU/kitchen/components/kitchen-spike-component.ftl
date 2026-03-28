@@ -12,7 +12,7 @@ comp-kitchen-spike-hook-other = { CAPITALIZE($user) } { GENDER($user) ->
     [male] повесил
     [female] повесила
     [epicene] повесили
-   *[neuter] повесило
+    *[neuter] повесило
 } { CAPITALIZE($victim) } на { $hook }!
 
 comp-kitchen-spike-begin-unhook-self = Вы начинаете слезать с { $hook }!
@@ -29,7 +29,7 @@ comp-kitchen-spike-unhook-other = { CAPITALIZE($user) } { GENDER($user) ->
     [male] снял
     [female] сняла
     [epicene] сняли
-   *[neuter] сняло
+    *[neuter] сняло
 } { CAPITALIZE($victim) } с { $hook }!
 
 comp-kitchen-spike-begin-butcher-self = Вы начинаете разделывать { $victim }!
@@ -40,7 +40,7 @@ comp-kitchen-spike-butcher = { CAPITALIZE($user) } { GENDER($user) ->
     [male] разделал
     [female] разделала
     [epicene] разделали
-   *[neuter] разделало
+    *[neuter] разделало
 } { $victim }!
 
 comp-kitchen-spike-unhook-verb = Снять с крюка
@@ -53,5 +53,5 @@ comp-kitchen-spike-victim-examine = [color=orange]{ CAPITALIZE(SUBJECT($target))
     [male] худым
     [female] худой
     [epicene] худыми
-   *[neuter] худым
+    *[neuter] худым
 }.[/color]
