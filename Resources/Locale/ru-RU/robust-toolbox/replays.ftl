@@ -9,6 +9,9 @@ cmd-replay-pause-help = replay_pause
 cmd-replay-toggle-desc = Переключить паузу повтора.
 cmd-replay-toggle-help = replay_toggle
 
+cmd-replay-toggle-screenshot-mode-desc = Toggles screenshot mode for replays, hiding the replay control widget.
+cmd-replay-toggle-screenshot-mode-help = replay_toggle_screenshot_mode
+
 cmd-replay-stop-desc = Остановить и выгрузить повтор.
 cmd-replay-stop-help = replay_stop
 

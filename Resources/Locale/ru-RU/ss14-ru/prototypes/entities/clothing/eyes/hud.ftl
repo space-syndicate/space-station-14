@@ -1,3 +1,5 @@
+ent-ClothingEyesHudBase = { ent-ClothingEyesBase }
+    .desc = { ent-ClothingEyesBase.desc }
 ent-ShowSecurityIcons = { "" }
     .desc = { "" }
 ent-ShowMedicalIcons = { "" }

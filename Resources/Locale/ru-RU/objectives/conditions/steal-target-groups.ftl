@@ -25,6 +25,7 @@ steal-target-groups-mail = почта
 steal-target-groups-id-cards = ID-карты
 steal-target-groups-officer-handguns = пистолет службы безопасности
 steal-target-groups-lamps = ЛАМПЫ
+steal-target-groups-huds = HUD
 
 # Thief single item
 steal-target-groups-forensic-scanner = криминалистический сканер
@@ -39,7 +40,6 @@ steal-target-groups-fire-axe = пожарный топор
 steal-target-groups-ame-part-flatpack =  упаковка ДАМ
 steal-target-groups-salvage-expeditions-computer-circuitboard = плата консоли утилизаторских экспедиций
 steal-target-groups-cargo-shuttle-console-circuitboard = плата консоли управления грузовым шаттлом
-steal-target-groups-clothing-eyes-hud-beer = пивные очки
 steal-target-groups-bible = библия
 steal-target-groups-clothing-neck-goldmedal = золотая медаль мастерства экипажа
 steal-target-groups-clothing-neck-clownmedal = медаль клоуна

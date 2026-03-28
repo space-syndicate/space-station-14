@@ -55,3 +55,5 @@ comp-kitchen-spike-victim-examine = [color=orange]{ CAPITALIZE(SUBJECT($target))
     [epicene] худыми
     *[neuter] худым
 }.[/color]
+
+comp-kitchen-spike-deconstruct-occupied = Next, [color=red]unhook the body[/color].
