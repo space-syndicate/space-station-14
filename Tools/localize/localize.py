@@ -359,6 +359,7 @@ class FtlParser:
 class LocalizationManager:
     CYRILLIC_PATTERN = re.compile(r"[А-Яа-яЁё]")
     LATIN_PATTERN = re.compile(r"[a-zA-Z]")
+    RE_INNER_DASH = re.compile(r"(?<=\s)-(?=\s)")
 
     def __init__(self, root_dir: Path, format_level: str, config_file: str):
         self.root_dir = root_dir
@@ -563,6 +564,28 @@ class LocalizationManager:
             else:
                 res.append(line)
         return "\n".join(res)
+
+    @classmethod
+    def _replace_dashes_in_text(cls, text: str) -> str:
+        if not text:
+            return text
+
+        lines = text.split("\n")
+        new_lines = []
+        changed = False
+
+        for line in lines:
+            stripped = line.strip()
+            if not stripped or stripped.startswith("-") or stripped.endswith("-"):
+                new_lines.append(line)
+                continue
+
+            new_line = cls.RE_INNER_DASH.sub("—", line)
+            new_lines.append(new_line)
+            if new_line != line:
+                changed = True
+
+        return "\n".join(new_lines) if changed else text
 
     def _get_best_translation(
         self,
@@ -1083,6 +1106,43 @@ class LocalizationManager:
 
         return valid_ftls
 
+    def fix_dashes(self) -> None:
+        logging.info("Расстановка правильных тире вместо дефисов в локализации...")
+        changed_files = 0
+        search_dirs = [self.ru_ru_dir, self.robust_ru_dir]
+
+        for directory in search_dirs:
+            if not directory.exists():
+                continue
+
+            for ftl_file in directory.rglob("*.ftl"):
+                if self.context.is_ignored(ftl_file):
+                    continue
+
+                entries, trailing, ends = FtlParser.parse_file(ftl_file)
+                file_changed = False
+
+                for entry in entries.values():
+                    new_val = self._replace_dashes_in_text(entry.value)
+                    if new_val != entry.value:
+                        entry.value = new_val
+                        file_changed = True
+
+                    for attr in entry.attributes.values():
+                        new_attr_val = self._replace_dashes_in_text(attr.value)
+                        if new_attr_val != attr.value:
+                            attr.value = new_attr_val
+                            file_changed = True
+
+                if file_changed:
+                    FtlParser.write_file(ftl_file, entries, trailing, ends)
+                    changed_files += 1
+                    logging.info(
+                        f"Обновлены тире в файле: {ftl_file.relative_to(self.root_dir)}"
+                    )
+
+        logging.info(f"Завершена расстановка тире. Изменено файлов: {changed_files}")
+
     def check_untranslated(self) -> None:
         logging.info("Поиск непереведенных строк...")
         untranslated_count = 0
@@ -1175,6 +1235,11 @@ def main() -> None:
         help="Сгенерировать локализацию из YAML прототипов.",
     )
     parser.add_argument(
+        "--dashes",
+        action="store_true",
+        help="Расставить тире вместо дефисов в локализации.",
+    )
+    parser.add_argument(
         "--check", action="store_true", help="Проверить непереведенные строки."
     )
     parser.add_argument(
@@ -1185,7 +1250,7 @@ def main() -> None:
 
     args = parser.parse_args()
 
-    if not any([args.sync, args.prototypes, args.check, args.all]):
+    if not any([args.sync, args.prototypes, args.check, args.dashes, args.all]):
         args.all = True
 
     root_path = Path(args.root).resolve()
@@ -1196,6 +1261,8 @@ def main() -> None:
             manager.sync_systems()
         if args.prototypes or args.all:
             manager.process_prototypes()
+        if args.dashes or args.all:
+            manager.fix_dashes()
         if args.check or args.all:
             manager.check_untranslated()
 
