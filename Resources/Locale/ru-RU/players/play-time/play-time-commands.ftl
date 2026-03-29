@@ -48,8 +48,7 @@ cmd-playtime_save-error-args = Ожидается ровно один аргум
 ## 'playtime_flush' command'
 
 cmd-playtime_flush-desc = Записывает активные трекеры в хранение отслеживании игрового времени.
-cmd-playtime_flush-help =
-    Использование: { $command } [user name]
+cmd-playtime_flush-help = Использование: { $command } [user name]
     Это вызывает запись только во внутреннее хранилище, при это не записывая немедленно в БД.
     Если пользователь передан, то только этот пользователь будет обработан.
 

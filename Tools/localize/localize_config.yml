@@ -1,0 +1,5 @@
+ignored_paths: # Игнорирует указанные пути до папок/файлов
+- "Resources/Locale/ru-RU/corvax"
+- "Resources/Locale/ru-RU/datasets"
+ignored_untranslated_paths: # Игнорирует предупреждения в указанных путях до папок/файлов
+- "Resources/Locale/ru-RU/robust-toolbox/input.ftl"

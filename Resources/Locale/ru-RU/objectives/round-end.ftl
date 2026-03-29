@@ -1,9 +1,8 @@
-objectives-round-end-result =
-    { $count ->
-        [one] Был один { $agent }.
-        [few] Было { $count } { $agent }.
-       *[other] Было { $count } { $agent }.
-    }
+objectives-round-end-result = { $count ->
+    [one] Был один { $agent }.
+    [few] Было { $count } { $agent }.
+    *[other] Было { $count } { $agent }.
+}
 
 objectives-round-end-result-in-custody = { $custody } из { $count } { $agent } были арестованы.
 

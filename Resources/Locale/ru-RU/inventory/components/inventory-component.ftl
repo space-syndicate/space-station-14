@@ -6,5 +6,5 @@ inventory-component-can-unequip-cannot = Вы не можете снять эт�
 inventory-component-dropped-from-unequip =
     Вы уронили { $items ->
         [1] какой-то предмет!
-       *[other] несколько предметов!
+        *[other] несколько предметов!
     }

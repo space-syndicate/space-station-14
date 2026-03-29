@@ -15,5 +15,5 @@ ent-Milkalyzer = молокоанализатор
 ent-CowToolbox = коровий ящик для инструментов
     .desc = Ящик странной формы, наполненный... инструментами?
 ent-CowToolboxFilled = коровий ящик для инструментов
-    .suffix = Заполненный
     .desc = { ent-CowToolbox.desc }
+    .suffix = Заполненный

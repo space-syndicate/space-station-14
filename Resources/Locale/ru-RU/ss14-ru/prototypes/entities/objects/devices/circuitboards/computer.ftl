@@ -1,4 +1,4 @@
-﻿ent-BaseComputerCircuitboard = консольная плата
+ent-BaseComputerCircuitboard = консольная плата
     .desc = { ent-BaseItem.desc }
 ent-AlertsComputerCircuitboard = консоль атмосферной сигнализации (консольная плата)
     .desc = Консольная плата для консоли атмосферной сигнализации.

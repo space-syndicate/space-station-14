@@ -32,3 +32,5 @@ ent-CrewMonitoringComputerFlatpack = упаковка консоли монит�
     .desc = Универсально-сборная упаковка, используемая для сборки консоли мониторинга экипажа.
 ent-HydroponicsTrayFlatpack = упаковка гидропонного лотка
     .desc = Универсально-сборная упаковка, используемая для сборки гидропонного лотка.
+ent-SyndicateMicrowaveFlatpack = donk co. microwave flatpack
+    .desc = A flatpack used for constructing a microwave too hot for Nanotrasen to handle.

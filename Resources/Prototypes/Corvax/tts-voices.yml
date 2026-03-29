@@ -8,7 +8,7 @@
 - type: ttsVoice
   id: Baya
   name: tts-voice-name-baya
-  sex: Unsexed
+  sex: Female
   speaker: baya
   roundStart: false
 
@@ -154,7 +154,7 @@
 
 - type: ttsVoice
   id: IllidanF
-  name: tts-voice-name-illidanf
+  name: tts-voice-name-illidan_f
   sex: Male
   speaker: illidan_f
 
@@ -172,7 +172,7 @@
 
 - type: ttsVoice
   id: DreadBm
-  name: tts-voice-name-dreadbm
+  name: tts-voice-name-dread_bm
   sex: Male
   speaker: dread_bm
 
@@ -202,7 +202,7 @@
 
 - type: ttsVoice
   id: DreadT
-  name: tts-voice-name-dreadt
+  name: tts-voice-name-dread_t
   sex: Male
   speaker: dread_t
 
@@ -233,7 +233,7 @@
 - type: ttsVoice
   id: Glados
   name: tts-voice-name-glados
-  sex: Female
+  sex: Unsexed
   speaker: glados
   roundStart: false
 
@@ -288,7 +288,7 @@
 - type: ttsVoice
   id: Meepo
   name: tts-voice-name-meepo
-  sex: Unsexed
+  sex: Male
   speaker: meepo
 
 - type: ttsVoice
@@ -359,7 +359,7 @@
 
 - type: ttsVoice
   id: VortE2
-  name: tts-voice-name-vorte2
+  name: tts-voice-name-vort_e2
   sex: Male
   speaker: vort_e2
 
@@ -390,7 +390,7 @@
 - type: ttsVoice
   id: Bounty
   name: tts-voice-name-bounty
-  sex: Unsexed
+  sex: Male
   speaker: bounty
 
 - type: ttsVoice
@@ -468,7 +468,7 @@
 - type: ttsVoice
   id: Antimage
   name: tts-voice-name-antimage
-  sex: Unsexed
+  sex: Male
   speaker: antimage
 
 - type: ttsVoice
@@ -540,7 +540,7 @@
 - type: ttsVoice
   id: Hanson
   name: tts-voice-name-hanson
-  sex: Male
+  sex: Female
   speaker: hanson
 
 - type: ttsVoice
@@ -557,7 +557,7 @@
 
 - type: ttsVoice
   id: GmanE2
-  name: tts-voice-name-gmane2
+  name: tts-voice-name-gman_e2
   sex: Male
   speaker: gman_e2
 
@@ -696,7 +696,7 @@
 - type: ttsVoice
   id: Lynette
   name: tts-voice-name-lynette
-  sex: Male
+  sex: Female
   speaker: lynette
 
 - type: ttsVoice
@@ -720,7 +720,7 @@
 - type: ttsVoice
   id: Myron
   name: tts-voice-name-myron
-  sex: Unsexed
+  sex: Male
   speaker: myron
 
 - type: ttsVoice
@@ -809,7 +809,7 @@
 
 - type: ttsVoice
   id: SniperTf
-  name: tts-voice-name-snipertf
+  name: tts-voice-name-sniper_tf
   sex: Male
   speaker: sniper_tf
 
@@ -858,13 +858,13 @@
 - type: ttsVoice
   id: Dryad
   name: tts-voice-name-dryad
-  sex: Unsexed
+  sex: Female
   speaker: dryad
 
 - type: ttsVoice
   id: ElfEng
-  name: tts-voice-name-elfeng
-  sex: Unsexed
+  name: tts-voice-name-elf_eng
+  sex: Male
   speaker: elf_eng
 
 - type: ttsVoice
@@ -899,19 +899,19 @@
 
 - type: ttsVoice
   id: NagaM
-  name: tts-voice-name-nagam
+  name: tts-voice-name-naga_m
   sex: Male
   speaker: naga_m
 
 - type: ttsVoice
   id: NagaRG
-  name: tts-voice-name-nagarg
+  name: tts-voice-name-naga_rg
   sex: Male
   speaker: naga_rg
 
 - type: ttsVoice
   id: PeasantW
-  name: tts-voice-name-peasantw
+  name: tts-voice-name-peasant_w
   sex: Female
   speaker: peasant_w
 
@@ -929,7 +929,7 @@
 
 - type: ttsVoice
   id: SylvanasW
-  name: tts-voice-name-sylvanasw
+  name: tts-voice-name-sylvanas_w
   sex: Female
   speaker: sylvanas_w
 
@@ -1052,7 +1052,7 @@
 
 - type: ttsVoice
   id: DrMundo
-  name: tts-voice-name-drmundo
+  name: tts-voice-name-dr_mundo
   sex: Male
   speaker: dr_mundo
 
@@ -1082,7 +1082,7 @@
 
 - type: ttsVoice
   id: RenataGlasc
-  name: tts-voice-name-renataglasc
+  name: tts-voice-name-renata_glasc
   sex: Female
   speaker: renata_glasc
   roundStart: false
@@ -1163,7 +1163,7 @@
 - type: ttsVoice
   id: Fizz
   name: tts-voice-name-fizz
-  sex: Male
+  sex: Unsexed
   speaker: fizz
 
 - type: ttsVoice
@@ -1186,7 +1186,7 @@
 
 - type: ttsVoice
   id: OlafLol
-  name: tts-voice-name-olaflol
+  name: tts-voice-name-olaf_lol
   sex: Male
   speaker: olaf_lol
 
@@ -1290,7 +1290,7 @@
 
 - type: ttsVoice
   id: Soldier76
-  name: tts-voice-name-soldier76
+  name: tts-voice-name-soldier_76
   sex: Male
   speaker: soldier_76
 
@@ -1314,13 +1314,13 @@
 
 - type: ttsVoice
   id: LucioOv
-  name: tts-voice-name-lucioov
+  name: tts-voice-name-lucio_ov
   sex: Male
   speaker: lucio_ov
 
 - type: ttsVoice
   id: DvaOv
-  name: tts-voice-name-dvaov
+  name: tts-voice-name-dva_ov
   sex: Female
   speaker: dva_ov
 
@@ -1356,7 +1356,7 @@
 
 - type: ttsVoice
   id: JunkerQueen
-  name: tts-voice-name-junkerqueen
+  name: tts-voice-name-junker_queen
   sex: Female
   speaker: junker_queen
 
@@ -1417,8 +1417,8 @@
 
 - type: ttsVoice
   id: TrainingRobot
-  name: tts-voice-name-trainingrobot
-  sex: Male
+  name: tts-voice-name-training_robot
+  sex: Unsexed
   speaker: training_robot
   roundStart: false
 
@@ -1448,19 +1448,19 @@
 
 - type: ttsVoice
   id: FShrill
-  name: tts-voice-name-fshrill
+  name: tts-voice-name-f_shrill
   sex: Female
   speaker: f_shrill
 
 - type: ttsVoice
   id: MHaughty
-  name: tts-voice-name-mhaughty
+  name: tts-voice-name-m_haughty
   sex: Male
   speaker: m_haughty
 
 - type: ttsVoice
   id: MSoldier
-  name: tts-voice-name-msoldier
+  name: tts-voice-name-m_soldier
   sex: Male
   speaker: m_soldier
 
@@ -1472,7 +1472,7 @@
 
 - type: ttsVoice
   id: FSultry
-  name: tts-voice-name-fsultry
+  name: tts-voice-name-f_sultry
   sex: Female
   speaker: f_sultry
 
@@ -1484,19 +1484,19 @@
 
 - type: ttsVoice
   id: MCommander
-  name: tts-voice-name-mcommander
+  name: tts-voice-name-m_commander
   sex: Male
   speaker: m_commander
 
 - type: ttsVoice
   id: MDarkElf
-  name: tts-voice-name-mdarkelf
+  name: tts-voice-name-m_darkelf
   sex: Male
   speaker: m_darkelf
 
 - type: ttsVoice
   id: FNord
-  name: tts-voice-name-fnord
+  name: tts-voice-name-f_nord
   sex: Female
   speaker: f_nord
 
@@ -1514,7 +1514,7 @@
 
 - type: ttsVoice
   id: FHaughty
-  name: tts-voice-name-fhaughty
+  name: tts-voice-name-f_haughty
   sex: Female
   speaker: f_haughty
 
@@ -1538,13 +1538,13 @@
 
 - type: ttsVoice
   id: MArgo
-  name: tts-voice-name-margo
+  name: tts-voice-name-m_argo
   sex: Male
   speaker: m_argo
 
 - type: ttsVoice
   id: MNord
-  name: tts-voice-name-mnord
+  name: tts-voice-name-m_nord
   sex: Male
   speaker: m_nord
 
@@ -1556,7 +1556,7 @@
 
 - type: ttsVoice
   id: FCommander
-  name: tts-voice-name-fcommander
+  name: tts-voice-name-f_commander
   sex: Female
   speaker: f_commander
 
@@ -1568,19 +1568,19 @@
 
 - type: ttsVoice
   id: MKhajiit
-  name: tts-voice-name-mkhajiit
+  name: tts-voice-name-m_khajiit
   sex: Male
   speaker: m_khajiit
 
 - type: ttsVoice
   id: MCoward
-  name: tts-voice-name-mcoward
+  name: tts-voice-name-m_coward
   sex: Male
   speaker: m_coward
 
 - type: ttsVoice
   id: FArgo
-  name: tts-voice-name-fargo
+  name: tts-voice-name-f_argo
   sex: Female
   speaker: f_argo
 
@@ -1610,31 +1610,31 @@
 
 - type: ttsVoice
   id: FCoward
-  name: tts-voice-name-fcoward
+  name: tts-voice-name-f_coward
   sex: Female
   speaker: f_coward
 
 - type: ttsVoice
   id: MGuard
-  name: tts-voice-name-mguard
+  name: tts-voice-name-m_guard
   sex: Male
   speaker: m_guard
 
 - type: ttsVoice
   id: MCommoner
-  name: tts-voice-name-mcommoner
+  name: tts-voice-name-m_commoner
   sex: Male
   speaker: m_commoner
 
 - type: ttsVoice
   id: MDrunk
-  name: tts-voice-name-mdrunk
+  name: tts-voice-name-m_drunk
   sex: Male
   speaker: m_drunk
 
 - type: ttsVoice
   id: FKhajiit
-  name: tts-voice-name-fkhajiit
+  name: tts-voice-name-f_khajiit
   sex: Female
   speaker: f_khajiit
 
@@ -1646,7 +1646,7 @@
 
 - type: ttsVoice
   id: MCitizen
-  name: tts-voice-name-mcitizen
+  name: tts-voice-name-m_citizen
   sex: Male
   speaker: m_citizen
 
@@ -1665,14 +1665,14 @@
 
 - type: ttsVoice
   id: MOrc
-  name: tts-voice-name-morc
+  name: tts-voice-name-m_orc
   sex: Male
   speaker: m_orc
 
 - type: ttsVoice
   id: FCommoner
-  name: tts-voice-name-fcommoner
-  sex: Male
+  name: tts-voice-name-f_commoner
+  sex: Female
   speaker: f_commoner
 
 - type: ttsVoice
@@ -1719,7 +1719,7 @@
 
 - type: ttsVoice
   id: MChild
-  name: tts-voice-name-mchild
+  name: tts-voice-name-m_child
   sex: Male
   speaker: m_child
   roundStart: false
@@ -1738,15 +1738,15 @@
 
 - type: ttsVoice
   id: FChild
-  name: tts-voice-name-fchild
+  name: tts-voice-name-f_child
   sex: Female
   speaker: f_child
   roundStart: false
 
 - type: ttsVoice
   id: FOrc
-  name: tts-voice-name-forc
-  sex: Male
+  name: tts-voice-name-f_orc
+  sex: Female
   speaker: f_orc
 
 - type: ttsVoice
@@ -1757,7 +1757,7 @@
 
 - type: ttsVoice
   id: FDarkElf
-  name: tts-voice-name-fdarkelf
+  name: tts-voice-name-f_darkelf
   sex: Female
   speaker: f_darkelf
 
@@ -1775,19 +1775,19 @@
 
 - type: ttsVoice
   id: MBandit
-  name: tts-voice-name-mbandit
+  name: tts-voice-name-m_bandit
   sex: Male
   speaker: m_bandit
 
 - type: ttsVoice
   id: Hagraven
   name: tts-voice-name-hagraven
-  sex: Male
+  sex: Unsexed
   speaker: hagraven
 
 - type: ttsVoice
   id: MForsworn
-  name: tts-voice-name-mforsworn
+  name: tts-voice-name-m_forsworn
   sex: Male
   speaker: m_forsworn
 
@@ -1854,7 +1854,7 @@
 - type: ttsVoice
   id: Aventus
   name: tts-voice-name-aventus
-  sex: Male
+  sex: Unsexed
   speaker: aventus
   roundStart: false
 
@@ -1905,14 +1905,14 @@
 - type: ttsVoice
   id: Overwatch
   name: tts-voice-name-overwatch
-  sex: Male
+  sex: Female
   speaker: overwatch
   roundStart: false
 
 - type: ttsVoice
   id: Rita
   name: tts-voice-name-rita
-  sex: Male
+  sex: Female
   speaker: rita
   roundStart: false
 
@@ -2052,14 +2052,14 @@
 - type: ttsVoice
   id: Mira
   name: tts-voice-name-mira
-  sex: Female
+  sex: Unsexed
   speaker: mira
   roundStart: false
 
 - type: ttsVoice
   id: Valeera
   name: tts-voice-name-valeera
-  sex: Male
+  sex: Female
   speaker: valeera
 
 - type: ttsVoice
@@ -2112,14 +2112,14 @@
 
 - type: ttsVoice
   id: MalfurionH
-  name: tts-voice-name-malfurionh
+  name: tts-voice-name-malfurion_h
   sex: Male
   speaker: malfurion_h
 
 - type: ttsVoice
   id: Demonhunter
   name: tts-voice-name-demonhunter
-  sex: Male
+  sex: Female
   speaker: demonhunter
 
 - type: ttsVoice
@@ -2155,7 +2155,7 @@
 
 - type: ttsVoice
   id: KerriganH
-  name: tts-voice-name-kerriganh
+  name: tts-voice-name-kerrigan_h
   sex: Female
   speaker: kerrigan_h
 
@@ -2186,7 +2186,7 @@
 - type: ttsVoice
   id: Chromie
   name: tts-voice-name-chromie
-  sex: Male
+  sex: Female
   speaker: chromie
 
 - type: ttsVoice
@@ -2245,7 +2245,7 @@
 
 - type: ttsVoice
   id: Greymane_h
-  name: tts-voice-name-greymaneh
+  name: tts-voice-name-greymane_h
   sex: Male
   speaker: greymane_h
 
@@ -2258,25 +2258,25 @@
 - type: ttsVoice
   id: Dva
   name: tts-voice-name-dva
-  sex: Male
+  sex: Female
   speaker: dva
 
 - type: ttsVoice
   id: Gardensdayannouncer
   name: tts-voice-name-gardensdayannouncer
-  sex: Male
+  sex: Female
   speaker: gardensdayannouncer
 
 - type: ttsVoice
   id: Toy18
   name: tts-voice-name-toy18
-  sex: Male
+  sex: Unsexed
   speaker: toy18
   roundStart: false
 
 - type: ttsVoice
   id: WitchdoctorH
-  name: tts-voice-name-witchdoctorh
+  name: tts-voice-name-witchdoctor_h
   sex: Male
   speaker: witchdoctor_h
 
@@ -2312,7 +2312,7 @@
 
 - type: ttsVoice
   id: DrBoom
-  name: tts-voice-name-drboom
+  name: tts-voice-name-dr_boom
   sex: Male
   speaker: dr_boom
 
@@ -2348,7 +2348,7 @@
 
 - type: ttsVoice
   id: Ol_toomba
-  name: tts-voice-name-oltoomba
+  name: tts-voice-name-ol_toomba
   sex: Male
   speaker: ol_toomba
 
@@ -2361,7 +2361,7 @@
 - type: ttsVoice
   id: Goya
   name: tts-voice-name-goya
-  sex: Male
+  sex: Female
   speaker: goya
 
 - type: ttsVoice
@@ -2379,13 +2379,13 @@
 - type: ttsVoice
   id: Eudora
   name: tts-voice-name-eudora
-  sex: Male
+  sex: Female
   speaker: eudora
   roundStart: false
 
 - type: ttsVoice
   id: MaievHs
-  name: tts-voice-name-maievhs
+  name: tts-voice-name-maiev_hs
   sex: Female
   speaker: maiev_hs
 
@@ -2427,7 +2427,7 @@
 
 - type: ttsVoice
   id: ValeeraHs
-  name: tts-voice-name-valeerahs
+  name: tts-voice-name-valeera_hs
   sex: Female
   speaker: valeera_hs
 
@@ -2457,14 +2457,14 @@
 
 - type: ttsVoice
   id: TekahnBoss
-  name: tts-voice-name-tekahnboss
+  name: tts-voice-name-tekahn_boss
   sex: Male
   speaker: tekahn_boss
 
 - type: ttsVoice
   id: Flark
   name: tts-voice-name-flark
-  sex: Male
+  sex: Unsexed
   speaker: flark
 
 - type: ttsVoice
@@ -2549,7 +2549,7 @@
 
 - type: ttsVoice
   id: DrSezavo
-  name: tts-voice-name-drsezavo
+  name: tts-voice-name-dr_sezavo
   sex: Male
   speaker: dr_sezavo
   roundStart: false
@@ -2599,7 +2599,7 @@
 - type: ttsVoice
   id: Hagatha
   name: tts-voice-name-hagatha
-  sex: Male
+  sex: Female
   speaker: hagatha
 
 - type: ttsVoice
@@ -2636,7 +2636,7 @@
 - type: ttsVoice
   id: Aranna
   name: tts-voice-name-aranna
-  sex: Male
+  sex: Female
   speaker: aranna
 
 - type: ttsVoice
@@ -2666,7 +2666,7 @@
 - type: ttsVoice
   id: Tala
   name: tts-voice-name-tala
-  sex: Male
+  sex: Female
   speaker: tala
 
 - type: ttsVoice
@@ -2732,12 +2732,12 @@
 - type: ttsVoice
   id: Illucia
   name: tts-voice-name-illucia
-  sex: Male
+  sex: Female
   speaker: illucia
 
 - type: ttsVoice
   id: YrelHs
-  name: tts-voice-name-yrelhs
+  name: tts-voice-name-yrel_hs
   sex: Female
   speaker: yrel_hs
 
@@ -2757,7 +2757,7 @@
 - type: ttsVoice
   id: Kyriss
   name: tts-voice-name-kyriss
-  sex: Male
+  sex: Unsexed
   speaker: kyriss
   roundStart: false
 
@@ -2775,14 +2775,14 @@
 
 - type: ttsVoice
   id: TyrandeHs
-  name: tts-voice-name-tyrandehs
+  name: tts-voice-name-tyrande_hs
   sex: Female
   speaker: tyrande_hs
 
 - type: ttsVoice
   id: Kizi
   name: tts-voice-name-kizi
-  sex: Male
+  sex: Female
   speaker: kizi
 
 - type: ttsVoice
@@ -2878,7 +2878,7 @@
 - type: ttsVoice
   id: Kasa
   name: tts-voice-name-kasa
-  sex: Male
+  sex: Female
   speaker: kasa
 
 - type: ttsVoice
@@ -2914,14 +2914,14 @@
 - type: ttsVoice
   id: Avozu
   name: tts-voice-name-avozu
-  sex: Male
+  sex: Unsexed
   speaker: avozu
   roundStart: false
 
 - type: ttsVoice
   id: Wagtoggle
   name: tts-voice-name-wagtoggle
-  sex: Male
+  sex: Female
   speaker: wagtoggle
 
 - type: ttsVoice
@@ -2933,13 +2933,13 @@
 - type: ttsVoice
   id: Lilayell
   name: tts-voice-name-lilayell
-  sex: Male
+  sex: Female
   speaker: lilayell
 
 - type: ttsVoice
   id: Jeklik
   name: tts-voice-name-jeklik
-  sex: Male
+  sex: Female
   speaker: jeklik
 
 - type: ttsVoice
@@ -2957,7 +2957,7 @@
 - type: ttsVoice
   id: Marei
   name: tts-voice-name-marei
-  sex: Male
+  sex: Female
   speaker: marei
 
 - type: ttsVoice
@@ -2969,7 +2969,7 @@
 - type: ttsVoice
   id: Applebough
   name: tts-voice-name-applebough
-  sex: Male
+  sex: Female
   speaker: applebough
 
 - type: ttsVoice
@@ -2981,13 +2981,13 @@
 - type: ttsVoice
   id: Lazul
   name: tts-voice-name-lazul
-  sex: Male
+  sex: Female
   speaker: lazul
 
 - type: ttsVoice
   id: Arwyn
   name: tts-voice-name-arwyn
-  sex: Male
+  sex: Female
   speaker: arwyn
 
 - type: ttsVoice
@@ -3025,7 +3025,7 @@
 - type: ttsVoice
   id: Arha
   name: tts-voice-name-arha
-  sex: Male
+  sex: Unsexed
   speaker: arha
 
 - type: ttsVoice
@@ -3134,7 +3134,7 @@
 - type: ttsVoice
   id: Wywern
   name: tts-voice-name-wywern
-  sex: Male
+  sex: Female
   speaker: wywern
 
 - type: ttsVoice
@@ -3482,7 +3482,7 @@
 - type: ttsVoice
   id: Ellis
   name: tts-voice-name-ellis
-  sex: Female
+  sex: Male
   speaker: ellis
 
 - type: ttsVoice
@@ -3530,13 +3530,13 @@
 - type: ttsVoice
   id: Magess
   name: tts-voice-name-magess
-  sex: Unsexed
+  sex: Female
   speaker: magess
 
 - type: ttsVoice
   id: Nalo
   name: tts-voice-name-nalo
-  sex: Male
+  sex: Female
   speaker: nalo
 
 - type: ttsVoice
@@ -3896,7 +3896,7 @@
 - type: ttsVoice
   id: Ebyssian
   name: tts-voice-name-Dragons_Ebyssian
-  sex: Male
+  sex: Unsexed
   speaker: Dragons_Ebyssian
 
 - type: ttsVoice
@@ -3914,7 +3914,7 @@
 - type: ttsVoice
   id: Malygos
   name: tts-voice-name-Dragons_Malygos
-  sex: Male
+  sex: Unsexed
   speaker: Dragons_Malygos
 
 - type: ttsVoice
@@ -3932,7 +3932,7 @@
 - type: ttsVoice
   id: Kazra
   name: tts-voice-name-Draconids_Kazra
-  sex: Male
+  sex: Female
   speaker: Draconids_Kazra
 
 - type: ttsVoice
@@ -3956,7 +3956,7 @@
 - type: ttsVoice
   id: Drine
   name: tts-voice-name-Draconids_Drine
-  sex: Male
+  sex: Female
   speaker: Draconids_Drine
 
 - type: ttsVoice
@@ -4381,145 +4381,145 @@
 
 - type: ttsVoice
   id: Male_v
-  name: tts-voice-name-male_v
+  name: tts-voice-name-Cyberpunk_male_v
   sex: Male
   speaker: Cyberpunk_male_v
 
 - type: ttsVoice
   id: Johny
-  name: tts-voice-name-johny
+  name: tts-voice-name-Cyberpunk_johny
   sex: Male
   speaker: Cyberpunk_johny
 
 - type: ttsVoice
   id: Takemura
-  name: tts-voice-name-takemura
+  name: tts-voice-name-Cyberpunk_takemura
   sex: Male
   speaker: Cyberpunk_takemura
 
 - type: ttsVoice
   id: Sobchak
-  name: tts-voice-name-sobchak
+  name: tts-voice-name-Cyberpunk_sobchak
   sex: Male
   speaker: Cyberpunk_sobchak
 
 - type: ttsVoice
   id: Jackie
-  name: tts-voice-name-jackie
+  name: tts-voice-name-Cyberpunk_jackie
   sex: Male
   speaker: Cyberpunk_jackie
 
 - type: ttsVoice
   id: Kerry
-  name: tts-voice-name-kerry
+  name: tts-voice-name-Cyberpunk_kerry
   sex: Male
   speaker: Cyberpunk_kerry
 
 - type: ttsVoice
   id: Mitch
-  name: tts-voice-name-mitch
+  name: tts-voice-name-Cyberpunk_mitch
   sex: Male
   speaker: Cyberpunk_mitch
 
 - type: ttsVoice
   id: Saul
-  name: tts-voice-name-saul
+  name: tts-voice-name-Cyberpunk_saul
   sex: Male
   speaker: Cyberpunk_saul
 
 - type: ttsVoice
   id: Haru
-  name: tts-voice-name-haru
+  name: tts-voice-name-Cyberpunk_haru
   sex: Male
   speaker: Cyberpunk_haru
 
 - type: ttsVoice
   id: Victor
-  name: tts-voice-name-victor
+  name: tts-voice-name-Cyberpunk_victor
   sex: Male
   speaker: Cyberpunk_victor
 
 - type: ttsVoice
   id: Placide
-  name: tts-voice-name-placide
+  name: tts-voice-name-Cyberpunk_placide
   sex: Male
   speaker: Cyberpunk_placide
 
 - type: ttsVoice
   id: Dexter
-  name: tts-voice-name-dexter
+  name: tts-voice-name-Cyberpunk_dexter
   sex: Male
   speaker: Cyberpunk_dexter
 
 - type: ttsVoice
   id: Sebastian
-  name: tts-voice-name-sebastian
+  name: tts-voice-name-Cyberpunk_sebastian
   sex: Male
   speaker: Cyberpunk_sebastian
 
 - type: ttsVoice
   id: Jefferson
-  name: tts-voice-name-jefferson
+  name: tts-voice-name-Cyberpunk_jefferson
   sex: Male
   speaker: Cyberpunk_jefferson
 
 - type: ttsVoice
   id: Joshua
-  name: tts-voice-name-joshua
+  name: tts-voice-name-Cyberpunk_joshua
   sex: Male
   speaker: Cyberpunk_joshua
 
 - type: ttsVoice
   id: Ellie
-  name: tts-voice-name-ellie
+  name: tts-voice-name-tlou_ellie
   sex: Female
   speaker: tlou_ellie
 
 - type: ttsVoice
   id: Joel
-  name: tts-voice-name-joel
+  name: tts-voice-name-tlou_joel
   sex: Male
   speaker: tlou_joel
 
 - type: ttsVoice
   id: Tess
-  name: tts-voice-name-tess
+  name: tts-voice-name-tlou_tess
   sex: Female
   speaker: tlou_tess
 
 - type: ttsVoice
   id: Mission_control
-  name: tts-voice-name-mission_control
+  name: tts-voice-name-Deep_rock_galactic_mission_control
   sex: Male
   speaker: Deep_rock_galactic_mission_control
 
 - type: ttsVoice
   id: Dwarves
-  name: tts-voice-name-dwarves
+  name: tts-voice-name-Deep_rock_galactic_dwarves
   sex: Male
   speaker: Deep_rock_galactic_dwarves
 
 - type: ttsVoice
   id: Sunboy_inner
-  name: tts-voice-name-sunboy_inner
+  name: tts-voice-name-an_alt_girl_inner
   sex: Male
   speaker: an_alt_girl_inner
 
 - type: ttsVoice
   id: Sunboy_sad
-  name: tts-voice-name-sunboy_sad
+  name: tts-voice-name-an_alt_girl_sunboy_s
   sex: Male
   speaker: an_alt_girl_sunboy_s
 
 - type: ttsVoice
   id: Sunboy_mannered
-  name: tts-voice-name-sunboy_mannered
+  name: tts-voice-name-an_alt_girl_dlc_sunboy_n
   sex: Male
   speaker: an_alt_girl_dlc_sunboy_n
 
 - type: ttsVoice
   id: Sunboy_kalm
-  name: tts-voice-name-sunboy_kalm
+  name: tts-voice-name-an_alt_girl_dlc_sunboy_k
   sex: Male
   speaker: an_alt_girl_dlc_sunboy_k
 
@@ -4537,55 +4537,55 @@
 
 - type: ttsVoice
   id: Titus
-  name: tts-voice-name-titus
+  name: tts-voice-name-marine2_titus
   sex: Male
   speaker: marine2_titus
 
 - type: ttsVoice
   id: Berserk
-  name: tts-voice-name-berserk
+  name: tts-voice-name-marine2_berserk
   sex: Male
   speaker: marine2_berserk
 
 - type: ttsVoice
   id: Gadriel
-  name: tts-voice-name-gadriel
+  name: tts-voice-name-marine2_gadriel
   sex: Male
   speaker: marine2_gadriel
 
 - type: ttsVoice
   id: Chairon
-  name: tts-voice-name-chairon
+  name: tts-voice-name-marine2_chairon
   sex: Male
   speaker: marine2_chairon
 
 - type: ttsVoice
   id: Acheran
-  name: tts-voice-name-acheran
+  name: tts-voice-name-marine2_acheran
   sex: Male
   speaker: marine2_acheran
 
 - type: ttsVoice
   id: Machine_spirit_4
-  name: tts-voice-name-machine_spirit_4
+  name: tts-voice-name-marine2_machine_spirit_4
   sex: Female
   speaker: marine2_machine_spirit_4
 
 - type: ttsVoice
   id: Magos_galeo
-  name: tts-voice-name-magos_galeo
+  name: tts-voice-name-marine2_magos_galeo
   sex: Male
   speaker: marine2_magos_galeo
 
 - type: ttsVoice
   id: Servo-skull
-  name: tts-voice-name-servo_skull
+  name: tts-voice-name-marine2_servo-skull
   sex: Male
   speaker: marine2_servo-skull
 
 - type: ttsVoice
   id: Balthazar
-  name: tts-voice-name-balthazar
+  name: tts-voice-name-marine2_balthazar
   sex: Male
   speaker: marine2_balthazar
 
@@ -4634,7 +4634,7 @@
 - type: ttsVoice
   id: Nunu
   name: tts-voice-name-nunu
-  sex: Female
+  sex: Unsexed
   speaker: nunu
 
 - type: ttsVoice
@@ -4676,13 +4676,13 @@
 - type: ttsVoice
   id: LeeSin
   name: tts-voice-name-lee_sin
-  sex: Male
+  sex: Unsexed
   speaker: lee_sin
 
 - type: ttsVoice
   id: Kayle
   name: tts-voice-name-kayle
-  sex: Female
+  sex: Unsexed
   speaker: kayle
 
 - type: ttsVoice
@@ -4990,7 +4990,7 @@
 - type: ttsVoice
   id: Linzi
   name: tts-voice-name-linzi
-  sex: Female
+  sex: Unsexed
   speaker: linzi
 
 - type: ttsVoice
@@ -5008,7 +5008,7 @@
 - type: ttsVoice
   id: Dendrologist
   name: tts-voice-name-dendrologist
-  sex: Male
+  sex: Unsexed
   speaker: dendrologist
 
 - type: ttsVoice
@@ -5020,7 +5020,7 @@
 - type: ttsVoice
   id: Draan
   name: tts-voice-name-draan
-  sex: Male
+  sex: Female
   speaker: draan
 
 - type: ttsVoice
@@ -5113,3 +5113,22 @@
   sex: Female
   speaker: olya
 
+- type: ttsVoice
+  id: LadyVashj
+  name: tts-voice-name-lady_vashj
+  sex: Female
+  speaker: lady_vashj
+
+- type: ttsVoice
+  id: BKalmyk
+  name: tts-voice-name-b_kalmyk
+  sex: Male
+  speaker: b_kalmyk
+  roundStart: false
+
+- type: ttsVoice
+  id: BNog
+  name: tts-voice-name-b_nog
+  sex: Female
+  speaker: b_nog
+  roundStart: false

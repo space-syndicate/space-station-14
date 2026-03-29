@@ -13,15 +13,13 @@ bwoink-system-introductory-message =
     О любых ошибках и других проблемах следует сообщать через Discord или Github.
     Злоупотребление этим чатом может привести к дисциплинарным наказаниям.
 
-bwoink-system-typing-indicator =
-    { $players } { $count ->
-        [one] печатает
-       *[other] печатают
-    }...
+bwoink-system-typing-indicator = { $players } { $count ->
+    [one] печатает
+    *[other] печатают
+}...
 
 admin-ahelp-admin-only = Только Админ
-admin-ahelp-admin-only-tooltip =
-    Если отмечено, сообщение не будет видно игроку,
+admin-ahelp-admin-only-tooltip = Если отмечено, сообщение не будет видно игроку,
     но будет видно админам и будет отправлено в Дискорд.
 
 admin-bwoink-play-sound = Бвоинк?

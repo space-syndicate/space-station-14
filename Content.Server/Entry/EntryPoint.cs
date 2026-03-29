@@ -1,3 +1,4 @@
+using System.Threading.Tasks;
 using Content.Server.Acz;
 using Content.Server.Administration;
 using Content.Server.Administration.Logs;
@@ -10,6 +11,7 @@ using Content.Server.Corvax.TTS;
 using Content.Server.Database;
 using Content.Server.Discord.DiscordLink;
 using Content.Server.EUI;
+using Content.Server.FeedbackSystem;
 using Content.Server.GameTicking;
 using Content.Server.GhostKick;
 using Content.Server.GuideGenerator;
@@ -25,6 +27,7 @@ using Content.Server.ServerInfo;
 using Content.Server.ServerUpdates;
 using Content.Server.Voting.Managers;
 using Content.Shared.CCVar;
+using Content.Shared.FeedbackSystem;
 using Content.Shared.Kitchen;
 using Content.Shared.Localizations;
 using Robust.Server;
@@ -32,9 +35,11 @@ using Robust.Server.ServerStatus;
 using Robust.Shared.Configuration;
 using Robust.Shared.ContentPack;
 using Robust.Shared.Prototypes;
+using Robust.Shared.Serialization;
 using Robust.Shared.Timing;
 using Robust.Shared.Utility;
 using Content.Shared.Emp;
+using System.IO;
 
 namespace Content.Server.Entry
 {
@@ -79,6 +84,7 @@ namespace Content.Server.Entry
         [Dependency] private readonly ServerApi _serverApi = default!;
         [Dependency] private readonly ServerInfoManager _serverInfo = default!;
         [Dependency] private readonly ServerUpdateManager _updateManager = default!;
+        [Dependency] private readonly ServerFeedbackManager _feedbackManager = null!;
 
         public override void PreInit()
         {
@@ -88,6 +94,8 @@ namespace Content.Server.Entry
                 var cast = (ServerModuleTestingCallbacks)callback;
                 cast.ServerBeforeIoC?.Invoke();
             }
+
+            Dependencies.Resolve<IRobustSerializer>().FloatFlags = SerializerFloatFlags.RemoveReadNan;
         }
 
         /// <inheritdoc />
@@ -147,37 +155,25 @@ namespace Content.Server.Entry
             {
                 var resPath = new ResPath(dest).ToRootedPath();
                 // Corvax-Wiki-Start
-                var file = _res.UserData.OpenWriteText(resPath.WithName("entity_" + dest));
-                EntityJsonGenerator.PublishJson(file);
-                file.Flush();
-                file = _res.UserData.OpenWriteText(resPath.WithName("loc.json"));
-                LocJsonGenerator.PublishJson(file);
-                file.Flush();
-                file = _res.UserData.OpenWriteText(resPath.WithName("meta_license.json"));
-                MetaLicenseGenerator.PublishJson(file);
-                file.Flush();
-                file = _res.UserData.OpenWriteText(resPath.WithName("prototype.json"));
-                PrototypeListGenerator.PublishJson(file);
-                file.Flush();
-                file = _res.UserData.OpenWriteText(resPath.WithName("component.json"));
-                ComponentListGenerator.PublishJson(file);
-                file.Flush();
-                file = _res.UserData.OpenWriteText(resPath.WithName("prototype_store.json"));
-                PrototypeStoreGenerator.PublishJson(file);
-                file.Flush();
-                file = _res.UserData.OpenWriteText(resPath.WithName("component_store.json"));
-                ComponentStoreGenerator.PublishJson(file);
-                file.Flush();
-                file = _res.UserData.OpenWriteText(resPath.WithName("entity_name.json"));
-                EntityNameDuplicatesJsonGenerator.PublishNameJson(file);
-                file.Flush();
-                file = _res.UserData.OpenWriteText(resPath.WithName("entity_name_duplicates.json"));
-                EntityNameDuplicatesJsonGenerator.PublishDuplicatesJson(file);
-                file.Flush();
+                void WriteFile(string name, Action<StreamWriter> write)
+                {
+                    using var file = _res.UserData.OpenWriteText(resPath.WithName(name));
+                    write(file);
+                    file.Flush();
+                }
+                WriteFile("entity_" + dest, EntityJsonGenerator.PublishJson);
+                WriteFile("loc.json", LocJsonGenerator.PublishJson);
+                WriteFile("meta_license.json", MetaLicenseGenerator.PublishJson);
+                WriteFile("prototype.json", PrototypeListGenerator.PublishJson);
+                WriteFile("component.json", ComponentListGenerator.PublishJson);
+                WriteFile("prototype_store.json", PrototypeStoreGenerator.PublishJson);
+                WriteFile("component_store.json", ComponentStoreGenerator.PublishJson);
+                WriteFile("entity_project.json", EntityProjectGenerator.PublishJson);
+                WriteFile("entity_name.json", EntityNameDuplicatesJsonGenerator.PublishNameJson);
+                WriteFile("entity_name_wiki.json", file => WikiEntityNameGenerator.PublishJson(file, _res, resPath));
+                WriteFile("entity_name_duplicates.json", EntityNameDuplicatesJsonGenerator.PublishDuplicatesJson);
                 PrototypeJsonGenerator.PublishAll(_res, new ResPath("prototype").ToRootedPath());
-                file.Flush();
                 ComponentJsonGenerator.PublishAll(_res, new ResPath("component").ToRootedPath());
-                file.Flush();
                 // Corvax-Wiki-End
                 Dependencies.Resolve<IBaseServer>().Shutdown("Data generation done");
                 return;
@@ -196,6 +192,7 @@ namespace Content.Server.Entry
             _connection.PostInit();
             _multiServerKick.Initialize();
             _cvarCtrl.Initialize();
+            _feedbackManager.Initialize();
         }
 
         public override void Update(ModUpdateLevel level, FrameEventArgs frameEventArgs)
@@ -231,8 +228,8 @@ namespace Content.Server.Entry
 
             _serverApi.Shutdown();
 
-            // TODO Should this be awaited?
-            _discordLink.Shutdown();
+            // We don't care when or how this finishes, just spin the task off into the void.
+            _ = _discordLink.Shutdown();
             _discordChatLink.Shutdown();
         }
 

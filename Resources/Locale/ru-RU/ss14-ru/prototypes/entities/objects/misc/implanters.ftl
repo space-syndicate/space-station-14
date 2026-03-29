@@ -1,12 +1,12 @@
-﻿ent-BaseImplanter = имплантер
+ent-BaseImplanter = имплантер
     .desc = { ent-BaseItem.desc }
 ent-Implanter = экстрактор имплантов
     .desc =
         Шприц двойного назначения, предназначенный для удаления определённых подкожных имплантатов. После извлечения имплант хранится внутри и может быть повторно введён.
         ПРЕДУПРЕЖДЕНИЕ: Ошибка оператора, такая как выбор отсутствующего типа импланта, приведёт к серьёзной генетической травме оператора.
 ent-ImplanterAdmeme = { ent-Implanter }
-    .suffix = Адмемы
     .desc = { ent-Implanter.desc }
+    .suffix = Адмемы
 ent-BaseImplantOnlyImplanter = { ent-Implanter }
     .desc = Одноразовый шприц, специально предназначенный для введения подкожных имплантов.
 ent-BaseImplantOnlyImplanterSyndi = имплантер Синдиката

@@ -3,8 +3,8 @@ store-ui-default-withdraw-text = Вывести
 store-ui-refund-text = Возврат
 store-ui-balance-display = { $currency }: { $amount }
 store-ui-price-display = { $amount } { $currency }
-store-ui-discount-display-with-currency = скидка { $amount }{ $currency }
-store-ui-discount-display = (скидка { $amount }!)
+store-ui-discount-display-with-currency =  скидка { $amount }{ $currency }
+store-ui-discount-display =  (скидка { $amount }!)
 store-ui-traitor-flavor = Копирайт (C) NT -30643
 store-ui-traitor-warning = Во избежании обнаружения оперативники должны блокировать свои аплинки после использования.
 

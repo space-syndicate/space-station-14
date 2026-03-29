@@ -25,10 +25,29 @@ public static class ComponentJsonGenerator
             if (p is not EntityPrototype entProto)
                 continue;
 
+            var composedComponents = YAMLEntry.GetComposedComponentMappings(entProto, proto, ser, compFactory);
+
             foreach (var (compName, entry) in entProto.Components)
             {
                 var node = ser.WriteValueAs<MappingDataNode>(entry.Component.GetType(), entry.Component);
                 FieldEntry.NormalizeFlagsToSequences(entry.Component, node);
+
+                var compFields = FieldEntry.DataNodeToObject(node);
+
+                if (!output.TryGetValue(compName, out var map))
+                {
+                    map = new Dictionary<string, object?>();
+                    output[compName] = map;
+                }
+
+                map[entProto.ID] = compFields;
+            }
+
+            foreach (var (compName, node) in composedComponents)
+            {
+                if (entProto.Components.ContainsKey(compName))
+                    continue;
+
                 var compFields = FieldEntry.DataNodeToObject(node);
 
                 if (!output.TryGetValue(compName, out var map))
@@ -83,7 +102,7 @@ public static class ComponentJsonGenerator
             };
 
             res.UserData.CreateDir(destRoot);
-            var fileName = PrototypeUtility.CalculatePrototypeName(compName) + ".json";
+            var fileName = TextTools.DecapitalizeString(compName) + ".json";
             var file = res.UserData.OpenWriteText(destRoot / fileName);
             file.Write(JsonSerializer.Serialize(outObj, serializeOptions));
             file.Flush();

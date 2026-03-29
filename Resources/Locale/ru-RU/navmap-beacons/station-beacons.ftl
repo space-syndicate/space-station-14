@@ -98,3 +98,4 @@ station-beacon-escape-pod-SW = Спасательная капсула ЮЗ
 station-beacon-escape-pod-W = Спасательная капсула З
 station-beacon-escape-pod-NW = Спасательная капсула СЗ
 station-beacon-vox = Вокс-комната
+

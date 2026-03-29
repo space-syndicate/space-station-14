@@ -6,6 +6,11 @@ using Robust.Shared.Serialization.Markdown;
 using Robust.Shared.Serialization.Markdown.Mapping;
 using Robust.Shared.Serialization.Markdown.Sequence;
 using Robust.Shared.Serialization.Markdown.Value;
+using Robust.Shared.Serialization.TypeSerializers.Implementations.Custom.Prototype;
+using Robust.Shared.Serialization.TypeSerializers.Implementations.Custom.Prototype.Array;
+using Robust.Shared.Serialization.TypeSerializers.Implementations.Custom.Prototype.Dictionary;
+using Robust.Shared.Serialization.TypeSerializers.Implementations.Custom.Prototype.List;
+using Robust.Shared.Serialization.TypeSerializers.Implementations.Custom.Prototype.Set;
 
 namespace Content.Server.Corvax.GuideGenerator;
 
@@ -28,7 +33,7 @@ public static class FieldStoreId
             if (!mapping.TryGet(tag, out var node))
                 continue;
 
-            ExtractIdsFromNode(field.FieldType, node, outIds);
+            ExtractIdsFromNode(field.FieldType, node, outIds, attr.CustomTypeSerializer);
         }
 
         foreach (var prop in prototypeType.GetProperties(BindingFlags.Instance | BindingFlags.Public | BindingFlags.NonPublic))
@@ -41,13 +46,19 @@ public static class FieldStoreId
             if (!mapping.TryGet(tag, out var node))
                 continue;
 
-            ExtractIdsFromNode(prop.PropertyType, node, outIds);
+            ExtractIdsFromNode(prop.PropertyType, node, outIds, attr.CustomTypeSerializer);
         }
     }
 
-    public static void ExtractIdsFromNode(Type memberType, DataNode node, HashSet<string> outIds)
+    public static void ExtractIdsFromNode(Type memberType, DataNode node, HashSet<string> outIds, Type? customTypeSerializer = null)
     {
         var underlying = ResolveConcreteType(Nullable.GetUnderlyingType(memberType) ?? memberType, node);
+
+        if (TryGetEntityPrototypeSerializerKind(customTypeSerializer, out var serializerKind))
+        {
+            ExtractIdsFromCustomSerializer(serializerKind, node, outIds, underlying);
+            return;
+        }
 
         if (IsEntProtoIdType(underlying))
         {
@@ -120,6 +131,124 @@ public static class FieldStoreId
 
                 ExtractIdsFromNode(prop.PropertyType, childNode, outIds);
             }
+        }
+    }
+
+    private enum EntityPrototypeSerializerKind
+    {
+        Single,
+        Sequence,
+        DictionaryKey,
+        DictionaryValue
+    }
+
+    private static bool TryGetEntityPrototypeSerializerKind(Type? serializerType, out EntityPrototypeSerializerKind kind)
+    {
+        kind = default;
+        if (serializerType == null || !serializerType.IsGenericType)
+            return false;
+
+        var def = serializerType.GetGenericTypeDefinition();
+        var args = serializerType.GetGenericArguments();
+
+        if ((def == typeof(PrototypeIdSerializer<>) || def == typeof(AbstractPrototypeIdSerializer<>)) &&
+            args[0] == typeof(EntityPrototype))
+        {
+            kind = EntityPrototypeSerializerKind.Single;
+            return true;
+        }
+
+        if ((def == typeof(PrototypeIdListSerializer<>) || def == typeof(AbstractPrototypeIdListSerializer<>)
+             || def == typeof(PrototypeIdHashSetSerializer<>) || def == typeof(AbstractPrototypeIdHashSetSerializer<>)
+             || def == typeof(PrototypeIdArraySerializer<>) || def == typeof(AbstractPrototypeIdArraySerializer<>)) &&
+            args[0] == typeof(EntityPrototype))
+        {
+            kind = EntityPrototypeSerializerKind.Sequence;
+            return true;
+        }
+
+        if ((def == typeof(PrototypeIdDictionarySerializer<,>) || def == typeof(AbstractPrototypeIdDictionarySerializer<,>)) &&
+            args[1] == typeof(EntityPrototype))
+        {
+            kind = EntityPrototypeSerializerKind.DictionaryKey;
+            return true;
+        }
+
+        if ((def == typeof(PrototypeIdValueDictionarySerializer<,>) || def == typeof(AbstractPrototypeIdValueDictionarySerializer<,>)) &&
+            args[1] == typeof(EntityPrototype))
+        {
+            kind = EntityPrototypeSerializerKind.DictionaryValue;
+            return true;
+        }
+
+        return false;
+    }
+
+    private static void ExtractIdsFromCustomSerializer(EntityPrototypeSerializerKind kind, DataNode node, HashSet<string> outIds, Type declaredType)
+    {
+        switch (kind)
+        {
+            case EntityPrototypeSerializerKind.Single:
+                ExtractIdFromNode(node, outIds);
+                return;
+            case EntityPrototypeSerializerKind.Sequence:
+                if (node is SequenceDataNode seq)
+                {
+                    foreach (var child in seq.Sequence)
+                    {
+                        ExtractIdFromNode(child, outIds);
+                    }
+                }
+                return;
+            case EntityPrototypeSerializerKind.DictionaryKey:
+            {
+                if (node is MappingDataNode mapKeys)
+                {
+                    foreach (var key in mapKeys.Keys)
+                    {
+                        if (!string.IsNullOrWhiteSpace(key))
+                            outIds.Add(key);
+                    }
+                }
+
+                if (TryGetDictionaryValueType(declaredType, out var valueType) && node is MappingDataNode mapVals)
+                {
+                    foreach (var (_, childNode) in mapVals)
+                    {
+                        ExtractIdsFromNode(valueType, childNode, outIds);
+                    }
+                }
+                return;
+            }
+            case EntityPrototypeSerializerKind.DictionaryValue:
+            {
+                if (node is MappingDataNode mapVals)
+                {
+                    foreach (var (_, child) in mapVals)
+                    {
+                        ExtractIdFromNode(child, outIds);
+                    }
+                }
+                return;
+            }
+            default:
+                return;
+        }
+    }
+
+    private static void ExtractIdFromNode(DataNode node, HashSet<string> outIds)
+    {
+        if (node is ValueDataNode v)
+        {
+            if (!string.IsNullOrWhiteSpace(v.Value))
+                outIds.Add(v.Value);
+            return;
+        }
+
+        if (node is MappingDataNode m && m.TryGet("id", out var idNode) && idNode is ValueDataNode idVal)
+        {
+            if (!string.IsNullOrWhiteSpace(idVal.Value))
+                outIds.Add(idVal.Value);
         }
     }
 
@@ -291,6 +420,20 @@ public static class FieldStoreId
 
         DataFieldTagsCache[type] = tags;
         return tags;
+    }
+
+    private static bool TryGetDictionaryValueType(Type t, out Type valueType)
+    {
+        valueType = null!;
+        if (!typeof(IDictionary).IsAssignableFrom(t) || !t.IsGenericType)
+            return false;
+
+        var args = t.GetGenericArguments();
+        if (args.Length != 2)
+            return false;
+
+        valueType = args[1];
+        return true;
     }
 
     private static Type? GetElementType(Type t)

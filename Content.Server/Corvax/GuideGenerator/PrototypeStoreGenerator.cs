@@ -16,7 +16,10 @@ public static class PrototypeStoreGenerator
 
         foreach (var kindType in proto.EnumeratePrototypeKinds())
         {
-            var kindName = PrototypeUtility.CalculatePrototypeName(kindType.Name);
+            var kindName = proto.TryGetKindFrom(kindType, out var actualKindName)
+                ? actualKindName
+                : kindType.Name;
+            kindName = TextTools.CapitalizeString(kindName);
             foreach (var p in proto.EnumeratePrototypes(kindType))
             {
                 if (!proto.TryGetMapping(kindType, p.ID, out var mapping))

@@ -2,7 +2,23 @@
   id: Sneeze
   name: chat-emote-name-sneeze
   category: Vocal
+  whitelist:
+    components:
+    - Vocal
+  blacklist:
+    tags:
+    - SiliconEmotes
   chatMessages: ["chat-emote-msg-sneeze"]
+  chatTriggers:
+  - sneeze
+  - sneezes
+  - sneezed
+  - sneeze.
+  - sneezes.
+  - sneezed.
+  - sneeze!
+  - sneezes!
+  - sneezed!
 
 - type: emote
   id: Cough
@@ -21,6 +37,12 @@
     - cough
     - coughs
     - coughed
+    - cough.
+    - coughs.
+    - coughed.
+    - cough!
+    - coughs!
+    - coughed!
     # Corvax-Localization-Start
     - кашель
     - кашляет

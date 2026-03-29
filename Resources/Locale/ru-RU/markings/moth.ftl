@@ -144,7 +144,7 @@ marking-MothChestCharred = Ниан, Грудь (Обугленные)
 marking-MothHeadCharred-charred_head = Голова
 marking-MothHeadCharred = Ниан, Голова (Обугленные)
 
-marking-MothLLegCharred-charred_l_leg = Левая Нога
+marking-MothLLegCharred-charred_l_leg =  Левая Нога
 marking-MothLLegCharred = Ниан, Левая нога (Обугленные)
 
 marking-MothRLegCharred-charred_r_leg = Правая Нога

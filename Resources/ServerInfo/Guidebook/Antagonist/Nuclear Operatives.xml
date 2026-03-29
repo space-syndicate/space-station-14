@@ -60,22 +60,35 @@
 
   ## Ядерная боеголовка
 
-  На вашем шаттле вы найдёте одну из двух [color=#a4885c]ядерных боеголовок[/color] и бумажку с кодами ядерной аутентификации. На бумажке будет указано, какой взрывчатке она соответствует. Если идентификатор совпадает с тем, что указан на вашей ядерной бомбе, то коды будут работать только для неё. Если же нет, то они будут работать только для бомбы в хранилище станции.
+  Go with your other operatives to your [color=cyan]shuttle[/color].
+  Onboard, you'll find a folder with the [color=cyan]nuclear authentication code[/color].
+  Memorize the code, then [bold]check to see if the nuke ID matches the nuke on your shuttle.[/bold] If it doesn't, you'll be arming the station's nuke instead.
 
-  Как только вы получите ядерный диск, вставьте его в ядерную боеголовку и используйте код, чтобы взвести её. Отсчёт будет идти 300 секунд, а для того чтобы член экипажа смог обезвредить её, ему потребуется 30. Будьте готовы защищать ядерную боеголовку как можно дольше, помните, что сбежать живым необязательно, но рекомендуется.
+  The shuttle is equipped with an [color=cyan]IFF Computer[/color]. It allows you to hide from other ships and mass scanners when [italic]Show IFF[/italic] is toggled off.
+
+  When everyone is ready, FTL to the station and fly to it using the [color=cyan]jetpacks[/color] on the shuttle. Don't forget the code, your pinpointers, and the nuke if you're taking it.
 
   <Box>
-    <GuideEntityEmbed Entity="NuclearBomb" Caption="Ядерная боеголовка"/>
+    <GuideEntityEmbed Entity="BoxFolderNuclearCodes"/>
+    <GuideEntityEmbed Entity="ComputerIFFSyndicate"/>
+    <GuideEntityEmbed Entity="JetpackBlack"/>
   </Box>
 
-  ## Победы
+  ## The Nuke & Arming Procedure
+  You've made it this far.  Finish the job.
 
-  Победитель объявляется на экране окончания раунда, как и то, с каким перевесом он победил. Масштаб победы зависит от обстоятельств в конце раунда.
+  - Obtain the [bold]nuclear authentication disk[/bold] and insert it into the nuke.
+  - Type in the [bold]nuclear authentication code[/bold] and press "[bold]E[/bold]" on the keypad to Enter.
+  - [bold]Anchor[/bold] the nuke on solid floor inside the station.
+  - [bold]To begin the detonation sequence, press [color=#EB2D3A]ARM[/color][/bold]. After 300 seconds, the nuke will explode.
+  - [bold]Defend the nuke from NT employees and cyborgs[/bold], even if it's at the cost of your lives! The mission requirements [italic]do not include your return[/italic].
 
-  [color=#a4885c]Крупная победа Синдиката[/color]
-  - Ядерная бомба взрывается на станции.
-  - Экипаж спасается, но ядерная бомба была взведена, когда они убегали.
-  - Ядерная бомба была доставлена в Центральное командование.
+  It takes 30 seconds to [bold]disarm[/bold] the nuke. Re-arming it is possible, but the chance of mission success drops if you allow the countdown to be interrupted.
+  Should the nuke be re-armed, the timer will continue from where it left off.
+
+  <Box>
+    <GuideEntityEmbed Entity="NuclearBomb" Caption="The Nuclear Fission Explosive"/>
+  </Box>
 
   [color=#a4885c]Скромная победа Синдиката[/color]
   - Экипаж сбегает, но оставляет всех оперативников в живых.

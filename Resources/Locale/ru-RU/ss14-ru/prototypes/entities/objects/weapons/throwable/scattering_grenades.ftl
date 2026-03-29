@@ -1,5 +1,5 @@
-ent-ScatteringGrenadeBase = { ent-BaseItem }
-    .desc = { ent-BaseItem.desc }
+ent-ScatteringGrenadeBase = { ent-GrenadeBase }
+    .desc = { ent-GrenadeBase.desc }
 ent-ClusterBang = кластерная светошумовая граната
     .desc = Может быть использовано только со светошумовыми гранатами. Взрывается несколько раз.
 ent-ClusterBangFull = кластерная светошумовая граната

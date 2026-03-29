@@ -20,7 +20,7 @@ ui-vote-map-tie = Ничья при голосовании за карту! Вы
 ui-vote-map-win = { $winner } выиграла голосование о выборе карты!
 ui-vote-map-notlobby = Голосование о выборе карты действует только в предраундовом лобби!
 ui-vote-map-notlobby-time = Голосование о выборе карты действует только в предраундовом лобби, когда осталось { $time }!
-
+ui-vote-map-invalid = { $winner } became invalid after the map vote! It will not be selected!
 
 # Votekick votes
 ui-vote-votekick-unknown-initiator = Игрок

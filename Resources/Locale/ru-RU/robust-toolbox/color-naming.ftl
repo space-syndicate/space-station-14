@@ -1,11 +1,11 @@
-color-hue-chroma-lightness = {$lightness} {$chroma} {$hue}
-color-hue-chroma = {$chroma} {$hue}
-color-hue-lightness = {$lightness} {$hue}
+color-hue-chroma-lightness = { $lightness } { $chroma } { $hue }
+color-hue-chroma = { $chroma } { $hue }
+color-hue-lightness = { $lightness } { $hue }
 color-very-dark = очень тёмный
 color-dark = тёмный
 color-light = светлый
 color-very-light = очень светлый
-color-mixed-hue = {$a} {$b}
+color-mixed-hue = { $a } { $b }
 color-pale = бледный
 color-gray-adjective = серый
 color-strong = сильный

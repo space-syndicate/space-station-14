@@ -9,13 +9,12 @@ job-board-ui-window-title = Доска работ
 job-board-ui-label-rank = [bold]Ранг:[/bold]
 job-board-ui-label-items = Цель: [color=red]{ $item }[/color]
 
-job-board-label-text = [head=2]Поставка утилизаторкой работы[/head]
-    { "[italic]Для использования в официальных внестанционных утилизаторских поставках.[/italic]" }
-    
+job-board-label-text = [head=2]Поставка утилизаторкой работы[/head] { "[italic]Для использования в официальных внестанционных утилизаторских поставках.[/italic]" }
+
     { "[bold]Цель:[/bold]" } { $target }
     { "[bold]Награда:[/bold]" } ${ $reward }
-    
-    
+
+
     { "[italic]Грузы подлежат проверке корпорацией Donk[/italic]" }
 
 salv-job-board-name-BountyTeethSpaceCarp = Космический карп

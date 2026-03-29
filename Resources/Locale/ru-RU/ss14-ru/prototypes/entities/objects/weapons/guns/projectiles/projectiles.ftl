@@ -1,4 +1,4 @@
-﻿ent-MuzzleFlashEffect = { "" }
+ent-MuzzleFlashEffect = { "" }
     .desc = { "" }
 ent-MuzzleFlashEffectOmnilaser = { ent-MuzzleFlashEffect }
     .desc = { ent-MuzzleFlashEffect.desc }

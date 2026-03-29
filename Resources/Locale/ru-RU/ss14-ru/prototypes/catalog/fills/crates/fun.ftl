@@ -1,4 +1,4 @@
-﻿ent-CratePlants = ящик растений
+ent-CratePlants = ящик растений
     .desc = Набор разнообразных комнатных растений для украшения вашей станции!
 ent-CrateFunPlushie = ящик плюшевых игрушек
     .desc = Куча мягких плюшевых игрушек. Разложите их повсюду, а потом подумайте, как вы объясните эту покупку NT.
@@ -40,8 +40,8 @@ ent-CrateFunPirate = { ent-CratePirate }
     .desc = { ent-CratePirate.desc }
     .suffix = Заполненный
 ent-CrateFunToyBox = { ent-CrateToyBox }
-    .suffix = Заполненный
     .desc = { ent-CrateToyBox.desc }
+    .suffix = Заполненный
 ent-CrateFunBikeHornImplants = ящик имплантов "клаксон"
     .desc = Тысяча гудков за день отпугнёт СБ на день!
 ent-CrateFunMysteryFigurines = ящик минифигурок Загадочные космонавты

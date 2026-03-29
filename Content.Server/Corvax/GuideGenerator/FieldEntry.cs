@@ -75,18 +75,27 @@ public static class FieldEntry
                 return null;
 
             var raw = value.Value;
+            object? parsed;
 
             if (bool.TryParse(raw, out var boolRes))
-                return boolRes;
-
-            if (int.TryParse(raw, NumberStyles.Integer, CultureInfo.InvariantCulture, out var intRes))
-                return intRes;
-
-            if (DoubleEntryRegex.IsMatch(raw) &&
+                parsed = boolRes;
+            else if (int.TryParse(raw, NumberStyles.Integer, CultureInfo.InvariantCulture, out var intRes))
+                parsed = intRes;
+            else if (DoubleEntryRegex.IsMatch(raw) &&
                 double.TryParse(raw, NumberStyles.Float | NumberStyles.AllowThousands, CultureInfo.InvariantCulture, out var doubleRes))
-                return doubleRes;
+                parsed = doubleRes;
+            else
+                parsed = raw;
 
-            return raw;
+            if (node.Tag == null)
+                return parsed;
+
+            return new Dictionary<string, object?>
+            {
+                [node.Tag] = string.IsNullOrEmpty(raw)
+                    ? new Dictionary<string, object?>()
+                    : parsed
+            };
         }
 
         return node.ToString();
@@ -104,14 +113,14 @@ public static class FieldEntry
             if (member == null)
                 continue;
 
-            var memberType = member is PropertyInfo p ? p.PropertyType : ((FieldInfo)member).FieldType;
+            var memberType = member is PropertyInfo p ? p.PropertyType : ((FieldInfo) member).FieldType;
             if (!memberType.IsEnum)
                 continue;
 
             if (memberType.GetCustomAttribute<FlagsAttribute>(false) == null)
                 continue;
 
-            var value = member is PropertyInfo p2 ? p2.GetValue(instance) : ((FieldInfo)member).GetValue(instance);
+            var value = member is PropertyInfo p2 ? p2.GetValue(instance) : ((FieldInfo) member).GetValue(instance);
             if (value == null)
                 continue;
 

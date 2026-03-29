@@ -927,6 +927,8 @@
   id: MobPollyParrot
   description: An expert in quantum cracker theory
   components:
+  - type: TTS # Corvax-TTS
+    voice: Meiow
   - type: Vocalizer
     maxVocalizeInterval: 240 # polly is chattier
   - type: RadioVocalizer

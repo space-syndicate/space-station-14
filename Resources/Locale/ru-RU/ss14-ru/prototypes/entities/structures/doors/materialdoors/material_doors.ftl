@@ -1,4 +1,4 @@
-﻿ent-BaseMaterialDoor = дверь
+ent-BaseMaterialDoor = дверь
     .desc = Дверь, куда же она приведёт?
 ent-BaseMaterialDoorNavMap = { ent-BaseMaterialDoor }
     .desc = { ent-BaseMaterialDoor.desc }
@@ -20,3 +20,7 @@ ent-WebDoor = паутинная дверь
     .desc = Дверь, ведущая в земли пауков... или просторную комнату.
 ent-CardDoor = картонная дверь
     .desc = { ent-BaseMaterialDoorNavMap.desc }
+ent-IronstoneDoor = ironstone door
+    .desc = A mysterious door made of rune-etched stone.
+ent-EncrustedIronstoneDoor = encrusted ironstone door
+    .desc = A stone door covered in nacreous blobs of an unknown substance.
