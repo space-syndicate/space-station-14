@@ -1,7 +1,7 @@
 ent-BoxCardboard = картонная коробка
     .desc = Картонная коробка для хранения вещей.
-ent-BoxCardboardSmall = small cardboard box
-    .desc = A small cardboard box for storing things.
+ent-BoxCardboardSmall = маленькая картонная коробка
+    .desc = Маленькая картонная коробка для хранения вещей.
 ent-BoxMousetrap = коробка мышеловок
     .desc = Коробка, наполненная мышеловками. Постарайтесь не поймать себя за руку.
 ent-BoxLightbulb = коробка лампочек
@@ -70,5 +70,3 @@ ent-BoxEnvelope = коробка конвертов
     .desc = Коробка, наполненная конвертами.
 ent-BoxUtensil = коробка столовых приборов
     .desc = Коробка, наполненная вилками и ложками.
-ent-BoxCardboardSmall = маленькая картонная коробка
-    .desc = Маленькая картонная коробка для хранения вещей.
