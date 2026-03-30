@@ -32,8 +32,8 @@ uplink-gloves-north-star-desc = Пара перчаток, которые зна
 uplink-gloves-knuckleduster-name = Кастеты Синдиката
 uplink-gloves-knuckleduster-desc = Пара пластитановых кастетов, позволяющий вам сломать челюсть капитана вдребезги всего одним ударом.
 
-uplink-hushpup-name = Хашпап
-uplink-hushpup-desc = Мощное бесшумное ружье с малой емкостью магазина. В комплекте запасная коробка с дробью. Использует патроны калибра .50 ружейные.
+uplink-hushpup-name = Глухарь
+uplink-hushpup-desc = Мощное бесшумное ружье с малой емкостью магазина. Использует патроны калибра .50 ружейные.
 
 uplink-c20r-name = C-20r
 uplink-c20r-desc = Old faithful: The classic C-20r Submachine Gun.
