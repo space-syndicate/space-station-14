@@ -10,7 +10,7 @@ comp-climbable-verb-climb = Взобраться
 comp-climbable-user-climbs = Вы взбираетесь на { $climbable }!
 
 # Shown to others when $user climbs on $climbable
-comp-climbable-user-climbs-other = { CAPITALIZE($user) } взбирается на { $climbable }!
+comp-climbable-user-climbs-other  = { CAPITALIZE($user) } взбирается на { $climbable }!
 
 # Shown to you when your character forces someone to climb on $climbable
 comp-climbable-user-climbs-force = Вы заставляете { $moved-user } взобраться на { $climbable }!

@@ -168,6 +168,7 @@ namespace Content.Server.Entry
                 WriteFile("component.json", ComponentListGenerator.PublishJson);
                 WriteFile("prototype_store.json", PrototypeStoreGenerator.PublishJson);
                 WriteFile("component_store.json", ComponentStoreGenerator.PublishJson);
+                WriteFile("entity_project.json", EntityProjectGenerator.PublishJson);
                 WriteFile("entity_name.json", EntityNameDuplicatesJsonGenerator.PublishNameJson);
                 WriteFile("entity_name_wiki.json", file => WikiEntityNameGenerator.PublishJson(file, _res, resPath));
                 WriteFile("entity_name_duplicates.json", EntityNameDuplicatesJsonGenerator.PublishDuplicatesJson);

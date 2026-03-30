@@ -12,7 +12,7 @@ shuttle-console-display-label = Дисплей
 shuttle-console-position = Координаты:
 shuttle-console-position-value = { $X }, { $Y }
 shuttle-console-orientation = Азимут:
-shuttle-console-orientation-value = { $angle }
+shuttle-console-orientation-value  = { $angle }
 shuttle-console-linear-velocity = Линейная скорость:
 shuttle-console-linear-velocity-value = { $X }, { $Y }
 shuttle-console-angular-velocity = Угловая скорость:
@@ -38,8 +38,7 @@ shuttle-console-ftl-state-Invalid = Ошибка
 
 shuttle-console-map-settings = Настройки
 shuttle-console-ftl-button = БСС
-shuttle-console-map-rebuild =
-    Сканировать на
+shuttle-console-map-rebuild = Сканировать на
     наличие объектов
 shuttle-console-map-beacons = Показ маяков
 

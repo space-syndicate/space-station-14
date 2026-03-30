@@ -16,6 +16,9 @@ reagent-desc-hemocyanin-blood = Содержит медь, а не железо,
 reagent-name-ammonia-blood = анаэробная кровь
 reagent-desc-ammonia-blood = Ничто другое во всей галактике не пахнет так отвратительно.
 
+reagent-name-sulfur-blood = sulfuric blood
+reagent-desc-sulfur-blood = Feels almost acidic.
+
 reagent-name-zombie-blood = кровь зомби
 reagent-desc-zombie-blood = Не рекомендуется употреблять в пищу. Может быть использована для создания прививки от инфекции.
 

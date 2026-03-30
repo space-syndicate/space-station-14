@@ -8,8 +8,7 @@ blockgame-menu-label-points = Очки: { $points }
 blockgame-menu-label-level = Уровень: { $level }
 
 # Game over information of your round
-blockgame-menu-gameover-info =
-    Глобальный счёт: { $global }
+blockgame-menu-gameover-info = Глобальный счёт: { $global }
     Локальный счёт: { $local }
     Очки: { $points }
 

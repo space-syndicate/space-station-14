@@ -16,7 +16,7 @@
       required: true
       default: [ IpcOrangeS ]
     enum.HumanoidVisualLayers.Head:
-      limit: 0
+      limit: 1
       required: false
     enum.HumanoidVisualLayers.LArm:
       limit: 1

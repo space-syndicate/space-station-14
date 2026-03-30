@@ -78,7 +78,7 @@ jobs:
 
           BASE="./bin/Content.Server/data"
           ROOT="${{ secrets.WIKI_PAGE_ROOT }}"
-          MODULE_ROOT="Модуль:IanComradeBot"
+          NAMESPACE="${{ secrets.WIKI_BOT_NAMESPACE }}"
           API="${{ secrets.WIKI_ROOT_URL }}/api.php"
           USER="${{ secrets.WIKI_BOT_USER }}"
           PASS="${{ secrets.WIKI_BOT_PASS }}"
@@ -87,6 +87,13 @@ jobs:
           USER="$(printf "%s" "$USER" | tr -d '\r\n')"
           PASS="$(printf "%s" "$PASS" | tr -d '\r\n')"
           ROOT="$(printf "%s" "$ROOT" | tr -d '\r\n' | sed 's/[[:space:]]*$//')"
+          NAMESPACE="$(printf "%s" "$NAMESPACE" | tr -d '\r\n')"
+
+          if [[ -n "$NAMESPACE" ]]; then
+            MODULE_ROOT="Модуль:IanComradeBot/$NAMESPACE"
+          else
+            MODULE_ROOT="Модуль:IanComradeBot"
+          fi
 
           cookiejar="$(mktemp)"
           trap 'rm -f "$cookiejar"' EXIT
@@ -252,10 +259,16 @@ jobs:
           API="${{ secrets.WIKI_ROOT_URL }}/api.php"
           USER="${{ secrets.WIKI_BOT_USER }}"
           PASS="${{ secrets.WIKI_BOT_PASS }}"
+          NAMESPACE="${{ secrets.WIKI_BOT_NAMESPACE }}"
 
           API="$(printf "%s" "$API" | tr -d '\r\n')"
           USER="$(printf "%s" "$USER" | tr -d '\r\n')"
           PASS="$(printf "%s" "$PASS" | tr -d '\r\n')"
+          NAMESPACE="$(printf "%s" "$NAMESPACE" | tr -d '\r\n')"
+
+          if [[ -n "$NAMESPACE" && "${NAMESPACE: -1}" != ":" ]]; then
+            NAMESPACE="${NAMESPACE}:"
+          fi
 
           cookiejar="$(mktemp)"
           trap 'rm -f "$cookiejar"' EXIT
@@ -286,7 +299,17 @@ jobs:
           for ((i=0; i<${#pages[@]}; i+=batch_size)); do
             batch=("${pages[@]:i:batch_size}")
 
-            titles=$(printf '%s\n' "${batch[@]}" | cut -d'|' -f1 | paste -sd'|' -)
+            prefix=""
+            if [[ -n "$NAMESPACE" ]]; then
+              prefix="$NAMESPACE"
+            fi
+
+            titles=$(
+              printf '%s\n' "${batch[@]}" |
+                cut -d'|' -f1 |
+                awk -v p="$prefix" '{print p $0}' |
+                paste -sd'|' -
+            )
 
             existing_titles=$(
               curl -sS -b "$cookiejar" \
@@ -295,7 +318,7 @@ jobs:
                 --data-urlencode "titles=$titles" \
                 "$API" | jq -r '
                   .query.pages[]
-                  | select(.missing != true)
+                  | select(has("missing") | not)
                   | .title
                 '
             )
@@ -304,18 +327,18 @@ jobs:
               [[ -z "${name:-}" ]] && continue
               [[ -z "${id:-}" ]] && continue
 
-              if grep -Fxq "$name" <<< "$existing_titles"; then
-                echo "Skipping existing page: $name"
+              if grep -Fxq "$NAMESPACE$name" <<< "$existing_titles"; then
+                echo "Skipping existing page: $NAMESPACE$name"
                 continue
               fi
 
               content="{{сущность|$id}}"
-              echo "Creating page: $name → $id"
+              echo "Creating page: $NAMESPACE$name → $id"
 
               curl -sS -b "$cookiejar" \
                 --data-urlencode "action=edit" \
                 --data-urlencode "createonly=true" \
-                --data-urlencode "title=$name" \
+                --data-urlencode "title=$NAMESPACE$name" \
                 --data-urlencode "text=$content" \
                 --data-urlencode "summary=Create $id via GitHub Actions" \
                 --data-urlencode "token=$token" \

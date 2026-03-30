@@ -8,20 +8,18 @@ game-ticker-delay-start = Начало раунда было отложено н
 game-ticker-pause-start = Начало раунда было приостановлено.
 game-ticker-pause-start-resumed = Отсчёт начала раунда возобновлён.
 game-ticker-player-join-game-message = Добро пожаловать на Космическую Станцию 14! Если вы играете впервые, обязательно нажмите ESC на клавиатуре и прочитайте правила игры, а также не бойтесь просить помощи в "Админ помощь".
-game-ticker-get-info-text =
-    Привет и добро пожаловать в [color=white]Space Station 14![/color]
-    Текущий раунд: [color=white]#{ $roundId }[/color]
-    Текущее количество игроков: [color=white]{ $playerCount }[/color]
-    Текущая карта: [color=white]{ $mapName }[/color]
-    Текущий режим игры: [color=white]{ $gmTitle }[/color]
-    >[color=yellow]{ $desc }[/color]
-game-ticker-get-info-preround-text =
-    Привет и добро пожаловать в [color=white]Space Station 14![/color]
+game-ticker-get-info-text = Привет и добро пожаловать в [color=white]Space Station 14![/color]
+                            Текущий раунд: [color=white]#{ $roundId }[/color]
+                            Текущее количество игроков: [color=white]{ $playerCount }[/color]
+                            Текущая карта: [color=white]{ $mapName }[/color]
+                            Текущий режим игры: [color=white]{ $gmTitle }[/color]
+                            >[color=yellow]{ $desc }[/color]
+game-ticker-get-info-preround-text = Привет и добро пожаловать в [color=white]Space Station 14![/color]
     Текущий раунд: [color=white]#{ $roundId }[/color]
     Текущее количество игроков: [color=white]{ $playerCount }[/color] ([color=white]{ $readyCount }[/color] { $readyCount ->
-        [one] готов
-       *[other] готовы
-    })
+    [one] готов
+    *[other] готовы
+})
     Текущая карта: [color=white]{ $mapName }[/color]
     Текущий режим игры: [color=white]{ $gmTitle }[/color]
     >[color=yellow]{ $desc }[/color]
@@ -35,13 +33,12 @@ player-first-join-message = Игрок { $name } зашёл на сервер в
 # Displayed in chat to admins when a player leaves
 player-leave-message = Игрок { $name } вышел!
 
-latejoin-arrival-announcement =
-    { $character } ({ $job }) { GENDER($entity) ->
-        [male] прибыл
-        [female] прибыла
-        [epicene] прибыли
-       *[neuter] прибыло
-    } на станцию!
+latejoin-arrival-announcement = { $character } ({ $job }) { GENDER($entity) ->
+    [male] прибыл
+    [female] прибыла
+    [epicene] прибыли
+    *[neuter] прибыло
+} на станцию!
 latejoin-arrival-announcement-special = { $job } { $character } на палубе!
 latejoin-arrival-sender = Станции
 latejoin-arrivals-direction = Вскоре прибудет шаттл, который доставит вас на станцию.

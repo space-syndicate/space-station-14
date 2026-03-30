@@ -2,6 +2,7 @@ using System.IO;
 using System.Linq;
 using System.Text.Encodings.Web;
 using System.Text.Json;
+using Content.Shared.Corvax.GuideGenerator;
 using Content.Shared.Labels.Components;
 using Robust.Shared.Physics;
 using Robust.Shared.Prototypes;
@@ -28,15 +29,23 @@ public static class EntityNameDuplicatesJsonGenerator
             .FirstOrDefault() ?? string.Empty;
     }
 
+    public static bool MatchesEntityNameFilter(EntityPrototype proto, IReadOnlySet<string> allowedIds)
+    {
+        var compFactory = IoCManager.Resolve<IComponentFactory>();
+        return !proto.Abstract &&
+                proto.TryGetComponent<FixturesComponent>(out _, compFactory) &&
+                EntityProjectHelper.MatchesAllowedIds(proto.ID, allowedIds);
+    }
+
     private static Dictionary<string, List<string>> GetDuplicatesName(
         IPrototypeManager prototypeManager,
         bool duplicatesOnly)
     {
         var loc = IoCManager.Resolve<ILocalizationManager>();
+        var allowedIds = EntityProjectGenerator.GetProjectEntityIds();
         return prototypeManager
             .EnumeratePrototypes<EntityPrototype>()
-            .Where(p => !p.Abstract &&
-                        p.Components.Values.Any(c => c.Component is FixturesComponent))
+            .Where(proto => MatchesEntityNameFilter(proto, allowedIds))
             .GroupBy(p =>
             {
                 var name = TextTools.CapitalizeString(TextTools.GetDisplayName(p, prototypeManager, loc));
@@ -67,7 +76,7 @@ public static class EntityNameDuplicatesJsonGenerator
 
                     if (!string.IsNullOrEmpty(label) &&
                         !string.IsNullOrEmpty(suffix) &&
-                        label.Equals(suffix, StringComparison.OrdinalIgnoreCase))
+                        label.Trim().Equals(suffix.Trim(), StringComparison.OrdinalIgnoreCase))
                     {
                         suffix = string.Empty;
                     }

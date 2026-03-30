@@ -5,7 +5,7 @@ thief-backpack-window-description =
     Выберите { $maxCount } { $maxCount ->
         [1] набор
         [few] разных набора
-       *[other] разных наборов
+        *[other] разных наборов
     } из списка.
 
 thief-backpack-window-selected = Выбрано наборов: ({ $selectedCount }/{ $maxCount })

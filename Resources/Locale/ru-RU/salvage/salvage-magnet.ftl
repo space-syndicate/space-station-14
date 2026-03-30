@@ -7,31 +7,29 @@ salvage-asteroid-name = Астероид
 salvage-magnet-window-title = Магнит обломков
 salvage-expedition-window-progression = Прогресс
 
-salvage-magnet-resources =
-    { $resource ->
-        [OreIron] Железо
-        [OreCoal] Уголь
-        [OreQuartz] Кварц
-        [OreSalt] Соль
-        [OreGold] Золото
-        [OreDiamond] Алмазы
-        [OreSilver] Серебро
-        [OrePlasma] Плазма
-        [OreUranium] Уран
-        [OreArtifactFragment] Фрагменты артефактов
-        [OreBananium] Бананиум
-       *[other] { $resource }
-    }
+salvage-magnet-resources = { $resource ->
+    [OreIron] Железо
+    [OreCoal] Уголь
+    [OreQuartz] Кварц
+    [OreSalt] Соль
+    [OreGold] Золото
+    [OreDiamond] Алмазы
+    [OreSilver] Серебро
+    [OrePlasma] Плазма
+    [OreUranium] Уран
+    [OreArtifactFragment] Фрагменты артефактов
+    [OreBananium] Бананиум
+    *[other] { $resource }
+}
 
-salvage-magnet-resources-count =
-    { $count ->
-        [1] (Мало)
-        [2] (Средне)
-        [3] (Средне)
-        [4] (Много)
-        [5] (Много)
-       *[other] (Изобилие)
-    }
+salvage-magnet-resources-count = { $count ->
+    [1] (Мало)
+    [2] (Средне)
+    [3] (Средне)
+    [4] (Много)
+    [5] (Много)
+    *[other] (Изобилие)
+}
 
 # Debris
 salvage-magnet-debris-ChunkDebris = Космический обломок

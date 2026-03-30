@@ -1,6 +1,5 @@
 - type: marking
   id: PawSocks
-
   bodyPart: RFoot #highest possible layer
   groupWhitelist: [Vulpkanin]
   sponsorOnly: true # Corvax-Sponsors
@@ -11,9 +10,8 @@
 - type: marking
   id: FoxTail
   bodyPart: Tail
-
   groupWhitelist: [Vulpkanin]
-  sponsorOnly: true # Corvax-Sponsors
+  sponsorOnly: false # Corvax-Sponsors
   sprites:
     - sprite: Corvax/Mobs/Customization/vulpkanin.rsi
       state: vulp_tail
@@ -23,7 +21,6 @@
 - type: marking
   id: FoxEar
   bodyPart: HeadTop
-
   groupWhitelist: [Vulpkanin]
   sponsorOnly: true # Corvax-Sponsors
   sprites:
@@ -35,7 +32,6 @@
 - type: marking
   id: WolfTail
   bodyPart: Tail
-
   groupWhitelist: [Vulpkanin]
   sponsorOnly: true # Corvax-Sponsors
   sprites:
@@ -47,7 +43,6 @@
 - type: marking
   id: FoxBelly
   bodyPart: Chest
-
   groupWhitelist: [Vulpkanin]
   sponsorOnly: true # Corvax-Sponsors
   sprites:
@@ -57,9 +52,8 @@
 - type: marking
   id: FoxSnout
   bodyPart: Snout
-
   groupWhitelist: [Vulpkanin]
-  sponsorOnly: true # Corvax-Sponsors
+  sponsorOnly: false # Corvax-Sponsors
   sprites:
     - sprite: Corvax/Mobs/Customization/vulpkanin.rsi
       state: vulp_face
@@ -68,7 +62,6 @@
 - type: marking
   id: FoxTailAnimated
   bodyPart: Tail
-
   groupWhitelist: []
   sprites:
     - sprite: Corvax/Mobs/Customization/vulpkanin.rsi
@@ -79,7 +72,6 @@
 - type: marking
   id: WolfTailAnimated
   bodyPart: Tail
-
   groupWhitelist: []
   sprites:
     - sprite: Corvax/Mobs/Customization/vulpkanin.rsi

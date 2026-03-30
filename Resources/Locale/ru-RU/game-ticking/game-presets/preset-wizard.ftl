@@ -12,19 +12,19 @@ survivor-role-greeting =
 survivor-round-end-dead-count =
     { $deadCount ->
         [one] [color=red]{ $deadCount }[/color] выживший умер.
-       *[other] [color=red]{ $deadCount }[/color] выживших умерло.
+        *[other] [color=red]{ $deadCount }[/color] выживших умерло.
     }
 
 survivor-round-end-alive-count =
     { $aliveCount ->
         [one] [color=yellow]{ $aliveCount }[/color] выживший остался на станции.
-       *[other] [color=yellow]{ $aliveCount }[/color] выживших осталось на станции.
+        *[other] [color=yellow]{ $aliveCount }[/color] выживших осталось на станции.
     }
 
 survivor-round-end-alive-on-shuttle-count =
     { $aliveCount ->
         [one] [color=green]{ $aliveCount }[/color] выживший выбрался живым.
-       *[other] [color=green]{ $aliveCount }[/color] выживших выбралось живыми.
+        *[other] [color=green]{ $aliveCount }[/color] выживших выбралось живыми.
     }
 
 ## Wizard

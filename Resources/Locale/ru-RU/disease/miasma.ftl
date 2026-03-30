@@ -13,23 +13,23 @@ perishable-3-nonmob = [color=red]{ CAPITALIZE(SUBJECT($target)) } выгляди
 ## Rotting
 
 rotting-rotting = [color=orange]{ CAPITALIZE(SUBJECT($target)) } { GENDER($target) ->
-        [male] гниёт
-        [female] гниёт
-        [epicene] гниют
-       *[neuter] гниёт
-    }![/color]
+    [male] гниёт
+    [female] гниёт
+    [epicene] гниют
+    *[neuter] гниёт
+}![/color]
 rotting-bloated = [color=orangered]{ CAPITALIZE(SUBJECT($target)) } { GENDER($target) ->
-        [male] вздулся
-        [female] вздулась
-        [epicene] вздулись
-       *[neuter] вздулось
-    }![/color]
+    [male] вздулся
+    [female] вздулась
+    [epicene] вздулись
+    *[neuter] вздулось
+}![/color]
 rotting-extremely-bloated = [color=red]{ CAPITALIZE(SUBJECT($target)) } сильно { GENDER($target) ->
-        [male] вздулся
-        [female] вздулась
-        [epicene] вздулись
-       *[neuter] вздулось
-    }![/color]
+    [male] вздулся
+    [female] вздулась
+    [epicene] вздулись
+    *[neuter] вздулось
+}![/color]
 
 rotting-rotting-nonmob = [color=orange]{ CAPITALIZE(SUBJECT($target)) } гниёт![/color]
 rotting-bloated-nonmob = [color=orangered]{ CAPITALIZE(SUBJECT($target)) } вздулось![/color]

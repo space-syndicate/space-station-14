@@ -36,21 +36,21 @@ nano-task-ui-heading-high-priority-tasks =
         [zero] Нет задач высокого приоритета
         [one] 1 задача высокого приоритета
         [few] { $amount } задачи высокого приоритета
-       *[other] { $amount } задач высокого приоритета
+        *[other] { $amount } задач высокого приоритета
     }
 nano-task-ui-heading-medium-priority-tasks =
     { $amount ->
         [zero] Нет задач среднего приоритета
         [one] 1 задача среднего приоритета
         [few] { $amount } задачи среднего приоритета
-       *[other] { $amount } задач среднего приоритета
+        *[other] { $amount } задач среднего приоритета
     }
 nano-task-ui-heading-low-priority-tasks =
     { $amount ->
         [zero] Нет задач низкого приоритета
         [one] 1 задача низкого приоритета
         [few] { $amount } задачи низкого приоритета
-       *[other] { $amount } задач низкого приоритета
+        *[other] { $amount } задач низкого приоритета
     }
 nano-task-ui-done = Готово
 nano-task-ui-revert-done = Отмена
@@ -90,15 +90,15 @@ wanted-list-initiator-label = [color=darkgray]Инициатор:[/color] [color
 wanted-list-unknown-initiator-label = неизвестный инициатор
 
 wanted-list-status-label = [color=darkgray]статус:[/color] { $status ->
-        [suspected] [color=yellow]подозревается[/color]
-        [wanted] [color=red]разыскивается[/color]
-        [detained] [color=#b18644]под арестом[/color]
-        [paroled] [color=green]освобождён по УДО[/color]
-        [discharged] [color=green]освобождён[/color]
-        [hostile] [color=darkred]враждебен[/color]
-        [eliminated] [color=gray]ликвидирован[/color]
-       *[other] нет
-    }
+    [suspected] [color=yellow]подозревается[/color]
+    [wanted] [color=red]разыскивается[/color]
+    [detained] [color=#b18644]под арестом[/color]
+    [paroled] [color=green]освобождён по УДО[/color]
+    [discharged] [color=green]освобождён[/color]
+    [hostile] [color=darkred]враждебен[/color]
+    [eliminated] [color=gray]ликвидирован[/color]
+    *[other] нет
+}
 
 wanted-list-history-table-time-col = Время
 wanted-list-history-table-reason-col = Преступление

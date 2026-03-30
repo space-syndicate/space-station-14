@@ -2,7 +2,7 @@
 using Content.Client.Changelog;
 using Content.Client.Chat.Managers;
 using Content.Client.Clickable;
-using Content.Client.Corvax.TTS;
+using Content.Client.Corvax.ExportSprites;
 using Content.Client.DebugMon;
 using Content.Client.Eui;
 using Content.Client.FeedbackPopup;
@@ -39,6 +39,8 @@ namespace Content.Client.IoC
             SharedContentIoC.Register(collection);
             collection.Register<IParallaxManager, ParallaxManager>();
             collection.Register<GeneratedParallaxCache>();
+            collection.Register<EntityScreenshotRenderService>(); // Corvax-Wiki
+            collection.Register<EntityScreenshotGenerator>(); // Corvax-Wiki
             collection.Register<IChatManager, ChatManager>();
             collection.Register<ISharedChatManager, ChatManager>();
             collection.Register<IClientPreferencesManager, ClientPreferencesManager>();
