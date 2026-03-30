@@ -20,9 +20,9 @@ cargo-console-menu-search-bar-placeholder = Поиск
 cargo-console-menu-requests-label = Запросы
 cargo-console-menu-orders-label = Заказы
 cargo-console-menu-populate-categories-all-text = Все
-cargo-console-menu-order-row-title = {$productName} (x{$orderAmount} за {$orderPrice}$)
-cargo-console-menu-populate-orders-cargo-order-row-product-name-text = Заказчик: {$orderRequester} со счета [color={$accountColor}]{$account}[/color]
-cargo-console-menu-order-row-product-description = Причина: {$orderReason}
+cargo-console-menu-order-row-title = { $productName } (x{ $orderAmount } за { $orderPrice }$)
+cargo-console-menu-populate-orders-cargo-order-row-product-name-text = Заказчик: { $orderRequester } со счета [color={ $accountColor }]{ $account }[/color]
+cargo-console-menu-order-row-product-description = Причина: { $orderReason }
 cargo-console-menu-order-row-button-approve = Одобрить
 cargo-console-menu-order-row-button-cancel = Отменить
 cargo-console-menu-order-row-alerts-reason-absent = Причина не указана

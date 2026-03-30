@@ -8,7 +8,7 @@ flatpacker-ui-title = Упаковщик 1001
 flatpacker-ui-materials-label = Материалы
 flatpacker-ui-cost-label = Стоимость запаковки
 flatpacker-ui-no-board-label = Отсутствует машинная плата!
-flatpacker-ui-board-invalid-label = [color=red]Invalid board!
-    Unable to print![/color]
+flatpacker-ui-board-invalid-label = [color=red]Недопустимая плата!
+    Невозможно распечатать![/color]
 flatpacker-ui-insert-board = Для начала вставьте машинную плату.
 flatpacker-ui-pack-button = Упаковать

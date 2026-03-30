@@ -42,7 +42,7 @@ highlights-janitor = уборщик
 highlights-lawyer = адвокат, юрист
 highlights-librarian = библиотекар, библиотека
 highlights-mime = мим
-highlights-musician = Musician, "Music", Theatre, Theater, Service, "Serv"
+highlights-musician = музыкант, театрал, артист, сервисный работник, сервисник
 highlights-passenger = пассажир, грейтайдер, "тайдер"
 highlights-service-worker = сервисный работник, сервисник
 

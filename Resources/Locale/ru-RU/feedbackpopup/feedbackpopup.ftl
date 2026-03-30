@@ -4,7 +4,7 @@ feedbackpopup-control-button-text = Открыть Ссылку
 
 feedbackpopup-control-total-surveys = {$num ->
     [one] { $num } запись
-   *[other] { $num } записей
+    *[other] { $num } записей
 }
 feedbackpopup-control-no-entries= Нет записей
 feedbackpopup-control-ui-footer = Поделитесь своим мнением!

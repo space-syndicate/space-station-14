@@ -8,7 +8,7 @@ job-name-captain = капитан
 job-name-cargotech = грузчик
 job-name-cburn = агент карантинной службы Центком
 job-name-ce = старший инженер
-job-name-centcommoff = CentComm Official
+job-name-centcommoff = представитель центрального командования
 job-name-chef = шеф-повар
 job-name-chaplain = священник
 job-name-chemist = химик
@@ -62,13 +62,13 @@ job-name-virologist = вирусолог
 job-name-zookeeper = зоотехник
 
 # antagonist jobs
-job-name-ninja = Ninja
-job-name-syndicate = синдикат
-job-name-syndicate-commander = Syndicate Commander
-job-name-syndicate-corpsman = Syndicate Corpsman
-job-name-syndicate-operative = Syndicate Operative
-job-name-pirate = Pirate
-job-name-wizard = Wizard
+job-name-ninja = Ниндзя
+job-name-syndicate = Синдикат
+job-name-syndicate-commander = Командир оперативников
+job-name-syndicate-corpsman = Медик оперативников
+job-name-syndicate-operative = Ядерный Оперативник
+job-name-pirate = Пират
+job-name-wizard = Волшебник
 job-name-zombie = зомби
 
 # Job titles

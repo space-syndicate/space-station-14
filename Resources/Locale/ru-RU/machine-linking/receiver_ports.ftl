@@ -82,10 +82,10 @@ signal-port-description-logic-input-b = Второй порт логическо
 signal-port-name-logic-input = Вход
 signal-port-description-logic-input = Входной порт, который принимает только уровни сигнала, высокий или низкий.
 
-signal-port-description-logic-memory-input = Signal to load into the memory cell, when enabled.
+signal-port-description-logic-memory-input = Сигнал для загрузки в ячейку памяти, если она включена.
 
-signal-port-name-logic-enable = Enable
-signal-port-description-logic-enable = Only loads the input signal into the memory cell when HIGH.
+signal-port-name-logic-enable = Включить
+signal-port-description-logic-enable = Входной сигнал загружается в ячейку памяти только, если он высок.
 
-signal-port-name-logic-random-input = Input Signal
-signal-port-description-logic-random-input = Receives any signal to trigger a random output.
+signal-port-name-logic-random-input = Входной сигнал
+signal-port-description-logic-random-input = Получает любой сигнал для события случайного вывода.

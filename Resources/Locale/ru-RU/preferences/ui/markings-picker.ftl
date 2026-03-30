@@ -2,21 +2,21 @@ markings-search = Поиск
 -markings-selection = { $selectable ->
     [0] Вы не можете больше выбрать черту.
     [one] Вы можете выбрать еще одну черту.
-   *[other] Вы можете выбрать еще { $selectable } черты.
+    *[other] Вы можете выбрать еще { $selectable } черты.
 }
 markings-limits = { $required ->
     [true] { $count ->
-        [-1] Выберите хотя бы одну черту.
-        [0] Вы не можете выбрать еще черту, но как-то, вы должны? Это баг.
-        [one] Выберите одну черту.
-       *[other] Выберите хотя бы одну черту и до { $count }. { -markings-selection(selectable: $selectable) }
-    }
-   *[false] { $count ->
-        [-1] Выберите любое количество черт.
-        [0] Вы не можете больше выбрать черту.
-        [one] Выберите до одной черты.
-       *[other] Выберите до { $count } черт. { -markings-selection(selectable: $selectable) }
-    }
+            [-1] Выберите хотя бы одну черту.
+            [0] Вы не можете выбрать еще черту, но как-то, вы должны? Это баг.
+            [one] Выберите одну черту.
+            *[other] Выберите хотя бы одну черту и до { $count }. { -markings-selection(selectable: $selectable) }
+        }
+    *[false] { $count ->
+            [-1] Выберите любое количество черт.
+            [0] Вы не можете больше выбрать черту.
+            [one] Выберите до одной черты.
+            *[other] Выберите до { $count } черт. { -markings-selection(selectable: $selectable) }
+        }
 }
 markings-reorder = Выбраные черты
 

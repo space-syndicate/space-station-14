@@ -27,7 +27,7 @@ ingestion-verb-drink = Пить
 
 -edible-satiated = { $satiated ->
     [true] { " " }Вам кажется вы не можете больше { $verb }.
-  *[false] { "" }
+    *[false] { "" }
 }
 
 edible-nom = Ням. { $flavors }
