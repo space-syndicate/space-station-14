@@ -203,7 +203,7 @@ loadout-group-paramedic-shoes = Парамедик, обувь
 
 # Wildcards
 loadout-group-reporter-jumpsuit = Репортёр, комбинезон
-loadout-group-reporter-head = Reporter hat
-loadout-group-reporter-outerclothing = Reporter vest
+loadout-group-reporter-head = Репортёр, голова
+loadout-group-reporter-outerclothing = Репортёр, верхняя одежда
 
 loadout-group-psychologist-jumpsuit = Психолог, комбинезон

@@ -151,5 +151,5 @@ reagent-desc-potassium-iodide = Снижает разрушительное во
 reagent-name-haloperidol = галоперидол
 reagent-desc-haloperidol = Выводит из организма большинство стимулирующих и галлюциногенных препаратов. Уменьшает наркотический эффект и дрожание. Вызывает сонливость.
 
-reagent-name-heparin = heparin
-reagent-desc-heparin = Commonly used as an anticoagulant medication. Causes blood to have difficulty forming clots. Can cause internal bleeding when overdosed.
+reagent-name-heparin = гепарин
+reagent-desc-heparin = Обычно используется в качестве антикоагулянта. Затрудняет образование тромбов. При передозировке может вызвать внутреннее кровотечение.

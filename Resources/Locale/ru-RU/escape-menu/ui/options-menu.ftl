@@ -49,7 +49,7 @@ ui-options-misc-label = Разное
 ui-options-interface-label = Интерфейс
 
 
-ui-options-auto-fill-highlights = Автозаполнение подсветки информацией персонажа
+ui-options-auto-fill-highlights = Автоматическое заполнение списка подсветки на основе имени и должности персонажа
 ui-options-highlights-color = Цвет подсветки:
 ui-options-highlights-color-example = Это подсвеченный текст.
 ui-options-show-held-item = Показать удерживаемый элемент рядом с курсором
@@ -108,8 +108,8 @@ ui-options-hud-layout = Тип HUD:
 
 ## Controls menu
 
-ui-options-hold-to-attack-melee = Hold to attack (melee)
-ui-options-hold-to-attack-ranged = Hold to attack (ranged)
+ui-options-hold-to-attack-melee = Удерживать чтобы атаковать (ближний бой)
+ui-options-hold-to-attack-ranged = Удерживать чтобы атаковать (дальний бой)
 
 ui-options-binds-reset-all = Сбросить ВСЕ привязки
 ui-options-binds-explanation = ЛКМ — изменить кнопку, ПКМ — убрать кнопку
