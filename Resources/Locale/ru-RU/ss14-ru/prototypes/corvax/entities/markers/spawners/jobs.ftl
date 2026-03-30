@@ -18,4 +18,4 @@ ent-SpawnPointSeniorOfficer = инструктор СБ
     .suffix = { ent-SpawnPointJobBase.suffix }
 ent-SpawnPointMagistrate = магистрат
     .desc = { ent-SpawnPointJobBase.desc }
-	.suffix = { ent-SpawnPointJobBase.suffix }
+    .suffix = { ent-SpawnPointJobBase.suffix }
