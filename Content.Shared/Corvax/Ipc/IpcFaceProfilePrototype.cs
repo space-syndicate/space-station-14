@@ -7,7 +7,7 @@ namespace Content.Shared.Corvax.Ipc;
 /// <summary>
 /// Prototype defining a collection of IPC face sprites.
 /// </summary>
-[Prototype("ipcFaceProfile")]
+[Prototype]
 public sealed partial class IpcFaceProfilePrototype : IPrototype
 {
     [IdDataField]

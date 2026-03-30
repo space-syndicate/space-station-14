@@ -35,21 +35,20 @@ anomaly-scanner-pulse-timer = Время до следующего импуль�
 
 anomaly-gorilla-core-slot-name = Ядро аномалии
 anomaly-gorilla-charge-none = Внутри нет [bold]ядра аномалии[/bold].
-anomaly-gorilla-charge-limit =
-    { $count ->
-        [one] Остался
-       *[other] Осталось
-    } [color={ $count ->
-        [3] green
-        [2] yellow
-        [1] orange
-        [0] red
-       *[other] purple
-    }]{ $count } { $count ->
-        [one] заряд
-        [few] заряда
-       *[other] зарядов
-    }[/color].
+anomaly-gorilla-charge-limit = { $count ->
+    [one] Остался
+    *[other] Осталось
+} [color={ $count ->
+    [3] green
+    [2] yellow
+    [1] orange
+    [0] red
+    *[other] purple
+}]{ $count } { $count ->
+    [one] заряд
+    [few] заряда
+    *[other] зарядов
+}[/color].
 anomaly-gorilla-charge-infinite = Осталось [color=gold]бесконечное количество зарядов[/color]. [italic]Пока что...[/italic]
 
 anomaly-sync-connected = Аномалия успешно привязана
@@ -69,12 +68,11 @@ anomaly-generator-no-cooldown = Перезарядка: [color=gray]Заверш
 anomaly-generator-yes-fire = Статус: [color=forestgreen]Готов[/color]
 anomaly-generator-no-fire = Статус: [color=crimson]Не готов[/color]
 anomaly-generator-generate = Создать аномалию
-anomaly-generator-charges =
-    { $charges ->
-        [one] { $charges } заряд
-        [few] { $charges } заряда
-       *[other] { $charges } зарядов
-    }
+anomaly-generator-charges = { $charges ->
+    [one] { $charges } заряд
+    [few] { $charges } заряда
+    *[other] { $charges } зарядов
+}
 anomaly-generator-announcement = Аномалия была создана!
 
 anomaly-command-pulse = Вызывает импульс аномалии
@@ -104,3 +102,4 @@ anomaly-behavior-inconstancy = [color=crimson]Обнаружено непост�
 anomaly-behavior-fast = [color=crimson]Частота импульсов значительно повышена.[/color]
 anomaly-behavior-strenght = [color=crimson]Мощность импульсов значительно повышена.[/color]
 anomaly-behavior-moving = [color=crimson]Обнаружена координатная нестабильность.[/color]
+anomaly-secret-admin = [color=red](ERROR)[/color]

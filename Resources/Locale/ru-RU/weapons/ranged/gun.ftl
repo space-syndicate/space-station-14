@@ -4,8 +4,8 @@ gun-fire-rate-examine = Скорострельность [color={ $color }]{ $fi
 gun-selector-verb = Изменить на { $mode }
 gun-selected-mode = Выбран { $mode }
 gun-disabled = Вы не можете использовать оружие!
-gun-set-fire-mode-examine = Set to [color=yellow]{$mode}[/color].
-gun-set-fire-mode-popup = Changed to {$mode}
+gun-set-fire-mode-examine = Set to [color=yellow]{ $mode }[/color].
+gun-set-fire-mode-popup = Changed to { $mode }
 gun-magazine-whitelist-fail = Это не помещается в оружие!
 gun-magazine-fired-empty = Нет патронов!
 
@@ -27,12 +27,11 @@ gun-cartridge-spent = Он [color=red]израсходован[/color].
 gun-cartridge-unspent = Он [color=lime]не израсходован[/color].
 
 # BatteryAmmoProvider
-gun-battery-examine =
-    Заряда хватит на [color={ $color }]{ $count }[/color] { $count ->
-        [one] выстрел
-        [few] выстрела
-       *[other] выстрелов
-    }.
+gun-battery-examine = Заряда хватит на [color={ $color }]{ $count }[/color] { $count ->
+    [one] выстрел
+    [few] выстрела
+    *[other] выстрелов
+}.
 
 # CartridgeAmmoProvider
 gun-chamber-bolt-ammo = Затвор не закрыт
@@ -46,12 +45,11 @@ gun-chamber-bolt-open-state = закрыт
 gun-chamber-rack = Передёрнуть затвор
 
 # MagazineAmmoProvider
-gun-magazine-examine =
-    Тут [color={ $color }]{ $count }[/color] { $count ->
-        [one] штука
-        [few] штуки
-       *[other] штук
-    }.
+gun-magazine-examine = Тут [color={ $color }]{ $count }[/color] { $count ->
+    [one] штука
+    [few] штуки
+    *[other] штук
+}.
 
 # RevolverAmmoProvider
 gun-revolver-empty = Разрядить револьвер

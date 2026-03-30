@@ -11,7 +11,6 @@ namespace Content.Server.Corvax.GuideGenerator;
 
 public static class LocJsonGenerator
 {
-
     // Matches top-level message/term identifiers at start of line (no leading whitespace or comment).
     private static readonly Regex TopEntryRegex =
         new(@"(?m)^(?!\s|#)([^\s=]+)\s*=", RegexOptions.Compiled | RegexOptions.CultureInvariant);

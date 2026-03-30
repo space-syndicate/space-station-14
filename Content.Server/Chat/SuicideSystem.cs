@@ -172,7 +172,7 @@ public sealed class SuicideSystem : EntitySystem
         // Corvax-IPC-start
         //args.DamageType ??= "Bloodloss";
         string entityPrototypeId = "";
-        if (EntityManager.TryGetComponent<MetaDataComponent>(victim, out var metaData) && metaData.EntityPrototype != null)
+        if (TryComp(victim, out MetaDataComponent? metaData) && metaData.EntityPrototype != null)
             entityPrototypeId = metaData.EntityPrototype.ID;
 
         if (entityPrototypeId != "MobIpc")

@@ -1,5 +1,4 @@
 ent-BaseMobSkeletonPerson = Урист МакСкелли
-    .desc = { ent-BaseMobSpeciesOrganic.desc }
-    .suffix = Скелет
+    .desc = { ent-MobFlammable.desc }
 ent-MobSkeletonPersonDummy = { ent-BaseSpeciesDummy }
     .desc = { ent-BaseSpeciesDummy.desc }

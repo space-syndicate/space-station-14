@@ -10,11 +10,10 @@ war-declarator-conditions-unknown = Неизвестно
 war-declarator-boost-possible = Возможно объявить войну
 war-declarator-boost-impossible = Невозможно объявить войну
 war-declarator-boost-declared = Война объявлена! Шаттл может быть отключён на...
-war-declarator-boost-timer =
-    Оставшееся время: { $time } { $time ->
-        [one] минута
-        [few] минуты
-       *[other] минут
-    }.
+war-declarator-boost-timer = Оставшееся время: { $time } { $time ->
+    [one] минута
+    [few] минуты
+    *[other] минут
+}.
 war-declarator-default-message = Пограничный отряд Синдиката объявляет о своём намерении уничтожить станцию при помощи ядерного устройства и призывает экипаж предпринять ничтожную попытку остановить их.
 war-declarator-message-placeholder = Введите текст объявления...

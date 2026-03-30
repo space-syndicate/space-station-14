@@ -9,6 +9,15 @@ public sealed class GrowlingAccentSystem : EntitySystem
 {
     [Dependency] private readonly IRobustRandom _random = default!;
 
+    private static readonly Regex _regexLowerR = new Regex("r+");
+    private static readonly Regex _regexUpperR = new Regex("R+");
+    private static readonly Regex _regexLowerRp = new Regex("р+");
+    private static readonly Regex _regexUpperRp = new Regex("Р+");
+    private static readonly List<string> _replacementsR = new List<string> { "rr", "rrr" };
+    private static readonly List<string> _replacementsRUpper = new List<string> { "RR", "RRR" };
+    private static readonly List<string> _replacementsRp = new List<string> { "рр", "ррр" };
+    private static readonly List<string> _replacementsRpUpper = new List<string> { "РР", "РРР" };
+
     public override void Initialize()
     {
         base.Initialize();
@@ -19,31 +28,10 @@ public sealed class GrowlingAccentSystem : EntitySystem
     {
         var message = args.Message;
 
-        // r => rrr
-        message = Regex.Replace(
-            message,
-            "r+",
-            _random.Pick(new List<string> { "rr", "rrr" })
-        );
-        // R => RRR
-        message = Regex.Replace(
-            message,
-            "R+",
-            _random.Pick(new List<string> { "RR", "RRR" })
-        );
-
-        // р => ррр
-        message = Regex.Replace(
-            message,
-            "р+",
-            _random.Pick(new List<string> { "рр", "ррр" })
-        );
-        // Р => РРР
-        message = Regex.Replace(
-            message,
-            "Р+",
-            _random.Pick(new List<string> { "РР", "РРР" })
-        );
+        message = _regexLowerR.Replace(message, _random.Pick(_replacementsR));
+        message = _regexUpperR.Replace(message, _random.Pick(_replacementsRUpper));
+        message = _regexLowerRp.Replace(message, _random.Pick(_replacementsRp));
+        message = _regexUpperRp.Replace(message, _random.Pick(_replacementsRpUpper));
 
         args.Message = message;
     }

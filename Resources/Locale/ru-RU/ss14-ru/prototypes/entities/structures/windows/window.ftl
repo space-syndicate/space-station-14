@@ -11,5 +11,5 @@ ent-WindowDirectionalRCDResistant = { ent-WindowDirectional }
 ent-WindowFrostedDirectional = направленное матовое окно
     .desc = Смотри не заляпай.
 ent-WindowDiagonal = { ent-Window }
-    .suffix = Диагональ
     .desc = { ent-Window.desc }
+    .suffix = Диагональ

@@ -1,8 +1,7 @@
 - type: marking
   id: PawSocks
-  markingCategory: Overlay
   bodyPart: RFoot #highest possible layer
-  speciesRestriction: [Vulpkanin] # Corvax-CorvaxVulp_Port CorvaxVulpkanin
+  groupWhitelist: [Vulpkanin]
   sponsorOnly: true # Corvax-Sponsors
   sprites:
     - sprite: Corvax/Mobs/Customization/vulpkanin.rsi
@@ -11,9 +10,8 @@
 - type: marking
   id: FoxTail
   bodyPart: Tail
-  markingCategory: Tail
-  speciesRestriction: [Vulpkanin] # Corvax-CorvaxVulp_Port CorvaxVulpkanin
-  sponsorOnly: true # Corvax-Sponsors
+  groupWhitelist: [Vulpkanin]
+  sponsorOnly: false # Corvax-Sponsors
   sprites:
     - sprite: Corvax/Mobs/Customization/vulpkanin.rsi
       state: vulp_tail
@@ -23,8 +21,7 @@
 - type: marking
   id: FoxEar
   bodyPart: HeadTop
-  markingCategory: HeadTop
-  speciesRestriction: [Vulpkanin] # Corvax-CorvaxVulp_Port CorvaxVulpkanin
+  groupWhitelist: [Vulpkanin]
   sponsorOnly: true # Corvax-Sponsors
   sprites:
     - sprite: Corvax/Mobs/Customization/vulpkanin.rsi
@@ -35,8 +32,7 @@
 - type: marking
   id: WolfTail
   bodyPart: Tail
-  markingCategory: Tail
-  speciesRestriction: [Vulpkanin] # Corvax-CorvaxVulp_Port CorvaxVulpkanin
+  groupWhitelist: [Vulpkanin]
   sponsorOnly: true # Corvax-Sponsors
   sprites:
     - sprite: Corvax/Mobs/Customization/vulpkanin.rsi
@@ -47,8 +43,7 @@
 - type: marking
   id: FoxBelly
   bodyPart: Chest
-  markingCategory: Chest
-  speciesRestriction: [Vulpkanin] # Corvax-CorvaxVulp_Port CorvaxVulpkanin
+  groupWhitelist: [Vulpkanin]
   sponsorOnly: true # Corvax-Sponsors
   sprites:
     - sprite: Corvax/Mobs/Customization/vulpkanin.rsi
@@ -57,9 +52,8 @@
 - type: marking
   id: FoxSnout
   bodyPart: Snout
-  markingCategory: Snout
-  speciesRestriction: [Vulpkanin] # Corvax-CorvaxVulp_Port CorvaxVulpkanin
-  sponsorOnly: true # Corvax-Sponsors
+  groupWhitelist: [Vulpkanin]
+  sponsorOnly: false # Corvax-Sponsors
   sprites:
     - sprite: Corvax/Mobs/Customization/vulpkanin.rsi
       state: vulp_face
@@ -68,8 +62,7 @@
 - type: marking
   id: FoxTailAnimated
   bodyPart: Tail
-  markingCategory: Tail
-  speciesRestriction: []
+  groupWhitelist: []
   sprites:
     - sprite: Corvax/Mobs/Customization/vulpkanin.rsi
       state: tail_fox_waggin
@@ -79,8 +72,7 @@
 - type: marking
   id: WolfTailAnimated
   bodyPart: Tail
-  markingCategory: Tail
-  speciesRestriction: []
+  groupWhitelist: []
   sprites:
     - sprite: Corvax/Mobs/Customization/vulpkanin.rsi
       state: tail_wolf_waggin

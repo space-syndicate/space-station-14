@@ -16,7 +16,10 @@ public static class PrototypeListGenerator
 
         foreach (var kindType in proto.EnumeratePrototypeKinds())
         {
-            var kindName = PrototypeUtility.CalculatePrototypeName(kindType.Name);
+            var kindName = proto.TryGetKindFrom(kindType, out var actualKindName)
+                ? actualKindName
+                : kindType.Name;
+            kindName = TextTools.CapitalizeString(kindName);
             var ids = new List<string>();
 
             foreach (var p in proto.EnumeratePrototypes(kindType))

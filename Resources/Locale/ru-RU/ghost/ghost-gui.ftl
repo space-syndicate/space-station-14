@@ -22,13 +22,13 @@ ghost-roles-window-raffle-in-progress-button =
     Участвовать в лотерее (Осталось { $time }, { $players ->
         [one] { $players } игрок
         [few] { $players } игрока
-       *[other] { $players } игроков
+        *[other] { $players } игроков
     })
 ghost-roles-window-leave-raffle-button =
     Покинуть (Осталось { $time }, { $players ->
         [one] { $players } игрок
         [few] { $players } игрока
-       *[other] { $players } игроков
+        *[other] { $players } игроков
     })
 ghost-roles-window-request-role-button = Запросить
 ghost-roles-window-request-role-button-timer = Запросить ({ $time }сек.)

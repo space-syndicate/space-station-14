@@ -30,8 +30,7 @@ cmd-banlist-empty = Нет активных банов у пользовател
 cmd-banlist-hint = <name/user ID>
 
 cmd-ban_exemption_update-desc = Установить исключение на типы банов игрока.
-cmd-ban_exemption_update-help =
-    Использование: ban_exemption_update <player> <flag> [<flag> [...]]
+cmd-ban_exemption_update-help = Использование: ban_exemption_update <player> <flag> [<flag> [...]]
     Укажите несколько флагов, чтобы дать игроку исключение из нескольких типов банов.
     Чтобы удалить все исключения, выполните эту команду и укажите единственным флагом "None".
 

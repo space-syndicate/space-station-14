@@ -9,6 +9,7 @@ borg-mind-removed = { CAPITALIZE($name) } выключается!
 borg-module-too-many = Для ещё одного модуля не хватает места...
 borg-module-duplicate = Этот модуль уже установлен в этого киборга.
 borg-module-whitelist-deny = Этот модуль не подходит для данного типа киборгов...
+borg-module-incompatible = This module isn't compatible with { THE($existing) }.
 
 borg-module-action-name = Активировать { $moduleName }
 borg-module-action-description = Выбрать { $moduleName }, чтобы использовать предоставляемые им инструменты.

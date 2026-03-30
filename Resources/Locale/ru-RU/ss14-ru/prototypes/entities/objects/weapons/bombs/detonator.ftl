@@ -1,4 +1,4 @@
-﻿ent-EmptyDetonator = капсюль-детонатор
+ent-EmptyDetonator = капсюль-детонатор
     .desc = Капсюль-детонатор. Требует триггер и кабель.
 ent-WiredDetonator = капсюль-детонатор
     .desc = Капсюль-детонатор.

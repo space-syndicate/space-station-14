@@ -24,12 +24,11 @@ network-configurator-link = Соединить
 network-configurator-title-saved-devices = Сохранённые устройства
 network-configurator-title-device-configuration = Конфигурация устройств
 network-configurator-ui-clear-button = Очистить
-network-configurator-ui-count-label =
-    { $count } { $count ->
-        [one] устройство
-        [few] устройства
-       *[other] устройств
-    }
+network-configurator-ui-count-label = { $count } { $count ->
+    [one] устройство
+    [few] устройства
+    *[other] устройств
+}
 
 network-configurator-text-set = Установить
 network-configurator-text-add = Добавить
@@ -52,8 +51,7 @@ network-configurator-examine-current-mode = Текущий режим: { $mode }
 network-configurator-examine-switch-modes = Нажмите { $key } чтобы переключить режим
 
 # item status
-network-configurator-item-status-label =
-    Режим: { $mode }
+network-configurator-item-status-label = Режим: { $mode }
     Переключить: { $keybinding }
 
 # command

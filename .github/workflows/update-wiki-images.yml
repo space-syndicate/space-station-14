@@ -1,0 +1,291 @@
+name: Update Wiki Images
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [ master, jsondump ]
+    paths:
+      - '.github/workflows/update-wiki-images.yml'
+      - 'Resources/Prototypes/**'
+      - 'Resources/Textures/**'
+      - 'RobustToolbox/**'
+
+jobs:
+  update-wiki-images:
+    name: Generate and Upload Entity Images
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Master
+        uses: actions/checkout@v4.2.2
+        with:
+          fetch-depth: 0
+
+      - name: Setup Submodule
+        run: |
+          git submodule update --init --recursive
+
+      - name: Pull Engine Updates
+        uses: space-wizards/submodule-dependency@v0.1.5
+
+      - name: Update Engine Submodules
+        run: |
+          cd RobustToolbox/
+          git submodule update --init --recursive
+
+      - name: Setup .NET Core
+        uses: actions/setup-dotnet@v4.1.0
+        with:
+          dotnet-version: 10.0.x
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.x'
+
+      - name: Install Linux graphics dependencies
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y xvfb libgl1-mesa-dri libglu1-mesa mesa-utils libopenal1
+
+      - name: Install Dependencies
+        run: dotnet restore
+
+      - name: Build Project
+        run: dotnet build --configuration Release --no-restore /p:WarningsAsErrors=nullable /m
+
+      - name: Generate entity images
+        continue-on-error: true
+        shell: bash
+        env:
+          LIBGL_ALWAYS_SOFTWARE: "1"
+          MESA_GL_VERSION_OVERRIDE: "3.3"
+          MESA_GLSL_VERSION_OVERRIDE: "330"
+          SDL_AUDIODRIVER: "dummy"
+        run: |
+          set -euo pipefail
+          xvfb-run -a dotnet ./bin/Content.Client/Content.Client.dll --self-contained \
+            --cvar autogen.entity_screenshot.enabled=true \
+            --cvar audio.interface_volume=0 \
+            --cvar ambience.lobby_music_enabled=false \
+            --cvar audio.admin_sounds_enabled=false \
+            --cvar audio.bwoink_sound_enabled=false \
+            --cvar interface.click_sound='' \
+            --cvar interface.hover_sound=''
+
+      - name: Build animated PNGs
+        continue-on-error: true
+        shell: bash
+        run: |
+          set -euo pipefail
+
+          python -m pip install --disable-pip-version-check pillow
+
+          python <<'PY'
+          from pathlib import Path
+          import shutil
+          from PIL import Image
+
+          base = Path("./bin/Content.Client/user_data/Textures/Entities")
+          animated_root = base / "_animated"
+
+          if not animated_root.is_dir():
+              print(f"No animated frame directory found at {animated_root}")
+              raise SystemExit(0)
+
+          for entity_dir in sorted(path for path in animated_root.iterdir() if path.is_dir()):
+              metadata = entity_dir / "frames.txt"
+              if not metadata.is_file():
+                  print(f"Skipping {entity_dir.name}: no frames.txt")
+                  continue
+
+              frames = []
+              durations = []
+
+              with metadata.open("r", encoding="utf-8") as handle:
+                  for raw_line in handle:
+                      line = raw_line.strip()
+                      if not line:
+                          continue
+
+                      filename, delay_ms = line.split("\t", 1)
+                      frame_path = entity_dir / filename
+                      if not frame_path.is_file():
+                          raise FileNotFoundError(f"Missing frame {frame_path}")
+
+                      frames.append(frame_path)
+                      durations.append(max(1, int(delay_ms)))
+
+              if not frames:
+                  print(f"Skipping {entity_dir.name}: no frames listed")
+                  continue
+
+              output = base / f"{entity_dir.name}.png"
+
+              if len(frames) == 1:
+                  shutil.copyfile(frames[0], output)
+                  print(f"Copied single-frame animation to {output.name}")
+                  continue
+
+              images = []
+              try:
+                  with Image.open(frames[0]) as first_src:
+                      canvas_size = first_src.convert("RGBA").size
+
+                  for frame_path in frames:
+                      with Image.open(frame_path) as src:
+                          img = src.convert("RGBA")
+                          if img.size == canvas_size:
+                              images.append(img.copy())
+                          else:
+                              canvas = Image.new("RGBA", canvas_size, (0, 0, 0, 0))
+                              canvas.paste(img, (0, 0))
+                              images.append(canvas)
+
+                  first, *rest = images
+                  first.save(
+                      output,
+                      format="PNG",
+                      save_all=True,
+                      append_images=rest,
+                      duration=durations,
+                      loop=0,
+                      disposal=1,
+                      blend=0,
+                  )
+                  print(f"Built animated PNG {output.name} from {len(frames)} frames")
+              finally:
+                  for image in images:
+                      image.close()
+          PY
+
+      - name: Upload entity images to wiki
+        continue-on-error: true
+        shell: bash
+        run: |
+          set -euo pipefail
+
+          BASE="./bin/Content.Client/user_data/Textures/Entities"
+          API="${{ secrets.WIKI_ROOT_URL }}/api.php"
+          USER="${{ secrets.WIKI_BOT_USER }}"
+          PASS="${{ secrets.WIKI_BOT_PASS }}"
+          NAMESPACE="${{ secrets.WIKI_BOT_NAMESPACE }}"
+
+          API="$(printf "%s" "$API" | tr -d '\r\n' | sed 's/[[:space:]]*$//')"
+          USER="$(printf "%s" "$USER" | tr -d '\r\n')"
+          PASS="$(printf "%s" "$PASS" | tr -d '\r\n')"
+          NAMESPACE="$(printf "%s" "$NAMESPACE" | tr -d '\r\n')"
+
+          if [[ -n "$NAMESPACE" && "${NAMESPACE: -1}" != "-" ]]; then
+            NAMESPACE="${NAMESPACE}-"
+          fi
+
+          if [[ ! -d "$BASE" ]]; then
+            echo "Entity image directory not found: $BASE"
+            exit 1
+          fi
+
+          normalize_filename() {
+            awk 'BEGIN { print toupper(substr(ARGV[1],1,1)) substr(ARGV[1],2) }' "$1"
+          }
+
+          files=()
+          while IFS= read -r -d '' file; do
+            files+=("$file")
+          done < <(find "$BASE" -maxdepth 1 -type f -name '*.png' -print0 | sort -z)
+
+          if (( ${#files[@]} == 0 )); then
+            echo "No PNG files found in $BASE"
+            exit 1
+          fi
+
+          cookiejar="$(mktemp)"
+          trap 'rm -f "$cookiejar"' EXIT
+
+          login_token=$(curl -sS -c "$cookiejar" \
+            --data "action=query&meta=tokens&type=login&format=json" "$API" | jq -r '.query.tokens.logintoken')
+
+          curl -sS -c "$cookiejar" -b "$cookiejar" \
+            --data-urlencode "action=login" \
+            --data-urlencode "lgname=$USER" \
+            --data-urlencode "lgpassword=$PASS" \
+            --data-urlencode "lgtoken=$login_token" \
+            --data-urlencode "format=json" \
+            "$API" > /dev/null
+
+          token=$(curl -sS -b "$cookiejar" \
+            --data "action=query&meta=tokens&format=json" "$API" | jq -r '.query.tokens.csrftoken')
+
+          page_text=$(cat <<'EOF'
+          == Краткое описание ==
+          {{Файл
+          |Id     = {{safesubst:#replaceset:{{subst:PAGENAME}}|/^(?:[^-]+-)?(.+?)(?:\.[^.]+)?$/=$1}}
+          |Проект = {{safesubst:#replaceset:{{subst:PAGENAME}}|/^(?:([^-]+)-)?.*$/=\1}}
+          }}
+
+          == Лицензирование ==
+          {{CC-BY-SA-3.0}}
+          EOF
+          )
+
+          batch_size=50
+
+          for ((i=0; i<${#files[@]}; i+=batch_size)); do
+            batch_files=("${files[@]:i:batch_size}")
+
+            titles=$(
+            for file in "${batch_files[@]}"; do
+              filename="$(basename "$file")"
+              filename_norm="$(normalize_filename "$filename")"
+              if [[ -n "$NAMESPACE" ]]; then
+                printf 'File:%s%s\n' "$NAMESPACE" "$filename_norm"
+              else
+                  printf 'File:%s\n' "$filename_norm"
+                fi
+              done | paste -sd'|' -
+            )
+
+            existing_files=$(
+              curl -sS -b "$cookiejar" \
+                --data-urlencode "action=query" \
+                --data-urlencode "format=json" \
+                --data-urlencode "titles=$titles" \
+                --data-urlencode "prop=imageinfo" \
+                --data-urlencode "iiprop=timestamp" \
+                "$API" | jq -r '
+                  .query.pages[]
+                  | select((has("missing") | not) and (.imageinfo? | type == "array"))
+                  | .title
+                  | sub("^[^:]+:"; "")
+                '
+            )
+
+            for file in "${batch_files[@]}"; do
+              filename="$(basename "$file")"
+              filename_norm="$(normalize_filename "$filename")"
+              if [[ -n "$NAMESPACE" ]]; then
+                wiki_filename="${NAMESPACE}${filename_norm}"
+              else
+                wiki_filename="$filename_norm"
+              fi
+
+              if grep -Fxq "$wiki_filename" <<< "$existing_files"; then
+                echo "Skipping existing file: $wiki_filename"
+                continue
+              fi
+
+              echo "Uploading File:${wiki_filename}"
+
+              curl -sS -b "$cookiejar" \
+                -F "action=upload" \
+                -F "createonly=true" \
+                -F "filename=${wiki_filename}" \
+                -F "comment=Upload $filename via GitHub Actions" \
+                -F "text=$page_text" \
+                -F "token=$token" \
+                -F "ignorewarnings=0" \
+                -F "format=json" \
+                -F "file=@$file;type=image/png" \
+                "$API" | jq -r '.upload.result // .error.info // "null"' || true
+            done
+          done

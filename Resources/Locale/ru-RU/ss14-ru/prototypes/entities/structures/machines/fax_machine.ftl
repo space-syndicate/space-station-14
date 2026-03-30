@@ -1,11 +1,11 @@
 ent-FaxMachineBase = факс дальнего действия
     .desc = Блюспейс-технологии на службе бюрократии.
 ent-FaxMachineCentcom = факс дальнего действия Центком
+    .desc = { ent-FaxMachineBase.desc }
     .suffix = Центком
-    .desc = { ent-FaxMachineBase.desc }
 ent-FaxMachineSyndie = факс дальнего действия Синдиката
+    .desc = { ent-FaxMachineBase.desc }
     .suffix = Синдикат
-    .desc = { ent-FaxMachineBase.desc }
 ent-FaxMachineCaptain = факс дальнего действия капитана
-    .suffix = ЯдерныеКоды
     .desc = { ent-FaxMachineBase.desc }
+    .suffix = ЯдерныеКоды

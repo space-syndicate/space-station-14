@@ -1,8 +1,7 @@
 - type: marking
   id: IpcBreakoutS
-  markingCategory: Snout
   bodyPart: Snout
-  speciesRestriction: [Ipc]
+  groupWhitelist: [Ipc]
   sponsorOnly: true # Corvax-Sponsors
   sprites:
     - sprite: Corvax/Mobs/Customization/Ipc/ips_face.rsi
@@ -10,9 +9,8 @@
 
 - type: marking
   id: IpcNatureS
-  markingCategory: Snout
   bodyPart: Snout
-  speciesRestriction: [Ipc]
+  groupWhitelist: [Ipc]
   sponsorOnly: true # Corvax-Sponsors
   sprites:
     - sprite: Corvax/Mobs/Customization/Ipc/ips_face.rsi
@@ -20,9 +18,8 @@
 
 - type: marking
   id: IpcEightS
-  markingCategory: Snout
   bodyPart: Snout
-  speciesRestriction: [Ipc]
+  groupWhitelist: [Ipc]
   sponsorOnly: true # Corvax-Sponsors
   sprites:
     - sprite: Corvax/Mobs/Customization/Ipc/ips_face.rsi
@@ -30,9 +27,8 @@
 
 - type: marking
   id: IpcOrangeHespAltS
-  markingCategory: Snout
   bodyPart: Snout
-  speciesRestriction: [Ipc]
+  groupWhitelist: [Ipc]
   sponsorOnly: true # Corvax-Sponsors
   sprites:
     - sprite: Corvax/Mobs/Customization/Ipc/ips_face.rsi
@@ -40,9 +36,8 @@
 
 - type: marking
   id: IpcPinkHespAltS
-  markingCategory: Snout
   bodyPart: Snout
-  speciesRestriction: [Ipc]
+  groupWhitelist: [Ipc]
   sponsorOnly: true # Corvax-Sponsors
   sprites:
     - sprite: Corvax/Mobs/Customization/Ipc/ips_face.rsi
@@ -50,9 +45,8 @@
 
 - type: marking
   id: IpcSmokingS
-  markingCategory: Snout
   bodyPart: Snout
-  speciesRestriction: [Ipc]
+  groupWhitelist: [Ipc]
   sponsorOnly: true # Corvax-Sponsors
   sprites:
     - sprite: Corvax/Mobs/Customization/Ipc/ips_face.rsi
@@ -60,9 +54,8 @@
 
 - type: marking
   id: IpcRainbowS
-  markingCategory: Snout
   bodyPart: Snout
-  speciesRestriction: [Ipc]
+  groupWhitelist: [Ipc]
   sponsorOnly: true # Corvax-Sponsors
   sprites:
     - sprite: Corvax/Mobs/Customization/Ipc/ips_face.rsi
@@ -70,9 +63,8 @@
 
 - type: marking
   id: IpcHeartS
-  markingCategory: Snout
   bodyPart: Snout
-  speciesRestriction: [Ipc]
+  groupWhitelist: [Ipc]
   sponsorOnly: true # Corvax-Sponsors
   sprites:
     - sprite: Corvax/Mobs/Customization/Ipc/ips_face.rsi
@@ -80,9 +72,8 @@
 
 - type: marking
   id: IpcScrollS
-  markingCategory: Snout
   bodyPart: Snout
-  speciesRestriction: [Ipc]
+  groupWhitelist: [Ipc]
   sponsorOnly: true # Corvax-Sponsors
   sprites:
     - sprite: Corvax/Mobs/Customization/Ipc/ips_face.rsi
@@ -90,9 +81,8 @@
 
 - type: marking
   id: IpcScrollHespAltS
-  markingCategory: Snout
   bodyPart: Snout
-  speciesRestriction: [Ipc]
+  groupWhitelist: [Ipc]
   sponsorOnly: true # Corvax-Sponsors
   sprites:
     - sprite: Corvax/Mobs/Customization/Ipc/ips_face.rsi
@@ -100,9 +90,8 @@
 
 - type: marking
   id: IpcStaticS
-  markingCategory: Snout
   bodyPart: Snout
-  speciesRestriction: [Ipc]
+  groupWhitelist: [Ipc]
   sponsorOnly: true # Corvax-Sponsors
   sprites:
     - sprite: Corvax/Mobs/Customization/Ipc/ips_face.rsi
@@ -110,9 +99,8 @@
 
 - type: marking
   id: IpcGreenS
-  markingCategory: Snout
   bodyPart: Snout
-  speciesRestriction: [Ipc]
+  groupWhitelist: [Ipc]
   sponsorOnly: true # Corvax-Sponsors
   sprites:
     - sprite: Corvax/Mobs/Customization/Ipc/ips_face.rsi
@@ -120,9 +108,8 @@
 
 - type: marking
   id: IpcYellowS
-  markingCategory: Snout
   bodyPart: Snout
-  speciesRestriction: [Ipc]
+  groupWhitelist: [Ipc]
   sponsorOnly: true # Corvax-Sponsors
   sprites:
     - sprite: Corvax/Mobs/Customization/Ipc/ips_face.rsi
@@ -130,9 +117,8 @@
 
 - type: marking
   id: IpcGolGliderS
-  markingCategory: Snout
   bodyPart: Snout
-  speciesRestriction: [Ipc]
+  groupWhitelist: [Ipc]
   sponsorOnly: true # Corvax-Sponsors
   sprites:
     - sprite: Corvax/Mobs/Customization/Ipc/ips_face.rsi
@@ -140,9 +126,8 @@
 
 - type: marking
   id: IpcRgbHespAltS
-  markingCategory: Snout
   bodyPart: Snout
-  speciesRestriction: [Ipc]
+  groupWhitelist: [Ipc]
   sponsorOnly: true # Corvax-Sponsors
   sprites:
     - sprite: Corvax/Mobs/Customization/Ipc/ips_face.rsi
@@ -150,9 +135,8 @@
 
 - type: marking
   id: IpcGogglesHespAltS
-  markingCategory: Snout
   bodyPart: Snout
-  speciesRestriction: [Ipc]
+  groupWhitelist: [Ipc]
   sponsorOnly: true # Corvax-Sponsors
   sprites:
     - sprite: Corvax/Mobs/Customization/Ipc/ips_face.rsi
@@ -160,9 +144,8 @@
 
 - type: marking
   id: IpcOffHespAltS
-  markingCategory: Snout
   bodyPart: Snout
-  speciesRestriction: [Ipc]
+  groupWhitelist: [Ipc]
   sponsorOnly: true # Corvax-Sponsors
   sprites:
     - sprite: Corvax/Mobs/Customization/Ipc/ips_face.rsi
@@ -170,9 +153,8 @@
 
 - type: marking
   id: IpcPinkS
-  markingCategory: Snout
   bodyPart: Snout
-  speciesRestriction: [Ipc]
+  groupWhitelist: [Ipc]
   sponsorOnly: true # Corvax-Sponsors
   sprites:
     - sprite: Corvax/Mobs/Customization/Ipc/ips_face.rsi
@@ -180,9 +162,8 @@
 
 - type: marking
   id: IpcRedS
-  markingCategory: Snout
   bodyPart: Snout
-  speciesRestriction: [Ipc]
+  groupWhitelist: [Ipc]
   sponsorOnly: true # Corvax-Sponsors
   sprites:
     - sprite: Corvax/Mobs/Customization/Ipc/ips_face.rsi
@@ -190,9 +171,8 @@
 
 - type: marking
   id: IpcShowerS
-  markingCategory: Snout
   bodyPart: Snout
-  speciesRestriction: [Ipc]
+  groupWhitelist: [Ipc]
   sponsorOnly: true # Corvax-Sponsors
   sprites:
     - sprite: Corvax/Mobs/Customization/Ipc/ips_face.rsi
@@ -200,9 +180,8 @@
 
 - type: marking
   id: IpcRainbowHespAltS
-  markingCategory: Snout
   bodyPart: Snout
-  speciesRestriction: [Ipc]
+  groupWhitelist: [Ipc]
   sponsorOnly: true # Corvax-Sponsors
   sprites:
     - sprite: Corvax/Mobs/Customization/Ipc/ips_face.rsi
@@ -210,9 +189,8 @@
 
 - type: marking
   id: IpcGogglesS
-  markingCategory: Snout
   bodyPart: Snout
-  speciesRestriction: [Ipc]
+  groupWhitelist: [Ipc]
   sponsorOnly: true # Corvax-Sponsors
   sprites:
     - sprite: Corvax/Mobs/Customization/Ipc/ips_face.rsi
@@ -220,9 +198,8 @@
 
 - type: marking
   id: IpcMonoeyeS
-  markingCategory: Snout
   bodyPart: Snout
-  speciesRestriction: [Ipc]
+  groupWhitelist: [Ipc]
   sponsorOnly: true # Corvax-Sponsors
   sprites:
     - sprite: Corvax/Mobs/Customization/Ipc/ips_face.rsi
@@ -230,9 +207,8 @@
 
 - type: marking
   id: IpcBlueS
-  markingCategory: Snout
   bodyPart: Snout
-  speciesRestriction: [Ipc]
+  groupWhitelist: [Ipc]
   sponsorOnly: true # Corvax-Sponsors
   sprites:
     - sprite: Corvax/Mobs/Customization/Ipc/ips_face.rsi
@@ -240,9 +216,8 @@
 
 - type: marking
   id: IpcTestS
-  markingCategory: Snout
   bodyPart: Snout
-  speciesRestriction: [Ipc]
+  groupWhitelist: [Ipc]
   sponsorOnly: true # Corvax-Sponsors
   sprites:
     - sprite: Corvax/Mobs/Customization/Ipc/ips_face.rsi
@@ -250,9 +225,8 @@
 
 - type: marking
   id: IpcRgbS
-  markingCategory: Snout
   bodyPart: Snout
-  speciesRestriction: [Ipc]
+  groupWhitelist: [Ipc]
   sponsorOnly: true # Corvax-Sponsors
   sprites:
     - sprite: Corvax/Mobs/Customization/Ipc/ips_face.rsi
@@ -260,9 +234,8 @@
 
 - type: marking
   id: IpcMusicS
-  markingCategory: Snout
   bodyPart: Snout
-  speciesRestriction: [Ipc]
+  groupWhitelist: [Ipc]
   sponsorOnly: true # Corvax-Sponsors
   sprites:
     - sprite: Corvax/Mobs/Customization/Ipc/ips_face.rsi
@@ -270,9 +243,8 @@
 
 - type: marking
   id: IpcConsoleS
-  markingCategory: Snout
   bodyPart: Snout
-  speciesRestriction: [Ipc]
+  groupWhitelist: [Ipc]
   sponsorOnly: true # Corvax-Sponsors
   sprites:
     - sprite: Corvax/Mobs/Customization/Ipc/ips_face.rsi
@@ -280,9 +252,8 @@
 
 - type: marking
   id: IpcPurpleS
-  markingCategory: Snout
   bodyPart: Snout
-  speciesRestriction: [Ipc]
+  groupWhitelist: [Ipc]
   sponsorOnly: true # Corvax-Sponsors
   sprites:
     - sprite: Corvax/Mobs/Customization/Ipc/ips_face.rsi
@@ -290,9 +261,8 @@
 
 - type: marking
   id: IpcOrangeS
-  markingCategory: Snout
   bodyPart: Snout
-  speciesRestriction: [Ipc]
+  groupWhitelist: [Ipc]
   sponsorOnly: true # Corvax-Sponsors
   sprites:
     - sprite: Corvax/Mobs/Customization/Ipc/ips_face.rsi
@@ -300,9 +270,8 @@
 
 - type: marking
   id: IpcWaitingS
-  markingCategory: Snout
   bodyPart: Snout
-  speciesRestriction: [Ipc]
+  groupWhitelist: [Ipc]
   sponsorOnly: true # Corvax-Sponsors
   sprites:
     - sprite: Corvax/Mobs/Customization/Ipc/ips_face.rsi

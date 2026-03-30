@@ -1,12 +1,12 @@
 ent-LootSpawnerMaterials = спавнер материалы
-    .suffix = Строительные материалы
     .desc = { ent-MarkerBase.desc }
+    .suffix = Строительные материалы
 ent-LootSpawnerMaterialsSupplementary = спавнер материалы
+    .desc = { ent-MarkerBase.desc }
     .suffix = Вспомогательные материалы
-    .desc = { ent-MarkerBase.desc }
 ent-LootSpawnerMaterialsHighValueConstruction = спавнер дорогостоящие материалы
-    .suffix = Строительные материалы
     .desc = { ent-MarkerBase.desc }
+    .suffix = Строительные материалы
 ent-LootSpawnerMaterialsHighValue = спавнер дорогостоящие материалы
     .desc = { ent-MarkerBase.desc }
 ent-LootSpawnerMaterialsSurplus = спавнер запас материалов

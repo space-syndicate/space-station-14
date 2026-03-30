@@ -89,6 +89,7 @@
         type: PaperBoundUserInterface
   - type: FaxableObject
   - type: PaperVisuals
+  - type: StationAiWhitelist
 # Corvax-Printer-Start
   - type: Material
   - type: Stack
@@ -476,3 +477,4 @@
       - !type:EmptyAllContainersBehaviour
       - !type:DoActsBehavior
         acts: [ "Destruction" ]
+  - type: StationAiWhitelist

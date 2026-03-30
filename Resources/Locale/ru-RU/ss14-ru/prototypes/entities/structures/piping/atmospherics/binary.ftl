@@ -21,5 +21,5 @@ ent-GasRecycler = переработчик газа
 ent-HeatExchanger = радиатор
     .desc = Переносит тепло между трубой и окружающей средой.
 ent-HeatExchangerBend = { ent-HeatExchanger }
-    .suffix = Угол
     .desc = { ent-HeatExchanger.desc }
+    .suffix = Угол
