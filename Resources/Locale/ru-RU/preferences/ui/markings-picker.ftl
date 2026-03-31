@@ -18,7 +18,7 @@ markings-limits = { $required ->
             *[other] Выберите до { $count } черт. { -markings-selection(selectable: $selectable) }
         }
 }
-markings-reorder = Выбраные черты
+markings-reorder = Выбранные черты
 
 humanoid-marking-modifier-respect-limits = Учитывать ограничения
 humanoid-marking-modifier-respect-group-sex = Учитывать ограничение расы и пола
@@ -31,7 +31,7 @@ humanoid-marking-modifier-prototype-id = ID прототипа:
 markings-organ-Torso = Туловище
 markings-organ-Head = Голова
 markings-organ-ArmLeft = Левая рука
-markings-organ-ArmRight = Права рука
+markings-organ-ArmRight = Правая рука
 markings-organ-HandRight = Правая кисть
 markings-organ-HandLeft = Левая кисть
 markings-organ-LegLeft = Левая нога
@@ -47,7 +47,7 @@ markings-layer-Hair = Волосы
 markings-layer-FacialHair = Лицевая растительность
 markings-layer-UndergarmentTop = Нижняя рубашка
 markings-layer-UndergarmentBottom = Трусы
-markings-layer-Chest = Туловщие
+markings-layer-Chest = Туловищие
 markings-layer-Head = Голова
 markings-layer-Snout = Нос
 markings-layer-SnoutCover = Нос (Покрытие)

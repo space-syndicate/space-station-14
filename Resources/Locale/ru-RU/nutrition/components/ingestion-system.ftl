@@ -30,7 +30,7 @@ ingestion-verb-drink = Пить
     *[false] { "" }
 }
 
-edible-nom = Ням. { $flavors }
+edible-nom = Ням. { $flavors }{ -edible-satiated(satiated: $satiated, verb: "есть") }
 edible-nom-other = Ням.
 edible-slurp = Сёрб. { $flavors }{ -edible-satiated(satiated: $satiated, verb: "пить") }
 edible-slurp-other = Сёрб.
