@@ -1,8 +1,8 @@
 ent-LockerSyndicatePersonalFilled = { ent-LockerSyndicatePersonal }
-    .desc = It's a personal storage unit for operative gear.
+    .desc = Это личное хранилище для рабочего снаряжения.
     .suffix = Заполненный
 ent-LockerSyndicateWallFilled = { ent-LockerWallSyndicate }
-    .desc = It's a personal storage unit for operative gear.
+    .desc = { LockerSyndicatePersonalFilled.desc }
     .suffix = Nukie, Filled
 ent-ClosetEmergencyFilledRandom = { ent-ClosetEmergency }
     .desc = { ent-ClosetEmergency.desc }
