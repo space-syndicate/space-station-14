@@ -64,5 +64,11 @@
             #supply - 8-10
             SalvageSpecialist: [ 4, 4 ]
             CargoTechnician: [ 4, 6 ]
-            #civilian - the tiders yearn for the mines
-            Passenger: [ -1, -1 ]
+            #civilian (3 - 4+)
+            Passenger: [ -1, -1 ]  #infinite, the tiders yearn for the mines
+            Clown: [ 3, 3 ] # this might be fun!
+            Mime: [ 2, 2 ]
+            Musician: [ 2, 2 ]
+            #silicon (3 - 5)
+            Borg: [ 2, 4 ]
+            StationAi: [ 1, 1 ]

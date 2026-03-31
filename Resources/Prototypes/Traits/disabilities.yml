@@ -106,3 +106,16 @@
   category: Disabilities
   components:
     - type: ImpairedMobility
+
+- type: trait
+  id: Fragile
+  name: trait-fragile-name
+  description: trait-fragile-desc
+  category: Disabilities
+  cost: 1
+  components:
+  - type: Slippery
+  - type: StepTrigger
+    requiredTriggeredSpeed: 1
+  - type: TriggerOnStepTrigger
+  - type: GibOnTrigger
