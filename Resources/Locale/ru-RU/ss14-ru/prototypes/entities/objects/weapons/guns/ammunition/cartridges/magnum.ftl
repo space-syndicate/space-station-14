@@ -1,12 +1,12 @@
 ent-BaseCartridgeMagnum = патрон (.45 магнум)
     .desc = { ent-BaseCartridge.desc }
 ent-CartridgeMagnum = патрон (.45 магнум)
-    .desc = Heavy magnum cartridge mostly used by revolvers. Standard kinetic ammunition is common and useful in most situations.
+    .desc = Тяжелый патрон «магнум», который в основном используется в револьверах. Стандартные кинетические боеприпасы распространены и эффективны в большинстве ситуаций.
 ent-CartridgeMagnumPractice = патрон (.45 магнум учебный)
-    .desc = Heavy magnum cartridge mostly used by revolvers. Practice ammunition fires a chalk projectile that stings a little, but otherwise causes no lasting damage.
+    .desc = Патрон «магнум» большого калибра, в основном используется в револьверах. Учебные патроны стреляют меловыми снарядами, которые слегка жалят, но не наносят серьезных повреждений.
 ent-CartridgeMagnumIncendiary = патрон (.45 магнум зажигательный)
-    .desc = Heavy magnum cartridge mostly used by revolvers. Incendiary ammunition contains a self-igniting compound that sets targets ablaze.
+    .desc = Тяжелый патрон «магнум», который в основном используется в револьверах. Зажигательные боеприпасы содержат самовоспламеняющийся состав, который поджигает цель.
 ent-CartridgeMagnumAP = патрон (.45 магнум бронебойный)
-    .desc = Heavy magnum cartridge mostly used by revolvers. Armor-piercing ammunition is renowned for its ability to cut straight through body armor.
+    .desc = Патрон «магнум» большого калибра, в основном используемый в револьверах. Бронебойные патроны известны своей способностью пробивать бронежилеты.
 ent-CartridgeMagnumUranium = патрон (.45 магнум урановый)
-    .desc = Heavy magnum cartridge mostly used by revolvers. Uranium ammunition replaces the lead core of the bullet with fissile material, irradiating targets from the inside.
+    .desc = Тяжелый патрон «магнум», который в основном используется в револьверах. Боеприпас заменён на уран, который облучает цель изнутри.

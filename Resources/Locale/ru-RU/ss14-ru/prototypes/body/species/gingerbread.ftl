@@ -1,10 +1,10 @@
-ent-AppearanceGingerbread = gingerbread appearance
+ent-AppearanceGingerbread = внешность пряничного человека
     .desc = { ent-BaseSpeciesAppearance.desc }
 ent-MobGingerbread = Урист МакПеченька
     .desc = { ent-AppearanceGingerbread.desc }
 ent-OrganGingerbread = { ent-OrganBase }
     .desc = { ent-OrganBase.desc }
-    .suffix = gingerbread
+    .suffix = пряник
 ent-OrganGingerbreadExternal = { ent-OrganGingerbread }
     .desc = { ent-OrganGingerbread.desc }
     .suffix = { ent-OrganGingerbread.suffix }
