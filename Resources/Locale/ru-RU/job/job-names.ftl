@@ -62,13 +62,13 @@ job-name-virologist = вирусолог
 job-name-zookeeper = зоотехник
 
 # antagonist jobs
-job-name-ninja = Ниндзя
-job-name-syndicate = Синдикат
-job-name-syndicate-commander = Командир оперативников
-job-name-syndicate-corpsman = Медик оперативников
-job-name-syndicate-operative = Ядерный Оперативник
-job-name-pirate = Пират
-job-name-wizard = Волшебник
+job-name-ninja = ниндзя
+job-name-syndicate = синдикат
+job-name-syndicate-commander = командир оперативников
+job-name-syndicate-corpsman = медик оперативников
+job-name-syndicate-operative = ядерный оперативник
+job-name-pirate = пират
+job-name-wizard = волшебник
 job-name-zombie = зомби
 
 # Job titles
