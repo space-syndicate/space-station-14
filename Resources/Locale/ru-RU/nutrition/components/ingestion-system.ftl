@@ -32,9 +32,9 @@ ingestion-verb-drink = Пить
 
 edible-nom = Ням. { $flavors }
 edible-nom-other = Ням.
-edible-slurp = Сёрб. { $flavors }{ -edible-satiated(satiated: $satiated, verb: "drink") }
+edible-slurp = Сёрб. { $flavors }{ -edible-satiated(satiated: $satiated, verb: "пить") }
 edible-slurp-other = Сёрб.
-edible-swallow = Вы проглатываете { $food }.{ -edible-satiated(satiated: $satiated, verb: "swallow") }
+edible-swallow = Вы проглатываете { $food }.{ -edible-satiated(satiated: $satiated, verb: "проглотить") }
 edible-gulp = Глоть. { $flavors }
 edible-gulp-other = Глоть.
 
