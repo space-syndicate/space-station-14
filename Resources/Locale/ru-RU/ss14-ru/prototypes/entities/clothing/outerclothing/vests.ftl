@@ -4,5 +4,5 @@ ent-ClothingOuterVest = жилет
     .desc = Плотный жилет с прорезиненной, водонепроницаемой оболочкой.
 ent-ClothingOuterVestTank = обвязка для баллона
     .desc = Простая обвязка, которая может удерживать газовый баллон.
-ent-ClothingOuterVestPress = press vest
-    .desc = A cloth vest for the fearless reporter in the field. Go land an interview with that space dragon!
+ent-ClothingOuterVestPress = жилет прессы
+    .desc = Жилет из ткани для бесстрашного репортера в полевых условиях. Вперед, берись за интервью с этим космическим драконом!
