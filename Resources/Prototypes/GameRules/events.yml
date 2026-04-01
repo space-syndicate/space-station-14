@@ -379,7 +379,7 @@
     endAnnouncement: station-event-gas-leak-end-announcement
     weight: 8
     endAudio:
-      path: /Audio/Announcements/gasleak_end.ogg # Corvax-Announcements
+      path: /Audio/Announcements/Intern/gasleak_end.ogg
       params:
         volume: -4
   - type: GasLeakRule
@@ -407,6 +407,10 @@
       path: /Audio/Announcements/Intern/poweroff.ogg
       params:
         volume: -4
+    endAudio:
+      path: /Audio/Announcements/Intern/poweron.ogg
+      params:
+        volume: -2
     duration: 60
     maxDuration: 120
   - type: PowerGridCheckRule
@@ -421,6 +425,12 @@
     endAnnouncement: station-event-solar-flare-end-announcement
     startAudio:
       path: /Audio/Announcements/Intern/radiation.ogg # not exactly the same event, but close
+      params:
+        volume: -2
+    endAudio:
+      path: /Audio/Announcements/Intern/radpassed.ogg
+      params:
+        volume: -2
     duration: 120
     maxDuration: 240
   - type: SolarFlareRule
