@@ -89,19 +89,6 @@
       Kidneys: OrganVulpkaninKidneys
   - type: HumanoidProfile
     species: Vulpkanin
-  #Corvax-Vulp_Port start
-  - type: ContentEye
-    targetZoom: "1.0, 1.0"
-    maxZoom: "1.0, 1.0"
-  - type: GrowlingAccent
-  - type: Respirator
-    damage:
-      types:
-        Asphyxiation: 2.0
-    damageRecovery:
-      types:
-        Asphyxiation: -2.0
-#Corvax-Vulp_Port end
   - type: Inventory
     speciesId: vulpkanin
 #Corvax-Vulp_Port start
@@ -246,6 +233,16 @@
       reagents:
       - ReagentId: SulfurBlood
         Quantity: 300
+  # Corvax-Vulp_Port start
+  - type: GrowlingAccent
+  - type: Respirator
+    damage:
+      types:
+        Asphyxiation: 2.0
+    damageRecovery:
+      types:
+        Asphyxiation: -2.0
+  # Corvax-Vulp_Port end
 
 - type: entity
   parent: OrganBase
