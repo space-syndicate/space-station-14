@@ -1,18 +1,4 @@
 Entries:
-- author: jessicamaybe
-  changes:
-  - message: Added swabs and an emag inventory to the biogenerator
-    type: Tweak
-  id: 9078
-  time: '2025-10-12T00:15:18.0000000+00:00'
-  url: https://github.com/space-wizards/space-station-14/pull/39037
-- author: SuperGDPWYL
-  changes:
-  - message: Added the Syndicate ID Card to the uplink for 1 TC.
-    type: Add
-  id: 9079
-  time: '2025-10-12T00:56:09.0000000+00:00'
-  url: https://github.com/space-wizards/space-station-14/pull/38381
 - author: aada
   changes:
   - message: Cannabis no longer stacks infinitely. Sorry, botanists!
@@ -4033,3 +4019,17 @@ Entries:
   id: 9589
   time: '2026-03-25T13:49:55.0000000+00:00'
   url: https://github.com/space-wizards/space-station-14/pull/43331
+- author: salarua
+  changes:
+  - message: Chat dialogue now appears in curly quotes rather than straight quotes.
+    type: Tweak
+  id: 9590
+  time: '2026-03-27T17:53:58.0000000+00:00'
+  url: https://github.com/space-wizards/space-station-14/pull/43350
+- author: Velken
+  changes:
+  - message: Mail no longer goes all to one person per batch.
+    type: Fix
+  id: 9591
+  time: '2026-03-27T23:00:25.0000000+00:00'
+  url: https://github.com/space-wizards/space-station-14/pull/43361

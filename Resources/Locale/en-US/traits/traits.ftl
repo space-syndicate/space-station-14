@@ -65,3 +65,6 @@ trait-hemophilia-desc = Your body fails to make blood clots.
 
 trait-impaired-mobility-name = Impaired Mobility
 trait-impaired-mobility-desc = You have difficulty moving without a mobility aid.
+
+trait-fragile-name = Fragile
+trait-fragile-desc = Your body is extremely susceptible to getting gibbed. Don't let anyone step on your feet!
