@@ -7,7 +7,7 @@ blocking-reduction-value = - Получает на [color=lightblue]{ $value }[/
 
 # Shown when examining the shield. Each entry represents the shield's health condition
 comp-shield-damaged-1 = Он выглядит нетронутым.
-comp-shield-damaged-2 = На нем есть несколько царапин.
+comp-shield-damaged-2 = На нём несколько царапин.
 comp-shield-damaged-3 = В нем несколько небольших отверстий и вмятин.
 comp-shield-damaged-4 = [color=yellow]В нем есть несколько отверстий и погнутых деталей.[/color]
 comp-shield-damaged-5 = [color=orange]У него есть глубокие трещины, несколько дырок и отломанные части.[/color]
