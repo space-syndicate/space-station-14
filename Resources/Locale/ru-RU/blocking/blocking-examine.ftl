@@ -11,7 +11,7 @@ comp-shield-damaged-2 = На нём несколько царапин.
 comp-shield-damaged-3 = На нём имеются небольшие вмятины и выбоины
 comp-shield-damaged-4 = [color=yellow]На нём несколько отверстий и искривлений.[/color]
 comp-shield-damaged-5 = [color=orange]У него есть глубокие трещины, несколько дырок и отломанные части.[/color]
-comp-shield-damaged-6 = [color=red]Он подвергся крайней жестокости и разваливается на части.[/color]
+comp-shield-damaged-6 = [color=red]Он подвергся крайней жестокости и вот-вот развалится.[/color]
 
 # Shown when examining the e-shield. Each entry represents the e-shield's health condition
 comp-eshield-damaged-1 = Он выглядит нетронутым.
