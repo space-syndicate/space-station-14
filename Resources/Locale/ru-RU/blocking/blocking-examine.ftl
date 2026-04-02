@@ -6,7 +6,7 @@ blocking-coefficient-value = - Получает [color=lightblue]{ $value }%[/co
 blocking-reduction-value = - Получает на [color=lightblue]{ $value }[/color] меньше [color=yellow]{ $type }[/color] урона.
 
 # Shown when examining the shield. Each entry represents the shield's health condition
-comp-shield-damaged-1 = Он выглядит нетронутым.
+comp-shield-damaged-1 = Выглядит прямо с завода.
 comp-shield-damaged-2 = На нём несколько царапин.
 comp-shield-damaged-3 = На нём имеются небольшие вмятины и выбоины
 comp-shield-damaged-4 = [color=yellow]На нём несколько отверстий и искривлений.[/color]
