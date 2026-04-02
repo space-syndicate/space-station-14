@@ -5,6 +5,6 @@ command-description-xenoartifact-printMatrix =
 command-description-xenoartifact-totalResearch =
     Получает все исследовательские очки, которые в данный момент можно извлечь из артефакта.
 command-description-xenoartifact-averageResearch =
-    Вычисляет количество очков исследований, которое сгенерированный ксеноартификат выдаст при полной активации.
+    Вычисляет количество очков исследований, которое сгенерированный ксеноартефакт выдаст при полной активации.
 command-description-xenoartifact-unlockAllNodes =
     Разблокирует все узлы артефакта.
