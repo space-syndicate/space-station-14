@@ -1,6 +1,6 @@
 feedbackpopup-window-name = Запрос на обратную связь
 
-feedbackpopup-control-button-text = Открыть Ссылку
+feedbackpopup-control-button-text = Открыть ссылку
 
 feedbackpopup-control-total-surveys = {$num ->
     [one] { $num } запись

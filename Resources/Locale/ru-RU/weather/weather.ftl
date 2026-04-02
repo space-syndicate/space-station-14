@@ -1,5 +1,5 @@
-cmd-weatherremove-desc = Удалить определённую погоду из карты.
-cmd-weatherset-desc = Удалить все погодные условия кроме выбраного. Если выбраной погоды нет, добавляет её.
+cmd-weatherremove-desc = Удалить определённую погоду с карты.
+cmd-weatherset-desc = Удалить все погодные условия кроме выбранного. Если выбранной погоды нет, добавляет её.
 cmd-weatheradd-desc = Добавить определённую погоду на карту.
 
 cmd-weatherremove-help = weatherremove <mapId> <prototype>

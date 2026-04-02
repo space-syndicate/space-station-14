@@ -37,7 +37,7 @@ chat-emote-name-snarl = Скалиться
 chat-emote-name-whine = Скулить
 chat-emote-name-howl = Выть
 chat-emote-name-growl = Рычать
-chat-emote-name-flap = Хлопнуть крыльями
+chat-emote-name-flap = Взмахнуть крыльями
 
 # Message
 chat-emote-msg-scream = кричит!
