@@ -16,5 +16,5 @@ comp-shield-damaged-6 = [color=red]Он подвергся крайней жес
 # Shown when examining the e-shield. Each entry represents the e-shield's health condition
 comp-eshield-damaged-1 = Выглядит прямо с завода.
 comp-eshield-damaged-2 = [color=yellow]Индикатор заряда горит жёлтым.[/color]
-comp-eshield-damaged-3 = [color=orange]Индикатор заряда батареи горит оранжевым, энергетический щит мигает.[/color]
+comp-eshield-damaged-3 = [color=orange]Индикатор заряда горит оранжевым, энергетический щит мигает.[/color]
 comp-eshield-damaged-4 = [color=red]Индикатор заряда горит красным, энергетический щит едва держится включённым.[/color]
