@@ -35,6 +35,14 @@
     enum.HumanoidVisualLayers.RFoot:
       limit: 1
       required: false
+    # Corvax-Sponsors-start
+    enum.HumanoidVisualLayers.HeadTop:
+      limit: 1
+      required: false
+    enum.HumanoidVisualLayers.Tail:
+      limit: 1
+      required: false
+    # Corvax-Sponsors-end
   appearances:
     enum.HumanoidVisualLayers.Hair:
       layerAlpha: 0.72
