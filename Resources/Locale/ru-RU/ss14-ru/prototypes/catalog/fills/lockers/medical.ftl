@@ -1,13 +1,13 @@
 ent-LockerMedicineFilled = { ent-LockerMedicine }
     .desc = { ent-LockerMedicine.desc }
     .suffix = Заполненный
-ent-LockerWallMedicalFilled = medicine wall locker
+ent-LockerWallMedicalFilled = { ent-LockerMedicine }
     .desc = { ent-LockerWallMedical.desc }
     .suffix = Заполненный
 ent-LockerMedicalFilled = { ent-LockerMedical }
     .desc = { ent-LockerMedical.desc }
     .suffix = Заполненный
-ent-LockerWallMedicalDoctorFilled = medical doctor's wall locker
+ent-LockerWallMedicalDoctorFilled = { ent-LockerMedicine }
     .desc = { ent-LockerWallMedical.desc }
     .suffix = Заполненный
 ent-LockerChemistryFilled = { ent-LockerChemistry }

@@ -4,8 +4,8 @@ gun-fire-rate-examine = Скорострельность [color={ $color }]{ $fi
 gun-selector-verb = Изменить на { $mode }
 gun-selected-mode = Выбран { $mode }
 gun-disabled = Вы не можете использовать оружие!
-gun-set-fire-mode-examine = Set to [color=yellow]{ $mode }[/color].
-gun-set-fire-mode-popup = Changed to { $mode }
+gun-set-fire-mode-examine = Установлен в [color=yellow]{ $mode }[/color].
+gun-set-fire-mode-popup = Изменён на { $mode }
 gun-magazine-whitelist-fail = Это не помещается в оружие!
 gun-magazine-fired-empty = Нет патронов!
 

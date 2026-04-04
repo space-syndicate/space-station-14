@@ -36,7 +36,7 @@ roles-antag-space-ninja-objective = Используйте свою скрытн
 roles-antag-paradox-clone-name = Парадоксальный клон
 roles-antag-paradox-clone-objective = Странная пространственно-временная аномалия телепортировала вас в другую реальность! Теперь вам предстоит найти своего двойника, убить и заменить его.
 
-roles-antag-pirate-name = Pirate
+roles-antag-pirate-name = Пират
 
 roles-antag-thief-name = Вор
 roles-antag-thief-objective = Пополните свою личную коллекцию имуществом Nanotrasen, не прибегая к насилию.

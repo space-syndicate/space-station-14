@@ -1,10 +1,10 @@
-ent-AppearanceDwarf = dwarf appearance
+ent-AppearanceDwarf = внешность дворфа
     .desc = { ent-AppearanceHuman.desc }
-ent-MobDwarf = Urist McHands The Dwarf
+ent-MobDwarf = Урист МакХэндс Дворф
     .desc = { ent-AppearanceDwarf.desc }
 ent-OrganDwarf = { ent-OrganBase }
     .desc = { ent-OrganBase.desc }
-    .suffix = Dwarf
+    .suffix = Дворф
 ent-OrganDwarfMetabolizer = { "" }
     .desc = { "" }
 ent-OrganDwarfStomach = { ent-OrganHumanStomach }

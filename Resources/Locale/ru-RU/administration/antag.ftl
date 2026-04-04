@@ -8,7 +8,7 @@ admin-verb-make-head-rev = Сделать цель главой революци
 admin-verb-make-thief = Сделать цель вором.
 admin-verb-make-paradox-clone = Создать роль призрака парадоксального клона цели.
 admin-verb-make-wizard = Сделать цель волшебником.
-admin-verb-make-space-ninja = Make the target into a Space Ninja.
+admin-verb-make-space-ninja = Сделать цель космическим ниндзя.
 admin-verb-make-changeling = Сделать цель генокрадом.
 
 
@@ -21,7 +21,7 @@ admin-verb-text-make-head-rev = Сделать главой революции
 admin-verb-text-make-thief = Сделать вором
 admin-verb-text-make-paradox-clone = Создать парадоксального клона
 admin-verb-text-make-wizard = Сделать волшебником
-admin-verb-text-make-space-ninja = Make Ninja
+admin-verb-text-make-space-ninja = Сделать ниндзя
 admin-verb-text-make-changeling = Сделать генокрадом (WIP)
 
 admin-overlay-antag-classic = АНТАГ

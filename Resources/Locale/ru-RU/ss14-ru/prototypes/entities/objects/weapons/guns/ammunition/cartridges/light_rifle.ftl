@@ -1,10 +1,10 @@
 ent-BaseCartridgeLightRifle = патрон (.30 винтовочный)
     .desc = { ent-BaseCartridge.desc }
 ent-CartridgeLightRifle = патрон (.30 винтовочный)
-    .desc = A classic intermediate cartridge used by many combat rifles and LMGs. Standard kinetic ammunition is common and useful in most situations.
+    .desc = Классический патрон, используемый во многих боевых винтовках и ручных пулемётах. Стандартные кинетические боеприпасы распространены и эффективны в большинстве ситуаций.
 ent-CartridgeLightRiflePractice = патрон (.30 винтовочный учебный)
-    .desc = A classic intermediate cartridge used by many combat rifles and LMGs. Practice ammunition fires a chalk projectile that stings a little, but otherwise causes no lasting damage.
+    .desc = Классический патрон, используемый во многих боевых винтовках и ручных пулемётах. При стрельбе холостыми патронами используется снаряд с мелом, который слегка жалит, но не причиняет серьёзных повреждений.
 ent-CartridgeLightRifleIncendiary = патрон (.30 винтовочный зажигательный)
-    .desc = A classic intermediate cartridge used by many combat rifles and LMGs. Incendiary ammunition contains a self-igniting compound that sets targets ablaze.
+    .desc = Классический патрон, используемый во многих боевых винтовках и ручных пулеметах. Зажигательные боеприпасы содержат самовоспламеняющееся вещество, которое поджигает цели.
 ent-CartridgeLightRifleUranium = патрон (.30 винтовочный урановый)
-    .desc = A classic intermediate cartridge used by many combat rifles and LMGs. Uranium ammunition replaces the lead core of the bullet with fissile material, irradiating targets from the inside.
+    .desc = Классический патрон, используемый во многих боевых винтовках и ручных пулемётах. Урановые боеприпасы заменяют свинцовую сердцевину пули расщепляющимся материалом, который облучает цель изнутри.

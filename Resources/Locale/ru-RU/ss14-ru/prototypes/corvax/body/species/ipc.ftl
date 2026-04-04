@@ -1,10 +1,10 @@
-ent-AppearanceIpc = Ipc appearance
+ent-AppearanceIpc = внешность КПБ
     .desc = { ent-BaseSpeciesAppearance.desc }
 ent-MobIpc = Урсист МакКПБ
     .desc = { ent-AppearanceIpc.desc }
 ent-OrganIpc = { ent-OrganBase }
     .desc = { ent-OrganBase.desc }
-    .suffix = Ipc
+    .suffix = КПБ
 ent-OrganIpcExternal = { ent-OrganIpc }
     .desc = { ent-OrganIpc.desc }
     .suffix = { ent-OrganIpc.suffix }

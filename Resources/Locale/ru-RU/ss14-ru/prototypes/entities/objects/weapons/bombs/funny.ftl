@@ -10,4 +10,4 @@ ent-TrashBananaPeelExplosiveUnarmed = банан
     .suffix = Не активирован
 ent-SnapPopExplosive = { ent-SnapPop }
     .desc = { ent-SnapPop.desc }
-    .suffix = explosive
+    .suffix = Взрывчатка

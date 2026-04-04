@@ -6,15 +6,15 @@ blocking-coefficient-value = - Получает [color=lightblue]{ $value }%[/co
 blocking-reduction-value = - Получает на [color=lightblue]{ $value }[/color] меньше [color=yellow]{ $type }[/color] урона.
 
 # Shown when examining the shield. Each entry represents the shield's health condition
-comp-shield-damaged-1 = It looks fully intact.
-comp-shield-damaged-2 = It has a few scratches.
-comp-shield-damaged-3 = It has a few small holes and divots.
-comp-shield-damaged-4 = [color=yellow]It has several holes and bent parts.[/color]
-comp-shield-damaged-5 = [color=orange]It has deep cracks, several holes and parts of it have broken off.[/color]
-comp-shield-damaged-6 = [color=red]It's been extremely brutalized and is nearly falling apart.[/color]
+comp-shield-damaged-1 = Выглядит прямо с завода.
+comp-shield-damaged-2 = На нём несколько царапин.
+comp-shield-damaged-3 = На нём имеются небольшие вмятины и выбоины
+comp-shield-damaged-4 = [color=yellow]На нём несколько отверстий и искривлений.[/color]
+comp-shield-damaged-5 = [color=orange]У него есть глубокие трещины, несколько дырок и отломанные части.[/color]
+comp-shield-damaged-6 = [color=red]Он подвергся крайней жестокости и вот-вот развалится.[/color]
 
 # Shown when examining the e-shield. Each entry represents the e-shield's health condition
-comp-eshield-damaged-1 = It looks fully intact.
-comp-eshield-damaged-2 = [color=yellow]The battery light is yellow.[/color]
-comp-eshield-damaged-3 = [color=orange]The battery light is orange, the hardlight flickers.[/color]
-comp-eshield-damaged-4 = [color=red]The battery light is red, the hardlight can barely stay alight.[/color]
+comp-eshield-damaged-1 = Выглядит прямо с завода.
+comp-eshield-damaged-2 = [color=yellow]Индикатор заряда горит жёлтым.[/color]
+comp-eshield-damaged-3 = [color=orange]Индикатор заряда горит оранжевым, энергетический щит мигает.[/color]
+comp-eshield-damaged-4 = [color=red]Индикатор заряда горит красным, энергетический щит едва держится включённым.[/color]

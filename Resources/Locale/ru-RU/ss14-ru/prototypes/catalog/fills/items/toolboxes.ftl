@@ -24,4 +24,4 @@ ent-ToolboxGoldFilled = золотой ящик для инструментов
     .suffix = Заполненный
 ent-FoolboxFilled = { ent-Foolbox }
     .desc = { ent-Foolbox.desc }
-    .suffix = Filled
+    .suffix = Заполненный

@@ -1,10 +1,10 @@
-ent-AppearanceTajaran = Tajaran appearance
+ent-AppearanceTajaran = внешность таярана
     .desc = { ent-BaseSpeciesAppearance.desc }
 ent-MobTajaran = Урист МакТаяр
     .desc = { ent-AppearanceTajaran.desc }
 ent-OrganTajaran = { ent-OrganBase }
     .desc = { ent-OrganBase.desc }
-    .suffix = tajaran
+    .suffix = таяран
 ent-OrganTajaranMetabolizer = { "" }
     .desc = { "" }
 ent-OrganTajaranInternal = { ent-OrganTajaran }

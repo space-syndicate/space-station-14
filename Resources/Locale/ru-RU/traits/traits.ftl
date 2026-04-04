@@ -54,8 +54,8 @@ trait-french-desc = Ваш акцент, похоже, имеет определ
 trait-spanish-name = Испанский акцент
 trait-spanish-desc = Hola señor, как пройти в la biblioteca.
 
-trait-scottish-name = Scottish accent
-trait-scottish-desc = Ye're speaking like ae proper Scot!
+trait-scottish-name = Шотландский акцент
+trait-scottish-desc = Ты говоришь как настоящий шотландец!
 
 trait-painnumbness-name = Невосприимчивость к боли
 trait-painnumbness-desc = Вы не чувствуете боли и не осознаёте, насколько вы ранены.

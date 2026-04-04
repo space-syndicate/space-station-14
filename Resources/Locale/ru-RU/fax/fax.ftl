@@ -29,7 +29,7 @@ fax-machine-printed-paper-name = распечатанная бумага
 
 fax-machine-sender-info =
     ─────────────────────────────────────
-    Fax sent
-    from: { $sender_name } [address: { $sender_addr }]
-    to: { $recipient_name } [address: { $recipient_addr }]
-    at: { $time }
+    Факс отправлен
+    от: { $sender_name } [address: { $sender_addr }]
+    кому: { $recipient_name } [address: { $recipient_addr }]
+    когда: { $time }

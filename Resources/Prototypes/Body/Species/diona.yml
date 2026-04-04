@@ -37,7 +37,6 @@
   id: AppearanceDiona
   name: diona appearance
   components:
-  - type: Pacified # Corvax-DionaPacifist
   - type: Inventory
     templateId: diona
     femaleDisplacements:
@@ -162,6 +161,7 @@
     proto: diona
   - type: BodyEmotes
     soundsId: DionaBodyEmotes
+  - type: Pacified # Corvax-DionaPacifist
   - type: IgnoreKudzu
   - type: IgniteOnHeatDamage
     fireStacks: 1

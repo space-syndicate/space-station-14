@@ -26,15 +26,15 @@ ingestion-verb-drink = Пить
 # Edible Component
 
 -edible-satiated = { $satiated ->
-    [true] { " " }You don't feel like you could { $verb } any more.
-  *[false] { "" }
+    [true] { " " }Вам кажется вы не можете больше { $verb }.
+    *[false] { "" }
 }
 
-edible-nom = Ням. { $flavors }
+edible-nom = Ням. { $flavors }{ -edible-satiated(satiated: $satiated, verb: "есть") }
 edible-nom-other = Ням.
-edible-slurp = Сёрб. { $flavors }
+edible-slurp = Сёрб. { $flavors }{ -edible-satiated(satiated: $satiated, verb: "пить") }
 edible-slurp-other = Сёрб.
-edible-swallow = Вы проглатываете { $food }
+edible-swallow = Вы проглатываете { $food }.{ -edible-satiated(satiated: $satiated, verb: "проглотить") }
 edible-gulp = Глоть. { $flavors }
 edible-gulp-other = Глоть.
 
@@ -57,5 +57,5 @@ edible-verb-pill = глотать
 ## Force feeding
 
 edible-force-feed = { CAPITALIZE($user) } пытается заставить вас что-то { $verb }!
-edible-force-feed-success = { CAPITALIZE($user) } заставил вас что-то { $verb }! { $flavors }
+edible-force-feed-success = { CAPITALIZE($user) } заставил вас что-то { $verb }! { $flavors }{ -edible-satiated(satiated: $satiated, verb: $verb) }
 edible-force-feed-success-user = Вы успешно накормили { $target }
