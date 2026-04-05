@@ -1,17 +1,7 @@
 # Top level timer for master medical players
 - type: loadoutEffectGroup
   id: SeniorPhysician
-  effects:
-  - !type:JobRequirementLoadoutEffect
-    requirement:
-      !type:RoleTimeRequirement
-      role: JobChemist
-      time: 20h # Corvax-RoleTime
-  - !type:JobRequirementLoadoutEffect
-    requirement:
-      !type:RoleTimeRequirement
-      role: JobMedicalDoctor
-      time: 20h # Corvax-RoleTime
+  effects: # Corvax requirements
   - !type:JobRequirementLoadoutEffect
     requirement:
       !type:DepartmentTimeRequirement
