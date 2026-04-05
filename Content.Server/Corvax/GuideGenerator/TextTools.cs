@@ -1,3 +1,5 @@
+using System.Linq;
+using System.Text.RegularExpressions;
 using Robust.Shared.Prototypes;
 
 namespace Content.Server.Corvax.GuideGenerator;
@@ -59,5 +61,34 @@ public sealed class TextTools
         }
 
         return proto.Name;
+    }
+
+    private static readonly Regex SuffixTokenEdgeGarbageRegex =
+        new(@"^[\p{P}\p{S}\s]+|[\p{P}\p{S}\s]+$", RegexOptions.Compiled);
+
+    public static string NormalizeSuffixToken(string token)
+    {
+        return string.IsNullOrWhiteSpace(token)
+            ? string.Empty
+            : SuffixTokenEdgeGarbageRegex.Replace(token, string.Empty);
+    }
+
+    public static string GetEditorSuffix(
+        string? editorSuffix,
+        IReadOnlySet<string> ignoredTokens,
+        Func<string, string> normalizeToken)
+    {
+        if (string.IsNullOrWhiteSpace(editorSuffix))
+            return string.Empty;
+
+        var parts = editorSuffix
+            .Split([',', ';'], StringSplitOptions.RemoveEmptyEntries)
+            .Select(part => part.Trim())
+            .Where(part => !ignoredTokens.Contains(normalizeToken(part)))
+            .ToArray();
+
+        return parts.Length > 0
+            ? string.Join(", ", parts).ToLowerInvariant()
+            : string.Empty;
     }
 }
