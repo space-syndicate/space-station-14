@@ -39,10 +39,10 @@
       limit: 1
       required: false
     enum.HumanoidVisualLayers.Tail:
-      limit: 1 # Corvax-Sponsors
+      limit: 0
       required: false
     enum.HumanoidVisualLayers.Special:
-      limit: 1 # Corvax-Sponsors
+      limit: 0
       required: false
 
 - type: entity
