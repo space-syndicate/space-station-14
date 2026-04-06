@@ -396,7 +396,9 @@ public sealed class EntityScreenshotRenderService
             return false;
 
         // Keep the old render-target path for uncommon transformed sprites.
-        if (spriteComp.Scale != Vector2.One || spriteComp.Rotation != Angle.Zero)
+        if (spriteComp.Scale != Vector2.One ||
+            spriteComp.Rotation != Angle.Zero ||
+            spriteComp.EnableDirectionOverride)
             return false;
 
         var size = renderBounds.Size;
@@ -415,7 +417,7 @@ public sealed class EntityScreenshotRenderService
                 return false;
 
             if (!TryGetLayerImage(spriteLayer, direction, out var sourceImage, out var sourceRect))
-                continue;
+                return false;
 
             var drawColor = spriteComp.Color * spriteLayer.Color;
             var drawOffset = ToPixelOffset(spriteComp.Offset + spriteLayer.Offset) - renderBounds.Min;
