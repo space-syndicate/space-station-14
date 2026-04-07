@@ -10,6 +10,16 @@
   ### Магистрату запрещено
   <FTLTextpart Key="guidebook-SOP-Magistrate-prohibited"/>
 
+  ## СРП Адвоката
+  ### Адвокат обязан
+  <FTLTextpart Key="guidebook-SOP-Lawyer-must"/>
+
+  ### Адвокат имеет право
+  <FTLTextpart Key="guidebook-SOP-Lawyer-right"/>
+
+  ### Адвокату запрещено
+  <FTLTextpart Key="guidebook-SOP-Lawyer-prohibited"/>
+
   ## СРП Агента внутренних дел
   ### Агент внутренних дел обязан
   <FTLTextpart Key="guidebook-SOP-IAA-must"/>
@@ -24,19 +34,21 @@
   ## Процедура внутреннего расследования
   <FTLTextpart Key="guidebook-SOP-legal-procedure-internal-investigation"/>
 
-  ## Процедура обращения к магистрату
-  <FTLTextpart Key="guidebook-SOP-legal-procedure-appeal-to-magistrate"/>
-
-  ## Процедура суда
+  ## Процедура корпоративного суда
   ### Общие положения
   <FTLTextpart Key="guidebook-SOP-legal-court-general"/>
 
-  ### Нормы поведения в суде
-  <FTLTextpart Key="guidebook-SOP-legal-court-behavior"/>
+  ### Общие нормы суда
+  <FTLTextpart Key="guidebook-SOP-legal-court-norms"/>
 
-  ### Открытый суд
-  <FTLTextpart Key="guidebook-SOP-legal-court-open"/>
+  ### Обязанности сторон
+  <FTLTextpart Key="guidebook-SOP-legal-court-responsibilities"/>
 
-  ### Закрытый суд
-  <FTLTextpart Key="guidebook-SOP-legal-court-closed"/>
+  ## Судебное разбирательство
+  ### Судебное разбирательство
+  <FTLTextpart Key="guidebook-SOP-legal-court-litigation"/>
+
+  ### Вынесение вердикта
+  <FTLTextpart Key="guidebook-SOP-legal-court-verdict"/>
+
 </Document>
