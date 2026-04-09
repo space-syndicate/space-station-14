@@ -51,7 +51,7 @@
   components:
   - type: Sprite
     sprite: Corvax/Objects/Devices/pda.rsi
-    state: pda-magistrat
+    state: pda-magistrate
   - type: Pda
     id: MagistrateIDCard
     penSlot:
