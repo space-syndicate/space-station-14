@@ -2,7 +2,6 @@
 - type: loadoutEffectGroup
   id: SeniorOfficer
   effects:
-  effects:
   - !type:JobRequirementLoadoutEffect
     requirement:
       !type:RoleTimeRequirement
