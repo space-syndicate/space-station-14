@@ -1,7 +1,23 @@
 # Senior Time
 - type: loadoutEffectGroup
   id: SeniorOfficer
-  effects: # Corvax requirements
+  effects:
+  effects:
+  - !type:JobRequirementLoadoutEffect
+    requirement:
+      !type:RoleTimeRequirement
+      role: JobWarden
+      time: 6h # Corvax-RoleTime-Start
+  - !type:JobRequirementLoadoutEffect
+    requirement:
+      !type:RoleTimeRequirement
+      role: JobDetective
+      time: 2h
+  - !type:JobRequirementLoadoutEffect
+    requirement:
+      !type:RoleTimeRequirement
+      role: JobSecurityOfficer
+      time: 6h # Corvax-RoleTime-End
   - !type:JobRequirementLoadoutEffect
     requirement:
       !type:DepartmentTimeRequirement

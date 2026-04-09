@@ -1,7 +1,7 @@
 # Senior Time
 - type: loadoutEffectGroup
   id: SeniorResearcher
-  effects: # Corvax requirements
+  effects:
   - !type:JobRequirementLoadoutEffect
     requirement:
       !type:DepartmentTimeRequirement

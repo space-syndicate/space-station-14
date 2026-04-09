@@ -1,7 +1,17 @@
 # Senior times
 - type: loadoutEffectGroup
   id: SeniorEngineering
-  effects: # Corvax requirements
+  effects:
+  - !type:JobRequirementLoadoutEffect
+    requirement:
+      !type:RoleTimeRequirement
+      role: JobAtmosphericTechnician
+      time: 6h # Corvax-RoleTime
+  - !type:JobRequirementLoadoutEffect
+    requirement:
+      !type:RoleTimeRequirement
+      role: JobStationEngineer
+      time: 6h # Corvax-RoleTime
   - !type:JobRequirementLoadoutEffect
     requirement:
       !type:DepartmentTimeRequirement
