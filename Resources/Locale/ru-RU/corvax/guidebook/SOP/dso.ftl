@@ -167,4 +167,4 @@ guidebook-SOP-ERTJanitor-prohibited =
 
 # Infobox
 guidebook-SOP-dso-infobox =
-    Информацией на данной странице не обладает ни один сотрудник станции.
+    [bold]Информацией на данной странице не обладает ни один сотрудник станции.[/bold]
