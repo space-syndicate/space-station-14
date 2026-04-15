@@ -4,8 +4,8 @@ meta:
   engineVersion: 270.1.0
   forkId: ""
   forkVersion: ""
-  time: 04/14/2026 12:27:45
-  entityCount: 21737
+  time: 04/15/2026 20:13:35
+  entityCount: 21738
 maps:
 - 1
 grids:
@@ -75140,6 +75140,17 @@ entities:
       rot: 3.141592653589793 rad
       pos: -20.5,-24.5
       parent: 2
+  - uid: 5169
+    components:
+    - type: Transform
+      pos: 20.5,27.5
+      parent: 2
+  - uid: 5170
+    components:
+    - type: Transform
+      rot: -1.5707963267948966 rad
+      pos: 27.5,-46.5
+      parent: 2
 - proto: ComputerCriminalRecords
   entities:
   - uid: 5157
@@ -75225,19 +75236,6 @@ entities:
     - type: Transform
       rot: 1.5707963267948966 rad
       pos: 17.5,23.5
-      parent: 2
-- proto: ComputerMedicalRecords
-  entities:
-  - uid: 5169
-    components:
-    - type: Transform
-      pos: 20.5,27.5
-      parent: 2
-  - uid: 5170
-    components:
-    - type: Transform
-      rot: -1.5707963267948966 rad
-      pos: 27.5,-46.5
       parent: 2
 - proto: ComputerPowerMonitoring
   entities:
@@ -140278,6 +140276,34 @@ entities:
       rot: 3.141592653589793 rad
       pos: 0.5995922,-2.3536444
       parent: 20154
+  - uid: 21738
+    components:
+    - type: Transform
+      pos: 99.5,20.5
+      parent: 2
+    - type: Paper
+      content: >-
+        Добрый сосед атмос с прошлой смены передает привет!
+
+
+        Так как данная станция окружена нормальной атмосферой, а газодобытчиков кроме плазмы нам и не установили, мной было принято решение соорудить свой газодобытчик на основе скрубберов!
+
+
+        Вот только настроить я его не успел, срочно собрали на эвакуацию по неизвестным причинам, а потому пишу данное послание перед отлетом!
+
+
+        Настройки камер достаточно простые!
+
+        1) Подключите скрубберы к воздушной сигнализации своей камеры.
+
+        2) Настройте фильтрацию скрубберов на кислород и азот соответственно.
+
+        3) Наслаждайтесь стабильным потоком свежих газов прямиком из атмосферы!
+
+
+        При желании вы даже можете подключить её к системе проложенной дистры, какой-то безумец проложил её по всей станции!!!
+
+                           [italic]Приятной вам смены, от доброго соседа атмоса.[/italic]
 - proto: PaperBin10
   entities:
   - uid: 14836
