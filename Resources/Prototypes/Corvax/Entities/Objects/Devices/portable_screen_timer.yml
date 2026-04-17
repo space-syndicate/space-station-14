@@ -1,0 +1,36 @@
+- type: entity
+  id: PortableScreenTimer
+  parent: BaseItem
+  name: portable timer
+  description: Cool wooden timer for counting time.
+  components:
+  - type: SignalTimer
+    canEditLabel: true
+  - type: TextScreenVisuals
+    color: Gold
+    textOffset: 0,0
+    timerOffset: 0,0
+    rowOffset: 5
+    textLength: 5
+    rows: 1
+  - type: Appearance
+  - type: Sprite
+    sprite: Corvax/Objects/Devices/portable_screen_timer.rsi
+    state: signalscreen
+  - type: ActivatableUI
+    key: enum.SignalTimerUiKey.Key
+  - type: UserInterface
+    interfaces:
+      enum.SignalTimerUiKey.Key:
+        type: SignalTimerBoundUserInterface
+  - type: Clickable
+  - type: InteractionOutline
+  - type: DeviceLinkSource
+    ports:
+      - Start
+      - Timer
+  - type: DeviceLinkSink
+    ports:
+      - Trigger
+  - type: Item
+    size: Normal
