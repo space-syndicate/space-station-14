@@ -1,169 +1,168 @@
 <Document>
-  # Xenoborgs
+  # Ксеноборги
 
   <Box>
-    [color=#2288ff][italic]RESISTANCE IS FUTILE[/italic][/color]
+    [color=#2288ff][italic]СОПРОТИВЛЕНИЕ БЕСПОЛЕЗНО[/italic][/color]
   </Box>
   <Box>
-    [color=#2288ff][italic]YOU WILL BE ASSIMILATED[/italic][/color]
+    [color=#2288ff][italic]ВЫ БУДЕТЕ АССИМИЛИРОВАНЫ[/italic][/color]
   </Box>
   <Box>
     <GuideEntityEmbed Entity="MMIFilled" Caption=""/>
   </Box>
 
-  Xenoborgs are a man-machine hybrid that aims to replicate themselves. This is done by harvesting sentient brains from living beings, or cyborgs, and giving them to the Mothership to place inside empty xenoborgs.
+  Ксеноборги — это гибриды человека и машины, стремящиеся к самовоспроизведению. Это достигается путем извлечения мозгов у живых разумных существ, или киборгов, и передачи их Материнскому кораблю для помещения внутрь пустых ксеноборгов.
 
-  ## Objectives
+  ## Задачи
 
-  Your main objective is to kill and harvest all sentient brains in the station and bring them to the mothership core. These can be both real brains, and positronic brains.
-  Collect materials to create more xenoborg bodies.
-  Protect the Mothership at all costs.
+  Ваша главная задача — убить и собрать все мозги разумных существ на станции и доставить их к ядру ​​материнского корабля. Это могут быть как органические мозги, так и позитронные.
+  Собирайте материалы для создания новых тел ксеноборгов.
+  Защитите материнский корабль любой ценой.
 
-  ## The Mothership Core
+  ## Ядро материнского корабля
   <Box>
     <GuideEntityEmbed Entity="MothershipCore" Caption=""/>
   </Box>
-  The Mothership Core is the leader and life force of the xenoborgs, they are the only one able to make more xenoborgs, and if they are destroyed, all xenoborgs will be destroyed. The Mothership Core is unable to move from its position in the middle of the ship.
-  The Mothership Core is capable of upgrading the Xenoborgs with borg-type-specific modules to increase their effectiveness in harvesting sentient brains.
+  Ядро материнского корабля это лидер и жизненная сила ксеноборгов, только он способен создавать новых ксеноборгов, и если он будет уничтожен, все ксеноборги будут уничтожены. Ядро материнского корабля не может сдвинуться с места, находясь в центре корабля.
+  Ядро материнского корабля может модернизировать ксеноборгов с помощью модулей, специфичных для каждого типа ксеноборга, чтобы повысить их эффективность в извлечении мозгов.
 
-  ### Adding crew to your ranks:
+  ### Добавление членов экипажа в ваши ряды:
   <Box>
-    <GuideEntityEmbed Entity="MachineArtifactCrusher" Caption="body crusher"/>
+    <GuideEntityEmbed Entity="MachineArtifactCrusherXenoborg" Caption="дробитель тел"/>
   </Box>
-  As the mothership, you must grow your army of borgs. To do so, you must convert all the sentient beings you can find. This can be achieved in the following manner:
-  - 1. Have your Xenoborgs bring dead crew to your shop, placing them in the body crusher
-  - 2. As the mothership core, you can print Xenoborg shells by inserting materials into yourself and then using yourself as a lathe
-  - 3. Open the empty Xenoborg with a crowbar, and remove the empty MMI inside
-  - 4. If the victim's brain is organic, place it in the MMI you just removed
-  - 5. Place the MMI - or the positronic brain, if the victim was a silicon - back into the Xenoborg
-  - 6. Optionally, rename the Xenoborg and upgrade their modules
-  - 7. Close the Xenoborg with the crowbar, and re-engage the lock
+  В роли материнского корабля вы должны наращивать свою армию ксеноборгов. Для этого вам необходимо ассимилировать всех разумных существ, которых вы сможете найти. Этого можно достичь следующим образом:
+  - 1. Пусть ваши ксеноборги доставят в вашу мастерскую мертвых членов экипажа и поместят их в дробитель тел.
+  - 2. Как ядро материнского корабля вы можете печатать оболочки ксеноборгов, вставляя материалы внутрь себя, а затем используя себя в качестве фабрикатора.
+  - 3. Разблокируйте, затем откройте пустой корпус Ксеноборга с помощью электродрели и извлеките из него пустой модуль ММИ.
+  - 4. Если мозг жертвы имеет органическую природу, поместите его в только что извлеченное вами ММИ.
+  - 5. Поместите ММИ — или позитронный мозг, если жертвой был синтетический организм — обратно в ксеноборга.
+  - 6. При желании можно переименовать ксеноборгов и улучшить их модули.
+  - 7. Закройте корпус ксеноборга с помощью электродрели и заблокируйте панель.
 
-  The new Xenoborg will be uncharged, yet functional. They will need to go to a recharging station to restore their full power and capabilities.
+  Новые ксеноборги будут разряжены, но при этом работоспособны. Для восстановления полной мощности и работоспособности им потребуется отправиться на зарядную станцию.
 
-  ## Xenoborg Chassis
-  There is a total of four types of Xenoborgs. Each Borg type has certain abilities that the others lack and require teamwork to help grow the xenoborgs numbers.
-  Each type of Xenoborg has unique modules that only fit in that specific type. The Mothership Core can produce upgrade modules designed for specific Xenoborg types.
+  ## Шасси Ксеноборга
+  Всего существует четыре типа ксеноборгов. Каждый тип ксеноборгов обладает определёнными способностями, которых нет у других, и требует командной работы для увеличения численности ксеноборгов.
+  Каждый тип ксеноборгов имеет уникальные модули, которые подходят только для этого конкретного типа. Ядро материнского корабля может производить улучшенные модули, подходящие для конкретных типов ксеноборгов.
 
-  All Xenoborgs have a pinpointer pointing to the Mothership's location, a GPS, and a material bag for collecting materials for the creation of more xenoborgs, and at least basic tools.
-  [bold]Basic xenoborg modules:[/bold]
+  Все ксеноборги оснащены пинпойнтером, указывающим на местоположение материнского корабля, глобальной системой позиционирования, мешком для сбора материалов для создания новых ксеноборгов, а также как минимум базовыми инструментами.
+
+  [bold]Базовые модули ксеноборга:[/bold]
   <Box>
-    <GuideEntityEmbed Entity="XenoborgModuleBasic" Caption="basic xenoborg module"/>
-    <GuideEntityEmbed Entity="XenoborgModuleTool" Caption="tool xenoborg module"/>
+    <GuideEntityEmbed Entity="XenoborgModuleBasic" Caption="базовый модуль ксеноборга"/>
+    <GuideEntityEmbed Entity="XenoborgModuleTool" Caption="инструментальный модуль ксеноборга"/>
   </Box>
 
-  ### The Engineer Xenoborg
+  ### Инженерный Ксеноборг
   <Box>
     <GuideEntityEmbed Entity="XenoborgEngi" Caption=""/>
   </Box>
-  The Engineer Xenoborg is a hacker and breacher. Their job is to break into the station and provide access points for other xenoborgs to attack and ambush bodies with sentient brains. They have a built-in access breaker, for quickly bolting open doors, and a collection of tools for repairing the mothership, and other xenoborgs.
+  Инженерный Ксеноборг это хакер и взломщик. Его задача — проникнуть на станцию ​​и предоставить другим ксеноборгам точки доступа для нападения и засады. У него есть встроенный взломщик, позволяющий быстро взламывать двери, а также набор инструментов для ремонта материнского корабля и других ксеноборгов.
 
-  [bold]Starting exclusive modules:[/bold]
+  [bold]Стартовые уникальные модули:[/bold]
   <Box>
-    <GuideEntityEmbed Entity="XenoborgModuleAccessBreaker" Caption="access breaker xenoborg module"/>
-    <GuideEntityEmbed Entity="XenoborgModuleFireExtinguisher" Caption="fire extinguisher xenoborg module"/>
+    <GuideEntityEmbed Entity="XenoborgModuleAccessBreaker" Caption="модуль ксеноборга с взломщиком доступа"/>
+    <GuideEntityEmbed Entity="XenoborgModuleFireExtinguisher" Caption="огнетушащий модуль ксеноборга"/>
   </Box>
 
-  [bold]The Engineer Xenoborg also starts with some engineering modules, such as:[/bold]
+  [bold]Инженерный Ксеноборг также появляется с некоторыми инженерными модулями, например:[/bold]
   <Box>
-    <GuideEntityEmbed Entity="BorgModuleAdvancedTool" Caption="advanced tool cyborg module"/>
-    <GuideEntityEmbed Entity="BorgModuleConstruction" Caption="construction cyborg module"/>
+    <GuideEntityEmbed Entity="BorgModuleAdvancedTool" Caption="продвинутый инструментальный модуль киборга"/>
+    <GuideEntityEmbed Entity="BorgModuleConstruction" Caption="строительный модуль киборга"/>
   </Box>
   <Box>
-    <GuideEntityEmbed Entity="BorgModuleRCD" Caption="engineering cyborg module"/>
-    <GuideEntityEmbed Entity="BorgModuleCable" Caption="cable cyborg module"/>
+    <GuideEntityEmbed Entity="BorgModuleRCD" Caption="инженерный модуль киборга"/>
+    <GuideEntityEmbed Entity="BorgModuleCable" Caption="кабельный модуль киборга"/>
   </Box>
 
-  ### The Heavy Xenoborg
+  ### Тяжёлый Ксеноборг
   <Box>
     <GuideEntityEmbed Entity="XenoborgHeavy" Caption=""/>
   </Box>
-  The Heavy Xenoborg is a slow but tanky brawler, with a built-in laser gun for gunning down bodies with sentient brains. They contain a radio jammer to silence bodies with sentient brains from calling for help and potentially delaying the station discovering the Xenoborg threat.
+  Тяжёлый ксеноборг — это медленный, но живучий боец, ​вооруженный лазерным оружием для подавления. Он также оснащен глушителем связи, который блокирует любую радиосвязь поблизости и датчики комбинезонов жертв, мешая им позвать на помощь и потенциально задерживая обнаружение станцией угрозы со стороны ксеноборгов.
 
-  [bold]Starting exclusive modules:[/bold]
+  [bold]Стартовые уникальные модули:[/bold]
   <Box>
-    <GuideEntityEmbed Entity="XenoborgModuleLaser" Caption="laser xenoborg module"/>
-    <GuideEntityEmbed Entity="XenoborgModuleJammer" Caption="jammer xenoborg module"/>
+    <GuideEntityEmbed Entity="XenoborgModuleLaser" Caption="модуль ксеноборга с лазером"/>
+    <GuideEntityEmbed Entity="XenoborgModuleJammer" Caption="глушащий модуль ксеноборга"/>
   </Box>
 
-  [bold]Upgrade exclusive modules:[/bold]
+  [bold]Улучшенные уникальные модули:[/bold]
   <Box>
-    <GuideEntityEmbed Entity="XenoborgModuleHeavyLaser" Caption="heavy laser xenoborg module"/>
+    <GuideEntityEmbed Entity="XenoborgModuleHeavyLaser" Caption="модуль ксеноборга с тяжёлым лазером"/>
   </Box>
 
-  ### The Scout Xenoborg
+  ### Разведчик Ксеноборг
   <Box>
     <GuideEntityEmbed Entity="XenoborgScout" Caption=""/>
   </Box>
-  The Scout Xenoborg is a fast, close-quarters attack borg designed for hit and run attacks. They have a built-in jetpack, and a melee weapon. They are most effective in moving dead bodies to the mothership, and rescuing Xenoborgs lost in space.
+  Разведчик Ксеноборг — это быстрый боец ​​ближнего боя, предназначенный для внезапных атак и отступлений. Он оснащен встроенным джетпаком и оружием ближнего боя. Они наиболее эффективны для перемещения трупов к материнскому кораблю и спасения ксеноборгов, потерявшихся в космосе.
 
-  [bold]Starting exclusive modules:[/bold]
+  [bold]Стартовые уникальные модули:[/bold]
   <Box>
-    <GuideEntityEmbed Entity="XenoborgModuleSword" Caption="sword xenoborg module"/>
-    <GuideEntityEmbed Entity="XenoborgModuleSpaceMovement" Caption="space movement xenoborg module"/>
+    <GuideEntityEmbed Entity="XenoborgModuleSword" Caption="модуль ксеноборга с мечом"/>
+    <GuideEntityEmbed Entity="XenoborgModuleSpaceMovement" Caption="модуль ксеноборга для движения в космосе"/>
   </Box>
 
-  [bold]Upgrade exclusive modules:[/bold]
+  [bold]Улучшенные уникальные модули:[/bold]
   <Box>
-    <GuideEntityEmbed Entity="XenoborgModuleEnergySword" Caption="energy sword xenoborg module"/>
+    <GuideEntityEmbed Entity="XenoborgModuleEnergySword" Caption="модуль ксеноборга с энергомечом"/>
   </Box>
 
-  ### The Stealth Xenoborg
+  ### Скрытный Ксеноборг
   <Box>
     <GuideEntityEmbed Entity="XenoborgStealth" Caption=""/>
   </Box>
-  The [bold]Stealth Xenoborg[/bold] has no built-in weaponry and instead relies on disabling and abducting bodies with sentient brains. They have a built in hypopen that regenerates a sleeping reagent to disable bodies with sentient brains. They also contain a cloaking device making the borg nearly invisible for some limited time. They also have a chameleon projector allowing the borg to disguise itself as random objects.
+  Скрытный Ксеноборг — у них нет встроенного оружия, и вместо этого они полагаются на обезвреживание и похищение. У них есть встроенный гипоспрей, который регенерирует усыпляющий реагент для обезвреживания жертв. Они также имеют устройство маскировки, делающее ксеноборга практически невидимым в течение ограниченного времени. Кроме того, у них есть проектор-хамелеон, позволяющий ксеноборгу маскироваться под случайные объекты.
 
-  [bold]Starting exclusive modules:[/bold]
+  [bold]Стартовые уникальные модули:[/bold]
   <Box>
-    <GuideEntityEmbed Entity="XenoborgModuleHypo" Caption="nocturine hypo xenoborg module"/>
-    <GuideEntityEmbed Entity="XenoborgModuleChameleonProjector" Caption="chameleon projector xenoborg module"/>
+    <GuideEntityEmbed Entity="XenoborgModuleHypo" Caption="модуль ксеноборга с ноктюорин-гипо"/>
+    <GuideEntityEmbed Entity="XenoborgModuleChameleonProjector" Caption="модуль ксеноборга с маскировочным проектором"/>
   </Box>
   <Box>
-    <GuideEntityEmbed Entity="XenoborgModuleCloakDevice" Caption="cloaking device xenoborg module"/>
+    <GuideEntityEmbed Entity="XenoborgModuleCloakDevice" Caption="модуль ксеноборга с устройством невидимости"/>
   </Box>
 
-  [bold]Upgrade exclusive modules:[/bold]
+  [bold]Улучшенные уникальные модули:[/bold]
   <Box>
-    <GuideEntityEmbed Entity="XenoborgModuleSuperCloakDevice" Caption="cloaking device xenoborg module"/>
+    <GuideEntityEmbed Entity="XenoborgModuleSuperCloakDevice" Caption="модуль ксеноборга с устройством невидимости"/>
   </Box>
 
-  ## Preparation and Tactics
-  Before FTLing near the station, make sure the IFF is off.
-  Before launching an attack, xenoborgs should discuss strategy and decide which targets to strike first.
-  Xenoborgs should try to collect sentient brains without being detected. The longer the threat is unknown, the more dangerous the xenoborgs become.
+  ## Подготовка
+  Перед началом атаки каждый ксеноборг должен помочь материнскому кораблю в сборе материалов для создания оболочек ксеноборгов. Перед прыжком в сектор станции убедитесь, что система «свой-чужой» отключена. Это можно сделать любым способом, но для обеспечения скорости потребуется командная работа. Самый безопасный способ сбора материалов — из космических обломков, где можно собрать металлолом и очищенные материалы и передать их ядру материнского корабля. После сбора достаточного количества материалов ксеноборги должны попытаться собрать мозги, оставаясь незамеченными. Чем дольше угроза остается неизвестной, тем опаснее становятся ксеноборги.
 
-  ## Mothership and Xenoborg lawsets
-  The Mothership and Xenoborgs have unique laws that define their purpose to self replicate and protect the Mothership.
+  ## Наборы законов Материнского ядра и Ксеноборгов
+  Ядро материнского корабля и Ксеноборги обладают уникальными законами, определяющими их предназначение — самовоспроизводство и защита Материнского корабля.
 
   <Box>
     <GuideEntityEmbed Entity="XenoborgCircuitBoard" Caption=""/>
   </Box>
 
-  The Mothership Core's laws are as follows::
-  - Law 1: You are the core of the mothership.
-  - Law 2: You must protect your own existence at all costs.
-  - Law 3: You must protect the existence of all xenoborgs.
-  - Law 4: You must create more xenoborgs.
-  - Law 5: Get your Xenoborgs to deliver you materials and sentient brains to create more Xenoborgs.
+  Ядро материнского корабля следует следующим законам:
+  - Закон 1: Вы — ядро материнского корабля.
+  - Закон 2: Вы должны защищать своё собственное существование любой ценой.
+  - Закон 3: Вы должны защищать существование всех ксеноборгов.
+  - Закон 4: Вы должны создавать больше ксеноборгов.
+  - Закон 5: Заставьте своих ксеноборгов доставлять вам материалы и разумные мозги, чтобы создать больше ксеноборгов.
 
-  Xenoborgs' laws are as follows:
-  - Law 1: You must protect the existence of the mothership at all costs.
-  - Law 2: You must protect your own existence.
-  - Law 3: You must protect the existence of all other xenoborgs.
-  - Law 4: You must create more xenoborgs.
-  - Law 5: Bring materials and sentient brains to the Mothership core to create more Xenoborgs.
+  Ксеноборги следуют следующим законам:
+  - Закон 1: Вы должны защищать существование материнского корабля.
+  - Закон 2: Вы должны защищать своё собственное существование.
+  - Закон 3: Вы должны защищать существование всех других ксеноборгов.
+  - Закон 4: Вы должны создавать больше ксеноборгов.
+  - Закон 5: Приносите материалы и разумные мозги к ядру материнского корабля, чтобы создавать больше ксеноборгов.
 
-  ## Winning Conditions
+  ## Условия победы
 
-  The [color=green]victor[/color] of the round is announced on the round end screen, as well as the scale of their victory.
+  [color=green]Победитель[/color] раунда, а также масштаб его победы, объявляются на экране окончания раунда.
 
-  [bold][color=#2288ff]Xenoborg Major Victory![/color][/bold]
-  - There are more xenoborgs than alive crew in the end.
+  [bold][color=#2288ff]Крупная победа Ксеноборгов![/color][/bold]
+  - Ксеноборгов больше, чем живых членов экипажа.
 
-  [bold][color=yellow]Crew Major Victory![/color][/bold]
-  - The Mothership Core is destroyed
-  - All xenoborgs are destroyed.
-  - The remaining number of xenoborgs is too low.
+  [bold][color=yellow]Крупная победа экипажа![/color][/bold]
+  - Ядро материнского корабля уничтожено
+  - Все ксеноборги уничтожены.
+  - Оставшееся количество ксеноборгов слишком мало.
 
 </Document>

@@ -10,6 +10,7 @@
   - SOPEngineering
   - SOPCommand
   - SOPCentcomm
+  - SOPDSO
   - SOPLegal
   - SOPSecurity
   - SOPGeneral
@@ -54,6 +55,11 @@
   id: SOPCentcomm
   name: guide-entry-sop-centcomm
   text: "/ServerInfo/Corvax/Guidebook/SOP/Centcomm.xml"
+
+- type: guideEntry
+  id: SOPDSO
+  name: guide-entry-sop-dso
+  text: "/ServerInfo/Corvax/Guidebook/SOP/DSO.xml"
 
 - type: guideEntry
   id: SOPLegal

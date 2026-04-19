@@ -329,8 +329,8 @@
   components:
   - type: StationEvent
     weight: 1 # rare
-    duration: 1
-    earliestStart: 40 # Corvax-MRP # 30
+    duration: null
+    earliestStart: 30
     reoccurrenceDelay: 60
     minimumPlayers: 30
   - type: AntagSelection

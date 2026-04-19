@@ -9,8 +9,8 @@ spray-painter-ammo-after-interact-refilled = Вы заправляете кра�
 
 spray-painter-interact-no-charges = Не хватает краски.
 spray-painter-interact-nothing-to-remove = Нечего удалять!
-spray-painter-interact-no-color-pick = Can't find a color to pick!
-spray-painter-interact-color-picked = Picked color from '{ $id }'.
+spray-painter-interact-no-color-pick = Нет цвета для взятия!
+spray-painter-interact-color-picked = Взят цвет из '{ $id }'.
 
 spray-painter-on-examined-painted-message = Выглядит свежеокрашенным.
 spray-painter-style-not-available = Выбранный стиль нельзя применить к этому объекту.

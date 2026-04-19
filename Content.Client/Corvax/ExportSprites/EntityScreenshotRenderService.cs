@@ -3,8 +3,8 @@ using System.Threading;
 using System.Threading.Tasks;
 using Robust.Client.GameObjects;
 using Robust.Client.Graphics;
-using Robust.Client.Utility;
 using Robust.Client.UserInterface;
+using Robust.Client.Utility;
 using Robust.Shared.ContentPack;
 using Robust.Shared.Timing;
 using Robust.Shared.Utility;
@@ -27,6 +27,7 @@ public sealed class EntityScreenshotRenderService
     private EntityScreenshotRenderControl? _control;
     private bool _initialized;
     private readonly Dictionary<(ResPath Path, string State), Image<Rgba32>> _rsiStateImageCache = new();
+    private readonly Dictionary<Texture, Image<Rgba32>> _textureImageCache = new();
     private ISawmill _sawmill = default!;
 
     public void Initialize()
@@ -47,6 +48,13 @@ public sealed class EntityScreenshotRenderService
         }
 
         _rsiStateImageCache.Clear();
+
+        foreach (var image in _textureImageCache.Values)
+        {
+            image.Dispose();
+        }
+
+        _textureImageCache.Clear();
 
         if (_control == null)
             return;
@@ -360,7 +368,7 @@ public sealed class EntityScreenshotRenderService
 
     private static int ToDelayMilliseconds(float seconds)
     {
-        return Math.Max(1, (int)MathF.Round(seconds * 1000f));
+        return Math.Max(1, (int) MathF.Round(seconds * 1000f));
     }
 
     private void WriteAnimationMetadata(ResPath animationDir, IReadOnlyList<AnimationFrameInfo> animationFrames)
@@ -388,7 +396,9 @@ public sealed class EntityScreenshotRenderService
             return false;
 
         // Keep the old render-target path for uncommon transformed sprites.
-        if (spriteComp.Scale != Vector2.One || spriteComp.Rotation != Angle.Zero)
+        if (spriteComp.Scale != Vector2.One ||
+            spriteComp.Rotation != Angle.Zero ||
+            spriteComp.EnableDirectionOverride)
             return false;
 
         var size = renderBounds.Size;
@@ -407,7 +417,7 @@ public sealed class EntityScreenshotRenderService
                 return false;
 
             if (!TryGetLayerImage(spriteLayer, direction, out var sourceImage, out var sourceRect))
-                continue;
+                return false;
 
             var drawColor = spriteComp.Color * spriteLayer.Color;
             var drawOffset = ToPixelOffset(spriteComp.Offset + spriteLayer.Offset) - renderBounds.Min;
@@ -429,7 +439,7 @@ public sealed class EntityScreenshotRenderService
 
     private static void BlitImage(
         Image<Rgba32> sourceImage,
-        Rectangle sourceRect,
+        PixelRect sourceRect,
         Color modulation,
         Span<Rgba32> destination,
         Vector2i destinationSize,
@@ -519,14 +529,17 @@ public sealed class EntityScreenshotRenderService
         SpriteComponent.Layer layer,
         Direction direction,
         out Image<Rgba32> image,
-        out Rectangle sourceRect)
+        out PixelRect sourceRect)
     {
         image = default!;
         sourceRect = default;
 
-        // Raw texture layers need a separate cache path. Use render target fallback for them.
         if (layer.Texture != null)
-            return false;
+        {
+            image = GetTextureImage(layer.Texture);
+            sourceRect = new PixelRect(0, 0, image.Width, image.Height);
+            return true;
+        }
 
         var rsi = layer.ActualRsi;
         var stateId = ((ISpriteLayer) layer).RsiState;
@@ -569,9 +582,32 @@ public sealed class EntityScreenshotRenderService
         var target = (int) rsiDirection * framesPerDirection + frame;
         var targetY = target / statesX;
         var targetX = target % statesX;
-        sourceRect = new Rectangle(targetX * frameWidth, targetY * frameHeight, frameWidth, frameHeight);
+        sourceRect = new PixelRect(targetX * frameWidth, targetY * frameHeight, frameWidth, frameHeight);
         return true;
     }
+
+    private Image<Rgba32> GetTextureImage(Texture texture)
+    {
+        if (_textureImageCache.TryGetValue(texture, out var cached))
+            return cached;
+
+        var image = new Image<Rgba32>(texture.Width, texture.Height);
+        var pixels = image.GetPixelSpan();
+
+        for (var y = 0; y < texture.Height; y++)
+        {
+            for (var x = 0; x < texture.Width; x++)
+            {
+                var color = texture.GetPixel(x, y);
+                pixels[y * texture.Width + x] = new Rgba32(color.RByte, color.GByte, color.BByte, color.AByte);
+            }
+        }
+
+        _textureImageCache[texture] = image;
+        return image;
+    }
+
+    private readonly record struct PixelRect(int Left, int Top, int Width, int Height);
 
     private sealed class EntityScreenshotRenderControl : Control
     {

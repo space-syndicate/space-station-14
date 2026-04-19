@@ -6,12 +6,12 @@
     requirement:
       !type:RoleTimeRequirement
       role: JobAtmosphericTechnician
-      time: 20h # Corvax-RoleTime
+      time: 6h # Corvax-RoleTime
   - !type:JobRequirementLoadoutEffect
     requirement:
       !type:RoleTimeRequirement
       role: JobStationEngineer
-      time: 20h # Corvax-RoleTime
+      time: 6h # Corvax-RoleTime
   - !type:JobRequirementLoadoutEffect
     requirement:
       !type:DepartmentTimeRequirement
@@ -42,9 +42,9 @@
 - type: loadout
   id: SeniorEngineerBeret
   startingGear: EngineeringBeret
-  # effects: Corvax-MentorRoles
-  # - !type:GroupLoadoutEffect
-  #   proto: SeniorEngineering
+  effects:
+  - !type:GroupLoadoutEffect
+    proto: SeniorEngineering
 
 # Jumpsuit
 - type: loadout
@@ -64,17 +64,17 @@
 
 - type: loadout
   id: SeniorEngineerJumpsuit
-  # effects: Corvax-MentorRoles
-  # - !type:GroupLoadoutEffect
-  #   proto: SeniorEngineering
+  effects:
+  - !type:GroupLoadoutEffect
+    proto: SeniorEngineering
   equipment:
     jumpsuit: ClothingUniformJumpsuitSeniorEngineer
 
 - type: loadout
   id: SeniorEngineerJumpskirt
-  # effects: Corvax-MentorRoles
-  # - !type:GroupLoadoutEffect
-  #   proto: SeniorEngineering
+  effects:
+  - !type:GroupLoadoutEffect
+    proto: SeniorEngineering
   equipment:
     jumpsuit: ClothingUniformJumpskirtSeniorEngineer
 
@@ -124,8 +124,8 @@
 
 - type: loadout
   id: SeniorEngineerPDA
-  # effects: Corvax-MentorRoles
-  # - !type:GroupLoadoutEffect
-  #   proto: SeniorEngineering
+  effects:
+  - !type:GroupLoadoutEffect
+    proto: SeniorEngineering
   equipment:
     id: SeniorEngineerPDA

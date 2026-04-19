@@ -161,7 +161,8 @@ namespace Content.Server.Entry
                     write(file);
                     file.Flush();
                 }
-                WriteFile("entity_" + dest, EntityJsonGenerator.PublishJson);
+                WriteFile("entity_prototypes.json", EntityJsonGenerator.PublishJson);
+                WriteFile("entity_parent.json", EntityParentJsonGenerator.PublishJson);
                 WriteFile("loc.json", LocJsonGenerator.PublishJson);
                 WriteFile("meta_license.json", MetaLicenseGenerator.PublishJson);
                 WriteFile("prototype.json", PrototypeListGenerator.PublishJson);

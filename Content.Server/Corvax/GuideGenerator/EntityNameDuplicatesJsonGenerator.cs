@@ -2,19 +2,28 @@ using System.IO;
 using System.Linq;
 using System.Text.Encodings.Web;
 using System.Text.Json;
+using Content.Shared.Actions.Components;
 using Content.Shared.Corvax.GuideGenerator;
 using Content.Shared.Labels.Components;
-using Robust.Shared.Physics;
 using Robust.Shared.Prototypes;
 
 namespace Content.Server.Corvax.GuideGenerator;
 
 public static class EntityNameDuplicatesJsonGenerator
 {
+    private const string AbilitySuffix = "(способность)";
+
+    public static readonly string[] AllowedNameComponents =
+    [
+        "Fixtures",
+        "Physics",
+        "Action"
+    ];
+
     // Suffix parts that should be ignored when building display names.
-    private static readonly HashSet<string> IgnoredSuffixTokens = new(StringComparer.OrdinalIgnoreCase)
+    public static readonly HashSet<string> IgnoredSuffixTokens = new(StringComparer.OrdinalIgnoreCase)
     {
-        "DO NOT MAP",
+        "do not map",
         "не маппить",
     };
 
@@ -31,10 +40,11 @@ public static class EntityNameDuplicatesJsonGenerator
 
     public static bool MatchesEntityNameFilter(EntityPrototype proto, IReadOnlySet<string> allowedIds)
     {
-        var compFactory = IoCManager.Resolve<IComponentFactory>();
+        var hasAllowedComponent = AllowedNameComponents.Any(proto.Components.ContainsKey);
+
         return !proto.Abstract &&
-                proto.TryGetComponent<FixturesComponent>(out _, compFactory) &&
-                EntityProjectHelper.MatchesAllowedIds(proto.ID, allowedIds);
+               hasAllowedComponent &&
+               EntityProjectHelper.MatchesAllowedIds(proto.ID, allowedIds);
     }
 
     private static Dictionary<string, List<string>> GetDuplicatesName(
@@ -42,6 +52,7 @@ public static class EntityNameDuplicatesJsonGenerator
         bool duplicatesOnly)
     {
         var loc = IoCManager.Resolve<ILocalizationManager>();
+        var compFactory = IoCManager.Resolve<IComponentFactory>();
         var allowedIds = EntityProjectGenerator.GetProjectEntityIds();
         return prototypeManager
             .EnumeratePrototypes<EntityPrototype>()
@@ -50,24 +61,17 @@ public static class EntityNameDuplicatesJsonGenerator
             {
                 var name = TextTools.CapitalizeString(TextTools.GetDisplayName(p, prototypeManager, loc));
 
+                if (p.TryGetComponent<ActionComponent>(out _, compFactory))
+                    name = $"{name} {AbilitySuffix}";
+
                 var label = GetLabel(p);
 
                 var rawSuffix = p.EditorSuffix;
-                var suffix = string.Empty;
-                if (!string.IsNullOrWhiteSpace(rawSuffix))
-                {
-                    var parts = rawSuffix
-                        .Split([',', ';'], StringSplitOptions.RemoveEmptyEntries)
-                        .Select(part => part.Trim())
-                        .Where(part => !IgnoredSuffixTokens.Contains(part))
-                        .ToArray();
-
-                    if (parts.Length > 0)
-                        suffix = string.Join(", ", parts).ToLowerInvariant();
-                }
+                var suffix = TextTools.GetEditorSuffix(rawSuffix, IgnoredSuffixTokens, TextTools.NormalizeSuffixToken);
 
                 return (Name: name, Label: label, Suffix: suffix);
             })
+            .Where(g => !string.IsNullOrWhiteSpace(g.Key.Name))
             .Where(g => !duplicatesOnly || g.Count() > 1)
             .ToDictionary(
                 g =>

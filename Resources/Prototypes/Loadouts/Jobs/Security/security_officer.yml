@@ -6,7 +6,17 @@
     requirement:
       !type:RoleTimeRequirement
       role: JobWarden
-      time: 20h # Corvax-RoleTime
+      time: 6h # Corvax-RoleTime-Start
+  - !type:JobRequirementLoadoutEffect
+    requirement:
+      !type:RoleTimeRequirement
+      role: JobDetective
+      time: 2h
+  - !type:JobRequirementLoadoutEffect
+    requirement:
+      !type:RoleTimeRequirement
+      role: JobSecurityOfficer
+      time: 6h # Corvax-RoleTime-End
   - !type:JobRequirementLoadoutEffect
     requirement:
       !type:DepartmentTimeRequirement
@@ -62,17 +72,17 @@
 
 - type: loadout
   id: SeniorOfficerJumpsuit
-  # effects: Corvax-MentorRoles
-  # - !type:GroupLoadoutEffect
-  #   proto: SeniorOfficer
+  effects:
+  - !type:GroupLoadoutEffect
+    proto: SeniorOfficer
   equipment:
     jumpsuit: ClothingUniformJumpsuitSeniorOfficer
 
 - type: loadout
   id: SeniorOfficerJumpskirt
-  # effects: Corvax-MentorRoles
-  # - !type:GroupLoadoutEffect
-  #   proto: SeniorOfficer
+  effects:
+  - !type:GroupLoadoutEffect
+    proto: SeniorOfficer
   equipment:
     jumpsuit: ClothingUniformJumpskirtSeniorOfficer
 
@@ -114,6 +124,13 @@
   equipment:
     outerClothing: ClothingOuterArmorBasicSlim
 
+# Corvax-Start
+- type: loadout
+  id: SecurityOfficerOvercoat
+  equipment:
+    outerClothing: ClothingOuterCoatSecurityOvercoat
+# Corvax-End
+
 - type: loadout
   id: SecurityOfficerWintercoat
   equipment:
@@ -143,8 +160,8 @@
 
 - type: loadout
   id: SeniorOfficerPDA
-  # effects: Corvax-MentorRoles
-  # - !type:GroupLoadoutEffect
-  #   proto: SeniorOfficer
+  effects:
+  - !type:GroupLoadoutEffect
+    proto: SeniorOfficer
   equipment:
     id: SeniorOfficerPDA

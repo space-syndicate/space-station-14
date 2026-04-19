@@ -114,7 +114,7 @@ reagent-name-lacerinol = лацеринол
 reagent-desc-lacerinol = Довольно нереактивное химическое вещество, усиливающее синтез коллагена до невероятных уровней и заживляющее резаные раны.
 
 reagent-name-puncturase = пунктураз
-reagent-name-puncturase-tranexamic = пунктураз и транексам
+reagent-name-puncturase-tranexamic = пунктураз и транексамовая
 reagent-desc-puncturase = Шипучее химическое вещество, залечивающее колотые ранения, ценой небольшого количества ушибов.
 
 reagent-name-bruizine = бруизин
@@ -151,5 +151,5 @@ reagent-desc-potassium-iodide = Снижает разрушительное во
 reagent-name-haloperidol = галоперидол
 reagent-desc-haloperidol = Выводит из организма большинство стимулирующих и галлюциногенных препаратов. Уменьшает наркотический эффект и дрожание. Вызывает сонливость.
 
-reagent-name-heparin = heparin
-reagent-desc-heparin = Commonly used as an anticoagulant medication. Causes blood to have difficulty forming clots. Can cause internal bleeding when overdosed.
+reagent-name-heparin = гепарин
+reagent-desc-heparin = Обычно используется в качестве антикоагулянта. Затрудняет образование тромбов. При передозировке может вызвать внутреннее кровотечение.

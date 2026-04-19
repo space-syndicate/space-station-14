@@ -1,5 +1,16 @@
 ignored_paths: # Игнорирует указанные пути до папок/файлов
-- "Resources/Locale/ru-RU/corvax"
+- "Resources/Locale/ru-RU/corvax" # лучше просто это не трогать
 - "Resources/Locale/ru-RU/datasets"
+### для быстрого перевода
+- "Resources/Locale/ru-RU/robust-toolbox"
+- "Resources/Locale/ru-RU/accent"
+- "Resources/Locale/ru-RU/commands"
+- "Resources/Locale/ru-RU/cvar"
+- "Resources/Locale/ru-RU/lobby"
 ignored_untranslated_paths: # Игнорирует предупреждения в указанных путях до папок/файлов
-- "Resources/Locale/ru-RU/robust-toolbox/input.ftl"
+- "Resources/Locale/ru-RU/robust-toolbox/input.ftl" # лучше просто это не трогать №2
+- "Resources/Locale/ru-RU/ss14-ru/prototypes/entities/mobs/player/humanoid.ftl" # её заприватил элюзив
+###
+- "Resources/Locale/ru-RU/atmos/gases.ftl"
+- "Resources/Locale/ru-RU/magic/spells-actions.ftl"
+- "Resources/Locale/ru-RU/speech/speech-chatsan.ftl"

@@ -1,10 +1,10 @@
-ent-AppearanceHuman = human appearance
+ent-AppearanceHuman = внешность человека
     .desc = { ent-BaseSpeciesAppearance.desc }
 ent-MobHuman = Урист МакЧеловек
     .desc = { ent-AppearanceHuman.desc }
 ent-OrganHuman = { ent-OrganBase }
     .desc = { ent-OrganBase.desc }
-    .suffix = human
+    .suffix = человек
 ent-OrganHumanMetabolizer = { "" }
     .desc = { "" }
 ent-OrganHumanInternal = { ent-OrganHuman }

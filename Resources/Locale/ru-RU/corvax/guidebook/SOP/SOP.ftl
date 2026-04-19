@@ -19,6 +19,7 @@ guide-entry-sop-engineering = Инженерный отдел
 guide-entry-sop-security = Служба безопасности
 guide-entry-sop-command = Командование
 guide-entry-sop-centcomm = Центральное Командование
+guide-entry-sop-dso = Департамент Специальных Операций
 guide-entry-sop-legal = Юридический департамент
 guide-entry-sop-general = Общее
 guide-entry-sop-codes = Уровни угроз

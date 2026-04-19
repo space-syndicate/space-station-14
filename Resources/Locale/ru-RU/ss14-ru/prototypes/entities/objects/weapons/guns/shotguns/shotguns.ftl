@@ -29,5 +29,5 @@ ent-WeaponShotgunImprovised = самодельный дробовик
 ent-WeaponShotgunImprovisedLoaded = самодельный дробовик
     .desc = { ent-WeaponShotgunImprovised.desc }
     .suffix = Дробовик, Заряжен
-ent-WeaponShotgunHushpup = Hushpup
-    .desc = An obscure modification of the Enforcer, fitted with an experimental muffler. Great for those with a strict moral code. Uses .50 shotgun shells.
+ent-WeaponShotgunHushpup = глухарь
+    .desc = Малоизвестная модификация Силовика, оснащенная экспериментальным глушителем. Отлично подойдет тем, кто придерживается строгих моральных принципов. Использует ружейные патроны.

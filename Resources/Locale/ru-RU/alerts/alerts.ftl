@@ -123,5 +123,5 @@ alerts-rooted-desc = Вы прикреплены к земле. Вы не мож
 alerts-stealthy-name = Карманничество
 alerts-stealthy-desc = Определяет режим скрытой кражи. Нажмите для переключения.
 
-alerts-prying-name = Prying
-alerts-prying-desc = You can innately pry doors open using alternative interaction.
+alerts-prying-name = Вскрытие
+alerts-prying-desc = Вы можете вскрывать двери, используя альтернативное взаимодействие.

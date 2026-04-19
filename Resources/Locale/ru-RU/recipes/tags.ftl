@@ -74,7 +74,7 @@ construction-graph-tag-utility-belt = пояс для инструментов
 soil-construction-graph-any-mushroom = любой гриб
 construction-graph-tag-mop-basic = швабра
 construction-graph-tag-paper = офисная бумага
-construction-graph-tag-core-pinpointer-piece = piece of core pinpointer
+construction-graph-tag-core-pinpointer-piece = часть пинпоинтера ядра
 
 # toys
 construction-graph-tag-rubber-ducky = резиновая уточка
