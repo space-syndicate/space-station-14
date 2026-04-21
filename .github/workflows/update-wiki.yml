@@ -33,12 +33,20 @@ jobs:
               - 'Content.Shared/**'
               - 'Content.Server/**'
               - 'Content.Client/**'
-              - 'Resources/**'
+              - 'Resources/Prototypes/**'
               - 'RobustToolbox/**'
 
             prototypes:
               - '.github/workflows/update-wiki.yml'
               - 'Resources/Prototypes/**'
+
+            textures:
+              - '.github/workflows/update-wiki.yml'
+              - 'Resources/Textures/**'
+
+            locale:
+              - '.github/workflows/update-wiki.yml'
+              - 'Resources/Locale/**'
 
       - name: Setup Submodule
         run: |
@@ -66,6 +74,30 @@ jobs:
       - name: Generate JSON blobs for prototypes
         run: dotnet ./bin/Content.Server/Content.Server.dll --cvar autogen.destination_file=prototypes.json
         continue-on-error: true
+
+      - name: Upload loc to wiki
+        if: ${{ github.event_name == 'workflow_dispatch' || steps.changes.outputs.locale == 'true' }}
+        continue-on-error: true
+        uses: jtmullen/mediawiki-edit-action@v0.1.1
+        with:
+          wiki_text_file: ./bin/Content.Server/data/loc.json
+          edit_summary: Update loc.json via GitHub Actions
+          page_name: "${{ secrets.WIKI_PAGE_ROOT }}/loc.json"
+          api_url: ${{ secrets.WIKI_ROOT_URL }}/api.php
+          username: ${{ secrets.WIKI_BOT_USER }}
+          password: ${{ secrets.WIKI_BOT_PASS }}
+
+      - name: Update meta license
+        if: ${{ github.event_name == 'workflow_dispatch' || steps.changes.outputs.textures == 'true' }}
+        continue-on-error: true
+        uses: jtmullen/mediawiki-edit-action@v0.1.1
+        with:
+          wiki_text_file: ./bin/Content.Server/data/meta_license.json
+          edit_summary: Update meta_license.json via GitHub Actions
+          page_name: "${{ secrets.WIKI_PAGE_ROOT }}/meta_license.json"
+          api_url: ${{ secrets.WIKI_ROOT_URL }}/api.php
+          username: ${{ secrets.WIKI_BOT_USER }}
+          password: ${{ secrets.WIKI_BOT_PASS }}
 
       # Проходит по всем JSON-файлам в директории BASE и загружает каждый файл как страницу в MediaWiki.
       # Имя страницы формируется из относительного пути к файлу.
