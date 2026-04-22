@@ -155,3 +155,12 @@
   physicalDesc: reagent-physical-desc-sweet
   flavor: cherry
   color: "#84031a"
+
+- type: reagent
+  id: DragonFruitJuice
+  name: Сок драконьего фрукта
+  parent: BaseJuice
+  desc: reagent-desc-juice-dragon-fruit
+  physicalDesc: reagent-physical-desc-crisp
+  flavor: Dragonfruit
+  color: "#f1f1f1"

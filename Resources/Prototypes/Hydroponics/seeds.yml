@@ -2026,3 +2026,34 @@
       Min: 1
       Max: 10
       PotencyDivisor: 10
+
+- type: seed
+  id: dragonFruits
+  name: семена драконьего фрукта
+  noun: seeds-noun-seeds
+  displayName: Драконий фрукт
+  plantRsi: Objects/Specific/Hydroponics/dragon_fruit.rsi
+  packetPrototype: DragonFruitSeeds
+  productPrototypes:
+    - FoodDragonFruit
+  harvestRepeat: Repeat
+  lifespan: 55
+  maturation: 6
+  production: 6
+  yield: 3
+  potency: 10
+  idealLight: 8
+  growthStages: 6
+  chemicals:
+    Sugar:
+      Min: 1
+      Max: 4
+      PotencyDivisor: 20
+    Vitamin:
+      Min: 1
+      Max: 3
+      PotencyDivisor: 25
+    DragonFruitJuice:
+      Min: 1
+      Max: 7
+      PotencyDivisor: 20
