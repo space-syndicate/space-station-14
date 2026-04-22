@@ -2863,3 +2863,34 @@
         - MobMask
         layer:
         - MobLayer
+
+- type: entity
+  name: Драконий фрукт
+  parent: FoodProduceBase
+  id: FoodDragonFruit
+  description: Рёв, словно дразнящий дракон.
+  components:
+  - type: FlavorProfile
+    flavors:
+      - Dragonfruit
+  - type: Tag
+    tags:
+    - DragonFruit
+    - Fruit
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 14
+        reagents:
+        - ReagentId: Vitamin
+          Quantity: 4
+        - ReagentId: Sugar
+          Quantity: 3
+        - ReagentId: DragonFruitJuice
+          Quantity: 7
+  - type: Sprite
+    sprite: Objects/Specific/Hydroponics/dragon_fruit.rsi
+  - type: Item
+    heldPrefix: produce
+  - type: Produce
+    seedId: dragonFruits
