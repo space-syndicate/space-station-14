@@ -164,3 +164,30 @@
   physicalDesc: reagent-physical-desc-crisp
   flavor: Dragonfruit
   color: "#f1f1f1"
+
+- type: reagent
+  id: MangosteenJuice
+  name: Сок мангустина
+  parent: BaseJuice
+  desc: reagent-desc-juice-mangosteen
+  physicalDesc: reagent-physical-desc-crisp
+  flavor: Mangosteen
+  color: "#440030"
+
+- type: reagent
+  id: PearJuice
+  name: Сок груши
+  parent: BaseJuice
+  desc: reagent-desc-juice-pear
+  physicalDesc: reagent-physical-desc-crisp
+  flavor: Pear
+  color: "#e6fc26"
+
+- type: reagent
+  id: DurianJuice
+  name: Сок дуриана
+  parent: BaseJuice
+  desc: reagent-desc-juice-durian
+  physicalDesc: reagent-physical-desc-crisp
+  flavor: Durian
+  color: "#f6ffa1"

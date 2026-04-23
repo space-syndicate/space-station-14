@@ -2070,8 +2070,6 @@
   packetPrototype: YellowDragonFruitSeeds
   productPrototypes:
     - FoodYellowDragonFruit
-  mutationPrototypes:
-    - YellowDragonFruit
   harvestRepeat: Repeat
   lifespan: 45
   maturation: 6
@@ -2097,3 +2095,133 @@
       Min: 1
       Max: 1
       PotencyDivisor: 25
+
+- type: seed
+  id: MAngosteen
+  name: семена мангустина
+  noun: seeds-noun-seeds
+  displayName: мангустина
+  plantRsi: Objects/Specific/Hydroponics/mangosteen.rsi
+  packetPrototype: MangosteenSeeds
+  productPrototypes:
+    - FoodMangosteen
+  harvestRepeat: Repeat
+  lifespan: 65
+  maturation: 6
+  production: 6
+  yield: 3
+  potency: 10
+  idealLight: 8
+  growthStages: 6
+  chemicals:
+    Sugar:
+      Min: 1
+      Max: 2
+      PotencyDivisor: 20
+    Vitamin:
+      Min: 1
+      Max: 5
+      PotencyDivisor: 25
+    MangosteenJuice:
+      Min: 1
+      Max: 4
+      PotencyDivisor: 20
+
+- type: seed
+  id: PeaR
+  name: семена груши
+  noun: seeds-noun-seeds
+  displayName: груши
+  plantRsi: Objects/Specific/Hydroponics/pear.rsi
+  packetPrototype: PearSeeds
+  productPrototypes:
+    - FoodPear
+  mutationPrototypes:
+    - PricklePear
+  harvestRepeat: Repeat
+  lifespan: 35
+  maturation: 6
+  production: 6
+  yield: 3
+  potency: 10
+  idealLight: 8
+  growthStages: 6
+  chemicals:
+    Sugar:
+      Min: 1
+      Max: 3
+      PotencyDivisor: 20
+    Vitamin:
+      Min: 1
+      Max: 6
+      PotencyDivisor: 25
+    PearJuice:
+      Min: 1
+      Max: 4
+      PotencyDivisor: 20
+
+- type: seed
+  id: PricklePear
+  name: семена грушовника
+  noun: seeds-noun-seeds
+  displayName: грушовника
+  plantRsi: Objects/Specific/Hydroponics/prickle_pear.rsi
+  packetPrototype: PricklePearSeeds
+  productPrototypes:
+    - FoodPricklePear
+  harvestRepeat: Repeat
+  lifespan: 45
+  maturation: 6
+  production: 6
+  yield: 3
+  potency: 10
+  idealLight: 8
+  growthStages: 6
+  chemicals:
+    Sugar:
+      Min: 1
+      Max: 3
+      PotencyDivisor: 20
+    Vitamin:
+      Min: 1
+      Max: 6
+      PotencyDivisor: 25
+    PearJuice:
+      Min: 1
+      Max: 3
+      PotencyDivisor: 20
+
+- type: seed
+  id: DuriaN
+  name: семена дуриана
+  noun: seeds-noun-seeds
+  displayName: дуриана
+  plantRsi: Objects/Specific/Hydroponics/durian.rsi
+  packetPrototype: DurianSeeds
+  productPrototypes:
+    - FoodDurian
+  harvestRepeat: Repeat
+  lifespan: 45
+  maturation: 6
+  production: 6
+  yield: 3
+  potency: 10
+  idealLight: 8
+  growthStages: 6
+  chemicals:
+    Sugar:
+      Min: 1
+      Max: 3
+      PotencyDivisor: 20
+    Vitamin:
+      Min: 1
+      Max: 6
+      PotencyDivisor: 25
+    DurianJuice:
+      Min: 1
+      Max: 3
+      PotencyDivisor: 20
+    MindbreakerToxin: 
+      Min: 1
+      Max: 3
+      PotencyDivisor: 10

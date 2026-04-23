@@ -778,3 +778,43 @@
       seedId: yellowdragonFruits
     - type: Sprite
       sprite: Objects/Specific/Hydroponics/yellow_dragon_fruit.rsi
+
+- type: entity
+  parent: SeedBase
+  name: пакет семян (Мангустин)
+  id: MangosteenSeeds
+  components:
+    - type: Seed
+      seedId: MAngosteen
+    - type: Sprite
+      sprite: Objects/Specific/Hydroponics/mangosteen.rsi
+
+- type: entity
+  parent: SeedBase
+  name: пакет семян (Груша)
+  id: PearSeeds
+  components:
+    - type: Seed
+      seedId: PeaR
+    - type: Sprite
+      sprite: Objects/Specific/Hydroponics/pear.rsi
+
+- type: entity
+  parent: SeedBase
+  name: пакет семян (Грушовник)
+  id: PricklePearSeeds
+  components:
+    - type: Seed
+      seedId: PricklePear
+    - type: Sprite
+      sprite: Objects/Specific/Hydroponics/prickle_pear.rsi
+
+- type: entity
+  parent: SeedBase
+  name: пакет семян (Дуриан)
+  id: DurianSeeds
+  components:
+    - type: Seed
+      seedId: DuriaN
+    - type: Sprite
+      sprite: Objects/Specific/Hydroponics/durian.rsi

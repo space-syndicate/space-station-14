@@ -2927,3 +2927,129 @@
     heldPrefix: produce
   - type: Produce
     seedId: yellowdragonFruits
+    
+- type: entity
+  name: Мангустин
+  parent: FoodProduceBase
+  id: FoodMangosteen
+  description: Фиолетовый чесночёк.
+  components:
+  - type: FlavorProfile
+    flavors:
+      - mangosteen
+  - type: Tag
+    tags:
+    - Mangosteen
+    - Fruit
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 11
+        reagents:
+        - ReagentId: Vitamin
+          Quantity: 5
+        - ReagentId: Sugar
+          Quantity: 2
+        - ReagentId: MangosteenJuice
+          Quantity: 4
+  - type: Sprite
+    sprite: Objects/Specific/Hydroponics/mangosteen.rsi
+  - type: Item
+    heldPrefix: produce
+  - type: Produce
+    seedId: MAngosteen
+
+- type: entity
+  name: Груша
+  parent: FoodProduceBase
+  id: FoodPear
+  description: Зелёная груша.
+  components:
+  - type: FlavorProfile
+    flavors:
+      - pear
+  - type: Tag
+    tags:
+    - Pear
+    - Fruit
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 13
+        reagents:
+        - ReagentId: Vitamin
+          Quantity: 6
+        - ReagentId: Sugar
+          Quantity: 3
+        - ReagentId: PearJuice
+          Quantity: 4
+  - type: Sprite
+    sprite: Objects/Specific/Hydroponics/pear.rsi
+  - type: Item
+    heldPrefix: produce
+  - type: Produce
+    seedId: PeaR
+
+- type: entity
+  name: Грушовник
+  parent: FoodProduceBase
+  id: FoodPricklePear
+  description: Напоминает что-то склизкое.
+  components:
+  - type: FlavorProfile
+    flavors:
+      - pricklepear
+  - type: Tag
+    tags:
+    - PricklePear
+    - Fruit
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 12
+        reagents:
+        - ReagentId: Vitamin
+          Quantity: 6
+        - ReagentId: Sugar
+          Quantity: 2
+        - ReagentId: PearJuice
+          Quantity: 4
+  - type: Sprite
+    sprite: Objects/Specific/Hydroponics/prickle_pear.rsi
+  - type: Item
+    heldPrefix: produce
+  - type: Produce
+    seedId: PricklePear
+
+- type: entity
+  name: Дуриан
+  parent: FoodProduceBase
+  id: FoodDurian
+  description: Он воняет?
+  components:
+  - type: FlavorProfile
+    flavors:
+      - durian
+  - type: Tag
+    tags:
+    - Durian
+    - Fruit
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 12
+        reagents:
+        - ReagentId: Vitamin
+          Quantity: 3
+        - ReagentId: Sugar
+          Quantity: 2
+        - ReagentId: DurianJuice
+          Quantity: 6
+        - ReagentId: MindbreakerToxin
+          Quantity: 1
+  - type: Sprite
+    sprite: Objects/Specific/Hydroponics/durian.rsi
+  - type: Item
+    heldPrefix: produce
+  - type: Produce
+    seedId: DuriaN
