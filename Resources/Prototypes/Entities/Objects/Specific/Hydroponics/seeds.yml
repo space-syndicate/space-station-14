@@ -768,3 +768,13 @@
       seedId: dragonFruits
     - type: Sprite
       sprite: Objects/Specific/Hydroponics/dragon_fruit.rsi
+
+- type: entity
+  parent: SeedBase
+  name: пакет семян (жёлтый драконий фрукт)
+  id: YellowDragonFruitSeeds
+  components:
+    - type: Seed
+      seedId: yellowdragonFruits
+    - type: Sprite
+      sprite: Objects/Specific/Hydroponics/yellow_dragon_fruit.rsi

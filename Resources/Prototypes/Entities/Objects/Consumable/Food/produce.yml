@@ -2894,3 +2894,36 @@
     heldPrefix: produce
   - type: Produce
     seedId: dragonFruits
+
+- type: entity
+  name: Жёлтый драконий фрукт
+  parent: FoodProduceBase
+  id: FoodYellowDragonFruit
+  description: Дыхание, словно злой дракон.
+  components:
+  - type: FlavorProfile
+    flavors:
+      - yellowDragonfruit
+  - type: Tag
+    tags:
+    - YellowDragonFruit
+    - Fruit
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 13
+        reagents:
+        - ReagentId: Ichor
+          Quantity: 1
+        - ReagentId: Vitamin
+          Quantity: 4
+        - ReagentId: Sugar
+          Quantity: 1
+        - ReagentId: DragonFruitJuice
+          Quantity: 7
+  - type: Sprite
+    sprite: Objects/Specific/Hydroponics/yellow_dragon_fruit.rsi
+  - type: Item
+    heldPrefix: produce
+  - type: Produce
+    seedId: yellowdragonFruits

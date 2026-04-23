@@ -2036,6 +2036,8 @@
   packetPrototype: DragonFruitSeeds
   productPrototypes:
     - FoodDragonFruit
+  mutationPrototypes:
+    - yellowdragonFruits
   harvestRepeat: Repeat
   lifespan: 55
   maturation: 6
@@ -2057,3 +2059,41 @@
       Min: 1
       Max: 7
       PotencyDivisor: 20
+
+
+- type: seed
+  id: yellowdragonFruits
+  name: семена жёлтого драконьего фрукта
+  noun: seeds-noun-seeds
+  displayName: Жёлтый драконий фрукт
+  plantRsi: Objects/Specific/Hydroponics/yellow_dragon_fruit.rsi
+  packetPrototype: YellowDragonFruitSeeds
+  productPrototypes:
+    - FoodYellowDragonFruit
+  mutationPrototypes:
+    - YellowDragonFruit
+  harvestRepeat: Repeat
+  lifespan: 45
+  maturation: 6
+  production: 6
+  yield: 3
+  potency: 10
+  idealLight: 8
+  growthStages: 6
+  chemicals:
+    Sugar:
+      Min: 1
+      Max: 1
+      PotencyDivisor: 20
+    Vitamin:
+      Min: 1
+      Max: 4
+      PotencyDivisor: 25
+    DragonFruitJuice:
+      Min: 1
+      Max: 7
+      PotencyDivisor: 20
+    Ichor:
+      Min: 1
+      Max: 1
+      PotencyDivisor: 25
