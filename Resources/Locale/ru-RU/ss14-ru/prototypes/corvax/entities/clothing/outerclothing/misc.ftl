@@ -5,4 +5,4 @@ ent-ClothingOuterRobesMagistrateAlt = роба магистрата
 ent-ClothingOuterRobesMagistrateFancy = роскошная роба магистрата
     .desc = Шикарная роба для шикарного мужчины! Или женщины...
 ent-ClothingOuterRobesMagistrateRed = кроваво-красная роба магистрата
-    .desc = Это кровь?
+    .desc = Смотря на эту робу вам кажется, что её владелец любит корпоратократию, NanoTrasen и сложит с себя вверенные чрезвычайные полномочия.
