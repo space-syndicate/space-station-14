@@ -8,7 +8,7 @@
   requirements:
   - !type:RoleTimeRequirement
     role: JobBorg
-    time: 5h
+    time: 0h
   weight: 10
   canBeAntag: false
   icon: JobIconStationAi
@@ -24,7 +24,7 @@
   playTimeTracker: JobBorg
   requirements:
     - !type:OverallPlaytimeRequirement
-      time: 10h
+      time: 0h
   canBeAntag: false
   icon: JobIconBorg
   supervisors: job-supervisors-rd

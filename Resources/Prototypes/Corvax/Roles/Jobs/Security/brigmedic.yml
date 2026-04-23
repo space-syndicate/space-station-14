@@ -6,10 +6,10 @@
   requirements:
   - !type:DepartmentTimeRequirement
     department: Medical
-    time: 15h
+    time: 0h
   - !type:DepartmentTimeRequirement
     department: Security
-    time: 5h
+    time: 0h
   - !type:TraitsRequirement
     inverted: true
     traits:

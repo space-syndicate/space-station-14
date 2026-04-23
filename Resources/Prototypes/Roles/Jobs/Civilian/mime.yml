@@ -5,7 +5,7 @@
   playTimeTracker: JobMime
   requirements:
     - !type:OverallPlaytimeRequirement
-      time: 1h # Corvax-RoleTime 4
+      time: 0h # Corvax-RoleTime 4
   startingGear: MimeGear
   icon: "JobIconMime"
   supervisors: job-supervisors-hop

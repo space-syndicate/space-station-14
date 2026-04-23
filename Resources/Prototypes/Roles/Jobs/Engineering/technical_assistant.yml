@@ -5,10 +5,10 @@
   playTimeTracker: JobTechnicalAssistant
   requirements:
     - !type:OverallPlaytimeRequirement
-      time: 1h
+      time: 0h
     - !type:DepartmentTimeRequirement
       department: Engineering
-      time: 10h # Corvax-RoleTime
+      time: 0h # Corvax-RoleTime
       inverted: true # stop playing intern if you're good at engineering!
   startingGear: TechnicalAssistantGear
   icon: "JobIconTechnicalAssistant"
