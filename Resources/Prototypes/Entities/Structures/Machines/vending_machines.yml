@@ -2311,3 +2311,31 @@
       map: ["enum.WiresVisualLayers.MaintenancePanel"]
   - type: AccessReader
     access: [["Medical"]]
+
+- type: entity
+  parent: VendingMachine
+  id: VendingMachinePlusheWend
+  name: ПлюшВенд
+  description: За ним виднеется какая-то белая субстанция.. А стоп, это плюш.
+  components:
+  - type: VendingMachine
+    pack: PlusheWendInventory
+    offState: off
+    brokenState: broken
+    normalState: normal-unshaded
+  - type: DatasetVocalizer
+    dataset: PlusheWendAds
+  - type: Sprite
+    sprite: Structures/Machines/VendingMachines/plushwend.rsi
+    layers:
+    - state: "off"
+      map: ["enum.VendingMachineVisualLayers.Base"]
+    - state: "off"
+      map: ["enum.VendingMachineVisualLayers.BaseUnshaded"]
+      shader: unshaded
+    - state: panel
+      map: ["enum.WiresVisualLayers.MaintenancePanel"]
+  - type: PointLight
+    radius: 1.5
+    energy: 3.0
+    color: "#b82a2a"

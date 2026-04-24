@@ -818,3 +818,23 @@
       seedId: DuriaN
     - type: Sprite
       sprite: Objects/Specific/Hydroponics/durian.rsi
+
+- type: entity
+  parent: SeedBase
+  name: пакет семян (Папайя)
+  id: PapayaSeeds
+  components:
+    - type: Seed
+      seedId: PapayA
+    - type: Sprite
+      sprite: Objects/Specific/Hydroponics/papaya.rsi
+
+- type: entity
+  parent: SeedBase
+  name: пакет семян (Рамбутан)
+  id: RambutanSeeds
+  components:
+    - type: Seed
+      seedId: RambutaN
+    - type: Sprite
+      sprite: Objects/Specific/Hydroponics/rambutan.rsi

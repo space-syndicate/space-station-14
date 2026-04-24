@@ -3053,3 +3053,65 @@
     heldPrefix: produce
   - type: Produce
     seedId: DuriaN
+
+- type: entity
+  name: Папайя
+  parent: FoodProduceBase
+  id: FoodPapaya
+  description: Вау, а оно такое зелёное..
+  components:
+  - type: FlavorProfile
+    flavors:
+      - papaya
+  - type: Tag
+    tags:
+    - Papaya
+    - Fruit
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 11
+        reagents:
+        - ReagentId: Vitamin
+          Quantity: 3
+        - ReagentId: Sugar
+          Quantity: 2
+        - ReagentId: PapayaJuice
+          Quantity: 5
+  - type: Sprite
+    sprite: Objects/Specific/Hydroponics/papaya.rsi
+  - type: Item
+    heldPrefix: produce
+  - type: Produce
+    seedId: PapayA
+
+- type: entity
+  name: Рамбутан
+  parent: FoodProduceBase
+  id: FoodRambutan
+  description: Оно довольно пушистое.
+  components:
+  - type: FlavorProfile
+    flavors:
+      - rambutan
+  - type: Tag
+    tags:
+    - Rambutan
+    - Fruit
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 5
+        reagents:
+        - ReagentId: Vitamin
+          Quantity: 1
+        - ReagentId: Sugar
+          Quantity: 1
+        - ReagentId: RambutanJuice
+          Quantity: 3
+  - type: Sprite
+    sprite: Objects/Specific/Hydroponics/rambutan.rsi
+  - type: Item
+    heldPrefix: produce
+  - type: Produce
+    seedId: RambutaN

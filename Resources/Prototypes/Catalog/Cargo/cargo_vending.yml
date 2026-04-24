@@ -322,3 +322,16 @@
   cost: 600
   category: cargoproduct-category-name-service
   group: market
+
+- type: cargoProduct
+  id: CrateVendingMachineRestockPlushe
+  icon:
+    sprite: Objects/Specific/Service/vending_machine_restock.rsi
+    state: base
+  product: VendingMachineRestockPlushe
+  container:
+    entity: WrappedParcel
+    containerId: contents
+  cost: 2000
+  category: cargoproduct-category-name-service
+  group: market

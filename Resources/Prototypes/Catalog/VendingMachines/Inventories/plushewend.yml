@@ -1,0 +1,21 @@
+- type: vendingMachineInventory
+  id: PlusheWendInventory
+  startingInventory:
+    PlushieBee: 5
+    PlushieLizard: 3
+    PlushieCarp: 3
+    PlushieSnake: 3
+    PlushieSlime: 5
+    PlushieRouny: 1
+    PlushieVox: 5
+    PlushieDiona: 5
+    PlushieSharkBlue: 3
+    PlushieSharkPink: 3
+    PlushieSharkGrey: 3
+    PlushieMoth: 5
+  contrabandInventory:
+    PlushieSpaceLizard: 3
+    PlushieNar: 3
+    PlushieRatvar: 3
+    PlushieNuke: 5
+    PlushieXeno: 3

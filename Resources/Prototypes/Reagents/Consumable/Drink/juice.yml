@@ -191,3 +191,21 @@
   physicalDesc: reagent-physical-desc-crisp
   flavor: Durian
   color: "#f6ffa1"
+
+- type: reagent
+  id: PapayaJuice
+  name: Сок папайи
+  parent: BaseJuice
+  desc: reagent-desc-juice-papaya
+  physicalDesc: reagent-physical-desc-crisp
+  flavor: Papaya
+  color: "#db8b14"
+
+- type: reagent
+  id: RambutanJuice
+  name: Сок рамбутана
+  parent: BaseJuice
+  desc: reagent-desc-juice-rambutan
+  physicalDesc: reagent-physical-desc-crisp
+  flavor: Rambutan
+  color: "#ffffff5a"

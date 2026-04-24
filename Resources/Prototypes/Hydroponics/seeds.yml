@@ -2100,7 +2100,7 @@
   id: MAngosteen
   name: семена мангустина
   noun: seeds-noun-seeds
-  displayName: мангустина
+  displayName: мангустин
   plantRsi: Objects/Specific/Hydroponics/mangosteen.rsi
   packetPrototype: MangosteenSeeds
   productPrototypes:
@@ -2131,7 +2131,7 @@
   id: PeaR
   name: семена груши
   noun: seeds-noun-seeds
-  displayName: груши
+  displayName: груша
   plantRsi: Objects/Specific/Hydroponics/pear.rsi
   packetPrototype: PearSeeds
   productPrototypes:
@@ -2164,7 +2164,7 @@
   id: PricklePear
   name: семена грушовника
   noun: seeds-noun-seeds
-  displayName: грушовника
+  displayName: грушовник
   plantRsi: Objects/Specific/Hydroponics/prickle_pear.rsi
   packetPrototype: PricklePearSeeds
   productPrototypes:
@@ -2192,10 +2192,72 @@
       PotencyDivisor: 20
 
 - type: seed
+  id: PapayA
+  name: семена папайи
+  noun: seeds-noun-seeds
+  displayName: папайя
+  plantRsi: Objects/Specific/Hydroponics/papaya.rsi
+  packetPrototype: PapayaSeeds
+  productPrototypes:
+    - FoodPapaya
+  harvestRepeat: Repeat
+  lifespan: 65
+  maturation: 6
+  production: 6
+  yield: 3
+  potency: 10
+  idealLight: 8
+  growthStages: 6
+  chemicals:
+    Sugar:
+      Min: 1
+      Max: 2
+      PotencyDivisor: 20
+    Vitamin:
+      Min: 1
+      Max: 3
+      PotencyDivisor: 25
+    PapayaJuice:
+      Min: 1
+      Max: 5
+      PotencyDivisor: 20
+
+- type: seed
+  id: RambutaN
+  name: семена рамбутана
+  noun: seeds-noun-seeds
+  displayName: рамбутан
+  plantRsi: Objects/Specific/Hydroponics/rambutan.rsi
+  packetPrototype: RambutanSeeds
+  productPrototypes:
+    - FoodRambutan
+  harvestRepeat: Repeat
+  lifespan: 45
+  maturation: 6
+  production: 7
+  yield: 3
+  potency: 10
+  idealLight: 8
+  growthStages: 6
+  chemicals:
+    Sugar:
+      Min: 1
+      Max: 1
+      PotencyDivisor: 20
+    Vitamin:
+      Min: 1
+      Max: 1
+      PotencyDivisor: 25
+    RambutanJuice:
+      Min: 1
+      Max: 3
+      PotencyDivisor: 20
+
+- type: seed
   id: DuriaN
   name: семена дуриана
   noun: seeds-noun-seeds
-  displayName: дуриана
+  displayName: дуриан
   plantRsi: Objects/Specific/Hydroponics/durian.rsi
   packetPrototype: DurianSeeds
   productPrototypes:

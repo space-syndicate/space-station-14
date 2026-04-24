@@ -490,3 +490,18 @@
     - state: green_bit
       shader: unshaded
     - state: refill_medical
+
+- type: entity
+  parent: BaseVendingMachineRestock
+  id: VendingMachineRestockPlushe
+  name: ящик пополнения ПлюшВенда
+  description: Коробка полна порванной ткани и плюша. От неё исходит запах детства.
+  components:
+  - type: VendingMachineRestock
+    id: PlusheWendInventory
+  - type: Sprite
+    layers:
+    - state: base
+    - state: green_bit
+      shader: unshaded
+    - state: refill_plush
