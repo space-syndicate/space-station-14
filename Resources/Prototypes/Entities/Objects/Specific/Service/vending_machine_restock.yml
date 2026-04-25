@@ -498,7 +498,8 @@
   description: Коробка полна порванной ткани и плюша. От неё исходит запах детства.
   components:
   - type: VendingMachineRestock
-    id: PlusheWendInventory
+    canRestock: 
+    - PlusheWendInventory
   - type: Sprite
     layers:
     - state: base
