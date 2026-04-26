@@ -22,6 +22,9 @@ map_pool = "CorvaxMapPool"
 secret_weight_prototype = "CorvaxSecretDefault"
 round_restart_time = 240
 
+[shulle]
+auto_call_time = 0
+
 [chat]
 max_announcement_length = 512
 
