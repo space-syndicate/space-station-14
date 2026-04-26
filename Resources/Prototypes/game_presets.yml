@@ -10,6 +10,7 @@
     - RampingStationEventScheduler
     - SpaceTrafficControlEventScheduler
     - BasicRoundstartVariation
+    - CorvaxEvacVote # Corvax
 
 - type: gamePreset
   id: KesslerSyndrome
@@ -25,6 +26,7 @@
     - RampingStationEventScheduler
     - SpaceTrafficControlEventScheduler
     - BasicRoundstartVariation
+    - CorvaxEvacVote # Corvax
 
 - type: gamePreset
   id: AllAtOnce
@@ -44,6 +46,7 @@
     - RampingStationEventScheduler
     - SpaceTrafficControlEventScheduler
     - BasicRoundstartVariation
+    - CorvaxEvacVote # Corvax
 
 - type: gamePreset
   id: AllerAtOnce
@@ -69,6 +72,7 @@
     - RampingStationEventScheduler
     - SpaceTrafficControlEventScheduler
     - BasicRoundstartVariation
+    - CorvaxEvacVote # Corvax
 
 - type: gamePreset
   id: Extended
@@ -83,6 +87,7 @@
   - MeteorSwarmScheduler
   - SpaceTrafficControlEventScheduler
   - BasicRoundstartVariation
+  - CorvaxEvacVote # Corvax
 
 - type: gamePreset
   id: Greenshift
@@ -94,6 +99,7 @@
   description: greenshift-description
   rules:
   - BasicRoundstartVariation
+  - CorvaxEvacVote # Corvax
 
 - type: gamePreset
   id: Dynamic
@@ -111,6 +117,7 @@
   - MeteorSwarmScheduler
   - SpaceTrafficControlEventScheduler
   - BasicRoundstartVariation
+  - CorvaxEvacVote # Corvax
 
 - type: gamePreset
   id: Secret
@@ -150,6 +157,7 @@
   - MeteorSwarmScheduler
   - SpaceTrafficControlEventScheduler
   - BasicRoundstartVariation
+  - CorvaxEvacVote # Corvax
 
 - type: gamePreset
   id: Deathmatch
@@ -179,6 +187,7 @@
   - MeteorSwarmScheduler
   - SpaceTrafficControlEventScheduler
   - BasicRoundstartVariation
+  - CorvaxEvacVote # Corvax
 
 - type: gamePreset
   id: Revolutionary
@@ -197,6 +206,7 @@
   - MeteorSwarmScheduler
   - SpaceTrafficControlEventScheduler
   - BasicRoundstartVariation
+  - CorvaxEvacVote # Corvax
 
 - type: gamePreset
   id: Wizard
@@ -213,6 +223,7 @@
   - MeteorSwarmScheduler
   - SpaceTrafficControlEventScheduler
   - BasicRoundstartVariation
+  - CorvaxEvacVote # Corvax
 
 - type: gamePreset
   id: Xenoborgs
@@ -229,6 +240,7 @@
   - MeteorSwarmScheduler
   - SpaceTrafficControlEventScheduler
   - BasicRoundstartVariation
+  - CorvaxEvacVote # Corvax
 
 - type: gamePreset
   id: Zombie
@@ -247,6 +259,7 @@
   - MeteorSwarmScheduler
   - SpaceTrafficControlEventScheduler
   - BasicRoundstartVariation
+  - CorvaxEvacVote # Corvax
 
 - type: gamePreset
   id: Zombieteors
@@ -263,3 +276,4 @@
   - KesslerSyndromeScheduler
   - SpaceTrafficControlEventScheduler
   - BasicRoundstartVariation
+  - CorvaxEvacVote # Corvax
