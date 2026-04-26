@@ -87,4 +87,17 @@ public sealed class CCCVars
     /// </summary>
     public static readonly CVarDef<bool> StationGoal =
         CVarDef.Create("game.station_goal", true, CVar.SERVERONLY);
+
+    /// <summary>
+    /// Evac vote system CVars.
+    /// </summary>
+
+    public static readonly CVarDef<int> EvacVoteTime =
+        CVarDef.Create("game.evac_vote_time", 5400, CVar.SERVERONLY);
+
+    public static readonly CVarDef<int> EvacVoteInterval =
+        CVarDef.Create("game.evac_vote_interval", 1800, CVar.SERVERONLY);
+
+    public static readonly CVarDef<float> EvacVoteRequiredRatio =
+        CVarDef.Create("game.evac_vote_required_ratio", 0.7f, CVar.SERVERONLY);
 }
