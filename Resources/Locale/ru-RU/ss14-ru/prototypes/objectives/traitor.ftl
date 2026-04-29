@@ -52,5 +52,5 @@ ent-NukeDiskStealObjective = { ent-BaseCaptainObjective }
     .desc = { ent-BaseCaptainObjective.desc }
 ent-SupercritAnomaliesObjective = { ent-BaseTraitorObjective}
     .desc = Nanotrasen проявляет большой интерес к аномалиям, которые могут иметь потенциально катастрофические последствия. Познакомьте их с огнем, с которым они играют.
-ent-HijackTradeStationObjective = Взломайте автоматизированную торговою станцию
+ent-HijackTradeStationObjective = Взломайте автоматизированную торговую станцию
     .desc = Вашему аплинку разрешен один маяк взлома. Разместите его на автоматизированной торговой станции и защищайте его, пока он взламывает торговую станцию.
