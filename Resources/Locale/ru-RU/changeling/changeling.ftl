@@ -22,10 +22,10 @@ changeling-transform-attempt-others = { CAPITALIZE(POSS-ADJ($user)) } кости
 
 # transformation BUI
 changeling-transform-bui-select-entity = {$entity}
-changeling-transform-bui-drop-identity-menu = Избавится от поглощенной личности.
-changeling-transform-bui-drop-identity-entity = Избавится от {$entity}
+changeling-transform-bui-drop-identity-menu = Избавиться от поглощённой личности.
+changeling-transform-bui-drop-identity-entity = Избавиться от {$entity}
 changeling-transform-bui-drop-identity-entity-popup = Вы избавились от личности {$entity}.
-changeling-transform-bui-drop-identity-cannot-drop = Вы неможете избавится от текущей личности.
+changeling-transform-bui-drop-identity-cannot-drop = Вы не можете избавиться от текущей личности.
 
 # other
 changeling-paused-map-name = Карта хранения личностей генокрада
