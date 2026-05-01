@@ -338,7 +338,7 @@
     - SpaceUpInventory
     - SodaInventory
     - DrGibbInventory
-    - SmiteInventory 
+    - SmiteInventory
   - type: Sprite
     layers:
     - state: base
@@ -498,7 +498,7 @@
   description: Коробка полна порванной ткани и плюша. От неё исходит запах детства.
   components:
   - type: VendingMachineRestock
-    canRestock: 
+    canRestock:
     - PlusheWendInventory
   - type: Sprite
     layers:
@@ -506,3 +506,19 @@
     - state: green_bit
       shader: unshaded
     - state: refill_plush
+
+- type: entity
+  parent: BaseVendingMachineRestock
+  id: VendingMachineRestockExoticSeeds
+  name: Коробка пополнение раздатчика экзотических семян
+  description: Коробка полная экзотики!
+  components:
+  - type: VendingMachineRestock
+    canRestock:
+    - MegaExoticSeedServitorInventory
+  - type: Sprite
+    layers:
+    - state: base
+    - state: green_bit
+      shader: unshaded
+    - state: refill_extraplant

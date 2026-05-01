@@ -1,0 +1,16 @@
+- type: vendingMachineInventory
+  id: MegaExoticSeedServitorInventory
+  startingInventory:
+    BungoSeeds: 5
+    RambutanSeeds: 5
+    PapayaSeeds: 5
+    DurianSeeds: 5
+    MangosteenSeeds: 5
+    DragonFruitSeeds: 5
+    FlyAmanitaSeeds: 5
+    NettleSeeds: 5
+    EggySeeds: 5
+    TowercapSeeds: 5
+  contrabandInventory:
+    CannabisSeeds: 3
+    TobaccoSeeds: 3
