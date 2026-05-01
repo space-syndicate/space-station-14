@@ -811,6 +811,16 @@
 
 - type: entity
   parent: SeedBase
+  name: пакет семян (Музыкальная груша)
+  id: PrickleMPearSeeds
+  components:
+    - type: Seed
+      seedId: MPear
+    - type: Sprite
+      sprite: Objects/Specific/Hydroponics/teto_pear.rsi
+
+- type: entity
+  parent: SeedBase
   name: пакет семян (Дуриан)
   id: DurianSeeds
   components:
@@ -838,3 +848,13 @@
       seedId: RambutaN
     - type: Sprite
       sprite: Objects/Specific/Hydroponics/rambutan.rsi
+
+- type: entity
+  parent: SeedBase
+  name: пакет семян (Огурец)
+  id: CucumberSeeds
+  components:
+    - type: Seed
+      seedId: CucumbeR
+    - type: Sprite
+      sprite: Objects/Specific/Hydroponics/cucumber.rsi

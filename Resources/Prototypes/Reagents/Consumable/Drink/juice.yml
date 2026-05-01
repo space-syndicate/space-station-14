@@ -209,3 +209,12 @@
   physicalDesc: reagent-physical-desc-crisp
   flavor: Rambutan
   color: "#ffffff5a"
+
+- type: reagent
+  id: CucumberJuice
+  name: Огуречный сок
+  parent: BaseJuice
+  desc: reagent-desc-juice-cucumber
+  physicalDesc: reagent-physical-desc-crisp
+  flavor: Cucumber
+  color: "#ffffff5a"

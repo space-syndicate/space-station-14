@@ -77,3 +77,13 @@ ent-ToyIan = игрушечный иан
     .desc = Не может кушать, но такой же пушистый, как настоящий!
 ent-ToyAmongPequeno = маленький амонг
     .desc = Сас!
+
+plushie-bucket-1 = Где моё ведро?
+plushie-bucket-2 = Я несу возмездие во имя Ведра!
+plushie-bucket-3 = Бултых!
+plushie-bucket-4 = Слава Ведру!
+plushie-bucket-5 = Ведро — это стиль жизни.
+plushie-bucket-6 = Пустое ведро — к несчастью... для тебя!
+plushie-bucket-7 = *глухие звуки металла*
+plushie-bucket-8 = Ты видел моё ведёрко?
+plushie-bucket-9 = Ведроносец всегда на посту.

@@ -2138,6 +2138,7 @@
     - FoodPear
   mutationPrototypes:
     - PricklePear
+    - MPear
   harvestRepeat: Repeat
   lifespan: 35
   maturation: 6
@@ -2189,6 +2190,37 @@
     PearJuice:
       Min: 1
       Max: 3
+      PotencyDivisor: 20
+
+- type: seed
+  id: MPear
+  name: семена музыкальной груши
+  noun: seeds-noun-seeds
+  displayName: музыкальная груша
+  plantRsi: Objects/Specific/Hydroponics/teto_pear.rsi
+  packetPrototype: PricklePearSeeds
+  productPrototypes:
+    - FoodPricklePear
+  harvestRepeat: Repeat
+  lifespan: 45
+  maturation: 6
+  production: 6
+  yield: 3
+  potency: 10
+  idealLight: 8
+  growthStages: 6
+  chemicals:
+    Sugar:
+      Min: 1
+      Max: 10
+      PotencyDivisor: 20
+    Vitamin:
+      Min: 1
+      Max: 3
+      PotencyDivisor: 25
+    PearJuice:
+      Min: 1
+      Max: 2
       PotencyDivisor: 20
 
 - type: seed
@@ -2287,3 +2319,34 @@
       Min: 1
       Max: 3
       PotencyDivisor: 10
+
+- type: seed
+  id: CucumbeR
+  name: семена огурца
+  noun: seeds-noun-seeds
+  displayName: огурец
+  plantRsi: Objects/Specific/Hydroponics/cucumber.rsi
+  packetPrototype: CucumberSeeds
+  productPrototypes:
+    - FoodCucumber
+  harvestRepeat: Repeat
+  lifespan: 45
+  maturation: 6
+  production: 6
+  yield: 3
+  potency: 10
+  idealLight: 8
+  growthStages: 6
+  chemicals:
+    Water:
+      Min: 1
+      Max: 5
+      PotencyDivisor: 20
+    Vitamin:
+      Min: 1
+      Max: 3
+      PotencyDivisor: 25
+    CucumberJuice:
+      Min: 1
+      Max: 2
+      PotencyDivisor: 20

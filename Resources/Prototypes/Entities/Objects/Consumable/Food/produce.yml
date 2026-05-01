@@ -3022,6 +3022,57 @@
     seedId: PricklePear
 
 - type: entity
+  name: Музыкальная груша
+  parent: FoodProduceBase
+  id: FoodMPear
+  description: Word of the day PEAR!
+  components:
+  - type: FlavorProfile
+    flavors:
+      - teto_pear
+  - type: Tag
+    tags:
+    - MPear
+    - Fruit
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 15
+        reagents:
+        - ReagentId: Vitamin
+          Quantity: 3
+        - ReagentId: Sugar
+          Quantity: 10
+        - ReagentId: PearJuice
+          Quantity: 2
+  - type: Sprite
+    sprite: Objects/Specific/Hydroponics/teto_pear.rsi
+    layers:
+    - state: icon # Движку нужно знать, какой слой рисовать из RSI
+  - type: Item
+    heldPrefix: produce
+  - type: Produce
+    seedId: MPear
+  - type: EmitSoundOnUse
+    sound: &PlushieTetoSound
+      path: /Audio/Voice/Plushki/teto.ogg
+  - type: EmitSoundOnLand
+    sound: *PlushieTetoSound
+  - type: EmitSoundOnActivate
+    sound: *PlushieTetoSound
+  - type: EmitSoundOnTrigger
+    sound: *PlushieTetoSound
+  - type: EmitSoundOnCollide
+    sound: *PlushieTetoSound
+  - type: Edible
+    useSound: *PlushieTetoSound
+  - type: MeleeWeapon
+    soundHit: *PlushieTetoSound
+    damage: # Фикс ошибки Required field damage
+      types:
+        Blunt: 0
+
+- type: entity
   name: Дуриан
   parent: FoodProduceBase
   id: FoodDurian
@@ -3115,3 +3166,33 @@
     heldPrefix: produce
   - type: Produce
     seedId: RambutaN
+
+- type: entity
+  parent: FoodProduceBase
+  id: FoodCucumber
+  name: Огурец
+  description: Огурец состоит на 95% из воды!
+  components:
+  - type: FlavorProfile
+    flavors:
+      - numbingtranquility
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 11
+        reagents:
+        - ReagentId: Vitamin
+          Quantity: 3
+        - ReagentId: CucumberJuice
+          Quantity: 3
+        - ReagentId: Water
+          Quantity: 5
+  - type: Sprite
+    sprite: Objects/Specific/Hydroponics/cucumber.rsi
+  - type: Item
+    heldPrefix: produce
+  - type: Produce
+    seedId: CucumbeR
+  - type: Tag
+    tags:
+    - Vegetable

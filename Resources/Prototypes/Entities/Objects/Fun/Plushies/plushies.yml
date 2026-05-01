@@ -1302,3 +1302,67 @@
 #  - type: FoodSequenceElement - does not work with randomized sprites
 #    entries:
 #      CottonBurger: AmongPequeno
+
+
+- type: entity
+  parent: BasePlushie
+  id: PlushieBucket
+  name: ведроносец
+  description: Ведёрко не идёт в комплекте вместе с ним.
+  components:
+  - type: Sprite
+    sprite: Objects/Fun/Plushies/bucket.rsi
+    state: icon
+  - type: Clothing
+    quickEquip: false
+    sprite: Objects/Fun/Plushies/bucket.rsi
+    slots:
+    - HEAD
+    clothingVisuals:
+      head:
+      - state: equipped-HELMET
+        offset: "0, 0.04"
+  - type: FoodSequenceElement
+    entries:
+      CottonBurger: BucketPlushie
+  - type: Speech
+  - type: TriggerOnActivate
+  - type: UseDelay
+    delay: 1
+  - type: UseDelayOnTrigger
+  - type: SpeakOnTrigger
+    pack: BucketPlushiePhrases
+    probability: 0.7
+
+- type: entity
+  parent: BasePlushie
+  id: PlushieIsaac
+  name: Плюшевый Айзек
+  description: Он пахнет старым подвалом...
+  components:
+  - type: Sprite
+    sprite: Objects/Fun/Plushies/Isaac.rsi
+    state: icon
+  - type: EmitSoundOnUse
+    sound: &PlushieIsaacSound
+      path: /Audio/Voice/Plushki/isaac_cry.ogg
+  - type: EmitSoundOnLand
+    sound: *PlushieIsaacSound
+  - type: EmitSoundOnActivate
+    sound: *PlushieIsaacSound
+  - type: EmitSoundOnTrigger
+    sound: *PlushieIsaacSound
+  - type: EmitSoundOnCollide
+    sound: *PlushieIsaacSound
+  - type: Edible
+    useSound: *PlushieIsaacSound
+  - type: MeleeWeapon
+    soundHit: *PlushieIsaacSound
+  - type: Clothing
+    quickEquip: false
+    sprite: Objects/Fun/Plushies/Isaac.rsi
+    slots:
+    - HEAD
+  - type: FoodSequenceElement
+    entries:
+      CottonBurger: IsaacPlushie
