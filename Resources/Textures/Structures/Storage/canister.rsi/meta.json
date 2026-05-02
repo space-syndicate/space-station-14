@@ -2,7 +2,7 @@
     "version": 1,
     "license": "CC-BY-SA-3.0",
     "copyright": "Frezon canister modified from tgstation, the rest are taken from tgstation at commit https://github.com/tgstation/tgstation/commit/f8581a636acfc1517611a680b7711a74fc7ef335. Paper Sprites by Vermidia.",
-  "copyright": "Taken from TauCetiClassic at commit https://github.com/TauCetiStation/TauCetiClassic/tree/13b5c47145804dd24507b75f250de5e87d34e194",
+  "copyright": "Taken from TauCetiClassic at commit https://github.com/TauCetiStation/TauCetiClassic/tree/13b5c47145804dd24507b75f250de5e87d34e194, integrity & masks fixed by @mishutka09(discord:1152277579206774854)",
     "size": {
         "x": 32,
         "y": 32
@@ -15,10 +15,16 @@
             "name": "black-1"
         },
         {
+            "name": "mask-black"
+        },
+        {
             "name": "blue"
         },
         {
             "name": "blue-1"
+        },
+        {
+            "name": "mask-blue"
         },
         {
             "name": "can-connector"
@@ -60,10 +66,16 @@
             "name": "grey-1"
         },
         {
+            "name": "mask-grey"
+        },
+        {
             "name": "orange"
         },
         {
             "name": "orange-1"
+        },
+        {
+            "name": "mask-orange"
         },
         {
             "name": "red"
@@ -72,10 +84,16 @@
             "name": "red-1"
         },
         {
+            "name": "mask-red"
+        },
+        {
             "name": "redws"
         },
         {
             "name": "redws-1"
+        },
+        {
+            "name": "mask-redws"
         },
         {
             "name": "yellow"
@@ -84,10 +102,16 @@
             "name": "yellow-1"
         },
         {
+            "name": "mask-yellow"
+        },
+        {
             "name": "green"
         },
         {
             "name": "green-1"
+        },
+        {
+            "name": "mask-green"
         },
         {
             "name": "greenys"
@@ -96,10 +120,16 @@
             "name": "greenys-1"
         },
         {
+            "name": "mask-greenys"
+        },
+        {
             "name": "darkblue"
         },
         {
             "name": "darkblue-1"
+        },
+        {
+            "name": "mask-darkblue"
         },
         {
             "name": "frezon"
@@ -108,10 +138,16 @@
             "name": "frezon-1"
         },
         {
+            "name": "mask-frezon"
+        },
+        {
             "name": "water_vapor"
         },
         {
             "name": "water_vapor-1"
+        },
+        {
+            "name": "mask-water_vapor"
         },
         {
             "name": "scrubber-connector"
@@ -130,6 +166,21 @@
         },
         {
             "name": "paper"
+        },
+        {
+            "name": "integrity-unshaded-0"
+        },
+        {
+            "name": "integrity-unshaded-1"
+        },
+        {
+            "name": "integrity-unshaded-2"
+        },
+        {
+            "name": "integrity-unshaded-3"
+        },
+        {
+            "name": "integrity-unshaded-4"
         }
     ]
 }
