@@ -1,4 +1,7 @@
 <Document>
+  # Протокол обращения с особо ценными предметами
+  <FTLTextpart Key="guidebook-SOP-command-highrisk-items-instructions"/>
+
   # Общие СРП
   ### Глава отдела обязан
   <FTLTextpart Key="guidebook-SOP-command-general-must"/>
@@ -112,16 +115,7 @@
   ### Причины отстранения от должности
   <FTLTextpart Key="guidebook-SOP-command-procedure-reasons-for-removal"/>
 
-  ## Протоколы эвакуации
-  ### Окончание смены
-  <FTLTextpart Key="guidebook-SOP-command-protocol-evacuation-end-of-shift"/>
+  ## Протокол эвакуации
+  <FTLTextpart Key="guidebook-SOP-command-protocol-evacuation"/>
 
-  ### Невозможность выполнения цели
-  <FTLTextpart Key="guidebook-SOP-command-protocol-evacuation-unable-to-complete-goal"/>
-
-  ### Нарушение условий содержания сингулярности
-  <FTLTextpart Key="guidebook-SOP-command-protocol-evacuation-violation-of-singular-conditions"/>
-
-  ### Вспышка зомби вируса
-  <FTLTextpart Key="guidebook-SOP-command-protocol-evacuation-zombie-virus-outbreak"/>
 </Document>
