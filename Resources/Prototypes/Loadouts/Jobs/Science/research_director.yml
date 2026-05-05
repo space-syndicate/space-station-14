@@ -6,7 +6,12 @@
     requirement:
       !type:RoleTimeRequirement
       role: JobResearchDirector
-      time: 20h
+      time: 72000 #20 hrs
+  sponsorTierLoadoutEffects:
+  - !type:GroupLoadoutEffect
+    proto: SeniorDevTeamTier
+  - !type:GroupLoadoutEffect
+    proto: AdministratorSponsorTier
 
 # Head
 - type: loadout
@@ -53,3 +58,10 @@
   id: ResearchDirectorWintercoat
   equipment:
     outerClothing: ClothingOuterWinterRD
+
+#SS220-RD-New-Loadout-begin
+- type: loadout
+  id: RnDPDA
+  equipment:
+    id: RnDPDA
+#SS220-RD-New-Loadout-end

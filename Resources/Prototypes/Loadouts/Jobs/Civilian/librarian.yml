@@ -2,19 +2,9 @@
 - type: loadout
   id: LibrarianJumpsuit
   equipment:
-    jumpsuit: ClothingUniformJumpsuitLibrarian
+    jumpsuit: ClothingUniformJumpsuitPrisoner
 
 - type: loadout
   id: LibrarianJumpskirt
   equipment:
-    jumpsuit: ClothingUniformJumpskirtLibrarian
-
-- type: loadout
-  id: CuratorJumpsuit
-  equipment:
-    jumpsuit: ClothingUniformJumpsuitCurator
-
-- type: loadout
-  id: CuratorJumpskirt
-  equipment:
-    jumpsuit: ClothingUniformJumpskirtCurator
+    jumpsuit: ClothingUniformJumpskirtPrisoner

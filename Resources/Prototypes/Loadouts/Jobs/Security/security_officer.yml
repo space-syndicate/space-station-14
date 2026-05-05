@@ -6,22 +6,32 @@
     requirement:
       !type:RoleTimeRequirement
       role: JobWarden
-      time: 6h # Corvax-RoleTime-Start
-  - !type:JobRequirementLoadoutEffect
-    requirement:
-      !type:RoleTimeRequirement
-      role: JobDetective
-      time: 2h
-  - !type:JobRequirementLoadoutEffect
-    requirement:
-      !type:RoleTimeRequirement
-      role: JobSecurityOfficer
-      time: 6h # Corvax-RoleTime-End
+      time: 21600 #6 hrs
   - !type:JobRequirementLoadoutEffect
     requirement:
       !type:DepartmentTimeRequirement
       department: Security
-      time: 60h
+      time: 216000 # 60 hrs
+  sponsorTierLoadoutEffects:
+  - !type:GroupLoadoutEffect
+    proto: SeniorDevTeamTier
+  - !type:GroupLoadoutEffect
+    proto: AdministratorSponsorTier
+
+#Security Star
+- type: loadoutEffectGroup
+  id: SecurityStarWorthy
+  effects:
+    - !type:JobRequirementLoadoutEffect
+      requirement:
+        !type:DepartmentTimeRequirement
+        department: Security
+        time: 360000 #100 hrs
+  sponsorTierLoadoutEffects:
+  - !type:GroupLoadoutEffect
+    proto: SeniorDevTeamTier
+  - !type:GroupLoadoutEffect
+    proto: AdministratorSponsorTier
 
 # Head
 - type: loadout
@@ -38,6 +48,14 @@
   id: SecurityBeret
   equipment:
     head: ClothingHeadHatBeretSecurity
+
+# Neck
+#SS220 holster loadout begin
+- type: loadout
+  id: SecurityHolster
+  equipment:
+    neck: ClothingBeltHolster
+#SS220 holster loadout end
 
 - type: loadout
   id: TrooperHat
@@ -124,13 +142,6 @@
   equipment:
     outerClothing: ClothingOuterArmorBasicSlim
 
-# Corvax-Start
-- type: loadout
-  id: SecurityOfficerOvercoat
-  equipment:
-    outerClothing: ClothingOuterCoatSecurityOvercoat
-# Corvax-End
-
 - type: loadout
   id: SecurityOfficerWintercoat
   equipment:
@@ -165,3 +176,13 @@
     proto: SeniorOfficer
   equipment:
     id: SeniorOfficerPDA
+
+# Misc
+- type: loadout
+  id: SecStar
+  effects:
+  - !type:GroupLoadoutEffect
+    proto: SecurityStarWorthy
+  storage:
+    back:
+    - Dinkystar

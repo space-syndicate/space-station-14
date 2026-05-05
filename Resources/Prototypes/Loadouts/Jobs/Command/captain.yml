@@ -6,7 +6,12 @@
     requirement:
       !type:RoleTimeRequirement
       role: JobCaptain
-      time: 20h
+      time: 72000 #20 hrs
+  sponsorTierLoadoutEffects:
+  - !type:GroupLoadoutEffect
+    proto: SeniorDevTeamTier
+  - !type:GroupLoadoutEffect
+    proto: AdministratorSponsorTier
 
 # Jumpsuit
 - type: loadout
@@ -24,10 +29,12 @@
   equipment:
     jumpsuit: ClothingUniformJumpsuitCapFormal
 
-- type: loadout
-  id: CaptainFormalSkirt
-  equipment:
-    jumpsuit: ClothingUniformJumpskirtCapFormalDress
+#SS220-RemoveFormalSkirtLoadouts-Begin
+#- type: loadout
+#  id: CaptainFormalSkirt
+#  equipment:
+#    jumpsuit: ClothingUniformJumpskirtCapFormalDress
+#SS220-RemoveFormalSkirtLoadouts-End
 
 # Head
 - type: loadout
@@ -38,7 +45,7 @@
 - type: loadout
   id: CaptainCap
   equipment:
-    head: ClothingHeadHatCapcap
+    head: ClothingHeadCaptainCap #SS220-CapHeadLoadoutsChanges
 
 # Neck
 - type: loadout

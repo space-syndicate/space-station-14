@@ -1,33 +1,3 @@
-# Playtime requirement for NanoTrasen Bible, Codex NanoTrasimus
-- type: loadoutEffectGroup
-  id: NanoTrasenBibleRequirement
-  effects:
-  - !type:JobRequirementLoadoutEffect
-    requirement:
-      !type:RoleTimeRequirement
-      role: JobCaptain
-      time: 2h
-
-# Playtime requirement for Druid Bible, Druidic Tablet
-- type: loadoutEffectGroup
-  id: DruidBibleRequirement
-  effects:
-  - !type:JobRequirementLoadoutEffect
-    requirement:
-      !type:RoleTimeRequirement
-      role: JobBotanist
-      time: 5h
-
-# Playtime requirement for Clown Bible, Mirth of the Honkmother
-- type: loadoutEffectGroup
-  id: ClownBibleRequirement
-  effects:
-  - !type:JobRequirementLoadoutEffect
-    requirement:
-      !type:RoleTimeRequirement
-      role: JobClown
-      time: 5h
-
 # Head
 - type: loadout
   id: ChaplainHead
@@ -108,48 +78,9 @@
   equipment:
     outerClothing: ClothingOuterHoodieChaplain
 
-# Bible/Holy Book
+  #SS220-Clothes-Start
 - type: loadout
-  id: Bible
-  storage:
-    back:
-    - Bible
-
-- type: loadout
-  id: BibleDruid
-  effects:
-  - !type:GroupLoadoutEffect
-    proto: DruidBibleRequirement
-  storage:
-    back:
-    - BibleDruid
-
-- type: loadout
-  id: BibleNanoTrasen
-  effects:
-  - !type:GroupLoadoutEffect
-    proto: NanoTrasenBibleRequirement
-  storage:
-    back:
-    - BibleNanoTrasen
-
-- type: loadout
-  id: BibleNarsie
-  storage:
-    back:
-    - BibleNarsie
-
-- type: loadout
-  id: BibleHonk
-  effects:
-  - !type:GroupLoadoutEffect
-    proto: ClownBibleRequirement
-  storage:
-    back:
-    - BibleHonk
-
-- type: loadout
-  id: BibleRatvar
-  storage:
-    back:
-    - BibleRatvar
+  id: HoodieChaplainWhite
+  equipment:
+    outerClothing: ClothingOuterHoodieChaplainWhite
+  #SS220-Clothes-End

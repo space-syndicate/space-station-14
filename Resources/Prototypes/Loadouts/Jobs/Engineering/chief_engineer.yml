@@ -6,7 +6,12 @@
     requirement:
       !type:RoleTimeRequirement
       role: JobChiefEngineer
-      time: 20h
+      time: 72000 #20 hrs
+  sponsorTierLoadoutEffects:
+  - !type:GroupLoadoutEffect
+    proto: SeniorDevTeamTier
+  - !type:GroupLoadoutEffect
+    proto: AdministratorSponsorTier
 
 # Jumpsuit
 - type: loadout
@@ -38,6 +43,23 @@
 - type: loadout
   id: ChiefEngineerBeret
   startingGear: EngineeringBeret
+
+# Back (ss220 fix ce-loadout start)
+- type: loadout
+  id: ChiefEngineerBackpack
+  equipment:
+    back: ClothingBackpackCE
+
+- type: loadout
+  id: ChiefEngineerSatchel
+  equipment:
+    back: ClothingBackpackSatchelCE
+
+- type: loadout
+  id: ChiefEngineerDuffel
+  equipment:
+    back: ClothingBackpackDuffelCE
+# ss220 fix ce-loadout end
 
 # Neck
 - type: loadout

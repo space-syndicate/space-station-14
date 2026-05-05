@@ -6,44 +6,45 @@
     requirement:
       !type:RoleTimeRequirement
       role: JobHeadOfSecurity
-      time: 20h
+      time: 72000 #20 hrs
+  sponsorTierLoadoutEffects:
+  - !type:GroupLoadoutEffect
+    proto: SeniorDevTeamTier
+  - !type:GroupLoadoutEffect
+    proto: AdministratorSponsorTier
 
 # Jumpsuit
 - type: loadout
   id: HeadofSecurityJumpsuit
   equipment:
     jumpsuit: ClothingUniformJumpsuitHoS
-  groupBy: "jumpsuit"
 
 - type: loadout
   id: HeadofSecurityJumpskirt
   equipment:
     jumpsuit: ClothingUniformJumpskirtHoS
-  groupBy: "jumpskirt"
 
 - type: loadout
   id: HeadofSecurityTurtleneck
   equipment:
     jumpsuit: ClothingUniformJumpsuitHoSAlt
-  groupBy: "jumpsuit"
 
 - type: loadout
   id: HeadofSecurityTurtleneckSkirt
   equipment:
     jumpsuit: ClothingUniformJumpskirtHoSAlt
-  groupBy: "jumpskirt"
 
 - type: loadout
   id: HeadofSecurityFormalSuit
   equipment:
     jumpsuit: ClothingUniformJumpsuitHosFormal
-  groupBy: "jumpsuit"
 
-- type: loadout
-  id: HeadofSecurityFormalSkirt
-  equipment:
-    jumpsuit: ClothingUniformJumpskirtHosFormal
-  groupBy: "jumpskirt"
+# SS220-RemoveFormalSkirtLoadouts-Begin
+#- type: loadout
+#  id: HeadofSecurityFormalSkirt
+#  equipment:
+#    jumpsuit: ClothingUniformJumpskirtHosFormal
+# SS220-RemoveFormalSkirtLoadouts-End
 
 # Head
 - type: loadout
@@ -85,3 +86,10 @@
   id: HeadofSecurityWinterCoat
   equipment:
     outerClothing: ClothingOuterWinterHoS
+
+# SS220 New bomber for HoS begin
+- type: loadout
+  id: HeadofSecurityBomber
+  equipment:
+    outerClothing: ClothingOuterCoatHoSbomber
+# SS220 New bomber for HoS end
