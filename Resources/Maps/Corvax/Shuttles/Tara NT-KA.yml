@@ -27,7 +27,6 @@ entities:
       name: Tara NT-KA
     - type: Transform
       pos: -0.64062524,-0.22296286
-      parent: invalid
     - type: MapGrid
       chunks:
         0,0:
@@ -1294,27 +1293,6 @@ entities:
     - type: Transform
       pos: 2.5,6.5
       parent: 2
-- proto: FlashlightLantern
-  entities:
-  - uid: 3
-    components:
-    - type: Transform
-      pos: 2.4599285,0.55610615
-      parent: 2
-    - type: HandheldLight
-      toggleActionEntity: 4
-    - type: ContainerContainer
-      containers:
-        cell_slot: !type:ContainerSlot
-          showEnts: False
-          occludes: True
-          ent: null
-        actions: !type:Container
-          showEnts: False
-          occludes: True
-          ents:
-          - 4
-    - type: ActionsContainer
 - proto: FloorTileItemOldConcrete
   entities:
   - uid: 153
