@@ -2296,3 +2296,16 @@
     whitelist:
       components:
       - HijackTradeStationCondition
+
+- type: listing
+  id: uplinkPlushieWhitty
+  name: Плюшевый сюрприз
+  description: Он делает КАБУМ при контакте с чем-либо!
+  productEntity: PlushieWhitty
+  cost:
+    Telecrystal: 3
+  discountCategory: veryRareDiscounts # Группа редких скидок (как у брони аколита)
+  discountDownTo:
+    Telecrystal: 1
+  categories:
+  - UplinkPointless

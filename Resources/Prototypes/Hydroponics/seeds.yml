@@ -2198,9 +2198,9 @@
   noun: seeds-noun-seeds
   displayName: музыкальная груша
   plantRsi: Objects/Specific/Hydroponics/teto_pear.rsi
-  packetPrototype: PricklePearSeeds
+  packetPrototype: PrickleMPearSeeds
   productPrototypes:
-    - FoodPricklePear
+    - FoodMPear
   harvestRepeat: Repeat
   lifespan: 45
   maturation: 6
@@ -2315,7 +2315,7 @@
       Min: 1
       Max: 3
       PotencyDivisor: 20
-    MindbreakerToxin: 
+    MindbreakerToxin:
       Min: 1
       Max: 3
       PotencyDivisor: 10

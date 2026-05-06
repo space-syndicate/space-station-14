@@ -1326,13 +1326,15 @@
     entries:
       CottonBurger: BucketPlushie
   - type: Speech
-  - type: TriggerOnActivate
+  # Добавляем эти два триггера вместе:
+  - type: TriggerOnActivate # Для работы на "E" (в мире и руках)
+  - type: TriggerOnUse      # Для работы на "Z" или клик (когда в руках)
   - type: UseDelay
     delay: 1
   - type: UseDelayOnTrigger
   - type: SpeakOnTrigger
     pack: BucketPlushiePhrases
-    probability: 0.7
+    probability: 0.5
 
 - type: entity
   parent: BasePlushie
@@ -1366,3 +1368,116 @@
   - type: FoodSequenceElement
     entries:
       CottonBurger: IsaacPlushie
+
+- type: entity
+  parent: BasePlushie
+  id: PlushieV1
+  name: V1
+  description: Монетка делает дзынь-дзынь.
+  components:
+  - type: Sprite
+    sprite: Objects/Fun/Plushies/V1.rsi
+    state: icon
+  - type: Clothing
+    quickEquip: false
+    sprite: Objects/Fun/Plushies/V1.rsi
+    slots:
+    - HEAD
+    clothingVisuals:
+      head:
+      - state: equipped-HELMET
+        offset: "0, 0.04"
+  - type: FoodSequenceElement
+    entries:
+      CottonBurger: V1Plushie
+
+- type: entity
+  parent: BasePlushie
+  id: PlushieV2
+  name: V2
+  description: Как же тяжело жить инвалиду без руки.
+  components:
+  - type: Sprite
+    sprite: Objects/Fun/Plushies/V2.rsi
+    state: icon
+  - type: Clothing
+    quickEquip: false
+    sprite: Objects/Fun/Plushies/V2.rsi
+    slots:
+    - HEAD
+    clothingVisuals:
+      head:
+      - state: equipped-HELMET
+        offset: "0, 0.04"
+  - type: FoodSequenceElement
+    entries:
+      CottonBurger: V2Plushie
+
+- type: entity
+  parent: BasePlushie
+  id: PlushieGarcello
+  name: Плюшевый курильщик
+  description: Он немного зеленеет?
+  components:
+  - type: Sprite
+    sprite: Objects/Fun/Plushies/garcello.rsi
+    state: icon
+  - type: EmitSoundOnUse
+    sound: &PlushieGarcelloSound
+      path: /Audio/Voice/Plushki/garcello-cough.ogg
+  - type: EmitSoundOnLand
+    sound: *PlushieGarcelloSound
+  - type: EmitSoundOnActivate
+    sound: *PlushieGarcelloSound
+  - type: EmitSoundOnTrigger
+    sound: *PlushieGarcelloSound
+  - type: EmitSoundOnCollide
+    sound: *PlushieGarcelloSound
+  - type: Edible
+    useSound: *PlushieGarcelloSound
+  - type: MeleeWeapon
+    soundHit: *PlushieGarcelloSound
+  - type: Clothing
+    quickEquip: false
+    sprite: Objects/Fun/Plushies/garcello.rsi
+    slots:
+    - HEAD
+  - type: FoodSequenceElement
+    entries:
+      CottonBurger: GarcelloPlushie
+
+- type: entity
+  parent: BasePlushie
+  id: PlushieWhitty
+  name: Плюшевый бомбоголовый
+  description: Кажется он вот-вот взорвётся!
+  components:
+  - type: Sprite
+    sprite: Objects/Fun/Plushies/whitty.rsi
+    state: icon
+  - type: Clothing
+    quickEquip: false
+    sprite: Objects/Fun/Plushies/whitty.rsi
+    slots:
+    - HEAD
+    clothingVisuals:
+      head:
+      - state: equipped-HELMET
+        offset: "0, 0.04"
+  - type: FoodSequenceElement
+    entries:
+      CottonBurger: WhittyPlushie
+  # Параметры взрыва точно как у твоей ExGrenade
+  - type: Explosive
+    explosionType: Default
+    maxIntensity: 10
+    intensitySlope: 3
+    totalIntensity: 40
+  - type: ExplodeOnTrigger
+    keysIn: [ timer ]
+  - type: TimerTrigger
+    delay: 1 # Взорвется через 1 сек после активации ударом
+  # Используем стандартный триггер коллизии, который точно есть в ядре
+  - type: TriggerOnCollide
+    fixtureID: fix1
+    keyOut: timer
