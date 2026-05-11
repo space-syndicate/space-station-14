@@ -17,6 +17,11 @@ public static class WikiEntityNameGenerator
     private const string ApiEndpoint = "https://station14.ru/api.php";
 
     private static readonly HttpClient HttpClient = new();
+    private static readonly JsonSerializerOptions SerializeOptions = new()
+    {
+        WriteIndented = true,
+        Encoder = JavaScriptEncoder.UnsafeRelaxedJsonEscaping
+    };
 
     public static void PublishJson(StreamWriter writer, IResourceManager resourceManager, ResPath destRoot)
     {
@@ -65,13 +70,7 @@ public static class WikiEntityNameGenerator
                 missing.Add(title);
         }
 
-        var options = new JsonSerializerOptions
-        {
-            WriteIndented = true,
-            Encoder = JavaScriptEncoder.UnsafeRelaxedJsonEscaping
-        };
-
-        var outputJson = JsonSerializer.Serialize(missing, options);
+        var outputJson = JsonSerializer.Serialize(missing, SerializeOptions);
         writer.Write(outputJson);
     }
 

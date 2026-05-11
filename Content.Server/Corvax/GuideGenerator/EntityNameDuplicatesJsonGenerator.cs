@@ -13,6 +13,12 @@ public static class EntityNameDuplicatesJsonGenerator
 {
     private const string AbilitySuffix = "(способность)";
 
+    private static readonly JsonSerializerOptions SerializeOptions = new()
+    {
+        WriteIndented = true,
+        Encoder = JavaScriptEncoder.UnsafeRelaxedJsonEscaping
+    };
+
     public static readonly string[] AllowedNameComponents =
     [
         "Fixtures",
@@ -108,13 +114,7 @@ public static class EntityNameDuplicatesJsonGenerator
         var nameToIds = GetDuplicatesName(prototypeManager, false);
         var nameToSingleId = nameToIds.ToDictionary(kv => kv.Key, kv => kv.Value[0]);
 
-        var options = new JsonSerializerOptions
-        {
-            WriteIndented = true,
-            Encoder = JavaScriptEncoder.UnsafeRelaxedJsonEscaping
-        };
-
-        writer.Write(JsonSerializer.Serialize(nameToSingleId, options));
+        writer.Write(JsonSerializer.Serialize(nameToSingleId, SerializeOptions));
     }
 
     public static void PublishDuplicatesJson(StreamWriter writer)
@@ -123,12 +123,6 @@ public static class EntityNameDuplicatesJsonGenerator
 
         var duplicatesName = GetDuplicatesName(prototypeManager, true);
 
-        var options = new JsonSerializerOptions
-        {
-            WriteIndented = true,
-            Encoder = JavaScriptEncoder.UnsafeRelaxedJsonEscaping
-        };
-
-        writer.Write(JsonSerializer.Serialize(duplicatesName, options));
+        writer.Write(JsonSerializer.Serialize(duplicatesName, SerializeOptions));
     }
 }

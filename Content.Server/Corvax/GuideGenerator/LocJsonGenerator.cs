@@ -11,6 +11,12 @@ namespace Content.Server.Corvax.GuideGenerator;
 
 public static class LocJsonGenerator
 {
+    private static readonly JsonSerializerOptions SerializeOptions = new()
+    {
+        WriteIndented = true,
+        Encoder = JavaScriptEncoder.UnsafeRelaxedJsonEscaping,
+    };
+
     // Matches top-level message/term identifiers at start of line (no leading whitespace or comment).
     private static readonly Regex TopEntryRegex =
         new(@"(?m)^(?!\s|#)([^\s=]+)\s*=", RegexOptions.Compiled | RegexOptions.CultureInvariant);
@@ -106,12 +112,6 @@ public static class LocJsonGenerator
             }
         }
 
-        var serializeOptions = new JsonSerializerOptions
-        {
-            WriteIndented = true,
-            Encoder = JavaScriptEncoder.UnsafeRelaxedJsonEscaping,
-        };
-
-        file.Write(JsonSerializer.Serialize(output, serializeOptions));
+        file.Write(JsonSerializer.Serialize(output, SerializeOptions));
     }
 }

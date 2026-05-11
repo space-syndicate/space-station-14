@@ -12,6 +12,12 @@ namespace Content.Server.Corvax.GuideGenerator;
 
 public sealed class EntityParentJsonGenerator
 {
+    private static readonly JsonSerializerOptions SerializeOptions = new()
+    {
+        WriteIndented = true,
+        Encoder = JavaScriptEncoder.UnsafeRelaxedJsonEscaping
+    };
+
     [JsonPropertyName("id")]
     public string Id { get; }
 
@@ -90,12 +96,6 @@ public sealed class EntityParentJsonGenerator
             .Select(x => new EntityParentJsonGenerator(x))
             .ToDictionary(x => x.Id, x => x.Parents);
 
-        var serializeOptions = new JsonSerializerOptions
-        {
-            WriteIndented = true,
-            Encoder = JavaScriptEncoder.UnsafeRelaxedJsonEscaping
-        };
-
-        file.Write(JsonSerializer.Serialize(prototypes, serializeOptions));
+        file.Write(JsonSerializer.Serialize(prototypes, SerializeOptions));
     }
 }
