@@ -190,10 +190,10 @@ jobs:
               "$API" | jq -r '.edit.result // "null"'
           }
 
-          query_page_sizes() {
+          query_page_linecounts() {
             local -n titles_ref=$1
-            local -n sizes_ref=$2
-            sizes_ref=()
+            local -n linecounts_ref=$2
+            linecounts_ref=()
 
             (( ${#titles_ref[@]} == 0 )) && return 0
 
@@ -207,18 +207,19 @@ jobs:
               --data-urlencode "format=json" \
               --data-urlencode "formatversion=2" \
               --data-urlencode "prop=revisions" \
-              --data-urlencode "rvprop=size" \
+              --data-urlencode "rvprop=content" \
+              --data-urlencode "rvslots=main" \
               --data-urlencode "titles=$titles" \
               "$API")
 
-            while IFS=$'\t' read -r title size; do
+            while IFS=$'\t' read -r title linecount; do
               [[ -z "${title:-}" ]] && continue
-              [[ -z "${size:-}" ]] && continue
-              sizes_ref["$title"]="$size"
+              [[ -z "${linecount:-}" ]] && continue
+              linecounts_ref["$title"]="$linecount"
             done < <(
               jq -r '
                 .query.pages[]
-                | [.title, (.revisions[0].size? // empty)]
+                | [.title, ((.revisions[0].slots.main.content? // "")| split("\n")| length)]
                 | @tsv
               ' <<< "$resp"
             )
@@ -244,11 +245,11 @@ jobs:
               module_titles+=("$MODULE_ROOT/$rel/data")
             done
 
-            declare -A json_sizes=()
-            declare -A module_sizes=()
+            declare -A json_lines=()
+            declare -A module_lines=()
 
-            query_page_sizes json_titles json_sizes
-            query_page_sizes module_titles module_sizes
+            query_page_linecounts json_titles json_lines
+            query_page_linecounts module_titles module_lines
 
             for file in "${batch_files[@]}"; do
               rel="${file#$BASE/}"
@@ -259,10 +260,10 @@ jobs:
 
               echo "Processing $rel → $json_title"
 
-              local_size=$(wc -c < "$file" | tr -d '[:space:]')
-              remote_size="${json_sizes[$json_title]:-}"
+              local_lines=$(awk 'END { print NR }' "$file")
+              remote_lines="${json_lines[$json_title]:-}"
 
-              if [[ -n "$remote_size" && "$remote_size" == "$local_size" ]]; then
+              if [[ -n "$remote_lines" && "$remote_lines" == "$local_lines" ]]; then
                 echo "Skipping unchanged page: $json_title"
               else
                 echo "Uploading $rel → $json_title"
@@ -271,10 +272,10 @@ jobs:
 
               lua_content=$'local loader = require("Module:JsonLoader")\nreturn loader.getFromTitle("'"$json_title"'")'
 
-              local_size=$(printf '%s' "$lua_content" | wc -c | tr -d '[:space:]')
-              remote_size="${module_sizes[$module_title]:-}"
+              local_lines=$(printf '%s' "$lua_content" | awk 'END { print NR }')
+              remote_lines="${module_lines[$module_title]:-}"
 
-              if [[ -n "$remote_size" && "$remote_size" == "$local_size" ]]; then
+              if [[ -n "$remote_lines" && "$remote_lines" == "$local_lines" ]]; then
                 echo "Skipping unchanged module: $module_title"
               else
                 echo "Creating/updating module → $module_title"
