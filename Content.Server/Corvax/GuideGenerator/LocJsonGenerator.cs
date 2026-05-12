@@ -58,8 +58,8 @@ public static class LocJsonGenerator
 
         foreach (var path in files)
         {
-            using var stream = res.ContentFileRead(path);
-            using var reader = new StreamReader(stream, Encoding.UTF8);
+            using var fileStream = res.ContentFileRead(path);
+            using var reader = new StreamReader(fileStream, Encoding.UTF8);
             var contents = reader.ReadToEnd();
             // Normalize line endings to simplify indexing.
             contents = contents.Replace("\r\n", "\n");
