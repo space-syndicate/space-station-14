@@ -54,7 +54,7 @@ public sealed class EntityJsonGenerator
             .FirstOrDefault();
     }
 
-    public static void PublishJson(StreamWriter file)
+    public static void PublishJson(Stream stream)
     {
         var prototype = IoCManager.Resolve<IPrototypeManager>();
         var prototypes =
@@ -64,6 +64,6 @@ public sealed class EntityJsonGenerator
                 .Select(x => new EntityJsonGenerator(x))
                 .ToDictionary(x => x.Id, x => x);
 
-        file.Write(JsonSerializer.Serialize(prototypes, SerializeOptions));
+        JsonSerializer.Serialize(stream, prototypes, SerializeOptions);
     }
 }

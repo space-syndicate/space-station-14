@@ -37,7 +37,7 @@ public static class LocJsonGenerator
         }
     }
 
-    public static void PublishJson(StreamWriter file)
+    public static void PublishJson(Stream stream)
     {
         var loc = IoCManager.Resolve<ILocalizationManager>();
         var res = IoCManager.Resolve<IResourceManager>();
@@ -46,7 +46,7 @@ public static class LocJsonGenerator
         var culture = loc.DefaultCulture ?? loc.GetFoundCultures().FirstOrDefault();
         if (culture == null)
         {
-            file.Write("{}");
+            JsonSerializer.Serialize(stream, new Dictionary<string, object?>(), SerializeOptions);
             return;
         }
 
@@ -112,6 +112,6 @@ public static class LocJsonGenerator
             }
         }
 
-        file.Write(JsonSerializer.Serialize(output, SerializeOptions));
+        JsonSerializer.Serialize(stream, output, SerializeOptions);
     }
 }

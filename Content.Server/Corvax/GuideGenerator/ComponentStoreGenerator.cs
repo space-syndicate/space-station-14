@@ -17,7 +17,7 @@ public static class ComponentStoreGenerator
         Encoder = JavaScriptEncoder.UnsafeRelaxedJsonEscaping
     };
 
-    public static void PublishJson(StreamWriter file)
+    public static void PublishJson(Stream stream)
     {
         var proto = IoCManager.Resolve<IPrototypeManager>();
         var compFactory = IoCManager.Resolve<IComponentFactory>();
@@ -98,6 +98,6 @@ public static class ComponentStoreGenerator
             normalized[refEntId] = compMap;
         }
 
-        file.Write(JsonSerializer.Serialize(normalized, SerializeOptions));
+        JsonSerializer.Serialize(stream, normalized, SerializeOptions);
     }
 }

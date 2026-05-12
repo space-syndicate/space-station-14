@@ -13,7 +13,7 @@ public static class PrototypeListGenerator
         Encoder = JavaScriptEncoder.UnsafeRelaxedJsonEscaping
     };
 
-    public static void PublishJson(StreamWriter file)
+    public static void PublishJson(Stream stream)
     {
         var proto = IoCManager.Resolve<IPrototypeManager>();
 
@@ -42,6 +42,6 @@ public static class PrototypeListGenerator
         if (output.Count == 0)
             return;
 
-        file.Write(JsonSerializer.Serialize(output, SerializeOptions));
+        JsonSerializer.Serialize(stream, output, SerializeOptions);
     }
 }

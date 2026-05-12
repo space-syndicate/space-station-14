@@ -19,7 +19,7 @@ public static class EntityProjectGenerator
         return EntityProjectHelper.GetProjectEntityIds();
     }
 
-    public static void PublishJson(StreamWriter file)
+    public static void PublishJson(Stream stream)
     {
         var ids = GetProjectEntityIds();
         if (ids.Count == 0)
@@ -28,6 +28,6 @@ public static class EntityProjectGenerator
         var sorted = ids.ToList();
         sorted.Sort(StringComparer.Ordinal);
 
-        file.Write(JsonSerializer.Serialize(sorted, SerializeOptions));
+        JsonSerializer.Serialize(stream, sorted, SerializeOptions);
     }
 }

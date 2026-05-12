@@ -83,9 +83,8 @@ public static class PrototypeJsonGenerator
                 ? actualKindName
                 : kind.Name;
             var fileName = TextTools.DecapitalizeString(kindName) + ".json";
-            using var file = res.UserData.OpenWriteText(destRoot / fileName);
-            file.Write(JsonSerializer.Serialize(outObj, SerializeOptions));
-            file.Flush();
+            using var stream = res.UserData.OpenWrite(destRoot / fileName);
+            JsonSerializer.Serialize(stream, outObj, SerializeOptions);
         }
     }
 

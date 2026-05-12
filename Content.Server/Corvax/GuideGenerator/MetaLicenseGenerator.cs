@@ -12,7 +12,7 @@ public static class MetaLicenseGenerator
         Encoder = JavaScriptEncoder.UnsafeRelaxedJsonEscaping
     };
 
-    public static void PublishJson(StreamWriter file)
+    public static void PublishJson(Stream stream)
     {
         var workingDir = Directory.GetCurrentDirectory();
         var resourcesRoot = Path.Combine(workingDir, "Resources");
@@ -47,7 +47,7 @@ public static class MetaLicenseGenerator
         if (output.Count == 0)
             return;
 
-        file.Write(JsonSerializer.Serialize(output, SerializeOptions));
+        JsonSerializer.Serialize(stream, output, SerializeOptions);
     }
 }
 

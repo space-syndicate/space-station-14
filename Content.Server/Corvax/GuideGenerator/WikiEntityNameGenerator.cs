@@ -23,7 +23,7 @@ public static class WikiEntityNameGenerator
         Encoder = JavaScriptEncoder.UnsafeRelaxedJsonEscaping
     };
 
-    public static void PublishJson(StreamWriter writer, IResourceManager resourceManager, ResPath destRoot)
+    public static void PublishJson(Stream stream, IResourceManager resourceManager, ResPath destRoot)
     {
         var entityNamePath = destRoot.WithName("entity_name.json");
 
@@ -70,8 +70,7 @@ public static class WikiEntityNameGenerator
                 missing.Add(title);
         }
 
-        var outputJson = JsonSerializer.Serialize(missing, SerializeOptions);
-        writer.Write(outputJson);
+        JsonSerializer.Serialize(stream, missing, SerializeOptions);
     }
 
     private static HashSet<string> FetchAllCategoryTitles()

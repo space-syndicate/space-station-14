@@ -103,9 +103,8 @@ public static class ComponentJsonGenerator
 
             res.UserData.CreateDir(destRoot);
             var fileName = TextTools.DecapitalizeString(compName) + ".json";
-            using var file = res.UserData.OpenWriteText(destRoot / fileName);
-            file.Write(JsonSerializer.Serialize(outObj, SerializeOptions));
-            file.Flush();
+            using var stream = res.UserData.OpenWrite(destRoot / fileName);
+            JsonSerializer.Serialize(stream, outObj, SerializeOptions);
         }
     }
 }

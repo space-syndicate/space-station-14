@@ -107,22 +107,22 @@ public static class EntityNameDuplicatesJsonGenerator
                     : [g.OrderBy(p => p.ID).First().ID]);
     }
 
-    public static void PublishNameJson(StreamWriter writer)
+    public static void PublishNameJson(Stream stream)
     {
         var prototypeManager = IoCManager.Resolve<IPrototypeManager>();
 
         var nameToIds = GetDuplicatesName(prototypeManager, false);
         var nameToSingleId = nameToIds.ToDictionary(kv => kv.Key, kv => kv.Value[0]);
 
-        writer.Write(JsonSerializer.Serialize(nameToSingleId, SerializeOptions));
+        JsonSerializer.Serialize(stream, nameToSingleId, SerializeOptions);
     }
 
-    public static void PublishDuplicatesJson(StreamWriter writer)
+    public static void PublishDuplicatesJson(Stream stream)
     {
         var prototypeManager = IoCManager.Resolve<IPrototypeManager>();
 
         var duplicatesName = GetDuplicatesName(prototypeManager, true);
 
-        writer.Write(JsonSerializer.Serialize(duplicatesName, SerializeOptions));
+        JsonSerializer.Serialize(stream, duplicatesName, SerializeOptions);
     }
 }
