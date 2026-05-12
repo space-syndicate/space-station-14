@@ -224,7 +224,7 @@ jobs:
             files+=("$file")
           done < <(find "$BASE" -type f -name '*.json' -print0)
 
-          batch_size=50
+          batch_size=25
 
           for ((i=0; i<${#files[@]}; i+=batch_size)); do
             batch_files=("${files[@]:i:batch_size}")
