@@ -10,6 +10,12 @@ namespace Content.Server.Corvax.GuideGenerator;
 
 public sealed class EntityJsonGenerator
 {
+    private static readonly JsonSerializerOptions SerializeOptions = new()
+    {
+        WriteIndented = true,
+        Encoder = JavaScriptEncoder.UnsafeRelaxedJsonEscaping
+    };
+
     [JsonPropertyName("id")]
     public string Id { get; }
 
@@ -48,7 +54,7 @@ public sealed class EntityJsonGenerator
             .FirstOrDefault();
     }
 
-    public static void PublishJson(StreamWriter file)
+    public static void PublishJson(Stream stream)
     {
         var prototype = IoCManager.Resolve<IPrototypeManager>();
         var prototypes =
@@ -58,12 +64,6 @@ public sealed class EntityJsonGenerator
                 .Select(x => new EntityJsonGenerator(x))
                 .ToDictionary(x => x.Id, x => x);
 
-        var serializeOptions = new JsonSerializerOptions
-        {
-            WriteIndented = true,
-            Encoder = JavaScriptEncoder.UnsafeRelaxedJsonEscaping
-        };
-
-        file.Write(JsonSerializer.Serialize(prototypes, serializeOptions));
+        JsonSerializer.Serialize(stream, prototypes, SerializeOptions);
     }
 }
