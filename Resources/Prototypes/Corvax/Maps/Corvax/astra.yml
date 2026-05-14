@@ -73,12 +73,22 @@
             SeniorOfficer: [ 1, 1 ]
         - type: StationGoal
           goals:
-          - Singularity
-          - MiningOutpost
-          - SecurityTraining
+          - Zoo
+          - SolarPanels
+          - ShuttleCargo
           - ShuttleMed
-          - ShuttleSrv
+          - ShuttleRnd
           - ShuttleEmergency
+          - LivingOutpost
+          - Bank
           - CellAI
+          - Modification
+          - Anomalies
+          - Borgs
+          - Artifacts
+          - Theatre
+          - Celebration
+          - Exposition
+          - DefenceEvent
           - VirusologyAmbusol
           - AstraRepair
