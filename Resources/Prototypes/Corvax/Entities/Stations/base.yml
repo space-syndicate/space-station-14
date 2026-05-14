@@ -5,6 +5,7 @@
   - type: StationGoal
     goals:
     - Zoo
+    - Dorms
     - SolarPanels
     - ShuttleCargo
     - ShuttleMed
@@ -21,6 +22,7 @@
     - Celebration
     - Exposition
     - DefenceEvent
+    - PsychologicalSurvey
 
 - type: entity
   id: BaseStationSiliconLawNTDefault
