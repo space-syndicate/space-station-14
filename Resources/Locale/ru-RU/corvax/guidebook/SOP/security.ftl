@@ -22,6 +22,7 @@ guidebook-SOP-security-general-right =
       - В [color=red][bold]красный код[/bold][/color] по своему запросу получить [tooltip="guidebook-SOP-security-tooltip-extended-access" text="расширенный доступ"].
       - В [color=gold][bold]гамма код[/bold][/color] получить [tooltip="guidebook-SOP-security-tooltip-full-access" text="полный доступ"].
     1. В рамках проведения процедур службы безопасности подавать запросы главам станции для получения требуемой информации.
+    1. Составить рапорт о задержании, в котором подробно описываются обстоятельства задержания, основания, ход и результаты обыска, свидетели, а также иные сведения, имеющие значение для разбирательства.
 
 guidebook-SOP-security-general-prohibited =
     1. Проводить процедуры СБ в отношении равных либо старших по иерархии сотрудников СБ, лиц с [tooltip="guidebook-SOP-security-tooltip-legal-immunity" text="юридической неприкосновенностью"] без приказа уполномоченного лица.
