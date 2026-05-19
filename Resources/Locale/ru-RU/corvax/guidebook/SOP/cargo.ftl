@@ -58,7 +58,6 @@ guidebook-SOP-Quartermaster-right =
 guidebook-SOP-Quartermaster-prohibited =
     1. Выполнять утилизационные работы любого типа.
     1. Посещать Лаваленд и участвовать в экспедициях.
-    1. Передавать планшет цифровых заявок третьим лицам.
 
 ## Утилизатор
 guidebook-SOP-SalvageSpecialist-must =
