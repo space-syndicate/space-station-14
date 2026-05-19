@@ -7,7 +7,13 @@ namespace Content.Server.Corvax.GuideGenerator;
 
 public static class PrototypeListGenerator
 {
-    public static void PublishJson(StreamWriter file)
+    private static readonly JsonSerializerOptions SerializeOptions = new()
+    {
+        WriteIndented = true,
+        Encoder = JavaScriptEncoder.UnsafeRelaxedJsonEscaping
+    };
+
+    public static void PublishJson(Stream stream)
     {
         var proto = IoCManager.Resolve<IPrototypeManager>();
 
@@ -36,12 +42,6 @@ public static class PrototypeListGenerator
         if (output.Count == 0)
             return;
 
-        var serializeOptions = new JsonSerializerOptions
-        {
-            WriteIndented = true,
-            Encoder = JavaScriptEncoder.UnsafeRelaxedJsonEscaping
-        };
-
-        file.Write(JsonSerializer.Serialize(output, serializeOptions));
+        JsonSerializer.Serialize(stream, output, SerializeOptions);
     }
 }

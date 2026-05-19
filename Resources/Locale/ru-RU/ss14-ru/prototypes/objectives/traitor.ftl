@@ -12,6 +12,8 @@ ent-KillRandomPersonObjective = { ent-BaseTraitorObjective }
     .desc = Сделайте это, как посчитаете нужным. Только убедитесь, что цель не покинет станцию.
 ent-KillRandomHeadObjective = { ent-BaseTraitorObjective }
     .desc = Нам нужно, чтобы этот глава исчез, и вы, вероятно, знаете, почему. Убедитесь, что глава не попадёт на Центком даже в мёртвом виде. Удачи, агент.
+ent-KillStationAiObjective = {ent-BaseTraitorObjective }
+    .desc = Nanotrasen с гордостью заявляет о своей передовой технологии искусственного интеллекта. Напомните им, что это всего лишь игрушка, которую можно сломать.
 ent-RandomTraitorAliveObjective = { ent-BaseTraitorSocialObjective }
     .desc = Раскрывать себя или нет — решайте сами. Нам нужно, чтобы он выжил.
 ent-RandomTraitorProgressObjective = { ent-BaseTraitorSocialObjective }
@@ -46,7 +48,9 @@ ent-CaptainJetpackStealObjective = { ent-BaseCaptainObjective }
     .desc = { ent-BaseCaptainObjective.desc }
 ent-CaptainGunStealObjective = { ent-BaseCaptainObjective }
     .desc = { ent-BaseCaptainObjective.desc }
-
-# ent-NukeDiskStealObjective = { ent-BaseCaptainObjective }
-#     .desc = { ent-BaseCaptainObjective.desc }
-
+ent-NukeDiskStealObjective = { ent-BaseCaptainObjective }
+    .desc = { ent-BaseCaptainObjective.desc }
+ent-SupercritAnomaliesObjective = { ent-BaseTraitorObjective}
+    .desc = Nanotrasen проявляет большой интерес к аномалиям, которые могут иметь потенциально катастрофические последствия. Познакомьте их с огнем, с которым они играют.
+ent-HijackTradeStationObjective = Взломайте автоматизированную торговую станцию
+    .desc = Вашему аплинку разрешен один маяк взлома. Разместите его на автоматизированной торговой станции и защищайте его, пока он взламывает торговую станцию.
