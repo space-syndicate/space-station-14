@@ -9,9 +9,10 @@ using Content.Shared.Humanoid;
 using Content.Shared.IdentityManagement.Components;
 using Content.Shared.Inventory;
 using Content.Shared.Inventory.Events;
-using Content.Shared.Verbs;
 using Content.Shared.Preferences;
+using Content.Shared.Verbs;
 using Content.Shared.VoiceMask;
+using JetBrains.Annotations;
 using Robust.Shared.Containers;
 using Robust.Shared.Enums;
 using Robust.Shared.GameObjects.Components.Localization;
@@ -22,17 +23,17 @@ namespace Content.Shared.IdentityManagement;
 /// <summary>
 /// Responsible for updating the identity of an entity on init or clothing equip/unequip.
 /// </summary>
-public sealed class IdentitySystem : EntitySystem
+public sealed partial class IdentitySystem : EntitySystem
 {
-    [Dependency] private readonly GrammarSystem _grammarSystem = default!;
-    [Dependency] private readonly IGameTiming _timing = default!;
-    [Dependency] private readonly ISharedAdminLogManager _adminLog = default!;
-    [Dependency] private readonly MetaDataSystem _metaData = default!;
-    [Dependency] private readonly SharedContainerSystem _container = default!;
-    [Dependency] private readonly SharedCriminalRecordsConsoleSystem _criminalRecordsConsole = default!;
-    [Dependency] private readonly HumanoidProfileSystem _humanoidProfile = default!;
-    [Dependency] private readonly SharedIdCardSystem _idCard = default!;
-    [Dependency] private readonly ExamineSystemShared _examine = default!;
+    [Dependency] private GrammarSystem _grammarSystem = default!;
+    [Dependency] private IGameTiming _timing = default!;
+    [Dependency] private ISharedAdminLogManager _adminLog = default!;
+    [Dependency] private MetaDataSystem _metaData = default!;
+    [Dependency] private SharedContainerSystem _container = default!;
+    [Dependency] private SharedCriminalRecordsConsoleSystem _criminalRecordsConsole = default!;
+    [Dependency] private HumanoidProfileSystem _humanoidProfile = default!;
+    [Dependency] private SharedIdCardSystem _idCard = default!;
+    [Dependency] private ExamineSystemShared _examine = default!;
 
     // The name of the container holding the identity entity
     private const string SlotName = "identity";
@@ -283,6 +284,22 @@ public sealed class IdentitySystem : EntitySystem
     }
 
     #endregion
+
+    /// <summary>
+    /// Attempts to get a display name and ID title for the given entity.
+    /// For example "Urist McHands (Captain)" for players or "Robby (SI-123)" for silicons.
+    /// </summary>
+    /// <param name="target"> The entity to find the name for.</param>
+    /// <param name="whileInteractingWith"> The entity being used to request the target's name.</param>
+    /// <param name="forLogging"> For special IDs that don't leave behind a log trail; It compares to<c>IdCardComponent.BypassLogging</c>.</param> // TODO: This should not be here.
+    /// <returns> A string of the name and ID or null if no valid identity or no ID card was found.</returns>
+    [PublicAPI]
+    public string? GetIdentityShortInfo(EntityUid target, EntityUid? whileInteractingWith = null, bool forLogging = false)
+    {
+        var tryGetIdentityShortInfoEvent = new TryGetIdentityShortInfoEvent(target, whileInteractingWith, forLogging);
+        RaiseLocalEvent(target, tryGetIdentityShortInfoEvent, true);
+        return tryGetIdentityShortInfoEvent.Title;
+    }
 }
 
 /// <summary>
