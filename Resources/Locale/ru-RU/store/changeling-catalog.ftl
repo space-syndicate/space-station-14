@@ -1,4 +1,4 @@
-changeling-catalog-arm-blade-name = Выдвижной рука-клинок
+changeling-catalog-arm-blade-name = Выдвижной клинок-рука
 changeling-catalog-arm-blade-desc = Превратите свою руку в ужасающий клинок из плоти. Можно убрать.
 
 changeling-catalog-flesh-clothing-name = Одежда из плоти
