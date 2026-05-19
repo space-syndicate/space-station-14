@@ -82,7 +82,7 @@ namespace Content.Client.Entry
         [Dependency] private IEntitySystemManager _entitySystemManager = default!;
         [Dependency] private ClientsidePlaytimeTrackingManager _clientsidePlaytimeManager = default!;
         [Dependency] private ClientFeedbackManager _feedbackManager = null!;
-        [Dependency] private readonly EntityScreenshotGenerator _entityScreenshotGenerator = default!; // Corvax-Wiki
+        [Dependency] private EntityScreenshotGenerator _entityScreenshotGenerator = default!; // Corvax-Wiki
 
         public override void PreInit()
         {
