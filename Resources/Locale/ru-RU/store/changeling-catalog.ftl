@@ -1,2 +1,5 @@
-changeling-arm-blade-name = Retractable Arm Blade
-changeling-arm-blade-desc = Transform your arm into a terrifying flesh blade. Can be toggled.
+changeling-catalog-arm-blade-name = Выдвижной клинок-рука
+changeling-catalog-arm-blade-desc = Превратите свою руку в ужасающий клинок из плоти. Можно убрать.
+
+changeling-catalog-flesh-clothing-name = Одежда из плоти
+changeling-catalog-flesh-clothing-desc = Поверхность вашего тела адаптируется, отражая одежду любого человека, в которого вы превращаетесь. Однако эти предметы одежды не функциональны и позволят легко раскрыть вас как генокрада, если кто-то попытается их снять. Можно переключать.
