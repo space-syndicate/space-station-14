@@ -22,7 +22,7 @@ changeling-transform-attempt-others = { CAPITALIZE(POSS-ADJ($user)) } кости
 changeling-flesh-clothing-removed-popop = {CAPITALIZE(THE($item))} распадается на мясистые куски!
 changeling-flesh-clothing-examine-wearer = [color=crimson]Этот предмет замаскированная часть вашего тела. Он исчезнет, если вы его снимете![/color]
 changeling-flesh-clothing-alert-name = Одежда из плоти
-changeling-flesh-clothing-alert-desc = Включена ли мимикрия одежды. Нажмите, чтобы переключить.
+changeling-flesh-clothing-alert-desc = Нажмите, чтобы переключить имитацию одежды.
 
 # transformation BUI
 changeling-transform-bui-select-entity = {$entity}
