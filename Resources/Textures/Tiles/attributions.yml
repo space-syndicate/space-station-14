@@ -31,10 +31,15 @@
   copyright: "Taken from /tg/station at commit 6665eec76c98a4f3f89bebcd10b34b47dcc0b8ae."
   source: "https://github.com/tgstation/tgstation/"
 
-- files: ["steel.png", "dark.png", "hydro.png", "plating.png", "reinforced.png", "steel_dirty.png", "white.png", "bar.png", "laundry.png", "mime.png", "clown.png", "kitchen.png"]
+- files: ["plating.png", "reinforced.png"]
   license: "CC-BY-SA-3.0"
   copyright: "TauCetiStation commit 4cd533cf0a4243050364023af9a4fcaca209dce7"
   source: "https://github.com/TauCetiStation/TauCetiClassic/"
+
+- files: ["steel.png", "dark.png", "hydro.png", "steel_dirty.png", "white.png", "bar.png", "laundry.png", "mime.png", "clown.png", "kitchen.png"]
+  license: "CC-BY-SA-3.0"
+  copyright: "tgstation at https://github.com/tgstation/tgstation/commit/69d8d6f9cd190528abf6acd15b0017e223a32de9"
+  source: "https://github.com/tgstation/tgstation/"
 
 - files: ["blue_circuit.png", "cropped_parallax.png", "eighties.png", "gold.png", "ironsand1.png", "ironsand2.png", "ironsand3.png", "ironsand4.png", "lattice.png", "plating.png", "reinforced.png", "silver.png", "snow.png", "wood.png"]
   license: "CC-BY-SA-3.0"
@@ -58,8 +63,8 @@
 
 - files: ["rglass.png"]
   license: "CC-BY-SA-3.0"
-  copyright: "resprited by @mishutka09 (discord:1152277579206774854), rglass modified by github user @notquitehadouken."
-  source: "https://github.com/space-wizards/space-station-14/pull/17948"
+  copyright: "Taken from https://github.com/tgstation/tgstation/commit/a2ab74ea523b078c413da7fe38f0b26da2cc1810."
+  source: "https://github.com/tgstation/tgstation/"
 
 - files: ["glass.png"]
   license: "CC0-1.0"
@@ -68,7 +73,7 @@
 
 - files: [ "steel_diagonal.png", "steel_mini.png", "steel_offset.png", "steel_pavement.png", "white_diagonal.png", "white_mini.png", "white_offset.png", "white_pavement.png", "white_plastic.png", "dark_diagonal.png", "dark_mini.png", "dark_offset.png", "dark_pavement.png", "dark_plastic.png" ]
   license: "CC0-1.0"
-  copyright: "Created by github user @morb0"
+  copyright: "Created by github user @morb0 and modified by _Svist_. (Discord)"
   source: "https://github.com/space-syndicate/space-station-14/pull/489"
 
 - files: [ "cafeteria.png", "checker_dark.png" ]
