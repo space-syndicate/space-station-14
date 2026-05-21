@@ -11,7 +11,13 @@ namespace Content.Server.Corvax.GuideGenerator;
 
 public static class ComponentStoreGenerator
 {
-    public static void PublishJson(StreamWriter file)
+    private static readonly JsonSerializerOptions SerializeOptions = new()
+    {
+        WriteIndented = true,
+        Encoder = JavaScriptEncoder.UnsafeRelaxedJsonEscaping
+    };
+
+    public static void PublishJson(Stream stream)
     {
         var proto = IoCManager.Resolve<IPrototypeManager>();
         var compFactory = IoCManager.Resolve<IComponentFactory>();
@@ -92,12 +98,6 @@ public static class ComponentStoreGenerator
             normalized[refEntId] = compMap;
         }
 
-        var serializeOptions = new JsonSerializerOptions
-        {
-            WriteIndented = true,
-            Encoder = JavaScriptEncoder.UnsafeRelaxedJsonEscaping
-        };
-
-        file.Write(JsonSerializer.Serialize(normalized, serializeOptions));
+        JsonSerializer.Serialize(stream, normalized, SerializeOptions);
     }
 }

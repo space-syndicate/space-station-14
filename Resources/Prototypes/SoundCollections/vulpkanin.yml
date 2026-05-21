@@ -8,13 +8,13 @@
 - type: soundCollection
   id: VulpkaninGrowls
   files:
-  - /Audio/Voice/Vulpkanin/dog_growl1.ogg
-  - /Audio/Voice/Vulpkanin/dog_growl2.ogg
-  - /Audio/Voice/Vulpkanin/dog_growl3.ogg
-  - /Audio/Voice/Vulpkanin/dog_growl4.ogg
-  - /Audio/Voice/Vulpkanin/dog_growl5.ogg
-  - /Audio/Voice/Vulpkanin/dog_growl6.ogg
-# Corvax-CorvaxVulp_Port-Start
+  # Corvax-CorvaxVulp_Port-Start
+  #- /Audio/Voice/Vulpkanin/dog_growl1.ogg
+  #- /Audio/Voice/Vulpkanin/dog_growl2.ogg
+  #- /Audio/Voice/Vulpkanin/dog_growl3.ogg
+  #- /Audio/Voice/Vulpkanin/dog_growl4.ogg
+  #- /Audio/Voice/Vulpkanin/dog_growl5.ogg
+  #- /Audio/Voice/Vulpkanin/dog_growl6.ogg
   - /Audio/Corvax/Effects/Growl/growl1.ogg
   - /Audio/Corvax/Effects/Growl/growl2.ogg
   - /Audio/Corvax/Effects/Growl/growl3.ogg
@@ -35,4 +35,5 @@
 - type: soundCollection
   id: VulpkaninHowls
   files:
-  - /Audio/Voice/Vulpkanin/howl.ogg
+  #- /Audio/Voice/Vulpkanin/howl.ogg
+  - /Audio/Corvax/Effects/howl.ogg # Corvax-CorvaxVulp_Port

@@ -33,12 +33,20 @@ jobs:
               - 'Content.Shared/**'
               - 'Content.Server/**'
               - 'Content.Client/**'
-              - 'Resources/**'
+              - 'Resources/Prototypes/**'
               - 'RobustToolbox/**'
 
             prototypes:
               - '.github/workflows/update-wiki.yml'
               - 'Resources/Prototypes/**'
+
+            textures:
+              - '.github/workflows/update-wiki.yml'
+              - 'Resources/Textures/**'
+
+            locale:
+              - '.github/workflows/update-wiki.yml'
+              - 'Resources/Locale/**'
 
       - name: Setup Submodule
         run: |
@@ -66,6 +74,30 @@ jobs:
       - name: Generate JSON blobs for prototypes
         run: dotnet ./bin/Content.Server/Content.Server.dll --cvar autogen.destination_file=prototypes.json
         continue-on-error: true
+
+      - name: Upload loc to wiki
+        if: ${{ github.event_name == 'workflow_dispatch' || steps.changes.outputs.locale == 'true' }}
+        continue-on-error: true
+        uses: jtmullen/mediawiki-edit-action@v0.1.1
+        with:
+          wiki_text_file: ./bin/Content.Server/data/loc.json
+          edit_summary: Update loc.json via GitHub Actions
+          page_name: "${{ secrets.WIKI_PAGE_ROOT }}/loc.json"
+          api_url: ${{ secrets.WIKI_ROOT_URL }}/api.php
+          username: ${{ secrets.WIKI_BOT_USER }}
+          password: ${{ secrets.WIKI_BOT_PASS }}
+
+      - name: Update meta license
+        if: ${{ github.event_name == 'workflow_dispatch' || steps.changes.outputs.textures == 'true' }}
+        continue-on-error: true
+        uses: jtmullen/mediawiki-edit-action@v0.1.1
+        with:
+          wiki_text_file: ./bin/Content.Server/data/meta_license.json
+          edit_summary: Update meta_license.json via GitHub Actions
+          page_name: "${{ secrets.WIKI_PAGE_ROOT }}/meta_license.json"
+          api_url: ${{ secrets.WIKI_ROOT_URL }}/api.php
+          username: ${{ secrets.WIKI_BOT_USER }}
+          password: ${{ secrets.WIKI_BOT_PASS }}
 
       # Проходит по всем JSON-файлам в директории BASE и загружает каждый файл как страницу в MediaWiki.
       # Имя страницы формируется из относительного пути к файлу.
@@ -98,10 +130,20 @@ jobs:
           cookiejar="$(mktemp)"
           trap 'rm -f "$cookiejar"' EXIT
 
-          login_token=$(curl -sS -c "$cookiejar" \
+          curl_api() {
+            curl --silent --show-error \
+              --retry 3 \
+              --retry-delay 5 \
+              --retry-all-errors \
+              --connect-timeout 20 \
+              --max-time 180 \
+              "$@"
+          }
+
+          login_token=$(curl_api -c "$cookiejar" \
             --data "action=query&meta=tokens&type=login&format=json" "$API" | jq -r '.query.tokens.logintoken')
 
-          curl -sS -c "$cookiejar" -b "$cookiejar" \
+          curl_api -c "$cookiejar" -b "$cookiejar" \
             --data-urlencode "action=login" \
             --data-urlencode "lgname=$USER" \
             --data-urlencode "lgpassword=$PASS" \
@@ -109,7 +151,7 @@ jobs:
             --data-urlencode "format=json" \
             "$API" > /dev/null
 
-          token=$(curl -sS -b "$cookiejar" \
+          token=$(curl_api -b "$cookiejar" \
             --data "action=query&meta=tokens&format=json" "$API" | jq -r '.query.tokens.csrftoken')
 
           edit_page_file() {
@@ -118,7 +160,7 @@ jobs:
             local textfile="$3"
             local token="$4"
 
-            curl -sS -b "$cookiejar" \
+            curl_api -b "$cookiejar" \
               --data-urlencode "action=edit" \
               --data-urlencode "title=$title" \
               --data-urlencode "summary=$summary" \
@@ -136,7 +178,7 @@ jobs:
             local text="$3"
             local token="$4"
 
-            curl -sS -b "$cookiejar" \
+            curl_api -b "$cookiejar" \
               --data-urlencode "action=edit" \
               --data-urlencode "title=$title" \
               --data-urlencode "summary=$summary" \
@@ -160,7 +202,7 @@ jobs:
             titles="${titles%|}"
 
             local resp
-            resp=$(curl -sS -b "$cookiejar" \
+            resp=$(curl_api -b "$cookiejar" \
               --data-urlencode "action=query" \
               --data-urlencode "format=json" \
               --data-urlencode "formatversion=2" \
@@ -183,16 +225,12 @@ jobs:
             )
           }
 
-          count_lines() {
-            awk 'END { print NR }'
-          }
-
           files=()
           while IFS= read -r -d '' file; do
             files+=("$file")
           done < <(find "$BASE" -type f -name '*.json' -print0)
 
-          batch_size=50
+          batch_size=25
 
           for ((i=0; i<${#files[@]}; i+=batch_size)); do
             batch_files=("${files[@]:i:batch_size}")

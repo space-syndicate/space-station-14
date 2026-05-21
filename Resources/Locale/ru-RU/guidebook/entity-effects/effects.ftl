@@ -508,6 +508,12 @@ entity-effect-guidebook-plant-phalanximine =
         *[other] восстанавливают
     } жизнеспособность растения, ставшего нежизнеспособным в результате мутации
 
+entity-effect-guidebook-plant-remove-kudzu =
+    { $chance ->
+        [1] Убирает
+        *[other] убирает
+    } кудзу из растения
+
 entity-effect-guidebook-plant-diethylamine =
     { $chance ->
         [1] Повышает

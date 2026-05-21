@@ -24,6 +24,17 @@ nukeops-cond-allnukiesdead = Все ядерные оперативники по
 nukeops-cond-somenukiesalive = Несколько ядерных оперативников погибли.
 nukeops-cond-allnukiesalive = Все ядерные оперативники выжили.
 
+nukeops-disk-location-title = Конечное местоположение диска:
+nukeops-disk-carried-by = {" "}у [color=White]{$name}[/color], [color=orange]{$job}[/color], {$location} { $user ->
+    [unknown] { "" }
+    *[other] ([color=gray]{$user}[/color])
+}
+
+storage-hierarchy-list = { $items-left ->
+  [0] { $existing-text } { $item },
+  *[other] { $existing-text } { $item }, в
+}
+
 nukeops-list-start = Оперативниками были:
 nukeops-list-name = - [color=White]{ $name }[/color]
 nukeops-list-name-user = - [color=White]{ $name }[/color] ([color=gray]{ $user }[/color])

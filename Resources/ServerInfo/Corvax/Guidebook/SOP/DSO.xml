@@ -1,0 +1,138 @@
+<Document>
+  <ColorBox>
+    <Box HorizontalAlignment="Center" VerticalAlignment="Center" Margin="2">
+      <FTLTextpart Key="guidebook-SOP-dso-infobox"/>
+    </Box>
+  </ColorBox>
+
+  # Общие СРП
+  ### Оперативник ОБР обязан
+  <FTLTextpart Key="guidebook-SOP-dso-general-must"/>
+
+  ### Оперативник ОБР имеет право
+  <FTLTextpart Key="guidebook-SOP-dso-general-right"/>
+
+  ### Оперативнику ОБР запрещено
+  <FTLTextpart Key="guidebook-SOP-dso-general-prohibited"/>
+
+  # Должностные СРП
+  ## СРП Командира РХБЗЗ
+  ### Командир РХБЗЗ обязан
+  <FTLTextpart Key="guidebook-SOP-CBURNCommander-must"/>
+
+  ### Командир РХБЗЗ имеет право
+  <FTLTextpart Key="guidebook-SOP-CBURNCommander-right"/>
+
+  ### Командиру РХБЗЗ запрещено
+  <FTLTextpart Key="guidebook-SOP-CBURNCommander-prohibited"/>
+
+  ## СРП Агента РХБЗЗ
+  ### Агент РХБЗЗ обязан
+  <FTLTextpart Key="guidebook-SOP-CBURN-must"/>
+
+  ### Агент РХБЗЗ имеет право
+  <FTLTextpart Key="guidebook-SOP-CBURN-right"/>
+
+  ### Агенту РХБЗЗ запрещено
+  <FTLTextpart Key="guidebook-SOP-CBURN-prohibited"/>
+
+  ## СРП Лидера ОБР
+  ### Лидер ОБР обязан
+  <FTLTextpart Key="guidebook-SOP-ERTLeader-must"/>
+
+  ### Лидер ОБР имеет право
+  <FTLTextpart Key="guidebook-SOP-ERTLeader-right"/>
+
+  ### Лидеру ОБР запрещено
+  <FTLTextpart Key="guidebook-SOP-ERTLeader-prohibited"/>
+
+  ## СРП Cвященника ОБР
+  ### Cвященник ОБР обязан
+  <FTLTextpart Key="guidebook-SOP-ERTChaplain-must"/>
+
+  ### Cвященник ОБР имеет право
+  <FTLTextpart Key="guidebook-SOP-ERTChaplain-right"/>
+
+  ### Cвященнику ОБР запрещено
+  <FTLTextpart Key="guidebook-SOP-ERTChaplain-prohibited"/>
+
+  ## СРП Инженера ОБР
+  ### Инженер ОБР обязан
+  <FTLTextpart Key="guidebook-SOP-ERTEngineer-must"/>
+
+  ### Инженер ОБР имеет право
+  <FTLTextpart Key="guidebook-SOP-ERTEngineer-right"/>
+
+  ### Инженеру ОБР запрещено
+  <FTLTextpart Key="guidebook-SOP-ERTEngineer-prohibited"/>
+
+  ## СРП Медика ОБР
+  ### Медик ОБР обязан
+  <FTLTextpart Key="guidebook-SOP-ERTMedical-must"/>
+
+  ### Медик ОБР право
+  <FTLTextpart Key="guidebook-SOP-ERTMedical-right"/>
+
+  ### Медику ОБР запрещено
+  <FTLTextpart Key="guidebook-SOP-ERTMedical-prohibited"/>
+
+  ## СРП Офицера Безопасности ОБР
+  ### Офицер Безопасности ОБР обязан
+  <FTLTextpart Key="guidebook-SOP-ERTSecurity-must"/>
+
+  ### Офицер Безопасности ОБР имеет право
+  <FTLTextpart Key="guidebook-SOP-ERTSecurity-right"/>
+
+  ### Офицеру Безопасности ОБР запрещено
+  <FTLTextpart Key="guidebook-SOP-ERTSecurity-prohibited"/>
+
+  ## СРП Уборщика ОБР
+  ### Уборщик ОБР обязан
+  <FTLTextpart Key="guidebook-SOP-ERTJanitor-must"/>
+
+  ### Уборщик ОБР имеет право
+  <FTLTextpart Key="guidebook-SOP-ERTJanitor-right"/>
+
+  ### Уборщику ОБР запрещено
+  <FTLTextpart Key="guidebook-SOP-ERTJanitor-prohibited"/>
+
+  ## СРП Лидера Эскадрона Смерти — Foxtrot
+  ### Лидер Эскадрона Смерти обязан
+  <FTLTextpart Key="guidebook-SOP-DeathSquadFoxtrotLeader-must"/>
+
+  ### Лидер Эскадрона Смерти имеет право
+  <FTLTextpart Key="guidebook-SOP-DeathSquadFoxtrotLeader-right"/>
+
+  ### Лидеру Эскадрона Смерти запрещено
+  <FTLTextpart Key="guidebook-SOP-DeathSquadFoxtrotLeader-prohibited"/>
+
+  ## СРП Оперативника Эскадрона Смерти — Foxtrot
+  ### Оперативник Эскадрона Смерти обязан
+  <FTLTextpart Key="guidebook-SOP-DeathSquadFoxtrot-must"/>
+
+  ### Оперативник Эскадрона Смерти имеет право
+  <FTLTextpart Key="guidebook-SOP-DeathSquadFoxtrot-right"/>
+
+  ### Оперативнику Эскадрона Смерти запрещено
+  <FTLTextpart Key="guidebook-SOP-DeathSquadFoxtrot-prohibited"/>
+
+  ## СРП Лидера Эскадрона Смерти — Tango
+  ### Лидер Эскадрона Смерти обязан
+  <FTLTextpart Key="guidebook-SOP-DeathSquadTangoLeader-must"/>
+
+  ### Лидер Эскадрона Смерти имеет право
+  <FTLTextpart Key="guidebook-SOP-DeathSquadTangoLeader-right"/>
+
+  ### Лидеру Эскадрона Смерти запрещено
+  <FTLTextpart Key="guidebook-SOP-DeathSquadTangoLeader-prohibited"/>
+
+  ## СРП Оперативника Эскадрона Смерти — Tango
+  ### Оперативник Эскадрона Смерти обязан
+  <FTLTextpart Key="guidebook-SOP-DeathSquadTango-must"/>
+
+  ### Оперативник Эскадрона Смерти имеет право
+  <FTLTextpart Key="guidebook-SOP-DeathSquadTango-right"/>
+
+  ### Оперативнику Эскадрона Смерти запрещено
+  <FTLTextpart Key="guidebook-SOP-DeathSquadTango-prohibited"/>
+</Document>

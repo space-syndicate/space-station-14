@@ -36,7 +36,7 @@ public static class YAMLEntry
     {
         mapping = null;
 
-        if (KindsField?.GetValue(proto) is not object kinds)
+        if (KindsField?.GetValue(proto) is not { } kinds)
             return false;
 
         var itemProperty = kinds.GetType().GetProperty("Item");

@@ -8,12 +8,18 @@ namespace Content.Server.Corvax.GuideGenerator;
 
 public static class EntityProjectGenerator
 {
+    private static readonly JsonSerializerOptions SerializeOptions = new()
+    {
+        WriteIndented = true,
+        Encoder = JavaScriptEncoder.UnsafeRelaxedJsonEscaping
+    };
+
     public static HashSet<string> GetProjectEntityIds()
     {
         return EntityProjectHelper.GetProjectEntityIds();
     }
 
-    public static void PublishJson(StreamWriter file)
+    public static void PublishJson(Stream stream)
     {
         var ids = GetProjectEntityIds();
         if (ids.Count == 0)
@@ -22,12 +28,6 @@ public static class EntityProjectGenerator
         var sorted = ids.ToList();
         sorted.Sort(StringComparer.Ordinal);
 
-        var serializeOptions = new JsonSerializerOptions
-        {
-            WriteIndented = true,
-            Encoder = JavaScriptEncoder.UnsafeRelaxedJsonEscaping
-        };
-
-        file.Write(JsonSerializer.Serialize(sorted, serializeOptions));
+        JsonSerializer.Serialize(stream, sorted, SerializeOptions);
     }
 }

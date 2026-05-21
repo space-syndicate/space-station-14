@@ -1,4 +1,12 @@
 <Document>
+  # Общие СРП
+  ### Сотрудник инженерного отдела обязан
+  <FTLTextpart Key="guidebook-SOP-engineering-general-must"/>
+  ### Сотрудник инженерного отдела имеет право
+  <FTLTextpart Key="guidebook-SOP-engineering-general-right"/>
+  ### Сотруднику инженерного отдела запрещено
+  <FTLTextpart Key="guidebook-SOP-engineering-general-prohibited"/>
+
   # Должностные СРП
   ## СРП Старшего инженера
   ### Старший инженер обязан
@@ -9,6 +17,16 @@
 
   ### Старшему инженеру запрещено
   <FTLTextpart Key="guidebook-SOP-ChiefEngineer-prohibited"/>
+
+  ## СРП Ведущего инженера
+  ### Ведущий инженер обязан
+  <FTLTextpart Key="guidebook-SOP-SeniorEngineer-must"/>
+
+  ### Ведущий инженер имеет право
+  <FTLTextpart Key="guidebook-SOP-SeniorEngineer-right"/>
+
+  ### Ведущему инженеру запрещено
+  <FTLTextpart Key="guidebook-SOP-SeniorEngineer-prohibited"/>
 
   ## СРП Инженера
   ### Инженер обязан

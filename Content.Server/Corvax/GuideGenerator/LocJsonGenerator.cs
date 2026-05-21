@@ -11,6 +11,12 @@ namespace Content.Server.Corvax.GuideGenerator;
 
 public static class LocJsonGenerator
 {
+    private static readonly JsonSerializerOptions SerializeOptions = new()
+    {
+        WriteIndented = true,
+        Encoder = JavaScriptEncoder.UnsafeRelaxedJsonEscaping,
+    };
+
     // Matches top-level message/term identifiers at start of line (no leading whitespace or comment).
     private static readonly Regex TopEntryRegex =
         new(@"(?m)^(?!\s|#)([^\s=]+)\s*=", RegexOptions.Compiled | RegexOptions.CultureInvariant);
@@ -31,7 +37,7 @@ public static class LocJsonGenerator
         }
     }
 
-    public static void PublishJson(StreamWriter file)
+    public static void PublishJson(Stream stream)
     {
         var loc = IoCManager.Resolve<ILocalizationManager>();
         var res = IoCManager.Resolve<IResourceManager>();
@@ -40,7 +46,7 @@ public static class LocJsonGenerator
         var culture = loc.DefaultCulture ?? loc.GetFoundCultures().FirstOrDefault();
         if (culture == null)
         {
-            file.Write("{}");
+            JsonSerializer.Serialize(stream, new Dictionary<string, object?>(), SerializeOptions);
             return;
         }
 
@@ -52,8 +58,8 @@ public static class LocJsonGenerator
 
         foreach (var path in files)
         {
-            using var stream = res.ContentFileRead(path);
-            using var reader = new StreamReader(stream, Encoding.UTF8);
+            using var fileStream = res.ContentFileRead(path);
+            using var reader = new StreamReader(fileStream, Encoding.UTF8);
             var contents = reader.ReadToEnd();
             // Normalize line endings to simplify indexing.
             contents = contents.Replace("\r\n", "\n");
@@ -106,12 +112,6 @@ public static class LocJsonGenerator
             }
         }
 
-        var serializeOptions = new JsonSerializerOptions
-        {
-            WriteIndented = true,
-            Encoder = JavaScriptEncoder.UnsafeRelaxedJsonEscaping,
-        };
-
-        file.Write(JsonSerializer.Serialize(output, serializeOptions));
+        JsonSerializer.Serialize(stream, output, SerializeOptions);
     }
 }

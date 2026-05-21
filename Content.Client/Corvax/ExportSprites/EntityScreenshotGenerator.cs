@@ -1,17 +1,23 @@
 using System.Linq;
 using System.Threading.Tasks;
+using Content.Client.Gameplay;
 using Content.Shared.CCVar;
 using Content.Shared.Chemistry;
 using Content.Shared.Chemistry.Components.SolutionManager;
 using Content.Shared.Corvax.GuideGenerator;
-using Content.Client.Gameplay;
+using Content.Shared.Prototypes;
 using Robust.Client;
+using Robust.Client.GameObjects;
 using Robust.Client.State;
 using Robust.Client.Timing;
 using Robust.Shared.Configuration;
 using Robust.Shared.ContentPack;
 using Robust.Shared.Map;
 using Robust.Shared.Prototypes;
+using Robust.Shared.Serialization.Manager;
+using Robust.Shared.Serialization.Markdown;
+using Robust.Shared.Serialization.Markdown.Mapping;
+using Robust.Shared.Serialization.Markdown.Sequence;
 using Robust.Shared.Utility;
 
 namespace Content.Client.Corvax.ExportSprites;
@@ -29,6 +35,7 @@ public sealed class EntityScreenshotGenerator
     [Dependency] private readonly IMapManager _mapManager = default!;
     [Dependency] private readonly IPrototypeManager _prototypeManager = default!;
     [Dependency] private readonly IResourceManager _resourceManager = default!;
+    [Dependency] private readonly ISerializationManager _serialization = default!;
     [Dependency] private readonly IStateManager _stateManager = default!;
 
     private ISawmill _sawmill = default!;
@@ -120,7 +127,7 @@ public sealed class EntityScreenshotGenerator
             var prototypes = _prototypeManager.EnumeratePrototypes<EntityPrototype>()
                 .Where(proto =>
                     !proto.Abstract &&
-                    proto.Components.ContainsKey("Sprite") &&
+                    HasExportableSprite(proto) &&
                     EntityProjectHelper.MatchesAllowedIds(proto.ID, allowedIds))
                 .OrderBy(proto => proto.ID)
                 .ToList();
@@ -136,11 +143,18 @@ public sealed class EntityScreenshotGenerator
 
                 try
                 {
-                    entity = _entityManager.SpawnEntity(proto.ID, new EntityCoordinates(previewGrid.Owner, default));
+                    if (proto.HasComponent<SpriteComponent>(_entityManager.ComponentFactory))
+                    {
+                        entity = _entityManager.SpawnEntity(proto.ID, new EntityCoordinates(previewGrid.Owner, default));
 
-                    await WaitForEntityAppearanceAsync(entity);
-                    ApplyPrototypeAppearance(entity, proto);
-                    await WaitForEntityAppearanceAsync(entity, 1);
+                        await WaitForEntityAppearanceAsync(entity);
+                        ApplyPrototypeAppearance(entity, proto);
+                        await WaitForEntityAppearanceAsync(entity, 1);
+                    }
+                    else
+                    {
+                        entity = SpawnIconEntity(proto);
+                    }
 
                     await _renderService.Export(entity, Direction.South, outputDir / $"{proto.ID}.png");
                     exported++;
@@ -240,5 +254,129 @@ public sealed class EntityScreenshotGenerator
 
         if (solution.GetPrimaryReagentId() is { } reagent)
             appearanceSystem.SetData(entity, SolutionContainerVisuals.BaseOverride, reagent.ToString(), appearance);
+    }
+
+    private bool HasExportableSprite(EntityPrototype prototype)
+    {
+        if (prototype.HasComponent<SpriteComponent>(_entityManager.ComponentFactory))
+            return true;
+
+        return TryGetPrototypeIcon(prototype, out _);
+    }
+
+    private EntityUid SpawnIconEntity(EntityPrototype prototype)
+    {
+        if (!TryGetPrototypeIcon(prototype, out var icon) || icon == null)
+            throw new InvalidOperationException($"Prototype {prototype.ID} has no exportable icon.");
+
+        var entity = _entityManager.SpawnEntity(null, MapCoordinates.Nullspace);
+        var sprite = _entityManager.EnsureComponent<SpriteComponent>(entity);
+        var spriteSystem = _entitySystemManager.GetEntitySystem<SpriteSystem>();
+
+        spriteSystem.AddBlankLayer((entity, sprite), 0);
+        if (icon is SpriteSpecifier.EntityPrototype entityIcon)
+            spriteSystem.LayerSetTexture((entity, sprite), 0, spriteSystem.Frame0(new SpriteSpecifier.EntityPrototype(entityIcon.EntityPrototypeId)));
+        else
+            spriteSystem.LayerSetSprite((entity, sprite), 0, icon);
+        sprite.LayerSetShader(0, "unshaded");
+        spriteSystem.LayerSetVisible((entity, sprite), 0, true);
+
+        return entity;
+    }
+
+    private bool TryGetPrototypeIcon(EntityPrototype prototype, out SpriteSpecifier? icon)
+    {
+        icon = null;
+
+        foreach (var (_, entry) in prototype.Components)
+        {
+            if (TryExtractSpriteSpecifier(entry.Component.GetType(), entry.Mapping, out icon))
+                return true;
+        }
+
+        return false;
+    }
+
+    private bool TryExtractSpriteSpecifier(Type? expectedType, DataNode? node, out SpriteSpecifier? icon)
+    {
+        icon = null;
+
+        if (node == null)
+            return false;
+
+        if (expectedType != null &&
+            typeof(SpriteSpecifier).IsAssignableFrom(expectedType) &&
+            TryParseSpriteSpecifier(node, out icon))
+        {
+            return true;
+        }
+
+        if (node is MappingDataNode mapping)
+        {
+            foreach (var (key, child) in mapping.Children)
+            {
+                Type? childType = null;
+
+                if (expectedType != null &&
+                    _serialization.TryGetVariableType(expectedType, key, out var resolvedType))
+                {
+                    childType = resolvedType;
+                }
+
+                if (TryExtractSpriteSpecifier(childType, child, out icon))
+                    return true;
+            }
+
+            return false;
+        }
+
+        if (node is SequenceDataNode sequence)
+        {
+            var elementType = GetSequenceElementType(expectedType);
+            foreach (var child in sequence.Sequence)
+            {
+                if (TryExtractSpriteSpecifier(elementType, child, out icon))
+                    return true;
+            }
+        }
+
+        return false;
+    }
+
+    private static Type? GetSequenceElementType(Type? type)
+    {
+        if (type == null)
+            return null;
+
+        if (type.IsArray)
+            return type.GetElementType();
+
+        var genericArguments = type.GenericTypeArguments;
+        if (genericArguments.Length == 1)
+            return genericArguments[0];
+
+        return null;
+    }
+
+    private bool TryParseSpriteSpecifier(DataNode node, out SpriteSpecifier? icon)
+    {
+        icon = null;
+
+        try
+        {
+            icon = _serialization.Read<SpriteSpecifier>(node, notNullableOverride: true);
+            if (icon == SpriteSpecifier.Invalid)
+            {
+                icon = null;
+                return false;
+            }
+
+            return true;
+        }
+        catch
+        {
+            icon = null;
+            return false;
+        }
     }
 }

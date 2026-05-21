@@ -31,8 +31,12 @@ lathe-category-faux-tile = Искусственная
 lathe-category-maints-tile = Техи
 lathe-category-marble = Мрамор
 lathe-category-steel-tile = Сталь
+lathe-category-shuttle-tile = Шаттл
 lathe-category-white-tile = Белая
 lathe-category-wood-tile = Деревянная
+lathe-category-plastic-tile = Пластик
+lathe-category-precious-tile = Драгоценный
+lathe-category-industrial-tile = Индустриальный
 
 # Science
 lathe-category-mechs = Мехи

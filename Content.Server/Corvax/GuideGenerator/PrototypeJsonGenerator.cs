@@ -3,9 +3,7 @@ using System.Reflection;
 using System.Text.Encodings.Web;
 using System.Text.Json;
 using Robust.Shared.ContentPack;
-using Robust.Shared.GameObjects;
 using Robust.Shared.Prototypes;
-using Robust.Shared.Serialization;
 using Robust.Shared.Serialization.Manager;
 using Robust.Shared.Serialization.Markdown.Mapping;
 using Robust.Shared.Utility;
@@ -14,6 +12,12 @@ namespace Content.Server.Corvax.GuideGenerator;
 
 public static class PrototypeJsonGenerator
 {
+    private static readonly JsonSerializerOptions SerializeOptions = new()
+    {
+        WriteIndented = true,
+        Encoder = JavaScriptEncoder.UnsafeRelaxedJsonEscaping
+    };
+
     public static void PublishAll(IResourceManager res, ResPath destRoot)
     {
         var proto = IoCManager.Resolve<IPrototypeManager>();
@@ -48,11 +52,19 @@ public static class PrototypeJsonGenerator
                 var instance = Activator.CreateInstance(kind);
                 if (instance != null)
                 {
-                    FieldEntry.EnsureFieldsCollectionsInitialized(instance);
-                    var defaultNode = ser.WriteValueAs<MappingDataNode>(kind, instance, true);
-                    defaultNode.Remove("id");
-                    FieldEntry.NormalizeFlagsToSequences(instance, defaultNode);
-                    defaultObj = FieldEntry.DataNodeToObject(defaultNode);
+                    try
+                    {
+                        FieldEntry.EnsureFieldsCollectionsInitialized(instance);
+                        var defaultNode = ser.WriteValueAs<MappingDataNode>(kind, instance, true);
+                        defaultNode.Remove("id");
+                        FieldEntry.NormalizeFlagsToSequences(instance, defaultNode);
+                        defaultObj = FieldEntry.DataNodeToObject(defaultNode);
+                    }
+                    finally
+                    {
+                        if (instance is IDisposable disposable)
+                            disposable.Dispose();
+                    }
                 }
             }
             catch
@@ -66,20 +78,13 @@ public static class PrototypeJsonGenerator
                 ["id"] = map
             };
 
-            var serializeOptions = new JsonSerializerOptions
-            {
-                WriteIndented = true,
-                Encoder = JavaScriptEncoder.UnsafeRelaxedJsonEscaping
-            };
-
             res.UserData.CreateDir(destRoot);
             var kindName = proto.TryGetKindFrom(kind, out var actualKindName)
                 ? actualKindName
                 : kind.Name;
             var fileName = TextTools.DecapitalizeString(kindName) + ".json";
-            var file = res.UserData.OpenWriteText(destRoot / fileName);
-            file.Write(JsonSerializer.Serialize(outObj, serializeOptions));
-            file.Flush();
+            using var stream = res.UserData.OpenWrite(destRoot / fileName);
+            JsonSerializer.Serialize(stream, outObj, SerializeOptions);
         }
     }
 
@@ -154,8 +159,9 @@ public static class PrototypeJsonGenerator
             }
         }
 
-        return type.GetCustomAttributes(inherit: true).Any(attr =>
+        return type.GetCustomAttributes(inherit: true)
+                   .Any(attr =>
                    attr.GetType().Name is nameof(DataDefinitionAttribute) or nameof(SerializableAttribute))
-               && HasUnsafeSerializedDataField(type, visited);
+                && HasUnsafeSerializedDataField(type, visited);
     }
 }
