@@ -9,6 +9,11 @@
 ## Технические детали
 <!-- Краткое описание изменений в коде для облегчения проверки. -->
 
+## Test plan
+<!--
+Describe how you tested the pull request, and how someone reviewing this PR can test it themselves.
+-->
+
 ## Медиа
 <!-- Прикрепите медиафайлы, если PR вносит изменения в игру (одежда, предметы, механики и т.д.).
 Небольшие исправления/рефакторинг освобождаются от этого требования. -->
@@ -16,6 +21,7 @@
 ## Требования
 <!-- Подтвердите следующее, поставив X в скобках без пробелов [X]: -->
 - [ ] Я прочитал(а) и следую [Рекомендациям по оформлению Pull Request и Changelog](https://docs.spacestation14.com/en/general-development/codebase-info/pull-request-guidelines.html).
+- [ ] I have tested this pull request and written instructions on how to test it
 - [ ] Я добавил(а) медиафайлы к этому PR или он не требует демонстрации в игре.
 <!-- Вы должны понимать, что несоблюдение вышеуказанного может привести к закрытию вашего PR по усмотрению сопровождающего -->
 
