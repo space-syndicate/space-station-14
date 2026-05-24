@@ -12,6 +12,7 @@ public sealed partial class ChatUIController
 
     private static readonly Regex ReplacementStartDoubleQuote = new("\"$");
     private static readonly Regex ReplacementEndDoubleQuote = new("^\"|(?<=^@)\"");
+    private static readonly Regex EndDeclination = new(@"(.)$"); 
 
     private readonly record struct ReplacementRule(string Keyword, string Replacement);
 
@@ -37,7 +38,7 @@ public sealed partial class ChatUIController
             keyword = keyword.Replace(@"\", @"\\");
             keyword = Regex.Escape(keyword);
             keyword = keyword.Replace(@"\[", @"\\\[");
-            keyword = Regex.Replace(keyword, @"(.)$", "(?:$1)?[а-яё]*");
+            keyword = EndDeclination.Replace(keyword, "(?:$1)?[а-яё]*");
 
             if (keyword.Any(c => c == '"'))
             {
