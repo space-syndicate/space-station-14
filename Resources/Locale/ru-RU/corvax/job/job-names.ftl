@@ -6,6 +6,7 @@ job-name-senior-researcher = ведущий учёный
 job-name-senior-physician = ведущий врач
 job-name-senior-officer = инструктор СБ
 # Role timers
+JobMagistrate = магистрат
 JobIAA = агент внутренних дел
 JobPilot = пилот
 JobSeniorEngineer = ведущий инженер
