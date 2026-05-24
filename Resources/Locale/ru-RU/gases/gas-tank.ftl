@@ -1,1 +1,1 @@
-﻿gas-max-pressure-alert = Клапан сброса давления не выдержал!
+gas-max-pressure-alert = Клапан сброса давления не выдержал!
