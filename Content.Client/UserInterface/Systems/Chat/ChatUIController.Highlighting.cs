@@ -85,6 +85,8 @@ public sealed partial class ChatUIController : IOnSystemChanged<CharacterInfoSys
         _config.SetCVar(CCVars.ChatHighlights, newHighlights);
         _config.SaveToFile();
 
+        UpdateReplacements(newHighlights); // Corvax-Replacement-Filter
+
         _highlights.Clear();
 
         // We first subdivide the highlights based on newlines to prevent replacing

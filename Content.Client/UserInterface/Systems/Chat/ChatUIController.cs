@@ -1,6 +1,7 @@
 using System.Globalization;
 using System.Linq;
 using System.Numerics;
+using System.Text.RegularExpressions; // Corvax-Replacement-Filter
 using Content.Client.Administration.Managers;
 using Content.Client.Chat;
 using Content.Client.Chat.Managers;
@@ -827,6 +828,14 @@ public sealed partial class ChatUIController : UIController
             if (grammar != null && grammar.ProperNoun == true)
                 msg.WrappedMessage = SharedChatSystem.InjectTagInsideTag(msg, "Name", "color", GetNameColor(SharedChatSystem.GetStringInsideTag(msg, "Name")));
         }
+
+        // Corvax-Replacement-Filter-Start
+        foreach (var replacement in _replacements)
+        {
+        msg.WrappedMessage = Regex.Replace(msg.WrappedMessage, replacement.Keyword, replacement.Replacement, RegexOptions.IgnoreCase);
+        msg.Message = Regex.Replace(msg.Message, replacement.Keyword, replacement.Replacement, RegexOptions.IgnoreCase);
+        }
+        // Corvax-Replacement-Filter-End
 
         // Color any words chosen by the client.
         foreach (var highlight in _highlights)
