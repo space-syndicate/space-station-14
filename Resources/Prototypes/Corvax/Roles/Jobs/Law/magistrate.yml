@@ -13,7 +13,6 @@
   startingGear: MagistrateGear
   icon: "JobIconMagistrate"
   supervisors: job-supervisors-centcom
-  canBeAntag: false
   access:
   - Command
   - Brig

@@ -28,6 +28,8 @@
   - ResearchDirector
   - ChiefEngineer
   - Quartermaster
+  - IAA # Corvax-Role
+  - Magistrate # Corvax-Role
 
 # Borgs
 - type: antagSpecifier
@@ -61,6 +63,9 @@
   - Detective
   - SecurityOfficer
   - SecurityCadet
+  - Brigmedic # Corvax-Role
+  - Pilot # Corvax-Role
+  - SeniorOfficer # Corvax-Role
 
 - type: antagSpecifier
   abstract: true
