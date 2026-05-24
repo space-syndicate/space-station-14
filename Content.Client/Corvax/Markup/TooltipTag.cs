@@ -7,11 +7,11 @@ using Robust.Shared.Utility;
 
 namespace Content.Client.Corvax.Markup;
 
-public sealed class TooltipTag : IMarkupTagHandler
+public sealed partial class TooltipTag : IMarkupTagHandler
 {
     private const float TooltipMaxWidth = 500f;
 
-    [Dependency] private readonly ILocalizationManager _loc = default!;
+    [Dependency] private ILocalizationManager _loc = default!;
 
     public string Name => "tooltip";
 

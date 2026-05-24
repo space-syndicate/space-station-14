@@ -3,32 +3,29 @@ using Content.Shared.Administration;
 using Content.Shared.Shuttles.Components;
 using Content.Shared.Shuttles.Systems;
 using Content.Server.Shuttles.Components;
-using Content.Server.Shuttles.Systems;
 using Content.Shared.Timing;
-using Content.Shared.Examine;
 using Robust.Shared.Console;
 using Robust.Shared.Timing;
-using System;
 
 namespace Content.Server.Corvax.Shuttle.Commands;
 
 [AdminCommand(AdminFlags.Fun)]
 
-public sealed class FTLTravelTimeSetCommand : LocalizedCommands
+public sealed partial class FTLTravelTimeSetCommand : LocalizedCommands
 {
-    [Dependency] private readonly IEntityManager _entManager = default!;
-    [Dependency] private readonly IGameTiming _gameTiming = default!; 
+    [Dependency] private IEntityManager _entManager = default!;
+    [Dependency] private IGameTiming _gameTiming = default!; 
 
     public override string Command => "ftltraveltimeset";
     public override void Execute(IConsoleShell shell, string argStr, string[] args)
     {
         if (args.Length != 2)
-            {
-                shell.WriteLine(Loc.GetString($"shell-wrong-arguments-number-need-specific",
+        {
+            shell.WriteLine(Loc.GetString($"shell-wrong-arguments-number-need-specific",
                     ("properAmount", 2),
                     ("currentAmount", args.Length)));
-                return;
-            }
+            return;
+        }
 
         if (!NetEntity.TryParse(args[0], out var netEnt) || !_entManager.TryGetEntity(netEnt, out var uid))
         {
