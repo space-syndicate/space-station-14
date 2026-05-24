@@ -31,10 +31,6 @@ public sealed class BwoinkMetadataSystem : EntitySystem
 
         if (adminData is not null)
         {
-            var prefix = GetAdminPrefix(ev.Text, adminData);
-            if (prefix != null)
-                ev.Text = InsertPrefix(ev.Text, ev.SenderSession.Name, prefix);
-
             if (_adminManager.HasAdminFlag(ev.SenderSession, AdminFlags.NameColor))
             {
                 var prefs = _preferencesManager.GetPreferencesOrNull(ev.SenderSession.UserId);
@@ -51,18 +47,6 @@ public sealed class BwoinkMetadataSystem : EntitySystem
             if (prefix != null)
                 ev.Text = InsertPrefix(ev.Text, ev.SenderSession.Name, prefix);
         }
-    }
-
-    private string? GetAdminPrefix(string text, AdminData adminData)
-    {
-        if (adminData.Title is not { } title)
-            return null;
-
-        var prefix = $"[bold]\\[{title}\\][/bold]";
-        if (text.Contains($"\\[{title}\\]"))
-            return null;
-
-        return prefix;
     }
 
     private string? GetAntagPrefix(ICommonSession session)
