@@ -1,14 +1,4 @@
 - type: cargoProduct
-  id: ServiceLoreBooks
-  icon:
-    sprite: Corvax/Objects/Misc/books.rsi
-    state: book_grav
-  product: CrateServiceLoreBooks
-  cost: 1500
-  category: cargoproduct-category-name-service
-  group: market
-
-- type: cargoProduct
   id: ChaplainClothing
   icon:
     sprite: Objects/Specific/Chapel/bible.rsi
