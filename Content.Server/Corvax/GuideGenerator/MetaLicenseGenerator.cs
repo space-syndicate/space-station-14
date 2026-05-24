@@ -6,7 +6,13 @@ namespace Content.Server.Corvax.GuideGenerator;
 
 public static class MetaLicenseGenerator
 {
-    public static void PublishJson(StreamWriter file)
+    private static readonly JsonSerializerOptions SerializeOptions = new()
+    {
+        WriteIndented = true,
+        Encoder = JavaScriptEncoder.UnsafeRelaxedJsonEscaping
+    };
+
+    public static void PublishJson(Stream stream)
     {
         var workingDir = Directory.GetCurrentDirectory();
         var resourcesRoot = Path.Combine(workingDir, "Resources");
@@ -41,13 +47,7 @@ public static class MetaLicenseGenerator
         if (output.Count == 0)
             return;
 
-        var serializeOptions = new JsonSerializerOptions
-        {
-            WriteIndented = true,
-            Encoder = JavaScriptEncoder.UnsafeRelaxedJsonEscaping
-        };
-
-        file.Write(JsonSerializer.Serialize(output, serializeOptions));
+        JsonSerializer.Serialize(stream, output, SerializeOptions);
     }
 }
 

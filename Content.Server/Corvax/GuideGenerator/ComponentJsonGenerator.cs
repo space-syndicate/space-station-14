@@ -10,6 +10,12 @@ namespace Content.Server.Corvax.GuideGenerator;
 
 public static class ComponentJsonGenerator
 {
+    private static readonly JsonSerializerOptions SerializeOptions = new()
+    {
+        WriteIndented = true,
+        Encoder = JavaScriptEncoder.UnsafeRelaxedJsonEscaping
+    };
+
     public static void PublishAll(IResourceManager res, ResPath destRoot)
     {
         var proto = IoCManager.Resolve<IPrototypeManager>();
@@ -95,17 +101,10 @@ public static class ComponentJsonGenerator
                 ["id"] = map
             };
 
-            var serializeOptions = new JsonSerializerOptions
-            {
-                WriteIndented = true,
-                Encoder = JavaScriptEncoder.UnsafeRelaxedJsonEscaping
-            };
-
             res.UserData.CreateDir(destRoot);
             var fileName = TextTools.DecapitalizeString(compName) + ".json";
-            var file = res.UserData.OpenWriteText(destRoot / fileName);
-            file.Write(JsonSerializer.Serialize(outObj, serializeOptions));
-            file.Flush();
+            using var stream = res.UserData.OpenWrite(destRoot / fileName);
+            JsonSerializer.Serialize(stream, outObj, SerializeOptions);
         }
     }
 }

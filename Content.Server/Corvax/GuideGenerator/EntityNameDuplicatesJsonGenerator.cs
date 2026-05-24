@@ -13,6 +13,12 @@ public static class EntityNameDuplicatesJsonGenerator
 {
     private const string AbilitySuffix = "(способность)";
 
+    private static readonly JsonSerializerOptions SerializeOptions = new()
+    {
+        WriteIndented = true,
+        Encoder = JavaScriptEncoder.UnsafeRelaxedJsonEscaping
+    };
+
     public static readonly string[] AllowedNameComponents =
     [
         "Fixtures",
@@ -101,34 +107,22 @@ public static class EntityNameDuplicatesJsonGenerator
                     : [g.OrderBy(p => p.ID).First().ID]);
     }
 
-    public static void PublishNameJson(StreamWriter writer)
+    public static void PublishNameJson(Stream stream)
     {
         var prototypeManager = IoCManager.Resolve<IPrototypeManager>();
 
         var nameToIds = GetDuplicatesName(prototypeManager, false);
         var nameToSingleId = nameToIds.ToDictionary(kv => kv.Key, kv => kv.Value[0]);
 
-        var options = new JsonSerializerOptions
-        {
-            WriteIndented = true,
-            Encoder = JavaScriptEncoder.UnsafeRelaxedJsonEscaping
-        };
-
-        writer.Write(JsonSerializer.Serialize(nameToSingleId, options));
+        JsonSerializer.Serialize(stream, nameToSingleId, SerializeOptions);
     }
 
-    public static void PublishDuplicatesJson(StreamWriter writer)
+    public static void PublishDuplicatesJson(Stream stream)
     {
         var prototypeManager = IoCManager.Resolve<IPrototypeManager>();
 
         var duplicatesName = GetDuplicatesName(prototypeManager, true);
 
-        var options = new JsonSerializerOptions
-        {
-            WriteIndented = true,
-            Encoder = JavaScriptEncoder.UnsafeRelaxedJsonEscaping
-        };
-
-        writer.Write(JsonSerializer.Serialize(duplicatesName, options));
+        JsonSerializer.Serialize(stream, duplicatesName, SerializeOptions);
     }
 }

@@ -1,0 +1,64 @@
+- type: job
+  id: Magistrate
+  name: job-name-magistrate
+  description: job-description-magistrate
+  playTimeTracker: JobMagistrate
+  whitelisted: true # No-Ki сказал, что договорился!
+  setPreference: false # Увы
+  requirements:
+  - !type:TraitsRequirement
+    inverted: true
+    traits:
+    - Muted
+  startingGear: MagistrateGear
+  icon: "JobIconMagistrate"
+  supervisors: job-supervisors-centcom
+  canBeAntag: false
+  access:
+  - Command
+  - Brig
+  - Maintenance
+  - External
+  - Security
+  - Lawyer
+  special:
+  - !type:AddImplantSpecial
+    implants: [ MindShieldImplant ]
+  - !type:AddComponentSpecial
+    components:
+    - type: CommandStaff
+
+- type: startingGear
+  id: MagistrateGear
+  equipment:
+    shoes: ClothingShoesBootsLaceup
+    neck: ClothingNeckLawyerbadge
+    id: MagistratePDA
+    eyes: ClothingEyesGlassesCommand
+    gloves: ClothingHandsGlovesColorWhite
+    ears: ClothingHeadsetMagistrate
+    pocket1: BoxFolderBlackThreePapers
+  storage:
+    back:
+    - Flash
+    - MagistrateGavel
+    - GavelBlock
+    - RubberStampMagistrate
+    - RubberStampApproved
+    - RubberStampDenied
+    - PortableScreenTimer
+  inhand:
+  - BriefcaseBrownFilled
+
+- type: chameleonOutfit
+  id: MagistrateChameleonOutfit
+  job: Magistrate
+  hasMindShield: true
+  equipment:
+    head: ClothingHeadHatPwigFancy
+    jumpsuit: ClothingUniformJumpsuitMagistrate
+    eyes: ClothingEyesGlassesSunglasses
+    neck: ClothingNeckLawyerbadge
+    gloves: ClothingHandsGlovesColorWhite
+    mask: ClothingMaskBreath
+    shoes: ClothingShoesBootsLaceup
