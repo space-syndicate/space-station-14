@@ -37,9 +37,12 @@ public sealed class BwoinkMetadataSystem : EntitySystem
 
             if (_adminManager.HasAdminFlag(ev.SenderSession, AdminFlags.NameColor))
             {
-                var prefs = _preferencesManager.GetPreferences(ev.SenderSession.UserId);
-                var hex = prefs.AdminOOCColor.ToHex();
-                ev.Text = AdminColorRegex.Replace(ev.Text, $"[color={hex}]");
+                var prefs = _preferencesManager.GetPreferencesOrNull(ev.SenderSession.UserId);
+                if (prefs != null)
+                {
+                    var hex = prefs.AdminOOCColor.ToHex();
+                    ev.Text = AdminColorRegex.Replace(ev.Text, $"[color={hex}]");
+                }
             }
         }
         else
@@ -81,7 +84,12 @@ public sealed class BwoinkMetadataSystem : EntitySystem
 
     private static string InsertPrefix(string text, string playerName, string prefix)
     {
-        return text.Replace(playerName, $"{prefix} {playerName}");
+        var index = text.IndexOf(playerName, StringComparison.Ordinal);
+        if (index < 0)
+            return text;
+
+        // Вставляем префикс перед первым вхождением имени игрока: [текст до имени] + [префикс] + " " + [имя] + [текст после имени]
+        return text[..index] + prefix + " " + playerName + text[(index + playerName.Length)..];
     }
 }
 
