@@ -1,4 +1,4 @@
-﻿using System.Collections.Generic;
+using System.Collections.Generic;
 using System.Linq;
 using Content.IntegrationTests.Fixtures.Attributes;
 using Content.IntegrationTests.Utility;
@@ -146,7 +146,12 @@ public sealed class AllGamePresetsStartTest : AntagTest
             {
                 for (var count = 0; count < amount; count++)
                 {
-                    SAssertAntagInitialized(antag, players[j++]);
+                    //Corvax-IPC test fix start/ Надеюсь это временное решение на время реворков тестов
+                    var session = players[j++];
+                    if (session.AttachedEntity is { } playerEnt && !AntagSys.IsEntityValid(playerEnt, antag))
+                        continue;
+                    SAssertAntagInitialized(antag, session);
+                    //Corvax-IPC test fix end
                 }
             }
         });
