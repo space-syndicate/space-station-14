@@ -148,7 +148,10 @@ public sealed class AllGamePresetsStartTest : AntagTest
                 {
                     //Corvax-IPC test fix start/ Надеюсь это временное решение на время реворков тестов
                     var session = players[j++];
-                    if (session.AttachedEntity is { } playerEnt && !AntagSys.IsEntityValid(playerEnt, antag))
+                    if (SMind.TryGetMind(session, out _, out var mindComp)
+                        && mindComp?.CurrentEntity is { } mindEnt
+                        && SEntMan.EntityExists(mindEnt)
+                        && !AntagSys.IsEntityValid(mindEnt, antag))
                         continue;
                     SAssertAntagInitialized(antag, session);
                     //Corvax-IPC test fix end
