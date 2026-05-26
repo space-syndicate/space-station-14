@@ -6,7 +6,6 @@ using Content.Shared.CrewManifest;
 using Content.Shared.Medical.SuitSensor;
 using Content.Shared.Roles;
 using Content.Shared.SecApartment;
-using Content.Shared.Security.Components;
 using Content.Shared.Station;
 using Content.Shared.UserInterface;
 using Robust.Server.GameObjects;
@@ -22,14 +21,14 @@ namespace Content.Server.Corvax.SecApartment;
 
 public sealed partial class SecApartmentSystem : EntitySystem
 {
-    [Dependency] private readonly SharedStationSystem _station = default!;
-    [Dependency] private readonly CrewManifestSystem _crewManifest = default!;
-    [Dependency] private readonly UserInterfaceSystem _ui = default!;
-    [Dependency] private readonly IRobustRandom _random = default!;
-    [Dependency] private readonly IPrototypeManager _prototype = default!;
-    [Dependency] private readonly IGameTiming _gameTiming = default!;
-    [Dependency] private readonly NavMapSystem _navMap = default!;
-    [Dependency] private readonly SharedTransformSystem _transform = default!;
+    [Dependency] private SharedStationSystem _station = default!;
+    [Dependency] private CrewManifestSystem _crewManifest = default!;
+    [Dependency] private UserInterfaceSystem _ui = default!;
+    [Dependency] private IRobustRandom _random = default!;
+    [Dependency] private IPrototypeManager _prototype = default!;
+    [Dependency] private IGameTiming _gameTiming = default!;
+    [Dependency] private NavMapSystem _navMap = default!;
+    [Dependency] private SharedTransformSystem _transform = default!;
 
     private readonly Dictionary<EntityUid, StationData> _stationData = new();
     private readonly Dictionary<NetEntity, TimeSpan> _finishedTimers = new();

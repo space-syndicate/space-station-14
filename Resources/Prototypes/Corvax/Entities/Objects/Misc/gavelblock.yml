@@ -10,7 +10,8 @@
   - type: Physics
     bodyType: Dynamic
   - type: Damageable
-    damageContainer: Inorganic
     damageModifierSet: Metallic
+  - type: Injurable
+    damageContainer: Inorganic
   - type: Item
     size: Tiny

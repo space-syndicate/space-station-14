@@ -15,11 +15,11 @@ namespace Content.Server.Corvax.TTS;
 // ReSharper disable once InconsistentNaming
 public sealed partial class TTSSystem : EntitySystem
 {
-    [Dependency] private readonly IConfigurationManager _cfg = default!;
-    [Dependency] private readonly IPrototypeManager _prototypeManager = default!;
-    [Dependency] private readonly TTSManager _ttsManager = default!;
-    [Dependency] private readonly SharedTransformSystem _xforms = default!;
-    [Dependency] private readonly IRobustRandom _rng = default!;
+    [Dependency] private IConfigurationManager _cfg = default!;
+    [Dependency] private IPrototypeManager _prototypeManager = default!;
+    [Dependency] private TTSManager _ttsManager = default!;
+    [Dependency] private SharedTransformSystem _xforms = default!;
+    [Dependency] private IRobustRandom _rng = default!;
 
     private readonly List<string> _sampleText =
         new()

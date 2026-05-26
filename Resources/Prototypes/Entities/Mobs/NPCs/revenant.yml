@@ -22,8 +22,9 @@
     allowed:
     - Corporeal
   - type: Damageable
-    damageContainer: ManifestedSpirit
     damageModifierSet: ManifestedSpirit
+  - type: Injurable
+    damageContainer: ManifestedSpirit
   - type: NoSlip
   - type: TTS # Corvax-TTS
     voice: Kelthuzad

@@ -5,9 +5,9 @@ using Robust.Shared.Prototypes;
 
 namespace Content.Client.Overlays;
 
-public sealed class ShowSquadIconsSystem : EquipmentHudSystem<ShowSquadIconsComponent>
+public sealed partial class ShowSquadIconsSystem : EquipmentHudSystem<ShowSquadIconsComponent>
 {
-    [Dependency] private readonly IPrototypeManager _prototype = default!;
+    [Dependency] private IPrototypeManager _prototype = default!;
 
     public override void Initialize()
     {
