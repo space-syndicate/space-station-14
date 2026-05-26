@@ -59,7 +59,7 @@ guidebook-SOP-Quartermaster-right =
 
 guidebook-SOP-Quartermaster-prohibited =
     1. Выполнять утилизационные работы любого типа и учавствовать в экспедициях.
-    1. Посещать Лаваленд вне целей проверки состояния шахтёров или проделанной ими работы.
+    1. Посещать Лаваленд.
 
 ## Утилизатор
 guidebook-SOP-SalvageSpecialist-must =
