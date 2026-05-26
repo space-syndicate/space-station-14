@@ -14,15 +14,15 @@ using Color = Robust.Shared.Maths.Color;
 
 namespace Content.Client.Corvax.ExportSprites;
 
-public sealed class EntityScreenshotRenderService
+public sealed partial class EntityScreenshotRenderService
 {
-    [Dependency] private readonly IClyde _clyde = default!;
-    [Dependency] private readonly IEntityManager _entityManager = default!;
-    [Dependency] private readonly IEntitySystemManager _entitySystemManager = default!;
-    [Dependency] private readonly IResourceManager _resourceManager = default!;
-    [Dependency] private readonly IGameTiming _timing = default!;
-    [Dependency] private readonly ILogManager _logManager = default!;
-    [Dependency] private readonly IUserInterfaceManager _ui = default!;
+    [Dependency] private IClyde _clyde = default!;
+    [Dependency] private IEntityManager _entityManager = default!;
+    [Dependency] private IEntitySystemManager _entitySystemManager = default!;
+    [Dependency] private IResourceManager _resourceManager = default!;
+    [Dependency] private IGameTiming _timing = default!;
+    [Dependency] private ILogManager _logManager = default!;
+    [Dependency] private IUserInterfaceManager _ui = default!;
 
     private EntityScreenshotRenderControl? _control;
     private bool _initialized;
@@ -609,13 +609,13 @@ public sealed class EntityScreenshotRenderService
 
     private readonly record struct PixelRect(int Left, int Top, int Width, int Height);
 
-    private sealed class EntityScreenshotRenderControl : Control
+    private sealed partial class EntityScreenshotRenderControl : Control
     {
         private static readonly Color ExportBackgroundColor = new(128, 128, 128, 0);
 
-        [Dependency] private readonly IEntityManager _entityManager = default!;
-        [Dependency] private readonly ILogManager _logManager = default!;
-        [Dependency] private readonly IResourceManager _resourceManager = default!;
+        [Dependency] private IEntityManager _entityManager = default!;
+        [Dependency] private ILogManager _logManager = default!;
+        [Dependency] private IResourceManager _resourceManager = default!;
 
         internal readonly Queue<(
             IRenderTexture Texture,

@@ -4,17 +4,17 @@
   name: internal affairs agent PDA
   description: Corporation and profit are best friends.
   components:
-    - type: Pda
-      id: IAAIDCard
-    - type: Appearance
-      appearanceDataInit:
-        enum.PdaVisuals.PdaType:
-          !type:String
-          pda-lawyer
-    - type: PdaBorderColor
-      borderColor: "#6f6192"
-    - type: Icon
-      state: pda-lawyer
+  - type: Pda
+    id: IAAIDCard
+  - type: Appearance
+    appearanceDataInit:
+      enum.PdaVisuals.PdaType:
+        !type:String
+        pda-lawyer
+  - type: PdaBorderColor
+    borderColor: "#6f6192"
+  - type: Icon
+    state: pda-lawyer
 
 - type: entity
   parent: BaseSecurityPDA
@@ -22,23 +22,50 @@
   name: pilot PDA
   description: Нas protection from cosmic radiation.
   components:
-    - type: Pda
-      id: PilotIDCard
-    - type: Appearance
-      appearanceDataInit:
-        enum.PdaVisuals.PdaType:
-          !type:String
-          pda-seniorofficer
-    - type: PdaBorderColor
-      borderColor: "#A32D26"
-      accentVColor: "#DFDFDF"
-    - type: Icon
-      state: pda-seniorofficer
-    - type: CartridgeLoader
-      preinstalled:
-      - CrewManifestCartridge
-      - NotekeeperCartridge
-      - NanoTaskCartridge
-      - NewsReaderCartridge
-      - WantedListCartridge
-      - AstroNavCartridge
+  - type: Pda
+    id: PilotIDCard
+  - type: Appearance
+    appearanceDataInit:
+      enum.PdaVisuals.PdaType:
+        !type:String
+        pda-seniorofficer
+  - type: PdaBorderColor
+    borderColor: "#A32D26"
+    accentVColor: "#DFDFDF"
+  - type: Icon
+    state: pda-seniorofficer
+  - type: CartridgeLoader
+    preinstalled:
+    - CrewManifestCartridge
+    - NotekeeperCartridge
+    - NanoTaskCartridge
+    - NewsReaderCartridge
+    - WantedListCartridge
+    - AstroNavCartridge
+
+- type: entity
+  parent: BaseSecurityPDA
+  id: MagistratePDA
+  name: magistrate's PDA
+  description: Corporation and profit are best friends.
+  components:
+  - type: Sprite
+    sprite: Corvax/Objects/Devices/pda.rsi
+    state: pda-magistrate
+  - type: Pda
+    id: MagistrateIDCard
+    penSlot:
+      startingItem: PenLegal
+      whitelist:
+        tags:
+        - Write
+  - type: Appearance
+    appearanceDataInit:
+      enum.PdaVisuals.PdaType:
+        !type:String
+        pda-magistrate
+  - type: PdaBorderColor
+    borderColor: "#6f6192"
+  - type: Icon
+    sprite: Corvax/Objects/Devices/pda.rsi
+    state: pda-magistrate
