@@ -3,6 +3,7 @@ using Content.Server.DeviceLinking.Components;
 using Content.Server.Medical.CrewMonitoring;
 using Content.Server.Pinpointer;
 using Content.Shared.CrewManifest;
+using Content.Shared.GameTicking;
 using Content.Shared.Medical.SuitSensor;
 using Content.Shared.Roles;
 using Content.Shared.SecApartment;
@@ -62,8 +63,9 @@ public sealed partial class SecApartmentSystem : EntitySystem
         SubscribeLocalEvent<SecApartmentComponent, RemoveMemberFromSquadMessage>(OnRemoveMemberFromSquad);
         SubscribeLocalEvent<SecApartmentComponent, ChangeSquadStatusMessage>(OnChangeSquadStatus);
         SubscribeLocalEvent<SecApartmentComponent, RemoveTimerMessage>(OnRemoveTimer);
+        SubscribeLocalEvent<RoundRestartCleanupEvent>(OnRoundRestart);
 
-        // TODO: I'm too lazy to change this.
+        // TODO-Corvax: I'm too lazy to change this.
         SubscribeLocalEvent<ActiveSignalTimerComponent, ComponentStartup>(OnTimerStartup);
         SubscribeLocalEvent<SignalTimerComponent, ComponentShutdown>(OnTimerComponentShutdown);
     }
@@ -106,10 +108,7 @@ public sealed partial class SecApartmentSystem : EntitySystem
 
     private void OnPrototypeReload(PrototypesReloadedEventArgs obj)
     {
-        if (obj.WasModified<JobPrototype>())
-            InitializeSecurityJobs();
-
-        if (obj.WasModified<DepartmentPrototype>())
+        if (obj.WasModified<JobPrototype>() || obj.WasModified<DepartmentPrototype>())
             InitializeSecurityJobs();
     }
 
@@ -118,26 +117,24 @@ public sealed partial class SecApartmentSystem : EntitySystem
         if (comp.Station == null)
             return;
 
-        var securityCrew = GetSecurityCrew(uid, comp.Station.Value);
-        var statusDict = new Dictionary<string, SuitSensorStatus?>();
-        var squadLocations = new Dictionary<string, (string Location, bool HasLocation)>();
-
         var squads = _stationData.TryGetValue(comp.Station.Value, out var stationData)
             ? stationData.Squads : new List<Squad>();
+ 
+        var securityCrew = GetSecurityCrew(uid, comp.Station.Value);
 
+        var statusDict = new Dictionary<string, SuitSensorStatus?>();
         foreach (var squad in squads)
-        {
             UpdateAndCollectSquadData(squad, securityCrew, statusDict);
-
-            var location = GetSquadApproximateLocation(squad, securityCrew);
-            squadLocations[squad.SquadId] = location;
-        }
 
         if (!_ui.IsUiOpen(uid, SecApartmentUiKey.Key))
             return;
 
-        var statusUpdate = new SensorStatusUpdateState(statusDict, squadLocations);
-        _ui.SetUiState(uid, SecApartmentUiKey.Key, statusUpdate);
+        var squadLocations = new Dictionary<string, (string Location, bool HasLocation)>();
+        foreach (var squad in squads)
+            squadLocations[squad.SquadId] = GetSquadApproximateLocation(squad, securityCrew);
+
+        _ui.SetUiState(uid, SecApartmentUiKey.Key,
+            new SensorStatusUpdateState(statusDict, squadLocations));
     }
 
     private void UpdateAndCollectSquadData(Squad squad, List<CrewMemberInfo> securityCrew,
@@ -559,6 +556,11 @@ public sealed partial class SecApartmentSystem : EntitySystem
         if (sanitized.Length > maxLength)
             sanitized = sanitized[..maxLength];
         return sanitized;
+    }
+    private void OnRoundRestart(RoundRestartCleanupEvent ev)
+    {
+        _stationData.Clear();
+        _finishedTimers.Clear();
     }
     #region Timers
     private void OnTimerStartup(EntityUid uid, ActiveSignalTimerComponent component, ComponentStartup args)
