@@ -1,4 +1,4 @@
-﻿using Content.Server.Administration;
+using Content.Server.Administration;
 using Content.Shared.Administration;
 using Content.Shared.Corvax.CCCVars;
 using Robust.Shared.Configuration;
@@ -7,9 +7,9 @@ using Robust.Shared.Console;
 namespace Content.Server.Corvax.Administration.Commands;
 
 [AdminCommand(AdminFlags.Server)]
-public sealed class PanicBunkerDenyVpnCommand : LocalizedCommands
+public sealed partial class PanicBunkerDenyVpnCommand : LocalizedCommands
 {
-    [Dependency] private readonly IConfigurationManager _cfg = default!;
+    [Dependency] private IConfigurationManager _cfg = default!;
 
     public override string Command => "panicbunker_deny_vpn";
 

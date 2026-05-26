@@ -11,7 +11,7 @@ guidebook-SOP-infobox-main =
     Общие СРП в равной степени должно соблюдаться как и ведомственные СРП.
 
 guide-entry-sop = СРП
-guide-entry-sop-service = Сервистный отдел
+guide-entry-sop-service = Сервисный отдел
 guide-entry-sop-research = Научный отдел
 guide-entry-sop-cargo = Отдел снабжения
 guide-entry-sop-medical = Медицинский отдел

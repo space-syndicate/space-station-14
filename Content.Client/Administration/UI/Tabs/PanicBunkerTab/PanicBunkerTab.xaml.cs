@@ -10,7 +10,7 @@ namespace Content.Client.Administration.UI.Tabs.PanicBunkerTab;
 [GenerateTypedNameReferences]
 public sealed partial class PanicBunkerTab : Control
 {
-    [Dependency] private readonly IConsoleHost _console = default!;
+    [Dependency] private IConsoleHost _console = default!;
 
     private string _minAccountAge;
     private string _minOverallMinutes;
@@ -30,7 +30,7 @@ public sealed partial class PanicBunkerTab : Control
         MinOverallMinutes.OnFocusExit += args => SendMinOverallMinutes(args.Text);
         _minOverallMinutes = MinOverallMinutes.Text;
         // Corvax-VPNGuard-Start
-        var haveSecrets = IoCManager.Instance!.TryResolveType<ISharedSponsorsManager>(out _); // TODO: Probably need better way to detect Secrets module
+        var haveSecrets = IoCManager.Instance!.TryResolveType<ISharedSponsorsManager>(out _); // TODO-Corvax: Probably need better way to detect Secrets module
         if (haveSecrets)
         {
             VPNContainer.Visible = true;

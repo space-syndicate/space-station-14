@@ -1,17 +1,17 @@
 <Document>
-  # Delta Pressure
-  Delta Pressure, or ΔP, is the difference in pressure between two areas.
-  This difference in pressure can exert a force on objects between the two areas, dealing [bold]pressure damage[/bold] to some objects in its way.
+  # Разница давления
+  Разница давлений, или ΔP, это разница давлений между двумя областями.
+  Эта разница давлений может оказывать воздействие на объекты между двумя областями, нанося [bold]повреждения от давления[/bold] некоторым объектам на своем пути.
 
-  Various objects made out of glass, such as Windows, Windoors, and Shutters can experience pressure damage if the ΔP between the two sides is high enough.
-  This damage can cause these objects to shatter, allowing gas to flow freely between the two areas.
+  Различные стеклянные изделия, такие как окна, раздвижные окна и ставни, могут получить повреждения от перепадов давления, если разница давлений между двумя сторонами достаточно велика.
+  Это повреждение может привести к разрушению этих объектов, в результате чего газ сможет свободно циркулировать между двумя участками.
 
-  Different types of objects have different thresholds for how much ΔP they can withstand before shattering.
-  Generally, the stronger the glass, the higher the threshold. Objects that are thin will also have lower thresholds.
+  Для разных типов объектов существуют разные пороговые значения ΔP, которые они могут выдержать до разрушения.
+  Как правило, чем прочнее стекло, тем выше порог. Для тонких предметов порог будет ниже.
 
-  Objects like walls, airlocks, and firelocks are not affected by ΔP.
+  Такие объекты, как стены, шлюзы и пожарные шлюзы, не подвержены влиянию ΔP.
 
-  ## Standard Glass and Objects
+  ## Стандартное стекло и предметы
   <Box>
     <GuideEntityEmbed Entity="Window" Caption=""/>
     <GuideEntityEmbed Entity="WindowDirectional" Caption=""/>
@@ -20,11 +20,11 @@
     <GuideEntityEmbed Entity="InflatableWall" Caption=""/>
   </Box>
 
-  Standard full-size glass and other weak objects can withstand a ΔP of up to [color=orange][protodata="Window" comp="DeltaPressure" member="MinPressureDelta"/] kPa[/color] before starting to crack.
+  Стандартноые полноразмерные окна и другие хрупкие предметы могут выдерживать перепад давления до [color=orange][protodata="Window" comp="DeltaPressure" member="MinPressureDelta"/] кПа[/color], прежде чем начнут трескаться.
 
-  Quarter-size glass, such as directional windows, can withstand a ΔP of up to [color=orange][protodata="WindowDirectional" comp="DeltaPressure" member="MinPressureDelta"/] kPa[/color] before starting to crack.
+  Окна размером с четверть, например, направленные окна, могут выдерживать ΔP до [color=orange][protodata="WindowDirectional" comp="DeltaPressure" member="MinPressureDelta"/] кПа[/color] прежде чем начнут трескаться.
 
-  ## Reinforced Glass and Objects
+  ## Укреплённое стекло и предметы
   <Box>
     <GuideEntityEmbed Entity="ReinforcedWindow" Caption=""/>
     <GuideEntityEmbed Entity="WindowReinforcedDirectional" Caption=""/>
@@ -32,11 +32,11 @@
     <GuideEntityEmbed Entity="ShuttleWindow" Caption=""/>
   </Box>
 
-  Reinforced full-size glass can withstand a ΔP of up to [color=orange][protodata="ReinforcedWindow" comp="DeltaPressure" member="MinPressureDelta"/] kPa[/color] before starting to crack.
+  Укреплённые полноразмерные окна могут выдерживать ΔP до [color=orange][protodata="ReinforcedWindow" comp="DeltaPressure" member="MinPressureDelta"/] кПа[/color] прежде чем начнут трескаться.
 
-  Reinforced quarter-size glass can withstand a ΔP of up to [color=orange][protodata="WindowReinforcedDirectional" comp="DeltaPressure" member="MinPressureDelta"/] kPa[/color] before starting to crack.
+  Укреплённые окна размером с четверть могут выдерживать ΔP до [color=orange][protodata="WindowReinforcedDirectional" comp="DeltaPressure" member="MinPressureDelta"/] кПа[/color] прежде чем начнут трескаться.
 
-  ## Plasma/Uranium Glass
+  ## Плазменное/Урановое стекло
   <Box>
     <GuideEntityEmbed Entity="PlasmaWindow" Caption=""/>
     <GuideEntityEmbed Entity="PlasmaWindowDirectional" Caption=""/>
@@ -46,11 +46,11 @@
     <GuideEntityEmbed Entity="WindoorUranium" Caption=""/>
   </Box>
 
-  Plasma glass and uranium glass can withstand a ΔP of up to [color=orange][protodata="PlasmaWindow" comp="DeltaPressure" member="MinPressureDelta"/] kPa[/color] before starting to crack.
+  Плазменные и Урановые окна могут выдерживать ΔP до [color=orange][protodata="PlasmaWindow" comp="DeltaPressure" member="MinPressureDelta"/] кПа[/color] прежде чем начнут трескаться.
 
-  Plasma and uranium quarter-size glass can withstand a ΔP of up to [color=orange][protodata="PlasmaWindowDirectional" comp="DeltaPressure" member="MinPressureDelta"/] kPa[/color] before starting to crack.
+  Плазменные и Урановые окна размером с четверть могут выдерживать ΔP до [color=orange][protodata="PlasmaWindowDirectional" comp="DeltaPressure" member="MinPressureDelta"/] кПа[/color] прежде чем начнут трескаться.
 
-  ## Reinforced Plasma/Uranium Glass
+  ## Укреплённое Плазменное/Урановое Стекло
 
   <Box>
     <GuideEntityEmbed Entity="ReinforcedPlasmaWindow" Caption=""/>
@@ -62,8 +62,8 @@
 
   </Box>
 
-  Reinforced plasma glass and uranium glass can withstand a ΔP of up to [color=orange][protodata="ReinforcedPlasmaWindow" comp="DeltaPressure" member="MinPressureDelta"/] kPa[/color] before starting to crack.
+  Укрепленные Плазменные и Урановые окна могут выдерживать ΔP до [color=orange][protodata="ReinforcedPlasmaWindow" comp="DeltaPressure" member="MinPressureDelta"/] кПа[/color] прежде чем начнут трескаться.
 
-  Reinforced plasma and uranium quarter-size glass can withstand a ΔP of up to [color=orange][protodata="PlasmaReinforcedWindowDirectional" comp="DeltaPressure" member="MinPressureDelta"/] kPa[/color] before starting to crack.
+  Укрепленные Плазменные и Урановые окна размером с четверть могут выдерживать ΔP до [color=orange][protodata="PlasmaReinforcedWindowDirectional" comp="DeltaPressure" member="MinPressureDelta"/] кПа[/color] прежде чем начнут трескаться.
 
 </Document>
