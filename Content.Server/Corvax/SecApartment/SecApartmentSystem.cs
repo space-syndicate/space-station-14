@@ -119,22 +119,28 @@ public sealed partial class SecApartmentSystem : EntitySystem
 
         var squads = _stationData.TryGetValue(comp.Station.Value, out var stationData)
             ? stationData.Squads : new List<Squad>();
- 
+
         var securityCrew = GetSecurityCrew(uid, comp.Station.Value);
+        var isUiOpen = _ui.IsUiOpen(uid, SecApartmentUiKey.Key);
 
         var statusDict = new Dictionary<string, SuitSensorStatus?>();
-        foreach (var squad in squads)
-            UpdateAndCollectSquadData(squad, securityCrew, statusDict);
 
-        if (!_ui.IsUiOpen(uid, SecApartmentUiKey.Key))
+        var squadLocations = isUiOpen
+            ? new Dictionary<string, (string Location, bool HasLocation)>()
+            : null;
+
+        foreach (var squad in squads)
+        {
+            UpdateAndCollectSquadData(squad, securityCrew, statusDict);
+            if (isUiOpen)
+                squadLocations![squad.SquadId] = GetSquadApproximateLocation(squad, securityCrew);
+        }
+
+        if (!isUiOpen)
             return;
 
-        var squadLocations = new Dictionary<string, (string Location, bool HasLocation)>();
-        foreach (var squad in squads)
-            squadLocations[squad.SquadId] = GetSquadApproximateLocation(squad, securityCrew);
-
         _ui.SetUiState(uid, SecApartmentUiKey.Key,
-            new SensorStatusUpdateState(statusDict, squadLocations));
+            new SensorStatusUpdateState(statusDict, squadLocations!));
     }
 
     private void UpdateAndCollectSquadData(Squad squad, List<CrewMemberInfo> securityCrew,
