@@ -4,8 +4,8 @@ meta:
   engineVersion: 275.2.0
   forkId: ""
   forkVersion: ""
-  time: 05/26/2026 21:09:54
-  entityCount: 23035
+  time: 05/27/2026 07:47:05
+  entityCount: 23036
 maps:
 - 1
 grids:
@@ -12442,6 +12442,21 @@ entities:
       - 551
     - type: Fixtures
       fixtures: {}
+  - uid: 7072
+    components:
+    - type: Transform
+      pos: 35.5,11.5
+      parent: 2
+    - type: DeviceList
+      devices:
+      - 7070
+      - 11180
+      - 477
+      - 8704
+      - 8730
+      - 8729
+    - type: Fixtures
+      fixtures: {}
 - proto: AirAlarmElectronics
   entities:
   - uid: 128
@@ -14855,6 +14870,9 @@ entities:
       rot: -1.5707963267948966 rad
       pos: 37.5,9.5
       parent: 2
+    - type: DeviceNetwork
+      deviceLists:
+      - 7072
   - uid: 478
     components:
     - type: Transform
@@ -70118,7 +70136,7 @@ entities:
     - type: Label
       currentLabel: кофейный ликёр
     - type: PressurizedSolution
-      sprayFizzinessThresholdRoll: 0.6688956
+      sprayFizzinessThresholdRoll: 0.07461643
     - type: NameModifier
       baseName: бутылка кофейного ликёра
     - type: ContainerContainer
@@ -70442,7 +70460,7 @@ entities:
     - type: Label
       currentLabel: ром
     - type: PressurizedSolution
-      sprayFizzinessThresholdRoll: 0.3065596
+      sprayFizzinessThresholdRoll: 0.5520688
     - type: NameModifier
       baseName: кубинский пряный ром капитана Пита
     - type: ContainerContainer
@@ -70484,7 +70502,7 @@ entities:
     - type: Label
       currentLabel: текила
     - type: PressurizedSolution
-      sprayFizzinessThresholdRoll: 0.05600391
+      sprayFizzinessThresholdRoll: 0.37654924
     - type: NameModifier
       baseName: бутылка текилы Каккаво гарантированного качества
     - type: ContainerContainer
@@ -70525,7 +70543,7 @@ entities:
     - type: Label
       currentLabel: вермут
     - type: PressurizedSolution
-      sprayFizzinessThresholdRoll: 0.88899857
+      sprayFizzinessThresholdRoll: 0.99563634
     - type: NameModifier
       baseName: бутылка вермута Золотой глаз
     - type: ContainerContainer
@@ -70548,7 +70566,7 @@ entities:
     - type: Label
       currentLabel: водка
     - type: PressurizedSolution
-      sprayFizzinessThresholdRoll: 0.20166138
+      sprayFizzinessThresholdRoll: 0.42666134
     - type: NameModifier
       baseName: бутылка водки
     - type: ContainerContainer
@@ -70606,7 +70624,7 @@ entities:
     - type: Label
       currentLabel: вино
     - type: PressurizedSolution
-      sprayFizzinessThresholdRoll: 0.3974929
+      sprayFizzinessThresholdRoll: 0.8771178
     - type: NameModifier
       baseName: особое двухбородое бородатое вино
     - type: ContainerContainer
@@ -74346,6 +74364,9 @@ entities:
       rot: -1.5707963267948966 rad
       pos: 37.5,7.5
       parent: 2
+    - type: DeviceNetwork
+      deviceLists:
+      - 7072
   - uid: 8705
     components:
     - type: Transform
@@ -74615,6 +74636,7 @@ entities:
       - 70
       - 8554
       - 8522
+      - 7072
   - uid: 8730
     components:
     - type: Transform
@@ -74627,6 +74649,7 @@ entities:
       - 70
       - 8554
       - 8522
+      - 7072
   - uid: 8731
     components:
     - type: Transform
@@ -74748,7 +74771,7 @@ entities:
       pos: 39.5,13.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -56797.95
+      secondsUntilStateChange: -57215.484
       state: Closing
     - type: DeviceNetwork
       deviceLists:
@@ -77945,6 +77968,14 @@ entities:
       parent: 18382
 - proto: GasPipeBend
   entities:
+  - uid: 7069
+    components:
+    - type: Transform
+      rot: 3.141592653589793 rad
+      pos: 32.5,6.5
+      parent: 2
+    - type: AtmosPipeColor
+      color: '#FF4040FF'
   - uid: 9089
     components:
     - type: Transform
@@ -78763,17 +78794,23 @@ entities:
       rot: -1.5707963267948966 rad
       pos: 27.5,5.5
       parent: 2
+    - type: AtmosPipeColor
+      color: '#FF4040FF'
   - uid: 11550
     components:
     - type: Transform
       rot: 3.141592653589793 rad
       pos: 35.5,5.5
       parent: 2
+    - type: AtmosPipeColor
+      color: '#FF4040FF'
   - uid: 11552
     components:
     - type: Transform
       pos: 35.5,6.5
       parent: 2
+    - type: AtmosPipeColor
+      color: '#FF4040FF'
   - uid: 20972
     components:
     - type: Transform
@@ -79095,13 +79132,6 @@ entities:
       parent: 2
     - type: AtmosPipeColor
       color: '#FF4040FF'
-  - uid: 9218
-    components:
-    - type: Transform
-      pos: 81.5,60.5
-      parent: 2
-    - type: AtmosPipeColor
-      color: '#4169E1FF'
   - uid: 9219
     components:
     - type: Transform
@@ -79289,6 +79319,21 @@ entities:
       color: '#FF4040FF'
 - proto: GasPipeStraight
   entities:
+  - uid: 7067
+    components:
+    - type: Transform
+      rot: -1.5707963267948966 rad
+      pos: 29.5,13.5
+      parent: 2
+    - type: AtmosPipeColor
+      color: '#4169E1FF'
+  - uid: 7068
+    components:
+    - type: Transform
+      pos: 71.5,60.5
+      parent: 2
+    - type: AtmosPipeColor
+      color: '#4169E1FF'
   - uid: 9236
     components:
     - type: Transform
@@ -82817,6 +82862,8 @@ entities:
     - type: Transform
       pos: 32.5,10.5
       parent: 2
+    - type: AtmosPipeColor
+      color: '#FF4040FF'
   - uid: 9699
     components:
     - type: Transform
@@ -91225,49 +91272,67 @@ entities:
     - type: Transform
       pos: 32.5,13.5
       parent: 2
+    - type: AtmosPipeColor
+      color: '#FF4040FF'
   - uid: 11545
     components:
     - type: Transform
       pos: 32.5,12.5
       parent: 2
+    - type: AtmosPipeColor
+      color: '#FF4040FF'
   - uid: 11556
     components:
     - type: Transform
       pos: 32.5,9.5
       parent: 2
+    - type: AtmosPipeColor
+      color: '#FF4040FF'
   - uid: 11564
     components:
     - type: Transform
       pos: 32.5,8.5
       parent: 2
+    - type: AtmosPipeColor
+      color: '#FF4040FF'
   - uid: 11565
     components:
     - type: Transform
       rot: 1.5707963267948966 rad
       pos: 33.5,6.5
       parent: 2
+    - type: AtmosPipeColor
+      color: '#FF4040FF'
   - uid: 11576
     components:
     - type: Transform
       pos: 32.5,7.5
       parent: 2
+    - type: AtmosPipeColor
+      color: '#FF4040FF'
   - uid: 11577
     components:
     - type: Transform
       rot: 1.5707963267948966 rad
       pos: 34.5,6.5
       parent: 2
+    - type: AtmosPipeColor
+      color: '#FF4040FF'
   - uid: 11578
     components:
     - type: Transform
       rot: -1.5707963267948966 rad
       pos: 29.5,4.5
       parent: 2
+    - type: AtmosPipeColor
+      color: '#4169E1FF'
   - uid: 11579
     components:
     - type: Transform
       pos: 32.5,11.5
       parent: 2
+    - type: AtmosPipeColor
+      color: '#FF4040FF'
   - uid: 21011
     components:
     - type: Transform
@@ -92095,6 +92160,12 @@ entities:
       parent: 18382
 - proto: GasPipeTJunction
   entities:
+  - uid: 7066
+    components:
+    - type: Transform
+      rot: 1.5707963267948966 rad
+      pos: 81.5,60.5
+      parent: 2
   - uid: 10801
     components:
     - type: Transform
@@ -92938,13 +93009,6 @@ entities:
       parent: 2
     - type: AtmosPipeColor
       color: '#4169E1FF'
-  - uid: 10911
-    components:
-    - type: Transform
-      pos: 29.5,13.5
-      parent: 2
-    - type: AtmosPipeColor
-      color: '#4169E1FF'
   - uid: 10912
     components:
     - type: Transform
@@ -93413,14 +93477,6 @@ entities:
       parent: 2
     - type: AtmosPipeColor
       color: '#FF4040FF'
-  - uid: 10973
-    components:
-    - type: Transform
-      rot: 1.5707963267948966 rad
-      pos: 71.5,60.5
-      parent: 2
-    - type: AtmosPipeColor
-      color: '#4169E1FF'
   - uid: 10974
     components:
     - type: Transform
@@ -94120,12 +94176,8 @@ entities:
     - type: Transform
       pos: 32.5,14.5
       parent: 2
-  - uid: 11580
-    components:
-    - type: Transform
-      rot: 1.5707963267948966 rad
-      pos: 32.5,6.5
-      parent: 2
+    - type: AtmosPipeColor
+      color: '#FF4040FF'
   - uid: 21145
     components:
     - type: Transform
@@ -95324,6 +95376,9 @@ entities:
     - type: Transform
       pos: 38.5,8.5
       parent: 2
+    - type: DeviceNetwork
+      deviceLists:
+      - 7072
     - type: AtmosPipeColor
       color: '#4169E1FF'
   - uid: 11181
@@ -96291,6 +96346,16 @@ entities:
       color: '#4169E1FF'
 - proto: GasVentScrubber
   entities:
+  - uid: 7070
+    components:
+    - type: Transform
+      pos: 37.5,8.5
+      parent: 2
+    - type: DeviceNetwork
+      deviceLists:
+      - 7072
+    - type: AtmosPipeColor
+      color: '#FF4040FF'
   - uid: 11277
     components:
     - type: Transform
