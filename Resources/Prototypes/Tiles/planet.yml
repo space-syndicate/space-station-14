@@ -141,3 +141,32 @@
     collection: FootstepSnow
 
 # Wasteland
+- type: tile
+  id: W14FloorDirt
+  name: DirtZero
+  sprite: /Textures/_Witcher14/Tiles/Dirt/dirt.png
+  edgeSpritePriority: 1
+  edgeSprites:
+    SouthEast: /Textures/_Witcher14/Tiles/Dirt/single_edge_SE.png
+    NorthEast: /Textures/_Witcher14/Tiles/Dirt/single_edge_NE.png
+    NorthWest: /Textures/_Witcher14/Tiles/Dirt/single_edge_NW.png
+    SouthWest: /Textures/_Witcher14/Tiles/Dirt/single_edge_SW.png
+    South: /Textures/_Witcher14/Tiles/Dirt/double_edge_S.png
+    East: /Textures/_Witcher14/Tiles/Dirt/double_edge_E.png
+    North: /Textures/_Witcher14/Tiles/Dirt/double_edge_N.png
+    West: /Textures/_Witcher14/Tiles/Dirt/double_edge_W.png
+
+- type: tile
+  id: W14Rubble
+  name: RubbleZero
+  sprite: /Textures/_Witcher14/Tiles/Rubble/rubble.png
+  edgeSpritePriority: 1
+  edgeSprites:
+    SouthEast: /Textures/_Witcher14/Tiles/Rubble/single_edge_SE.png
+    NorthEast: /Textures/_Witcher14/Tiles/Rubble/single_edge_NE.png
+    NorthWest: /Textures/_Witcher14/Tiles/Rubble/single_edge_NW.png
+    SouthWest: /Textures/_Witcher14/Tiles/Rubble/single_edge_SW.png
+    South: /Textures/_Witcher14/Tiles/Rubble/double_edge_S.png
+    East: /Textures/_Witcher14/Tiles/Rubble/double_edge_E.png
+    North: /Textures/_Witcher14/Tiles/Rubble/double_edge_N.png
+    West: /Textures/_Witcher14/Tiles/Rubble/double_edge_W.png
