@@ -60,6 +60,7 @@ guidebook-SOP-StationEngineer-right =
 
 guidebook-SOP-StationEngineer-prohibited =
     1. Носить скафандр отдела без необходимости его применения.
+      - MOD костюмы являются исключением.
 
 ## Атмосферный техник
 guidebook-SOP-AtmosphericTechnician-must =
